@@ -1,14 +1,14 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
-  homepage "https://www.vapoursynth.com"
-  url "https://ghproxy.com/https://github.com/vapoursynth/vapoursynth/archive/refs/tags/R65.tar.gz"
+  homepage "https:www.vapoursynth.com"
+  url "https:github.comvapoursynthvapoursyntharchiverefstagsR65.tar.gz"
   sha256 "2bde5233b82d914b5e985119ed9cc344e3c27c3c068b5c4ab909176cd1751dce"
   license "LGPL-2.1-or-later"
-  head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
+  head "https:github.comvapoursynthvapoursynth.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^R(\d+(?:\.\d+)*?)$/i)
+    regex(^R(\d+(?:\.\d+)*?)$i)
   end
 
   bottle do
@@ -34,13 +34,13 @@ class Vapoursynth < Formula
   fails_with gcc: "5"
 
   def install
-    system "./autogen.sh"
+    system ".autogen.sh"
     inreplace "Makefile.in", "pkglibdir = $(libdir)", "pkglibdir = $(exec_prefix)"
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-silent-rules",
                           "--disable-dependency-tracking",
-                          "--with-cython=#{Formula["cython"].bin}/cython",
-                          "--with-plugindir=#{HOMEBREW_PREFIX}/lib/vapoursynth",
+                          "--with-cython=#{Formula["cython"].bin}cython",
+                          "--with-plugindir=#{HOMEBREW_PREFIX}libvapoursynth",
                           "--with-python_prefix=#{prefix}",
                           "--with-python_exec_prefix=#{prefix}"
     system "make", "install"
@@ -57,14 +57,14 @@ class Vapoursynth < Formula
         brew install vapoursynth-imwri
       To use vapoursynth.core.ffms2, execute the following:
         brew install ffms2
-        ln -s "../libffms2.dylib" "#{HOMEBREW_PREFIX}/lib/vapoursynth/#{shared_library("libffms2")}"
+        ln -s "..libffms2.dylib" "#{HOMEBREW_PREFIX}libvapoursynth#{shared_library("libffms2")}"
       For more information regarding plugins, please visit:
-        http://www.vapoursynth.com/doc/plugins.html
+        http:www.vapoursynth.comdocplugins.html
     EOS
   end
 
   test do
-    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import vapoursynth"
-    system bin/"vspipe", "--version"
+    system Formula["python@3.12"].opt_bin"python3.12", "-c", "import vapoursynth"
+    system bin"vspipe", "--version"
   end
 end

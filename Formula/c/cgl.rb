@@ -1,13 +1,13 @@
 class Cgl < Formula
   desc "Cut Generation Library"
-  homepage "https://github.com/coin-or/Cgl"
-  url "https://ghproxy.com/https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.8.tar.gz"
+  homepage "https:github.comcoin-orCgl"
+  url "https:github.comcoin-orCglarchiverefstagsreleases0.60.8.tar.gz"
   sha256 "1482ba38afb783d124df8d5392337f79fdd507716e9f1fb6b98fc090acd1ad96"
   license "EPL-2.0"
 
   livecheck do
     url :stable
-    regex(%r{^releases/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^releasesv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -26,35 +26,35 @@ class Cgl < Formula
   depends_on "osi"
 
   resource "coin-or-tools-data-sample-p0033-mps" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/coin-or-tools/Data-Sample/releases/1.2.12/p0033.mps"
+    url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.12p0033.mps"
     sha256 "8ccff819023237c79ef32e238a5da9348725ce9a4425d48888baf3a0b3b42628"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--includedir=#{include}/cgl"
+                          "--includedir=#{include}cgl"
     system "make"
     system "make", "install"
-    pkgshare.install "Cgl/examples"
+    pkgshare.install "Cglexamples"
   end
 
   test do
     resource("coin-or-tools-data-sample-p0033-mps").stage testpath
-    cp pkgshare/"examples/cgl1.cpp", testpath
+    cp pkgshare"examplescgl1.cpp", testpath
     system ENV.cxx, "-std=c++11", "cgl1.cpp",
-                    "-I#{include}/cgl/coin",
-                    "-I#{Formula["clp"].opt_include}/clp/coin",
-                    "-I#{Formula["coinutils"].opt_include}/coinutils/coin",
-                    "-I#{Formula["osi"].opt_include}/osi/coin",
+                    "-I#{include}cglcoin",
+                    "-I#{Formula["clp"].opt_include}clpcoin",
+                    "-I#{Formula["coinutils"].opt_include}coinutilscoin",
+                    "-I#{Formula["osi"].opt_include}osicoin",
                     "-L#{lib}", "-lCgl",
                     "-L#{Formula["clp"].opt_lib}", "-lClp", "-lOsiClp",
                     "-L#{Formula["coinutils"].opt_lib}", "-lCoinUtils",
                     "-L#{Formula["osi"].opt_lib}", "-lOsi",
                     "-o", "test"
-    output = shell_output("./test p0033 min")
+    output = shell_output(".test p0033 min")
     assert_match "Cut generation phase completed", output
   end
 end

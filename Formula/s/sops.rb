@@ -1,10 +1,10 @@
 class Sops < Formula
   desc "Editor of encrypted files"
-  homepage "https://github.com/getsops/sops"
-  url "https://ghproxy.com/https://github.com/getsops/sops/archive/refs/tags/v3.8.1.tar.gz"
+  homepage "https:github.comgetsopssops"
+  url "https:github.comgetsopssopsarchiverefstagsv3.8.1.tar.gz"
   sha256 "5ca70fb4f96797d09012c705a5bb935835896de7bcd063b98d498912b0e645a0"
   license "MPL-2.0"
-  head "https://github.com/getsops/sops.git", branch: "master"
+  head "https:github.comgetsopssops.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0aa447922f3c179827253fd8d0fe2e087d24a227834b68da3c6ccacda89741d4"
@@ -19,15 +19,15 @@ class Sops < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/getsops/sops/v3/version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/sops"
+    ldflags = "-s -w -X github.comgetsopssopsv3version.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdsops"
     pkgshare.install "example.yaml"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/sops --version")
+    assert_match version.to_s, shell_output("#{bin}sops --version")
 
     assert_match "Recovery failed because no master key was able to decrypt the file.",
-      shell_output("#{bin}/sops #{pkgshare}/example.yaml 2>&1", 128)
+      shell_output("#{bin}sops #{pkgshare}example.yaml 2>&1", 128)
   end
 end

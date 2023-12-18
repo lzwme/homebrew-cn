@@ -1,7 +1,7 @@
 class Dive < Formula
   desc "Tool for exploring each layer in a docker image"
-  homepage "https://github.com/wagoodman/dive"
-  url "https://github.com/wagoodman/dive.git",
+  homepage "https:github.comwagoodmandive"
+  url "https:github.comwagoodmandive.git",
       tag:      "v0.11.0",
       revision: "800398060434ce8dfda6b4d182b72e2a9724e9f6"
   license "MIT"
@@ -31,13 +31,13 @@ class Dive < Formula
   end
 
   test do
-    (testpath/"Dockerfile").write <<~EOS
+    (testpath"Dockerfile").write <<~EOS
       FROM alpine
       ENV test=homebrew-core
       RUN echo "hello"
     EOS
 
-    assert_match "dive #{version}", shell_output("#{bin}/dive version")
-    assert_match "Building image", shell_output("CI=true #{bin}/dive build .", 1)
+    assert_match "dive #{version}", shell_output("#{bin}dive version")
+    assert_match "Building image", shell_output("CI=true #{bin}dive build .", 1)
   end
 end

@@ -2,22 +2,22 @@ cask "classroom-assistant" do
   version "2.0.4"
   sha256 "976da27e92ff1c2c711bda57a4d3cb5be7733f14a02d8b7f730526d3b8e9ea65"
 
-  url "https://ghproxy.com/https://github.com/education/classroom-assistant/releases/download/v#{version}/Classroom.Assistant-darwin-x64-#{version}.zip"
+  url "https:github.comeducationclassroom-assistantreleasesdownloadv#{version}Classroom.Assistant-darwin-x64-#{version}.zip"
   name "GitHub Classroom Assistant"
   desc "Tool to clone student repositories in bulk"
-  homepage "https://classroom.github.com/assistant"
+  homepage "https:classroom.github.comassistant"
 
   app "Classroom Assistant.app"
 
   zap trash: [
-    "~/Library/Application Support/Classroom Assistant",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.electron.classroom-assistant.sfl*",
-    "~/Library/Caches/com.electron.classroom-assistant",
-    "~/Library/Caches/com.electron.classroom-assistant.ShipIt",
-    "~/Library/HTTPStorages/com.electron.classroom-assistant",
-    "~/Library/Logs/Classroom Assistant",
-    "~/Library/Preferences/com.electron.classroom-assistant.plist",
-    "~/Library/Saved Application State/com.electron.classroom-assistant.savedState",
+    "~LibraryApplication SupportClassroom Assistant",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.electron.classroom-assistant.sfl*",
+    "~LibraryCachescom.electron.classroom-assistant",
+    "~LibraryCachescom.electron.classroom-assistant.ShipIt",
+    "~LibraryHTTPStoragescom.electron.classroom-assistant",
+    "~LibraryLogsClassroom Assistant",
+    "~LibraryPreferencescom.electron.classroom-assistant.plist",
+    "~LibrarySaved Application Statecom.electron.classroom-assistant.savedState",
   ]
 
   caveats do

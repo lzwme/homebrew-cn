@@ -1,7 +1,7 @@
 class Urlview < Formula
-  desc "URL extractor/launcher"
-  homepage "https://packages.debian.org/sid/misc/urlview"
-  url "https://deb.debian.org/debian/pool/main/u/urlview/urlview_0.9.orig.tar.gz"
+  desc "URL extractorlauncher"
+  homepage "https:packages.debian.orgsidmiscurlview"
+  url "https:deb.debian.orgdebianpoolmainuurlviewurlview_0.9.orig.tar.gz"
   version "0.9-24"
   sha256 "746ff540ccf601645f500ee7743f443caf987d6380e61e5249fc15f7a455ed42"
   license "GPL-2.0-or-later"
@@ -10,8 +10,8 @@ class Urlview < Formula
   # this check is open-ended (rather than targeting the .orig.tar.gz file), so
   # we identify patch versions as well.
   livecheck do
-    url "https://deb.debian.org/debian/pool/main/u/urlview/"
-    regex(/href=.*?urlview[._-]v?(\d+(?:[.-]\d+)+)/i)
+    url "https:deb.debian.orgdebianpoolmainuurlview"
+    regex(href=.*?urlview[._-]v?(\d+(?:[.-]\d+)+)i)
   end
 
   bottle do
@@ -33,22 +33,22 @@ class Urlview < Formula
   end
 
   patch do
-    url "http://ftp.debian.org/debian/pool/main/u/urlview/urlview_0.9-24.debian.tar.xz"
+    url "http:ftp.debian.orgdebianpoolmainuurlviewurlview_0.9-24.debian.tar.xz"
     sha256 "2dd710baa5af98f5dc32ffedfa051220a83cb8b1d7250e75966d7658cf2e2228"
-    apply "patches/debian.patch",
-          "patches/Fix-warning-about-implicit-declaration-of-function.patch",
-          "patches/invoke-AM_INIT_AUTOMAKE-with-foreign.patch",
-          "patches/Link-against-libncursesw-setlocale-LC_ALL.patch",
-          "patches/Allow-dumping-URLs-to-stdout.patch"
+    apply "patchesdebian.patch",
+          "patchesFix-warning-about-implicit-declaration-of-function.patch",
+          "patchesinvoke-AM_INIT_AUTOMAKE-with-foreign.patch",
+          "patchesLink-against-libncursesw-setlocale-LC_ALL.patch",
+          "patchesAllow-dumping-URLs-to-stdout.patch"
   end
 
   def install
     man1.mkpath
 
-    url_handler = OS.mac? ? "open" : etc/"urlview/url_handler.sh"
-    inreplace "urlview.man", "/etc/urlview/url_handler.sh", url_handler
+    url_handler = OS.mac? ? "open" : etc"urlviewurl_handler.sh"
+    inreplace "urlview.man", "etcurlviewurl_handler.sh", url_handler
     inreplace "urlview.c",
-      '#define DEFAULT_COMMAND "/etc/urlview/url_handler.sh %s"',
+      '#define DEFAULT_COMMAND "etcurlviewurl_handler.sh %s"',
       %Q(#define DEFAULT_COMMAND "#{url_handler} %s")
 
     unless OS.mac?
@@ -57,10 +57,10 @@ class Urlview < Formula
 
       # Disable use of librx, since it is not needed on Linux.
       ENV["CFLAGS"] = "-DHAVE_REGEX_H"
-      (etc/"urlview").install "url_handler.sh"
+      (etc"urlview").install "url_handler.sh"
     end
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--sysconfdir=#{etc}"
@@ -68,8 +68,8 @@ class Urlview < Formula
   end
 
   test do
-    (testpath/"test.txt").write <<~EOS
-      https://github.com/Homebrew
+    (testpath"test.txt").write <<~EOS
+      https:github.comHomebrew
     EOS
     PTY.spawn("urlview test.txt") do |_r, w, _pid|
       sleep 1

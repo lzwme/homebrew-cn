@@ -2,10 +2,10 @@ cask "font-jomhuria" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/jomhuria/Jomhuria-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofljomhuriaJomhuria-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Jomhuria"
-  homepage "https://fonts.google.com/specimen/Jomhuria"
+  homepage "https:fonts.google.comspecimenJomhuria"
 
   font "Jomhuria-Regular.ttf"
 

@@ -2,12 +2,12 @@ cask "font-pridi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/pridi"
+      only_path: "oflpridi"
   name "Pridi"
-  homepage "https://fonts.google.com/specimen/Pridi"
+  homepage "https:fonts.google.comspecimenPridi"
 
   font "Pridi-Bold.ttf"
   font "Pridi-ExtraLight.ttf"

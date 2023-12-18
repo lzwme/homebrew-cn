@@ -1,7 +1,7 @@
 class GnomeAutoar < Formula
   desc "GNOME library for archive handling"
-  homepage "https://github.com/GNOME/gnome-autoar"
-  url "https://download.gnome.org/sources/gnome-autoar/0.4/gnome-autoar-0.4.4.tar.xz"
+  homepage "https:github.comGNOMEgnome-autoar"
+  url "https:download.gnome.orgsourcesgnome-autoar0.4gnome-autoar-0.4.4.tar.xz"
   sha256 "c0afbe333bcf3cb1441a1f574cc8ec7b1b8197779145d4edeee2896fdacfc3c2"
   license "LGPL-2.1-or-later"
   revision 1
@@ -11,7 +11,7 @@ class GnomeAutoar < Formula
   # from the `Gnome` strategy.
   livecheck do
     url :stable
-    regex(/gnome-autoar[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(gnome-autoar[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -37,12 +37,12 @@ class GnomeAutoar < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+    system "#{Formula["glib"].opt_bin}glib-compile-schemas", "#{HOMEBREW_PREFIX}shareglib-2.0schemas"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gnome-autoar/gnome-autoar.h>
+    (testpath"test.c").write <<~EOS
+      #include <gnome-autoargnome-autoar.h>
 
       int main(int argc, char *argv[]) {
         GType type = autoar_extractor_get_type();
@@ -56,9 +56,9 @@ class GnomeAutoar < Formula
     flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
     flags += %W[
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/gnome-autoar-0
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}gnome-autoar-0
       -I#{libarchive.opt_include}
       -I#{pcre.opt_include}
       -D_REENTRANT
@@ -74,6 +74,6 @@ class GnomeAutoar < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

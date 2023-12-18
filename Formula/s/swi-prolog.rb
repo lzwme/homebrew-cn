@@ -1,23 +1,23 @@
 class SwiProlog < Formula
-  desc "ISO/Edinburgh-style Prolog interpreter"
-  homepage "https://www.swi-prolog.org/"
+  desc "ISOEdinburgh-style Prolog interpreter"
+  homepage "https:www.swi-prolog.org"
   license "BSD-2-Clause"
-  head "https://github.com/SWI-Prolog/swipl-devel.git", branch: "master"
+  head "https:github.comSWI-Prologswipl-devel.git", branch: "master"
 
   stable do
-    url "https://www.swi-prolog.org/download/stable/src/swipl-9.0.4.tar.gz"
+    url "https:www.swi-prolog.orgdownloadstablesrcswipl-9.0.4.tar.gz"
     sha256 "feb2815a51d34fa81cb34e8149830405935a7e1d1c1950461239750baa8b49f0"
 
     # Backport fix to build on Sonoma
     patch do
-      url "https://github.com/SWI-Prolog/swipl-devel/commit/1e51805f04ea9cb13cf01e5b7a483c03d253b24c.patch?full_index=1"
+      url "https:github.comSWI-Prologswipl-develcommit1e51805f04ea9cb13cf01e5b7a483c03d253b24c.patch?full_index=1"
       sha256 "628b65b3e4a49c8dda4b97824ad05359c48bd27e7e4ddbf914e3da57ef7c87ee"
     end
   end
 
   livecheck do
-    url "https://www.swi-prolog.org/download/stable/src/"
-    regex(/href=.*?swipl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.swi-prolog.orgdownloadstablesrc"
+    regex(href=.*?swipl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -49,7 +49,7 @@ class SwiProlog < Formula
   def install
     # Remove shim paths from binary files `swipl-ld` and `libswipl.so.*`
     if OS.linux?
-      inreplace "cmake/Params.cmake" do |s|
+      inreplace "cmakeParams.cmake" do |s|
         s.gsub! "${CMAKE_C_COMPILER}", "\"gcc\""
         s.gsub! "${CMAKE_CXX_COMPILER}", "\"g++\""
       end
@@ -62,9 +62,9 @@ class SwiProlog < Formula
     ]
     if OS.mac?
       macosx_dependencies_from = case HOMEBREW_PREFIX.to_s
-      when "/usr/local"
+      when "usrlocal"
         "HomebrewLocal"
-      when "/opt/homebrew"
+      when "opthomebrew"
         "HomebrewOpt"
       else
         HOMEBREW_PREFIX
@@ -77,10 +77,10 @@ class SwiProlog < Formula
   end
 
   test do
-    (testpath/"test.pl").write <<~EOS
+    (testpath"test.pl").write <<~EOS
       test :-
           write('Homebrew').
     EOS
-    assert_equal "Homebrew", shell_output("#{bin}/swipl -s #{testpath}/test.pl -g test -t halt")
+    assert_equal "Homebrew", shell_output("#{bin}swipl -s #{testpath}test.pl -g test -t halt")
   end
 end

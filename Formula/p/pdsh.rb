@@ -1,10 +1,10 @@
 class Pdsh < Formula
   desc "Efficient rsh-like utility, for using hosts in parallel"
-  homepage "https://github.com/chaos/pdsh"
-  url "https://ghproxy.com/https://github.com/chaos/pdsh/releases/download/pdsh-2.34/pdsh-2.34.tar.gz"
+  homepage "https:github.comchaospdsh"
+  url "https:github.comchaospdshreleasesdownloadpdsh-2.34pdsh-2.34.tar.gz"
   sha256 "b47b3e4662736ef44b6fe86e3d380f95e591863e69163aa0592e9f9f618521e9"
   license "GPL-2.0-or-later"
-  head "https://github.com/chaos/pdsh.git", branch: "master"
+  head "https:github.comchaospdsh.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "98379fdb5f1f7db9098a125e3000b4e085c3ea93d28c66a4a175e696d38af7dd"
@@ -37,11 +37,11 @@ class Pdsh < Formula
       --without-xcpu
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/pdsh", "-V"
+    system "#{bin}pdsh", "-V"
   end
 end

@@ -1,14 +1,14 @@
 class Spotifyd < Formula
   desc "Spotify daemon"
-  homepage "https://github.com/Spotifyd/spotifyd"
-  url "https://ghproxy.com/https://github.com/Spotifyd/spotifyd/archive/refs/tags/v0.3.5.tar.gz"
+  homepage "https:github.comSpotifydspotifyd"
+  url "https:github.comSpotifydspotifydarchiverefstagsv0.3.5.tar.gz"
   sha256 "59103f7097aa4e2ed960f1cc307ac8f4bdb2f0067aad664af32344aa8a972df7"
   license "GPL-3.0-only"
-  head "https://github.com/Spotifyd/spotifyd.git", branch: "master"
+  head "https:github.comSpotifydspotifyd.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -37,12 +37,12 @@ class Spotifyd < Formula
   end
 
   service do
-    run [opt_bin/"spotifyd", "--no-daemon", "--backend", "portaudio"]
+    run [opt_bin"spotifyd", "--no-daemon", "--backend", "portaudio"]
     keep_alive true
   end
 
   test do
-    cmd = "#{bin}/spotifyd --username homebrew_fake_user_for_testing \
+    cmd = "#{bin}spotifyd --username homebrew_fake_user_for_testing \
       --password homebrew --no-daemon --backend portaudio"
     assert_match "Bad credentials", shell_output(cmd)
   end

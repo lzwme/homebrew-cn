@@ -1,10 +1,10 @@
 class Xcodegen < Formula
   desc "Generate your Xcode project from a spec file and your folder structure"
-  homepage "https://github.com/yonaskolb/XcodeGen"
-  url "https://ghproxy.com/https://github.com/yonaskolb/XcodeGen/archive/refs/tags/2.38.0.tar.gz"
+  homepage "https:github.comyonaskolbXcodeGen"
+  url "https:github.comyonaskolbXcodeGenarchiverefstags2.38.0.tar.gz"
   sha256 "8dc9757feb532c7b2ce71184048776a8ebab8ef07677779f2a5c537a80abf30e"
   license "MIT"
-  head "https://github.com/yonaskolb/XcodeGen.git", branch: "master"
+  head "https:github.comyonaskolbXcodeGen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "422fb8dfbc7e2ed59125d22b4687bb54a1ab3f0ddef044a3875b624121f9be47"
@@ -22,12 +22,12 @@ class Xcodegen < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/#{name}"
+    bin.install ".buildrelease#{name}"
     pkgshare.install "SettingPresets"
   end
 
   test do
-    (testpath/"xcodegen.yml").write <<~EOS
+    (testpath"xcodegen.yml").write <<~EOS
       name: GeneratedProject
       options:
         bundleIdPrefix: com.project
@@ -37,11 +37,11 @@ class Xcodegen < Formula
           platform: iOS
           sources: TestProject
     EOS
-    (testpath/"TestProject").mkpath
-    system bin/"xcodegen", "--spec", testpath/"xcodegen.yml"
-    assert_predicate testpath/"GeneratedProject.xcodeproj", :exist?
-    assert_predicate testpath/"GeneratedProject.xcodeproj/project.pbxproj", :exist?
-    output = (testpath/"GeneratedProject.xcodeproj/project.pbxproj").read
+    (testpath"TestProject").mkpath
+    system bin"xcodegen", "--spec", testpath"xcodegen.yml"
+    assert_predicate testpath"GeneratedProject.xcodeproj", :exist?
+    assert_predicate testpath"GeneratedProject.xcodeprojproject.pbxproj", :exist?
+    output = (testpath"GeneratedProject.xcodeprojproject.pbxproj").read
     assert_match "name = TestProject", output
     assert_match "isa = PBXNativeTarget", output
   end

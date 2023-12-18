@@ -1,7 +1,7 @@
 class Arturo < Formula
   desc "Simple, modern and portable programming language for efficient scripting"
-  homepage "https://arturo-lang.io/"
-  url "https://ghproxy.com/https://github.com/arturo-lang/arturo/archive/refs/tags/v0.9.83.tar.gz"
+  homepage "https:arturo-lang.io"
+  url "https:github.comarturo-langarturoarchiverefstagsv0.9.83.tar.gz"
   sha256 "0bb3632f21a1556167fdcb82170c29665350beb44f15b4666b4e22a23c2063cf"
   license "MIT"
 
@@ -21,20 +21,20 @@ class Arturo < Formula
 
   # TODO: switch to `depends_on "nim" => :build` in the next release
   resource "nim" do
-    url "https://nim-lang.org/download/nim-1.6.14.tar.xz"
+    url "https:nim-lang.orgdownloadnim-1.6.14.tar.xz"
     sha256 "d070d2f28ae2400df7fe4a49eceb9f45cd539906b107481856a0af7a8fa82dc9"
   end
 
   def install
-    (buildpath/"nim").install resource("nim")
+    (buildpath"nim").install resource("nim")
     cd "nim" do
-      system "./build.sh"
-      system "./bin/nim", "c", "-d:release", "koch"
-      system "./koch", "boot", "-d:release", "-d:useLinenoise"
+      system ".build.sh"
+      system ".binnim", "c", "-d:release", "koch"
+      system ".koch", "boot", "-d:release", "-d:useLinenoise"
     end
-    ENV.prepend_path "PATH", buildpath/"nim/bin"
+    ENV.prepend_path "PATH", buildpath"nimbin"
 
-    inreplace "build.nims", /ROOT_DIR\s*=\s*r"\{getHomeDir\(\)\}.arturo".fmt/, "ROOT_DIR=\"#{prefix}\""
+    inreplace "build.nims", ROOT_DIR\s*=\s*r"\{getHomeDir\(\)\}.arturo".fmt, "ROOT_DIR=\"#{prefix}\""
 
     # Work around issues with Xcode 14.3
     # @mhelpers@swebviews.nim.c:1116:2: error: call to undeclared function 'generateDefaultMainMenu';
@@ -44,13 +44,13 @@ class Arturo < Formula
     # Use mini install on Linux to avoid webkit2gtk dependency, which does not have a formula.
     args = ["log", "release"]
     args << "mini" if OS.linux?
-    system "./build.nims", "install", *args
+    system ".build.nims", "install", *args
   end
 
   test do
-    (testpath/"hello.art").write <<~EOS
+    (testpath"hello.art").write <<~EOS
       print "hello"
     EOS
-    assert_equal "hello", shell_output("#{bin}/arturo #{testpath}/hello.art").chomp
+    assert_equal "hello", shell_output("#{bin}arturo #{testpath}hello.art").chomp
   end
 end

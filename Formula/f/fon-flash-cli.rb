@@ -1,10 +1,10 @@
 class FonFlashCli < Formula
   desc "Flash La Fonera and Atheros chipset compatible devices"
-  homepage "https://www.gargoyle-router.com/wiki/doku.php?id=fon_flash"
-  url "https://ghproxy.com/https://github.com/ericpaulbishop/gargoyle/archive/refs/tags/1.14.0.tar.gz"
+  homepage "https:www.gargoyle-router.comwikidoku.php?id=fon_flash"
+  url "https:github.comericpaulbishopgargoylearchiverefstags1.14.0.tar.gz"
   sha256 "bd3ba67ab9cd8c7474ce8f02a3a320b91aec72c6710e43c18dbe719b13f3820a"
   license "GPL-2.0-or-later"
-  head "https://github.com/ericpaulbishop/gargoyle.git", branch: "master"
+  head "https:github.comericpaulbishopgargoyle.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3578903bdf423bf0f5a01a50073bfe90c47aaf25b5a744156fa5d743c1db0086"
@@ -28,6 +28,6 @@ class FonFlashCli < Formula
   end
 
   test do
-    system "#{bin}/fon-flash"
+    system "#{bin}fon-flash"
   end
 end

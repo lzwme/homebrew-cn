@@ -1,13 +1,13 @@
 class Lrzip < Formula
   desc "Compression program with a very high compression ratio"
-  homepage "http://lrzip.kolivas.org"
-  url "http://ck.kolivas.org/apps/lrzip/lrzip-0.641.tar.xz"
+  homepage "http:lrzip.kolivas.org"
+  url "http:ck.kolivas.orgappslrziplrzip-0.641.tar.xz"
   sha256 "2c6389a513a05cba3bcc18ca10ca820d617518f5ac6171e960cda476b5553e7e"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://ck.kolivas.org/apps/lrzip/"
-    regex(/href=.*?lrzip[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:ck.kolivas.orgappslrzip"
+    regex(href=.*?lrzip[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -39,12 +39,12 @@ class Lrzip < Formula
   end
 
   def install
-    # Attempting to build the ASM/x86 folder as a compilation unit fails (even on Intel). Removing this compilation
+    # Attempting to build the ASMx86 folder as a compilation unit fails (even on Intel). Removing this compilation
     # unit doesn't disable ASM usage though, since ASM is still included in the C build process.
-    # See https://github.com/ckolivas/lrzip/issues/193
-    inreplace "lzma/Makefile.am", "SUBDIRS = C ASM/x86", "SUBDIRS = C"
+    # See https:github.comckolivaslrzipissues193
+    inreplace "lzmaMakefile.am", "SUBDIRS = C ASMx86", "SUBDIRS = C"
 
-    # Set nasm format correctly on macOS. See https://github.com/ckolivas/lrzip/pull/211
+    # Set nasm format correctly on macOS. See https:github.comckolivaslrzippull211
     inreplace "configure.ac", "-f elf64", "-f macho64" if OS.mac?
 
     system "autoreconf", "-ivf"
@@ -55,22 +55,22 @@ class Lrzip < Formula
     ]
     args << "--disable-asm" unless Hardware::CPU.intel?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "SHELL=bash"
     system "make", "install"
   end
 
   test do
-    path = testpath/"data.txt"
+    path = testpath"data.txt"
     original_contents = "." * 1000
     path.write original_contents
 
     # compress: data.txt -> data.txt.lrz
-    system bin/"lrzip", "-o", "#{path}.lrz", path
+    system bin"lrzip", "-o", "#{path}.lrz", path
     path.unlink
 
     # decompress: data.txt.lrz -> data.txt
-    system bin/"lrzip", "-d", "#{path}.lrz"
+    system bin"lrzip", "-d", "#{path}.lrz"
     assert_equal original_contents, path.read
   end
 end

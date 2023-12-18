@@ -1,11 +1,11 @@
 class Ghcup < Formula
   desc "Installer for the general purpose language Haskell"
-  homepage "https://www.haskell.org/ghcup/"
+  homepage "https:www.haskell.orgghcup"
   # There is a tarball at Hackage, but that doesn't include the shell completions.
-  url "https://ghproxy.com/https://github.com/haskell/ghcup-hs/archive/refs/tags/v0.1.20.0.tar.gz"
+  url "https:github.comhaskellghcup-hsarchiverefstagsv0.1.20.0.tar.gz"
   sha256 "9de3f367f298e9efecf9e9c2d50b828cec3af8cfd391e3b235057822b75d8fad"
   license "LGPL-3.0-only"
-  head "https://github.com/haskell/ghcup-hs.git", branch: "master"
+  head "https:github.comhaskellghcup-hs.git", branch: "master"
 
   # Upstream has retagged a version before, so we check releases instead.
   livecheck do
@@ -33,13 +33,13 @@ class Ghcup < Formula
     # `+disable-upgrade` disables the self-upgrade feature.
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+disable-upgrade"
 
-    bash_completion.install "scripts/shell-completions/bash" => "ghcup"
-    fish_completion.install "scripts/shell-completions/fish" => "ghcup.fish"
-    zsh_completion.install "scripts/shell-completions/zsh" => "_ghcup"
+    bash_completion.install "scriptsshell-completionsbash" => "ghcup"
+    fish_completion.install "scriptsshell-completionsfish" => "ghcup.fish"
+    zsh_completion.install "scriptsshell-completionszsh" => "_ghcup"
   end
 
   test do
-    assert_match "ghc", shell_output("#{bin}/ghcup list")
-    assert_match version.to_s, shell_output("#{bin}/ghcup --version")
+    assert_match "ghc", shell_output("#{bin}ghcup list")
+    assert_match version.to_s, shell_output("#{bin}ghcup --version")
   end
 end

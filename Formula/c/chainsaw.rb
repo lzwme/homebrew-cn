@@ -1,10 +1,10 @@
 class Chainsaw < Formula
   desc "Rapidly Search and Hunt through Windows Forensic Artefacts"
-  homepage "https://github.com/WithSecureLabs/chainsaw"
-  url "https://ghproxy.com/https://github.com/WithSecureLabs/chainsaw/archive/refs/tags/v2.8.1.tar.gz"
+  homepage "https:github.comWithSecureLabschainsaw"
+  url "https:github.comWithSecureLabschainsawarchiverefstagsv2.8.1.tar.gz"
   sha256 "a18d42eac91dcc7ec3db511c2dc4fee31ef746616d6c933f8d7c4093ba46b629"
   license "GPL-3.0-only"
-  head "https://github.com/WithSecureLabs/chainsaw.git", branch: "master"
+  head "https:github.comWithSecureLabschainsaw.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d988497d54186a39c84f63124f30136441bcd183f91ab535a7a283d2e911d36"
@@ -24,13 +24,13 @@ class Chainsaw < Formula
 
   test do
     mkdir "chainsaw" do
-      output = shell_output("#{bin}/chainsaw lint --kind chainsaw . 2>&1")
+      output = shell_output("#{bin}chainsaw lint --kind chainsaw . 2>&1")
       assert_match "Validated 0 detection rules out of 0", output
 
-      output = shell_output("#{bin}/chainsaw dump --json . 2>&1")
+      output = shell_output("#{bin}chainsaw dump --json . 2>&1")
       assert_match "Dumping the contents of forensic artefact", output
     end
 
-    assert_match version.to_s, shell_output("#{bin}/chainsaw --version")
+    assert_match version.to_s, shell_output("#{bin}chainsaw --version")
   end
 end

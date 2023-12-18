@@ -1,13 +1,13 @@
 class Ptex < Formula
   desc "Texture mapping system"
-  homepage "https://ptex.us/"
-  url "https://ghproxy.com/https://github.com/wdas/ptex/archive/refs/tags/v2.4.2.tar.gz"
+  homepage "https:ptex.us"
+  url "https:github.comwdasptexarchiverefstagsv2.4.2.tar.gz"
   sha256 "c8235fb30c921cfb10848f4ea04d5b662ba46886c5e32ad5137c5086f3979ee1"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class Ptex < Formula
   uses_from_macos "zlib"
 
   resource "wtest" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/wdas/ptex/v2.4.2/src/tests/wtest.cpp"
+    url "https:raw.githubusercontent.comwdasptexv2.4.2srctestswtest.cpp"
     sha256 "95c78f97421eac034401b579037b7ba4536a96f4b356f8f1bb1e87b9db752444"
   end
 
@@ -42,7 +42,7 @@ class Ptex < Formula
   test do
     resource("wtest").stage testpath
     system ENV.cxx, "wtest.cpp", "-o", "wtest", "-I#{opt_include}", "-L#{opt_lib}", "-lPtex"
-    system "./wtest"
-    system bin/"ptxinfo", "-c", "test.ptx"
+    system ".wtest"
+    system bin"ptxinfo", "-c", "test.ptx"
   end
 end

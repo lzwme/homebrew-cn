@@ -1,11 +1,11 @@
 class Yara < Formula
   desc "Malware identification and classification tool"
-  homepage "https://github.com/VirusTotal/yara/"
-  url "https://ghproxy.com/https://github.com/VirusTotal/yara/archive/refs/tags/v4.3.2.tar.gz"
+  homepage "https:github.comVirusTotalyara"
+  url "https:github.comVirusTotalyaraarchiverefstagsv4.3.2.tar.gz"
   sha256 "a9587a813dc00ac8cdcfd6646d7f1c172f730cda8046ce849dfea7d3f6600b15"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/VirusTotal/yara.git", branch: "master"
+  head "https:github.comVirusTotalyara.git", branch: "master"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -37,8 +37,8 @@ class Yara < Formula
   depends_on "protobuf-c"
 
   def install
-    system "./bootstrap.sh"
-    system "./configure", "--disable-silent-rules",
+    system ".bootstrap.sh"
+    system ".configure", "--disable-silent-rules",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-dotnet",
@@ -51,7 +51,7 @@ class Yara < Formula
   end
 
   test do
-    rules = testpath/"commodore.yara"
+    rules = testpath"commodore.yara"
     rules.write <<~EOS
       rule chrout {
         meta:
@@ -64,9 +64,9 @@ class Yara < Formula
       }
     EOS
 
-    program = testpath/"zero.prg"
+    program = testpath"zero.prg"
     program.binwrite [0x00, 0xc0, 0xa9, 0x30, 0x4c, 0xd2, 0xff].pack("C*")
 
-    assert_equal "chrout #{program}", shell_output("#{bin}/yara #{rules} #{program}").strip
+    assert_equal "chrout #{program}", shell_output("#{bin}yara #{rules} #{program}").strip
   end
 end

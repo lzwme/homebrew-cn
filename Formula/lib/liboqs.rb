@@ -1,7 +1,7 @@
 class Liboqs < Formula
   desc "Library for quantum-safe cryptography"
-  homepage "https://openquantumsafe.org/"
-  url "https://ghproxy.com/https://github.com/open-quantum-safe/liboqs/archive/refs/tags/0.9.0.tar.gz"
+  homepage "https:openquantumsafe.org"
+  url "https:github.comopen-quantum-safeliboqsarchiverefstags0.9.0.tar.gz"
   sha256 "e6940b4d6dd631e88a2e42f137d12dc59babbd5073751846cabfb4221ece7ad0"
   license "MIT"
 
@@ -41,11 +41,11 @@ class Liboqs < Formula
   end
 
   test do
-    cp pkgshare/"tests/example_kem.c", "test.c"
+    cp pkgshare"testsexample_kem.c", "test.c"
     system ENV.cc, "test.c",
                   "-I#{Formula["openssl@3"].include}", "-I#{include}",
                   "-L#{Formula["openssl@3"].lib}", "-L#{lib}",
                   "-loqs", "-lssl", "-lcrypto", "-o", "test"
-    assert_match "operations completed", shell_output("./test")
+    assert_match "operations completed", shell_output(".test")
   end
 end

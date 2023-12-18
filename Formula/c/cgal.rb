@@ -1,7 +1,7 @@
 class Cgal < Formula
   desc "Computational Geometry Algorithms Library"
-  homepage "https://www.cgal.org/"
-  url "https://ghproxy.com/https://github.com/CGAL/cgal/releases/download/v5.6/CGAL-5.6.tar.xz"
+  homepage "https:www.cgal.org"
+  url "https:github.comCGALcgalreleasesdownloadv5.6CGAL-5.6.tar.xz"
   sha256 "dcab9b08a50a06a7cc2cc69a8a12200f8d8f391b9b8013ae476965c10b45161f"
   license "GPL-3.0-or-later"
 
@@ -41,14 +41,14 @@ class Cgal < Formula
   end
 
   test do
-    # https://doc.cgal.org/latest/Triangulation_2/Triangulation_2_2draw_triangulation_2_8cpp-example.html and  https://doc.cgal.org/latest/Algebraic_foundations/Algebraic_foundations_2interoperable_8cpp-example.html
-    (testpath/"surprise.cpp").write <<~EOS
-      #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
-      #include <CGAL/Triangulation_2.h>
-      #include <CGAL/draw_triangulation_2.h>
-      #include <CGAL/basic.h>
-      #include <CGAL/Coercion_traits.h>
-      #include <CGAL/IO/io.h>
+    # https:doc.cgal.orglatestTriangulation_2Triangulation_2_2draw_triangulation_2_8cpp-example.html and  https:doc.cgal.orglatestAlgebraic_foundationsAlgebraic_foundations_2interoperable_8cpp-example.html
+    (testpath"surprise.cpp").write <<~EOS
+      #include <CGALExact_predicates_inexact_constructions_kernel.h>
+      #include <CGALTriangulation_2.h>
+      #include <CGALdraw_triangulation_2.h>
+      #include <CGALbasic.h>
+      #include <CGALCoercion_traits.h>
+      #include <CGALIOio.h>
       #include <fstream>
       typedef CGAL::Exact_predicates_inexact_constructions_kernel K;
       typedef CGAL::Triangulation_2<K>                            Triangulation;
@@ -66,17 +66,17 @@ class Cgal < Formula
       int main(int argc, char**) {
         std::cout<< binary_func(double(3), int(5)) << std::endl;
         std::cout<< binary_func(int(3), double(5)) << std::endl;
-        std::ifstream in("data/triangulation_prog1.cin");
+        std::ifstream in("datatriangulation_prog1.cin");
         std::istream_iterator<Point> begin(in);
         std::istream_iterator<Point> end;
         Triangulation t;
         t.insert(begin, end);
-        if(argc == 3) // do not test Qt5 at runtime
+        if(argc == 3)  do not test Qt5 at runtime
           CGAL::draw(t);
         return EXIT_SUCCESS;
        }
     EOS
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.1...3.15)
       find_package(CGAL COMPONENTS Qt5)
       add_definitions(-DCGAL_USE_BASIC_VIEWER -DQT_NO_KEYWORDS)
@@ -85,10 +85,10 @@ class Cgal < Formula
       target_include_directories(surprise BEFORE PUBLIC #{Formula["qt@5"].opt_include})
       target_link_libraries(surprise PUBLIC CGAL::CGAL_Qt5)
     EOS
-    system "cmake", "-L", "-DQt5_DIR=#{Formula["qt@5"].opt_lib}/cmake/Qt5",
+    system "cmake", "-L", "-DQt5_DIR=#{Formula["qt@5"].opt_lib}cmakeQt5",
            "-DCMAKE_PREFIX_PATH=#{Formula["qt@5"].opt_lib}",
-           "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}/lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
+           "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}lib", "-DCMAKE_PREFIX_PATH=#{prefix}", "."
     system "cmake", "--build", ".", "-v"
-    assert_equal "15\n15", shell_output("./surprise").chomp
+    assert_equal "15\n15", shell_output(".surprise").chomp
   end
 end

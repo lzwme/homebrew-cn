@@ -1,15 +1,15 @@
 class Liblo < Formula
   desc "Lightweight Open Sound Control implementation"
-  homepage "https://liblo.sourceforge.net/"
+  homepage "https:liblo.sourceforge.net"
   license "LGPL-2.1"
 
   stable do
-    url "https://downloads.sourceforge.net/project/liblo/liblo/0.31/liblo-0.31.tar.gz"
+    url "https:downloads.sourceforge.netprojectlibloliblo0.31liblo-0.31.tar.gz"
     sha256 "2b4f446e1220dcd624ecd8405248b08b7601e9a0d87a0b94730c2907dbccc750"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -30,7 +30,7 @@ class Liblo < Formula
   end
 
   head do
-    url "https://git.code.sf.net/p/liblo/git.git", branch: "master"
+    url "https:git.code.sf.netpliblogit.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -45,18 +45,18 @@ class Liblo < Formula
     ]
 
     if build.head?
-      system "./autogen.sh", *args
+      system ".autogen.sh", *args
     else
-      system "./configure", *args
+      system ".configure", *args
     end
 
     system "make", "install"
   end
 
   test do
-    (testpath/"lo_version.c").write <<~EOS
+    (testpath"lo_version.c").write <<~EOS
       #include <stdio.h>
-      #include "lo/lo.h"
+      #include "lolo.h"
       int main() {
         char version[6];
         lo_version(version, 6, 0, 0, 0, 0, 0, 0, 0);
@@ -65,7 +65,7 @@ class Liblo < Formula
       }
     EOS
     system ENV.cc, "lo_version.c", "-I#{include}", "-L#{lib}", "-llo", "-o", "lo_version"
-    lo_version = `./lo_version`
+    lo_version = `.lo_version`
     assert_equal version.to_str, lo_version
   end
 end

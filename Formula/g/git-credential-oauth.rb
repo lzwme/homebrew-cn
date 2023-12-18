@@ -1,10 +1,10 @@
 class GitCredentialOauth < Formula
   desc "Git credential helper that authenticates in browser using OAuth"
-  homepage "https://github.com/hickford/git-credential-oauth"
-  url "https://ghproxy.com/https://github.com/hickford/git-credential-oauth/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:github.comhickfordgit-credential-oauth"
+  url "https:github.comhickfordgit-credential-oautharchiverefstagsv0.11.0.tar.gz"
   sha256 "324dd0c7d2692c6bc61c8f054fe3870a45584720502f765e8faa88811b7167cc"
   license "Apache-2.0"
-  head "https://github.com/hickford/git-credential-oauth.git", branch: "main"
+  head "https:github.comhickfordgit-credential-oauth.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -24,6 +24,6 @@ class GitCredentialOauth < Formula
   end
 
   test do
-    assert_match "git-credential-oauth #{version}", shell_output("#{bin}/git-credential-oauth -verbose 2>&1", 2)
+    assert_match "git-credential-oauth #{version}", shell_output("#{bin}git-credential-oauth -verbose 2>&1", 2)
   end
 end

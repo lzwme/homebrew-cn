@@ -1,11 +1,11 @@
 class Julia < Formula
   desc "Fast, Dynamic Programming Language"
-  homepage "https://julialang.org/"
+  homepage "https:julialang.org"
   # Use the `-full` tarball to avoid having to download during the build.
-  url "https://ghproxy.com/https://github.com/JuliaLang/julia/releases/download/v1.9.4/julia-1.9.4-full.tar.gz"
+  url "https:github.comJuliaLangjuliareleasesdownloadv1.9.4julia-1.9.4-full.tar.gz"
   sha256 "61843b9647fd06d3b2994f3277a64de1cb5a5a5297d930b8c8e3bc0e93740024"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
-  head "https://github.com/JuliaLang/julia.git", branch: "master"
+  head "https:github.comJuliaLangjulia.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "f7190a479a0c6fd8539631d215505652591e5795f2388b999330f5657890b214"
@@ -18,7 +18,7 @@ class Julia < Formula
 
   depends_on "cmake" => :build # Needed to build LLVM
   # TODO: Use system `suite-sparse` when `julia` supports v7.
-  # PR ref: https://github.com/JuliaLang/julia/pull/48977
+  # PR ref: https:github.comJuliaLangjuliapull48977
   depends_on "suite-sparse" => :test # Check bundled copy is used
   depends_on "ca-certificates"
   depends_on "curl"
@@ -48,15 +48,15 @@ class Julia < Formula
   fails_with gcc: "5"
 
   # Link against libgcc_s.1.1.dylib, not libgcc_s.1.dylib
-  # https://github.com/JuliaLang/julia/issues/48056
+  # https:github.comJuliaLangjuliaissues48056
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/202ccbabd44bd5ab02fbdee2f51f87bb88d74417/julia/libgcc_s-1.8.5.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches202ccbabd44bd5ab02fbdee2f51f87bb88d74417julialibgcc_s-1.8.5.diff"
     sha256 "1eea77d8024ad8bc9c733a0e0770661bc08228d335b20c4696350ed5dfdab29a"
   end
 
   def install
     # Build documentation available at
-    # https://github.com/JuliaLang/julia/blob/v#{version}/doc/build/build.md
+    # https:github.comJuliaLangjuliablobv#{version}docbuildbuild.md
     args = %W[
       prefix=#{prefix}
       sysconfdir=#{etc}
@@ -91,7 +91,7 @@ class Julia < Formula
     args << "MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.
-    # Values adapted from https://github.com/JuliaCI/julia-buildbot/blob/master/master/inventory.py
+    # Values adapted from https:github.comJuliaCIjulia-buildbotblobmastermasterinventory.py
     args << "MARCH=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
 
     cpu_targets = ["generic"]
@@ -103,34 +103,34 @@ class Julia < Formula
     args << "JULIA_CPU_TARGET=#{cpu_targets.join(";")}" if build.stable?
     args << "TAGGED_RELEASE_BANNER=Built by #{tap.user} (v#{pkg_version})"
 
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/julia"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}julia"
     # Help Julia find keg-only dependencies
     deps.map(&:to_formula).select(&:keg_only?).map(&:opt_lib).each do |libdir|
       ENV.append "LDFLAGS", "-Wl,-rpath,#{libdir}"
     end
 
     gcc = Formula["gcc"]
-    gcclibdir = gcc.opt_lib/"gcc/current"
+    gcclibdir = gcc.opt_lib"gcccurrent"
     if OS.mac?
       ENV.append "LDFLAGS", "-Wl,-rpath,#{gcclibdir}"
       # List these two last, since we want keg-only libraries to be found first
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
-      ENV.append "LDFLAGS", "-Wl,-rpath,/usr/lib" # Needed to find macOS zlib.
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{HOMEBREW_PREFIX}lib"
+      ENV.append "LDFLAGS", "-Wl,-rpath,usrlib" # Needed to find macOS zlib.
     else
       ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}"
     end
 
     # Remove library versions from MbedTLS_jll, nghttp2_jll and others
-    # https://git.archlinux.org/svntogit/community.git/tree/trunk/julia-hardcoded-libs.patch?h=packages/julia
+    # https:git.archlinux.orgsvntogitcommunity.gittreetrunkjulia-hardcoded-libs.patch?h=packagesjulia
     %w[MbedTLS nghttp2 LibGit2 OpenLibm].each do |dep|
-      (buildpath/"stdlib").glob("**/#{dep}_jll.jl") do |jll|
-        inreplace jll, %r{@rpath/lib(\w+)(\.\d+)*\.dylib}, "@rpath/lib\\1.dylib"
-        inreplace jll, /lib(\w+)\.so(\.\d+)*/, "lib\\1.so"
+      (buildpath"stdlib").glob("**#{dep}_jll.jl") do |jll|
+        inreplace jll, %r{@rpathlib(\w+)(\.\d+)*\.dylib}, "@rpathlib\\1.dylib"
+        inreplace jll, lib(\w+)\.so(\.\d+)*, "lib\\1.so"
       end
     end
 
     # Make Julia use a CA cert from `ca-certificates`
-    (buildpath/"usr/share/julia").install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+    (buildpath"usrsharejulia").install_symlink Formula["ca-certificates"].pkgetc"cert.pem"
 
     system "make", *args, "install"
 
@@ -138,29 +138,29 @@ class Julia < Formula
       # Replace symlinks referencing Cellar paths with ones using opt paths
       deps.reject(&:build?).map(&:to_formula).map(&:opt_lib).each do |libdir|
         libdir.glob(shared_library("*")) do |so|
-          next unless (lib/"julia"/so.basename).exist?
+          next unless (lib"julia"so.basename).exist?
 
-          ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
+          ln_sf so.relative_path_from(lib"julia"), lib"julia"
         end
       end
     end
 
-    # Create copies of the necessary gcc libraries in `buildpath/"usr/lib"`
+    # Create copies of the necessary gcc libraries in `buildpath"usrlib"`
     system "make", "-C", "deps", "USE_SYSTEM_CSL=1", "install-csl"
     # Install gcc library symlinks where Julia expects them
     gcclibdir.glob(shared_library("*")) do |so|
-      next unless (buildpath/"usr/lib"/so.basename).exist?
+      next unless (buildpath"usrlib"so.basename).exist?
 
       # Use `ln_sf` instead of `install_symlink` to avoid referencing
       # gcc's full version and revision number in the symlink path
-      ln_sf so.relative_path_from(lib/"julia"), lib/"julia"
+      ln_sf so.relative_path_from(lib"julia"), lib"julia"
     end
 
     # Some Julia packages look for libopenblas as libopenblas64_
-    (lib/"julia").install_symlink shared_library("libopenblas") => shared_library("libopenblas64_")
+    (lib"julia").install_symlink shared_library("libopenblas") => shared_library("libopenblas64_")
 
     # Keep Julia's CA cert in sync with ca-certificates'
-    pkgshare.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+    pkgshare.install_symlink Formula["ca-certificates"].pkgetc"cert.pem"
   end
 
   test do
@@ -171,12 +171,12 @@ class Julia < Formula
       --procs #{ENV.make_jobs}
     ]
 
-    assert_equal "4", shell_output("#{bin}/julia #{args.join(" ")} --print '2 + 2'").chomp
-    system bin/"julia", *args, "--eval", 'Base.runtests("core")'
+    assert_equal "4", shell_output("#{bin}julia #{args.join(" ")} --print '2 + 2'").chomp
+    system bin"julia", *args, "--eval", 'Base.runtests("core")'
 
     # Check that installing packages works.
-    # https://github.com/orgs/Homebrew/discussions/2749
-    system bin/"julia", *args, "--eval", 'using Pkg; Pkg.add("Example")'
+    # https:github.comorgsHomebrewdiscussions2749
+    system bin"julia", *args, "--eval", 'using Pkg; Pkg.add("Example")'
 
     # Check that Julia can load stdlibs that load non-Julia code.
     # Most of these also check that Julia can load Homebrew-provided libraries.
@@ -186,19 +186,19 @@ class Julia < Formula
       OpenBLAS_jll CompilerSupportLibraries_jll dSFMT_jll LibUV_jll
       LibSSH2_jll LibCURL_jll libLLVM_jll PCRE2_jll
     ]
-    system bin/"julia", *args, "--eval", "using #{jlls.join(", ")}"
+    system bin"julia", *args, "--eval", "using #{jlls.join(", ")}"
 
-    # Check that Julia can load libraries in lib/"julia".
+    # Check that Julia can load libraries in lib"julia".
     # Most of these are symlinks to Homebrew-provided libraries.
     # This also checks that these libraries can be loaded even when
     # the symlinks are broken (e.g. by version bumps).
-    libs = (lib/"julia").glob(shared_library("*"))
+    libs = (lib"julia").glob(shared_library("*"))
                         .map { |library| library.basename.to_s }
                         .reject do |name|
                           name.start_with?("sys", "libjulia-internal", "libccalltest")
                         end
 
-    (testpath/"library_test.jl").write <<~EOS
+    (testpath"library_test.jl").write <<~EOS
       using Libdl
       libraries = #{libs}
       for lib in libraries
@@ -206,6 +206,6 @@ class Julia < Formula
         @assert dlclose(handle) "Unable to close $(lib)!"
       end
     EOS
-    system bin/"julia", *args, "library_test.jl"
+    system bin"julia", *args, "library_test.jl"
   end
 end

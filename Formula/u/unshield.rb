@@ -1,11 +1,11 @@
 class Unshield < Formula
   desc "Extract files from InstallShield cabinet files"
-  homepage "https://github.com/twogood/unshield"
-  url "https://ghproxy.com/https://github.com/twogood/unshield/archive/refs/tags/1.5.1.tar.gz"
+  homepage "https:github.comtwogoodunshield"
+  url "https:github.comtwogoodunshieldarchiverefstags1.5.1.tar.gz"
   sha256 "34cd97ff1e6f764436d71676e3d6842dc7bd8e2dd5014068da5c560fe4661f60"
   license "MIT"
   revision 1
-  head "https://github.com/twogood/unshield.git", branch: "master"
+  head "https:github.comtwogoodunshield.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -36,6 +36,6 @@ class Unshield < Formula
   end
 
   test do
-    system bin/"unshield", "-e", "sjis", "-V"
+    system bin"unshield", "-e", "sjis", "-V"
   end
 end

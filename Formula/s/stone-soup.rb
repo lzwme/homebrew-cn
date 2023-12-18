@@ -1,7 +1,7 @@
 class StoneSoup < Formula
   desc "Dungeon Crawl Stone Soup: a roguelike game"
-  homepage "https://crawl.develz.org/"
-  url "https://ghproxy.com/https://github.com/crawl/crawl/archive/refs/tags/0.30.1.tar.gz"
+  homepage "https:crawl.develz.org"
+  url "https:github.comcrawlcrawlarchiverefstags0.30.1.tar.gz"
   sha256 "f7f793271eab06822b9cb3936da54a1cbe759b471347088a4d76052ac8947597"
   license "GPL-2.0-or-later"
 
@@ -17,7 +17,7 @@ class StoneSoup < Formula
 
   # Only supports Lua 5.1 and doesn't work with LuaJIT 2.1 (needs older 2.0).
   # Issues relating to using newer Lua are closed so doesn't seem planned to update,
-  # e.g. https://github.com/crawl/crawl/issues/1829#issuecomment-799492138
+  # e.g. https:github.comcrawlcrawlissues1829#issuecomment-799492138
   deprecate! date: "2023-02-12", because: "uses deprecated `lua@5.1`"
 
   depends_on "pkg-config" => :build
@@ -32,8 +32,8 @@ class StoneSoup < Formula
   def install
     ENV.cxx11
 
-    cd "crawl-ref/source" do
-      File.write("util/release_ver", version.to_s)
+    cd "crawl-refsource" do
+      File.write("utilrelease_ver", version.to_s)
       args = %W[
         prefix=#{prefix}
         DATADIR=data
@@ -62,13 +62,13 @@ class StoneSoup < Formula
 
       # The makefile has trouble locating the developer tools for
       # CLT-only systems, so we set these manually. Reported upstream:
-      # https://crawl.develz.org/mantis/view.php?id=7625
+      # https:crawl.develz.orgmantisview.php?id=7625
       #
       # On 10.9, stone-soup will try to use xcrun and fail due to an empty
       # DEVELOPER_DIR
       if OS.mac?
         devdir = MacOS::Xcode.prefix.to_s
-        devdir += "/" unless MacOS::Xcode.installed?
+        devdir += "" unless MacOS::Xcode.installed?
 
         args += %W[
           DEVELOPER_DIR=#{devdir}
@@ -82,7 +82,7 @@ class StoneSoup < Formula
   end
 
   test do
-    output = shell_output("#{bin}/crawl --version")
+    output = shell_output("#{bin}crawl --version")
     assert_match "Crawl version #{version}", output
   end
 end

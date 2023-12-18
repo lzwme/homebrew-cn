@@ -1,7 +1,7 @@
 class Logrotate < Formula
   desc "Rotates, compresses, and mails system logs"
-  homepage "https://github.com/logrotate/logrotate"
-  url "https://ghproxy.com/https://github.com/logrotate/logrotate/releases/download/3.21.0/logrotate-3.21.0.tar.xz"
+  homepage "https:github.comlogrotatelogrotate"
+  url "https:github.comlogrotatelogrotatereleasesdownload3.21.0logrotate-3.21.0.tar.xz"
   sha256 "8fa12015e3b8415c121fc9c0ca53aa872f7b0702f543afda7e32b6c4900f6516"
   license "GPL-2.0"
 
@@ -20,33 +20,33 @@ class Logrotate < Formula
   depends_on "popt"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
-                          "--with-compress-command=/usr/bin/gzip",
-                          "--with-uncompress-command=/usr/bin/gunzip",
-                          "--with-state-file-path=#{var}/lib/logrotate.status"
+                          "--with-compress-command=usrbingzip",
+                          "--with-uncompress-command=usrbingunzip",
+                          "--with-state-file-path=#{var}liblogrotate.status"
     system "make", "install"
 
-    inreplace "examples/logrotate.conf", "/etc/logrotate.d", "#{etc}/logrotate.d"
-    etc.install "examples/logrotate.conf" => "logrotate.conf"
-    (etc/"logrotate.d").mkpath
+    inreplace "exampleslogrotate.conf", "etclogrotate.d", "#{etc}logrotate.d"
+    etc.install "exampleslogrotate.conf" => "logrotate.conf"
+    (etc"logrotate.d").mkpath
   end
 
   service do
-    run [opt_sbin/"logrotate", etc/"logrotate.conf"]
+    run [opt_sbin"logrotate", etc"logrotate.conf"]
     run_type :cron
     cron "25 6 * * *"
   end
 
   test do
-    (testpath/"test.log").write("testlograndomstring")
-    (testpath/"testlogrotate.conf").write <<~EOS
-      #{testpath}/test.log {
+    (testpath"test.log").write("testlograndomstring")
+    (testpath"testlogrotate.conf").write <<~EOS
+      #{testpath}test.log {
         size 1
         copytruncate
       }
     EOS
-    system "#{sbin}/logrotate", "-s", "logstatus", "testlogrotate.conf"
+    system "#{sbin}logrotate", "-s", "logstatus", "testlogrotate.conf"
     assert(File.size?("test.log").nil?, "File is not zero length!")
   end
 end

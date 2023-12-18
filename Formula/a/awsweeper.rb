@@ -1,10 +1,10 @@
 class Awsweeper < Formula
   desc "CLI tool for cleaning your AWS account"
-  homepage "https://github.com/jckuester/awsweeper/"
-  url "https://ghproxy.com/https://github.com/jckuester/awsweeper/archive/refs/tags/v0.12.0.tar.gz"
+  homepage "https:github.comjckuesterawsweeper"
+  url "https:github.comjckuesterawsweeperarchiverefstagsv0.12.0.tar.gz"
   sha256 "43468e1af20dab757da449b07330f7b16cbb9f77e130782f88f30a7744385c5e"
   license "MPL-2.0"
-  head "https://github.com/jckuester/awsweeper.git", branch: "master"
+  head "https:github.comjckuesterawsweeper.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5010b86841f22dddef64df08c14003a9f8b67be8799a2fd2c25f123b4d87404"
@@ -24,15 +24,15 @@ class Awsweeper < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/jckuester/awsweeper/internal.version=#{version}
-      -X github.com/jckuester/awsweeper/internal.date=#{time.strftime("%F")}
+      -X github.comjckuesterawsweeperinternal.version=#{version}
+      -X github.comjckuesterawsweeperinternal.date=#{time.strftime("%F")}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    (testpath/"filter.yml").write <<~EOS
+    (testpath"filter.yml").write <<~EOS
       aws_autoscaling_group:
       aws_instance:
         - tags:
@@ -40,6 +40,6 @@ class Awsweeper < Formula
     EOS
 
     assert_match "Error: failed to configure provider (name=aws",
-      shell_output("#{bin}/awsweeper --dry-run #{testpath}/filter.yml 2>&1", 1)
+      shell_output("#{bin}awsweeper --dry-run #{testpath}filter.yml 2>&1", 1)
   end
 end

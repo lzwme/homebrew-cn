@@ -1,7 +1,7 @@
 class Nexus < Formula
   desc "Repository manager for binary software components"
-  homepage "https://www.sonatype.org/"
-  url "https://ghproxy.com/https://github.com/sonatype/nexus-public/archive/refs/tags/release-3.38.1-01.tar.gz"
+  homepage "https:www.sonatype.org"
+  url "https:github.comsonatypenexus-publicarchiverefstagsrelease-3.38.1-01.tar.gz"
   sha256 "83b3a39e4d350d9786ce47410607fdd9ec04fca4f8451c0a763d8e22c5639e87"
   license "EPL-1.0"
 
@@ -10,7 +10,7 @@ class Nexus < Formula
   # one of these major versions depending on which was published most recently.
   livecheck do
     url :stable
-    regex(/^(?:release[._-])?v?(\d+(?:[.-]\d+)+)$/i)
+    regex(^(?:release[._-])?v?(\d+(?:[.-]\d+)+)$i)
   end
 
   bottle do
@@ -30,39 +30,39 @@ class Nexus < Formula
   def install
     ENV["JAVA_HOME"] = Formula["openjdk@8"].opt_prefix
     system "mvn", "install", "-DskipTests"
-    system "unzip", "-o", "-d", "target", "assemblies/nexus-base-template/target/nexus-base-template-#{version}.zip"
+    system "unzip", "-o", "-d", "target", "assembliesnexus-base-templatetargetnexus-base-template-#{version}.zip"
 
-    rm_f Dir["target/nexus-base-template-#{version}/bin/*.bat"]
-    rm_f "target/nexus-base-template-#{version}/bin/contrib"
-    libexec.install Dir["target/nexus-base-template-#{version}/*"]
+    rm_f Dir["targetnexus-base-template-#{version}bin*.bat"]
+    rm_f "targetnexus-base-template-#{version}bincontrib"
+    libexec.install Dir["targetnexus-base-template-#{version}*"]
 
     env = {
       JAVA_HOME:  Formula["openjdk@8"].opt_prefix,
-      KARAF_DATA: "${NEXUS_KARAF_DATA:-#{var}/nexus}",
-      KARAF_LOG:  "#{var}/log/nexus",
-      KARAF_ETC:  "#{etc}/nexus",
+      KARAF_DATA: "${NEXUS_KARAF_DATA:-#{var}nexus}",
+      KARAF_LOG:  "#{var}lognexus",
+      KARAF_ETC:  "#{etc}nexus",
     }
 
-    (bin/"nexus").write_env_script libexec/"bin/nexus", env
+    (bin"nexus").write_env_script libexec"binnexus", env
   end
 
   def post_install
-    mkdir_p "#{var}/log/nexus" unless (var/"log/nexus").exist?
-    mkdir_p "#{var}/nexus" unless (var/"nexus").exist?
-    mkdir "#{etc}/nexus" unless (etc/"nexus").exist?
+    mkdir_p "#{var}lognexus" unless (var"lognexus").exist?
+    mkdir_p "#{var}nexus" unless (var"nexus").exist?
+    mkdir "#{etc}nexus" unless (etc"nexus").exist?
   end
 
   service do
-    run [opt_bin/"nexus", "start"]
+    run [opt_bin"nexus", "start"]
   end
 
   test do
     mkdir "data"
     fork do
-      ENV["NEXUS_KARAF_DATA"] = testpath/"data"
-      exec "#{bin}/nexus", "server"
+      ENV["NEXUS_KARAF_DATA"] = testpath"data"
+      exec "#{bin}nexus", "server"
     end
     sleep 100
-    assert_match "<title>Nexus Repository Manager</title>", shell_output("curl --silent --fail http://localhost:8081")
+    assert_match "<title>Nexus Repository Manager<title>", shell_output("curl --silent --fail http:localhost:8081")
   end
 end

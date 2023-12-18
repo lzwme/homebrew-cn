@@ -1,7 +1,7 @@
 class TrzszGo < Formula
-  desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
-  homepage "https://trzsz.github.io"
-  url "https://ghproxy.com/https://github.com/trzsz/trzsz-go/archive/refs/tags/v1.1.6.tar.gz"
+  desc "Simple file transfer tools, similar to lrzsz (rzsz), and compatible with tmux"
+  homepage "https:trzsz.github.io"
+  url "https:github.comtrzsztrzsz-goarchiverefstagsv1.1.6.tar.gz"
   sha256 "df407875150a602d4869d9ac8d1ece690fe4cae5a95bc481fc546085ff8969c8"
   license "MIT"
 
@@ -18,20 +18,20 @@ class TrzszGo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"trz"), "./cmd/trz"
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tsz"), "./cmd/tsz"
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"trzsz"), "./cmd/trzsz"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"trz"), ".cmdtrz"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tsz"), ".cmdtsz"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"trzsz"), ".cmdtrzsz"
   end
 
   test do
-    assert_match "trzsz go #{version}", shell_output("#{bin}/trzsz --version")
-    assert_match "trz (trzsz) go #{version}", shell_output("#{bin}/trz --version 2>&1")
-    assert_match "tsz (trzsz) go #{version}", shell_output("#{bin}/tsz --version 2>&1")
+    assert_match "trzsz go #{version}", shell_output("#{bin}trzsz --version")
+    assert_match "trz (trzsz) go #{version}", shell_output("#{bin}trz --version 2>&1")
+    assert_match "tsz (trzsz) go #{version}", shell_output("#{bin}tsz --version 2>&1")
 
-    assert_match "Wrapping command line to support trzsz", shell_output("#{bin}/trzsz 2>&1")
+    assert_match "Wrapping command line to support trzsz", shell_output("#{bin}trzsz 2>&1")
     touch "tmpfile"
-    assert_match "Not a directory", shell_output("#{bin}/trz tmpfile 2>&1", 254)
+    assert_match "Not a directory", shell_output("#{bin}trz tmpfile 2>&1", 254)
     rm "tmpfile"
-    assert_match "No such file", shell_output("#{bin}/tsz tmpfile 2>&1", 255)
+    assert_match "No such file", shell_output("#{bin}tsz tmpfile 2>&1", 255)
   end
 end

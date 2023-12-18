@@ -1,13 +1,13 @@
 class Ucl < Formula
   desc "Data compression library with small memory footprint"
-  homepage "https://www.oberhumer.com/opensource/ucl/"
-  url "https://www.oberhumer.com/opensource/ucl/download/ucl-1.03.tar.gz"
+  homepage "https:www.oberhumer.comopensourceucl"
+  url "https:www.oberhumer.comopensourceucldownloaducl-1.03.tar.gz"
   sha256 "b865299ffd45d73412293369c9754b07637680e5c826915f097577cd27350348"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://www.oberhumer.com/opensource/ucl/download/"
-    regex(/href=.*?ucl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.oberhumer.comopensourceucldownload"
+    regex(href=.*?ucl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -28,32 +28,32 @@ class Ucl < Formula
   depends_on "automake" => :build
 
   def install
-    # Workaround for ancient ./configure file
+    # Workaround for ancient .configure file
     # Normally it would be cleaner to run "autoremake" to get a more modern one,
     # but the tarball doesn't seem to include all of the local m4 files that were used
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
     # Workaround for ancient config.sub files not recognising aarch64 macos.
     # As above, autoremake would be nicer, but that does not work.
     %w[config.guess config.sub].each do |fn|
-      cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}",
-         "acconfig/#{fn}"
+      cp "#{Formula["automake"].opt_prefix}shareautomake-#{Formula["automake"].version.major_minor}#{fn}",
+         "acconfig#{fn}"
     end
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      // simplified version of
-      // https://github.com/korczis/ucl/blob/HEAD/examples/simple.c
+    (testpath"test.c").write <<~EOS
+       simplified version of
+       https:github.comkorczisuclblobHEADexamplessimple.c
       #include <stdio.h>
-      #include <ucl/ucl.h>
-      #include <ucl/uclconf.h>
+      #include <uclucl.h>
+      #include <ucluclconf.h>
       #define IN_LEN      (128*1024L)
-      #define OUT_LEN     (IN_LEN + IN_LEN / 8 + 256)
+      #define OUT_LEN     (IN_LEN + IN_LEN  8 + 256)
       int main(int argc, char *argv[]) {
           int r;
           ucl_byte *in, *out;
@@ -78,6 +78,6 @@ class Ucl < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lucl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

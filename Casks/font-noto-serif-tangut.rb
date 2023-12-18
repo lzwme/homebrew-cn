@@ -2,10 +2,10 @@ cask "font-noto-serif-tangut" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notoseriftangut/NotoSerifTangut-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotoseriftangutNotoSerifTangut-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Serif Tangut"
-  homepage "https://fonts.google.com/specimen/Noto+Serif+Tangut"
+  homepage "https:fonts.google.comspecimenNoto+Serif+Tangut"
 
   font "NotoSerifTangut-Regular.ttf"
 

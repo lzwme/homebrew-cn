@@ -1,10 +1,10 @@
 class Sslscan < Formula
-  desc "Test SSL/TLS enabled services to discover supported cipher suites"
-  homepage "https://github.com/rbsec/sslscan"
-  url "https://ghproxy.com/https://github.com/rbsec/sslscan/archive/refs/tags/2.1.2.tar.gz"
+  desc "Test SSLTLS enabled services to discover supported cipher suites"
+  homepage "https:github.comrbsecsslscan"
+  url "https:github.comrbsecsslscanarchiverefstags2.1.2.tar.gz"
   sha256 "c218d21fdf0b57dfc7c7b110ff32d9c7e77eb8c631b670a2c0fc92a80ded294d"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
-  head "https://github.com/rbsec/sslscan.git", branch: "master"
+  head "https:github.comrbsecsslscan.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "91e65ff070dca7b5773b4bdcc7ed3de0ce50d908687216ed0daa6563d8b8bc17"
@@ -24,7 +24,7 @@ class Sslscan < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/sslscan --version")
-    system "#{bin}/sslscan", "google.com"
+    assert_match version.to_s, shell_output("#{bin}sslscan --version")
+    system "#{bin}sslscan", "google.com"
   end
 end

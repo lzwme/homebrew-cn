@@ -1,10 +1,10 @@
 class Datatype99 < Formula
   desc "Algebraic data types for C99"
-  homepage "https://github.com/Hirrolot/datatype99"
-  url "https://ghproxy.com/https://github.com/Hirrolot/datatype99/archive/refs/tags/v1.6.4.tar.gz"
+  homepage "https:github.comHirrolotdatatype99"
+  url "https:github.comHirrolotdatatype99archiverefstagsv1.6.4.tar.gz"
   sha256 "f8488decc7ab035e3af77ee62e64fc678d5cb57831457f7270efe003e63d6f09"
   license "MIT"
-  head "https://github.com/Hirrolot/datatype99.git", branch: "master"
+  head "https:github.comHirrolotdatatype99.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "f9efbcdf97d7f734efe0cb3f95c22993896bb83c7ed797f44e391878bc98611c"
@@ -17,7 +17,7 @@ class Datatype99 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <datatype99.h>
       #include <stdio.h>
 
@@ -47,6 +47,6 @@ class Datatype99 < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["metalang99"].opt_include}", "-o", "test"
-    assert_equal "28", shell_output("./test")
+    assert_equal "28", shell_output(".test")
   end
 end

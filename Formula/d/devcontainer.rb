@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Devcontainer < Formula
   desc "Reference implementation for the Development Containers specification"
-  homepage "https://containers.dev"
-  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.54.2.tgz"
+  homepage "https:containers.dev"
+  url "https:registry.npmjs.org@devcontainerscli-cli-0.54.2.tgz"
   sha256 "ed12dd14da20fce2cfd6d9b4165d53e83c9086dff38e995275d90c65f2d4d4da"
   license "MIT"
 
@@ -21,20 +21,20 @@ class Devcontainer < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    ENV["DOCKER_HOST"] = "/dev/null"
-    # Modified .devcontainer/devcontainer.json from CLI example:
-    # https://github.com/devcontainers/cli#try-out-the-cli
-    (testpath/".devcontainer.json").write <<~EOS
+    ENV["DOCKER_HOST"] = "devnull"
+    # Modified .devcontainerdevcontainer.json from CLI example:
+    # https:github.comdevcontainerscli#try-out-the-cli
+    (testpath".devcontainer.json").write <<~EOS
       {
         "name": "devcontainer-homebrew-test",
-        "image": "mcr.microsoft.com/devcontainers/rust:0-1-bullseye"
+        "image": "mcr.microsoft.comdevcontainersrust:0-1-bullseye"
       }
     EOS
-    output = shell_output("#{bin}/devcontainer up --workspace-folder .", 1)
+    output = shell_output("#{bin}devcontainer up --workspace-folder .", 1)
     assert_match '{"outcome":"error","message":"', output
   end
 end

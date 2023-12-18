@@ -2,11 +2,11 @@ cask "openboard" do
   version "1.7.0"
   sha256 "3a98890712c8c8a517a33d92dbd00c1d4d8b556443bd5bc8cf7e0c459273d05f"
 
-  url "https://ghproxy.com/https://github.com/OpenBoard-org/OpenBoard/releases/download/v#{version}/OpenBoard-#{version}.dmg",
-      verified: "github.com/OpenBoard-org/OpenBoard/"
+  url "https:github.comOpenBoard-orgOpenBoardreleasesdownloadv#{version}OpenBoard-#{version}.dmg",
+      verified: "github.comOpenBoard-orgOpenBoard"
   name "OpenBoard"
   desc "Interactive whiteboard application"
-  homepage "https://openboard.ch/index.en.html"
+  homepage "https:openboard.chindex.en.html"
 
   livecheck do
     url :url
@@ -16,9 +16,9 @@ cask "openboard" do
   app "OpenBoard.app"
 
   zap trash: [
-    "~/Library/Application Support/OpenBoard",
-    "~/Movies/OpenBoard",
-    "~/Music/OpenBoard",
-    "~/Pictures/OpenBoard",
+    "~LibraryApplication SupportOpenBoard",
+    "~MoviesOpenBoard",
+    "~MusicOpenBoard",
+    "~PicturesOpenBoard",
   ]
 end

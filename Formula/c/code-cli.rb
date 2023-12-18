@@ -1,10 +1,10 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
-  homepage "https://github.com/microsoft/vscode"
-  url "https://ghproxy.com/https://github.com/microsoft/vscode/archive/refs/tags/1.85.1.tar.gz"
+  homepage "https:github.commicrosoftvscode"
+  url "https:github.commicrosoftvscodearchiverefstags1.85.1.tar.gz"
   sha256 "b16d2058a8961bb2753f6ff0d697694a670ff6f926b4b6ac63106c6eab168eca"
   license "MIT"
-  head "https://github.com/microsoft/vscode.git", branch: "main"
+  head "https:github.commicrosoftvscode.git", branch: "main"
 
   livecheck do
     url :stable
@@ -34,7 +34,7 @@ class CodeCli < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https://crates.io/crates/openssl#manual-configuration
+    # https:crates.iocratesopenssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
@@ -56,17 +56,17 @@ class CodeCli < Formula
 
   test do
     assert_match "Successfully removed all unused servers",
-      shell_output("#{bin}/code tunnel prune")
-    assert_match version.to_s, shell_output("#{bin}/code --version")
+      shell_output("#{bin}code tunnel prune")
+    assert_match version.to_s, shell_output("#{bin}code --version")
 
     linked_libraries = [
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ]
-    linked_libraries << (Formula["openssl@3"].opt_lib/shared_library("libcrypto")) if OS.mac?
+    linked_libraries << (Formula["openssl@3"].opt_libshared_library("libcrypto")) if OS.mac?
 
     linked_libraries.each do |library|
-      assert check_binary_linkage(bin/"code", library),
+      assert check_binary_linkage(bin"code", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

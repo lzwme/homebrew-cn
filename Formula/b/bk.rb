@@ -1,10 +1,10 @@
 class Bk < Formula
   desc "Terminal EPUB Reader"
-  homepage "https://github.com/aeosynth/bk"
-  url "https://ghproxy.com/https://github.com/aeosynth/bk/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:github.comaeosynthbk"
+  url "https:github.comaeosynthbkarchiverefstagsv0.6.0.tar.gz"
   sha256 "c720c8e81e86709f8543ca1a97a3c30b3bb33d55692a536cefed0ad2e3dfabcd"
   license "MIT"
-  head "https://github.com/aeosynth/bk.git", branch: "master"
+  head "https:github.comaeosynthbk.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3643df6af656b1c215b983746a6982986e436f68ea5800e63b876579d24c2621"
@@ -24,7 +24,7 @@ class Bk < Formula
 
   test do
     test_epub = test_fixtures("test.epub")
-    output = pipe_output("#{bin}/bk --meta #{test_epub}")
+    output = pipe_output("#{bin}bk --meta #{test_epub}")
     assert_match "language: en", output
   end
 end

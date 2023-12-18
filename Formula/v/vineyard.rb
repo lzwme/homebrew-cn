@@ -2,8 +2,8 @@ class Vineyard < Formula
   include Language::Python::Virtualenv
 
   desc "In-memory immutable data manager. (Project under CNCF)"
-  homepage "https://v6d.io"
-  url "https://ghproxy.com/https://github.com/v6d-io/v6d/releases/download/v0.19.1/v6d-0.19.1.tar.gz"
+  homepage "https:v6d.io"
+  url "https:github.comv6d-iov6dreleasesdownloadv0.19.1v6d-0.19.1.tar.gz"
   sha256 "8da78864003cc559825cde30aa1de41ecf5c653ccc23a699c15a5b02796e86ca"
   license "Apache-2.0"
 
@@ -37,13 +37,13 @@ class Vineyard < Formula
 
   fails_with gcc: "5"
 
-  # upstream issue report, https://github.com/v6d-io/v6d/issues/1652
+  # upstream issue report, https:github.comv6d-iov6dissues1652
   patch :DATA
 
   def install
     python = "python3.12"
     # LLVM is keg-only.
-    ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefix/Language::Python.site_packages(python)
+    ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefixLanguage::Python.site_packages(python)
 
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
@@ -66,11 +66,11 @@ class Vineyard < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include <iostream>
       #include <memory>
 
-      #include <vineyard/client/client.h>
+      #include <vineyardclientclient.h>
 
       int main(int argc, char **argv) {
         vineyard::Client client;
@@ -84,14 +84,14 @@ class Vineyard < Formula
       }
     EOS
 
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.5)
 
       project(vineyard-test LANGUAGES C CXX)
 
       find_package(vineyard REQUIRED)
 
-      add_executable(vineyard-test ${CMAKE_CURRENT_SOURCE_DIR}/test.cc)
+      add_executable(vineyard-test ${CMAKE_CURRENT_SOURCE_DIR}test.cc)
       target_include_directories(vineyard-test PRIVATE ${VINEYARD_INCLUDE_DIRS})
       target_link_libraries(vineyard-test PRIVATE ${VINEYARD_LIBRARIES})
     EOS
@@ -102,25 +102,25 @@ class Vineyard < Formula
 
     # Remove Homebrew's lib directory from LDFLAGS as it is not available during
     # `shell_output`.
-    ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}/lib"
+    ENV.remove "LDFLAGS", "-L#{HOMEBREW_PREFIX}lib"
 
     # macos AppleClang doesn't support -fopenmp
-    system "cmake", "-S", testpath, "-B", testpath/"build",
-                    "-DCMAKE_C_COMPILER=#{Formula["llvm"].bin}/clang",
-                    "-DCMAKE_CXX_COMPILER=#{Formula["llvm"].bin}/clang++",
+    system "cmake", "-S", testpath, "-B", testpath"build",
+                    "-DCMAKE_C_COMPILER=#{Formula["llvm"].bin}clang",
+                    "-DCMAKE_CXX_COMPILER=#{Formula["llvm"].bin}clang++",
                     *std_cmake_args
-    system "cmake", "--build", testpath/"build"
+    system "cmake", "--build", testpath"build"
 
     # prepare vineyardd
-    vineyardd_pid = spawn bin/"vineyardd", "--norpc",
+    vineyardd_pid = spawn bin"vineyardd", "--norpc",
                                            "--meta=local",
-                                           "--socket=#{testpath}/vineyard.sock"
+                                           "--socket=#{testpath}vineyard.sock"
 
     # sleep to let vineyardd get its wits about it
     sleep 10
 
     assert_equal("vineyard instance is: 0\n",
-                 shell_output("#{testpath}/build/vineyard-test #{testpath}/vineyard.sock"))
+                 shell_output("#{testpath}buildvineyard-test #{testpath}vineyard.sock"))
   ensure
     # clean up the vineyardd process before we leave
     Process.kill("HUP", vineyardd_pid)
@@ -128,11 +128,11 @@ class Vineyard < Formula
 end
 
 __END__
-diff --git a/modules/graph/CMakeLists.txt b/modules/graph/CMakeLists.txt
+diff --git amodulesgraphCMakeLists.txt bmodulesgraphCMakeLists.txt
 index 2e9e69f..781b11c 100644
---- a/modules/graph/CMakeLists.txt
-+++ b/modules/graph/CMakeLists.txt
-@@ -63,8 +63,10 @@ file(GLOB_RECURSE GRAPH_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}" "fragment/*.cc"
+--- amodulesgraphCMakeLists.txt
++++ bmodulesgraphCMakeLists.txt
+@@ -63,8 +63,10 @@ file(GLOB_RECURSE GRAPH_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}" "fragment*.cc"
 
  add_library(vineyard_graph ${GRAPH_SRC_FILES} ${powturbo-target-objects})
  target_add_debuginfo(vineyard_graph)

@@ -1,7 +1,7 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
-  homepage "https://slimtoolkit.org/"
-  url "https://ghproxy.com/https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.7.tar.gz"
+  homepage "https:slimtoolkit.org"
+  url "https:github.comslimtoolkitslimarchiverefstags1.40.7.tar.gz"
   sha256 "b3cbfb6a3bb36bbf1a4d2807756a759d5a9c27fe25efa576c32d6e4e0592b449"
   license "Apache-2.0"
 
@@ -22,34 +22,34 @@ class DockerSlim < Formula
 
   depends_on "go" => :build
 
-  skip_clean "bin/slim-sensor"
+  skip_clean "binslim-sensor"
 
   def install
-    system "go", "generate", "./pkg/appbom"
-    ldflags = "-s -w -X github.com/slimtoolkit/slim/pkg/version.appVersionTag=#{version}"
+    system "go", "generate", ".pkgappbom"
+    ldflags = "-s -w -X github.comslimtoolkitslimpkgversion.appVersionTag=#{version}"
     system "go", "build",
-                 *std_go_args(output: bin/"slim", ldflags: ldflags),
-                 "./cmd/slim"
+                 *std_go_args(output: bin"slim", ldflags: ldflags),
+                 ".cmdslim"
 
     # slim-sensor is a Linux binary that is used within Docker
     # containers rather than directly on the macOS host.
     ENV["GOOS"] = "linux"
     system "go", "build",
-                 *std_go_args(output: bin/"slim-sensor", ldflags: ldflags),
-                 "./cmd/slim-sensor"
-    (bin/"slim-sensor").chmod 0555
+                 *std_go_args(output: bin"slim-sensor", ldflags: ldflags),
+                 ".cmdslim-sensor"
+    (bin"slim-sensor").chmod 0555
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/slim --version")
-    system "test", "-x", bin/"slim-sensor"
+    assert_match version.to_s, shell_output("#{bin}slim --version")
+    system "test", "-x", bin"slim-sensor"
 
-    (testpath/"Dockerfile").write <<~EOS
+    (testpath"Dockerfile").write <<~EOS
       FROM alpine
       RUN apk add --no-cache curl
     EOS
 
-    output = shell_output("#{bin}/slim lint #{testpath}/Dockerfile")
+    output = shell_output("#{bin}slim lint #{testpath}Dockerfile")
     assert_match "Missing .dockerignore", output
     assert_match "Stage from latest tag", output
   end

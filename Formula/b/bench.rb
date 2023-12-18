@@ -1,18 +1,18 @@
 class Bench < Formula
   desc "Command-line benchmark tool"
-  homepage "https://github.com/Gabriella439/bench"
+  homepage "https:github.comGabriella439bench"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/Gabriella439/bench.git", branch: "main"
+  head "https:github.comGabriella439bench.git", branch: "main"
 
   stable do
-    url "https://hackage.haskell.org/package/bench-1.0.12/bench-1.0.12.tar.gz"
+    url "https:hackage.haskell.orgpackagebench-1.0.12bench-1.0.12.tar.gz"
     sha256 "a6376f4741588201ab6e5195efb1e9921bc0a899f77a5d9ac84a5db32f3ec9eb"
 
     # Use Hackage metadata revision to support GHC 9.6.
     # TODO: Remove this resource on next release along with corresponding install logic
     resource "bench.cabal" do
-      url "https://hackage.haskell.org/package/bench-1.0.12/revision/7.cabal"
+      url "https:hackage.haskell.orgpackagebench-1.0.12revision7.cabal"
       sha256 "309892b67c83b0a9da78b615edad7334c3c1a13509658453fdc6a8ba5d3d36e0"
     end
   end
@@ -45,6 +45,6 @@ class Bench < Formula
   end
 
   test do
-    assert_match(/time\s+[0-9.]+/, shell_output("#{bin}/bench pwd"))
+    assert_match(time\s+[0-9.]+, shell_output("#{bin}bench pwd"))
   end
 end

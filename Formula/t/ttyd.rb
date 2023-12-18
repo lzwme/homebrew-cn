@@ -1,11 +1,11 @@
 class Ttyd < Formula
   desc "Command-line tool for sharing terminal over the web"
-  homepage "https://tsl0922.github.io/ttyd/"
-  url "https://ghproxy.com/https://github.com/tsl0922/ttyd/archive/refs/tags/1.7.4.tar.gz"
+  homepage "https:tsl0922.github.iottyd"
+  url "https:github.comtsl0922ttydarchiverefstags1.7.4.tar.gz"
   sha256 "300d8cef4b0b32b0ec30d7bf4d3721a5d180e22607f9467a95ab7b6d9652ca9b"
   license "MIT"
   revision 1
-  head "https://github.com/tsl0922/ttyd.git", branch: "main"
+  head "https:github.comtsl0922ttyd.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "5d5221d4830ab1585b19ead0094fbd0b4adf6134e0e655bbcedd0d24a71941fe"
@@ -29,7 +29,7 @@ class Ttyd < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
-                    "-Dlibwebsockets_DIR=#{Formula["libwebsockets"].opt_lib}/cmake/libwebsockets",
+                    "-Dlibwebsockets_DIR=#{Formula["libwebsockets"].opt_lib}cmakelibwebsockets",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -38,10 +38,10 @@ class Ttyd < Formula
   test do
     port = free_port
     fork do
-      system "#{bin}/ttyd", "--port", port.to_s, "bash"
+      system "#{bin}ttyd", "--port", port.to_s, "bash"
     end
     sleep 5
 
-    system "curl", "-sI", "http://localhost:#{port}"
+    system "curl", "-sI", "http:localhost:#{port}"
   end
 end

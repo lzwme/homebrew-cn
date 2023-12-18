@@ -1,14 +1,14 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
-  homepage "https://github.com/simdutf/simdutf"
-  url "https://ghproxy.com/https://github.com/simdutf/simdutf/archive/refs/tags/v4.0.8.tar.gz"
+  homepage "https:github.comsimdutfsimdutf"
+  url "https:github.comsimdutfsimdutfarchiverefstagsv4.0.8.tar.gz"
   sha256 "bbc1b5fdfec7d0f83c6a9d24bf90d10c2a462f30aa1ced30bed72288006a2194"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/simdutf/simdutf.git", branch: "master"
+  head "https:github.comsimdutfsimdutf.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -33,10 +33,10 @@ class Simdutf < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.install "build/benchmarks/benchmark" => "sutf-benchmark"
+    bin.install "buildbenchmarksbenchmark" => "sutf-benchmark"
   end
 
   test do
-    system bin/"sutf-benchmark", "--random-utf8", "1024", "-I", "20"
+    system bin"sutf-benchmark", "--random-utf8", "1024", "-I", "20"
   end
 end

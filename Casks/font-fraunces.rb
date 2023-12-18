@@ -2,13 +2,13 @@ cask "font-fraunces" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/fraunces"
+      only_path: "oflfraunces"
   name "Fraunces"
   desc "Variable font with four axes"
-  homepage "https://fonts.google.com/specimen/Fraunces"
+  homepage "https:fonts.google.comspecimenFraunces"
 
   font "Fraunces-Italic[SOFT,WONK,opsz,wght].ttf"
   font "Fraunces[SOFT,WONK,opsz,wght].ttf"

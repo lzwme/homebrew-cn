@@ -1,7 +1,7 @@
 class PythonFilelock < Formula
   desc "Platform-independent file lock for Python"
-  homepage "https://github.com/tox-dev/filelock"
-  url "https://files.pythonhosted.org/packages/70/70/41905c80dcfe71b22fb06827b8eae65781783d4a14194bce79d16a013263/filelock-3.13.1.tar.gz"
+  homepage "https:github.comtox-devfilelock"
+  url "https:files.pythonhosted.orgpackages707041905c80dcfe71b22fb06827b8eae65781783d4a14194bce79d16a013263filelock-3.13.1.tar.gz"
   sha256 "521f5f56c50f8426f5e03ad3b281b490a87ef15bc6c526f168290f0c7148d44e"
   license "Unlicense"
 
@@ -25,15 +25,15 @@ class PythonFilelock < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "build", "--wheel", "."
-      system python_exe, "-m", "pip", "install", *std_pip_args, Dir["dist/filelock-*.whl"].first
+      system python_exe, "-m", "pip", "install", *std_pip_args, Dir["distfilelock-*.whl"].first
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "from filelock import FileLock"
     end
   end

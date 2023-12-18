@@ -1,10 +1,10 @@
 class Smlfmt < Formula
   desc "Custom parser and code formatter for Standard ML"
-  homepage "https://github.com/shwestrick/smlfmt"
-  url "https://ghproxy.com/https://github.com/shwestrick/smlfmt/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:github.comshwestricksmlfmt"
+  url "https:github.comshwestricksmlfmtarchiverefstagsv1.1.0.tar.gz"
   sha256 "ca957b3a72615d292443742a1b155d180d963e1c4e17d4d2644af4fb53be627f"
   license "MIT"
-  head "https://github.com/shwestrick/smlfmt.git", branch: "main"
+  head "https:github.comshwestricksmlfmt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "36c764b23fb9b73301fcf0601c7b09ec340da7e9196ae447ea38fa3060bfb8ef"
@@ -25,7 +25,7 @@ class Smlfmt < Formula
   end
 
   test do
-    (testpath/"source.sml").write <<~EOS
+    (testpath"source.sml").write <<~EOS
       fun foo x =     10
       val x = 5 val y = 6
     EOS
@@ -34,7 +34,7 @@ class Smlfmt < Formula
       val x = 5
       val y = 6
     EOS
-    system "#{bin}/smlfmt", "--force", "source.sml"
-    assert_equal expected_output, (testpath/"source.sml").read
+    system "#{bin}smlfmt", "--force", "source.sml"
+    assert_equal expected_output, (testpath"source.sml").read
   end
 end

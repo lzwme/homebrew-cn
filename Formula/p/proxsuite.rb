@@ -1,10 +1,10 @@
 class Proxsuite < Formula
   desc "Advanced Proximal Optimization Toolbox"
-  homepage "https://github.com/Simple-Robotics/proxsuite"
-  url "https://ghproxy.com/https://github.com/Simple-Robotics/proxsuite/releases/download/v0.6.1/proxsuite-0.6.1.tar.gz"
+  homepage "https:github.comSimple-Roboticsproxsuite"
+  url "https:github.comSimple-Roboticsproxsuitereleasesdownloadv0.6.1proxsuite-0.6.1.tar.gz"
   sha256 "41b2bc12e30524e53777a4849dcfbbeb9a260aba885c3ff79ef75c4e647c71ab"
   license "BSD-2-Clause"
-  head "https://github.com/Simple-Robotics/proxsuite.git", branch: "main"
+  head "https:github.comSimple-Roboticsproxsuite.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "acd788c99cf98fd2fde556bd783f072ce67eacc5d2f6e4b74f2c02dba5b95839"
@@ -34,17 +34,17 @@ class Proxsuite < Formula
     system "git", "submodule", "update", "--init", "--recursive" if build.head?
 
     pyver = Language::Python.major_minor_version python3
-    python_exe = Formula["python@#{pyver}"].opt_libexec/"bin/python"
+    python_exe = Formula["python@#{pyver}"].opt_libexec"binpython"
 
-    ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefix/Language::Python.site_packages
+    ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefixLanguage::Python.site_packages
 
-    # simde include dir can be removed after https://github.com/Simple-Robotics/proxsuite/issues/65
+    # simde include dir can be removed after https:github.comSimple-Roboticsproxsuiteissues65
     system "cmake", "-S", ".", "-B", "build",
                     "-DPYTHON_EXECUTABLE=#{python_exe}",
                     "-DBUILD_UNIT_TESTS=OFF",
                     "-DBUILD_PYTHON_INTERFACE=ON",
                     "-DINSTALL_DOCUMENTATION=ON",
-                    "-DSimde_INCLUDE_DIR=#{Formula["simde"].opt_prefix/"include"}",
+                    "-DSimde_INCLUDE_DIR=#{Formula["simde"].opt_prefix"include"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -52,7 +52,7 @@ class Proxsuite < Formula
 
   test do
     pyver = Language::Python.major_minor_version python3
-    python_exe = Formula["python@#{pyver}"].opt_libexec/"bin/python"
+    python_exe = Formula["python@#{pyver}"].opt_libexec"binpython"
     system python_exe, "-c", <<~EOS
       import proxsuite
       qp = proxsuite.proxqp.dense.QP(10,0,0)

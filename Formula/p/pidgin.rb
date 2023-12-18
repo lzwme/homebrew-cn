@@ -1,14 +1,14 @@
 class Pidgin < Formula
   desc "Multi-protocol chat client"
-  homepage "https://pidgin.im/"
-  url "https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.12/pidgin-2.14.12.tar.bz2"
+  homepage "https:pidgin.im"
+  url "https:downloads.sourceforge.netprojectpidginPidgin2.14.12pidgin-2.14.12.tar.bz2"
   sha256 "2b05246be208605edbb93ae9edc079583d449e2a9710db6d348d17f59020a4b7"
   license "GPL-2.0-or-later"
   revision 2
 
   livecheck do
-    url "https://sourceforge.net/projects/pidgin/files/Pidgin/"
-    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https:sourceforge.netprojectspidginfilesPidgin"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
     strategy :page_match
   end
 
@@ -44,7 +44,7 @@ class Pidgin < Formula
     depends_on "libxscrnsaver"
 
     resource "XML::Parser" do
-      url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.46.tar.gz"
+      url "https:cpan.metacpan.orgauthorsidTTOTODDRXML-Parser-2.46.tar.gz"
       sha256 "d331332491c51cccfb4cb94ffc44f9cd73378e618498d4a37df9e043661c515d"
     end
   end
@@ -52,14 +52,14 @@ class Pidgin < Formula
   # Finch has an equal port called purple-otr but it is a NIGHTMARE to compile
   # If you want to fix this and create a PR on Homebrew please do so.
   resource "pidgin-otr" do
-    url "https://otr.cypherpunks.ca/pidgin-otr-4.0.2.tar.gz"
+    url "https:otr.cypherpunks.capidgin-otr-4.0.2.tar.gz"
     sha256 "f4b59eef4a94b1d29dbe0c106dd00cdc630e47f18619fc754e5afbf5724ebac4"
   end
 
   def install
     unless OS.mac?
-      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5"
-      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec"libperl5"
+      ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
 
       perl_resources = %w[XML::Parser]
       perl_resources.each do |r|
@@ -89,8 +89,8 @@ class Pidgin < Formula
 
     args += if OS.mac?
       %W[
-        --with-tclconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework
-        --with-tkconfig=#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework
+        --with-tclconfig=#{MacOS.sdk_path}SystemLibraryFrameworksTcl.framework
+        --with-tkconfig=#{MacOS.sdk_path}SystemLibraryFrameworksTk.framework
         --without-x
       ]
     else
@@ -105,35 +105,35 @@ class Pidgin < Formula
 
     # patch pidgin to read plugins and allow them to live in separate formulae which can
     # all install their symlinks into these directories. See:
-    #   https://github.com/Homebrew/homebrew-core/pull/53557
-    inreplace "finch/finch.c", "LIBDIR", "\"#{HOMEBREW_PREFIX}/lib/finch\""
-    inreplace "libpurple/plugin.c", "LIBDIR", "\"#{HOMEBREW_PREFIX}/lib/purple-2\""
-    inreplace "pidgin/gtkmain.c", "LIBDIR", "\"#{HOMEBREW_PREFIX}/lib/pidgin\""
-    inreplace "pidgin/gtkutils.c", "DATADIR", "\"#{HOMEBREW_PREFIX}/share\""
+    #   https:github.comHomebrewhomebrew-corepull53557
+    inreplace "finchfinch.c", "LIBDIR", "\"#{HOMEBREW_PREFIX}libfinch\""
+    inreplace "libpurpleplugin.c", "LIBDIR", "\"#{HOMEBREW_PREFIX}libpurple-2\""
+    inreplace "pidgingtkmain.c", "LIBDIR", "\"#{HOMEBREW_PREFIX}libpidgin\""
+    inreplace "pidgingtkutils.c", "DATADIR", "\"#{HOMEBREW_PREFIX}share\""
 
     unless OS.mac?
       # Fix linkage error due to RPATH missing directory with libperl.so
       perl = DevelopmentTools.locate("perl")
       perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}/CORE"
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}CORE"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
 
     resource("pidgin-otr").stage do
       ENV.prepend "CFLAGS", "-I#{Formula["libotr"].opt_include}"
-      ENV.append_path "PKG_CONFIG_PATH", "#{lib}/pkgconfig"
-      system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
+      ENV.append_path "PKG_CONFIG_PATH", "#{lib}pkgconfig"
+      system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
     end
   end
 
   test do
-    system "#{bin}/finch", "--version"
-    system "#{bin}/pidgin", "--version"
+    system "#{bin}finch", "--version"
+    system "#{bin}pidgin", "--version"
 
-    pid = fork { exec "#{bin}/pidgin", "--config=#{testpath}" }
+    pid = fork { exec "#{bin}pidgin", "--config=#{testpath}" }
     sleep 5
     Process.kill "SIGTERM", pid
   end

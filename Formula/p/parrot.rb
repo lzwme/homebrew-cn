@@ -1,30 +1,30 @@
 class Parrot < Formula
   desc "Open source virtual machine (for Perl6, et al.)"
-  homepage "http://www.parrot.org/"
+  homepage "http:www.parrot.org"
   license "Artistic-2.0"
-  head "https://github.com/parrot/parrot.git", branch: "master"
+  head "https:github.comparrotparrot.git", branch: "master"
 
   stable do
-    url "http://ftp.parrot.org/releases/supported/8.1.0/parrot-8.1.0.tar.bz2"
-    mirror "https://ftp.osuosl.org/pub/parrot/releases/supported/8.1.0/parrot-8.1.0.tar.bz2"
+    url "http:ftp.parrot.orgreleasessupported8.1.0parrot-8.1.0.tar.bz2"
+    mirror "https:ftp.osuosl.orgpubparrotreleasessupported8.1.0parrot-8.1.0.tar.bz2"
     sha256 "caf356acab64f4ea50595a846808e81d0be8ada8267afbbeb66ddb3c93cb81d3"
 
     # remove at 8.2.0, already in HEAD
     patch do
-      url "https://github.com/parrot/parrot/commit/7524bf5384ddebbb3ba06a040f8acf972aa0a3ba.patch?full_index=1"
+      url "https:github.comparrotparrotcommit7524bf5384ddebbb3ba06a040f8acf972aa0a3ba.patch?full_index=1"
       sha256 "1357090247b856416b23792a2859ae4860ed1336b05dddc1ee00793b6dc3d78a"
     end
 
     # remove at 8.2.0, already in HEAD
     patch do
-      url "https://github.com/parrot/parrot/commit/854aec65d6de8eaf5282995ab92100a2446f0cde.patch?full_index=1"
+      url "https:github.comparrotparrotcommit854aec65d6de8eaf5282995ab92100a2446f0cde.patch?full_index=1"
       sha256 "4e068c3a9243f350a3e862991a1042a06a03a625361f9f01cc445a31df906c6e"
     end
   end
 
   livecheck do
-    url "http://ftp.parrot.org/releases/supported/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "http:ftp.parrot.orgreleasessupported"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -56,12 +56,12 @@ class Parrot < Formula
 
     system "make"
     system "make", "install"
-    # Don't install this file in HOMEBREW_PREFIX/lib
-    rm_rf lib/"VERSION"
+    # Don't install this file in HOMEBREW_PREFIXlib
+    rm_rf lib"VERSION"
   end
 
   test do
-    path = testpath/"test.pir"
+    path = testpath"test.pir"
     path.write <<~EOS
       .sub _main
         .local int i
@@ -73,7 +73,7 @@ class Parrot < Formula
       .end
     EOS
 
-    out = `#{bin}/parrot #{path}`
+    out = `#{bin}parrot #{path}`
     assert_equal "0123456789", out
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

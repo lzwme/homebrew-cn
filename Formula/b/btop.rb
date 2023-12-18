@@ -1,10 +1,10 @@
 class Btop < Formula
   desc "Resource monitor. C++ version and continuation of bashtop and bpytop"
-  homepage "https://github.com/aristocratos/btop"
-  url "https://ghproxy.com/https://github.com/aristocratos/btop/archive/refs/tags/v1.2.13.tar.gz"
+  homepage "https:github.comaristocratosbtop"
+  url "https:github.comaristocratosbtoparchiverefstagsv1.2.13.tar.gz"
   sha256 "668dc4782432564c35ad0d32748f972248cc5c5448c9009faeb3445282920e02"
   license "Apache-2.0"
-  head "https://github.com/aristocratos/btop.git", branch: "main"
+  head "https:github.comaristocratosbtop.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "377bedf756891fdf81312df0de7f6698653c00bb74cbfc21859402139af71c12"
@@ -35,9 +35,9 @@ class Btop < Formula
   end
 
   test do
-    config = (testpath/".config/btop")
-    mkdir config/"themes"
-    (config/"btop.conf").write <<~EOS
+    config = (testpath".configbtop")
+    mkdir config"themes"
+    (config"btop.conf").write <<~EOS
       #? Config file for btop v. #{version}
 
       update_ms=2000
@@ -45,16 +45,16 @@ class Btop < Formula
     EOS
 
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
-    r, w, pid = PTY.spawn("#{bin}/btop")
+    r, w, pid = PTY.spawn("#{bin}btop")
     r.winsize = [80, 130]
     sleep 5
     w.write "q"
 
-    log = (config/"btop.log").read
+    log = (config"btop.log").read
     assert_match "===> btop++ v.#{version}", log
-    refute_match(/ERROR:/, log)
+    refute_match(ERROR:, log)
   ensure
     Process.kill("TERM", pid)
   end

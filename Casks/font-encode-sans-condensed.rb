@@ -2,12 +2,12 @@ cask "font-encode-sans-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/encodesanscondensed"
+      only_path: "oflencodesanscondensed"
   name "Encode Sans Condensed"
-  homepage "https://fonts.google.com/specimen/Encode+Sans+Condensed"
+  homepage "https:fonts.google.comspecimenEncode+Sans+Condensed"
 
   font "EncodeSansCondensed-Black.ttf"
   font "EncodeSansCondensed-Bold.ttf"

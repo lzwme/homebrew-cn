@@ -1,10 +1,10 @@
 class Ry < Formula
   desc "Ruby virtual env tool"
-  homepage "https://github.com/jneen/ry"
-  url "https://ghproxy.com/https://github.com/jneen/ry/archive/refs/tags/v0.5.2.tar.gz"
+  homepage "https:github.comjneenry"
+  url "https:github.comjneenryarchiverefstagsv0.5.2.tar.gz"
   sha256 "b53b51569dfa31233654b282d091b76af9f6b8af266e889b832bb374beeb1f59"
   license "MIT"
-  head "https://github.com/jneen/ry.git", branch: "master"
+  head "https:github.comjneenry.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -27,25 +27,25 @@ class Ry < Formula
   depends_on "ruby-build"
 
   def install
-    ENV["BASH_COMPLETIONS_DIR"] = prefix/"etc/bash_completion.d"
+    ENV["BASH_COMPLETIONS_DIR"] = prefix"etcbash_completion.d"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   def caveats
     <<~EOS
       Please add to your profile:
-        which ry &>/dev/null && eval "$(ry setup)"
+        which ry &>devnull && eval "$(ry setup)"
 
       If you want your Rubies to persist across updates you
       should set the `RY_RUBIES` variable in your profile, i.e.
-        export RY_RUBIES="#{HOMEBREW_PREFIX}/var/ry/rubies"
+        export RY_RUBIES="#{HOMEBREW_PREFIX}varryrubies"
     EOS
   end
 
   test do
-    ENV["RY_RUBIES"] = testpath/"rubies"
+    ENV["RY_RUBIES"] = testpath"rubies"
 
-    system bin/"ry", "ls"
-    assert_predicate testpath/"rubies", :exist?
+    system bin"ry", "ls"
+    assert_predicate testpath"rubies", :exist?
   end
 end

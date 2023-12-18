@@ -1,7 +1,7 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
-  homepage "https://txthinking.github.io/brook/"
-  url "https://ghproxy.com/https://github.com/txthinking/brook/archive/refs/tags/v20230606.tar.gz"
+  homepage "https:txthinking.github.iobrook"
+  url "https:github.comtxthinkingbrookarchiverefstagsv20230606.tar.gz"
   sha256 "4490f203973b59e5bbaa4cbfb8835232f9671dac1b82ab4de882d32a2ad6b612"
   license "GPL-3.0-only"
 
@@ -22,17 +22,17 @@ class Brook < Formula
 
   # quic-go patch for go1.21.0 build
   patch do
-    url "https://github.com/txthinking/brook/commit/3b8488e9138393b63da3a1f090e0f0fb109f12d1.patch?full_index=1"
+    url "https:github.comtxthinkingbrookcommit3b8488e9138393b63da3a1f090e0f0fb109f12d1.patch?full_index=1"
     sha256 "8974cc16188269daabd84950aac061cf3af827bb1d9a713c66647511011829a7"
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/brook"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".clibrook"
   end
 
   test do
-    output = shell_output "#{bin}/brook link --server 1.2.3.4:56789 --password hello"
-    # We expect something like "brook://server?password=hello&server=1.2.3.4%3A56789"
+    output = shell_output "#{bin}brook link --server 1.2.3.4:56789 --password hello"
+    # We expect something like "brook:server?password=hello&server=1.2.3.4%3A56789"
     uri = URI(output)
     assert_equal "brook", uri.scheme
     assert_equal "server", uri.host

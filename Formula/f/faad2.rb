@@ -1,7 +1,7 @@
 class Faad2 < Formula
   desc "ISO AAC audio decoder"
-  homepage "https://sourceforge.net/projects/faac/"
-  url "https://ghproxy.com/https://github.com/knik0/faad2/archive/refs/tags/2.11.1.tar.gz"
+  homepage "https:sourceforge.netprojectsfaac"
+  url "https:github.comknik0faad2archiverefstags2.11.1.tar.gz"
   sha256 "72dbc0494de9ee38d240f670eccf2b10ef715fd0508c305532ca3def3225bb06"
   license "GPL-2.0-or-later"
 
@@ -24,7 +24,7 @@ class Faad2 < Formula
   end
 
   test do
-    output = shell_output("#{bin}/faad -i #{test_fixtures("test.m4a")} 2>&1")
+    output = shell_output("#{bin}faad -i #{test_fixtures("test.m4a")} 2>&1")
     assert_match "LC AAC\t0.192 secs, 2 ch, 8000 Hz", output
   end
 end

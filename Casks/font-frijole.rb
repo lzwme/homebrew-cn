@@ -2,10 +2,10 @@ cask "font-frijole" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/frijole/Frijole-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflfrijoleFrijole-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Frijole"
-  homepage "https://fonts.google.com/specimen/Frijole"
+  homepage "https:fonts.google.comspecimenFrijole"
 
   font "Frijole-Regular.ttf"
 

@@ -2,10 +2,10 @@ cask "font-noto-sans-mono-cjk-hk" do
   version "2.004"
   sha256 "09a4df63660eee4ef0d1841566d9b4d63142f570847b965101d06ed8d67ded41"
 
-  url "https://ghproxy.com/https://github.com/notofonts/noto-cjk/releases/download/Sans#{version}/15_NotoSansMonoCJKhk.zip"
+  url "https:github.comnotofontsnoto-cjkreleasesdownloadSans#{version}15_NotoSansMonoCJKhk.zip"
   name "Noto Sans Mono CJK HK"
   desc "Language Specific Monospace OTFs Traditional Chinese — Hong Kong (繁體中文—香港)"
-  homepage "https://github.com/notofonts/noto-cjk/tree/main/Sans"
+  homepage "https:github.comnotofontsnoto-cjktreemainSans"
 
   livecheck do
     cask "font-noto-sans-cjk"

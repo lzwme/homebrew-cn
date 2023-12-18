@@ -1,14 +1,14 @@
 class Clinfo < Formula
   desc "Print information about OpenCL platforms and devices"
-  homepage "https://github.com/Oblomov/clinfo"
-  url "https://ghproxy.com/https://github.com/Oblomov/clinfo/archive/refs/tags/3.0.23.01.25.tar.gz"
+  homepage "https:github.comOblomovclinfo"
+  url "https:github.comOblomovclinfoarchiverefstags3.0.23.01.25.tar.gz"
   sha256 "6dcdada6c115873db78c7ffc62b9fc1ee7a2d08854a3bccea396df312e7331e3"
   license "CC0-1.0"
-  head "https://github.com/Oblomov/clinfo.git", branch: "master"
+  head "https:github.comOblomovclinfo.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,6 +32,6 @@ class Clinfo < Formula
   end
 
   test do
-    assert_match(/Device Type +[CG]PU/, shell_output(bin/"clinfo"))
+    assert_match(Device Type +[CG]PU, shell_output(bin"clinfo"))
   end
 end

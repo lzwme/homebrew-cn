@@ -1,11 +1,11 @@
 class CloudflareQuiche < Formula
-  desc "Savoury implementation of the QUIC transport protocol and HTTP/3"
-  homepage "https://docs.quic.tech/quiche/"
-  url "https://github.com/cloudflare/quiche.git",
+  desc "Savoury implementation of the QUIC transport protocol and HTTP3"
+  homepage "https:docs.quic.techquiche"
+  url "https:github.comcloudflarequiche.git",
       tag:      "0.20.0",
       revision: "5b1e3d286411e2cc411f8dc6d6ff1ee40f1bd026"
   license "BSD-2-Clause"
-  head "https://github.com/cloudflare/quiche.git", branch: "master"
+  head "https:github.comcloudflarequiche.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8f281f0d96925b21b9bd751a96cfa3fb4d1e5c25325c49251d6ea2fd58f6488b"
@@ -24,22 +24,22 @@ class CloudflareQuiche < Formula
     system "cargo", "install", *std_cargo_args(path: "apps")
 
     system "cargo", "build", "--lib", "--features", "ffi,pkg-config-meta", "--release"
-    lib.install "target/release/#{shared_library("libquiche")}"
-    include.install "quiche/include/quiche.h"
+    lib.install "targetrelease#{shared_library("libquiche")}"
+    include.install "quicheincludequiche.h"
 
     # install pkgconfig file
-    pc_path = "target/release/quiche.pc"
+    pc_path = "targetreleasequiche.pc"
     # the pc file points to the tmp dir, so we need inreplace
     inreplace pc_path do |s|
-      s.gsub!(/includedir=.+/, "includedir=#{include}")
-      s.gsub!(/libdir=.+/, "libdir=#{lib}")
+      s.gsub!(includedir=.+, "includedir=#{include}")
+      s.gsub!(libdir=.+, "libdir=#{lib}")
     end
-    (lib/"pkgconfig").install pc_path
+    (lib"pkgconfig").install pc_path
   end
 
   test do
-    assert_match "it does support HTTP/3!", shell_output("#{bin}/quiche-client https://http3.is/")
-    (testpath/"test.c").write <<~EOS
+    assert_match "it does support HTTP3!", shell_output("#{bin}quiche-client https:http3.is")
+    (testpath"test.c").write <<~EOS
       #include <quiche.h>
       int main() {
         quiche_config *config = quiche_config_new(0xbabababa);
@@ -47,6 +47,6 @@ class CloudflareQuiche < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lquiche", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

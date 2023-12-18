@@ -1,15 +1,15 @@
 class Gel < Formula
   desc "Modern gem manager"
-  homepage "https://gel.dev"
-  url "https://ghproxy.com/https://github.com/gel-rb/gel/archive/refs/tags/v0.3.0.tar.gz"
+  homepage "https:gel.dev"
+  url "https:github.comgel-rbgelarchiverefstagsv0.3.0.tar.gz"
   sha256 "fe7c4bd67a2ea857b85b754f5b4d336e26640eda7199bc99b9a1570043362551"
   license "MIT"
   revision 1
-  head "https://github.com/gel-rb/gel.git", branch: "main"
+  head "https:github.comgel-rbgel.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,20 +25,20 @@ class Gel < Formula
   end
 
   def install
-    ENV["PATH"] = "bin:#{Dir.home}/.local/gel/bin:#{ENV["PATH"]}"
+    ENV["PATH"] = "bin:#{Dir.home}.localgelbin:#{ENV["PATH"]}"
     inreplace "Gemfile.lock", "rdiscount (2.2.0.1)", "rdiscount (2.2.0.2)"
     system "gel", "install"
     system "rake", "man"
-    bin.install "exe/gel"
+    bin.install "exegel"
     prefix.install "lib"
-    man1.install Pathname.glob("man/man1/*.1")
+    man1.install Pathname.glob("manman1*.1")
   end
 
   test do
-    (testpath/"Gemfile").write <<~EOS
-      source "https://rubygems.org"
+    (testpath"Gemfile").write <<~EOS
+      source "https:rubygems.org"
       gem "gel"
     EOS
-    system "#{bin}/gel", "install"
+    system "#{bin}gel", "install"
   end
 end

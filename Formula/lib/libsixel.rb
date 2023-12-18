@@ -1,10 +1,10 @@
 class Libsixel < Formula
-  desc "SIXEL encoder/decoder implementation"
-  homepage "https://github.com/saitoha/sixel"
-  url "https://ghproxy.com/https://github.com/libsixel/libsixel/archive/refs/tags/v1.10.3.tar.gz"
+  desc "SIXEL encoderdecoder implementation"
+  homepage "https:github.comsaitohasixel"
+  url "https:github.comlibsixellibsixelarchiverefstagsv1.10.3.tar.gz"
   sha256 "028552eb8f2a37c6effda88ee5e8f6d87b5d9601182ddec784a9728865f821e0"
   revision 1
-  head "https://github.com/libsixel/libsixel.git", branch: "master"
+  head "https:github.comlibsixellibsixel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1bef85a71ca069c1cd5a951828e375c28bb7632ed17fbca03abbe132711e47e5"
@@ -32,6 +32,6 @@ class Libsixel < Formula
 
   test do
     fixture = test_fixtures("test.png")
-    system "#{bin}/img2sixel", fixture
+    system "#{bin}img2sixel", fixture
   end
 end

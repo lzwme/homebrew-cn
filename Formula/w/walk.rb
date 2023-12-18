@@ -1,7 +1,7 @@
 class Walk < Formula
   desc "Terminal navigator"
-  homepage "https://github.com/antonmedv/walk"
-  url "https://ghproxy.com/https://github.com/antonmedv/walk/archive/refs/tags/v1.7.0.tar.gz"
+  homepage "https:github.comantonmedvwalk"
+  url "https:github.comantonmedvwalkarchiverefstagsv1.7.0.tar.gz"
   sha256 "b657523d637727cfa408040e9816f45ae868c5192fb3962c32a0edab9d9b00dd"
   license "MIT"
 
@@ -24,14 +24,14 @@ class Walk < Formula
   test do
     require "pty"
 
-    PTY.spawn(bin/"walk") do |r, w, _pid|
+    PTY.spawn(bin"walk") do |r, w, _pid|
       r.winsize = [80, 60]
       sleep 1
       w.write "\e"
       begin
         r.read
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
   end

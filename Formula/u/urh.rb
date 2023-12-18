@@ -2,11 +2,11 @@ class Urh < Formula
   include Language::Python::Virtualenv
 
   desc "Universal Radio Hacker"
-  homepage "https://github.com/jopohl/urh"
-  url "https://files.pythonhosted.org/packages/49/4b/b1a4236c6e3dbcf215a3b1ded8e7ff1af6ca02155c230c40e9b1db0a5376/urh-2.9.5.tar.gz"
+  homepage "https:github.comjopohlurh"
+  url "https:files.pythonhosted.orgpackages494bb1a4236c6e3dbcf215a3b1ded8e7ff1af6ca02155c230c40e9b1db0a5376urh-2.9.5.tar.gz"
   sha256 "eb621df420e0f15cf7fe98bceac6beb453c909e88c3fad05066f034ea578f406"
   license "GPL-3.0-only"
-  head "https://github.com/jopohl/urh.git", branch: "master"
+  head "https:github.comjopohlurh.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -34,9 +34,9 @@ class Urh < Formula
     # Enable finding cython, which is keg-only
     site_packages = Language::Python.site_packages(python3)
     pth_contents = <<~EOS
-      import site; site.addsitedir('#{Formula["libcython"].opt_libexec/site_packages}')
+      import site; site.addsitedir('#{Formula["libcython"].opt_libexecsite_packages}')
     EOS
-    (libexec/site_packages/"homebrew-libcython.pth").write pth_contents
+    (libexecsite_packages"homebrew-libcython.pth").write pth_contents
 
     # We disable build isolation to avoid trying to build another numpy for build-only usage.
     # We can replace the virtualenv with pip install if we decide to link `libcython`.
@@ -45,19 +45,19 @@ class Urh < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       from urh.util.GenericCRC import GenericCRC;
       c = GenericCRC();
       expected = [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0]
       assert(expected == c.crc([0, 1, 0, 1, 1, 0, 1, 0]).tolist())
     EOS
-    system libexec/"bin/python3", "test.py"
+    system libexec"binpython3", "test.py"
 
     # test command-line functionality
-    output = shell_output("#{bin}/urh_cli -pm 0 0 -pm 1 100 -mo ASK -sps 100 -s 2e3 " \
-                          "-m 1010111100001 -f 868.3e6 -d RTL-TCP -tx 2>/dev/null", 1)
+    output = shell_output("#{bin}urh_cli -pm 0 0 -pm 1 100 -mo ASK -sps 100 -s 2e3 " \
+                          "-m 1010111100001 -f 868.3e6 -d RTL-TCP -tx 2>devnull", 1)
 
-    assert_match(/Modulating/, output)
-    assert_match(/Successfully modulated 1 messages/, output)
+    assert_match(Modulating, output)
+    assert_match(Successfully modulated 1 messages, output)
   end
 end

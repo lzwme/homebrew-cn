@@ -1,7 +1,7 @@
 class Freedink < Formula
   desc "Portable version of the Dink Smallwood game engine"
-  homepage "https://www.gnu.org/software/freedink/"
-  url "https://ftp.gnu.org/gnu/freedink/freedink-109.6.tar.gz"
+  homepage "https:www.gnu.orgsoftwarefreedink"
+  url "https:ftp.gnu.orggnufreedinkfreedink-109.6.tar.gz"
   sha256 "5e0b35ac8f46d7bb87e656efd5f9c7c2ac1a6c519a908fc5b581e52657981002"
   revision 1
 
@@ -36,21 +36,21 @@ class Freedink < Formula
   depends_on "sdl2_ttf"
 
   resource "freedink-data" do
-    url "https://ftp.gnu.org/gnu/freedink/freedink-data-1.08.20190120.tar.gz"
+    url "https:ftp.gnu.orggnufreedinkfreedink-data-1.08.20190120.tar.gz"
     sha256 "715f44773b05b73a9ec9b62b0e152f3f281be1a1512fbaaa386176da94cffb9d"
   end
 
   # Patch for recent SDL
   patch :p0 do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/openbsd/ports/fc8b95c6/games/freedink/game/patches/patch-src_input_cpp"
+    url "https:raw.githubusercontent.comopenbsdportsfc8b95c6gamesfreedinkgamepatchespatch-src_input_cpp"
     sha256 "fa06a8a87bd4f3977440cdde0fb6145b6e5b0005b266b19c059d3fd7c2ff836a"
   end
 
   def install
     # cannot initialize a variable of type 'char *' with an rvalue of type 'const char *'
-    inreplace "src/gfx_fonts.cpp", "char *familyname", "const char *familyname"
-    inreplace "src/gfx_fonts.cpp", "char *stylename", "const char *stylename"
-    system "./configure", "--disable-debug",
+    inreplace "srcgfx_fonts.cpp", "char *familyname", "const char *familyname"
+    inreplace "srcgfx_fonts.cpp", "char *stylename", "const char *stylename"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -63,7 +63,7 @@ class Freedink < Formula
   end
 
   test do
-    assert_match "GNU FreeDink 109.6", shell_output("#{bin}/freedink -vwis")
-    assert FileTest.exists?("#{share}/dink/dink/Dink.dat")
+    assert_match "GNU FreeDink 109.6", shell_output("#{bin}freedink -vwis")
+    assert FileTest.exists?("#{share}dinkdinkDink.dat")
   end
 end

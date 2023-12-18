@@ -5,14 +5,14 @@ cask "mambaforge" do
   sha256 arm:   "1b07c1a231a18f21da6aac1abe87dd173ce141ce7612f06eab962eb9f8353a27",
          intel: "ee707e117c4eb54b7a02a0ba1b2fc2b60325ce6f767e76274e45dbe7743efa7d"
 
-  url "https://ghproxy.com/https://github.com/conda-forge/miniforge/releases/download/#{version}/Mambaforge-#{version}-MacOSX-#{arch}.sh"
+  url "https:github.comconda-forgeminiforgereleasesdownload#{version}Mambaforge-#{version}-MacOSX-#{arch}.sh"
   name "mambaforge"
   desc "Minimal installer for conda with preinstalled support for Mamba"
-  homepage "https://github.com/conda-forge/miniforge"
+  homepage "https:github.comconda-forgeminiforge"
 
   livecheck do
     url :url
-    regex(/v?(\d+(?:[._-]\d+)+)/i)
+    regex(v?(\d+(?:[._-]\d+)+)i)
     strategy :github_latest
   end
 
@@ -25,16 +25,16 @@ cask "mambaforge" do
 
   installer script: {
     executable: "Mambaforge-#{version}-MacOSX-#{arch}.sh",
-    args:       ["-b", "-p", "#{caskroom_path}/base"],
+    args:       ["-b", "-p", "#{caskroom_path}base"],
   }
-  binary "#{caskroom_path}/base/condabin/conda"
-  binary "#{caskroom_path}/base/condabin/mamba"
+  binary "#{caskroom_path}basecondabinconda"
+  binary "#{caskroom_path}basecondabinmamba"
 
-  uninstall delete: "#{caskroom_path}/base"
+  uninstall delete: "#{caskroom_path}base"
 
   zap trash: [
-    "~/.condarc",
-    "~/.conda",
+    "~.condarc",
+    "~.conda",
   ]
 
   caveats <<~EOS

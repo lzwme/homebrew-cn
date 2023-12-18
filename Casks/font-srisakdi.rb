@@ -2,12 +2,12 @@ cask "font-srisakdi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/srisakdi"
+      only_path: "oflsrisakdi"
   name "Srisakdi"
-  homepage "https://fonts.google.com/specimen/Srisakdi"
+  homepage "https:fonts.google.comspecimenSrisakdi"
 
   font "Srisakdi-Bold.ttf"
   font "Srisakdi-Regular.ttf"

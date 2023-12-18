@@ -2,10 +2,10 @@ cask "docker-toolbox" do
   version "19.03.1"
   sha256 "6ad3fe973d5c8198c24bc270b3bb89c6ad48db28d0d6232710990888bda369f6"
 
-  url "https://ghproxy.com/https://github.com/docker/toolbox/releases/download/v#{version}/DockerToolbox-#{version}.pkg",
-      verified: "github.com/docker/toolbox/"
+  url "https:github.comdockertoolboxreleasesdownloadv#{version}DockerToolbox-#{version}.pkg",
+      verified: "github.comdockertoolbox"
   name "Docker Toolbox"
-  homepage "https://www.docker.com/products/docker-toolbox"
+  homepage "https:www.docker.comproductsdocker-toolbox"
 
   depends_on cask: "virtualbox"
 
@@ -39,7 +39,7 @@ cask "docker-toolbox" do
       ]
 
   postflight do
-    set_ownership "~/.docker"
+    set_ownership "~.docker"
   end
 
   uninstall pkgutil: [
@@ -51,7 +51,7 @@ cask "docker-toolbox" do
     "io.docker.pkg.kitematicapp",
   ]
 
-  zap trash: "~/.docker"
+  zap trash: "~.docker"
 
   caveats do
     discontinued

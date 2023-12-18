@@ -1,11 +1,11 @@
 class Glm < Formula
   desc "C++ mathematics library for graphics software"
-  homepage "https://glm.g-truc.net/"
-  url "https://ghproxy.com/https://github.com/g-truc/glm/releases/download/0.9.9.8/glm-0.9.9.8.zip"
+  homepage "https:glm.g-truc.net"
+  url "https:github.comg-trucglmreleasesdownload0.9.9.8glm-0.9.9.8.zip"
   sha256 "37e2a3d62ea3322e43593c34bae29f57e3e251ea89f4067506c94043769ade4c"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
-  head "https://github.com/g-truc/glm.git", branch: "master"
+  head "https:github.comg-trucglm.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,13 +37,13 @@ class Glm < Formula
     end
     include.install "glm"
     lib.install "cmake"
-    (lib/"pkgconfig/glm.pc").write <<~EOS
+    (lib"pkgconfigglm.pc").write <<~EOS
       prefix=#{prefix}
-      includedir=${prefix}/include
+      includedir=${prefix}include
 
       Name: GLM
       Description: OpenGL Mathematics
-      Version: #{version.to_s.match(/\d+\.\d+\.\d+/)}
+      Version: #{version.to_s.match(\d+\.\d+\.\d+)}
       Cflags: -I${includedir}
     EOS
 
@@ -51,12 +51,12 @@ class Glm < Formula
       system "doxygen", "man.doxy"
       man.install "html"
     end
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <glm/vec2.hpp>// glm::vec2
+    (testpath"test.cpp").write <<~EOS
+      #include <glmvec2.hpp> glm::vec2
       int main()
       {
         std::size_t const VertexCount = 4;
@@ -71,7 +71,7 @@ class Glm < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "-I#{include}", testpath/"test.cpp", "-o", "test"
-    system "./test"
+    system ENV.cxx, "-I#{include}", testpath"test.cpp", "-o", "test"
+    system ".test"
   end
 end

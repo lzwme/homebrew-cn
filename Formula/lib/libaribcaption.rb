@@ -1,10 +1,10 @@
 class Libaribcaption < Formula
-  desc "Portable ARIB STD-B24 Caption Decoder/Renderer"
-  homepage "https://github.com/xqq/libaribcaption"
-  url "https://ghproxy.com/https://github.com/xqq/libaribcaption/archive/refs/tags/v1.1.1.tar.gz"
+  desc "Portable ARIB STD-B24 Caption DecoderRenderer"
+  homepage "https:github.comxqqlibaribcaption"
+  url "https:github.comxqqlibaribcaptionarchiverefstagsv1.1.1.tar.gz"
   sha256 "278d03a0a662d00a46178afc64f32535ede2d78c603842b6fd1c55fa9cd44683"
   license "MIT"
-  head "https://github.com/xqq/libaribcaption.git", branch: "master"
+  head "https:github.comxqqlibaribcaption.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "350944da4a91c77f3a44925b3f563b97b763f71c9a3ca42d0a6a47d064f27a8c"
@@ -32,8 +32,8 @@ class Libaribcaption < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <aribcaption/decoder.h>
+    (testpath"test.c").write <<~EOS
+      #include <aribcaptiondecoder.h>
 
       int main(int argc, char *argv[]) {
         aribcc_context_t* ctx = aribcc_context_alloc();
@@ -45,6 +45,6 @@ class Libaribcaption < Formula
     EOS
     flags = shell_output("pkg-config --cflags --libs libaribcaption").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

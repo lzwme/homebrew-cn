@@ -2,10 +2,10 @@ cask "font-metal" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/metal/Metal-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmetalMetal-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Metal"
-  homepage "https://fonts.google.com/specimen/Metal"
+  homepage "https:fonts.google.comspecimenMetal"
 
   font "Metal-Regular.ttf"
 

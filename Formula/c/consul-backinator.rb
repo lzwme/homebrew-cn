@@ -1,10 +1,10 @@
 class ConsulBackinator < Formula
   desc "Consul backup and restoration application"
-  homepage "https://github.com/myENA/consul-backinator"
-  url "https://ghproxy.com/https://github.com/myENA/consul-backinator/archive/refs/tags/v1.6.6.tar.gz"
+  homepage "https:github.commyENAconsul-backinator"
+  url "https:github.commyENAconsul-backinatorarchiverefstagsv1.6.6.tar.gz"
   sha256 "b668801ca648ecf888687d7aa69d84c3f2c862f31b92076c443fdea77c984c58"
   license "MPL-2.0"
-  head "https://github.com/myENA/consul-backinator.git", branch: "master"
+  head "https:github.commyENAconsul-backinator.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8dd6cbcb9488966e0c5452941ff2568e991cef265c705f3e20a465bb1346c238"
@@ -27,9 +27,9 @@ class ConsulBackinator < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/consul-backinator --version 2>&1").strip
+    assert_equal version.to_s, shell_output("#{bin}consul-backinator --version 2>&1").strip
 
     assert_match "[Error] Failed to backup key data:",
-      shell_output("#{bin}/consul-backinator backup 2>&1", 1)
+      shell_output("#{bin}consul-backinator backup 2>&1", 1)
   end
 end

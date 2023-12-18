@@ -1,7 +1,7 @@
 class ZshNavigationTools < Formula
   desc "Zsh curses-based tools, e.g. multi-word history searcher"
-  homepage "https://github.com/psprint/zsh-navigation-tools"
-  url "https://ghproxy.com/https://github.com/psprint/zsh-navigation-tools/archive/refs/tags/v2.2.7.tar.gz"
+  homepage "https:github.compsprintzsh-navigation-tools"
+  url "https:github.compsprintzsh-navigation-toolsarchiverefstagsv2.2.7.tar.gz"
   sha256 "ee832b81ce678a247b998675111c66aa1873d72aa33c2593a65626296ca685fc"
   license any_of: ["GPL-3.0-only", "MIT"]
 
@@ -31,7 +31,7 @@ class ZshNavigationTools < Formula
   def caveats
     <<~EOS
       To run zsh-navigation-tools, add the following at the end of your .zshrc:
-        source #{HOMEBREW_PREFIX}/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+        source #{HOMEBREW_PREFIX}sharezsh-navigation-toolszsh-navigation-tools.plugin.zsh
 
       You will also need to restart your terminal for this change to take effect.
     EOS
@@ -40,7 +40,7 @@ class ZshNavigationTools < Formula
   test do
     # This compiles package's main file
     # Zcompile is very capable of detecting syntax errors
-    cp pkgshare/"n-list", testpath
+    cp pkgshare"n-list", testpath
     system "zsh", "-c", "zcompile n-list"
   end
 end

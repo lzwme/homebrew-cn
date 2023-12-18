@@ -1,10 +1,10 @@
 class Boringtun < Formula
   desc "Userspace WireGuard implementation in Rust"
-  homepage "https://github.com/cloudflare/boringtun"
-  url "https://ghproxy.com/https://github.com/cloudflare/boringtun/archive/refs/tags/boringtun-0.5.2.tar.gz"
+  homepage "https:github.comcloudflareboringtun"
+  url "https:github.comcloudflareboringtunarchiverefstagsboringtun-0.5.2.tar.gz"
   sha256 "660f69e20b1980b8e75dc0373dfe137f58fb02b105d3b9d03f35e1ce299d61b3"
   license "BSD-3-Clause"
-  head "https://github.com/cloudflare/boringtun.git", branch: "master"
+  head "https:github.comcloudflareboringtun.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -34,11 +34,11 @@ class Boringtun < Formula
   end
 
   test do
-    system "#{bin}/boringtun-cli", "--help"
-    assert_match "boringtun #{version}", shell_output("#{bin}/boringtun-cli -V").chomp
+    system "#{bin}boringtun-cli", "--help"
+    assert_match "boringtun #{version}", shell_output("#{bin}boringtun-cli -V").chomp
 
-    output = shell_output("#{bin}/boringtun-cli utun --log #{testpath}/boringtun.log 2>&1", 1)
-    assert_predicate testpath/"boringtun.log", :exist?
+    output = shell_output("#{bin}boringtun-cli utun --log #{testpath}boringtun.log 2>&1", 1)
+    assert_predicate testpath"boringtun.log", :exist?
     # requires `sudo` to start
     assert_match "BoringTun failed to start", output
   end

@@ -1,7 +1,7 @@
 class Kallisto < Formula
   desc "Quantify abundances of transcripts from RNA-Seq data"
-  homepage "https://pachterlab.github.io/kallisto/"
-  url "https://ghproxy.com/https://github.com/pachterlab/kallisto/archive/refs/tags/v0.50.1.tar.gz"
+  homepage "https:pachterlab.github.iokallisto"
+  url "https:github.compachterlabkallistoarchiverefstagsv0.50.1.tar.gz"
   sha256 "030752bab3b0e33cd3f23f6d8feddd74194e5513532ffbf23519e84db2a86d34"
   license "BSD-2-Clause"
 
@@ -28,11 +28,11 @@ class Kallisto < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath"test.fasta").write <<~EOS
       >seq0
       FQTWEEFSRAAEKLYLADPMKVRVVLKYRHVDGNLCIKVTDDLVCLVYRTDQAQDVKKIEKF
     EOS
-    output = shell_output("#{bin}/kallisto index -i test.index test.fasta 2>&1")
+    output = shell_output("#{bin}kallisto index -i test.index test.fasta 2>&1")
     assert_match "has 1 contigs and contains 32 k-mers", output
   end
 end

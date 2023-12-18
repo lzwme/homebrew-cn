@@ -1,10 +1,10 @@
 class Cpulimit < Formula
   desc "CPU usage limiter"
-  homepage "https://github.com/opsengine/cpulimit"
-  url "https://ghproxy.com/https://github.com/opsengine/cpulimit/archive/refs/tags/v0.2.tar.gz"
+  homepage "https:github.comopsenginecpulimit"
+  url "https:github.comopsenginecpulimitarchiverefstagsv0.2.tar.gz"
   sha256 "64312f9ac569ddcadb615593cd002c94b76e93a0d4625d3ce1abb49e08e2c2da"
   license "GPL-2.0"
-  head "https://github.com/opsengine/cpulimit.git", branch: "master"
+  head "https:github.comopsenginecpulimit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e94ecdb44d2b8f104510da469aaa27a879cbf41518c88315f346116203b9c944"
@@ -23,10 +23,10 @@ class Cpulimit < Formula
 
   def install
     system "make"
-    bin.install "src/cpulimit"
+    bin.install "srccpulimit"
   end
 
   test do
-    system "#{bin}/cpulimit", "--limit=10", "ls"
+    system "#{bin}cpulimit", "--limit=10", "ls"
   end
 end

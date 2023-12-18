@@ -1,7 +1,7 @@
 class Jose < Formula
   desc "C-language implementation of Javascript Object Signing and Encryption"
-  homepage "https://github.com/latchset/jose"
-  url "https://ghproxy.com/https://github.com/latchset/jose/releases/download/v11/jose-11.tar.xz"
+  homepage "https:github.comlatchsetjose"
+  url "https:github.comlatchsetjosereleasesdownloadv11jose-11.tar.xz"
   sha256 "e272afe7717e22790c383f3164480627a567c714ccb80c1ee96f62c9929d8225"
   license "Apache-2.0"
 
@@ -34,13 +34,13 @@ class Jose < Formula
   end
 
   test do
-    system bin/"jose", "jwk", "gen", "-i", '{"alg": "A128GCM"}', "-o", "oct.jwk"
-    system bin/"jose", "jwk", "gen", "-i", '{"alg": "RSA1_5"}', "-o", "rsa.jwk"
-    system bin/"jose", "jwk", "pub", "-i", "rsa.jwk", "-o", "rsa.pub.jwk"
-    system "echo hi | #{bin}/jose jwe enc -I - -k rsa.pub.jwk -o msg.jwe"
-    output = shell_output("#{bin}/jose jwe dec -i msg.jwe -k rsa.jwk 2>&1")
+    system bin"jose", "jwk", "gen", "-i", '{"alg": "A128GCM"}', "-o", "oct.jwk"
+    system bin"jose", "jwk", "gen", "-i", '{"alg": "RSA1_5"}', "-o", "rsa.jwk"
+    system bin"jose", "jwk", "pub", "-i", "rsa.jwk", "-o", "rsa.pub.jwk"
+    system "echo hi | #{bin}jose jwe enc -I - -k rsa.pub.jwk -o msg.jwe"
+    output = shell_output("#{bin}jose jwe dec -i msg.jwe -k rsa.jwk 2>&1")
     assert_equal "hi", output.chomp
-    output = shell_output("#{bin}/jose jwe dec -i msg.jwe -k oct.jwk 2>&1", 1)
+    output = shell_output("#{bin}jose jwe dec -i msg.jwe -k oct.jwk 2>&1", 1)
     assert_equal "Unwrapping failed!", output.chomp
   end
 end

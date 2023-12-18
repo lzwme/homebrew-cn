@@ -2,20 +2,20 @@ cask "zeronet" do
   version "0.7.1"
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/HelloZeroNet/ZeroNet-dist/archive/mac/ZeroNet-dist-mac.zip",
-      verified: "github.com/HelloZeroNet/ZeroNet-dist/"
+  url "https:github.comHelloZeroNetZeroNet-distarchivemacZeroNet-dist-mac.zip",
+      verified: "github.comHelloZeroNetZeroNet-dist"
   name "ZeroNet"
-  homepage "https://zeronet.io/"
+  homepage "https:zeronet.io"
 
   livecheck do
-    url "https://github.com/HelloZeroNet/ZeroNet/releases/"
+    url "https:github.comHelloZeroNetZeroNetreleases"
     strategy :github_latest
   end
 
-  app "ZeroNet-dist-mac/ZeroNet.app"
+  app "ZeroNet-dist-macZeroNet.app"
 
   zap trash: [
-    "~/Library/Application Support/ZeroNet",
-    "~/Library/Saved Application State/org.pythonmac.unspecified.ZeroNet.savedState",
+    "~LibraryApplication SupportZeroNet",
+    "~LibrarySaved Application Stateorg.pythonmac.unspecified.ZeroNet.savedState",
   ]
 end

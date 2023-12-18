@@ -1,10 +1,10 @@
 class Luaradio < Formula
   desc "Lightweight, embeddable flow graph signal processing framework for SDR"
-  homepage "https://luaradio.io/"
-  url "https://ghproxy.com/https://github.com/vsergeev/luaradio/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:luaradio.io"
+  url "https:github.comvsergeevluaradioarchiverefstagsv0.11.0.tar.gz"
   sha256 "abd6077d32a2e83ec9e4bbda1f84ccb540c9d5195d30d7a8ebeb12676e33eb2e"
   license "MIT"
-  head "https://github.com/vsergeev/luaradio.git", branch: "master"
+  head "https:github.comvsergeevluaradio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f3c7d2ea4db37fc295db8a6643fb14b44b3e45c2716a113c546039b8c69e50e5"
@@ -25,12 +25,12 @@ class Luaradio < Formula
   depends_on "luajit"
 
   def install
-    system "make", "-C", "embed", "PREFIX=#{prefix}", "INSTALL_CMOD=#{lib}/lua/5.1", "install"
+    system "make", "-C", "embed", "PREFIX=#{prefix}", "INSTALL_CMOD=#{lib}lua5.1", "install"
   end
 
   test do
-    (testpath/"hello").write("Hello, world!")
-    (testpath/"test.lua").write <<~EOS
+    (testpath"hello").write("Hello, world!")
+    (testpath"test.lua").write <<~EOS
       local radio = require('radio')
 
       local PrintBytes = radio.block.factory("PrintBytes")
@@ -53,6 +53,6 @@ class Luaradio < Formula
       top:run()
     EOS
 
-    assert_equal "Hello, world!", shell_output("#{bin}/luaradio test.lua")
+    assert_equal "Hello, world!", shell_output("#{bin}luaradio test.lua")
   end
 end

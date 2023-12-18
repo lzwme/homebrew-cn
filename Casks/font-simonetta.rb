@@ -2,12 +2,12 @@ cask "font-simonetta" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/simonetta"
+      only_path: "oflsimonetta"
   name "Simonetta"
-  homepage "https://fonts.google.com/specimen/Simonetta"
+  homepage "https:fonts.google.comspecimenSimonetta"
 
   font "Simonetta-Black.ttf"
   font "Simonetta-BlackItalic.ttf"

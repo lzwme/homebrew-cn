@@ -1,10 +1,10 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
-  homepage "https://github.com/lotabout/skim"
-  url "https://ghproxy.com/https://github.com/lotabout/skim/archive/refs/tags/v0.10.4.tar.gz"
+  homepage "https:github.comlotaboutskim"
+  url "https:github.comlotaboutskimarchiverefstagsv0.10.4.tar.gz"
   sha256 "eb5609842ad7c19b1267e77682ee5ae11aa8e84e46c27d9d198cc22d00c5e924"
   license "MIT"
-  head "https://github.com/lotabout/skim.git", branch: "master"
+  head "https:github.comlotaboutskim.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0aa120c7df0fb4a61903c952d5a64dad4030a0b1a48df8c2d0bac01dac458ec8"
@@ -21,21 +21,21 @@ class Sk < Formula
   depends_on "rust" => :build
 
   def install
-    (buildpath/"src/github.com/lotabout").mkpath
-    ln_s buildpath, buildpath/"src/github.com/lotabout/skim"
+    (buildpath"srcgithub.comlotabout").mkpath
+    ln_s buildpath, buildpath"srcgithub.comlotaboutskim"
     system "cargo", "install", *std_cargo_args
 
     pkgshare.install "install"
-    bash_completion.install "shell/key-bindings.bash"
-    bash_completion.install "shell/completion.bash"
-    fish_completion.install "shell/key-bindings.fish" => "skim.fish"
-    zsh_completion.install "shell/key-bindings.zsh"
-    zsh_completion.install "shell/completion.zsh"
-    man1.install "man/man1/sk.1", "man/man1/sk-tmux.1"
-    bin.install "bin/sk-tmux"
+    bash_completion.install "shellkey-bindings.bash"
+    bash_completion.install "shellcompletion.bash"
+    fish_completion.install "shellkey-bindings.fish" => "skim.fish"
+    zsh_completion.install "shellkey-bindings.zsh"
+    zsh_completion.install "shellcompletion.zsh"
+    man1.install "manman1sk.1", "manman1sk-tmux.1"
+    bin.install "binsk-tmux"
   end
 
   test do
-    assert_match(/.*world/, pipe_output("#{bin}/sk -f wld", "hello\nworld"))
+    assert_match(.*world, pipe_output("#{bin}sk -f wld", "hello\nworld"))
   end
 end

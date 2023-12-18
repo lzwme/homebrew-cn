@@ -1,14 +1,14 @@
 class Toilet < Formula
   desc "Color-based alternative to figlet (uses libcaca)"
-  homepage "http://caca.zoy.org/wiki/toilet"
-  url "http://caca.zoy.org/raw-attachment/wiki/toilet/toilet-0.3.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/t/toilet/toilet_0.3.orig.tar.gz"
+  homepage "http:caca.zoy.orgwikitoilet"
+  url "http:caca.zoy.orgraw-attachmentwikitoilettoilet-0.3.tar.gz"
+  mirror "https:deb.debian.orgdebianpoolmainttoilettoilet_0.3.orig.tar.gz"
   sha256 "89d4b530c394313cc3f3a4e07a7394fa82a6091f44df44dfcd0ebcb3300a81de"
 
   license "WTFPL"
   livecheck do
-    url "http://caca.zoy.org/raw-attachment/wiki/toilet/"
-    regex(/href=.*?toilet[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:caca.zoy.orgraw-attachmentwikitoilet"
+    regex(href=.*?toilet[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
   bottle do
     sha256 arm64_sonoma:   "e357c586a77052ed8e040b211e693d1f420c2667caffe012d5e5d121659bc3e7"
@@ -28,7 +28,7 @@ class Toilet < Formula
   end
 
   head do
-    url "https://github.com/cacalabs/toilet.git", branch: "master"
+    url "https:github.comcacalabstoilet.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,13 +38,13 @@ class Toilet < Formula
   depends_on "libcaca"
 
   def install
-    system "./bootstrap" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/toilet", "--version"
+    system "#{bin}toilet", "--version"
   end
 end

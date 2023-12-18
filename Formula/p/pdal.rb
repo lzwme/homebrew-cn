@@ -1,20 +1,20 @@
 class Pdal < Formula
   desc "Point data abstraction library"
-  homepage "https://www.pdal.io/"
-  url "https://ghproxy.com/https://github.com/PDAL/PDAL/releases/download/2.5.6/PDAL-2.5.6-src.tar.bz2"
+  homepage "https:www.pdal.io"
+  url "https:github.comPDALPDALreleasesdownload2.5.6PDAL-2.5.6-src.tar.bz2"
   sha256 "7c7c4570ef518942299479cc4077e0c657ec5b5174daf465415de947a1d3eb99"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/PDAL/PDAL.git", branch: "master"
+  head "https:github.comPDALPDAL.git", branch: "master"
 
   # The upstream GitHub repository sometimes creates tags that only include a
-  # major/minor version (`1.2`) and then uses major/minor/patch (`1.2.0`) for
+  # majorminor version (`1.2`) and then uses majorminorpatch (`1.2.0`) for
   # the release tarball. This inconsistency can be a problem if we need to
   # substitute the version from livecheck in the `stable` URL, so we check the
   # first-party download page, which links to the tarballs on GitHub.
   livecheck do
-    url "https://pdal.io/en/latest/download.html"
-    regex(/href=.*?PDAL[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
+    url "https:pdal.ioenlatestdownload.html"
+    regex(href=.*?PDAL[._-]v?(\d+(?:\.\d+)+)[._-]src\.ti)
   end
 
   bottle do
@@ -48,11 +48,11 @@ class Pdal < Formula
                          "-DBUILD_PLUGIN_SQLITE=ON"
 
     system "make", "install"
-    rm_rf "test/unit"
+    rm_rf "testunit"
     doc.install "examples", "test"
   end
 
   test do
-    system bin/"pdal", "info", doc/"test/data/las/interesting.las"
+    system bin"pdal", "info", doc"testdatalasinteresting.las"
   end
 end

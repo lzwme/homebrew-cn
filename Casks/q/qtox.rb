@@ -2,16 +2,16 @@ cask "qtox" do
   version "1.17.6"
   sha256 "f321fad4b5cb5f77ed14f1c4e08790c9acff6113ccf9e18327d463411c24d32e"
 
-  url "https://ghproxy.com/https://github.com/qTox/qTox/releases/download/v#{version}/qTox.dmg",
-      verified: "github.com/qTox/qTox/"
+  url "https:github.comqToxqToxreleasesdownloadv#{version}qTox.dmg",
+      verified: "github.comqToxqTox"
   name "qTox"
   desc "Instant messaging and video conferencing app"
-  homepage "https://qtox.github.io/"
+  homepage "https:qtox.github.io"
 
   app "qTox.app"
 
   zap trash: [
-    "~/Library/Preferences/chat.tox.qtox.plist",
-    "~/Library/Saved Application State/chat.tox.qtox.savedState",
+    "~LibraryPreferenceschat.tox.qtox.plist",
+    "~LibrarySaved Application Statechat.tox.qtox.savedState",
   ]
 end

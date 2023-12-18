@@ -1,15 +1,15 @@
 class Cataclysm < Formula
-  desc "Fork/variant of Cataclysm Roguelike"
-  homepage "https://github.com/CleverRaven/Cataclysm-DDA"
-  url "https://ghproxy.com/https://github.com/CleverRaven/Cataclysm-DDA/archive/refs/tags/0.G.tar.gz"
+  desc "Forkvariant of Cataclysm Roguelike"
+  homepage "https:github.comCleverRavenCataclysm-DDA"
+  url "https:github.comCleverRavenCataclysm-DDAarchiverefstags0.G.tar.gz"
   version "0.G"
   sha256 "e559d0d495b314ed39890920b222b4ae5067db183b5d39d4263700bfd66f36fb"
   license "CC-BY-SA-3.0"
-  head "https://github.com/CleverRaven/Cataclysm-DDA.git", branch: "master"
+  head "https:github.comCleverRavenCataclysm-DDA.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/([^"' >]+)/i)
+    regex(([^"' >]+)i)
     strategy :github_latest
   end
 
@@ -67,16 +67,16 @@ class Cataclysm < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # make user config directory
-    user_config_dir = testpath/"Library/Application Support/Cataclysm/"
+    user_config_dir = testpath"LibraryApplication SupportCataclysm"
     user_config_dir.mkpath
 
     # run cataclysm for 30 seconds
     pid = fork do
-      exec bin/"cataclysm"
+      exec bin"cataclysm"
     end
     begin
       sleep 30
-      assert_predicate user_config_dir/"config",
+      assert_predicate user_config_dir"config",
                        :exist?, "User config directory should exist"
     ensure
       Process.kill("TERM", pid)

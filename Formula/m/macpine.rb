@@ -1,21 +1,21 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
-  homepage "https://beringresearch.github.io/macpine/"
-  url "https://ghproxy.com/https://github.com/beringresearch/macpine/archive/refs/tags/v1.0.4.tar.gz"
+  homepage "https:beringresearch.github.iomacpine"
+  url "https:github.comberingresearchmacpinearchiverefstagsv1.0.4.tar.gz"
   sha256 "040beffd58ab22ef8d10b4241c2b86347dfc960e27934f6fc6cad002b9747c3a"
   license "Apache-2.0"
-  head "https://github.com/beringresearch/macpine.git", branch: "main"
+  head "https:github.comberingresearchmacpine.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?\.?(\d+(?:\.\d+)*)$/i)
+    regex(^v?\.?(\d+(?:\.\d+)*)$i)
     strategy :git do |tags, regex|
       tags.map do |tag|
         version = tag[regex, 1]
         next if version.blank?
 
         # Naively convert tags like `v.01` to `0.1`
-        tag.match?(/^v\.?\d+$/i) ? version.chars.join(".") : version
+        tag.match?(^v\.?\d+$i) ? version.chars.join(".") : version
       end
     end
   end
@@ -37,15 +37,15 @@ class Macpine < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-    generate_completions_from_executable(bin/"alpine", "completion", base_name: "alpine")
+    generate_completions_from_executable(bin"alpine", "completion", base_name: "alpine")
   end
 
   service do
-    run macos: [opt_bin/"alpine", "start", "+launchctl-autostart"]
+    run macos: [opt_bin"alpine", "start", "+launchctl-autostart"]
     environment_variables PATH: std_service_path_env
   end
 
   test do
-    assert_match "NAME STATUS SSH PORTS ARCH PID TAGS \n", shell_output("#{bin}/alpine list")
+    assert_match "NAME STATUS SSH PORTS ARCH PID TAGS \n", shell_output("#{bin}alpine list")
   end
 end

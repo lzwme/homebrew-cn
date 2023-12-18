@@ -1,10 +1,10 @@
 class Bat < Formula
   desc "Clone of cat(1) with syntax highlighting and Git integration"
-  homepage "https://github.com/sharkdp/bat"
-  url "https://ghproxy.com/https://github.com/sharkdp/bat/archive/refs/tags/v0.24.0.tar.gz"
+  homepage "https:github.comsharkdpbat"
+  url "https:github.comsharkdpbatarchiverefstagsv0.24.0.tar.gz"
   sha256 "907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/sharkdp/bat.git", branch: "master"
+  head "https:github.comsharkdpbat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "66f03028e55d7a9ce344c7910b8469e16c0acd812ebc2886cdff8c10f9cf34c4"
@@ -29,11 +29,11 @@ class Bat < Formula
     ENV["SHELL_COMPLETIONS_DIR"] = buildpath
     system "cargo", "install", *std_cargo_args
 
-    assets_dir = Dir["target/release/build/bat-*/out/assets"].first
-    man1.install "#{assets_dir}/manual/bat.1"
-    bash_completion.install "#{assets_dir}/completions/bat.bash" => "bat"
-    fish_completion.install "#{assets_dir}/completions/bat.fish"
-    zsh_completion.install "#{assets_dir}/completions/bat.zsh" => "_bat"
+    assets_dir = Dir["targetreleasebuildbat-*outassets"].first
+    man1.install "#{assets_dir}manualbat.1"
+    bash_completion.install "#{assets_dir}completionsbat.bash" => "bat"
+    fish_completion.install "#{assets_dir}completionsbat.fish"
+    zsh_completion.install "#{assets_dir}completionsbat.zsh" => "_bat"
   end
 
   def check_binary_linkage(binary, library)
@@ -46,14 +46,14 @@ class Bat < Formula
 
   test do
     pdf = test_fixtures("test.pdf")
-    output = shell_output("#{bin}/bat #{pdf} --color=never")
+    output = shell_output("#{bin}bat #{pdf} --color=never")
     assert_match "Homebrew test", output
 
     [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["oniguruma"].opt_lib/shared_library("libonig"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["oniguruma"].opt_libshared_library("libonig"),
     ].each do |library|
-      assert check_binary_linkage(bin/"bat", library),
+      assert check_binary_linkage(bin"bat", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

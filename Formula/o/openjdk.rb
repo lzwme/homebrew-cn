@@ -1,13 +1,13 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
-  homepage "https://openjdk.java.net/"
-  url "https://ghproxy.com/https://github.com/openjdk/jdk21u/archive/refs/tags/jdk-21.0.1-ga.tar.gz"
+  homepage "https:openjdk.java.net"
+  url "https:github.comopenjdkjdk21uarchiverefstagsjdk-21.0.1-ga.tar.gz"
   sha256 "4414ebc898e53489c2325ff6cb1a73640840f31c2fd671bd598e23c8a87e88ad"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
     url :stable
-    regex(/^jdk[._-]v?(\d+(?:\.\d+)*)-ga$/i)
+    regex(^jdk[._-]v?(\d+(?:\.\d+)*)-ga$i)
   end
 
   bottle do
@@ -51,25 +51,25 @@ class Openjdk < Formula
 
   fails_with gcc: "5"
 
-  # From https://jdk.java.net/archive/
+  # From https:jdk.java.netarchive
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_macos-aarch64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk20.0.26e380f22cbe7469fa75fb448bd903d8e9GPLopenjdk-20.0.2_macos-aarch64_bin.tar.gz"
         sha256 "2e6522bb574f76cd3f81156acd59115a014bf452bbe4107f0d31ff9b41b3da57"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_macos-x64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk20.0.26e380f22cbe7469fa75fb448bd903d8e9GPLopenjdk-20.0.2_macos-x64_bin.tar.gz"
         sha256 "c65ba92b73d8076e2a10029a0674d40ce45c3e0183a8063dd51281e92c9f43fc"
       end
     end
     on_linux do
       on_arm do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-aarch64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk20.0.26e380f22cbe7469fa75fb448bd903d8e9GPLopenjdk-20.0.2_linux-aarch64_bin.tar.gz"
         sha256 "3238c93267c663dbca00f5d5b0e3fbba40e1eea2b4281612f40542d208b6dd9a"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk20.0.2/6e380f22cbe7469fa75fb448bd903d8e/9/GPL/openjdk-20.0.2_linux-x64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk20.0.26e380f22cbe7469fa75fb448bd903d8e9GPLopenjdk-20.0.2_linux-x64_bin.tar.gz"
         sha256 "beaf61959c2953310595e1162b0c626aef33d58628771033ff2936609661956c"
       end
     end
@@ -79,9 +79,9 @@ class Openjdk < Formula
   patch :DATA
 
   def install
-    boot_jdk = buildpath/"boot-jdk"
+    boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
-    boot_jdk /= "Contents/Home" if OS.mac?
+    boot_jdk = "ContentsHome" if OS.mac?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     args = %W[
@@ -107,7 +107,7 @@ class Openjdk < Formula
       --with-zlib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}server"]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
@@ -133,29 +133,29 @@ class Openjdk < Formula
 
     jdk = libexec
     if OS.mac?
-      libexec.install Dir["build/*/images/jdk-bundle/*"].first => "openjdk.jdk"
-      jdk /= "openjdk.jdk/Contents/Home"
+      libexec.install Dir["build*imagesjdk-bundle*"].first => "openjdk.jdk"
+      jdk = "openjdk.jdkContentsHome"
     else
-      libexec.install Dir["build/linux-*-server-release/images/jdk/*"]
+      libexec.install Dir["buildlinux-*-server-releaseimagesjdk*"]
     end
 
-    bin.install_symlink Dir[jdk/"bin/*"]
-    include.install_symlink Dir[jdk/"include/*.h"]
-    include.install_symlink Dir[jdk/"include"/OS.kernel_name.downcase/"*.h"]
-    man1.install_symlink Dir[jdk/"man/man1/*"]
+    bin.install_symlink Dir[jdk"bin*"]
+    include.install_symlink Dir[jdk"include*.h"]
+    include.install_symlink Dir[jdk"include"OS.kernel_name.downcase"*.h"]
+    man1.install_symlink Dir[jdk"manman1*"]
   end
 
   def caveats
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk.jdk
       EOS
     end
   end
 
   test do
-    (testpath/"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~EOS
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -163,24 +163,24 @@ class Openjdk < Formula
       }
     EOS
 
-    system bin/"javac", "HelloWorld.java"
+    system bin"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
   end
 end
 
 __END__
-diff -pur a/src/jdk.net/macosx/native/libextnet/MacOSXSocketOptions.c b/src/jdk.net/macosx/native/libextnet/MacOSXSocketOptions.c
---- a/src/jdk.net/macosx/native/libextnet/MacOSXSocketOptions.c	2022-08-12 22:24:53.000000000 +0200
-+++ b/src/jdk.net/macosx/native/libextnet/MacOSXSocketOptions.c	2022-10-24 18:27:36.000000000 +0200
+diff -pur asrcjdk.netmacosxnativelibextnetMacOSXSocketOptions.c bsrcjdk.netmacosxnativelibextnetMacOSXSocketOptions.c
+--- asrcjdk.netmacosxnativelibextnetMacOSXSocketOptions.c	2022-08-12 22:24:53.000000000 +0200
++++ bsrcjdk.netmacosxnativelibextnetMacOSXSocketOptions.c	2022-10-24 18:27:36.000000000 +0200
 @@ -29,9 +29,9 @@
  #include <unistd.h>
  
  #include <jni.h>
--#include <netinet/tcp.h>
+-#include <netinettcp.h>
  
  #define __APPLE_USE_RFC_3542
-+#include <netinet/tcp.h>
- #include <netinet/in.h>
++#include <netinettcp.h>
+ #include <netinetin.h>
  
  #ifndef IP_DONTFRAG

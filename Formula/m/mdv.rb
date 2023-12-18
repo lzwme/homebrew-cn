@@ -1,7 +1,7 @@
 class Mdv < Formula
   desc "Styled terminal markdown viewer"
-  homepage "https://github.com/axiros/terminal_markdown_viewer"
-  url "https://files.pythonhosted.org/packages/d0/32/f5e1b8c70dc40b02604fbd0be3ff0bd5e01ee99c9fddf8f423b10d07cd31/mdv-1.7.5.tar.gz"
+  homepage "https:github.comaxirosterminal_markdown_viewer"
+  url "https:files.pythonhosted.orgpackagesd032f5e1b8c70dc40b02604fbd0be3ff0bd5e01ee99c9fddf8f423b10d07cd31mdv-1.7.5.tar.gz"
   sha256 "eb84ed52a2b68d2e083e007cb485d14fac1deb755fd8f35011eff8f2889df6e9"
   license "BSD-3-Clause"
 
@@ -31,11 +31,11 @@ class Mdv < Formula
   end
 
   test do
-    (testpath/"test.md").write <<~EOS
+    (testpath"test.md").write <<~EOS
       # Header 1
       ## Header 2
       ### Header 3
     EOS
-    system "#{bin}/mdv", "#{testpath}/test.md"
+    system "#{bin}mdv", "#{testpath}test.md"
   end
 end

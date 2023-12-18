@@ -1,15 +1,15 @@
 class CrushTools < Formula
   desc "Command-line tools for processing delimited text data"
-  homepage "https://github.com/google/crush-tools"
+  homepage "https:github.comgooglecrush-tools"
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/google/crush-tools/releases/download/20150716/crush-tools-20150716.tar.gz"
+    url "https:github.comgooglecrush-toolsreleasesdownload20150716crush-tools-20150716.tar.gz"
     sha256 "ef2f9c919536a2f13b3065af3a9a9756c90ede53ebd67d3e169c90ad7cd1fb05"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     end
   end
@@ -30,7 +30,7 @@ class CrushTools < Formula
   end
 
   head do
-    url "https://github.com/google/crush-tools.git", branch: "master"
+    url "https:github.comgooglecrush-tools.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -46,14 +46,14 @@ class CrushTools < Formula
   conflicts_with "num-utils", because: "both install an `range` binary"
 
   def install
-    system "./bootstrap" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_equal "1 2 6 7 8 9 10", shell_output("#{bin}/range 1,2,6-10").strip
-    assert_equal "o", shell_output("#{bin}/tochar 111")
+    assert_equal "1 2 6 7 8 9 10", shell_output("#{bin}range 1,2,6-10").strip
+    assert_equal "o", shell_output("#{bin}tochar 111")
   end
 end

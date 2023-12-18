@@ -1,7 +1,7 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
-  homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://ghproxy.com/https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/refs/tags/v7.3.1.tar.gz"
+  homepage "https:people.engr.tamu.edudavissuitesparse.html"
+  url "https:github.comDrTimothyAldenDavisSuiteSparsearchiverefstagsv7.3.1.tar.gz"
   sha256 "b512484396a80750acf3082adc1807ba0aabb103c2e09be5691f46f14d0a9718"
   license all_of: [
     "BSD-3-Clause",
@@ -14,7 +14,7 @@ class SuiteSparse < Formula
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,7 +38,7 @@ class SuiteSparse < Formula
   def install
     # Force cmake to use our compiler shims
     if OS.mac?
-      inreplace "GraphBLAS/cmake_modules/GraphBLAS_JIT_configure.cmake",
+      inreplace "GraphBLAScmake_modulesGraphBLAS_JIT_configure.cmake",
           "GB_C_COMPILER  \"${CMAKE_C_COMPILER}\"", "GB_C_COMPILER \"#{ENV.cc}\""
     end
 
@@ -57,14 +57,14 @@ class SuiteSparse < Formula
     ENV.deparallelize
     system "make", "library", *args
     system "make", "install", *args
-    lib.install Dir["**/*.a"]
-    pkgshare.install "KLU/Demo/klu_simple.c"
+    lib.install Dir["***.a"]
+    pkgshare.install "KLUDemoklu_simple.c"
   end
 
   test do
-    system ENV.cc, "-o", "test", pkgshare/"klu_simple.c",
+    system ENV.cc, "-o", "test", pkgshare"klu_simple.c",
            "-L#{lib}", "-lsuitesparseconfig", "-lklu"
-    assert_predicate testpath/"test", :exist?
-    assert_match "x [0] = 1", shell_output("./test")
+    assert_predicate testpath"test", :exist?
+    assert_match "x [0] = 1", shell_output(".test")
   end
 end

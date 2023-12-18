@@ -1,10 +1,10 @@
 class Sdns < Formula
   desc "Privacy important, fast, recursive dns resolver server with dnssec support"
-  homepage "https://sdns.dev"
-  url "https://ghproxy.com/https://github.com/semihalev/sdns/archive/refs/tags/v1.3.5.tar.gz"
+  homepage "https:sdns.dev"
+  url "https:github.comsemihalevsdnsarchiverefstagsv1.3.5.tar.gz"
   sha256 "7f25c66fd30d2501a1c028f02f7d9b8d9a222dbd4ec4367ae163fc32f2820991"
   license "MIT"
-  head "https://github.com/semihalev/sdns.git", branch: "master"
+  head "https:github.comsemihalevsdns.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a89801291167e410a70478bb281dc5cc27f284fc6ccb53a9909dcb8f7fbefc6"
@@ -26,19 +26,19 @@ class Sdns < Formula
   end
 
   service do
-    run [opt_bin/"sdns", "-config", etc/"sdns.conf"]
+    run [opt_bin"sdns", "-config", etc"sdns.conf"]
     keep_alive true
     require_root true
-    error_log_path var/"log/sdns.log"
-    log_path var/"log/sdns.log"
+    error_log_path var"logsdns.log"
+    log_path var"logsdns.log"
     working_dir opt_prefix
   end
 
   test do
     fork do
-      exec bin/"sdns", "-config", testpath/"sdns.conf"
+      exec bin"sdns", "-config", testpath"sdns.conf"
     end
     sleep(2)
-    assert_predicate testpath/"sdns.conf", :exist?
+    assert_predicate testpath"sdns.conf", :exist?
   end
 end

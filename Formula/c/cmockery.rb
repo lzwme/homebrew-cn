@@ -1,7 +1,7 @@
 class Cmockery < Formula
   desc "Unit testing and mocking library for C"
-  homepage "https://github.com/google/cmockery"
-  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cmockery/cmockery-0.1.2.tar.gz"
+  homepage "https:github.comgooglecmockery"
+  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comcmockerycmockery-0.1.2.tar.gz"
   sha256 "b9e04bfbeb45ceee9b6107aa5db671c53683a992082ed2828295e83dc84a8486"
   # Installed COPYING is BSD-3-Clause but source code uses Apache-2.0.
   # TODO: Change license to Apache-2.0 on next version as COPYING was replaced by LICENSE.txt
@@ -26,9 +26,9 @@ class Cmockery < Formula
 
   # This patch will be integrated upstream in 0.1.3, this is due to malloc.h being already in stdlib on OSX
   # It is safe to remove it on the next version
-  # More info on https://code.google.com/p/cmockery/issues/detail?id=3
+  # More info on https:code.google.compcmockeryissuesdetail?id=3
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/cmockery/0.1.2.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9cmockery0.1.2.patch"
     sha256 "4e1ba6ac1ee11350b7608b1ecd777c6b491d952538bc1b92d4ed407669ec712d"
   end
 
@@ -40,7 +40,7 @@ class Cmockery < Formula
     # Need to regenerate configure since existing patches don't apply.
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 end

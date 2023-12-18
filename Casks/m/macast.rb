@@ -2,10 +2,10 @@ cask "macast" do
   version "0.7"
   sha256 "076500271e727f11f02eebb2731d2e6e80cf80d5f077fc1191293660312e2cfa"
 
-  url "https://ghproxy.com/https://github.com/xfangfang/Macast/releases/download/v#{version}/Macast-MacOS-v#{version}.dmg"
+  url "https:github.comxfangfangMacastreleasesdownloadv#{version}Macast-MacOS-v#{version}.dmg"
   name "Macast"
   desc "DLNA Media Renderer"
-  homepage "https://github.com/xfangfang/Macast"
+  homepage "https:github.comxfangfangMacast"
 
   livecheck do
     url :homepage
@@ -17,8 +17,8 @@ cask "macast" do
   app "Macast.app"
 
   zap trash: [
-    "~/Library/Application Support/Macast",
-    "~/Library/Preferences/cn.xfangfang.Macast.plist",
-    "~/Library/Saved Application State/cn.xfangfang.Macast.savedState",
+    "~LibraryApplication SupportMacast",
+    "~LibraryPreferencescn.xfangfang.Macast.plist",
+    "~LibrarySaved Application Statecn.xfangfang.Macast.savedState",
   ]
 end

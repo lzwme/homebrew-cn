@@ -1,10 +1,10 @@
 class Lhasa < Formula
   desc "LHA implementation to decompress .lzh and .lzs archives"
-  homepage "https://fragglet.github.io/lhasa/"
-  url "https://ghproxy.com/https://github.com/fragglet/lhasa/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:fragglet.github.iolhasa"
+  url "https:github.comfraggletlhasaarchiverefstagsv0.4.0.tar.gz"
   sha256 "b0ef13e6511044ecb50483b06e630eaa7867473ec563204fe0098c00beeca4f8"
   license "ISC"
-  head "https://github.com/fragglet/lhasa.git", branch: "master"
+  head "https:github.comfraggletlhasa.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ba490379926bcfe5bbff0186c4a65a0a6b5c7da25bd4b7f02ed37691466b0aed"
@@ -26,7 +26,7 @@ class Lhasa < Formula
   conflicts_with "lha", because: "both install a `lha` binary"
 
   def install
-    system "./autogen.sh", "--prefix=#{prefix}"
+    system ".autogen.sh", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -38,7 +38,7 @@ class Lhasa < Formula
       ].join,
     ].pack("H*")
 
-    pipe_output("#{bin}/lha x -", data)
-    assert_equal "foo\n", (testpath/"foo").read
+    pipe_output("#{bin}lha x -", data)
+    assert_equal "foo\n", (testpath"foo").read
   end
 end

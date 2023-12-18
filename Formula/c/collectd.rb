@@ -1,23 +1,23 @@
 class Collectd < Formula
   desc "Statistics collection and monitoring daemon"
-  homepage "https://collectd.org/"
+  homepage "https:collectd.org"
   license "MIT"
   revision 7
 
   stable do
-    url "https://collectd.org/files/collectd-5.12.0.tar.bz2"
+    url "https:collectd.orgfilescollectd-5.12.0.tar.bz2"
     sha256 "5bae043042c19c31f77eb8464e56a01a5454e0b39fa07cf7ad0f1bfc9c3a09d6"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
-    url "https://collectd.org/download.shtml"
-    regex(/href=.*?collectd[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:collectd.orgdownload.shtml"
+    regex(href=.*?collectd[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Collectd < Formula
   end
 
   head do
-    url "https://github.com/collectd/collectd.git", branch: "main"
+    url "https:github.comcollectdcollectd.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -55,29 +55,29 @@ class Collectd < Formula
     ]
     args << "--with-perl-bindings=PREFIX=#{prefix} INSTALLSITEMAN3DIR=#{man3}" if OS.linux?
 
-    system "./build.sh" if build.head?
-    system "./configure", *args
+    system ".build.sh" if build.head?
+    system ".configure", *args
     system "make", "install"
   end
 
   service do
-    run [opt_sbin/"collectd", "-f", "-C", etc/"collectd.conf"]
+    run [opt_sbin"collectd", "-f", "-C", etc"collectd.conf"]
     keep_alive true
-    error_log_path var/"log/collectd.log"
-    log_path var/"log/collectd.log"
+    error_log_path var"logcollectd.log"
+    log_path var"logcollectd.log"
   end
 
   test do
-    log = testpath/"collectd.log"
-    (testpath/"collectd.conf").write <<~EOS
+    log = testpath"collectd.log"
+    (testpath"collectd.conf").write <<~EOS
       LoadPlugin logfile
       <Plugin logfile>
         File "#{log}"
-      </Plugin>
+      <Plugin>
       LoadPlugin memory
     EOS
     begin
-      pid = fork { exec sbin/"collectd", "-f", "-C", "collectd.conf" }
+      pid = fork { exec sbin"collectd", "-f", "-C", "collectd.conf" }
       sleep 1
       assert_predicate log, :exist?, "Failed to create log file"
       assert_match "plugin \"memory\" successfully loaded.", log.read

@@ -1,10 +1,10 @@
 class Starship < Formula
   desc "Cross-shell prompt for astronauts"
-  homepage "https://starship.rs"
-  url "https://ghproxy.com/https://github.com/starship/starship/archive/refs/tags/v1.16.0.tar.gz"
+  homepage "https:starship.rs"
+  url "https:github.comstarshipstarshiparchiverefstagsv1.16.0.tar.gz"
   sha256 "133888e190ce1563927e16ee693da3026d2e668d975ac373f853e030743775c5"
   license "ISC"
-  head "https://github.com/starship/starship.git", branch: "master"
+  head "https:github.comstarshipstarship.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76b5c5e6388e5e978e3f361fb4a09424ced5c68e152c1dacf1fe152c54b17d24"
@@ -31,11 +31,11 @@ class Starship < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"starship", "completions")
+    generate_completions_from_executable(bin"starship", "completions")
   end
 
   test do
     ENV["STARSHIP_CONFIG"] = ""
-    assert_equal "[1;32m❯[0m ", shell_output("#{bin}/starship module character")
+    assert_equal "[1;32m❯[0m ", shell_output("#{bin}starship module character")
   end
 end

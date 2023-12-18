@@ -1,16 +1,16 @@
 class Jvgrep < Formula
   desc "Grep for Japanese users of Vim"
-  homepage "https://github.com/mattn/jvgrep"
+  homepage "https:github.commattnjvgrep"
   license "MIT"
-  head "https://github.com/mattn/jvgrep.git", branch: "master"
+  head "https:github.commattnjvgrep.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/mattn/jvgrep/archive/refs/tags/v5.8.10.tar.gz"
+    url "https:github.commattnjvgreparchiverefstagsv5.8.10.tar.gz"
     sha256 "93b253a75a505bf0f58b23428b0aaa4bed842fe0060e282793066ee88d7672c9"
 
-    # upstream PR, https://github.com/mattn/jvgrep/pull/81
+    # upstream PR, https:github.commattnjvgreppull81
     patch do
-      url "https://github.com/mattn/jvgrep/commit/5b5a04d66d00c890bc263754bb5681fbe2f837a9.patch?full_index=1"
+      url "https:github.commattnjvgrepcommit5b5a04d66d00c890bc263754bb5681fbe2f837a9.patch?full_index=1"
       sha256 "a9cc6518b6ea9e68e32bcd4f30fcb4a4a37b5df554306d27f24199f281bc046f"
     end
   end
@@ -34,7 +34,7 @@ class Jvgrep < Formula
   end
 
   test do
-    (testpath/"Hello.txt").write("Hello World!")
-    system bin/"jvgrep", "Hello World!", testpath
+    (testpath"Hello.txt").write("Hello World!")
+    system bin"jvgrep", "Hello World!", testpath
   end
 end

@@ -1,10 +1,10 @@
 class Fdroidcl < Formula
   desc "F-Droid desktop client"
-  homepage "https://github.com/mvdan/fdroidcl"
-  url "https://ghproxy.com/https://github.com/mvdan/fdroidcl/archive/refs/tags/v0.7.0.tar.gz"
+  homepage "https:github.commvdanfdroidcl"
+  url "https:github.commvdanfdroidclarchiverefstagsv0.7.0.tar.gz"
   sha256 "4dbbb2106c23564a19cdde912d3f06cd258f02eccd6382a0532ef64e7e61f2fd"
   license "BSD-3-Clause"
-  head "https://github.com/mvdan/fdroidcl.git", branch: "master"
+  head "https:github.commvdanfdroidcl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29143b7cc90ec131c4d1be6fcdc86f52478da32be90174e61a3a84b3bc8a09f8"
@@ -25,7 +25,7 @@ class Fdroidcl < Formula
   end
 
   test do
-    assert_match "f-droid.org/repo", shell_output("#{bin}/fdroidcl update")
+    assert_match "f-droid.orgrepo", shell_output("#{bin}fdroidcl update")
 
     list = <<~EOS
       Connectivity
@@ -46,7 +46,7 @@ class Fdroidcl < Formula
       Time
       Writing
     EOS
-    assert_equal list, shell_output("#{bin}/fdroidcl list categories")
-    assert_match version.to_s, shell_output("#{bin}/fdroidcl version")
+    assert_equal list, shell_output("#{bin}fdroidcl list categories")
+    assert_match version.to_s, shell_output("#{bin}fdroidcl version")
   end
 end

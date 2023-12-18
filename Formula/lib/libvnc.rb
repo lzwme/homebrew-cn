@@ -1,10 +1,10 @@
 class Libvnc < Formula
   desc "Cross-platform C libraries for easy implementation of VNC server or client"
-  homepage "https://libvnc.github.io/"
-  url "https://ghproxy.com/https://github.com/LibVNC/libvncserver/archive/refs/tags/LibVNCServer-0.9.13.tar.gz"
+  homepage "https:libvnc.github.io"
+  url "https:github.comLibVNClibvncserverarchiverefstagsLibVNCServer-0.9.13.tar.gz"
   sha256 "0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a"
   license "GPL-2.0-only"
-  head "https://github.com/LibVNC/libvncserver.git", branch: "master"
+  head "https:github.comLibVNClibvncserver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "f48e89588cb1a19576b281f57e5603dd4be43fc243d0cd8ba11e89b2d945791b"
@@ -40,7 +40,7 @@ class Libvnc < Formula
   end
 
   test do
-    system ENV.cc, "-o", "test", pkgshare/"examples/example.c",
+    system ENV.cc, "-o", "test", pkgshare"examplesexample.c",
      "-L#{lib}", "-lvncserver"
   end
 end

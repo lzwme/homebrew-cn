@@ -1,7 +1,7 @@
 class LiquidDsp < Formula
   desc "Digital signal processing library for software-defined radios"
-  homepage "https://liquidsdr.org/"
-  url "https://ghproxy.com/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.6.0.tar.gz"
+  homepage "https:liquidsdr.org"
+  url "https:github.comjgaeddertliquid-dsparchiverefstagsv1.6.0.tar.gz"
   sha256 "6ee6a5dfb48e047b118cf613c0b9f43e34356a5667a77a72a55371d2c8c53bf5"
   license "MIT"
 
@@ -22,14 +22,14 @@ class LiquidDsp < Formula
   depends_on "fftw"
 
   def install
-    system "./bootstrap.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system ".bootstrap.sh"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <liquid/liquid.h>
+    (testpath"test.c").write <<~EOS
+      #include <liquidliquid.h>
       int main() {
         if (!liquid_is_prime(3))
           return 1;
@@ -37,6 +37,6 @@ class LiquidDsp < Formula
       }
     EOS
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lliquid"
-    system "./test"
+    system ".test"
   end
 end

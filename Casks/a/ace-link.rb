@@ -2,10 +2,10 @@ cask "ace-link" do
   version "2.0.6"
   sha256 "4616e4063e45c3f4c624df884ff1a367ac8ad9b545142099bfbef3a0396fdd9e"
 
-  url "https://ghproxy.com/https://github.com/blaise-io/acelink/releases/download/#{version}/Ace.Link.#{version}.dmg"
+  url "https:github.comblaise-ioacelinkreleasesdownload#{version}Ace.Link.#{version}.dmg"
   name "Ace Link"
   desc "Menu bar app that allows playing Ace Stream video streams in the VLC player"
-  homepage "https://github.com/blaise-io/acelink"
+  homepage "https:github.comblaise-ioacelink"
 
   livecheck do
     url :url
@@ -22,5 +22,5 @@ cask "ace-link" do
 
   uninstall quit: "blaise.io.acelink"
 
-  zap trash: "~/Library/Application Support/Ace Link"
+  zap trash: "~LibraryApplication SupportAce Link"
 end

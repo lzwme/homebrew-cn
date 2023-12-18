@@ -2,15 +2,15 @@ cask "mediaelch" do
   version "2.10.6,2023-12-03,6121419e"
   sha256 "facdfd42fbb0daeea0206c5506c0b51dde56d6c43b9ee31aff963c02185de6b2"
 
-  url "https://ghproxy.com/https://github.com/Komet/MediaElch/releases/download/v#{version.csv.first}/MediaElch_macOS_11_or_later_Qt6_#{version.csv.first}_#{version.csv.second}_git-#{version.csv.third}.dmg",
-      verified: "github.com/Komet/MediaElch/"
+  url "https:github.comKometMediaElchreleasesdownloadv#{version.csv.first}MediaElch_macOS_11_or_later_Qt6_#{version.csv.first}_#{version.csv.second}_git-#{version.csv.third}.dmg",
+      verified: "github.comKometMediaElch"
   name "MediaElch"
   desc "Media Manager for Kodi"
-  homepage "https://www.kvibes.de/en/mediaelch/"
+  homepage "https:www.kvibes.deenmediaelch"
 
   livecheck do
     url :url
-    regex(/^MediaElch_macOS_.*?[._-]v?(\d+(?:\.\d+)+)_(\d+(?:.\d+)*)_git-(.+?)\.dmg$/i)
+    regex(^MediaElch_macOS_.*?[._-]v?(\d+(?:\.\d+)+)_(\d+(?:.\d+)*)_git-(.+?)\.dmg$i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -26,7 +26,7 @@ cask "mediaelch" do
   app "MediaElch.app"
 
   zap trash: [
-    "~/Library/Preferences/com.kvibes.MediaElch.plist",
-    "~/Library/Saved Application State/com.kvibes.MediaElch.savedState",
+    "~LibraryPreferencescom.kvibes.MediaElch.plist",
+    "~LibrarySaved Application Statecom.kvibes.MediaElch.savedState",
   ]
 end

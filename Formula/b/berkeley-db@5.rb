@@ -1,7 +1,7 @@
 class BerkeleyDbAT5 < Formula
-  desc "High performance key/value database"
-  homepage "https://www.oracle.com/database/technologies/related/berkeleydb.html"
-  url "https://download.oracle.com/berkeley-db/db-5.3.28.tar.gz"
+  desc "High performance keyvalue database"
+  homepage "https:www.oracle.comdatabasetechnologiesrelatedberkeleydb.html"
+  url "https:download.oracle.comberkeley-dbdb-5.3.28.tar.gz"
   sha256 "e0a992d740709892e81f9d93f06daf305cf73fb81b545afe72478043172c3628"
   license "Sleepycat"
   revision 1
@@ -24,12 +24,12 @@ class BerkeleyDbAT5 < Formula
   # We use a resource to avoid potential build dependency loop in future. Right now this
   # doesn't happen because `perl` depends on `berkeley-db`, but the dependency may change
   # to `berkeley-db@5`. In this case, `automake -> autoconf -> perl` will create a loop.
-  # Ref: https://github.com/Homebrew/homebrew-core/issues/100796
+  # Ref: https:github.comHomebrewhomebrew-coreissues100796
   resource "automake" do
     on_linux do
       on_arm do
-        url "https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.xz"
-        mirror "https://ftpmirror.gnu.org/automake/automake-1.16.5.tar.xz"
+        url "https:ftp.gnu.orggnuautomakeautomake-1.16.5.tar.xz"
+        mirror "https:ftpmirror.gnu.orgautomakeautomake-1.16.5.tar.xz"
         sha256 "f01d58cd6d9d77fbdca9eb4bbd5ead1988228fdb73d6f7a201f5f8d6b118b469"
       end
     end
@@ -37,20 +37,20 @@ class BerkeleyDbAT5 < Formula
 
   # Fix build with recent clang
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/4c55b1/berkeley-db%404/clang.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches4c55b1berkeley-db%404clang.diff"
     sha256 "86111b0965762f2c2611b302e4a95ac8df46ad24925bbb95a1961542a1542e40"
     directory "src"
   end
 
   # Further fixes for clang
   patch :p0 do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/NetBSD/pkgsrc/6034096dc85159a02116524692545cf5752c8f33/databases/db5/patches/patch-src_dbinc_db.in"
+    url "https:raw.githubusercontent.comNetBSDpkgsrc6034096dc85159a02116524692545cf5752c8f33databasesdb5patchespatch-src_dbinc_db.in"
     sha256 "302b78f3e1f131cfbf91b24e53a5c79e1d9234c143443ab936b9e5ad08dea5b6"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     directory "dist"
   end
@@ -66,7 +66,7 @@ class BerkeleyDbAT5 < Formula
     # configure: error: cannot guess build type; you must specify one
     if OS.linux? && Hardware::CPU.arm?
       resource("automake").stage do
-        (buildpath/"dist").install "lib/config.guess", "lib/config.sub"
+        (buildpath"dist").install "libconfig.guess", "libconfig.sub"
       end
     end
 
@@ -80,7 +80,7 @@ class BerkeleyDbAT5 < Formula
 
     # BerkeleyDB requires you to build everything from the build_unix subdirectory
     cd "build_unix" do
-      system "../dist/configure", *args
+      system "..distconfigure", *args
       system "make", "install"
 
       # use the standard docs location
@@ -90,7 +90,7 @@ class BerkeleyDbAT5 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <assert.h>
       #include <string.h>
       #include <db_cxx.h>
@@ -117,7 +117,7 @@ class BerkeleyDbAT5 < Formula
       -ldb_cxx
     ]
     system ENV.cxx, "test.cpp", "-o", "test", *flags
-    system "./test"
-    assert_predicate testpath/"test.db", :exist?
+    system ".test"
+    assert_predicate testpath"test.db", :exist?
   end
 end

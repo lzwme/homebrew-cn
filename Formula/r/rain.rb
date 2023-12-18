@@ -1,7 +1,7 @@
 class Rain < Formula
   desc "Command-line tool for working with AWS CloudFormation"
-  homepage "https://github.com/aws-cloudformation/rain"
-  url "https://ghproxy.com/https://github.com/aws-cloudformation/rain/archive/refs/tags/v1.7.5.tar.gz"
+  homepage "https:github.comaws-cloudformationrain"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.7.5.tar.gz"
   sha256 "8d3390658664a60b503c85ebf23d13c07b0defdbd29933f564aca03ba986e3b6"
   license "Apache-2.0"
 
@@ -18,9 +18,9 @@ class Rain < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "cmd/rain/main.go"
-    bash_completion.install "docs/bash_completion.sh"
-    zsh_completion.install "docs/zsh_completion.sh"
+    system "go", "build", *std_go_args, "cmdrainmain.go"
+    bash_completion.install "docsbash_completion.sh"
+    zsh_completion.install "docszsh_completion.sh"
   end
 
   def caveats
@@ -31,11 +31,11 @@ class Rain < Formula
   end
 
   test do
-    (testpath/"test.template").write <<~EOS
+    (testpath"test.template").write <<~EOS
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
     EOS
-    assert_equal "test.template: formatted OK", shell_output("#{bin}/rain fmt -v test.template").strip
+    assert_equal "test.template: formatted OK", shell_output("#{bin}rain fmt -v test.template").strip
   end
 end

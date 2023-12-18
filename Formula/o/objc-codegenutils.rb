@@ -1,10 +1,10 @@
 class ObjcCodegenutils < Formula
   desc "Three small tools to help work with XCode"
-  homepage "https://github.com/puls/objc-codegenutils"
-  url "https://ghproxy.com/https://github.com/puls/objc-codegenutils/archive/refs/tags/v1.0.tar.gz"
+  homepage "https:github.compulsobjc-codegenutils"
+  url "https:github.compulsobjc-codegenutilsarchiverefstagsv1.0.tar.gz"
   sha256 "98b8819e77e18029f1bda56622d42c162e52ef98f3ba4c6c8fcf5d40c256e845"
   license "Apache-2.0"
-  head "https://github.com/puls/objc-codegenutils.git", branch: "master"
+  head "https:github.compulsobjc-codegenutils.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd3e144fa7f8cddb59b171eae398fbf10d5d72b98bc0053da553e57213e26c7b"
@@ -33,27 +33,27 @@ class ObjcCodegenutils < Formula
                "SYMROOT=build",
                "OBJROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "build/Release/objc-assetgen"
+    bin.install "buildReleaseobjc-assetgen"
     xcodebuild "-arch", Hardware::CPU.arch,
                "-target", "colordump",
                "-configuration", "Release",
                "SYMROOT=build",
                "OBJROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "build/Release/objc-colordump"
+    bin.install "buildReleaseobjc-colordump"
     xcodebuild "-arch", Hardware::CPU.arch,
                "-target", "identifierconstants",
                "-configuration", "Release",
                "SYMROOT=build",
                "OBJROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "build/Release/objc-identifierconstants"
+    bin.install "buildReleaseobjc-identifierconstants"
   end
 
   test do
     # Would do more verification here but it would require fixture Xcode projects not in the main repo
-    system "#{bin}/objc-assetgen", "-h"
-    system "#{bin}/objc-colordump", "-h"
-    system "#{bin}/objc-identifierconstants", "-h"
+    system "#{bin}objc-assetgen", "-h"
+    system "#{bin}objc-colordump", "-h"
+    system "#{bin}objc-identifierconstants", "-h"
   end
 end

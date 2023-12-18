@@ -1,7 +1,7 @@
 class Arkade < Formula
   desc "Open Source Kubernetes Marketplace"
-  homepage "https://blog.alexellis.io/kubernetes-marketplace-two-year-update/"
-  url "https://github.com/alexellis/arkade.git",
+  homepage "https:blog.alexellis.iokubernetes-marketplace-two-year-update"
+  url "https:github.comalexellisarkade.git",
       tag:      "0.10.18",
       revision: "84ccd116f8be52022651756fb48f4fa1e51ac129"
   license "MIT"
@@ -26,20 +26,20 @@ class Arkade < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/alexellis/arkade/pkg.Version=#{version}
-      -X github.com/alexellis/arkade/pkg.GitCommit=#{Utils.git_head}
+      -X github.comalexellisarkadepkg.Version=#{version}
+      -X github.comalexellisarkadepkg.GitCommit=#{Utils.git_head}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     bin.install_symlink "arkade" => "ark"
 
-    generate_completions_from_executable(bin/"arkade", "completion")
+    generate_completions_from_executable(bin"arkade", "completion")
     # make zsh completion also work for `ark` symlink
-    inreplace zsh_completion/"_arkade", "#compdef arkade", "#compdef arkade ark=arkade"
+    inreplace zsh_completion"_arkade", "#compdef arkade", "#compdef arkade ark=arkade"
   end
 
   test do
-    assert_match "Version: #{version}", shell_output(bin/"arkade version")
-    assert_match "Info for app: openfaas", shell_output(bin/"arkade info openfaas")
+    assert_match "Version: #{version}", shell_output(bin"arkade version")
+    assert_match "Info for app: openfaas", shell_output(bin"arkade info openfaas")
   end
 end

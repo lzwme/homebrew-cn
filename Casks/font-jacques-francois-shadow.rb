@@ -2,10 +2,10 @@ cask "font-jacques-francois-shadow" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/jacquesfrancoisshadow/JacquesFrancoisShadow-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofljacquesfrancoisshadowJacquesFrancoisShadow-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Jacques Francois Shadow"
-  homepage "https://fonts.google.com/specimen/Jacques+Francois+Shadow"
+  homepage "https:fonts.google.comspecimenJacques+Francois+Shadow"
 
   font "JacquesFrancoisShadow-Regular.ttf"
 

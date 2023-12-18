@@ -1,7 +1,7 @@
 class Fastp < Formula
   desc "Ultra-fast all-in-one FASTQ preprocessor"
-  homepage "https://github.com/OpenGene/fastp"
-  url "https://ghproxy.com/https://github.com/OpenGene/fastp/archive/refs/tags/v0.23.4.tar.gz"
+  homepage "https:github.comOpenGenefastp"
+  url "https:github.comOpenGenefastparchiverefstagsv0.23.4.tar.gz"
   sha256 "4fad6db156e769d46071add8a778a13a5cb5186bc1e1a5f9b1ffd499d84d72b5"
   license "MIT"
 
@@ -18,14 +18,14 @@ class Fastp < Formula
   depends_on "libdeflate"
 
   def install
-    mkdir prefix/"bin"
+    mkdir prefix"bin"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
     pkgshare.install "testdata"
   end
 
   test do
-    system bin/"fastp", "-i", pkgshare/"testdata/R1.fq", "-o", "out.fq"
-    assert_predicate testpath/"out.fq", :exist?
+    system bin"fastp", "-i", pkgshare"testdataR1.fq", "-o", "out.fq"
+    assert_predicate testpath"out.fq", :exist?
   end
 end

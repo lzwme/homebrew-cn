@@ -2,10 +2,10 @@ cask "font-wallpoet" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/wallpoet/Wallpoet-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflwallpoetWallpoet-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Wallpoet"
-  homepage "https://fonts.google.com/specimen/Wallpoet"
+  homepage "https:fonts.google.comspecimenWallpoet"
 
   font "Wallpoet-Regular.ttf"
 

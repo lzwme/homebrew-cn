@@ -1,10 +1,10 @@
 class N < Formula
   desc "Node version management"
-  homepage "https://github.com/tj/n"
-  url "https://ghproxy.com/https://github.com/tj/n/archive/refs/tags/v9.2.0.tar.gz"
+  homepage "https:github.comtjn"
+  url "https:github.comtjnarchiverefstagsv9.2.0.tar.gz"
   sha256 "5ed8a416014abd115e7174aa32ccba29826eebab2188420404f46931f6388eb1"
   license "MIT"
-  head "https://github.com/tj/n.git", branch: "master"
+  head "https:github.comtjn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "436f751158c7c08d9da56191e447faacfb9ac64187ff18a6f58abfa6a1b254eb"
@@ -22,6 +22,6 @@ class N < Formula
   end
 
   test do
-    system bin/"n", "ls"
+    system bin"n", "ls"
   end
 end

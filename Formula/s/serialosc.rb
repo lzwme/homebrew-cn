@@ -1,12 +1,12 @@
 class Serialosc < Formula
   desc "Opensound control server for monome devices"
-  homepage "https://github.com/monome/docs/blob/gh-pages/serialosc/osc.md"
+  homepage "https:github.commonomedocsblobgh-pagesserialoscosc.md"
   # pull from git tag to get submodules
-  url "https://github.com/monome/serialosc.git",
+  url "https:github.commonomeserialosc.git",
       tag:      "v1.4.3",
       revision: "12fa410a14b2759617c6df2ff9088bc79b3ee8de"
   license "ISC"
-  head "https://github.com/monome/serialosc.git", branch: "main"
+  head "https:github.commonomeserialosc.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -35,19 +35,19 @@ class Serialosc < Formula
   end
 
   def install
-    system "python3", "./waf", "configure", "--enable-system-libuv", "--prefix=#{prefix}"
-    system "python3", "./waf", "build"
-    system "python3", "./waf", "install"
+    system "python3", ".waf", "configure", "--enable-system-libuv", "--prefix=#{prefix}"
+    system "python3", ".waf", "build"
+    system "python3", ".waf", "install"
   end
 
   service do
-    run [opt_bin/"serialoscd"]
+    run [opt_bin"serialoscd"]
     keep_alive true
-    log_path var/"log/serialoscd.log"
-    error_log_path var/"log/serialoscd.log"
+    log_path var"logserialoscd.log"
+    error_log_path var"logserialoscd.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/serialoscd -v")
+    assert_match version.to_s, shell_output("#{bin}serialoscd -v")
   end
 end

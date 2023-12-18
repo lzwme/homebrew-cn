@@ -1,11 +1,11 @@
 class Shairport < Formula
   desc "Airtunes emulator"
-  homepage "https://github.com/abrasive/shairport"
-  url "https://ghproxy.com/https://github.com/abrasive/shairport/archive/refs/tags/1.1.1.tar.gz"
+  homepage "https:github.comabrasiveshairport"
+  url "https:github.comabrasiveshairportarchiverefstags1.1.1.tar.gz"
   sha256 "1b60df6d40bab874c1220d7daecd68fcff3e47bda7c6d7f91db0a5b5c43c0c72"
   license "MIT"
   revision 1
-  head "https://github.com/abrasive/shairport.git", branch: "master"
+  head "https:github.comabrasiveshairport.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -21,18 +21,18 @@ class Shairport < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "510b4ed23f8c1c12f5a2c756bcdeaf4e7b86ff0574b29b951b9b26c806a29cf4"
   end
 
-  # https://github.com/abrasive/shairport#shairport-is-no-longer-maintained
+  # https:github.comabrasiveshairport#shairport-is-no-longer-maintained
   disable! date: "2023-10-17", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
 
   def install
-    system "./configure"
+    system ".configure"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    system "#{bin}/shairport", "-h"
+    system "#{bin}shairport", "-h"
   end
 end

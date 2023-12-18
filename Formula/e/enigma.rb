@@ -1,13 +1,13 @@
 class Enigma < Formula
   desc "Puzzle game inspired by Oxyd and Rock'n'Roll"
-  homepage "https://www.nongnu.org/enigma/"
-  url "https://ghproxy.com/https://github.com/Enigma-Game/Enigma/releases/download/1.30/Enigma-1.30-src.tar.gz"
+  homepage "https:www.nongnu.orgenigma"
+  url "https:github.comEnigma-GameEnigmareleasesdownload1.30Enigma-1.30-src.tar.gz"
   sha256 "ae64b91fbc2b10970071d0d78ed5b4ede9ee3868de2e6e9569546fc58437f8af"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+)$/i)
+    regex(v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Enigma < Formula
   end
 
   head do
-    url "https://github.com/Enigma-Game/Enigma.git", branch: "master"
+    url "https:github.comEnigma-GameEnigma.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "texi2html" => :build
@@ -44,8 +44,8 @@ class Enigma < Formula
   depends_on "xerces-c"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--with-system-enet",
                           "--prefix=#{prefix}"
     system "make"
@@ -53,6 +53,6 @@ class Enigma < Formula
   end
 
   test do
-    assert_equal "Enigma v#{version}", shell_output("#{bin}/enigma --version").chomp
+    assert_equal "Enigma v#{version}", shell_output("#{bin}enigma --version").chomp
   end
 end

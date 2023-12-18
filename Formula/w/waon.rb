@@ -1,7 +1,7 @@
 class Waon < Formula
   desc "Wave-to-notes transcriber"
-  homepage "https://kichiki.github.io/WaoN/"
-  url "https://ghproxy.com/https://github.com/kichiki/WaoN/archive/refs/tags/v0.11.tar.gz"
+  homepage "https:kichiki.github.ioWaoN"
+  url "https:github.comkichikiWaoNarchiverefstagsv0.11.tar.gz"
   sha256 "75d5c1721632afee55a54bcbba1a444e53b03f4224b03da29317e98aa223c30b"
   license "GPL-2.0-or-later"
 
@@ -34,10 +34,10 @@ class Waon < Formula
   end
 
   test do
-    system "sox", "-n", testpath/"test.wav", "synth", "3", "sin", "A4"
-    output = shell_output("#{bin}/waon -i #{testpath}/test.wav -o #{testpath}/output.midi 2>&1")
+    system "sox", "-n", testpath"test.wav", "synth", "3", "sin", "A4"
+    output = shell_output("#{bin}waon -i #{testpath}test.wav -o #{testpath}output.midi 2>&1")
     assert_match "# of events = 2", output
     assert_match "n = 2", output
-    assert_predicate testpath/"output.midi", :exist?
+    assert_predicate testpath"output.midi", :exist?
   end
 end

@@ -1,11 +1,11 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
-  homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://github.com/docker/buildx.git",
+  homepage "https:docs.docker.combuildxworking-with-buildx"
+  url "https:github.comdockerbuildx.git",
       tag:      "v0.12.0",
       revision: "542e5d810e4a1a155684f5f3c5bd7e797632a12f"
   license "Apache-2.0"
-  head "https://github.com/docker/buildx.git", branch: "master"
+  head "https:github.comdockerbuildx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "316f90184d51579d9e80a5a38a3d93c176c8d55375215c4831a7a99db978eaa4"
@@ -22,28 +22,28 @@ class DockerBuildx < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/docker/buildx/version.Version=v#{version}
-      -X github.com/docker/buildx/version.Revision=#{Utils.git_head}
+      -X github.comdockerbuildxversion.Version=v#{version}
+      -X github.comdockerbuildxversion.Revision=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/buildx"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdbuildx"
 
-    doc.install Dir["docs/reference/*.md"]
+    doc.install Dir["docsreference*.md"]
 
-    generate_completions_from_executable(bin/"docker-buildx", "completion")
+    generate_completions_from_executable(bin"docker-buildx", "completion")
   end
 
   def caveats
     <<~EOS
       docker-buildx is a Docker plugin. For Docker to find this plugin, symlink it:
-        mkdir -p ~/.docker/cli-plugins
-        ln -sfn #{opt_bin}/docker-buildx ~/.docker/cli-plugins/docker-buildx
+        mkdir -p ~.dockercli-plugins
+        ln -sfn #{opt_bin}docker-buildx ~.dockercli-pluginsdocker-buildx
     EOS
   end
 
   test do
-    assert_match "github.com/docker/buildx v#{version}", shell_output("#{bin}/docker-buildx version")
-    output = shell_output(bin/"docker-buildx build . 2>&1", 1)
-    assert_match(/(denied while trying to|Cannot) connect to the Docker daemon/, output)
+    assert_match "github.comdockerbuildx v#{version}", shell_output("#{bin}docker-buildx version")
+    output = shell_output(bin"docker-buildx build . 2>&1", 1)
+    assert_match((denied while trying to|Cannot) connect to the Docker daemon, output)
   end
 end

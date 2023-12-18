@@ -1,10 +1,10 @@
 class Regclient < Formula
   desc "Docker and OCI Registry Client in Go and tooling using those libraries"
-  homepage "https://github.com/regclient/regclient"
-  url "https://ghproxy.com/https://github.com/regclient/regclient/archive/refs/tags/v0.5.5.tar.gz"
+  homepage "https:github.comregclientregclient"
+  url "https:github.comregclientregclientarchiverefstagsv0.5.5.tar.gz"
   sha256 "f30feda09a4b280233d28712d640909216e4ce648ac36ea1042ee565a2144cde"
   license "Apache-2.0"
-  head "https://github.com/regclient/regclient.git", branch: "main"
+  head "https:github.comregclientregclient.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea8d14bf1a925d30720e96644bd3c127f726f2122777e6ec31244c47653a51d1"
@@ -19,20 +19,20 @@ class Regclient < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/regclient/regclient/internal/version.vcsTag=#{version}"
+    ldflags = "-s -w -X github.comregclientregclientinternalversion.vcsTag=#{version}"
     ["regbot", "regctl", "regsync"].each do |f|
-      system "go", "build", *std_go_args(ldflags: ldflags, output: bin/f.to_s), "./cmd/#{f}"
+      system "go", "build", *std_go_args(ldflags: ldflags, output: binf.to_s), ".cmd#{f}"
 
-      generate_completions_from_executable(bin/f.to_s, "completion")
+      generate_completions_from_executable(binf.to_s, "completion")
     end
   end
 
   test do
-    output = shell_output("#{bin}/regctl image manifest docker.io/library/alpine:latest")
-    assert_match "application/vnd.docker.distribution.manifest.list.v2+json", output
+    output = shell_output("#{bin}regctl image manifest docker.iolibraryalpine:latest")
+    assert_match "applicationvnd.docker.distribution.manifest.list.v2+json", output
 
-    assert_match version.to_s, shell_output("#{bin}/regbot version")
-    assert_match version.to_s, shell_output("#{bin}/regctl version")
-    assert_match version.to_s, shell_output("#{bin}/regsync version")
+    assert_match version.to_s, shell_output("#{bin}regbot version")
+    assert_match version.to_s, shell_output("#{bin}regctl version")
+    assert_match version.to_s, shell_output("#{bin}regsync version")
   end
 end

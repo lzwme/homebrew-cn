@@ -1,10 +1,10 @@
 class Tbox < Formula
   desc "Glib-like multi-platform C library"
-  homepage "https://tboox.org/"
-  url "https://ghproxy.com/https://github.com/tboox/tbox/archive/refs/tags/v1.7.5.tar.gz"
+  homepage "https:tboox.org"
+  url "https:github.comtbooxtboxarchiverefstagsv1.7.5.tar.gz"
   sha256 "6382cf7d6110cbe6f29e8346d0e4eb078dd2cbf7e62913b96065848e351eb15e"
   license "Apache-2.0"
-  head "https://github.com/tboox/tbox.git", branch: "master"
+  head "https:github.comtbooxtbox.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0cba603567a21c953c379d310ef4e739ab85e89166ee9ca0820e6de954377c97"
@@ -25,8 +25,8 @@ class Tbox < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <tbox/tbox.h>
+    (testpath"test.c").write <<~EOS
+      #include <tboxtbox.h>
       int main()
       {
         if (tb_init(tb_null, tb_null))
@@ -38,6 +38,6 @@ class Tbox < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltbox", "-lm", "-pthread", "-o", "test"
-    assert_equal "hello tbox!\n", shell_output("./test")
+    assert_equal "hello tbox!\n", shell_output(".test")
   end
 end

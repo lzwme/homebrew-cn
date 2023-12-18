@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class TypescriptLanguageServer < Formula
   desc "Language Server Protocol implementation for TypeScript wrapping tsserver"
-  homepage "https://github.com/typescript-language-server/typescript-language-server"
-  url "https://registry.npmjs.org/typescript-language-server/-/typescript-language-server-4.2.0.tgz"
+  homepage "https:github.comtypescript-language-servertypescript-language-server"
+  url "https:registry.npmjs.orgtypescript-language-server-typescript-language-server-4.2.0.tgz"
   sha256 "b20d0ed6ec3a2f72c394f2936d75ec5d563047e73b1c7e5cf3dc4d21e7c4a2ff"
   license all_of: ["MIT", "Apache-2.0"]
 
@@ -17,11 +17,11 @@ class TypescriptLanguageServer < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
 
-    node_modules = libexec/"lib/node_modules"
-    typescript = Formula["typescript"].opt_libexec/"lib/node_modules/typescript"
+    node_modules = libexec"libnode_modules"
+    typescript = Formula["typescript"].opt_libexec"libnode_modulestypescript"
     ln_sf typescript.relative_path_from(node_modules), node_modules
 
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
@@ -39,9 +39,9 @@ class TypescriptLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/typescript-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}typescript-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

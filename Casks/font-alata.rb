@@ -2,10 +2,10 @@ cask "font-alata" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/alata/Alata-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflalataAlata-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Alata"
-  homepage "https://fonts.google.com/specimen/Alata"
+  homepage "https:fonts.google.comspecimenAlata"
 
   font "Alata-Regular.ttf"
 

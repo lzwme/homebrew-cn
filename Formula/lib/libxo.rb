@@ -1,7 +1,7 @@
 class Libxo < Formula
   desc "Allows an application to generate text, XML, JSON, and HTML output"
-  homepage "https://juniper.github.io/libxo/libxo-manual.html"
-  url "https://ghproxy.com/https://github.com/Juniper/libxo/releases/download/1.6.0/libxo-1.6.0.tar.gz"
+  homepage "https:juniper.github.iolibxolibxo-manual.html"
+  url "https:github.comJuniperlibxoreleasesdownload1.6.0libxo-1.6.0.tar.gz"
   sha256 "9f2f276d7a5f25ff6fbfc0f38773d854c9356e7f985501627d0c0ee336c19006"
   license "BSD-2-Clause"
 
@@ -22,7 +22,7 @@ class Libxo < Formula
   depends_on "libtool" => :build
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -30,14 +30,14 @@ class Libxo < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libxo/xo.h>
+    (testpath"test.c").write <<~EOS
+      #include <libxoxo.h>
       int main() {
         xo_set_flags(NULL, XOF_KEYS);
         return 0;
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxo", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

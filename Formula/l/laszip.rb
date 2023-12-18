@@ -1,10 +1,10 @@
 class Laszip < Formula
   desc "Lossless LiDAR compression"
-  homepage "https://laszip.org/"
-  url "https://ghproxy.com/https://github.com/LASzip/LASzip/releases/download/3.4.3/laszip-src-3.4.3.tar.gz"
+  homepage "https:laszip.org"
+  url "https:github.comLASzipLASzipreleasesdownload3.4.3laszip-src-3.4.3.tar.gz"
   sha256 "53f546a7f06fc969b38d1d71cceb1862b4fc2c4a0965191a0eee81a57c7b373d"
   license "LGPL-2.1-or-later"
-  head "https://github.com/LASzip/LASzip.git", branch: "master"
+  head "https:github.comLASzipLASzip.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "cdbd480df927df36242b3b564b5607b18287aaed5f17c4a9cb9f7f120b3481ed"
@@ -30,8 +30,8 @@ class Laszip < Formula
   end
 
   test do
-    system ENV.cxx, pkgshare/"example/laszipdllexample.cpp", "-L#{lib}",
+    system ENV.cxx, pkgshare"examplelaszipdllexample.cpp", "-L#{lib}",
                     "-llaszip", "-llaszip_api", "-Wno-format", "-ldl", "-o", "test"
-    assert_match "LASzip DLL", shell_output("./test -h 2>&1", 1)
+    assert_match "LASzip DLL", shell_output(".test -h 2>&1", 1)
   end
 end

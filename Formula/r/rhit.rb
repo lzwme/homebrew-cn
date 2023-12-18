@@ -1,10 +1,10 @@
 class Rhit < Formula
   desc "Nginx log explorer"
-  homepage "https://dystroy.org/rhit/"
-  url "https://ghproxy.com/https://github.com/Canop/rhit/archive/refs/tags/v2.0.1.tar.gz"
+  homepage "https:dystroy.orgrhit"
+  url "https:github.comCanoprhitarchiverefstagsv2.0.1.tar.gz"
   sha256 "b01b7207ca819e741b635e7751bbf9074c9eb9e97f0483c31e560f5e709a53b0"
   license "MIT"
-  head "https://github.com/Canop/rhit.git", branch: "main"
+  head "https:github.comCanoprhit.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6630bf0ae32487ed028c5b2cf51a7ed4d884a68f1fd9f2eeeef76b272702cfbb"
@@ -21,7 +21,7 @@ class Rhit < Formula
   depends_on "rust" => :build
 
   resource "homebrew-testdata" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Canop/rhit/c78d63b/test-data/access.log"
+    url "https:raw.githubusercontent.comCanoprhitc78d63btest-dataaccess.log"
     sha256 "e9ec07d6c7267ec326aa3f28a02a8140215c2c769ac2fe51b6294152644165eb"
   end
 
@@ -31,25 +31,25 @@ class Rhit < Formula
 
   test do
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
     resource("homebrew-testdata").stage do
       output = ""
-      PTY.spawn("#{bin}/rhit --silent-load --length 0 --color no access.log") do |r, _w, _pid|
+      PTY.spawn("#{bin}rhit --silent-load --length 0 --color no access.log") do |r, _w, _pid|
         r.winsize = [80, 130]
         begin
-          r.each_line { |line| output += line.gsub(/\r?\n/, "\n") }
+          r.each_line { |line| output += line.gsub(\r?\n, "\n") }
         rescue Errno::EIO
-          # GNU/Linux raises EIO when read is done on closed pty
+          # GNULinux raises EIO when read is done on closed pty
         end
       end
 
       assert_match <<~EOS, output
-        33,468 hits and 405M from 2021/01/22 to 2021/01/22
+        33,468 hits and 405M from 20210122 to 20210122
         ┌──────────┬──────┬─────┬────────────────────┐
         │   date   │ hits │bytes│0                33K│
         ├──────────┼──────┼─────┼────────────────────┤
-        │2021/01/22│33,468│ 405M│████████████████████│
+        │20210122│33,468│ 405M│████████████████████│
         └──────────┴──────┴─────┴────────────────────┘
       EOS
       assert_match <<~EOS, output

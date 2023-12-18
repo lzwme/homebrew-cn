@@ -2,10 +2,10 @@ cask "font-varela" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/varela/Varela-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflvarelaVarela-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Varela"
-  homepage "https://fonts.google.com/specimen/Varela"
+  homepage "https:fonts.google.comspecimenVarela"
 
   font "Varela-Regular.ttf"
 

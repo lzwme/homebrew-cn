@@ -1,7 +1,7 @@
 class Minisign < Formula
   desc "Sign files & verify signatures. Works with signify in OpenBSD"
-  homepage "https://jedisct1.github.io/minisign/"
-  url "https://ghproxy.com/https://github.com/jedisct1/minisign/archive/refs/tags/0.11.tar.gz"
+  homepage "https:jedisct1.github.iominisign"
+  url "https:github.comjedisct1minisignarchiverefstags0.11.tar.gz"
   sha256 "74c2c78a1cd51a43a6c98f46a4eabefbc8668074ca9aa14115544276b663fc55"
   license "ISC"
   revision 1
@@ -29,10 +29,10 @@ class Minisign < Formula
   end
 
   test do
-    (testpath/"homebrew.txt").write "Hello World!"
-    (testpath/"keygen.exp").write <<~EOS
+    (testpath"homebrew.txt").write "Hello World!"
+    (testpath"keygen.exp").write <<~EOS
       set timeout -1
-      spawn #{bin}/minisign -G
+      spawn #{bin}minisign -G
       expect -exact "Please enter a password to protect the secret key."
       expect -exact "\n"
       expect -exact "Password: "
@@ -44,18 +44,18 @@ class Minisign < Formula
     EOS
 
     system "expect", "-f", "keygen.exp"
-    assert_predicate testpath/"minisign.pub", :exist?
-    assert_predicate testpath/".minisign/minisign.key", :exist?
+    assert_predicate testpath"minisign.pub", :exist?
+    assert_predicate testpath".minisignminisign.key", :exist?
 
-    (testpath/"signing.exp").write <<~EOS
+    (testpath"signing.exp").write <<~EOS
       set timeout -1
-      spawn #{bin}/minisign -Sm homebrew.txt
+      spawn #{bin}minisign -Sm homebrew.txt
       expect -exact "Password: "
       send -- "Homebrew\n"
       expect eof
     EOS
 
     system "expect", "-f", "signing.exp"
-    assert_predicate testpath/"homebrew.txt.minisig", :exist?
+    assert_predicate testpath"homebrew.txt.minisig", :exist?
   end
 end

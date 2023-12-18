@@ -1,10 +1,10 @@
 class Ott < Formula
   desc "Tool for writing definitions of programming languages and calculi"
-  homepage "https://www.cl.cam.ac.uk/~pes20/ott/"
-  url "https://ghproxy.com/https://github.com/ott-lang/ott/archive/refs/tags/0.33.tar.gz"
+  homepage "https:www.cl.cam.ac.uk~pes20ott"
+  url "https:github.comott-langottarchiverefstags0.33.tar.gz"
   sha256 "d64ec4527f8ace56a407fc67957840d1653980fb0112d7fa8f2b0fc958501f7b"
   license "BSD-3-Clause"
-  head "https://github.com/ott-lang/ott.git", branch: "master"
+  head "https:github.comott-langott.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,7 +26,7 @@ class Ott < Formula
   depends_on "opam" => :build
 
   def install
-    opamroot = buildpath/".opam"
+    opamroot = buildpath".opam"
     ENV["OPAMROOT"] = opamroot
     ENV["OPAMYES"] = "1"
 
@@ -34,13 +34,13 @@ class Ott < Formula
     system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
     system "opam", "exec", "--", "make", "world"
 
-    bin.install "bin/ott"
+    bin.install "binott"
     pkgshare.install "examples"
-    (pkgshare/"emacs/site-lisp/ott").install "emacs/ott-mode.el"
+    (pkgshare"emacssite-lispott").install "emacsott-mode.el"
   end
 
   test do
-    system "#{bin}/ott", "-i", pkgshare/"examples/peterson_caml.ott",
+    system "#{bin}ott", "-i", pkgshare"examplespeterson_caml.ott",
       "-o", "peterson_caml.tex", "-o", "peterson_caml.v"
   end
 end

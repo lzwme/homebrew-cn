@@ -1,11 +1,11 @@
 class Grokmirror < Formula
   desc "Framework to smartly mirror git repositories"
-  homepage "https://github.com/mricon/grokmirror"
-  url "https://files.pythonhosted.org/packages/b0/ef/ffad6177d84dafb7403ccaca2fef735745d5d43200167896a2068422ae89/grokmirror-2.0.11.tar.gz"
+  homepage "https:github.commricongrokmirror"
+  url "https:files.pythonhosted.orgpackagesb0efffad6177d84dafb7403ccaca2fef735745d5d43200167896a2068422ae89grokmirror-2.0.11.tar.gz"
   sha256 "6bc1310dc9a0e97836201e6bb14ecbbee332b0f812b9ff345a8386cb267c908c"
   license "GPL-3.0-or-later"
   revision 4
-  head "https://github.com/mricon/grokmirror.git", branch: "master"
+  head "https:github.commricongrokmirror.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -31,22 +31,22 @@ class Grokmirror < Formula
   end
 
   test do
-    mkdir "repos/repo" do
+    mkdir "reposrepo" do
       system "git", "init"
       system "git", "config", "user.name", "BrewTestBot"
       system "git", "config", "user.email", "BrewTestBot@test.com"
-      (testpath/"repos/repo/test").write "foo"
+      (testpath"reposrepotest").write "foo"
       system "git", "add", "test"
       system "git", "commit", "-m", "Initial commit"
       system "git", "config", "--bool", "core.bare", "true"
-      mv testpath/"repos/repo/.git", testpath/"repos/repo.git"
+      mv testpath"reposrepo.git", testpath"reposrepo.git"
     end
-    rm_rf testpath/"repos/repo"
+    rm_rf testpath"reposrepo"
 
-    system bin/"grok-manifest", "-m", testpath/"manifest.js.gz", "-t", testpath/"repos"
-    system "gzip", "-d", testpath/"manifest.js.gz"
-    refs = Utils.safe_popen_read("git", "--git-dir", testpath/"repos/repo.git", "show-ref")
-    manifest = JSON.parse (testpath/"manifest.js").read
-    assert_equal Digest::SHA1.hexdigest(refs), manifest["/repo.git"]["fingerprint"]
+    system bin"grok-manifest", "-m", testpath"manifest.js.gz", "-t", testpath"repos"
+    system "gzip", "-d", testpath"manifest.js.gz"
+    refs = Utils.safe_popen_read("git", "--git-dir", testpath"reposrepo.git", "show-ref")
+    manifest = JSON.parse (testpath"manifest.js").read
+    assert_equal Digest::SHA1.hexdigest(refs), manifest["repo.git"]["fingerprint"]
   end
 end

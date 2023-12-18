@@ -1,13 +1,13 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
-  homepage "https://github.com/sigp/lighthouse"
-  url "https://ghproxy.com/https://github.com/sigp/lighthouse/archive/refs/tags/v4.5.0.tar.gz"
+  homepage "https:github.comsigplighthouse"
+  url "https:github.comsigplighthousearchiverefstagsv4.5.0.tar.gz"
   sha256 "13744ef206244957c48a7af3c7b43ae84878216a8f57040032ed742658713d37"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,19 +38,19 @@ class Lighthouse < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./lighthouse")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: ".lighthouse")
   end
 
   test do
-    assert_match "Lighthouse", shell_output("#{bin}/lighthouse --version")
+    assert_match "Lighthouse", shell_output("#{bin}lighthouse --version")
 
     http_port = free_port
     fork do
-      exec bin/"lighthouse", "beacon_node", "--http", "--http-port=#{http_port}", "--port=#{free_port}"
+      exec bin"lighthouse", "beacon_node", "--http", "--http-port=#{http_port}", "--port=#{free_port}"
     end
     sleep 10
 
-    output = shell_output("curl -sS -XGET http://127.0.0.1:#{http_port}/eth/v1/node/syncing")
+    output = shell_output("curl -sS -XGET http:127.0.0.1:#{http_port}ethv1nodesyncing")
     assert_match "is_syncing", output
   end
 end

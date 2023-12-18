@@ -1,7 +1,7 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
-  homepage "https://zellij.dev"
-  url "https://ghproxy.com/https://github.com/zellij-org/zellij/archive/refs/tags/v0.39.2.tar.gz"
+  homepage "https:zellij.dev"
+  url "https:github.comzellij-orgzellijarchiverefstagsv0.39.2.tar.gz"
   sha256 "feef552f06898fe06df00f9a590b862607266c087e804fffb638d2c46d9edad1"
   license "MIT"
 
@@ -27,11 +27,11 @@ class Zellij < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"zellij", "setup", "--generate-completion")
+    generate_completions_from_executable(bin"zellij", "setup", "--generate-completion")
   end
 
   test do
-    assert_match("keybinds", shell_output("#{bin}/zellij setup --dump-config"))
-    assert_match("zellij #{version}", shell_output("#{bin}/zellij --version"))
+    assert_match("keybinds", shell_output("#{bin}zellij setup --dump-config"))
+    assert_match("zellij #{version}", shell_output("#{bin}zellij --version"))
   end
 end

@@ -2,10 +2,10 @@ cask "font-im-writing-nerd-font" do
   version "3.1.1"
   sha256 "3941ad78ba75a0372e996198cd3f4a051f8bedf015e91306c2c334874ab1a9f9"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/iA-Writer.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}iA-Writer.zip"
   name "IMWriting Nerd Font families (iA Writer)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

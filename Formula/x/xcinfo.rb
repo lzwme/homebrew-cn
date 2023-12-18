@@ -1,7 +1,7 @@
 class Xcinfo < Formula
   desc "Tool to get information about and install available Xcode versions"
-  homepage "https://github.com/xcodereleases/xcinfo"
-  url "https://ghproxy.com/https://github.com/xcodereleases/xcinfo/archive/refs/tags/1.0.3.tar.gz"
+  homepage "https:github.comxcodereleasesxcinfo"
+  url "https:github.comxcodereleasesxcinfoarchiverefstags1.0.3.tar.gz"
   sha256 "b22f56193e4de8b71bbdaf99c17cec03f291d333d095311ad7aab74b5fb50c5a"
   license "MIT"
 
@@ -20,10 +20,10 @@ class Xcinfo < Formula
     system "swift", "build",
            "--configuration", "release",
            "--disable-sandbox"
-    bin.install ".build/release/xcinfo"
+    bin.install ".buildreleasexcinfo"
   end
 
   test do
-    assert_match "12.3 RC 1 (12C33)", shell_output("#{bin}/xcinfo list --all --no-ansi")
+    assert_match "12.3 RC 1 (12C33)", shell_output("#{bin}xcinfo list --all --no-ansi")
   end
 end

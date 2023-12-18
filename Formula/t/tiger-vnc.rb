@@ -1,7 +1,7 @@
 class TigerVnc < Formula
   desc "High-performance, platform-neutral implementation of VNC"
-  homepage "https://tigervnc.org/"
-  url "https://ghproxy.com/https://github.com/TigerVNC/tigervnc/archive/refs/tags/v1.13.1.tar.gz"
+  homepage "https:tigervnc.org"
+  url "https:github.comTigerVNCtigervncarchiverefstagsv1.13.1.tar.gz"
   sha256 "b7c5b8ed9e4e2c2f48c7b2c9f21927db345e542243b4be88e066b2daa3d1ae25"
   license "GPL-2.0-or-later"
 
@@ -9,7 +9,7 @@ class TigerVnc < Formula
   # 1.10.0 beta release) and this regex should only match the stable versions.
   livecheck do
     url :stable
-    regex(/^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$/i)
+    regex(^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$i)
   end
 
   bottle do
@@ -50,7 +50,7 @@ class TigerVnc < Formula
     turbo = Formula["jpeg-turbo"]
     args = std_cmake_args + %W[
       -DJPEG_INCLUDE_DIR=#{turbo.include}
-      -DJPEG_LIBRARY=#{turbo.lib}/#{shared_library("libjpeg")}
+      -DJPEG_LIBRARY=#{turbo.lib}#{shared_library("libjpeg")}
       .
     ]
     system "cmake", *args
@@ -58,7 +58,7 @@ class TigerVnc < Formula
   end
 
   test do
-    output = shell_output("#{bin}/vncviewer -h 2>&1", 1)
+    output = shell_output("#{bin}vncviewer -h 2>&1", 1)
     assert_match "TigerVNC Viewer v#{version}", output
   end
 end

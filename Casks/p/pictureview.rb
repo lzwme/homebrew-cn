@@ -2,15 +2,15 @@ cask "pictureview" do
   version "2.3.4"
   sha256 "3975d6e10f8e04e4339eadeafd0af511611fd9ba852d4c3e724dbbb3d811abce"
 
-  url "https://wl879.github.io/apps/picview/PictureView_#{version}.dmg"
+  url "https:wl879.github.ioappspicviewPictureView_#{version}.dmg"
   name "Picture View"
   desc "Image viewer"
-  homepage "https://wl879.github.io/apps/picview/index.html"
+  homepage "https:wl879.github.ioappspicviewindex.html"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/wl879/wl879.github.io/master/apps/picview/appcase.xml"
+    url "https:raw.githubusercontent.comwl879wl879.github.iomasterappspicviewappcase.xml"
     strategy :sparkle do |item|
-      item.url[%r{/PictureView[._-]v?(\d+(?:\.\d+)+)\.dmg}i, 1]
+      item.url[%r{PictureView[._-]v?(\d+(?:\.\d+)+)\.dmg}i, 1]
     end
   end
 
@@ -19,7 +19,7 @@ cask "pictureview" do
   app "PictureView.app"
 
   zap trash: [
-    "~/Library/Preferences/com.zouke.PictureView.plist",
-    "~/Library/Saved Application State/com.zouke.PictureView.savedState",
+    "~LibraryPreferencescom.zouke.PictureView.plist",
+    "~LibrarySaved Application Statecom.zouke.PictureView.savedState",
   ]
 end

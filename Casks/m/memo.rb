@@ -2,13 +2,13 @@ cask "memo" do
   version "1.0.3"
   sha256 :no_check
 
-  url "https://usememo.com/MemoSetup.dmg"
+  url "https:usememo.comMemoSetup.dmg"
   name "Memo"
   desc "Note taking app using GitHub Gists"
-  homepage "https://usememo.com/"
+  homepage "https:usememo.com"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/btk/memo/master/package.json"
+    url "https:raw.githubusercontent.combtkmemomasterpackage.json"
     strategy :json do |json|
       json["version"]
     end
@@ -17,8 +17,8 @@ cask "memo" do
   app "Memo.app"
 
   zap trash: [
-    "~/Library/Application Support/Memo",
-    "~/Library/Preferences/com.usememo.app.plist",
-    "~/Library/Saved Application State/com.usememo.app.savedState",
+    "~LibraryApplication SupportMemo",
+    "~LibraryPreferencescom.usememo.app.plist",
+    "~LibrarySaved Application Statecom.usememo.app.savedState",
   ]
 end

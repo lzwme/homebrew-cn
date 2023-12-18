@@ -1,13 +1,13 @@
-require "language/node"
+require "languagenode"
 
 class Octant < Formula
   desc "Kubernetes introspection tool for developers"
-  homepage "https://octant.dev"
-  url "https://github.com/vmware-tanzu/octant.git",
+  homepage "https:octant.dev"
+  url "https:github.comvmware-tanzuoctant.git",
       tag:      "v0.25.1",
       revision: "f16cbb951905f1f8549469dfc116ca16cf679d46"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/octant.git", branch: "master"
+  head "https:github.comvmware-tanzuoctant.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -43,9 +43,9 @@ class Octant < Formula
     # Issue is due to `npm-force-resolutions` not working with
     # npm>=8.6, which is used in node>=16 formulae.
     #
-    # PR ref: https://github.com/vmware-tanzu/octant/pull/3311
-    # Issue ref: https://github.com/vmware-tanzu/octant/issues/3329
-    # Issue ref: https://github.com/rogeriochaves/npm-force-resolutions/issues/56
+    # PR ref: https:github.comvmware-tanzuoctantpull3311
+    # Issue ref: https:github.comvmware-tanzuoctantissues3329
+    # Issue ref: https:github.comrogeriochavesnpm-force-resolutionsissues56
     ENV.prepend_path "PATH", Formula["node@14"].opt_bin
     cd "web" do
       system "npm", "install", *Language::Node.local_npm_install_args
@@ -61,19 +61,19 @@ class Octant < Formula
     tags = "embedded exclude_graphdriver_devicemapper exclude_graphdriver_btrfs containers_image_openpgp"
 
     system "go", "build", *std_go_args(ldflags: ldflags),
-           "-tags", tags, "-v", "./cmd/octant"
+           "-tags", tags, "-v", ".cmdoctant"
 
-    generate_completions_from_executable(bin/"octant", "completion")
+    generate_completions_from_executable(bin"octant", "completion")
   end
 
   test do
     fork do
-      exec bin/"octant", "--kubeconfig", testpath/"config", "--disable-open-browser"
+      exec bin"octant", "--kubeconfig", testpath"config", "--disable-open-browser"
     end
     sleep 5
 
-    output = shell_output("curl -s http://localhost:7777")
-    assert_match "<title>Octant</title>", output, "Octant did not start"
-    assert_match version.to_s, shell_output("#{bin}/octant version")
+    output = shell_output("curl -s http:localhost:7777")
+    assert_match "<title>Octant<title>", output, "Octant did not start"
+    assert_match version.to_s, shell_output("#{bin}octant version")
   end
 end

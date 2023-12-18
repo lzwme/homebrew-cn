@@ -1,7 +1,7 @@
 class Macosvpn < Formula
   desc "Create Mac OS VPNs programmatically"
-  homepage "https://github.com/halo/macosvpn"
-  url "https://ghproxy.com/https://github.com/halo/macosvpn/archive/refs/tags/2.0.0.tar.gz"
+  homepage "https:github.comhalomacosvpn"
+  url "https:github.comhalomacosvpnarchiverefstags2.0.0.tar.gz"
   sha256 "bf91fad369d616907d675be39de7d0c6a78ac0a8c184b59c0af2b6b4a722ca74"
   license "MIT"
 
@@ -27,10 +27,10 @@ class Macosvpn < Formula
 
   def install
     xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build"
-    bin.install "build/Release/macosvpn"
+    bin.install "buildReleasemacosvpn"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/macosvpn version", 2)
+    assert_match version.to_s, shell_output("#{bin}macosvpn version", 2)
   end
 end

@@ -1,13 +1,13 @@
 class Toxcore < Formula
   desc "C library implementing the Tox peer to peer network protocol"
-  homepage "https://tox.chat/"
+  homepage "https:tox.chat"
   # This repo is a fork, but it is the source used by Debian, Fedora, and Arch,
   # and is the repo linked in the homepage.
-  url "https://ghproxy.com/https://github.com/TokTok/c-toxcore/releases/download/v0.2.18/c-toxcore-0.2.18.tar.gz"
+  url "https:github.comTokTokc-toxcorereleasesdownloadv0.2.18c-toxcore-0.2.18.tar.gz"
   sha256 "f2940537998863593e28bc6a6b5f56f09675f6cd8a28326b7bc31b4836c08942"
   license "GPL-3.0-or-later"
   revision 2
-  head "https://github.com/TokTok/c-toxcore.git", branch: "master"
+  head "https:github.comTokTokc-toxcore.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e970ecd155d6e65fdc327afb6f35048c53f8e78a896e268bc97e1c53365430ce"
@@ -33,8 +33,8 @@ class Toxcore < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <tox/tox.h>
+    (testpath"test.c").write <<~EOS
+      #include <toxtox.h>
       int main() {
         TOX_ERR_NEW err_new;
         Tox *tox = tox_new(NULL, &err_new);
@@ -44,8 +44,8 @@ class Toxcore < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}/toxcore", testpath/"test.c",
+    system ENV.cc, "-I#{include}toxcore", testpath"test.c",
                    "-L#{lib}", "-ltoxcore", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

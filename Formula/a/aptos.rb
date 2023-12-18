@@ -1,14 +1,14 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
-  homepage "https://aptoslabs.com/"
-  url "https://ghproxy.com/https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.3.2.tar.gz"
+  homepage "https:aptoslabs.com"
+  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v2.3.2.tar.gz"
   sha256 "5819379169ffd3b46800dbb67f7eb6b8724eb43256882a23cec14f5802523272"
   license "Apache-2.0"
-  head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
+  head "https:github.comaptos-labsaptos-core.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^aptos-cli[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^aptos-cli[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -33,12 +33,12 @@ class Aptos < Formula
   end
 
   def install
-    # FIXME: Figure out why cargo doesn't respect .cargo/config.toml's rustflags
+    # FIXME: Figure out why cargo doesn't respect .cargoconfig.toml's rustflags
     ENV["RUSTFLAGS"] = "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
-    system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
+    system "cargo", "install", *std_cargo_args(path: "cratesaptos"), "--profile=cli"
   end
 
   test do
-    assert_match(/output.pub/i, shell_output("#{bin}/aptos key generate --output-file output"))
+    assert_match(output.pubi, shell_output("#{bin}aptos key generate --output-file output"))
   end
 end

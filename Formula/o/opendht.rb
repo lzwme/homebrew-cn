@@ -1,7 +1,7 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
-  homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://ghproxy.com/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v3.1.6.tar.gz"
+  homepage "https:github.comsavoirfairelinuxopendht"
+  url "https:github.comsavoirfairelinuxopendhtarchiverefstagsv3.1.6.tar.gz"
   sha256 "69b7ca638a817d515fa9279892efacff3a101581800ced295ad901259d62e6fd"
   license "GPL-3.0-or-later"
 
@@ -46,13 +46,13 @@ class Opendht < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <opendht.h>
       int main() {
         dht::DhtRunner node;
 
-        // Launch a dht node on a new thread, using a
-        // generated RSA key pair, and listen on port 4222.
+         Launch a dht node on a new thread, using a
+         generated RSA key pair, and listen on port 4222.
         node.run(4222, dht::crypto::generateIdentity(), true);
         node.join();
 
@@ -60,6 +60,6 @@ class Opendht < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lopendht", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

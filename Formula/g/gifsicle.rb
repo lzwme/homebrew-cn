@@ -1,13 +1,13 @@
 class Gifsicle < Formula
-  desc "GIF image/animation creator/editor"
-  homepage "https://www.lcdf.org/gifsicle/"
-  url "https://www.lcdf.org/gifsicle/gifsicle-1.94.tar.gz"
+  desc "GIF imageanimation creatoreditor"
+  homepage "https:www.lcdf.orggifsicle"
+  url "https:www.lcdf.orggifsiclegifsicle-1.94.tar.gz"
   sha256 "4bc97005c0789620de75f89997d3c2f70758c72c61aa0a2ef04f7a671a2ff89b"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
-    regex(/href=.*?gifsicle[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?gifsicle[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Gifsicle < Formula
   end
 
   head do
-    url "https://github.com/kohler/gifsicle.git", branch: "master"
+    url "https:github.comkohlergifsicle.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,12 +36,12 @@ class Gifsicle < Formula
       --disable-gifview
     ]
 
-    system "./bootstrap.sh" if build.head?
-    system "./configure", *args
+    system ".bootstrap.sh" if build.head?
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/gifsicle", "--info", test_fixtures("test.gif")
+    system "#{bin}gifsicle", "--info", test_fixtures("test.gif")
   end
 end

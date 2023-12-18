@@ -1,10 +1,10 @@
 class LastpassCli < Formula
   desc "LastPass command-line interface tool"
-  homepage "https://github.com/lastpass/lastpass-cli"
-  url "https://ghproxy.com/https://github.com/lastpass/lastpass-cli/releases/download/v1.3.7/lastpass-cli-1.3.7.tar.gz"
+  homepage "https:github.comlastpasslastpass-cli"
+  url "https:github.comlastpasslastpass-clireleasesdownloadv1.3.7lastpass-cli-1.3.7.tar.gz"
   sha256 "448a53960602164456bbc9156d017540a1dac989a8cab7bc6a2a9781b52d47cb"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
-  head "https://github.com/lastpass/lastpass-cli.git", branch: "master"
+  head "https:github.comlastpasslastpass-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "177e2d87a9c1d179486a0d45e8204003239d854ecc4c23ca803dd08cc3278cce"
@@ -26,26 +26,26 @@ class LastpassCli < Formula
   uses_from_macos "curl"
   uses_from_macos "libxslt"
 
-  # Avoid crashes on Mojave's version of libcurl (https://github.com/lastpass/lastpass-cli/issues/427)
+  # Avoid crashes on Mojave's version of libcurl (https:github.comlastpasslastpass-cliissues427)
   on_mojave :or_newer do
     depends_on "curl"
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_MANDIR:PATH=#{man}"
       system "make", "install", "install-doc"
     end
 
-    bash_completion.install "contrib/lpass_bash_completion"
-    zsh_completion.install "contrib/lpass_zsh_completion" => "_lpass"
-    fish_completion.install "contrib/completions-lpass.fish" => "lpass.fish"
+    bash_completion.install "contriblpass_bash_completion"
+    zsh_completion.install "contriblpass_zsh_completion" => "_lpass"
+    fish_completion.install "contribcompletions-lpass.fish" => "lpass.fish"
   end
 
   test do
-    assert_equal("Error: Could not find decryption key. Perhaps you need to login with `#{bin}/lpass login`.",
-      shell_output("#{bin}/lpass passwd 2>&1", 1).chomp)
+    assert_equal("Error: Could not find decryption key. Perhaps you need to login with `#{bin}lpass login`.",
+      shell_output("#{bin}lpass passwd 2>&1", 1).chomp)
   end
 end

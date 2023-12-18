@@ -1,10 +1,10 @@
 class Aliyunpan < Formula
   desc "Command-line client tool for Alibaba aDrive disk"
-  homepage "https://github.com/tickstep/aliyunpan"
-  url "https://ghproxy.com/https://github.com/tickstep/aliyunpan/archive/refs/tags/v0.2.8.tar.gz"
+  homepage "https:github.comtickstepaliyunpan"
+  url "https:github.comtickstepaliyunpanarchiverefstagsv0.2.8.tar.gz"
   sha256 "ff1d61705a55277b1cd9cb28b5edb12a3f9ed91070fc1a69b3366b42316cd294"
   license "Apache-2.0"
-  head "https://github.com/tickstep/aliyunpan.git", branch: "main"
+  head "https:github.comtickstepaliyunpan.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41c7e5a431d4d970c6c5c91203e6ff05287ed23a4444630a71b07f453ed58ce6"
@@ -23,7 +23,7 @@ class Aliyunpan < Formula
   end
 
   test do
-    system bin/"aliyunpan", "run", "touch", "output.txt"
-    assert_predicate testpath/"output.txt", :exist?
+    system bin"aliyunpan", "run", "touch", "output.txt"
+    assert_predicate testpath"output.txt", :exist?
   end
 end

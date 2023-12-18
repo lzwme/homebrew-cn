@@ -1,7 +1,7 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
-  homepage "https://github.com/simonwhitaker/gibo"
-  url "https://ghproxy.com/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.8.tar.gz"
+  homepage "https:github.comsimonwhitakergibo"
+  url "https:github.comsimonwhitakergiboarchiverefstagsv3.0.8.tar.gz"
   sha256 "6402e74267edf595b222a5a0bdd431fe734df8fde0c7909e7c0f042c37712dd5"
   license "Unlicense"
 
@@ -20,18 +20,18 @@ class Gibo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/simonwhitaker/gibo/cmd.version=#{version}
-      -X github.com/simonwhitaker/gibo/cmd.commit=brew
-      -X github.com/simonwhitaker/gibo/cmd.date=#{time.iso8601}
+      -X github.comsimonwhitakergibocmd.version=#{version}
+      -X github.comsimonwhitakergibocmd.commit=brew
+      -X github.comsimonwhitakergibocmd.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
-    generate_completions_from_executable(bin/"gibo", "completion")
+    generate_completions_from_executable(bin"gibo", "completion")
   end
 
   test do
-    system "#{bin}/gibo", "update"
-    assert_includes shell_output("#{bin}/gibo dump Python"), "Python.gitignore"
+    system "#{bin}gibo", "update"
+    assert_includes shell_output("#{bin}gibo dump Python"), "Python.gitignore"
 
-    assert_match version.to_s, shell_output("#{bin}/gibo version")
+    assert_match version.to_s, shell_output("#{bin}gibo version")
   end
 end

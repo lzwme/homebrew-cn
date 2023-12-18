@@ -1,7 +1,7 @@
 class Oscats < Formula
   desc "Computerized adaptive testing system"
-  homepage "https://code.google.com/archive/p/oscats/"
-  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/oscats/oscats-0.6.tar.gz"
+  homepage "https:code.google.comarchiveposcats"
+  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comoscatsoscats-0.6.tar.gz"
   sha256 "2f7c88cdab6a2106085f7a3e5b1073c74f7d633728c76bd73efba5dc5657a604"
   revision 6
 
@@ -24,35 +24,35 @@ class Oscats < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   # Fix issue with conflicting definitions of select on Linux.
   # Patch submitted to discussion group:
-  # https://groups.google.com/g/oscats/c/WZ7gRjkxmIk.
+  # https:groups.google.comgoscatscWZ7gRjkxmIk.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/29a7d4c819af3ea8e48efb68bb98e6bd2a4b6196/oscats/linux.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches29a7d4c819af3ea8e48efb68bb98e6bd2a4b6196oscatslinux.patch"
     sha256 "95fcfa861ed75a9292a6dfbb246a62be3ad3bd9c63db43c3d283ba68069313af"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
     pkgshare.install "examples"
     # Fix shim references in examples Makefile.
     if OS.mac?
-      inreplace pkgshare/"examples/Makefile",
-        Superenv.shims_path/"pkg-config",
-        Formula["pkg-config"].opt_bin/"pkg-config"
+      inreplace pkgshare"examplesMakefile",
+        Superenv.shims_path"pkg-config",
+        Formula["pkg-config"].opt_bin"pkg-config"
     else
-      inreplace pkgshare/"examples/Makefile", Superenv.shims_path/"ld", "ld"
+      inreplace pkgshare"examplesMakefile", Superenv.shims_path"ld", "ld"
     end
   end
 
   test do
     pkg_config_flags = shell_output("pkg-config --cflags --libs oscats glib-2.0").chomp.split
-    system ENV.cc, pkgshare/"examples/ex01.c", *pkg_config_flags, "-o", "ex01"
-    assert_match "Done", shell_output("#{testpath}/ex01")
+    system ENV.cc, pkgshare"examplesex01.c", *pkg_config_flags, "-o", "ex01"
+    assert_match "Done", shell_output("#{testpath}ex01")
   end
 end

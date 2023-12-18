@@ -2,10 +2,10 @@ cask "font-gugi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/gugi/Gugi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflgugiGugi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Gugi"
-  homepage "https://fonts.google.com/specimen/Gugi"
+  homepage "https:fonts.google.comspecimenGugi"
 
   font "Gugi-Regular.ttf"
 

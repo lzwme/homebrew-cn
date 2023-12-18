@@ -1,10 +1,10 @@
 class Hyfetch < Formula
   desc "Fast, highly customisable system info script with LGBTQ+ pride flags"
-  homepage "https://github.com/hykilpikonna/hyfetch"
-  url "https://files.pythonhosted.org/packages/bb/af/0c4590b16c84073bd49b09ada0756fd9bd75b072e3ba9aec73101f0cc9f4/HyFetch-1.4.11.tar.gz"
+  homepage "https:github.comhykilpikonnahyfetch"
+  url "https:files.pythonhosted.orgpackagesbbaf0c4590b16c84073bd49b09ada0756fd9bd75b072e3ba9aec73101f0cc9f4HyFetch-1.4.11.tar.gz"
   sha256 "9fa2c9c049ebaf0ad6d4e8e076ce90e64a4b9276946a1d2ffb6912bb1a4aa327"
   license "MIT"
-  head "https://github.com/hykilpikonna/hyfetch.git", branch: "master"
+  head "https:github.comhykilpikonnahyfetch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66518af3ac7a67dc5cc4a67522fb15f8c57da8e91017ab08d24d11149ef86f0d"
@@ -29,7 +29,7 @@ class Hyfetch < Formula
   end
 
   test do
-    (testpath/".config/hyfetch.json").write <<-EOS
+    (testpath".confighyfetch.json").write <<-EOS
     {
       "preset": "genderfluid",
       "mode": "rgb",
@@ -46,9 +46,9 @@ class Hyfetch < Formula
       "pride_month_disable": false
     }
     EOS
-    system "#{bin}/neowofetch", "--config", "none", "--color_blocks", "off",
+    system "#{bin}neowofetch", "--config", "none", "--color_blocks", "off",
                               "--disable", "wm", "de", "term", "gpu"
-    system "#{bin}/hyfetch", "-C", testpath/"hyfetch.json",
+    system "#{bin}hyfetch", "-C", testpath"hyfetch.json",
                              "--args=\"--config none --color_blocks off --disable wm de term gpu\""
   end
 end

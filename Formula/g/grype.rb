@@ -1,10 +1,10 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
-  homepage "https://github.com/anchore/grype"
-  url "https://ghproxy.com/https://github.com/anchore/grype/archive/refs/tags/v0.73.4.tar.gz"
+  homepage "https:github.comanchoregrype"
+  url "https:github.comanchoregrypearchiverefstagsv0.73.4.tar.gz"
   sha256 "cd283c2447c30ebc01bcbcea22acbbe20472768bc30bcb1e6fb0d75f99293636"
   license "Apache-2.0"
-  head "https://github.com/anchore/grype.git", branch: "main"
+  head "https:github.comanchoregrype.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ada4b7c210cd15d9d4288ecafb4c96b95b5ba81bd2f9cc4a9989c07b809126e4"
@@ -26,14 +26,14 @@ class Grype < Formula
       -X main.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/grype"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgrype"
 
-    generate_completions_from_executable(bin/"grype", "completion")
+    generate_completions_from_executable(bin"grype", "completion")
   end
 
   test do
-    assert_match "database metadata not found", shell_output("#{bin}/grype db status 2>&1", 1)
-    assert_match "Update available", shell_output("#{bin}/grype db check", 100)
-    assert_match version.to_s, shell_output("#{bin}/grype version")
+    assert_match "database metadata not found", shell_output("#{bin}grype db status 2>&1", 1)
+    assert_match "Update available", shell_output("#{bin}grype db check", 100)
+    assert_match version.to_s, shell_output("#{bin}grype version")
   end
 end

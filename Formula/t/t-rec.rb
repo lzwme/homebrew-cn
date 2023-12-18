@@ -1,7 +1,7 @@
 class TRec < Formula
   desc "Blazingly fast terminal recorder that generates animated gif images for the web"
-  homepage "https://github.com/sassman/t-rec-rs"
-  url "https://ghproxy.com/https://github.com/sassman/t-rec-rs/archive/refs/tags/v0.7.6.tar.gz"
+  homepage "https:github.comsassmant-rec-rs"
+  url "https:github.comsassmant-rec-rsarchiverefstagsv0.7.6.tar.gz"
   sha256 "a261104e33d6f60a8f9fe51c2339b79875ddb5ff5b9e7de68e7e52f9d25bf19e"
   license "GPL-3.0-only"
 
@@ -25,7 +25,7 @@ class TRec < Formula
   end
 
   test do
-    o = shell_output("WINDOWID=999999 #{bin}/t-rec 2>&1", 1).strip
+    o = shell_output("WINDOWID=999999 #{bin}t-rec 2>&1", 1).strip
     if OS.mac?
       assert_equal "Error: Cannot grab screenshot from CGDisplay of window id 999999", o
     else

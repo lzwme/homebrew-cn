@@ -1,11 +1,11 @@
 class BoostPython3 < Formula
-  desc "C++ library for C++/Python3 interoperability"
-  homepage "https://www.boost.org/"
-  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  desc "C++ library for C++Python3 interoperability"
+  homepage "https:www.boost.org"
+  url "https:github.comboostorgboostreleasesdownloadboost-1.83.0boost-1.83.0.tar.xz"
   sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
   revision 1
-  head "https://github.com/boostorg/boost.git", branch: "master"
+  head "https:github.comboostorgboost.git", branch: "master"
 
   livecheck do
     formula "boost"
@@ -53,42 +53,42 @@ class BoostPython3 < Formula
 
     pyver = Language::Python.major_minor_version python3
     py_prefix = if OS.mac?
-      Formula["python@#{pyver}"].opt_frameworks/"Python.framework/Versions"/pyver
+      Formula["python@#{pyver}"].opt_frameworks"Python.frameworkVersions"pyver
     else
       Formula["python@#{pyver}"].opt_prefix
     end
 
     # Force boost to compile with the desired compiler
-    (buildpath/"user-config.jam").write <<~EOS
+    (buildpath"user-config.jam").write <<~EOS
       using #{OS.mac? ? "darwin" : "gcc"} : : #{ENV.cxx} ;
       using python : #{pyver}
                    : #{python3}
-                   : #{py_prefix}/include/python#{pyver}
-                   : #{py_prefix}/lib ;
+                   : #{py_prefix}includepython#{pyver}
+                   : #{py_prefix}lib ;
     EOS
 
-    system "./bootstrap.sh", "--prefix=#{prefix}",
+    system ".bootstrap.sh", "--prefix=#{prefix}",
                              "--libdir=#{lib}",
                              "--with-libraries=python",
                              "--with-python=#{python3}",
                              "--with-python-root=#{py_prefix}"
 
-    system "./b2", "--build-dir=build-python3",
+    system ".b2", "--build-dir=build-python3",
                    "--stagedir=stage-python3",
-                   "--libdir=install-python3/lib",
+                   "--libdir=install-python3lib",
                    "--prefix=install-python3",
                    "python=#{pyver}",
                    *args
 
-    lib.install buildpath.glob("install-python3/lib/*.*")
-    (lib/"cmake").install buildpath.glob("install-python3/lib/cmake/boost_python*")
-    (lib/"cmake").install buildpath.glob("install-python3/lib/cmake/boost_numpy*")
-    doc.install (buildpath/"libs/python/doc").children
+    lib.install buildpath.glob("install-python3lib*.*")
+    (lib"cmake").install buildpath.glob("install-python3libcmakeboost_python*")
+    (lib"cmake").install buildpath.glob("install-python3libcmakeboost_numpy*")
+    doc.install (buildpath"libspythondoc").children
   end
 
   test do
-    (testpath/"hello.cpp").write <<~EOS
-      #include <boost/python.hpp>
+    (testpath"hello.cpp").write <<~EOS
+      #include <boostpython.hpp>
       char const* greet() {
         return "Hello, world!";
       }

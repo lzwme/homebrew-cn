@@ -1,10 +1,10 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
-  homepage "https://trippy.cli.rs/"
-  url "https://ghproxy.com/https://github.com/fujiapple852/trippy/archive/refs/tags/0.9.0.tar.gz"
+  homepage "https:trippy.cli.rs"
+  url "https:github.comfujiapple852trippyarchiverefstags0.9.0.tar.gz"
   sha256 "bebd130c74ceacf4bc6b6f3aa92fa639e1904eb904c5135f53c45510370289ed"
   license "Apache-2.0"
-  head "https://github.com/fujiapple852/trippy.git", branch: "master"
+  head "https:github.comfujiapple852trippy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb73a1170eb0df6ad758e22ddbab988660b051d11981458a9f0d635186e1dad2"
@@ -23,11 +23,11 @@ class Trippy < Formula
   end
 
   test do
-    # https://github.com/fujiapple852/trippy#privileges
+    # https:github.comfujiapple852trippy#privileges
     expected = "Error: privileges are required"
-    output = shell_output("#{bin}/trip brew.sh 2>&1", 1)
+    output = shell_output("#{bin}trip brew.sh 2>&1", 1)
     assert_match expected, output
 
-    assert_match "trip #{version}", shell_output("#{bin}/trip --version")
+    assert_match "trip #{version}", shell_output("#{bin}trip --version")
   end
 end

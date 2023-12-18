@@ -1,10 +1,10 @@
 class PinentryMac < Formula
   desc "Pinentry for GPG on Mac"
-  homepage "https://github.com/GPGTools/pinentry"
-  url "https://ghproxy.com/https://github.com/GPGTools/pinentry/archive/refs/tags/v1.1.1.1.tar.gz"
+  homepage "https:github.comGPGToolspinentry"
+  url "https:github.comGPGToolspinentryarchiverefstagsv1.1.1.1.tar.gz"
   sha256 "1a414f2e172cf8c18a121e60813413f27aedde891c5955151fbf8d50c46a9098"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
-  head "https://github.com/GPGTools/pinentry.git", branch: "master"
+  head "https:github.comGPGToolspinentry.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "3eea1993513dc5fa1c7aa1788ad3361bf12377df4f6eaed3ff7ee8b886b91feb"
@@ -34,22 +34,22 @@ class PinentryMac < Formula
   def install
     system "autoreconf", "-fiv"
     system "autoconf"
-    system "./configure", "--disable-ncurses", "--enable-maintainer-mode"
+    system ".configure", "--disable-ncurses", "--enable-maintainer-mode"
     system "make"
-    prefix.install "macosx/pinentry-mac.app"
-    bin.write_exec_script "#{prefix}/pinentry-mac.app/Contents/MacOS/pinentry-mac"
+    prefix.install "macosxpinentry-mac.app"
+    bin.write_exec_script "#{prefix}pinentry-mac.appContentsMacOSpinentry-mac"
   end
 
   def caveats
     <<~EOS
       You can now set this as your pinentry program like
 
-      ~/.gnupg/gpg-agent.conf
-          pinentry-program #{HOMEBREW_PREFIX}/bin/pinentry-mac
+      ~.gnupggpg-agent.conf
+          pinentry-program #{HOMEBREW_PREFIX}binpinentry-mac
     EOS
   end
 
   test do
-    assert_match version.major_minor_patch.to_s, shell_output("#{bin}/pinentry-mac --version")
+    assert_match version.major_minor_patch.to_s, shell_output("#{bin}pinentry-mac --version")
   end
 end

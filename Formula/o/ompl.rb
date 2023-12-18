@@ -1,17 +1,17 @@
 class Ompl < Formula
   desc "Open Motion Planning Library consists of many motion planning algorithms"
-  homepage "https://ompl.kavrakilab.org/"
-  url "https://ghproxy.com/https://github.com/ompl/ompl/archive/refs/tags/1.6.0.tar.gz"
+  homepage "https:ompl.kavrakilab.org"
+  url "https:github.comomplomplarchiverefstags1.6.0.tar.gz"
   sha256 "f03daa95d2bbf1c21e91a38786242c245f4740f16aa9e9adbf7c7e0236e3c625"
   license "BSD-3-Clause"
   revision 3
-  head "https://github.com/ompl/ompl.git", branch: "main"
+  head "https:github.comomplompl.git", branch: "main"
 
   # We check the first-party download page because the "latest" GitHub release
   # isn't a reliable indicator of the latest version on this repository.
   livecheck do
-    url "https://ompl.kavrakilab.org/download.html"
-    regex(%r{href=.*?/ompl/ompl/archive/v?(\d+(?:\.\d+)+)\.t}i)
+    url "https:ompl.kavrakilab.orgdownload.html"
+    regex(%r{href=.*?omplomplarchivev?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -46,8 +46,8 @@ class Ompl < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <ompl/base/spaces/RealVectorBounds.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <omplbasespacesRealVectorBounds.h>
       #include <cassert>
       int main(int argc, char *argv[]) {
         ompl::base::RealVectorBounds bounds(3);
@@ -57,7 +57,7 @@ class Ompl < Formula
       }
     EOS
 
-    system ENV.cxx, "test.cpp", "-I#{include}/ompl-#{version.major_minor}", "-L#{lib}", "-lompl", "-o", "test"
-    system "./test"
+    system ENV.cxx, "test.cpp", "-I#{include}ompl-#{version.major_minor}", "-L#{lib}", "-lompl", "-o", "test"
+    system ".test"
   end
 end

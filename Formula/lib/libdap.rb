@@ -1,24 +1,24 @@
 class Libdap < Formula
   desc "Framework for scientific data networking"
-  homepage "https://www.opendap.org/"
+  homepage "https:www.opendap.org"
   license "LGPL-2.1-or-later"
   revision 1
 
   stable do
     # TODO: Update deps and `install` method when libtirpc patch on Linux is no longer needed.
-    url "https://www.opendap.org/pub/source/libdap-3.20.11.tar.gz"
+    url "https:www.opendap.orgpubsourcelibdap-3.20.11.tar.gz"
     sha256 "850debf6ee6991350bf31051308093bee35ddd2121e4002be7e130a319de1415"
 
     # Fix flat namespace flag on Big Sur+.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
-    url "https://www.opendap.org/pub/source/"
-    regex(/href=.*?libdap[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.opendap.orgpubsource"
+    regex(href=.*?libdap[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Libdap < Formula
   end
 
   head do
-    url "https://github.com/OPENDAP/libdap4.git", branch: "master"
+    url "https:github.comOPENDAPlibdap4.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -59,9 +59,9 @@ class Libdap < Formula
     depends_on "util-linux"
 
     # Fix finding libtirpc on Linux.
-    # https://github.com/OPENDAP/libdap4/pull/228
+    # https:github.comOPENDAPlibdap4pull228
     patch do
-      url "https://github.com/OPENDAP/libdap4/commit/48b44b96faf1ed1e44f118828c3de903fff0a276.patch?full_index=1"
+      url "https:github.comOPENDAPlibdap4commit48b44b96faf1ed1e44f118828c3de903fff0a276.patch?full_index=1"
       sha256 "b11c233844691b97d2eab208a49d520ad9d78ce6d14ca52bb5fdad29b5db1f37"
     end
   end
@@ -76,17 +76,17 @@ class Libdap < Formula
 
     # Remove `OS.linux? || ` when Linux libtirpc patch is no longer needed.
     system "autoreconf", "--force", "--install", "--verbose" if OS.linux? || build.head?
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "check"
     system "make", "install"
 
     # Ensure no Cellar versioning of libxml2 path in dap-config entries
     xml2 = Formula["libxml2"]
-    inreplace bin/"dap-config", xml2.opt_prefix.realpath, xml2.opt_prefix
+    inreplace bin"dap-config", xml2.opt_prefix.realpath, xml2.opt_prefix
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dap-config --version")
+    assert_match version.to_s, shell_output("#{bin}dap-config --version")
   end
 end

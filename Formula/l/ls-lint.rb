@@ -1,10 +1,10 @@
 class LsLint < Formula
   desc "Extremely fast file and directory name linter"
-  homepage "https://ls-lint.org/"
-  url "https://ghproxy.com/https://github.com/loeffel-io/ls-lint/archive/refs/tags/v2.2.2.tar.gz"
+  homepage "https:ls-lint.org"
+  url "https:github.comloeffel-iols-lintarchiverefstagsv2.2.2.tar.gz"
   sha256 "68c7a97971c55578d3e62423be95a9ac515b43e14d53eedb8aa84c1d20e6fef3"
   license "MIT"
-  head "https://github.com/loeffel-io/ls-lint.git", branch: "master"
+  head "https:github.comloeffel-iols-lint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ade0a8aa2afc8d445d935b83d8fb725a8de7811271eafa32a377185d82c8901d"
@@ -19,14 +19,14 @@ class LsLint < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), "./cmd/ls_lint"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), ".cmdls_lint"
     pkgshare.install ".ls-lint.yml"
   end
 
   test do
-    output = shell_output("#{bin}/ls-lint -config #{pkgshare}/.ls-lint.yml -workdir #{testpath} 2>&1", 1)
+    output = shell_output("#{bin}ls-lint -config #{pkgshare}.ls-lint.yml -workdir #{testpath} 2>&1", 1)
     assert_match "Library failed for rules: snakecase", output
 
-    assert_match version.to_s, shell_output("#{bin}/ls-lint -version")
+    assert_match version.to_s, shell_output("#{bin}ls-lint -version")
   end
 end

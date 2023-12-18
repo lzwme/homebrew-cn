@@ -1,10 +1,10 @@
 class Svls < Formula
   desc "SystemVerilog language server"
-  homepage "https://github.com/dalance/svls"
-  url "https://ghproxy.com/https://github.com/dalance/svls/archive/refs/tags/v0.2.10.tar.gz"
+  homepage "https:github.comdalancesvls"
+  url "https:github.comdalancesvlsarchiverefstagsv0.2.10.tar.gz"
   sha256 "c81a830e932fc4343d5eb67b7aeb29eedb6f757899ae14f84323363acefb8718"
   license "MIT"
-  head "https://github.com/dalance/svls.git", branch: "master"
+  head "https:github.comdalancesvls.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c604b3f1f0d8ece5e91ee57ca464e73f5b781d3c2b35c7c4758c9459c7225de"
@@ -23,7 +23,7 @@ class Svls < Formula
   end
 
   test do
-    output = /^Content-Length: \d+\s*$/
-    assert_match output, pipe_output(bin/"svls", "\r\n")
+    output = ^Content-Length: \d+\s*$
+    assert_match output, pipe_output(bin"svls", "\r\n")
   end
 end

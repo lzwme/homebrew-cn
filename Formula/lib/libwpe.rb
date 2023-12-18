@@ -1,10 +1,10 @@
 class Libwpe < Formula
   desc "General-purpose library for WPE WebKit"
-  homepage "https://wpewebkit.org/"
-  url "https://ghproxy.com/https://github.com/WebPlatformForEmbedded/libwpe/releases/download/1.14.1/libwpe-1.14.1.tar.xz"
+  homepage "https:wpewebkit.org"
+  url "https:github.comWebPlatformForEmbeddedlibwpereleasesdownload1.14.1libwpe-1.14.1.tar.xz"
   sha256 "b1d0cdcf0f8dbb494e65b0f7913e357106da9a0d57f4fbb7b9d1238a6dbe9ade"
   license "BSD-2-Clause"
-  head "https://github.com/WebPlatformForEmbedded/libwpe.git", branch: "master"
+  head "https:github.comWebPlatformForEmbeddedlibwpe.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,17 +29,17 @@ class Libwpe < Formula
   end
 
   test do
-    (testpath/"wpe-test.c").write <<~EOS
-      #include "wpe/wpe.h"
+    (testpath"wpe-test.c").write <<~EOS
+      #include "wpewpe.h"
       #include <stdio.h>
       int main() {
         printf("%u.%u.%u", wpe_get_major_version(), wpe_get_minor_version(), wpe_get_micro_version());
       }
     EOS
-    ENV.append_to_cflags "-I#{include}/wpe-1.0"
+    ENV.append_to_cflags "-I#{include}wpe-1.0"
     ENV.append "LDFLAGS", "-L#{lib}"
     ENV.append "LDLIBS", "-lwpe-1.0"
     system "make", "wpe-test"
-    assert_equal version.to_s, shell_output("./wpe-test")
+    assert_equal version.to_s, shell_output(".wpe-test")
   end
 end

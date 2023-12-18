@@ -1,11 +1,11 @@
 class LincityNg < Formula
   desc "City simulation game"
-  homepage "https://github.com/lincity-ng/lincity-ng/"
-  url "https://ghproxy.com/https://github.com/lincity-ng/lincity-ng/archive/refs/tags/lincity-ng-2.0.tar.gz"
+  homepage "https:github.comlincity-nglincity-ng"
+  url "https:github.comlincity-nglincity-ngarchiverefstagslincity-ng-2.0.tar.gz"
   sha256 "e05a2c1e1d682fbf289caecd0ea46ca84b0db9de43c7f1b5add08f0fdbf1456b"
   license "GPL-2.0"
   revision 3
-  head "https://github.com/lincity-ng/lincity-ng.git", branch: "master"
+  head "https:github.comlincity-nglincity-ng.git", branch: "master"
 
   bottle do
     sha256 arm64_ventura:  "6b711b74e0236a697f849e023e4b6b6982d80f678d5b14282600086b523dad48"
@@ -19,10 +19,10 @@ class LincityNg < Formula
   end
 
   # Still needs deprecated `jam` build system.
-  # Ref: https://github.com/lincity-ng/lincity-ng/issues/36
+  # Ref: https:github.comlincity-nglincity-ngissues36
   #
   # Support for SDL 2 in HEAD but upstream hasn't had a stable release since 2009-01-25.
-  # Ref: https://github.com/lincity-ng/lincity-ng/commit/d35c3bee434900deedd610b7b08a9bd8504e4c41
+  # Ref: https:github.comlincity-nglincity-ngcommitd35c3bee434900deedd610b7b08a9bd8504e4c41
   disable! date: "2023-09-25", because: "depends on `jam` to build and uses deprecated SDL 1.2 formulae"
 
   depends_on "autoconf" => :build
@@ -45,13 +45,13 @@ class LincityNg < Formula
     # Workaround for ancient config files not recognizing aarch64 macos.
     if Hardware::CPU.arm?
       %w[config.guess config.sub].each do |fn|
-        cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, "mk/autoconf/#{fn}"
+        cp Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"fn, "mkautoconf#{fn}"
       end
     end
 
     # Generate CREDITS
-    system 'cat data/gui/creditslist.xml | grep -v "@" | cut -d\> -f2 | cut -d\< -f1 >CREDITS'
-    system "./autogen.sh"
+    system 'cat dataguicreditslist.xml | grep -v "@" | cut -d\> -f2 | cut -d\< -f1 >CREDITS'
+    system ".autogen.sh"
 
     args = std_configure_args + %W[
       --disable-sdltest
@@ -59,9 +59,9 @@ class LincityNg < Formula
     ]
     args << "--with-apple-opengl-framework" if OS.mac?
 
-    system "./configure", *args
+    system ".configure", *args
     system "jam", "install"
-    rm_rf ["#{pkgshare}/applications", "#{pkgshare}/pixmaps"]
+    rm_rf ["#{pkgshare}applications", "#{pkgshare}pixmaps"]
   end
 
   def caveats
@@ -72,7 +72,7 @@ class LincityNg < Formula
   end
 
   test do
-    (testpath/".lincity-ng").mkpath
-    assert_match(/lincity-ng version #{version}$/, shell_output("#{bin}/lincity-ng --version"))
+    (testpath".lincity-ng").mkpath
+    assert_match(lincity-ng version #{version}$, shell_output("#{bin}lincity-ng --version"))
   end
 end

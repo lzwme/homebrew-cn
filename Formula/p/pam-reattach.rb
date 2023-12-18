@@ -1,10 +1,10 @@
 class PamReattach < Formula
   desc "PAM module for reattaching to the user's GUI (Aqua) session"
-  homepage "https://github.com/fabianishere/pam_reattach"
-  url "https://ghproxy.com/https://github.com/fabianishere/pam_reattach/archive/refs/tags/v1.3.tar.gz"
+  homepage "https:github.comfabianisherepam_reattach"
+  url "https:github.comfabianisherepam_reattacharchiverefstagsv1.3.tar.gz"
   sha256 "b1b735fa7832350a23457f7d36feb6ec939e5e1de987b456b6c28f5738216570"
   license "MIT"
-  head "https://github.com/fabianishere/pam_reattach.git", branch: "master"
+  head "https:github.comfabianisherepam_reattach.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6e506b3690188d4a532579c2e0fbca2a0e7b3c1bef8b45cf7de99b877496f03"
@@ -27,6 +27,6 @@ class PamReattach < Formula
   end
 
   test do
-    assert_match("Darwin", shell_output("#{bin}/reattach-to-session-namespace uname"))
+    assert_match("Darwin", shell_output("#{bin}reattach-to-session-namespace uname"))
   end
 end

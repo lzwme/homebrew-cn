@@ -1,10 +1,10 @@
 class Act < Formula
   desc "Run your GitHub Actions locally"
-  homepage "https://github.com/nektos/act"
-  url "https://ghproxy.com/https://github.com/nektos/act/archive/refs/tags/v0.2.55.tar.gz"
+  homepage "https:github.comnektosact"
+  url "https:github.comnektosactarchiverefstagsv0.2.55.tar.gz"
   sha256 "29cd5b46551d5db9d59a6eb5781deb444cf283db650b77b39b1914a0b5af8baa"
   license "MIT"
-  head "https://github.com/nektos/act.git", branch: "master"
+  head "https:github.comnektosact.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "983b1b4a020bf91f050304b5c0be81272f5f16849220d4d03c60eb2dd997611b"
@@ -20,26 +20,26 @@ class Act < Formula
 
   def install
     system "make", "build", "VERSION=#{version}"
-    bin.install "dist/local/act"
+    bin.install "distlocalact"
   end
 
   test do
-    (testpath/".actrc").write <<~EOS
+    (testpath".actrc").write <<~EOS
       -P ubuntu-latest=node:12.6-buster-slim
       -P ubuntu-12.04=node:12.6-buster-slim
       -P ubuntu-18.04=node:12.6-buster-slim
       -P ubuntu-16.04=node:12.6-stretch-slim
     EOS
 
-    system "git", "clone", "https://github.com/stefanzweifel/laravel-github-actions-demo.git"
+    system "git", "clone", "https:github.comstefanzweifellaravel-github-actions-demo.git"
 
     cd "laravel-github-actions-demo" do
       system "git", "checkout", "v2.0"
 
-      pull_request_jobs = shell_output("#{bin}/act pull_request --list")
+      pull_request_jobs = shell_output("#{bin}act pull_request --list")
       assert_match "php-cs-fixer", pull_request_jobs
 
-      push_jobs = shell_output("#{bin}/act push --list")
+      push_jobs = shell_output("#{bin}act push --list")
       assert_match "phpinsights", push_jobs
       assert_match "phpunit", push_jobs
     end

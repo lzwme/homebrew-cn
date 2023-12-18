@@ -2,10 +2,10 @@ cask "font-inder" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/inder/Inder-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflinderInder-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Inder"
-  homepage "https://fonts.google.com/specimen/Inder"
+  homepage "https:fonts.google.comspecimenInder"
 
   font "Inder-Regular.ttf"
 

@@ -1,7 +1,7 @@
 class Ugrep < Formula
   desc "Ultra fast grep with query UI, fuzzy search, archive search, and more"
-  homepage "https://github.com/Genivia/ugrep"
-  url "https://ghproxy.com/https://github.com/Genivia/ugrep/archive/refs/tags/v4.3.6.tar.gz"
+  homepage "https:github.comGeniviaugrep"
+  url "https:github.comGeniviaugreparchiverefstagsv4.3.6.tar.gz"
   sha256 "39f3205a2b8b79eeb6d2eaf1727c68262010e06ba5a7c42d5164c7ed6b6822f2"
   license "BSD-3-Clause"
 
@@ -19,7 +19,7 @@ class Ugrep < Formula
   depends_on "xz"
 
   def install
-    system "./configure", "--enable-color",
+    system ".configure", "--enable-color",
                           "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
@@ -29,8 +29,8 @@ class Ugrep < Formula
   end
 
   test do
-    (testpath/"Hello.txt").write("Hello World!")
-    assert_match "Hello World!", shell_output("#{bin}/ug 'Hello' '#{testpath}'").strip
-    assert_match "Hello World!", shell_output("#{bin}/ugrep 'World' '#{testpath}'").strip
+    (testpath"Hello.txt").write("Hello World!")
+    assert_match "Hello World!", shell_output("#{bin}ug 'Hello' '#{testpath}'").strip
+    assert_match "Hello World!", shell_output("#{bin}ugrep 'World' '#{testpath}'").strip
   end
 end

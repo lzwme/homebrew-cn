@@ -1,7 +1,7 @@
 class Glui < Formula
   desc "C++ user interface library"
-  homepage "https://glui.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/libglui/glui/archive/refs/tags/2.37.tar.gz"
+  homepage "https:glui.sourceforge.net"
+  url "https:github.comlibgluigluiarchiverefstags2.37.tar.gz"
   sha256 "f7f6983f7410fe8dfaa032b2b7b1aac2232ec6a400a142b73f680683dad795f8"
   license "Zlib"
   revision 1
@@ -27,22 +27,22 @@ class Glui < Formula
 
   # Fix compiler warnings in glui.h. Merged into master on November 28, 2016.
   patch do
-    url "https://github.com/libglui/glui/commit/fc9ad76733034605872a0d1323bb19cbc23d87bf.patch?full_index=1"
+    url "https:github.comlibgluigluicommitfc9ad76733034605872a0d1323bb19cbc23d87bf.patch?full_index=1"
     sha256 "b1afada854f920692ab7cb6b6292034f3488936c4332e3e996798ee494a3fdd7"
   end
 
   def install
     system "make", "setup"
-    system "make", "lib/libglui.a"
-    lib.install "lib/libglui.a"
-    include.install "include/GL"
+    system "make", "liblibglui.a"
+    lib.install "liblibglui.a"
+    include.install "includeGL"
   end
 
   test do
     if OS.mac?
-      (testpath/"test.cpp").write <<~EOS
+      (testpath"test.cpp").write <<~EOS
         #include <cassert>
-        #include <GL/glui.h>
+        #include <GLglui.h>
         int main() {
           GLUI *glui = GLUI_Master.create_glui("GLUI");
           assert(glui != nullptr);
@@ -51,12 +51,12 @@ class Glui < Formula
       EOS
       system ENV.cxx, "-framework", "GLUT", "-framework", "OpenGL", "-I#{include}",
         "-L#{lib}", "-lglui", "-std=c++11", "test.cpp"
-      system "./a.out"
+      system ".a.out"
     else
-      (testpath/"test.cpp").write <<~EOS
+      (testpath"test.cpp").write <<~EOS
         #include <cassert>
-        #include <GL/glui.h>
-        #include <GL/glut.h>
+        #include <GLglui.h>
+        #include <GLglut.h>
         int main(int argc, char **argv) {
           glutInit(&argc, argv);
           GLUI *glui = GLUI_Master.create_glui("GLUI");
@@ -67,8 +67,8 @@ class Glui < Formula
       system ENV.cxx, "-I#{include}", "-std=c++11", "test.cpp",
         "-L#{lib}", "-lglui", "-lglut", "-lGLU", "-lGL"
       if ENV["DISPLAY"]
-        # Fails without X display: freeglut (./a.out): failed to open display ''
-        system "./a.out"
+        # Fails without X display: freeglut (.a.out): failed to open display ''
+        system ".a.out"
       end
     end
   end

@@ -1,7 +1,7 @@
 class Libspiro < Formula
   desc "Library to simplify the drawing of curves"
-  homepage "https://github.com/fontforge/libspiro"
-  url "https://ghproxy.com/https://github.com/fontforge/libspiro/releases/download/20221101/libspiro-dist-20221101.tar.gz"
+  homepage "https:github.comfontforgelibspiro"
+  url "https:github.comfontforgelibspiroreleasesdownload20221101libspiro-dist-20221101.tar.gz"
   sha256 "5984fb5af3e4e1f927f3a74850b705a711fb86284802a5e6170b09786440e8be"
   license "GPL-3.0-or-later"
   version_scheme 1
@@ -20,7 +20,7 @@ class Libspiro < Formula
   end
 
   head do
-    url "https://github.com/fontforge/libspiro.git", branch: "master"
+    url "https:github.comfontforgelibspiro.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,12 +33,12 @@ class Libspiro < Formula
       system "automake"
     end
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <spiroentrypoints.h>
       #include <bezctx.h>
 
@@ -56,11 +56,11 @@ class Libspiro < Formula
           {100, 0, SPIRO_G4}, {0, -100, SPIRO_G4}
         };
 
-        SpiroCPsToBezier1(path, sizeof(path)/sizeof(spiro_cp), 1, &bc, &done);
+        SpiroCPsToBezier1(path, sizeof(path)sizeof(spiro_cp), 1, &bc, &done);
         return done == 0;
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lspiro", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

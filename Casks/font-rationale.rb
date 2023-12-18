@@ -2,10 +2,10 @@ cask "font-rationale" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rationale/Rationale-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrationaleRationale-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rationale"
-  homepage "https://fonts.google.com/specimen/Rationale"
+  homepage "https:fonts.google.comspecimenRationale"
 
   font "Rationale-Regular.ttf"
 

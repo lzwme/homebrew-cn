@@ -1,7 +1,7 @@
 class Freeglut < Formula
   desc "Open-source alternative to the OpenGL Utility Toolkit (GLUT) library"
-  homepage "https://freeglut.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/FreeGLUTProject/freeglut/releases/download/v3.4.0/freeglut-3.4.0.tar.gz"
+  homepage "https:freeglut.sourceforge.net"
+  url "https:github.comFreeGLUTProjectfreeglutreleasesdownloadv3.4.0freeglut-3.4.0.tar.gz"
   sha256 "3c0bcb915d9b180a97edaebd011b7a1de54583a838644dcd42bb0ea0c6f3eaec"
   license "MIT"
 
@@ -32,7 +32,7 @@ class Freeglut < Formula
   end
 
   resource "init_error_func.c" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/dcnieho/FreeGLUT/c63102d06d09f8a9d4044fd107fbda2034bb30c6/freeglut/freeglut/progs/demos/init_error_func/init_error_func.c"
+    url "https:raw.githubusercontent.comdcniehoFreeGLUTc63102d06d09f8a9d4044fd107fbda2034bb30c6freeglutfreeglutprogsdemosinit_error_funcinit_error_func.c"
     sha256 "74ff9c3f722043fc617807f19d3052440073b1cb5308626c1cefd6798a284613"
   end
 
@@ -40,7 +40,7 @@ class Freeglut < Formula
     args = %W[
       -DFREEGLUT_BUILD_DEMOS=OFF
       -DOPENGL_INCLUDE_DIR=#{Formula["mesa"].include}
-      -DOPENGL_gl_LIBRARY=#{Formula["mesa"].lib}/#{shared_library("libGL")}
+      -DOPENGL_gl_LIBRARY=#{Formula["mesa"].lib}#{shared_library("libGL")}
     ]
     system "cmake", *std_cmake_args, *args, "."
     system "make", "all"
@@ -51,6 +51,6 @@ class Freeglut < Formula
     resource("init_error_func.c").stage(testpath)
     flags = shell_output("pkg-config --cflags --libs glut gl xext x11").chomp.split
     system ENV.cc, "init_error_func.c", "-o", "init_error_func", *flags
-    assert_match "Entering user defined error handler", shell_output("./init_error_func 2>&1", 1)
+    assert_match "Entering user defined error handler", shell_output(".init_error_func 2>&1", 1)
   end
 end

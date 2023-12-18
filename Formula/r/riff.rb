@@ -1,7 +1,7 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
-  homepage "https://github.com/walles/riff"
-  url "https://ghproxy.com/https://github.com/walles/riff/archive/refs/tags/2.27.1.tar.gz"
+  homepage "https:github.comwallesriff"
+  url "https:github.comwallesriffarchiverefstags2.27.1.tar.gz"
   sha256 "ba52c76c103f7e88301a61227b648d63115e52c7b14ff966073a8d0264f42bde"
   license "MIT"
 
@@ -22,7 +22,7 @@ class Riff < Formula
   end
 
   test do
-    assert_empty shell_output("#{bin}/riff /etc/passwd /etc/passwd")
-    assert_match version.to_s, shell_output("#{bin}/riff --version")
+    assert_empty shell_output("#{bin}riff etcpasswd etcpasswd")
+    assert_match version.to_s, shell_output("#{bin}riff --version")
   end
 end

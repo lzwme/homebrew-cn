@@ -1,10 +1,10 @@
 class Squealer < Formula
   desc "Scans Git repositories or filesystems for secrets in commit histories"
-  homepage "https://github.com/owenrumney/squealer"
-  url "https://ghproxy.com/https://github.com/owenrumney/squealer/archive/refs/tags/v1.2.1.tar.gz"
+  homepage "https:github.comowenrumneysquealer"
+  url "https:github.comowenrumneysquealerarchiverefstagsv1.2.1.tar.gz"
   sha256 "0282f62941009ad47f48c78a3d31444b4b50011f5667ddee0c9b31d7d45037f9"
   license "Unlicense"
-  head "https://github.com/owenrumney/squealer.git", branch: "main"
+  head "https:github.comowenrumneysquealer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4672da4191bc67857d617ecd762b89f448440cbdf93964f7bfa6541d27b5ea14"
@@ -21,14 +21,14 @@ class Squealer < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/owenrumney/squealer/version.Version=#{version}
+      -X github.comowenrumneysquealerversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/squealer"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdsquealer"
   end
 
   test do
-    system "git", "clone", "https://github.com/owenrumney/woopsie.git"
-    output = shell_output("#{bin}/squealer woopsie", 1)
+    system "git", "clone", "https:github.comowenrumneywoopsie.git"
+    output = shell_output("#{bin}squealer woopsie", 1)
     assert_match "-----BEGIN OPENSSH PRIVATE KEY-----", output
   end
 end

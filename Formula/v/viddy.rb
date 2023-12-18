@@ -1,10 +1,10 @@
 class Viddy < Formula
   desc "Modern watch command"
-  homepage "https://github.com/sachaos/viddy"
-  url "https://ghproxy.com/https://github.com/sachaos/viddy/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:github.comsachaosviddy"
+  url "https:github.comsachaosviddyarchiverefstagsv0.4.0.tar.gz"
   sha256 "b64cca44ef6367397498faae92296fc005156e6e5a7518b6f64ac2bc912044d0"
   license "MIT"
-  head "https://github.com/sachaos/viddy.git", branch: "master"
+  head "https:github.comsachaosviddy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77e5567367add7bad2e3aefbe7230676e4d8af3abe15249470bb1d3da2bb80de"
@@ -23,12 +23,12 @@ class Viddy < Formula
   end
 
   test do
-    # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
+    # Errno::EIO: Inputoutput error @ io_fread - devpts0
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     ENV["TERM"] = "xterm"
     require "pty"
-    r, _, pid = PTY.spawn "#{bin}/viddy echo hello"
+    r, _, pid = PTY.spawn "#{bin}viddy echo hello"
     sleep 1
     Process.kill "SIGINT", pid
     assert_includes r.read, "Every"

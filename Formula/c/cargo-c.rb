@@ -1,13 +1,13 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
-  homepage "https://github.com/lu-zero/cargo-c"
-  url "https://ghproxy.com/https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.28.tar.gz"
+  homepage "https:github.comlu-zerocargo-c"
+  url "https:github.comlu-zerocargo-carchiverefstagsv0.9.28.tar.gz"
   sha256 "f5237b057c8c6c21c2d3d827acea8a0a059db780c69e3eaf807ab3c43e50798d"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -55,17 +55,17 @@ class CargoC < Formula
 
   test do
     cargo_error = "could not find `Cargo.toml`"
-    assert_match cargo_error, shell_output("#{bin}/cargo-cinstall cinstall 2>&1", 1)
-    assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
+    assert_match cargo_error, shell_output("#{bin}cargo-cinstall cinstall 2>&1", 1)
+    assert_match cargo_error, shell_output("#{bin}cargo-cbuild cbuild 2>&1", 1)
 
     [
-      Formula["curl"].opt_lib/shared_library("libcurl"),
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["curl"].opt_libshared_library("libcurl"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libssh2"].opt_libshared_library("libssh2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"cargo-cbuild", library),
+      assert check_binary_linkage(bin"cargo-cbuild", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

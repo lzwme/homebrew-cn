@@ -1,7 +1,7 @@
 class Td < Formula
   desc "Your todo list in your terminal"
-  homepage "https://github.com/Swatto/td"
-  url "https://ghproxy.com/https://github.com/Swatto/td/archive/refs/tags/1.4.2.tar.gz"
+  homepage "https:github.comSwattotd"
+  url "https:github.comSwattotdarchiverefstags1.4.2.tar.gz"
   sha256 "e85468dad3bf78c3fc32fc2ab53ef2d6bc28c3f9297410917af382a6d795574b"
   license "MIT"
 
@@ -26,9 +26,9 @@ class Td < Formula
   end
 
   test do
-    (testpath/".todos").write "[]\n"
-    system "#{bin}/td", "a", "todo of test"
-    todos = (testpath/".todos").read
+    (testpath".todos").write "[]\n"
+    system "#{bin}td", "a", "todo of test"
+    todos = (testpath".todos").read
     assert_match "todo of test", todos
     assert_match "pending", todos
   end

@@ -2,10 +2,10 @@ cask "font-mononoki-nerd-font" do
   version "3.1.1"
   sha256 "873679bba5dd2c098a896a967f4ffc1357898285ce0d7ee11f268c7470bc4da5"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Mononoki.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Mononoki.zip"
   name "Mononoki Nerd Font (Mononoki)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

@@ -1,10 +1,10 @@
 class Libdivide < Formula
   desc "Optimized integer division"
-  homepage "https://libdivide.com"
-  url "https://ghproxy.com/https://github.com/ridiculousfish/libdivide/archive/refs/tags/5.0.tar.gz"
+  homepage "https:libdivide.com"
+  url "https:github.comridiculousfishlibdividearchiverefstags5.0.tar.gz"
   sha256 "01ffdf90bc475e42170741d381eb9cfb631d9d7ddac7337368bcd80df8c98356"
   license any_of: ["Zlib", "BSL-1.0"]
-  head "https://github.com/ridiculousfish/libdivide.git", branch: "master"
+  head "https:github.comridiculousfishlibdivide.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "6f0fc74fe9862fd191c01c97b21444c6d29d3c754e19a400b4fcbb371f490fb1"
@@ -19,7 +19,7 @@ class Libdivide < Formula
   end
 
   test do
-    (testpath/"libdivide-test.c").write <<~EOS
+    (testpath"libdivide-test.c").write <<~EOS
       #include "libdivide.h"
       #include <assert.h>
 
@@ -33,7 +33,7 @@ class Libdivide < Formula
 
       int main(void) {
         const int numers[] = {2, 4, 6, 8, 10};
-        size_t count = sizeof(numers) / sizeof(int);
+        size_t count = sizeof(numers)  sizeof(int);
         int d = 2;
         int result = sum_of_quotients(numers, count, d);
         assert(result == 15);
@@ -45,6 +45,6 @@ class Libdivide < Formula
     ENV.append_to_cflags "-I#{include} -DLIBDIVIDE_#{macro_suffix}"
 
     system "make", "libdivide-test"
-    system "./libdivide-test"
+    system ".libdivide-test"
   end
 end

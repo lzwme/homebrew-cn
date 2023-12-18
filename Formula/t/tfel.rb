@@ -1,10 +1,10 @@
 class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
-  homepage "https://thelfer.github.io/tfel/web/index.html"
-  url "https://ghproxy.com/https://github.com/thelfer/tfel/archive/refs/tags/TFEL-4.2.0.tar.gz"
+  homepage "https:thelfer.github.iotfelwebindex.html"
+  url "https:github.comthelfertfelarchiverefstagsTFEL-4.2.0.tar.gz"
   sha256 "cf8a309c4d19a8e36232f8540ff28aa0d6285645f8dfb1ac57dd481ba3453e02"
   license "GPL-1.0-or-later"
-  head "https://github.com/thelfer/tfel.git", using: :git, branch: "master"
+  head "https:github.comthelfertfel.git", using: :git, branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "d01437e12eec1367c3385d6b3f5466275cec9925c8bc3fab281ee7467b87d1b5"
@@ -50,7 +50,7 @@ class Tfel < Formula
   end
 
   test do
-    (testpath/"test.mfront").write <<~EOS
+    (testpath"test.mfront").write <<~EOS
       @Parser Implicit;
       @Behaviour Norton;
       @Algorithm NewtonRaphson_NumericalJacobian ;
@@ -65,13 +65,13 @@ class Tfel < Formula
         real seq = sigmaeq(sig) ;
         Stensor n = Stensor(0.) ;
         if(seq > 1.e-12){
-          n = 1.5*deviator(sig)/seq ;
+          n = 1.5*deviator(sig)seq ;
         }
         feel += dp*n-deto ;
         fp -= dt*A*pow(seq,m) ;
       }
     EOS
-    system bin/"mfront", "--obuild", "--interface=generic", "test.mfront"
-    assert_predicate testpath/"src"/shared_library("libBehaviour"), :exist?
+    system bin"mfront", "--obuild", "--interface=generic", "test.mfront"
+    assert_predicate testpath"src"shared_library("libBehaviour"), :exist?
   end
 end

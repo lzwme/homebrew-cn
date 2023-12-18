@@ -1,13 +1,13 @@
 class Scc < Formula
   desc "Fast and accurate code counter with complexity and COCOMO estimates"
-  homepage "https://github.com/boyter/scc/"
-  url "https://ghproxy.com/https://github.com/boyter/scc/archive/refs/tags/v3.2.0.tar.gz"
+  homepage "https:github.comboyterscc"
+  url "https:github.comboytersccarchiverefstagsv3.2.0.tar.gz"
   sha256 "69cce0b57e66c736169bd07943cdbe70891bc2ff3ada1f4482acbd1335adbfad"
   license any_of: ["MIT", "Unlicense"]
 
   livecheck do
     url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class Scc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       int main(void) {
         return 0;
@@ -39,6 +39,6 @@ class Scc < Formula
       C,4,4,0,0,0,50
     EOS
 
-    assert_match expected_output, shell_output("#{bin}/scc -fcsv test.c")
+    assert_match expected_output, shell_output("#{bin}scc -fcsv test.c")
   end
 end

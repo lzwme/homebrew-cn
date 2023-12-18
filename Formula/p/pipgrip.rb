@@ -2,8 +2,8 @@ class Pipgrip < Formula
   include Language::Python::Virtualenv
 
   desc "Lightweight pip dependency resolver"
-  homepage "https://github.com/ddelange/pipgrip"
-  url "https://files.pythonhosted.org/packages/1c/c4/e72ccab675d835e3a8632fc145dcb10fc0b3f0f290e958e34c3e126ee6e7/pipgrip-0.10.11.tar.gz"
+  homepage "https:github.comddelangepipgrip"
+  url "https:files.pythonhosted.orgpackages1cc4e72ccab675d835e3a8632fc145dcb10fc0b3f0f290e958e34c3e126ee6e7pipgrip-0.10.11.tar.gz"
   sha256 "cb845fd8dcc64c975eb586c18d2fdd7f39a0d10bf7bd0d70b38639eba19d3dc7"
   license "BSD-3-Clause"
 
@@ -24,24 +24,24 @@ class Pipgrip < Formula
   depends_on "six"
 
   resource "anytree" do
-    url "https://files.pythonhosted.org/packages/f9/44/2dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7dea/anytree-2.12.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesf9442dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7deaanytree-2.12.1.tar.gz"
     sha256 "244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/b0/b4/bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97b/wheel-0.42.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb0b4bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97bwheel-0.42.0.tar.gz"
     sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
   end
 
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"pipgrip", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin"pipgrip", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
-    assert_match "pipgrip==#{version}", shell_output("#{bin}/pipgrip pipgrip --no-cache-dir")
+    assert_match "pipgrip==#{version}", shell_output("#{bin}pipgrip pipgrip --no-cache-dir")
     # Test gcc dependency
-    assert_match "dxpy==", shell_output("#{bin}/pipgrip dxpy --no-cache-dir")
+    assert_match "dxpy==", shell_output("#{bin}pipgrip dxpy --no-cache-dir")
   end
 end

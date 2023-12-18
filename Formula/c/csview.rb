@@ -1,10 +1,10 @@
 class Csview < Formula
   desc "High performance csv viewer for cli"
-  homepage "https://github.com/wfxr/csview"
-  url "https://ghproxy.com/https://github.com/wfxr/csview/archive/refs/tags/v1.2.2.tar.gz"
+  homepage "https:github.comwfxrcsview"
+  url "https:github.comwfxrcsviewarchiverefstagsv1.2.2.tar.gz"
   sha256 "c8c4d1207b225e4257f301af6333d28cfee611781cfa51bf8227b742b043105a"
   license any_of: ["MIT", "Apache-2.0"]
-  head "https://github.com/wfxr/csview.git", branch: "master"
+  head "https:github.comwfxrcsview.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1456d260688cf7eef4c2ac3676a1d4d37cbcd78488093bf3dbf31a67faecc510"
@@ -24,14 +24,14 @@ class Csview < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    zsh_completion.install  "completions/zsh/_csview"
-    bash_completion.install "completions/bash/csview.bash"
-    fish_completion.install "completions/fish/csview.fish"
+    zsh_completion.install  "completionszsh_csview"
+    bash_completion.install "completionsbashcsview.bash"
+    fish_completion.install "completionsfishcsview.fish"
   end
 
   test do
-    (testpath/"test.csv").write("a,b,c\n1,2,3")
-    assert_equal <<~EOS, shell_output("#{bin}/csview #{testpath}/test.csv")
+    (testpath"test.csv").write("a,b,c\n1,2,3")
+    assert_equal <<~EOS, shell_output("#{bin}csview #{testpath}test.csv")
       ┌───┬───┬───┐
       │ a │ b │ c │
       ├───┼───┼───┤

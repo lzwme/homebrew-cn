@@ -1,7 +1,7 @@
 class Afuse < Formula
   desc "Automounting file system implemented in userspace with FUSE"
-  homepage "https://github.com/pcarrier/afuse/"
-  url "https://ghproxy.com/https://github.com/pcarrier/afuse/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:github.compcarrierafuse"
+  url "https:github.compcarrierafusearchiverefstagsv0.5.0.tar.gz"
   sha256 "87284e3f7973f5a61eea4a37880512c01f0b8bf1d37a8988447efbe806ec3414"
   license "GPL-2.0-only"
 
@@ -16,12 +16,12 @@ class Afuse < Formula
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args
+    system ".autogen.sh"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "FUSE library version", pipe_output("#{bin}/afuse --version 2>&1")
+    assert_match "FUSE library version", pipe_output("#{bin}afuse --version 2>&1")
   end
 end

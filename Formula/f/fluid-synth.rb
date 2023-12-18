@@ -1,10 +1,10 @@
 class FluidSynth < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
-  homepage "https://www.fluidsynth.org"
-  url "https://ghproxy.com/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.3.4.tar.gz"
+  homepage "https:www.fluidsynth.org"
+  url "https:github.comFluidSynthfluidsyntharchiverefstagsv2.3.4.tar.gz"
   sha256 "1529ef5bc3b9ef3adc2a7964505912f7305103e269e50cc0316f500b22053ac9"
   license "LGPL-2.1-or-later"
-  head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
+  head "https:github.comFluidSynthfluidsynth.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a80c924499b6343ada666c6d93d0f3ad947d61919bace2219bc3bff05618f0a6"
@@ -34,7 +34,7 @@ class FluidSynth < Formula
   end
 
   resource "homebrew-test" do
-    url "https://upload.wikimedia.org/wikipedia/commons/6/61/Drum_sample.mid"
+    url "https:upload.wikimedia.orgwikipediacommons661Drum_sample.mid"
     sha256 "a1259360c48adc81f2c5b822f221044595632bd1a76302db1f9d983c44f45a30"
   end
 
@@ -82,9 +82,9 @@ class FluidSynth < Formula
     # uses_from_macos "readline" produces another error
     # Related error: Package 'readline', required by 'fluidsynth', not found
     if OS.mac?
-      inreplace "build/fluidsynth.pc",
+      inreplace "buildfluidsynth.pc",
                 "readline",
-                "#{Formula["readline"].opt_lib}/pkgconfig/readline.pc"
+                "#{Formula["readline"].opt_lib}pkgconfigreadline.pc"
     end
 
     system "cmake", "--build", "build"
@@ -96,11 +96,11 @@ class FluidSynth < Formula
   test do
     # Synthesize wav file from example midi
     resource("homebrew-test").stage testpath
-    wavout = testpath/"Drum_sample.wav"
-    system bin/"fluidsynth", "-F", wavout, pkgshare/"sf2/VintageDreamsWaves-v2.sf2", testpath/"Drum_sample.mid"
+    wavout = testpath"Drum_sample.wav"
+    system bin"fluidsynth", "-F", wavout, pkgshare"sf2VintageDreamsWaves-v2.sf2", testpath"Drum_sample.mid"
     assert_predicate wavout, :exist?
 
     # Check the pkg-config module
-    system "pkg-config", "--cflags", "--libs", "--static", lib/"pkgconfig/fluidsynth.pc"
+    system "pkg-config", "--cflags", "--libs", "--static", lib"pkgconfigfluidsynth.pc"
   end
 end

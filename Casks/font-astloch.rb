@@ -2,12 +2,12 @@ cask "font-astloch" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/astloch"
+      only_path: "oflastloch"
   name "Astloch"
-  homepage "https://fonts.google.com/specimen/Astloch"
+  homepage "https:fonts.google.comspecimenAstloch"
 
   font "Astloch-Bold.ttf"
   font "Astloch-Regular.ttf"

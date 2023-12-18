@@ -1,10 +1,10 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
-  homepage "https://github.com/jeessy2/ddns-go"
-  url "https://ghproxy.com/https://github.com/jeessy2/ddns-go/archive/refs/tags/v5.6.6.tar.gz"
+  homepage "https:github.comjeessy2ddns-go"
+  url "https:github.comjeessy2ddns-goarchiverefstagsv5.6.6.tar.gz"
   sha256 "5e64b6c9c1723bd955d2d66e637f49d2d76501efc95dd732d7a111cf64da2fde"
   license "MIT"
-  head "https://github.com/jeessy2/ddns-go.git", branch: "master"
+  head "https:github.comjeessy2ddns-go.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "844c1936fd5ec11a9b7fa69aac4fc00ae9082270a6b5b0dd90f6dc5def334f5a"
@@ -28,14 +28,14 @@ class DdnsGo < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ddns-go -v")
+    assert_match version.to_s, shell_output("#{bin}ddns-go -v")
 
     port = free_port
-    spawn "#{bin}/ddns-go -l :#{port} -c #{testpath}/ddns-go.yaml"
+    spawn "#{bin}ddns-go -l :#{port} -c #{testpath}ddns-go.yaml"
     sleep 1
 
-    system "curl", "--silent", "localhost:#{port}/clearLog"
-    output = shell_output("curl --silent localhost:#{port}/logs")
+    system "curl", "--silent", "localhost:#{port}clearLog"
+    output = shell_output("curl --silent localhost:#{port}logs")
     assert_equal "[]", output
   end
 end

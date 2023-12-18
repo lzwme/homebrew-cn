@@ -1,7 +1,7 @@
 class Moar < Formula
   desc "Nice to use pager for humans"
-  homepage "https://github.com/walles/moar"
-  url "https://ghproxy.com/https://github.com/walles/moar/archive/refs/tags/v1.19.0.tar.gz"
+  homepage "https:github.comwallesmoar"
+  url "https:github.comwallesmoararchiverefstagsv1.19.0.tar.gz"
   sha256 "bcbbb061789765a9c28ada1298a5e96039cf176107f657e6d92994d05db6c22c"
   license "BSD-2-Clause"
 
@@ -25,9 +25,9 @@ class Moar < Formula
 
   test do
     # Test piping text through moar
-    (testpath/"test.txt").write <<~EOS
+    (testpath"test.txt").write <<~EOS
       tyre kicking
     EOS
-    assert_equal "tyre kicking", shell_output("#{bin}/moar test.txt").strip
+    assert_equal "tyre kicking", shell_output("#{bin}moar test.txt").strip
   end
 end

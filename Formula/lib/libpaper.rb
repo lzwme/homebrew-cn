@@ -1,7 +1,7 @@
 class Libpaper < Formula
   desc "Library for handling paper characteristics"
-  homepage "https://github.com/rrthomas/libpaper"
-  url "https://ghproxy.com/https://github.com/rrthomas/libpaper/releases/download/v2.1.2/libpaper-2.1.2.tar.gz"
+  homepage "https:github.comrrthomaslibpaper"
+  url "https:github.comrrthomaslibpaperreleasesdownloadv2.1.2libpaper-2.1.2.tar.gz"
   sha256 "1fda0cf64efa46b9684a4ccc17df4386c4cc83254805419222c064bf62ea001f"
   license "LGPL-2.1-or-later"
 
@@ -18,15 +18,15 @@ class Libpaper < Formula
   depends_on "help2man" => :build
 
   def install
-    system "./configure", *std_configure_args, "--sysconfdir=#{etc}"
+    system ".configure", *std_configure_args, "--sysconfdir=#{etc}"
     system "make", "install"
   end
 
   test do
-    assert_match "A4: 210x297 mm", shell_output("#{bin}/paper --all")
-    assert_match "paper #{version}", shell_output("#{bin}/paper --version")
+    assert_match "A4: 210x297 mm", shell_output("#{bin}paper --all")
+    assert_match "paper #{version}", shell_output("#{bin}paper --version")
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <paper.h>
       int main()
       {
@@ -36,6 +36,6 @@ class Libpaper < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpaper", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

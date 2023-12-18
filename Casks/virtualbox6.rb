@@ -2,20 +2,20 @@ cask "virtualbox6" do
   version "6.1.48,159471"
   sha256 "a57276cc7d649acf7a65936f499020f7d1d73d66c8c8c83f6681fde09ceb4c81"
 
-  url "https://download.virtualbox.org/virtualbox/#{version.csv.first}/VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
+  url "https:download.virtualbox.orgvirtualbox#{version.csv.first}VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
   name "Oracle VirtualBox"
   desc "Virtualizer for x86 hardware"
-  homepage "https://www.virtualbox.org/"
+  homepage "https:www.virtualbox.org"
 
   livecheck do
-    url "https://www.virtualbox.org/wiki/Download_Old_Builds_6_1"
-    regex(/href=.*?VirtualBox-(\d+(?:\.\d+)+)-(\d+)-OSX.dmg/i)
+    url "https:www.virtualbox.orgwikiDownload_Old_Builds_6_1"
+    regex(href=.*?VirtualBox-(\d+(?:\.\d+)+)-(\d+)-OSX.dmgi)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
     end
   end
 
-  conflicts_with cask: "homebrew/cask-versions/virtualbox-beta"
+  conflicts_with cask: "homebrewcask-versionsvirtualbox-beta"
   depends_on macos: ">= :high_sierra"
   depends_on arch: :x86_64
 
@@ -44,10 +44,10 @@ cask "virtualbox6" do
       ]
 
   postflight do
-    # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew, it creates it itself
+    # If VirtualBox is installed before `usrlocallibpkgconfig` is created by Homebrew, it creates it itself
     # with incorrect permissions that break other packages
-    # See https://github.com/Homebrew/homebrew-cask/issues/68730#issuecomment-534363026
-    set_ownership "/usr/local/lib/pkgconfig"
+    # See https:github.comHomebrewhomebrew-caskissues68730#issuecomment-534363026
+    set_ownership "usrlocallibpkgconfig"
   end
 
   uninstall script:  {
@@ -56,16 +56,16 @@ cask "virtualbox6" do
               sudo:       true,
             },
             pkgutil: "org.virtualbox.pkg.*",
-            delete:  "/usr/local/bin/vboximg-mount"
+            delete:  "usrlocalbinvboximg-mount"
 
   zap trash: [
-        "/Library/Application Support/VirtualBox",
-        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.virtualbox.app.virtualbox*",
-        "~/Library/Preferences/org.virtualbox.app.VirtualBox*",
-        "~/Library/Saved Application State/org.virtualbox.app.VirtualBox*",
-        "~/Library/VirtualBox",
+        "LibraryApplication SupportVirtualBox",
+        "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.virtualbox.app.virtualbox*",
+        "~LibraryPreferencesorg.virtualbox.app.VirtualBox*",
+        "~LibrarySaved Application Stateorg.virtualbox.app.VirtualBox*",
+        "~LibraryVirtualBox",
       ],
-      rmdir: "~/VirtualBox VMs"
+      rmdir: "~VirtualBox VMs"
 
   caveats do
     kext

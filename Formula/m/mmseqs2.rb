@@ -1,11 +1,11 @@
 class Mmseqs2 < Formula
   desc "Software suite for very fast sequence search and clustering"
-  homepage "https://mmseqs.com/"
-  url "https://ghproxy.com/https://github.com/soedinglab/MMseqs2/archive/refs/tags/15-6f452.tar.gz"
+  homepage "https:mmseqs.com"
+  url "https:github.comsoedinglabMMseqs2archiverefstags15-6f452.tar.gz"
   version "15-6f452"
   sha256 "7115ac5a7e2a49229466806aaa760d00204bb08c870e3c231b00e525c77531dc"
   license "GPL-3.0-or-later"
-  head "https://github.com/soedinglab/MMseqs2.git", branch: "master"
+  head "https:github.comsoedinglabMMseqs2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c88e8b511aedbf0abab55d03e24ce5a0d55c0430030cd31e0c147c98bfa535bd"
@@ -31,9 +31,9 @@ class Mmseqs2 < Formula
     depends_on "gawk"
   end
 
-  # check revision with https://github.com/soedinglab/MMseqs2/wiki/Home/_history
+  # check revision with https:github.comsoedinglabMMseqs2wikiHome_history
   resource "documentation" do
-    url "https://github.com/soedinglab/MMseqs2.wiki.git",
+    url "https:github.comsoedinglabMMseqs2.wiki.git",
         revision: "1ea9a93cb31d6c8cc25ef963311bcdddb95ff58d"
   end
 
@@ -52,7 +52,7 @@ class Mmseqs2 < Formula
       args << "-DOpenMP_C_LIB_NAMES=omp"
       args << "-DOpenMP_CXX_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"
       args << "-DOpenMP_CXX_LIB_NAMES=omp"
-      args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
+      args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}libomp.a"
     end
 
     system "cmake", ".", *args
@@ -60,7 +60,7 @@ class Mmseqs2 < Formula
 
     resource("documentation").stage { doc.install Dir["*"] }
     pkgshare.install "examples"
-    bash_completion.install "util/bash-completion.sh" => "mmseqs.sh"
+    bash_completion.install "utilbash-completion.sh" => "mmseqs.sh"
   end
 
   def caveats
@@ -71,12 +71,12 @@ class Mmseqs2 < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https://ghproxy.com/https://github.com/soedinglab/MMseqs2/releases/download/12-113e3/MMseqs2-Regression-Minimal.zip"
+      url "https:github.comsoedinglabMMseqs2releasesdownload12-113e3MMseqs2-Regression-Minimal.zip"
       sha256 "ab0c2953d1c27736c22a57a1ccbb976c1320435fad82b5c579dbd716b7bae4ce"
     end
 
     resource("homebrew-testdata").stage do
-      system "./run_regression.sh", "#{bin}/mmseqs", "scratch"
+      system ".run_regression.sh", "#{bin}mmseqs", "scratch"
     end
   end
 end

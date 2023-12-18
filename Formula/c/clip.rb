@@ -1,12 +1,12 @@
 class Clip < Formula
   desc "Create high-quality charts from the command-line"
-  homepage "https://github.com/asmuth/clip"
+  homepage "https:github.comasmuthclip"
   license "Apache-2.0"
   revision 3
-  head "https://github.com/asmuth/clip.git", branch: "master"
+  head "https:github.comasmuthclip.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/asmuth/clip/archive/refs/tags/v0.7.tar.gz"
+    url "https:github.comasmuthcliparchiverefstagsv0.7.tar.gz"
     sha256 "f38f455cf3e9201614ac71d8a871e4ff94a6e4cf461fd5bf81bdf457ba2e6b3e"
     # Fix build with fmt 10, the issue is fixed on HEAD because the logic was changed
     patch :DATA
@@ -42,18 +42,18 @@ class Clip < Formula
   end
 
   test do
-    cp_r pkgshare/"test", testpath
-    system "#{bin}/clip", "--export", "chart.svg",
-           "test/examples/charts_basic_areachart.clp"
-    assert_predicate testpath/"chart.svg", :exist?
+    cp_r pkgshare"test", testpath
+    system "#{bin}clip", "--export", "chart.svg",
+           "testexamplescharts_basic_areachart.clp"
+    assert_predicate testpath"chart.svg", :exist?
   end
 end
 
 __END__
-diff --git a/src/graphics/export_svg.cc b/src/graphics/export_svg.cc
+diff --git asrcgraphicsexport_svg.cc bsrcgraphicsexport_svg.cc
 index 12aa4ef7..2316063b 100644
---- a/src/graphics/export_svg.cc
-+++ b/src/graphics/export_svg.cc
+--- asrcgraphicsexport_svg.cc
++++ bsrcgraphicsexport_svg.cc
 @@ -159,7 +159,7 @@ Status svg_add_path(
        case StrokeStyle::DASH: {
          std::string dash_pattern;

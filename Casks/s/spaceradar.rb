@@ -2,10 +2,10 @@ cask "spaceradar" do
   version "5.1.0"
   sha256 "af9fdbaf96658cb990f45a76183ca1ce91184d5a91e78676aa57095c9906a06d"
 
-  url "https://ghproxy.com/https://github.com/zz85/space-radar/releases/download/v#{version}/SpaceRadar-darwin-x64.zip"
+  url "https:github.comzz85space-radarreleasesdownloadv#{version}SpaceRadar-darwin-x64.zip"
   name "SpaceRadar"
   desc "Disk And Memory Space Visualization App built with Electron & d3.js"
-  homepage "https://github.com/zz85/space-radar"
+  homepage "https:github.comzz85space-radar"
 
   livecheck do
     url :url
@@ -17,9 +17,9 @@ cask "spaceradar" do
   uninstall quit: "com.electron.spaceradar"
 
   zap trash: [
-    "~/Library/Application Support/space-radar",
-    "~/Library/Caches/space-radar",
-    "~/Library/Preferences/com.electron.spaceradar.plist",
-    "~/Library/Saved Application State/com.electron.spaceradar.savedState",
+    "~LibraryApplication Supportspace-radar",
+    "~LibraryCachesspace-radar",
+    "~LibraryPreferencescom.electron.spaceradar.plist",
+    "~LibrarySaved Application Statecom.electron.spaceradar.savedState",
   ]
 end

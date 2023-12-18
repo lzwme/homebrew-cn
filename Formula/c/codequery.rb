@@ -1,7 +1,7 @@
 class Codequery < Formula
   desc "Code-understanding, code-browsing or code-search tool"
-  homepage "https://github.com/ruben2020/codequery"
-  url "https://ghproxy.com/https://github.com/ruben2020/codequery/archive/refs/tags/v0.26.0.tar.gz"
+  homepage "https:github.comruben2020codequery"
+  url "https:github.comruben2020codequeryarchiverefstagsv0.26.0.tar.gz"
   sha256 "5972a5778159835e37f5c9114a90f1be4756f27487d9074d2fb3464625a0ced2"
   license "MPL-2.0"
 
@@ -36,14 +36,14 @@ class Codequery < Formula
 
   test do
     # Copy test files as `cqmakedb` gets confused if we just symlink them.
-    test_files = (share/"test").children
+    test_files = (share"test").children
     cp test_files, testpath
 
-    system "#{bin}/cqmakedb", "-s", "./codequery.db",
-                              "-c", "./cscope.out",
-                              "-t", "./tags",
+    system "#{bin}cqmakedb", "-s", ".codequery.db",
+                              "-c", ".cscope.out",
+                              "-t", ".tags",
                               "-p"
-    output = shell_output("#{bin}/cqsearch -s ./codequery.db -t info_platform")
+    output = shell_output("#{bin}cqsearch -s .codequery.db -t info_platform")
     assert_match "info_platform", output
   end
 end

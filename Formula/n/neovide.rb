@@ -1,10 +1,10 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
-  homepage "https://github.com/neovide/neovide"
-  url "https://ghproxy.com/https://github.com/neovide/neovide/archive/refs/tags/0.11.2.tar.gz"
+  homepage "https:github.comneovideneovide"
+  url "https:github.comneovideneovidearchiverefstags0.11.2.tar.gz"
   sha256 "62e973a5407a6bfc731ce78e0495d2ed10930d33b22fe94cfe23acccbf789ae9"
   license "MIT"
-  head "https://github.com/neovide/neovide.git", branch: "main"
+  head "https:github.comneovideneovide.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -37,14 +37,14 @@ class Neovide < Formula
 
     return unless OS.mac?
 
-    # https://github.com/burtonageo/cargo-bundle/issues/118
+    # https:github.comburtonageocargo-bundleissues118
     with_env(TERM: "xterm") { system "cargo", "bundle", "--release" }
-    prefix.install "target/release/bundle/osx/Neovide.app"
-    bin.write_exec_script prefix/"Neovide.app/Contents/MacOS/neovide"
+    prefix.install "targetreleasebundleosxNeovide.app"
+    bin.write_exec_script prefix"Neovide.appContentsMacOSneovide"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/neovide --version")
+    assert_match version.to_s, shell_output("#{bin}neovide --version")
 
     test_server = "localhost:#{free_port}"
     nvim_cmd = ["nvim", "--headless", "--listen", test_server]
@@ -53,7 +53,7 @@ class Neovide < Formula
 
     sleep 10
 
-    neovide_cmd = [bin/"neovide", "--nofork", "--remote-tcp=#{test_server}"]
+    neovide_cmd = [bin"neovide", "--nofork", "--remote-tcp=#{test_server}"]
     ohai neovide_cmd.join(" ")
     neovide_pid = spawn(*neovide_cmd)
 

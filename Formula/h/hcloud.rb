@@ -1,7 +1,7 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
-  homepage "https://github.com/hetznercloud/cli"
-  url "https://ghproxy.com/https://github.com/hetznercloud/cli/archive/refs/tags/v1.41.0.tar.gz"
+  homepage "https:github.comhetznercloudcli"
+  url "https:github.comhetznercloudcliarchiverefstagsv1.41.0.tar.gz"
   sha256 "f2ee4b068f5f0c8f79d9e5647ff868237f919c0d2cf6f2a6e0f6fbeafa8f8032"
   license "MIT"
 
@@ -18,24 +18,24 @@ class Hcloud < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/hetznercloud/cli/internal/version.Version=v#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hcloud"
+    ldflags = "-s -w -X github.comhetznercloudcliinternalversion.Version=v#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdhcloud"
 
-    generate_completions_from_executable(bin/"hcloud", "completion")
+    generate_completions_from_executable(bin"hcloud", "completion")
   end
 
   test do
-    config_path = testpath/".config/hcloud/cli.toml"
+    config_path = testpath".confighcloudcli.toml"
     ENV["HCLOUD_CONFIG"] = config_path
-    assert_match "", shell_output("#{bin}/hcloud context active")
+    assert_match "", shell_output("#{bin}hcloud context active")
     config_path.write <<~EOS
       active_context = "test"
       [[contexts]]
       name = "test"
       token = "foobar"
     EOS
-    assert_match "test", shell_output("#{bin}/hcloud context list")
-    assert_match "test", shell_output("#{bin}/hcloud context active")
-    assert_match "hcloud v#{version}", shell_output("#{bin}/hcloud version")
+    assert_match "test", shell_output("#{bin}hcloud context list")
+    assert_match "test", shell_output("#{bin}hcloud context active")
+    assert_match "hcloud v#{version}", shell_output("#{bin}hcloud version")
   end
 end

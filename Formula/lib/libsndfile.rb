@@ -1,7 +1,7 @@
 class Libsndfile < Formula
   desc "C library for files containing sampled sound"
-  homepage "https://libsndfile.github.io/libsndfile/"
-  url "https://ghproxy.com/https://github.com/libsndfile/libsndfile/releases/download/1.2.2/libsndfile-1.2.2.tar.xz"
+  homepage "https:libsndfile.github.iolibsndfile"
+  url "https:github.comlibsndfilelibsndfilereleasesdownload1.2.2libsndfile-1.2.2.tar.xz"
   sha256 "3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e"
   license "LGPL-2.1-or-later"
 
@@ -46,7 +46,7 @@ class Libsndfile < Formula
   end
 
   test do
-    output = shell_output("#{bin}/sndfile-info #{test_fixtures("test.wav")}")
+    output = shell_output("#{bin}sndfile-info #{test_fixtures("test.wav")}")
     assert_match "Duration    : 00:00:00.064", output
   end
 end

@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class Appium < Formula
   desc "Automation for Apps"
-  homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-2.2.3.tgz"
+  homepage "https:appium.io"
+  url "https:registry.npmjs.orgappium-appium-2.2.3.tgz"
   sha256 "b2500aef1507b3b05dad2ed45cf890d3d56d6cd7a062a471787c1cc046d51f0c"
   license "Apache-2.0"
-  head "https://github.com/appium/appium.git", branch: "master"
+  head "https:github.comappiumappium.git", branch: "master"
 
   bottle do
     sha256                               arm64_sonoma:   "246b880e6136ade3c1162e9a316a234e1c9a9c83989100f4635ba1cb3ccecc09"
@@ -26,34 +26,34 @@ class Appium < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--chromedriver-skip-install"
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Delete obsolete module appium-ios-driver, which installs universal binaries
-    rm_rf libexec/"lib/node_modules/appium/node_modules/appium-ios-driver"
+    rm_rf libexec"libnode_modulesappiumnode_modulesappium-ios-driver"
 
     # Replace universal binaries with native slices
     deuniversalize_machos
   end
 
   service do
-    run opt_bin/"appium"
+    run opt_bin"appium"
     environment_variables PATH: std_service_path_env
     keep_alive true
-    error_log_path var/"log/appium-error.log"
-    log_path var/"log/appium.log"
+    error_log_path var"logappium-error.log"
+    log_path var"logappium.log"
     working_dir var
   end
 
   test do
-    output = shell_output("#{bin}/appium server --show-build-info")
+    output = shell_output("#{bin}appium server --show-build-info")
     assert_match version.to_s, JSON.parse(output)["version"]
 
-    output = shell_output("#{bin}/appium driver list 2>&1")
+    output = shell_output("#{bin}appium driver list 2>&1")
     assert_match "uiautomator2", output
 
-    output = shell_output("#{bin}/appium plugin list 2>&1")
+    output = shell_output("#{bin}appium plugin list 2>&1")
     assert_match "images", output
 
-    assert_match version.to_s, shell_output("#{bin}/appium --version")
+    assert_match version.to_s, shell_output("#{bin}appium --version")
   end
 end

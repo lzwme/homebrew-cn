@@ -1,10 +1,10 @@
 class Libtins < Formula
   desc "C++ network packet sniffing and crafting library"
-  homepage "https://libtins.github.io/"
-  url "https://ghproxy.com/https://github.com/mfontanini/libtins/archive/refs/tags/v4.5.tar.gz"
+  homepage "https:libtins.github.io"
+  url "https:github.commfontaninilibtinsarchiverefstagsv4.5.tar.gz"
   sha256 "6ff5fe1ada10daef8538743dccb9c9b3e19d05d028ffdc24838e62ff3fc55841"
   license "BSD-2-Clause"
-  head "https://github.com/mfontanini/libtins.git", branch: "master"
+  head "https:github.commfontaninilibtins.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "12126120e038b274429c55f65891dd2eef0bdcb96cf728de5f3fb80b863896f4"
@@ -34,8 +34,8 @@ class Libtins < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <tins/tins.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <tinstins.h>
       int main() {
         Tins::Sniffer sniffer("en0");
       }

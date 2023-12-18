@@ -2,12 +2,12 @@ cask "font-abhaya-libre" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/abhayalibre"
+      only_path: "oflabhayalibre"
   name "Abhaya Libre"
-  homepage "https://fonts.google.com/specimen/Abhaya+Libre"
+  homepage "https:fonts.google.comspecimenAbhaya+Libre"
 
   font "AbhayaLibre-Bold.ttf"
   font "AbhayaLibre-ExtraBold.ttf"

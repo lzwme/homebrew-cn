@@ -1,10 +1,10 @@
 class ArpScan < Formula
   desc "ARP scanning and fingerprinting tool"
-  homepage "https://github.com/royhills/arp-scan"
-  url "https://ghproxy.com/https://github.com/royhills/arp-scan/archive/refs/tags/1.10.0.tar.gz"
+  homepage "https:github.comroyhillsarp-scan"
+  url "https:github.comroyhillsarp-scanarchiverefstags1.10.0.tar.gz"
   sha256 "204b13487158b8e46bf6dd207757a52621148fdd1d2467ebd104de17493bab25"
   license "GPL-3.0"
-  head "https://github.com/royhills/arp-scan.git", branch: "master"
+  head "https:github.comroyhillsarp-scan.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "d98ac1c8bbec39883366864095c7468571c48b3a2f92a8a8326e992b143cc9d2"
@@ -24,12 +24,12 @@ class ArpScan < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/arp-scan", "-V"
+    system "#{bin}arp-scan", "-V"
   end
 end

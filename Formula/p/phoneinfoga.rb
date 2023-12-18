@@ -1,10 +1,10 @@
 class Phoneinfoga < Formula
   desc "Information gathering framework for phone numbers"
-  homepage "https://sundowndev.github.io/phoneinfoga/"
-  url "https://ghproxy.com/https://github.com/sundowndev/phoneinfoga/archive/refs/tags/v2.10.8.tar.gz"
+  homepage "https:sundowndev.github.iophoneinfoga"
+  url "https:github.comsundowndevphoneinfogaarchiverefstagsv2.10.8.tar.gz"
   sha256 "7aef72755c5bea9ba80b73dcacc7757d3933ffb135d7a3f8e8ee5786a764e852"
   license "GPL-3.0-only"
-  head "https://github.com/sundowndev/phoneinfoga.git", branch: "master"
+  head "https:github.comsundowndevphoneinfoga.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05eac35183d7ed9a5a4c3925f40ac4db5c555dd14bae91b8900c43149b0ac43b"
@@ -23,23 +23,23 @@ class Phoneinfoga < Formula
   depends_on "node"
 
   def install
-    cd "web/client" do
+    cd "webclient" do
       system "yarn", "install", "--immutable"
       system "yarn", "build"
     end
 
     ldflags = %W[
       -s -w
-      -X github.com/sundowndev/phoneinfoga/v2/build.Version=v#{version}
-      -X github.com/sundowndev/phoneinfoga/v2/build.Commit=brew
+      -X github.comsundowndevphoneinfogav2build.Version=v#{version}
+      -X github.comsundowndevphoneinfogav2build.Commit=brew
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    assert_match "PhoneInfoga v#{version}-brew", shell_output("#{bin}/phoneinfoga version")
-    system "#{bin}/phoneinfoga", "scanners"
-    assert_match "given phone number is not valid", shell_output("#{bin}/phoneinfoga scan -n foobar 2>&1", 1)
+    assert_match "PhoneInfoga v#{version}-brew", shell_output("#{bin}phoneinfoga version")
+    system "#{bin}phoneinfoga", "scanners"
+    assert_match "given phone number is not valid", shell_output("#{bin}phoneinfoga scan -n foobar 2>&1", 1)
   end
 end

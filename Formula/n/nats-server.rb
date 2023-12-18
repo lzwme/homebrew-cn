@@ -1,10 +1,10 @@
 class NatsServer < Formula
   desc "Lightweight cloud messaging system"
-  homepage "https://nats.io"
-  url "https://ghproxy.com/https://github.com/nats-io/nats-server/archive/refs/tags/v2.10.7.tar.gz"
+  homepage "https:nats.io"
+  url "https:github.comnats-ionats-serverarchiverefstagsv2.10.7.tar.gz"
   sha256 "493eb53a7c327af19b455a5a00d5593833d0a2bec12edc425ebc2c826aadcc3a"
   license "Apache-2.0"
-  head "https://github.com/nats-io/nats-server.git", branch: "main"
+  head "https:github.comnats-ionats-server.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1311ca0d6900b532ecbe68dd9639a5a2d555604e2e17a743979661b605b1b77b"
@@ -23,22 +23,22 @@ class NatsServer < Formula
   end
 
   service do
-    run opt_bin/"nats-server"
+    run opt_bin"nats-server"
   end
 
   test do
     port = free_port
     http_port = free_port
     fork do
-      exec bin/"nats-server",
+      exec bin"nats-server",
            "--port=#{port}",
            "--http_port=#{http_port}",
-           "--pid=#{testpath}/pid",
-           "--log=#{testpath}/log"
+           "--pid=#{testpath}pid",
+           "--log=#{testpath}log"
     end
     sleep 3
 
-    assert_match version.to_s, shell_output("curl localhost:#{http_port}/varz")
-    assert_predicate testpath/"log", :exist?
+    assert_match version.to_s, shell_output("curl localhost:#{http_port}varz")
+    assert_predicate testpath"log", :exist?
   end
 end

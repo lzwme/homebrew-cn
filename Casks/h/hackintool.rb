@@ -2,10 +2,10 @@ cask "hackintool" do
   version "4.0.3"
   sha256 "00af843d9a49e603fad1acba5ea1199927b254a487a9f3a5d04d8d6c3ad8083b"
 
-  url "https://ghproxy.com/https://github.com/headkaze/Hackintool/releases/download/#{version}/Hackintool.zip"
+  url "https:github.comheadkazeHackintoolreleasesdownload#{version}Hackintool.zip"
   name "Hackintool"
   desc "Hackintosh patching tool"
-  homepage "https://github.com/headkaze/Hackintool"
+  homepage "https:github.comheadkazeHackintool"
 
   auto_updates true
   depends_on macos: ">= :high_sierra"
@@ -13,9 +13,9 @@ cask "hackintool" do
   app "Hackintool.app"
 
   zap trash: [
-    "~/Library/Caches/com.apple.helpd/Generated/com.Headsoft.Hackintool.help*",
-    "~/Library/Caches/com.Headsoft.Hackintool",
-    "~/Library/Cookies/com.Headsoft.Hackintool.binarycookies",
-    "~/Library/Preferences/com.Headsoft.Hackintool.plist",
+    "~LibraryCachescom.apple.helpdGeneratedcom.Headsoft.Hackintool.help*",
+    "~LibraryCachescom.Headsoft.Hackintool",
+    "~LibraryCookiescom.Headsoft.Hackintool.binarycookies",
+    "~LibraryPreferencescom.Headsoft.Hackintool.plist",
   ]
 end

@@ -1,7 +1,7 @@
 class Lightgbm < Formula
   desc "Fast, distributed, high performance gradient boosting framework"
-  homepage "https://github.com/microsoft/LightGBM"
-  url "https://github.com/microsoft/LightGBM.git",
+  homepage "https:github.commicrosoftLightGBM"
+  url "https:github.commicrosoftLightGBM.git",
       tag:      "v4.1.0",
       revision: "501ce1cb63e39c67ceb93a063662f3d9867e044c"
   license "MIT"
@@ -32,9 +32,9 @@ class Lightgbm < Formula
   end
 
   test do
-    cp_r (pkgshare/"examples/regression"), testpath
+    cp_r (pkgshare"examplesregression"), testpath
     cd "regression" do
-      system "#{bin}/lightgbm", "config=train.conf"
+      system "#{bin}lightgbm", "config=train.conf"
     end
   end
 end

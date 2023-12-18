@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class AnsibleLanguageServer < Formula
   desc "Language Server for Ansible Files"
-  homepage "https://github.com/ansible/ansible-language-server"
-  url "https://registry.npmjs.org/@ansible/ansible-language-server/-/ansible-language-server-1.2.1.tgz"
+  homepage "https:github.comansibleansible-language-server"
+  url "https:registry.npmjs.org@ansibleansible-language-server-ansible-language-server-1.2.1.tgz"
   sha256 "1614a212952e778e97a8dc1a4a84a2bf195764931cdc8e022eea4895e4b677ec"
   license "MIT"
 
@@ -23,7 +23,7 @@ class AnsibleLanguageServer < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
@@ -41,10 +41,10 @@ class AnsibleLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/ansible-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}ansible-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

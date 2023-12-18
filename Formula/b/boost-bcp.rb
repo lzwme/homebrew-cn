@@ -1,10 +1,10 @@
 class BoostBcp < Formula
   desc "Utility for extracting subsets of the Boost library"
-  homepage "https://www.boost.org/doc/tools/bcp/"
-  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  homepage "https:www.boost.orgdoctoolsbcp"
+  url "https:github.comboostorgboostreleasesdownloadboost-1.83.0boost-1.83.0.tar.xz"
   sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
-  head "https://github.com/boostorg/boost.git", branch: "master"
+  head "https:github.comboostorgboost.git", branch: "master"
 
   livecheck do
     formula "boost"
@@ -26,13 +26,13 @@ class BoostBcp < Formula
   def install
     # remove internal reference to use brewed boost-build
     rm "boost-build.jam"
-    cd "tools/bcp" do
+    cd "toolsbcp" do
       system "b2"
-      prefix.install "../../dist/bin"
+      prefix.install "....distbin"
     end
   end
 
   test do
-    system bin/"bcp", "--boost=#{Formula["boost"].opt_include}", "--scan", "./"
+    system bin"bcp", "--boost=#{Formula["boost"].opt_include}", "--scan", "."
   end
 end

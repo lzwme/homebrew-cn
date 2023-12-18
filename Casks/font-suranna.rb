@@ -2,10 +2,10 @@ cask "font-suranna" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/suranna/Suranna-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsurannaSuranna-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Suranna"
-  homepage "https://fonts.google.com/specimen/Suranna"
+  homepage "https:fonts.google.comspecimenSuranna"
 
   font "Suranna-Regular.ttf"
 

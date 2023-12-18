@@ -2,10 +2,10 @@ cask "font-allerta-stencil" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/allertastencil/AllertaStencil-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflallertastencilAllertaStencil-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Allerta Stencil"
-  homepage "https://fonts.google.com/specimen/Allerta+Stencil"
+  homepage "https:fonts.google.comspecimenAllerta+Stencil"
 
   font "AllertaStencil-Regular.ttf"
 

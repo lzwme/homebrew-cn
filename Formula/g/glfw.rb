@@ -1,10 +1,10 @@
 class Glfw < Formula
   desc "Multi-platform library for OpenGL applications"
-  homepage "https://www.glfw.org/"
-  url "https://ghproxy.com/https://github.com/glfw/glfw/archive/refs/tags/3.3.9.tar.gz"
+  homepage "https:www.glfw.org"
+  url "https:github.comglfwglfwarchiverefstags3.3.9.tar.gz"
   sha256 "a7e7faef424fcb5f83d8faecf9d697a338da7f7a906fc1afbc0e1879ef31bd53"
   license "Zlib"
-  head "https://github.com/glfw/glfw.git", branch: "master"
+  head "https:github.comglfwglfw.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a57c82ca524c088bfe769b0c82a117723b808d0c6f12ed58142623c7d49c885b"
@@ -36,9 +36,9 @@ class Glfw < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #define GLFW_INCLUDE_GLU
-      #include <GLFW/glfw3.h>
+      #include <GLFWglfw3.h>
       #include <stdlib.h>
       int main()
       {
@@ -54,6 +54,6 @@ class Glfw < Formula
 
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "./test"
+    system ".test"
   end
 end

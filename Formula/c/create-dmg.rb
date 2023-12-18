@@ -1,7 +1,7 @@
 class CreateDmg < Formula
   desc "Shell script to build fancy DMGs"
-  homepage "https://github.com/create-dmg/create-dmg"
-  url "https://ghproxy.com/https://github.com/create-dmg/create-dmg/archive/refs/tags/v1.2.1.tar.gz"
+  homepage "https:github.comcreate-dmgcreate-dmg"
+  url "https:github.comcreate-dmgcreate-dmgarchiverefstagsv1.2.1.tar.gz"
   sha256 "434746a84ed7e4a04b1d1977503e2a23ff79dac480cb86b24aae7b112e3b7524"
   license "MIT"
 
@@ -16,10 +16,10 @@ class CreateDmg < Formula
   end
 
   test do
-    File.write(testpath/"Brew-Eula.txt", "Eula")
-    (testpath/"Test-Source").mkpath
-    (testpath/"Test-Source/Brew.app").mkpath
-    system "#{bin}/create-dmg", "--sandbox-safe", "--eula",
-           testpath/"Brew-Eula.txt", testpath/"Brew-Test.dmg", testpath/"Test-Source"
+    File.write(testpath"Brew-Eula.txt", "Eula")
+    (testpath"Test-Source").mkpath
+    (testpath"Test-SourceBrew.app").mkpath
+    system "#{bin}create-dmg", "--sandbox-safe", "--eula",
+           testpath"Brew-Eula.txt", testpath"Brew-Test.dmg", testpath"Test-Source"
   end
 end

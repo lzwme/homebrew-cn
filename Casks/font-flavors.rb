@@ -2,10 +2,10 @@ cask "font-flavors" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/flavors/Flavors-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflflavorsFlavors-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Flavors"
-  homepage "https://fonts.google.com/specimen/Flavors"
+  homepage "https:fonts.google.comspecimenFlavors"
 
   font "Flavors-Regular.ttf"
 

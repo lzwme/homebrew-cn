@@ -1,7 +1,7 @@
 class TraefikAT1 < Formula
   desc "Modern reverse proxy (v1.7)"
-  homepage "https://traefik.io/"
-  url "https://ghproxy.com/https://github.com/traefik/traefik/archive/refs/tags/v1.7.34.tar.gz"
+  homepage "https:traefik.io"
+  url "https:github.comtraefiktraefikarchiverefstagsv1.7.34.tar.gz"
   sha256 "0f068c2720dadd66ce303863a80d2386a4d13b5475d4219ba3e65b8445c653f2"
   license "MIT"
 
@@ -17,7 +17,7 @@ class TraefikAT1 < Formula
 
   keg_only :versioned_formula
 
-  # support ended 2021-12-31: https://doc.traefik.io/traefik/deprecation/releases/
+  # support ended 2021-12-31: https:doc.traefik.iotraefikdeprecationreleases
   disable! date: "2022-12-31", because: :unsupported
 
   depends_on "go" => :build
@@ -32,22 +32,22 @@ class TraefikAT1 < Formula
       system "yarn", "run", "build"
     end
     system "go", "generate"
-    system "go", "build", *std_go_args(output: bin/"traefik", ldflags: "-s -w"), "./cmd/traefik"
+    system "go", "build", *std_go_args(output: bin"traefik", ldflags: "-s -w"), ".cmdtraefik"
   end
 
   service do
-    run [opt_bin/"traefik", "--configfile=#{etc/"traefik/traefik.toml"}"]
+    run [opt_bin"traefik", "--configfile=#{etc"traefiktraefik.toml"}"]
     keep_alive false
     working_dir var
-    log_path var/"log/traefik.log"
-    error_log_path var/"log/traefik.log"
+    log_path var"logtraefik.log"
+    error_log_path var"logtraefik.log"
   end
 
   test do
     web_port = free_port
     http_port = free_port
 
-    (testpath/"traefik.toml").write <<~EOS
+    (testpath"traefik.toml").write <<~EOS
       [web]
         address = ":#{web_port}"
       [entryPoints.http]
@@ -56,13 +56,13 @@ class TraefikAT1 < Formula
 
     begin
       pid = fork do
-        exec bin/"traefik", "--configfile=#{testpath}/traefik.toml"
+        exec bin"traefik", "--configfile=#{testpath}traefik.toml"
       end
       sleep 5
-      cmd = "curl -sIm3 -XGET http://127.0.0.1:#{http_port}/"
+      cmd = "curl -sIm3 -XGET http:127.0.0.1:#{http_port}"
       assert_match "404 Not Found", shell_output(cmd)
       sleep 1
-      cmd = "curl -sIm3 -XGET http://localhost:#{web_port}/dashboard/"
+      cmd = "curl -sIm3 -XGET http:localhost:#{web_port}dashboard"
       assert_match "200 OK", shell_output(cmd)
     ensure
       Process.kill(9, pid)

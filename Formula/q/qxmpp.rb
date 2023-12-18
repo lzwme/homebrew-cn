@@ -1,7 +1,7 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
-  homepage "https://github.com/qxmpp-project/qxmpp/"
-  url "https://ghproxy.com/https://github.com/qxmpp-project/qxmpp/archive/refs/tags/v1.5.5.tar.gz"
+  homepage "https:github.comqxmpp-projectqxmpp"
+  url "https:github.comqxmpp-projectqxmpparchiverefstagsv1.5.5.tar.gz"
   sha256 "b25fba89432c4fd72489d1844f683bfbf4e5aa4cfcfda7a982d6019f8e4529f8"
   license "LGPL-2.1-or-later"
 
@@ -31,7 +31,7 @@ class Qxmpp < Formula
 
   test do
     ENV.delete "CPATH"
-    (testpath/"test.pro").write <<~EOS
+    (testpath"test.pro").write <<~EOS
       TEMPLATE     = app
       CONFIG      += console
       CONFIG      -= app_bundle
@@ -44,17 +44,17 @@ class Qxmpp < Formula
       QMAKE_RPATHDIR += #{lib}
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
-      #include <QXmppQt6/QXmppClient.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <QXmppQt6QXmppClient.h>
       int main() {
         QXmppClient client;
         return 0;
       }
     EOS
 
-    system "#{Formula["qt"].bin}/qmake", "test.pro"
+    system "#{Formula["qt"].bin}qmake", "test.pro"
     system "make"
-    assert_predicate testpath/"test", :exist?, "test output file does not exist!"
-    system "./test"
+    assert_predicate testpath"test", :exist?, "test output file does not exist!"
+    system ".test"
   end
 end

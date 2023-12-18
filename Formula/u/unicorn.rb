@@ -1,14 +1,14 @@
 class Unicorn < Formula
   desc "Lightweight multi-architecture CPU emulation framework"
-  homepage "https://www.unicorn-engine.org/"
-  url "https://ghproxy.com/https://github.com/unicorn-engine/unicorn/archive/refs/tags/2.0.1.post1.tar.gz"
+  homepage "https:www.unicorn-engine.org"
+  url "https:github.comunicorn-engineunicornarchiverefstags2.0.1.post1.tar.gz"
   version "2.0.1.post1"
   sha256 "6b276c857c69ee5ec3e292c3401c8c972bae292e0e4cb306bb9e5466c0f14737"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later", # glib, qemu
   ]
-  head "https://github.com/unicorn-engine/unicorn.git", branch: "master"
+  head "https:github.comunicorn-engineunicorn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "19357aa9fc753df6791bf5a1764dbb2fdfeed8cdcc3a6b5c8174a052558cd8e2"
@@ -32,16 +32,16 @@ class Unicorn < Formula
   end
 
   test do
-    (testpath/"test1.c").write <<~EOS
-      /* Adapted from https://www.unicorn-engine.org/docs/tutorial.html
+    (testpath"test1.c").write <<~EOS
+      * Adapted from https:www.unicorn-engine.orgdocstutorial.html
        * shamelessly and without permission. This almost certainly needs
        * replacement, but for now it should be an OK placeholder
        * assertion that the libraries are intact and available.
-       */
+       *
 
       #include <stdio.h>
 
-      #include <unicorn/unicorn.h>
+      #include <unicornunicorn.h>
 
       #define X86_CODE32 "\x41\x4a"
       #define ADDRESS 0x1000000
@@ -75,8 +75,8 @@ class Unicorn < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-o", testpath/"test1", testpath/"test1.c",
+    system ENV.cc, "-o", testpath"test1", testpath"test1.c",
                    "-pthread", "-lpthread", "-lm", "-L#{lib}", "-lunicorn"
-    system testpath/"test1"
+    system testpath"test1"
   end
 end

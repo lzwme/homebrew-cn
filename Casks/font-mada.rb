@@ -2,10 +2,10 @@ cask "font-mada" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mada/Mada%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmadaMada%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Mada"
-  homepage "https://fonts.google.com/specimen/Mada"
+  homepage "https:fonts.google.comspecimenMada"
 
   font "Mada[wght].ttf"
 

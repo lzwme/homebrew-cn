@@ -1,9 +1,9 @@
 class Condure < Formula
   include Language::Python::Virtualenv
 
-  desc "HTTP/WebSocket connection manager"
-  homepage "https://github.com/fanout/condure"
-  url "https://ghproxy.com/https://github.com/fanout/condure/archive/refs/tags/1.10.0.tar.gz"
+  desc "HTTPWebSocket connection manager"
+  homepage "https:github.comfanoutcondure"
+  url "https:github.comfanoutcondurearchiverefstags1.10.0.tar.gz"
   sha256 "abe4d83ae2494a8eabd036f6f455fb4d8ebc71b29d8d50a0b35a7a59f8e0ea60"
   license "Apache-2.0"
 
@@ -28,12 +28,12 @@ class Condure < Formula
   depends_on "zeromq"
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/64/9c/2b2614b0b86ff703b3a33ea5e044923bd7d100adc8c829d579a9b71ea9e7/pyzmq-25.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages649c2b2614b0b86ff703b3a33ea5e044923bd7d100adc8c829d579a9b71ea9e7pyzmq-25.1.0.tar.gz"
     sha256 "80c41023465d36280e801564a69cbfce8ae85ff79b080e1913f6e90481fb8957"
   end
 
   resource "tnetstring3" do
-    url "https://files.pythonhosted.org/packages/d9/fd/737a371f539842f6fcece47bb6b941700c9f924e8543cd35c4f3a2e7cc6c/tnetstring3-0.3.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesd9fd737a371f539842f6fcece47bb6b941700c9f924e8543cd35c4f3a2e7cc6ctnetstring3-0.3.1.tar.gz"
     sha256 "5acab57cce3693d119265a8ac019a9bcdc52a9cacb3ba37b5b3a1746a1c14d56"
   end
 
@@ -42,12 +42,12 @@ class Condure < Formula
   end
 
   test do
-    ipcfile = testpath/"client"
-    runfile = testpath/"test.py"
+    ipcfile = testpath"client"
+    runfile = testpath"test.py"
 
     python3 = "python3.12"
-    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/Language::Python.site_packages(python3)
-    venv = virtualenv_create(testpath/"vendor", python3)
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexecLanguage::Python.site_packages(python3)
+    venv = virtualenv_create(testpath"vendor", python3)
     venv.pip_install(resource("pyzmq"), build_isolation: false)
     venv.pip_install(resource("tnetstring3"), build_isolation: false)
 
@@ -59,7 +59,7 @@ class Condure < Formula
       def server_worker(c):
         ctx = zmq.Context()
         sock = ctx.socket(zmq.REP)
-        sock.connect('ipc://#{ipcfile}')
+        sock.connect('ipc:#{ipcfile}')
         c.acquire()
         c.notify()
         c.release()
@@ -70,7 +70,7 @@ class Condure < Formula
           resp[b'id'] = req[b'id']
           resp[b'code'] = 200
           resp[b'reason'] = b'OK'
-          resp[b'headers'] = [[b'Content-Type', b'text/plain']]
+          resp[b'headers'] = [[b'Content-Type', b'textplain']]
           resp[b'body'] = b'test response\\n'
           sock.send(b'T' + tnetstring.dumps(resp))
       c = threading.Condition()
@@ -80,18 +80,18 @@ class Condure < Formula
       server_thread.start()
       c.wait()
       c.release()
-      with urlopen('http://localhost:10000/test') as f:
+      with urlopen('http:localhost:10000test') as f:
         body = f.read()
         assert(body == b'test response\\n')
     EOS
                  )
 
     pid = fork do
-      exec "#{bin}/condure", "--listen", "10000,req", "--zclient-req", "ipc://#{ipcfile}"
+      exec "#{bin}condure", "--listen", "10000,req", "--zclient-req", "ipc:#{ipcfile}"
     end
 
     begin
-      system testpath/"vendor/bin/python3", runfile
+      system testpath"vendorbinpython3", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

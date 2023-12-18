@@ -1,10 +1,10 @@
 class Tldr < Formula
   desc "Simplified and community-driven man pages"
-  homepage "https://tldr.sh/"
-  url "https://ghproxy.com/https://github.com/tldr-pages/tldr-c-client/archive/refs/tags/v1.6.1.tar.gz"
+  homepage "https:tldr.sh"
+  url "https:github.comtldr-pagestldr-c-clientarchiverefstagsv1.6.1.tar.gz"
   sha256 "1a2aa8e764846fad1f41a0304e28416f5c38b6d3a3131ad1e85116749aec34ba"
   license "MIT"
-  head "https://github.com/tldr-pages/tldr-c-client.git", branch: "main"
+  head "https:github.comtldr-pagestldr-c-client.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "00d61b3c3ffb5df313b167d915d0f10896f2bfb5b4336f51332f0d7e84e2f6b2"
@@ -27,12 +27,12 @@ class Tldr < Formula
   def install
     system "make", "PREFIX=#{prefix}", "install"
 
-    bash_completion.install "autocomplete/complete.bash" => "tldr"
-    zsh_completion.install "autocomplete/complete.zsh" => "_tldr"
-    fish_completion.install "autocomplete/complete.fish" => "tldr.fish"
+    bash_completion.install "autocompletecomplete.bash" => "tldr"
+    zsh_completion.install "autocompletecomplete.zsh" => "_tldr"
+    fish_completion.install "autocompletecomplete.fish" => "tldr.fish"
   end
 
   test do
-    assert_match "brew", shell_output("#{bin}/tldr brew")
+    assert_match "brew", shell_output("#{bin}tldr brew")
   end
 end

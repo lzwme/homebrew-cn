@@ -1,13 +1,13 @@
 class Libotr < Formula
   desc "Off-The-Record (OTR) messaging library"
-  homepage "https://otr.cypherpunks.ca/"
-  url "https://otr.cypherpunks.ca/libotr-4.1.1.tar.gz"
+  homepage "https:otr.cypherpunks.ca"
+  url "https:otr.cypherpunks.calibotr-4.1.1.tar.gz"
   sha256 "8b3b182424251067a952fb4e6c7b95a21e644fbb27fbd5f8af2b2ed87ca419f5"
   license "GPL-2.0"
 
   livecheck do
     url :homepage
-    regex(/href=.*?libotr[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?libotr[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -28,18 +28,18 @@ class Libotr < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   # Fix client.c:624:30: error: 'PF_UNIX' undeclared (first use in this function)
   patch do
-    url "https://sources.debian.org/data/main/libo/libotr/4.1.1-5/debian/patches/0006-include-socket.h.patch"
+    url "https:sources.debian.orgdatamainlibolibotr4.1.1-5debianpatches0006-include-socket.h.patch"
     sha256 "cfda75f8c5bba2e735d2b4f1bb90f60b45fa1d554a97fff75cac467f7873ebde"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make", "install"

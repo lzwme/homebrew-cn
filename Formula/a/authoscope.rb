@@ -1,7 +1,7 @@
 class Authoscope < Formula
   desc "Scriptable network authentication cracker"
-  homepage "https://github.com/kpcyrd/authoscope"
-  url "https://ghproxy.com/https://github.com/kpcyrd/authoscope/archive/refs/tags/v0.8.1.tar.gz"
+  homepage "https:github.comkpcyrdauthoscope"
+  url "https:github.comkpcyrdauthoscopearchiverefstagsv0.8.1.tar.gz"
   sha256 "fd70d3d86421ac791362bf8d1063a1d5cd4f5410b0b8f5871c42cb48c8cc411a"
   license "GPL-3.0-or-later"
 
@@ -29,23 +29,23 @@ class Authoscope < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https://crates.io/crates/openssl#manual-configuration
+    # https:crates.iocratesopenssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix if OS.linux?
 
     system "cargo", "install", *std_cargo_args
-    man1.install "docs/authoscope.1"
+    man1.install "docsauthoscope.1"
 
-    generate_completions_from_executable(bin/"authoscope", "completions")
+    generate_completions_from_executable(bin"authoscope", "completions")
   end
 
   test do
-    (testpath/"true.lua").write <<~EOS
+    (testpath"true.lua").write <<~EOS
       descr = "always true"
 
       function verify(user, password)
           return true
       end
     EOS
-    system bin/"authoscope", "run", "-vvx", testpath/"true.lua", "foo"
+    system bin"authoscope", "run", "-vvx", testpath"true.lua", "foo"
   end
 end

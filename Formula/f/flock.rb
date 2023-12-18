@@ -1,7 +1,7 @@
 class Flock < Formula
   desc "Lock file during command"
-  homepage "https://github.com/discoteq/flock"
-  url "https://ghproxy.com/https://github.com/discoteq/flock/releases/download/v0.4.0/flock-0.4.0.tar.xz"
+  homepage "https:github.comdiscoteqflock"
+  url "https:github.comdiscoteqflockreleasesdownloadv0.4.0flock-0.4.0.tar.xz"
   sha256 "01bbd497d168e9b7306f06794c57602da0f61ebd463a3210d63c1d8a0513c5cc"
   license "ISC"
 
@@ -23,7 +23,7 @@ class Flock < Formula
   end
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules"
@@ -32,10 +32,10 @@ class Flock < Formula
 
   test do
     pid = fork do
-      exec bin/"flock", "tmpfile", "sleep", "5"
+      exec bin"flock", "tmpfile", "sleep", "5"
     end
     sleep 1
-    assert shell_output("#{bin}/flock --nonblock tmpfile true", 1).empty?
+    assert shell_output("#{bin}flock --nonblock tmpfile true", 1).empty?
   ensure
     Process.wait pid
   end

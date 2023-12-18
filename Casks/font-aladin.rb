@@ -2,10 +2,10 @@ cask "font-aladin" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/aladin/Aladin-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflaladinAladin-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Aladin"
-  homepage "https://fonts.google.com/specimen/Aladin"
+  homepage "https:fonts.google.comspecimenAladin"
 
   font "Aladin-Regular.ttf"
 

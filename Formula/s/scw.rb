@@ -1,7 +1,7 @@
 class Scw < Formula
   desc "Command-line Interface for Scaleway"
-  homepage "https://github.com/scaleway/scaleway-cli"
-  url "https://ghproxy.com/https://github.com/scaleway/scaleway-cli/archive/refs/tags/v2.26.0.tar.gz"
+  homepage "https:github.comscalewayscaleway-cli"
+  url "https:github.comscalewayscaleway-cliarchiverefstagsv2.26.0.tar.gz"
   sha256 "2fb389135d359afda4798b05ab2babba67c56cbbfe74b7ce2756c647f847c7d8"
   license "Apache-2.0"
 
@@ -18,15 +18,15 @@ class Scw < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd/scw"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), ".cmdscw"
 
-    generate_completions_from_executable(bin/"scw", "autocomplete", "script", shell_parameter_format: :none)
+    generate_completions_from_executable(bin"scw", "autocomplete", "script", shell_parameter_format: :none)
   end
 
   test do
-    (testpath/"config.yaml").write ""
-    output = shell_output(bin/"scw -c config.yaml config set access-key=SCWXXXXXXXXXXXXXXXXX")
+    (testpath"config.yaml").write ""
+    output = shell_output(bin"scw -c config.yaml config set access-key=SCWXXXXXXXXXXXXXXXXX")
     assert_match "✅ Successfully update config.", output
-    assert_match "access_key: SCWXXXXXXXXXXXXXXXXX", File.read(testpath/"config.yaml")
+    assert_match "access_key: SCWXXXXXXXXXXXXXXXXX", File.read(testpath"config.yaml")
   end
 end

@@ -1,10 +1,10 @@
 class Tlrc < Formula
   desc "Official tldr client written in Rust"
-  homepage "https://github.com/tldr-pages/tlrc"
-  url "https://ghproxy.com/https://github.com/tldr-pages/tlrc/archive/refs/tags/v1.8.0.tar.gz"
+  homepage "https:github.comtldr-pagestlrc"
+  url "https:github.comtldr-pagestlrcarchiverefstagsv1.8.0.tar.gz"
   sha256 "900845c56bd87af990f6328b4762762bc7392cb93571080ee52df2c6d0fb9456"
   license "MIT"
-  head "https://github.com/tldr-pages/tlrc.git", branch: "main"
+  head "https:github.comtldr-pagestlrc.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1be36419de69b877b8099e446872f6e713fa1ed1486270d8adfbb153fa9991b6"
@@ -33,6 +33,6 @@ class Tlrc < Formula
   end
 
   test do
-    assert_match "brew", shell_output("#{bin}/tldr brew")
+    assert_match "brew", shell_output("#{bin}tldr brew")
   end
 end

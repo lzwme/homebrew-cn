@@ -1,13 +1,13 @@
 class EasyrpgPlayer < Formula
-  desc "RPG Maker 2000/2003 games interpreter"
-  homepage "https://easyrpg.org/"
-  url "https://easyrpg.org/downloads/player/0.8/easyrpg-player-0.8.tar.xz"
+  desc "RPG Maker 20002003 games interpreter"
+  homepage "https:easyrpg.org"
+  url "https:easyrpg.orgdownloadsplayer0.8easyrpg-player-0.8.tar.xz"
   sha256 "06e6d034348d1c52993d0be6b88fc3502a6c7718e366f691401539d5a2195c79"
   license "GPL-3.0-or-later"
   revision 2
 
   livecheck do
-    url "https://github.com/EasyRPG/Player.git"
+    url "https:github.comEasyRPGPlayer.git"
   end
 
   bottle do
@@ -46,7 +46,7 @@ class EasyrpgPlayer < Formula
 
   # Add support for fmt 10
   patch do
-    url "https://github.com/EasyRPG/Player/commit/a4672d2e30db4e4918c8f3580236faed3c9d04c1.patch?full_index=1"
+    url "https:github.comEasyRPGPlayercommita4672d2e30db4e4918c8f3580236faed3c9d04c1.patch?full_index=1"
     sha256 "026df27331e441116d2b678992d729f9aec3c30b52ffde98089527a5a25c79eb"
   end
 
@@ -56,13 +56,13 @@ class EasyrpgPlayer < Formula
     system "cmake", "--install", "build"
 
     if OS.mac?
-      prefix.install "build/EasyRPG Player.app"
-      bin.write_exec_script "#{prefix}/EasyRPG Player.app/Contents/MacOS/EasyRPG Player"
-      mv "#{bin}/EasyRPG Player", "#{bin}/easyrpg-player"
+      prefix.install "buildEasyRPG Player.app"
+      bin.write_exec_script "#{prefix}EasyRPG Player.appContentsMacOSEasyRPG Player"
+      mv "#{bin}EasyRPG Player", "#{bin}easyrpg-player"
     end
   end
 
   test do
-    assert_match(/EasyRPG Player #{version}/, shell_output("#{bin}/easyrpg-player -v"))
+    assert_match(EasyRPG Player #{version}, shell_output("#{bin}easyrpg-player -v"))
   end
 end

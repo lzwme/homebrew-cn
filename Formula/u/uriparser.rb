@@ -1,10 +1,10 @@
 class Uriparser < Formula
   desc "URI parsing library (strictly RFC 3986 compliant)"
-  homepage "https://uriparser.github.io/"
-  url "https://ghproxy.com/https://github.com/uriparser/uriparser/releases/download/uriparser-0.9.7/uriparser-0.9.7.tar.bz2"
+  homepage "https:uriparser.github.io"
+  url "https:github.comuriparseruriparserreleasesdownloaduriparser-0.9.7uriparser-0.9.7.tar.bz2"
   sha256 "d27dea0c8b6f6fb9798f07caedef1cd96a6e3fc5c6189596774e19afa7ddded7"
   license "BSD-3-Clause"
-  head "https://github.com/uriparser/uriparser.git", branch: "master"
+  head "https:github.comuriparseruriparser.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "32aca3ae359341a66b7dbc351d3e0b4a2b93cb57cc4d2173cd848b8346ebc746"
@@ -35,12 +35,12 @@ class Uriparser < Formula
 
   test do
     expected = <<~EOS
-      uri:          https://brew.sh
+      uri:          https:brew.sh
       scheme:       https
       hostText:     brew.sh
       absolutePath: false
                     (always false for URIs with host)
     EOS
-    assert_equal expected, shell_output("#{bin}/uriparse https://brew.sh").chomp
+    assert_equal expected, shell_output("#{bin}uriparse https:brew.sh").chomp
   end
 end

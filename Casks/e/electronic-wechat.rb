@@ -2,19 +2,19 @@ cask "electronic-wechat" do
   version "2.0"
   sha256 "eba20a9164e917f1a9962fc3202d2c1255a3d26802ae2fd1fe229feaba5b6242"
 
-  url "https://ghproxy.com/https://github.com/geeeeeeeeek/electronic-wechat/releases/download/V#{version}/mac-osx.tar.gz"
+  url "https:github.comgeeeeeeeeekelectronic-wechatreleasesdownloadV#{version}mac-osx.tar.gz"
   name "Electronic WeChat"
-  homepage "https://github.com/geeeeeeeeek/electronic-wechat"
+  homepage "https:github.comgeeeeeeeeekelectronic-wechat"
 
-  app "Electronic WeChat-darwin-x64/Electronic WeChat.app"
+  app "Electronic WeChat-darwin-x64Electronic WeChat.app"
 
   zap trash: [
-    "~/Library/Application Support/electronic-wechat",
-    "~/Library/Application Support/electronic-wechat/Local Storage/https_web.wechat.com_0.localstorage",
-    "~/Library/Application Support/electronic-wechat/Local Storage/https_web.wechat.com_0.localstorage-journal",
-    "~/Library/Saved Application State/com.electron.electronic-wechat.savedState",
-    "~/Library/Preferences/com.electron.electronic-wechat.plist",
-    "~/Library/Preferences/com.electron.electronic-wechat.helper.plist",
+    "~LibraryApplication Supportelectronic-wechat",
+    "~LibraryApplication Supportelectronic-wechatLocal Storagehttps_web.wechat.com_0.localstorage",
+    "~LibraryApplication Supportelectronic-wechatLocal Storagehttps_web.wechat.com_0.localstorage-journal",
+    "~LibrarySaved Application Statecom.electron.electronic-wechat.savedState",
+    "~LibraryPreferencescom.electron.electronic-wechat.plist",
+    "~LibraryPreferencescom.electron.electronic-wechat.helper.plist",
   ]
 
   caveats do

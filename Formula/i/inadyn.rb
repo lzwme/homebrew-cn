@@ -1,7 +1,7 @@
 class Inadyn < Formula
-  desc "Dynamic DNS client with IPv4, IPv6, and SSL/TLS support"
-  homepage "https://troglobit.com/projects/inadyn/"
-  url "https://ghproxy.com/https://github.com/troglobit/inadyn/releases/download/v2.12.0/inadyn-2.12.0.tar.xz"
+  desc "Dynamic DNS client with IPv4, IPv6, and SSLTLS support"
+  homepage "https:troglobit.comprojectsinadyn"
+  url "https:github.comtroglobitinadynreleasesdownloadv2.12.0inadyn-2.12.0.tar.xz"
   sha256 "e64c4386b6f42bbace589b847f22823a755b59f14a277a5f556fef0d99069245"
   license all_of: ["GPL-2.0-or-later", "ISC", "MIT"]
 
@@ -18,7 +18,7 @@ class Inadyn < Formula
   end
 
   head do
-    url "https://github.com/troglobit/inadyn.git", branch: "master"
+    url "https:github.comtroglobitinadyn.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool"  => :build
@@ -29,9 +29,9 @@ class Inadyn < Formula
   depends_on "gnutls"
 
   def install
-    mkdir_p buildpath/"inadyn/m4"
+    mkdir_p buildpath"inadynm4"
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
@@ -39,6 +39,6 @@ class Inadyn < Formula
   end
 
   test do
-    system sbin/"inadyn", "--check-config", "--config=#{doc}/examples/inadyn.conf"
+    system sbin"inadyn", "--check-config", "--config=#{doc}examplesinadyn.conf"
   end
 end

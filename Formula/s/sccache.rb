@@ -1,14 +1,14 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
-  homepage "https://github.com/mozilla/sccache"
-  url "https://ghproxy.com/https://github.com/mozilla/sccache/archive/refs/tags/v0.7.4.tar.gz"
+  homepage "https:github.commozillasccache"
+  url "https:github.commozillasccachearchiverefstagsv0.7.4.tar.gz"
   sha256 "32301f125d5b1d73830b163fd15fe9b5c22cf4a4a6b835d893dec563aba5b4fc"
   license "Apache-2.0"
-  head "https://github.com/mozilla/sccache.git", branch: "main"
+  head "https:github.commozillasccache.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,21 +29,21 @@ class Sccache < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https://crates.io/crates/openssl#manual-configuration
+    # https:crates.iocratesopenssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix if OS.linux?
 
     system "cargo", "install", "--features", "all", *std_cargo_args
   end
 
   test do
-    (testpath/"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~EOS
       #include <stdio.h>
       int main() {
         puts("Hello, world!");
         return 0;
       }
     EOS
-    system "#{bin}/sccache", "cc", "hello.c", "-o", "hello-c"
-    assert_equal "Hello, world!", shell_output("./hello-c").chomp
+    system "#{bin}sccache", "cc", "hello.c", "-o", "hello-c"
+    assert_equal "Hello, world!", shell_output(".hello-c").chomp
   end
 end

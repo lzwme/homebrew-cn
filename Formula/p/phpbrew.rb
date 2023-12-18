@@ -1,7 +1,7 @@
 class Phpbrew < Formula
   desc "Brew & manage PHP versions in pure PHP at HOME"
-  homepage "https://phpbrew.github.io/phpbrew"
-  url "https://ghproxy.com/https://github.com/phpbrew/phpbrew/releases/download/2.2.0/phpbrew.phar"
+  homepage "https:phpbrew.github.iophpbrew"
+  url "https:github.comphpbrewphpbrewreleasesdownload2.2.0phpbrew.phar"
   sha256 "d1f248d486d6d2368d67cf0bb79371ee0abfc7e566bfc279e750372d1b0f96bd"
   license "MIT"
 
@@ -16,10 +16,10 @@ class Phpbrew < Formula
   end
 
   # TODO: When `php` 8.2+ support is landed, switch back to `php`.
-  # https://github.com/phpbrew/phpbrew/blob/#{version}/composer.json#L27
+  # https:github.comphpbrewphpbrewblob#{version}composer.json#L27
   depends_on "php@8.1"
 
-  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -31,14 +31,14 @@ class Phpbrew < Formula
     # bin.install "phpbrew.phar" => "phpbrew"
 
     libexec.install "phpbrew.phar"
-    (bin/"phpbrew").write <<~EOS
-      #!#{Formula["php@8.1"].opt_bin}/php
-      <?php require '#{libexec}/phpbrew.phar';
+    (bin"phpbrew").write <<~EOS
+      #!#{Formula["php@8.1"].opt_bin}php
+      <?php require '#{libexec}phpbrew.phar';
     EOS
   end
 
   test do
-    system bin/"phpbrew", "init"
-    assert_match "8.0", shell_output("#{bin}/phpbrew known")
+    system bin"phpbrew", "init"
+    assert_match "8.0", shell_output("#{bin}phpbrew known")
   end
 end

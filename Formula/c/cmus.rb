@@ -1,11 +1,11 @@
 class Cmus < Formula
   desc "Music player with an ncurses based interface"
-  homepage "https://cmus.github.io/"
-  url "https://ghproxy.com/https://github.com/cmus/cmus/archive/refs/tags/v2.10.0.tar.gz"
+  homepage "https:cmus.github.io"
+  url "https:github.comcmuscmusarchiverefstagsv2.10.0.tar.gz"
   sha256 "ff40068574810a7de3990f4f69c9c47ef49e37bd31d298d372e8bcdafb973fff"
   license "GPL-2.0-or-later"
   revision 3
-  head "https://github.com/cmus/cmus.git", branch: "master"
+  head "https:github.comcmuscmus.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "ac3667bf52b88fe2cf1a91aee7444333eecbd1ee62ff2a1d35a696d286f7b555"
@@ -21,7 +21,7 @@ class Cmus < Formula
   depends_on "faad2"
   depends_on "ffmpeg"
   depends_on "flac"
-  depends_on "libao" # See https://github.com/cmus/cmus/issues/1130
+  depends_on "libao" # See https:github.comcmuscmusissues1130
   depends_on "libcue"
   depends_on "libogg"
   depends_on "libvorbis"
@@ -42,12 +42,12 @@ class Cmus < Formula
       "CONFIG_MPC=n",
       "CONFIG_AO=y",
     ]
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    plugins = shell_output("#{bin}/cmus --plugins")
+    plugins = shell_output("#{bin}cmus --plugins")
     assert_match "ao", plugins
   end
 end

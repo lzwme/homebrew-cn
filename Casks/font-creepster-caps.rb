@@ -2,10 +2,10 @@ cask "font-creepster-caps" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/creepstercaps/CreepsterCaps-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapachecreepstercapsCreepsterCaps-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Creepster Caps"
-  homepage "https://fonts.google.com/specimen/Creepster+Caps"
+  homepage "https:fonts.google.comspecimenCreepster+Caps"
 
   font "CreepsterCaps-Regular.ttf"
 

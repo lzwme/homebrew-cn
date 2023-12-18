@@ -5,11 +5,11 @@ cask "kopiaui" do
   sha256 arm:   "0d63198e1632d54d9eda0dee8d805707491f77856d802bb434be4da156027d7e",
          intel: "58e4dbac8a4f1ee57067877a137d0da234baab783daf10d68397dd63fca92bce"
 
-  url "https://ghproxy.com/https://github.com/kopia/kopia/releases/download/v#{version}/KopiaUI-#{version}#{arch}.dmg",
-      verified: "github.com/kopia/kopia/"
+  url "https:github.comkopiakopiareleasesdownloadv#{version}KopiaUI-#{version}#{arch}.dmg",
+      verified: "github.comkopiakopia"
   name "KopiaUI"
-  desc "Backup/restore tool"
-  homepage "https://kopia.io/"
+  desc "Backuprestore tool"
+  homepage "https:kopia.io"
 
   livecheck do
     url :url
@@ -21,11 +21,11 @@ cask "kopiaui" do
   app "KopiaUI.app"
 
   zap trash: [
-    "~/Library/Application Support/kopia",
-    "~/Library/Caches/kopia",
-    "~/Library/Logs/kopia",
-    "~/Library/Logs/kopia-ui",
-    "~/Library/Preferences/io.kopia.ui.plist",
-    "~/Library/Saved Application State/io.kopia.ui.savedState",
+    "~LibraryApplication Supportkopia",
+    "~LibraryCacheskopia",
+    "~LibraryLogskopia",
+    "~LibraryLogskopia-ui",
+    "~LibraryPreferencesio.kopia.ui.plist",
+    "~LibrarySaved Application Stateio.kopia.ui.savedState",
   ]
 end

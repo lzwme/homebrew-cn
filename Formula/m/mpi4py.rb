@@ -1,7 +1,7 @@
 class Mpi4py < Formula
   desc "Python bindings for MPI"
-  homepage "https://mpi4py.github.io/"
-  url "https://ghproxy.com/https://github.com/mpi4py/mpi4py/releases/download/3.1.5/mpi4py-3.1.5.tar.gz"
+  homepage "https:mpi4py.github.io"
+  url "https:github.commpi4pympi4pyreleasesdownload3.1.5mpi4py-3.1.5.tar.gz"
   sha256 "a706e76db9255135c2fb5d1ef54cb4f7b0e4ad9e33cbada7de27626205f2a153"
   license "BSD-2-Clause"
   revision 1
@@ -32,7 +32,7 @@ class Mpi4py < Formula
                     "build", "--mpicc=mpicc -shared", "--parallel=#{ENV.make_jobs}",
                     "install", "--prefix=#{prefix}",
                     "--single-version-externally-managed", "--record=installed.txt",
-                    "--install-lib=#{prefix/Language::Python.site_packages(python3)}"
+                    "--install-lib=#{prefixLanguage::Python.site_packages(python3)}"
   end
 
   test do

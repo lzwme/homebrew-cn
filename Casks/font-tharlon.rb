@@ -2,10 +2,10 @@ cask "font-tharlon" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/tharlon/Tharlon-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofltharlonTharlon-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Tharlon"
-  homepage "https://fonts.google.com/earlyaccess"
+  homepage "https:fonts.google.comearlyaccess"
 
   font "Tharlon-Regular.ttf"
 

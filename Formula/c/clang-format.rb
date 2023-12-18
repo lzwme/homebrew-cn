@@ -1,34 +1,34 @@
 class ClangFormat < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
-  homepage "https://clang.llvm.org/docs/ClangFormat.html"
+  homepage "https:clang.llvm.orgdocsClangFormat.html"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0"
   version_scheme 1
-  head "https://github.com/llvm/llvm-project.git", branch: "main"
+  head "https:github.comllvmllvm-project.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/llvm-17.0.6.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6llvm-17.0.6.src.tar.xz"
     sha256 "b638167da139126ca11917b6880207cc6e8f9d1cbb1a48d87d017f697ef78188"
 
     resource "clang" do
-      url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/clang-17.0.6.src.tar.xz"
+      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6clang-17.0.6.src.tar.xz"
       sha256 "a78f668a726ae1d3d9a7179996d97b12b90fb76ab9442a43110b972ff7ad9029"
     end
 
     resource "cmake" do
-      url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/cmake-17.0.6.src.tar.xz"
+      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6cmake-17.0.6.src.tar.xz"
       sha256 "807f069c54dc20cb47b21c1f6acafdd9c649f3ae015609040d6182cab01140f4"
     end
 
     resource "third-party" do
-      url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/third-party-17.0.6.src.tar.xz"
+      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6third-party-17.0.6.src.tar.xz"
       sha256 "3054d0a9c9375dab1a4539cc2cc45ab340341c5d71475f9599ba7752e222947b"
     end
   end
 
   livecheck do
     url :stable
-    regex(/llvmorg[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(llvmorg[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -55,16 +55,16 @@ class ClangFormat < Formula
 
   def install
     llvmpath = if build.head?
-      ln_s buildpath/"clang", buildpath/"llvm/tools/clang"
+      ln_s buildpath"clang", buildpath"llvmtoolsclang"
 
-      buildpath/"llvm"
+      buildpath"llvm"
     else
-      (buildpath/"src").install buildpath.children
-      (buildpath/"src/tools/clang").install resource("clang")
-      (buildpath/"cmake").install resource("cmake")
-      (buildpath/"third-party").install resource("third-party")
+      (buildpath"src").install buildpath.children
+      (buildpath"srctoolsclang").install resource("clang")
+      (buildpath"cmake").install resource("cmake")
+      (buildpath"third-party").install resource("third-party")
 
-      buildpath/"src"
+      buildpath"src"
     end
 
     system "cmake", "-S", llvmpath, "-B", "build",
@@ -73,9 +73,9 @@ class ClangFormat < Formula
                     *std_cmake_args
     system "cmake", "--build", "build", "--target", "clang-format"
 
-    bin.install "build/bin/clang-format"
-    bin.install llvmpath/"tools/clang/tools/clang-format/git-clang-format"
-    (share/"clang").install llvmpath.glob("tools/clang/tools/clang-format/clang-format*")
+    bin.install "buildbinclang-format"
+    bin.install llvmpath"toolsclangtoolsclang-formatgit-clang-format"
+    (share"clang").install llvmpath.glob("toolsclangtoolsclang-formatclang-format*")
   end
 
   test do
@@ -83,13 +83,13 @@ class ClangFormat < Formula
     system "git", "commit", "--allow-empty", "-m", "initial commit", "--quiet"
 
     # NB: below C code is messily formatted on purpose.
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       int         main(char *args) { \n   \t printf("hello"); }
     EOS
     system "git", "add", "test.c"
 
     assert_equal "int main(char *args) { printf(\"hello\"); }\n",
-        shell_output("#{bin}/clang-format -style=Google test.c")
+        shell_output("#{bin}clang-format -style=Google test.c")
 
     ENV.prepend_path "PATH", bin
     assert_match "test.c", shell_output("git clang-format", 1)

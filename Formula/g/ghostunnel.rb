@@ -1,10 +1,10 @@
 class Ghostunnel < Formula
-  desc "Simple SSL/TLS proxy with mutual authentication"
-  homepage "https://github.com/ghostunnel/ghostunnel"
-  url "https://ghproxy.com/https://github.com/ghostunnel/ghostunnel/archive/refs/tags/v1.7.2.tar.gz"
+  desc "Simple SSLTLS proxy with mutual authentication"
+  homepage "https:github.comghostunnelghostunnel"
+  url "https:github.comghostunnelghostunnelarchiverefstagsv1.7.2.tar.gz"
   sha256 "4a573d31001067235a2fc0470316b419d3397418bd8f09a5b8cf9c93c23b7433"
   license "Apache-2.0"
-  head "https://github.com/ghostunnel/ghostunnel.git", branch: "master"
+  head "https:github.comghostunnelghostunnel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "474880279a3686ee6c3c1fc2f2f0386b02750841e864a95a911868faab35abca"
@@ -25,10 +25,10 @@ class Ghostunnel < Formula
   test do
     port = free_port
     fork do
-      exec bin/"ghostunnel", "client", "--listen=localhost:#{port}", "--target=localhost:4",
+      exec bin"ghostunnel", "client", "--listen=localhost:#{port}", "--target=localhost:4",
         "--disable-authentication", "--shutdown-timeout=1s", "--connect-timeout=1s"
     end
     sleep 1
-    shell_output("curl -o /dev/null http://localhost:#{port}/", 56)
+    shell_output("curl -o devnull http:localhost:#{port}", 56)
   end
 end

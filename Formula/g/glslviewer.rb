@@ -1,12 +1,12 @@
 class Glslviewer < Formula
   desc "Live-coding console tool that renders GLSL Shaders"
-  homepage "https://patriciogonzalezvivo.com/2015/glslViewer/"
-  url "https://github.com/patriciogonzalezvivo/glslViewer.git",
+  homepage "https:patriciogonzalezvivo.com2015glslViewer"
+  url "https:github.compatriciogonzalezvivoglslViewer.git",
       tag:      "v3.10.1",
       revision: "2671e0f0b362bfd94ea5160f2ecb7f7363d4991d"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/patriciogonzalezvivo/glslViewer.git", branch: "main"
+  head "https:github.compatriciogonzalezvivoglslViewer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "0b7a803f008bf3fcf1f241b67e2255ed32b8c257ca669a3ad5295a489cf61381"
@@ -34,8 +34,8 @@ class Glslviewer < Formula
   end
 
   test do
-    cp_r "#{pkgshare}/examples/io/.", testpath
-    pid = fork { exec "#{bin}/glslViewer", "orca.frag", "-l" }
+    cp_r "#{pkgshare}examplesio.", testpath
+    pid = fork { exec "#{bin}glslViewer", "orca.frag", "-l" }
     sleep 1
   ensure
     Process.kill("HUP", pid)

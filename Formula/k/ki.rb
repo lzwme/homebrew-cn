@@ -1,10 +1,10 @@
 class Ki < Formula
   desc "Kotlin Language Interactive Shell"
-  homepage "https://github.com/Kotlin/kotlin-interactive-shell"
-  url "https://ghproxy.com/https://github.com/Kotlin/kotlin-interactive-shell/archive/refs/tags/v0.5.2.tar.gz"
+  homepage "https:github.comKotlinkotlin-interactive-shell"
+  url "https:github.comKotlinkotlin-interactive-shellarchiverefstagsv0.5.2.tar.gz"
   sha256 "5b65d784a66b6e7aa7e6bc427e2886435747cb9b2969f239d3be1f2190929fe7"
   license "Apache-2.0"
-  head "https://github.com/Kotlin/kotlin-interactive-shell.git", branch: "main"
+  head "https:github.comKotlinkotlin-interactive-shell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce1c2bff302746a72187c41054af8a7918291d8a60b14eb9e5382a85e6854739"
@@ -25,12 +25,12 @@ class Ki < Formula
   def install
     ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
     system "mvn", "-DskipTests", "package"
-    libexec.install "lib/ki-shell.jar"
-    bin.write_jar_script libexec/"ki-shell.jar", "ki", java_version: "11"
+    libexec.install "libki-shell.jar"
+    bin.write_jar_script libexec"ki-shell.jar", "ki", java_version: "11"
   end
 
   test do
-    output = pipe_output(bin/"ki", ":q")
+    output = pipe_output(bin"ki", ":q")
     assert_match "ki-shell", output
     assert_match "Bye!", output
   end

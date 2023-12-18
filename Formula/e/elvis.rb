@@ -1,10 +1,10 @@
 class Elvis < Formula
   desc "Erlang Style Reviewer"
-  homepage "https://github.com/inaka/elvis"
-  url "https://ghproxy.com/https://github.com/inaka/elvis/archive/refs/tags/3.0.1.tar.gz"
+  homepage "https:github.cominakaelvis"
+  url "https:github.cominakaelvisarchiverefstags3.0.1.tar.gz"
   sha256 "ccf479c6d6bddc7fc9e6658eaf15f792d11e988f58417578b53e223e4f551698"
   license "Apache-2.0"
-  head "https://github.com/inaka/elvis.git", branch: "master"
+  head "https:github.cominakaelvis.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8402f637671b569fe7375bf8a3f0ea53f23a90ea40658e53b47f5ea69f8d9bf4"
@@ -24,17 +24,17 @@ class Elvis < Formula
   def install
     system "rebar3", "escriptize"
 
-    bin.install "_build/default/bin/elvis"
+    bin.install "_builddefaultbinelvis"
   end
 
   test do
-    (testpath/"src/example.erl").write <<~EOS
+    (testpath"srcexample.erl").write <<~EOS
       -module(example).
 
       -define(bad_macro_name, "should be upper case").
     EOS
 
-    (testpath/"elvis.config").write <<~EOS
+    (testpath"elvis.config").write <<~EOS
       [{elvis, [
         {config, [
           \#{ dirs => ["src"], filter => "*.erl", ruleset => erl_files }
@@ -47,6 +47,6 @@ class Elvis < Formula
       The macro named "bad_macro_name" on line 3 does not respect the format defined by the regular expression
     EOS
 
-    assert_match expected, shell_output("#{bin}/elvis rock", 1)
+    assert_match expected, shell_output("#{bin}elvis rock", 1)
   end
 end

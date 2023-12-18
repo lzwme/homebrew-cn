@@ -2,12 +2,12 @@ cask "font-padauk" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/padauk"
+      only_path: "oflpadauk"
   name "Padauk"
-  homepage "https://fonts.google.com/specimen/Padauk"
+  homepage "https:fonts.google.comspecimenPadauk"
 
   font "Padauk-Bold.ttf"
   font "Padauk-Regular.ttf"

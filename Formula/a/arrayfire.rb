@@ -1,7 +1,7 @@
 class Arrayfire < Formula
   desc "General purpose GPU library"
-  homepage "https://arrayfire.com"
-  url "https://ghproxy.com/https://github.com/arrayfire/arrayfire/releases/download/v3.9.0/arrayfire-full-3.9.0.tar.bz2"
+  homepage "https:arrayfire.com"
+  url "https:github.comarrayfirearrayfirereleasesdownloadv3.9.0arrayfire-full-3.9.0.tar.bz2"
   sha256 "8356c52bf3b5243e28297f4b56822191355216f002f3e301d83c9310a4b22348"
   license "BSD-3-Clause"
 
@@ -37,16 +37,16 @@ class Arrayfire < Formula
     rpaths = [
       rpath(source: lib, target: Formula["fftw"].opt_lib),
       rpath(source: lib, target: Formula["openblas"].opt_lib),
-      rpath(source: lib, target: HOMEBREW_PREFIX/"lib"),
+      rpath(source: lib, target: HOMEBREW_PREFIX"lib"),
     ]
 
     # Our compiler shims strip `-Werror`, which breaks upstream detection of linker features.
-    # https://github.com/arrayfire/arrayfire/blob/715e21fcd6e989793d01c5781908f221720e7d48/src/backend/opencl/CMakeLists.txt#L598
-    inreplace "src/backend/opencl/CMakeLists.txt", "if(group_flags)", "if(FALSE)" if OS.mac?
+    # https:github.comarrayfirearrayfireblob715e21fcd6e989793d01c5781908f221720e7d48srcbackendopenclCMakeLists.txt#L598
+    inreplace "srcbackendopenclCMakeLists.txt", "if(group_flags)", "if(FALSE)" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DAF_BUILD_CUDA=OFF",
-                    "-DAF_COMPUTE_LIBRARY=FFTW/LAPACK/BLAS",
+                    "-DAF_COMPUTE_LIBRARY=FFTWLAPACKBLAS",
                     "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     *std_cmake_args
@@ -55,19 +55,19 @@ class Arrayfire < Formula
 
     # Remove debug info. These files make patchelf fail.
     rm_f [
-      lib/"libaf.debug",
-      lib/"libafcpu.debug",
-      lib/"libafopencl.debug",
+      lib"libaf.debug",
+      lib"libafcpu.debug",
+      lib"libafopencl.debug",
     ]
     pkgshare.install "examples"
   end
 
   test do
-    cp pkgshare/"examples/helloworld/helloworld.cpp", testpath/"test.cpp"
+    cp pkgshare"exampleshelloworldhelloworld.cpp", testpath"test.cpp"
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-laf", "-lafcpu", "-o", "test"
     # OpenCL does not work in CI.
     return if Hardware::CPU.arm? && OS.mac? && MacOS.version >= :monterey && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    assert_match "ArrayFire v#{version}", shell_output("./test")
+    assert_match "ArrayFire v#{version}", shell_output(".test")
   end
 end

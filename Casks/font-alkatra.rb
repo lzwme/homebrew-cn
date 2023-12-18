@@ -2,11 +2,11 @@ cask "font-alkatra" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/alkatra/Alkatra%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflalkatraAlkatra%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Alkatra"
   desc "Display typeface family"
-  homepage "https://fonts.google.com/specimen/Alkatra"
+  homepage "https:fonts.google.comspecimenAlkatra"
 
   font "Alkatra[wght].ttf"
 

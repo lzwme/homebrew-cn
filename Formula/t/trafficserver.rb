@@ -1,8 +1,8 @@
 class Trafficserver < Formula
-  desc "HTTP/1.1 compliant caching proxy server"
-  homepage "https://trafficserver.apache.org/"
-  url "https://downloads.apache.org/trafficserver/trafficserver-9.2.3.tar.bz2"
-  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.2.3.tar.bz2"
+  desc "HTTP1.1 compliant caching proxy server"
+  homepage "https:trafficserver.apache.org"
+  url "https:downloads.apache.orgtrafficservertrafficserver-9.2.3.tar.bz2"
+  mirror "https:archive.apache.orgdisttrafficservertrafficserver-9.2.3.tar.bz2"
   sha256 "49686bf788f48f24f9db3454125856564a847cdc4520cde43dcdd5fed105fbf4"
   license "Apache-2.0"
 
@@ -17,7 +17,7 @@ class Trafficserver < Formula
   end
 
   head do
-    url "https://github.com/apache/trafficserver.git", branch: "master"
+    url "https:github.comapachetrafficserver.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,7 +33,7 @@ class Trafficserver < Formula
 
   on_macos do
     # Need to regenerate configure to fix macOS 11+ build error due to undefined symbols
-    # See https://github.com/apache/trafficserver/pull/8556#issuecomment-995319215
+    # See https:github.comapachetrafficserverpull8556#issuecomment-995319215
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool"  => :build
@@ -47,7 +47,7 @@ class Trafficserver < Formula
   end
 
   def install
-    # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
+    # Per https:luajit.orginstall.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
@@ -65,12 +65,12 @@ class Trafficserver < Formula
     ]
 
     system "autoreconf", "-fvi" if build.head? || OS.mac?
-    system "./configure", *args
+    system ".configure", *args
 
     # Fix wrong username in the generated startup script for bottles.
-    inreplace "rc/trafficserver.in", "@pkgsysuser@", "$USER"
+    inreplace "rctrafficserver.in", "@pkgsysuser@", "$USER"
 
-    inreplace "lib/perl/Makefile",
+    inreplace "libperlMakefile",
       "Makefile.PL INSTALLDIRS=$(INSTALLDIRS)",
       "Makefile.PL INSTALLDIRS=$(INSTALLDIRS) INSTALLSITEMAN3DIR=#{man3}"
 
@@ -79,10 +79,10 @@ class Trafficserver < Formula
   end
 
   def post_install
-    (var/"log/trafficserver").mkpath
-    (var/"trafficserver").mkpath
+    (var"logtrafficserver").mkpath
+    (var"trafficserver").mkpath
 
-    config = etc/"trafficserver/records.config"
+    config = etc"trafficserverrecords.config"
     return unless File.exist?(config)
     return if File.read(config).include?("proxy.config.admin.user_id STRING #{ENV["USER"]}")
 
@@ -91,10 +91,10 @@ class Trafficserver < Formula
 
   test do
     if OS.mac?
-      output = shell_output("#{bin}/trafficserver status")
+      output = shell_output("#{bin}trafficserver status")
       assert_match "Apache Traffic Server is not running", output
     else
-      output = shell_output("#{bin}/trafficserver status 2>&1", 3)
+      output = shell_output("#{bin}trafficserver status 2>&1", 3)
       assert_match "traffic_manager is not running", output
     end
   end

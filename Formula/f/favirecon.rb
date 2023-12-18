@@ -1,7 +1,7 @@
 class Favirecon < Formula
   desc "Uses favicon.ico to improve the target recon phase"
-  homepage "https://github.com/edoardottt/favirecon"
-  url "https://ghproxy.com/https://github.com/edoardottt/favirecon/archive/refs/tags/v0.0.6.tar.gz"
+  homepage "https:github.comedoardotttfavirecon"
+  url "https:github.comedoardotttfavireconarchiverefstagsv0.0.6.tar.gz"
   sha256 "d06055563247fa50b0cb6bc3523e468bb41e3a6c3de444e3a304dc681ecec851"
   license "MIT"
 
@@ -18,11 +18,11 @@ class Favirecon < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/favirecon"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdfavirecon"
   end
 
   test do
-    output = shell_output("#{bin}/favirecon -u https://www.github.com")
-    assert_match "[GitHub] https://www.github.com/favicon.ico", output
+    output = shell_output("#{bin}favirecon -u https:www.github.com")
+    assert_match "[GitHub] https:www.github.comfavicon.ico", output
   end
 end

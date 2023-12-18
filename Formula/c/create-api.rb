@@ -1,10 +1,10 @@
 class CreateApi < Formula
   desc "Delightful code generator for OpenAPI specs"
-  homepage "https://github.com/CreateAPI/CreateAPI"
-  url "https://ghproxy.com/https://github.com/CreateAPI/CreateAPI/archive/refs/tags/0.2.0.tar.gz"
+  homepage "https:github.comCreateAPICreateAPI"
+  url "https:github.comCreateAPICreateAPIarchiverefstags0.2.0.tar.gz"
   sha256 "9f61943314797fe4f09b40be72e1f72b0a616c66cb1b66cd042f97a596ffd869"
   license "MIT"
-  head "https://github.com/CreateAPI/CreateAPI.git", branch: "main"
+  head "https:github.comCreateAPICreateAPI.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d17d4dbb015aa085d070861eae7aaac01bf63a5897b48489582fa88f350a620"
@@ -24,12 +24,12 @@ class CreateApi < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/create-api"
-    pkgshare.install "Tests/Support/Specs/cookpad.json" => "test-spec.json"
+    bin.install ".buildreleasecreate-api"
+    pkgshare.install "TestsSupportSpecscookpad.json" => "test-spec.json"
   end
 
   test do
-    system bin/"create-api", "generate", pkgshare/"test-spec.json", "--config-option", "module=TestPackage"
+    system bin"create-api", "generate", pkgshare"test-spec.json", "--config-option", "module=TestPackage"
     cd "CreateAPI" do
       system "swift", "build", "--disable-sandbox"
     end

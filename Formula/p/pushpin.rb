@@ -1,21 +1,21 @@
 class Pushpin < Formula
   desc "Reverse proxy for realtime web services"
-  homepage "https://pushpin.org/"
+  homepage "https:pushpin.org"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/fastly/pushpin.git", branch: "main"
+  head "https:github.comfastlypushpin.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/fastly/pushpin/releases/download/v1.37.0/pushpin-1.37.0.tar.bz2"
+    url "https:github.comfastlypushpinreleasesdownloadv1.37.0pushpin-1.37.0.tar.bz2"
     sha256 "5fe5042f34a7955113cea3946c5127e3e182df446d8704d6a26d13cde74e960f"
 
     # Backport support for Qt6. Remove in the next release.
     patch do
-      url "https://github.com/fastly/pushpin/commit/9efeaa77687df23f3bfd74cd3849857fc9cffdbe.patch?full_index=1"
+      url "https:github.comfastlypushpincommit9efeaa77687df23f3bfd74cd3849857fc9cffdbe.patch?full_index=1"
       sha256 "c3d74aee57da5122f9458d8b248ecdc096ebfec15aea870c7ae205c93331a3b9"
     end
     patch do
-      url "https://github.com/fastly/pushpin/commit/aa2a75e2a893cefb7b83f3bc59f8d947ecfb65c5.patch?full_index=1"
+      url "https:github.comfastlypushpincommitaa2a75e2a893cefb7b83f3bc59f8d947ecfb65c5.patch?full_index=1"
       sha256 "891e55dc4bc55c5819d409e305fb9b5f5c0e887130ae2173eb092a59f5d7c67e"
     end
   end
@@ -40,32 +40,32 @@ class Pushpin < Formula
 
   def install
     # Work around `cc` crate picking non-shim compiler when compiling `ring`.
-    # This causes include/GFp/check.h:27:11: fatal error: 'assert.h' file not found
+    # This causes includeGFpcheck.h:27:11: fatal error: 'assert.h' file not found
     ENV["HOST_CC"] = ENV.cc
 
     args = %W[
       --configdir=#{etc}
-      --rundir=#{var}/run
-      --logdir=#{var}/log
+      --rundir=#{var}run
+      --logdir=#{var}log
       --qtselect=#{Formula["qt"].version.major}
     ]
     args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
 
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make"
     system "make", "install"
   end
 
   test do
-    conffile = testpath/"pushpin.conf"
-    routesfile = testpath/"routes"
-    runfile = testpath/"test.py"
+    conffile = testpath"pushpin.conf"
+    routesfile = testpath"routes"
+    runfile = testpath"test.py"
 
-    cp HOMEBREW_PREFIX/"etc/pushpin/pushpin.conf", conffile
+    cp HOMEBREW_PREFIX"etcpushpinpushpin.conf", conffile
 
     inreplace conffile do |s|
-      s.gsub! "rundir=#{HOMEBREW_PREFIX}/var/run/pushpin", "rundir=#{testpath}/var/run/pushpin"
-      s.gsub! "logdir=#{HOMEBREW_PREFIX}/var/log/pushpin", "logdir=#{testpath}/var/log/pushpin"
+      s.gsub! "rundir=#{HOMEBREW_PREFIX}varrunpushpin", "rundir=#{testpath}varrunpushpin"
+      s.gsub! "logdir=#{HOMEBREW_PREFIX}varlogpushpin", "logdir=#{testpath}varlogpushpin"
     end
 
     routesfile.write <<~EOS
@@ -99,18 +99,18 @@ class Pushpin < Formula
       server_thread.start()
       c.wait()
       c.release()
-      with urlopen('http://localhost:7999/test') as f:
+      with urlopen('http:localhost:7999test') as f:
         body = f.read()
         assert(body == b'test response\\n')
     EOS
 
     pid = fork do
-      exec "#{bin}/pushpin", "--config=#{conffile}"
+      exec "#{bin}pushpin", "--config=#{conffile}"
     end
 
     begin
       sleep 3 # make sure pushpin processes have started
-      system Formula["python@3.12"].opt_bin/"python3.12", runfile
+      system Formula["python@3.12"].opt_bin"python3.12", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

@@ -1,7 +1,7 @@
 class BatsCore < Formula
   desc "Bash Automated Testing System"
-  homepage "https://github.com/bats-core/bats-core"
-  url "https://ghproxy.com/https://github.com/bats-core/bats-core/archive/refs/tags/v1.10.0.tar.gz"
+  homepage "https:github.combats-corebats-core"
+  url "https:github.combats-corebats-corearchiverefstagsv1.10.0.tar.gz"
   sha256 "a1a9f7875aa4b6a9480ca384d5865f1ccf1b0b1faead6b47aa47d79709a5c5fd"
   license "MIT"
 
@@ -14,16 +14,16 @@ class BatsCore < Formula
   uses_from_macos "bc" => :test
 
   def install
-    system "./install.sh", prefix
+    system ".install.sh", prefix
   end
 
   test do
-    (testpath/"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~EOS
       @test "addition using bc" {
         result="$(echo 2+2 | bc)"
         [ "$result" -eq 4 ]
       }
     EOS
-    assert_match "addition", shell_output("#{bin}/bats test.sh")
+    assert_match "addition", shell_output("#{bin}bats test.sh")
   end
 end

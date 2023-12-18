@@ -1,13 +1,13 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
-  homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-2.1.0.tar.xz"
+  homepage "https:github.compkgconfpkgconf"
+  url "https:distfiles.ariadne.spacepkgconfpkgconf-2.1.0.tar.xz"
   sha256 "266d5861ee51c52bc710293a1d36622ae16d048d71ec56034a02eb9cf9677761"
   license "ISC"
 
   livecheck do
-    url "https://distfiles.ariadne.space/pkgconf/"
-    regex(/href=.*?pkgconf[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:distfiles.ariadne.spacepkgconf"
+    regex(href=.*?pkgconf[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Pkgconf < Formula
   end
 
   head do
-    url "https://github.com/pkgconf/pkgconf.git", branch: "master"
+    url "https:github.compkgconfpkgconf.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,19 +33,19 @@ class Pkgconf < Formula
   def install
     if build.head?
       ENV["LIBTOOLIZE"] = "glibtoolize"
-      system "./autogen.sh"
+      system ".autogen.sh"
     end
 
     pc_path = %W[
-      #{HOMEBREW_PREFIX}/lib/pkgconfig
-      #{HOMEBREW_PREFIX}/share/pkgconfig
+      #{HOMEBREW_PREFIX}libpkgconfig
+      #{HOMEBREW_PREFIX}sharepkgconfig
     ]
     pc_path << if OS.mac?
-      pc_path << "/usr/local/lib/pkgconfig"
-      pc_path << "/usr/lib/pkgconfig"
-      "#{HOMEBREW_LIBRARY}/Homebrew/os/mac/pkgconfig/#{MacOS.version}"
+      pc_path << "usrlocallibpkgconfig"
+      pc_path << "usrlibpkgconfig"
+      "#{HOMEBREW_LIBRARY}Homebrewosmacpkgconfig#{MacOS.version}"
     else
-      "#{HOMEBREW_LIBRARY}/Homebrew/os/linux/pkgconfig"
+      "#{HOMEBREW_LIBRARY}Homebrewoslinuxpkgconfig"
     end
 
     pc_path = pc_path.uniq.join(File::PATH_SEPARATOR)
@@ -54,34 +54,34 @@ class Pkgconf < Formula
       --with-pkg-config-dir=#{pc_path}
     ]
 
-    system "./configure", *configure_args
+    system ".configure", *configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"foo.pc").write <<~EOS
-      prefix=/usr
+    (testpath"foo.pc").write <<~EOS
+      prefix=usr
       exec_prefix=${prefix}
-      includedir=${prefix}/include
-      libdir=${exec_prefix}/lib
+      includedir=${prefix}include
+      libdir=${exec_prefix}lib
 
       Name: foo
       Description: The foo library
       Version: 1.0.0
-      Cflags: -I${includedir}/foo
+      Cflags: -I${includedir}foo
       Libs: -L${libdir} -lfoo
     EOS
 
     ENV["PKG_CONFIG_LIBDIR"] = testpath
-    system bin/"pkgconf", "--validate", "foo"
-    assert_equal "1.0.0", shell_output("#{bin}/pkgconf --modversion foo").strip
-    assert_equal "-lfoo", shell_output("#{bin}/pkgconf --libs-only-l foo").strip
-    assert_equal "-I/usr/include/foo", shell_output("#{bin}/pkgconf --cflags foo").strip
+    system bin"pkgconf", "--validate", "foo"
+    assert_equal "1.0.0", shell_output("#{bin}pkgconf --modversion foo").strip
+    assert_equal "-lfoo", shell_output("#{bin}pkgconf --libs-only-l foo").strip
+    assert_equal "-Iusrincludefoo", shell_output("#{bin}pkgconf --cflags foo").strip
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
-      #include <libpkgconf/libpkgconf.h>
+      #include <libpkgconflibpkgconf.h>
 
       int main(void) {
         assert(pkgconf_compare_version(LIBPKGCONF_VERSION_STR, LIBPKGCONF_VERSION_STR) == 0);
@@ -89,7 +89,7 @@ class Pkgconf < Formula
       }
     EOS
 
-    system ENV.cc, "test.c", "-I#{include}/pkgconf", "-L#{lib}", "-lpkgconf"
-    system "./a.out"
+    system ENV.cc, "test.c", "-I#{include}pkgconf", "-L#{lib}", "-lpkgconf"
+    system ".a.out"
   end
 end

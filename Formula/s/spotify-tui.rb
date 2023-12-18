@@ -1,16 +1,16 @@
 class SpotifyTui < Formula
   desc "Terminal-based client for Spotify"
-  homepage "https://github.com/Rigellute/spotify-tui"
+  homepage "https:github.comRigellutespotify-tui"
   license "MIT"
-  head "https://github.com/Rigellute/spotify-tui.git", branch: "master"
+  head "https:github.comRigellutespotify-tui.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/Rigellute/spotify-tui/archive/refs/tags/v0.25.0.tar.gz"
+    url "https:github.comRigellutespotify-tuiarchiverefstagsv0.25.0.tar.gz"
     sha256 "9d6fa998e625ceff958a5355b4379ab164ba76575143a7b6d5d8aeb6c36d70a7"
 
     # Update dirs in order to apply socket2 PR. Remove in the next release.
     patch do
-      url "https://github.com/Rigellute/spotify-tui/commit/3881defc1ed0bcf79df1aef4836b857f64be657c.patch?full_index=1"
+      url "https:github.comRigellutespotify-tuicommit3881defc1ed0bcf79df1aef4836b857f64be657c.patch?full_index=1"
       sha256 "7405e773a49c9b6635fa6a559506e341c4ce38202388e7d7c6700964469d7f37"
     end
   end
@@ -40,9 +40,9 @@ class SpotifyTui < Formula
   end
 
   # Fix build with Rust 1.64+ by updating socket2 using open dependabot PR.
-  # PR ref: https://github.com/Rigellute/spotify-tui/pull/990
+  # PR ref: https:github.comRigellutespotify-tuipull990
   patch do
-    url "https://github.com/Rigellute/spotify-tui/commit/14df9419cf72da13f3b55654686a95647ea9dfea.patch?full_index=1"
+    url "https:github.comRigellutespotify-tuicommit14df9419cf72da13f3b55654686a95647ea9dfea.patch?full_index=1"
     sha256 "44f95b14320eb3274131f6676c1fb7bc4096735a16592a01fc1164dbe3a064e5"
   end
 
@@ -51,11 +51,11 @@ class SpotifyTui < Formula
   end
 
   test do
-    output = testpath/"output"
+    output = testpath"output"
     fork do
       $stdout.reopen(output)
       $stderr.reopen(output)
-      exec "#{bin}/spt -c #{testpath}/client.yml"
+      exec "#{bin}spt -c #{testpath}client.yml"
     end
     sleep 10
     assert_match "Enter your Client ID", output.read

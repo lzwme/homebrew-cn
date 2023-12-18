@@ -1,11 +1,11 @@
 class Ubertooth < Formula
   desc "Host tools for Project Ubertooth"
-  homepage "https://github.com/greatscottgadgets/ubertooth/wiki"
-  url "https://ghproxy.com/https://github.com/greatscottgadgets/ubertooth/releases/download/2020-12-R1/ubertooth-2020-12-R1.tar.xz"
+  homepage "https:github.comgreatscottgadgetsubertoothwiki"
+  url "https:github.comgreatscottgadgetsubertoothreleasesdownload2020-12-R1ubertooth-2020-12-R1.tar.xz"
   version "2020-12-R1"
   sha256 "93a4ce7af8eddcc299d65aff8dd3a0455293022f7fea4738b286353f833bf986"
   license "GPL-2.0-or-later"
-  head "https://github.com/greatscottgadgets/ubertooth.git", branch: "master"
+  head "https:github.comgreatscottgadgetsubertooth.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c8d773cb01afc9a71bcf1ba55f370d88da7fd34ba48f318d1d3c61ff18e0d35a"
@@ -27,10 +27,10 @@ class Ubertooth < Formula
   depends_on "libusb"
 
   def install
-    mkdir "host/build" do
+    mkdir "hostbuild" do
       args = std_cmake_args
-      # Tell CMake to install udev rules in HOMEBREW_PREFIX/etc on Linux because it defaults to /etc.
-      args << "-DUDEV_RULES_PATH=#{etc}/udev/rules.d" unless OS.mac?
+      # Tell CMake to install udev rules in HOMEBREW_PREFIXetc on Linux because it defaults to etc.
+      args << "-DUDEV_RULES_PATH=#{etc}udevrules.d" unless OS.mac?
       system "cmake", "..", *args
       system "make", "install"
     end
@@ -38,6 +38,6 @@ class Ubertooth < Formula
 
   test do
     # Most ubertooth utilities require an ubertooth device present.
-    system "#{bin}/ubertooth-rx", "-i", "/dev/null"
+    system "#{bin}ubertooth-rx", "-i", "devnull"
   end
 end

@@ -1,7 +1,7 @@
 class Julius < Formula
   desc "Two-pass large vocabulary continuous speech recognition engine"
-  homepage "https://github.com/julius-speech/julius"
-  url "https://ghproxy.com/https://github.com/julius-speech/julius/archive/refs/tags/v4.6.tar.gz"
+  homepage "https:github.comjulius-speechjulius"
+  url "https:github.comjulius-speechjuliusarchiverefstagsv4.6.tar.gz"
   sha256 "74447d7adb3bd119adae7915ba9422b7da553556f979ac4ee53a262d94d47b47"
   license "BSD-3-Clause"
 
@@ -23,11 +23,11 @@ class Julius < Formula
   uses_from_macos "zlib"
 
   # A pull request to fix this has been submitted upstream:
-  # https://github.com/julius-speech/julius/pull/184
+  # https:github.comjulius-speechjuliuspull184
   patch :DATA
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--mandir=#{man}",
@@ -37,21 +37,21 @@ class Julius < Formula
   end
 
   test do
-    shell_output("#{bin}/julius --help", 1)
+    shell_output("#{bin}julius --help", 1)
   end
 end
 
 __END__
-diff --git a/libsent/src/phmm/calc_dnn.c b/libsent/src/phmm/calc_dnn.c
+diff --git alibsentsrcphmmcalc_dnn.c blibsentsrcphmmcalc_dnn.c
 index aed91ef..a8a9f35 100644
---- a/libsent/src/phmm/calc_dnn.c
-+++ b/libsent/src/phmm/calc_dnn.c
+--- alibsentsrcphmmcalc_dnn.c
++++ blibsentsrcphmmcalc_dnn.c
 @@ -45,7 +45,7 @@ static void cpu_id_check()
  
    use_simd = USE_SIMD_NONE;
  
 -#if defined(__arm__) || TARGET_OS_IPHONE
 +#if defined(__arm__) || TARGET_OS_IPHONE || defined(__aarch64__)
-   /* on ARM NEON */
+   * on ARM NEON *
  
  #if defined(HAS_SIMD_NEONV2)

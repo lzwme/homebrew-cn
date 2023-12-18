@@ -2,11 +2,11 @@ cask "alt-tab" do
   version "6.64.0"
   sha256 "c7a9982cb7c006feae3489ba63810075052aa3ca5bd8405233ca6b8bf030221f"
 
-  url "https://ghproxy.com/https://github.com/lwouis/alt-tab-macos/releases/download/v#{version}/AltTab-#{version}.zip",
-      verified: "github.com/lwouis/alt-tab-macos/"
+  url "https:github.comlwouisalt-tab-macosreleasesdownloadv#{version}AltTab-#{version}.zip",
+      verified: "github.comlwouisalt-tab-macos"
   name "AltTab"
   desc "Enable Windows-like alt-tab"
-  homepage "https://alt-tab-macos.netlify.app/"
+  homepage "https:alt-tab-macos.netlify.app"
 
   livecheck do
     url :url
@@ -21,10 +21,10 @@ cask "alt-tab" do
   uninstall quit: "com.lwouis.alt-tab-macos"
 
   zap trash: [
-    "~/Library/Application Support/com.lwouis.alt-tab-macos",
-    "~/Library/Caches/com.lwouis.alt-tab-macos",
-    "~/Library/Cookies/com.lwouis.alt-tab-macos.binarycookies",
-    "~/Library/LaunchAgents/com.lwouis.alt-tab-macos.plist",
-    "~/Library/Preferences/com.lwouis.alt-tab-macos.plist",
+    "~LibraryApplication Supportcom.lwouis.alt-tab-macos",
+    "~LibraryCachescom.lwouis.alt-tab-macos",
+    "~LibraryCookiescom.lwouis.alt-tab-macos.binarycookies",
+    "~LibraryLaunchAgentscom.lwouis.alt-tab-macos.plist",
+    "~LibraryPreferencescom.lwouis.alt-tab-macos.plist",
   ]
 end

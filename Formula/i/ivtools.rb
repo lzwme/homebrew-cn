@@ -1,7 +1,7 @@
 class Ivtools < Formula
   desc "X11 vector graphic servers"
-  homepage "https://github.com/vectaport/ivtools"
-  url "https://ghproxy.com/https://github.com/vectaport/ivtools/archive/refs/tags/ivtools-2.1.tar.gz"
+  homepage "https:github.comvectaportivtools"
+  url "https:github.comvectaportivtoolsarchiverefstagsivtools-2.1.tar.gz"
   sha256 "6a5a55883399cbfef317d8bbf553e57e54945188666b344d9efa98ba3edb57ad"
   license "MIT"
   revision 2
@@ -24,18 +24,18 @@ class Ivtools < Formula
     cp "Makefile.orig", "Makefile"
     ace = Formula["ace"]
     args = %W[--mandir=#{man} --with-ace=#{ace.opt_include} --with-ace-libs=#{ace.opt_lib}]
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make"
     system "make", "install"
 
     # Conflicts with dialog
-    mv man3/"Dialog.3", man3/"Dialog_ivtools.3"
+    mv man3"Dialog.3", man3"Dialog_ivtools.3"
 
     # Delete unneeded symlink to libACE on Linux which conflicts with ace.
-    rm lib/"libACE.so" unless OS.mac?
+    rm lib"libACE.so" unless OS.mac?
   end
 
   test do
-    system "#{bin}/comterp", "exit(0)"
+    system "#{bin}comterp", "exit(0)"
   end
 end

@@ -1,7 +1,7 @@
 class Fwup < Formula
   desc "Configurable embedded Linux firmware update creator and runner"
-  homepage "https://github.com/fwup-home/fwup"
-  url "https://ghproxy.com/https://github.com/fwup-home/fwup/releases/download/v1.10.1/fwup-1.10.1.tar.gz"
+  homepage "https:github.comfwup-homefwup"
+  url "https:github.comfwup-homefwupreleasesdownloadv1.10.1fwup-1.10.1.tar.gz"
   sha256 "46a443f7461ffe7aa2228bce296d65e83d0ab9c886449d443a562ca59963a233"
   license "Apache-2.0"
 
@@ -22,13 +22,13 @@ class Fwup < Formula
   depends_on "libarchive"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system ".configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"
   end
 
   test do
-    system bin/"fwup", "-g"
-    assert_predicate testpath/"fwup-key.priv", :exist?, "Failed to create fwup-key.priv!"
-    assert_predicate testpath/"fwup-key.pub", :exist?, "Failed to create fwup-key.pub!"
+    system bin"fwup", "-g"
+    assert_predicate testpath"fwup-key.priv", :exist?, "Failed to create fwup-key.priv!"
+    assert_predicate testpath"fwup-key.pub", :exist?, "Failed to create fwup-key.pub!"
   end
 end

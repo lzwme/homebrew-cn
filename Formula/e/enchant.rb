@@ -1,7 +1,7 @@
 class Enchant < Formula
   desc "Spellchecker wrapping library"
-  homepage "https://abiword.github.io/enchant/"
-  url "https://ghproxy.com/https://github.com/AbiWord/enchant/releases/download/v2.6.4/enchant-2.6.4.tar.gz"
+  homepage "https:abiword.github.ioenchant"
+  url "https:github.comAbiWordenchantreleasesdownloadv2.6.4enchant-2.6.4.tar.gz"
   sha256 "833b4d5600dbe9ac867e543aac6a7a40ad145351495ca41223d4499d3ddbbd2c"
   license "LGPL-2.1-or-later"
 
@@ -24,23 +24,23 @@ class Enchant < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-relocatable"
 
     system "make", "install"
-    ln_s "enchant-2.pc", lib/"pkgconfig/enchant.pc"
+    ln_s "enchant-2.pc", lib"pkgconfigenchant.pc"
   end
 
   test do
     text = "Teh quikc brwon fox iumpz ovr teh lAzy d0g"
     enchant_result = text.sub("fox ", "").split.join("\n")
     file = "test.txt"
-    (testpath/file).write text
+    (testpathfile).write text
 
     # Explicitly set locale so that the correct dictionary can be found
     ENV["LANG"] = "en_US.UTF-8"
 
-    assert_equal enchant_result, shell_output("#{bin}/enchant-2 -l #{file}").chomp
+    assert_equal enchant_result, shell_output("#{bin}enchant-2 -l #{file}").chomp
   end
 end

@@ -1,15 +1,15 @@
 class Doxygen < Formula
   desc "Generate documentation for several programming languages"
-  homepage "https://www.doxygen.nl/"
-  url "https://doxygen.nl/files/doxygen-1.9.8.src.tar.gz"
-  mirror "https://downloads.sourceforge.net/project/doxygen/rel-1.9.8/doxygen-1.9.8.src.tar.gz"
+  homepage "https:www.doxygen.nl"
+  url "https:doxygen.nlfilesdoxygen-1.9.8.src.tar.gz"
+  mirror "https:downloads.sourceforge.netprojectdoxygenrel-1.9.8doxygen-1.9.8.src.tar.gz"
   sha256 "05e3d228e8384b5f3af9c8fd6246d22804acb731a3a24ce285c8986ed7e14f62"
   license "GPL-2.0-only"
-  head "https://github.com/doxygen/doxygen.git", branch: "master"
+  head "https:github.comdoxygendoxygen.git", branch: "master"
 
   livecheck do
-    url "https://www.doxygen.nl/download.html"
-    regex(/href=.*?doxygen[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
+    url "https:www.doxygen.nldownload.html"
+    regex(href=.*?doxygen[._-]v?(\d+(?:\.\d+)+)[._-]src\.ti)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class Doxygen < Formula
 
   fails_with :gcc do
     version "6"
-    cause "Need gcc>=7.2. See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=66297"
+    cause "Need gcc>=7.2. See https:gcc.gnu.orgbugzillashow_bug.cgi?id=66297"
   end
 
   def install
@@ -43,11 +43,11 @@ class Doxygen < Formula
     system "cmake", "--install", "build"
 
     system "cmake", "-S", ".", "-B", "build", "-Dbuild_doc=1", *std_cmake_args
-    man1.install buildpath.glob("build/man/*.1")
+    man1.install buildpath.glob("buildman*.1")
   end
 
   test do
-    system bin/"doxygen", "-g"
-    system bin/"doxygen", "Doxyfile"
+    system bin"doxygen", "-g"
+    system bin"doxygen", "Doxyfile"
   end
 end

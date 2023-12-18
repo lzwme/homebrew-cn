@@ -1,10 +1,10 @@
 class TotpCli < Formula
-  desc "Authy/Google Authenticator like TOTP CLI tool written in Go"
-  homepage "https://yitsushi.github.io/totp-cli/"
-  url "https://ghproxy.com/https://github.com/yitsushi/totp-cli/archive/refs/tags/v1.8.3.tar.gz"
+  desc "AuthyGoogle Authenticator like TOTP CLI tool written in Go"
+  homepage "https:yitsushi.github.iototp-cli"
+  url "https:github.comyitsushitotp-cliarchiverefstagsv1.8.3.tar.gz"
   sha256 "52510897ad87b9d0a2c72250f95da0dbcde96b4b5753ea8cbe1569830826ee77"
   license "MIT"
-  head "https://github.com/yitsushi/totp-cli.git", branch: "main"
+  head "https:github.comyitsushitotp-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d9bb6fb4d9da398a9999f40285c6691b7621f614dbb5105f085c1b5b1c7c3f1"
@@ -21,12 +21,12 @@ class TotpCli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    bash_completion.install "autocomplete/bash_autocomplete" => "totp-cli"
-    zsh_completion.install "autocomplete/zsh_autocomplete" => "_totp-cli"
+    bash_completion.install "autocompletebash_autocomplete" => "totp-cli"
+    zsh_completion.install "autocompletezsh_autocomplete" => "_totp-cli"
   end
 
   test do
-    assert_match "generate", shell_output("#{bin}/totp-cli help")
-    assert_match "storage error", pipe_output("#{bin}/totp-cli list 2>&1", "")
+    assert_match "generate", shell_output("#{bin}totp-cli help")
+    assert_match "storage error", pipe_output("#{bin}totp-cli list 2>&1", "")
   end
 end

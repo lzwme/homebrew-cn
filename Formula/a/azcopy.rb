@@ -1,13 +1,13 @@
 class Azcopy < Formula
   desc "Azure Storage data transfer utility"
-  homepage "https://github.com/Azure/azure-storage-azcopy"
-  url "https://ghproxy.com/https://github.com/Azure/azure-storage-azcopy/archive/refs/tags/v10.22.0.tar.gz"
+  homepage "https:github.comAzureazure-storage-azcopy"
+  url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.22.0.tar.gz"
   sha256 "664c8670cf9b46a58dc9a6aeaa500f6dfd5c743cdf24799149fac84bd925369b"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,11 +25,11 @@ class Azcopy < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"azcopy", "completion")
+    generate_completions_from_executable(bin"azcopy", "completion")
   end
 
   test do
     assert_match "failed to obtain credential info",
-                 shell_output("#{bin}/azcopy list https://storageaccountname.blob.core.windows.net/containername/", 1)
+                 shell_output("#{bin}azcopy list https:storageaccountname.blob.core.windows.netcontainername", 1)
   end
 end

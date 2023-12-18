@@ -1,7 +1,7 @@
 class Scrypt < Formula
   desc "Encrypt and decrypt files using memory-hard password function"
-  homepage "https://www.tarsnap.com/scrypt.html"
-  url "https://www.tarsnap.com/scrypt/scrypt-1.3.2.tgz"
+  homepage "https:www.tarsnap.comscrypt.html"
+  url "https:www.tarsnap.comscryptscrypt-1.3.2.tgz"
   sha256 "d632c1193420ac6faebf9482e65e33d3a5664eccd643b09a509d21d1c1f29be2"
   license "BSD-2-Clause"
 
@@ -16,7 +16,7 @@ class Scrypt < Formula
   end
 
   head do
-    url "https://github.com/Tarsnap/scrypt.git", branch: "master"
+    url "https:github.comTarsnapscrypt.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -28,14 +28,14 @@ class Scrypt < Formula
 
   def install
     system "autoreconf", "-fvi" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.exp").write <<~EOS
+    (testpath"test.exp").write <<~EOS
       set timeout -1
-      spawn #{bin}/scrypt enc homebrew.txt homebrew.txt.enc
+      spawn #{bin}scrypt enc homebrew.txt homebrew.txt.enc
       expect -exact "Please enter passphrase: "
       send -- "Testing\n"
       expect -exact "\r
@@ -46,6 +46,6 @@ class Scrypt < Formula
     touch "homebrew.txt"
 
     system "expect", "-f", "test.exp"
-    assert_predicate testpath/"homebrew.txt.enc", :exist?
+    assert_predicate testpath"homebrew.txt.enc", :exist?
   end
 end

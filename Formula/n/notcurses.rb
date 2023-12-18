@@ -1,7 +1,7 @@
 class Notcurses < Formula
-  desc "Blingful character graphics/TUI library"
-  homepage "https://nick-black.com/dankwiki/index.php/Notcurses"
-  url "https://ghproxy.com/https://github.com/dankamongmen/notcurses/archive/refs/tags/v3.0.9.tar.gz"
+  desc "Blingful character graphicsTUI library"
+  homepage "https:nick-black.comdankwikiindex.phpNotcurses"
+  url "https:github.comdankamongmennotcursesarchiverefstagsv3.0.9.tar.gz"
   sha256 "e5cc02aea82814b843cdf34dedd716e6e1e9ca440cf0f899853ca95e241bd734"
   license "Apache-2.0"
   revision 2
@@ -39,6 +39,6 @@ class Notcurses < Formula
     # current homebrew CI runs with TERM=dumb. given that Notcurses explicitly
     # does not support dumb terminals (i.e. those lacking the "cup" terminfo
     # capability), we expect a failure here. all output will go to stderr.
-    assert_empty shell_output("#{bin}/notcurses-info", 1)
+    assert_empty shell_output("#{bin}notcurses-info", 1)
   end
 end

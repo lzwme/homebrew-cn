@@ -1,10 +1,10 @@
 class Dynein < Formula
   desc "DynamoDB CLI"
-  homepage "https://github.com/awslabs/dynein"
-  url "https://ghproxy.com/https://github.com/awslabs/dynein/archive/refs/tags/v0.2.1.tar.gz"
+  homepage "https:github.comawslabsdynein"
+  url "https:github.comawslabsdyneinarchiverefstagsv0.2.1.tar.gz"
   sha256 "1946d521b74da303bafd19a0a36fd7510a9f8c9fc5cf64d2e6742b4b0b2c9389"
   license "Apache-2.0"
-  head "https://github.com/awslabs/dynein.git", branch: "main"
+  head "https:github.comawslabsdynein.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa2f35206a63c297f87dec9d5019517a5e47242cc8880e4d8c5278b7f1a0b430"
@@ -31,7 +31,7 @@ class Dynein < Formula
   end
 
   test do
-    assert_match "To find all tables in all regions", shell_output("#{bin}/dy desc 2>&1", 1)
-    assert_match version.to_s, shell_output("#{bin}/dy --version")
+    assert_match "To find all tables in all regions", shell_output("#{bin}dy desc 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}dy --version")
   end
 end

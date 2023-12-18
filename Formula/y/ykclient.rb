@@ -1,17 +1,17 @@
 class Ykclient < Formula
   desc "Library to validate YubiKey OTPs against YubiCloud"
-  homepage "https://developers.yubico.com/yubico-c-client/"
+  homepage "https:developers.yubico.comyubico-c-client"
   license "BSD-2-Clause"
   revision 1
 
   stable do
-    url "https://developers.yubico.com/yubico-c-client/Releases/ykclient-2.15.tar.gz"
+    url "https:developers.yubico.comyubico-c-clientReleasesykclient-2.15.tar.gz"
     sha256 "f461cdefe7955d58bbd09d0eb7a15b36cb3576b88adbd68008f40ea978ea5016"
 
     # Use HTTPS and disable old v1 API tests; without this patch "make check" fails
     # to work against api.yubico.com
     patch do
-      url "https://github.com/Yubico/yubico-c-client/commit/0d45452e7fbe47e77e78ff23b480c77fd9c06f2b.patch?full_index=1"
+      url "https:github.comYubicoyubico-c-clientcommit0d45452e7fbe47e77e78ff23b480c77fd9c06f2b.patch?full_index=1"
       sha256 "1e4e85d9d009488cd81a87f54be0f67a5a4cee03d34e1f0afadbc92f5194e93a"
     end
   end
@@ -31,7 +31,7 @@ class Ykclient < Formula
   end
 
   head do
-    url "https://github.com/Yubico/yubico-c-client.git"
+    url "https:github.comYubicoyubico-c-client.git"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,11 +41,11 @@ class Ykclient < Formula
   # "This project is deprecated and is no longer being maintained. For more
   # information and guidance on how to implement Yubico OTP support in
   # applications, see
-  # https://status.yubico.com/2021/04/15/one-api-yubico-com-one-http-get/."
+  # https:status.yubico.com20210415one-api-yubico-com-one-http-get."
   #
   # Original deprecation date: 2021-05-24
   # New deprecation date set to 1 year after dependent issue:
-  # https://github.com/Yubico/yubico-pam/issues/242
+  # https:github.comYubicoyubico-pamissues242
   deprecate! date: "2023-07-29", because: :repo_archived
 
   depends_on "help2man" => :build
@@ -55,12 +55,12 @@ class Ykclient < Formula
 
   def install
     system "autoreconf", "-iv" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
     system "make", "check"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/ykclient --version").chomp
+    assert_equal version.to_s, shell_output("#{bin}ykclient --version").chomp
   end
 end

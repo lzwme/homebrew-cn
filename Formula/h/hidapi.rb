@@ -1,10 +1,10 @@
 class Hidapi < Formula
   desc "Library for communicating with USB and Bluetooth HID devices"
-  homepage "https://github.com/libusb/hidapi"
-  url "https://ghproxy.com/https://github.com/libusb/hidapi/archive/refs/tags/hidapi-0.14.0.tar.gz"
+  homepage "https:github.comlibusbhidapi"
+  url "https:github.comlibusbhidapiarchiverefstagshidapi-0.14.0.tar.gz"
   sha256 "a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd"
   license :cannot_represent
-  head "https://github.com/libusb/hidapi.git", branch: "master"
+  head "https:github.comlibusbhidapi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8f665c92f1b3012852243abfc40b427cba3d4e581070cd4f2d8fa5dd185dd4d5"
@@ -36,7 +36,7 @@ class Hidapi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include "hidapi.h"
       int main(void)
       {
@@ -44,7 +44,7 @@ class Hidapi < Formula
       }
     EOS
 
-    flags = ["-I#{include}/hidapi", "-L#{lib}"]
+    flags = ["-I#{include}hidapi", "-L#{lib}"]
     flags << if OS.mac?
       "-lhidapi"
     else
@@ -52,6 +52,6 @@ class Hidapi < Formula
     end
     flags += ENV.cflags.to_s.split
     system ENV.cc, "-o", "test", "test.c", *flags
-    system "./test"
+    system ".test"
   end
 end

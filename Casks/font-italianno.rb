@@ -2,10 +2,10 @@ cask "font-italianno" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/italianno/Italianno-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflitaliannoItalianno-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Italianno"
-  homepage "https://fonts.google.com/specimen/Italianno"
+  homepage "https:fonts.google.comspecimenItalianno"
 
   font "Italianno-Regular.ttf"
 

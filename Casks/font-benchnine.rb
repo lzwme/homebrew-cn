@@ -2,12 +2,12 @@ cask "font-benchnine" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/benchnine"
+      only_path: "oflbenchnine"
   name "BenchNine"
-  homepage "https://fonts.google.com/specimen/BenchNine"
+  homepage "https:fonts.google.comspecimenBenchNine"
 
   font "BenchNine-Bold.ttf"
   font "BenchNine-Light.ttf"

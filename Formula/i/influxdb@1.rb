@@ -1,14 +1,14 @@
 class InfluxdbAT1 < Formula
   desc "Time series, events, and metrics database"
-  homepage "https://influxdata.com/time-series-platform/influxdb/"
-  url "https://ghproxy.com/https://github.com/influxdata/influxdb/archive/refs/tags/v1.11.4.tar.gz"
+  homepage "https:influxdata.comtime-series-platforminfluxdb"
+  url "https:github.cominfluxdatainfluxdbarchiverefstagsv1.11.4.tar.gz"
   sha256 "dc6942eb742220a175d43588ecbccb7d3abb00e8aa8f5c515e33f98f99ba8518"
-  # 1.x is using MIT license while 1.x and 3.x is using dual license (Apache-2.0/MIT)
+  # 1.x is using MIT license while 1.x and 3.x is using dual license (Apache-2.0MIT)
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(1(?:\.\d+)+)$/i)
+    regex(^v?(1(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,63 +31,63 @@ class InfluxdbAT1 < Formula
   # If you're upgrading to a newer influxdb version, check to see if this needs
   # to be upgraded too.
   resource "pkg-config-wrapper" do
-    url "https://ghproxy.com/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.11.tar.gz"
+    url "https:github.cominfluxdatapkg-configarchiverefstagsv0.2.11.tar.gz"
     sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
   end
 
   # Build patch to build with Rust 1.72+
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/5557bf4d21d86a0aa8495861441a4b5457f18b6b/influxdb%401/1.11.4-rust.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches5557bf4d21d86a0aa8495861441a4b5457f18b6binfluxdb%4011.11.4-rust.patch"
     sha256 "28e382e5a134377d01462661185dcdeaa9864c0a626acfd17964b90bd58d3ad5"
   end
 
   def install
     # Set up the influxdata pkg-config wrapper
     resource("pkg-config-wrapper").stage do
-      system "go", "build", *std_go_args(output: buildpath/"bootstrap/pkg-config")
+      system "go", "build", *std_go_args(output: buildpath"bootstrappkg-config")
     end
-    ENV.prepend_path "PATH", buildpath/"bootstrap"
+    ENV.prepend_path "PATH", buildpath"bootstrap"
 
     ldflags = "-s -w -X main.version=#{version}"
 
     %w[influxd influx influx_tools influx_inspect].each do |f|
-      system "go", "build", *std_go_args(output: bin/f, ldflags: ldflags), "./cmd/#{f}"
+      system "go", "build", *std_go_args(output: binf, ldflags: ldflags), ".cmd#{f}"
     end
 
-    etc.install "etc/config.sample.toml" => "influxdb.conf"
-    inreplace etc/"influxdb.conf" do |s|
-      s.gsub! "/var/lib/influxdb/data", "#{var}/influxdb/data"
-      s.gsub! "/var/lib/influxdb/meta", "#{var}/influxdb/meta"
-      s.gsub! "/var/lib/influxdb/wal", "#{var}/influxdb/wal"
+    etc.install "etcconfig.sample.toml" => "influxdb.conf"
+    inreplace etc"influxdb.conf" do |s|
+      s.gsub! "varlibinfluxdbdata", "#{var}influxdbdata"
+      s.gsub! "varlibinfluxdbmeta", "#{var}influxdbmeta"
+      s.gsub! "varlibinfluxdbwal", "#{var}influxdbwal"
     end
 
-    (var/"influxdb/data").mkpath
-    (var/"influxdb/meta").mkpath
-    (var/"influxdb/wal").mkpath
+    (var"influxdbdata").mkpath
+    (var"influxdbmeta").mkpath
+    (var"influxdbwal").mkpath
   end
 
   service do
-    run [opt_bin/"influxd", "-config", HOMEBREW_PREFIX/"etc/influxdb.conf"]
+    run [opt_bin"influxd", "-config", HOMEBREW_PREFIX"etcinfluxdb.conf"]
     keep_alive true
     working_dir var
-    log_path var/"log/influxdb.log"
-    error_log_path var/"log/influxdb.log"
+    log_path var"loginfluxdb.log"
+    error_log_path var"loginfluxdb.log"
   end
 
   test do
-    (testpath/"config.toml").write shell_output("#{bin}/influxd config")
-    inreplace testpath/"config.toml" do |s|
-      s.gsub! %r{/.*/.influxdb/data}, "#{testpath}/influxdb/data"
-      s.gsub! %r{/.*/.influxdb/meta}, "#{testpath}/influxdb/meta"
-      s.gsub! %r{/.*/.influxdb/wal}, "#{testpath}/influxdb/wal"
+    (testpath"config.toml").write shell_output("#{bin}influxd config")
+    inreplace testpath"config.toml" do |s|
+      s.gsub! %r{.*.influxdbdata}, "#{testpath}influxdbdata"
+      s.gsub! %r{.*.influxdbmeta}, "#{testpath}influxdbmeta"
+      s.gsub! %r{.*.influxdbwal}, "#{testpath}influxdbwal"
     end
 
     begin
       pid = fork do
-        exec "#{bin}/influxd -config #{testpath}/config.toml"
+        exec "#{bin}influxd -config #{testpath}config.toml"
       end
       sleep 6
-      output = shell_output("curl -Is localhost:8086/ping")
+      output = shell_output("curl -Is localhost:8086ping")
       assert_match "X-Influxdb-Version:", output
     ensure
       Process.kill("SIGTERM", pid)

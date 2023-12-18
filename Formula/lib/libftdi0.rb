@@ -1,7 +1,7 @@
 class Libftdi0 < Formula
   desc "Library to talk to FTDI chips"
-  homepage "https://www.intra2net.com/en/developer/libftdi"
-  url "https://www.intra2net.com/en/developer/libftdi/download/libftdi-0.20.tar.gz"
+  homepage "https:www.intra2net.comendeveloperlibftdi"
+  url "https:www.intra2net.comendeveloperlibftdidownloadlibftdi-0.20.tar.gz"
   sha256 "3176d5b5986438f33f5208e690a8bfe90941be501cc0a72118ce3d338d4b838e"
 
   bottle do
@@ -30,19 +30,19 @@ class Libftdi0 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     mkdir "libftdi-build" do
-      system "../configure", "--prefix=#{prefix}"
+      system "..configure", "--prefix=#{prefix}"
       system "make"
       system "make", "install"
     end
   end
 
   test do
-    system "#{bin}/libftdi-config", "--version"
+    system "#{bin}libftdi-config", "--version"
   end
 end

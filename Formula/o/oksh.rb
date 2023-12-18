@@ -1,10 +1,10 @@
 class Oksh < Formula
   desc "Portable OpenBSD ksh, based on the public domain Korn shell (pdksh)"
-  homepage "https://github.com/ibara/oksh"
-  url "https://ghproxy.com/https://github.com/ibara/oksh/releases/download/oksh-7.4/oksh-7.4.tar.gz"
+  homepage "https:github.comibaraoksh"
+  url "https:github.comibaraokshreleasesdownloadoksh-7.4oksh-7.4.tar.gz"
   sha256 "be9a8d457bf373bd04618074c41b46f4edec2ba1c57a58be881d60eaa6628596"
   license all_of: [:public_domain, "BSD-3-Clause", "ISC"]
-  head "https://github.com/ibara/oksh.git", branch: "main"
+  head "https:github.comibaraoksh.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82df15049ac624763f4b5efed80acd13a9265762c80721483fe84b8d6ae70dee"
@@ -17,12 +17,12 @@ class Oksh < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_equal "hello", shell_output("#{bin}/oksh -c \"echo -n hello\"")
+    assert_equal "hello", shell_output("#{bin}oksh -c \"echo -n hello\"")
   end
 end

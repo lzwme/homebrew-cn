@@ -2,11 +2,11 @@ cask "trackerzapper" do
   version "1.2.1"
   sha256 "a98920ad628c9f26cfef965a10837f656700f181f250f026c1367d5ebdd7ec45"
 
-  url "https://ghproxy.com/https://github.com/rknightuk/TrackerZapper/releases/download/#{version}/TrackerZapper.app.zip",
-      verified: "github.com/rknightuk/TrackerZapper/"
+  url "https:github.comrknightukTrackerZapperreleasesdownload#{version}TrackerZapper.app.zip",
+      verified: "github.comrknightukTrackerZapper"
   name "trackerzapper"
   desc "Menubar app to remove link tracking parameters automatically"
-  homepage "https://rknight.me/apps/tracker-zapper"
+  homepage "https:rknight.meappstracker-zapper"
 
   depends_on macos: ">= :big_sur"
 
@@ -15,9 +15,9 @@ cask "trackerzapper" do
   uninstall quit: "com.rknightuk.TrackerZapper"
 
   zap trash: [
-    "~/Library/Application Scripts/com.rknightuk.TrackerZapper",
-    "~/Library/Application Scripts/com.rknightuk.TrackerZapper-LaunchAtLoginHelper",
-    "~/Library/Containers/com.rknightuk.TrackerZapper",
-    "~/Library/Containers/com.rknightuk.TrackerZapper-LaunchAtLoginHelper",
+    "~LibraryApplication Scriptscom.rknightuk.TrackerZapper",
+    "~LibraryApplication Scriptscom.rknightuk.TrackerZapper-LaunchAtLoginHelper",
+    "~LibraryContainerscom.rknightuk.TrackerZapper",
+    "~LibraryContainerscom.rknightuk.TrackerZapper-LaunchAtLoginHelper",
   ]
 end

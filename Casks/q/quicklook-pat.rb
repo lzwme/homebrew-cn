@@ -2,9 +2,9 @@ cask "quicklook-pat" do
   version "1.0.0"
   sha256 "41d6d9ffb042490c93d661b95c392a341ecde42f40de6988ae944c64808aac28"
 
-  url "https://ghproxy.com/https://github.com/pixelrowdies/quicklook-pat/releases/download/#{version}/PatternQuickLook.pkg"
+  url "https:github.compixelrowdiesquicklook-patreleasesdownload#{version}PatternQuickLook.pkg"
   name "Adobe Photoshop Patterns Quicklook Plugin"
-  homepage "https://github.com/pixelrowdies/quicklook-pat"
+  homepage "https:github.compixelrowdiesquicklook-pat"
 
   pkg "PatternQuickLook.pkg"
 

@@ -1,14 +1,14 @@
 class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
-  homepage "https://docs.openvino.ai"
-  url "https://ghproxy.com/https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.2.0.tar.gz"
+  homepage "https:docs.openvino.ai"
+  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2023.2.0.tar.gz"
   sha256 "419b3137a1a549fc5054edbba5b71da76cbde730e8a271769126e021477ad47b"
   license "Apache-2.0"
-  head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
+  head "https:github.comopenvinotoolkitopenvino.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^(\d+(?:\.\d+)+)$/i)
+    regex(^(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -40,7 +40,7 @@ class Openvino < Formula
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https://ghproxy.com/https://github.com/oneapi-src/oneDNN/archive/284ad4574939fa784e4ddaa1f4aa577b8eb7a017.tar.gz"
+      url "https:github.comoneapi-srconeDNNarchive284ad4574939fa784e4ddaa1f4aa577b8eb7a017.tar.gz"
       sha256 "16f36078339cd08b949efea1d863344cb0b742d9f5898937d07a591b0c4da517"
     end
   end
@@ -49,7 +49,7 @@ class Openvino < Formula
     depends_on "scons" => :build
 
     resource "arm_compute" do
-      url "https://ghproxy.com/https://github.com/ARM-software/ComputeLibrary/archive/refs/tags/v23.08.tar.gz"
+      url "https:github.comARM-softwareComputeLibraryarchiverefstagsv23.08.tar.gz"
       sha256 "62f514a555409d4401e5250b290cdf8cf1676e4eb775e5bd61ea6a740a8ce24f"
     end
   end
@@ -59,22 +59,22 @@ class Openvino < Formula
   end
 
   resource "ade" do
-    url "https://ghproxy.com/https://github.com/opencv/ade/archive/refs/tags/v0.1.2d.tar.gz"
+    url "https:github.comopencvadearchiverefstagsv0.1.2d.tar.gz"
     sha256 "edefba61a33d6cd4b78a9976cb3309c95212610a81ba6dade09882d1794198ff"
   end
 
   resource "mlas" do
-    url "https://ghproxy.com/https://github.com/openvinotoolkit/mlas/archive/f6425b1394334822390fcd9da12788c9cd0d11da.tar.gz"
+    url "https:github.comopenvinotoolkitmlasarchivef6425b1394334822390fcd9da12788c9cd0d11da.tar.gz"
     sha256 "707a6634d62ea5563042a67161472b4be3ffe73c9783719519abdd583b0295f4"
   end
 
   resource "onednn_cpu" do
-    url "https://ghproxy.com/https://github.com/openvinotoolkit/oneDNN/archive/2ead5d4fe5993a797d9a7a4b8b5557b96f6ec90e.tar.gz"
+    url "https:github.comopenvinotoolkitoneDNNarchive2ead5d4fe5993a797d9a7a4b8b5557b96f6ec90e.tar.gz"
     sha256 "3c51d577f9e7e4cbd94ad08d267502953ec64513241dda6595b2608fafc8314c"
   end
 
   resource "onnx" do
-    url "https://ghproxy.com/https://github.com/onnx/onnx/archive/refs/tags/v1.14.1.tar.gz"
+    url "https:github.comonnxonnxarchiverefstagsv1.14.1.tar.gz"
     sha256 "e296f8867951fa6e71417a18f2e550a730550f8829bd35e947b4df5e3e777aa1"
   end
 
@@ -84,27 +84,27 @@ class Openvino < Formula
 
   def install
     # Remove git cloned 3rd party to make sure formula dependencies are used
-    dependencies = %w[thirdparty/ade thirdparty/ocl
-                      thirdparty/xbyak thirdparty/gflags
-                      thirdparty/ittapi thirdparty/snappy
-                      thirdparty/pugixml thirdparty/protobuf
-                      thirdparty/onnx/onnx thirdparty/flatbuffers
-                      src/plugins/intel_cpu/thirdparty/mlas
-                      src/plugins/intel_cpu/thirdparty/onednn
-                      src/plugins/intel_gpu/thirdparty/rapidjson
-                      src/plugins/intel_gpu/thirdparty/onednn_gpu
-                      src/plugins/intel_cpu/thirdparty/ComputeLibrary]
-    dependencies.each { |d| (buildpath/d).rmtree }
+    dependencies = %w[thirdpartyade thirdpartyocl
+                      thirdpartyxbyak thirdpartygflags
+                      thirdpartyittapi thirdpartysnappy
+                      thirdpartypugixml thirdpartyprotobuf
+                      thirdpartyonnxonnx thirdpartyflatbuffers
+                      srcpluginsintel_cputhirdpartymlas
+                      srcpluginsintel_cputhirdpartyonednn
+                      srcpluginsintel_gputhirdpartyrapidjson
+                      srcpluginsintel_gputhirdpartyonednn_gpu
+                      srcpluginsintel_cputhirdpartyComputeLibrary]
+    dependencies.each { |d| (buildpathd).rmtree }
 
-    resource("ade").stage buildpath/"thirdparty/ade"
-    resource("onnx").stage buildpath/"thirdparty/onnx/onnx"
-    resource("mlas").stage buildpath/"src/plugins/intel_cpu/thirdparty/mlas"
-    resource("onednn_cpu").stage buildpath/"src/plugins/intel_cpu/thirdparty/onednn"
+    resource("ade").stage buildpath"thirdpartyade"
+    resource("onnx").stage buildpath"thirdpartyonnxonnx"
+    resource("mlas").stage buildpath"srcpluginsintel_cputhirdpartymlas"
+    resource("onednn_cpu").stage buildpath"srcpluginsintel_cputhirdpartyonednn"
 
     if Hardware::CPU.arm?
-      resource("arm_compute").stage buildpath/"src/plugins/intel_cpu/thirdparty/ComputeLibrary"
+      resource("arm_compute").stage buildpath"srcpluginsintel_cputhirdpartyComputeLibrary"
     elsif OS.linux?
-      resource("onednn_gpu").stage buildpath/"src/plugins/intel_gpu/thirdparty/onednn_gpu"
+      resource("onednn_gpu").stage buildpath"srcpluginsintel_gputhirdpartyonednn_gpu"
     end
 
     cmake_args = std_cmake_args + %w[
@@ -124,13 +124,13 @@ class Openvino < Formula
       -DENABLE_SYSTEM_SNAPPY=ON
     ]
 
-    openvino_binary_dir = "#{buildpath}/build"
+    openvino_binary_dir = "#{buildpath}build"
     system "cmake", "-S", ".", "-B", openvino_binary_dir, *cmake_args
     system "cmake", "--build", openvino_binary_dir
     system "cmake", "--install", openvino_binary_dir
 
     # build & install python bindings
-    cd "src/bindings/python/wheel" do
+    cd "srcbindingspythonwheel" do
       ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
       ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
       ENV["WHEEL_VERSION"] = version
@@ -145,8 +145,8 @@ class Openvino < Formula
   test do
     pkg_config_flags = shell_output("pkg-config --cflags --libs openvino").chomp.split
 
-    (testpath/"openvino_available_devices.c").write <<~EOS
-      #include <openvino/c/openvino.h>
+    (testpath"openvino_available_devices.c").write <<~EOS
+      #include <openvinocopenvino.h>
 
       #define OV_CALL(statement) \
           if ((statement) != 0) \
@@ -168,12 +168,12 @@ class Openvino < Formula
           return 0;
       }
     EOS
-    system ENV.cc, "#{testpath}/openvino_available_devices.c", *pkg_config_flags,
-                   "-o", "#{testpath}/openvino_devices_test"
-    system "#{testpath}/openvino_devices_test"
+    system ENV.cc, "#{testpath}openvino_available_devices.c", *pkg_config_flags,
+                   "-o", "#{testpath}openvino_devices_test"
+    system "#{testpath}openvino_devices_test"
 
-    (testpath/"openvino_available_frontends.cpp").write <<~EOS
-      #include <openvino/frontend/manager.hpp>
+    (testpath"openvino_available_frontends.cpp").write <<~EOS
+      #include <openvinofrontendmanager.hpp>
       #include <iostream>
 
       int main() {
@@ -181,7 +181,7 @@ class Openvino < Formula
         return 0;
       }
     EOS
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.13)
       project(openvino_frontends_test)
       set(CMAKE_CXX_STANDARD 11)
@@ -192,7 +192,7 @@ class Openvino < Formula
 
     system "cmake", testpath.to_s
     system "cmake", "--build", testpath.to_s
-    assert_equal "6", shell_output("#{testpath}/openvino_frontends_test").strip
+    assert_equal "6", shell_output("#{testpath}openvino_frontends_test").strip
 
     system python3, "-c", <<~EOS
       import openvino.runtime as ov

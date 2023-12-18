@@ -1,10 +1,10 @@
 class Minuit2 < Formula
   desc "Physics analysis tool for function minimization"
-  homepage "https://root.cern.ch/doc/master/Minuit2Page.html"
-  url "https://root.cern.ch/download/root_v6.30.02.source.tar.gz"
+  homepage "https:root.cern.chdocmasterMinuit2Page.html"
+  url "https:root.cern.chdownloadroot_v6.30.02.source.tar.gz"
   sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
   license "LGPL-2.1-or-later"
-  head "https://github.com/root-project/root.git", branch: "master"
+  head "https:github.comroot-projectroot.git", branch: "master"
 
   livecheck do
     formula "root"
@@ -25,28 +25,28 @@ class Minuit2 < Formula
   # Fix VERSION_FILE path for standalone mode
   # Remove in next release
   patch do
-    url "https://github.com/root-project/root/commit/25731a7b0731a65f6a949dd249b098fdd612095d.patch?full_index=1"
+    url "https:github.comroot-projectrootcommit25731a7b0731a65f6a949dd249b098fdd612095d.patch?full_index=1"
     sha256 "058daafb2103b43b9d7775f895f16992050ba339083e844124c551ce9133b0a3"
   end
 
   def install
-    system "cmake", "-S", "math/minuit2", "-B", "build/shared", *std_cmake_args,
+    system "cmake", "-S", "mathminuit2", "-B", "buildshared", *std_cmake_args,
                     "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}"
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    system "cmake", "-S", "math/minuit2", "-B", "build/static", *std_cmake_args,
+    system "cmake", "-S", "mathminuit2", "-B", "buildstatic", *std_cmake_args,
                     "-Dminuit2_standalone=ON", "-DCMAKE_CXX_FLAGS='-std=c++14'", "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "build/static"
-    lib.install Dir["build/static/lib/libMinuit2*.a"]
+    system "cmake", "--build", "buildstatic"
+    lib.install Dir["buildstaticliblibMinuit2*.a"]
 
-    pkgshare.install "math/minuit2/test/MnTutorial"
+    pkgshare.install "mathminuit2testMnTutorial"
   end
 
   test do
-    cp Dir[pkgshare/"MnTutorial/{Quad1FMain.cxx,Quad1F.h}"], testpath
-    system ENV.cxx, "-std=c++14", "Quad1FMain.cxx", "-o", "test", "-I#{include}/Minuit2", "-L#{lib}", "-lMinuit2"
-    assert_match "par0: -8.26907e-11 -1 1", shell_output("./test")
+    cp Dir[pkgshare"MnTutorial{Quad1FMain.cxx,Quad1F.h}"], testpath
+    system ENV.cxx, "-std=c++14", "Quad1FMain.cxx", "-o", "test", "-I#{include}Minuit2", "-L#{lib}", "-lMinuit2"
+    assert_match "par0: -8.26907e-11 -1 1", shell_output(".test")
   end
 end

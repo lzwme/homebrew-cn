@@ -1,13 +1,13 @@
 class Libev < Formula
   desc "Asynchronous event library"
-  homepage "http://software.schmorp.de/pkg/libev.html"
-  url "http://dist.schmorp.de/libev/Attic/libev-4.33.tar.gz"
-  mirror "https://fossies.org/linux/misc/libev-4.33.tar.gz"
+  homepage "http:software.schmorp.depkglibev.html"
+  url "http:dist.schmorp.delibevAtticlibev-4.33.tar.gz"
+  mirror "https:fossies.orglinuxmisclibev-4.33.tar.gz"
   sha256 "507eb7b8d1015fbec5b935f34ebed15bf346bed04a11ab82b8eee848c4205aea"
 
   livecheck do
-    url "http://dist.schmorp.de/libev/"
-    regex(/href=.*?libev[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:dist.schmorp.delibev"
+    regex(href=.*?libev[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -27,23 +27,23 @@ class Libev < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make", "install"
 
     # Remove compatibility header to prevent conflict with libevent
-    (include/"event.h").unlink
+    (include"event.h").unlink
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      /* Wait for stdin to become readable, then read and echo the first line. */
+    (testpath"test.c").write <<~EOS
+      * Wait for stdin to become readable, then read and echo the first line. *
 
       #include <stdio.h>
       #include <stdlib.h>
@@ -71,6 +71,6 @@ class Libev < Formula
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lev", "-o", "test"
     input = "hello, world\n"
-    assert_equal input, pipe_output("./test", input, 0)
+    assert_equal input, pipe_output(".test", input, 0)
   end
 end

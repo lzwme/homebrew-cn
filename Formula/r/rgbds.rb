@@ -1,10 +1,10 @@
 class Rgbds < Formula
   desc "Rednex GameBoy Development System"
-  homepage "https://rgbds.gbdev.io"
-  url "https://ghproxy.com/https://github.com/gbdev/rgbds/archive/refs/tags/v0.6.1.tar.gz"
+  homepage "https:rgbds.gbdev.io"
+  url "https:github.comgbdevrgbdsarchiverefstagsv0.6.1.tar.gz"
   sha256 "fdc48f5b416fd200598320dec7ffd1207516842771a55a15e5cdd04a243b0d74"
   license "MIT"
-  head "https://github.com/gbdev/rgbds.git", branch: "master"
+  head "https:github.comgbdevrgbds.git", branch: "master"
 
   livecheck do
     url :stable
@@ -30,7 +30,7 @@ class Rgbds < Formula
   depends_on "libpng"
 
   resource "rgbobj" do
-    url "https://ghproxy.com/https://github.com/gbdev/rgbobj/archive/refs/tags/v0.2.1.tar.gz"
+    url "https:github.comgbdevrgbobjarchiverefstagsv0.2.1.tar.gz"
     sha256 "3d91fb91c79974700e8b0379dcf5c92334f44928ed2fde88df281f46e3f6d7d1"
   end
 
@@ -42,21 +42,21 @@ class Rgbds < Formula
       system "cargo", "install", *std_cargo_args
       man1.install "rgbobj.1"
     end
-    zsh_completion.install Dir["contrib/zsh_compl/_*"]
-    bash_completion.install Dir["contrib/bash_compl/_*"]
+    zsh_completion.install Dir["contribzsh_compl_*"]
+    bash_completion.install Dir["contribbash_compl_*"]
   end
 
   test do
-    # Based on https://github.com/rednex/rgbds/blob/HEAD/test/asm/assert-const.asm
-    (testpath/"source.asm").write <<~EOS
+    # Based on https:github.comrednexrgbdsblobHEADtestasmassert-const.asm
+    (testpath"source.asm").write <<~EOS
       SECTION "rgbasm passing asserts", ROM0[0]
       Label:
         db 0
         assert @
     EOS
-    system bin/"rgbasm", "-o", "output.o", "source.asm"
-    system bin/"rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
-    system bin/"rgbgfx", test_fixtures("test.png"), "-o", testpath/"test.2bpp"
-    assert_predicate testpath/"test.2bpp", :exist?
+    system bin"rgbasm", "-o", "output.o", "source.asm"
+    system bin"rgbobj", "-A", "-s", "data", "-p", "data", "output.o"
+    system bin"rgbgfx", test_fixtures("test.png"), "-o", testpath"test.2bpp"
+    assert_predicate testpath"test.2bpp", :exist?
   end
 end

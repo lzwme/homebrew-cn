@@ -1,11 +1,11 @@
 class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
-  homepage "https://github.com/kubernetes-sigs/kubebuilder"
-  url "https://github.com/kubernetes-sigs/kubebuilder.git",
+  homepage "https:github.comkubernetes-sigskubebuilder"
+  url "https:github.comkubernetes-sigskubebuilder.git",
       tag:      "v3.13.0",
       revision: "c8a7cc58eeb56586c019cf8845dad37286d077ff"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
+  head "https:github.comkubernetes-sigskubebuilder.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6e4f618a714f09092a1af8a6a724c4cb54f99e9cc9fef4e67282638bfa51c71"
@@ -20,8 +20,8 @@ class Kubebuilder < Formula
   depends_on "go"
 
   def install
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOARCH").chomp
     ldflags = %W[
       -X main.kubeBuilderVersion=#{version}
       -X main.goos=#{goos}
@@ -29,17 +29,17 @@ class Kubebuilder < Formula
       -X main.gitCommit=#{Utils.git_head}
       -X main.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmd"
 
-    generate_completions_from_executable(bin/"kubebuilder", "completion")
+    generate_completions_from_executable(bin"kubebuilder", "completion")
   end
 
   test do
-    assert_match "KubeBuilderVersion:\"#{version}\"", shell_output("#{bin}/kubebuilder version 2>&1")
+    assert_match "KubeBuilderVersion:\"#{version}\"", shell_output("#{bin}kubebuilder version 2>&1")
     mkdir "test" do
       system "go", "mod", "init", "example.com"
-      system "#{bin}/kubebuilder", "init",
-        "--plugins", "go/v3", "--project-version", "3",
+      system "#{bin}kubebuilder", "init",
+        "--plugins", "gov3", "--project-version", "3",
         "--skip-go-version-check"
     end
   end

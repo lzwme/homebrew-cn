@@ -1,10 +1,10 @@
 class Hexedit < Formula
   desc "View and edit files in hexadecimal or ASCII"
-  homepage "http://rigaux.org/hexedit.html"
-  url "https://ghproxy.com/https://github.com/pixel/hexedit/archive/refs/tags/1.6.tar.gz"
+  homepage "http:rigaux.orghexedit.html"
+  url "https:github.compixelhexeditarchiverefstags1.6.tar.gz"
   sha256 "598906131934f88003a6a937fab10542686ce5f661134bc336053e978c4baae3"
   license "GPL-2.0-or-later"
-  head "https://github.com/pixel/hexedit.git", branch: "master"
+  head "https:github.compixelhexedit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afc2fe1bf87e8c4eeca709846343c69c54e061130fa737068de92c442138eeb4"
@@ -25,12 +25,12 @@ class Hexedit < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    shell_output("#{bin}/hexedit -h 2>&1", 1)
+    shell_output("#{bin}hexedit -h 2>&1", 1)
   end
 end

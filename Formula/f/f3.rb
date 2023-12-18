@@ -1,10 +1,10 @@
 class F3 < Formula
   desc "Test various flash cards"
-  homepage "https://fight-flash-fraud.readthedocs.io/en/latest/"
-  url "https://ghproxy.com/https://github.com/AltraMayor/f3/archive/refs/tags/v8.0.tar.gz"
+  homepage "https:fight-flash-fraud.readthedocs.ioenlatest"
+  url "https:github.comAltraMayorf3archiverefstagsv8.0.tar.gz"
   sha256 "fb5e0f3b0e0b0bff2089a4ea6af53278804dfe0b87992499131445732e311ab4"
   license "GPL-3.0-only"
-  head "https://github.com/AltraMayor/f3.git", branch: "master"
+  head "https:github.comAltraMayorf3.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6626bdd352f2c1e994f3521b9b39a04a35a17fb38f1617a94a31d9ffbd421266"
@@ -35,6 +35,6 @@ class F3 < Formula
   end
 
   test do
-    system "#{bin}/f3read", testpath
+    system "#{bin}f3read", testpath
   end
 end

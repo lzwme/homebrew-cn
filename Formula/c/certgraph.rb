@@ -1,10 +1,10 @@
 class Certgraph < Formula
   desc "Crawl the graph of certificate Alternate Names"
-  homepage "https://lanrat.github.io/certgraph/"
-  url "https://ghproxy.com/https://github.com/lanrat/certgraph/archive/refs/tags/20220513.tar.gz"
+  homepage "https:lanrat.github.iocertgraph"
+  url "https:github.comlanratcertgrapharchiverefstags20220513.tar.gz"
   sha256 "739c7a7d29de354814a8799d6c5ce4ba2236aee16ab7be980203bc7780769b47"
   license "GPL-2.0-or-later"
-  head "https://github.com/lanrat/certgraph.git", branch: "master"
+  head "https:github.comlanratcertgraph.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87984362d6fa214b3adad55d4ee28ecf6f102e5fc3dc62f0f85b186210824518"
@@ -24,10 +24,10 @@ class Certgraph < Formula
   end
 
   test do
-    output = shell_output("#{bin}/certgraph example.com")
+    output = shell_output("#{bin}certgraph example.com")
     assert_match "www.example.edu", output
     assert_match "example.org", output
 
-    assert_match version.to_s, shell_output("#{bin}/certgraph --version")
+    assert_match version.to_s, shell_output("#{bin}certgraph --version")
   end
 end

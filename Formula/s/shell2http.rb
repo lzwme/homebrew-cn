@@ -1,10 +1,10 @@
 class Shell2http < Formula
   desc "Executing shell commands via HTTP server"
-  homepage "https://github.com/msoap/shell2http"
-  url "https://ghproxy.com/https://github.com/msoap/shell2http/archive/refs/tags/v1.16.0.tar.gz"
+  homepage "https:github.commsoapshell2http"
+  url "https:github.commsoapshell2httparchiverefstagsv1.16.0.tar.gz"
   sha256 "90aa95c7b7bdb068b5b4a44e3e6782cda6b8417efbd0551383fb4f102e04584c"
   license "MIT"
-  head "https://github.com/msoap/shell2http.git", branch: "master"
+  head "https:github.commsoapshell2http.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4afb529539a1b571d671848f86b8338041aeb67f917f45176e3220be20e63537"
@@ -28,13 +28,13 @@ class Shell2http < Formula
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}/shell2http", "-port", port.to_s, "/echo", "echo brewtest"
+      exec "#{bin}shell2http", "-port", port.to_s, "echo", "echo brewtest"
     end
     sleep 1
-    output = shell_output("curl -s http://localhost:#{port}")
-    assert_match "Served by shell2http/#{version}", output
+    output = shell_output("curl -s http:localhost:#{port}")
+    assert_match "Served by shell2http#{version}", output
 
-    output = shell_output("curl -s http://localhost:#{port}/echo")
+    output = shell_output("curl -s http:localhost:#{port}echo")
     assert_match "brewtest", output
   ensure
     Process.kill("TERM", pid)

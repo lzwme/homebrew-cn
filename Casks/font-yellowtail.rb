@@ -2,10 +2,10 @@ cask "font-yellowtail" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/yellowtail/Yellowtail-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapacheyellowtailYellowtail-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Yellowtail"
-  homepage "https://fonts.google.com/specimen/Yellowtail"
+  homepage "https:fonts.google.comspecimenYellowtail"
 
   font "Yellowtail-Regular.ttf"
 

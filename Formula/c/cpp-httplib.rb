@@ -1,7 +1,7 @@
 class CppHttplib < Formula
-  desc "C++ header-only HTTP/HTTPS server and client library"
-  homepage "https://github.com/yhirose/cpp-httplib"
-  url "https://ghproxy.com/https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.14.2.tar.gz"
+  desc "C++ header-only HTTPHTTPS server and client library"
+  homepage "https:github.comyhirosecpp-httplib"
+  url "https:github.comyhirosecpp-httplibarchiverefstagsv0.14.2.tar.gz"
   sha256 "dbcf5590e8ed35c6745c2ad659a5ebec92f05187d1506eec24449d6db95e5084"
   license "MIT"
 
@@ -15,7 +15,7 @@ class CppHttplib < Formula
   fails_with :clang do
     build 1300
     cause <<~EOS
-      include/httplib.h:5278:19: error: no viable overloaded '='
+      includehttplib.h:5278:19: error: no viable overloaded '='
       request.matches = {};
       ~~~~~~~~~~~~~~~ ^ ~~
     EOS
@@ -28,21 +28,21 @@ class CppHttplib < Formula
   end
 
   test do
-    (testpath/"server.cpp").write <<~CPP
+    (testpath"server.cpp").write <<~CPP
       #include <httplib.h>
       using namespace httplib;
 
       int main(void) {
         Server svr;
 
-        svr.Get("/hi", [](const Request &, Response &res) {
-          res.set_content("Hello World!", "text/plain");
+        svr.Get("hi", [](const Request &, Response &res) {
+          res.set_content("Hello World!", "textplain");
         });
 
         svr.listen("0.0.0.0", 8080);
       }
     CPP
-    (testpath/"client.cpp").write <<~CPP
+    (testpath"client.cpp").write <<~CPP
       #include <httplib.h>
       #include <iostream>
       using namespace httplib;
@@ -50,7 +50,7 @@ class CppHttplib < Formula
 
       int main(void) {
         Client cli("localhost", 8080);
-        if (auto res = cli.Get("/hi")) {
+        if (auto res = cli.Get("hi")) {
           cout << res->status << endl;
           cout << res->get_header_value("Content-Type") << endl;
           cout << res->body << endl;
@@ -64,9 +64,9 @@ class CppHttplib < Formula
     system ENV.cxx, "client.cpp", "-I#{include}", "-lpthread", "-std=c++11", "-o", "client"
 
     fork do
-      exec "./server"
+      exec ".server"
     end
     sleep 3
-    assert_match "Hello World!", shell_output("./client")
+    assert_match "Hello World!", shell_output(".client")
   end
 end

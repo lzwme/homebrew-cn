@@ -1,11 +1,11 @@
 class Supertux < Formula
   desc "Classic 2D jump'n run sidescroller game"
-  homepage "https://www.supertux.org/"
-  url "https://ghproxy.com/https://github.com/SuperTux/supertux/releases/download/v0.6.3/SuperTux-v0.6.3-Source.tar.gz"
+  homepage "https:www.supertux.org"
+  url "https:github.comSuperTuxsupertuxreleasesdownloadv0.6.3SuperTux-v0.6.3-Source.tar.gz"
   sha256 "f7940e6009c40226eb34ebab8ffb0e3a894892d891a07b35d0e5762dd41c79f6"
   license "GPL-3.0-or-later"
   revision 6
-  head "https://github.com/SuperTux/supertux.git", branch: "master"
+  head "https:github.comSuperTuxsupertux.git", branch: "master"
 
   livecheck do
     url :stable
@@ -47,7 +47,7 @@ class Supertux < Formula
 
     args = std_cmake_args
     args << "-DINSTALL_SUBDIR_BIN=bin"
-    args << "-DINSTALL_SUBDIR_SHARE=share/supertux"
+    args << "-DINSTALL_SUBDIR_SHARE=sharesupertux"
     # Without the following option, Cmake intend to use the library of MONO framework.
     args << "-DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}"
     system "cmake", "-S", ".", "-B", "build", *args
@@ -55,13 +55,13 @@ class Supertux < Formula
     system "cmake", "--install", "build"
 
     # Remove unnecessary files
-    (share/"applications").rmtree
-    (share/"pixmaps").rmtree
-    (prefix/"MacOS").rmtree if OS.mac?
+    (share"applications").rmtree
+    (share"pixmaps").rmtree
+    (prefix"MacOS").rmtree if OS.mac?
   end
 
   test do
-    (testpath/"config").write "(supertux-config)"
-    assert_equal "supertux2 v#{version}", shell_output("#{bin}/supertux2 --userdir #{testpath} --version").chomp
+    (testpath"config").write "(supertux-config)"
+    assert_equal "supertux2 v#{version}", shell_output("#{bin}supertux2 --userdir #{testpath} --version").chomp
   end
 end

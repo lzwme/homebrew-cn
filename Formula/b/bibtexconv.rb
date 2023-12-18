@@ -1,10 +1,10 @@
 class Bibtexconv < Formula
   desc "BibTeX file converter"
-  homepage "https://github.com/dreibh/bibtexconv"
-  url "https://ghproxy.com/https://github.com/dreibh/bibtexconv/archive/refs/tags/bibtexconv-1.3.6.tar.gz"
+  homepage "https:github.comdreibhbibtexconv"
+  url "https:github.comdreibhbibtexconvarchiverefstagsbibtexconv-1.3.6.tar.gz"
   sha256 "09450e05693ac230b9f9b9a9486bb1ae5bb2f9aafd072d2b830b9f2d2d69382d"
   license "GPL-3.0-or-later"
-  head "https://github.com/dreibh/bibtexconv.git", branch: "master"
+  head "https:github.comdreibhbibtexconv.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "836e88ffc37dbb3193b6eb4a1cbc284dbe378944e440efa34757e89b5fc2deff"
@@ -25,14 +25,14 @@ class Bibtexconv < Formula
 
   def install
     system "cmake", *std_cmake_args,
-                    "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}/#{shared_library("libcrypto")}"
+                    "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}#{shared_library("libcrypto")}"
     system "make", "install"
   end
 
   test do
-    cp "#{opt_share}/doc/bibtexconv/examples/ExampleReferences.bib", testpath
+    cp "#{opt_share}docbibtexconvexamplesExampleReferences.bib", testpath
 
-    system bin/"bibtexconv", "#{testpath}/ExampleReferences.bib",
+    system bin"bibtexconv", "#{testpath}ExampleReferences.bib",
                              "-export-to-bibtex=UpdatedReferences.bib",
                              "-check-urls", "-only-check-new-urls",
                              "-non-interactive"

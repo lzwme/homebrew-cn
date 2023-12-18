@@ -1,10 +1,10 @@
 class Carla < Formula
-  desc "Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more"
-  homepage "https://kxstudio.linuxaudio.org/Applications:Carla"
-  url "https://ghproxy.com/https://github.com/falkTX/Carla/archive/refs/tags/v2.5.7.tar.gz"
+  desc "Audio plugin host supporting LADSPA, LV2, VST23, SF2 and more"
+  homepage "https:kxstudio.linuxaudio.orgApplications:Carla"
+  url "https:github.comfalkTXCarlaarchiverefstagsv2.5.7.tar.gz"
   sha256 "e530fb216d96788808f20bd7aaac8afdd386d84954ae610324d7ba71ffbc4277"
   license "GPL-2.0-or-later"
-  head "https://github.com/falkTX/Carla.git", branch: "main"
+  head "https:github.comfalkTXCarla.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,12 +35,12 @@ class Carla < Formula
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
 
-    inreplace bin/"carla", "PYTHON=$(which python3 2>/dev/null)",
+    inreplace bin"carla", "PYTHON=$(which python3 2>devnull)",
                            "PYTHON=#{which("python3.12")}"
   end
 
   test do
-    system bin/"carla", "--version"
-    system lib/"carla/carla-discovery-native", "internal", ":all"
+    system bin"carla", "--version"
+    system lib"carlacarla-discovery-native", "internal", ":all"
   end
 end

@@ -2,10 +2,10 @@ cask "font-iosevka-term-nerd-font" do
   version "3.1.1"
   sha256 "bdb8524320caad89a10be4df44e6e2fd1d02c633ea10595c72fe4b3aaa7f5417"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/IosevkaTerm.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IosevkaTerm.zip"
   name "IosevkaTerm Nerd Font (Iosevka Term)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

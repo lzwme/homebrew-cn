@@ -1,8 +1,8 @@
 class GccAT6 < Formula
   desc "GNU compiler collection"
-  homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-6.5.0/gcc-6.5.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-6.5.0/gcc-6.5.0.tar.xz"
+  homepage "https:gcc.gnu.org"
+  url "https:ftp.gnu.orggnugccgcc-6.5.0gcc-6.5.0.tar.xz"
+  mirror "https:ftpmirror.gnu.orggccgcc-6.5.0gcc-6.5.0.tar.xz"
   sha256 "7ef1796ce497e89479183702635b14bb7a46b53249209a5e0f999bebf4740945"
   license all_of: [
     "LGPL-2.1-or-later",
@@ -22,7 +22,7 @@ class GccAT6 < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
-  # https://gcc.gnu.org/gcc-6/
+  # https:gcc.gnu.orggcc-6
   disable! date: "2023-10-03", because: :deprecated_upstream
 
   depends_on arch: :x86_64
@@ -33,13 +33,13 @@ class GccAT6 < Formula
 
   uses_from_macos "zlib"
 
-  # Patch for Xcode bug, taken from https://gcc.gnu.org/bugzilla/show_bug.cgi?id=89864#c43
+  # Patch for Xcode bug, taken from https:gcc.gnu.orgbugzillashow_bug.cgi?id=89864#c43
   # This should be removed in the next release of GCC if fixed by apple; this is an xcode bug,
   # but this patch is a work around committed to GCC trunk
   on_macos do
     if MacOS::Xcode.version >= "10.2"
       patch do
-        url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/91d57ebe88e17255965fa88b53541335ef16f64a/gcc%406/gcc6-xcode10.2.patch"
+        url "https:raw.githubusercontent.comHomebrewformula-patches91d57ebe88e17255965fa88b53541335ef16f64agcc%406gcc6-xcode10.2.patch"
         sha256 "0f091e8b260bcfa36a537fad76823654be3ee8462512473e0b63ed83ead18085"
       end
     end
@@ -69,7 +69,7 @@ class GccAT6 < Formula
       libstdc++-v3
     ]
     configure_paths.each do |path|
-      inreplace buildpath/path/"configure", "${wl}-flat_namespace ${wl}-undefined ${wl}suppress",
+      inreplace buildpathpath"configure", "${wl}-flat_namespace ${wl}-undefined ${wl}suppress",
                                             "${wl}-undefined ${wl}dynamic_lookup"
     end
 
@@ -86,7 +86,7 @@ class GccAT6 < Formula
 
     args = [
       "--prefix=#{prefix}",
-      "--libdir=#{lib}/gcc/#{version_suffix}",
+      "--libdir=#{lib}gcc#{version_suffix}",
       "--enable-languages=#{languages.join(",")}",
       # Make most executables versioned to avoid conflicts.
       "--program-suffix=-#{version_suffix}",
@@ -113,30 +113,30 @@ class GccAT6 < Formula
       # Xcode 10 dropped 32-bit support
       args << "--disable-multilib" if DevelopmentTools.clang_build_version >= 1000
 
-      # System headers may not be in /usr/include
+      # System headers may not be in usrinclude
       sdk = MacOS.sdk_path_if_needed
       if sdk
-        args << "--with-native-system-header-dir=/usr/include"
+        args << "--with-native-system-header-dir=usrinclude"
         args << "--with-sysroot=#{sdk}"
       end
 
       # Ensure correct install names when linking against libgcc_s;
-      # see discussion in https://github.com/Homebrew/homebrew/pull/34303
-      inreplace "libgcc/config/t-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}"
+      # see discussion in https:github.comHomebrewhomebrewpull34303
+      inreplace "libgccconfigt-slibgcc-darwin", "@shlib_slibdir@", "#{HOMEBREW_PREFIX}libgcc#{version_suffix}"
 
-      # Fix bug reported in https://gcc.gnu.org/bugzilla/show_bug.cgi?id=92061.
-      inreplace "gcc/genconditions.c", "#if GCC_VERSION >= 3001", "#if GCC_VERSION >= 3001 && __clang_major__ < 9"
+      # Fix bug reported in https:gcc.gnu.orgbugzillashow_bug.cgi?id=92061.
+      inreplace "gccgenconditions.c", "#if GCC_VERSION >= 3001", "#if GCC_VERSION >= 3001 && __clang_major__ < 9"
     else
-      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      # Fix Linux error: gnustubs-32.h: No such file or directory.
       args << "--disable-multilib"
 
       # Change the default directory name for 64-bit libraries to `lib`
-      # https://www.linuxfromscratch.org/lfs/view/development/chapter06/gcc-pass2.html
-      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
+      # https:www.linuxfromscratch.orglfsviewdevelopmentchapter06gcc-pass2.html
+      inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
     end
 
     mkdir "build" do
-      system "../configure", *args
+      system "..configure", *args
       system "make", "bootstrap"
 
       if OS.mac?
@@ -149,7 +149,7 @@ class GccAT6 < Formula
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
     # Rename man7.
-    Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
+    Dir.glob(man7"*.7") { |file| add_suffix file, version_suffix }
     # Even when we disable building info pages some are still installed.
     info.rmtree
   end
@@ -158,12 +158,12 @@ class GccAT6 < Formula
     dir = File.dirname(file)
     ext = File.extname(file)
     base = File.basename(file, ext)
-    File.rename file, "#{dir}/#{base}-#{suffix}#{ext}"
+    File.rename file, "#{dir}#{base}-#{suffix}#{ext}"
   end
 
   def post_install
     if OS.linux?
-      gcc = bin/"gcc-#{version_suffix}"
+      gcc = bin"gcc-#{version_suffix}"
       libgcc = Pathname.new(Utils.safe_popen_read(gcc, "-print-libgcc-file-name")).parent
       raise "command failed: #{gcc} -print-libgcc-file-name" if $CHILD_STATUS.exitstatus.nonzero?
 
@@ -174,30 +174,30 @@ class GccAT6 < Formula
       crtdir = if glibc_installed
         glibc.opt_lib
       else
-        Pathname.new(Utils.safe_popen_read("/usr/bin/cc", "-print-file-name=crti.o")).parent
+        Pathname.new(Utils.safe_popen_read("usrbincc", "-print-file-name=crti.o")).parent
       end
-      ln_sf Dir[crtdir/"*crt?.o"], libgcc
+      ln_sf Dir[crtdir"*crt?.o"], libgcc
 
       # Create the GCC specs file
-      # See https://gcc.gnu.org/onlinedocs/gcc/Spec-Files.html
+      # See https:gcc.gnu.orgonlinedocsgccSpec-Files.html
 
       # Locate the specs file
-      specs = libgcc/"specs"
+      specs = libgcc"specs"
       ohai "Creating the GCC specs file: #{specs}"
       specs_orig = Pathname.new("#{specs}.orig")
       rm_f [specs_orig, specs]
 
-      system_header_dirs = ["#{HOMEBREW_PREFIX}/include"]
+      system_header_dirs = ["#{HOMEBREW_PREFIX}include"]
 
       if glibc_installed
-        # https://github.com/Linuxbrew/brew/issues/724
+        # https:github.comLinuxbrewbrewissues724
         system_header_dirs << glibc.opt_include
       else
         # Locate the native system header dirs if user uses system glibc
         target = Utils.safe_popen_read(gcc, "-print-multiarch").chomp
         raise "command failed: #{gcc} -print-multiarch" if $CHILD_STATUS.exitstatus.nonzero?
 
-        system_header_dirs += ["/usr/include/#{target}", "/usr/include"]
+        system_header_dirs += ["usrinclude#{target}", "usrinclude"]
       end
 
       # Save a backup of the default specs file
@@ -208,7 +208,7 @@ class GccAT6 < Formula
 
       # Set the library search path
       # For include path:
-      #   * `-isysroot #{HOMEBREW_PREFIX}/nonexistent` prevents gcc searching built-in
+      #   * `-isysroot #{HOMEBREW_PREFIX}nonexistent` prevents gcc searching built-in
       #     system header files.
       #   * `-idirafter <dir>` instructs gcc to search system header
       #     files after gcc internal header files.
@@ -219,25 +219,25 @@ class GccAT6 < Formula
       #     libraries. It is essential if there are multiple brewed gcc
       #     with different versions installed.
       #     Noted that it should only be passed for the `gcc@*` formulae.
-      #   * `-L#{HOMEBREW_PREFIX}/lib` instructs gcc to find the rest
+      #   * `-L#{HOMEBREW_PREFIX}lib` instructs gcc to find the rest
       #     brew libraries.
-      libdir = HOMEBREW_PREFIX/"lib/gcc/#{version_suffix}"
+      libdir = HOMEBREW_PREFIX"libgcc#{version_suffix}"
       specs.write specs_string + <<~EOS
         *cpp_unique_options:
-        + -isysroot #{HOMEBREW_PREFIX}/nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
+        + -isysroot #{HOMEBREW_PREFIX}nonexistent #{system_header_dirs.map { |p| "-idirafter #{p}" }.join(" ")}
 
         *link_libgcc:
-        #{glibc_installed ? "-nostdlib -L#{libgcc}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}/lib
+        #{glibc_installed ? "-nostdlib -L#{libgcc}" : "+"} -L#{libdir} -L#{HOMEBREW_PREFIX}lib
 
         *link:
-        + --dynamic-linker #{HOMEBREW_PREFIX}/lib/ld.so -rpath #{libdir} -rpath #{HOMEBREW_PREFIX}/lib
+        + --dynamic-linker #{HOMEBREW_PREFIX}libld.so -rpath #{libdir} -rpath #{HOMEBREW_PREFIX}lib
 
       EOS
     end
   end
 
   test do
-    (testpath/"hello-c.c").write <<~EOS
+    (testpath"hello-c.c").write <<~EOS
       #include <stdio.h>
       int main()
       {
@@ -245,10 +245,10 @@ class GccAT6 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
-    assert_equal "Hello, world!\n", `./hello-c`
+    system "#{bin}gcc-#{version.major}", "-o", "hello-c", "hello-c.c"
+    assert_equal "Hello, world!\n", `.hello-c`
 
-    (testpath/"hello-cc.cc").write <<~EOS
+    (testpath"hello-cc.cc").write <<~EOS
       #include <iostream>
       int main()
       {
@@ -256,8 +256,8 @@ class GccAT6 < Formula
         return 0;
       }
     EOS
-    system "#{bin}/g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
-    assert_equal "Hello, world!\n", `./hello-cc`
+    system "#{bin}g++-#{version.major}", "-o", "hello-cc", "hello-cc.cc"
+    assert_equal "Hello, world!\n", `.hello-cc`
 
     fixture = <<~EOS
       integer,parameter::m=10000
@@ -270,8 +270,8 @@ class GccAT6 < Formula
       print *, "done"
       end
     EOS
-    (testpath/"in.f90").write(fixture)
-    system "#{bin}/gfortran-#{version.major}", "-o", "test", "in.f90"
-    assert_equal "done", `./test`.strip
+    (testpath"in.f90").write(fixture)
+    system "#{bin}gfortran-#{version.major}", "-o", "test", "in.f90"
+    assert_equal "done", `.test`.strip
   end
 end

@@ -1,10 +1,10 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
-  homepage "https://uwsgi-docs.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/79/73/b5def500729e134d1cb8dfc334e27fa2e9cfd4e639c1f60c6532d40edaed/uwsgi-2.0.23.tar.gz"
+  homepage "https:uwsgi-docs.readthedocs.ioenlatest"
+  url "https:files.pythonhosted.orgpackages7973b5def500729e134d1cb8dfc334e27fa2e9cfd4e639c1f60c6532d40edaeduwsgi-2.0.23.tar.gz"
   sha256 "0cafda0c16f921db7fe42cfaf81b167cf884ee17350efbdd87d1ecece2d7de37"
   license "GPL-2.0-or-later"
-  head "https://github.com/unbit/uwsgi.git", branch: "master"
+  head "https:github.comunbituwsgi.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "d00dcbc2ba8dcee2316c40411427027e2dc71bc82e7bc624f052755ec82f1318"
@@ -18,7 +18,7 @@ class Uwsgi < Formula
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
-  depends_on "pcre" # PCRE2 issue: https://github.com/unbit/uwsgi/issues/2486
+  depends_on "pcre" # PCRE2 issue: https:github.comunbituwsgiissues2486
   depends_on "python@3.12"
   depends_on "yajl"
 
@@ -37,14 +37,14 @@ class Uwsgi < Formula
     ENV.prepend "CFLAGS", "-I#{openssl.opt_include}"
     ENV.prepend "LDFLAGS", "-L#{openssl.opt_lib}"
 
-    (buildpath/"buildconf/brew.ini").write <<~EOS
+    (buildpath"buildconfbrew.ini").write <<~EOS
       [uwsgi]
       ssl = true
       json = yajl
       xml = libxml2
       yaml = embedded
       inherit = base
-      plugin_dir = #{libexec}/uwsgi
+      plugin_dir = #{libexec}uwsgi
       embedded_plugins = null
     EOS
 
@@ -70,34 +70,34 @@ class Uwsgi < Formula
     plugins << "alarm_speech" if OS.mac?
     plugins << "cplusplus" if OS.linux?
 
-    (libexec/"uwsgi").mkpath
+    (libexec"uwsgi").mkpath
     plugins.each do |plugin|
-      system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins/#{plugin}", "brew"
+      system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins#{plugin}", "brew"
     end
 
-    system python3, "uwsgiconfig.py", "--verbose", "--plugin", "plugins/python", "brew", "python3"
+    system python3, "uwsgiconfig.py", "--verbose", "--plugin", "pluginspython", "brew", "python3"
 
     bin.install "uwsgi"
   end
 
   service do
-    run [opt_bin/"uwsgi", "--uid", "_www", "--gid", "_www", "--master", "--die-on-term", "--autoload", "--logto",
-         HOMEBREW_PREFIX/"var/log/uwsgi.log", "--emperor", HOMEBREW_PREFIX/"etc/uwsgi/apps-enabled"]
+    run [opt_bin"uwsgi", "--uid", "_www", "--gid", "_www", "--master", "--die-on-term", "--autoload", "--logto",
+         HOMEBREW_PREFIX"varloguwsgi.log", "--emperor", HOMEBREW_PREFIX"etcuwsgiapps-enabled"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    (testpath/"helloworld.py").write <<~EOS
+    (testpath"helloworld.py").write <<~EOS
       def application(env, start_response):
-        start_response('200 OK', [('Content-Type','text/html')])
+        start_response('200 OK', [('Content-Type','texthtml')])
         return [b"Hello World"]
     EOS
 
     port = free_port
 
     pid = fork do
-      exec "#{bin}/uwsgi --http-socket 127.0.0.1:#{port} --protocol=http --plugin python3 -w helloworld"
+      exec "#{bin}uwsgi --http-socket 127.0.0.1:#{port} --protocol=http --plugin python3 -w helloworld"
     end
     sleep 2
 

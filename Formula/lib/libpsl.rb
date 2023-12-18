@@ -1,7 +1,7 @@
 class Libpsl < Formula
   desc "C library for the Public Suffix List"
-  homepage "https://rockdaboot.github.io/libpsl"
-  url "https://ghproxy.com/https://github.com/rockdaboot/libpsl/releases/download/0.21.2/libpsl-0.21.2.tar.gz"
+  homepage "https:rockdaboot.github.iolibpsl"
+  url "https:github.comrockdabootlibpslreleasesdownload0.21.2libpsl-0.21.2.tar.gz"
   sha256 "e35991b6e17001afa2c0ca3b10c357650602b92596209b7492802f3768a6285f"
   license "MIT"
   revision 2
@@ -31,7 +31,7 @@ class Libpsl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
       #include <stdio.h>
       #include <string.h>
@@ -55,6 +55,6 @@ class Libpsl < Formula
     EOS
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lpsl"
-    system "./test"
+    system ".test"
   end
 end

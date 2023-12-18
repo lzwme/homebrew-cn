@@ -1,10 +1,10 @@
 class Prqlc < Formula
   desc "Simple, powerful, pipelined SQL replacement"
-  homepage "https://prql-lang.org"
-  url "https://ghproxy.com/https://github.com/PRQL/prql/archive/refs/tags/0.10.1.tar.gz"
+  homepage "https:prql-lang.org"
+  url "https:github.comPRQLprqlarchiverefstags0.10.1.tar.gz"
   sha256 "401c6e9f22ea8877e0779b5158759434e4f0781be6085c8748aa8ca394622eb9"
   license "Apache-2.0"
-  head "https://github.com/prql/prql.git", branch: "main"
+  head "https:github.comprqlprql.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6bdadd1cf478a032936462c7b503b56ad8f7b6306d91bedc0a05b92c06f4299"
@@ -19,12 +19,12 @@ class Prqlc < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "prqlc", *std_cargo_args(path: "prqlc/prqlc")
+    system "cargo", "install", "prqlc", *std_cargo_args(path: "prqlcprqlc")
   end
 
   test do
     stdin = "from employees | filter has_dog | select salary"
-    stdout = pipe_output("#{bin}/prqlc compile", stdin)
+    stdout = pipe_output("#{bin}prqlc compile", stdin)
     assert_match "SELECT", stdout
   end
 end

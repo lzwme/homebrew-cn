@@ -1,7 +1,7 @@
 class Sipsak < Formula
   desc "SIP Swiss army knife"
-  homepage "https://github.com/nils-ohlmeier/sipsak/"
-  url "https://ghproxy.com/https://github.com/nils-ohlmeier/sipsak/releases/download/0.9.8.1/sipsak-0.9.8.1.tar.gz"
+  homepage "https:github.comnils-ohlmeiersipsak"
+  url "https:github.comnils-ohlmeiersipsakreleasesdownload0.9.8.1sipsak-0.9.8.1.tar.gz"
   sha256 "c6faa022cd8c002165875d4aac83b7a2b59194f0491802924117fc6ac980c778"
   license "GPL-2.0-or-later"
 
@@ -23,7 +23,7 @@ class Sipsak < Formula
 
   def install
     ENV.append "CFLAGS", "-std=gnu89"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
@@ -31,6 +31,6 @@ class Sipsak < Formula
   end
 
   test do
-    system "#{bin}/sipsak", "-V"
+    system "#{bin}sipsak", "-V"
   end
 end

@@ -1,7 +1,7 @@
 class Spglib < Formula
   desc "C library for finding and handling crystal symmetries"
-  homepage "https://spglib.readthedocs.io/"
-  url "https://ghproxy.com/https://github.com/spglib/spglib/archive/refs/tags/v2.2.0.tar.gz"
+  homepage "https:spglib.readthedocs.io"
+  url "https:github.comspglibspglibarchiverefstagsv2.2.0.tar.gz"
   sha256 "ac929e20ec9d4621411e2cdec59b1442e02506c1e546005bbe2c7f781e9bd49a"
   license "BSD-3-Clause"
 
@@ -20,7 +20,7 @@ class Spglib < Formula
 
   def install
     # TODO: Fortran packaging is disabled for now because packaging does not pick it up properly
-    # https://github.com/spglib/spglib/issues/352#issuecomment-1784943807
+    # https:github.comspglibspglibissues352#issuecomment-1784943807
     common_args = %w[
       -DSPGLIB_WITH_Fortran=OFF
     ]
@@ -36,7 +36,7 @@ class Spglib < Formula
   end
 
   test do
-    (testpath / "test.c").write <<~EOS
+    (testpath  "test.c").write <<~EOS
       #include <stdio.h>
       #include <spglib.h>
       int main()
@@ -45,7 +45,7 @@ class Spglib < Formula
       }
     EOS
 
-    (testpath / "CMakeLists.txt").write <<~EOS
+    (testpath  "CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.6)
       project(test_spglib LANGUAGES C)
       find_package(Spglib CONFIG REQUIRED COMPONENTS shared)
@@ -54,10 +54,10 @@ class Spglib < Formula
     EOS
     system "cmake", "-B", "build_shared"
     system "cmake", "--build", "build_shared"
-    system "./build_shared/test_c"
+    system ".build_sharedtest_c"
 
-    (testpath / "CMakeLists.txt").delete
-    (testpath / "CMakeLists.txt").write <<~EOS
+    (testpath  "CMakeLists.txt").delete
+    (testpath  "CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.6)
       project(test_spglib LANGUAGES C Fortran)
       find_package(Spglib CONFIG REQUIRED COMPONENTS static)
@@ -66,6 +66,6 @@ class Spglib < Formula
     EOS
     system "cmake", "-B", "build_static"
     system "cmake", "--build", "build_static"
-    system "./build_static/test_c"
+    system ".build_statictest_c"
   end
 end

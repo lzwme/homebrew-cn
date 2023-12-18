@@ -1,14 +1,14 @@
 class Patchutils < Formula
   desc "Small collection of programs that operate on patch files"
-  homepage "http://cyberelk.net/tim/software/patchutils/"
-  url "http://cyberelk.net/tim/data/patchutils/stable/patchutils-0.4.2.tar.xz"
-  mirror "https://deb.debian.org/debian/pool/main/p/patchutils/patchutils_0.4.2.orig.tar.xz"
+  homepage "http:cyberelk.nettimsoftwarepatchutils"
+  url "http:cyberelk.nettimdatapatchutilsstablepatchutils-0.4.2.tar.xz"
+  mirror "https:deb.debian.orgdebianpoolmainppatchutilspatchutils_0.4.2.orig.tar.xz"
   sha256 "8875b0965fe33de62b890f6cd793be7fafe41a4e552edbf641f1fed5ebbf45ed"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   livecheck do
-    url "http://cyberelk.net/tim/data/patchutils/stable/"
-    regex(/href=.*?patchutils[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:cyberelk.nettimdatapatchutilsstable"
+    regex(href=.*?patchutils[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class Patchutils < Formula
   end
 
   head do
-    url "https://github.com/twaugh/patchutils.git", branch: "master"
+    url "https:github.comtwaughpatchutils.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "docbook" => :build
@@ -36,13 +36,13 @@ class Patchutils < Formula
   depends_on "xmlto" => :build
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog" if build.head?
-    system "./bootstrap" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog" if build.head?
+    system ".bootstrap" if build.head?
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_match %r{a/libexec/NOOP}, shell_output("#{bin}/lsdiff #{test_fixtures("test.diff")}")
+    assert_match %r{alibexecNOOP}, shell_output("#{bin}lsdiff #{test_fixtures("test.diff")}")
   end
 end

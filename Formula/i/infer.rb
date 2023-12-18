@@ -1,32 +1,32 @@
 class Infer < Formula
   desc "Static analyzer for Java, C, C++, and Objective-C"
-  homepage "https://fbinfer.com/"
+  homepage "https:fbinfer.com"
   license "MIT"
   revision 1
-  head "https://github.com/facebook/infer.git", branch: "main"
+  head "https:github.comfacebookinfer.git", branch: "main"
 
   stable do
-    url "https://ghproxy.com/https://github.com/facebook/infer/archive/refs/tags/v1.1.0.tar.gz"
+    url "https:github.comfacebookinferarchiverefstagsv1.1.0.tar.gz"
     sha256 "201c7797668a4b498fe108fcc13031b72d9dbf04dab0dc65dd6bd3f30e1f89ee"
 
     # Fix FileUtils.cpp:44:57: error: invalid initialization of reference of type 'const string& ...
     # Remove in the next release.
     patch do
-      url "https://github.com/facebook/infer/commit/c90ec0683456e0f03135e7c059a1233351440736.patch?full_index=1"
+      url "https:github.comfacebookinfercommitc90ec0683456e0f03135e7c059a1233351440736.patch?full_index=1"
       sha256 "516585352727c5372c4d4582ed9a64bc12e7a9eb59386aa3cec9908f0cfc86a8"
     end
 
     # Apply patch for finding correct C++ header from Apple SDKs.
     # Remove in the next release.
     patch do
-      url "https://github.com/facebook/infer/commit/ec976d3be4e78dbbb019b3be941066f74e826880.patch?full_index=1"
+      url "https:github.comfacebookinfercommitec976d3be4e78dbbb019b3be941066f74e826880.patch?full_index=1"
       sha256 "4f299566c88dd5b6761d36fcb090d238c216d3721dde9037c725dac255be9d3b"
     end
   end
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,8 +36,8 @@ class Infer < Formula
     sha256               x86_64_linux: "987d26d95d3e073a96c683710ab0298a1674d2ee6e7a2ee4cb0d8914f2b0139d"
   end
 
-  # https://github.com/Homebrew/homebrew-core/pull/87904
-  # https://github.com/facebook/infer/issues/1568
+  # https:github.comHomebrewhomebrew-corepull87904
+  # https:github.comfacebookinferissues1568
   disable! date: "2022-12-30", because: :does_not_build
 
   depends_on "autoconf" => :build
@@ -54,8 +54,8 @@ class Infer < Formula
   depends_on "sqlite"
 
   # Add `llvm` for lld due to CMake bug where CC=clang doesn't fallback to ld.
-  # This causes error: /bin/sh: 1: CMAKE_LINKER-NOTFOUND: not found
-  # CMake PR ref: https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6457
+  # This causes error: binsh: 1: CMAKE_LINKER-NOTFOUND: not found
+  # CMake PR ref: https:gitlab.kitware.comcmakecmake-merge_requests6457
   uses_from_macos "llvm" => :build # TODO: remove when `cmake` is fixed
   uses_from_macos "m4" => :build
   uses_from_macos "unzip" => :build
@@ -73,7 +73,7 @@ class Infer < Formula
 
   def install
     # Fixes: Uncaught Internal Error: ("unknown zone" (zone UTC0))
-    # https://github.com/facebook/infer/issues/1548
+    # https:github.comfacebookinferissues1548
     ENV.delete "TZ"
 
     # needed to build clang
@@ -85,16 +85,16 @@ class Infer < Formula
     # Use JDK11
     ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
 
-    opamroot = buildpath/"opamroot"
+    opamroot = buildpath"opamroot"
     opamroot.mkpath
     ENV["OPAMROOT"] = opamroot
     ENV["OPAMYES"] = "1"
     ENV["OPAMVERBOSE"] = "1"
-    ENV["PATCHELF"] = Formula["patchelf"].opt_bin/"patchelf" if OS.linux?
+    ENV["PATCHELF"] = Formula["patchelf"].opt_bin"patchelf" if OS.linux?
 
     system "opam", "init", "--no-setup", "--disable-sandboxing"
 
-    # do not attempt to use the clang in facebook-clang-plugins/ as it hasn't been built yet
+    # do not attempt to use the clang in facebook-clang-plugins as it hasn't been built yet
     ENV["INFER_CONFIGURE_OPTS"] = "--prefix=#{prefix} --without-fcp-clang"
 
     # Let's try build clang faster
@@ -107,7 +107,7 @@ class Infer < Formula
     # Error:  Package conflict!  * Missing dependency:  - conf-autoconf
     inreplace "build-infer.sh", "infer \"$INFER_ROOT\" $locked", "\\0 --no-depexts" if OS.linux?
 
-    system "./build-infer.sh", "all", "--yes"
+    system ".build-infer.sh", "all", "--yes"
     system "make", "install-with-libs"
   end
 
@@ -115,7 +115,7 @@ class Infer < Formula
     ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
     ENV.append_path "PATH", Formula["openjdk@11"].opt_bin
 
-    (testpath/"FailingTest.c").write <<~EOS
+    (testpath"FailingTest.c").write <<~EOS
       #include <stdio.h>
 
       int main() {
@@ -125,7 +125,7 @@ class Infer < Formula
       }
     EOS
 
-    (testpath/"PassingTest.c").write <<~EOS
+    (testpath"PassingTest.c").write <<~EOS
       #include <stdio.h>
 
       int main() {
@@ -157,12 +157,12 @@ class Infer < Formula
     EOS
 
     assert_equal failing_c_output.to_s,
-      shell_output("#{bin}/infer --fail-on-issue -P -- clang -c FailingTest.c", 2)
+      shell_output("#{bin}infer --fail-on-issue -P -- clang -c FailingTest.c", 2)
 
     assert_equal no_issues_output.to_s,
-      shell_output("#{bin}/infer --fail-on-issue -P -- clang -c PassingTest.c")
+      shell_output("#{bin}infer --fail-on-issue -P -- clang -c PassingTest.c")
 
-    (testpath/"FailingTest.java").write <<~EOS
+    (testpath"FailingTest.java").write <<~EOS
       class FailingTest {
 
         String mayReturnNull(int i) {
@@ -179,7 +179,7 @@ class Infer < Formula
       }
     EOS
 
-    (testpath/"PassingTest.java").write <<~EOS
+    (testpath"PassingTest.java").write <<~EOS
       class PassingTest {
 
         String mayReturnNull(int i) {
@@ -213,9 +213,9 @@ class Infer < Formula
     EOS
 
     assert_equal failing_java_output.to_s,
-      shell_output("#{bin}/infer --fail-on-issue -P -- javac FailingTest.java", 2)
+      shell_output("#{bin}infer --fail-on-issue -P -- javac FailingTest.java", 2)
 
     assert_equal no_issues_output.to_s,
-      shell_output("#{bin}/infer --fail-on-issue -P -- javac PassingTest.java")
+      shell_output("#{bin}infer --fail-on-issue -P -- javac PassingTest.java")
   end
 end

@@ -2,11 +2,11 @@ cask "firefly-shimmer" do
   version "2.1.10"
   sha256 "14987060bda75dc5c70c13d832299bb9d20c2e7c934090a6d3f4070d39d336ba"
 
-  url "https://ghproxy.com/https://github.com/iotaledger/firefly/releases/download/desktop-shimmer-#{version}/firefly-shimmer-desktop-#{version}.dmg",
-      verified: "github.com/iotaledger/firefly/"
+  url "https:github.comiotaledgerfireflyreleasesdownloaddesktop-shimmer-#{version}firefly-shimmer-desktop-#{version}.dmg",
+      verified: "github.comiotaledgerfirefly"
   name "Firefly Shimmer"
   desc "Official wallet for IOTA"
-  homepage "https://firefly.iota.org/"
+  homepage "https:firefly.iota.org"
 
   auto_updates true
   depends_on macos: ">= :high_sierra"
@@ -16,10 +16,10 @@ cask "firefly-shimmer" do
   uninstall quit: "org.iota.firefly"
 
   zap trash: [
-    "~/Library/Application Support/Firefly",
-    "~/Library/Logs/Firefly",
-    "~/Library/Preferences/org.iota.firefly.helper.plist",
-    "~/Library/Preferences/org.iota.firefly.plist",
-    "~/Library/Saved Application State/org.iota.firefly.savedState",
+    "~LibraryApplication SupportFirefly",
+    "~LibraryLogsFirefly",
+    "~LibraryPreferencesorg.iota.firefly.helper.plist",
+    "~LibraryPreferencesorg.iota.firefly.plist",
+    "~LibrarySaved Application Stateorg.iota.firefly.savedState",
   ]
 end

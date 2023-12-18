@@ -2,8 +2,8 @@ class AstrometryNet < Formula
   include Language::Python::Virtualenv
 
   desc "Automatic identification of astronomical images"
-  homepage "https://github.com/dstndstn/astrometry.net"
-  url "https://ghproxy.com/https://github.com/dstndstn/astrometry.net/releases/download/0.94/astrometry.net-0.94.tar.gz"
+  homepage "https:github.comdstndstnastrometry.net"
+  url "https:github.comdstndstnastrometry.netreleasesdownload0.94astrometry.net-0.94.tar.gz"
   sha256 "38c0d04171ecae42033ce5c9cd0757d8c5fc1418f2004d85e858f29aee383c5f"
   license "BSD-3-Clause"
   revision 3
@@ -38,25 +38,25 @@ class AstrometryNet < Formula
   depends_on "wcslib"
 
   resource "fitsio" do
-    url "https://files.pythonhosted.org/packages/aa/03/d7d0b77f938627cb46f6d91257d859c78459fbb5b155899d6c4c78970faa/fitsio-1.2.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesaa03d7d0b77f938627cb46f6d91257d859c78459fbb5b155899d6c4c78970faafitsio-1.2.1.tar.gz"
     sha256 "c64f60588f25fb2ba499854082bca73b0eda43b32ed6091f09dfcbcb72a911a6"
   end
 
-  # https://github.com/Homebrew/homebrew-core/issues/130484
+  # https:github.comHomebrewhomebrew-coreissues130484
   # Review for removal on next release
   patch do
-    url "https://github.com/dstndstn/astrometry.net/commit/f85136190b6e39393049e9be1cf14ac32b89b538.patch?full_index=1"
+    url "https:github.comdstndstnastrometry.netcommitf85136190b6e39393049e9be1cf14ac32b89b538.patch?full_index=1"
     sha256 "82f8968805dacfd66961ea7cfea7e190be6faaaaa5367f2b86b0b5a62f160706"
   end
 
   def install
     # astrometry-net doesn't support parallel build
-    # See https://github.com/dstndstn/astrometry.net/issues/178#issuecomment-592741428
+    # See https:github.comdstndstnastrometry.netissues178#issuecomment-592741428
     ENV.deparallelize
 
     python = which("python3.12")
     ENV["FITSIO_USE_SYSTEM_FITSIO"] = "1"
-    ENV["NETPBM_INC"] = "-I#{Formula["netpbm"].opt_include}/netpbm"
+    ENV["NETPBM_INC"] = "-I#{Formula["netpbm"].opt_include}netpbm"
     ENV["NETPBM_LIB"] = "-L#{Formula["netpbm"].opt_lib} -lnetpbm"
     ENV["SYSTEM_GSL"] = "yes"
     ENV["PYTHON"] = python
@@ -66,35 +66,35 @@ class AstrometryNet < Formula
 
     ENV["INSTALL_DIR"] = prefix
     site_packages = Language::Python.site_packages(python)
-    ENV["PY_BASE_INSTALL_DIR"] = libexec/site_packages/"astrometry"
-    ENV["PY_BASE_LINK_DIR"] = libexec/site_packages/"astrometry"
-    ENV["PYTHON_SCRIPT"] = libexec/"bin/python"
+    ENV["PY_BASE_INSTALL_DIR"] = libexecsite_packages"astrometry"
+    ENV["PY_BASE_LINK_DIR"] = libexecsite_packages"astrometry"
+    ENV["PYTHON_SCRIPT"] = libexec"binpython"
 
     system "make"
     system "make", "py"
     system "make", "install"
 
-    rm prefix/"doc/report.txt"
+    rm prefix"docreport.txt"
   end
 
   test do
-    system bin/"image2pnm", "-h"
-    system bin/"build-astrometry-index", "-d", "3", "-o", "index-9918.fits",
+    system bin"image2pnm", "-h"
+    system bin"build-astrometry-index", "-d", "3", "-o", "index-9918.fits",
                                             "-P", "18", "-S", "mag", "-B", "0.1",
                                             "-s", "0", "-r", "1", "-I", "9918", "-M",
-                                            "-i", prefix/"examples/tycho2-mag6.fits"
-    (testpath/"99.cfg").write <<~EOS
+                                            "-i", prefix"examplestycho2-mag6.fits"
+    (testpath"99.cfg").write <<~EOS
       add_path .
       inparallel
       index index-9918.fits
     EOS
-    system bin/"solve-field", "--config", "99.cfg", prefix/"examples/apod4.jpg",
+    system bin"solve-field", "--config", "99.cfg", prefix"examplesapod4.jpg",
                               "--continue", "--dir", "jpg"
-    assert_predicate testpath/"jpg/apod4.solved", :exist?
-    assert_predicate testpath/"jpg/apod4.wcs", :exist?
-    system bin/"solve-field", "--config", "99.cfg", prefix/"examples/apod4.xyls",
+    assert_predicate testpath"jpgapod4.solved", :exist?
+    assert_predicate testpath"jpgapod4.wcs", :exist?
+    system bin"solve-field", "--config", "99.cfg", prefix"examplesapod4.xyls",
                               "--continue", "--dir", "xyls"
-    assert_predicate testpath/"xyls/apod4.solved", :exist?
-    assert_predicate testpath/"xyls/apod4.wcs", :exist?
+    assert_predicate testpath"xylsapod4.solved", :exist?
+    assert_predicate testpath"xylsapod4.wcs", :exist?
   end
 end

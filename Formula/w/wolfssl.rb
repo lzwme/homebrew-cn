@@ -1,15 +1,15 @@
 class Wolfssl < Formula
   desc "Embedded SSL Library written in C"
-  homepage "https://www.wolfssl.com"
-  url "https://github.com/wolfSSL/wolfssl.git",
+  homepage "https:www.wolfssl.com"
+  url "https:github.comwolfSSLwolfssl.git",
       tag:      "v5.6.4-stable",
       revision: "37884f864d6fd9b04f44677cb04da15d0c9d6526"
   license "GPL-2.0-or-later"
-  head "https://github.com/wolfSSL/wolfssl.git", branch: "master"
+  head "https:github.comwolfSSLwolfssl.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+)[._-]stable/i)
+    regex(v?(\d+(?:\.\d+)+)[._-]stablei)
     strategy :github_latest
   end
 
@@ -86,19 +86,19 @@ class Wolfssl < Formula
 
     if OS.mac?
       # Extra flag is stated as a needed for the Mac platform.
-      # https://www.wolfssl.com/docs/wolfssl-manual/ch2/
+      # https:www.wolfssl.comdocswolfssl-manualch2
       # Also, only applies if fastmath is enabled.
       ENV.append_to_cflags "-mdynamic-no-pic"
     end
 
-    system "./autogen.sh"
-    system "./configure", *args
+    system ".autogen.sh"
+    system ".configure", *args
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    system bin/"wolfssl-config", "--cflags", "--libs", "--prefix"
+    system bin"wolfssl-config", "--cflags", "--libs", "--prefix"
   end
 end

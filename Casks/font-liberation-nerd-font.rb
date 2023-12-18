@@ -2,10 +2,10 @@ cask "font-liberation-nerd-font" do
   version "3.1.1"
   sha256 "15db9bfd43c2a7d865e60ba7b07ce4ae68d2365739060510c524f7902dafa2cf"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/LiberationMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}LiberationMono.zip"
   name "Literation Nerd Font families (Liberation Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

@@ -1,7 +1,7 @@
 class Zoxide < Formula
   desc "Shell extension to navigate your filesystem faster"
-  homepage "https://github.com/ajeetdsouza/zoxide"
-  url "https://ghproxy.com/https://github.com/ajeetdsouza/zoxide/archive/refs/tags/v0.9.2.tar.gz"
+  homepage "https:github.comajeetdsouzazoxide"
+  url "https:github.comajeetdsouzazoxidearchiverefstagsv0.9.2.tar.gz"
   sha256 "a6c2d993a02211c3d23b242c2c6faab9a2648be7a45ad1ff0586651ac827e914"
   license "MIT"
 
@@ -21,14 +21,14 @@ class Zoxide < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "contrib/completions/zoxide.bash" => "zoxide"
-    zsh_completion.install "contrib/completions/_zoxide"
-    fish_completion.install "contrib/completions/zoxide.fish"
+    bash_completion.install "contribcompletionszoxide.bash" => "zoxide"
+    zsh_completion.install "contribcompletions_zoxide"
+    fish_completion.install "contribcompletionszoxide.fish"
     share.install "man"
   end
 
   test do
-    assert_equal "", shell_output("#{bin}/zoxide add /").strip
-    assert_equal "/", shell_output("#{bin}/zoxide query").strip
+    assert_equal "", shell_output("#{bin}zoxide add ").strip
+    assert_equal "", shell_output("#{bin}zoxide query").strip
   end
 end

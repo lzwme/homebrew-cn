@@ -1,10 +1,10 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
-  homepage "https://grafana.com"
-  url "https://ghproxy.com/https://github.com/grafana/grafana/archive/refs/tags/v10.2.2.tar.gz"
+  homepage "https:grafana.com"
+  url "https:github.comgrafanagrafanaarchiverefstagsv10.2.2.tar.gz"
   sha256 "2e5e785163667e1ccb2b717b58b9a1b51c1ee1dfe570cb68c613b7e5c0d9d22b"
   license "AGPL-3.0-only"
-  head "https://github.com/grafana/grafana.git", branch: "main"
+  head "https:github.comgrafanagrafana.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53736c528f42b6caa23cb6215e3521fb8f7569fd05b5bd7b60ae81c8d7e33e17"
@@ -17,7 +17,7 @@ class Grafana < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node@18" => :build # TODO: Update node once https://github.com/grafana/grafana/pull/76097 is in release
+  depends_on "node@18" => :build # TODO: Update node once https:github.comgrafanagrafanapull76097 is in release
   depends_on "yarn" => :build
 
   uses_from_macos "zlib"
@@ -37,34 +37,34 @@ class Grafana < Formula
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    bin.install "bin/#{os}-#{arch}/grafana"
-    bin.install "bin/#{os}-#{arch}/grafana-cli"
-    bin.install "bin/#{os}-#{arch}/grafana-server"
+    bin.install "bin#{os}-#{arch}grafana"
+    bin.install "bin#{os}-#{arch}grafana-cli"
+    bin.install "bin#{os}-#{arch}grafana-server"
 
-    (etc/"grafana").mkpath
-    cp "conf/sample.ini", "conf/grafana.ini.example"
-    etc.install "conf/sample.ini" => "grafana/grafana.ini"
-    etc.install "conf/grafana.ini.example" => "grafana/grafana.ini.example"
+    (etc"grafana").mkpath
+    cp "confsample.ini", "confgrafana.ini.example"
+    etc.install "confsample.ini" => "grafanagrafana.ini"
+    etc.install "confgrafana.ini.example" => "grafanagrafana.ini.example"
     pkgshare.install "conf", "public", "tools"
   end
 
   def post_install
-    (var/"log/grafana").mkpath
-    (var/"lib/grafana/plugins").mkpath
+    (var"loggrafana").mkpath
+    (var"libgrafanaplugins").mkpath
   end
 
   service do
-    run [opt_bin/"grafana", "server",
-         "--config", etc/"grafana/grafana.ini",
+    run [opt_bin"grafana", "server",
+         "--config", etc"grafanagrafana.ini",
          "--homepath", opt_pkgshare,
          "--packaging=brew",
-         "cfg:default.paths.logs=#{var}/log/grafana",
-         "cfg:default.paths.data=#{var}/lib/grafana",
-         "cfg:default.paths.plugins=#{var}/lib/grafana/plugins"]
+         "cfg:default.paths.logs=#{var}loggrafana",
+         "cfg:default.paths.data=#{var}libgrafana",
+         "cfg:default.paths.plugins=#{var}libgrafanaplugins"]
     keep_alive true
-    error_log_path var/"log/grafana-stderr.log"
-    log_path var/"log/grafana-stdout.log"
-    working_dir var/"lib/grafana"
+    error_log_path var"loggrafana-stderr.log"
+    log_path var"loggrafana-stdout.log"
+    working_dir var"libgrafana"
   end
 
   test do
@@ -72,7 +72,7 @@ class Grafana < Formula
     require "timeout"
 
     # first test
-    system bin/"grafana", "server", "-v"
+    system bin"grafana", "server", "-v"
 
     # avoid stepping on anything that may be present in this directory
     tdir = File.join(Dir.pwd, "grafana-test")
@@ -85,7 +85,7 @@ class Grafana < Formula
     end
     Dir.chdir(pkgshare)
 
-    res = PTY.spawn(bin/"grafana", "server",
+    res = PTY.spawn(bin"grafana", "server",
       "cfg:default.paths.logs=#{logdir}",
       "cfg:default.paths.data=#{datadir}",
       "cfg:default.paths.plugins=#{plugdir}",

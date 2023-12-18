@@ -2,9 +2,9 @@ cask "mattr-slate" do
   version "1.2.0"
   sha256 "d409ccda9ed09f5647175f8834650e141a7375ced9665bf6af237525665d4966"
 
-  url "https://ghproxy.com/https://github.com/mattr-/slate/releases/download/v#{version}/Slate.zip"
+  url "https:github.commattr-slatereleasesdownloadv#{version}Slate.zip"
   name "Slate"
-  homepage "https://github.com/mattr-/slate"
+  homepage "https:github.commattr-slate"
 
   auto_updates true
   conflicts_with cask: "slate"
@@ -12,9 +12,9 @@ cask "mattr-slate" do
   app "Slate.app"
 
   zap trash: [
-    "~/.slate",
-    "~/.slate.js",
-    "~/Library/Application Support/com.slate.Slate",
+    "~.slate",
+    "~.slate.js",
+    "~LibraryApplication Supportcom.slate.Slate",
   ]
 
   caveats do

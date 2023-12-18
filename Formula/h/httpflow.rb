@@ -1,10 +1,10 @@
 class Httpflow < Formula
   desc "Packet capture and analysis utility similar to tcpdump for HTTP"
-  homepage "https://github.com/six-ddc/httpflow"
-  url "https://ghproxy.com/https://github.com/six-ddc/httpflow/archive/refs/tags/0.0.9.tar.gz"
+  homepage "https:github.comsix-ddchttpflow"
+  url "https:github.comsix-ddchttpflowarchiverefstags0.0.9.tar.gz"
   sha256 "2347bd416641e165669bf1362107499d0bc4524ed9bfbb273ccd3b3dd411e89c"
   license "MIT"
-  head "https://github.com/six-ddc/httpflow.git", branch: "master"
+  head "https:github.comsix-ddchttpflow.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2c7c2232e112599cf10e22ac013df5cf5823f6071292fa91a5252480539c85b7"
@@ -32,6 +32,6 @@ class Httpflow < Formula
   end
 
   test do
-    system "#{bin}/httpflow", "-h"
+    system "#{bin}httpflow", "-h"
   end
 end

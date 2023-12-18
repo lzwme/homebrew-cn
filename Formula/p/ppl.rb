@@ -1,15 +1,15 @@
 class Ppl < Formula
   desc "Parma Polyhedra Library: numerical abstractions for analysis, verification"
-  homepage "https://www.bugseng.com/ppl"
-  url "https://www.bugseng.com/products/ppl/download/ftp/releases/1.2/ppl-1.2.tar.xz"
-  mirror "https://deb.debian.org/debian/pool/main/p/ppl/ppl_1.2.orig.tar.xz"
+  homepage "https:www.bugseng.comppl"
+  url "https:www.bugseng.comproductsppldownloadftpreleases1.2ppl-1.2.tar.xz"
+  mirror "https:deb.debian.orgdebianpoolmainppplppl_1.2.orig.tar.xz"
   sha256 "691f0d5a4fb0e206f4e132fc9132c71d6e33cdda168470d40ac3cf62340e9a60"
   license "GPL-3.0-or-later"
   revision 1
 
   livecheck do
-    url "https://www.bugseng.com/content/ppl-download"
-    regex(/href=.*?ppl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.bugseng.comcontentppl-download"
+    regex(href=.*?ppl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,20 +34,20 @@ class Ppl < Formula
   end
 
   # Fix build failure with clang 5+.
-  # https://www.cs.unipr.it/mantis/view.php?id=2128
-  # http://www.cs.unipr.it/git/gitweb.cgi?p=ppl/ppl.git;a=commit;h=c39f6a07b51f89e365b05ba4147aa2aa448febd7
+  # https:www.cs.unipr.itmantisview.php?id=2128
+  # http:www.cs.unipr.itgitgitweb.cgi?p=pplppl.git;a=commit;h=c39f6a07b51f89e365b05ba4147aa2aa448febd7
   # since 401 error on the `www.cs.unipr.it` links adopt the patch from macports
-  # patch reference, https://github.com/macports/macports-ports/commit/e5de9cc65a8e91fcbb9a3d90911569169f0ccf88
+  # patch reference, https:github.commacportsmacports-portscommite5de9cc65a8e91fcbb9a3d90911569169f0ccf88
   patch :DATA
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--with-gmp=#{Formula["gmp"].opt_prefix}",
                           "--prefix=#{prefix}"
@@ -55,7 +55,7 @@ class Ppl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <ppl_c.h>
       #ifndef PPL_VERSION_MAJOR
       #error "No PPL header"
@@ -66,15 +66,15 @@ class Ppl < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lppl_c", "-lppl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end
 
 __END__
-diff --git a/src/Determinate_inlines.hh b/src/Determinate_inlines.hh
+diff --git asrcDeterminate_inlines.hh bsrcDeterminate_inlines.hh
 index c918b23..de672a0 100644
---- a/src/Determinate_inlines.hh
-+++ b/src/Determinate_inlines.hh
+--- asrcDeterminate_inlines.hh
++++ bsrcDeterminate_inlines.hh
 @@ -289,8 +289,8 @@ operator()(Determinate& x, const Determinate& y) const {
 
  template <typename PSET>
@@ -86,10 +86,10 @@ index c918b23..de672a0 100644
  Determinate<PSET>::lift_op_assign(Binary_Operator_Assign op_assign) {
    return Binary_Operator_Assign_Lifter<Binary_Operator_Assign>(op_assign);
  }
-diff --git a/src/OR_Matrix_inlines.hh b/src/OR_Matrix_inlines.hh
+diff --git asrcOR_Matrix_inlines.hh bsrcOR_Matrix_inlines.hh
 index a5f2856..560f8d6 100644
---- a/src/OR_Matrix_inlines.hh
-+++ b/src/OR_Matrix_inlines.hh
+--- asrcOR_Matrix_inlines.hh
++++ bsrcOR_Matrix_inlines.hh
 @@ -97,7 +97,7 @@ OR_Matrix<T>::Pseudo_Row<U>::Pseudo_Row(const Pseudo_Row<V>& y)
 
  template <typename T>

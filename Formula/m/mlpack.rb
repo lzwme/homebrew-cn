@@ -1,10 +1,10 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
-  homepage "https://www.mlpack.org"
-  url "https://mlpack.org/files/mlpack-4.3.0.tar.gz"
+  homepage "https:www.mlpack.org"
+  url "https:mlpack.orgfilesmlpack-4.3.0.tar.gz"
   sha256 "08cd54f711fde66fc3b6c9db89dc26776f9abf1a6256c77cfa3556e2a56f1a3d"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
-  head "https://github.com/mlpack/mlpack.git", branch: "master"
+  head "https:github.commlpackmlpack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2d245c37a82f630dcbc558e3253e11c53ff6a755f4de0643ba01711772cc82f2"
@@ -27,13 +27,13 @@ class Mlpack < Formula
   depends_on "graphviz"
 
   resource "stb_image" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/3ecc60f/stb_image.h"
+    url "https:raw.githubusercontent.comnothingsstb3ecc60fstb_image.h"
     version "2.28"
     sha256 "38e08c1c5ab8869ae8d605ddaefa85ad3fea24a2964fd63a099c0c0f79c70bcc"
   end
 
   resource "stb_image_write" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/1ee679c/stb_image_write.h"
+    url "https:raw.githubusercontent.comnothingsstb1ee679cstb_image_write.h"
     version "1.16"
     sha256 "cbd5f0ad7a9cf4468affb36354a1d2338034f2c12473cf1a8e32053cb6914a05"
   end
@@ -41,7 +41,7 @@ class Mlpack < Formula
   def install
     resources.each do |r|
       r.stage do
-        (include/"stb").install "#{r.name}.h"
+        (include"stb").install "#{r.name}.h"
       end
     end
 
@@ -52,8 +52,8 @@ class Mlpack < Formula
       -DUSE_OPENMP=OFF
       -DARMADILLO_INCLUDE_DIR=#{Formula["armadillo"].opt_include}
       -DENSMALLEN_INCLUDE_DIR=#{Formula["ensmallen"].opt_include}
-      -DARMADILLO_LIBRARY=#{Formula["armadillo"].opt_lib}/#{shared_library("libarmadillo")}
-      -DSTB_IMAGE_INCLUDE_DIR=#{include/"stb"}
+      -DARMADILLO_LIBRARY=#{Formula["armadillo"].opt_lib}#{shared_library("libarmadillo")}
+      -DSTB_IMAGE_INCLUDE_DIR=#{include"stb"}
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
@@ -61,19 +61,19 @@ class Mlpack < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    doc.install Dir["doc/*"]
-    (pkgshare/"tests").install "src/mlpack/tests/data" # Includes test data.
+    doc.install Dir["doc*"]
+    (pkgshare"tests").install "srcmlpacktestsdata" # Includes test data.
   end
 
   test do
-    system "#{bin}/mlpack_knn",
-      "-r", "#{pkgshare}/tests/data/GroupLensSmall.csv",
+    system "#{bin}mlpack_knn",
+      "-r", "#{pkgshare}testsdataGroupLensSmall.csv",
       "-n", "neighbors.csv",
       "-d", "distances.csv",
       "-k", "5", "-v"
 
-    (testpath/"test.cpp").write <<-EOS
-      #include <mlpack/core.hpp>
+    (testpath"test.cpp").write <<-EOS
+      #include <mlpackcore.hpp>
 
       using namespace mlpack;
 
@@ -85,6 +85,6 @@ class Mlpack < Formula
     EOS
     system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
                     "-larmadillo", "-L#{lib}", "-o", "test"
-    system "./test", "--verbose"
+    system ".test", "--verbose"
   end
 end

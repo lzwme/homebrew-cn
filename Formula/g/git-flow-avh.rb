@@ -1,14 +1,14 @@
 class GitFlowAvh < Formula
   desc "AVH edition of git-flow"
-  homepage "https://github.com/petervanderdoes/gitflow-avh"
+  homepage "https:github.competervanderdoesgitflow-avh"
   license "BSD-2-Clause"
 
   stable do
-    url "https://ghproxy.com/https://github.com/petervanderdoes/gitflow-avh/archive/refs/tags/1.12.3.tar.gz"
+    url "https:github.competervanderdoesgitflow-avharchiverefstags1.12.3.tar.gz"
     sha256 "54e9fd81aa1aa8215c865503dc6377da205653c784d6c97baad3dafd20728e06"
 
     resource "completion" do
-      url "https://ghproxy.com/https://github.com/petervanderdoes/git-flow-completion/archive/refs/tags/0.6.0.tar.gz"
+      url "https:github.competervanderdoesgit-flow-completionarchiverefstags0.6.0.tar.gz"
       sha256 "b1b78b785aa2c06f81cc29fcf03a7dfc451ad482de67ca0d89cdb0f941f5594b"
     end
   end
@@ -28,10 +28,10 @@ class GitFlowAvh < Formula
   end
 
   head do
-    url "https://github.com/petervanderdoes/gitflow-avh.git", branch: "develop"
+    url "https:github.competervanderdoesgitflow-avh.git", branch: "develop"
 
     resource "completion" do
-      url "https://github.com/petervanderdoes/git-flow-completion.git", branch: "develop"
+      url "https:github.competervanderdoesgit-flow-completion.git", branch: "develop"
     end
   end
 
@@ -41,10 +41,10 @@ class GitFlowAvh < Formula
 
   def install
     system "make", "prefix=#{libexec}", "install"
-    (bin/"git-flow").write <<~EOS
-      #!/bin/bash
-      export FLAGS_GETOPT_CMD=#{Formula["gnu-getopt"].opt_bin}/getopt
-      exec "#{libexec}/bin/git-flow" "$@"
+    (bin"git-flow").write <<~EOS
+      #!binbash
+      export FLAGS_GETOPT_CMD=#{Formula["gnu-getopt"].opt_bin}getopt
+      exec "#{libexec}bingit-flow" "$@"
     EOS
 
     resource("completion").stage do
@@ -56,8 +56,8 @@ class GitFlowAvh < Formula
 
   test do
     system "git", "init"
-    system "#{bin}/git-flow", "init", "-d"
-    system "#{bin}/git-flow", "config"
+    system "#{bin}git-flow", "init", "-d"
+    system "#{bin}git-flow", "config"
     assert_equal "develop", shell_output("git symbolic-ref --short HEAD").chomp
   end
 end

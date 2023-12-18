@@ -1,10 +1,10 @@
 class ArxivLatexCleaner < Formula
   desc "Clean LaTeX code to submit to arXiv"
-  homepage "https://github.com/google-research/arxiv-latex-cleaner"
-  url "https://files.pythonhosted.org/packages/2f/e0/cae39e287d000b1b23b2610b9ebdf9954054abbd4ea2525a649497921157/arxiv_latex_cleaner-1.0.2.tar.gz"
+  homepage "https:github.comgoogle-researcharxiv-latex-cleaner"
+  url "https:files.pythonhosted.orgpackages2fe0cae39e287d000b1b23b2610b9ebdf9954054abbd4ea2525a649497921157arxiv_latex_cleaner-1.0.2.tar.gz"
   sha256 "abe151234a42fa3b97bd7e3e52c6f790397fa1c97506b1dd3e0dcf56d466f93d"
   license "Apache-2.0"
-  head "https://github.com/google-research/arxiv-latex-cleaner.git", branch: "main"
+  head "https:github.comgoogle-researcharxiv-latex-cleaner.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c51d6b5e448e6939e40f4cb9ea6ac1af06ce2938ec11c6b69278542b55b82a8"
@@ -33,14 +33,14 @@ class ArxivLatexCleaner < Formula
   end
 
   test do
-    latexdir = testpath/"latex"
+    latexdir = testpath"latex"
     latexdir.mkpath
-    (latexdir/"test.tex").write <<~EOS
+    (latexdir"test.tex").write <<~EOS
       % remove
       keep
     EOS
-    system bin/"arxiv_latex_cleaner", latexdir
-    assert_predicate testpath/"latex_arXiv", :exist?
-    assert_equal "keep", (testpath/"latex_arXiv/test.tex").read.strip
+    system bin"arxiv_latex_cleaner", latexdir
+    assert_predicate testpath"latex_arXiv", :exist?
+    assert_equal "keep", (testpath"latex_arXivtest.tex").read.strip
   end
 end

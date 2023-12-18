@@ -1,10 +1,10 @@
 class OpenTyrian < Formula
   desc "Open-source port of Tyrian"
-  homepage "https://github.com/opentyrian/opentyrian"
-  url "https://ghproxy.com/https://github.com/opentyrian/opentyrian/archive/refs/tags/v2.1.20221123.tar.gz"
+  homepage "https:github.comopentyrianopentyrian"
+  url "https:github.comopentyrianopentyrianarchiverefstagsv2.1.20221123.tar.gz"
   sha256 "e0e8a8b0d61de10a3a65789ace9ea8e8c5d8dc67f3e423d2c852d64da38aeeb9"
   license "GPL-2.0-or-later"
-  head "https://github.com/opentyrian/opentyrian.git", branch: "master"
+  head "https:github.comopentyrianopentyrian.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "b35a65491b3b3e18929614588953e7d05c9a59ddc8037c3524a8d69f0da5a7a7"
@@ -24,22 +24,22 @@ class OpenTyrian < Formula
   depends_on "sdl2_net"
 
   resource "homebrew-test-data" do
-    url "https://camanis.net/tyrian/tyrian21.zip"
+    url "https:camanis.nettyriantyrian21.zip"
     sha256 "7790d09a2a3addcd33c66ef063d5900eb81cc9c342f4807eb8356364dd1d9277"
   end
 
   def install
-    datadir = pkgshare/"data"
+    datadir = pkgshare"data"
     datadir.install resource("homebrew-test-data")
     system "make", "TYRIAN_DIR=#{datadir}"
     bin.install "opentyrian"
   end
 
   def caveats
-    "Save games will be put in ~/.opentyrian"
+    "Save games will be put in ~.opentyrian"
   end
 
   test do
-    system "#{bin}/opentyrian", "--help"
+    system "#{bin}opentyrian", "--help"
   end
 end

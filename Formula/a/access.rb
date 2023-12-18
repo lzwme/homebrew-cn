@@ -1,11 +1,11 @@
 class Access < Formula
   desc "Easiest way to request and grant access without leaving your terminal"
-  homepage "https://indent.com"
-  url "https://github.com/indentapis/access.git",
+  homepage "https:indent.com"
+  url "https:github.comindentapisaccess.git",
       tag:      "v0.10.13",
       revision: "b315c75e461e0a0cc0978960a80ba352ea8ff85a"
   license "Apache-2.0"
-  head "https://github.com/indentapis/access.git", branch: "main"
+  head "https:github.comindentapisaccess.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "747d33dad01a56760cb4d3934856b7a1f591e61d01ab14c4ddd6064a6ecf3329"
@@ -28,16 +28,16 @@ class Access < Formula
       -X main.GitVersion=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/access"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdaccess"
 
     # Install shell completions
-    generate_completions_from_executable(bin/"access", "completion")
+    generate_completions_from_executable(bin"access", "completion")
   end
 
   test do
-    test_file = testpath/"access.yaml"
+    test_file = testpath"access.yaml"
     touch test_file
-    system bin/"access", "config", "set", "space", "some-space"
+    system bin"access", "config", "set", "space", "some-space"
     assert_equal "space: some-space", test_file.read.strip
   end
 end

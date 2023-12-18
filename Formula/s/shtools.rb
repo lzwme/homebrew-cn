@@ -1,10 +1,10 @@
 class Shtools < Formula
   desc "Spherical Harmonic Tools"
-  homepage "https://shtools.github.io/SHTOOLS/"
-  url "https://ghproxy.com/https://github.com/SHTOOLS/SHTOOLS/releases/download/v4.10.4/SHTOOLS-4.10.4.tar.gz"
+  homepage "https:shtools.github.ioSHTOOLS"
+  url "https:github.comSHTOOLSSHTOOLSreleasesdownloadv4.10.4SHTOOLS-4.10.4.tar.gz"
   sha256 "f31ab09e960d85ad23d046fa427b692ffb80915a2c96773725bb83ad90bdec20"
   license "BSD-3-Clause"
-  head "https://github.com/SHTOOLS/SHTOOLS.git", branch: "master"
+  head "https:github.comSHTOOLSSHTOOLS.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99a547af263119505ce2709cb23d536397aedcc4be1eaf3b47e85bb37376d7e3"
@@ -33,15 +33,15 @@ class Shtools < Formula
   end
 
   test do
-    cp_r "#{share}/examples/shtools", testpath
-    system "make", "-C", "shtools/fortran",
+    cp_r "#{share}examplesshtools", testpath
+    system "make", "-C", "shtoolsfortran",
                    "run-fortran-tests-no-timing",
                    "F95=gfortran",
                    "F95FLAGS=-m64 -fPIC -O3 -std=gnu -ffast-math",
-                   "MODFLAG=-I#{HOMEBREW_PREFIX}/include",
-                   "LIBPATH=#{HOMEBREW_PREFIX}/lib",
+                   "MODFLAG=-I#{HOMEBREW_PREFIX}include",
+                   "LIBPATH=#{HOMEBREW_PREFIX}lib",
                    "LIBNAME=SHTOOLS",
-                   "FFTW=-L #{HOMEBREW_PREFIX}/lib -lfftw3 -lm",
+                   "FFTW=-L #{HOMEBREW_PREFIX}lib -lfftw3 -lm",
                    "LAPACK=-L #{Formula["openblas"].opt_lib} -lopenblas",
                    "BLAS="
   end

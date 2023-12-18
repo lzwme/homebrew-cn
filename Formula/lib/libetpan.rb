@@ -1,10 +1,10 @@
 class Libetpan < Formula
   desc "Portable mail library handling several protocols"
-  homepage "https://www.etpan.org/libetpan.html"
-  url "https://ghproxy.com/https://github.com/dinhvh/libetpan/archive/refs/tags/1.9.4.tar.gz"
+  homepage "https:www.etpan.orglibetpan.html"
+  url "https:github.comdinhvhlibetpanarchiverefstags1.9.4.tar.gz"
   sha256 "82ec8ea11d239c9967dbd1717cac09c8330a558e025b3e4dc6a7594e80d13bb1"
   license "BSD-3-Clause"
-  head "https://github.com/dinhvh/libetpan.git", branch: "master"
+  head "https:github.comdinhvhlibetpan.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "f9e105af0d1146c8ce972497fd1ee11c47d2d7a84ffd1c9330e486871b5657da"
@@ -24,28 +24,28 @@ class Libetpan < Formula
 
   def install
     xcodebuild "-arch", Hardware::CPU.arch,
-               "-project", "build-mac/libetpan.xcodeproj",
+               "-project", "build-maclibetpan.xcodeproj",
                "-scheme", "static libetpan",
                "-configuration", "Release",
-               "SYMROOT=build/libetpan",
+               "SYMROOT=buildlibetpan",
                "build"
 
     xcodebuild "-arch", Hardware::CPU.arch,
-               "-project", "build-mac/libetpan.xcodeproj",
+               "-project", "build-maclibetpan.xcodeproj",
                "-scheme", "libetpan",
                "-configuration", "Release",
-               "SYMROOT=build/libetpan",
+               "SYMROOT=buildlibetpan",
                "build"
 
-    lib.install "build-mac/build/libetpan/Release/libetpan.a"
-    frameworks.install "build-mac/build/libetpan/Release/libetpan.framework"
-    include.install buildpath.glob("build-mac/build/libetpan/Release/include/**")
+    lib.install "build-macbuildlibetpanReleaselibetpan.a"
+    frameworks.install "build-macbuildlibetpanReleaselibetpan.framework"
+    include.install buildpath.glob("build-macbuildlibetpanReleaseinclude**")
     bin.install "libetpan-config"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libetpan/libetpan.h>
+    (testpath"test.c").write <<~EOS
+      #include <libetpanlibetpan.h>
       #include <string.h>
       #include <stdlib.h>
 
@@ -55,6 +55,6 @@ class Libetpan < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-letpan", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

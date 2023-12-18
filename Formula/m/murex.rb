@@ -1,10 +1,10 @@
 class Murex < Formula
   desc "Bash-like shell designed for greater command-line productivity and safer scripts"
-  homepage "https://murex.rocks"
-  url "https://ghproxy.com/https://github.com/lmorg/murex/archive/refs/tags/v5.3.4000.tar.gz"
+  homepage "https:murex.rocks"
+  url "https:github.comlmorgmurexarchiverefstagsv5.3.4000.tar.gz"
   sha256 "cc46a7c4dbc15de9a9ef0b23d3708aabed462afa4d565ac992d3052cea58e760"
   license "GPL-2.0-only"
-  head "https://github.com/lmorg/murex.git", branch: "master"
+  head "https:github.comlmorgmurex.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f1659796d585ff2ed87016abd316257321bb8de515b6a9fdcc2efc1bc3f6d9c"
@@ -23,7 +23,7 @@ class Murex < Formula
   end
 
   test do
-    system "#{bin}/murex", "--run-tests"
-    assert_equal "homebrew", shell_output("#{bin}/murex -c 'echo homebrew'").chomp
+    system "#{bin}murex", "--run-tests"
+    assert_equal "homebrew", shell_output("#{bin}murex -c 'echo homebrew'").chomp
   end
 end

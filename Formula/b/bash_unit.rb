@@ -1,7 +1,7 @@
 class BashUnit < Formula
   desc "Bash unit testing enterprise edition framework for professionals"
-  homepage "https://github.com/pgrange/bash_unit"
-  url "https://ghproxy.com/https://github.com/pgrange/bash_unit/archive/refs/tags/v2.1.0.tar.gz"
+  homepage "https:github.compgrangebash_unit"
+  url "https:github.compgrangebash_unitarchiverefstagsv2.1.0.tar.gz"
   sha256 "51b2c9c906c414efb403b6fbf02cfb77d97b442043b29e39c1d6fddc8806972f"
   license "GPL-3.0-only"
 
@@ -13,16 +13,16 @@ class BashUnit < Formula
 
   def install
     bin.install "bash_unit"
-    man1.install "docs/man/man1/bash_unit.1"
+    man1.install "docsmanman1bash_unit.1"
   end
 
   test do
-    (testpath/"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~EOS
       test_addition() {
         RES="$(echo 2+2 | bc)"
         assert_equals "${RES}" "4"
       }
     EOS
-    assert "addition", shell_output("#{bin}/bash_unit test.sh")
+    assert "addition", shell_output("#{bin}bash_unit test.sh")
   end
 end

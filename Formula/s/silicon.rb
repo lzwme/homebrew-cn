@@ -1,7 +1,7 @@
 class Silicon < Formula
   desc "Create beautiful image of your source code"
-  homepage "https://github.com/Aloxaf/silicon/"
-  url "https://ghproxy.com/https://github.com/Aloxaf/silicon/archive/refs/tags/v0.5.2.tar.gz"
+  homepage "https:github.comAloxafsilicon"
+  url "https:github.comAloxafsiliconarchiverefstagsv0.5.2.tar.gz"
   sha256 "815d41775dd9cd399650addf8056f803f3f57e68438e8b38445ee727a56b4b2d"
   license "MIT"
 
@@ -31,7 +31,7 @@ class Silicon < Formula
   end
 
   test do
-    (testpath/"test.rs").write <<~EOF
+    (testpath"test.rs").write <<~EOF
       fn factorial(n: u64) -> u64 {
           match n {
               0 => 1,
@@ -44,8 +44,8 @@ class Silicon < Formula
       }
     EOF
 
-    system bin/"silicon", "-o", "output.png", "test.rs"
-    assert_predicate testpath/"output.png", :exist?
+    system bin"silicon", "-o", "output.png", "test.rs"
+    assert_predicate testpath"output.png", :exist?
     expected_size = [894, 630]
     assert_equal expected_size, File.read("output.png")[0x10..0x18].unpack("NN")
   end

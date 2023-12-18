@@ -1,10 +1,10 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
-  homepage "https://brunolevy.github.io/geogram/"
-  url "https://ghproxy.com/https://github.com/BrunoLevy/geogram/releases/download/v1.8.6/geogram_1.8.6.tar.gz"
+  homepage "https:brunolevy.github.iogeogram"
+  url "https:github.comBrunoLevygeogramreleasesdownloadv1.8.6geogram_1.8.6.tar.gz"
   sha256 "5ea85ae4756a0f6028d33fbe44a71074c6549ad31be5e6750cc24456b7cd5331"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
-  head "https://github.com/BrunoLevy/geogram.git", branch: "main"
+  head "https:github.comBrunoLevygeogram.git", branch: "main"
 
   livecheck do
     url :stable
@@ -29,28 +29,28 @@ class Geogram < Formula
   end
 
   def install
-    (buildpath/"CMakeOptions.txt").append_lines <<~EOS
+    (buildpath"CMakeOptions.txt").append_lines <<~EOS
       set(CMAKE_INSTALL_PREFIX #{prefix})
       set(GEOGRAM_USE_SYSTEM_GLFW3 ON)
     EOS
 
-    system "./configure.sh"
+    system ".configure.sh"
     platform = OS.mac? ? "Darwin-clang" : "Linux64-gcc"
-    cd "build/#{platform}-dynamic-Release" do
+    cd "build#{platform}-dynamic-Release" do
       system "make", "install"
     end
 
-    (share/"cmake/Modules").install Dir[lib/"cmake/modules/*"]
+    (share"cmakeModules").install Dir[lib"cmakemodules*"]
   end
 
   test do
     resource "homebrew-bunny" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/FreeCAD/Examples/be0b4f9/Point_cloud_ExampleFiles/PointCloud-Data_Stanford-Bunny.asc"
+      url "https:raw.githubusercontent.comFreeCADExamplesbe0b4f9Point_cloud_ExampleFilesPointCloud-Data_Stanford-Bunny.asc"
       sha256 "4fc5496098f4f4aa106a280c24255075940656004c6ef34b3bf3c78989cbad08"
     end
 
     resource("homebrew-bunny").stage { testpath.install Dir["*"].first => "bunny.xyz" }
-    system "#{bin}/vorpalite", "profile=reconstruct", "bunny.xyz", "bunny.meshb"
-    assert_predicate testpath/"bunny.meshb", :exist?, "bunny.meshb should exist!"
+    system "#{bin}vorpalite", "profile=reconstruct", "bunny.xyz", "bunny.meshb"
+    assert_predicate testpath"bunny.meshb", :exist?, "bunny.meshb should exist!"
   end
 end

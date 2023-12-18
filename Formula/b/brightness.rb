@@ -1,7 +1,7 @@
 class Brightness < Formula
   desc "Change macOS display brightness from the command-line"
-  homepage "https://github.com/nriley/brightness"
-  url "https://ghproxy.com/https://github.com/nriley/brightness/archive/refs/tags/1.2.tar.gz"
+  homepage "https:github.comnrileybrightness"
+  url "https:github.comnrileybrightnessarchiverefstags1.2.tar.gz"
   sha256 "6094c9f0d136f4afaa823d299f5ea6100061c1cec7730bf45c155fd98761f86b"
   license "BSD-2-Clause"
 
@@ -29,6 +29,6 @@ class Brightness < Formula
   end
 
   test do
-    system "#{bin}/brightness", "-l"
+    system "#{bin}brightness", "-l"
   end
 end

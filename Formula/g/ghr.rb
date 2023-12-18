@@ -1,7 +1,7 @@
 class Ghr < Formula
   desc "Upload multiple artifacts to GitHub Release in parallel"
-  homepage "https://tcnksm.github.io/ghr"
-  url "https://ghproxy.com/https://github.com/tcnksm/ghr/archive/refs/tags/v0.16.2.tar.gz"
+  homepage "https:tcnksm.github.ioghr"
+  url "https:github.comtcnksmghrarchiverefstagsv0.16.2.tar.gz"
   sha256 "b4125f0cf58b1ad1d2ebdb708397a5d82e7f12f02222f7a3dff9c11d9e053654"
   license "MIT"
 
@@ -24,6 +24,6 @@ class Ghr < Formula
   test do
     ENV["GITHUB_TOKEN"] = nil
     args = "-username testbot -repository #{testpath} v#{version} #{Dir.pwd}"
-    assert_includes "token not found", shell_output("#{bin}/ghr #{args}", 15)
+    assert_includes "token not found", shell_output("#{bin}ghr #{args}", 15)
   end
 end

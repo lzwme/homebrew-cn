@@ -2,11 +2,11 @@ cask "angband" do
   version "4.2.5"
   sha256 "ea04557f8ad46d7e446fd4e76324774743bb6b073f6fe9b803256776707bbc66"
 
-  url "https://ghproxy.com/https://github.com/angband/angband/releases/download/#{version}/Angband-#{version}-osx.dmg",
-      verified: "github.com/angband/angband/"
+  url "https:github.comangbandangbandreleasesdownload#{version}Angband-#{version}-osx.dmg",
+      verified: "github.comangbandangband"
   name "Angband"
   desc "Dungeon exploration game"
-  homepage "https://angband.github.io/angband/"
+  homepage "https:angband.github.ioangband"
 
   livecheck do
     url :url
@@ -18,8 +18,8 @@ cask "angband" do
   app "Angband.app"
 
   zap trash: [
-    "~/Documents/Angband",
-    "~/Library/Preferences/org.rephial.angband.plist",
-    "~/Library/Saved Application State/org.rephial.angband.savedState",
+    "~DocumentsAngband",
+    "~LibraryPreferencesorg.rephial.angband.plist",
+    "~LibrarySaved Application Stateorg.rephial.angband.savedState",
   ]
 end

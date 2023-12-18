@@ -1,7 +1,7 @@
 class OcamlZarith < Formula
   desc "OCaml library for arbitrary-precision arithmetic"
-  homepage "https://github.com/ocaml/Zarith"
-  url "https://ghproxy.com/https://github.com/ocaml/Zarith/archive/refs/tags/release-1.13.tar.gz"
+  homepage "https:github.comocamlZarith"
+  url "https:github.comocamlZaritharchiverefstagsrelease-1.13.tar.gz"
   sha256 "a5826d33fea0103ad6e66f92583d8e075fb77976de893ffdd73ada0409b3f83b"
   license "LGPL-2.0-only"
   revision 1
@@ -21,38 +21,38 @@ class OcamlZarith < Formula
   depends_on "ocaml"
 
   def install
-    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
-    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    # Work around for https:github.comHomebrewhomebrew-test-botissues805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec"findlib.conf"
     end
 
-    ENV["OCAMLFIND_DESTDIR"] = lib/"ocaml"
+    ENV["OCAMLFIND_DESTDIR"] = lib"ocaml"
 
-    (lib/"ocaml").mkpath
-    cp Formula["ocaml"].opt_lib/"ocaml/Makefile.config", lib/"ocaml"
+    (lib"ocaml").mkpath
+    cp Formula["ocaml"].opt_lib"ocamlMakefile.config", lib"ocaml"
 
-    # install in #{lib}/ocaml not #{HOMEBREW_PREFIX}/lib/ocaml
-    inreplace lib/"ocaml/Makefile.config" do |s|
+    # install in #{lib}ocaml not #{HOMEBREW_PREFIX}libocaml
+    inreplace lib"ocamlMakefile.config" do |s|
       s.change_make_var! "prefix", prefix
     end
 
     ENV.deparallelize
-    system "./configure"
+    system ".configure"
     system "make"
-    (lib/"ocaml/stublibs").mkpath # `make install` assumes this directory exists
-    system "make", "install", "STDLIBDIR=#{lib}/ocaml"
+    (lib"ocamlstublibs").mkpath # `make install` assumes this directory exists
+    system "make", "install", "STDLIBDIR=#{lib}ocaml"
 
     pkgshare.install "tests"
 
-    rm lib/"ocaml/Makefile.config" # avoid conflict with ocaml
+    rm lib"ocamlMakefile.config" # avoid conflict with ocaml
   end
 
   test do
-    cp_r pkgshare/"tests/.", "."
-    system Formula["ocaml"].opt_bin/"ocamlopt", "-I", lib/"ocaml/zarith",
-           "-ccopt", "-L#{lib}/ocaml -L#{Formula["gmp"].opt_lib}",
+    cp_r pkgshare"tests.", "."
+    system Formula["ocaml"].opt_bin"ocamlopt", "-I", lib"ocamlzarith",
+           "-ccopt", "-L#{lib}ocaml -L#{Formula["gmp"].opt_lib}",
            "zarith.cmxa", "-o", "zq.exe", "zq.ml"
     expected = File.read("zq.output64", mode: "rb")
-    assert_equal expected, shell_output("./zq.exe")
+    assert_equal expected, shell_output(".zq.exe")
   end
 end

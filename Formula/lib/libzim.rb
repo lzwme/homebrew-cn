@@ -1,7 +1,7 @@
 class Libzim < Formula
   desc "Reference implementation of the ZIM specification"
-  homepage "https://github.com/openzim/libzim"
-  url "https://ghproxy.com/https://github.com/openzim/libzim/archive/refs/tags/9.0.0.tar.gz"
+  homepage "https:github.comopenzimlibzim"
+  url "https:github.comopenzimlibzimarchiverefstags9.0.0.tar.gz"
   sha256 "681f0419d421be05ffd14dbab65c42103ebffb86deceed70b8bd6f9b0590ecd6"
   license "GPL-2.0-or-later"
 
@@ -33,17 +33,17 @@ class Libzim < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include <zim/version.h>
+      #include <zimversion.h>
       int main(void) {
-        zim::printVersions(); // first line should print "libzim <version>"
+        zim::printVersions();  first line should print "libzim <version>"
         return 0;
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lzim", "-o", "test", "-std=c++11"
 
     # Assert the first line of output contains "libzim <version>"
-    assert_match "libzim #{version}", shell_output("./test")
+    assert_match "libzim #{version}", shell_output(".test")
   end
 end

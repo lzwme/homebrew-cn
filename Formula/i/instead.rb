@@ -1,7 +1,7 @@
 class Instead < Formula
   desc "Interpreter of simple text adventures"
-  homepage "https://instead.hugeping.ru/"
-  url "https://ghproxy.com/https://github.com/instead-hub/instead/archive/refs/tags/3.5.1.tar.gz"
+  homepage "https:instead.hugeping.ru"
+  url "https:github.cominstead-hubinsteadarchiverefstags3.5.1.tar.gz"
   sha256 "53380f94be7f1ec46de309d513f7fe62a1c63d607a247715d87815e83a9c7d63"
   license "MIT"
   revision 1
@@ -35,6 +35,6 @@ class Instead < Formula
   end
 
   test do
-    assert_match "INSTEAD #{version} ", shell_output("#{bin}/instead -h 2>&1")
+    assert_match "INSTEAD #{version} ", shell_output("#{bin}instead -h 2>&1")
   end
 end

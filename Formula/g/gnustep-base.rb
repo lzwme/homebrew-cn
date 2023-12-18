@@ -1,13 +1,13 @@
 class GnustepBase < Formula
   desc "Library of general-purpose, non-graphical Objective C objects"
-  homepage "https://github.com/gnustep/libs-base"
-  url "https://ghproxy.com/https://github.com/gnustep/libs-base/releases/download/base-1_29_0/gnustep-base-1.29.0.tar.gz"
+  homepage "https:github.comgnusteplibs-base"
+  url "https:github.comgnusteplibs-basereleasesdownloadbase-1_29_0gnustep-base-1.29.0.tar.gz"
   sha256 "fa58eda665c3e0b9c420dc32bb3d51247a407c944d82e5eed1afe8a2b943ef37"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(/^\D*?(\d+(?:[._]\d+)+)$/i)
+    regex(^\D*?(\d+(?:[._]\d+)+)$i)
     strategy :github_latest do |json, regex|
       match = json["tag_name"]&.match(regex)
       next if match.blank?
@@ -43,32 +43,32 @@ class GnustepBase < Formula
   end
 
   # Fix build with new libxml2.
-  # https://github.com/gnustep/libs-base/pull/295
+  # https:github.comgnusteplibs-basepull295
   patch do
-    url "https://github.com/gnustep/libs-base/commit/37913d006d96a6bdcb963f4ca4889888dcce6094.patch?full_index=1"
+    url "https:github.comgnusteplibs-basecommit37913d006d96a6bdcb963f4ca4889888dcce6094.patch?full_index=1"
     sha256 "57e353fedc530c82036184da487c25e006a75a4513e2a9ee33e5109446cf0534"
   end
 
   def install
     ENV.prepend_path "PATH", Formula["gnustep-make"].libexec
     ENV["GNUSTEP_MAKEFILES"] = if OS.mac?
-      Formula["gnustep-make"].opt_prefix/"Library/GNUstep/Makefiles"
+      Formula["gnustep-make"].opt_prefix"LibraryGNUstepMakefiles"
     else
-      Formula["gnustep-make"].share/"GNUstep/Makefiles"
+      Formula["gnustep-make"].share"GNUstepMakefiles"
     end
 
     if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
-      ENV["ICU_CFLAGS"] = "-I#{sdk}/usr/include"
-      ENV["ICU_LIBS"] = "-L#{sdk}/usr/lib -licucore"
+      ENV["ICU_CFLAGS"] = "-I#{sdk}usrinclude"
+      ENV["ICU_LIBS"] = "-L#{sdk}usrlib -licucore"
 
       # Fix compile with newer Clang
       ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
     end
 
     # Don't let gnustep-base try to install its makefiles in cellar of gnustep-make.
-    inreplace "Makefile.postamble", "$(DESTDIR)$(GNUSTEP_MAKEFILES)", share/"GNUstep/Makefiles"
+    inreplace "Makefile.postamble", "$(DESTDIR)$(GNUSTEP_MAKEFILES)", share"GNUstepMakefiles"
 
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install", "GNUSTEP_HEADERS=#{include}",
                               "GNUSTEP_LIBRARY=#{share}",
                               "GNUSTEP_LOCAL_DOC_MAN=#{man}",
@@ -77,13 +77,13 @@ class GnustepBase < Formula
   end
 
   test do
-    (testpath/"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <test>
-        <text>I'm an XML document.</text>
-      </test>
+        <text>I'm an XML document.<text>
+      <test>
     EOS
 
-    assert_match "Validation failed: no DTD found", shell_output("#{bin}/xmlparse test.xml 2>&1")
+    assert_match "Validation failed: no DTD found", shell_output("#{bin}xmlparse test.xml 2>&1")
   end
 end

@@ -2,12 +2,12 @@ cask "font-fira-sans-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/firasanscondensed"
+      only_path: "oflfirasanscondensed"
   name "Fira Sans Condensed"
-  homepage "https://fonts.google.com/specimen/Fira+Sans+Condensed"
+  homepage "https:fonts.google.comspecimenFira+Sans+Condensed"
 
   font "FiraSansCondensed-Black.ttf"
   font "FiraSansCondensed-BlackItalic.ttf"

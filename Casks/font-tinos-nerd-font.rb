@@ -2,10 +2,10 @@ cask "font-tinos-nerd-font" do
   version "3.1.1"
   sha256 "be3072b0af54b699a99385a74572a2f4b6769d6960cbcdfc691db2b22b257bfd"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Tinos.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Tinos.zip"
   name "Tinos Nerd Font (Tinos)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

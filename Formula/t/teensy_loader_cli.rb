@@ -1,10 +1,10 @@
 class TeensyLoaderCli < Formula
   desc "Command-line integration for Teensy USB development boards"
-  homepage "https://www.pjrc.com/teensy/loader_cli.html"
-  url "https://ghproxy.com/https://github.com/PaulStoffregen/teensy_loader_cli/archive/refs/tags/2.2.tar.gz"
+  homepage "https:www.pjrc.comteensyloader_cli.html"
+  url "https:github.comPaulStoffregenteensy_loader_cliarchiverefstags2.2.tar.gz"
   sha256 "103c691f412d04906c4f46038c234d3e5f78322c1b78ded102df9f900724cd54"
   license "GPL-3.0-only"
-  head "https://github.com/PaulStoffregen/teensy_loader_cli.git", branch: "master"
+  head "https:github.comPaulStoffregenteensy_loader_cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d71b36f5e961b3d6bd984e4b0ae10e028879a4ce8e83f3c035b29c6d96efb84d"
@@ -26,12 +26,12 @@ class TeensyLoaderCli < Formula
   def install
     if OS.mac?
       ENV["OS"] = "MACOSX"
-      ENV["SDK"] = MacOS.sdk_path || "/"
+      ENV["SDK"] = MacOS.sdk_path || ""
 
       # Work around "Error opening HID Manager" by disabling HID Manager check. Port of alswl's fix.
-      # Ref: https://github.com/alswl/teensy_loader_cli/commit/9c16bb0add3ba847df5509328ad6bd5bc09d9ecd
-      # Ref: https://forum.pjrc.com/threads/36546-teensy_loader_cli-on-OSX-quot-Error-opening-HID-Manager-quot
-      inreplace "teensy_loader_cli.c", /ret != kIOReturnSuccess/, "0"
+      # Ref: https:github.comalswlteensy_loader_clicommit9c16bb0add3ba847df5509328ad6bd5bc09d9ecd
+      # Ref: https:forum.pjrc.comthreads36546-teensy_loader_cli-on-OSX-quot-Error-opening-HID-Manager-quot
+      inreplace "teensy_loader_cli.c", ret != kIOReturnSuccess, "0"
     end
 
     system "make"
@@ -39,7 +39,7 @@ class TeensyLoaderCli < Formula
   end
 
   test do
-    output = shell_output("#{bin}/teensy_loader_cli 2>&1", 1)
+    output = shell_output("#{bin}teensy_loader_cli 2>&1", 1)
     assert_match "Filename must be specified", output
   end
 end

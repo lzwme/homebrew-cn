@@ -1,7 +1,7 @@
 class Cfv < Formula
   desc "Test and create various files (e.g., .sfv, .csv, .crc., .torrent)"
-  homepage "https://github.com/cfv-project/cfv"
-  url "https://files.pythonhosted.org/packages/db/54/c5926a7846a895b1e096854f32473bcbdcb2aaff320995f3209f0a159be4/cfv-3.0.0.tar.gz"
+  homepage "https:github.comcfv-projectcfv"
+  url "https:files.pythonhosted.orgpackagesdb54c5926a7846a895b1e096854f32473bcbdcb2aaff320995f3209f0a159be4cfv-3.0.0.tar.gz"
   sha256 "2530f08b889c92118658ff4c447ccf83ac9d2973af8dae4d33cf5bed1865b376"
   license "GPL-2.0-or-later"
 
@@ -25,16 +25,16 @@ class Cfv < Formula
 
   def install
     # fix man folder location issue
-    inreplace "setup.py", "'man/man1'", "'share/man/man1'"
+    inreplace "setup.py", "'manman1'", "'sharemanman1'"
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    (testpath/"test/test.txt").write "Homebrew!"
+    (testpath"testtest.txt").write "Homebrew!"
     cd "test" do
-      system bin/"cfv", "-t", "sha1", "-C", "test.txt"
-      assert_predicate Pathname.pwd/"test.sha1", :exist?
+      system bin"cfv", "-t", "sha1", "-C", "test.txt"
+      assert_predicate Pathname.pwd"test.sha1", :exist?
       assert_match "9afe8b4d99fb2dd5f6b7b3e548b43a038dc3dc38", File.read("test.sha1")
     end
   end

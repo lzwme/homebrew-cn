@@ -1,10 +1,10 @@
 class AivenClient < Formula
   desc "Official command-line client for Aiven"
-  homepage "https://docs.aiven.io/docs/tools/cli"
-  url "https://files.pythonhosted.org/packages/b3/dc/869bcceb3e6f33ebd8e7518fb70e522af975e7f3d78eda23642f640c393c/aiven_client-4.0.0.tar.gz"
+  homepage "https:docs.aiven.iodocstoolscli"
+  url "https:files.pythonhosted.orgpackagesb3dc869bcceb3e6f33ebd8e7518fb70e522af975e7f3d78eda23642f640c393caiven_client-4.0.0.tar.gz"
   sha256 "7c3e8faaa180da457cf67bf3be76fa610986302506f99b821b529956fd61cc50"
   license "Apache-2.0"
-  head "https://github.com/aiven/aiven-client.git", branch: "main"
+  head "https:github.comaivenaiven-client.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -33,7 +33,7 @@ class AivenClient < Formula
   end
 
   test do
-    assert_match "aiven-client", shell_output("#{bin}/avn --version")
-    assert_match "UserError: not authenticated", pipe_output("AIVEN_CONFIG_DIR=/tmp #{bin}/avn user info 2>&1")
+    assert_match "aiven-client", shell_output("#{bin}avn --version")
+    assert_match "UserError: not authenticated", pipe_output("AIVEN_CONFIG_DIR=tmp #{bin}avn user info 2>&1")
   end
 end

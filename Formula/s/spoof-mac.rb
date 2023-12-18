@@ -1,11 +1,11 @@
 class SpoofMac < Formula
   desc "Spoof your MAC address in macOS"
-  homepage "https://github.com/feross/SpoofMAC"
-  url "https://files.pythonhosted.org/packages/9c/59/cc52a4c5d97b01fac7ff048353f8dc96f217eadc79022f78455e85144028/SpoofMAC-2.1.1.tar.gz"
+  homepage "https:github.comferossSpoofMAC"
+  url "https:files.pythonhosted.orgpackages9c59cc52a4c5d97b01fac7ff048353f8dc96f217eadc79022f78455e85144028SpoofMAC-2.1.1.tar.gz"
   sha256 "48426efe033a148534e1d4dc224c4f1b1d22299c286df963c0b56ade4c7dc297"
   license "MIT"
   revision 4
-  head "https://github.com/feross/SpoofMAC.git", branch: "master"
+  head "https:github.comferossSpoofMAC.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -43,20 +43,20 @@ class SpoofMac < Formula
           "spoof-mac list"
 
       If you wish to change interface randomized at startup change the plist line:
-          <string>en0</string>
+          <string>en0<string>
       to e.g.:
-          <string>en1</string>
+          <string>en1<string>
     EOS
   end
 
   service do
-    run [opt_bin/"spoof-mac", "randomize", "en0"]
+    run [opt_bin"spoof-mac", "randomize", "en0"]
     require_root true
-    log_path "/dev/null"
-    error_log_path "/dev/null"
+    log_path "devnull"
+    error_log_path "devnull"
   end
 
   test do
-    system "#{bin}/spoof-mac", "list", "--wifi"
+    system "#{bin}spoof-mac", "list", "--wifi"
   end
 end

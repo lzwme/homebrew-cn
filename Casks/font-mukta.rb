@@ -2,12 +2,12 @@ cask "font-mukta" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/mukta"
+      only_path: "oflmukta"
   name "Mukta"
-  homepage "https://fonts.google.com/specimen/Mukta"
+  homepage "https:fonts.google.comspecimenMukta"
 
   font "Mukta-Bold.ttf"
   font "Mukta-ExtraBold.ttf"

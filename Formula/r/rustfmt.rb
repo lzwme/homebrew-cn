@@ -1,10 +1,10 @@
 class Rustfmt < Formula
   desc "Format Rust code"
-  homepage "https://rust-lang.github.io/rustfmt/"
-  url "https://ghproxy.com/https://github.com/rust-lang/rustfmt/archive/refs/tags/v1.6.0.tar.gz"
+  homepage "https:rust-lang.github.iorustfmt"
+  url "https:github.comrust-langrustfmtarchiverefstagsv1.6.0.tar.gz"
   sha256 "32ba647a9715efe2699acd3d011e9f113891be02ac011d314b955a9beea723a2"
   license any_of: ["MIT", "Apache-2.0"]
-  head "https://github.com/rust-lang/rustfmt.git", branch: "master"
+  head "https:github.comrust-langrustfmt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "bb6bd589b60b0d4fbd57be1bde5370777f380bac7aa43e8688673d712d83f056"
@@ -24,24 +24,24 @@ class Rustfmt < Formula
 
   def install
     system "rustup-init", "--profile", "minimal", "-qy", "--no-modify-path", "--default-toolchain", "none"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     ENV["CFG_RELEASE_CHANNEL"] = "stable"
     system "cargo", "install", *std_cargo_args
 
     # Bundle the shared libraries used by the executables.
-    # https://github.com/NixOS/nixpkgs/blob/6cee3b5893090b0f5f0a06b4cf42ca4e60e5d222/pkgs/development/compilers/rust/rustfmt.nix#L18-L27
+    # https:github.comNixOSnixpkgsblob6cee3b5893090b0f5f0a06b4cf42ca4e60e5d222pkgsdevelopmentcompilersrustrustfmt.nix#L18-L27
     bundled_dylibs = %w[librustc_driver libstd]
     bundled_dylibs << "libLLVM" if OS.linux?
     bundled_dylibs.each do |libname|
-      dylib = buildpath.glob(".brew_home/.rustup/toolchains/*/lib/#{shared_library("#{libname}-*")}")
+      dylib = buildpath.glob(".brew_home.rustuptoolchains*lib#{shared_library("#{libname}-*")}")
       libexec.install dylib
     end
 
     # Fix up rpaths.
     bins_to_patch = [
-      bin/"rustfmt",
-      bin/"git-rustfmt",
+      bin"rustfmt",
+      bin"git-rustfmt",
     ]
     bins_to_patch << libexec.glob(shared_library("librustc_driver-*")).first if OS.linux?
     bins_to_patch.each do |bin|
@@ -60,7 +60,7 @@ class Rustfmt < Formula
   test do
     system "cargo", "new", "hello_world", "--bin"
     cd "hello_world" do
-      system bin/"rustfmt", "--check", "./src/main.rs"
+      system bin"rustfmt", "--check", ".srcmain.rs"
     end
 
     # Make sure all the executables work after patching.

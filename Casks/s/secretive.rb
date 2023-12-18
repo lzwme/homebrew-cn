@@ -17,19 +17,19 @@ cask "secretive" do
     end
   end
 
-  url "https://ghproxy.com/https://github.com/maxgoedjen/secretive/releases/download/v#{version}/Secretive.zip"
+  url "https:github.commaxgoedjensecretivereleasesdownloadv#{version}Secretive.zip"
   name "Secretive"
   desc "Store SSH keys in the Secure Enclave"
-  homepage "https://github.com/maxgoedjen/secretive"
+  homepage "https:github.commaxgoedjensecretive"
 
   depends_on macos: ">= :catalina"
 
   app "Secretive.app"
 
   zap trash: [
-    "~/Library/Application Scripts/com.maxgoedjen.Secretive.Host",
-    "~/Library/Application Scripts/com.maxgoedjen.Secretive.SecretAgent",
-    "~/Library/Containers/com.maxgoedjen.Secretive.Host",
-    "~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent",
+    "~LibraryApplication Scriptscom.maxgoedjen.Secretive.Host",
+    "~LibraryApplication Scriptscom.maxgoedjen.Secretive.SecretAgent",
+    "~LibraryContainerscom.maxgoedjen.Secretive.Host",
+    "~LibraryContainerscom.maxgoedjen.Secretive.SecretAgent",
   ]
 end

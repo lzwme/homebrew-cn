@@ -1,14 +1,14 @@
 class R3 < Formula
   desc "High-performance URL router library"
-  homepage "https://github.com/c9s/r3"
-  url "https://ghproxy.com/https://github.com/c9s/r3/archive/refs/tags/1.3.4.tar.gz"
+  homepage "https:github.comc9sr3"
+  url "https:github.comc9sr3archiverefstags1.3.4.tar.gz"
   sha256 "db1fb91e51646e523e78b458643c0250231a2640488d5781109f95bd77c5eb82"
   license "MIT"
-  head "https://github.com/c9s/r3.git", branch: "master"
+  head "https:github.comc9sr3.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,8 +36,8 @@ class R3 < Formula
   depends_on "pcre"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -46,7 +46,7 @@ class R3 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "r3.h"
       int main() {
           node * n = r3_tree_create(1);
@@ -55,7 +55,7 @@ class R3 < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-o", "test",
-                  "-L#{lib}", "-lr3", "-I#{include}/r3"
-    system "./test"
+                  "-L#{lib}", "-lr3", "-I#{include}r3"
+    system ".test"
   end
 end

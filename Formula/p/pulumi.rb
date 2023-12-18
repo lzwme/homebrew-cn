@@ -1,11 +1,11 @@
 class Pulumi < Formula
   desc "Cloud native development platform"
-  homepage "https://pulumi.io/"
-  url "https://github.com/pulumi/pulumi.git",
+  homepage "https:pulumi.io"
+  url "https:github.compulumipulumi.git",
       tag:      "v3.97.0",
       revision: "5580052298df957e4bb06478f0e88fd513e19988"
   license "Apache-2.0"
-  head "https://github.com/pulumi/pulumi.git", branch: "master"
+  head "https:github.compulumipulumi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b3ef953498f4800e82d43c20c903b10178cca008a2e3ce16424c908b66444c1"
@@ -20,26 +20,26 @@ class Pulumi < Formula
   depends_on "go" => :build
 
   def install
-    cd "./sdk" do
+    cd ".sdk" do
       system "go", "mod", "download"
     end
-    cd "./pkg" do
+    cd ".pkg" do
       system "go", "mod", "download"
     end
 
     system "make", "brew"
 
-    bin.install Dir["#{ENV["GOPATH"]}/bin/pulumi*"]
+    bin.install Dir["#{ENV["GOPATH"]}binpulumi*"]
 
     # Install shell completions
-    generate_completions_from_executable(bin/"pulumi", "gen-completion")
+    generate_completions_from_executable(bin"pulumi", "gen-completion")
   end
 
   test do
-    ENV["PULUMI_ACCESS_TOKEN"] = "local://"
-    ENV["PULUMI_TEMPLATE_PATH"] = testpath/"templates"
-    system "#{bin}/pulumi", "new", "aws-typescript", "--generate-only",
+    ENV["PULUMI_ACCESS_TOKEN"] = "local:"
+    ENV["PULUMI_TEMPLATE_PATH"] = testpath"templates"
+    system "#{bin}pulumi", "new", "aws-typescript", "--generate-only",
                                                      "--force", "-y"
-    assert_predicate testpath/"Pulumi.yaml", :exist?, "Project was not created"
+    assert_predicate testpath"Pulumi.yaml", :exist?, "Project was not created"
   end
 end

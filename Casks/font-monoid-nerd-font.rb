@@ -2,10 +2,10 @@ cask "font-monoid-nerd-font" do
   version "3.1.1"
   sha256 "3f3704711320b7b71eb780ae762becc1c882c4ed698c00aec7b2adae46f0fa38"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Monoid.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Monoid.zip"
   name "Monoid Nerd Font (Monoid)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

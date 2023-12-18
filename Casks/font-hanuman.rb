@@ -2,12 +2,12 @@ cask "font-hanuman" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/hanuman"
+      only_path: "oflhanuman"
   name "Hanuman"
-  homepage "https://fonts.google.com/specimen/Hanuman"
+  homepage "https:fonts.google.comspecimenHanuman"
 
   font "Hanuman-Black.ttf"
   font "Hanuman-Bold.ttf"

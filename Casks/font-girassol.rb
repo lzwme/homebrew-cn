@@ -2,10 +2,10 @@ cask "font-girassol" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/girassol/Girassol-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflgirassolGirassol-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Girassol"
-  homepage "https://fonts.google.com/specimen/Girassol"
+  homepage "https:fonts.google.comspecimenGirassol"
 
   font "Girassol-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class AwsRotateKey < Formula
   desc "Easily rotate your AWS access key"
-  homepage "https://github.com/stefansundin/aws-rotate-key"
-  url "https://ghproxy.com/https://github.com/stefansundin/aws-rotate-key/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:github.comstefansundinaws-rotate-key"
+  url "https:github.comstefansundinaws-rotate-keyarchiverefstagsv1.1.0.tar.gz"
   sha256 "0ecb4830dde426702629430889a8bcd4acddae9aab2d8f03ddab6514a3f966ef"
   license "MIT"
-  head "https://github.com/stefansundin/aws-rotate-key.git", branch: "master"
+  head "https:github.comstefansundinaws-rotate-key.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5ab392e8975870ea050c63fbdcd74cb42c285c878e33a4a2b900b85bf2a8037"
@@ -25,12 +25,12 @@ class AwsRotateKey < Formula
   end
 
   test do
-    (testpath/"credentials").write <<~EOF
+    (testpath"credentials").write <<~EOF
       [default]
       aws_access_key_id=AKIA123
       aws_secret_access_key=abc
     EOF
-    output = shell_output("AWS_SHARED_CREDENTIALS_FILE=#{testpath}/credentials #{bin}/aws-rotate-key -y 2>&1", 1)
+    output = shell_output("AWS_SHARED_CREDENTIALS_FILE=#{testpath}credentials #{bin}aws-rotate-key -y 2>&1", 1)
     assert_match "InvalidClientTokenId: The security token included in the request is invalid", output
   end
 end

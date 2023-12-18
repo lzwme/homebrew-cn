@@ -1,10 +1,10 @@
 class DhallYaml < Formula
   desc "Convert between Dhall and YAML"
-  homepage "https://github.com/dhall-lang/dhall-haskell/tree/main/dhall-yaml"
-  url "https://hackage.haskell.org/package/dhall-yaml-1.2.12/dhall-yaml-1.2.12.tar.gz"
+  homepage "https:github.comdhall-langdhall-haskelltreemaindhall-yaml"
+  url "https:hackage.haskell.orgpackagedhall-yaml-1.2.12dhall-yaml-1.2.12.tar.gz"
   sha256 "e288091b568cfba756eb458716fb84745eb2599a848326b3eb3b45a5aa0008ea"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
+  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -29,8 +29,8 @@ class DhallYaml < Formula
   end
 
   test do
-    assert_match "1", pipe_output("#{bin}/dhall-to-yaml-ng", "1", 0)
-    assert_match "- 1\n- 2", pipe_output("#{bin}/dhall-to-yaml-ng", "[ 1, 2 ]", 0)
-    assert_match "null", pipe_output("#{bin}/dhall-to-yaml-ng", "None Natural", 0)
+    assert_match "1", pipe_output("#{bin}dhall-to-yaml-ng", "1", 0)
+    assert_match "- 1\n- 2", pipe_output("#{bin}dhall-to-yaml-ng", "[ 1, 2 ]", 0)
+    assert_match "null", pipe_output("#{bin}dhall-to-yaml-ng", "None Natural", 0)
   end
 end

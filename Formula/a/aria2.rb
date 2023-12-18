@@ -1,7 +1,7 @@
 class Aria2 < Formula
   desc "Download with resuming and segmented downloading"
-  homepage "https://aria2.github.io/"
-  url "https://ghproxy.com/https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz"
+  homepage "https:aria2.github.io"
+  url "https:github.comaria2aria2releasesdownloadrelease-1.37.0aria2-1.37.0.tar.xz"
   sha256 "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b"
   license "GPL-2.0-or-later"
 
@@ -44,14 +44,14 @@ class Aria2 < Formula
       args << "--with-openssl"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
 
-    bash_completion.install "doc/bash_completion/aria2c"
+    bash_completion.install "docbash_completionaria2c"
   end
 
   test do
-    system "#{bin}/aria2c", "https://brew.sh/"
-    assert_predicate testpath/"index.html", :exist?, "Failed to create index.html!"
+    system "#{bin}aria2c", "https:brew.sh"
+    assert_predicate testpath"index.html", :exist?, "Failed to create index.html!"
   end
 end

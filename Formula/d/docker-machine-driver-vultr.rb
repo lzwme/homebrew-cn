@@ -1,10 +1,10 @@
 class DockerMachineDriverVultr < Formula
   desc "Docker Machine driver plugin for Vultr Cloud"
-  homepage "https://github.com/vultr/docker-machine-driver-vultr"
-  url "https://ghproxy.com/https://github.com/vultr/docker-machine-driver-vultr/archive/refs/tags/v2.1.0.tar.gz"
+  homepage "https:github.comvultrdocker-machine-driver-vultr"
+  url "https:github.comvultrdocker-machine-driver-vultrarchiverefstagsv2.1.0.tar.gz"
   sha256 "d81ffb5a923d521830090025e0b65dbd7bef8b8472a50637ddf80a9f5c31cd25"
   license "MIT"
-  head "https://github.com/vultr/docker-machine-driver-vultr.git", branch: "master"
+  head "https:github.comvultrdocker-machine-driver-vultr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a89f639247bfde26bc01d330a3ef9f9c70ae62545ded4906f04411d50a73ba2f"
@@ -20,11 +20,11 @@ class DockerMachineDriverVultr < Formula
   depends_on "docker-machine"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./machine"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".machine"
   end
 
   test do
     assert_match "--vultr-api-key",
-      shell_output("#{Formula["docker-machine"].bin}/docker-machine create --driver vultr -h")
+      shell_output("#{Formula["docker-machine"].bin}docker-machine create --driver vultr -h")
   end
 end

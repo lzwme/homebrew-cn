@@ -1,11 +1,11 @@
 class GitBug < Formula
   desc "Distributed, offline-first bug tracker embedded in git, with bridges"
-  homepage "https://github.com/MichaelMure/git-bug"
-  url "https://github.com/MichaelMure/git-bug.git",
+  homepage "https:github.comMichaelMuregit-bug"
+  url "https:github.comMichaelMuregit-bug.git",
       tag:      "v0.8.0",
       revision: "a3fa445a9c76631c4cd16f93e1c1c68a954adef7"
   license "GPL-3.0-or-later"
-  head "https://github.com/MichaelMure/git-bug.git", branch: "master"
+  head "https:github.comMichaelMuregit-bug.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51c0e3dab2333e1efdd7e072b5887ab00c6b082ef987a517a07fcb88ed42bab7"
@@ -26,25 +26,25 @@ class GitBug < Formula
     ENV["GOBIN"] = bin
     system "make", "install"
 
-    man1.install Dir["doc/man/*.1"]
-    doc.install Dir["doc/md/*.md"]
+    man1.install Dir["docman*.1"]
+    doc.install Dir["docmd*.md"]
 
-    bash_completion.install "misc/completion/bash/git-bug"
-    zsh_completion.install "misc/completion/zsh/git-bug" => "_git-bug"
-    fish_completion.install "misc/completion/fish/git-bug" => "git-bug.fish"
+    bash_completion.install "misccompletionbashgit-bug"
+    zsh_completion.install "misccompletionzshgit-bug" => "_git-bug"
+    fish_completion.install "misccompletionfishgit-bug" => "git-bug.fish"
   end
 
   test do
     # Version
-    assert_match version.to_s, shell_output("#{bin}/git-bug version")
+    assert_match version.to_s, shell_output("#{bin}git-bug version")
     # Version through git
     assert_match version.to_s, shell_output("git bug version")
 
-    mkdir testpath/"git-repo" do
+    mkdir testpath"git-repo" do
       system "git", "init"
       system "git", "config", "user.name", "homebrew"
       system "git", "config", "user.email", "a@a.com"
-      system "yes 'a b http://www/www' | git bug user create"
+      system "yes 'a b http:wwwwww' | git bug user create"
       system "git", "bug", "add", "-t", "Issue 1", "-m", "Issue body"
       system "git", "bug", "add", "-t", "Issue 2", "-m", "Issue body"
       system "git", "bug", "add", "-t", "Issue 3", "-m", "Issue body"

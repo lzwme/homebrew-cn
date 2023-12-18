@@ -1,10 +1,10 @@
 class Xurls < Formula
   desc "Extract urls from text"
-  homepage "https://github.com/mvdan/xurls"
-  url "https://ghproxy.com/https://github.com/mvdan/xurls/archive/refs/tags/v2.5.0.tar.gz"
+  homepage "https:github.commvdanxurls"
+  url "https:github.commvdanxurlsarchiverefstagsv2.5.0.tar.gz"
   sha256 "552779a765de29e51ff01fe6c85a7d0389faae1b80d354332e7c69db232ee4ad"
   license "BSD-3-Clause"
-  head "https://github.com/mvdan/xurls.git", branch: "master"
+  head "https:github.commvdanxurls.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1bff20d5c71c28fd1931855730748b6b45accd8282d399fd2d854db05d98830"
@@ -21,14 +21,14 @@ class Xurls < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/xurls"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdxurls"
   end
 
   test do
-    output = pipe_output("#{bin}/xurls", "Brew test with https://brew.sh.")
-    assert_equal "https://brew.sh", output.chomp
+    output = pipe_output("#{bin}xurls", "Brew test with https:brew.sh.")
+    assert_equal "https:brew.sh", output.chomp
 
-    output = pipe_output("#{bin}/xurls --fix", "Brew test with http://brew.sh.")
-    assert_equal "Brew test with https://brew.sh/.", output.chomp
+    output = pipe_output("#{bin}xurls --fix", "Brew test with http:brew.sh.")
+    assert_equal "Brew test with https:brew.sh.", output.chomp
   end
 end

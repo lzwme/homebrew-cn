@@ -1,10 +1,10 @@
 class LibimobiledeviceGlue < Formula
   desc "Library with common system API code for libimobiledevice projects"
-  homepage "https://libimobiledevice.org/"
-  url "https://ghproxy.com/https://github.com/libimobiledevice/libimobiledevice-glue/releases/download/1.0.0/libimobiledevice-glue-1.0.0.tar.bz2"
+  homepage "https:libimobiledevice.org"
+  url "https:github.comlibimobiledevicelibimobiledevice-gluereleasesdownload1.0.0libimobiledevice-glue-1.0.0.tar.bz2"
   sha256 "160a70e2edc318312fc40b6a71f85bfdfabdfba10bcfc5bb6fb40ed95088f4a0"
   license "LGPL-2.1-or-later"
-  head "https://github.com/libimobiledevice/libimobiledevice-glue.git", branch: "master"
+  head "https:github.comlibimobiledevicelibimobiledevice-glue.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ef2149f0101eb75af1efc6937503454158b0abdfc1cec1f34e812e2ac7923f7a"
@@ -26,16 +26,16 @@ class LibimobiledeviceGlue < Formula
 
   def install
     if build.head?
-      system "./autogen.sh", *std_configure_args, "--disable-silent-rules"
+      system ".autogen.sh", *std_configure_args, "--disable-silent-rules"
     else
-      system "./configure", *std_configure_args, "--disable-silent-rules"
+      system ".configure", *std_configure_args, "--disable-silent-rules"
     end
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include "libimobiledevice-glue/utils.h"
+    (testpath"test.c").write <<~EOS
+      #include "libimobiledevice-glueutils.h"
 
       int main(int argc, char* argv[]) {
         char *uuid = generate_uuid();
@@ -43,6 +43,6 @@ class LibimobiledeviceGlue < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-limobiledevice-glue-1.0", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

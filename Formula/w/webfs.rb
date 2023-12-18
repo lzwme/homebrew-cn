@@ -1,7 +1,7 @@
 class Webfs < Formula
   desc "HTTP server for purely static content"
-  homepage "https://linux.bytesex.org/misc/webfs.html"
-  url "https://www.kraxel.org/releases/webfs/webfs-1.21.tar.gz"
+  homepage "https:linux.bytesex.orgmiscwebfs.html"
+  url "https:www.kraxel.orgreleaseswebfswebfs-1.21.tar.gz"
   sha256 "98c1cb93473df08e166e848e549f86402e94a2f727366925b1c54ab31064a62a"
   license "GPL-2.0-or-later"
   revision 1
@@ -24,22 +24,22 @@ class Webfs < Formula
   depends_on "openssl@3"
 
   patch :p0 do
-    url "https://github.com/Homebrew/formula-patches/raw/0518a6d1ed821aebf0de4de78e39b57d6e60e296/webfs/patch-ls.c"
+    url "https:github.comHomebrewformula-patchesraw0518a6d1ed821aebf0de4de78e39b57d6e60e296webfspatch-ls.c"
     sha256 "8ddb6cb1a15f0020bbb14ef54a8ae5c6748a109564fa461219901e7e34826170"
   end
 
   def install
     ENV["prefix"]=prefix
-    args = ["mimefile=#{etc}/httpd/mime.types"]
+    args = ["mimefile=#{etc}httpdmime.types"]
     args << "SHELL=bash" unless OS.mac?
     system "make", "install", *args
   end
 
   test do
     port = free_port
-    pid = fork { exec bin/"webfsd", "-F", "-p", port.to_s }
+    pid = fork { exec bin"webfsd", "-F", "-p", port.to_s }
     sleep 5
-    assert_match %r{webfs/1.21}, shell_output("curl localhost:#{port}")
+    assert_match %r{webfs1.21}, shell_output("curl localhost:#{port}")
   ensure
     Process.kill("SIGINT", pid)
     Process.wait(pid)

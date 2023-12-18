@@ -2,11 +2,11 @@ class Flake8 < Formula
   include Language::Python::Virtualenv
 
   desc "Lint your Python code for style and logical errors"
-  homepage "https://flake8.pycqa.org/"
-  url "https://files.pythonhosted.org/packages/cf/f8/bbe24f43695c0c480181e39ce910c2650c794831886ec46ddd7c40520e6a/flake8-6.1.0.tar.gz"
+  homepage "https:flake8.pycqa.org"
+  url "https:files.pythonhosted.orgpackagescff8bbe24f43695c0c480181e39ce910c2650c794831886ec46ddd7c40520e6aflake8-6.1.0.tar.gz"
   sha256 "d5b3857f07c030bdb5bf41c7f53799571d75c4491748a3adcd47de929e34cd23"
   license "MIT"
-  head "https://github.com/PyCQA/flake8.git", branch: "main"
+  head "https:github.comPyCQAflake8.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -22,17 +22,17 @@ class Flake8 < Formula
   depends_on "python@3.12"
 
   resource "mccabe" do
-    url "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagese7ff0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8mccabe-0.7.0.tar.gz"
     sha256 "348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"
   end
 
   resource "pycodestyle" do
-    url "https://files.pythonhosted.org/packages/c1/2d/022c78a6b3f591205e52b4d25c93b7329280f752b36ba2fc1377cbf016cd/pycodestyle-2.11.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesc12d022c78a6b3f591205e52b4d25c93b7329280f752b36ba2fc1377cbf016cdpycodestyle-2.11.0.tar.gz"
     sha256 "259bcc17857d8a8b3b4a2327324b79e5f020a13c16074670f9c8c8f872ea76d0"
   end
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/8b/fb/7251eaec19a055ec6aafb3d1395db7622348130d1b9b763f78567b2aab32/pyflakes-3.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages8bfb7251eaec19a055ec6aafb3d1395db7622348130d1b9b763f78567b2aab32pyflakes-3.1.0.tar.gz"
     sha256 "a0aae034c444db0071aa077972ba4768d40c830d9539fd45bf4cd3f8f6992efc"
   end
 
@@ -41,15 +41,15 @@ class Flake8 < Formula
   end
 
   test do
-    (testpath/"test-bad.py").write <<~EOS
+    (testpath"test-bad.py").write <<~EOS
       print ("Hello World!")
     EOS
 
-    (testpath/"test-good.py").write <<~EOS
+    (testpath"test-good.py").write <<~EOS
       print("Hello World!")
     EOS
 
-    assert_match "E211", shell_output("#{bin}/flake8 test-bad.py", 1)
-    assert_empty shell_output("#{bin}/flake8 test-good.py")
+    assert_match "E211", shell_output("#{bin}flake8 test-bad.py", 1)
+    assert_empty shell_output("#{bin}flake8 test-good.py")
   end
 end

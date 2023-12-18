@@ -1,23 +1,23 @@
 class Freediameter < Formula
   desc "Open source Diameter (Authentication) protocol implementation"
-  homepage "http://www.freediameter.net"
+  homepage "http:www.freediameter.net"
   license "BSD-3-Clause"
-  head "https://github.com/freeDiameter/freeDiameter.git", branch: "master"
+  head "https:github.comfreeDiameterfreeDiameter.git", branch: "master"
 
   stable do
-    url "http://www.freediameter.net/hg/freeDiameter/archive/1.5.0.tar.gz"
+    url "http:www.freediameter.nethgfreeDiameterarchive1.5.0.tar.gz"
     sha256 "2500f75b70d428ea75dd25eedcdddf8fb6a8ea809b02c82bf5e35fe206cbbcbc"
 
     # Backport support for `libidn2`. Remove in the next release.
     patch do
-      url "http://www.freediameter.net/hg/freeDiameter/raw-rev/699c3fb0c57b"
+      url "http:www.freediameter.nethgfreeDiameterraw-rev699c3fb0c57b"
       sha256 "ee708848e4093363954bedd47f61199196c9753c9f1fcbd33e302c47d58f8041"
     end
   end
 
   livecheck do
-    url "http://www.freediameter.net/hg/freeDiameter/json-tags"
-    regex(/["']tag["']:\s*?["']v?(\d+(?:\.\d+)+)["']/i)
+    url "http:www.freediameter.nethgfreeDiameterjson-tags"
+    regex(["']tag["']:\s*?["']v?(\d+(?:\.\d+)+)["']i)
   end
 
   bottle do
@@ -48,36 +48,36 @@ class Freediameter < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
     pkgshare.install "contrib"
   end
 
   def post_install
-    return if File.exist?(etc/"freeDiameter.conf")
+    return if File.exist?(etc"freeDiameter.conf")
 
-    cp doc/"freediameter.conf.sample", etc/"freeDiameter.conf"
+    cp doc"freediameter.conf.sample", etc"freeDiameter.conf"
   end
 
   def caveats
     <<~EOS
-      To configure freeDiameter, edit #{etc}/freeDiameter.conf to taste.
+      To configure freeDiameter, edit #{etc}freeDiameter.conf to taste.
 
       Sample configuration files can be found in #{doc}.
 
       For more information about freeDiameter configuration options, read:
-        http://www.freediameter.net/trac/wiki/Configuration
+        http:www.freediameter.nettracwikiConfiguration
 
-      Other potentially useful files can be found in #{opt_pkgshare}/contrib.
+      Other potentially useful files can be found in #{opt_pkgshare}contrib.
     EOS
   end
 
   service do
-    run opt_bin/"freeDiameterd"
+    run opt_bin"freeDiameterd"
     keep_alive true
     require_root true
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/freeDiameterd --version")
+    assert_match version.to_s, shell_output("#{bin}freeDiameterd --version")
   end
 end

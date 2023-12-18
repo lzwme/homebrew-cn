@@ -1,15 +1,15 @@
 class BoostBuild < Formula
   desc "C++ build system"
-  homepage "https://www.boost.org/build/"
-  url "https://ghproxy.com/https://github.com/boostorg/build/archive/refs/tags/boost-1.83.0.tar.gz"
+  homepage "https:www.boost.orgbuild"
+  url "https:github.comboostorgbuildarchiverefstagsboost-1.83.0.tar.gz"
   sha256 "6f552d23e3e39e4ff07a3acad2f86669843282031ac4f108a5d63468d1df7e6c"
   license "BSL-1.0"
   version_scheme 1
-  head "https://github.com/boostorg/build.git", branch: "develop"
+  head "https:github.comboostorgbuild.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(/^boost[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^boost[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,23 +25,23 @@ class BoostBuild < Formula
   conflicts_with "b2-tools", because: "both install `b2` binaries"
 
   def install
-    system "./bootstrap.sh"
-    system "./b2", "--prefix=#{prefix}", "install"
+    system ".bootstrap.sh"
+    system ".b2", "--prefix=#{prefix}", "install"
   end
 
   test do
-    (testpath/"hello.cpp").write <<~EOS
+    (testpath"hello.cpp").write <<~EOS
       #include <iostream>
       int main (void) { std::cout << "Hello world"; }
     EOS
-    (testpath/"Jamroot.jam").write("exe hello : hello.cpp ;")
+    (testpath"Jamroot.jam").write("exe hello : hello.cpp ;")
 
-    system bin/"b2", "release"
+    system bin"b2", "release"
 
     compiler = File.basename(ENV.cc)
-    out = Dir["bin/#{compiler}*/release/hello"]
+    out = Dir["bin#{compiler}*releasehello"]
     assert out.length == 1
-    assert_predicate testpath/out[0], :exist?
+    assert_predicate testpathout[0], :exist?
     assert_equal "Hello world", shell_output(out[0])
   end
 end

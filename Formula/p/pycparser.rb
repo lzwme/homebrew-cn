@@ -1,7 +1,7 @@
 class Pycparser < Formula
   desc "C parser in Python"
-  homepage "https://github.com/eliben/pycparser"
-  url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
+  homepage "https:github.comelibenpycparser"
+  url "https:files.pythonhosted.orgpackages5e0b95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46depycparser-2.21.tar.gz"
   sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   license "BSD-3-Clause"
   revision 1
@@ -24,7 +24,7 @@ class Pycparser < Formula
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .map { |f| f.opt_libexec"binpython" }
   end
 
   def install
@@ -35,9 +35,9 @@ class Pycparser < Formula
   end
 
   test do
-    examples = pkgshare/"examples"
+    examples = pkgshare"examples"
     pythons.each do |python|
-      system python, examples/"c-to-c.py", examples/"c_files/basic.c"
+      system python, examples"c-to-c.py", examples"c_filesbasic.c"
     end
   end
 end

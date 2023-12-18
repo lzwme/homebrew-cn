@@ -1,11 +1,11 @@
 class Pqiv < Formula
   desc "Powerful image viewer with minimal UI"
-  homepage "https://github.com/phillipberndt/pqiv"
-  url "https://ghproxy.com/https://github.com/phillipberndt/pqiv/archive/refs/tags/2.12.tar.gz"
+  homepage "https:github.comphillipberndtpqiv"
+  url "https:github.comphillipberndtpqivarchiverefstags2.12.tar.gz"
   sha256 "1538128c88a70bbad2b83fbde327d83e4df9512a2fb560eaf5eaf1d8df99dbe5"
   license "GPL-3.0"
   revision 7
-  head "https://github.com/phillipberndt/pqiv.git", branch: "master"
+  head "https:github.comphillipberndtpqiv.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "217d3090865e9025455c77e862502ed8f1ee31b3d7b0bf6961f75bd34cb70756"
@@ -30,11 +30,11 @@ class Pqiv < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/pqiv --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}pqiv --version 2>&1")
   end
 end

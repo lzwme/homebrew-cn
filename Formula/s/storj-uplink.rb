@@ -1,7 +1,7 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
-  homepage "https://storj.io"
-  url "https://ghproxy.com/https://github.com/storj/storj/archive/refs/tags/v1.92.1.tar.gz"
+  homepage "https:storj.io"
+  url "https:github.comstorjstorjarchiverefstagsv1.92.1.tar.gz"
   sha256 "36fd4ef47bfb540449bfc2fca129162eee6a7f460bb97776d383c7b0efcfa49f"
   license "AGPL-3.0-only"
 
@@ -9,11 +9,11 @@ class StorjUplink < Formula
   # release (though some versions have permanently remained as "pre-release"),
   # so it's necessary to check releases. However, upstream has not marked
   # recent releases as "latest", so it's necessary to check all releases.
-  # NOTE: We should return to using the `GithubLatest` strategy if/when
+  # NOTE: We should return to using the `GithubLatest` strategy ifwhen
   # upstream reliably marks stable releases as "latest" again.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
     strategy :github_releases
   end
 
@@ -30,16 +30,16 @@ class StorjUplink < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"uplink"), "./cmd/uplink"
+    system "go", "build", *std_go_args(output: bin"uplink"), ".cmduplink"
   end
 
   test do
-    (testpath/"config.ini").write <<~EOS
+    (testpath"config.ini").write <<~EOS
       [metrics]
       addr=
     EOS
     ENV["UPLINK_CONFIG_DIR"] = testpath.to_s
     ENV["UPLINK_INTERACTIVE"] = "false"
-    assert_match "No accesses configured", shell_output("#{bin}/uplink ls 2>&1", 1)
+    assert_match "No accesses configured", shell_output("#{bin}uplink ls 2>&1", 1)
   end
 end

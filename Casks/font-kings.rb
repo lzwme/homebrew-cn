@@ -2,11 +2,11 @@ cask "font-kings" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kings/Kings-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkingsKings-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kings"
   desc "Based on the three set font family (kings honor, kings quest and kings dominion)"
-  homepage "https://fonts.google.com/specimen/Kings"
+  homepage "https:fonts.google.comspecimenKings"
 
   font "Kings-Regular.ttf"
 

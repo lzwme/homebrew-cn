@@ -1,7 +1,7 @@
 class ZshYouShouldUse < Formula
   desc "ZSH plugin that reminds you to use existing aliases for commands you just typed"
-  homepage "https://github.com/MichaelAquilina/zsh-you-should-use"
-  url "https://ghproxy.com/https://github.com/MichaelAquilina/zsh-you-should-use/archive/refs/tags/1.7.3.tar.gz"
+  homepage "https:github.comMichaelAquilinazsh-you-should-use"
+  url "https:github.comMichaelAquilinazsh-you-should-usearchiverefstags1.7.3.tar.gz"
   sha256 "db4486cd12974332ec858d446aff9393dae6be430d425a56d7036d2ce4edeb9e"
   license "GPL-3.0-or-later"
 
@@ -17,7 +17,7 @@ class ZshYouShouldUse < Formula
     <<~EOS
       To activate You Should Use, add the following to your .zshrc:
 
-        source #{HOMEBREW_PREFIX}/share/zsh-you-should-use/you-should-use.plugin.zsh
+        source #{HOMEBREW_PREFIX}sharezsh-you-should-useyou-should-use.plugin.zsh
 
       You will also need to restart your terminal for this change to take effect.
     EOS
@@ -25,7 +25,7 @@ class ZshYouShouldUse < Formula
 
   test do
     assert_match version.to_s,
-      shell_output("zsh -c '. #{pkgshare}/you-should-use.plugin.zsh && " \
+      shell_output("zsh -c '. #{pkgshare}you-should-use.plugin.zsh && " \
                    "echo $YSU_VERSION'")
   end
 end

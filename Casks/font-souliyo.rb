@@ -2,10 +2,10 @@ cask "font-souliyo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/souliyo/Souliyo-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsouliyoSouliyo-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Souliyo"
-  homepage "https://fonts.google.com/earlyaccess"
+  homepage "https:fonts.google.comearlyaccess"
 
   font "Souliyo-Regular.ttf"
 

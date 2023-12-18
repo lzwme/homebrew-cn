@@ -1,7 +1,7 @@
 class Libansilove < Formula
   desc "Library for converting ANSI, ASCII, and other formats to PNG"
-  homepage "https://www.ansilove.org"
-  url "https://ghproxy.com/https://github.com/ansilove/libansilove/releases/download/1.4.1/libansilove-1.4.1.tar.gz"
+  homepage "https:www.ansilove.org"
+  url "https:github.comansilovelibansilovereleasesdownload1.4.1libansilove-1.4.1.tar.gz"
   sha256 "c6aa32bcef54b05b9af535c621f7044156295a49cea3cfaf1c868e359be59203"
   license "BSD-2-Clause"
 
@@ -27,7 +27,7 @@ class Libansilove < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <ansilove.h>
 
       int main(int argc, char *argv[])
@@ -44,6 +44,6 @@ class Libansilove < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lansilove", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

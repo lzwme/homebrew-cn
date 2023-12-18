@@ -1,14 +1,14 @@
 class JpegXl < Formula
   desc "New file format for still image compression"
-  homepage "https://jpeg.org/jpegxl/index.html"
-  url "https://ghproxy.com/https://github.com/libjxl/libjxl/archive/refs/tags/v0.8.2.tar.gz"
+  homepage "https:jpeg.orgjpegxlindex.html"
+  url "https:github.comlibjxllibjxlarchiverefstagsv0.8.2.tar.gz"
   sha256 "c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -48,19 +48,19 @@ class JpegXl < Formula
   fails_with gcc: "6"
 
   # These resources are versioned according to the script supplied with jpeg-xl to download the dependencies:
-  # https://github.com/libjxl/libjxl/tree/v#{version}/third_party
+  # https:github.comlibjxllibjxltreev#{version}third_party
   resource "sjpeg" do
-    url "https://github.com/webmproject/sjpeg.git",
+    url "https:github.comwebmprojectsjpeg.git",
         revision: "868ab558fad70fcbe8863ba4e85179eeb81cc840"
   end
 
   # Upstream fixes for older macOS, remove for the next version.
-  # See https://github.com/libjxl/libjxl/issues/2461#issuecomment-1813388521
+  # See https:github.comlibjxllibjxlissues2461#issuecomment-1813388521
   patch :DATA
 
   def install
-    ENV.append_path "XML_CATALOG_FILES", HOMEBREW_PREFIX/"etc/xml/catalog"
-    resources.each { |r| r.stage buildpath/"third_party"/r.name }
+    ENV.append_path "XML_CATALOG_FILES", HOMEBREW_PREFIX"etcxmlcatalog"
+    resources.each { |r| r.stage buildpath"third_party"r.name }
     system "cmake", "-S", ".", "-B", "build",
                     "-DJPEGXL_FORCE_SYSTEM_BROTLI=ON",
                     "-DJPEGXL_FORCE_SYSTEM_LCMS2=ON",
@@ -70,19 +70,19 @@ class JpegXl < Formula
                     "-DJPEGXL_VERSION=#{version}",
                     "-DJPEGXL_ENABLE_MANPAGES=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DPython_EXECUTABLE=#{Formula["asciidoc"].libexec/"bin/python"}",
-                    "-DPython3_EXECUTABLE=#{Formula["asciidoc"].libexec/"bin/python3"}",
+                    "-DPython_EXECUTABLE=#{Formula["asciidoc"].libexec"binpython"}",
+                    "-DPython3_EXECUTABLE=#{Formula["asciidoc"].libexec"binpython3"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "install"
   end
 
   test do
-    system "#{bin}/cjxl", test_fixtures("test.jpg"), "test.jxl"
-    assert_predicate testpath/"test.jxl", :exist?
+    system "#{bin}cjxl", test_fixtures("test.jpg"), "test.jxl"
+    assert_predicate testpath"test.jxl", :exist?
 
-    (testpath/"jxl_test.c").write <<~EOS
-      #include <jxl/encode.h>
+    (testpath"jxl_test.c").write <<~EOS
+      #include <jxlencode.h>
       #include <stdlib.h>
 
       int main()
@@ -97,10 +97,10 @@ class JpegXl < Formula
     EOS
     jxl_flags = shell_output("pkg-config --cflags --libs libjxl").chomp.split
     system ENV.cc, "jxl_test.c", *jxl_flags, "-o", "jxl_test"
-    system "./jxl_test"
+    system ".jxl_test"
 
-    (testpath/"jxl_threads_test.c").write <<~EOS
-      #include <jxl/thread_parallel_runner.h>
+    (testpath"jxl_threads_test.c").write <<~EOS
+      #include <jxlthread_parallel_runner.h>
       #include <stdlib.h>
 
       int main()
@@ -115,21 +115,21 @@ class JpegXl < Formula
     EOS
     jxl_threads_flags = shell_output("pkg-config --cflags --libs libjxl_threads").chomp.split
     system ENV.cc, "jxl_threads_test.c", *jxl_threads_flags, "-o", "jxl_threads_test"
-    system "./jxl_threads_test"
+    system ".jxl_threads_test"
   end
 end
 __END__
-diff --git a/lib/jxl/enc_fast_lossless.cc b/lib/jxl/enc_fast_lossless.cc
+diff --git alibjxlenc_fast_lossless.cc blibjxlenc_fast_lossless.cc
 index e646dbc..492e31f 100644
---- a/lib/jxl/enc_fast_lossless.cc
-+++ b/lib/jxl/enc_fast_lossless.cc
+--- alibjxlenc_fast_lossless.cc
++++ blibjxlenc_fast_lossless.cc
 @@ -30,6 +30,18 @@
  #elif (defined(__x86_64__) || defined(_M_X64)) && !defined(_MSC_VER)
  #include <immintrin.h>
  
-+// manually add _mm512_cvtsi512_si32 definition if missing
-+// (e.g. with Xcode on macOS Mojave)
-+// copied from gcc 11.1.0 include/avx512fintrin.h line 14367-14373
++ manually add _mm512_cvtsi512_si32 definition if missing
++ (e.g. with Xcode on macOS Mojave)
++ copied from gcc 11.1.0 includeavx512fintrin.h line 14367-14373
 +#if defined(__clang__) &&                                           \
 +    ((!defined(__apple_build_version__) && __clang_major__ < 10) || \
 +     (defined(__apple_build_version__) && __apple_build_version__ < 12000032))
@@ -139,13 +139,13 @@ index e646dbc..492e31f 100644
 +}
 +#endif
 +
- // TODO(veluca): MSVC support for dynamic dispatch.
+  TODO(veluca): MSVC support for dynamic dispatch.
  #if defined(__clang__) || defined(__GNUC__)
  
 @@ -39,7 +51,10 @@
  
  #ifndef FJXL_ENABLE_AVX512
- // On clang-7 or earlier, and gcc-10 or earlier, AVX512 seems broken.
+  On clang-7 or earlier, and gcc-10 or earlier, AVX512 seems broken.
 -#if (defined(__clang__) && __clang_major__ > 7) || \
 +#if (defined(__clang__) &&                                             \
 +         (!defined(__apple_build_version__) && __clang_major__ > 7) || \
@@ -154,10 +154,10 @@ index e646dbc..492e31f 100644
      (defined(__GNUC__) && __GNUC__ > 10)
  #define FJXL_ENABLE_AVX512 1
  #endif
-diff --git a/lib/jxl/image.cc b/lib/jxl/image.cc
+diff --git alibjxlimage.cc blibjxlimage.cc
 index 70f3ba6..0bccbf2 100644
---- a/lib/jxl/image.cc
-+++ b/lib/jxl/image.cc
+--- alibjxlimage.cc
++++ blibjxlimage.cc
 @@ -111,7 +111,10 @@ void PlaneBase::InitializePadding(const size_t sizeof_t, Padding padding) {
  
    for (size_t y = 0; y < ysize_; ++y) {
@@ -167,6 +167,6 @@ index 70f3ba6..0bccbf2 100644
 +    ((!defined(__apple_build_version__) && __clang_major__ <= 6) || \
 +     (defined(__apple_build_version__) &&                           \
 +      __apple_build_version__ <= 10001145))
-     // There's a bug in msan in clang-6 when handling AVX2 operations. This
-     // workaround allows tests to pass on msan, although it is slower and
-     // prevents msan warnings from uninitialized images.
+      There's a bug in msan in clang-6 when handling AVX2 operations. This
+      workaround allows tests to pass on msan, although it is slower and
+      prevents msan warnings from uninitialized images.

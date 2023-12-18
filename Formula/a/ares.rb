@@ -1,13 +1,13 @@
 class Ares < Formula
   desc "Automated decoding of encrypted text"
-  homepage "https://github.com/bee-san/Ares"
-  url "https://ghproxy.com/https://github.com/bee-san/Ares/archive/refs/tags/v0.10.0.tar.gz"
+  homepage "https:github.combee-sanAres"
+  url "https:github.combee-sanAresarchiverefstagsv0.10.0.tar.gz"
   sha256 "d951302b572ed0786c366762b430d0d37479be8649b16122548ece1ea0a28900"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,6 +32,6 @@ class Ares < Formula
   test do
     input_string = "U0dWc2JHOGdabkp2YlNCSWIyMWxZbkpsZHc9PQ=="
     expected_text = "Hello from Homebrew"
-    assert_includes shell_output("#{bin}/ares -d -t #{input_string}"), expected_text
+    assert_includes shell_output("#{bin}ares -d -t #{input_string}"), expected_text
   end
 end

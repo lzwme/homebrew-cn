@@ -1,10 +1,10 @@
 class Hexgui < Formula
   desc "GUI for playing Hex over Hex Text Protocol"
-  homepage "https://sourceforge.net/p/benzene/hexgui/"
-  url "https://ghproxy.com/https://github.com/apetresc/hexgui/archive/refs/tags/v0.9.4.tar.gz"
+  homepage "https:sourceforge.netpbenzenehexgui"
+  url "https:github.comapetreschexguiarchiverefstagsv0.9.4.tar.gz"
   sha256 "902ebcdf46ac9b90fec6ebd2e24e8d12f2fb291ea4ef711abe407f13c4301eb8"
   license "GPL-3.0-or-later"
-  head "https://github.com/apetresc/hexgui.git", branch: "master"
+  head "https:github.comapetreschexgui.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37ccb0805ccbcc1a8a9af8ecb5c6b687ea896afeebb892029dfa07da395d5ad2"
@@ -25,11 +25,11 @@ class Hexgui < Formula
     system "ant"
     libexec.install Dir["*"]
     env = Language::Java.overridable_java_home_env
-    env["PATH"] = "$JAVA_HOME/bin:$PATH"
-    (bin/"hexgui").write_env_script libexec/"bin/hexgui", env
+    env["PATH"] = "$JAVA_HOMEbin:$PATH"
+    (bin"hexgui").write_env_script libexec"binhexgui", env
   end
 
   test do
-    assert_match(/^HexGui #{version} .*/, shell_output("#{bin}/hexgui -version").chomp)
+    assert_match(^HexGui #{version} .*, shell_output("#{bin}hexgui -version").chomp)
   end
 end

@@ -2,10 +2,10 @@ cask "font-mogra" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mogra/Mogra-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmograMogra-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mogra"
-  homepage "https://fonts.google.com/specimen/Mogra"
+  homepage "https:fonts.google.comspecimenMogra"
 
   font "Mogra-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Counterfeiter < Formula
   desc "Tool for generating self-contained, type-safe test doubles in go"
-  homepage "https://github.com/maxbrunsfeld/counterfeiter"
-  url "https://ghproxy.com/https://github.com/maxbrunsfeld/counterfeiter/archive/refs/tags/v6.7.0.tar.gz"
+  homepage "https:github.commaxbrunsfeldcounterfeiter"
+  url "https:github.commaxbrunsfeldcounterfeiterarchiverefstagsv6.7.0.tar.gz"
   sha256 "e5f7ec8cd40ee82a54b255c2f295fc6a2285fb161b330cb021890cf0df888bc2"
   license "MIT"
-  head "https://github.com/maxbrunsfeld/counterfeiter.git", branch: "master"
+  head "https:github.commaxbrunsfeldcounterfeiter.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f3c4cb5b7e72e580466d8da2e300de59817411e8a21df088f03766bf6b0b659"
@@ -27,11 +27,11 @@ class Counterfeiter < Formula
   test do
     ENV["GOROOT"] = Formula["go"].opt_libexec
 
-    output = shell_output("#{bin}/counterfeiter -p os 2>&1")
-    assert_predicate testpath/"osshim", :exist?
-    assert_match "Writing `Os` to `osshim/os.go`...", output
+    output = shell_output("#{bin}counterfeiter -p os 2>&1")
+    assert_predicate testpath"osshim", :exist?
+    assert_match "Writing `Os` to `osshimos.go`...", output
 
-    output = shell_output("#{bin}/counterfeiter -generate 2>&1", 1)
+    output = shell_output("#{bin}counterfeiter -generate 2>&1", 1)
     assert_match "no buildable Go source files", output
   end
 end

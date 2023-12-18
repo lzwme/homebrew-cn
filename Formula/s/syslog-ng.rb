@@ -1,9 +1,9 @@
 class SyslogNg < Formula
   include Language::Python::Virtualenv
 
-  desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
-  homepage "https://www.syslog-ng.com"
-  url "https://ghproxy.com/https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.5.0/syslog-ng-4.5.0.tar.gz"
+  desc "Log daemon with advanced processing pipeline and a wide range of IO methods"
+  homepage "https:www.syslog-ng.com"
+  url "https:github.comsyslog-ngsyslog-ngreleasesdownloadsyslog-ng-4.5.0syslog-ng-4.5.0.tar.gz"
   sha256 "08828ed200436c3ca4c98e5b74885440661c1036965e219aa9261b31a24fa144"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
@@ -40,27 +40,27 @@ class SyslogNg < Formula
   uses_from_macos "curl"
 
   # Clang c++ compilation fixes.
-  # Remove when merged and released: https://github.com/syslog-ng/syslog-ng/pull/4739
-  # See also: https://github.com/Homebrew/homebrew-core/pull/156185#issuecomment-1837419001
+  # Remove when merged and released: https:github.comsyslog-ngsyslog-ngpull4739
+  # See also: https:github.comHomebrewhomebrew-corepull156185#issuecomment-1837419001
   patch do
-    url "https://github.com/syslog-ng/syslog-ng/commit/27db599781eaf07ed6a93d96564df4e126dd1518.patch?full_index=1"
+    url "https:github.comsyslog-ngsyslog-ngcommit27db599781eaf07ed6a93d96564df4e126dd1518.patch?full_index=1"
     sha256 "1f78793bb456d7ee7656116b2238ded280cf42ebb4b37b65de20cb26ba753041"
   end
 
   def install
-    # In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/include/c++/v1/compare:157:
-    # ./version:1:1: error: expected unqualified-id
+    # In file included from LibraryDeveloperCommandLineToolsSDKsMacOSX14.sdkusrincludec++v1compare:157:
+    # .version:1:1: error: expected unqualified-id
     rm "VERSION"
     ENV["VERSION"] = version
 
     python3 = "python3.12"
     sng_python_ver = Language::Python.major_minor_version python3
 
-    venv_path = libexec/"python-venv"
-    system "./configure", *std_configure_args,
+    venv_path = libexec"python-venv"
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--sysconfdir=#{pkgetc}",
-                          "--localstatedir=#{var}/#{name}",
+                          "--localstatedir=#{var}#{name}",
                           "--with-ivykis=system",
                           "--with-python=#{sng_python_ver}",
                           "--with-python-venv-dir=#{venv_path}",
@@ -70,15 +70,15 @@ class SyslogNg < Formula
                           "--disable-java-modules"
     system "make", "install"
 
-    requirements = lib/"syslog-ng/python/requirements.txt"
+    requirements = lib"syslog-ngpythonrequirements.txt"
     venv = virtualenv_create(venv_path, python3)
-    venv.pip_install requirements.read.gsub(/#.*$/, "")
+    venv.pip_install requirements.read.gsub(#.*$, "")
     cp requirements, venv_path
   end
 
   test do
     assert_equal "syslog-ng #{version.major} (#{version})",
-                 shell_output("#{sbin}/syslog-ng --version").lines.first.chomp
-    system "#{sbin}/syslog-ng", "--cfgfile=#{pkgetc}/syslog-ng.conf", "--syntax-only"
+                 shell_output("#{sbin}syslog-ng --version").lines.first.chomp
+    system "#{sbin}syslog-ng", "--cfgfile=#{pkgetc}syslog-ng.conf", "--syntax-only"
   end
 end

@@ -2,8 +2,8 @@ class GitFilterRepo < Formula
   include Language::Python::Shebang
 
   desc "Quickly rewrite git repository history"
-  homepage "https://github.com/newren/git-filter-repo"
-  url "https://ghproxy.com/https://github.com/newren/git-filter-repo/releases/download/v2.38.0/git-filter-repo-2.38.0.tar.xz"
+  homepage "https:github.comnewrengit-filter-repo"
+  url "https:github.comnewrengit-filter-reporeleasesdownloadv2.38.0git-filter-repo-2.38.0.tar.xz"
   sha256 "db954f4cae9e47c6be3bd3161bc80540d44f5379cb9cf9df498f4e019f0a41a9"
   license "MIT"
 
@@ -18,11 +18,11 @@ class GitFilterRepo < Formula
   def install
     rewrite_shebang detected_python_shebang, "git-filter-repo"
     bin.install "git-filter-repo"
-    man1.install "Documentation/man1/git-filter-repo.1"
+    man1.install "Documentationman1git-filter-repo.1"
   end
 
   test do
-    system "#{bin}/git-filter-repo", "--version"
+    system "#{bin}git-filter-repo", "--version"
 
     system "git", "init"
     system "git", "config", "user.name", "BrewTestBot"
@@ -34,8 +34,8 @@ class GitFilterRepo < Formula
     # Use --force to accept non-fresh clone run:
     # Aborting: Refusing to overwrite repo history since this does not look like a fresh clone.
     # (expected freshly packed repo)
-    system "#{bin}/git-filter-repo", "--path-rename=foo:bar", "--force"
+    system "#{bin}git-filter-repo", "--path-rename=foo:bar", "--force"
 
-    assert_predicate testpath/"bar", :exist?
+    assert_predicate testpath"bar", :exist?
   end
 end

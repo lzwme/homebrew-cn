@@ -5,10 +5,10 @@ cask "aws-vault" do
   sha256 arm:   "9887eb8f6c2bd431e814b32b9ec8a6bd394dbeb0c60822d76ed9be3c84ca1cc5",
          intel: "c0642de33329eb6eade70532f0c9eb769d2a1b52dfa56b63196ef51c7dea6445"
 
-  url "https://ghproxy.com/https://github.com/99designs/aws-vault/releases/download/v#{version}/aws-vault-darwin-#{arch}.dmg"
+  url "https:github.com99designsaws-vaultreleasesdownloadv#{version}aws-vault-darwin-#{arch}.dmg"
   name "aws-vault"
   desc "Securely stores and accesses AWS credentials in a development environment"
-  homepage "https://github.com/99designs/aws-vault"
+  homepage "https:github.com99designsaws-vault"
 
   binary "aws-vault"
 

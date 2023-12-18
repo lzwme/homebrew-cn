@@ -1,10 +1,10 @@
 class Highway < Formula
   desc "Performance-portable, length-agnostic SIMD with runtime dispatch"
-  homepage "https://github.com/google/highway"
-  url "https://ghproxy.com/https://github.com/google/highway/archive/refs/tags/1.0.7.tar.gz"
+  homepage "https:github.comgooglehighway"
+  url "https:github.comgooglehighwayarchiverefstags1.0.7.tar.gz"
   sha256 "5434488108186c170a5e2fca5e3c9b6ef59a1caa4d520b008a9b8be6b8abe6c5"
   license "Apache-2.0"
-  head "https://github.com/google/highway.git", branch: "master"
+  head "https:github.comgooglehighway.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fdd6b2ac3d54fc746adaa78d363d082561ac01b80fdf4283ee0cf7a750b1bf70"
@@ -21,7 +21,7 @@ class Highway < Formula
   depends_on "cmake" => :build
 
   # These used to be bundled with `jpeg-xl`.
-  link_overwrite "include/hwy/*", "lib/pkgconfig/libhwy*"
+  link_overwrite "includehwy*", "libpkgconfiglibhwy*"
 
   def install
     ENV.runtime_cpu_detection
@@ -33,12 +33,12 @@ class Highway < Formula
                     *std_cmake_args
     system "cmake", "--build", "builddir"
     system "cmake", "--install", "builddir"
-    (share/"hwy").install "hwy/examples"
+    (share"hwy").install "hwyexamples"
   end
 
   test do
     system ENV.cxx, "-std=c++11", "-I#{share}", "-I#{include}",
-                    share/"hwy/examples/benchmark.cc", "-L#{lib}", "-lhwy"
-    system "./a.out"
+                    share"hwyexamplesbenchmark.cc", "-L#{lib}", "-lhwy"
+    system ".a.out"
   end
 end

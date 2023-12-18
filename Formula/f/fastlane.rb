@@ -1,14 +1,14 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
-  homepage "https://fastlane.tools"
-  url "https://ghproxy.com/https://github.com/fastlane/fastlane/archive/refs/tags/2.217.0.tar.gz"
+  homepage "https:fastlane.tools"
+  url "https:github.comfastlanefastlanearchiverefstags2.217.0.tar.gz"
   sha256 "e66a2c45b9a44c352ec20dc9e1846345110fd20d30407cecd5739651824c8c15"
   license "MIT"
-  head "https://github.com/fastlane/fastlane.git", branch: "master"
+  head "https:github.comfastlanefastlane.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,28 +34,28 @@ class Fastlane < Formula
     system "gem", "build", "fastlane.gemspec"
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
 
-    (bin/"fastlane").write_env_script libexec/"bin/fastlane",
-      PATH:                            "#{Formula["ruby@3.1"].opt_bin}:#{libexec}/bin:$PATH",
+    (bin"fastlane").write_env_script libexec"binfastlane",
+      PATH:                            "#{Formula["ruby@3.1"].opt_bin}:#{libexec}bin:$PATH",
       FASTLANE_INSTALLED_VIA_HOMEBREW: "true",
       GEM_HOME:                        libexec.to_s,
       GEM_PATH:                        libexec.to_s
 
     # Remove vendored pre-built binary
-    terminal_notifier_dir = libexec.glob("gems/terminal-notifier-*/vendor/terminal-notifier").first
-    (terminal_notifier_dir/"terminal-notifier.app").rmtree
+    terminal_notifier_dir = libexec.glob("gemsterminal-notifier-*vendorterminal-notifier").first
+    (terminal_notifier_dir"terminal-notifier.app").rmtree
 
     if OS.mac?
       ln_sf(
-        (Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app").relative_path_from(terminal_notifier_dir),
+        (Formula["terminal-notifier"].opt_prefix"terminal-notifier.app").relative_path_from(terminal_notifier_dir),
         terminal_notifier_dir,
       )
     end
   end
 
   test do
-    assert_match "fastlane #{version}", shell_output("#{bin}/fastlane --version")
+    assert_match "fastlane #{version}", shell_output("#{bin}fastlane --version")
 
-    actions_output = shell_output("#{bin}/fastlane actions")
+    actions_output = shell_output("#{bin}fastlane actions")
     assert_match "gym", actions_output
     assert_match "pilot", actions_output
     assert_match "screengrab", actions_output

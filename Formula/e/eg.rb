@@ -1,10 +1,10 @@
 class Eg < Formula
-  desc "Expert Guide. Norton Guide Reader For GNU/Linux"
-  homepage "https://github.com/davep/eg"
-  url "https://ghproxy.com/https://github.com/davep/eg/archive/refs/tags/v1.02.tar.gz"
+  desc "Expert Guide. Norton Guide Reader For GNULinux"
+  homepage "https:github.comdavepeg"
+  url "https:github.comdavepegarchiverefstagsv1.02.tar.gz"
   sha256 "6b73fff51b5cf82e94cdd60f295a8f80e7bbb059891d4c75d5b1a6f0c5cc7003"
   license "GPL-2.0"
-  head "https://github.com/davep/eg.git", branch: "master"
+  head "https:github.comdavepeg.git", branch: "master"
 
   bottle do
     sha256                               arm64_sonoma:   "76e0f0b7dadc29420b7a83e10425eda231ba773ee90485838605b87d3934d964"
@@ -26,11 +26,11 @@ class Eg < Formula
   depends_on "s-lang"
 
   def install
-    inreplace "eglib.c", "/usr/share/", "#{etc}/"
+    inreplace "eglib.c", "usrshare", "#{etc}"
     bin.mkpath
     man1.mkpath
     system "make"
-    system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}", "NGDIR=#{etc}/norton-guides"
+    system "make", "install", "BINDIR=#{bin}", "MANDIR=#{man}", "NGDIR=#{etc}norton-guides"
   end
 
   test do
@@ -38,6 +38,6 @@ class Eg < Formula
     # except a filename, but will return success if the file doesn't
     # exist, without popping into the UI - we're exploiting this here.
     ENV["TERM"] = "xterm"
-    system bin/"eg", "not_here.ng"
+    system bin"eg", "not_here.ng"
   end
 end

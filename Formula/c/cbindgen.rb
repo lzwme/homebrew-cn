@@ -1,7 +1,7 @@
 class Cbindgen < Formula
   desc "Project for generating C bindings from Rust code"
-  homepage "https://github.com/mozilla/cbindgen"
-  url "https://ghproxy.com/https://github.com/mozilla/cbindgen/archive/refs/tags/v0.26.0.tar.gz"
+  homepage "https:github.commozillacbindgen"
+  url "https:github.commozillacbindgenarchiverefstagsv0.26.0.tar.gz"
   sha256 "b45e1a64875b615702a86ac3084ef69ae32926241cd2b687a30c12474be15105"
   license "MPL-2.0"
 
@@ -33,8 +33,8 @@ class Cbindgen < Formula
   end
 
   test do
-    cp pkgshare/"tests/rust/extern.rs", testpath
-    output = shell_output("#{bin}/cbindgen extern.rs")
+    cp pkgshare"testsrustextern.rs", testpath
+    output = shell_output("#{bin}cbindgen extern.rs")
     assert_match "extern int32_t foo()", output
   end
 end

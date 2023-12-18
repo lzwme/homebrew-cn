@@ -1,14 +1,14 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
-  homepage "https://github.com/podofo/podofo"
-  url "https://ghproxy.com/https://github.com/podofo/podofo/archive/refs/tags/0.10.3.tar.gz"
+  homepage "https:github.compodofopodofo"
+  url "https:github.compodofopodofoarchiverefstags0.10.3.tar.gz"
   sha256 "4be2232643f9e9dd7fbb02894d5a0394c3ca2826aab179654c2cc751074825ec"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  head "https://github.com/podofo/podofo.git", branch: "master"
+  head "https:github.compodofopodofo.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -39,8 +39,8 @@ class Podofo < Formula
       -DCMAKE_DISABLE_FIND_PACKAGE_CppUnit=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_LUA=ON
       -DPODOFO_BUILD_TOOLS=TRUE
-      -DFREETYPE_INCLUDE_DIR_FT2BUILD=#{Formula["freetype"].opt_include}/freetype2
-      -DFREETYPE_INCLUDE_DIR_FTHEADER=#{Formula["freetype"].opt_include}/freetype2/config/
+      -DFREETYPE_INCLUDE_DIR_FT2BUILD=#{Formula["freetype"].opt_include}freetype2
+      -DFREETYPE_INCLUDE_DIR_FTHEADER=#{Formula["freetype"].opt_include}freetype2config
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
@@ -49,6 +49,6 @@ class Podofo < Formula
 
   test do
     cp test_fixtures("test.pdf"), testpath
-    assert_match "500 x 800 pts", shell_output("#{bin}/podofopdfinfo test.pdf")
+    assert_match "500 x 800 pts", shell_output("#{bin}podofopdfinfo test.pdf")
   end
 end

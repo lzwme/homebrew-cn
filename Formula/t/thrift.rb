@@ -1,16 +1,16 @@
 class Thrift < Formula
   desc "Framework for scalable cross-language services development"
-  homepage "https://thrift.apache.org/"
+  homepage "https:thrift.apache.org"
   license "Apache-2.0"
 
   stable do
-    url "https://www.apache.org/dyn/closer.lua?path=thrift/0.19.0/thrift-0.19.0.tar.gz"
-    mirror "https://archive.apache.org/dist/thrift/0.19.0/thrift-0.19.0.tar.gz"
+    url "https:www.apache.orgdyncloser.lua?path=thrift0.19.0thrift-0.19.0.tar.gz"
+    mirror "https:archive.apache.orgdistthrift0.19.0thrift-0.19.0.tar.gz"
     sha256 "d49c896c2724a78701e05cfccf6cf70b5db312d82a17efe951b441d300ccf275"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -28,7 +28,7 @@ class Thrift < Formula
   end
 
   head do
-    url "https://github.com/apache/thrift.git", branch: "master"
+    url "https:github.comapachethrift.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,7 +42,7 @@ class Thrift < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./bootstrap.sh" unless build.stable?
+    system ".bootstrap.sh" unless build.stable?
 
     args = %W[
       --disable-debug
@@ -73,29 +73,29 @@ class Thrift < Formula
 
     ENV.cxx11 if ENV.compiler == :clang
 
-    # Don't install extensions to /usr:
+    # Don't install extensions to usr:
     ENV["PY_PREFIX"] = prefix
     ENV["PHP_PREFIX"] = prefix
     ENV["JAVA_PREFIX"] = buildpath
 
-    system "./configure", *args
+    system ".configure", *args
     ENV.deparallelize
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.thrift").write <<~EOS
+    (testpath"test.thrift").write <<~EOS
       service MultiplicationService {
         i32 multiply(1:i32 x, 2:i32 y),
       }
     EOS
 
-    system "#{bin}/thrift", "-r", "--gen", "cpp", "test.thrift"
+    system "#{bin}thrift", "-r", "--gen", "cpp", "test.thrift"
 
-    system ENV.cxx, "-std=c++11", "gen-cpp/MultiplicationService.cpp",
-      "gen-cpp/MultiplicationService_server.skeleton.cpp",
-      "-I#{include}/include",
+    system ENV.cxx, "-std=c++11", "gen-cppMultiplicationService.cpp",
+      "gen-cppMultiplicationService_server.skeleton.cpp",
+      "-I#{include}include",
       "-L#{lib}", "-lthrift"
   end
 end

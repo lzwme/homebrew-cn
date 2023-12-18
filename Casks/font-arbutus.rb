@@ -2,10 +2,10 @@ cask "font-arbutus" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/arbutus/Arbutus-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflarbutusArbutus-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Arbutus"
-  homepage "https://fonts.google.com/specimen/Arbutus"
+  homepage "https:fonts.google.comspecimenArbutus"
 
   font "Arbutus-Regular.ttf"
 

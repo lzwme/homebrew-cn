@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
-  homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-13.0.2.tgz"
+  homepage "https:firebase.google.comdocscli"
+  url "https:registry.npmjs.orgfirebase-tools-firebase-tools-13.0.2.tgz"
   sha256 "0eb0c1f29740e8a41059a671e418dee7431be6f83ad51960d3f8aed5e8259bb8"
   license "MIT"
-  head "https://github.com/firebase/firebase-tools.git", branch: "master"
+  head "https:github.comfirebasefirebase-tools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6654dbc12f594d362af36b771fa2f595c4f9f47ede5a470e6c51c690873e8803"
@@ -24,12 +24,12 @@ class FirebaseCli < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    (testpath/"test.exp").write <<~EOS
-      spawn #{bin}/firebase login:ci --no-localhost
+    (testpath"test.exp").write <<~EOS
+      spawn #{bin}firebase login:ci --no-localhost
       expect "Paste"
     EOS
     assert_match "authorization code", shell_output("expect -f test.exp")

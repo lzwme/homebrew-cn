@@ -1,10 +1,10 @@
 class Iniparser < Formula
   desc "Library for parsing ini files"
-  homepage "http://ndevilla.free.fr/iniparser/"
-  url "https://ghproxy.com/https://github.com/ndevilla/iniparser/archive/refs/tags/v4.1.tar.gz"
+  homepage "http:ndevilla.free.friniparser"
+  url "https:github.comndevillainiparserarchiverefstagsv4.1.tar.gz"
   sha256 "960daa800dd31d70ba1bacf3ea2d22e8ddfc2906534bf328319495966443f3ae"
   license "MIT"
-  head "https://github.com/ndevilla/iniparser.git", branch: "master"
+  head "https:github.comndevillainiparser.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1969824bc7b5c5a7abb0dc837b90bf0a70ac536b403a145aceb41377edb8d805"
@@ -22,12 +22,12 @@ class Iniparser < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff54f4bdd772ed7f7695079046c3668ab088e233e4f1939bf699b4b7219b964f"
   end
 
-  conflicts_with "fastbit", because: "both install `include/dictionary.h`"
+  conflicts_with "fastbit", because: "both install `includedictionary.h`"
 
   def install
     # Only make the *.a file; the *.so target is useless (and fails).
     system "make", "libiniparser.a", "CC=#{ENV.cc}", "RANLIB=ranlib"
     lib.install "libiniparser.a"
-    include.install Dir["src/*.h"]
+    include.install Dir["src*.h"]
   end
 end

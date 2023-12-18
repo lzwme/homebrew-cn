@@ -1,17 +1,17 @@
 class Httperf < Formula
   desc "Tool for measuring webserver performance"
-  homepage "https://github.com/httperf/httperf"
+  homepage "https:github.comhttperfhttperf"
   license "GPL-2.0"
   revision 2
 
   stable do
-    url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/httperf/httperf-0.9.0.tar.gz"
+    url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comhttperfhttperf-0.9.0.tar.gz"
     sha256 "e1a0bf56bcb746c04674c47b6cfa531fad24e45e9c6de02aea0d1c5f85a2bf1c"
 
     # Upstream patch for OpenSSL 1.1 compatibility
-    # https://github.com/httperf/httperf/pull/48
+    # https:github.comhttperfhttperfpull48
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/httperf/openssl-1.1.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9httperfopenssl-1.1.diff"
       sha256 "69d5003f60f5e46d25813775bbf861366fb751da4e0e4d2fe7530d7bb3f3660a"
     end
   end
@@ -36,7 +36,7 @@ class Httperf < Formula
   end
 
   head do
-    url "https://github.com/httperf/httperf.git", branch: "master"
+    url "https:github.comhttperfhttperf.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -47,11 +47,11 @@ class Httperf < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/httperf", "--version"
+    system "#{bin}httperf", "--version"
   end
 end

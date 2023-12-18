@@ -1,7 +1,7 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
-  homepage "https://github.com/tarantool/tt"
-  url "https://ghproxy.com/https://github.com/tarantool/tt/releases/download/v2.1.0/tt-2.1.0-complete.tar.gz"
+  homepage "https:github.comtarantooltt"
+  url "https:github.comtarantoolttreleasesdownloadv2.1.0tt-2.1.0-complete.tar.gz"
   sha256 "ede0cdcb19cd17b1094530b4b6d639aa2898621ec470fc15e7eb771c7547f5b2"
   license "BSD-2-Clause"
 
@@ -32,13 +32,13 @@ class Tt < Formula
     ENV["TT_CLI_BUILD_SSL"] = "shared"
     system "mage", "build"
     bin.install "tt"
-    (etc/"tarantool").install "tt.yaml.default" => "tt.yaml"
-    generate_completions_from_executable(bin/"tt", "completion", shells: [:bash, :zsh])
+    (etc"tarantool").install "tt.yaml.default" => "tt.yaml"
+    generate_completions_from_executable(bin"tt", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    system bin/"tt", "init"
-    system bin/"tt", "create", "cartridge", "--name", "cartridge_app", "-f", "--non-interactive", "-d", testpath
-    assert_path_exists testpath/"cartridge_app/init.lua"
+    system bin"tt", "init"
+    system bin"tt", "create", "cartridge", "--name", "cartridge_app", "-f", "--non-interactive", "-d", testpath
+    assert_path_exists testpath"cartridge_appinit.lua"
   end
 end

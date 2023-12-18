@@ -2,11 +2,11 @@ cask "openaudible" do
   version "3.9.7.1"
   sha256 "0de3dc367a4046aea3e3f58e99e8e38188d353a1764055e03be7a0a9ec626dc9"
 
-  url "https://ghproxy.com/https://github.com/openaudible/openaudible/releases/download/v#{version}/OpenAudible_#{version}.dmg",
-      verified: "github.com/openaudible/openaudible/"
+  url "https:github.comopenaudibleopenaudiblereleasesdownloadv#{version}OpenAudible_#{version}.dmg",
+      verified: "github.comopenaudibleopenaudible"
   name "OpenAudible"
   desc "Audiobook manager for Audible users"
-  homepage "https://openaudible.org/"
+  homepage "https:openaudible.org"
 
   livecheck do
     url :url
@@ -15,5 +15,5 @@ cask "openaudible" do
 
   app "OpenAudible.app"
 
-  zap trash: "/Library/OpenAudible"
+  zap trash: "LibraryOpenAudible"
 end

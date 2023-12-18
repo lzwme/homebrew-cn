@@ -1,7 +1,7 @@
 class Pgtoolkit < Formula
   desc "Tools for PostgreSQL maintenance"
-  homepage "https://github.com/grayhemp/pgtoolkit"
-  url "https://ghproxy.com/https://github.com/grayhemp/pgtoolkit/archive/refs/tags/v1.0.2.tar.gz"
+  homepage "https:github.comgrayhemppgtoolkit"
+  url "https:github.comgrayhemppgtoolkitarchiverefstagsv1.0.2.tar.gz"
   sha256 "d86f34c579a4c921b77f313d4c7efbf4b12695df89e6b68def92ffa0332a7351"
   license "PostgreSQL"
 
@@ -10,12 +10,12 @@ class Pgtoolkit < Formula
   end
 
   def install
-    bin.install "fatpack/pgcompact"
+    bin.install "fatpackpgcompact"
     doc.install %w[CHANGES.md LICENSE.md README.md TODO.md]
   end
 
   test do
-    output = IO.popen("#{bin}/pgcompact --help")
+    output = IO.popen("#{bin}pgcompact --help")
     matches = output.readlines.select { |line| line.include?("pgcompact - PostgreSQL bloat reducing tool") }
     !matches.empty?
   end

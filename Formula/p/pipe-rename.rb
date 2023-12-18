@@ -1,10 +1,10 @@
 class PipeRename < Formula
   desc "Rename your files using your favorite text editor"
-  homepage "https://github.com/marcusbuffett/pipe-rename"
-  url "https://ghproxy.com/https://github.com/marcusbuffett/pipe-rename/archive/refs/tags/1.6.5.tar.gz"
+  homepage "https:github.commarcusbuffettpipe-rename"
+  url "https:github.commarcusbuffettpipe-renamearchiverefstags1.6.5.tar.gz"
   sha256 "41edf419ab3d7b3c16d2efe209b3ca3d3f7104a3365f61fe821a59caac31810b"
   license "MIT"
-  head "https://github.com/marcusbuffett/pipe-rename.git", branch: "master"
+  head "https:github.commarcusbuffettpipe-rename.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,10 +27,10 @@ class PipeRename < Formula
 
   test do
     touch "test.log"
-    (testpath/"rename.sh").write "#!/bin/sh\necho \"$(cat \"$1\").txt\" > \"$1\""
-    chmod "+x", testpath/"rename.sh"
-    ENV["EDITOR"] = testpath/"rename.sh"
-    system "#{bin}/renamer", "-y", "test.log"
-    assert_predicate testpath/"test.log.txt", :exist?
+    (testpath"rename.sh").write "#!binsh\necho \"$(cat \"$1\").txt\" > \"$1\""
+    chmod "+x", testpath"rename.sh"
+    ENV["EDITOR"] = testpath"rename.sh"
+    system "#{bin}renamer", "-y", "test.log"
+    assert_predicate testpath"test.log.txt", :exist?
   end
 end

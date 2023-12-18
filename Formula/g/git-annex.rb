@@ -1,11 +1,11 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
-  homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20231129/git-annex-10.20231129.tar.gz"
+  homepage "https:git-annex.branchable.com"
+  url "https:hackage.haskell.orgpackagegit-annex-10.20231129git-annex-10.20231129.tar.gz"
   sha256 "e85c091e79d3506a19973be728c74b9800fcbff24cf92f0868edbdffb42ace6b"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
-  head "git://git-annex.branchable.com/", branch: "master"
+  head "git:git-annex.branchable.com", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "80af731fe6b1efc015b601099ca1719c044fe50cb10717fb2e512a811bf42d42"
@@ -23,7 +23,7 @@ class GitAnnex < Formula
   depends_on "libmagic"
 
   def install
-    # https://github.com/aristidb/aws/issues/288
+    # https:github.comaristidbawsissues288
     cabal_args = std_cabal_v2_args + ["--constraint=attoparsec-aeson<2.2.0.0"]
     system "cabal", "v2-update"
     system "cabal", "v2-install", *cabal_args, "--flags=+S3"
@@ -31,20 +31,20 @@ class GitAnnex < Formula
   end
 
   service do
-    run [opt_bin/"git-annex", "assistant", "--autostart"]
+    run [opt_bin"git-annex", "assistant", "--autostart"]
   end
 
   test do
     # make sure git can find git-annex
     ENV.prepend_path "PATH", bin
     # We don't want this here or it gets "caught" by git-annex.
-    rm_r "Library/Python/2.7/lib/python/site-packages/homebrew.pth"
+    rm_r "LibraryPython2.7libpythonsite-packageshomebrew.pth"
 
     system "git", "init"
     system "git", "annex", "init"
-    (testpath/"Hello.txt").write "Hello!"
+    (testpath"Hello.txt").write "Hello!"
     assert !File.symlink?("Hello.txt")
-    assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
+    assert_match(^add Hello.txt.*ok.*\(recording state in git\.\.\.\)m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
     assert File.symlink?("Hello.txt")
 

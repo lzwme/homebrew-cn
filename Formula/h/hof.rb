@@ -1,17 +1,17 @@
 class Hof < Formula
   desc "Flexible data modeling & code generation system"
-  homepage "https://hofstadter.io/"
-  url "https://github.com/hofstadter-io/hof.git",
+  homepage "https:hofstadter.io"
+  url "https:github.comhofstadter-iohof.git",
       tag:      "v0.6.8",
       revision: "112659fe982a3efbe0acdb151c659e0b8b2e081f"
   license "Apache-2.0"
-  head "https://github.com/hofstadter-io/hof.git", branch: "_dev"
+  head "https:github.comhofstadter-iohof.git", branch: "_dev"
 
   # Latest release tag contains `-beta`, which is not ideal
   # adding a livecheck block to check the stable release
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,28 +34,28 @@ class Hof < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/hofstadter-io/hof/cmd/hof/verinfo.Version=#{version}
-      -X github.com/hofstadter-io/hof/cmd/hof/verinfo.Commit=#{Utils.git_head}
-      -X github.com/hofstadter-io/hof/cmd/hof/verinfo.BuildDate=#{time.iso8601}
-      -X github.com/hofstadter-io/hof/cmd/hof/verinfo.GoVersion=#{Formula["go"].version}
-      -X github.com/hofstadter-io/hof/cmd/hof/verinfo.BuildOS=#{os}
-      -X github.com/hofstadter-io/hof/cmd/hof/verinfo.BuildArch=#{arch}
+      -X github.comhofstadter-iohofcmdhofverinfo.Version=#{version}
+      -X github.comhofstadter-iohofcmdhofverinfo.Commit=#{Utils.git_head}
+      -X github.comhofstadter-iohofcmdhofverinfo.BuildDate=#{time.iso8601}
+      -X github.comhofstadter-iohofcmdhofverinfo.GoVersion=#{Formula["go"].version}
+      -X github.comhofstadter-iohofcmdhofverinfo.BuildOS=#{os}
+      -X github.comhofstadter-iohofcmdhofverinfo.BuildArch=#{arch}
     ]
 
     ENV["CGO_ENABLED"] = "0"
     ENV["HOF_TELEMETRY_DISABLED"] = "1"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hof"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdhof"
 
-    generate_completions_from_executable(bin/"hof", "completion")
+    generate_completions_from_executable(bin"hof", "completion")
   end
 
   test do
     ENV["HOF_TELEMETRY_DISABLED"] = "1"
-    # upstream bug report, https://github.com/hofstadter-io/hof/issues/257
-    # assert_match "v#{version}", shell_output("#{bin}/hof version")
+    # upstream bug report, https:github.comhofstadter-iohofissues257
+    # assert_match "v#{version}", shell_output("#{bin}hof version")
 
-    system bin/"hof", "mod", "init", "brew.sh/brewtest"
-    assert_predicate testpath/"cue.mod", :exist?
-    assert_match 'module: "brew.sh/brewtest"', (testpath/"cue.mod/module.cue").read
+    system bin"hof", "mod", "init", "brew.shbrewtest"
+    assert_predicate testpath"cue.mod", :exist?
+    assert_match 'module: "brew.shbrewtest"', (testpath"cue.modmodule.cue").read
   end
 end

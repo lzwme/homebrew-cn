@@ -2,10 +2,10 @@ cask "font-mplus-nerd-font" do
   version "3.1.1"
   sha256 "b2fb6627af0d8a9bf7eafb2eafc178e292dcc90c36818980ecfe579bc8586dcc"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/MPlus.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}MPlus.zip"
   name "M+ Nerd Font families (MPlus)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

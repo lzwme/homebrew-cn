@@ -1,7 +1,7 @@
 class BdwGc < Formula
   desc "Garbage collector for C and C++"
-  homepage "https://www.hboehm.info/gc/"
-  url "https://ghproxy.com/https://github.com/ivmai/bdwgc/releases/download/v8.2.4/gc-8.2.4.tar.gz"
+  homepage "https:www.hboehm.infogc"
+  url "https:github.comivmaibdwgcreleasesdownloadv8.2.4gc-8.2.4.tar.gz"
   sha256 "3d0d3cdbe077403d3106bb40f0cbb563413d6efdbb2a7e1cd6886595dec48fc2"
   license "MIT"
 
@@ -23,7 +23,7 @@ class BdwGc < Formula
   end
 
   head do
-    url "https://github.com/ivmai/bdwgc.git", branch: "master"
+    url "https:github.comivmaibdwgc.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool"  => :build
@@ -37,8 +37,8 @@ class BdwGc < Formula
   end
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-debug",
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-cplusplus",
@@ -50,7 +50,7 @@ class BdwGc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
       #include <stdio.h>
       #include "gc.h"
@@ -72,6 +72,6 @@ class BdwGc < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgc", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

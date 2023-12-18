@@ -1,7 +1,7 @@
 class Dynamips < Formula
-  desc "Cisco 7200/3600/3725/3745/2600/1700 Router Emulator"
-  homepage "https://github.com/GNS3/dynamips"
-  url "https://ghproxy.com/https://github.com/GNS3/dynamips/archive/refs/tags/v0.2.23.tar.gz"
+  desc "Cisco 720036003725374526001700 Router Emulator"
+  homepage "https:github.comGNS3dynamips"
+  url "https:github.comGNS3dynamipsarchiverefstagsv0.2.23.tar.gz"
   sha256 "503bbb52c03f91900ea8dbe8bd0b804b76e2e28d0b7242624e0d3c52dda441a1"
 
   livecheck do
@@ -36,7 +36,7 @@ class Dynamips < Formula
   def install
     cmake_args = std_cmake_args + ["-DANY_COMPILER=1"]
     cmake_args << if OS.mac?
-      "-DLIBELF_INCLUDE_DIRS=#{Formula["libelf"].opt_include}/libelf"
+      "-DLIBELF_INCLUDE_DIRS=#{Formula["libelf"].opt_include}libelf"
     else
       "-DLIBELF_INCLUDE_DIRS=#{Formula["elfutils"].opt_include}"
     end
@@ -49,6 +49,6 @@ class Dynamips < Formula
   end
 
   test do
-    system "#{bin}/dynamips", "-e"
+    system "#{bin}dynamips", "-e"
   end
 end

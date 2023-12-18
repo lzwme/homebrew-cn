@@ -2,10 +2,10 @@ cask "font-margarine" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/margarine/Margarine-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmargarineMargarine-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Margarine"
-  homepage "https://fonts.google.com/specimen/Margarine"
+  homepage "https:fonts.google.comspecimenMargarine"
 
   font "Margarine-Regular.ttf"
 

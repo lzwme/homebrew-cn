@@ -2,10 +2,10 @@ cask "font-quintessential" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/quintessential/Quintessential-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflquintessentialQuintessential-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Quintessential"
-  homepage "https://fonts.google.com/specimen/Quintessential"
+  homepage "https:fonts.google.comspecimenQuintessential"
 
   font "Quintessential-Regular.ttf"
 

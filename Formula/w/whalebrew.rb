@@ -1,11 +1,11 @@
 class Whalebrew < Formula
   desc "Homebrew, but with Docker images"
-  homepage "https://github.com/whalebrew/whalebrew"
-  url "https://github.com/whalebrew/whalebrew.git",
+  homepage "https:github.comwhalebrewwhalebrew"
+  url "https:github.comwhalebrewwhalebrew.git",
       tag:      "0.4.1",
       revision: "8137e562f38ce32d425df4a3676143c2d631d0f1"
   license "Apache-2.0"
-  head "https://github.com/whalebrew/whalebrew.git", branch: "master"
+  head "https:github.comwhalebrewwhalebrew.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,16 +25,16 @@ class Whalebrew < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/whalebrew/whalebrew/version.Version=#{version}+homebrew
+      -X github.comwhalebrewwhalebrewversion.Version=#{version}+homebrew
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
-    generate_completions_from_executable(bin/"whalebrew", "completion")
+    generate_completions_from_executable(bin"whalebrew", "completion")
   end
 
   test do
-    assert_match "Whalebrew #{version}+homebrew", shell_output("#{bin}/whalebrew version")
+    assert_match "Whalebrew #{version}+homebrew", shell_output("#{bin}whalebrew version")
 
-    output = shell_output("#{bin}/whalebrew install whalebrew/whalesay -y", 255)
-    assert_match(/connect to the Docker daemon|operation not permitted/, output)
+    output = shell_output("#{bin}whalebrew install whalebrewwhalesay -y", 255)
+    assert_match(connect to the Docker daemon|operation not permitted, output)
   end
 end

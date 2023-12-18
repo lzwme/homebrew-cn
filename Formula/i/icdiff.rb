@@ -2,11 +2,11 @@ class Icdiff < Formula
   include Language::Python::Shebang
 
   desc "Improved colored diff"
-  homepage "https://github.com/jeffkaufman/icdiff"
-  url "https://ghproxy.com/https://github.com/jeffkaufman/icdiff/archive/refs/tags/release-2.0.7.tar.gz"
+  homepage "https:github.comjeffkaufmanicdiff"
+  url "https:github.comjeffkaufmanicdiffarchiverefstagsrelease-2.0.7.tar.gz"
   sha256 "147ebdd0c2b8019d0702bbbb1349d77442a4f05530cba39276b58b005ca08c77"
   license "PSF-2.0"
-  head "https://github.com/jeffkaufman/icdiff.git", branch: "master"
+  head "https:github.comjeffkaufmanicdiff.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -21,10 +21,10 @@ class Icdiff < Formula
   end
 
   test do
-    (testpath/"file1").write "test1"
-    (testpath/"file2").write "test1"
-    system "#{bin}/icdiff", "file1", "file2"
+    (testpath"file1").write "test1"
+    (testpath"file2").write "test1"
+    system "#{bin}icdiff", "file1", "file2"
     system "git", "init"
-    system "#{bin}/git-icdiff"
+    system "#{bin}git-icdiff"
   end
 end

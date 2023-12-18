@@ -1,7 +1,7 @@
 class Corrosion < Formula
-  desc "Easy Rust and C/C++ Integration"
-  homepage "https://github.com/corrosion-rs/corrosion"
-  url "https://ghproxy.com/https://github.com/corrosion-rs/corrosion/archive/refs/tags/v0.4.5.tar.gz"
+  desc "Easy Rust and CC++ Integration"
+  homepage "https:github.comcorrosion-rscorrosion"
+  url "https:github.comcorrosion-rscorrosionarchiverefstagsv0.4.5.tar.gz"
   sha256 "32e91eb2eac16f1c48c88f2c918ccf82a2c4fc787f872654e658825a0ba48a29"
   license "MIT"
 
@@ -26,10 +26,10 @@ class Corrosion < Formula
   end
 
   test do
-    cp_r pkgshare/"test/rust2cpp/rust2cpp/.", testpath
-    inreplace "CMakeLists.txt", "include(../../test_header.cmake)", "find_package(Corrosion REQUIRED)"
+    cp_r pkgshare"testrust2cpprust2cpp.", testpath
+    inreplace "CMakeLists.txt", "include(....test_header.cmake)", "find_package(Corrosion REQUIRED)"
     system "cmake", "."
     system "cmake", "--build", "."
-    assert_match "Hello, Cpp! I'm Rust!", shell_output("./cpp-exe")
+    assert_match "Hello, Cpp! I'm Rust!", shell_output(".cpp-exe")
   end
 end

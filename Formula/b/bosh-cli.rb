@@ -1,10 +1,10 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
-  homepage "https://bosh.io/docs/cli-v2/"
-  url "https://ghproxy.com/https://github.com/cloudfoundry/bosh-cli/archive/refs/tags/v7.5.1.tar.gz"
+  homepage "https:bosh.iodocscli-v2"
+  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.5.1.tar.gz"
   sha256 "8d9ec645ae90a0dda9454781f707e2dc53543caa609749f5a055356d5d8f864c"
   license "Apache-2.0"
-  head "https://github.com/cloudfoundry/bosh-cli.git", branch: "main"
+  head "https:github.comcloudfoundrybosh-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab6f7db5ca1ff3a74b42768a1cef29d036b1068c8d46c1d64a99ec70eb57d2a6"
@@ -19,16 +19,16 @@ class BoshCli < Formula
   depends_on "go" => :build
 
   def install
-    # https://github.com/cloudfoundry/bosh-cli/blob/master/ci/tasks/build.sh#L23-L24
-    inreplace "cmd/version.go", "[DEV BUILD]", "#{version}-#{tap.user}-#{time.iso8601}"
+    # https:github.comcloudfoundrybosh-cliblobmastercitasksbuild.sh#L23-L24
+    inreplace "cmdversion.go", "[DEV BUILD]", "#{version}-#{tap.user}-#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    system bin/"bosh-cli", "generate-job", "brew-test"
+    system bin"bosh-cli", "generate-job", "brew-test"
     assert_equal 0, $CHILD_STATUS.exitstatus
-    assert_predicate testpath/"jobs/brew-test", :exist?
+    assert_predicate testpath"jobsbrew-test", :exist?
 
-    assert_match version.to_s, shell_output("#{bin}/bosh-cli --version")
+    assert_match version.to_s, shell_output("#{bin}bosh-cli --version")
   end
 end

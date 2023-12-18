@@ -2,12 +2,12 @@ cask "font-magra" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/magra"
+      only_path: "oflmagra"
   name "Magra"
-  homepage "https://fonts.google.com/specimen/Magra"
+  homepage "https:fonts.google.comspecimenMagra"
 
   font "Magra-Bold.ttf"
   font "Magra-Regular.ttf"

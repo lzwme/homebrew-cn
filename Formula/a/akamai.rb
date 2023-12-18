@@ -1,7 +1,7 @@
 class Akamai < Formula
   desc "CLI toolkit for working with Akamai's APIs"
-  homepage "https://github.com/akamai/cli"
-  url "https://ghproxy.com/https://github.com/akamai/cli/archive/refs/tags/v1.5.5.tar.gz"
+  homepage "https:github.comakamaicli"
+  url "https:github.comakamaicliarchiverefstagsv1.5.5.tar.gz"
   sha256 "39ad5ac0a0f0c7cbf24e0e4af9cc74868f39e41d632b236d8ac4bb5ac8d2969e"
   license "Apache-2.0"
 
@@ -20,11 +20,11 @@ class Akamai < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", "-tags", "noautoupgrade nofirstrun", *std_go_args, "cli/main.go"
+    system "go", "build", "-tags", "noautoupgrade nofirstrun", *std_go_args, "climain.go"
   end
 
   test do
-    assert_match "diagnostics", shell_output("#{bin}/akamai install diagnostics")
-    system bin/"akamai", "uninstall", "diagnostics"
+    assert_match "diagnostics", shell_output("#{bin}akamai install diagnostics")
+    system bin"akamai", "uninstall", "diagnostics"
   end
 end

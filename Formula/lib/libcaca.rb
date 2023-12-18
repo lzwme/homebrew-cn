@@ -1,8 +1,8 @@
 class Libcaca < Formula
   desc "Convert pixel information into colored ASCII art"
-  homepage "http://caca.zoy.org/wiki/libcaca"
-  url "https://ghproxy.com/https://github.com/cacalabs/libcaca/releases/download/v0.99.beta20/libcaca-0.99.beta20.tar.bz2"
-  mirror "https://fossies.org/linux/privat/libcaca-0.99.beta20.tar.bz2"
+  homepage "http:caca.zoy.orgwikilibcaca"
+  url "https:github.comcacalabslibcacareleasesdownloadv0.99.beta20libcaca-0.99.beta20.tar.bz2"
+  mirror "https:fossies.orglinuxprivatlibcaca-0.99.beta20.tar.bz2"
   version "0.99b20"
   sha256 "ff9aa641af180a59acedc7fc9e663543fb397ff758b5122093158fd628125ac1"
   license "WTFPL"
@@ -10,7 +10,7 @@ class Libcaca < Formula
   livecheck do
     url :stable
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub(/\.?beta/, "b") }
+      tags.map { |tag| tag[regex, 1]&.gsub(\.?beta, "b") }
     end
   end
 
@@ -28,7 +28,7 @@ class Libcaca < Formula
   end
 
   head do
-    url "https://github.com/cacalabs/libcaca.git", branch: "main"
+    url "https:github.comcacalabslibcaca.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,7 +39,7 @@ class Libcaca < Formula
   depends_on "imlib2"
 
   def install
-    system "./bootstrap" if build.head?
+    system ".bootstrap" if build.head?
 
     args = %W[
       --disable-dependency-tracking
@@ -54,7 +54,7 @@ class Libcaca < Formula
       --disable-x11
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     ENV.deparallelize # Or install can fail making the same folder at the same time
     system "make", "install"
@@ -62,6 +62,6 @@ class Libcaca < Formula
 
   test do
     cp test_fixtures("test.png"), "test.png"
-    assert_match "\e[0;5;34;44m", shell_output("#{bin}/img2txt test.png")
+    assert_match "\e[0;5;34;44m", shell_output("#{bin}img2txt test.png")
   end
 end

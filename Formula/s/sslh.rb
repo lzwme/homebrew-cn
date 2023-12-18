@@ -1,10 +1,10 @@
 class Sslh < Formula
   desc "Forward connections based on first data packet sent by client"
-  homepage "https://www.rutschle.net/tech/sslh.shtml"
-  url "https://www.rutschle.net/tech/sslh/sslh-v2.0.1.tar.gz"
+  homepage "https:www.rutschle.nettechsslh.shtml"
+  url "https:www.rutschle.nettechsslhsslh-v2.0.1.tar.gz"
   sha256 "d88d43ee11cf1324983c196c894b41766c33d957b6af53b62c8479703bbbd26c"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
-  head "https://github.com/yrutschle/sslh.git", branch: "master"
+  head "https:github.comyrutschlesslh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8f603f2d63633e2e11bcb22ef99576ee6529c0da3b8fbb34d3bd194b557668a0"
@@ -34,7 +34,7 @@ class Sslh < Formula
     target_port = free_port
 
     fork do
-      exec sbin/"sslh", "--http=localhost:#{target_port}", "--listen=localhost:#{listen_port}", "--foreground"
+      exec sbin"sslh", "--http=localhost:#{target_port}", "--listen=localhost:#{listen_port}", "--foreground"
     end
 
     sleep 1

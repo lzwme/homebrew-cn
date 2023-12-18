@@ -1,13 +1,13 @@
 class TkeySshAgent < Formula
   desc "SSH agent for use with the TKey security stick"
-  homepage "https://tillitis.se/"
-  url "https://ghproxy.com/https://github.com/tillitis/tillitis-key1-apps/archive/refs/tags/v0.0.6.tar.gz"
+  homepage "https:tillitis.se"
+  url "https:github.comtillitistillitis-key1-appsarchiverefstagsv0.0.6.tar.gz"
   sha256 "d15fc7f556548951989abf6973374f71e039028202e8cad4b70f79539da00aff"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,53 +32,53 @@ class TkeySshAgent < Formula
   end
 
   resource "signerapp" do
-    url "https://ghproxy.com/https://github.com/tillitis/tillitis-key1-apps/releases/download/v0.0.6/signer.bin"
+    url "https:github.comtillitistillitis-key1-appsreleasesdownloadv0.0.6signer.bin"
     sha256 "639bdba7e61c3e1d551e9c462c7447e4908cf0153edaebc2e6843c9f78e477a6"
   end
 
   def install
-    resource("signerapp").stage("./cmd/tkey-ssh-agent/app.bin")
+    resource("signerapp").stage(".cmdtkey-ssh-agentapp.bin")
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tkey-ssh-agent"
-    man1.install "system/tkey-ssh-agent.1"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtkey-ssh-agent"
+    man1.install "systemtkey-ssh-agent.1"
   end
 
   def post_install
-    (var/"run").mkpath
-    (var/"log").mkpath
+    (var"run").mkpath
+    (var"log").mkpath
   end
 
   def caveats
     <<~EOS
-      To use this SSH agent, set this variable in your ~/.zshrc and/or ~/.bashrc:
-        export SSH_AUTH_SOCK="#{var}/run/tkey-ssh-agent.sock"
+      To use this SSH agent, set this variable in your ~.zshrc andor ~.bashrc:
+        export SSH_AUTH_SOCK="#{var}runtkey-ssh-agent.sock"
     EOS
   end
 
   service do
     run macos: [
-          opt_bin/"tkey-ssh-agent",
+          opt_bin"tkey-ssh-agent",
           "--agent-socket",
-          var/"run/tkey-ssh-agent.sock",
+          var"runtkey-ssh-agent.sock",
           "--uss",
           "--pinentry",
-          HOMEBREW_PREFIX/"bin/pinentry-mac",
+          HOMEBREW_PREFIX"binpinentry-mac",
         ],
         linux: [
-          opt_bin/"tkey-ssh-agent",
+          opt_bin"tkey-ssh-agent",
           "--agent-socket",
-          var/"run/tkey-ssh-agent.sock",
+          var"runtkey-ssh-agent.sock",
           "--uss",
         ]
     keep_alive true
-    log_path var/"log/tkey-ssh-agent.log"
-    error_log_path var/"log/tkey-ssh-agent.log"
+    log_path var"logtkey-ssh-agent.log"
+    error_log_path var"logtkey-ssh-agent.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/tkey-ssh-agent --version")
-    socket = testpath/"tkey-ssh-agent.sock"
-    fork { exec bin/"tkey-ssh-agent", "--agent-socket", socket }
+    assert_match version.to_s, shell_output("#{bin}tkey-ssh-agent --version")
+    socket = testpath"tkey-ssh-agent.sock"
+    fork { exec bin"tkey-ssh-agent", "--agent-socket", socket }
     sleep 1
     assert_predicate socket, :exist?
   end

@@ -1,7 +1,7 @@
 class Mpg321 < Formula
   desc "Command-line MP3 player"
-  homepage "https://mpg321.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/mpg321/mpg321/0.3.2/mpg321_0.3.2.orig.tar.gz"
+  homepage "https:mpg321.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectmpg321mpg3210.3.2mpg321_0.3.2.orig.tar.gz"
   sha256 "056fcc03e3f5c5021ec74bb5053d32c4a3b89b4086478dcf81adae650eac284e"
   license "GPL-2.0"
   revision 3
@@ -24,12 +24,12 @@ class Mpg321 < Formula
   #    This is a homemade patch fashioned using deduction.
   # 2. Also a couple of IPV6 values are not defined on OSX that are needed.
   #    This patch was seen in the wild for an app called lscube:
-  #       lscube.org/pipermail/lscube-commits/2009-March/000500.html [LOST LINK]
+  #       lscube.orgpipermaillscube-commits2009-March000500.html [LOST LINK]
   # Both patches have been reported upstream here:
-  # https://sourceforge.net/p/mpg321/patches/20/
+  # https:sourceforge.netpmpg321patches20
   # Remove these at: Unknown.  These have not been merged as of 0.3.2.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/mpg321/0.3.2.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9mpg3210.3.2.patch"
     sha256 "a856292a913d3d94b3389ae7b1020d662e85bd4557d1a9d1c8ebe517978e62a1"
   end
 
@@ -40,7 +40,7 @@ class Mpg321 < Formula
     # Fix compilation with GCC 11
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-debug",
                           "--prefix=#{prefix}",
                           "--disable-mpg123-symlink",
@@ -50,6 +50,6 @@ class Mpg321 < Formula
   end
 
   test do
-    system "#{bin}/mpg321", "--version"
+    system "#{bin}mpg321", "--version"
   end
 end

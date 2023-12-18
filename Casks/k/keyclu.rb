@@ -2,14 +2,14 @@ cask "keyclu" do
   version "0.18"
   sha256 "88f9a560d5158548e36ac881f481489b2fe9bcfb2f1128e5e001d8d99a6056b0"
 
-  url "https://ghproxy.com/https://github.com/Anze/KeyCluCask/releases/download/v#{version}/KeyClu.zip",
-      verified: "github.com/Anze/KeyCluCask/"
+  url "https:github.comAnzeKeyCluCaskreleasesdownloadv#{version}KeyClu.zip",
+      verified: "github.comAnzeKeyCluCask"
   name "KeyClu"
   desc "Find shortcuts for any installed application"
-  homepage "https://sergii.tatarenkov.name/keyclu/support/"
+  homepage "https:sergii.tatarenkov.namekeyclusupport"
 
   livecheck do
-    url "https://sergii.tatarenkov.name/keyclu/appcast.xml"
+    url "https:sergii.tatarenkov.namekeycluappcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -21,11 +21,11 @@ cask "keyclu" do
   uninstall quit: "com.0804Team.KeyClu"
 
   zap trash: [
-    "~/Library/Caches/com.0804Team.KeyClu",
-    "~/Library/Containers/com.0804Team.KeyClu",
-    "~/Library/Group Containers/group.com.0804Team.KeyClu",
-    "~/Library/HTTPStorages/com.0804Team.KeyClu",
-    "~/Library/Preferences/com.0804Team.KeyClu.plist",
-    "~/Library/Saved Application State/com.0804Team.KeyClu.savedState",
+    "~LibraryCachescom.0804Team.KeyClu",
+    "~LibraryContainerscom.0804Team.KeyClu",
+    "~LibraryGroup Containersgroup.com.0804Team.KeyClu",
+    "~LibraryHTTPStoragescom.0804Team.KeyClu",
+    "~LibraryPreferencescom.0804Team.KeyClu.plist",
+    "~LibrarySaved Application Statecom.0804Team.KeyClu.savedState",
   ]
 end

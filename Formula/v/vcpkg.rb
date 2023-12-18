@@ -1,17 +1,17 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
-  homepage "https://github.com/microsoft/vcpkg"
-  url "https://ghproxy.com/https://github.com/microsoft/vcpkg-tool/archive/refs/tags/2023-11-16.tar.gz"
+  homepage "https:github.commicrosoftvcpkg"
+  url "https:github.commicrosoftvcpkg-toolarchiverefstags2023-11-16.tar.gz"
   version "2023.11.16"
   sha256 "9ed144f6836bb608c10f4facfed39c2caf3ceee9f2d9543f304568c46825c03f"
   license "MIT"
-  head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
+  head "https:github.commicrosoftvcpkg-tool.git", branch: "main"
 
   # The source repository has pre-release tags with the same
   # format as the stable tags.
   livecheck do
     url :stable
-    regex(/v?(\d{4}(?:[._-]\d{2}){2})/i)
+    regex(v?(\d{4}(?:[._-]\d{2}){2})i)
     strategy :github_latest
   end
 
@@ -33,9 +33,9 @@ class Vcpkg < Formula
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
-    inreplace "locales/messages.json" do |s|
+    inreplace "localesmessages.json" do |s|
       s.gsub! "If you are trying to use a copy of vcpkg that you've built, y", "Y"
-      s.gsub! " to point to a cloned copy of https://github.com/Microsoft/vcpkg", ""
+      s.gsub! " to point to a cloned copy of https:github.comMicrosoftvcpkg", ""
     end
 
     system "cmake", "-S", ".", "-B", "build",
@@ -52,14 +52,14 @@ class Vcpkg < Formula
   def caveats
     <<~EOS
       This formula provides only the `vcpkg` executable. To use vcpkg:
-        git clone https://github.com/microsoft/vcpkg "$HOME/vcpkg"
-        export VCPKG_ROOT="$HOME/vcpkg"
+        git clone https:github.commicrosoftvcpkg "$HOMEvcpkg"
+        export VCPKG_ROOT="$HOMEvcpkg"
     EOS
   end
 
   test do
     # DO NOT CHANGE. If the test breaks then the `inreplace` needs fixing.
     message = "error: Could not detect vcpkg-root."
-    assert_match message, shell_output("#{bin}/vcpkg search sqlite", 1)
+    assert_match message, shell_output("#{bin}vcpkg search sqlite", 1)
   end
 end

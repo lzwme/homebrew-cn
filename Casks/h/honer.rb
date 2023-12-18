@@ -2,10 +2,10 @@ cask "honer" do
   version "1.1"
   sha256 "ca6b657bec7fd20e2cae8c7145852439148211b9d4aac9ab12c354c69426c043"
 
-  url "https://ghproxy.com/https://github.com/puffnfresh/Honer.app/releases/download/#{version}/Honer.app.zip"
+  url "https:github.compuffnfreshHoner.appreleasesdownload#{version}Honer.app.zip"
   name "Honer"
   desc "Utility that draws a border around the focused window"
-  homepage "https://github.com/puffnfresh/Honer.app"
+  homepage "https:github.compuffnfreshHoner.app"
 
   app "Honer.app"
 end

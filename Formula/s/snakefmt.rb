@@ -2,12 +2,12 @@ class Snakefmt < Formula
   include Language::Python::Virtualenv
 
   desc "Snakemake code formatter"
-  homepage "https://github.com/snakemake/snakefmt/"
-  url "https://files.pythonhosted.org/packages/40/bd/86b3e22ada4ced9529739b6ec7004c3f5b3cadf31c83bb4ce3e9650b5a2e/snakefmt-0.8.5.tar.gz"
+  homepage "https:github.comsnakemakesnakefmt"
+  url "https:files.pythonhosted.orgpackages40bd86b3e22ada4ced9529739b6ec7004c3f5b3cadf31c83bb4ce3e9650b5a2esnakefmt-0.8.5.tar.gz"
   sha256 "5aa5182dbbbeb84d477dd0f5a9eeeba41bac1f185cfd4897a0b005d4af59ba71"
   license "MIT"
   revision 1
-  head "https://github.com/snakemake/snakefmt.git", branch: "master"
+  head "https:github.comsnakemakesnakefmt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3762d012f1ff5d90f9d0fc5bcdca2af9beb63efef5f9515f984d71b14a3cdd3"
@@ -28,11 +28,11 @@ class Snakefmt < Formula
 
     site_packages = Language::Python.site_packages("python3.12")
     black = Formula["black"].opt_libexec
-    (libexec/site_packages/"homebrew-black.pth").write black/site_packages
+    (libexecsite_packages"homebrew-black.pth").write blacksite_packages
   end
 
   test do
-    test_file = testpath/"Snakefile"
+    test_file = testpath"Snakefile"
     test_file.write <<~EOS
       rule testme:
           output:
@@ -40,10 +40,10 @@ class Snakefmt < Formula
           shell:
                "touch {output}"
     EOS
-    test_output = shell_output("#{bin}/snakefmt --check #{test_file} 2>&1", 1)
+    test_output = shell_output("#{bin}snakefmt --check #{test_file} 2>&1", 1)
     assert_match "[INFO] 1 file(s) would be changed 😬", test_output
 
     assert_match "snakefmt, version #{version}",
-      shell_output("#{bin}/snakefmt --version")
+      shell_output("#{bin}snakefmt --version")
   end
 end

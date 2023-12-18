@@ -1,13 +1,13 @@
 class Opensubdiv < Formula
   desc "Open-source subdivision surface library"
-  homepage "https://graphics.pixar.com/opensubdiv/docs/intro.html"
-  url "https://ghproxy.com/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/refs/tags/v3_6_0.tar.gz"
+  homepage "https:graphics.pixar.comopensubdivdocsintro.html"
+  url "https:github.comPixarAnimationStudiosOpenSubdivarchiverefstagsv3_6_0.tar.gz"
   sha256 "bebfd61ab6657a4f4ff27845fb66a167d00395783bfbd253254d87447ed1d879"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:[._]\d+)+)$/i)
+    regex(^v?(\d+(?:[._]\d+)+)$i)
   end
 
   bottle do
@@ -42,12 +42,12 @@ class Opensubdiv < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install bin/"tutorials/hbr_tutorial_0"
-    rm_rf "#{bin}/tutorials"
+    pkgshare.install bin"tutorialshbr_tutorial_0"
+    rm_rf "#{bin}tutorials"
   end
 
   test do
-    output = shell_output("#{pkgshare}/hbr_tutorial_0")
+    output = shell_output("#{pkgshare}hbr_tutorial_0")
     assert_match "Created a pyramid with 5 faces and 5 vertices", output
   end
 end

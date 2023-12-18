@@ -2,10 +2,10 @@ cask "font-moon-dance" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/moondance/MoonDance-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmoondanceMoonDance-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Moon Dance"
-  homepage "https://fonts.google.com/specimen/Moon+Dance"
+  homepage "https:fonts.google.comspecimenMoon+Dance"
 
   font "MoonDance-Regular.ttf"
 

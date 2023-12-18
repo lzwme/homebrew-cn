@@ -1,7 +1,7 @@
 class Hesiod < Formula
   desc "Library for the simple string lookup service built on top of DNS"
-  homepage "https://github.com/achernya/hesiod"
-  url "https://ghproxy.com/https://github.com/achernya/hesiod/archive/refs/tags/hesiod-3.2.1.tar.gz"
+  homepage "https:github.comachernyahesiod"
+  url "https:github.comachernyahesiodarchiverefstagshesiod-3.2.1.tar.gz"
   sha256 "813ccb091ad15d516a323bb8c7693597eec2ef616f36b73a8db78ff0b856ad63"
   license "BSD-2-Clause"
   revision 1
@@ -29,14 +29,14 @@ class Hesiod < Formula
 
   def install
     system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/hesinfo", "sipbtest", "passwd"
-    system "#{bin}/hesinfo", "sipbtest", "filsys"
+    system "#{bin}hesinfo", "sipbtest", "passwd"
+    system "#{bin}hesinfo", "sipbtest", "filsys"
   end
 end

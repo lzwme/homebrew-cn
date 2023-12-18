@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
-  homepage "https://tailwindcss.com"
-  url "https://ghproxy.com/https://github.com/tailwindlabs/tailwindcss/archive/refs/tags/v3.3.6.tar.gz"
+  homepage "https:tailwindcss.com"
+  url "https:github.comtailwindlabstailwindcssarchiverefstagsv3.3.6.tar.gz"
   sha256 "9746285532d6ff9238869ab6afc7f94e067fb849a1ec3b14be53a1651261007b"
   license "MIT"
 
@@ -20,8 +20,8 @@ class Tailwindcss < Formula
   depends_on "node" => :build
 
   def install
-    node = Formula["node"].opt_bin/"node"
-    system node, "./scripts/swap-engines.js"
+    node = Formula["node"].opt_bin"node"
+    system node, ".scriptsswap-engines.js"
 
     system "npm", "install", *Language::Node.local_npm_install_args
     system "npm", "run", "build"
@@ -31,13 +31,13 @@ class Tailwindcss < Formula
       system "npm", "run", "build"
       os = OS.mac? ? "macos" : "linux"
       cpu = Hardware::CPU.arm? ? "arm64" : "x64"
-      bin.install "dist/tailwindcss-#{os}-#{cpu}" => "tailwindcss"
+      bin.install "disttailwindcss-#{os}-#{cpu}" => "tailwindcss"
     end
   end
 
   test do
-    (testpath/"input.css").write("@tailwind base;")
-    system bin/"tailwindcss", "-i", "input.css", "-o", "output.css"
-    assert_predicate testpath/"output.css", :exist?
+    (testpath"input.css").write("@tailwind base;")
+    system bin"tailwindcss", "-i", "input.css", "-o", "output.css"
+    assert_predicate testpath"output.css", :exist?
   end
 end

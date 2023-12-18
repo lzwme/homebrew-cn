@@ -1,13 +1,13 @@
-require "language/node"
+require "languagenode"
 
 class Copilot < Formula
   desc "CLI tool for Amazon ECS and AWS Fargate"
-  homepage "https://aws.github.io/copilot-cli/"
-  url "https://github.com/aws/copilot-cli.git",
+  homepage "https:aws.github.iocopilot-cli"
+  url "https:github.comawscopilot-cli.git",
       tag:      "v1.32.1",
       revision: "72393b8154cccb71f6c7401cb2d4d323e8253c4e"
   license "Apache-2.0"
-  head "https://github.com/aws/copilot-cli.git", branch: "mainline"
+  head "https:github.comawscopilot-cli.git", branch: "mainline"
 
   livecheck do
     url :stable
@@ -34,22 +34,22 @@ class Copilot < Formula
     system "make", "package-custom-resources"
     system "make", "build"
 
-    bin.install "bin/local/copilot"
+    bin.install "binlocalcopilot"
 
-    generate_completions_from_executable(bin/"copilot", "completion")
+    generate_completions_from_executable(bin"copilot", "completion")
   end
 
   test do
     ENV["AWS_ACCESS_KEY_ID"] = "test"
     ENV["AWS_SECRET_ACCESS_KEY"] = "test"
     begin
-      _, stdout, wait_thr = Open3.popen2("AWS_REGION=eu-west-1 #{bin}/copilot init 2>&1")
+      _, stdout, wait_thr = Open3.popen2("AWS_REGION=eu-west-1 #{bin}copilot init 2>&1")
       assert_match "Note: It's best to run this command in the root of your Git repository", stdout.gets("\n")
     ensure
       Process.kill 9, wait_thr.pid
     end
 
     assert_match "Run `copilot app init` to create an application",
-      shell_output("AWS_REGION=eu-west-1 #{bin}/copilot pipeline init 2>&1", 1)
+      shell_output("AWS_REGION=eu-west-1 #{bin}copilot pipeline init 2>&1", 1)
   end
 end

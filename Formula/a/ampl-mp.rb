@@ -1,14 +1,14 @@
 class AmplMp < Formula
   desc "Open-source library for mathematical programming"
-  homepage "https://www.ampl.com/"
-  url "https://ghproxy.com/https://github.com/ampl/mp/archive/refs/tags/3.1.0.tar.gz"
+  homepage "https:www.ampl.com"
+  url "https:github.comamplmparchiverefstags3.1.0.tar.gz"
   sha256 "587c1a88f4c8f57bef95b58a8586956145417c8039f59b1758365ccc5a309ae9"
   license "MIT"
   revision 3
 
   livecheck do
-    url "https://github.com/ampl/mp.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.comamplmp.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,14 +29,14 @@ class AmplMp < Formula
   depends_on "cmake" => :build
 
   resource "miniampl" do
-    url "https://ghproxy.com/https://github.com/dpo/miniampl/archive/refs/tags/v1.0.tar.gz"
+    url "https:github.comdpominiamplarchiverefstagsv1.0.tar.gz"
     sha256 "b836dbf1208426f4bd93d6d79d632c6f5619054279ac33453825e036a915c675"
   end
 
   # Removes Google Benchmark - as already done so upstream
   # All it did was conflict with the google-benchmark formula
   patch do
-    url "https://github.com/ampl/mp/commit/96e332bb8cb7ba925e3ac947d6df515496027eed.patch?full_index=1"
+    url "https:github.comamplmpcommit96e332bb8cb7ba925e3ac947d6df515496027eed.patch?full_index=1"
     sha256 "1a4ef4cd1f4e8b959c20518f8f00994ef577e74e05824b2d1b241b1c3c1f84eb"
   end
 
@@ -44,28 +44,28 @@ class AmplMp < Formula
     system "cmake", ".", *std_cmake_args, "-DBUILD_SHARED_LIBS=True"
     system "make", "all"
     if OS.mac?
-      MachO::Tools.change_install_name("bin/libasl.dylib", "@rpath/libmp.3.dylib",
-                                       "#{opt_lib}/libmp.dylib")
+      MachO::Tools.change_install_name("binlibasl.dylib", "@rpathlibmp.3.dylib",
+                                       "#{opt_lib}libmp.dylib")
     end
     system "make", "install"
 
     # Shared modules are installed in bin
-    mkdir_p libexec/"bin"
-    mv Dir[bin/"*.dll"], libexec/"bin"
+    mkdir_p libexec"bin"
+    mv Dir[bin"*.dll"], libexec"bin"
 
     # Install missing header files, remove in > 3.1.0
-    # https://github.com/ampl/mp/issues/110
-    %w[errchk.h jac2dim.h obj_adj.h].each { |h| cp "src/asl/solvers/#{h}", include/"asl" }
+    # https:github.comamplmpissues110
+    %w[errchk.h jac2dim.h obj_adj.h].each { |h| cp "srcaslsolvers#{h}", include"asl" }
 
     resource("miniampl").stage do
-      (pkgshare/"example").install "src/miniampl.c", Dir["examples/wb.*"]
+      (pkgshare"example").install "srcminiampl.c", Dir["exampleswb.*"]
     end
   end
 
   test do
-    system ENV.cc, pkgshare/"example/miniampl.c", "-std=c99", "-I#{include}/asl", "-L#{lib}", "-lasl", "-lmp"
-    cp Dir[pkgshare/"example/wb.*"], testpath
-    output = shell_output("./a.out wb showname=1 showgrad=1")
+    system ENV.cc, pkgshare"exampleminiampl.c", "-std=c99", "-I#{include}asl", "-L#{lib}", "-lasl", "-lmp"
+    cp Dir[pkgshare"examplewb.*"], testpath
+    output = shell_output(".a.out wb showname=1 showgrad=1")
     assert_match "Objective name: objective", output
   end
 end

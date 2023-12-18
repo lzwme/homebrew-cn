@@ -1,10 +1,10 @@
 class Viennacl < Formula
   desc "Linear algebra library for many-core architectures and multi-core CPUs"
-  homepage "https://viennacl.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/viennacl/1.7.x/ViennaCL-1.7.1.tar.gz"
+  homepage "https:viennacl.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectviennacl1.7.xViennaCL-1.7.1.tar.gz"
   sha256 "a596b77972ad3d2bab9d4e63200b171cd0e709fb3f0ceabcaf3668c87d3a238b"
   revision 1
-  head "https://github.com/viennacl/viennacl-dev.git", branch: "master"
+  head "https:github.comviennaclviennacl-dev.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0190d51c44ab429c844d6c7d74d85aaa447639e320ad460f491e5b5a6fff8f1"
@@ -29,10 +29,10 @@ class Viennacl < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
-    libexec.install "#{buildpath}/examples/benchmarks/dense_blas-bench-cpu" => "test"
+    libexec.install "#{buildpath}examplesbenchmarksdense_blas-bench-cpu" => "test"
   end
 
   test do
-    system "#{opt_libexec}/test"
+    system "#{opt_libexec}test"
   end
 end

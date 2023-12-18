@@ -1,8 +1,8 @@
 class OpencvAT3 < Formula
   desc "Open source computer vision library"
-  homepage "https://opencv.org/"
+  homepage "https:opencv.org"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://ghproxy.com/https://github.com/opencv/opencv/archive/refs/tags/3.4.20.tar.gz"
+  url "https:github.comopencvopencvarchiverefstags3.4.20.tar.gz"
   sha256 "b9eda448a08ba7b10bfd5bd45697056569ebdf7a02070947e1c1f3e8e69280cd"
   license "BSD-3-Clause"
 
@@ -18,7 +18,7 @@ class OpencvAT3 < Formula
 
   keg_only :versioned_formula
 
-  # see https://github.com/opencv/opencv/wiki/Branches#eol-branches
+  # see https:github.comopencvopencvwikiBranches#eol-branches
   disable! date: "2024-01-31", because: :unmaintained
 
   depends_on "cmake" => :build
@@ -42,7 +42,7 @@ class OpencvAT3 < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "contrib" do
-    url "https://ghproxy.com/https://github.com/opencv/opencv_contrib/archive/refs/tags/3.4.20.tar.gz"
+    url "https:github.comopencvopencv_contribarchiverefstags3.4.20.tar.gz"
     sha256 "b0bb3fa7ae4ac00926b83d4d95c6500c2f7af542f8ec78d0f01b2961a690d5dc"
   end
 
@@ -51,14 +51,14 @@ class OpencvAT3 < Formula
   end
 
   def install
-    resource("contrib").stage buildpath/"opencv_contrib"
+    resource("contrib").stage buildpath"opencv_contrib"
 
-    # Reset PYTHONPATH, workaround for https://github.com/Homebrew/homebrew-science/pull/4885
+    # Reset PYTHONPATH, workaround for https:github.comHomebrewhomebrew-sciencepull4885
     ENV.delete("PYTHONPATH")
 
     # Remove bundled libraries to make sure formula dependencies are used
     libdirs = %w[ffmpeg libjasper libjpeg libjpeg-turbo libpng libtiff libwebp openexr protobuf tbb zlib]
-    libdirs.each { |l| (buildpath/"3rdparty"/l).rmtree }
+    libdirs.each { |l| (buildpath"3rdparty"l).rmtree }
 
     args = std_cmake_args + %W[
       -DCMAKE_CXX_STANDARD=11
@@ -78,7 +78,7 @@ class OpencvAT3 < Formula
       -DBUILD_opencv_java=OFF
       -DBUILD_opencv_text=OFF
       -DOPENCV_ENABLE_NONFREE=ON
-      -DOPENCV_EXTRA_MODULES_PATH=#{buildpath}/opencv_contrib/modules
+      -DOPENCV_EXTRA_MODULES_PATH=#{buildpath}opencv_contribmodules
       -DPROTOBUF_UPDATE_FILES=ON
       -DWITH_1394=OFF
       -DWITH_CUDA=OFF
@@ -103,20 +103,20 @@ class OpencvAT3 < Formula
     end
 
     system "cmake", "-S", ".", "-B", "build_shared", *args
-    inreplace "build_shared/modules/core/version_string.inc", "#{Superenv.shims_path}/", ""
+    inreplace "build_sharedmodulescoreversion_string.inc", "#{Superenv.shims_path}", ""
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
 
     system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF"
-    inreplace "build_static/modules/core/version_string.inc", "#{Superenv.shims_path}/", ""
+    inreplace "build_staticmodulescoreversion_string.inc", "#{Superenv.shims_path}", ""
     system "cmake", "--build", "build_static"
-    lib.install Dir["build_static/lib/*.a"]
-    lib.install Dir["build_static/3rdparty/**/*.a"]
+    lib.install Dir["build_staticlib*.a"]
+    lib.install Dir["build_static3rdparty***.a"]
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <opencv/cv.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <opencvcv.h>
       #include <iostream>
       int main() {
         std::cout << CV_VERSION << std::endl;
@@ -124,9 +124,9 @@ class OpencvAT3 < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-o", "test"
-    assert_equal shell_output("./test").strip, version.to_s
+    assert_equal shell_output(".test").strip, version.to_s
 
-    ENV["PYTHONPATH"] = prefix/Language::Python.site_packages(python3)
+    ENV["PYTHONPATH"] = prefixLanguage::Python.site_packages(python3)
     output = shell_output("#{python3} -c 'import cv2; print(cv2.__version__)'")
     assert_equal version.to_s, output.chomp
   end

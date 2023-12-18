@@ -1,10 +1,10 @@
 class VowpalWabbit < Formula
   desc "Online learning algorithm"
-  homepage "https://github.com/VowpalWabbit/vowpal_wabbit"
-  url "https://ghproxy.com/https://github.com/VowpalWabbit/vowpal_wabbit/archive/refs/tags/9.9.0.tar.gz"
+  homepage "https:github.comVowpalWabbitvowpal_wabbit"
+  url "https:github.comVowpalWabbitvowpal_wabbitarchiverefstags9.9.0.tar.gz"
   sha256 "46d206c5b2336ed0c9dc228d34457db4acd9e3ade8b509f8fb426183651984c1"
   license "BSD-3-Clause"
-  head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
+  head "https:github.comVowpalWabbitvowpal_wabbit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e8429e276eddb19c39bdeb41b74d2b4ea1a6bdaed6ffc8f4043b5f5de449749e"
@@ -54,26 +54,26 @@ class VowpalWabbit < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.install Dir["utl/*"]
-    rm bin/"active_interactor.py"
-    rm bin/"vw-validate.html"
-    rm bin/"clang-format.sh"
-    rm bin/"release_blog_post_template.md"
-    rm_r bin/"flatbuffer"
-    rm_r bin/"dump_options"
+    bin.install Dir["utl*"]
+    rm bin"active_interactor.py"
+    rm bin"vw-validate.html"
+    rm bin"clang-format.sh"
+    rm bin"release_blog_post_template.md"
+    rm_r bin"flatbuffer"
+    rm_r bin"dump_options"
   end
 
   test do
-    (testpath/"house_dataset").write <<~EOS
+    (testpath"house_dataset").write <<~EOS
       0 | price:.23 sqft:.25 age:.05 2006
       1 2 'second_house | price:.18 sqft:.15 age:.35 1976
       0 1 0.5 'third_house | price:.53 sqft:.32 age:.87 1924
     EOS
-    system bin/"vw", "house_dataset", "-l", "10", "-c", "--passes", "25", "--holdout_off",
+    system bin"vw", "house_dataset", "-l", "10", "-c", "--passes", "25", "--holdout_off",
                      "--audit", "-f", "house.model", "--nn", "5"
-    system bin/"vw", "-t", "-i", "house.model", "-d", "house_dataset", "-p", "house.predict"
+    system bin"vw", "-t", "-i", "house.model", "-d", "house_dataset", "-p", "house.predict"
 
-    (testpath/"csoaa.dat").write <<~EOS
+    (testpath"csoaa.dat").write <<~EOS
       1:1.0 a1_expect_1| a
       2:1.0 b1_expect_2| b
       3:1.0 c1_expect_3| c
@@ -82,58 +82,58 @@ class VowpalWabbit < Formula
       1:3.0 3:1.0 ac1_expect_3| a c
       2:3.0 d1_expect_2| d
     EOS
-    system bin/"vw", "--csoaa", "3", "csoaa.dat", "-f", "csoaa.model"
-    system bin/"vw", "-t", "-i", "csoaa.model", "-d", "csoaa.dat", "-p", "csoaa.predict"
+    system bin"vw", "--csoaa", "3", "csoaa.dat", "-f", "csoaa.model"
+    system bin"vw", "-t", "-i", "csoaa.model", "-d", "csoaa.dat", "-p", "csoaa.predict"
 
-    (testpath/"ect.dat").write <<~EOS
+    (testpath"ect.dat").write <<~EOS
       1 ex1| a
       2 ex2| a b
       3 ex3| c d e
       2 ex4| b a
       1 ex5| f g
     EOS
-    system bin/"vw", "--ect", "3", "-d", "ect.dat", "-f", "ect.model"
-    system bin/"vw", "-t", "-i", "ect.model", "-d", "ect.dat", "-p", "ect.predict"
+    system bin"vw", "--ect", "3", "-d", "ect.dat", "-f", "ect.model"
+    system bin"vw", "-t", "-i", "ect.model", "-d", "ect.dat", "-p", "ect.predict"
 
-    (testpath/"train.dat").write <<~EOS
+    (testpath"train.dat").write <<~EOS
       1:2:0.4 | a c
         3:0.5:0.2 | b d
         4:1.2:0.5 | a b c
         2:1:0.3 | b c
         3:1.5:0.7 | a d
     EOS
-    (testpath/"test.dat").write <<~EOS
+    (testpath"test.dat").write <<~EOS
       1:2 3:5 4:1:0.6 | a c d
       1:0.5 2:1:0.4 3:2 4:1.5 | c d
     EOS
-    system bin/"vw", "-d", "train.dat", "--cb", "4", "-f", "cb.model"
-    system bin/"vw", "-t", "-i", "cb.model", "-d", "test.dat", "-p", "cb.predict"
+    system bin"vw", "-d", "train.dat", "--cb", "4", "-f", "cb.model"
+    system bin"vw", "-t", "-i", "cb.model", "-d", "test.dat", "-p", "cb.predict"
   end
 end
 
 __END__
-diff --git a/ext_libs/ext_libs.cmake b/ext_libs/ext_libs.cmake
+diff --git aext_libsext_libs.cmake bext_libsext_libs.cmake
 index 1ef57fe..20972fc 100644
---- a/ext_libs/ext_libs.cmake
-+++ b/ext_libs/ext_libs.cmake
+--- aext_libsext_libs.cmake
++++ bext_libsext_libs.cmake
 @@ -107,7 +107,7 @@ endif()
  
  add_library(sse2neon INTERFACE)
  if(VW_SSE2NEON_SYS_DEP)
--  find_path(SSE2NEON_INCLUDE_DIRS "sse2neon/sse2neon.h")
+-  find_path(SSE2NEON_INCLUDE_DIRS "sse2neonsse2neon.h")
 +  find_path(SSE2NEON_INCLUDE_DIRS "sse2neon.h")
    target_include_directories(sse2neon SYSTEM INTERFACE "${SSE2NEON_INCLUDE_DIRS}")
  else()
    # This submodule is placed into a nested subdirectory since it exposes its
-diff --git a/vowpalwabbit/core/src/reductions/lda_core.cc b/vowpalwabbit/core/src/reductions/lda_core.cc
+diff --git avowpalwabbitcoresrcreductionslda_core.cc bvowpalwabbitcoresrcreductionslda_core.cc
 index f078d9c..ede5e06 100644
---- a/vowpalwabbit/core/src/reductions/lda_core.cc
-+++ b/vowpalwabbit/core/src/reductions/lda_core.cc
+--- avowpalwabbitcoresrcreductionslda_core.cc
++++ bvowpalwabbitcoresrcreductionslda_core.cc
 @@ -33,7 +33,7 @@ VW_WARNING_STATE_POP
- #include "vw/io/logger.h"
+ #include "vwiologger.h"
  
  #if defined(__ARM_NEON)
--#  include <sse2neon/sse2neon.h>
+-#  include <sse2neonsse2neon.h>
 +#  include <sse2neon.h>
  #endif
  

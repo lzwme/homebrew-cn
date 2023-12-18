@@ -2,10 +2,10 @@ cask "font-uncial-antiqua" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/uncialantiqua/UncialAntiqua-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofluncialantiquaUncialAntiqua-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Uncial Antiqua"
-  homepage "https://fonts.google.com/specimen/Uncial+Antiqua"
+  homepage "https:fonts.google.comspecimenUncial+Antiqua"
 
   font "UncialAntiqua-Regular.ttf"
 

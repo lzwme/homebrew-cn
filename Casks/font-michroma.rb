@@ -2,10 +2,10 @@ cask "font-michroma" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/michroma/Michroma-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmichromaMichroma-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Michroma"
-  homepage "https://fonts.google.com/specimen/Michroma"
+  homepage "https:fonts.google.comspecimenMichroma"
 
   font "Michroma-Regular.ttf"
 

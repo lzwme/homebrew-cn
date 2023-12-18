@@ -2,11 +2,11 @@ cask "font-commissioner" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/commissioner/Commissioner%5BFLAR%2CVOLM%2Cslnt%2Cwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcommissionerCommissioner%5BFLAR%2CVOLM%2Cslnt%2Cwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Commissioner"
   desc "Low-contrast humanist sans-serif font with almost classical proportions"
-  homepage "https://fonts.google.com/specimen/Commissioner"
+  homepage "https:fonts.google.comspecimenCommissioner"
 
   font "Commissioner[FLAR,VOLM,slnt,wght].ttf"
 

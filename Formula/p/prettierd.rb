@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Prettierd < Formula
   desc "Prettier daemon"
-  homepage "https://github.com/fsouza/prettierd"
-  url "https://registry.npmjs.org/@fsouza/prettierd/-/prettierd-0.25.2.tgz"
+  homepage "https:github.comfsouzaprettierd"
+  url "https:registry.npmjs.org@fsouzaprettierd-prettierd-0.25.2.tgz"
   sha256 "f1a8befeaa214039ecc264c1b0d13e731145eab3ad7739cf0a93a3b0f93d6ce0"
   license "ISC"
 
@@ -15,11 +15,11 @@ class Prettierd < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    output = pipe_output("#{bin}/prettierd test.js", "const arr = [1,2];", 0)
+    output = pipe_output("#{bin}prettierd test.js", "const arr = [1,2];", 0)
     assert_equal "const arr = [1, 2];", output.chomp
   end
 end

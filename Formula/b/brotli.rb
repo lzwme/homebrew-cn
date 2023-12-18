@@ -1,12 +1,12 @@
 class Brotli < Formula
   desc "Generic-purpose lossless compression algorithm by Google"
-  homepage "https://github.com/google/brotli"
-  url "https://ghproxy.com/https://github.com/google/brotli/archive/refs/tags/v1.1.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/brotli-1.1.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/brotli-1.1.0.tar.gz"
+  homepage "https:github.comgooglebrotli"
+  url "https:github.comgooglebrotliarchiverefstagsv1.1.0.tar.gz"
+  mirror "http:fresh-center.netlinuxmiscbrotli-1.1.0.tar.gz"
+  mirror "http:fresh-center.netlinuxmisclegacybrotli-1.1.0.tar.gz"
   sha256 "e720a6ca29428b803f4ad165371771f5398faba397edf6778837a18599ea13ff"
   license "MIT"
-  head "https://github.com/google/brotli.git", branch: "master"
+  head "https:github.comgooglebrotli.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -31,9 +31,9 @@ class Brotli < Formula
   end
 
   test do
-    (testpath/"file.txt").write("Hello, World!")
-    system "#{bin}/brotli", "file.txt", "file.txt.br"
-    system "#{bin}/brotli", "file.txt.br", "--output=out.txt", "--decompress"
-    assert_equal (testpath/"file.txt").read, (testpath/"out.txt").read
+    (testpath"file.txt").write("Hello, World!")
+    system "#{bin}brotli", "file.txt", "file.txt.br"
+    system "#{bin}brotli", "file.txt.br", "--output=out.txt", "--decompress"
+    assert_equal (testpath"file.txt").read, (testpath"out.txt").read
   end
 end

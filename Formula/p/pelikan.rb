@@ -1,10 +1,10 @@
 class Pelikan < Formula
   desc "Production-ready cache services"
-  homepage "https://twitter.github.io/pelikan"
-  url "https://ghproxy.com/https://github.com/twitter/pelikan/archive/refs/tags/0.1.2.tar.gz"
+  homepage "https:twitter.github.iopelikan"
+  url "https:github.comtwitterpelikanarchiverefstags0.1.2.tar.gz"
   sha256 "c105fdab8306f10c1dfa660b4e958ff6f381a5099eabcb15013ba42e4635f824"
   license "Apache-2.0"
-  head "https://github.com/twitter/pelikan.git", branch: "master"
+  head "https:github.comtwitterpelikan.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6074fdbebf10e608f76145fc4d41cf9be62d3b3ac67cf6b50ab1a1c21c0da76f"
@@ -34,6 +34,6 @@ class Pelikan < Formula
   end
 
   test do
-    system "#{bin}/pelikan_twemcache", "-c"
+    system "#{bin}pelikan_twemcache", "-c"
   end
 end

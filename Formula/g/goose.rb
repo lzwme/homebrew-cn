@@ -1,7 +1,7 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
-  homepage "https://pressly.github.io/goose/"
-  url "https://ghproxy.com/https://github.com/pressly/goose/archive/refs/tags/v3.17.0.tar.gz"
+  homepage "https:pressly.github.iogoose"
+  url "https:github.compresslygoosearchiverefstagsv3.17.0.tar.gz"
   sha256 "50d16c09bff51d7aacd5df97578877313d66f1d0489a42e055ae750587ecb5c6"
   license "MIT"
 
@@ -19,13 +19,13 @@ class Goose < Formula
 
   def install
     ldflags = %W[-s -w -X main.version=v#{version}]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/goose"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgoose"
   end
 
   test do
-    output = shell_output("#{bin}/goose sqlite3 foo.db status create 2>&1", 1)
+    output = shell_output("#{bin}goose sqlite3 foo.db status create 2>&1", 1)
     assert_match "goose run: failed to collect migrations", output
 
-    assert_match version.to_s, shell_output("#{bin}/goose --version")
+    assert_match version.to_s, shell_output("#{bin}goose --version")
   end
 end

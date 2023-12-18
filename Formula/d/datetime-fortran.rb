@@ -1,7 +1,7 @@
 class DatetimeFortran < Formula
   desc "Fortran time and date manipulation library"
-  homepage "https://github.com/wavebitscientific/datetime-fortran"
-  url "https://ghproxy.com/https://github.com/wavebitscientific/datetime-fortran/releases/download/v1.7.0/datetime-fortran-1.7.0.tar.gz"
+  homepage "https:github.comwavebitscientificdatetime-fortran"
+  url "https:github.comwavebitscientificdatetime-fortranreleasesdownloadv1.7.0datetime-fortran-1.7.0.tar.gz"
   sha256 "cff4c1f53af87a9f8f31256a3e04176f887cc3e947a4540481ade4139baf0d6f"
   license "MIT"
 
@@ -19,7 +19,7 @@ class DatetimeFortran < Formula
   end
 
   head do
-    url "https://github.com/wavebitscientific/datetime-fortran.git", branch: "main"
+    url "https:github.comwavebitscientificdatetime-fortran.git", branch: "main"
 
     depends_on "autoconf"   => :build
     depends_on "automake"   => :build
@@ -30,15 +30,15 @@ class DatetimeFortran < Formula
 
   def install
     system "autoreconf", "-fvi" if build.head?
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-silent-rules"
     system "make", "install"
-    (pkgshare/"test").install "tests/datetime_tests.f90"
+    (pkgshare"test").install "testsdatetime_tests.f90"
   end
 
   test do
-    system "gfortran", "-I#{include}", pkgshare/"test/datetime_tests.f90",
+    system "gfortran", "-I#{include}", pkgshare"testdatetime_tests.f90",
                        "-L#{lib}", "-ldatetime", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

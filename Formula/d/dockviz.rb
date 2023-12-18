@@ -1,11 +1,11 @@
 class Dockviz < Formula
   desc "Visualizing docker data"
-  homepage "https://github.com/justone/dockviz"
-  url "https://github.com/justone/dockviz.git",
+  homepage "https:github.comjustonedockviz"
+  url "https:github.comjustonedockviz.git",
       tag:      "v0.6.4",
       revision: "3ebdb75ed393d6f2eb0b38d83ee22d75c68f6524"
   license "Apache-2.0"
-  head "https://github.com/justone/dockviz.git", branch: "master"
+  head "https:github.comjustonedockviz.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1081dedcb9f5e575615a345d55b389cb61f1f5208745fa387d6cba861a06b525"
@@ -27,6 +27,6 @@ class Dockviz < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dockviz --version")
+    assert_match version.to_s, shell_output("#{bin}dockviz --version")
   end
 end

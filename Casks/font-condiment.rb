@@ -2,10 +2,10 @@ cask "font-condiment" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/condiment/Condiment-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcondimentCondiment-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Condiment"
-  homepage "https://fonts.google.com/specimen/Condiment"
+  homepage "https:fonts.google.comspecimenCondiment"
 
   font "Condiment-Regular.ttf"
 

@@ -1,13 +1,13 @@
 class Log4cplus < Formula
   desc "Logging Framework for C++"
-  homepage "https://sourceforge.net/p/log4cplus/wiki/Home/"
-  url "https://downloads.sourceforge.net/project/log4cplus/log4cplus-stable/2.1.1/log4cplus-2.1.1.tar.xz"
+  homepage "https:sourceforge.netplog4cpluswikiHome"
+  url "https:downloads.sourceforge.netprojectlog4cpluslog4cplus-stable2.1.1log4cplus-2.1.1.tar.xz"
   sha256 "a1d8e67a207f90a9dd4f82b28a1f3ac6dead5a80c2bed071277a9e865698a82b"
   license all_of: ["Apache-2.0", "BSD-2-Clause"]
 
   livecheck do
     url :stable
-    regex(/url=.*?log4cplus-stable.*?log4cplus[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(url=.*?log4cplus-stable.*?log4cplus[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -22,18 +22,18 @@ class Log4cplus < Formula
 
   def install
     ENV.cxx11
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    # https://github.com/log4cplus/log4cplus/blob/65e4c3/docs/examples.md
-    (testpath/"test.cpp").write <<~EOS
-      #include <log4cplus/logger.h>
-      #include <log4cplus/loggingmacros.h>
-      #include <log4cplus/configurator.h>
-      #include <log4cplus/initializer.h>
+    # https:github.comlog4cpluslog4cplusblob65e4c3docsexamples.md
+    (testpath"test.cpp").write <<~EOS
+      #include <log4cpluslogger.h>
+      #include <log4cplusloggingmacros.h>
+      #include <log4cplusconfigurator.h>
+      #include <log4cplusinitializer.h>
 
       int main()
       {
@@ -49,6 +49,6 @@ class Log4cplus < Formula
     EOS
     system ENV.cxx, "-std=c++11", "-I#{include}", "-L#{lib}",
                     "test.cpp", "-o", "test", "-llog4cplus"
-    assert_match "Hello, World!", shell_output("./test")
+    assert_match "Hello, World!", shell_output(".test")
   end
 end

@@ -1,10 +1,10 @@
 class TranslateShell < Formula
   desc "Command-line translator using Google Translate and more"
-  homepage "https://www.soimort.org/translate-shell"
-  url "https://ghproxy.com/https://github.com/soimort/translate-shell/archive/refs/tags/v0.9.7.1.tar.gz"
+  homepage "https:www.soimort.orgtranslate-shell"
+  url "https:github.comsoimorttranslate-shellarchiverefstagsv0.9.7.1.tar.gz"
   sha256 "f949f379779b9e746bccb20fcd180d041fb90da95816615575b49886032bcefa"
   license "Unlicense"
-  head "https://github.com/soimort/translate-shell.git", branch: "develop"
+  head "https:github.comsoimorttranslate-shell.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e4e1003f63ebe71cf50e49f32093a3af1e777c5e24b2c7b4b996c753be83e5f7"
@@ -20,8 +20,8 @@ class TranslateShell < Formula
 
   def install
     system "make"
-    bin.install "build/trans"
-    man1.install "man/trans.1"
+    bin.install "buildtrans"
+    man1.install "mantrans.1"
   end
 
   def caveats
@@ -36,6 +36,6 @@ class TranslateShell < Formula
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
     assert_equal "hello\n",
-      shell_output("#{bin}/trans -no-init -b -s es -t en hola").downcase
+      shell_output("#{bin}trans -no-init -b -s es -t en hola").downcase
   end
 end

@@ -1,10 +1,10 @@
 class Idris < Formula
   desc "Pure functional programming language with dependent types"
-  homepage "https://www.idris-lang.org/"
-  url "https://ghproxy.com/https://github.com/idris-lang/Idris-dev/archive/refs/tags/v1.3.4.tar.gz"
+  homepage "https:www.idris-lang.org"
+  url "https:github.comidris-langIdris-devarchiverefstagsv1.3.4.tar.gz"
   sha256 "7289f5e2501b7a543d81035252ca9714003f834f58b558f45a16427a3c926c0f"
   license "BSD-3-Clause"
-  head "https://github.com/idris-lang/Idris-dev.git", branch: "master"
+  head "https:github.comidris-langIdris-dev.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -16,7 +16,7 @@ class Idris < Formula
     sha256 x86_64_linux:   "864094063e7ad6971b4e121b6b4debb38fecaa338be1b829d6c8e626f8b0f8b9"
   end
 
-  # https://github.com/idris-lang/Idris-dev/commit/9c9e936c3d80a6868ab7621f104e34bcc4b0bc9d
+  # https:github.comidris-langIdris-devcommit9c9e936c3d80a6868ab7621f104e34bcc4b0bc9d
   disable! date: "2023-09-24", because: :unmaintained
 
   depends_on "cabal-install" => :build
@@ -32,16 +32,16 @@ class Idris < Formula
   end
 
   test do
-    (testpath/"hello.idr").write <<~EOS
+    (testpath"hello.idr").write <<~EOS
       module Main
       main : IO ()
       main = putStrLn "Hello, Homebrew!"
     EOS
 
-    system bin/"idris", "hello.idr", "-o", "hello"
-    assert_equal "Hello, Homebrew!", shell_output("./hello").chomp
+    system bin"idris", "hello.idr", "-o", "hello"
+    assert_equal "Hello, Homebrew!", shell_output(".hello").chomp
 
-    (testpath/"ffi.idr").write <<~EOS
+    (testpath"ffi.idr").write <<~EOS
       module Main
       puts: String -> IO ()
       puts x = foreign FFI_C "puts" (String -> IO ()) x
@@ -49,7 +49,7 @@ class Idris < Formula
       main = puts "Hello, interpreter!"
     EOS
 
-    system bin/"idris", "ffi.idr", "-o", "ffi"
-    assert_equal "Hello, interpreter!", shell_output("./ffi").chomp
+    system bin"idris", "ffi.idr", "-o", "ffi"
+    assert_equal "Hello, interpreter!", shell_output(".ffi").chomp
   end
 end

@@ -1,7 +1,7 @@
 class Mg < Formula
   desc "Small Emacs-like editor"
-  homepage "https://github.com/ibara/mg"
-  url "https://ghproxy.com/https://github.com/ibara/mg/releases/download/mg-7.3/mg-7.3.tar.gz"
+  homepage "https:github.comibaramg"
+  url "https:github.comibaramgreleasesdownloadmg-7.3mg-7.3.tar.gz"
   sha256 "1fd52feed9a96b93ef16c28ec4ff6cb25af85542ec949867bffaddee203d1e95"
   license all_of: [:public_domain, "ISC", :cannot_represent]
   version_scheme 1
@@ -22,16 +22,16 @@ class Mg < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"command.exp").write <<~EOS
+    (testpath"command.exp").write <<~EOS
       set timeout -1
-      spawn #{bin}/mg
+      spawn #{bin}mg
       match_max 100000
       send -- "\u0018\u0003"
       expect eof

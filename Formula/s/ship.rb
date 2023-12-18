@@ -1,7 +1,7 @@
 class Ship < Formula
   desc "Reducing the overhead of maintaining 3rd-party applications in Kubernetes"
-  homepage "https://www.replicated.com/ship"
-  url "https://ghproxy.com/https://github.com/replicatedhq/ship/archive/refs/tags/v0.55.0.tar.gz"
+  homepage "https:www.replicated.comship"
+  url "https:github.comreplicatedhqshiparchiverefstagsv0.55.0.tar.gz"
   sha256 "39cc74fdd884e49301474acafba74128b1a083bbd7e11e349ab6c5da26be8fef"
   license "Apache-2.0"
 
@@ -26,18 +26,18 @@ class Ship < Formula
 
   def install
     # Needed for `go-bindata-assetfs`, it is downloaded at build time via `go get`
-    ENV["GOBIN"] = buildpath/"bin"
+    ENV["GOBIN"] = buildpath"bin"
     ENV.prepend_path "PATH", ENV["GOBIN"]
 
     system "make", "VERSION=#{version}", "build-minimal"
-    bin.install "bin/ship"
+    bin.install "binship"
   end
 
   test do
-    assert_match(/#{version}/, shell_output("#{bin}/ship version"))
-    assert_match(/Usage:/, shell_output("#{bin}/ship --help"))
+    assert_match(#{version}, shell_output("#{bin}ship version"))
+    assert_match(Usage:, shell_output("#{bin}ship --help"))
 
-    test_chart = "https://github.com/replicatedhq/test-charts/tree/HEAD/plain-k8s"
-    system bin/"ship", "init", "--headless", test_chart
+    test_chart = "https:github.comreplicatedhqtest-chartstreeHEADplain-k8s"
+    system bin"ship", "init", "--headless", test_chart
   end
 end

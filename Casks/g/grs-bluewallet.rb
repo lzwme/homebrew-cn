@@ -2,19 +2,19 @@ cask "grs-bluewallet" do
   version "6.4.5"
   sha256 "adc4cbcd4bdbaf6dce36c701fb278ae52cd72b29b10d38aaf1a5d18719016496"
 
-  url "https://ghproxy.com/https://github.com/Groestlcoin/BlueWallet/releases/download/v#{version}/GRS.BlueWallet.dmg",
-      verified: "github.com/Groestlcoin/BlueWallet/"
+  url "https:github.comGroestlcoinBlueWalletreleasesdownloadv#{version}GRS.BlueWallet.dmg",
+      verified: "github.comGroestlcoinBlueWallet"
   name "GRS BlueWallet"
   desc "Groestlcoin wallet and Lightning wallet"
-  homepage "https://www.groestlcoin.org/grs-bluewallet/"
+  homepage "https:www.groestlcoin.orggrs-bluewallet"
 
   depends_on macos: ">= :catalina"
 
   app "GRS BlueWallet.app"
 
   zap trash: [
-    "~/Library/Application Scripts/org.groestlcoin.bluewallet123",
-    "~/Library/Containers/org.groestlcoin.bluewallet123",
-    "~/Library/Group Containers/group.org.groestlcoin.bluewallet123",
+    "~LibraryApplication Scriptsorg.groestlcoin.bluewallet123",
+    "~LibraryContainersorg.groestlcoin.bluewallet123",
+    "~LibraryGroup Containersgroup.org.groestlcoin.bluewallet123",
   ]
 end

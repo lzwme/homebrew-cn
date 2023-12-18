@@ -2,12 +2,12 @@ cask "font-kulim-park" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/kulimpark"
+      only_path: "oflkulimpark"
   name "Kulim Park"
-  homepage "https://fonts.google.com/specimen/Kulim+Park"
+  homepage "https:fonts.google.comspecimenKulim+Park"
 
   font "KulimPark-Bold.ttf"
   font "KulimPark-BoldItalic.ttf"

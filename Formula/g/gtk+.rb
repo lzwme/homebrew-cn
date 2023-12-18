@@ -1,12 +1,12 @@
 class Gtkx < Formula
   desc "GUI toolkit"
-  homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.33.tar.xz"
+  homepage "https:gtk.org"
+  url "https:download.gnome.orgsourcesgtk+2.24gtk+-2.24.33.tar.xz"
   sha256 "ac2ac757f5942d318a311a54b0c80b5ef295f299c2a73c632f6bfb1ff49cc6da"
   license "LGPL-2.0-or-later"
   revision 2
 
-  # From https://blog.gtk.org/2020/12/16/gtk-4-0/:
+  # From https:blog.gtk.org20201216gtk-4-0:
   # "It does mean, however, that GTK 2 has reached the end of its life.
   # We will do one final 2.x release in the coming days, and we encourage
   # everybody to port their GTK 2 applications to GTK 3 or 4."
@@ -45,20 +45,20 @@ class Gtkx < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
-  # Patch to allow Eiffel Studio to run in Cocoa / non-X11 mode, as well as Freeciv's freeciv-gtk2 client
+  # Patch to allow Eiffel Studio to run in Cocoa  non-X11 mode, as well as Freeciv's freeciv-gtk2 client
   # See:
-  # - https://gitlab.gnome.org/GNOME/gtk/-/issues/580
+  # - https:gitlab.gnome.orgGNOMEgtk-issues580
   # referenced from
-  # - https://bugzilla.gnome.org/show_bug.cgi?id=757187
+  # - https:bugzilla.gnome.orgshow_bug.cgi?id=757187
   # referenced from
-  # - https://bugzilla.gnome.org/show_bug.cgi?id=557780
-  # - Homebrew/homebrew-games#278
+  # - https:bugzilla.gnome.orgshow_bug.cgi?id=557780
+  # - Homebrewhomebrew-games#278
   patch do
-    url "https://gitlab.gnome.org/GNOME/gtk/uploads/2a194d81de8e8346a81816870264b3bf/gdkimage.patch"
+    url "https:gitlab.gnome.orgGNOMEgtkuploads2a194d81de8e8346a81816870264b3bfgdkimage.patch"
     sha256 "ce5adf1a019ac7ed2a999efb65cfadeae50f5de8663638c7f765f8764aa7d931"
   end
 
@@ -71,7 +71,7 @@ class Gtkx < Formula
   end
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-static",
                           "--disable-glibtest",
@@ -80,24 +80,24 @@ class Gtkx < Formula
                           "--disable-visibility"
     system "make", "install"
 
-    inreplace bin/"gtk-builder-convert", %r{^#!/usr/bin/env python$}, "#!/usr/bin/python"
+    inreplace bin"gtk-builder-convert", %r{^#!usrbinenv python$}, "#!usrbinpython"
 
     # Prevent a conflict between this and `gtk+3`
-    libexec.install bin/"gtk-update-icon-cache"
-    bin.install_symlink libexec/"gtk-update-icon-cache" => "gtk2-update-icon-cache"
+    libexec.install bin"gtk-update-icon-cache"
+    bin.install_symlink libexec"gtk-update-icon-cache" => "gtk2-update-icon-cache"
   end
 
   def caveats
     <<~EOS
       To avoid a conflict with `gtk+3` formula, `gtk-update-icon-cache` is installed at
-        #{opt_libexec}/gtk-update-icon-cache
+        #{opt_libexec}gtk-update-icon-cache
       A versioned symlink `gtk2-update-icon-cache` is linked for convenience.
     EOS
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gtk/gtk.h>
+    (testpath"test.c").write <<~EOS
+      #include <gtkgtk.h>
 
       int main(int argc, char *argv[]) {
         GtkWidget *label = gtk_label_new("Hello World!");
@@ -106,6 +106,6 @@ class Gtkx < Formula
     EOS
     flags = shell_output("pkg-config --cflags --libs gtk+-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

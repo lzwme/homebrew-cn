@@ -1,7 +1,7 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
-  homepage "https://github.com/rustscan/rustscan"
-  url "https://ghproxy.com/https://github.com/RustScan/RustScan/archive/refs/tags/2.1.1.tar.gz"
+  homepage "https:github.comrustscanrustscan"
+  url "https:github.comRustScanRustScanarchiverefstags2.1.1.tar.gz"
   sha256 "51244a5bde278b25de030bd91e4ebe1d4b87269b2d0f7f601565caef4fb5749a"
   license "GPL-3.0-or-later"
 
@@ -26,7 +26,7 @@ class Rustscan < Formula
   end
 
   test do
-    refute_match("panic", shell_output("#{bin}/rustscan --greppable -a 127.0.0.1"))
-    refute_match("panic", shell_output("#{bin}/rustscan --greppable -a 0.0.0.0"))
+    refute_match("panic", shell_output("#{bin}rustscan --greppable -a 127.0.0.1"))
+    refute_match("panic", shell_output("#{bin}rustscan --greppable -a 0.0.0.0"))
   end
 end

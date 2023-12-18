@@ -1,7 +1,7 @@
 class Noweb < Formula
   desc "WEB-like literate-programming tool"
-  homepage "https://www.cs.tufts.edu/~nr/noweb/"
-  url "https://ghproxy.com/https://github.com/nrnrnr/noweb/archive/refs/tags/v2_13.tar.gz"
+  homepage "https:www.cs.tufts.edu~nrnoweb"
+  url "https:github.comnrnrnrnowebarchiverefstagsv2_13.tar.gz"
   sha256 "7b32657128c8e2cb1114cca55023c58fa46789dcffcbe3dabde2c8a82fe57802"
   license "BSD-2-Clause"
 
@@ -20,16 +20,16 @@ class Noweb < Formula
   depends_on "gnu-sed" => :build
   depends_on "icon"
 
-  # remove pdcached ops, see discussions in https://github.com/nrnrnr/noweb/issues/31
+  # remove pdcached ops, see discussions in https:github.comnrnrnrnowebissues31
   patch :DATA
 
   def texpath
-    prefix/"tex/generic/noweb"
+    prefix"texgenericnoweb"
   end
 
   def install
     # use gnu-sed on macOS for fixing `illegal byte sequence` error
-    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec"gnubin" if OS.mac?
 
     cd "src" do
       system "bash", "awkname", "awk"
@@ -64,16 +64,16 @@ class Noweb < Formula
   end
 
   test do
-    (testpath/"test.nw").write <<~EOS
+    (testpath"test.nw").write <<~EOS
       \section{Hello world}
 
       Today I awoke and decided to write
       some code, so I started to write Hello World in \textsf C.
 
       <<hello.c>>=
-      /*
+      *
         <<license>>
-      */
+      *
       #include <stdio.h>
 
       int main(int argc, char *argv[]) {
@@ -85,9 +85,9 @@ class Noweb < Formula
 
       <<hello.php>>=
       <?php
-        /*
+        *
         <<license>>
-        */
+        *
         echo "Hello world!\n";
       ?>
       @
@@ -99,15 +99,15 @@ class Noweb < Formula
       This work is placed in the public domain.
     EOS
     assert_match "this file was generated automatically by noweave",
-                 pipe_output("#{bin}/htmltoc", shell_output("#{bin}/noweave -filter l2h -index -html test.nw"))
+                 pipe_output("#{bin}htmltoc", shell_output("#{bin}noweave -filter l2h -index -html test.nw"))
   end
 end
 
 __END__
-diff --git a/src/icon/Makefile b/src/icon/Makefile
+diff --git asrciconMakefile bsrciconMakefile
 index b8f39ee..db51615 100644
---- a/src/icon/Makefile
-+++ b/src/icon/Makefile
+--- asrciconMakefile
++++ bsrciconMakefile
 @@ -10,11 +10,11 @@ LIBEXECS=totex disambiguate noidx tohtml elide l2h docs2comments \
  	autodefs.promela autodefs.lrtl autodefs.asdl autodefs.mmix xchunks pipedocs
  LIBSPECIAL=autodefs.cee

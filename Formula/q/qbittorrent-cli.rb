@@ -1,10 +1,10 @@
 class QbittorrentCli < Formula
   desc "Command-line interface for qBittorrent written in Go"
-  homepage "https://github.com/ludviglundgren/qbittorrent-cli"
-  url "https://ghproxy.com/https://github.com/ludviglundgren/qbittorrent-cli/archive/refs/tags/v2.0.0.tar.gz"
+  homepage "https:github.comludviglundgrenqbittorrent-cli"
+  url "https:github.comludviglundgrenqbittorrent-cliarchiverefstagsv2.0.0.tar.gz"
   sha256 "91969f22bb167f99091a1ff8f4dbfe61cb1b592cb000453859ca9173ecbb8f10"
   license "MIT"
-  head "https://github.com/ludviglundgren/qbittorrent-cli.git", branch: "master"
+  head "https:github.comludviglundgrenqbittorrent-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d1c5fb756844c20716657afb77ebe37ee8379482946db1eaef3a9219ef31bf3"
@@ -25,21 +25,21 @@ class QbittorrentCli < Formula
       -X main.commit=#{tap.user}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"qbt"), "./cmd/qbt"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"qbt"), ".cmdqbt"
 
-    generate_completions_from_executable(bin/"qbt", "completion")
+    generate_completions_from_executable(bin"qbt", "completion")
   end
 
   test do
     port = free_port
-    (testpath/"config.qbt.toml").write <<~EOS
+    (testpath"config.qbt.toml").write <<~EOS
       [qbittorrent]
-      addr = "http://127.0.0.1:#{port}"
+      addr = "http:127.0.0.1:#{port}"
     EOS
 
-    output = shell_output("#{bin}/qbt app version --config #{testpath}/config.qbt.toml 2>&1", 1)
+    output = shell_output("#{bin}qbt app version --config #{testpath}config.qbt.toml 2>&1", 1)
     assert_match "could not get app version", output
 
-    assert_match version.to_s, shell_output("#{bin}/qbt version")
+    assert_match version.to_s, shell_output("#{bin}qbt version")
   end
 end

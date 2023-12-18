@@ -2,10 +2,10 @@ cask "font-noto-sans-bassa-vah" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notosansbassavah/NotoSansBassaVah%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotosansbassavahNotoSansBassaVah%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Sans Bassa Vah"
-  homepage "https://fonts.google.com/specimen/Noto+Sans+Bassa+Vah"
+  homepage "https:fonts.google.comspecimenNoto+Sans+Bassa+Vah"
 
   font "NotoSansBassaVah[wght].ttf"
 

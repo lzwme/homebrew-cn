@@ -1,10 +1,10 @@
 class Multimarkdown < Formula
   desc "Turn marked-up plain text into well-formatted documents"
-  homepage "https://fletcher.github.io/MultiMarkdown-6/"
-  url "https://ghproxy.com/https://github.com/fletcher/MultiMarkdown-6/archive/refs/tags/6.7.0.tar.gz"
+  homepage "https:fletcher.github.ioMultiMarkdown-6"
+  url "https:github.comfletcherMultiMarkdown-6archiverefstags6.7.0.tar.gz"
   sha256 "aa386f54631dbc4e0beeb6b9cf9eb769db95a3f505a69b663140a80008cf0595"
   license "MIT"
-  head "https://github.com/fletcher/MultiMarkdown-6.git", branch: "develop"
+  head "https:github.comfletcherMultiMarkdown-6.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f04dd2552dc7725620fc3e64e6b803652c0510e20e33242f4bd00bbde327ea74"
@@ -31,11 +31,11 @@ class Multimarkdown < Formula
       bin.install "multimarkdown"
     end
 
-    bin.install Dir["scripts/*"].reject { |f| f.end_with?(".bat") }
+    bin.install Dir["scripts*"].reject { |f| f.end_with?(".bat") }
   end
 
   test do
-    assert_equal "<p>foo <em>bar</em></p>\n", pipe_output(bin/"multimarkdown", "foo *bar*\n")
-    assert_equal "<p>foo <em>bar</em></p>\n", pipe_output(bin/"mmd", "foo *bar*\n")
+    assert_equal "<p>foo <em>bar<em><p>\n", pipe_output(bin"multimarkdown", "foo *bar*\n")
+    assert_equal "<p>foo <em>bar<em><p>\n", pipe_output(bin"mmd", "foo *bar*\n")
   end
 end

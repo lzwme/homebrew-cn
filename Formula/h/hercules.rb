@@ -1,14 +1,14 @@
 class Hercules < Formula
-  desc "System/370, ESA/390 and z/Architecture Emulator"
-  homepage "http://www.hercules-390.eu/"
-  url "http://downloads.hercules-390.eu/hercules-3.13.tar.gz"
+  desc "System370, ESA390 and zArchitecture Emulator"
+  homepage "http:www.hercules-390.eu"
+  url "http:downloads.hercules-390.euhercules-3.13.tar.gz"
   sha256 "890c57c558d58708e55828ae299245bd2763318acf53e456a48aac883ecfe67d"
   license "QPL-1.0"
-  head "https://github.com/hercules-390/hyperion.git", branch: "master"
+  head "https:github.comhercules-390hyperion.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?hercules[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?hercules[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -38,12 +38,12 @@ class Hercules < Formula
     ENV.deparallelize
 
     if build.head?
-      system "./autogen.sh"
+      system ".autogen.sh"
     elsif Hardware::CPU.arm?
       system "autoreconf", "-fvi"
     end
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-optimization=no"
@@ -53,10 +53,10 @@ class Hercules < Formula
   end
 
   test do
-    (testpath/"test00.ctl").write <<~EOS
+    (testpath"test00.ctl").write <<~EOS
       TEST00 3390 10
       TEST.PDS EMPTY CYL 1 0 5 PO FB 80 6080
     EOS
-    system "#{bin}/dasdload", "test00.ctl", "test00.ckd"
+    system "#{bin}dasdload", "test00.ctl", "test00.ckd"
   end
 end

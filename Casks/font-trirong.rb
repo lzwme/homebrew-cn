@@ -2,12 +2,12 @@ cask "font-trirong" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/trirong"
+      only_path: "ofltrirong"
   name "Trirong"
-  homepage "https://fonts.google.com/specimen/Trirong"
+  homepage "https:fonts.google.comspecimenTrirong"
 
   font "Trirong-Black.ttf"
   font "Trirong-BlackItalic.ttf"

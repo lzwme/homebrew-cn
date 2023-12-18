@@ -1,9 +1,9 @@
 class Xhyve < Formula
   desc "Lightweight macOS virtualization solution based on FreeBSD's bhyve"
-  homepage "https://github.com/machyve/xhyve"
-  url "https://ghproxy.com/https://github.com/machyve/xhyve/archive/refs/tags/v0.2.0.tar.gz"
+  homepage "https:github.commachyvexhyve"
+  url "https:github.commachyvexhyvearchiverefstagsv0.2.0.tar.gz"
   sha256 "32c390529a73c8eb33dbc1aede7baab5100c314f726cac14627d2204ad9d3b3c"
-  head "https://github.com/machyve/xhyve.git", branch: "master"
+  head "https:github.commachyvexhyve.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -14,8 +14,8 @@ class Xhyve < Formula
     sha256 cellar: :any, el_capitan:  "b0a94f72b09c71aa3bfbbf55669cd9e64ea309d6be8c838f6bc98aeaf8a6895c"
   end
 
-  # Ref: https://github.com/machyve/xhyve/issues/207
-  # Ref: https://github.com/machyve/xhyve/issues/227
+  # Ref: https:github.commachyvexhyveissues207
+  # Ref: https:github.commachyvexhyveissues227
   disable! date: "2023-09-25", because: :does_not_build
 
   depends_on arch: :x86_64
@@ -25,13 +25,13 @@ class Xhyve < Formula
     args = []
     args << "GIT_VERSION=#{version}" if build.stable?
     system "make", *args
-    bin.install "build/xhyve"
-    pkgshare.install "test/"
+    bin.install "buildxhyve"
+    pkgshare.install "test"
     pkgshare.install Dir["xhyverun*.sh"]
     man1.install "xhyve.1" if build.head?
   end
 
   test do
-    system "#{bin}/xhyve", "-v"
+    system "#{bin}xhyve", "-v"
   end
 end

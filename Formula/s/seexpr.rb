@@ -1,13 +1,13 @@
 class Seexpr < Formula
   desc "Embeddable expression evaluation engine"
-  homepage "https://wdas.github.io/SeExpr/"
-  url "https://ghproxy.com/https://github.com/wdas/SeExpr/archive/refs/tags/v3.0.1.tar.gz"
+  homepage "https:wdas.github.ioSeExpr"
+  url "https:github.comwdasSeExprarchiverefstagsv3.0.1.tar.gz"
   sha256 "1e4cd35e6d63bd3443e1bffe723dbae91334c2c94a84cc590ea8f1886f96f84e"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -50,7 +50,7 @@ class Seexpr < Formula
   end
 
   test do
-    actual_output = shell_output("#{bin}/asciiGraph2 'x^3-8*x'").lines.map(&:rstrip).join("\n")
+    actual_output = shell_output("#{bin}asciiGraph2 'x^3-8*x'").lines.map(&:rstrip).join("\n")
     expected_output = <<~EOS
                                     |        #
                               ##    |        #

@@ -1,18 +1,18 @@
 class SyncGateway < Formula
   desc "Make Couchbase Server a replication endpoint for Couchbase Lite"
-  homepage "https://docs.couchbase.com/sync-gateway/current/index.html"
+  homepage "https:docs.couchbase.comsync-gatewaycurrentindex.html"
   license "Apache-2.0"
-  head "https://github.com/couchbase/sync_gateway.git", branch: "master"
+  head "https:github.comcouchbasesync_gateway.git", branch: "master"
 
   # NOTE: Do not update to v3 or later due to incompatible license
   stable do
-    url "https://github.com/couchbase/sync_gateway.git",
+    url "https:github.comcouchbasesync_gateway.git",
         tag:      "2.8.3",
         revision: "e54a62741bb28f3e54a6599c21c739df9a9dad76"
 
     # Backport fix to build with Python 3
     patch do
-      url "https://github.com/couchbase/sync_gateway/commit/97279d5ff172c1535bd4df764fbc51029d003b53.patch?full_index=1"
+      url "https:github.comcouchbasesync_gatewaycommit97279d5ff172c1535bd4df764fbc51029d003b53.patch?full_index=1"
       sha256 "ffae5adc94868e9512173ea596a0018cc436767687b097dfd8c5ba85a9fae097"
     end
   end
@@ -30,7 +30,7 @@ class SyncGateway < Formula
   end
 
   # v3 switched to Business Source License 1.1
-  # Ref: https://github.com/couchbase/sync_gateway/blob/3.0.0/LICENSE
+  # Ref: https:github.comcouchbasesync_gatewayblob3.0.0LICENSE
   deprecate! date: "2023-01-03", because: "is switching to an incompatible license"
 
   depends_on "gnupg" => :build
@@ -42,27 +42,27 @@ class SyncGateway < Formula
 
   def install
     # Cache the vendored Go dependencies gathered by depot_tools' `repo` command
-    repo_cache = buildpath/"repo_cache/#{name}/.repo"
+    repo_cache = buildpath"repo_cache#{name}.repo"
     repo_cache.mkpath
 
-    (buildpath/"build").install_symlink repo_cache
+    (buildpath"build").install_symlink repo_cache
     cp Dir["*.sh"], "build"
 
-    manifest = buildpath/"new-manifest.xml"
+    manifest = buildpath"new-manifest.xml"
     manifest.write Utils.safe_popen_read "python3.11", "rewrite-manifest.sh",
                                          "--manifest-url",
-                                         "file://#{buildpath}/manifest/default.xml",
+                                         "file:#{buildpath}manifestdefault.xml",
                                          "--project-name", "sync_gateway",
                                          "--set-revision", Utils.git_head
     cd "build" do
       ENV["GO111MODULE"] = "auto"
       mkdir "godeps"
-      system "repo", "init", "-u", stable.url, "-m", "manifest/default.xml"
-      cp manifest, ".repo/manifest.xml"
+      system "repo", "init", "-u", stable.url, "-m", "manifestdefault.xml"
+      cp manifest, ".repomanifest.xml"
       system "repo", "sync"
       ENV["SG_EDITION"] = "CE"
       system "sh", "build.sh", "-v"
-      mv "godeps/bin", prefix
+      mv "godepsbin", prefix
     end
   end
 
@@ -70,7 +70,7 @@ class SyncGateway < Formula
     interface_port = free_port
     admin_port = free_port
     fork do
-      exec "#{bin}/sync_gateway_ce -interface :#{interface_port} -adminInterface 127.0.0.1:#{admin_port}"
+      exec "#{bin}sync_gateway_ce -interface :#{interface_port} -adminInterface 127.0.0.1:#{admin_port}"
     end
     sleep 1
 

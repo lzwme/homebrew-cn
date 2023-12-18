@@ -1,10 +1,10 @@
 class Flyscrape < Formula
   desc "Standalone and scriptable web scraper"
-  homepage "https://flyscrape.com/"
-  url "https://ghproxy.com/https://github.com/philippta/flyscrape/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:flyscrape.com"
+  url "https:github.comphilipptaflyscrapearchiverefstagsv0.6.0.tar.gz"
   sha256 "f6aee457ec9e1eee9346a4ac45c11cd6742881674fb1cb627202162484a7002d"
   license "MPL-2.0"
-  head "https://github.com/philippta/flyscrape.git", branch: "master"
+  head "https:github.comphilipptaflyscrape.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "163a2f6c266ddadaa5dde5a58908378ac14dc8d7f4be2b7ffe53b16af1beed9d"
@@ -22,19 +22,19 @@ class Flyscrape < Formula
 
   def install
     tags = "osusergo,netgo,sqlite_omit_load_extension"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", tags, "./cmd/flyscrape"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", tags, ".cmdflyscrape"
 
     pkgshare.install "examples"
   end
 
   test do
-    test_config = pkgshare/"examples/hackernews.js"
+    test_config = pkgshare"exampleshackernews.js"
     return_status = OS.mac? ? 1 : 0
-    output = shell_output("#{bin}/flyscrape run #{test_config} 2>&1", return_status)
+    output = shell_output("#{bin}flyscrape run #{test_config} 2>&1", return_status)
     expected = if OS.mac?
       "unable to open database file"
     else
-      "\"url\": \"https://news.ycombinator.com/\""
+      "\"url\": \"https:news.ycombinator.com\""
     end
     assert_match expected, output
   end

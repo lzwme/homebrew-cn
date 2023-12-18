@@ -1,7 +1,7 @@
 class AwsConsole < Formula
   desc "Command-line to use AWS CLI credentials to launch the AWS console in a browser"
-  homepage "https://github.com/aws-cloudformation/rain"
-  url "https://ghproxy.com/https://github.com/aws-cloudformation/rain/archive/refs/tags/v1.7.5.tar.gz"
+  homepage "https:github.comaws-cloudformationrain"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.7.5.tar.gz"
   sha256 "8d3390658664a60b503c85ebf23d13c07b0defdbd29933f564aca03ba986e3b6"
   license "Apache-2.0"
 
@@ -22,12 +22,12 @@ class AwsConsole < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "cmd/aws-console/main.go"
+    system "go", "build", *std_go_args, "cmdaws-consolemain.go"
   end
 
   test do
     # No other operation is possible without valid AWS credentials configured
-    output = shell_output("#{bin}/aws-console 2>&1", 1)
+    output = shell_output("#{bin}aws-console 2>&1", 1)
     assert_match "a region was not specified. You can run 'aws configure' or choose a profile with a region", output
   end
 end

@@ -1,7 +1,7 @@
 class FuseOverlayfs < Formula
   desc "FUSE implementation for overlayfs"
-  homepage "https://github.com/containers/fuse-overlayfs"
-  url "https://ghproxy.com/https://github.com/containers/fuse-overlayfs/archive/refs/tags/v1.13.tar.gz"
+  homepage "https:github.comcontainersfuse-overlayfs"
+  url "https:github.comcontainersfuse-overlayfsarchiverefstagsv1.13.tar.gz"
   sha256 "96d10344921d5796bcba7a38580ae14a53c4e60399bb90b238ac5a10b3bb65b2"
   license "GPL-2.0-or-later"
 
@@ -18,18 +18,18 @@ class FuseOverlayfs < Formula
 
   def install
     system "autoreconf", "-fis"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    mkdir "lowerdir/a"
-    mkdir "lowerdir/b"
+    mkdir "lowerdira"
+    mkdir "lowerdirb"
     mkdir "up"
     mkdir "workdir"
     mkdir "merged"
-    test_cmd = "fuse-overlayfs -o lowerdir=lowerdir/a:lowerdir/b,upperdir=up,workdir=workdir merged 2>&1"
+    test_cmd = "fuse-overlayfs -o lowerdir=lowerdira:lowerdirb,upperdir=up,workdir=workdir merged 2>&1"
     output = shell_output(test_cmd, 1)
     assert_match "fuse: device not found, try 'modprobe fuse' first", output
     assert_match "fuse-overlayfs: cannot mount: No such file or directory", output

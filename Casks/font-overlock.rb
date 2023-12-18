@@ -2,12 +2,12 @@ cask "font-overlock" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/overlock"
+      only_path: "ofloverlock"
   name "Overlock"
-  homepage "https://fonts.google.com/specimen/Overlock"
+  homepage "https:fonts.google.comspecimenOverlock"
 
   font "Overlock-Black.ttf"
   font "Overlock-BlackItalic.ttf"

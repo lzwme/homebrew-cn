@@ -1,7 +1,7 @@
 class Libgr < Formula
   desc "GR framework: a graphics library for visualisation applications"
-  homepage "https://gr-framework.org/"
-  url "https://ghproxy.com/https://github.com/sciapp/gr/archive/refs/tags/v0.73.0.tar.gz"
+  homepage "https:gr-framework.org"
+  url "https:github.comsciappgrarchiverefstagsv0.73.0.tar.gz"
   sha256 "258e946fe87acb0d59124e8adabf934f109165eb4b866978cda3a72a6dcb57b0"
   license "MIT"
 
@@ -31,7 +31,7 @@ class Libgr < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <gr.h>
 
@@ -50,8 +50,8 @@ class Libgr < Formula
     EOS
 
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lGR"
-    system "./test"
+    system ".test"
 
-    assert_predicate testpath/"test.png", :exist?
+    assert_predicate testpath"test.png", :exist?
   end
 end

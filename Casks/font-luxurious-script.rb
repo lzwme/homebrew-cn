@@ -2,10 +2,10 @@ cask "font-luxurious-script" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/luxuriousscript/LuxuriousScript-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflluxuriousscriptLuxuriousScript-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Luxurious Script"
-  homepage "https://fonts.google.com/specimen/Luxurious+Script"
+  homepage "https:fonts.google.comspecimenLuxurious+Script"
 
   font "LuxuriousScript-Regular.ttf"
 

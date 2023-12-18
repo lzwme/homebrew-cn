@@ -1,7 +1,7 @@
 class Gtmess < Formula
   desc "Console MSN messenger client"
-  homepage "https://gtmess.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/gtmess/gtmess/0.97/gtmess-0.97.tar.gz"
+  homepage "https:gtmess.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectgtmessgtmess0.97gtmess-0.97.tar.gz"
   sha256 "606379bb06fa70196e5336cbd421a69d7ebb4b27f93aa1dfd23a6420b3c6f5c6"
   license "GPL-2.0-or-later"
   revision 2
@@ -21,7 +21,7 @@ class Gtmess < Formula
   end
 
   head do
-    url "https://github.com/geotz/gtmess.git", branch: "master"
+    url "https:github.comgeotzgtmess.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,11 +34,11 @@ class Gtmess < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args, "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
+    system ".configure", *std_configure_args, "--with-ssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/gtmess", "--version"
+    system "#{bin}gtmess", "--version"
   end
 end

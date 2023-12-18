@@ -1,14 +1,14 @@
 class NetSnmp < Formula
   desc "Implements SNMP v1, v2c, and v3, using IPv4 and IPv6"
-  homepage "http://www.net-snmp.org/"
-  url "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.4/net-snmp-5.9.4.tar.gz"
+  homepage "http:www.net-snmp.org"
+  url "https:downloads.sourceforge.netprojectnet-snmpnet-snmp5.9.4net-snmp-5.9.4.tar.gz"
   sha256 "8b4de01391e74e3c7014beb43961a2d6d6fa03acc34280b9585f4930745b0544"
   license "Net-SNMP"
-  head "https://github.com/net-snmp/net-snmp.git", branch: "master"
+  head "https:github.comnet-snmpnet-snmp.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/net-snmp[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?net-snmp[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -35,7 +35,7 @@ class NetSnmp < Formula
 
   # Fix -flat_namespace being used on x86_64 Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -45,9 +45,9 @@ class NetSnmp < Formula
       "--prefix=#{prefix}",
       "--enable-ipv6",
       "--with-defaults",
-      "--with-persistent-directory=#{var}/db/net-snmp",
-      "--with-logfile=#{var}/log/snmpd.log",
-      "--with-mib-modules=host ucd-snmp/diskio",
+      "--with-persistent-directory=#{var}dbnet-snmp",
+      "--with-logfile=#{var}logsnmpd.log",
+      "--with-mib-modules=host ucd-snmpdiskio",
       "--without-rpm",
       "--without-kmem-usage",
       "--disable-embedded-perl",
@@ -56,17 +56,17 @@ class NetSnmp < Formula
     ]
 
     system "autoreconf", "-fvi" if Hardware::CPU.arm?
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   def post_install
-    (var/"db/net-snmp").mkpath
-    (var/"log").mkpath
+    (var"dbnet-snmp").mkpath
+    (var"log").mkpath
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/snmpwalk -V 2>&1")
+    assert_match version.to_s, shell_output("#{bin}snmpwalk -V 2>&1")
   end
 end

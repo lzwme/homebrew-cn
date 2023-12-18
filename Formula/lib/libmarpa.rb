@@ -1,10 +1,10 @@
 class Libmarpa < Formula
   desc "Marpa parse engine C library -- STABLE"
-  homepage "https://jeffreykegler.github.io/Marpa-web-site/libmarpa.html"
-  url "https://ghproxy.com/https://github.com/jeffreykegler/libmarpa/archive/refs/tags/v11.0.13.tar.gz"
+  homepage "https:jeffreykegler.github.ioMarpa-web-sitelibmarpa.html"
+  url "https:github.comjeffreykeglerlibmarpaarchiverefstagsv11.0.13.tar.gz"
   sha256 "cb3c7f47d9ee95de967838ea0ecc380ffacfdfd8ec2c3d7cc2a6acaa4cc9597b"
   license "MIT"
-  head "https://github.com/jeffreykegler/libmarpa.git", branch: "tested"
+  head "https:github.comjeffreykeglerlibmarpa.git", branch: "tested"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fb4bb4ed2f54fe81cafed6f6a768edf2360cd0cf00f9e78be219848e968e5ebd"
@@ -25,18 +25,18 @@ class Libmarpa < Formula
 
   def install
     ENV.deparallelize
-    inreplace "work/etc/libmarpa.pc.in", "prefix=\".\"", "prefix=\"#{prefix}\""
-    inreplace "work/ac/Makefile.am", "git log -n 5", "## git log -n 5"
+    inreplace "worketclibmarpa.pc.in", "prefix=\".\"", "prefix=\"#{prefix}\""
+    inreplace "workacMakefile.am", "git log -n 5", "## git log -n 5"
     system "make", "ac_dist"
     mkdir "build" do
-      system "../ac_dist/configure", *std_configure_args, "--disable-silent-rules"
+      system "..ac_distconfigure", *std_configure_args, "--disable-silent-rules"
       system "make", "install"
-      (lib/"pkgconfig").install "libmarpa.pc"
+      (lib"pkgconfig").install "libmarpa.pc"
     end
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <marpa.h>
       int main(void)
       {
@@ -47,6 +47,6 @@ class Libmarpa < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lmarpa", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

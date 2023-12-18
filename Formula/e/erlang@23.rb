@@ -1,8 +1,8 @@
 class ErlangAT23 < Formula
   desc "Programming language for highly scalable real-time systems"
-  homepage "https://www.erlang.org/"
+  homepage "https:www.erlang.org"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-23.3.4.19/otp_src_23.3.4.19.tar.gz"
+  url "https:github.comerlangotpreleasesdownloadOTP-23.3.4.19otp_src_23.3.4.19.tar.gz"
   sha256 "b830af3d9fcb0be88d1d358ee8d5db6dbc51554329053b7dfdc17d4335c81302"
   license "Apache-2.0"
 
@@ -30,7 +30,7 @@ class ErlangAT23 < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
 
   resource "html" do
-    url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-23.3.4.19/otp_doc_html_23.3.4.19.tar.gz"
+    url "https:github.comerlangotpreleasesdownloadOTP-23.3.4.19otp_doc_html_23.3.4.19.tar.gz"
     sha256 "bea2315dc33ecc04dd2e26a4d418d03dced3a7f326f146ce8cfefc9f23c6cada"
   end
 
@@ -60,7 +60,7 @@ class ErlangAT23 < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
 
@@ -74,16 +74,16 @@ class ErlangAT23 < Formula
   def caveats
     <<~EOS
       Man pages can be found in:
-        #{opt_lib}/erlang/man
+        #{opt_lib}erlangman
 
       Access them with `erl -man`, or add this directory to MANPATH.
     EOS
   end
 
   test do
-    system "#{bin}/erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
-    (testpath/"factorial").write <<~EOS
-      #!#{bin}/escript
+    system "#{bin}erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
+    (testpath"factorial").write <<~EOS
+      #!#{bin}escript
       %% -*- erlang -*-
       %%! -smp enable -sname factorial -mnesia debug verbose
       main([String]) ->
@@ -105,7 +105,7 @@ class ErlangAT23 < Formula
       fac(N) -> N * fac(N-1).
     EOS
     chmod 0755, "factorial"
-    assert_match "usage: factorial integer", shell_output("./factorial")
-    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output("./factorial 42")
+    assert_match "usage: factorial integer", shell_output(".factorial")
+    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output(".factorial 42")
   end
 end

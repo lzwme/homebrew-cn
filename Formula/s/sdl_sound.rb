@@ -1,8 +1,8 @@
 class SdlSound < Formula
   desc "Library to decode several popular sound file formats"
-  homepage "https://icculus.org/SDL_sound/"
-  url "https://icculus.org/SDL_sound/downloads/SDL_sound-1.0.3.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/s/sdl-sound1.2/sdl-sound1.2_1.0.3.orig.tar.gz"
+  homepage "https:icculus.orgSDL_sound"
+  url "https:icculus.orgSDL_sounddownloadsSDL_sound-1.0.3.tar.gz"
+  mirror "https:deb.debian.orgdebianpoolmainssdl-sound1.2sdl-sound1.2_1.0.3.orig.tar.gz"
   sha256 "3999fd0bbb485289a52be14b2f68b571cb84e380cc43387eadf778f64c79e6df"
   revision 2
 
@@ -20,7 +20,7 @@ class SdlSound < Formula
   end
 
   head do
-    url "https://github.com/icculus/SDL_sound.git", branch: "stable-1.0"
+    url "https:github.comicculusSDL_sound.git", branch: "stable-1.0"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,9 +38,9 @@ class SdlSound < Formula
   depends_on "sdl12-compat"
 
   def install
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-sdltest"
     system "make"

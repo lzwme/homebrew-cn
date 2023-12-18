@@ -2,10 +2,10 @@ cask "font-swanky-and-moo-moo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/swankyandmoomoo/SwankyandMooMoo.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflswankyandmoomooSwankyandMooMoo.ttf",
+      verified: "github.comgooglefonts"
   name "Swanky and Moo Moo"
-  homepage "https://fonts.google.com/specimen/Swanky+and+Moo+Moo"
+  homepage "https:fonts.google.comspecimenSwanky+and+Moo+Moo"
 
   font "SwankyandMooMoo.ttf"
 

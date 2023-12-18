@@ -2,10 +2,10 @@ cask "font-eczar" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/eczar/Eczar%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofleczarEczar%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Eczar"
-  homepage "https://fonts.google.com/specimen/Eczar"
+  homepage "https:fonts.google.comspecimenEczar"
 
   font "Eczar[wght].ttf"
 

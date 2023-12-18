@@ -5,10 +5,10 @@ cask "cityofzion-neon" do
   sha256 arm:   "a0b6bd245d8e83628fdd2a8df19c5cd5e485f21570cdcde1c32b4091f08b6448",
          intel: "e0859a8a6c453dd3b8460373d5e2a89d06a2f3031c3a307c582b2600f4d2b291"
 
-  url "https://ghproxy.com/https://github.com/CityOfZion/neon-wallet/releases/download/v#{version}/Neon.#{version}.#{arch}.dmg"
+  url "https:github.comCityOfZionneon-walletreleasesdownloadv#{version}Neon.#{version}.#{arch}.dmg"
   name "Neon Wallet"
   desc "Light wallet for the NEO blockchain"
-  homepage "https://github.com/CityOfZion/neon-wallet"
+  homepage "https:github.comCityOfZionneon-wallet"
 
   livecheck do
     url :url
@@ -18,9 +18,9 @@ cask "cityofzion-neon" do
   app "Neon.app"
 
   zap trash: [
-    "~/Library/Application Support/Neon",
-    "~/Library/Preferences/com.electron.neon.helper.plist",
-    "~/Library/Preferences/com.electron.neon.plist",
-    "~/Library/Saved Application State/com.electron.neon.savedState",
+    "~LibraryApplication SupportNeon",
+    "~LibraryPreferencescom.electron.neon.helper.plist",
+    "~LibraryPreferencescom.electron.neon.plist",
+    "~LibrarySaved Application Statecom.electron.neon.savedState",
   ]
 end

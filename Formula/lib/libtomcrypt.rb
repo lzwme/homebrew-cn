@@ -1,7 +1,7 @@
 class Libtomcrypt < Formula
   desc "Comprehensive, modular and portable cryptographic toolkit"
-  homepage "https://www.libtom.net/"
-  url "https://ghproxy.com/https://github.com/libtom/libtomcrypt/archive/refs/tags/v1.18.2.tar.gz"
+  homepage "https:www.libtom.net"
+  url "https:github.comlibtomlibtomcryptarchiverefstagsv1.18.2.tar.gz"
   sha256 "d870fad1e31cb787c85161a8894abb9d7283c2a654a9d3d4c6d45a1eba59952c"
   license "Unlicense"
 
@@ -27,12 +27,12 @@ class Libtomcrypt < Formula
     ENV.append "EXTRALIBS", "-lgmp -ltommath"
     system "make", "-f", "makefile.shared"
     system "make", "-f", "makefile.shared", "test"
-    system "./test"
+    system ".test"
     system "make", "-f", "makefile.shared", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <stdlib.h>
       #include <string.h>
@@ -72,6 +72,6 @@ class Libtomcrypt < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltomcrypt", "-o", "test"
-    assert_equal "passed", shell_output("./test").strip
+    assert_equal "passed", shell_output(".test").strip
   end
 end

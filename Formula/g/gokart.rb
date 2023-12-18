@@ -1,10 +1,10 @@
 class Gokart < Formula
   desc "Static code analysis for securing Go code"
-  homepage "https://github.com/praetorian-inc/gokart"
-  url "https://ghproxy.com/https://github.com/praetorian-inc/gokart/archive/refs/tags/v0.5.1.tar.gz"
+  homepage "https:github.compraetorian-incgokart"
+  url "https:github.compraetorian-incgokartarchiverefstagsv0.5.1.tar.gz"
   sha256 "81bf1e26531117de4da9b160ede80aa8f6c4d4984cc1d7dea398083b8e232eb7"
   license "Apache-2.0"
-  head "https://github.com/praetorian-inc/gokart.git", branch: "main"
+  head "https:github.compraetorian-incgokart.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a79a35e7badd5894d6080b74b28f701b14d680a6480b78ab237ebb77083a559f"
@@ -28,7 +28,7 @@ class Gokart < Formula
   test do
     mkdir "brewtest" do
       system "go", "mod", "init", "brewtest"
-      (testpath/"brewtest/main.go").write <<~EOS
+      (testpath"brewtestmain.go").write <<~EOS
         package main
 
         func main() {}
@@ -36,8 +36,8 @@ class Gokart < Formula
     end
 
     assert_match "GoKart found 0 potentially vulnerable functions",
-      shell_output("#{bin}/gokart scan brewtest")
+      shell_output("#{bin}gokart scan brewtest")
 
-    assert_match version.to_s, shell_output("#{bin}/gokart version")
+    assert_match version.to_s, shell_output("#{bin}gokart version")
   end
 end

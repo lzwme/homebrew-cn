@@ -2,11 +2,11 @@ class Khal < Formula
   include Language::Python::Virtualenv
 
   desc "CLI calendar application"
-  homepage "https://lostpackets.de/khal/"
-  url "https://files.pythonhosted.org/packages/68/ac/e94853c63676a536b3cdd758442a5df678bbe42eed06e46673fc5ba97d72/khal-0.11.2.tar.gz"
+  homepage "https:lostpackets.dekhal"
+  url "https:files.pythonhosted.orgpackages68ace94853c63676a536b3cdd758442a5df678bbe42eed06e46673fc5ba97d72khal-0.11.2.tar.gz"
   sha256 "8fb8d89371e53e2235953a0765e41b97e174848a688d63768477576d03f899ba"
   license "MIT"
-  head "https://github.com/pimutils/khal.git", branch: "master"
+  head "https:github.compimutilskhal.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -24,47 +24,47 @@ class Khal < Formula
   depends_on "six"
 
   resource "atomicwrites" do
-    url "https://files.pythonhosted.org/packages/87/c6/53da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2/atomicwrites-1.4.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages87c653da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2atomicwrites-1.4.1.tar.gz"
     sha256 "81b2c9071a49367a7f770170e5eec8cb66567cfbbc8c73d20ce5ca4a8d71cf11"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
     sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-log" do
-    url "https://files.pythonhosted.org/packages/32/32/228be4f971e4bd556c33d52a22682bfe318ffe57a1ddb7a546f347a90260/click-log-0.4.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages3232228be4f971e4bd556c33d52a22682bfe318ffe57a1ddb7a546f347a90260click-log-0.4.0.tar.gz"
     sha256 "3970f8570ac54491237bcdb3d8ab5e3eef6c057df29f8c3d1151a51a9c23b975"
   end
 
   resource "configobj" do
-    url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
+    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
   end
 
   resource "icalendar" do
-    url "https://files.pythonhosted.org/packages/40/d7/06707c968c2ce93e60eeb9f849c84e96c710660054e09791ffa3e5ef04ad/icalendar-5.0.10.tar.gz"
+    url "https:files.pythonhosted.orgpackages40d706707c968c2ce93e60eeb9f849c84e96c710660054e09791ffa3e5ef04adicalendar-5.0.10.tar.gz"
     sha256 "34f0ca020b804758ddf316eb70d1d46f769bce64638d5a080cb65dd46cfee642"
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "pyxdg" do
-    url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb0257998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452pyxdg-0.28.tar.gz"
     sha256 "3267bb3074e934df202af2ee0868575484108581e6f3cb006af1da35395e88b4"
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/b2/e2/adf17c75bab9b33e7f392b063468d50e513b2921bbae7343eb3728e0bc0a/tzlocal-5.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb2e2adf17c75bab9b33e7f392b063468d50e513b2921bbae7343eb3728e0bc0atzlocal-5.1.tar.gz"
     sha256 "a5ccb2365b295ed964e0a98ad076fe10c495591e75505d34f154d60a7f1ed722"
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/5f/cf/2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25d/urwid-2.2.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages5fcf2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25durwid-2.2.2.tar.gz"
     sha256 "5f83b241c1cbf3ec6c4b8c6b908127e0c9ad7481c5d3145639524157fc4e1744"
   end
 
@@ -75,7 +75,7 @@ class Khal < Formula
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
     ENV["LANG"] = "en_US.UTF-8"
-    (testpath/".calendar/test/01ef8547.ics").write <<~EOS
+    (testpath".calendartest01ef8547.ics").write <<~EOS
       BEGIN:VCALENDAR
       VERSION:2.0
       BEGIN:VEVENT
@@ -89,18 +89,18 @@ class Khal < Formula
       END:VEVENT
       END:VCALENDAR
     EOS
-    (testpath/".config/khal/config").write <<~EOS
+    (testpath".configkhalconfig").write <<~EOS
       [calendars]
       [[test]]
-      path = #{testpath}/.calendar/test/
+      path = #{testpath}.calendartest
       color = light gray
       [sqlite]
-      path = #{testpath}/.calendar/khal.db
+      path = #{testpath}.calendarkhal.db
       [locale]
       firstweekday = 0
       [default]
       default_calendar = test
     EOS
-    system "#{bin}/khal", "--no-color", "search", "testevent"
+    system "#{bin}khal", "--no-color", "search", "testevent"
   end
 end

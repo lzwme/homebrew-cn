@@ -1,7 +1,7 @@
 class Vc4asm < Formula
   desc "Macro assembler for Broadcom VideoCore IV aka Raspberry Pi GPU"
-  homepage "http://maazl.de/project/vc4asm/doc/index.html"
-  url "https://ghproxy.com/https://github.com/maazl/vc4asm/archive/refs/tags/V0.3.tar.gz"
+  homepage "http:maazl.deprojectvc4asmdocindex.html"
+  url "https:github.commaazlvc4asmarchiverefstagsV0.3.tar.gz"
   sha256 "f712fb27eb1b7d46b75db298fd50bb62905ccbdd7c0c7d27728596c496f031c2"
 
   bottle do
@@ -32,12 +32,12 @@ class Vc4asm < Formula
   end
 
   test do
-    (testpath/"test.qasm").write <<~EOS
+    (testpath"test.qasm").write <<~EOS
       mov -, sacq(9)
       add r0, r4, ra1.unpack8b
       add.unpack8ai r0, r4, ra1
       add r0, r4.8a, ra1
     EOS
-    system "#{bin}/vc4asm", "-o test.hex", "-V", "#{share}/vc4inc/vc4.qinc", "test.qasm"
+    system "#{bin}vc4asm", "-o test.hex", "-V", "#{share}vc4incvc4.qinc", "test.qasm"
   end
 end

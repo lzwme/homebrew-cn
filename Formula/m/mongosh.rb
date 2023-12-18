@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
-  homepage "https://github.com/mongodb-js/mongosh#readme"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-2.1.1.tgz"
+  homepage "https:github.commongodb-jsmongosh#readme"
+  url "https:registry.npmjs.org@mongoshcli-repl-cli-repl-2.1.1.tgz"
   sha256 "b440378b4a4c7e2badc6a66c344fc00fcd02749f8acaf9097d5fe40bf9f664e3"
   license "Apache-2.0"
 
@@ -21,12 +21,12 @@ class Mongosh < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"mongosh").write_env_script libexec/"bin/mongosh", PATH: "#{Formula["node"].opt_bin}:$PATH"
+    (bin"mongosh").write_env_script libexec"binmongosh", PATH: "#{Formula["node"].opt_bin}:$PATH"
   end
 
   test do
-    assert_match "ECONNREFUSED 0.0.0.0:1", shell_output("#{bin}/mongosh \"mongodb://0.0.0.0:1\" 2>&1", 1)
-    assert_match "#ok#", shell_output("#{bin}/mongosh --nodb --eval \"print('#ok#')\"")
-    assert_match "all tests passed", shell_output("#{bin}/mongosh --smokeTests 2>&1")
+    assert_match "ECONNREFUSED 0.0.0.0:1", shell_output("#{bin}mongosh \"mongodb:0.0.0.0:1\" 2>&1", 1)
+    assert_match "#ok#", shell_output("#{bin}mongosh --nodb --eval \"print('#ok#')\"")
+    assert_match "all tests passed", shell_output("#{bin}mongosh --smokeTests 2>&1")
   end
 end

@@ -1,7 +1,7 @@
 class Fastgron < Formula
   desc "High-performance JSON to GRON converter"
-  homepage "https://github.com/adamritter/fastgron"
-  url "https://ghproxy.com/https://github.com/adamritter/fastgron/archive/refs/tags/v0.7.7.tar.gz"
+  homepage "https:github.comadamritterfastgron"
+  url "https:github.comadamritterfastgronarchiverefstagsv0.7.7.tar.gz"
   sha256 "3011a3b99cd07d42648b2e964f459024b13ecc904d30501f0493fb0dc9fc33b2"
   license "MIT"
 
@@ -32,8 +32,8 @@ class Fastgron < Formula
       json[1] = 4
       json[2] = 5
     EOS
-    assert_equal expected, pipe_output(bin/"fastgron", "[3,4,5]")
+    assert_equal expected, pipe_output(bin"fastgron", "[3,4,5]")
 
-    assert_match version.to_s, shell_output(bin/"fastgron --version 2>&1")
+    assert_match version.to_s, shell_output(bin"fastgron --version 2>&1")
   end
 end

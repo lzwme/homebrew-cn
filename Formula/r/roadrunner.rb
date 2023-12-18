@@ -1,10 +1,10 @@
 class Roadrunner < Formula
   desc "High-performance PHP application server, load-balancer and process manager"
-  homepage "https://roadrunner.dev/"
-  url "https://ghproxy.com/https://github.com/roadrunner-server/roadrunner/archive/refs/tags/v2023.3.8.tar.gz"
+  homepage "https:roadrunner.dev"
+  url "https:github.comroadrunner-serverroadrunnerarchiverefstagsv2023.3.8.tar.gz"
   sha256 "372cb025c55daa4390c37f454079bb96b7a67a6e8ed1e9eb9be557b107db7cc8"
   license "MIT"
-  head "https://github.com/roadrunner-server/roadrunner.git", branch: "master"
+  head "https:github.comroadrunner-serverroadrunner.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "046a4f916f30882db35bf13327cf382c2686c21259306bbf748dbbd9f56696dc"
@@ -21,26 +21,26 @@ class Roadrunner < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/roadrunner-server/roadrunner/v2023/internal/meta.version=#{version}
-      -X github.com/roadrunner-server/roadrunner/v2023/internal/meta.buildTime=#{time.iso8601}
+      -X github.comroadrunner-serverroadrunnerv2023internalmeta.version=#{version}
+      -X github.comroadrunner-serverroadrunnerv2023internalmeta.buildTime=#{time.iso8601}
     ]
-    system "go", "build", "-tags", "aws", *std_go_args(output: bin/"rr", ldflags: ldflags), "./cmd/rr"
+    system "go", "build", "-tags", "aws", *std_go_args(output: bin"rr", ldflags: ldflags), ".cmdrr"
 
-    generate_completions_from_executable(bin/"rr", "completion")
+    generate_completions_from_executable(bin"rr", "completion")
   end
 
   test do
     port = free_port
-    (testpath/".rr.yaml").write <<~EOS
+    (testpath".rr.yaml").write <<~EOS
       # RR configuration version
       version: '3'
       rpc:
-        listen: tcp://127.0.0.1:#{port}
+        listen: tcp:127.0.0.1:#{port}
     EOS
 
-    output = shell_output("#{bin}/rr jobs list 2>&1", 1)
+    output = shell_output("#{bin}rr jobs list 2>&1", 1)
     assert_match "connect: connection refused", output
 
-    assert_match version.to_s, shell_output("#{bin}/rr --version")
+    assert_match version.to_s, shell_output("#{bin}rr --version")
   end
 end

@@ -1,10 +1,10 @@
 class Lima < Formula
   desc "Linux virtual machines"
-  homepage "https://github.com/lima-vm/lima"
-  url "https://ghproxy.com/https://github.com/lima-vm/lima/archive/refs/tags/v0.19.0.tar.gz"
+  homepage "https:github.comlima-vmlima"
+  url "https:github.comlima-vmlimaarchiverefstagsv0.19.0.tar.gz"
   sha256 "1c477cb0f7bfd18d8f9755103401d2efae599ab6b327f8b73bd35031a2fd5ebe"
   license "Apache-2.0"
-  head "https://github.com/lima-vm/lima.git", branch: "master"
+  head "https:github.comlima-vmlima.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e8f947078c9ca24d3507a4c67a739557149157ce38797b0acb75ee4652d0219"
@@ -27,15 +27,15 @@ class Lima < Formula
       system "make", "VERSION=#{version}"
     end
 
-    bin.install Dir["_output/bin/*"]
-    share.install Dir["_output/share/*"]
+    bin.install Dir["_outputbin*"]
+    share.install Dir["_outputshare*"]
 
     # Install shell completions
-    generate_completions_from_executable(bin/"limactl", "completion", base_name: "limactl")
+    generate_completions_from_executable(bin"limactl", "completion", base_name: "limactl")
   end
 
   test do
-    info = JSON.parse shell_output("#{bin}/limactl info")
+    info = JSON.parse shell_output("#{bin}limactl info")
     # Verify that the VM drivers are compiled in
     assert_includes info["vmTypes"], "qemu"
     assert_includes info["vmTypes"], "vz" if OS.mac? && MacOS.version >= :ventura

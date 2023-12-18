@@ -1,10 +1,10 @@
 class Blueutil < Formula
-  desc "Get/set bluetooth power and discoverable state"
-  homepage "https://github.com/toy/blueutil"
-  url "https://ghproxy.com/https://github.com/toy/blueutil/archive/refs/tags/v2.9.1.tar.gz"
+  desc "Getset bluetooth power and discoverable state"
+  homepage "https:github.comtoyblueutil"
+  url "https:github.comtoyblueutilarchiverefstagsv2.9.1.tar.gz"
   sha256 "50e50ebfa933f285d934d886a0209332df3088c3d25952c994f8bdb349f435ed"
   license "MIT"
-  head "https://github.com/toy/blueutil.git", branch: "master"
+  head "https:github.comtoyblueutil.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a506642507a316aef94d28f7a66e81bff31a8ea12f857976f82263f09d97a9ec"
@@ -24,10 +24,10 @@ class Blueutil < Formula
                "SDKROOT=",
                "SYMROOT=build",
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "build/Release/blueutil"
+    bin.install "buildReleaseblueutil"
   end
 
   test do
-    system "#{bin}/blueutil"
+    system "#{bin}blueutil"
   end
 end

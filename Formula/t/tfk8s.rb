@@ -1,10 +1,10 @@
 class Tfk8s < Formula
   desc "Kubernetes YAML manifests to Terraform HCL converter"
-  homepage "https://github.com/jrhouston/tfk8s"
-  url "https://ghproxy.com/https://github.com/jrhouston/tfk8s/archive/refs/tags/v0.1.10.tar.gz"
+  homepage "https:github.comjrhoustontfk8s"
+  url "https:github.comjrhoustontfk8sarchiverefstagsv0.1.10.tar.gz"
   sha256 "be2680e76311ac7dd814a1bb0dceb486e3511d8d68845421338f9fcf5a92d5f9"
   license "MIT"
-  head "https://github.com/jrhouston/tfk8s.git", branch: "main"
+  head "https:github.comjrhoustontfk8s.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c997b7b01ee594d2d0f3e080ac8c3577d2dc49f0165f1af655a6d03e650610d3"
@@ -25,7 +25,7 @@ class Tfk8s < Formula
   end
 
   test do
-    (testpath/"input.yml").write <<~EOS
+    (testpath"input.yml").write <<~EOS
       apiVersion: v1
       kind: ConfigMap
       metadata:
@@ -49,9 +49,9 @@ class Tfk8s < Formula
       }
     EOS
 
-    system bin/"tfk8s", "-f", "input.yml", "-o", "output.tf"
+    system bin"tfk8s", "-f", "input.yml", "-o", "output.tf"
     assert_equal expected, File.read("output.tf")
 
-    assert_match version.to_s, shell_output(bin/"tfk8s --version")
+    assert_match version.to_s, shell_output(bin"tfk8s --version")
   end
 end

@@ -1,14 +1,14 @@
 class Poco < Formula
   desc "C++ class libraries for building network and internet-based applications"
-  homepage "https://pocoproject.org/"
-  url "https://pocoproject.org/releases/poco-1.12.5p2/poco-1.12.5p2-all.tar.gz"
+  homepage "https:pocoproject.org"
+  url "https:pocoproject.orgreleasespoco-1.12.5p2poco-1.12.5p2-all.tar.gz"
   sha256 "4bdf352deef1dcc39260c1b43604236f5759dbdd9c695fffac23488f502f95a2"
   license "BSL-1.0"
-  head "https://github.com/pocoproject/poco.git", branch: "master"
+  head "https:github.compocoprojectpoco.git", branch: "master"
 
   livecheck do
-    url "https://pocoproject.org/releases/"
-    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+\w*)/?["' >]}i)
+    url "https:pocoproject.orgreleases"
+    regex(%r{href=.*?poco[._-]v?(\d+(?:\.\d+)+\w*)?["' >]}i)
   end
 
   bottle do
@@ -40,6 +40,6 @@ class Poco < Formula
   end
 
   test do
-    system bin/"cpspc", "-h"
+    system bin"cpspc", "-h"
   end
 end

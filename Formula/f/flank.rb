@@ -1,7 +1,7 @@
 class Flank < Formula
   desc "Massively parallel Android and iOS test runner for Firebase Test Lab"
-  homepage "https://github.com/Flank/flank"
-  url "https://ghproxy.com/https://github.com/Flank/flank/releases/download/v23.10.1/flank.jar"
+  homepage "https:github.comFlankflank"
+  url "https:github.comFlankflankreleasesdownloadv23.10.1flank.jar"
   sha256 "719ba0ca5744f571aad01fc61392b18990833ee9dd36e6b600ccdff614350d58"
   license "Apache-2.0"
 
@@ -24,11 +24,11 @@ class Flank < Formula
 
   def install
     libexec.install "flank.jar"
-    bin.write_jar_script libexec/"flank.jar", "flank"
+    bin.write_jar_script libexec"flank.jar", "flank"
   end
 
   test do
-    (testpath/"flank.yml").write <<~EOS
+    (testpath"flank.yml").write <<~EOS
       gcloud:
         device:
         - model: Pixel2
@@ -37,7 +37,7 @@ class Flank < Formula
           orientation: portrait
     EOS
 
-    output = shell_output("#{bin}/flank android doctor")
+    output = shell_output("#{bin}flank android doctor")
     assert_match "Valid yml file", output
   end
 end

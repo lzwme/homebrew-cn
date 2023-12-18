@@ -2,12 +2,12 @@ class Ykman < Formula
   include Language::Python::Virtualenv
 
   desc "Tool for managing your YubiKey configuration"
-  homepage "https://developers.yubico.com/yubikey-manager/"
-  url "https://files.pythonhosted.org/packages/e4/25/3a42efa20f10f7bcec116ee678c36fb9a58b8cc12699be9603f1378d6f17/yubikey_manager-5.2.1.tar.gz"
+  homepage "https:developers.yubico.comyubikey-manager"
+  url "https:files.pythonhosted.orgpackagese4253a42efa20f10f7bcec116ee678c36fb9a58b8cc12699be9603f1378d6f17yubikey_manager-5.2.1.tar.gz"
   sha256 "35c5aa83ac474fd2434c33267dc0e33d312b3969b108f885e533463af3fbe4e1"
   license "BSD-2-Clause"
   revision 1
-  head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
+  head "https:github.comYubicoyubikey-manager.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -32,34 +32,34 @@ class Ykman < Formula
   uses_from_macos "pcsc-lite"
 
   resource "fido2" do
-    url "https://files.pythonhosted.org/packages/a7/0f/b9f940372e0baa5a44742012f1eef1563296569db030a422ef3ce287b0ac/fido2-1.1.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagesa70fb9f940372e0baa5a44742012f1eef1563296569db030a422ef3ce287b0acfido2-1.1.2.tar.gz"
     sha256 "6110d913106f76199201b32d262b2857562cc46ba1d0b9c51fbce30dc936c573"
   end
 
   resource "pyscard" do
-    url "https://files.pythonhosted.org/packages/cc/33/b7d115ccf1b594af18db7ca61a7b07192356be35c65dfcd1d5ef9b28dc0a/pyscard-2.0.7.tar.gz"
+    url "https:files.pythonhosted.orgpackagescc33b7d115ccf1b594af18db7ca61a7b07192356be35c65dfcd1d5ef9b28dc0apyscard-2.0.7.tar.gz"
     sha256 "278054525fa75fbe8b10460d87edcd03a70ad94d688b11345e4739987f85c1bf"
   end
 
   def install
-    # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
-    ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}/PCSC" if OS.linux?
+    # Fixes: smartcardscardhelpers.c:28:22: fatal error: winscard.h: No such file or directory
+    ENV.append "CFLAGS", "-I#{Formula["pcsc-lite"].opt_include}PCSC" if OS.linux?
 
     # Fix `ModuleNotFoundError` issue with `keyring``
     site_packages = Language::Python.site_packages("python3.12")
-    keyring_site_packages = Formula["keyring"].opt_libexec/site_packages
+    keyring_site_packages = Formula["keyring"].opt_libexecsite_packages
     ENV.prepend_path "PYTHONPATH", keyring_site_packages
 
     virtualenv_install_with_resources
-    man1.install "man/ykman.1"
+    man1.install "manykman.1"
 
-    (libexec/site_packages/"homebrew-keyring.pth").write keyring_site_packages
+    (libexecsite_packages"homebrew-keyring.pth").write keyring_site_packages
 
     # Click doesn't support generating completions for Bash versions older than 4.4
-    generate_completions_from_executable(bin/"ykman", shells: [:fish, :zsh], shell_parameter_format: :click)
+    generate_completions_from_executable(bin"ykman", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ykman --version")
+    assert_match version.to_s, shell_output("#{bin}ykman --version")
   end
 end

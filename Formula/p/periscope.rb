@@ -1,11 +1,11 @@
 class Periscope < Formula
   desc "Organize and de-duplicate your files without losing data"
-  homepage "https://github.com/anishathalye/periscope"
-  url "https://github.com/anishathalye/periscope.git",
+  homepage "https:github.comanishathalyeperiscope"
+  url "https:github.comanishathalyeperiscope.git",
       tag:      "v0.3.5",
       revision: "b4eb74e389a3bb4eb6a4225e9bccd8744203b895"
   license "GPL-3.0-only"
-  head "https://github.com/anishathalye/periscope.git", branch: "master"
+  head "https:github.comanishathalyeperiscope.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95317b64f7df0f4097e72d44efbb4660f1efa74fd1903e79820f734a83b23738"
@@ -27,36 +27,36 @@ class Periscope < Formula
       -X main.version=#{version}
       -X main.commit=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(output: bin/"psc", ldflags: ldflags), "./cmd/psc"
+    system "go", "build", *std_go_args(output: bin"psc", ldflags: ldflags), ".cmdpsc"
 
-    generate_completions_from_executable(bin/"psc", "completion", base_name: "psc")
+    generate_completions_from_executable(bin"psc", "completion", base_name: "psc")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/psc version")
+    assert_match version.to_s, shell_output("#{bin}psc version")
 
     # setup
-    scandir = testpath/"scandir"
+    scandir = testpath"scandir"
     scandir.mkdir
-    (scandir/"a").write("dupe")
-    (scandir/"b").write("dupe")
-    (scandir/"c").write("unique")
+    (scandir"a").write("dupe")
+    (scandir"b").write("dupe")
+    (scandir"c").write("unique")
 
     # scan + summary is correct
-    shell_output "#{bin}/psc scan #{scandir} 2>/dev/null"
-    summary = shell_output("#{bin}/psc summary").strip.split("\n").map { |l| l.strip.split }
+    shell_output "#{bin}psc scan #{scandir} 2>devnull"
+    summary = shell_output("#{bin}psc summary").strip.split("\n").map { |l| l.strip.split }
     assert_equal [["tracked", "3"], ["unique", "2"], ["duplicate", "1"], ["overhead", "4", "B"]], summary
 
     # rm allows deleting dupes but not uniques
-    shell_output "#{bin}/psc rm #{scandir/"a"}"
-    refute_predicate (scandir/"a"), :exist?
+    shell_output "#{bin}psc rm #{scandir"a"}"
+    refute_predicate (scandir"a"), :exist?
     # now b is unique
-    shell_output "#{bin}/psc rm #{scandir/"b"} 2>/dev/null", 1
-    assert_predicate (scandir/"b"), :exist?
-    shell_output "#{bin}/psc rm #{scandir/"c"} 2>/dev/null", 1
-    assert_predicate (scandir/"c"), :exist?
+    shell_output "#{bin}psc rm #{scandir"b"} 2>devnull", 1
+    assert_predicate (scandir"b"), :exist?
+    shell_output "#{bin}psc rm #{scandir"c"} 2>devnull", 1
+    assert_predicate (scandir"c"), :exist?
 
     # cleanup
-    shell_output("#{bin}/psc finish")
+    shell_output("#{bin}psc finish")
   end
 end

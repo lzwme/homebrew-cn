@@ -2,11 +2,11 @@ cask "ccmenu" do
   version "15.0"
   sha256 "4ee3c5f65828c30c5cbe147064396d387a175042601076adf12b6c1a99792c1d"
 
-  url "https://ghproxy.com/https://github.com/erikdoe/ccmenu/releases/download/v#{version}/CCMenu.app.zip",
-      verified: "github.com/erikdoe/ccmenu/"
+  url "https:github.comerikdoeccmenureleasesdownloadv#{version}CCMenu.app.zip",
+      verified: "github.comerikdoeccmenu"
   name "CCMenu"
   desc "Application to monitor continuous integration servers"
-  homepage "https://ccmenu.org/"
+  homepage "https:ccmenu.org"
 
   livecheck do
     url :url
@@ -16,7 +16,7 @@ cask "ccmenu" do
   app "CCMenu.app"
 
   zap trash: [
-    "~/Library/Application Scripts/net.sourceforge.cruisecontrol.CCMenu",
-    "~/Library/Containers/net.sourceforge.cruisecontrol.CCMenu",
+    "~LibraryApplication Scriptsnet.sourceforge.cruisecontrol.CCMenu",
+    "~LibraryContainersnet.sourceforge.cruisecontrol.CCMenu",
   ]
 end

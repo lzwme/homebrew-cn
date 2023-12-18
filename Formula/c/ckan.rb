@@ -1,7 +1,7 @@
 class Ckan < Formula
   desc "Comprehensive Kerbal Archive Network"
-  homepage "https://github.com/KSP-CKAN/CKAN/"
-  url "https://ghproxy.com/https://github.com/KSP-CKAN/CKAN/releases/download/v1.33.2/ckan.exe"
+  homepage "https:github.comKSP-CKANCKAN"
+  url "https:github.comKSP-CKANCKANreleasesdownloadv1.33.2ckan.exe"
   sha256 "1489ddc51c860e05e29cff195f4a3a2c426018d370f38b423f0e45755014dd32"
   license "MIT"
 
@@ -20,10 +20,10 @@ class Ckan < Formula
   depends_on "mono"
 
   def install
-    (libexec/"bin").install "ckan.exe"
-    (bin/"ckan").write <<~EOS
-      #!/bin/sh
-      exec mono "#{libexec}/bin/ckan.exe" "$@"
+    (libexec"bin").install "ckan.exe"
+    (bin"ckan").write <<~EOS
+      #!binsh
+      exec mono "#{libexec}binckan.exe" "$@"
     EOS
   end
 
@@ -34,6 +34,6 @@ class Ckan < Formula
   end
 
   test do
-    system bin/"ckan", "version"
+    system bin"ckan", "version"
   end
 end

@@ -1,14 +1,14 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
-  homepage "https://witness.dev"
-  url "https://ghproxy.com/https://github.com/in-toto/witness/archive/refs/tags/v0.2.0.tar.gz"
+  homepage "https:witness.dev"
+  url "https:github.comin-totowitnessarchiverefstagsv0.2.0.tar.gz"
   sha256 "352c263752059e6c87e0a3975d9d826642c27778de8134ee1224adf8eaf7d56b"
   license "Apache-2.0"
-  head "https://github.com/in-toto/witness.git", branch: "main"
+  head "https:github.comin-totowitness.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,22 +26,22 @@ class Witness < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/in-toto/witness/cmd.Version=#{version}
+      -X github.comin-totowitnesscmd.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"witness", "completion")
+    generate_completions_from_executable(bin"witness", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/witness version")
+    assert_match version.to_s, shell_output("#{bin}witness version")
 
     system "openssl", "genrsa", "-out", "buildkey.pem", "2048"
     system "openssl", "rsa", "-in", "buildkey.pem", "-outform", "PEM", "-pubout", "-out", "buildpublic.pem"
-    system "#{bin}/witness", "run", "-s", "build", "-a", "environment", "-k", "buildkey.pem", "-o",
+    system "#{bin}witness", "run", "-s", "build", "-a", "environment", "-k", "buildkey.pem", "-o",
            "build-attestation.json"
 
-    output = Base64.decode64(JSON.parse((testpath/"build-attestation.json").read)["payload"])
-    assert_match "\"type\":\"https://witness.dev/attestations/product/v0.1\",", output
+    output = Base64.decode64(JSON.parse((testpath"build-attestation.json").read)["payload"])
+    assert_match "\"type\":\"https:witness.devattestationsproductv0.1\",", output
   end
 end

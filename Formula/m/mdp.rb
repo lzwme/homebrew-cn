@@ -1,10 +1,10 @@
 class Mdp < Formula
   desc "Command-line based markdown presentation tool"
-  homepage "https://github.com/visit1985/mdp"
-  url "https://ghproxy.com/https://github.com/visit1985/mdp/archive/refs/tags/1.0.15.tar.gz"
+  homepage "https:github.comvisit1985mdp"
+  url "https:github.comvisit1985mdparchiverefstags1.0.15.tar.gz"
   sha256 "3edc8ea1551fdf290d6bba721105e2e2c23964070ac18c13b4b8d959cdf6116f"
   license "GPL-3.0"
-  head "https://github.com/visit1985/mdp.git", branch: "master"
+  head "https:github.comvisit1985mdp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f016a8106040ad6eb3d2d5ec053b87559f48752588177ef6165e7bee1e91166c"
@@ -31,6 +31,6 @@ class Mdp < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/mdp -v")
+    assert_match version.to_s, shell_output("#{bin}mdp -v")
   end
 end

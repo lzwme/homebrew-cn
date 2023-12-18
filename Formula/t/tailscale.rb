@@ -1,7 +1,7 @@
 class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
-  homepage "https://tailscale.com"
-  url "https://github.com/tailscale/tailscale.git",
+  homepage "https:tailscale.com"
+  url "https:github.comtailscaletailscale.git",
       tag:      "v1.56.1",
       revision: "f1ea3161a2a06ad6474a9ea919e91e9bd6062f84"
   license "BSD-3-Clause"
@@ -19,34 +19,34 @@ class Tailscale < Formula
   depends_on "go" => :build
 
   def install
-    vars = Utils.safe_popen_read("./build_dist.sh", "shellvars")
+    vars = Utils.safe_popen_read(".build_dist.sh", "shellvars")
     ldflags = %W[
       -s -w
-      -X tailscale.com/version.longStamp=#{vars.match(/VERSION_LONG="(.*)"/)[1]}
-      -X tailscale.com/version.shortStamp=#{vars.match(/VERSION_SHORT="(.*)"/)[1]}
-      -X tailscale.com/version.gitCommitStamp=#{vars.match(/VERSION_GIT_HASH="(.*)"/)[1]}
+      -X tailscale.comversion.longStamp=#{vars.match(VERSION_LONG="(.*)")[1]}
+      -X tailscale.comversion.shortStamp=#{vars.match(VERSION_SHORT="(.*)")[1]}
+      -X tailscale.comversion.gitCommitStamp=#{vars.match(VERSION_GIT_HASH="(.*)")[1]}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tailscale"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"tailscaled"), "./cmd/tailscaled"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtailscale"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"tailscaled"), ".cmdtailscaled"
   end
 
   service do
-    run opt_bin/"tailscaled"
+    run opt_bin"tailscaled"
     keep_alive true
-    log_path var/"log/tailscaled.log"
-    error_log_path var/"log/tailscaled.log"
+    log_path var"logtailscaled.log"
+    error_log_path var"logtailscaled.log"
   end
 
   test do
-    version_text = shell_output("#{bin}/tailscale version")
+    version_text = shell_output("#{bin}tailscale version")
     assert_match version.to_s, version_text
-    assert_match(/commit: [a-f0-9]{40}/, version_text)
+    assert_match(commit: [a-f0-9]{40}, version_text)
 
     fork do
-      system bin/"tailscaled", "-tun=userspace-networking", "-socket=#{testpath}/tailscaled.socket"
+      system bin"tailscaled", "-tun=userspace-networking", "-socket=#{testpath}tailscaled.socket"
     end
 
     sleep 2
-    assert_match "Logged out.", shell_output("#{bin}/tailscale --socket=#{testpath}/tailscaled.socket status", 1)
+    assert_match "Logged out.", shell_output("#{bin}tailscale --socket=#{testpath}tailscaled.socket status", 1)
   end
 end

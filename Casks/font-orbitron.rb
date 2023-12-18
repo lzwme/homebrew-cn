@@ -2,10 +2,10 @@ cask "font-orbitron" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflorbitronOrbitron%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Orbitron"
-  homepage "https://fonts.google.com/specimen/Orbitron"
+  homepage "https:fonts.google.comspecimenOrbitron"
 
   font "Orbitron[wght].ttf"
 

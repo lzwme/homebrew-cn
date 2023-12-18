@@ -2,13 +2,13 @@ cask "font-rem" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/rem"
+      only_path: "oflrem"
   name "REM"
   desc "Acronym for rapid eye movement"
-  homepage "https://fonts.google.com/specimen/REM"
+  homepage "https:fonts.google.comspecimenREM"
 
   font "REM-Italic[wght].ttf"
   font "REM[wght].ttf"

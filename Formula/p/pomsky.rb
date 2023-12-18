@@ -1,10 +1,10 @@
 class Pomsky < Formula
   desc "Regular expression language"
-  homepage "https://pomsky-lang.org/"
-  url "https://ghproxy.com/https://github.com/rulex-rs/pomsky/archive/refs/tags/v0.11.tar.gz"
+  homepage "https:pomsky-lang.org"
+  url "https:github.comrulex-rspomskyarchiverefstagsv0.11.tar.gz"
   sha256 "602cf73d7f7343b8c59ae82973635f5f62f26e2fe341fa990fca5fe504736384"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/rulex-rs/pomsky.git", branch: "main"
+  head "https:github.comrulex-rspomsky.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01842f19977a4477d2c0883fe93afd2f12b9ea76fcb11125ce90607799c448cf"
@@ -24,8 +24,8 @@ class Pomsky < Formula
 
   test do
     assert_match "Backslash escapes are not supported",
-      shell_output("#{bin}/pomsky \"'Hello world'* \\X+\" 2>&1", 1)
+      shell_output("#{bin}pomsky \"'Hello world'* \\X+\" 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/pomsky --version")
+    assert_match version.to_s, shell_output("#{bin}pomsky --version")
   end
 end

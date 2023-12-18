@@ -1,7 +1,7 @@
 class ProtobufC < Formula
   desc "Protocol buffers library"
-  homepage "https://github.com/protobuf-c/protobuf-c"
-  url "https://ghproxy.com/https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.0/protobuf-c-1.5.0.tar.gz"
+  homepage "https:github.comprotobuf-cprotobuf-c"
+  url "https:github.comprotobuf-cprotobuf-creleasesdownloadv1.5.0protobuf-c-1.5.0.tar.gz"
   sha256 "7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98"
   license "BSD-2-Clause"
 
@@ -16,7 +16,7 @@ class ProtobufC < Formula
   end
 
   head do
-    url "https://github.com/protobuf-c/protobuf-c.git", branch: "master"
+    url "https:github.comprotobuf-cprotobuf-c.git", branch: "master"
     depends_on "asciidoc" => :build
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -27,11 +27,11 @@ class ProtobufC < Formula
   depends_on "protobuf"
 
   def install
-    # https://github.com/protocolbuffers/protobuf/issues/9947
+    # https:github.comprotocolbuffersprotobufissues9947
     ENV.append_to_cflags "-DNDEBUG"
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
@@ -46,7 +46,7 @@ class ProtobufC < Formula
         repeated TestCase case = 1;
       }
     EOS
-    (testpath/"test.proto").write testdata
-    system Formula["protobuf"].opt_bin/"protoc", "test.proto", "--c_out=."
+    (testpath"test.proto").write testdata
+    system Formula["protobuf"].opt_bin"protoc", "test.proto", "--c_out=."
   end
 end

@@ -1,7 +1,7 @@
 class Govc < Formula
   desc "Command-line tool for VMware vSphere"
-  homepage "https://github.com/vmware/govmomi/tree/master/govc"
-  url "https://ghproxy.com/https://github.com/vmware/govmomi/archive/refs/tags/v0.34.0.tar.gz"
+  homepage "https:github.comvmwaregovmomitreemastergovc"
+  url "https:github.comvmwaregovmomiarchiverefstagsv0.34.0.tar.gz"
   sha256 "fc6f6db5e38a3fdf304bcf89ae6f576234f9b38d196da17d4f1836e02362e183"
   license "Apache-2.0"
 
@@ -26,10 +26,10 @@ class Govc < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", "#{bin}/#{name}", "./#{name}"
+    system "go", "build", "-o", "#{bin}#{name}", ".#{name}"
   end
 
   test do
-    assert_match "GOVC_URL=foo", shell_output("#{bin}/#{name} env -u=foo")
+    assert_match "GOVC_URL=foo", shell_output("#{bin}#{name} env -u=foo")
   end
 end

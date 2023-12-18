@@ -1,7 +1,7 @@
 class VideoCompare < Formula
   desc "Split screen video comparison tool using FFmpeg and SDL2"
-  homepage "https://github.com/pixop/video-compare"
-  url "https://ghproxy.com/https://github.com/pixop/video-compare/archive/refs/tags/20231209.tar.gz"
+  homepage "https:github.compixopvideo-compare"
+  url "https:github.compixopvideo-comparearchiverefstags20231209.tar.gz"
   sha256 "58ec6ef8f7a20b01c06aa7bd2793a01d8066b415d53c8e555f15577d5ea44250"
   license "GPL-2.0-only"
 
@@ -28,7 +28,7 @@ class VideoCompare < Formula
     testvideo = test_fixtures("test.gif") # GIF is valid ffmpeg input format
     begin
       pid = fork do
-        exec "#{bin}/video-compare", testvideo, testvideo
+        exec "#{bin}video-compare", testvideo, testvideo
       end
       sleep 3
     ensure

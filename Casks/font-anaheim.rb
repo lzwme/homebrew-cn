@@ -2,10 +2,10 @@ cask "font-anaheim" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/anaheim/Anaheim-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflanaheimAnaheim-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Anaheim"
-  homepage "https://fonts.google.com/specimen/Anaheim"
+  homepage "https:fonts.google.comspecimenAnaheim"
 
   font "Anaheim-Regular.ttf"
 

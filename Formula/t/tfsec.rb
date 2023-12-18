@@ -1,10 +1,10 @@
 class Tfsec < Formula
   desc "Static analysis security scanner for your terraform code"
-  homepage "https://tfsec.dev/"
-  url "https://ghproxy.com/https://github.com/aquasecurity/tfsec/archive/refs/tags/v1.28.4.tar.gz"
+  homepage "https:tfsec.dev"
+  url "https:github.comaquasecuritytfsecarchiverefstagsv1.28.4.tar.gz"
   sha256 "a579076cdbd5fea3302c3ff5073869c6d861e9325a774cbe92b3ad0d55dc74bf"
   license "MIT"
-  head "https://github.com/aquasecurity/tfsec.git", branch: "master"
+  head "https:github.comaquasecuritytfsec.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,28 +26,28 @@ class Tfsec < Formula
   depends_on "go" => :build
 
   def install
-    system "scripts/install.sh", "v#{version}"
+    system "scriptsinstall.sh", "v#{version}"
     bin.install "tfsec"
   end
 
   test do
-    (testpath/"good/brew-validate.tf").write <<~EOS
+    (testpath"goodbrew-validate.tf").write <<~EOS
       resource "aws_alb_listener" "my-alb-listener" {
         port     = "443"
         protocol = "HTTPS"
       }
     EOS
-    (testpath/"bad/brew-validate.tf").write <<~EOS
+    (testpath"badbrew-validate.tf").write <<~EOS
       resource "aws_security_group_rule" "world" {
         description = "A security group triggering tfsec AWS006."
         type        = "ingress"
-        cidr_blocks = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.00"]
       }
     EOS
 
-    good_output = shell_output("#{bin}/tfsec #{testpath}/good")
+    good_output = shell_output("#{bin}tfsec #{testpath}good")
     assert_match "No problems detected!", good_output
-    bad_output = shell_output("#{bin}/tfsec #{testpath}/bad 2>&1", 1)
+    bad_output = shell_output("#{bin}tfsec #{testpath}bad 2>&1", 1)
     assert_match "1 potential problem(s) detected.", bad_output
   end
 end

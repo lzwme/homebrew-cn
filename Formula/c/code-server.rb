@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class CodeServer < Formula
   desc "Access VS Code through the browser"
-  homepage "https://github.com/coder/code-server"
-  url "https://registry.npmjs.org/code-server/-/code-server-4.19.1.tgz"
+  homepage "https:github.comcodercode-server"
+  url "https:registry.npmjs.orgcode-server-code-server-4.19.1.tgz"
   sha256 "e2b6e781a006dd5233c82bfa3f6b0dfb8c7fb48c0c2dd5b415a79f6185b8850f"
   license "MIT"
 
@@ -33,39 +33,39 @@ class CodeServer < Formula
     node = Formula["node@18"]
     system "npm", "install", *Language::Node.local_npm_install_args, "--unsafe-perm", "--omit", "dev"
 
-    # @parcel/watcher bundles all binaries for other platforms & architectures
+    # @parcelwatcher bundles all binaries for other platforms & architectures
     # This deletes the non-matching architecture otherwise brew audit will complain.
     arch_string = (Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s)
-    prebuilds = buildpath/"lib/vscode/node_modules/@parcel/watcher/prebuilds"
+    prebuilds = buildpath"libvscodenode_modules@parcelwatcherprebuilds"
     # Homebrew only supports glibc-based Linuxes, avoid missing linkage to musl libc
-    (prebuilds/"linux-x64/node.napi.musl.node").unlink
-    current_prebuild = prebuilds/"#{OS.kernel_name.downcase}-#{arch_string}"
+    (prebuilds"linux-x64node.napi.musl.node").unlink
+    current_prebuild = prebuilds"#{OS.kernel_name.downcase}-#{arch_string}"
     unneeded_prebuilds = prebuilds.glob("*") - [current_prebuild]
     unneeded_prebuilds.map(&:rmtree)
 
     libexec.install Dir["*"]
     env = { PATH: "#{node.opt_bin}:$PATH" }
-    (bin/"code-server").write_env_script "#{libexec}/out/node/entry.js", env
+    (bin"code-server").write_env_script "#{libexec}outnodeentry.js", env
   end
 
   def caveats
     <<~EOS
-      The launchd service runs on http://127.0.0.1:8080. Logs are located at #{var}/log/code-server.log.
+      The launchd service runs on http:127.0.0.1:8080. Logs are located at #{var}logcode-server.log.
     EOS
   end
 
   service do
-    run opt_bin/"code-server"
+    run opt_bin"code-server"
     keep_alive true
-    error_log_path var/"log/code-server.log"
-    log_path var/"log/code-server.log"
+    error_log_path var"logcode-server.log"
+    log_path var"logcode-server.log"
     working_dir Dir.home
   end
 
   test do
-    # See https://github.com/cdr/code-server/blob/main/ci/build/test-standalone-release.sh
-    system bin/"code-server", "--extensions-dir=.", "--install-extension", "wesbos.theme-cobalt2"
+    # See https:github.comcdrcode-serverblobmaincibuildtest-standalone-release.sh
+    system bin"code-server", "--extensions-dir=.", "--install-extension", "wesbos.theme-cobalt2"
     assert_match "wesbos.theme-cobalt2",
-      shell_output("#{bin}/code-server --extensions-dir=. --list-extensions")
+      shell_output("#{bin}code-server --extensions-dir=. --list-extensions")
   end
 end

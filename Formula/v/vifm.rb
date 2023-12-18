@@ -1,10 +1,10 @@
 class Vifm < Formula
   desc "Ncurses-based file manager with vi-like keybindings"
-  homepage "https://vifm.info/"
-  url "https://ghproxy.com/https://github.com/vifm/vifm/releases/download/v0.13/vifm-0.13.tar.bz2"
+  homepage "https:vifm.info"
+  url "https:github.comvifmvifmreleasesdownloadv0.13vifm-0.13.tar.bz2"
   sha256 "0d9293749a794076ade967ecdc47d141d85e450370594765391bdf1a9bd45075"
   license "GPL-2.0-or-later"
-  head "https://github.com/vifm/vifm.git", branch: "master"
+  head "https:github.comvifmvifm.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,7 +24,7 @@ class Vifm < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-curses=#{Formula["ncurses"].opt_prefix}",
                           "--without-gtk",
@@ -37,6 +37,6 @@ class Vifm < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/vifm --version")
+    assert_match version.to_s, shell_output("#{bin}vifm --version")
   end
 end

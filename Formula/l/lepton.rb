@@ -1,10 +1,10 @@
 class Lepton < Formula
   desc "Tool and file format for losslessly compressing JPEGs"
-  homepage "https://github.com/dropbox/lepton"
-  url "https://ghproxy.com/https://github.com/dropbox/lepton/archive/refs/tags/1.2.1.tar.gz"
+  homepage "https:github.comdropboxlepton"
+  url "https:github.comdropboxleptonarchiverefstags1.2.1.tar.gz"
   sha256 "c4612dbbc88527be2e27fddf53aadf1bfc117e744db67e373ef8940449cdec97"
   license "Apache-2.0"
-  head "https://github.com/dropbox/lepton.git", branch: "master"
+  head "https:github.comdropboxlepton.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, sonoma:       "4a5f938f85e12bb490f771f6c8f0252c968922acd12c2ff8160155c388279a5f"
@@ -24,7 +24,7 @@ class Lepton < Formula
   depends_on "cmake" => :build
 
   # ARM might be supported in next release, if there is ever one
-  # https://github.com/dropbox/lepton/pull/147
+  # https:github.comdropboxleptonpull147
   depends_on arch: :x86_64
 
   def install
@@ -34,8 +34,8 @@ class Lepton < Formula
 
   test do
     cp test_fixtures("test.jpg"), "test.jpg"
-    system "#{bin}/lepton", "test.jpg", "compressed.lep"
-    system "#{bin}/lepton", "compressed.lep", "test_restored.jpg"
+    system "#{bin}lepton", "test.jpg", "compressed.lep"
+    system "#{bin}lepton", "compressed.lep", "test_restored.jpg"
     cmp "test.jpg", "test_restored.jpg"
   end
 end

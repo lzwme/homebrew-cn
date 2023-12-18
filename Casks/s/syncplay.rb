@@ -2,15 +2,15 @@ cask "syncplay" do
   version "1.7.1"
   sha256 "28a3b505cd611bf655fe0bc99df436bd692af1ed18c081fb6a01a1bf01eb6e25"
 
-  url "https://ghproxy.com/https://github.com/Syncplay/syncplay/releases/download/v#{version}/Syncplay_#{version}.dmg",
-      verified: "github.com/Syncplay/syncplay/"
+  url "https:github.comSyncplaysyncplayreleasesdownloadv#{version}Syncplay_#{version}.dmg",
+      verified: "github.comSyncplaysyncplay"
   name "Syncplay"
   desc "Synchronises media players"
-  homepage "https://syncplay.pl/"
+  homepage "https:syncplay.pl"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   depends_on macos: ">= :sierra"
@@ -18,12 +18,12 @@ cask "syncplay" do
   app "Syncplay.app"
 
   zap trash: [
-    "~/.syncplay",
-    "~/Library/Saved Application State/pl.syncplay.Syncplay.savedState",
-    "~/Library/Preferences/com.syncplay.MoreSettings.plist",
-    "~/Library/Preferences/com.syncplay.Interface.plist",
-    "~/Library/Preferences/com.syncplay.MainWindow.plist",
-    "~/Library/Preferences/pl.syncplay.Syncplay.plist",
-    "~/Library/Preferences/com.syncplay.PlayerList.plist",
+    "~.syncplay",
+    "~LibrarySaved Application Statepl.syncplay.Syncplay.savedState",
+    "~LibraryPreferencescom.syncplay.MoreSettings.plist",
+    "~LibraryPreferencescom.syncplay.Interface.plist",
+    "~LibraryPreferencescom.syncplay.MainWindow.plist",
+    "~LibraryPreferencespl.syncplay.Syncplay.plist",
+    "~LibraryPreferencescom.syncplay.PlayerList.plist",
   ]
 end

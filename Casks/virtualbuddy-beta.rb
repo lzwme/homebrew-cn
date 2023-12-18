@@ -2,10 +2,10 @@ cask "virtualbuddy-beta" do
   version "1.3,100"
   sha256 "599b848a8d2dd13e1bde0785f2fd68e60ab795d98e5f1fa3d8ea70f28b3a42d9"
 
-  url "https://ghproxy.com/https://github.com/insidegui/VirtualBuddy/releases/download/#{version.csv.first}-beta/VirtualBuddy_v#{version.csv.first}-#{version.csv.second}.dmg"
+  url "https:github.cominsideguiVirtualBuddyreleasesdownload#{version.csv.first}-betaVirtualBuddy_v#{version.csv.first}-#{version.csv.second}.dmg"
   name "VirtualBuddy"
   desc "Virtualization tool"
-  homepage "https://github.com/insidegui/VirtualBuddy"
+  homepage "https:github.cominsideguiVirtualBuddy"
 
   livecheck do
     skip "No reliable way to get version info"
@@ -18,8 +18,8 @@ cask "virtualbuddy-beta" do
   app "VirtualBuddy.app"
 
   zap trash: [
-    "~/Library/Application Support/VirtualBuddy",
-    "~/Library/HTTPStorages/codes.rambo.VirtualBuddy",
-    "~/Library/Preferences/codes.rambo.VirtualBuddy.plist",
+    "~LibraryApplication SupportVirtualBuddy",
+    "~LibraryHTTPStoragescodes.rambo.VirtualBuddy",
+    "~LibraryPreferencescodes.rambo.VirtualBuddy.plist",
   ]
 end

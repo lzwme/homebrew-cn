@@ -1,11 +1,11 @@
 class Dcm2niix < Formula
   desc "DICOM to NIfTI converter"
-  homepage "https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage"
-  url "https://ghproxy.com/https://github.com/rordenlab/dcm2niix/archive/refs/tags/v1.0.20230411.tar.gz"
+  homepage "https:www.nitrc.orgpluginsmwikiindex.phpdcm2nii:MainPage"
+  url "https:github.comrordenlabdcm2niixarchiverefstagsv1.0.20230411.tar.gz"
   sha256 "990368e627a7d972a607ef965161e4ab0ddc5b0be35d659c1ce387c8ddae8301"
   license "BSD-3-Clause"
   version_scheme 1
-  head "https://github.com/rordenlab/dcm2niix.git", branch: "master"
+  head "https:github.comrordenlabdcm2niix.git", branch: "master"
 
   livecheck do
     url :stable
@@ -27,7 +27,7 @@ class Dcm2niix < Formula
   depends_on "cmake" => :build
 
   resource "sample.dcm" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/dangom/sample-dicom/master/MR000000.dcm"
+    url "https:raw.githubusercontent.comdangomsample-dicommasterMR000000.dcm"
     sha256 "4efd3edd2f5eeec2f655865c7aed9bc552308eb2bc681f5dd311b480f26f3567"
   end
 
@@ -38,8 +38,8 @@ class Dcm2niix < Formula
 
   test do
     resource("sample.dcm").stage testpath
-    system "#{bin}/dcm2niix", "-f", "%d_%e", "-z", "n", "-b", "y", testpath
-    assert_predicate testpath/"localizer_1.nii", :exist?
-    assert_predicate testpath/"localizer_1.json", :exist?
+    system "#{bin}dcm2niix", "-f", "%d_%e", "-z", "n", "-b", "y", testpath
+    assert_predicate testpath"localizer_1.nii", :exist?
+    assert_predicate testpath"localizer_1.json", :exist?
   end
 end

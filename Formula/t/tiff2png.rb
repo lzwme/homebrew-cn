@@ -1,7 +1,7 @@
 class Tiff2png < Formula
   desc "TIFF to PNG converter"
-  homepage "http://www.libpng.org/pub/png/apps/tiff2png.html"
-  url "https://ghproxy.com/https://github.com/rillian/tiff2png/archive/refs/tags/v0.92.tar.gz"
+  homepage "http:www.libpng.orgpubpngappstiff2png.html"
+  url "https:github.comrilliantiff2pngarchiverefstagsv0.92.tar.gz"
   sha256 "64e746560b775c3bd90f53f1b9e482f793d80ea6e7f5d90ce92645fd1cd27e4a"
   license "ISC"
   revision 3
@@ -28,6 +28,6 @@ class Tiff2png < Formula
   end
 
   test do
-    system "#{bin}/tiff2png", test_fixtures("test.tiff")
+    system "#{bin}tiff2png", test_fixtures("test.tiff")
   end
 end

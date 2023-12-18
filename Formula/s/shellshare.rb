@@ -1,7 +1,7 @@
 class Shellshare < Formula
   desc "Live Terminal Broadcast"
-  homepage "https://shellshare.net"
-  url "https://ghproxy.com/https://github.com/vitorbaptista/shellshare/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:shellshare.net"
+  url "https:github.comvitorbaptistashellsharearchiverefstagsv1.1.0.tar.gz"
   sha256 "0a102c863f60402ab48908563edde38450add0ae02454360fa94065824a61907"
   license "Apache-2.0"
 
@@ -10,10 +10,10 @@ class Shellshare < Formula
   end
 
   def install
-    bin.install "public/bin/shellshare"
+    bin.install "publicbinshellshare"
   end
 
   test do
-    system "#{bin}/shellshare", "-v"
+    system "#{bin}shellshare", "-v"
   end
 end

@@ -1,11 +1,11 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
-  homepage "https://podman.io/"
-  url "https://github.com/containers/podman.git",
+  homepage "https:podman.io"
+  url "https:github.comcontainerspodman.git",
       tag:      "v4.8.2",
       revision: "aa546902fa1a927b3d770528565627d1395b19f3"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
-  head "https://github.com/containers/podman.git", branch: "main"
+  head "https:github.comcontainerspodman.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9588cdcd51957e4f7dba6127ae8c3157bbb4f8eb273eaa9fe173bb002c788a2"
@@ -44,28 +44,28 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https://ghproxy.com/https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.7.1.tar.gz"
+      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.7.1.tar.gz"
       sha256 "cbc97a44b6ca8f6c427ac58e193aa39c28674e4f1d2af09b5a9e35d1d3bb7fd3"
     end
   end
 
   resource "catatonit" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/openSUSE/catatonit/archive/refs/tags/v0.2.0.tar.gz"
+      url "https:github.comopenSUSEcatatonitarchiverefstagsv0.2.0.tar.gz"
       sha256 "d0cf1feffdc89c9fb52af20fc10127887a408bbd99e0424558d182b310a3dc92"
     end
   end
 
   resource "netavark" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/containers/netavark/archive/refs/tags/v1.9.0.tar.gz"
+      url "https:github.comcontainersnetavarkarchiverefstagsv1.9.0.tar.gz"
       sha256 "9ec50b715ded0a0699134c001656fdd1411e3fb5325d347695c6cb8cc5fcf572"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/containers/aardvark-dns/archive/refs/tags/v1.9.0.tar.gz"
+      url "https:github.comcontainersaardvark-dnsarchiverefstagsv1.9.0.tar.gz"
       sha256 "d6b51743d334c42ec98ff229be044b5b2a5fedf8da45a005447809c4c1e9beea"
     end
   end
@@ -75,64 +75,64 @@ class Podman < Formula
       ENV["CGO_ENABLED"] = "1"
 
       system "gmake", "podman-remote"
-      bin.install "bin/darwin/podman" => "podman-remote"
-      bin.install_symlink bin/"podman-remote" => "podman"
+      bin.install "bindarwinpodman" => "podman-remote"
+      bin.install_symlink bin"podman-remote" => "podman"
 
       system "gmake", "podman-mac-helper"
-      bin.install "bin/darwin/podman-mac-helper" => "podman-mac-helper"
+      bin.install "bindarwinpodman-mac-helper" => "podman-mac-helper"
 
       resource("gvproxy").stage do
         system "gmake", "gvproxy"
-        (libexec/"podman").install "bin/gvproxy"
+        (libexec"podman").install "bingvproxy"
       end
 
       system "gmake", "podman-remote-darwin-docs"
-      man1.install Dir["docs/build/remote/darwin/*.1"]
+      man1.install Dir["docsbuildremotedarwin*.1"]
 
-      bash_completion.install "completions/bash/podman"
-      zsh_completion.install "completions/zsh/_podman"
-      fish_completion.install "completions/fish/podman.fish"
+      bash_completion.install "completionsbashpodman"
+      zsh_completion.install "completionszsh_podman"
+      fish_completion.install "completionsfishpodman.fish"
     else
-      paths = Dir["**/*.go"].select do |file|
-        (buildpath/file).read.lines.grep(%r{/etc/containers/}).any?
+      paths = Dir["***.go"].select do |file|
+        (buildpathfile).read.lines.grep(%r{etccontainers}).any?
       end
-      inreplace paths, "/etc/containers/", etc/"containers/"
+      inreplace paths, "etccontainers", etc"containers"
 
       ENV.O0
       ENV["PREFIX"] = prefix
-      ENV["HELPER_BINARIES_DIR"] = opt_libexec/"podman"
+      ENV["HELPER_BINARIES_DIR"] = opt_libexec"podman"
 
       system "make"
       system "make", "install", "install.completions"
 
-      (prefix/"etc/containers/policy.json").write <<~EOS
+      (prefix"etccontainerspolicy.json").write <<~EOS
         {"default":[{"type":"insecureAcceptAnything"}]}
       EOS
 
-      (prefix/"etc/containers/storage.conf").write <<~EOS
+      (prefix"etccontainersstorage.conf").write <<~EOS
         [storage]
         driver="overlay"
       EOS
 
-      (prefix/"etc/containers/registries.conf").write <<~EOS
+      (prefix"etccontainersregistries.conf").write <<~EOS
         unqualified-search-registries=["docker.io"]
       EOS
 
       resource("catatonit").stage do
-        system "./autogen.sh"
-        system "./configure"
+        system ".autogen.sh"
+        system ".configure"
         system "make"
-        mv "catatonit", libexec/"podman/"
+        mv "catatonit", libexec"podman"
       end
 
       resource("netavark").stage do
         system "make"
-        mv "bin/netavark", libexec/"podman/"
+        mv "binnetavark", libexec"podman"
       end
 
       resource("aardvark-dns").stage do
         system "make"
-        mv "bin/aardvark-dns", libexec/"podman/"
+        mv "binaardvark-dns", libexec"podman"
       end
     end
   end
@@ -155,33 +155,33 @@ class Podman < Formula
   end
 
   service do
-    run linux: [opt_bin/"podman", "system", "service", "--time=0"]
+    run linux: [opt_bin"podman", "system", "service", "--time=0"]
     environment_variables PATH: std_service_path_env
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    assert_match "podman-remote version #{version}", shell_output("#{bin}/podman-remote -v")
-    out = shell_output("#{bin}/podman-remote info 2>&1", 125)
+    assert_match "podman-remote version #{version}", shell_output("#{bin}podman-remote -v")
+    out = shell_output("#{bin}podman-remote info 2>&1", 125)
     assert_match "Cannot connect to Podman", out
 
     if OS.mac?
-      out = shell_output("#{bin}/podman-remote machine init --image-path fake-testi123 fake-testvm 2>&1", 125)
+      out = shell_output("#{bin}podman-remote machine init --image-path fake-testi123 fake-testvm 2>&1", 125)
       assert_match "Error: open fake-testi123: no such file or directory", out
     else
       assert_equal %W[
-        #{bin}/podman
-        #{bin}/podman-remote
-        #{bin}/podmansh
-      ].sort, Dir[bin/"*"].sort
+        #{bin}podman
+        #{bin}podman-remote
+        #{bin}podmansh
+      ].sort, Dir[bin"*"].sort
       assert_equal %W[
-        #{libexec}/podman/catatonit
-        #{libexec}/podman/netavark
-        #{libexec}/podman/aardvark-dns
-        #{libexec}/podman/quadlet
-        #{libexec}/podman/rootlessport
-      ].sort, Dir[libexec/"podman/*"].sort
-      out = shell_output("file #{libexec}/podman/catatonit")
+        #{libexec}podmancatatonit
+        #{libexec}podmannetavark
+        #{libexec}podmanaardvark-dns
+        #{libexec}podmanquadlet
+        #{libexec}podmanrootlessport
+      ].sort, Dir[libexec"podman*"].sort
+      out = shell_output("file #{libexec}podmancatatonit")
       assert_match "statically linked", out
     end
   end

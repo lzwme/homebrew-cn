@@ -1,10 +1,10 @@
 class Avrdude < Formula
   desc "Atmel AVR MCU programmer"
-  homepage "https://www.nongnu.org/avrdude/"
-  url "https://ghproxy.com/https://github.com/avrdudes/avrdude/archive/refs/tags/v7.2.tar.gz"
+  homepage "https:www.nongnu.orgavrdude"
+  url "https:github.comavrdudesavrdudearchiverefstagsv7.2.tar.gz"
   sha256 "beb4e0b0a07f8d47e550329ab93c345d5252350de6f833afde51b4d8bd934674"
   license "GPL-2.0-or-later"
-  head "https://github.com/avrdudes/avrdude.git", branch: "main"
+  head "https:github.comavrdudesavrdude.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "6e0b34dd95ea466772a92a36a3b0904337dc83c9c11cf7dd1d3dbceab796f2b6"
@@ -41,17 +41,17 @@ class Avrdude < Formula
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
     shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
-    system "cmake", "-S", ".", "-B", "build/shared", *args, *shared_args
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "-S", ".", "-B", "buildshared", *args, *shared_args
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    system "cmake", "-S", ".", "-B", "build/static", *args
-    system "cmake", "--build", "build/static"
-    lib.install "build/static/src/libavrdude.a"
+    system "cmake", "-S", ".", "-B", "buildstatic", *args
+    system "cmake", "--build", "buildstatic"
+    lib.install "buildstaticsrclibavrdude.a"
   end
 
   test do
-    output = shell_output("#{bin}/avrdude -c jtag2 -p x16a4 2>&1", 1).strip
+    output = shell_output("#{bin}avrdude -c jtag2 -p x16a4 2>&1", 1).strip
     refute_match "avrdude was compiled without usb support", output
     assert_match "avrdude done.  Thank you.", output
   end

@@ -1,7 +1,7 @@
 class Libprotoident < Formula
   desc "Performs application layer protocol identification for flows"
-  homepage "https://github.com/wanduow/libprotoident"
-  url "https://ghproxy.com/https://github.com/LibtraceTeam/libprotoident/archive/refs/tags/2.0.15-2.tar.gz"
+  homepage "https:github.comwanduowlibprotoident"
+  url "https:github.comLibtraceTeamlibprotoidentarchiverefstags2.0.15-2.tar.gz"
   sha256 "2b43a492fe1d7ada2e7b7b164c8e35220b35bf816bd971c7f77decc74b69801e"
   license "LGPL-3.0-or-later"
 
@@ -25,13 +25,13 @@ class Libprotoident < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <libprotoident.h>
 
       int main() {
@@ -40,6 +40,6 @@ class Libprotoident < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-L#{lib}", "-lprotoident", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

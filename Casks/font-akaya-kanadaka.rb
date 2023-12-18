@@ -2,10 +2,10 @@ cask "font-akaya-kanadaka" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/akayakanadaka/AkayaKanadaka-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflakayakanadakaAkayaKanadaka-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Akaya Kanadaka"
-  homepage "https://fonts.google.com/specimen/Akaya+Kanadaka"
+  homepage "https:fonts.google.comspecimenAkaya+Kanadaka"
 
   font "AkayaKanadaka-Regular.ttf"
 

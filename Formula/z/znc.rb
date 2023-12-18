@@ -1,7 +1,7 @@
 class Znc < Formula
   desc "Advanced IRC bouncer"
-  homepage "https://wiki.znc.in/ZNC"
-  url "https://znc.in/releases/archive/znc-1.8.2.tar.gz"
+  homepage "https:wiki.znc.inZNC"
+  url "https:znc.inreleasesarchiveznc-1.8.2.tar.gz"
   sha256 "ff238aae3f2ae0e44e683c4aee17dc8e4fdd261ca9379d83b48a7d422488de0d"
   license "Apache-2.0"
   revision 9
@@ -18,7 +18,7 @@ class Znc < Formula
   end
 
   head do
-    url "https://github.com/znc/znc.git", branch: "master"
+    url "https:github.comzncznc.git", branch: "master"
 
     depends_on "cmake" => :build
     depends_on "swig" => :build
@@ -55,11 +55,11 @@ class Znc < Formula
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     else
-      system "./configure", "--prefix=#{prefix}", "--enable-python=python-#{xy}"
+      system ".configure", "--prefix=#{prefix}", "--enable-python=python-#{xy}"
       system "make", "install"
 
       # Replace dependencies' Cellar paths with opt paths
-      inreplace [bin/"znc-buildmod", lib/"pkgconfig/znc.pc"] do |s|
+      inreplace [bin"znc-buildmod", lib"pkgconfigznc.pc"] do |s|
         s.gsub! Formula["icu4c"].prefix.realpath, Formula["icu4c"].opt_prefix
         s.gsub! Formula["openssl@3"].prefix.realpath, Formula["openssl@3"].opt_prefix
       end
@@ -67,16 +67,16 @@ class Znc < Formula
   end
 
   service do
-    run [opt_bin/"znc", "--foreground"]
+    run [opt_bin"znc", "--foreground"]
     run_type :interval
     interval 300
-    log_path var/"log/znc.log"
-    error_log_path var/"log/znc.log"
+    log_path var"logznc.log"
+    error_log_path var"logznc.log"
   end
 
   test do
     mkdir ".znc"
-    system bin/"znc", "--makepem"
-    assert_predicate testpath/".znc/znc.pem", :exist?
+    system bin"znc", "--makepem"
+    assert_predicate testpath".zncznc.pem", :exist?
   end
 end

@@ -1,7 +1,7 @@
 class Openmama < Formula
   desc "Open source high performance messaging API for various Market Data sources"
-  homepage "https://openmama.finos.org"
-  url "https://ghproxy.com/https://github.com/finos/OpenMAMA/archive/refs/tags/OpenMAMA-6.3.2-release.tar.gz"
+  homepage "https:openmama.finos.org"
+  url "https:github.comfinosOpenMAMAarchiverefstagsOpenMAMA-6.3.2-release.tar.gz"
   sha256 "5c09b5c73467c4122fe275c0f880c70e4b9f6f8d1ecbaa1aeeac7d8195d9ffef"
   license "LGPL-2.1-only"
 
@@ -41,16 +41,16 @@ class Openmama < Formula
       -DOPENMAMA_VERSION=#{version}
     ]
 
-    args << "-DUUID_INCLUDE_DIRS=#{MacOS.sdk_path_if_needed}/usr/include" << "-DUUID_LIBRARIES=c" if OS.mac?
+    args << "-DUUID_INCLUDE_DIRS=#{MacOS.sdk_path_if_needed}usrinclude" << "-DUUID_LIBRARIES=c" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    system "#{bin}/mamalistenc", "-?"
-    (testpath/"test.c").write <<~EOS
-      #include <mama/mama.h>
+    system "#{bin}mamalistenc", "-?"
+    (testpath"test.c").write <<~EOS
+      #include <mamamama.h>
       #include <stdio.h>
       int main() {
           mamaBridge bridge;
@@ -64,6 +64,6 @@ class Openmama < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmama", "-o", "test"
-    assert_includes shell_output("./test"), version.to_s
+    assert_includes shell_output(".test"), version.to_s
   end
 end

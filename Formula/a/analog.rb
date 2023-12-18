@@ -1,9 +1,9 @@
 class Analog < Formula
   desc "Logfile analyzer"
-  homepage "https://www.c-amie.co.uk/software/analog/"
-  url "https://ghproxy.com/https://github.com/c-amie/analog-ce/archive/refs/tags/6.0.17.tar.gz"
+  homepage "https:www.c-amie.co.uksoftwareanalog"
+  url "https:github.comc-amieanalog-cearchiverefstags6.0.17.tar.gz"
   sha256 "0e5794c2eaa5826dc014916e413e90eb2714a646ff8d6ec026437182d789b117"
-  head "https://github.com/c-amie/analog-ce.git", branch: "master"
+  head "https:github.comc-amieanalog-ce.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "224cffe764447dfce53e8ba3c36316f43fcc45c756ad8a26d7eac8e51207714d"
@@ -30,7 +30,7 @@ class Analog < Formula
     args = [
       "CC=#{ENV.cc}",
       "CFLAGS=#{ENV.cflags}",
-      %Q(DEFS='-DLANGDIR="#{pkgshare}/lang/"' -DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE),
+      %Q(DEFS='-DLANGDIR="#{pkgshare}lang"' -DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE),
       "LIBS=-lgd -lpng -ljpeg -lz -lbz2 -lpcre -lm",
       "OS=#{OS.mac? ? "OSX" : "UNIX"}",
     ]
@@ -39,12 +39,12 @@ class Analog < Formula
     bin.install "analog"
     pkgshare.install "examples", "how-to", "images", "lang"
     pkgshare.install "analog.cfg-sample"
-    (pkgshare/"examples").install "logfile.log"
+    (pkgshare"examples").install "logfile.log"
     man1.install "analog.man" => "analog.1"
   end
 
   test do
-    output = pipe_output("#{bin}/analog #{pkgshare}/examples/logfile.log")
+    output = pipe_output("#{bin}analog #{pkgshare}exampleslogfile.log")
     assert_match "(United Kingdom)", output
   end
 end

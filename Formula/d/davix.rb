@@ -1,10 +1,10 @@
 class Davix < Formula
-  desc "Library and tools for advanced file I/O with HTTP-based protocols"
-  homepage "https://github.com/cern-fts/davix"
-  url "https://ghproxy.com/https://github.com/cern-fts/davix/releases/download/R_0_8_5/davix-0.8.5.tar.gz"
+  desc "Library and tools for advanced file IO with HTTP-based protocols"
+  homepage "https:github.comcern-ftsdavix"
+  url "https:github.comcern-ftsdavixreleasesdownloadR_0_8_5davix-0.8.5.tar.gz"
   sha256 "f9ce21bcc2ed248f7825059d17577876616258c35177d74fad8f854a818a87f9"
   license "LGPL-2.1-or-later"
-  head "https://github.com/cern-fts/davix.git", branch: "devel"
+  head "https:github.comcern-ftsdavix.git", branch: "devel"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4cf4dca18507005e724230890fa5a70dde080f27f39b47915bc484f07d34949c"
@@ -41,6 +41,6 @@ class Davix < Formula
   end
 
   test do
-    system "#{bin}/davix-get", "https://brew.sh"
+    system "#{bin}davix-get", "https:brew.sh"
   end
 end

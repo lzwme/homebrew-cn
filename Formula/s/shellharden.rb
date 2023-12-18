@@ -1,7 +1,7 @@
 class Shellharden < Formula
-  desc "Bash syntax highlighter that encourages/fixes variables quoting"
-  homepage "https://github.com/anordal/shellharden"
-  url "https://ghproxy.com/https://github.com/anordal/shellharden/archive/refs/tags/v4.3.0.tar.gz"
+  desc "Bash syntax highlighter that encouragesfixes variables quoting"
+  homepage "https:github.comanordalshellharden"
+  url "https:github.comanordalshellhardenarchiverefstagsv4.3.0.tar.gz"
   sha256 "d17bf55bae4ed6aed9f0d5cea8efd11026623a47b6d840b826513ab5b48db3eb"
   license "MPL-2.0"
 
@@ -26,11 +26,11 @@ class Shellharden < Formula
   end
 
   test do
-    (testpath/"script.sh").write <<~EOS
+    (testpath"script.sh").write <<~EOS
       dog="poodle"
       echo $dog
     EOS
-    system bin/"shellharden", "--replace", "script.sh"
-    assert_match "echo \"$dog\"", (testpath/"script.sh").read
+    system bin"shellharden", "--replace", "script.sh"
+    assert_match "echo \"$dog\"", (testpath"script.sh").read
   end
 end

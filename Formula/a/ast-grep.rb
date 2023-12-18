@@ -1,7 +1,7 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
-  homepage "https://github.com/ast-grep/ast-grep"
-  url "https://ghproxy.com/https://github.com/ast-grep/ast-grep/archive/refs/tags/0.15.0.tar.gz"
+  homepage "https:github.comast-grepast-grep"
+  url "https:github.comast-grepast-greparchiverefstags0.15.0.tar.gz"
   sha256 "5820c9d2cf9f4370701947297957c1ebacd4c27a04fa4c5a7da63e3e183ea56b"
   license "MIT"
 
@@ -18,11 +18,11 @@ class AstGrep < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/cli")
+    system "cargo", "install", *std_cargo_args(path: "cratescli")
   end
 
   test do
-    (testpath/"hi.js").write("console.log('it is me')")
-    system "#{bin}/sg", "run", "-l", "js", "-p console.log", (testpath/"hi.js")
+    (testpath"hi.js").write("console.log('it is me')")
+    system "#{bin}sg", "run", "-l", "js", "-p console.log", (testpath"hi.js")
   end
 end

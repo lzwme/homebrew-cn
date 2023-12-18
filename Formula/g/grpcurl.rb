@@ -1,7 +1,7 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
-  homepage "https://github.com/fullstorydev/grpcurl"
-  url "https://ghproxy.com/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.8.9.tar.gz"
+  homepage "https:github.comfullstorydevgrpcurl"
+  url "https:github.comfullstorydevgrpcurlarchiverefstagsv1.8.9.tar.gz"
   sha256 "962fe7d3da7653519d2975e130244af9286db32041b0745613aebf89949a9009"
   license "MIT"
 
@@ -18,17 +18,17 @@ class Grpcurl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), "./cmd/grpcurl"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), ".cmdgrpcurl"
   end
 
   test do
-    (testpath/"test.proto").write <<~EOS
+    (testpath"test.proto").write <<~EOS
       syntax = "proto3";
       package test;
       message HelloWorld {
         string hello_world = 1;
       }
     EOS
-    system "#{bin}/grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
+    system "#{bin}grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
   end
 end

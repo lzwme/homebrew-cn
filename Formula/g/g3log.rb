@@ -1,7 +1,7 @@
 class G3log < Formula
   desc "Asynchronous, 'crash safe', logger that is easy to use"
-  homepage "https://github.com/KjellKod/g3log"
-  url "https://ghproxy.com/https://github.com/KjellKod/g3log/archive/refs/tags/2.4.tar.gz"
+  homepage "https:github.comKjellKodg3log"
+  url "https:github.comKjellKodg3logarchiverefstags2.4.tar.gz"
   sha256 "a240673f6dda17a8d4d5768b6741534e6863e6c4d786c3678e4fe687eb115902"
   license "Unlicense"
 
@@ -24,9 +24,9 @@ class G3log < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS.gsub("TESTDIR", testpath)
-      #include <g3log/g3log.hpp>
-      #include <g3log/logworker.hpp>
+    (testpath"test.cpp").write <<~EOS.gsub("TESTDIR", testpath)
+      #include <g3logg3log.hpp>
+      #include <g3loglogworker.hpp>
       int main()
       {
         using namespace g3;
@@ -38,7 +38,7 @@ class G3log < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lg3log", "-o", "test"
-    system "./test"
-    Dir.glob(testpath/"test.g3log.*.log").any?
+    system ".test"
+    Dir.glob(testpath"test.g3log.*.log").any?
   end
 end

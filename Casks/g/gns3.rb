@@ -3,12 +3,12 @@ cask "gns3" do
   version "2.2.44.1"
   sha256 "1abd8911265d4f70c1387a74038629b47569ca583cad6b44c765adf5e78b22d9"
 
-  url "https://ghproxy.com/https://github.com/GNS3/gns3-gui/releases/download/v#{version}/GNS3-#{version}.dmg",
-      verified: "github.com/GNS3/gns3-gui/"
+  url "https:github.comGNS3gns3-guireleasesdownloadv#{version}GNS3-#{version}.dmg",
+      verified: "github.comGNS3gns3-gui"
   name "GNS3"
   name "Graphical Network Simulator 3"
   desc "GUI for the Dynamips Cisco router emulator"
-  homepage "https://www.gns3.com/"
+  homepage "https:www.gns3.com"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "gns3" do
   app "GNS3.app"
 
   zap trash: [
-    "~/GNS3",
-    "~/Library/Saved Application State/net.gns3.savedState",
+    "~GNS3",
+    "~LibrarySaved Application Statenet.gns3.savedState",
   ]
 end

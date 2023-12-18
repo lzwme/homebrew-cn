@@ -2,14 +2,14 @@ cask "codeexpander" do
   version "4.3.1"
   sha256 "d2288cf347f7c23f40e6f6ac92c3f077c1700d335c71509b52f935fdc0c0fb45"
 
-  url "https://ghproxy.com/https://github.com/oncework/codeexpander/releases/download/#{version.major_minor}.x/CodeExpander-#{version}.dmg"
+  url "https:github.comonceworkcodeexpanderreleasesdownload#{version.major_minor}.xCodeExpander-#{version}.dmg"
   name "CodeExpander"
   desc "Cloud synchronization development tool"
-  homepage "https://github.com/oncework/codeexpander"
+  homepage "https:github.comonceworkcodeexpander"
 
   livecheck do
     url :url
-    regex(/^CodeExpander[._-]v?(\d+(?:\.\d+)+)\.dmg$/i)
+    regex(^CodeExpander[._-]v?(\d+(?:\.\d+)+)\.dmg$i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -23,10 +23,10 @@ cask "codeexpander" do
   app "CodeExpander.app"
 
   zap trash: [
-    "~/.codeexpander",
-    "~/Documents/codeexpander",
-    "~/Library/Logs/Codeexpander",
-    "~/Library/Preferences/com.codeexpander.plist",
-    "~/Library/Saved Application State/com.codeexpander.savedState",
+    "~.codeexpander",
+    "~Documentscodeexpander",
+    "~LibraryLogsCodeexpander",
+    "~LibraryPreferencescom.codeexpander.plist",
+    "~LibrarySaved Application Statecom.codeexpander.savedState",
   ]
 end

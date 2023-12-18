@@ -2,12 +2,12 @@ cask "font-blinker" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/blinker"
+      only_path: "oflblinker"
   name "Blinker"
-  homepage "https://fonts.google.com/specimen/Blinker"
+  homepage "https:fonts.google.comspecimenBlinker"
 
   font "Blinker-Black.ttf"
   font "Blinker-Bold.ttf"

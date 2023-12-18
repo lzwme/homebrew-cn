@@ -1,7 +1,7 @@
 class Xtensor < Formula
   desc "Multi-dimensional arrays with broadcasting and lazy computing"
-  homepage "https://xtensor.readthedocs.io/en/latest/"
-  url "https://ghproxy.com/https://github.com/xtensor-stack/xtensor/archive/refs/tags/0.24.7.tar.gz"
+  homepage "https:xtensor.readthedocs.ioenlatest"
+  url "https:github.comxtensor-stackxtensorarchiverefstags0.24.7.tar.gz"
   sha256 "0fbbd524dde2199b731b6af99b16063780de6cf1d0d6cb1f3f4d4ceb318f3106"
   license "BSD-3-Clause"
 
@@ -12,7 +12,7 @@ class Xtensor < Formula
   depends_on "cmake" => :build
 
   resource "xtl" do
-    url "https://ghproxy.com/https://github.com/xtensor-stack/xtl/archive/refs/tags/0.7.5.tar.gz"
+    url "https:github.comxtensor-stackxtlarchiverefstags0.7.5.tar.gz"
     sha256 "3286fef5fee5d58f82f7b91375cd449c819848584bae9367893501114d923cbe"
   end
 
@@ -22,16 +22,16 @@ class Xtensor < Formula
       system "make", "install"
     end
 
-    system "cmake", ".", "-Dxtl_DIR=#{lib}/cmake/xtl", *std_cmake_args
+    system "cmake", ".", "-Dxtl_DIR=#{lib}cmakextl", *std_cmake_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include <iostream>
-      #include "xtensor/xarray.hpp"
-      #include "xtensor/xio.hpp"
-      #include "xtensor/xview.hpp"
+      #include "xtensorxarray.hpp"
+      #include "xtensorxio.hpp"
+      #include "xtensorxview.hpp"
 
       int main() {
         xt::xarray<double> arr1
@@ -49,6 +49,6 @@ class Xtensor < Formula
       }
     EOS
     system ENV.cxx, "-std=c++14", "test.cc", "-o", "test", "-I#{include}"
-    assert_equal "323", shell_output("./test").chomp
+    assert_equal "323", shell_output(".test").chomp
   end
 end

@@ -1,10 +1,10 @@
 class Dromeaudio < Formula
   desc "Small C++ audio manipulation and playback library"
-  homepage "https://github.com/joshb/dromeaudio/"
-  url "https://ghproxy.com/https://github.com/joshb/DromeAudio/archive/refs/tags/v0.3.0.tar.gz"
+  homepage "https:github.comjoshbdromeaudio"
+  url "https:github.comjoshbDromeAudioarchiverefstagsv0.3.0.tar.gz"
   sha256 "d226fa3f16d8a41aeea2d0a32178ca15519aebfa109bc6eee36669fa7f7c6b83"
   license "BSD-2-Clause"
-  head "https://github.com/joshb/dromeaudio.git", branch: "master"
+  head "https:github.comjoshbdromeaudio.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -25,23 +25,23 @@ class Dromeaudio < Formula
   depends_on "cmake" => :build
 
   def install
-    # install FindDromeAudio.cmake under share/cmake/Modules/
-    inreplace "share/CMakeLists.txt", "${CMAKE_ROOT}", "#{share}/cmake"
+    # install FindDromeAudio.cmake under sharecmakeModules
+    inreplace "shareCMakeLists.txt", "${CMAKE_ROOT}", "#{share}cmake"
     system "cmake", ".", *std_cmake_args
     system "make", "install"
   end
 
   test do
-    assert_predicate include/"DromeAudio", :exist?
-    assert_predicate lib/"libDromeAudio.a", :exist?
+    assert_predicate include"DromeAudio", :exist?
+    assert_predicate lib"libDromeAudio.a", :exist?
 
     # We don't test DromeAudioPlayer with an audio file because it only works
     # with certain audio devices and will fail on CI with this error:
     #   DromeAudio Exception: AudioDriverOSX::AudioDriverOSX():
     #   AudioUnitSetProperty (for StreamFormat) failed
     #
-    # Related PR: https://github.com/Homebrew/homebrew-core/pull/55292
-    assert_match(/Usage: .*?DromeAudioPlayer <filename>/i,
-                 shell_output(bin/"DromeAudioPlayer 2>&1", 1))
+    # Related PR: https:github.comHomebrewhomebrew-corepull55292
+    assert_match(Usage: .*?DromeAudioPlayer <filename>i,
+                 shell_output(bin"DromeAudioPlayer 2>&1", 1))
   end
 end

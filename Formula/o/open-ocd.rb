@@ -1,14 +1,14 @@
 class OpenOcd < Formula
   desc "On-chip debugging, in-system programming and boundary-scan testing"
-  homepage "https://openocd.org/"
-  url "https://downloads.sourceforge.net/project/openocd/openocd/0.12.0/openocd-0.12.0.tar.bz2"
+  homepage "https:openocd.org"
+  url "https:downloads.sourceforge.netprojectopenocdopenocd0.12.0openocd-0.12.0.tar.bz2"
   sha256 "af254788be98861f2bd9103fe6e60a774ec96a8c374744eef9197f6043075afa"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/openocd[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?openocd[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class OpenOcd < Formula
   end
 
   head do
-    url "https://github.com/openocd-org/openocd.git", branch: "master"
+    url "https:github.comopenocd-orgopenocd.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,8 +41,8 @@ class OpenOcd < Formula
   def install
     ENV["CCACHE"] = "none"
 
-    system "./bootstrap", "nosubmodule" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap", "nosubmodule" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-buspirate",
                           "--enable-stlink",

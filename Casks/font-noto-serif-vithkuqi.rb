@@ -2,11 +2,11 @@ cask "font-noto-serif-vithkuqi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notoserifvithkuqi/NotoSerifVithkuqi%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotoserifvithkuqiNotoSerifVithkuqi%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Serif Vithkuqi"
   desc "Design for the historical european vithkuqi script"
-  homepage "https://fonts.google.com/specimen/Noto+Serif+Vithkuqi"
+  homepage "https:fonts.google.comspecimenNoto+Serif+Vithkuqi"
 
   font "NotoSerifVithkuqi[wght].ttf"
 

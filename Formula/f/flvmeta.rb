@@ -1,14 +1,14 @@
 class Flvmeta < Formula
   desc "Manipulate Adobe flash video files (FLV)"
-  homepage "https://flvmeta.com/"
-  url "https://flvmeta.com/files/flvmeta-1.2.2.tar.gz"
+  homepage "https:flvmeta.com"
+  url "https:flvmeta.comfilesflvmeta-1.2.2.tar.gz"
   sha256 "a51a2f18d97dfa1d09729546ce9ac690569b4ce6f738a75363113d990c0e5118"
   license "GPL-2.0-or-later"
-  head "https://github.com/noirotm/flvmeta.git", branch: "master"
+  head "https:github.comnoirotmflvmeta.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?flvmeta[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?flvmeta[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,6 +34,6 @@ class Flvmeta < Formula
   end
 
   test do
-    system bin/"flvmeta", "-V"
+    system bin"flvmeta", "-V"
   end
 end

@@ -1,11 +1,11 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
-  homepage "https://github.com/haskell/haskell-language-server"
-  url "https://ghproxy.com/https://github.com/haskell/haskell-language-server/archive/refs/tags/2.4.0.0.tar.gz"
+  homepage "https:github.comhaskellhaskell-language-server"
+  url "https:github.comhaskellhaskell-language-serverarchiverefstags2.4.0.0.tar.gz"
   sha256 "67bbfae1275aabbfdb26869bc6df91feb58e03427cb76df89f74b864dbb5d57b"
   license "Apache-2.0"
   revision 2
-  head "https://github.com/haskell/haskell-language-server.git", branch: "master"
+  head "https:github.comhaskellhaskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
   # livecheck picks up spurious non-release tags
@@ -25,7 +25,7 @@ class HaskellLanguageServer < Formula
   end
 
   depends_on "cabal-install" => [:build, :test]
-  # ghc 9.8 support issue, https://github.com/haskell/haskell-language-server/issues/3861
+  # ghc 9.8 support issue, https:github.comhaskellhaskell-language-serverissues3861
   depends_on "ghc@9.2" => [:build, :test]
   depends_on "ghc@9.4" => [:build, :test]
   depends_on "ghc@9.6" => [:build, :test]
@@ -43,12 +43,12 @@ class HaskellLanguageServer < Formula
     system "cabal", "v2-update"
 
     ghcs.each do |ghc|
-      system "cabal", "v2-install", "--with-compiler=#{ghc.bin}/ghc", "--flags=-dynamic", *std_cabal_v2_args
+      system "cabal", "v2-install", "--with-compiler=#{ghc.bin}ghc", "--flags=-dynamic", *std_cabal_v2_args
 
       hls = "haskell-language-server"
-      bin.install bin/hls => "#{hls}-#{ghc.version}"
+      bin.install binhls => "#{hls}-#{ghc.version}"
       bin.install_symlink "#{hls}-#{ghc.version}" => "#{hls}-#{ghc.version.major_minor}"
-      (bin/"#{hls}-wrapper").unlink if ghc != ghcs.last
+      (bin"#{hls}-wrapper").unlink if ghc != ghcs.last
     end
   end
 
@@ -63,13 +63,13 @@ class HaskellLanguageServer < Formula
   end
 
   test do
-    valid_hs = testpath/"valid.hs"
+    valid_hs = testpath"valid.hs"
     valid_hs.write <<~EOS
       f :: Int -> Int
       f x = x + 1
     EOS
 
-    invalid_hs = testpath/"invalid.hs"
+    invalid_hs = testpath"invalid.hs"
     invalid_hs.write <<~EOS
       f :: Int -> Int
     EOS
@@ -77,7 +77,7 @@ class HaskellLanguageServer < Formula
     ghcs.each do |ghc|
       with_env(PATH: "#{ghc.bin}:#{ENV["PATH"]}") do
         assert_match "Completed (1 file worked, 1 file failed)",
-          shell_output("#{bin}/haskell-language-server-#{ghc.version.major_minor} #{testpath}/*.hs 2>&1", 1)
+          shell_output("#{bin}haskell-language-server-#{ghc.version.major_minor} #{testpath}*.hs 2>&1", 1)
       end
     end
   end

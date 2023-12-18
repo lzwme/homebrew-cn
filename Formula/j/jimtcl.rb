@@ -1,7 +1,7 @@
 class Jimtcl < Formula
   desc "Small footprint implementation of Tcl"
-  homepage "https://jim.tcl.tk/index.html"
-  url "https://ghproxy.com/https://github.com/msteveb/jimtcl/archive/refs/tags/0.82.tar.gz"
+  homepage "https:jim.tcl.tkindex.html"
+  url "https:github.commstevebjimtclarchiverefstags0.82.tar.gz"
   sha256 "e8af929b815e4d30e54ff116b2b933e56c00a02b9110529d1a58660b2469aea7"
   license "BSD-2-Clause"
 
@@ -24,7 +24,7 @@ class Jimtcl < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -42,7 +42,7 @@ class Jimtcl < Formula
   end
 
   test do
-    (testpath/"test.tcl").write "puts {Hello world}"
-    assert_match "Hello world", shell_output("#{bin}/jimsh test.tcl")
+    (testpath"test.tcl").write "puts {Hello world}"
+    assert_match "Hello world", shell_output("#{bin}jimsh test.tcl")
   end
 end

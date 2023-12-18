@@ -2,11 +2,11 @@ cask "runjs" do
   version "2.9.0"
   sha256 "cc5821b98a9d846ce58ce7233836ed7d093a264ccaa9eedceffd528647bf0f7b"
 
-  url "https://ghproxy.com/https://github.com/lukehaas/RunJS/releases/download/v#{version}/RunJS-#{version}-universal.dmg",
-      verified: "github.com/lukehaas/RunJS/"
+  url "https:github.comlukehaasRunJSreleasesdownloadv#{version}RunJS-#{version}-universal.dmg",
+      verified: "github.comlukehaasRunJS"
   name "RunJS"
   desc "JavaScript playground that auto-evaluates as code is typed"
-  homepage "https://runjs.app/"
+  homepage "https:runjs.app"
 
   livecheck do
     url :url
@@ -19,9 +19,9 @@ cask "runjs" do
   app "RunJS.app"
 
   zap trash: [
-    "~/Library/Application Support/runjs",
-    "~/Library/Logs/RunJS",
-    "~/Library/Preferences/me.lukehaas.runjs.plist",
-    "~/Library/Saved Application State/me.lukehaas.runjs.savedState",
+    "~LibraryApplication Supportrunjs",
+    "~LibraryLogsRunJS",
+    "~LibraryPreferencesme.lukehaas.runjs.plist",
+    "~LibrarySaved Application Stateme.lukehaas.runjs.savedState",
   ]
 end

@@ -1,7 +1,7 @@
 class Pdftoipe < Formula
   desc "Reads arbitrary PDF files and generates an XML file readable by Ipe"
-  homepage "https://github.com/otfried/ipe-tools"
-  url "https://ghproxy.com/https://github.com/otfried/ipe-tools/archive/refs/tags/v7.2.24.1.tar.gz"
+  homepage "https:github.comotfriedipe-tools"
+  url "https:github.comotfriedipe-toolsarchiverefstagsv7.2.24.1.tar.gz"
   sha256 "561b18fc2a7ae45c37c5d0390443b37f4585549f09cd7765d856456be24e5dbc"
   license "GPL-2.0-or-later"
   revision 17
@@ -21,15 +21,15 @@ class Pdftoipe < Formula
 
   fails_with gcc: "5"
 
-  # https://github.com/otfried/ipe-tools/pull/48
+  # https:github.comotfriedipe-toolspull48
   patch do
-    url "https://github.com/otfried/ipe-tools/commit/14335180432152ad094300d0afd00d8e390469b2.patch?full_index=1"
+    url "https:github.comotfriedipe-toolscommit14335180432152ad094300d0afd00d8e390469b2.patch?full_index=1"
     sha256 "544d891bfab2c297f659895761cb296d6ed2b4aa76a888e9ca2c215d497a48e5"
   end
 
-  # https://github.com/otfried/ipe-tools/pull/55
+  # https:github.comotfriedipe-toolspull55
   patch do
-    url "https://github.com/otfried/ipe-tools/commit/65586fcd9cc39e482ae5a9abdb6f4932d9bb88c4.patch?full_index=1"
+    url "https:github.comotfriedipe-toolscommit65586fcd9cc39e482ae5a9abdb6f4932d9bb88c4.patch?full_index=1"
     sha256 "61f507fcaa843c00e5aa06bc1c8ab1cbc2798214c5f794d2c9bd376f78b49a11"
   end
 
@@ -43,7 +43,7 @@ class Pdftoipe < Formula
 
   test do
     cp test_fixtures("test.pdf"), testpath
-    system bin/"pdftoipe", "test.pdf"
+    system bin"pdftoipe", "test.pdf"
     assert_match "<ipestyle>", File.read("test.ipe")
   end
 end

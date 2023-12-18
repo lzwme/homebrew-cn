@@ -1,7 +1,7 @@
 class Mmv < Formula
   desc "Move, copy, append, and link multiple files"
-  homepage "https://github.com/rrthomas/mmv"
-  url "https://ghproxy.com/https://github.com/rrthomas/mmv/releases/download/v2.5.1/mmv-2.5.1.tar.gz"
+  homepage "https:github.comrrthomasmmv"
+  url "https:github.comrrthomasmmvreleasesdownloadv2.5.1mmv-2.5.1.tar.gz"
   sha256 "f7b4cbd3b778909541df3ab11284288eeb05c68d5ad620f354568e82553dec14"
   license "GPL-3.0-or-later"
 
@@ -24,23 +24,23 @@ class Mmv < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"a").write "1"
-    (testpath/"b").write "2"
+    (testpath"a").write "1"
+    (testpath"b").write "2"
 
-    assert_match "a -> b : old b would have to be deleted", shell_output("#{bin}/mmv -p a b 2>&1", 1)
-    assert_predicate testpath/"a", :exist?
-    assert_match "a -> b (*) : done", shell_output("#{bin}/mmv -d -v a b")
-    refute_predicate testpath/"a", :exist?
-    assert_equal "1", (testpath/"b").read
+    assert_match "a -> b : old b would have to be deleted", shell_output("#{bin}mmv -p a b 2>&1", 1)
+    assert_predicate testpath"a", :exist?
+    assert_match "a -> b (*) : done", shell_output("#{bin}mmv -d -v a b")
+    refute_predicate testpath"a", :exist?
+    assert_equal "1", (testpath"b").read
 
-    assert_match "b -> c : done", shell_output("#{bin}/mmv -s -v b c")
-    assert_predicate testpath/"b", :exist?
-    assert_predicate testpath/"c", :symlink?
-    assert_equal "1", (testpath/"c").read
+    assert_match "b -> c : done", shell_output("#{bin}mmv -s -v b c")
+    assert_predicate testpath"b", :exist?
+    assert_predicate testpath"c", :symlink?
+    assert_equal "1", (testpath"c").read
   end
 end

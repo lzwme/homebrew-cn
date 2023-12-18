@@ -1,7 +1,7 @@
 class Srecord < Formula
   desc "Tools for manipulating EPROM load files"
-  homepage "https://srecord.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/srecord/srecord/1.64/srecord-1.64.tar.gz"
+  homepage "https:srecord.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectsrecordsrecord1.64srecord-1.64.tar.gz"
   sha256 "49a4418733c508c03ad79a29e95acec9a2fbc4c7306131d2a8f5ef32012e67e2"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
@@ -42,18 +42,18 @@ class Srecord < Formula
   # Use macOS's pstopdf
   patch do
     on_ventura :or_older do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/srecord/1.64.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9srecord1.64.patch"
       sha256 "140e032d0ffe921c94b19145e5904538233423ab7dc03a9c3c90bf434de4dd03"
     end
   end
 
   def install
-    system "./configure", *std_configure_args, "LIBTOOL=glibtool"
+    system ".configure", *std_configure_args, "LIBTOOL=glibtool"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.srec").write <<~EOS
+    (testpath"test.srec").write <<~EOS
       S012000068656C6C6F5F737265632E73726563F2
       S1130000303132333435363738396162636465668A
       S11300104142434445464748494A4B4C4D4E4F5054
@@ -68,9 +68,9 @@ class Srecord < Formula
       Data:   0000 - 0028
     EOS
 
-    output = shell_output("#{bin}/srec_info #{testpath}/test.srec")
+    output = shell_output("#{bin}srec_info #{testpath}test.srec")
     assert_equal expected, output
 
-    assert_match version.major_minor.to_s, shell_output("#{bin}/srec_info --version")
+    assert_match version.major_minor.to_s, shell_output("#{bin}srec_info --version")
   end
 end

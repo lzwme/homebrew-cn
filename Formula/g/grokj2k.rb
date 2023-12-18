@@ -1,14 +1,14 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
-  homepage "https://github.com/GrokImageCompression/grok"
-  url "https://ghproxy.com/https://github.com/GrokImageCompression/grok/archive/refs/tags/v11.0.0.tar.gz"
+  homepage "https:github.comGrokImageCompressiongrok"
+  url "https:github.comGrokImageCompressiongrokarchiverefstagsv11.0.0.tar.gz"
   sha256 "ffaa563312071197db5bc2a180d74fea061be5e76fcb9915caf886fe61d4b391"
   license "AGPL-3.0-or-later"
-  head "https://github.com/GrokImageCompression/grok.git", branch: "master"
+  head "https:github.comGrokImageCompressiongrok.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -43,7 +43,7 @@ class Grokj2k < Formula
     cause "Requires C++20"
   end
 
-  # https://github.com/GrokImageCompression/grok/blob/master/INSTALL.md#compilers
+  # https:github.comGrokImageCompressiongrokblobmasterINSTALL.md#compilers
   fails_with :gcc do
     version "9"
     cause "GNU compiler version must be at least 10.0"
@@ -53,13 +53,13 @@ class Grokj2k < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
 
     # Fix: ExifTool Perl module not found
-    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec/"lib"
+    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec"lib"
 
     # Ensure we use Homebrew little-cms2
-    %w[liblcms2 libpng libtiff libz].each { |l| (buildpath/"thirdparty"/l).rmtree }
-    inreplace "thirdparty/CMakeLists.txt" do |s|
+    %w[liblcms2 libpng libtiff libz].each { |l| (buildpath"thirdparty"l).rmtree }
+    inreplace "thirdpartyCMakeLists.txt" do |s|
       s.gsub! "add_subdirectory(liblcms2)", ""
-      s.gsub! %r{(set\(LCMS_INCLUDE_DIRNAME) \$\{GROK_SOURCE_DIR\}/thirdparty/liblcms2/include},
+      s.gsub! %r{(set\(LCMS_INCLUDE_DIRNAME) \$\{GROK_SOURCE_DIR\}thirdpartyliblcms2include},
               "\\1 #{Formula["little-cms2"].opt_include}"
     end
 
@@ -77,10 +77,10 @@ class Grokj2k < Formula
       ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal" if MacOS.version <= :catalina
       # Help CMake find Perl libraries, which are needed to enable ExifTool feature.
       # Without this, CMake outputs: Could NOT find PerlLibs (missing: PERL_INCLUDE_PATH)
-      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path_if_needed}/#{perl_archlib}/CORE"
+      args << "-DPERL_INCLUDE_PATH=#{MacOS.sdk_path_if_needed}#{perl_archlib}CORE"
     else
       # Fix linkage error due to RPATH missing directory with libperl.so
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}/CORE"
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{perl_archlib}CORE"
     end
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
@@ -93,12 +93,12 @@ class Grokj2k < Formula
 
   test do
     resource "homebrew-test_image" do
-      url "https://github.com/GrokImageCompression/grok-test-data/raw/43ce4cb/input/nonregression/basn6a08.tif"
+      url "https:github.comGrokImageCompressiongrok-test-dataraw43ce4cbinputnonregressionbasn6a08.tif"
       sha256 "d0b9715d79b10b088333350855f9721e3557b38465b1354b0fa67f230f5679f3"
     end
 
-    (testpath/"test.c").write <<~EOS
-      #include <grok/grok.h>
+    (testpath"test.c").write <<~EOS
+      #include <grokgrok.h>
 
       int main () {
         grk_image_comp cmptparm;
@@ -112,14 +112,14 @@ class Grokj2k < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgrokj2k", "-o", "test"
-    system "./test"
+    system ".test"
 
     # Test Exif metadata retrieval
     resource("homebrew-test_image").stage do
-      system bin/"grk_compress", "-in_file", "basn6a08.tif",
+      system bin"grk_compress", "-in_file", "basn6a08.tif",
                                  "-out_file", "test.jp2", "-out_fmt", "jp2",
                                  "-transfer_exif_tags"
-      output = shell_output("#{Formula["exiftool"].bin}/exiftool test.jp2")
+      output = shell_output("#{Formula["exiftool"].bin}exiftool test.jp2")
 
       [
         "Exif Byte Order                 : Big-endian (Motorola, MM)",

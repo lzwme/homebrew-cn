@@ -1,12 +1,12 @@
 class LuaLanguageServer < Formula
   desc "Language Server for the Lua language"
-  homepage "https://github.com/LuaLS/lua-language-server"
+  homepage "https:github.comLuaLSlua-language-server"
   # pull from git tag to get submodules
-  url "https://github.com/LuaLS/lua-language-server.git",
+  url "https:github.comLuaLSlua-language-server.git",
       tag:      "3.7.3",
       revision: "50dfc81e075be5fe2cdf7b2b94007dd5ed2edefa"
   license "MIT"
-  head "https://github.com/LuaLS/lua-language-server.git", branch: "master"
+  head "https:github.comLuaLSlua-language-server.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "542147443413221dd43ee9c93b1c8f40509ba959221f0c41fdc80eb34bc6e019"
@@ -26,26 +26,26 @@ class LuaLanguageServer < Formula
     ENV.cxx11
 
     # disable all tests by build script (fail in build environment)
-    inreplace buildpath.glob("**/3rd/bee.lua/test/test.lua"),
+    inreplace buildpath.glob("**3rdbee.luatesttest.lua"),
       "os.exit(lt.run(), true)",
       "os.exit(true, true)"
 
-    chdir "3rd/luamake" do
-      system "compile/install.sh"
+    chdir "3rdluamake" do
+      system "compileinstall.sh"
     end
-    system "3rd/luamake/luamake", "rebuild"
+    system "3rdluamakeluamake", "rebuild"
 
-    (libexec/"bin").install "bin/lua-language-server", "bin/main.lua"
+    (libexec"bin").install "binlua-language-server", "binmain.lua"
     libexec.install "main.lua", "debugger.lua", "locale", "meta", "script"
-    bin.write_exec_script libexec/"bin/lua-language-server"
-    (libexec/"log").mkpath
+    bin.write_exec_script libexec"binlua-language-server"
+    (libexec"log").mkpath
   end
 
   test do
     require "pty"
-    output = /^Content-Length: \d+\s*$/
+    output = ^Content-Length: \d+\s*$
 
-    stdout, stdin, lua_ls = PTY.spawn bin/"lua-language-server", "--logpath=#{testpath}/log"
+    stdout, stdin, lua_ls = PTY.spawn bin"lua-language-server", "--logpath=#{testpath}log"
     sleep 5
     stdin.write "\n"
     sleep 25

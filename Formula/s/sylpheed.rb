@@ -1,13 +1,13 @@
 class Sylpheed < Formula
   desc "Simple, lightweight email-client"
-  homepage "https://sylpheed.sraoss.jp/en/"
-  url "https://sylpheed.sraoss.jp/sylpheed/v3.7/sylpheed-3.7.0.tar.bz2"
+  homepage "https:sylpheed.sraoss.jpen"
+  url "https:sylpheed.sraoss.jpsylpheedv3.7sylpheed-3.7.0.tar.bz2"
   sha256 "eb23e6bda2c02095dfb0130668cf7c75d1f256904e3a7337815b4da5cb72eb04"
   revision 6
 
   livecheck do
-    url "https://sylpheed.sraoss.jp/en/download.html"
-    regex(%r{stable.*?href=.*?/sylpheed[._-]v?(\d+(?:\.\d+)+)\.t}im)
+    url "https:sylpheed.sraoss.jpendownload.html"
+    regex(%r{stable.*?href=.*?sylpheed[._-]v?(\d+(?:\.\d+)+)\.t}im)
   end
 
   bottle do
@@ -27,18 +27,18 @@ class Sylpheed < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-updatecheck"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/sylpheed", "--version"
+    system "#{bin}sylpheed", "--version"
   end
 end

@@ -1,17 +1,17 @@
 class CabalInstall < Formula
   desc "Command-line interface for Cabal and Hackage"
-  homepage "https://www.haskell.org/cabal/"
+  homepage "https:www.haskell.orgcabal"
   license "BSD-3-Clause"
-  head "https://github.com/haskell/cabal.git", branch: "3.10"
+  head "https:github.comhaskellcabal.git", branch: "3.10"
 
   stable do
-    url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0.tar.gz"
+    url "https:downloads.haskell.org~cabalcabal-install-3.10.1.0cabal-install-3.10.1.0.tar.gz"
     sha256 "995de368555449230e0762b259377ed720798717f4dd26a4fa711e8e41c7838d"
 
     # Use Hackage metadata revision to support GHC 9.6.
     # TODO: Remove this resource on next release along with corresponding install logic
     resource "cabal-install.cabal" do
-      url "https://hackage.haskell.org/package/cabal-install-3.10.1.0/revision/1.cabal"
+      url "https:hackage.haskell.orgpackagecabal-install-3.10.1.0revision1.cabal"
       sha256 "7668e8dcd3612d8520e16f420c973cd5ceeddb8237422e800067d6c367523940"
     end
   end
@@ -32,16 +32,16 @@ class CabalInstall < Formula
   resource "bootstrap" do
     on_macos do
       on_arm do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0-aarch64-darwin.tar.xz"
+        url "https:downloads.haskell.org~cabalcabal-install-3.10.1.0cabal-install-3.10.1.0-aarch64-darwin.tar.xz"
         sha256 "fdabdc4dca42688a97f2b837165af42fcfd4c111d42ddb0d4df7bbebd5c8750e"
       end
       on_intel do
-        url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0-x86_64-darwin.tar.xz"
+        url "https:downloads.haskell.org~cabalcabal-install-3.10.1.0cabal-install-3.10.1.0-x86_64-darwin.tar.xz"
         sha256 "893a316bd634cbcd08861306efdee86f66ec634f9562a8c59dc616f7e2e14ffa"
       end
     end
     on_linux do
-      url "https://downloads.haskell.org/~cabal/cabal-install-3.10.1.0/cabal-install-3.10.1.0-x86_64-linux-ubuntu20_04.tar.xz"
+      url "https:downloads.haskell.org~cabalcabal-install-3.10.1.0cabal-install-3.10.1.0-x86_64-linux-ubuntu20_04.tar.xz"
       sha256 "b0752c4c5e53eec56af23a1e7cd5a18b5fc62dd18988962aa0aa8748a22af52d"
     end
   end
@@ -49,15 +49,15 @@ class CabalInstall < Formula
   def install
     resource("cabal-install.cabal").stage { buildpath.install "1.cabal" => "cabal-install.cabal" } unless build.head?
     resource("bootstrap").stage buildpath
-    cabal = buildpath/"cabal"
+    cabal = buildpath"cabal"
     cd "cabal-install" if build.head?
     system cabal, "v2-update"
     system cabal, "v2-install", *std_cabal_v2_args
-    bash_completion.install "bash-completion/cabal"
+    bash_completion.install "bash-completioncabal"
   end
 
   test do
-    system bin/"cabal", "--config-file=#{testpath}/config", "user-config", "init"
-    system bin/"cabal", "--config-file=#{testpath}/config", "info", "Cabal"
+    system bin"cabal", "--config-file=#{testpath}config", "user-config", "init"
+    system bin"cabal", "--config-file=#{testpath}config", "info", "Cabal"
   end
 end

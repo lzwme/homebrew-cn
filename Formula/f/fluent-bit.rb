@@ -1,10 +1,10 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
-  homepage "https://github.com/fluent/fluent-bit"
-  url "https://ghproxy.com/https://github.com/fluent/fluent-bit/archive/refs/tags/v2.2.0.tar.gz"
+  homepage "https:github.comfluentfluent-bit"
+  url "https:github.comfluentfluent-bitarchiverefstagsv2.2.0.tar.gz"
   sha256 "c02497f95e5455c5cd587a00efe9d919ac6d0a7d26ad6b5320b25bbc664c04cd"
   license "Apache-2.0"
-  head "https://github.com/fluent/fluent-bit.git", branch: "master"
+  head "https:github.comfluentfluent-bit.git", branch: "master"
 
   livecheck do
     url :stable
@@ -36,11 +36,11 @@ class FluentBit < Formula
 
   def install
     # Prevent fluent-bit to install files into global init system
-    # For more information see https://github.com/fluent/fluent-bit/issues/3393
-    inreplace "src/CMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY /lib/systemd/system)", "if(False)"
-    inreplace "src/CMakeLists.txt", "elseif(IS_DIRECTORY /usr/share/upstart)", "elif(False)"
+    # For more information see https:github.comfluentfluent-bitissues3393
+    inreplace "srcCMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY libsystemdsystem)", "if(False)"
+    inreplace "srcCMakeLists.txt", "elseif(IS_DIRECTORY usrshareupstart)", "elif(False)"
 
-    # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
+    # Per https:luajit.orginstall.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     # fluent-bit builds against a vendored Luajit.
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
@@ -51,29 +51,29 @@ class FluentBit < Formula
   end
 
   test do
-    output = shell_output("#{bin}/fluent-bit -V").chomp
+    output = shell_output("#{bin}fluent-bit -V").chomp
     assert_match "Fluent Bit v#{version}", output
   end
 end
 
 __END__
---- a/lib/luajit-cmake/LuaJIT.cmake
-+++ b/lib/luajit-cmake/LuaJIT.cmake
+--- alibluajit-cmakeLuaJIT.cmake
++++ blibluajit-cmakeLuaJIT.cmake
 @@ -569,13 +569,13 @@ set(luajit_headers
-   ${LJ_DIR}/luaconf.h
-   ${LJ_DIR}/luajit.h
-   ${LJ_DIR}/lualib.h)
--install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/luajit)
-+install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/include/luajit)
+   ${LJ_DIR}luaconf.h
+   ${LJ_DIR}luajit.h
+   ${LJ_DIR}lualib.h)
+-install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}luajit)
++install(FILES ${luajit_headers} DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}includeluajit)
  install(TARGETS libluajit
 -    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 -    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
-+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lib
-+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lib)
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}lib
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}lib)
 
  # Build the luajit binary
 -if (LUAJIT_BUILD_EXE)
 +if (FALSE)
-   add_executable(luajit ${LJ_DIR}/luajit.c)
+   add_executable(luajit ${LJ_DIR}luajit.c)
    target_link_libraries(luajit libluajit)
    if(APPLE AND ${CMAKE_C_COMPILER_ID} STREQUAL "zig")

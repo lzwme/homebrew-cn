@@ -2,11 +2,11 @@ class ReorderPythonImports < Formula
   include Language::Python::Virtualenv
 
   desc "Rewrites source to reorder python imports"
-  homepage "https://github.com/asottile/reorder_python_imports"
-  url "https://files.pythonhosted.org/packages/f2/a4/b9299bb0ce17c405fda20efa39f6993b418b10c765e978961f3c97254f4e/reorder_python_imports-3.12.0.tar.gz"
+  homepage "https:github.comasottilereorder_python_imports"
+  url "https:files.pythonhosted.orgpackagesf2a4b9299bb0ce17c405fda20efa39f6993b418b10c765e978961f3c97254f4ereorder_python_imports-3.12.0.tar.gz"
   sha256 "f93106a662b0c034ca81c91fd1c2f21a1e94ece47c9f192672e2a13c8ec1856c"
   license "MIT"
-  head "https://github.com/asottile/reorder_python_imports.git", branch: "main"
+  head "https:github.comasottilereorder_python_imports.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -22,7 +22,7 @@ class ReorderPythonImports < Formula
   depends_on "python@3.12"
 
   resource "classify-imports" do
-    url "https://files.pythonhosted.org/packages/7e/b6/6cdc486fced92110a8166aa190b7d60435165119990fc2e187a56d15144b/classify_imports-4.2.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages7eb66cdc486fced92110a8166aa190b7d60435165119990fc2e187a56d15144bclassify_imports-4.2.0.tar.gz"
     sha256 "7abfb7ea92149b29d046bd34573d247ba6e68cc28100c801eba4af17964fc40e"
   end
 
@@ -31,11 +31,11 @@ class ReorderPythonImports < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       from os import path
       import sys
     EOS
-    system "#{bin}/reorder-python-imports", "--exit-zero-even-if-changed", "#{testpath}/test.py"
-    assert_equal("import sys\nfrom os import path\n", File.read(testpath/"test.py"))
+    system "#{bin}reorder-python-imports", "--exit-zero-even-if-changed", "#{testpath}test.py"
+    assert_equal("import sys\nfrom os import path\n", File.read(testpath"test.py"))
   end
 end

@@ -1,10 +1,10 @@
 class CargoBundle < Formula
   desc "Wrap rust executables in OS-specific app bundles"
-  homepage "https://github.com/burtonageo/cargo-bundle"
-  url "https://ghproxy.com/https://github.com/burtonageo/cargo-bundle/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:github.comburtonageocargo-bundle"
+  url "https:github.comburtonageocargo-bundlearchiverefstagsv0.6.0.tar.gz"
   sha256 "1ab5d3175e1828fe3b8b9bed9048f0279394fef90cd89ea5ff351c7cba2afa10"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/burtonageo/cargo-bundle.git", branch: "master"
+  head "https:github.comburtonageocargo-bundle.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,14 +29,14 @@ class CargoBundle < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     # `cargo-bundle` does not like `TERM=dumb`.
-    # https://github.com/burtonageo/cargo-bundle/issues/118
+    # https:github.comburtonageocargo-bundleissues118
     ENV["TERM"] = "xterm"
 
     testproject = "homebrew_test"
@@ -59,16 +59,16 @@ class CargoBundle < Formula
     end
 
     bundle_subdir = if OS.mac?
-      "osx/#{testproject}.app"
+      "osx#{testproject}.app"
     else
-      "deb/#{testproject}_#{version}_amd64.deb"
+      "deb#{testproject}_#{version}_amd64.deb"
     end
-    bundle_path = testpath/testproject/"target/release/bundle"/bundle_subdir
+    bundle_path = testpathtestproject"targetreleasebundle"bundle_subdir
     assert_predicate bundle_path, :exist?
     return if OS.linux? # The test below has no equivalent on Linux.
 
-    cargo_built_bin = testpath/testproject/"target/release"/testproject
-    cargo_bundled_bin = bundle_path/"Contents/MacOS"/testproject
+    cargo_built_bin = testpathtestproject"targetrelease"testproject
+    cargo_bundled_bin = bundle_path"ContentsMacOS"testproject
     assert_equal shell_output(cargo_built_bin), shell_output(cargo_bundled_bin)
   end
 end

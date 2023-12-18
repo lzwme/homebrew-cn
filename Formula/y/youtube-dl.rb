@@ -2,16 +2,16 @@ class YoutubeDl < Formula
   include Language::Python::Virtualenv
 
   desc "Download YouTube videos from the command-line"
-  homepage "https://ytdl-org.github.io/youtube-dl/"
+  homepage "https:ytdl-org.github.ioyoutube-dl"
   license "Unlicense"
 
   stable do
-    url "https://files.pythonhosted.org/packages/01/4f/ab0d0806f4d818168d0ec833df14078c9d1ddddb5c42fa7bfb6f15ecbfa7/youtube_dl-2021.12.17.tar.gz"
+    url "https:files.pythonhosted.orgpackages014fab0d0806f4d818168d0ec833df14078c9d1ddddb5c42fa7bfb6f15ecbfa7youtube_dl-2021.12.17.tar.gz"
     sha256 "bc59e86c5d15d887ac590454511f08ce2c47698d5a82c27bfe27b5d814bbaed2"
 
     # Backport fix for extractor handling consent
     patch do
-      url "https://github.com/ytdl-org/youtube-dl/commit/aaed4884ed9954b8b69c3ca5254418ec578ed0b9.patch?full_index=1"
+      url "https:github.comytdl-orgyoutube-dlcommitaaed4884ed9954b8b69c3ca5254418ec578ed0b9.patch?full_index=1"
       sha256 "3078402768839f4ad611bcb7ab3b221d1a97626c62c4f1bdb2f85598fa45fa96"
     end
   end
@@ -28,12 +28,12 @@ class YoutubeDl < Formula
   end
 
   head do
-    url "https://github.com/ytdl-org/youtube-dl.git", branch: "master"
+    url "https:github.comytdl-orgyoutube-dl.git", branch: "master"
     depends_on "pandoc" => :build
   end
 
-  # https://github.com/ytdl-org/youtube-dl/issues/31585
-  # https://github.com/ytdl-org/youtube-dl/issues/31067
+  # https:github.comytdl-orgyoutube-dlissues31585
+  # https:github.comytdl-orgyoutube-dlissues31067
   deprecate! date: "2023-11-23", because: "has a failing test since forever and no new release since 2021"
 
   depends_on "python@3.12"
@@ -42,18 +42,18 @@ class YoutubeDl < Formula
     python3 = which("python3.12")
     if build.head?
       system "make", "PREFIX=#{prefix}", "MANDIR=#{man}", "PYTHON=#{python3}", "install"
-      fish_completion.install prefix/"etc/fish/completions/youtube-dl.fish"
-      (prefix/"etc/fish").rmtree
+      fish_completion.install prefix"etcfishcompletionsyoutube-dl.fish"
+      (prefix"etcfish").rmtree
     else
       virtualenv_install_with_resources
       # Handle "ERROR: Unable to extract uploader id" until new release
-      # https://github.com/ytdl-org/youtube-dl/issues/31530
-      inreplace libexec/Language::Python.site_packages(python3)/"youtube_dl/extractor/youtube.py",
+      # https:github.comytdl-orgyoutube-dlissues31530
+      inreplace libexecLanguage::Python.site_packages(python3)"youtube_dlextractoryoutube.py",
                 "owner_profile_url, 'uploader id')",
                 "owner_profile_url, 'uploader id', fatal=False)"
-      man1.install_symlink libexec/"share/man/man1/youtube-dl.1" => "youtube-dl.1"
-      bash_completion.install libexec/"etc/bash_completion.d/youtube-dl.bash-completion"
-      fish_completion.install libexec/"etc/fish/completions/youtube-dl.fish"
+      man1.install_symlink libexec"sharemanman1youtube-dl.1" => "youtube-dl.1"
+      bash_completion.install libexec"etcbash_completion.dyoutube-dl.bash-completion"
+      fish_completion.install libexec"etcfishcompletionsyoutube-dl.fish"
     end
   end
 
@@ -68,8 +68,8 @@ class YoutubeDl < Formula
 
   test do
     # commit history of homebrew-core repo
-    system "#{bin}/youtube-dl", "--simulate", "https://www.youtube.com/watch?v=pOtd1cbOP7k"
+    system "#{bin}youtube-dl", "--simulate", "https:www.youtube.comwatch?v=pOtd1cbOP7k"
     # homebrew playlist
-    system "#{bin}/youtube-dl", "--simulate", "--yes-playlist", "https://www.youtube.com/watch?v=pOtd1cbOP7k&list=PLMsZ739TZDoLj9u_nob8jBKSC-mZb0Nhj"
+    system "#{bin}youtube-dl", "--simulate", "--yes-playlist", "https:www.youtube.comwatch?v=pOtd1cbOP7k&list=PLMsZ739TZDoLj9u_nob8jBKSC-mZb0Nhj"
   end
 end

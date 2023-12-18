@@ -2,10 +2,10 @@ cask "font-jetbrains-mono-nerd-font" do
   version "3.1.1"
   sha256 "6481301aaeab1d537c7eef436698a7511e74090cad90a4a7ef6879e2848d21aa"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/JetBrainsMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}JetBrainsMono.zip"
   name "JetBrainsMono Nerd Font families (JetBrains Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

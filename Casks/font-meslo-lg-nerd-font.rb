@@ -2,10 +2,10 @@ cask "font-meslo-lg-nerd-font" do
   version "3.1.1"
   sha256 "7c1096e15649443bb0b177d4727e8fbaf032ebfad11741838d4572e33487a2f7"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Meslo.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Meslo.zip"
   name "MesloLG Nerd Font families (Meslo LG)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

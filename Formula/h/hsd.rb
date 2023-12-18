@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Hsd < Formula
   desc "Handshake Daemon & Full Node"
-  homepage "https://handshake.org"
-  url "https://ghproxy.com/https://github.com/handshake-org/hsd/archive/refs/tags/v6.1.1.tar.gz"
+  homepage "https:handshake.org"
+  url "https:github.comhandshake-orghsdarchiverefstagsv6.1.1.tar.gz"
   sha256 "6a0040832f92b08973b2eb5dd350ee7b6cb20234b0d523f133b935e876e9d9a6"
   license "MIT"
 
@@ -27,24 +27,24 @@ class Hsd < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
   end
 
   test do
-    (testpath/"script.js").write <<~EOS
+    (testpath"script.js").write <<~EOS
       const assert = require('assert');
-      const hsd = require('#{libexec}/lib/node_modules/hsd');
+      const hsd = require('#{libexec}libnode_moduleshsd');
       assert(hsd);
 
       const node = new hsd.FullNode({
-        prefix: '#{testpath}/.hsd',
+        prefix: '#{testpath}.hsd',
         memory: false
       });
       (async () => {
         await node.ensure();
       })();
     EOS
-    system Formula["node"].opt_bin/"node", testpath/"script.js"
-    assert_predicate testpath/".hsd", :directory?
+    system Formula["node"].opt_bin"node", testpath"script.js"
+    assert_predicate testpath".hsd", :directory?
   end
 end

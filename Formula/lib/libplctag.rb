@@ -1,7 +1,7 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
-  homepage "https://github.com/libplctag/libplctag"
-  url "https://ghproxy.com/https://github.com/libplctag/libplctag/archive/refs/tags/v2.5.5.tar.gz"
+  homepage "https:github.comlibplctaglibplctag"
+  url "https:github.comlibplctaglibplctagarchiverefstagsv2.5.5.tar.gz"
   sha256 "ff9aee851c75fca28dc8a1e500d456d48fe34ba7046860a951be9d47a2e2afa2"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
@@ -30,7 +30,7 @@ class Libplctag < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
       #include <libplctag.h>
 
@@ -42,6 +42,6 @@ class Libplctag < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lplctag", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

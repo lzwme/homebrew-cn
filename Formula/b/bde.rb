@@ -1,13 +1,13 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
-  homepage "https://github.com/bloomberg/bde"
-  url "https://ghproxy.com/https://github.com/bloomberg/bde/archive/refs/tags/3.124.0.0.tar.gz"
+  homepage "https:github.combloombergbde"
+  url "https:github.combloombergbdearchiverefstags3.124.0.0.tar.gz"
   sha256 "f33ff2b4cf8eec1619866b35f9655e464d3414dbd1e9c979358f6fab259c4137"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,23 +27,23 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https://ghproxy.com/https://github.com/bloomberg/bde-tools/archive/refs/tags/3.124.0.0.tar.gz"
+    url "https:github.combloombergbde-toolsarchiverefstags3.124.0.0.tar.gz"
     sha256 "f38b95a174e27a3f82cd8b30421dd0036ca7f39bd89cd3413d0c2d78756dd29c"
   end
 
   def install
-    (buildpath/"bde-tools").install resource("bde-tools")
+    (buildpath"bde-tools").install resource("bde-tools")
 
     # Use brewed pcre2 instead of bundled sources
-    inreplace "project.cmake", "${listDir}/thirdparty/pcre2\n", ""
-    inreplace "groups/bdl/group/bdl.dep", "pcre2", "libpcre2-posix"
-    inreplace "groups/bdl/bdlpcre/bdlpcre_regex.h", "#include <pcre2/pcre2.h>", "#include <pcre2.h>"
+    inreplace "project.cmake", "${listDir}thirdpartypcre2\n", ""
+    inreplace "groupsbdlgroupbdl.dep", "pcre2", "libpcre2-posix"
+    inreplace "groupsbdlbdlpcrebdlpcre_regex.h", "#include <pcre2pcre2.h>", "#include <pcre2.h>"
 
-    toolchain_file = "bde-tools/cmake/toolchains/#{OS.kernel_name.downcase}/default.cmake"
+    toolchain_file = "bde-toolscmaketoolchains#{OS.kernel_name.downcase}default.cmake"
     args = std_cmake_args + %W[
       -DBUILD_BITNESS=64
       -DUFID=opt_exc_mt_64_shr
-      -DCMAKE_MODULE_PATH=./bde-tools/cmake
+      -DCMAKE_MODULE_PATH=.bde-toolscmake
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_TOOLCHAIN_FILE=#{toolchain_file}
       -DPYTHON_EXECUTABLE=#{which("python3.12")}
@@ -54,8 +54,8 @@ class Bde < Formula
     system "cmake", "--install", "build"
 
     # CMake install step does not conform to FHS
-    lib.install Dir[bin/"so/64/*"]
-    lib.install lib/"opt_exc_mt_shr/cmake"
+    lib.install Dir[bin"so64*"]
+    lib.install lib"opt_exc_mt_shrcmake"
   end
 
   test do
@@ -63,7 +63,7 @@ class Bde < Formula
 
     # bde tests are incredibly performance intensive
     # test below does a simple sanity check for linking against bsl.
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <bsl_string.h>
       #include <bslma_default.h>
       int main() {
@@ -73,6 +73,6 @@ class Bde < Formula
       }
     EOS
     system ENV.cxx, "-I#{include}", "test.cpp", "-L#{lib}", "-lbsl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

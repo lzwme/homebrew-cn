@@ -1,10 +1,10 @@
 class Dalfox < Formula
   desc "XSS scanner and utility focused on automation"
-  homepage "https://dalfox.hahwul.com"
-  url "https://ghproxy.com/https://github.com/hahwul/dalfox/archive/refs/tags/v2.9.1.tar.gz"
+  homepage "https:dalfox.hahwul.com"
+  url "https:github.comhahwuldalfoxarchiverefstagsv2.9.1.tar.gz"
   sha256 "aaeac4663757b1c0a1477d78cc6c793023ac01c154ec79f6a1746db7d0cf1b2d"
   license "MIT"
-  head "https://github.com/hahwul/dalfox.git", branch: "main"
+  head "https:github.comhahwuldalfox.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c00b154919eedecb66cd8e825aec5a5d80b08a97ab10e800328b7b36999ed59"
@@ -21,14 +21,14 @@ class Dalfox < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"dalfox", "completion")
+    generate_completions_from_executable(bin"dalfox", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dalfox version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}dalfox version 2>&1")
 
-    url = "http://testphp.vulnweb.com/listproducts.php?cat=123&artist=123&asdf=ff"
-    output = shell_output("#{bin}/dalfox url #{url}")
+    url = "http:testphp.vulnweb.comlistproducts.php?cat=123&artist=123&asdf=ff"
+    output = shell_output("#{bin}dalfox url #{url}")
     assert_match "[POC][G][GET][BUILTIN]", output
   end
 end

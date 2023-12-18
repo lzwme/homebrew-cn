@@ -5,10 +5,10 @@ cask "vapor" do
   sha256 arm:   "24fc0f831696fe2276a878f8eb4144b5f78c65d13d0a4542f537c900e863d08f",
          intel: "b3562847d4c3effd19d65713220e4fb6fab703d732db67ab990aaff9fdfb1988"
 
-  url "https://ghproxy.com/https://github.com/NCAR/VAPOR/releases/download/v#{version}/VAPOR#{version.major}-#{version}-Darwin#{arch}.dmg"
+  url "https:github.comNCARVAPORreleasesdownloadv#{version}VAPOR#{version.major}-#{version}-Darwin#{arch}.dmg"
   name "VAPOR"
   desc "Visualization and analysis platform"
-  homepage "https://github.com/NCAR/VAPOR"
+  homepage "https:github.comNCARVAPOR"
 
   livecheck do
     url :url

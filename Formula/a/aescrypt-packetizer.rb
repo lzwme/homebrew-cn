@@ -1,12 +1,12 @@
 class AescryptPacketizer < Formula
   desc "Encrypt and decrypt using 256-bit AES encryption"
-  homepage "https://www.aescrypt.com"
-  url "https://www.aescrypt.com/download/v3/linux/aescrypt-3.16.tgz"
+  homepage "https:www.aescrypt.com"
+  url "https:www.aescrypt.comdownloadv3linuxaescrypt-3.16.tgz"
   sha256 "e2e192d0b45eab9748efe59e97b656cc55f1faeb595a2f77ab84d44b0ec084d2"
 
   livecheck do
-    url "https://www.aescrypt.com/download/"
-    regex(%r{href=.*?/linux/aescrypt[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https:www.aescrypt.comdownload"
+    regex(%r{href=.*?linuxaescrypt[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class AescryptPacketizer < Formula
   end
 
   head do
-    url "https://github.com/paulej/AESCrypt.git", branch: "master"
+    url "https:github.compaulejAESCrypt.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,7 +43,7 @@ class AescryptPacketizer < Formula
       ]
       args << "--enable-iconv" if OS.mac?
 
-      system "./configure", *args
+      system ".configure", *args
       system "make", "install"
     else
       cd "src" do
@@ -52,12 +52,12 @@ class AescryptPacketizer < Formula
         bin.install "aescrypt"
         bin.install "aescrypt_keygen"
       end
-      man1.install "man/aescrypt.1"
+      man1.install "manaescrypt.1"
     end
 
     # To prevent conflict with our other aescrypt, rename the binaries.
-    mv "#{bin}/aescrypt", "#{bin}/paescrypt"
-    mv "#{bin}/aescrypt_keygen", "#{bin}/paescrypt_keygen"
+    mv "#{bin}aescrypt", "#{bin}paescrypt"
+    mv "#{bin}aescrypt_keygen", "#{bin}paescrypt_keygen"
   end
 
   def caveats
@@ -68,14 +68,14 @@ class AescryptPacketizer < Formula
   end
 
   test do
-    path = testpath/"secret.txt"
+    path = testpath"secret.txt"
     original_contents = "What grows when it eats, but dies when it drinks?"
     path.write original_contents
 
-    system bin/"paescrypt", "-e", "-p", "fire", path
-    assert_predicate testpath/"#{path}.aes", :exist?
+    system bin"paescrypt", "-e", "-p", "fire", path
+    assert_predicate testpath"#{path}.aes", :exist?
 
-    system bin/"paescrypt", "-d", "-p", "fire", "#{path}.aes"
+    system bin"paescrypt", "-d", "-p", "fire", "#{path}.aes"
     assert_equal original_contents, path.read
   end
 end

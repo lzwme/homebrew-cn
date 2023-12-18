@@ -1,14 +1,14 @@
 class Libuv < Formula
-  desc "Multi-platform support library with a focus on asynchronous I/O"
-  homepage "https://libuv.org"
-  url "https://ghproxy.com/https://github.com/libuv/libuv/archive/refs/tags/v1.47.0.tar.gz"
+  desc "Multi-platform support library with a focus on asynchronous IO"
+  homepage "https:libuv.org"
+  url "https:github.comlibuvlibuvarchiverefstagsv1.47.0.tar.gz"
   sha256 "d50af7e6d72526db137e66fad812421c8a1cae09d146b0ec2bb9a22c5f23ba93"
   license "MIT"
-  head "https://github.com/libuv/libuv.git", branch: "v1.x"
+  head "https:github.comlibuvlibuv.git", branch: "v1.x"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -35,18 +35,18 @@ class Libuv < Formula
     # This isn't yet handled by the make install process sadly.
     cd "docs" do
       system "make", "man"
-      man1.install "build/man/libuv.1"
+      man1.install "buildmanlibuv.1"
     end
 
-    system "./autogen.sh"
-    system "./configure", *std_configure_args,
+    system ".autogen.sh"
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <uv.h>
       #include <stdlib.h>
 
@@ -60,15 +60,15 @@ class Libuv < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-luv", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end
 
 __END__
-diff --git a/src/unix/fs.c b/src/unix/fs.c
+diff --git asrcunixfs.c bsrcunixfs.c
 index 891306da..9671f0dd 100644
---- a/src/unix/fs.c
-+++ b/src/unix/fs.c
+--- asrcunixfs.c
++++ bsrcunixfs.c
 @@ -84,7 +84,9 @@
  
  #if defined(__CYGWIN__) ||                                                    \

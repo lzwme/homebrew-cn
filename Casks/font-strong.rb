@@ -2,10 +2,10 @@ cask "font-strong" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/strong/Strong-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflstrongStrong-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Strong"
-  homepage "https://fonts.google.com/specimen/Strong"
+  homepage "https:fonts.google.comspecimenStrong"
 
   font "Strong-Regular.ttf"
 

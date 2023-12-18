@@ -1,7 +1,7 @@
 class Gitbucket < Formula
   desc "Git platform powered by Scala offering"
-  homepage "https://github.com/gitbucket/gitbucket"
-  url "https://ghproxy.com/https://github.com/gitbucket/gitbucket/releases/download/4.40.0/gitbucket.war"
+  homepage "https:github.comgitbucketgitbucket"
+  url "https:github.comgitbucketgitbucketreleasesdownload4.40.0gitbucket.war"
   sha256 "7e124543a48f3d349b2e93dddbaace1a7122a18b1a11b0e6ab403f0645d646d5"
   license "Apache-2.0"
 
@@ -16,7 +16,7 @@ class Gitbucket < Formula
   end
 
   head do
-    url "https://github.com/gitbucket/gitbucket.git", branch: "master"
+    url "https:github.comgitbucketgitbucket.git", branch: "master"
     depends_on "sbt" => :build
   end
 
@@ -25,7 +25,7 @@ class Gitbucket < Formula
   def install
     if build.head?
       system "sbt", "executable"
-      libexec.install "target/executable/gitbucket.war"
+      libexec.install "targetexecutablegitbucket.war"
     else
       libexec.install "gitbucket.war"
     end
@@ -38,15 +38,15 @@ class Gitbucket < Formula
   end
 
   service do
-    run [Formula["openjdk"].opt_bin/"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec/"gitbucket.war",
+    run [Formula["openjdk"].opt_bin"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec"gitbucket.war",
          "--host=127.0.0.1", "--port=8080"]
   end
 
   test do
-    java = Formula["openjdk"].opt_bin/"java"
+    java = Formula["openjdk"].opt_bin"java"
     fork do
-      $stdout.reopen(testpath/"output")
-      exec "#{java} -jar #{libexec}/gitbucket.war --port=#{free_port}"
+      $stdout.reopen(testpath"output")
+      exec "#{java} -jar #{libexec}gitbucket.war --port=#{free_port}"
     end
     sleep 12
     File.read("output").exclude?("Exception")

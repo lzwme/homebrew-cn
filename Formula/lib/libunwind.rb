@@ -1,7 +1,7 @@
 class Libunwind < Formula
   desc "C API for determining the call-chain of a program"
-  homepage "https://www.nongnu.org/libunwind/"
-  url "https://ghproxy.com/https://github.com/libunwind/libunwind/releases/download/v1.7.2/libunwind-1.7.2.tar.gz"
+  homepage "https:www.nongnu.orglibunwind"
+  url "https:github.comlibunwindlibunwindreleasesdownloadv1.7.2libunwind-1.7.2.tar.gz"
   sha256 "a18a6a24307443a8ace7a8acc2ce79fbbe6826cd0edf98d6326d0225d6a5d6e6"
   license "MIT"
 
@@ -22,13 +22,13 @@ class Libunwind < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <libunwind.h>
       int main() {
         unw_context_t uc;
@@ -37,6 +37,6 @@ class Libunwind < Formula
       }
     EOS
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lunwind", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

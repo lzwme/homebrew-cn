@@ -1,7 +1,7 @@
 class Lcdproc < Formula
   desc "Display real-time system information on a LCD"
-  homepage "https://www.lcdproc.org/"
-  url "https://ghproxy.com/https://github.com/lcdproc/lcdproc/releases/download/v0.5.9/lcdproc-0.5.9.tar.gz"
+  homepage "https:www.lcdproc.org"
+  url "https:github.comlcdproclcdprocreleasesdownloadv0.5.9lcdproc-0.5.9.tar.gz"
   sha256 "d48a915496c96ff775b377d2222de3150ae5172bfb84a6ec9f9ceab962f97b83"
   license "GPL-2.0-or-later"
   revision 2
@@ -19,12 +19,12 @@ class Lcdproc < Formula
   depends_on arch: :x86_64
   depends_on "libftdi"
   depends_on "libusb"
-  depends_on "libusb-compat" # Remove when all drivers migrated https://github.com/lcdproc/lcdproc/issues/13
+  depends_on "libusb-compat" # Remove when all drivers migrated https:github.comlcdproclcdprocissues13
 
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-drivers=all",
                           "--enable-libftdi=yes"
@@ -32,6 +32,6 @@ class Lcdproc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/lcdproc -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}lcdproc -v 2>&1")
   end
 end

@@ -1,13 +1,13 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
-  homepage "https://vespa.ai"
-  url "https://ghproxy.com/https://github.com/vespa-engine/vespa/archive/refs/tags/v8.268.18.tar.gz"
+  homepage "https:vespa.ai"
+  url "https:github.comvespa-enginevespaarchiverefstagsv8.268.18.tar.gz"
   sha256 "d94310f5de1c32cfe047c8041643ccc3db25d2b1b29a100a90b959860aefc5dc"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/\D*?(\d+(?:\.\d+)+)(?:-\d+)?/i)
+    regex(\D*?(\d+(?:\.\d+)+)(?:-\d+)?i)
     strategy :github_latest
   end
 
@@ -24,21 +24,21 @@ class VespaCli < Formula
   depends_on "go" => :build
 
   def install
-    cd "client/go" do
+    cd "clientgo" do
       with_env(VERSION: version.to_s, PREFIX: prefix.to_s) do
         system "make", "install", "manpages"
       end
-      generate_completions_from_executable(bin/"vespa", "completion")
+      generate_completions_from_executable(bin"vespa", "completion")
     end
   end
 
   test do
     ENV["VESPA_CLI_HOME"] = testpath
-    assert_match "Vespa CLI version #{version}", shell_output("#{bin}/vespa version")
+    assert_match "Vespa CLI version #{version}", shell_output("#{bin}vespa version")
     doc_id = "id:mynamespace:music::a-head-full-of-dreams"
-    output = shell_output("#{bin}/vespa document get #{doc_id} 2>&1", 1)
+    output = shell_output("#{bin}vespa document get #{doc_id} 2>&1", 1)
     assert_match "Error: deployment not converged", output
-    system "#{bin}/vespa", "config", "set", "target", "cloud"
-    assert_match "target = cloud", shell_output("#{bin}/vespa config get target")
+    system "#{bin}vespa", "config", "set", "target", "cloud"
+    assert_match "target = cloud", shell_output("#{bin}vespa config get target")
   end
 end

@@ -1,7 +1,7 @@
 class BazelRemote < Formula
   desc "Remote cache for Bazel"
-  homepage "https://github.com/buchgr/bazel-remote/"
-  url "https://ghproxy.com/https://github.com/buchgr/bazel-remote/archive/refs/tags/v2.4.3.tar.gz"
+  homepage "https:github.combuchgrbazel-remote"
+  url "https:github.combuchgrbazel-remotearchiverefstagsv2.4.3.tar.gz"
   sha256 "01a84e318ff7ee4aa72d756c40a6ae9753d2dfaaaf5612fe1c8c8a66ad221bde"
   license "Apache-2.0"
 
@@ -29,9 +29,9 @@ class BazelRemote < Formula
     ENV["BAZEL_REMOTE_MAX_SIZE"] = "10"
 
     begin
-      pid = fork { exec "#{bin}/bazel-remote" }
+      pid = fork { exec "#{bin}bazel-remote" }
       sleep 2
-      assert_predicate testpath/"test", :exist?, "Failed to create test directory"
+      assert_predicate testpath"test", :exist?, "Failed to create test directory"
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

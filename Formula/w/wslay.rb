@@ -1,7 +1,7 @@
 class Wslay < Formula
   desc "C websocket library"
-  homepage "https://wslay.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/tatsuhiro-t/wslay/releases/download/release-1.1.1/wslay-1.1.1.tar.xz"
+  homepage "https:wslay.sourceforge.net"
+  url "https:github.comtatsuhiro-twslayreleasesdownloadrelease-1.1.1wslay-1.1.1.tar.xz"
   sha256 "166cfa9e3971f868470057ed924ae1b53f428db061b361b9a17c0508719d2cb5"
   license "MIT"
 
@@ -21,7 +21,7 @@ class Wslay < Formula
   end
 
   head do
-    url "https://github.com/tatsuhiro-t/wslay.git", branch: "master"
+    url "https:github.comtatsuhiro-twslay.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,7 +34,7 @@ class Wslay < Formula
 
   def install
     system "autoreconf", "-fvi" if build.head?
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules"
     system "make", "check"

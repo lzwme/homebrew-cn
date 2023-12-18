@@ -1,7 +1,7 @@
 class SkaffoldAT139 < Formula
   desc "Easy and Repeatable Kubernetes Development"
-  homepage "https://skaffold.dev/"
-  url "https://github.com/GoogleContainerTools/skaffold.git",
+  homepage "https:skaffold.dev"
+  url "https:github.comGoogleContainerToolsskaffold.git",
       tag:      "v1.39.18",
       revision: "56d34aca35d19614743601be84f1987ebfc2e627"
   license "Apache-2.0"
@@ -20,20 +20,20 @@ class SkaffoldAT139 < Formula
 
   keg_only :versioned_formula
 
-  # https://cloud.google.com/deploy/docs/using-skaffold/select-skaffold#skaffold_version_deprecation_and_maintenance_policy
+  # https:cloud.google.comdeploydocsusing-skaffoldselect-skaffold#skaffold_version_deprecation_and_maintenance_policy
   disable! date: "2023-10-18", because: :deprecated_upstream
 
   depends_on "go" => :build
 
   def install
     system "make"
-    bin.install "out/skaffold"
-    generate_completions_from_executable(bin/"skaffold", "completion", shells: [:bash, :zsh])
+    bin.install "outskaffold"
+    generate_completions_from_executable(bin"skaffold", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    (testpath/"Dockerfile").write "FROM scratch"
-    output = shell_output("#{bin}/skaffold init --analyze").chomp
+    (testpath"Dockerfile").write "FROM scratch"
+    output = shell_output("#{bin}skaffold init --analyze").chomp
     assert_equal '{"builders":[{"name":"Docker","payload":{"path":"Dockerfile"}}]}', output
   end
 end

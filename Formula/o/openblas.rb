@@ -1,10 +1,10 @@
 class Openblas < Formula
   desc "Optimized BLAS library"
-  homepage "https://www.openblas.net/"
-  url "https://ghproxy.com/https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.25.tar.gz"
+  homepage "https:www.openblas.net"
+  url "https:github.comxianyiOpenBLASarchiverefstagsv0.3.25.tar.gz"
   sha256 "4c25cb30c4bb23eddca05d7d0a85997b8db6144f5464ba7f8c09ce91e2f35543"
   license "BSD-3-Clause"
-  head "https://github.com/xianyi/OpenBLAS.git", branch: "develop"
+  head "https:github.comxianyiOpenBLAS.git", branch: "develop"
 
   livecheck do
     url :stable
@@ -44,7 +44,7 @@ class Openblas < Formula
     end
 
     # Apple Silicon does not support SVE
-    # https://github.com/xianyi/OpenBLAS/issues/4212
+    # https:github.comxianyiOpenBLASissues4212
     ENV["NO_SVE"] = "1" if Hardware::CPU.arm?
 
     # Must call in two steps
@@ -56,7 +56,7 @@ class Openblas < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <stdlib.h>
       #include <math.h>
@@ -79,6 +79,6 @@ class Openblas < Formula
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lopenblas",
                    "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

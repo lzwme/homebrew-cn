@@ -1,10 +1,10 @@
 class ProtocGenGo < Formula
   desc "Go support for Google's protocol buffers"
-  homepage "https://github.com/protocolbuffers/protobuf-go"
-  url "https://ghproxy.com/https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/v1.31.0.tar.gz"
+  homepage "https:github.comprotocolbuffersprotobuf-go"
+  url "https:github.comprotocolbuffersprotobuf-goarchiverefstagsv1.31.0.tar.gz"
   sha256 "96d670e9bae145ff2dd0f48a3693edb1f45ec3ee56d5f50a5f01cc7e060314bc"
   license "BSD-3-Clause"
-  head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
+  head "https:github.comprotocolbuffersprotobuf-go.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e158eccea6233f49a07d382f5f35642ba95f8426edb51dc50c4445bd7d95139a"
@@ -22,23 +22,23 @@ class ProtocGenGo < Formula
   depends_on "protobuf"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/protoc-gen-go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdprotoc-gen-go"
     prefix.install_metafiles
   end
 
   test do
-    protofile = testpath/"proto3.proto"
+    protofile = testpath"proto3.proto"
     protofile.write <<~EOS
       syntax = "proto3";
       package proto3;
-      option go_package = "package/test";
+      option go_package = "packagetest";
       message Request {
         string name = 1;
         repeated int64 key = 2;
       }
     EOS
     system "protoc", "--go_out=.", "--go_opt=paths=source_relative", "proto3.proto"
-    assert_predicate testpath/"proto3.pb.go", :exist?
-    refute_predicate (testpath/"proto3.pb.go").size, :zero?
+    assert_predicate testpath"proto3.pb.go", :exist?
+    refute_predicate (testpath"proto3.pb.go").size, :zero?
   end
 end

@@ -1,10 +1,10 @@
 class Libirecovery < Formula
-  desc "Library and utility to talk to iBoot/iBSS via USB"
-  homepage "https://www.libimobiledevice.org/"
-  url "https://ghproxy.com/https://github.com/libimobiledevice/libirecovery/releases/download/1.1.0/libirecovery-1.1.0.tar.bz2"
+  desc "Library and utility to talk to iBootiBSS via USB"
+  homepage "https:www.libimobiledevice.org"
+  url "https:github.comlibimobiledevicelibirecoveryreleasesdownload1.1.0libirecovery-1.1.0.tar.bz2"
   sha256 "ee3b1afbc0cab5309492cfcf3e132c6cc002617a57664ee0120ae918318e25f9"
   license "LGPL-2.1-only"
-  head "https://github.com/libimobiledevice/libirecovery.git", branch: "master"
+  head "https:github.comlibimobiledevicelibirecovery.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c23a8f97819e0cb7267f87f7a7fba3489bf3ace8e1f5363f54ae71db07a73b22"
@@ -31,14 +31,14 @@ class Libirecovery < Formula
 
   def install
     if build.head?
-      system "./autogen.sh", *std_configure_args, "--disable-silent-rules"
+      system ".autogen.sh", *std_configure_args, "--disable-silent-rules"
     else
-      system "./configure", *std_configure_args, "--disable-silent-rules"
+      system ".configure", *std_configure_args, "--disable-silent-rules"
     end
     system "make", "install"
   end
 
   test do
-    assert_match "ERROR: Unable to connect to device", shell_output("#{bin}/irecovery -f nothing 2>&1", 255)
+    assert_match "ERROR: Unable to connect to device", shell_output("#{bin}irecovery -f nothing 2>&1", 255)
   end
 end

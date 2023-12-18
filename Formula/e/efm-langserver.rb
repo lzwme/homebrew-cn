@@ -1,10 +1,10 @@
 class EfmLangserver < Formula
   desc "General purpose Language Server"
-  homepage "https://github.com/mattn/efm-langserver"
-  url "https://ghproxy.com/https://github.com/mattn/efm-langserver/archive/refs/tags/v0.0.49.tar.gz"
+  homepage "https:github.commattnefm-langserver"
+  url "https:github.commattnefm-langserverarchiverefstagsv0.0.49.tar.gz"
   sha256 "db9ff85f5eba5439f771488434bb9f4fe93e724094189cac3a536539e7ec1e3e"
   license "MIT"
-  head "https://github.com/mattn/efm-langserver.git", branch: "master"
+  head "https:github.commattnefm-langserver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12d9872df404d4ed9e4ed14f3e9ea941b1466b19c476c5ef8471addac223b5e3"
@@ -23,16 +23,16 @@ class EfmLangserver < Formula
   end
 
   test do
-    (testpath/"config.yml").write <<~EOS
+    (testpath"config.yml").write <<~EOS
       version: 2
       root-markers:
-        - ".git/"
+        - ".git"
       languages:
         python:
           - lint-command: "flake8 --stdin-display-name ${INPUT} -"
             lint-stdin: true
     EOS
-    output = shell_output("#{bin}/efm-langserver -c #{testpath/"config.yml"} -d")
+    output = shell_output("#{bin}efm-langserver -c #{testpath"config.yml"} -d")
     assert_match "version: 2", output
     assert_match "lint-command: flake8 --stdin-display-name ${INPUT} -", output
   end

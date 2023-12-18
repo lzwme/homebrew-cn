@@ -1,11 +1,11 @@
 class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
-  homepage "https://github.com/knative/client"
-  url "https://github.com/knative/client.git",
+  homepage "https:github.comknativeclient"
+  url "https:github.comknativeclient.git",
       tag:      "knative-v1.12.0",
       revision: "ae35736892402050eb910d2b43a70f41e1d225c4"
   license "Apache-2.0"
-  head "https://github.com/knative/client.git", branch: "main"
+  head "https:github.comknativeclient.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70cf84af1c41b456369abcff2b9ff096b35aaa2253934a37a3fe04695ba256ef"
@@ -23,30 +23,30 @@ class Kn < Formula
     ENV["CGO_ENABLED"] = "0"
 
     ldflags = %W[
-      -X knative.dev/client/pkg/kn/commands/version.Version=v#{version}
-      -X knative.dev/client/pkg/kn/commands/version.GitRevision=#{Utils.git_head(length: 8)}
-      -X knative.dev/client/pkg/kn/commands/version.BuildDate=#{time.iso8601}
+      -X knative.devclientpkgkncommandsversion.Version=v#{version}
+      -X knative.devclientpkgkncommandsversion.GitRevision=#{Utils.git_head(length: 8)}
+      -X knative.devclientpkgkncommandsversion.BuildDate=#{time.iso8601}
     ]
 
-    system "go", "build", "-mod=vendor", *std_go_args(ldflags: ldflags), "./cmd/..."
+    system "go", "build", "-mod=vendor", *std_go_args(ldflags: ldflags), ".cmd..."
 
-    generate_completions_from_executable(bin/"kn", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"kn", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    system "#{bin}/kn", "service", "create", "foo",
+    system "#{bin}kn", "service", "create", "foo",
       "--namespace", "bar",
-      "--image", "gcr.io/cloudrun/hello",
+      "--image", "gcr.iocloudrunhello",
       "--target", "."
 
-    yaml = File.read(testpath/"bar/ksvc/foo.yaml")
+    yaml = File.read(testpath"barksvcfoo.yaml")
     assert_match("name: foo", yaml)
     assert_match("namespace: bar", yaml)
-    assert_match("image: gcr.io/cloudrun/hello", yaml)
+    assert_match("image: gcr.iocloudrunhello", yaml)
 
-    version_output = shell_output("#{bin}/kn version")
+    version_output = shell_output("#{bin}kn version")
     assert_match("Version:      v#{version}", version_output)
     assert_match("Build Date:   ", version_output)
-    assert_match(/Git Revision: [a-f0-9]{8}/, version_output)
+    assert_match(Git Revision: [a-f0-9]{8}, version_output)
   end
 end

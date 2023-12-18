@@ -2,12 +2,12 @@ cask "font-gupter" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/gupter"
+      only_path: "oflgupter"
   name "Gupter"
-  homepage "https://fonts.google.com/specimen/Gupter"
+  homepage "https:fonts.google.comspecimenGupter"
 
   font "Gupter-Bold.ttf"
   font "Gupter-Medium.ttf"

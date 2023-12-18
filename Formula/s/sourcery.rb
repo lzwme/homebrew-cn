@@ -1,11 +1,11 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
-  homepage "https://github.com/krzysztofzablocki/Sourcery"
-  url "https://ghproxy.com/https://github.com/krzysztofzablocki/Sourcery/archive/refs/tags/2.1.2.tar.gz"
+  homepage "https:github.comkrzysztofzablockiSourcery"
+  url "https:github.comkrzysztofzablockiSourceryarchiverefstags2.1.2.tar.gz"
   sha256 "e5716851ce7ba0b5e9b187947c725b2d810f7c88ea3f2429d0a5b5d0dabf8787"
   license "MIT"
   version_scheme 1
-  head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
+  head "https:github.comkrzysztofzablockiSourcery.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2a3b55283d36aa0f5012056d6e204d09ce10bea5982c38a7ed816ea7ef8e44f"
@@ -23,12 +23,12 @@ class Sourcery < Formula
 
   def install
     system "rake", "build"
-    bin.install "cli/bin/sourcery"
-    lib.install Dir["cli/lib/*.dylib"]
+    bin.install "clibinsourcery"
+    lib.install Dir["clilib*.dylib"]
   end
 
   test do
-    # Regular functionality requires a non-sandboxed environment, so we can only test version/help here.
-    assert_match version.to_s, shell_output("#{bin}/sourcery --version").chomp
+    # Regular functionality requires a non-sandboxed environment, so we can only test versionhelp here.
+    assert_match version.to_s, shell_output("#{bin}sourcery --version").chomp
   end
 end

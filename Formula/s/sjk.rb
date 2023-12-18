@@ -1,7 +1,7 @@
 class Sjk < Formula
   desc "Swiss Java Knife"
-  homepage "https://github.com/aragozin/jvm-tools"
-  url "https://search.maven.org/remotecontent?filepath=org/gridkit/jvmtool/sjk-plus/0.21/sjk-plus-0.21.jar"
+  homepage "https:github.comaragozinjvm-tools"
+  url "https:search.maven.orgremotecontent?filepath=orggridkitjvmtoolsjk-plus0.21sjk-plus-0.21.jar"
   sha256 "7f574af8d91a85bffa4ef8fa405abcb10acbbc53c01bd5e696909214a8f71267"
   license "Apache-2.0"
 
@@ -21,10 +21,10 @@ class Sjk < Formula
 
   def install
     libexec.install "sjk-plus-#{version}.jar"
-    bin.write_jar_script libexec/"sjk-plus-#{version}.jar", "sjk"
+    bin.write_jar_script libexec"sjk-plus-#{version}.jar", "sjk"
   end
 
   test do
-    system bin/"sjk", "jps"
+    system bin"sjk", "jps"
   end
 end

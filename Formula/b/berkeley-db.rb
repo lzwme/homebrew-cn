@@ -1,15 +1,15 @@
 class BerkeleyDb < Formula
-  desc "High performance key/value database"
-  homepage "https://www.oracle.com/database/technologies/related/berkeleydb.html"
-  url "https://download.oracle.com/berkeley-db/db-18.1.40.tar.gz"
-  mirror "https://fossies.org/linux/misc/db-18.1.40.tar.gz"
+  desc "High performance keyvalue database"
+  homepage "https:www.oracle.comdatabasetechnologiesrelatedberkeleydb.html"
+  url "https:download.oracle.comberkeley-dbdb-18.1.40.tar.gz"
+  mirror "https:fossies.orglinuxmiscdb-18.1.40.tar.gz"
   sha256 "0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8"
   license "AGPL-3.0-only"
   revision 2
 
   livecheck do
-    url "https://www.oracle.com/database/technologies/related/berkeleydb-downloads.html"
-    regex(/Berkeley\s*DB[^(]*?\(\s*v?(\d+(?:\.\d+)+)\s*\)/i)
+    url "https:www.oracle.comdatabasetechnologiesrelatedberkeleydb-downloads.html"
+    regex(Berkeley\s*DB[^(]*?\(\s*v?(\d+(?:\.\d+)+)\s*\)i)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class BerkeleyDb < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     directory "dist"
   end
@@ -56,16 +56,16 @@ class BerkeleyDb < Formula
 
     # BerkeleyDB requires you to build everything from the build_unix subdirectory
     cd "build_unix" do
-      system "../dist/configure", *args
+      system "..distconfigure", *args
       system "make", "install", "DOCLIST=license"
 
       # delete docs dir because it is huge
-      rm_rf prefix/"docs"
+      rm_rf prefix"docs"
     end
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <assert.h>
       #include <string.h>
       #include <db_cxx.h>
@@ -92,7 +92,7 @@ class BerkeleyDb < Formula
       -ldb_cxx
     ]
     system ENV.cxx, "test.cpp", "-o", "test", *flags
-    system "./test"
-    assert_predicate testpath/"test.db", :exist?
+    system ".test"
+    assert_predicate testpath"test.db", :exist?
   end
 end

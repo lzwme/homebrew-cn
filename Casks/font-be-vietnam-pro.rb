@@ -2,13 +2,13 @@ cask "font-be-vietnam-pro" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/bevietnampro"
+      only_path: "oflbevietnampro"
   name "Be Vietnam Pro"
   desc "Well suited to tech companies and startups"
-  homepage "https://fonts.google.com/specimen/Be+Vietnam+Pro"
+  homepage "https:fonts.google.comspecimenBe+Vietnam+Pro"
 
   font "BeVietnamPro-Black.ttf"
   font "BeVietnamPro-BlackItalic.ttf"

@@ -2,10 +2,10 @@ cask "font-carme" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/carme/Carme-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcarmeCarme-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Carme"
-  homepage "https://fonts.google.com/specimen/Carme"
+  homepage "https:fonts.google.comspecimenCarme"
 
   font "Carme-Regular.ttf"
 

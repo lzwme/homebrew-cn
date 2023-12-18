@@ -1,16 +1,16 @@
 class MysqlAT80 < Formula
   desc "Open source relational database management system"
-  homepage "https://dev.mysql.com/doc/refman/8.0/en/"
+  homepage "https:dev.mysql.comdocrefman8.0en"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  # https://bugs.mysql.com/bug.php?id=111469
-  # https://bugs.mysql.com/bug.php?id=113045
-  url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.35.tar.gz"
+  # https:bugs.mysql.combug.php?id=111469
+  # https:bugs.mysql.combug.php?id=113045
+  url "https:cdn.mysql.comDownloadsMySQL-8.0mysql-boost-8.0.35.tar.gz"
   sha256 "41253c3a99cefcf6d806040c6687692eb0c37b4c7aae5882417dfb9c5d3ce4ce"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/8.0.html?tpl=files&os=src&version=8.0"
-    regex(/href=.*?mysql[._-](?:boost[._-])?v?(8\.0(?:\.\d+)*)\.t/i)
+    url "https:dev.mysql.comdownloadsmysql8.0.html?tpl=files&os=src&version=8.0"
+    regex(href=.*?mysql[._-](?:boost[._-])?v?(8\.0(?:\.\d+)*)\.ti)
   end
 
   bottle do
@@ -33,7 +33,7 @@ class MysqlAT80 < Formula
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "protobuf@21" # https://bugs.mysql.com/bug.php?id=111469
+  depends_on "protobuf@21" # https:bugs.mysql.combug.php?id=111469
   depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"
 
@@ -50,18 +50,18 @@ class MysqlAT80 < Formula
 
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
-  # https://github.com/Homebrew/homebrew-test-bot/pull/820
+  # https:github.comHomebrewhomebrew-test-botpull820
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches030f7433e89376ffcff836bb68b3903ab90f9cdcmysqlboost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
   end
 
   # Fix for "Cannot find system zlib libraries" even though they are installed.
-  # https://bugs.mysql.com/bug.php?id=110745
+  # https:bugs.mysql.combug.php?id=110745
   patch :DATA
 
   def datadir
-    var/"mysql"
+    var"mysql"
   end
 
   def install
@@ -72,18 +72,18 @@ class MysqlAT80 < Formula
       ENV.append_to_cflags "-fPIC"
 
       # Disable ABI checking
-      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
+      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     end
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_DOCDIR=share/doc/#{name}
-      -DINSTALL_INCLUDEDIR=include/mysql
-      -DINSTALL_INFODIR=share/info
-      -DINSTALL_MANDIR=share/man
-      -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DINSTALL_PLUGINDIR=lib/plugin
+      -DINSTALL_DOCDIR=sharedoc#{name}
+      -DINSTALL_INCLUDEDIR=includemysql
+      -DINSTALL_INFODIR=shareinfo
+      -DINSTALL_MANDIR=shareman
+      -DINSTALL_MYSQLSHAREDIR=sharemysql
+      -DINSTALL_PLUGINDIR=libplugin
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DWITH_SYSTEM_LIBS=ON
@@ -106,28 +106,28 @@ class MysqlAT80 < Formula
     system "cmake", "--install", "build"
 
     # Fix bad linker flags in `mysql_config`.
-    # https://bugs.mysql.com/bug.php?id=111011
-    inreplace bin/"mysql_config", "-lzlib", "-lz"
+    # https:bugs.mysql.combug.php?id=111011
+    inreplace bin"mysql_config", "-lzlib", "-lz"
 
-    (prefix/"mysql-test").cd do
-      system "./mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"
+    (prefix"mysql-test").cd do
+      system ".mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"
     end
 
     # Remove the tests directory
-    rm_rf prefix/"mysql-test"
+    rm_rf prefix"mysql-test"
 
     # Don't create databases inside of the prefix!
-    # See: https://github.com/Homebrew/homebrew/issues/4975
-    rm_rf prefix/"data"
+    # See: https:github.comHomebrewhomebrewissues4975
+    rm_rf prefix"data"
 
     # Fix up the control script and link into bin.
-    inreplace "#{prefix}/support-files/mysql.server",
-              /^(PATH=".*)(")/,
-              "\\1:#{HOMEBREW_PREFIX}/bin\\2"
-    bin.install_symlink prefix/"support-files/mysql.server"
+    inreplace "#{prefix}support-filesmysql.server",
+              ^(PATH=".*)("),
+              "\\1:#{HOMEBREW_PREFIX}bin\\2"
+    bin.install_symlink prefix"support-filesmysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath/"my.cnf").write <<~EOS
+    (buildpath"my.cnf").write <<~EOS
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
@@ -138,16 +138,16 @@ class MysqlAT80 < Formula
   end
 
   def post_install
-    # Make sure the var/mysql directory exists
-    (var/"mysql").mkpath
+    # Make sure the varmysql directory exists
+    (var"mysql").mkpath
 
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless (datadir/"mysql/general_log.CSM").exist?
+    unless (datadir"mysqlgeneral_log.CSM").exist?
       ENV["TMPDIR"] = nil
-      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-        "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
+      system bin"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
+        "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=tmp"
     end
   end
 
@@ -161,7 +161,7 @@ class MysqlAT80 < Formula
       To connect run:
           mysql -u root
     EOS
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
+    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
       s += <<~EOS
 
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
@@ -172,33 +172,33 @@ class MysqlAT80 < Formula
   end
 
   service do
-    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
+    run [opt_bin"mysqld_safe", "--datadir=#{var}mysql"]
     keep_alive true
-    working_dir var/"mysql"
+    working_dir var"mysql"
   end
 
   test do
-    (testpath/"mysql").mkpath
-    (testpath/"tmp").mkpath
-    system bin/"mysqld", "--no-defaults", "--initialize-insecure", "--user=#{ENV["USER"]}",
-      "--basedir=#{prefix}", "--datadir=#{testpath}/mysql", "--tmpdir=#{testpath}/tmp"
+    (testpath"mysql").mkpath
+    (testpath"tmp").mkpath
+    system bin"mysqld", "--no-defaults", "--initialize-insecure", "--user=#{ENV["USER"]}",
+      "--basedir=#{prefix}", "--datadir=#{testpath}mysql", "--tmpdir=#{testpath}tmp"
     port = free_port
     fork do
-      system "#{bin}/mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
-        "--datadir=#{testpath}/mysql", "--port=#{port}", "--tmpdir=#{testpath}/tmp"
+      system "#{bin}mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
+        "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
     end
     sleep 5
     assert_match "information_schema",
-      shell_output("#{bin}/mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system "#{bin}/mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+      shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
+    system "#{bin}mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end
 
 __END__
-diff --git a/cmake/zlib.cmake b/cmake/zlib.cmake
+diff --git acmakezlib.cmake bcmakezlib.cmake
 index 460d87a..36fbd60 100644
---- a/cmake/zlib.cmake
-+++ b/cmake/zlib.cmake
+--- acmakezlib.cmake
++++ bcmakezlib.cmake
 @@ -50,7 +50,7 @@ FUNCTION(FIND_ZLIB_VERSION ZLIB_INCLUDE_DIR)
    MESSAGE(STATUS "ZLIB_INCLUDE_DIR ${ZLIB_INCLUDE_DIR}")
  ENDFUNCTION(FIND_ZLIB_VERSION)

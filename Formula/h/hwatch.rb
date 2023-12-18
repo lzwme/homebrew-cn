@@ -1,10 +1,10 @@
 class Hwatch < Formula
   desc "Modern alternative to the watch command"
-  homepage "https://github.com/blacknon/hwatch"
-  url "https://ghproxy.com/https://github.com/blacknon/hwatch/archive/refs/tags/0.3.10.tar.gz"
+  homepage "https:github.comblacknonhwatch"
+  url "https:github.comblacknonhwatcharchiverefstags0.3.10.tar.gz"
   sha256 "e2427fc634eb4ab4cd28d9629ee06896494b70a009eaacff302f849939291670"
   license "MIT"
-  head "https://github.com/blacknon/hwatch.git", branch: "master"
+  head "https:github.comblacknonhwatch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f032b24bbc206eb795951e8c382169e50851a29e12f39791791fe658a61b3c7"
@@ -22,22 +22,22 @@ class Hwatch < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "man/hwatch.1"
-    bash_completion.install "completion/bash/hwatch-completion.bash" => "hwatch"
-    zsh_completion.install "completion/zsh/_hwatch"
-    fish_completion.install "completion/fish/hwatch.fish"
+    man1.install "manhwatch.1"
+    bash_completion.install "completionbashhwatch-completion.bash" => "hwatch"
+    zsh_completion.install "completionzsh_hwatch"
+    fish_completion.install "completionfishhwatch.fish"
   end
 
   test do
     begin
       pid = fork do
-        system bin/"hwatch", "--interval", "1", "date"
+        system bin"hwatch", "--interval", "1", "date"
       end
       sleep 2
     ensure
       Process.kill("TERM", pid)
     end
 
-    assert_match "hwatch #{version}", shell_output("#{bin}/hwatch --version")
+    assert_match "hwatch #{version}", shell_output("#{bin}hwatch --version")
   end
 end

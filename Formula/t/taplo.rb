@@ -1,14 +1,14 @@
 class Taplo < Formula
   desc "TOML toolkit written in Rust"
-  homepage "https://taplo.tamasfe.dev"
-  url "https://ghproxy.com/https://github.com/tamasfe/taplo/archive/refs/tags/release-taplo-cli-0.8.1.tar.gz"
+  homepage "https:taplo.tamasfe.dev"
+  url "https:github.comtamasfetaploarchiverefstagsrelease-taplo-cli-0.8.1.tar.gz"
   sha256 "8c011d724bb6dd5d6af1fc4d416409f6686102850a6e74779f6bfa785c03bf4f"
   license "MIT"
-  head "https://github.com/tamasfe/taplo.git", branch: "master"
+  head "https:github.comtamasfetaplo.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^release-taplo-cli[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^release-taplo-cli[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,17 +26,17 @@ class Taplo < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--features", "lsp", *std_cargo_args(path: "crates/taplo-cli")
+    system "cargo", "install", "--features", "lsp", *std_cargo_args(path: "cratestaplo-cli")
   end
 
   test do
-    (testpath/"invalid.toml").write <<~EOS
+    (testpath"invalid.toml").write <<~EOS
       # INVALID TOML DOC
       fruit = []
 
       [[fruit]] # Not allowed
     EOS
 
-    assert_match("invalid file error", shell_output("#{bin}/taplo lint invalid.toml 2>&1", 1))
+    assert_match("invalid file error", shell_output("#{bin}taplo lint invalid.toml 2>&1", 1))
   end
 end

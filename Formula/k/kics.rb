@@ -1,14 +1,14 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
-  homepage "https://kics.io/"
-  url "https://ghproxy.com/https://github.com/Checkmarx/kics/archive/refs/tags/v1.7.11.tar.gz"
+  homepage "https:kics.io"
+  url "https:github.comCheckmarxkicsarchiverefstagsv1.7.11.tar.gz"
   sha256 "bcb5a5710d184151407e9b8065e3323a2501ee9c96cdba5bd2c15f9a0c76e1e9"
   license "Apache-2.0"
-  head "https://github.com/Checkmarx/kics.git", branch: "master"
+  head "https:github.comCheckmarxkics.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,27 +26,27 @@ class Kics < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/Checkmarx/kics/internal/constants.Version=#{version}
+      -X github.comCheckmarxkicsinternalconstants.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/console"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdconsole"
 
     pkgshare.install "assets"
   end
 
   def caveats
     <<~EOS
-      KICS queries are placed under #{opt_pkgshare}/assets/queries
-      To use KICS default queries add KICS_QUERIES_PATH env to your ~/.zshrc or ~/.zprofile:
-          "echo 'export KICS_QUERIES_PATH=#{opt_pkgshare}/assets/queries' >> ~/.zshrc"
+      KICS queries are placed under #{opt_pkgshare}assetsqueries
+      To use KICS default queries add KICS_QUERIES_PATH env to your ~.zshrc or ~.zprofile:
+          "echo 'export KICS_QUERIES_PATH=#{opt_pkgshare}assetsqueries' >> ~.zshrc"
       usage of CLI flag --queries-path takes precedence.
     EOS
   end
 
   test do
-    ENV["KICS_QUERIES_PATH"] = pkgshare/"assets/queries"
+    ENV["KICS_QUERIES_PATH"] = pkgshare"assetsqueries"
     ENV["DISABLE_CRASH_REPORT"] = "0"
 
-    assert_match "Files scanned: 0", shell_output("#{bin}/kics scan -p #{testpath}")
-    assert_match version.to_s, shell_output("#{bin}/kics version")
+    assert_match "Files scanned: 0", shell_output("#{bin}kics scan -p #{testpath}")
+    assert_match version.to_s, shell_output("#{bin}kics version")
   end
 end

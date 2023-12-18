@@ -1,7 +1,7 @@
 class Ancient < Formula
   desc "Decompression routines for ancient formats"
-  homepage "https://github.com/temisu/ancient"
-  url "https://ghproxy.com/https://github.com/temisu/ancient/archive/refs/tags/v2.1.1.tar.gz"
+  homepage "https:github.comtemisuancient"
+  url "https:github.comtemisuancientarchiverefstagsv2.1.1.tar.gz"
   sha256 "6f63e2765866925f1b188baee958d4518720bd0009ab4f50b390ea5028649ec2"
   license "BSD-2-Clause"
 
@@ -24,14 +24,14 @@ class Ancient < Formula
   depends_on "pkg-config" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".autogen.sh"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <ancient/ancient.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <ancientancient.hpp>
 
       int main(int argc, char **argv)
       {
@@ -41,6 +41,6 @@ class Ancient < Formula
     EOS
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-lancient", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

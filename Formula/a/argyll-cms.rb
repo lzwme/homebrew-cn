@@ -1,13 +1,13 @@
 class ArgyllCms < Formula
   desc "ICC compatible color management system"
-  homepage "https://www.argyllcms.com/"
-  url "https://www.argyllcms.com/Argyll_V3.1.0_src.zip"
+  homepage "https:www.argyllcms.com"
+  url "https:www.argyllcms.comArgyll_V3.1.0_src.zip"
   sha256 "4fdd5a1d7bc6dde79a54e350ec9374f6ef00b53903ee0d184cdfa4a11f0ecdcb"
   license "AGPL-3.0-only"
 
   livecheck do
-    url "https://www.argyllcms.com/downloadsrc.html"
-    regex(/href=.*?Argyll[._-]v?(\d+(?:\.\d+)+)[._-]src\.zip/i)
+    url "https:www.argyllcms.comdownloadsrc.html"
+    regex(href=.*?Argyll[._-]v?(\d+(?:\.\d+)+)[._-]src\.zipi)
   end
 
   bottle do
@@ -47,9 +47,9 @@ class ArgyllCms < Formula
 
     # The argyll-cms maintainer told us that they want to keep jam as a build system
     # even if it is not maintained anymore
-    # https://www.freelists.org/post/argyllcms/Status-of-Jam-build,1
+    # https:www.freelists.orgpostargyllcmsStatus-of-Jam-build,1
     # Vendoring jam will allow to get rid of our jam formula
-    url "https://swarm.workshop.perforce.com/downloads/guest/perforce_software/jam/jam-2.6.1.zip"
+    url "https:swarm.workshop.perforce.comdownloadsguestperforce_softwarejamjam-2.6.1.zip"
     sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
 
     # * Ensure <unistd.h> is included on macOS, fixing the following error:
@@ -57,71 +57,71 @@ class ArgyllCms < Formula
     # * Fix a typo that leads to an undeclared function error:
     #   `parse.c:102:20: error: call to undeclared function 'yylineno'`
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/42252ab3d438f7ada66e83b92bb51a9178d3df10/jam/2.6.1-undeclared_functions.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches42252ab3d438f7ada66e83b92bb51a9178d3df10jam2.6.1-undeclared_functions.diff"
       sha256 "d567cbaf3914f38bb8c5017ff01cc40fe85970c34d3ad84dbeda8c893518ffae"
     end
   end
 
   # Fixes a missing header, which is an error by default on arm64 but not x86_64
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/f6ede0dff06c2d9e3383416dc57c5157704b6f3a/argyll-cms/unistd_import.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patchesf6ede0dff06c2d9e3383416dc57c5157704b6f3aargyll-cmsunistd_import.diff"
     sha256 "5ce1e66daf86bcd43a0d2a14181b5e04574757bcbf21c5f27b1f1d22f82a8a6e"
   end
 
   def install
     resource("jam").stage do
       system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}", "LOCATE_TARGET=bin"
-      libexec.install "bin/jam"
+      libexec.install "binjam"
     end
 
     # Remove bundled libraries to prevent fallback
-    %w[jpeg png tiff zlib].each { |l| (buildpath/l).rmtree }
+    %w[jpeg png tiff zlib].each { |l| (buildpathl).rmtree }
 
     inreplace "Jamtop" do |s|
       openssl = Formula["openssl@3"]
       libname = shared_library("lib$(lcase)")
       usr = if OS.mac?
-        "#{MacOS.sdk_path_if_needed}/usr"
+        "#{MacOS.sdk_path_if_needed}usr"
       else
-        "/usr"
+        "usr"
       end
 
       # These two inreplaces make sure all Homebrew and SDK libraries can be found by the Jamfile
-      s.gsub! "[ GLOB /usr/include$(subd) : $(lcase).h $(lcase)lib.h ]",
+      s.gsub! "[ GLOB usrinclude$(subd) : $(lcase).h $(lcase)lib.h ]",
               "[ GLOB #{openssl.opt_include}$(subd) : $(lcase).h $(lcase)lib.h ] || " \
-              "[ GLOB #{HOMEBREW_PREFIX}/include$(subd) : $(lcase).h $(lcase)lib.h ] || " \
-              "[ GLOB #{usr}/include$(subd) : $(lcase).h $(lcase)lib.h ]"
-      s.gsub! "[ GLOB /usr/lib : lib$(lcase).so ]",
+              "[ GLOB #{HOMEBREW_PREFIX}include$(subd) : $(lcase).h $(lcase)lib.h ] || " \
+              "[ GLOB #{usr}include$(subd) : $(lcase).h $(lcase)lib.h ]"
+      s.gsub! "[ GLOB usrlib : lib$(lcase).so ]",
               "[ GLOB #{openssl.opt_lib} : #{libname} ] || " \
-              "[ GLOB #{HOMEBREW_PREFIX}/lib : #{libname} ] || " \
-              "[ GLOB #{usr}/lib : #{libname} lib$(lcase).tbd ]"
+              "[ GLOB #{HOMEBREW_PREFIX}lib : #{libname} ] || " \
+              "[ GLOB #{usr}lib : #{libname} lib$(lcase).tbd ]"
 
       # These two inreplaces make sure the X11 headers can be found on Linux.
-      s.gsub! "/usr/X11R6/include", HOMEBREW_PREFIX/"include"
-      s.gsub! "/usr/X11R6/lib", HOMEBREW_PREFIX/"lib"
+      s.gsub! "usrX11R6include", HOMEBREW_PREFIX"include"
+      s.gsub! "usrX11R6lib", HOMEBREW_PREFIX"lib"
     end
 
     ENV["NUMBER_OF_PROCESSORS"] = ENV.make_jobs.to_s
-    inreplace "makeall.sh", "jam", libexec/"jam"
-    inreplace "makeinstall.sh", "jam", libexec/"jam"
+    inreplace "makeall.sh", "jam", libexec"jam"
+    inreplace "makeinstall.sh", "jam", libexec"jam"
     system "sh", "makeall.sh"
-    system "./makeinstall.sh"
-    rm "bin/License.txt"
+    system ".makeinstall.sh"
+    rm "binLicense.txt"
     prefix.install "bin", "ref", "doc"
 
-    rm libexec/"jam"
+    rm libexec"jam"
   end
 
   test do
-    system bin/"targen", "-d", "0", "test.ti1"
-    system bin/"printtarg", testpath/"test.ti1"
+    system bin"targen", "-d", "0", "test.ti1"
+    system bin"printtarg", testpath"test.ti1"
     %w[test.ti1.ps test.ti1.ti1 test.ti1.ti2].each do |f|
-      assert_predicate testpath/f, :exist?
+      assert_predicate testpathf, :exist?
     end
 
     # Skip this part of the test on Linux because it hangs due to lack of a display.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "Calibrate a Display", shell_output("#{bin}/dispcal 2>&1", 1)
+    assert_match "Calibrate a Display", shell_output("#{bin}dispcal 2>&1", 1)
   end
 end

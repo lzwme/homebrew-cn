@@ -2,14 +2,14 @@ cask "font-comic-mono" do
   version :latest
   sha256 :no_check
 
-  url "https://codeload.github.com/dtinth/comic-mono-font/zip/master",
-      verified: "codeload.github.com/dtinth/comic-mono-font/"
+  url "https:codeload.github.comdtinthcomic-mono-fontzipmaster",
+      verified: "codeload.github.comdtinthcomic-mono-font"
   name "Comic Mono"
   desc "Legible monospace font"
-  homepage "https://dtinth.github.io/comic-mono-font/"
+  homepage "https:dtinth.github.iocomic-mono-font"
 
-  font "comic-mono-font-master/ComicMono.ttf"
-  font "comic-mono-font-master/ComicMono-Bold.ttf"
+  font "comic-mono-font-masterComicMono.ttf"
+  font "comic-mono-font-masterComicMono-Bold.ttf"
 
   # No zap stanza required
 end

@@ -1,7 +1,7 @@
 class Countdown < Formula
   desc "Terminal countdown timer"
-  homepage "https://github.com/antonmedv/countdown"
-  url "https://ghproxy.com/https://github.com/antonmedv/countdown/archive/refs/tags/v1.5.0.tar.gz"
+  homepage "https:github.comantonmedvcountdown"
+  url "https:github.comantonmedvcountdownarchiverefstagsv1.5.0.tar.gz"
   sha256 "ac83ec593674a367913413796e8708680cbb6504c8f68ce17152d800a92ccf3b"
   license "MIT"
 
@@ -24,6 +24,6 @@ class Countdown < Formula
   end
 
   test do
-    pipe_output bin/"countdown", "0m0s"
+    pipe_output bin"countdown", "0m0s"
   end
 end

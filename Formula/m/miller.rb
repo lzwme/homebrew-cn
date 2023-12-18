@@ -1,10 +1,10 @@
 class Miller < Formula
   desc "Like sed, awk, cut, join & sort for name-indexed data such as CSV"
-  homepage "https://github.com/johnkerl/miller"
-  url "https://ghproxy.com/https://github.com/johnkerl/miller/archive/refs/tags/v6.10.0.tar.gz"
+  homepage "https:github.comjohnkerlmiller"
+  url "https:github.comjohnkerlmillerarchiverefstagsv6.10.0.tar.gz"
   sha256 "a7e0fef83e2f8f5fe3c6fce73766209e8ed4906472f0229cbce0930e1f7c5bad"
   license "BSD-2-Clause"
-  head "https://github.com/johnkerl/miller.git", branch: "main"
+  head "https:github.comjohnkerlmiller.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "157cdee40d8b93fcdbf5d430067b56327c9f01b3f47b2cc60039b39e30f368b9"
@@ -19,18 +19,18 @@ class Miller < Formula
   depends_on "go" => :build
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.csv").write <<~EOS
+    (testpath"test.csv").write <<~EOS
       a,b,c
       1,2,3
       4,5,6
     EOS
-    output = pipe_output("#{bin}/mlr --csvlite cut -f a test.csv")
+    output = pipe_output("#{bin}mlr --csvlite cut -f a test.csv")
     assert_match "a\n1\n4\n", output
   end
 end

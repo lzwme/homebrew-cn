@@ -1,7 +1,7 @@
 class Recode < Formula
   desc "Convert character set (charsets)"
-  homepage "https://github.com/rrthomas/recode"
-  url "https://ghproxy.com/https://github.com/rrthomas/recode/releases/download/v3.7.14/recode-3.7.14.tar.gz"
+  homepage "https:github.comrrthomasrecode"
+  url "https:github.comrrthomasrecodereleasesdownloadv3.7.14recode-3.7.14.tar.gz"
   sha256 "786aafd544851a2b13b0a377eac1500f820ce62615ccc2e630b501e7743b9f33"
   license "GPL-3.0-or-later"
 
@@ -24,11 +24,11 @@ class Recode < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/recode --version")
+    assert_match version.to_s, shell_output("#{bin}recode --version")
   end
 end

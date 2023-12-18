@@ -1,10 +1,10 @@
 class Pkger < Formula
-  desc "Embed static files in Go binaries (replacement for gobuffalo/packr)"
-  homepage "https://github.com/markbates/pkger"
-  url "https://ghproxy.com/https://github.com/markbates/pkger/archive/refs/tags/v0.17.1.tar.gz"
+  desc "Embed static files in Go binaries (replacement for gobuffalopackr)"
+  homepage "https:github.commarkbatespkger"
+  url "https:github.commarkbatespkgerarchiverefstagsv0.17.1.tar.gz"
   sha256 "da775b5ec5675f0db75cf295ff07a4a034ba15eb5cc02d278a5767f387fb8273"
   license "MIT"
-  head "https://github.com/markbates/pkger.git", branch: "master"
+  head "https:github.commarkbatespkger.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,15 +24,15 @@ class Pkger < Formula
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args, "./cmd/pkger"
+    system "go", "build", *std_go_args, ".cmdpkger"
   end
 
   test do
     mkdir "test" do
       system "go", "mod", "init", "example.com"
-      system bin/"pkger"
-      assert_predicate testpath/"test/pkged.go", :exist?
-      assert_equal "{\n \".\": null\n}\n", shell_output("#{bin}/pkger parse")
+      system bin"pkger"
+      assert_predicate testpath"testpkged.go", :exist?
+      assert_equal "{\n \".\": null\n}\n", shell_output("#{bin}pkger parse")
     end
   end
 end

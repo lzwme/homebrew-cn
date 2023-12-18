@@ -1,7 +1,7 @@
 class Lune < Formula
   desc "Standalone Luau script runtime"
-  homepage "https://lune-org.github.io/docs"
-  url "https://ghproxy.com/https://github.com/filiptibell/lune/archive/refs/tags/v0.7.11.tar.gz"
+  homepage "https:lune-org.github.iodocs"
+  url "https:github.comfiliptibelllunearchiverefstagsv0.7.11.tar.gz"
   sha256 "ceb7832821a15d36bf5c2821f18dfa07d7d597b0699e2e3f9918115b8baa733b"
   license "MPL-2.0"
 
@@ -22,7 +22,7 @@ class Lune < Formula
   end
 
   test do
-    (testpath/"test.lua").write("print(2 + 2)")
-    assert_equal "4", shell_output("#{bin}/lune test.lua").chomp
+    (testpath"test.lua").write("print(2 + 2)")
+    assert_equal "4", shell_output("#{bin}lune test.lua").chomp
   end
 end

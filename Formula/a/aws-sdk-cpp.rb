@@ -1,12 +1,12 @@
 class AwsSdkCpp < Formula
   desc "AWS SDK for C++"
-  homepage "https://github.com/aws/aws-sdk-cpp"
+  homepage "https:github.comawsaws-sdk-cpp"
   # aws-sdk-cpp should only be updated every 5 releases on multiples of 5
-  url "https://github.com/aws/aws-sdk-cpp.git",
+  url "https:github.comawsaws-sdk-cpp.git",
       tag:      "1.11.225",
       revision: "08603b2b0d8b365c4378057ce97199a8032cef98"
   license "Apache-2.0"
-  head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
+  head "https:github.comawsaws-sdk-cpp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "91dd3eced954153477930904f8dac77859caa04503654ef392154cce4e12b42d"
@@ -32,12 +32,12 @@ class AwsSdkCpp < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    lib.install Dir[lib/"mac/Release/*"].select { |f| File.file? f }
+    lib.install Dir[lib"macRelease*"].select { |f| File.file? f }
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <aws/core/Version.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <awscoreVersion.h>
       #include <iostream>
 
       int main() {
@@ -46,6 +46,6 @@ class AwsSdkCpp < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-laws-cpp-sdk-core", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

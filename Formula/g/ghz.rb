@@ -1,13 +1,13 @@
 class Ghz < Formula
   desc "Simple gRPC benchmarking and load testing tool"
-  homepage "https://ghz.sh"
-  url "https://ghproxy.com/https://github.com/bojand/ghz/archive/refs/tags/v0.117.0.tar.gz"
+  homepage "https:ghz.sh"
+  url "https:github.combojandghzarchiverefstagsv0.117.0.tar.gz"
   sha256 "33014936ee67f8f139e89e342756d8415880b65c6bb6acb9fbf97132745a1528"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,12 +25,12 @@ class Ghz < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmd/ghz/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmdghzmain.go"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ghz -v 2>&1")
-    (testpath/"config.toml").write <<~EOS
+    assert_match version.to_s, shell_output("#{bin}ghz -v 2>&1")
+    (testpath"config.toml").write <<~EOS
       proto = "greeter.proto"
       call = "helloworld.Greeter.SayHello"
       host = "0.0.0.0:50051"
@@ -39,6 +39,6 @@ class Ghz < Formula
       name = "Bob"
     EOS
     assert_match "open greeter.proto: no such file or directory",
-      shell_output("#{bin}/ghz --config config.toml 2>&1", 1)
+      shell_output("#{bin}ghz --config config.toml 2>&1", 1)
   end
 end

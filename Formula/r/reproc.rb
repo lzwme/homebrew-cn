@@ -1,10 +1,10 @@
 class Reproc < Formula
-  desc "Cross-platform (C99/C++11) process library"
-  homepage "https://github.com/DaanDeMeyer/reproc"
-  url "https://ghproxy.com/https://github.com/DaanDeMeyer/reproc/archive/refs/tags/v14.2.4.tar.gz"
+  desc "Cross-platform (C99C++11) process library"
+  homepage "https:github.comDaanDeMeyerreproc"
+  url "https:github.comDaanDeMeyerreprocarchiverefstagsv14.2.4.tar.gz"
   sha256 "55c780f7faa5c8cabd83ebbb84b68e5e0e09732de70a129f6b3c801e905415dd"
   license "MIT"
-  head "https://github.com/DaanDeMeyer/reproc.git", branch: "main"
+  head "https:github.comDaanDeMeyerreproc.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -32,12 +32,12 @@ class Reproc < Formula
     rm_rf "build"
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
-    lib.install "build/reproc/lib/libreproc.a", "build/reproc++/lib/libreproc++.a"
+    lib.install "buildreprocliblibreproc.a", "buildreproc++liblibreproc++.a"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <reproc/run.h>
+    (testpath"test.c").write <<~EOS
+      #include <reprocrun.h>
 
       int main(void) {
         const char *args[] = { "echo", "Hello, world!", NULL };
@@ -45,9 +45,9 @@ class Reproc < Formula
       }
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include <reproc++/run.hpp>
+      #include <reproc++run.hpp>
 
       int main(void) {
         int status = -1;
@@ -64,7 +64,7 @@ class Reproc < Formula
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lreproc", "-o", "test-c"
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}", "-lreproc++", "-o", "test-cpp"
 
-    assert_equal "Hello, world!", shell_output("./test-c").chomp
-    assert_equal "Hello, world!", shell_output("./test-cpp").chomp
+    assert_equal "Hello, world!", shell_output(".test-c").chomp
+    assert_equal "Hello, world!", shell_output(".test-cpp").chomp
   end
 end

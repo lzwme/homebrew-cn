@@ -1,10 +1,10 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
-  homepage "https://ubuntu.com/lxd"
-  url "https://ghproxy.com/https://github.com/canonical/lxd/releases/download/lxd-5.20/lxd-5.20.tar.gz"
+  homepage "https:ubuntu.comlxd"
+  url "https:github.comcanonicallxdreleasesdownloadlxd-5.20lxd-5.20.tar.gz"
   sha256 "2f958b757f4cde64d0f3578da0bda9ee5965a3a70ec0956eddf8287d1290167f"
   license "AGPL-3.0-only"
-  head "https://github.com/canonical/lxd.git", branch: "main"
+  head "https:github.comcanonicallxd.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e10ab2346013418452a0eb4a50c6661a01c04b5cc0aa97777edf684905403b7"
@@ -19,13 +19,13 @@ class Lxc < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./lxc"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".lxc"
   end
 
   test do
-    output = JSON.parse(shell_output("#{bin}/lxc remote list --format json"))
-    assert_equal "https://images.linuxcontainers.org", output["images"]["Addr"]
+    output = JSON.parse(shell_output("#{bin}lxc remote list --format json"))
+    assert_equal "https:images.linuxcontainers.org", output["images"]["Addr"]
 
-    assert_match version.to_s, shell_output("#{bin}/lxc --version")
+    assert_match version.to_s, shell_output("#{bin}lxc --version")
   end
 end

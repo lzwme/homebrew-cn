@@ -1,7 +1,7 @@
 class Clive < Formula
   desc "Automates terminal operations"
-  homepage "https://github.com/koki-develop/clive"
-  url "https://ghproxy.com/https://github.com/koki-develop/clive/archive/refs/tags/v0.12.8.tar.gz"
+  homepage "https:github.comkoki-developclive"
+  url "https:github.comkoki-developclivearchiverefstagsv0.12.8.tar.gz"
   sha256 "ae4c7e74cec8870bf5fde76d8289c121ec6dd9e2a5f8c49e2d1164d9765fde5a"
   license "MIT"
 
@@ -21,14 +21,14 @@ class Clive < Formula
   depends_on "ttyd"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/clive/cmd.version=v#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comkoki-developclivecmd.version=v#{version}")
   end
 
   test do
-    system bin/"clive", "init"
-    assert_predicate testpath/"clive.yml", :exist?
+    system bin"clive", "init"
+    assert_predicate testpath"clive.yml", :exist?
 
-    system bin/"clive", "validate"
-    assert_match version.to_s, shell_output("#{bin}/clive --version")
+    system bin"clive", "validate"
+    assert_match version.to_s, shell_output("#{bin}clive --version")
   end
 end

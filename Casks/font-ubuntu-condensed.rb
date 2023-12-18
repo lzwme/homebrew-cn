@@ -2,10 +2,10 @@ cask "font-ubuntu-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ufl/ubuntucondensed/UbuntuCondensed-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainuflubuntucondensedUbuntuCondensed-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Ubuntu Condensed"
-  homepage "https://fonts.google.com/specimen/Ubuntu+Condensed"
+  homepage "https:fonts.google.comspecimenUbuntu+Condensed"
 
   font "UbuntuCondensed-Regular.ttf"
 

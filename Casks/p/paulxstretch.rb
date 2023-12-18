@@ -2,10 +2,10 @@ cask "paulxstretch" do
   version "1.6.0"
   sha256 "c5bcba5215076f629c3442902eaba4825a7f71ac33fc2d793c7cb729bdeb17ad"
 
-  url "https://ghproxy.com/https://github.com/essej/paulxstretch/releases/download/v#{version}/paulxstretch-#{version}-mac.dmg"
+  url "https:github.comessejpaulxstretchreleasesdownloadv#{version}paulxstretch-#{version}-mac.dmg"
   name "PaulXStretch"
   desc "Extreme time stretching plugin for audio files"
-  homepage "https://github.com/essej/paulxstretch"
+  homepage "https:github.comessejpaulxstretch"
 
   livecheck do
     url :url
@@ -17,8 +17,8 @@ cask "paulxstretch" do
   uninstall pkgutil: "com.sonosaurus.paulxstretch.pkg.*"
 
   zap trash: [
-    "~/Library/Application Support/PaulXStretch",
-    "~/Library/Application Support/PaulXStretch3",
-    "~/Library/Preferences/com.sonosaurus.paulxstretch.plist",
+    "~LibraryApplication SupportPaulXStretch",
+    "~LibraryApplication SupportPaulXStretch3",
+    "~LibraryPreferencescom.sonosaurus.paulxstretch.plist",
   ]
 end

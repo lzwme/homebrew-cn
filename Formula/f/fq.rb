@@ -1,10 +1,10 @@
 class Fq < Formula
   desc "Brokered message queue optimized for performance"
-  homepage "https://github.com/circonus-labs/fq"
-  url "https://ghproxy.com/https://github.com/circonus-labs/fq/archive/refs/tags/v0.13.10.tar.gz"
+  homepage "https:github.comcirconus-labsfq"
+  url "https:github.comcirconus-labsfqarchiverefstagsv0.13.10.tar.gz"
   sha256 "fe304987145ec7ce0103a3d06a75ead38ad68044c0f609ad0bcc20c06cbfd62e"
   license "MIT"
-  head "https://github.com/circonus-labs/fq.git", branch: "master"
+  head "https:github.comcirconus-labsfq.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,7 +28,7 @@ class Fq < Formula
   def install
     ENV.append_to_cflags "-DNO_BCD=1"
     inreplace "Makefile", "-lbcd", ""
-    inreplace "Makefile", "/usr/lib/dtrace", "#{lib}/dtrace"
+    inreplace "Makefile", "usrlibdtrace", "#{lib}dtrace"
     system "make", "PREFIX=#{prefix}"
     args = ["PREFIX=#{prefix}"]
     args << "ENABLE_DTRACE=0" unless OS.mac?
@@ -37,7 +37,7 @@ class Fq < Formula
   end
 
   test do
-    pid = fork { exec sbin/"fqd", "-D", "-c", testpath/"test.sqlite" }
+    pid = fork { exec sbin"fqd", "-D", "-c", testpath"test.sqlite" }
     sleep 10
     begin
       assert_match "Circonus Fq Operational Dashboard", shell_output("curl 127.0.0.1:8765")

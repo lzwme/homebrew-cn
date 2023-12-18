@@ -1,11 +1,11 @@
 class Luvit < Formula
-  desc "Asynchronous I/O for Lua"
-  homepage "https://luvit.io"
-  url "https://ghproxy.com/https://github.com/luvit/luvit/archive/refs/tags/2.18.1.tar.gz"
+  desc "Asynchronous IO for Lua"
+  homepage "https:luvit.io"
+  url "https:github.comluvitluvitarchiverefstags2.18.1.tar.gz"
   sha256 "b792781d77028edb7e5761e96618c96162bd68747b8fced9a6fc52f123837c2c"
   license "Apache-2.0"
   revision 2
-  head "https://github.com/luvit/luvit.git", branch: "master"
+  head "https:github.comluvitluvit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "20bc43f46fbe2135a5ca45feb75e6bd90f1825437ff5fcc3a706ee96d886e5fc"
@@ -26,45 +26,45 @@ class Luvit < Formula
   depends_on "pcre"
 
   # To update this resource, check LIT_VERSION in the Makefile:
-  # https://github.com/luvit/luvit/blob/#{version}/Makefile
+  # https:github.comluvitluvitblob#{version}Makefile
   resource "lit" do
-    url "https://github.com/luvit/lit.git",
+    url "https:github.comluvitlit.git",
         tag:      "3.8.5",
         revision: "84fc5d729f1088b3b93bc9a55d1f7a245bca861d"
 
     livecheck do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/luvit/luvit/#{LATEST_VERSION}/Makefile"
-      regex(/LIT_VERSION=["']?(\d+(?:\.\d+)+)["']?$/i)
+      url "https:raw.githubusercontent.comluvitluvit#{LATEST_VERSION}Makefile"
+      regex(LIT_VERSION=["']?(\d+(?:\.\d+)+)["']?$i)
     end
   end
 
   # To update this resource, check LUVI_VERSION in
-  # https://github.com/luvit/lit/raw/$(LIT_VERSION)/get-lit.sh
+  # https:github.comluvitlitraw$(LIT_VERSION)get-lit.sh
   resource "luvi" do
-    url "https://github.com/luvit/luvi.git",
+    url "https:github.comluvitluvi.git",
         tag:      "v2.12.0",
         revision: "5d1052f11e813ff9edc3ec75b5282b3e6cb0f3bf"
 
     livecheck do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/luvit/luvit/#{LATEST_VERSION}/Makefile"
-      regex(/LIT_VERSION=["']?(\d+(?:\.\d+)+)["']?$/i)
+      url "https:raw.githubusercontent.comluvitluvit#{LATEST_VERSION}Makefile"
+      regex(LIT_VERSION=["']?(\d+(?:\.\d+)+)["']?$i)
       strategy :page_match do |page, regex|
         lit_version = page[regex, 1]
         next if lit_version.blank?
 
         get_lit_page = Homebrew::Livecheck::Strategy.page_content(
-          "https://ghproxy.com/https://raw.githubusercontent.com/luvit/lit/#{lit_version}/get-lit.sh",
+          "https:raw.githubusercontent.comluvitlit#{lit_version}get-lit.sh",
         )
         next if get_lit_page[:content].blank?
 
-        get_lit_page[:content][/LUVI_VERSION:-v?(\d+(?:\.\d+)+)/i, 1]
+        get_lit_page[:content][LUVI_VERSION:-v?(\d+(?:\.\d+)+)i, 1]
       end
     end
 
     # Remove outdated linker flags that break the ARM build.
-    # https://github.com/luvit/luvi/pull/261
+    # https:github.comluvitluvipull261
     patch do
-      url "https://github.com/luvit/luvi/commit/b2e501deb407c44a9a3e7f4d8e4b5dc500e7a196.patch?full_index=1"
+      url "https:github.comluvitluvicommitb2e501deb407c44a9a3e7f4d8e4b5dc500e7a196.patch?full_index=1"
       sha256 "be3315f7cf8a9e43f1db39d0ef55698f09e871bea0f508774d0135c6375f4291"
     end
   end
@@ -72,7 +72,7 @@ class Luvit < Formula
   # Needed for OpenSSL 3 support. Remove when the `luvi`
   # resource has a new enough version as a submodule.
   resource "lua-openssl" do
-    url "https://ghproxy.com/https://github.com/zhaozg/lua-openssl/releases/download/0.8.3-1/openssl-0.8.3-1.tar.gz"
+    url "https:github.comzhaozglua-opensslreleasesdownload0.8.3-1openssl-0.8.3-1.tar.gz"
     sha256 "d8c50601cb0a04e2dfbd8d8e57f4cf16a4fe59bdca8036deb8bc26f700f2eb8c"
   end
 
@@ -83,19 +83,19 @@ class Luvit < Formula
 
     resource("luvi").stage do
       # Build scripts set LUA_PATH before invoking LuaJIT, but that causes errors.
-      # Reported at https://github.com/luvit/luvi/issues/242
-      inreplace "cmake/Modules/LuaJITAddExecutable.cmake",
+      # Reported at https:github.comluvitluviissues242
+      inreplace "cmakeModulesLuaJITAddExecutable.cmake",
                 "COMMAND \"LUA_PATH=${LUA_PATH}\" luajit", "COMMAND luajit"
 
       # Build scripts double the prefix of this directory, so we set it manually.
       # Reported in the issue linked above.
-      ENV["LPEGLIB_DIR"] = "deps/lpeg"
+      ENV["LPEGLIB_DIR"] = "depslpeg"
 
-      Pathname("deps/lua-openssl").tap(&:rmtree)
+      Pathname("depslua-openssl").tap(&:rmtree)
                                   .install resource("lua-openssl")
 
       # CMake flags adapted from
-      # https://github.com/luvit/luvi/blob/#{luvi_version}/Makefile#L73-L74
+      # https:github.comluvitluviblob#{luvi_version}Makefile#L73-L74
       luvi_args = %W[
         -DWithOpenSSL=ON
         -DWithSharedOpenSSL=ON
@@ -103,25 +103,25 @@ class Luvit < Formula
         -DWithLPEG=ON
         -DWithSharedPCRE=ON
         -DWithSharedLibluv=ON
-        -DLIBLUV_INCLUDE_DIR=#{luv.opt_include}/luv
-        -DLIBLUV_LIBRARIES=#{luv.opt_lib/shared_library("libluv")}
-        -DLUAJIT_INCLUDE_DIR=#{luajit.opt_include}/luajit-2.1
-        -DLUAJIT_LIBRARIES=#{luajit.opt_lib/shared_library("libluajit")}
+        -DLIBLUV_INCLUDE_DIR=#{luv.opt_include}luv
+        -DLIBLUV_LIBRARIES=#{luv.opt_libshared_library("libluv")}
+        -DLUAJIT_INCLUDE_DIR=#{luajit.opt_include}luajit-2.1
+        -DLUAJIT_LIBRARIES=#{luajit.opt_libshared_library("libluajit")}
       ]
 
       system "cmake", ".", "-B", "build", *luvi_args, *std_cmake_args
       system "cmake", "--build", "build"
-      buildpath.install "build/luvi"
+      buildpath.install "buildluvi"
     end
 
     resource("lit").stage do
-      system buildpath/"luvi", ".", "--", "make", ".", buildpath/"lit", buildpath/"luvi"
+      system buildpath"luvi", ".", "--", "make", ".", buildpath"lit", buildpath"luvi"
     end
 
     system "make", "install"
   end
 
   test do
-    assert_equal "Hello World\n", shell_output("#{bin}/luvit -e 'print(\"Hello World\")'")
+    assert_equal "Hello World\n", shell_output("#{bin}luvit -e 'print(\"Hello World\")'")
   end
 end

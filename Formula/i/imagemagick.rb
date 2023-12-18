@@ -1,14 +1,14 @@
 class Imagemagick < Formula
   desc "Tools and libraries to manipulate images in many formats"
-  homepage "https://imagemagick.org/index.php"
-  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-23.tar.xz"
+  homepage "https:imagemagick.orgindex.php"
+  url "https:imagemagick.orgarchivereleasesImageMagick-7.1.1-23.tar.xz"
   sha256 "efd2e82910c7ce0a363760c73774b5f0645e3d9c56dcb05580514b726fa2f740"
   license "ImageMagick"
-  head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
+  head "https:github.comImageMagickImageMagick.git", branch: "main"
 
   livecheck do
-    url "https://imagemagick.org/archive/"
-    regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
+    url "https:imagemagick.orgarchive"
+    regex(href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.ti)
   end
 
   bottle do
@@ -53,7 +53,7 @@ class Imagemagick < Formula
 
   def install
     # Avoid references to shim
-    inreplace Dir["**/*-config.in"], "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
+    inreplace Dir["***-config.in"], "@PKG_CONFIG@", Formula["pkg-config"].opt_bin"pkg-config"
     # versioned stuff in main tree is pointless for us
     inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_BASE_VERSION}", "${PACKAGE_NAME}"
 
@@ -72,7 +72,7 @@ class Imagemagick < Formula
       "--with-heic=yes",
       "--with-raw=yes",
       "--with-gslib",
-      "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
+      "--with-gs-font-dir=#{HOMEBREW_PREFIX}shareghostscriptfonts",
       "--with-lqr",
       "--without-djvu",
       "--without-fftw",
@@ -90,24 +90,24 @@ class Imagemagick < Formula
       ]
     end
 
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make", "install"
   end
 
   test do
-    assert_match "PNG", shell_output("#{bin}/identify #{test_fixtures("test.png")}")
+    assert_match "PNG", shell_output("#{bin}identify #{test_fixtures("test.png")}")
 
     # Check support for recommended features and delegates.
-    features = shell_output("#{bin}/magick -version")
+    features = shell_output("#{bin}magick -version")
     %w[Modules freetype heic jpeg png raw tiff].each do |feature|
       assert_match feature, features
     end
 
     # Check support for a few specific image formats, mostly to ensure LibRaw linked correctly.
-    formats = shell_output("#{bin}/magick -list format")
+    formats = shell_output("#{bin}magick -list format")
     ["AVIF  HEIC      rw+", "ARW  DNG       r--", "DNG  DNG       r--"].each do |format|
       assert_match format, formats
     end
-    assert_match "Helvetica", shell_output("#{bin}/magick -list font")
+    assert_match "Helvetica", shell_output("#{bin}magick -list font")
   end
 end

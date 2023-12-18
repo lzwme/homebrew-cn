@@ -1,10 +1,10 @@
 class Flatcc < Formula
   desc "FlatBuffers Compiler and Library in C for C"
-  homepage "https://github.com/dvidelabs/flatcc"
-  url "https://ghproxy.com/https://github.com/dvidelabs/flatcc/archive/refs/tags/v0.6.1.tar.gz"
+  homepage "https:github.comdvidelabsflatcc"
+  url "https:github.comdvidelabsflatccarchiverefstagsv0.6.1.tar.gz"
   sha256 "2533c2f1061498499f15acc7e0937dcf35bc68e685d237325124ae0d6c600c2b"
   license "Apache-2.0"
-  head "https://github.com/dvidelabs/flatcc.git", branch: "master"
+  head "https:github.comdvidelabsflatcc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6297c6550a16691459f67ee05d11fc87be05a24e23e8b4a1c084e0d04c61c03"
@@ -25,21 +25,21 @@ class Flatcc < Formula
     system "cmake", "-G", "Unix Makefiles", buildpath, *std_cmake_args
     system "make"
 
-    bin.install "bin/flatcc"
-    lib.install "lib/libflatcc.a"
-    lib.install "lib/libflatccrt.a"
-    include.install Dir["include/*"]
+    bin.install "binflatcc"
+    lib.install "liblibflatcc.a"
+    lib.install "liblibflatccrt.a"
+    include.install Dir["include*"]
   end
 
   test do
-    (testpath/"test.fbs").write <<~EOS
-      // example IDL file
+    (testpath"test.fbs").write <<~EOS
+       example IDL file
 
       namespace MyGame.Sample;
 
       enum Color:byte { Red = 0, Green, Blue = 2 }
 
-      union Any { Monster }  // add more elements..
+      union Any { Monster }   add more elements..
 
         struct Vec3 {
           x:float;
@@ -61,6 +61,6 @@ class Flatcc < Formula
 
     EOS
 
-    system bin/"flatcc", "-av", "--json", "test.fbs"
+    system bin"flatcc", "-av", "--json", "test.fbs"
   end
 end

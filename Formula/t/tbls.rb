@@ -1,10 +1,10 @@
 class Tbls < Formula
   desc "CI-Friendly tool for document a database"
-  homepage "https://github.com/k1LoW/tbls"
-  url "https://ghproxy.com/https://github.com/k1LoW/tbls/archive/refs/tags/v1.72.0.tar.gz"
+  homepage "https:github.comk1LoWtbls"
+  url "https:github.comk1LoWtblsarchiverefstagsv1.72.0.tar.gz"
   sha256 "5aa55ac4e006e724d91066e3c36a30ef0e7f80aebd91f5bea9cced16f4764469"
   license "MIT"
-  head "https://github.com/k1LoW/tbls.git", branch: "main"
+  head "https:github.comk1LoWtbls.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e9a10e0bf945c8b5e2876b104df292d193f8bba6f9665dbf4a15438f07bbf3f9"
@@ -21,17 +21,17 @@ class Tbls < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/k1LoW/tbls.version=#{version}
-      -X github.com/k1LoW/tbls.date=#{time.iso8601}
-      -X github.com/k1LoW/tbls/version.Version=#{version}
+      -X github.comk1LoWtbls.version=#{version}
+      -X github.comk1LoWtbls.date=#{time.iso8601}
+      -X github.comk1LoWtblsversion.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"tbls", "completion")
+    generate_completions_from_executable(bin"tbls", "completion")
   end
 
   test do
-    assert_match "invalid database scheme", shell_output(bin/"tbls doc", 1)
-    assert_match version.to_s, shell_output(bin/"tbls version")
+    assert_match "invalid database scheme", shell_output(bin"tbls doc", 1)
+    assert_match version.to_s, shell_output(bin"tbls version")
   end
 end

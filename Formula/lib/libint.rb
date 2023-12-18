@@ -1,7 +1,7 @@
 class Libint < Formula
   desc "Library for computing electron repulsion integrals efficiently"
-  homepage "https://github.com/evaleev/libint"
-  url "https://ghproxy.com/https://github.com/evaleev/libint/archive/refs/tags/v2.8.0.tar.gz"
+  homepage "https:github.comevaleevlibint"
+  url "https:github.comevaleevlibintarchiverefstagsv2.8.0.tar.gz"
   sha256 "f7525937a12ea65937ccbb74280a2571cc79a8ae6ef04b900bd0baad49d50c73"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
@@ -25,19 +25,19 @@ class Libint < Formula
 
   def install
     system "glibtoolize", "--install", "--force"
-    system "./autogen.sh"
-    system "./configure", "--enable-shared", "--disable-static", *std_configure_args
+    system ".autogen.sh"
+    system ".configure", "--enable-shared", "--disable-static", *std_configure_args
     system "make"
     system "make", "install"
-    pkgshare.install "tests/hartree-fock/hartree-fock.cc"
-    pkgshare.install "tests/hartree-fock/h2o.xyz"
+    pkgshare.install "testshartree-fockhartree-fock.cc"
+    pkgshare.install "testshartree-fockh2o.xyz"
   end
 
   test do
-    system ENV.cxx, "-std=c++11", pkgshare/"hartree-fock.cc",
+    system ENV.cxx, "-std=c++11", pkgshare"hartree-fock.cc",
       *shell_output("pkg-config --cflags --libs libint2").chomp.split,
-      "-I#{Formula["eigen"].opt_include}/eigen3",
+      "-I#{Formula["eigen"].opt_include}eigen3",
       "-o", "hartree-fock"
-    system "./hartree-fock", pkgshare/"h2o.xyz"
+    system ".hartree-fock", pkgshare"h2o.xyz"
   end
 end

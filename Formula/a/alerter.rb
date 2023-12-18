@@ -1,7 +1,7 @@
 class Alerter < Formula
   desc "Send User Alert Notification on macOS from the command-line"
-  homepage "https://github.com/vjeantet/alerter"
-  url "https://ghproxy.com/https://github.com/vjeantet/alerter/archive/refs/tags/004.tar.gz"
+  homepage "https:github.comvjeantetalerter"
+  url "https:github.comvjeantetalerterarchiverefstags004.tar.gz"
   sha256 "c4c16735e1a57ce04a5acfa762bd44ab8ef10884308725ab886b984b1de17bfe"
   license "MIT"
 
@@ -14,7 +14,7 @@ class Alerter < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "894f1e5649ce05f1413d4bab20b9faf97dc19800698472535907811b930fc498"
   end
 
-  # https://github.com/vjeantet/alerter/issues/53
+  # https:github.comvjeantetalerterissues53
   deprecate! date: "2023-05-09", because: :does_not_build
 
   depends_on xcode: :build
@@ -28,10 +28,10 @@ class Alerter < Formula
                 "SYMROOT=build",
                 "CODE_SIGN_IDENTITY=",
                 "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    bin.install "build/Release/alerter"
+    bin.install "buildReleasealerter"
   end
 
   test do
-    system bin/"alerter", "-timeout", "1", "-title", "Alerter Test", "-message", "test"
+    system bin"alerter", "-timeout", "1", "-title", "Alerter Test", "-message", "test"
   end
 end

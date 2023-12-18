@@ -1,7 +1,7 @@
 class Cntb < Formula
   desc "Contabo Command-Line Interface (CLI)"
-  homepage "https://github.com/contabo/cntb"
-  url "https://ghproxy.com/https://github.com/contabo/cntb/archive/refs/tags/1.4.7.tar.gz"
+  homepage "https:github.comcontabocntb"
+  url "https:github.comcontabocntbarchiverefstags1.4.7.tar.gz"
   sha256 "d36d4516146cc366818569cd451c9f19725ef60f7054d842ccf697fe16f47970"
   license "GPL-3.0-only"
 
@@ -18,20 +18,20 @@ class Cntb < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X contabo.com/cli/cntb/cmd.version=#{version}"
+    ldflags = "-s -w -X contabo.comclicntbcmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"cntb", "completion")
+    generate_completions_from_executable(bin"cntb", "completion")
   end
 
   test do
     # version command should work
-    assert_match "cntb #{version}", shell_output("#{bin}/cntb version")
+    assert_match "cntb #{version}", shell_output("#{bin}cntb version")
     # authentication shouldn't work with invalid credentials
-    out = shell_output("#{bin}/cntb get instances --oauth2-user=invalid \
+    out = shell_output("#{bin}cntb get instances --oauth2-user=invalid \
     --oauth2-password=invalid --oauth2-clientid=invalid \
     --oauth2-client-secret=invalid \
-    --oauth2-tokenurl=https://example.com 2>&1", 1)
+    --oauth2-tokenurl=https:example.com 2>&1", 1)
     assert_match 'level=fatal msg="Could not get access token due to an error', out
   end
 end

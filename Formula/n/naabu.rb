@@ -1,10 +1,10 @@
 class Naabu < Formula
   desc "Fast port scanner"
-  homepage "https://github.com/projectdiscovery/naabu"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/naabu/archive/refs/tags/v2.2.0.tar.gz"
+  homepage "https:github.comprojectdiscoverynaabu"
+  url "https:github.comprojectdiscoverynaabuarchiverefstagsv2.2.0.tar.gz"
   sha256 "a110908ff162413056f36c49b27afedf730a732fca7b1ba06db8652d682baaba"
   license "MIT"
-  head "https://github.com/projectdiscovery/naabu.git", branch: "master"
+  head "https:github.comprojectdiscoverynaabu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fe866b43a8960c10cb0171736a7031dfa2d5a8a317014b0614a67f0b9d313b7"
@@ -22,11 +22,11 @@ class Naabu < Formula
 
   def install
     cd "v2" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/naabu"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdnaabu"
     end
   end
 
   test do
-    assert_match "brew.sh:443", shell_output("#{bin}/naabu -host brew.sh -p 443")
+    assert_match "brew.sh:443", shell_output("#{bin}naabu -host brew.sh -p 443")
   end
 end

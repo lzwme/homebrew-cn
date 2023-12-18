@@ -1,7 +1,7 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
-  homepage "https://dotnet.github.io/docfx/"
-  url "https://ghproxy.com/https://github.com/dotnet/docfx/archive/refs/tags/v2.74.1.tar.gz"
+  homepage "https:dotnet.github.iodocfx"
+  url "https:github.comdotnetdocfxarchiverefstagsv2.74.1.tar.gz"
   sha256 "c77254cc4f5cbac235b728a01fd9bf3c94161535ea063494d07aec877a78b361"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Docfx < Formula
     # specify the target framework to only target the currently used version of
     # .NET, otherwise additional frameworks will be added due to this running
     # inside of GitHub Actions, for details see:
-    # https://github.com/dotnet/docfx/blob/main/Directory.Build.props#L3-L5
+    # https:github.comdotnetdocfxblobmainDirectory.Build.props#L3-L5
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -35,15 +35,15 @@ class Docfx < Formula
       -p:TargetFrameworks=net#{dotnet.version.major_minor}
     ]
 
-    system "dotnet", "publish", "src/docfx", *args
+    system "dotnet", "publish", "srcdocfx", *args
 
-    (bin/"docfx").write_env_script libexec/"docfx",
+    (bin"docfx").write_env_script libexec"docfx",
       DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
   end
 
   test do
-    system bin/"docfx", "init", "--yes", "--output", testpath/"docfx_project"
-    assert_predicate testpath/"docfx_project/docfx.json", :exist?,
+    system bin"docfx", "init", "--yes", "--output", testpath"docfx_project"
+    assert_predicate testpath"docfx_projectdocfx.json", :exist?,
                      "Failed to generate project"
   end
 end

@@ -1,10 +1,10 @@
 class Cava < Formula
   desc "Console-based Audio Visualizer for ALSA"
-  homepage "https://github.com/karlstav/cava"
-  url "https://ghproxy.com/https://github.com/karlstav/cava/archive/refs/tags/0.9.1.tar.gz"
+  homepage "https:github.comkarlstavcava"
+  url "https:github.comkarlstavcavaarchiverefstags0.9.1.tar.gz"
   sha256 "483f571d5fba5fb8aa81511c4dcf8ce0949c7c503ec6c743c2914cd78e6faf03"
   license "MIT"
-  head "https://github.com/karlstav/cava.git", branch: "master"
+  head "https:github.comkarlstavcava.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9a46dffaab5df80aa54dde50aae4ee545455e7ebc15de0c7ba7833d68f5c1d8e"
@@ -35,15 +35,15 @@ class Cava < Formula
     # force autogen.sh to look for and use our glibtoolize
     inreplace "autogen.sh", "libtoolize", "glibtoolize"
 
-    system "./autogen.sh"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".autogen.sh"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    cava_config = (testpath/"cava.conf")
-    cava_stdout = (testpath/"cava_stdout.log")
+    cava_config = (testpath"cava.conf")
+    cava_stdout = (testpath"cava_stdout.log")
 
     cava_config.write <<~EOS
       [general]
@@ -52,14 +52,14 @@ class Cava < Formula
 
       [input]
       method = fifo
-      source = /dev/zero
+      source = devzero
 
       [output]
       method = raw
       data_format = ascii
     EOS
 
-    pid = spawn(bin/"cava", "-p", cava_config, [:out, :err] => cava_stdout.to_s)
+    pid = spawn(bin"cava", "-p", cava_config, [:out, :err] => cava_stdout.to_s)
     sleep 2
     Process.kill "KILL", pid
     assert_match "0;0;\n", cava_stdout.read

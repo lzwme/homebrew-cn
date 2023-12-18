@@ -1,7 +1,7 @@
 class Draco < Formula
   desc "3D geometric mesh and point cloud compression library"
-  homepage "https://google.github.io/draco/"
-  url "https://ghproxy.com/https://github.com/google/draco/archive/refs/tags/1.5.6.tar.gz"
+  homepage "https:google.github.iodraco"
+  url "https:github.comgoogledracoarchiverefstags1.5.6.tar.gz"
   sha256 "0280888e5b8e4c4fb93bf40e65e4e8a1ba316a0456f308164fb5c2b2b0c282d6"
   license "Apache-2.0"
 
@@ -24,12 +24,12 @@ class Draco < Formula
       system "cmake", "..", * std_cmake_args
       system "make", "install"
     end
-    pkgshare.install "testdata/cube_att.ply"
+    pkgshare.install "testdatacube_att.ply"
   end
 
   test do
-    system "#{bin}/draco_encoder", "-i", "#{pkgshare}/cube_att.ply",
+    system "#{bin}draco_encoder", "-i", "#{pkgshare}cube_att.ply",
            "-o", "cube_att.drc"
-    assert_predicate testpath/"cube_att.drc", :exist?
+    assert_predicate testpath"cube_att.drc", :exist?
   end
 end

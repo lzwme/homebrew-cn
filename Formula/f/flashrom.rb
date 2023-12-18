@@ -1,14 +1,14 @@
 class Flashrom < Formula
   desc "Identify, read, write, verify, and erase flash chips"
-  homepage "https://flashrom.org/"
-  url "https://download.flashrom.org/releases/flashrom-v1.3.0.tar.bz2"
+  homepage "https:flashrom.org"
+  url "https:download.flashrom.orgreleasesflashrom-v1.3.0.tar.bz2"
   sha256 "a053234453ccd012e79f3443bdcc61625cf97b7fd7cb4cdd8bfbffbe8b149623"
   license "GPL-2.0-or-later"
-  head "https://review.coreboot.org/flashrom.git", branch: "master"
+  head "https:review.coreboot.orgflashrom.git", branch: "master"
 
   livecheck do
-    url "https://download.flashrom.org/releases/"
-    regex(/href=.*?flashrom[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:download.flashrom.orgreleases"
+    regex(href=.*?flashrom[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,7 +35,7 @@ class Flashrom < Formula
   end
 
   resource "DirectHW" do
-    url "https://ghproxy.com/https://github.com/PureDarwin/DirectHW/archive/refs/tags/DirectHW-1.tar.gz"
+    url "https:github.comPureDarwinDirectHWarchiverefstagsDirectHW-1.tar.gz"
     sha256 "14cc45a1a2c1a543717b1de0892c196534137db177413b9b85bedbe15cbe4563"
   end
 
@@ -45,27 +45,27 @@ class Flashrom < Formula
 
     # install DirectHW for osx x86 builds
     if OS.mac? && Hardware::CPU.intel?
-      (buildpath/"DirectHW").install resource("DirectHW")
+      (buildpath"DirectHW").install resource("DirectHW")
       ENV.append "CFLAGS", "-I#{buildpath}"
     end
 
-    system "make", "DESTDIR=#{prefix}", "PREFIX=/", "install"
+    system "make", "DESTDIR=#{prefix}", "PREFIX=", "install"
     mv sbin, bin
   end
 
   test do
-    system bin/"flashrom", "--version"
+    system bin"flashrom", "--version"
 
-    output = shell_output("#{bin}/flashrom --erase --programmer dummy 2>&1", 1)
-    assert_match "No EEPROM/flash device found", output
+    output = shell_output("#{bin}flashrom --erase --programmer dummy 2>&1", 1)
+    assert_match "No EEPROMflash device found", output
   end
 end
 
 __END__
-diff --git a/Makefile b/Makefile
+diff --git aMakefile bMakefile
 index a8df91f..a178074 100644
---- a/Makefile
-+++ b/Makefile
+--- aMakefile
++++ bMakefile
 @@ -834,7 +834,7 @@ PROGRAMMER_OBJS += hwaccess_physmap.o
  endif
 

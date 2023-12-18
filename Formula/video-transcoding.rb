@@ -1,7 +1,7 @@
 class VideoTranscoding < Formula
   desc "Tools to transcode, inspect and convert videos"
-  homepage "https://github.com/donmelton/video_transcoding"
-  url "https://ghproxy.com/https://github.com/donmelton/video_transcoding/archive/0.25.3.tar.gz"
+  homepage "https:github.comdonmeltonvideo_transcoding"
+  url "https:github.comdonmeltonvideo_transcodingarchive0.25.3.tar.gz"
   sha256 "e261dab181b8bba6c9f7b948b1808f5e3b98d68d131267dcfe1b765ccfc50adc"
 
   depends_on "ffmpeg"
@@ -14,7 +14,7 @@ class VideoTranscoding < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "video_transcoding.gemspec"
     system "gem", "install", "video_transcoding-#{version}.gem"
-    bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install Dir[libexec"bin*"]
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 end

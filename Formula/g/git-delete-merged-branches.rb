@@ -2,8 +2,8 @@ class GitDeleteMergedBranches < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line tool to delete merged Git branches"
-  homepage "https://github.com/hartwork/git-delete-merged-branches"
-  url "https://files.pythonhosted.org/packages/69/e1/377ded5fd14801bd7f3174ab429882d85086e34fe0a0eec308c160c803f4/git-delete-merged-branches-7.4.0.tar.gz"
+  homepage "https:github.comhartworkgit-delete-merged-branches"
+  url "https:files.pythonhosted.orgpackages69e1377ded5fd14801bd7f3174ab429882d85086e34fe0a0eec308c160c803f4git-delete-merged-branches-7.4.0.tar.gz"
   sha256 "b976b7b2210a1dab728e654e1b023f8e5309d98dc14730bfb613e893604847e5"
   license "GPL-3.0-or-later"
 
@@ -21,17 +21,17 @@ class GitDeleteMergedBranches < Formula
   depends_on "python@3.12"
 
   resource "colorama" do
-    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
+    url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
+    url "https:files.pythonhosted.orgpackages9a0276cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2baprompt_toolkit-3.0.39.tar.gz"
     sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
+    url "https:files.pythonhosted.orgpackagescbee20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04bawcwidth-0.2.8.tar.gz"
     sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
@@ -40,9 +40,9 @@ class GitDeleteMergedBranches < Formula
   end
 
   test do
-    origin = testpath/"origin"
+    origin = testpath"origin"
     origin.mkdir
-    clone = testpath/"clone"
+    clone = testpath"clone"
 
     cd origin do
       system "git", "config", "--global", "init.defaultBranch", "master"

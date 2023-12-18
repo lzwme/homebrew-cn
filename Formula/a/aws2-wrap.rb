@@ -1,7 +1,7 @@
 class Aws2Wrap < Formula
   desc "Script to export current AWS SSO credentials or run a sub-process with them"
-  homepage "https://github.com/linaro-its/aws2-wrap"
-  url "https://files.pythonhosted.org/packages/6d/c7/8afdf4d0c7c6e2072c73a0150f9789445af33381a611d33333f4c9bf1ef6/aws2-wrap-1.4.0.tar.gz"
+  homepage "https:github.comlinaro-itsaws2-wrap"
+  url "https:files.pythonhosted.orgpackages6dc78afdf4d0c7c6e2072c73a0150f9789445af33381a611d33333f4c9bf1ef6aws2-wrap-1.4.0.tar.gz"
   sha256 "77613ae13423a6407e79760bdd35843ddd128612672a0ad3a934ecade76aa7fc"
   license "GPL-3.0-only"
 
@@ -28,10 +28,10 @@ class Aws2Wrap < Formula
   end
 
   test do
-    mkdir testpath/".aws"
-    touch testpath/".aws/config"
-    ENV["AWS_CONFIG_FILE"] = testpath/".aws/config"
+    mkdir testpath".aws"
+    touch testpath".awsconfig"
+    ENV["AWS_CONFIG_FILE"] = testpath".awsconfig"
     assert_match "Cannot find profile 'default'",
-      shell_output("#{bin}/aws2-wrap 2>&1", 1).strip
+      shell_output("#{bin}aws2-wrap 2>&1", 1).strip
   end
 end

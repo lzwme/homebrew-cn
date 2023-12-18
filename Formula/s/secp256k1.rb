@@ -1,7 +1,7 @@
 class Secp256k1 < Formula
   desc "Optimized C library for EC operations on curve secp256k1"
-  homepage "https://github.com/bitcoin-core/secp256k1"
-  url "https://ghproxy.com/https://github.com/bitcoin-core/secp256k1/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:github.combitcoin-coresecp256k1"
+  url "https:github.combitcoin-coresecp256k1archiverefstagsv0.4.0.tar.gz"
   sha256 "d7c956606e7f52b7703fd2967cb31d2e21ec90c0b440ff1cc7c7d764a4092b98"
   license "MIT"
 
@@ -22,7 +22,7 @@ class Secp256k1 < Formula
   depends_on "libtool" => [:build]
 
   def install
-    system "./autogen.sh"
+    system ".autogen.sh"
     args = %w[
       --disable-silent-rules
       --enable-module-recovery
@@ -30,13 +30,13 @@ class Secp256k1 < Formula
       --enable-module-schnorrsig
       --enable-module-extrakeys
     ]
-    system "./configure", *args, *std_configure_args
+    system ".configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <secp256k1.h>
       int main() {
         secp256k1_context* ctx = secp256k1_context_create(SECP256K1_CONTEXT_NONE);
@@ -47,6 +47,6 @@ class Secp256k1 < Formula
     system ENV.cc, "test.c",
                    "-L#{lib}", "-lsecp256k1",
                    "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

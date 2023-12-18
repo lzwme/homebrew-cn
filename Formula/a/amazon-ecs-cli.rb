@@ -1,10 +1,10 @@
 class AmazonEcsCli < Formula
   desc "CLI for Amazon ECS to manage clusters and tasks for development"
-  homepage "https://aws.amazon.com/ecs"
-  url "https://ghproxy.com/https://github.com/aws/amazon-ecs-cli/archive/refs/tags/v1.21.0.tar.gz"
+  homepage "https:aws.amazon.comecs"
+  url "https:github.comawsamazon-ecs-cliarchiverefstagsv1.21.0.tar.gz"
   sha256 "27e93a5439090486a2f2f5a9b02cbbd1493e3c14affbbe2375ed57f8f903e677"
   license "Apache-2.0"
-  head "https://github.com/aws/amazon-ecs-cli.git", branch: "mainline"
+  head "https:github.comawsamazon-ecs-cli.git", branch: "mainline"
 
   bottle do
     rebuild 1
@@ -26,15 +26,15 @@ class AmazonEcsCli < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/aws/amazon-ecs-cli").install buildpath.children
-    cd "src/github.com/aws/amazon-ecs-cli" do
+    (buildpath"srcgithub.comawsamazon-ecs-cli").install buildpath.children
+    cd "srcgithub.comawsamazon-ecs-cli" do
       system "make", "build"
-      bin.install "bin/local/ecs-cli"
+      bin.install "binlocalecs-cli"
       prefix.install_metafiles
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ecs-cli -v")
+    assert_match version.to_s, shell_output("#{bin}ecs-cli -v")
   end
 end

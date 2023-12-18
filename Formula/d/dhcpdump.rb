@@ -1,7 +1,7 @@
 class Dhcpdump < Formula
   desc "Monitor DHCP traffic for debugging purposes"
-  homepage "https://github.com/bbonev/dhcpdump"
-  url "https://ghproxy.com/https://github.com/bbonev/dhcpdump/releases/download/v1.9/dhcpdump-1.9.tar.xz"
+  homepage "https:github.combbonevdhcpdump"
+  url "https:github.combbonevdhcpdumpreleasesdownloadv1.9dhcpdump-1.9.tar.xz"
   sha256 "3658ac21cc33e79e72bed070454e49c543017991cb6c37f4253c85e9176869d1"
   license "BSD-2-Clause"
 
@@ -25,6 +25,6 @@ class Dhcpdump < Formula
   end
 
   test do
-    system "#{bin}/dhcpdump", "-h"
+    system "#{bin}dhcpdump", "-h"
   end
 end

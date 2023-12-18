@@ -1,7 +1,7 @@
 class Scalingo < Formula
   desc "CLI for working with Scalingo's PaaS"
-  homepage "https://doc.scalingo.com/cli"
-  url "https://ghproxy.com/https://github.com/Scalingo/cli/archive/refs/tags/1.29.1.tar.gz"
+  homepage "https:doc.scalingo.comcli"
+  url "https:github.comScalingocliarchiverefstags1.29.1.tar.gz"
   sha256 "70cf9399434c9f8a46bd0fd46fee345e1bb83b8f7691d4288e0e29ccf9422ec3"
   license "BSD-4-Clause"
 
@@ -20,10 +20,10 @@ class Scalingo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "scalingo/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "scalingomain.go"
 
-    bash_completion.install "cmd/autocomplete/scripts/scalingo_complete.bash" => "scalingo"
-    zsh_completion.install "cmd/autocomplete/scripts/scalingo_complete.zsh" => "_scalingo"
+    bash_completion.install "cmdautocompletescriptsscalingo_complete.bash" => "scalingo"
+    zsh_completion.install "cmdautocompletescriptsscalingo_complete.zsh" => "_scalingo"
   end
 
   test do
@@ -34,6 +34,6 @@ class Scalingo < Formula
       | region            |       |
       +-------------------+-------+
     END
-    assert_equal expected, shell_output("#{bin}/scalingo config")
+    assert_equal expected, shell_output("#{bin}scalingo config")
   end
 end

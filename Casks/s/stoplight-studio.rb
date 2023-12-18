@@ -5,15 +5,15 @@ cask "stoplight-studio" do
   sha256 arm:   "75fccf1fb117da01607a0c210fa6d70d96e8e5faaeb04c4d20f3d8287e6ef087",
          intel: "f176dc945d8797af4a2b145c84a195cd068f2b3fa96560c1712d819d95f6dea9"
 
-  url "https://ghproxy.com/https://github.com/stoplightio/studio/releases/download/v#{version.csv.first}-stable.#{version.csv.second}/stoplight-studio-mac-#{arch}.dmg",
-      verified: "github.com/stoplightio/studio/"
+  url "https:github.comstoplightiostudioreleasesdownloadv#{version.csv.first}-stable.#{version.csv.second}stoplight-studio-mac-#{arch}.dmg",
+      verified: "github.comstoplightiostudio"
   name "Stoplight Studio"
   desc "Editor for designing and documenting APIs"
-  homepage "https://stoplight.io/studio/"
+  homepage "https:stoplight.iostudio"
 
   livecheck do
     url :url
-    regex(%r{/v?(\d+(?:\.\d+)+)[._-]stable[._-]([^/]+)/stoplight[._-]studio[._-]mac[._-]#{arch}\.dmg$}i)
+    regex(%r{v?(\d+(?:\.\d+)+)[._-]stable[._-]([^]+)stoplight[._-]studio[._-]mac[._-]#{arch}\.dmg$}i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["browser_download_url"]&.match(regex)
@@ -27,9 +27,9 @@ cask "stoplight-studio" do
   app "Stoplight Studio.app"
 
   zap trash: [
-    "~/Library/Application Support/Stoplight Studio",
-    "~/Library/Logs/Stoplight Studio",
-    "~/Library/Preferences/com.stoplight.studio.plist",
-    "~/Library/Saved Application State/com.stoplight.studio.savedState",
+    "~LibraryApplication SupportStoplight Studio",
+    "~LibraryLogsStoplight Studio",
+    "~LibraryPreferencescom.stoplight.studio.plist",
+    "~LibrarySaved Application Statecom.stoplight.studio.savedState",
   ]
 end

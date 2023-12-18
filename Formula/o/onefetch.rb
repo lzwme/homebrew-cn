@@ -1,10 +1,10 @@
 class Onefetch < Formula
   desc "Command-line Git information tool"
-  homepage "https://onefetch.dev/"
-  url "https://ghproxy.com/https://github.com/o2sh/onefetch/archive/refs/tags/2.19.0.tar.gz"
+  homepage "https:onefetch.dev"
+  url "https:github.como2shonefetcharchiverefstags2.19.0.tar.gz"
   sha256 "e6aa7504730de86f307d6c3671875b11a447a4088daf74df280c8f644dea4819"
   license "MIT"
-  head "https://github.com/o2sh/onefetch.git", branch: "main"
+  head "https:github.como2shonefetch.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3be44fe6313ca0084e8c72a08bc59de0ec8cbf78b39d52ce4dd3d2ce59dc1d43"
@@ -17,7 +17,7 @@ class Onefetch < Formula
   end
 
   # `cmake` is used to build `zlib`.
-  # upstream issue, https://github.com/rust-lang/libz-sys/issues/147
+  # upstream issue, https:github.comrust-langlibz-sysissues147
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
@@ -30,27 +30,27 @@ class Onefetch < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    man1.install "docs/onefetch.1"
-    generate_completions_from_executable(bin/"onefetch", "--generate")
+    man1.install "docsonefetch.1"
+    generate_completions_from_executable(bin"onefetch", "--generate")
   end
 
   test do
-    system "#{bin}/onefetch", "--help"
-    assert_match "onefetch " + version.to_s, shell_output("#{bin}/onefetch -V").chomp
+    system "#{bin}onefetch", "--help"
+    assert_match "onefetch " + version.to_s, shell_output("#{bin}onefetch -V").chomp
 
     system "git", "init"
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
 
-    (testpath/"main.rb").write "puts 'Hello, world'\n"
+    (testpath"main.rb").write "puts 'Hello, world'\n"
     system "git", "add", "main.rb"
     system "git", "commit", "-m", "First commit"
-    assert_match("Ruby (100.0 %)", shell_output("#{bin}/onefetch").chomp)
+    assert_match("Ruby (100.0 %)", shell_output("#{bin}onefetch").chomp)
 
-    linkage_with_libgit2 = (bin/"onefetch").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"onefetch").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

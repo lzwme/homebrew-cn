@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class Bcoin < Formula
   desc "Javascript bitcoin library for node.js and browsers"
-  homepage "https://bcoin.io"
-  url "https://ghproxy.com/https://github.com/bcoin-org/bcoin/archive/refs/tags/v2.2.0.tar.gz"
+  homepage "https:bcoin.io"
+  url "https:github.combcoin-orgbcoinarchiverefstagsv2.2.0.tar.gz"
   sha256 "fa1a78a73bef5837b7ff10d18ffdb47c0e42ad068512987037a01e8fad980432"
   license "MIT"
-  head "https://github.com/bcoin-org/bcoin.git", branch: "master"
+  head "https:github.combcoin-orgbcoin.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -28,29 +28,29 @@ class Bcoin < Formula
   def node
     deps.reject(&:build?)
         .map(&:to_formula)
-        .find { |f| f.name.match?(/^node(@\d+(\.\d+)*)?$/) }
+        .find { |f| f.name.match?(^node(@\d+(\.\d+)*)?$) }
   end
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"bcoin").write_env_script libexec/"bin/bcoin", PATH: "#{node.opt_bin}:$PATH"
+    (bin"bcoin").write_env_script libexec"binbcoin", PATH: "#{node.opt_bin}:$PATH"
   end
 
   test do
-    (testpath/"script.js").write <<~EOS
+    (testpath"script.js").write <<~EOS
       const assert = require('assert');
-      const bcoin = require('#{libexec}/lib/node_modules/bcoin');
+      const bcoin = require('#{libexec}libnode_modulesbcoin');
       assert(bcoin);
 
       const node = new bcoin.FullNode({
-        prefix: '#{testpath}/.bcoin',
+        prefix: '#{testpath}.bcoin',
         memory: false
       });
       (async () => {
         await node.ensure();
       })();
     EOS
-    system "#{node.opt_bin}/node", testpath/"script.js"
-    assert File.directory?("#{testpath}/.bcoin")
+    system "#{node.opt_bin}node", testpath"script.js"
+    assert File.directory?("#{testpath}.bcoin")
   end
 end

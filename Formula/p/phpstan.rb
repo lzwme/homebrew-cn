@@ -1,7 +1,7 @@
 class Phpstan < Formula
   desc "PHP Static Analysis Tool"
-  homepage "https://github.com/phpstan/phpstan"
-  url "https://ghproxy.com/https://github.com/phpstan/phpstan/releases/download/1.10.50/phpstan.phar"
+  homepage "https:github.comphpstanphpstan"
+  url "https:github.comphpstanphpstanreleasesdownload1.10.50phpstan.phar"
   sha256 "3ac7a423d6bcfccee1014261d1f25d3b7c1314063c350af6ca09efb4024b2939"
   license "MIT"
 
@@ -17,7 +17,7 @@ class Phpstan < Formula
 
   depends_on "php" => :test
 
-  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -29,14 +29,14 @@ class Phpstan < Formula
   end
 
   test do
-    (testpath/"src/autoload.php").write <<~EOS
+    (testpath"srcautoload.php").write <<~EOS
       <?php
       spl_autoload_register(
           function($class) {
               static $classes = null;
               if ($classes === null) {
                   $classes = array(
-                      'email' => '/Email.php'
+                      'email' => 'Email.php'
                   );
               }
               $cn = strtolower($class);
@@ -49,7 +49,7 @@ class Phpstan < Formula
       );
     EOS
 
-    (testpath/"src/Email.php").write <<~EOS
+    (testpath"srcEmail.php").write <<~EOS
       <?php
         declare(strict_types=1);
 
@@ -87,7 +87,7 @@ class Phpstan < Formula
             }
         }
     EOS
-    assert_match(/^\n \[OK\] No errors/,
-      shell_output("#{bin}/phpstan analyse --level max --autoload-file src/autoload.php src/Email.php"))
+    assert_match(^\n \[OK\] No errors,
+      shell_output("#{bin}phpstan analyse --level max --autoload-file srcautoload.php srcEmail.php"))
   end
 end

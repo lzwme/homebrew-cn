@@ -2,10 +2,10 @@ cask "font-bubblegum-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bubblegumsans/BubblegumSans-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbubblegumsansBubblegumSans-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bubblegum Sans"
-  homepage "https://fonts.google.com/specimen/Bubblegum+Sans"
+  homepage "https:fonts.google.comspecimenBubblegum+Sans"
 
   font "BubblegumSans-Regular.ttf"
 

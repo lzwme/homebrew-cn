@@ -1,11 +1,11 @@
 class DetectSecrets < Formula
   desc "Enterprise friendly way of detecting and preventing secrets in code"
-  homepage "https://github.com/Yelp/detect-secrets"
-  url "https://files.pythonhosted.org/packages/f1/55/292f9ce52bba7f3df0a9cde65dabf458d3aeec6a63bf737e5a5fa9fe6d31/detect_secrets-1.4.0.tar.gz"
+  homepage "https:github.comYelpdetect-secrets"
+  url "https:files.pythonhosted.orgpackagesf155292f9ce52bba7f3df0a9cde65dabf458d3aeec6a63bf737e5a5fa9fe6d31detect_secrets-1.4.0.tar.gz"
   sha256 "d56787e339758cef48c9ccd6692f7a094b9963c979c9813580b0169e41132833"
   license "Apache-2.0"
   revision 3
-  head "https://github.com/Yelp/detect-secrets.git", branch: "master"
+  head "https:github.comYelpdetect-secrets.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -32,6 +32,6 @@ class DetectSecrets < Formula
   end
 
   test do
-    assert_match "ArtifactoryDetector", shell_output("#{bin}/detect-secrets scan --list-all-plugins 2>&1")
+    assert_match "ArtifactoryDetector", shell_output("#{bin}detect-secrets scan --list-all-plugins 2>&1")
   end
 end

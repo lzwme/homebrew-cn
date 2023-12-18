@@ -1,10 +1,10 @@
 class Libiscsi < Formula
   desc "Client library and utilities for iscsi"
-  homepage "https://github.com/sahlberg/libiscsi"
-  url "https://ghproxy.com/https://github.com/sahlberg/libiscsi/archive/refs/tags/1.19.0.tar.gz"
+  homepage "https:github.comsahlberglibiscsi"
+  url "https:github.comsahlberglibiscsiarchiverefstags1.19.0.tar.gz"
   sha256 "c7848ac722c8361d5064654bc6e926c2be61ef11dd3875020a63931836d806df"
   license "GPL-2.0"
-  head "https://github.com/sahlberg/libiscsi.git", branch: "master"
+  head "https:github.comsahlberglibiscsi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "43ff1a7fa79032362ad4b7daa5306a4ef5b159b3b3c83500f43e1077d74edbbc"
@@ -28,14 +28,14 @@ class Libiscsi < Formula
   depends_on "cunit"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin/"iscsi-ls", "--help"
-    system bin/"iscsi-test-cu", "--list"
+    system bin"iscsi-ls", "--help"
+    system bin"iscsi-test-cu", "--list"
   end
 end

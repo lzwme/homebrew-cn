@@ -1,14 +1,14 @@
 class Picotool < Formula
   desc "Tool for interacting with RP2040 devices in BOOTSEL mode or RP2040 binaries"
-  homepage "https://github.com/raspberrypi/picotool"
+  homepage "https:github.comraspberrypipicotool"
   license "BSD-3-Clause"
 
   stable do
-    url "https://ghproxy.com/https://github.com/raspberrypi/picotool/archive/refs/tags/1.1.2.tar.gz"
+    url "https:github.comraspberrypipicotoolarchiverefstags1.1.2.tar.gz"
     sha256 "f1746ead7815c13be1152f0645db8ea3b277628eb0110d42a0a186db37d40a91"
 
     resource "pico-sdk" do
-      url "https://ghproxy.com/https://github.com/raspberrypi/pico-sdk/archive/refs/tags/1.5.1.tar.gz"
+      url "https:github.comraspberrypipico-sdkarchiverefstags1.5.1.tar.gz"
       sha256 "95f5e522be3919e36a47975ffd3b208c38880c14468bd489ac672cfe3cec803c"
     end
   end
@@ -26,10 +26,10 @@ class Picotool < Formula
   end
 
   head do
-    url "https://github.com/raspberrypi/picotool.git", branch: "master"
+    url "https:github.comraspberrypipicotool.git", branch: "master"
 
     resource "pico-sdk" do
-      url "https://github.com/raspberrypi/pico-sdk.git", branch: "master"
+      url "https:github.comraspberrypipico-sdk.git", branch: "master"
     end
   end
 
@@ -38,14 +38,14 @@ class Picotool < Formula
   depends_on "libusb"
 
   resource "homebrew-pico-blink" do
-    url "https://rptl.io/pico-blink"
+    url "https:rptl.iopico-blink"
     sha256 "4b2161340110e939b579073cfeac1c6684b35b00995933529dd61620abf26d6f"
   end
 
   def install
-    resource("pico-sdk").stage buildpath/"pico-sdk"
+    resource("pico-sdk").stage buildpath"pico-sdk"
 
-    args = %W[-DPICO_SDK_PATH=#{buildpath}/pico-sdk]
+    args = %W[-DPICO_SDK_PATH=#{buildpath}pico-sdk]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -58,9 +58,9 @@ class Picotool < Formula
 
         Program Information
          name:      blink
-         web site:  https://github.com/raspberrypi/pico-examples/tree/HEAD/blink
+         web site:  https:github.comraspberrypipico-examplestreeHEADblink
       EOS
-      assert_equal result, shell_output("#{bin}/picotool info blink.uf2")
+      assert_equal result, shell_output("#{bin}picotool info blink.uf2")
     end
   end
 end

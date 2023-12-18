@@ -2,11 +2,11 @@ cask "jitouch" do
   version "2.82.1"
   sha256 "3f5194a4da6fe19d17c843fa8a876131f7878905dcbb2e1d740d34d286d740c4"
 
-  url "https://ghproxy.com/https://github.com/JitouchApp/Jitouch/releases/download/v#{version}/Install-Jitouch.pkg",
-      verified: "github.com/JitouchApp/Jitouch/"
+  url "https:github.comJitouchAppJitouchreleasesdownloadv#{version}Install-Jitouch.pkg",
+      verified: "github.comJitouchAppJitouch"
   name "Jitouch"
   desc "Multi-touch gestures editor"
-  homepage "https://www.jitouch.com/"
+  homepage "https:www.jitouch.com"
 
   depends_on macos: ">= :high_sierra"
 
@@ -17,9 +17,9 @@ cask "jitouch" do
             launchctl: "com.jitouch.Jitouch.agent"
 
   zap trash: [
-    "~/Library/LaunchAgents/com.jitouch.Jitouch.plist",
-    "~/Library/Logs/com.jitouch.Jitouch.log",
-    "~/Library/Logs/com.jitouch.Jitouch.prefpane.log",
-    "~/Library/Preferences/com.jitouch.Jitouch.plist",
+    "~LibraryLaunchAgentscom.jitouch.Jitouch.plist",
+    "~LibraryLogscom.jitouch.Jitouch.log",
+    "~LibraryLogscom.jitouch.Jitouch.prefpane.log",
+    "~LibraryPreferencescom.jitouch.Jitouch.plist",
   ]
 end

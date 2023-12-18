@@ -1,7 +1,7 @@
 class Pandocomatic < Formula
   desc "Automate the use of pandoc"
-  homepage "https://heerdebeer.org/Software/markdown/pandocomatic/"
-  url "https://ghproxy.com/https://github.com/htdebeer/pandocomatic/archive/refs/tags/1.1.1.tar.gz"
+  homepage "https:heerdebeer.orgSoftwaremarkdownpandocomatic"
+  url "https:github.comhtdebeerpandocomaticarchiverefstags1.1.1.tar.gz"
   sha256 "fb3b77f01cb52927163965fd911f9b59a04f133896b3a15d9aa1b56704a0d6e8"
   license "GPL-3.0-or-later"
 
@@ -13,12 +13,12 @@ class Pandocomatic < Formula
   depends_on "ruby"
 
   resource "optimist" do
-    url "https://rubygems.org/gems/optimist-3.0.1.gem"
+    url "https:rubygems.orggemsoptimist-3.0.1.gem"
     sha256 "336b753676d6117cad9301fac7e91dab4228f747d4e7179891ad3a163c64e2ed"
   end
 
   resource "paru" do
-    url "https://rubygems.org/gems/paru-1.1.0.gem"
+    url "https:rubygems.orggemsparu-1.1.0.gem"
     sha256 "0c7406a398d9b356043a4a1bfee81f33947d056bb114e9dfb6a5e2c68806fe57"
   end
 
@@ -30,22 +30,22 @@ class Pandocomatic < Formula
     end
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
-    bin.install libexec/"bin/#{name}"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec"bin#{name}"
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    (testpath/"test.md").write <<~EOS
+    (testpath"test.md").write <<~EOS
       # Homebrew
 
       A package manager for humans. Cats should take a look at Tigerbrew.
     EOS
     expected_html = <<~EOS
-      <h1 id="homebrew">Homebrew</h1>
+      <h1 id="homebrew">Homebrew<h1>
       <p>A package manager for humans. Cats should take a look at
-      Tigerbrew.</p>
+      Tigerbrew.<p>
     EOS
-    system "#{bin}/pandocomatic", "-i", "test.md", "-o", "test.html"
-    assert_equal expected_html, (testpath/"test.html").read
+    system "#{bin}pandocomatic", "-i", "test.md", "-o", "test.html"
+    assert_equal expected_html, (testpath"test.html").read
   end
 end

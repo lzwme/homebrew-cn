@@ -1,7 +1,7 @@
 class GoogleAuthenticatorLibpam < Formula
   desc "PAM module for two-factor authentication"
-  homepage "https://github.com/google/google-authenticator-libpam"
-  url "https://ghproxy.com/https://github.com/google/google-authenticator-libpam/archive/refs/tags/1.09.tar.gz"
+  homepage "https:github.comgooglegoogle-authenticator-libpam"
+  url "https:github.comgooglegoogle-authenticator-libpamarchiverefstags1.09.tar.gz"
   sha256 "ab1d7983413dc2f11de2efa903e5c326af8cb9ea37765dacb39949417f7cd037"
   license "Apache-2.0"
 
@@ -29,8 +29,8 @@ class GoogleAuthenticatorLibpam < Formula
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["qrencode"].lib}"
-    system "./bootstrap.sh"
-    system "./configure", *std_configure_args,
+    system ".bootstrap.sh"
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules"
     system "make", "install"
   end
@@ -38,19 +38,19 @@ class GoogleAuthenticatorLibpam < Formula
   def caveats
     <<~EOS
       Add 2-factor authentication for ssh:
-        echo "auth required #{opt_lib}/security/pam_google_authenticator.so" \\
-        | sudo tee -a /etc/pam.d/sshd
+        echo "auth required #{opt_lib}securitypam_google_authenticator.so" \\
+        | sudo tee -a etcpam.dsshd
 
       Add 2-factor authentication for ssh allowing users to log in without OTP:
-        echo "auth required #{opt_lib}/security/pam_google_authenticator.so" \\
-        "nullok" | sudo tee -a /etc/pam.d/sshd
+        echo "auth required #{opt_lib}securitypam_google_authenticator.so" \\
+        "nullok" | sudo tee -a etcpam.dsshd
 
-      (Or just manually edit /etc/pam.d/sshd)
+      (Or just manually edit etcpam.dsshd)
     EOS
   end
 
   test do
-    system bin/"google-authenticator", "--force", "--time-based",
+    system bin"google-authenticator", "--force", "--time-based",
            "--disallow-reuse", "--rate-limit=3", "--rate-time=30",
            "--window-size=3", "--no-confirm"
   end

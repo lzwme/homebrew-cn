@@ -1,10 +1,10 @@
 class GitSync < Formula
   desc "Clones a git repository and keeps it synchronized with the upstream"
-  homepage "https://github.com/kubernetes/git-sync#readme"
-  url "https://ghproxy.com/https://github.com/kubernetes/git-sync/archive/refs/tags/v4.1.0.tar.gz"
+  homepage "https:github.comkubernetesgit-sync#readme"
+  url "https:github.comkubernetesgit-syncarchiverefstagsv4.1.0.tar.gz"
   sha256 "4fa8fe2b13bab19e120018378c38992d6ded577e93ec8c82a3a288fc707d8bac"
   license "Apache-2.0"
-  head "https://github.com/kubernetes/git-sync.git", branch: "master"
+  head "https:github.comkubernetesgit-sync.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd1f73e1be67ef72df4b8364cb4fbc0fda30b3f52d501fc98f18479756c4ddfc"
@@ -25,15 +25,15 @@ class GitSync < Formula
   def install
     ldflags = %W[
       -s -w
-      -X k8s.io/git-sync/pkg/version.VERSION=v#{version}
+      -X k8s.iogit-syncpkgversion.VERSION=v#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
     expected_output = "Could not read from remote repository"
-    assert_match expected_output, shell_output("#{bin}/#{name} --repo=127.0.0.1/x --root=/tmp/x 2>&1", 1)
+    assert_match expected_output, shell_output("#{bin}#{name} --repo=127.0.0.1x --root=tmpx 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
+    assert_match version.to_s, shell_output("#{bin}#{name} --version")
   end
 end

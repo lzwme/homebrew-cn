@@ -1,14 +1,14 @@
 class Singular < Formula
   desc "Computer algebra system for polynomial computations"
-  homepage "https://www.singular.uni-kl.de/"
-  url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/4-3-2/singular-4.3.2p10.tar.gz"
+  homepage "https:www.singular.uni-kl.de"
+  url "https:www.singular.uni-kl.deftppubMathSingularSOURCES4-3-2singular-4.3.2p10.tar.gz"
   version "4.3.2p10"
   sha256 "28c2c9fcfee954e00dfa56eb1a7d418d5b1de67c4398d25a0f2b8f73e71552a8"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://www.singular.uni-kl.de/ftp/pub/Math/Singular/SOURCES/"
-    regex(%r{href=["']?v?(\d+(?:[.-]\d+)+)/?["' >]}i)
+    url "https:www.singular.uni-kl.deftppubMathSingularSOURCES"
+    regex(%r{href=["']?v?(\d+(?:[.-]\d+)+)?["' >]}i)
     strategy :page_match do |page, regex|
       # Match versions from directories
       versions = page.scan(regex)
@@ -24,12 +24,12 @@ class Singular < Formula
 
       # Fetch the page for the newest version directory
       dir_page = Homebrew::Livecheck::Strategy.page_content(
-        URI.join(@url, "#{newest_version.to_s.tr(".", "-")}/").to_s,
+        URI.join(@url, "#{newest_version.to_s.tr(".", "-")}").to_s,
       )
       next versions if dir_page[:content].blank?
 
       # Identify versions from files in the version directory
-      dir_versions = dir_page[:content].scan(/href=.*?singular[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i).flatten
+      dir_versions = dir_page[:content].scan(href=.*?singular[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.ti).flatten
 
       dir_versions || versions
     end
@@ -46,7 +46,7 @@ class Singular < Formula
   end
 
   head do
-    url "https://github.com/Singular/Singular.git", branch: "spielwiese"
+    url "https:github.comSingularSingular.git", branch: "spielwiese"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -66,8 +66,8 @@ class Singular < Formula
 
   def install
     # Run autogen on macOS so that -flat_namespace flag is not used.
-    system "./autogen.sh" if build.head? || OS.mac?
-    system "./configure", "--disable-debug",
+    system ".autogen.sh" if build.head? || OS.mac?
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -84,6 +84,6 @@ class Singular < Formula
       poly qq = z;
       p*q*qq;
     EOS
-    assert_match "xyz", pipe_output("#{bin}/Singular", testinput, 0)
+    assert_match "xyz", pipe_output("#{bin}Singular", testinput, 0)
   end
 end

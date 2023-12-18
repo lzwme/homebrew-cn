@@ -1,7 +1,7 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
-  homepage "https://www.getmonero.org/"
-  url "https://github.com/monero-project/monero.git",
+  homepage "https:www.getmonero.org"
+  url "https:github.commonero-projectmonero.git",
       tag:      "v0.18.3.1",
       revision: "2656cdf5056c07684741c4425a051760b97025b0"
   license "BSD-3-Clause"
@@ -43,11 +43,11 @@ class Monero < Formula
   end
 
   service do
-    run [opt_bin/"monerod", "--non-interactive"]
+    run [opt_bin"monerod", "--non-interactive"]
   end
 
   test do
-    cmd = "yes '' | #{bin}/monero-wallet-cli --restore-deterministic-wallet " \
+    cmd = "yes '' | #{bin}monero-wallet-cli --restore-deterministic-wallet " \
           "--password brew-test --restore-height 1 --generate-new-wallet wallet " \
           "--electrum-seed 'baptism cousin whole exquisite bobsled fuselage left " \
           "scoop emerge puzzled diet reinvest basin feast nautical upon mullet " \

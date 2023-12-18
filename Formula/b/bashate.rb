@@ -1,7 +1,7 @@
 class Bashate < Formula
   desc "Code style enforcement for bash programs"
-  homepage "https://github.com/openstack/bashate"
-  url "https://files.pythonhosted.org/packages/4d/0c/35b92b742cc9da7788db16cfafda2f38505e19045ae1ee204ec238ece93f/bashate-2.1.1.tar.gz"
+  homepage "https:github.comopenstackbashate"
+  url "https:files.pythonhosted.orgpackages4d0c35b92b742cc9da7788db16cfafda2f38505e19045ae1ee204ec238ece93fbashate-2.1.1.tar.gz"
   sha256 "4bab6e977f8305a720535f8f93f1fb42c521fcbc4a6c2b3d3d7671f42f221f4c"
   license "Apache-2.0"
 
@@ -29,13 +29,13 @@ class Bashate < Formula
   end
 
   test do
-    (testpath/"test.sh").write <<~EOS
-      #!/bin/bash
+    (testpath"test.sh").write <<~EOS
+      #!binbash
         echo "Testing Bashate"
     EOS
-    assert_match "E003 Indent not multiple of 4", shell_output(bin/"bashate #{testpath}/test.sh", 1)
-    assert_empty shell_output(bin/"bashate -i E003 #{testpath}/test.sh")
+    assert_match "E003 Indent not multiple of 4", shell_output(bin"bashate #{testpath}test.sh", 1)
+    assert_empty shell_output(bin"bashate -i E003 #{testpath}test.sh")
 
-    assert_match version.to_s, shell_output(bin/"bashate --version")
+    assert_match version.to_s, shell_output(bin"bashate --version")
   end
 end

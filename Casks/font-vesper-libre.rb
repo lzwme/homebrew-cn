@@ -2,12 +2,12 @@ cask "font-vesper-libre" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/vesperlibre"
+      only_path: "oflvesperlibre"
   name "Vesper Libre"
-  homepage "https://fonts.google.com/specimen/Vesper+Libre"
+  homepage "https:fonts.google.comspecimenVesper+Libre"
 
   font "VesperLibre-Bold.ttf"
   font "VesperLibre-Heavy.ttf"

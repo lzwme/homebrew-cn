@@ -1,7 +1,7 @@
 class Rure < Formula
   desc "C API for RUst's REgex engine"
-  homepage "https://github.com/rust-lang/regex/tree/HEAD/regex-capi"
-  url "https://ghproxy.com/https://github.com/rust-lang/regex/archive/refs/tags/1.10.2.tar.gz"
+  homepage "https:github.comrust-langregextreeHEADregex-capi"
+  url "https:github.comrust-langregexarchiverefstags1.10.2.tar.gz"
   sha256 "ddd5a9267870129e037a03aa6073bac03308798492c2022c9fa426d264f587a8"
   license all_of: [
     "Unicode-TOU",
@@ -21,15 +21,15 @@ class Rure < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--lib", "--manifest-path", "regex-capi/Cargo.toml", "--release"
-    include.install "regex-capi/include/rure.h"
-    lib.install "target/release/#{shared_library("librure")}"
-    lib.install "target/release/librure.a"
-    prefix.install "regex-capi/README.md" => "README-capi.md"
+    system "cargo", "build", "--lib", "--manifest-path", "regex-capiCargo.toml", "--release"
+    include.install "regex-capiincluderure.h"
+    lib.install "targetrelease#{shared_library("librure")}"
+    lib.install "targetreleaselibrure.a"
+    prefix.install "regex-capiREADME.md" => "README-capi.md"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <rure.h>
       int main(int argc, char **argv) {
         rure *re = rure_compile_must("a");
@@ -37,6 +37,6 @@ class Rure < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lrure", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

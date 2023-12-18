@@ -1,15 +1,15 @@
 class ElmFormat < Formula
   desc "Elm source code formatter, inspired by gofmt"
-  homepage "https://github.com/avh4/elm-format"
-  url "https://github.com/avh4/elm-format.git",
+  homepage "https:github.comavh4elm-format"
+  url "https:github.comavh4elm-format.git",
       tag:      "0.8.7",
       revision: "b5cca4c26b473dab06e5d73b98148637e4770d45"
   license "BSD-3-Clause"
-  head "https://github.com/avh4/elm-format.git", branch: "main"
+  head "https:github.comavh4elm-format.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -39,26 +39,26 @@ class ElmFormat < Formula
     # in Homebrew. Try using Homebrew `ghc` on update. Optionally, consider adding `ghcup`
     # as a lighter-weight alternative to `haskell-stack` for installing particular ghc version.
     jobs = ENV.make_jobs
-    ENV.deparallelize { system "stack", "-j#{jobs}", "setup", "9.2.5", "--stack-root", buildpath/".stack" }
-    ENV.prepend_path "PATH", Dir[buildpath/".stack/programs/*/ghc-*/bin"].first
+    ENV.deparallelize { system "stack", "-j#{jobs}", "setup", "9.2.5", "--stack-root", buildpath".stack" }
+    ENV.prepend_path "PATH", Dir[buildpath".stackprograms*ghc-*bin"].first
     system "cabal", "v2-update"
 
-    # Directly running `cabal v2-install` fails: Invalid file name in tar archive: "avh4-lib-0.0.0.1/../"
+    # Directly running `cabal v2-install` fails: Invalid file name in tar archive: "avh4-lib-0.0.0.1.."
     # Instead, we can use the upstream's build.sh script, which utilizes the Shake build system.
-    system "./dev/build.sh", "--", "_build/bin/elm-format/O2/elm-format"
-    bin.install "_build/bin/elm-format/O2/elm-format"
+    system ".devbuild.sh", "--", "_buildbinelm-formatO2elm-format"
+    bin.install "_buildbinelm-formatO2elm-format"
   end
 
   test do
-    src_path = testpath/"Hello.elm"
+    src_path = testpath"Hello.elm"
     src_path.write <<~EOS
       import Html exposing (text)
       main = text "Hello, world!"
     EOS
 
-    system bin/"elm-format", "--elm-version=0.18", testpath/"Hello.elm", "--yes"
-    system bin/"elm-format", "--elm-version=0.19", testpath/"Hello.elm", "--yes"
+    system bin"elm-format", "--elm-version=0.18", testpath"Hello.elm", "--yes"
+    system bin"elm-format", "--elm-version=0.19", testpath"Hello.elm", "--yes"
 
-    assert_match version.to_s, shell_output("#{bin}/elm-format --help")
+    assert_match version.to_s, shell_output("#{bin}elm-format --help")
   end
 end

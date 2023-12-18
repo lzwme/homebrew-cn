@@ -1,11 +1,11 @@
 class Ppsspp < Formula
   desc "PlayStation Portable emulator"
-  homepage "https://ppsspp.org/"
-  url "https://github.com/hrydgard/ppsspp.git",
+  homepage "https:ppsspp.org"
+  url "https:github.comhrydgardppsspp.git",
       tag:      "v1.16.6",
       revision: "ba0ce344937d17e177ec8656ab957f6b82facdda"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
-  head "https://github.com/hrydgard/ppsspp.git", branch: "master"
+  head "https:github.comhrydgardppsspp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "47743b26e05da06f873cfc04140c7b06fa05e4d2878b177bbce19695e9990693"
@@ -47,21 +47,21 @@ class Ppsspp < Formula
     # Build PPSSPP-bundled ffmpeg from source. Changes in more recent
     # versions in ffmpeg make it unsuitable for use with PPSSPP, so
     # upstream ships a modified version of ffmpeg 3.
-    # See https://github.com/Homebrew/homebrew-core/issues/84737.
+    # See https:github.comHomebrewhomebrew-coreissues84737.
     cd "ffmpeg" do
       if OS.mac?
         rm_rf "macosx"
-        system "./mac-build.sh"
+        system ".mac-build.sh"
       else
         rm_rf "linux"
-        system "./linux_x86-64.sh"
+        system ".linux_x86-64.sh"
       end
     end
 
     # Replace bundled MoltenVK dylib with symlink to Homebrew-managed dylib
-    vulkan_frameworks = buildpath/"ext/vulkan/macOS/Frameworks"
-    (vulkan_frameworks/"libMoltenVK.dylib").unlink
-    vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib/"libMoltenVK.dylib"
+    vulkan_frameworks = buildpath"extvulkanmacOSFrameworks"
+    (vulkan_frameworks"libMoltenVK.dylib").unlink
+    vulkan_frameworks.install_symlink Formula["molten-vk"].opt_lib"libMoltenVK.dylib"
 
     mkdir "build" do
       args = std_cmake_args + %w[
@@ -79,12 +79,12 @@ class Ppsspp < Formula
 
       if OS.mac?
         prefix.install "PPSSPPSDL.app"
-        bin.write_exec_script "#{prefix}/PPSSPPSDL.app/Contents/MacOS/PPSSPPSDL"
-        mv "#{bin}/PPSSPPSDL", "#{bin}/ppsspp"
+        bin.write_exec_script "#{prefix}PPSSPPSDL.appContentsMacOSPPSSPPSDL"
+        mv "#{bin}PPSSPPSDL", "#{bin}ppsspp"
 
         # Replace app bundles with symlinks to allow dependencies to be updated
-        app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
-        ln_sf (Formula["molten-vk"].opt_lib/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
+        app_frameworks = prefix"PPSSPPSDL.appContentsFrameworks"
+        ln_sf (Formula["molten-vk"].opt_lib"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
       else
         bin.install "PPSSPPSDL" => "ppsspp"
       end
@@ -92,10 +92,10 @@ class Ppsspp < Formula
   end
 
   test do
-    system "#{bin}/ppsspp", "--version"
+    system "#{bin}ppsspp", "--version"
     if OS.mac?
-      app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
-      assert_predicate app_frameworks/"libMoltenVK.dylib", :exist?, "Broken linkage with `molten-vk`"
+      app_frameworks = prefix"PPSSPPSDL.appContentsFrameworks"
+      assert_predicate app_frameworks"libMoltenVK.dylib", :exist?, "Broken linkage with `molten-vk`"
     end
   end
 end

@@ -8,12 +8,12 @@
 
 class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
-  homepage "https://gpac.wp.mines-telecom.fr/"
-  url "https://ghproxy.com/https://github.com/gpac/gpac/archive/refs/tags/v2.2.1.tar.gz"
+  homepage "https:gpac.wp.mines-telecom.fr"
+  url "https:github.comgpacgpacarchiverefstagsv2.2.1.tar.gz"
   sha256 "8173ecc4143631d7f2c59f77e1144b429ccadb8de0d53a4e254389fb5948d8b8"
   license "LGPL-2.1-or-later"
   revision 1
-  head "https://github.com/gpac/gpac.git", branch: "master"
+  head "https:github.comgpacgpac.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -33,15 +33,15 @@ class Gpac < Formula
 
   conflicts_with "bento4", because: "both install `mp42ts` binaries"
 
-  # https://github.com/gpac/gpac/issues/2673
+  # https:github.comgpacgpacissues2673
   patch do
-    url "https://github.com/gpac/gpac/commit/ce2202796a1630129cdff42cc1c02c3a8ea7a75f.patch?full_index=1"
+    url "https:github.comgpacgpaccommitce2202796a1630129cdff42cc1c02c3a8ea7a75f.patch?full_index=1"
     sha256 "708ff80d95fcfd28720c6c56a9c32c76bb181911fa8f6cb9a0f38c8012e96e9d"
   end
 
-  # https://github.com/gpac/gpac/issues/2406
+  # https:github.comgpacgpacissues2406
   patch do
-    url "https://github.com/gpac/gpac/commit/ba14e34dd7a3c4cef5a56962898e9f863dd4b4f3.patch?full_index=1"
+    url "https:github.comgpacgpaccommitba14e34dd7a3c4cef5a56962898e9f863dd4b4f3.patch?full_index=1"
     sha256 "22ea4f6e93ec457468759bf5599903bea5171b1216472d09967fc9c558fa9fb3"
   end
 
@@ -54,13 +54,13 @@ class Gpac < Formula
       --disable-x11
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/MP4Box", "-add", test_fixtures("test.mp3"), "#{testpath}/out.mp4"
-    assert_predicate testpath/"out.mp4", :exist?
+    system "#{bin}MP4Box", "-add", test_fixtures("test.mp3"), "#{testpath}out.mp4"
+    assert_predicate testpath"out.mp4", :exist?
   end
 end

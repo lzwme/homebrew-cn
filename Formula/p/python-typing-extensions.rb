@@ -1,7 +1,7 @@
 class PythonTypingExtensions < Formula
   desc "Backported and experimental type hints for Python"
-  homepage "https://github.com/python/typing_extensions"
-  url "https://files.pythonhosted.org/packages/0c/1d/eb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96/typing_extensions-4.9.0.tar.gz"
+  homepage "https:github.compythontyping_extensions"
+  url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
   sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
   license "Python-2.0"
 
@@ -28,7 +28,7 @@ class PythonTypingExtensions < Formula
 
   def install
     pythons.each do |python|
-      system python.opt_libexec/"bin/pip", "install", *std_pip_args, "."
+      system python.opt_libexec"binpip", "install", *std_pip_args, "."
     end
   end
 
@@ -45,12 +45,12 @@ class PythonTypingExtensions < Formula
 
   test do
     pythons.each do |python|
-      system python.opt_libexec/"bin/python", "-c", <<~EOS
+      system python.opt_libexec"binpython", "-c", <<~EOS
         import typing_extensions
       EOS
     end
 
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       import typing_extensions
 
       class Movie(typing_extensions.TypedDict):
@@ -59,6 +59,6 @@ class PythonTypingExtensions < Formula
 
       m = Movie(title="Grease")
     EOS
-    system "mypy", testpath/"test.py"
+    system "mypy", testpath"test.py"
   end
 end

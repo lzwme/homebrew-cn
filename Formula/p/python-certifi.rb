@@ -1,7 +1,7 @@
 class PythonCertifi < Formula
   desc "Mozilla CA bundle for Python"
-  homepage "https://github.com/certifi/python-certifi"
-  url "https://files.pythonhosted.org/packages/d4/91/c89518dd4fe1f3a4e3f6ab7ff23cb00ef2e8c9adf99dacc618ad5e068e28/certifi-2023.11.17.tar.gz"
+  homepage "https:github.comcertifipython-certifi"
+  url "https:files.pythonhosted.orgpackagesd491c89518dd4fe1f3a4e3f6ab7ff23cb00ef2e8c9adf99dacc618ad5e068e28certifi-2023.11.17.tar.gz"
   sha256 "9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1"
   license "MPL-2.0"
 
@@ -27,21 +27,21 @@ class PythonCertifi < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
 
       # Use brewed ca-certificates PEM file instead of the bundled copy
       site_packages = Language::Python.site_packages("python#{python.version.major_minor}")
-      rm prefix/site_packages/"certifi/cacert.pem"
-      (prefix/site_packages/"certifi").install_symlink Formula["ca-certificates"].pkgetc/"cert.pem" => "cacert.pem"
+      rm prefixsite_packages"certificacert.pem"
+      (prefixsite_packages"certifi").install_symlink Formula["ca-certificates"].pkgetc"cert.pem" => "cacert.pem"
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       output = shell_output("#{python_exe} -m certifi").chomp
-      assert_equal Formula["ca-certificates"].pkgetc/"cert.pem", Pathname(output).realpath
+      assert_equal Formula["ca-certificates"].pkgetc"cert.pem", Pathname(output).realpath
     end
   end
 end

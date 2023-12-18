@@ -1,11 +1,11 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
-  homepage "https://www.vtk.org/"
-  url "https://www.vtk.org/files/release/9.2/VTK-9.2.6.tar.gz"
+  homepage "https:www.vtk.org"
+  url "https:www.vtk.orgfilesrelease9.2VTK-9.2.6.tar.gz"
   sha256 "06fc8d49c4e56f498c40fcb38a563ed8d4ec31358d0101e8988f0bb4d539dd12"
   license "BSD-3-Clause"
   revision 5
-  head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
+  head "https:gitlab.kitware.comvtkvtk.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -71,8 +71,8 @@ class Vtk < Formula
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
     python = "python3.12"
-    qml_plugin_dir = lib/"qml/VTK.#{version.major_minor}"
-    vtkmodules_dir = prefix/Language::Python.site_packages(python)/"vtkmodules"
+    qml_plugin_dir = lib"qmlVTK.#{version.major_minor}"
+    vtkmodules_dir = prefixLanguage::Python.site_packages(python)"vtkmodules"
     rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]
 
     args = %W[
@@ -110,7 +110,7 @@ class Vtk < Formula
       -DVTK_QT_VERSION:STRING=6
     ]
 
-    # https://github.com/Homebrew/linuxbrew-core/pull/21654#issuecomment-738549701
+    # https:github.comHomebrewlinuxbrew-corepull21654#issuecomment-738549701
     args << "-DOpenGL_GL_PREFERENCE=LEGACY"
 
     args << "-DVTK_USE_COCOA:BOOL=ON" if OS.mac?
@@ -124,11 +124,11 @@ class Vtk < Formula
     # Force use of Apple Clang on macOS that needs LLVM to build
     ENV.clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
-    vtk_dir = lib/"cmake/vtk-#{version.major_minor}"
-    vtk_cmake_module = vtk_dir/"VTK-vtk-module-find-packages.cmake"
+    vtk_dir = lib"cmakevtk-#{version.major_minor}"
+    vtk_cmake_module = vtk_dir"VTK-vtk-module-find-packages.cmake"
     assert_match Formula["boost"].version.to_s, vtk_cmake_module.read, "VTK needs to be rebuilt against Boost!"
 
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
       project(Distance2BetweenPoints LANGUAGES CXX)
       find_package(VTK REQUIRED COMPONENTS vtkCommonCore CONFIG)
@@ -136,7 +136,7 @@ class Vtk < Formula
       target_link_libraries(Distance2BetweenPoints PRIVATE ${VTK_LIBRARIES})
     EOS
 
-    (testpath/"Distance2BetweenPoints.cxx").write <<~EOS
+    (testpath"Distance2BetweenPoints.cxx").write <<~EOS
       #include <cassert>
       #include <vtkMath.h>
       int main() {
@@ -149,15 +149,15 @@ class Vtk < Formula
 
     system "cmake", ".", "-DCMAKE_BUILD_TYPE=Debug", "-DCMAKE_VERBOSE_MAKEFILE=ON", "-DVTK_DIR=#{vtk_dir}"
     system "make"
-    system "./Distance2BetweenPoints"
+    system ".Distance2BetweenPoints"
 
-    (testpath/"Distance2BetweenPoints.py").write <<~EOS
+    (testpath"Distance2BetweenPoints.py").write <<~EOS
       import vtk
       p0 = (0, 0, 0)
       p1 = (1, 1, 1)
       assert vtk.vtkMath.Distance2BetweenPoints(p0, p1) == 3
     EOS
 
-    system bin/"vtkpython", "Distance2BetweenPoints.py"
+    system bin"vtkpython", "Distance2BetweenPoints.py"
   end
 end

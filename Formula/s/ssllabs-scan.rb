@@ -1,7 +1,7 @@
 class SsllabsScan < Formula
   desc "This tool is a command-line client for the SSL Labs APIs"
-  homepage "https://github.com/ssllabs/ssllabs-scan/"
-  url "https://ghproxy.com/https://github.com/ssllabs/ssllabs-scan/archive/refs/tags/v1.5.0.tar.gz"
+  homepage "https:github.comssllabsssllabs-scan"
+  url "https:github.comssllabsssllabs-scanarchiverefstagsv1.5.0.tar.gz"
   sha256 "51c52e958d5da739910e9271a3abf4902892b91acb840ea74f5c052a71e3a008"
   license "Apache-2.0"
 
@@ -30,13 +30,13 @@ class SsllabsScan < Formula
     <<~EOS
       By installing this package you agree to the Terms and Conditions defined by Qualys.
       You can find the terms and conditions at this link:
-         https://www.ssllabs.com/about/terms.html
+         https:www.ssllabs.comaboutterms.html
 
       If you do not agree with those you should uninstall the formula.
     EOS
   end
 
   test do
-    system "#{bin}/ssllabs-scan", "-grade", "-quiet", "-usecache", "ssllabs.com"
+    system "#{bin}ssllabs-scan", "-grade", "-quiet", "-usecache", "ssllabs.com"
   end
 end

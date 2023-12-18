@@ -1,10 +1,10 @@
 class Rtx < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
-  homepage "https://github.com/jdx/rtx"
-  url "https://ghproxy.com/https://github.com/jdx/rtx/archive/refs/tags/v2023.12.30.tar.gz"
+  homepage "https:github.comjdxrtx"
+  url "https:github.comjdxrtxarchiverefstagsv2023.12.30.tar.gz"
   sha256 "c4e07cf0762cf91a547fccf7c39e4f939a96675a8d926e10029ec9026197c72d"
   license "MIT"
-  head "https://github.com/jdx/rtx.git", branch: "main"
+  head "https:github.comjdxrtx.git", branch: "main"
 
   livecheck do
     url :stable
@@ -30,19 +30,19 @@ class Rtx < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "man/man1/rtx.1"
-    generate_completions_from_executable(bin/"rtx", "completion")
+    man1.install "manman1rtx.1"
+    generate_completions_from_executable(bin"rtx", "completion")
     lib.mkpath
-    touch lib/".disable-self-update"
-    (share/"fish"/"vendor_conf.d"/"rtx-activate.fish").write <<~EOS
+    touch lib".disable-self-update"
+    (share"fish""vendor_conf.d""rtx-activate.fish").write <<~EOS
       if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
-        #{bin}/rtx activate fish | source
+        #{bin}rtx activate fish | source
       end
     EOS
   end
 
   test do
-    system "#{bin}/rtx", "install", "nodejs@18.13.0"
-    assert_match "v18.13.0", shell_output("#{bin}/rtx exec nodejs@18.13.0 -- node -v")
+    system "#{bin}rtx", "install", "nodejs@18.13.0"
+    assert_match "v18.13.0", shell_output("#{bin}rtx exec nodejs@18.13.0 -- node -v")
   end
 end

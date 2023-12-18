@@ -2,11 +2,11 @@ cask "font-shalimar" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/shalimar/Shalimar-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflshalimarShalimar-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Shalimar"
   desc "Upright script inspired by the calligraphic strokes of a flat nib pen"
-  homepage "https://fonts.google.com/specimen/Shalimar"
+  homepage "https:fonts.google.comspecimenShalimar"
 
   font "Shalimar-Regular.ttf"
 

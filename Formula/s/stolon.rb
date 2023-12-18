@@ -1,7 +1,7 @@
 class Stolon < Formula
   desc "Cloud native PostgreSQL manager for high availability"
-  homepage "https://github.com/sorintlab/stolon"
-  url "https://github.com/sorintlab/stolon.git",
+  homepage "https:github.comsorintlabstolon"
+  url "https:github.comsorintlabstolon.git",
       tag:      "v0.17.0",
       revision: "dc942da234caf016a69df599d0bb455c0716f5b6"
   license "Apache-2.0"
@@ -25,15 +25,15 @@ class Stolon < Formula
   depends_on "libpq"
 
   def install
-    ldflags = "-s -w -X github.com/sorintlab/stolon/cmd.Version=#{version}"
+    ldflags = "-s -w -X github.comsorintlabstoloncmd.Version=#{version}"
 
     %w[
-      stolonctl ./cmd/stolonctl
-      stolon-keeper ./cmd/keeper
-      stolon-sentinel ./cmd/sentinel
-      stolon-proxy ./cmd/proxy
+      stolonctl .cmdstolonctl
+      stolon-keeper .cmdkeeper
+      stolon-sentinel .cmdsentinel
+      stolon-proxy .cmdproxy
     ].each_slice(2) do |bin_name, src_path|
-      system "go", "build", *std_go_args(ldflags: ldflags, output: bin/bin_name), src_path
+      system "go", "build", *std_go_args(ldflags: ldflags, output: binbin_name), src_path
     end
   end
 
@@ -63,15 +63,15 @@ class Stolon < Formula
       sleep 5
     end
     assert_match "stolonctl version #{version}",
-      shell_output("#{bin}/stolonctl version 2>&1")
+      shell_output("#{bin}stolonctl version 2>&1")
     assert_match "nil cluster data: <nil>",
-      shell_output("#{bin}/stolonctl status --cluster-name test --store-backend consul 2>&1", 1)
+      shell_output("#{bin}stolonctl status --cluster-name test --store-backend consul 2>&1", 1)
     assert_match "stolon-keeper version #{version}",
-      shell_output("#{bin}/stolon-keeper --version 2>&1")
+      shell_output("#{bin}stolon-keeper --version 2>&1")
     assert_match "stolon-sentinel version #{version}",
-      shell_output("#{bin}/stolon-sentinel --version 2>&1")
+      shell_output("#{bin}stolon-sentinel --version 2>&1")
     assert_match "stolon-proxy version #{version}",
-      shell_output("#{bin}/stolon-proxy --version 2>&1")
+      shell_output("#{bin}stolon-proxy --version 2>&1")
 
     system "consul", "leave"
   end

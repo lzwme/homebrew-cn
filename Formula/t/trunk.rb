@@ -1,10 +1,10 @@
 class Trunk < Formula
   desc "Build, bundle & ship your Rust WASM application to the web"
-  homepage "https://trunkrs.dev/"
-  url "https://ghproxy.com/https://github.com/trunk-rs/trunk/archive/refs/tags/v0.18.0.tar.gz"
+  homepage "https:trunkrs.dev"
+  url "https:github.comtrunk-rstrunkarchiverefstagsv0.18.0.tar.gz"
   sha256 "b19d6fa45e1fab883badb9a2ba92277ac1bae6139e67d90459fbdf4247cd3a65"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/trunk-rs/trunk.git", branch: "main"
+  head "https:github.comtrunk-rstrunk.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc9aa955c775a994b67b19e9e01e76de56dcfe28ecf0fbf22ffeb089ba9c2d0e"
@@ -30,6 +30,6 @@ class Trunk < Formula
   end
 
   test do
-    assert_match "ConfigOpts {\n", shell_output("#{bin}/trunk config show")
+    assert_match "ConfigOpts {\n", shell_output("#{bin}trunk config show")
   end
 end

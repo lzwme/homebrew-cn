@@ -1,10 +1,10 @@
 class Falco < Formula
   desc "VCL parser and linter optimized for Fastly"
-  homepage "https://github.com/ysugimoto/falco"
-  url "https://ghproxy.com/https://github.com/ysugimoto/falco/archive/refs/tags/v1.2.1.tar.gz"
+  homepage "https:github.comysugimotofalco"
+  url "https:github.comysugimotofalcoarchiverefstagsv1.2.1.tar.gz"
   sha256 "ddb639f2d572c9c8235458f25cd56a58f66a08fd11bb2f7c5af3a0668d9618f8"
   license "MIT"
-  head "https://github.com/ysugimoto/falco.git", branch: "main"
+  head "https:github.comysugimotofalco.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dafa42f25f003e3f93446c7d70b61cabbc1049c81a25973d2889bbeae704e7a8"
@@ -20,13 +20,13 @@ class Falco < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/falco"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdfalco"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/falco -V 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}falco -V 2>&1", 1)
 
-    pass_vcl = testpath/"pass.vcl"
+    pass_vcl = testpath"pass.vcl"
     pass_vcl.write <<~EOS
       sub vcl_recv {
       #Fastly recv
@@ -34,9 +34,9 @@ class Falco < Formula
       }
     EOS
 
-    assert_match "VCL looks great", shell_output("#{bin}/falco #{pass_vcl} 2>&1")
+    assert_match "VCL looks great", shell_output("#{bin}falco #{pass_vcl} 2>&1")
 
-    fail_vcl = testpath/"fail.vcl"
+    fail_vcl = testpath"fail.vcl"
     fail_vcl.write <<~EOS
       sub vcl_recv {
       #Fastly recv
@@ -45,6 +45,6 @@ class Falco < Formula
       }
     EOS
     assert_match "Type mismatch: req.backend requires type REQBACKEND",
-      shell_output("#{bin}/falco #{fail_vcl} 2>&1", 1)
+      shell_output("#{bin}falco #{fail_vcl} 2>&1", 1)
   end
 end

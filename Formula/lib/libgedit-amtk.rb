@@ -1,11 +1,11 @@
 class LibgeditAmtk < Formula
   desc "Actions, Menus and Toolbars Kit for GTK applications"
-  homepage "https://gedit-technology.net"
-  url "https://ghproxy.com/https://github.com/gedit-technology/libgedit-amtk/archive/refs/tags/5.8.0.tar.gz"
+  homepage "https:gedit-technology.net"
+  url "https:github.comgedit-technologylibgedit-amtkarchiverefstags5.8.0.tar.gz"
   sha256 "014d90bdc611ef855655c846a37341b8394db794b06344e07066b87c259b4f31"
   license "LGPL-3.0-or-later"
   revision 1
-  head "https://github.com/gedit-technology/libgedit-amtk.git", branch: "main"
+  head "https:github.comgedit-technologylibgedit-amtk.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "a3b8cde0ae3dce7fe45f0e61ded5d303478eb035929af8991cdc791078bf4025"
@@ -30,8 +30,8 @@ class LibgeditAmtk < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <amtk/amtk.h>
+    (testpath"test.c").write <<~EOS
+      #include <amtkamtk.h>
 
       int main(int argc, char *argv[]) {
         amtk_init();
@@ -55,23 +55,23 @@ class LibgeditAmtk < Formula
     pixman = Formula["pixman"]
     flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
     flags += %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/gio-unix-2.0/
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx3.opt_include}/gtk-3.0
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/libgedit-amtk-5
+      -I#{glib.opt_include}gio-unix-2.0
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gtkx3.opt_include}gtk-3.0
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}libgedit-amtk-5
       -I#{libepoxy.opt_include}
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
       -I#{pcre.opt_include}
-      -I#{pixman.opt_include}/pixman-1
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -96,6 +96,6 @@ class LibgeditAmtk < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

@@ -1,14 +1,14 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
-  homepage "https://openjdk.java.net/"
-  url "https://ghproxy.com/https://github.com/openjdk/jdk8u/archive/refs/tags/jdk8u392-ga.tar.gz"
+  homepage "https:openjdk.java.net"
+  url "https:github.comopenjdkjdk8uarchiverefstagsjdk8u392-ga.tar.gz"
   version "1.8.0-392"
   sha256 "06b508ff8d8e63ddc20ca31aa45f3669577fd306b8277de905cc4e3a04eecd24"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(/^jdk(8u\d+)-ga$/i)
+    regex(^jdk(8u\d+)-ga$i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.gsub("8u", "1.8.0+") }.compact
     end
@@ -48,49 +48,49 @@ class OpenjdkAT8 < Formula
   end
 
   # Oracle doesn't serve JDK 7 downloads anymore, so we use Zulu JDK 7 for bootstrapping.
-  # https://www.azul.com/downloads/?version=java-7-lts&package=jdk
+  # https:www.azul.comdownloads?version=java-7-lts&package=jdk
   resource "boot-jdk" do
     on_macos do
-      url "https://cdn.azul.com/zulu/bin/zulu7.56.0.11-ca-jdk7.0.352-macosx_x64.tar.gz"
+      url "https:cdn.azul.comzulubinzulu7.56.0.11-ca-jdk7.0.352-macosx_x64.tar.gz"
       sha256 "31909aa6233289f8f1d015586825587e95658ef59b632665e1e49fc33a2cdf06"
     end
     on_linux do
-      url "https://cdn.azul.com/zulu/bin/zulu7.56.0.11-ca-jdk7.0.352-linux_x64.tar.gz"
+      url "https:cdn.azul.comzulubinzulu7.56.0.11-ca-jdk7.0.352-linux_x64.tar.gz"
       sha256 "8a7387c1ed151474301b6553c6046f865dc6c1e1890bcf106acc2780c55727c8"
     end
   end
 
   def install
     _, _, update = version.to_s.rpartition("-")
-    boot_jdk = buildpath/"boot-jdk"
+    boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
     java_options = ENV.delete("_JAVA_OPTIONS")
 
-    # Work around clashing -I/usr/include and -isystem headers,
+    # Work around clashing -Iusrinclude and -isystem headers,
     # as superenv already handles this detail for us.
-    inreplace "common/autoconf/flags.m4",
+    inreplace "commonautoconfflags.m4",
               '-isysroot \"$SYSROOT\"', ""
-    inreplace "common/autoconf/toolchain.m4",
-              '-isysroot \"$SDKPATH\" -iframework\"$SDKPATH/System/Library/Frameworks\"', ""
-    inreplace "hotspot/make/bsd/makefiles/saproc.make",
-              '-isysroot "$(SDKPATH)" -iframework"$(SDKPATH)/System/Library/Frameworks"', ""
+    inreplace "commonautoconftoolchain.m4",
+              '-isysroot \"$SDKPATH\" -iframework\"$SDKPATHSystemLibraryFrameworks\"', ""
+    inreplace "hotspotmakebsdmakefilessaproc.make",
+              '-isysroot "$(SDKPATH)" -iframework"$(SDKPATH)SystemLibraryFrameworks"', ""
 
     if OS.mac?
       # Fix macOS version detection. After 10.10 this was changed to a 6 digit number,
       # but this Makefile was written in the era of 4 digit numbers.
-      inreplace "hotspot/make/bsd/makefiles/gcc.make" do |s|
+      inreplace "hotspotmakebsdmakefilesgcc.make" do |s|
         s.gsub! "$(subst .,,$(MACOSX_VERSION_MIN))", ENV["HOMEBREW_MACOS_VERSION_NUMERIC"]
         s.gsub! "MACOSX_VERSION_MIN=10.7.0", "MACOSX_VERSION_MIN=#{MacOS.version}"
       end
 
       # Fix Xcode 13 detection.
-      inreplace "common/autoconf/toolchain.m4",
+      inreplace "commonautoconftoolchain.m4",
                 "if test \"${XC_VERSION_PARTS[[0]]}\" != \"6\"",
                 "if test \"${XC_VERSION_PARTS[[0]]}\" != \"#{MacOS::Xcode.version.major}\""
     else
       # Fix linker errors on brewed GCC
-      inreplace "common/autoconf/flags.m4", "-Xlinker -O1", ""
-      inreplace "hotspot/make/linux/makefiles/gcc.make", "-Xlinker -O1", ""
+      inreplace "commonautoconfflags.m4", "-Xlinker -O1", ""
+      inreplace "hotspotmakelinuxmakefilesgcc.make", "-Xlinker -O1", ""
     end
 
     args = %W[
@@ -109,7 +109,7 @@ class OpenjdkAT8 < Formula
       --with-giflib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$$$")}/server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$$$")}server"]
     if OS.mac?
       args += %w[
         --with-toolchain-type=clang
@@ -120,7 +120,7 @@ class OpenjdkAT8 < Formula
       if MacOS.version <= :catalina
         sdk_path = MacOS::CLT.sdk_path(MacOS.version)
         ENV["SDKPATH"] = ENV["SDKROOT"] = sdk_path
-        javavm_framework_path = sdk_path/"System/Library/Frameworks/JavaVM.framework/Frameworks"
+        javavm_framework_path = sdk_path"SystemLibraryFrameworksJavaVM.frameworkFrameworks"
         args += %W[
           --with-extra-cflags=-F#{javavm_framework_path}
           --with-extra-cxxflags=-F#{javavm_framework_path}
@@ -130,37 +130,37 @@ class OpenjdkAT8 < Formula
     else
       args += %W[
         --with-toolchain-type=gcc
-        --x-includes=#{HOMEBREW_PREFIX}/include
-        --x-libraries=#{HOMEBREW_PREFIX}/lib
+        --x-includes=#{HOMEBREW_PREFIX}include
+        --x-libraries=#{HOMEBREW_PREFIX}lib
         --with-cups=#{HOMEBREW_PREFIX}
         --with-fontconfig=#{HOMEBREW_PREFIX}
         --with-stdc++lib=dynamic
       ]
-      extra_rpath = rpath(source: libexec/"lib/amd64", target: libexec/"jre/lib/amd64")
+      extra_rpath = rpath(source: libexec"libamd64", target: libexec"jrelibamd64")
       ldflags << "-Wl,-rpath,#{extra_rpath.gsub("$", "\\$$$$")}"
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
 
-    system "bash", "common/autoconf/autogen.sh"
+    system "bash", "commonautoconfautogen.sh"
     system "bash", "configure", *args
 
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
     system "make", "bootcycle-images", "CONF=release"
 
-    cd "build/release/images" do
+    cd "buildreleaseimages" do
       jdk = libexec
 
       if OS.mac?
-        libexec.install Dir["j2sdk-bundle/*"].first => "openjdk.jdk"
-        jdk /= "openjdk.jdk/Contents/Home"
+        libexec.install Dir["j2sdk-bundle*"].first => "openjdk.jdk"
+        jdk = "openjdk.jdkContentsHome"
       else
-        libexec.install Dir["j2sdk-image/*"]
+        libexec.install Dir["j2sdk-image*"]
       end
 
-      bin.install_symlink Dir[jdk/"bin/*"]
-      include.install_symlink Dir[jdk/"include/*.h"]
-      include.install_symlink Dir[jdk/"include/*/*.h"]
-      man1.install_symlink Dir[jdk/"man/man1/*"]
+      bin.install_symlink Dir[jdk"bin*"]
+      include.install_symlink Dir[jdk"include*.h"]
+      include.install_symlink Dir[jdk"include**.h"]
+      man1.install_symlink Dir[jdk"manman1*"]
     end
   end
 
@@ -168,13 +168,13 @@ class OpenjdkAT8 < Formula
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
+          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk-8.jdk
       EOS
     end
   end
 
   test do
-    (testpath/"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~EOS
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -182,8 +182,8 @@ class OpenjdkAT8 < Formula
       }
     EOS
 
-    system bin/"javac", "HelloWorld.java"
+    system bin"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
   end
 end

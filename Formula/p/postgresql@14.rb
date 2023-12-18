@@ -1,14 +1,14 @@
 class PostgresqlAT14 < Formula
   desc "Object-relational database system"
-  homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.10/postgresql-14.10.tar.bz2"
+  homepage "https:www.postgresql.org"
+  url "https:ftp.postgresql.orgpubsourcev14.10postgresql-14.10.tar.bz2"
   sha256 "c99431c48e9d470b0d0ab946eb2141a3cd19130c2fb4dc4b3284a7774ecc8399"
   license "PostgreSQL"
   revision 1
 
   livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(14+(?:\.\d+)+)/?["' >]}i)
+    url "https:ftp.postgresql.orgpubsource"
+    regex(%r{href=["']?v?(14+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -21,14 +21,14 @@ class PostgresqlAT14 < Formula
     sha256 x86_64_linux:   "b85b3217a4fc922f2cdd190706bd644106d62c4d96e688671d1584732c565a35"
   end
 
-  # https://www.postgresql.org/support/versioning/
+  # https:www.postgresql.orgsupportversioning
   deprecate! date: "2026-11-12", because: :unsupported
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https://github.com/Homebrew/homebrew-core/issues/47494.
+  # See https:github.comHomebrewhomebrew-coreissues47494.
   depends_on "krb5"
 
   depends_on "lz4"
@@ -47,7 +47,7 @@ class PostgresqlAT14 < Formula
 
   # Fix compatibility with OpenSSL 3.2
   # Remove once merged
-  # Ref https://www.postgresql.org/message-id/CX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
+  # Ref https:www.postgresql.orgmessage-idCX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
   patch :DATA
 
   def install
@@ -57,9 +57,9 @@ class PostgresqlAT14 < Formula
     args = %W[
       --disable-debug
       --prefix=#{prefix}
-      --datadir=#{HOMEBREW_PREFIX}/share/#{name}
-      --libdir=#{HOMEBREW_PREFIX}/lib/#{name}
-      --includedir=#{HOMEBREW_PREFIX}/include/#{name}
+      --datadir=#{HOMEBREW_PREFIX}share#{name}
+      --libdir=#{HOMEBREW_PREFIX}lib#{name}
+      --includedir=#{HOMEBREW_PREFIX}include#{name}
       --enable-thread-safety
       --with-gssapi
       --with-icu
@@ -84,25 +84,25 @@ class PostgresqlAT14 < Formula
     # which does not work on CLT-only installs.
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install-world", "datadir=#{pkgshare}",
-                                    "libdir=#{lib}/#{name}",
-                                    "pkglibdir=#{lib}/#{name}",
-                                    "includedir=#{include}/#{name}",
-                                    "pkgincludedir=#{include}/#{name}",
-                                    "includedir_server=#{include}/#{name}/server",
-                                    "includedir_internal=#{include}/#{name}/internal"
+                                    "libdir=#{lib}#{name}",
+                                    "pkglibdir=#{lib}#{name}",
+                                    "includedir=#{include}#{name}",
+                                    "pkgincludedir=#{include}#{name}",
+                                    "includedir_server=#{include}#{name}server",
+                                    "includedir_internal=#{include}#{name}internal"
 
     if OS.linux?
-      inreplace lib/name/"pgxs/src/Makefile.global",
-                "LD = #{HOMEBREW_PREFIX}/Homebrew/Library/Homebrew/shims/linux/super/ld",
-                "LD = #{HOMEBREW_PREFIX}/bin/ld"
+      inreplace libname"pgxssrcMakefile.global",
+                "LD = #{HOMEBREW_PREFIX}HomebrewLibraryHomebrewshimslinuxsuperld",
+                "LD = #{HOMEBREW_PREFIX}binld"
     end
   end
 
   def post_install
-    (var/"log").mkpath
+    (var"log").mkpath
     postgresql_datadir.mkpath
 
     odeprecated old_postgres_data_dir, new_postgres_data_dir if old_postgres_data_dir.exist?
@@ -110,7 +110,7 @@ class PostgresqlAT14 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}/initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system "#{bin}initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
@@ -122,25 +122,25 @@ class PostgresqlAT14 < Formula
   end
 
   def postgresql_log_path
-    var/"log/#{name}.log"
+    var"log#{name}.log"
   end
 
   def pg_version_exists?
-    (postgresql_datadir/"PG_VERSION").exist?
+    (postgresql_datadir"PG_VERSION").exist?
   end
 
   def new_postgres_data_dir
-    var/name
+    varname
   end
 
   def old_postgres_data_dir
-    var/"postgres"
+    var"postgres"
   end
 
   # Figure out what version of PostgreSQL the old data dir is
   # using
   def old_postgresql_datadir_version
-    pg_version = old_postgres_data_dir/"PG_VERSION"
+    pg_version = old_postgres_data_dir"PG_VERSION"
     pg_version.exist? && pg_version.read.chomp
   end
 
@@ -167,14 +167,14 @@ class PostgresqlAT14 < Formula
       This formula has created a default database cluster with:
         initdb --locale=C -E UTF-8 #{postgresql_datadir}
       For more details, read:
-        https://www.postgresql.org/docs/#{version.major}/app-initdb.html
+        https:www.postgresql.orgdocs#{version.major}app-initdb.html
     EOS
 
     caveats
   end
 
   service do
-    run [opt_bin/"postgres", "-D", f.postgresql_datadir]
+    run [opt_bin"postgres", "-D", f.postgresql_datadir]
     keep_alive true
     log_path f.postgresql_log_path
     error_log_path f.postgresql_log_path
@@ -182,22 +182,22 @@ class PostgresqlAT14 < Formula
   end
 
   test do
-    system bin/"initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{bin}/pg_config --sharedir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{bin}/pg_config --libdir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}/lib/#{name}", shell_output("#{bin}/pg_config --pkglibdir").chomp
-    assert_equal "#{HOMEBREW_PREFIX}/include/#{name}", shell_output("#{bin}/pg_config --includedir").chomp
+    system bin"initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_equal "#{HOMEBREW_PREFIX}share#{name}", shell_output("#{bin}pg_config --sharedir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{bin}pg_config --libdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{bin}pg_config --pkglibdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}include#{name}", shell_output("#{bin}pg_config --includedir").chomp
   end
 end
 
 __END__
-diff --git a/src/backend/libpq/be-secure-openssl.c b/src/backend/libpq/be-secure-openssl.c
+diff --git asrcbackendlibpqbe-secure-openssl.c bsrcbackendlibpqbe-secure-openssl.c
 index 13ac961442..78c271a937 100644
---- a/src/backend/libpq/be-secure-openssl.c
-+++ b/src/backend/libpq/be-secure-openssl.c
+--- asrcbackendlibpqbe-secure-openssl.c
++++ bsrcbackendlibpqbe-secure-openssl.c
 @@ -823,10 +823,6 @@ be_tls_write(Port *port, void *ptr, size_t len, int *waitfor)
   * to retry; do we need to adopt their logic for that?
-  */
+  *
 
 -#ifndef HAVE_BIO_GET_DATA
 -#define BIO_get_data(bio) (bio->ptr)
@@ -233,13 +233,13 @@ index 13ac961442..78c271a937 100644
 
  	BIO_set_fd(bio, fd, BIO_NOCLOSE);
  	SSL_set_bio(port->ssl, bio, bio);
-diff --git a/src/interfaces/libpq/fe-secure-openssl.c b/src/interfaces/libpq/fe-secure-openssl.c
+diff --git asrcinterfaceslibpqfe-secure-openssl.c bsrcinterfaceslibpqfe-secure-openssl.c
 index 7f27767da6..528fa55f9d 100644
---- a/src/interfaces/libpq/fe-secure-openssl.c
-+++ b/src/interfaces/libpq/fe-secure-openssl.c
+--- asrcinterfaceslibpqfe-secure-openssl.c
++++ bsrcinterfaceslibpqfe-secure-openssl.c
 @@ -1661,11 +1661,6 @@ PQsslAttribute(PGconn *conn, const char *attribute_name)
   * to retry; do we need to adopt their logic for that?
-  */
+  *
 
 -#ifndef HAVE_BIO_GET_DATA
 -#define BIO_get_data(bio) (bio->ptr)

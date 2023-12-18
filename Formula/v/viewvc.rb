@@ -1,7 +1,7 @@
 class Viewvc < Formula
   desc "Browser interface for CVS and Subversion repositories"
-  homepage "https://www.viewvc.org"
-  url "https://ghproxy.com/https://github.com/viewvc/viewvc/releases/download/1.2.3/viewvc-1.2.3.tar.gz"
+  homepage "https:www.viewvc.org"
+  url "https:github.comviewvcviewvcreleasesdownload1.2.3viewvc-1.2.3.tar.gz"
   sha256 "9960fc072201c581735da6eaf589f2129f8bfdf8ff41bef32cf7bbccce10ec60"
   license "BSD-2-Clause"
 
@@ -12,13 +12,13 @@ class Viewvc < Formula
 
   disable! date: "2023-11-12", because: "has no python 3 support"
 
-  depends_on :macos # Due to Python 2 (https://github.com/viewvc/viewvc/issues/138)
+  depends_on :macos # Due to Python 2 (https:github.comviewvcviewvcissues138)
 
   depends_on maximum_macos: :big_sur
 
   def install
-    system "python", "./viewvc-install", "--prefix=#{libexec}", "--destdir="
-    Pathname.glob(libexec/"bin/*") do |f|
+    system "python", ".viewvc-install", "--prefix=#{libexec}", "--destdir="
+    Pathname.glob(libexec"bin*") do |f|
       next if f.directory?
 
       bin.install_symlink f => "viewvc-#{f.basename}"
@@ -30,11 +30,11 @@ class Viewvc < Formula
 
     begin
       pid = fork do
-        exec "#{bin}/viewvc-standalone.py", "--port=#{port}"
+        exec "#{bin}viewvc-standalone.py", "--port=#{port}"
       end
       sleep 2
 
-      output = shell_output("curl -s http://localhost:#{port}/viewvc")
+      output = shell_output("curl -s http:localhost:#{port}viewvc")
       assert_match "[ViewVC] Repository Listing", output
     ensure
       Process.kill "SIGTERM", pid

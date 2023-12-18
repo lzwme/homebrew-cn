@@ -1,10 +1,10 @@
 class Eigenpy < Formula
   desc "Python bindings of Eigen library with Numpy support"
-  homepage "https://github.com/stack-of-tasks/eigenpy"
-  url "https://ghproxy.com/https://github.com/stack-of-tasks/eigenpy/releases/download/v3.2.0/eigenpy-3.2.0.tar.gz"
+  homepage "https:github.comstack-of-taskseigenpy"
+  url "https:github.comstack-of-taskseigenpyreleasesdownloadv3.2.0eigenpy-3.2.0.tar.gz"
   sha256 "1c7679e11873a30bc8efbf2a8785a2f000670c10c42751d0d99bf3f1e0b2dcd3"
   license "BSD-2-Clause"
-  head "https://github.com/stack-of-tasks/eigenpy.git", branch: "master"
+  head "https:github.comstack-of-taskseigenpy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c75579891671690e92382c34c4956d76f136675ac51a05f1082f9154b8d12fd7"
@@ -31,8 +31,8 @@ class Eigenpy < Formula
   end
 
   def install
-    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
-    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share/"eigen3/cmake"
+    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefixLanguage::Python.site_packages(python3)
+    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share"eigen3cmake"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DPYTHON_EXECUTABLE=#{which(python3)}",

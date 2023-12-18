@@ -1,10 +1,10 @@
 class Page < Formula
   desc "Use Neovim as pager"
-  homepage "https://github.com/I60R/page"
-  url "https://ghproxy.com/https://github.com/I60R/page/archive/refs/tags/v4.6.3.tar.gz"
+  homepage "https:github.comI60Rpage"
+  url "https:github.comI60Rpagearchiverefstagsv4.6.3.tar.gz"
   sha256 "51cf01933180499b27027fcdbda067f0cf80cebaa06d62400b655419f1806d46"
   license "MIT"
-  head "https://github.com/I60R/page.git", branch: "master"
+  head "https:github.comI60Rpage.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf6833b56b397b904b8f9a30f219a768d399d178268c7bd90a5cdc30409719c0"
@@ -26,10 +26,10 @@ class Page < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    asset_dir = Dir["target/release/build/page-*/out/assets"].first
-    bash_completion.install "#{asset_dir}/page.bash" => "page"
-    zsh_completion.install "#{asset_dir}/_page"
-    fish_completion.install "#{asset_dir}/page.fish"
+    asset_dir = Dir["targetreleasebuildpage-*outassets"].first
+    bash_completion.install "#{asset_dir}page.bash" => "page"
+    zsh_completion.install "#{asset_dir}_page"
+    fish_completion.install "#{asset_dir}page.fish"
   end
 
   test do
@@ -37,6 +37,6 @@ class Page < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     text = "test"
-    assert_equal text, pipe_output("#{bin}/page -O 1", text)
+    assert_equal text, pipe_output("#{bin}page -O 1", text)
   end
 end

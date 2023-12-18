@@ -2,11 +2,11 @@ cask "auryo" do
   version "2.5.4"
   sha256 "481884ddfad1c617e7cbe148d6d0cb9bcd0570d5f78bde8b1aeba36a2921057c"
 
-  url "https://ghproxy.com/https://github.com/Superjo149/auryo/releases/download/v#{version}/Auryo-#{version}.dmg",
-      verified: "github.com/Superjo149/auryo/"
+  url "https:github.comSuperjo149auryoreleasesdownloadv#{version}Auryo-#{version}.dmg",
+      verified: "github.comSuperjo149auryo"
   name "Auryo"
   desc "Unofficial desktop app for Soundcloud"
-  homepage "https://auryo.com/"
+  homepage "https:auryo.com"
 
   app "Auryo.app"
 end

@@ -1,7 +1,7 @@
 class Sshs < Formula
   desc "Graphical command-line client for SSH"
-  homepage "https://github.com/quantumsheep/sshs"
-  url "https://ghproxy.com/https://github.com/quantumsheep/sshs/archive/refs/tags/3.4.0.tar.gz"
+  homepage "https:github.comquantumsheepsshs"
+  url "https:github.comquantumsheepsshsarchiverefstags3.4.0.tar.gz"
   sha256 "f46f9185f97e35cf3b02286631df715027c3b0d374959c7e402a21bd30208f74"
   license "MIT"
 
@@ -21,13 +21,13 @@ class Sshs < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "build", "VERSION=#{version}", "OUTPUT=#{bin}/sshs"
+    system "make", "build", "VERSION=#{version}", "OUTPUT=#{bin}sshs"
   end
 
   test do
-    assert_equal "sshs version #{version}", shell_output(bin/"sshs --version").strip
+    assert_equal "sshs version #{version}", shell_output(bin"sshs --version").strip
 
-    (testpath/".ssh/config").write <<~EOS
+    (testpath".sshconfig").write <<~EOS
       Host "Test"
         HostName example.com
         User root
@@ -35,11 +35,11 @@ class Sshs < Formula
     EOS
 
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
     ENV["TERM"] = "xterm"
 
-    PTY.spawn(bin/"sshs") do |r, w, _pid|
+    PTY.spawn(bin"sshs") do |r, w, _pid|
       r.winsize = [80, 40]
       sleep 1
 
@@ -54,7 +54,7 @@ class Sshs < Formula
       begin
         r.read
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
   end

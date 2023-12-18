@@ -1,10 +1,10 @@
 class Kqwait < Formula
   desc "Wait for events on files or directories on macOS"
-  homepage "https://github.com/sschober/kqwait"
-  url "https://ghproxy.com/https://github.com/sschober/kqwait/archive/refs/tags/kqwait-v1.0.3.tar.gz"
+  homepage "https:github.comsschoberkqwait"
+  url "https:github.comsschoberkqwaitarchiverefstagskqwait-v1.0.3.tar.gz"
   sha256 "878560936d473f203c0ccb3d42eadccfb50cff15e6f15a59061e73704474c531"
   license "BSD-2-Clause"
-  head "https://github.com/sschober/kqwait.git", branch: "master"
+  head "https:github.comsschoberkqwait.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61eda480313a8450e8629464371f24d6ab7f223fc8eb56290666164e572a6792"
@@ -30,6 +30,6 @@ class Kqwait < Formula
   end
 
   test do
-    system "#{bin}/kqwait", "-v"
+    system "#{bin}kqwait", "-v"
   end
 end

@@ -2,13 +2,13 @@ cask "font-tiro-bangla" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tirobangla"
+      only_path: "ofltirobangla"
   name "Tiro Bangla"
   desc "Suited to traditional literary publishing"
-  homepage "https://fonts.google.com/specimen/Tiro+Bangla"
+  homepage "https:fonts.google.comspecimenTiro+Bangla"
 
   font "TiroBangla-Italic.ttf"
   font "TiroBangla-Regular.ttf"

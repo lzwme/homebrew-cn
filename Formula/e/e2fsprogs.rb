@@ -1,20 +1,20 @@
 class E2fsprogs < Formula
   desc "Utilities for the ext2, ext3, and ext4 file systems"
-  homepage "https://e2fsprogs.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.0/e2fsprogs-1.47.0.tar.gz"
+  homepage "https:e2fsprogs.sourceforge.net"
+  url "https:downloads.sourceforge.netprojecte2fsprogse2fsprogsv1.47.0e2fsprogs-1.47.0.tar.gz"
   sha256 "6667afde56eef0c6af26684974400e4d2288ea49e9441bf5e6229195d51a3578"
   license all_of: [
     "GPL-2.0-or-later",
-    "LGPL-2.0-or-later", # lib/ex2fs
-    "LGPL-2.0-only",     # lib/e2p
-    "BSD-3-Clause",      # lib/uuid
-    "MIT",               # lib/et, lib/ss
+    "LGPL-2.0-or-later", # libex2fs
+    "LGPL-2.0-only",     # libe2p
+    "BSD-3-Clause",      # libuuid
+    "MIT",               # libet, libss
   ]
-  head "https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git", branch: "master"
+  head "https:git.kernel.orgpubscmfsext2e2fsprogs.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/e2fsprogs[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?e2fsprogs[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -43,8 +43,8 @@ class E2fsprogs < Formula
 
   def install
     # Enforce MKDIR_P to work around a configure bug
-    # see https://github.com/Homebrew/homebrew-core/pull/35339
-    # and https://sourceforge.net/p/e2fsprogs/discussion/7053/thread/edec6de279/
+    # see https:github.comHomebrewhomebrew-corepull35339
+    # and https:sourceforge.netpe2fsprogsdiscussion7053threadedec6de279
     args = [
       "--prefix=#{prefix}",
       "--sysconfdir=#{etc}",
@@ -64,11 +64,11 @@ class E2fsprogs < Formula
       ["--enable-bsd-shlibs"]
     end
 
-    system "./configure", *args
+    system ".configure", *args
 
     system "make"
 
-    # Fix: lib/libcom_err.1.1.dylib: No such file or directory
+    # Fix: liblibcom_err.1.1.dylib: No such file or directory
     ENV.deparallelize
 
     system "make", "install"
@@ -76,7 +76,7 @@ class E2fsprogs < Formula
   end
 
   test do
-    assert_equal 36, shell_output("#{bin}/uuidgen").strip.length if OS.mac?
-    system bin/"lsattr", "-al"
+    assert_equal 36, shell_output("#{bin}uuidgen").strip.length if OS.mac?
+    system bin"lsattr", "-al"
   end
 end

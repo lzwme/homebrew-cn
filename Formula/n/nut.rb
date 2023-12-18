@@ -1,7 +1,7 @@
 class Nut < Formula
   desc "Network UPS Tools: Support for various power devices"
-  homepage "https://networkupstools.org/"
-  url "https://ghproxy.com/https://github.com/networkupstools/nut/releases/download/v2.8.1/nut-2.8.1.tar.gz"
+  homepage "https:networkupstools.org"
+  url "https:github.comnetworkupstoolsnutreleasesdownloadv2.8.1nut-2.8.1.tar.gz"
   sha256 "7da48ee23b1f0d8d72560bb0af84f5c5ae4dbe35452b84cb49840132e47f099c"
   license "GPL-2.0-or-later"
 
@@ -21,7 +21,7 @@ class Nut < Formula
   end
 
   head do
-    url "https://github.com/networkupstools/nut.git", branch: "master"
+    url "https:github.comnetworkupstoolsnut.git", branch: "master"
     depends_on "asciidoc" => :build
   end
 
@@ -36,17 +36,17 @@ class Nut < Formula
 
   def install
     if build.head?
-      ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-      system "./autogen.sh"
+      ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+      system ".autogen.sh"
     end
 
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
       --localstatedir=#{var}
-      --sysconfdir=#{etc}/nut
-      --with-statepath=#{var}/state/ups
-      --with-pidpath=#{var}/run
+      --sysconfdir=#{etc}nut
+      --with-statepath=#{var}stateups
+      --with-pidpath=#{var}run
       --with-systemdtmpfilesdir=#{pkgshare}
       --with-openssl
       --with-serial
@@ -68,23 +68,23 @@ class Nut < Formula
     args << if OS.mac?
       "--with-macosx_ups"
     else
-      "--with-udev-dir=#{lib}/udev"
+      "--with-udev-dir=#{lib}udev"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   def post_install
-    (var/"state/ups").mkpath
-    (var/"run").mkpath
+    (var"stateups").mkpath
+    (var"run").mkpath
   end
 
   service do
-    run [opt_sbin/"upsmon", "-D"]
+    run [opt_sbin"upsmon", "-D"]
   end
 
   test do
-    system "#{bin}/dummy-ups", "-L"
+    system "#{bin}dummy-ups", "-L"
   end
 end

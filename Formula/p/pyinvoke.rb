@@ -2,12 +2,12 @@ class Pyinvoke < Formula
   include Language::Python::Virtualenv
 
   desc "Pythonic task management & command execution"
-  homepage "https://www.pyinvoke.org/"
-  url "https://files.pythonhosted.org/packages/f9/42/127e6d792884ab860defc3f4d80a8f9812e48ace584ffc5a346de58cdc6c/invoke-2.2.0.tar.gz"
+  homepage "https:www.pyinvoke.org"
+  url "https:files.pythonhosted.orgpackagesf942127e6d792884ab860defc3f4d80a8f9812e48ace584ffc5a346de58cdc6cinvoke-2.2.0.tar.gz"
   sha256 "ee6cbb101af1a859c7fe84f2a264c059020b0cb7fe3535f9424300ab568f6bd5"
   license "BSD-2-Clause"
   revision 2
-  head "https://github.com/pyinvoke/invoke.git", branch: "main"
+  head "https:github.compyinvokeinvoke.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd344c952cc84ca26a60d956c247b3fb14b52e00361efd41c1bf70e350220d91"
@@ -20,7 +20,7 @@ class Pyinvoke < Formula
   end
 
   depends_on "python-setuptools" => :build
-  depends_on "python@3.12" # Do not remove runtime dependency https://github.com/Homebrew/homebrew-core/issues/151248
+  depends_on "python@3.12" # Do not remove runtime dependency https:github.comHomebrewhomebrew-coreissues151248
 
   def python3
     "python3.12"
@@ -31,7 +31,7 @@ class Pyinvoke < Formula
   end
 
   test do
-    (testpath/"tasks.py").write <<~EOS
+    (testpath"tasks.py").write <<~EOS
       from invoke import run, task
 
       @task
@@ -42,13 +42,13 @@ class Pyinvoke < Formula
           for pattern in patterns:
               run("rm -rf {}".format(pattern))
     EOS
-    (testpath/"foo"/"bar").mkpath
-    (testpath/"baz").mkpath
-    system bin/"invoke", "clean"
-    refute_predicate testpath/"foo", :exist?, "\"pyinvoke clean\" should have deleted \"foo\""
-    assert_predicate testpath/"baz", :exist?, "pyinvoke should have left \"baz\""
-    system bin/"invoke", "clean", "--extra=baz"
-    refute_predicate testpath/"foo", :exist?, "\"pyinvoke clean-extra\" should have still deleted \"foo\""
-    refute_predicate testpath/"baz", :exist?, "pyinvoke clean-extra should have deleted \"baz\""
+    (testpath"foo""bar").mkpath
+    (testpath"baz").mkpath
+    system bin"invoke", "clean"
+    refute_predicate testpath"foo", :exist?, "\"pyinvoke clean\" should have deleted \"foo\""
+    assert_predicate testpath"baz", :exist?, "pyinvoke should have left \"baz\""
+    system bin"invoke", "clean", "--extra=baz"
+    refute_predicate testpath"foo", :exist?, "\"pyinvoke clean-extra\" should have still deleted \"foo\""
+    refute_predicate testpath"baz", :exist?, "pyinvoke clean-extra should have deleted \"baz\""
   end
 end

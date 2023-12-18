@@ -1,10 +1,10 @@
 class GoFeatureFlagRelayProxy < Formula
   desc "Stand alone server to run GO Feature Flag"
-  homepage "https://gofeatureflag.org"
-  url "https://ghproxy.com/https://github.com/thomaspoignant/go-feature-flag/archive/refs/tags/v1.20.1.tar.gz"
+  homepage "https:gofeatureflag.org"
+  url "https:github.comthomaspoignantgo-feature-flagarchiverefstagsv1.20.1.tar.gz"
   sha256 "d65c42f26d7d498a57c2b601d3e528f251ea2823046c27c1f2ae37138a9dfab1"
   license "MIT"
-  head "https://github.com/thomaspoignant/go-feature-flag.git", branch: "main"
+  head "https:github.comthomaspoignantgo-feature-flag.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35ea1afeaee50eb4f29237b3dc16667296483b93ea9a5a917bd80a25ff8c53f4"
@@ -20,13 +20,13 @@ class GoFeatureFlagRelayProxy < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/relayproxy"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdrelayproxy"
   end
 
   test do
     port = free_port
 
-    (testpath/"flags.yml").write <<~EOS
+    (testpath"flags.yml").write <<~EOS
       test-flag:
         variations:
           true-var: true
@@ -35,23 +35,23 @@ class GoFeatureFlagRelayProxy < Formula
           variation: true-var
     EOS
 
-    (testpath/"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~EOS
       listen: #{port}
       pollingInterval: 1000
       retriever:
         kind: file
-        path: #{testpath}/flags.yml
+        path: #{testpath}flags.yml
     EOS
 
     begin
       pid = fork do
-        exec bin/"go-feature-flag-relay-proxy", "--config", "#{testpath}/test.yml"
+        exec bin"go-feature-flag-relay-proxy", "--config", "#{testpath}test.yml"
       end
       sleep 3
 
-      expected_output = /true/
+      expected_output = true
 
-      assert_match expected_output, shell_output("curl -s http://localhost:#{port}/health")
+      assert_match expected_output, shell_output("curl -s http:localhost:#{port}health")
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

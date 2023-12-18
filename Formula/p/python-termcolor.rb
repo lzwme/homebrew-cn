@@ -1,7 +1,7 @@
 class PythonTermcolor < Formula
   desc "ANSI color formatting for output in terminal"
-  homepage "https://github.com/termcolor/termcolor"
-  url "https://files.pythonhosted.org/packages/10/56/d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764/termcolor-2.4.0.tar.gz"
+  homepage "https:github.comtermcolortermcolor"
+  url "https:files.pythonhosted.orgpackages1056d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764termcolor-2.4.0.tar.gz"
   sha256 "aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a"
   license "MIT"
 
@@ -28,14 +28,14 @@ class PythonTermcolor < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import termcolor"
     end
   end

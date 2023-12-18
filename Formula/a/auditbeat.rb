@@ -1,11 +1,11 @@
 class Auditbeat < Formula
   desc "Lightweight Shipper for Audit Data"
-  homepage "https://www.elastic.co/products/beats/auditbeat"
-  url "https://github.com/elastic/beats.git",
+  homepage "https:www.elastic.coproductsbeatsauditbeat"
+  url "https:github.comelasticbeats.git",
       tag:      "v8.11.3",
       revision: "bfdd9fb0a3c4eeeacf5a5bc2110164a177e4cb08"
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git", branch: "main"
+  head "https:github.comelasticbeats.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b0513f26084dab9ea15a82d30d0c9fc928d54375f2165caff2caabf6d87b01c"
@@ -27,7 +27,7 @@ class Auditbeat < Formula
     rm_rf "x-pack"
 
     cd "auditbeat" do
-      # don't build docs because it would fail creating the combined OSS/x-pack
+      # don't build docs because it would fail creating the combined OSSx-pack
       # docs and we aren't installing them anyway
       inreplace "magefile.go", "devtools.GenerateModuleIncludeListGo, Docs)",
                                "devtools.GenerateModuleIncludeListGo)"
@@ -37,56 +37,56 @@ class Auditbeat < Formula
       system "mage", "-v", "build"
       system "mage", "-v", "update"
 
-      (etc/"auditbeat").install Dir["auditbeat.*", "fields.yml"]
-      (libexec/"bin").install "auditbeat"
-      prefix.install "build/kibana"
+      (etc"auditbeat").install Dir["auditbeat.*", "fields.yml"]
+      (libexec"bin").install "auditbeat"
+      prefix.install "buildkibana"
     end
 
-    (bin/"auditbeat").write <<~EOS
-      #!/bin/sh
-      exec #{libexec}/bin/auditbeat \
-        --path.config #{etc}/auditbeat \
-        --path.data #{var}/lib/auditbeat \
+    (bin"auditbeat").write <<~EOS
+      #!binsh
+      exec #{libexec}binauditbeat \
+        --path.config #{etc}auditbeat \
+        --path.data #{var}libauditbeat \
         --path.home #{prefix} \
-        --path.logs #{var}/log/auditbeat \
+        --path.logs #{var}logauditbeat \
         "$@"
     EOS
 
-    chmod 0555, bin/"auditbeat"
-    generate_completions_from_executable(bin/"auditbeat", "completion", shells: [:bash, :zsh])
+    chmod 0555, bin"auditbeat"
+    generate_completions_from_executable(bin"auditbeat", "completion", shells: [:bash, :zsh])
   end
 
   def post_install
-    (var/"lib/auditbeat").mkpath
-    (var/"log/auditbeat").mkpath
+    (var"libauditbeat").mkpath
+    (var"logauditbeat").mkpath
   end
 
   service do
-    run opt_bin/"auditbeat"
+    run opt_bin"auditbeat"
   end
 
   test do
-    (testpath/"files").mkpath
-    (testpath/"config/auditbeat.yml").write <<~EOS
+    (testpath"files").mkpath
+    (testpath"configauditbeat.yml").write <<~EOS
       auditbeat.modules:
       - module: file_integrity
         paths:
-          - #{testpath}/files
+          - #{testpath}files
       output.file:
-        path: "#{testpath}/auditbeat"
+        path: "#{testpath}auditbeat"
         filename: auditbeat
     EOS
     fork do
-      exec "#{bin}/auditbeat", "-path.config", testpath/"config", "-path.data", testpath/"data"
+      exec "#{bin}auditbeat", "-path.config", testpath"config", "-path.data", testpath"data"
     end
     sleep 5
-    touch testpath/"files/touch"
+    touch testpath"filestouch"
 
     sleep 30
 
-    assert_predicate testpath/"data/beat.db", :exist?
+    assert_predicate testpath"databeat.db", :exist?
 
-    output = JSON.parse((testpath/"data/meta.json").read)
+    output = JSON.parse((testpath"datameta.json").read)
     assert_includes output, "first_start"
   end
 end

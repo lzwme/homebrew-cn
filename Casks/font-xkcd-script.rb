@@ -2,9 +2,9 @@ cask "font-xkcd-script" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/ipython/xkcd-font/raw/master/xkcd-script/font/xkcd-script.ttf"
+  url "https:github.comipythonxkcd-fontrawmasterxkcd-scriptfontxkcd-script.ttf"
   name "xkcd-script"
-  homepage "https://github.com/ipython/xkcd-font"
+  homepage "https:github.comipythonxkcd-font"
 
   font "xkcd-script.ttf"
 

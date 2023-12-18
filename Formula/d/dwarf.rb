@@ -1,7 +1,7 @@
 class Dwarf < Formula
   desc "Object file manipulation tool"
-  homepage "https://github.com/elboza/dwarf-ng/"
-  url "https://ghproxy.com/https://github.com/elboza/dwarf-ng/archive/refs/tags/dwarf-0.4.0.tar.gz"
+  homepage "https:github.comelbozadwarf-ng"
+  url "https:github.comelbozadwarf-ngarchiverefstagsdwarf-0.4.0.tar.gz"
   sha256 "a64656f53ded5166041ae25cc4b1ad9ab5046a5c4d4c05b727447e73c0d83da0"
   license "GPL-2.0"
   revision 1
@@ -29,11 +29,11 @@ class Dwarf < Formula
 
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
-    # /usr/bin/ld: repl.o:(.bss+0x20): multiple definition of `fc_ptr'
+    # usrbinld: repl.o:(.bss+0x20): multiple definition of `fc_ptr'
     args = ENV.compiler.to_s.start_with?("gcc") ? ["CC=#{ENV.cc} -fcommon"] : []
 
-    %w[src/libdwarf.c doc/dwarf.man doc/xdwarf.man.html].each do |f|
-      inreplace f, "/etc/dwarfrc", etc/"dwarfrc"
+    %w[srclibdwarf.c docdwarf.man docxdwarf.man.html].each do |f|
+      inreplace f, "etcdwarfrc", etc"dwarfrc"
     end
 
     system "make", *args
@@ -41,7 +41,7 @@ class Dwarf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
 
       int main(int argc, char *argv[]) {
@@ -50,10 +50,10 @@ class Dwarf < Formula
     EOS
     system ENV.cc, "test.c", "-o", "test"
     if OS.mac?
-      output = shell_output("#{bin}/dwarf -c 'pp $mac' test")
+      output = shell_output("#{bin}dwarf -c 'pp $mac' test")
       assert_equal "magic: 0xfeedfacf (-17958193)", output.lines[0].chomp
     else
-      assert_match "main header: elf", shell_output("#{bin}/dwarf -p test")
+      assert_match "main header: elf", shell_output("#{bin}dwarf -p test")
     end
   end
 end

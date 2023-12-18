@@ -1,7 +1,7 @@
 class Clipper < Formula
   desc "Share macOS clipboard with tmux and other local and remote apps"
-  homepage "https://wincent.com/products/clipper"
-  url "https://ghproxy.com/https://github.com/wincent/clipper/archive/refs/tags/2.1.0.tar.gz"
+  homepage "https:wincent.comproductsclipper"
+  url "https:github.comwincentclipperarchiverefstags2.1.0.tar.gz"
   sha256 "9c13254e418a45c2577bd8a0b61d9736d474eec81947c615f48f53dacf3df756"
   license "BSD-2-Clause"
 
@@ -22,7 +22,7 @@ class Clipper < Formula
   end
 
   service do
-    run opt_bin/"clipper"
+    run opt_bin"clipper"
     environment_variables LANG: "en_US.UTF-8"
     keep_alive true
     working_dir HOMEBREW_PREFIX
@@ -31,14 +31,14 @@ class Clipper < Formula
   test do
     test_data = "a simple string! to test clipper, with söme spéciål characters!! 🐎\n".freeze
 
-    cmd = [opt_bin/"clipper", "-a", testpath/"clipper.sock", "-l", testpath/"clipper.log"].freeze
+    cmd = [opt_bin"clipper", "-a", testpath"clipper.sock", "-l", testpath"clipper.log"].freeze
     ohai cmd.join " "
 
     require "open3"
     Open3.popen3({ "LANG" => "en_US.UTF-8" }, *cmd) do |_, _, _, clipper|
       sleep 0.5 # Give it a moment to launch and create its socket.
       begin
-        sock = UNIXSocket.new testpath/"clipper.sock"
+        sock = UNIXSocket.new testpath"clipper.sock"
         assert_equal test_data.bytesize, sock.sendmsg(test_data)
         sock.close
         sleep 0.5

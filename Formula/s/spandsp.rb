@@ -1,7 +1,7 @@
 class Spandsp < Formula
   desc "DSP functions library for telephony"
-  homepage "https://web.archive.org/web/20220504064130/https://www.soft-switch.org/"
-  url "https://web.archive.org/web/20220329161120/https://www.soft-switch.org/downloads/spandsp/spandsp-0.0.6.tar.gz"
+  homepage "https:web.archive.orgweb20220504064130https:www.soft-switch.org"
+  url "https:web.archive.orgweb20220329161120https:www.soft-switch.orgdownloadsspandspspandsp-0.0.6.tar.gz"
   sha256 "cc053ac67e8ac4bb992f258fd94f275a7872df959f6a87763965feabfdcc9465"
   revision 3
 
@@ -21,19 +21,19 @@ class Spandsp < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     ENV.deparallelize
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #define SPANDSP_EXPOSE_INTERNAL_STRUCTURES
       #include <spandsp.h>
 
@@ -45,6 +45,6 @@ class Spandsp < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lspandsp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

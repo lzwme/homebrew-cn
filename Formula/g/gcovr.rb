@@ -1,10 +1,10 @@
 class Gcovr < Formula
   desc "Reports from gcov test coverage program"
-  homepage "https://gcovr.com/"
-  url "https://files.pythonhosted.org/packages/19/6d/2942ab8c693f2b9f97052d6a6de4c27323a3bd85af7d062dc5bd3a2a9604/gcovr-6.0.tar.gz"
+  homepage "https:gcovr.com"
+  url "https:files.pythonhosted.orgpackages196d2942ab8c693f2b9f97052d6a6de4c27323a3bd85af7d062dc5bd3a2a9604gcovr-6.0.tar.gz"
   sha256 "8638d5f44def10e38e3166c8a33bef6643ec204687e0ac7d345ce41a98c5750b"
   license "BSD-3-Clause"
-  head "https://github.com/gcovr/gcovr.git", branch: "master"
+  head "https:github.comgcovrgcovr.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -33,9 +33,9 @@ class Gcovr < Formula
   end
 
   test do
-    (testpath/"example.c").write "int main() { return 0; }"
+    (testpath"example.c").write "int main() { return 0; }"
     system ENV.cc, "-fprofile-arcs", "-ftest-coverage", "-fPIC", "-O0", "-o",
                    "example", "example.c"
-    assert_match "Code Coverage Report", shell_output("#{bin}/gcovr -r .")
+    assert_match "Code Coverage Report", shell_output("#{bin}gcovr -r .")
   end
 end

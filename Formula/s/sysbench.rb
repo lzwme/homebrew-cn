@@ -1,11 +1,11 @@
 class Sysbench < Formula
   desc "System performance benchmark tool"
-  homepage "https://github.com/akopytov/sysbench"
-  url "https://ghproxy.com/https://github.com/akopytov/sysbench/archive/refs/tags/1.0.20.tar.gz"
+  homepage "https:github.comakopytovsysbench"
+  url "https:github.comakopytovsysbencharchiverefstags1.0.20.tar.gz"
   sha256 "e8ee79b1f399b2d167e6a90de52ccc90e52408f7ade1b9b7135727efe181347f"
   license "GPL-2.0-or-later"
   revision 5
-  head "https://github.com/akopytov/sysbench.git", branch: "master"
+  head "https:github.comakopytovsysbench.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ed29e43c94e1713c5e4eb2f48bd41cc1f6bd2ff41f1c08916e0581339933d479"
@@ -31,12 +31,12 @@ class Sysbench < Formula
   uses_from_macos "vim" # needed for xxd
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args, "--with-mysql", "--with-pgsql", "--with-system-luajit"
+    system ".autogen.sh"
+    system ".configure", *std_configure_args, "--with-mysql", "--with-pgsql", "--with-system-luajit"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/sysbench", "--test=cpu", "--cpu-max-prime=1", "run"
+    system "#{bin}sysbench", "--test=cpu", "--cpu-max-prime=1", "run"
   end
 end

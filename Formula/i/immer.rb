@@ -1,7 +1,7 @@
 class Immer < Formula
   desc "Library of persistent and immutable data structures written in C++"
-  homepage "https://sinusoid.es/immer/"
-  url "https://ghproxy.com/https://github.com/arximboldi/immer/archive/refs/tags/v0.8.1.tar.gz"
+  homepage "https:sinusoid.esimmer"
+  url "https:github.comarximboldiimmerarchiverefstagsv0.8.1.tar.gz"
   sha256 "de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209"
   license "BSL-1.0"
 
@@ -24,8 +24,8 @@ class Immer < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <immer/vector.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <immervector.hpp>
       int main()
       {
           const auto v0 = immer::vector<int>{};
@@ -38,6 +38,6 @@ class Immer < Formula
     EOS
 
     system ENV.cxx, "-std=c++14", "-I#{include}", "test.cpp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

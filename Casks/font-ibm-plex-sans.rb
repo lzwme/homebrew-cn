@@ -2,12 +2,12 @@ cask "font-ibm-plex-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ibmplexsans"
+      only_path: "oflibmplexsans"
   name "IBM Plex Sans"
-  homepage "https://fonts.google.com/specimen/IBM+Plex+Sans"
+  homepage "https:fonts.google.comspecimenIBM+Plex+Sans"
 
   font "IBMPlexSans-Bold.ttf"
   font "IBMPlexSans-BoldItalic.ttf"

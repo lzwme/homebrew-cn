@@ -1,11 +1,11 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
-  homepage "https://github.com/PostgREST/postgrest"
+  homepage "https:github.comPostgRESTpostgrest"
   # TODO: Try to switch `ghc@9.2` to `ghc` when postgrest.cabal allows base>=4.17
-  url "https://ghproxy.com/https://github.com/PostgREST/postgrest/archive/refs/tags/v12.0.1.tar.gz"
+  url "https:github.comPostgRESTpostgrestarchiverefstagsv12.0.1.tar.gz"
   sha256 "d758d1aebc60da5e5ff2d215eb1dcaa69d62ef88a14077536764ce90125e0961"
   license "MIT"
-  head "https://github.com/PostgREST/postgrest.git", branch: "main"
+  head "https:github.comPostgRESTpostgrest.git", branch: "main"
 
   livecheck do
     url :stable
@@ -32,10 +32,10 @@ class Postgrest < Formula
   end
 
   test do
-    output = shell_output("#{bin}/postgrest --dump-config 2>&1")
+    output = shell_output("#{bin}postgrest --dump-config 2>&1")
     assert_match "db-anon-role", output
     assert_match "An error ocurred when trying to query database settings", output
 
-    assert_match version.to_s, shell_output("#{bin}/postgrest --version")
+    assert_match version.to_s, shell_output("#{bin}postgrest --version")
   end
 end

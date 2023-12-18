@@ -1,11 +1,11 @@
 class Dscanner < Formula
   desc "Analyses e.g. the style and syntax of D code"
-  homepage "https://github.com/dlang-community/D-Scanner"
-  url "https://github.com/dlang-community/D-Scanner.git",
+  homepage "https:github.comdlang-communityD-Scanner"
+  url "https:github.comdlang-communityD-Scanner.git",
       tag:      "v0.15.2",
       revision: "1201a68f662a300eacae4f908a87d4cd57f2032e"
   license "BSL-1.0"
-  head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
+  head "https:github.comdlang-communityD-Scanner.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "135c33db9a535d0c6b1c4ad21899663d2cf20d15279421273d7ba81b548babcb"
@@ -26,16 +26,16 @@ class Dscanner < Formula
   end
 
   def install
-    # Fix for /usr/bin/ld: obj/dmd/containers/src/containers/ttree.o:
+    # Fix for usrbinld: objdmdcontainerssrccontainersttree.o:
     # relocation R_X86_64_32 against hidden symbol `__stop_minfo'
     # can not be used when making a PIE object
     ENV.append "DFLAGS", "-fPIC" if OS.linux?
     system "make", "all", "DC=#{Hardware::CPU.arm? ? "ldc2" : "dmd"}"
-    bin.install "bin/dscanner"
+    bin.install "bindscanner"
   end
 
   test do
-    (testpath/"test.d").write <<~EOS
+    (testpath"test.d").write <<~EOS
       import std.stdio;
       void main(string[] args)
       {
@@ -43,6 +43,6 @@ class Dscanner < Formula
       }
     EOS
 
-    assert_match(/test.d:\t28\ntotal:\t28\n/, shell_output("#{bin}/dscanner --tokenCount test.d"))
+    assert_match(test.d:\t28\ntotal:\t28\n, shell_output("#{bin}dscanner --tokenCount test.d"))
   end
 end

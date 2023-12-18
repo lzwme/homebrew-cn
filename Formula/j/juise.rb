@@ -1,7 +1,7 @@
 class Juise < Formula
   desc "JUNOS user interface scripting environment"
-  homepage "https://github.com/Juniper/juise/wiki"
-  url "https://ghproxy.com/https://github.com/Juniper/juise/releases/download/0.9.0/juise-0.9.0.tar.gz"
+  homepage "https:github.comJuniperjuisewiki"
+  url "https:github.comJuniperjuisereleasesdownload0.9.0juise-0.9.0.tar.gz"
   sha256 "7eb7985944b7322fe290f4e5a080a4018ed84bf576e23b8a32e3f94eb13f4c27"
   license "BSD-3-Clause"
 
@@ -21,7 +21,7 @@ class Juise < Formula
   end
 
   head do
-    url "https://github.com/Juniper/juise.git", branch: "master"
+    url "https:github.comJuniperjuise.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -31,22 +31,22 @@ class Juise < Formula
   depends_on "libslax"
 
   def install
-    system "sh", "./bin/setup.sh" if build.head?
+    system "sh", ".binsetup.sh" if build.head?
 
     # Prevent sandbox violation where juise's `make install` tries to
-    # write to "/usr/local/Cellar/libslax/0.20.1/lib/slax/extensions"
-    # Reported 5th May 2016: https://github.com/Juniper/juise/issues/34
+    # write to "usrlocalCellarlibslax0.20.1libslaxextensions"
+    # Reported 5th May 2016: https:github.comJuniperjuiseissues34
     inreplace "configure",
       "SLAX_EXTDIR=\"`$SLAX_CONFIG --extdir | head -1`\"",
-      "SLAX_EXTDIR=\"#{lib}/slax/extensions\""
+      "SLAX_EXTDIR=\"#{lib}slaxextensions\""
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-libedit"
     system "make", "install"
   end
 
   test do
-    assert_equal "libjuice version #{version}", shell_output("#{bin}/juise -V").lines.first.chomp
+    assert_equal "libjuice version #{version}", shell_output("#{bin}juise -V").lines.first.chomp
   end
 end

@@ -1,10 +1,10 @@
 class Sqlcipher < Formula
   desc "SQLite extension providing 256-bit AES encryption"
-  homepage "https://www.zetetic.net/sqlcipher/"
-  url "https://ghproxy.com/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.5.5.tar.gz"
+  homepage "https:www.zetetic.netsqlcipher"
+  url "https:github.comsqlciphersqlcipherarchiverefstagsv4.5.5.tar.gz"
   sha256 "014ef9d4f5b5f4e7af4d93ad399667947bb55e31860e671f0def1b8ae6f05de0"
   license "BSD-3-Clause"
-  head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
+  head "https:github.comsqlciphersqlcipher.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8e220b4b23b7b68e39a23cbb5a5158dde7d8d8cd5ac45eaee948dd96508225a8"
@@ -46,13 +46,13 @@ class Sqlcipher < Formula
 
     args << "LIBS=-lm" if OS.linux?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    path = testpath/"school.sql"
+    path = testpath"school.sql"
     path.write <<~EOS
       create table students (name text, age integer);
       insert into students (name, age) values ('Bob', 14);
@@ -61,7 +61,7 @@ class Sqlcipher < Formula
       select name from students order by age asc;
     EOS
 
-    names = shell_output("#{bin}/sqlcipher < #{path}").strip.split("\n")
+    names = shell_output("#{bin}sqlcipher < #{path}").strip.split("\n")
     assert_equal %w[Sue Tim Bob], names
   end
 end

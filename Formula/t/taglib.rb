@@ -1,10 +1,10 @@
 class Taglib < Formula
   desc "Audio metadata library"
-  homepage "https://taglib.org/"
-  url "https://taglib.github.io/releases/taglib-1.13.1.tar.gz"
+  homepage "https:taglib.org"
+  url "https:taglib.github.ioreleasestaglib-1.13.1.tar.gz"
   sha256 "c8da2b10f1bfec2cd7dbfcd33f4a2338db0765d851a50583d410bacf055cfd0b"
   license "LGPL-2.1"
-  head "https://github.com/taglib/taglib.git", branch: "master"
+  head "https:github.comtaglibtaglib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "5b79928275529b55ab078a708cbfb98e174f7e5b7d668bf86bccb0634f443f0f"
@@ -29,6 +29,6 @@ class Taglib < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/taglib-config --version")
+    assert_match version.to_s, shell_output("#{bin}taglib-config --version")
   end
 end

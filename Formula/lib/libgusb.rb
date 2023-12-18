@@ -2,11 +2,11 @@ class Libgusb < Formula
   include Language::Python::Shebang
 
   desc "GObject wrappers for libusb1"
-  homepage "https://github.com/hughsie/libgusb"
-  url "https://ghproxy.com/https://github.com/hughsie/libgusb/archive/refs/tags/0.4.8.tar.gz"
+  homepage "https:github.comhughsielibgusb"
+  url "https:github.comhughsielibgusbarchiverefstags0.4.8.tar.gz"
   sha256 "9a1fb0d46e4b1ca7ee777ed8177b344e50a849594cd98b51a38a512bef4b3342"
   license "LGPL-2.1-only"
-  head "https://github.com/hughsie/libgusb.git", branch: "main"
+  head "https:github.comhughsielibgusb.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "4280fb61e3df7cd1d003db6037c999c73f11284929a4984535a9538b1f257fa4"
@@ -30,19 +30,19 @@ class Libgusb < Formula
   depends_on "usb.ids"
 
   def install
-    rewrite_shebang detected_python_shebang, "contrib/generate-version-script.py"
+    rewrite_shebang detected_python_shebang, "contribgenerate-version-script.py"
 
     system "meson", "setup", "build",
                     "-Ddocs=false",
-                    "-Dusb_ids=#{Formula["usb.ids"].opt_share}/misc/usb.ids",
+                    "-Dusb_ids=#{Formula["usb.ids"].opt_share}miscusb.ids",
                     *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   test do
-    system "#{bin}/gusbcmd", "-h"
-    (testpath/"test.c").write <<~EOS
+    system "#{bin}gusbcmd", "-h"
+    (testpath"test.c").write <<~EOS
       #include <gusb.h>
 
       int main(int argc, char *argv[]) {
@@ -57,11 +57,11 @@ class Libgusb < Formula
     libusb = Formula["libusb"]
     flags = %W[
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{json_glib.opt_include}/json-glib-1.0
-      -I#{libusb.opt_include}/libusb-1.0
-      -I#{include}/gusb-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{json_glib.opt_include}json-glib-1.0
+      -I#{libusb.opt_include}libusb-1.0
+      -I#{include}gusb-1
       -D_REENTRANT
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
@@ -77,6 +77,6 @@ class Libgusb < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

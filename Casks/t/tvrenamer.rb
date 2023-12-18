@@ -2,11 +2,11 @@ cask "tvrenamer" do
   version "0.8"
   sha256 "fa250e1641d473d5ece9959c8f3091ab18ad9eddb5a6bccb062212c84cc6aca8"
 
-  url "https://ghproxy.com/https://github.com/tvrenamer/tvrenamer/releases/download/v#{version}/TVRenamer-#{version}-osx64.zip",
-      verified: "github.com/tvrenamer/tvrenamer/"
+  url "https:github.comtvrenamertvrenamerreleasesdownloadv#{version}TVRenamer-#{version}-osx64.zip",
+      verified: "github.comtvrenamertvrenamer"
   name "TVRenamer"
   desc "Utility to rename TV episodes from TV listings"
-  homepage "http://tvrenamer.org/"
+  homepage "http:tvrenamer.org"
 
   livecheck do
     url :url

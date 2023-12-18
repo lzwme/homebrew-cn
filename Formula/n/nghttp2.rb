@@ -1,8 +1,8 @@
 class Nghttp2 < Formula
-  desc "HTTP/2 C Library"
-  homepage "https://nghttp2.org/"
-  url "https://ghproxy.com/https://github.com/nghttp2/nghttp2/releases/download/v1.58.0/nghttp2-1.58.0.tar.gz"
-  mirror "http://fresh-center.net/linux/www/nghttp2-1.58.0.tar.gz"
+  desc "HTTP2 C Library"
+  homepage "https:nghttp2.org"
+  url "https:github.comnghttp2nghttp2releasesdownloadv1.58.0nghttp2-1.58.0.tar.gz"
+  mirror "http:fresh-center.netlinuxwwwnghttp2-1.58.0.tar.gz"
   sha256 "9ebdfbfbca164ef72bdf5fd2a94a4e6dfb54ec39d2ef249aeb750a91ae361dfb"
   license "MIT"
 
@@ -17,7 +17,7 @@ class Nghttp2 < Formula
   end
 
   head do
-    url "https://github.com/nghttp2/nghttp2.git", branch: "master"
+    url "https:github.comnghttp2nghttp2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,25 +36,25 @@ class Nghttp2 < Formula
 
   # Fix: shrpx_api_downstream_connection.cc:57:3: error:
   # array must be initialized with a brace-enclosed initializer
-  # https://github.com/nghttp2/nghttp2/pull/1269
+  # https:github.comnghttp2nghttp2pull1269
   patch do
     on_linux do
-      url "https://github.com/nghttp2/nghttp2/commit/829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1"
+      url "https:github.comnghttp2nghttp2commit829258e7038fe7eff849677f1ccaeca3e704eb67.patch?full_index=1"
       sha256 "c4bcf5cf73d5305fc479206676027533bb06d4ff2840eb672f6265ba3239031e"
     end
   end
 
   def install
     # fix for clang not following C++14 behaviour
-    # https://github.com/macports/macports-ports/commit/54d83cca9fc0f2ed6d3f873282b6dd3198635891
-    inreplace "src/shrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"
+    # https:github.commacportsmacports-portscommit54d83cca9fc0f2ed6d3f873282b6dd3198635891
+    inreplace "srcshrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"
 
     # Don't build nghttp2 library - use the previously built one.
-    inreplace "Makefile.in", /(SUBDIRS =) lib/, "\\1"
-    inreplace Dir["**/Makefile.in"] do |s|
+    inreplace "Makefile.in", (SUBDIRS =) lib, "\\1"
+    inreplace Dir["**Makefile.in"] do |s|
       # These don't exist in all files, hence audit_result being false.
-      s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]/lib/libnghttp2\.la}, "\\1-lnghttp2", false)
-      s.gsub!(%r{\$[({]top_builddir[)}]/lib/libnghttp2\.la}, "", false)
+      s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]liblibnghttp2\.la}, "\\1-lnghttp2", false)
+      s.gsub!(%r{\$[({]top_builddir[)}]liblibnghttp2\.la}, "", false)
     end
 
     args = %W[
@@ -68,13 +68,13 @@ class Nghttp2 < Formula
     ]
 
     system "autoreconf", "-ivf" if build.head?
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin/"nghttp", "-nv", "https://nghttp2.org"
+    system bin"nghttp", "-nv", "https:nghttp2.org"
     refute_path_exists lib
   end
 end

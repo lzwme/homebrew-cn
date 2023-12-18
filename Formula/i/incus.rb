@@ -1,10 +1,10 @@
 class Incus < Formula
   desc "CLI client for interacting with Incus"
-  homepage "https://linuxcontainers.org/incus"
-  url "https://linuxcontainers.org/downloads/incus/incus-0.3.tar.xz"
+  homepage "https:linuxcontainers.orgincus"
+  url "https:linuxcontainers.orgdownloadsincusincus-0.3.tar.xz"
   sha256 "390513be0f7d27568fc5155269be5a40270a8abe19476389e56cb6c43a483ca8"
   license "Apache-2.0"
-  head "https://github.com/lxc/incus.git", branch: "main"
+  head "https:github.comlxcincus.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b67feff388d8a3886363c3485ebfda1f1f3c5be7b2606498f902f1a7293ab9ca"
@@ -19,13 +19,13 @@ class Incus < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/incus"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdincus"
   end
 
   test do
-    output = JSON.parse(shell_output("#{bin}/incus remote list --format json"))
-    assert_equal "https://images.linuxcontainers.org", output["images"]["Addr"]
+    output = JSON.parse(shell_output("#{bin}incus remote list --format json"))
+    assert_equal "https:images.linuxcontainers.org", output["images"]["Addr"]
 
-    assert_match version.to_s, shell_output("#{bin}/incus --version")
+    assert_match version.to_s, shell_output("#{bin}incus --version")
   end
 end

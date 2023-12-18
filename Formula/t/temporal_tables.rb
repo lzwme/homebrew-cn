@@ -1,13 +1,13 @@
 class TemporalTables < Formula
   desc "Temporal Tables PostgreSQL Extension"
-  homepage "https://pgxn.org/dist/temporal_tables/"
-  url "https://ghproxy.com/https://github.com/arkhipov/temporal_tables/archive/refs/tags/v1.2.2.tar.gz"
+  homepage "https:pgxn.orgdisttemporal_tables"
+  url "https:github.comarkhipovtemporal_tablesarchiverefstagsv1.2.2.tar.gz"
   sha256 "85517266748a438ab140147cb70d238ca19ad14c5d7acd6007c520d378db662e"
   license "BSD-2-Clause"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,34 +27,34 @@ class TemporalTables < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
 
     # Use stage directory to prevent installing to pg_config-defined dirs,
     # which would not be within this package's Cellar.
     mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}/stage"
+    system "make", "install", "DESTDIR=#{buildpath}stage"
 
     stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
-    share.install (buildpath/stage_path/"share").children
+    lib.install (buildpathstage_path"lib").children
+    share.install (buildpathstage_path"share").children
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'temporal_tables'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"temporal_tables\";", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop", "-D", testpath"test"
     end
   end
 end

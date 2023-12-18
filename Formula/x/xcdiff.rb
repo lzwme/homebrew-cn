@@ -1,11 +1,11 @@
 class Xcdiff < Formula
   desc "Tool to diff xcodeproj files"
-  homepage "https://github.com/bloomberg/xcdiff"
-  url "https://github.com/bloomberg/xcdiff.git",
+  homepage "https:github.combloombergxcdiff"
+  url "https:github.combloombergxcdiff.git",
     tag:      "0.11.0",
     revision: "97c45542621ce26fc499f7b414a0a1a08d0c5c1a"
   license "Apache-2.0"
-  head "https://github.com/bloomberg/xcdiff.git", branch: "main"
+  head "https:github.combloombergxcdiff.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a345a07d757d16b64d0b0da86d330bef9411337d0c53b3773fbe6a91529fffc"
@@ -19,7 +19,7 @@ class Xcdiff < Formula
   depends_on xcode: "14.1"
 
   resource "homebrew-testdata" do
-    url "https://ghproxy.com/https://github.com/bloomberg/xcdiff/archive/refs/tags/0.10.0.tar.gz"
+    url "https:github.combloombergxcdiffarchiverefstags0.10.0.tar.gz"
     sha256 "c093e128873f1bb2605b14bf9100c5ad7855be17b14f2cad36668153110b1265"
   end
 
@@ -27,17 +27,17 @@ class Xcdiff < Formula
     system "make", "update_version"
     system "make", "update_hash"
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/xcdiff"
+    bin.install ".buildreleasexcdiff"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/xcdiff --version").chomp
-    project = "Fixtures/ios_project_1/Project.xcodeproj"
+    assert_match version.to_s, shell_output("#{bin}xcdiff --version").chomp
+    project = "Fixturesios_project_1Project.xcodeproj"
     diff_args = "-p1 #{project} -p2 #{project}"
     resource("homebrew-testdata").stage do
       # assert no difference between projects
-      assert_equal "\n", shell_output("#{bin}/xcdiff #{diff_args} -d")
-      out = shell_output("#{bin}/xcdiff #{diff_args} -g BUILD_PHASES -t Project -v")
+      assert_equal "\n", shell_output("#{bin}xcdiff #{diff_args} -d")
+      out = shell_output("#{bin}xcdiff #{diff_args} -g BUILD_PHASES -t Project -v")
       assert_match "✅ BUILD_PHASES > \"Project\" target\n", out
     end
   end

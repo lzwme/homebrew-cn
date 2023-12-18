@@ -1,17 +1,17 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
-  homepage "https://opentofu.org/"
-  url "https://ghproxy.com/https://github.com/opentofu/opentofu/archive/refs/tags/v1.6.0-beta5.tar.gz"
+  homepage "https:opentofu.org"
+  url "https:github.comopentofuopentofuarchiverefstagsv1.6.0-beta5.tar.gz"
   sha256 "b096edf031d2dd19fe6099763fbaed04ab9e2cba972b54efb3a3b386f321a2c1"
   license "MPL-2.0"
-  head "https://github.com/opentofu/opentofu.git", branch: "main"
+  head "https:github.comopentofuopentofu.git", branch: "main"
 
   # This uses a loose regex, so it will match unstable versions for now. Once a
   # stable version becomes available, we should update or remove this to ensure
   # we only match stable versions going forward.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+.*)$/i)
+    regex(^v?(\d+(?:\.\d+)+.*)$i)
   end
 
   bottle do
@@ -27,16 +27,16 @@ class Opentofu < Formula
   depends_on "go" => :build
 
   # Needs libraries at runtime:
-  # /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by node)
+  # usrlibx86_64-linux-gnulibstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by node)
   fails_with gcc: "5"
 
   def install
-    ldflags = "-s -w -X github.com/opentofu/opentofu/version.dev=no"
-    system "go", "build", *std_go_args(output: bin/"tofu", ldflags: ldflags), "./cmd/tofu"
+    ldflags = "-s -w -X github.comopentofuopentofuversion.dev=no"
+    system "go", "build", *std_go_args(output: bin"tofu", ldflags: ldflags), ".cmdtofu"
   end
 
   test do
-    minimal = testpath/"minimal.tf"
+    minimal = testpath"minimal.tf"
     minimal.write <<~EOS
       variable "aws_region" {
         default = "us-west-2"
@@ -64,7 +64,7 @@ class Opentofu < Formula
         count         = 4
       }
     EOS
-    system "#{bin}/tofu", "init"
-    system "#{bin}/tofu", "graph"
+    system "#{bin}tofu", "init"
+    system "#{bin}tofu", "graph"
   end
 end

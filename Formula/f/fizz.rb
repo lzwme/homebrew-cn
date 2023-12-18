@@ -1,10 +1,10 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
-  homepage "https://github.com/facebookincubator/fizz"
-  url "https://ghproxy.com/https://github.com/facebookincubator/fizz/releases/download/v2023.12.04.00/fizz-v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookincubatorfizz"
+  url "https:github.comfacebookincubatorfizzreleasesdownloadv2023.12.04.00fizz-v2023.12.04.00.tar.gz"
   sha256 "5336426e6ce3b90f77eabec1e19637d35505534e74ef46f455b39d50f7bbff49"
   license "BSD-3-Clause"
-  head "https://github.com/facebookincubator/fizz.git", branch: "main"
+  head "https:github.comfacebookincubatorfizz.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7ce82a3f5a2e8b94c5fd9a699d0a4ed5009840366896a5ab11203d10273545cb"
@@ -43,8 +43,8 @@ class Fizz < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <fizz/client/AsyncFizzClient.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <fizzclientAsyncFizzClient.h>
       #include <iostream>
 
       int main() {
@@ -62,6 +62,6 @@ class Fizz < Formula
                     "-L#{Formula["libevent"].opt_lib}", "-levent",
                     "-L#{Formula["libsodium"].opt_lib}", "-lsodium",
                     "-L#{Formula["openssl@3"].opt_lib}", "-lcrypto", "-lssl"
-    assert_match "TLS", shell_output("./test")
+    assert_match "TLS", shell_output(".test")
   end
 end

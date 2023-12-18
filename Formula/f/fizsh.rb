@@ -1,14 +1,14 @@
 class Fizsh < Formula
   desc "Fish-like front end for ZSH"
-  homepage "https://github.com/zsh-users/fizsh"
-  url "https://downloads.sourceforge.net/project/fizsh/fizsh-1.0.9.tar.gz"
+  homepage "https:github.comzsh-usersfizsh"
+  url "https:downloads.sourceforge.netprojectfizshfizsh-1.0.9.tar.gz"
   sha256 "dbbbe03101f82e62f1dfe1f8af7cde23bc043833679bc74601a0a3d58a117b07"
   license "BSD-3-Clause"
-  head "https://github.com/zsh-users/fizsh.git", branch: "master"
+  head "https:github.comzsh-usersfizsh.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/fizsh[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.t}i)
+    regex(%r{url=.*?fizsh[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.t}i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Fizsh < Formula
   depends_on "zsh"
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -39,6 +39,6 @@ class Fizsh < Formula
   end
 
   test do
-    assert_equal "hello", shell_output("#{bin}/fizsh -c \"echo hello\"").strip
+    assert_equal "hello", shell_output("#{bin}fizsh -c \"echo hello\"").strip
   end
 end

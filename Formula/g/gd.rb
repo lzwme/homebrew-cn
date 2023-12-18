@@ -1,7 +1,7 @@
 class Gd < Formula
   desc "Graphics library to dynamically manipulate images"
-  homepage "https://libgd.github.io/"
-  url "https://ghproxy.com/https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz"
+  homepage "https:libgd.github.io"
+  url "https:github.comlibgdlibgdreleasesdownloadgd-2.3.3libgd-2.3.3.tar.xz"
   sha256 "3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61"
   license "GD"
   revision 6
@@ -19,7 +19,7 @@ class Gd < Formula
   end
 
   head do
-    url "https://github.com/libgd/libgd.git", branch: "master"
+    url "https:github.comlibgdlibgd.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -36,13 +36,13 @@ class Gd < Formula
 
   # revert breaking changes in 2.3.3, remove in next release
   patch do
-    url "https://github.com/libgd/libgd/commit/f4bc1f5c26925548662946ed7cfa473c190a104a.patch?full_index=1"
+    url "https:github.comlibgdlibgdcommitf4bc1f5c26925548662946ed7cfa473c190a104a.patch?full_index=1"
     sha256 "1015f6e125f139a1e922ac4bc2a18abbc498b0142193fa692846bf0f344a3691"
   end
 
   def install
-    system "./bootstrap.sh" if build.head?
-    system "./configure", *std_configure_args,
+    system ".bootstrap.sh" if build.head?
+    system ".configure", *std_configure_args,
                           "--with-fontconfig=#{Formula["fontconfig"].opt_prefix}",
                           "--with-freetype=#{Formula["freetype"].opt_prefix}",
                           "--with-jpeg=#{Formula["jpeg-turbo"].opt_prefix}",
@@ -56,7 +56,7 @@ class Gd < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include "gd.h"
       #include <stdio.h>
 
@@ -77,7 +77,7 @@ class Gd < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lgd", "-o", "test"
-    system "./test"
-    assert_path_exists "#{testpath}/test.png"
+    system ".test"
+    assert_path_exists "#{testpath}test.png"
   end
 end

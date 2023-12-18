@@ -1,15 +1,15 @@
 class Osm < Formula
   desc "Open Service Mesh (OSM)"
-  homepage "https://openservicemesh.io/"
-  url "https://github.com/openservicemesh/osm.git",
+  homepage "https:openservicemesh.io"
+  url "https:github.comopenservicemeshosm.git",
       tag:      "v1.2.4",
       revision: "82651008921837b2f21113e4604a807c3f68a97c"
   license "Apache-2.0"
-  head "https://github.com/openservicemesh/osm.git", branch: "main"
+  head "https:github.comopenservicemeshosm.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,13 +31,13 @@ class Osm < Formula
     ENV["VERSION"] = "v"+version unless build.head?
     ENV["BUILD_DATE"] = time.strftime("%Y-%m-%d-%H:%M")
     system "make", "build-osm"
-    bin.install "bin/osm"
+    bin.install "binosm"
 
-    generate_completions_from_executable(bin/"osm", "completion")
+    generate_completions_from_executable(bin"osm", "completion")
   end
 
   test do
-    assert_match "Error: Could not list namespaces related to osm", shell_output("#{bin}/osm namespace list 2>&1", 1)
-    assert_match "Version:\"v#{version}\"", shell_output("#{bin}/osm version 2>&1", 1)
+    assert_match "Error: Could not list namespaces related to osm", shell_output("#{bin}osm namespace list 2>&1", 1)
+    assert_match "Version:\"v#{version}\"", shell_output("#{bin}osm version 2>&1", 1)
   end
 end

@@ -1,11 +1,11 @@
 class Idris2 < Formula
   desc "Pure functional programming language with dependent types"
-  homepage "https://www.idris-lang.org/"
-  url "https://ghproxy.com/https://github.com/idris-lang/Idris2/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:www.idris-lang.org"
+  url "https:github.comidris-langIdris2archiverefstagsv0.6.0.tar.gz"
   sha256 "7f5597652ed26abc2d2a6ed4220ec28fafdab773cfae0062a8dfafe7d133e633"
   license "BSD-3-Clause"
   revision 2
-  head "https://github.com/idris-lang/Idris2.git", branch: "main"
+  head "https:github.comidris-langIdris2.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "096ddbfbfccdbee8242d04157372aff355c2b36635700af0ef8e1e69ea69f946"
@@ -24,12 +24,12 @@ class Idris2 < Formula
   end
 
   # Use Racket fork of Chez Scheme for Apple Silicon support while main formula lacks support.
-  # https://github.com/idris-lang/Idris2/blob/main/INSTALL.md#installing-chez-scheme-on-apple-silicon
+  # https:github.comidris-langIdris2blobmainINSTALL.md#installing-chez-scheme-on-apple-silicon
   on_arm do
     depends_on "lz4"
 
     resource "chezscheme" do
-      url "https://github.com/racket/ChezScheme.git",
+      url "https:github.comracketChezScheme.git",
           tag:      "racket-v8.9",
           revision: "baa880391bdb6b1e24cd9bb2020c6865a0fa065a"
     end
@@ -45,19 +45,19 @@ class Idris2 < Formula
         rm_r %w[lz4 zlib]
         args = %w[LZ4=-llz4 ZLIB=-lz]
 
-        system "./configure", "--pb", *args
+        system ".configure", "--pb", *args
         system "make", "auto.bootquick"
-        system "./configure", "--disable-x11",
-                              "--installprefix=#{libexec}/chezscheme",
+        system ".configure", "--disable-x11",
+                              "--installprefix=#{libexec}chezscheme",
                               "--installschemename=chez",
                               "--threads",
                               *args
         system "make"
         system "make", "install"
       end
-      libexec/"chezscheme/bin/chez"
+      libexec"chezschemebinchez"
     else
-      Formula["chezscheme"].opt_bin/"chez"
+      Formula["chezscheme"].opt_bin"chez"
     end
 
     ENV.deparallelize
@@ -65,17 +65,17 @@ class Idris2 < Formula
     system "make", "bootstrap", "SCHEME=#{scheme}", "PREFIX=#{libexec}"
     system "make", "install", "PREFIX=#{libexec}"
     if Hardware::CPU.arm?
-      (bin/"idris2").write_env_script libexec/"bin/idris2", CHEZ: "${CHEZ:-#{scheme}}"
+      (bin"idris2").write_env_script libexec"binidris2", CHEZ: "${CHEZ:-#{scheme}}"
     else
-      bin.install_symlink libexec/"bin/idris2"
+      bin.install_symlink libexec"binidris2"
     end
-    lib.install_symlink Dir[libexec/"lib"/shared_library("*")]
-    generate_completions_from_executable(libexec/"bin/idris2", "--bash-completion-script", "idris2",
+    lib.install_symlink Dir[libexec"lib"shared_library("*")]
+    generate_completions_from_executable(libexec"binidris2", "--bash-completion-script", "idris2",
                                          shells: [:bash], shell_parameter_format: :none)
   end
 
   test do
-    (testpath/"hello.idr").write <<~EOS
+    (testpath"hello.idr").write <<~EOS
       module Main
       main : IO ()
       main =
@@ -83,8 +83,8 @@ class Idris2 < Formula
         putStrLn $ "Hello, Homebrew! This is a big number: " ++ ( show $ myBigNumber )
     EOS
 
-    system bin/"idris2", "hello.idr", "-o", "hello"
+    system bin"idris2", "hello.idr", "-o", "hello"
     assert_equal "Hello, Homebrew! This is a big number: 18446744073709551616",
-                 shell_output("./build/exec/hello").chomp
+                 shell_output(".buildexechello").chomp
   end
 end

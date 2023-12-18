@@ -1,10 +1,10 @@
 class Gau < Formula
   desc "Open Threat Exchange, Wayback Machine, and Common Crawl URL fetcher"
-  homepage "https://github.com/lc/gau"
-  url "https://ghproxy.com/https://github.com/lc/gau/archive/refs/tags/v2.2.1.tar.gz"
+  homepage "https:github.comlcgau"
+  url "https:github.comlcgauarchiverefstagsv2.2.1.tar.gz"
   sha256 "31abcc1f12fc00078898d96bd32531cd3404a66147b40ab64b31c1d7027671f3"
   license "MIT"
-  head "https://github.com/lc/gau.git", branch: "master"
+  head "https:github.comlcgau.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5feec1f20d6bea906cea864f3b6e0d039dcbc18a2fd192d0bc3282789dc3d69c"
@@ -19,11 +19,11 @@ class Gau < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gau"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgau"
   end
 
   test do
-    output = shell_output("#{bin}/gau --providers wayback brew.sh")
-    assert_match %r{https?://brew\.sh(/|:)?.*}, output
+    output = shell_output("#{bin}gau --providers wayback brew.sh")
+    assert_match %r{https?:brew\.sh(|:)?.*}, output
   end
 end

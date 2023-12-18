@@ -1,10 +1,10 @@
 class Eureka < Formula
   desc "CLI tool to input and store your ideas without leaving the terminal"
-  homepage "https://github.com/simeg/eureka"
-  url "https://ghproxy.com/https://github.com/simeg/eureka/archive/refs/tags/v2.0.0.tar.gz"
+  homepage "https:github.comsimegeureka"
+  url "https:github.comsimegeurekaarchiverefstagsv2.0.0.tar.gz"
   sha256 "e874549e1447ee849543828f49c4c1657f7e6cfe787deea13d44241666d4aaa0"
   license "MIT"
-  head "https://github.com/simeg/eureka.git", branch: "master"
+  head "https:github.comsimegeureka.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -34,12 +34,12 @@ class Eureka < Formula
   end
 
   test do
-    assert_match "eureka [OPTIONS]", shell_output("#{bin}/eureka --help 2>&1")
+    assert_match "eureka [OPTIONS]", shell_output("#{bin}eureka --help 2>&1")
 
-    (testpath/".eureka/repo_path").write <<~EOS
+    (testpath".eurekarepo_path").write <<~EOS
       homebrew
     EOS
 
-    assert_match "ERROR eureka > No such file or directory", pipe_output("#{bin}/eureka --view 2>&1")
+    assert_match "ERROR eureka > No such file or directory", pipe_output("#{bin}eureka --view 2>&1")
   end
 end

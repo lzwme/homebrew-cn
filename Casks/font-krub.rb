@@ -2,12 +2,12 @@ cask "font-krub" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/krub"
+      only_path: "oflkrub"
   name "Krub"
-  homepage "https://fonts.google.com/specimen/Krub"
+  homepage "https:fonts.google.comspecimenKrub"
 
   font "Krub-Bold.ttf"
   font "Krub-BoldItalic.ttf"

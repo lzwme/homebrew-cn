@@ -1,14 +1,14 @@
 class Termrec < Formula
   desc "Record videos of terminal output"
-  homepage "https://angband.pl/termrec.html"
-  url "https://ghproxy.com/https://github.com/kilobyte/termrec/archive/refs/tags/v0.19.tar.gz"
+  homepage "https:angband.pltermrec.html"
+  url "https:github.comkilobytetermrecarchiverefstagsv0.19.tar.gz"
   sha256 "0550c12266ac524a8afb764890c420c917270b0a876013592f608ed786ca91dc"
   license "LGPL-3.0-or-later"
-  head "https://github.com/kilobyte/termrec.git", branch: "master"
+  head "https:github.comkilobytetermrec.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,8 +32,8 @@ class Termrec < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -41,6 +41,6 @@ class Termrec < Formula
   end
 
   test do
-    system "#{bin}/termrec", "--help"
+    system "#{bin}termrec", "--help"
   end
 end

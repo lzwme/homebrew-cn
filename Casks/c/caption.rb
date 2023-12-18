@@ -2,18 +2,18 @@ cask "caption" do
   version "2.0.1"
   sha256 "bc3c2383ca3be4fb64adc5c8d97af2e372c163272132527db0b4ee5ab6a43605"
 
-  url "https://ghproxy.com/https://github.com/gielcobben/caption/releases/download/v#{version}/caption-#{version}-mac.zip",
-      verified: "github.com/gielcobben/caption/"
+  url "https:github.comgielcobbencaptionreleasesdownloadv#{version}caption-#{version}-mac.zip",
+      verified: "github.comgielcobbencaption"
   name "Caption"
   desc "Finds and sets up subtitles automatically"
-  homepage "https://getcaption.co/"
+  homepage "https:getcaption.co"
 
   app "Caption.app"
 
   zap trash: [
-    "~/Library/Application Support/Caption",
-    "~/Library/Preferences/com.electron.caption.helper.plist",
-    "~/Library/Preferences/com.electron.caption.plist",
-    "~/Library/Saved Application State/com.electron.caption.savedState",
+    "~LibraryApplication SupportCaption",
+    "~LibraryPreferencescom.electron.caption.helper.plist",
+    "~LibraryPreferencescom.electron.caption.plist",
+    "~LibrarySaved Application Statecom.electron.caption.savedState",
   ]
 end

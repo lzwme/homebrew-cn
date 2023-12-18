@@ -1,7 +1,7 @@
 class Entityx < Formula
   desc "Fast, type-safe C++ Entity Component System"
-  homepage "https://github.com/alecthomas/entityx"
-  url "https://ghproxy.com/https://github.com/alecthomas/entityx/archive/refs/tags/1.3.0.tar.gz"
+  homepage "https:github.comalecthomasentityx"
+  url "https:github.comalecthomasentityxarchiverefstags1.3.0.tar.gz"
   sha256 "2cd56d4fc5c553b786b8caf0b5bd9231434f21d43ca0e963d3bc5ee503a06222"
   license "MIT"
 
@@ -29,8 +29,8 @@ class Entityx < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS
-      #include <entityx/entityx.h>
+    (testpath"test.cpp").write <<-EOS
+      #include <entityxentityx.h>
 
       int main(int argc, char *argv[]) {
         entityx::EntityX ex;
@@ -42,6 +42,6 @@ class Entityx < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lentityx", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

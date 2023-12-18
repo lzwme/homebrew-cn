@@ -1,16 +1,16 @@
 class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
-  homepage "https://mariadb.org/download/?tab=connector&prod=connector-c"
-  url "https://archive.mariadb.org/connector-c-3.3.7/mariadb-connector-c-3.3.7-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.3.7-src.tar.gz/"
+  homepage "https:mariadb.orgdownload?tab=connector&prod=connector-c"
+  url "https:archive.mariadb.orgconnector-c-3.3.7mariadb-connector-c-3.3.7-src.tar.gz"
+  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.3.7-src.tar.gz"
   sha256 "975a9a862fed80f84e0206373f7ef05537aada5b65d99b71b36ab892b44240bf"
   license "LGPL-2.1-or-later"
-  head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.3"
+  head "https:github.commariadb-corporationmariadb-connector-c.git", branch: "3.3"
 
-  # The REST API may omit the newest major/minor versions unless the
+  # The REST API may omit the newest majorminor versions unless the
   # `olderReleases` parameter is set to `true`.
   livecheck do
-    url "https://downloads.mariadb.org/rest-api/connector-c/all-releases/?olderReleases=true"
+    url "https:downloads.mariadb.orgrest-apiconnector-call-releases?olderReleases=true"
     strategy :json do |json|
       json["releases"]&.map do |_, group|
         group["children"]&.map do |release|
@@ -53,6 +53,6 @@ class MariadbConnectorC < Formula
   end
 
   test do
-    system "#{bin}/mariadb_config", "--cflags"
+    system "#{bin}mariadb_config", "--cflags"
   end
 end

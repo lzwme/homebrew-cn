@@ -2,24 +2,24 @@ cask "microsoft-teams-classic" do
   version "1.6.00.34263"
   sha256 "dc82c3a64d9d9f0f11c8c883048bcbae85c823b9ea446eaf224b0588f7f21a10"
 
-  url "https://statics.teams.cdn.office.net/production-osx/#{version}/Teams_osx.pkg",
-      verified: "statics.teams.cdn.office.net/production-osx/"
+  url "https:statics.teams.cdn.office.netproduction-osx#{version}Teams_osx.pkg",
+      verified: "statics.teams.cdn.office.netproduction-osx"
   name "Microsoft Teams Classic"
   desc "Meet, chat, call, and collaborate in just one place"
-  homepage "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software"
+  homepage "https:www.microsoft.comen-usmicrosoft-teamsgroup-chat-software"
 
   # Microsoft releases multiple versions and builds of Teams, as listed here:
-  #   https://ghproxy.com/https://raw.githubusercontent.com/ItzLevvie/MicrosoftTeams-msinternal/master/defconfig
+  #   https:raw.githubusercontent.comItzLevvieMicrosoftTeams-msinternalmasterdefconfig
   # and here:
-  #   https://ghproxy.com/https://raw.githubusercontent.com/ItzLevvie/MicrosoftTeams-msinternal/master/defconfig2
+  #   https:raw.githubusercontent.comItzLevvieMicrosoftTeams-msinternalmasterdefconfig2
   #
-  # We only track the "production build"/"Public (R4) build" version,
+  # We only track the "production build""Public (R4) build" version,
   # which agrees with the version reported by `livecheck`.
   #
   # Any pull request that updates this Cask to a version that
   # differs from the `livecheck` version will be closed.
   livecheck do
-    url "https://aka.ms/teamsmac"
+    url "https:aka.msteamsmac"
     strategy :header_match
   end
 
@@ -35,21 +35,21 @@ cask "microsoft-teams-classic" do
             ],
             launchctl: "com.microsoft.teams.TeamsUpdaterDaemon",
             delete:    [
-              "/Applications/Microsoft Teams classic.app",
-              "/Library/Logs/Microsoft/Teams",
-              "/Library/Preferences/com.microsoft.teams.plist",
+              "ApplicationsMicrosoft Teams classic.app",
+              "LibraryLogsMicrosoftTeams",
+              "LibraryPreferencescom.microsoft.teams.plist",
             ]
 
   zap trash: [
-        "~/Library/Application Support/com.microsoft.teams",
-        "~/Library/Application Support/Microsoft/Teams",
-        "~/Library/Application Support/Teams",
-        "~/Library/Caches/com.microsoft.teams",
-        "~/Library/Cookies/com.microsoft.teams.binarycookies",
-        "~/Library/Logs/Microsoft Teams",
-        "~/Library/Preferences/com.microsoft.teams.plist",
-        "~/Library/Saved Application State/com.microsoft.teams.savedState",
-        "~/Library/WebKit/com.microsoft.teams",
+        "~LibraryApplication Supportcom.microsoft.teams",
+        "~LibraryApplication SupportMicrosoftTeams",
+        "~LibraryApplication SupportTeams",
+        "~LibraryCachescom.microsoft.teams",
+        "~LibraryCookiescom.microsoft.teams.binarycookies",
+        "~LibraryLogsMicrosoft Teams",
+        "~LibraryPreferencescom.microsoft.teams.plist",
+        "~LibrarySaved Application Statecom.microsoft.teams.savedState",
+        "~LibraryWebKitcom.microsoft.teams",
       ],
-      rmdir: "~/Library/Application Support/Microsoft"
+      rmdir: "~LibraryApplication SupportMicrosoft"
 end

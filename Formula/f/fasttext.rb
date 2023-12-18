@@ -1,10 +1,10 @@
 class Fasttext < Formula
   desc "Library for fast text representation and classification"
-  homepage "https://fasttext.cc"
-  url "https://ghproxy.com/https://github.com/facebookresearch/fastText/archive/refs/tags/v0.9.2.tar.gz"
+  homepage "https:fasttext.cc"
+  url "https:github.comfacebookresearchfastTextarchiverefstagsv0.9.2.tar.gz"
   sha256 "7ea4edcdb64bfc6faaaec193ef181bdc108ee62bb6a04e48b2e80b639a99e27e"
   license "MIT"
-  head "https://github.com/facebookresearch/fastText.git", branch: "main"
+  head "https:github.comfacebookresearchfastText.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "365036caa34f9ade5d4f9685b516fd7973c2806c04b39c4aa1c54b06006ba58f"
@@ -29,8 +29,8 @@ class Fasttext < Formula
   end
 
   test do
-    (testpath/"trainingset").write("__label__brew brew")
-    system "#{bin}/fasttext", "supervised", "-input", "trainingset", "-output", "model"
-    assert_predicate testpath/"model.bin", :exist?
+    (testpath"trainingset").write("__label__brew brew")
+    system "#{bin}fasttext", "supervised", "-input", "trainingset", "-output", "model"
+    assert_predicate testpath"model.bin", :exist?
   end
 end

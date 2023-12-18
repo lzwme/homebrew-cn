@@ -2,10 +2,10 @@ cask "font-jua" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/jua/Jua-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofljuaJua-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Jua"
-  homepage "https://fonts.google.com/specimen/Jua"
+  homepage "https:fonts.google.comspecimenJua"
 
   font "Jua-Regular.ttf"
 

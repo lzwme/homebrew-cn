@@ -1,10 +1,10 @@
 class Alembic < Formula
   desc "Open computer graphics interchange framework"
-  homepage "http://alembic.io"
-  url "https://ghproxy.com/https://github.com/alembic/alembic/archive/refs/tags/1.8.6.tar.gz"
+  homepage "http:alembic.io"
+  url "https:github.comalembicalembicarchiverefstags1.8.6.tar.gz"
   sha256 "c572ebdea3a5f0ce13774dd1fceb5b5815265cd1b29d142cf8c144b03c131c8c"
   license "BSD-3-Clause"
-  head "https://github.com/alembic/alembic.git", branch: "master"
+  head "https:github.comalembicalembic.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2d570e9a98c50078372b7a61be5ecd48fcf17c6054ac50dfdf65a02cd96f5e36"
@@ -35,10 +35,10 @@ class Alembic < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "prman/Tests/testdata/cube.abc"
+    pkgshare.install "prmanTeststestdatacube.abc"
   end
 
   test do
-    assert_match "root", shell_output("#{bin}/abcls #{pkgshare}/cube.abc")
+    assert_match "root", shell_output("#{bin}abcls #{pkgshare}cube.abc")
   end
 end

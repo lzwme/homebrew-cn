@@ -2,11 +2,11 @@ cask "droidcam-obs" do
   version "2.1.0"
   sha256 "656962d23b18cabb4e54cd53794ac801aaa7fa5d104c32f0dc6b067a4c5d3ea0"
 
-  url "https://ghproxy.com/https://github.com/dev47apps/droidcam-obs-plugin/releases/download/#{version}/DroidCamOBS_#{version}_macos.pkg",
-      verified: "github.com/dev47apps/droidcam-obs-plugin/"
+  url "https:github.comdev47appsdroidcam-obs-pluginreleasesdownload#{version}DroidCamOBS_#{version}_macos.pkg",
+      verified: "github.comdev47appsdroidcam-obs-plugin"
   name "DroidCam OBS"
   desc "Use your phone as a camera directly in OBS Studio"
-  homepage "https://www.dev47apps.com/obs/"
+  homepage "https:www.dev47apps.comobs"
 
   livecheck do
     url :url
@@ -18,8 +18,8 @@ cask "droidcam-obs" do
   pkg "DroidCamOBS_#{version}_macos.pkg"
 
   uninstall pkgutil: "com.dev47apps.droidcamobs",
-            delete:  "/Library/Application Support/obs-studio/plugins/droidcam-obs",
-            rmdir:   "/Library/Application Support/obs-studio/plugins"
+            delete:  "LibraryApplication Supportobs-studiopluginsdroidcam-obs",
+            rmdir:   "LibraryApplication Supportobs-studioplugins"
 
   # No zap stanza required
 end

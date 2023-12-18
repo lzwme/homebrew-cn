@@ -1,15 +1,15 @@
 class Xsane < Formula
   desc "Graphical scanning frontend"
-  homepage "https://gitlab.com/sane-project/frontend/xsane"
-  url "https://ftp.osuosl.org/pub/blfs/conglomeration/xsane/xsane-0.999.tar.gz"
-  mirror "https://fossies.org/linux/misc/xsane-0.999.tar.gz"
+  homepage "https:gitlab.comsane-projectfrontendxsane"
+  url "https:ftp.osuosl.orgpubblfsconglomerationxsanexsane-0.999.tar.gz"
+  mirror "https:fossies.orglinuxmiscxsane-0.999.tar.gz"
   sha256 "5782d23e67dc961c81eef13a87b17eb0144cae3d1ffc5cf7e0322da751482b4b"
   license "GPL-2.0-or-later"
   revision 7
 
   livecheck do
-    url "https://ftp.osuosl.org/pub/blfs/conglomeration/xsane/"
-    regex(/href=.*?xsane[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ftp.osuosl.orgpubblfsconglomerationxsane"
+    regex(href=.*?xsane[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Xsane < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "gtk+" # GTK3 issue: https://gitlab.com/sane-project/frontend/xsane/-/issues/34
+  depends_on "gtk+" # GTK3 issue: https:gitlab.comsane-projectfrontendxsane-issues34
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
@@ -31,7 +31,7 @@ class Xsane < Formula
 
   # Needed to compile against libpng 1.5, Project appears to be dead.
   patch :p0 do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/e1a592d/xsane/patch-src__xsane-save.c-libpng15-compat.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patchese1a592dxsanepatch-src__xsane-save.c-libpng15-compat.diff"
     sha256 "404b963b30081bfc64020179be7b1a85668f6f16e608c741369e39114af46e27"
   end
 
@@ -39,7 +39,7 @@ class Xsane < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -47,6 +47,6 @@ class Xsane < Formula
     # (xsane:27015): Gtk-WARNING **: 12:58:53.105: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}/xsane", "--version"
+    system "#{bin}xsane", "--version"
   end
 end

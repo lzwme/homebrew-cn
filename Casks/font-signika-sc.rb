@@ -2,11 +2,11 @@ cask "font-signika-sc" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/signikasc/SignikaSC%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsignikascSignikaSC%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Signika SC"
   desc "Small-caps version of the Signika font"
-  homepage "https://fonts.google.com/specimen/Signika+SC"
+  homepage "https:fonts.google.comspecimenSignika+SC"
 
   font "SignikaSC[wght].ttf"
 

@@ -1,10 +1,10 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
-  homepage "https://github.com/digitalocean/doctl"
-  url "https://ghproxy.com/https://github.com/digitalocean/doctl/archive/refs/tags/v1.101.0.tar.gz"
+  homepage "https:github.comdigitaloceandoctl"
+  url "https:github.comdigitaloceandoctlarchiverefstagsv1.101.0.tar.gz"
   sha256 "093ace8f58e2ef3b07a2cae8b21a7a6ff0a8dbff9dc8040954d8d12691634364"
   license "Apache-2.0"
-  head "https://github.com/digitalocean/doctl.git", branch: "main"
+  head "https:github.comdigitaloceandoctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2913d8720decc5fe4066909c48de1159677ca53603c165ae3c4c3a19f5776d6"
@@ -19,7 +19,7 @@ class Doctl < Formula
   depends_on "go" => :build
 
   def install
-    base_flag = "-X github.com/digitalocean/doctl"
+    base_flag = "-X github.comdigitaloceandoctl"
     ldflags = %W[
       #{base_flag}.Major=#{version.major}
       #{base_flag}.Minor=#{version.minor}
@@ -27,12 +27,12 @@ class Doctl < Formula
       #{base_flag}.Label=release
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/doctl"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmddoctl"
 
-    generate_completions_from_executable(bin/"doctl", "completion")
+    generate_completions_from_executable(bin"doctl", "completion")
   end
 
   test do
-    assert_match "doctl version #{version}-release", shell_output("#{bin}/doctl version")
+    assert_match "doctl version #{version}-release", shell_output("#{bin}doctl version")
   end
 end

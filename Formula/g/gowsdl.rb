@@ -1,11 +1,11 @@
 class Gowsdl < Formula
   desc "WSDL2Go code generation as well as its SOAP proxy"
-  homepage "https://github.com/hooklift/gowsdl"
-  url "https://github.com/hooklift/gowsdl.git",
+  homepage "https:github.comhookliftgowsdl"
+  url "https:github.comhookliftgowsdl.git",
       tag:      "v0.5.0",
       revision: "51f3ef6c0e8f41ed1bdccce4c04e86b6769da313"
   license "MPL-2.0"
-  head "https://github.com/hooklift/gowsdl.git", branch: "master"
+  head "https:github.comhookliftgowsdl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff97f048a29ed347f7473201f2a5a94a36ed36a039b0f9ef523b781801e1a626"
@@ -25,10 +25,10 @@ class Gowsdl < Formula
 
   def install
     system "make", "build"
-    bin.install "build/gowsdl"
+    bin.install "buildgowsdl"
   end
 
   test do
-    system "#{bin}/gowsdl"
+    system "#{bin}gowsdl"
   end
 end

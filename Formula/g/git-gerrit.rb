@@ -1,10 +1,10 @@
 class GitGerrit < Formula
   desc "Gerrit code review helper scripts"
-  homepage "https://github.com/fbzhong/git-gerrit"
-  url "https://ghproxy.com/https://github.com/fbzhong/git-gerrit/archive/refs/tags/v0.3.0.tar.gz"
+  homepage "https:github.comfbzhonggit-gerrit"
+  url "https:github.comfbzhonggit-gerritarchiverefstagsv0.3.0.tar.gz"
   sha256 "433185315db3367fef82a7332c335c1c5e0b05dabf8d4fbeff9ecf6cc7e422eb"
   license "BSD-3-Clause"
-  head "https://github.com/fbzhong/git-gerrit.git", branch: "master"
+  head "https:github.comfbzhonggit-gerrit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a80a111e62621f131aeb728ec3c4778a25a838d4ffd579b0921e3961c18cfaa1"
@@ -22,7 +22,7 @@ class GitGerrit < Formula
 
   def install
     prefix.install "bin"
-    bash_completion.install "completion/git-gerrit-completion.bash"
+    bash_completion.install "completiongit-gerrit-completion.bash"
   end
 
   test do

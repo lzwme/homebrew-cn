@@ -1,7 +1,7 @@
 class Fruit < Formula
   desc "Dependency injection framework for C++"
-  homepage "https://github.com/google/fruit/wiki"
-  url "https://ghproxy.com/https://github.com/google/fruit/archive/refs/tags/v3.7.1.tar.gz"
+  homepage "https:github.comgooglefruitwiki"
+  url "https:github.comgooglefruitarchiverefstagsv3.7.1.tar.gz"
   sha256 "ed4c6b7ebfbf75e14a74e21eb74ce2703b8485bfc9e660b1c36fb7fe363172d0"
   license "Apache-2.0"
 
@@ -22,13 +22,13 @@ class Fruit < Formula
   def install
     system "cmake", ".", "-DFRUIT_USES_BOOST=False", *std_cmake_args
     system "make", "install"
-    pkgshare.install "examples/hello_world/main.cpp"
+    pkgshare.install "exampleshello_worldmain.cpp"
   end
 
   test do
-    cp_r pkgshare/"main.cpp", testpath
+    cp_r pkgshare"main.cpp", testpath
     system ENV.cxx, "main.cpp", "-I#{include}", "-L#{lib}",
            "-std=c++11", "-lfruit", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class Procs < Formula
   desc "Modern replacement for ps written by Rust"
-  homepage "https://github.com/dalance/procs"
-  url "https://ghproxy.com/https://github.com/dalance/procs/archive/refs/tags/v0.14.4.tar.gz"
+  homepage "https:github.comdalanceprocs"
+  url "https:github.comdalanceprocsarchiverefstagsv0.14.4.tar.gz"
   sha256 "77c5f5d3bdfc9cef870732500ef58c203a1464f924b12f79c7d9e301b4dd5b16"
   license "MIT"
 
@@ -20,16 +20,16 @@ class Procs < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    system bin/"procs", "--gen-completion", "bash"
-    system bin/"procs", "--gen-completion", "fish"
-    system bin/"procs", "--gen-completion", "zsh"
+    system bin"procs", "--gen-completion", "bash"
+    system bin"procs", "--gen-completion", "fish"
+    system bin"procs", "--gen-completion", "zsh"
     bash_completion.install "procs.bash" => "procs"
     fish_completion.install "procs.fish"
     zsh_completion.install "_procs"
   end
 
   test do
-    output = shell_output(bin/"procs")
+    output = shell_output(bin"procs")
     count = output.lines.count
     assert count > 2
     assert output.start_with?(" PID:")

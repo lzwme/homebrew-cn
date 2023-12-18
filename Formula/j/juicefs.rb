@@ -1,10 +1,10 @@
 class Juicefs < Formula
   desc "Cloud-based, distributed POSIX file system built on top of Redis and S3"
-  homepage "https://juicefs.com"
-  url "https://ghproxy.com/https://github.com/juicedata/juicefs/archive/refs/tags/v1.1.1.tar.gz"
+  homepage "https:juicefs.com"
+  url "https:github.comjuicedatajuicefsarchiverefstagsv1.1.1.tar.gz"
   sha256 "43e1df896fc4c32c8c5ef75b418bf08dd27ca0a078c7e01d2a8c17db57f2028d"
   license "Apache-2.0"
-  head "https://github.com/juicedata/juicefs.git", branch: "main"
+  head "https:github.comjuicedatajuicefs.git", branch: "main"
 
   livecheck do
     url :stable
@@ -29,8 +29,8 @@ class Juicefs < Formula
   end
 
   test do
-    output = shell_output("#{bin}/juicefs format sqlite3://test.db testfs 2>&1")
-    assert_predicate testpath/"test.db", :exist?
-    assert_match "Meta address: sqlite3://test.db", output
+    output = shell_output("#{bin}juicefs format sqlite3:test.db testfs 2>&1")
+    assert_predicate testpath"test.db", :exist?
+    assert_match "Meta address: sqlite3:test.db", output
   end
 end

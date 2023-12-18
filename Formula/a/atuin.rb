@@ -1,7 +1,7 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
-  homepage "https://github.com/atuinsh/atuin"
-  url "https://ghproxy.com/https://github.com/atuinsh/atuin/archive/refs/tags/v17.1.0.tar.gz"
+  homepage "https:github.comatuinshatuin"
+  url "https:github.comatuinshatuinarchiverefstagsv17.1.0.tar.gz"
   sha256 "6a0b1542e7061e6a5bcdf3c284d3ad386e3504e040fcfa1500f530a5125b37b8"
   license "MIT"
 
@@ -20,13 +20,13 @@ class Atuin < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "atuin")
 
-    generate_completions_from_executable(bin/"atuin", "gen-completion", "--shell")
+    generate_completions_from_executable(bin"atuin", "gen-completion", "--shell")
   end
 
   test do
     # or `atuin init zsh` to setup the `ATUIN_SESSION`
     ENV["ATUIN_SESSION"] = "random"
-    assert_match "autoload -U add-zsh-hook", shell_output("#{bin}/atuin init zsh")
-    assert shell_output("#{bin}/atuin history list").blank?
+    assert_match "autoload -U add-zsh-hook", shell_output("#{bin}atuin init zsh")
+    assert shell_output("#{bin}atuin history list").blank?
   end
 end

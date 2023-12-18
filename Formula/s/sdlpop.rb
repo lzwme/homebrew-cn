@@ -1,7 +1,7 @@
 class Sdlpop < Formula
   desc "Open-source port of Prince of Persia"
-  homepage "https://github.com/NagyD/SDLPoP"
-  url "https://ghproxy.com/https://github.com/NagyD/SDLPoP/archive/refs/tags/v1.23.tar.gz"
+  homepage "https:github.comNagyDSDLPoP"
+  url "https:github.comNagyDSDLPoParchiverefstagsv1.23.tar.gz"
   sha256 "41a9aa64b4e8d0a9d7a84ffced48f74f9528d81adbffc08593ecf84776c5d77a"
   license "GPL-3.0-or-later"
 
@@ -23,28 +23,28 @@ class Sdlpop < Formula
 
   def install
     system "make", "-C", "src"
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
     libexec.install "data"
     libexec.install "prince"
 
     # Use var directory to keep save and replay files
-    pkgvar = var/"sdlpop"
-    pkgvar.install "SDLPoP.ini" unless (pkgvar/"SDLPoP.ini").exist?
+    pkgvar = var"sdlpop"
+    pkgvar.install "SDLPoP.ini" unless (pkgvar"SDLPoP.ini").exist?
 
-    (bin/"prince").write <<~EOS
-      #!/bin/bash
-      cd "#{pkgvar}" && exec "#{libexec}/prince" $@
+    (bin"prince").write <<~EOS
+      #!binbash
+      cd "#{pkgvar}" && exec "#{libexec}prince" $@
     EOS
   end
 
   def caveats
     <<~EOS
       Save and replay files are stored in the following directory:
-        #{var}/sdlpop
+        #{var}sdlpop
     EOS
   end
 
   test do
-    assert_equal "See README.md", shell_output("#{bin}/prince --help").chomp
+    assert_equal "See README.md", shell_output("#{bin}prince --help").chomp
   end
 end

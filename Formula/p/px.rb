@@ -1,7 +1,7 @@
 class Px < Formula
-  desc "Ps and top for human beings (px / ptop)"
-  homepage "https://github.com/walles/px"
-  url "https://github.com/walles/px.git",
+  desc "Ps and top for human beings (px  ptop)"
+  homepage "https:github.comwallespx"
+  url "https:github.comwallespx.git",
       tag:      "3.5.1",
       revision: "53c4faf6708a89d5dd07ac5b994b42e4ae4164b2"
   license "MIT"
@@ -28,13 +28,13 @@ class Px < Formula
   def install
     system python3, "-m", "pip", "install", *std_pip_args, "."
 
-    man1.install Dir["doc/*.1"]
+    man1.install Dir["doc*.1"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/px --version")
+    assert_match version.to_s, shell_output("#{bin}px --version")
 
-    split_first_line = pipe_output("#{bin}/px --no-pager").lines.first.split
+    split_first_line = pipe_output("#{bin}px --no-pager").lines.first.split
     assert_equal %w[PID COMMAND USERNAME CPU CPUTIME RAM COMMANDLINE], split_first_line
   end
 end

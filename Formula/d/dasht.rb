@@ -1,7 +1,7 @@
 class Dasht < Formula
   desc "Search API docs offline, in your terminal or browser"
-  homepage "https://sunaku.github.io/dasht"
-  url "https://ghproxy.com/https://github.com/sunaku/dasht/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:sunaku.github.iodasht"
+  url "https:github.comsunakudashtarchiverefstagsv2.4.0.tar.gz"
   sha256 "5ea43b0f7461e124d46b991892dedc8dcf506ccd5e9dc94324f7bdf6e580ff73"
   license "ISC"
 
@@ -15,12 +15,12 @@ class Dasht < Formula
   depends_on "wget"
 
   def install
-    bin.install Dir["bin/*"]
-    man.install "man/man1"
+    bin.install Dir["bin*"]
+    man.install "manman1"
   end
 
   test do
-    system "#{bin}/dasht-docsets-install", "--force", "bash"
-    assert_equal "Bash\n", shell_output("#{bin}/dasht-docsets")
+    system "#{bin}dasht-docsets-install", "--force", "bash"
+    assert_equal "Bash\n", shell_output("#{bin}dasht-docsets")
   end
 end

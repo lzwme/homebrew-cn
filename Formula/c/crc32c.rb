@@ -1,10 +1,10 @@
 class Crc32c < Formula
   desc "Implementation of CRC32C with CPU-specific acceleration"
-  homepage "https://github.com/google/crc32c"
-  url "https://ghproxy.com/https://github.com/google/crc32c/archive/refs/tags/1.1.2.tar.gz"
+  homepage "https:github.comgooglecrc32c"
+  url "https:github.comgooglecrc32carchiverefstags1.1.2.tar.gz"
   sha256 "ac07840513072b7fcebda6e821068aa04889018f24e10e46181068fb214d7e56"
   license "BSD-3-Clause"
-  head "https://github.com/google/crc32c.git", branch: "main"
+  head "https:github.comgooglecrc32c.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "df5ea233eee7c04d4c606c33132e5a769761ea6466f711832c22393ce0ce7170"
@@ -35,9 +35,9 @@ class Crc32c < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <cassert>
-      #include <crc32c/crc32c.h>
+      #include <crc32ccrc32c.h>
       #include <cstdint>
       #include <string>
 
@@ -51,6 +51,6 @@ class Crc32c < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lcrc32c", "-std=c++11", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,13 +1,13 @@
 class WlaDx < Formula
   desc "Yet another crossassembler package"
-  homepage "https://github.com/vhelin/wla-dx"
-  url "https://ghproxy.com/https://github.com/vhelin/wla-dx/archive/refs/tags/v10.6.tar.gz"
+  homepage "https:github.comvhelinwla-dx"
+  url "https:github.comvhelinwla-dxarchiverefstagsv10.6.tar.gz"
   sha256 "010c4d426fd1733b978cbca7530a5e68bdfb6f62976c0d5ff7bff447894e19a8"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+)(?:-fix)*/i)
+    regex(v?(\d+(?:\.\d+)+)(?:-fix)*i)
     strategy :github_latest
   end
 
@@ -29,7 +29,7 @@ class WlaDx < Formula
   end
 
   test do
-    (testpath/"test-gb-asm.s").write <<~EOS
+    (testpath"test-gb-asm.s").write <<~EOS
       .MEMORYMAP
        DEFAULTSLOT 1.01
        SLOT 0.001 $0000 $2000
@@ -58,6 +58,6 @@ class WlaDx < Formula
        jr 127
        jr nc, 127
     EOS
-    system bin/"wla-gb", "-o", testpath/"test-gb-asm.s"
+    system bin"wla-gb", "-o", testpath"test-gb-asm.s"
   end
 end

@@ -1,7 +1,7 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
-  homepage "https://github.com/bensadeh/circumflex"
-  url "https://ghproxy.com/https://github.com/bensadeh/circumflex/archive/refs/tags/3.5.tar.gz"
+  homepage "https:github.combensadehcircumflex"
+  url "https:github.combensadehcircumflexarchiverefstags3.5.tar.gz"
   sha256 "3235f97e51a7bf228b31f1379c4a51e3d837193060a766a443f272f8434bfabf"
   license "AGPL-3.0-only"
 
@@ -19,14 +19,14 @@ class Circumflex < Formula
   depends_on "less"
 
   def install
-    system "go", "build", *std_go_args(output: bin/"clx", ldflags: "-s -w")
-    man1.install "share/man/clx.1"
+    system "go", "build", *std_go_args(output: bin"clx", ldflags: "-s -w")
+    man1.install "sharemanclx.1"
   end
 
   test do
-    assert_match "List of visited IDs cleared", shell_output("#{bin}/clx clear 2>&1")
+    assert_match "List of visited IDs cleared", shell_output("#{bin}clx clear 2>&1")
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    assert_match "Y Combinator", shell_output("#{bin}/clx article 1")
+    assert_match "Y Combinator", shell_output("#{bin}clx article 1")
   end
 end

@@ -8,10 +8,10 @@ cask "linkliar" do
     sha256 "36e62eab4ef8d2b004c6886182fc49830afdf56f4f14f9be07adfe552d7140d2"
   end
 
-  url "https://ghproxy.com/https://github.com/halo/LinkLiar/releases/download/#{version}/LinkLiar.app.zip"
+  url "https:github.comhaloLinkLiarreleasesdownload#{version}LinkLiar.app.zip"
   name "LinkLiar"
   desc "Link-Layer MAC spoofing GUI for macOS"
-  homepage "https://github.com/halo/LinkLiar"
+  homepage "https:github.comhaloLinkLiar"
 
   livecheck do
     url :url
@@ -21,8 +21,8 @@ cask "linkliar" do
   app "LinkLiar.app"
 
   uninstall delete:    [
-              "/Library/Application Support/io.github.halo.linkdaemon",
-              "/Library/Application Support/LinkLiar",
+              "LibraryApplication Supportio.github.halo.linkdaemon",
+              "LibraryApplication SupportLinkLiar",
             ],
             launchctl: [
               "io.github.halo.linkdaemon",

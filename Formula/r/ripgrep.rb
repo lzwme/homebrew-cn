@@ -1,10 +1,10 @@
 class Ripgrep < Formula
   desc "Search tool like grep and The Silver Searcher"
-  homepage "https://github.com/BurntSushi/ripgrep"
-  url "https://ghproxy.com/https://github.com/BurntSushi/ripgrep/archive/refs/tags/14.0.3.tar.gz"
+  homepage "https:github.comBurntSushiripgrep"
+  url "https:github.comBurntSushiripgreparchiverefstags14.0.3.tar.gz"
   sha256 "f5794364ddfda1e0411ab6cad6dd63abe3a6b421d658d9fee017540ea4c31a0e"
   license "Unlicense"
-  head "https://github.com/BurntSushi/ripgrep.git", branch: "master"
+  head "https:github.comBurntSushiripgrep.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,12 +29,12 @@ class Ripgrep < Formula
   def install
     system "cargo", "install", "--features", "pcre2", *std_cargo_args
 
-    generate_completions_from_executable(bin/"rg", "--generate", base_name: "rg", shell_parameter_format: "complete-")
-    (man1/"rg.1").write Utils.safe_popen_read(bin/"rg", "--generate", "man")
+    generate_completions_from_executable(bin"rg", "--generate", base_name: "rg", shell_parameter_format: "complete-")
+    (man1"rg.1").write Utils.safe_popen_read(bin"rg", "--generate", "man")
   end
 
   test do
-    (testpath/"Hello.txt").write("Hello World!")
-    system "#{bin}/rg", "Hello World!", testpath
+    (testpath"Hello.txt").write("Hello World!")
+    system "#{bin}rg", "Hello World!", testpath
   end
 end

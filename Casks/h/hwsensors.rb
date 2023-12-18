@@ -2,10 +2,10 @@ cask "hwsensors" do
   version "6.26.1440"
   sha256 "1ea229bebb1cdfa3b6091cacfd7ab04da781cd6191db9ed08a73eb901aefa418"
 
-  url "https://ghproxy.com/https://github.com/kozlekek/HWSensors/releases/download/#{version.major_minor}/HWSensors.#{version}.pkg.zip"
+  url "https:github.comkozlekekHWSensorsreleasesdownload#{version.major_minor}HWSensors.#{version}.pkg.zip"
   name "HWSensors"
   desc "Tool to access information from available hardware sensors"
-  homepage "https://github.com/kozlekek/HWSensors/"
+  homepage "https:github.comkozlekekHWSensors"
 
   pkg "HWSensors.#{version}.pkg"
 
@@ -14,8 +14,8 @@ cask "hwsensors" do
             quit:       "org.hwsensors.HWMonitor"
 
   zap trash: [
-    "~/Library/Application Support/HWMonitor",
-    "~/Library/Preferences/org.hwsensors.HWMonitor.plist",
+    "~LibraryApplication SupportHWMonitor",
+    "~LibraryPreferencesorg.hwsensors.HWMonitor.plist",
   ]
 
   caveats do

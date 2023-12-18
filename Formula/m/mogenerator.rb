@@ -1,10 +1,10 @@
 class Mogenerator < Formula
   desc "Generate Objective-C & Swift classes from your Core Data model"
-  homepage "https://rentzsch.github.io/mogenerator/"
-  url "https://ghproxy.com/https://github.com/rentzsch/mogenerator/archive/refs/tags/1.32.tar.gz"
+  homepage "https:rentzsch.github.iomogenerator"
+  url "https:github.comrentzschmogeneratorarchiverefstags1.32.tar.gz"
   sha256 "4fa660a19934d94d7ef35626d68ada9912d925416395a6bf4497bd7df35d7a8b"
   license "MIT"
-  head "https://github.com/rentzsch/mogenerator.git", branch: "master"
+  head "https:github.comrentzschmogenerator.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,9 +22,9 @@ class Mogenerator < Formula
   depends_on xcode: :build
   depends_on :macos
 
-  # https://github.com/rentzsch/mogenerator/pull/390
+  # https:github.comrentzschmogeneratorpull390
   patch do
-    url "https://github.com/rentzsch/mogenerator/commit/20d9cce6df8380160cac0ce07687688076fddf3d.patch?full_index=1"
+    url "https:github.comrentzschmogeneratorcommit20d9cce6df8380160cac0ce07687688076fddf3d.patch?full_index=1"
     sha256 "de700f06c32cc0d4fbcb1cdd91e9e97a55931bc047841985d5c0905e65b5e5b0"
   end
 
@@ -34,10 +34,10 @@ class Mogenerator < Formula
                "-configuration", "Release",
                "SYMROOT=symroot",
                "OBJROOT=objroot"
-    bin.install "symroot/Release/mogenerator"
+    bin.install "symrootReleasemogenerator"
   end
 
   test do
-    system "#{bin}/mogenerator", "--version"
+    system "#{bin}mogenerator", "--version"
   end
 end

@@ -1,7 +1,7 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
-  homepage "https://fx.wtf"
-  url "https://ghproxy.com/https://github.com/antonmedv/fx/archive/refs/tags/31.0.0.tar.gz"
+  homepage "https:fx.wtf"
+  url "https:github.comantonmedvfxarchiverefstags31.0.0.tar.gz"
   sha256 "8408047ef42506aac44aa805de209dd64ae4fc084e76bee8e24112ffbdc2d5dc"
   license "MIT"
 
@@ -23,6 +23,6 @@ class Fx < Formula
   end
 
   test do
-    assert_equal "42", pipe_output("#{bin}/fx .", 42).strip
+    assert_equal "42", pipe_output("#{bin}fx .", 42).strip
   end
 end

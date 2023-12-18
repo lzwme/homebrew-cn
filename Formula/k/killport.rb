@@ -1,7 +1,7 @@
 class Killport < Formula
   desc "Command-line tool to kill processes listening on a specific port"
-  homepage "https://github.com/jkfran/killport"
-  url "https://ghproxy.com/https://github.com/jkfran/killport/archive/refs/tags/v0.9.2.tar.gz"
+  homepage "https:github.comjkfrankillport"
+  url "https:github.comjkfrankillportarchiverefstagsv0.9.2.tar.gz"
   sha256 "d1a500b1700775a5e24754e2b1f29cde0ad5ad72776b6abe1973173a1a9507b8"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Killport < Formula
 
   test do
     port = free_port
-    output = shell_output("#{bin}/killport --signal sigkill #{port}")
+    output = shell_output("#{bin}killport --signal sigkill #{port}")
     assert_match "No processes found using port #{port}", output
   end
 end

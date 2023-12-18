@@ -1,10 +1,10 @@
 class Rapidjson < Formula
-  desc "JSON parser/generator for C++ with SAX and DOM style APIs"
-  homepage "https://rapidjson.org/"
-  url "https://ghproxy.com/https://github.com/Tencent/rapidjson/archive/refs/tags/v1.1.0.tar.gz"
+  desc "JSON parsergenerator for C++ with SAX and DOM style APIs"
+  homepage "https:rapidjson.org"
+  url "https:github.comTencentrapidjsonarchiverefstagsv1.1.0.tar.gz"
   sha256 "bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e"
   license "MIT"
-  head "https://github.com/Tencent/rapidjson.git", branch: "master"
+  head "https:github.comTencentrapidjson.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,7 +22,7 @@ class Rapidjson < Formula
   end
 
   test do
-    system ENV.cxx, "#{share}/doc/RapidJSON/examples/capitalize/capitalize.cpp", "-o", "capitalize"
-    assert_equal '{"A":"B"}', pipe_output("./capitalize", '{"a":"b"}')
+    system ENV.cxx, "#{share}docRapidJSONexamplescapitalizecapitalize.cpp", "-o", "capitalize"
+    assert_equal '{"A":"B"}', pipe_output(".capitalize", '{"a":"b"}')
   end
 end

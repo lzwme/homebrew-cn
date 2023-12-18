@@ -1,14 +1,14 @@
 class PkgConfigWrapper < Formula
   desc "Easier way to include C code in your Go program"
-  homepage "https://github.com/influxdata/pkg-config"
-  url "https://ghproxy.com/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.2.13.tar.gz"
+  homepage "https:github.cominfluxdatapkg-config"
+  url "https:github.cominfluxdatapkg-configarchiverefstagsv0.2.13.tar.gz"
   sha256 "8a686074e30db54f26084ec0ab0cd3b04e32b856f680b153e75130d3a77a04ea"
   license "MIT"
-  head "https://github.com/influxdata/pkg-config.git", branch: "master"
+  head "https:github.cominfluxdatapkg-config.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,6 +31,6 @@ class PkgConfigWrapper < Formula
   end
 
   test do
-    assert_match "Found pkg-config executable", shell_output(bin/"pkg-config-wrapper 2>&1", 1)
+    assert_match "Found pkg-config executable", shell_output(bin"pkg-config-wrapper 2>&1", 1)
   end
 end

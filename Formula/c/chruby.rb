@@ -1,10 +1,10 @@
 class Chruby < Formula
   desc "Ruby environment tool"
-  homepage "https://github.com/postmodern/chruby#readme"
-  url "https://ghproxy.com/https://github.com/postmodern/chruby/releases/download/v0.3.9/chruby-0.3.9.tar.gz"
+  homepage "https:github.compostmodernchruby#readme"
+  url "https:github.compostmodernchrubyreleasesdownloadv0.3.9chruby-0.3.9.tar.gz"
   sha256 "7220a96e355b8a613929881c091ca85ec809153988d7d691299e0a16806b42fd"
   license "MIT"
-  head "https://github.com/postmodern/chruby.git", branch: "master"
+  head "https:github.compostmodernchruby.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -17,16 +17,16 @@ class Chruby < Formula
 
   def caveats
     <<~EOS
-      Add the following to the ~/.bash_profile or ~/.zshrc file:
-        source #{opt_pkgshare}/chruby.sh
+      Add the following to the ~.bash_profile or ~.zshrc file:
+        source #{opt_pkgshare}chruby.sh
 
       To enable auto-switching of Rubies specified by .ruby-version files,
-      add the following to ~/.bash_profile or ~/.zshrc:
-        source #{opt_pkgshare}/auto.sh
+      add the following to ~.bash_profile or ~.zshrc:
+        source #{opt_pkgshare}auto.sh
     EOS
   end
 
   test do
-    assert_equal "chruby version #{version}", shell_output("#{bin}/chruby-exec --version").strip
+    assert_equal "chruby version #{version}", shell_output("#{bin}chruby-exec --version").strip
   end
 end

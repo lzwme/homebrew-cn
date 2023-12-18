@@ -1,10 +1,10 @@
 class Pygments < Formula
   desc "Generic syntax highlighter"
-  homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
+  homepage "https:pygments.org"
+  url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
   sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   license "BSD-2-Clause"
-  head "https://github.com/pygments/pygments.git", branch: "master"
+  head "https:github.compygmentspygments.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40ec7beb2d56754d8ec79fecd4b7963c6e05b6c9e1001ed192605ab19986e7ba"
@@ -27,14 +27,14 @@ class Pygments < Formula
   end
 
   def install
-    bash_completion.install "external/pygments.bashcomp" => "pygmentize"
+    bash_completion.install "externalpygments.bashcomp" => "pygmentize"
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
 
       pyversion = Language::Python.major_minor_version(python_exe)
-      bin.install bin/"pygmentize" => "pygmentize-#{pyversion}"
+      bin.install bin"pygmentize" => "pygmentize-#{pyversion}"
 
       next if python != pythons.max_by(&:version)
 
@@ -50,24 +50,24 @@ class Pygments < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       import os
       print(os.getcwd())
     EOS
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       pyversion = Language::Python.major_minor_version(python_exe)
 
-      system bin/"pygmentize-#{pyversion}", "-f", "html", "-o", "test.html", testpath/"test.py"
-      assert_predicate testpath/"test.html", :exist?
+      system bin"pygmentize-#{pyversion}", "-f", "html", "-o", "test.html", testpath"test.py"
+      assert_predicate testpath"test.html", :exist?
 
-      (testpath/"test.html").unlink
+      (testpath"test.html").unlink
 
       next if python != pythons.max_by(&:version)
 
-      system bin/"pygmentize", "-f", "html", "-o", "test.html", testpath/"test.py"
-      assert_predicate testpath/"test.html", :exist?
+      system bin"pygmentize", "-f", "html", "-o", "test.html", testpath"test.py"
+      assert_predicate testpath"test.html", :exist?
     end
   end
 end

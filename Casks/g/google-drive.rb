@@ -3,11 +3,11 @@ cask "google-drive" do
   sha256 :no_check
 
   # "5-percent" is included in the url to ensure that `brew upgrade` does not update to an older version as the
-  # in-app updater can upgrade to a new version than https://dl.google.com/drive-file-stream/GoogleDrive.dmg provides
-  url "https://dl.google.com/drive-file-stream/5-percent/GoogleDrive.dmg"
+  # in-app updater can upgrade to a new version than https:dl.google.comdrive-file-streamGoogleDrive.dmg provides
+  url "https:dl.google.comdrive-file-stream5-percentGoogleDrive.dmg"
   name "Google Drive"
   desc "Client for the Google Drive storage service"
-  homepage "https://www.google.com/drive/"
+  homepage "https:www.google.comdrive"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "google-drive" do
   pkg "GoogleDrive.pkg"
 
   # Some launchctl and pkgutil items are shared with other Google apps, they should only be removed in the zap stanza
-  # See: https://github.com/Homebrew/homebrew-cask/pull/92704#issuecomment-727163169
+  # See: https:github.comHomebrewhomebrew-caskpull92704#issuecomment-727163169
   # launchctl: com.google.keystone.daemon, com.google.keystone.system.agent, com.google.keystone.system.xpcservice
   # pkgutil: com.google.pkg.Keystone
   uninstall login_item: "Google Drive",
@@ -37,21 +37,21 @@ cask "google-drive" do
             ]
 
   zap trash:     [
-        "~/Library/Application Scripts/com.google.drivefs.finderhelper.findersync",
-        "~/Library/Application Scripts/com.google.drivefs.finderhelper",
-        "~/Library/Application Scripts/com.google.drivefs.fpext",
-        "~/Library/Application Support/FileProvider/com.google.drivefs.fpext",
-        "~/Library/Application Support/Google/DriveFS",
-        "~/Library/Caches/com.google.drivefs",
-        "~/Library/Containers/com.google.drivefs.finderhelper.findersync",
-        "~/Library/Containers/com.google.drivefs.finderhelper",
-        "~/Library/Containers/com.google.drivefs.fpext",
-        "~/Library/Group Containers/EQHXZ8M8AV.group.com.google.drivefs",
-        "~/Library/Group Containers/group.com.google.drivefs",
-        "~/Library/Preferences/com.google.drivefs.helper.renderer.plist",
-        "~/Library/Preferences/com.google.drivefs.plist",
-        "~/Library/Preferences/com.google.drivefs.settings.plist",
-        "~/Library/Preferences/Google Drive File Stream Helper.plist",
+        "~LibraryApplication Scriptscom.google.drivefs.finderhelper.findersync",
+        "~LibraryApplication Scriptscom.google.drivefs.finderhelper",
+        "~LibraryApplication Scriptscom.google.drivefs.fpext",
+        "~LibraryApplication SupportFileProvidercom.google.drivefs.fpext",
+        "~LibraryApplication SupportGoogleDriveFS",
+        "~LibraryCachescom.google.drivefs",
+        "~LibraryContainerscom.google.drivefs.finderhelper.findersync",
+        "~LibraryContainerscom.google.drivefs.finderhelper",
+        "~LibraryContainerscom.google.drivefs.fpext",
+        "~LibraryGroup ContainersEQHXZ8M8AV.group.com.google.drivefs",
+        "~LibraryGroup Containersgroup.com.google.drivefs",
+        "~LibraryPreferencescom.google.drivefs.helper.renderer.plist",
+        "~LibraryPreferencescom.google.drivefs.plist",
+        "~LibraryPreferencescom.google.drivefs.settings.plist",
+        "~LibraryPreferencesGoogle Drive File Stream Helper.plist",
       ],
       launchctl: [
         "com.google.keystone.agent",

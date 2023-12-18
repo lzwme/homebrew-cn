@@ -1,10 +1,10 @@
 class Jerryscript < Formula
   desc "Ultra-lightweight JavaScript engine for the Internet of Things"
-  homepage "https://jerryscript.net"
-  url "https://ghproxy.com/https://github.com/jerryscript-project/jerryscript/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:jerryscript.net"
+  url "https:github.comjerryscript-projectjerryscriptarchiverefstagsv2.4.0.tar.gz"
   sha256 "5850947c23db6fbce032d15560551408ab155b16a94a7ac4412dc3bb85762d2d"
   license "Apache-2.0"
-  head "https://github.com/jerryscript-project/jerryscript.git", branch: "master"
+  head "https:github.comjerryscript-projectjerryscript.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cefb188b4e64c616b24fc6b7bffeac156cdcb2b7f32fe7f5fe1a84b5aa10c4bd"
@@ -36,10 +36,10 @@ class Jerryscript < Formula
   end
 
   test do
-    (testpath/"test.js").write "print('Hello, Homebrew!');"
-    assert_equal "Hello, Homebrew!", shell_output("#{bin}/jerry test.js").strip
+    (testpath"test.js").write "print('Hello, Homebrew!');"
+    assert_equal "Hello, Homebrew!", shell_output("#{bin}jerry test.js").strip
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include "jerryscript.h"
 
@@ -62,6 +62,6 @@ class Jerryscript < Formula
     EOS
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}",
                    "-ljerry-core", "-ljerry-port-default", "-ljerry-ext", "-lm"
-    assert_equal "1 + 2 = 3", shell_output("./test").strip, "JerryScript can add number"
+    assert_equal "1 + 2 = 3", shell_output(".test").strip, "JerryScript can add number"
   end
 end

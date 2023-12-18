@@ -1,7 +1,7 @@
 class Ulfius < Formula
   desc "HTTP Framework for REST Applications in C"
-  homepage "https://github.com/babelouest/ulfius/"
-  url "https://ghproxy.com/https://github.com/babelouest/ulfius/archive/refs/tags/v2.7.15.tar.gz"
+  homepage "https:github.combabelouestulfius"
+  url "https:github.combabelouestulfiusarchiverefstagsv2.7.15.tar.gz"
   sha256 "19cf789b2af1919b69f77c7701237bfc318a9781ec657b68fd4b6ffa9d53f111"
   license "LGPL-2.1-only"
 
@@ -40,7 +40,7 @@ class Ulfius < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <ulfius.h>
       int main() {
         struct _u_instance instance;
@@ -49,6 +49,6 @@ class Ulfius < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lulfius", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

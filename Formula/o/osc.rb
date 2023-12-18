@@ -2,15 +2,15 @@ class Osc < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line interface to work with an Open Build Service"
-  homepage "https://openbuildservice.org"
-  url "https://ghproxy.com/https://github.com/openSUSE/osc/archive/refs/tags/1.5.1.tar.gz"
+  homepage "https:openbuildservice.org"
+  url "https:github.comopenSUSEoscarchiverefstags1.5.1.tar.gz"
   sha256 "17b1268413561b3d1b8564d3d1ed8f025efa34774497df4d54205b6cf0882c28"
   license "GPL-2.0-or-later"
-  head "https://github.com/openSUSE/osc.git", branch: "master"
+  head "https:github.comopenSUSEosc.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,12 +31,12 @@ class Osc < Formula
   uses_from_macos "curl"
 
   resource "rpm" do
-    url "https://files.pythonhosted.org/packages/8c/15/ef9b3d4a0b4b9afe62fd2be374003643ea03fc8026930646ad0781bb9492/rpm-0.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages8c15ef9b3d4a0b4b9afe62fd2be374003643ea03fc8026930646ad0781bb9492rpm-0.1.0.tar.gz"
     sha256 "0e320a806fb61c3980c0cd0c5f5faec97c73c347432902ba2955a08a7b1a034f"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages36dda6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6urllib3-2.1.0.tar.gz"
     sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
@@ -45,21 +45,21 @@ class Osc < Formula
   end
 
   test do
-    test_config = testpath/"oscrc"
+    test_config = testpath"oscrc"
     ENV["OSC_CONFIG"] = test_config
 
     test_config.write <<~EOS
       [general]
-      apiurl = https://api.opensuse.org
+      apiurl = https:api.opensuse.org
 
-      [https://api.opensuse.org]
+      [https:api.opensuse.org]
       credentials_mgr_class=osc.credentials.TransientCredentialsManager
       user=brewtest
       pass=
     EOS
 
-    output = shell_output("#{bin}/osc status 2>&1", 1).chomp
+    output = shell_output("#{bin}osc status 2>&1", 1).chomp
     assert_match "Directory '.' is not a working copy", output
-    assert_match "Please specify a command", shell_output("#{bin}/osc 2>&1", 2)
+    assert_match "Please specify a command", shell_output("#{bin}osc 2>&1", 2)
   end
 end

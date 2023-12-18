@@ -2,10 +2,10 @@ cask "font-belgrano" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/belgrano/Belgrano-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbelgranoBelgrano-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Belgrano"
-  homepage "https://fonts.google.com/specimen/Belgrano"
+  homepage "https:fonts.google.comspecimenBelgrano"
 
   font "Belgrano-Regular.ttf"
 

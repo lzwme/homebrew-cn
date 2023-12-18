@@ -2,10 +2,10 @@ cask "mirrordisplays" do
   version "1.2"
   sha256 "68b6b9a0bd79945d0e1239f308520a6cfd582fdde4dd061195de888b41643dd5"
 
-  url "https://ghproxy.com/https://github.com/fcanas/mirror-displays/releases/download/v#{version}/MirrorDisplays.zip",
-      verified: "github.com/fcanas/mirror-displays/"
+  url "https:github.comfcanasmirror-displaysreleasesdownloadv#{version}MirrorDisplays.zip",
+      verified: "github.comfcanasmirror-displays"
   name "Mirror Displays"
-  homepage "https://fabiancanas.com/open-source/mirror-displays"
+  homepage "https:fabiancanas.comopen-sourcemirror-displays"
 
   depends_on macos: ">= :high_sierra"
 

@@ -1,7 +1,7 @@
 class TelegramDownloader < Formula
-  desc "Telegram Messenger downloader/tools written in Golang"
-  homepage "https://github.com/iyear/tdl"
-  url "https://ghproxy.com/https://github.com/iyear/tdl/archive/refs/tags/v0.13.3.tar.gz"
+  desc "Telegram Messenger downloadertools written in Golang"
+  homepage "https:github.comiyeartdl"
+  url "https:github.comiyeartdlarchiverefstagsv0.13.3.tar.gz"
   sha256 "f92356bbc29a98bdcbd5bf2ae9c71280cf9d3a577ef0ca3f490a4cbc22739078"
   license "AGPL-3.0-only"
 
@@ -18,11 +18,11 @@ class TelegramDownloader < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tdl")
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tdl")
   end
 
   test do
-    assert_match "# ID of dialog", shell_output("#{bin}/tdl chat ls -f -")
-    assert_match "not authorized. please login first", shell_output("#{bin}/tdl chat ls -n _test", 1)
+    assert_match "# ID of dialog", shell_output("#{bin}tdl chat ls -f -")
+    assert_match "not authorized. please login first", shell_output("#{bin}tdl chat ls -n _test", 1)
   end
 end

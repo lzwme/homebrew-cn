@@ -1,7 +1,7 @@
 class Rgf < Formula
   desc "Regularized Greedy Forest library"
-  homepage "https://github.com/RGF-team/rgf"
-  url "https://ghproxy.com/https://github.com/RGF-team/rgf/archive/refs/tags/3.12.0.tar.gz"
+  homepage "https:github.comRGF-teamrgf"
+  url "https:github.comRGF-teamrgfarchiverefstags3.12.0.tar.gz"
   sha256 "c197977b8709c41aa61d342a01497d26f1ad704191a2a6b699074fe7ee57dc86"
   license "MIT"
 
@@ -31,13 +31,13 @@ class Rgf < Formula
         system "cmake", *std_cmake_args, ".."
         system "cmake", "--build", "."
       end
-      bin.install "bin/rgf"
+      bin.install "binrgf"
       pkgshare.install "examples"
     end
   end
 
   test do
-    cp_r (pkgshare/"examples/sample/."), testpath
+    cp_r (pkgshare"examplessample."), testpath
     parameters = %w[
       algorithm=RGF
       train_x_fn=train.data.x
@@ -46,7 +46,7 @@ class Rgf < Formula
       reg_L2=1
       model_fn_prefix=rgf.model
     ]
-    output = shell_output("#{bin}/rgf train_predict #{parameters.join(",")}")
+    output = shell_output("#{bin}rgf train_predict #{parameters.join(",")}")
     assert_match "Generated 20 model file(s)", output
   end
 end

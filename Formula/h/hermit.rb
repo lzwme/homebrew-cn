@@ -1,7 +1,7 @@
 class Hermit < Formula
   desc "Manages isolated, self-bootstrapping sets of tools in software projects"
-  homepage "https://cashapp.github.io/hermit"
-  url "https://ghproxy.com/https://github.com/cashapp/hermit/archive/refs/tags/v0.38.1.tar.gz"
+  homepage "https:cashapp.github.iohermit"
+  url "https:github.comcashapphermitarchiverefstagsv0.38.1.tar.gz"
   sha256 "10c8f5c912988b74c5d7149e98e6d868889fe8be863ae9f5e0c7fed0a25c9f8f"
   license "Apache-2.0"
 
@@ -23,7 +23,7 @@ class Hermit < Formula
       -X main.version=#{version}
       -X main.channel=stable
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/hermit"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdhermit"
   end
 
   def caveats
@@ -31,16 +31,16 @@ class Hermit < Formula
       For shell integration hooks, add the following to your shell configuration:
 
       For bash, add the following command to your .bashrc:
-        eval "$(test -x $(brew --prefix)/bin/hermit && $(brew --prefix)/bin/hermit shell-hooks --print --bash)"
+        eval "$(test -x $(brew --prefix)binhermit && $(brew --prefix)binhermit shell-hooks --print --bash)"
 
       For zsh, add the following command to your .zshrc:
-        eval "$(test -x $(brew --prefix)/bin/hermit && $(brew --prefix)/bin/hermit shell-hooks --print --zsh)"
+        eval "$(test -x $(brew --prefix)binhermit && $(brew --prefix)binhermit shell-hooks --print --zsh)"
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/hermit version")
-    system bin/"hermit", "init", "."
-    assert_predicate testpath/"bin/hermit.hcl", :exist?
+    assert_match version.to_s, shell_output("#{bin}hermit version")
+    system bin"hermit", "init", "."
+    assert_predicate testpath"binhermit.hcl", :exist?
   end
 end

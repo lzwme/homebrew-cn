@@ -1,7 +1,7 @@
 class Wildmidi < Formula
   desc "Simple software midi player"
-  homepage "https://www.mindwerks.net/projects/wildmidi/"
-  url "https://ghproxy.com/https://github.com/Mindwerks/wildmidi/archive/refs/tags/wildmidi-0.4.5.tar.gz"
+  homepage "https:www.mindwerks.netprojectswildmidi"
+  url "https:github.comMindwerkswildmidiarchiverefstagswildmidi-0.4.5.tar.gz"
   sha256 "116c0f31d349eaa74a630ed5a9a17b6a351204877a4ed9fb9aacd9dbd7f6c874"
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
 
@@ -26,7 +26,7 @@ class Wildmidi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <wildmidi_lib.h>
       #include <stdio.h>
       #include <assert.h>
@@ -38,6 +38,6 @@ class Wildmidi < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lWildMidi"
-    system "./a.out"
+    system ".a.out"
   end
 end

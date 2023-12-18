@@ -1,10 +1,10 @@
 class DoubleConversion < Formula
   desc "Binary-decimal and decimal-binary routines for IEEE doubles"
-  homepage "https://github.com/google/double-conversion"
-  url "https://ghproxy.com/https://github.com/google/double-conversion/archive/refs/tags/v3.3.0.tar.gz"
+  homepage "https:github.comgoogledouble-conversion"
+  url "https:github.comgoogledouble-conversionarchiverefstagsv3.3.0.tar.gz"
   sha256 "04ec44461850abbf33824da84978043b22554896b552c5fd11a9c5ae4b4d296e"
   license "BSD-3-Clause"
-  head "https://github.com/google/double-conversion.git", branch: "master"
+  head "https:github.comgoogledouble-conversion.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "5764a27a4392e020618a4a70c00d71f9a253419a55ae8c16dd965270eeb99cd1"
@@ -27,12 +27,12 @@ class DoubleConversion < Formula
 
     system "cmake", "-S", ".", "-B", "static", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "static"
-    lib.install "static/libdouble-conversion.a"
+    lib.install "staticlibdouble-conversion.a"
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
-      #include <double-conversion/bignum.h>
+    (testpath"test.cc").write <<~EOS
+      #include <double-conversionbignum.h>
       #include <stdio.h>
       int main() {
           char buf[20] = {0};
@@ -44,6 +44,6 @@ class DoubleConversion < Formula
       }
     EOS
     system ENV.cc, "test.cc", "-L#{lib}", "-ldouble-conversion", "-o", "test"
-    assert_equal "1234567890ABCDEF", `./test`
+    assert_equal "1234567890ABCDEF", `.test`
   end
 end

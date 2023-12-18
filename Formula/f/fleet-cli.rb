@@ -1,11 +1,11 @@
 class FleetCli < Formula
   desc "Manage large fleets of Kubernetes clusters"
-  homepage "https://github.com/rancher/fleet"
-  url "https://github.com/rancher/fleet.git",
+  homepage "https:github.comrancherfleet"
+  url "https:github.comrancherfleet.git",
       tag:      "v0.9.0",
       revision: "93432f288e79f436e2f5cfe940e3274994d00b29"
   license "Apache-2.0"
-  head "https://github.com/rancher/fleet.git", branch: "master"
+  head "https:github.comrancherfleet.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,16 +26,16 @@ class FleetCli < Formula
 
   def install
     ldflags = %W[
-      -X github.com/rancher/fleet/pkg/version.Version=#{version}
-      -X github.com/rancher/fleet/pkg/version.GitCommit=#{Utils.git_short_head}
+      -X github.comrancherfleetpkgversion.Version=#{version}
+      -X github.comrancherfleetpkgversion.GitCommit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(output: bin/"fleet", ldflags: ldflags), "./cmd/fleetcli"
+    system "go", "build", *std_go_args(output: bin"fleet", ldflags: ldflags), ".cmdfleetcli"
 
-    generate_completions_from_executable(bin/"fleet", "completion", base_name: "fleet")
+    generate_completions_from_executable(bin"fleet", "completion", base_name: "fleet")
   end
 
   test do
-    system "git", "clone", "https://github.com/rancher/fleet-examples"
-    assert_match "kind: Deployment", shell_output("#{bin}/fleet test fleet-examples/simple 2>&1")
+    system "git", "clone", "https:github.comrancherfleet-examples"
+    assert_match "kind: Deployment", shell_output("#{bin}fleet test fleet-examplessimple 2>&1")
   end
 end

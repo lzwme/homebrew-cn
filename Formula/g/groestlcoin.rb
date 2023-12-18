@@ -1,10 +1,10 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
-  homepage "https://groestlcoin.org/groestlcoin-core-wallet/"
-  url "https://ghproxy.com/https://github.com/Groestlcoin/groestlcoin/releases/download/v26.0/groestlcoin-26.0.tar.gz"
+  homepage "https:groestlcoin.orggroestlcoin-core-wallet"
+  url "https:github.comGroestlcoingroestlcoinreleasesdownloadv26.0groestlcoin-26.0.tar.gz"
   sha256 "45ff0c7e58e3e6cd9be4db00f8ba02566249538487f5711e64d4f0187414fb46"
   license "MIT"
-  head "https://github.com/groestlcoin/groestlcoin.git", branch: "master"
+  head "https:github.comgroestlcoingroestlcoin.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "74d00da944d97d669cb3803443b414ead2ac0716110455935f7b67091e487f79"
@@ -39,20 +39,20 @@ class Groestlcoin < Formula
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args,
+    system ".autogen.sh"
+    system ".configure", *std_configure_args,
            "--disable-silent-rules",
            "--with-boost-libdir=#{Formula["boost"].opt_lib}"
     system "make", "install"
-    pkgshare.install "share/rpcauth"
+    pkgshare.install "sharerpcauth"
   end
 
   service do
-    run opt_bin/"groestlcoind"
+    run opt_bin"groestlcoind"
   end
 
   test do
-    system bin/"groestlcoin-tx", "-txid", "0100000001000000000000000000000000000000000000000000000000000" \
+    system bin"groestlcoin-tx", "-txid", "0100000001000000000000000000000000000000000000000000000000000" \
                                           "0000000000000ffffffff0a510101062f503253482fffffffff0100002cd6" \
                                           "e2150000232103e26025c37d6d0d968c9dabcc53b029926c3a1f9709df97c" \
                                           "11a8be57d3fa0599cac00000000"

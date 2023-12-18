@@ -1,13 +1,13 @@
 class Grails < Formula
   desc "Web application framework for the Groovy language"
-  homepage "https://grails.org"
-  url "https://ghproxy.com/https://github.com/grails/grails-core/releases/download/v6.1.1/grails-6.1.1.zip"
+  homepage "https:grails.org"
+  url "https:github.comgrailsgrails-corereleasesdownloadv6.1.1grails-6.1.1.zip"
   sha256 "7e69f5e5d9501a720136217f2e5464e16c81ed373ab5b854fe47cffb0e511c4d"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -17,10 +17,10 @@ class Grails < Formula
   depends_on "openjdk@11"
 
   def install
-    rm_f Dir["bin/*.bat", "bin/cygrails", "*.bat"]
+    rm_f Dir["bin*.bat", "bincygrails", "*.bat"]
     libexec.install Dir["*"]
-    bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env("11")
+    bin.install Dir[libexec"bin*"]
+    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env("11")
   end
 
   def caveats
@@ -31,10 +31,10 @@ class Grails < Formula
   end
 
   test do
-    system bin/"grails", "create-app", "brew-test"
-    assert_predicate testpath/"brew-test/gradle.properties", :exist?
-    assert_match "brew.test", File.read(testpath/"brew-test/build.gradle")
+    system bin"grails", "create-app", "brew-test"
+    assert_predicate testpath"brew-testgradle.properties", :exist?
+    assert_match "brew.test", File.read(testpath"brew-testbuild.gradle")
 
-    assert_match "Grails Version: #{version}", shell_output("#{bin}/grails -v")
+    assert_match "Grails Version: #{version}", shell_output("#{bin}grails -v")
   end
 end

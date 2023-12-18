@@ -2,19 +2,19 @@ cask "workflowy" do
   version "4.0.2312130936"
   sha256 "beb0c7395c0791ed1777785d041e774d796667e725ad4ac1a1e035b8dc980da0"
 
-  url "https://ghproxy.com/https://github.com/workflowy/desktop/releases/download/v#{version}/WorkFlowy.zip",
-      verified: "github.com/workflowy/desktop/"
+  url "https:github.comworkflowydesktopreleasesdownloadv#{version}WorkFlowy.zip",
+      verified: "github.comworkflowydesktop"
   name "WorkFlowy"
   desc "Notetaking tool"
-  homepage "https://workflowy.com/downloads/mac/"
+  homepage "https:workflowy.comdownloadsmac"
 
   auto_updates true
 
   app "WorkFlowy.app"
 
   zap trash: [
-    "~/Library/Application Support/WorkFlowy",
-    "~/Library/Preferences/com.workflowy.desktop.plist",
-    "~/Library/Saved Application State/com.workflowy.desktop.savedState",
+    "~LibraryApplication SupportWorkFlowy",
+    "~LibraryPreferencescom.workflowy.desktop.plist",
+    "~LibrarySaved Application Statecom.workflowy.desktop.savedState",
   ]
 end

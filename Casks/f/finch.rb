@@ -5,17 +5,17 @@ cask "finch" do
   sha256 arm:   "5c6ea76510590257b10686a9ba763096a574da08dc922f4c1eaa89302d7b6112",
          intel: "3097bba50c082f3a80868b84f68e9aac12c445ebaa2744ed8b17d8a4f0299dcc"
 
-  url "https://ghproxy.com/https://github.com/runfinch/finch/releases/download/v#{version}/Finch-v#{version}-#{arch}.pkg"
+  url "https:github.comrunfinchfinchreleasesdownloadv#{version}Finch-v#{version}-#{arch}.pkg"
   name "Finch"
   desc "Open source container development tool"
-  homepage "https://github.com/runfinch/finch"
+  homepage "https:github.comrunfinchfinch"
 
   pkg "Finch-v#{version}-#{arch}.pkg"
 
   uninstall script: {
-    executable: "/Applications/Finch/uninstall.sh",
+    executable: "ApplicationsFinchuninstall.sh",
     sudo:       true,
   }
 
-  zap trash: "~/.finch"
+  zap trash: "~.finch"
 end

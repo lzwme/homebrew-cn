@@ -2,10 +2,10 @@ cask "font-kristi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kristi/Kristi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkristiKristi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kristi"
-  homepage "https://fonts.google.com/specimen/Kristi"
+  homepage "https:fonts.google.comspecimenKristi"
 
   font "Kristi-Regular.ttf"
 

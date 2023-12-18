@@ -1,7 +1,7 @@
 class SqlxCli < Formula
   desc "Command-line utility for SQLx, the Rust SQL toolkit"
-  homepage "https://github.com/launchbadge/sqlx"
-  url "https://ghproxy.com/https://github.com/launchbadge/sqlx/archive/refs/tags/v0.7.3.tar.gz"
+  homepage "https:github.comlaunchbadgesqlx"
+  url "https:github.comlaunchbadgesqlxarchiverefstagsv0.7.3.tar.gz"
   sha256 "9f72c8099bbe35fc541d5a66fad59d751f35ef3efb4a510b273243b65118cdd4"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -27,10 +27,10 @@ class SqlxCli < Formula
   end
 
   test do
-    ENV["DATABASE_URL"] = "postgres://postgres@localhost/my_database"
+    ENV["DATABASE_URL"] = "postgres:postgres@localhostmy_database"
     assert_match "error: while resolving migrations: No such file or directory",
-      shell_output("#{bin}/sqlx migrate info 2>&1", 1)
+      shell_output("#{bin}sqlx migrate info 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/sqlx --version")
+    assert_match version.to_s, shell_output("#{bin}sqlx --version")
   end
 end

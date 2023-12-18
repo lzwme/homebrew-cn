@@ -2,11 +2,11 @@ class Fortls < Formula
   include Language::Python::Virtualenv
 
   desc "Fortran language server"
-  homepage "https://fortls.fortran-lang.org/"
-  url "https://files.pythonhosted.org/packages/38/04/db988efbcaac142999af91888e9750dfa422108a318ec3038c2cd42ecf04/fortls-2.13.0.tar.gz"
+  homepage "https:fortls.fortran-lang.org"
+  url "https:files.pythonhosted.orgpackages3804db988efbcaac142999af91888e9750dfa422108a318ec3038c2cd42ecf04fortls-2.13.0.tar.gz"
   sha256 "23c5013e8dd8e1d65bf07be610d0827bc48aa7331a7a7ce13612d4c646d0db31"
   license "MIT"
-  head "https://github.com/fortran-lang/fortls.git", branch: "master"
+  head "https:github.comfortran-langfortls.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -25,7 +25,7 @@ class Fortls < Formula
   conflicts_with "fortran-language-server", because: "both install `fortls` binaries"
 
   resource "json5" do
-    url "https://files.pythonhosted.org/packages/f9/40/89e0ecbf8180e112f22046553b50a99fdbb9e8b7c49d547cda2bfa81097b/json5-0.9.14.tar.gz"
+    url "https:files.pythonhosted.orgpackagesf94089e0ecbf8180e112f22046553b50a99fdbb9e8b7c49d547cda2bfa81097bjson5-0.9.14.tar.gz"
     sha256 "9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02"
   end
 
@@ -33,10 +33,10 @@ class Fortls < Formula
     virtualenv_install_with_resources
 
     # Disable automatic update check
-    (bin/"fortls").unlink
+    (bin"fortls").unlink
     # Replace with `exec python3 -m fortls --disable_autoupdate "$@"` in the future
-    (bin/"fortls").write <<~EOS
-      #!#{libexec}/bin/python3
+    (bin"fortls").write <<~EOS
+      #!#{libexec}binpython3
 
       import re
       import sys
@@ -48,15 +48,15 @@ class Fortls < Formula
           sys.argv.append('--disable_autoupdate')
           sys.exit(main())
     EOS
-    chmod 0755, "#{bin}/fortls"
+    chmod 0755, "#{bin}fortls"
   end
 
   test do
-    system bin/"fortls", "--help"
-    (testpath/"test.f90").write <<~EOS
+    system bin"fortls", "--help"
+    (testpath"test.f90").write <<~EOS
       program main
       end program main
     EOS
-    system bin/"fortls", "--debug_filepath", testpath/"test.f90", "--debug_symbols", "--debug_full_result"
+    system bin"fortls", "--debug_filepath", testpath"test.f90", "--debug_symbols", "--debug_full_result"
   end
 end

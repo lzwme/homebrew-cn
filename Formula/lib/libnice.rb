@@ -1,13 +1,13 @@
 class Libnice < Formula
   desc "GLib ICE implementation"
-  homepage "https://wiki.freedesktop.org/nice/"
-  url "https://libnice.freedesktop.org/releases/libnice-0.1.21.tar.gz"
+  homepage "https:wiki.freedesktop.orgnice"
+  url "https:libnice.freedesktop.orgreleaseslibnice-0.1.21.tar.gz"
   sha256 "72e73a2acf20f59093e21d5601606e405873503eb35f346fa621de23e99b3b39"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
 
   livecheck do
-    url "https://github.com/libnice/libnice.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.comlibnicelibnice.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -42,14 +42,14 @@ class Libnice < Formula
   end
 
   test do
-    # Based on https://github.com/libnice/libnice/blob/HEAD/examples/simple-example.c
-    (testpath/"test.c").write <<~EOS
+    # Based on https:github.comlibnicelibniceblobHEADexamplessimple-example.c
+    (testpath"test.c").write <<~EOS
       #include <agent.h>
       int main(int argc, char *argv[]) {
         NiceAgent *agent;
         GMainLoop *gloop;
         gloop = g_main_loop_new(NULL, FALSE);
-        // Create the nice agent
+         Create the nice agent
         agent = nice_agent_new(g_main_loop_get_context (gloop),
           NICE_COMPATIBILITY_RFC5245);
         if (agent == NULL)
@@ -65,9 +65,9 @@ class Libnice < Formula
     glib = Formula["glib"]
     flags = %W[
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/nice
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}nice
       -D_REENTRANT
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
@@ -79,6 +79,6 @@ class Libnice < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

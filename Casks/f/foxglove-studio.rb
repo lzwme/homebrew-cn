@@ -2,11 +2,11 @@ cask "foxglove-studio" do
   version "1.81.0"
   sha256 "112a3fdbe01f6b730507a9ba83628cc4d6f12bb43298e5f1e7d6e01ead43f750"
 
-  url "https://ghproxy.com/https://github.com/foxglove/studio/releases/download/v#{version}/foxglove-studio-#{version}-mac-universal.dmg",
-      verified: "github.com/foxglove/studio/"
+  url "https:github.comfoxglovestudioreleasesdownloadv#{version}foxglove-studio-#{version}-mac-universal.dmg",
+      verified: "github.comfoxglovestudio"
   name "Foxglove Studio"
   desc "Visualization and debugging tool for robotics"
-  homepage "https://foxglove.dev/"
+  homepage "https:foxglove.dev"
 
   livecheck do
     url :url
@@ -16,12 +16,12 @@ cask "foxglove-studio" do
   app "Foxglove Studio.app"
 
   zap trash: [
-    "~/Library/Application Scripts/dev.foxglove.studio.quicklook",
-    "~/Library/Application Support/Foxglove Studio",
-    "~/Library/Caches/dev.foxglove.studio",
-    "~/Library/Caches/dev.foxglove.studio.ShipIt",
-    "~/Library/Containers/dev.foxglove.studio.quicklook",
-    "~/Library/Preferences/dev.foxglove.studio.plist",
-    "~/Library/Saved Application State/dev.foxglove.studio.savedState",
+    "~LibraryApplication Scriptsdev.foxglove.studio.quicklook",
+    "~LibraryApplication SupportFoxglove Studio",
+    "~LibraryCachesdev.foxglove.studio",
+    "~LibraryCachesdev.foxglove.studio.ShipIt",
+    "~LibraryContainersdev.foxglove.studio.quicklook",
+    "~LibraryPreferencesdev.foxglove.studio.plist",
+    "~LibrarySaved Application Statedev.foxglove.studio.savedState",
   ]
 end

@@ -1,10 +1,10 @@
 class Libstrophe < Formula
   desc "XMPP library for C"
-  homepage "https://strophe.im/libstrophe/"
-  url "https://ghproxy.com/https://github.com/strophe/libstrophe/archive/refs/tags/0.12.3.tar.gz"
+  homepage "https:strophe.imlibstrophe"
+  url "https:github.comstrophelibstrophearchiverefstags0.12.3.tar.gz"
   sha256 "e93a77b78f228201ee0278dbdd29142a943263df7e62278e25eacfe814e0bb34"
   license all_of: ["GPL-3.0-only", "MIT"]
-  head "https://github.com/strophe/libstrophe.git", branch: "master"
+  head "https:github.comstrophelibstrophe.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "51b09df6c3b36215c85157fa8f82955abc4ebaba4c6d055b9028247d87189c1c"
@@ -28,15 +28,15 @@ class Libstrophe < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "./bootstrap.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <strophe.h>
       #include <assert.h>
 
@@ -56,8 +56,8 @@ class Libstrophe < Formula
         return 0;
       }
     EOS
-    flags = ["-I#{include}/", "-L#{lib}", "-lstrophe"]
+    flags = ["-I#{include}", "-L#{lib}", "-lstrophe"]
     system ENV.cc, "-o", "test", "test.c", *(flags + ENV.cflags.to_s.split)
-    system "./test"
+    system ".test"
   end
 end

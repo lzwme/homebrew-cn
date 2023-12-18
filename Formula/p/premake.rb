@@ -1,15 +1,15 @@
 class Premake < Formula
   desc "Write once, build anywhere Lua-based build system"
-  homepage "https://premake.github.io/"
-  url "https://ghproxy.com/https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-src.zip"
+  homepage "https:premake.github.io"
+  url "https:github.compremakepremake-corereleasesdownloadv5.0.0-beta2premake-5.0.0-beta2-src.zip"
   sha256 "4c1100f5170ae1c3bd1b4fd9458b3b02ae841aefbfc41514887b80996436dee2"
   license "BSD-3-Clause"
   version_scheme 1
-  head "https://github.com/premake/premake-core.git", branch: "master"
+  head "https:github.compremakepremake-core.git", branch: "master"
 
   livecheck do
-    url "https://premake.github.io/download/"
-    regex(/href=.*?premake[._-]v?(\d+(?:\.\d+)+(?:[._-][a-z]+\d*)?)[._-]src\.zip/i)
+    url "https:premake.github.iodownload"
+    regex(href=.*?premake[._-]v?(\d+(?:\.\d+)+(?:[._-][a-z]+\d*)?)[._-]src\.zipi)
   end
 
   bottle do
@@ -30,24 +30,24 @@ class Premake < Formula
 
   def install
     # Fix compile with newer Clang
-    # upstream issue, https://github.com/premake/premake-core/issues/2092
+    # upstream issue, https:github.compremakepremake-coreissues2092
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     if build.head?
       platform = OS.mac? ? "osx" : "linux"
       system "make", "-f", "Bootstrap.mak", platform
-      system "./bin/release/premake5", "gmake2"
-      system "./bin/release/premake5", "embed"
+      system ".binreleasepremake5", "gmake2"
+      system ".binreleasepremake5", "embed"
       system "make"
     else
       platform = OS.mac? ? "macosx" : "unix"
-      system "make", "-C", "build/gmake2.#{platform}", "config=release"
+      system "make", "-C", "buildgmake2.#{platform}", "config=release"
     end
-    bin.install "bin/release/premake5"
+    bin.install "binreleasepremake5"
   end
 
   test do
     expected_version = build.head? ? "-dev" : version.to_s
-    assert_match expected_version, shell_output("#{bin}/premake5 --version")
+    assert_match expected_version, shell_output("#{bin}premake5 --version")
   end
 end

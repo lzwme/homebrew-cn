@@ -1,9 +1,9 @@
 class Tart < Formula
   desc "macOS and Linux VMs on Apple Silicon to use in CI and other automations"
-  homepage "https://github.com/cirruslabs/tart"
+  homepage "https:github.comcirruslabstart"
   # NOTE: 1.x uses non-open source license
-  # https://tart.run/blog/2023/02/11/changing-tart-license/
-  url "https://ghproxy.com/https://github.com/cirruslabs/tart/archive/refs/tags/0.38.0.tar.gz"
+  # https:tart.runblog20230211changing-tart-license
+  url "https:github.comcirruslabstartarchiverefstags0.38.0.tar.gz"
   sha256 "ca6a46c2373eb9c9e105d2a80229f7cbcdb03d5ce800173ec01b78424f5a5d7f"
   license "AGPL-3.0-or-later"
 
@@ -26,7 +26,7 @@ class Tart < Formula
   uses_from_macos "swift"
 
   resource "softnet" do
-    url "https://ghproxy.com/https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.2.tar.gz"
+    url "https:github.comcirruslabssoftnetarchiverefstags0.6.2.tar.gz"
     sha256 "7f42694b32d7f122a74a771e1f2f17bd3dca020fb79754780fbc17e9abd65bbe"
   end
 
@@ -35,14 +35,14 @@ class Tart < Formula
       system "cargo", "install", *std_cargo_args
     end
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    system "/usr/bin/codesign", "-f", "-s", "-", "--entitlement", "Resources/tart.entitlements", ".build/release/tart"
-    bin.install ".build/release/tart"
+    system "usrbincodesign", "-f", "-s", "-", "--entitlement", "Resourcestart.entitlements", ".buildreleasetart"
+    bin.install ".buildreleasetart"
   end
 
   test do
-    ENV["TART_HOME"] = testpath/".tart"
-    (testpath/"empty.ipsw").write ""
-    output = shell_output("#{bin}/tart create --from-ipsw #{testpath/"empty.ipsw"} test 2>&1", 1)
+    ENV["TART_HOME"] = testpath".tart"
+    (testpath"empty.ipsw").write ""
+    output = shell_output("#{bin}tart create --from-ipsw #{testpath"empty.ipsw"} test 2>&1", 1)
     assert_match "Unable to load restore image", output
   end
 end

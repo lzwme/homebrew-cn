@@ -1,7 +1,7 @@
 class BazelDiff < Formula
   desc "Performs Bazel Target Diffing between two revisions in Git"
-  homepage "https://github.com/Tinder/bazel-diff/"
-  url "https://ghproxy.com/https://github.com/Tinder/bazel-diff/releases/download/5.0.0/bazel-diff_deploy.jar"
+  homepage "https:github.comTinderbazel-diff"
+  url "https:github.comTinderbazel-diffreleasesdownload5.0.0bazel-diff_deploy.jar"
   sha256 "7943790f690ad5115493da8495372c89f7895b09334cb4fee5174a8f213654dd"
   license "BSD-3-Clause"
 
@@ -20,11 +20,11 @@ class BazelDiff < Formula
 
   def install
     libexec.install "bazel-diff_deploy.jar"
-    bin.write_jar_script libexec/"bazel-diff_deploy.jar", "bazel-diff"
+    bin.write_jar_script libexec"bazel-diff_deploy.jar", "bazel-diff"
   end
 
   test do
-    output = shell_output("#{bin}/bazel-diff generate-hashes --workspacePath=#{testpath} 2>&1", 1)
+    output = shell_output("#{bin}bazel-diff generate-hashes --workspacePath=#{testpath} 2>&1", 1)
     assert_match "Unexpected error during generation of hashes", output
   end
 end

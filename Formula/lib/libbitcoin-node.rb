@@ -1,7 +1,7 @@
 class LibbitcoinNode < Formula
   desc "Bitcoin Full Node"
-  homepage "https://github.com/libbitcoin/libbitcoin-node"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-node/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comlibbitcoinlibbitcoin-node"
+  url "https:github.comlibbitcoinlibbitcoin-nodearchiverefstagsv3.8.0.tar.gz"
   sha256 "49a2c83a01c3fe2f80eb22dd48b2a2ea77cbb963bcc5b98f07d0248dbb4ee7a9"
   license "AGPL-3.0"
   revision 1
@@ -19,35 +19,35 @@ class LibbitcoinNode < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
   deprecate! date: "2023-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # https:github.comlibbitcoinlibbitcoin-systemissues1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-blockchain"
   depends_on "libbitcoin-network"
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
 
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
 
-    bash_completion.install "data/bn"
+    bash_completion.install "databn"
   end
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath/"test.cpp").write <<~EOS
-      #include <bitcoin/node.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <bitcoinnode.hpp>
       int main() {
         libbitcoin::node::settings configuration;
         assert(configuration.sync_peers == 0u);
@@ -61,6 +61,6 @@ class LibbitcoinNode < Formula
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-node",
                     "-L#{boost.lib}", "-lboost_system"
-    system "./test"
+    system ".test"
   end
 end

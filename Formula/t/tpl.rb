@@ -1,10 +1,10 @@
 class Tpl < Formula
   desc "Store and retrieve binary data in C"
-  homepage "https://troydhanson.github.io/tpl/"
-  url "https://ghproxy.com/https://github.com/troydhanson/tpl/archive/refs/tags/v1.6.1.tar.gz"
+  homepage "https:troydhanson.github.iotpl"
+  url "https:github.comtroydhansontplarchiverefstagsv1.6.1.tar.gz"
   sha256 "0b3750bf62f56be4c42f83c89d8449b24f1c5f1605a104801d70f2f3c06fb2ff"
   license "BSD-1-Clause"
-  head "https://github.com/troydhanson/tpl.git", branch: "master"
+  head "https:github.comtroydhansontpl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "648d49fb0cd54c646e5257ba9aba1b88867913b5cb54e8accdbdf45dcd2b038d"
@@ -29,7 +29,7 @@ class Tpl < Formula
 
   def install
     system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"

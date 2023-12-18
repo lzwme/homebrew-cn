@@ -1,7 +1,7 @@
 class CodaCli < Formula
   desc "Shell integration for Panic's Coda"
-  homepage "http://justinhileman.info/coda-cli/"
-  url "https://ghproxy.com/https://github.com/bobthecow/coda-cli/archive/refs/tags/v1.0.5.tar.gz"
+  homepage "http:justinhileman.infocoda-cli"
+  url "https:github.combobthecowcoda-cliarchiverefstagsv1.0.5.tar.gz"
   sha256 "5ed407313a8d1fc6cc4d5b1acc14a80f7e6fad6146f2334de510e475955008b9"
   license "MIT"
 
@@ -14,6 +14,6 @@ class CodaCli < Formula
   end
 
   test do
-    system "#{bin}/coda", "-h"
+    system "#{bin}coda", "-h"
   end
 end

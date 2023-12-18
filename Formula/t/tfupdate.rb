@@ -1,10 +1,10 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
-  homepage "https://github.com/minamijoyo/tfupdate"
-  url "https://ghproxy.com/https://github.com/minamijoyo/tfupdate/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:github.comminamijoyotfupdate"
+  url "https:github.comminamijoyotfupdatearchiverefstagsv0.8.0.tar.gz"
   sha256 "2b0e59f42d73a2407826eff31d9ff4b7ee03d0129e72bfd31b9e54f13ccc5d20"
   license "MIT"
-  head "https://github.com/minamijoyo/tfupdate.git", branch: "master"
+  head "https:github.comminamijoyotfupdate.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c47ad0dc719dd57d4006b9993d4ee4dda6c96489cc4055c69680247b786cc392"
@@ -23,15 +23,15 @@ class Tfupdate < Formula
   end
 
   test do
-    (testpath/"provider.tf").write <<~EOS
+    (testpath"provider.tf").write <<~EOS
       provider "aws" {
         version = "2.39.0"
       }
     EOS
 
-    system bin/"tfupdate", "provider", "aws", "-v", "2.40.0", testpath/"provider.tf"
-    assert_match "2.40.0", File.read(testpath/"provider.tf")
+    system bin"tfupdate", "provider", "aws", "-v", "2.40.0", testpath"provider.tf"
+    assert_match "2.40.0", File.read(testpath"provider.tf")
 
-    assert_match version.to_s, shell_output(bin/"tfupdate --version")
+    assert_match version.to_s, shell_output(bin"tfupdate --version")
   end
 end

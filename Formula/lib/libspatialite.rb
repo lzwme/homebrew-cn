@@ -1,24 +1,24 @@
 class Libspatialite < Formula
   desc "Adds spatial SQL capabilities to SQLite"
-  homepage "https://www.gaia-gis.it/fossil/libspatialite/index"
+  homepage "https:www.gaia-gis.itfossillibspatialiteindex"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   stable do
-    url "https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-5.1.0.tar.gz"
-    mirror "https://ftp.netbsd.org/pub/pkgsrc/distfiles/libspatialite-5.1.0.tar.gz"
-    mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/pkgsrc/distfiles/libspatialite-5.1.0.tar.gz"
+    url "https:www.gaia-gis.itgaia-sinslibspatialite-sourceslibspatialite-5.1.0.tar.gz"
+    mirror "https:ftp.netbsd.orgpubpkgsrcdistfileslibspatialite-5.1.0.tar.gz"
+    mirror "https:www.mirrorservice.orgsitesftp.netbsd.orgpubpkgsrcdistfileslibspatialite-5.1.0.tar.gz"
     sha256 "43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
-    url "https://www.gaia-gis.it/gaia-sins/libspatialite-sources/"
-    regex(/href=.*?libspatialite[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
+    url "https:www.gaia-gis.itgaia-sinslibspatialite-sources"
+    regex(href=.*?libspatialite[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Libspatialite < Formula
   end
 
   head do
-    url "https://www.gaia-gis.it/fossil/libspatialite", using: :fossil
+    url "https:www.gaia-gis.itfossillibspatialite", using: :fossil
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -54,7 +54,7 @@ class Libspatialite < Formula
 
     # New SQLite3 extension won't load via SELECT load_extension("mod_spatialite");
     # unless named mod_spatialite.dylib (should actually be mod_spatialite.bundle)
-    # See: https://groups.google.com/forum/#!topic/spatialite-users/EqJAB8FYRdI
+    # See: https:groups.google.comforum#!topicspatialite-usersEqJAB8FYRdI
     #      needs upstream fixes in both SQLite and libtool
     inreplace "configure",
               "shrext_cmds='`test .$module = .yes && echo .so || echo .dylib`'",
@@ -74,13 +74,13 @@ class Libspatialite < Formula
       --enable-rttopo=yes
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
     # Verify mod_spatialite extension can be loaded using Homebrew's SQLite
-    pipe_output("#{Formula["sqlite"].opt_bin}/sqlite3",
-      "SELECT load_extension('#{opt_lib}/mod_spatialite');")
+    pipe_output("#{Formula["sqlite"].opt_bin}sqlite3",
+      "SELECT load_extension('#{opt_lib}mod_spatialite');")
   end
 end

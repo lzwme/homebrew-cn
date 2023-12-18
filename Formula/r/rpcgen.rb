@@ -1,9 +1,9 @@
 class Rpcgen < Formula
   desc "Protocol Compiler"
-  homepage "https://opensource.apple.com/"
-  url "https://ghproxy.com/https://github.com/apple-oss-distributions/developer_cmds/archive/refs/tags/developer_cmds-68.tar.gz"
+  homepage "https:opensource.apple.com"
+  url "https:github.comapple-oss-distributionsdeveloper_cmdsarchiverefstagsdeveloper_cmds-68.tar.gz"
   sha256 "6f9e01612453ea37b8af384e1160e13215ecbdc2c2bd8631e3b872219ab1a0f0"
-  # Sun-RPC license issue, https://github.com/spdx/license-list-XML/issues/906
+  # Sun-RPC license issue, https:github.comspdxlicense-list-XMLissues906
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "632f111183949b67cdd6ae0d09dcd163456dbc8ac3c404b2d7b357b3f64ee869"
@@ -25,11 +25,11 @@ class Rpcgen < Formula
                "-target", "rpcgen",
                "-configuration", "Release",
                "SYMROOT=build"
-    bin.install "build/Release/rpcgen"
-    man1.install "rpcgen/rpcgen.1"
+    bin.install "buildReleaserpcgen"
+    man1.install "rpcgenrpcgen.1"
   end
 
   test do
-    assert_match "nettype", shell_output("#{bin}/rpcgen 2>&1", 1)
+    assert_match "nettype", shell_output("#{bin}rpcgen 2>&1", 1)
   end
 end

@@ -1,10 +1,10 @@
 class Direnv < Formula
-  desc "Load/unload environment variables based on $PWD"
-  homepage "https://direnv.net/"
-  url "https://ghproxy.com/https://github.com/direnv/direnv/archive/refs/tags/v2.33.0.tar.gz"
+  desc "Loadunload environment variables based on $PWD"
+  homepage "https:direnv.net"
+  url "https:github.comdirenvdirenvarchiverefstagsv2.33.0.tar.gz"
   sha256 "8ef18051aa6bdcd6b59f04f02acdd0b78849b8ddbdbd372d4957af7889c903ea"
   license "MIT"
-  head "https://github.com/direnv/direnv.git", branch: "master"
+  head "https:github.comdirenvdirenv.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -21,10 +21,10 @@ class Direnv < Formula
   depends_on "bash"
 
   def install
-    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].opt_bin}/bash"
+    system "make", "install", "PREFIX=#{prefix}", "BASH_PATH=#{Formula["bash"].opt_bin}bash"
   end
 
   test do
-    system bin/"direnv", "status"
+    system bin"direnv", "status"
   end
 end

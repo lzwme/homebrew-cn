@@ -1,8 +1,8 @@
 class AmmoniteRepl < Formula
   desc "Ammonite is a cleanroom re-implementation of the Scala REPL"
-  homepage "https://ammonite.io/"
+  homepage "https:ammonite.io"
   # TODO: Check if we can use unversioned `openjdk` (or `openjdk@21`) at version bump.
-  url "https://ghproxy.com/https://github.com/com-lihaoyi/Ammonite/releases/download/2.5.11/3.2-2.5.11"
+  url "https:github.comcom-lihaoyiAmmonitereleasesdownload2.5.113.2-2.5.11"
   version "2.5.11"
   sha256 "384cf08e2591be4d199c75cf1913d44c043466b8cddeaa21dd5669d10f94a18f"
   license "MIT"
@@ -20,20 +20,20 @@ class AmmoniteRepl < Formula
   depends_on "openjdk@17"
 
   def install
-    (libexec/"bin").install Dir["*"].first => "amm"
-    chmod 0755, libexec/"bin/amm"
+    (libexec"bin").install Dir["*"].first => "amm"
+    chmod 0755, libexec"binamm"
     env = Language::Java.overridable_java_home_env("17")
-    env["PATH"] = "$JAVA_HOME/bin:$PATH"
-    (bin/"amm").write_env_script libexec/"bin/amm", env
+    env["PATH"] = "$JAVA_HOMEbin:$PATH"
+    (bin"amm").write_env_script libexec"binamm", env
   end
 
   test do
-    (testpath/"testscript.sc").write <<~EOS
-      #!/usr/bin/env amm
+    (testpath"testscript.sc").write <<~EOS
+      #!usrbinenv amm
       @main
       def fn(): Unit = println("hello world!")
     EOS
-    output = shell_output("#{bin}/amm #{testpath}/testscript.sc")
+    output = shell_output("#{bin}amm #{testpath}testscript.sc")
     assert_equal "hello world!", output.lines.last.chomp
   end
 end

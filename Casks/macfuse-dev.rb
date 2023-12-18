@@ -2,25 +2,25 @@ cask "macfuse-dev" do
   version "4.5.0"
   sha256 "9df7257315a9b9a97a9ba3a76011cabed7bc3784515b69fa098f8d81efec726d"
 
-  url "https://ghproxy.com/https://github.com/osxfuse/osxfuse/releases/download/macfuse-#{version}/macfuse-#{version}.dmg",
-      verified: "github.com/osxfuse/osxfuse/"
+  url "https:github.comosxfuseosxfusereleasesdownloadmacfuse-#{version}macfuse-#{version}.dmg",
+      verified: "github.comosxfuseosxfuse"
   name "macFUSE"
   desc "File system integration"
-  homepage "https://osxfuse.github.io/"
+  homepage "https:osxfuse.github.io"
 
   livecheck do
-    url "https://osxfuse.github.io/releases/DeveloperRelease.plist"
-    regex(/macfuse[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    url "https:osxfuse.github.ioreleasesDeveloperRelease.plist"
+    regex(macfuse[._-]v?(\d+(?:\.\d+)+)\.dmgi)
   end
 
   auto_updates true
   conflicts_with cask: "macfuse"
   depends_on macos: ">= :sierra"
 
-  pkg "Extras/macFUSE #{version}.pkg"
+  pkg "ExtrasmacFUSE #{version}.pkg"
 
   postflight do
-    set_ownership ["/usr/local/include", "/usr/local/lib"]
+    set_ownership ["usrlocalinclude", "usrlocallib"]
   end
 
   uninstall pkgutil: [
@@ -28,7 +28,7 @@ cask "macfuse-dev" do
     "io.macfuse.installer.components.preferencepane",
   ]
 
-  zap trash: "/Library/PreferencePanes/macFUSE.prefPane"
+  zap trash: "LibraryPreferencePanesmacFUSE.prefPane"
 
   caveats do
     kext

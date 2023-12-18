@@ -4,23 +4,23 @@ cask "redisinsight" do
   version "2.38.0"
   sha256 :no_check
 
-  url "https://download.redisinsight.redis.com/latest/RedisInsight-mac-#{arch}.dmg"
+  url "https:download.redisinsight.redis.comlatestRedisInsight-mac-#{arch}.dmg"
   name "RedisInsight"
   desc "GUI for streamlined Redis application development"
-  homepage "https://redis.com/redis-enterprise/redis-insight/"
+  homepage "https:redis.comredis-enterpriseredis-insight"
 
   # The first-party site doesn't publish public version information (the page
   # requires users to submit contact information to download files). We check
   # GitHub releases as a best guess of when a new version is released.
   livecheck do
-    url "https://github.com/RedisInsight/RedisInsight"
+    url "https:github.comRedisInsightRedisInsight"
     strategy :github_latest
   end
 
   app "RedisInsight.app"
 
   zap trash: [
-    "~/Library/Preferences/org.RedisLabs.RedisInsight-V#{version.major}.plist",
-    "~/Library/Saved Application State/org.RedisLabs.RedisInsight-V#{version.major}.savedState",
+    "~LibraryPreferencesorg.RedisLabs.RedisInsight-V#{version.major}.plist",
+    "~LibrarySaved Application Stateorg.RedisLabs.RedisInsight-V#{version.major}.savedState",
   ]
 end

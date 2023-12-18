@@ -5,10 +5,10 @@ cask "superslicer" do
   sha256 arm:   "c65d21e51ac57eb75c915ae172a642f48d63584f6bdd8a280aa2443319a66010",
          intel: "95652e91bef57c73f38c0c78f2fcc9dfce429516f5de516b5e8ac5db20d20132"
 
-  url "https://ghproxy.com/https://github.com/supermerill/SuperSlicer/releases/download/#{version.csv.first}/SuperSlicer_#{version.csv.first}_macos#{arch}_#{version.csv.second}.dmg"
+  url "https:github.comsupermerillSuperSlicerreleasesdownload#{version.csv.first}SuperSlicer_#{version.csv.first}_macos#{arch}_#{version.csv.second}.dmg"
   name "SuperSlicer"
   desc "Convert 3D models into G-code instructions or PNG layers"
-  homepage "https://github.com/supermerill/SuperSlicer"
+  homepage "https:github.comsupermerillSuperSlicer"
 
   livecheck do
     skip "Requires checking separate GitHub release asset list HTML"
@@ -18,5 +18,5 @@ cask "superslicer" do
 
   app "SuperSlicer.app"
 
-  zap trash: "~/Library/Application Support/SuperSlicer"
+  zap trash: "~LibraryApplication SupportSuperSlicer"
 end

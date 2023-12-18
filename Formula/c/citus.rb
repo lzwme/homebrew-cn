@@ -1,10 +1,10 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
-  homepage "https://www.citusdata.com"
-  url "https://ghproxy.com/https://github.com/citusdata/citus/archive/refs/tags/v12.0.0.tar.gz"
+  homepage "https:www.citusdata.com"
+  url "https:github.comcitusdatacitusarchiverefstagsv12.0.0.tar.gz"
   sha256 "9a6adaecc28e80e03a0523d07ee14c4b848f86f48ed37f84aa8cb98f3489f632"
   license "AGPL-3.0-only"
-  head "https://github.com/citusdata/citus.git", branch: "main"
+  head "https:github.comcitusdatacitus.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "bb1523040c2714dd707e78ae1d50a43d6527c9c1347699b860ea744a7d07b302"
@@ -31,41 +31,41 @@ class Citus < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
 
-    system "./configure"
-    # workaround for https://github.com/Homebrew/legacy-homebrew/issues/49948
+    system ".configure"
+    # workaround for https:github.comHomebrewlegacy-homebrewissues49948
     system "make", "libpq=-L#{postgresql.opt_lib} -lpq"
 
     # Use stage directory to prevent installing to pg_config-defined dirs,
     # which would not be within this package's Cellar.
     mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}/stage"
+    system "make", "install", "DESTDIR=#{buildpath}stage"
 
     stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
-    include.install (buildpath/stage_path/"include").children
-    share.install (buildpath/stage_path/"share").children
+    lib.install (buildpathstage_path"lib").children
+    include.install (buildpathstage_path"include").children
+    share.install (buildpathstage_path"share").children
 
-    bin.install (buildpath/File.join("stage", postgresql.bin.realpath)).children
+    bin.install (buildpathFile.join("stage", postgresql.bin.realpath)).children
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'citus'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"citus\";", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop", "-D", testpath"test"
     end
   end
 end

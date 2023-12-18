@@ -1,10 +1,10 @@
 class ObjcRun < Formula
   desc "Use Objective-C files for shell script-like tasks"
-  homepage "https://github.com/iljaiwas/objc-run"
-  url "https://ghproxy.com/https://github.com/iljaiwas/objc-run/archive/refs/tags/1.4.tar.gz"
+  homepage "https:github.comiljaiwasobjc-run"
+  url "https:github.comiljaiwasobjc-runarchiverefstags1.4.tar.gz"
   sha256 "6d02a31764c457c4a6a9f5df0963d733d611ba873fc32672151ee02a05acd6f2"
   license "MIT"
-  head "https://github.com/iljaiwas/objc-run.git", branch: "master"
+  head "https:github.comiljaiwasobjc-run.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -18,6 +18,6 @@ class ObjcRun < Formula
 
   test do
     cp_r pkgshare, testpath
-    system "./objc-run/test.bash"
+    system ".objc-runtest.bash"
   end
 end

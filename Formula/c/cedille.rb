@@ -1,12 +1,12 @@
 class Cedille < Formula
   desc "Language based on the Calculus of Dependent Lambda Eliminations"
-  homepage "https://cedille.github.io/"
-  url "https://github.com/cedille/cedille.git",
+  homepage "https:cedille.github.io"
+  url "https:github.comcedillecedille.git",
       tag:      "v1.1.2",
       revision: "4d8a343a8d3f0b318e3c1b3209d216912dbc06ee"
   license "MIT"
   revision 5
-  head "https://github.com/cedille/cedille.git", branch: "master"
+  head "https:github.comcedillecedille.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "2318e5ad7d619a967f30b26760b65b1dfd7048068b5e503c0188ed5dab39611b"
@@ -27,7 +27,7 @@ class Cedille < Formula
   depends_on "ghc@8.10"
 
   # needed to build with agda 2.6.1
-  # taken from https://github.com/cedille/cedille/pull/144/files
+  # taken from https:github.comcedillecedillepull144files
   # but added at the bottom to apply cleanly on v1.1.2
   # remove once this is merged into cedille, AND formula updated to
   # a release that contains it
@@ -44,7 +44,7 @@ class Cedille < Formula
     EOS
 
     # Build fails with agda >= 2.6.2, so locally install agda 2.6.1.
-    # Issue ref: https://github.com/cedille/cedille/issues/162
+    # Issue ref: https:github.comcedillecedilleissues162
     # TODO: on next release, switch to `depends_on "agda"` if supported,
     # or reduce list to `Agda alex happy` once stack.yaml includes extra-deps.
     deps = %w[
@@ -56,28 +56,28 @@ class Cedille < Formula
       geniplate-mirror-0.7.8
       STMonadTrans-0.4.6
     ]
-    system "stack", "build", "--copy-bins", "--local-bin-path=#{buildpath}/bin", *deps
-    ENV.append_path "PATH", buildpath/"bin"
+    system "stack", "build", "--copy-bins", "--local-bin-path=#{buildpath}bin", *deps
+    ENV.append_path "PATH", buildpath"bin"
 
     system "stack", "build", "--copy-bins", "--local-bin-path=#{bin}"
 
-    system "make", "core/cedille-core"
+    system "make", "corecedille-core"
 
     # binaries and elisp
-    bin.install "core/cedille-core"
+    bin.install "corecedille-core"
     elisp.install "cedille-mode.el", "cedille-mode", "se-mode"
 
     # standard libraries
-    (lib/"cedille").install "lib", "new-lib"
+    (lib"cedille").install "lib", "new-lib"
 
     # documentation
-    doc.install Dir["docs/html/*"]
-    (doc/"semantics").install "docs/semantics/paper.pdf"
-    info.install "docs/info/cedille-info-main.info"
+    doc.install Dir["docshtml*"]
+    (doc"semantics").install "docssemanticspaper.pdf"
+    info.install "docsinfocedille-info-main.info"
   end
 
   test do
-    coretest = testpath/"core-test.ced"
+    coretest = testpath"core-test.ced"
     coretest.write <<~EOS
       module core-test.
 
@@ -103,7 +103,7 @@ class Cedille < Formula
       succ = λ n: Nat. [ csucc n.1, isucc -n.1 n.2 @x. iNat x ].
     EOS
 
-    cedilletest = testpath/"cedille-test.ced"
+    cedilletest = testpath"cedille-test.ced"
     cedilletest.write <<~EOS
       module cedille-test.
 
@@ -126,18 +126,18 @@ class Cedille < Formula
     EOS
 
     # test cedille-core
-    system bin/"cedille-core", coretest
+    system bin"cedille-core", coretest
 
     # test cedille
-    system bin/"cedille", cedilletest
+    system bin"cedille", cedilletest
   end
 end
 
 __END__
-diff --git a/src/to-string.agda b/src/to-string.agda
+diff --git asrcto-string.agda bsrcto-string.agda
 index 2505942..051a2da 100644
---- a/src/to-string.agda
-+++ b/src/to-string.agda
+--- asrcto-string.agda
++++ bsrcto-string.agda
 @@ -100,9 +100,9 @@ no-parens {TK} _ _ _ = tt
  no-parens {QUALIF} _ _ _ = tt
  no-parens {ARG} _ _ _ = tt

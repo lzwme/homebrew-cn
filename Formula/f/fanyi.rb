@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Fanyi < Formula
   desc "Chinese and English translate tool in your command-line"
-  homepage "https://github.com/afc163/fanyi"
-  url "https://registry.npmjs.org/fanyi/-/fanyi-8.0.3.tgz"
+  homepage "https:github.comafc163fanyi"
+  url "https:registry.npmjs.orgfanyi-fanyi-8.0.3.tgz"
   sha256 "5798b84e26584878024fa5038defe3d1a33d5d600c95290b6c54d1dd8cdef421"
   license "MIT"
 
@@ -27,20 +27,20 @@ class Fanyi < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
 
-    term_size_vendor_dir = libexec/"lib/node_modules"/name/"node_modules/term-size/vendor"
+    term_size_vendor_dir = libexec"libnode_modules"name"node_modulesterm-sizevendor"
     term_size_vendor_dir.rmtree # remove pre-built binaries
 
     if OS.mac?
-      macos_dir = term_size_vendor_dir/"macos"
+      macos_dir = term_size_vendor_dir"macos"
       macos_dir.mkpath
       # Replace the vendored pre-built term-size with one we build ourselves
-      ln_sf (Formula["macos-term-size"].opt_bin/"term-size").relative_path_from(macos_dir), macos_dir
+      ln_sf (Formula["macos-term-size"].opt_bin"term-size").relative_path_from(macos_dir), macos_dir
     end
   end
 
   test do
-    assert_match "爱", shell_output("#{bin}/fanyi --no-say love 2>/dev/null")
+    assert_match "爱", shell_output("#{bin}fanyi --no-say love 2>devnull")
   end
 end

@@ -1,12 +1,12 @@
 class Securefs < Formula
   desc "Filesystem with transparent authenticated encryption"
-  homepage "https://github.com/netheril96/securefs"
-  url "https://github.com/netheril96/securefs.git",
+  homepage "https:github.comnetheril96securefs"
+  url "https:github.comnetheril96securefs.git",
       tag:      "0.14.3",
       revision: "8345530d700a6ff73ef59c5074403dede9f9ce96"
   license "MIT"
   revision 1
-  head "https://github.com/netheril96/securefs.git", branch: "master"
+  head "https:github.comnetheril96securefs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "35a68875cb5c3cd5381bf65d7bff60504ea9299014ea0d97c66a9b41a76dd2f4"
@@ -35,6 +35,6 @@ class Securefs < Formula
   end
 
   test do
-    system "#{bin}/securefs", "version" # The sandbox prevents a more thorough test
+    system "#{bin}securefs", "version" # The sandbox prevents a more thorough test
   end
 end

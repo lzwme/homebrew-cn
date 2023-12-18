@@ -1,10 +1,10 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
-  homepage "https://haskellstack.org/"
-  url "https://ghproxy.com/https://github.com/commercialhaskell/stack/archive/refs/tags/v2.13.1.tar.gz"
+  homepage "https:haskellstack.org"
+  url "https:github.comcommercialhaskellstackarchiverefstagsv2.13.1.tar.gz"
   sha256 "00333782b1bda3bda02ca0c1bbc6becdd86e5a39f6448b0df788b634e1bde692"
   license "BSD-3-Clause"
-  head "https://github.com/commercialhaskell/stack.git", branch: "master"
+  head "https:github.comcommercialhaskellstack.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,8 +29,8 @@ class HaskellStack < Formula
   def install
     # Remove locked dependencies which only work with a single patch version of GHC.
     # If there are issues resolving dependencies, then can consider bootstrapping with stack instead.
-    (buildpath/"cabal.project").unlink
-    (buildpath/"cabal.project").write <<~EOS
+    (buildpath"cabal.project").unlink
+    (buildpath"cabal.project").write <<~EOS
       packages: .
     EOS
 
@@ -52,8 +52,8 @@ class HaskellStack < Formula
   end
 
   test do
-    system bin/"stack", "new", "test"
-    assert_predicate testpath/"test", :exist?
-    assert_match "# test", (testpath/"test/README.md").read
+    system bin"stack", "new", "test"
+    assert_predicate testpath"test", :exist?
+    assert_match "# test", (testpath"testREADME.md").read
   end
 end

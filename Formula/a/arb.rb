@@ -1,10 +1,10 @@
 class Arb < Formula
   desc "C library for arbitrary-precision interval arithmetic"
-  homepage "https://arblib.org"
-  url "https://ghproxy.com/https://github.com/fredrik-johansson/arb/archive/refs/tags/2.23.0.tar.gz"
+  homepage "https:arblib.org"
+  url "https:github.comfredrik-johanssonarbarchiverefstags2.23.0.tar.gz"
   sha256 "977d41bde46f5442511d5165c705cec32c03e852c84d7d1836135d412ce702bb"
   license "LGPL-2.1-or-later"
-  head "https://github.com/fredrik-johansson/arb.git", branch: "master"
+  head "https:github.comfredrik-johanssonarb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8a738a62e0d22da909d57cbed2d8d1bfe1b19f0901e086d7dfd2842265b9676c"
@@ -19,7 +19,7 @@ class Arb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a222fdd6fb56ff3fd9499ea8b6b0626e5935af09a922bff4692988c630d7aeb7"
   end
 
-  # See upstream discussion, https://github.com/fredrik-johansson/arb/issues/453
+  # See upstream discussion, https:github.comfredrik-johanssonarbissues453
   deprecate! date: "2023-10-21", because: "Merged into flint 3.0.0"
 
   depends_on "cmake" => :build
@@ -33,7 +33,7 @@ class Arb < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <arb.h>
 
       int main()
@@ -63,6 +63,6 @@ class Arb < Formula
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["flint"].opt_include}",
            "-L#{lib}", "-L#{Formula["flint"].opt_lib}",
            "-larb", "-lflint", "-o", "test"
-    assert_match %r{\[-?\d+\.\d+e-\d+ \+/- \d+\.\d+e-\d+\]}, shell_output("./test")
+    assert_match %r{\[-?\d+\.\d+e-\d+ \+- \d+\.\d+e-\d+\]}, shell_output(".test")
   end
 end

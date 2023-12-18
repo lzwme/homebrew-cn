@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class Pyright < Formula
   desc "Static type checker for Python"
-  homepage "https://github.com/microsoft/pyright"
-  url "https://registry.npmjs.org/pyright/-/pyright-1.1.341.tgz"
+  homepage "https:github.commicrosoftpyright"
+  url "https:registry.npmjs.orgpyright-pyright-1.1.341.tgz"
   sha256 "ca3f450700cc72b5e7893dbf5687834ea6366a64d60c4e45837d6c5f12336828"
   license "MIT"
-  head "https://github.com/microsoft/pyright.git", branch: "main"
+  head "https:github.commicrosoftpyright.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75571509c6a37e1a6219cbfbe21556c18adf3b2c0b913ee059ee7eb5571b96e1"
@@ -22,17 +22,17 @@ class Pyright < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
     # Replace universal binaries with native slices
     deuniversalize_machos
   end
 
   test do
-    (testpath/"broken.py").write <<~EOS
+    (testpath"broken.py").write <<~EOS
       def wrong_types(a: int, b: int) -> str:
           return a + b
     EOS
-    output = pipe_output("#{bin}/pyright broken.py 2>&1")
+    output = pipe_output("#{bin}pyright broken.py 2>&1")
     assert_match 'error: Expression of type "int" cannot be assigned to return type "str"', output
   end
 end

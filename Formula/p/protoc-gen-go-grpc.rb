@@ -1,13 +1,13 @@
 class ProtocGenGoGrpc < Formula
   desc "Protoc plugin that generates code for gRPC-Go clients"
-  homepage "https://github.com/grpc/grpc-go"
-  url "https://ghproxy.com/https://github.com/grpc/grpc-go/archive/refs/tags/cmd/protoc-gen-go-grpc/v1.3.0.tar.gz"
+  homepage "https:github.comgrpcgrpc-go"
+  url "https:github.comgrpcgrpc-goarchiverefstagscmdprotoc-gen-go-grpcv1.3.0.tar.gz"
   sha256 "26ea2bdea1aeba2180046544d468012ce9cb07667ac1f19476febb13ecc781f9"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(%r{cmd/protoc-gen-go-grpc/v?(\d+(?:\.\d+)+)}i)
+    regex(%r{cmdprotoc-gen-go-grpcv?(\d+(?:\.\d+)+)}i)
   end
 
   bottle do
@@ -26,13 +26,13 @@ class ProtocGenGoGrpc < Formula
   depends_on "protobuf"
 
   def install
-    cd "cmd/protoc-gen-go-grpc" do
+    cd "cmdprotoc-gen-go-grpc" do
       system "go", "build", *std_go_args
     end
   end
 
   test do
-    (testpath/"service.proto").write <<~EOS
+    (testpath"service.proto").write <<~EOS
       syntax = "proto3";
 
       option go_package = ".;proto";
@@ -45,8 +45,8 @@ class ProtocGenGoGrpc < Formula
       message HelloResponse {}
     EOS
 
-    system "protoc", "--plugin=#{bin}/protoc-gen-go-grpc", "--go-grpc_out=.", "service.proto"
+    system "protoc", "--plugin=#{bin}protoc-gen-go-grpc", "--go-grpc_out=.", "service.proto"
 
-    assert_predicate testpath/"service_grpc.pb.go", :exist?
+    assert_predicate testpath"service_grpc.pb.go", :exist?
   end
 end

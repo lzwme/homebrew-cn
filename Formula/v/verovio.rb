@@ -1,10 +1,10 @@
 class Verovio < Formula
   desc "Command-line MEI music notation engraver"
-  homepage "https://www.verovio.org"
-  url "https://ghproxy.com/https://github.com/rism-digital/verovio/archive/refs/tags/version-4.1.0.tar.gz"
+  homepage "https:www.verovio.org"
+  url "https:github.comrism-digitalverovioarchiverefstagsversion-4.1.0.tar.gz"
   sha256 "70728473612a26575df894220f160a431100ed6fb974959396aaec1d90808aa1"
   license "LGPL-3.0-only"
-  head "https://github.com/rism-digital/verovio.git", branch: "develop"
+  head "https:github.comrism-digitalverovio.git", branch: "develop"
 
   bottle do
     sha256 arm64_sonoma:   "6ca02b460bab1f3673e79af57e9f66ece8d10c9c1e243dc8bf766323502c7842"
@@ -19,21 +19,21 @@ class Verovio < Formula
   depends_on "cmake" => :build
 
   resource "homebrew-testdata" do
-    url "https://www.verovio.org/examples/downloads/Ahle_Jesu_meines_Herzens_Freud.mei"
+    url "https:www.verovio.orgexamplesdownloadsAhle_Jesu_meines_Herzens_Freud.mei"
     sha256 "79e6e062f7f0300e8f0f4364c4661835a0baffc3c1468504a555a5b3f9777cc9"
   end
 
   def install
-    system "cmake", "-S", "./cmake", "-B", "tools", *std_cmake_args
+    system "cmake", "-S", ".cmake", "-B", "tools", *std_cmake_args
     system "cmake", "--build", "tools"
     system "cmake", "--install", "tools"
   end
 
   test do
-    system bin/"verovio", "--version"
+    system bin"verovio", "--version"
     resource("homebrew-testdata").stage do
-      shell_output("#{bin}/verovio Ahle_Jesu_meines_Herzens_Freud.mei -o #{testpath}/output.svg")
+      shell_output("#{bin}verovio Ahle_Jesu_meines_Herzens_Freud.mei -o #{testpath}output.svg")
     end
-    assert_predicate testpath/"output.svg", :exist?
+    assert_predicate testpath"output.svg", :exist?
   end
 end

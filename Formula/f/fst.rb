@@ -1,14 +1,14 @@
 class Fst < Formula
   desc "Represent large sets and maps compactly with finite state transducers"
-  homepage "https://github.com/BurntSushi/fst"
-  url "https://ghproxy.com/https://github.com/BurntSushi/fst/archive/refs/tags/fst-bin-0.4.3.tar.gz"
+  homepage "https:github.comBurntSushifst"
+  url "https:github.comBurntSushifstarchiverefstagsfst-bin-0.4.3.tar.gz"
   sha256 "13d1b28a6a6eaf5ce53c1840e7e6c2cb42ff7f846cd57047ddd32601667c8a5f"
   license any_of: ["Unlicense", "MIT"]
-  head "https://github.com/BurntSushi/fst.git", branch: "master"
+  head "https:github.comBurntSushifst.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^fst-bin[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^fst-bin[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class Fst < Formula
   end
 
   test do
-    (testpath/"map.csv").write <<~EOF
+    (testpath"map.csv").write <<~EOF
       four,4
       one,1
       twenty,20
@@ -42,9 +42,9 @@ class Fst < Formula
       twenty,20
       two,2
     EOF
-    system bin/"fst", "map", "--sorted", testpath/"map.csv", testpath/"map.fst"
-    assert_predicate testpath/"map.fst", :exist?
-    system bin/"fst", "verify", testpath/"map.fst"
-    assert_equal expected, shell_output("#{bin}/fst grep -o #{testpath}/map.fst 'tw.*'")
+    system bin"fst", "map", "--sorted", testpath"map.csv", testpath"map.fst"
+    assert_predicate testpath"map.fst", :exist?
+    system bin"fst", "verify", testpath"map.fst"
+    assert_equal expected, shell_output("#{bin}fst grep -o #{testpath}map.fst 'tw.*'")
   end
 end

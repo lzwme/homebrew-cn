@@ -1,7 +1,7 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
-  homepage "https://github.com/cocogitto/cocogitto"
-  url "https://ghproxy.com/https://github.com/cocogitto/cocogitto/archive/refs/tags/6.0.1.tar.gz"
+  homepage "https:github.comcocogittococogitto"
+  url "https:github.comcocogittococogittoarchiverefstags6.0.1.tar.gz"
   sha256 "2a0e332b7028ffcfeb113c734b4bf506c34362730e371b03a3e4a71142099330"
   license "MIT"
 
@@ -23,23 +23,23 @@ class Cocogitto < Formula
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"cog", "generate-completions", base_name: "cog")
+    generate_completions_from_executable(bin"cog", "generate-completions", base_name: "cog")
   end
 
   test do
     # Check that a typical Conventional Commit is considered correct.
     system "git", "init"
-    (testpath/"some-file").write("")
+    (testpath"some-file").write("")
     system "git", "add", "some-file"
     system "git", "config", "user.name", "'A U Thor'"
     system "git", "config", "user.email", "author@example.com"
     system "git", "commit", "-m", "chore: initial commit"
-    assert_equal "No errored commits", shell_output("#{bin}/cog check 2>&1").strip
+    assert_equal "No errored commits", shell_output("#{bin}cog check 2>&1").strip
 
-    linkage_with_libgit2 = (bin/"cog").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"cog").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

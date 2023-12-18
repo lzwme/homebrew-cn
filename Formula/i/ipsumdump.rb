@@ -1,14 +1,14 @@
 class Ipsumdump < Formula
-  desc "Summarizes TCP/IP dump files into a self-describing ASCII format"
-  homepage "https://read.seas.harvard.edu/~kohler/ipsumdump/"
-  url "https://read.seas.harvard.edu/~kohler/ipsumdump/ipsumdump-1.86.tar.gz"
+  desc "Summarizes TCPIP dump files into a self-describing ASCII format"
+  homepage "https:read.seas.harvard.edu~kohleripsumdump"
+  url "https:read.seas.harvard.edu~kohleripsumdumpipsumdump-1.86.tar.gz"
   sha256 "e114cd01b04238b42cd1d0dc6cfb8086a6b0a50672a866f3d0d1888d565e3b9c"
   license "MIT"
-  head "https://github.com/kohler/ipsumdump.git", branch: "master"
+  head "https:github.comkohleripsumdump.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?ipsumdump[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?ipsumdump[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -29,13 +29,13 @@ class Ipsumdump < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}/ipsumdump -c -r #{test_fixtures("test.pcap")}")
+    output = shell_output("#{bin}ipsumdump -c -r #{test_fixtures("test.pcap")}")
     assert_match "!host #{Socket.gethostname}", output
     assert_match "!data count\n" + ("1\n" * 12), output
   end

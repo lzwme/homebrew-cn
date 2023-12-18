@@ -1,13 +1,13 @@
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"
-  homepage "https://github.com/simsong/bulk_extractor/wiki"
-  url "https://ghproxy.com/https://github.com/simsong/bulk_extractor/releases/download/v2.0.3/bulk_extractor-2.0.3.tar.gz"
+  homepage "https:github.comsimsongbulk_extractorwiki"
+  url "https:github.comsimsongbulk_extractorreleasesdownloadv2.0.3bulk_extractor-2.0.3.tar.gz"
   sha256 "3967225075164f7dc5a0326e594cad4da5a49d4f091cfeaade447cc305541e32"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class BulkExtractor < Formula
   end
 
   head do
-    url "https://github.com/simsong/bulk_extractor.git", branch: "main"
+    url "https:github.comsimsongbulk_extractor.git", branch: "main"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -36,26 +36,26 @@ class BulkExtractor < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./bootstrap.sh" if build.head?
+    system ".bootstrap.sh" if build.head?
     # Disable RAR to avoid problematic UnRAR license
-    system "./configure", *std_configure_args, "--disable-rar", "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-rar", "--disable-silent-rules"
     system "make"
     system "make", "install"
 
     # Install documentation
-    (pkgshare/"doc").install Dir["doc/*.{html,txt,pdf}"]
+    (pkgshare"doc").install Dir["doc*.{html,txt,pdf}"]
 
-    (lib/"python2.7/site-packages").install Dir["python/*.py"]
+    (lib"python2.7site-packages").install Dir["python*.py"]
   end
 
   test do
-    input_file = testpath/"data.txt"
-    input_file.write "https://brew.sh\n(201)555-1212\n"
+    input_file = testpath"data.txt"
+    input_file.write "https:brew.sh\n(201)555-1212\n"
 
-    output_dir = testpath/"output"
-    system bin/"bulk_extractor", "-o", output_dir, input_file
+    output_dir = testpath"output"
+    system bin"bulk_extractor", "-o", output_dir, input_file
 
-    assert_match "https://brew.sh", (output_dir/"url.txt").read
-    assert_match "(201)555-1212", (output_dir/"telephone.txt").read
+    assert_match "https:brew.sh", (output_dir"url.txt").read
+    assert_match "(201)555-1212", (output_dir"telephone.txt").read
   end
 end

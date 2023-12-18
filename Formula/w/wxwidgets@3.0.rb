@@ -1,7 +1,7 @@
 class WxwidgetsAT30 < Formula
   desc "Cross-platform C++ GUI toolkit - Stable Release"
-  homepage "https://www.wxwidgets.org"
-  url "https://ghproxy.com/https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5.1/wxWidgets-3.0.5.1.tar.bz2"
+  homepage "https:www.wxwidgets.org"
+  url "https:github.comwxWidgetswxWidgetsreleasesdownloadv3.0.5.1wxWidgets-3.0.5.1.tar.bz2"
   sha256 "440f6e73cf5afb2cbf9af10cec8da6cdd3d3998d527598a53db87099524ac807"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
   revision 1
@@ -64,19 +64,19 @@ class WxwidgetsAT30 < Formula
       args << "--with-libiconv"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
 
     # wx-config should reference the public prefix, not wxwidgets's keg
     # this ensures that Python software trying to locate wxpython headers
     # using wx-config can find both wxwidgets and wxpython headers,
     # which are linked to the same place
-    inreplace bin/"wx-config", prefix, HOMEBREW_PREFIX
+    inreplace bin"wx-config", prefix, HOMEBREW_PREFIX
 
     # Move some files out of the way to prevent conflict with `wxwidgets`
-    bin.install bin/"wx-config" => "wx-config-#{version.major_minor}"
-    (bin/"wxrc").unlink
-    (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
+    bin.install bin"wx-config" => "wx-config-#{version.major_minor}"
+    (bin"wxrc").unlink
+    (share"wx"version.major_minor).install share"aclocal", share"bakefile"
   end
 
   def caveats
@@ -87,6 +87,6 @@ class WxwidgetsAT30 < Formula
   end
 
   test do
-    system bin/"wx-config-#{version.major_minor}", "--libs"
+    system bin"wx-config-#{version.major_minor}", "--libs"
   end
 end

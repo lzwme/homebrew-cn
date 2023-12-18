@@ -1,10 +1,10 @@
 class Fmt < Formula
   desc "Open-source formatting library for C++"
-  homepage "https://fmt.dev/"
-  url "https://ghproxy.com/https://github.com/fmtlib/fmt/archive/refs/tags/10.1.1.tar.gz"
+  homepage "https:fmt.dev"
+  url "https:github.comfmtlibfmtarchiverefstags10.1.1.tar.gz"
   sha256 "78b8c0a72b1c35e4443a7e308df52498252d1cefc2b08c9a97bc9ee6cfe61f8b"
   license "MIT"
-  head "https://github.com/fmtlib/fmt.git", branch: "master"
+  head "https:github.comfmtlibfmt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b4bd278eb5f9f8db13843573e727a0f3992064b49d46413171d7c1df6c01ae02"
@@ -20,7 +20,7 @@ class Fmt < Formula
 
   depends_on "cmake" => :build
 
-  conflicts_with "pytorch", because: "both install `include/fmt/args.h` headers"
+  conflicts_with "pytorch", because: "both install `includefmtargs.h` headers"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
@@ -29,14 +29,14 @@ class Fmt < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-static/libfmt.a"
+    lib.install "build-staticlibfmt.a"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <string>
-      #include <fmt/format.h>
+      #include <fmtformat.h>
       int main()
       {
         std::string str = fmt::format("The answer is {}", 42);
@@ -49,6 +49,6 @@ class Fmt < Formula
                   "-I#{include}",
                   "-L#{lib}",
                   "-lfmt"
-    assert_equal "The answer is 42", shell_output("./test")
+    assert_equal "The answer is 42", shell_output(".test")
   end
 end

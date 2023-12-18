@@ -2,10 +2,10 @@ cask "font-cinzel" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/cinzel/Cinzel%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcinzelCinzel%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Cinzel"
-  homepage "https://fonts.google.com/specimen/Cinzel"
+  homepage "https:fonts.google.comspecimenCinzel"
 
   font "Cinzel[wght].ttf"
 

@@ -2,17 +2,17 @@ cask "shadowsocksx-ng" do
   version "1.10.2"
   sha256 "e4d0388d40c86db70c8bb8c0950207845a4e33217010b811aac1d1562762502e"
 
-  url "https://ghproxy.com/https://github.com/shadowsocks/ShadowsocksX-NG/releases/download/v#{version}/ShadowsocksX-NG.dmg"
+  url "https:github.comshadowsocksShadowsocksX-NGreleasesdownloadv#{version}ShadowsocksX-NG.dmg"
   name "ShadowsocksX-NG"
   desc "Tunneling proxy"
-  homepage "https://github.com/shadowsocks/ShadowsocksX-NG/"
+  homepage "https:github.comshadowsocksShadowsocksX-NG"
 
   conflicts_with cask: "shadowsocksx"
   depends_on macos: ">= :sierra"
 
   app "ShadowsocksX-NG.app"
 
-  uninstall delete:    "/Library/Application Support/ShadowsocksX-NG",
+  uninstall delete:    "LibraryApplication SupportShadowsocksX-NG",
             launchctl: [
               "com.qiuyuzhou.shadowsocksX-NG.http",
               "com.qiuyuzhou.shadowsocksX-NG.kcptun",
@@ -21,15 +21,15 @@ cask "shadowsocksx-ng" do
             ],
             quit:      "com.qiuyuzhou.ShadowsocksX-NG",
             script:    {
-              executable: "#{appdir}/ShadowsocksX-NG.app/Contents/Resources/proxy_conf_helper",
+              executable: "#{appdir}ShadowsocksX-NG.appContentsResourcesproxy_conf_helper",
               args:       ["--mode", "off"],
               sudo:       true,
             }
 
   zap trash: [
-    "~/.ShadowsocksX-NG",
-    "~/Library/Application Support/ShadowsocksX-NG",
-    "~/Library/Caches/com.qiuyuzhou.ShadowsocksX-NG",
-    "~/Library/Preferences/com.qiuyuzhou.ShadowsocksX-NG.plist",
+    "~.ShadowsocksX-NG",
+    "~LibraryApplication SupportShadowsocksX-NG",
+    "~LibraryCachescom.qiuyuzhou.ShadowsocksX-NG",
+    "~LibraryPreferencescom.qiuyuzhou.ShadowsocksX-NG.plist",
   ]
 end

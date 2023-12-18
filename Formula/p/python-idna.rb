@@ -1,7 +1,7 @@
 class PythonIdna < Formula
   desc "Internationalized Domain Names in Applications (IDNA)"
-  homepage "https://github.com/kjd/idna"
-  url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
+  homepage "https:github.comkjdidna"
+  url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
   sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   license "BSD-3-Clause"
 
@@ -25,14 +25,14 @@ class PythonIdna < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import idna"
     end
   end

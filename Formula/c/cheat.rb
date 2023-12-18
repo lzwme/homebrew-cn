@@ -1,7 +1,7 @@
 class Cheat < Formula
   desc "Create and view interactive cheat sheets for *nix commands"
-  homepage "https://github.com/cheat/cheat"
-  url "https://ghproxy.com/https://github.com/cheat/cheat/archive/refs/tags/4.4.2.tar.gz"
+  homepage "https:github.comcheatcheat"
+  url "https:github.comcheatcheatarchiverefstags4.4.2.tar.gz"
   sha256 "6968ffdebb7c2a8390dea45f97884af3c623cda6c2d36c4c04443ed2454da431"
   license "MIT"
 
@@ -20,17 +20,17 @@ class Cheat < Formula
   conflicts_with "bash-snippets", because: "both install a `cheat` executable"
 
   def install
-    system "go", "build", "-mod", "vendor", "-o", bin/"cheat", "./cmd/cheat"
+    system "go", "build", "-mod", "vendor", "-o", bin"cheat", ".cmdcheat"
 
-    bash_completion.install "scripts/cheat.bash"
-    fish_completion.install "scripts/cheat.fish"
-    zsh_completion.install "scripts/cheat.zsh"
+    bash_completion.install "scriptscheat.bash"
+    fish_completion.install "scriptscheat.fish"
+    zsh_completion.install "scriptscheat.zsh"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/cheat --version")
+    assert_match version.to_s, shell_output("#{bin}cheat --version")
 
-    output = shell_output("#{bin}/cheat --init 2>&1")
+    output = shell_output("#{bin}cheat --init 2>&1")
     assert_match "editor: EDITOR_PATH", output
   end
 end

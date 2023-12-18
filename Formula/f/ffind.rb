@@ -1,7 +1,7 @@
 class Ffind < Formula
   desc "Friendlier find"
-  homepage "https://github.com/sjl/friendly-find"
-  url "https://ghproxy.com/https://github.com/sjl/friendly-find/archive/refs/tags/v1.0.1.tar.gz"
+  homepage "https:github.comsjlfriendly-find"
+  url "https:github.comsjlfriendly-findarchiverefstagsv1.0.1.tar.gz"
   sha256 "cf30e09365750a197f7e041ec9bbdd40daf1301e566cd0b1a423bf71582aad8d"
   license "GPL-3.0"
 
@@ -17,6 +17,6 @@ class Ffind < Formula
   end
 
   test do
-    system "#{bin}/ffind"
+    system "#{bin}ffind"
   end
 end

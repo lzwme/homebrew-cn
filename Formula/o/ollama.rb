@@ -1,11 +1,11 @@
 class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
-  homepage "https://ollama.ai/"
-  url "https://github.com/jmorganca/ollama.git",
+  homepage "https:ollama.ai"
+  url "https:github.comjmorgancaollama.git",
       tag:      "v0.1.15",
       revision: "d9e60f634bf420ef41fe5388b32cfda3ceb2c898"
   license "MIT"
-  head "https://github.com/jmorganca/ollama.git", branch: "main"
+  head "https:github.comjmorgancaollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -31,23 +31,23 @@ class Ollama < Formula
   def install
     # Fix build on big sur by setting SDKROOT
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version == :big_sur
-    system "go", "generate", "./..."
+    system "go", "generate", "...."
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   service do
-    run [opt_bin/"ollama", "serve"]
+    run [opt_bin"ollama", "serve"]
     keep_alive true
     working_dir var
-    log_path var/"log/ollama.log"
-    error_log_path var/"log/ollama.log"
+    log_path var"logollama.log"
+    error_log_path var"logollama.log"
   end
 
   test do
     port = free_port
     ENV["OLLAMA_HOST"] = "localhost:#{port}"
 
-    pid = fork { exec "#{bin}/ollama", "serve" }
+    pid = fork { exec "#{bin}ollama", "serve" }
     sleep 1
     begin
       assert_match "Ollama is running", shell_output("curl -s localhost:#{port}")

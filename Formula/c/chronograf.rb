@@ -1,10 +1,10 @@
 class Chronograf < Formula
   desc "Open source monitoring and visualization UI for the TICK stack"
-  homepage "https://docs.influxdata.com/chronograf/latest/"
-  url "https://ghproxy.com/https://github.com/influxdata/chronograf/archive/refs/tags/v1.10.2.tar.gz"
+  homepage "https:docs.influxdata.comchronograflatest"
+  url "https:github.cominfluxdatachronografarchiverefstagsv1.10.2.tar.gz"
   sha256 "d8a27ec44b4422da87fcfce22adb1227adcca6515e72a04dbd28876ed232483d"
   license "AGPL-3.0-or-later"
-  head "https://github.com/influxdata/chronograf.git", branch: "master"
+  head "https:github.cominfluxdatachronograf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a25c0fb19478a91aba0d01425493570f4688706eb747322985e5460ce41a00a"
@@ -21,7 +21,7 @@ class Chronograf < Formula
   depends_on "kapacitor"
 
   def install
-    # Fix build with latest node: https://github.com/influxdata/chronograf/issues/6040
+    # Fix build with latest node: https:github.cominfluxdatachronografissues6040
     system "yarn", "upgrade", "nan@^2.13.2", "--dev", "--ignore-scripts"
     ENV.deparallelize
     system "make"
@@ -29,22 +29,22 @@ class Chronograf < Formula
   end
 
   service do
-    run opt_bin/"chronograf"
+    run opt_bin"chronograf"
     keep_alive true
-    error_log_path var/"log/chronograf.log"
-    log_path var/"log/chronograf.log"
+    error_log_path var"logchronograf.log"
+    log_path var"logchronograf.log"
     working_dir var
   end
 
   test do
     port = free_port
     pid = fork do
-      exec bin/"chronograf", "--port=#{port}"
+      exec bin"chronograf", "--port=#{port}"
     end
     sleep 10
-    output = shell_output("curl -s 0.0.0.0:#{port}/chronograf/v1/")
+    output = shell_output("curl -s 0.0.0.0:#{port}chronografv1")
     sleep 1
-    assert_match %r{/chronograf/v1/layouts}, output
+    assert_match %r{chronografv1layouts}, output
   ensure
     Process.kill("SIGTERM", pid)
     Process.wait(pid)

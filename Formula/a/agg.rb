@@ -1,10 +1,10 @@
 class Agg < Formula
   desc "Asciicast to GIF converter"
-  homepage "https://github.com/asciinema/agg"
-  url "https://ghproxy.com/https://github.com/asciinema/agg/archive/refs/tags/v1.4.3.tar.gz"
+  homepage "https:github.comasciinemaagg"
+  url "https:github.comasciinemaaggarchiverefstagsv1.4.3.tar.gz"
   sha256 "1089e47a8e6ca7f147f74b2347e6b29d94311530a8b817c2f30f19744e4549c1"
   license "Apache-2.0"
-  head "https://github.com/asciinema/agg.git", branch: "main"
+  head "https:github.comasciinemaagg.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d6b036fd0f03ff84ffe83d09e0a660d4bd79ce2ecfe2e4799a5815c62f24993"
@@ -23,14 +23,14 @@ class Agg < Formula
   end
 
   test do
-    (testpath/"test.cast").write <<~EOS
-      {"version": 2, "width": 80, "height": 24, "timestamp": 1504467315, "title": "Demo", "env": {"TERM": "xterm-256color", "SHELL": "/bin/zsh"}}
+    (testpath"test.cast").write <<~EOS
+      {"version": 2, "width": 80, "height": 24, "timestamp": 1504467315, "title": "Demo", "env": {"TERM": "xterm-256color", "SHELL": "binzsh"}}
       [0.248848, "o", "\u001b[1;31mHello \u001b[32mWorld!\u001b[0m\n"]
       [1.001376, "o", "That was ok\rThis is better."]
       [2.143733, "o", " "]
       [6.541828, "o", "Bye!"]
     EOS
-    system bin/"agg", "--verbose", "test.cast", "test.gif"
-    assert_predicate testpath/"test.gif", :exist?
+    system bin"agg", "--verbose", "test.cast", "test.gif"
+    assert_predicate testpath"test.gif", :exist?
   end
 end

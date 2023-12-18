@@ -1,7 +1,7 @@
 class Votca < Formula
   desc "Versatile Object-oriented Toolkit for Coarse-graining Applications"
-  homepage "https://www.votca.org/"
-  url "https://ghproxy.com/https://github.com/votca/votca/archive/refs/tags/v2023.tar.gz"
+  homepage "https:www.votca.org"
+  url "https:github.comvotcavotcaarchiverefstagsv2023.tar.gz"
   sha256 "ac78d2eb5a6694b76878d2ab1ec86bb161765143a447cc23905cdcb2bb6743be"
   license "Apache-2.0"
 
@@ -49,12 +49,12 @@ class Votca < Formula
   end
 
   test do
-    system "#{bin}/csg_property", "--help"
-    (testpath/"table.in").write <<~EOS
+    system "#{bin}csg_property", "--help"
+    (testpath"table.in").write <<~EOS
       0 0 i
       1 1 i
     EOS
-    system "#{bin}/csg_resample", "--in", "table.in", "--out", "table.out", "--grid", "0:0.1:1", "--type", "linear"
-    assert_path_exists "#{testpath}/table.out"
+    system "#{bin}csg_resample", "--in", "table.in", "--out", "table.out", "--grid", "0:0.1:1", "--type", "linear"
+    assert_path_exists "#{testpath}table.out"
   end
 end

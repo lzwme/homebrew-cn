@@ -1,10 +1,10 @@
 class Virtctl < Formula
   desc "Allows for using more advanced kubevirt features"
-  homepage "https://kubevirt.io/"
-  url "https://ghproxy.com/https://github.com/kubevirt/kubevirt/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:kubevirt.io"
+  url "https:github.comkubevirtkubevirtarchiverefstagsv1.1.0.tar.gz"
   sha256 "3f51390dfcd16de55ba9dd8eac6f587916fdccb979df71003bf26b00de3ee7c4"
   license "Apache-2.0"
-  head "https://github.com/kubevirt/kubevirt.git", branch: "main"
+  head "https:github.comkubevirtkubevirt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7244a06f5b58dccd1a50f7ef1a40faaad9c0c154252db70e4e449c8daf080db5"
@@ -19,14 +19,14 @@ class Virtctl < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-X 'kubevirt.io/client-go/version.gitVersion=#{version}'"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/virtctl"
+    ldflags = "-X 'kubevirt.ioclient-goversion.gitVersion=#{version}'"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdvirtctl"
 
-    generate_completions_from_executable(bin/"virtctl", "completion")
+    generate_completions_from_executable(bin"virtctl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/virtctl version -c")
-    assert_match "connection refused", shell_output("#{bin}/virtctl userlist myvm", 1)
+    assert_match version.to_s, shell_output("#{bin}virtctl version -c")
+    assert_match "connection refused", shell_output("#{bin}virtctl userlist myvm", 1)
   end
 end

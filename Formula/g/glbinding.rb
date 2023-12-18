@@ -1,10 +1,10 @@
 class Glbinding < Formula
   desc "C++ binding for the OpenGL API"
-  homepage "https://github.com/cginternals/glbinding"
-  url "https://ghproxy.com/https://github.com/cginternals/glbinding/archive/refs/tags/v3.3.0.tar.gz"
+  homepage "https:github.comcginternalsglbinding"
+  url "https:github.comcginternalsglbindingarchiverefstagsv3.3.0.tar.gz"
   sha256 "a0aa5e67b538649979a71705313fc2b2c3aa49cf9af62a97f7ee9a665fd30564"
   license "MIT"
-  head "https://github.com/cginternals/glbinding.git", branch: "master"
+  head "https:github.comcginternalsglbinding.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,7 +27,7 @@ class Glbinding < Formula
 
   def install
     # Force install to use system directory structure as the upstream only
-    # considers /usr and /usr/local to be valid for a system installation
+    # considers usr and usrlocal to be valid for a system installation
     inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
 
     system "cmake", "-S", ".", "-B", "build",
@@ -40,24 +40,24 @@ class Glbinding < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <glbinding/gl/gl.h>
-      #include <glbinding/glbinding.h>
-      #include <GLFW/glfw3.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <glbindingglgl.h>
+      #include <glbindingglbinding.h>
+      #include <GLFWglfw3.h>
       int main(void)
       {
         glbinding::initialize(glfwGetProcAddress);
       }
     EOS
     open_gl = if OS.mac?
-      ["-I#{include}/glbinding/3rdparty", "-framework", "OpenGL"]
+      ["-I#{include}glbinding3rdparty", "-framework", "OpenGL"]
     else
       ["-L#{Formula["mesa-glu"].lib}", "-lGL"]
     end
     system ENV.cxx, "-o", "test", "test.cpp", "-std=c++11",
-                    "-I#{include}/glbinding", "-I#{lib}/glbinding", *open_gl,
+                    "-I#{include}glbinding", "-I#{lib}glbinding", *open_gl,
                     "-L#{lib}", "-lglbinding", "-L#{Formula["glfw"].opt_lib}", "-lglfw",
                     *ENV.cflags.to_s.split
-    system "./test"
+    system ".test"
   end
 end

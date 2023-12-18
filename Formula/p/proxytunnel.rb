@@ -1,7 +1,7 @@
 class Proxytunnel < Formula
   desc "Create TCP tunnels through HTTPS proxies"
-  homepage "https://github.com/proxytunnel/proxytunnel"
-  url "https://ghproxy.com/https://github.com/proxytunnel/proxytunnel/archive/refs/tags/v1.11.1.tar.gz"
+  homepage "https:github.comproxytunnelproxytunnel"
+  url "https:github.comproxytunnelproxytunnelarchiverefstagsv1.11.1.tar.gz"
   sha256 "d95e4974d37cc96ea5d9906ea7808db4560981902a40217368877409145ada96"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
@@ -20,12 +20,12 @@ class Proxytunnel < Formula
   depends_on "openssl@3"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
     system "make"
     system "make", "install", "prefix=#{prefix}"
   end
 
   test do
-    system "#{bin}/proxytunnel", "--version"
+    system "#{bin}proxytunnel", "--version"
   end
 end

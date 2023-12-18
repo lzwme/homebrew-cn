@@ -1,14 +1,14 @@
 class Prestd < Formula
   desc "Simplify and accelerate development on any Postgres application, existing or new"
-  homepage "https://github.com/prest/prest"
-  url "https://ghproxy.com/https://github.com/prest/prest/archive/refs/tags/v1.4.1.tar.gz"
+  homepage "https:github.comprestprest"
+  url "https:github.comprestprestarchiverefstagsv1.4.1.tar.gz"
   sha256 "91c3baeea7be0ba31bb9e68d5c826f319ed9fe8204b79753be03b77d3334e82c"
   license "MIT"
-  head "https://github.com/prest/prest.git", branch: "main"
+  head "https:github.comprestprest.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,12 +24,12 @@ class Prestd < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/prest/prest/helpers.PrestVersionNumber=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/prestd"
+    ldflags = "-s -w -X github.comprestpresthelpers.PrestVersionNumber=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdprestd"
   end
 
   test do
-    (testpath/"prest.toml").write <<~EOS
+    (testpath"prest.toml").write <<~EOS
       [jwt]
       default = false
 
@@ -41,9 +41,9 @@ class Prestd < Formula
       database = "prest"
     EOS
 
-    output = shell_output("#{bin}/prestd migrate up --path .", 255)
+    output = shell_output("#{bin}prestd migrate up --path .", 255)
     assert_match "connect: connection refused", output
 
-    assert_match version.to_s, shell_output("#{bin}/prestd version")
+    assert_match version.to_s, shell_output("#{bin}prestd version")
   end
 end

@@ -1,10 +1,10 @@
 class Xsv < Formula
   desc "Fast CSV toolkit written in Rust"
-  homepage "https://github.com/BurntSushi/xsv"
-  url "https://ghproxy.com/https://github.com/BurntSushi/xsv/archive/refs/tags/0.13.0.tar.gz"
+  homepage "https:github.comBurntSushixsv"
+  url "https:github.comBurntSushixsvarchiverefstags0.13.0.tar.gz"
   sha256 "2b75309b764c9f2f3fdc1dd31eeea5a74498f7da21ae757b3ffd6fd537ec5345"
   license any_of: ["MIT", "Unlicense"]
-  head "https://github.com/BurntSushi/xsv.git", branch: "master"
+  head "https:github.comBurntSushixsv.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -27,7 +27,7 @@ class Xsv < Formula
   end
 
   test do
-    (testpath/"test.csv").write("first header,second header")
-    system bin/"xsv", "stats", "test.csv"
+    (testpath"test.csv").write("first header,second header")
+    system bin"xsv", "stats", "test.csv"
   end
 end

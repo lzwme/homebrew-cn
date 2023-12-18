@@ -1,10 +1,10 @@
 class Hyperfine < Formula
   desc "Command-line benchmarking tool"
-  homepage "https://github.com/sharkdp/hyperfine"
-  url "https://ghproxy.com/https://github.com/sharkdp/hyperfine/archive/refs/tags/v1.18.0.tar.gz"
+  homepage "https:github.comsharkdphyperfine"
+  url "https:github.comsharkdphyperfinearchiverefstagsv1.18.0.tar.gz"
   sha256 "fea7b92922117ed04b9c84bb9998026264346768804f66baa40743c5528bed6b"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/sharkdp/hyperfine.git", branch: "master"
+  head "https:github.comsharkdphyperfine.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,17 +22,17 @@ class Hyperfine < Formula
   def install
     ENV["SHELL_COMPLETIONS_DIR"] = buildpath
     system "cargo", "install", *std_cargo_args
-    man1.install "doc/hyperfine.1"
+    man1.install "dochyperfine.1"
     fish_completion.install "hyperfine.fish"
     zsh_completion.install "_hyperfine"
     # Bash completions are not compatible with Bash 3 so don't use v1 directory.
     # bash: complete: nosort: invalid option name
-    # Issue ref: https://github.com/clap-rs/clap/issues/5190
-    (share/"bash-completion/completions").install "hyperfine.bash" => "hyperfine"
+    # Issue ref: https:github.comclap-rsclapissues5190
+    (share"bash-completioncompletions").install "hyperfine.bash" => "hyperfine"
   end
 
   test do
-    output = shell_output("#{bin}/hyperfine 'sleep 0.3'")
+    output = shell_output("#{bin}hyperfine 'sleep 0.3'")
     assert_match "Benchmark 1: sleep", output
   end
 end

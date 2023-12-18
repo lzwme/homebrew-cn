@@ -1,14 +1,14 @@
 class Heimdal < Formula
   desc "Free Kerberos 5 implementation"
-  homepage "https://www.h5l.org"
-  url "https://ghproxy.com/https://github.com/heimdal/heimdal/releases/download/heimdal-7.8.0/heimdal-7.8.0.tar.gz"
+  homepage "https:www.h5l.org"
+  url "https:github.comheimdalheimdalreleasesdownloadheimdal-7.8.0heimdal-7.8.0.tar.gz"
   sha256 "fd87a207846fa650fd377219adc4b8a8193e55904d8a752c2c3715b4155d8d38"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(/heimdal[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(heimdal[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -42,12 +42,12 @@ class Heimdal < Formula
   end
 
   resource "JSON" do
-    url "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-4.10.tar.gz"
+    url "https:cpan.metacpan.orgauthorsidIISISHIGAKIJSON-4.10.tar.gz"
     sha256 "df8b5143d9a7de99c47b55f1a170bd1f69f711935c186a6dc0ab56dd05758e35"
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
 
     resource("JSON").stage do
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
@@ -76,11 +76,11 @@ class Heimdal < Formula
       --with-berkeley-db-include=#{Formula["berkeley-db"].opt_include}
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    assert_match "-L#{lib}", shell_output("#{bin}/krb5-config --libs")
+    assert_match "-L#{lib}", shell_output("#{bin}krb5-config --libs")
   end
 end

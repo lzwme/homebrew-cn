@@ -1,10 +1,10 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
-  homepage "https://sheldon.cli.rs"
-  url "https://ghproxy.com/https://github.com/rossmacarthur/sheldon/archive/refs/tags/0.7.4.tar.gz"
+  homepage "https:sheldon.cli.rs"
+  url "https:github.comrossmacarthursheldonarchiverefstags0.7.4.tar.gz"
   sha256 "5d8ecd432a99852d416580174be7ab8f29fe9231d9804f0cc26ba2b158f49cdf"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
+  head "https:github.comrossmacarthursheldon.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8531c07eb57023dcc802e1d3f488294f0ee22e364cdf04b8188db0510d5ffa89"
@@ -24,18 +24,18 @@ class Sheldon < Formula
 
   def install
     # Ensure the declared `openssl@3` dependency will be picked up.
-    # https://docs.rs/openssl/latest/openssl/#manual
+    # https:docs.rsopenssllatestopenssl#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     # Replace vendored `libgit2` with our formula
-    inreplace "Cargo.toml", /features = \["vendored-libgit2"\]/, "features = []"
+    inreplace "Cargo.toml", features = \["vendored-libgit2"\], "features = []"
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completions/sheldon.bash" => "sheldon"
-    zsh_completion.install "completions/sheldon.zsh" => "_sheldon"
+    bash_completion.install "completionssheldon.bash" => "sheldon"
+    zsh_completion.install "completionssheldon.zsh" => "_sheldon"
   end
 
   def check_binary_linkage(binary, library)
@@ -47,17 +47,17 @@ class Sheldon < Formula
   end
 
   test do
-    touch testpath/"plugins.toml"
-    system "#{bin}/sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
-    assert_predicate testpath/"plugins.lock", :exist?
+    touch testpath"plugins.toml"
+    system "#{bin}sheldon", "--config-dir", testpath, "--data-dir", testpath, "lock"
+    assert_predicate testpath"plugins.lock", :exist?
 
     [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["curl"].opt_lib/shared_library("libcurl"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["curl"].opt_libshared_library("libcurl"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"sheldon", library),
+      assert check_binary_linkage(bin"sheldon", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

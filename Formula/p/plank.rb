@@ -1,14 +1,14 @@
 class Plank < Formula
   desc "Framework for generating immutable model objects"
-  homepage "https://pinterest.github.io/plank/"
-  url "https://ghproxy.com/https://github.com/pinterest/plank/archive/refs/tags/v1.6.tar.gz"
+  homepage "https:pinterest.github.ioplank"
+  url "https:github.compinterestplankarchiverefstagsv1.6.tar.gz"
   sha256 "6a233120905ff371b5c06a23b3fc7dd67e96355dd4d992a58ac087db22c500ef"
   license "Apache-2.0"
-  head "https://github.com/pinterest/plank.git", branch: "master"
+  head "https:github.compinterestplank.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,12 +31,12 @@ class Plank < Formula
   end
 
   test do
-    (testpath/"pin.json").write <<~EOS
+    (testpath"pin.json").write <<~EOS
       {
         "id": "pin.json",
         "title": "pin",
         "description" : "Schema definition of a Pin",
-        "$schema": "https://json-schema.org/schema#",
+        "$schema": "https:json-schema.orgschema#",
         "type": "object",
         "properties": {
           "id": { "type": "string" },
@@ -44,8 +44,8 @@ class Plank < Formula
          }
       }
     EOS
-    system "#{bin}/plank", "--lang", "objc,flow", "--output_dir", testpath, "pin.json"
-    assert_predicate testpath/"Pin.h", :exist?, "[ObjC] Generated file does not exist"
-    assert_predicate testpath/"PinType.js", :exist?, "[Flow] Generated file does not exist"
+    system "#{bin}plank", "--lang", "objc,flow", "--output_dir", testpath, "pin.json"
+    assert_predicate testpath"Pin.h", :exist?, "[ObjC] Generated file does not exist"
+    assert_predicate testpath"PinType.js", :exist?, "[Flow] Generated file does not exist"
   end
 end

@@ -1,7 +1,7 @@
 class CstoreFdw < Formula
   desc "Columnar store for analytics with Postgres"
-  homepage "https://github.com/citusdata/cstore_fdw"
-  url "https://ghproxy.com/https://github.com/citusdata/cstore_fdw/archive/refs/tags/v1.7.0.tar.gz"
+  homepage "https:github.comcitusdatacstore_fdw"
+  url "https:github.comcitusdatacstore_fdwarchiverefstagsv1.7.0.tar.gz"
   sha256 "bd8a06654b483d27b48d8196cf6baac0c7828b431b49ac097923ac0c54a1c38c"
   license "Apache-2.0"
   revision 2
@@ -18,47 +18,47 @@ class CstoreFdw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1b7a165d961b4025065b2b2e9a0088ea19f02973d705d3427633a7544f5b056"
   end
 
-  # https://www.citusdata.com/blog/2021/03/06/citus-10-columnar-compression-for-postgres/
+  # https:www.citusdata.comblog20210306citus-10-columnar-compression-for-postgres
   disable! date: "2023-07-06", because: "cstore_fdw has been integrated into Citus"
 
   depends_on "postgresql@13"
   depends_on "protobuf-c"
 
-  # PG13 support from https://github.com/citusdata/cstore_fdw/pull/243/
+  # PG13 support from https:github.comcitusdatacstore_fdwpull243
   patch do
-    url "https://github.com/citusdata/cstore_fdw/commit/b43b14829143203c3effc10537fa5636bad11c16.patch?full_index=1"
+    url "https:github.comcitusdatacstore_fdwcommitb43b14829143203c3effc10537fa5636bad11c16.patch?full_index=1"
     sha256 "8576e3570d537c1c2d3083c997a8425542b781720e01491307087a0be3bbb46c"
   end
   patch do
-    url "https://github.com/citusdata/cstore_fdw/commit/71949ec5f1bd992b2627a6f9f6cfe8be9196e98f.patch?full_index=1"
+    url "https:github.comcitusdatacstore_fdwcommit71949ec5f1bd992b2627a6f9f6cfe8be9196e98f.patch?full_index=1"
     sha256 "fe812d2b7a52e7d112480a97614c03f6161d30d399693fae8c80ef3f2a61ad04"
   end
 
   def install
-    # Makefile has issues with parallel builds: https://github.com/citusdata/cstore_fdw/issues/230
+    # Makefile has issues with parallel builds: https:github.comcitusdatacstore_fdwissues230
     ENV.deparallelize
 
     # Help compiler find postgresql@13 headers because they are keg-only
     # Try to remove when cstore_fdw supports postgresql 14.
     inreplace "Makefile", "PG_CPPFLAGS = --std=c99",
-      "PG_CPPFLAGS = -I#{Formula["postgresql@13"].opt_include}/postgresql/server --std=c99"
+      "PG_CPPFLAGS = -I#{Formula["postgresql@13"].opt_include}postgresqlserver --std=c99"
 
-    # workaround for https://github.com/Homebrew/homebrew/issues/49948
+    # workaround for https:github.comHomebrewhomebrewissues49948
     system "make", "libpq=-L#{Formula["postgresql@13"].opt_lib} -lpq"
 
     # Use stage directory to prevent installing to pg_config-defined dirs,
     # which would not be within this package's Cellar.
     mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}/stage"
+    system "make", "install", "DESTDIR=#{buildpath}stage"
 
     pgsql_prefix = Formula["postgresql@13"].prefix
     pgsql_stage_path = File.join("stage", pgsql_prefix)
-    (lib/"postgresql@13").install (buildpath/pgsql_stage_path/"lib/postgresql").children
-    share.install (buildpath/pgsql_stage_path/"share").children
+    (lib"postgresql@13").install (buildpathpgsql_stage_path"libpostgresql").children
+    share.install (buildpathpgsql_stage_path"share").children
   end
 
   test do
     expected = "foreign-data wrapper for flat cstore access"
-    assert_match expected, (share/"postgresql@13/extension/cstore_fdw.control").read
+    assert_match expected, (share"postgresql@13extensioncstore_fdw.control").read
   end
 end

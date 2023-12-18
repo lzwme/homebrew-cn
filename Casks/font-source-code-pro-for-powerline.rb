@@ -2,11 +2,11 @@ cask "font-source-code-pro-for-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/powerline/fonts.git",
+  url "https:github.compowerlinefonts.git",
       branch:    "master",
       only_path: "SourceCodePro"
   name "Source Code Pro for Powerline"
-  homepage "https://github.com/powerline/fonts/tree/master/SourceCodePro"
+  homepage "https:github.compowerlinefontstreemasterSourceCodePro"
 
   font "Source Code Pro Black for Powerline.otf"
   font "Source Code Pro Bold for Powerline.otf"

@@ -1,14 +1,14 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
-  homepage "https://github.com/Byron/gitoxide"
-  url "https://ghproxy.com/https://github.com/Byron/gitoxide/archive/refs/tags/v0.32.0.tar.gz"
+  homepage "https:github.comByrongitoxide"
+  url "https:github.comByrongitoxidearchiverefstagsv0.32.0.tar.gz"
   sha256 "5a17da0379254bd996fe1888de4104d551a41bdd8bd4b93034f9d0757382fa75"
   license "Apache-2.0"
-  head "https://github.com/Byron/gitoxide.git", branch: "main"
+  head "https:github.comByrongitoxide.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,20 +29,20 @@ class Gitoxide < Formula
   def install
     # Avoid requiring CMake or building a vendored zlib-ng.
     # Feature array corresponds to the default config (max) sans vendored zlib-ng.
-    # See: https://github.com/Byron/gitoxide/blob/b8db2072bb6a5625f37debe9e58d08461ece67dd/Cargo.toml#L88-L89
-    features = %w[max-control gix-features/zlib-stock gitoxide-core-blocking-client http-client-curl]
+    # See: https:github.comByrongitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
+    features = %w[max-control gix-featureszlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
   end
 
   test do
-    assert_match "gix", shell_output("#{bin}/gix --version")
+    assert_match "gix", shell_output("#{bin}gix --version")
     system "git", "init", "test", "--quiet"
-    touch "test/file.txt"
+    touch "testfile.txt"
     system "git", "-C", "test", "add", "."
     system "git", "-C", "test", "commit", "--message", "initial commit", "--quiet"
     # the gix test output is to stderr so it's redirected to stderr to match
-    assert_match "OK", shell_output("#{bin}/gix --repository test verify 2>&1")
-    assert_match "gitoxide", shell_output("#{bin}/ein --version")
-    assert_match "./test", shell_output("#{bin}/ein tool find")
+    assert_match "OK", shell_output("#{bin}gix --repository test verify 2>&1")
+    assert_match "gitoxide", shell_output("#{bin}ein --version")
+    assert_match ".test", shell_output("#{bin}ein tool find")
   end
 end

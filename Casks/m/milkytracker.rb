@@ -5,11 +5,11 @@ cask "milkytracker" do
   sha256 arm:   "e3a1fcead7c6149151042ee75985219ec1893be62f2e789887608c08c2b65c3d",
          intel: "078b341100147d28661c9cfb61ca496e2890e8affc4df2434cb2c5aa5fc26bf3"
 
-  url "https://ghproxy.com/https://github.com/milkytracker/MilkyTracker/releases/download/v#{version}/milkytracker-#{version}-Darwin-#{arch}.dmg",
-      verified: "github.com/milkytracker/MilkyTracker/"
+  url "https:github.commilkytrackerMilkyTrackerreleasesdownloadv#{version}milkytracker-#{version}-Darwin-#{arch}.dmg",
+      verified: "github.commilkytrackerMilkyTracker"
   name "MilkyTracker"
   desc "Music tracker compatible with FT2"
-  homepage "https://milkytracker.titandemo.org/"
+  homepage "https:milkytracker.titandemo.org"
 
   livecheck do
     url :url
@@ -18,5 +18,5 @@ cask "milkytracker" do
 
   app "MilkyTracker.app"
 
-  zap trash: "~/Library/Preferences/com.Titan.MilkyTracker.plist"
+  zap trash: "~LibraryPreferencescom.Titan.MilkyTracker.plist"
 end

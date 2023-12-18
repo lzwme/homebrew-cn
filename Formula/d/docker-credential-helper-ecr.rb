@@ -1,14 +1,14 @@
 class DockerCredentialHelperEcr < Formula
   desc "Docker Credential Helper for Amazon ECR"
-  homepage "https://github.com/awslabs/amazon-ecr-credential-helper"
-  url "https://github.com/awslabs/amazon-ecr-credential-helper.git",
+  homepage "https:github.comawslabsamazon-ecr-credential-helper"
+  url "https:github.comawslabsamazon-ecr-credential-helper.git",
       tag:      "v0.7.1",
       revision: "adf1bafd791ae7d4ff098108b1e91f36a4da5404"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,11 +27,11 @@ class DockerCredentialHelperEcr < Formula
 
   def install
     system "make", "build"
-    bin.install "bin/local/docker-credential-ecr-login"
+    bin.install "binlocaldocker-credential-ecr-login"
   end
 
   test do
-    output = shell_output("#{bin}/docker-credential-ecr-login", 1)
-    assert_match %r{^Usage: .*/docker-credential-ecr-login.*}, output
+    output = shell_output("#{bin}docker-credential-ecr-login", 1)
+    assert_match %r{^Usage: .*docker-credential-ecr-login.*}, output
   end
 end

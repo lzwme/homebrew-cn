@@ -1,7 +1,7 @@
 class Hyperscan < Formula
   desc "High-performance regular expression matching library"
-  homepage "https://www.hyperscan.io/"
-  url "https://ghproxy.com/https://github.com/intel/hyperscan/archive/refs/tags/v5.4.2.tar.gz"
+  homepage "https:www.hyperscan.io"
+  url "https:github.comintelhyperscanarchiverefstagsv5.4.2.tar.gz"
   sha256 "32b0f24b3113bbc46b6bfaa05cf7cf45840b6b59333d078cc1f624e4c40b2b99"
   license "BSD-3-Clause"
 
@@ -19,7 +19,7 @@ class Hyperscan < Formula
   depends_on "python@3.11" => :build
   depends_on "ragel" => :build
   # Only supports x86 instructions and will fail to build on ARM.
-  # See https://github.com/intel/hyperscan/issues/197
+  # See https:github.comintelhyperscanissues197
   depends_on arch: :x86_64
   depends_on "pcre"
 
@@ -35,9 +35,9 @@ class Hyperscan < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include <hs/hs.h>
+      #include <hshs.h>
       int main()
       {
         printf("hyperscan v%s", hs_version());
@@ -45,6 +45,6 @@ class Hyperscan < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

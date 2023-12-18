@@ -1,14 +1,14 @@
 class Sqlsmith < Formula
   desc "Random SQL query generator"
-  homepage "https://github.com/anse1/sqlsmith"
-  url "https://ghproxy.com/https://github.com/anse1/sqlsmith/releases/download/v1.4/sqlsmith-1.4.tar.gz"
+  homepage "https:github.comanse1sqlsmith"
+  url "https:github.comanse1sqlsmithreleasesdownloadv1.4sqlsmith-1.4.tar.gz"
   sha256 "b0821acbe82782f6037315549f475368be3592cefe2c3c540f9cf52aa70d2f55"
   license "GPL-3.0-only"
   revision 2
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Sqlsmith < Formula
   end
 
   head do
-    url "https://github.com/anse1/sqlsmith.git", branch: "master"
+    url "https:github.comanse1sqlsmith.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build # required for AX_CXX_COMPILE_STDCXX_17
@@ -37,14 +37,14 @@ class Sqlsmith < Formula
   def install
     ENV.append_to_cflags "-DNDEBUG"
     system "autoreconf", "-fvi" if build.head?
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
     cmd = %W[
-      #{bin}/sqlsmith
+      #{bin}sqlsmith
       --sqlite
       --max-queries=100
       --verbose

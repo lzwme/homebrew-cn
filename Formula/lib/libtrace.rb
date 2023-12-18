@@ -1,16 +1,16 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
-  homepage "https://github.com/LibtraceTeam/libtrace"
-  url "https://ghproxy.com/https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.23-1.tar.gz"
+  homepage "https:github.comLibtraceTeamlibtrace"
+  url "https:github.comLibtraceTeamlibtracearchiverefstags4.0.23-1.tar.gz"
   version "4.0.23"
   sha256 "e0e82af3cc2ce994dbcebf622fd0462236e43bebc0b2d0ea1647e82129af2884"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    regex(^v?(\d+(?:[.-]\d+)+)$i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub(/-1$/, "") }.compact
+      tags.map { |tag| tag[regex, 1]&.gsub(-1$, "") }.compact
     end
   end
 
@@ -36,19 +36,19 @@ class Libtrace < Formula
   uses_from_macos "libpcap"
 
   resource "homebrew-8021x.pcap" do
-    url "https://github.com/LibtraceTeam/libtrace/raw/9e82eabc39bc491c74cc4215d7eda5f07b85a8f5/test/traces/8021x.pcap"
+    url "https:github.comLibtraceTeamlibtraceraw9e82eabc39bc491c74cc4215d7eda5f07b85a8f5testtraces8021x.pcap"
     sha256 "aa036e997d7bec2fa3d387e3ad669eba461036b9a89b79dcf63017a2c4dac725"
   end
 
   def install
-    system "./bootstrap.sh"
-    system "./configure", *std_configure_args
+    system ".bootstrap.sh"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <libtrace.h>
       #include <inttypes.h>
       #include <stdio.h>
@@ -66,15 +66,15 @@ class Libtrace < Formula
 
       static void per_packet(libtrace_packet_t *packet)
       {
-        /* Packet data */
+        * Packet data *
         uint32_t remaining;
-        /* L3 data */
+        * L3 data *
         void *l3;
         uint16_t ethertype;
-        /* Transport data */
+        * Transport data *
         void *transport;
         uint8_t proto;
-        /* Payload data */
+        * Payload data *
         void *payload;
 
         if (lastts < 1)
@@ -93,10 +93,10 @@ class Libtrace < Formula
         l3 = trace_get_layer3(packet,&ethertype,&remaining);
 
         if (!l3)
-          /* Probable ARP or something */
+          * Probable ARP or something *
           return;
 
-        /* Get the UDP/TCP/ICMP header from the IPv4_packets/IPv6_packets packet */
+        * Get the UDPTCPICMP header from the IPv4_packetsIPv6_packets packet *
         switch (ethertype) {
           case 0x0800:
             transport = trace_get_payload_from_ip(
@@ -120,7 +120,7 @@ class Libtrace < Formula
             return;
         }
 
-        /* Parse the udp_packets/tcp_packets/icmp_packets payload */
+        * Parse the udp_packetstcp_packetsicmp_packets payload *
         switch(proto) {
           case 1:
             ++icmp_packets;
@@ -194,7 +194,7 @@ class Libtrace < Formula
               return 1;
             default:
               fprintf(stderr,"Unknown option: %c\\n",c);
-              /* FALL THRU */
+              * FALL THRU *
             case 'h':
               usage(argv[0]);
               return 1;
@@ -258,6 +258,6 @@ class Libtrace < Formula
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ltrace", "-o", "test"
     resource("homebrew-8021x.pcap").stage testpath
-    system "./test", testpath/"8021x.pcap"
+    system ".test", testpath"8021x.pcap"
   end
 end

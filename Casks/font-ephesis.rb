@@ -2,11 +2,11 @@ cask "font-ephesis" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/ephesis/Ephesis-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflephesisEphesis-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Ephesis"
   desc "Contemporary script great for casual invitations, cards, tubes, scrapbooking"
-  homepage "https://fonts.google.com/specimen/Ephesis"
+  homepage "https:fonts.google.comspecimenEphesis"
 
   font "Ephesis-Regular.ttf"
 

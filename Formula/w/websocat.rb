@@ -1,13 +1,13 @@
 class Websocat < Formula
   desc "Command-line client for WebSockets"
-  homepage "https://github.com/vi/websocat"
-  url "https://ghproxy.com/https://github.com/vi/websocat/archive/refs/tags/v1.12.0.tar.gz"
+  homepage "https:github.comviwebsocat"
+  url "https:github.comviwebsocatarchiverefstagsv1.12.0.tar.gz"
   sha256 "ca6ab2bc71a9c641fbda7f15d4956f2e19ca32daba9b284d26587410944a3adb"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,6 +34,6 @@ class Websocat < Formula
   end
 
   test do
-    system "#{bin}/websocat", "-t", "literal:qwe", "assert:qwe"
+    system "#{bin}websocat", "-t", "literal:qwe", "assert:qwe"
   end
 end

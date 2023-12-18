@@ -1,10 +1,10 @@
 class SSearch < Formula
   desc "Web search from the terminal"
-  homepage "https://github.com/zquestz/s"
-  url "https://ghproxy.com/https://github.com/zquestz/s/archive/refs/tags/v0.6.9.tar.gz"
+  homepage "https:github.comzquestzs"
+  url "https:github.comzquestzsarchiverefstagsv0.6.9.tar.gz"
   sha256 "7097264e7da0e7ac209e5be5e50f07f17593e2753607325870131af3000ccaf2"
   license "MIT"
-  head "https://github.com/zquestz/s.git", branch: "master"
+  head "https:github.comzquestzs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2415bd6b75d1c94dd8db1a3e6ac9d8220097894041b90d8a880131b7cb1d5fdc"
@@ -21,13 +21,13 @@ class SSearch < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"s"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin"s"
 
-    generate_completions_from_executable(bin/"s", "--completion", base_name: "s")
+    generate_completions_from_executable(bin"s", "--completion", base_name: "s")
   end
 
   test do
-    output = shell_output("#{bin}/s -p bing -b echo homebrew")
-    assert_equal "https://www.bing.com/search?q=homebrew", output.chomp
+    output = shell_output("#{bin}s -p bing -b echo homebrew")
+    assert_equal "https:www.bing.comsearch?q=homebrew", output.chomp
   end
 end

@@ -2,21 +2,21 @@ cask "languagetool" do
   version "1.6.8"
   sha256 "8f15f072b3b7c7f39f0fca6f1a70b2c845f1657b96debcac4b7e62afb5a7ab60"
 
-  url "https://languagetool.org/download/mac-app/LanguageToolDesktop-#{version}.dmg"
+  url "https:languagetool.orgdownloadmac-appLanguageToolDesktop-#{version}.dmg"
   name "LanguageTool for Desktop"
   desc "Grammar, spelling and style suggestions in all the writing apps"
-  homepage "https://languagetool.org/"
+  homepage "https:languagetool.org"
 
   # Older items in the Sparkle feed may have a newer pubDate, so it's necessary
   # to work with all of the items in the feed (not just the newest one).
   livecheck do
-    url "https://languagetool.org/download/mac-app/appcast.xml"
-    regex(/(\d+(?:\.\d+)+)/i)
+    url "https:languagetool.orgdownloadmac-appappcast.xml"
+    regex((\d+(?:\.\d+)+)i)
     strategy :sparkle do |items, regex|
       # The Sparkle versioning scheme is inconsistent. We check the short
       # version directly since the versions are not listed chronologically.
       # The livecheck may need to be reverted to extracting the version from
-      # the url. See: https://github.com/Homebrew/homebrew-cask/pull/156995
+      # the url. See: https:github.comHomebrewhomebrew-caskpull156995
       items.map { |item| item.short_version[regex, 1] }
     end
   end
@@ -28,8 +28,8 @@ cask "languagetool" do
   uninstall quit: "org.languagetool.desktop"
 
   zap trash: [
-    "~/Library/Application Support/LanguageTool for Desktop",
-    "~/Library/Caches/org.languagetool.desktop",
-    "~/Library/Preferences/org.languagetool.desktop.plist",
+    "~LibraryApplication SupportLanguageTool for Desktop",
+    "~LibraryCachesorg.languagetool.desktop",
+    "~LibraryPreferencesorg.languagetool.desktop.plist",
   ]
 end

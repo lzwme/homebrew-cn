@@ -1,7 +1,7 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
-  homepage "https://github.com/bitrise-io/bitrise"
-  url "https://ghproxy.com/https://github.com/bitrise-io/bitrise/archive/refs/tags/2.6.1.tar.gz"
+  homepage "https:github.combitrise-iobitrise"
+  url "https:github.combitrise-iobitrisearchiverefstags2.6.1.tar.gz"
   sha256 "5050929400f0650bc018e044ef825dd45bb4f039c4fe4096cb164886256069e5"
   license "MIT"
 
@@ -27,16 +27,16 @@ class Bitrise < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/bitrise-io/bitrise/version.VERSION=#{version}
+      -X github.combitrise-iobitriseversion.VERSION=#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags.join(" "))
   end
 
   test do
-    (testpath/"bitrise.yml").write <<~EOS
+    (testpath"bitrise.yml").write <<~EOS
       format_version: 1.3.1
-      default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+      default_step_lib_source: https:github.combitrise-iobitrise-steplib.git
       workflows:
         test_wf:
           steps:
@@ -45,8 +45,8 @@ class Bitrise < Formula
               - content: printf 'Test - OK' > brew.test.file
     EOS
 
-    system "#{bin}/bitrise", "setup"
-    system "#{bin}/bitrise", "run", "test_wf"
-    assert_equal "Test - OK", (testpath/"brew.test.file").read.chomp
+    system "#{bin}bitrise", "setup"
+    system "#{bin}bitrise", "run", "test_wf"
+    assert_equal "Test - OK", (testpath"brew.test.file").read.chomp
   end
 end

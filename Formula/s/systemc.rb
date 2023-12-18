@@ -1,13 +1,13 @@
 class Systemc < Formula
   desc "Core SystemC language and examples"
-  homepage "https://accellera.org/"
-  url "https://ghproxy.com/https://github.com/accellera-official/systemc/archive/refs/tags/2.3.4.tar.gz"
+  homepage "https:accellera.org"
+  url "https:github.comaccellera-officialsystemcarchiverefstags2.3.4.tar.gz"
   sha256 "bfb309485a8ad35a08ee78827d1647a451ec5455767b25136e74522a6f41e0ea"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Systemc < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "systemc.h"
 
       int sc_main(int argc, char *argv[]) {
@@ -39,6 +39,6 @@ class Systemc < Formula
       }
     EOS
     system ENV.cxx, "-std=gnu++11", "-L#{lib}", "-lsystemc", "test.cpp"
-    system "./a.out"
+    system ".a.out"
   end
 end

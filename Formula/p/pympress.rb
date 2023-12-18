@@ -2,11 +2,11 @@ class Pympress < Formula
   include Language::Python::Virtualenv
 
   desc "Simple and powerful dual-screen PDF reader designed for presentations"
-  homepage "https://github.com/Cimbali/pympress/"
-  url "https://files.pythonhosted.org/packages/fb/e2/91827c485aae28d69f0b40c6d366b9f6eb96d8208a98af0345e0ade3fbbd/pympress-1.8.5.tar.gz"
+  homepage "https:github.comCimbalipympress"
+  url "https:files.pythonhosted.orgpackagesfbe291827c485aae28d69f0b40c6d366b9f6eb96d8208a98af0345e0ade3fbbdpympress-1.8.5.tar.gz"
   sha256 "29bd39115d05f254da993abba42d54a0e9187f4e2ce7c363324b15136c530bf6"
   license "GPL-2.0-or-later"
-  head "https://github.com/Cimbali/pympress.git", branch: "main"
+  head "https:github.comCimbalipympress.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69b9150080604dcea831794aba78f785ce6743ad41847f6e9bb90cf02356eaf7"
@@ -27,7 +27,7 @@ class Pympress < Formula
   depends_on "python@3.12"
 
   resource "watchdog" do
-    url "https://files.pythonhosted.org/packages/95/a6/d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ec/watchdog-3.0.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages95a6d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ecwatchdog-3.0.0.tar.gz"
     sha256 "4d98a320595da7a7c5a18fc48cb633c2e73cda78f93cac2ef42d42bf609a33f9"
   end
 
@@ -39,16 +39,16 @@ class Pympress < Formula
     # (pympress:48790): Gtk-WARNING **: 13:03:37.080: cannot open display
     ENV["PYMPRESS_HEADLESS_TEST"]="1" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    (testpath/"Library/Preferences").mkpath
+    (testpath"LibraryPreferences").mkpath
 
-    system bin/"pympress", "--quit"
+    system bin"pympress", "--quit"
 
     # Check everything ran fine at least until reporting the version string in the log file
     # which means all dependencies got loaded OK. Do not check actual version numbers as it breaks --HEAD tests.
     log = if OS.linux?
-      Pathname.new(ENV["XDG_CACHE_HOME"] || (testpath/".cache"))/"pympress.log"
+      Pathname.new(ENV["XDG_CACHE_HOME"] || (testpath".cache"))"pympress.log"
     else
-      testpath/"Library/Logs/pympress.log"
+      testpath"LibraryLogspympress.log"
     end
     assert_predicate log, :exist?
     assert_match "INFO:pympress.app:Pympress:", log.read

@@ -5,11 +5,11 @@ cask "ferdium" do
   sha256 arm:   "0b987d71b6416a53182890f62b6405a542684ebfeca7229c0f24ec4080e11cd5",
          intel: "a5b13bae58d9610ccd1c26e5e7eab143e588f4a2e84855129b3daff66f0d0d81"
 
-  url "https://ghproxy.com/https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
-      verified: "github.com/ferdium/ferdium-app/"
+  url "https:github.comferdiumferdium-appreleasesdownloadv#{version}Ferdium-mac-#{version}-#{arch}.dmg",
+      verified: "github.comferdiumferdium-app"
   name "Ferdium"
   desc "Multi-platform multi-messaging app"
-  homepage "https://ferdium.org/"
+  homepage "https:ferdium.org"
 
   livecheck do
     url :url
@@ -21,18 +21,18 @@ cask "ferdium" do
   app "Ferdium.app"
 
   uninstall quit:   "com.ferdium.ferdium-app",
-            delete: "/Library/Logs/DiagnosticReports/Ferdium Helper_.*wakeups_resource.diag"
+            delete: "LibraryLogsDiagnosticReportsFerdium Helper_.*wakeups_resource.diag"
 
   zap trash: [
-    "~/Library/Application Support/Caches/ferdium-updater",
-    "~/Library/Application Support/Ferdium",
-    "~/Library/Caches/com.ferdium.ferdium-app",
-    "~/Library/Caches/com.ferdium.ferdium-app.ShipIt",
-    "~/Library/Logs/Ferdium",
-    "~/Library/Preferences/ByHost/com.ferdium.ferdium-app.ShipIt.*.plist",
-    "~/Library/Preferences/com.electron.ferdium.helper.plist",
-    "~/Library/Preferences/com.electron.ferdium.plist",
-    "~/Library/Preferences/com.ferdium.ferdium-app.plist",
-    "~/Library/Saved Application State/com.ferdium.ferdium-app.savedState",
+    "~LibraryApplication SupportCachesferdium-updater",
+    "~LibraryApplication SupportFerdium",
+    "~LibraryCachescom.ferdium.ferdium-app",
+    "~LibraryCachescom.ferdium.ferdium-app.ShipIt",
+    "~LibraryLogsFerdium",
+    "~LibraryPreferencesByHostcom.ferdium.ferdium-app.ShipIt.*.plist",
+    "~LibraryPreferencescom.electron.ferdium.helper.plist",
+    "~LibraryPreferencescom.electron.ferdium.plist",
+    "~LibraryPreferencescom.ferdium.ferdium-app.plist",
+    "~LibrarySaved Application Statecom.ferdium.ferdium-app.savedState",
   ]
 end

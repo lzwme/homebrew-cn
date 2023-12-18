@@ -1,10 +1,10 @@
 class Scarb < Formula
   desc "Cairo package manager"
-  homepage "https://docs.swmansion.com/scarb/"
-  url "https://ghproxy.com/https://github.com/software-mansion/scarb/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:docs.swmansion.comscarb"
+  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.4.0.tar.gz"
   sha256 "d5dd740e51985303659e526b9e430e54d2299e9a925b0d505676149f57d53da4"
   license "MIT"
-  head "https://github.com/software-mansion/scarb.git", branch: "main"
+  head "https:github.comsoftware-mansionscarb.git", branch: "main"
 
   livecheck do
     url :stable
@@ -28,12 +28,12 @@ class Scarb < Formula
   end
 
   test do
-    assert_match "#{testpath}/Scarb.toml", shell_output("#{bin}/scarb manifest-path")
+    assert_match "#{testpath}Scarb.toml", shell_output("#{bin}scarb manifest-path")
 
-    system "#{bin}/scarb", "init", "--name", "brewtest", "--no-vcs"
-    assert_predicate testpath/"src/lib.cairo", :exist?
-    assert_match "brewtest", (testpath/"Scarb.toml").read
+    system "#{bin}scarb", "init", "--name", "brewtest", "--no-vcs"
+    assert_predicate testpath"srclib.cairo", :exist?
+    assert_match "brewtest", (testpath"Scarb.toml").read
 
-    assert_match version.to_s, shell_output("#{bin}/scarb --version")
+    assert_match version.to_s, shell_output("#{bin}scarb --version")
   end
 end

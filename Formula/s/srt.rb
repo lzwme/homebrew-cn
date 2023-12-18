@@ -1,10 +1,10 @@
 class Srt < Formula
   desc "Secure Reliable Transport"
-  homepage "https://www.srtalliance.org/"
-  url "https://ghproxy.com/https://github.com/Haivision/srt/archive/refs/tags/v1.5.3.tar.gz"
+  homepage "https:www.srtalliance.org"
+  url "https:github.comHaivisionsrtarchiverefstagsv1.5.3.tar.gz"
   sha256 "befaeb16f628c46387b898df02bc6fba84868e86a6f6d8294755375b9932d777"
   license "MPL-2.0"
-  head "https://github.com/Haivision/srt.git", branch: "master"
+  head "https:github.comHaivisionsrt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b77e98814ca5b954a11620a787f6e008950e39b7929a45d02e2362b2858e8462"
@@ -34,7 +34,7 @@ class Srt < Formula
   end
 
   test do
-    cmd = "#{bin}/srt-live-transmit file:///dev/null file://con/ 2>&1"
+    cmd = "#{bin}srt-live-transmit file:devnull file:con 2>&1"
     assert_match "Unsupported source type", shell_output(cmd, 1)
   end
 end

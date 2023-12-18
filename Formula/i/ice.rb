@@ -1,7 +1,7 @@
 class Ice < Formula
   desc "Comprehensive RPC framework"
-  homepage "https://zeroc.com"
-  url "https://ghproxy.com/https://github.com/zeroc-ice/ice/archive/refs/tags/v3.7.10.tar.gz"
+  homepage "https:zeroc.com"
+  url "https:github.comzeroc-iceicearchiverefstagsv3.7.10.tar.gz"
   sha256 "b90e9015ca9124a9eadfdfc49c5fba24d3550c547f166f3c9b2b5914c00fb1df"
   license "GPL-2.0-only"
 
@@ -46,15 +46,15 @@ class Ice < Formula
     ]
 
     # Fails with Xcode < 12.5
-    inreplace "cpp/include/Ice/Object.h", /^#.+"-Wdeprecated-copy-dtor"+/, "" if OS.mac? && MacOS.version <= :catalina
+    inreplace "cppincludeIceObject.h", ^#.+"-Wdeprecated-copy-dtor"+, "" if OS.mac? && MacOS.version <= :catalina
 
     system "make", "install", *args
 
     # We install these binaries to libexec because they conflict with those
     # installed along with the ice packages from PyPI, RubyGems and npm.
-    (libexec/"bin").mkpath
+    (libexec"bin").mkpath
     %w[slice2py slice2rb slice2js].each do |r|
-      mv bin/r, libexec/"bin"
+      mv binr, libexec"bin"
     end
   end
 
@@ -62,14 +62,14 @@ class Ice < Formula
     <<~EOS
       slice2py, slice2js and slice2rb were installed in:
 
-        #{opt_libexec}/bin
+        #{opt_libexec}bin
 
       You may wish to add this directory to your PATH.
     EOS
   end
 
   test do
-    (testpath/"Hello.ice").write <<~EOS
+    (testpath"Hello.ice").write <<~EOS
       module Test
       {
           interface Hello
@@ -81,8 +81,8 @@ class Ice < Formula
 
     port = free_port
 
-    (testpath/"Test.cpp").write <<~EOS
-      #include <Ice/Ice.h>
+    (testpath"Test.cpp").write <<~EOS
+      #include <IceIce.h>
       #include <Hello.h>
 
       class HelloI : public Test::Hello
@@ -101,10 +101,10 @@ class Ice < Formula
       }
     EOS
 
-    system bin/"slice2cpp", "Hello.ice"
+    system bin"slice2cpp", "Hello.ice"
     system ENV.cxx, "-DICE_CPP11_MAPPING", "-std=c++11", "-c", "-I#{include}", "-I.", "Hello.cpp"
     system ENV.cxx, "-DICE_CPP11_MAPPING", "-std=c++11", "-c", "-I#{include}", "-I.", "Test.cpp"
     system ENV.cxx, "-L#{lib}", "-o", "test", "Test.o", "Hello.o", "-lIce++11", "-pthread"
-    system "./test"
+    system ".test"
   end
 end

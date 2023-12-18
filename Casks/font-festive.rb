@@ -2,10 +2,10 @@ cask "font-festive" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/festive/Festive-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflfestiveFestive-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Festive"
-  homepage "https://fonts.google.com/specimen/Festive"
+  homepage "https:fonts.google.comspecimenFestive"
 
   font "Festive-Regular.ttf"
 

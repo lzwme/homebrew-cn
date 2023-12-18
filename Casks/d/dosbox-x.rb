@@ -10,15 +10,15 @@ cask "dosbox-x" do
     sha256 "22fd4908b464c1c8d9742f63d054ec52f7a747a981e5d1e86c126d3984f9f590"
   end
 
-  url "https://ghproxy.com/https://github.com/joncampbell123/dosbox-x/releases/download/dosbox-x-v#{version.csv.first}/dosbox-x-macosx-#{arch}-#{version.csv.second}.zip",
-      verified: "github.com/joncampbell123/dosbox-x/"
+  url "https:github.comjoncampbell123dosbox-xreleasesdownloaddosbox-x-v#{version.csv.first}dosbox-x-macosx-#{arch}-#{version.csv.second}.zip",
+      verified: "github.comjoncampbell123dosbox-x"
   name "DOSBox-X"
   desc "Fork of the DOSBox project"
-  homepage "https://dosbox-x.com/"
+  homepage "https:dosbox-x.com"
 
   livecheck do
     url :url
-    regex(%r{/dosbox-x-v?(\d+(?:\.\d+)+)/dosbox-x-macosx-#{arch}-([^/]+)\.zip$}i)
+    regex(%r{dosbox-x-v?(\d+(?:\.\d+)+)dosbox-x-macosx-#{arch}-([^]+)\.zip$}i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["browser_download_url"]&.match(regex)
@@ -29,10 +29,10 @@ cask "dosbox-x" do
     end
   end
 
-  app "dosbox-x/dosbox-x.app"
+  app "dosbox-xdosbox-x.app"
 
   zap trash: [
-    "~/Library/Preferences/com.dosbox-x.plist",
-    "~/Library/Preferences/mapper-dosbox-x.map",
+    "~LibraryPreferencescom.dosbox-x.plist",
+    "~LibraryPreferencesmapper-dosbox-x.map",
   ]
 end

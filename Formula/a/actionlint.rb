@@ -1,7 +1,7 @@
 class Actionlint < Formula
   desc "Static checker for GitHub Actions workflow files"
-  homepage "https://rhysd.github.io/actionlint/"
-  url "https://ghproxy.com/https://github.com/rhysd/actionlint/archive/refs/tags/v1.6.26.tar.gz"
+  homepage "https:rhysd.github.ioactionlint"
+  url "https:github.comrhysdactionlintarchiverefstagsv1.6.26.tar.gz"
   sha256 "507d771f4c863bf98dfe1db3500a4c9344e3a35592a6e2ac4183f00a63291feb"
   license "MIT"
   revision 1
@@ -22,27 +22,27 @@ class Actionlint < Formula
   # Temporarily apply patch to not flag new macOS runner names as invalid.
   # Remove for >=1.6.26
   patch do
-    url "https://github.com/rhysd/actionlint/commit/3123d5e319d8e7514be096d1762710e4b5d7e5e2.patch?full_index=1"
+    url "https:github.comrhysdactionlintcommit3123d5e319d8e7514be096d1762710e4b5d7e5e2.patch?full_index=1"
     sha256 "8770ff3f7b93311a1849a512fdaa1649a0b23ff6dde3e031faaaa9b40f67c423"
   end
 
   def install
-    ldflags = "-s -w -X github.com/rhysd/actionlint.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/actionlint"
-    system "ronn", "man/actionlint.1.ronn"
-    man1.install "man/actionlint.1"
+    ldflags = "-s -w -X github.comrhysdactionlint.version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdactionlint"
+    system "ronn", "manactionlint.1.ronn"
+    man1.install "manactionlint.1"
   end
 
   test do
-    (testpath/"action.yaml").write <<~EOS
+    (testpath"action.yaml").write <<~EOS
       name: Test
       on: push
       jobs:
         test:
           steps:
-            - run: actions/checkout@v2
+            - run: actionscheckout@v2
     EOS
 
-    assert_match "\"runs-on\" section is missing in job", shell_output("#{bin}/actionlint #{testpath}/action.yaml", 1)
+    assert_match "\"runs-on\" section is missing in job", shell_output("#{bin}actionlint #{testpath}action.yaml", 1)
   end
 end

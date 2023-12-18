@@ -1,11 +1,11 @@
 class LibgeditGtksourceview < Formula
   desc "Text editor widget for code editing"
-  homepage "https://gedit-technology.net"
-  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.4.tar.xz"
+  homepage "https:gedit-technology.net"
+  url "https:gedit-technology.nettarballslibgedit-gtksourceviewlibgedit-gtksourceview-299.0.4.tar.xz"
   sha256 "7453a1cce2f6d58871644d2203ecdbbb043050886170ebea376c1cf6e27f86d8"
   license "LGPL-2.1-only"
   revision 1
-  head "https://github.com/gedit-technology/libgedit-gtksourceview.git", branch: "main"
+  head "https:github.comgedit-technologylibgedit-gtksourceview.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "a8e3b2020589892dc86ed28f6f7eac7f3b919425afc540308f6eef107c347804"
@@ -31,8 +31,8 @@ class LibgeditGtksourceview < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gtksourceview/gtksource.h>
+    (testpath"test.c").write <<~EOS
+      #include <gtksourceviewgtksource.h>
 
       int main(int argc, char *argv[]) {
         gchar *text = gtk_source_utils_unescape_search_text("hello world");
@@ -41,6 +41,6 @@ class LibgeditGtksourceview < Formula
     EOS
     flags = shell_output("pkg-config --cflags --libs libgedit-gtksourceview-300").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

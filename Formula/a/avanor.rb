@@ -1,7 +1,7 @@
 class Avanor < Formula
   desc "Quick-growing roguelike game with easy ADOM-like UI"
-  homepage "https://avanor.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/avanor/avanor/0.5.8/avanor-0.5.8-src.tar.bz2"
+  homepage "https:avanor.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectavanoravanor0.5.8avanor-0.5.8-src.tar.bz2"
   sha256 "8f55be83d985470b9a5220263fc87d0a0a6e2b60dbbc977c1c49347321379ef3"
   license "GPL-2.0-or-later"
 
@@ -25,22 +25,22 @@ class Avanor < Formula
   uses_from_macos "expect" => :test
   uses_from_macos "ncurses"
 
-  # Upstream fix for clang: https://sourceforge.net/p/avanor/code/133/
+  # Upstream fix for clang: https:sourceforge.netpavanorcode133
   patch :p0 do
-    url "https://ghproxy.com/https://gist.githubusercontent.com/mistydemeo/64f47233ee64d55cb7d5/raw/c1847d7e3a134e6109ad30ce1968919dd962e727/avanor-clang.diff"
+    url "https:gist.githubusercontent.commistydemeo64f47233ee64d55cb7d5rawc1847d7e3a134e6109ad30ce1968919dd962e727avanor-clang.diff"
     sha256 "2d24ce7b71eb7b20485d841aabffa55b25b9074f9a5dd83aee33b7695ba9d75c"
   end
 
   def install
-    system "make", "DATA_DIR=#{pkgshare}/", "CC=#{ENV.cxx}", "LD=#{ENV.cxx}"
+    system "make", "DATA_DIR=#{pkgshare}", "CC=#{ENV.cxx}", "LD=#{ENV.cxx}"
     bin.install "avanor"
     pkgshare.install "manual"
   end
 
   test do
-    script = (testpath/"script.exp")
+    script = (testpath"script.exp")
     script.write <<~EOS
-      #!/usr/bin/expect -f
+      #!usrbinexpect -f
       set timeout 10
       spawn avanor
       send -- "\e"

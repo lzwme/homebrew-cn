@@ -1,10 +1,10 @@
 class Alpscore < Formula
   desc "Applications and libraries for physics simulations"
-  homepage "https://alpscore.org"
-  url "https://ghproxy.com/https://github.com/ALPSCore/ALPSCore/archive/refs/tags/v2.3.1.tar.gz"
+  homepage "https:alpscore.org"
+  url "https:github.comALPSCoreALPSCorearchiverefstagsv2.3.1.tar.gz"
   sha256 "384f25cd543ded1ac99fe8238db97a5d90d24e1bf83ca8085f494acdd12ed86c"
   license "GPL-2.0-only"
-  head "https://github.com/ALPSCore/ALPSCore.git", branch: "master"
+  head "https:github.comALPSCoreALPSCore.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "aef5c5bfae1874fde2ec165976bd8bb9d9843ea5c6869d450ebf30f108d35bdb"
@@ -30,7 +30,7 @@ class Alpscore < Formula
 
   def install
     args = std_cmake_args
-    args << "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3"
+    args << "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3"
     args << "-DALPS_BUILD_SHARED=ON"
     args << "-DENABLE_MPI=ON"
     args << "-DTesting=OFF"
@@ -41,11 +41,11 @@ class Alpscore < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <alps/mc/api.hpp>
-      #include <alps/mc/mcbase.hpp>
-      #include <alps/accumulators.hpp>
-      #include <alps/params.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <alpsmcapi.hpp>
+      #include <alpsmcmcbase.hpp>
+      #include <alpsaccumulators.hpp>
+      #include <alpsparams.hpp>
       using namespace std;
       int main()
       {
@@ -66,6 +66,6 @@ class Alpscore < Formula
       -lboost_filesystem-mt -lboost_system-mt -lboost_program_options-mt
     ]
     system ENV.cxx, "test.cpp", *args, "-o", "test"
-    assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output("./test")
+    assert_equal "3 #2\n1 (type: double) (name='myparam')\n", shell_output(".test")
   end
 end

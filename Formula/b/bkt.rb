@@ -1,7 +1,7 @@
 class Bkt < Formula
   desc "CLI utility for caching the output of subprocesses"
-  homepage "https://www.bkt.rs"
-  url "https://ghproxy.com/https://github.com/dimo414/bkt/archive/refs/tags/0.7.1.tar.gz"
+  homepage "https:www.bkt.rs"
+  url "https:github.comdimo414bktarchiverefstags0.7.1.tar.gz"
   sha256 "ac36ff1015ebbec57d8b9141e88c7ad36423e6abaf35551e3ca715e173c6c835"
   license "MIT"
 
@@ -25,8 +25,8 @@ class Bkt < Formula
 
   test do
     # Make sure date output is cached between runs
-    output1 = shell_output("#{bin}/bkt --ttl=1m -- date +%s.%N")
+    output1 = shell_output("#{bin}bkt --ttl=1m -- date +%s.%N")
     sleep(1)
-    assert_equal output1, shell_output("#{bin}/bkt --ttl=1m -- date +%s.%N")
+    assert_equal output1, shell_output("#{bin}bkt --ttl=1m -- date +%s.%N")
   end
 end

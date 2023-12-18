@@ -1,11 +1,11 @@
 class Poac < Formula
   desc "Package Manager for C++"
-  homepage "https://github.com/poac-dev/poac"
-  url "https://ghproxy.com/https://github.com/poac-dev/poac/archive/refs/tags/0.6.0.tar.gz"
+  homepage "https:github.compoac-devpoac"
+  url "https:github.compoac-devpoacarchiverefstags0.6.0.tar.gz"
   sha256 "40f55553f7cca3bdad39599ce8c9049aeecf8f6140cfebac28c51d7d9abbbb78"
   license "Apache-2.0"
   revision 4
-  head "https://github.com/poac-dev/poac.git", branch: "main"
+  head "https:github.compoac-devpoac.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9ffe2bbbec16b994b36efb4d5ae00f402ac995bffccd584d80f976fe94d72c4c"
@@ -43,23 +43,23 @@ class Poac < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
 
     # Help to find OpenSSL.
-    inreplace "cmake/AddOpenSSL.cmake", "${POAC_HOMEBREW_ROOT_PATH}/openssl",
+    inreplace "cmakeAddOpenSSL.cmake", "${POAC_HOMEBREW_ROOT_PATH}openssl",
                                         Formula["openssl@3"].opt_prefix
 
     system "cmake", "-S", ".", "-B", "build", "-DPOAC_BUILD_TESTING=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    man.install "src/etc/man/man1"
-    bash_completion.install "src/etc/poac.bash" => "poac"
-    zsh_completion.install_symlink bash_completion/"poac" => "_poac"
+    man.install "srcetcmanman1"
+    bash_completion.install "srcetcpoac.bash" => "poac"
+    zsh_completion.install_symlink bash_completion"poac" => "_poac"
   end
 
   test do
     ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
-    system bin/"poac", "create", "hello_world"
+    system bin"poac", "create", "hello_world"
     cd "hello_world" do
-      assert_match "Hello, world!", shell_output("#{bin}/poac run")
+      assert_match "Hello, world!", shell_output("#{bin}poac run")
     end
   end
 end

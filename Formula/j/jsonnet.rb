@@ -1,10 +1,10 @@
 class Jsonnet < Formula
   desc "Domain specific configuration language for defining JSON data"
-  homepage "https://jsonnet.org/"
-  url "https://ghproxy.com/https://github.com/google/jsonnet/archive/refs/tags/v0.20.0.tar.gz"
+  homepage "https:jsonnet.org"
+  url "https:github.comgooglejsonnetarchiverefstagsv0.20.0.tar.gz"
   sha256 "77bd269073807731f6b11ff8d7c03e9065aafb8e4d038935deb388325e52511b"
   license "Apache-2.0"
-  head "https://github.com/google/jsonnet.git", branch: "master"
+  head "https:github.comgooglejsonnet.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,7 +33,7 @@ class Jsonnet < Formula
   end
 
   test do
-    (testpath/"example.jsonnet").write <<~EOS
+    (testpath"example.jsonnet").write <<~EOS
       {
         person1: {
           name: "Alice",
@@ -54,7 +54,7 @@ class Jsonnet < Formula
       },
     }
 
-    output = shell_output("#{bin}/jsonnet #{testpath}/example.jsonnet")
+    output = shell_output("#{bin}jsonnet #{testpath}example.jsonnet")
     assert_equal expected_output, JSON.parse(output)
   end
 end

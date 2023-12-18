@@ -1,7 +1,7 @@
 class PythonTroveClassifiers < Formula
   desc "Canonical source for classifiers on PyPI"
-  homepage "https://github.com/pypa/trove-classifiers"
-  url "https://files.pythonhosted.org/packages/3d/14/fe9a127564317f1670d1dd2e2e74b9e09fc157563aa2ffbe7d113d004c7a/trove-classifiers-2023.11.29.tar.gz"
+  homepage "https:github.compypatrove-classifiers"
+  url "https:files.pythonhosted.orgpackages3d14fe9a127564317f1670d1dd2e2e74b9e09fc157563aa2ffbe7d113d004c7atrove-classifiers-2023.11.29.tar.gz"
   sha256 "ff8f7fd82c7932113b46e7ef6742c70091cc63640c8c65db00d91f2e940b9514"
   license "Apache-2.0"
 
@@ -25,14 +25,14 @@ class PythonTroveClassifiers < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       classifiers = shell_output("#{python_exe} -m trove_classifiers")
       assert_match "Environment :: MacOS X", classifiers
     end

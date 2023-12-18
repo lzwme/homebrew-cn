@@ -2,8 +2,8 @@ class LiterateGit < Formula
   include Language::Python::Virtualenv
 
   desc "Render hierarchical git repositories into HTML"
-  homepage "https://github.com/bennorth/literate-git"
-  url "https://ghproxy.com/https://github.com/bennorth/literate-git/archive/refs/tags/v0.3.1.tar.gz"
+  homepage "https:github.combennorthliterate-git"
+  url "https:github.combennorthliterate-gitarchiverefstagsv0.3.1.tar.gz"
   sha256 "f1dec77584236a5ab2bcee9169e16b5d976e83cd53d279512136bdc90b04940a"
   license "GPL-3.0-or-later"
   revision 13
@@ -27,27 +27,27 @@ class LiterateGit < Formula
   end
 
   resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagesa2558f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9docopt-0.6.2.tar.gz"
     sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
   end
 
   resource "Jinja2" do
-    url "https://files.pythonhosted.org/packages/4f/e7/65300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7/Jinja2-2.11.3.tar.gz"
+    url "https:files.pythonhosted.orgpackages4fe765300e6b32e69768ded990494809106f87da1d436418d5f1367ed3966fd7Jinja2-2.11.3.tar.gz"
     sha256 "a6d58433de0ae800347cab1fa3043cebbabe8baa9d29e668f1c768cb87a333c6"
   end
 
   resource "markdown2" do
-    url "https://files.pythonhosted.org/packages/2b/26/1dd47bdf8adb98e1807b2283a88d6d4379911a2e1a1da266739c038ef8e2/markdown2-2.4.3.tar.gz"
+    url "https:files.pythonhosted.orgpackages2b261dd47bdf8adb98e1807b2283a88d6d4379911a2e1a1da266739c038ef8e2markdown2-2.4.3.tar.gz"
     sha256 "412520c7b6bba540c2c2067d6be3a523ab885703bf6a81d93963f848b55dfb9a"
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb92e64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094MarkupSafe-1.1.1.tar.gz"
     sha256 "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
   end
 
   resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/cb/9f/27d4844ac5bf158a33900dbad7985951e2910397998e85712da03ce125f0/Pygments-2.5.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagescb9f27d4844ac5bf158a33900dbad7985951e2910397998e85712da03ce125f0Pygments-2.5.2.tar.gz"
     sha256 "98c8aa5a9f778fcd1026a17361ddaf7330d1b7c62ae97c3bb0ae73e0b9b6b0fe"
   end
 
@@ -57,15 +57,15 @@ class LiterateGit < Formula
 
   test do
     system "git", "init"
-    (testpath/"foo.txt").write "Hello"
+    (testpath"foo.txt").write "Hello"
     system "git", "add", "foo.txt"
     system "git", "commit", "-m", "foo"
     system "git", "branch", "one"
-    (testpath/"bar.txt").write "World"
+    (testpath"bar.txt").write "World"
     system "git", "add", "bar.txt"
     system "git", "commit", "-m", "bar"
     system "git", "branch", "two"
-    (testpath/"create_url.py").write <<~EOS
+    (testpath"create_url.py").write <<~EOS
       class CreateUrl:
         @staticmethod
         def result_url(sha1):

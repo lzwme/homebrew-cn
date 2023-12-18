@@ -2,24 +2,24 @@ cask "microsoft-teams" do
   version "23320.3107.2575.3762"
   sha256 "52a566b01f2f35ba97ef22b9cf7fe1110926abe00507715820937789b7490389"
 
-  url "https://statics.teams.cdn.office.net/production-osx/#{version}/MicrosoftTeams.pkg",
-      verified: "statics.teams.cdn.office.net/production-osx/"
+  url "https:statics.teams.cdn.office.netproduction-osx#{version}MicrosoftTeams.pkg",
+      verified: "statics.teams.cdn.office.netproduction-osx"
   name "Microsoft Teams"
   desc "Meet, chat, call, and collaborate in just one place"
-  homepage "https://www.microsoft.com/en/microsoft-teams/group-chat-software/"
+  homepage "https:www.microsoft.comenmicrosoft-teamsgroup-chat-software"
 
   # Microsoft releases multiple versions and builds of Teams, as listed here:
-  #   https://ghproxy.com/https://raw.githubusercontent.com/ItzLevvie/MicrosoftTeams-msinternal/master/defconfig
+  #   https:raw.githubusercontent.comItzLevvieMicrosoftTeams-msinternalmasterdefconfig
   # and here:
-  #   https://ghproxy.com/https://raw.githubusercontent.com/ItzLevvie/MicrosoftTeams-msinternal/master/defconfig2
+  #   https:raw.githubusercontent.comItzLevvieMicrosoftTeams-msinternalmasterdefconfig2
   #
-  # We only track the "production build"/"Public (R4) build" version,
+  # We only track the "production build""Public (R4) build" version,
   # which agrees with the version reported by `livecheck`.
   #
   # Any pull request that updates this Cask to a version that
   # differs from the `livecheck` version will be closed.
   livecheck do
-    url "https://config.teams.microsoft.com/config/v1/MicrosoftTeams/#{version}?environment=prod&audienceGroup=general&teamsRing=general&agent=TeamsBuilds"
+    url "https:config.teams.microsoft.comconfigv1MicrosoftTeams#{version}?environment=prod&audienceGroup=general&teamsRing=general&agent=TeamsBuilds"
     strategy :json do |json|
       json.dig("BuildSettings", "WebView2", "macOS", "latestVersion")
     end
@@ -47,34 +47,34 @@ cask "microsoft-teams" do
             launchctl: "com.microsoft.teams.TeamsUpdaterDaemon",
             quit:      "com.microsoft.autoupdate2",
             delete:    [
-              "/Applications/Microsoft Teams (work or school).app",
-              "/Library/Application Support/Microsoft/TeamsUpdaterDaemon",
-              "/Library/Logs/Microsoft/Teams",
-              "/Library/Logs/Microsoft/MSTeams",
-              "/Library/Preferences/com.microsoft.teams.plist",
+              "ApplicationsMicrosoft Teams (work or school).app",
+              "LibraryApplication SupportMicrosoftTeamsUpdaterDaemon",
+              "LibraryLogsMicrosoftTeams",
+              "LibraryLogsMicrosoftMSTeams",
+              "LibraryPreferencescom.microsoft.teams.plist",
             ]
 
   zap trash: [
-        "~/Library/Application Scripts/com.microsoft.teams2",
-        "~/Library/Application Scripts/com.microsoft.teams2.launcher",
-        "~/Library/Application Scripts/com.microsoft.teams2.notificationcenter",
-        "~/Library/Application Support/com.microsoft.teams",
-        "~/Library/Application Support/Microsoft/Teams",
-        "~/Library/Application Support/Teams",
-        "~/Library/Caches/com.microsoft.teams",
-        "~/Library/Containers/com.microsoft.teams2",
-        "~/Library/Containers/com.microsoft.teams2.launcher",
-        "~/Library/Containers/com.microsoft.teams2.notificationcenter",
-        "~/Library/Cookies/com.microsoft.teams.binarycookies",
-        "~/Library/Group Containers/*.com.microsoft.teams",
-        "~/Library/HTTPStorages/com.microsoft.teams",
-        "~/Library/HTTPStorages/com.microsoft.teams.binarycookies",
-        "~/Library/Logs/Microsoft Teams",
-        "~/Library/Logs/Microsoft Teams Helper (Renderer)",
-        "~/Library/Preferences/com.microsoft.teams.plist",
-        "~/Library/Saved Application State/com.microsoft.teams.savedState",
-        "~/Library/Saved Application State/com.microsoft.teams2.savedState",
-        "~/Library/WebKit/com.microsoft.teams",
+        "~LibraryApplication Scriptscom.microsoft.teams2",
+        "~LibraryApplication Scriptscom.microsoft.teams2.launcher",
+        "~LibraryApplication Scriptscom.microsoft.teams2.notificationcenter",
+        "~LibraryApplication Supportcom.microsoft.teams",
+        "~LibraryApplication SupportMicrosoftTeams",
+        "~LibraryApplication SupportTeams",
+        "~LibraryCachescom.microsoft.teams",
+        "~LibraryContainerscom.microsoft.teams2",
+        "~LibraryContainerscom.microsoft.teams2.launcher",
+        "~LibraryContainerscom.microsoft.teams2.notificationcenter",
+        "~LibraryCookiescom.microsoft.teams.binarycookies",
+        "~LibraryGroup Containers*.com.microsoft.teams",
+        "~LibraryHTTPStoragescom.microsoft.teams",
+        "~LibraryHTTPStoragescom.microsoft.teams.binarycookies",
+        "~LibraryLogsMicrosoft Teams",
+        "~LibraryLogsMicrosoft Teams Helper (Renderer)",
+        "~LibraryPreferencescom.microsoft.teams.plist",
+        "~LibrarySaved Application Statecom.microsoft.teams.savedState",
+        "~LibrarySaved Application Statecom.microsoft.teams2.savedState",
+        "~LibraryWebKitcom.microsoft.teams",
       ],
-      rmdir: "~/Library/Application Support/Microsoft"
+      rmdir: "~LibraryApplication SupportMicrosoft"
 end

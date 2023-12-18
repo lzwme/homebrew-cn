@@ -2,15 +2,15 @@ cask "ganttproject" do
   version "3.2.3200,3.2.3230"
   sha256 "4e6ebd308378d3d1936050ff6407630692d5b8833f05f139428b052cf91982dc"
 
-  url "https://ghproxy.com/https://github.com/bardsoftware/ganttproject/releases/download/ganttproject-#{version.csv.first}/ganttproject-#{version.csv.second}.dmg",
-      verified: "github.com/bardsoftware/ganttproject/"
+  url "https:github.combardsoftwareganttprojectreleasesdownloadganttproject-#{version.csv.first}ganttproject-#{version.csv.second}.dmg",
+      verified: "github.combardsoftwareganttproject"
   name "GanttProject"
   desc "Gantt chart and project management application"
-  homepage "https://www.ganttproject.biz/"
+  homepage "https:www.ganttproject.biz"
 
   livecheck do
     url :url
-    regex(%r{/ganttproject[._-]v?(\d+(?:\.\d+)+)/ganttproject[._-]v?(\d+(?:\.\d+)+)\.dmg$}i)
+    regex(%r{ganttproject[._-]v?(\d+(?:\.\d+)+)ganttproject[._-]v?(\d+(?:\.\d+)+)\.dmg$}i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["browser_download_url"]&.match(regex)
@@ -24,8 +24,8 @@ cask "ganttproject" do
   app "GanttProject.app"
 
   zap trash: [
-    "~/.ganttproject",
-    "~/.ganttproject.d",
-    "~/Library/Preferences/com.bardsoftware.ganttproject.plist",
+    "~.ganttproject",
+    "~.ganttproject.d",
+    "~LibraryPreferencescom.bardsoftware.ganttproject.plist",
   ]
 end

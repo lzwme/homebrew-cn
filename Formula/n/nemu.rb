@@ -1,7 +1,7 @@
 class Nemu < Formula
   desc "Ncurses UI for QEMU"
-  homepage "https://github.com/nemuTUI/nemu"
-  url "https://ghproxy.com/https://github.com/nemuTUI/nemu/archive/refs/tags/v3.3.0.tar.gz"
+  homepage "https:github.comnemuTUInemu"
+  url "https:github.comnemuTUInemuarchiverefstagsv3.3.0.tar.gz"
   sha256 "dea2d02e539d7c671e66c102684be5ee231fa9094a73c1ab2793817773e72ac7"
   license "BSD-2-Clause"
 
@@ -36,7 +36,7 @@ class Nemu < Formula
   end
 
   test do
-    expected = /^Config file .* is not found.*$/
-    assert_match expected, pipe_output("XDG_CONFIG_HOME=#{Dir.home} #{bin}/nemu --list", "n")
+    expected = ^Config file .* is not found.*$
+    assert_match expected, pipe_output("XDG_CONFIG_HOME=#{Dir.home} #{bin}nemu --list", "n")
   end
 end

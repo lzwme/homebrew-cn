@@ -1,10 +1,10 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
-  homepage "https://convco.github.io"
-  url "https://ghproxy.com/https://github.com/convco/convco/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:convco.github.io"
+  url "https:github.comconvcoconvcoarchiverefstagsv0.5.0.tar.gz"
   sha256 "abc859df764c6dbfd3ccc4b21278e703dda88e7bb454943d8606985fa3d105b6"
   license "MIT"
-  head "https://github.com/convco/convco.git", branch: "master"
+  head "https:github.comconvcoconvco.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "56de23fb169c60a2ba0f0c66713343278506968b8ef2676c3701c3c47088d912"
@@ -24,22 +24,22 @@ class Convco < Formula
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     system "cargo", "install", "--no-default-features", *std_cargo_args
 
-    bash_completion.install "target/completions/convco.bash" => "convco"
-    zsh_completion.install  "target/completions/_convco" => "_convco"
-    fish_completion.install "target/completions/convco.fish" => "convco.fish"
+    bash_completion.install "targetcompletionsconvco.bash" => "convco"
+    zsh_completion.install  "targetcompletions_convco" => "_convco"
+    fish_completion.install "targetcompletionsconvco.fish" => "convco.fish"
   end
 
   test do
     system "git", "init"
     system "git", "commit", "--allow-empty", "-m", "invalid"
-    assert_match(/FAIL  \w+  first line doesn't match `<type>\[optional scope\]: <description>`  invalid\n/,
-      shell_output("#{bin}/convco check", 1).lines.first)
+    assert_match(FAIL  \w+  first line doesn't match `<type>\[optional scope\]: <description>`  invalid\n,
+      shell_output("#{bin}convco check", 1).lines.first)
 
     # Verify that we are using the libgit2 library
-    linkage_with_libgit2 = (bin/"convco").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"convco").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end

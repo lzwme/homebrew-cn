@@ -1,10 +1,10 @@
 class Airspyhf < Formula
   desc "Driver and tools for a software-defined radio"
-  homepage "https://airspy.com/"
-  url "https://ghproxy.com/https://github.com/airspy/airspyhf/archive/refs/tags/1.6.8.tar.gz"
+  homepage "https:airspy.com"
+  url "https:github.comairspyairspyhfarchiverefstags1.6.8.tar.gz"
   sha256 "cd1e5ae89e09b813b096ae4a328e352c9432a582e03fd7da86760ba60efa77ab"
   license "BSD-3-Clause"
-  head "https://github.com/airspy/airspyhf.git", branch: "master"
+  head "https:github.comairspyairspyhf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b747dbc3b901d77c790fd984fdbaf37979b0e3e7ef0aaca8d616be09353fbe37"
@@ -28,8 +28,8 @@ class Airspyhf < Formula
     args = std_cmake_args
 
     libusb = Formula["libusb"]
-    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
-    args << "-DLIBUSB_LIBRARIES=#{libusb.opt_lib/shared_library("libusb-#{libusb.version.major_minor}")}"
+    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-#{libusb.version.major_minor}"
+    args << "-DLIBUSB_LIBRARIES=#{libusb.opt_libshared_library("libusb-#{libusb.version.major_minor}")}"
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -38,8 +38,8 @@ class Airspyhf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libairspyhf/airspyhf.h>
+    (testpath"test.c").write <<~EOS
+      #include <libairspyhfairspyhf.h>
       int main()
       {
         uint64_t serials[256];
@@ -52,7 +52,7 @@ class Airspyhf < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lairspyhf", "-lm", "-o", "test"
-    system "./test"
-    assert_match version.to_s, shell_output("#{bin}/airspyhf_lib_version").chomp
+    system ".test"
+    assert_match version.to_s, shell_output("#{bin}airspyhf_lib_version").chomp
   end
 end

@@ -1,10 +1,10 @@
 class Kvazaar < Formula
   desc "Ultravideo HEVC encoder"
-  homepage "https://github.com/ultravideo/kvazaar"
-  url "https://ghproxy.com/https://github.com/ultravideo/kvazaar/archive/refs/tags/v2.2.0.tar.gz"
+  homepage "https:github.comultravideokvazaar"
+  url "https:github.comultravideokvazaararchiverefstagsv2.2.0.tar.gz"
   sha256 "df21f327318d530fe7f2ec65ccabf400690791ebad726d8b785c243506f0e446"
   license "BSD-3-Clause"
-  head "https://github.com/ultravideo/kvazaar.git", branch: "master"
+  head "https:github.comultravideokvazaar.git", branch: "master"
 
   livecheck do
     url :stable
@@ -29,21 +29,21 @@ class Kvazaar < Formula
   depends_on "yasm" => :build
 
   resource "homebrew-videosample" do
-    url "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
+    url "https:samples.mplayerhq.huV-codecslm20.avi"
     sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
     # download small sample and try to encode it
     resource("homebrew-videosample").stage do
-      system bin/"kvazaar", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.hevc"
-      assert_predicate Pathname.pwd/"lm20.hevc", :exist?
+      system bin"kvazaar", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.hevc"
+      assert_predicate Pathname.pwd"lm20.hevc", :exist?
     end
   end
 end

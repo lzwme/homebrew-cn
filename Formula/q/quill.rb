@@ -1,10 +1,10 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
-  homepage "https://github.com/odygrd/quill"
-  url "https://ghproxy.com/https://github.com/odygrd/quill/archive/refs/tags/v3.5.1.tar.gz"
+  homepage "https:github.comodygrdquill"
+  url "https:github.comodygrdquillarchiverefstagsv3.5.1.tar.gz"
   sha256 "9fa4ebe594c66ce2a409630c304724fa7a2ada0d842ba9c9aaf05f0a90b461f9"
   license "MIT"
-  head "https://github.com/odygrd/quill.git", branch: "master"
+  head "https:github.comodygrdquill.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9dec7312129d03d8366d50f8489ee143ff4de23aae77d4e194b02cae35082540"
@@ -28,8 +28,8 @@ class Quill < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "quill/Quill.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "quillQuill.h"
       int main()
       {
         quill::start();
@@ -37,15 +37,15 @@ class Quill < Formula
         quill::FileHandlerConfig file_handler_cfg;
         file_handler_cfg.set_open_mode('w');
 
-        std::shared_ptr< quill::Handler > file_handler = quill::file_handler("#{testpath}/basic-log.txt", file_handler_cfg);
+        std::shared_ptr< quill::Handler > file_handler = quill::file_handler("#{testpath}basic-log.txt", file_handler_cfg);
         quill::Logger* logger = quill::create_logger("logger_bar", std::move(file_handler));
         LOG_INFO(logger, "Test");
       }
     EOS
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-lquill", "-o", "test", "-pthread"
-    system "./test"
-    assert_predicate testpath/"basic-log.txt", :exist?
-    assert_match "Test", (testpath/"basic-log.txt").read
+    system ".test"
+    assert_predicate testpath"basic-log.txt", :exist?
+    assert_match "Test", (testpath"basic-log.txt").read
   end
 end

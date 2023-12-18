@@ -1,10 +1,10 @@
 class Blis < Formula
   desc "BLAS-like Library Instantiation Software Framework"
-  homepage "https://github.com/flame/blis"
-  url "https://ghproxy.com/https://github.com/flame/blis/archive/refs/tags/0.9.0.tar.gz"
+  homepage "https:github.comflameblis"
+  url "https:github.comflameblisarchiverefstags0.9.0.tar.gz"
   sha256 "1135f664be7355427b91025075562805cdc6cc730d3173f83533b2c5dcc2f308"
   license "BSD-3-Clause"
-  head "https://github.com/flame/blis.git", branch: "master"
+  head "https:github.comflameblis.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,7 +25,7 @@ class Blis < Formula
   fails_with gcc: "5"
 
   def install
-    # https://github.com/flame/blis/blob/master/docs/ConfigurationHowTo.md
+    # https:github.comflameblisblobmasterdocsConfigurationHowTo.md
     ENV.runtime_cpu_detection
     config = if !build.bottle?
       "auto"
@@ -38,17 +38,17 @@ class Blis < Formula
       Hardware::CPU.arch
     end
 
-    system "./configure", "--prefix=#{prefix}", "--enable-cblas", config
+    system ".configure", "--prefix=#{prefix}", "--enable-cblas", config
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <stdlib.h>
       #include <math.h>
-      #include "blis/blis.h"
+      #include "blisblis.h"
 
       int main(void) {
         int i;
@@ -66,6 +66,6 @@ class Blis < Formula
       }
     EOS
     system ENV.cc, "-o", "test", "test.c", "-I#{include}", "-L#{lib}", "-lblis", "-lm"
-    system "./test"
+    system ".test"
   end
 end

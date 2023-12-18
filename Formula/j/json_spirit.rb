@@ -1,7 +1,7 @@
 class JsonSpirit < Formula
-  desc "C++ JSON parser/generator"
-  homepage "https://www.codeproject.com/Articles/20027/JSON-Spirit-A-C-JSON-Parser-Generator-Implemented"
-  url "https://ghproxy.com/https://github.com/png85/json_spirit/archive/refs/tags/json_spirit-4.0.8.tar.gz"
+  desc "C++ JSON parsergenerator"
+  homepage "https:www.codeproject.comArticles20027JSON-Spirit-A-C-JSON-Parser-Generator-Implemented"
+  url "https:github.compng85json_spiritarchiverefstagsjson_spirit-4.0.8.tar.gz"
   # Current release is misnamed on GitHub. Previous versioning scheme and
   # homepage dictate the release as "4.08".
   version "4.08"
@@ -10,10 +10,10 @@ class JsonSpirit < Formula
 
   livecheck do
     url :stable
-    regex(/^json_spirit[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^json_spirit[._-]v?(\d+(?:\.\d+)+)$i)
     strategy :git do |tags, regex|
       # Convert versions like `4.0.8` to `4.08`
-      tags.map { |tag| tag[regex, 1]&.gsub(/(\d+)\.(\d+)\.(\d+)/, '\1.\2\3') }.compact
+      tags.map { |tag| tag[regex, 1]&.gsub((\d+)\.(\d+)\.(\d+), '\1.\2\3') }.compact
     end
   end
 

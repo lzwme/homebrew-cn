@@ -2,12 +2,12 @@ cask "font-tillana" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tillana"
+      only_path: "ofltillana"
   name "Tillana"
-  homepage "https://fonts.google.com/specimen/Tillana"
+  homepage "https:fonts.google.comspecimenTillana"
 
   font "Tillana-Bold.ttf"
   font "Tillana-ExtraBold.ttf"

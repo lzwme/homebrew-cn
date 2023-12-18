@@ -1,11 +1,11 @@
 class Pc6001vx < Formula
   desc "PC-6001 emulator"
-  # http://eighttails.seesaa.net/ gives 405 error
-  homepage "https://github.com/eighttails/PC6001VX"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.2.4_src.tar.gz"
+  # http:eighttails.seesaa.net gives 405 error
+  homepage "https:github.comeighttailsPC6001VX"
+  url "https:eighttails.up.seesaa.netbinPC6001VX_4.2.4_src.tar.gz"
   sha256 "0c9e565e6181e671c1f499808d9ca73b50a9b49e4b0633198f294b0d1076cf08"
   license "LGPL-2.1-or-later"
-  head "https://github.com/eighttails/PC6001VX.git", branch: "master"
+  head "https:github.comeighttailsPC6001VX.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "8c2349078303be614f81f90886be8475a5dad78b3d6e7943147795b2bb912da3"
@@ -31,18 +31,18 @@ class Pc6001vx < Formula
       system "make"
 
       prefix.install "PC6001VX.app"
-      bin.write_exec_script "#{prefix}/PC6001VX.app/Contents/MacOS/PC6001VX"
+      bin.write_exec_script "#{prefix}PC6001VX.appContentsMacOSPC6001VX"
     end
   end
 
   test do
-    user_config_dir = testpath/".pc6001vx4"
+    user_config_dir = testpath".pc6001vx4"
     user_config_dir.mkpath
     pid = fork do
-      exec bin/"PC6001VX"
+      exec bin"PC6001VX"
     end
     sleep 20
-    assert_predicate user_config_dir/"rom",
+    assert_predicate user_config_dir"rom",
                      :exist?, "User config directory should exist"
   ensure
     Process.kill("TERM", pid)

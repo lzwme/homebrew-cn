@@ -1,7 +1,7 @@
 class Dotbot < Formula
   desc "Tool that bootstraps your dotfiles"
-  homepage "https://github.com/anishathalye/dotbot"
-  url "https://files.pythonhosted.org/packages/04/8b/0899638625ff6443b627294b10f3fa95b84da330d7caf9936ba991baf504/dotbot-1.20.1.tar.gz"
+  homepage "https:github.comanishathalyedotbot"
+  url "https:files.pythonhosted.orgpackages048b0899638625ff6443b627294b10f3fa95b84da330d7caf9936ba991baf504dotbot-1.20.1.tar.gz"
   sha256 "b0c5e5100015e163dd5bcc07f546187a61adbbf759d630be27111e6cc137c4de"
   license "MIT"
 
@@ -29,15 +29,15 @@ class Dotbot < Formula
   end
 
   test do
-    (testpath/"install.conf.yaml").write <<~EOS
+    (testpath"install.conf.yaml").write <<~EOS
       - create:
         - brew
-        - .brew/test
+        - .brewtest
     EOS
 
-    output = shell_output("#{bin}/dotbot -c #{testpath}/install.conf.yaml")
+    output = shell_output("#{bin}dotbot -c #{testpath}install.conf.yaml")
     assert_match "All tasks executed successfully", output
-    assert_predicate testpath/"brew", :exist?
-    assert_predicate testpath/".brew/test", :exist?
+    assert_predicate testpath"brew", :exist?
+    assert_predicate testpath".brewtest", :exist?
   end
 end

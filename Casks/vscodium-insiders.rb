@@ -5,27 +5,27 @@ cask "vscodium-insiders" do
   sha256 arm:   "a0f0915b0eeed74d4fc17b2dbfcef40665d234c8777a2a67c35f30e99e734f5f",
          intel: "fd6b0e6c6037f89f624580f7f6178761f608d8f5305cc52b6f025c309f06ee24"
 
-  url "https://ghproxy.com/https://github.com/VSCodium/vscodium-insiders/releases/download/#{version}/VSCodium.#{arch}.#{version}.dmg",
-      verified: "github.com/VSCodium/vscodium-insiders/"
+  url "https:github.comVSCodiumvscodium-insidersreleasesdownload#{version}VSCodium.#{arch}.#{version}.dmg",
+      verified: "github.comVSCodiumvscodium-insiders"
   name "VSCodium"
   name "VSCodium Insiders"
   desc "Code editor"
-  homepage "https://vscodium.com/"
+  homepage "https:vscodium.com"
 
   depends_on macos: ">= :high_sierra"
 
   app "VSCodium - Insiders.app"
-  binary "#{appdir}/VSCodium - Insiders.app/Contents/Resources/app/bin/codium-insiders", target: "codium-insiders"
+  binary "#{appdir}VSCodium - Insiders.appContentsResourcesappbincodium-insiders", target: "codium-insiders"
 
   zap trash: [
-    "~/.vscodium-insiders",
-    "~/Library/Application Support/VSCodium - Insiders",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.microsoft.vscodiuminsiders.sfl*",
-    "~/Library/Caches/VSCodium - Insiders",
-    "~/Library/Caches/com.microsoft.VSCodiumInsiders.ShipIt",
-    "~/Library/Caches/com.microsoft.VSCodiumInsiders",
-    "~/Library/Preferences/com.microsoft.VSCodiumInsiders.helper.plist",
-    "~/Library/Preferences/com.microsoft.VSCodiumInsiders.plist",
-    "~/Library/Saved Application State/com.microsoft.VSCodiumInsiders.savedState",
+    "~.vscodium-insiders",
+    "~LibraryApplication SupportVSCodium - Insiders",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.microsoft.vscodiuminsiders.sfl*",
+    "~LibraryCachesVSCodium - Insiders",
+    "~LibraryCachescom.microsoft.VSCodiumInsiders.ShipIt",
+    "~LibraryCachescom.microsoft.VSCodiumInsiders",
+    "~LibraryPreferencescom.microsoft.VSCodiumInsiders.helper.plist",
+    "~LibraryPreferencescom.microsoft.VSCodiumInsiders.plist",
+    "~LibrarySaved Application Statecom.microsoft.VSCodiumInsiders.savedState",
   ]
 end

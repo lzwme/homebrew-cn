@@ -1,10 +1,10 @@
 class Hamlib < Formula
   desc "Ham radio control libraries"
-  homepage "http://www.hamlib.org/"
-  url "https://ghproxy.com/https://github.com/Hamlib/Hamlib/releases/download/4.5.5/hamlib-4.5.5.tar.gz"
+  homepage "http:www.hamlib.org"
+  url "https:github.comHamlibHamlibreleasesdownload4.5.5hamlib-4.5.5.tar.gz"
   sha256 "601c89f32ed225e9527ade3d64d0d05d23202c05ae21ffa77e59d70ee4597fcd"
   license "LGPL-2.1-or-later"
-  head "https://github.com/hamlib/hamlib.git", branch: "master"
+  head "https:github.comhamlibhamlib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "458b25ee925c1e679efe780813e20c1a7477fdf86ac0cdcb77d7921e2301ec3f"
@@ -27,13 +27,13 @@ class Hamlib < Formula
   fails_with gcc: "5"
 
   def install
-    system "./bootstrap" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/rigctl", "-V"
+    system "#{bin}rigctl", "-V"
   end
 end

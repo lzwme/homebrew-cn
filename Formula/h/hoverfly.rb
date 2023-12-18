@@ -1,10 +1,10 @@
 class Hoverfly < Formula
   desc "API simulations for development and testing"
-  homepage "https://hoverfly.io/"
-  url "https://ghproxy.com/https://github.com/SpectoLabs/hoverfly/archive/refs/tags/v1.6.1.tar.gz"
+  homepage "https:hoverfly.io"
+  url "https:github.comSpectoLabshoverflyarchiverefstagsv1.6.1.tar.gz"
   sha256 "b7bbe28c5d5c2449c46232b7985b0c08b76295ace5b57c0e27d4f9ff60dfe83d"
   license "Apache-2.0"
-  head "https://github.com/SpectoLabs/hoverfly.git", branch: "master"
+  head "https:github.comSpectoLabshoverfly.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12370c49cc13b5e51e0f427a3f1459d12ac93647064cc9a4c9465a178aef89b1"
@@ -20,15 +20,15 @@ class Hoverfly < Formula
 
   def install
     ldflags = "-s -w -X main.hoverctlVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./core/cmd/hoverfly"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".corecmdhoverfly"
   end
 
   test do
     require "pty"
 
-    stdout, = PTY.spawn("#{bin}/hoverfly -webserver")
+    stdout, = PTY.spawn("#{bin}hoverfly -webserver")
     assert_match "Using memory backend", stdout.readline
 
-    assert_match version.to_s, shell_output("#{bin}/hoverfly -version")
+    assert_match version.to_s, shell_output("#{bin}hoverfly -version")
   end
 end

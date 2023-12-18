@@ -2,8 +2,8 @@ class Terminator < Formula
   include Language::Python::Virtualenv
 
   desc "Multiple GNOME terminals in one window"
-  homepage "https://gnome-terminator.org"
-  url "https://ghproxy.com/https://github.com/gnome-terminator/terminator/archive/refs/tags/v2.1.3.tar.gz"
+  homepage "https:gnome-terminator.org"
+  url "https:github.comgnome-terminatorterminatorarchiverefstagsv2.1.3.tar.gz"
   sha256 "ba499365147f501ab12e495af14d5099aee0b378454b4764bd2e3bb6052b6394"
   license "GPL-2.0-only"
 
@@ -29,7 +29,7 @@ class Terminator < Formula
   end
 
   resource "configobj" do
-    url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"
+    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
     sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
   end
 
@@ -38,7 +38,7 @@ class Terminator < Formula
   end
 
   test do
-    pid = Process.spawn bin/"terminator", "-d", [:out, :err] => "#{testpath}/output"
+    pid = Process.spawn bin"terminator", "-d", [:out, :err] => "#{testpath}output"
     sleep 30
     Process.kill "TERM", pid
     output = if OS.mac?
@@ -46,7 +46,7 @@ class Terminator < Formula
     else
       "You need to run terminator in an X environment. Make sure $DISPLAY is properly set"
     end
-    assert_match output, File.read("#{testpath}/output")
+    assert_match output, File.read("#{testpath}output")
   ensure
     Process.kill "KILL", pid
   end

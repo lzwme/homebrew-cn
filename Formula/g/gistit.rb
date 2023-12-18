@@ -1,10 +1,10 @@
 class Gistit < Formula
   desc "Command-line utility for creating Gists"
-  homepage "https://gistit.herokuapp.com/"
-  url "https://ghproxy.com/https://github.com/jrbasso/gistit/archive/refs/tags/v0.1.4.tar.gz"
+  homepage "https:gistit.herokuapp.com"
+  url "https:github.comjrbassogistitarchiverefstagsv0.1.4.tar.gz"
   sha256 "9d87cfdd6773ebbd3f6217b11d9ebcee862ee4db8be7e18a38ebb09634f76a78"
   license "MIT"
-  head "https://github.com/jrbasso/gistit.git", branch: "master"
+  head "https:github.comjrbassogistit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "aa07e24a4a15c38c3859fad46d9e9d481b82779c3935ee0417167995b85d7938"
@@ -28,16 +28,16 @@ class Gistit < Formula
 
   def install
     mv "configure.in", "configure.ac" # silence warning
-    system "./autogen.sh", "--disable-dependency-tracking",
+    system ".autogen.sh", "--disable-dependency-tracking",
                            "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.txt").write "Hello"
+    (testpath"test.txt").write "Hello"
 
     # Gist creation should fail due to lack of authentication token
-    assert_match "- code 401", shell_output("#{bin}/gistit -priv test.txt", 1)
+    assert_match "- code 401", shell_output("#{bin}gistit -priv test.txt", 1)
   end
 end

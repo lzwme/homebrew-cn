@@ -1,10 +1,10 @@
 class Libfabric < Formula
   desc "OpenFabrics libfabric"
-  homepage "https://ofiwg.github.io/libfabric/"
-  url "https://ghproxy.com/https://github.com/ofiwg/libfabric/releases/download/v1.20.0/libfabric-1.20.0.tar.bz2"
+  homepage "https:ofiwg.github.iolibfabric"
+  url "https:github.comofiwglibfabricreleasesdownloadv1.20.0libfabric-1.20.0.tar.bz2"
   sha256 "7fbbaeb0e15c7c4553c0ac5f54e4ef7aecaff8a669d4ba96fa04b0fc780b9ddc"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
-  head "https://github.com/ofiwg/libfabric.git", branch: "main"
+  head "https:github.comofiwglibfabric.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "affa007285faac8538e4336ba4900c07088441c4b514c2c3713f0caa7b83525b"
@@ -26,13 +26,13 @@ class Libfabric < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_match "provider: sockets", shell_output("#{bin}/fi_info")
+    assert_match "provider: sockets", shell_output("#{bin}fi_info")
   end
 end

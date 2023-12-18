@@ -1,10 +1,10 @@
 class SwitchaudioOsx < Formula
   desc "Change macOS audio source from the command-line"
-  homepage "https://github.com/deweller/switchaudio-osx/"
-  url "https://ghproxy.com/https://github.com/deweller/switchaudio-osx/archive/refs/tags/1.2.2.tar.gz"
+  homepage "https:github.comdewellerswitchaudio-osx"
+  url "https:github.comdewellerswitchaudio-osxarchiverefstags1.2.2.tar.gz"
   sha256 "3d12b57cbd6063a643a12f12287af99c87894c33449c6bcac0a71fd15776b3ed"
   license "MIT"
-  head "https://github.com/deweller/switchaudio-osx.git", branch: "master"
+  head "https:github.comdewellerswitchaudio-osx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e6292b5cbda7b5b7dc412d6f787903cb9cdab68ad75c1a8ac0bf3e63985d782"
@@ -28,12 +28,12 @@ class SwitchaudioOsx < Formula
                "-arch", Hardware::CPU.arch,
                # Default target is 10.5, which fails on Mojave
                "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
-    prefix.install Dir["build/Release/*"]
-    bin.write_exec_script "#{prefix}/SwitchAudioSource"
-    chmod 0755, "#{bin}/SwitchAudioSource"
+    prefix.install Dir["buildRelease*"]
+    bin.write_exec_script "#{prefix}SwitchAudioSource"
+    chmod 0755, "#{bin}SwitchAudioSource"
   end
 
   test do
-    system "#{bin}/SwitchAudioSource", "-c"
+    system "#{bin}SwitchAudioSource", "-c"
   end
 end

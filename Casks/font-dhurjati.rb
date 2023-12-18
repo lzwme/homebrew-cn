@@ -2,10 +2,10 @@ cask "font-dhurjati" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/dhurjati/Dhurjati-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldhurjatiDhurjati-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Dhurjati"
-  homepage "https://fonts.google.com/specimen/Dhurjati"
+  homepage "https:fonts.google.comspecimenDhurjati"
 
   font "Dhurjati-Regular.ttf"
 

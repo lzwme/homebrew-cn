@@ -1,7 +1,7 @@
 class Crfsuite < Formula
   desc "Fast implementation of conditional random fields"
-  homepage "https://www.chokkan.org/software/crfsuite/"
-  url "https://ghproxy.com/https://github.com/chokkan/crfsuite/archive/refs/tags/0.12.tar.gz"
+  homepage "https:www.chokkan.orgsoftwarecrfsuite"
+  url "https:github.comchokkancrfsuitearchiverefstags0.12.tar.gz"
   sha256 "ab83084ed5d4532ec772d96c3e964104d689f2c295915e80299ea3c315335b00"
   license "BSD-3-Clause"
 
@@ -25,13 +25,13 @@ class Crfsuite < Formula
   uses_from_macos "python" => :test
 
   resource "homebrew-conll2000-training-data" do
-    url "https://www.cnts.ua.ac.be/conll2000/chunking/train.txt.gz"
+    url "https:www.cnts.ua.ac.beconll2000chunkingtrain.txt.gz"
     sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"
   end
 
   # Fix autoconf failure.
   patch do
-    url "https://github.com/chokkan/crfsuite/commit/a6a4a38ccc4738deb0e90fc9ff2c11868922aa11.patch?full_index=1"
+    url "https:github.comchokkancrfsuitecommita6a4a38ccc4738deb0e90fc9ff2c11868922aa11.patch?full_index=1"
     sha256 "8c572cb9d737e058b0a86c6eab96d1ffa8951016b50eee505491c2dae7c7c74d"
   end
 
@@ -40,7 +40,7 @@ class Crfsuite < Formula
 
     args = std_configure_args
     args << "--disable-sse2" if Hardware::CPU.arm?
-    system "./configure", *args
+    system ".configure", *args
 
     system "make", "install"
     pkgshare.install "example"
@@ -52,11 +52,11 @@ class Crfsuite < Formula
     # Use spawn instead of {shell,pipe}_output to directly read and write
     # from files. The data is too big to read into memory and then pass to
     # the command for this test to complete within the allotted timeout.
-    command = ["python3", pkgshare/"example/chunking.py"]
+    command = ["python3", pkgshare"examplechunking.py"]
     pid = spawn(*command, in: "train.txt", out: "train.crfsuite.txt")
     Process.wait(pid)
 
-    system bin/"crfsuite", "learn", "--model", "CoNLL2000.model", "train.crfsuite.txt"
-    assert_predicate testpath/"CoNLL2000.model", :exist?
+    system bin"crfsuite", "learn", "--model", "CoNLL2000.model", "train.crfsuite.txt"
+    assert_predicate testpath"CoNLL2000.model", :exist?
   end
 end

@@ -1,11 +1,11 @@
 class Rack < Formula
   desc "CLI for Rackspace"
-  homepage "https://github.com/rackspace/rack"
-  url "https://github.com/rackspace/rack.git",
+  homepage "https:github.comrackspacerack"
+  url "https:github.comrackspacerack.git",
       tag:      "1.2",
       revision: "09c14b061f4a115c8f1ff07ae6be96d9b11e08df"
   license "Apache-2.0"
-  head "https://github.com/rackspace/rack.git", branch: "master"
+  head "https:github.comrackspacerack.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -23,7 +23,7 @@ class Rack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "88a7a29b2c8fc2f04d5009bb498e2a424aaf2c246a55915c2f0d7b12f7accfec"
   end
 
-  # https://github.com/rackspace/rack/pull/470
+  # https:github.comrackspacerackpull470
   deprecate! date: "2023-08-13", because: :unmaintained
 
   depends_on "go" => :build
@@ -33,24 +33,24 @@ class Rack < Formula
     ENV["TRAVIS_TAG"] = version
     ENV["GO111MODULE"] = "auto"
 
-    rackpath = buildpath/"src/github.com/rackspace/rack"
+    rackpath = buildpath"srcgithub.comrackspacerack"
     rackpath.install Dir["{*,.??*}"]
 
     cd rackpath do
       # This is a slightly grim hack to handle the weird logic around
       # deciding whether to add a = or not on the ldflags, as mandated
       # by Go 1.7+.
-      # https://github.com/rackspace/rack/issues/446
-      inreplace "script/build", "go1.5", Utils.safe_popen_read("go", "version")[/go1\.\d/]
+      # https:github.comrackspacerackissues446
+      inreplace "scriptbuild", "go1.5", Utils.safe_popen_read("go", "version")[go1\.\d]
 
       ln_s "internal", "vendor"
-      system "script/build", "rack"
+      system "scriptbuild", "rack"
       bin.install "rack"
       prefix.install_metafiles
     end
   end
 
   test do
-    system "#{bin}/rack"
+    system "#{bin}rack"
   end
 end

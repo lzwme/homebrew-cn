@@ -1,14 +1,14 @@
 class Coinutils < Formula
   desc "COIN-OR utilities"
-  homepage "https://github.com/coin-or/CoinUtils"
-  url "https://ghproxy.com/https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.10.tar.gz"
+  homepage "https:github.comcoin-orCoinUtils"
+  url "https:github.comcoin-orCoinUtilsarchiverefstagsreleases2.11.10.tar.gz"
   sha256 "80c7c215262df8d6bd2ba171617c5df844445871e9891ec6372df12ccbe5bcfd"
   license "EPL-2.0"
-  head "https://github.com/coin-or/CoinUtils.git", branch: "master"
+  head "https:github.comcoin-orCoinUtils.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(%r{^(?:releases/)?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^(?:releases)?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Coinutils < Formula
   depends_on "openblas"
 
   resource "homebrew-coin-or-tools-data-sample-p0201-mps" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/coin-or-tools/Data-Sample/releases/1.2.11/p0201.mps"
+    url "https:raw.githubusercontent.comcoin-or-toolsData-Samplereleases1.2.11p0201.mps"
     sha256 "8352d7f121289185f443fdc67080fa9de01e5b9bf11b0bf41087fba4277c07a4"
   end
 
@@ -34,31 +34,31 @@ class Coinutils < Formula
       "--datadir=#{pkgshare}",
       "--disable-debug",
       "--disable-dependency-tracking",
-      "--includedir=#{include}/coinutils",
+      "--includedir=#{include}coinutils",
       "--prefix=#{prefix}",
       "--with-blas-incdir=#{Formula["openblas"].opt_include}",
       "--with-blas-lib=-L#{Formula["openblas"].opt_lib} -lopenblas",
       "--with-lapack-incdir=#{Formula["openblas"].opt_include}",
       "--with-lapack-lib=-L#{Formula["openblas"].opt_lib} -lopenblas",
     ]
-    system "./configure", *args
+    system ".configure", *args
     system "make"
-    # Deparallelize due to error 1: "mkdir: #{include}/coinutils/coin: File exists."
-    # https://github.com/coin-or/Clp/issues/109
+    # Deparallelize due to error 1: "mkdir: #{include}coinutilscoin: File exists."
+    # https:github.comcoin-orClpissues109
     ENV.deparallelize { system "make", "install" }
   end
 
   test do
     resource("homebrew-coin-or-tools-data-sample-p0201-mps").stage testpath
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <CoinMpsIO.hpp>
       int main() {
         CoinMpsIO mpsIO;
-        return mpsIO.readMps("#{testpath}/p0201.mps");
+        return mpsIO.readMps("#{testpath}p0201.mps");
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{opt_include}/coinutils/coin",
+    system ENV.cxx, "test.cpp", "-I#{opt_include}coinutilscoin",
       "-L#{opt_lib}", "-lCoinUtils"
-    system "./a.out"
+    system ".a.out"
   end
 end

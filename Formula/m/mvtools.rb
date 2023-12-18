@@ -1,11 +1,11 @@
 class Mvtools < Formula
   desc "Filters for motion estimation and compensation"
-  homepage "https://github.com/dubhater/vapoursynth-mvtools"
-  url "https://ghproxy.com/https://github.com/dubhater/vapoursynth-mvtools/archive/refs/tags/v23.tar.gz"
+  homepage "https:github.comdubhatervapoursynth-mvtools"
+  url "https:github.comdubhatervapoursynth-mvtoolsarchiverefstagsv23.tar.gz"
   sha256 "3b5fdad2b52a2525764510a04af01eab3bc5e8fe6a02aba44b78955887a47d44"
   license "GPL-2.0"
   revision 1
-  head "https://github.com/dubhater/vapoursynth-mvtools.git", branch: "master"
+  head "https:github.comdubhatervapoursynth-mvtools.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,12 +29,12 @@ class Mvtools < Formula
   depends_on "vapoursynth"
 
   # Fixes build issues on arm
-  # https://github.com/dubhater/vapoursynth-mvtools/pull/55
+  # https:github.comdubhatervapoursynth-mvtoolspull55
   patch :DATA
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -43,26 +43,26 @@ class Mvtools < Formula
       MVTools will not be autoloaded in your VapourSynth scripts. To use it
       use the following code in your scripts:
 
-        vs.core.std.LoadPlugin(path="#{HOMEBREW_PREFIX}/lib/#{shared_library("libmvtools")}")
+        vs.core.std.LoadPlugin(path="#{HOMEBREW_PREFIX}lib#{shared_library("libmvtools")}")
     EOS
   end
 
   test do
     script = <<~EOS.split("\n").join(";")
       import vapoursynth as vs
-      vs.core.std.LoadPlugin(path="#{lib/shared_library("libmvtools")}")
+      vs.core.std.LoadPlugin(path="#{libshared_library("libmvtools")}")
     EOS
     python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
+                                   .find { |d| d.name.match?(^python@\d\.\d+$) }
                                    .to_formula
-                                   .opt_libexec/"bin/python"
+                                   .opt_libexec"binpython"
     system python, "-c", script
   end
 end
 
 __END__
---- a/configure.ac
-+++ b/configure.ac
+--- aconfigure.ac
++++ bconfigure.ac
 @@ -54,7 +54,7 @@ AS_CASE(
    [i?86],         [BITS="32" NASMFLAGS="$NASMFLAGS -DARCH_X86_64=0" X86="true"],
    [x86_64|amd64], [BITS="64" NASMFLAGS="$NASMFLAGS -DARCH_X86_64=1 -DPIC" X86="true"],
@@ -72,8 +72,8 @@ __END__
    [AC_MSG_ERROR([Unknown host CPU: $host_cpu.])]
  )
  
---- a/src/SADFunctions.cpp
-+++ b/src/SADFunctions.cpp
+--- asrcSADFunctions.cpp
++++ bsrcSADFunctions.cpp
 @@ -646,7 +646,7 @@ static unsigned int Satd_C(const uint8_t *pSrc, intptr_t nSrcPitch, const uint8_
      }
  }

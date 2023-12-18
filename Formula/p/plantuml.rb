@@ -1,7 +1,7 @@
 class Plantuml < Formula
   desc "Draw UML diagrams"
-  homepage "https://plantuml.com/"
-  url "https://ghproxy.com/https://github.com/plantuml/plantuml/releases/download/v1.2023.13/plantuml-1.2023.13.jar"
+  homepage "https:plantuml.com"
+  url "https:github.complantumlplantumlreleasesdownloadv1.2023.13plantuml-1.2023.13.jar"
   sha256 "e68a770f8fd386ca6787589ffd70741303187ee214a075ee85a444fcd8a6da59"
   license "GPL-3.0-or-later"
   version_scheme 1
@@ -21,17 +21,17 @@ class Plantuml < Formula
   def install
     jar = "plantuml.jar"
     libexec.install "plantuml-#{version}.jar" => jar
-    (bin/"plantuml").write <<~EOS
-      #!/bin/bash
+    (bin"plantuml").write <<~EOS
+      #!binbash
       if [[ "$*" != *"-gui"* ]]; then
         VMARGS="-Djava.awt.headless=true"
       fi
-      GRAPHVIZ_DOT="#{Formula["graphviz"].opt_bin}/dot" exec "#{Formula["openjdk"].opt_bin}/java" $VMARGS -jar #{libexec}/#{jar} "$@"
+      GRAPHVIZ_DOT="#{Formula["graphviz"].opt_bin}dot" exec "#{Formula["openjdk"].opt_bin}java" $VMARGS -jar #{libexec}#{jar} "$@"
     EOS
-    chmod 0755, bin/"plantuml"
+    chmod 0755, bin"plantuml"
   end
 
   test do
-    system bin/"plantuml", "-testdot"
+    system bin"plantuml", "-testdot"
   end
 end

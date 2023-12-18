@@ -1,15 +1,15 @@
 class Fstrm < Formula
   desc "Frame Streams implementation in C"
-  homepage "https://github.com/farsightsec/fstrm"
+  homepage "https:github.comfarsightsecfstrm"
   license "MIT"
 
   stable do
-    url "https://dl.farsightsecurity.com/dist/fstrm/fstrm-0.6.1.tar.gz"
+    url "https:dl.farsightsecurity.comdistfstrmfstrm-0.6.1.tar.gz"
     sha256 "bca4ac1e982a2d923ccd24cce2c98f4ceeed5009694430f73fc0dcebca8f098f"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -29,7 +29,7 @@ class Fstrm < Formula
   end
 
   head do
-    url "https://github.com/farsightsec/fstrm.git", branch: "master"
+    url "https:github.comfarsightsecfstrm.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,7 +41,7 @@ class Fstrm < Formula
 
   def install
     system "autoreconf", "-fvi" if build.head?
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
            "--disable-dependency-tracking",
            "--disable-silent-rules",
            "--prefix=#{prefix}"
@@ -50,11 +50,11 @@ class Fstrm < Formula
 
   test do
     job = fork do
-      exec bin/"fstrm_capture", "-t", "protobuf:dnstap.Dnstap",
+      exec bin"fstrm_capture", "-t", "protobuf:dnstap.Dnstap",
            "-u", "dnstap.sock", "-w", "capture.fstrm", "-dddd"
     end
     sleep 2
     Process.kill("TERM", job)
-    system "#{bin}/fstrm_dump", "capture.fstrm"
+    system "#{bin}fstrm_dump", "capture.fstrm"
   end
 end

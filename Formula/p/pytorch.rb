@@ -2,8 +2,8 @@ class Pytorch < Formula
   include Language::Python::Virtualenv
 
   desc "Tensors and dynamic neural networks"
-  homepage "https://pytorch.org/"
-  url "https://github.com/pytorch/pytorch.git",
+  homepage "https:pytorch.org"
+  url "https:github.compytorchpytorch.git",
       tag:      "v2.1.0",
       revision: "7bcf7da3a268b435777fe87c7794c382f444e86d"
   license "BSD-3-Clause"
@@ -11,7 +11,7 @@ class Pytorch < Formula
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -47,15 +47,15 @@ class Pytorch < Formula
     depends_on "libomp"
   end
 
-  conflicts_with "fmt", because: "both install `include/fmt/args.h` headers"
+  conflicts_with "fmt", because: "both install `includefmtargs.h` headers"
 
   resource "opt-einsum" do
-    url "https://files.pythonhosted.org/packages/7d/bf/9257e53a0e7715bc1127e15063e831f076723c6cd60985333a1c18878fb8/opt_einsum-3.3.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages7dbf9257e53a0e7715bc1127e15063e831f076723c6cd60985333a1c18878fb8opt_einsum-3.3.0.tar.gz"
     sha256 "59f6475f77bbc37dcf7cd748519c0ec60722e91e63ca114e68821c0c54a46549"
   end
 
   def install
-    python_exe = Formula["python@3.11"].opt_libexec/"bin/python"
+    python_exe = Formula["python@3.11"].opt_libexec"binpython"
     args = %W[
       -GNinja
       -DBLAS=OpenBLAS
@@ -75,21 +75,21 @@ class Pytorch < Formula
     ]
     args << "-DUSE_MPS=ON" if OS.mac?
 
-    ENV["LDFLAGS"] = "-L#{buildpath}/build/lib"
+    ENV["LDFLAGS"] = "-L#{buildpath}buildlib"
 
     # Update references to shared libraries
-    inreplace "torch/__init__.py" do |s|
-      s.sub!(/here = os.path.abspath\(__file__\)/, "here = \"#{lib}\"")
-      s.sub!("get_file_path('torch', 'bin', 'torch_shm_manager')", "\"#{bin}/torch_shm_manager\"")
+    inreplace "torch__init__.py" do |s|
+      s.sub!(here = os.path.abspath\(__file__\), "here = \"#{lib}\"")
+      s.sub!("get_file_path('torch', 'bin', 'torch_shm_manager')", "\"#{bin}torch_shm_manager\"")
     end
 
-    inreplace "torch/utils/cpp_extension.py", "_TORCH_PATH = os.path.dirname(os.path.dirname(_HERE))",
+    inreplace "torchutilscpp_extension.py", "_TORCH_PATH = os.path.dirname(os.path.dirname(_HERE))",
                                               "_TORCH_PATH = \"#{opt_prefix}\""
 
     system "cmake", "-B", "build", "-S", ".", *std_cmake_args, *args
 
     # Avoid references to Homebrew shims
-    inreplace "build/caffe2/core/macros.h", Superenv.shims_path/ENV.cxx, ENV.cxx
+    inreplace "buildcaffe2coremacros.h", Superenv.shims_pathENV.cxx, ENV.cxx
 
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources
@@ -98,8 +98,8 @@ class Pytorch < Formula
 
   test do
     # test that C++ libraries are available
-    (testpath/"test.cpp").write <<~EOS
-      #include <torch/torch.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <torchtorch.h>
       #include <iostream>
 
       int main() {
@@ -108,12 +108,12 @@ class Pytorch < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
-                    "-I#{include}/torch/csrc/api/include",
+                    "-I#{include}torchcsrcapiinclude",
                     "-L#{lib}", "-ltorch", "-ltorch_cpu", "-lc10"
-    system "./test"
+    system ".test"
 
     # test that the `torch` Python module is available
-    system libexec/"bin/python", "-c", <<~EOS
+    system libexec"binpython", "-c", <<~EOS
       import torch
       t = torch.rand(5, 3)
       assert isinstance(t, torch.Tensor), "not a tensor"
@@ -122,7 +122,7 @@ class Pytorch < Formula
 
     if OS.mac?
       # test that we have the MPS backend
-      system libexec/"bin/python", "-c", <<~EOS
+      system libexec"binpython", "-c", <<~EOS
         import torch
         assert torch.backends.mps.is_built(), "MPS backend is not built"
       EOS

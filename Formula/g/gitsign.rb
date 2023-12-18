@@ -1,7 +1,7 @@
 class Gitsign < Formula
   desc "Keyless Git signing using Sigstore"
-  homepage "https://github.com/sigstore/gitsign"
-  url "https://ghproxy.com/https://github.com/sigstore/gitsign/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:github.comsigstoregitsign"
+  url "https:github.comsigstoregitsignarchiverefstagsv0.8.0.tar.gz"
   sha256 "3087506ef7811f2d26b6eb8612d4d0a4d8d8eec6258bca4f25247bb7a49e297c"
   license "Apache-2.0"
 
@@ -20,20 +20,20 @@ class Gitsign < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/sigstore/gitsign/pkg/version.gitVersion=#{version}
+      -X github.comsigstoregitsignpkgversion.gitVersion=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"gitsign", "completion")
+    generate_completions_from_executable(bin"gitsign", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gitsign --version")
+    assert_match version.to_s, shell_output("#{bin}gitsign --version")
 
-    system "git", "clone", "https://github.com/sigstore/gitsign.git"
-    cd testpath/"gitsign" do
+    system "git", "clone", "https:github.comsigstoregitsign.git"
+    cd testpath"gitsign" do
       require "pty"
-      stdout, _stdin, _pid = PTY.spawn("#{bin}/gitsign attest")
+      stdout, _stdin, _pid = PTY.spawn("#{bin}gitsign attest")
       assert_match "Generating ephemeral keys...", stdout.readline
     end
   end

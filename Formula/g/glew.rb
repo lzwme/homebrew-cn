@@ -1,11 +1,11 @@
 class Glew < Formula
   desc "OpenGL Extension Wrangler Library"
-  homepage "https://glew.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/glew/glew/2.2.0/glew-2.2.0.tgz"
+  homepage "https:glew.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectglewglew2.2.0glew-2.2.0.tgz"
   sha256 "d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/nigels-com/glew.git", branch: "master"
+  head "https:github.comnigels-comglew.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -29,14 +29,14 @@ class Glew < Formula
   end
 
   def install
-    system "cmake", "-S", "./build/cmake", "-B", "_build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "-S", ".buildcmake", "-B", "_build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
   end
 
   test do
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       project(test_glew)
 
       set(CMAKE_CXX_STANDARD 11)
@@ -48,8 +48,8 @@ class Glew < Formula
       target_link_libraries(${PROJECT_NAME} PUBLIC OpenGL::GL GLEW::GLEW)
     EOS
 
-    (testpath/"main.cpp").write <<~EOS
-      #include <GL/glew.h>
+    (testpath"main.cpp").write <<~EOS
+      #include <GLglew.h>
 
       int main()
       {
@@ -65,9 +65,9 @@ class Glew < Formula
     else
       "GL"
     end
-    (testpath/"test.c").write <<~EOS
-      #include <GL/glew.h>
-      #include <#{glut}/glut.h>
+    (testpath"test.c").write <<~EOS
+      #include <GLglew.h>
+      #include <#{glut}glut.h>
 
       int main(int argc, char** argv) {
         glutInit(&argc, argv);
@@ -85,10 +85,10 @@ class Glew < Formula
     else
       flags << "-lglut"
     end
-    system ENV.cc, testpath/"test.c", "-o", "test", *flags
-    # Fails in Linux CI with: freeglut (./test): failed to open display ''
+    system ENV.cc, testpath"test.c", "-o", "test", *flags
+    # Fails in Linux CI with: freeglut (.test): failed to open display ''
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "./test"
+    system ".test"
   end
 end

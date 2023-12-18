@@ -1,14 +1,14 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
-  homepage "https://www.pgpool.net/mediawiki/index.php/Main_Page"
-  url "https://www.pgpool.net/mediawiki/images/pgpool-II-4.5.0.tar.gz"
+  homepage "https:www.pgpool.netmediawikiindex.phpMain_Page"
+  url "https:www.pgpool.netmediawikiimagespgpool-II-4.5.0.tar.gz"
   sha256 "5984aecdf2520872900356aced0c9aa6e96537c2e82297c6593ed9019118451a"
   # NTP license that excludes distributing "with fee"
   license :cannot_represent
 
   livecheck do
-    url "https://www.pgpool.net/mediawiki/index.php/Downloads"
-    regex(/href=.*?pgpool-II[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.pgpool.netmediawikiindex.phpDownloads"
+    regex(href=.*?pgpool-II[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -28,40 +28,40 @@ class PgpoolIi < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--sysconfdir=#{etc}",
                           "--with-memcached=#{Formula["libmemcached"].opt_include}"
     system "make", "install"
 
     # Install conf file with low enough memory limits for default `memqcache_method = 'shmem'`
-    inreplace etc/"pgpool.conf.sample" do |s|
-      s.gsub! "#pid_file_name = '/var/run/pgpool/pgpool.pid'", "pid_file_name = '#{var}/pgpool-ii/pgpool.pid'"
-      s.gsub! "#logdir = '/tmp'", "logdir = '#{var}/log'"
+    inreplace etc"pgpool.conf.sample" do |s|
+      s.gsub! "#pid_file_name = 'varrunpgpoolpgpool.pid'", "pid_file_name = '#{var}pgpool-iipgpool.pid'"
+      s.gsub! "#logdir = 'tmp'", "logdir = '#{var}log'"
       s.gsub! "#memqcache_total_size = 64MB", "memqcache_total_size = 1MB"
       s.gsub! "#memqcache_max_num_cache = 1000000", "memqcache_max_num_cache = 1000"
     end
-    etc.install etc/"pgpool.conf.sample" => "pgpool.conf"
+    etc.install etc"pgpool.conf.sample" => "pgpool.conf"
   end
 
   def post_install
-    (var/"log").mkpath
-    (var/"pgpool-ii").mkpath
+    (var"log").mkpath
+    (var"pgpool-ii").mkpath
   end
 
   service do
-    run [opt_bin/"pgpool", "-nf", etc/"pgpool.conf"]
+    run [opt_bin"pgpool", "-nf", etc"pgpool.conf"]
     keep_alive true
-    log_path var/"log/pgpool-ii.log"
-    error_log_path var/"log/pgpool-ii.log"
+    log_path var"logpgpool-ii.log"
+    error_log_path var"logpgpool-ii.log"
   end
 
   test do
-    cp etc/"pgpool.conf", testpath/"pgpool.conf"
-    system bin/"pg_md5", "--md5auth", "pool_passwd", "--config-file", "pgpool.conf"
+    cp etc"pgpool.conf", testpath"pgpool.conf"
+    system bin"pg_md5", "--md5auth", "pool_passwd", "--config-file", "pgpool.conf"
   end
 end

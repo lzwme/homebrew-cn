@@ -2,10 +2,10 @@ cask "ksnip" do
   version "1.10.1"
   sha256 "a029364951e0377f3e625a7af70313d1266145a62185e8e127286b5564b11e08"
 
-  url "https://ghproxy.com/https://github.com/ksnip/ksnip/releases/download/v#{version}/ksnip-#{version}.dmg"
+  url "https:github.comksnipksnipreleasesdownloadv#{version}ksnip-#{version}.dmg"
   name "ksnip"
   desc "Screenshot and annotation tool"
-  homepage "https://github.com/ksnip/ksnip"
+  homepage "https:github.comksnipksnip"
 
   app "ksnip.app"
 end

@@ -2,10 +2,10 @@ cask "font-princess-sofia" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/princesssofia/PrincessSofia-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflprincesssofiaPrincessSofia-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Princess Sofia"
-  homepage "https://fonts.google.com/specimen/Princess+Sofia"
+  homepage "https:fonts.google.comspecimenPrincess+Sofia"
 
   font "PrincessSofia-Regular.ttf"
 

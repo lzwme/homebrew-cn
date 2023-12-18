@@ -2,10 +2,10 @@ cask "font-abel" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/abel/Abel-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflabelAbel-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Abel"
-  homepage "https://fonts.google.com/specimen/Abel"
+  homepage "https:fonts.google.comspecimenAbel"
 
   font "Abel-Regular.ttf"
 

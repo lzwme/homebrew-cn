@@ -1,7 +1,7 @@
 class PgCron < Formula
   desc "Run periodic jobs in PostgreSQL"
-  homepage "https://github.com/citusdata/pg_cron"
-  url "https://ghproxy.com/https://github.com/citusdata/pg_cron/archive/refs/tags/v1.6.2.tar.gz"
+  homepage "https:github.comcitusdatapg_cron"
+  url "https:github.comcitusdatapg_cronarchiverefstagsv1.6.2.tar.gz"
   sha256 "9f4eb3193733c6fa93a6591406659aac54b82c24a5d91ffaf4ec243f717d94a0"
   license "PostgreSQL"
 
@@ -15,7 +15,7 @@ class PgCron < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0718344de02cc3e52d659bc55464f804cafab8a07fd2cccc0a62f0a9fd88c51"
   end
 
-  # upstream issue for running with pg@15, https://github.com/citusdata/pg_cron/issues/237
+  # upstream issue for running with pg@15, https:github.comcitusdatapg_cronissues237
   depends_on "postgresql@14"
 
   def postgresql
@@ -23,30 +23,30 @@ class PgCron < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
 
     system "make"
-    (lib/postgresql.name).install "pg_cron.so"
-    (share/postgresql.name/"extension").install Dir["pg_cron--*.sql"]
-    (share/postgresql.name/"extension").install "pg_cron.control"
+    (libpostgresql.name).install "pg_cron.so"
+    (sharepostgresql.name"extension").install Dir["pg_cron--*.sql"]
+    (sharepostgresql.name"extension").install "pg_cron.control"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'pg_cron'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"pg_cron\";", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop", "-D", testpath"test"
     end
   end
 end

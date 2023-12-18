@@ -1,10 +1,10 @@
 class Ifacemaker < Formula
   desc "Generate interfaces from structure methods"
-  homepage "https://github.com/vburenin/ifacemaker"
-  url "https://ghproxy.com/https://github.com/vburenin/ifacemaker/archive/refs/tags/v1.2.1.tar.gz"
+  homepage "https:github.comvbureninifacemaker"
+  url "https:github.comvbureninifacemakerarchiverefstagsv1.2.1.tar.gz"
   sha256 "3bbe9d742995ca5804da15f0f01ed85ff5d68b6b3e22b04c1491492eb703aa54"
   license "Apache-2.0"
-  head "https://github.com/vburenin/ifacemaker.git", branch: "master"
+  head "https:github.comvbureninifacemaker.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8175629d716ad8042861ec71047622534d02542372c48b863fbdfbbfad570ec"
@@ -25,20 +25,20 @@ class Ifacemaker < Formula
   end
 
   test do
-    (testpath/"human.go").write <<~EOS
+    (testpath"human.go").write <<~EOS
       package main
 
       type Human struct {
         name string
       }
 
-      // Returns the name of our Human.
+       Returns the name of our Human.
       func (h *Human) GetName() string {
         return h.name
       }
     EOS
 
-    output = shell_output("#{bin}/ifacemaker -f human.go -s Human -i HumanIface -p humantest " \
+    output = shell_output("#{bin}ifacemaker -f human.go -s Human -i HumanIface -p humantest " \
                           "-y \"HumanIface makes human interaction easy\"" \
                           "-c \"DONT EDIT: Auto generated\"")
     assert_match "type HumanIface interface", output

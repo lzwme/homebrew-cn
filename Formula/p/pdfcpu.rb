@@ -1,7 +1,7 @@
 class Pdfcpu < Formula
   desc "PDF processor written in Go"
-  homepage "https://pdfcpu.io"
-  url "https://ghproxy.com/https://github.com/pdfcpu/pdfcpu/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:pdfcpu.io"
+  url "https:github.compdfcpupdfcpuarchiverefstagsv0.6.0.tar.gz"
   sha256 "dc51a082c40d00533c326194bc1a9d85166920ec065656d08980b521e9b9f43b"
   license "Apache-2.0"
 
@@ -18,17 +18,17 @@ class Pdfcpu < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-X github.com/pdfcpu/pdfcpu/pkg/pdfcpu.VersionStr=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/pdfcpu"
+    ldflags = "-X github.compdfcpupdfcpupkgpdfcpu.VersionStr=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdpdfcpu"
   end
 
   test do
-    info_output = shell_output("#{bin}/pdfcpu info #{test_fixtures("test.pdf")}")
+    info_output = shell_output("#{bin}pdfcpu info #{test_fixtures("test.pdf")}")
     assert_match "PDF version: 1.6", info_output
     assert_match "Page count: 1", info_output
     assert_match "Page size: 500.00 x 800.00 points", info_output
     assert_match "Encrypted: No", info_output
     assert_match "Permissions: Full access", info_output
-    assert_match "validation ok", shell_output("#{bin}/pdfcpu validate #{test_fixtures("test.pdf")}")
+    assert_match "validation ok", shell_output("#{bin}pdfcpu validate #{test_fixtures("test.pdf")}")
   end
 end

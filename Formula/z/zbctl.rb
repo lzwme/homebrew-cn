@@ -1,11 +1,11 @@
 class Zbctl < Formula
   desc "Zeebe CLI client"
-  homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
-  url "https://github.com/camunda/zeebe.git",
+  homepage "https:docs.camunda.iodocsapis-clientscli-clientindex"
+  url "https:github.comcamundazeebe.git",
       tag:      "8.3.4",
       revision: "1dd666fb236c086131c264a10c522fe946631784"
   license "Apache-2.0"
-  head "https://github.com/camunda/zeebe.git", branch: "develop"
+  head "https:github.comcamundazeebe.git", branch: "develop"
 
   # Upstream creates stable version tags (e.g., `v1.2.3`) before a release but
   # the version isn't considered to be released until a corresponding release
@@ -29,8 +29,8 @@ class Zbctl < Formula
 
   def install
     commit = Utils.git_short_head
-    chdir "clients/go/cmd/zbctl" do
-      project = "github.com/camunda/zeebe/clients/go/v8/cmd/zbctl/internal/commands"
+    chdir "clientsgocmdzbctl" do
+      project = "github.comcamundazeebeclientsgov8cmdzbctlinternalcommands"
       ldflags = %W[
         -w
         -X #{project}.Version=#{version}
@@ -38,7 +38,7 @@ class Zbctl < Formula
       ]
       system "go", "build", "-tags", "netgo", *std_go_args(ldflags: ldflags)
 
-      generate_completions_from_executable(bin/"zbctl", "completion")
+      generate_completions_from_executable(bin"zbctl", "completion")
     end
   end
 
@@ -48,11 +48,11 @@ class Zbctl < Formula
       "Error: rpc error: code = " \
       "Unavailable desc = connection error: " \
       "desc = \"transport: Error while dialing: dial tcp 127.0.0.1:26500: connect: connection refused\""
-    output = shell_output("#{bin}/zbctl status 2>&1", 1)
+    output = shell_output("#{bin}zbctl status 2>&1", 1)
     assert_match status_error_message, output
     # Check version
     commit = stable.specs[:revision][0..7]
     expected_version = "zbctl #{version} (commit: #{commit})"
-    assert_match expected_version, shell_output("#{bin}/zbctl version")
+    assert_match expected_version, shell_output("#{bin}zbctl version")
   end
 end

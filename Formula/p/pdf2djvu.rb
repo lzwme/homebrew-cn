@@ -1,11 +1,11 @@
 class Pdf2djvu < Formula
   desc "Create DjVu files from PDF files"
-  homepage "https://jwilk.net/software/pdf2djvu"
-  url "https://ghproxy.com/https://github.com/jwilk/pdf2djvu/releases/download/0.9.19/pdf2djvu-0.9.19.tar.xz"
+  homepage "https:jwilk.netsoftwarepdf2djvu"
+  url "https:github.comjwilkpdf2djvureleasesdownload0.9.19pdf2djvu-0.9.19.tar.xz"
   sha256 "eb45a480131594079f7fe84df30e4a5d0686f7a8049dc7084eebe22acc37aa9a"
   license "GPL-2.0-only"
   revision 3
-  head "https://github.com/jwilk/pdf2djvu.git", branch: "master"
+  head "https:github.comjwilkpdf2djvu.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "16302ca2297a15cb537b4b2820f232dc067bb1db2afe32fb8b9e7acd2dbc72f1"
@@ -32,14 +32,14 @@ class Pdf2djvu < Formula
   def install
     ENV.append "CXXFLAGS", "-std=gnu++17" # poppler uses std::optional
     ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR=1" if ENV.compiler == :clang
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "djvulibre_bindir=#{Formula["djvulibre"].opt_bin}"
     system "make", "install"
   end
 
   test do
     cp test_fixtures("test.pdf"), "test.pdf"
-    system "#{bin}/pdf2djvu", "-o", "test.djvu", "test.pdf"
-    assert_predicate testpath/"test.djvu", :exist?
+    system "#{bin}pdf2djvu", "-o", "test.djvu", "test.pdf"
+    assert_predicate testpath"test.djvu", :exist?
   end
 end

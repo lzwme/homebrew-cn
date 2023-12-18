@@ -1,10 +1,10 @@
 class Opensc < Formula
   desc "Tools and libraries for smart cards"
-  homepage "https://github.com/OpenSC/OpenSC/wiki"
-  url "https://ghproxy.com/https://github.com/OpenSC/OpenSC/releases/download/0.24.0/opensc-0.24.0.tar.gz"
+  homepage "https:github.comOpenSCOpenSCwiki"
+  url "https:github.comOpenSCOpenSCreleasesdownload0.24.0opensc-0.24.0.tar.gz"
   sha256 "24d03c69287291da32a30c4c38a304ad827f56cb85d83619e1f5403ab6480ef8"
   license "LGPL-2.1-or-later"
-  head "https://github.com/OpenSC/OpenSC.git", branch: "master"
+  head "https:github.comOpenSCOpenSC.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,11 +37,11 @@ class Opensc < Formula
       --enable-openssl
       --enable-pcsc
       --enable-sm
-      --with-xsl-stylesheetsdir=#{Formula["docbook-xsl"].opt_prefix}/docbook-xsl
+      --with-xsl-stylesheetsdir=#{Formula["docbook-xsl"].opt_prefix}docbook-xsl
     ]
 
-    system "./bootstrap"
-    system "./configure", *args
+    system ".bootstrap"
+    system ".configure", *args
     system "make", "install"
   end
 
@@ -54,6 +54,6 @@ class Opensc < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/opensc-tool -i")
+    assert_match version.to_s, shell_output("#{bin}opensc-tool -i")
   end
 end

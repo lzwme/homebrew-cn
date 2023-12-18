@@ -1,7 +1,7 @@
 class Velero < Formula
   desc "Disaster recovery for Kubernetes resources and persistent volumes"
-  homepage "https://velero.io/"
-  url "https://ghproxy.com/https://github.com/vmware-tanzu/velero/archive/refs/tags/v1.12.2.tar.gz"
+  homepage "https:velero.io"
+  url "https:github.comvmware-tanzuveleroarchiverefstagsv1.12.2.tar.gz"
   sha256 "c79524f9f0c7fc4f6b70a0d001e6f31b9b5227577e65edeb2a1e581df262938c"
   license "Apache-2.0"
 
@@ -20,18 +20,18 @@ class Velero < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/vmware-tanzu/velero/pkg/buildinfo.Version=v#{version}
+      -X github.comvmware-tanzuveleropkgbuildinfo.Version=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "-installsuffix", "static", "./cmd/velero"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-installsuffix", "static", ".cmdvelero"
 
-    generate_completions_from_executable(bin/"velero", "completion")
+    generate_completions_from_executable(bin"velero", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/velero 2>&1")
+    output = shell_output("#{bin}velero 2>&1")
     assert_match "Velero is a tool for managing disaster recovery", output
-    assert_match "Version: v#{version}", shell_output("#{bin}/velero version --client-only 2>&1")
-    system bin/"velero", "client", "config", "set", "TEST=value"
-    assert_match "value", shell_output("#{bin}/velero client config get 2>&1")
+    assert_match "Version: v#{version}", shell_output("#{bin}velero version --client-only 2>&1")
+    system bin"velero", "client", "config", "set", "TEST=value"
+    assert_match "value", shell_output("#{bin}velero client config get 2>&1")
   end
 end

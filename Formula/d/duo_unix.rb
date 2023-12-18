@@ -1,7 +1,7 @@
 class DuoUnix < Formula
   desc "Two-factor authentication for SSH"
-  homepage "https://www.duosecurity.com/docs/duounix"
-  url "https://ghproxy.com/https://github.com/duosecurity/duo_unix/archive/refs/tags/duo_unix-2.0.2.tar.gz"
+  homepage "https:www.duosecurity.comdocsduounix"
+  url "https:github.comduosecurityduo_unixarchiverefstagsduo_unix-2.0.2.tar.gz"
   sha256 "0a2ccaa8e2fef3cca00cfdf9e1310df4ec1253aa7720e37bc0a824a5c2f1433d"
   license "GPL-2.0-or-later"
 
@@ -27,19 +27,19 @@ class DuoUnix < Formula
   end
 
   def install
-    system "./bootstrap"
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
-                          "--includedir=#{include}/duo",
+                          "--includedir=#{include}duo",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
-                          "--with-pam=#{lib}/pam/"
+                          "--with-pam=#{lib}pam"
     system "make", "install"
   end
 
   test do
-    system "#{sbin}/login_duo", "-d", "-c", "#{etc}/login_duo.conf",
+    system "#{sbin}login_duo", "-d", "-c", "#{etc}login_duo.conf",
                                 "-f", "foobar", "echo", "SUCCESS"
   end
 end

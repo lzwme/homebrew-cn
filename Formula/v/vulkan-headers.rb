@@ -1,7 +1,7 @@
 class VulkanHeaders < Formula
   desc "Vulkan Header files and API registry"
-  homepage "https://github.com/KhronosGroup/Vulkan-Headers"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Headers/archive/refs/tags/v1.3.268.tar.gz"
+  homepage "https:github.comKhronosGroupVulkan-Headers"
+  url "https:github.comKhronosGroupVulkan-Headersarchiverefstagsv1.3.268.tar.gz"
   sha256 "d5c59d5fc3ab264006dfea1eb1a11f609ea5dfa8319a5aaca061007828012a78"
   license "Apache-2.0"
 
@@ -17,9 +17,9 @@ class VulkanHeaders < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include <vulkan/vulkan_core.h>
+      #include <vulkanvulkan_core.h>
 
       int main() {
         printf("vulkan version %d", VK_VERSION_1_0);
@@ -27,6 +27,6 @@ class VulkanHeaders < Formula
       }
     EOS
     system ENV.cc, "test.c", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class OsctrlCli < Formula
   desc "Fast and efficient osquery management"
-  homepage "https://osctrl.net"
-  url "https://ghproxy.com/https://github.com/jmpsec/osctrl/archive/refs/tags/v0.3.4.tar.gz"
+  homepage "https:osctrl.net"
+  url "https:github.comjmpsecosctrlarchiverefstagsv0.3.4.tar.gz"
   sha256 "612c27fffab5f9e1742dd6abc5879dcc11b89966542dde7ee9f88a31249352cb"
   license "MIT"
 
@@ -18,13 +18,13 @@ class OsctrlCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cli"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/osctrl-cli --version")
+    assert_match version.to_s, shell_output("#{bin}osctrl-cli --version")
 
-    output = shell_output("#{bin}/osctrl-cli check-db 2>&1", 1)
+    output = shell_output("#{bin}osctrl-cli check-db 2>&1", 1)
     assert_match "failed to initialize database", output
   end
 end

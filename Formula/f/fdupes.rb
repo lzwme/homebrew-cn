@@ -1,7 +1,7 @@
 class Fdupes < Formula
   desc "Identify or delete duplicate files"
-  homepage "https://github.com/adrianlopezroche/fdupes"
-  url "https://ghproxy.com/https://github.com/adrianlopezroche/fdupes/releases/download/v2.2.1/fdupes-2.2.1.tar.gz"
+  homepage "https:github.comadrianlopezrochefdupes"
+  url "https:github.comadrianlopezrochefdupesreleasesdownloadv2.2.1fdupes-2.2.1.tar.gz"
   sha256 "846bb79ca3f0157856aa93ed50b49217feb68e1b35226193b6bc578be0c5698d"
   license "MIT"
   version_scheme 1
@@ -24,7 +24,7 @@ class Fdupes < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
@@ -33,7 +33,7 @@ class Fdupes < Formula
     touch "a"
     touch "b"
 
-    dupes = shell_output("#{bin}/fdupes .").strip.split("\n").sort
-    assert_equal ["./a", "./b"], dupes
+    dupes = shell_output("#{bin}fdupes .").strip.split("\n").sort
+    assert_equal [".a", ".b"], dupes
   end
 end

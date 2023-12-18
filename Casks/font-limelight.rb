@@ -2,10 +2,10 @@ cask "font-limelight" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/limelight/Limelight-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofllimelightLimelight-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Limelight"
-  homepage "https://fonts.google.com/specimen/Limelight"
+  homepage "https:fonts.google.comspecimenLimelight"
 
   font "Limelight-Regular.ttf"
 

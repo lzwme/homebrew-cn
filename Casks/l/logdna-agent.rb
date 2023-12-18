@@ -2,11 +2,11 @@ cask "logdna-agent" do
   version "2.2.2"
   sha256 "033077ff2acd4e3f7eacab5c94b07db459d50d788be62a8a091ffa9cb759e41d"
 
-  url "https://ghproxy.com/https://github.com/logdna/logdna-agent/releases/download/#{version}/logdna-agent-#{version}.pkg",
-      verified: "github.com/logdna/logdna-agent/"
+  url "https:github.comlogdnalogdna-agentreleasesdownload#{version}logdna-agent-#{version}.pkg",
+      verified: "github.comlogdnalogdna-agent"
   name "LogDNA Agent"
   desc "Agent streams from log files to your LogDNA account"
-  homepage "https://logdna.com/"
+  homepage "https:logdna.com"
 
   pkg "logdna-agent-#{version}.pkg"
 
@@ -21,7 +21,7 @@ cask "logdna-agent" do
         sudo logdna-agent -k <ingestion-key>
 
       To always run logdna-agent in the background, use the command:
-        sudo launchctl load -w /Library/LaunchDaemons/com.logdna.logdna-agent.plist
+        sudo launchctl load -w LibraryLaunchDaemonscom.logdna.logdna-agent.plist
     EOS
   end
 end

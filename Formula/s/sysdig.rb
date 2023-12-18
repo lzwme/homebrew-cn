@@ -1,16 +1,16 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
-  homepage "https://sysdig.com/"
+  homepage "https:sysdig.com"
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/draios/sysdig/archive/refs/tags/0.34.1.tar.gz"
+    url "https:github.comdraiossysdigarchiverefstags0.34.1.tar.gz"
     sha256 "840a9099b66984c6ba71bb750b9440fb51c508d06e97e20d152c4f9a5e50d757"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
-    # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
+    # https:github.comdraiossysdigblob#{version}cmakemodulesfalcosecurity-libs.cmake
     resource "falcosecurity-libs" do
-      url "https://ghproxy.com/https://github.com/falcosecurity/libs/archive/refs/tags/0.13.1.tar.gz"
+      url "https:github.comfalcosecuritylibsarchiverefstags0.13.1.tar.gz"
       sha256 "2be42a27be3ffe6bd7e53eaa5d8358cab05a0dca821819c6e9059e51b9786219"
     end
   end
@@ -32,10 +32,10 @@ class Sysdig < Formula
   end
 
   head do
-    url "https://github.com/draios/sysdig.git", branch: "dev"
+    url "https:github.comdraiossysdig.git", branch: "dev"
 
     resource "falcosecurity-libs" do
-      url "https://github.com/falcosecurity/libs.git", branch: "master"
+      url "https:github.comfalcosecuritylibs.git", branch: "master"
     end
   end
 
@@ -66,17 +66,17 @@ class Sysdig < Formula
 
   fails_with gcc: "5" # C++17
 
-  # More info on https://gist.github.com/juniorz/9986999
+  # More info on https:gist.github.comjuniorz9986999
   resource "homebrew-sample_file" do
-    url "https://ghproxy.com/https://gist.githubusercontent.com/juniorz/9986999/raw/a3556d7e93fa890a157a33f4233efaf8f5e01a6f/sample.scap"
+    url "https:gist.githubusercontent.comjuniorz9986999rawa3556d7e93fa890a157a33f4233efaf8f5e01a6fsample.scap"
     sha256 "efe287e651a3deea5e87418d39e0fe1e9dc55c6886af4e952468cd64182ee7ef"
   end
 
   def install
-    (buildpath/"falcosecurity-libs").install resource("falcosecurity-libs")
+    (buildpath"falcosecurity-libs").install resource("falcosecurity-libs")
 
     # fix `libzstd.so.1: error adding symbols: DSO missing from command line` error
-    # https://stackoverflow.com/a/55086637
+    # https:stackoverflow.coma55086637
     ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
 
     # Keep C++ standard in sync with `abseil.rb`.
@@ -87,7 +87,7 @@ class Sysdig < Formula
       -DCREATE_TEST_TARGETS=OFF
       -DBUILD_LIBSCAP_EXAMPLES=OFF
       -DDIR_ETC=#{etc}
-      -DFALCOSECURITY_LIBS_SOURCE_DIR=#{buildpath}/falcosecurity-libs
+      -DFALCOSECURITY_LIBS_SOURCE_DIR=#{buildpath}falcosecurity-libs
     ]
 
     # `USE_BUNDLED_*=OFF` flags are implied by `USE_BUNDLED_DEPS=OFF`, but let's be explicit.
@@ -101,11 +101,11 @@ class Sysdig < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare/"demos").install resource("homebrew-sample_file").files("sample.scap")
+    (pkgshare"demos").install resource("homebrew-sample_file").files("sample.scap")
   end
 
   test do
-    output = shell_output("#{bin}/sysdig -r #{pkgshare}/demos/sample.scap")
-    assert_match "/tmp/sysdig/sample", output
+    output = shell_output("#{bin}sysdig -r #{pkgshare}demossample.scap")
+    assert_match "tmpsysdigsample", output
   end
 end

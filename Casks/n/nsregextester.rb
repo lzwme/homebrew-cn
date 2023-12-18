@@ -2,10 +2,10 @@ cask "nsregextester" do
   version "1.0"
   sha256 :no_check
 
-  url "https://ghproxy.com/https://raw.githubusercontent.com/aaronvegh/nsregextester/master/NSRegexTester.zip",
-      verified: "raw.githubusercontent.com/aaronvegh/nsregextester/master/"
+  url "https:raw.githubusercontent.comaaronveghnsregextestermasterNSRegexTester.zip",
+      verified: "raw.githubusercontent.comaaronveghnsregextestermaster"
   name "NSRegexTester"
-  homepage "https://github.com/aaronvegh/nsregextester"
+  homepage "https:github.comaaronveghnsregextester"
 
   livecheck do
     url :url

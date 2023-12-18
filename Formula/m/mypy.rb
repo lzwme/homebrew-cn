@@ -2,11 +2,11 @@ class Mypy < Formula
   include Language::Python::Virtualenv
 
   desc "Experimental optional static type checker for Python"
-  homepage "https://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/ae/30/05a7c016431b3fdbaf0bcf663aee7c5e4b3d2293cd4e0568140cecae4967/mypy-1.7.1.tar.gz"
+  homepage "https:www.mypy-lang.org"
+  url "https:files.pythonhosted.orgpackagesae3005a7c016431b3fdbaf0bcf663aee7c5e4b3d2293cd4e0568140cecae4967mypy-1.7.1.tar.gz"
   sha256 "fcb6d9afb1b6208b4c712af0dafdc650f518836065df0d4fb1d800f5d6773db2"
   license "MIT"
-  head "https://github.com/python/mypy.git", branch: "master"
+  head "https:github.compythonmypy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "133de6c80c128265de7aa97735fa92e8ce0a8fb7111ce2fdc2c619731219c650"
@@ -21,13 +21,13 @@ class Mypy < Formula
   depends_on "python@3.12"
 
   resource "mypy-extensions" do
-    url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages98a41ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3fmypy_extensions-1.0.0.tar.gz"
     sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
   end
 
   # The `python-typing-extensions` formula depends on `mypy`, so we use a resource here instead
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages1f7a8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543etyping_extensions-4.8.0.tar.gz"
     sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
   end
 
@@ -38,15 +38,15 @@ class Mypy < Formula
   end
 
   test do
-    (testpath/"broken.py").write <<~EOS
+    (testpath"broken.py").write <<~EOS
       def p() -> None:
         print('hello')
       a = p()
     EOS
-    output = pipe_output("#{bin}/mypy broken.py 2>&1")
+    output = pipe_output("#{bin}mypy broken.py 2>&1")
     assert_match '"p" does not return a value', output
 
-    output = pipe_output("#{bin}/mypy --version 2>&1")
+    output = pipe_output("#{bin}mypy --version 2>&1")
     assert_match "(compiled: yes)", output
   end
 end

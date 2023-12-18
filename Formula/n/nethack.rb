@@ -2,27 +2,27 @@
 
 class Nethack < Formula
   desc "Single-player roguelike video game"
-  homepage "https://www.nethack.org/"
+  homepage "https:www.nethack.org"
   license "NGPL"
-  head "https://github.com/NetHack/NetHack.git", branch: "NetHack-3.7"
+  head "https:github.comNetHackNetHack.git", branch: "NetHack-3.7"
 
   stable do
-    url "https://www.nethack.org/download/3.6.7/nethack-367-src.tgz"
+    url "https:www.nethack.orgdownload3.6.7nethack-367-src.tgz"
     version "3.6.7"
     sha256 "98cf67df6debf9668a61745aa84c09bcab362e5d33f5b944ec5155d44d2aacb2"
 
-    # add macos patch, upstream PR ref, https://github.com/NetHack/NetHack/pull/988
+    # add macos patch, upstream PR ref, https:github.comNetHackNetHackpull988
     patch do
-      url "https://github.com/NetHack/NetHack/commit/79cf1e902483c070b209b55059159da5f2120b97.patch?full_index=1"
+      url "https:github.comNetHackNetHackcommit79cf1e902483c070b209b55059159da5f2120b97.patch?full_index=1"
       sha256 "5daf984512d9c512818e0376cf2b57a5cd9eefaa626ea286bfd70d899995b5de"
     end
   end
 
-  # The /download/ page loads the following page in an iframe and this contains
+  # The download page loads the following page in an iframe and this contains
   # links to version directories which contain the archive files.
   livecheck do
-    url "https://www.nethack.org/common/dnldindex.html"
-    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https:www.nethack.orgcommondnldindex.html"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -44,11 +44,11 @@ class Nethack < Formula
   def install
     # Build everything in-order; no multi builds.
     ENV.deparallelize
-    # Fixes https://github.com/NetHack/NetHack/issues/274
-    # see https://github.com/Homebrew/brew/issues/14763.
+    # Fixes https:github.comNetHackNetHackissues274
+    # see https:github.comHomebrewbrewissues14763.
     ENV.O0
 
-    cd "sys/unix" do
+    cd "sysunix" do
       hintfile = if OS.mac? && MacOS.version >= :mojave
         build.head? ? "macOS.370" : "macosx10.14"
       else
@@ -56,48 +56,48 @@ class Nethack < Formula
       end
 
       # Enable wizard mode for all users
-      inreplace "sysconf", /^WIZARDS=.*/, "WIZARDS=*"
+      inreplace "sysconf", ^WIZARDS=.*, "WIZARDS=*"
 
       # Enable curses interface
       # Setting VAR_PLAYGROUND preserves saves across upgrades
-      inreplace "hints/#{hintfile}" do |s|
+      inreplace "hints#{hintfile}" do |s|
         s.change_make_var! "HACKDIR", libexec
         s.change_make_var! "CHOWN", "true"
         s.change_make_var! "CHGRP", "true"
         if build.stable?
           s.gsub! "#WANT_WIN_CURSES=1",
-                  "WANT_WIN_CURSES=1\nCFLAGS+=-DVAR_PLAYGROUND='\"#{HOMEBREW_PREFIX}/share/nethack\"'"
+                  "WANT_WIN_CURSES=1\nCFLAGS+=-DVAR_PLAYGROUND='\"#{HOMEBREW_PREFIX}sharenethack\"'"
         end
       end
 
-      system "sh", "setup.sh", "hints/#{hintfile}"
+      system "sh", "setup.sh", "hints#{hintfile}"
     end
 
     system "make", "fetch-lua" if build.head?
     system "make", "install"
-    bin.install_symlink libexec/"nethack"
-    man6.install "doc/nethack.6"
+    bin.install_symlink libexec"nethack"
+    man6.install "docnethack.6"
   end
 
   def post_install
     # These need to exist (even if empty) otherwise nethack won't start
-    savedir = HOMEBREW_PREFIX/"share/nethack"
+    savedir = HOMEBREW_PREFIX"sharenethack"
     mkdir_p savedir
     cd savedir do
       %w[xlogfile logfile perm record].each do |f|
         touch f
       end
       mkdir_p "save"
-      touch "save/.keepme" # preserve on `brew cleanup`
+      touch "save.keepme" # preserve on `brew cleanup`
     end
     # Set group-writeable for multiuser installs
     chmod "g+w", savedir
-    chmod "g+w", savedir/"save"
+    chmod "g+w", savedir"save"
   end
 
   test do
-    system "#{bin}/nethack", "-s"
-    assert_match (HOMEBREW_PREFIX/"share/nethack").to_s,
-                 shell_output("#{bin}/nethack --showpaths")
+    system "#{bin}nethack", "-s"
+    assert_match (HOMEBREW_PREFIX"sharenethack").to_s,
+                 shell_output("#{bin}nethack --showpaths")
   end
 end

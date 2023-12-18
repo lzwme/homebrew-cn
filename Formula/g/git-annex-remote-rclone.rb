@@ -1,7 +1,7 @@
 class GitAnnexRemoteRclone < Formula
   desc "Use rclone supported cloud storage with git-annex"
-  homepage "https://github.com/DanielDent/git-annex-remote-rclone"
-  url "https://ghproxy.com/https://github.com/DanielDent/git-annex-remote-rclone/archive/refs/tags/v0.8.tar.gz"
+  homepage "https:github.comDanielDentgit-annex-remote-rclone"
+  url "https:github.comDanielDentgit-annex-remote-rclonearchiverefstagsv0.8.tar.gz"
   sha256 "6da12f46d46613cc5a539057052be7d8aa5259bd973ddff2d6ee460d34cd096c"
   license "GPL-3.0"
 
@@ -23,14 +23,14 @@ class GitAnnexRemoteRclone < Formula
     # make sure git can find git-annex
     ENV.prepend_path "PATH", bin
     # We don't want this here or it gets "caught" by git-annex.
-    rm_r "Library/Python/2.7/lib/python/site-packages/homebrew.pth"
+    rm_r "LibraryPython2.7libpythonsite-packageshomebrew.pth"
 
     system "git", "init"
     system "git", "annex", "init"
 
-    (testpath/"Hello.txt").write "Hello!"
+    (testpath"Hello.txt").write "Hello!"
     assert !File.symlink?("Hello.txt")
-    assert_match(/^add Hello.txt.*ok.*\(recording state in git\.\.\.\)/m, shell_output("git annex add ."))
+    assert_match(^add Hello.txt.*ok.*\(recording state in git\.\.\.\)m, shell_output("git annex add ."))
     system "git", "commit", "-a", "-m", "Initial Commit"
     assert File.symlink?("Hello.txt")
 

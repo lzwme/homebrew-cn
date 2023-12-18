@@ -1,12 +1,12 @@
-require "language/go"
+require "languagego"
 
 class Dockward < Formula
   desc "Port forwarding tool for Docker containers"
-  homepage "https://github.com/abiosoft/dockward"
-  url "https://ghproxy.com/https://github.com/abiosoft/dockward/archive/refs/tags/0.0.4.tar.gz"
+  homepage "https:github.comabiosoftdockward"
+  url "https:github.comabiosoftdockwardarchiverefstags0.0.4.tar.gz"
   sha256 "b96244386ae58aefb16177837d7d6adf3a9e6d93b75eea3308a45eb8eb9f4116"
   license "Apache-2.0"
-  head "https://github.com/abiosoft/dockward.git", branch: "master"
+  head "https:github.comabiosoftdockward.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -26,38 +26,38 @@ class Dockward < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fab443a8e40b159ebd527d32138314a928589a52dd5fbfd69c52406ad3162ad9"
   end
 
-  # https://github.com/abiosoft/dockward/issues/3
+  # https:github.comabiosoftdockwardissues3
   deprecate! date: "2023-06-27", because: :unmaintained
 
   depends_on "go" => :build
 
-  go_resource "github.com/Sirupsen/logrus" do
-    url "https://github.com/Sirupsen/logrus.git",
+  go_resource "github.comSirupsenlogrus" do
+    url "https:github.comSirupsenlogrus.git",
         revision: "61e43dc76f7ee59a82bdf3d71033dc12bea4c77d"
   end
 
-  go_resource "github.com/docker/distribution" do
-    url "https://github.com/docker/distribution.git",
+  go_resource "github.comdockerdistribution" do
+    url "https:github.comdockerdistribution.git",
         revision: "7a0972304e201e2a5336a69d00e112c27823f554"
   end
 
-  go_resource "github.com/docker/engine-api" do
-    url "https://github.com/docker/engine-api.git",
+  go_resource "github.comdockerengine-api" do
+    url "https:github.comdockerengine-api.git",
         revision: "4290f40c056686fcaa5c9caf02eac1dde9315adf"
   end
 
-  go_resource "github.com/docker/go-connections" do
-    url "https://github.com/docker/go-connections.git",
+  go_resource "github.comdockergo-connections" do
+    url "https:github.comdockergo-connections.git",
         revision: "eb315e36415380e7c2fdee175262560ff42359da"
   end
 
-  go_resource "github.com/docker/go-units" do
-    url "https://github.com/docker/go-units.git",
+  go_resource "github.comdockergo-units" do
+    url "https:github.comdockergo-units.git",
         revision: "e30f1e79f3cd72542f2026ceec18d3bd67ab859c"
   end
 
-  go_resource "golang.org/x/net" do
-    url "https://go.googlesource.com/net.git",
+  go_resource "golang.orgxnet" do
+    url "https:go.googlesource.comnet.git",
         revision: "f2499483f923065a842d38eb4c7f1927e6fc6e6d"
   end
 
@@ -65,14 +65,14 @@ class Dockward < Formula
     ENV["GOBIN"] = bin
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/abiosoft").mkpath
-    ln_s buildpath, buildpath/"src/github.com/abiosoft/dockward"
-    Language::Go.stage_deps resources, buildpath/"src"
-    system "go", "install", "github.com/abiosoft/dockward"
+    (buildpath"srcgithub.comabiosoft").mkpath
+    ln_s buildpath, buildpath"srcgithub.comabiosoftdockward"
+    Language::Go.stage_deps resources, buildpath"src"
+    system "go", "install", "github.comabiosoftdockward"
   end
 
   test do
-    output = shell_output(bin/"dockward -v")
+    output = shell_output(bin"dockward -v")
     assert_match "dockward version #{version}", output
   end
 end

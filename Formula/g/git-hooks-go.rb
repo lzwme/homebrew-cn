@@ -1,10 +1,10 @@
 class GitHooksGo < Formula
   desc "Git hooks manager"
-  homepage "https://git-hooks.github.io/git-hooks"
-  url "https://ghproxy.com/https://github.com/git-hooks/git-hooks/archive/refs/tags/v1.3.1.tar.gz"
+  homepage "https:git-hooks.github.iogit-hooks"
+  url "https:github.comgit-hooksgit-hooksarchiverefstagsv1.3.1.tar.gz"
   sha256 "c37cedf52b3ea267b7d3de67dde31adad4d2a22a7780950d6ca2da64a8b0341b"
   license "MIT"
-  head "https://github.com/git-hooks/git-hooks.git", branch: "master"
+  head "https:github.comgit-hooksgit-hooks.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f8ba5517228a5d259c8ef7df2651c15f19a6e4b03308e536bbfdf41ed87cdb4"
@@ -23,7 +23,7 @@ class GitHooksGo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"git-hooks")
+    system "go", "build", *std_go_args(output: bin"git-hooks")
   end
 
   test do

@@ -1,7 +1,7 @@
 class Bowtie2 < Formula
   desc "Fast and sensitive gapped read aligner"
-  homepage "https://bowtie-bio.sourceforge.net/bowtie2/index.shtml"
-  url "https://ghproxy.com/https://github.com/BenLangmead/bowtie2/archive/refs/tags/v2.5.2.tar.gz"
+  homepage "https:bowtie-bio.sourceforge.netbowtie2index.shtml"
+  url "https:github.comBenLangmeadbowtie2archiverefstagsv2.5.2.tar.gz"
   sha256 "2f86dbfbf3dcb8521d559f830594fe28ac6e4c40d81313a8c2bfb17c82a501e0"
   license "GPL-3.0-or-later"
 
@@ -29,9 +29,9 @@ class Bowtie2 < Formula
   end
 
   test do
-    system "#{bin}/bowtie2-build",
-           "#{pkgshare}/example/reference/lambda_virus.fa", "lambda_virus"
-    assert_predicate testpath/"lambda_virus.1.bt2", :exist?,
+    system "#{bin}bowtie2-build",
+           "#{pkgshare}examplereferencelambda_virus.fa", "lambda_virus"
+    assert_predicate testpath"lambda_virus.1.bt2", :exist?,
                      "Failed to create viral alignment lambda_virus.1.bt2"
   end
 end

@@ -1,7 +1,7 @@
 class Fargatecli < Formula
   desc "CLI for AWS Fargate"
-  homepage "https://github.com/awslabs/fargatecli"
-  url "https://ghproxy.com/https://github.com/awslabs/fargatecli/archive/refs/tags/0.3.2.tar.gz"
+  homepage "https:github.comawslabsfargatecli"
+  url "https:github.comawslabsfargatecliarchiverefstags0.3.2.tar.gz"
   sha256 "f457745c74859c3ab19abc0695530fde97c1932b47458706c835b3ff79c6eba8"
   license "Apache-2.0"
 
@@ -28,7 +28,7 @@ class Fargatecli < Formula
   end
 
   test do
-    output = shell_output("#{bin}/fargatecli task list", 1)
+    output = shell_output("#{bin}fargatecli task list", 1)
     assert_match "Your AWS credentials could not be found", output
   end
 end

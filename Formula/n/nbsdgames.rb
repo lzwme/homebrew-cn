@@ -1,10 +1,10 @@
 class Nbsdgames < Formula
   desc "Text-based modern games"
-  homepage "https://github.com/abakh/nbsdgames"
-  url "https://ghproxy.com/https://github.com/abakh/nbsdgames/archive/refs/tags/v5.tar.gz"
+  homepage "https:github.comabakhnbsdgames"
+  url "https:github.comabakhnbsdgamesarchiverefstagsv5.tar.gz"
   sha256 "ca81d8b854a7bf9685bbc58aabc1a24cd617cadb7e9ddac64a513d2c8ddb2e6c"
   license :public_domain
-  head "https://github.com/abakh/nbsdgames.git", branch: "master"
+  head "https:github.comabakhnbsdgames.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "354dccba0566a0c557da42b0bbcb70c83c6cc27414ee50d208fa51e99a62718a"
@@ -25,13 +25,13 @@ class Nbsdgames < Formula
     mkdir bin
     system "make", "install",
            "GAMES_DIR=#{bin}",
-           "SCORES_DIR=#{var}/games"
+           "SCORES_DIR=#{var}games"
 
     mkdir man6
     system "make", "manpages", "MAN_DIR=#{man6}"
   end
 
   test do
-    assert_equal "2 <= size <= 7", shell_output("#{bin}/sudoku -s 1", 1).chomp
+    assert_equal "2 <= size <= 7", shell_output("#{bin}sudoku -s 1", 1).chomp
   end
 end

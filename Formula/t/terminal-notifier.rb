@@ -1,10 +1,10 @@
 class TerminalNotifier < Formula
   desc "Send macOS User Notifications from the command-line"
-  homepage "https://github.com/julienXX/terminal-notifier"
-  url "https://ghproxy.com/https://github.com/julienXX/terminal-notifier/archive/refs/tags/2.0.0.tar.gz"
+  homepage "https:github.comjulienXXterminal-notifier"
+  url "https:github.comjulienXXterminal-notifierarchiverefstags2.0.0.tar.gz"
   sha256 "6f22a7626e4e68e88df2005a5f256f7d3b432dbf4c0f8a0c15c968d9e38bf84c"
   license "MIT"
-  head "https://github.com/julienXX/terminal-notifier.git", branch: "master"
+  head "https:github.comjulienXXterminal-notifier.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9814bfe9969788afd44c03f4469cf732ab61931a645da58a00b33f95126a381c"
@@ -31,11 +31,11 @@ class TerminalNotifier < Formula
                "SYMROOT=build",
                "-verbose",
                "CODE_SIGN_IDENTITY="
-    prefix.install "build/Release/terminal-notifier.app"
-    bin.write_exec_script prefix/"terminal-notifier.app/Contents/MacOS/terminal-notifier"
+    prefix.install "buildReleaseterminal-notifier.app"
+    bin.write_exec_script prefix"terminal-notifier.appContentsMacOSterminal-notifier"
   end
 
   test do
-    assert_match version.to_s, pipe_output("#{bin}/terminal-notifier -help")
+    assert_match version.to_s, pipe_output("#{bin}terminal-notifier -help")
   end
 end

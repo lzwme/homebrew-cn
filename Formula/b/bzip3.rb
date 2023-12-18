@@ -1,7 +1,7 @@
 class Bzip3 < Formula
   desc "Better and stronger spiritual successor to BZip2"
-  homepage "https://github.com/kspalaiologos/bzip3"
-  url "https://ghproxy.com/https://github.com/kspalaiologos/bzip3/releases/download/1.4.0/bzip3-1.4.0.tar.gz"
+  homepage "https:github.comkspalaiologosbzip3"
+  url "https:github.comkspalaiologosbzip3releasesdownload1.4.0bzip3-1.4.0.tar.gz"
   sha256 "a7bf2369f1ea0e1f2616686348f3749607abadd957519ee09b6f11da02b1039a"
   license "LGPL-3.0-only"
 
@@ -16,7 +16,7 @@ class Bzip3 < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-arch-native"
+    system ".configure", *std_configure_args, "--disable-silent-rules", "--disable-arch-native"
     system "make", "install"
   end
 
@@ -26,8 +26,8 @@ class Bzip3 < Formula
 
     testfilepath.write "TEST CONTENT"
 
-    system bin/"bzip3", testfilepath
-    system bin/"bunzip3", "-f", zipfilepath
+    system bin"bzip3", testfilepath
+    system bin"bunzip3", "-f", zipfilepath
 
     assert_equal "TEST CONTENT", testfilepath.read
   end

@@ -1,10 +1,10 @@
 class Ain < Formula
   desc "HTTP API client for the terminal"
-  homepage "https://github.com/jonaslu/ain"
-  url "https://ghproxy.com/https://github.com/jonaslu/ain/archive/refs/tags/v1.3.0.tar.gz"
+  homepage "https:github.comjonasluain"
+  url "https:github.comjonasluainarchiverefstagsv1.3.0.tar.gz"
   sha256 "af77c16f50a0ee2439f984e126b3b14da6efbd224617c59ca8ccffd62dbf11b9"
   license "MIT"
-  head "https://github.com/jonaslu/ain.git", branch: "main"
+  head "https:github.comjonasluain.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea25b30846e0726917a3657c40e6ea27f1ff562de9fea12c521df1e3350c5918"
@@ -20,11 +20,11 @@ class Ain < Formula
 
   def install
     ldflags = "-s -w -X main.gitSha=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/ain"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdain"
   end
 
   test do
-    assert_match "http://localhost:${PORT}", shell_output("#{bin}/ain -b")
-    assert_match version.to_s, shell_output("#{bin}/ain -v")
+    assert_match "http:localhost:${PORT}", shell_output("#{bin}ain -b")
+    assert_match version.to_s, shell_output("#{bin}ain -v")
   end
 end

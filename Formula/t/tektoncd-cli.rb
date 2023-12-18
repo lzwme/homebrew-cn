@@ -1,7 +1,7 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
-  homepage "https://github.com/tektoncd/cli"
-  url "https://ghproxy.com/https://github.com/tektoncd/cli/archive/refs/tags/v0.33.0.tar.gz"
+  homepage "https:github.comtektoncdcli"
+  url "https:github.comtektoncdcliarchiverefstagsv0.33.0.tar.gz"
   sha256 "18888780d58e1cd88fc943a6b15c9940599383466d33e11fa96f61f83bd755bc"
   license "Apache-2.0"
 
@@ -23,14 +23,14 @@ class TektoncdCli < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "bin/tkn"
-    bin.install "bin/tkn" => "tkn"
+    system "make", "bintkn"
+    bin.install "bintkn" => "tkn"
 
-    generate_completions_from_executable(bin/"tkn", "completion", base_name: "tkn")
+    generate_completions_from_executable(bin"tkn", "completion", base_name: "tkn")
   end
 
   test do
-    cmd = "#{bin}/tkn pipelinerun describe homebrew-formula"
+    cmd = "#{bin}tkn pipelinerun describe homebrew-formula"
     io = IO.popen(cmd, err: [:child, :out])
     assert_match "Error: Couldn't get kubeConfiguration namespace", io.read
   end

@@ -1,8 +1,8 @@
 class SingBox < Formula
   desc "Universal proxy platform"
-  homepage "https://sing-box.sagernet.org"
+  homepage "https:sing-box.sagernet.org"
   # using `:homebrew_curl` to work around audit failure from TLS 1.3-only homepage
-  url "https://ghproxy.com/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.7.5.tar.gz", using: :homebrew_curl
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.7.5.tar.gz", using: :homebrew_curl
   sha256 "467373705604cb9cbf9c8363b0cec93aeb66b8de02742d96304f91181f5fbb5e"
   license "GPL-3.0-or-later"
 
@@ -19,21 +19,21 @@ class SingBox < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/sagernet/sing-box/constant.Version=#{version} -buildid="
+    ldflags = "-s -w -X github.comsagernetsing-boxconstant.Version=#{version} -buildid="
     tags = "with_gvisor,with_quic,with_wireguard,with_utls,with_reality_server,with_clash_api"
-    system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), "./cmd/sing-box"
-    generate_completions_from_executable(bin/"sing-box", "completion")
+    system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), ".cmdsing-box"
+    generate_completions_from_executable(bin"sing-box", "completion")
   end
 
   service do
-    run [opt_bin/"sing-box", "run", "--config", etc/"sing-box/config.json"]
+    run [opt_bin"sing-box", "run", "--config", etc"sing-boxconfig.json"]
     run_type :immediate
     keep_alive true
   end
 
   test do
     ss_port = free_port
-    (testpath/"shadowsocks.json").write <<~EOS
+    (testpath"shadowsocks.json").write <<~EOS
       {
         "inbounds": [
           {
@@ -46,10 +46,10 @@ class SingBox < Formula
         ]
       }
     EOS
-    server = fork { exec "#{bin}/sing-box", "run", "-D", testpath, "-c", testpath/"shadowsocks.json" }
+    server = fork { exec "#{bin}sing-box", "run", "-D", testpath, "-c", testpath"shadowsocks.json" }
 
     sing_box_port = free_port
-    (testpath/"config.json").write <<~EOS
+    (testpath"config.json").write <<~EOS
       {
         "inbounds": [
           {
@@ -69,8 +69,8 @@ class SingBox < Formula
         ]
       }
     EOS
-    system "#{bin}/sing-box", "check", "-D", testpath, "-c", "config.json"
-    client = fork { exec "#{bin}/sing-box", "run", "-D", testpath, "-c", "config.json" }
+    system "#{bin}sing-box", "check", "-D", testpath, "-c", "config.json"
+    client = fork { exec "#{bin}sing-box", "run", "-D", testpath, "-c", "config.json" }
 
     sleep 3
     begin

@@ -1,10 +1,10 @@
 class ProxychainsNg < Formula
   desc "Hook preloader"
-  homepage "https://github.com/rofl0r/proxychains-ng"
-  url "https://ghproxy.com/https://github.com/rofl0r/proxychains-ng/archive/refs/tags/v4.16.tar.gz"
+  homepage "https:github.comrofl0rproxychains-ng"
+  url "https:github.comrofl0rproxychains-ngarchiverefstagsv4.16.tar.gz"
   sha256 "5f66908044cc0c504f4a7e618ae390c9a78d108d3f713d7839e440693f43b5e7"
   license "GPL-2.0-or-later"
-  head "https://github.com/rofl0r/proxychains-ng.git", branch: "master"
+  head "https:github.comrofl0rproxychains-ng.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "0ca6d6c42b3402ea056555c47cf921ad0c6eff7b471a27c68321d914b5875f33"
@@ -20,13 +20,13 @@ class ProxychainsNg < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--sysconfdir=#{etc}"
+    system ".configure", *std_configure_args, "--sysconfdir=#{etc}"
     system "make"
     system "make", "install"
     system "make", "install-config"
   end
 
   test do
-    assert_match "config file found", shell_output("#{bin}/proxychains4 test 2>&1", 1)
+    assert_match "config file found", shell_output("#{bin}proxychains4 test 2>&1", 1)
   end
 end

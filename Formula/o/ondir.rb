@@ -1,12 +1,12 @@
 class Ondir < Formula
   desc "Automatically execute scripts as you traverse directories"
-  homepage "https://swapoff.org/ondir.html"
-  url "https://swapoff.org/files/ondir/ondir-0.2.4.tar.gz"
+  homepage "https:swapoff.orgondir.html"
+  url "https:swapoff.orgfilesondirondir-0.2.4.tar.gz"
   sha256 "52921cdcf02273e0d47cc6172df6a0d2c56980d724568276acb0591e0bda343a"
   license "GPL-2.0-or-later"
-  head "https://github.com/alecthomas/ondir.git", branch: "master"
+  head "https:github.comalecthomasondir.git", branch: "master"
 
-  # Homepage doesn't list current versions, `/files/ondir/` isn't checkable
+  # Homepage doesn't list current versions, `filesondir` isn't checkable
   # (403 Forbidden), and the GitHub repository hasn't been updated since 2014
   # (and doesn't tag versions anyway).
   livecheck do

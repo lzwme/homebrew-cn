@@ -1,11 +1,11 @@
 class Garble < Formula
   desc "Obfuscate Go builds"
-  homepage "https://github.com/burrowers/garble"
-  url "https://ghproxy.com/https://github.com/burrowers/garble/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:github.comburrowersgarble"
+  url "https:github.comburrowersgarblearchiverefstagsv0.11.0.tar.gz"
   sha256 "355e0ee7e98b1656fcfe8156040ed2ef41afd5e2f2d6332465392ab425530494"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/burrowers/garble.git", branch: "master"
+  head "https:github.comburrowersgarble.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ca7cacf31cdfd1b84b80070621419c71e4c6cf22a2da893d935d50e70cf7183"
@@ -21,12 +21,12 @@ class Garble < Formula
   depends_on "git"
 
   def install
-    inreplace "internal/linker/linker.go", "\"git\"", "\"#{Formula["git"].opt_bin}/git\""
+    inreplace "internallinkerlinker.go", "\"git\"", "\"#{Formula["git"].opt_bin}git\""
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    (testpath/"hello.go").write <<~EOS
+    (testpath"hello.go").write <<~EOS
       package main
 
       import "fmt"
@@ -35,11 +35,11 @@ class Garble < Formula
           fmt.Println("Hello World")
       }
     EOS
-    system bin/"garble", "-literals", "-tiny", "build", testpath/"hello.go"
-    assert_equal "Hello World\n", shell_output("#{testpath}/hello")
+    system bin"garble", "-literals", "-tiny", "build", testpath"hello.go"
+    assert_equal "Hello World\n", shell_output("#{testpath}hello")
 
-    goos = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOOS").chomp
-    goarch = Utils.safe_popen_read("#{Formula["go"].bin}/go", "env", "GOARCH").chomp
+    goos = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOOS").chomp
+    goarch = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOARCH").chomp
     expected = <<~EOS
       Build settings:
             -buildmode exe
@@ -49,6 +49,6 @@ class Garble < Formula
                 GOARCH #{goarch}
                   GOOS #{goos}
     EOS
-    assert_match expected, shell_output("#{bin}/garble version")
+    assert_match expected, shell_output("#{bin}garble version")
   end
 end

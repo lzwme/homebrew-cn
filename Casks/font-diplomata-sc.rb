@@ -2,10 +2,10 @@ cask "font-diplomata-sc" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/diplomatasc/DiplomataSC-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldiplomatascDiplomataSC-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Diplomata SC"
-  homepage "https://fonts.google.com/specimen/Diplomata+SC"
+  homepage "https:fonts.google.comspecimenDiplomata+SC"
 
   font "DiplomataSC-Regular.ttf"
 

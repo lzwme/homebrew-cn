@@ -1,10 +1,10 @@
 class RedTldr < Formula
   desc "Used to help red team staff quickly find the commands and key points"
-  homepage "https://payloads.online/red-tldr/"
-  url "https://ghproxy.com/https://github.com/Rvn0xsy/red-tldr/archive/refs/tags/v0.4.3.tar.gz"
+  homepage "https:payloads.onlinered-tldr"
+  url "https:github.comRvn0xsyred-tldrarchiverefstagsv0.4.3.tar.gz"
   sha256 "3f32a438226287d80ae86509964d7767c2002952c95da03501beb882cae22d2d"
   license "MIT"
-  head "https://github.com/Rvn0xsy/red-tldr.git", branch: "main"
+  head "https:github.comRvn0xsyred-tldr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f17f3eaa4917886c572dca60179e11abd40391fbf92863ebeaef7a239d3297db"
@@ -27,6 +27,6 @@ class RedTldr < Formula
   end
 
   test do
-    assert_match "privilege", shell_output("#{bin}/red-tldr mimikatz")
+    assert_match "privilege", shell_output("#{bin}red-tldr mimikatz")
   end
 end

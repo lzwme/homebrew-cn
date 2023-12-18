@@ -1,13 +1,13 @@
 class Liboping < Formula
   desc "C library to generate ICMP echo requests"
-  homepage "https://noping.cc/"
-  url "https://noping.cc/files/liboping-1.10.0.tar.bz2"
+  homepage "https:noping.cc"
+  url "https:noping.ccfilesliboping-1.10.0.tar.bz2"
   sha256 "eb38aa93f93e8ab282d97e2582fbaea88b3f889a08cbc9dbf20059c3779d5cd8"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage
-    regex(/href=.*?liboping[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?liboping[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -32,12 +32,12 @@ class Liboping < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -48,7 +48,7 @@ class Liboping < Formula
   end
 
   test do
-    system bin/"oping", "-h"
-    system bin/"noping", "-h"
+    system bin"oping", "-h"
+    system bin"noping", "-h"
   end
 end

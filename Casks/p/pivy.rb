@@ -2,10 +2,10 @@ cask "pivy" do
   version "0.11.2"
   sha256 "a8249869cc6a922eabe80ac64e5895b503a4f2d23007b21497aa0aca11e2b20c"
 
-  url "https://ghproxy.com/https://github.com/joyent/pivy/releases/download/v#{version}/pivy-#{version}-macos12.pkg"
+  url "https:github.comjoyentpivyreleasesdownloadv#{version}pivy-#{version}-macos12.pkg"
   name "pivy"
   desc "Client for PIV cards"
-  homepage "https://github.com/joyent/pivy"
+  homepage "https:github.comjoyentpivy"
 
   pkg "pivy-#{version}-macos12.pkg"
 

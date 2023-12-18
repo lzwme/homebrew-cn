@@ -1,10 +1,10 @@
 class Chisel < Formula
   desc "Collection of LLDB commands to assist debugging iOS apps"
-  homepage "https://github.com/facebook/chisel"
-  url "https://ghproxy.com/https://github.com/facebook/chisel/archive/refs/tags/2.0.1.tar.gz"
+  homepage "https:github.comfacebookchisel"
+  url "https:github.comfacebookchiselarchiverefstags2.0.1.tar.gz"
   sha256 "6f019d5e7ab5eb06542a9eccbbe29e7d26165d3676828a32e143575ff102d5f9"
   license "MIT"
-  head "https://github.com/facebook/chisel.git", branch: "master"
+  head "https:github.comfacebookchisel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_ventura:  "7ee4917934831d56a5925fb22554c0dd136f8553df9c92067e4564e527371e82"
@@ -26,11 +26,11 @@ class Chisel < Formula
     libexec.install Dir["*.py", "commands"]
 
     # Fix: clang: error: the clang compiler does not support '-march=nehalem'
-    inreplace "Chisel/Makefile", "xcodebuild", "xcodebuild -arch #{Hardware::CPU.arch}"
+    inreplace "ChiselMakefile", "xcodebuild", "xcodebuild -arch #{Hardware::CPU.arch}"
     # Fix: error: The Legacy Build System will be removed in a future release
-    inreplace "Chisel/Chisel.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings",
-              "<string>Original</string>",
-              "<string>Original</string><key>DisableBuildSystemDeprecationDiagnostic</key><true/>"
+    inreplace "ChiselChisel.xcodeprojproject.xcworkspacexcshareddataWorkspaceSettings.xcsettings",
+              "<string>Original<string>",
+              "<string>Original<string><key>DisableBuildSystemDeprecationDiagnostic<key><true>"
 
     # == LD_DYLIB_INSTALL_NAME Explanation ==
     # This make invocation calls xcodebuild, which in turn performs ad hoc code
@@ -40,20 +40,20 @@ class Chisel < Formula
     # broken signing, this build specifies the target install name up front,
     # in which case brew doesn't perform its modifications.
     system "make", "-C", "Chisel", "install", "PREFIX=#{lib}",
-      "LD_DYLIB_INSTALL_NAME=#{opt_prefix}/lib/Chisel.framework/Chisel"
+      "LD_DYLIB_INSTALL_NAME=#{opt_prefix}libChisel.frameworkChisel"
   end
 
   def caveats
     <<~EOS
-      Add the following line to ~/.lldbinit to load chisel when Xcode launches:
-        command script import #{opt_libexec}/fbchisellldb.py
+      Add the following line to ~.lldbinit to load chisel when Xcode launches:
+        command script import #{opt_libexec}fbchisellldb.py
     EOS
   end
 
   test do
-    ENV["PYTHONPATH"] = Utils.safe_popen_read("/usr/bin/lldb", "--python-path").chomp
-    # This *must* be `/usr/bin/python3`. `fbchisellldb.py` does `import lldb`,
-    # which will segfault if imported with a Python that does not match `/usr/bin/lldb`.
-    system "/usr/bin/python3", libexec/"fbchisellldb.py"
+    ENV["PYTHONPATH"] = Utils.safe_popen_read("usrbinlldb", "--python-path").chomp
+    # This *must* be `usrbinpython3`. `fbchisellldb.py` does `import lldb`,
+    # which will segfault if imported with a Python that does not match `usrbinlldb`.
+    system "usrbinpython3", libexec"fbchisellldb.py"
   end
 end

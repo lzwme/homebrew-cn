@@ -1,8 +1,8 @@
 class Dotnet < Formula
   desc ".NET Core"
-  homepage "https://dotnet.microsoft.com/"
-  # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet.git",
+  homepage "https:dotnet.microsoft.com"
+  # Source-build tag announced at https:github.comdotnetsource-builddiscussions
+  url "https:github.comdotnetdotnet.git",
       tag:      "v8.0.0",
       revision: "40e7f014ff784457efffa58074549735e30772ae"
   license "MIT"
@@ -31,7 +31,7 @@ class Dotnet < Formula
     depends_on "lttng-ust"
   end
 
-  # Upstream only directly supports and tests llvm/clang builds.
+  # Upstream only directly supports and tests llvmclang builds.
   # GCC builds have limited support via community.
   fails_with :gcc
 
@@ -41,9 +41,9 @@ class Dotnet < Formula
       ENV.deparallelize
 
       # Disable crossgen2 optimization in ASP.NET Core to work around build failure trying to find tool.
-      # Microsoft.AspNetCore.App.Runtime.csproj(445,5): error : Could not find crossgen2 tools/crossgen2
+      # Microsoft.AspNetCore.App.Runtime.csproj(445,5): error : Could not find crossgen2 toolscrossgen2
       # TODO: Try to remove in future .NET 8 release or when macOS is officially supported in .NET 9
-      inreplace "src/aspnetcore/src/Framework/App.Runtime/src/Microsoft.AspNetCore.App.Runtime.csproj",
+      inreplace "srcaspnetcoresrcFrameworkApp.RuntimesrcMicrosoft.AspNetCore.App.Runtime.csproj",
                 "<CrossgenOutput Condition=\" '$(TargetArchitecture)' == 's390x'",
                 "<CrossgenOutput Condition=\" '$(TargetOsName)' == 'osx'"
     else
@@ -51,37 +51,37 @@ class Dotnet < Formula
       ENV.append_to_cflags "-I#{Formula["krb5"].opt_include}"
 
       # Use our libunwind rather than the bundled one.
-      inreplace "src/runtime/eng/SourceBuild.props",
+      inreplace "srcruntimeengSourceBuild.props",
                 "--outputrid $(TargetRid)",
                 "\\0 --cmakeargs -DCLR_CMAKE_USE_SYSTEM_LIBUNWIND=ON"
 
       # Work around build script getting stuck when running shutdown command on Linux
       # TODO: Try removing in the next release
-      # Ref: https://github.com/dotnet/source-build/discussions/3105#discussioncomment-4373142
-      inreplace "build.sh", '"$CLI_ROOT/dotnet" build-server shutdown', ""
-      inreplace "repo-projects/Directory.Build.targets",
-                '<Exec Command="$(DotnetToolCommand) build-server shutdown" />',
+      # Ref: https:github.comdotnetsource-builddiscussions3105#discussioncomment-4373142
+      inreplace "build.sh", '"$CLI_ROOTdotnet" build-server shutdown', ""
+      inreplace "repo-projectsDirectory.Build.targets",
+                '<Exec Command="$(DotnetToolCommand) build-server shutdown" >',
                 ""
     end
 
-    system "./prep.sh"
+    system ".prep.sh"
     # We unset "CI" environment variable to work around aspire build failure
     # error MSB4057: The target "GitInfo" does not exist in the project.
-    # Ref: https://github.com/Homebrew/homebrew-core/pull/154584#issuecomment-1815575483
+    # Ref: https:github.comHomebrewhomebrew-corepull154584#issuecomment-1815575483
     with_env(CI: nil) do
-      system "./build.sh", "--clean-while-building", "--online"
+      system ".build.sh", "--clean-while-building", "--online"
     end
 
     libexec.mkpath
-    tarball = Dir["artifacts/*/Release/dotnet-sdk-*.tar.gz"].first
+    tarball = Dir["artifacts*Releasedotnet-sdk-*.tar.gz"].first
     system "tar", "-xzf", tarball, "--directory", libexec
-    doc.install Dir[libexec/"*.txt"]
-    (bin/"dotnet").write_env_script libexec/"dotnet", DOTNET_ROOT: libexec
+    doc.install Dir[libexec"*.txt"]
+    (bin"dotnet").write_env_script libexec"dotnet", DOTNET_ROOT: libexec
 
-    bash_completion.install "src/sdk/scripts/register-completions.bash" => "dotnet"
-    zsh_completion.install "src/sdk/scripts/register-completions.zsh" => "_dotnet"
-    man1.install Dir["src/sdk/documentation/manpages/sdk/*.1"]
-    man7.install Dir["src/sdk/documentation/manpages/sdk/*.7"]
+    bash_completion.install "srcsdkscriptsregister-completions.bash" => "dotnet"
+    zsh_completion.install "srcsdkscriptsregister-completions.zsh" => "_dotnet"
+    man1.install Dir["srcsdkdocumentationmanpagessdk*.1"]
+    man7.install Dir["srcsdkdocumentationmanpagessdk*.7"]
   end
 
   def caveats
@@ -93,7 +93,7 @@ class Dotnet < Formula
 
   test do
     target_framework = "net#{version.major_minor}"
-    (testpath/"test.cs").write <<~EOS
+    (testpath"test.cs").write <<~EOS
       using System;
 
       namespace Homebrew
@@ -108,25 +108,25 @@ class Dotnet < Formula
         }
       }
     EOS
-    (testpath/"test.csproj").write <<~EOS
+    (testpath"test.csproj").write <<~EOS
       <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
-          <OutputType>Exe</OutputType>
-          <TargetFrameworks>#{target_framework}</TargetFrameworks>
-          <PlatformTarget>AnyCPU</PlatformTarget>
-          <RootNamespace>Homebrew</RootNamespace>
-          <PackageId>Homebrew.Dotnet</PackageId>
-          <Title>Homebrew.Dotnet</Title>
-          <Product>$(AssemblyName)</Product>
-          <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-        </PropertyGroup>
+          <OutputType>Exe<OutputType>
+          <TargetFrameworks>#{target_framework}<TargetFrameworks>
+          <PlatformTarget>AnyCPU<PlatformTarget>
+          <RootNamespace>Homebrew<RootNamespace>
+          <PackageId>Homebrew.Dotnet<PackageId>
+          <Title>Homebrew.Dotnet<Title>
+          <Product>$(AssemblyName)<Product>
+          <EnableDefaultCompileItems>false<EnableDefaultCompileItems>
+        <PropertyGroup>
         <ItemGroup>
-          <Compile Include="test.cs" />
-        </ItemGroup>
-      </Project>
+          <Compile Include="test.cs" >
+        <ItemGroup>
+      <Project>
     EOS
-    system bin/"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath/"test.csproj"
-    assert_equal "#{testpath}/test.dll,a,b,c\n",
-                 shell_output("#{bin}/dotnet run --framework #{target_framework} #{testpath}/test.dll a b c")
+    system bin"dotnet", "build", "--framework", target_framework, "--output", testpath, testpath"test.csproj"
+    assert_equal "#{testpath}test.dll,a,b,c\n",
+                 shell_output("#{bin}dotnet run --framework #{target_framework} #{testpath}test.dll a b c")
   end
 end

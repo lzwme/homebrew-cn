@@ -1,7 +1,7 @@
 class Openj9 < Formula
   desc "High performance, scalable, Java virtual machine"
-  homepage "https://www.eclipse.org/openj9/"
-  url "https://github.com/eclipse-openj9/openj9.git",
+  homepage "https:www.eclipse.orgopenj9"
+  url "https:github.comeclipse-openj9openj9.git",
       tag:      "openj9-0.40.0",
       revision: "d12d10c9ea2de2cf363095e609536ffe451bd25f"
   license any_of: [
@@ -13,7 +13,7 @@ class Openj9 < Formula
 
   livecheck do
     url :stable
-    regex(/^openj9-(\d+(?:\.\d+)+)$/i)
+    regex(^openj9-(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -63,45 +63,45 @@ class Openj9 < Formula
     depends_on "nasm" => :build
   end
 
-  # From https://github.com/eclipse-openj9/openj9/blob/openj9-#{version}/doc/build-instructions/
+  # From https:github.comeclipse-openj9openj9blobopenj9-#{version}docbuild-instructions
   # We use JDK 20 to bootstrap.
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.2%2B9_openj9-0.40.0/ibm-semeru-open-jdk_aarch64_mac_20.0.2_9_openj9-0.40.0.tar.gz"
+        url "https:github.comAdoptOpenJDKsemeru20-binariesreleasesdownloadjdk-20.0.2%2B9_openj9-0.40.0ibm-semeru-open-jdk_aarch64_mac_20.0.2_9_openj9-0.40.0.tar.gz"
         sha256 "e9c7df3897877350b577d80a47cbc9a7b4589419ca0c2df7c185a20bca8423dd"
       end
       on_intel do
-        url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.2%2B9_openj9-0.40.0/ibm-semeru-open-jdk_x64_mac_20.0.2_9_openj9-0.40.0.tar.gz"
+        url "https:github.comAdoptOpenJDKsemeru20-binariesreleasesdownloadjdk-20.0.2%2B9_openj9-0.40.0ibm-semeru-open-jdk_x64_mac_20.0.2_9_openj9-0.40.0.tar.gz"
         sha256 "ece0d6e2a5cd07b2e0e05a6361026c73838cfd14556c0aeb7f9367a13d19de38"
       end
     end
     on_linux do
-      url "https://ghproxy.com/https://github.com/AdoptOpenJDK/semeru20-binaries/releases/download/jdk-20.0.2%2B9_openj9-0.40.0/ibm-semeru-open-jdk_x64_linux_20.0.2_9_openj9-0.40.0.tar.gz"
+      url "https:github.comAdoptOpenJDKsemeru20-binariesreleasesdownloadjdk-20.0.2%2B9_openj9-0.40.0ibm-semeru-open-jdk_x64_linux_20.0.2_9_openj9-0.40.0.tar.gz"
       sha256 "925b555050eb3ad9bcb444c4713f5bb221025ba9c309e95235d4b2e060c84ee0"
     end
   end
 
   resource "omr" do
-    url "https://github.com/eclipse-openj9/openj9-omr.git",
+    url "https:github.comeclipse-openj9openj9-omr.git",
         tag:      "openj9-0.40.0",
         revision: "e80bff83b7fda8875071d89de7c73184d847085d"
   end
 
   resource "openj9-openjdk-jdk" do
-    url "https://github.com/ibmruntimes/openj9-openjdk-jdk20.git",
+    url "https:github.comibmruntimesopenj9-openjdk-jdk20.git",
         tag:      "openj9-0.40.0",
         revision: "19eb54abdace78d5009138c6e27457dfe2df6cf1"
   end
 
   def install
     openj9_files = buildpath.children
-    (buildpath/"openj9").install openj9_files
+    (buildpath"openj9").install openj9_files
     resource("openj9-openjdk-jdk").stage buildpath
-    resource("omr").stage buildpath/"omr"
-    boot_jdk = buildpath/"boot-jdk"
+    resource("omr").stage buildpath"omr"
+    boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
-    boot_jdk /= "Contents/Home" if OS.mac?
+    boot_jdk = "ContentsHome" if OS.mac?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     config_args = %W[
@@ -138,8 +138,8 @@ class Openj9 < Formula
         --with-sysroot=#{MacOS.sdk_path}
       ]
     else
-      # Override hardcoded /usr/include directory when checking for numa headers
-      inreplace "closed/autoconf/custom-hook.m4", "/usr/include/numa", Formula["numactl"].opt_include/"numa"
+      # Override hardcoded usrinclude directory when checking for numa headers
+      inreplace "closedautoconfcustom-hook.m4", "usrincludenuma", Formula["numactl"].opt_include"numa"
 
       %W[
         --with-x=#{HOMEBREW_PREFIX}
@@ -147,42 +147,42 @@ class Openj9 < Formula
         --with-fontconfig=#{Formula["fontconfig"].opt_prefix}
       ]
     end
-    # Ref: https://github.com/eclipse-openj9/openj9/issues/13767
+    # Ref: https:github.comeclipse-openj9openj9issues13767
     # TODO: Remove once compressed refs mode is supported on Apple Silicon
     config_args << "--with-noncompressedrefs" if OS.mac? && Hardware::CPU.arm?
 
     ENV["CMAKE_CONFIG_TYPE"] = "Release"
 
-    system "bash", "./configure", *config_args
+    system "bash", ".configure", *config_args
     system "make", "all", "-j"
 
     jdk = libexec
     if OS.mac?
-      libexec.install Dir["build/*/images/jdk-bundle/*"].first => "openj9.jdk"
-      jdk /= "openj9.jdk/Contents/Home"
-      rm jdk/"lib/src.zip"
-      rm_rf Dir.glob(jdk/"**/*.dSYM")
+      libexec.install Dir["build*imagesjdk-bundle*"].first => "openj9.jdk"
+      jdk = "openj9.jdkContentsHome"
+      rm jdk"libsrc.zip"
+      rm_rf Dir.glob(jdk"***.dSYM")
     else
-      libexec.install Dir["build/linux-x86_64-server-release/images/jdk/*"]
+      libexec.install Dir["buildlinux-x86_64-server-releaseimagesjdk*"]
     end
 
-    bin.install_symlink Dir[jdk/"bin/*"]
-    include.install_symlink Dir[jdk/"include/*.h"]
-    include.install_symlink Dir[jdk/"include"/OS.kernel_name.downcase/"*.h"]
-    man1.install_symlink Dir[jdk/"man/man1/*"]
+    bin.install_symlink Dir[jdk"bin*"]
+    include.install_symlink Dir[jdk"include*.h"]
+    include.install_symlink Dir[jdk"include"OS.kernel_name.downcase"*.h"]
+    man1.install_symlink Dir[jdk"manman1*"]
   end
 
   def caveats
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}/openj9.jdk /Library/Java/JavaVirtualMachines/openj9.jdk
+          sudo ln -sfn #{opt_libexec}openj9.jdk LibraryJavaJavaVirtualMachinesopenj9.jdk
       EOS
     end
   end
 
   test do
-    (testpath/"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~EOS
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -190,8 +190,8 @@ class Openj9 < Formula
       }
     EOS
 
-    system bin/"javac", "HelloWorld.java"
+    system bin"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
   end
 end

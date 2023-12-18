@@ -2,14 +2,14 @@ cask "virtualbuddy" do
   version "1.3.2,107"
   sha256 "793da34d91819bdbaded61f3b832d468b8cca91714132a9e89eb262e2d008412"
 
-  url "https://ghproxy.com/https://github.com/insidegui/VirtualBuddy/releases/download/#{version.csv.first}/VirtualBuddy_v#{version.csv.first}-#{version.csv.second}.dmg"
+  url "https:github.cominsideguiVirtualBuddyreleasesdownload#{version.csv.first}VirtualBuddy_v#{version.csv.first}-#{version.csv.second}.dmg"
   name "VirtualBuddy"
   desc "Virtualization tool"
-  homepage "https://github.com/insidegui/VirtualBuddy"
+  homepage "https:github.cominsideguiVirtualBuddy"
 
   livecheck do
     url :url
-    regex(/^VirtualBuddy[._-]v?(\d+(?:[.-]\d+)+)\.dmg$/i)
+    regex(^VirtualBuddy[._-]v?(\d+(?:[.-]\d+)+)\.dmg$i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -20,16 +20,16 @@ cask "virtualbuddy" do
     end
   end
 
-  conflicts_with cask: "homebrew/cask-versions/virtualbuddy-beta"
+  conflicts_with cask: "homebrewcask-versionsvirtualbuddy-beta"
   depends_on arch: :arm64
   depends_on macos: ">= :monterey"
 
   app "VirtualBuddy.app"
 
   zap trash: [
-    "~/Library/Application Support/VirtualBuddy",
-    "~/Library/Caches/codes.rambo.VirtualBuddy",
-    "~/Library/HTTPStorages/codes.rambo.VirtualBuddy",
-    "~/Library/Preferences/codes.rambo.VirtualBuddy.plist",
+    "~LibraryApplication SupportVirtualBuddy",
+    "~LibraryCachescodes.rambo.VirtualBuddy",
+    "~LibraryHTTPStoragescodes.rambo.VirtualBuddy",
+    "~LibraryPreferencescodes.rambo.VirtualBuddy.plist",
   ]
 end

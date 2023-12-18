@@ -1,10 +1,10 @@
 class Veclibfort < Formula
   desc "GNU Fortran compatibility for Apple's vecLib"
-  homepage "https://github.com/mcg1969/vecLibFort"
-  url "https://ghproxy.com/https://github.com/mcg1969/vecLibFort/archive/refs/tags/0.4.3.tar.gz"
+  homepage "https:github.commcg1969vecLibFort"
+  url "https:github.commcg1969vecLibFortarchiverefstags0.4.3.tar.gz"
   sha256 "fe9e7e0596bfb4aa713b2273b21e7d96c0d7a6453ee4b214a8a50050989d5586"
   license "BSL-1.0"
-  head "https://github.com/mcg1969/vecLibFort.git", branch: "master"
+  head "https:github.commcg1969vecLibFort.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "afc663cdfa05c53aff47c74a7a2c967ec9e07bd74c842241cb7b6642d30607a8"
@@ -28,8 +28,8 @@ class Veclibfort < Formula
   end
 
   test do
-    system "gfortran", "-o", "tester", "-O", pkgshare/"tester.f90",
+    system "gfortran", "-o", "tester", "-O", pkgshare"tester.f90",
                        "-L#{lib}", "-lvecLibFort"
-    assert_match "SLAMCH", shell_output("./tester")
+    assert_match "SLAMCH", shell_output(".tester")
   end
 end

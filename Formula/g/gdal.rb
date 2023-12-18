@@ -1,14 +1,14 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
-  homepage "https://www.gdal.org/"
-  url "https://ghproxy.com/https://github.com/OSGeo/gdal/releases/download/v3.8.1/gdal-3.8.1.tar.gz"
+  homepage "https:www.gdal.org"
+  url "https:github.comOSGeogdalreleasesdownloadv3.8.1gdal-3.8.1.tar.gz"
   sha256 "75b0019c8f47bb5f1c2be2182340fc2f45ab1c684204c2aa4971d6127d819f2d"
   license "MIT"
   revision 1
 
   livecheck do
-    url "https://download.osgeo.org/gdal/CURRENT/"
-    regex(/href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:download.osgeo.orggdalCURRENT"
+    regex(href=.*?gdal[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Gdal < Formula
   end
 
   head do
-    url "https://github.com/OSGeo/gdal.git", branch: "master"
+    url "https:github.comOSGeogdal.git", branch: "master"
     depends_on "doxygen" => :build
   end
 
@@ -85,14 +85,14 @@ class Gdal < Formula
   end
 
   def install
-    site_packages = prefix/Language::Python.site_packages(python3)
+    site_packages = prefixLanguage::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
-    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
-    inreplace "swig/python/CMakeLists.txt",
+    # to incorrectly try to write into HOMEBREW_PREFIXlib since Python 3.10.
+    inreplace "swigpythonCMakeLists.txt",
               'set(INSTALL_ARGS "--single-version-externally-managed --record=record.txt',
               "\\0 --install-lib=#{site_packages} --install-scripts=#{bin}"
 
-    osgeo_ext = site_packages/"osgeo"
+    osgeo_ext = site_packages"osgeo"
     rpaths = [rpath, rpath(source: osgeo_ext)]
     ENV.append "LDFLAGS", "-Wl,#{rpaths.map { |rp| "-rpath,#{rp}" }.join(",")}"
     # keep C++ standard in sync with `abseil.rb`
@@ -112,13 +112,13 @@ class Gdal < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bash_completion.install (share/"bash-completion/completions").children
+    bash_completion.install (share"bash-completioncompletions").children
   end
 
   test do
     # basic tests to see if third-party dylibs are loading OK
-    system bin/"gdalinfo", "--formats"
-    system bin/"ogrinfo", "--formats"
+    system bin"gdalinfo", "--formats"
+    system bin"ogrinfo", "--formats"
     # Changed Python package name from "gdal" to "osgeo.gdal" in 3.2.0.
     system python3, "-c", "import osgeo.gdal"
   end

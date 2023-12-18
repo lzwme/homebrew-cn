@@ -5,11 +5,11 @@ cask "chia" do
   sha256 arm:   "a3eb555794697cd63725758a7a487d0a5615a998dbc14432c2ecf549e06994aa",
          intel: "83d2a3f3d30dfec2c02a8d15553ead9b738a6aff7edcf06b86e467395979f3d1"
 
-  url "https://ghproxy.com/https://github.com/Chia-Network/chia-blockchain/releases/download/#{version}/Chia-#{version}#{arch}.dmg",
-      verified: "github.com/Chia-Network/chia-blockchain/"
+  url "https:github.comChia-Networkchia-blockchainreleasesdownload#{version}Chia-#{version}#{arch}.dmg",
+      verified: "github.comChia-Networkchia-blockchain"
   name "Chia Blockchain"
   desc "GUI Python implementation for the Chia blockchain"
-  homepage "https://www.chia.net/"
+  homepage "https:www.chia.net"
 
   livecheck do
     url :url
@@ -21,9 +21,9 @@ cask "chia" do
   app "Chia.app"
 
   zap trash: [
-    "~/Library/Application Support/Chia Blockchain",
-    "~/Library/Preferences/net.chia.blockchain.plist",
-    "~/Library/Saved Application State/net.chia.blockchain.savedState",
-    "~/.chia",
+    "~LibraryApplication SupportChia Blockchain",
+    "~LibraryPreferencesnet.chia.blockchain.plist",
+    "~LibrarySaved Application Statenet.chia.blockchain.savedState",
+    "~.chia",
   ]
 end

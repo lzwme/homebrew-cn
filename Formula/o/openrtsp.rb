@@ -1,15 +1,15 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
-  homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2023.11.30.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.11.30.tar.gz"
+  homepage "http:www.live555.comopenRTSP"
+  url "http:www.live555.comliveMediapubliclive.2023.11.30.tar.gz"
+  mirror "https:download.videolan.orgpubvideolantestingcontriblive555live.2023.11.30.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
   sha256 "c6e7bef58b5d00cd97933018e9d5363d9de7e9bbcfc2550b207a81a9cf30b925"
   license "LGPL-3.0-or-later"
 
   livecheck do
-    url "http://www.live555.com/liveMedia/public/"
-    regex(/href=.*?live[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:www.live555.comliveMediapublic"
+    regex(href=.*?live[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -25,31 +25,31 @@ class Openrtsp < Formula
   depends_on "openssl@3"
 
   # Support CXXFLAGS when building on macOS
-  # PR ref: https://github.com/rgaufman/live555/pull/46
+  # PR ref: https:github.comrgaufmanlive555pull46
   # TODO: Remove once changes land in a release
   patch do
-    url "https://github.com/rgaufman/live555/commit/16701af5486bb3a2d25a28edaab07789c8a9ce57.patch?full_index=1"
+    url "https:github.comrgaufmanlive555commit16701af5486bb3a2d25a28edaab07789c8a9ce57.patch?full_index=1"
     sha256 "2d98a782081028fe3b7daf6b2db19e99c46f0cadab2421745de907146a3595cb"
   end
 
   def install
     # "test" was added to std::atomic_flag in C++20
-    # See https://github.com/rgaufman/live555/issues/45
+    # See https:github.comrgaufmanlive555issues45
     ENV.append "CXXFLAGS", "-std=c++20"
 
     # Avoid linkage to system OpenSSL
     libs = [
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
     ]
 
     os_flag = OS.mac? ? "macosx-bigsur" : "linux"
-    system "./genMakefiles", os_flag
+    system ".genMakefiles", os_flag
     system "make", "PREFIX=#{prefix}",
            "LIBS_FOR_CONSOLE_APPLICATION=#{libs.join(" ")}", "install"
 
     # Move the testing executables out of the main PATH
-    libexec.install Dir.glob(bin/"test*")
+    libexec.install Dir.glob(bin"test*")
   end
 
   def caveats
@@ -60,6 +60,6 @@ class Openrtsp < Formula
   end
 
   test do
-    assert_match "GNU", shell_output("#{bin}/live555ProxyServer 2>&1", 1)
+    assert_match "GNU", shell_output("#{bin}live555ProxyServer 2>&1", 1)
   end
 end

@@ -1,11 +1,11 @@
 class Mrbayes < Formula
   desc "Bayesian inference of phylogenies and evolutionary models"
-  homepage "https://nbisweden.github.io/MrBayes/"
-  url "https://ghproxy.com/https://github.com/NBISweden/MrBayes/archive/refs/tags/v3.2.7a.tar.gz"
+  homepage "https:nbisweden.github.ioMrBayes"
+  url "https:github.comNBISwedenMrBayesarchiverefstagsv3.2.7a.tar.gz"
   sha256 "3eed2e3b1d9e46f265b6067a502a89732b6f430585d258b886e008e846ecc5c6"
   license "GPL-3.0-or-later"
   revision 3
-  head "https://github.com/NBISweden/MrBayes.git", branch: "develop"
+  head "https:github.comNBISwedenMrBayes.git", branch: "develop"
 
   livecheck do
     url :stable
@@ -48,17 +48,17 @@ class Mrbayes < Formula
       args << "ax_cv_have_avx_os_support_ext=no"
       args << "ax_cv_have_avx512_os_support_ext=no"
     end
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make", "install"
 
-    doc.install share/"examples/mrbayes" => "examples"
+    doc.install share"examplesmrbayes" => "examples"
   end
 
   test do
-    cp doc/"examples/primates.nex", testpath
+    cp doc"examplesprimates.nex", testpath
     cmd = "mcmc ngen = 5000; sump; sumt;"
     cmd = "set usebeagle=yes beagledevice=cpu;" + cmd
     inreplace "primates.nex", "end;", cmd + "\n\nend;"
-    system bin/"mb", "primates.nex"
+    system bin"mb", "primates.nex"
   end
 end

@@ -1,10 +1,10 @@
 class Httpx < Formula
   desc "Fast and multi-purpose HTTP toolkit"
-  homepage "https://github.com/projectdiscovery/httpx"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/httpx/archive/refs/tags/v1.3.7.tar.gz"
+  homepage "https:github.comprojectdiscoveryhttpx"
+  url "https:github.comprojectdiscoveryhttpxarchiverefstagsv1.3.7.tar.gz"
   sha256 "34a6fb8ed32a14a4cf3ea8308c8284b7ac7d8577305c17534fafd725650d0923"
   license "MIT"
-  head "https://github.com/projectdiscovery/httpx.git", branch: "master"
+  head "https:github.comprojectdiscoveryhttpx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cd669733561f5ceb5289c9f6c1b914a987709e4ab4118473036480568a00aa1"
@@ -19,11 +19,11 @@ class Httpx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/httpx"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdhttpx"
   end
 
   test do
-    output = JSON.parse(shell_output("#{bin}/httpx -silent -title -json -u example.org"))
+    output = JSON.parse(shell_output("#{bin}httpx -silent -title -json -u example.org"))
     assert_equal 200, output["status_code"]
     assert_equal "Example Domain", output["title"]
   end

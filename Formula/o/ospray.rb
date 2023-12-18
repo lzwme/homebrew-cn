@@ -1,11 +1,11 @@
 class Ospray < Formula
   desc "Ray-tracing-based rendering engine for high-fidelity visualization"
-  homepage "https://www.ospray.org/"
-  url "https://ghproxy.com/https://github.com/ospray/ospray/archive/refs/tags/v2.12.0.tar.gz"
+  homepage "https:www.ospray.org"
+  url "https:github.comosprayosprayarchiverefstagsv2.12.0.tar.gz"
   sha256 "268b16952b2dd44da2a1e40d2065c960bc2442dd09b63ace8b65d3408f596301"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/ospray/ospray.git", branch: "master"
+  head "https:github.comosprayospray.git", branch: "master"
 
   livecheck do
     url :stable
@@ -28,18 +28,18 @@ class Ospray < Formula
   depends_on "tbb"
 
   resource "rkcommon" do
-    url "https://ghproxy.com/https://github.com/ospray/rkcommon/archive/refs/tags/v1.11.0.tar.gz"
+    url "https:github.comosprayrkcommonarchiverefstagsv1.11.0.tar.gz"
     sha256 "9cfeedaccdefbdcf23c465cb1e6c02057100c4a1a573672dc6cfea5348cedfdd"
   end
 
   resource "openvkl" do
-    url "https://ghproxy.com/https://github.com/openvkl/openvkl/archive/refs/tags/v1.3.2.tar.gz"
+    url "https:github.comopenvklopenvklarchiverefstagsv1.3.2.tar.gz"
     sha256 "7704736566bf17497a3e51c067bd575316895fda96eccc682dae4aac7fb07b28"
 
     # Fix CMake install location.
-    # Remove when https://github.com/openvkl/openvkl/pull/18 is merged.
+    # Remove when https:github.comopenvklopenvklpull18 is merged.
     patch do
-      url "https://github.com/openvkl/openvkl/commit/67fcc3f8c34cf1fc7983b1acc4752eb9e2cfe769.patch?full_index=1"
+      url "https:github.comopenvklopenvklcommit67fcc3f8c34cf1fc7983b1acc4752eb9e2cfe769.patch?full_index=1"
       sha256 "f68aa633772153ec13c597de2328e1a3f2d64e0bcfd15dc374378d0e1b1383ee"
     end
   end
@@ -69,9 +69,9 @@ class Ospray < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
-      #include <ospray/ospray.h>
+      #include <osprayospray.h>
       int main(int argc, const char **argv) {
         OSPError error = ospInit(&argc, argv);
         assert(error == OSP_NO_ERROR);
@@ -81,6 +81,6 @@ class Ospray < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lospray"
-    system "./a.out"
+    system ".a.out"
   end
 end

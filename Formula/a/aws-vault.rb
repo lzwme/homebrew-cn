@@ -1,13 +1,13 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
-  homepage "https://github.com/99designs/aws-vault"
-  url "https://ghproxy.com/https://github.com/99designs/aws-vault/archive/refs/tags/v7.2.0.tar.gz"
+  homepage "https:github.com99designsaws-vault"
+  url "https:github.com99designsaws-vaultarchiverefstagsv7.2.0.tar.gz"
   sha256 "3f2f1d0ec06eb0873f9b96b59dc70f9fcc832dc97b927af3dbab6cdc87477b0e"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -35,15 +35,15 @@ class AwsVault < Formula
     system "make", "aws-vault-#{os}-#{arch}", "VERSION=#{version}-#{tap.user}"
     system "make", "install", "INSTALL_DIR=#{bin}", "VERSION=#{version}-#{tap.user}"
 
-    zsh_completion.install "contrib/completions/zsh/aws-vault.zsh" => "_aws-vault"
-    bash_completion.install "contrib/completions/bash/aws-vault.bash"
-    fish_completion.install "contrib/completions/fish/aws-vault.fish"
+    zsh_completion.install "contribcompletionszshaws-vault.zsh" => "_aws-vault"
+    bash_completion.install "contribcompletionsbashaws-vault.bash"
+    fish_completion.install "contribcompletionsfishaws-vault.fish"
   end
 
   test do
     assert_match("aws-vault: error: login: argument 'profile' not provided, nor any AWS env vars found. Try --help",
-      shell_output("#{bin}/aws-vault --backend=file login 2>&1", 1))
+      shell_output("#{bin}aws-vault --backend=file login 2>&1", 1))
 
-    assert_match version.to_s, shell_output("#{bin}/aws-vault --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}aws-vault --version 2>&1")
   end
 end

@@ -1,14 +1,14 @@
 class OcamlFindlib < Formula
   desc "OCaml library manager"
-  homepage "http://projects.camlcity.org/projects/findlib.html"
-  url "http://download.camlcity.org/download/findlib-1.9.6.tar.gz"
+  homepage "http:projects.camlcity.orgprojectsfindlib.html"
+  url "http:download.camlcity.orgdownloadfindlib-1.9.6.tar.gz"
   sha256 "2df996279ae16b606db5ff5879f93dbfade0898db9f1a3e82f7f845faa2930a2"
   license "MIT"
   revision 1
 
   livecheck do
-    url "http://download.camlcity.org/download/"
-    regex(/href=.*?findlib[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:download.camlcity.orgdownload"
+    regex(href=.*?findlib[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -28,29 +28,29 @@ class OcamlFindlib < Formula
   def install
     # Specify HOMEBREW_PREFIX here so those are the values baked into the compile,
     # rather than the Cellar
-    system "./configure", "-bindir", bin,
+    system ".configure", "-bindir", bin,
                           "-mandir", man,
-                          "-sitelib", HOMEBREW_PREFIX/"lib/ocaml",
-                          "-config", etc/"findlib.conf",
+                          "-sitelib", HOMEBREW_PREFIX"libocaml",
+                          "-config", etc"findlib.conf",
                           "-no-camlp4"
 
     system "make", "all"
     system "make", "opt"
 
     # Override the above paths for the install step only
-    system "make", "install", "OCAML_SITELIB=#{lib}/ocaml",
-                              "OCAML_CORE_STDLIB=#{lib}/ocaml"
+    system "make", "install", "OCAML_SITELIB=#{lib}ocaml",
+                              "OCAML_CORE_STDLIB=#{lib}ocaml"
 
     # Avoid conflict with ocaml-num package
-    rm_rf Dir[lib/"ocaml/num", lib/"ocaml/num-top"]
+    rm_rf Dir[lib"ocamlnum", lib"ocamlnum-top"]
 
-    # Save extra findlib.conf to work around https://github.com/Homebrew/homebrew-test-bot/issues/805
+    # Save extra findlib.conf to work around https:github.comHomebrewhomebrew-test-botissues805
     libexec.mkpath
-    cp etc/"findlib.conf", libexec/"findlib.conf"
+    cp etc"findlib.conf", libexec"findlib.conf"
   end
 
   test do
-    output = shell_output("#{bin}/ocamlfind query findlib")
-    assert_equal "#{HOMEBREW_PREFIX}/lib/ocaml/findlib", output.chomp
+    output = shell_output("#{bin}ocamlfind query findlib")
+    assert_equal "#{HOMEBREW_PREFIX}libocamlfindlib", output.chomp
   end
 end

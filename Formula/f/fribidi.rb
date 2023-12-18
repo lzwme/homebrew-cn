@@ -1,7 +1,7 @@
 class Fribidi < Formula
   desc "Implementation of the Unicode BiDi algorithm"
-  homepage "https://github.com/fribidi/fribidi"
-  url "https://ghproxy.com/https://github.com/fribidi/fribidi/releases/download/v1.0.13/fribidi-1.0.13.tar.xz"
+  homepage "https:github.comfribidifribidi"
+  url "https:github.comfribidifribidireleasesdownloadv1.0.13fribidi-1.0.13.tar.xz"
   sha256 "7fa16c80c81bd622f7b198d31356da139cc318a63fc7761217af4130903f54a2"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
@@ -18,7 +18,7 @@ class Fribidi < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -27,10 +27,10 @@ class Fribidi < Formula
   end
 
   test do
-    (testpath/"test.input").write <<~EOS
+    (testpath"test.input").write <<~EOS
       a _lsimple _RteST_o th_oat
     EOS
 
-    assert_match "a simple TSet that", shell_output("#{bin}/fribidi --charset=CapRTL --test test.input")
+    assert_match "a simple TSet that", shell_output("#{bin}fribidi --charset=CapRTL --test test.input")
   end
 end

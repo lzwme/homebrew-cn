@@ -1,7 +1,7 @@
 class Lv < Formula
-  desc "Powerful multi-lingual file viewer/grep"
-  homepage "https://web.archive.org/web/20160310122517/www.ff.iij4u.or.jp/~nrt/lv/"
-  url "https://web.archive.org/web/20150915000000/www.ff.iij4u.or.jp/~nrt/freeware/lv451.tar.gz"
+  desc "Powerful multi-lingual file viewergrep"
+  homepage "https:web.archive.orgweb20160310122517www.ff.iij4u.or.jp~nrtlv"
+  url "https:web.archive.orgweb20150915000000www.ff.iij4u.or.jp~nrtfreewarelv451.tar.gz"
   version "4.51"
   sha256 "e1cd2e27109fbdbc6d435f2c3a99c8a6ef2898941f5d2f7bacf0c1ad70158bcf"
   license "GPL-2.0"
@@ -33,18 +33,18 @@ class Lv < Formula
     depends_on "gzip"
   end
 
-  # See https://github.com/Homebrew/homebrew-core/pull/53085
+  # See https:github.comHomebrewhomebrew-corepull53085
   patch :DATA
 
   def install
     if OS.mac?
       # zcat doesn't handle gzip'd data on OSX.
       # Reported upstream to nrt@ff.iij4u.or.jp
-      inreplace "src/stream.c", 'gz_filter = "zcat"', 'gz_filter = "gzcat"'
+      inreplace "srcstream.c", 'gz_filter = "zcat"', 'gz_filter = "gzcat"'
     end
 
     cd "build" do
-      system "../src/configure", "--prefix=#{prefix}"
+      system "..srcconfigure", "--prefix=#{prefix}"
       system "make"
       bin.install "lv"
       bin.install_symlink "lv" => "lgrep"
@@ -55,13 +55,13 @@ class Lv < Formula
   end
 
   test do
-    system bin/"lv", "-V"
+    system bin"lv", "-V"
   end
 end
 
 __END__
---- a/src/escape.c
-+++ b/src/escape.c
+--- asrcescape.c
++++ bsrcescape.c
 @@ -62,6 +62,10 @@
  	break;
      } while( 'm' != ch );

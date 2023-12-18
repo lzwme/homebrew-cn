@@ -1,10 +1,10 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
-  homepage "https://hackage.haskell.org/package/hopenpgp-tools"
-  url "https://hackage.haskell.org/package/hopenpgp-tools-0.23.8/hopenpgp-tools-0.23.8.tar.gz"
+  homepage "https:hackage.haskell.orgpackagehopenpgp-tools"
+  url "https:hackage.haskell.orgpackagehopenpgp-tools-0.23.8hopenpgp-tools-0.23.8.tar.gz"
   sha256 "158be5544d28fcb3989376b6aee700aa6eed8390ffb8d41146b0aeff09433401"
   license "AGPL-3.0-or-later"
-  head "https://salsa.debian.org/clint/hOpenPGP.git", branch: "master"
+  head "https:salsa.debian.orgclinthOpenPGP.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2594f0655586997352c9ee99763670060b8dce25c465991554336037c810b88a"
@@ -26,7 +26,7 @@ class HopenpgpTools < Formula
   uses_from_macos "zlib"
 
   resource "homebrew-key.gpg" do
-    url "https://ghproxy.com/https://gist.githubusercontent.com/zmwangx/be307671d11cd78985bd3a96182f15ea/raw/c7e803814efc4ca96cc9a56632aa542ea4ccf5b3/homebrew-key.gpg"
+    url "https:gist.githubusercontent.comzmwangxbe307671d11cd78985bd3a96182f15earawc7e803814efc4ca96cc9a56632aa542ea4ccf5b3homebrew-key.gpg"
     sha256 "994744ca074a3662cff1d414e4b8fb3985d82f10cafcaadf1f8342f71f36b233"
   end
 
@@ -37,7 +37,7 @@ class HopenpgpTools < Formula
 
   test do
     resource("homebrew-key.gpg").stage do
-      linter_output = shell_output("#{bin}/hokey lint <homebrew-key.gpg 2>/dev/null")
+      linter_output = shell_output("#{bin}hokey lint <homebrew-key.gpg 2>devnull")
       assert_match "Homebrew <security@brew.sh>", linter_output
     end
   end

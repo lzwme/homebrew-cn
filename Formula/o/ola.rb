@@ -2,13 +2,13 @@ class Ola < Formula
   include Language::Python::Shebang
 
   desc "Open Lighting Architecture for lighting control information"
-  homepage "https://www.openlighting.org/ola/"
+  homepage "https:www.openlighting.orgola"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://ghproxy.com/https://github.com/OpenLightingProject/ola/releases/download/0.10.9/ola-0.10.9.tar.gz"
+  url "https:github.comOpenLightingProjectolareleasesdownload0.10.9ola-0.10.9.tar.gz"
   sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
-  head "https://github.com/OpenLightingProject/ola.git", branch: "master"
+  head "https:github.comOpenLightingProjectola.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -41,11 +41,11 @@ class Ola < Formula
 
   # Remove when we use unversioned protobuf
   def extra_python_path
-    Formula["protobuf@21"].opt_prefix/Language::Python.site_packages(python3)
+    Formula["protobuf@21"].opt_prefixLanguage::Python.site_packages(python3)
   end
 
   def install
-    # https://github.com/Homebrew/homebrew-core/pull/123791
+    # https:github.comHomebrewhomebrew-corepull123791
     # remove when the above PR is merged
     ENV.append_to_cflags "-DNDEBUG"
 
@@ -65,7 +65,7 @@ class Ola < Formula
 
     ENV["PYTHON"] = python3
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make", "install"
 
     rewrite_shebang detected_python_shebang, *bin.children
@@ -83,7 +83,7 @@ class Ola < Formula
     # `protobuf@21` is keg-only.
     # Remove when we use unversioned protobuf
     ENV.prepend_path "PYTHONPATH", extra_python_path
-    system bin/"ola_plugin_state", "-h"
+    system bin"ola_plugin_state", "-h"
     system python3, "-c", "from ola.ClientWrapper import ClientWrapper"
   end
 end

@@ -1,16 +1,16 @@
 class GtkMacIntegration < Formula
   desc "Integrates GTK macOS applications with the Mac desktop"
-  homepage "https://wiki.gnome.org/Projects/GTK+/OSX/Integration"
+  homepage "https:wiki.gnome.orgProjectsGTK+OSXIntegration"
   license "LGPL-2.1-only"
   revision 1
 
   stable do
-    url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.1.tar.xz"
+    url "https:download.gnome.orgsourcesgtk-mac-integration3.0gtk-mac-integration-3.0.1.tar.xz"
     sha256 "f19e35bc4534963127bbe629b9b3ccb9677ef012fc7f8e97fd5e890873ceb22d"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -19,7 +19,7 @@ class GtkMacIntegration < Formula
   # "even-numbered minor is stable" version scheme.
   livecheck do
     url :stable
-    regex(/gtk-mac-integration[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(gtk-mac-integration[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class GtkMacIntegration < Formula
   end
 
   head do
-    url "https://gitlab.gnome.org/GNOME/gtk-mac-integration.git", branch: "master"
+    url "https:gitlab.gnome.orgGNOMEgtk-mac-integration.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -47,7 +47,7 @@ class GtkMacIntegration < Formula
   depends_on :macos
 
   def install
-    configure = build.head? ? "./autogen.sh" : "./configure"
+    configure = build.head? ? ".autogen.sh" : ".configure"
     system configure, *std_configure_args,
                       "--disable-silent-rules",
                       "--without-gtk2",
@@ -58,7 +58,7 @@ class GtkMacIntegration < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <gtkosxapplication.h>
 
       int main(int argc, char *argv[]) {
@@ -68,6 +68,6 @@ class GtkMacIntegration < Formula
     EOS
     flags = shell_output("pkg-config --cflags --libs gtk-mac-integration-gtk3").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

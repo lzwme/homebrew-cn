@@ -1,7 +1,7 @@
 class Riemann < Formula
   desc "Event stream processor"
-  homepage "https://riemann.io/"
-  url "https://ghproxy.com/https://github.com/riemann/riemann/releases/download/0.3.10/riemann-0.3.10.tar.bz2"
+  homepage "https:riemann.io"
+  url "https:github.comriemannriemannreleasesdownload0.3.10riemann-0.3.10.tar.bz2"
   sha256 "76421dc7ef51ab7a5a0c61cabb03ba46cad0d6eda6bd19e7704c8e207a8e0513"
   license "EPL-1.0"
 
@@ -12,13 +12,13 @@ class Riemann < Formula
   depends_on "openjdk"
 
   def install
-    inreplace "bin/riemann", "$top/etc", etc
-    etc.install "etc/riemann.config" => "riemann.config.guide"
+    inreplace "binriemann", "$topetc", etc
+    etc.install "etcriemann.config" => "riemann.config.guide"
 
     # Install jars in libexec to avoid conflicts
     libexec.install Dir["*"]
 
-    (bin/"riemann").write_env_script libexec/"bin/riemann", Language::Java.overridable_java_home_env
+    (bin"riemann").write_env_script libexec"binriemann", Language::Java.overridable_java_home_env
   end
 
   def caveats
@@ -31,13 +31,13 @@ class Riemann < Formula
   end
 
   service do
-    run [opt_bin/"riemann", etc/"riemann.config"]
+    run [opt_bin"riemann", etc"riemann.config"]
     keep_alive true
-    log_path var/"log/riemann.log"
-    error_log_path var/"log/riemann.log"
+    log_path var"logriemann.log"
+    error_log_path var"logriemann.log"
   end
 
   test do
-    system "#{bin}/riemann", "-help", "0"
+    system "#{bin}riemann", "-help", "0"
   end
 end

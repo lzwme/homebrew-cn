@@ -1,7 +1,7 @@
 class FlowTools < Formula
   desc "Collect, send, process, and generate NetFlow data reports"
-  homepage "https://code.google.com/archive/p/flow-tools/"
-  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/flow-tools/flow-tools-0.68.5.1.tar.bz2"
+  homepage "https:code.google.comarchivepflow-tools"
+  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comflow-toolsflow-tools-0.68.5.1.tar.bz2"
   sha256 "80bbd3791b59198f0d20184761d96ba500386b0a71ea613c214a50aa017a1f67"
   license "BSD-2-Clause"
 
@@ -22,7 +22,7 @@ class FlowTools < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -31,20 +31,20 @@ class FlowTools < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Work around failure from GCC 10+ using default of `-fno-common`
-    # /usr/bin/ld: acl2.o:(.bss+0x0): multiple definition of `acl_list'
+    # usrbinld: acl2.o:(.bss+0x0): multiple definition of `acl_list'
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
     # Generate test flow data with 1000 flows
-    data = shell_output("#{bin}/flow-gen")
+    data = shell_output("#{bin}flow-gen")
     # Test that the test flows work with some flow- programs
-    pipe_output("#{bin}/flow-cat", data, 0)
-    pipe_output("#{bin}/flow-print", data, 0)
-    pipe_output("#{bin}/flow-stat", data, 0)
+    pipe_output("#{bin}flow-cat", data, 0)
+    pipe_output("#{bin}flow-print", data, 0)
+    pipe_output("#{bin}flow-stat", data, 0)
   end
 end

@@ -1,7 +1,7 @@
 class Needle < Formula
   desc "Compile-time safe Swift dependency injection framework with real code"
-  homepage "https://github.com/uber/needle"
-  url "https://ghproxy.com/https://github.com/uber/needle/archive/refs/tags/v0.24.0.tar.gz"
+  homepage "https:github.comuberneedle"
+  url "https:github.comuberneedlearchiverefstagsv0.24.0.tar.gz"
   sha256 "61b7259a369d04d24c0c532ecf3295fdff92e79e4d0f96abaed1552b19208478"
   license "Apache-2.0"
 
@@ -19,21 +19,21 @@ class Needle < Formula
 
   def install
     # Avoid building a universal binary.
-    swift_build_flags = (buildpath/"Makefile").read[/^SWIFT_BUILD_FLAGS=(.*)$/, 1].split
+    swift_build_flags = (buildpath"Makefile").read[^SWIFT_BUILD_FLAGS=(.*)$, 1].split
     %w[--arch arm64 x86_64].each do |flag|
       swift_build_flags.delete(flag)
     end
 
     system "make", "install", "BINARY_FOLDER_PREFIX=#{prefix}", "SWIFT_BUILD_FLAGS=#{swift_build_flags.join(" ")}"
-    bin.install "./Generator/bin/needle"
-    libexec.install "./Generator/bin/lib_InternalSwiftSyntaxParser.dylib"
+    bin.install ".Generatorbinneedle"
+    libexec.install ".Generatorbinlib_InternalSwiftSyntaxParser.dylib"
 
     # lib_InternalSwiftSyntaxParser is taken from Xcode, so it's a universal binary.
-    deuniversalize_machos(libexec/"lib_InternalSwiftSyntaxParser.dylib")
+    deuniversalize_machos(libexec"lib_InternalSwiftSyntaxParser.dylib")
   end
 
   test do
-    (testpath/"Test.swift").write <<~EOS
+    (testpath"Test.swift").write <<~EOS
       import Foundation
 
       protocol ChildDependency: Dependency {}
@@ -42,7 +42,7 @@ class Needle < Formula
       let child = Child(parent: self)
     EOS
 
-    assert_match "Root\n", shell_output("#{bin}/needle print-dependency-tree #{testpath}/Test.swift")
-    assert_match version.to_s, shell_output("#{bin}/needle version")
+    assert_match "Root\n", shell_output("#{bin}needle print-dependency-tree #{testpath}Test.swift")
+    assert_match version.to_s, shell_output("#{bin}needle version")
   end
 end

@@ -1,10 +1,10 @@
 class Slides < Formula
   desc "Terminal based presentation tool"
-  homepage "https://github.com/maaslalani/slides"
-  url "https://ghproxy.com/https://github.com/maaslalani/slides/archive/refs/tags/v0.9.0.tar.gz"
+  homepage "https:github.commaaslalanislides"
+  url "https:github.commaaslalanislidesarchiverefstagsv0.9.0.tar.gz"
   sha256 "fcce0dbbe767e0b1f0800e4ea934ee9babbfb18ab2ec4b343e3cd6359cd48330"
   license "MIT"
-  head "https://github.com/maaslalani/slides.git", branch: "main"
+  head "https:github.commaaslalanislides.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d474822334c4c065d42e7c81de42e4924afca758106f358cdd755e454c13be84"
@@ -26,7 +26,7 @@ class Slides < Formula
   end
 
   test do
-    (testpath/"test.md").write <<-MARKDOWN
+    (testpath"test.md").write <<-MARKDOWN
     # Slide 1
     Content
 
@@ -41,13 +41,13 @@ class Slides < Formula
     # "<ESC>[6n" to report the cursor position. For now we just run the command
     # for a second and see that it tried to send some ANSI out of it.
     require "pty"
-    r, _, pid = PTY.spawn "#{bin}/slides test.md"
+    r, _, pid = PTY.spawn "#{bin}slides test.md"
     sleep 1
     Process.kill("TERM", pid)
     begin
-      assert_match(/\e\[/, r.read)
+      assert_match(\e\[, r.read)
     rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
+      # GNULinux raises EIO when read is done on closed pty
     end
   end
 end

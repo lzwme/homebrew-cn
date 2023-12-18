@@ -1,10 +1,10 @@
 class Wallpaper < Formula
   desc "Manage the desktop wallpaper"
-  homepage "https://github.com/sindresorhus/macos-wallpaper"
-  url "https://ghproxy.com/https://github.com/sindresorhus/macos-wallpaper/archive/refs/tags/v2.3.1.tar.gz"
+  homepage "https:github.comsindresorhusmacos-wallpaper"
+  url "https:github.comsindresorhusmacos-wallpaperarchiverefstagsv2.3.1.tar.gz"
   sha256 "d6aebaca1083ee3e5d6494f5574931691bad239a98e8fe99655790a40f2cb80a"
   license "MIT"
-  head "https://github.com/sindresorhus/macos-wallpaper.git", branch: "main"
+  head "https:github.comsindresorhusmacos-wallpaper.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f6f09c6f49b2e84378b5601a03be68489d1a0127a0b02910d7fb87dcd1cc94c2"
@@ -22,10 +22,10 @@ class Wallpaper < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/wallpaper"
+    bin.install ".buildreleasewallpaper"
   end
 
   test do
-    system "#{bin}/wallpaper", "get"
+    system "#{bin}wallpaper", "get"
   end
 end

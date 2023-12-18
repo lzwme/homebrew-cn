@@ -1,14 +1,14 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
-  homepage "https://github.com/rakshasa/libtorrent"
-  url "https://ghproxy.com/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.13.8.tar.gz"
+  homepage "https:github.comrakshasalibtorrent"
+  url "https:github.comrakshasalibtorrentarchiverefstagsv0.13.8.tar.gz"
   sha256 "0f6c2e7ffd3a1723ab47fdac785ec40f85c0a5b5a42c1d002272205b988be722"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -37,21 +37,21 @@ class LibtorrentRakshasa < Formula
 
   def install
     system "sh", "autogen.sh"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <string>
-      #include <torrent/torrent.h>
+      #include <torrenttorrent.h>
       int main(int argc, char* argv[])
       {
         return strcmp(torrent::version(), argv[1]);
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-ltorrent"
-    system "./test", version.to_s
+    system ".test", version.to_s
   end
 end

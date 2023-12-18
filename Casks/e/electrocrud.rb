@@ -2,10 +2,10 @@ cask "electrocrud" do
   version "3.0.19"
   sha256 "d605885ae136077e001ae48c008147008501fd305bdf3de296a4553eb7195e4a"
 
-  url "https://ghproxy.com/https://github.com/garrylachman/ElectroCRUD/releases/download/v#{version}/ElectroCRUD-v#{version}-mac-x64.dmg"
+  url "https:github.comgarrylachmanElectroCRUDreleasesdownloadv#{version}ElectroCRUD-v#{version}-mac-x64.dmg"
   name "ElectroCRUD"
   desc "Database CRUD application"
-  homepage "https://github.com/garrylachman/ElectroCRUD"
+  homepage "https:github.comgarrylachmanElectroCRUD"
 
   livecheck do
     url :url
@@ -15,8 +15,8 @@ cask "electrocrud" do
   app "electrocrud.app"
 
   zap trash: [
-    "~/Library/Application Support/ElectroCRUD",
-    "~/Library/Preferences/com.garrylachman.electrocrud.plist",
-    "~/Library/Saved Application State/com.garrylachman.electrocrud.savedState",
+    "~LibraryApplication SupportElectroCRUD",
+    "~LibraryPreferencescom.garrylachman.electrocrud.plist",
+    "~LibrarySaved Application Statecom.garrylachman.electrocrud.savedState",
   ]
 end

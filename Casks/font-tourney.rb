@@ -2,13 +2,13 @@ cask "font-tourney" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tourney"
+      only_path: "ofltourney"
   name "Tourney"
   desc "Completely solid"
-  homepage "https://fonts.google.com/specimen/Tourney"
+  homepage "https:fonts.google.comspecimenTourney"
 
   font "Tourney-Italic[wdth,wght].ttf"
   font "Tourney[wdth,wght].ttf"

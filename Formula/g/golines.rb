@@ -1,10 +1,10 @@
 class Golines < Formula
   desc "Golang formatter that fixes long lines"
-  homepage "https://github.com/segmentio/golines"
-  url "https://ghproxy.com/https://github.com/segmentio/golines/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:github.comsegmentiogolines"
+  url "https:github.comsegmentiogolinesarchiverefstagsv0.11.0.tar.gz"
   sha256 "d7336fbddb045bd2448629c4b8ef5ab2dc6136e71a795b6fdd596066bc00adc0"
   license "MIT"
-  head "https://github.com/segmentio/golines.git", branch: "master"
+  head "https:github.comsegmentiogolines.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b6dc43c965d0054ba38469480c298e81f9563609b0f8ce0d3c34013711840ac"
@@ -25,16 +25,16 @@ class Golines < Formula
   end
 
   test do
-    (testpath/"given.go").write <<~EOS
+    (testpath"given.go").write <<~EOS
       package main
 
       var strings = []string{"foo", "bar", "baz"}
     EOS
-    (testpath/"expected.go").write <<~EOS
+    (testpath"expected.go").write <<~EOS
       package main
 
       var strings = []string{\n\t"foo",\n\t"bar",\n\t"baz",\n}
     EOS
-    assert_equal shell_output("#{bin}/golines --max-len=30 given.go"), (testpath/"expected.go").read
+    assert_equal shell_output("#{bin}golines --max-len=30 given.go"), (testpath"expected.go").read
   end
 end

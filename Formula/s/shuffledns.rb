@@ -1,10 +1,10 @@
 class Shuffledns < Formula
   desc "Enumerate subdomains using active bruteforce & resolve subdomains with wildcards"
-  homepage "https://github.com/projectdiscovery/shuffledns"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/shuffledns/archive/refs/tags/v1.0.9.tar.gz"
+  homepage "https:github.comprojectdiscoveryshuffledns"
+  url "https:github.comprojectdiscoveryshufflednsarchiverefstagsv1.0.9.tar.gz"
   sha256 "ce61eb210c0bb7ff5cc2e0d45e90129764494d9c0b8883e04fe67b16169ab707"
   license "GPL-3.0-or-later"
-  head "https://github.com/projectdiscovery/shuffledns.git", branch: "main"
+  head "https:github.comprojectdiscoveryshuffledns.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b5aeb6963233927cad51f0da2b5dc409068b41904c4e2901806a991016c1a8a"
@@ -21,11 +21,11 @@ class Shuffledns < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/shuffledns"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdshuffledns"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/shuffledns -version 2>&1")
-    assert_match "no resolver list provided", shell_output("#{bin}/shuffledns 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}shuffledns -version 2>&1")
+    assert_match "no resolver list provided", shell_output("#{bin}shuffledns 2>&1", 1)
   end
 end

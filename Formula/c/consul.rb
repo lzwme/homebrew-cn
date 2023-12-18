@@ -1,15 +1,15 @@
 class Consul < Formula
   desc "Tool for service discovery, monitoring and configuration"
-  homepage "https://www.consul.io"
+  homepage "https:www.consul.io"
   # NOTE: Do not bump to 1.17.0+ as license changed to BUSL-1.1
-  # https://github.com/hashicorp/consul/pull/18443
-  # https://github.com/hashicorp/consul/pull/18479
-  url "https://ghproxy.com/https://github.com/hashicorp/consul/archive/refs/tags/v1.16.2.tar.gz"
+  # https:github.comhashicorpconsulpull18443
+  # https:github.comhashicorpconsulpull18479
+  url "https:github.comhashicorpconsularchiverefstagsv1.16.2.tar.gz"
   sha256 "0dacc7eeacd19a687e20fa83ae88444d2a5336a9150cfc116d39a39b31d5829d"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/consul.git", branch: "main"
+  head "https:github.comhashicorpconsul.git", branch: "main"
 
-  # TODO: Remove this if/when the formula is deprecated.
+  # TODO: Remove this ifwhen the formula is deprecated.
   livecheck do
     skip "Formula will not be updated due to BUSL license change"
   end
@@ -33,10 +33,10 @@ class Consul < Formula
   end
 
   service do
-    run [opt_bin/"consul", "agent", "-dev", "-bind", "127.0.0.1"]
+    run [opt_bin"consul", "agent", "-dev", "-bind", "127.0.0.1"]
     keep_alive true
-    error_log_path var/"log/consul.log"
-    log_path var/"log/consul.log"
+    error_log_path var"logconsul.log"
+    log_path var"logconsul.log"
     working_dir var
   end
 
@@ -45,7 +45,7 @@ class Consul < Formula
     fork do
       # most ports must be free, but are irrelevant to this test
       system(
-        bin/"consul",
+        bin"consul",
         "agent",
         "-dev",
         "-bind", "127.0.0.1",
@@ -63,9 +63,9 @@ class Consul < Formula
 
     k = "brew-formula-test"
     v = "value"
-    system bin/"consul", "kv", "put", "-http-addr", "127.0.0.1:#{http_port}", k, v
-    assert_equal v, shell_output(bin/"consul kv get -http-addr 127.0.0.1:#{http_port} #{k}").chomp
+    system bin"consul", "kv", "put", "-http-addr", "127.0.0.1:#{http_port}", k, v
+    assert_equal v, shell_output(bin"consul kv get -http-addr 127.0.0.1:#{http_port} #{k}").chomp
 
-    system bin/"consul", "leave", "-http-addr", "127.0.0.1:#{http_port}"
+    system bin"consul", "leave", "-http-addr", "127.0.0.1:#{http_port}"
   end
 end

@@ -2,10 +2,10 @@ cask "font-fresca" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/fresca/Fresca-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflfrescaFresca-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Fresca"
-  homepage "https://fonts.google.com/specimen/Fresca"
+  homepage "https:fonts.google.comspecimenFresca"
 
   font "Fresca-Regular.ttf"
 

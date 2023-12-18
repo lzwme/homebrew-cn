@@ -1,13 +1,13 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
-  homepage "https://github.com/cilium/tetragon"
-  url "https://ghproxy.com/https://github.com/cilium/tetragon/archive/refs/tags/v1.0.1.tar.gz"
+  homepage "https:github.comciliumtetragon"
+  url "https:github.comciliumtetragonarchiverefstagsv1.0.1.tar.gz"
   sha256 "3c08e54e35345a3bc38cc074293180481c5275d19c760c8a1b9df7cb703d4960"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -23,14 +23,14 @@ class Tetra < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/cilium/tetragon/pkg/version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"tetra"), "./cmd/tetra"
+    ldflags = "-s -w -X github.comciliumtetragonpkgversion.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"tetra"), ".cmdtetra"
 
-    generate_completions_from_executable(bin/"tetra", "completion")
+    generate_completions_from_executable(bin"tetra", "completion")
   end
 
   test do
-    assert_match "CLI version: #{version}", shell_output("#{bin}/tetra version --build")
-    assert_match "{}", pipe_output("#{bin}/tetra getevents", "invalid_event")
+    assert_match "CLI version: #{version}", shell_output("#{bin}tetra version --build")
+    assert_match "{}", pipe_output("#{bin}tetra getevents", "invalid_event")
   end
 end

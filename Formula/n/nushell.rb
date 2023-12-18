@@ -1,14 +1,14 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
-  homepage "https://www.nushell.sh"
-  url "https://ghproxy.com/https://github.com/nushell/nushell/archive/refs/tags/0.88.1.tar.gz"
+  homepage "https:www.nushell.sh"
+  url "https:github.comnushellnushellarchiverefstags0.88.1.tar.gz"
   sha256 "19f5a46799142117f61989a76f85fdd24361fe9e5068565d7fff36b91a7a7a39"
   license "MIT"
-  head "https://github.com/nushell/nushell.git", branch: "main"
+  head "https:github.comnushellnushell.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:[._]\d+)+)/i)
+    regex(v?(\d+(?:[._]\d+)+)i)
     strategy :github_latest
   end
 
@@ -37,8 +37,8 @@ class Nushell < Formula
   def install
     system "cargo", "install", "--features", "dataframe", *std_cargo_args
 
-    buildpath.glob("crates/nu_plugin_*").each do |plugindir|
-      next unless (plugindir/"Cargo.toml").exist?
+    buildpath.glob("cratesnu_plugin_*").each do |plugindir|
+      next unless (plugindir"Cargo.toml").exist?
 
       system "cargo", "install", *std_cargo_args(path: plugindir)
     end
@@ -46,6 +46,6 @@ class Nushell < Formula
 
   test do
     assert_match "homebrew_test",
-      pipe_output("#{bin}/nu -c '{ foo: 1, bar: homebrew_test} | get bar'", nil)
+      pipe_output("#{bin}nu -c '{ foo: 1, bar: homebrew_test} | get bar'", nil)
   end
 end

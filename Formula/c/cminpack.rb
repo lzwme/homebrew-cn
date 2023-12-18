@@ -1,10 +1,10 @@
 class Cminpack < Formula
   desc "Solves nonlinear equations and nonlinear least squares problems"
-  homepage "http://devernay.free.fr/hacks/cminpack/cminpack.html"
-  url "https://ghproxy.com/https://github.com/devernay/cminpack/archive/refs/tags/v1.3.8.tar.gz"
+  homepage "http:devernay.free.frhackscminpackcminpack.html"
+  url "https:github.comdevernaycminpackarchiverefstagsv1.3.8.tar.gz"
   sha256 "3ea7257914ad55eabc43a997b323ba0dfee0a9b010d648b6d5b0c96425102d0e"
   license "Minpack"
-  head "https://github.com/devernay/cminpack.git", branch: "master"
+  head "https:github.comdevernaycminpack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "eb5aa3a3cc8d9932ae6c1b155fea6de6c631b88aa2e6d8bf43f217d8cfba3320"
@@ -29,14 +29,14 @@ class Cminpack < Formula
                          *std_cmake_args
     system "make", "install"
 
-    man3.install Dir["doc/*.3"]
-    doc.install Dir["doc/*"]
-    pkgshare.install "examples/thybrdc.c"
+    man3.install Dir["doc*.3"]
+    doc.install Dir["doc*"]
+    pkgshare.install "examplesthybrdc.c"
   end
 
   test do
-    system ENV.cc, "-I#{include}/cminpack-1", pkgshare/"thybrdc.c",
+    system ENV.cc, "-I#{include}cminpack-1", pkgshare"thybrdc.c",
                    "-L#{lib}", "-lcminpack", "-lm", "-o", "test"
-    assert_match "number of function evaluations", shell_output("./test")
+    assert_match "number of function evaluations", shell_output(".test")
   end
 end

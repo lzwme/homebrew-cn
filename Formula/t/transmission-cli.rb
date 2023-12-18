@@ -1,7 +1,7 @@
 class TransmissionCli < Formula
   desc "Lightweight BitTorrent client"
-  homepage "https://www.transmissionbt.com/"
-  url "https://ghproxy.com/https://github.com/transmission/transmission/releases/download/4.0.5/transmission-4.0.5.tar.xz"
+  homepage "https:www.transmissionbt.com"
+  url "https:github.comtransmissiontransmissionreleasesdownload4.0.5transmission-4.0.5.tar.xz"
   sha256 "fd68ff114a479200043c30c7e69dba4c1932f7af36ca4c5b5d2edcb5866e6357"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
@@ -49,7 +49,7 @@ class TransmissionCli < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (var/"transmission").mkpath
+    (var"transmission").mkpath
   end
 
   def caveats
@@ -57,7 +57,7 @@ class TransmissionCli < Formula
       This formula only installs the command line utilities.
 
       Transmission.app can be downloaded directly from the website:
-        https://www.transmissionbt.com/
+        https:www.transmissionbt.com
 
       Alternatively, install with Homebrew Cask:
         brew install --cask transmission
@@ -65,13 +65,13 @@ class TransmissionCli < Formula
   end
 
   service do
-    run [opt_bin/"transmission-daemon", "--foreground", "--config-dir", var/"transmission/", "--log-info",
-         "--logfile", var/"transmission/transmission-daemon.log"]
+    run [opt_bin"transmission-daemon", "--foreground", "--config-dir", var"transmission", "--log-info",
+         "--logfile", var"transmissiontransmission-daemon.log"]
     keep_alive true
   end
 
   test do
-    system "#{bin}/transmission-create", "-o", "#{testpath}/test.mp3.torrent", test_fixtures("test.mp3")
-    assert_match(/^magnet:/, shell_output("#{bin}/transmission-show -m #{testpath}/test.mp3.torrent"))
+    system "#{bin}transmission-create", "-o", "#{testpath}test.mp3.torrent", test_fixtures("test.mp3")
+    assert_match(^magnet:, shell_output("#{bin}transmission-show -m #{testpath}test.mp3.torrent"))
   end
 end

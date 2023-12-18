@@ -1,10 +1,10 @@
 class Dstask < Formula
   desc "Git-powered personal task tracker"
-  homepage "https://github.com/naggie/dstask"
-  url "https://ghproxy.com/https://github.com/naggie/dstask/archive/refs/tags/v0.26.tar.gz"
+  homepage "https:github.comnaggiedstask"
+  url "https:github.comnaggiedstaskarchiverefstagsv0.26.tar.gz"
   sha256 "ccd7afcb825eb799bdaaaf6eaf8150bbb8ceda02fec6c97f042b7bbc913a46fc"
   license "MIT"
-  head "https://github.com/naggie/dstask.git", branch: "master"
+  head "https:github.comnaggiedstask.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f76c19c728c1c23782e87213061f06a97cce7e5924f02816e6d51d4893001b3d"
@@ -23,8 +23,8 @@ class Dstask < Formula
 
   def install
     system "go", "mod", "vendor"
-    system "make", "dist/dstask"
-    bin.install Dir["dist/*"]
+    system "make", "distdstask"
+    bin.install Dir["dist*"]
   end
 
   test do
@@ -34,10 +34,10 @@ class Dstask < Formula
       system "git", "config", "user.email", "BrewTestBot@test.com"
     end
 
-    system bin/"dstask", "add", "Brew the brew"
-    system bin/"dstask", "start", "1"
-    output = shell_output("#{bin}/dstask show-active")
+    system bin"dstask", "add", "Brew the brew"
+    system bin"dstask", "start", "1"
+    output = shell_output("#{bin}dstask show-active")
     assert_match "Brew the brew", output
-    system bin/"dstask", "done", "1"
+    system bin"dstask", "done", "1"
   end
 end

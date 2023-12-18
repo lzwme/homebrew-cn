@@ -2,11 +2,11 @@ cask "font-hind-mysuru" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
+  url "https:github.comgooglefonts.git",
       branch:    "main",
-      only_path: "ofl/hindmysuru"
+      only_path: "oflhindmysuru"
   name "Hind Mysuru"
-  homepage "https://github.com/itfoundry/hind-mysuru"
+  homepage "https:github.comitfoundryhind-mysuru"
 
   font "HindMysuru-Bold.ttf"
   font "HindMysuru-Light.ttf"

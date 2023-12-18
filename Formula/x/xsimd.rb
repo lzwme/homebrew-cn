@@ -1,7 +1,7 @@
 class Xsimd < Formula
   desc "Modern, portable C++ wrappers for SIMD intrinsics"
-  homepage "https://xsimd.readthedocs.io/en/latest/"
-  url "https://ghproxy.com/https://github.com/xtensor-stack/xsimd/archive/refs/tags/12.1.1.tar.gz"
+  homepage "https:xsimd.readthedocs.ioenlatest"
+  url "https:github.comxtensor-stackxsimdarchiverefstags12.1.1.tar.gz"
   sha256 "73f94a051278ef3da4533b691d31244d12074d5d71107473a9fd8d7be15f0110"
   license "BSD-3-Clause"
 
@@ -20,11 +20,11 @@ class Xsimd < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <vector>
       #include <type_traits>
 
-      #include "xsimd/memory/xsimd_alignment.hpp"
+      #include "xsimdmemoryxsimd_alignment.hpp"
 
       using namespace xsimd;
 
@@ -45,6 +45,6 @@ class Xsimd < Formula
       }
     EOS
     system ENV.cxx, "test.c", "-std=c++14", "-I#{include}", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

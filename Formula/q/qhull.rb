@@ -1,17 +1,17 @@
 class Qhull < Formula
   desc "Computes convex hulls in n dimensions"
-  homepage "http://www.qhull.org/"
-  url "http://www.qhull.org/download/qhull-2020-src-8.0.2.tgz"
+  homepage "http:www.qhull.org"
+  url "http:www.qhull.orgdownloadqhull-2020-src-8.0.2.tgz"
   version "2020.2"
   sha256 "b5c2d7eb833278881b952c8a52d20179eab87766b00b865000469a45c1838b7e"
   license "Qhull"
-  head "https://github.com/qhull/qhull.git", branch: "master"
+  head "https:github.comqhullqhull.git", branch: "master"
 
   # It's necessary to match the version from the link text, as the filename
   # only contains the year (`2020`), not a full version like `2020.2`.
   livecheck do
-    url "http://www.qhull.org/download/"
-    regex(/href=.*?qhull[._-][^"' >]+?[._-]src[^>]*?\.t[^>]+?>[^<]*Qhull v?(\d+(?:\.\d+)*)/i)
+    url "http:www.qhull.orgdownload"
+    regex(href=.*?qhull[._-][^"' >]+?[._-]src[^>]*?\.t[^>]+?>[^<]*Qhull v?(\d+(?:\.\d+)*)i)
   end
 
   bottle do
@@ -39,8 +39,8 @@ class Qhull < Formula
   end
 
   test do
-    input = shell_output(bin/"rbox c D2")
-    output = pipe_output("#{bin}/qconvex s n 2>&1", input, 0)
+    input = shell_output(bin"rbox c D2")
+    output = pipe_output("#{bin}qconvex s n 2>&1", input, 0)
     assert_match "Number of facets: 4", output
   end
 end

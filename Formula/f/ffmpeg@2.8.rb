@@ -1,15 +1,15 @@
 class FfmpegAT28 < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-2.8.22.tar.xz"
+  homepage "https:ffmpeg.org"
+  url "https:ffmpeg.orgreleasesffmpeg-2.8.22.tar.xz"
   sha256 "1fbbf622806a112c5131d42b280a9e980f676ffe1c81a4e0f2ae4cb121241531"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://ffmpeg.org/download.html"
-    regex(/href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.t/i)
+    url "https:ffmpeg.orgdownload.html"
+    regex(href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.ti)
   end
 
   bottle do
@@ -89,14 +89,14 @@ class FfmpegAT28 < Formula
     # A bug in a dispatch header on 10.10, included via CoreFoundation,
     # prevents GCC from building VDA support. GCC has no problems on
     # 10.9 and earlier.
-    # See: https://github.com/Homebrew/homebrew/issues/33741
+    # See: https:github.comHomebrewhomebrewissues33741
     args << if ENV.compiler == :clang
       "--enable-vda"
     else
       "--disable-vda"
     end
 
-    system "./configure", *args
+    system ".configure", *args
 
     inreplace "config.mak" do |s|
       shflags = s.get_make_var "SHFLAGS"
@@ -107,13 +107,13 @@ class FfmpegAT28 < Formula
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install Dir["tools/*"].select { |f| File.executable? f }
+    bin.install Dir["tools*"].select { |f| File.executable? f }
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath/"video.mp4"
-    system bin/"ffmpeg", "-y", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath"video.mp4"
+    system bin"ffmpeg", "-y", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_predicate mp4out, :exist?
   end
 end

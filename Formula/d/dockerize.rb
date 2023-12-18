@@ -1,7 +1,7 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
-  homepage "https://github.com/jwilder/dockerize"
-  url "https://ghproxy.com/https://github.com/jwilder/dockerize/archive/refs/tags/v0.7.0.tar.gz"
+  homepage "https:github.comjwilderdockerize"
+  url "https:github.comjwilderdockerizearchiverefstagsv0.7.0.tar.gz"
   sha256 "c39e756cd2d43341dd01645f2a100437dcc7c91cf5bfed5751e71a4804575a7d"
   license "MIT"
 
@@ -26,7 +26,7 @@ class Dockerize < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dockerize --version")
-    system bin/"dockerize", "-wait", "https://www.google.com/", "-wait-retry-interval=1s", "-timeout", "5s"
+    assert_match version.to_s, shell_output("#{bin}dockerize --version")
+    system bin"dockerize", "-wait", "https:www.google.com", "-wait-retry-interval=1s", "-timeout", "5s"
   end
 end

@@ -1,10 +1,10 @@
 class Svlint < Formula
   desc "SystemVerilog linter"
-  homepage "https://github.com/dalance/svlint"
-  url "https://ghproxy.com/https://github.com/dalance/svlint/archive/refs/tags/v0.9.1.tar.gz"
+  homepage "https:github.comdalancesvlint"
+  url "https:github.comdalancesvlintarchiverefstagsv0.9.1.tar.gz"
   sha256 "c3b14f248c7ecad5a565cb357f0e5f02cd0d2c8d551e0f7e3b39b624d47ee9c1"
   license "MIT"
-  head "https://github.com/dalance/svlint.git", branch: "master"
+  head "https:github.comdalancesvlint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "180136e14366c7312fe90b8a75636b48b5064ca66ef30165c0855bdbb7ec5dcb"
@@ -23,11 +23,11 @@ class Svlint < Formula
   end
 
   test do
-    (testpath/"test.sv").write <<~EOS
+    (testpath"test.sv").write <<~EOS
       module M;
       endmodule
     EOS
 
-    assert_match(/hint\s+:\s+Begin `module` name with lowerCamelCase./, shell_output("#{bin}/svlint test.sv", 1))
+    assert_match(hint\s+:\s+Begin `module` name with lowerCamelCase., shell_output("#{bin}svlint test.sv", 1))
   end
 end

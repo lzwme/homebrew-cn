@@ -2,10 +2,10 @@ cask "font-moul" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/moul/Moul-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmoulMoul-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Moul"
-  homepage "https://fonts.google.com/specimen/Moul"
+  homepage "https:fonts.google.comspecimenMoul"
 
   font "Moul-Regular.ttf"
 

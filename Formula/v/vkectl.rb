@@ -1,7 +1,7 @@
 class Vkectl < Formula
   desc "Command-Line Interface for VKE(VolcanoEngine Kubernetes Engine)"
-  homepage "https://github.com/volcengine/vkectl"
-  url "https://ghproxy.com/https://github.com/volcengine/vkectl/archive/refs/tags/v0.1.1.tar.gz"
+  homepage "https:github.comvolcenginevkectl"
+  url "https:github.comvolcenginevkectlarchiverefstagsv0.1.1.tar.gz"
   sha256 "15f0f3786c03d53702306ba4ae8812afe59e0094356d1202c292cca87242ac77"
   license "Apache-2.0"
 
@@ -19,30 +19,30 @@ class Vkectl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8642891d03c1b70b07f60f69492f8b104097508ca84b41f53c157c47853d78b"
   end
 
-  # github.com/choleraehyq/pid@v0.0.12/pid_go1.5_amd64.s:28: expected pseudo-register; found R13
+  # github.comcholeraehyqpid@v0.0.12pid_go1.5_amd64.s:28: expected pseudo-register; found R13
   deprecate! date: "2023-02-14", because: "does not build with Go 1.18 or later"
 
   # Bump to 1.18 on the next release, if possible.
   depends_on "go@1.17" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/volcengine/vkectl/pkg/version.version=v#{version}"), "./main"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comvolcenginevkectlpkgversion.version=v#{version}"), ".main"
 
-    generate_completions_from_executable(bin/"vkectl", "completion")
+    generate_completions_from_executable(bin"vkectl", "completion")
   end
 
   test do
-    version_out = shell_output("#{bin}/vkectl version")
+    version_out = shell_output("#{bin}vkectl version")
     assert_match version.to_s, version_out
 
-    resource_help_out = shell_output("#{bin}/vkectl resource -h")
+    resource_help_out = shell_output("#{bin}vkectl resource -h")
     assert_match "AddNodes", resource_help_out
 
-    resource_get_addon_out = shell_output("#{bin}/vkectl resource GetAddon")
+    resource_get_addon_out = shell_output("#{bin}vkectl resource GetAddon")
     resource_get_addon_index = resource_get_addon_out.index("{")
     assert_empty JSON.parse(resource_get_addon_out[resource_get_addon_index..])["Name"]
 
-    security_get_check_item_out = shell_output("#{bin}/vkectl security GetCheckItem")
+    security_get_check_item_out = shell_output("#{bin}vkectl security GetCheckItem")
     security_get_check_item_index = security_get_check_item_out.index("{")
     assert_empty JSON.parse(security_get_check_item_out[security_get_check_item_index..])["Number"]
   end

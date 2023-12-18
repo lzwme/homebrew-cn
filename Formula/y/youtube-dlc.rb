@@ -1,11 +1,11 @@
 class YoutubeDlc < Formula
   desc "Media downloader supporting various sites such as youtube"
-  homepage "https://github.com/blackjack4494/yt-dlc"
-  url "https://ghproxy.com/https://github.com/blackjack4494/yt-dlc/archive/refs/tags/2020.11.11-3.tar.gz"
+  homepage "https:github.comblackjack4494yt-dlc"
+  url "https:github.comblackjack4494yt-dlcarchiverefstags2020.11.11-3.tar.gz"
   sha256 "649f8ba9a6916ca45db0b81fbcec3485e79895cec0f29fd25ec33520ffffca84"
   license "Unlicense"
   revision 1
-  head "https://github.com/blackjack4494/yt-dlc.git", branch: "master"
+  head "https:github.comblackjack4494yt-dlc.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -35,8 +35,8 @@ class YoutubeDlc < Formula
 
   test do
     # "History of homebrew-core", uploaded 3 Feb 2020
-    system "#{bin}/youtube-dlc", "--simulate", "https://www.youtube.com/watch?v=pOtd1cbOP7k"
+    system "#{bin}youtube-dlc", "--simulate", "https:www.youtube.comwatch?v=pOtd1cbOP7k"
     # "homebrew", playlist last updated 3 Mar 2020
-    system "#{bin}/youtube-dlc", "--simulate", "--yes-playlist", "https://www.youtube.com/watch?v=pOtd1cbOP7k&list=PLMsZ739TZDoLj9u_nob8jBKSC-mZb0Nhj"
+    system "#{bin}youtube-dlc", "--simulate", "--yes-playlist", "https:www.youtube.comwatch?v=pOtd1cbOP7k&list=PLMsZ739TZDoLj9u_nob8jBKSC-mZb0Nhj"
   end
 end

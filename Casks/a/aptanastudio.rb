@@ -2,10 +2,10 @@ cask "aptanastudio" do
   version "3.7.2.201807301111"
   sha256 "02d0dccd808d1dd7a16ef1aab199e472726b8476cb65728f1f1ad06f6eca2363"
 
-  url "https://ghproxy.com/https://github.com/aptana/studio3/releases/download/#{version}/Aptana_Studio_#{version.major}.dmg",
-      verified: "github.com/aptana/studio3/"
+  url "https:github.comaptanastudio3releasesdownload#{version}Aptana_Studio_#{version.major}.dmg",
+      verified: "github.comaptanastudio3"
   name "Aptana Studio"
-  homepage "http://www.aptana.com/"
+  homepage "http:www.aptana.com"
 
   livecheck do
     url :url

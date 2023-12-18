@@ -1,10 +1,10 @@
 class Libuvc < Formula
   desc "Cross-platform library for USB video devices"
-  homepage "https://github.com/libuvc/libuvc"
-  url "https://ghproxy.com/https://github.com/libuvc/libuvc/archive/refs/tags/v0.0.7.tar.gz"
+  homepage "https:github.comlibuvclibuvc"
+  url "https:github.comlibuvclibuvcarchiverefstagsv0.0.7.tar.gz"
   sha256 "7c6ba79723ad5d0ccdfbe6cadcfbd03f9f75b701d7ba96631eb1fd929a86ee72"
   license "BSD-3-Clause"
-  head "https://github.com/libuvc/libuvc.git", branch: "master"
+  head "https:github.comlibuvclibuvc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fdde8f75b100e1b5c4880eade6ae2e1df144236a26a6757b59f935feadf45283"

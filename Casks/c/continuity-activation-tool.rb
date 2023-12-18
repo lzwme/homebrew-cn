@@ -2,10 +2,10 @@ cask "continuity-activation-tool" do
   version "1.0"
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/dokterdok/Continuity-Activation-Tool/archive/master.zip"
+  url "https:github.comdokterdokContinuity-Activation-Toolarchivemaster.zip"
   name "Continuity Activation Tool"
   desc "Enable continuity features on compatible hardware"
-  homepage "https://github.com/dokterdok/Continuity-Activation-Tool/"
+  homepage "https:github.comdokterdokContinuity-Activation-Tool"
 
   livecheck do
     url :url
@@ -14,5 +14,5 @@ cask "continuity-activation-tool" do
     end
   end
 
-  app "Continuity-Activation-Tool-master/Continuity Activation Tool.app"
+  app "Continuity-Activation-Tool-masterContinuity Activation Tool.app"
 end

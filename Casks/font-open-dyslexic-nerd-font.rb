@@ -2,10 +2,10 @@ cask "font-open-dyslexic-nerd-font" do
   version "3.1.1"
   sha256 "6d4aa8ef8a3a4b1ebae9d37052d779a17b18caebd55a4e710b99f2e5d1550408"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/OpenDyslexic.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}OpenDyslexic.zip"
   name "OpenDyslexic Nerd Font families (OpenDyslexic)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

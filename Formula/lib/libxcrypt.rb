@@ -1,7 +1,7 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
-  homepage "https://github.com/besser82/libxcrypt"
-  url "https://ghproxy.com/https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz"
+  homepage "https:github.combesser82libxcrypt"
+  url "https:github.combesser82libxcryptreleasesdownloadv4.4.36libxcrypt-4.4.36.tar.xz"
   sha256 "e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943"
   license "LGPL-2.1-or-later"
 
@@ -19,11 +19,11 @@ class Libxcrypt < Formula
 
   keg_only :provided_by_macos
 
-  link_overwrite "include/crypt.h"
-  link_overwrite "lib/libcrypt.so"
+  link_overwrite "includecrypt.h"
+  link_overwrite "liblibcrypt.so"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-static",
                           "--disable-obsolete-api",
                           "--disable-xcrypt-compat-files",
@@ -33,7 +33,7 @@ class Libxcrypt < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <crypt.h>
       #include <errno.h>
       #include <stdio.h>
@@ -51,7 +51,7 @@ class Libxcrypt < Formula
           fprintf(stderr, "Hash is NULL");
           return -1;
         }
-        if (strcmp(hash, "$2b$05$abcdefghijklmnopqrstuuRWUgMyyCUnsDr8evYotXg5ZXVF/HhzS")) {
+        if (strcmp(hash, "$2b$05$abcdefghijklmnopqrstuuRWUgMyyCUnsDr8evYotXg5ZXVFHhzS")) {
           fprintf(stderr, "Unexpected hash output");
           return -1;
         }
@@ -60,6 +60,6 @@ class Libxcrypt < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcrypt", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class Liquidprompt < Formula
   desc "Adaptive prompt for bash and zsh shells"
-  homepage "https://github.com/nojhan/liquidprompt"
-  url "https://ghproxy.com/https://github.com/nojhan/liquidprompt/archive/refs/tags/v2.1.2.tar.gz"
+  homepage "https:github.comnojhanliquidprompt"
+  url "https:github.comnojhanliquidpromptarchiverefstagsv2.1.2.tar.gz"
   sha256 "f752f46595519befd1ad83eaa3605cfc05babd485250a0b46916d8eacabf4f26"
   license "AGPL-3.0-or-later"
-  head "https://github.com/nojhan/liquidprompt.git", branch: "master"
+  head "https:github.comnojhanliquidprompt.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,18 +25,18 @@ class Liquidprompt < Formula
 
   def caveats
     <<~EOS
-      Add the following lines to your bash or zsh config (e.g. ~/.bash_profile):
-        if [ -f #{HOMEBREW_PREFIX}/share/liquidprompt ]; then
-          . #{HOMEBREW_PREFIX}/share/liquidprompt
+      Add the following lines to your bash or zsh config (e.g. ~.bash_profile):
+        if [ -f #{HOMEBREW_PREFIX}shareliquidprompt ]; then
+          . #{HOMEBREW_PREFIX}shareliquidprompt
         fi
 
-      If you'd like to reconfigure options, you may do so in ~/.liquidpromptrc.
+      If you'd like to reconfigure options, you may do so in ~.liquidpromptrc.
     EOS
   end
 
   test do
-    liquidprompt = "#{HOMEBREW_PREFIX}/share/liquidprompt"
-    output = shell_output("/bin/bash -c '. #{liquidprompt} --no-activate; lp_theme --list'")
+    liquidprompt = "#{HOMEBREW_PREFIX}shareliquidprompt"
+    output = shell_output("binbash -c '. #{liquidprompt} --no-activate; lp_theme --list'")
     assert_match "default\n", output
   end
 end

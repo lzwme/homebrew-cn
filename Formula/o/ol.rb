@@ -1,10 +1,10 @@
 class Ol < Formula
   desc "Purely functional dialect of Lisp"
-  homepage "https://yuriy-chumak.github.io/ol/"
-  url "https://ghproxy.com/https://github.com/yuriy-chumak/ol/archive/refs/tags/2.5.tar.gz"
+  homepage "https:yuriy-chumak.github.iool"
+  url "https:github.comyuriy-chumakolarchiverefstags2.5.tar.gz"
   sha256 "42a31697fc7974023c20e3249135689b77a9a8ed8f19bdc0d098b656d15b7649"
   license any_of: ["LGPL-3.0-or-later", "MIT"]
-  head "https://github.com/yuriy-chumak/ol.git", branch: "master"
+  head "https:github.comyuriy-chumakol.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "0a2b9ab3ac2e7726505a1f3ecdc77d13943b175397ac7843786a652ef30c7f4b"
@@ -24,9 +24,9 @@ class Ol < Formula
   end
 
   test do
-    (testpath/"gcd.ol").write <<~EOS
+    (testpath"gcd.ol").write <<~EOS
       (print (gcd 1071 1029))
     EOS
-    assert_equal "21", shell_output("#{bin}/ol gcd.ol").strip
+    assert_equal "21", shell_output("#{bin}ol gcd.ol").strip
   end
 end

@@ -1,7 +1,7 @@
 class Frobtads < Formula
   desc "TADS interpreter and compilers"
-  homepage "https://www.tads.org/frobtads.htm"
-  url "https://ghproxy.com/https://github.com/realnc/frobtads/releases/download/v2.0/frobtads-2.0.tar.bz2"
+  homepage "https:www.tads.orgfrobtads.htm"
+  url "https:github.comrealncfrobtadsreleasesdownloadv2.0frobtads-2.0.tar.bz2"
   sha256 "893bd3fd77dfdc8bfe8a96e8d7bfac693da0e4278871f10fe7faa59cc239a090"
 
   bottle do
@@ -31,6 +31,6 @@ class Frobtads < Formula
   end
 
   test do
-    assert_match(/FrobTADS #{version}$/, shell_output("#{bin}/frob --version"))
+    assert_match(FrobTADS #{version}$, shell_output("#{bin}frob --version"))
   end
 end

@@ -2,12 +2,12 @@ cask "font-fruktur" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/fruktur"
+      only_path: "oflfruktur"
   name "Fruktur"
-  homepage "https://fonts.google.com/specimen/Fruktur"
+  homepage "https:fonts.google.comspecimenFruktur"
 
   font "Fruktur-Italic.ttf"
   font "Fruktur-Regular.ttf"

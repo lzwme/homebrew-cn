@@ -1,14 +1,14 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
-  homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://ghproxy.com/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-23.11.0.tar.gz"
+  homepage "https:wxmaxima-developers.github.iowxmaxima"
+  url "https:github.comwxMaxima-developerswxmaximaarchiverefstagsVersion-23.11.0.tar.gz"
   sha256 "f2fdd6386d89d461c29b9cff054e7118e98714123dbaf084a2e954c2a450cc4d"
   license "GPL-2.0-or-later"
-  head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
+  head "https:github.comwxMaxima-developerswxmaxima.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^Version[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^Version[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Wxmaxima < Formula
   fails_with :clang do
     build 1300
     cause <<~EOS
-      .../src/MathParser.cpp:1239:10: error: no viable conversion from returned value
+      ...srcMathParser.cpp:1239:10: error: no viable conversion from returned value
       of type 'CellListBuilder<>' to function return type 'std::unique_ptr<Cell>'
         return tree;
                ^~~~
@@ -45,27 +45,27 @@ class Wxmaxima < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
 
     # Disable CMake fixup_bundle to prevent copying dylibs
-    inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
+    inreplace "srcCMakeLists.txt", "fixup_bundle(", "# \\0"
 
     system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
-    bash_completion.install "data/wxmaxima"
+    bash_completion.install "datawxmaxima"
 
     return unless OS.mac?
 
-    bin.write_exec_script prefix/"wxmaxima.app/Contents/MacOS/wxmaxima"
+    bin.write_exec_script prefix"wxmaxima.appContentsMacOSwxmaxima"
   end
 
   def caveats
     <<~EOS
       When you start wxMaxima the first time, set the path to Maxima
-      (e.g. #{HOMEBREW_PREFIX}/bin/maxima) in the Preferences.
+      (e.g. #{HOMEBREW_PREFIX}binmaxima) in the Preferences.
 
       Enable gnuplot functionality by setting the following variables
-      in ~/.maxima/maxima-init.mac:
-        gnuplot_command:"#{HOMEBREW_PREFIX}/bin/gnuplot"$
-        draw_command:"#{HOMEBREW_PREFIX}/bin/gnuplot"$
+      in ~.maximamaxima-init.mac:
+        gnuplot_command:"#{HOMEBREW_PREFIX}bingnuplot"$
+        draw_command:"#{HOMEBREW_PREFIX}bingnuplot"$
     EOS
   end
 
@@ -73,6 +73,6 @@ class Wxmaxima < Formula
     # Error: Unable to initialize GTK+, is DISPLAY set properly
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "algebra", shell_output("#{bin}/wxmaxima --help 2>&1")
+    assert_match "algebra", shell_output("#{bin}wxmaxima --help 2>&1")
   end
 end

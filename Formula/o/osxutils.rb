@@ -1,10 +1,10 @@
 class Osxutils < Formula
   desc "Collection of macOS command-line utilities"
-  homepage "https://github.com/specious/osxutils"
-  url "https://ghproxy.com/https://github.com/specious/osxutils/archive/refs/tags/v1.9.0.tar.gz"
+  homepage "https:github.comspeciousosxutils"
+  url "https:github.comspeciousosxutilsarchiverefstagsv1.9.0.tar.gz"
   sha256 "9c11d989358ed5895d9af7644b9295a17128b37f41619453026f67e99cb7ecab"
   license "GPL-2.0"
-  head "https://github.com/specious/osxutils.git", branch: "master"
+  head "https:github.comspeciousosxutils.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9fedf0f63481a28280cbca3c4f9aaa8a9d1cae884e4287290c80d5376108aea8"
@@ -30,6 +30,6 @@ class Osxutils < Formula
   end
 
   test do
-    assert_match "osxutils", shell_output("#{bin}/osxutils")
+    assert_match "osxutils", shell_output("#{bin}osxutils")
   end
 end

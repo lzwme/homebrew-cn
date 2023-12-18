@@ -1,10 +1,10 @@
 class Wgcf < Formula
   desc "Generate WireGuard profile from Cloudflare Warp account"
-  homepage "https://github.com/ViRb3/wgcf"
-  url "https://ghproxy.com/https://github.com/ViRb3/wgcf/archive/refs/tags/v2.2.19.tar.gz"
+  homepage "https:github.comViRb3wgcf"
+  url "https:github.comViRb3wgcfarchiverefstagsv2.2.19.tar.gz"
   sha256 "276bd779224ec67c2710c4717a74c67a5c7a9455805457b385d9b8d52af1cff7"
   license "MIT"
-  head "https://github.com/ViRb3/wgcf.git", branch: "master"
+  head "https:github.comViRb3wgcf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91d21abe19e367bdce0506bef7e0377ddbac97e45dd5d4f52e5fe6979de2436a"
@@ -23,10 +23,10 @@ class Wgcf < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"wgcf", "completion")
+    generate_completions_from_executable(bin"wgcf", "completion")
   end
 
   test do
-    system "#{bin}/wgcf", "trace"
+    system "#{bin}wgcf", "trace"
   end
 end

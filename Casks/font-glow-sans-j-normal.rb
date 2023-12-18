@@ -2,9 +2,9 @@ cask "font-glow-sans-j-normal" do
   version "0.93"
   sha256 "b4a84f6d277d3c0ec6e833ac0fe25b40545ededc19df5fb4643731eef0f730a2"
 
-  url "https://ghproxy.com/https://github.com/welai/glow-sans/releases/download/v#{version}/GlowSansJ-Normal-v#{version}.zip"
+  url "https:github.comwelaiglow-sansreleasesdownloadv#{version}GlowSansJ-Normal-v#{version}.zip"
   name "Glow Sans J Normal"
-  homepage "https://github.com/welai/glow-sans"
+  homepage "https:github.comwelaiglow-sans"
 
   font "GlowSansJ-Normal-Bold.otf"
   font "GlowSansJ-Normal-Book.otf"

@@ -1,10 +1,10 @@
 class Yamale < Formula
   desc "Schema and validator for YAML"
-  homepage "https://github.com/23andMe/Yamale"
-  url "https://files.pythonhosted.org/packages/0c/93/3002a45542579cdd626a011f39bbe19ddcc1fbe0541081824c39ef216147/yamale-4.0.4.tar.gz"
+  homepage "https:github.com23andMeYamale"
+  url "https:files.pythonhosted.orgpackages0c933002a45542579cdd626a011f39bbe19ddcc1fbe0541081824c39ef216147yamale-4.0.4.tar.gz"
   sha256 "e524caf71cbbbd15aa295e8bdda01688ac4b5edaf38dd60851ddff6baef383ba"
   license "MIT"
-  head "https://github.com/23andMe/Yamale.git", branch: "master"
+  head "https:github.com23andMeYamale.git", branch: "master"
 
   bottle do
     rebuild 4
@@ -30,31 +30,31 @@ class Yamale < Formula
   end
 
   test do
-    (testpath/"schema.yaml").write <<~EOS
+    (testpath"schema.yaml").write <<~EOS
       string: str()
       number: num(required=False)
       datetime: timestamp(min='2010-01-01 0:0:0')
     EOS
-    (testpath/"data1.yaml").write <<~EOS
+    (testpath"data1.yaml").write <<~EOS
       string: bo is awesome
       datetime: 2011-01-01 00:00:00
     EOS
-    (testpath/"some_data.yaml").write <<~EOS
+    (testpath"some_data.yaml").write <<~EOS
       string: one
       number: 3
       datetime: 2015-01-01 00:00:00
     EOS
-    output = shell_output("#{bin}/yamale -s schema.yaml data1.yaml")
+    output = shell_output("#{bin}yamale -s schema.yaml data1.yaml")
     assert_match "Validation success!", output
 
-    output = shell_output("#{bin}/yamale -s schema.yaml some_data.yaml")
+    output = shell_output("#{bin}yamale -s schema.yaml some_data.yaml")
     assert_match "Validation success!", output
 
-    (testpath/"good.yaml").write <<~EOS
+    (testpath"good.yaml").write <<~EOS
       ---
       foo: bar
     EOS
-    output = shell_output("#{bin}/yamale -s schema.yaml schema.yaml", 1)
+    output = shell_output("#{bin}yamale -s schema.yaml schema.yaml", 1)
     assert_match "Validation failed!", output
   end
 end

@@ -1,14 +1,14 @@
 class Mujs < Formula
   desc "Embeddable Javascript interpreter"
-  homepage "https://www.mujs.com/"
-  url "https://mujs.com/downloads/mujs-1.3.4.tar.gz"
+  homepage "https:www.mujs.com"
+  url "https:mujs.comdownloadsmujs-1.3.4.tar.gz"
   sha256 "c015475880f6a382e706169c94371a7dd6cc22078832f6e0865af8289c2ef42b"
   license "ISC"
-  head "https://github.com/ccxvii/mujs.git", branch: "master"
+  head "https:github.comccxviimujs.git", branch: "master"
 
   livecheck do
-    url "https://mujs.com/downloads/"
-    regex(/href=.*?mujs[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:mujs.comdownloads"
+    regex(href=.*?mujs[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,12 +34,12 @@ class Mujs < Formula
   end
 
   test do
-    (testpath/"test.js").write <<~EOS
+    (testpath"test.js").write <<~EOS
       print('hello, world'.split().reduce(function (sum, char) {
         return sum + char.charCodeAt(0);
       }, 0));
     EOS
-    assert_equal "104", shell_output("#{bin}/mujs test.js").chomp
+    assert_equal "104", shell_output("#{bin}mujs test.js").chomp
     # test pkg-config setup correctly
     assert_match "-I#{include}", shell_output("pkg-config --cflags mujs")
     assert_match "-L#{lib}", shell_output("pkg-config --libs mujs")

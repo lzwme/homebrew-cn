@@ -2,10 +2,10 @@ cask "font-terminess-ttf-nerd-font" do
   version "3.1.1"
   sha256 "98780383ad77ae59e86269fa121134267066697c88ae50e628bcb0f6327d4802"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Terminus.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Terminus.zip"
   name "Terminess Nerd Font (Terminus)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

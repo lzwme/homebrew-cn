@@ -1,14 +1,14 @@
 class ChibiScheme < Formula
   desc "Small footprint Scheme for use as a C Extension Language"
-  homepage "https://github.com/ashinn/chibi-scheme"
-  url "https://ghproxy.com/https://github.com/ashinn/chibi-scheme/archive/refs/tags/0.10.tar.gz"
+  homepage "https:github.comashinnchibi-scheme"
+  url "https:github.comashinnchibi-schemearchiverefstags0.10.tar.gz"
   sha256 "ae1d2057138b7f438f01bfb1e072799105faeea1de0ab3cc10860adf373993b3"
   license "BSD-3-Clause"
-  head "https://github.com/ashinn/chibi-scheme.git", branch: "master"
+  head "https:github.comashinnchibi-scheme.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class ChibiScheme < Formula
   end
 
   test do
-    output = `#{bin}/chibi-scheme -mchibi -e "(for-each write '(0 1 2 3 4 5 6 7 8 9))"`
+    output = `#{bin}chibi-scheme -mchibi -e "(for-each write '(0 1 2 3 4 5 6 7 8 9))"`
     assert_equal "0123456789", output
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

@@ -1,7 +1,7 @@
 class TidyViewer < Formula
   desc "CLI csv pretty printer"
-  homepage "https://github.com/alexhallam/tv"
-  url "https://ghproxy.com/https://github.com/alexhallam/tv/archive/refs/tags/1.5.2.tar.gz"
+  homepage "https:github.comalexhallamtv"
+  url "https:github.comalexhallamtvarchiverefstags1.5.2.tar.gz"
   sha256 "3f950c1d05cc7fd5806a49a3f10a9437290e2b24ddf8402ec04d54c63d1a60d5"
   license "Unlicense"
 
@@ -32,7 +32,7 @@ class TidyViewer < Formula
   end
 
   test do
-    (testpath/"test.csv").write("first header,second header")
-    assert_match "first header", shell_output("#{bin}/tv #{testpath}/test.csv")
+    (testpath"test.csv").write("first header,second header")
+    assert_match "first header", shell_output("#{bin}tv #{testpath}test.csv")
   end
 end

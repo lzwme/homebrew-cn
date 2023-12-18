@@ -1,7 +1,7 @@
 class Kubeless < Formula
   desc "Kubernetes Native Serverless Framework"
-  homepage "https://kubeless.io"
-  url "https://ghproxy.com/https://github.com/vmware-archive/kubeless/archive/refs/tags/v1.0.8.tar.gz"
+  homepage "https:kubeless.io"
+  url "https:github.comvmware-archivekubelessarchiverefstagsv1.0.8.tar.gz"
   sha256 "c25dd4908747ac9e2b1f815dfca3e1f5d582378ea5a05c959f96221cafd3e4cf"
   license "Apache-2.0"
 
@@ -24,13 +24,13 @@ class Kubeless < Formula
 
   def install
     ldflags = %W[
-      -s -w -X github.com/vmware-archive/kubeless/pkg/version.Version=v#{version}
+      -s -w -X github.comvmware-archivekubelesspkgversion.Version=v#{version}
     ]
     system "go", "build", "-ldflags", ldflags.join(" "), "-trimpath",
-           "-o", bin/"kubeless", "./cmd/kubeless"
+           "-o", bin"kubeless", ".cmdkubeless"
     prefix.install_metafiles
 
-    generate_completions_from_executable(bin/"kubeless", "completion")
+    generate_completions_from_executable(bin"kubeless", "completion")
   end
 
   test do
@@ -42,18 +42,18 @@ class Kubeless < Formula
         socket = server.accept
         request = socket.gets
         request_path = request.split[1]
-        runtime_images_data = <<-'EOS'.gsub(/\s+/, "")
+        runtime_images_data = <<-'EOS'.gsub(\s+, "")
         [{
           \"ID\": \"python\",
           \"versions\": [{
             \"name\": \"python27\",
             \"version\": \"2.7\",
-            \"httpImage\": \"kubeless/python\"
+            \"httpImage\": \"kubelesspython\"
           }]
         }]
         EOS
         response = case request_path
-        when "/api/v1/namespaces/kubeless/configmaps/kubeless-config"
+        when "apiv1namespaceskubelessconfigmapskubeless-config"
           <<-EOS
           {
             "kind": "ConfigMap",
@@ -64,18 +64,18 @@ class Kubeless < Formula
             }
           }
           EOS
-        when "/apis/kubeless.io/v1beta1/namespaces/default/functions"
+        when "apiskubeless.iov1beta1namespacesdefaultfunctions"
           <<-EOS
           {
-            "apiVersion": "kubeless.io/v1beta1",
+            "apiVersion": "kubeless.iov1beta1",
             "kind": "Function",
             "metadata": { "name": "get-python", "namespace": "default" }
           }
           EOS
-        when "/apis/apiextensions.k8s.io/v1beta1/customresourcedefinitions/functions.kubeless.io"
+        when "apisapiextensions.k8s.iov1beta1customresourcedefinitionsfunctions.kubeless.io"
           <<-EOS
           {
-            "apiVersion": "apiextensions.k8s.io/v1beta1",
+            "apiVersion": "apiextensions.k8s.iov1beta1",
             "kind": "CustomResourceDefinition",
             "metadata": { "name": "functions.kubeless.io" }
           }
@@ -83,7 +83,7 @@ class Kubeless < Formula
         else
           "OK"
         end
-        socket.print "HTTP/1.1 200 OK\r\n" \
+        socket.print "HTTP1.1 200 OK\r\n" \
                      "Content-Length: #{response.bytesize}\r\n" \
                      "Connection: close\r\n"
         socket.print "\r\n"
@@ -92,12 +92,12 @@ class Kubeless < Formula
       end
     end
 
-    (testpath/"kube-config").write <<~EOS
+    (testpath"kube-config").write <<~EOS
       apiVersion: v1
       clusters:
       - cluster:
           certificate-authority-data: test
-          server: http://127.0.0.1:#{port}
+          server: http:127.0.0.1:#{port}
         name: test
       contexts:
       - context:
@@ -113,11 +113,11 @@ class Kubeless < Formula
           token: test
     EOS
 
-    (testpath/"test.py").write "function_code"
+    (testpath"test.py").write "function_code"
 
     begin
-      ENV["KUBECONFIG"] = testpath/"kube-config"
-      system bin/"kubeless", "function", "deploy", "--from-file", "test.py",
+      ENV["KUBECONFIG"] = testpath"kube-config"
+      system bin"kubeless", "function", "deploy", "--from-file", "test.py",
                              "--runtime", "python2.7", "--handler", "test.foo",
                              "test"
     ensure

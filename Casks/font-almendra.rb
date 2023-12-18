@@ -2,12 +2,12 @@ cask "font-almendra" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/almendra"
+      only_path: "oflalmendra"
   name "Almendra"
-  homepage "https://fonts.google.com/specimen/Almendra"
+  homepage "https:fonts.google.comspecimenAlmendra"
 
   font "Almendra-Bold.ttf"
   font "Almendra-BoldItalic.ttf"

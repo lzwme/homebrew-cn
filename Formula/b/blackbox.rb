@@ -1,14 +1,14 @@
 class Blackbox < Formula
-  desc "Safely store secrets in Git/Mercurial/Subversion"
-  homepage "https://github.com/StackExchange/blackbox"
-  url "https://ghproxy.com/https://github.com/StackExchange/blackbox/archive/refs/tags/v1.20220610.tar.gz"
+  desc "Safely store secrets in GitMercurialSubversion"
+  homepage "https:github.comStackExchangeblackbox"
+  url "https:github.comStackExchangeblackboxarchiverefstagsv1.20220610.tar.gz"
   sha256 "f1efcca6680159f244eb44fdb78e92b521760b875fa5a36e4c433b93ed0f87c1"
   license "MIT"
   version_scheme 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)*\.\d{6,8}(?:\.\d+)*)$/i)
+    regex(^v?(\d+(?:\.\d+)*\.\d{6,8}(?:\.\d+)*)$i)
   end
 
   bottle do
@@ -18,12 +18,12 @@ class Blackbox < Formula
   depends_on "gnupg"
 
   def install
-    libexec.install Dir["bin/*"]
-    bin.write_exec_script Dir[libexec/"*"].select { |f| File.executable? f }
+    libexec.install Dir["bin*"]
+    bin.write_exec_script Dir[libexec"*"].select { |f| File.executable? f }
   end
 
   test do
-    (testpath/"batch.gpg").write <<~EOS
+    (testpath"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -35,14 +35,14 @@ class Blackbox < Formula
       %commit
     EOS
     begin
-      system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
+      system Formula["gnupg"].opt_bin"gpg", "--batch", "--gen-key", "batch.gpg"
       system "git", "init"
-      system bin/"blackbox_initialize", "yes"
-      add_created_key = shell_output("#{bin}/blackbox_addadmin Testing 2>&1")
+      system bin"blackbox_initialize", "yes"
+      add_created_key = shell_output("#{bin}blackbox_addadmin Testing 2>&1")
       assert_match "<testing@foo.bar>", add_created_key
     ensure
-      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
-      system Formula["gnupg"].opt_bin/"gpgconf", "--homedir", "keyrings/live",
+      system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
+      system Formula["gnupg"].opt_bin"gpgconf", "--homedir", "keyringslive",
                                                  "--kill", "gpg-agent"
     end
   end

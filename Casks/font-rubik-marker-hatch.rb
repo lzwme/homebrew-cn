@@ -2,10 +2,10 @@ cask "font-rubik-marker-hatch" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rubikmarkerhatch/RubikMarkerHatch-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrubikmarkerhatchRubikMarkerHatch-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rubik Marker Hatch"
-  homepage "https://fonts.google.com/specimen/Rubik+Marker+Hatch"
+  homepage "https:fonts.google.comspecimenRubik+Marker+Hatch"
 
   font "RubikMarkerHatch-Regular.ttf"
 

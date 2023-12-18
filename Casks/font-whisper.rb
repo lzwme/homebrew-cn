@@ -2,10 +2,10 @@ cask "font-whisper" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/whisper/Whisper-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflwhisperWhisper-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Whisper"
-  homepage "https://fonts.google.com/specimen/Whisper"
+  homepage "https:fonts.google.comspecimenWhisper"
 
   font "Whisper-Regular.ttf"
 

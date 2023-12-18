@@ -2,12 +2,12 @@ cask "font-dm-serif-display" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/dmserifdisplay"
+      only_path: "ofldmserifdisplay"
   name "DM Serif Display"
-  homepage "https://fonts.google.com/specimen/DM+Serif+Display"
+  homepage "https:fonts.google.comspecimenDM+Serif+Display"
 
   font "DMSerifDisplay-Italic.ttf"
   font "DMSerifDisplay-Regular.ttf"

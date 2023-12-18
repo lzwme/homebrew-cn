@@ -1,17 +1,17 @@
 class Sslsplit < Formula
   desc "Man-in-the-middle attacks against SSL encrypted network connections"
-  homepage "https://www.roe.ch/SSLsplit"
+  homepage "https:www.roe.chSSLsplit"
   license "BSD-2-Clause"
   revision 2
-  head "https://github.com/droe/sslsplit.git", branch: "develop"
+  head "https:github.comdroesslsplit.git", branch: "develop"
 
   stable do
-    url "https://ghproxy.com/https://github.com/droe/sslsplit/archive/refs/tags/0.5.5.tar.gz"
+    url "https:github.comdroesslsplitarchiverefstags0.5.5.tar.gz"
     sha256 "3a6b9caa3552c9139ea5c9841d4bf24d47764f14b1b04b7aae7fa2697641080b"
 
     # Patch to add `openssl@3` support
     patch do
-      url "https://github.com/droe/sslsplit/commit/e17de8454a65d2b9ba432856971405dfcf1e7522.patch?full_index=1"
+      url "https:github.comdroesslsplitcommite17de8454a65d2b9ba432856971405dfcf1e7522.patch?full_index=1"
       sha256 "88d558dcb21b1a23fe0b97f41251e7a321b11c37afd70dd07ac1a2d6a4788629"
     end
   end
@@ -44,7 +44,7 @@ class Sslsplit < Formula
   test do
     port = free_port
 
-    cmd = "#{bin}/sslsplit -D http 0.0.0.0 #{port} www.roe.ch 80"
+    cmd = "#{bin}sslsplit -D http 0.0.0.0 #{port} www.roe.ch 80"
     output = pipe_output("(#{cmd} & PID=$! && sleep 3 ; kill $PID) 2>&1")
     assert_match "Starting main event loop", output
   end

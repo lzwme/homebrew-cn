@@ -1,11 +1,11 @@
 class AwsIamAuthenticator < Formula
   desc "Use AWS IAM credentials to authenticate to Kubernetes"
-  homepage "https://github.com/kubernetes-sigs/aws-iam-authenticator"
-  url "https://github.com/kubernetes-sigs/aws-iam-authenticator.git",
+  homepage "https:github.comkubernetes-sigsaws-iam-authenticator"
+  url "https:github.comkubernetes-sigsaws-iam-authenticator.git",
       tag:      "v0.6.14",
       revision: "b978afae7be72c6c27f8ed2000685b1e9268cd0e"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/aws-iam-authenticator.git", branch: "master"
+  head "https:github.comkubernetes-sigsaws-iam-authenticator.git", branch: "master"
 
   livecheck do
     url :stable
@@ -26,18 +26,18 @@ class AwsIamAuthenticator < Formula
 
   def install
     ldflags = ["-s", "-w",
-               "-X sigs.k8s.io/aws-iam-authenticator/pkg.Version=#{version}",
-               "-X sigs.k8s.io/aws-iam-authenticator/pkg.CommitID=#{Utils.git_head}",
+               "-X sigs.k8s.ioaws-iam-authenticatorpkg.Version=#{version}",
+               "-X sigs.k8s.ioaws-iam-authenticatorpkg.CommitID=#{Utils.git_head}",
                "-buildid=''"]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/aws-iam-authenticator"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdaws-iam-authenticator"
     prefix.install_metafiles
   end
 
   test do
-    output = shell_output("#{bin}/aws-iam-authenticator version")
+    output = shell_output("#{bin}aws-iam-authenticator version")
     assert_match %Q("Version":"#{version}"), output
 
-    system "#{bin}/aws-iam-authenticator", "init", "-i", "test"
+    system "#{bin}aws-iam-authenticator", "init", "-i", "test"
     contents = Dir.entries(".")
     ["cert.pem", "key.pem", "aws-iam-authenticator.kubeconfig"].each do |created|
       assert_includes contents, created

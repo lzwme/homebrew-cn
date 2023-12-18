@@ -1,7 +1,7 @@
 class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
-  homepage "https://github.com/microsoft/onnxruntime"
-  url "https://github.com/microsoft/onnxruntime.git",
+  homepage "https:github.commicrosoftonnxruntime"
+  url "https:github.commicrosoftonnxruntime.git",
       tag:      "v1.16.3",
       revision: "2ac381c55397dffff327cc6efecf6f95a70f90a1"
   license "MIT"
@@ -41,8 +41,8 @@ class Onnxruntime < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <onnxruntime/onnxruntime_c_api.h>
+    (testpath"test.c").write <<~EOS
+      #include <onnxruntimeonnxruntime_c_api.h>
       #include <stdio.h>
       int main()
       {
@@ -50,8 +50,8 @@ class Onnxruntime < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}", testpath/"test.c",
-           "-L#{lib}", "-lonnxruntime", "-o", testpath/"test"
-    assert_equal version, shell_output("./test").strip
+    system ENV.cc, "-I#{include}", testpath"test.c",
+           "-L#{lib}", "-lonnxruntime", "-o", testpath"test"
+    assert_equal version, shell_output(".test").strip
   end
 end

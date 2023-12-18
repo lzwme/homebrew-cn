@@ -1,14 +1,14 @@
 class Capnp < Formula
   desc "Data interchange format and capability-based RPC system"
-  homepage "https://capnproto.org/"
-  url "https://capnproto.org/capnproto-c++-1.0.1.1.tar.gz"
+  homepage "https:capnproto.org"
+  url "https:capnproto.orgcapnproto-c++-1.0.1.1.tar.gz"
   sha256 "b224e61d5b46f13967b7189860a7373b96d0c105e0d6170f29acba09a2d31f57"
   license "MIT"
-  head "https://github.com/capnproto/capnproto.git", branch: "master"
+  head "https:github.comcapnprotocapnproto.git", branch: "master"
 
   livecheck do
-    url "https://capnproto.org/install.html"
-    regex(/href=.*?capnproto-c\+\+[._-]v?(\d+(\.\d+)*)\.t/i)
+    url "https:capnproto.orginstall.html"
+    regex(href=.*?capnproto-c\+\+[._-]v?(\d+(\.\d+)*)\.ti)
   end
 
   bottle do
@@ -46,21 +46,21 @@ class Capnp < Formula
                     "-DCMAKE_CXX_FLAGS=-fPIC",
                     *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install buildpath.glob("build_static/src/capnp/*.a")
-    lib.install buildpath.glob("build_static/src/kj/*.a")
+    lib.install buildpath.glob("build_staticsrccapnp*.a")
+    lib.install buildpath.glob("build_staticsrckj*.a")
   end
 
   test do
     ENV["PWD"] = testpath.to_s
 
-    file = testpath/"test.capnp"
+    file = testpath"test.capnp"
     text = "\"Is a happy little duck\""
 
-    file.write shell_output("#{bin}/capnp id").chomp + ";\n"
+    file.write shell_output("#{bin}capnp id").chomp + ";\n"
     file.append_lines "const dave :Text = #{text};"
-    assert_match text, shell_output("#{bin}/capnp eval #{file} dave")
+    assert_match text, shell_output("#{bin}capnp eval #{file} dave")
 
-    (testpath/"person.capnp").write <<~EOS
+    (testpath"person.capnp").write <<~EOS
       @0x8e0594c8abeb307c;
       struct Person {
         id @0 :UInt32;
@@ -68,12 +68,12 @@ class Capnp < Formula
         email @2 :Text;
       }
     EOS
-    system "#{bin}/capnp", "compile", "-oc++", testpath/"person.capnp"
+    system "#{bin}capnp", "compile", "-oc++", testpath"person.capnp"
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "person.capnp.h"
-      #include <capnp/message.h>
-      #include <capnp/serialize-packed.h>
+      #include <capnpmessage.h>
+      #include <capnpserialize-packed.h>
       #include <iostream>
       void printPerson(int fd) {
         ::capnp::PackedFdMessageReader message(fd);
@@ -83,7 +83,7 @@ class Capnp < Formula
                   << person.getEmail().cStr() << std::endl;
       }
     EOS
-    system ENV.cxx, "-c", testpath/"test.cpp", "-I#{include}", "-o", "test.o", "-fPIC", "-std=c++1y"
-    system ENV.cxx, "-shared", testpath/"test.o", "-L#{lib}", "-fPIC", "-lcapnp", "-lkj"
+    system ENV.cxx, "-c", testpath"test.cpp", "-I#{include}", "-o", "test.o", "-fPIC", "-std=c++1y"
+    system ENV.cxx, "-shared", testpath"test.o", "-L#{lib}", "-fPIC", "-lcapnp", "-lkj"
   end
 end

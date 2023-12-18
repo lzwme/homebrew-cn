@@ -1,7 +1,7 @@
 class RstLint < Formula
   desc "ReStructuredText linter"
-  homepage "https://github.com/twolfson/restructuredtext-lint"
-  url "https://files.pythonhosted.org/packages/48/9c/6d8035cafa2d2d314f34e6cd9313a299de095b26e96f1c7312878f988eec/restructuredtext_lint-1.4.0.tar.gz"
+  homepage "https:github.comtwolfsonrestructuredtext-lint"
+  url "https:files.pythonhosted.orgpackages489c6d8035cafa2d2d314f34e6cd9313a299de095b26e96f1c7312878f988eecrestructuredtext_lint-1.4.0.tar.gz"
   sha256 "1b235c0c922341ab6c530390892eb9e92f90b9b75046063e047cacfb0f050c45"
   license "Unlicense"
 
@@ -30,18 +30,18 @@ class RstLint < Formula
 
   test do
     # test invocation on a file with no issues
-    (testpath/"pass.rst").write <<~EOS
+    (testpath"pass.rst").write <<~EOS
       Hello World
       ===========
     EOS
-    assert_equal "", shell_output("#{bin}/rst-lint pass.rst")
+    assert_equal "", shell_output("#{bin}rst-lint pass.rst")
 
     # test invocation on a file with a whitespace style issue
-    (testpath/"fail.rst").write <<~EOS
+    (testpath"fail.rst").write <<~EOS
       Hello World
       ==========
     EOS
-    output = shell_output("#{bin}/rst-lint fail.rst", 2)
+    output = shell_output("#{bin}rst-lint fail.rst", 2)
     assert_match "WARNING fail.rst:2 Title underline too short.", output
   end
 end

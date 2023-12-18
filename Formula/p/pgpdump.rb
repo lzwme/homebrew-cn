@@ -1,10 +1,10 @@
 class Pgpdump < Formula
   desc "PGP packet visualizer"
-  homepage "https://www.mew.org/~kazu/proj/pgpdump/en/"
-  url "https://ghproxy.com/https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.35.tar.gz"
+  homepage "https:www.mew.org~kazuprojpgpdumpen"
+  url "https:github.comkazu-yamamotopgpdumparchiverefstagsv0.35.tar.gz"
   sha256 "50b817d0ceaee41597b51e237e318803bf561ab6cf2dc1b49f68e85635fc8b0f"
   license "BSD-3-Clause"
-  head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "master"
+  head "https:github.comkazu-yamamotopgpdump.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "66c1ae2bcd79c6481a58d4bbe59a0b57d8dd491e797f2699b7062fc16d61ab25"
@@ -23,15 +23,15 @@ class Pgpdump < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"sig.pgp").write <<~EOS
+    (testpath"sig.pgp").write <<~EOS
       -----BEGIN PGP MESSAGE-----
       Version: GnuPG v1.2.6 (NetBSD)
-      Comment: For info see https://www.gnupg.org
+      Comment: For info see https:www.gnupg.org
 
       owGbwMvMwCSYq3dE6sEMJU7GNYZJLGmZOanWn4xaQzIyixWAKFEhN7W4ODE9VaEk
       XyEpVaE4Mz0vNUUhqVIhwD1Aj6vDnpmVAaQeZogg060chvkFjPMr2CZNmPnwyebF
@@ -40,7 +40,7 @@ class Pgpdump < Formula
       -----END PGP MESSAGE-----
     EOS
 
-    output = shell_output("#{bin}/pgpdump sig.pgp")
+    output = shell_output("#{bin}pgpdump sig.pgp")
     assert_match("Key ID - 0x6D2EC41AE0982209", output)
   end
 end

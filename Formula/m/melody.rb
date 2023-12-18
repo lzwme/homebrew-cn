@@ -1,7 +1,7 @@
 class Melody < Formula
   desc "Language that compiles to regular expressions"
-  homepage "https://yoav-lavi.github.io/melody/book"
-  url "https://ghproxy.com/https://github.com/yoav-lavi/melody/archive/refs/tags/0.19.0.tar.gz"
+  homepage "https:yoav-lavi.github.iomelodybook"
+  url "https:github.comyoav-lavimelodyarchiverefstags0.19.0.tar.gz"
   sha256 "d7605160d3589578c84a919c09addd8f4bd1f06441795192041b491462c9f655"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -20,12 +20,12 @@ class Melody < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/melody_cli")
+    system "cargo", "install", *std_cargo_args(path: "cratesmelody_cli")
   end
 
   test do
     mdy = "regex.mdy"
     File.write mdy, '"#"; some of <word>;'
-    assert_match "#\\w+", shell_output("#{bin}/melody --no-color #{mdy}")
+    assert_match "#\\w+", shell_output("#{bin}melody --no-color #{mdy}")
   end
 end

@@ -2,10 +2,10 @@ cask "font-kavoon" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kavoon/Kavoon-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkavoonKavoon-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kavoon"
-  homepage "https://fonts.google.com/specimen/Kavoon"
+  homepage "https:fonts.google.comspecimenKavoon"
 
   font "Kavoon-Regular.ttf"
 

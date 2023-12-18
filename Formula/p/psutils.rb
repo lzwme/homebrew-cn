@@ -2,8 +2,8 @@ class Psutils < Formula
   include Language::Python::Virtualenv
 
   desc "Utilities for manipulating PostScript documents"
-  homepage "https://github.com/rrthomas/psutils"
-  url "https://files.pythonhosted.org/packages/92/07/ebcf289c31f4da85ea94e103f0a58393c54133c64fcbef754c17b6405723/pspdfutils-3.3.2.tar.gz"
+  homepage "https:github.comrrthomaspsutils"
+  url "https:files.pythonhosted.orgpackages9207ebcf289c31f4da85ea94e103f0a58393c54133c64fcbef754c17b6405723pspdfutils-3.3.2.tar.gz"
   sha256 "a20a2a1359811bd0ad72e15349351a26774ddf8e355c2cde4250a70cf77fdf0c"
   license "GPL-3.0-or-later"
 
@@ -22,12 +22,12 @@ class Psutils < Formula
   depends_on "python@3.12"
 
   resource "puremagic" do
-    url "https://files.pythonhosted.org/packages/50/bb/c9860ce714ce2147b6168fdf817e67c3be6eabc822fab5ef41cc52bafdec/puremagic-1.15.tar.gz"
+    url "https:files.pythonhosted.orgpackages50bbc9860ce714ce2147b6168fdf817e67c3be6eabc822fab5ef41cc52bafdecpuremagic-1.15.tar.gz"
     sha256 "6e46aa78113a466abc9f69e6e8a4ce90eb57d908dafb809597012621061462bd"
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/53/16/81e2f71268566c6c6f57f8a5fbb36e198cd4ba6e55ba39a36af48ce75520/pypdf-3.16.4.tar.gz"
+    url "https:files.pythonhosted.orgpackages531681e2f71268566c6c6f57f8a5fbb36e198cd4ba6e55ba39a36af48ce75520pypdf-3.16.4.tar.gz"
     sha256 "01927771b562d4ba84939ef95b393f0179166da786c5db710d07f807c52f480d"
   end
 
@@ -37,18 +37,18 @@ class Psutils < Formula
 
   test do
     resource "homebrew-test-ps" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/rrthomas/psutils/e00061c21e114d80fbd5073a4509164f3799cc24/tests/test-files/psbook/3/expected.ps"
+      url "https:raw.githubusercontent.comrrthomaspsutilse00061c21e114d80fbd5073a4509164f3799cc24teststest-filespsbook3expected.ps"
       sha256 "bf3f1b708c3e6a70d0f28af55b3b511d2528b98c2a1537674439565cecf0aed6"
     end
     resource("homebrew-test-ps").stage testpath
 
     expected_psbook_output = "[4] [1] [2] [3] \nWrote 4 pages\n"
-    assert_equal expected_psbook_output, shell_output("#{bin}/psbook expected.ps book.ps 2>&1")
+    assert_equal expected_psbook_output, shell_output("#{bin}psbook expected.ps book.ps 2>&1")
 
     expected_psnup_output = "[1,2] [3,4] \nWrote 2 pages\n"
-    assert_equal expected_psnup_output, shell_output("#{bin}/psnup -2 expected.ps nup.ps 2>&1")
+    assert_equal expected_psnup_output, shell_output("#{bin}psnup -2 expected.ps nup.ps 2>&1")
 
     expected_psselect_output = "[1] \nWrote 1 pages\n"
-    assert_equal expected_psselect_output, shell_output("#{bin}/psselect -p1 expected.ps test2.ps 2>&1")
+    assert_equal expected_psselect_output, shell_output("#{bin}psselect -p1 expected.ps test2.ps 2>&1")
   end
 end

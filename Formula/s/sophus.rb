@@ -1,11 +1,11 @@
 class Sophus < Formula
   desc "C++ implementation of Lie Groups using Eigen"
-  homepage "https://strasdat.github.io/Sophus/latest/"
-  url "https://ghproxy.com/https://github.com/strasdat/Sophus/archive/refs/tags/1.22.10.tar.gz"
+  homepage "https:strasdat.github.ioSophuslatest"
+  url "https:github.comstrasdatSophusarchiverefstags1.22.10.tar.gz"
   sha256 "eb1da440e6250c5efc7637a0611a5b8888875ce6ac22bf7ff6b6769bbc958082"
   license "MIT"
   version_scheme 1
-  head "https://github.com/strasdat/Sophus.git", branch: "master"
+  head "https:github.comstrasdatSophus.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e444266e8c7ead4969b894a4ed37b57dba375d1eea5ecce83695d4f47812eb68"
@@ -23,12 +23,12 @@ class Sophus < Formula
                     "-DBUILD_SOPHUS_EXAMPLES=OFF"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare/"examples").install "examples/HelloSO3.cpp"
+    (pkgshare"examples").install "examplesHelloSO3.cpp"
   end
 
   test do
-    cp pkgshare/"examples/HelloSO3.cpp", testpath
-    (testpath/"CMakeLists.txt").write <<~EOS
+    cp pkgshare"examplesHelloSO3.cpp", testpath
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.5)
       project(HelloSO3)
       find_package(Sophus REQUIRED)
@@ -36,8 +36,8 @@ class Sophus < Formula
       target_link_libraries(HelloSO3 Sophus::Sophus)
     EOS
 
-    system "cmake", "-DSophus_DIR=#{share}/Sophus", "."
+    system "cmake", "-DSophus_DIR=#{share}Sophus", "."
     system "make"
-    assert_match "The rotation matrices are", shell_output("./HelloSO3")
+    assert_match "The rotation matrices are", shell_output(".HelloSO3")
   end
 end

@@ -1,7 +1,7 @@
 class Nerdfix < Formula
-  desc "Find/fix obsolete Nerd Font icons"
-  homepage "https://github.com/loichyan/nerdfix"
-  url "https://ghproxy.com/https://github.com/loichyan/nerdfix/archive/refs/tags/v0.4.0.tar.gz"
+  desc "Findfix obsolete Nerd Font icons"
+  homepage "https:github.comloichyannerdfix"
+  url "https:github.comloichyannerdfixarchiverefstagsv0.4.0.tar.gz"
   sha256 "72e835aeb349495be87e92f74f405b43dac982ec137cfd7e180e72146b6f6fb7"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -23,6 +23,6 @@ class Nerdfix < Formula
 
   test do
     touch "test.txt"
-    system bin/"nerdfix", "check", "test.txt"
+    system bin"nerdfix", "check", "test.txt"
   end
 end

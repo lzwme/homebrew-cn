@@ -1,14 +1,14 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
-  homepage "http://dlib.net/"
-  url "https://ghproxy.com/https://github.com/davisking/dlib/archive/refs/tags/v19.24.2.tar.gz"
+  homepage "http:dlib.net"
+  url "https:github.comdaviskingdlibarchiverefstagsv19.24.2.tar.gz"
   sha256 "0f5c7e3de6316a513635052c5f0a16a84e1cef26a7d233bf00c21348462b6d6f"
   license "BSL-1.0"
-  head "https://github.com/davisking/dlib.git", branch: "master"
+  head "https:github.comdaviskingdlib.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Dlib < Formula
     args = %W[
       -DDLIB_USE_BLAS=ON
       -DDLIB_USE_LAPACK=ON
-      -Dcblas_lib=#{Formula["openblas"].opt_lib/shared_library("libopenblas")}
-      -Dlapack_lib=#{Formula["openblas"].opt_lib/shared_library("libopenblas")}
+      -Dcblas_lib=#{Formula["openblas"].opt_libshared_library("libopenblas")}
+      -Dlapack_lib=#{Formula["openblas"].opt_libshared_library("libopenblas")}
       -DDLIB_NO_GUI_SUPPORT=ON
       -DBUILD_SHARED_LIBS=ON
     ]
@@ -47,8 +47,8 @@ class Dlib < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <dlib/logger.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <dliblogger.h>
       dlib::logger dlog("example");
       int main() {
         dlog.set_level(dlib::LALL);
@@ -57,6 +57,6 @@ class Dlib < Formula
     EOS
     system ENV.cxx, "-pthread", "-std=c++14", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-ldlib"
-    assert_match(/INFO.*example: The answer is 42/, shell_output("./test"))
+    assert_match(INFO.*example: The answer is 42, shell_output(".test"))
   end
 end

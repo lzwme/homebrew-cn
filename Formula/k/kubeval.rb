@@ -1,11 +1,11 @@
 class Kubeval < Formula
   desc "Validate Kubernetes configuration files, supports multiple Kubernetes versions"
-  homepage "https://www.kubeval.com/"
-  url "https://github.com/instrumenta/kubeval.git",
+  homepage "https:www.kubeval.com"
+  url "https:github.cominstrumentakubeval.git",
       tag:      "v0.16.1",
       revision: "f5dba6b486fa18b9179b91e15eb6f2b0f7a5a69e"
   license "Apache-2.0"
-  head "https://github.com/instrumenta/kubeval.git", branch: "master"
+  head "https:github.cominstrumentakubeval.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e54797aba1cf7170e6b5ff8d0bb2584f38cb9b06bfeee5d20066e80be5e4f03e"
@@ -20,7 +20,7 @@ class Kubeval < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "92c4fe8b9a551d9f7a4fa58b620b703db28df4b422fc7740442b062ff5fbf31a"
   end
 
-  # https://github.com/instrumenta/kubeval/commit/fe0a7c22b93b92adfdc57d07b92d5231fd0b3e0e
+  # https:github.cominstrumentakubevalcommitfe0a7c22b93b92adfdc57d07b92d5231fd0b3e0e
   disable! date: "2023-10-17", because: :unmaintained
 
   # Bump to 1.18 on the next release, if possible.
@@ -39,11 +39,11 @@ class Kubeval < Formula
   end
 
   test do
-    system bin/"kubeval", pkgshare/"fixtures/valid.yaml"
+    system bin"kubeval", pkgshare"fixturesvalid.yaml"
 
     assert_match "spec.replicas: Invalid type. Expected: [integer,null], given: string",
-      shell_output(bin/"kubeval #{pkgshare}/fixtures/invalid.yaml 2>&1", 1)
+      shell_output(bin"kubeval #{pkgshare}fixturesinvalid.yaml 2>&1", 1)
 
-    assert_match version.to_s, shell_output(bin/"kubeval --version")
+    assert_match version.to_s, shell_output(bin"kubeval --version")
   end
 end

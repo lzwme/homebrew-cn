@@ -1,7 +1,7 @@
 class Voldemort < Formula
   desc "Distributed key-value storage system"
-  homepage "https://www.project-voldemort.com/"
-  url "https://ghproxy.com/https://github.com/voldemort/voldemort/archive/refs/tags/release-1.10.26-cutoff.tar.gz"
+  homepage "https:www.project-voldemort.com"
+  url "https:github.comvoldemortvoldemortarchiverefstagsrelease-1.10.26-cutoff.tar.gz"
   sha256 "8bd41b53c3b903615d281e7277d5a9225075c3d00ea56c6e44d73f6327c73d55"
   license "Apache-2.0"
   revision 2
@@ -15,7 +15,7 @@ class Voldemort < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "45f6e53d98fd499d0b2053c2b339ff23bb308e52bc2ba1430786ee37944a5fad"
   end
 
-  # https://github.com/voldemort/voldemort/issues/500#issuecomment-931424229
+  # https:github.comvoldemortvoldemortissues500#issuecomment-931424229
   disable! date: "2023-10-03", because: :unmaintained
 
   depends_on "gradle" => :build
@@ -23,21 +23,21 @@ class Voldemort < Formula
   depends_on "openjdk@8"
 
   def install
-    system "./gradlew", "build", "-x", "test"
+    system ".gradlew", "build", "-x", "test"
     libexec.install %w[lib dist contrib]
-    bin.install Dir["bin/*{.sh,.py}"]
+    bin.install Dir["bin*{.sh,.py}"]
     libexec.install "bin"
     pkgshare.install "config" => "config-examples"
-    (etc/"voldemort").mkpath
+    (etc"voldemort").mkpath
 
     env = Language::Java.overridable_java_home_env("1.8")
-    env["PATH"] = "$JAVA_HOME/bin:$PATH"
+    env["PATH"] = "$JAVA_HOMEbin:$PATH"
     env["VOLDEMORT_HOME"] = libexec
-    env["VOLDEMORT_CONFIG_DIR"] = etc/"voldemort"
-    bin.env_script_all_files(libexec/"bin", env)
+    env["VOLDEMORT_CONFIG_DIR"] = etc"voldemort"
+    bin.env_script_all_files(libexec"bin", env)
   end
 
   test do
-    system bin/"vadmin.sh"
+    system bin"vadmin.sh"
   end
 end

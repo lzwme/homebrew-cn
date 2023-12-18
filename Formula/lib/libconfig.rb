@@ -1,7 +1,7 @@
 class Libconfig < Formula
   desc "Configuration file processing library"
-  homepage "https://hyperrealm.github.io/libconfig/"
-  url "https://ghproxy.com/https://github.com/hyperrealm/libconfig/releases/download/v1.7.3/libconfig-1.7.3.tar.gz"
+  homepage "https:hyperrealm.github.iolibconfig"
+  url "https:github.comhyperrealmlibconfigreleasesdownloadv1.7.3libconfig-1.7.3.tar.gz"
   sha256 "545166d6cac037744381d1e9cc5a5405094e7bfad16a411699bcff40bbb31ee7"
   license "LGPL-2.1-or-later"
 
@@ -20,7 +20,7 @@ class Libconfig < Formula
   end
 
   head do
-    url "https://github.com/hyperrealm/libconfig.git", branch: "master"
+    url "https:github.comhyperrealmlibconfig.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -35,12 +35,12 @@ class Libconfig < Formula
 
   def install
     system "autoreconf", "-fiv" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <libconfig.h>
       int main() {
         config_t cfg;
@@ -49,8 +49,8 @@ class Libconfig < Formula
         return 0;
       }
     EOS
-    system ENV.cc, testpath/"test.c", "-I#{include}",
-           "-L#{lib}", "-lconfig", "-o", testpath/"test"
-    system "./test"
+    system ENV.cc, testpath"test.c", "-I#{include}",
+           "-L#{lib}", "-lconfig", "-o", testpath"test"
+    system ".test"
   end
 end

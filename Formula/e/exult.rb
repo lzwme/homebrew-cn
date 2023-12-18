@@ -1,14 +1,14 @@
 class Exult < Formula
   desc "Recreation of Ultima 7"
-  homepage "https://exult.sourceforge.io/"
-  url "https://ghproxy.com/https://github.com/exult/exult/archive/refs/tags/v1.8.tar.gz"
+  homepage "https:exult.sourceforge.io"
+  url "https:github.comexultexultarchiverefstagsv1.8.tar.gz"
   sha256 "dae6b7b08925d3db1dda3aca612bdc08d934ca04de817a008f305320e667faf9"
   license "GPL-2.0-or-later"
-  head "https://github.com/exult/exult.git", branch: "master"
+  head "https:github.comexultexult.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -33,15 +33,15 @@ class Exult < Formula
   depends_on "sdl2"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
-    system "make", "EXULT_DATADIR=#{pkgshare}/data"
+    system "make", "EXULT_DATADIR=#{pkgshare}data"
     if OS.mac?
       system "make", "bundle"
-      pkgshare.install "Exult.app/Contents/Resources/data"
+      pkgshare.install "Exult.appContentsResourcesdata"
       prefix.install "Exult.app"
-      bin.write_exec_script "#{prefix}/Exult.app/Contents/MacOS/exult"
+      bin.write_exec_script "#{prefix}Exult.appContentsMacOSexult"
     else
       system "make", "install"
     end
@@ -53,7 +53,7 @@ class Exult < Formula
       own legal copy of the Ultima 7 game files for the software to fully function.
 
       Update audio settings accordingly with configuration file:
-        ~/Library/Preferences/exult.cfg
+        ~LibraryPreferencesexult.cfg
 
         To use CoreAudio, set `driver` to `CoreAudio`.
         To use audio pack, set `use_oggs` to `yes`.
@@ -61,6 +61,6 @@ class Exult < Formula
   end
 
   test do
-    system "#{bin}/exult", "-v"
+    system "#{bin}exult", "-v"
   end
 end

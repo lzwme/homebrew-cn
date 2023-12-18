@@ -1,17 +1,17 @@
 class Libeatmydata < Formula
   desc "LD_PRELOAD library and wrapper to transparently disable fsync and related calls"
-  homepage "https://www.flamingspork.com/projects/libeatmydata/"
+  homepage "https:www.flamingspork.comprojectslibeatmydata"
   license "GPL-3.0-or-later"
-  head "https://github.com/stewartsmith/libeatmydata.git", branch: "master"
+  head "https:github.comstewartsmithlibeatmydata.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/stewartsmith/libeatmydata/releases/download/v131/libeatmydata-131.tar.gz"
+    url "https:github.comstewartsmithlibeatmydatareleasesdownloadv131libeatmydata-131.tar.gz"
     sha256 "cf18a8c52138a38541be3478af446c06048108729d7e18476492d62d54baabc4"
 
-    # Fix for https://github.com/Homebrew/homebrew-core/issues/136873.
+    # Fix for https:github.comHomebrewhomebrew-coreissues136873.
     # Remove with `stable`` block on next release.
     patch do
-      url "https://github.com/stewartsmith/libeatmydata/commit/ae89d0916c0ddd06f4ce7f2b37eaccf8dd543591.patch?full_index=1"
+      url "https:github.comstewartsmithlibeatmydatacommitae89d0916c0ddd06f4ce7f2b37eaccf8dd543591.patch?full_index=1"
       sha256 "8bf4249f3df141fa321c8c64af4f4442bc23bdfb108e2cf73c22e68a3a71ae15"
     end
   end
@@ -42,21 +42,21 @@ class Libeatmydata < Formula
 
   def install
     # macOS does not support `readlink -f` as used by the `eatmydata` shell wrapper script
-    inreplace "eatmydata.sh.in", "readlink", "#{Formula["coreutils"].opt_bin}/greadlink" if OS.mac?
+    inreplace "eatmydata.sh.in", "readlink", "#{Formula["coreutils"].opt_bin}greadlink" if OS.mac?
 
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-option-checking",
                           "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system bin/"eatmydata", "sync"
+    system bin"eatmydata", "sync"
     return if OS.mac?
 
-    output = shell_output("#{bin}/eatmydata #{Formula["strace"].opt_bin}/strace sync 2>&1")
-    refute_match(/^[a-z]*sync/, output)
+    output = shell_output("#{bin}eatmydata #{Formula["strace"].opt_bin}strace sync 2>&1")
+    refute_match(^[a-z]*sync, output)
     refute_match("O_SYNC", output)
     assert_match(" exited with 0 ", output)
   end

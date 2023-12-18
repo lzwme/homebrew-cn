@@ -1,7 +1,7 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
-  homepage "https://github.com/noir-cr/noir"
-  url "https://ghproxy.com/https://github.com/noir-cr/noir/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:github.comnoir-crnoir"
+  url "https:github.comnoir-crnoirarchiverefstagsv0.11.0.tar.gz"
   sha256 "37b0b78d4673cc2482ad346010de8b36be5f75c92724938aa6e2ec1fd1883e20"
   license "MIT"
   revision 1
@@ -21,14 +21,14 @@ class Noir < Formula
   def install
     system "shards", "install"
     system "shards", "build", "--release", "--no-debug"
-    bin.install "bin/noir"
+    bin.install "binnoir"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/noir --version")
+    assert_match version.to_s, shell_output("#{bin}noir --version")
 
-    system "git", "clone", "https://github.com/noir-cr/noir.git"
-    output = shell_output("#{bin}/noir -b noir 2>&1")
+    system "git", "clone", "https:github.comnoir-crnoir.git"
+    output = shell_output("#{bin}noir -b noir 2>&1")
     assert_match "Generating Report.", output
   end
 end

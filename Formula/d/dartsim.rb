@@ -1,7 +1,7 @@
 class Dartsim < Formula
   desc "Dynamic Animation and Robotics Toolkit"
-  homepage "https://dartsim.github.io/"
-  url "https://ghproxy.com/https://github.com/dartsim/dart/archive/refs/tags/v6.13.0.tar.gz"
+  homepage "https:dartsim.github.io"
+  url "https:github.comdartsimdartarchiverefstagsv6.13.0.tar.gz"
   sha256 "4da3ff8cee056252a558b05625a5ff29b21e71f2995e6d7f789abbf6261895f7"
   license "BSD-2-Clause"
   revision 3
@@ -44,8 +44,8 @@ class Dartsim < Formula
     args = std_cmake_args
 
     if OS.mac?
-      # Force to link to system GLUT (see: https://cmake.org/Bug/view.php?id=16045)
-      glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
+      # Force to link to system GLUT (see: https:cmake.orgBugview.php?id=16045)
+      glut_lib = "#{MacOS.sdk_path}SystemLibraryFrameworksGLUT.framework"
       args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
     end
 
@@ -55,25 +55,25 @@ class Dartsim < Formula
     end
 
     # Clean up the build file garbage that has been installed.
-    rm_r Dir["#{share}/doc/dart/**/CMakeFiles/"]
+    rm_r Dir["#{share}docdart**CMakeFiles"]
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <dart/dart.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <dartdart.hpp>
       int main() {
         auto world = std::make_shared<dart::simulation::World>();
         assert(world != nullptr);
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}/eigen3",
+    system ENV.cxx, "test.cpp", "-I#{Formula["eigen"].include}eigen3",
                     "-I#{include}", "-L#{lib}", "-ldart",
                     "-L#{Formula["assimp"].opt_lib}", "-lassimp",
                     "-L#{Formula["boost"].opt_lib}", "-lboost_system",
                     "-L#{Formula["libccd"].opt_lib}", "-lccd",
                     "-L#{Formula["fcl"].opt_lib}", "-lfcl",
                     "-std=c++17", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

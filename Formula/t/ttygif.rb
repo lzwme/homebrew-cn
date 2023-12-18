@@ -1,7 +1,7 @@
 class Ttygif < Formula
   desc "Converts a ttyrec file into gif files"
-  homepage "https://github.com/icholy/ttygif"
-  url "https://ghproxy.com/https://github.com/icholy/ttygif/archive/refs/tags/1.6.0.tar.gz"
+  homepage "https:github.comicholyttygif"
+  url "https:github.comicholyttygifarchiverefstags1.6.0.tar.gz"
   sha256 "050b9e86f98fb790a2925cea6148f82f95808d707735b2650f3856cb6f53e0ae"
   license "MIT"
 
@@ -29,10 +29,10 @@ class Ttygif < Formula
     # Disable test on Linux because it fails with this error:
     # Error: WINDOWID environment variable was empty.
     # This is expected as a valid X window ID is required:
-    # https://walialu.com/ttygif-error-windowid-environment-variable-was-empty
+    # https:walialu.comttygif-error-windowid-environment-variable-was-empty
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     ENV["TERM_PROGRAM"] = "Something"
-    system "#{bin}/ttygif", "--version"
+    system "#{bin}ttygif", "--version"
   end
 end

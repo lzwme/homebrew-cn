@@ -2,10 +2,10 @@ cask "font-cousine-nerd-font" do
   version "3.1.1"
   sha256 "f05f3e685900025e8bd034ea18f83026a53b83491b910228abe4b81b3650781f"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Cousine.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Cousine.zip"
   name "Cousine Nerd Font (Cousine)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

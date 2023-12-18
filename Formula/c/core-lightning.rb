@@ -1,13 +1,13 @@
 class CoreLightning < Formula
   desc "Lightning Network implementation focusing on spec compliance and performance"
-  homepage "https://github.com/ElementsProject/lightning"
-  url "https://ghproxy.com/https://github.com/ElementsProject/lightning/releases/download/v23.11.1/clightning-v23.11.1.zip"
+  homepage "https:github.comElementsProjectlightning"
+  url "https:github.comElementsProjectlightningreleasesdownloadv23.11.1clightning-v23.11.1.zip"
   sha256 "3c7e6f35a41650ff6588a3a235726760f5a7e8b3c1c3af977d3e0abdc5dbe0a9"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -37,24 +37,24 @@ class CoreLightning < Formula
   uses_from_macos "sqlite"
 
   def install
-    (buildpath/"external/lowdown").rmtree
+    (buildpath"externallowdown").rmtree
     system "poetry", "env", "use", "3.11"
     system "poetry", "install", "--only=main"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "poetry", "run", "make", "install"
   end
 
   test do
-    cmd = "#{bin}/lightningd --daemon --network regtest --log-file lightningd.log"
+    cmd = "#{bin}lightningd --daemon --network regtest --log-file lightningd.log"
     if OS.mac? && Hardware::CPU.arm?
       lightningd_output = shell_output("#{cmd} 2>&1", 10)
-      assert_match "lightningd: Could not run /lightning_channeld: No such file or directory", lightningd_output
+      assert_match "lightningd: Could not run lightning_channeld: No such file or directory", lightningd_output
     else
       lightningd_output = shell_output("#{cmd} 2>&1", 1)
       assert_match "Could not connect to bitcoind using bitcoin-cli. Is bitcoind running?", lightningd_output
     end
 
-    lightningcli_output = shell_output("#{bin}/lightning-cli --network regtest getinfo 2>&1", 2)
+    lightningcli_output = shell_output("#{bin}lightning-cli --network regtest getinfo 2>&1", 2)
     assert_match "lightning-cli: Connecting to 'lightning-rpc': No such file or directory", lightningcli_output
   end
 end

@@ -2,17 +2,17 @@ cask "ariang" do
   version "1.3.7"
   sha256 "afd6303adaa5b930ac7351c18aa4ee56ff04e01a741965194ec5daae66997959"
 
-  url "https://ghproxy.com/https://github.com/mayswind/AriaNg-Native/releases/download/#{version}/AriaNg_Native-#{version}-macOS-x64.dmg"
+  url "https:github.commayswindAriaNg-Nativereleasesdownload#{version}AriaNg_Native-#{version}-macOS-x64.dmg"
   name "AriaNg Native"
   desc "Better aria2 desktop frontend than AriaNg"
-  homepage "https://github.com/mayswind/AriaNg-Native"
+  homepage "https:github.commayswindAriaNg-Native"
 
   depends_on macos: ">= :high_sierra"
 
   app "AriaNg Native.app"
 
   zap trash: [
-    "~/Library/Preferences/net.mayswind.ariang.plist",
-    "~/Library/Saved Application State/net.mayswind.ariang.savedState",
+    "~LibraryPreferencesnet.mayswind.ariang.plist",
+    "~LibrarySaved Application Statenet.mayswind.ariang.savedState",
   ]
 end

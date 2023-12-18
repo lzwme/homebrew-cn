@@ -1,7 +1,7 @@
 class Telnet < Formula
   desc "User interface to the TELNET protocol"
-  homepage "https://opensource.apple.com/"
-  url "https://ghproxy.com/https://github.com/apple-oss-distributions/remote_cmds/archive/refs/tags/remote_cmds-294.tar.gz"
+  homepage "https:opensource.apple.com"
+  url "https:github.comapple-oss-distributionsremote_cmdsarchiverefstagsremote_cmds-294.tar.gz"
   sha256 "6e0a4a9cd79fa412f41185333588bc5d4e66a97dc6a2275418c97fb17abb3528"
   license all_of: ["BSD-4-Clause-UC", "APSL-1.0"]
 
@@ -20,7 +20,7 @@ class Telnet < Formula
   conflicts_with "inetutils", because: "both install 'telnet' binaries"
 
   resource "libtelnet" do
-    url "https://ghproxy.com/https://github.com/apple-oss-distributions/libtelnet/archive/refs/tags/libtelnet-13.tar.gz"
+    url "https:github.comapple-oss-distributionslibtelnetarchiverefstagslibtelnet-13.tar.gz"
     sha256 "4ffc494a069257477c3a02769a395da8f72f5c26218a02b9ea73fa2a63216cee"
   end
 
@@ -29,35 +29,35 @@ class Telnet < Formula
       ENV["SDKROOT"] = MacOS.sdk_path
       ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
-      xcodebuild "OBJROOT=build/Intermediates",
-                 "SYMROOT=build/Products",
-                 "DSTROOT=build/Archive",
+      xcodebuild "OBJROOT=buildIntermediates",
+                 "SYMROOT=buildProducts",
+                 "DSTROOT=buildArchive",
                  "-IDEBuildLocationStyle=Custom",
                  "-IDECustomDerivedDataLocation=#{buildpath}",
                  "-arch", Hardware::CPU.arch
 
-      libtelnet_dst = buildpath/"libtelnet"
-      libtelnet_dst.install "build/Products/Release/libtelnet.a"
-      libtelnet_dst.install "build/Products/Release/usr/local/include/libtelnet/"
+      libtelnet_dst = buildpath"libtelnet"
+      libtelnet_dst.install "buildProductsReleaselibtelnet.a"
+      libtelnet_dst.install "buildProductsReleaseusrlocalincludelibtelnet"
     end
 
-    xcodebuild "OBJROOT=build/Intermediates",
-               "SYMROOT=build/Products",
-               "DSTROOT=build/Archive",
-               "OTHER_CFLAGS=${inherited} #{ENV.cflags} -I#{buildpath}/libtelnet",
-               "OTHER_LDFLAGS=${inherited} #{ENV.ldflags} -L#{buildpath}/libtelnet",
+    xcodebuild "OBJROOT=buildIntermediates",
+               "SYMROOT=buildProducts",
+               "DSTROOT=buildArchive",
+               "OTHER_CFLAGS=${inherited} #{ENV.cflags} -I#{buildpath}libtelnet",
+               "OTHER_LDFLAGS=${inherited} #{ENV.ldflags} -L#{buildpath}libtelnet",
                "-IDEBuildLocationStyle=Custom",
                "-IDECustomDerivedDataLocation=#{buildpath}",
                "-sdk", "macosx",
                "-arch", Hardware::CPU.arch,
                "-target", "telnet"
 
-    bin.install "build/Products/Release/telnet"
-    man1.install "telnet/telnet.1"
+    bin.install "buildProductsReleasetelnet"
+    man1.install "telnettelnet.1"
   end
 
   test do
-    output = shell_output("#{bin}/telnet india.colorado.edu 13", 1)
+    output = shell_output("#{bin}telnet india.colorado.edu 13", 1)
     assert_match "Connected to india.colorado.edu.", output
   end
 end

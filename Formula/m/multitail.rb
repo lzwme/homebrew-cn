@@ -1,10 +1,10 @@
 class Multitail < Formula
   desc "Tail multiple files in one terminal simultaneously"
-  homepage "https://vanheusden.com/multitail/"
-  url "https://ghproxy.com/https://github.com/folkertvanheusden/multitail/archive/refs/tags/7.1.2.tar.gz"
+  homepage "https:vanheusden.commultitail"
+  url "https:github.comfolkertvanheusdenmultitailarchiverefstags7.1.2.tar.gz"
   sha256 "c8552e10093f0690b8baef84945753c878e234d7b3d0e3ff27e509ed5515998c"
   license "Apache-2.0"
-  head "https://github.com/folkertvanheusden/multitail.git"
+  head "https:github.comfolkertvanheusdenmultitail.git"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f3fc083b287b8f49b9c79ca1951be8f5032ad00f839110eb8a778dc2487925fd"
@@ -29,9 +29,9 @@ class Multitail < Formula
 
   test do
     if build.head?
-      assert_match "multitail", shell_output("#{bin}/multitail -h 2>&1", 1)
+      assert_match "multitail", shell_output("#{bin}multitail -h 2>&1", 1)
     else
-      assert_match version.to_s, shell_output("#{bin}/multitail -h 2>&1", 1)
+      assert_match version.to_s, shell_output("#{bin}multitail -h 2>&1", 1)
     end
   end
 end

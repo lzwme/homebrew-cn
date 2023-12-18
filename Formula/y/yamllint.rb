@@ -1,10 +1,10 @@
 class Yamllint < Formula
   desc "Linter for YAML files"
-  homepage "https://github.com/adrienverge/yamllint"
-  url "https://files.pythonhosted.org/packages/fd/98/ec541c8dff395b9e441d46ab678c9a0f00f5ca479f070a6ced3b425cce79/yamllint-1.33.0.tar.gz"
+  homepage "https:github.comadrienvergeyamllint"
+  url "https:files.pythonhosted.orgpackagesfd98ec541c8dff395b9e441d46ab678c9a0f00f5ca479f070a6ced3b425cce79yamllint-1.33.0.tar.gz"
   sha256 "2dceab9ef2d99518a2fcf4ffc964d44250ac4459be1ba3ca315118e4a1a81f7d"
   license "GPL-3.0-or-later"
-  head "https://github.com/adrienverge/yamllint.git", branch: "master"
+  head "https:github.comadrienvergeyamllint.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -31,17 +31,17 @@ class Yamllint < Formula
   end
 
   test do
-    (testpath/"bad.yaml").write <<~EOS
+    (testpath"bad.yaml").write <<~EOS
       ---
       foo: bar: gee
     EOS
-    output = shell_output("#{bin}/yamllint -f parsable -s bad.yaml", 1)
+    output = shell_output("#{bin}yamllint -f parsable -s bad.yaml", 1)
     assert_match "syntax error: mapping values are not allowed here", output
 
-    (testpath/"good.yaml").write <<~EOS
+    (testpath"good.yaml").write <<~EOS
       ---
       foo: bar
     EOS
-    assert_equal "", shell_output("#{bin}/yamllint -f parsable -s good.yaml")
+    assert_equal "", shell_output("#{bin}yamllint -f parsable -s good.yaml")
   end
 end

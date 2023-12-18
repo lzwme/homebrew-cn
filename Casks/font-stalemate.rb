@@ -2,10 +2,10 @@ cask "font-stalemate" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/stalemate/Stalemate-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflstalemateStalemate-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Stalemate"
-  homepage "https://fonts.google.com/specimen/Stalemate"
+  homepage "https:fonts.google.comspecimenStalemate"
 
   font "Stalemate-Regular.ttf"
 

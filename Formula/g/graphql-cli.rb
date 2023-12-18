@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class GraphqlCli < Formula
   desc "Command-line tool for common GraphQL development workflows"
-  homepage "https://github.com/Urigo/graphql-cli"
-  url "https://registry.npmjs.org/graphql-cli/-/graphql-cli-4.1.0.tgz"
+  homepage "https:github.comUrigographql-cli"
+  url "https:registry.npmjs.orggraphql-cli-graphql-cli-4.1.0.tgz"
   sha256 "c52d62ac108d4a3f711dbead0939bd02e3e2d0c82f8480fd76fc28f285602f5c"
   license "MIT"
 
@@ -12,7 +12,7 @@ class GraphqlCli < Formula
   # check the Git tags in this instance.
   livecheck do
     url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,17 +36,17 @@ class GraphqlCli < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Avoid references to Homebrew shims
-    rm_f "#{libexec}/lib/node_modules/graphql-cli/node_modules/websocket/builderror.log"
+    rm_f "#{libexec}libnode_modulesgraphql-clinode_moduleswebsocketbuilderror.log"
   end
 
   test do
-    (testpath/"test.exp").write <<~EOS
-      #!/usr/bin/env expect -f
+    (testpath"test.exp").write <<~EOS
+      #!usrbinenv expect -f
       set timeout -1
-      spawn #{bin}/graphql init
+      spawn #{bin}graphql init
 
       expect -exact "Select the best option for you"
       send -- "1\r"
@@ -62,8 +62,8 @@ class GraphqlCli < Formula
 
     system "expect", "-f", "test.exp"
 
-    assert_predicate testpath/"brew", :exist?
+    assert_predicate testpath"brew", :exist?
     assert_match "Graphback runtime template with Apollo Server and PostgreSQL",
-                 File.read(testpath/"brew/package.json")
+                 File.read(testpath"brewpackage.json")
   end
 end

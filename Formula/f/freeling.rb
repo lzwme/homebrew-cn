@@ -1,7 +1,7 @@
 class Freeling < Formula
   desc "Suite of language analyzers"
-  homepage "https://nlp.lsi.upc.edu/freeling/"
-  url "https://ghproxy.com/https://github.com/TALP-UPC/FreeLing/releases/download/4.2/FreeLing-src-4.2.1.tar.gz"
+  homepage "https:nlp.lsi.upc.edufreeling"
+  url "https:github.comTALP-UPCFreeLingreleasesdownload4.2FreeLing-src-4.2.1.tar.gz"
   sha256 "c672a6379142ac2e872741e7662f17eccd8230bffc680564d2843d87480f1600"
   license "AGPL-3.0-only"
   revision 1
@@ -30,10 +30,10 @@ class Freeling < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    libexec.install "#{bin}/fl_initialize"
-    inreplace "#{bin}/analyze",
-      ". $(cd $(dirname $0) && echo $PWD)/fl_initialize",
-      ". #{libexec}/fl_initialize"
+    libexec.install "#{bin}fl_initialize"
+    inreplace "#{bin}analyze",
+      ". $(cd $(dirname $0) && echo $PWD)fl_initialize",
+      ". #{libexec}fl_initialize"
   end
 
   test do
@@ -41,6 +41,6 @@ class Freeling < Formula
       Hello hello NN 1
       world world NN 1
     EOS
-    assert_equal expected, pipe_output("#{bin}/analyze -f #{pkgshare}/config/en.cfg", "Hello world").chomp
+    assert_equal expected, pipe_output("#{bin}analyze -f #{pkgshare}configen.cfg", "Hello world").chomp
   end
 end

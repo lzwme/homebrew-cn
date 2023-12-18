@@ -1,12 +1,12 @@
 class Atlas < Formula
   desc "Database toolkit"
-  homepage "https://atlasgo.io/"
+  homepage "https:atlasgo.io"
   # Upstream may not mark patch releases as latest on GitHub; it is fine to ship them.
-  # See https://github.com/ariga/atlas/issues/1090#issuecomment-1225258408
-  url "https://ghproxy.com/https://github.com/ariga/atlas/archive/refs/tags/v0.15.0.tar.gz"
+  # See https:github.comarigaatlasissues1090#issuecomment-1225258408
+  url "https:github.comarigaatlasarchiverefstagsv0.15.0.tar.gz"
   sha256 "ee8ed6f61abd0e4ba0ea2e0db72f90b6eabc0bdcb318d589d17c7c2c80412d67"
   license "Apache-2.0"
-  head "https://github.com/ariga/atlas.git", branch: "master"
+  head "https:github.comarigaatlas.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a8707fc24d3da7b787e21fac6e937ac941d789d66cf6c477bd43b1ef15b9789"
@@ -23,19 +23,19 @@ class Atlas < Formula
   def install
     ldflags = %W[
       -s -w
-      -X ariga.io/atlas/cmd/atlas/internal/cmdapi.version=v#{version}
+      -X ariga.ioatlascmdatlasinternalcmdapi.version=v#{version}
     ]
-    cd "./cmd/atlas" do
+    cd ".cmdatlas" do
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
 
-    generate_completions_from_executable(bin/"atlas", "completion")
+    generate_completions_from_executable(bin"atlas", "completion")
   end
 
   test do
     assert_match "Error: mysql: query system variables:",
-      shell_output("#{bin}/atlas schema inspect -u \"mysql://user:pass@localhost:3306/dbname\" 2>&1", 1)
+      shell_output("#{bin}atlas schema inspect -u \"mysql:user:pass@localhost:3306dbname\" 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/atlas version")
+    assert_match version.to_s, shell_output("#{bin}atlas version")
   end
 end

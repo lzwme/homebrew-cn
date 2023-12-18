@@ -1,7 +1,7 @@
 class Nuraft < Formula
   desc "C++ implementation of Raft core logic as a replication library"
-  homepage "https://github.com/eBay/NuRaft"
-  url "https://ghproxy.com/https://github.com/eBay/NuRaft/archive/refs/tags/v2.1.0.tar.gz"
+  homepage "https:github.comeBayNuRaft"
+  url "https:github.comeBayNuRaftarchiverefstagsv2.1.0.tar.gz"
   sha256 "42d19682149cf24ae12de0dabf70d7ad7e71e49fbfa61d565e9b46e2b3cd517f"
   license "Apache-2.0"
 
@@ -23,7 +23,7 @@ class Nuraft < Formula
 
   # patch to include missing header, `event_awaiter.h`, remove when it is available
   patch do
-    url "https://github.com/eBay/NuRaft/commit/65736ff4314a0fa15f724a213fa42bf26bc86f70.patch?full_index=1"
+    url "https:github.comeBayNuRaftcommit65736ff4314a0fa15f724a213fa42bf26bc86f70.patch?full_index=1"
     sha256 "0d06d4a6b5b6fa348affacfff6bc100df1403a7194d7caf2b205e8a142401863"
   end
 
@@ -36,13 +36,13 @@ class Nuraft < Formula
   end
 
   test do
-    cp_r pkgshare/"examples/.", testpath
+    cp_r pkgshare"examples.", testpath
     system ENV.cxx, "-std=c++11", "-o", "test",
                     "quick_start.cxx", "logger.cc", "in_memory_log_store.cxx",
-                    "-I#{include}/libnuraft", "-I#{testpath}/echo",
+                    "-I#{include}libnuraft", "-I#{testpath}echo",
                     "-I#{Formula["openssl@3"].opt_include}",
                     "-L#{lib}", "-lnuraft",
                     "-L#{Formula["openssl@3"].opt_lib}", "-lcrypto", "-lssl"
-    assert_match "hello world", shell_output("./test")
+    assert_match "hello world", shell_output(".test")
   end
 end

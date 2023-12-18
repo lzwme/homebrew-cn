@@ -2,19 +2,19 @@ cask "whale" do
   version "2.4.0"
   sha256 "63857d17bf6d44c65215d729870737a17153f33c01605dc093626b7185731b02"
 
-  url "https://ghproxy.com/https://github.com/1000ch/whale/releases/download/v#{version}/Whale-#{version}.dmg"
+  url "https:github.com1000chwhalereleasesdownloadv#{version}Whale-#{version}.dmg"
   name "Whale"
   desc "Unofficial Trello app :whale:"
-  homepage "https://github.com/1000ch/whale"
+  homepage "https:github.com1000chwhale"
 
   app "Whale.app"
 
   zap trash: [
-    "~/Library/Application Support/Whale",
-    "~/Library/Caches/net.1000ch.whale",
-    "~/Library/Caches/net.1000ch.whale.ShipIt",
-    "~/Library/Preferences/net.1000ch.whale.helper.plist",
-    "~/Library/Preferences/net.1000ch.whale.plist",
-    "~/Library/Saved Application State/net.1000ch.whale.savedState",
+    "~LibraryApplication SupportWhale",
+    "~LibraryCachesnet.1000ch.whale",
+    "~LibraryCachesnet.1000ch.whale.ShipIt",
+    "~LibraryPreferencesnet.1000ch.whale.helper.plist",
+    "~LibraryPreferencesnet.1000ch.whale.plist",
+    "~LibrarySaved Application Statenet.1000ch.whale.savedState",
   ]
 end

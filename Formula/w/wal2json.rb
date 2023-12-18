@@ -1,13 +1,13 @@
 class Wal2json < Formula
   desc "Convert PostgreSQL changesets to JSON format"
-  homepage "https://github.com/eulerto/wal2json"
-  url "https://ghproxy.com/https://github.com/eulerto/wal2json/archive/refs/tags/wal2json_2_5.tar.gz"
+  homepage "https:github.comeulertowal2json"
+  url "https:github.comeulertowal2jsonarchiverefstagswal2json_2_5.tar.gz"
   sha256 "b516653575541cf221b99cf3f8be9b6821f6dbcfc125675c85f35090f824f00e"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/(?:wal2json[._-])?v?(\d+(?:[._]\d+)+)/i)
+    regex((?:wal2json[._-])?v?(\d+(?:[._]\d+)+)i)
     strategy :github_latest
   end
 
@@ -31,26 +31,26 @@ class Wal2json < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
 
     mkdir "stage"
-    system "make", "install", "USE_PGXS=1", "DESTDIR=#{buildpath}/stage"
+    system "make", "install", "USE_PGXS=1", "DESTDIR=#{buildpath}stage"
 
     stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
+    lib.install (buildpathstage_path"lib").children
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'wal2json'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
-    system pg_ctl, "stop", "-D", testpath/"test"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
+    system pg_ctl, "stop", "-D", testpath"test"
   end
 end

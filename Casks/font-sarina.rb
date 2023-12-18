@@ -2,10 +2,10 @@ cask "font-sarina" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/sarina/Sarina-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsarinaSarina-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Sarina"
-  homepage "https://fonts.google.com/specimen/Sarina"
+  homepage "https:fonts.google.comspecimenSarina"
 
   font "Sarina-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Vultr < Formula
   desc "Command-line tool for Vultr services"
-  homepage "https://github.com/vultr/vultr-cli"
-  url "https://ghproxy.com/https://github.com/vultr/vultr-cli/archive/refs/tags/v2.21.0.tar.gz"
+  homepage "https:github.comvultrvultr-cli"
+  url "https:github.comvultrvultr-cliarchiverefstagsv2.21.0.tar.gz"
   sha256 "c9f94405d089bdf01a7c489b9cc7e51604e08fc7d15ff4b5553ae40015000ec6"
   license "Apache-2.0"
-  head "https://github.com/vultr/vultr-cli.git", branch: "master"
+  head "https:github.comvultrvultr-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98743a6fc972e223ad2392c42c24b0b898d964653cdf64727cdfd8ef34157bcf"
@@ -23,6 +23,6 @@ class Vultr < Formula
   end
 
   test do
-    system bin/"vultr", "version"
+    system bin"vultr", "version"
   end
 end

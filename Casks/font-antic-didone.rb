@@ -2,10 +2,10 @@ cask "font-antic-didone" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/anticdidone/AnticDidone-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflanticdidoneAnticDidone-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Antic Didone"
-  homepage "https://fonts.google.com/specimen/Antic+Didone"
+  homepage "https:fonts.google.comspecimenAntic+Didone"
 
   font "AnticDidone-Regular.ttf"
 

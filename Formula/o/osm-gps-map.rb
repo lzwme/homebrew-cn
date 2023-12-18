@@ -1,15 +1,15 @@
 class OsmGpsMap < Formula
   desc "GTK+ library to embed OpenStreetMap maps"
-  homepage "https://github.com/nzjrs/osm-gps-map"
+  homepage "https:github.comnzjrsosm-gps-map"
   license "GPL-2.0-or-later"
   revision 2
 
   stable do
-    url "https://ghproxy.com/https://github.com/nzjrs/osm-gps-map/releases/download/1.2.0/osm-gps-map-1.2.0.tar.gz"
+    url "https:github.comnzjrsosm-gps-mapreleasesdownload1.2.0osm-gps-map-1.2.0.tar.gz"
     sha256 "ddec11449f37b5dffb4bca134d024623897c6140af1f9981a8acc512dbf6a7a5"
 
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -25,7 +25,7 @@ class OsmGpsMap < Formula
   end
 
   head do
-    url "https://github.com/nzjrs/osm-gps-map.git", branch: "master"
+    url "https:github.comnzjrsosm-gps-map.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
     depends_on "automake" => :build
@@ -38,16 +38,16 @@ class OsmGpsMap < Formula
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "libsoup@2" # libsoup 3 issue: https://github.com/nzjrs/osm-gps-map/issues/96
+  depends_on "libsoup@2" # libsoup 3 issue: https:github.comnzjrsosm-gps-mapissues96
 
   def install
-    configure = build.head? ? "./autogen.sh" : "./configure"
+    configure = build.head? ? ".autogen.sh" : ".configure"
     system configure, *std_configure_args, "--disable-silent-rules", "--enable-introspection"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <osm-gps-map.h>
 
       int main(int argc, char *argv[]) {
@@ -65,15 +65,15 @@ class OsmGpsMap < Formula
     harfbuzz = Formula["harfbuzz"]
     pango = Formula["pango"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx3.opt_include}/gtk-3.0
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{pango.opt_include}/pango-1.0
-      -I#{include}/osmgpsmap-1.0
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gtkx3.opt_include}gtk-3.0
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{pango.opt_include}pango-1.0
+      -I#{include}osmgpsmap-1.0
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -97,6 +97,6 @@ class OsmGpsMap < Formula
     # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "./test"
+    system ".test"
   end
 end

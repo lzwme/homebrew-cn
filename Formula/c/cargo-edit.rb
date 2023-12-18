@@ -1,9 +1,9 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
-  homepage "https://killercup.github.io/cargo-edit/"
+  homepage "https:killercup.github.iocargo-edit"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://ghproxy.com/https://github.com/killercup/cargo-edit/archive/refs/tags/v0.12.2.tar.gz"
+  url "https:github.comkillercupcargo-editarchiverefstagsv0.12.2.tar.gz"
   sha256 "10c86ca7585852ce288a44608ef87c827f4b733a94eb847ab15735b823b30560"
   license "MIT"
 
@@ -23,30 +23,30 @@ class CargoEdit < Formula
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/killercup/cargo-edit/blob/v#{version}/Cargo.lock
+  # 1. Search for `libgit2-sys` version at https:github.comkillercupcargo-editblobv#{version}Cargo.lock
   # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
   #    - Migrate to the corresponding `libgit2` formula.
   #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
+  #      See: https:github.comrust-langgit2-rscommit59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
   depends_on "libgit2@1.6"
   depends_on "openssl@3"
 
   def install
     # Ensure the declared `openssl@3` dependency will be picked up.
-    # https://docs.rs/openssl/latest/openssl/#manual
+    # https:docs.rsopenssllatestopenssl#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     # Read the default flags from `Cargo.toml` so we can remove the `vendored-libgit2` feature.
-    cargo_toml = (buildpath/"Cargo.toml").read
-    cargo_option_regex = /default\s*=\s*(\[.+?\])/m
+    cargo_toml = (buildpath"Cargo.toml").read
+    cargo_option_regex = default\s*=\s*(\[.+?\])m
     cargo_options = JSON.parse(cargo_toml[cargo_option_regex, 1].sub(",\n]", "]"))
     cargo_options.delete("vendored-libgit2")
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
 
     # We use the `features` flags to disable vendored `libgit2` but enable all other defaults.
     # We do this since there is no way to disable a specific default feature with `cargo`.
-    # https://github.com/rust-lang/cargo/issues/3126
+    # https:github.comrust-langcargoissues3126
     system "cargo", "install", "--no-default-features", "--features", cargo_options.join(","), *std_cargo_args
   end
 
@@ -61,16 +61,16 @@ class CargoEdit < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"src/main.rs").write "// Dummy file"
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"srcmain.rs").write " Dummy file"
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -79,19 +79,19 @@ class CargoEdit < Formula
         clap = "2"
       EOS
 
-      system bin/"cargo-set-version", "set-version", "0.2.0"
-      assert_match 'version = "0.2.0"', (crate/"Cargo.toml").read
+      system bin"cargo-set-version", "set-version", "0.2.0"
+      assert_match 'version = "0.2.0"', (crate"Cargo.toml").read
 
       system "cargo", "rm", "clap"
-      refute_match(/clap/, (crate/"Cargo.toml").read)
+      refute_match(clap, (crate"Cargo.toml").read)
     end
 
     [
-      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["libgit2@1.6"].opt_libshared_library("libgit2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"cargo-upgrade", library),
+      assert check_binary_linkage(bin"cargo-upgrade", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

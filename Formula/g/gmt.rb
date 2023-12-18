@@ -1,12 +1,12 @@
 class Gmt < Formula
   desc "Tools for manipulating and plotting geographic and Cartesian data"
-  homepage "https://www.generic-mapping-tools.org/"
-  url "https://ghproxy.com/https://github.com/GenericMappingTools/gmt/releases/download/6.4.0/gmt-6.4.0-src.tar.xz"
-  mirror "https://mirrors.ustc.edu.cn/gmt/gmt-6.4.0-src.tar.xz"
+  homepage "https:www.generic-mapping-tools.org"
+  url "https:github.comGenericMappingToolsgmtreleasesdownload6.4.0gmt-6.4.0-src.tar.xz"
+  mirror "https:mirrors.ustc.edu.cngmtgmt-6.4.0-src.tar.xz"
   sha256 "b46effe59cf96f50c6ef6b031863310d819e63b2ed1aa873f94d70c619490672"
   license "LGPL-3.0-or-later"
   revision 9
-  head "https://github.com/GenericMappingTools/gmt.git", branch: "master"
+  head "https:github.comGenericMappingToolsgmt.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "464e7b7b333f2d3decbe35107b9dd284e2822c721881a4c6a0bc5aaa2f8145b4"
@@ -25,28 +25,28 @@ class Gmt < Formula
   depends_on "pcre2"
 
   resource "gshhg" do
-    url "https://ghproxy.com/https://github.com/GenericMappingTools/gshhg-gmt/releases/download/2.3.7/gshhg-gmt-2.3.7.tar.gz"
-    mirror "https://mirrors.ustc.edu.cn/gmt/gshhg-gmt-2.3.7.tar.gz"
+    url "https:github.comGenericMappingToolsgshhg-gmtreleasesdownload2.3.7gshhg-gmt-2.3.7.tar.gz"
+    mirror "https:mirrors.ustc.edu.cngmtgshhg-gmt-2.3.7.tar.gz"
     sha256 "9bb1a956fca0718c083bef842e625797535a00ce81f175df08b042c2a92cfe7f"
   end
 
   resource "dcw" do
-    url "https://ghproxy.com/https://github.com/GenericMappingTools/dcw-gmt/releases/download/2.1.2/dcw-gmt-2.1.2.tar.gz"
-    mirror "https://mirrors.ustc.edu.cn/gmt/dcw-gmt-2.1.2.tar.gz"
+    url "https:github.comGenericMappingToolsdcw-gmtreleasesdownload2.1.2dcw-gmt-2.1.2.tar.gz"
+    mirror "https:mirrors.ustc.edu.cngmtdcw-gmt-2.1.2.tar.gz"
     sha256 "4bb840d075c8ba3e14aeb41cf17c24236bff787566314f9ff758ab9977745d99"
   end
 
   def install
-    (buildpath/"gshhg").install resource("gshhg")
-    (buildpath/"dcw").install resource("dcw")
+    (buildpath"gshhg").install resource("gshhg")
+    (buildpath"dcw").install resource("dcw")
 
     # GMT_DOCDIR and GMT_MANDIR must be relative paths
     args = %W[
-      -DGMT_DOCDIR=share/doc/gmt
-      -DGMT_MANDIR=share/man
-      -DGSHHG_ROOT=#{buildpath}/gshhg
+      -DGMT_DOCDIR=sharedocgmt
+      -DGMT_MANDIR=shareman
+      -DGSHHG_ROOT=#{buildpath}gshhg
       -DCOPY_GSHHG:BOOL=TRUE
-      -DDCW_ROOT=#{buildpath}/dcw
+      -DDCW_ROOT=#{buildpath}dcw
       -DCOPY_DCW:BOOL=TRUE
       -DPCRE_ROOT=FALSE
       -DFFTW3_ROOT=#{Formula["fftw"].opt_prefix}
@@ -62,7 +62,7 @@ class Gmt < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    inreplace bin/"gmt-config", Superenv.shims_path/ENV.cc, DevelopmentTools.locate(ENV.cc)
+    inreplace bin"gmt-config", Superenv.shims_pathENV.cc, DevelopmentTools.locate(ENV.cc)
   end
 
   def caveats
@@ -79,7 +79,7 @@ class Gmt < Formula
   end
 
   test do
-    system "#{bin}/gmt pscoast -R0/360/-70/70 -Jm1.2e-2i -Ba60f30/a30f15 -Dc -G240 -W1/0 -P > test.ps"
-    assert_predicate testpath/"test.ps", :exist?
+    system "#{bin}gmt pscoast -R0360-7070 -Jm1.2e-2i -Ba60f30a30f15 -Dc -G240 -W10 -P > test.ps"
+    assert_predicate testpath"test.ps", :exist?
   end
 end

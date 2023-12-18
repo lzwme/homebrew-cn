@@ -1,10 +1,10 @@
 class Canfigger < Formula
   desc "Simple configuration file parser library"
-  homepage "https://github.com/andy5995/canfigger/"
-  url "https://ghproxy.com/https://github.com/andy5995/canfigger/releases/download/v0.2.0/canfigger-0.2.0.tar.xz"
+  homepage "https:github.comandy5995canfigger"
+  url "https:github.comandy5995canfiggerreleasesdownloadv0.2.0canfigger-0.2.0.tar.xz"
   sha256 "c43449d5f99f4a5255800c8c521e3eaec7490b08fc4363f2858ba45c565a1d23"
   license "GPL-3.0-or-later"
-  head "https://github.com/andy5995/canfigger.git", branch: "trunk"
+  head "https:github.comandy5995canfigger.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "46a2b87b742481550bbaad9f0a95493357147d4666cc93f90b47f2a8194c7006"
@@ -31,10 +31,10 @@ class Canfigger < Formula
   end
 
   test do
-    (testpath/"test.conf").write <<~EOS
+    (testpath"test.conf").write <<~EOS
       Numbers = list, one , two, three, four, five, six, seven
     EOS
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <canfigger.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -63,6 +63,6 @@ class Canfigger < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lcanfigger", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

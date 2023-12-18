@@ -2,11 +2,11 @@ cask "trex" do
   version "1.6.0"
   sha256 "c34d77dbdd6561a4f3eb7650166be625831c2526823ee430e120402909dec023"
 
-  url "https://ghproxy.com/https://github.com/amebalabs/TRex/releases/download/v#{version}/TRex.zip",
-      verified: "github.com/amebalabs/TRex/"
+  url "https:github.comamebalabsTRexreleasesdownloadv#{version}TRex.zip",
+      verified: "github.comamebalabsTRex"
   name "TRex"
   desc "Easy to use text extraction tool"
-  homepage "https://trex.ameba.co/"
+  homepage "https:trex.ameba.co"
 
   livecheck do
     url :url
@@ -18,9 +18,9 @@ cask "trex" do
   app "TRex.app"
 
   zap trash: [
-    "~/Library/Application Scripts/com.ameba.TRex-LaunchAtLoginHelper",
-    "~/Library/Caches/com.ameba.TRex",
-    "~/Library/Containers/com.ameba.TRex-LaunchAtLoginHelper",
-    "~/Library/Preferences/com.ameba.TRex.plist",
+    "~LibraryApplication Scriptscom.ameba.TRex-LaunchAtLoginHelper",
+    "~LibraryCachescom.ameba.TRex",
+    "~LibraryContainerscom.ameba.TRex-LaunchAtLoginHelper",
+    "~LibraryPreferencescom.ameba.TRex.plist",
   ]
 end

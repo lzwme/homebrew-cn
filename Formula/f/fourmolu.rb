@@ -1,10 +1,10 @@
 class Fourmolu < Formula
   desc "Formatter for Haskell source code"
-  homepage "https://github.com/fourmolu/fourmolu"
-  url "https://ghproxy.com/https://github.com/fourmolu/fourmolu/archive/refs/tags/v0.14.1.0.tar.gz"
+  homepage "https:github.comfourmolufourmolu"
+  url "https:github.comfourmolufourmoluarchiverefstagsv0.14.1.0.tar.gz"
   sha256 "4ccf6bb2a2a9179ed30e94d14bb97b745ff897c4d62adefb3623a73d0f859567"
   license "BSD-3-Clause"
-  head "https://github.com/fourmolu/fourmolu.git", branch: "master"
+  head "https:github.comfourmolufourmolu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79b5ff3487c49bb4038351320fa9ab06bbf2bbc0ddd1bd6aac0f0e11f60c8ce4"
@@ -25,7 +25,7 @@ class Fourmolu < Formula
   end
 
   test do
-    (testpath/"test.hs").write <<~EOS
+    (testpath"test.hs").write <<~EOS
       foo =
         f1
         p1
@@ -59,6 +59,6 @@ class Fourmolu < Formula
               p2
               p3
     EOS
-    assert_equal expected, shell_output("#{bin}/fourmolu test.hs")
+    assert_equal expected, shell_output("#{bin}fourmolu test.hs")
   end
 end

@@ -2,10 +2,10 @@ cask "ssokit" do
   version "1.2.1"
   sha256 "830006cbb59dc3529dfae91f30ee1b1362f9be5952a599e9083d5fcaed710e34"
 
-  url "https://ghproxy.com/https://github.com/rangaofei/SSokit-qmake/releases/download/#{version}/SSokit_#{version}.dmg"
+  url "https:github.comrangaofeiSSokit-qmakereleasesdownload#{version}SSokit_#{version}.dmg"
   name "SSokit"
   desc "TCP and UDP debug tool"
-  homepage "https://github.com/rangaofei/SSokit-qmake"
+  homepage "https:github.comrangaofeiSSokit-qmake"
 
   livecheck do
     url :url
@@ -14,5 +14,5 @@ cask "ssokit" do
 
   app "SSokit.app"
 
-  zap trash: "~/Library/Preferences/cn.rangaofei.SSokit.plist"
+  zap trash: "~LibraryPreferencescn.rangaofei.SSokit.plist"
 end

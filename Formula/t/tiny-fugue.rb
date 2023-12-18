@@ -1,7 +1,7 @@
 class TinyFugue < Formula
   desc "Programmable MUD client"
-  homepage "https://tinyfugue.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/tinyfugue/tinyfugue/5.0%20beta%208/tf-50b8.tar.gz"
+  homepage "https:tinyfugue.sourceforge.net"
+  url "https:downloads.sourceforge.netprojecttinyfuguetinyfugue5.0%20beta%208tf-50b8.tar.gz"
   version "5.0b8"
   sha256 "3750a114cf947b1e3d71cecbe258cb830c39f3186c369e368d4662de9c50d989"
   license "GPL-2.0-or-later"
@@ -30,7 +30,7 @@ class TinyFugue < Formula
   # pcre deprecated pcre_info. Switch to HB pcre-8.31 and pcre_fullinfo.
   # Not reported upstream; project is in stasis since 2007.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9dc80757ba32bf5d818d70fc26bb24b6f/tiny-fugue/5.0b8.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9dc80757ba32bf5d818d70fc26bb24b6ftiny-fugue5.0b8.patch"
     sha256 "22f660dc0c0d0691ccaaacadf2f3c47afefbdc95639e46c6b4b77a0545b6a17c"
   end
 
@@ -42,7 +42,7 @@ class TinyFugue < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-getaddrinfo",
                           "--enable-termcap=ncurses"

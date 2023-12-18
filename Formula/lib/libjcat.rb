@@ -2,11 +2,11 @@ class Libjcat < Formula
   include Language::Python::Shebang
 
   desc "Library for reading Jcat files"
-  homepage "https://github.com/hughsie/libjcat"
-  url "https://ghproxy.com/https://github.com/hughsie/libjcat/releases/download/0.1.14/libjcat-0.1.14.tar.xz"
+  homepage "https:github.comhughsielibjcat"
+  url "https:github.comhughsielibjcatreleasesdownload0.1.14libjcat-0.1.14.tar.xz"
   sha256 "702706d75ff0c7253d0f5697bdd482e8c2cfe9909749fc7d68ddb364730b7383"
   license "LGPL-2.1-or-later"
-  head "https://github.com/hughsie/libjcat.git", branch: "main"
+  head "https:github.comhughsielibjcat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "3a1f1f359ca98cf824a3f1bb2978b682c32f89ce6af90c37ae80789befa7e91b"
@@ -32,8 +32,8 @@ class Libjcat < Formula
   depends_on "json-glib"
 
   def install
-    rewrite_shebang detected_python_shebang, "contrib/generate-version-script.py"
-    rewrite_shebang detected_python_shebang, "contrib/build-certs.py"
+    rewrite_shebang detected_python_shebang, "contribgenerate-version-script.py"
+    rewrite_shebang detected_python_shebang, "contribbuild-certs.py"
 
     system "meson", "setup", "build",
                     "-Dgpg=false",
@@ -44,8 +44,8 @@ class Libjcat < Formula
   end
 
   test do
-    system "#{bin}/jcat-tool", "-h"
-    (testpath/"test.c").write <<~EOS
+    system "#{bin}jcat-tool", "-h"
+    (testpath"test.c").write <<~EOS
       #include <jcat.h>
       int main(int argc, char *argv[]) {
         JcatContext *ctx = jcat_context_new();
@@ -57,9 +57,9 @@ class Libjcat < Formula
     glib = Formula["glib"]
     gnutls = Formula["gnutls"]
     flags = %W[
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/libjcat-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}libjcat-1
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
       -L#{gnutls.opt_lib}
@@ -71,6 +71,6 @@ class Libjcat < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

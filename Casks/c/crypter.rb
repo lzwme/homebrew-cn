@@ -2,17 +2,17 @@ cask "crypter" do
   version "5.0.0"
   sha256 "ed136dbfacae87d52493e56e0e225d13203de997c54e7ac5f159feeadfcd4b7a"
 
-  url "https://ghproxy.com/https://github.com/HR/Crypter/releases/download/v#{version}/Crypter-#{version}.dmg"
+  url "https:github.comHRCrypterreleasesdownloadv#{version}Crypter-#{version}.dmg"
   name "Crypter"
   desc "Encryption software"
-  homepage "https://github.com/HR/Crypter"
+  homepage "https:github.comHRCrypter"
 
   app "Crypter.app"
 
   zap trash: [
-    "~/Library/Application Support/Crypter",
-    "~/Library/Logs/Crypter",
-    "~/Library/Preferences/com.github.hr.crypter.plist",
-    "~/Library/Saved Application State/com.github.hr.crypter.savedState",
+    "~LibraryApplication SupportCrypter",
+    "~LibraryLogsCrypter",
+    "~LibraryPreferencescom.github.hr.crypter.plist",
+    "~LibrarySaved Application Statecom.github.hr.crypter.savedState",
   ]
 end

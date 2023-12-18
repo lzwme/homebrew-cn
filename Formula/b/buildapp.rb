@@ -1,11 +1,11 @@
 class Buildapp < Formula
   desc "Creates executables with SBCL"
-  homepage "https://www.xach.com/lisp/buildapp/"
-  url "https://ghproxy.com/https://github.com/xach/buildapp/archive/refs/tags/release-1.5.6.tar.gz"
+  homepage "https:www.xach.comlispbuildapp"
+  url "https:github.comxachbuildapparchiverefstagsrelease-1.5.6.tar.gz"
   sha256 "d77fb6c151605da660b909af058206f7fe7d9faf972e2c30876d42cb03d6a3ed"
   license "BSD-2-Clause"
   revision 3
-  head "https://github.com/xach/buildapp.git", branch: "master"
+  head "https:github.comxachbuildapp.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,9 +28,9 @@ class Buildapp < Formula
 
   test do
     code = "(defun f (a) (declare (ignore a)) (write-line \"Hello, homebrew\"))"
-    system "#{bin}/buildapp", "--eval", code,
+    system "#{bin}buildapp", "--eval", code,
                               "--entry", "f",
                               "--output", "t"
-    assert_equal `./t`, "Hello, homebrew\n"
+    assert_equal `.t`, "Hello, homebrew\n"
   end
 end

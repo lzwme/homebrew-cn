@@ -2,12 +2,12 @@ cask "font-caladea" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/caladea"
+      only_path: "oflcaladea"
   name "Caladea"
-  homepage "https://fonts.google.com/specimen/Caladea"
+  homepage "https:fonts.google.comspecimenCaladea"
 
   font "Caladea-Bold.ttf"
   font "Caladea-BoldItalic.ttf"

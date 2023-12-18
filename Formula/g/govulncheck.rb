@@ -1,7 +1,7 @@
 class Govulncheck < Formula
   desc "Database client and tools for the Go vulnerability database"
-  homepage "https://github.com/golang/vuln"
-  url "https://ghproxy.com/https://github.com/golang/vuln/archive/refs/tags/v1.0.1.tar.gz"
+  homepage "https:github.comgolangvuln"
+  url "https:github.comgolangvulnarchiverefstagsv1.0.1.tar.gz"
   sha256 "973a94a499c19c90f76624f9fc22d8a15b68fbb9565d74d237d4fb524bddf4ec"
   license "BSD-3-Clause"
 
@@ -20,19 +20,19 @@ class Govulncheck < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/govulncheck"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgovulncheck"
   end
 
   test do
     mkdir "brewtest" do
       system "go", "mod", "init", "brewtest"
-      (testpath/"brewtest/main.go").write <<~EOS
+      (testpath"brewtestmain.go").write <<~EOS
         package main
 
         func main() {}
       EOS
 
-      output = shell_output("#{bin}/govulncheck ./...")
+      output = shell_output("#{bin}govulncheck ....")
       assert_match "No vulnerabilities found.", output
     end
   end

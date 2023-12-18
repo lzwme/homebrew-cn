@@ -1,14 +1,14 @@
 class Lgogdownloader < Formula
   desc "Unofficial downloader for GOG.com games"
-  homepage "https://sites.google.com/site/gogdownloader/"
-  url "https://ghproxy.com/https://github.com/Sude-/lgogdownloader/releases/download/v3.12/lgogdownloader-3.12.tar.gz"
+  homepage "https:sites.google.comsitegogdownloader"
+  url "https:github.comSude-lgogdownloaderreleasesdownloadv3.12lgogdownloader-3.12.tar.gz"
   sha256 "bf3a16c1b2ff09152f9ac52ea9b52dfc0afae799ed1b370913149cec87154529"
   license "WTFPL"
-  head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
+  head "https:github.comSude-lgogdownloader.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?lgogdownloader[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?lgogdownloader[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -44,18 +44,18 @@ class Lgogdownloader < Formula
     require "pty"
 
     ENV["XDG_CONFIG_HOME"] = testpath
-    reader, writer = PTY.spawn(bin/"lgogdownloader", "--list", "--retries", "1")
+    reader, writer = PTY.spawn(bin"lgogdownloader", "--list", "--retries", "1")
     writer.write <<~EOS
       test@example.com
       secret
-      https://auth.gog.com/auth?client_id=xxx
+      https:auth.gog.comauth?client_id=xxx
     EOS
     writer.close
     lastline = ""
     begin
       reader.each_line { |line| lastline = line }
     rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
+      # GNULinux raises EIO when read is done on closed pty
     end
     assert_equal "Galaxy: Login failed", lastline.chomp
     reader.close

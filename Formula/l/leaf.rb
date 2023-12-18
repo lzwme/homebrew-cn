@@ -1,10 +1,10 @@
 class Leaf < Formula
   desc "General purpose reloader for all projects"
-  homepage "https://pkg.go.dev/github.com/vrongmeal/leaf"
-  url "https://ghproxy.com/https://github.com/vrongmeal/leaf/archive/refs/tags/v1.3.0.tar.gz"
+  homepage "https:pkg.go.devgithub.comvrongmealleaf"
+  url "https:github.comvrongmealleafarchiverefstagsv1.3.0.tar.gz"
   sha256 "00ba86c1670e4a547d6f584350d41d174452d0679be25828e7835a8da1fe100a"
   license "MIT"
-  head "https://github.com/vrongmeal/leaf.git", branch: "master"
+  head "https:github.comvrongmealleaf.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -26,20 +26,20 @@ class Leaf < Formula
   conflicts_with "leaf-proxy", because: "both install `leaf` binaries"
 
   def install
-    system "go", "build", *std_go_args, "./cmd/leaf/main.go"
+    system "go", "build", *std_go_args, ".cmdleafmain.go"
   end
 
   test do
-    (testpath/"a").write "foo"
+    (testpath"a").write "foo"
     fork do
-      exec bin/"leaf", "-f", "+ a", "-x", "cp a b"
+      exec bin"leaf", "-f", "+ a", "-x", "cp a b"
     end
     sleep 1
 
-    assert_equal (testpath/"a").read, (testpath/"b").read
-    (testpath/"a").append_lines "bar"
+    assert_equal (testpath"a").read, (testpath"b").read
+    (testpath"a").append_lines "bar"
     sleep 1
 
-    assert_equal (testpath/"a").read, (testpath/"b").read
+    assert_equal (testpath"a").read, (testpath"b").read
   end
 end

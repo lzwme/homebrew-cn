@@ -2,17 +2,17 @@ cask "whoozle-android-file-transfer" do
   version "4.3"
   sha256 "161996a15752183c5aa66682b37030f689b514b6183a5ee464de63b1980c8424"
 
-  url "https://ghproxy.com/https://github.com/whoozle/android-file-transfer-linux/releases/download/v#{version}/AndroidFileTransferForLinux.dmg",
-      verified: "github.com/whoozle/android-file-transfer-linux/"
+  url "https:github.comwhoozleandroid-file-transfer-linuxreleasesdownloadv#{version}AndroidFileTransferForLinux.dmg",
+      verified: "github.comwhoozleandroid-file-transfer-linux"
   name "Android File Transfer"
   desc "Android File Transfer for Linux"
-  homepage "https://whoozle.github.io/android-file-transfer-linux/"
+  homepage "https:whoozle.github.ioandroid-file-transfer-linux"
 
   conflicts_with cask: "whoozle-android-file-transfer-nightly"
 
   app "Android File Transfer for Linux.app"
-  binary "#{appdir}/Android File Transfer for Linux.app/Contents/SharedSupport/bin/aft-mtp-cli"
-  binary "#{appdir}/Android File Transfer for Linux.app/Contents/SharedSupport/bin/aft-mtp-mount"
+  binary "#{appdir}Android File Transfer for Linux.appContentsSharedSupportbinaft-mtp-cli"
+  binary "#{appdir}Android File Transfer for Linux.appContentsSharedSupportbinaft-mtp-mount"
 
   # No zap stanza required
 end

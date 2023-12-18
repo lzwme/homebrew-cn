@@ -1,7 +1,7 @@
 class Xnvme < Formula
-  desc "Cross-platform libraries and tools for efficient I/O and low-level control"
-  homepage "https://xnvme.io/"
-  url "https://ghproxy.com/https://github.com/OpenMPDK/xNVMe/releases/download/v0.7.3/xnvme-0.7.3.tar.gz"
+  desc "Cross-platform libraries and tools for efficient IO and low-level control"
+  homepage "https:xnvme.io"
+  url "https:github.comOpenMPDKxNVMereleasesdownloadv0.7.3xnvme-0.7.3.tar.gz"
   sha256 "fb1b777e63ed2e6a256de6bd2718db346f6e78eb73ef188ff1aef526ce28f294"
   license "BSD-3-Clause"
 
@@ -34,16 +34,16 @@ class Xnvme < Formula
 
   test do
     # Verify cli usage using a "ramdisk" of 1GB
-    output = shell_output("#{bin}/xnvme library-info")
+    output = shell_output("#{bin}xnvme library-info")
     assert_match "XNVME_BE_RAMDISK_ENABLED", output
 
-    output = shell_output("#{bin}/xnvme info 1GB --be ramdisk")
+    output = shell_output("#{bin}xnvme info 1GB --be ramdisk")
     assert_match "uri: '1GB'", output
     assert_match "type: XNVME_GEO_CONVENTIONAL", output
     assert_match "tbytes: 1073741824", output
 
     # Verify library usage using a ramdisk of 1GB
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <libxnvme.h>
 
@@ -70,7 +70,7 @@ class Xnvme < Formula
 
     # Run it and check the output, this should produce the same output as the
     # 'xnvme library-info' command, thus the output-assertion is the same
-    output = shell_output("./test info 1GB --be ramdisk")
+    output = shell_output(".test info 1GB --be ramdisk")
     assert_match "uri: '1GB'", output
     assert_match "type: XNVME_GEO_CONVENTIONAL", output
     assert_match "tbytes: 1073741824", output

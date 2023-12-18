@@ -1,10 +1,10 @@
 class Fabio < Formula
   desc "Zero-conf load balancing HTTP(S) router"
-  homepage "https://github.com/fabiolb/fabio"
-  url "https://ghproxy.com/https://github.com/fabiolb/fabio/archive/refs/tags/v1.6.3.tar.gz"
+  homepage "https:github.comfabiolbfabio"
+  url "https:github.comfabiolbfabioarchiverefstagsv1.6.3.tar.gz"
   sha256 "e85b70a700652b051260b8c49ce63d21d2579517601a91d893a7fa9444635ad3"
   license "MIT"
-  head "https://github.com/fabiolb/fabio.git", branch: "master"
+  head "https:github.comfabiolbfabio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4a20558083c013910f2d092982c75243b8a358b1599fc75a1b18de6890d9526"
@@ -55,7 +55,7 @@ class Fabio < Formula
         sleep 30
       end
       fork do
-        exec "#{bin}/fabio"
+        exec "#{bin}fabio"
       end
       sleep 10
       assert_equal true, port_open?(localhost_ip, fabio_default_port)

@@ -2,13 +2,13 @@ class Libbtbb < Formula
   include Language::Python::Shebang
 
   desc "Bluetooth baseband decoding library"
-  homepage "https://github.com/greatscottgadgets/libbtbb"
-  url "https://ghproxy.com/https://github.com/greatscottgadgets/libbtbb/archive/refs/tags/2020-12-R1.tar.gz"
+  homepage "https:github.comgreatscottgadgetslibbtbb"
+  url "https:github.comgreatscottgadgetslibbtbbarchiverefstags2020-12-R1.tar.gz"
   version "2020-12-R1"
   sha256 "9478bb51a38222921b5b1d7accce86acd98ed37dbccb068b38d60efa64c5231f"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/greatscottgadgets/libbtbb.git", branch: "master"
+  head "https:github.comgreatscottgadgetslibbtbb.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -31,17 +31,17 @@ class Libbtbb < Formula
     ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
 
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
-    # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
-    site_packages = prefix/Language::Python.site_packages("python3.11")
-    inreplace "python/pcaptools/CMakeLists.txt", "${OUTPUT} install ", "\\0 --install-lib=#{site_packages} "
+    # to incorrectly try to write into HOMEBREW_PREFIXlib since Python 3.10.
+    site_packages = prefixLanguage::Python.site_packages("python3.11")
+    inreplace "pythonpcaptoolsCMakeLists.txt", "${OUTPUT} install ", "\\0 --install-lib=#{site_packages} "
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    rewrite_shebang detected_python_shebang, bin/"btaptap"
+    rewrite_shebang detected_python_shebang, bin"btaptap"
   end
 
   test do
-    system bin/"btaptap", "-r", test_fixtures("test.pcap")
+    system bin"btaptap", "-r", test_fixtures("test.pcap")
   end
 end

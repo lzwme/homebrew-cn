@@ -1,11 +1,11 @@
 class Libusrsctp < Formula
   desc "Portable SCTP userland stack"
-  homepage "https://github.com/sctplab/usrsctp"
-  url "https://ghproxy.com/https://github.com/sctplab/usrsctp/archive/refs/tags/0.9.5.0.tar.gz"
+  homepage "https:github.comsctplabusrsctp"
+  url "https:github.comsctplabusrsctparchiverefstags0.9.5.0.tar.gz"
   sha256 "260107caf318650a57a8caa593550e39bca6943e93f970c80d6c17e59d62cd92"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/sctplab/usrsctp.git", branch: "master"
+  head "https:github.comsctplabusrsctp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d87af9c75847214b4101934141dd53dc3e5992304bd8f97aace95c683a2fa435"
@@ -28,7 +28,7 @@ class Libusrsctp < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <unistd.h>
       #include <usrsctp.h>
       int main() {
@@ -37,6 +37,6 @@ class Libusrsctp < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lusrsctp", "-lpthread", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

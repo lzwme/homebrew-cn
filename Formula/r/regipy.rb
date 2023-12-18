@@ -2,11 +2,11 @@ class Regipy < Formula
   include Language::Python::Virtualenv
 
   desc "Offline registry hive parsing tool"
-  homepage "https://github.com/mkorman90/regipy"
-  url "https://files.pythonhosted.org/packages/e0/f2/61846ba036f840b3cfe9b412dca3ef629bdc7506faafbd56b2c8de987950/regipy-3.1.6.tar.gz"
+  homepage "https:github.commkorman90regipy"
+  url "https:files.pythonhosted.orgpackagese0f261846ba036f840b3cfe9b412dca3ef629bdc7506faafbd56b2c8de987950regipy-3.1.6.tar.gz"
   sha256 "edc9fd8501f3374afd49020550bf361235e569959712825fbd2f444d2aeca8d9"
   license "MIT"
-  head "https://github.com/mkorman90/regipy.git", branch: "master"
+  head "https:github.commkorman90regipy.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -25,17 +25,17 @@ class Regipy < Formula
   depends_on "python@3.12"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "construct" do
-    url "https://files.pythonhosted.org/packages/e0/b7/a4a032e94bcfdff481f2e6fecd472794d9da09f474a2185ed33b2c7cad64/construct-2.10.68.tar.gz"
+    url "https:files.pythonhosted.orgpackagese0b7a4a032e94bcfdff481f2e6fecd472794d9da09f474a2185ed33b2c7cad64construct-2.10.68.tar.gz"
     sha256 "7b2a3fd8e5f597a5aa1d614c3bd516fa065db01704c72a1efaaeec6ef23d8b45"
   end
 
   resource "inflection" do
-    url "https://files.pythonhosted.org/packages/e1/7e/691d061b7329bc8d54edbf0ec22fbfb2afe61facb681f9aaa9bff7a27d04/inflection-0.5.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagese17e691d061b7329bc8d54edbf0ec22fbfb2afe61facb681f9aaa9bff7a27d04inflection-0.5.1.tar.gz"
     sha256 "1a29730d366e996aaacffb2f1f1cb9593dc38e2ddd30c91250c6dde09ea9b417"
   end
 
@@ -45,12 +45,12 @@ class Regipy < Formula
 
   test do
     resource "homebrew-test_hive" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/mkorman90/regipy/71acd6a65bdee11ff776dbd44870adad4632404c/regipy_tests/data/SYSTEM.xz"
+      url "https:raw.githubusercontent.commkorman90regipy71acd6a65bdee11ff776dbd44870adad4632404cregipy_testsdataSYSTEM.xz"
       sha256 "b1582ab413f089e746da0528c2394f077d6f53dd4e68b877ffb2667bd027b0b0"
     end
 
     resource("homebrew-test_hive").stage do
-      system bin/"registry-plugins-run", "-p", "computer_name", "-o", "out.json", "SYSTEM"
+      system bin"registry-plugins-run", "-p", "computer_name", "-o", "out.json", "SYSTEM"
       h = JSON.parse(File.read("out.json"))
       assert_equal h["computer_name"][0]["name"], "WKS-WIN732BITA"
       assert_equal h["computer_name"][1]["name"], "WIN-V5T3CSP8U4H"

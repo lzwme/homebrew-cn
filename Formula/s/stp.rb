@@ -1,15 +1,15 @@
 class Stp < Formula
   desc "Simple Theorem Prover, an efficient SMT solver for bitvectors"
-  homepage "https://stp.github.io/"
-  url "https://ghproxy.com/https://github.com/stp/stp/archive/refs/tags/2.3.3.tar.gz"
+  homepage "https:stp.github.io"
+  url "https:github.comstpstparchiverefstags2.3.3.tar.gz"
   sha256 "ea6115c0fc11312c797a4b7c4db8734afcfce4908d078f386616189e01b4fffa"
   license "MIT"
   revision 8
-  head "https://github.com/stp/stp.git", branch: "master"
+  head "https:github.comstpstp.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^(?:stp[._-])?v?(\d+(?:\.\d+)+)$/i)
+    regex(^(?:stp[._-])?v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,12 +36,12 @@ class Stp < Formula
 
   def install
     python = "python3.12"
-    site_packages = prefix/Language::Python.site_packages(python)
+    site_packages = prefixLanguage::Python.site_packages(python)
     site_packages.mkpath
-    inreplace "lib/Util/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+    inreplace "libUtilGitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.12"].opt_bin}/#{python}",
+                    "-DPYTHON_EXECUTABLE=#{Formula["python@3.12"].opt_bin}#{python}",
                     "-DPYTHON_LIB_INSTALL_DIR=#{site_packages}",
                     *std_cmake_args
     system "cmake", "--build", "build"
@@ -49,16 +49,16 @@ class Stp < Formula
   end
 
   test do
-    (testpath/"prob.smt").write <<~EOS
+    (testpath"prob.smt").write <<~EOS
       (set-logic QF_BV)
       (assert (= (bvsdiv (_ bv3 2) (_ bv2 2)) (_ bv0 2)))
       (check-sat)
       (exit)
     EOS
-    assert_equal "sat", shell_output("#{bin}/stp --SMTLIB2 prob.smt").chomp
+    assert_equal "sat", shell_output("#{bin}stp --SMTLIB2 prob.smt").chomp
 
-    (testpath/"test.c").write <<~EOS
-      #include "stp/c_interface.h"
+    (testpath"test.c").write <<~EOS
+      #include "stpc_interface.h"
       #include <assert.h>
       int main() {
         VC vc = vc_createValidityChecker();
@@ -83,6 +83,6 @@ class Stp < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lstp", "-o", "test"
-    assert_equal expected_output.chomp, shell_output("./test").chomp
+    assert_equal expected_output.chomp, shell_output(".test").chomp
   end
 end

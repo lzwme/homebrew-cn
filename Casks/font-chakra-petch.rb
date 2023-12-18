@@ -2,12 +2,12 @@ cask "font-chakra-petch" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/chakrapetch"
+      only_path: "oflchakrapetch"
   name "Chakra Petch"
-  homepage "https://fonts.google.com/specimen/Chakra+Petch"
+  homepage "https:fonts.google.comspecimenChakra+Petch"
 
   font "ChakraPetch-Bold.ttf"
   font "ChakraPetch-BoldItalic.ttf"

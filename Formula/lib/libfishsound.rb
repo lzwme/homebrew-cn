@@ -1,14 +1,14 @@
 class Libfishsound < Formula
   desc "Decode and encode audio data using the Xiph.org codecs"
-  homepage "https://xiph.org/fishsound/"
-  url "https://downloads.xiph.org/releases/libfishsound/libfishsound-1.0.0.tar.gz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/libfishsound-1.0.0.tar.gz"
+  homepage "https:xiph.orgfishsound"
+  url "https:downloads.xiph.orgreleaseslibfishsoundlibfishsound-1.0.0.tar.gz", using: :homebrew_curl
+  mirror "https:ftp.osuosl.orgpubxiphreleaseslibfishsoundlibfishsound-1.0.0.tar.gz"
   sha256 "2e0b57ce2fecc9375eef72938ed08ac8c8f6c5238e1cae24458f0b0e8dade7c7"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/?C=M&O=D"
-    regex(/href=.*?libfishsound[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ftp.osuosl.orgpubxiphreleaseslibfishsound?C=M&O=D"
+    regex(href=.*?libfishsound[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,12 +34,12 @@ class Libfishsound < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 end

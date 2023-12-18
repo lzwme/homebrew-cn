@@ -1,10 +1,10 @@
 class Dbdeployer < Formula
   desc "Tool to deploy sandboxed MySQL database servers"
-  homepage "https://github.com/datacharmer/dbdeployer"
-  url "https://ghproxy.com/https://github.com/datacharmer/dbdeployer/archive/refs/tags/v1.73.0.tar.gz"
+  homepage "https:github.comdatacharmerdbdeployer"
+  url "https:github.comdatacharmerdbdeployerarchiverefstagsv1.73.0.tar.gz"
   sha256 "c360b5118c3cfac724aebe107ed03b9af09b201dc189ae735589a7a3d75fcf7e"
   license "Apache-2.0"
-  head "https://github.com/datacharmer/dbdeployer.git", branch: "master"
+  head "https:github.comdatacharmerdbdeployer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bf76138da81b0cf596eef9743794f933c0d086f034c2589148c2a89bbb8a8acb"
@@ -22,12 +22,12 @@ class Dbdeployer < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    bash_completion.install "docs/dbdeployer_completion.sh"
+    bash_completion.install "docsdbdeployer_completion.sh"
   end
 
   test do
-    shell_output("#{bin}/dbdeployer init --skip-shell-completion --skip-tarball-download")
-    assert_predicate testpath/"opt/mysql", :exist?
-    assert_predicate testpath/"sandboxes", :exist?
+    shell_output("#{bin}dbdeployer init --skip-shell-completion --skip-tarball-download")
+    assert_predicate testpath"optmysql", :exist?
+    assert_predicate testpath"sandboxes", :exist?
   end
 end

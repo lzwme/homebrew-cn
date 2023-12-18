@@ -1,7 +1,7 @@
 class FuncE < Formula
   desc "Easily run Envoy"
-  homepage "https://func-e.io"
-  url "https://ghproxy.com/https://github.com/tetratelabs/func-e/archive/refs/tags/v1.1.4.tar.gz"
+  homepage "https:func-e.io"
+  url "https:github.comtetratelabsfunc-earchiverefstagsv1.1.4.tar.gz"
   sha256 "f8829bde3201960edbea764002c16ade4d68e0a7ddc453d042cd1fb5bba3f6d5"
   license "Apache-2.0"
 
@@ -17,7 +17,7 @@ class FuncE < Formula
 
   depends_on "go" => :build
   # archive-envoy does not support macos-11
-  # https://github.com/Homebrew/homebrew-core/pull/119899#issuecomment-1374663837
+  # https:github.comHomebrewhomebrew-corepull119899#issuecomment-1374663837
   depends_on macos: :monterey
 
   def install
@@ -29,21 +29,21 @@ class FuncE < Formula
   end
 
   test do
-    func_e_home = testpath/".func-e"
+    func_e_home = testpath".func-e"
     ENV["FUNC_E_HOME"] = func_e_home
 
     # While this says "--version", this is a legitimate test as the --version is interpreted by Envoy.
     # Specifically, func-e downloads and installs Envoy. Finally, it runs `envoy --version`
-    run_output = shell_output("#{bin}/func-e run --version")
+    run_output = shell_output("#{bin}func-e run --version")
 
     # We intentionally aren't choosing an Envoy version. The version file will have the last minor. Ex. 1.19
-    installed_envoy_minor = (func_e_home/"version").read
+    installed_envoy_minor = (func_e_home"version").read
     # Use a glob to resolve the full path to Envoy's binary. The dist is under the patch version. Ex. 1.19.1
-    envoy_bin = func_e_home.glob("versions/#{installed_envoy_minor}.*/bin/envoy").first
+    envoy_bin = func_e_home.glob("versions#{installed_envoy_minor}.*binenvoy").first
     assert_path_exists envoy_bin
 
     # Test output from the `envoy --version`. This uses a regex because we won't know the commit etc used. Ex.
-    # envoy  version: 98c1c9e9a40804b93b074badad1cdf284b47d58b/1.18.3/Modified/RELEASE/BoringSSL
-    assert_match %r{envoy +version: [a-f0-9]{40}/#{installed_envoy_minor}\.[0-9]+/}, run_output
+    # envoy  version: 98c1c9e9a40804b93b074badad1cdf284b47d58b1.18.3ModifiedRELEASEBoringSSL
+    assert_match %r{envoy +version: [a-f0-9]{40}#{installed_envoy_minor}\.[0-9]+}, run_output
   end
 end

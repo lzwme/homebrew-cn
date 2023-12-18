@@ -1,10 +1,10 @@
 class Snappy < Formula
-  desc "Compression/decompression library aiming for high speed"
-  homepage "https://google.github.io/snappy/"
-  url "https://ghproxy.com/https://github.com/google/snappy/archive/refs/tags/1.1.10.tar.gz"
+  desc "Compressiondecompression library aiming for high speed"
+  homepage "https:google.github.iosnappy"
+  url "https:github.comgooglesnappyarchiverefstags1.1.10.tar.gz"
   sha256 "49d831bffcc5f3d01482340fe5af59852ca2fe76c3e05df0e67203ebbe0f1d90"
   license "BSD-3-Clause"
-  head "https://github.com/google/snappy.git", branch: "master"
+  head "https:github.comgooglesnappy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "dbe6bca5814b986d91bf204c4b59df8a411b2654eafa53d058e6ff973c4e2451"
@@ -32,13 +32,13 @@ class Snappy < Formula
   end
 
   # Fix issue where `snappy` setting -fno-rtti causes build issues on `folly`
-  # `folly` issue ref: https://github.com/facebook/folly/issues/1583
+  # `folly` issue ref: https:github.comfacebookfollyissues1583
   patch :DATA
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
-    # Disable tests/benchmarks used for Snappy development
+    # Disable testsbenchmarks used for Snappy development
     args = std_cmake_args + %w[
       -DSNAPPY_BUILD_TESTS=OFF
       -DSNAPPY_BUILD_BENCHMARKS=OFF
@@ -55,7 +55,7 @@ class Snappy < Formula
     # Force use of Clang on Mojave
     ENV.clang if OS.mac?
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <assert.h>
       #include <snappy.h>
       #include <string>
@@ -74,15 +74,15 @@ class Snappy < Formula
     EOS
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lsnappy", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end
 
 __END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
+diff --git aCMakeLists.txt bCMakeLists.txt
 index 672561e..2f97b73 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
+--- aCMakeLists.txt
++++ bCMakeLists.txt
 @@ -76,10 +76,6 @@ else(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
    # Disable C++ exceptions.
    string(REGEX REPLACE "-fexceptions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")

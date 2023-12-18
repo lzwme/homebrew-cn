@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class LeappCli < Formula
   desc "Cloud credentials manager cli"
-  homepage "https://github.com/noovolari/leapp"
-  url "https://registry.npmjs.org/@noovolari/leapp-cli/-/leapp-cli-0.1.54.tgz"
+  homepage "https:github.comnoovolarileapp"
+  url "https:registry.npmjs.org@noovolarileapp-cli-leapp-cli-0.1.54.tgz"
   sha256 "52f5590ff097ea27814c8eac762b5d30e447a560bed68ab75f95635079d7c1c9"
   license "MPL-2.0"
 
@@ -27,7 +27,7 @@ class LeappCli < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   def caveats
@@ -41,6 +41,6 @@ class LeappCli < Formula
 
   test do
     assert_match "Leapp app must be running to use this CLI",
-      shell_output("#{bin}/leapp idp-url create --idpUrl https://example.com 2>&1", 2).strip
+      shell_output("#{bin}leapp idp-url create --idpUrl https:example.com 2>&1", 2).strip
   end
 end

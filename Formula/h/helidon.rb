@@ -1,7 +1,7 @@
 class Helidon < Formula
   desc "Command-line tool for Helidon application development"
-  homepage "https://helidon.io/"
-  url "https://ghproxy.com/https://github.com/helidon-io/helidon-build-tools/archive/refs/tags/3.0.6.tar.gz"
+  homepage "https:helidon.io"
+  url "https:github.comhelidon-iohelidon-build-toolsarchiverefstags3.0.6.tar.gz"
   sha256 "749cf3fd162bb9449ab57584c0bdf8874114d678499071ea522c047637de0f90"
   license "Apache-2.0"
   revision 1
@@ -28,17 +28,17 @@ class Helidon < Formula
   depends_on "openjdk"
 
   def install
-    system "mvn", "package", "-f", "cli/impl/pom.xml", "-DskipTests"
-    system "unzip", "cli/impl/target/helidon-cli"
-    libexec.install "helidon-#{version}/bin", "helidon-#{version}/helidon-cli.jar", "helidon-#{version}/libs"
-    (bin/"helidon").write_env_script libexec/"bin/helidon", Language::Java.overridable_java_home_env
+    system "mvn", "package", "-f", "cliimplpom.xml", "-DskipTests"
+    system "unzip", "cliimpltargethelidon-cli"
+    libexec.install "helidon-#{version}bin", "helidon-#{version}helidon-cli.jar", "helidon-#{version}libs"
+    (bin"helidon").write_env_script libexec"binhelidon", Language::Java.overridable_java_home_env
   end
 
   test do
-    # Avoid error: java.lang.IllegalArgumentException: `HOMEBREW_CACHE/"java_cache"` does not exist
-    mkdir_p HOMEBREW_CACHE/"java_cache"
+    # Avoid error: java.lang.IllegalArgumentException: `HOMEBREW_CACHE"java_cache"` does not exist
+    mkdir_p HOMEBREW_CACHE"java_cache"
 
-    system bin/"helidon", "init", "--batch"
-    assert_predicate testpath/"quickstart-se", :directory?
+    system bin"helidon", "init", "--batch"
+    assert_predicate testpath"quickstart-se", :directory?
   end
 end

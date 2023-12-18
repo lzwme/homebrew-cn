@@ -1,13 +1,13 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
-  homepage "https://web.crev.dev/rust-reviews/"
-  url "https://ghproxy.com/https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.25.5.tar.gz"
+  homepage "https:web.crev.devrust-reviews"
+  url "https:github.comcrev-devcargo-crevarchiverefstagsv0.25.5.tar.gz"
   sha256 "3c26e9abb31ad008f2e1ced8c7b9b859027ce09d4b34fdf363dbf3a07626dca4"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,14 +28,14 @@ class CargoCrev < Formula
 
   # build patch for index-guix dependency
   patch do
-    url "https://github.com/crev-dev/cargo-crev/commit/1f26743bed2eee2ed62bc50cead24743a3b6535e.patch?full_index=1"
+    url "https:github.comcrev-devcargo-crevcommit1f26743bed2eee2ed62bc50cead24743a3b6535e.patch?full_index=1"
     sha256 "7787f0c946268de7d281413429698a4c0524e25f763faa6aec2abc8be0ef0c52"
   end
 
   def install
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./cargo-crev")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: ".cargo-crev")
   end
 
   def check_binary_linkage(binary, library)
@@ -48,19 +48,19 @@ class CargoCrev < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     system "cargo", "crev", "config", "dir"
 
     [
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"cargo-crev", library),
+      assert check_binary_linkage(bin"cargo-crev", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

@@ -2,10 +2,10 @@ cask "font-rubik-lines" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rubiklines/RubikLines-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrubiklinesRubikLines-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rubik Lines"
-  homepage "https://fonts.google.com/specimen/Rubik+Lines"
+  homepage "https:fonts.google.comspecimenRubik+Lines"
 
   font "RubikLines-Regular.ttf"
 

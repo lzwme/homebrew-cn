@@ -1,10 +1,10 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
-  homepage "https://github.com/octobuild/octobuild"
-  url "https://ghproxy.com/https://github.com/octobuild/octobuild/archive/refs/tags/0.9.0.tar.gz"
+  homepage "https:github.comoctobuildoctobuild"
+  url "https:github.comoctobuildoctobuildarchiverefstags0.9.0.tar.gz"
   sha256 "13240e1e75908de4d9f8d2066ec35305bed7b0e9d05ce44f98b4449de13451d7"
   license "MIT"
-  head "https://github.com/octobuild/octobuild.git", branch: "master"
+  head "https:github.comoctobuildoctobuild.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1bf84a536b72418d16b2572cf8755ab7f405549ac3001183dc7ec4d85f8f9984"
@@ -28,7 +28,7 @@ class Octobuild < Formula
   end
 
   test do
-    output = shell_output bin/"xgConsole"
+    output = shell_output bin"xgConsole"
     assert_match "Current configuration", output
     assert_match "cache_limit_mb", output
   end

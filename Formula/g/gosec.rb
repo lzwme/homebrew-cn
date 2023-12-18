@@ -1,10 +1,10 @@
 class Gosec < Formula
   desc "Golang security checker"
-  homepage "https://securego.io/"
-  url "https://ghproxy.com/https://github.com/securego/gosec/archive/refs/tags/v2.18.2.tar.gz"
+  homepage "https:securego.io"
+  url "https:github.comsecuregogosecarchiverefstagsv2.18.2.tar.gz"
   sha256 "38989bc03a13f3452ca3ca7f8bfd5d265ddc798217dcf4919a0d6f8500d0c392"
   license "Apache-2.0"
-  head "https://github.com/securego/gosec.git", branch: "master"
+  head "https:github.comsecuregogosec.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8bdd66283ae0e956505e70d8ac8b0294c879746fdd1437a0e2d89487e1637e32"
@@ -19,11 +19,11 @@ class Gosec < Formula
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), "./cmd/gosec"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), ".cmdgosec"
   end
 
   test do
-    (testpath/"test.go").write <<~EOS
+    (testpath"test.go").write <<~EOS
       package main
 
       import "fmt"
@@ -36,7 +36,7 @@ class Gosec < Formula
       }
     EOS
 
-    output = shell_output("#{bin}/gosec ./...", 1)
+    output = shell_output("#{bin}gosec ....", 1)
     assert_match "G101 (CWE-798)", output
     assert_match "Issues : \e[1;31m1\e[0m", output
   end

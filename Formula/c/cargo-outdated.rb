@@ -1,12 +1,12 @@
 class CargoOutdated < Formula
   desc "Cargo subcommand for displaying when Rust dependencies are out of date"
-  homepage "https://github.com/kbknapp/cargo-outdated"
+  homepage "https:github.comkbknappcargo-outdated"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://ghproxy.com/https://github.com/kbknapp/cargo-outdated/archive/refs/tags/v0.14.0.tar.gz"
+  url "https:github.comkbknappcargo-outdatedarchiverefstagsv0.14.0.tar.gz"
   sha256 "4aea3dcbbf4b118c860ac29a2e66608f226c485ae329a9bfc73680967920589e"
   license "MIT"
-  head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
+  head "https:github.comkbknappcargo-outdated.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "54b8148cb931c6ca999ab3b891c1e428c17bcfd6e993b9163dafada1a2d01004"
@@ -22,11 +22,11 @@ class CargoOutdated < Formula
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/kbknapp/cargo-outdated/blob/v#{version}/Cargo.lock
+  # 1. Search for `libgit2-sys` version at https:github.comkbknappcargo-outdatedblobv#{version}Cargo.lock
   # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
   #    - Migrate to the corresponding `libgit2` formula.
   #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
+  #      See: https:github.comrust-langgit2-rscommit59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
   depends_on "libgit2@1.6"
   depends_on "openssl@3"
 
@@ -47,15 +47,15 @@ class CargoOutdated < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -67,7 +67,7 @@ class CargoOutdated < Formula
         libc = "0.1"
       EOS
 
-      (crate/"lib.rs").write "use libc;"
+      (crate"lib.rs").write "use libc;"
 
       output = shell_output("cargo outdated 2>&1")
       # libc 0.1 is outdated
@@ -75,11 +75,11 @@ class CargoOutdated < Formula
     end
 
     [
-      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["libgit2@1.6"].opt_libshared_library("libgit2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"cargo-outdated", library),
+      assert check_binary_linkage(bin"cargo-outdated", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

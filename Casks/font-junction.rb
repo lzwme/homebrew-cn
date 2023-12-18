@@ -2,14 +2,14 @@ cask "font-junction" do
   version :latest
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/theleagueof/junction/archive/master.zip",
-      verified: "github.com/theleagueof/junction/"
+  url "https:github.comtheleagueofjunctionarchivemaster.zip",
+      verified: "github.comtheleagueofjunction"
   name "Junction"
-  homepage "https://www.theleagueofmoveabletype.com/junction"
+  homepage "https:www.theleagueofmoveabletype.comjunction"
 
-  font "junction-master/Junction-bold.otf"
-  font "junction-master/Junction-light.otf"
-  font "junction-master/Junction-regular.otf"
+  font "junction-masterJunction-bold.otf"
+  font "junction-masterJunction-light.otf"
+  font "junction-masterJunction-regular.otf"
 
   # No zap stanza required
 end

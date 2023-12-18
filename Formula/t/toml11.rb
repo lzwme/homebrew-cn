@@ -1,7 +1,7 @@
 class Toml11 < Formula
   desc "TOML for Modern C++"
-  homepage "https://github.com/ToruNiina/toml11"
-  url "https://ghproxy.com/https://github.com/ToruNiina/toml11/archive/refs/tags/v3.7.1.tar.gz"
+  homepage "https:github.comToruNiinatoml11"
+  url "https:github.comToruNiinatoml11archiverefstagsv3.7.1.tar.gz"
   sha256 "afeaa9aa0416d4b6b2cd3897ca55d9317084103077b32a852247d8efd4cf6068"
   license "MIT"
 
@@ -18,11 +18,11 @@ class Toml11 < Formula
   end
 
   test do
-    (testpath/"test.toml").write <<~EOS
+    (testpath"test.toml").write <<~EOS
       test_str = "a test string"
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "toml.hpp"
       #include <iostream>
 
@@ -35,6 +35,6 @@ class Toml11 < Formula
     EOS
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
-    assert_equal "test_str = a test string\n", shell_output("./test")
+    assert_equal "test_str = a test string\n", shell_output(".test")
   end
 end

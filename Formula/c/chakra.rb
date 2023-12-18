@@ -1,27 +1,27 @@
 class Chakra < Formula
   desc "Core part of the JavaScript engine that powers Microsoft Edge"
-  homepage "https://github.com/chakra-core/ChakraCore"
+  homepage "https:github.comchakra-coreChakraCore"
   license "MIT"
   revision 6
-  head "https://github.com/chakra-core/ChakraCore.git", branch: "master"
+  head "https:github.comchakra-coreChakraCore.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/chakra-core/ChakraCore/archive/refs/tags/v1.11.24.tar.gz"
+    url "https:github.comchakra-coreChakraCorearchiverefstagsv1.11.24.tar.gz"
     sha256 "b99e85f2d0fa24f2b6ccf9a6d2723f3eecfe986a9d2c4d34fa1fd0d015d0595e"
 
-    depends_on arch: :x86_64 # https://github.com/chakra-core/ChakraCore/issues/6860
+    depends_on arch: :x86_64 # https:github.comchakra-coreChakraCoreissues6860
 
     # Fix build with modern compilers.
     # Remove with 1.12.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/204ce95fb69a2cd523ccb0f392b7cce4f791273a/chakra/clang10.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patches204ce95fb69a2cd523ccb0f392b7cce4f791273achakraclang10.patch"
       sha256 "5337b8d5de2e9b58f6908645d9e1deb8364d426628c415e0e37aa3288fae3de7"
     end
 
     # Support Python 3.
     # Remove with 1.12.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/308bb29254605f0c207ea4ed67f049fdfe5ec92c/chakra/python3.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patches308bb29254605f0c207ea4ed67f049fdfe5ec92cchakrapython3.patch"
       sha256 "61c61c5376bc28ac52ec47e6d4c053eb27c04860aa4ba787a78266840ce57830"
     end
   end
@@ -57,17 +57,17 @@ class Chakra < Formula
     args << "--no-jit" if Hardware::CPU.arm?
 
     # Build dynamically for the shared library
-    system "./build.sh", *args
+    system ".build.sh", *args
     # Then statically to get a usable binary
-    system "./build.sh", "--static", *args
+    system ".build.sh", "--static", *args
 
-    bin.install "out/Release/ch" => "chakra"
-    include.install Dir["out/Release/include/*"]
-    lib.install "out/Release/#{shared_library("libChakraCore")}"
+    bin.install "outReleasech" => "chakra"
+    include.install Dir["outReleaseinclude*"]
+    lib.install "outRelease#{shared_library("libChakraCore")}"
   end
 
   test do
-    (testpath/"test.js").write("print('Hello world!');\n")
-    assert_equal "Hello world!", shell_output("#{bin}/chakra test.js").chomp
+    (testpath"test.js").write("print('Hello world!');\n")
+    assert_equal "Hello world!", shell_output("#{bin}chakra test.js").chomp
   end
 end

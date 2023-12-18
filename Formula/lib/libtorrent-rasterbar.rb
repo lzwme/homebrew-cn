@@ -1,15 +1,15 @@
 class LibtorrentRasterbar < Formula
   desc "C++ bittorrent library with Python bindings"
-  homepage "https://www.libtorrent.org/"
-  url "https://ghproxy.com/https://github.com/arvidn/libtorrent/releases/download/v2.0.9/libtorrent-rasterbar-2.0.9.tar.gz"
+  homepage "https:www.libtorrent.org"
+  url "https:github.comarvidnlibtorrentreleasesdownloadv2.0.9libtorrent-rasterbar-2.0.9.tar.gz"
   sha256 "90cd92b6061c5b664840c3d5e151d43fedb24f5b2b24e14425ffbb884ef1798e"
   license "BSD-3-Clause"
   revision 4
-  head "https://github.com/arvidn/libtorrent.git", branch: "RC_2_0"
+  head "https:github.comarvidnlibtorrent.git", branch: "RC_2_0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:[._]\d+)+)$/i)
+    regex(^v?(\d+(?:[._]\d+)+)$i)
   end
 
   bottle do
@@ -48,7 +48,7 @@ class LibtorrentRasterbar < Formula
 
   test do
     args = [
-      "-I#{Formula["boost"].include}/boost",
+      "-I#{Formula["boost"].include}boost",
       "-L#{Formula["boost"].lib}",
       "-I#{include}",
       "-L#{lib}",
@@ -66,10 +66,10 @@ class LibtorrentRasterbar < Formula
       ]
     end
 
-    system ENV.cxx, libexec/"examples/make_torrent.cpp",
+    system ENV.cxx, libexec"examplesmake_torrent.cpp",
                     "-std=c++14", *args, "-o", "test"
-    system "./test", test_fixtures("test.mp3"), "-o", "test.torrent"
-    assert_predicate testpath/"test.torrent", :exist?
+    system ".test", test_fixtures("test.mp3"), "-o", "test.torrent"
+    assert_predicate testpath"test.torrent", :exist?
 
     system "python3.12", "-c", "import libtorrent"
   end

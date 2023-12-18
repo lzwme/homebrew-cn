@@ -1,7 +1,7 @@
 class Haiti < Formula
   desc "Hash type identifier"
-  homepage "https://noraj.github.io/haiti/#/"
-  url "https://ghproxy.com/https://github.com/noraj/haiti/archive/refs/tags/v2.1.0.tar.gz"
+  homepage "https:noraj.github.iohaiti#"
+  url "https:github.comnorajhaitiarchiverefstagsv2.1.0.tar.gz"
   sha256 "ee1fee20c891db567abe753de25e7f1f1d4c7c59d92b6ce28f2e96606f247828"
   license "MIT"
 
@@ -16,12 +16,12 @@ class Haiti < Formula
   # Runtime dependencies of haiti
   # List with `gem install --explain haiti-hash`
   resource "paint" do
-    url "https://rubygems.org/gems/paint-2.3.0.gem"
+    url "https:rubygems.orggemspaint-2.3.0.gem"
     sha256 "327d623e4038619d5bd99ae5db07973859cd78400c7f0329eea283cef8e83be5"
   end
 
   resource "docopt" do
-    url "https://rubygems.org/gems/docopt-0.6.1.gem"
+    url "https:rubygems.orggemsdocopt-0.6.1.gem"
     sha256 "73f837ed376d015971712c17f7aafa021998b964b77d52997dcaff79d6727467"
   end
 
@@ -33,14 +33,14 @@ class Haiti < Formula
     end
     system "gem", "build", "haiti.gemspec"
     system "gem", "install", "haiti-hash-#{version}.gem"
-    bin.install Dir[libexec/"bin/haiti"]
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install Dir[libexec"binhaiti"]
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/haiti --version")
+    assert_match version.to_s, shell_output("#{bin}haiti --version")
 
-    output = shell_output("#{bin}/haiti 12c87370d1b5472793e67682596b60efe2c6038d63d04134a1a88544509737b4")
+    output = shell_output("#{bin}haiti 12c87370d1b5472793e67682596b60efe2c6038d63d04134a1a88544509737b4")
     assert_match "[JtR: raw-sha256]", output
   end
 end

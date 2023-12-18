@@ -1,7 +1,7 @@
 class OpenImageDenoise < Formula
   desc "High-performance denoising library for ray tracing"
-  homepage "https://openimagedenoise.github.io"
-  url "https://ghproxy.com/https://github.com/OpenImageDenoise/oidn/releases/download/v2.1.0/oidn-2.1.0.src.tar.gz"
+  homepage "https:openimagedenoise.github.io"
+  url "https:github.comOpenImageDenoiseoidnreleasesdownloadv2.1.0oidn-2.1.0.src.tar.gz"
   sha256 "ce144ba582ff36563d9442ee07fa2a4d249bc85aa93e5b25fc527ff4ee755ed6"
   license "Apache-2.0"
 
@@ -19,13 +19,13 @@ class OpenImageDenoise < Formula
   depends_on "ispc" => :build
   depends_on "python@3.12" => :build
   # clang: error: unknown argument: '-fopenmp-simd'
-  # https://github.com/OpenImageDenoise/oidn/issues/35
+  # https:github.comOpenImageDenoiseoidnissues35
   depends_on macos: :high_sierra
   depends_on "tbb"
 
   def install
     # Fix arm64 build targeting iOS
-    inreplace "cmake/oidn_ispc.cmake", 'set(ISPC_TARGET_OS "--target-os=ios")', ""
+    inreplace "cmakeoidn_ispc.cmake", 'set(ISPC_TARGET_OS "--target-os=ios")', ""
 
     mkdir "build" do
       system "cmake", *std_cmake_args, ".."
@@ -34,8 +34,8 @@ class OpenImageDenoise < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <OpenImageDenoise/oidn.h>
+    (testpath"test.c").write <<~EOS
+      #include <OpenImageDenoiseoidn.h>
       int main() {
         OIDNDevice device = oidnNewDevice(OIDN_DEVICE_TYPE_DEFAULT);
         oidnCommitDevice(device);
@@ -43,6 +43,6 @@ class OpenImageDenoise < Formula
       }
     EOS
     system ENV.cc, "-I#{include}", "test.c", "-L#{lib}", "-lOpenImageDenoise"
-    system "./a.out"
+    system ".a.out"
   end
 end

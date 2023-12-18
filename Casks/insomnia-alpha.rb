@@ -2,15 +2,15 @@ cask "insomnia-alpha" do
   version "8.4.0-beta.0"
   sha256 "89eb1d0db403e5303f08eea8a5f00f35f9c70cbc56d89658bba329b765614451"
 
-  url "https://ghproxy.com/https://github.com/Kong/insomnia/releases/download/core%40#{version}/Insomnia.Core-#{version}.dmg",
-      verified: "github.com/Kong/insomnia/"
+  url "https:github.comKonginsomniareleasesdownloadcore%40#{version}Insomnia.Core-#{version}.dmg",
+      verified: "github.comKonginsomnia"
   name "Insomnia"
   desc "HTTP and GraphQL Client"
-  homepage "https://insomnia.rest/"
+  homepage "https:insomnia.rest"
 
   livecheck do
     url :url
-    regex(/^core@v?(\d+(?:\.\d+)+[._-](?:alpha|beta|rc)[._-]?\d*)$/i)
+    regex(^core@v?(\d+(?:\.\d+)+[._-](?:alpha|beta|rc)[._-]?\d*)$i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"]
@@ -30,13 +30,13 @@ cask "insomnia-alpha" do
   app "Insomnia.app"
 
   zap trash: [
-    "~/Library/Application Support/Insomnia",
-    "~/Library/Caches/com.insomnia.app",
-    "~/Library/Caches/com.insomnia.app.ShipIt",
-    "~/Library/Cookies/com.insomnia.app.binarycookies",
-    "~/Library/Preferences/ByHost/com.insomnia.app.ShipIt.*.plist",
-    "~/Library/Preferences/com.insomnia.app.helper.plist",
-    "~/Library/Preferences/com.insomnia.app.plist",
-    "~/Library/Saved Application State/com.insomnia.app.savedState",
+    "~LibraryApplication SupportInsomnia",
+    "~LibraryCachescom.insomnia.app",
+    "~LibraryCachescom.insomnia.app.ShipIt",
+    "~LibraryCookiescom.insomnia.app.binarycookies",
+    "~LibraryPreferencesByHostcom.insomnia.app.ShipIt.*.plist",
+    "~LibraryPreferencescom.insomnia.app.helper.plist",
+    "~LibraryPreferencescom.insomnia.app.plist",
+    "~LibrarySaved Application Statecom.insomnia.app.savedState",
   ]
 end

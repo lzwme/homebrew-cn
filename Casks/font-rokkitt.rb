@@ -2,13 +2,13 @@ cask "font-rokkitt" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/rokkitt"
+      only_path: "oflrokkitt"
   name "Rokkitt"
   desc "Slab Serif font family"
-  homepage "https://fonts.google.com/specimen/Rokkitt"
+  homepage "https:fonts.google.comspecimenRokkitt"
 
   font "Rokkitt-Italic[wght].ttf"
   font "Rokkitt[wght].ttf"

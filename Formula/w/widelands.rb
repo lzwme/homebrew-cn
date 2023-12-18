@@ -1,14 +1,14 @@
 class Widelands < Formula
   desc "Free real-time strategy game like Settlers II"
-  homepage "https://www.widelands.org/"
-  url "https://ghproxy.com/https://github.com/widelands/widelands/archive/refs/tags/v1.1.tar.gz"
+  homepage "https:www.widelands.org"
+  url "https:github.comwidelandswidelandsarchiverefstagsv1.1.tar.gz"
   sha256 "6853fcf3daec9b66005691e5bcb00326634baf0985ad89a7e6511502612f6412"
   license "GPL-2.0-or-later"
   version_scheme 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -47,7 +47,7 @@ class Widelands < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DWL_INSTALL_BASEDIR=#{pkgshare}",
                     "-DWL_INSTALL_BINDIR=#{bin}",
-                    "-DWL_INSTALL_DATADIR=#{pkgshare}/data",
+                    "-DWL_INSTALL_DATADIR=#{pkgshare}data",
                     "-DOPTION_BUILD_CODECHECK=OFF",
                     "-DOPTION_BUILD_TESTS=OFF",
                     "-DOPTION_BUILD_WEBSITE_TOOLS=OFF",
@@ -60,11 +60,11 @@ class Widelands < Formula
   test do
     if OS.linux?
       # Unable to start Widelands, because we were unable to add the home directory:
-      # RealFSImpl::make_directory: No such file or directory: /tmp/widelands-test/.local/share/widelands
-      mkdir_p ".local/share/widelands"
-      mkdir_p ".config/widelands"
+      # RealFSImpl::make_directory: No such file or directory: tmpwidelands-test.localsharewidelands
+      mkdir_p ".localsharewidelands"
+      mkdir_p ".configwidelands"
     end
 
-    system bin/"widelands", "--version"
+    system bin"widelands", "--version"
   end
 end

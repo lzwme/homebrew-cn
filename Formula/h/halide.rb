@@ -1,12 +1,12 @@
 class Halide < Formula
   desc "Language for fast, portable data-parallel computation"
-  homepage "https://halide-lang.org"
+  homepage "https:halide-lang.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/halide/Halide/archive/refs/tags/v16.0.0.tar.gz"
+  url "https:github.comhalideHalidearchiverefstagsv16.0.0.tar.gz"
   sha256 "a0cccee762681ea697124b8172dd65595856d0fa5bd4d1af7933046b4a085b04"
   license "MIT"
   revision 1
-  head "https://github.com/halide/Halide.git", branch: "main"
+  head "https:github.comhalideHalide.git", branch: "main"
 
   livecheck do
     url :stable
@@ -42,7 +42,7 @@ class Halide < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DHalide_INSTALL_PYTHONDIR=#{prefix/Language::Python.site_packages(python3)}",
+                    "-DHalide_INSTALL_PYTHONDIR=#{prefixLanguage::Python.site_packages(python3)}",
                     "-DHalide_SHARED_LLVM=ON",
                     "-DPYBIND11_USE_FETCHCONTENT=OFF",
                     *std_cmake_args
@@ -51,11 +51,11 @@ class Halide < Formula
   end
 
   test do
-    cp share/"doc/Halide/tutorial/lesson_01_basics.cpp", testpath
+    cp share"docHalidetutoriallesson_01_basics.cpp", testpath
     system ENV.cxx, "-std=c++17", "lesson_01_basics.cpp", "-L#{lib}", "-lHalide", "-o", "test"
-    assert_match "Success!", shell_output("./test")
+    assert_match "Success!", shell_output(".test")
 
-    cp share/"doc/Halide_Python/tutorial-python/lesson_01_basics.py", testpath
+    cp share"docHalide_Pythontutorial-pythonlesson_01_basics.py", testpath
     assert_match "Success!", shell_output("#{python3} lesson_01_basics.py")
   end
 end

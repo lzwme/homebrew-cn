@@ -2,12 +2,12 @@ cask "font-icomoon" do
   version :latest
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/Keyamoon/IcoMoon-Free/archive/master.zip",
-      verified: "github.com/Keyamoon/IcoMoon-Free/"
+  url "https:github.comKeyamoonIcoMoon-Freearchivemaster.zip",
+      verified: "github.comKeyamoonIcoMoon-Free"
   name "IcoMoon"
-  homepage "https://icomoon.io/"
+  homepage "https:icomoon.io"
 
-  font "IcoMoon-Free-master/Font/IcoMoon-Free.ttf"
+  font "IcoMoon-Free-masterFontIcoMoon-Free.ttf"
 
   # No zap stanza required
 end

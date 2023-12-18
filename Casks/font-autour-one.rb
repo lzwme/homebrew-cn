@@ -2,10 +2,10 @@ cask "font-autour-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/autourone/AutourOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflautouroneAutourOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Autour One"
-  homepage "https://fonts.google.com/specimen/Autour+One"
+  homepage "https:fonts.google.comspecimenAutour+One"
 
   font "AutourOne-Regular.ttf"
 

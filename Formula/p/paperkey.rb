@@ -1,13 +1,13 @@
 class Paperkey < Formula
   desc "Extract just secret information out of OpenPGP secret keys"
-  homepage "https://www.jabberwocky.com/software/paperkey/"
-  url "https://www.jabberwocky.com/software/paperkey/paperkey-1.6.tar.gz"
+  homepage "https:www.jabberwocky.comsoftwarepaperkey"
+  url "https:www.jabberwocky.comsoftwarepaperkeypaperkey-1.6.tar.gz"
   sha256 "a245fd13271a8d2afa03dde979af3a29eb3d4ebb1fbcad4a9b52cf67a27d05f7"
   license "GPL-2.0"
 
   livecheck do
     url :homepage
-    regex(/href=.*?paperkey[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?paperkey[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -27,12 +27,12 @@ class Paperkey < Formula
   end
 
   resource "homebrew-test_sec" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/dmshaw/paperkey/46adad971458a798e203bf8ec65d6bc897494754/checks/papertest-rsa.sec"
+    url "https:raw.githubusercontent.comdmshawpaperkey46adad971458a798e203bf8ec65d6bc897494754checkspapertest-rsa.sec"
     sha256 "0f39397227339171209760e0f27aa60ecf7eae31c32d0ec3a358434afd38eacd"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "check"
     system "make", "install"
@@ -40,8 +40,8 @@ class Paperkey < Formula
 
   test do
     resource("homebrew-test_sec").stage do
-      system "#{bin}/paperkey", "--secret-key", "papertest-rsa.sec", "--output", "test"
-      assert_predicate Pathname.pwd/"test", :exist?
+      system "#{bin}paperkey", "--secret-key", "papertest-rsa.sec", "--output", "test"
+      assert_predicate Pathname.pwd"test", :exist?
     end
   end
 end

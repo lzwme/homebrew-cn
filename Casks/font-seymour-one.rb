@@ -2,10 +2,10 @@ cask "font-seymour-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/seymourone/SeymourOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflseymouroneSeymourOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Seymour One"
-  homepage "https://fonts.google.com/specimen/Seymour+One"
+  homepage "https:fonts.google.comspecimenSeymour+One"
 
   font "SeymourOne-Regular.ttf"
 

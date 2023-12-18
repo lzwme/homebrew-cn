@@ -1,7 +1,7 @@
 class Wazero < Formula
   desc "Zero dependency WebAssembly runtime"
-  homepage "https://wazero.io"
-  url "https://ghproxy.com/https://github.com/tetratelabs/wazero/archive/refs/tags/v1.5.0.tar.gz"
+  homepage "https:wazero.io"
+  url "https:github.comtetratelabswazeroarchiverefstagsv1.5.0.tar.gz"
   sha256 "d9695533ba0c1e297439feeafd701c0e4e24c916f82c1b933d323fc8392f1960"
   license "Apache-2.0"
 
@@ -23,15 +23,15 @@ class Wazero < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/tetratelabs/wazero/internal/version.version=#{version}
+      -X github.comtetratelabswazerointernalversion.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/wazero"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdwazero"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/wazero version").chomp
+    assert_equal version.to_s, shell_output("#{bin}wazero version").chomp
 
-    (testpath/"mount.wat").write <<~EOS
+    (testpath"mount.wat").write <<~EOS
       ;; print the preopen directory path (guest side of the mount).
       (module
         (import "wasi_snapshot_preview1" "fd_prestat_get"
@@ -73,9 +73,9 @@ class Wazero < Formula
       )
     EOS
 
-    system "wat2wasm", testpath/"mount.wat", "-o", testpath/"mount.wasm"
+    system "wat2wasm", testpath"mount.wat", "-o", testpath"mount.wasm"
 
-    assert_equal "/homebrew",
-      shell_output("#{bin}/wazero run -mount=/tmp:/homebrew #{testpath/"mount.wasm"}")
+    assert_equal "homebrew",
+      shell_output("#{bin}wazero run -mount=tmp:homebrew #{testpath"mount.wasm"}")
   end
 end

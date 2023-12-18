@@ -2,12 +2,12 @@ cask "font-bai-jamjuree" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/baijamjuree"
+      only_path: "oflbaijamjuree"
   name "Bai Jamjuree"
-  homepage "https://fonts.google.com/specimen/Bai+Jamjuree"
+  homepage "https:fonts.google.comspecimenBai+Jamjuree"
 
   font "BaiJamjuree-Bold.ttf"
   font "BaiJamjuree-BoldItalic.ttf"

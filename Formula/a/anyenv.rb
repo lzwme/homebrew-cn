@@ -1,7 +1,7 @@
 class Anyenv < Formula
   desc "All in one for **env"
-  homepage "https://anyenv.github.io/"
-  url "https://ghproxy.com/https://github.com/anyenv/anyenv/archive/refs/tags/v1.1.5.tar.gz"
+  homepage "https:anyenv.github.io"
+  url "https:github.comanyenvanyenvarchiverefstagsv1.1.5.tar.gz"
   sha256 "ed086fb8f5ee6bd8136364c94a9a76a24c65e0a950bb015e1b83389879a56ba8"
   license "MIT"
 
@@ -24,11 +24,11 @@ class Anyenv < Formula
 
   test do
     Dir.mktmpdir do |dir|
-      profile = "#{dir}/.profile"
+      profile = "#{dir}.profile"
       File.open(profile, "w") do |f|
         content = <<~EOS
-          export ANYENV_ROOT=#{dir}/anyenv
-          export ANYENV_DEFINITION_ROOT=#{dir}/anyenv-install
+          export ANYENV_ROOT=#{dir}anyenv
+          export ANYENV_DEFINITION_ROOT=#{dir}anyenv-install
           eval "$(anyenv init -)"
         EOS
         f.write(content)

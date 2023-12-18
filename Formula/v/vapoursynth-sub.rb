@@ -1,12 +1,12 @@
 class VapoursynthSub < Formula
   desc "VapourSynth filters - Subtitling filter"
-  homepage "https://www.vapoursynth.com"
-  url "https://ghproxy.com/https://github.com/vapoursynth/subtext/archive/refs/tags/R5.tar.gz"
+  homepage "https:www.vapoursynth.com"
+  url "https:github.comvapoursynthsubtextarchiverefstagsR5.tar.gz"
   sha256 "d1e4649c5417e671679753840ae0931cdbd353a862333129d7bd600770fd3db8"
   license "MIT"
   version_scheme 1
 
-  head "https://github.com/vapoursynth/subtext.git", branch: "master"
+  head "https:github.comvapoursynthsubtext.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "bb321921c838ae08e1d1483c9fc72b9858d7ffd370a8823318963e3846ed407b"
@@ -32,14 +32,14 @@ class VapoursynthSub < Formula
     # manually installing the shared library.
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    (lib/"vapoursynth").install "build/#{shared_library("libsubtext")}"
+    (lib"vapoursynth").install "build#{shared_library("libsubtext")}"
   end
 
   test do
     python = Formula["vapoursynth"].deps
-                                   .find { |d| d.name.match?(/^python@\d\.\d+$/) }
+                                   .find { |d| d.name.match?(^python@\d\.\d+$) }
                                    .to_formula
-                                   .opt_libexec/"bin/python"
+                                   .opt_libexec"binpython"
     system python, "-c", "from vapoursynth import core; core.sub"
   end
 end

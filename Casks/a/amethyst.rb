@@ -3,7 +3,7 @@ cask "amethyst" do
     version "0.10.1"
     sha256 "9fd1ac2cfb8159b2945a4482046ee6d365353df617f4edbabc4e8cadc448c1e7"
 
-    url "https://ianyh.com/amethyst/versions/Amethyst-#{version}.zip"
+    url "https:ianyh.comamethystversionsAmethyst-#{version}.zip"
 
     livecheck do
       skip "Legacy version"
@@ -13,8 +13,8 @@ cask "amethyst" do
     version "0.20.0"
     sha256 "198a2bbe80832ce77fc584ad20691206a179423551dcf1cbdf46ff1e6f829c09"
 
-    url "https://ghproxy.com/https://github.com/ianyh/Amethyst/releases/download/v#{version}/Amethyst.zip",
-        verified: "github.com/ianyh/Amethyst/"
+    url "https:github.comianyhAmethystreleasesdownloadv#{version}Amethyst.zip",
+        verified: "github.comianyhAmethyst"
 
     livecheck do
       url :url
@@ -24,7 +24,7 @@ cask "amethyst" do
 
   name "Amethyst"
   desc "Automatic tiling window manager similar to xmonad"
-  homepage "https://ianyh.com/amethyst/"
+  homepage "https:ianyh.comamethyst"
 
   auto_updates true
   depends_on macos: ">= :catalina"
@@ -32,9 +32,9 @@ cask "amethyst" do
   app "Amethyst.app"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.amethyst.amethyst.sfl*",
-    "~/Library/Caches/com.amethyst.Amethyst",
-    "~/Library/Cookies/com.amethyst.Amethyst.binarycookies",
-    "~/Library/Preferences/com.amethyst.Amethyst.plist",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.amethyst.amethyst.sfl*",
+    "~LibraryCachescom.amethyst.Amethyst",
+    "~LibraryCookiescom.amethyst.Amethyst.binarycookies",
+    "~LibraryPreferencescom.amethyst.Amethyst.plist",
   ]
 end

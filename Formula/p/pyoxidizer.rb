@@ -1,14 +1,14 @@
 class Pyoxidizer < Formula
   desc "Modern Python application packaging and distribution tool"
-  homepage "https://github.com/indygreg/PyOxidizer"
-  url "https://ghproxy.com/https://github.com/indygreg/PyOxidizer/archive/refs/tags/pyoxidizer/0.24.0.tar.gz"
+  homepage "https:github.comindygregPyOxidizer"
+  url "https:github.comindygregPyOxidizerarchiverefstagspyoxidizer0.24.0.tar.gz"
   sha256 "d52a2727a18a3414d7ec920b8523ef4d19cb2e6db3f1276b65a83e5dd4ae8d24"
   license "MPL-2.0"
-  head "https://github.com/indygreg/PyOxidizer.git", branch: "main"
+  head "https:github.comindygregPyOxidizer.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(%r{^pyoxidizer/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^pyoxidizerv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Pyoxidizer < Formula
 
   depends_on "rust" => [:build, :test]
   # Currently needs macOS 11 SDK due to checking for DeploymentTargetSettingName
-  # Remove when issue is fixed: https://github.com/indygreg/PyOxidizer/issues/431
+  # Remove when issue is fixed: https:github.comindygregPyOxidizerissues431
   on_catalina :or_older do
     depends_on xcode: "12.2"
   end
@@ -35,20 +35,20 @@ class Pyoxidizer < Formula
   end
 
   test do
-    system bin/"pyoxidizer", "init-rust-project", "--system-rust", "hello_world"
-    assert_predicate testpath/"hello_world/Cargo.toml", :exist?
+    system bin"pyoxidizer", "init-rust-project", "--system-rust", "hello_world"
+    assert_predicate testpath"hello_worldCargo.toml", :exist?
 
     cd "hello_world" do
       if Hardware::CPU.arm? && OS.mac? && MacOS.version < :ventura
         # Use Python 3.8 to work around:
-        # https://github.com/Homebrew/homebrew-core/pull/136910#issuecomment-1704568838
+        # https:github.comHomebrewhomebrew-corepull136910#issuecomment-1704568838
         inreplace "pyoxidizer.bzl",
                   "dist = default_python_distribution()",
                   "dist = default_python_distribution(python_version='3.8')"
       end
-      system bin/"pyoxidizer", "build", "--system-rust"
+      system bin"pyoxidizer", "build", "--system-rust"
     end
 
-    assert_match version.to_s, shell_output("#{bin}/pyoxidizer --version")
+    assert_match version.to_s, shell_output("#{bin}pyoxidizer --version")
   end
 end

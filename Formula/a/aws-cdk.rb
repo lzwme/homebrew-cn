@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class AwsCdk < Formula
   desc "AWS Cloud Development Kit - framework for defining AWS infra as code"
-  homepage "https://github.com/aws/aws-cdk"
-  url "https://registry.npmjs.org/aws-cdk/-/aws-cdk-2.115.0.tgz"
+  homepage "https:github.comawsaws-cdk"
+  url "https:registry.npmjs.orgaws-cdk-aws-cdk-2.115.0.tgz"
   sha256 "19b9c344ad80e936731809ac3998542c171ea7b5f47cd74f81e137552097dab5"
   license "Apache-2.0"
 
@@ -20,7 +20,7 @@ class AwsCdk < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Replace universal binaries with native slices.
     deuniversalize_machos
@@ -29,9 +29,9 @@ class AwsCdk < Formula
   test do
     # `cdk init` cannot be run in a non-empty directory
     mkdir "testapp" do
-      shell_output("#{bin}/cdk init app --language=javascript")
-      list = shell_output("#{bin}/cdk list")
-      cdkversion = shell_output("#{bin}/cdk --version")
+      shell_output("#{bin}cdk init app --language=javascript")
+      list = shell_output("#{bin}cdk list")
+      cdkversion = shell_output("#{bin}cdk --version")
       assert_match "TestappStack", list
       assert_match version.to_s, cdkversion
     end

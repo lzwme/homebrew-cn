@@ -1,17 +1,17 @@
 class Gost < Formula
   desc "GO Simple Tunnel - a simple tunnel written in golang"
-  homepage "https://github.com/ginuerzh/gost"
+  homepage "https:github.comginuerzhgost"
   license "MIT"
   revision 1
-  head "https://github.com/ginuerzh/gost.git", branch: "master"
+  head "https:github.comginuerzhgost.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ginuerzh/gost/archive/refs/tags/v2.11.5.tar.gz"
+    url "https:github.comginuerzhgostarchiverefstagsv2.11.5.tar.gz"
     sha256 "dab48b785f4d2df6c2f5619a4b9a2ac6e8b708f667a4d89c7d08df67ad7c5ca7"
 
     # go1.20 build patch, remove in next release
     patch do
-      url "https://github.com/ginuerzh/gost/commit/0f7376b.patch?full_index=1"
+      url "https:github.comginuerzhgostcommit0f7376b.patch?full_index=1"
       sha256 "091eceef591810a383b1082ba2677503f9cb39a971a8098ebaecd3cd02dd18db"
     end
   end
@@ -33,19 +33,19 @@ class Gost < Formula
   conflicts_with "vulsio-gost", because: "both install `gost` binaries"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/gost"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgost"
     prefix.install "README_en.md"
   end
 
   test do
     bind_address = "127.0.0.1:#{free_port}"
     fork do
-      exec "#{bin}/gost -L #{bind_address}"
+      exec "#{bin}gost -L #{bind_address}"
     end
     sleep 2
-    output = shell_output("curl -I -x #{bind_address} https://github.com")
-    assert_match %r{HTTP/\d+(?:\.\d+)? 200}, output
-    assert_match %r{Proxy-Agent: gost/#{version}}i, output
-    assert_match(/Server: GitHub.com/i, output)
+    output = shell_output("curl -I -x #{bind_address} https:github.com")
+    assert_match %r{HTTP\d+(?:\.\d+)? 200}, output
+    assert_match %r{Proxy-Agent: gost#{version}}i, output
+    assert_match(Server: GitHub.comi, output)
   end
 end

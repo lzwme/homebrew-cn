@@ -1,16 +1,16 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
-  homepage "https://www.manticoresearch.com"
-  url "https://ghproxy.com/https://github.com/manticoresoftware/manticoresearch/archive/refs/tags/6.2.12.tar.gz"
+  homepage "https:www.manticoresearch.com"
+  url "https:github.commanticoresoftwaremanticoresearcharchiverefstags6.2.12.tar.gz"
   sha256 "272d9e3cc162b1fe08e98057c9cf6c2f90df0c3819037e0dafa200e5ff71cef9"
   license "GPL-2.0-only"
   version_scheme 1
-  head "https://github.com/manticoresoftware/manticoresearch.git", branch: "master"
+  head "https:github.commanticoresoftwaremanticoresearch.git", branch: "master"
 
   # Only even patch versions are stable releases
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+\.\d*[02468])$/i)
+    regex(^v?(\d+(?:\.\d+)+\.\d*[02468])$i)
   end
 
   bottle do
@@ -52,7 +52,7 @@ class Manticoresearch < Formula
       -DDISTR_BUILD=homebrew
       -DWITH_ICU_FORCE_STATIC=OFF
       -D_LOCALSTATEDIR=#{var}
-      -D_RUNSTATEDIR=#{var}/run
+      -D_RUNSTATEDIR=#{var}run
       -D_SYSCONFDIR=#{etc}
     ]
 
@@ -62,29 +62,29 @@ class Manticoresearch < Formula
   end
 
   def post_install
-    (var/"run/manticore").mkpath
-    (var/"log/manticore").mkpath
-    (var/"manticore/data").mkpath
+    (var"runmanticore").mkpath
+    (var"logmanticore").mkpath
+    (var"manticoredata").mkpath
 
     # Fix old config path (actually it was always wrong and never worked; however let's check)
-    mv etc/"manticore/manticore.conf", etc/"manticoresearch/manticore.conf" if (etc/"manticore/manticore.conf").exist?
+    mv etc"manticoremanticore.conf", etc"manticoresearchmanticore.conf" if (etc"manticoremanticore.conf").exist?
   end
 
   service do
-    run [opt_bin/"searchd", "--config", etc/"manticoresearch/manticore.conf", "--nodetach"]
+    run [opt_bin"searchd", "--config", etc"manticoresearchmanticore.conf", "--nodetach"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    (testpath/"manticore.conf").write <<~EOS
+    (testpath"manticore.conf").write <<~EOS
       searchd {
         pid_file = searchd.pid
         binlog_path=#
       }
     EOS
     pid = fork do
-      exec bin/"searchd"
+      exec bin"searchd"
     end
   ensure
     Process.kill(9, pid)

@@ -1,10 +1,10 @@
 class Gops < Formula
   desc "Tool to list and diagnose Go processes currently running on your system"
-  homepage "https://github.com/google/gops"
-  url "https://ghproxy.com/https://github.com/google/gops/archive/refs/tags/v0.3.28.tar.gz"
+  homepage "https:github.comgooglegops"
+  url "https:github.comgooglegopsarchiverefstagsv0.3.28.tar.gz"
   sha256 "9a040fe38e45aa41cfc43be5babb5e7962b027e1f6f8b68e5112f01866a42bba"
   license "BSD-3-Clause"
-  head "https://github.com/google/gops.git", branch: "master"
+  head "https:github.comgooglegops.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9705e404ae430eef52e18a9bd0efcd7aba007de76ef17d967a1da2c949e73130"
@@ -25,13 +25,13 @@ class Gops < Formula
   end
 
   test do
-    (testpath/"go.mod").write <<~EOS
-      module github.com/Homebrew/brew-test
+    (testpath"go.mod").write <<~EOS
+      module github.comHomebrewbrew-test
 
       go 1.18
     EOS
 
-    (testpath/"main.go").write <<~EOS
+    (testpath"main.go").write <<~EOS
       package main
 
       import (
@@ -47,10 +47,10 @@ class Gops < Formula
     EOS
 
     system "go", "build"
-    pid = fork { exec "./brew-test" }
+    pid = fork { exec ".brew-test" }
     sleep 1
     begin
-      assert_match(/\d+/, shell_output("#{bin}/gops"))
+      assert_match(\d+, shell_output("#{bin}gops"))
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

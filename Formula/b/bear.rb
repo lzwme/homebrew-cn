@@ -1,11 +1,11 @@
 class Bear < Formula
   desc "Generate compilation database for clang tooling"
-  homepage "https://github.com/rizsotto/Bear"
-  url "https://ghproxy.com/https://github.com/rizsotto/Bear/archive/refs/tags/3.1.3.tar.gz"
+  homepage "https:github.comrizsottoBear"
+  url "https:github.comrizsottoBeararchiverefstags3.1.3.tar.gz"
   sha256 "8314438428069ffeca15e2644eaa51284f884b7a1b2ddfdafe12152581b13398"
   license "GPL-3.0-or-later"
   revision 10
-  head "https://github.com/rizsotto/Bear.git", branch: "master"
+  head "https:github.comrizsottoBear.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "b5133ce12480e31fea7f4db05c8c522f9eb5c9db66961adab1e304f4866c2fd9"
@@ -54,14 +54,14 @@ class Bear < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       int main() {
         printf("hello, world!\\n");
         return 0;
       }
     EOS
-    system bin/"bear", "--", "clang", "test.c"
-    assert_predicate testpath/"compile_commands.json", :exist?
+    system bin"bear", "--", "clang", "test.c"
+    assert_predicate testpath"compile_commands.json", :exist?
   end
 end

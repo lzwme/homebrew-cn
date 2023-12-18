@@ -1,7 +1,7 @@
 class Victoriametrics < Formula
   desc "Cost-effective and scalable monitoring solution and time series database"
-  homepage "https://victoriametrics.com/"
-  url "https://ghproxy.com/https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/tags/v1.96.0.tar.gz"
+  homepage "https:victoriametrics.com"
+  url "https:github.comVictoriaMetricsVictoriaMetricsarchiverefstagsv1.96.0.tar.gz"
   sha256 "9edca654e1189a961750ce16958e6d58f2362db3586dca57686c2ebe6a8f17de"
   license "Apache-2.0"
 
@@ -10,7 +10,7 @@ class Victoriametrics < Formula
   # Make sure we only match the ones using the common format.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class Victoriametrics < Formula
 
   def install
     system "make", "victoria-metrics"
-    bin.install "bin/victoria-metrics"
+    bin.install "binvictoria-metrics"
 
-    (etc/"victoriametrics/scrape.yml").write <<~EOS
+    (etc"victoriametricsscrape.yml").write <<~EOS
       global:
         scrape_interval: 10s
 
@@ -42,20 +42,20 @@ class Victoriametrics < Formula
 
   service do
     run [
-      opt_bin/"victoria-metrics",
+      opt_bin"victoria-metrics",
       "-httpListenAddr=127.0.0.1:8428",
-      "-promscrape.config=#{etc}/victoriametrics/scrape.yml",
-      "-storageDataPath=#{var}/victoriametrics-data",
+      "-promscrape.config=#{etc}victoriametricsscrape.yml",
+      "-storageDataPath=#{var}victoriametrics-data",
     ]
     keep_alive false
-    log_path var/"log/victoria-metrics.log"
-    error_log_path var/"log/victoria-metrics.err.log"
+    log_path var"logvictoria-metrics.log"
+    error_log_path var"logvictoria-metrics.err.log"
   end
 
   test do
     http_port = free_port
 
-    (testpath/"scrape.yml").write <<~EOS
+    (testpath"scrape.yml").write <<~EOS
       global:
         scrape_interval: 10s
 
@@ -66,10 +66,10 @@ class Victoriametrics < Formula
     EOS
 
     pid = fork do
-      exec bin/"victoria-metrics",
+      exec bin"victoria-metrics",
         "-httpListenAddr=127.0.0.1:#{http_port}",
-        "-promscrape.config=#{testpath}/scrape.yml",
-        "-storageDataPath=#{testpath}/victoriametrics-data"
+        "-promscrape.config=#{testpath}scrape.yml",
+        "-storageDataPath=#{testpath}victoriametrics-data"
     end
     sleep 5
     assert_match "Single-node VictoriaMetrics", shell_output("curl -s 127.0.0.1:#{http_port}")

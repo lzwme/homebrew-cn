@@ -2,11 +2,11 @@ cask "qtpass" do
   version "1.4.0"
   sha256 "cef58227b50f3eda4e4c150cb0afc7875c55c9226a91076d41e44b897629a92b"
 
-  url "https://ghproxy.com/https://github.com/IJHack/qtpass/releases/download/v#{version}/qtpass-#{version}.dmg",
-      verified: "github.com/IJHack/qtpass/"
+  url "https:github.comIJHackqtpassreleasesdownloadv#{version}qtpass-#{version}.dmg",
+      verified: "github.comIJHackqtpass"
   name "QtPass"
   desc "Multi-platform GUI for pass, the standard unix password manager"
-  homepage "https://qtpass.org/"
+  homepage "https:qtpass.org"
 
   depends_on macos: ">= :sierra"
 

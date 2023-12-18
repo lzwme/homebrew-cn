@@ -1,7 +1,7 @@
 class Adplug < Formula
   desc "Free, hardware independent AdLib sound player library"
-  homepage "https://adplug.github.io"
-  url "https://ghproxy.com/https://github.com/adplug/adplug/releases/download/adplug-2.3.3/adplug-2.3.3.tar.bz2"
+  homepage "https:adplug.github.io"
+  url "https:github.comadplugadplugreleasesdownloadadplug-2.3.3adplug-2.3.3.tar.bz2"
   sha256 "a0f3c1b18fb49dea7ac3e8f820e091a663afa5410d3443612bf416cff29fa928"
   license "LGPL-2.1"
 
@@ -28,18 +28,18 @@ class Adplug < Formula
   end
 
   resource "ksms" do
-    url "http://advsys.net/ken/ksmsongs.zip"
+    url "http:advsys.netkenksmsongs.zip"
     sha256 "2af9bfc390f545bc7f51b834e46eb0b989833b11058e812200d485a5591c5877"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -47,8 +47,8 @@ class Adplug < Formula
 
   test do
     resource("ksms").stage do
-      mkdir "#{testpath}/.adplug"
-      system "#{bin}/adplugdb", "-v", "add", "JAZZSONG.KSM"
+      mkdir "#{testpath}.adplug"
+      system "#{bin}adplugdb", "-v", "add", "JAZZSONG.KSM"
     end
   end
 end

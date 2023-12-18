@@ -1,14 +1,14 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
-  homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.7.1.40770.tar.gz"
+  homepage "https:duck.sh"
+  url "https:dist.duck.shduck-src-8.7.1.40770.tar.gz"
   sha256 "7673732ff0f0c1d176eeeb5354dd64eadc2fbf00491ecf1ab6feb005572f04f3"
   license "GPL-3.0-only"
-  head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
+  head "https:github.comiterate-chcyberduck.git", branch: "master"
 
   livecheck do
-    url "https://dist.duck.sh/"
-    regex(/href=.*?duck-src[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dist.duck.sh"
+    regex(href=.*?duck-src[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -41,17 +41,17 @@ class Duck < Formula
   end
 
   resource "jna" do
-    url "https://ghproxy.com/https://github.com/java-native-access/jna/archive/refs/tags/5.13.0.tar.gz"
+    url "https:github.comjava-native-accessjnaarchiverefstags5.13.0.tar.gz"
     sha256 "526bff8ffcbc2067a7403f55b01ad8d7a781c098abca79c4ea6c9e80198bb5fd"
   end
 
   resource "rococoa" do
-    url "https://ghproxy.com/https://github.com/iterate-ch/rococoa/archive/refs/tags/0.9.1.tar.gz"
+    url "https:github.comiterate-chrococoaarchiverefstags0.9.1.tar.gz"
     sha256 "62c3c36331846384aeadd6014c33a30ad0aaff7d121b775204dc65cb3f00f97b"
   end
 
   resource "JavaNativeFoundation" do
-    url "https://ghproxy.com/https://github.com/apple/openjdk/archive/refs/tags/iTunesOpenJDK-1014.0.2.12.1.tar.gz"
+    url "https:github.comappleopenjdkarchiverefstagsiTunesOpenJDK-1014.0.2.12.1.tar.gz"
     sha256 "e8556a73ea36c75953078dfc1bafc9960e64593bc01e733bc772d2e6b519fd4a"
   end
 
@@ -59,9 +59,9 @@ class Duck < Formula
     # Consider creating a formula for this if other formulae need the same library
     resource("jna").stage do
       os = if OS.mac?
-        inreplace "native/Makefile" do |s|
+        inreplace "nativeMakefile" do |s|
           libffi_libdir = if MacOS.version >= :monterey
-            MacOS.sdk_path/"usr/lib"
+            MacOS.sdk_path"usrlib"
           else
             Formula["libffi"].opt_lib
           end
@@ -81,7 +81,7 @@ class Duck < Formula
       # and the zip archive has to be extracted to get them. TODO: ask upstream to provide an option to
       # disable the zip file generation entirely.
       inreplace "build.xml",
-                "<zipfileset dir=\"build/headers\" prefix=\"build-package-${os.prefix}-${jni.version}/headers\" />",
+                "<zipfileset dir=\"buildheaders\" prefix=\"build-package-${os.prefix}-${jni.version}headers\" >",
                 ""
 
       system "ant", "-Dbuild.os.name=#{os}",
@@ -98,7 +98,7 @@ class Duck < Formula
           # Fix zip error on macOS because libjnidispatch.dylib is not in file list
           s.gsub! "libjnidispatch.so", "libjnidispatch.so libjnidispatch.dylib" if OS.mac?
           # Fix relative path in build script, which is designed to be run out extracted zip archive
-          s.gsub! "cd native", "cd ../native"
+          s.gsub! "cd native", "cd ..native"
         end
 
         system "sh", "build.sh"
@@ -109,11 +109,11 @@ class Duck < Formula
     resource("JavaNativeFoundation").stage do
       next unless OS.mac?
 
-      cd "apple/JavaNativeFoundation" do
+      cd "appleJavaNativeFoundation" do
         xcodebuild "VALID_ARCHS=#{Hardware::CPU.arch}",
                    "OTHER_CFLAGS=-Wno-strict-prototypes", # Workaround for Xcode 14.3
                    "-project", "JavaNativeFoundation.xcodeproj"
-        buildpath.install "build/Release/JavaNativeFoundation.framework"
+        buildpath.install "buildReleaseJavaNativeFoundation.framework"
       end
     end
 
@@ -121,7 +121,7 @@ class Duck < Formula
       next unless OS.mac?
 
       # Set MACOSX_DEPLOYMENT_TARGET to avoid linker errors when building rococoa.
-      xcconfig = buildpath/"Overrides.xcconfig"
+      xcconfig = buildpath"Overrides.xcconfig"
       xcconfig.write <<~EOS
         OTHER_LDFLAGS = -headerpad_max_install_names
         VALID_ARCHS=#{Hardware::CPU.arch}
@@ -129,9 +129,9 @@ class Duck < Formula
       EOS
       ENV["XCODE_XCCONFIG_FILE"] = xcconfig
 
-      cd "rococoa/rococoa-core" do
+      cd "rococoarococoa-core" do
         xcodebuild "VALID_ARCHS=#{Hardware::CPU.arch}", "-project", "rococoa.xcodeproj"
-        buildpath.install shared_library("build/Release/librococoa")
+        buildpath.install shared_library("buildReleaselibrococoa")
       end
     end
 
@@ -143,39 +143,39 @@ class Duck < Formula
 
     revision = version.to_s.rpartition(".").last
     system "mvn", "-DskipTests", "-Dconfiguration=default", "-Dgit.commitsCount=#{revision}",
-                  "--projects", "cli/#{os}", "--also-make", "verify"
+                  "--projects", "cli#{os}", "--also-make", "verify"
 
     libdir, bindir = if OS.mac?
-      %w[Contents/Frameworks Contents/MacOS]
+      %w[ContentsFrameworks ContentsMacOS]
     else
-      %w[lib/app bin]
-    end.map { |dir| libexec/dir }
+      %w[libapp bin]
+    end.map { |dir| libexecdir }
 
     if OS.mac?
-      libexec.install Dir["cli/osx/target/duck.bundle/*"]
+      libexec.install Dir["cliosxtargetduck.bundle*"]
 
       # Remove the `*.tbd` files. They're not needed, and they cause codesigning issues.
-      buildpath.glob("JavaNativeFoundation.framework/**/JavaNativeFoundation.tbd").map(&:unlink)
-      rm_rf libdir/"JavaNativeFoundation.framework"
-      libdir.install buildpath/"JavaNativeFoundation.framework"
+      buildpath.glob("JavaNativeFoundation.framework**JavaNativeFoundation.tbd").map(&:unlink)
+      rm_rf libdir"JavaNativeFoundation.framework"
+      libdir.install buildpath"JavaNativeFoundation.framework"
 
-      rm libdir/shared_library("librococoa")
-      libdir.install buildpath/shared_library("librococoa")
+      rm libdirshared_library("librococoa")
+      libdir.install buildpathshared_library("librococoa")
 
       # Replace runtime with already installed dependency
-      rm_r libexec/"Contents/PlugIns/Runtime.jre"
-      ln_s Formula["openjdk"].libexec/"openjdk.jdk", libexec/"Contents/PlugIns/Runtime.jre"
+      rm_r libexec"ContentsPlugInsRuntime.jre"
+      ln_s Formula["openjdk"].libexec"openjdk.jdk", libexec"ContentsPlugInsRuntime.jre"
     else
-      libexec.install Dir["cli/linux/target/default/duck/*"]
+      libexec.install Dir["clilinuxtargetdefaultduck*"]
     end
 
-    rm libdir/shared_library("libjnidispatch")
-    libdir.install buildpath/shared_library("libjnidispatch")
-    bin.install_symlink "#{bindir}/duck" => "duck"
+    rm libdirshared_library("libjnidispatch")
+    libdir.install buildpathshared_library("libjnidispatch")
+    bin.install_symlink "#{bindir}duck" => "duck"
   end
 
   test do
-    system "#{bin}/duck", "--download", "https://ftp.gnu.org/gnu/wget/wget-1.19.4.tar.gz", testpath/"test"
-    assert_equal (testpath/"test").sha256, "93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5"
+    system "#{bin}duck", "--download", "https:ftp.gnu.orggnuwgetwget-1.19.4.tar.gz", testpath"test"
+    assert_equal (testpath"test").sha256, "93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5"
   end
 end

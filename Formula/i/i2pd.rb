@@ -1,7 +1,7 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
-  homepage "https://i2pd.website/"
-  url "https://ghproxy.com/https://github.com/PurpleI2P/i2pd/archive/refs/tags/2.49.0.tar.gz"
+  homepage "https:i2pd.website"
+  url "https:github.comPurpleI2Pi2pdarchiverefstags2.49.0.tar.gz"
   sha256 "d8e07f78cc9f1ba65e8460db27c649dd0cfdd3ba334725f8d6f9ee815cb40e68"
   license "BSD-3-Clause"
   revision 1
@@ -34,9 +34,9 @@ class I2pd < Formula
     system "make", "install", *args
 
     # preinstall to prevent overwriting changed by user configs
-    confdir = etc/"i2pd"
-    rm_rf prefix/"etc"
-    confdir.install doc/"i2pd.conf", doc/"subscriptions.txt", doc/"tunnels.conf"
+    confdir = etc"i2pd"
+    rm_rf prefix"etc"
+    confdir.install doc"i2pd.conf", doc"subscriptions.txt", doc"tunnels.conf"
   end
 
   def post_install
@@ -44,30 +44,30 @@ class I2pd < Formula
     # create the directory and create symlinks to certificates and configs.
     # Certificates can be updated between releases, so we must recreate symlinks
     # to the latest version on upgrade.
-    datadir = var/"lib/i2pd"
+    datadir = var"libi2pd"
     if datadir.exist?
-      rm datadir/"certificates"
-      datadir.install_symlink pkgshare/"certificates"
+      rm datadir"certificates"
+      datadir.install_symlink pkgshare"certificates"
     else
       datadir.dirname.mkpath
-      datadir.install_symlink pkgshare/"certificates", etc/"i2pd/i2pd.conf",
-                              etc/"i2pd/subscriptions.txt", etc/"i2pd/tunnels.conf"
+      datadir.install_symlink pkgshare"certificates", etc"i2pdi2pd.conf",
+                              etc"i2pdsubscriptions.txt", etc"i2pdtunnels.conf"
     end
 
-    (var/"log/i2pd").mkpath
+    (var"logi2pd").mkpath
   end
 
   service do
-    run [opt_bin/"i2pd", "--datadir=#{var}/lib/i2pd", "--conf=#{etc}/i2pd/i2pd.conf",
-         "--tunconf=#{etc}/i2pd/tunnels.conf", "--log=file", "--logfile=#{var}/log/i2pd/i2pd.log",
-         "--pidfile=#{var}/run/i2pd.pid"]
+    run [opt_bin"i2pd", "--datadir=#{var}libi2pd", "--conf=#{etc}i2pdi2pd.conf",
+         "--tunconf=#{etc}i2pdtunnels.conf", "--log=file", "--logfile=#{var}logi2pdi2pd.log",
+         "--pidfile=#{var}runi2pd.pid"]
   end
 
   test do
-    pidfile = testpath/"i2pd.pid"
-    system bin/"i2pd", "--datadir=#{testpath}", "--pidfile=#{pidfile}", "--daemon"
+    pidfile = testpath"i2pd.pid"
+    system bin"i2pd", "--datadir=#{testpath}", "--pidfile=#{pidfile}", "--daemon"
     sleep 5
-    assert_predicate testpath/"router.keys", :exist?, "Failed to start i2pd"
+    assert_predicate testpath"router.keys", :exist?, "Failed to start i2pd"
     pid = pidfile.read.chomp.to_i
     Process.kill "TERM", pid
   end

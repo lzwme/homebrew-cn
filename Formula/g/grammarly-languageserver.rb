@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class GrammarlyLanguageserver < Formula
   desc "Language Server for Grammarly"
-  homepage "https://github.com/znck/grammarly"
-  url "https://registry.npmjs.org/grammarly-languageserver/-/grammarly-languageserver-0.0.4.tgz"
+  homepage "https:github.comznckgrammarly"
+  url "https:registry.npmjs.orggrammarly-languageserver-grammarly-languageserver-0.0.4.tgz"
   sha256 "0d50b88059b5a63c66e3973e94d4f368366087ef59427003106a99bb46c46728"
   license "MIT"
   revision 1
@@ -14,14 +14,14 @@ class GrammarlyLanguageserver < Formula
 
   deprecate! date: "2023-11-02", because: "uses deprecated `node@16`"
 
-  depends_on "node@16" # try `node` after https://github.com/znck/grammarly/issues/334
+  depends_on "node@16" # try `node` after https:github.comznckgrammarlyissues334
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"grammarly-languageserver").write <<~EOS
-      #! /usr/bin/env sh
+    (bin"grammarly-languageserver").write <<~EOS
+      #! usrbinenv sh
 
-      #{Formula["node@16"].bin}/node #{libexec}/bin/grammarly-languageserver "$@"
+      #{Formula["node@16"].bin}node #{libexec}bingrammarly-languageserver "$@"
     EOS
   end
 
@@ -38,10 +38,10 @@ class GrammarlyLanguageserver < Formula
         }
       }
     JSON
-    Open3.popen3("#{bin}/grammarly-languageserver --stdio") do |stdin, stdout, _, w|
+    Open3.popen3("#{bin}grammarly-languageserver --stdio") do |stdin, stdout, _, w|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
       Process.kill("KILL", w.pid)
     end
   end

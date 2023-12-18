@@ -1,10 +1,10 @@
 class Hashlink < Formula
   desc "Virtual machine for Haxe"
-  homepage "https://hashlink.haxe.org/"
-  url "https://ghproxy.com/https://github.com/HaxeFoundation/hashlink/archive/refs/tags/1.13.tar.gz"
+  homepage "https:hashlink.haxe.org"
+  url "https:github.comHaxeFoundationhashlinkarchiverefstags1.13.tar.gz"
   sha256 "696aef6871771e5e12c617df79187d1761e79bcfe3927531e99f665a8002956f"
   license "MIT"
-  head "https://github.com/HaxeFoundation/hashlink.git", branch: "master"
+  head "https:github.comHaxeFoundationhashlink.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -34,7 +34,7 @@ class Hashlink < Formula
   def install
     if OS.mac?
       # make file doesn't set rpath on mac yet
-      system "make", "PREFIX=#{libexec}", "EXTRA_LFLAGS=-Wl,-rpath,#{libexec}/lib"
+      system "make", "PREFIX=#{libexec}", "EXTRA_LFLAGS=-Wl,-rpath,#{libexec}lib"
     else
       # On Linux, also set RPATH in LIBFLAGS, so that the linker will also add the RPATH to .hdll files.
       inreplace "Makefile", "LIBFLAGS =", "LIBFLAGS = -Wl,-rpath,${INSTALL_LIB_DIR}"
@@ -42,24 +42,24 @@ class Hashlink < Formula
     end
 
     system "make", "install", "PREFIX=#{libexec}"
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
   end
 
   test do
     haxebin = Formula["haxe"].bin
 
-    (testpath/"HelloWorld.hx").write <<~EOS
+    (testpath"HelloWorld.hx").write <<~EOS
       class HelloWorld {
           static function main() Sys.println("Hello world!");
       }
     EOS
-    system "#{haxebin}/haxe", "-hl", "HelloWorld.hl", "-main", "HelloWorld"
-    assert_equal "Hello world!\n", shell_output("#{bin}/hl HelloWorld.hl")
+    system "#{haxebin}haxe", "-hl", "HelloWorld.hl", "-main", "HelloWorld"
+    assert_equal "Hello world!\n", shell_output("#{bin}hl HelloWorld.hl")
 
-    (testpath/"TestHttps.hx").write <<~EOS
+    (testpath"TestHttps.hx").write <<~EOS
       class TestHttps {
         static function main() {
-          var http = new haxe.Http("https://www.google.com/");
+          var http = new haxe.Http("https:www.google.com");
           http.onStatus = status -> Sys.println(status);
           http.onError = error -> {
             trace('error: $error');
@@ -69,28 +69,28 @@ class Hashlink < Formula
         }
       }
     EOS
-    system "#{haxebin}/haxe", "-hl", "TestHttps.hl", "-main", "TestHttps"
-    assert_equal "200\n", shell_output("#{bin}/hl TestHttps.hl")
+    system "#{haxebin}haxe", "-hl", "TestHttps.hl", "-main", "TestHttps"
+    assert_equal "200\n", shell_output("#{bin}hl TestHttps.hl")
 
-    (testpath/"build").mkdir
-    system "#{haxebin}/haxelib", "newrepo"
-    system "#{haxebin}/haxelib", "install", "hashlink"
+    (testpath"build").mkdir
+    system "#{haxebin}haxelib", "newrepo"
+    system "#{haxebin}haxelib", "install", "hashlink"
 
-    system "#{haxebin}/haxe", "-hl", "HelloWorld/main.c", "-main", "HelloWorld"
+    system "#{haxebin}haxe", "-hl", "HelloWorldmain.c", "-main", "HelloWorld"
 
     flags = %W[
-      -I#{libexec}/include
-      -L#{libexec}/lib
+      -I#{libexec}include
+      -L#{libexec}lib
     ]
-    flags << "-Wl,-rpath,#{libexec}/lib" unless OS.mac?
+    flags << "-Wl,-rpath,#{libexec}lib" unless OS.mac?
 
-    system ENV.cc, "HelloWorld/main.c", "-O3", "-std=c11", "-IHelloWorld",
-                   *flags, "-lhl", "-o", "build/HelloWorld"
-    assert_equal "Hello world!\n", `./build/HelloWorld`
+    system ENV.cc, "HelloWorldmain.c", "-O3", "-std=c11", "-IHelloWorld",
+                   *flags, "-lhl", "-o", "buildHelloWorld"
+    assert_equal "Hello world!\n", `.buildHelloWorld`
 
-    system "#{haxebin}/haxe", "-hl", "TestHttps/main.c", "-main", "TestHttps"
-    system ENV.cc, "TestHttps/main.c", "-O3", "-std=c11", "-ITestHttps",
-                   *flags, "-lhl", "-o", "build/TestHttps", libexec/"lib/ssl.hdll"
-    assert_equal "200\n", `./build/TestHttps`
+    system "#{haxebin}haxe", "-hl", "TestHttpsmain.c", "-main", "TestHttps"
+    system ENV.cc, "TestHttpsmain.c", "-O3", "-std=c11", "-ITestHttps",
+                   *flags, "-lhl", "-o", "buildTestHttps", libexec"libssl.hdll"
+    assert_equal "200\n", `.buildTestHttps`
   end
 end

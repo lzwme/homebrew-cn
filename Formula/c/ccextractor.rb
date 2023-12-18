@@ -1,11 +1,11 @@
 class Ccextractor < Formula
   desc "Free, GPL licensed closed caption tool"
-  homepage "https://www.ccextractor.org/"
-  url "https://ghproxy.com/https://github.com/CCExtractor/ccextractor/archive/refs/tags/v0.94.tar.gz"
+  homepage "https:www.ccextractor.org"
+  url "https:github.comCCExtractorccextractorarchiverefstagsv0.94.tar.gz"
   sha256 "9c7be386257c69b5d8cd9d7466dbf20e3a45cea950cc8ca7486a956c3be54a42"
   license "GPL-2.0-only"
   revision 1
-  head "https://github.com/ccextractor/ccextractor.git", branch: "master"
+  head "https:github.comccextractorccextractor.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "12a98eca4d3a7de01e7320a4c949caab7b4d83ee822c928a06bdb0a51995ed1e"
@@ -18,10 +18,10 @@ class Ccextractor < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d1b026a171e1a894bd3e7ea306eba0a2d7a4894978618ebc5ffd05ed96cea68"
   end
 
-  # Upstream vendors their own dependencies without an easy way to switch to using brewed/system dependencies, see
-  # https://github.com/CCExtractor/ccextractor/issues/1309. Also, upstream does not support gpac 2.x.x (and doesn't
-  # seem to intend to soon), see https://github.com/CCExtractor/ccextractor/issues/1425. See also
-  # https://github.com/Homebrew/homebrew-core/pull/97413.
+  # Upstream vendors their own dependencies without an easy way to switch to using brewedsystem dependencies, see
+  # https:github.comCCExtractorccextractorissues1309. Also, upstream does not support gpac 2.x.x (and doesn't
+  # seem to intend to soon), see https:github.comCCExtractorccextractorissues1425. See also
+  # https:github.comHomebrewhomebrew-corepull97413.
   disable! date: "2022-12-24", because: :does_not_build
 
   depends_on "pkg-config" => :build
@@ -34,39 +34,39 @@ class Ccextractor < Formula
   depends_on "utf8proc"
 
   resource "homebrew-test.mxf" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/alebcay/example-artifacts/5e8d84effab76c4653972ef72513fcee1d00d3c3/mxf/test.mxf"
+    url "https:raw.githubusercontent.comalebcayexample-artifacts5e8d84effab76c4653972ef72513fcee1d00d3c3mxftest.mxf"
     sha256 "e027aca08a2cce64a9fb6623a85306b5481a2f1c3f97a06fd5d3d1b45192b12a"
   end
 
   # Patch build script to allow building with Homebrew libs rather than upstream's bundled libs
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/e5fddd607fb4e2b6b16044eb47fa3407d4d1fdb0/ccextractor/unbundle-libs.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patchese5fddd607fb4e2b6b16044eb47fa3407d4d1fdb0ccextractorunbundle-libs.patch"
     sha256 "eb545afad2d1d47a22f50ec0cdad0da11e875d5119213b0e5ace36488f08d237"
   end
 
   def install
     # Multiple source files reference these dependencies with non-standard #include paths
-    ENV["EXTRA_INCLUDE"] = "-I#{Formula["leptonica"].include} -I#{Formula["protobuf-c"].include/"protobuf-c"}"
+    ENV["EXTRA_INCLUDE"] = "-I#{Formula["leptonica"].include} -I#{Formula["protobuf-c"].include"protobuf-c"}"
 
     if OS.mac?
       platform = "mac"
-      build_script = ["./build.command", "OCR"]
+      build_script = [".build.command", "OCR"]
     else
       platform = "linux"
-      build_script = ["./build", "-without-rust"]
+      build_script = [".build", "-without-rust"]
     end
 
     cd platform do
       system(*build_script)
       bin.install "ccextractor"
     end
-    (pkgshare/"examples").install "docs/ccextractor.cnf.sample"
+    (pkgshare"examples").install "docsccextractor.cnf.sample"
   end
 
   test do
     resource("homebrew-test.mxf").stage do
-      system bin/"ccextractor", "test.mxf", "-out=txt"
-      assert_equal "This is a test video.", (Pathname.pwd/"test.txt").read.strip
+      system bin"ccextractor", "test.mxf", "-out=txt"
+      assert_equal "This is a test video.", (Pathname.pwd"test.txt").read.strip
     end
   end
 end

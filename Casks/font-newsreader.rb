@@ -2,13 +2,13 @@ cask "font-newsreader" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/newsreader"
+      only_path: "oflnewsreader"
   name "Newsreader"
   desc "Original typeface primarily intended for continuous on-screen reading"
-  homepage "https://fonts.google.com/specimen/Newsreader"
+  homepage "https:fonts.google.comspecimenNewsreader"
 
   font "Newsreader-Italic[opsz,wght].ttf"
   font "Newsreader[opsz,wght].ttf"

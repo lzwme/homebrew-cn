@@ -1,7 +1,7 @@
 class Admesh < Formula
   desc "Processes triangulated solid meshes"
-  homepage "https://github.com/admesh/admesh"
-  url "https://ghproxy.com/https://github.com/admesh/admesh/releases/download/v0.98.5/admesh-0.98.5.tar.gz"
+  homepage "https:github.comadmeshadmesh"
+  url "https:github.comadmeshadmeshreleasesdownloadv0.98.5admesh-0.98.5.tar.gz"
   sha256 "0d7994bfa587c4e958b2ac7c7d2fb90dfb6c5463d32513ada169cf710a438535"
   license "GPL-2.0"
 
@@ -19,7 +19,7 @@ class Admesh < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -27,7 +27,7 @@ class Admesh < Formula
 
   test do
     # Test file is the beginning of block.stl from admesh's source
-    (testpath/"test.stl").write <<~EOS
+    (testpath"test.stl").write <<~EOS
       SOLID Untitled1
       FACET NORMAL  0.00000000E+00  0.00000000E+00  1.00000000E+00
       OUTER LOOP
@@ -38,6 +38,6 @@ class Admesh < Formula
       ENDFACET
       ENDSOLID Untitled1
     EOS
-    system "#{bin}/admesh", "test.stl"
+    system "#{bin}admesh", "test.stl"
   end
 end

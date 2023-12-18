@@ -1,27 +1,27 @@
 class Shaderc < Formula
   desc "Collection of tools, libraries, and tests for Vulkan shader compilation"
-  homepage "https://github.com/google/shaderc"
+  homepage "https:github.comgoogleshaderc"
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/google/shaderc/archive/refs/tags/v2023.7.tar.gz"
+    url "https:github.comgoogleshadercarchiverefstagsv2023.7.tar.gz"
     sha256 "681e1340726a0bf46bea7e31f10cbfe78e01e4446a35d90fedc2b78d400fcdeb"
 
     resource "glslang" do
-      # https://github.com/google/shaderc/blob/known-good/known_good.json
-      url "https://github.com/KhronosGroup/glslang.git",
+      # https:github.comgoogleshadercblobknown-goodknown_good.json
+      url "https:github.comKhronosGroupglslang.git",
           revision: "48f9ed8b08be974f4e463ef38136c8f23513b2cf"
     end
 
     resource "spirv-headers" do
-      # https://github.com/google/shaderc/blob/known-good/known_good.json
-      url "https://github.com/KhronosGroup/SPIRV-Headers.git",
+      # https:github.comgoogleshadercblobknown-goodknown_good.json
+      url "https:github.comKhronosGroupSPIRV-Headers.git",
           revision: "4183b260f4cccae52a89efdfcdd43c4897989f42"
     end
 
     resource "spirv-tools" do
-      # https://github.com/google/shaderc/blob/known-good/known_good.json
-      url "https://github.com/KhronosGroup/SPIRV-Tools.git",
+      # https:github.comgoogleshadercblobknown-goodknown_good.json
+      url "https:github.comKhronosGroupSPIRV-Tools.git",
           revision: "360d469b9eac54d6c6e20f609f9ec35e3a5380ad"
     end
   end
@@ -37,18 +37,18 @@ class Shaderc < Formula
   end
 
   head do
-    url "https://github.com/google/shaderc.git", branch: "main"
+    url "https:github.comgoogleshaderc.git", branch: "main"
 
     resource "glslang" do
-      url "https://github.com/KhronosGroup/glslang.git", branch: "main"
+      url "https:github.comKhronosGroupglslang.git", branch: "main"
     end
 
     resource "spirv-tools" do
-      url "https://github.com/KhronosGroup/SPIRV-Tools.git", branch: "main"
+      url "https:github.comKhronosGroupSPIRV-Tools.git", branch: "main"
     end
 
     resource "spirv-headers" do
-      url "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
+      url "https:github.comKhronosGroupSPIRV-Headers.git", branch: "main"
     end
   end
 
@@ -57,11 +57,11 @@ class Shaderc < Formula
 
   def install
     resources.each do |res|
-      res.stage(buildpath/"third_party"/res.name)
+      res.stage(buildpath"third_party"res.name)
     end
 
     # Avoid installing packages that conflict with other formulae.
-    inreplace "third_party/CMakeLists.txt", "${SHADERC_SKIP_INSTALL}", "ON"
+    inreplace "third_partyCMakeLists.txt", "${SHADERC_SKIP_INSTALL}", "ON"
     system "cmake", "-S", ".", "-B", "build",
                     "-DSHADERC_SKIP_TESTS=ON",
                     "-DSKIP_GLSLANG_INSTALL=ON",
@@ -73,8 +73,8 @@ class Shaderc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <shaderc/shaderc.h>
+    (testpath"test.c").write <<~EOS
+      #include <shadercshaderc.h>
       int main() {
         int version;
         shaderc_profile profile;
@@ -85,6 +85,6 @@ class Shaderc < Formula
     EOS
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lshaderc_shared"
-    system "./test"
+    system ".test"
   end
 end

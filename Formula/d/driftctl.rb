@@ -1,10 +1,10 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
-  homepage "https://driftctl.com"
-  url "https://ghproxy.com/https://github.com/snyk/driftctl/archive/refs/tags/v0.40.0.tar.gz"
+  homepage "https:driftctl.com"
+  url "https:github.comsnykdriftctlarchiverefstagsv0.40.0.tar.gz"
   sha256 "30781d35092dd1dd1b34f22e63e3130a062cf4a3f511f61be013a0ff2a0c7767"
   license "Apache-2.0"
-  head "https://github.com/snyk/driftctl.git", branch: "main"
+  head "https:github.comsnykdriftctl.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -29,19 +29,19 @@ class Driftctl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/snyk/driftctl/build.env=release
-      -X github.com/snyk/driftctl/pkg/version.version=v#{version}
+      -X github.comsnykdriftctlbuild.env=release
+      -X github.comsnykdriftctlpkgversion.version=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"driftctl", "completion")
+    generate_completions_from_executable(bin"driftctl", "completion")
   end
 
   test do
     assert_match "Could not find a way to authenticate on AWS!",
-      shell_output("#{bin}/driftctl --no-version-check scan 2>&1", 2)
+      shell_output("#{bin}driftctl --no-version-check scan 2>&1", 2)
 
-    assert_match version.to_s, shell_output("#{bin}/driftctl version")
+    assert_match version.to_s, shell_output("#{bin}driftctl version")
   end
 end

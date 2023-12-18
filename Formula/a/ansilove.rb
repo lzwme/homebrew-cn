@@ -1,7 +1,7 @@
 class Ansilove < Formula
-  desc "ANSI/ASCII art to PNG converter"
-  homepage "https://www.ansilove.org"
-  url "https://ghproxy.com/https://github.com/ansilove/ansilove/releases/download/4.2.0/ansilove-4.2.0.tar.gz"
+  desc "ANSIASCII art to PNG converter"
+  homepage "https:www.ansilove.org"
+  url "https:github.comansiloveansilovereleasesdownload4.2.0ansilove-4.2.0.tar.gz"
   sha256 "a2f24918ffe01332ea18b2ffab2da4ccad55c7e4a4edcf1c64a1c017d2e4e930"
   license "BSD-2-Clause"
 
@@ -25,14 +25,14 @@ class Ansilove < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    pkgshare.install "examples/burps/bs-ansilove.ans" => "test.ans"
+    pkgshare.install "examplesburpsbs-ansilove.ans" => "test.ans"
   end
 
   test do
-    output = shell_output("#{bin}/ansilove -o #{testpath}/output.png #{pkgshare}/test.ans")
+    output = shell_output("#{bin}ansilove -o #{testpath}output.png #{pkgshare}test.ans")
     assert_match "Font: 80x25", output
     assert_match "Id: SAUCE v00", output
     assert_match "Tinfos: IBM VGA", output
-    assert_predicate testpath/"output.png", :exist?
+    assert_predicate testpath"output.png", :exist?
   end
 end

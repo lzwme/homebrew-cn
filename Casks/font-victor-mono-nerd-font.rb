@@ -2,10 +2,10 @@ cask "font-victor-mono-nerd-font" do
   version "3.1.1"
   sha256 "2b3282e1743aab07664b9dce46f09322bd473beb219b8d08774a8328210545ad"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/VictorMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}VictorMono.zip"
   name "VictorMono Nerd Font (Victor Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

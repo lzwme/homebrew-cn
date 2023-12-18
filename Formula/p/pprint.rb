@@ -1,7 +1,7 @@
 class Pprint < Formula
   desc "Pretty printer for modern C++"
-  homepage "https://github.com/p-ranav/pprint"
-  url "https://ghproxy.com/https://github.com/p-ranav/pprint/archive/refs/tags/v0.9.1.tar.gz"
+  homepage "https:github.comp-ranavpprint"
+  url "https:github.comp-ranavpprintarchiverefstagsv0.9.1.tar.gz"
   sha256 "b9cc0d42f7be4abbb50b2e3b6a89589c5399201a3dc1fd7cfa72d412afdb2f86"
   license "MIT"
 
@@ -17,11 +17,11 @@ class Pprint < Formula
   fails_with gcc: "5"
 
   def install
-    include.install "include/pprint.hpp"
+    include.install "includepprint.hpp"
   end
 
   test do
-    cpp_file = testpath/"main.cpp"
+    cpp_file = testpath"main.cpp"
     cpp_file.write <<~EOS
       #include <pprint.hpp>
 
@@ -33,7 +33,7 @@ class Pprint < Formula
     EOS
 
     system ENV.cxx, "main.cpp", "--std=c++17", "-o", "test"
-    assert_equal <<~EOS, shell_output("./test")
+    assert_equal <<~EOS, shell_output(".test")
       {
         {{1, 2, 3}, {4, 5, 6}},#{" "}
         {{7, 8, 9}, {10, 11, 12}}

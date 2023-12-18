@@ -1,7 +1,7 @@
 class Libkml < Formula
   desc "Library to parse, generate and operate on KML"
-  homepage "https://github.com/libkml/libkml"
-  url "https://ghproxy.com/https://github.com/libkml/libkml/archive/refs/tags/1.3.0.tar.gz"
+  homepage "https:github.comlibkmllibkml"
+  url "https:github.comlibkmllibkmlarchiverefstags1.3.0.tar.gz"
   sha256 "8892439e5570091965aaffe30b08631fdf7ca7f81f6495b4648f0950d7ea7963"
   license "BSD-3-Clause"
   revision 1
@@ -42,12 +42,12 @@ class Libkml < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "kml/regionator/regionator_qid.h"
-      #include "gtest/gtest.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "kmlregionatorregionator_qid.h"
+      #include "gtestgtest.h"
 
       namespace kmlregionator {
-        // This class is the unit test fixture for the KmlHandler class.
+         This class is the unit test fixture for the KmlHandler class.
         class RegionatorQidTest : public testing::Test {
          protected:
           virtual void SetUp() {
@@ -57,7 +57,7 @@ class Libkml < Formula
           Qid root_;
         };
 
-        // This tests the CreateRoot(), depth(), and str() methods of class Qid.
+         This tests the CreateRoot(), depth(), and str() methods of class Qid.
         TEST_F(RegionatorQidTest, TestRoot) {
           ASSERT_EQ(static_cast<size_t>(1), root_.depth());
           ASSERT_EQ(string("q0"), root_.str());
@@ -72,6 +72,6 @@ class Libkml < Formula
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libkml gtest").chomp.split
     system ENV.cxx, "test.cpp", *pkg_config_flags, "-std=c++14", "-o", "test"
-    assert_match("PASSED", shell_output("./test"))
+    assert_match("PASSED", shell_output(".test"))
   end
 end

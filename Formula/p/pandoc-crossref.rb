@@ -1,7 +1,7 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
-  homepage "https://github.com/lierdakil/pandoc-crossref"
-  url "https://ghproxy.com/https://github.com/lierdakil/pandoc-crossref/archive/refs/tags/v0.3.17.0.tar.gz"
+  homepage "https:github.comlierdakilpandoc-crossref"
+  url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.17.0.tar.gz"
   sha256 "a1933b7aba27ef352b7624d234980dc4c4b46ebb607e940c669c2a187e6c6426"
   license "GPL-2.0-or-later"
   revision 3
@@ -29,15 +29,15 @@ class PandocCrossref < Formula
   end
 
   test do
-    (testpath/"hello.md").write <<~EOS
+    (testpath"hello.md").write <<~EOS
       Demo for pandoc-crossref.
       See equation @eq:eqn1 for cross-referencing.
       Display equations are labelled and numbered
 
       $$ P_i(x) = \\sum_i a_i x^i $$ {#eq:eqn1}
     EOS
-    output = shell_output("#{Formula["pandoc"].bin}/pandoc -F #{bin}/pandoc-crossref -o out.html hello.md 2>&1")
-    assert_match "∑", (testpath/"out.html").read
+    output = shell_output("#{Formula["pandoc"].bin}pandoc -F #{bin}pandoc-crossref -o out.html hello.md 2>&1")
+    assert_match "∑", (testpath"out.html").read
     refute_match "WARNING: pandoc-crossref was compiled", output
   end
 end

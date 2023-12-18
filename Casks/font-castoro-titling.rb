@@ -2,10 +2,10 @@ cask "font-castoro-titling" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/castorotitling/CastoroTitling-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcastorotitlingCastoroTitling-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Castoro Titling"
-  homepage "https://fonts.google.com/specimen/Castoro+Titling"
+  homepage "https:fonts.google.comspecimenCastoro+Titling"
 
   font "CastoroTitling-Regular.ttf"
 

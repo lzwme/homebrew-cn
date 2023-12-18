@@ -1,10 +1,10 @@
 class Libao < Formula
   desc "Cross-platform Audio Library"
-  homepage "https://www.xiph.org/ao/"
-  url "https://ghproxy.com/https://github.com/xiph/libao/archive/refs/tags/1.2.2.tar.gz", using: :homebrew_curl
+  homepage "https:www.xiph.orgao"
+  url "https:github.comxiphlibaoarchiverefstags1.2.2.tar.gz", using: :homebrew_curl
   sha256 "df8a6d0e238feeccb26a783e778716fb41a801536fe7b6fce068e313c0e2bf4d"
   license "GPL-2.0"
-  head "https://gitlab.xiph.org/xiph/libao.git", branch: "master"
+  head "https:gitlab.xiph.orgxiphlibao.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -28,7 +28,7 @@ class Libao < Formula
 
   def install
     ENV["AUTOMAKE_FLAGS"] = "--include-deps"
-    system "./autogen.sh"
+    system ".autogen.sh"
 
     args = %W[
       --disable-dependency-tracking
@@ -36,19 +36,19 @@ class Libao < Formula
       --enable-static
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <ao/ao.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <aoao.h>
       int main() {
         ao_initialize();
         return 0;
       }
     EOS
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lao", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

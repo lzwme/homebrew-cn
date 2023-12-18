@@ -1,10 +1,10 @@
 class Corsixth < Formula
   desc "Open source clone of Theme Hospital"
-  homepage "https://github.com/CorsixTH/CorsixTH"
-  url "https://ghproxy.com/https://github.com/CorsixTH/CorsixTH/archive/refs/tags/v0.67.tar.gz"
+  homepage "https:github.comCorsixTHCorsixTH"
+  url "https:github.comCorsixTHCorsixTHarchiverefstagsv0.67.tar.gz"
   sha256 "4e88cf1916bf4d7c304b551ddb91fb9194f110bad4663038ca73d31b939d69e3"
   license "MIT"
-  head "https://github.com/CorsixTH/CorsixTH.git", branch: "master"
+  head "https:github.comCorsixTHCorsixTH.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and
@@ -41,7 +41,7 @@ class Corsixth < Formula
   end
 
   resource "luafilesystem" do
-    url "https://ghproxy.com/https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz"
+    url "https:github.comkeplerprojectluafilesystemarchiverefstagsv1_8_0.tar.gz"
     sha256 "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495"
   end
 
@@ -52,10 +52,10 @@ class Corsixth < Formula
     ENV["TARGET_BUILD_DIR"] = "."
     ENV["FULL_PRODUCT_NAME"] = "CorsixTH.app"
 
-    luapath = libexec/"vendor"
+    luapath = libexec"vendor"
     # Append `;;` to keep default search path.
-    ENV["LUA_PATH"] = luapath/"share/lua"/lua.version.major_minor/"?.lua;;"
-    ENV["LUA_CPATH"] = luapath/"lib/lua"/lua.version.major_minor/"?.so;;"
+    ENV["LUA_PATH"] = luapath"sharelua"lua.version.major_minor"?.lua;;"
+    ENV["LUA_CPATH"] = luapath"liblua"lua.version.major_minor"?.so;;"
 
     resources.each do |r|
       r.stage do
@@ -63,47 +63,47 @@ class Corsixth < Formula
       end
     end
 
-    datadir = OS.mac? ? prefix/"CorsixTH.app/Contents/Resources/" : pkgshare
+    datadir = OS.mac? ? prefix"CorsixTH.appContentsResources" : pkgshare
     args = std_cmake_args + %W[
-      -DLUA_INCLUDE_DIR=#{lua.opt_include}/lua
-      -DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua")}
-      -DLUA_PROGRAM_PATH=#{lua.opt_bin}/lua
+      -DLUA_INCLUDE_DIR=#{lua.opt_include}lua
+      -DLUA_LIBRARY=#{lua.opt_libshared_library("liblua")}
+      -DLUA_PROGRAM_PATH=#{lua.opt_bin}lua
       -DCORSIX_TH_DATADIR=#{datadir}
     ]
-    # On Linux, install binary to libexec/bin so we can put an env script with LUA_PATH in bin.
-    args << "-DCMAKE_INSTALL_BINDIR=#{libexec}/bin" unless OS.mac?
+    # On Linux, install binary to libexecbin so we can put an env script with LUA_PATH in bin.
+    args << "-DCMAKE_INSTALL_BINDIR=#{libexec}bin" unless OS.mac?
 
     system "cmake", ".", *args
     system "make"
     if OS.mac?
       resources = %w[
-        CorsixTH/CorsixTH.lua
-        CorsixTH/Lua
-        CorsixTH/Levels
-        CorsixTH/Campaigns
-        CorsixTH/Graphics
-        CorsixTH/Bitmap
+        CorsixTHCorsixTH.lua
+        CorsixTHLua
+        CorsixTHLevels
+        CorsixTHCampaigns
+        CorsixTHGraphics
+        CorsixTHBitmap
       ]
-      cp_r resources, "CorsixTH/CorsixTH.app/Contents/Resources/"
-      prefix.install "CorsixTH/CorsixTH.app"
+      cp_r resources, "CorsixTHCorsixTH.appContentsResources"
+      prefix.install "CorsixTHCorsixTH.app"
     else
       system "make", "install"
     end
 
     lua_env = { LUA_PATH: ENV["LUA_PATH"], LUA_CPATH: ENV["LUA_CPATH"] }
-    bin_path = OS.mac? ? prefix/"CorsixTH.app/Contents/MacOS/CorsixTH" : libexec/"bin/corsix-th"
-    (bin/"CorsixTH").write_env_script(bin_path, lua_env)
+    bin_path = OS.mac? ? prefix"CorsixTH.appContentsMacOSCorsixTH" : libexec"bincorsix-th"
+    (bin"CorsixTH").write_env_script(bin_path, lua_env)
   end
 
   test do
     if OS.mac?
       lua = Formula["lua"]
 
-      app = prefix/"CorsixTH.app/Contents/MacOS/CorsixTH"
-      assert_includes app.dynamically_linked_libraries, "#{lua.opt_lib}/liblua.dylib"
+      app = prefix"CorsixTH.appContentsMacOSCorsixTH"
+      assert_includes app.dynamically_linked_libraries, "#{lua.opt_lib}liblua.dylib"
     end
 
-    PTY.spawn(bin/"CorsixTH") do |r, _w, pid|
+    PTY.spawn(bin"CorsixTH") do |r, _w, pid|
       sleep 30
       Process.kill "KILL", pid
 
@@ -111,7 +111,7 @@ class Corsixth < Formula
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
 
       assert_match "Welcome to CorsixTH", output

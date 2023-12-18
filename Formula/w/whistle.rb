@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Whistle < Formula
   desc "HTTP, HTTP2, HTTPS, Websocket debugging proxy"
-  homepage "https://github.com/avwo/whistle"
-  url "https://registry.npmjs.org/whistle/-/whistle-2.9.61.tgz"
+  homepage "https:github.comavwowhistle"
+  url "https:registry.npmjs.orgwhistle-whistle-2.9.61.tgz"
   sha256 "f883fbbb41b05cf1b667dd24cb8560ffa603665fa0a1c58a1fc1b582eed62b0a"
   license "MIT"
 
@@ -21,16 +21,16 @@ class Whistle < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Remove x86 specific optional feature
-    node_modules = libexec/"lib/node_modules/whistle/node_modules"
-    rm_f node_modules/"set-global-proxy/lib/mac/whistle" if Hardware::CPU.arm?
+    node_modules = libexec"libnode_moduleswhistlenode_modules"
+    rm_f node_modules"set-global-proxylibmacwhistle" if Hardware::CPU.arm?
   end
 
   test do
-    (testpath/"package.json").write('{"name": "test"}')
-    system bin/"whistle", "start"
-    system bin/"whistle", "stop"
+    (testpath"package.json").write('{"name": "test"}')
+    system bin"whistle", "start"
+    system bin"whistle", "stop"
   end
 end

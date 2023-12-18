@@ -1,12 +1,12 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
-  homepage "https://docs.docker.com/machine"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git",
+  homepage "https:docs.docker.commachine"
+  url "https:gitlab.comgitlab-orgci-cddocker-machine.git",
       tag:      "v0.16.2-gitlab.23",
       revision: "c57b3d7e5613393b5102d295e4ceeccaf80a5105"
   version "0.16.2-gitlab.23"
   license "Apache-2.0"
-  head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "master"
+  head "https:gitlab.comgitlab-orgci-cddocker-machine.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cb251929d0b164418fbab2bbb6a76836b8dfee37823cb008d680f5fbfff145d"
@@ -24,24 +24,24 @@ class DockerMachine < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/docker/machine").install buildpath.children
-    cd "src/github.com/docker/machine" do
+    (buildpath"srcgithub.comdockermachine").install buildpath.children
+    cd "srcgithub.comdockermachine" do
       system "make", "build"
-      bin.install Dir["bin/*"]
-      bash_completion.install Dir["contrib/completion/bash/*.bash"]
-      zsh_completion.install "contrib/completion/zsh/_docker-machine"
+      bin.install Dir["bin*"]
+      bash_completion.install Dir["contribcompletionbash*.bash"]
+      zsh_completion.install "contribcompletionzsh_docker-machine"
       prefix.install_metafiles
     end
   end
 
   service do
-    run [opt_bin/"docker-machine", "start", "default"]
+    run [opt_bin"docker-machine", "start", "default"]
     environment_variables PATH: std_service_path_env
     run_type :immediate
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"docker-machine --version")
+    assert_match version.to_s, shell_output(bin"docker-machine --version")
   end
 end

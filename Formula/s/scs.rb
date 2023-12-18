@@ -1,7 +1,7 @@
 class Scs < Formula
   desc "Conic optimization via operator splitting"
-  homepage "https://web.stanford.edu/~boyd/papers/scs.html"
-  url "https://ghproxy.com/https://github.com/cvxgrp/scs/archive/refs/tags/3.2.3.tar.gz"
+  homepage "https:web.stanford.edu~boydpapersscs.html"
+  url "https:github.comcvxgrpscsarchiverefstags3.2.3.tar.gz"
   sha256 "fe5e8c61ca5ea97975e231b1bb4a873d86e7908fdff416101c2a7cd13ecf5b41"
   license "MIT"
 
@@ -23,11 +23,11 @@ class Scs < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-    pkgshare.install "test/problems/random_prob"
+    pkgshare.install "testproblemsrandom_prob"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <rw.h>
       #include <scs.h>
       #include <util.h>
@@ -37,18 +37,18 @@ class Scs < Formula
         ScsInfo info;
         scs_int result;
 
-        _scs_read_data("#{pkgshare}/random_prob", &d, &k, &stgs);
+        _scs_read_data("#{pkgshare}random_prob", &d, &k, &stgs);
         result = scs(d, k, stgs, sol, &info);
 
         _scs_free_data(d); _scs_free_data(k); _scs_free_sol(sol);
         return result - SCS_SOLVED;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}/scs", "-L#{lib}", "-lscsindir",
+    system ENV.cc, "test.c", "-I#{include}scs", "-L#{lib}", "-lscsindir",
                    "-o", "testscsindir"
-    system "./testscsindir"
-    system ENV.cc, "test.c", "-I#{include}/scs", "-L#{lib}", "-lscsdir",
+    system ".testscsindir"
+    system ENV.cc, "test.c", "-I#{include}scs", "-L#{lib}", "-lscsdir",
                    "-o", "testscsdir"
-    system "./testscsdir"
+    system ".testscsdir"
   end
 end

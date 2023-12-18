@@ -1,10 +1,10 @@
 class Volt < Formula
   desc "Meta-level vim package manager"
-  homepage "https://github.com/vim-volt/volt"
-  url "https://github.com/vim-volt/volt.git",
+  homepage "https:github.comvim-voltvolt"
+  url "https:github.comvim-voltvolt.git",
       tag:      "v0.3.7",
       revision: "e604467d8b440c89793b2e113cd241915e431bf9"
-  head "https://github.com/vim-volt/volt.git", branch: "master"
+  head "https:github.comvim-voltvolt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9dd1f6abf67c665ee109373b87fed3c705902f2b5fddc68bc7c2dfaec0194c73"
@@ -28,22 +28,22 @@ class Volt < Formula
 
   # Go 1.14+ compatibility.
   patch do
-    url "https://github.com/vim-volt/volt/commit/aa9586901d249aa40e67bc0b3e0e7d4f13d5a88b.patch?full_index=1"
+    url "https:github.comvim-voltvoltcommitaa9586901d249aa40e67bc0b3e0e7d4f13d5a88b.patch?full_index=1"
     sha256 "62bed17b5c58198f44a669e41112335928e2fa93d71554aa6bddc782cf124872"
   end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    bash_completion.install "_contrib/completion/bash" => "volt"
-    zsh_completion.install "_contrib/completion/zsh" => "_volt"
-    cp "#{bash_completion}/volt", "#{zsh_completion}/volt-completion.bash"
+    bash_completion.install "_contribcompletionbash" => "volt"
+    zsh_completion.install "_contribcompletionzsh" => "_volt"
+    cp "#{bash_completion}volt", "#{zsh_completion}volt-completion.bash"
   end
 
   test do
-    mkdir_p testpath/"volt/repos/localhost/foo/bar/plugin"
-    File.write(testpath/"volt/repos/localhost/foo/bar/plugin/baz.vim", "qux")
-    system bin/"volt", "get", "localhost/foo/bar"
-    assert_equal File.read(testpath/".vim/pack/volt/opt/localhost_foo_bar/plugin/baz.vim"), "qux"
+    mkdir_p testpath"voltreposlocalhostfoobarplugin"
+    File.write(testpath"voltreposlocalhostfoobarpluginbaz.vim", "qux")
+    system bin"volt", "get", "localhostfoobar"
+    assert_equal File.read(testpath".vimpackvoltoptlocalhost_foo_barpluginbaz.vim"), "qux"
   end
 end

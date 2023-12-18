@@ -2,11 +2,11 @@ class Virtualfish < Formula
   include Language::Python::Virtualenv
 
   desc "Python virtual environment manager for the fish shell"
-  homepage "https://virtualfish.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/54/2f/a7800ae09a689843b62b3eb423d01a90175be5795b66ac675f6f45349ca9/virtualfish-2.5.5.tar.gz"
+  homepage "https:virtualfish.readthedocs.ioenlatest"
+  url "https:files.pythonhosted.orgpackages542fa7800ae09a689843b62b3eb423d01a90175be5795b66ac675f6f45349ca9virtualfish-2.5.5.tar.gz"
   sha256 "6b654995f151af8fca62646d49a62b5bf646514250f1461df6d42147995a0db2"
   license "MIT"
-  head "https://github.com/justinmayer/virtualfish.git", branch: "main"
+  head "https:github.comjustinmayervirtualfish.git", branch: "main"
 
   bottle do
     rebuild 3
@@ -27,7 +27,7 @@ class Virtualfish < Formula
   depends_on "virtualenv"
 
   resource "pkgconfig" do
-    url "https://files.pythonhosted.org/packages/c4/e0/e05fee8b5425db6f83237128742e7e5ef26219b687ab8f0d41ed0422125e/pkgconfig-1.5.5.tar.gz"
+    url "https:files.pythonhosted.orgpackagesc4e0e05fee8b5425db6f83237128742e7e5ef26219b687ab8f0d41ed0422125epkgconfig-1.5.5.tar.gz"
     sha256 "deb4163ef11f75b520d822d9505c1f462761b4309b1bb713d08689759ea8b899"
   end
 
@@ -35,8 +35,8 @@ class Virtualfish < Formula
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
-    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
+    paths = %w[virtualenv].map { |p| Formula[p].opt_libexecsite_packages }
+    (libexecsite_packages"homebrew-deps.pth").write paths.join("\n")
   end
 
   def caveats
@@ -48,30 +48,30 @@ class Virtualfish < Formula
 
   test do
     # Pre-create .virtualenvs to avoid interactive prompt
-    (testpath/".virtualenvs").mkpath
+    (testpath".virtualenvs").mkpath
 
     # Run `vf install` in the test environment, adds vf as function
-    refute_path_exists testpath/".config/fish/conf.d/virtualfish-loader.fish"
-    assert_match "VirtualFish is now installed!", shell_output("fish -c '#{bin}/vf install'")
-    assert_path_exists testpath/".config/fish/conf.d/virtualfish-loader.fish"
+    refute_path_exists testpath".configfishconf.dvirtualfish-loader.fish"
+    assert_match "VirtualFish is now installed!", shell_output("fish -c '#{bin}vf install'")
+    assert_path_exists testpath".configfishconf.dvirtualfish-loader.fish"
 
     # Add virtualenv to prompt so virtualfish doesn't link to prompt doc
-    (testpath/".config/fish/functions/fish_prompt.fish").write(<<~EOS)
+    (testpath".configfishfunctionsfish_prompt.fish").write(<<~EOS)
       function fish_prompt --description 'Test prompt for virtualfish'
         echo -n -s (pwd) 'VIRTUAL_ENV=' (basename "$VIRTUAL_ENV") '>'
       end
     EOS
 
     # Create a virtualenv 'new_virtualenv'
-    refute_path_exists testpath/".virtualenvs/new_virtualenv/pyvenv.cfg"
+    refute_path_exists testpath".virtualenvsnew_virtualenvpyvenv.cfg"
     system "fish", "-c", "vf new new_virtualenv"
-    assert_path_exists testpath/".virtualenvs/new_virtualenv/pyvenv.cfg"
+    assert_path_exists testpath".virtualenvsnew_virtualenvpyvenv.cfg"
 
     # The virtualenv is listed
     assert_match "new_virtualenv", shell_output('fish -c "vf ls"')
 
     # Delete the virtualenv
     system "fish", "-c", "vf rm new_virtualenv"
-    refute_path_exists testpath/".virtualenvs/new_virtualenv/pyvenv.cfg"
+    refute_path_exists testpath".virtualenvsnew_virtualenvpyvenv.cfg"
   end
 end

@@ -1,7 +1,7 @@
 class Einstein < Formula
   desc "Remake of the old DOS game Sherlock"
-  homepage "https://github.com/lksj/einstein-puzzle"
-  url "https://ghproxy.com/https://github.com/lksj/einstein-puzzle/archive/refs/tags/v2.1.1.tar.gz"
+  homepage "https:github.comlksjeinstein-puzzle"
+  url "https:github.comlksjeinstein-puzzlearchiverefstagsv2.1.1.tar.gz"
   sha256 "46cf0806c3792b995343e46bec02426065f66421c870781475d6d365522c10fc"
   revision 1
 
@@ -32,6 +32,6 @@ class Einstein < Formula
     system "make", "PREFIX=#{HOMEBREW_PREFIX}"
 
     bin.install "einstein"
-    (pkgshare/"res").install "einstein.res"
+    (pkgshare"res").install "einstein.res"
   end
 end

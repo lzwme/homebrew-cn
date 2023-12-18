@@ -2,10 +2,10 @@ cask "font-spicy-rice" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/spicyrice/SpicyRice-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflspicyriceSpicyRice-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Spicy Rice"
-  homepage "https://fonts.google.com/specimen/Spicy+Rice"
+  homepage "https:fonts.google.comspecimenSpicy+Rice"
 
   font "SpicyRice-Regular.ttf"
 

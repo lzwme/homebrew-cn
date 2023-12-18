@@ -1,7 +1,7 @@
 class Pipdeptree < Formula
   desc "CLI to display dependency tree of the installed Python packages"
-  homepage "https://github.com/tox-dev/pipdeptree"
-  url "https://files.pythonhosted.org/packages/b5/82/127215bd6bf6f1c0d98c89052eb91c67e34258b743395e3ebd24bc7a3816/pipdeptree-2.13.1.tar.gz"
+  homepage "https:github.comtox-devpipdeptree"
+  url "https:files.pythonhosted.orgpackagesb582127215bd6bf6f1c0d98c89052eb91c67e34258b743395e3ebd24bc7a3816pipdeptree-2.13.1.tar.gz"
   sha256 "1e1acdb2ddc2abdca1718f27ca8dc21622c896a00b8980ec3d42c2208a841a10"
   license "MIT"
 
@@ -31,10 +31,10 @@ class Pipdeptree < Formula
   end
 
   test do
-    assert_match "pipdeptree==#{version}", shell_output("#{bin}/pipdeptree --all")
+    assert_match "pipdeptree==#{version}", shell_output("#{bin}pipdeptree --all")
 
-    assert_empty shell_output("#{bin}/pipdeptree --user-only").strip
+    assert_empty shell_output("#{bin}pipdeptree --user-only").strip
 
-    assert_equal version.to_s, shell_output("#{bin}/pipdeptree --version").strip
+    assert_equal version.to_s, shell_output("#{bin}pipdeptree --version").strip
   end
 end

@@ -1,7 +1,7 @@
 class PassOtp < Formula
   desc "Pass extension for managing one-time-password tokens"
-  homepage "https://github.com/tadfisher/pass-otp#readme"
-  url "https://ghproxy.com/https://github.com/tadfisher/pass-otp/releases/download/v1.2.0/pass-otp-1.2.0.tar.gz"
+  homepage "https:github.comtadfisherpass-otp#readme"
+  url "https:github.comtadfisherpass-otpreleasesdownloadv1.2.0pass-otp-1.2.0.tar.gz"
   sha256 "5720a649267a240a4f7ba5a6445193481070049c1d08ba38b00d20fc551c3a67"
   license "GPL-3.0"
 
@@ -19,7 +19,7 @@ class PassOtp < Formula
   end
 
   test do
-    (testpath/"batch.gpg").write <<~EOS
+    (testpath"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -31,16 +31,16 @@ class PassOtp < Formula
       %commit
     EOS
     begin
-      system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
+      system Formula["gnupg"].opt_bin"gpg", "--batch", "--gen-key", "batch.gpg"
       system "pass", "init", "Testing"
       require "open3"
       Open3.popen3("pass", "otp", "insert", "hotp-secret") do |stdin, _, _|
-        stdin.write "otpauth://hotp/hotp-secret?secret=AAAAAAAAAAAAAAAA&counter=1&issuer=hotp-secret"
+        stdin.write "otpauth:hotphotp-secret?secret=AAAAAAAAAAAAAAAA&counter=1&issuer=hotp-secret"
         stdin.close
       end
       assert_equal "073348", `pass otp show hotp-secret`.strip
     ensure
-      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
+      system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
     end
   end
 end

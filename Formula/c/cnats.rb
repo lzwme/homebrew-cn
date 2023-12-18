@@ -1,7 +1,7 @@
 class Cnats < Formula
   desc "C client for the NATS messaging system"
-  homepage "https://github.com/nats-io/nats.c"
-  url "https://ghproxy.com/https://github.com/nats-io/nats.c/archive/refs/tags/v3.7.0.tar.gz"
+  homepage "https:github.comnats-ionats.c"
+  url "https:github.comnats-ionats.carchiverefstagsv3.7.0.tar.gz"
   sha256 "6570e3c1be5d4d6040fd620d2318299e59045b7dc6c88d49c6168a3088d44ea2"
   license "Apache-2.0"
 
@@ -28,8 +28,8 @@ class Cnats < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <nats/nats.h>
+    (testpath"test.c").write <<~EOS
+      #include <natsnats.h>
       #include <stdio.h>
       int main() {
         printf("%s\\n", nats_GetVersion());
@@ -37,6 +37,6 @@ class Cnats < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lnats", "-o", "test"
-    assert_equal version, shell_output("./test").strip
+    assert_equal version, shell_output(".test").strip
   end
 end

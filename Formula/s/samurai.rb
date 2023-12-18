@@ -1,10 +1,10 @@
 class Samurai < Formula
   desc "Ninja-compatible build tool written in C"
-  homepage "https://github.com/michaelforney/samurai"
-  url "https://ghproxy.com/https://github.com/michaelforney/samurai/releases/download/1.2/samurai-1.2.tar.gz"
+  homepage "https:github.commichaelforneysamurai"
+  url "https:github.commichaelforneysamuraireleasesdownload1.2samurai-1.2.tar.gz"
   sha256 "3b8cf51548dfc49b7efe035e191ff5e1963ebc4fe8f6064a5eefc5343eaf78a5"
   license "Apache-2.0"
-  head "https://github.com/michaelforney/samurai.git", branch: "master"
+  head "https:github.commichaelforneysamurai.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e254250616b85e30cde7a66f55af5bde58657622a82fab525e92ed2a6f8220cc"
@@ -25,19 +25,19 @@ class Samurai < Formula
   end
 
   test do
-    (testpath/"build.ninja").write <<~EOS
+    (testpath"build.ninja").write <<~EOS
       rule cc
         command = #{ENV.cc} $in -o $out
       build hello: cc hello.c
     EOS
-    (testpath/"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~EOS
       #include <stdio.h>
       int main() {
         puts("Hello, world!");
         return 0;
       }
     EOS
-    system bin/"samu"
-    assert_match "Hello, world!", shell_output("./hello")
+    system bin"samu"
+    assert_match "Hello, world!", shell_output(".hello")
   end
 end

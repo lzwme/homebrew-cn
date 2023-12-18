@@ -1,15 +1,15 @@
 class Ocproxy < Formula
   desc "User-level SOCKS and port forwarding proxy"
-  homepage "https://github.com/cernekee/ocproxy"
-  url "https://ghproxy.com/https://github.com/cernekee/ocproxy/archive/refs/tags/v1.60.tar.gz"
+  homepage "https:github.comcernekeeocproxy"
+  url "https:github.comcernekeeocproxyarchiverefstagsv1.60.tar.gz"
   sha256 "a7367647f07df33869e2f79da66b6f104f6495ae806b12a8b8d9ca82fb7899ac"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/cernekee/ocproxy.git", branch: "master"
+  head "https:github.comcernekeeocproxy.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d{1,3})+)$/i)
+    regex(^v?(\d+(?:\.\d{1,3})+)$i)
   end
 
   bottle do
@@ -33,8 +33,8 @@ class Ocproxy < Formula
   depends_on "libevent"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -42,6 +42,6 @@ class Ocproxy < Formula
   end
 
   test do
-    assert_match(/VPNFD.is.not.set/, shell_output("#{bin}/ocproxy 2>&1", 1))
+    assert_match(VPNFD.is.not.set, shell_output("#{bin}ocproxy 2>&1", 1))
   end
 end

@@ -1,7 +1,7 @@
 class Appstream < Formula
   desc "Tools and libraries to work with AppStream metadata"
-  homepage "https://www.freedesktop.org/wiki/Distributions/AppStream/"
-  url "https://ghproxy.com/https://github.com/ximion/appstream/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:www.freedesktop.orgwikiDistributionsAppStream"
+  url "https:github.comximionappstreamarchiverefstagsv1.0.0.tar.gz"
   sha256 "e964fea8b4b7efac7976dc13da856421ddec4299acb5012a7c059f03eabcbeae"
   license "LGPL-2.1-or-later"
 
@@ -36,16 +36,16 @@ class Appstream < Formula
     depends_on "systemd"
   end
 
-  # fix macos build, upstream PR ref, https://github.com/ximion/appstream/pull/556
+  # fix macos build, upstream PR ref, https:github.comximionappstreampull556
   patch do
-    url "https://github.com/ximion/appstream/commit/06eeffe7eba5c4e82a1dd548e100c6fe4f71b413.patch?full_index=1"
+    url "https:github.comximionappstreamcommit06eeffe7eba5c4e82a1dd548e100c6fe4f71b413.patch?full_index=1"
     sha256 "d0ad5853d451eb073fc64bd3e9e58e81182f4142220e0f413794752cda235d28"
   end
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
-    inreplace "meson.build", "/usr/include", prefix.to_s
+    inreplace "meson.build", "usrinclude", prefix.to_s
 
     args = %w[
       -Dstemming=false
@@ -63,14 +63,14 @@ class Appstream < Formula
   end
 
   test do
-    (testpath/"appdata.xml").write <<~EOS
+    (testpath"appdata.xml").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <component type="desktop-application">
-        <id>org.test.test-app</id>
-        <name>Test App</name>
-      </component>
+        <id>org.test.test-app<id>
+        <name>Test App<name>
+      <component>
     EOS
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include "appstream.h"
 
       int main(int argc, char *argv[]) {
@@ -78,7 +78,7 @@ class Appstream < Formula
         char *appdata_uri;
         AsMetadata *metadata;
         GError *error = NULL;
-        char *resource_path = "#{testpath}/appdata.xml";
+        char *resource_path = "#{testpath}appdata.xml";
         appdata_file = g_file_new_for_path (resource_path);
         metadata = as_metadata_new ();
         if (!as_metadata_parse_file (metadata, appdata_file, AS_FORMAT_KIND_UNKNOWN, &error)) {
@@ -89,8 +89,8 @@ class Appstream < Formula
     EOS
     flags = shell_output("pkg-config --cflags --libs appstream").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
 
-    assert_match version.to_s, shell_output("#{bin}/appstreamcli --version")
+    assert_match version.to_s, shell_output("#{bin}appstreamcli --version")
   end
 end

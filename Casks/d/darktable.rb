@@ -5,23 +5,23 @@ cask "darktable" do
   sha256 arm:   "4576f4cc25f96d5a2334993bb847e826591b3190ddf24fb83461df093ce8ee2a",
          intel: "9eb84ea041daad704a8d4226d8c7cba77522dcd003d7166961869b1cfaa9ac9a"
 
-  url "https://ghproxy.com/https://github.com/darktable-org/darktable/releases/download/release-#{version.major_minor_patch}/darktable-#{version}-#{arch}.dmg",
-      verified: "github.com/darktable-org/darktable/"
+  url "https:github.comdarktable-orgdarktablereleasesdownloadrelease-#{version.major_minor_patch}darktable-#{version}-#{arch}.dmg",
+      verified: "github.comdarktable-orgdarktable"
   name "darktable"
   desc "Photography workflow application and raw developer"
-  homepage "https://www.darktable.org/"
+  homepage "https:www.darktable.org"
 
   livecheck do
-    url "https://www.darktable.org/install/"
-    regex(/href=.*?darktable[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
+    url "https:www.darktable.orginstall"
+    regex(href=.*?darktable[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmgi)
   end
 
   app "darktable.app"
 
   zap trash: [
-    "~/.cache/darktable",
-    "~/.config/darktable",
-    "~/.local/share/darktable",
-    "~/Library/Saved Application State/org.darktable.savedState",
+    "~.cachedarktable",
+    "~.configdarktable",
+    "~.localsharedarktable",
+    "~LibrarySaved Application Stateorg.darktable.savedState",
   ]
 end

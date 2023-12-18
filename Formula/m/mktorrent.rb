@@ -1,7 +1,7 @@
 class Mktorrent < Formula
   desc "Create BitTorrent metainfo files"
-  homepage "https://github.com/pobrn/mktorrent/wiki"
-  url "https://ghproxy.com/https://github.com/pobrn/mktorrent/archive/refs/tags/v1.1.tar.gz"
+  homepage "https:github.compobrnmktorrentwiki"
+  url "https:github.compobrnmktorrentarchiverefstagsv1.1.tar.gz"
   sha256 "d0f47500192605d01b5a2569c605e51ed319f557d24cfcbcb23a26d51d6138c9"
   license "GPL-2.0-or-later"
   revision 2
@@ -26,14 +26,14 @@ class Mktorrent < Formula
   end
 
   test do
-    (testpath/"test.txt").write <<~EOS
+    (testpath"test.txt").write <<~EOS
       Injustice anywhere is a threat to justice everywhere.
     EOS
 
-    system bin/"mktorrent", "-d", "-c", "Martin Luther King Jr", "test.txt"
-    assert_predicate testpath/"test.txt.torrent", :exist?, "Torrent was not created"
+    system bin"mktorrent", "-d", "-c", "Martin Luther King Jr", "test.txt"
+    assert_predicate testpath"test.txt.torrent", :exist?, "Torrent was not created"
 
-    file = File.read(testpath/"test.txt.torrent")
+    file = File.read(testpath"test.txt.torrent")
     output = file.force_encoding("ASCII-8BIT") if file.respond_to?(:force_encoding)
     assert_match "Martin Luther King Jr", output
   end

@@ -2,13 +2,13 @@ cask "font-koh-santepheap" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/kohsantepheap"
+      only_path: "oflkohsantepheap"
   name "Koh Santepheap"
   desc "Khmer font for body text"
-  homepage "https://fonts.google.com/specimen/Koh+Santepheap"
+  homepage "https:fonts.google.comspecimenKoh+Santepheap"
 
   font "KohSantepheap-Black.ttf"
   font "KohSantepheap-Bold.ttf"

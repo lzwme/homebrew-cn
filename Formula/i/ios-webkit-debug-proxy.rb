@@ -1,11 +1,11 @@
 class IosWebkitDebugProxy < Formula
   desc "DevTools proxy for iOS devices"
-  homepage "https://github.com/google/ios-webkit-debug-proxy"
-  url "https://ghproxy.com/https://github.com/google/ios-webkit-debug-proxy/archive/refs/tags/v1.9.0.tar.gz"
+  homepage "https:github.comgoogleios-webkit-debug-proxy"
+  url "https:github.comgoogleios-webkit-debug-proxyarchiverefstagsv1.9.0.tar.gz"
   sha256 "ba9bb2feaa976ad999e9e405d8cd8794cdf3546130a79f4785235200ead3c96c"
   license "BSD-3-Clause"
   revision 2
-  head "https://github.com/google/ios-webkit-debug-proxy.git", branch: "master"
+  head "https:github.comgoogleios-webkit-debug-proxy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "7bed3aa738aa0b55c4a923571d1cb6d7dece8c36a40c689763b6d808ca5fd096"
@@ -29,23 +29,23 @@ class IosWebkitDebugProxy < Formula
   # Patch ios_webkit_debug_proxy to work with libplist 2.3.0
   # Remove this once ios_webkit_debug_proxy gets a new release.
   patch do
-    url "https://github.com/google/ios-webkit-debug-proxy/commit/94e4625ea648ece730d33d13224881ab06ad0fce.patch?full_index=1"
+    url "https:github.comgoogleios-webkit-debug-proxycommit94e4625ea648ece730d33d13224881ab06ad0fce.patch?full_index=1"
     sha256 "39e7c648f1ecc96368caa469bd9aa0a552a272d72fafc937210f10d0894551e6"
   end
 
   def install
-    system "./autogen.sh", *std_configure_args
+    system ".autogen.sh", *std_configure_args
     system "make", "install"
   end
 
   test do
     base_port = free_port
-    (testpath/"config.csv").write <<~EOS
+    (testpath"config.csv").write <<~EOS
       null:#{base_port},:#{base_port + 1}-#{base_port + 101}
     EOS
 
     fork do
-      exec "#{bin}/ios_webkit_debug_proxy", "-c", testpath/"config.csv"
+      exec "#{bin}ios_webkit_debug_proxy", "-c", testpath"config.csv"
     end
 
     sleep(2)

@@ -1,10 +1,10 @@
 class Gopass < Formula
   desc "Slightly more awesome Standard Unix Password Manager for Teams"
-  homepage "https://github.com/gopasspw/gopass"
-  url "https://ghproxy.com/https://github.com/gopasspw/gopass/releases/download/v1.15.11/gopass-1.15.11.tar.gz"
+  homepage "https:github.comgopasspwgopass"
+  url "https:github.comgopasspwgopassreleasesdownloadv1.15.11gopass-1.15.11.tar.gz"
   sha256 "08cee0b4f9224d34364d212e3773d7a03250db410de5bedb2800b40977e0ce75"
   license "MIT"
-  head "https://github.com/gopasspw/gopass.git", branch: "master"
+  head "https:github.comgopasspwgopass.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b01ac6a4fa07e2ce1842b3fefad85f7474dcdaa9150ec00d914f5fb0e2ad4242"
@@ -22,7 +22,7 @@ class Gopass < Formula
   end
 
   def install
-    system "make", "install", "PREFIX=#{prefix}/"
+    system "make", "install", "PREFIX=#{prefix}"
 
     bash_completion.install "bash.completion" => "gopass.bash"
     fish_completion.install "fish.completion" => "gopass.fish"
@@ -31,9 +31,9 @@ class Gopass < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gopass version")
+    assert_match version.to_s, shell_output("#{bin}gopass version")
 
-    (testpath/"batch.gpg").write <<~EOS
+    (testpath"batch.gpg").write <<~EOS
       Key-Type: RSA
       Key-Length: 2048
       Subkey-Type: RSA
@@ -45,14 +45,14 @@ class Gopass < Formula
       %commit
     EOS
     begin
-      system Formula["gnupg"].opt_bin/"gpg", "--batch", "--gen-key", "batch.gpg"
+      system Formula["gnupg"].opt_bin"gpg", "--batch", "--gen-key", "batch.gpg"
 
-      system bin/"gopass", "init", "--path", testpath, "noop", "testing@foo.bar"
-      system bin/"gopass", "generate", "Email/other@foo.bar", "15"
-      assert_predicate testpath/"Email/other@foo.bar.gpg", :exist?
+      system bin"gopass", "init", "--path", testpath, "noop", "testing@foo.bar"
+      system bin"gopass", "generate", "Emailother@foo.bar", "15"
+      assert_predicate testpath"Emailother@foo.bar.gpg", :exist?
     ensure
-      system Formula["gnupg"].opt_bin/"gpgconf", "--kill", "gpg-agent"
-      system Formula["gnupg"].opt_bin/"gpgconf", "--homedir", "keyrings/live",
+      system Formula["gnupg"].opt_bin"gpgconf", "--kill", "gpg-agent"
+      system Formula["gnupg"].opt_bin"gpgconf", "--homedir", "keyringslive",
                                                  "--kill", "gpg-agent"
     end
   end

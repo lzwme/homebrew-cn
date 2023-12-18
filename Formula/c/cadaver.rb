@@ -1,14 +1,14 @@
 class Cadaver < Formula
   desc "Command-line client for DAV"
-  homepage "https://notroj.github.io/cadaver/"
-  url "https://notroj.github.io/cadaver/cadaver-0.24.tar.gz"
+  homepage "https:notroj.github.iocadaver"
+  url "https:notroj.github.iocadavercadaver-0.24.tar.gz"
   sha256 "46cff2f3ebd32cd32836812ca47bcc75353fc2be757f093da88c0dd8f10fd5f6"
   license "GPL-2.0-only"
-  head "https://github.com/notroj/cadaver.git", branch: "master"
+  head "https:github.comnotrojcadaver.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?cadaver[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?cadaver[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class Cadaver < Formula
   depends_on "readline"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--with-ssl=openssl",
                           "--with-libs=#{Formula["openssl@3"].opt_prefix}",
                           "--with-neon=#{Formula["neon"].opt_prefix}"
@@ -39,6 +39,6 @@ class Cadaver < Formula
   end
 
   test do
-    assert_match "cadaver #{version}", shell_output("#{bin}/cadaver -V", 255)
+    assert_match "cadaver #{version}", shell_output("#{bin}cadaver -V", 255)
   end
 end

@@ -1,15 +1,15 @@
 class Tasksh < Formula
   desc "Shell wrapper for Taskwarrior commands"
-  homepage "https://gothenburgbitfactory.org/projects/tasksh.html"
-  url "https://ghproxy.com/https://github.com/GothenburgBitFactory/taskshell/releases/download/v1.2.0/tasksh-1.2.0.tar.gz"
+  homepage "https:gothenburgbitfactory.orgprojectstasksh.html"
+  url "https:github.comGothenburgBitFactorytaskshellreleasesdownloadv1.2.0tasksh-1.2.0.tar.gz"
   sha256 "6e42f949bfd7fbdde4870af0e7b923114cc96c4344f82d9d924e984629e21ffd"
   license "MIT"
   revision 1
-  head "https://github.com/GothenburgBitFactory/taskshell.git", branch: "master"
+  head "https:github.comGothenburgBitFactorytaskshell.git", branch: "master"
 
   livecheck do
-    url "https://gothenburgbitfactory.org"
-    regex(/href=.*?tasksh[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:gothenburgbitfactory.org"
+    regex(href=.*?tasksh[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -41,8 +41,8 @@ class Tasksh < Formula
   end
 
   test do
-    system "#{bin}/tasksh", "--version"
-    (testpath/".taskrc").write "data.location=#{testpath}/.task\n"
-    assert_match "Created task 1.", pipe_output("#{bin}/tasksh", "add Test Task", 0)
+    system "#{bin}tasksh", "--version"
+    (testpath".taskrc").write "data.location=#{testpath}.task\n"
+    assert_match "Created task 1.", pipe_output("#{bin}tasksh", "add Test Task", 0)
   end
 end

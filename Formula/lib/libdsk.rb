@@ -1,12 +1,12 @@
 class Libdsk < Formula
   desc "Library for accessing discs and disc image files"
-  homepage "https://www.seasip.info/Unix/LibDsk/"
-  url "https://www.seasip.info/Unix/LibDsk/libdsk-1.4.2.tar.gz"
+  homepage "https:www.seasip.infoUnixLibDsk"
+  url "https:www.seasip.infoUnixLibDsklibdsk-1.4.2.tar.gz"
   sha256 "71eda9d0e33ab580cea1bb507467877d33d887cea6ec042b8d969004db89901a"
 
   livecheck do
     url :homepage
-    regex(/Stable version.*?href=.*?libdsk[._-]v?(\d+(?:\.\d+)+)\.t/im)
+    regex(Stable version.*?href=.*?libdsk[._-]v?(\d+(?:\.\d+)+)\.tim)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class Libdsk < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -39,15 +39,15 @@ class Libdsk < Formula
     inreplace "Makefile.in", "SUBDIRS = . include lib tools man doc",
                              "SUBDIRS = . include lib tools man"
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make"
     system "make", "check"
     system "make", "install"
-    doc.install Dir["doc/*.{html,pdf,sample,txt}"]
+    doc.install Dir["doc*.{html,pdf,sample,txt}"]
   end
 
   test do
-    assert_equal "#{name} version #{version}\n", shell_output(bin/"dskutil --version")
+    assert_equal "#{name} version #{version}\n", shell_output(bin"dskutil --version")
   end
 end

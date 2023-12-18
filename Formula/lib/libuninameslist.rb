@@ -1,13 +1,13 @@
 class Libuninameslist < Formula
   desc "Library of Unicode names and annotation data"
-  homepage "https://github.com/fontforge/libuninameslist"
-  url "https://ghproxy.com/https://github.com/fontforge/libuninameslist/releases/download/20230916/libuninameslist-dist-20230916.tar.gz"
+  homepage "https:github.comfontforgelibuninameslist"
+  url "https:github.comfontforgelibuninameslistreleasesdownload20230916libuninameslist-dist-20230916.tar.gz"
   sha256 "3ce49721de808a389f90997e9217adac449ab23e2fbf2115b22a8664e0e0a686"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)*)/i)
+    regex(v?(\d+(?:\.\d+)*)i)
     strategy :github_latest
   end
 
@@ -24,7 +24,7 @@ class Libuninameslist < Formula
   end
 
   head do
-    url "https://github.com/fontforge/libuninameslist.git", branch: "master"
+    url "https:github.comfontforgelibuninameslist.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,12 +37,12 @@ class Libuninameslist < Formula
       system "automake"
     end
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <uninameslist.h>
 
       int main() {
@@ -51,6 +51,6 @@ class Libuninameslist < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-luninameslist", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

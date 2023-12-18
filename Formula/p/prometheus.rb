@@ -1,7 +1,7 @@
 class Prometheus < Formula
   desc "Service monitoring system and time series database"
-  homepage "https://prometheus.io/"
-  url "https://ghproxy.com/https://github.com/prometheus/prometheus/archive/refs/tags/v2.48.1.tar.gz"
+  homepage "https:prometheus.io"
+  url "https:github.comprometheusprometheusarchiverefstagsv2.48.1.tar.gz"
   sha256 "59383d09f7a2a97461a7d3df4fd387d0a59229125bf52e8da2b075faa8cbdf81"
   license "Apache-2.0"
 
@@ -30,28 +30,28 @@ class Prometheus < Formula
 
   def install
     ENV.deparallelize
-    ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec/"gnubin"
-    ENV.prepend_path "PATH", Formula["node"].opt_libexec/"bin"
-    mkdir_p buildpath/"src/github.com/prometheus"
-    ln_sf buildpath, buildpath/"src/github.com/prometheus/prometheus"
+    ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec"gnubin"
+    ENV.prepend_path "PATH", Formula["node"].opt_libexec"bin"
+    mkdir_p buildpath"srcgithub.comprometheus"
+    ln_sf buildpath, buildpath"srcgithub.comprometheusprometheus"
 
     system "make", "assets"
     system "make", "build"
     bin.install %w[promtool prometheus]
     libexec.install %w[consoles console_libraries]
 
-    (bin/"prometheus_brew_services").write <<~EOS
-      #!/bin/bash
-      exec #{bin}/prometheus $(<#{etc}/prometheus.args)
+    (bin"prometheus_brew_services").write <<~EOS
+      #!binbash
+      exec #{bin}prometheus $(<#{etc}prometheus.args)
     EOS
 
-    (buildpath/"prometheus.args").write <<~EOS
-      --config.file #{etc}/prometheus.yml
+    (buildpath"prometheus.args").write <<~EOS
+      --config.file #{etc}prometheus.yml
       --web.listen-address=127.0.0.1:9090
-      --storage.tsdb.path #{var}/prometheus
+      --storage.tsdb.path #{var}prometheus
     EOS
 
-    (buildpath/"prometheus.yml").write <<~EOS
+    (buildpath"prometheus.yml").write <<~EOS
       global:
         scrape_interval: 15s
 
@@ -67,25 +67,25 @@ class Prometheus < Formula
     <<~EOS
       When run from `brew services`, `prometheus` is run from
       `prometheus_brew_services` and uses the flags in:
-         #{etc}/prometheus.args
+         #{etc}prometheus.args
     EOS
   end
 
   service do
-    run [opt_bin/"prometheus_brew_services"]
+    run [opt_bin"prometheus_brew_services"]
     keep_alive false
-    log_path var/"log/prometheus.log"
-    error_log_path var/"log/prometheus.err.log"
+    log_path var"logprometheus.log"
+    error_log_path var"logprometheus.err.log"
   end
 
   test do
-    (testpath/"rules.example").write <<~EOS
+    (testpath"rules.example").write <<~EOS
       groups:
       - name: http
         rules:
         - record: job:http_inprogress_requests:sum
           expr: sum(http_inprogress_requests) by (job)
     EOS
-    system "#{bin}/promtool", "check", "rules", testpath/"rules.example"
+    system "#{bin}promtool", "check", "rules", testpath"rules.example"
   end
 end

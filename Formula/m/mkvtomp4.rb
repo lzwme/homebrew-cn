@@ -1,11 +1,11 @@
 class Mkvtomp4 < Formula
   desc "Convert mkv files to mp4"
-  homepage "https://github.com/gavinbeatty/mkvtomp4/"
-  url "https://files.pythonhosted.org/packages/89/27/7367092f0d5530207e049afc76b167998dca2478a5c004018cf07e8a5653/mkvtomp4-2.0.tar.gz"
+  homepage "https:github.comgavinbeattymkvtomp4"
+  url "https:files.pythonhosted.orgpackages89277367092f0d5530207e049afc76b167998dca2478a5c004018cf07e8a5653mkvtomp4-2.0.tar.gz"
   sha256 "8514aa744963ea682e6a5c4b3cfab14c03346bfc78194c3cdc8b3a6317902f12"
   license "MIT"
   revision 3
-  head "https://github.com/gavinbeatty/mkvtomp4.git", branch: "main"
+  head "https:github.comgavinbeattymkvtomp4.git", branch: "main"
 
   bottle do
     rebuild 3
@@ -34,6 +34,6 @@ class Mkvtomp4 < Formula
   end
 
   test do
-    system "#{bin}/mkvtomp4", "--help"
+    system "#{bin}mkvtomp4", "--help"
   end
 end

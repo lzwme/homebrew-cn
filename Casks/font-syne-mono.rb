@@ -2,11 +2,11 @@ cask "font-syne-mono" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/synemono/SyneMono-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsynemonoSyneMono-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Syne Mono"
   desc "Another take on letting go of control"
-  homepage "https://fonts.google.com/specimen/Syne+Mono"
+  homepage "https:fonts.google.comspecimenSyne+Mono"
 
   font "SyneMono-Regular.ttf"
 

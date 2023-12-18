@@ -2,12 +2,12 @@ cask "font-noto-sans-gujarati-ui" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/notosansgujaratiui"
+      only_path: "oflnotosansgujaratiui"
   name "Noto Sans Gujarati UI"
-  homepage "https://fonts.google.com/specimen/Noto+Sans+Gujarati"
+  homepage "https:fonts.google.comspecimenNoto+Sans+Gujarati"
 
   font "NotoSansGujaratiUI-Black.ttf"
   font "NotoSansGujaratiUI-Bold.ttf"

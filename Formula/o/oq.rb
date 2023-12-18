@@ -1,7 +1,7 @@
 class Oq < Formula
   desc "Performant, and portable jq wrapper to support formats other than JSON"
-  homepage "https://blacksmoke16.github.io/oq"
-  url "https://ghproxy.com/https://github.com/Blacksmoke16/oq/archive/refs/tags/v1.3.4.tar.gz"
+  homepage "https:blacksmoke16.github.iooq"
+  url "https:github.comBlacksmoke16oqarchiverefstagsv1.3.4.tar.gz"
   sha256 "9e99c9ba292c466ca39fb7f6d0053f9fe13c2768a7493d1ef88ea2ca2e0d0ca0"
   license "MIT"
   revision 1
@@ -30,15 +30,15 @@ class Oq < Formula
 
   def install
     system "shards", "build", "--production", "--release", "--no-debug"
-    system "strip", "./bin/oq"
-    bin.install "./bin/oq"
+    system "strip", ".binoq"
+    bin.install ".binoq"
   end
 
   test do
     assert_equal(
-      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root><foo>1</foo><bar>2</bar></root>\n",
-      pipe_output("#{bin}/oq -o xml --indent 0 .", '{"foo":1, "bar":2}'),
+      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root><foo>1<foo><bar>2<bar><root>\n",
+      pipe_output("#{bin}oq -o xml --indent 0 .", '{"foo":1, "bar":2}'),
     )
-    assert_equal "{\"age\":12}\n", pipe_output("#{bin}/oq -i yaml -c .", "---\nage: 12")
+    assert_equal "{\"age\":12}\n", pipe_output("#{bin}oq -i yaml -c .", "---\nage: 12")
   end
 end

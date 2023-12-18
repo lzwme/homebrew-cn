@@ -5,27 +5,27 @@ cask "kotlin-native" do
   sha256 arm:   "b3c45aa0a5aa08419bd79b06cb5bdeed32b30141a6a976b67ca91bb0959e28b7",
          intel: "8f47cf1871bf0dfcacfc04e68ee71f2333a8a711ca25fd7a29e852eafe8da76e"
 
-  url "https://ghproxy.com/https://github.com/JetBrains/kotlin/releases/download/v#{version}/kotlin-native-macos-#{arch}-#{version}.tar.gz",
-      verified: "github.com/JetBrains/kotlin/"
+  url "https:github.comJetBrainskotlinreleasesdownloadv#{version}kotlin-native-macos-#{arch}-#{version}.tar.gz",
+      verified: "github.comJetBrainskotlin"
   name "Kotlin Native"
   desc "LLVM backend for Kotlin"
-  homepage "https://kotlinlang.org/docs/reference/native-overview.html"
+  homepage "https:kotlinlang.orgdocsreferencenative-overview.html"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   conflicts_with formula: "kotlin"
 
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/cinterop"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/generate-platform"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/jsinterop"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/klib"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/konan-lldb"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/konanc"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/kotlinc-native"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/run_konan"
+  binary "kotlin-native-macos-#{arch}-#{version}bincinterop"
+  binary "kotlin-native-macos-#{arch}-#{version}bingenerate-platform"
+  binary "kotlin-native-macos-#{arch}-#{version}binjsinterop"
+  binary "kotlin-native-macos-#{arch}-#{version}binklib"
+  binary "kotlin-native-macos-#{arch}-#{version}binkonan-lldb"
+  binary "kotlin-native-macos-#{arch}-#{version}binkonanc"
+  binary "kotlin-native-macos-#{arch}-#{version}binkotlinc-native"
+  binary "kotlin-native-macos-#{arch}-#{version}binrun_konan"
 
   # No zap stanza required
   caveats do

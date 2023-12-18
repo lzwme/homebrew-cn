@@ -2,10 +2,10 @@ cask "font-sunshiney" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/sunshiney/Sunshiney-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapachesunshineySunshiney-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Sunshiney"
-  homepage "https://fonts.google.com/specimen/Sunshiney"
+  homepage "https:fonts.google.comspecimenSunshiney"
 
   font "Sunshiney-Regular.ttf"
 

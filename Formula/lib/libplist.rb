@@ -1,10 +1,10 @@
 class Libplist < Formula
   desc "Library for Apple Binary- and XML-Property Lists"
-  homepage "https://www.libimobiledevice.org/"
-  url "https://ghproxy.com/https://github.com/libimobiledevice/libplist/releases/download/2.3.0/libplist-2.3.0.tar.bz2"
+  homepage "https:www.libimobiledevice.org"
+  url "https:github.comlibimobiledevicelibplistreleasesdownload2.3.0libplist-2.3.0.tar.bz2"
   sha256 "4e8580d3f39d3dfa13cefab1a13f39ea85c4b0202e9305c5c8f63818182cac61"
   license "LGPL-2.1-or-later"
-  head "https://github.com/libimobiledevice/libplist.git", branch: "master"
+  head "https:github.comlibimobiledevicelibplist.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1b0ee41b0b1a051a7856bb943a7fc39127009e53ae44a8728327e6f4fbec4db0"
@@ -31,29 +31,29 @@ class Libplist < Formula
       --without-cython
     ]
 
-    system "./autogen.sh", *std_configure_args, *args if build.head?
-    system "./configure", *std_configure_args, *args if build.stable?
+    system ".autogen.sh", *std_configure_args, *args if build.head?
+    system ".configure", *std_configure_args, *args if build.stable?
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.plist").write <<~EOS
+    (testpath"test.plist").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <!DOCTYPE plist PUBLIC "-AppleDTD PLIST 1.0EN" "http:www.apple.comDTDsPropertyList-1.0.dtd">
       <plist version="1.0">
       <dict>
-        <key>Label</key>
-        <string>test</string>
-        <key>ProgramArguments</key>
+        <key>Label<key>
+        <string>test<string>
+        <key>ProgramArguments<key>
         <array>
-          <string>/bin/echo</string>
-        </array>
-      </dict>
-      </plist>
+          <string>binecho<string>
+        <array>
+      <dict>
+      <plist>
     EOS
-    system bin/"plistutil", "-i", "test.plist", "-o", "test_binary.plist"
-    assert_predicate testpath/"test_binary.plist", :exist?,
+    system bin"plistutil", "-i", "test.plist", "-o", "test_binary.plist"
+    assert_predicate testpath"test_binary.plist", :exist?,
                      "Failed to create converted plist!"
   end
 end

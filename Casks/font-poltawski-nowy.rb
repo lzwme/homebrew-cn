@@ -2,12 +2,12 @@ cask "font-poltawski-nowy" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/poltawskinowy"
+      only_path: "oflpoltawskinowy"
   name "Poltawski Nowy"
-  homepage "https://fonts.google.com/specimen/Poltawski+Nowy"
+  homepage "https:fonts.google.comspecimenPoltawski+Nowy"
 
   font "PoltawskiNowy-Italic[wght].ttf"
   font "PoltawskiNowy[wght].ttf"

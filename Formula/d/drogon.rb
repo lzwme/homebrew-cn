@@ -1,12 +1,12 @@
 class Drogon < Formula
   desc "Modern C++ web application framework"
-  homepage "https://drogon.org"
+  homepage "https:drogon.org"
   # pull from git tag to get submodules
-  url "https://github.com/drogonframework/drogon.git",
+  url "https:github.comdrogonframeworkdrogon.git",
       tag:      "v1.9.1",
       revision: "637046189653ea22e6c4b13d7f47023170fa01b1"
   license "MIT"
-  head "https://github.com/drogonframework/drogon.git", branch: "master"
+  head "https:github.comdrogonframeworkdrogon.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "a5f274ce120ce13952c228554400db737f6d41e91be741602aa456744aaf8676"
@@ -34,7 +34,7 @@ class Drogon < Formula
     cmake_args = std_cmake_args
     if OS.linux?
       cmake_args << "-DUUID_LIBRARIES=uuid"
-      cmake_args << "-DUUID_INCLUDE_DIRS=#{Formula["ossp-uuid"].opt_include}/ossp"
+      cmake_args << "-DUUID_INCLUDE_DIRS=#{Formula["ossp-uuid"].opt_include}ossp"
     end
 
     system "cmake", "-B", "build", *cmake_args
@@ -43,7 +43,7 @@ class Drogon < Formula
   end
 
   test do
-    system bin/"dg_ctl", "create", "project", "hello"
+    system bin"dg_ctl", "create", "project", "hello"
     cd "hello" do
       port = free_port
       inreplace "main.cc", "5555", port.to_s
@@ -51,14 +51,14 @@ class Drogon < Formula
       cmake_args = []
       if OS.linux?
         cmake_args << "-DUUID_LIBRARIES=uuid"
-        cmake_args << "-DUUID_INCLUDE_DIRS=#{Formula["ossp-uuid"].opt_include}/ossp"
+        cmake_args << "-DUUID_INCLUDE_DIRS=#{Formula["ossp-uuid"].opt_include}ossp"
       end
 
       system "cmake", "-B", "build", *cmake_args
       system "cmake", "--build", "build"
 
       begin
-        pid = fork { exec "build/hello" }
+        pid = fork { exec "buildhello" }
         sleep 1
         result = shell_output("curl -s 127.0.0.1:#{port}")
         assert_match "<hr><center>drogon", result

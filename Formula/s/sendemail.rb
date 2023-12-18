@@ -1,8 +1,8 @@
 class Sendemail < Formula
   desc "Email program for sending SMTP mail"
-  # Alternate: https://freshmeat.sourceforge.io/projects/sendemail/
-  homepage "https://web.archive.org/web/20191013154932/caspian.dotconf.net/menu/Software/SendEmail/"
-  url "http://caspian.dotconf.net/menu/Software/SendEmail/sendEmail-v1.56.tar.gz"
+  # Alternate: https:freshmeat.sourceforge.ioprojectssendemail
+  homepage "https:web.archive.orgweb20191013154932caspian.dotconf.netmenuSoftwareSendEmail"
+  url "http:caspian.dotconf.netmenuSoftwareSendEmailsendEmail-v1.56.tar.gz"
   sha256 "6dd7ef60338e3a26a5e5246f45aa001054e8fc984e48202e4b0698e571451ac0"
   license "GPL-2.0-or-later"
 
@@ -24,9 +24,9 @@ class Sendemail < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "60b99fa4f05c5ee4f2b85c4529e8e4a2368d4a16d68246c4d9bb91ba256f828f"
   end
 
-  # Reported upstream: https://web.archive.org/web/20191013154932/caspian.dotconf.net/menu/Software/SendEmail/#comment-1119965648
+  # Reported upstream: https:web.archive.orgweb20191013154932caspian.dotconf.netmenuSoftwareSendEmail#comment-1119965648
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/mogaal/sendemail/e785a6d284884688322c9b39c0f64e20a43ea825/debian/patches/fix_ssl_version.patch"
+    url "https:raw.githubusercontent.commogaalsendemaile785a6d284884688322c9b39c0f64e20a43ea825debianpatchesfix_ssl_version.patch"
     sha256 "0b212ade1808ff51d2c6ded5dc33b571f951bd38c1348387546c0cdf6190c0c3"
   end
 
@@ -35,6 +35,6 @@ class Sendemail < Formula
   end
 
   test do
-    assert_match "sendEmail-#{version}", shell_output("#{bin}/sendEmail", 1).strip
+    assert_match "sendEmail-#{version}", shell_output("#{bin}sendEmail", 1).strip
   end
 end

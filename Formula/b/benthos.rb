@@ -1,10 +1,10 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
-  homepage "https://www.benthos.dev"
-  url "https://ghproxy.com/https://github.com/benthosdev/benthos/archive/refs/tags/v4.24.0.tar.gz"
+  homepage "https:www.benthos.dev"
+  url "https:github.combenthosdevbenthosarchiverefstagsv4.24.0.tar.gz"
   sha256 "c615844e5178d9e666291b00fd2ddea53055dee2c4eacba99b7d06ed565a309d"
   license "MIT"
-  head "https://github.com/benthosdev/benthos.git", branch: "main"
+  head "https:github.combenthosdevbenthos.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acd1ed4a9752d719d3884a613536bb7a476bd4fb5b054160a99b91bae7792f1e"
@@ -20,21 +20,21 @@ class Benthos < Formula
 
   def install
     system "make", "VERSION=#{version}"
-    bin.install "target/bin/benthos"
+    bin.install "targetbinbenthos"
   end
 
   test do
-    (testpath/"sample.txt").write <<~EOS
+    (testpath"sample.txt").write <<~EOS
       QmVudGhvcyByb2NrcyE=
     EOS
 
-    (testpath/"test_pipeline.yaml").write <<~EOS
+    (testpath"test_pipeline.yaml").write <<~EOS
       ---
       logger:
         level: ERROR
       input:
         file:
-          paths: [ ./sample.txt ]
+          paths: [ .sample.txt ]
       pipeline:
         threads: 1
         processors:
@@ -42,7 +42,7 @@ class Benthos < Formula
       output:
         stdout: {}
     EOS
-    output = shell_output("#{bin}/benthos -c test_pipeline.yaml")
+    output = shell_output("#{bin}benthos -c test_pipeline.yaml")
     assert_match "Benthos rocks!", output.strip
   end
 end

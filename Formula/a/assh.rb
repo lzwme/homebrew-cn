@@ -1,10 +1,10 @@
 class Assh < Formula
   desc "Advanced SSH config - Regex, aliases, gateways, includes and dynamic hosts"
-  homepage "https://manfred.life/assh"
-  url "https://ghproxy.com/https://github.com/moul/assh/archive/refs/tags/v2.16.0.tar.gz"
+  homepage "https:manfred.lifeassh"
+  url "https:github.commoulassharchiverefstagsv2.16.0.tar.gz"
   sha256 "9635d4123d344779728299627be57ee7ca26aa3ca65ed2fd4510a4fdd508b3cf"
   license "MIT"
-  head "https://github.com/moul/assh.git", branch: "master"
+  head "https:github.commoulassh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d4c84e457f4a186f199a65311f8ddaaf8c05f60387eb71f16d7608d05afd75e"
@@ -21,19 +21,19 @@ class Assh < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"assh", "completion")
+    generate_completions_from_executable(bin"assh", "completion")
   end
 
   test do
-    assh_config = testpath/"assh.yml"
+    assh_config = testpath"assh.yml"
     assh_config.write <<~EOS
       hosts:
         hosta:
           Hostname: 127.0.0.1
-      asshknownhostfile: /dev/null
+      asshknownhostfile: devnull
     EOS
 
     output = "hosta assh ping statistics"
-    assert_match output, shell_output("#{bin}/assh --config #{assh_config} ping -c 4 hosta 2>&1")
+    assert_match output, shell_output("#{bin}assh --config #{assh_config} ping -c 4 hosta 2>&1")
   end
 end

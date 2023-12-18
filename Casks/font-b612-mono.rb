@@ -2,12 +2,12 @@ cask "font-b612-mono" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/b612mono"
+      only_path: "oflb612mono"
   name "B612 Mono"
-  homepage "https://fonts.google.com/specimen/B612+Mono"
+  homepage "https:fonts.google.comspecimenB612+Mono"
 
   font "B612Mono-Bold.ttf"
   font "B612Mono-BoldItalic.ttf"

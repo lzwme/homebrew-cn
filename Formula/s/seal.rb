@@ -1,7 +1,7 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
-  homepage "https://github.com/microsoft/SEAL"
-  url "https://ghproxy.com/https://github.com/microsoft/SEAL/archive/refs/tags/v4.1.1.tar.gz"
+  homepage "https:github.commicrosoftSEAL"
+  url "https:github.commicrosoftSEALarchiverefstagsv4.1.1.tar.gz"
   sha256 "af9bf0f0daccda2a8b7f344f13a5692e0ee6a45fea88478b2b90c35648bf2672"
   license "MIT"
 
@@ -26,13 +26,13 @@ class Seal < Formula
   fails_with gcc: "5"
 
   resource "hexl" do
-    url "https://ghproxy.com/https://github.com/intel/hexl/archive/refs/tags/v1.2.5.tar.gz"
+    url "https:github.comintelhexlarchiverefstagsv1.2.5.tar.gz"
     sha256 "3692e6e6183dbc49253e51e86c3e52e7affcac925f57db0949dbb4d34b558a9a"
   end
 
   # patch cmake configs, remove in next release
   patch do
-    url "https://github.com/microsoft/SEAL/commit/13e94ef0e01aa9874885bbfdbca1258ab380ddeb.patch?full_index=1"
+    url "https:github.commicrosoftSEALcommit13e94ef0e01aa9874885bbfdbca1258ab380ddeb.patch?full_index=1"
     sha256 "19e3dde5aeb78c01dbe5ee73624cf4621060d071ab1a437515eedc00b47310a1"
   end
 
@@ -56,28 +56,28 @@ class Seal < Formula
       -DSEAL_BUILD_DEPS=OFF
       -DSEAL_USE_ALIGNED_ALLOC=#{(OS.mac? && MacOS.version > :mojave) ? "ON" : "OFF"}
       -DSEAL_USE_INTEL_HEXL=#{Hardware::CPU.intel? ? "ON" : "OFF"}
-      -DHEXL_DIR=#{lib}/cmake
+      -DHEXL_DIR=#{lib}cmake
       -DCMAKE_CXX_FLAGS=-I#{include}
     ]
 
     system "cmake", ".", *args
     system "make"
     system "make", "install"
-    pkgshare.install "native/examples"
+    pkgshare.install "nativeexamples"
   end
 
   test do
-    cp_r (pkgshare/"examples"), testpath
+    cp_r (pkgshare"examples"), testpath
 
     # remove the partial CMakeLists
-    File.delete testpath/"examples/CMakeLists.txt"
+    File.delete testpath"examplesCMakeLists.txt"
 
     # Chip in a new "CMakeLists.txt" for example code tests
-    (testpath/"examples/CMakeLists.txt").write <<~EOS
+    (testpath"examplesCMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.12)
       project(SEALExamples VERSION #{version} LANGUAGES CXX)
-      # Executable will be in ../bin
-      set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SEALExamples_SOURCE_DIR}/../bin)
+      # Executable will be in ..bin
+      set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SEALExamples_SOURCE_DIR}..bin)
 
       add_executable(sealexamples examples.cpp)
       target_sources(sealexamples
@@ -95,17 +95,17 @@ class Seal < Formula
       # Import Microsoft SEAL
       find_package(SEAL #{version} EXACT REQUIRED
           # Providing a path so this can be built without installing Microsoft SEAL
-          PATHS ${SEALExamples_SOURCE_DIR}/../src/cmake
+          PATHS ${SEALExamples_SOURCE_DIR}..srccmake
       )
 
       # Link Microsoft SEAL
       target_link_libraries(sealexamples SEAL::seal_shared)
     EOS
 
-    system "cmake", "examples", "-DHEXL_DIR=#{lib}/cmake"
+    system "cmake", "examples", "-DHEXL_DIR=#{lib}cmake"
     system "make"
     # test examples 1-5 and exit
     input = "1\n2\n3\n4\n5\n0\n"
-    assert_match "Correct", pipe_output("bin/sealexamples", input)
+    assert_match "Correct", pipe_output("binsealexamples", input)
   end
 end

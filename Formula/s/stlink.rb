@@ -1,10 +1,10 @@
 class Stlink < Formula
   desc "STM32 discovery line Linux programmer"
-  homepage "https://github.com/stlink-org/stlink"
-  url "https://ghproxy.com/https://github.com/stlink-org/stlink/archive/refs/tags/v1.7.0.tar.gz"
+  homepage "https:github.comstlink-orgstlink"
+  url "https:github.comstlink-orgstlinkarchiverefstagsv1.7.0.tar.gz"
   sha256 "57ec1214905aedf59bee7f70ddff02316f64fa9ba5a9b6a3a64952edc5b65855"
   license "BSD-3-Clause"
-  head "https://github.com/stlink-org/stlink.git", branch: "develop"
+  head "https:github.comstlink-orgstlink.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "0fbf4050373180e7d9510579c77d836b48033b9b06e89a34156b777b38e5dd58"
@@ -28,18 +28,18 @@ class Stlink < Formula
     args = std_cmake_args
 
     libusb = Formula["libusb"]
-    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
-    args << "-DLIBUSB_LIBRARY=#{libusb.opt_lib/shared_library("libusb-#{libusb.version.major_minor}")}"
+    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-#{libusb.version.major_minor}"
+    args << "-DLIBUSB_LIBRARY=#{libusb.opt_libshared_library("libusb-#{libusb.version.major_minor}")}"
 
     if OS.linux?
-      args << "-DSTLINK_MODPROBED_DIR=#{lib}/modprobe.d"
-      args << "-DSTLINK_UDEV_RULES_DIR=#{lib}/udev/rules.d"
+      args << "-DSTLINK_MODPROBED_DIR=#{lib}modprobe.d"
+      args << "-DSTLINK_UDEV_RULES_DIR=#{lib}udevrules.d"
     end
     system "cmake", ".", *args
     system "make", "install"
   end
 
   test do
-    assert_match "st-flash #{version}", shell_output("#{bin}/st-flash --debug reset 2>&1", 255)
+    assert_match "st-flash #{version}", shell_output("#{bin}st-flash --debug reset 2>&1", 255)
   end
 end

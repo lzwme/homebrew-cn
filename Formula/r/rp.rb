@@ -1,10 +1,10 @@
 class Rp < Formula
-  desc "Tool to find ROP sequences in PE/Elf/Mach-O x86/x64 binaries"
-  homepage "https://github.com/0vercl0k/rp"
-  url "https://ghproxy.com/https://github.com/0vercl0k/rp/archive/refs/tags/v2.1.3.tar.gz"
+  desc "Tool to find ROP sequences in PEElfMach-O x86x64 binaries"
+  homepage "https:github.com0vercl0krp"
+  url "https:github.com0vercl0krparchiverefstagsv2.1.3.tar.gz"
   sha256 "38a6ac4d1b97468c81b4da93d62b46d4486817b02bdb53de7f1196b4938ed2bc"
   license "MIT"
-  head "https://github.com/0vercl0k/rp.git", branch: "master"
+  head "https:github.com0vercl0krp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "437df8822a4b9866faf2043ec857a9b343b67e025fd5bc7b2a3aaf5740fc252e"
@@ -23,14 +23,14 @@ class Rp < Formula
     system "cmake", "--build", "build"
 
     os = OS.mac? ? "osx" : "lin"
-    bin.install "build/rp-#{os}"
+    bin.install "buildrp-#{os}"
   end
 
   test do
     os = OS.mac? ? "osx" : "lin"
-    rp = bin/"rp-#{os}"
+    rp = bin"rp-#{os}"
     output = shell_output("#{rp} --file #{rp} --rop=1 --unique")
     assert_match "FileFormat: #{OS.mac? ? "Mach-o" : "Elf"}", output
-    assert_match(/\d+ unique gadgets found/, output)
+    assert_match(\d+ unique gadgets found, output)
   end
 end

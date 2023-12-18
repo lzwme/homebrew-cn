@@ -1,15 +1,15 @@
 class Terraform < Formula
   desc "Tool to build, change, and version infrastructure"
-  homepage "https://www.terraform.io/"
+  homepage "https:www.terraform.io"
   # NOTE: Do not bump to v1.6.0+ as license changed to BUSL-1.1
-  # https://github.com/hashicorp/terraform/pull/33661
-  # https://github.com/hashicorp/terraform/pull/33697
-  url "https://ghproxy.com/https://github.com/hashicorp/terraform/archive/refs/tags/v1.5.7.tar.gz"
+  # https:github.comhashicorpterraformpull33661
+  # https:github.comhashicorpterraformpull33697
+  url "https:github.comhashicorpterraformarchiverefstagsv1.5.7.tar.gz"
   sha256 "6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/terraform.git", branch: "main"
+  head "https:github.comhashicorpterraform.git", branch: "main"
 
-  # TODO: Remove this if/when the formula is deprecated.
+  # TODO: Remove this ifwhen the formula is deprecated.
   livecheck do
     skip "Formula will not be updated due to BUSL license change"
   end
@@ -31,7 +31,7 @@ class Terraform < Formula
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
 
   # Needs libraries at runtime:
-  # /usr/lib/x86_64-linux-gnu/libstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by node)
+  # usrlibx86_64-linux-gnulibstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by node)
   fails_with gcc: "5"
 
   def install
@@ -39,7 +39,7 @@ class Terraform < Formula
   end
 
   test do
-    minimal = testpath/"minimal.tf"
+    minimal = testpath"minimal.tf"
     minimal.write <<~EOS
       variable "aws_region" {
         default = "us-west-2"
@@ -67,7 +67,7 @@ class Terraform < Formula
         count         = 4
       }
     EOS
-    system "#{bin}/terraform", "init"
-    system "#{bin}/terraform", "graph"
+    system "#{bin}terraform", "init"
+    system "#{bin}terraform", "graph"
   end
 end

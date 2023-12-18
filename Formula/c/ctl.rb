@@ -1,27 +1,27 @@
 class Ctl < Formula
   desc "Programming language for digital color management"
-  homepage "https://github.com/ampas/CTL"
+  homepage "https:github.comampasCTL"
   license "AMPAS"
   revision 12
-  head "https://github.com/ampas/CTL.git", branch: "master"
+  head "https:github.comampasCTL.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ampas/CTL/archive/refs/tags/ctl-1.5.2.tar.gz"
+    url "https:github.comampasCTLarchiverefstagsctl-1.5.2.tar.gz"
     sha256 "d7fac1439332c4d84abc3c285b365630acf20ea041033b154aa302befd25e0bd"
 
-    # Backport support for OpenEXR/Imath 3. Remove in the next release.
+    # Backport support for OpenEXRImath 3. Remove in the next release.
     # Due to large number of changes from last stable release to OpenEXR 3 commit
-    # https://github.com/ampas/CTL/commit/3fc4ae7a8af35d380654e573d895216fd5ba407e,
+    # https:github.comampasCTLcommit3fc4ae7a8af35d380654e573d895216fd5ba407e,
     # we apply a patch generated from GitHub compare range.
     patch do
-      url "https://github.com/ampas/CTL/compare/ctl-1.5.2..3fc4ae7a8af35d380654e573d895216fd5ba407e.patch?full_index=1"
+      url "https:github.comampasCTLcomparectl-1.5.2..3fc4ae7a8af35d380654e573d895216fd5ba407e.patch?full_index=1"
       sha256 "701df07c80ad10341d8e70da09ce4a624ae3cccbe86e72bf07e6e6187bca96cc"
     end
 
-    # Fix installation error: file cannot create directory: /CTL.
+    # Fix installation error: file cannot create directory: CTL.
     # Remove in the next release.
     patch do
-      url "https://github.com/ampas/CTL/commit/f2474a09f647426302472009649edb4c3daac471.patch?full_index=1"
+      url "https:github.comampasCTLcommitf2474a09f647426302472009649edb4c3daac471.patch?full_index=1"
       sha256 "9adb22c5558bf661afea173695bad0a23a19af12981ba31c9fc0c6f9129fe6f1"
     end
   end
@@ -55,6 +55,6 @@ class Ctl < Formula
   end
 
   test do
-    assert_match "transforms an image", shell_output("#{bin}/ctlrender -help", 1)
+    assert_match "transforms an image", shell_output("#{bin}ctlrender -help", 1)
   end
 end

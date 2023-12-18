@@ -2,17 +2,17 @@ cask "font-sometype-mono" do
   version :latest
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/dharmatype/Sometype-Mono/archive/master.zip",
-      verified: "github.com/dharmatype/Sometype-Mono/"
+  url "https:github.comdharmatypeSometype-Monoarchivemaster.zip",
+      verified: "github.comdharmatypeSometype-Mono"
   name "Sometype Mono"
-  homepage "https://monospacedfont.com/"
+  homepage "https:monospacedfont.com"
 
-  font "Sometype-Mono-master/fonts/otf/SometypeMono-Bold.otf"
-  font "Sometype-Mono-master/fonts/otf/SometypeMono-BoldItalic.otf"
-  font "Sometype-Mono-master/fonts/otf/SometypeMono-Medium.otf"
-  font "Sometype-Mono-master/fonts/otf/SometypeMono-MediumItalic.otf"
-  font "Sometype-Mono-master/fonts/otf/SometypeMono-Regular.otf"
-  font "Sometype-Mono-master/fonts/otf/SometypeMono-RegularItalic.otf"
+  font "Sometype-Mono-masterfontsotfSometypeMono-Bold.otf"
+  font "Sometype-Mono-masterfontsotfSometypeMono-BoldItalic.otf"
+  font "Sometype-Mono-masterfontsotfSometypeMono-Medium.otf"
+  font "Sometype-Mono-masterfontsotfSometypeMono-MediumItalic.otf"
+  font "Sometype-Mono-masterfontsotfSometypeMono-Regular.otf"
+  font "Sometype-Mono-masterfontsotfSometypeMono-RegularItalic.otf"
 
   # No zap stanza required
 end

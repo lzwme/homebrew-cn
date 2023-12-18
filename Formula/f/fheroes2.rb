@@ -1,14 +1,14 @@
 class Fheroes2 < Formula
   desc "Free Heroes of Might and Magic II is a recreation of HoMM2 game engine"
-  homepage "https://ihhub.github.io/fheroes2/"
-  url "https://ghproxy.com/https://github.com/ihhub/fheroes2/archive/refs/tags/1.0.10.tar.gz"
+  homepage "https:ihhub.github.iofheroes2"
+  url "https:github.comihhubfheroes2archiverefstags1.0.10.tar.gz"
   sha256 "f0bc60973bbdc3c333563a5f53252d6e3edd4ea8c4f91729e0480ff0e6a403a2"
   license "GPL-2.0-or-later"
-  head "https://github.com/ihhub/fheroes2.git", branch: "master"
+  head "https:github.comihhubfheroes2.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,19 +38,19 @@ class Fheroes2 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.install "script/demo/download_demo_version.sh" => "fheroes2-install-demo"
-    bin.install "script/homm2/extract_homm2_resources.sh" => "fheroes2-extract-resources"
+    bin.install "scriptdemodownload_demo_version.sh" => "fheroes2-install-demo"
+    bin.install "scripthomm2extract_homm2_resources.sh" => "fheroes2-extract-resources"
   end
 
   def caveats
     <<~EOS
       Documentation is available at:
-      #{share}/doc/fheroes2/README.txt
+      #{share}docfheroes2README.txt
     EOS
   end
 
   test do
-    io = IO.popen("#{bin}/fheroes2 2>&1")
+    io = IO.popen("#{bin}fheroes2 2>&1")
     io.any? do |line|
       line.include?("fheroes2 engine, version:")
     end

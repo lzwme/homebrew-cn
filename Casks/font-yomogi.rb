@@ -2,10 +2,10 @@ cask "font-yomogi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/yomogi/Yomogi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflyomogiYomogi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Yomogi"
-  homepage "https://fonts.google.com/specimen/Yomogi"
+  homepage "https:fonts.google.comspecimenYomogi"
 
   font "Yomogi-Regular.ttf"
 

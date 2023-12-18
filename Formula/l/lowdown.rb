@@ -1,7 +1,7 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
-  homepage "https://kristaps.bsd.lv/lowdown"
-  url "https://ghproxy.com/https://github.com/kristapsdz/lowdown/archive/refs/tags/VERSION_1_1_0.tar.gz"
+  homepage "https:kristaps.bsd.lvlowdown"
+  url "https:github.comkristapsdzlowdownarchiverefstagsVERSION_1_1_0.tar.gz"
   sha256 "5cc997f742fd9e3268a2bf15cb9c58bfa173b303bc13f5c61f67dedfff3bccce"
   license "ISC"
 
@@ -24,7 +24,7 @@ class Lowdown < Formula
       configure_args << "LINKER_SONAME=-install_name"
     end
 
-    system "./configure", *configure_args
+    system ".configure", *configure_args
     system "make"
     system "make", "install"
   end
@@ -34,22 +34,22 @@ class Lowdown < Formula
       <!DOCTYPE html>
       <html>
       <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <title></title>
-      </head>
+      <meta charset="utf-8" >
+      <meta name="viewport" content="width=device-width,initial-scale=1" >
+      <title><title>
+      <head>
       <body>
-      <h1 id="title">Title</h1>
-      <p>Hello, World</p>
-      </body>
-      </html>
+      <h1 id="title">Title<h1>
+      <p>Hello, World<p>
+      <body>
+      <html>
     EOS
     markdown = <<~EOS
       # Title
 
       Hello, World
     EOS
-    html = pipe_output("#{bin}/lowdown -s", markdown)
+    html = pipe_output("#{bin}lowdown -s", markdown)
     assert_equal expected_html, html
   end
 end

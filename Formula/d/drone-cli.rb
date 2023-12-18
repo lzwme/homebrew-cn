@@ -1,11 +1,11 @@
 class DroneCli < Formula
   desc "Command-line client for the Drone continuous integration server"
-  homepage "https://drone.io"
-  url "https://github.com/harness/drone-cli.git",
+  homepage "https:drone.io"
+  url "https:github.comharnessdrone-cli.git",
       tag:      "v1.7.0",
       revision: "c75a1a82d46e687d2d961115c849bf3a137b8e9d"
   license "Apache-2.0"
-  head "https://github.com/harness/drone-cli.git", branch: "master"
+  head "https:github.comharnessdrone-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "002758637d8a801317305b11f1995618b28c3ba2beb03509dd673de30c8a9010"
@@ -24,12 +24,12 @@ class DroneCli < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(output: bin/"drone", ldflags: ldflags), "drone/main.go"
+    system "go", "build", *std_go_args(output: bin"drone", ldflags: ldflags), "dronemain.go"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/drone --version")
+    assert_match version.to_s, shell_output("#{bin}drone --version")
 
-    assert_match "manage logs", shell_output("#{bin}/drone log 2>&1")
+    assert_match "manage logs", shell_output("#{bin}drone log 2>&1")
   end
 end

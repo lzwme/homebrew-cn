@@ -1,10 +1,10 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
-  homepage "https://github.com/cloudentity/oauth2c"
-  url "https://ghproxy.com/https://github.com/cloudentity/oauth2c/archive/refs/tags/v1.12.3.tar.gz"
+  homepage "https:github.comcloudentityoauth2c"
+  url "https:github.comcloudentityoauth2carchiverefstagsv1.12.3.tar.gz"
   sha256 "0abdc09cf974948fee751caddd0b196203145db50dabfdc23a0d0a228d88fd3b"
   license "Apache-2.0"
-  head "https://github.com/cloudentity/oauth2c.git", branch: "master"
+  head "https:github.comcloudentityoauth2c.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "704d0ffc01828979c9b8344aee977ecf1182847a01cbbaee8975c85fc55e89ea"
@@ -24,7 +24,7 @@ class Oauth2c < Formula
 
   test do
     assert_match "\"access_token\":",
-      shell_output("#{bin}/oauth2c https://oauth2c.us.authz.cloudentity.io/oauth2c/demo " \
+      shell_output("#{bin}oauth2c https:oauth2c.us.authz.cloudentity.iooauth2cdemo " \
                    "--client-id cauktionbud6q8ftlqq0 " \
                    "--client-secret HCwQ5uuUWBRHd04ivjX5Kl0Rz8zxMOekeLtqzki0GPc " \
                    "--grant-type client_credentials " \

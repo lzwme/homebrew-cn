@@ -2,9 +2,9 @@ cask "font-glow-sans-j-wide" do
   version "0.93"
   sha256 "eb20892d347dce7b53084bf420b3947dad79993cbe54fdebca425273c635e521"
 
-  url "https://ghproxy.com/https://github.com/welai/glow-sans/releases/download/v#{version}/GlowSansJ-Wide-v#{version}.zip"
+  url "https:github.comwelaiglow-sansreleasesdownloadv#{version}GlowSansJ-Wide-v#{version}.zip"
   name "Glow Sans J Wide"
-  homepage "https://github.com/welai/glow-sans"
+  homepage "https:github.comwelaiglow-sans"
 
   font "GlowSansJ-Wide-Bold.otf"
   font "GlowSansJ-Wide-Book.otf"

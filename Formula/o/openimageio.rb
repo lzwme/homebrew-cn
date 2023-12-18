@@ -1,14 +1,14 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
-  homepage "https://openimageio.org/"
-  url "https://ghproxy.com/https://github.com/AcademySoftwareFoundation/OpenImageIO/archive/refs/tags/v2.5.6.0.tar.gz"
+  homepage "https:openimageio.org"
+  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv2.5.6.0.tar.gz"
   sha256 "bcfced40a25ef8576383b44d8bbe3732aa2b8efc7b8614482783d6f90378d307"
   license "Apache-2.0"
-  head "https://github.com/AcademySoftwareFoundation/OpenImageIO.git", branch: "master"
+  head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/(?:Release[._-])?v?(\d+(?:\.\d+)+)/i)
+    regex((?:Release[._-])?v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -43,7 +43,7 @@ class Openimageio < Formula
   depends_on "python@3.12"
   depends_on "webp"
 
-  # https://github.com/AcademySoftwareFoundation/OpenImageIO/blob/master/INSTALL.md
+  # https:github.comAcademySoftwareFoundationOpenImageIOblobmasterINSTALL.md
   fails_with :gcc do
     version "5"
     cause "Requires GCC 6.1 or later"
@@ -55,7 +55,7 @@ class Openimageio < Formula
 
   def install
     py3ver = Language::Python.major_minor_version python3
-    ENV["PYTHONPATH"] = prefix/Language::Python.site_packages(python3)
+    ENV["PYTHONPATH"] = prefixLanguage::Python.site_packages(python3)
 
     args = %W[
       -DPython_EXECUTABLE=#{which(python3)}
@@ -83,7 +83,7 @@ class Openimageio < Formula
   test do
     test_image = test_fixtures("test.jpg")
     assert_match "#{test_image} :    1 x    1, 3 channel, uint8 jpeg",
-                 shell_output("#{bin}/oiiotool --info #{test_image} 2>&1")
+                 shell_output("#{bin}oiiotool --info #{test_image} 2>&1")
 
     output = <<~EOS
       from __future__ import print_function

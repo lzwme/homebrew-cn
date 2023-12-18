@@ -1,10 +1,10 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
-  homepage "https://traefik.io/"
-  url "https://ghproxy.com/https://github.com/traefik/traefik/releases/download/v2.10.7/traefik-v2.10.7.src.tar.gz"
+  homepage "https:traefik.io"
+  url "https:github.comtraefiktraefikreleasesdownloadv2.10.7traefik-v2.10.7.src.tar.gz"
   sha256 "64f8fdcb907b8f6cd7431cf91607f45b576324bf224efe4ea0f3dc09e65db6a6"
   license "MIT"
-  head "https://github.com/traefik/traefik.git", branch: "master"
+  head "https:github.comtraefiktraefik.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f9e66e41cf7b5cbb6f9536fb7110b95f4b45b166397173cd76c1a9d507530ea"
@@ -21,25 +21,25 @@ class Traefik < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/traefik/traefik/v#{version.major}/pkg/version.Version=#{version}
+      -X github.comtraefiktraefikv#{version.major}pkgversion.Version=#{version}
     ].join(" ")
     system "go", "generate"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/traefik"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtraefik"
   end
 
   service do
-    run [opt_bin/"traefik", "--configfile=#{etc}/traefik/traefik.toml"]
+    run [opt_bin"traefik", "--configfile=#{etc}traefiktraefik.toml"]
     keep_alive false
     working_dir var
-    log_path var/"log/traefik.log"
-    error_log_path var/"log/traefik.log"
+    log_path var"logtraefik.log"
+    error_log_path var"logtraefik.log"
   end
 
   test do
     ui_port = free_port
     http_port = free_port
 
-    (testpath/"traefik.toml").write <<~EOS
+    (testpath"traefik.toml").write <<~EOS
       [entryPoints]
         [entryPoints.http]
           address = ":#{http_port}"
@@ -52,19 +52,19 @@ class Traefik < Formula
 
     begin
       pid = fork do
-        exec bin/"traefik", "--configfile=#{testpath}/traefik.toml"
+        exec bin"traefik", "--configfile=#{testpath}traefik.toml"
       end
       sleep 5
-      cmd_ui = "curl -sIm3 -XGET http://127.0.0.1:#{http_port}/"
+      cmd_ui = "curl -sIm3 -XGET http:127.0.0.1:#{http_port}"
       assert_match "404 Not Found", shell_output(cmd_ui)
       sleep 1
-      cmd_ui = "curl -sIm3 -XGET http://127.0.0.1:#{ui_port}/dashboard/"
+      cmd_ui = "curl -sIm3 -XGET http:127.0.0.1:#{ui_port}dashboard"
       assert_match "200 OK", shell_output(cmd_ui)
     ensure
       Process.kill(9, pid)
       Process.wait(pid)
     end
 
-    assert_match version.to_s, shell_output("#{bin}/traefik version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}traefik version 2>&1")
   end
 end

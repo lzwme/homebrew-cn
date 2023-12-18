@@ -1,10 +1,10 @@
 class Ferium < Formula
   desc "Fast and multi-source CLI program for managing Minecraft mods and modpacks"
-  homepage "https://github.com/gorilla-devs/ferium"
-  url "https://ghproxy.com/https://github.com/gorilla-devs/ferium/archive/refs/tags/v4.4.1.tar.gz"
+  homepage "https:github.comgorilla-devsferium"
+  url "https:github.comgorilla-devsferiumarchiverefstagsv4.4.1.tar.gz"
   sha256 "ccab09df5cd0c3db890b7099705696cd8770dcf936182dcd266ad3da5f5262f9"
   license "MPL-2.0"
-  head "https://github.com/gorilla-devs/ferium.git", branch: "main"
+  head "https:github.comgorilla-devsferium.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "081eaa1a47d434fbef043250b2d760a8faf1f7404033282a6e62cb81f3b2babe"
@@ -26,20 +26,20 @@ class Ferium < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    generate_completions_from_executable(bin/"ferium", "complete")
+    generate_completions_from_executable(bin"ferium", "complete")
   end
 
   test do
-    system bin/"ferium", "--help"
-    ENV["FERIUM_CONFIG_FILE"] = testpath/"config.json"
-    system bin/"ferium", "profile", "create",
+    system bin"ferium", "--help"
+    ENV["FERIUM_CONFIG_FILE"] = testpath"config.json"
+    system bin"ferium", "profile", "create",
                          "--game-version", "1.19",
                          "--mod-loader", "quilt",
-                         "--output-dir", testpath/"mods",
+                         "--output-dir", testpath"mods",
                          "--name", "test"
-    system bin/"ferium", "add", "sodium"
-    system bin/"ferium", "list", "--verbose"
-    system bin/"ferium", "upgrade"
-    !Dir.glob("#{testpath}/mods/*.jar").empty?
+    system bin"ferium", "add", "sodium"
+    system bin"ferium", "list", "--verbose"
+    system bin"ferium", "upgrade"
+    !Dir.glob("#{testpath}mods*.jar").empty?
   end
 end

@@ -1,11 +1,11 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
-  homepage "https://tarantool.org/"
-  url "https://download.tarantool.org/tarantool/src/tarantool-2.11.2.tar.gz"
+  homepage "https:tarantool.org"
+  url "https:download.tarantool.orgtarantoolsrctarantool-2.11.2.tar.gz"
   sha256 "2f30215ad41f5148471c38c9148f3f8a6e931ed914af153c58a136e08c829d28"
   license "BSD-2-Clause"
   version_scheme 1
-  head "https://github.com/tarantool/tarantool.git", branch: "master"
+  head "https:github.comtarantooltarantool.git", branch: "master"
 
   livecheck do
     url :head
@@ -37,10 +37,10 @@ class Tarantool < Formula
   end
 
   def install
-    # Avoid keeping references to Homebrew's clang/clang++ shims
-    inreplace "src/trivia/config.h.cmake",
+    # Avoid keeping references to Homebrew's clangclang++ shims
+    inreplace "srctriviaconfig.h.cmake",
               "#define COMPILER_INFO \"@CMAKE_C_COMPILER_ID@-@CMAKE_C_COMPILER_VERSION@\"",
-              "#define COMPILER_INFO \"/usr/bin/clang /usr/bin/clang++\""
+              "#define COMPILER_INFO \"usrbinclang usrbinclang++\""
 
     args = std_cmake_args
     args << "-DCMAKE_INSTALL_MANDIR=#{doc}"
@@ -62,12 +62,12 @@ class Tarantool < Formula
         lib_suffix = "dylib"
       end
 
-      args << "-DCURL_INCLUDE_DIR=#{sdk}/usr/include"
-      args << "-DCURL_LIBRARY=#{sdk}/usr/lib/libcurl.#{lib_suffix}"
+      args << "-DCURL_INCLUDE_DIR=#{sdk}usrinclude"
+      args << "-DCURL_LIBRARY=#{sdk}usrliblibcurl.#{lib_suffix}"
       args << "-DCURSES_NEED_NCURSES=ON"
-      args << "-DCURSES_NCURSES_INCLUDE_PATH=#{sdk}/usr/include"
-      args << "-DCURSES_NCURSES_LIBRARY=#{sdk}/usr/lib/libncurses.#{lib_suffix}"
-      args << "-DICONV_INCLUDE_DIR=#{sdk}/usr/include"
+      args << "-DCURSES_NCURSES_INCLUDE_PATH=#{sdk}usrinclude"
+      args << "-DCURSES_NCURSES_LIBRARY=#{sdk}usrliblibncurses.#{lib_suffix}"
+      args << "-DICONV_INCLUDE_DIR=#{sdk}usrinclude"
     else
       args << "-DENABLE_BUNDLED_LIBUNWIND=OFF"
       args << "-DCURL_ROOT=#{Formula["curl"].opt_prefix}"
@@ -80,15 +80,15 @@ class Tarantool < Formula
 
   def post_install
     local_user = ENV["USER"]
-    inreplace etc/"default/tarantool", /(username\s*=).*/, "\\1 '#{local_user}'"
+    inreplace etc"defaulttarantool", (username\s*=).*, "\\1 '#{local_user}'"
 
-    (var/"lib/tarantool").mkpath
-    (var/"log/tarantool").mkpath
-    (var/"run/tarantool").mkpath
+    (var"libtarantool").mkpath
+    (var"logtarantool").mkpath
+    (var"runtarantool").mkpath
   end
 
   test do
-    (testpath/"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~EOS
       box.cfg{}
       local s = box.schema.create_space("test")
       s:create_index("primary")
@@ -100,6 +100,6 @@ class Tarantool < Formula
       end
       os.exit(0)
     EOS
-    system bin/"tarantool", "#{testpath}/test.lua"
+    system bin"tarantool", "#{testpath}test.lua"
   end
 end

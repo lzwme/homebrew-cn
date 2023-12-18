@@ -2,15 +2,15 @@ cask "vallum" do
   version "4.1.3"
   sha256 "b22934ea092f06cd4261f5508c230ac4a0a920a9c7fd8ca1f14ebf8e66818114"
 
-  url "https://ghproxy.com/https://github.com/TheMurusTeam/Vallum/releases/download/v#{version}/vallum-#{version}.zip",
-      verified: "github.com/TheMurusTeam/Vallum/"
+  url "https:github.comTheMurusTeamVallumreleasesdownloadv#{version}vallum-#{version}.zip",
+      verified: "github.comTheMurusTeamVallum"
   name "Vallum"
   desc "Application firewall"
-  homepage "https://www.vallumfirewall.com/"
+  homepage "https:www.vallumfirewall.com"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   depends_on macos: ">= :catalina"
@@ -23,5 +23,5 @@ cask "vallum" do
               "it.murus.afw.helper",
             ]
 
-  zap trash: "~/Library/Preferences/it.murus.Vallum.plist"
+  zap trash: "~LibraryPreferencesit.murus.Vallum.plist"
 end

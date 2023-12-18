@@ -1,7 +1,7 @@
 class Libcyaml < Formula
   desc "C library for reading and writing YAML"
-  homepage "https://github.com/tlsa/libcyaml"
-  url "https://ghproxy.com/https://github.com/tlsa/libcyaml/archive/refs/tags/v1.4.1.tar.gz"
+  homepage "https:github.comtlsalibcyaml"
+  url "https:github.comtlsalibcyamlarchiverefstagsv1.4.1.tar.gz"
   sha256 "8dbd216e1fce90f9f7cca341e5178710adc76ee360a7793ef867edb28f3e4130"
   license "ISC"
 
@@ -19,7 +19,7 @@ class Libcyaml < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-    pkgshare.install "examples/numerical/main.c" => "test.c"
+    pkgshare.install "examplesnumericalmain.c" => "test.c"
   end
 
   test do
@@ -30,10 +30,10 @@ class Libcyaml < Formula
       -o test
     ]
 
-    system ENV.cc, pkgshare/"test.c", *flags
+    system ENV.cc, pkgshare"test.c", *flags
 
-    (testpath/"test.yaml").write "name: Numbers\ndata:\n- 1\n- 2\n- 4\n- 8\n"
+    (testpath"test.yaml").write "name: Numbers\ndata:\n- 1\n- 2\n- 4\n- 8\n"
     expected_output = "Numbers:\n  - 1\n  - 2\n  - 4\n  - 8\n"
-    assert_equal expected_output, shell_output("#{testpath}/test #{testpath}/test.yaml")
+    assert_equal expected_output, shell_output("#{testpath}test #{testpath}test.yaml")
   end
 end

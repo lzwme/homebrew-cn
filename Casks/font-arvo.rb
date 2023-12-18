@@ -2,12 +2,12 @@ cask "font-arvo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/arvo"
+      only_path: "oflarvo"
   name "Arvo"
-  homepage "https://fonts.google.com/specimen/Arvo"
+  homepage "https:fonts.google.comspecimenArvo"
 
   font "Arvo-Bold.ttf"
   font "Arvo-BoldItalic.ttf"

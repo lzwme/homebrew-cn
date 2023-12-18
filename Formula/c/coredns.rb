@@ -1,10 +1,10 @@
 class Coredns < Formula
   desc "DNS server that chains plugins"
-  homepage "https://coredns.io/"
-  url "https://ghproxy.com/https://github.com/coredns/coredns/archive/refs/tags/v1.11.1.tar.gz"
+  homepage "https:coredns.io"
+  url "https:github.comcorednscorednsarchiverefstagsv1.11.1.tar.gz"
   sha256 "4e1cde1759d1705baa9375127eb405cd2f5031f9152947bb958a51fee5898d8c"
   license "Apache-2.0"
-  head "https://github.com/coredns/coredns.git", branch: "master"
+  head "https:github.comcorednscoredns.git", branch: "master"
 
   livecheck do
     url :stable
@@ -35,21 +35,21 @@ class Coredns < Formula
   end
 
   service do
-    run [opt_bin/"coredns", "-conf", etc/"coredns/Corefile"]
+    run [opt_bin"coredns", "-conf", etc"corednsCorefile"]
     keep_alive true
     require_root true
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/coredns.log"
-    error_log_path var/"log/coredns.log"
+    log_path var"logcoredns.log"
+    error_log_path var"logcoredns.log"
   end
 
   test do
     port = free_port
     fork do
-      exec bin/"coredns", "-dns.port=#{port}"
+      exec bin"coredns", "-dns.port=#{port}"
     end
     sleep(2)
     output = shell_output("dig @127.0.0.1 -p #{port} example.com.")
-    assert_match(/example\.com\.\t\t0\tIN\tA\t127\.0\.0\.1\n/, output)
+    assert_match(example\.com\.\t\t0\tIN\tA\t127\.0\.0\.1\n, output)
   end
 end

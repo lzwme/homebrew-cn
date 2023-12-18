@@ -1,14 +1,14 @@
 class Envoy < Formula
-  desc "Cloud-native high-performance edge/middle/service proxy"
-  homepage "https://www.envoyproxy.io/index.html"
-  url "https://ghproxy.com/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.28.0.tar.gz"
+  desc "Cloud-native high-performance edgemiddleservice proxy"
+  homepage "https:www.envoyproxy.ioindex.html"
+  url "https:github.comenvoyproxyenvoyarchiverefstagsv1.28.0.tar.gz"
   sha256 "c5628b609ef9e5fafe872b8828089a189bfbffb6e261b8c4d34eff4c65229a3f"
   license "Apache-2.0"
-  head "https://github.com/envoyproxy/envoy.git", branch: "main"
+  head "https:github.comenvoyproxyenvoy.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class Envoy < Formula
   depends_on "libtool" => :build
   depends_on "ninja" => :build
   # Starting with 1.21, envoy requires a full Xcode installation, not just
-  # command-line tools. See envoyproxy/envoy#16482
+  # command-line tools. See envoyproxyenvoy#16482
   depends_on xcode: :build
   depends_on macos: :catalina
 
@@ -37,18 +37,18 @@ class Envoy < Formula
     depends_on "coreutils" => :build
   end
 
-  # https://github.com/envoyproxy/envoy/tree/main/bazel#supported-compiler-versions
+  # https:github.comenvoyproxyenvoytreemainbazel#supported-compiler-versions
   fails_with :gcc do
     version "8"
     cause "C++17 support and tcmalloc requirement"
   end
 
   def install
-    # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
+    # Per https:luajit.orginstall.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
 
-    env_path = "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
+    env_path = "#{HOMEBREW_PREFIX}bin:usrbin:bin"
     args = %W[
       --compilation_mode=opt
       --curses=no
@@ -58,7 +58,7 @@ class Envoy < Formula
     ]
 
     if OS.linux?
-      # Build fails with GCC 10+ at external/com_google_absl/absl/container/internal/inlined_vector.h:448:5:
+      # Build fails with GCC 10+ at externalcom_google_abslabslcontainerinternalinlined_vector.h:448:5:
       # error: '<anonymous>.absl::inlined_vector_internal::Storage<char, 128, std::allocator<char> >::data_'
       # is used uninitialized in this function [-Werror=uninitialized]
       # Try to remove in a release that uses a newer abseil
@@ -71,35 +71,35 @@ class Envoy < Formula
       args << "--host_cxxopt=-Wno-range-loop-analysis"
 
       # To suppress warning on deprecated declaration on v8 code. For example:
-      # external/v8/src/base/platform/platform-darwin.cc:56:22: 'getsectdatafromheader_64'
+      # externalv8srcbaseplatformplatform-darwin.cc:56:22: 'getsectdatafromheader_64'
       # is deprecated: first deprecated in macOS 13.0.
-      # https://bugs.chromium.org/p/v8/issues/detail?id=13428.
-      # Reference: https://github.com/envoyproxy/envoy/pull/23707.
+      # https:bugs.chromium.orgpv8issuesdetail?id=13428.
+      # Reference: https:github.comenvoyproxyenvoypull23707.
       args << "--cxxopt=-Wno-deprecated-declarations"
       args << "--host_cxxopt=-Wno-deprecated-declarations"
     end
 
     # Write the current version SOURCE_VERSION.
-    system "python3", "tools/github/write_current_source_version.py", "--skip_error_in_git"
+    system "python3", "toolsgithubwrite_current_source_version.py", "--skip_error_in_git"
 
-    system Formula["bazelisk"].opt_bin/"bazelisk", "build", *args, "//source/exe:envoy-static.stripped"
-    bin.install "bazel-bin/source/exe/envoy-static.stripped" => "envoy"
+    system Formula["bazelisk"].opt_bin"bazelisk", "build", *args, "sourceexe:envoy-static.stripped"
+    bin.install "bazel-binsourceexeenvoy-static.stripped" => "envoy"
     pkgshare.install "configs", "examples"
   end
 
   test do
     port = free_port
 
-    cp pkgshare/"configs/envoyproxy_io_proxy.yaml", testpath/"envoy.yaml"
+    cp pkgshare"configsenvoyproxy_io_proxy.yaml", testpath"envoy.yaml"
     inreplace "envoy.yaml" do |s|
       s.gsub! "port_value: 9901", "port_value: #{port}"
       s.gsub! "port_value: 10000", "port_value: #{free_port}"
     end
 
     fork do
-      exec bin/"envoy", "-c", "envoy.yaml"
+      exec bin"envoy", "-c", "envoy.yaml"
     end
     sleep 10
-    assert_match "HEALTHY", shell_output("curl -s 127.0.0.1:#{port}/clusters?format=json")
+    assert_match "HEALTHY", shell_output("curl -s 127.0.0.1:#{port}clusters?format=json")
   end
 end

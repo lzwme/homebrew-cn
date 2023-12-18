@@ -1,11 +1,11 @@
 class H2spec < Formula
-  desc "Conformance testing tool for HTTP/2 implementation"
-  homepage "https://github.com/summerwind/h2spec"
-  url "https://github.com/summerwind/h2spec.git",
+  desc "Conformance testing tool for HTTP2 implementation"
+  homepage "https:github.comsummerwindh2spec"
+  url "https:github.comsummerwindh2spec.git",
       tag:      "v2.6.0",
       revision: "70ac2294010887f48b18e2d64f5cccd48421fad1"
   license "MIT"
-  head "https://github.com/summerwind/h2spec.git", branch: "master"
+  head "https:github.comsummerwindh2spec.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -31,14 +31,14 @@ class H2spec < Formula
       -X main.VERSION=#{version}
       -X main.COMMIT=#{commit}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/h2spec"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdh2spec"
   end
 
   test do
     assert_match "1 tests, 0 passed, 0 skipped, 1 failed",
-      shell_output("#{bin}/h2spec http2/6.3/1 -h httpbin.org 2>&1", 1)
+      shell_output("#{bin}h2spec http26.31 -h httpbin.org 2>&1", 1)
 
     assert_match "connect: connection refused",
-      shell_output("#{bin}/h2spec http2/6.3/1 2>&1", 1)
+      shell_output("#{bin}h2spec http26.31 2>&1", 1)
   end
 end

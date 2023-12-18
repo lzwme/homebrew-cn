@@ -1,10 +1,10 @@
 class Corral < Formula
   desc "Dependency manager for the Pony language"
-  homepage "https://github.com/ponylang/corral"
-  url "https://ghproxy.com/https://github.com/ponylang/corral/archive/refs/tags/0.8.0.tar.gz"
+  homepage "https:github.componylangcorral"
+  url "https:github.componylangcorralarchiverefstags0.8.0.tar.gz"
   sha256 "496fb8cf8d533f3e9eaa64098c32499ba3c94eb51b1f52dd550948e8c612c1b6"
   license "BSD-2-Clause"
-  head "https://github.com/ponylang/corral.git", branch: "main"
+  head "https:github.componylangcorral.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa762ed2c4b29e9cf3d3837853851145a408b0f65d61b7c2a28feb32949dd4ca"
@@ -25,12 +25,12 @@ class Corral < Formula
   end
 
   test do
-    (testpath/"test/main.pony").write <<~EOS
+    (testpath"testmain.pony").write <<~EOS
       actor Main
         new create(env: Env) =>
           env.out.print("Hello World!")
     EOS
-    system "#{bin}/corral", "run", "--", "ponyc", "test"
-    assert_equal "Hello World!", shell_output("./test1").chomp
+    system "#{bin}corral", "run", "--", "ponyc", "test"
+    assert_equal "Hello World!", shell_output(".test1").chomp
   end
 end

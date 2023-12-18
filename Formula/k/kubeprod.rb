@@ -1,7 +1,7 @@
 class Kubeprod < Formula
   desc "Installer for the Bitnami Kubernetes Production Runtime (BKPR)"
-  homepage "https://kubeprod.io"
-  url "https://ghproxy.com/https://github.com/vmware-archive/kube-prod-runtime/archive/refs/tags/v1.8.0.tar.gz"
+  homepage "https:kubeprod.io"
+  url "https:github.comvmware-archivekube-prod-runtimearchiverefstagsv1.8.0.tar.gz"
   sha256 "cc2fbda4c115d164afcaaabbbef4b5824b9b09b6df95d9cce021aee50c2ad2c1"
   license "Apache-2.0"
 
@@ -28,15 +28,15 @@ class Kubeprod < Formula
   end
 
   test do
-    version_output = shell_output("#{bin}/kubeprod version")
+    version_output = shell_output("#{bin}kubeprod version")
     assert_match "Installer version: v#{version}", version_output
 
-    (testpath/"kube-config").write <<~EOS
+    (testpath"kube-config").write <<~EOS
       apiVersion: v1
       clusters:
       - cluster:
           certificate-authority-data: test
-          server: http://127.0.0.1:8080
+          server: http:127.0.0.1:8080
         name: test
       contexts:
       - context:
@@ -58,8 +58,8 @@ class Kubeprod < Formula
     oauth_client_secret = "king-of-the-north"
     contact_email = "jon@castle-black.com"
 
-    ENV["KUBECONFIG"] = testpath/"kube-config"
-    system "#{bin}/kubeprod", "install", "gke",
+    ENV["KUBECONFIG"] = testpath"kube-config"
+    system "#{bin}kubeprod", "install", "gke",
                               "--authz-domain", authz_domain,
                               "--project", project,
                               "--oauth-client-id", oauth_client_id,
@@ -74,6 +74,6 @@ class Kubeprod < Formula
     assert_match "\"contactEmail\": \"#{contact_email}\"", json
 
     jsonnet = File.read("kubeprod-manifest.jsonnet")
-    assert_match "https://releases.kubeprod.io/files/v#{version}/manifests/platforms/gke.jsonnet", jsonnet
+    assert_match "https:releases.kubeprod.iofilesv#{version}manifestsplatformsgke.jsonnet", jsonnet
   end
 end

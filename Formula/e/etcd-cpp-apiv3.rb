@@ -1,7 +1,7 @@
 class EtcdCppApiv3 < Formula
   desc "C++ implementation for etcd's v3 client API, i.e., ETCDCTL_API=3"
-  homepage "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3"
-  url "https://ghproxy.com/https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.3.tar.gz"
+  homepage "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3"
+  url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3archiverefstagsv0.15.3.tar.gz"
   sha256 "1a6f4ed634f3c75cbfaa2768917e280c6df77cac2af5d945ad67ef20d53d8b60"
   license "BSD-3-Clause"
   revision 10
@@ -41,12 +41,12 @@ class EtcdCppApiv3 < Formula
   test do
     port = free_port
 
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include <iostream>
-      #include <etcd/Client.hpp>
+      #include <etcdClient.hpp>
 
       int main() {
-        etcd::Client etcd("http://127.0.0.1:#{port}");
+        etcd::Client etcd("http:127.0.0.1:#{port}");
         etcd.set("foo", "bar").wait();
         auto response = etcd.get("foo").get();
         std::cout << response.value().as_string() << std::endl;
@@ -80,17 +80,17 @@ class EtcdCppApiv3 < Formula
 
     # prepare etcd
     etcd_pid = fork do
-      exec "#{Formula["etcd"].opt_prefix}/bin/etcd",
+      exec "#{Formula["etcd"].opt_prefix}binetcd",
         "--force-new-cluster",
         "--data-dir=#{testpath}",
-        "--listen-client-urls=http://127.0.0.1:#{port}",
-        "--advertise-client-urls=http://127.0.0.1:#{port}"
+        "--listen-client-urls=http:127.0.0.1:#{port}",
+        "--advertise-client-urls=http:127.0.0.1:#{port}"
     end
 
     # sleep to let etcd get its wits about it
     sleep 10
 
-    assert_equal("bar\n", shell_output("./test_etcd_cpp_apiv3"))
+    assert_equal("bar\n", shell_output(".test_etcd_cpp_apiv3"))
   ensure
     # clean up the etcd process before we leave
     Process.kill("HUP", etcd_pid)

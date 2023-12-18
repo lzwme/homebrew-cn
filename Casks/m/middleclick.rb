@@ -2,10 +2,10 @@ cask "middleclick" do
   version "2.7"
   sha256 "c5a98a652d880878452d8827630cf7a7266ce588edb5cf7b1cda5686f5ae71f3"
 
-  url "https://ghproxy.com/https://github.com/artginzburg/MiddleClick-Sonoma/releases/download/#{version}/MiddleClick.zip"
+  url "https:github.comartginzburgMiddleClick-Sonomareleasesdownload#{version}MiddleClick.zip"
   name "MiddleClick"
   desc "Utility to extend trackpad functionality"
-  homepage "https://github.com/artginzburg/MiddleClick-Sonoma"
+  homepage "https:github.comartginzburgMiddleClick-Sonoma"
 
   livecheck do
     url :url
@@ -17,5 +17,5 @@ cask "middleclick" do
   uninstall login_item: "MiddleClick",
             quit:       "com.rouge41.middleClick"
 
-  zap trash: "~/Library/Preferences/com.rouge41.middleClick.plist"
+  zap trash: "~LibraryPreferencescom.rouge41.middleClick.plist"
 end

@@ -1,7 +1,7 @@
 class InotifyTools < Formula
   desc "C library and command-line programs providing a simple interface to inotify"
-  homepage "https://github.com/inotify-tools/inotify-tools"
-  url "https://ghproxy.com/https://github.com/inotify-tools/inotify-tools/archive/refs/tags/4.23.9.0.tar.gz"
+  homepage "https:github.cominotify-toolsinotify-tools"
+  url "https:github.cominotify-toolsinotify-toolsarchiverefstags4.23.9.0.tar.gz"
   sha256 "1dfa33f80b6797ce2f6c01f454fd486d30be4dca1b0c5c2ea9ba3c30a5c39855"
   license "GPL-2.0-or-later"
 
@@ -15,8 +15,8 @@ class InotifyTools < Formula
   depends_on :linux
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--disable-dependency-tracking"
     system "make", "install"
@@ -24,7 +24,7 @@ class InotifyTools < Formula
 
   test do
     touch "test.txt"
-    stdin, stdout, stderr, = Open3.popen3("#{bin}/inotifywatch test.txt --timeout 2")
+    stdin, stdout, stderr, = Open3.popen3("#{bin}inotifywatch test.txt --timeout 2")
     stdin.close
     assert_match "Establishing watches", stderr.read
     stdout.close

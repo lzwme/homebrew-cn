@@ -1,15 +1,15 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
-  homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-2.0.0.tar.xz"
+  homepage "https:nim-lang.org"
+  url "https:nim-lang.orgdownloadnim-2.0.0.tar.xz"
   sha256 "bd6101d840036fb78e93a69df6cf3f9fd0c21cd754b695ff84a3b4add8ed0af7"
   license "MIT"
   revision 1
-  head "https://github.com/nim-lang/Nim.git", branch: "devel"
+  head "https:github.comnim-langNim.git", branch: "devel"
 
   livecheck do
-    url "https://nim-lang.org/install.html"
-    regex(/href=.*?nim[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:nim-lang.orginstall.html"
+    regex(href=.*?nim[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -32,53 +32,53 @@ class Nim < Formula
 
   def install
     if build.head?
-      # this will clone https://github.com/nim-lang/csources_v1
+      # this will clone https:github.comnim-langcsources_v1
       # at some hardcoded revision
-      system "/bin/sh", "build_all.sh"
+      system "binsh", "build_all.sh"
       # Build a new version of the compiler with readline bindings
-      system "./koch", "boot", "-d:release", "-d:useLinenoise"
+      system ".koch", "boot", "-d:release", "-d:useLinenoise"
     else
-      system "/bin/sh", "build.sh"
-      system "bin/nim", "c", "-d:release", "koch"
-      system "./koch", "boot", "-d:release", "-d:useLinenoise"
-      system "./koch", "tools"
+      system "binsh", "build.sh"
+      system "binnim", "c", "-d:release", "koch"
+      system ".koch", "boot", "-d:release", "-d:useLinenoise"
+      system ".koch", "tools"
     end
 
-    system "./koch", "geninstall"
-    system "/bin/sh", "install.sh", prefix
+    system ".koch", "geninstall"
+    system "binsh", "install.sh", prefix
 
-    system "help2man", "bin/nim", "-o", "nim.1", "-N"
+    system "help2man", "binnim", "-o", "nim.1", "-N"
     man1.install "nim.1"
 
-    target = prefix/"nim/bin"
-    bin.install_symlink target/"nim"
+    target = prefix"nimbin"
+    bin.install_symlink target"nim"
     tools = %w[nimble nimgrep nimpretty nimsuggest atlas testament]
     tools.each do |t|
       if t == "testament"
-        system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N", "--no-discard-stderr"
+        system "help2man", buildpath"bin"t, "-o", "#{t}.1", "-N", "--no-discard-stderr"
       else
-        system "help2man", buildpath/"bin"/t, "-o", "#{t}.1", "-N"
+        system "help2man", buildpath"bin"t, "-o", "#{t}.1", "-N"
       end
 
       man1.install "#{t}.1"
-      target.install buildpath/"bin"/t
-      bin.install_symlink target/t
+      target.install buildpath"bin"t
+      bin.install_symlink targett
     end
   end
 
   test do
-    (testpath/"hello.nim").write <<~EOS
+    (testpath"hello.nim").write <<~EOS
       echo("hello")
     EOS
-    assert_equal "hello", shell_output("#{bin}/nim compile --verbosity:0 --run #{testpath}/hello.nim").chomp
+    assert_equal "hello", shell_output("#{bin}nim compile --verbosity:0 --run #{testpath}hello.nim").chomp
 
-    (testpath/"hello.nimble").write <<~EOS
+    (testpath"hello.nimble").write <<~EOS
       version = "0.1.0"
       author = "Author Name"
       description = "A test nimble package"
       license = "MIT"
       requires "nim >= 0.15.0"
     EOS
-    assert_equal "name: \"hello\"\n", shell_output("#{bin}/nimble dump").lines.first
+    assert_equal "name: \"hello\"\n", shell_output("#{bin}nimble dump").lines.first
   end
 end

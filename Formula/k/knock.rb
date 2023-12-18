@@ -1,7 +1,7 @@
 class Knock < Formula
   desc "Port-knock server"
-  homepage "https://github.com/jvinet/knock"
-  url "https://ghproxy.com/https://github.com/jvinet/knock/releases/download/v0.8/knock-0.8.tar.gz"
+  homepage "https:github.comjvinetknock"
+  url "https:github.comjvinetknockreleasesdownloadv0.8knock-0.8.tar.gz"
   sha256 "698d8c965624ea2ecb1e3df4524ed05afe387f6d20ded1e8a231209ad48169c7"
   license "GPL-2.0-or-later"
 
@@ -27,7 +27,7 @@ class Knock < Formula
   end
 
   head do
-    url "https://github.com/jvinet/knock.git", branch: "master"
+    url "https:github.comjvinetknock.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,12 +37,12 @@ class Knock < Formula
 
   def install
     system "autoreconf", "-fi" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/knock", "localhost", "123:tcp"
+    system "#{bin}knock", "localhost", "123:tcp"
   end
 end

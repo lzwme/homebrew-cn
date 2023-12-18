@@ -1,7 +1,7 @@
 class LlvmAT8 < Formula
   desc "Next-gen compiler infrastructure"
-  homepage "https://llvm.org/"
-  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz"
+  homepage "https:llvm.org"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1llvm-8.0.1.src.tar.xz"
   sha256 "44787a6d02f7140f145e2250d56c9f849334e11f9ae379827510ed72f12b75e7"
   license "NCSA"
   revision 5
@@ -20,7 +20,7 @@ class LlvmAT8 < Formula
 
   disable! date: "2023-06-19", because: :versioned_formula
 
-  # https://llvm.org/docs/GettingStarted.html#requirement
+  # https:llvm.orgdocsGettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on arch: :x86_64
   depends_on "python@3.8"
@@ -43,78 +43,78 @@ class LlvmAT8 < Formula
   end
 
   resource "clang" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1cfe-8.0.1.src.tar.xz"
     sha256 "70effd69f7a8ab249f66b0a68aba8b08af52aa2ab710dfb8a0fba102685b1646"
 
     # Fix include paths on Big Sur
     on_big_sur :or_newer do
       # Refactor header search path logic into driver
-      # https://github.com/llvm/llvm-project/commit/e97b5f5cf37e382643b567affd714823215d0e75
+      # https:github.comllvmllvm-projectcommite97b5f5cf37e382643b567affd714823215d0e75
       patch :p2 do
-        url "https://github.com/llvm/llvm-project/commit/e97b5f5cf37e382643b567affd714823215d0e75.patch?full_index=1"
+        url "https:github.comllvmllvm-projectcommite97b5f5cf37e382643b567affd714823215d0e75.patch?full_index=1"
         sha256 "ba4776b7a8c23c844d98c436011c24453ab6f740edd2c3bba2f8b909d2e59dcf"
       end
 
       # Respect --sysroot for header search
-      # https://github.com/llvm/llvm-project/commit/b2ece169ed609b9111c290254d831101d21cbf8f
+      # https:github.comllvmllvm-projectcommitb2ece169ed609b9111c290254d831101d21cbf8f
       patch :p2 do
-        url "https://github.com/llvm/llvm-project/commit/b2ece169ed609b9111c290254d831101d21cbf8f.patch?full_index=1"
+        url "https:github.comllvmllvm-projectcommitb2ece169ed609b9111c290254d831101d21cbf8f.patch?full_index=1"
         sha256 "40a2689cd97bc85d666f74286526b5311015d030ce5a1feae627460805f7b5ca"
       end
 
       # Skip sysroot headers if they are found alongside the toolchain. Backported from
-      # https://github.com/llvm/llvm-project/commit/a3a24316087d0e1b4db0b8fee19cdee8b7968032
+      # https:github.comllvmllvm-projectcommita3a24316087d0e1b4db0b8fee19cdee8b7968032
       patch :p3 do
-        url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/bc3176e6794efb9f2581ce4f9ede3ad34efb492c/llvm%409/llvm%409.patch?full_index=1"
+        url "https:raw.githubusercontent.comHomebrewformula-patchesbc3176e6794efb9f2581ce4f9ede3ad34efb492cllvm%409llvm%409.patch?full_index=1"
         sha256 "02fb21c26f468b0dab25c93b2802539133e06b0bcf19802a7ecdc227c454c4db"
       end
     end
   end
 
   resource "clang-extra-tools" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/clang-tools-extra-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1clang-tools-extra-8.0.1.src.tar.xz"
     sha256 "187179b617e4f07bb605cc215da0527e64990b4a7dd5cbcc452a16b64e02c3e1"
   end
 
   resource "compiler-rt" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/compiler-rt-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1compiler-rt-8.0.1.src.tar.xz"
     sha256 "11828fb4823387d820c6715b25f6b2405e60837d12a7469e7a8882911c721837"
   end
 
   resource "libcxx" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/libcxx-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1libcxx-8.0.1.src.tar.xz"
     sha256 "7f0652c86a0307a250b5741ab6e82bb10766fb6f2b5a5602a63f30337e629b78"
   end
 
   resource "libcxxabi" do
     on_linux do
-      url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/libcxxabi-8.0.1.src.tar.xz"
+      url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1libcxxabi-8.0.1.src.tar.xz"
       sha256 "b75bf3c8dc506e7d950d877eefc8b6120a4651aaa110f5805308861f2cfaf6ef"
     end
   end
 
   resource "libunwind" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/libunwind-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1libunwind-8.0.1.src.tar.xz"
     sha256 "1870161dda3172c63e632c1f60624564e1eb0f9233cfa8f040748ca5ff630f6e"
   end
 
   resource "lld" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/lld-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1lld-8.0.1.src.tar.xz"
     sha256 "9fba1e94249bd7913e8a6c3aadcb308b76c8c3d83c5ce36c99c3f34d73873d88"
   end
 
   resource "lldb" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/lldb-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1lldb-8.0.1.src.tar.xz"
     sha256 "e8a79baa6d11dd0650ab4a1b479f699dfad82af627cbbcd49fa6f2dc14e131d7"
   end
 
   resource "openmp" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/openmp-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1openmp-8.0.1.src.tar.xz"
     sha256 "3e85dd3cad41117b7c89a41de72f2e6aa756ea7b4ef63bb10dcddf8561a7722c"
   end
 
   resource "polly" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/polly-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1polly-8.0.1.src.tar.xz"
     sha256 "e8a1f7e8af238b32ce39ab5de1f3317a2e3f7d71a8b1b8bbacbd481ac76fd2d1"
   end
 
@@ -122,16 +122,16 @@ class LlvmAT8 < Formula
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
 
-    (buildpath/"tools/clang").install resource("clang")
-    (buildpath/"tools/clang/tools/extra").install resource("clang-extra-tools")
-    (buildpath/"projects/openmp").install resource("openmp")
-    (buildpath/"projects/libcxx").install resource("libcxx")
-    (buildpath/"projects/libcxxabi").install resource("libcxxabi") if OS.linux?
-    (buildpath/"projects/libunwind").install resource("libunwind")
-    (buildpath/"tools/lld").install resource("lld")
-    (buildpath/"tools/lldb").install resource("lldb")
-    (buildpath/"tools/polly").install resource("polly")
-    (buildpath/"projects/compiler-rt").install resource("compiler-rt")
+    (buildpath"toolsclang").install resource("clang")
+    (buildpath"toolsclangtoolsextra").install resource("clang-extra-tools")
+    (buildpath"projectsopenmp").install resource("openmp")
+    (buildpath"projectslibcxx").install resource("libcxx")
+    (buildpath"projectslibcxxabi").install resource("libcxxabi") if OS.linux?
+    (buildpath"projectslibunwind").install resource("libunwind")
+    (buildpath"toolslld").install resource("lld")
+    (buildpath"toolslldb").install resource("lldb")
+    (buildpath"toolspolly").install resource("polly")
+    (buildpath"projectscompiler-rt").install resource("compiler-rt")
 
     # compiler-rt has some iOS simulator features that require i386 symbols
     # I'm assuming the rest of clang needs support too for 32-bit compilation
@@ -160,8 +160,8 @@ class LlvmAT8 < Formula
 
     if OS.mac?
       if MacOS.version >= :catalina
-        args << "-DFFI_INCLUDE_DIR=#{MacOS.sdk_path}/usr/include/ffi"
-        args << "-DFFI_LIBRARY_DIR=#{MacOS.sdk_path}/usr/lib"
+        args << "-DFFI_INCLUDE_DIR=#{MacOS.sdk_path}usrincludeffi"
+        args << "-DFFI_LIBRARY_DIR=#{MacOS.sdk_path}usrlib"
       end
 
       args << "-DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON" if MacOS.version <= :mojave
@@ -203,11 +203,11 @@ class LlvmAT8 < Formula
       ]
 
       # Don't pass -rtlib as an argument to GCC because it doesn't understand it.
-      inreplace (buildpath/"projects/libcxx/CMakeLists.txt"),
+      inreplace (buildpath"projectslibcxxCMakeLists.txt"),
         "list(APPEND LIBCXX_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
-      inreplace (buildpath/"projects/libcxxabi/CMakeLists.txt"),
+      inreplace (buildpath"projectslibcxxabiCMakeLists.txt"),
         "list(APPEND LIBCXXABI_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
-      inreplace (buildpath/"projects/libunwind/CMakeLists.txt"),
+      inreplace (buildpath"projectslibunwindCMakeLists.txt"),
         "list(APPEND LIBUNWIND_LINK_FLAGS \"-rtlib=compiler-rt\")", ""
     end
 
@@ -218,19 +218,19 @@ class LlvmAT8 < Formula
       system "make", "install-xcode-toolchain" if MacOS::Xcode.installed?
     end
 
-    (share/"clang/tools").install Dir["tools/clang/tools/scan-{build,view}"]
-    (share/"cmake").install "cmake/modules"
-    inreplace "#{share}/clang/tools/scan-build/bin/scan-build", "$RealBin/bin/clang", "#{bin}/clang"
-    bin.install_symlink share/"clang/tools/scan-build/bin/scan-build", share/"clang/tools/scan-view/bin/scan-view"
-    man1.install_symlink share/"clang/tools/scan-build/man/scan-build.1"
+    (share"clangtools").install Dir["toolsclangtoolsscan-{build,view}"]
+    (share"cmake").install "cmakemodules"
+    inreplace "#{share}clangtoolsscan-buildbinscan-build", "$RealBinbinclang", "#{bin}clang"
+    bin.install_symlink share"clangtoolsscan-buildbinscan-build", share"clangtoolsscan-viewbinscan-view"
+    man1.install_symlink share"clangtoolsscan-buildmanscan-build.1"
 
     # install llvm python bindings
-    (lib/"python3.8/site-packages").install buildpath/"bindings/python/llvm"
-    (lib/"python3.8/site-packages").install buildpath/"tools/clang/bindings/python/clang"
+    (lib"python3.8site-packages").install buildpath"bindingspythonllvm"
+    (lib"python3.8site-packages").install buildpath"toolsclangbindingspythonclang"
 
     if OS.linux?
-      # Strip executables/libraries/object files to reduce their size
-      system("strip", "--strip-unneeded", "--preserve-dates", *(Dir[bin/"**/*", lib/"**/*"]).select do |f|
+      # Strip executableslibrariesobject files to reduce their size
+      system("strip", "--strip-unneeded", "--preserve-dates", *(Dir[bin"***", lib"***"]).select do |f|
         f = Pathname.new(f)
         f.file? && (f.elf? || f.extname == ".a")
       end)
@@ -245,9 +245,9 @@ class LlvmAT8 < Formula
   end
 
   test do
-    assert_equal prefix.to_s, shell_output("#{bin}/llvm-config --prefix").chomp
+    assert_equal prefix.to_s, shell_output("#{bin}llvm-config --prefix").chomp
 
-    (testpath/"omptest.c").write <<~EOS
+    (testpath"omptest.c").write <<~EOS
       #include <stdlib.h>
       #include <stdio.h>
       #include <omp.h>
@@ -260,18 +260,18 @@ class LlvmAT8 < Formula
       }
     EOS
 
-    clean_version = version.to_s[/(\d+\.?)+/]
+    clean_version = version.to_s[(\d+\.?)+]
 
     args = [
       "-L#{lib}",
       "-fopenmp",
       "-nobuiltininc",
-      "-I#{lib}/clang/#{clean_version}/include",
+      "-I#{lib}clang#{clean_version}include",
     ]
     args << "-Wl,-rpath=#{lib}" if OS.linux?
 
-    system "#{bin}/clang", *args, "omptest.c", "-o", "omptest", *ENV["LDFLAGS"].split
-    testresult = shell_output("./omptest")
+    system "#{bin}clang", *args, "omptest.c", "-o", "omptest", *ENV["LDFLAGS"].split
+    testresult = shell_output(".omptest")
 
     sorted_testresult = testresult.split("\n").sort.join("\n")
     expected_result = <<~EOS
@@ -282,7 +282,7 @@ class LlvmAT8 < Formula
     EOS
     assert_equal expected_result.strip, sorted_testresult.strip
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       int main()
       {
@@ -291,7 +291,7 @@ class LlvmAT8 < Formula
       }
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       int main()
       {
@@ -301,59 +301,59 @@ class LlvmAT8 < Formula
     EOS
 
     # Testing default toolchain and SDK location.
-    system "#{bin}/clang++", "-v",
+    system "#{bin}clang++", "-v",
            "-std=c++11", "test.cpp", "-o", "test++"
-    assert_includes MachO::Tools.dylibs("test++"), "/usr/lib/libc++.1.dylib" if OS.mac?
-    assert_equal "Hello World!", shell_output("./test++").chomp
-    system "#{bin}/clang", "-v", "test.c", "-o", "test"
-    assert_equal "Hello World!", shell_output("./test").chomp
+    assert_includes MachO::Tools.dylibs("test++"), "usrliblibc++.1.dylib" if OS.mac?
+    assert_equal "Hello World!", shell_output(".test++").chomp
+    system "#{bin}clang", "-v", "test.c", "-o", "test"
+    assert_equal "Hello World!", shell_output(".test").chomp
 
     # Testing Command Line Tools
     if OS.mac? && MacOS::CLT.installed?
-      toolchain_path = "/Library/Developer/CommandLineTools"
-      sdk_path = "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk"
-      system "#{bin}/clang++", "-v",
+      toolchain_path = "LibraryDeveloperCommandLineTools"
+      sdk_path = "LibraryDeveloperCommandLineToolsSDKsMacOSX.sdk"
+      system "#{bin}clang++", "-v",
              "-isysroot", sdk_path,
-             "-isystem", "#{toolchain_path}/usr/include/c++/v1",
-             "-isystem", "#{toolchain_path}/usr/include",
-             "-isystem", "#{sdk_path}/usr/include",
+             "-isystem", "#{toolchain_path}usrincludec++v1",
+             "-isystem", "#{toolchain_path}usrinclude",
+             "-isystem", "#{sdk_path}usrinclude",
              "-std=c++11", "test.cpp", "-o", "testCLT++"
-      assert_includes MachO::Tools.dylibs("testCLT++"), "/usr/lib/libc++.1.dylib"
-      assert_equal "Hello World!", shell_output("./testCLT++").chomp
-      system "#{bin}/clang", "-v", "test.c", "-o", "testCLT"
-      assert_equal "Hello World!", shell_output("./testCLT").chomp
+      assert_includes MachO::Tools.dylibs("testCLT++"), "usrliblibc++.1.dylib"
+      assert_equal "Hello World!", shell_output(".testCLT++").chomp
+      system "#{bin}clang", "-v", "test.c", "-o", "testCLT"
+      assert_equal "Hello World!", shell_output(".testCLT").chomp
     end
 
     # Testing Xcode
     if OS.mac? && MacOS::Xcode.installed?
-      system "#{bin}/clang++", "-v",
+      system "#{bin}clang++", "-v",
              "-isysroot", MacOS.sdk_path,
-             "-isystem", "#{MacOS::Xcode.toolchain_path}/usr/include/c++/v1",
-             "-isystem", "#{MacOS::Xcode.toolchain_path}/usr/include",
-             "-isystem", "#{MacOS.sdk_path}/usr/include",
+             "-isystem", "#{MacOS::Xcode.toolchain_path}usrincludec++v1",
+             "-isystem", "#{MacOS::Xcode.toolchain_path}usrinclude",
+             "-isystem", "#{MacOS.sdk_path}usrinclude",
              "-std=c++11", "test.cpp", "-o", "testXC++"
-      assert_includes MachO::Tools.dylibs("testXC++"), "/usr/lib/libc++.1.dylib"
-      assert_equal "Hello World!", shell_output("./testXC++").chomp
-      system "#{bin}/clang", "-v",
+      assert_includes MachO::Tools.dylibs("testXC++"), "usrliblibc++.1.dylib"
+      assert_equal "Hello World!", shell_output(".testXC++").chomp
+      system "#{bin}clang", "-v",
              "-isysroot", MacOS.sdk_path,
              "test.c", "-o", "testXC"
-      assert_equal "Hello World!", shell_output("./testXC").chomp
+      assert_equal "Hello World!", shell_output(".testXC").chomp
     end
 
     # link against installed libc++
-    # related to https://github.com/Homebrew/legacy-homebrew/issues/47149
-    system "#{bin}/clang++", "-v",
-           "-isystem", "#{opt_include}/c++/v1",
+    # related to https:github.comHomebrewlegacy-homebrewissues47149
+    system "#{bin}clang++", "-v",
+           "-isystem", "#{opt_include}c++v1",
            "-std=c++11", "-stdlib=libc++", "test.cpp", "-o", "testlibc++",
            "-rtlib=compiler-rt", "-L#{opt_lib}", "-Wl,-rpath,#{opt_lib}"
-    assert_includes (testpath/"testlibc++").dynamically_linked_libraries,
-      (opt_lib/shared_library("libc++", "1")).to_path
-    (testpath/"testlibc++").dynamically_linked_libraries.each do |lib|
-      refute_match(/libstdc\+\+/, lib)
-      refute_match(/libgcc/, lib)
-      refute_match(/libatomic/, lib)
+    assert_includes (testpath"testlibc++").dynamically_linked_libraries,
+      (opt_libshared_library("libc++", "1")).to_path
+    (testpath"testlibc++").dynamically_linked_libraries.each do |lib|
+      refute_match(libstdc\+\+, lib)
+      refute_match(libgcc, lib)
+      refute_match(libatomic, lib)
     end
-    assert_equal "Hello World!", shell_output("./testlibc++").chomp
+    assert_equal "Hello World!", shell_output(".testlibc++").chomp
 
     if OS.linux?
       # Link installed libc++, libc++abi, and libunwind archives both into
@@ -367,49 +367,49 @@ class LlvmAT8 < Formula
       # search paths or handle all of the libraries needed by `libc++` when
       # linking statically.
 
-      system "#{bin}/clang++", "-v", "-o", "test_pie_runtimes",
+      system "#{bin}clang++", "-v", "-o", "test_pie_runtimes",
                    "-pie", "-fPIC", "test.cpp", "-L#{opt_lib}",
                    "-stdlib=libc++", "-rtlib=compiler-rt",
                    "-static-libstdc++", "-lpthread", "-ldl"
-      assert_equal "Hello World!", shell_output("./test_pie_runtimes").chomp
-      (testpath/"test_pie_runtimes").dynamically_linked_libraries.each do |lib|
-        refute_match(/lib(std)?c\+\+/, lib)
-        refute_match(/libgcc/, lib)
-        refute_match(/libatomic/, lib)
-        refute_match(/libunwind/, lib)
+      assert_equal "Hello World!", shell_output(".test_pie_runtimes").chomp
+      (testpath"test_pie_runtimes").dynamically_linked_libraries.each do |lib|
+        refute_match(lib(std)?c\+\+, lib)
+        refute_match(libgcc, lib)
+        refute_match(libatomic, lib)
+        refute_match(libunwind, lib)
       end
 
-      (testpath/"test_plugin.cpp").write <<~EOS
+      (testpath"test_plugin.cpp").write <<~EOS
         #include <iostream>
         __attribute__((visibility("default")))
         extern "C" void run_plugin() {
           std::cout << "Hello Plugin World!" << std::endl;
         }
       EOS
-      (testpath/"test_plugin_main.c").write <<~EOS
+      (testpath"test_plugin_main.c").write <<~EOS
         extern void run_plugin();
         int main() {
           run_plugin();
         }
       EOS
 
-      system "#{bin}/clang++", "-v", "-o", "test_plugin.so",
+      system "#{bin}clang++", "-v", "-o", "test_plugin.so",
              "-shared", "-fPIC", "test_plugin.cpp", "-L#{opt_lib}",
              "-stdlib=libc++", "-rtlib=compiler-rt",
              "-static-libstdc++", "-lpthread", "-ldl"
-      system "#{bin}/clang", "-v",
+      system "#{bin}clang", "-v",
              "test_plugin_main.c", "-o", "test_plugin_libc++",
              "test_plugin.so", "-Wl,-rpath=#{testpath}", "-rtlib=compiler-rt"
-      assert_equal "Hello Plugin World!", shell_output("./test_plugin_libc++").chomp
-      (testpath/"test_plugin.so").dynamically_linked_libraries.each do |lib|
-        refute_match(/lib(std)?c\+\+/, lib)
-        refute_match(/libgcc/, lib)
-        refute_match(/libatomic/, lib)
-        refute_match(/libunwind/, lib)
+      assert_equal "Hello Plugin World!", shell_output(".test_plugin_libc++").chomp
+      (testpath"test_plugin.so").dynamically_linked_libraries.each do |lib|
+        refute_match(lib(std)?c\+\+, lib)
+        refute_match(libgcc, lib)
+        refute_match(libatomic, lib)
+        refute_match(libunwind, lib)
       end
     end
 
-    (testpath/"scanbuildtest.cpp").write <<~EOS
+    (testpath"scanbuildtest.cpp").write <<~EOS
       #include <iostream>
       int main() {
         int *i = new int;
@@ -419,15 +419,15 @@ class LlvmAT8 < Formula
         return 0;
       }
     EOS
-    assert_includes shell_output("#{bin}/scan-build --use-analyzer #{bin}/clang++ " \
-                                 "#{bin}/clang++ scanbuildtest.cpp 2>&1"),
+    assert_includes shell_output("#{bin}scan-build --use-analyzer #{bin}clang++ " \
+                                 "#{bin}clang++ scanbuildtest.cpp 2>&1"),
       "warning: Use of memory after it is freed"
 
-    (testpath/"clangformattest.c").write <<~EOS
+    (testpath"clangformattest.c").write <<~EOS
       int    main() {
           printf("Hello world!"); }
     EOS
     assert_equal "int main() { printf(\"Hello world!\"); }\n",
-      shell_output("#{bin}/clang-format -style=google clangformattest.c")
+      shell_output("#{bin}clang-format -style=google clangformattest.c")
   end
 end

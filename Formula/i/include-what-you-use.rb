@@ -1,18 +1,18 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
-  homepage "https://include-what-you-use.org/"
-  url "https://include-what-you-use.org/downloads/include-what-you-use-0.21.src.tar.gz"
+  homepage "https:include-what-you-use.org"
+  url "https:include-what-you-use.orgdownloadsinclude-what-you-use-0.21.src.tar.gz"
   sha256 "6a351919ff89bda7c95c895472601868db3daab96a958b38e0362890d58760b6"
   license "NCSA"
-  head "https://github.com/include-what-you-use/include-what-you-use.git", branch: "master"
+  head "https:github.cominclude-what-you-useinclude-what-you-use.git", branch: "master"
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
   # version scheme like `Clang+LLVM 3.5` (25 November 2014). The current
   # versions are like: `include-what-you-use 0.15 (aka Clang+LLVM 11)`
   # (21 November 2020).
   livecheck do
-    url "https://include-what-you-use.org/downloads/"
-    regex(/href=.*?include-what-you-use[._-]v?((?!3\.[345])\d+(?:\.\d+)+)[._-]src\.t/i)
+    url "https:include-what-you-use.orgdownloads"
+    regex(href=.*?include-what-you-use[._-]v?((?!3\.[345])\d+(?:\.\d+)+)[._-]src\.ti)
   end
 
   bottle do
@@ -33,13 +33,13 @@ class IncludeWhatYouUse < Formula
   fails_with gcc: "5" # LLVM is built with GCC
 
   def llvm
-    deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
+    deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+(\.\d+)*)?$) }
   end
 
   def install
     # FIXME: CMake stripped out our `llvm` rpath; work around that.
     args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath(source: libexec/"bin", target: llvm.opt_lib)}
+      -DCMAKE_INSTALL_RPATH=#{rpath(source: libexec"bin", target: llvm.opt_lib)}
     ]
 
     # We do not want to symlink clang or libc++ headers into HOMEBREW_PREFIX,
@@ -50,31 +50,31 @@ class IncludeWhatYouUse < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.write_exec_script libexec.glob("bin/*")
-    man1.install_symlink libexec.glob("share/man/man1/*")
+    bin.write_exec_script libexec.glob("bin*")
+    man1.install_symlink libexec.glob("sharemanman1*")
 
     # include-what-you-use needs a copy of the clang and libc++ headers to be
     # located in specific folders under its resource path. These may need to be
     # updated when new major versions of llvm are released, i.e., by
     # incrementing the version of include-what-you-use or the revision of this
     # formula. This would be indicated by include-what-you-use failing to
-    # locate stddef.h and/or stdlib.h when running the test block below.
-    # https://clang.llvm.org/docs/LibTooling.html#libtooling-builtin-includes
-    (libexec/"lib").mkpath
-    ln_sf (llvm.opt_lib/"clang").relative_path_from(libexec/"lib"), libexec/"lib"
-    (libexec/"include").mkpath
-    ln_sf (llvm.opt_include/"c++").relative_path_from(libexec/"include"), libexec/"include"
+    # locate stddef.h andor stdlib.h when running the test block below.
+    # https:clang.llvm.orgdocsLibTooling.html#libtooling-builtin-includes
+    (libexec"lib").mkpath
+    ln_sf (llvm.opt_lib"clang").relative_path_from(libexec"lib"), libexec"lib"
+    (libexec"include").mkpath
+    ln_sf (llvm.opt_include"c++").relative_path_from(libexec"include"), libexec"include"
   end
 
   test do
-    (testpath/"direct.h").write <<~EOS
+    (testpath"direct.h").write <<~EOS
       #include <stddef.h>
       size_t function() { return (size_t)0; }
     EOS
-    (testpath/"indirect.h").write <<~EOS
+    (testpath"indirect.h").write <<~EOS
       #include "direct.h"
     EOS
-    (testpath/"main.c").write <<~EOS
+    (testpath"main.c").write <<~EOS
       #include "indirect.h"
       int main() {
         return (int)function();
@@ -82,19 +82,19 @@ class IncludeWhatYouUse < Formula
     EOS
     expected_output = <<~EOS
       main.c should add these lines:
-      #include "direct.h"  // for function
+      #include "direct.h"   for function
 
       main.c should remove these lines:
-      - #include "indirect.h"  // lines 1-1
+      - #include "indirect.h"   lines 1-1
 
       The full include-list for main.c:
-      #include "direct.h"  // for function
+      #include "direct.h"   for function
       ---
     EOS
     assert_match expected_output,
-      shell_output("#{bin}/include-what-you-use main.c 2>&1")
+      shell_output("#{bin}include-what-you-use main.c 2>&1")
 
-    (testpath/"main.cc").write <<~EOS
+    (testpath"main.cc").write <<~EOS
       #include <iostream>
       int main() {
         std::cout << "Hello, world!" << std::endl;
@@ -102,9 +102,9 @@ class IncludeWhatYouUse < Formula
       }
     EOS
     expected_output = <<~EOS
-      (main.cc has correct #includes/fwd-decls)
+      (main.cc has correct #includesfwd-decls)
     EOS
     assert_match expected_output,
-      shell_output("#{bin}/include-what-you-use main.cc 2>&1")
+      shell_output("#{bin}include-what-you-use main.cc 2>&1")
   end
 end

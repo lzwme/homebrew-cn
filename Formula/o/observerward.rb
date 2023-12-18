@@ -1,7 +1,7 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
-  homepage "https://0x727.github.io/ObserverWard/"
-  url "https://ghproxy.com/https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.11.29.tar.gz"
+  homepage "https:0x727.github.ioObserverWard"
+  url "https:github.com0x727ObserverWardarchiverefstagsv2023.11.29.tar.gz"
   sha256 "dd17eee7f845140184ed583c46182b76ddb8e2030144c33714cee4987ef6a1de"
   license "MIT"
 
@@ -35,14 +35,14 @@ class Observerward < Formula
   end
 
   test do
-    system bin/"observer_ward", "-u"
-    assert_match "0example", shell_output("#{bin}/observer_ward -t https://www.example.com/")
+    system bin"observer_ward", "-u"
+    assert_match "0example", shell_output("#{bin}observer_ward -t https:www.example.com")
 
     [
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
     ].each do |library|
-      assert check_binary_linkage(bin/"observer_ward", library),
+      assert check_binary_linkage(bin"observer_ward", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

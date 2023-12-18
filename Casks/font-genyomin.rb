@@ -2,9 +2,9 @@ cask "font-genyomin" do
   version "1.501"
   sha256 "6feafd61b261bdeccc4e69eba8661f5f1dd7ec79d8ef3a78b19fb20759cf366f"
 
-  url "https://ghproxy.com/https://github.com/ButTaiwan/genyo-font/releases/download/v#{version}/GenYoMin.zip"
+  url "https:github.comButTaiwangenyo-fontreleasesdownloadv#{version}GenYoMin.zip"
   name "GenYoMin"
-  homepage "https://github.com/ButTaiwan/genyo-font"
+  homepage "https:github.comButTaiwangenyo-font"
 
   font "GenYoMin-B.ttc"
   font "GenYoMin-EL.ttc"

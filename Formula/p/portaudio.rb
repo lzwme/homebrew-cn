@@ -1,19 +1,19 @@
 class Portaudio < Formula
-  desc "Cross-platform library for audio I/O"
-  homepage "https://www.portaudio.com"
-  url "https://files.portaudio.com/archives/pa_stable_v190700_20210406.tgz"
+  desc "Cross-platform library for audio IO"
+  homepage "https:www.portaudio.com"
+  url "https:files.portaudio.comarchivespa_stable_v190700_20210406.tgz"
   version "19.7.0"
   sha256 "47efbf42c77c19a05d22e627d42873e991ec0c1357219c0d74ce6a2948cb2def"
   license "MIT"
   version_scheme 1
-  head "https://github.com/PortAudio/portaudio.git", branch: "master"
+  head "https:github.comPortAudioportaudio.git", branch: "master"
 
   livecheck do
-    url "https://files.portaudio.com/download.html"
-    regex(/href=.*?pa[._-]stable[._-]v?(\d+)(?:[._-]\d+)?\.t/i)
+    url "https:files.portaudio.comdownload.html"
+    regex(href=.*?pa[._-]stable[._-]v?(\d+)(?:[._-]\d+)?\.ti)
     strategy :page_match do |page, regex|
       # Modify filename version (190700) to match formula version (19.7.0)
-      page.scan(regex).map { |match| match&.first&.scan(/\d{2}/)&.map(&:to_i)&.join(".") }
+      page.scan(regex).map { |match| match&.first&.scan(\d{2})&.map(&:to_i)&.join(".") }
     end
   end
 
@@ -40,17 +40,17 @@ class Portaudio < Formula
   end
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--enable-mac-universal=no",
                           "--enable-cxx"
     system "make", "install"
 
     # Need 'pa_mac_core.h' to compile PyAudio
-    include.install "include/pa_mac_core.h" if OS.mac?
+    include.install "includepa_mac_core.h" if OS.mac?
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include "portaudio.h"
 
@@ -59,18 +59,18 @@ class Portaudio < Formula
       }
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include "portaudiocpp/System.hxx"
+      #include "portaudiocppSystem.hxx"
 
       int main(){
         std::cout << portaudio::System::versionText();
       }
     EOS
 
-    system ENV.cc, testpath/"test.c", "-I#{include}", "-L#{lib}", "-lportaudio", "-o", "test"
-    system ENV.cxx, testpath/"test.cpp", "-I#{include}", "-L#{lib}", "-lportaudiocpp", "-o", "test_cpp"
-    assert_match stable.version.to_s, shell_output(testpath/"test")
-    assert_match stable.version.to_s, shell_output(testpath/"test_cpp")
+    system ENV.cc, testpath"test.c", "-I#{include}", "-L#{lib}", "-lportaudio", "-o", "test"
+    system ENV.cxx, testpath"test.cpp", "-I#{include}", "-L#{lib}", "-lportaudiocpp", "-o", "test_cpp"
+    assert_match stable.version.to_s, shell_output(testpath"test")
+    assert_match stable.version.to_s, shell_output(testpath"test_cpp")
   end
 end

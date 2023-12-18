@@ -1,14 +1,14 @@
 class GitInteractiveRebaseTool < Formula
   desc "Native sequence editor for Git interactive rebase"
-  homepage "https://gitrebasetool.mitmaro.ca/"
-  url "https://ghproxy.com/https://github.com/MitMaro/git-interactive-rebase-tool/archive/refs/tags/2.3.0.tar.gz"
+  homepage "https:gitrebasetool.mitmaro.ca"
+  url "https:github.comMitMarogit-interactive-rebase-toolarchiverefstags2.3.0.tar.gz"
   sha256 "4af63703b3504370ef298693abc5061fe5bf215536e6d45952afda33a92f8101"
   license "GPL-3.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,13 +34,13 @@ class GitInteractiveRebaseTool < Formula
 
   test do
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
-    mkdir testpath/"repo" do
+    mkdir testpath"repo" do
       system "git", "init"
     end
 
-    (testpath/"repo/.git/rebase-merge/git-rebase-todo").write <<~EOS
+    (testpath"repo.gitrebase-mergegit-rebase-todo").write <<~EOS
       noop
     EOS
 
@@ -48,9 +48,9 @@ class GitInteractiveRebaseTool < Formula
       noop
     EOS
 
-    env = { "GIT_DIR" => testpath/"repo/.git/" }
-    executable = bin/"interactive-rebase-tool"
-    todo_file = testpath/"repo/.git/rebase-merge/git-rebase-todo"
+    env = { "GIT_DIR" => testpath"repo.git" }
+    executable = bin"interactive-rebase-tool"
+    todo_file = testpath"repo.gitrebase-mergegit-rebase-todo"
 
     _, _, pid = PTY.spawn(env, executable, todo_file)
     Process.wait(pid)

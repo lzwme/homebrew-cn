@@ -1,10 +1,10 @@
 class TrashCli < Formula
   desc "Command-line interface to the freedesktop.org trashcan"
-  homepage "https://github.com/andreafrancia/trash-cli"
-  url "https://files.pythonhosted.org/packages/1e/2b/267cd091c656738fd7fb2f60d86898698c5431c0565f87917f8eb6abb753/trash-cli-0.23.11.10.tar.gz"
+  homepage "https:github.comandreafranciatrash-cli"
+  url "https:files.pythonhosted.orgpackages1e2b267cd091c656738fd7fb2f60d86898698c5431c0565f87917f8eb6abb753trash-cli-0.23.11.10.tar.gz"
   sha256 "606ca808cd2e285820874bb8b4287212485de6b01959e448f92ebad3eaa4cef8"
   license "GPL-2.0-or-later"
-  head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
+  head "https:github.comandreafranciatrash-cli.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -35,8 +35,8 @@ class TrashCli < Formula
 
   test do
     touch "testfile"
-    assert_predicate testpath/"testfile", :exist?
-    system bin/"trash-put", "testfile"
-    refute_predicate testpath/"testfile", :exist?
+    assert_predicate testpath"testfile", :exist?
+    system bin"trash-put", "testfile"
+    refute_predicate testpath"testfile", :exist?
   end
 end

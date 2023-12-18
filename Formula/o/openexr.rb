@@ -1,7 +1,7 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
-  homepage "https://www.openexr.com/"
-  url "https://ghproxy.com/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.2.1.tar.gz"
+  homepage "https:www.openexr.com"
+  url "https:github.comAcademySoftwareFoundationopenexrarchiverefstagsv3.2.1.tar.gz"
   sha256 "61e175aa2203399fb3c8c2288752fbea3c2637680d50b6e306ea5f8ffdd46a9b"
   license "BSD-3-Clause"
 
@@ -22,14 +22,14 @@ class Openexr < Formula
   uses_from_macos "zlib"
 
   # These used to be provided by `ilmbase`
-  link_overwrite "include/OpenEXR"
-  link_overwrite "lib/libIex.dylib"
-  link_overwrite "lib/libIex.so"
-  link_overwrite "lib/libIlmThread.dylib"
-  link_overwrite "lib/libIlmThread.so"
+  link_overwrite "includeOpenEXR"
+  link_overwrite "liblibIex.dylib"
+  link_overwrite "liblibIex.so"
+  link_overwrite "liblibIlmThread.dylib"
+  link_overwrite "liblibIlmThread.so"
 
   resource "homebrew-exr" do
-    url "https://github.com/AcademySoftwareFoundation/openexr-images/raw/f17e353fbfcde3406fe02675f4d92aeae422a560/TestImages/AllHalfValues.exr"
+    url "https:github.comAcademySoftwareFoundationopenexr-imagesrawf17e353fbfcde3406fe02675f4d92aeae422a560TestImagesAllHalfValues.exr"
     sha256 "eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4"
   end
 
@@ -42,7 +42,7 @@ class Openexr < Formula
 
   test do
     resource("homebrew-exr").stage do
-      system bin/"exrheader", "AllHalfValues.exr"
+      system bin"exrheader", "AllHalfValues.exr"
     end
   end
 end

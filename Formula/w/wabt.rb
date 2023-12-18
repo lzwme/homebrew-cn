@@ -1,7 +1,7 @@
 class Wabt < Formula
   desc "Web Assembly Binary Toolkit"
-  homepage "https://github.com/WebAssembly/wabt"
-  url "https://github.com/WebAssembly/wabt.git",
+  homepage "https:github.comWebAssemblywabt"
+  url "https:github.comWebAssemblywabt.git",
       tag:      "1.0.34",
       revision: "46e554971eb593f9a071b8d9acd8229027b1c374"
   license "Apache-2.0"
@@ -35,7 +35,7 @@ class Wabt < Formula
   end
 
   test do
-    (testpath/"sample.wast").write("(module (memory 1) (func))")
-    system "#{bin}/wat2wasm", testpath/"sample.wast"
+    (testpath"sample.wast").write("(module (memory 1) (func))")
+    system "#{bin}wat2wasm", testpath"sample.wast"
   end
 end

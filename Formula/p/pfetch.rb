@@ -1,10 +1,10 @@
 class Pfetch < Formula
   desc "Pretty system information tool written in POSIX sh"
-  homepage "https://github.com/dylanaraps/pfetch/"
-  url "https://ghproxy.com/https://github.com/dylanaraps/pfetch/archive/refs/tags/0.6.0.tar.gz"
+  homepage "https:github.comdylanarapspfetch"
+  url "https:github.comdylanarapspfetcharchiverefstags0.6.0.tar.gz"
   sha256 "d1f611e61c1f8ae55bd14f8f6054d06fcb9a2d973095367c1626842db66b3182"
   license "MIT"
-  head "https://github.com/dylanaraps/pfetch.git", branch: "master"
+  head "https:github.comdylanarapspfetch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0771fb68c047893a0b59514f822c42d3371b23734a48c62c88b151a0e386e776"
@@ -32,6 +32,6 @@ class Pfetch < Formula
   end
 
   test do
-    assert_match "uptime", shell_output("#{bin}/pfetch")
+    assert_match "uptime", shell_output("#{bin}pfetch")
   end
 end

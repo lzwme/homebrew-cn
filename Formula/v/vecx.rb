@@ -1,11 +1,11 @@
 class Vecx < Formula
   desc "Vectrex emulator"
-  homepage "https://github.com/jhawthorn/vecx"
-  url "https://ghproxy.com/https://github.com/jhawthorn/vecx/archive/refs/tags/v1.1.tar.gz"
+  homepage "https:github.comjhawthornvecx"
+  url "https:github.comjhawthornvecxarchiverefstagsv1.1.tar.gz"
   sha256 "206ab30db547b9c711438455917b5f1ee96ff87bd025ed8a4bd660f109c8b3fb"
   license "GPL-3.0"
   revision 1
-  head "https://github.com/jhawthorn/vecx.git", branch: "master"
+  head "https:github.comjhawthornvecx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c8b542061ccfc2928396130f87ee7c11c4e5f6b829d4bec6d75414d404695ef8"
@@ -21,7 +21,7 @@ class Vecx < Formula
   end
 
   # Upstream PR for SDL 2 support was opened on 2019-04-13 but no progress on merging.
-  # PR ref: https://github.com/jhawthorn/vecx/pull/5
+  # PR ref: https:github.comjhawthornvecxpull5
   # Last release on 2016-08-19
   deprecate! date: "2023-02-05", because: "uses deprecated `sdl_gfx` and `sdl_image`"
 
@@ -31,11 +31,11 @@ class Vecx < Formula
 
   def install
     # Fix missing symbols for inline functions
-    # https://github.com/jhawthorn/vecx/pull/3
+    # https:github.comjhawthornvecxpull3
     if OS.mac?
-      inreplace ["e6809.c", "vecx.c"], /__inline/, 'static \1'
+      inreplace ["e6809.c", "vecx.c"], __inline, 'static \1'
     else
-      inreplace "Makefile", /^CFLAGS :=/, "\\0 -fgnu89-inline "
+      inreplace "Makefile", ^CFLAGS :=, "\\0 -fgnu89-inline "
     end
 
     system "make"
@@ -46,6 +46,6 @@ class Vecx < Formula
     # Disable this part of the test on Linux because display is not available.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "rom.dat: No such file or directory", shell_output("#{bin}/vecx 2>&1", 1)
+    assert_match "rom.dat: No such file or directory", shell_output("#{bin}vecx 2>&1", 1)
   end
 end

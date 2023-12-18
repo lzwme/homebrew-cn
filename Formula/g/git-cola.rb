@@ -2,11 +2,11 @@ class GitCola < Formula
   include Language::Python::Virtualenv
 
   desc "Highly caffeinated git GUI"
-  homepage "https://git-cola.github.io/"
-  url "https://files.pythonhosted.org/packages/d7/e6/9272e207377034aea65b463a60c76ea764b987bf48bbb55744ea9124f85b/git-cola-4.4.1.tar.gz"
+  homepage "https:git-cola.github.io"
+  url "https:files.pythonhosted.orgpackagesd7e69272e207377034aea65b463a60c76ea764b987bf48bbb55744ea9124f85bgit-cola-4.4.1.tar.gz"
   sha256 "ae8464d202cd917b204b1b0f113609a8163ea5678396b88ab9320a944afe6cc7"
   license "GPL-2.0-or-later"
-  head "https://github.com/git-cola/git-cola.git", branch: "main"
+  head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -25,7 +25,7 @@ class GitCola < Formula
   depends_on "python@3.12"
 
   resource "qtpy" do
-    url "https://files.pythonhosted.org/packages/eb/9a/7ce646daefb2f85bf5b9c8ac461508b58fa5dcad6d40db476187fafd0148/QtPy-2.4.1.tar.gz"
+    url "https:files.pythonhosted.orgpackageseb9a7ce646daefb2f85bf5b9c8ac461508b58fa5dcad6d40db476187fafd0148QtPy-2.4.1.tar.gz"
     sha256 "a5a15ffd519550a1361bdc56ffc07fda56a6af7292f17c7b395d4083af632987"
   end
 
@@ -34,6 +34,6 @@ class GitCola < Formula
   end
 
   test do
-    system bin/"git-cola", "--version"
+    system bin"git-cola", "--version"
   end
 end

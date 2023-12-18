@@ -1,10 +1,10 @@
 class Sbjson < Formula
   desc "JSON CLI parser & reformatter based on SBJson v5"
-  homepage "https://github.com/SBJson/SBJson"
-  url "https://ghproxy.com/https://github.com/SBJson/SBJson/archive/refs/tags/v5.0.3.tar.gz"
+  homepage "https:github.comSBJsonSBJson"
+  url "https:github.comSBJsonSBJsonarchiverefstagsv5.0.3.tar.gz"
   sha256 "9a03f6643b42a82300f4aefcfb6baf46cc2c519f1bb7db3028f338d6d1c56f1b"
   license "BSD-3-Clause"
-  head "https://github.com/SBJson/SBJson.git", branch: "trunk"
+  head "https:github.comSBJsonSBJson.git", branch: "trunk"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a4df626840987db1cc6e63599b28909887644147ecb2c76cff994a9cc2d26cd"
@@ -32,15 +32,15 @@ class Sbjson < Formula
                "build",
                "SYMROOT=build"
 
-    bin.install "build/Release/sbjson"
+    bin.install "buildReleasesbjson"
   end
 
   test do
-    (testpath/"in.json").write <<~EOS
+    (testpath"in.json").write <<~EOS
       [true,false,"string",42.001e3,[],{}]
     EOS
 
-    (testpath/"unwrapped.json").write <<~EOS
+    (testpath"unwrapped.json").write <<~EOS
       true
       false
       "string"
@@ -50,6 +50,6 @@ class Sbjson < Formula
     EOS
 
     assert_equal shell_output("cat unwrapped.json"),
-                 shell_output("#{bin}/sbjson --unwrap-root in.json")
+                 shell_output("#{bin}sbjson --unwrap-root in.json")
   end
 end

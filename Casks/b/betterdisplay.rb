@@ -19,11 +19,11 @@ cask "betterdisplay" do
     end
   end
 
-  url "https://ghproxy.com/https://github.com/waydabber/BetterDisplay/releases/download/v#{version}/BetterDisplay-v#{version}.dmg",
-      verified: "github.com/waydabber/BetterDisplay/"
+  url "https:github.comwaydabberBetterDisplayreleasesdownloadv#{version}BetterDisplay-v#{version}.dmg",
+      verified: "github.comwaydabberBetterDisplay"
   name "BetterDisplay"
   desc "Display management tool"
-  homepage "https://betterdisplay.pro/"
+  homepage "https:betterdisplay.pro"
 
   auto_updates true
 
@@ -32,11 +32,11 @@ cask "betterdisplay" do
   uninstall quit: "pro.betterdisplay.BetterDisplay"
 
   zap trash: [
-    "~/Library/Application Support/BetterDisplay",
-    "~/Library/Application Support/BetterDummy",
-    "~/Library/Caches/pro.betterdisplay.BetterDisplay",
-    "~/Library/HTTPStorages/pro.betterdisplay.BetterDisplay",
-    "~/Library/HTTPStorages/pro.betterdisplay.BetterDisplay.binarycookies",
-    "~/Library/Preferences/pro.betterdisplay.BetterDisplay.plist",
+    "~LibraryApplication SupportBetterDisplay",
+    "~LibraryApplication SupportBetterDummy",
+    "~LibraryCachespro.betterdisplay.BetterDisplay",
+    "~LibraryHTTPStoragespro.betterdisplay.BetterDisplay",
+    "~LibraryHTTPStoragespro.betterdisplay.BetterDisplay.binarycookies",
+    "~LibraryPreferencespro.betterdisplay.BetterDisplay.plist",
   ]
 end

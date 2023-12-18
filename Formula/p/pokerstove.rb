@@ -1,7 +1,7 @@
 class Pokerstove < Formula
   desc "Poker evaluation and enumeration software"
-  homepage "https://github.com/andrewprock/pokerstove"
-  url "https://ghproxy.com/https://github.com/andrewprock/pokerstove/archive/refs/tags/v1.0.tar.gz"
+  homepage "https:github.comandrewprockpokerstove"
+  url "https:github.comandrewprockpokerstovearchiverefstagsv1.0.tar.gz"
   sha256 "68503e7fc5a5b2bac451c0591309eacecba738d787874d5421c81f59fde2bc74"
   license "BSD-3-Clause"
   revision 5
@@ -18,7 +18,7 @@ class Pokerstove < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20618ea7f04f4bf92a7606f18df854a90268948e8f903c1484b4ea9154c7799c"
   end
 
-  # failing to build in https://github.com/Homebrew/homebrew-core/pull/128510,
+  # failing to build in https:github.comHomebrewhomebrew-corepull128510,
   # no response upstream since ~2021
   deprecate! date: "2023-05-10", because: :does_not_build
 
@@ -27,34 +27,34 @@ class Pokerstove < Formula
   depends_on "boost@1.76"
 
   # Build against our googletest instead of the included one
-  # Works around https://github.com/andrewprock/pokerstove/issues/74
+  # Works around https:github.comandrewprockpokerstoveissues74
   patch :DATA
 
   def install
-    rm_rf "src/ext/googletest"
+    rm_rf "srcextgoogletest"
 
     # Our `googletest` requires a newer C++ standard.
     inreplace "CMakeLists.txt", " -std=c++0x", ""
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"
-    prefix.install "build/bin"
+    prefix.install "buildbin"
   end
 
   test do
-    system bin/"peval_tests"
+    system bin"peval_tests"
   end
 end
 
 __END__
---- pokerstove-1.0/CMakeLists.txt.ORIG	2021-02-14 19:26:14.000000000 +0000
-+++ pokerstove-1.0/CMakeLists.txt	2021-02-14 19:26:29.000000000 +0000
+--- pokerstove-1.0CMakeLists.txt.ORIG	2021-02-14 19:26:14.000000000 +0000
++++ pokerstove-1.0CMakeLists.txt	2021-02-14 19:26:29.000000000 +0000
 @@ -14,8 +14,8 @@
 
  # Set up gtest. This must be set up before any subdirectories are
  # added which will use gtest.
--add_subdirectory(src/ext/googletest)
+-add_subdirectory(srcextgoogletest)
 -find_library(gtest REQUIRED)
-+#add_subdirectory(src/ext/googletest)
++#add_subdirectory(srcextgoogletest)
 +find_package(GTest REQUIRED)
  include_directories(${GTEST_INCLUDE_DIRS})
  link_directories(${GTEST_LIBS_DIR})

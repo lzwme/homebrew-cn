@@ -2,22 +2,22 @@ cask "kitematic" do
   version "0.17.13"
   sha256 "d2e3dba17680eec4789851fba376bb573799f448eea7beb2d7aa990f24feb402"
 
-  url "https://ghproxy.com/https://github.com/docker/kitematic/releases/download/v#{version}/Kitematic-#{version}-Mac.zip",
-      verified: "github.com/docker/kitematic/"
+  url "https:github.comdockerkitematicreleasesdownloadv#{version}Kitematic-#{version}-Mac.zip",
+      verified: "github.comdockerkitematic"
   name "Kitematic"
   desc "Visual user interface for Docker Container management"
-  homepage "https://kitematic.com/"
+  homepage "https:kitematic.com"
 
   app "Kitematic.app"
 
   zap trash: [
-    "~/Kitematic",
-    "~/Library/Application Support/Kitematic",
-    "~/Library/Caches/Kitematic",
-    "~/Library/Logs/Kitematic",
-    "~/Library/Preferences/com.electron.kitematic.plist",
-    "~/Library/Preferences/com.electron.kitematic.helper.plist",
-    "~/Library/Saved Application State/com.electron.kitematic.savedState",
+    "~Kitematic",
+    "~LibraryApplication SupportKitematic",
+    "~LibraryCachesKitematic",
+    "~LibraryLogsKitematic",
+    "~LibraryPreferencescom.electron.kitematic.plist",
+    "~LibraryPreferencescom.electron.kitematic.helper.plist",
+    "~LibrarySaved Application Statecom.electron.kitematic.savedState",
   ]
 
   caveats do

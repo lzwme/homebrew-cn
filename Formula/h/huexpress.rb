@@ -1,11 +1,11 @@
 class Huexpress < Formula
   desc "PC Engine emulator"
-  homepage "https://github.com/kallisti5/huexpress"
-  url "https://ghproxy.com/https://github.com/kallisti5/huexpress/archive/refs/tags/3.0.4.tar.gz"
+  homepage "https:github.comkallisti5huexpress"
+  url "https:github.comkallisti5huexpressarchiverefstags3.0.4.tar.gz"
   sha256 "76589f02d1640fc5063d48a47f017077c6b7557431221defe9e38679d86d4db8"
   license "GPL-2.0"
   revision 2
-  head "https://github.com/kallisti5/huexpress.git", branch: "master"
+  head "https:github.comkallisti5huexpress.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "6e8a501836cd6c97ee3344adaff36f6be40a2ddd6d3266cb980cb32eab566006"
@@ -34,12 +34,12 @@ class Huexpress < Formula
 
   def install
     # Don't statically link to libzip.
-    inreplace "src/SConscript", "pkg-config --cflags --libs --static libzip", "pkg-config --cflags --libs libzip"
+    inreplace "srcSConscript", "pkg-config --cflags --libs --static libzip", "pkg-config --cflags --libs libzip"
     system "scons"
-    bin.install ["src/huexpress", "src/hucrc"]
+    bin.install ["srchuexpress", "srchucrc"]
   end
 
   test do
-    assert_match(/Version #{version}$/, shell_output("#{bin}/huexpress -h", 1))
+    assert_match(Version #{version}$, shell_output("#{bin}huexpress -h", 1))
   end
 end

@@ -2,10 +2,10 @@ cask "font-ruthie" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/ruthie/Ruthie-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflruthieRuthie-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Ruthie"
-  homepage "https://fonts.google.com/specimen/Ruthie"
+  homepage "https:fonts.google.comspecimenRuthie"
 
   font "Ruthie-Regular.ttf"
 

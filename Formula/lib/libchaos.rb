@@ -1,7 +1,7 @@
 class Libchaos < Formula
   desc "Advanced library for randomization, hashing and statistical analysis"
-  homepage "https://github.com/maciejczyzewski/libchaos"
-  url "https://ghproxy.com/https://github.com/maciejczyzewski/libchaos/releases/download/v1.0/libchaos-1.0.tar.gz"
+  homepage "https:github.commaciejczyzewskilibchaos"
+  url "https:github.commaciejczyzewskilibchaosreleasesdownloadv1.0libchaos-1.0.tar.gz"
   sha256 "29940ff014359c965d62f15bc34e5c182a6d8a505dc496c636207675843abd15"
   license "BSD-2-Clause"
 
@@ -30,11 +30,11 @@ class Libchaos < Formula
     system "cmake", "-S", ".", "-B", "build", "-DLIBCHAOS_ENABLE_TESTING=OFF",
            "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install buildpath/"build/libchaos.a"
+    lib.install buildpath"buildlibchaos.a"
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include <chaos.h>
       #include <iostream>
       #include <string>
@@ -51,6 +51,6 @@ class Libchaos < Formula
     EOS
 
     system ENV.cxx, "test.cc", "-std=c++11", "-L#{lib}", "-lchaos", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

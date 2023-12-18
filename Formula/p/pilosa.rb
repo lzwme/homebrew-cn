@@ -1,7 +1,7 @@
 class Pilosa < Formula
   desc "Distributed bitmap index that queries across data sets"
-  homepage "https://www.pilosa.com"
-  url "https://ghproxy.com/https://github.com/pilosa/pilosa/archive/refs/tags/v1.4.1.tar.gz"
+  homepage "https:www.pilosa.com"
+  url "https:github.compilosapilosaarchiverefstagsv1.4.1.tar.gz"
   sha256 "a250dda8788fefdb0b0b7eeff1bb44375a570cd4c6a0c501bc55612775b1578e"
   license "Apache-2.0"
 
@@ -14,34 +14,34 @@ class Pilosa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "776da185052f34aa5c973e92bfefb27304168a7d24f5cbb1dd1a951e1330cd5e"
   end
 
-  # https://github.com/pilosa/pilosa/issues/2149#issuecomment-993029527
+  # https:github.compilosapilosaissues2149#issuecomment-993029527
   disable! date: "2022-12-30", because: :unmaintained
 
   depends_on "go" => :build
 
   def install
-    # Fix compilation with Go 1.18 - see https://github.com/golang/go/issues/51706
+    # Fix compilation with Go 1.18 - see https:github.comgolanggoissues51706
     inreplace "go.mod",
-              "golang.org/x/sys v0.0.0-20190429190828-d89cdac9e872",
-              "golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a"
+              "golang.orgxsys v0.0.0-20190429190828-d89cdac9e872",
+              "golang.orgxsys v0.0.0-20220520151302-bc2c85ada10a"
 
-    (buildpath/"go.sum").append_lines <<~EOS
-      golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a h1:dGzPydgVsqGcTRVwiLJ1jVbufYwmzD3LfVPLKsKg+0k=
-      golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+    (buildpath"go.sum").append_lines <<~EOS
+      golang.orgxsys v0.0.0-20220520151302-bc2c85ada10a h1:dGzPydgVsqGcTRVwiLJ1jVbufYwmzD3LfVPLKsKg+0k=
+      golang.orgxsys v0.0.0-20220520151302-bc2c85ada10ago.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
     EOS
 
-    system "make", "build", "FLAGS=-o #{bin}/pilosa", "VERSION=v#{version}"
+    system "make", "build", "FLAGS=-o #{bin}pilosa", "VERSION=v#{version}"
   end
 
   service do
-    run [opt_bin/"pilosa", "server"]
+    run [opt_bin"pilosa", "server"]
     keep_alive true
     working_dir var
   end
 
   test do
     server = fork do
-      exec "#{bin}/pilosa", "server"
+      exec "#{bin}pilosa", "server"
     end
     sleep 0.5
     assert_match("Welcome. Pilosa is running.", shell_output("curl localhost:10101"))

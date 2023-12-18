@@ -1,10 +1,10 @@
 class Yamlfmt < Formula
   desc "Extensible command-line tool to format YAML files"
-  homepage "https://github.com/google/yamlfmt"
-  url "https://ghproxy.com/https://github.com/google/yamlfmt/archive/refs/tags/v0.10.0.tar.gz"
+  homepage "https:github.comgoogleyamlfmt"
+  url "https:github.comgoogleyamlfmtarchiverefstagsv0.10.0.tar.gz"
   sha256 "27d3528a835548b820cd68b3ee60fe5bbed6562a8d54848e353fb19bb7f7f188"
   license "Apache-2.0"
-  head "https://github.com/google/yamlfmt.git", branch: "main"
+  head "https:github.comgoogleyamlfmt.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9872caa0a7f86b271236e9a204c742271b4c13f08b670eb5add2cbf45e7ca910"
@@ -21,13 +21,13 @@ class Yamlfmt < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/yamlfmt"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdyamlfmt"
   end
 
   test do
-    (testpath/"test.yml").write <<~YAML
+    (testpath"test.yml").write <<~YAML
       foo: bar
     YAML
-    system bin/"yamlfmt", "-lint", "test.yml"
+    system bin"yamlfmt", "-lint", "test.yml"
   end
 end

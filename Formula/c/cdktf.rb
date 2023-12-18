@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Cdktf < Formula
   desc "Cloud Development Kit for Terraform"
-  homepage "https://github.com/hashicorp/terraform-cdk"
-  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.19.2.tgz"
+  homepage "https:github.comhashicorpterraform-cdk"
+  url "https:registry.npmjs.orgcdktf-cli-cdktf-cli-0.19.2.tgz"
   sha256 "6e59a2daecbd75c2a591f81a080d2e66d4018edd6af7890e6855307132c51fad"
   license "MPL-2.0"
 
@@ -22,22 +22,22 @@ class Cdktf < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    node_modules = libexec/"lib/node_modules/cdktf-cli/node_modules"
-    node_pty_prebuilds = node_modules/"@cdktf/node-pty-prebuilt-multiarch/prebuilds"
-    (node_pty_prebuilds/"linux-x64").glob("node.abi*.musl.node").map(&:unlink)
+    node_modules = libexec"libnode_modulescdktf-clinode_modules"
+    node_pty_prebuilds = node_modules"@cdktfnode-pty-prebuilt-multiarchprebuilds"
+    (node_pty_prebuilds"linux-x64").glob("node.abi*.musl.node").map(&:unlink)
     node_pty_prebuilds.each_child { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
-    generate_completions_from_executable(libexec/"bin/cdktf", "completion",
+    generate_completions_from_executable(libexec"bincdktf", "completion",
                                          shells: [:bash, :zsh], shell_parameter_format: :none)
   end
 
   test do
     assert_match "ERROR: Cannot initialize a project in a non-empty directory",
-      shell_output("#{bin}/cdktf init --template='python' 2>&1", 1)
+      shell_output("#{bin}cdktf init --template='python' 2>&1", 1)
   end
 end

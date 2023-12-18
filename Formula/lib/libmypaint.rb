@@ -1,7 +1,7 @@
 class Libmypaint < Formula
   desc "MyPaint brush engine library"
-  homepage "https://github.com/mypaint/libmypaint/wiki"
-  url "https://ghproxy.com/https://github.com/mypaint/libmypaint/releases/download/v1.6.1/libmypaint-1.6.1.tar.xz"
+  homepage "https:github.commypaintlibmypaintwiki"
+  url "https:github.commypaintlibmypaintreleasesdownloadv1.6.1libmypaint-1.6.1.tar.xz"
   sha256 "741754f293f6b7668f941506da07cd7725629a793108bb31633fb6c3eae5315f"
   license "ISC"
   revision 1
@@ -29,16 +29,16 @@ class Libmypaint < Formula
   uses_from_macos "perl" => :build
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec"libperl5" unless OS.mac?
 
-    system "./configure", "--disable-introspection",
+    system ".configure", "--disable-introspection",
                           "--without-glib",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <mypaint-brush.h>
       int main() {
         MyPaintBrush *brush = mypaint_brush_new();
@@ -46,7 +46,7 @@ class Libmypaint < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}/libmypaint", "-L#{lib}", "-lmypaint", "-o", "test"
-    system "./test"
+    system ENV.cc, "test.c", "-I#{include}libmypaint", "-L#{lib}", "-lmypaint", "-o", "test"
+    system ".test"
   end
 end

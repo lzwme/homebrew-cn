@@ -2,14 +2,14 @@ cask "font-blackout" do
   version :latest
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/theleagueof/blackout/archive/master.zip",
-      verified: "github.com/theleagueof/blackout/"
+  url "https:github.comtheleagueofblackoutarchivemaster.zip",
+      verified: "github.comtheleagueofblackout"
   name "Blackout"
-  homepage "https://www.theleagueofmoveabletype.com/blackout"
+  homepage "https:www.theleagueofmoveabletype.comblackout"
 
-  font "blackout-master/Blackout 2 AM.ttf"
-  font "blackout-master/Blackout Midnight.ttf"
-  font "blackout-master/Blackout Sunrise.ttf"
+  font "blackout-masterBlackout 2 AM.ttf"
+  font "blackout-masterBlackout Midnight.ttf"
+  font "blackout-masterBlackout Sunrise.ttf"
 
   # No zap stanza required
 end

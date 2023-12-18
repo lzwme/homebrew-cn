@@ -1,10 +1,10 @@
 class Mlt < Formula
-  desc "Author, manage, and run multitrack audio/video compositions"
-  homepage "https://www.mltframework.org/"
-  url "https://ghproxy.com/https://github.com/mltframework/mlt/releases/download/v7.22.0/mlt-7.22.0.tar.gz"
+  desc "Author, manage, and run multitrack audiovideo compositions"
+  homepage "https:www.mltframework.org"
+  url "https:github.commltframeworkmltreleasesdownloadv7.22.0mlt-7.22.0.tar.gz"
   sha256 "7cf4d9573a061d76902c6e12a2f09f5f461e7c697635233df82a63a3fe4d6da6"
   license "LGPL-2.1-only"
-  head "https://github.com/mltframework/mlt.git", branch: "master"
+  head "https:github.commltframeworkmlt.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "2d53a87659cb1ab91f4d26c5300ec2c31596c319d3316eb51b409a1bf040af24"
@@ -35,7 +35,7 @@ class Mlt < Formula
   fails_with gcc: "5"
 
   def install
-    rpaths = [rpath, rpath(source: lib/"mlt")]
+    rpaths = [rpath, rpath(source: lib"mlt")]
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
@@ -53,10 +53,10 @@ class Mlt < Formula
 
     # Workaround as current `mlt` doesn't provide an unversioned mlt++.pc file.
     # Remove if mlt readds or all dependents (e.g. `synfig`) support versioned .pc
-    (lib/"pkgconfig").install_symlink "mlt++-#{version.major}.pc" => "mlt++.pc"
+    (lib"pkgconfig").install_symlink "mlt++-#{version.major}.pc" => "mlt++.pc"
   end
 
   test do
-    assert_match "help", shell_output("#{bin}/melt -help")
+    assert_match "help", shell_output("#{bin}melt -help")
   end
 end

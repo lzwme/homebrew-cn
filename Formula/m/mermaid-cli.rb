@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class MermaidCli < Formula
   desc "Command-line interface (CLI) for mermaid"
-  homepage "https://github.com/mermaid-js/mermaid-cli"
-  url "https://registry.npmjs.org/@mermaid-js/mermaid-cli/-/mermaid-cli-8.11.0.tgz"
+  homepage "https:github.commermaid-jsmermaid-cli"
+  url "https:registry.npmjs.org@mermaid-jsmermaid-cli-mermaid-cli-8.11.0.tgz"
   sha256 "9fa34462054938ad996887a0e4081421c159728761e30254b0c0bae5b77df291"
   license "MIT"
 
@@ -15,19 +15,19 @@ class MermaidCli < Formula
   end
 
   # Needs Chromium for puppeteer. Chromium is currently installed as a pre-built.
-  # Ref: https://github.com/Homebrew/homebrew-core/pull/83338
-  # Ref: https://github.com/Homebrew/homebrew-core/issues/100192
+  # Ref: https:github.comHomebrewhomebrew-corepull83338
+  # Ref: https:github.comHomebrewhomebrew-coreissues100192
   disable! date: "2023-03-07", because: "installs a pre-built copy of Chromium"
 
   depends_on "node"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    (testpath/"test.mmd").write <<~EOS
+    (testpath"test.mmd").write <<~EOS
       sequenceDiagram
           participant Alice
           participant Bob
@@ -35,20 +35,20 @@ class MermaidCli < Formula
           loop Healthcheck
               John->>John: Fight against hypochondria
           end
-          Note right of John: Rational thoughts <br/>prevail!
+          Note right of John: Rational thoughts <br>prevail!
           John-->>Alice: Great!
           John->>Bob: How about you?
           Bob-->>John: Jolly good!
     EOS
 
-    (testpath/"puppeteer-config.json").write <<~EOS
+    (testpath"puppeteer-config.json").write <<~EOS
       {
         "args": ["--no-sandbox"]
       }
     EOS
 
-    system bin/"mmdc", "-p", "puppeteer-config.json", "-i", "#{testpath}/test.mmd", "-o", "#{testpath}/out.svg"
+    system bin"mmdc", "-p", "puppeteer-config.json", "-i", "#{testpath}test.mmd", "-o", "#{testpath}out.svg"
 
-    assert_predicate testpath/"out.svg", :exist?
+    assert_predicate testpath"out.svg", :exist?
   end
 end

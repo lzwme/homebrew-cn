@@ -1,7 +1,7 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
-  homepage "https://github.com/KhronosGroup/SPIRV-Tools"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/SPIRV-Tools/archive/refs/tags/v2023.2.tar.gz"
+  homepage "https:github.comKhronosGroupSPIRV-Tools"
+  url "https:github.comKhronosGroupSPIRV-Toolsarchiverefstagsv2023.2.tar.gz"
   sha256 "7416cc8a98a10c32bacc36a39930b0c5b2a484963df5d68f388ed7ffee1faad3"
   license "Apache-2.0"
 
@@ -21,26 +21,26 @@ class SpirvTools < Formula
   depends_on "python@3.11" => :build
 
   resource "re2" do
-    # revision number could be found in ./DEPS
-    url "https://github.com/google/re2.git",
+    # revision number could be found in .DEPS
+    url "https:github.comgooglere2.git",
         revision: "b059ae85c83ca6b1f29dba20e92e4acb85cb5b29"
   end
 
   resource "effcee" do
-    # revision number could be found in ./DEPS
-    url "https://github.com/google/effcee.git",
+    # revision number could be found in .DEPS
+    url "https:github.comgoogleeffcee.git",
         revision: "66edefd2bb641de8a2f46b476de21f227fc03a28"
   end
 
   resource "spirv-headers" do
-    # revision number could be found in ./DEPS
-    url "https://github.com/KhronosGroup/SPIRV-Headers.git",
+    # revision number could be found in .DEPS
+    url "https:github.comKhronosGroupSPIRV-Headers.git",
         revision: "1feaf4414eb2b353764d01d88f8aa4bcc67b60db"
   end
 
   def install
     resources.each do |res|
-      (buildpath/"external"/res.name).install res
+      (buildpath"external"res.name).install res
     end
 
     mkdir "build" do
@@ -52,11 +52,11 @@ class SpirvTools < Formula
       system "make", "install"
     end
 
-    (libexec/"examples").install "examples/cpp-interface/main.cpp"
+    (libexec"examples").install "examplescpp-interfacemain.cpp"
   end
 
   test do
-    cp libexec/"examples"/"main.cpp", "test.cpp"
+    cp libexec"examples""main.cpp", "test.cpp"
 
     args = if OS.mac?
       ["-lc++"]
@@ -66,6 +66,6 @@ class SpirvTools < Formula
 
     system ENV.cc, "-o", "test", "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
                    "-lSPIRV-Tools", "-lSPIRV-Tools-link", "-lSPIRV-Tools-opt", *args
-    system "./test"
+    system ".test"
   end
 end

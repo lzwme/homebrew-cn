@@ -2,8 +2,8 @@ class Cryfs < Formula
   include Language::Python::Virtualenv
 
   desc "Encrypts your files so you can safely store them in Dropbox, iCloud, etc."
-  homepage "https://www.cryfs.org"
-  url "https://ghproxy.com/https://github.com/cryfs/cryfs/releases/download/0.11.4/cryfs-0.11.4.tar.gz"
+  homepage "https:www.cryfs.org"
+  url "https:github.comcryfscryfsreleasesdownload0.11.4cryfs-0.11.4.tar.gz"
   sha256 "6caca6276ce5aec40bf321fd0911b0af7bcffc44c3cb82ff5c5af944d6f75a45"
   license "LGPL-3.0"
   revision 1
@@ -13,7 +13,7 @@ class Cryfs < Formula
   end
 
   head do
-    url "https://github.com/cryfs/cryfs.git", branch: "develop"
+    url "https:github.comcryfscryfs.git", branch: "develop"
   end
 
   depends_on "cmake" => :build
@@ -30,19 +30,19 @@ class Cryfs < Formula
   fails_with gcc: "5"
 
   resource "versioneer" do
-    url "https://files.pythonhosted.org/packages/32/d7/854e45d2b03e1a8ee2aa6429dd396d002ce71e5d88b77551b2fb249cb382/versioneer-0.29.tar.gz"
+    url "https:files.pythonhosted.orgpackages32d7854e45d2b03e1a8ee2aa6429dd396d002ce71e5d88b77551b2fb249cb382versioneer-0.29.tar.gz"
     sha256 "5ab283b9857211d61b53318b7c792cf68e798e765ee17c27ade9f6c924235731"
   end
 
   def install
     python = "python3.12"
-    venv_root = buildpath/"venv"
+    venv_root = buildpath"venv"
 
     venv = virtualenv_create(venv_root, python)
     venv.pip_install resource("versioneer")
 
-    ENV.prepend_path "PYTHONPATH", venv_root/Language::Python.site_packages(python)
-    ENV.prepend_path "PATH", venv_root/"bin"
+    ENV.prepend_path "PYTHONPATH", venv_rootLanguage::Python.site_packages(python)
+    ENV.prepend_path "PATH", venv_root"bin"
 
     configure_args = [
       "-DBUILD_TESTING=off",
@@ -50,7 +50,7 @@ class Cryfs < Formula
 
     system "cmake", "-B", "build", "-S", ".", *configure_args, *std_cmake_args,
                     "-DCRYFS_UPDATE_CHECKS=OFF",
-                    "-DDEPENDENCY_CONFIG=cmake-utils/DependenciesFromLocalSystem.cmake"
+                    "-DDEPENDENCY_CONFIG=cmake-utilsDependenciesFromLocalSystem.cmake"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -59,7 +59,7 @@ class Cryfs < Formula
     ENV["CRYFS_FRONTEND"] = "noninteractive"
 
     # Test showing help page
-    assert_match "CryFS", shell_output("#{bin}/cryfs 2>&1", 10)
+    assert_match "CryFS", shell_output("#{bin}cryfs 2>&1", 10)
 
     # Test mounting a filesystem. This command will ultimately fail because homebrew tests
     # don't have the required permissions to mount fuse filesystems, but before that
@@ -69,6 +69,6 @@ class Cryfs < Formula
     mkdir "basedir"
     mkdir "mountdir"
     expected_output = "fuse: device not found, try 'modprobe fuse' first"
-    assert_match expected_output, pipe_output("#{bin}/cryfs -f basedir mountdir 2>&1", "password")
+    assert_match expected_output, pipe_output("#{bin}cryfs -f basedir mountdir 2>&1", "password")
   end
 end

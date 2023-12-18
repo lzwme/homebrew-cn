@@ -1,10 +1,10 @@
 class Gti < Formula
   desc "ASCII-art displaying typo-corrector for commands"
-  homepage "https://r-wos.org/hacks/gti"
-  url "https://ghproxy.com/https://github.com/rwos/gti/archive/refs/tags/v1.9.1.tar.gz"
+  homepage "https:r-wos.orghacksgti"
+  url "https:github.comrwosgtiarchiverefstagsv1.9.1.tar.gz"
   sha256 "f8a3afdd3967fe7d88bd1b0b9f5cb62ae04dc9ba458238da91efc213f61a9cf9"
   license "MIT"
-  head "https://github.com/rwos/gti.git", branch: "master"
+  head "https:github.comrwosgti.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1446d1aac84e5119614a6bbfd66171910abc23826d06754d3319142ca0ec7f63"
@@ -21,12 +21,12 @@ class Gti < Formula
     bin.install "gti"
     man6.install "gti.6"
 
-    bash_completion.install "completions/gti.bash" => "gti"
-    zsh_completion.install "completions/gti.zsh" => "_gti"
+    bash_completion.install "completionsgti.bash" => "gti"
+    zsh_completion.install "completionsgti.zsh" => "_gti"
   end
 
   test do
-    system bin/"gti", "init"
-    assert_predicate testpath/".git", :exist?
+    system bin"gti", "init"
+    assert_predicate testpath".git", :exist?
   end
 end

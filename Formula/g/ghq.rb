@@ -1,11 +1,11 @@
 class Ghq < Formula
   desc "Remote repository management made easy"
-  homepage "https://github.com/x-motemen/ghq"
-  url "https://github.com/x-motemen/ghq.git",
+  homepage "https:github.comx-motemenghq"
+  url "https:github.comx-motemenghq.git",
       tag:      "v1.4.2",
       revision: "7163e61e2309a039241ad40b4a25bea35671ea6f"
   license "MIT"
-  head "https://github.com/x-motemen/ghq.git", branch: "master"
+  head "https:github.comx-motemenghq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7adb9158c20355550e353fbe48924b3335a5a1350b19e2b021e616d19e7ba1e8"
@@ -24,11 +24,11 @@ class Ghq < Formula
   def install
     system "make", "build", "VERBOSE=1"
     bin.install "ghq"
-    bash_completion.install "misc/bash/_ghq" => "ghq"
-    zsh_completion.install "misc/zsh/_ghq"
+    bash_completion.install "miscbash_ghq" => "ghq"
+    zsh_completion.install "misczsh_ghq"
   end
 
   test do
-    assert_match "#{testpath}/ghq", shell_output("#{bin}/ghq root")
+    assert_match "#{testpath}ghq", shell_output("#{bin}ghq root")
   end
 end

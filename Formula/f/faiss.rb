@@ -1,13 +1,13 @@
 class Faiss < Formula
   desc "Efficient similarity search and clustering of dense vectors"
-  homepage "https://github.com/facebookresearch/faiss"
-  url "https://ghproxy.com/https://github.com/facebookresearch/faiss/archive/refs/tags/v1.7.4.tar.gz"
+  homepage "https:github.comfacebookresearchfaiss"
+  url "https:github.comfacebookresearchfaissarchiverefstagsv1.7.4.tar.gz"
   sha256 "d9a7b31bf7fd6eb32c10b7ea7ff918160eed5be04fe63bb7b4b4b5f2bbde01ad"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -46,8 +46,8 @@ class Faiss < Formula
   end
 
   test do
-    cp pkgshare/"demos/demo_imi_flat.cpp", testpath
+    cp pkgshare"demosdemo_imi_flat.cpp", testpath
     system ENV.cxx, "-std=c++11", "demo_imi_flat.cpp", "-L#{lib}", "-lfaiss", "-o", "test"
-    assert_match "Query results", shell_output("./test")
+    assert_match "Query results", shell_output(".test")
   end
 end

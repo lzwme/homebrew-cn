@@ -1,11 +1,11 @@
 class Protolint < Formula
   desc "Pluggable linter and fixer to enforce Protocol Buffer style and conventions"
-  homepage "https://github.com/yoheimuta/protolint"
-  url "https://github.com/yoheimuta/protolint.git",
+  homepage "https:github.comyoheimutaprotolint"
+  url "https:github.comyoheimutaprotolint.git",
       tag:      "v0.46.3",
       revision: "6bd312ad6d1e9f650d340250759f3445cc57d23c"
   license "MIT"
-  head "https://github.com/yoheimuta/protolint.git", branch: "master"
+  head "https:github.comyoheimutaprotolint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad055f370b92b3697972e879cedb4edc2009fecf05c31c9fda73d4251c1afb4c"
@@ -22,34 +22,34 @@ class Protolint < Formula
   def install
     protolint_ldflags = %W[
       -s -w
-      -X github.com/yoheimuta/protolint/internal/cmd.version=#{version}
-      -X github.com/yoheimuta/protolint/internal/cmd.revision=#{Utils.git_head(length: 8)}
+      -X github.comyoheimutaprotolintinternalcmd.version=#{version}
+      -X github.comyoheimutaprotolintinternalcmd.revision=#{Utils.git_head(length: 8)}
     ]
     protocgenprotolint_ldflags = %W[
       -s -w
-      -X github.com/yoheimuta/protolint/internal/cmd/protocgenprotolint.version=#{version}
-      -X github.com/yoheimuta/protolint/internal/cmd/protocgenprotolint.revision=#{Utils.git_head(length: 8)}
+      -X github.comyoheimutaprotolintinternalcmdprotocgenprotolint.version=#{version}
+      -X github.comyoheimutaprotolintinternalcmdprotocgenprotolint.revision=#{Utils.git_head(length: 8)}
     ]
-    system "go", "build", *std_go_args(ldflags: protolint_ldflags), "./cmd/protolint"
+    system "go", "build", *std_go_args(ldflags: protolint_ldflags), ".cmdprotolint"
     system "go", "build",
-      *std_go_args(ldflags: protocgenprotolint_ldflags, output: bin/"protoc-gen-protolint"),
-      "./cmd/protoc-gen-protolint"
+      *std_go_args(ldflags: protocgenprotolint_ldflags, output: bin"protoc-gen-protolint"),
+      ".cmdprotoc-gen-protolint"
 
-    pkgshare.install Dir["_example/proto/*.proto"]
+    pkgshare.install Dir["_exampleproto*.proto"]
   end
 
   test do
-    cp_r Dir[pkgshare/"*.proto"], testpath
+    cp_r Dir[pkgshare"*.proto"], testpath
 
     output = "[invalidFileName.proto:1:1] File name \"invalidFileName.proto\" " \
              "should be lower_snake_case.proto like \"invalid_file_name.proto\"."
     assert_equal output,
-      shell_output("#{bin}/protolint lint #{testpath}/invalidFileName.proto 2>&1", 1).chomp
+      shell_output("#{bin}protolint lint #{testpath}invalidFileName.proto 2>&1", 1).chomp
 
     output = "Quoted string should be \"other.proto\" but was 'other.proto'."
-    assert_match output, shell_output("#{bin}/protolint lint #{testpath}/simple.proto 2>&1", 1)
+    assert_match output, shell_output("#{bin}protolint lint #{testpath}simple.proto 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/protolint version")
-    assert_match version.to_s, shell_output("#{bin}/protoc-gen-protolint version")
+    assert_match version.to_s, shell_output("#{bin}protolint version")
+    assert_match version.to_s, shell_output("#{bin}protoc-gen-protolint version")
   end
 end

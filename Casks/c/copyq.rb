@@ -12,29 +12,29 @@ cask "copyq" do
     sha256 "f1d61f1194922393471975c0f8accf83ad58ed9ea77b3a342a771e7778f74d15"
   end
 
-  url "https://ghproxy.com/https://github.com/hluk/CopyQ/releases/download/v#{version}/CopyQ.dmg.zip",
-      verified: "github.com/hluk/CopyQ/"
+  url "https:github.comhlukCopyQreleasesdownloadv#{version}CopyQ.dmg.zip",
+      verified: "github.comhlukCopyQ"
   name "CopyQ"
   desc "Clipboard manager with advanced features"
-  homepage "https://hluk.github.io/CopyQ/"
+  homepage "https:hluk.github.ioCopyQ"
 
   app "CopyQ.app"
-  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
-  shimscript = "#{staged_path}/copyq.wrapper.sh"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}copyq.wrapper.sh"
   binary shimscript, target: "copyq"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!/bin/bash
-      exec '#{appdir}/CopyQ.app/Contents/MacOS/CopyQ' "$@"
+      #!binbash
+      exec '#{appdir}CopyQ.appContentsMacOSCopyQ' "$@"
     EOS
   end
 
   zap trash: [
-    "~/.config/copyq",
-    "~/Library/Application Support/copyq",
-    "~/Library/Application Support/copyq.log",
-    "~/Library/Preferences/com.copyq.copyq.plist",
+    "~.configcopyq",
+    "~LibraryApplication Supportcopyq",
+    "~LibraryApplication Supportcopyq.log",
+    "~LibraryPreferencescom.copyq.copyq.plist",
   ]
 
   caveats do

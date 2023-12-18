@@ -2,12 +2,12 @@ cask "font-cabin-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/cabincondensed"
+      only_path: "oflcabincondensed"
   name "Cabin Condensed"
-  homepage "https://fonts.google.com/specimen/Cabin+Condensed"
+  homepage "https:fonts.google.comspecimenCabin+Condensed"
 
   font "CabinCondensed-Bold.ttf"
   font "CabinCondensed-Medium.ttf"

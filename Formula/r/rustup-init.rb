@@ -1,11 +1,11 @@
 class RustupInit < Formula
   desc "Rust toolchain installer"
-  homepage "https://github.com/rust-lang/rustup"
-  url "https://ghproxy.com/https://github.com/rust-lang/rustup/archive/refs/tags/1.26.0.tar.gz"
+  homepage "https:github.comrust-langrustup"
+  url "https:github.comrust-langrustuparchiverefstags1.26.0.tar.gz"
   sha256 "6f20ff98f2f1dbde6886f8d133fe0d7aed24bc76c670ea1fca18eb33baadd808"
   license any_of: ["Apache-2.0", "MIT"]
   revision 1
-  head "https://github.com/rust-lang/rustup.git", branch: "master"
+  head "https:github.comrust-langrustup.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23448f34076addfcb95eed04ba2bafcea32a25b57442e24baf1a92572ca0a9b4"
@@ -40,16 +40,16 @@ class RustupInit < Formula
   end
 
   test do
-    ENV["CARGO_HOME"] = testpath/".cargo"
-    ENV["RUSTUP_HOME"] = testpath/".multirust"
+    ENV["CARGO_HOME"] = testpath".cargo"
+    ENV["RUSTUP_HOME"] = testpath".multirust"
 
-    system bin/"rustup-init", "-y"
-    (testpath/"hello.rs").write <<~EOS
+    system bin"rustup-init", "-y"
+    (testpath"hello.rs").write <<~EOS
       fn main() {
         println!("Hello World!");
       }
     EOS
-    system testpath/".cargo/bin/rustc", "hello.rs"
-    assert_equal "Hello World!", shell_output("./hello").chomp
+    system testpath".cargobinrustc", "hello.rs"
+    assert_equal "Hello World!", shell_output(".hello").chomp
   end
 end

@@ -2,10 +2,10 @@ cask "font-gamja-flower" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/gamjaflower/GamjaFlower-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflgamjaflowerGamjaFlower-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Gamja Flower"
-  homepage "https://fonts.google.com/specimen/Gamja+Flower"
+  homepage "https:fonts.google.comspecimenGamja+Flower"
 
   font "GamjaFlower-Regular.ttf"
 

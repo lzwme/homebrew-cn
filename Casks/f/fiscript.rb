@@ -2,21 +2,21 @@ cask "fiscript" do
   version "1.0.1"
   sha256 "a622526479338a151c42f57b04717902555b33aad06abba249c8a4bb0554a0ed"
 
-  url "https://ghproxy.com/https://github.com/Mortennn/FiScript/releases/download/v#{version}/FiScript.zip"
+  url "https:github.comMortennnFiScriptreleasesdownloadv#{version}FiScript.zip"
   name "FiScript"
-  homepage "https://github.com/Mortennn/FiScript"
+  homepage "https:github.comMortennnFiScript"
 
   depends_on macos: ">= :sierra"
 
   app "FiScript.app"
 
   zap trash: [
-    "~/Library/Application Scripts/com.Mortennn.FiScript",
-    "~/Library/Application Scripts/com.Mortennn.FiScript.Finder-Extension",
-    "~/Library/Containers/com.Mortennn.FiScript",
-    "~/Library/Containers/com.Mortennn.FiScript.Finder-Extension",
-    "~/Library/Group Containers/group.Mortennn.FiScript",
-    "~/Library/Group Containers/sharedContainerID.container",
-    "~/Library/Group Containers/group.Mortennn.FiScript",
+    "~LibraryApplication Scriptscom.Mortennn.FiScript",
+    "~LibraryApplication Scriptscom.Mortennn.FiScript.Finder-Extension",
+    "~LibraryContainerscom.Mortennn.FiScript",
+    "~LibraryContainerscom.Mortennn.FiScript.Finder-Extension",
+    "~LibraryGroup Containersgroup.Mortennn.FiScript",
+    "~LibraryGroup ContainerssharedContainerID.container",
+    "~LibraryGroup Containersgroup.Mortennn.FiScript",
   ]
 end

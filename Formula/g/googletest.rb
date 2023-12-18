@@ -1,10 +1,10 @@
 class Googletest < Formula
   desc "Google Testing and Mocking Framework"
-  homepage "https://github.com/google/googletest"
-  url "https://ghproxy.com/https://github.com/google/googletest/archive/refs/tags/v1.14.0.tar.gz"
+  homepage "https:github.comgooglegoogletest"
+  url "https:github.comgooglegoogletestarchiverefstagsv1.14.0.tar.gz"
   sha256 "8ad598c73ad796e0d8280b082cebd82a630d73e73cd3c70057938a6501bba5d7"
   license "BSD-3-Clause"
-  head "https://github.com/google/googletest.git", branch: "main"
+  head "https:github.comgooglegoogletest.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -27,19 +27,19 @@ class Googletest < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    # for use case like `#include "googletest/googletest/src/gtest-all.cc"`
-    (include/"googlemock/googlemock/src").install Dir["googlemock/src/*"]
-    (include/"googletest/googletest/src").install Dir["googletest/src/*"]
+    # for use case like `#include "googletestgoogletestsrcgtest-all.cc"`
+    (include"googlemockgooglemocksrc").install Dir["googlemocksrc*"]
+    (include"googletestgoogletestsrc").install Dir["googletestsrc*"]
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <string>
       #include <string_view>
       #include <vector>
-      #include <gtest/gtest.h>
-      #include <gtest/gtest-death-test.h>
-      #include "gmock/gmock.h"
+      #include <gtestgtest.h>
+      #include <gtestgtest-death-test.h>
+      #include "gmockgmock.h"
 
       TEST(Simple, Boolean)
       {
@@ -58,6 +58,6 @@ class Googletest < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-lgtest", "-lgtest_main", "-pthread", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

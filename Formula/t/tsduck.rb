@@ -1,10 +1,10 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
-  homepage "https://tsduck.io/"
-  url "https://ghproxy.com/https://github.com/tsduck/tsduck/archive/refs/tags/v3.36-3528.tar.gz"
+  homepage "https:tsduck.io"
+  url "https:github.comtsducktsduckarchiverefstagsv3.36-3528.tar.gz"
   sha256 "068ef1cbc60821a4cce8d50c876edef5150ad581b31f4a92f085e20b3becd0eb"
   license "BSD-2-Clause"
-  head "https://github.com/tsduck/tsduck.git", branch: "master"
+  head "https:github.comtsducktsduck.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7731a93d9a8a7a205af037eacba7df9b169eed0f1c3b2c7d3dfbf399bbe2a650"
@@ -37,16 +37,16 @@ class Tsduck < Formula
   end
 
   test do
-    assert_match "TSDuck - The MPEG Transport Stream Toolkit", shell_output("#{bin}/tsp --version 2>&1")
-    input = shell_output("#{bin}/tsp --list=input 2>&1")
+    assert_match "TSDuck - The MPEG Transport Stream Toolkit", shell_output("#{bin}tsp --version 2>&1")
+    input = shell_output("#{bin}tsp --list=input 2>&1")
     %w[craft file hls http srt rist].each do |str|
       assert_match "#{str}:", input
     end
-    output = shell_output("#{bin}/tsp --list=output 2>&1")
+    output = shell_output("#{bin}tsp --list=output 2>&1")
     %w[ip file hls srt rist].each do |str|
       assert_match "#{str}:", output
     end
-    packet = shell_output("#{bin}/tsp --list=packet 2>&1")
+    packet = shell_output("#{bin}tsp --list=packet 2>&1")
     %w[fork tables analyze sdt timeshift nitscan].each do |str|
       assert_match "#{str}:", packet
     end

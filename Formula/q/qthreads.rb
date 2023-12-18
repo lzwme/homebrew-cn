@@ -1,10 +1,10 @@
 class Qthreads < Formula
   desc "Lightweight locality-aware user-level threading runtime"
-  homepage "https://www.sandia.gov/qthreads/"
-  url "https://ghproxy.com/https://github.com/sandialabs/qthreads/archive/refs/tags/1.19.tar.gz"
+  homepage "https:www.sandia.govqthreads"
+  url "https:github.comsandialabsqthreadsarchiverefstags1.19.tar.gz"
   sha256 "2790382991c0755d752354b189aa019076c80ebed7f4c5c045d14bd57c9eb7ac"
   license "BSD-3-Clause"
-  head "https://github.com/sandialabs/qthreads.git", branch: "main"
+  head "https:github.comsandialabsqthreads.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3e6aa2e908bdd99012e105a838839c1d3f5e42b6ffb6d2418331317412a5a20b"
@@ -23,19 +23,19 @@ class Qthreads < Formula
   depends_on "libtool" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}",
                           "--libdir=#{lib}",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules"
     system "make"
     system "make", "install"
-    pkgshare.install "userguide/examples"
+    pkgshare.install "userguideexamples"
     doc.install "userguide"
   end
 
   test do
-    system ENV.cc, pkgshare/"examples/hello_world.c", "-o", "hello", "-I#{include}", "-L#{lib}", "-lqthread"
-    assert_equal "Hello, world!", shell_output("./hello").chomp
+    system ENV.cc, pkgshare"exampleshello_world.c", "-o", "hello", "-I#{include}", "-L#{lib}", "-lqthread"
+    assert_equal "Hello, world!", shell_output(".hello").chomp
   end
 end

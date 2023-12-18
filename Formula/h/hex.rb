@@ -1,10 +1,10 @@
 class Hex < Formula
   desc "Futuristic take on hexdump"
-  homepage "https://github.com/sitkevij/hex"
-  url "https://ghproxy.com/https://github.com/sitkevij/hex/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:github.comsitkevijhex"
+  url "https:github.comsitkevijhexarchiverefstagsv0.5.0.tar.gz"
   sha256 "7159eb1bf14d3c55aeb260cc5fb857fc8c91aca36fec3d22123aa22ecbab0509"
   license "MIT"
-  head "https://github.com/sitkevij/hex.git", branch: "master"
+  head "https:github.comsitkevijhex.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1dd9c0615db9ccb98760fb65e88a9186344be2c9e7d29d0d2fe6611dccc0523f"
@@ -23,11 +23,11 @@ class Hex < Formula
   end
 
   test do
-    (testpath/"tiny.txt").write("il")
-    output = shell_output("#{bin}/hx tiny.txt")
+    (testpath"tiny.txt").write("il")
+    output = shell_output("#{bin}hx tiny.txt")
     assert_match "0x000000: 0x69 0x6c", output
 
-    output = shell_output("#{bin}/hx -ar -c8 tiny.txt")
+    output = shell_output("#{bin}hx -ar -c8 tiny.txt")
     expected = <<~EOS
       let ARRAY: [u8; 2] = [
           0x69, 0x6c
@@ -35,6 +35,6 @@ class Hex < Formula
     EOS
     assert_equal expected, output
 
-    assert_match "hx #{version}", shell_output("#{bin}/hx --version")
+    assert_match "hx #{version}", shell_output("#{bin}hx --version")
   end
 end

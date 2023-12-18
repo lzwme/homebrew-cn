@@ -1,14 +1,14 @@
 class Ibex < Formula
   desc "C++ library for constraint processing over real numbers"
-  homepage "https://web.archive.org/web/20190826220512/www.ibex-lib.org/"
-  url "https://ghproxy.com/https://github.com/ibex-team/ibex-lib/archive/refs/tags/ibex-2.8.9.tar.gz"
+  homepage "https:web.archive.orgweb20190826220512www.ibex-lib.org"
+  url "https:github.comibex-teamibex-libarchiverefstagsibex-2.8.9.tar.gz"
   sha256 "fee448b3fa3929a50d36231ff2f14e5480a0b82506594861536e3905801a6571"
   license "LGPL-3.0-only"
-  head "https://github.com/ibex-team/ibex-lib.git", branch: "master"
+  head "https:github.comibex-teamibex-lib.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^ibex[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^ibex[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,8 +36,8 @@ class Ibex < Formula
       system "make", "install"
     end
 
-    pkgshare.install %w[examples benchs/solver]
-    (pkgshare/"examples/symb01.txt").write <<~EOS
+    pkgshare.install %w[examples benchssolver]
+    (pkgshare"examplessymb01.txt").write <<~EOS
       function f(x)
         return ((2*x,-x);(-x,3*x));
       end
@@ -47,16 +47,16 @@ class Ibex < Formula
   test do
     ENV.cxx11
 
-    cp_r (pkgshare/"examples").children, testpath
+    cp_r (pkgshare"examples").children, testpath
 
     (1..8).each do |n|
       system "make", "lab#{n}"
-      system "./lab#{n}"
+      system ".lab#{n}"
     end
 
     (1..3).each do |n|
       system "make", "-C", "slam", "slam#{n}"
-      system "./slam/slam#{n}"
+      system ".slamslam#{n}"
     end
   end
 end

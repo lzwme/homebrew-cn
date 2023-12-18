@@ -1,10 +1,10 @@
 class AmqpCpp < Formula
   desc "C++ library for communicating with a RabbitMQ message broker"
-  homepage "https://github.com/CopernicaMarketingSoftware/AMQP-CPP"
-  url "https://ghproxy.com/https://github.com/CopernicaMarketingSoftware/AMQP-CPP/archive/refs/tags/v4.3.26.tar.gz"
+  homepage "https:github.comCopernicaMarketingSoftwareAMQP-CPP"
+  url "https:github.comCopernicaMarketingSoftwareAMQP-CPParchiverefstagsv4.3.26.tar.gz"
   sha256 "2baaab702f3fd9cce40563dc1e23f433cceee7ec3553bd529a98b1d3d7f7911c"
   license "Apache-2.0"
-  head "https://github.com/CopernicaMarketingSoftware/AMQP-CPP.git", branch: "master"
+  head "https:github.comCopernicaMarketingSoftwareAMQP-CPP.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,7 +37,7 @@ class AmqpCpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <amqpcpp.h>
       int main()
       {
@@ -46,6 +46,6 @@ class AmqpCpp < Formula
     EOS
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{lib}", "-o",
                     "test", "-lamqpcpp"
-    system "./test"
+    system ".test"
   end
 end

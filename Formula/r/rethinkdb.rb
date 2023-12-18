@@ -1,16 +1,16 @@
 class Rethinkdb < Formula
   desc "Open-source database for the realtime web"
-  homepage "https://rethinkdb.com/"
+  homepage "https:rethinkdb.com"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  # upstream issue report, https://github.com/rethinkdb/rethinkdb/issues/7142
-  url "https://download.rethinkdb.com/repository/raw/dist/rethinkdb-2.4.4.tgz"
+  # upstream issue report, https:github.comrethinkdbrethinkdbissues7142
+  url "https:download.rethinkdb.comrepositoryrawdistrethinkdb-2.4.4.tgz"
   sha256 "5091237602b62830db2cb3daaca6ab34632323741e6710c2f0de4d84f442711f"
   license "Apache-2.0"
-  head "https://github.com/rethinkdb/rethinkdb.git", branch: "next"
+  head "https:github.comrethinkdbrethinkdb.git", branch: "next"
 
   livecheck do
-    url "https://download.rethinkdb.com/service/rest/repository/browse/raw/dist/"
-    regex(/href=.*?rethinkdb[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:download.rethinkdb.comservicerestrepositorybrowserawdist"
+    regex(href=.*?rethinkdb[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Rethinkdb < Formula
 
   def install
     ENV.cxx11
-    # Can use system Python 2 for older macOS. See https://rethinkdb.com/docs/build
+    # Can use system Python 2 for older macOS. See https:rethinkdb.comdocsbuild
     ENV["PYTHON"] = which("python3") if !OS.mac? || MacOS.version >= :catalina
 
     args = %W[
@@ -44,27 +44,27 @@ class Rethinkdb < Formula
     ]
     args << "--allow-fetch" if build.head?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install-binaries"
 
-    (var/"log/rethinkdb").mkpath
+    (var"logrethinkdb").mkpath
 
-    inreplace "packaging/assets/config/default.conf.sample",
-              /^# directory=.*/, "directory=#{var}/rethinkdb"
-    etc.install "packaging/assets/config/default.conf.sample" => "rethinkdb.conf"
+    inreplace "packagingassetsconfigdefault.conf.sample",
+              ^# directory=.*, "directory=#{var}rethinkdb"
+    etc.install "packagingassetsconfigdefault.conf.sample" => "rethinkdb.conf"
   end
 
   service do
-    run [opt_bin/"rethinkdb", "--config-file", etc/"rethinkdb.conf"]
+    run [opt_bin"rethinkdb", "--config-file", etc"rethinkdb.conf"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/rethinkdb/rethinkdb.log"
-    error_log_path var/"log/rethinkdb/rethinkdb.log"
+    log_path var"logrethinkdbrethinkdb.log"
+    error_log_path var"logrethinkdbrethinkdb.log"
   end
 
   test do
-    shell_output("#{bin}/rethinkdb create -d test")
-    assert File.read("test/metadata").start_with?("RethinkDB")
+    shell_output("#{bin}rethinkdb create -d test")
+    assert File.read("testmetadata").start_with?("RethinkDB")
   end
 end

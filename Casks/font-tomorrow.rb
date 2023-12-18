@@ -2,12 +2,12 @@ cask "font-tomorrow" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tomorrow"
+      only_path: "ofltomorrow"
   name "Tomorrow"
-  homepage "https://fonts.google.com/specimen/Tomorrow"
+  homepage "https:fonts.google.comspecimenTomorrow"
 
   font "Tomorrow-Black.ttf"
   font "Tomorrow-BlackItalic.ttf"

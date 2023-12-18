@@ -1,13 +1,13 @@
-require "language/go"
+require "languagego"
 
 class Termshare < Formula
   desc "Interactive or view-only terminal sharing via client or web"
-  homepage "https://github.com/progrium/termshare"
-  url "https://ghproxy.com/https://github.com/progrium/termshare/archive/refs/tags/v0.2.0.tar.gz"
+  homepage "https:github.comprogriumtermshare"
+  url "https:github.comprogriumtermsharearchiverefstagsv0.2.0.tar.gz"
   sha256 "fa09a5492d6176feff32bbcdb3b2dc3ff1b5ab2d1cf37572cc60eb22eb531dcd"
   license "BSD-2-Clause"
   revision 1
-  head "https://github.com/progrium/termshare.git", branch: "master"
+  head "https:github.comprogriumtermshare.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,48 +27,48 @@ class Termshare < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e6403e077b20a2b771cc2d7e20407fc0f121688182ea2c6c660dd42f9cf118c"
   end
 
-  # https://github.com/progrium/termshare/issues/15
+  # https:github.comprogriumtermshareissues15
   deprecate! date: "2023-06-27", because: :unmaintained
 
   depends_on "go" => :build
 
-  go_resource "golang.org/x/net" do
-    url "https://go.googlesource.com/net.git",
+  go_resource "golang.orgxnet" do
+    url "https:go.googlesource.comnet.git",
         revision: "7553b97266dcbbf78298bd1a2b12d9c9aaae5f40"
   end
 
-  go_resource "github.com/heroku/hk" do
-    url "https://github.com/heroku/hk.git",
+  go_resource "github.comherokuhk" do
+    url "https:github.comherokuhk.git",
         revision: "406190e9c93802fb0a49b5c09611790aee05c491"
   end
 
-  go_resource "github.com/kr/pty" do
-    url "https://github.com/kr/pty.git",
+  go_resource "github.comkrpty" do
+    url "https:github.comkrpty.git",
         revision: "f7ee69f31298ecbe5d2b349c711e2547a617d398"
   end
 
-  go_resource "github.com/nu7hatch/gouuid" do
-    url "https://github.com/nu7hatch/gouuid.git",
+  go_resource "github.comnu7hatchgouuid" do
+    url "https:github.comnu7hatchgouuid.git",
         revision: "179d4d0c4d8d407a32af483c2354df1d2c91e6c3"
   end
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    path = buildpath/"src/github.com/progrium/termshare"
+    path = buildpath"srcgithub.comprogriumtermshare"
     path.install Dir["*"]
-    Language::Go.stage_deps resources, buildpath/"src"
+    Language::Go.stage_deps resources, buildpath"src"
 
     cd path do
-      # https://github.com/progrium/termshare/issues/9
-      inreplace "termshare.go", "code.google.com/p/go.net/websocket",
-                                "golang.org/x/net/websocket"
-      system "go", "build", "-o", bin/"termshare"
+      # https:github.comprogriumtermshareissues9
+      inreplace "termshare.go", "code.google.compgo.netwebsocket",
+                                "golang.orgxnetwebsocket"
+      system "go", "build", "-o", bin"termshare"
       prefix.install_metafiles
     end
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/termshare -v")
+    assert_match version.to_s, shell_output("#{bin}termshare -v")
   end
 end

@@ -1,10 +1,10 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
-  homepage "https://github.com/artempyanykh/marksman"
-  url "https://ghproxy.com/https://github.com/artempyanykh/marksman/archive/refs/tags/2023-12-09.tar.gz"
+  homepage "https:github.comartempyanykhmarksman"
+  url "https:github.comartempyanykhmarksmanarchiverefstags2023-12-09.tar.gz"
   sha256 "1f4f5b76c2679426f6a5e93d50e15deb4faadad2da18e70bee66de1dbe68342a"
   license "MIT"
-  head "https://github.com/artempyanykh/marksman.git", branch: "main"
+  head "https:github.comartempyanykhmarksman.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72a80209860d562e1e0c6d275ad9de967c3f8a2406bd985c117d7c606a073f2a"
@@ -28,7 +28,7 @@ class Marksman < Formula
     # see the GitHub pull request [1], the resulting version would for example
     # be `1.0.0-<version>`
     #
-    # [1]: https://github.com/artempyanykh/marksman/pull/125
+    # [1]: https:github.comartempyanykhmarksmanpull125
     ENV.deparallelize do
       system "make", "VERSIONSTRING=#{version}", "DEST=#{bin}", "publishTo"
     end
@@ -51,12 +51,12 @@ class Marksman < Formula
 
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
 
-    Open3.popen3("#{bin}/marksman", "server") do |stdin, stdout|
+    Open3.popen3("#{bin}marksman", "server") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
 
       sleep 3
 
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

@@ -1,7 +1,7 @@
 class Imposm3 < Formula
-  desc "Imports OpenStreetMap data into PostgreSQL/PostGIS databases"
-  homepage "https://imposm.org"
-  url "https://ghproxy.com/https://github.com/omniscale/imposm3/archive/refs/tags/v0.11.1.tar.gz"
+  desc "Imports OpenStreetMap data into PostgreSQLPostGIS databases"
+  homepage "https:imposm.org"
+  url "https:github.comomniscaleimposm3archiverefstagsv0.11.1.tar.gz"
   sha256 "14045272aa0157dc5fde1cfe885fecc2703f3bf33506603f2922cdf28310ebf0"
   license "Apache-2.0"
   revision 2
@@ -25,19 +25,19 @@ class Imposm3 < Formula
     ENV["CGO_LDFLAGS"] = "-L#{Formula["geos"].opt_lib} -L#{Formula["leveldb"].opt_lib}"
     ENV["CGO_CFLAGS"] = "-I#{Formula["geos"].opt_include} -I#{Formula["leveldb"].opt_include}"
 
-    ldflags = "-X github.com/omniscale/imposm3.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"imposm"), "cmd/imposm/main.go"
+    ldflags = "-X github.comomniscaleimposm3.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"imposm"), "cmdimposmmain.go"
   end
 
   test do
-    (testpath/"sample.osm.xml").write <<~EOS
+    (testpath"sample.osm.xml").write <<~EOS
       <?xml version='1.0' encoding='UTF-8'?>
       <osm version="0.6">
-        <bounds minlat="51.498" minlon="7.579" maxlat="51.499" maxlon="7.58"/>
-      </osm>
+        <bounds minlat="51.498" minlon="7.579" maxlat="51.499" maxlon="7.58">
+      <osm>
     EOS
 
-    (testpath/"mapping.yml").write <<~EOS
+    (testpath"mapping.yml").write <<~EOS
       tables:
         admin:
           columns:
@@ -59,15 +59,15 @@ class Imposm3 < Formula
           type: polygon
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}/imposm version").chomp
+    assert_match version.to_s, shell_output("#{bin}imposm version").chomp
 
-    system bin/"osmium", "cat", testpath/"sample.osm.xml", "-o", "sample.osm.pbf"
-    system bin/"imposm", "import", "-read", testpath/"sample.osm.pbf", "-mapping", testpath/"mapping.yml",
-            "-cachedir", testpath/"cache"
+    system bin"osmium", "cat", testpath"sample.osm.xml", "-o", "sample.osm.pbf"
+    system bin"imposm", "import", "-read", testpath"sample.osm.pbf", "-mapping", testpath"mapping.yml",
+            "-cachedir", testpath"cache"
 
-    assert_predicate testpath/"cache/coords/LOG", :exist?
-    assert_predicate testpath/"cache/nodes/LOG", :exist?
-    assert_predicate testpath/"cache/relations/LOG", :exist?
-    assert_predicate testpath/"cache/ways/LOG", :exist?
+    assert_predicate testpath"cachecoordsLOG", :exist?
+    assert_predicate testpath"cachenodesLOG", :exist?
+    assert_predicate testpath"cacherelationsLOG", :exist?
+    assert_predicate testpath"cachewaysLOG", :exist?
   end
 end

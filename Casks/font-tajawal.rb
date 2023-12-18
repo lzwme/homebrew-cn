@@ -2,12 +2,12 @@ cask "font-tajawal" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tajawal"
+      only_path: "ofltajawal"
   name "Tajawal"
-  homepage "https://fonts.google.com/specimen/Tajawal"
+  homepage "https:fonts.google.comspecimenTajawal"
 
   font "Tajawal-Black.ttf"
   font "Tajawal-Bold.ttf"

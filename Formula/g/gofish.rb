@@ -1,7 +1,7 @@
 class Gofish < Formula
   desc "Cross-platform systems package manager"
-  homepage "https://github.com/fishworks/gofish"
-  url "https://github.com/fishworks/gofish.git",
+  homepage "https:github.comfishworksgofish"
+  url "https:github.comfishworksgofish.git",
       tag:      "v0.15.1",
       revision: "5d14f73963cfc0c226e8b06c0f5c3404d2ec2e77"
   license "Apache-2.0"
@@ -23,7 +23,7 @@ class Gofish < Formula
 
   def install
     system "make"
-    bin.install "bin/gofish"
+    bin.install "bingofish"
   end
 
   def caveats
@@ -34,6 +34,6 @@ class Gofish < Formula
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/gofish version")
+    assert_match "v#{version}", shell_output("#{bin}gofish version")
   end
 end

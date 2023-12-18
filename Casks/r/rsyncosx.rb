@@ -2,10 +2,10 @@ cask "rsyncosx" do
   version "6.8.0"
   sha256 "18ea590825ec6901b3df1cde7209cbaec8faa287a00539ad299af1f0ec9f41b7"
 
-  url "https://ghproxy.com/https://github.com/rsyncOSX/RsyncOSX/releases/download/v#{version}/RsyncOSX.#{version}.dmg"
+  url "https:github.comrsyncOSXRsyncOSXreleasesdownloadv#{version}RsyncOSX.#{version}.dmg"
   name "RsyncOSX"
   desc "GUI for rsync"
-  homepage "https://github.com/rsyncOSX/RsyncOSX"
+  homepage "https:github.comrsyncOSXRsyncOSX"
 
   livecheck do
     url :url
@@ -17,8 +17,8 @@ cask "rsyncosx" do
   app "RsyncOSX.app"
 
   zap trash: [
-    "~/Library/Caches/no.blogspot.RsyncOSX",
-    "~/Library/Preferences/no.blogspot.RsyncOSX.plist",
-    "~/Library/Saved Application State/no.blogspot.RsyncOSX.savedState",
+    "~LibraryCachesno.blogspot.RsyncOSX",
+    "~LibraryPreferencesno.blogspot.RsyncOSX.plist",
+    "~LibrarySaved Application Stateno.blogspot.RsyncOSX.savedState",
   ]
 end

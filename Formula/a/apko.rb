@@ -1,10 +1,10 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
-  homepage "https://github.com/chainguard-dev/apko"
-  url "https://ghproxy.com/https://github.com/chainguard-dev/apko/archive/refs/tags/v0.11.3.tar.gz"
+  homepage "https:github.comchainguard-devapko"
+  url "https:github.comchainguard-devapkoarchiverefstagsv0.11.3.tar.gz"
   sha256 "95c644591f54eecfab0ecc136cd53431da0835b22835f15096e242ef2d5b7c73"
   license "Apache-2.0"
-  head "https://github.com/chainguard-dev/apko.git", branch: "main"
+  head "https:github.comchainguard-devapko.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -29,34 +29,34 @@ class Apko < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
-      -X sigs.k8s.io/release-utils/version.gitCommit=brew
-      -X sigs.k8s.io/release-utils/version.gitTreeState=clean
-      -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
+      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
+      -X sigs.k8s.iorelease-utilsversion.gitCommit=brew
+      -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
+      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"apko", "completion")
+    generate_completions_from_executable(bin"apko", "completion")
   end
 
   test do
-    (testpath/"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~EOS
       contents:
         repositories:
-          - https://dl-cdn.alpinelinux.org/alpine/edge/main
+          - https:dl-cdn.alpinelinux.orgalpineedgemain
         packages:
           - alpine-base
 
       entrypoint:
-        command: /bin/sh -l
+        command: binsh -l
 
       # optional environment configuration
       environment:
-        PATH: /usr/sbin:/sbin:/usr/bin:/bin
+        PATH: usrsbin:sbin:usrbin:bin
     EOS
-    system bin/"apko", "build", testpath/"test.yml", "apko-alpine:test", "apko-alpine.tar"
-    assert_predicate testpath/"apko-alpine.tar", :exist?
+    system bin"apko", "build", testpath"test.yml", "apko-alpine:test", "apko-alpine.tar"
+    assert_predicate testpath"apko-alpine.tar", :exist?
 
-    assert_match version.to_s, shell_output(bin/"apko version 2>&1")
+    assert_match version.to_s, shell_output(bin"apko version 2>&1")
   end
 end

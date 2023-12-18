@@ -1,10 +1,10 @@
 class Iblinter < Formula
   desc "Linter tool for Interface Builder"
-  homepage "https://github.com/IBDecodable/IBLinter"
-  url "https://ghproxy.com/https://github.com/IBDecodable/IBLinter/archive/refs/tags/0.5.0.tar.gz"
+  homepage "https:github.comIBDecodableIBLinter"
+  url "https:github.comIBDecodableIBLinterarchiverefstags0.5.0.tar.gz"
   sha256 "d1aafdca18bc81205ef30a2ee59f33513061b20184f0f51436531cec4a6f7170"
   license "MIT"
-  head "https://github.com/IBDecodable/IBLinter.git", branch: "master"
+  head "https:github.comIBDecodableIBLinter.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "739697ba91935e3074433ac9f78520d6408e41dbeaab5bb3aa5ea3fea59f65f6"
@@ -26,26 +26,26 @@ class Iblinter < Formula
 
   test do
     # Test by showing the help scree
-    system "#{bin}/iblinter", "help"
+    system "#{bin}iblinter", "help"
 
     # Test by linting file
-    (testpath/".iblinter.yml").write <<~EOS
+    (testpath".iblinter.yml").write <<~EOS
       ignore_cache: true
       enabled_rules: [ambiguous]
     EOS
 
-    (testpath/"Test.xib").write <<~EOS
+    (testpath"Test.xib").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch">
         <objects>
           <view key="view" id="iGg-Eg-h0O" ambiguous="YES">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-          </view>
-        </objects>
-      </document>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667">
+          <view>
+        <objects>
+      <document>
     EOS
 
-    assert_match "#{testpath}/Test.xib:0:0: error: UIView (iGg-Eg-h0O) has ambiguous constraints",
-                 shell_output("#{bin}/iblinter lint --config #{testpath}/.iblinter.yml --path #{testpath}", 2).chomp
+    assert_match "#{testpath}Test.xib:0:0: error: UIView (iGg-Eg-h0O) has ambiguous constraints",
+                 shell_output("#{bin}iblinter lint --config #{testpath}.iblinter.yml --path #{testpath}", 2).chomp
   end
 end

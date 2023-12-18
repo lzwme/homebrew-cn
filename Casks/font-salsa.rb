@@ -2,10 +2,10 @@ cask "font-salsa" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/salsa/Salsa-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsalsaSalsa-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Salsa"
-  homepage "https://fonts.google.com/specimen/Salsa"
+  homepage "https:fonts.google.comspecimenSalsa"
 
   font "Salsa-Regular.ttf"
 

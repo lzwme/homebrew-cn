@@ -1,7 +1,7 @@
 class Libming < Formula
   desc "C library for generating Macromedia Flash files"
-  homepage "https://github.com/libming/libming"
-  url "https://ghproxy.com/https://github.com/libming/libming/archive/refs/tags/ming-0_4_8.tar.gz"
+  homepage "https:github.comlibminglibming"
+  url "https:github.comlibminglibmingarchiverefstagsming-0_4_8.tar.gz"
   sha256 "2a44cc8b7f6506adaa990027397b6e0f60ba0e3c1fe8c9514be5eb8e22b2375c"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 2
@@ -18,7 +18,7 @@ class Libming < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "931f5db9f3d83f2997855245bfec7ba545877e79cfaa6d8ff32a9b0067b1f44b"
   end
 
-  # upstream release request, https://github.com/libming/libming/issues/180
+  # upstream release request, https:github.comlibminglibmingissues180
   deprecate! date: "2023-02-06", because: :unmaintained
 
   depends_on "autoconf" => :build
@@ -35,7 +35,7 @@ class Libming < Formula
   def install
     ENV.deparallelize if OS.linux?
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--enable-perl"
@@ -43,7 +43,7 @@ class Libming < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~'EOS'
+    (testpath"test.c").write <<~'EOS'
       #include <ming.h>
       int main() {
         Ming_setScale(40.0);
@@ -52,6 +52,6 @@ class Libming < Formula
       }
     EOS
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lming", "-I#{include}"
-    assert_match "scale 40.0", shell_output("./test")
+    assert_match "scale 40.0", shell_output(".test")
   end
 end

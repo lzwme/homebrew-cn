@@ -1,7 +1,7 @@
 class SimpleObfs < Formula
   desc "Simple obfusacting plugin of shadowsocks-libev"
-  homepage "https://github.com/shadowsocks/simple-obfs"
-  url "https://github.com/shadowsocks/simple-obfs.git",
+  homepage "https:github.comshadowsockssimple-obfs"
+  url "https:github.comshadowsockssimple-obfs.git",
       tag:      "v0.0.5",
       revision: "a9c43588e4cb038e6ac02f050e4cab81f8228dff"
   license "GPL-3.0"
@@ -32,9 +32,9 @@ class SimpleObfs < Formula
   depends_on "libev"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
+    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--enable-applecc"
     system "make"
@@ -42,6 +42,6 @@ class SimpleObfs < Formula
   end
 
   test do
-    assert_match "simple-obfs", shell_output("#{bin}/obfs-local -h 2>&1")
+    assert_match "simple-obfs", shell_output("#{bin}obfs-local -h 2>&1")
   end
 end

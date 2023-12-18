@@ -1,10 +1,10 @@
 class Glide < Formula
   desc "Simplified Go project management, dependency management, and vendoring"
-  homepage "https://github.com/Masterminds/glide"
-  url "https://ghproxy.com/https://github.com/Masterminds/glide/archive/refs/tags/v0.13.3.tar.gz"
+  homepage "https:github.comMastermindsglide"
+  url "https:github.comMastermindsglidearchiverefstagsv0.13.3.tar.gz"
   sha256 "817dad2f25303d835789c889bf2fac5e141ad2442b9f75da7b164650f0de3fee"
   license "MIT"
-  head "https://github.com/Masterminds/glide.git", branch: "master"
+  head "https:github.comMastermindsglide.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -21,7 +21,7 @@ class Glide < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c979cb9d502737595846ea776057be21e197ede804b10431b4cf5dcc0fee802d"
   end
 
-  # See: https://github.com/Masterminds/glide/commit/c64b14592409a83052f7735a01d203ff1bab0983
+  # See: https:github.comMastermindsglidecommitc64b14592409a83052f7735a01d203ff1bab0983
   deprecate! date: "2023-01-21", because: :deprecated_upstream
 
   depends_on "go"
@@ -29,7 +29,7 @@ class Glide < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    glidepath = buildpath/"src/github.com/Masterminds/glide"
+    glidepath = buildpath"srcgithub.comMastermindsglide"
     glidepath.install buildpath.children
 
     cd glidepath do
@@ -38,8 +38,8 @@ class Glide < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/glide --version")
-    system bin/"glide", "create", "--non-interactive", "--skip-import"
-    assert_predicate testpath/"glide.yaml", :exist?
+    assert_match version.to_s, shell_output("#{bin}glide --version")
+    system bin"glide", "create", "--non-interactive", "--skip-import"
+    assert_predicate testpath"glide.yaml", :exist?
   end
 end

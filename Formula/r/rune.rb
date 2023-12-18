@@ -1,10 +1,10 @@
 class Rune < Formula
   desc "Embeddable dynamic programming language for Rust"
-  homepage "https://rune-rs.github.io"
-  url "https://ghproxy.com/https://github.com/rune-rs/rune/archive/refs/tags/0.13.1.tar.gz"
+  homepage "https:rune-rs.github.io"
+  url "https:github.comrune-rsrunearchiverefstags0.13.1.tar.gz"
   sha256 "6916145178ec7dee6f1f9d5a555d15e406477f58904ed4a18df95739935cc668"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/rune-rs/rune.git", branch: "main"
+  head "https:github.comrune-rsrune.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53ab01895f09882efdc9b2479563c02575431012a71d4bd8cab30733e9214bbd"
@@ -19,16 +19,16 @@ class Rune < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/rune-cli")
-    system "cargo", "install", *std_cargo_args(path: "crates/rune-languageserver")
+    system "cargo", "install", *std_cargo_args(path: "cratesrune-cli")
+    system "cargo", "install", *std_cargo_args(path: "cratesrune-languageserver")
   end
 
   test do
-    (testpath/"hello.rn").write <<~EOS
+    (testpath"hello.rn").write <<~EOS
       pub fn main() {
         println!("Hello, world!");
       }
     EOS
-    assert_match "Hello, world!", shell_output("#{bin/"rune"} run #{testpath/"hello.rn"}").strip
+    assert_match "Hello, world!", shell_output("#{bin"rune"} run #{testpath"hello.rn"}").strip
   end
 end

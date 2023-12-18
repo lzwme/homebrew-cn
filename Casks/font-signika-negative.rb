@@ -2,10 +2,10 @@ cask "font-signika-negative" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/signikanegative/SignikaNegative%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsignikanegativeSignikaNegative%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Signika Negative"
-  homepage "https://fonts.google.com/specimen/Signika+Negative"
+  homepage "https:fonts.google.comspecimenSignika+Negative"
 
   font "SignikaNegative[wght].ttf"
 

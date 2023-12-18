@@ -2,12 +2,12 @@ cask "font-clear-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/intel/clear-sans.git",
+  url "https:github.comintelclear-sans.git",
       branch:    "main",
       only_path: "TTF"
   name "Clear Sans"
   desc "Sans-serif typeface"
-  homepage "https://github.com/intel/clear-sans"
+  homepage "https:github.comintelclear-sans"
 
   font "ClearSans-Bold.ttf"
   font "ClearSans-BoldItalic.ttf"

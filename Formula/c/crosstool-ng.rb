@@ -1,14 +1,14 @@
 class CrosstoolNg < Formula
   desc "Tool for building toolchains"
-  homepage "https://crosstool-ng.github.io/"
-  url "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.26.0.tar.xz"
+  homepage "https:crosstool-ng.github.io"
+  url "http:crosstool-ng.orgdownloadcrosstool-ngcrosstool-ng-1.26.0.tar.xz"
   sha256 "e8ce69c5c8ca8d904e6923ccf86c53576761b9cf219e2e69235b139c8e1b74fc"
   license "GPL-2.0-only"
-  head "https://github.com/crosstool-ng/crosstool-ng.git", branch: "master"
+  head "https:github.comcrosstool-ngcrosstool-ng.git", branch: "master"
 
   livecheck do
-    url "https://crosstool-ng.github.io/download/"
-    regex(/href=.*?crosstool-ng[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:crosstool-ng.github.iodownload"
+    regex(href=.*?crosstool-ng[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -54,29 +54,29 @@ class CrosstoolNg < Formula
   end
 
   def install
-    system "./bootstrap" if build.head?
+    system ".bootstrap" if build.head?
 
-    ENV["BISON"] = Formula["bison"].opt_bin/"bison"
-    ENV["M4"] = Formula["m4"].opt_bin/"m4"
-    ENV["PYTHON"] = Formula["python@3.12"].opt_bin/"python3.12"
+    ENV["BISON"] = Formula["bison"].opt_bin"bison"
+    ENV["M4"] = Formula["m4"].opt_bin"m4"
+    ENV["PYTHON"] = Formula["python@3.12"].opt_bin"python3.12"
 
     if OS.mac?
-      ENV["MAKE"] = Formula["make"].opt_bin/"gmake"
+      ENV["MAKE"] = Formula["make"].opt_bin"gmake"
       ENV.append "LDFLAGS", "-lintl"
     else
-      ENV.append "CFLAGS", "-I#{Formula["ncurses"].include}/ncursesw"
+      ENV.append "CFLAGS", "-I#{Formula["ncurses"].include}ncursesw"
     end
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
 
     # Must be done in two steps
     system "make"
     system "make", "install"
 
-    inreplace [bin/"ct-ng", pkgshare/"paths.sh"], Superenv.shims_path/"gmake", "gmake" unless OS.mac?
+    inreplace [bin"ct-ng", pkgshare"paths.sh"], Superenv.shims_path"gmake", "gmake" unless OS.mac?
   end
 
   test do
-    assert_match "This is crosstool-NG", shell_output("make -rf #{bin}/ct-ng version")
+    assert_match "This is crosstool-NG", shell_output("make -rf #{bin}ct-ng version")
   end
 end

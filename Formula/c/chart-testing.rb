@@ -1,11 +1,11 @@
 class ChartTesting < Formula
   desc "Testing and linting Helm charts"
-  homepage "https://github.com/helm/chart-testing"
-  url "https://github.com/helm/chart-testing.git",
+  homepage "https:github.comhelmchart-testing"
+  url "https:github.comhelmchart-testing.git",
       tag:      "v3.10.1",
       revision: "c35d32b568ba7901e00d3386a231ae2b6e1c2efc"
   license "Apache-2.0"
-  head "https://github.com/helm/chart-testing.git", branch: "main"
+  head "https:github.comhelmchart-testing.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f23cf4be74376a370643a356da42b59a0b7873681a13fe2da14e7a260a1800c"
@@ -24,23 +24,23 @@ class ChartTesting < Formula
 
   def install
     # Fix default search path for configuration files, needed for ARM
-    inreplace "pkg/config/config.go", "/usr/local/etc", etc
+    inreplace "pkgconfigconfig.go", "usrlocaletc", etc
     ldflags = %W[
-      -X github.com/helm/chart-testing/v#{version.major}/ct/cmd.Version=#{version}
-      -X github.com/helm/chart-testing/v#{version.major}/ct/cmd.GitCommit=#{Utils.git_head}
-      -X github.com/helm/chart-testing/v#{version.major}/ct/cmd.BuildDate=#{time.strftime("%F")}
+      -X github.comhelmchart-testingv#{version.major}ctcmd.Version=#{version}
+      -X github.comhelmchart-testingv#{version.major}ctcmd.GitCommit=#{Utils.git_head}
+      -X github.comhelmchart-testingv#{version.major}ctcmd.BuildDate=#{time.strftime("%F")}
     ]
-    system "go", "build", *std_go_args(output: bin/"ct", ldflags: ldflags), "./ct/main.go"
+    system "go", "build", *std_go_args(output: bin"ct", ldflags: ldflags), ".ctmain.go"
     etc.install "etc" => "ct"
   end
 
   test do
-    assert_match "Lint and test", shell_output("#{bin}/ct --help")
-    assert_match(/Version:\s+#{version}/, shell_output("#{bin}/ct version"))
+    assert_match "Lint and test", shell_output("#{bin}ct --help")
+    assert_match(Version:\s+#{version}, shell_output("#{bin}ct version"))
 
     # Lint an empty Helm chart that we create with `helm create`
     system "helm", "create", "testchart"
-    output = shell_output("#{bin}/ct lint --charts ./testchart --validate-chart-schema=false " \
+    output = shell_output("#{bin}ct lint --charts .testchart --validate-chart-schema=false " \
                           "--validate-maintainers=false").lines.last.chomp
     assert_match "All charts linted successfully", output
   end

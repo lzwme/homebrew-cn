@@ -1,7 +1,7 @@
 class Libre < Formula
-  desc "Toolkit library for asynchronous network I/O with protocol stacks"
-  homepage "https://github.com/baresip/re"
-  url "https://ghproxy.com/https://github.com/baresip/re/archive/refs/tags/v3.7.0.tar.gz"
+  desc "Toolkit library for asynchronous network IO with protocol stacks"
+  homepage "https:github.combaresipre"
+  url "https:github.combaresiprearchiverefstagsv3.7.0.tar.gz"
   sha256 "fc92c60d2f624d56abe440ac8dc234958ab0ca04216608da7e07a66c73ea51d5"
   license "BSD-3-Clause"
 
@@ -27,13 +27,13 @@ class Libre < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdint.h>
-      #include <re/re.h>
+      #include <rere.h>
       int main() {
         return libre_init();
       }
     EOS
-    system ENV.cc, "-I#{include}", "-I#{include}/re", "test.c", "-L#{lib}", "-lre"
+    system ENV.cc, "-I#{include}", "-I#{include}re", "test.c", "-L#{lib}", "-lre"
   end
 end

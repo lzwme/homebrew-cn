@@ -5,11 +5,11 @@ cask "superproductivity" do
   sha256 arm:   "0d6fcf7511fc3c9438819dc7340c843427296443c1e3a356efec8838b0e65303",
          intel: "9892831f6cef0a781fefe6670e16f702f3d54b64de97d5356d6e33399cb197e3"
 
-  url "https://ghproxy.com/https://github.com/johannesjo/super-productivity/releases/download/v#{version}/superProductivity-#{version}#{arch}.dmg",
-      verified: "github.com/johannesjo/super-productivity/"
+  url "https:github.comjohannesjosuper-productivityreleasesdownloadv#{version}superProductivity-#{version}#{arch}.dmg",
+      verified: "github.comjohannesjosuper-productivity"
   name "Super Productivity"
   desc "To-do list and time tracker"
-  homepage "https://super-productivity.com/"
+  homepage "https:super-productivity.com"
 
   livecheck do
     url :url
@@ -19,9 +19,9 @@ cask "superproductivity" do
   app "superProductivity.app"
 
   zap trash: [
-    "~/Library/Application Support/superProductivity",
-    "~/Library/Logs/superProductivity",
-    "~/Library/Preferences/com.super-productivity.app.plist",
-    "~/Library/Saved Application State/com.super-productivity.app.savedState",
+    "~LibraryApplication SupportsuperProductivity",
+    "~LibraryLogssuperProductivity",
+    "~LibraryPreferencescom.super-productivity.app.plist",
+    "~LibrarySaved Application Statecom.super-productivity.app.savedState",
   ]
 end

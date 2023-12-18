@@ -2,10 +2,10 @@ cask "bili-downloader" do
   version "1.7.2"
   sha256 "aacc58eb79d64437b15882502190be17e68656999af6efcc81fa831973115bfa"
 
-  url "https://ghproxy.com/https://github.com/JimmyLiang-lzm/biliDownloader_GUI/releases/download/V#{version}/BiliDownloader_for_MacOS_X.dmg"
+  url "https:github.comJimmyLiang-lzmbiliDownloader_GUIreleasesdownloadV#{version}BiliDownloader_for_MacOS_X.dmg"
   name "BiliDownloader"
   desc "BiliBili media downloader"
-  homepage "https://github.com/JimmyLiang-lzm/biliDownloader_GUI"
+  homepage "https:github.comJimmyLiang-lzmbiliDownloader_GUI"
 
   livecheck do
     url :url
@@ -14,5 +14,5 @@ cask "bili-downloader" do
 
   app "biliDownloader_GUI.app"
 
-  zap trash: "~/Library/Saved Application State/biliDownloader_GUI.savedState"
+  zap trash: "~LibrarySaved Application StatebiliDownloader_GUI.savedState"
 end

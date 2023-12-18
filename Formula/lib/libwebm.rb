@@ -1,7 +1,7 @@
 class Libwebm < Formula
   desc "WebM container"
-  homepage "https://www.webmproject.org/code/"
-  url "https://ghproxy.com/https://github.com/webmproject/libwebm/archive/refs/tags/libwebm-1.0.0.31.tar.gz"
+  homepage "https:www.webmproject.orgcode"
+  url "https:github.comwebmprojectlibwebmarchiverefstagslibwebm-1.0.0.31.tar.gz"
   sha256 "616cfdca1c869222dc60d5a49d112c1464040390e3876afca4d385347c6ce55e"
   license "BSD-3-Clause"
 
@@ -25,14 +25,14 @@ class Libwebm < Formula
       bin.install %w[mkvparser_sample mkvmuxer_sample vttdemux webm2pes]
     end
     include.install Dir.glob("mkv*.hpp")
-    (include/"mkvmuxer").install Dir.glob("mkvmuxer/mkv*.h")
-    (include/"common").install Dir.glob("common/*.h")
-    (include/"mkvparser").install Dir.glob("mkvparser/mkv*.h")
+    (include"mkvmuxer").install Dir.glob("mkvmuxermkv*.h")
+    (include"common").install Dir.glob("common*.h")
+    (include"mkvparser").install Dir.glob("mkvparsermkv*.h")
     include.install Dir.glob("vtt*.h")
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <mkvwriter.hpp>
       int main()
       {
@@ -41,6 +41,6 @@ class Libwebm < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lwebm", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

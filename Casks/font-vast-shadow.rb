@@ -2,10 +2,10 @@ cask "font-vast-shadow" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/vastshadow/VastShadow-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflvastshadowVastShadow-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Vast Shadow"
-  homepage "https://fonts.google.com/specimen/Vast+Shadow"
+  homepage "https:fonts.google.comspecimenVast+Shadow"
 
   font "VastShadow-Regular.ttf"
 

@@ -1,7 +1,7 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
-  homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.3.tar.xz"
+  homepage "https:github.comutil-linuxutil-linux"
+  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.39util-linux-2.39.3.tar.xz"
   sha256 "7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f"
   license all_of: [
     "BSD-3-Clause",
@@ -13,14 +13,14 @@ class UtilLinux < Formula
     :public_domain,
   ]
 
-  # The directory listing where the `stable` archive is found uses major/minor
+  # The directory listing where the `stable` archive is found uses majorminor
   # version directories, where it's necessary to check inside a directory to
   # find the full version. The newest directory can contain unstable versions,
   # so it could require more than two requests to identify the newest stable
   # version. With this in mind, we simply check the Git tags as a best effort.
   livecheck do
     url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -48,6 +48,7 @@ class UtilLinux < Formula
 
     conflicts_with "bash-completion", because: "both install `mount`, `rfkill`, and `rtcwake` completions"
     conflicts_with "flock", because: "both install `flock` binaries"
+    conflicts_with "ossp-uuid", because: "both install `uuid.3` file"
     conflicts_with "rename", because: "both install `rename` binaries"
   end
 
@@ -74,12 +75,12 @@ class UtilLinux < Formula
       args << "--without-python"
     end
 
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make", "install"
 
     # install completions only for installed programs
-    Pathname.glob("bash-completion/*") do |prog|
-      bash_completion.install prog if (bin/prog.basename).exist? || (sbin/prog.basename).exist?
+    Pathname.glob("bash-completion*") do |prog|
+      bash_completion.install prog if (binprog.basename).exist? || (sbinprog.basename).exist?
     end
   end
 
@@ -114,7 +115,7 @@ class UtilLinux < Formula
   end
 
   test do
-    stat  = File.stat "/usr"
+    stat  = File.stat "usr"
     owner = Etc.getpwuid(stat.uid).name
     group = Etc.getgrgid(stat.gid).name
 
@@ -123,7 +124,7 @@ class UtilLinux < Formula
       sum.insert 0, ((stat.mode & (2 ** index)).zero? ? "-" : flag)
     end
 
-    out = shell_output("#{bin}/namei -lx /usr").split("\n").last.split
+    out = shell_output("#{bin}namei -lx usr").split("\n").last.split
     assert_equal ["d#{perms}", owner, group, "usr"], out
   end
 end

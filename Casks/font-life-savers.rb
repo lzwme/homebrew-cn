@@ -2,12 +2,12 @@ cask "font-life-savers" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/lifesavers"
+      only_path: "ofllifesavers"
   name "Life Savers"
-  homepage "https://fonts.google.com/specimen/Life+Savers"
+  homepage "https:fonts.google.comspecimenLife+Savers"
 
   font "LifeSavers-Bold.ttf"
   font "LifeSavers-ExtraBold.ttf"

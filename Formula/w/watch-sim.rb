@@ -1,10 +1,10 @@
 class WatchSim < Formula
   desc "Command-line WatchKit application launcher"
-  homepage "https://github.com/alloy/watch-sim"
-  url "https://ghproxy.com/https://github.com/alloy/watch-sim/archive/refs/tags/1.0.0.tar.gz"
+  homepage "https:github.comalloywatch-sim"
+  url "https:github.comalloywatch-simarchiverefstags1.0.0.tar.gz"
   sha256 "138616472e980276999fee47072a24501ea53ce3f7095a3de940e683341b7cba"
   license "MIT"
-  head "https://github.com/alloy/watch-sim.git", branch: "master"
+  head "https:github.comalloywatch-sim.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2551be702d19489b5bc7224b2312c132df7a5090fda12c5c0e305b4982e828b4"
@@ -31,7 +31,7 @@ class WatchSim < Formula
   end
 
   test do
-    assert_match(/Usage: watch-sim/,
-                 shell_output("#{bin}/watch-sim 2>&1", 1))
+    assert_match(Usage: watch-sim,
+                 shell_output("#{bin}watch-sim 2>&1", 1))
   end
 end

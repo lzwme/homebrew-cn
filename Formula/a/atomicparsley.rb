@@ -1,12 +1,12 @@
 class Atomicparsley < Formula
   desc "MPEG-4 command-line tool"
-  homepage "https://github.com/wez/atomicparsley"
-  url "https://ghproxy.com/https://github.com/wez/atomicparsley/archive/refs/tags/20221229.172126.d813aa6.tar.gz"
+  homepage "https:github.comwezatomicparsley"
+  url "https:github.comwezatomicparsleyarchiverefstags20221229.172126.d813aa6.tar.gz"
   version "20221229.172126.d813aa6"
   sha256 "2f095a251167dc771e8f4434abe4a9c7af7d8e13c718fb8439a0e0d97078899b"
   license "GPL-2.0-or-later"
   version_scheme 1
-  head "https://github.com/wez/atomicparsley.git", branch: "master"
+  head "https:github.comwezatomicparsley.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb4e78f4a10dc7e6a3636555191863bee69c74a512493b9f832515e4d6982fa5"
@@ -33,9 +33,9 @@ class Atomicparsley < Formula
   end
 
   test do
-    cp test_fixtures("test.m4a"), testpath/"file.m4a"
-    system "#{bin}/AtomicParsley", testpath/"file.m4a", "--artist", "Homebrew", "--overWrite"
-    output = shell_output("#{bin}/AtomicParsley file.m4a --textdata")
+    cp test_fixtures("test.m4a"), testpath"file.m4a"
+    system "#{bin}AtomicParsley", testpath"file.m4a", "--artist", "Homebrew", "--overWrite"
+    output = shell_output("#{bin}AtomicParsley file.m4a --textdata")
     assert_match "Homebrew", output
   end
 end

@@ -1,7 +1,7 @@
 class Urweb < Formula
-  desc "Ur/Web programming language"
-  homepage "http://www.impredicative.com/ur/"
-  url "https://ghproxy.com/https://github.com/urweb/urweb/releases/download/20200209/urweb-20200209.tar.gz"
+  desc "UrWeb programming language"
+  homepage "http:www.impredicative.comur"
+  url "https:github.comurweburwebreleasesdownload20200209urweb-20200209.tar.gz"
   sha256 "ac3010c57f8d90f09f49dfcd6b2dc4d5da1cdbb41cbf12cb386e96e93ae30662"
   license "BSD-3-Clause"
   revision 8
@@ -28,40 +28,40 @@ class Urweb < Formula
 
   # Patch to fix build for icu4c 68.2
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/d7db3f02fe5dcd1f73c216efcb0bb79ac03a819f/urweb/icu4c68-2.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patchesd7db3f02fe5dcd1f73c216efcb0bb79ac03a819furwebicu4c68-2.patch"
     sha256 "8ec1ec5bec95e9feece8ff4e9c0435ada0ba2edbe48439fb88af4d56adcf2b3e"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
-                          "SITELISP=$prefix/share/emacs/site-lisp/urweb",
+                          "SITELISP=$prefixshareemacssite-lispurweb",
                           "ICU_INCLUDES=-I#{Formula["icu4c"].opt_include}",
                           "ICU_LIBS=-L#{Formula["icu4c"].opt_lib}"
     system "make", "install"
   end
 
   test do
-    (testpath/"hello.ur").write <<~EOS
+    (testpath"hello.ur").write <<~EOS
       fun target () = return <xml><body>
         Welcome!
-      </body></xml>
+      <body><xml>
       fun main () = return <xml><body>
-        <a link={target ()}>Go there</a>
-      </body></xml>
+        <a link={target ()}>Go there<a>
+      <body><xml>
     EOS
-    (testpath/"hello.urs").write <<~EOS
+    (testpath"hello.urs").write <<~EOS
       val main : unit -> transaction page
     EOS
-    (testpath/"hello.urp").write "hello"
-    system "#{bin}/urweb", "hello"
-    system "./hello.exe", "-h"
+    (testpath"hello.urp").write "hello"
+    system "#{bin}urweb", "hello"
+    system ".hello.exe", "-h"
   end
 end

@@ -1,15 +1,15 @@
 class Geomview < Formula
   desc "Interactive 3D viewing program"
-  homepage "http://www.geomview.org"
-  url "https://deb.debian.org/debian/pool/main/g/geomview/geomview_1.9.5.orig.tar.gz"
-  mirror "https://downloads.sourceforge.net/project/geomview/geomview/1.9.5/geomview-1.9.5.tar.gz"
+  homepage "http:www.geomview.org"
+  url "https:deb.debian.orgdebianpoolmainggeomviewgeomview_1.9.5.orig.tar.gz"
+  mirror "https:downloads.sourceforge.netprojectgeomviewgeomview1.9.5geomview-1.9.5.tar.gz"
   sha256 "67edb3005a22ed2bf06f0790303ee3f523011ba069c10db8aef263ac1a1b02c0"
   license "LGPL-2.1-only"
   revision 2
 
   livecheck do
-    url "https://deb.debian.org/debian/pool/main/g/geomview/"
-    regex(/href=.*?geomview[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.t/i)
+    url "https:deb.debian.orgdebianpoolmainggeomview"
+    regex(href=.*?geomview[._-]v?(\d+(?:\.\d+)+)(?:\.orig)?\.ti)
   end
 
   bottle do
@@ -39,22 +39,22 @@ class Geomview < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    # Work around for build error due to `finite`/`isfinite` detection on macOS.
-    # ../../../../include/porting.h:68:19: error: expected identifier or '('
+    # Work around for build error due to `finite``isfinite` detection on macOS.
+    # ........includeporting.h:68:19: error: expected identifier or '('
     # static inline int finite(double v)
     ENV["ac_cv_func_finite"] = "yes" if OS.mac? && Hardware::CPU.arm?
 
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
-    (bin/"hvectext").unlink
+    (bin"hvectext").unlink
   end
 
   test do
-    assert_match "Error: Can't open display:", shell_output("DISPLAY= #{bin}/geomview 2>&1", 1)
+    assert_match "Error: Can't open display:", shell_output("DISPLAY= #{bin}geomview 2>&1", 1)
   end
 end

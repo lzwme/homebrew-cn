@@ -1,10 +1,10 @@
 class Orogene < Formula
-  desc "`node_modules/` package manager and utility toolkit"
-  homepage "https://orogene.dev"
-  url "https://ghproxy.com/https://github.com/orogene/orogene/archive/refs/tags/v0.3.34.tar.gz"
+  desc "`node_modules` package manager and utility toolkit"
+  homepage "https:orogene.dev"
+  url "https:github.comorogeneorogenearchiverefstagsv0.3.34.tar.gz"
   sha256 "d4e50c2c3965e62160cf6a15db3734e4a847ca79629599fdd5ce30579aaae9a3"
   license "Apache-2.0"
-  head "https://github.com/orogene/orogene.git", branch: "main"
+  head "https:github.comorogeneorogene.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69f7b951549287f79e3521bf54493f3464b51f25eb282d896712cb0f2c5389ef"
@@ -32,7 +32,7 @@ class Orogene < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/oro --version")
-    system "#{bin}/oro", "ping"
+    assert_match version.to_s, shell_output("#{bin}oro --version")
+    system "#{bin}oro", "ping"
   end
 end

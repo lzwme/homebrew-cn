@@ -1,9 +1,9 @@
 class Ngrep < Formula
   desc "Network grep"
-  homepage "https://github.com/jpr5/ngrep"
-  url "https://ghproxy.com/https://github.com/jpr5/ngrep/archive/refs/tags/V1_47.tar.gz"
+  homepage "https:github.comjpr5ngrep"
+  url "https:github.comjpr5ngreparchiverefstagsV1_47.tar.gz"
   sha256 "dc4dbe20991cc36bac5e97e99475e2a1522fd88c59ee2e08f813432c04c5fff3"
-  license :cannot_represent # Described as 'BSD with advertising' here: https://src.fedoraproject.org/rpms/ngrep/blob/rawhide/f/ngrep.spec#_8
+  license :cannot_represent # Described as 'BSD with advertising' here: https:src.fedoraproject.orgrpmsngrepblobrawhidefngrep.spec#_8
 
   bottle do
     rebuild 1
@@ -36,28 +36,28 @@ class Ngrep < Formula
       "--enable-ipv6",
       "--prefix=#{prefix}",
       # this line required to avoid segfaults
-      # see https://github.com/jpr5/ngrep/commit/e29fc29
-      # https://github.com/Homebrew/homebrew/issues/27171
+      # see https:github.comjpr5ngrepcommite29fc29
+      # https:github.comHomebrewhomebrewissues27171
       "--disable-pcap-restart",
     ]
 
     args << if OS.mac?
       # this line required to make configure succeed
-      "--with-pcap-includes=#{sdk}/usr/include/pcap"
+      "--with-pcap-includes=#{sdk}usrincludepcap"
     else
       # this line required to make configure succeed
-      "--with-pcap-includes=#{Formula["libpcap"].opt_include}/pcap"
+      "--with-pcap-includes=#{Formula["libpcap"].opt_include}pcap"
     end
 
     # Resolve implicit `stdlib.h` function declarations
     args << "ac_cv_header_stdc=yes" if OS.mac?
 
-    system "./configure", *args
+    system ".configure", *args
 
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ngrep -V")
+    assert_match version.to_s, shell_output("#{bin}ngrep -V")
   end
 end

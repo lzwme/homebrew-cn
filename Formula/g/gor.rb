@@ -1,15 +1,15 @@
 class Gor < Formula
   desc "Real-time HTTP traffic replay tool written in Go"
-  homepage "https://goreplay.org"
-  url "https://github.com/buger/goreplay.git",
+  homepage "https:goreplay.org"
+  url "https:github.combugergoreplay.git",
       tag:      "1.3.3",
       revision: "f8ef77e8cf4aae59029daf6cbd2fc784af811cee"
   license "LGPL-3.0-only"
-  head "https://github.com/buger/goreplay.git", branch: "master"
+  head "https:github.combugergoreplay.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,7 +38,7 @@ class Gor < Formula
   test do
     test_port = free_port
     fork do
-      exec bin/"gor", "file-server", ":#{test_port}"
+      exec bin"gor", "file-server", ":#{test_port}"
     end
 
     sleep 2

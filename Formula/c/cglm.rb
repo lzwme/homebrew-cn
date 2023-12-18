@@ -1,7 +1,7 @@
 class Cglm < Formula
-  desc "Optimized OpenGL/Graphics Math (glm) for C"
-  homepage "https://github.com/recp/cglm"
-  url "https://ghproxy.com/https://github.com/recp/cglm/archive/refs/tags/v0.9.1.tar.gz"
+  desc "Optimized OpenGLGraphics Math (glm) for C"
+  homepage "https:github.comrecpcglm"
+  url "https:github.comrecpcglmarchiverefstagsv0.9.1.tar.gz"
   sha256 "ba16ee484c9d5e808ef01e55008a156831e8ff5297f10bbca307adeb827a0913"
   license "MIT"
 
@@ -23,15 +23,15 @@ class Cglm < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <cglm/cglm.h>
+    (testpath"test.c").write <<~EOS
+      #include <cglmcglm.h>
       #include <assert.h>
 
       int main() {
@@ -45,7 +45,7 @@ class Cglm < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}", testpath/"test.c", "-o", "test"
-    system "./test"
+    system ENV.cc, "-I#{include}", testpath"test.c", "-o", "test"
+    system ".test"
   end
 end

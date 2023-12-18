@@ -1,14 +1,14 @@
 class Lapack < Formula
   desc "Linear Algebra PACKage"
-  homepage "https://www.netlib.org/lapack/"
-  url "https://ghproxy.com/https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.12.0.tar.gz"
+  homepage "https:www.netlib.orglapack"
+  url "https:github.comReference-LAPACKlapackarchiverefstagsv3.12.0.tar.gz"
   sha256 "eac9570f8e0ad6f30ce4b963f4f033f0f643e7c3912fc9ee6cd99120675ad48b"
   license "BSD-3-Clause"
-  head "https://github.com/Reference-LAPACK/lapack.git", branch: "master"
+  head "https:github.comReference-LAPACKlapack.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -44,7 +44,7 @@ class Lapack < Formula
   end
 
   test do
-    (testpath/"lp.c").write <<~EOS
+    (testpath"lp.c").write <<~EOS
       #include "lapacke.h"
       int main() {
         void *p = LAPACKE_malloc(sizeof(char)*100);
@@ -55,6 +55,6 @@ class Lapack < Formula
       }
     EOS
     system ENV.cc, "lp.c", "-I#{include}", "-L#{lib}", "-llapacke", "-o", "lp"
-    system "./lp"
+    system ".lp"
   end
 end

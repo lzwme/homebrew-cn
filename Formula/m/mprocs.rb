@@ -1,10 +1,10 @@
 class Mprocs < Formula
   desc "Run multiple commands in parallel"
-  homepage "https://github.com/pvolok/mprocs"
-  url "https://ghproxy.com/https://github.com/pvolok/mprocs/archive/refs/tags/v0.6.4.tar.gz"
+  homepage "https:github.compvolokmprocs"
+  url "https:github.compvolokmprocsarchiverefstagsv0.6.4.tar.gz"
   sha256 "7fdb5f3f8baaa82ccb7bf2193a7b843027cb133824a99475226524c105255077"
   license "MIT"
-  head "https://github.com/pvolok/mprocs.git", branch: "master"
+  head "https:github.compvolokmprocs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2eed9f5ff395c01137f17aa1381229ed3a97a84f82e6201eb102d65b8686eda9"
@@ -35,13 +35,13 @@ class Mprocs < Formula
     require "pty"
 
     begin
-      r, w, pid = PTY.spawn("#{bin}/mprocs 'echo hello mprocs'")
+      r, w, pid = PTY.spawn("#{bin}mprocs 'echo hello mprocs'")
       r.winsize = [80, 30]
       sleep 1
       w.write "q"
       assert_match "hello mprocs", r.read
     rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
+      # GNULinux raises EIO when read is done on closed pty
     end
   ensure
     Process.kill("TERM", pid)

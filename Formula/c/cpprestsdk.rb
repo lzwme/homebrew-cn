@@ -1,12 +1,12 @@
 class Cpprestsdk < Formula
   desc "C++ libraries for cloud-based client-server communication"
-  homepage "https://github.com/Microsoft/cpprestsdk"
+  homepage "https:github.comMicrosoftcpprestsdk"
   # pull from git tag to get submodules
-  url "https://github.com/Microsoft/cpprestsdk.git",
+  url "https:github.comMicrosoftcpprestsdk.git",
       tag:      "v2.10.19",
       revision: "411a109150b270f23c8c97fa4ec9a0a4a98cdecf"
   license "MIT"
-  head "https://github.com/Microsoft/cpprestsdk.git", branch: "development"
+  head "https:github.comMicrosoftcpprestsdk.git", branch: "development"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "252c1e2ad5f0123d2b31840601166a73bd72bfbc229792d54aa73d920948331e"
@@ -33,11 +33,11 @@ class Cpprestsdk < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include <iostream>
-      #include <cpprest/http_client.h>
+      #include <cppresthttp_client.h>
       int main() {
-        web::http::client::http_client client(U("https://example.com/"));
+        web::http::client::http_client client(U("https:example.com"));
         std::cout << client.request(web::http::methods::GET).get().extract_string().get() << std::endl;
       }
     EOS
@@ -47,6 +47,6 @@ class Cpprestsdk < Formula
                     "-lssl", "-lcrypto", "-lboost_random-mt", "-lboost_chrono-mt", "-lboost_thread-mt",
                     "-lboost_system-mt", "-lboost_filesystem-mt", "-lcpprest",
                     "-o", "test_cpprest"
-    assert_match "<title>Example Domain</title>", shell_output("./test_cpprest")
+    assert_match "<title>Example Domain<title>", shell_output(".test_cpprest")
   end
 end

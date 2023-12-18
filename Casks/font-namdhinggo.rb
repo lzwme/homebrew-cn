@@ -2,11 +2,11 @@ cask "font-namdhinggo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
+  url "https:github.comgooglefonts.git",
       branch:    "main",
-      only_path: "ofl/namdhinggo"
+      only_path: "oflnamdhinggo"
   name "Namdhinggo"
-  homepage "https://github.com/silnrsi/font-namdhinggo"
+  homepage "https:github.comsilnrsifont-namdhinggo"
 
   font "Namdhinggo-Bold.ttf"
   font "Namdhinggo-ExtraBold.ttf"

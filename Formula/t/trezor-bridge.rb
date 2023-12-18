@@ -1,7 +1,7 @@
 class TrezorBridge < Formula
   desc "Trezor Communication Daemon"
-  homepage "https://github.com/trezor/trezord-go"
-  url "https://github.com/trezor/trezord-go.git",
+  homepage "https:github.comtrezortrezord-go"
+  url "https:github.comtrezortrezord-go.git",
       tag:      "v2.0.33",
       revision: "2680d5e6f7b02f06aefac1c2a9fef2c6052685de"
   license "LGPL-3.0-only"
@@ -19,11 +19,11 @@ class TrezorBridge < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"trezord-go", ldflags: "-s -w")
+    system "go", "build", *std_go_args(output: bin"trezord-go", ldflags: "-s -w")
   end
 
   service do
-    run opt_bin/"trezord-go"
+    run opt_bin"trezord-go"
     keep_alive true
     require_root true
     working_dir HOMEBREW_PREFIX
@@ -31,14 +31,14 @@ class TrezorBridge < Formula
 
   test do
     # start the server with the USB disabled and enable UDP interface instead
-    server = IO.popen("#{bin}/trezord-go -u=false -e 21324")
+    server = IO.popen("#{bin}trezord-go -u=false -e 21324")
     sleep 1
 
-    output = shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/")
+    output = shell_output("curl -s -X POST -H 'Origin: https:test.trezor.io' http:localhost:21325")
     assert_equal version.to_s, JSON.parse(output)["version"]
 
     assert_match "[]",
-        shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/enumerate")
+        shell_output("curl -s -X POST -H 'Origin: https:test.trezor.io' http:localhost:21325enumerate")
   ensure
     Process.kill("SIGINT", server.pid)
     Process.wait(server.pid)

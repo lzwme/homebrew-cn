@@ -1,13 +1,13 @@
 class Jasper < Formula
   desc "Library for manipulating JPEG-2000 images"
-  homepage "https://ece.engr.uvic.ca/~frodo/jasper/"
-  url "https://ghproxy.com/https://github.com/jasper-software/jasper/releases/download/version-4.1.1/jasper-4.1.1.tar.gz"
+  homepage "https:ece.engr.uvic.ca~frodojasper"
+  url "https:github.comjasper-softwarejasperreleasesdownloadversion-4.1.1jasper-4.1.1.tar.gz"
   sha256 "03ba86823f8798f3f60a5a34e36f3eff9e9cbd76175643a33d4aac7c0390240a"
   license "JasPer-2.0"
 
   livecheck do
     url :stable
-    regex(/^version[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^version[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Jasper < Formula
 
       if OS.mac?
         # Make sure macOS's GLUT.framework is used, not XQuartz or freeglut
-        # Reported to CMake upstream 4 Apr 2016 https://gitlab.kitware.com/cmake/cmake/issues/16045
-        glut_lib = "#{MacOS.sdk_path}/System/Library/Frameworks/GLUT.framework"
+        # Reported to CMake upstream 4 Apr 2016 https:gitlab.kitware.comcmakecmakeissues16045
+        glut_lib = "#{MacOS.sdk_path}SystemLibraryFrameworksGLUT.framework"
         args << "-DGLUT_glut_LIBRARY=#{glut_lib}"
       else
         args << "-DJAS_ENABLE_OPENGL=OFF"
@@ -49,13 +49,13 @@ class Jasper < Formula
         "-DJAS_ENABLE_SHARED=OFF",
         *args
       system "make"
-      lib.install "src/libjasper/libjasper.a"
+      lib.install "srclibjasperlibjasper.a"
     end
   end
 
   test do
-    system bin/"jasper", "--input", test_fixtures("test.jpg"),
+    system bin"jasper", "--input", test_fixtures("test.jpg"),
                          "--output", "test.bmp"
-    assert_predicate testpath/"test.bmp", :exist?
+    assert_predicate testpath"test.bmp", :exist?
   end
 end

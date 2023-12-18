@@ -1,7 +1,7 @@
 class Kickstart < Formula
   desc "Scaffolding tool to get new projects up and running quickly"
-  homepage "https://github.com/Keats/kickstart"
-  url "https://ghproxy.com/https://github.com/Keats/kickstart/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:github.comKeatskickstart"
+  url "https:github.comKeatskickstartarchiverefstagsv0.4.0.tar.gz"
   sha256 "5aae308d7d6aa021ddf7f5dc882f8199a5d4f4db8cb8f7175c1c1ac831075a8c"
   license "MIT"
 
@@ -27,9 +27,9 @@ class Kickstart < Formula
     # Create a basic template file and project, and check that kickstart
     # actually interpolates both the filename and its content.
     #
-    (testpath/"{{file_name}}.txt").write("{{software_project}} is awesome!")
+    (testpath"{{file_name}}.txt").write("{{software_project}} is awesome!")
 
-    (testpath/"template.toml").write <<~EOS
+    (testpath"template.toml").write <<~EOS
       name = "Super basic"
       description = "A very simple template"
       kickstart_version = 1
@@ -46,9 +46,9 @@ class Kickstart < Formula
     EOS
 
     # Run template interpolation
-    system bin/"kickstart", "--no-input", testpath.to_s
+    system bin"kickstart", "--no-input", testpath.to_s
 
-    assert_predicate testpath/"myfilename.txt", :exist?
-    assert_equal "kickstart is awesome!", (testpath/"myfilename.txt").read
+    assert_predicate testpath"myfilename.txt", :exist?
+    assert_equal "kickstart is awesome!", (testpath"myfilename.txt").read
   end
 end

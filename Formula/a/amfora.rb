@@ -1,14 +1,14 @@
 class Amfora < Formula
   desc "Fancy terminal browser for the Gemini protocol"
-  homepage "https://github.com/makeworld-the-better-one/amfora"
-  url "https://github.com/makeworld-the-better-one/amfora.git",
+  homepage "https:github.commakeworld-the-better-oneamfora"
+  url "https:github.commakeworld-the-better-oneamfora.git",
       tag:      "v1.9.2",
       revision: "61d864540140f463a183e187e4211c258bd518bf"
   license all_of: [
     "GPL-3.0-only",
     any_of: ["GPL-3.0-only", "MIT"], # rr
   ]
-  head "https://github.com/makeworld-the-better-one/amfora.git", branch: "master"
+  head "https:github.commakeworld-the-better-oneamfora.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "627b05fbc926466078947bbec694bdd2bfd9b6e4dcd04bec8d97ae08c7b5a2f1"
@@ -33,7 +33,7 @@ class Amfora < Formula
       -X main.builtBy=homebrew
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
-    pkgshare.install "contrib/themes"
+    pkgshare.install "contribthemes"
   end
 
   test do
@@ -41,7 +41,7 @@ class Amfora < Formula
 
     input, _, wait_thr = Open3.popen2 "script -q screenlog.txt"
     input.puts "stty rows 80 cols 43"
-    input.puts "env TERM=xterm #{bin}/amfora"
+    input.puts "env TERM=xterm #{bin}amfora"
     sleep 1
     input.putc "1"
     sleep 1
@@ -49,7 +49,7 @@ class Amfora < Formula
     sleep 1
     input.putc "q"
 
-    screenlog = (testpath/"screenlog.txt").read
+    screenlog = (testpath"screenlog.txt").read
     assert_match "# New Tab", screenlog
     assert_match "## Learn more about Amfora!", screenlog
   ensure

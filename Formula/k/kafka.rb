@@ -1,14 +1,14 @@
 class Kafka < Formula
   desc "Open-source distributed event streaming platform"
-  homepage "https://kafka.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=kafka/3.6.1/kafka_2.13-3.6.1.tgz"
-  mirror "https://archive.apache.org/dist/kafka/3.6.1/kafka_2.13-3.6.1.tgz"
+  homepage "https:kafka.apache.org"
+  url "https:www.apache.orgdyncloser.lua?path=kafka3.6.1kafka_2.13-3.6.1.tgz"
+  mirror "https:archive.apache.orgdistkafka3.6.1kafka_2.13-3.6.1.tgz"
   sha256 "e3db568c7f8fccc7f981ea7b0944268ae9310592c73ee0eb579ebfdbfcf2d3ca"
   license "Apache-2.0"
 
   livecheck do
-    url "https://kafka.apache.org/downloads"
-    regex(/href=.*?kafka[._-]v?\d+(?:\.\d+)+-(\d+(?:\.\d+)+)\.t/i)
+    url "https:kafka.apache.orgdownloads"
+    regex(href=.*?kafka[._-]v?\d+(?:\.\d+)+-(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -25,98 +25,98 @@ class Kafka < Formula
   depends_on "zookeeper"
 
   def install
-    data = var/"lib"
-    inreplace "config/server.properties",
-      "log.dirs=/tmp/kafka-logs", "log.dirs=#{data}/kafka-logs"
+    data = var"lib"
+    inreplace "configserver.properties",
+      "log.dirs=tmpkafka-logs", "log.dirs=#{data}kafka-logs"
 
-    inreplace "config/kraft/server.properties",
-      "log.dirs=/tmp/kraft-combined-logs", "log.dirs=#{data}/kraft-combined-logs"
+    inreplace "configkraftserver.properties",
+      "log.dirs=tmpkraft-combined-logs", "log.dirs=#{data}kraft-combined-logs"
 
-    inreplace "config/kraft/controller.properties",
-      "log.dirs=/tmp/kraft-controller-logs", "log.dirs=#{data}/kraft-controller-logs"
+    inreplace "configkraftcontroller.properties",
+      "log.dirs=tmpkraft-controller-logs", "log.dirs=#{data}kraft-controller-logs"
 
-    inreplace "config/kraft/broker.properties",
-      "log.dirs=/tmp/kraft-broker-logs", "log.dirs=#{data}/kraft-broker-logs"
+    inreplace "configkraftbroker.properties",
+      "log.dirs=tmpkraft-broker-logs", "log.dirs=#{data}kraft-broker-logs"
 
-    inreplace "config/zookeeper.properties",
-      "dataDir=/tmp/zookeeper", "dataDir=#{data}/zookeeper"
+    inreplace "configzookeeper.properties",
+      "dataDir=tmpzookeeper", "dataDir=#{data}zookeeper"
 
     # remove Windows scripts
-    rm_rf "bin/windows"
+    rm_rf "binwindows"
 
     libexec.install "libs"
 
     prefix.install "bin"
-    bin.env_script_all_files(libexec/"bin", Language::Java.overridable_java_home_env)
-    Dir["#{bin}/*.sh"].each { |f| mv f, f.to_s.gsub(/.sh$/, "") }
+    bin.env_script_all_files(libexec"bin", Language::Java.overridable_java_home_env)
+    Dir["#{bin}*.sh"].each { |f| mv f, f.to_s.gsub(.sh$, "") }
 
     mv "config", "kafka"
     etc.install "kafka"
-    libexec.install_symlink etc/"kafka" => "config"
+    libexec.install_symlink etc"kafka" => "config"
 
     # create directory for kafka stdout+stderr output logs when run by launchd
-    (var+"log/kafka").mkpath
+    (var+"logkafka").mkpath
   end
 
   service do
-    run [opt_bin/"kafka-server-start", etc/"kafka/server.properties"]
+    run [opt_bin"kafka-server-start", etc"kafkaserver.properties"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/kafka/kafka_output.log"
-    error_log_path var/"log/kafka/kafka_output.log"
+    log_path var"logkafkakafka_output.log"
+    error_log_path var"logkafkakafka_output.log"
   end
 
   test do
-    ENV["LOG_DIR"] = "#{testpath}/kafkalog"
+    ENV["LOG_DIR"] = "#{testpath}kafkalog"
 
-    # Workaround for https://issues.apache.org/jira/browse/KAFKA-15413
-    # See https://github.com/Homebrew/homebrew-core/pull/133887#issuecomment-1679907729
+    # Workaround for https:issues.apache.orgjirabrowseKAFKA-15413
+    # See https:github.comHomebrewhomebrew-corepull133887#issuecomment-1679907729
     ENV.delete "COLUMNS"
 
-    (testpath/"kafka").mkpath
-    cp "#{etc}/kafka/zookeeper.properties", testpath/"kafka"
-    cp "#{etc}/kafka/server.properties", testpath/"kafka"
-    inreplace "#{testpath}/kafka/zookeeper.properties", "#{var}/lib", testpath
-    inreplace "#{testpath}/kafka/server.properties", "#{var}/lib", testpath
+    (testpath"kafka").mkpath
+    cp "#{etc}kafkazookeeper.properties", testpath"kafka"
+    cp "#{etc}kafkaserver.properties", testpath"kafka"
+    inreplace "#{testpath}kafkazookeeper.properties", "#{var}lib", testpath
+    inreplace "#{testpath}kafkaserver.properties", "#{var}lib", testpath
 
     zk_port = free_port
     kafka_port = free_port
-    inreplace "#{testpath}/kafka/zookeeper.properties", "clientPort=2181", "clientPort=#{zk_port}"
-    inreplace "#{testpath}/kafka/server.properties" do |s|
+    inreplace "#{testpath}kafkazookeeper.properties", "clientPort=2181", "clientPort=#{zk_port}"
+    inreplace "#{testpath}kafkaserver.properties" do |s|
       s.gsub! "zookeeper.connect=localhost:2181", "zookeeper.connect=localhost:#{zk_port}"
-      s.gsub! "#listeners=PLAINTEXT://:9092", "listeners=PLAINTEXT://:#{kafka_port}"
+      s.gsub! "#listeners=PLAINTEXT::9092", "listeners=PLAINTEXT::#{kafka_port}"
     end
 
     begin
       fork do
-        exec "#{bin}/zookeeper-server-start #{testpath}/kafka/zookeeper.properties " \
-             "> #{testpath}/test.zookeeper-server-start.log 2>&1"
+        exec "#{bin}zookeeper-server-start #{testpath}kafkazookeeper.properties " \
+             "> #{testpath}test.zookeeper-server-start.log 2>&1"
       end
 
       sleep 15
 
       fork do
-        exec "#{bin}/kafka-server-start #{testpath}/kafka/server.properties " \
-             "> #{testpath}/test.kafka-server-start.log 2>&1"
+        exec "#{bin}kafka-server-start #{testpath}kafkaserver.properties " \
+             "> #{testpath}test.kafka-server-start.log 2>&1"
       end
 
       sleep 30
 
-      system "#{bin}/kafka-topics --bootstrap-server localhost:#{kafka_port} --create --if-not-exists " \
-             "--replication-factor 1 --partitions 1 --topic test > #{testpath}/kafka/demo.out " \
-             "2>/dev/null"
-      pipe_output "#{bin}/kafka-console-producer --bootstrap-server localhost:#{kafka_port} --topic test 2>/dev/null",
+      system "#{bin}kafka-topics --bootstrap-server localhost:#{kafka_port} --create --if-not-exists " \
+             "--replication-factor 1 --partitions 1 --topic test > #{testpath}kafkademo.out " \
+             "2>devnull"
+      pipe_output "#{bin}kafka-console-producer --bootstrap-server localhost:#{kafka_port} --topic test 2>devnull",
                   "test message"
-      system "#{bin}/kafka-console-consumer --bootstrap-server localhost:#{kafka_port} --topic test " \
-             "--from-beginning --max-messages 1 >> #{testpath}/kafka/demo.out 2>/dev/null"
-      system "#{bin}/kafka-topics --bootstrap-server localhost:#{kafka_port} --delete --topic test " \
-             ">> #{testpath}/kafka/demo.out 2>/dev/null"
+      system "#{bin}kafka-console-consumer --bootstrap-server localhost:#{kafka_port} --topic test " \
+             "--from-beginning --max-messages 1 >> #{testpath}kafkademo.out 2>devnull"
+      system "#{bin}kafka-topics --bootstrap-server localhost:#{kafka_port} --delete --topic test " \
+             ">> #{testpath}kafkademo.out 2>devnull"
     ensure
-      system "#{bin}/kafka-server-stop"
-      system "#{bin}/zookeeper-server-stop"
+      system "#{bin}kafka-server-stop"
+      system "#{bin}zookeeper-server-stop"
       sleep 10
     end
 
-    assert_match(/test message/, File.read("#{testpath}/kafka/demo.out"))
+    assert_match(test message, File.read("#{testpath}kafkademo.out"))
   end
 end

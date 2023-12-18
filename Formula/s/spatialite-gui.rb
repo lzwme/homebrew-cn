@@ -1,14 +1,14 @@
 class SpatialiteGui < Formula
   desc "GUI tool supporting SpatiaLite"
-  homepage "https://www.gaia-gis.it/fossil/spatialite_gui/index"
-  url "https://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/spatialite_gui-2.1.0-beta1.tar.gz"
+  homepage "https:www.gaia-gis.itfossilspatialite_guiindex"
+  url "https:www.gaia-gis.itgaia-sinsspatialite-gui-sourcesspatialite_gui-2.1.0-beta1.tar.gz"
   sha256 "ba48d96df18cebc3ff23f69797207ae1582cce62f4596b69bae300ca3c23db33"
   license "GPL-3.0-or-later"
   revision 3
 
   livecheck do
-    url "https://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/"
-    regex(/href=.*?spatialite[._-]gui[._-]v?(\d+(?:\.\d+)+(?:[._-]\w+\d*)?)\.t/i)
+    url "https:www.gaia-gis.itgaia-sinsspatialite-gui-sources"
+    regex(href=.*?spatialite[._-]gui[._-]v?(\d+(?:\.\d+)+(?:[._-]\w+\d*)?)\.ti)
   end
 
   bottle do
@@ -50,13 +50,13 @@ class SpatialiteGui < Formula
   def install
     # Link flags for sqlite don't seem to get passed to make, which
     # causes builds to fatally error out on linking.
-    # https://github.com/Homebrew/homebrew/issues/44003
+    # https:github.comHomebrewhomebrewissues44003
     sqlite = Formula["sqlite"]
     ENV.prepend "LDFLAGS", "-L#{sqlite.opt_lib} -lsqlite3"
     ENV.prepend "CFLAGS", "-I#{sqlite.opt_include}"
 
-    system "./configure", "--prefix=#{prefix}",
-                          "--with-wxconfig=#{Formula["wxwidgets"].opt_bin}/wx-config"
+    system ".configure", "--prefix=#{prefix}",
+                          "--with-wxconfig=#{Formula["wxwidgets"].opt_bin}wx-config"
     system "make", "install"
   end
 end

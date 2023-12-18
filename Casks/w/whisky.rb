@@ -2,10 +2,10 @@ cask "whisky" do
   version "2.2.1"
   sha256 "ba819ff9424648162345b9410ab01b19b2ef58cedb5abfd8d28d2c83c169a65a"
 
-  url "https://ghproxy.com/https://github.com/IsaacMarovitz/Whisky/releases/download/v#{version}/Whisky.zip"
+  url "https:github.comIsaacMarovitzWhiskyreleasesdownloadv#{version}Whisky.zip"
   name "Whisky"
   desc "Wine wrapper built with SwiftUI"
-  homepage "https://github.com/IsaacMarovitz/Whisky"
+  homepage "https:github.comIsaacMarovitzWhisky"
 
   livecheck do
     url :url
@@ -17,14 +17,14 @@ cask "whisky" do
   depends_on arch: :arm64
 
   app "Whisky.app"
-  binary "#{appdir}/Whisky.app/Contents/Resources/WhiskyCmd", target: "whisky"
+  binary "#{appdir}Whisky.appContentsResourcesWhiskyCmd", target: "whisky"
 
   zap trash: [
-    "~/Library/Application Support/com.isaacmarovitz.Whisky",
-    "~/Library/Containers/com.isaacmarovitz.Whisky",
-    "~/Library/HTTPStorages/com.isaacmarovitz.Whisky",
-    "~/Library/Logs/com.isaacmarovitz.Whisky",
-    "~/Library/Preferences/com.isaacmarovitz.Whisky.plist",
-    "~/Library/Saved Application State/com.isaacmarovitz.Whisky.savedState",
+    "~LibraryApplication Supportcom.isaacmarovitz.Whisky",
+    "~LibraryContainerscom.isaacmarovitz.Whisky",
+    "~LibraryHTTPStoragescom.isaacmarovitz.Whisky",
+    "~LibraryLogscom.isaacmarovitz.Whisky",
+    "~LibraryPreferencescom.isaacmarovitz.Whisky.plist",
+    "~LibrarySaved Application Statecom.isaacmarovitz.Whisky.savedState",
   ]
 end

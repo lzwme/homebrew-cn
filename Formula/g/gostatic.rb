@@ -1,10 +1,10 @@
 class Gostatic < Formula
   desc "Fast static site generator"
-  homepage "https://github.com/piranha/gostatic"
-  url "https://ghproxy.com/https://github.com/piranha/gostatic/archive/refs/tags/2.36.tar.gz"
+  homepage "https:github.compiranhagostatic"
+  url "https:github.compiranhagostaticarchiverefstags2.36.tar.gz"
   sha256 "a66e306c0289bac541af10cb88acc9b9576153de5d4acec566c3f927acefd778"
   license "ISC"
-  head "https://github.com/piranha/gostatic.git", branch: "master"
+  head "https:github.compiranhagostatic.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac8f00d4c297bec6e0276e2a3a5a287a0aeb3407794d63b296e14de3f6cfd814"
@@ -25,7 +25,7 @@ class Gostatic < Formula
   end
 
   test do
-    (testpath/"config").write <<~EOS
+    (testpath"config").write <<~EOS
       TEMPLATES = site.tmpl
       SOURCE = src
       OUTPUT = out
@@ -38,15 +38,15 @@ class Gostatic < Formula
       \ttemplate site
     EOS
 
-    (testpath/"site.tmpl").write <<~EOS
+    (testpath"site.tmpl").write <<~EOS
       {{ define "site" }}
-      <html><head><title>{{ .Title }}</title></head><body>{{ .Content }}</body></html>
+      <html><head><title>{{ .Title }}<title><head><body>{{ .Content }}<body><html>
       {{ end }}
     EOS
 
-    (testpath/"src/index.md").write "Hello world!"
+    (testpath"srcindex.md").write "Hello world!"
 
-    system bin/"gostatic", testpath/"config"
-    assert_predicate testpath/"out/index.html", :exist?
+    system bin"gostatic", testpath"config"
+    assert_predicate testpath"outindex.html", :exist?
   end
 end

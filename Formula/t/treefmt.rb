@@ -1,11 +1,11 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
-  homepage "https://github.com/numtide/treefmt"
-  url "https://ghproxy.com/https://github.com/numtide/treefmt/archive/refs/tags/v0.6.1.tar.gz"
+  homepage "https:github.comnumtidetreefmt"
+  url "https:github.comnumtidetreefmtarchiverefstagsv0.6.1.tar.gz"
   sha256 "5bb67936c5e1dfdb0f260e0f1795e1624697e266c6c1b9e47914df4aa17c5107"
   license "MIT"
 
-  head "https://github.com/numtide/treefmt.git", branch: "master"
+  head "https:github.comnumtidetreefmt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bba21b0bdd6ae7fd7569524b658681208c89672cb0eb92629c758f21e488e16c"
@@ -25,6 +25,6 @@ class Treefmt < Formula
 
   test do
     # Test that treefmt responds as expected when run without treefmt.toml config
-    assert_match "treefmt.toml could not be found", shell_output("#{bin}/treefmt 2>&1", 1)
+    assert_match "treefmt.toml could not be found", shell_output("#{bin}treefmt 2>&1", 1)
   end
 end

@@ -1,7 +1,7 @@
 class Cromwell < Formula
   desc "Workflow Execution Engine using Workflow Description Language"
-  homepage "https://github.com/broadinstitute/cromwell"
-  url "https://ghproxy.com/https://github.com/broadinstitute/cromwell/releases/download/86/cromwell-86.jar"
+  homepage "https:github.combroadinstitutecromwell"
+  url "https:github.combroadinstitutecromwellreleasesdownload86cromwell-86.jar"
   sha256 "f9581657e0484c90b5ead0f699d8d791f94e3cabe87d8cb0c5bfb21d1fdb6592"
   license "BSD-3-Clause"
 
@@ -16,22 +16,22 @@ class Cromwell < Formula
   end
 
   head do
-    url "https://github.com/broadinstitute/cromwell.git", branch: "develop"
+    url "https:github.combroadinstitutecromwell.git", branch: "develop"
     depends_on "sbt" => :build
   end
 
   depends_on "openjdk"
 
   resource "womtool" do
-    url "https://ghproxy.com/https://github.com/broadinstitute/cromwell/releases/download/86/womtool-86.jar"
+    url "https:github.combroadinstitutecromwellreleasesdownload86womtool-86.jar"
     sha256 "5212a139755cd299ad61324429a3319bf0d2c5c4966e4270dd90579a4f84c0d8"
   end
 
   def install
     if build.head?
       system "sbt", "assembly"
-      libexec.install Dir["server/target/scala-*/cromwell-*.jar"][0] => "cromwell.jar"
-      libexec.install Dir["womtool/target/scala-*/womtool-*.jar"][0] => "womtool.jar"
+      libexec.install Dir["servertargetscala-*cromwell-*.jar"][0] => "cromwell.jar"
+      libexec.install Dir["womtooltargetscala-*womtool-*.jar"][0] => "womtool.jar"
     else
       libexec.install "cromwell-#{version}.jar" => "cromwell.jar"
       resource("womtool").stage do
@@ -39,12 +39,12 @@ class Cromwell < Formula
       end
     end
 
-    bin.write_jar_script libexec/"cromwell.jar", "cromwell", "$JAVA_OPTS"
-    bin.write_jar_script libexec/"womtool.jar", "womtool"
+    bin.write_jar_script libexec"cromwell.jar", "cromwell", "$JAVA_OPTS"
+    bin.write_jar_script libexec"womtool.jar", "womtool"
   end
 
   test do
-    (testpath/"hello.wdl").write <<~EOS
+    (testpath"hello.wdl").write <<~EOS
       task hello {
         String name
 
@@ -61,13 +61,13 @@ class Cromwell < Formula
       }
     EOS
 
-    (testpath/"hello.json").write <<~EOS
+    (testpath"hello.json").write <<~EOS
       {
         "test.hello.name": "world"
       }
     EOS
 
-    result = shell_output("#{bin}/cromwell run --inputs hello.json hello.wdl")
+    result = shell_output("#{bin}cromwell run --inputs hello.json hello.wdl")
 
     assert_match "test.hello.response", result
   end

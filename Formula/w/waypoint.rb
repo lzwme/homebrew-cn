@@ -1,13 +1,13 @@
 class Waypoint < Formula
   desc "Tool to build, deploy, and release any application on any platform"
-  homepage "https://www.waypointproject.io/"
+  homepage "https:www.waypointproject.io"
   # NOTE: Do not bump to v0.12.0+ as license changed to BUSL-1.1
-  # https://github.com/hashicorp/waypoint/pull/4878
-  # https://github.com/hashicorp/waypoint/pull/4888
-  url "https://ghproxy.com/https://github.com/hashicorp/waypoint/archive/refs/tags/v0.11.4.tar.gz"
+  # https:github.comhashicorpwaypointpull4878
+  # https:github.comhashicorpwaypointpull4888
+  url "https:github.comhashicorpwaypointarchiverefstagsv0.11.4.tar.gz"
   sha256 "e2526a621880fdc92c285250242532d2e9c5053fd53d2df9ad4ca7efa6b951a3"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/waypoint.git", branch: "main"
+  head "https:github.comhashicorpwaypoint.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cb2babffdd9b657b72c097f1806e99654797855aa12c0f3d51fd3f4fb318064"
@@ -21,7 +21,7 @@ class Waypoint < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2386f08d39846c93368dd3e3352ec6391d2215231280a746bf605261c9df2d5"
   end
 
-  # https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
+  # https:www.hashicorp.combloghashicorp-adopts-business-source-license
   deprecate! date: "2023-09-27", because: "will change its license to BUSL on the next release"
 
   depends_on "go" => :build
@@ -34,21 +34,21 @@ class Waypoint < Formula
 
   def caveats
     <<~EOS
-      We will not accept any new Waypoint releases in homebrew/core (with the BUSL license).
+      We will not accept any new Waypoint releases in homebrewcore (with the BUSL license).
       The next release will change to a non-open-source license:
-      https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license
+      https:www.hashicorp.combloghashicorp-adopts-business-source-license
       See our documentation for acceptable licences:
-        https://docs.brew.sh/License-Guidelines
+        https:docs.brew.shLicense-Guidelines
     EOS
   end
 
   test do
-    output = shell_output("#{bin}/waypoint context list")
+    output = shell_output("#{bin}waypoint context list")
     assert_match "No contexts. Create one with `waypoint context create`.", output
 
     assert_match "! failed to create client: no server connection configuration found",
-      shell_output("#{bin}/waypoint server bootstrap 2>&1", 1)
+      shell_output("#{bin}waypoint server bootstrap 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/waypoint version")
+    assert_match version.to_s, shell_output("#{bin}waypoint version")
   end
 end

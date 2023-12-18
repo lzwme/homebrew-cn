@@ -1,15 +1,15 @@
 class IcarusVerilog < Formula
   desc "Verilog simulation and synthesis tool"
-  homepage "http://iverilog.icarus.com/"
-  url "https://ghproxy.com/https://github.com/steveicarus/iverilog/archive/refs/tags/v12_0.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/i/iverilog/iverilog_12.0.orig.tar.gz"
+  homepage "http:iverilog.icarus.com"
+  url "https:github.comsteveicarusiverilogarchiverefstagsv12_0.tar.gz"
+  mirror "https:deb.debian.orgdebianpoolmainiiverilogiverilog_12.0.orig.tar.gz"
   sha256 "a68cb1ef7c017ef090ebedb2bc3e39ef90ecc70a3400afb4aa94303bc3beaa7d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  head "https://github.com/steveicarus/iverilog.git", branch: "master"
+  head "https:github.comsteveicarusiverilog.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:[._]\d+)+)/i)
+    regex(v?(\d+(?:[._]\d+)+)i)
     strategy :github_latest
   end
 
@@ -40,12 +40,12 @@ class IcarusVerilog < Formula
 
   def install
     system "autoconf"
-    system "./configure", "--prefix=#{prefix}"
-    system "make", "install", "BISON=#{Formula["bison"].opt_bin}/bison"
+    system ".configure", "--prefix=#{prefix}"
+    system "make", "install", "BISON=#{Formula["bison"].opt_bin}bison"
   end
 
   test do
-    (testpath/"test.v").write <<~EOS
+    (testpath"test.v").write <<~EOS
       module main;
         initial
           begin
@@ -54,20 +54,20 @@ class IcarusVerilog < Formula
           end
       endmodule
     EOS
-    system bin/"iverilog", "-o", "test", "test.v"
+    system bin"iverilog", "-o", "test", "test.v"
 
     expected = <<~EOS
       Boop
       test.v:5: $finish called at 0 (1s)
     EOS
-    assert_equal expected, shell_output("./test")
+    assert_equal expected, shell_output(".test")
 
     # test syntax errors do not cause segfaults
-    (testpath/"error.v").write "error;"
+    (testpath"error.v").write "error;"
     expected = <<~EOS
       error.v:1: syntax error
       I give up.
     EOS
-    assert_equal expected, shell_output("#{bin}/iverilog error.v 2>&1", 2)
+    assert_equal expected, shell_output("#{bin}iverilog error.v 2>&1", 2)
   end
 end

@@ -1,11 +1,11 @@
 class SimpleAmqpClient < Formula
   desc "C++ interface to rabbitmq-c"
-  homepage "https://github.com/alanxz/SimpleAmqpClient"
-  url "https://ghproxy.com/https://github.com/alanxz/SimpleAmqpClient/archive/refs/tags/v2.5.1.tar.gz"
+  homepage "https:github.comalanxzSimpleAmqpClient"
+  url "https:github.comalanxzSimpleAmqpClientarchiverefstagsv2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
   revision 6
-  head "https://github.com/alanxz/SimpleAmqpClient.git", branch: "master"
+  head "https:github.comalanxzSimpleAmqpClient.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f6bd6bf6f3d8d9d8de51f542da48e4969953e00feb39fde3bb8f47ae85727140"
@@ -30,8 +30,8 @@ class SimpleAmqpClient < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <SimpleAmqpClient/SimpleAmqpClient.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <SimpleAmqpClientSimpleAmqpClient.h>
       #include <string>
       int main() {
         const std::string expected = "test body";
@@ -43,6 +43,6 @@ class SimpleAmqpClient < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lSimpleAmqpClient", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

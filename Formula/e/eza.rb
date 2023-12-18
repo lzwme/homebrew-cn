@@ -1,7 +1,7 @@
 class Eza < Formula
   desc "Modern, maintained replacement for ls"
-  homepage "https://github.com/eza-community/eza"
-  url "https://ghproxy.com/https://github.com/eza-community/eza/archive/refs/tags/v0.17.0.tar.gz"
+  homepage "https:github.comeza-communityeza"
+  url "https:github.comeza-communityezaarchiverefstagsv0.17.0.tar.gz"
   sha256 "c5be22fbf8979d796509873327703353c243acbf42cb42b22b86be56cc11682c"
   license "MIT"
 
@@ -23,18 +23,18 @@ class Eza < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completions/bash/eza"
-    fish_completion.install "completions/fish/eza.fish"
-    zsh_completion.install  "completions/zsh/_eza"
+    bash_completion.install "completionsbasheza"
+    fish_completion.install "completionsfisheza.fish"
+    zsh_completion.install  "completionszsh_eza"
 
     args = %w[
       --standalone
       --from=markdown
       --to=man
     ]
-    system "pandoc", *args, "man/eza.1.md", "-o", "eza.1"
-    system "pandoc", *args, "man/eza_colors.5.md", "-o", "eza_colors.5"
-    system "pandoc", *args, "man/eza_colors-explanation.5.md", "-o", "eza_colors-explanation.5"
+    system "pandoc", *args, "maneza.1.md", "-o", "eza.1"
+    system "pandoc", *args, "maneza_colors.5.md", "-o", "eza_colors.5"
+    system "pandoc", *args, "maneza_colors-explanation.5.md", "-o", "eza_colors-explanation.5"
 
     man1.install buildpath.glob("*.1")
     man5.install buildpath.glob("*.5")
@@ -43,11 +43,11 @@ class Eza < Formula
   test do
     testfile = "test.txt"
     touch testfile
-    assert_match testfile, shell_output(bin/"eza")
+    assert_match testfile, shell_output(bin"eza")
 
     # Test git integration
     flags = "--long --git --no-permissions --no-filesize --no-user --no-time --color=never"
-    eza_output = proc { shell_output("#{bin}/eza #{flags}").lines.grep(/#{testfile}/).first.split.first }
+    eza_output = proc { shell_output("#{bin}eza #{flags}").lines.grep(#{testfile}).first.split.first }
     system "git", "init"
     assert_equal "-N", eza_output.call
     system "git", "add", testfile
@@ -55,10 +55,10 @@ class Eza < Formula
     system "git", "commit", "-m", "Initial commit"
     assert_equal "--", eza_output.call
 
-    linkage_with_libgit2 = (bin/"eza").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"eza").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

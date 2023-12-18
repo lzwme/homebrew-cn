@@ -1,14 +1,14 @@
 class GerbilScheme < Formula
   desc "Opinionated dialect of Scheme designed for Systems Programming"
-  homepage "https://cons.io"
-  url "https://ghproxy.com/https://github.com/vyzo/gerbil/archive/refs/tags/v0.17.tar.gz"
+  homepage "https:cons.io"
+  url "https:github.comvyzogerbilarchiverefstagsv0.17.tar.gz"
   sha256 "1e81265aba7e9022432649eb26b2e5c85a2bb631a315e4fa840b14cf336b2483"
   license any_of: ["LGPL-2.1-or-later", "Apache-2.0"]
   revision 3
 
   livecheck do
-    url "https://github.com/vyzo/gerbil.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.comvyzogerbil.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -40,20 +40,20 @@ class GerbilScheme < Formula
 
   def install
     cd "src" do
-      system "./configure", "--prefix=#{prefix}",
+      system ".configure", "--prefix=#{prefix}",
                             "--with-gambit=#{Formula["gambit-scheme"].opt_prefix}",
                             "--enable-leveldb",
                             "--enable-libxml",
                             "--enable-libyaml",
                             "--enable-lmdb"
-      system "./build.sh"
-      system "./install"
+      system ".build.sh"
+      system ".install"
 
-      mv "#{share}/emacs/site-lisp/gerbil", "#{share}/emacs/site-lisp/gerbil-scheme"
+      mv "#{share}emacssite-lispgerbil", "#{share}emacssite-lispgerbil-scheme"
     end
   end
 
   test do
-    assert_equal "0123456789", shell_output("#{bin}/gxi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
+    assert_equal "0123456789", shell_output("#{bin}gxi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
   end
 end

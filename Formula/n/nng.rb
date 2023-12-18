@@ -1,13 +1,13 @@
 class Nng < Formula
   desc "Nanomsg-next-generation -- light-weight brokerless messaging"
-  homepage "https://nanomsg.github.io/nng/"
-  url "https://ghproxy.com/https://github.com/nanomsg/nng/archive/refs/tags/v1.6.0.tar.gz"
+  homepage "https:nanomsg.github.ionng"
+  url "https:github.comnanomsgnngarchiverefstagsv1.6.0.tar.gz"
   sha256 "f639e77911ef935a13e9779d4a18d45490433ba744f89752a15b84c929ce2725"
   license "MIT"
 
   livecheck do
-    url "https://github.com/nanomsg/nng.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.comnanomsgnng.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,14 +34,14 @@ class Nng < Formula
   end
 
   test do
-    bind = "tcp://127.0.0.1:#{free_port}"
+    bind = "tcp:127.0.0.1:#{free_port}"
 
     fork do
-      exec "#{bin}/nngcat --rep --bind #{bind} --format ascii --data home"
+      exec "#{bin}nngcat --rep --bind #{bind} --format ascii --data home"
     end
     sleep 2
 
-    output = shell_output("#{bin}/nngcat --req --connect #{bind} --format ascii --data brew")
-    assert_match(/home/, output)
+    output = shell_output("#{bin}nngcat --req --connect #{bind} --format ascii --data brew")
+    assert_match(home, output)
   end
 end

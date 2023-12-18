@@ -1,13 +1,13 @@
 class Mx < Formula
   desc "Command-line tool used for the development of Graal projects"
-  homepage "https://github.com/graalvm/mx"
-  url "https://ghproxy.com/https://github.com/graalvm/mx/archive/refs/tags/7.4.3.tar.gz"
+  homepage "https:github.comgraalvmmx"
+  url "https:github.comgraalvmmxarchiverefstags7.4.3.tar.gz"
   sha256 "d7dd4ef70d711eb5c72bf5a771fe1e21a0fe26e1da7144786d2b854297c9dfaf"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -19,20 +19,20 @@ class Mx < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin/"mx").write_env_script libexec/"mx", MX_PYTHON: "#{Formula["python@3.12"].opt_libexec}/bin/python"
-    bash_completion.install libexec/"bash_completion/mx" => "mx"
+    (bin"mx").write_env_script libexec"mx", MX_PYTHON: "#{Formula["python@3.12"].opt_libexec}binpython"
+    bash_completion.install libexec"bash_completionmx" => "mx"
   end
 
   def post_install
     # Run a simple `mx` command to create required empty directories inside libexec
     Dir.mktmpdir do |tmpdir|
-      system bin/"mx", "--user-home", tmpdir, "version"
+      system bin"mx", "--user-home", tmpdir, "version"
     end
   end
 
   test do
     resource "homebrew-testdata" do
-      url "https://ghproxy.com/https://github.com/oracle/graal/archive/refs/tags/vm-22.3.2.tar.gz"
+      url "https:github.comoraclegraalarchiverefstagsvm-22.3.2.tar.gz"
       sha256 "77c7801038f0568b3c2ef65924546ae849bd3bf2175e2d248c35ba27fd9d4967"
     end
 
@@ -41,7 +41,7 @@ class Mx < Formula
 
     testpath.install resource("homebrew-testdata")
     cd "vm" do
-      output = shell_output("#{bin}/mx suites")
+      output = shell_output("#{bin}mx suites")
       assert_match "distributions:", output
     end
   end

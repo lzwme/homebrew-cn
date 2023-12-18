@@ -1,7 +1,7 @@
 class Fileicon < Formula
   desc "macOS CLI for managing custom icons for files and folders"
-  homepage "https://github.com/mklement0/fileicon"
-  url "https://ghproxy.com/https://github.com/mklement0/fileicon/archive/refs/tags/v0.3.4.tar.gz"
+  homepage "https:github.commklement0fileicon"
+  url "https:github.commklement0fileiconarchiverefstagsv0.3.4.tar.gz"
   sha256 "c5673cafa9479eb1c3ec312e6673b912bc1630b361732da137428859e037dd91"
   license "MIT"
 
@@ -12,15 +12,15 @@ class Fileicon < Formula
   depends_on :macos
 
   def install
-    bin.install "bin/fileicon"
-    man1.install "man/fileicon.1"
+    bin.install "binfileicon"
+    man1.install "manfileicon.1"
   end
 
   test do
     icon = test_fixtures "test.png"
-    system bin/"fileicon", "set", testpath, icon
-    assert_predicate testpath/"Icon\r", :exist?
-    stdout = shell_output "#{bin}/fileicon test #{testpath}"
+    system bin"fileicon", "set", testpath, icon
+    assert_predicate testpath"Icon\r", :exist?
+    stdout = shell_output "#{bin}fileicon test #{testpath}"
     assert_includes stdout, "HAS custom icon: folder '#{testpath}'"
   end
 end

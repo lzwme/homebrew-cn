@@ -2,11 +2,11 @@ cask "font-hubballi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/hubballi/Hubballi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflhubballiHubballi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Hubballi"
   desc "Monolinear typeface with an informal, friendly appearance"
-  homepage "https://fonts.google.com/specimen/Hubballi"
+  homepage "https:fonts.google.comspecimenHubballi"
 
   font "Hubballi-Regular.ttf"
 

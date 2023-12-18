@@ -12,11 +12,11 @@ cask "openemu-experimental" do
     sha256 "8b91fecfb0fd58ffc03abca00d6df2c519c396b955072c6c209d53018f921cf7"
   end
 
-  url "https://ghproxy.com/https://github.com/OpenEmu/OpenEmu/releases/download/v#{version}/OpenEmu_#{version}-experimental.zip",
-      verified: "github.com/OpenEmu/OpenEmu/"
+  url "https:github.comOpenEmuOpenEmureleasesdownloadv#{version}OpenEmu_#{version}-experimental.zip",
+      verified: "github.comOpenEmuOpenEmu"
   name "OpenEmu"
   desc "Retro video game emulation"
-  homepage "https://openemu.org/"
+  homepage "https:openemu.org"
 
   auto_updates true
   conflicts_with cask: "openemu"
@@ -25,14 +25,14 @@ cask "openemu-experimental" do
   app "OpenEmu.app"
 
   zap trash: [
-    "~/Library/Application Support/OpenEmu",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.openemu.openemu.sfl*",
-    "~/Library/Application Support/org.openemu.OEXPCCAgent.Agents",
-    "~/Library/Caches/OpenEmu",
-    "~/Library/Caches/org.openemu.OpenEmu",
-    "~/Library/Cookies/org.openemu.OpenEmu.binarycookies",
-    "~/Library/HTTPStorages/org.openemu.OpenEmu.binarycookies",
-    "~/Library/Preferences/org.openemu.*.plist",
-    "~/Library/Saved Application State/org.openemu.OpenEmu.savedState",
+    "~LibraryApplication SupportOpenEmu",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.openemu.openemu.sfl*",
+    "~LibraryApplication Supportorg.openemu.OEXPCCAgent.Agents",
+    "~LibraryCachesOpenEmu",
+    "~LibraryCachesorg.openemu.OpenEmu",
+    "~LibraryCookiesorg.openemu.OpenEmu.binarycookies",
+    "~LibraryHTTPStoragesorg.openemu.OpenEmu.binarycookies",
+    "~LibraryPreferencesorg.openemu.*.plist",
+    "~LibrarySaved Application Stateorg.openemu.OpenEmu.savedState",
   ]
 end

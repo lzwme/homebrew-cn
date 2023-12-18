@@ -1,7 +1,7 @@
 class Caffe < Formula
   desc "Fast open framework for deep learning"
-  homepage "https://caffe.berkeleyvision.org/"
-  url "https://ghproxy.com/https://github.com/BVLC/caffe/archive/refs/tags/1.0.tar.gz"
+  homepage "https:caffe.berkeleyvision.org"
+  url "https:github.comBVLCcaffearchiverefstags1.0.tar.gz"
   sha256 "71d3c9eb8a183150f965a465824d01fe82826c22505f7aa314f700ace03fa77f"
   license "BSD-2-Clause"
   revision 43
@@ -35,21 +35,21 @@ class Caffe < Formula
   end
 
   resource "homebrew-test_model" do
-    url "https://ghproxy.com/https://github.com/nandahkrishna/CaffeMNIST/archive/2483b0ba9b04728041f7d75a3b3cf428cb8edb12.tar.gz"
+    url "https:github.comnandahkrishnaCaffeMNISTarchive2483b0ba9b04728041f7d75a3b3cf428cb8edb12.tar.gz"
     sha256 "2d4683899e9de0949eaf89daeb09167591c060db2187383639c34d7cb5f46b31"
   end
 
   # Fix compilation with OpenCV 4
-  # https://github.com/BVLC/caffe/issues/6652
+  # https:github.comBVLCcaffeissues6652
   patch do
-    url "https://github.com/BVLC/caffe/commit/0a04cc2ccd37ba36843c18fea2d5cbae6e7dd2b5.patch?full_index=1"
+    url "https:github.comBVLCcaffecommit0a04cc2ccd37ba36843c18fea2d5cbae6e7dd2b5.patch?full_index=1"
     sha256 "f79349200c46fc1228ab1e1c135a389a6d0c709024ab98700017f5f66b373b39"
   end
 
   # Fix compilation with protobuf 3.18.0
-  # https://github.com/BVLC/caffe/pull/7044
+  # https:github.comBVLCcaffepull7044
   patch do
-    url "https://github.com/BVLC/caffe/commit/1b317bab3f6413a1b5d87c9d3a300d785a4173f9.patch?full_index=1"
+    url "https:github.comBVLCcaffecommit1b317bab3f6413a1b5d87c9d3a300d785a4173f9.patch?full_index=1"
     sha256 "0a7a65c4c9d68f38c3a91a1e300001bd7106d2030826af924df72f5ad2359523"
   end
 
@@ -80,7 +80,7 @@ class Caffe < Formula
 
   test do
     resource("homebrew-test_model").stage do
-      system bin/"caffe", "test", "-model", "lenet_train_test.prototxt",
+      system bin"caffe", "test", "-model", "lenet_train_test.prototxt",
                                   "-weights", "lenet_iter_10000.caffemodel"
     end
   end

@@ -2,8 +2,8 @@ class Getmail6 < Formula
   include Language::Python::Shebang
 
   desc "Extensible mail retrieval system with POP3, IMAP4, SSL support"
-  homepage "https://getmail6.org/"
-  url "https://ghproxy.com/https://github.com/getmail6/getmail6/archive/refs/tags/v6.18.13.tar.gz"
+  homepage "https:getmail6.org"
+  url "https:github.comgetmail6getmail6archiverefstagsv6.18.13.tar.gz"
   sha256 "977a8fbf63494b6278c30f225c7bfbc7cbdfdffddbd2f29fcd887dfb6ce0d509"
   license "GPL-2.0-only"
 
@@ -35,12 +35,12 @@ class Getmail6 < Formula
     libexec.install files
     bin.install_symlink libexec.children
     libexec.install "getmailcore"
-    man1.install Pathname.glob("docs/*.1")
+    man1.install Pathname.glob("docs*.1")
   end
 
   test do
-    %w[INBOX/cur INBOX/new INBOX/tmp].each { |f| (testpath/"getmail/#{f}").mkpath }
-    (testpath/"getmail/getmailrc").write <<~EOS
+    %w[INBOXcur INBOXnew INBOXtmp].each { |f| (testpath"getmail#{f}").mkpath }
+    (testpath"getmailgetmailrc").write <<~EOS
       [retriever]
       type = SimpleIMAPSSLRetriever
       server = imap.gmail.com
@@ -51,15 +51,15 @@ class Getmail6 < Formula
 
       [destination]
       type = Maildir
-      path = #{testpath}/getmail/INBOX/
+      path = #{testpath}getmailINBOX
 
       [options]
       read_all = true
       delete = true
     EOS
-    output = shell_output("#{bin}/getmail --getmaildir #{testpath}/getmail 2>&1", 2)
+    output = shell_output("#{bin}getmail --getmaildir #{testpath}getmail 2>&1", 2)
     assert_match "Program \"pass\" not found", output
 
-    assert_match version.to_s, shell_output("#{bin}/getmail --version")
+    assert_match version.to_s, shell_output("#{bin}getmail --version")
   end
 end

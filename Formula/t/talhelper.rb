@@ -1,10 +1,10 @@
 class Talhelper < Formula
   desc "Configuration helper for talos clusters"
-  homepage "https://github.com/budimanjojo/talhelper"
-  url "https://ghproxy.com/https://github.com/budimanjojo/talhelper/archive/refs/tags/v1.16.2.tar.gz"
+  homepage "https:github.combudimanjojotalhelper"
+  url "https:github.combudimanjojotalhelperarchiverefstagsv1.16.2.tar.gz"
   sha256 "413b3fdcd06441c93b2720bdfd3b1352b9f3472c7cb7ebf872e0aca4e6afbdf1"
   license "BSD-3-Clause"
-  head "https://github.com/budimanjojo/talhelper.git", branch: "master"
+  head "https:github.combudimanjojotalhelper.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a78148f3060d007f5d3b237362b410aad16620120ffb196bfea3535dfb3a1b0b"
@@ -19,21 +19,21 @@ class Talhelper < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/budimanjojo/talhelper/cmd.version=#{version}"
+    ldflags = "-s -w -X github.combudimanjojotalhelpercmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"talhelper", "completion")
+    generate_completions_from_executable(bin"talhelper", "completion")
     pkgshare.install "example"
   end
 
   test do
-    cp_r Dir["#{pkgshare}/example/*"], testpath
+    cp_r Dir["#{pkgshare}example*"], testpath
 
-    output = shell_output("#{bin}/talhelper genconfig 2>&1", 1)
+    output = shell_output("#{bin}talhelper genconfig 2>&1", 1)
     assert_match "failed to load env file: trying to decrypt talenv.yaml with sops", output
 
-    assert_match "cluster:", shell_output("#{bin}/talhelper gensecret")
+    assert_match "cluster:", shell_output("#{bin}talhelper gensecret")
 
-    assert_match version.to_s, shell_output("#{bin}/talhelper --version")
+    assert_match version.to_s, shell_output("#{bin}talhelper --version")
   end
 end

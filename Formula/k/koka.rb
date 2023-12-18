@@ -1,15 +1,15 @@
 class Koka < Formula
   desc "Compiler for the Koka language"
-  homepage "http://koka-lang.org"
-  url "https://github.com/koka-lang/koka.git",
+  homepage "http:koka-lang.org"
+  url "https:github.comkoka-langkoka.git",
     tag:      "v2.4.2",
     revision: "0649baaa2a4509c0a5adb743b6f2b5f1ef32a5a9"
   license "Apache-2.0"
-  head "https://github.com/koka-lang/koka.git", branch: "master"
+  head "https:github.comkoka-langkoka.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+)/i)
+    regex(v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -32,13 +32,13 @@ class Koka < Formula
     system "cabal", "update"
     system "cabal", "build", "-j"
     system "cabal", "run", "koka", "--",
-           "-e", "util/bundle.kk", "--",
+           "-e", "utilbundle.kk", "--",
            "--prefix=#{prefix}", "--install"
   end
 
   test do
-    (testpath/"hellobrew.kk").write('pub fun main() println("Hello Homebrew")')
-    assert_match "Hello Homebrew", shell_output("#{bin}/koka -e hellobrew.kk")
-    assert_match "420000", shell_output("#{bin}/koka -O2 -e samples/basic/rbtree")
+    (testpath"hellobrew.kk").write('pub fun main() println("Hello Homebrew")')
+    assert_match "Hello Homebrew", shell_output("#{bin}koka -e hellobrew.kk")
+    assert_match "420000", shell_output("#{bin}koka -O2 -e samplesbasicrbtree")
   end
 end

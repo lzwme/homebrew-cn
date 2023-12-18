@@ -1,10 +1,10 @@
 class Dylibbundler < Formula
   desc "Utility to bundle libraries into executables for macOS"
-  homepage "https://github.com/auriamg/macdylibbundler"
-  url "https://ghproxy.com/https://github.com/auriamg/macdylibbundler/archive/refs/tags/1.0.5.tar.gz"
+  homepage "https:github.comauriamgmacdylibbundler"
+  url "https:github.comauriamgmacdylibbundlerarchiverefstags1.0.5.tar.gz"
   sha256 "13384ebe7ca841ec392ac49dc5e50b1470190466623fa0e5cd30f1c634858530"
   license "MIT"
-  head "https://github.com/auriamg/macdylibbundler.git", branch: "master"
+  head "https:github.comauriamgmacdylibbundler.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f06d382fc981ab6ed57d9fd0257cb18481cb524128d88d3bd864c0720e435c91"
@@ -24,6 +24,6 @@ class Dylibbundler < Formula
   end
 
   test do
-    system "#{bin}/dylibbundler", "-h"
+    system "#{bin}dylibbundler", "-h"
   end
 end

@@ -1,10 +1,10 @@
 class Libxlsxwriter < Formula
   desc "C library for creating Excel XLSX files"
-  homepage "https://libxlsxwriter.github.io/"
-  url "https://ghproxy.com/https://github.com/jmcnamara/libxlsxwriter/archive/refs/tags/RELEASE_1.1.5.tar.gz"
+  homepage "https:libxlsxwriter.github.io"
+  url "https:github.comjmcnamaralibxlsxwriterarchiverefstagsRELEASE_1.1.5.tar.gz"
   sha256 "12843587d591cf679e6ec63ecc629245befec2951736804a837696cdb5d61946"
   license "BSD-2-Clause"
-  head "https://github.com/jmcnamara/libxlsxwriter.git", branch: "main"
+  head "https:github.comjmcnamaralibxlsxwriter.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "43ba6037cc33e3a62efcf760d6cac299ba04091fb8820f7312f28043cdd1686e"
@@ -25,7 +25,7 @@ class Libxlsxwriter < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include "xlsxwriter.h"
 
       int main() {
@@ -41,7 +41,7 @@ class Libxlsxwriter < Formula
     EOS
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsxwriter", "-o", "test"
-    system "./test"
-    assert_predicate testpath/"myexcel.xlsx", :exist?, "Failed to create xlsx file"
+    system ".test"
+    assert_predicate testpath"myexcel.xlsx", :exist?, "Failed to create xlsx file"
   end
 end

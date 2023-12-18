@@ -2,10 +2,10 @@ cask "font-chango" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/chango/Chango-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflchangoChango-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Chango"
-  homepage "https://fonts.google.com/specimen/Chango"
+  homepage "https:fonts.google.comspecimenChango"
 
   font "Chango-Regular.ttf"
 

@@ -1,7 +1,7 @@
 class Cconv < Formula
   desc "Iconv based simplified-traditional Chinese conversion tool"
-  homepage "https://github.com/xiaoyjy/cconv"
-  url "https://ghproxy.com/https://github.com/xiaoyjy/cconv/archive/refs/tags/v0.6.3.tar.gz"
+  homepage "https:github.comxiaoyjycconv"
+  url "https:github.comxiaoyjycconvarchiverefstagsv0.6.3.tar.gz"
   sha256 "82f46a94829f5a8157d6f686e302ff5710108931973e133d6e19593061b81d84"
   license "MIT"
 
@@ -30,13 +30,13 @@ class Cconv < Formula
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
     system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
-    rm_f include/"unicode.h"
+    rm_f include"unicode.h"
   end
 
   test do
     encodings = "GB2312, GBK, GB-HANS, GB-HANT, GB18030, BIG5, UTF8, UTF8-CN, UTF8-TW, UTF8-HK"
-    assert_match encodings, shell_output("#{bin}/cconv -l")
+    assert_match encodings, shell_output("#{bin}cconv -l")
   end
 end

@@ -1,14 +1,14 @@
 class AircrackNg < Formula
   desc "Next-generation aircrack with lots of new features"
-  homepage "https://aircrack-ng.org/"
-  url "https://download.aircrack-ng.org/aircrack-ng-1.7.tar.gz"
+  homepage "https:aircrack-ng.org"
+  url "https:download.aircrack-ng.orgaircrack-ng-1.7.tar.gz"
   sha256 "05a704e3c8f7792a17315080a21214a4448fd2452c1b0dd5226a3a55f90b58c3"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause", "OpenSSL"]
   revision 1
 
   livecheck do
     url :homepage
-    regex(/href=.*?aircrack-ng[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?aircrack-ng[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,17 +35,17 @@ class AircrackNg < Formula
   uses_from_macos "libpcap"
 
   # Remove root requirement from OUI update script. See:
-  # https://github.com/Homebrew/homebrew/pull/12755
+  # https:github.comHomebrewhomebrewpull12755
   patch :DATA
 
   def install
-    system "./autogen.sh", "--disable-silent-rules",
+    system ".autogen.sh", "--disable-silent-rules",
                            "--disable-dependency-tracking",
                            "--prefix=#{prefix}",
                            "--sysconfdir=#{etc}",
                            "--with-experimental"
     system "make", "install"
-    inreplace sbin/"airodump-ng-oui-update", "/usr/local", HOMEBREW_PREFIX
+    inreplace sbin"airodump-ng-oui-update", "usrlocal", HOMEBREW_PREFIX
   end
 
   def post_install
@@ -59,27 +59,27 @@ class AircrackNg < Formula
   end
 
   test do
-    assert_match "usage: aircrack-ng", shell_output("#{bin}/aircrack-ng --help")
-    assert_match "Logical CPUs", shell_output("#{bin}/aircrack-ng -u")
+    assert_match "usage: aircrack-ng", shell_output("#{bin}aircrack-ng --help")
+    assert_match "Logical CPUs", shell_output("#{bin}aircrack-ng -u")
     expected_simd = Hardware::CPU.arm? ? "neon" : "sse2"
-    assert_match expected_simd, shell_output("#{bin}/aircrack-ng --simd-list")
+    assert_match expected_simd, shell_output("#{bin}aircrack-ng --simd-list")
   end
 end
 
 __END__
---- a/scripts/airodump-ng-oui-update
-+++ b/scripts/airodump-ng-oui-update
+--- ascriptsairodump-ng-oui-update
++++ bscriptsairodump-ng-oui-update
 @@ -20,25 +20,6 @@ fi
 
- AIRODUMP_NG_OUI="${OUI_PATH}/airodump-ng-oui.txt"
- OUI_IEEE="${OUI_PATH}/oui.txt"
+ AIRODUMP_NG_OUI="${OUI_PATH}airodump-ng-oui.txt"
+ OUI_IEEE="${OUI_PATH}oui.txt"
 -USERID=""
 -
 -
 -# Make sure the user is root
--if [ x"`which id 2> /dev/null`" != "x" ]
+-if [ x"`which id 2> devnull`" != "x" ]
 -then
--	USERID="`id -u 2> /dev/null`"
+-	USERID="`id -u 2> devnull`"
 -fi
 -
 -if [ x$USERID = "x" -a x$(id -ru) != "x" ]

@@ -2,10 +2,10 @@ cask "font-jeju-gothic" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/jejugothic/JejuGothic-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofljejugothicJejuGothic-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Jeju Gothic"
-  homepage "https://fonts.google.com/earlyaccess"
+  homepage "https:fonts.google.comearlyaccess"
 
   font "JejuGothic-Regular.ttf"
 

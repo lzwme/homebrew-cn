@@ -1,13 +1,13 @@
 class Sundials < Formula
-  desc "Nonlinear and differential/algebraic equations solver"
-  homepage "https://computing.llnl.gov/projects/sundials"
-  url "https://ghproxy.com/https://github.com/LLNL/sundials/releases/download/v6.6.2/sundials-6.6.2.tar.gz"
+  desc "Nonlinear and differentialalgebraic equations solver"
+  homepage "https:computing.llnl.govprojectssundials"
+  url "https:github.comLLNLsundialsreleasesdownloadv6.6.2sundials-6.6.2.tar.gz"
   sha256 "08f8223a5561327e44c072e46faa7f665c0c0bc8cd7e45d23f486c3d24c65009"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://computing.llnl.gov/projects/sundials/sundials-software"
-    regex(/href=.*?sundials[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:computing.llnl.govprojectssundialssundials-software"
+    regex(href=.*?sundials[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -45,16 +45,16 @@ class Sundials < Formula
     system "cmake", "--install", "build"
 
     # Only keep one example for testing purposes
-    (pkgshare/"examples").install Dir[prefix/"examples/nvector/serial/*"] \
-                                  - Dir[prefix/"examples/nvector/serial/{CMake*,Makefile}"]
-    (prefix/"examples").rmtree
+    (pkgshare"examples").install Dir[prefix"examplesnvectorserial*"] \
+                                  - Dir[prefix"examplesnvectorserial{CMake*,Makefile}"]
+    (prefix"examples").rmtree
   end
 
   test do
-    cp Dir[pkgshare/"examples/*"], testpath
+    cp Dir[pkgshare"examples*"], testpath
     system ENV.cc, "test_nvector.c", "test_nvector_serial.c", "-o", "test",
                    "-I#{include}", "-L#{lib}", "-lsundials_nvecserial", "-lm"
     assert_match "SUCCESS: NVector module passed all tests",
-                 shell_output("./test 42 0")
+                 shell_output(".test 42 0")
   end
 end

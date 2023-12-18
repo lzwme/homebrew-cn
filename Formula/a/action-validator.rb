@@ -1,15 +1,15 @@
 class ActionValidator < Formula
   desc "Tool to validate GitHub Action and Workflow YAML files"
-  homepage "https://github.com/mpalmer/action-validator"
+  homepage "https:github.commpalmeraction-validator"
   license "GPL-3.0-only"
 
   stable do
-    url "https://ghproxy.com/https://github.com/mpalmer/action-validator/archive/refs/tags/v0.5.4.tar.gz"
+    url "https:github.commpalmeraction-validatorarchiverefstagsv0.5.4.tar.gz"
     sha256 "faf6b7ac865f30e24d81cec6b0c7cdbf7eddf113a97d6c5aa49c7c1a9f44a793"
 
     # always pull the HEAD commit hash
     resource "schemastore" do
-      url "https://github.com/SchemaStore/schemastore.git",
+      url "https:github.comSchemaStoreschemastore.git",
           revision: "11d1fc36e96803f85324070a018e8457167bb232"
     end
   end
@@ -25,23 +25,23 @@ class ActionValidator < Formula
   end
 
   head do
-    url "https://github.com/mpalmer/action-validator.git", branch: "main"
+    url "https:github.commpalmeraction-validator.git", branch: "main"
 
     resource "schemastore" do
-      url "https://github.com/SchemaStore/schemastore.git", branch: "master"
+      url "https:github.comSchemaStoreschemastore.git", branch: "master"
     end
   end
 
   depends_on "rust" => :build
 
   def install
-    (buildpath/"src/schemastore").install resource("schemastore")
+    (buildpath"srcschemastore").install resource("schemastore")
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    test_action = testpath/"action.yml"
+    test_action = testpath"action.yml"
     test_action.write <<~EOS
       name: "Brew Test Action"
       description: "Test Action"
@@ -54,7 +54,7 @@ class ActionValidator < Formula
         main: "index.js"
     EOS
 
-    test_workflow = testpath/"workflow.yml"
+    test_workflow = testpath"workflow.yml"
     test_workflow.write <<~EOS
       name: "Brew Test Workflow"
       on: [push111]
@@ -62,13 +62,13 @@ class ActionValidator < Formula
         build:
           runs-on: ubuntu-latest
           steps:
-            - uses: actions/checkout@v4
+            - uses: actionscheckout@v4
     EOS
 
-    output = shell_output("#{bin}/action-validator --verbose #{test_action}")
+    output = shell_output("#{bin}action-validator --verbose #{test_action}")
     assert_match "Treating action.yml as an Action definition", output
 
-    output = shell_output("#{bin}/action-validator --verbose #{test_workflow} 2>&1", 1)
+    output = shell_output("#{bin}action-validator --verbose #{test_workflow} 2>&1", 1)
     assert_match "Fatal error validating #{test_workflow}", output
     assert_match "Type of the value is wrong", output
   end

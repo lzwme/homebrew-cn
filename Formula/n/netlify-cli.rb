@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
-  homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-17.10.1.tgz"
+  homepage "https:www.netlify.comdocscli"
+  url "https:registry.npmjs.orgnetlify-cli-netlify-cli-17.10.1.tgz"
   sha256 "432134495a73804a82fbfa396342041b97856af30df11415bbfd337d3054d99d"
   license "MIT"
-  head "https://github.com/netlify/cli.git", branch: "main"
+  head "https:github.comnetlifycli.git", branch: "main"
 
   bottle do
     sha256                               arm64_sonoma:   "2a41b357335991befed43e7239289aa44994b66cbc781eef143b6f5fac516629"
@@ -27,28 +27,28 @@ class NetlifyCli < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Remove incompatible pre-built binaries
-    node_modules = libexec/"lib/node_modules/netlify-cli/node_modules"
+    node_modules = libexec"libnode_modulesnetlify-clinode_modules"
 
     if OS.linux?
-      (node_modules/"@lmdb/lmdb-linux-x64").glob("*.musl.node").map(&:unlink)
-      (node_modules/"@msgpackr-extract/msgpackr-extract-linux-x64").glob("*.musl.node").map(&:unlink)
-      (node_modules/"@parcel/watcher-linux-x64-musl/watcher.node").unlink
+      (node_modules"@lmdblmdb-linux-x64").glob("*.musl.node").map(&:unlink)
+      (node_modules"@msgpackr-extractmsgpackr-extract-linux-x64").glob("*.musl.node").map(&:unlink)
+      (node_modules"@parcelwatcher-linux-x64-muslwatcher.node").unlink
     end
 
-    clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
+    clipboardy_fallbacks_dir = node_modules"clipboardyfallbacks"
     clipboardy_fallbacks_dir.rmtree # remove pre-built binaries
     if OS.linux?
-      linux_dir = clipboardy_fallbacks_dir/"linux"
+      linux_dir = clipboardy_fallbacks_dir"linux"
       linux_dir.mkpath
       # Replace the vendored pre-built xsel with one we build ourselves
-      ln_sf (Formula["xsel"].opt_bin/"xsel").relative_path_from(linux_dir), linux_dir
+      ln_sf (Formula["xsel"].opt_bin"xsel").relative_path_from(linux_dir), linux_dir
     end
   end
 
   test do
-    assert_match "Not logged in. Please log in to see site status.", shell_output("#{bin}/netlify status")
+    assert_match "Not logged in. Please log in to see site status.", shell_output("#{bin}netlify status")
   end
 end

@@ -1,7 +1,7 @@
 class Ntfs3g < Formula
   desc "Read-write NTFS driver for FUSE"
-  homepage "https://www.tuxera.com/community/open-source-ntfs-3g/"
-  url "https://tuxera.com/opensource/ntfs-3g_ntfsprogs-2022.10.3.tgz"
+  homepage "https:www.tuxera.comcommunityopen-source-ntfs-3g"
+  url "https:tuxera.comopensourcentfs-3g_ntfsprogs-2022.10.3.tgz"
   sha256 "f20e36ee68074b845e3629e6bced4706ad053804cbaf062fbae60738f854170c"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
 
@@ -15,7 +15,7 @@ class Ntfs3g < Formula
   end
 
   head do
-    url "https://github.com/tuxera/ntfs-3g.git", branch: "edge"
+    url "https:github.comtuxerantfs-3g.git", branch: "edge"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,29 +38,29 @@ class Ntfs3g < Formula
       --disable-ldconfig
     ]
 
-    system "./autogen.sh" if build.head?
-    # Workaround for hardcoded /sbin
-    inreplace Dir["{ntfsprogs,src}/Makefile.in"], "$(DESTDIR)/sbin/", "$(DESTDIR)#{sbin}/"
-    system "./configure", *args
+    system ".autogen.sh" if build.head?
+    # Workaround for hardcoded sbin
+    inreplace Dir["{ntfsprogs,src}Makefile.in"], "$(DESTDIR)sbin", "$(DESTDIR)#{sbin}"
+    system ".configure", *args
     system "make"
     system "make", "install"
 
     # Install a script that can be used to enable automount
-    File.open("#{sbin}/mount_ntfs", File::CREAT|File::TRUNC|File::RDWR, 0755) do |f|
+    File.open("#{sbin}mount_ntfs", File::CREAT|File::TRUNC|File::RDWR, 0755) do |f|
       f.puts <<~EOS
-        #!/bin/bash
+        #!binbash
 
         VOLUME_NAME="${@:$#}"
-        VOLUME_NAME=${VOLUME_NAME#/Volumes/}
+        VOLUME_NAME=${VOLUME_NAME#Volumes}
         USER_ID=#{Process.uid}
         GROUP_ID=#{Process.gid}
 
-        if [ "$(/usr/bin/stat -f %u /dev/console)" -ne 0 ]; then
-          USER_ID=$(/usr/bin/stat -f %u /dev/console)
-          GROUP_ID=$(/usr/bin/stat -f %g /dev/console)
+        if [ "$(usrbinstat -f %u devconsole)" -ne 0 ]; then
+          USER_ID=$(usrbinstat -f %u devconsole)
+          GROUP_ID=$(usrbinstat -f %g devconsole)
         fi
 
-        #{opt_bin}/ntfs-3g \\
+        #{opt_bin}ntfs-3g \\
           -o volname="${VOLUME_NAME}" \\
           -o local \\
           -o negative_vncache \\
@@ -74,7 +74,7 @@ class Ntfs3g < Formula
           -o gid="$GROUP_ID" \\
           -o allow_other \\
           -o big_writes \\
-          "$@" >> /var/log/mount-ntfs-3g.log 2>&1
+          "$@" >> varlogmount-ntfs-3g.log 2>&1
 
         exit $?;
       EOS
@@ -83,12 +83,12 @@ class Ntfs3g < Formula
 
   test do
     # create a small raw image, format and check it
-    ntfs_raw = testpath/"ntfs.raw"
-    system Formula["coreutils"].libexec/"gnubin/truncate", "--size=10M", ntfs_raw
+    ntfs_raw = testpath"ntfs.raw"
+    system Formula["coreutils"].libexec"gnubintruncate", "--size=10M", ntfs_raw
     ntfs_label_input = "Homebrew"
-    system sbin/"mkntfs", "--force", "--fast", "--label", ntfs_label_input, ntfs_raw
-    system bin/"ntfsfix", "--no-action", ntfs_raw
-    ntfs_label_output = shell_output("#{sbin}/ntfslabel #{ntfs_raw}")
+    system sbin"mkntfs", "--force", "--fast", "--label", ntfs_label_input, ntfs_raw
+    system bin"ntfsfix", "--no-action", ntfs_raw
+    ntfs_label_output = shell_output("#{sbin}ntfslabel #{ntfs_raw}")
     assert_match ntfs_label_input, ntfs_label_output
   end
 end

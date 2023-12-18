@@ -1,8 +1,8 @@
 class C2rust < Formula
   desc "Migrate C code to Rust"
-  homepage "https://github.com/immunant/c2rust"
+  homepage "https:github.comimmunantc2rust"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/immunant/c2rust/archive/refs/tags/v0.18.0.tar.gz"
+  url "https:github.comimmunantc2rustarchiverefstagsv0.18.0.tar.gz"
   sha256 "cf72bd59cac5ff31553c5d1626f130167d4f72eaabcffc27630dee2a95f4707e"
   license "BSD-3-Clause"
   revision 1
@@ -31,10 +31,10 @@ class C2rust < Formula
   end
 
   test do
-    cp_r pkgshare/"examples/qsort/.", testpath
+    cp_r pkgshare"examplesqsort.", testpath
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
     system "cmake", "--build", "build"
-    system bin/"c2rust", "transpile", "build/compile_commands.json"
-    assert_predicate testpath/"qsort.c", :exist?
+    system bin"c2rust", "transpile", "buildcompile_commands.json"
+    assert_predicate testpath"qsort.c", :exist?
   end
 end

@@ -2,8 +2,8 @@ class Pylint < Formula
   include Language::Python::Virtualenv
 
   desc "It's not just a linter that annoys you!"
-  homepage "https://github.com/PyCQA/pylint"
-  url "https://files.pythonhosted.org/packages/24/4f/5ca8d654d69006b3a5d52332e56359448b5c5ce242574a8ff26cb260ac3d/pylint-3.0.3.tar.gz"
+  homepage "https:github.comPyCQApylint"
+  url "https:files.pythonhosted.orgpackages244f5ca8d654d69006b3a5d52332e56359448b5c5ce242574a8ff26cb260ac3dpylint-3.0.3.tar.gz"
   sha256 "58c2398b0301e049609a8429789ec6edf3aabe9b6c5fec916acd18639c16de8b"
   license "GPL-2.0-or-later"
 
@@ -22,27 +22,27 @@ class Pylint < Formula
   depends_on "python@3.12"
 
   resource "astroid" do
-    url "https://files.pythonhosted.org/packages/69/53/07229db171855e410bf40a996f1d49cc35222e18a1c95cd566e69bb9e0e5/astroid-3.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages695307229db171855e410bf40a996f1d49cc35222e18a1c95cd566e69bb9e0e5astroid-3.0.1.tar.gz"
     sha256 "86b0bb7d7da0be1a7c4aedb7974e391b32d4ed89e33de6ed6902b4b15c97577e"
   end
 
   resource "dill" do
-    url "https://files.pythonhosted.org/packages/c4/31/54dd222e02311c2dbc9e680d37cbd50f4494ce1ee9b04c69980e4ec26f38/dill-0.3.7.tar.gz"
+    url "https:files.pythonhosted.orgpackagesc43154dd222e02311c2dbc9e680d37cbd50f4494ce1ee9b04c69980e4ec26f38dill-0.3.7.tar.gz"
     sha256 "cc1c8b182eb3013e24bd475ff2e9295af86c1a38eb1aff128dac8962a9ce3c03"
   end
 
   resource "mccabe" do
-    url "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagese7ff0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8mccabe-0.7.0.tar.gz"
     sha256 "348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/62/d1/7feaaacb1a3faeba96c06e6c5091f90695cc0f94b7e8e1a3a3fe2b33ff9a/platformdirs-4.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages62d17feaaacb1a3faeba96c06e6c5091f90695cc0f94b7e8e1a3a3fe2b33ff9aplatformdirs-4.1.0.tar.gz"
     sha256 "906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/df/fc/1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400/tomlkit-0.12.3.tar.gz"
+    url "https:files.pythonhosted.orgpackagesdffc1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400tomlkit-0.12.3.tar.gz"
     sha256 "75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"
   end
 
@@ -52,14 +52,14 @@ class Pylint < Formula
     # we depend on isort, but that's a separate formula, so install a `.pth` file to link them
     site_packages = Language::Python.site_packages("python3.12")
     isort = Formula["isort"].opt_libexec
-    (libexec/site_packages/"homebrew-isort.pth").write isort/site_packages
+    (libexecsite_packages"homebrew-isort.pth").write isortsite_packages
   end
 
   test do
-    (testpath/"pylint_test.py").write <<~EOS
+    (testpath"pylint_test.py").write <<~EOS
       print('Test file'
       )
     EOS
-    system bin/"pylint", "--exit-zero", "pylint_test.py"
+    system bin"pylint", "--exit-zero", "pylint_test.py"
   end
 end

@@ -1,7 +1,7 @@
 class Immudb < Formula
   desc "Lightweight, high-speed immutable database"
-  homepage "https://www.codenotary.io"
-  url "https://ghproxy.com/https://github.com/codenotary/immudb/archive/refs/tags/v1.9DOM.0.tar.gz"
+  homepage "https:www.codenotary.io"
+  url "https:github.comcodenotaryimmudbarchiverefstagsv1.9DOM.0.tar.gz"
   version "1.9.0"
   sha256 "62d2638cf2e7005045441e7c44457dd6686714b85b54be98c1460c228f4ddc94"
   license "Apache-2.0"
@@ -29,31 +29,31 @@ class Immudb < Formula
 
     %w[immudb immuclient immuadmin].each do |binary|
       bin.install binary
-      generate_completions_from_executable(bin/binary, "completion")
+      generate_completions_from_executable(binbinary, "completion")
     end
   end
 
   def post_install
-    (var/"immudb").mkpath
+    (var"immudb").mkpath
   end
 
   service do
-    run opt_bin/"immudb"
+    run opt_bin"immudb"
     keep_alive true
-    error_log_path var/"log/immudb.log"
-    log_path var/"log/immudb.log"
-    working_dir var/"immudb"
+    error_log_path var"logimmudb.log"
+    log_path var"logimmudb.log"
+    working_dir var"immudb"
   end
 
   test do
     port = free_port
 
     fork do
-      exec bin/"immudb", "--port=#{port}"
+      exec bin"immudb", "--port=#{port}"
     end
     sleep 3
 
-    assert_match "immuclient", shell_output("#{bin}/immuclient version")
-    assert_match "immuadmin", shell_output("#{bin}/immuadmin version")
+    assert_match "immuclient", shell_output("#{bin}immuclient version")
+    assert_match "immuadmin", shell_output("#{bin}immuadmin version")
   end
 end

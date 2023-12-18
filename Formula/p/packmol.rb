@@ -1,10 +1,10 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
-  homepage "https://www.ime.unicamp.br/~martinez/packmol/"
-  url "https://ghproxy.com/https://github.com/m3g/packmol/archive/refs/tags/v20.14.3.tar.gz"
+  homepage "https:www.ime.unicamp.br~martinezpackmol"
+  url "https:github.comm3gpackmolarchiverefstagsv20.14.3.tar.gz"
   sha256 "c70d8dff6f983adb854cf816df3d4a389b5cc724e70a2430b54793051eaaa4e9"
   license "MIT"
-  head "https://github.com/m3g/packmol.git", branch: "master"
+  head "https:github.comm3gpackmol.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "139b70312b6d049cdcd10f4fb2e3061c670e61b79ac742f8e604f16e2ffe238c"
@@ -19,7 +19,7 @@ class Packmol < Formula
   depends_on "gcc" # for gfortran
 
   resource "homebrew-testdata" do
-    url "https://www.ime.unicamp.br/~martinez/packmol/examples/examples.tar.gz"
+    url "https:www.ime.unicamp.br~martinezpackmolexamplesexamples.tar.gz"
     sha256 "97ae64bf5833827320a8ab4ac39ce56138889f320c7782a64cd00cdfea1cf422"
   end
 
@@ -27,15 +27,15 @@ class Packmol < Formula
     # Avoid passing -march=native to gfortran
     inreplace "Makefile", "-march=native", ENV["HOMEBREW_OPTFLAGS"] if build.bottle?
 
-    system "./configure"
+    system ".configure"
     system "make"
     bin.install "packmol"
     pkgshare.install "solvate.tcl"
-    (pkgshare/"examples").install resource("homebrew-testdata")
+    (pkgshare"examples").install resource("homebrew-testdata")
   end
 
   test do
-    cp Dir["#{pkgshare}/examples/*"], testpath
-    system bin/"packmol < interface.inp"
+    cp Dir["#{pkgshare}examples*"], testpath
+    system bin"packmol < interface.inp"
   end
 end

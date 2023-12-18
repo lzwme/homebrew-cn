@@ -1,10 +1,10 @@
 class PythonCryptography < Formula
   desc "Cryptographic recipes and primitives for Python"
-  homepage "https://cryptography.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/ce/b3/13a12ea7edb068de0f62bac88a8ffd92cc2901881b391839851846b84a81/cryptography-41.0.7.tar.gz"
+  homepage "https:cryptography.ioenlatest"
+  url "https:files.pythonhosted.orgpackagesceb313a12ea7edb068de0f62bac88a8ffd92cc2901881b391839851846b84a81cryptography-41.0.7.tar.gz"
   sha256 "13f93ce9bea8016c253b34afc6bd6a75993e5c40672ed5405a9c832f0d4a00bc"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
-  head "https://github.com/pyca/cryptography.git", branch: "main"
+  head "https:github.compycacryptography.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "be26fa54fad0dd41dee426e105b2599e857f5bf6d70803203f06f05a587c5e80"
@@ -26,24 +26,24 @@ class PythonCryptography < Formula
   depends_on "openssl@3"
 
   resource "semantic-version" do
-    url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages7d31f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595semantic_version-2.10.0.tar.gz"
     sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
   end
 
   resource "setuptools-rust" do
-    url "https://files.pythonhosted.org/packages/f2/40/f1e9fedb88462248e94ea4383cda0065111582a4d5a32ca84acf60ab1107/setuptools-rust-1.8.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesf240f1e9fedb88462248e94ea4383cda0065111582a4d5a32ca84acf60ab1107setuptools-rust-1.8.1.tar.gz"
     sha256 "94b1dd5d5308b3138d5b933c3a2b55e6d6927d1a22632e509fcea9ddd0f7e486"
   end
 
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .map { |f| f.opt_libexec"binpython" }
   end
 
   def install
     pythons.each do |python3|
-      ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python3)
+      ENV.append_path "PYTHONPATH", buildpathLanguage::Python.site_packages(python3)
 
       resources.each do |r|
         r.stage do
@@ -56,7 +56,7 @@ class PythonCryptography < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       from cryptography.fernet import Fernet
       key = Fernet.generate_key()
       f = Fernet(key)

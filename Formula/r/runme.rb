@@ -1,10 +1,10 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
-  homepage "https://runme.dev/"
-  url "https://ghproxy.com/https://github.com/stateful/runme/archive/refs/tags/v2.0.6.tar.gz"
+  homepage "https:runme.dev"
+  url "https:github.comstatefulrunmearchiverefstagsv2.0.6.tar.gz"
   sha256 "bbbba83696f8af8bb28563d77733cc3c930e211f072b74c50edb066bbccfd806"
   license "Apache-2.0"
-  head "https://github.com/stateful/runme.git", branch: "main"
+  head "https:github.comstatefulrunme.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b12ff0c2039c9b1cd05c222c4bf7b0f4bd9877f15539687462a64aeb3bf68a8"
@@ -21,18 +21,18 @@ class Runme < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/stateful/runme/internal/version.BuildDate=#{time.iso8601}
-      -X github.com/stateful/runme/internal/version.BuildVersion=#{version}
-      -X github.com/stateful/runme/internal/version.Commit=#{tap.user}
+      -X github.comstatefulrunmeinternalversion.BuildDate=#{time.iso8601}
+      -X github.comstatefulrunmeinternalversion.BuildVersion=#{version}
+      -X github.comstatefulrunmeinternalversion.Commit=#{tap.user}
     ]
 
     system "go", "build", "-o", bin, *std_go_args(ldflags: ldflags)
-    generate_completions_from_executable(bin/"runme", "completion")
+    generate_completions_from_executable(bin"runme", "completion")
   end
 
   test do
-    system "#{bin}/runme", "--version"
-    markdown = (testpath/"README.md")
+    system "#{bin}runme", "--version"
+    markdown = (testpath"README.md")
     markdown.write <<~EOS
       # Some Markdown
 
@@ -42,7 +42,7 @@ class Runme < Formula
       echo "Hello World"
       ```
     EOS
-    assert_match "Hello World", shell_output("#{bin}/runme run foobar")
-    assert_match "foobar", shell_output("#{bin}/runme list")
+    assert_match "Hello World", shell_output("#{bin}runme run foobar")
+    assert_match "foobar", shell_output("#{bin}runme list")
   end
 end

@@ -1,10 +1,10 @@
 class Spr < Formula
   desc "Submit pull requests for individual, amendable, rebaseable commits to GitHub"
-  homepage "https://github.com/getcord/spr"
-  url "https://ghproxy.com/https://github.com/getcord/spr/archive/refs/tags/v1.3.5.tar.gz"
+  homepage "https:github.comgetcordspr"
+  url "https:github.comgetcordsprarchiverefstagsv1.3.5.tar.gz"
   sha256 "d1f53f4222fd9916c9edc0457bfe04bac66d9ff60a7c0e7a0c4519317c3f3fb8"
   license "MIT"
-  head "https://github.com/getcord/spr.git", branch: "master"
+  head "https:github.comgetcordspr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "410664abef3b1b365b94d63b796d963b8b0f95fc7396bc1057172b53ee1ce914"
@@ -28,24 +28,24 @@ class Spr < Formula
   end
 
   test do
-    spr = "#{bin}/spr"
+    spr = "#{bin}spr"
     assert_match "spr #{version}", shell_output("#{spr} --version")
 
     system "git", "config", "--global", "user.email", "nobody@example.com"
     system "git", "config", "--global", "user.name", "Nobody"
     system "git", "config", "--global", "init.defaultBranch", "trunk"
-    system "git", "init", testpath/"test-repo"
+    system "git", "init", testpath"test-repo"
     cd "test-repo" do
       system "git", "config", "spr.githubMasterBranch", "trunk"
 
       # Some bogus config
-      system "git", "config", "spr.githubRepository", "a/b"
-      system "git", "config", "spr.branchPrefix", "spr/"
+      system "git", "config", "spr.githubRepository", "ab"
+      system "git", "config", "spr.branchPrefix", "spr"
 
       # Create an empty commit, which is set to be upstream
       system "git", "commit", "--allow-empty", "--message", "Empty commit"
-      mkdir ".git/refs/remotes/origin"
-      (testpath/"test-repo/.git/refs/remotes/origin/trunk").atomic_write Utils.git_head
+      mkdir ".gitrefsremotesorigin"
+      (testpath"test-repo.gitrefsremotesorigintrunk").atomic_write Utils.git_head
       system "git", "commit", "--allow-empty", "--message", <<~EOS
         Hello world
 

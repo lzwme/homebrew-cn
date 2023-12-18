@@ -2,21 +2,21 @@ cask "mailspring" do
   version "1.13.2"
   sha256 "fd34276541ed1661464698415f550be529fa19c40d39c953a278bb228131ab7b"
 
-  url "https://ghproxy.com/https://github.com/Foundry376/Mailspring/releases/download/#{version}/Mailspring.zip",
-      verified: "github.com/Foundry376/Mailspring/"
+  url "https:github.comFoundry376Mailspringreleasesdownload#{version}Mailspring.zip",
+      verified: "github.comFoundry376Mailspring"
   name "Mailspring"
   desc "Fork of Nylas Mail"
-  homepage "https://getmailspring.com/"
+  homepage "https:getmailspring.com"
 
   auto_updates true
 
   app "Mailspring.app"
 
   zap trash: [
-    "~/Library/Application Support/Mailspring",
-    "~/Library/Caches/com.mailspring.*",
-    "~/Library/Logs/Mailspring",
-    "~/Library/Preferences/com.mailspring.*",
-    "~/Library/Saved Application State/com.mailspring.*",
+    "~LibraryApplication SupportMailspring",
+    "~LibraryCachescom.mailspring.*",
+    "~LibraryLogsMailspring",
+    "~LibraryPreferencescom.mailspring.*",
+    "~LibrarySaved Application Statecom.mailspring.*",
   ]
 end

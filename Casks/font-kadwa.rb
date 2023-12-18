@@ -2,12 +2,12 @@ cask "font-kadwa" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/kadwa"
+      only_path: "oflkadwa"
   name "Kadwa"
-  homepage "https://fonts.google.com/specimen/Kadwa"
+  homepage "https:fonts.google.comspecimenKadwa"
 
   font "Kadwa-Bold.ttf"
   font "Kadwa-Regular.ttf"

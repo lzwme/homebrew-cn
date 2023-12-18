@@ -2,10 +2,10 @@ cask "nrlquaker-winbox" do
   version "3.40.0"
   sha256 "529612be1a20b9a6b2fb2d282310a2ec9aaa3be5f0f98afa4849833a9fbb2017"
 
-  url "https://ghproxy.com/https://github.com/nrlquaker/winbox-mac/releases/download/v#{version}/Winbox-mac-#{version}.zip"
+  url "https:github.comnrlquakerwinbox-macreleasesdownloadv#{version}Winbox-mac-#{version}.zip"
   name "Winbox-mac"
   desc "MikroTik Winbox"
-  homepage "https://github.com/nrlquaker/winbox-mac/"
+  homepage "https:github.comnrlquakerwinbox-mac"
 
   livecheck do
     url :url
@@ -14,5 +14,5 @@ cask "nrlquaker-winbox" do
 
   app "Winbox-mac.app"
 
-  zap trash: "~/Library/Application Support/com.mikrotik.winbox"
+  zap trash: "~LibraryApplication Supportcom.mikrotik.winbox"
 end

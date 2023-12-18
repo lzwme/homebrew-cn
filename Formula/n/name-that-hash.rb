@@ -2,12 +2,12 @@ class NameThatHash < Formula
   include Language::Python::Virtualenv
 
   desc "Modern hash identification system"
-  homepage "https://nth.skerritt.blog/"
-  url "https://files.pythonhosted.org/packages/7a/d6/5bea2b09a8b4dbfd92610432dbbcdda9f983be3de770a296df957fed5d06/name_that_hash-1.11.0.tar.gz"
+  homepage "https:nth.skerritt.blog"
+  url "https:files.pythonhosted.orgpackages7ad65bea2b09a8b4dbfd92610432dbbcdda9f983be3de770a296df957fed5d06name_that_hash-1.11.0.tar.gz"
   sha256 "6978a2659ce6d38c330ab8057b78bccac00bc3e87138f2774bec3af2276b0303"
   license "GPL-3.0-or-later"
   revision 1
-  head "https://github.com/HashPals/Name-That-Hash.git", branch: "main"
+  head "https:github.comHashPalsName-That-Hash.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "766c5c79c52c0f7245b5f44cffc17775e5bb6d18bcfbddeeb0ba1722f63c2e12"
@@ -24,17 +24,17 @@ class NameThatHash < Formula
   depends_on "python@3.12"
 
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/38/71/3b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0/markdown-it-py-3.0.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages38713b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0markdown-it-py-3.0.0.tar.gz"
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
   resource "mdurl" do
-    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagesd654cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/b1/0e/e5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3/rich-13.6.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb10ee5aa3ab6857a16dadac7a970b2e1af21ddf23f03c99248db2c01082090a3rich-13.6.0.tar.gz"
     sha256 "5c14d22737e6d5084ef4771b62d5d4363165b403455a30a1c8ca39dc7b644bef"
   end
 
@@ -46,13 +46,13 @@ class NameThatHash < Formula
     virtualenv_install_with_resources
 
     site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-    (prefix/site_packages/"homebrew-name_that_hash.pth").write pth_contents
+    pth_contents = "import site; site.addsitedir('#{libexecsite_packages}')\n"
+    (prefixsite_packages"homebrew-name_that_hash.pth").write pth_contents
   end
 
   test do
     hash = "5f4dcc3b5aa765d61d8327deb882cf99"
-    output = shell_output("#{bin}/nth --text #{hash}")
+    output = shell_output("#{bin}nth --text #{hash}")
     assert_match "#{hash}\n", output
     assert_match "MD5, HC: 0 JtR: raw-md5 Summary: Used for Linux Shadow files.\n", output
 

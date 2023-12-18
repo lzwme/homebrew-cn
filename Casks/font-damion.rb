@@ -2,10 +2,10 @@ cask "font-damion" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/damion/Damion-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldamionDamion-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Damion"
-  homepage "https://fonts.google.com/specimen/Damion"
+  homepage "https:fonts.google.comspecimenDamion"
 
   font "Damion-Regular.ttf"
 

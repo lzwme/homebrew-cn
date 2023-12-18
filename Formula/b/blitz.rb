@@ -1,10 +1,10 @@
 class Blitz < Formula
   desc "Multi-dimensional array library for C++"
-  homepage "https://github.com/blitzpp/blitz/wiki"
-  url "https://ghproxy.com/https://github.com/blitzpp/blitz/archive/refs/tags/1.0.2.tar.gz"
+  homepage "https:github.comblitzppblitzwiki"
+  url "https:github.comblitzppblitzarchiverefstags1.0.2.tar.gz"
   sha256 "500db9c3b2617e1f03d0e548977aec10d36811ba1c43bb5ef250c0e3853ae1c2"
   license "Artistic-2.0"
-  head "https://github.com/blitzpp/blitz.git", branch: "master"
+  head "https:github.comblitzppblitz.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c1ce7b13ac8453f28f88f8828e05210332135de7b38886318b1146b8ff7507c8"
@@ -32,8 +32,8 @@ class Blitz < Formula
   end
 
   test do
-    (testpath/"testfile.cpp").write <<~EOS
-      #include <blitz/array.h>
+    (testpath"testfile.cpp").write <<~EOS
+      #include <blitzarray.h>
       #include <cstdlib>
       using namespace blitz;
       int main(){
@@ -43,8 +43,8 @@ class Blitz < Formula
         return 0;}
     EOS
     system ENV.cxx, "testfile.cpp", "-o", "testfile"
-    output = shell_output("./testfile")
-    var = "/A = (0,2) x (0,0)\n[ 17 \n  2 \n  97 ]\n\n/"
+    output = shell_output(".testfile")
+    var = "A = (0,2) x (0,0)\n[ 17 \n  2 \n  97 ]\n\n"
     assert_match output, var
   end
 end

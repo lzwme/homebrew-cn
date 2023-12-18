@@ -4,14 +4,14 @@ cask "sf" do
   version "2.21.7"
   sha256 :no_check
 
-  url "https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-#{arch}.pkg"
+  url "https:developer.salesforce.commediasalesforce-clisfchannelsstablesf-#{arch}.pkg"
   name "Salesforce CLI"
   desc "Salesforce CLI tools"
-  homepage "https://developer.salesforce.com/tools/salesforcecli"
+  homepage "https:developer.salesforce.comtoolssalesforcecli"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/forcedotcom/cli/main/releasenotes/README.md"
-    regex(/(\d+(?:\.\d+)+)\s+\(.*?\)\s+\[stable\]/i)
+    url "https:raw.githubusercontent.comforcedotcomclimainreleasenotesREADME.md"
+    regex((\d+(?:\.\d+)+)\s+\(.*?\)\s+\[stable\]i)
   end
 
   depends_on macos: ">= :el_capitan"
@@ -20,14 +20,14 @@ cask "sf" do
 
   uninstall pkgutil: "com.salesforce.cli",
             delete:  [
-              "/usr/local/bin/sf",
-              "/usr/local/bin/sfdx",
+              "usrlocalbinsf",
+              "usrlocalbinsfdx",
             ]
 
   zap trash: [
-    "~/.cache/sf",
-    "~/.config/sf",
-    "~/.local/share/sf",
-    "~/.sf",
+    "~.cachesf",
+    "~.configsf",
+    "~.localsharesf",
+    "~.sf",
   ]
 end

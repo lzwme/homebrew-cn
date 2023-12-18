@@ -1,10 +1,10 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
-  homepage "https://ordinals.com/"
-  url "https://ghproxy.com/https://github.com/ordinals/ord/archive/refs/tags/0.13.1.tar.gz"
+  homepage "https:ordinals.com"
+  url "https:github.comordinalsordarchiverefstags0.13.1.tar.gz"
   sha256 "9115bb49204b43f966e4d678425371c297171f27fe648bf1a06d9119abd53e4d"
   license "CC0-1.0"
-  head "https://github.com/ordinals/ord.git", branch: "master"
+  head "https:github.comordinalsord.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13f10ea2c5628396aef0a0a092bed1fc6c3524ee55daacc8e45c7daa9adc0a1b"
@@ -24,8 +24,8 @@ class Ord < Formula
 
   test do
     expected = "error: failed to spawn `bitcoind`"
-    assert_match expected, shell_output("#{bin}/ord preview 2>&1", 1)
+    assert_match expected, shell_output("#{bin}ord preview 2>&1", 1)
 
-    assert_match "ord #{version}", shell_output("#{bin}/ord --version")
+    assert_match "ord #{version}", shell_output("#{bin}ord --version")
   end
 end

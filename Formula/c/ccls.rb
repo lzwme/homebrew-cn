@@ -1,17 +1,17 @@
 class Ccls < Formula
-  desc "C/C++/ObjC language server"
-  homepage "https://github.com/MaskRay/ccls"
+  desc "CC++ObjC language server"
+  homepage "https:github.comMaskRayccls"
   # NOTE: Upstream often does not mark the latest release on GitHub, so
   #       this can be updated with the new tag.
-  #       https://github.com/Homebrew/homebrew-core/pull/106939
-  #       https://github.com/MaskRay/ccls/issues/786
-  #       https://github.com/MaskRay/ccls/issues/895
+  #       https:github.comHomebrewhomebrew-corepull106939
+  #       https:github.comMaskRaycclsissues786
+  #       https:github.comMaskRaycclsissues895
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/MaskRay/ccls/archive/refs/tags/0.20230717.tar.gz"
+  url "https:github.comMaskRaycclsarchiverefstags0.20230717.tar.gz"
   sha256 "118e84cc17172b1deef0f9c50767b7a2015198fd44adac7966614eb399867af8"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/MaskRay/ccls.git", branch: "master"
+  head "https:github.comMaskRayccls.git", branch: "master"
 
   bottle do
     sha256                               arm64_sonoma:   "1e8428a18298b518d0b501d00ae12caf881e8ac2e259efd1d4f739bb921b98c2"
@@ -35,11 +35,11 @@ class Ccls < Formula
   def llvm
     deps.reject { |d| d.build? || d.test? }
         .map(&:to_formula)
-        .find { |f| f.name.match?(/^llvm(@\d+)?$/) }
+        .find { |f| f.name.match?(^llvm(@\d+)?$) }
   end
 
   def install
-    resource_dir = Utils.safe_popen_read(llvm.opt_bin/"clang", "-print-resource-dir").chomp
+    resource_dir = Utils.safe_popen_read(llvm.opt_bin"clang", "-print-resource-dir").chomp
     resource_dir.gsub! llvm.prefix.realpath, llvm.opt_prefix
     system "cmake", "-S", ".", "-B", "build", "-DCLANG_RESOURCE_DIR=#{resource_dir}", *std_cmake_args
     system "cmake", "--build", "build"
@@ -47,9 +47,9 @@ class Ccls < Formula
   end
 
   test do
-    output = shell_output("#{bin}/ccls -index=#{testpath} 2>&1")
+    output = shell_output("#{bin}ccls -index=#{testpath} 2>&1")
 
-    resource_dir = output.match(/resource-dir=(\S+)/)[1]
-    assert_path_exists "#{resource_dir}/include"
+    resource_dir = output.match(resource-dir=(\S+))[1]
+    assert_path_exists "#{resource_dir}include"
   end
 end

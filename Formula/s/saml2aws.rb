@@ -1,7 +1,7 @@
 class Saml2aws < Formula
   desc "Login and retrieve AWS temporary credentials using a SAML IDP"
-  homepage "https://github.com/Versent/saml2aws"
-  url "https://github.com/Versent/saml2aws.git",
+  homepage "https:github.comVersentsaml2aws"
+  url "https:github.comVersentsaml2aws.git",
       tag:      "v2.36.13",
       revision: "580933599476ee52f911bbb2293cfec77382f326"
   license "MIT"
@@ -20,8 +20,8 @@ class Saml2aws < Formula
 
   def install
     ldflags = "-s -w -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/saml2aws"
-    (zsh_completion/"_saml2aws").write <<~EOS
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdsaml2aws"
+    (zsh_completion"_saml2aws").write <<~EOS
       #compdef saml2aws
 
       _saml2aws_bash_autocomplete() {
@@ -38,6 +38,6 @@ class Saml2aws < Formula
 
   test do
     assert_match "error building login details: Failed to validate account.: URL empty in idp account",
-      shell_output("#{bin}/saml2aws script 2>&1", 1)
+      shell_output("#{bin}saml2aws script 2>&1", 1)
   end
 end

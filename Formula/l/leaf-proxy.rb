@@ -1,16 +1,16 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
-  homepage "https://github.com/eycorsican/leaf"
+  homepage "https:github.comeycorsicanleaf"
   license "Apache-2.0"
-  head "https://github.com/eycorsican/leaf.git", branch: "master"
+  head "https:github.comeycorsicanleaf.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/eycorsican/leaf/archive/refs/tags/v0.10.7.tar.gz"
+    url "https:github.comeycorsicanleafarchiverefstagsv0.10.7.tar.gz"
     sha256 "7086c66420f04c17552a11e65ae9d5db7297ac2e764da3efe0e528f7265875a2"
 
     # Backport fix for newer protobuf crate. Remove in the next release.
     patch do
-      url "https://github.com/eycorsican/leaf/commit/b92e08ad4110a8460db1dc3c426be7f8651eccc0.patch?full_index=1"
+      url "https:github.comeycorsicanleafcommitb92e08ad4110a8460db1dc3c426be7f8651eccc0.patch?full_index=1"
       sha256 "25f0cbc02a6a49ba5b7b5319dceb2b3dfcd7c2e0547f57a0db9fce52f6b1b306"
     end
   end
@@ -34,14 +34,14 @@ class LeafProxy < Formula
   end
 
   test do
-    (testpath/"config.conf").write <<~EOS
+    (testpath"config.conf").write <<~EOS
       [General]
       dns-server = 8.8.8.8
 
       [Proxy]
       SS = ss, 127.0.0.1, #{free_port}, encrypt-method=chacha20-ietf-poly1305, password=123456
     EOS
-    output = shell_output "#{bin}/leaf -c #{testpath}/config.conf -t SS"
+    output = shell_output "#{bin}leaf -c #{testpath}config.conf -t SS"
 
     assert_match "TCP failed: all attempts failed", output
   end

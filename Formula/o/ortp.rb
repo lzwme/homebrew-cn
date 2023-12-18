@@ -1,10 +1,10 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
-  homepage "https://linphone.org/"
-  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.2.112/ortp-5.2.112.tar.bz2"
+  homepage "https:linphone.org"
+  url "https:gitlab.linphone.orgBCpublicortp-archive5.2.112ortp-5.2.112.tar.bz2"
   sha256 "710a28c361a863132a2b8dc1577213132524d71df0acab7768d974ba0e9ab2e3"
   license "GPL-3.0-or-later"
-  head "https://gitlab.linphone.org/BC/public/ortp.git", branch: "master"
+  head "https:gitlab.linphone.orgBCpublicortp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "93e4a6e384e893e3070f50d6d2adb6f7f74a16e3cb12266c35d32cddcd732b72"
@@ -21,10 +21,10 @@ class Ortp < Formula
   depends_on "mbedtls@2"
 
   # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
-  # https://github.com/BelledonneCommunications/bctoolbox
+  # https:github.comBelledonneCommunicationsbctoolbox
   resource "bctoolbox" do
     # Don't forget to change both instances of the version in the URL.
-    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.2.112/bctoolbox-5.2.112.tar.bz2"
+    url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.2.112bctoolbox-5.2.112.tar.bz2"
     sha256 "458a7eef09951d97f35946b640ab25d6345ebe215413d5d76ef276b8e23a9a7e"
   end
 
@@ -39,15 +39,15 @@ class Ortp < Formula
       system "cmake", "--install", "build"
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}/lib" if OS.linux?
-    cflags = ["-I#{libexec}/include"]
+    ENV.prepend_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}lib" if OS.linux?
+    cflags = ["-I#{libexec}include"]
     cflags << "-Wno-error=maybe-uninitialized" if OS.linux?
 
     args = %W[
       -DCMAKE_PREFIX_PATH=#{libexec}
       -DCMAKE_C_FLAGS=#{cflags.join(" ")}
-      -DCMAKE_CXX_FLAGS=-I#{libexec}/include
+      -DCMAKE_CXX_FLAGS=-I#{libexec}include
       -DENABLE_DOC=NO
       -DENABLE_UNIT_TESTS=NO
     ]
@@ -58,19 +58,19 @@ class Ortp < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include "ortp/logging.h"
-      #include "ortp/rtpsession.h"
-      #include "ortp/sessionset.h"
+    (testpath"test.c").write <<~EOS
+      #include "ortplogging.h"
+      #include "ortprtpsession.h"
+      #include "ortpsessionset.h"
       int main()
       {
         ORTP_PUBLIC void ortp_init(void);
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}", "-I#{libexec}/include", "-L#{lib}", "-lortp",
-           testpath/"test.c", "-o", "test"
-    system "./test"
+    system ENV.cc, "-I#{include}", "-I#{libexec}include", "-L#{lib}", "-lortp",
+           testpath"test.c", "-o", "test"
+    system ".test"
 
     # Ensure that bctoolbox's version is identical to ortp's.
     assert_equal version, resource("bctoolbox").version

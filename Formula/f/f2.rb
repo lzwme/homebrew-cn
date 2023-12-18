@@ -1,10 +1,10 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
-  homepage "https://github.com/ayoisaiah/f2"
-  url "https://ghproxy.com/https://github.com/ayoisaiah/f2/archive/refs/tags/v1.9.1.tar.gz"
+  homepage "https:github.comayoisaiahf2"
+  url "https:github.comayoisaiahf2archiverefstagsv1.9.1.tar.gz"
   sha256 "fbeb4540c4afe4aa25565685ee7ef7498449da7fc5f5b70a0e303b15c6e35f71"
   license "MIT"
-  head "https://github.com/ayoisaiah/f2.git", branch: "master"
+  head "https:github.comayoisaiahf2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "880773abf1e0dad9df8028ad85e46ed692da2a2df022aadb9dce65831afe5ccc"
@@ -21,16 +21,16 @@ class F2 < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./cmd..."
+    system "go", "build", *std_go_args, ".cmd..."
   end
 
   test do
     touch "test1-foo.foo"
     touch "test2-foo.foo"
-    system bin/"f2", "-s", "-f", ".foo", "-r", ".bar", "-x"
-    assert_predicate testpath/"test1-foo.bar", :exist?
-    assert_predicate testpath/"test2-foo.bar", :exist?
-    refute_predicate testpath/"test1-foo.foo", :exist?
-    refute_predicate testpath/"test2-foo.foo", :exist?
+    system bin"f2", "-s", "-f", ".foo", "-r", ".bar", "-x"
+    assert_predicate testpath"test1-foo.bar", :exist?
+    assert_predicate testpath"test2-foo.bar", :exist?
+    refute_predicate testpath"test1-foo.foo", :exist?
+    refute_predicate testpath"test2-foo.foo", :exist?
   end
 end

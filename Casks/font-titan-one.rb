@@ -2,10 +2,10 @@ cask "font-titan-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/titanone/TitanOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofltitanoneTitanOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Titan One"
-  homepage "https://fonts.google.com/specimen/Titan+One"
+  homepage "https:fonts.google.comspecimenTitan+One"
 
   font "TitanOne-Regular.ttf"
 

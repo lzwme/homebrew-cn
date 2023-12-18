@@ -2,12 +2,12 @@ class Pythran < Formula
   include Language::Python::Virtualenv
 
   desc "Ahead of Time compiler for numeric kernels"
-  homepage "https://pythran.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/2c/ab/a647b8cc3ac1aa07cde06875157696e4522958fb8363474bce21c302d4d8/pythran-0.14.0.tar.gz"
+  homepage "https:pythran.readthedocs.io"
+  url "https:files.pythonhosted.orgpackages2caba647b8cc3ac1aa07cde06875157696e4522958fb8363474bce21c302d4d8pythran-0.14.0.tar.gz"
   sha256 "42f3473946205964844eff7f750e2541afb2006d53475d708f5ff2d048db89bd"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
+  head "https:github.comserge-sans-paillepythran.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,12 +30,12 @@ class Pythran < Formula
   depends_on "six"
 
   resource "beniget" do
-    url "https://files.pythonhosted.org/packages/14/e7/50cbac38f77eca8efd39516be6651fdb9f3c4c0fab8cf2cf05f612578737/beniget-0.4.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages14e750cbac38f77eca8efd39516be6651fdb9f3c4c0fab8cf2cf05f612578737beniget-0.4.1.tar.gz"
     sha256 "75554b3b8ad0553ce2f607627dad3d95c60c441189875b98e097528f8e23ac0c"
   end
 
   resource "gast" do
-    url "https://files.pythonhosted.org/packages/e4/41/f26f62ebef1a80148e20951a6e9ef4d0ebbe2090124bc143da26e12a934c/gast-0.5.4.tar.gz"
+    url "https:files.pythonhosted.orgpackagese441f26f62ebef1a80148e20951a6e9ef4d0ebbe2090124bc143da26e12a934cgast-0.5.4.tar.gz"
     sha256 "9c270fe5f4b130969b54174de7db4e764b09b4f7f67ccfc32480e29f78348d97"
   end
 
@@ -48,19 +48,19 @@ class Pythran < Formula
   def install
     if OS.mac?
       gcc_major_ver = Formula["gcc"].any_installed_version.major
-      inreplace "pythran/pythran-darwin.cfg" do |s|
-        s.gsub!(/^include_dirs=/, "include_dirs=#{Formula["openblas"].opt_include}")
-        s.gsub!(/^library_dirs=/, "library_dirs=#{Formula["openblas"].opt_lib}")
-        s.gsub!(/^blas=.*/, "blas=openblas")
-        s.gsub!(/^CC=.*/, "CC=#{Formula["gcc"].opt_bin}/gcc-#{gcc_major_ver}")
-        s.gsub!(/^CXX=.*/, "CXX=#{Formula["gcc"].opt_bin}/g++-#{gcc_major_ver}")
+      inreplace "pythranpythran-darwin.cfg" do |s|
+        s.gsub!(^include_dirs=, "include_dirs=#{Formula["openblas"].opt_include}")
+        s.gsub!(^library_dirs=, "library_dirs=#{Formula["openblas"].opt_lib}")
+        s.gsub!(^blas=.*, "blas=openblas")
+        s.gsub!(^CC=.*, "CC=#{Formula["gcc"].opt_bin}gcc-#{gcc_major_ver}")
+        s.gsub!(^CXX=.*, "CXX=#{Formula["gcc"].opt_bin}g++-#{gcc_major_ver}")
       end
     end
 
     clis = %w[pythran pythran-config]
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       pyversion = Language::Python.major_minor_version(python_exe)
 
       resources.each do |r|
@@ -72,7 +72,7 @@ class Pythran < Formula
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
 
       clis.each do |cli|
-        bin.install bin/cli => "#{cli}-#{pyversion}"
+        bin.install bincli => "#{cli}-#{pyversion}"
       end
 
       next if python != pythons.max_by(&:version)
@@ -86,36 +86,36 @@ class Pythran < Formula
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       pyversion = Language::Python.major_minor_version(python_exe)
-      pythran = Formula["pythran"].opt_bin/"pythran-#{pyversion}"
+      pythran = Formula["pythran"].opt_bin"pythran-#{pyversion}"
 
-      (testpath/"dprod.py").write <<~EOS
+      (testpath"dprod.py").write <<~EOS
         #pythran export dprod(int list, int list)
         def dprod(arr0, arr1):
           return sum([x*y for x,y in zip(arr0, arr1)])
       EOS
-      system pythran, testpath/"dprod.py"
-      rm_f testpath/"dprod.py"
+      system pythran, testpath"dprod.py"
+      rm_f testpath"dprod.py"
 
       assert_equal "11", shell_output("#{python_exe} -c 'import dprod; print(dprod.dprod([1,2], [3,4]))'").chomp
 
-      (testpath/"arc_distance.py").write <<~EOS
+      (testpath"arc_distance.py").write <<~EOS
         #pythran export arc_distance(float[], float[], float[], float[])
         import numpy as np
         def arc_distance(theta_1, phi_1, theta_2, phi_2):
           """
           Calculates the pairwise arc distance between all points in vector a and b.
           """
-          temp = np.sin((theta_2-theta_1)/2)**2 + np.cos(theta_1)*np.cos(theta_2)*np.sin((phi_2-phi_1)/2)**2
+          temp = np.sin((theta_2-theta_1)2)**2 + np.cos(theta_1)*np.cos(theta_2)*np.sin((phi_2-phi_1)2)**2
           distance_matrix = 2 * np.arctan2(np.sqrt(temp), np.sqrt(1-temp))
           return distance_matrix
       EOS
       # Test with configured gcc to detect breakages from gcc major versions and for OpenMP support
       with_env(CC: nil, CXX: nil) do
-        system pythran, "-DUSE_XSIMD", "-fopenmp", "-march=native", testpath/"arc_distance.py"
+        system pythran, "-DUSE_XSIMD", "-fopenmp", "-march=native", testpath"arc_distance.py"
       end
-      rm_f testpath/"arc_distance.py"
+      rm_f testpath"arc_distance.py"
 
       system python_exe, "-c", <<~EOS
         import numpy as np

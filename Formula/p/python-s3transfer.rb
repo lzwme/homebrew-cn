@@ -1,7 +1,7 @@
 class PythonS3transfer < Formula
   desc "Amazon S3 Transfer Manager for Python"
-  homepage "https://github.com/boto/s3transfer"
-  url "https://files.pythonhosted.org/packages/e4/45/973579466ff4869756f2ba5cc31773d5fc9db67085f722a6b38b8558d70d/s3transfer-0.9.0.tar.gz"
+  homepage "https:github.combotos3transfer"
+  url "https:files.pythonhosted.orgpackagese445973579466ff4869756f2ba5cc31773d5fc9db67085f722a6b38b8558d70ds3transfer-0.9.0.tar.gz"
   sha256 "9e1b186ec8bb5907a1e82b51237091889a9973a2bb799a924bcd9f301ff79d3d"
   license "Apache-2.0"
 
@@ -26,14 +26,14 @@ class PythonS3transfer < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "from s3transfer.manager import TransferManager"
     end
   end

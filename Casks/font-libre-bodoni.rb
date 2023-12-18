@@ -2,12 +2,12 @@ cask "font-libre-bodoni" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/librebodoni"
+      only_path: "ofllibrebodoni"
   name "Libre Bodoni"
-  homepage "https://fonts.google.com/specimen/Libre+Bodoni"
+  homepage "https:fonts.google.comspecimenLibre+Bodoni"
 
   font "LibreBodoni-Italic[wght].ttf"
   font "LibreBodoni[wght].ttf"

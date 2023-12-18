@@ -1,10 +1,10 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
-  homepage "https://hurl.dev"
-  url "https://ghproxy.com/https://github.com/Orange-OpenSource/hurl/archive/refs/tags/4.1.0.tar.gz"
+  homepage "https:hurl.dev"
+  url "https:github.comOrange-OpenSourcehurlarchiverefstags4.1.0.tar.gz"
   sha256 "3356f64158e6dc5f2e29c37eee80a43332b1734baa7380356affeb5160ffca09"
   license "Apache-2.0"
-  head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
+  head "https:github.comOrange-OpenSourcehurl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ffa5e43f3010b45c01ddc39bb3a93dbb252a1725373c8a4f11abba4c0b7ea8"
@@ -28,19 +28,19 @@ class Hurl < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    system "cargo", "install", *std_cargo_args(path: "packages/hurl")
-    system "cargo", "install", *std_cargo_args(path: "packages/hurlfmt")
+    system "cargo", "install", *std_cargo_args(path: "packageshurl")
+    system "cargo", "install", *std_cargo_args(path: "packageshurlfmt")
 
-    man1.install "docs/manual/hurl.1"
-    man1.install "docs/manual/hurlfmt.1"
+    man1.install "docsmanualhurl.1"
+    man1.install "docsmanualhurlfmt.1"
   end
 
   test do
-    # Perform a GET request to https://hurl.dev.
+    # Perform a GET request to https:hurl.dev.
     # This requires a network connection, but so does Homebrew in general.
-    filename = (testpath/"test.hurl")
-    filename.write "GET https://hurl.dev"
-    system "#{bin}/hurl", "--color", filename
-    system "#{bin}/hurlfmt", "--color", filename
+    filename = (testpath"test.hurl")
+    filename.write "GET https:hurl.dev"
+    system "#{bin}hurl", "--color", filename
+    system "#{bin}hurlfmt", "--color", filename
   end
 end

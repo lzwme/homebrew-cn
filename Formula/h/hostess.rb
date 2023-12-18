@@ -1,10 +1,10 @@
 class Hostess < Formula
-  desc "Idempotent command-line utility for managing your /etc/hosts file"
-  homepage "https://github.com/cbednarski/hostess"
-  url "https://ghproxy.com/https://github.com/cbednarski/hostess/archive/refs/tags/v0.5.2.tar.gz"
+  desc "Idempotent command-line utility for managing your etchosts file"
+  homepage "https:github.comcbednarskihostess"
+  url "https:github.comcbednarskihostessarchiverefstagsv0.5.2.tar.gz"
   sha256 "ece52d72e9e886e5cc877379b94c7d8fe6ba5e22ab823ef41b66015e5326da87"
   license "MIT"
-  head "https://github.com/cbednarski/hostess.git", branch: "master"
+  head "https:github.comcbednarskihostess.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,6 +28,6 @@ class Hostess < Formula
   end
 
   test do
-    assert_match "localhost", shell_output("#{bin}/hostess ls 2>&1")
+    assert_match "localhost", shell_output("#{bin}hostess ls 2>&1")
   end
 end

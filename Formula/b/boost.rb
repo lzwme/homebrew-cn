@@ -1,14 +1,14 @@
 class Boost < Formula
   desc "Collection of portable C++ source libraries"
-  homepage "https://www.boost.org/"
-  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  homepage "https:www.boost.org"
+  url "https:github.comboostorgboostreleasesdownloadboost-1.83.0boost-1.83.0.tar.xz"
   sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
-  head "https://github.com/boostorg/boost.git", branch: "master"
+  head "https:github.comboostorgboost.git", branch: "master"
 
   livecheck do
-    url "https://www.boost.org/users/download/"
-    regex(/href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.t/i)
+    url "https:www.boost.orgusersdownload"
+    regex(href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.ti)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| match.first.tr("_", ".") }
     end
@@ -32,7 +32,7 @@ class Boost < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # fix for https://github.com/boostorg/process/issues/342
+  # fix for https:github.comboostorgprocessissues342
   # should eventually be in boost 1.84
   patch :DATA
 
@@ -81,19 +81,19 @@ class Boost < Formula
     args << "cxxflags=-std=c++14"
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
-    system "./bootstrap.sh", *bootstrap_args
-    system "./b2", "headers"
-    system "./b2", *args
+    system ".bootstrap.sh", *bootstrap_args
+    system ".b2", "headers"
+    system ".b2", *args
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <boost/algorithm/string.hpp>
-      #include <boost/iostreams/device/array.hpp>
-      #include <boost/iostreams/device/back_inserter.hpp>
-      #include <boost/iostreams/filter/zstd.hpp>
-      #include <boost/iostreams/filtering_stream.hpp>
-      #include <boost/iostreams/stream.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <boostalgorithmstring.hpp>
+      #include <boostiostreamsdevicearray.hpp>
+      #include <boostiostreamsdeviceback_inserter.hpp>
+      #include <boostiostreamsfilterzstd.hpp>
+      #include <boostiostreamsfiltering_stream.hpp>
+      #include <boostiostreamsstream.hpp>
 
       #include <string>
       #include <iostream>
@@ -113,7 +113,7 @@ class Boost < Formula
         assert(strVec[0]=="a");
         assert(strVec[1]=="b");
 
-        // Test boost::iostreams::zstd_compressor() linking
+         Test boost::iostreams::zstd_compressor() linking
         std::vector<char> v;
         back_insert_device<std::vector<char>> snk{v};
         filtering_ostream os;
@@ -136,15 +136,15 @@ class Boost < Formula
     EOS
     system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
                     "-L#{Formula["zstd"].opt_lib}", "-lzstd"
-    system "./test"
+    system ".test"
   end
 end
 
 __END__
-diff --git a/libs/process/include/boost/process/detail/posix/handles.hpp b/libs/process/include/boost/process/detail/posix/handles.hpp
+diff --git alibsprocessincludeboostprocessdetailposixhandles.hpp blibsprocessincludeboostprocessdetailposixhandles.hpp
 index cd9e1ce5..304e77b1 100644
---- a/libs/process/include/boost/process/detail/posix/handles.hpp
-+++ b/libs/process/include/boost/process/detail/posix/handles.hpp
+--- alibsprocessincludeboostprocessdetailposixhandles.hpp
++++ blibsprocessincludeboostprocessdetailposixhandles.hpp
 @@ -33,7 +33,7 @@ inline std::vector<native_handle_type> get_handles(std::error_code & ec)
      else
          ec.clear();

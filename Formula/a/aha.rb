@@ -1,10 +1,10 @@
 class Aha < Formula
   desc "ANSI HTML adapter"
-  homepage "https://github.com/theZiz/aha"
-  url "https://ghproxy.com/https://github.com/theZiz/aha/archive/refs/tags/0.5.1.tar.gz"
+  homepage "https:github.comtheZizaha"
+  url "https:github.comtheZizahaarchiverefstags0.5.1.tar.gz"
   sha256 "6aea13487f6b5c3e453a447a67345f8095282f5acd97344466816b05ebd0b3b1"
   license "LGPL-2.1"
-  head "https://github.com/theZiz/aha.git", branch: "master"
+  head "https:github.comtheZizaha.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1df76aba65188e22f99b5229fdfc0435cd0e1e747d8596e64cee739bb679fb6"
@@ -26,7 +26,7 @@ class Aha < Formula
   end
 
   test do
-    out = pipe_output(bin/"aha", "[35mrain[34mpill[00m")
-    assert_match(/color:purple;">rain.*color:blue;">pill/, out)
+    out = pipe_output(bin"aha", "[35mrain[34mpill[00m")
+    assert_match(color:purple;">rain.*color:blue;">pill, out)
   end
 end

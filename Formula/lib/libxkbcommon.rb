@@ -1,14 +1,14 @@
 class Libxkbcommon < Formula
   desc "Keyboard handling library"
-  homepage "https://xkbcommon.org/"
-  url "https://xkbcommon.org/download/libxkbcommon-1.5.0.tar.xz"
+  homepage "https:xkbcommon.org"
+  url "https:xkbcommon.orgdownloadlibxkbcommon-1.5.0.tar.xz"
   sha256 "560f11c4bbbca10f495f3ef7d3a6aa4ca62b4f8fb0b52e7d459d18a26e46e017"
   license "MIT"
-  head "https://github.com/xkbcommon/libxkbcommon.git", branch: "master"
+  head "https:github.comxkbcommonlibxkbcommon.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?libxkbcommon[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?libxkbcommon[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -37,8 +37,8 @@ class Libxkbcommon < Formula
     args = %W[
       -Denable-wayland=false
       -Denable-docs=false
-      -Dxkb-config-root=#{HOMEBREW_PREFIX}/share/X11/xkb
-      -Dx-locale-root=#{HOMEBREW_PREFIX}/share/X11/locale
+      -Dxkb-config-root=#{HOMEBREW_PREFIX}shareX11xkb
+      -Dx-locale-root=#{HOMEBREW_PREFIX}shareX11locale
     ]
     system "meson", *std_meson_args, "build", *args
     system "meson", "compile", "-C", "build", "-v"
@@ -46,9 +46,9 @@ class Libxkbcommon < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
-      #include <xkbcommon/xkbcommon.h>
+      #include <xkbcommonxkbcommon.h>
       int main() {
         return (xkb_context_new(XKB_CONTEXT_NO_FLAGS) == NULL)
           ? EXIT_FAILURE
@@ -57,6 +57,6 @@ class Libxkbcommon < Formula
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxkbcommon",
                    "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

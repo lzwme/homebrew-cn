@@ -1,7 +1,7 @@
 class Dumb < Formula
   desc "IT, XM, S3M and MOD player library"
-  homepage "https://dumb.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/kode54/dumb/archive/refs/tags/2.0.3.tar.gz"
+  homepage "https:dumb.sourceforge.net"
+  url "https:github.comkode54dumbarchiverefstags2.0.3.tar.gz"
   sha256 "99bfac926aeb8d476562303312d9f47fd05b43803050cd889b44da34a9b2a4f9"
 
   bottle do
@@ -35,10 +35,10 @@ class Dumb < Formula
     # Build static library
     system "cmake", "-S", ".", "-B", "build", *args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build"
-    lib.install "build/libdumb.a"
+    lib.install "buildlibdumb.a"
   end
 
   test do
-    assert_match "missing option <file>", shell_output("#{bin}/dumbplay 2>&1", 1)
+    assert_match "missing option <file>", shell_output("#{bin}dumbplay 2>&1", 1)
   end
 end

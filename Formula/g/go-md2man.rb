@@ -1,7 +1,7 @@
 class GoMd2man < Formula
   desc "Converts markdown into roff (man pages)"
-  homepage "https://github.com/cpuguy83/go-md2man"
-  url "https://github.com/cpuguy83/go-md2man.git",
+  homepage "https:github.comcpuguy83go-md2man"
+  url "https:github.comcpuguy83go-md2man.git",
       tag:      "v2.0.3",
       revision: "f67b5f6400a3ea2156517041a329ae5f5935395c"
   license "MIT"
@@ -20,12 +20,12 @@ class GoMd2man < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    system bin/"go-md2man", "-in=go-md2man.1.md", "-out=go-md2man.1"
+    system bin"go-md2man", "-in=go-md2man.1.md", "-out=go-md2man.1"
     man1.install "go-md2man.1"
   end
 
   test do
-    assert_includes pipe_output(bin/"go-md2man", "# manpage\nand a half\n"),
+    assert_includes pipe_output(bin"go-md2man", "# manpage\nand a half\n"),
                     ".TH manpage\n.PP\nand a half\n"
   end
 end

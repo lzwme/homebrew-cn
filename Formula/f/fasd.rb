@@ -1,10 +1,10 @@
 class Fasd < Formula
   desc "CLI tool for quick access to files and directories"
-  homepage "https://github.com/clvv/fasd"
-  url "https://ghproxy.com/https://github.com/clvv/fasd/archive/refs/tags/1.0.1.tar.gz"
+  homepage "https:github.comclvvfasd"
+  url "https:github.comclvvfasdarchiverefstags1.0.1.tar.gz"
   sha256 "88efdfbbed8df408699a14fa6c567450bf86480f5ff3dde42d0b3e1dee731f65"
   license "MIT"
-  head "https://github.com/clvv/fasd.git", branch: "master"
+  head "https:github.comclvvfasd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "9241df0f32971ce5a84c977f6908b93114946843813d5375ba7b983a7a783188"
@@ -18,6 +18,6 @@ class Fasd < Formula
   end
 
   test do
-    system "#{bin}/fasd", "--init", "auto"
+    system "#{bin}fasd", "--init", "auto"
   end
 end

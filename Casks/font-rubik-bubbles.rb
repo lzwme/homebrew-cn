@@ -2,10 +2,10 @@ cask "font-rubik-bubbles" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rubikbubbles/RubikBubbles-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrubikbubblesRubikBubbles-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rubik Bubbles"
-  homepage "https://fonts.google.com/specimen/Rubik+Bubbles"
+  homepage "https:fonts.google.comspecimenRubik+Bubbles"
 
   font "RubikBubbles-Regular.ttf"
 

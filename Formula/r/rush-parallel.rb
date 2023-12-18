@@ -1,7 +1,7 @@
 class RushParallel < Formula
   desc "Cross-platform command-line tool for executing jobs in parallel"
-  homepage "https://github.com/shenwei356/rush"
-  url "https://ghproxy.com/https://github.com/shenwei356/rush/archive/refs/tags/v0.5.4.tar.gz"
+  homepage "https:github.comshenwei356rush"
+  url "https:github.comshenwei356rusharchiverefstagsv0.5.4.tar.gz"
   sha256 "fe1d1a453b1ce64f6d27d1e89bef253ef7be2938cb901508d2845d71329b8ec5"
   license "MIT"
 
@@ -18,11 +18,11 @@ class RushParallel < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"rush")
+    system "go", "build", *std_go_args(output: bin"rush")
   end
 
   test do
-    assert_equal <<~EOS, pipe_output("#{bin}/rush -k 'echo 0{}'", (1..4).to_a.join("\n"))
+    assert_equal <<~EOS, pipe_output("#{bin}rush -k 'echo 0{}'", (1..4).to_a.join("\n"))
       01
       02
       03

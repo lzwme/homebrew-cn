@@ -1,14 +1,14 @@
 class Daemontools < Formula
   desc "Collection of tools for managing UNIX services"
-  homepage "https://cr.yp.to/daemontools.html"
-  url "https://cr.yp.to/daemontools/daemontools-0.76.tar.gz"
+  homepage "https:cr.yp.todaemontools.html"
+  url "https:cr.yp.todaemontoolsdaemontools-0.76.tar.gz"
   sha256 "a55535012b2be7a52dcd9eccabb9a198b13be50d0384143bd3b32b8710df4c1f"
   license :public_domain
   revision 1
 
   livecheck do
-    url "https://cr.yp.to/daemontools/install.html"
-    regex(/href=.*?daemontools[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:cr.yp.todaemontoolsinstall.html"
+    regex(href=.*?daemontools[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -27,31 +27,31 @@ class Daemontools < Formula
   # Fix build failure due to missing #include <errno.h> on Linux.
   # Patch submitted to author by email.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/212baeaf8232802cf3dfbfcc531efa5741325bfa/daemontools/errno.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches212baeaf8232802cf3dfbfcc531efa5741325bfadaemontoolserrno.patch"
     sha256 "b7beb4cfe150b5cad1f50f4879d91cd8fc72e581940da4a716b99467d3a14937"
   end
 
   def install
     cd "daemontools-#{version}" do
-      inreplace ["package/run", "src/svscanboot.sh"] do |s|
-        s.gsub! "/service", "#{etc}/service"
+      inreplace ["packagerun", "srcsvscanboot.sh"] do |s|
+        s.gsub! "service", "#{etc}service"
       end
 
       # Work around build error from root requirement: "Oops. Your getgroups() returned 0,
       # and setgroups() failed; this means that I can't reliably do my shsgr test. Please
       # either ``make'' as root or ``make'' while you're in one or more supplementary groups."
-      inreplace "src/Makefile", "( cat warn-shsgr; exit 1 )", "cat warn-shsgr" if OS.linux?
+      inreplace "srcMakefile", "( cat warn-shsgr; exit 1 )", "cat warn-shsgr" if OS.linux?
 
-      system "package/compile"
-      bin.install Dir["command/*"]
+      system "packagecompile"
+      bin.install Dir["command*"]
     end
   end
 
   def post_install
-    (etc/"service").mkpath
+    (etc"service").mkpath
 
-    Pathname.glob("/service/*") do |original|
-      target = "#{etc}/service/#{original.basename}"
+    Pathname.glob("service*") do |original|
+      target = "#{etc}service#{original.basename}"
       ln_s original, target unless File.exist?(target)
     end
   end
@@ -59,17 +59,17 @@ class Daemontools < Formula
   def caveats
     <<~EOS
       Services are stored in:
-        #{etc}/service/
+        #{etc}service
     EOS
   end
 
   service do
-    run opt_bin/"svscanboot"
+    run opt_bin"svscanboot"
     keep_alive true
     require_root true
   end
 
   test do
-    assert_match "Homebrew", shell_output("#{bin}/softlimit -t 1 echo 'Homebrew'")
+    assert_match "Homebrew", shell_output("#{bin}softlimit -t 1 echo 'Homebrew'")
   end
 end

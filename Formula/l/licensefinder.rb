@@ -1,7 +1,7 @@
 class Licensefinder < Formula
   desc "Find licenses for your project's dependencies"
-  homepage "https://github.com/pivotal/LicenseFinder"
-  url "https://github.com/pivotal/LicenseFinder.git",
+  homepage "https:github.compivotalLicenseFinder"
+  url "https:github.compivotalLicenseFinder.git",
       tag:      "v7.1.0",
       revision: "81092404aeaf1cb39dbf2551f50f007ed049c26c"
   license "MIT"
@@ -24,28 +24,28 @@ class Licensefinder < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "license_finder.gemspec"
     system "gem", "install", "license_finder-#{version}.gem"
-    bin.install libexec/"bin/license_finder"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec"binlicense_finder"
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    gem_home = testpath/"gem_home"
+    gem_home = testpath"gem_home"
     ENV["GEM_HOME"] = gem_home
     # GEM_PATH is empty on linux, so set it to find the installed gems
     ENV["GEM_PATH"] = libexec if OS.linux?
     system "gem", "install", "bundler"
 
     mkdir "test"
-    (testpath/"test/Gemfile").write <<~EOS
-      source 'https://rubygems.org'
+    (testpath"testGemfile").write <<~EOS
+      source 'https:rubygems.org'
       gem 'license_finder', '#{version}'
     EOS
     cd "test" do
-      ENV.prepend_path "PATH", gem_home/"bin"
+      ENV.prepend_path "PATH", gem_home"bin"
       system "bundle", "install"
       ENV.prepend_path "GEM_PATH", gem_home
       assert_match "license_finder, #{version}, MIT",
-                   shell_output(bin/"license_finder", 1)
+                   shell_output(bin"license_finder", 1)
     end
   end
 end

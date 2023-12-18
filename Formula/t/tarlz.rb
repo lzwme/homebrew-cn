@@ -1,14 +1,14 @@
 class Tarlz < Formula
   desc "Data compressor"
-  homepage "https://www.nongnu.org/lzip/tarlz.html"
-  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.24.tar.lz"
+  homepage "https:www.nongnu.orglziptarlz.html"
+  url "https:download.savannah.gnu.orgreleaseslziptarlztarlz-0.24.tar.lz"
+  mirror "https:download-mirror.savannah.gnu.orgreleaseslziptarlztarlz-0.24.tar.lz"
   sha256 "49838effe95acb29d548b7ef2ddbb4b63face40536df0d9a80a62900c7170576"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://download.savannah.gnu.org/releases/lzip/tarlz/"
-    regex(/href=.*?tarlz[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "http:download.savannah.gnu.orgreleaseslziptarlz"
+    regex(href=.*?tarlz[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -23,34 +23,34 @@ class Tarlz < Formula
 
   depends_on "lzlib"
 
-  # patch for missing major/minor/makedev for osx builds
+  # patch for missing majorminormakedev for osx builds
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/0fe617f/tarlz/0.24.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches0fe617ftarlz0.24.patch"
     sha256 "289a90c49c6ae7990debca5d4516cbb2c17d64d7e8ab23564e65b12d1f2feb9c"
   end
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "install"
   end
 
   test do
-    spath = testpath/"source"
-    dpath = testpath/"destination"
-    stestfilepath = spath/"test.txt"
-    dtestfilepath = dpath/"source/test.txt"
-    lzipfilepath = testpath/"test.tar.lz"
+    spath = testpath"source"
+    dpath = testpath"destination"
+    stestfilepath = spath"test.txt"
+    dtestfilepath = dpath"sourcetest.txt"
+    lzipfilepath = testpath"test.tar.lz"
     stestfilepath.write "TEST CONTENT"
 
     mkdir_p spath
     mkdir_p dpath
 
-    system "#{bin}/tarlz", "-C", testpath, "-cf", lzipfilepath, "source"
+    system "#{bin}tarlz", "-C", testpath, "-cf", lzipfilepath, "source"
     assert_predicate lzipfilepath, :exist?
 
-    system "#{bin}/tarlz", "-C", dpath, "-xf", lzipfilepath
+    system "#{bin}tarlz", "-C", dpath, "-xf", lzipfilepath
     assert_equal "TEST CONTENT", dtestfilepath.read
   end
 end

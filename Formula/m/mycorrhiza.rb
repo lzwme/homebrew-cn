@@ -1,10 +1,10 @@
 class Mycorrhiza < Formula
   desc "Lightweight wiki engine with hierarchy support"
-  homepage "https://mycorrhiza.wiki"
-  url "https://ghproxy.com/https://github.com/bouncepaw/mycorrhiza/archive/refs/tags/v1.14.0.tar.gz"
+  homepage "https:mycorrhiza.wiki"
+  url "https:github.combouncepawmycorrhizaarchiverefstagsv1.14.0.tar.gz"
   sha256 "6448fe7fa6198cb3346f63d0857d5f364d0aa8fafbdc95f56ef39fbe774bbabc"
   license "AGPL-3.0-only"
-  head "https://github.com/bouncepaw/mycorrhiza.git", branch: "master"
+  head "https:github.combouncepawmycorrhiza.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da8c5cd19c7f4ac6b9cb115d44df9d2fe9a4142a56346b45aa917198fa4607c2"
@@ -26,10 +26,10 @@ class Mycorrhiza < Formula
   end
 
   service do
-    run [opt_bin/"mycorrhiza", var/"lib/mycorrhiza"]
+    run [opt_bin"mycorrhiza", var"libmycorrhiza"]
     keep_alive true
-    log_path var/"log/mycorrhiza.log"
-    error_log_path var/"log/mycorrhiza.log"
+    log_path var"logmycorrhiza.log"
+    error_log_path var"logmycorrhiza.log"
   end
 
   test do
@@ -37,19 +37,19 @@ class Mycorrhiza < Formula
     port = free_port
 
     pid = fork do
-      exec bin/"mycorrhiza", "-listen-addr", "127.0.0.1:#{port}", "."
+      exec bin"mycorrhiza", "-listen-addr", "127.0.0.1:#{port}", "."
     end
 
     # Wait for Mycorrhiza to start up
     sleep 5
 
     # Create a hypha
-    cmd = "curl -siF'text=This is a test hypha.' 127.0.0.1:#{port}/upload-text/test_hypha"
-    assert_match(/303 See Other/, shell_output(cmd))
+    cmd = "curl -siF'text=This is a test hypha.' 127.0.0.1:#{port}upload-texttest_hypha"
+    assert_match(303 See Other, shell_output(cmd))
 
     # Verify that it got created
-    cmd = "curl -s 127.0.0.1:#{port}/hypha/test_hypha"
-    assert_match(/This is a test hypha\./, shell_output(cmd))
+    cmd = "curl -s 127.0.0.1:#{port}hyphatest_hypha"
+    assert_match(This is a test hypha\., shell_output(cmd))
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

@@ -1,10 +1,10 @@
 class Lab < Formula
   desc "Git wrapper for GitLab"
-  homepage "https://zaquestion.github.io/lab"
-  url "https://ghproxy.com/https://github.com/zaquestion/lab/archive/refs/tags/v0.25.1.tar.gz"
+  homepage "https:zaquestion.github.iolab"
+  url "https:github.comzaquestionlabarchiverefstagsv0.25.1.tar.gz"
   sha256 "f8cccdfbf1ca5a2c76f894321a961dfe0dc7a781d95baff5181eafd155707d79"
   license "CC0-1.0"
-  head "https://github.com/zaquestion/lab.git", branch: "master"
+  head "https:github.comzaquestionlab.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f11a5e58b8158bd43d1e4f93e4c85e398f6ba34308957b6e5b868c58d582cdb2"
@@ -25,12 +25,12 @@ class Lab < Formula
     ldflags = "-X main.version=#{version} -s -w"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"lab", "completion")
+    generate_completions_from_executable(bin"lab", "completion")
   end
 
   test do
     ENV["LAB_CORE_USER"] = "test_user"
-    ENV["LAB_CORE_HOST"] = "https://gitlab.com"
+    ENV["LAB_CORE_HOST"] = "https:gitlab.com"
     ENV["LAB_CORE_TOKEN"] = "dummy"
 
     ENV["GIT_AUTHOR_NAME"] = "test user"
@@ -38,9 +38,9 @@ class Lab < Formula
     ENV["GIT_COMMITTER_NAME"] = "test user"
     ENV["GIT_COMMITTER_EMAIL"] = "test@example.com"
 
-    output = shell_output("#{bin}/lab todo done 1 2>&1", 1)
-    assert_match "POST https://gitlab.com/api/v4/todos/1/mark_as_done", output
+    output = shell_output("#{bin}lab todo done 1 2>&1", 1)
+    assert_match "POST https:gitlab.comapiv4todos1mark_as_done", output
 
-    assert_match version.to_s, shell_output("#{bin}/lab version")
+    assert_match version.to_s, shell_output("#{bin}lab version")
   end
 end

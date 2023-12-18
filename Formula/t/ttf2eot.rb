@@ -1,7 +1,7 @@
 class Ttf2eot < Formula
   desc "Convert TTF files to EOT"
-  homepage "https://github.com/wget/ttf2eot"
-  url "https://ghproxy.com/https://github.com/wget/ttf2eot/archive/refs/tags/v0.0.3.tar.gz"
+  homepage "https:github.comwgetttf2eot"
+  url "https:github.comwgetttf2eotarchiverefstagsv0.0.3.tar.gz"
   sha256 "f363c4f2841b6d0b0545b30462e3c202c687d002da3d5dec7e2b827a032a3a65"
   license any_of: ["LGPL-2.0-or-later", "BSD-2-Clause"]
 
@@ -30,13 +30,13 @@ class Ttf2eot < Formula
   test do
     if OS.mac?
       font_name = (MacOS.version >= :catalina) ? "Arial Unicode" : "Arial"
-      font_dir = "/Library/Fonts"
+      font_dir = "LibraryFonts"
     else
       font_name = "DejaVuSans"
-      font_dir = "/usr/share/fonts/truetype/dejavu"
+      font_dir = "usrsharefontstruetypedejavu"
     end
-    cp "#{font_dir}/#{font_name}.ttf", testpath
-    system("#{bin}/ttf2eot < '#{font_name}.ttf' > '#{font_name}.eot'")
-    assert_predicate testpath/"#{font_name}.eot", :exist?
+    cp "#{font_dir}#{font_name}.ttf", testpath
+    system("#{bin}ttf2eot < '#{font_name}.ttf' > '#{font_name}.eot'")
+    assert_predicate testpath"#{font_name}.eot", :exist?
   end
 end

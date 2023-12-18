@@ -1,10 +1,10 @@
 class Glog < Formula
   desc "Application-level logging library"
-  homepage "https://github.com/google/glog"
-  url "https://ghproxy.com/https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:github.comgoogleglog"
+  url "https:github.comgoogleglogarchiverefstagsv0.6.0.tar.gz"
   sha256 "8a83bf982f37bb70825df71a9709fa90ea9f4447fb3c099e1d720a439d88bad6"
   license "BSD-3-Clause"
-  head "https://github.com/google/glog.git", branch: "master"
+  head "https:github.comgoogleglog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c6eb9b8ce678f03a87a9864ea498434b44a206cd331322ed771824a71320a97a"
@@ -29,8 +29,8 @@ class Glog < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <glog/logging.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <gloglogging.h>
       #include <iostream>
       #include <memory>
       int main(int argc, char* argv[])
@@ -43,6 +43,6 @@ class Glog < Formula
                     "-lglog", "-I#{Formula["gflags"].opt_lib}",
                     "-L#{Formula["gflags"].opt_lib}", "-lgflags",
                     "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

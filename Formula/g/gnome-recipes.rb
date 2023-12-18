@@ -1,8 +1,8 @@
 class GnomeRecipes < Formula
   desc "Formula for GNOME recipes"
-  homepage "https://wiki.gnome.org/Apps/Recipes"
+  homepage "https:wiki.gnome.orgAppsRecipes"
   # needs submodules
-  url "https://gitlab.gnome.org/GNOME/recipes.git",
+  url "https:gitlab.gnome.orgGNOMErecipes.git",
       tag:      "2.0.4",
       revision: "d5e9733c49ea4f99e72c065c05ee1a35ef65e67d"
   revision 1
@@ -30,22 +30,22 @@ class GnomeRecipes < Formula
   depends_on "libarchive"
   depends_on "libcanberra"
   depends_on "librest" # for goa
-  depends_on "libsoup@2" # libsoup 3 issue: https://gitlab.gnome.org/GNOME/recipes/-/issues/155
+  depends_on "libsoup@2" # libsoup 3 issue: https:gitlab.gnome.orgGNOMErecipes-issues155
   depends_on "libxml2"
 
   resource "goa" do
-    url "https://download.gnome.org/sources/gnome-online-accounts/3.43/gnome-online-accounts-3.43.1.tar.xz"
+    url "https:download.gnome.orgsourcesgnome-online-accounts3.43gnome-online-accounts-3.43.1.tar.xz"
     sha256 "3bcb3663a12efd4482d9fdda3e171676267fc739eb6440a2b7109a0e87afb7e8"
 
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   def install
     resource("goa").stage do
-      system "./configure", "--disable-debug",
+      system ".configure", "--disable-debug",
                             "--disable-dependency-tracking",
                             "--disable-silent-rules",
                             "--prefix=#{libexec}",
@@ -53,16 +53,16 @@ class GnomeRecipes < Formula
       system "make", "install"
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
 
     # Add RPATH to libexec in goa-1.0.pc on Linux.
     unless OS.mac?
-      inreplace libexec/"lib/pkgconfig/goa-1.0.pc", "-L${libdir}",
+      inreplace libexec"libpkgconfiggoa-1.0.pc", "-L${libdir}",
                 "-Wl,-rpath,${libdir} -L${libdir}"
     end
 
     # BSD tar does not support the required options
-    inreplace "src/gr-recipe-store.c", "argv[0] = \"tar\";", "argv[0] = \"gtar\";"
+    inreplace "srcgr-recipe-store.c", "argv[0] = \"tar\";", "argv[0] = \"gtar\";"
     # stop meson_post_install.py from doing what needs to be done in the post_install step
     ENV["DESTDIR"] = ""
     ENV.delete "PYTHONPATH"
@@ -72,11 +72,11 @@ class GnomeRecipes < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
-    system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+    system "#{Formula["glib"].opt_bin}glib-compile-schemas", "#{HOMEBREW_PREFIX}shareglib-2.0schemas"
+    system "#{Formula["gtk+3"].opt_bin}gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}shareiconshicolor"
   end
 
   test do
-    system "#{bin}/gnome-recipes", "--help"
+    system "#{bin}gnome-recipes", "--help"
   end
 end

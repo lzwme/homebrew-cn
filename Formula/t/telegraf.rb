@@ -1,14 +1,14 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
-  homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://ghproxy.com/https://github.com/influxdata/telegraf/archive/refs/tags/v1.29.1.tar.gz"
+  homepage "https:www.influxdata.comtime-series-platformtelegraf"
+  url "https:github.cominfluxdatatelegrafarchiverefstagsv1.29.1.tar.gz"
   sha256 "85c1db150023ddc207c01a6189b3fd23c4dd9b2b1bc3d098fe752d3f290f27f8"
   license "MIT"
-  head "https://github.com/influxdata/telegraf.git", branch: "master"
+  head "https:github.cominfluxdatatelegraf.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,28 +24,28 @@ class Telegraf < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/influxdata/telegraf/internal.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/telegraf"
-    (etc/"telegraf.conf").write Utils.safe_popen_read("#{bin}/telegraf", "config")
+    ldflags = "-s -w -X github.cominfluxdatatelegrafinternal.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtelegraf"
+    (etc"telegraf.conf").write Utils.safe_popen_read("#{bin}telegraf", "config")
   end
 
   def post_install
     # Create directory for additional user configurations
-    (etc/"telegraf.d").mkpath
+    (etc"telegraf.d").mkpath
   end
 
   service do
-    run [opt_bin/"telegraf", "-config", etc/"telegraf.conf", "-config-directory", etc/"telegraf.d"]
+    run [opt_bin"telegraf", "-config", etc"telegraf.conf", "-config-directory", etc"telegraf.d"]
     keep_alive true
     working_dir var
-    log_path var/"log/telegraf.log"
-    error_log_path var/"log/telegraf.log"
+    log_path var"logtelegraf.log"
+    error_log_path var"logtelegraf.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/telegraf --version")
-    (testpath/"config.toml").write shell_output("#{bin}/telegraf -sample-config")
-    system "#{bin}/telegraf", "-config", testpath/"config.toml", "-test",
+    assert_match version.to_s, shell_output("#{bin}telegraf --version")
+    (testpath"config.toml").write shell_output("#{bin}telegraf -sample-config")
+    system "#{bin}telegraf", "-config", testpath"config.toml", "-test",
            "-input-filter", "cpu:mem"
   end
 end

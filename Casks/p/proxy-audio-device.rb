@@ -2,39 +2,39 @@ cask "proxy-audio-device" do
   version "1.0.7"
   sha256 "6bdfca3e8a61f6931770de3f6813fa787891dfa8cad674f1af1f7011909c323c"
 
-  url "https://ghproxy.com/https://github.com/briankendall/proxy-audio-device/releases/download/v#{version}/ProxyAudioDevice_v#{version}.zip"
+  url "https:github.combriankendallproxy-audio-devicereleasesdownloadv#{version}ProxyAudioDevice_v#{version}.zip"
   name "Proxy Audio Device"
   desc "Sound and audio controller"
-  homepage "https://github.com/briankendall/proxy-audio-device"
+  homepage "https:github.combriankendallproxy-audio-device"
 
   app "Proxy Audio Device Settings.app"
-  artifact "ProxyAudioDevice.driver", target: "/Library/Audio/Plug-Ins/HAL/ProxyAudioDevice.driver"
+  artifact "ProxyAudioDevice.driver", target: "LibraryAudioPlug-InsHALProxyAudioDevice.driver"
 
   postflight do
-    set_ownership "/Library/Audio/Plug-Ins/HAL/ProxyAudioDevice.driver",
+    set_ownership "LibraryAudioPlug-InsHALProxyAudioDevice.driver",
                   user:  "root",
                   group: "wheel"
 
-    system_command "/bin/launchctl",
+    system_command "binlaunchctl",
                    args:         [
                      "kickstart",
                      "-k",
-                     "system/com.apple.audio.coreaudiod",
+                     "systemcom.apple.audio.coreaudiod",
                    ],
                    sudo:         true,
                    must_succeed: true
   end
 
   uninstall_postflight do
-    system_command "/bin/launchctl",
+    system_command "binlaunchctl",
                    args:         [
                      "kickstart",
                      "-k",
-                     "system/com.apple.audio.coreaudiod",
+                     "systemcom.apple.audio.coreaudiod",
                    ],
                    sudo:         true,
                    must_succeed: true
   end
 
-  zap trash: "~/Library/Saved Application State/net.briankendall.Proxy-Audio-Device-Settings.savedState"
+  zap trash: "~LibrarySaved Application Statenet.briankendall.Proxy-Audio-Device-Settings.savedState"
 end

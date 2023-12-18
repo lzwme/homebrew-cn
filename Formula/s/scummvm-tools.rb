@@ -1,15 +1,15 @@
 class ScummvmTools < Formula
   desc "Collection of tools for ScummVM"
-  homepage "https://www.scummvm.org/"
-  url "https://downloads.scummvm.org/frs/scummvm-tools/2.7.0/scummvm-tools-2.7.0.tar.xz"
+  homepage "https:www.scummvm.org"
+  url "https:downloads.scummvm.orgfrsscummvm-tools2.7.0scummvm-tools-2.7.0.tar.xz"
   sha256 "1d9f1faf8338a2fda64f0e6e14bc25a2dadced156cb28a9c60191b983d72db71"
   license "GPL-3.0-or-later"
   revision 2
-  head "https://github.com/scummvm/scummvm-tools.git", branch: "master"
+  head "https:github.comscummvmscummvm-tools.git", branch: "master"
 
   livecheck do
-    url "https://www.scummvm.org/downloads/"
-    regex(/href=.*?scummvm-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.scummvm.orgdownloads"
+    regex(href=.*?scummvm-tools[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,20 +34,20 @@ class ScummvmTools < Formula
     # configure will happily carry on even if it can't find wxwidgets,
     # so let's make sure the install method keeps working even when
     # the wxwidgets dependency version changes
-    wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)?)?$/) }
+    wxwidgets = deps.find { |dep| dep.name.match?(^wxwidgets(@\d+(\.\d+)?)?$) }
                     .to_formula
 
     # The configure script needs a little help finding our wx-config
     wxconfig = "wx-config-#{wxwidgets.version.major_minor}"
-    inreplace "configure", /^_wxconfig=wx-config$/, "_wxconfig=#{wxconfig}"
+    inreplace "configure", ^_wxconfig=wx-config$, "_wxconfig=#{wxconfig}"
 
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-debug",
                           "--enable-verbose-build"
     system "make", "install"
   end
 
   test do
-    system bin/"scummvm-tools-cli", "--list"
+    system bin"scummvm-tools-cli", "--list"
   end
 end

@@ -1,10 +1,10 @@
 class Brainfuck < Formula
   desc "Interpreter for the brainfuck language"
-  homepage "https://github.com/fabianishere/brainfuck"
-  url "https://ghproxy.com/https://github.com/fabianishere/brainfuck/archive/refs/tags/2.7.3.tar.gz"
+  homepage "https:github.comfabianisherebrainfuck"
+  url "https:github.comfabianisherebrainfuckarchiverefstags2.7.3.tar.gz"
   sha256 "d99be61271b4c27e26a8154151574aa3750133a0bedd07124b92ccca1e03b5a7"
   license "Apache-2.0"
-  head "https://github.com/fabianishere/brainfuck.git", branch: "master"
+  head "https:github.comfabianisherebrainfuck.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44592a40d38925f1bd3093e343168d66e20f642883cbf5f00cf705b05aa9dbf2"
@@ -30,7 +30,7 @@ class Brainfuck < Formula
   end
 
   test do
-    output = shell_output("#{bin}/brainfuck -e '++++++++[>++++++++<-]>+.+.+.'")
+    output = shell_output("#{bin}brainfuck -e '++++++++[>++++++++<-]>+.+.+.'")
     assert_equal "ABC", output.chomp
   end
 end

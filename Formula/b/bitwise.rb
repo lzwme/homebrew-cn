@@ -1,7 +1,7 @@
 class Bitwise < Formula
   desc "Terminal based bit manipulator in ncurses"
-  homepage "https://github.com/mellowcandle/bitwise"
-  url "https://ghproxy.com/https://github.com/mellowcandle/bitwise/releases/download/v0.50/bitwise-v0.50.tar.gz"
+  homepage "https:github.commellowcandlebitwise"
+  url "https:github.commellowcandlebitwisereleasesdownloadv0.50bitwise-v0.50.tar.gz"
   sha256 "806271fa5bf31de0600315e8720004a8f529954480e991ca84a9868dc1cae97e"
   license "GPL-3.0"
 
@@ -22,7 +22,7 @@ class Bitwise < Formula
   depends_on "readline"
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -31,6 +31,6 @@ class Bitwise < Formula
   end
 
   test do
-    assert_match "0 0 1 0 1 0 0 1", shell_output("#{bin}/bitwise --no-color '0x29A >> 4'")
+    assert_match "0 0 1 0 1 0 0 1", shell_output("#{bin}bitwise --no-color '0x29A >> 4'")
   end
 end

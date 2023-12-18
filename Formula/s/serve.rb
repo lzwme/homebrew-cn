@@ -1,10 +1,10 @@
 class Serve < Formula
   desc "Static http server anywhere you need one"
-  homepage "https://github.com/syntaqx/serve"
-  url "https://ghproxy.com/https://github.com/syntaqx/serve/archive/refs/tags/v0.6.0.tar.gz"
+  homepage "https:github.comsyntaqxserve"
+  url "https:github.comsyntaqxservearchiverefstagsv0.6.0.tar.gz"
   sha256 "7797a24564d95038d9e0a44f0dafd1dacb7853ee94d21bc0587bdfba6faaa6cb"
   license "MIT"
-  head "https://github.com/syntaqx/serve.git", branch: "main"
+  head "https:github.comsyntaqxserve.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5f617c56cc80d5658b19d32dbc6002f5de4061af0da97a4ec7c2d420b8285a2"
@@ -22,17 +22,17 @@ class Serve < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/serve"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdserve"
   end
 
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}/serve -port #{port}"
+      exec "#{bin}serve -port #{port}"
     end
     sleep 1
-    output = shell_output("curl -sI http://localhost:#{port}")
-    assert_match(/200 OK/m, output)
+    output = shell_output("curl -sI http:localhost:#{port}")
+    assert_match(200 OKm, output)
   ensure
     Process.kill("HUP", pid)
   end

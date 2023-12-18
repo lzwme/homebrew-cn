@@ -1,7 +1,7 @@
 class Qrcp < Formula
   desc "Transfer files to and from your computer by scanning a QR code"
-  homepage "https://claudiodangelis.com/qrcp"
-  url "https://ghproxy.com/https://github.com/claudiodangelis/qrcp/archive/refs/tags/0.11.0.tar.gz"
+  homepage "https:claudiodangelis.comqrcp"
+  url "https:github.comclaudiodangelisqrcparchiverefstags0.11.0.tar.gz"
   sha256 "5e3949d99b19934dd485da2bad54ba63efeb0448aeb9616b2046398b02d57931"
   license "MIT"
 
@@ -25,18 +25,18 @@ class Qrcp < Formula
   def install
     system "go", "build", *std_go_args
 
-    generate_completions_from_executable(bin/"qrcp", "completion")
+    generate_completions_from_executable(bin"qrcp", "completion")
   end
 
   test do
-    (testpath/"test_data.txt").write <<~EOS
+    (testpath"test_data.txt").write <<~EOS
       Hello there, big world
     EOS
 
     port = free_port
-    server_url = "http://localhost:#{port}/send/testing"
+    server_url = "http:localhost:#{port}sendtesting"
 
-    (testpath/"config.json").write <<~EOS
+    (testpath"config.json").write <<~EOS
       {
         "interface": "any",
         "fqdn": "localhost",
@@ -45,7 +45,7 @@ class Qrcp < Formula
     EOS
 
     fork do
-      exec bin/"qrcp", "-c", testpath/"config.json", "--path", "testing", testpath/"test_data.txt"
+      exec bin"qrcp", "-c", testpath"config.json", "--path", "testing", testpath"test_data.txt"
     end
     sleep 1
 

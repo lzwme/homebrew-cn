@@ -2,10 +2,10 @@ cask "font-nosifer-caps" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/nosifercaps/NosiferCaps-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnosifercapsNosiferCaps-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Nosifer Caps"
-  homepage "https://fonts.google.com/specimen/Nosifer+Caps"
+  homepage "https:fonts.google.comspecimenNosifer+Caps"
 
   font "NosiferCaps-Regular.ttf"
 

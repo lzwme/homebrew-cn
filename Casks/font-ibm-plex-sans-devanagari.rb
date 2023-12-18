@@ -2,12 +2,12 @@ cask "font-ibm-plex-sans-devanagari" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ibmplexsansdevanagari"
+      only_path: "oflibmplexsansdevanagari"
   name "IBM Plex Sans Devanagari"
-  homepage "https://fonts.google.com/specimen/IBM+Plex+Sans+Devanagari"
+  homepage "https:fonts.google.comspecimenIBM+Plex+Sans+Devanagari"
 
   font "IBMPlexSansDevanagari-Bold.ttf"
   font "IBMPlexSansDevanagari-ExtraLight.ttf"

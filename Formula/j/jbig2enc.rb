@@ -1,11 +1,11 @@
 class Jbig2enc < Formula
   desc "JBIG2 encoder (for monochrome documents)"
-  homepage "https://github.com/agl/jbig2enc"
-  url "https://ghproxy.com/https://github.com/agl/jbig2enc/archive/refs/tags/0.29.tar.gz"
+  homepage "https:github.comagljbig2enc"
+  url "https:github.comagljbig2encarchiverefstags0.29.tar.gz"
   sha256 "bfcf0d0448ee36046af6c776c7271cd5a644855723f0a832d1c0db4de3c21280"
   license "Apache-2.0"
   revision 3
-  head "https://github.com/agl/jbig2enc.git", branch: "master"
+  head "https:github.comagljbig2enc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b7e975bf348576e5e3aa681fc09c15b91f4cf7542b071027fb277e35d2f09e84"
@@ -27,23 +27,23 @@ class Jbig2enc < Formula
   # The following two patches fix build with leptonica >= 1.83.
   # Remove them when they are included in a release.
   patch do
-    url "https://github.com/agl/jbig2enc/commit/a614bdb580d65653dbfe5c9925940797a065deac.patch?full_index=1"
+    url "https:github.comagljbig2enccommita614bdb580d65653dbfe5c9925940797a065deac.patch?full_index=1"
     sha256 "93106a056562e1268403a30bdab46f8f3fa332b68fb169a494541ea944d6ba2f"
   end
   patch do
-    url "https://github.com/agl/jbig2enc/commit/d211d8c9c65fbc103594580484a3b7fa0249e160.patch?full_index=1"
+    url "https:github.comagljbig2enccommitd211d8c9c65fbc103594580484a3b7fa0249e160.patch?full_index=1"
     sha256 "a1e7b44b9ea28d32d034718fb10022961dcec32b74beda56575f84416081bd43"
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
     assert_match "JBIG2 compression complete",
-                 shell_output("#{bin}/jbig2 -s -S -p -v -O out.png #{test_fixtures("test.jpg")} 2>&1")
-    assert_predicate testpath/"out.png", :exist?
+                 shell_output("#{bin}jbig2 -s -S -p -v -O out.png #{test_fixtures("test.jpg")} 2>&1")
+    assert_predicate testpath"out.png", :exist?
   end
 end

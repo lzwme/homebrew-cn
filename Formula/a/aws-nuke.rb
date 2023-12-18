@@ -1,11 +1,11 @@
 class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
-  homepage "https://github.com/rebuy-de/aws-nuke"
-  url "https://github.com/rebuy-de/aws-nuke.git",
+  homepage "https:github.comrebuy-deaws-nuke"
+  url "https:github.comrebuy-deaws-nuke.git",
       tag:      "v2.25.0",
       revision: "2bd22d5e5c0cf6a4011b3c08a5b1c25e2e6c75bd"
   license "MIT"
-  head "https://github.com/rebuy-de/aws-nuke.git", branch: "main"
+  head "https:github.comrebuy-deaws-nuke.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3286cec74fcdd7867c2ab1a0594b80107c75f049b04c833977814fe3e407930"
@@ -22,7 +22,7 @@ class AwsNuke < Formula
   depends_on "go" => :build
 
   def install
-    build_xdst="github.com/rebuy-de/aws-nuke/v#{version.major}/cmd"
+    build_xdst="github.comrebuy-deaws-nukev#{version.major}cmd"
     ldflags = %W[
       -s -w
       -X #{build_xdst}.BuildVersion=#{version}
@@ -38,14 +38,14 @@ class AwsNuke < Formula
 
     pkgshare.install "config"
 
-    generate_completions_from_executable(bin/"aws-nuke", "completion")
+    generate_completions_from_executable(bin"aws-nuke", "completion")
   end
 
   test do
     assert_match "InvalidClientTokenId", shell_output(
-      "#{bin}/aws-nuke --config #{pkgshare}/config/example.yaml --access-key-id fake --secret-access-key fake 2>&1",
+      "#{bin}aws-nuke --config #{pkgshare}configexample.yaml --access-key-id fake --secret-access-key fake 2>&1",
       255,
     )
-    assert_match "IAMUser", shell_output("#{bin}/aws-nuke resource-types")
+    assert_match "IAMUser", shell_output("#{bin}aws-nuke resource-types")
   end
 end

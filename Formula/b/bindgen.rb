@@ -1,7 +1,7 @@
 class Bindgen < Formula
   desc "Automatically generates Rust FFI bindings to C (and some C++) libraries"
-  homepage "https://rust-lang.github.io/rust-bindgen/"
-  url "https://ghproxy.com/https://github.com/rust-lang/rust-bindgen/archive/refs/tags/v0.69.1.tar.gz"
+  homepage "https:rust-lang.github.iorust-bindgen"
+  url "https:github.comrust-langrust-bindgenarchiverefstagsv0.69.1.tar.gz"
   sha256 "c10e2806786fb75f05ef32f3f03f4cb7e37bb8e06be5a4a0e95f974fdc567d87"
   license "BSD-3-Clause"
 
@@ -24,7 +24,7 @@ class Bindgen < Formula
   end
 
   test do
-    (testpath/"cool.h").write <<~EOS
+    (testpath"cool.h").write <<~EOS
       typedef struct CoolStruct {
           int x;
           int y;
@@ -33,7 +33,7 @@ class Bindgen < Formula
       void cool_function(int i, char c, CoolStruct* cs);
     EOS
 
-    output = shell_output("#{bin}/bindgen cool.h")
+    output = shell_output("#{bin}bindgen cool.h")
     assert_match "pub struct CoolStruct", output
   end
 end

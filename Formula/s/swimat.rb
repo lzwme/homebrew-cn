@@ -1,10 +1,10 @@
 class Swimat < Formula
   desc "Command-line tool to help format Swift code"
-  homepage "https://github.com/Jintin/Swimat"
-  url "https://ghproxy.com/https://github.com/Jintin/Swimat/archive/refs/tags/1.7.0.tar.gz"
+  homepage "https:github.comJintinSwimat"
+  url "https:github.comJintinSwimatarchiverefstags1.7.0.tar.gz"
   sha256 "ba18b628de8b0a679b9215fb77e313155430fbecd21b15ed5963434223b10046"
   license "MIT"
-  head "https://github.com/Jintin/Swimat.git", branch: "master"
+  head "https:github.comJintinSwimat.git", branch: "master"
 
   livecheck do
     url :stable
@@ -20,7 +20,7 @@ class Swimat < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "6b9a5174b6050250d0dfe5721102c5455997f2abcef1f2dc6a82686af11117fd"
   end
 
-  # https://github.com/Jintin/Swimat/issues/244
+  # https:github.comJintinSwimatissues244
   deprecate! date: "2023-05-09", because: :unmaintained
 
   depends_on xcode: ["10.2", :build]
@@ -32,12 +32,12 @@ class Swimat < Formula
                "-configuration", "Release",
                "CODE_SIGN_IDENTITY=",
                "SYMROOT=build"
-    bin.install "build/Release/swimat"
+    bin.install "buildReleaseswimat"
   end
 
   test do
-    system "#{bin}/swimat", "-h"
-    (testpath/"SwimatTest.swift").write("struct SwimatTest {}")
-    system "#{bin}/swimat", "#{testpath}/SwimatTest.swift"
+    system "#{bin}swimat", "-h"
+    (testpath"SwimatTest.swift").write("struct SwimatTest {}")
+    system "#{bin}swimat", "#{testpath}SwimatTest.swift"
   end
 end

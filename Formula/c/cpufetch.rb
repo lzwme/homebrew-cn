@@ -1,10 +1,10 @@
 class Cpufetch < Formula
   desc "CPU architecture fetching tool"
-  homepage "https://github.com/Dr-Noob/cpufetch"
-  url "https://ghproxy.com/https://github.com/Dr-Noob/cpufetch/archive/refs/tags/v1.04.tar.gz"
+  homepage "https:github.comDr-Noobcpufetch"
+  url "https:github.comDr-Noobcpufetcharchiverefstagsv1.04.tar.gz"
   sha256 "1505161fedd58d72b936f68b55dc9b027ef910454475c33e1061999496b30ff6"
   license "GPL-2.0-only"
-  head "https://github.com/Dr-Noob/cpufetch.git", branch: "master"
+  head "https:github.comDr-Noobcpufetch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a22a79f829c7dff316f9028a18910ca639d3934288316b096f746ea3f72c2dc"
@@ -36,7 +36,7 @@ class Cpufetch < Formula
     else
       [0, 0]
     end
-    actual = shell_output("#{bin}/cpufetch --debug 2>&1", expected_result).lines[line].strip
+    actual = shell_output("#{bin}cpufetch --debug 2>&1", expected_result).lines[line].strip
 
     system_name = OS.mac? ? "macOS" : OS.kernel_name
     arch = (OS.mac? && Hardware::CPU.arm?) ? "ARM" : Hardware::CPU.arch

@@ -1,10 +1,10 @@
 class Ssocr < Formula
   desc "Seven Segment Optical Character Recognition"
-  homepage "https://www.unix-ag.uni-kl.de/~auerswal/ssocr/"
-  url "https://www.unix-ag.uni-kl.de/~auerswal/ssocr/ssocr-2.23.1.tar.bz2"
+  homepage "https:www.unix-ag.uni-kl.de~auerswalssocr"
+  url "https:www.unix-ag.uni-kl.de~auerswalssocrssocr-2.23.1.tar.bz2"
   sha256 "a6256abfc35fcbf6bc774aec281e176e9f7cabdf65ea2c1890720460eb417f95"
   license "GPL-3.0-or-later"
-  head "https://github.com/auerswal/ssocr.git", branch: "master"
+  head "https:github.comauerswalssocr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "05e32dab8541d1374429670a5f43dd8db12d27bcd55572ab7e94c17be017d8f7"
@@ -22,7 +22,7 @@ class Ssocr < Formula
   depends_on "imlib2"
 
   resource "homebrew-test-image" do
-    url "https://www.unix-ag.uni-kl.de/~auerswal/ssocr/six_digits.png"
+    url "https:www.unix-ag.uni-kl.de~auerswalssocrsix_digits.png"
     sha256 "72b416cca7e98f97be56221e7d1a1129fc08d8ab15ec95884a5db6f00b2184f5"
   end
 
@@ -32,6 +32,6 @@ class Ssocr < Formula
 
   test do
     resource("homebrew-test-image").stage testpath
-    assert_equal "431432", shell_output("#{bin}/ssocr -T #{testpath}/six_digits.png").chomp
+    assert_equal "431432", shell_output("#{bin}ssocr -T #{testpath}six_digits.png").chomp
   end
 end

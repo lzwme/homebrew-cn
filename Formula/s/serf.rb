@@ -1,11 +1,11 @@
 class Serf < Formula
   desc "Service orchestration and management tool"
-  homepage "https://serfdom.io/"
-  url "https://github.com/hashicorp/serf.git",
+  homepage "https:serfdom.io"
+  url "https:github.comhashicorpserf.git",
       tag:      "v0.10.1",
       revision: "e853b565da00a84dadd5e2ea0dc7919250ddb726"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/serf.git", branch: "master"
+  head "https:github.comhashicorpserf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "377f88039309ae3efa86e5ff575f4f3373901d3b4d98cf4e36f1a88e01289030"
@@ -27,21 +27,21 @@ class Serf < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/hashicorp/serf/version.Version=#{version}
-      -X github.com/hashicorp/serf/version.VersionPrerelease=
+      -X github.comhashicorpserfversion.Version=#{version}
+      -X github.comhashicorpserfversion.VersionPrerelease=
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/serf"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdserf"
   end
 
   test do
     pid = fork do
-      exec "#{bin}/serf", "agent"
+      exec "#{bin}serf", "agent"
     end
     sleep 1
-    assert_match(/:7946.*alive$/, shell_output("#{bin}/serf members"))
+    assert_match(:7946.*alive$, shell_output("#{bin}serf members"))
   ensure
-    system "#{bin}/serf", "leave"
+    system "#{bin}serf", "leave"
     Process.kill "SIGINT", pid
     Process.wait pid
   end

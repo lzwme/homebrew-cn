@@ -2,11 +2,11 @@ cask "ente" do
   version "1.6.58"
   sha256 "61875a51112402aab957d0568fb9e05e91f4c6759b3891a0fc960c76ccdf0a81"
 
-  url "https://ghproxy.com/https://github.com/ente-io/photos-desktop/releases/download/v#{version}/ente-#{version}.dmg",
-      verified: "github.com/ente-io/photos-desktop/"
+  url "https:github.comente-iophotos-desktopreleasesdownloadv#{version}ente-#{version}.dmg",
+      verified: "github.comente-iophotos-desktop"
   name "Ente"
   desc "Desktop client for Ente"
-  homepage "https://ente.io/"
+  homepage "https:ente.io"
 
   livecheck do
     url :url
@@ -16,10 +16,10 @@ cask "ente" do
   app "ente.app"
 
   zap trash: [
-    "~/Library/Application Support/ente",
-    "~/Library/Logs/ente",
-    "~/Library/Preferences/io.ente.bhari-frame.plist",
-    "~/Library/Preferences/io.ente.bhari-frame.helper.plist",
-    "~/Library/Saved Application State/io.ente.bhari-frame.savedState",
+    "~LibraryApplication Supportente",
+    "~LibraryLogsente",
+    "~LibraryPreferencesio.ente.bhari-frame.plist",
+    "~LibraryPreferencesio.ente.bhari-frame.helper.plist",
+    "~LibrarySaved Application Stateio.ente.bhari-frame.savedState",
   ]
 end

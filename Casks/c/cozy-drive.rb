@@ -2,14 +2,14 @@ cask "cozy-drive" do
   version "3.39.0"
   sha256 "8e6a36525aa9423d8269177aa8221d6e2e5b0f1ae05837880823999397810a97"
 
-  url "https://ghproxy.com/https://github.com/cozy-labs/cozy-desktop/releases/download/v#{version}/Cozy-Drive-#{version}.dmg",
-      verified: "github.com/cozy-labs/cozy-desktop/"
+  url "https:github.comcozy-labscozy-desktopreleasesdownloadv#{version}Cozy-Drive-#{version}.dmg",
+      verified: "github.comcozy-labscozy-desktop"
   name "Cozy Drive"
   desc "File synchronisation for Cozy Cloud"
-  homepage "https://cozy.io/"
+  homepage "https:cozy.io"
 
   livecheck do
-    url "https://nuts.cozycloud.cc/download/channel/stable/osx"
+    url "https:nuts.cozycloud.ccdownloadchannelstableosx"
     strategy :header_match
   end
 
@@ -18,9 +18,9 @@ cask "cozy-drive" do
   app "Cozy Drive.app"
 
   zap trash: [
-    "~/.cozy-desktop",
-    "~/Library/Application Support/Cozy Drive",
-    "~/Library/Preferences/io.cozy.desktop.plist",
-    "~/Library/Saved Application State/io.cozy.desktop.savedState",
+    "~.cozy-desktop",
+    "~LibraryApplication SupportCozy Drive",
+    "~LibraryPreferencesio.cozy.desktop.plist",
+    "~LibrarySaved Application Stateio.cozy.desktop.savedState",
   ]
 end

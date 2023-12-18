@@ -1,10 +1,10 @@
 class Stella < Formula
   desc "Atari 2600 VCS emulator"
-  homepage "https://stella-emu.github.io/"
-  url "https://ghproxy.com/https://github.com/stella-emu/stella/releases/download/6.7/stella-6.7-src.tar.xz"
+  homepage "https:stella-emu.github.io"
+  url "https:github.comstella-emustellareleasesdownload6.7stella-6.7-src.tar.xz"
   sha256 "babfcbb39abbd1a992cb1e6d3b2f508df7ed19cb9d0b5b5d624828bb98f97267"
   license "GPL-2.0-or-later"
-  head "https://github.com/stella-emu/stella.git", branch: "master"
+  head "https:github.comstella-emustella.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -31,22 +31,22 @@ class Stella < Formula
     sdl2 = Formula["sdl2"]
     libpng = Formula["libpng"]
     if OS.mac?
-      cd "src/macos" do
-        inreplace "stella.xcodeproj/project.pbxproj" do |s|
-          s.gsub! %r{(\w{24} /\* SDL2\.framework)}, '//\1'
-          s.gsub! %r{(\w{24} /\* png)}, '//\1'
-          s.gsub!(/(HEADER_SEARCH_PATHS) = \(/,
-                  "\\1 = (#{sdl2.opt_include}/SDL2, #{libpng.opt_include},")
-          s.gsub!(/(LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");/,
+      cd "srcmacos" do
+        inreplace "stella.xcodeprojproject.pbxproj" do |s|
+          s.gsub! %r{(\w{24} \* SDL2\.framework)}, '\1'
+          s.gsub! %r{(\w{24} \* png)}, '\1'
+          s.gsub!((HEADER_SEARCH_PATHS) = \(,
+                  "\\1 = (#{sdl2.opt_include}SDL2, #{libpng.opt_include},")
+          s.gsub!((LIBRARY_SEARCH_PATHS) = ("\$\(LIBRARY_SEARCH_PATHS\)");,
                   "\\1 = (#{sdl2.opt_lib}, #{libpng.opt_lib}, \\2);")
-          s.gsub!(/(OTHER_LDFLAGS) = "((-\w+)*)"/, '\1 = "-lSDL2 -lpng \2"')
+          s.gsub!((OTHER_LDFLAGS) = "((-\w+)*)", '\1 = "-lSDL2 -lpng \2"')
         end
         xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build"
-        prefix.install "build/Release/Stella.app"
-        bin.write_exec_script "#{prefix}/Stella.app/Contents/MacOS/Stella"
+        prefix.install "buildReleaseStella.app"
+        bin.write_exec_script "#{prefix}Stella.appContentsMacOSStella"
       end
     else
-      system "./configure", "--prefix=#{prefix}",
+      system ".configure", "--prefix=#{prefix}",
                             "--bindir=#{bin}",
                             "--enable-release",
                             "--with-sdl-prefix=#{sdl2.prefix}",
@@ -58,10 +58,10 @@ class Stella < Formula
 
   test do
     if OS.mac?
-      assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}/Stella -listrominfo").strip
+      assert_match "E.T. - The Extra-Terrestrial", shell_output("#{bin}Stella -listrominfo").strip
     else
       assert_match "failed to initialize: unable to open database file",
-        shell_output("#{bin}/stella -listrominfo").strip
+        shell_output("#{bin}stella -listrominfo").strip
     end
   end
 end

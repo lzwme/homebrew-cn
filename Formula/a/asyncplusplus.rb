@@ -1,7 +1,7 @@
 class Asyncplusplus < Formula
   desc "Concurrency framework for C++11"
-  homepage "https://github.com/Amanieu/asyncplusplus"
-  url "https://ghproxy.com/https://github.com/Amanieu/asyncplusplus/archive/refs/tags/v1.1.tar.gz"
+  homepage "https:github.comAmanieuasyncplusplus"
+  url "https:github.comAmanieuasyncplusplusarchiverefstagsv1.1.tar.gz"
   sha256 "d160d3a433a1e08f51c785742843182c2b81a7bc872766f57bf5f3108377b858"
   license "MIT"
 
@@ -28,7 +28,7 @@ class Asyncplusplus < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <async++.h>
 
@@ -74,6 +74,6 @@ class Asyncplusplus < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lasync++", "--std=c++11", "-o", "test"
-    assert_equal "10", shell_output("./test").chomp.lines.last
+    assert_equal "10", shell_output(".test").chomp.lines.last
   end
 end

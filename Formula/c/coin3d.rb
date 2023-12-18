@@ -1,15 +1,15 @@
 class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin) with Python bindings (Pivy)"
-  homepage "https://coin3d.github.io/"
+  homepage "https:coin3d.github.io"
   license all_of: ["BSD-3-Clause", "ISC"]
 
   stable do
-    url "https://ghproxy.com/https://github.com/coin3d/coin/releases/download/v4.0.2/coin-4.0.2-src.zip"
+    url "https:github.comcoin3dcoinreleasesdownloadv4.0.2coin-4.0.2-src.zip"
     sha256 "b764a88674f96fa540df3a9520d80586346843779858dcb6cd8657725fcb16f0"
 
     # TODO: migrate pyside@2 -> pyside and python@3.10 -> python@3.12 on next pivy release
     resource "pivy" do
-      url "https://ghproxy.com/https://github.com/coin3d/pivy/archive/refs/tags/0.6.8.tar.gz"
+      url "https:github.comcoin3dpivyarchiverefstags0.6.8.tar.gz"
       sha256 "c443dd7dd724b0bfa06427478b9d24d31e0c3b5138ac5741a2917a443b28f346"
     end
   end
@@ -24,10 +24,10 @@ class Coin3d < Formula
   end
 
   head do
-    url "https://github.com/coin3d/coin.git", branch: "master"
+    url "https:github.comcoin3dcoin.git", branch: "master"
 
     resource "pivy" do
-      url "https://github.com/coin3d/pivy.git", branch: "master"
+      url "https:github.comcoin3dpivy.git", branch: "master"
     end
   end
 
@@ -65,8 +65,8 @@ class Coin3d < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <Inventor/SoDB.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <InventorSoDB.h>
       int main() {
         SoDB::init();
         SoDB::cleanup();
@@ -81,9 +81,9 @@ class Coin3d < Formula
     end
 
     system ENV.cc, "test.cpp", "-L#{lib}", "-lCoin", *opengl_flags, "-o", "test"
-    system "./test"
+    system ".test"
 
-    ENV.append_path "PYTHONPATH", Formula["pyside@2"].opt_prefix/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", Formula["pyside@2"].opt_prefixLanguage::Python.site_packages(python3)
     # Set QT_QPA_PLATFORM to minimal to avoid error:
     # "This application failed to start because no Qt platform plugin could be initialized."
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]

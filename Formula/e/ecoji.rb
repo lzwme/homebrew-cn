@@ -1,10 +1,10 @@
 class Ecoji < Formula
   desc "Encodes (and decodes) data as emojis"
-  homepage "https://github.com/keith-turner/ecoji"
-  url "https://ghproxy.com/https://github.com/keith-turner/ecoji/archive/refs/tags/v2.0.1.tar.gz"
+  homepage "https:github.comkeith-turnerecoji"
+  url "https:github.comkeith-turnerecojiarchiverefstagsv2.0.1.tar.gz"
   sha256 "59c78ddaef057bbfb06ea8522dfc51ea8bce3e8f149a3231823a37f6de0b4ed2"
   license "Apache-2.0"
-  head "https://github.com/keith-turner/ecoji.git", branch: "main"
+  head "https:github.comkeith-turnerecoji.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b250a66fa8d6343158e39d70d313eb2ceb2ca22bb22c9a00744bb8f72f90e95a"
@@ -24,13 +24,13 @@ class Ecoji < Formula
     cd "cmd" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
-    # system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd"
+    # system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmd"
   end
 
   test do
     text = "Base64 is so 1999"
     encoded_text = "🧏📩🧈🐇🧅📘🔯🚜💞😽♏🐊🎱🤾☕"
-    assert_equal encoded_text, pipe_output("#{bin}/ecoji -e", text).chomp
-    assert_equal text, pipe_output("#{bin}/ecoji -d", encoded_text).chomp
+    assert_equal encoded_text, pipe_output("#{bin}ecoji -e", text).chomp
+    assert_equal text, pipe_output("#{bin}ecoji -d", encoded_text).chomp
   end
 end

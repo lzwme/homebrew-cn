@@ -1,10 +1,10 @@
 class Scilla < Formula
   desc "DNS, subdomain, port, directory enumeration tool"
-  homepage "https://github.com/edoardottt/scilla"
-  url "https://ghproxy.com/https://github.com/edoardottt/scilla/archive/refs/tags/v1.2.7.tar.gz"
+  homepage "https:github.comedoardotttscilla"
+  url "https:github.comedoardotttscillaarchiverefstagsv1.2.7.tar.gz"
   sha256 "cccf86bc9c0ed70c2322d2921b06fa51905bdfb65ab51afe9c0df52411596cbb"
   license "GPL-3.0-or-later"
-  head "https://github.com/edoardottt/scilla.git", branch: "main"
+  head "https:github.comedoardotttscilla.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69baec3497812a02e6696b0461bb9440ff58b94e12d5bcf31e99c622ef808527"
@@ -19,11 +19,11 @@ class Scilla < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/scilla"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdscilla"
   end
 
   test do
-    output = shell_output("#{bin}/scilla dns -target brew.sh")
+    output = shell_output("#{bin}scilla dns -target brew.sh")
     assert_match "[+]FOUND brew.sh IN CNAME: brew.sh.", output
   end
 end

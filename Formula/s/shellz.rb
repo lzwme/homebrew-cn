@@ -1,7 +1,7 @@
 class Shellz < Formula
   desc "Small utility to track and control custom shellz"
-  homepage "https://github.com/evilsocket/shellz"
-  url "https://ghproxy.com/https://github.com/evilsocket/shellz/archive/refs/tags/v1.6.0.tar.gz"
+  homepage "https:github.comevilsocketshellz"
+  url "https:github.comevilsocketshellzarchiverefstagsv1.6.0.tar.gz"
   sha256 "3a89e3d573563a0c2ccb1831ff41fc0204c8b4efb011c10108ab98451a309b1c"
   license "GPL-3.0-only"
 
@@ -22,12 +22,12 @@ class Shellz < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/shellz"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdshellz"
   end
 
   test do
-    output = shell_output("#{bin}/shellz -no-banner -no-effects -path #{testpath}", 1)
+    output = shell_output("#{bin}shellz -no-banner -no-effects -path #{testpath}", 1)
     assert_match "creating", output
-    assert_predicate testpath/"shells", :exist?
+    assert_predicate testpath"shells", :exist?
   end
 end

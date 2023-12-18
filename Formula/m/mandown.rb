@@ -1,7 +1,7 @@
 class Mandown < Formula
   desc "Man-page inspired Markdown viewer"
-  homepage "https://github.com/Titor8115/mandown"
-  url "https://ghproxy.com/https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.4.tar.gz"
+  homepage "https:github.comTitor8115mandown"
+  url "https:github.comTitor8115mandownarchiverefstagsv1.0.4.tar.gz"
   sha256 "dc719e6a28a4585fe89458eb8c810140ed5175512b089b4815b3dda6a954ce3e"
   license "GPL-3.0-or-later"
 
@@ -26,15 +26,15 @@ class Mandown < Formula
   end
 
   test do
-    (testpath/".config/mdn").mkpath # `mdn` may misbehave when its config directory is missing.
-    (testpath/"test.md").write <<~EOS
+    (testpath".configmdn").mkpath # `mdn` may misbehave when its config directory is missing.
+    (testpath"test.md").write <<~EOS
       # Hi from readme file!
     EOS
     expected_output = <<~EOS
-      <html><head><title>test.md(7)</title></head><body><h1>Hi from readme file!</h1>
-      </body></html>
+      <html><head><title>test.md(7)<title><head><body><h1>Hi from readme file!<h1>
+      <body><html>
     EOS
-    system "#{bin}/mdn", "-f", "test.md", "-o", "test"
+    system "#{bin}mdn", "-f", "test.md", "-o", "test"
     assert_equal expected_output, File.read("test")
   end
 end

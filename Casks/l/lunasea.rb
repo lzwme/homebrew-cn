@@ -12,16 +12,16 @@ cask "lunasea" do
     sha256 "6debb79ca5657161c63b93266455e5b4a48c97856dd65e93517231dd839cf079"
   end
 
-  url "https://ghproxy.com/https://github.com/JagandeepBrar/LunaSea/releases/download/v#{version}/lunasea-macos-amd64.zip",
-      verified: "github.com/JagandeepBrar/LunaSea/"
+  url "https:github.comJagandeepBrarLunaSeareleasesdownloadv#{version}lunasea-macos-amd64.zip",
+      verified: "github.comJagandeepBrarLunaSea"
   name "LunaSea"
   desc "Self-hosted controller built using the Flutter framework"
-  homepage "https://www.lunasea.app/"
+  homepage "https:www.lunasea.app"
 
   app "LunaSea.app"
 
   zap trash: [
-    "~/Library/Application Scripts/app.lunasea.lunasea",
-    "~/Library/Containers/app.lunasea.lunasea",
+    "~LibraryApplication Scriptsapp.lunasea.lunasea",
+    "~LibraryContainersapp.lunasea.lunasea",
   ]
 end

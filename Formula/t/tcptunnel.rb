@@ -1,7 +1,7 @@
 class Tcptunnel < Formula
   desc "TCP port forwarder"
-  homepage "http://www.vakuumverpackt.de/tcptunnel/"
-  url "https://ghproxy.com/https://github.com/vakuum/tcptunnel/archive/refs/tags/v0.8.tar.gz"
+  homepage "http:www.vakuumverpackt.detcptunnel"
+  url "https:github.comvakuumtcptunnelarchiverefstagsv0.8.tar.gz"
   sha256 "1926e2636d26570035a5a0292c8d7766c4a9af939881121660df0d0d4513ade4"
   license "GPL-2.0"
 
@@ -24,12 +24,12 @@ class Tcptunnel < Formula
 
   def install
     bin.mkpath
-    system "./configure", "--prefix=#{bin}"
+    system ".configure", "--prefix=#{bin}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/tcptunnel", "--version"
+    system "#{bin}tcptunnel", "--version"
   end
 end

@@ -1,10 +1,10 @@
 class Notify < Formula
   desc "Stream the output of any CLI and publish it to a variety of supported platforms"
-  homepage "https://github.com/projectdiscovery/notify"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/notify/archive/refs/tags/v1.0.5.tar.gz"
+  homepage "https:github.comprojectdiscoverynotify"
+  url "https:github.comprojectdiscoverynotifyarchiverefstagsv1.0.5.tar.gz"
   sha256 "15824bee28cb9f3e74aa34559619fdceb865182fe12961d6c5cfc26db642b38c"
   license "MIT"
-  head "https://github.com/projectdiscovery/notify.git", branch: "master"
+  head "https:github.comprojectdiscoverynotify.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d474d89a4dc8a38006226e552101ad8c836d1d16d6ad925f98bd3b8cc577ecc"
@@ -21,11 +21,11 @@ class Notify < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/notify"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdnotify"
   end
 
   test do
-    assert_match "Current Version: #{version}", shell_output("#{bin}/notify --version 2>&1")
-    assert_predicate testpath/".config/notify/config.yaml", :exist?
+    assert_match "Current Version: #{version}", shell_output("#{bin}notify --version 2>&1")
+    assert_predicate testpath".confignotifyconfig.yaml", :exist?
   end
 end

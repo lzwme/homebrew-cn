@@ -1,10 +1,10 @@
 class ShadowsocksRust < Formula
   desc "Rust port of Shadowsocks"
-  homepage "https://github.com/shadowsocks/shadowsocks-rust"
-  url "https://ghproxy.com/https://github.com/shadowsocks/shadowsocks-rust/archive/refs/tags/v1.17.1.tar.gz"
+  homepage "https:github.comshadowsocksshadowsocks-rust"
+  url "https:github.comshadowsocksshadowsocks-rustarchiverefstagsv1.17.1.tar.gz"
   sha256 "97a1c8ebf7fd19de94cd6d0dfee398667e1f4e131ec8a37ecb7c3191af7cc75e"
   license "MIT"
-  head "https://github.com/shadowsocks/shadowsocks-rust.git", branch: "master"
+  head "https:github.comshadowsocksshadowsocks-rust.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a99af7a61222c0b5cf55771984553d85515e81904ad669128f686d0709296ba3"
@@ -26,7 +26,7 @@ class ShadowsocksRust < Formula
     server_port = free_port
     local_port = free_port
 
-    (testpath/"server.json").write <<~EOS
+    (testpath"server.json").write <<~EOS
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
@@ -34,7 +34,7 @@ class ShadowsocksRust < Formula
           "method":"aes-256-gcm"
       }
     EOS
-    (testpath/"local.json").write <<~EOS
+    (testpath"local.json").write <<~EOS
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
@@ -44,11 +44,11 @@ class ShadowsocksRust < Formula
           "local_port":#{local_port}
       }
     EOS
-    fork { exec bin/"ssserver", "-c", testpath/"server.json" }
-    fork { exec bin/"sslocal", "-c", testpath/"local.json" }
+    fork { exec bin"ssserver", "-c", testpath"server.json" }
+    fork { exec bin"sslocal", "-c", testpath"local.json" }
     sleep 3
 
-    output = shell_output "curl --socks5 127.0.0.1:#{local_port} https://example.com"
+    output = shell_output "curl --socks5 127.0.0.1:#{local_port} https:example.com"
     assert_match "Example Domain", output
   end
 end

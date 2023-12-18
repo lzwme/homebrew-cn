@@ -1,7 +1,7 @@
 class Libfastjson < Formula
   desc "Fast json library for C"
-  homepage "https://github.com/rsyslog/libfastjson"
-  url "https://download.rsyslog.com/libfastjson/libfastjson-1.2304.0.tar.gz"
+  homepage "https:github.comrsysloglibfastjson"
+  url "https:download.rsyslog.comlibfastjsonlibfastjson-1.2304.0.tar.gz"
   sha256 "ef30d1e57a18ec770f90056aaac77300270c6203bbe476f4181cc83a2d5dc80c"
   license "BSD-2-Clause"
 
@@ -18,14 +18,14 @@ class Libfastjson < Formula
   end
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include <libfastjson/json.h>
+      #include <libfastjsonjson.h>
 
       int main() {
         char json_string[]  = "{\\"message\\":\\"Hello world!\\"}";
@@ -50,6 +50,6 @@ class Libfastjson < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lfastjson", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

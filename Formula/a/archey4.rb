@@ -2,8 +2,8 @@ class Archey4 < Formula
   include Language::Python::Virtualenv
 
   desc "Simple system information tool written in Python"
-  homepage "https://github.com/HorlogeSkynet/archey4"
-  url "https://files.pythonhosted.org/packages/b3/76/21850b7c2b5967326c13fac40a60e9d49295e971ec5b5398780da9d5ee04/archey4-4.14.2.0.tar.gz"
+  homepage "https:github.comHorlogeSkynetarchey4"
+  url "https:files.pythonhosted.orgpackagesb37621850b7c2b5967326c13fac40a60e9d49295e971ec5b5398780da9d5ee04archey4-4.14.2.0.tar.gz"
   sha256 "afbc9f66e0ff85bfff038b9a8a401cb269a28a9024b2ce29ad382e07443eae9d"
   license "GPL-3.0-or-later"
 
@@ -21,12 +21,12 @@ class Archey4 < Formula
   depends_on "python@3.12"
 
   resource "distro" do
-    url "https://files.pythonhosted.org/packages/4b/89/eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398/distro-1.8.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages4b89eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398distro-1.8.0.tar.gz"
     sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
   end
 
   resource "netifaces" do
-    url "https://files.pythonhosted.org/packages/a6/91/86a6eac449ddfae239e93ffc1918cf33fd9bab35c04d1e963b311e347a73/netifaces-0.11.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesa69186a6eac449ddfae239e93ffc1918cf33fd9bab35c04d1e963b311e347a73netifaces-0.11.0.tar.gz"
     sha256 "043a79146eb2907edf439899f262b3dfe41717d34124298ed281139a8b93ca32"
   end
 
@@ -35,7 +35,7 @@ class Archey4 < Formula
   end
 
   test do
-    assert_match(version.to_s, shell_output("#{bin}/archey -v"))
-    assert_match(/BSD|Linux|macOS/i, shell_output("#{bin}/archey -j"))
+    assert_match(version.to_s, shell_output("#{bin}archey -v"))
+    assert_match(BSD|Linux|macOSi, shell_output("#{bin}archey -j"))
   end
 end

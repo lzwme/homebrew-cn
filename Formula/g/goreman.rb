@@ -1,14 +1,14 @@
 class Goreman < Formula
   desc "Foreman clone written in Go"
-  homepage "https://github.com/mattn/goreman"
-  url "https://ghproxy.com/https://github.com/mattn/goreman/archive/refs/tags/v0.3.15.tar.gz"
+  homepage "https:github.commattngoreman"
+  url "https:github.commattngoremanarchiverefstagsv0.3.15.tar.gz"
   sha256 "3eb3bd3b80a1d0e0a28e595b6dae524770dc1f9d47bd1a1664b291ba6a08ff6b"
   license "MIT"
-  head "https://github.com/mattn/goreman.git", branch: "master"
+  head "https:github.commattngoreman.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,9 +30,9 @@ class Goreman < Formula
   end
 
   test do
-    (testpath/"Procfile").write "web: echo 'hello' > goreman-homebrew-test.out"
-    system bin/"goreman", "start"
-    assert_predicate testpath/"goreman-homebrew-test.out", :exist?
-    assert_match "hello", (testpath/"goreman-homebrew-test.out").read
+    (testpath"Procfile").write "web: echo 'hello' > goreman-homebrew-test.out"
+    system bin"goreman", "start"
+    assert_predicate testpath"goreman-homebrew-test.out", :exist?
+    assert_match "hello", (testpath"goreman-homebrew-test.out").read
   end
 end

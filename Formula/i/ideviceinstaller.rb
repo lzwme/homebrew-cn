@@ -1,11 +1,11 @@
 class Ideviceinstaller < Formula
   desc "Tool for managing apps on iOS devices"
-  homepage "https://www.libimobiledevice.org/"
-  url "https://ghproxy.com/https://github.com/libimobiledevice/ideviceinstaller/releases/download/1.1.1/ideviceinstaller-1.1.1.tar.bz2"
+  homepage "https:www.libimobiledevice.org"
+  url "https:github.comlibimobiledeviceideviceinstallerreleasesdownload1.1.1ideviceinstaller-1.1.1.tar.bz2"
   sha256 "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/libimobiledevice/ideviceinstaller.git", branch: "master"
+  head "https:github.comlibimobiledeviceideviceinstaller.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "818061a6b3ede66696892086a119faa1df036d6d4a3242672fdb955db0d23e6c"
@@ -28,12 +28,12 @@ class Ideviceinstaller < Formula
   depends_on "libzip"
 
   def install
-    system "./autogen.sh", *std_configure_args if build.head?
-    system "./configure", *std_configure_args if build.stable?
+    system ".autogen.sh", *std_configure_args if build.head?
+    system ".configure", *std_configure_args if build.stable?
     system "make", "install"
   end
 
   test do
-    system "#{bin}/ideviceinstaller --help |grep -q ^Usage"
+    system "#{bin}ideviceinstaller --help |grep -q ^Usage"
   end
 end

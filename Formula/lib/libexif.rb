@@ -1,7 +1,7 @@
 class Libexif < Formula
   desc "EXIF parsing library"
-  homepage "https://libexif.github.io/"
-  url "https://ghproxy.com/https://github.com/libexif/libexif/releases/download/v0.6.24/libexif-0.6.24.tar.bz2"
+  homepage "https:libexif.github.io"
+  url "https:github.comlibexiflibexifreleasesdownloadv0.6.24libexif-0.6.24.tar.bz2"
   sha256 "d47564c433b733d83b6704c70477e0a4067811d184ec565258ac563d8223f6ae"
   license "LGPL-2.1"
 
@@ -25,14 +25,14 @@ class Libexif < Formula
 
   def install
     system "autoreconf", "-ivf"
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system ".configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include <libexif/exif-loader.h>
+      #include <libexifexif-loader.h>
 
       int main(int argc, char **argv) {
         ExifLoader *loader = exif_loader_new();
@@ -51,6 +51,6 @@ class Libexif < Formula
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
     test_image = test_fixtures("test.jpg")
-    assert_equal "No Exif data", shell_output("./test #{test_image}")
+    assert_equal "No Exif data", shell_output(".test #{test_image}")
   end
 end

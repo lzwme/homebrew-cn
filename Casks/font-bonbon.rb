@@ -2,10 +2,10 @@ cask "font-bonbon" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bonbon/Bonbon-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbonbonBonbon-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bonbon"
-  homepage "https://fonts.google.com/specimen/Bonbon"
+  homepage "https:fonts.google.comspecimenBonbon"
 
   font "Bonbon-Regular.ttf"
 

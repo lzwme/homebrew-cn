@@ -2,10 +2,10 @@ cask "font-holtwood-one-sc" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/holtwoodonesc/HoltwoodOneSC.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflholtwoodonescHoltwoodOneSC.ttf",
+      verified: "github.comgooglefonts"
   name "Holtwood One SC"
-  homepage "https://fonts.google.com/specimen/Holtwood+One+SC"
+  homepage "https:fonts.google.comspecimenHoltwood+One+SC"
 
   font "HoltwoodOneSC.ttf"
 

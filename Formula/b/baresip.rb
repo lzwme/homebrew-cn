@@ -1,7 +1,7 @@
 class Baresip < Formula
   desc "Modular SIP useragent"
-  homepage "https://github.com/baresip/baresip"
-  url "https://ghproxy.com/https://github.com/baresip/baresip/archive/refs/tags/v3.7.0.tar.gz"
+  homepage "https:github.combaresipbaresip"
+  url "https:github.combaresipbaresiparchiverefstagsv3.7.0.tar.gz"
   sha256 "6d213abe7e285356df91e020f1ace154366ca72d2ea767a324abd87f5a920bcb"
   license "BSD-3-Clause"
 
@@ -23,7 +23,7 @@ class Baresip < Formula
     libre = Formula["libre"]
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
-      -DRE_INCLUDE_DIR=#{libre.opt_include}/re
+      -DRE_INCLUDE_DIR=#{libre.opt_include}re
     ]
     system "cmake", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build", "-j"
@@ -31,6 +31,6 @@ class Baresip < Formula
   end
 
   test do
-    system bin/"baresip", "-f", testpath/".baresip", "-t", "5"
+    system bin"baresip", "-f", testpath".baresip", "-t", "5"
   end
 end

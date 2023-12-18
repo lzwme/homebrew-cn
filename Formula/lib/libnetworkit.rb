@@ -1,7 +1,7 @@
 class Libnetworkit < Formula
   desc "NetworKit is an OS-toolkit for large-scale network analysis"
-  homepage "https://networkit.github.io"
-  url "https://ghproxy.com/https://github.com/networkit/networkit/archive/refs/tags/10.1.tar.gz"
+  homepage "https:networkit.github.io"
+  url "https:github.comnetworkitnetworkitarchiverefstags10.1.tar.gz"
   sha256 "35d11422b731f3e3f06ec05615576366be96ce26dd23aa16c8023b97f2fe9039"
   license "MIT"
 
@@ -39,17 +39,17 @@ class Libnetworkit < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <networkit/graph/Graph.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <networkitgraphGraph.hpp>
       int main()
       {
-        // Try to create a graph with five nodes
+         Try to create a graph with five nodes
         NetworKit::Graph g(5);
         return 0;
       }
     EOS
     omp_flags = OS.mac? ? ["-I#{Formula["libomp"].opt_include}"] : []
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lnetworkit", "-o", "test", "-std=c++14", *omp_flags
-    system "./test"
+    system ".test"
   end
 end

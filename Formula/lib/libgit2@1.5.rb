@@ -1,15 +1,15 @@
 class Libgit2AT15 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
-  homepage "https://libgit2.github.com/"
-  url "https://ghproxy.com/https://github.com/libgit2/libgit2/archive/refs/tags/v1.5.2.tar.gz"
+  homepage "https:libgit2.github.com"
+  url "https:github.comlibgit2libgit2archiverefstagsv1.5.2.tar.gz"
   sha256 "57638ac0e319078f56a7e17570be754515e5b1276d3750904b4214c92e8fa196"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   revision 1
-  head "https://github.com/libgit2/libgit2.git", branch: "maint/v1.5"
+  head "https:github.comlibgit2libgit2.git", branch: "maintv1.5"
 
   livecheck do
     url :stable
-    regex(/v?(1\.5(?:\.\d+)+)/i)
+    regex(v?(1\.5(?:\.\d+)+)i)
   end
 
   bottle do
@@ -41,7 +41,7 @@ class Libgit2AT15 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <git2.h>
       #include <assert.h>
 
@@ -59,6 +59,6 @@ class Libgit2AT15 < Formula
       -lgit2
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

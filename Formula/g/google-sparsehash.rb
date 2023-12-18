@@ -1,10 +1,10 @@
 class GoogleSparsehash < Formula
   desc "Extremely memory-efficient hash_map implementation"
-  homepage "https://github.com/sparsehash/sparsehash"
-  url "https://ghproxy.com/https://github.com/sparsehash/sparsehash/archive/refs/tags/sparsehash-2.0.4.tar.gz"
+  homepage "https:github.comsparsehashsparsehash"
+  url "https:github.comsparsehashsparsehasharchiverefstagssparsehash-2.0.4.tar.gz"
   sha256 "8cd1a95827dfd8270927894eb77f62b4087735cbede953884647f16c521c7e58"
   license "BSD-3-Clause"
-  head "https://github.com/sparsehash/sparsehash.git", branch: "master"
+  head "https:github.comsparsehashsparsehash.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5fe99f9acb9ab292d249f8c1bc05382687e8a24399447f135f707da6f402ef11"
@@ -22,7 +22,7 @@ class GoogleSparsehash < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "check"
     system "make", "install"

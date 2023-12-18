@@ -2,10 +2,10 @@ cask "font-miniver" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/miniver/Miniver-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflminiverMiniver-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Miniver"
-  homepage "https://fonts.google.com/specimen/Miniver"
+  homepage "https:fonts.google.comspecimenMiniver"
 
   font "Miniver-Regular.ttf"
 

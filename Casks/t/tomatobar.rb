@@ -2,15 +2,15 @@ cask "tomatobar" do
   version "3.5.0"
   sha256 "f5b29a3761d60a952697fa9f8f9e1c86350ee6f18d4e94eb2e9093ab7cb61e72"
 
-  url "https://ghproxy.com/https://github.com/ivoronin/TomatoBar/releases/download/v#{version}/TomatoBar-v#{version}.zip"
+  url "https:github.comivoroninTomatoBarreleasesdownloadv#{version}TomatoBar-v#{version}.zip"
   name "TomatoBar"
   desc "Menu bar pomodoro timer"
-  homepage "https://github.com/ivoronin/TomatoBar"
+  homepage "https:github.comivoroninTomatoBar"
 
   app "TomatoBar.app"
 
   zap trash: [
-    "~/Library/Containers/com.github.ivoronin.TomatoBar",
-    "~/Library/Application Scripts/com.github.ivoronin.TomatoBar",
+    "~LibraryContainerscom.github.ivoronin.TomatoBar",
+    "~LibraryApplication Scriptscom.github.ivoronin.TomatoBar",
   ]
 end

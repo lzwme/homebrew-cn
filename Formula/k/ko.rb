@@ -1,7 +1,7 @@
 class Ko < Formula
   desc "Build and deploy Go applications on Kubernetes"
-  homepage "https://ko.build"
-  url "https://ghproxy.com/https://github.com/ko-build/ko/archive/refs/tags/v0.15.1.tar.gz"
+  homepage "https:ko.build"
+  url "https:github.comko-buildkoarchiverefstagsv0.15.1.tar.gz"
   sha256 "d8ccbc52f4495fc142a6e370fe0395d729afa72c8ffa33b5b2a833813dfca7c8"
   license "Apache-2.0"
 
@@ -18,13 +18,13 @@ class Ko < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/google/ko/pkg/commands.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comgooglekopkgcommands.Version=#{version}")
 
-    generate_completions_from_executable(bin/"ko", "completion")
+    generate_completions_from_executable(bin"ko", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/ko login reg.example.com -u brew -p test 2>&1")
-    assert_match "logged in via #{testpath}/.docker/config.json", output
+    output = shell_output("#{bin}ko login reg.example.com -u brew -p test 2>&1")
+    assert_match "logged in via #{testpath}.dockerconfig.json", output
   end
 end

@@ -1,7 +1,7 @@
 class Sonic < Formula
   desc "Fast, lightweight & schema-less search backend"
-  homepage "https://github.com/valeriansaliou/sonic"
-  url "https://ghproxy.com/https://github.com/valeriansaliou/sonic/archive/refs/tags/v1.4.8.tar.gz"
+  homepage "https:github.comvaleriansaliousonic"
+  url "https:github.comvaleriansaliousonicarchiverefstagsv1.4.8.tar.gz"
   sha256 "703b3d979f3cb72ed6c1f3535c2a4c4851107972eda3cd34a88542724f537181"
   license "MPL-2.0"
 
@@ -22,26 +22,26 @@ class Sonic < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    inreplace "config.cfg", "./", var/"sonic/"
+    inreplace "config.cfg", ".", var"sonic"
     etc.install "config.cfg" => "sonic.cfg"
   end
 
   service do
-    run [opt_bin/"sonic", "-c", etc/"sonic.cfg"]
+    run [opt_bin"sonic", "-c", etc"sonic.cfg"]
     keep_alive true
     working_dir var
-    log_path var/"log/sonic.log"
-    error_log_path var/"log/sonic.log"
+    log_path var"logsonic.log"
+    error_log_path var"logsonic.log"
   end
 
   test do
     port = free_port
 
-    cp etc/"sonic.cfg", testpath/"config.cfg"
+    cp etc"sonic.cfg", testpath"config.cfg"
     inreplace "config.cfg", "[::1]:1491", "0.0.0.0:#{port}"
-    inreplace "config.cfg", "#{var}/sonic", "."
+    inreplace "config.cfg", "#{var}sonic", "."
 
-    fork { exec bin/"sonic" }
+    fork { exec bin"sonic" }
     sleep 10
     system "nc", "-z", "localhost", port
   end

@@ -1,7 +1,7 @@
 class Spatialindex < Formula
   desc "General framework for developing spatial indices"
-  homepage "https://libspatialindex.org/"
-  url "https://ghproxy.com/https://github.com/libspatialindex/libspatialindex/releases/download/1.9.3/spatialindex-src-1.9.3.tar.bz2"
+  homepage "https:libspatialindex.org"
+  url "https:github.comlibspatialindexlibspatialindexreleasesdownload1.9.3spatialindex-src-1.9.3.tar.bz2"
   sha256 "4a529431cfa80443ab4dcd45a4b25aebbabe1c0ce2fa1665039c80e999dcc50a"
   # `LGPL-2.0` to `MIT` for 1.8.0+ releases
   license "MIT"
@@ -35,8 +35,8 @@ class Spatialindex < Formula
   test do
     # write out a small program which inserts a fixed box into an rtree
     # and verifies that it can query it
-    (testpath/"test.cpp").write <<~EOS
-      #include <spatialindex/SpatialIndex.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <spatialindexSpatialIndex.h>
 
       using namespace std;
       using namespace SpatialIndex;
@@ -60,7 +60,7 @@ class Spatialindex < Formula
               *memory, 0.5, 100, 10, 2,
               variant, indexIdentifier
           );
-          /* insert a box from (0, 5) to (0, 10) */
+          * insert a box from (0, 5) to (0, 10) *
           double plow[2] = { 0.0, 0.0 };
           double phigh[2] = { 5.0, 10.0 };
           Region r = Region(plow, phigh, 2);
@@ -71,7 +71,7 @@ class Spatialindex < Formula
 
           tree->insertData(data.size() + 1, reinterpret_cast<const unsigned char*>(data.c_str()), r, id);
 
-          /* ensure that (2, 2) is in that box */
+          * ensure that (2, 2) is in that box *
           double qplow[2] = { 2.0, 2.0 };
           double qphigh[2] = { 2.0, 2.0 };
           Region qr = Region(qplow, qphigh, 2);
@@ -83,6 +83,6 @@ class Spatialindex < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lspatialindex", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

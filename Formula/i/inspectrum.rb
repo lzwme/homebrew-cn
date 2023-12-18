@@ -1,10 +1,10 @@
 class Inspectrum < Formula
   desc "Offline radio signal analyser"
-  homepage "https://github.com/miek/inspectrum"
-  url "https://ghproxy.com/https://github.com/miek/inspectrum/archive/refs/tags/v0.3.1.tar.gz"
+  homepage "https:github.commiekinspectrum"
+  url "https:github.commiekinspectrumarchiverefstagsv0.3.1.tar.gz"
   sha256 "94e42333aceb06c15fb6fc10d186d61112975fdcf9539357a279e886e9edf35e"
   license "GPL-3.0-or-later"
-  head "https://github.com/miek/inspectrum.git", branch: "main"
+  head "https:github.commiekinspectrum.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b8fed8bc9e251d6f90e191b260fba14a907183b966ce9058eca5e45832fd096b"
@@ -34,6 +34,6 @@ class Inspectrum < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "-r, --rate <Hz>     Set sample rate.", shell_output("#{bin}/inspectrum -h").strip
+    assert_match "-r, --rate <Hz>     Set sample rate.", shell_output("#{bin}inspectrum -h").strip
   end
 end

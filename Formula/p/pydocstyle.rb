@@ -2,12 +2,12 @@ class Pydocstyle < Formula
   include Language::Python::Virtualenv
 
   desc "Python docstring style checker"
-  homepage "https://www.pydocstyle.org/"
-  url "https://files.pythonhosted.org/packages/e9/5c/d5385ca59fd065e3c6a5fe19f9bc9d5ea7f2509fa8c9c22fb6b2031dd953/pydocstyle-6.3.0.tar.gz"
+  homepage "https:www.pydocstyle.org"
+  url "https:files.pythonhosted.orgpackagese95cd5385ca59fd065e3c6a5fe19f9bc9d5ea7f2509fa8c9c22fb6b2031dd953pydocstyle-6.3.0.tar.gz"
   sha256 "7ce43f0c0ac87b07494eb9c0b462c0b73e6ff276807f204d6b53edc72b7e44e1"
   license "MIT"
   revision 1
-  head "https://github.com/PyCQA/pydocstyle.git", branch: "master"
+  head "https:github.comPyCQApydocstyle.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ec360acd50933d2848eded9d479931d25f81ea10235d21ec4400669ecf46b14"
@@ -22,7 +22,7 @@ class Pydocstyle < Formula
   depends_on "python@3.12"
 
   resource "snowballstemmer" do
-    url "https://files.pythonhosted.org/packages/44/7b/af302bebf22c749c56c9c3e8ae13190b5b5db37a33d9068652e8f73b7089/snowballstemmer-2.2.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages447baf302bebf22c749c56c9c3e8ae13190b5b5db37a33d9068652e8f73b7089snowballstemmer-2.2.0.tar.gz"
     sha256 "09b16deb8547d3412ad7b590689584cd0fe25ec8db3be37788be3810cbf19cb1"
   end
 
@@ -31,12 +31,12 @@ class Pydocstyle < Formula
   end
 
   test do
-    (testpath/"broken.py").write <<~EOS
+    (testpath"broken.py").write <<~EOS
       def bad_docstring():
         """  extra spaces  """
         pass
     EOS
-    output = pipe_output("#{bin}/pydocstyle broken.py 2>&1")
+    output = pipe_output("#{bin}pydocstyle broken.py 2>&1")
     assert_match "No whitespaces allowed surrounding docstring text", output
   end
 end

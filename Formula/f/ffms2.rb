@@ -1,24 +1,24 @@
 class Ffms2 < Formula
-  desc "Libav/ffmpeg based source library and Avisynth plugin"
-  homepage "https://github.com/FFMS/ffms2"
+  desc "Libavffmpeg based source library and Avisynth plugin"
+  homepage "https:github.comFFMSffms2"
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0"
   revision 4
-  head "https://github.com/FFMS/ffms2.git", branch: "master"
+  head "https:github.comFFMSffms2.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/FFMS/ffms2/archive/refs/tags/2.40.tar.gz"
-    mirror "https://deb.debian.org/debian/pool/main/f/ffms2/ffms2_2.40.orig.tar.gz"
+    url "https:github.comFFMSffms2archiverefstags2.40.tar.gz"
+    mirror "https:deb.debian.orgdebianpoolmainfffms2ffms2_2.40.orig.tar.gz"
     sha256 "82e95662946f3d6e1b529eadbd72bed196adfbc41368b2d50493efce6e716320"
 
-    # Fix build with FFmpeg 5/6. Remove patches in the next release.
+    # Fix build with FFmpeg 56. Remove patches in the next release.
     patch do
-      url "https://github.com/FFMS/ffms2/commit/586d87de3f896d0c4ff01b21f572375e11f9c3f1.patch?full_index=1"
+      url "https:github.comFFMSffms2commit586d87de3f896d0c4ff01b21f572375e11f9c3f1.patch?full_index=1"
       sha256 "cd946d9f30698a5a7e17698c75e74572ecaa677b379dc92d92e4a986243d69c6"
     end
     patch do
-      url "https://github.com/FFMS/ffms2/commit/45673149e9a2f5586855ad472e3059084eaa36b1.patch?full_index=1"
+      url "https:github.comFFMSffms2commit45673149e9a2f5586855ad472e3059084eaa36b1.patch?full_index=1"
       sha256 "33d7af8efd9b44ea6414fc2856ef93aeff733c92dd45e57b859989766f32be66"
     end
   end
@@ -44,20 +44,20 @@ class Ffms2 < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "videosample" do
-    url "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
+    url "https:samples.mplayerhq.huV-codecslm20.avi"
     sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
   end
 
   def install
-    system "./autogen.sh", *std_configure_args, "--enable-avresample"
+    system ".autogen.sh", *std_configure_args, "--enable-avresample"
     system "make", "install"
   end
 
   test do
     # download small sample and check that the index was created
     resource("videosample").stage do
-      system bin/"ffmsindex", "lm20.avi"
-      assert_predicate Pathname.pwd/"lm20.avi.ffindex", :exist?
+      system bin"ffmsindex", "lm20.avi"
+      assert_predicate Pathname.pwd"lm20.avi.ffindex", :exist?
     end
   end
 end

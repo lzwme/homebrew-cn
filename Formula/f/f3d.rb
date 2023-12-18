@@ -1,7 +1,7 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
-  homepage "https://f3d-app.github.io/f3d/"
-  url "https://ghproxy.com/https://github.com/f3d-app/f3d/archive/refs/tags/v2.2.1.tar.gz"
+  homepage "https:f3d-app.github.iof3d"
+  url "https:github.comf3d-appf3darchiverefstagsv2.2.1.tar.gz"
   sha256 "4d3a73b0107c8db7f0556107c74087d3748232a73981f65f7c5186ac1003ec8d"
   license "BSD-3-Clause"
 
@@ -49,15 +49,15 @@ class F3d < Formula
 
   test do
     # create a simple OBJ file with 3 points and 1 triangle
-    (testpath/"test.obj").write <<~EOS
+    (testpath"test.obj").write <<~EOS
       v 0 0 0
       v 1 0 0
       v 0 1 0
       f 1 2 3
     EOS
 
-    f3d_out = shell_output("#{bin}/f3d --verbose --no-render --geometry-only #{testpath}/test.obj 2>&1").strip
-    assert_match(/Loading.+obj/, f3d_out)
+    f3d_out = shell_output("#{bin}f3d --verbose --no-render --geometry-only #{testpath}test.obj 2>&1").strip
+    assert_match(Loading.+obj, f3d_out)
     assert_match "Number of points: 3", f3d_out
     assert_match "Number of polygons: 1", f3d_out
   end

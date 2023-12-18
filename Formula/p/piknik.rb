@@ -1,10 +1,10 @@
 class Piknik < Formula
-  desc "Copy/paste anything over the network"
-  homepage "https://github.com/jedisct1/piknik"
-  url "https://ghproxy.com/https://github.com/jedisct1/piknik/archive/refs/tags/0.10.1.tar.gz"
+  desc "Copypaste anything over the network"
+  homepage "https:github.comjedisct1piknik"
+  url "https:github.comjedisct1piknikarchiverefstags0.10.1.tar.gz"
   sha256 "9172acb424d864ba3563bbdb0cd2307815129027eec1a6ca04aee17da7f936c2"
   license "BSD-2-Clause"
-  head "https://github.com/jedisct1/piknik.git", branch: "master"
+  head "https:github.comjedisct1piknik.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1fa42c88345003d888aaac97e08272e03348766992a383fb875039b39cbb99c4"
@@ -24,36 +24,36 @@ class Piknik < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    (prefix/"etc/profile.d").install "zsh.aliases" => "piknik.sh"
+    (prefix"etcprofile.d").install "zsh.aliases" => "piknik.sh"
   end
 
   def caveats
     <<~EOS
       In order to get convenient shell aliases, add the following to your shell
-      profile e.g. ~/.profile or ~/.zshrc:
-        . #{etc}/profile.d/piknik.sh
+      profile e.g. ~.profile or ~.zshrc:
+        . #{etc}profile.dpiknik.sh
     EOS
   end
 
   service do
-    run [opt_bin/"piknik", "-server"]
+    run [opt_bin"piknik", "-server"]
   end
 
   test do
-    conffile = testpath/"testconfig.toml"
+    conffile = testpath"testconfig.toml"
 
-    genkeys = shell_output("#{bin}/piknik -genkeys")
-    lines = genkeys.lines.grep(/\s+=\s+/).map { |x| x.gsub(/\s+/, " ").gsub(/#.*/, "") }.uniq
+    genkeys = shell_output("#{bin}piknik -genkeys")
+    lines = genkeys.lines.grep(\s+=\s+).map { |x| x.gsub(\s+, " ").gsub(#.*, "") }.uniq
     conffile.write lines.join("\n")
     pid = fork do
-      exec "#{bin}/piknik", "-server", "-config", conffile
+      exec "#{bin}piknik", "-server", "-config", conffile
     end
     begin
       sleep 1
-      IO.popen([{}, "#{bin}/piknik", "-config", conffile, "-copy"], "w+") do |p|
+      IO.popen([{}, "#{bin}piknik", "-config", conffile, "-copy"], "w+") do |p|
         p.write "test"
       end
-      IO.popen([{}, "#{bin}/piknik", "-config", conffile, "-move"], "r") do |p|
+      IO.popen([{}, "#{bin}piknik", "-config", conffile, "-move"], "r") do |p|
         clipboard = p.read
         assert_equal clipboard, "test"
       end

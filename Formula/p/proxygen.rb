@@ -1,11 +1,11 @@
 class Proxygen < Formula
   desc "Collection of C++ HTTP libraries"
-  homepage "https://github.com/facebook/proxygen"
-  url "https://ghproxy.com/https://github.com/facebook/proxygen/releases/download/v2023.09.04.00/proxygen-v2023.09.04.00.tar.gz"
+  homepage "https:github.comfacebookproxygen"
+  url "https:github.comfacebookproxygenreleasesdownloadv2023.09.04.00proxygen-v2023.09.04.00.tar.gz"
   sha256 "e4db076db908b003a23ac139b6c433d8c34daa77cbdea33fd5a77bf9889dcdb2"
   license "BSD-3-Clause"
   revision 4
-  head "https://github.com/facebook/proxygen.git", branch: "main"
+  head "https:github.comfacebookproxygen.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "162dd2c512d8a37e62f2971a96113c22ec3a80598e2d3d160b89f79fff75f085"
@@ -41,9 +41,9 @@ class Proxygen < Formula
   end
 
   test do
-    pid = spawn bin/"proxygen_echo"
+    pid = spawn bin"proxygen_echo"
     sleep 5
-    system "curl", "-v", "http://localhost:11000"
+    system "curl", "-v", "http:localhost:11000"
   ensure
     Process.kill "TERM", pid
   end

@@ -1,7 +1,7 @@
 class Stylua < Formula
   desc "Opinionated Lua code formatter"
-  homepage "https://github.com/JohnnyMorganz/StyLua"
-  url "https://ghproxy.com/https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.19.1.tar.gz"
+  homepage "https:github.comJohnnyMorganzStyLua"
+  url "https:github.comJohnnyMorganzStyLuaarchiverefstagsv0.19.1.tar.gz"
   sha256 "c232227bf6085e3039b47a2ee24c76dad6ba1e786df65d9933ee000a3ee2c36e"
   license "MPL-2.0"
 
@@ -22,8 +22,8 @@ class Stylua < Formula
   end
 
   test do
-    (testpath/"test.lua").write("local  foo  = {'bar'}")
-    system bin/"stylua", "test.lua"
-    assert_equal "local foo = { \"bar\" }\n", (testpath/"test.lua").read
+    (testpath"test.lua").write("local  foo  = {'bar'}")
+    system bin"stylua", "test.lua"
+    assert_equal "local foo = { \"bar\" }\n", (testpath"test.lua").read
   end
 end

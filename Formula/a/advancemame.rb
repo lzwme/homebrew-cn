@@ -1,14 +1,14 @@
 class Advancemame < Formula
   desc "MAME with advanced video support"
-  homepage "https://www.advancemame.it/"
-  url "https://ghproxy.com/https://github.com/amadvance/advancemame/releases/download/v3.9/advancemame-3.9.tar.gz"
+  homepage "https:www.advancemame.it"
+  url "https:github.comamadvanceadvancemamereleasesdownloadv3.9advancemame-3.9.tar.gz"
   sha256 "3e4628e1577e70a1dbe104f17b1b746745b8eda80837f53fbf7b091c88be8c2b"
   license "GPL-2.0"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,13 +32,13 @@ class Advancemame < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--enable-freetype",
                           "--enable-sdl2"
     system "make", "install", "LDFLAGS=#{ENV.ldflags}", "mandir=#{man}", "docdir=#{doc}"
   end
 
   test do
-    system "#{bin}/advmame", "--version"
+    system "#{bin}advmame", "--version"
   end
 end

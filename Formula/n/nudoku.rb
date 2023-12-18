@@ -1,11 +1,11 @@
 class Nudoku < Formula
   desc "Ncurses based sudoku game"
-  homepage "https://jubalh.github.io/nudoku/"
-  url "https://ghproxy.com/https://github.com/jubalh/nudoku/archive/refs/tags/2.1.0.tar.gz"
+  homepage "https:jubalh.github.ionudoku"
+  url "https:github.comjubalhnudokuarchiverefstags2.1.0.tar.gz"
   sha256 "eeff7f3adea5bfe7b88bf7683d68e9a597aabd1442d1621f21760c746400b924"
   license "GPL-3.0-or-later"
   revision 1
-  head "https://github.com/jubalh/nudoku.git", branch: "master"
+  head "https:github.comjubalhnudoku.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "bb2b871aec0bd81cab3758b17adeb6c372fc788e0ac03b194b14b4265734151b"
@@ -29,7 +29,7 @@ class Nudoku < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--enable-cairo",
                           "--prefix=#{prefix}"
@@ -37,6 +37,6 @@ class Nudoku < Formula
   end
 
   test do
-    assert_match "nudoku version #{version}", shell_output("#{bin}/nudoku -v")
+    assert_match "nudoku version #{version}", shell_output("#{bin}nudoku -v")
   end
 end

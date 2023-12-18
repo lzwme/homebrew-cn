@@ -1,7 +1,7 @@
 class Ibazel < Formula
   desc "Tools for building Bazel targets when source files change"
-  homepage "https://github.com/bazelbuild/bazel-watcher"
-  url "https://ghproxy.com/https://github.com/bazelbuild/bazel-watcher/archive/refs/tags/v0.24.0.tar.gz"
+  homepage "https:github.combazelbuildbazel-watcher"
+  url "https:github.combazelbuildbazel-watcherarchiverefstagsv0.24.0.tar.gz"
   sha256 "bc0ac30e84aa8b8a18ae1fc69d9ef6c575a9fa28239f36b6d14d3603e2b1d667"
   license "Apache-2.0"
 
@@ -25,37 +25,37 @@ class Ibazel < Formula
     depends_on "bazelisk" => [:build, :test]
   end
 
-  # bazel 6.x support issue, https://github.com/bazelbuild/bazel-watcher/issues/616
-  # patch to use bazel 6.4.0, upstream PR, https://github.com/bazelbuild/bazel-watcher/pull/575
+  # bazel 6.x support issue, https:github.combazelbuildbazel-watcherissues616
+  # patch to use bazel 6.4.0, upstream PR, https:github.combazelbuildbazel-watcherpull575
   patch :DATA
 
   def install
-    system "bazel", "build", "--config=release", "--workspace_status_command", "echo STABLE_GIT_VERSION #{version}", "//cmd/ibazel:ibazel"
-    bin.install "bazel-bin/cmd/ibazel/ibazel_/ibazel"
+    system "bazel", "build", "--config=release", "--workspace_status_command", "echo STABLE_GIT_VERSION #{version}", "cmdibazel:ibazel"
+    bin.install "bazel-bincmdibazelibazel_ibazel"
   end
 
   test do
     # Test building a sample Go program
-    (testpath/"WORKSPACE").write <<~EOS
-      load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+    (testpath"WORKSPACE").write <<~EOS
+      load("@bazel_toolstoolsbuild_defsrepo:http.bzl", "http_archive")
 
       http_archive(
         name = "io_bazel_rules_go",
         sha256 = "278b7ff5a826f3dc10f04feaf0b70d48b68748ccd512d7f98bf442077f043fe3",
         urls = [
-            "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.41.0.zip",
-            "https://ghproxy.com/https://github.com/bazelbuild/rules_go/releases/download/v0.41.0/rules_go-v0.41.0.zip",
+            "https:mirror.bazel.buildgithub.combazelbuildrules_goreleasesdownloadv0.41.0rules_go-v0.41.0.zip",
+            "https:github.combazelbuildrules_goreleasesdownloadv0.41.0rules_go-v0.41.0.zip",
         ],
       )
 
-      load("@io_bazel_rules_go//go:deps.bzl", "go_host_sdk", "go_rules_dependencies")
+      load("@io_bazel_rules_gogo:deps.bzl", "go_host_sdk", "go_rules_dependencies")
 
       go_rules_dependencies()
 
       go_host_sdk(name = "go_sdk")
     EOS
 
-    (testpath/"test.go").write <<~EOS
+    (testpath"test.go").write <<~EOS
       package main
       import "fmt"
       func main() {
@@ -63,8 +63,8 @@ class Ibazel < Formula
       }
     EOS
 
-    (testpath/"BUILD").write <<~EOS
-      load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+    (testpath"BUILD").write <<~EOS
+      load("@io_bazel_rules_gogo:def.bzl", "go_binary")
 
       go_binary(
         name = "bazel-test",
@@ -72,8 +72,8 @@ class Ibazel < Formula
       )
     EOS
 
-    pid = fork { exec("ibazel", "build", "//:bazel-test") }
-    out_file = "bazel-bin/bazel-test_/bazel-test"
+    pid = fork { exec("ibazel", "build", ":bazel-test") }
+    out_file = "bazel-binbazel-test_bazel-test"
     sleep 1 until File.exist?(out_file)
     assert_equal "Hi!\n", shell_output(out_file)
   ensure
@@ -84,10 +84,10 @@ class Ibazel < Formula
 end
 
 __END__
-diff --git a/.bazelversion b/.bazelversion
+diff --git a.bazelversion b.bazelversion
 index 8a30e8f..09b254e 100644
---- a/.bazelversion
-+++ b/.bazelversion
+--- a.bazelversion
++++ b.bazelversion
 @@ -1 +1 @@
 -5.4.0
 +6.4.0

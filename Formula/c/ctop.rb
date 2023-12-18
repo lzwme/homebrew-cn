@@ -1,7 +1,7 @@
 class Ctop < Formula
   desc "Top-like interface for container metrics"
-  homepage "https://bcicen.github.io/ctop/"
-  url "https://github.com/bcicen/ctop.git",
+  homepage "https:bcicen.github.ioctop"
+  url "https:github.combcicenctop.git",
       tag:      "v0.7.7",
       revision: "11a1cb10f416b4ca5e36c22c1acc2d11dbb24fb4"
   license "MIT"
@@ -27,6 +27,6 @@ class Ctop < Formula
   end
 
   test do
-    system "#{bin}/ctop", "-v"
+    system "#{bin}ctop", "-v"
   end
 end

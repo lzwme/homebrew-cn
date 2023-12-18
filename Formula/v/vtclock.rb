@@ -1,15 +1,15 @@
 class Vtclock < Formula
   desc "Text-mode fullscreen digital clock"
-  homepage "https://github.com/dse/vtclock"
-  url "https://ghproxy.com/https://github.com/dse/vtclock/archive/refs/tags/0.0.20161228.tar.gz"
+  homepage "https:github.comdsevtclock"
+  url "https:github.comdsevtclockarchiverefstags0.0.20161228.tar.gz"
   sha256 "0148411febd672c34e436361f5969371ae5291bdc497c771af403a5ee85a78b4"
   license "GPL-2.0-or-later"
   version_scheme 1
-  head "https://github.com/dse/vtclock.git", branch: "master"
+  head "https:github.comdsevtclock.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,6 +38,6 @@ class Vtclock < Formula
   end
 
   test do
-    system "#{bin}/vtclock", "-h"
+    system "#{bin}vtclock", "-h"
   end
 end

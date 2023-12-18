@@ -1,10 +1,10 @@
 class IkeScan < Formula
   desc "Discover and fingerprint IKE hosts"
-  homepage "https://github.com/royhills/ike-scan"
-  url "https://ghproxy.com/https://github.com/royhills/ike-scan/archive/refs/tags/1.9.5.tar.gz"
+  homepage "https:github.comroyhillsike-scan"
+  url "https:github.comroyhillsike-scanarchiverefstags1.9.5.tar.gz"
   sha256 "5152bf06ac82d0cadffb93a010ffb6bca7efd35ea169ca7539cf2860ce2b263f"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
-  head "https://github.com/royhills/ike-scan.git", branch: "master"
+  head "https:github.comroyhillsike-scan.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,7 +27,7 @@ class IkeScan < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--mandir=#{man}",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
@@ -35,6 +35,6 @@ class IkeScan < Formula
 
   test do
     # We probably shouldn't probe any host for VPN servers, so let's keep this simple.
-    system bin/"ike-scan", "--version"
+    system bin"ike-scan", "--version"
   end
 end

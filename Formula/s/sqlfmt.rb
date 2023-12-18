@@ -1,10 +1,10 @@
 class Sqlfmt < Formula
   desc "SQL formatter with width-aware output"
-  homepage "https://sqlfum.pt/"
-  url "https://ghproxy.com/https://github.com/mjibson/sqlfmt/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:sqlfum.pt"
+  url "https:github.commjibsonsqlfmtarchiverefstagsv0.5.0.tar.gz"
   sha256 "0776e9505048fd88220c0ee9b481ca258b6abe7e7bb27204a4873f11e1d7c95b"
   license "Apache-2.0"
-  head "https://github.com/mjibson/sqlfmt.git", branch: "master"
+  head "https:github.commjibsonsqlfmt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05c503eec0cd5a79c9cc3e1027166051acbf6f2a44d2924cadb9898b4600ceb3"
@@ -20,12 +20,12 @@ class Sqlfmt < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./backend"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".backend"
   end
 
   test do
     test_sql = "\"SELECT count(ID) AS count, foo FROM brewtest GROUP BY foo;\""
-    assert_equal <<~EOS, shell_output("#{bin}/sqlfmt --print-width 40 --stmt #{test_sql}")
+    assert_equal <<~EOS, shell_output("#{bin}sqlfmt --print-width 40 --stmt #{test_sql}")
       SELECT
       \tcount(id) AS count, foo
       FROM
@@ -34,6 +34,6 @@ class Sqlfmt < Formula
       \tfoo;
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}/sqlfmt --version")
+    assert_match version.to_s, shell_output("#{bin}sqlfmt --version")
   end
 end

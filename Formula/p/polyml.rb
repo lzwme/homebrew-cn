@@ -1,10 +1,10 @@
 class Polyml < Formula
   desc "Standard ML implementation"
-  homepage "https://www.polyml.org/"
-  url "https://ghproxy.com/https://github.com/polyml/polyml/archive/refs/tags/v5.9.tar.gz"
+  homepage "https:www.polyml.org"
+  url "https:github.compolymlpolymlarchiverefstagsv5.9.tar.gz"
   sha256 "5aa452a49f2ac0278668772af4ea0b9bf30c93457e60ff7f264c5aec2023c83e"
   license "LGPL-2.1-or-later"
-  head "https://github.com/polyml/polyml.git", branch: "master"
+  head "https:github.compolymlpolyml.git", branch: "master"
 
   bottle do
     sha256 arm64_monterey: "100f3fb2f2b4afd32f89f55b319742e80513df3b7b46e1824f8cfb5ad458f4c7"
@@ -18,25 +18,25 @@ class Polyml < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--disable-debug",
+    system ".configure", "--disable-dependency-tracking", "--disable-debug",
                           "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"hello.ml").write <<~EOS
+    (testpath"hello.ml").write <<~EOS
       let
         fun concatWithSpace(a,b) = a ^ " " ^ b
       in
         TextIO.print(concatWithSpace("Hello", "World"))
       end
     EOS
-    assert_match "Hello World", shell_output("#{bin}/poly --script hello.ml")
+    assert_match "Hello World", shell_output("#{bin}poly --script hello.ml")
   end
 end

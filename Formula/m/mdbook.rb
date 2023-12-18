@@ -1,10 +1,10 @@
 class Mdbook < Formula
   desc "Create modern online books from Markdown files"
-  homepage "https://rust-lang.github.io/mdBook/"
-  url "https://ghproxy.com/https://github.com/rust-lang/mdBook/archive/refs/tags/v0.4.36.tar.gz"
+  homepage "https:rust-lang.github.iomdBook"
+  url "https:github.comrust-langmdBookarchiverefstagsv0.4.36.tar.gz"
   sha256 "dd47214172ecf95e1b2cbcbebb8428d0b029e0de5dce74204b3c3a91f26223a1"
   license "MPL-2.0"
-  head "https://github.com/rust-lang/mdBook.git", branch: "master"
+  head "https:github.comrust-langmdBook.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00c87e99119f54d2bc401fc473e2ed17ae65bab6ce005960d972214e247796b2"
@@ -24,7 +24,7 @@ class Mdbook < Formula
 
   test do
     # simulate user input to mdbook init
-    system "sh", "-c", "printf \\n\\n | #{bin}/mdbook init"
-    system bin/"mdbook", "build"
+    system "sh", "-c", "printf \\n\\n | #{bin}mdbook init"
+    system bin"mdbook", "build"
   end
 end

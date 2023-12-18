@@ -1,7 +1,7 @@
 class Ucloud < Formula
   desc "Official tool for managing UCloud services"
-  homepage "https://www.ucloud.cn"
-  url "https://ghproxy.com/https://github.com/ucloud/ucloud-cli/archive/refs/tags/v0.1.44.tar.gz"
+  homepage "https:www.ucloud.cn"
+  url "https:github.comuclouducloud-cliarchiverefstagsv0.1.44.tar.gz"
   sha256 "2ce8d77ab00235ea341ce92ebae9472b453a059ce8e3333bb030a44d90fd9a9d"
   license "Apache-2.0"
 
@@ -20,18 +20,18 @@ class Ucloud < Formula
   depends_on "go" => :build
 
   def install
-    dir = buildpath/"src/github.com/ucloud/ucloud-cli"
+    dir = buildpath"srcgithub.comuclouducloud-cli"
     dir.install buildpath.children
     cd dir do
-      system "go", "build", "-mod=vendor", "-o", bin/"ucloud"
+      system "go", "build", "-mod=vendor", "-o", bin"ucloud"
       prefix.install_metafiles
     end
   end
 
   test do
-    system "#{bin}/ucloud", "config", "--project-id", "org-test", "--profile", "default", "--active", "true"
-    config_json = (testpath/".ucloud/config.json").read
+    system "#{bin}ucloud", "config", "--project-id", "org-test", "--profile", "default", "--active", "true"
+    config_json = (testpath".ucloudconfig.json").read
     assert_match '"project_id":"org-test"', config_json
-    assert_match version.to_s, shell_output("#{bin}/ucloud --version")
+    assert_match version.to_s, shell_output("#{bin}ucloud --version")
   end
 end

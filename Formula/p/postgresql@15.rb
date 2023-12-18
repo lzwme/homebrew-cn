@@ -1,14 +1,14 @@
 class PostgresqlAT15 < Formula
   desc "Object-relational database system"
-  homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v15.5/postgresql-15.5.tar.bz2"
+  homepage "https:www.postgresql.org"
+  url "https:ftp.postgresql.orgpubsourcev15.5postgresql-15.5.tar.bz2"
   sha256 "8f53aa95d78eb8e82536ea46b68187793b42bba3b4f65aa342f540b23c9b10a6"
   license "PostgreSQL"
   revision 1
 
   livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(15(?:\.\d+)+)/?["' >]}i)
+    url "https:ftp.postgresql.orgpubsource"
+    regex(%r{href=["']?v?(15(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class PostgresqlAT15 < Formula
 
   keg_only :versioned_formula
 
-  # https://www.postgresql.org/support/versioning/
+  # https:www.postgresql.orgsupportversioning
   deprecate! date: "2027-11-11", because: :unsupported
 
   depends_on "pkg-config" => :build
@@ -31,7 +31,7 @@ class PostgresqlAT15 < Formula
   depends_on "icu4c"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https://github.com/Homebrew/homebrew-core/issues/47494.
+  # See https:github.comHomebrewhomebrew-coreissues47494.
   depends_on "krb5"
 
   depends_on "lz4"
@@ -50,7 +50,7 @@ class PostgresqlAT15 < Formula
 
   # Fix compatibility with OpenSSL 3.2
   # Remove once merged
-  # Ref https://www.postgresql.org/message-id/CX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
+  # Ref https:www.postgresql.orgmessage-idCX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
   patch :DATA
 
   def install
@@ -93,50 +93,50 @@ class PostgresqlAT15 < Formula
     # which does not work on CLT-only installs.
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
-    system "./configure", *args
+    system ".configure", *args
 
     # Work around busted path magic in Makefile.global.in. This can't be specified
-    # in ./configure, but needs to be set here otherwise install prefixes containing
+    # in .configure, but needs to be set here otherwise install prefixes containing
     # the string "postgres" will get an incorrect pkglibdir.
-    # See https://github.com/Homebrew/homebrew-core/issues/62930#issuecomment-709411789
-    system "make", "pkglibdir=#{opt_lib}/postgresql",
-                   "pkgincludedir=#{opt_include}/postgresql",
-                   "includedir_server=#{opt_include}/postgresql/server"
+    # See https:github.comHomebrewhomebrew-coreissues62930#issuecomment-709411789
+    system "make", "pkglibdir=#{opt_lib}postgresql",
+                   "pkgincludedir=#{opt_include}postgresql",
+                   "includedir_server=#{opt_include}postgresqlserver"
     system "make", "install-world", "datadir=#{pkgshare}",
                                     "libdir=#{lib}",
-                                    "pkglibdir=#{lib}/postgresql",
+                                    "pkglibdir=#{lib}postgresql",
                                     "includedir=#{include}",
-                                    "pkgincludedir=#{include}/postgresql",
-                                    "includedir_server=#{include}/postgresql/server",
-                                    "includedir_internal=#{include}/postgresql/internal"
+                                    "pkgincludedir=#{include}postgresql",
+                                    "includedir_server=#{include}postgresqlserver",
+                                    "includedir_internal=#{include}postgresqlinternal"
 
     if OS.linux?
-      inreplace lib/"postgresql/pgxs/src/Makefile.global",
-                "LD = #{HOMEBREW_PREFIX}/Homebrew/Library/Homebrew/shims/linux/super/ld",
-                "LD = #{HOMEBREW_PREFIX}/bin/ld"
+      inreplace lib"postgresqlpgxssrcMakefile.global",
+                "LD = #{HOMEBREW_PREFIX}HomebrewLibraryHomebrewshimslinuxsuperld",
+                "LD = #{HOMEBREW_PREFIX}binld"
     end
   end
 
   def post_install
-    (var/"log").mkpath
+    (var"log").mkpath
     postgresql_datadir.mkpath
 
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}/initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system "#{bin}initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
-    var/name
+    varname
   end
 
   def postgresql_log_path
-    var/"log/#{name}.log"
+    var"log#{name}.log"
   end
 
   def pg_version_exists?
-    (postgresql_datadir/"PG_VERSION").exist?
+    (postgresql_datadir"PG_VERSION").exist?
   end
 
   def caveats
@@ -144,12 +144,12 @@ class PostgresqlAT15 < Formula
       This formula has created a default database cluster with:
         initdb --locale=C -E UTF-8 #{postgresql_datadir}
       For more details, read:
-        https://www.postgresql.org/docs/#{version.major}/app-initdb.html
+        https:www.postgresql.orgdocs#{version.major}app-initdb.html
     EOS
   end
 
   service do
-    run [opt_bin/"postgres", "-D", f.postgresql_datadir]
+    run [opt_bin"postgres", "-D", f.postgresql_datadir]
     environment_variables LC_ALL: "C"
     keep_alive true
     log_path f.postgresql_log_path
@@ -158,24 +158,24 @@ class PostgresqlAT15 < Formula
   end
 
   test do
-    system "#{bin}/initdb", testpath/"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_equal opt_pkgshare.to_s, shell_output("#{bin}/pg_config --sharedir").chomp
-    assert_equal opt_lib.to_s, shell_output("#{bin}/pg_config --libdir").chomp
-    assert_equal (opt_lib/"postgresql").to_s, shell_output("#{bin}/pg_config --pkglibdir").chomp
-    assert_equal (opt_include/"postgresql").to_s, shell_output("#{bin}/pg_config --pkgincludedir").chomp
-    assert_equal (opt_include/"postgresql/server").to_s, shell_output("#{bin}/pg_config --includedir-server").chomp
-    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{bin}/pg_config --cppflags")
+    system "#{bin}initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    assert_equal opt_pkgshare.to_s, shell_output("#{bin}pg_config --sharedir").chomp
+    assert_equal opt_lib.to_s, shell_output("#{bin}pg_config --libdir").chomp
+    assert_equal (opt_lib"postgresql").to_s, shell_output("#{bin}pg_config --pkglibdir").chomp
+    assert_equal (opt_include"postgresql").to_s, shell_output("#{bin}pg_config --pkgincludedir").chomp
+    assert_equal (opt_include"postgresqlserver").to_s, shell_output("#{bin}pg_config --includedir-server").chomp
+    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{bin}pg_config --cppflags")
   end
 end
 
 __END__
-diff --git a/src/backend/libpq/be-secure-openssl.c b/src/backend/libpq/be-secure-openssl.c
+diff --git asrcbackendlibpqbe-secure-openssl.c bsrcbackendlibpqbe-secure-openssl.c
 index f5c5ed210e..aed8a75345 100644
---- a/src/backend/libpq/be-secure-openssl.c
-+++ b/src/backend/libpq/be-secure-openssl.c
+--- asrcbackendlibpqbe-secure-openssl.c
++++ bsrcbackendlibpqbe-secure-openssl.c
 @@ -839,11 +839,6 @@ be_tls_write(Port *port, void *ptr, size_t len, int *waitfor)
   * to retry; do we need to adopt their logic for that?
-  */
+  *
 
 -#ifndef HAVE_BIO_GET_DATA
 -#define BIO_get_data(bio) (bio->ptr)
@@ -212,13 +212,13 @@ index f5c5ed210e..aed8a75345 100644
 
  	BIO_set_fd(bio, fd, BIO_NOCLOSE);
  	SSL_set_bio(port->ssl, bio, bio);
-diff --git a/src/interfaces/libpq/fe-secure-openssl.c b/src/interfaces/libpq/fe-secure-openssl.c
+diff --git asrcinterfaceslibpqfe-secure-openssl.c bsrcinterfaceslibpqfe-secure-openssl.c
 index af59ff49f7..8d68d023e9 100644
---- a/src/interfaces/libpq/fe-secure-openssl.c
-+++ b/src/interfaces/libpq/fe-secure-openssl.c
+--- asrcinterfaceslibpqfe-secure-openssl.c
++++ bsrcinterfaceslibpqfe-secure-openssl.c
 @@ -1800,11 +1800,6 @@ PQsslAttribute(PGconn *conn, const char *attribute_name)
   * to retry; do we need to adopt their logic for that?
-  */
+  *
 
 -#ifndef HAVE_BIO_GET_DATA
 -#define BIO_get_data(bio) (bio->ptr)

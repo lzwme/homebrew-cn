@@ -1,14 +1,14 @@
 class ServiceWeaver < Formula
   desc "Programming framework for writing and deploying cloud applications"
-  homepage "https://serviceweaver.dev/"
+  homepage "https:serviceweaver.dev"
   license "Apache-2.0"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ServiceWeaver/weaver/archive/refs/tags/v0.22.0.tar.gz"
+    url "https:github.comServiceWeaverweaverarchiverefstagsv0.22.0.tar.gz"
     sha256 "d3a5354377ac4b72f577659ae21ba4e984f11fb594e999a5a6c1c398414dd0cf"
 
     resource "weaver-gke" do
-      url "https://ghproxy.com/https://github.com/ServiceWeaver/weaver-gke/archive/refs/tags/v0.21.0.tar.gz"
+      url "https:github.comServiceWeaverweaver-gkearchiverefstagsv0.21.0.tar.gz"
       sha256 "3741f827ddd8e4f1c84410a5b11647781510078cb6271064892468fc32f751f1"
     end
   end
@@ -17,10 +17,10 @@ class ServiceWeaver < Formula
   # latest tagged version, regardless of whether there is a GitHub release.
   # With that in mind, we check the Git tags and ignore whether the version is
   # the "latest" release on GitHub.
-  # See: https://github.com/ServiceWeaver/weaver/issues/603#issuecomment-1722048623
+  # See: https:github.comServiceWeaverweaverissues603#issuecomment-1722048623
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,10 +34,10 @@ class ServiceWeaver < Formula
   end
 
   head do
-    url "https://github.com/ServiceWeaver/weaver.git", branch: "main"
+    url "https:github.comServiceWeaverweaver.git", branch: "main"
 
     resource "weaver-gke" do
-      url "https://github.com/ServiceWeaver/weaver-gke.git", branch: "main"
+      url "https:github.comServiceWeaverweaver-gke.git", branch: "main"
     end
   end
 
@@ -46,22 +46,22 @@ class ServiceWeaver < Formula
   conflicts_with "weaver", because: "both install a `weaver` binary"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"weaver"), "./cmd/weaver"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"weaver"), ".cmdweaver"
     resource("weaver-gke").stage do
       ["weaver-gke", "weaver-gke-local"].each do |f|
-        system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/f), "./cmd/#{f}"
+        system "go", "build", *std_go_args(ldflags: "-s -w", output: binf), ".cmd#{f}"
       end
     end
   end
 
   test do
-    output = shell_output("#{bin}/weaver single status")
+    output = shell_output("#{bin}weaver single status")
     assert_match "DEPLOYMENTS", output
 
-    gke_output = shell_output("#{bin}/weaver gke status 2>&1", 1)
+    gke_output = shell_output("#{bin}weaver gke status 2>&1", 1)
     assert_match "gcloud not installed", gke_output
 
-    gke_local_output = shell_output("#{bin}/weaver gke-local status 2>&1", 1)
+    gke_local_output = shell_output("#{bin}weaver gke-local status 2>&1", 1)
     assert_match "connect: connection refused", gke_local_output
   end
 end

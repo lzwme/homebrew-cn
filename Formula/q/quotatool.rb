@@ -1,7 +1,7 @@
 class Quotatool < Formula
   desc "Edit disk quotas from the command-line"
-  homepage "https://quotatool.ekenberg.se/"
-  url "https://github.com/ekenberg/quotatool.git",
+  homepage "https:quotatool.ekenberg.se"
+  url "https:github.comekenbergquotatool.git",
     tag:      "v1.6.3",
     revision: "a32e83b5cc414a0a28d4e703f6012349a92c2d4d"
   license "GPL-2.0-or-later"
@@ -21,13 +21,13 @@ class Quotatool < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     sbin.mkpath
     man8.mkpath
     system "make", "install"
   end
 
   test do
-    system "#{sbin}/quotatool", "-V"
+    system "#{sbin}quotatool", "-V"
   end
 end

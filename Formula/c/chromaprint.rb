@@ -1,7 +1,7 @@
 class Chromaprint < Formula
   desc "Core component of the AcoustID project (Audio fingerprinting)"
-  homepage "https://acoustid.org/chromaprint"
-  url "https://ghproxy.com/https://github.com/acoustid/chromaprint/releases/download/v1.5.1/chromaprint-1.5.1.tar.gz"
+  homepage "https:acoustid.orgchromaprint"
+  url "https:github.comacoustidchromaprintreleasesdownloadv1.5.1chromaprint-1.5.1.tar.gz"
   sha256 "a1aad8fa3b8b18b78d3755b3767faff9abb67242e01b478ec9a64e190f335e1c"
   license "LGPL-2.1-or-later"
   revision 1
@@ -24,15 +24,15 @@ class Chromaprint < Formula
 
   # Backport support for FFmpeg 5+. Remove in the next release
   patch do
-    url "https://github.com/acoustid/chromaprint/commit/584960fbf785f899d757ccf67222e3cf3f95a963.patch?full_index=1"
+    url "https:github.comacoustidchromaprintcommit584960fbf785f899d757ccf67222e3cf3f95a963.patch?full_index=1"
     sha256 "b9db11db3589c5f4a2999c1a782bd41f614d438f18a6ed3b5167165d0863f9c2"
   end
   patch do
-    url "https://github.com/acoustid/chromaprint/commit/8ccad6937177b1b92e40ab8f4447ea27bac009a7.patch?full_index=1"
+    url "https:github.comacoustidchromaprintcommit8ccad6937177b1b92e40ab8f4447ea27bac009a7.patch?full_index=1"
     sha256 "47c9cc257c6e5d46840e9b64ba5f1bcee2705eac3d7f5b23ca0fb4aefc6b8189"
   end
   patch do
-    url "https://github.com/acoustid/chromaprint/commit/aa67c95b9e486884a6d3ee8b0c91207d8c2b0551.patch?full_index=1"
+    url "https:github.comacoustidchromaprintcommitaa67c95b9e486884a6d3ee8b0c91207d8c2b0551.patch?full_index=1"
     sha256 "f90f5f13a95f1d086dbf98cd3da072d1754299987ee1734a6d62fcda2139b55d"
   end
 
@@ -46,7 +46,7 @@ class Chromaprint < Formula
   end
 
   test do
-    out = shell_output("#{bin}/fpcalc -json -format s16le -rate 44100 -channels 2 -length 10 /dev/zero")
+    out = shell_output("#{bin}fpcalc -json -format s16le -rate 44100 -channels 2 -length 10 devzero")
     assert_equal "AQAAO0mUaEkSRZEGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", JSON.parse(out)["fingerprint"]
   end
 end

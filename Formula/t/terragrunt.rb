@@ -1,7 +1,7 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
-  homepage "https://terragrunt.gruntwork.io/"
-  url "https://ghproxy.com/https://github.com/gruntwork-io/terragrunt/archive/refs/tags/v0.54.5.tar.gz"
+  homepage "https:terragrunt.gruntwork.io"
+  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.54.5.tar.gz"
   sha256 "b3530c68a704a98e1f7b3e7bb9a5be567ec82f6030470686620d3978d42722c5"
   license "MIT"
 
@@ -22,12 +22,12 @@ class Terragrunt < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/gruntwork-io/go-commons/version.Version=#{version}
+      -X github.comgruntwork-iogo-commonsversion.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/terragrunt --version")
+    assert_match version.to_s, shell_output("#{bin}terragrunt --version")
   end
 end

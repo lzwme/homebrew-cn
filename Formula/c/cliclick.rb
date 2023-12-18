@@ -1,10 +1,10 @@
 class Cliclick < Formula
   desc "Tool for emulating mouse and keyboard events"
-  homepage "https://www.bluem.net/jump/cliclick/"
-  url "https://ghproxy.com/https://github.com/BlueM/cliclick/archive/refs/tags/5.1.tar.gz"
+  homepage "https:www.bluem.netjumpcliclick"
+  url "https:github.comBlueMcliclickarchiverefstags5.1.tar.gz"
   sha256 "58bb36bca90fdb91b620290ba9cc0f885b80716cb7309b9ff4ad18edc96ce639"
   license "BSD-3-Clause"
-  head "https://github.com/BlueM/cliclick.git", branch: "master"
+  head "https:github.comBlueMcliclick.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c0d008172484bc0a36ea4582ff2e462396620bd2d180a02427585aec66f48e5"
@@ -26,6 +26,6 @@ class Cliclick < Formula
   end
 
   test do
-    system bin/"cliclick", "p:OK"
+    system bin"cliclick", "p:OK"
   end
 end

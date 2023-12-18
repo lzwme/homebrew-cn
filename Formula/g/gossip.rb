@@ -1,11 +1,11 @@
 class Gossip < Formula
   desc "Desktop client for Nostr written in Rust"
-  homepage "https://github.com/mikedilger/gossip"
-  url "https://github.com/mikedilger/gossip.git",
+  homepage "https:github.commikedilgergossip"
+  url "https:github.commikedilgergossip.git",
       tag:      "v0.8.2",
       revision: "32eecc4c465660be149148f8940ae4ec4a5f94da"
   license "MIT"
-  head "https://github.com/mikedilger/gossip.git", branch: "master"
+  head "https:github.commikedilgergossip.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "061e378f584dc7ede34bedf729c33f5e27184e712d22dd7566c7507b2610db0a"
@@ -30,8 +30,8 @@ class Gossip < Formula
   end
 
   test do
-    mkdir_p testpath/"Library/Application Support" # for macos
-    mkdir_p testpath/".local/share" # for linux
+    mkdir_p testpath"LibraryApplication Support" # for macos
+    mkdir_p testpath".localshare" # for linux
     json = <<~JSON
       {
         "id": "b9fead6eef87d8400cbc1a5621600b360438affb9760a6a043cc0bddea21dab6",
@@ -43,6 +43,6 @@ class Gossip < Formula
         "sig": "76d19889a803236165a290fa8f3cf5365af8977ee1e002afcfd37063d1355fc755d0293d27ba0ec1c2468acfaf95b7e950e57df275bb32d7a4a3136f8862d2b7"
       }
     JSON
-    assert_match "Valid event", shell_output("#{bin}/gossip verify_json '#{json}'")
+    assert_match "Valid event", shell_output("#{bin}gossip verify_json '#{json}'")
   end
 end

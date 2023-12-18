@@ -1,10 +1,10 @@
 class Notation < Formula
   desc "CLI tool to sign and verify OCI artifacts and container images"
-  homepage "https://notaryproject.dev/"
-  url "https://ghproxy.com/https://github.com/notaryproject/notation/archive/refs/tags/v1.0.1.tar.gz"
+  homepage "https:notaryproject.dev"
+  url "https:github.comnotaryprojectnotationarchiverefstagsv1.0.1.tar.gz"
   sha256 "f3f9df6fbd717cc169030d6527591d56fd37f0469a4a3b4c4e3d4c1ee0264299"
   license "Apache-2.0"
-  head "https://github.com/notaryproject/notation.git", branch: "main"
+  head "https:github.comnotaryprojectnotation.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dca353ae6bc14a90bf43293e91b8ffcacb44eaa22863ff9839a111f40fab35d8"
@@ -19,22 +19,22 @@ class Notation < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.com/notaryproject/notation"
+    project = "github.comnotaryprojectnotation"
     ldflags = %W[
       -s -w
-      -X #{project}/internal/version.Version=v#{version}
-      -X #{project}/internal/version.GitCommit=
-      -X #{project}/internal/version.BuildMetadata=Homebrew
+      -X #{project}internalversion.Version=v#{version}
+      -X #{project}internalversion.GitCommit=
+      -X #{project}internalversion.BuildMetadata=Homebrew
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/notation"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdnotation"
 
-    generate_completions_from_executable(bin/"notation", "completion")
+    generate_completions_from_executable(bin"notation", "completion")
   end
 
   test do
-    assert_match "v#{version}+Homebrew", shell_output("#{bin}/notation version")
+    assert_match "v#{version}+Homebrew", shell_output("#{bin}notation version")
 
     assert_match "Successfully added #{tap.user}.crt to named store #{tap.user} of type ca",
-      shell_output("#{bin}/notation cert generate-test --default '#{tap.user}'").strip
+      shell_output("#{bin}notation cert generate-test --default '#{tap.user}'").strip
   end
 end

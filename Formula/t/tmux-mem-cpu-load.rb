@@ -1,10 +1,10 @@
 class TmuxMemCpuLoad < Formula
   desc "CPU, RAM memory, and load monitor for use with tmux"
-  homepage "https://github.com/thewtex/tmux-mem-cpu-load"
-  url "https://ghproxy.com/https://github.com/thewtex/tmux-mem-cpu-load/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comthewtextmux-mem-cpu-load"
+  url "https:github.comthewtextmux-mem-cpu-loadarchiverefstagsv3.8.0.tar.gz"
   sha256 "deb9bdedee2aa8ad0e1e95da4c2ffdfdd0d205288ac3c9ae42c770cec4df6615"
   license "Apache-2.0"
-  head "https://github.com/thewtex/tmux-mem-cpu-load.git", branch: "master"
+  head "https:github.comthewtextmux-mem-cpu-load.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b183a3727facf1dfcfed74e180eb3f56f50f09c7ffb367864babd564ba785a8"
@@ -27,6 +27,6 @@ class TmuxMemCpuLoad < Formula
   end
 
   test do
-    system bin/"tmux-mem-cpu-load"
+    system bin"tmux-mem-cpu-load"
   end
 end

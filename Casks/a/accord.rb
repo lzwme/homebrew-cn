@@ -2,14 +2,14 @@ cask "accord" do
   version "1.7.1"
   sha256 "6dacc0767a03265ea6e9103d40eab4f9c51c8ad7ab6c3b86f9f3d992c630ce80"
 
-  url "https://ghproxy.com/https://github.com/evelyneee/accord/releases/download/v#{version}/Accord.app.zip"
+  url "https:github.comevelyneeeaccordreleasesdownloadv#{version}Accord.app.zip"
   name "accord"
   desc "Discord client written in Swift for modern Macs"
-  homepage "https://github.com/evelyneee/accord"
+  homepage "https:github.comevelyneeeaccord"
 
   livecheck do
     url :url
-    regex(/v?\.?(\d+(?:\.\d+)+)/i)
+    regex(v?\.?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -18,7 +18,7 @@ cask "accord" do
   app "Accord.app"
 
   zap trash: [
-    "~/Library/Application Scripts/red.evelyn.accord",
-    "~/Library/Containers/red.evelyn.accord",
+    "~LibraryApplication Scriptsred.evelyn.accord",
+    "~LibraryContainersred.evelyn.accord",
   ]
 end

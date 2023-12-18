@@ -1,14 +1,14 @@
 class GrpcSwift < Formula
   desc "Swift language implementation of gRPC"
-  homepage "https://github.com/grpc/grpc-swift"
-  url "https://ghproxy.com/https://github.com/grpc/grpc-swift/archive/refs/tags/1.21.0.tar.gz"
+  homepage "https:github.comgrpcgrpc-swift"
+  url "https:github.comgrpcgrpc-swiftarchiverefstags1.21.0.tar.gz"
   sha256 "675b135443d6fe0c2054ed4c0707576282d8829e2ae50aeaa5b07f2bd84aa6f8"
   license "Apache-2.0"
-  head "https://github.com/grpc/grpc-swift.git", branch: "main"
+  head "https:github.comgrpcgrpc-swift.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,11 +29,11 @@ class GrpcSwift < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "protoc-gen-grpc-swift"
-    bin.install ".build/release/protoc-gen-grpc-swift"
+    bin.install ".buildreleaseprotoc-gen-grpc-swift"
   end
 
   test do
-    (testpath/"echo.proto").write <<~EOS
+    (testpath"echo.proto").write <<~EOS
       syntax = "proto3";
       service Echo {
         rpc Get(EchoRequest) returns (EchoResponse) {}
@@ -48,7 +48,7 @@ class GrpcSwift < Formula
         string text = 1;
       }
     EOS
-    system Formula["protobuf"].opt_bin/"protoc", "echo.proto", "--grpc-swift_out=."
-    assert_predicate testpath/"echo.grpc.swift", :exist?
+    system Formula["protobuf"].opt_bin"protoc", "echo.proto", "--grpc-swift_out=."
+    assert_predicate testpath"echo.grpc.swift", :exist?
   end
 end

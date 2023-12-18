@@ -1,11 +1,11 @@
 class PandocIncludeCode < Formula
   desc "Pandoc filter for including code from source files"
-  homepage "https://github.com/owickstrom/pandoc-include-code"
-  url "https://hackage.haskell.org/package/pandoc-include-code-1.5.0.0/pandoc-include-code-1.5.0.0.tar.gz"
+  homepage "https:github.comowickstrompandoc-include-code"
+  url "https:hackage.haskell.orgpackagepandoc-include-code-1.5.0.0pandoc-include-code-1.5.0.0.tar.gz"
   sha256 "5d01a95f8a28cd858144d503631be6bb2d015faf9284326ee3c82c8d8433501d"
   license "MPL-2.0"
   revision 2
-  head "https://github.com/owickstrom/pandoc-include-code.git", branch: "master"
+  head "https:github.comowickstrompandoc-include-code.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "03487512c8b41b88561df1e3e2f9d93ee09a6ea0381346c400417716a2b88b55"
@@ -19,7 +19,7 @@ class PandocIncludeCode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab22b3df53ac6762dcc8b564ebbefdc96a814ba31f93fc4dd701bbb28bacb958"
   end
 
-  # see https://github.com/owickstrom/pandoc-include-code/issues/46
+  # see https:github.comowickstrompandoc-include-codeissues46
   disable! date: "2023-09-06", because: :unmaintained
 
   depends_on "cabal-install" => :build
@@ -27,7 +27,7 @@ class PandocIncludeCode < Formula
   depends_on "pandoc"
 
   # patch for pandoc 2.11, remove in the next release
-  # patch ref, https://github.com/owickstrom/pandoc-include-code/pull/35
+  # patch ref, https:github.comowickstrompandoc-include-codepull35
   patch :DATA
 
   def install
@@ -36,23 +36,23 @@ class PandocIncludeCode < Formula
   end
 
   test do
-    (testpath/"hello.md").write <<~EOS
+    (testpath"hello.md").write <<~EOS
       ```{include=test.rb}
       ```
     EOS
-    (testpath/"test.rb").write <<~EOS
+    (testpath"test.rb").write <<~EOS
       puts "Hello"
     EOS
-    system Formula["pandoc"].bin/"pandoc", "-F", bin/"pandoc-include-code", "-o", "out.html", "hello.md"
-    assert_match "Hello", (testpath/"out.html").read
+    system Formula["pandoc"].bin"pandoc", "-F", bin"pandoc-include-code", "-o", "out.html", "hello.md"
+    assert_match "Hello", (testpath"out.html").read
   end
 end
 
 __END__
-diff --git a/pandoc-include-code.cabal b/pandoc-include-code.cabal
+diff --git apandoc-include-code.cabal bpandoc-include-code.cabal
 index f587c70..0554824 100644
---- a/pandoc-include-code.cabal
-+++ b/pandoc-include-code.cabal
+--- apandoc-include-code.cabal
++++ bpandoc-include-code.cabal
 @@ -36,14 +36,14 @@ library
                     , filepath
                     , text                 >= 1.2      && < 2

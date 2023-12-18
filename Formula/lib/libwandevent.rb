@@ -1,7 +1,7 @@
 class Libwandevent < Formula
   desc "API for developing event-driven programs"
-  homepage "https://web.archive.org/web/20220615162419/https://research.wand.net.nz/software/libwandevent.php"
-  url "https://web.archive.org/web/20220126151045/https://research.wand.net.nz/software/libwandevent/libwandevent-3.0.2.tar.gz"
+  homepage "https:web.archive.orgweb20220615162419https:research.wand.net.nzsoftwarelibwandevent.php"
+  url "https:web.archive.orgweb20220126151045https:research.wand.net.nzsoftwarelibwandeventlibwandevent-3.0.2.tar.gz"
   sha256 "48fa09918ff94f6249519118af735352e2119dc4f9b736c861ef35d59466644a"
   license "GPL-2.0"
 
@@ -24,19 +24,19 @@ class Libwandevent < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <sys/time.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <systime.h>
       #include <libwandevent.h>
 
       int main() {
@@ -45,6 +45,6 @@ class Libwandevent < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-L#{lib}", "-lwandevent", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

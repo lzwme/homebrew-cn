@@ -1,16 +1,16 @@
 class Wandio < Formula
   desc "Transparently read from and write to zip, bzip2, lzma or zstd archives"
-  homepage "https://github.com/LibtraceTeam/wandio"
-  url "https://ghproxy.com/https://github.com/LibtraceTeam/wandio/archive/refs/tags/4.2.6-1.tar.gz"
+  homepage "https:github.comLibtraceTeamwandio"
+  url "https:github.comLibtraceTeamwandioarchiverefstags4.2.6-1.tar.gz"
   version "4.2.6"
   sha256 "f035d4d6beadf7a7e5619fb73db5a84d338008b5f4d6b1b8843619547248ec73"
   license "LGPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    regex(^v?(\d+(?:[.-]\d+)+)$i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub(/-1$/, "") }.compact
+      tags.map { |tag| tag[regex, 1]&.gsub(-1$, "") }.compact
     end
   end
 
@@ -39,16 +39,16 @@ class Wandio < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./bootstrap.sh"
-    system "./configure", *std_configure_args,
+    system ".bootstrap.sh"
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-http"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/wandiocat", "-z", "9", "-Z", "gzip", "-o", "test.gz",
+    system "#{bin}wandiocat", "-z", "9", "-Z", "gzip", "-o", "test.gz",
       test_fixtures("test.png"), test_fixtures("test.pdf")
-    assert_predicate testpath/"test.gz", :exist?
+    assert_predicate testpath"test.gz", :exist?
   end
 end

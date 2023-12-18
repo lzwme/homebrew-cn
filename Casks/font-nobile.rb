@@ -2,12 +2,12 @@ cask "font-nobile" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/nobile"
+      only_path: "oflnobile"
   name "Nobile"
-  homepage "https://fonts.google.com/specimen/Nobile"
+  homepage "https:fonts.google.comspecimenNobile"
 
   font "Nobile-Bold.ttf"
   font "Nobile-BoldItalic.ttf"

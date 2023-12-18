@@ -2,12 +2,12 @@ cask "font-vollkorn-sc" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/vollkornsc"
+      only_path: "oflvollkornsc"
   name "Vollkorn SC"
-  homepage "https://fonts.google.com/specimen/Vollkorn+SC"
+  homepage "https:fonts.google.comspecimenVollkorn+SC"
 
   font "VollkornSC-Black.ttf"
   font "VollkornSC-Bold.ttf"

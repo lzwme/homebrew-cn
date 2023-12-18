@@ -1,10 +1,10 @@
 class Terracognita < Formula
   desc "Reads from existing Cloud Providers and generates Terraform code"
-  homepage "https://github.com/cycloidio/terracognita"
-  url "https://ghproxy.com/https://github.com/cycloidio/terracognita/archive/refs/tags/v0.8.4.tar.gz"
+  homepage "https:github.comcycloidioterracognita"
+  url "https:github.comcycloidioterracognitaarchiverefstagsv0.8.4.tar.gz"
   sha256 "7420694805c3ab666591b9686958eb49e61452065546f0eb315f215c8241da84"
   license "MIT"
-  head "https://github.com/cycloidio/terracognita.git", branch: "master"
+  head "https:github.comcycloidioterracognita.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbd00a7bc6811d48d638ac1e8b4b6a9a9845db156627566f50ecf6fd84b3b188"
@@ -21,14 +21,14 @@ class Terracognita < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/cycloidio/terracognita/cmd.Version=v#{version}"
+    ldflags = "-s -w -X github.comcycloidioterracognitacmd.Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/terracognita version")
+    assert_match "v#{version}", shell_output("#{bin}terracognita version")
     assert_match "Error: one of --module, --hcl  or --tfstate are required",
-      shell_output("#{bin}/terracognita aws 2>&1", 1)
-    assert_match "aws_instance", shell_output("#{bin}/terracognita aws resources")
+      shell_output("#{bin}terracognita aws 2>&1", 1)
+    assert_match "aws_instance", shell_output("#{bin}terracognita aws resources")
   end
 end

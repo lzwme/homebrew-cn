@@ -1,10 +1,10 @@
 class Libcouchbase < Formula
   desc "C library for Couchbase"
-  homepage "https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html"
-  url "https://packages.couchbase.com/clients/c/libcouchbase-3.3.10.tar.gz"
+  homepage "https:docs.couchbase.comc-sdkcurrenthello-worldstart-using-sdk.html"
+  url "https:packages.couchbase.comclientsclibcouchbase-3.3.10.tar.gz"
   sha256 "2c92b8dee1d8d02bab756023ff396cf93bf822400ee68f3a8128912a08348063"
   license "Apache-2.0"
-  head "https://github.com/couchbase/libcouchbase.git", branch: "master"
+  head "https:github.comcouchbaselibcouchbase.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "c27418629da8698371efa91c0cc51879d1073b347e75d56ebed0c29a0a3d5259"
@@ -35,6 +35,6 @@ class Libcouchbase < Formula
 
   test do
     assert_match "LCB_ERR_CONNECTION_REFUSED",
-      shell_output("#{bin}/cbc cat document_id -U couchbase://localhost:1 2>&1", 1).strip
+      shell_output("#{bin}cbc cat document_id -U couchbase:localhost:1 2>&1", 1).strip
   end
 end

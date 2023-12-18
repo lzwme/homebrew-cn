@@ -5,11 +5,11 @@ cask "raindropio" do
   sha256 arm:   "179162e2c8d9920af7cc6011119a9259b040f58e0620a58977d488eebba0d4db",
          intel: "ee47adebfab8ebeced793b1a83098664e98f00c04819fd19372f5cd49e8ddf8e"
 
-  url "https://ghproxy.com/https://github.com/raindropio/desktop/releases/download/v#{version}/Raindrop-#{arch}.dmg",
-      verified: "github.com/raindropio/desktop/"
+  url "https:github.comraindropiodesktopreleasesdownloadv#{version}Raindrop-#{arch}.dmg",
+      verified: "github.comraindropiodesktop"
   name "Raindrop.io"
   desc "All-in-one bookmark manager"
-  homepage "https://raindrop.io/"
+  homepage "https:raindrop.io"
 
   # First-party download page links to dmg file from GitHub "latest" release.
   livecheck do
@@ -22,12 +22,12 @@ cask "raindropio" do
   app "Raindrop.io.app"
 
   zap trash: [
-    "~/Library/Application Support/Raindrop.io",
-    "~/Library/Caches/com.apple.Safari/Extensions/Raindrop.io.safariextension",
-    "~/Library/Cookies/io.raindrop.mac.binarycookies",
-    "~/Library/Preferences/io.raindrop.mac.helper.plist",
-    "~/Library/Preferences/io.raindrop.mac.plist",
-    "~/Library/Safari/Extensions/Raindrop.io.safariextz",
-    "~/Library/Saved Application State/io.raindrop.mac.savedState",
+    "~LibraryApplication SupportRaindrop.io",
+    "~LibraryCachescom.apple.SafariExtensionsRaindrop.io.safariextension",
+    "~LibraryCookiesio.raindrop.mac.binarycookies",
+    "~LibraryPreferencesio.raindrop.mac.helper.plist",
+    "~LibraryPreferencesio.raindrop.mac.plist",
+    "~LibrarySafariExtensionsRaindrop.io.safariextz",
+    "~LibrarySaved Application Stateio.raindrop.mac.savedState",
   ]
 end

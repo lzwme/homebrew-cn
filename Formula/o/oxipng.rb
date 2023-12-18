@@ -1,7 +1,7 @@
 class Oxipng < Formula
   desc "Multithreaded PNG optimizer written in Rust"
-  homepage "https://github.com/shssoichiro/oxipng"
-  url "https://ghproxy.com/https://github.com/shssoichiro/oxipng/archive/refs/tags/v9.0.0.tar.gz"
+  homepage "https:github.comshssoichirooxipng"
+  url "https:github.comshssoichirooxipngarchiverefstagsv9.0.0.tar.gz"
   sha256 "534fa8f349f52b01c2ee4332cef25ce1311edca04209ac6d972e38b171550a1b"
   license "MIT"
 
@@ -22,6 +22,6 @@ class Oxipng < Formula
   end
 
   test do
-    system bin/"oxipng", "--pretend", test_fixtures("test.png")
+    system bin"oxipng", "--pretend", test_fixtures("test.png")
   end
 end

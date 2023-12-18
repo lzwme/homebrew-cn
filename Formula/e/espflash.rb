@@ -1,7 +1,7 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
-  homepage "https://github.com/esp-rs/espflash"
-  url "https://ghproxy.com/https://github.com/esp-rs/espflash/archive/refs/tags/v2.1.0.tar.gz"
+  homepage "https:github.comesp-rsespflash"
+  url "https:github.comesp-rsespflasharchiverefstagsv2.1.0.tar.gz"
   sha256 "85a62ee12949eeb9ed0cb186b87f88b1ff04eeabce5c4974cc24c304ed1bf960"
   license any_of: ["MIT", "Apache-2.0"]
 
@@ -32,10 +32,10 @@ class Espflash < Formula
 
   test do
     stable.stage testpath
-    output = shell_output("#{bin}/espflash flash espflash/tests/resources/esp32_hal_blinky --port COMX 2>&1", 1)
+    output = shell_output("#{bin}espflash flash espflashtestsresourcesesp32_hal_blinky --port COMX 2>&1", 1)
     assert_match "espflash::connection_failed", output
 
-    assert_match version.to_s, shell_output("#{bin}/espflash --version")
-    assert_match "A command-line tool for flashing Espressif devices", shell_output("#{bin}/espflash --help")
+    assert_match version.to_s, shell_output("#{bin}espflash --version")
+    assert_match "A command-line tool for flashing Espressif devices", shell_output("#{bin}espflash --help")
   end
 end

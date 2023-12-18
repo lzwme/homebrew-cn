@@ -2,12 +2,12 @@ cask "font-rubik" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/rubik"
+      only_path: "oflrubik"
   name "Rubik"
-  homepage "https://fonts.google.com/specimen/Rubik"
+  homepage "https:fonts.google.comspecimenRubik"
 
   font "Rubik-Italic[wght].ttf"
   font "Rubik[wght].ttf"

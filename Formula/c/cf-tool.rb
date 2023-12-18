@@ -1,7 +1,7 @@
 class CfTool < Formula
   desc "Command-line tool for Codeforces contests"
-  homepage "https://github.com/xalanq/cf-tool"
-  url "https://ghproxy.com/https://github.com/xalanq/cf-tool/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:github.comxalanqcf-tool"
+  url "https:github.comxalanqcf-toolarchiverefstagsv1.0.0.tar.gz"
   sha256 "6671392df969e7decf9bf6b89a43a93c2bde978e005e99ddb7fd84b0c513df9f"
   license "MIT"
 
@@ -18,14 +18,14 @@ class CfTool < Formula
   disable! date: "2023-06-19", because: :unmaintained
 
   depends_on "go@1.17" => :build
-  # https://github.com/shirou/gopsutil/issues/1000
+  # https:github.comshirougopsutilissues1000
   depends_on arch: :x86_64
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath/"src/github.com/xalanq/cf-tool").install buildpath.children
-    cd "src/github.com/xalanq/cf-tool" do
+    (buildpath"srcgithub.comxalanqcf-tool").install buildpath.children
+    cd "srcgithub.comxalanqcf-tool" do
       system "go", "build", "-o", "cf", "-trimpath", "-ldflags", "-s -w", "cf.go"
       bin.install "cf"
       prefix.install_metafiles
@@ -33,6 +33,6 @@ class CfTool < Formula
   end
 
   test do
-    system "#{bin}/cf", "list", "1256"
+    system "#{bin}cf", "list", "1256"
   end
 end

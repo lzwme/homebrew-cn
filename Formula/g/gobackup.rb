@@ -1,10 +1,10 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
-  homepage "https://gobackup.github.io"
-  url "https://ghproxy.com/https://github.com/gobackup/gobackup/archive/refs/tags/v2.7.0.tar.gz"
+  homepage "https:gobackup.github.io"
+  url "https:github.comgobackupgobackuparchiverefstagsv2.7.0.tar.gz"
   sha256 "52c7f04d5c8c099b0f8396cc084af656e024539810652d4f49e40b994f9addb9"
   license "MIT"
-  head "https://github.com/gobackup/gobackup.git", branch: "main"
+  head "https:github.comgobackupgobackup.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "099d4f21e89ece87aeaeee31e49129f8bbacd4c78b2a1b650f35077b06f7d3c8"
@@ -31,9 +31,9 @@ class Gobackup < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gobackup -v")
+    assert_match version.to_s, shell_output("#{bin}gobackup -v")
 
-    config_file = testpath/"gobackup.yml"
+    config_file = testpath"gobackup.yml"
 
     config_file.write <<~EOS
       models:
@@ -41,15 +41,15 @@ class Gobackup < Formula
           storages:
             local:
               type: local
-              path: #{testpath}/backups
+              path: #{testpath}backups
           archive:
             includes:
               - #{config_file}
     EOS
 
-    out = shell_output("#{bin}/gobackup perform -c #{config_file}").chomp
+    out = shell_output("#{bin}gobackup perform -c #{config_file}").chomp
     assert_match "succeeded", out
-    tar_files = Dir.glob("#{testpath}/backups/*.tar")
+    tar_files = Dir.glob("#{testpath}backups*.tar")
     assert_equal 1, tar_files.length
   end
 end

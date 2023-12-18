@@ -1,7 +1,7 @@
 class Ugit < Formula
   desc "Undo git commands. Your damage control git buddy"
-  homepage "https://bhupesh.me/undo-your-last-git-mistake-with-ugit/"
-  url "https://ghproxy.com/https://github.com/Bhupesh-V/ugit/archive/refs/tags/v5.7.tar.gz"
+  homepage "https:bhupesh.meundo-your-last-git-mistake-with-ugit"
+  url "https:github.comBhupesh-Vugitarchiverefstagsv5.7.tar.gz"
   sha256 "9438261ef39fb3785a21edc00b756a9866e44ee373326f0269dc066c9a22ead9"
   license "MIT"
 
@@ -18,7 +18,7 @@ class Ugit < Formula
   end
 
   test do
-    assert_match "ugit version #{version}", shell_output("#{bin}/ugit --version")
-    assert_match "Ummm, you are not inside a Git repo", shell_output("#{bin}/ugit")
+    assert_match "ugit version #{version}", shell_output("#{bin}ugit --version")
+    assert_match "Ummm, you are not inside a Git repo", shell_output("#{bin}ugit")
   end
 end

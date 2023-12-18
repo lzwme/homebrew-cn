@@ -1,10 +1,10 @@
 class Ksh93 < Formula
   desc "KornShell, ksh93"
-  homepage "https://github.com/ksh93/ksh#readme"
-  url "https://ghproxy.com/https://github.com/ksh93/ksh/archive/refs/tags/v1.0.7.tar.gz"
+  homepage "https:github.comksh93ksh#readme"
+  url "https:github.comksh93ksharchiverefstagsv1.0.7.tar.gz"
   sha256 "a5ea1e493f0343c644e12ff03bc464d682b8e61ec034b8e20e95965f62f0b870"
   license "EPL-2.0"
-  head "https://github.com/ksh93/ksh.git", branch: "dev"
+  head "https:github.comksh93ksh.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6b25f714e055c51d1ce2293ef846aa07c46670d283c940de421883bbcd371b8"
@@ -19,17 +19,17 @@ class Ksh93 < Formula
   end
 
   def install
-    system "bin/package", "verbose", "make"
-    system "bin/package", "verbose", "install", prefix
+    system "binpackage", "verbose", "make"
+    system "binpackage", "verbose", "install", prefix
     %w[ksh93 rksh rksh93].each do |alt|
       bin.install_symlink "ksh" => alt
       man1.install_symlink "ksh.1" => "#{alt}.1"
     end
     doc.install "ANNOUNCE"
-    doc.install %w[COMPATIBILITY README RELEASE TYPES].map { |f| "src/cmd/ksh93/#{f}" }
+    doc.install %w[COMPATIBILITY README RELEASE TYPES].map { |f| "srccmdksh93#{f}" }
   end
 
   test do
-    system "#{bin}/ksh93 -c 'A=$(((1./3)+(2./3)));test $A -eq 1'"
+    system "#{bin}ksh93 -c 'A=$(((1.3)+(2.3)));test $A -eq 1'"
   end
 end

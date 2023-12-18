@@ -1,7 +1,7 @@
 class Graphene < Formula
   desc "Thin layer of graphic data types"
-  homepage "https://ebassi.github.io/graphene/"
-  url "https://ghproxy.com/https://github.com/ebassi/graphene/archive/refs/tags/1.10.8.tar.gz"
+  homepage "https:ebassi.github.iographene"
+  url "https:github.comebassigraphenearchiverefstags1.10.8.tar.gz"
   sha256 "922dc109d2dc5dc56617a29bd716c79dd84db31721a8493a13a5f79109a4a4ed"
   license "MIT"
 
@@ -33,7 +33,7 @@ class Graphene < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <graphene-gobject.h>
 
       int main(int argc, char *argv[]) {
@@ -45,14 +45,14 @@ class Graphene < Formula
     glib = Formula["glib"]
     flags = %W[
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/graphene-1.0
-      -I#{lib}/graphene-1.0/include
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}graphene-1.0
+      -I#{lib}graphene-1.0include
       -L#{lib}
       -lgraphene-1.0
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

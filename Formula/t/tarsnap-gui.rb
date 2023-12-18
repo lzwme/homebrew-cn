@@ -1,11 +1,11 @@
 class TarsnapGui < Formula
   desc "Cross-platform GUI for the Tarsnap command-line client"
-  homepage "https://github.com/Tarsnap/tarsnap-gui/wiki"
-  url "https://ghproxy.com/https://github.com/Tarsnap/tarsnap-gui/archive/refs/tags/v1.0.2.tar.gz"
+  homepage "https:github.comTarsnaptarsnap-guiwiki"
+  url "https:github.comTarsnaptarsnap-guiarchiverefstagsv1.0.2.tar.gz"
   sha256 "3b271f474abc0bbeb3d5d62ee76b82785c7d64145e6e8b51fa7907b724c83eae"
   license "BSD-2-Clause"
   revision 1
-  head "https://github.com/Tarsnap/tarsnap-gui.git", branch: "master"
+  head "https:github.comTarsnaptarsnap-gui.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,7 +25,7 @@ class TarsnapGui < Formula
   depends_on "tarsnap"
 
   # Work around build error: Set: Entry, ":CFBundleGetInfoString", Does Not Exist
-  # Issue ref: https://github.com/Tarsnap/tarsnap-gui/issues/557
+  # Issue ref: https:github.comTarsnaptarsnap-guiissues557
   patch :DATA
 
   def install
@@ -33,7 +33,7 @@ class TarsnapGui < Formula
     system "make"
     if OS.mac?
       prefix.install "Tarsnap.app"
-      bin.install_symlink prefix/"Tarsnap.app/Contents/MacOS/Tarsnap" => "tarsnap-gui"
+      bin.install_symlink prefix"Tarsnap.appContentsMacOSTarsnap" => "tarsnap-gui"
     else
       bin.install "tarsnap-gui"
     end
@@ -42,21 +42,21 @@ class TarsnapGui < Formula
   test do
     # Set QT_QPA_PLATFORM to minimal to avoid error "could not connect to display"
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-    system bin/"tarsnap-gui", "--version"
+    system bin"tarsnap-gui", "--version"
   end
 end
 
 __END__
-diff --git a/Tarsnap.pro b/Tarsnap.pro
+diff --git aTarsnap.pro bTarsnap.pro
 index 9954fc5c..560621b1 100644
---- a/Tarsnap.pro
-+++ b/Tarsnap.pro
+--- aTarsnap.pro
++++ bTarsnap.pro
 @@ -131,5 +131,8 @@ osx {
  
      # Add VERSION to the app bundle.  (Why doesn't qmake do this?)
-     INFO_PLIST_PATH = $$shell_quote($${OUT_PWD}/$${TARGET}.app/Contents/Info.plist)
--    QMAKE_POST_LINK += /usr/libexec/PlistBuddy -c \"Set :CFBundleGetInfoString $${VERSION}\" $${INFO_PLIST_PATH} ;
-+    QMAKE_POST_LINK += /usr/libexec/PlistBuddy \
+     INFO_PLIST_PATH = $$shell_quote($${OUT_PWD}$${TARGET}.appContentsInfo.plist)
+-    QMAKE_POST_LINK += usrlibexecPlistBuddy -c \"Set :CFBundleGetInfoString $${VERSION}\" $${INFO_PLIST_PATH} ;
++    QMAKE_POST_LINK += usrlibexecPlistBuddy \
 +                            -c \"Add :CFBundleVersionString string $${VERSION}\" \
 +                            -c \"Add :CFBundleShortVersionString string $${VERSION}\" \
 +                            $${INFO_PLIST_PATH} ;

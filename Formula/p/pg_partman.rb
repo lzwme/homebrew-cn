@@ -1,7 +1,7 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
-  homepage "https://github.com/pgpartman/pg_partman"
-  url "https://ghproxy.com/https://github.com/pgpartman/pg_partman/archive/refs/tags/v5.0.0.tar.gz"
+  homepage "https:github.compgpartmanpg_partman"
+  url "https:github.compgpartmanpg_partmanarchiverefstagsv5.0.0.tar.gz"
   sha256 "222e7175c9afc417aa6e03e826de4a5eb2a88fd8d1e3d06321aa8dac2471c005"
   license "PostgreSQL"
 
@@ -22,31 +22,31 @@ class PgPartman < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
 
     system "make"
-    (lib/postgresql.name).install "src/pg_partman_bgw.so"
-    (share/postgresql.name/"extension").install "pg_partman.control"
-    (share/postgresql.name/"extension").install Dir["sql/pg_partman--*.sql"]
-    (share/postgresql.name/"extension").install Dir["updates/pg_partman--*.sql"]
+    (libpostgresql.name).install "srcpg_partman_bgw.so"
+    (sharepostgresql.name"extension").install "pg_partman.control"
+    (sharepostgresql.name"extension").install Dir["sqlpg_partman--*.sql"]
+    (sharepostgresql.name"extension").install Dir["updatespg_partman--*.sql"]
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'pg_partman_bgw'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"pg_partman\";", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop", "-D", testpath"test"
     end
   end
 end

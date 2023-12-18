@@ -1,7 +1,7 @@
 class Prototool < Formula
   desc "Your Swiss Army Knife for Protocol Buffers"
-  homepage "https://github.com/uber/prototool"
-  url "https://ghproxy.com/https://github.com/uber/prototool/archive/refs/tags/v1.10.0.tar.gz"
+  homepage "https:github.comuberprototool"
+  url "https:github.comuberprototoolarchiverefstagsv1.10.0.tar.gz"
   sha256 "5b516418f41f7283a405bf4a8feb2c7034d9f3d8c292b2caaebcd218581d2de4"
   license "MIT"
 
@@ -25,16 +25,16 @@ class Prototool < Formula
   def install
     system "make", "brewgen"
     cd "brew" do
-      bin.install "bin/prototool"
-      bash_completion.install "etc/bash_completion.d/prototool"
-      zsh_completion.install "etc/zsh/site-functions/_prototool"
-      man1.install Dir["share/man/man1/*.1"]
+      bin.install "binprototool"
+      bash_completion.install "etcbash_completion.dprototool"
+      zsh_completion.install "etczshsite-functions_prototool"
+      man1.install Dir["sharemanman1*.1"]
       prefix.install_metafiles
     end
   end
 
   test do
-    system bin/"prototool", "config", "init"
-    assert_predicate testpath/"prototool.yaml", :exist?
+    system bin"prototool", "config", "init"
+    assert_predicate testpath"prototool.yaml", :exist?
   end
 end

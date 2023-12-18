@@ -2,12 +2,12 @@ cask "font-ibm-plex-sans-thai" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ibmplexsansthai"
+      only_path: "oflibmplexsansthai"
   name "IBM Plex Sans Thai"
-  homepage "https://fonts.google.com/specimen/IBM+Plex+Sans+Thai"
+  homepage "https:fonts.google.comspecimenIBM+Plex+Sans+Thai"
 
   font "IBMPlexSansThai-Bold.ttf"
   font "IBMPlexSansThai-ExtraLight.ttf"

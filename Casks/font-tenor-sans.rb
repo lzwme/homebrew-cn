@@ -2,10 +2,10 @@ cask "font-tenor-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/tenorsans/TenorSans-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofltenorsansTenorSans-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Tenor Sans"
-  homepage "https://fonts.google.com/specimen/Tenor+Sans"
+  homepage "https:fonts.google.comspecimenTenor+Sans"
 
   font "TenorSans-Regular.ttf"
 

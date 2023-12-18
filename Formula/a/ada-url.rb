@@ -1,10 +1,10 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
-  homepage "https://github.com/ada-url/ada"
-  url "https://ghproxy.com/https://github.com/ada-url/ada/archive/refs/tags/v2.7.4.tar.gz"
+  homepage "https:github.comada-urlada"
+  url "https:github.comada-urladaarchiverefstagsv2.7.4.tar.gz"
   sha256 "897942ba8c99153f916c25698a49604022f3e54441cfa9b76f657ad15b6ca041"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/ada-url/ada.git", branch: "main"
+  head "https:github.comada-urlada.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "459321dda3d2adb61a9e5b2ed2dcfacda7295e525b75f1951547f936e5a7ff17"
@@ -27,12 +27,12 @@ class AdaUrl < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "ada.h"
       #include <iostream>
 
       int main(int , char *[]) {
-        auto url = ada::parse<ada::url_aggregator>("https://www.github.com/ada-url/ada");
+        auto url = ada::parse<ada::url_aggregator>("https:www.github.comada-urlada");
         url->set_protocol("http");
         std::cout << url->get_protocol() << std::endl;
         return EXIT_SUCCESS;
@@ -41,6 +41,6 @@ class AdaUrl < Formula
 
     system ENV.cxx, "test.cpp", "-std=c++17",
            "-I#{include}", "-L#{lib}", "-lada", "-o", "test"
-    assert_equal "http:", shell_output("./test").chomp
+    assert_equal "http:", shell_output(".test").chomp
   end
 end

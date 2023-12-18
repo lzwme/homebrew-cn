@@ -1,10 +1,10 @@
 class Onioncat < Formula
   desc "VPN-adapter that provides location privacy using Tor or I2P"
-  homepage "https://www.onioncat.org"
-  url "https://ghproxy.com/https://github.com/rahra/onioncat/archive/refs/tags/v4.11.0.tar.gz"
+  homepage "https:www.onioncat.org"
+  url "https:github.comrahraonioncatarchiverefstagsv4.11.0.tar.gz"
   sha256 "75ff9eed332e97a9efb7999bbe48867d00e06ac20601cc72b87897d5b1859f99"
   license "GPL-3.0-only"
-  head "https://github.com/rahra/onioncat.git", branch: "master"
+  head "https:github.comrahraonioncat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "313d9bc109a8fdd7f9ceb5995e359e071e6ea822f4f20a550b6c84687e638894"
@@ -22,11 +22,11 @@ class Onioncat < Formula
 
   def install
     system "autoreconf", "-ifv"
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system bin/"ocat", "-i", "fncuwbiisyh6ak3i.onion" # convert keybase's address to IPv6 address format
+    system bin"ocat", "-i", "fncuwbiisyh6ak3i.onion" # convert keybase's address to IPv6 address format
   end
 end

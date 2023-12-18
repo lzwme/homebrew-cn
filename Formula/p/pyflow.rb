@@ -1,7 +1,7 @@
 class Pyflow < Formula
   desc "Installation and dependency system for Python"
-  homepage "https://github.com/David-OConnor/pyflow"
-  url "https://ghproxy.com/https://github.com/David-OConnor/pyflow/archive/refs/tags/0.3.1.tar.gz"
+  homepage "https:github.comDavid-OConnorpyflow"
+  url "https:github.comDavid-OConnorpyflowarchiverefstags0.3.1.tar.gz"
   sha256 "36be46aaebf7bc77d2f250b3646024fb1f2f04d92113d3ce46ea5846f7e4c4f4"
   license "MIT"
 
@@ -27,14 +27,14 @@ class Pyflow < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
-    pipe_output("#{bin}/pyflow init", "#{Formula["python@3.12"].version}\n1")
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin"
+    pipe_output("#{bin}pyflow init", "#{Formula["python@3.12"].version}\n1")
 
-    # upstream issue, https://github.com/David-OConnor/pyflow/issues/184
-    # system bin/"pyflow", "install", "boto3"
+    # upstream issue, https:github.comDavid-OConnorpyflowissues184
+    # system bin"pyflow", "install", "boto3"
 
-    assert_predicate testpath/"pyproject.toml", :exist?
-    assert_predicate testpath/"pyflow.lock", :exist?
-    # assert_match "boto3", (testpath/"pyproject.toml").read
+    assert_predicate testpath"pyproject.toml", :exist?
+    assert_predicate testpath"pyflow.lock", :exist?
+    # assert_match "boto3", (testpath"pyproject.toml").read
   end
 end

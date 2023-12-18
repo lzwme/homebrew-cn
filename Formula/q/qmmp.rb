@@ -1,13 +1,13 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
-  homepage "https://qmmp.ylsoftware.com/"
-  url "https://qmmp.ylsoftware.com/files/qmmp/2.1/qmmp-2.1.5.tar.bz2"
+  homepage "https:qmmp.ylsoftware.com"
+  url "https:qmmp.ylsoftware.comfilesqmmp2.1qmmp-2.1.5.tar.bz2"
   sha256 "25be3f2b19d8d70b6b5136c3f97d385a5edbf40dac67dd84fcdd4af9d554f795"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://qmmp.ylsoftware.com/downloads.php"
-    regex(/href=.*?qmmp[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:qmmp.ylsoftware.comdownloads.php"
+    regex(href=.*?qmmp[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -58,14 +58,14 @@ class Qmmp < Formula
 
   on_macos do
     # musepack is not bottled on Linux
-    # https://github.com/Homebrew/homebrew-core/pull/92041
+    # https:github.comHomebrewhomebrew-corepull92041
     depends_on "musepack"
   end
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "qmmp-plugin-pack" do
-    url "https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-2.1.1.tar.bz2"
+    url "https:qmmp.ylsoftware.comfilesqmmp-plugin-pack2.1qmmp-plugin-pack-2.1.1.tar.bz2"
     sha256 "f68484426579f2a0bc68b6be06e7a019fd1c266fca35b764d5788661ddf9bcc4"
   end
 
@@ -87,7 +87,7 @@ class Qmmp < Formula
     system "cmake", "--build", "."
     system "cmake", "--install", "."
 
-    ENV.append_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    ENV.append_path "PKG_CONFIG_PATH", lib"pkgconfig"
     resource("qmmp-plugin-pack").stage do
       system "cmake", ".", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
       system "cmake", "--build", "."
@@ -98,6 +98,6 @@ class Qmmp < Formula
   test do
     # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
     ENV["QT_QPA_PLATFORM"] = "minimal" unless OS.mac?
-    system bin/"qmmp", "--version"
+    system bin"qmmp", "--version"
   end
 end

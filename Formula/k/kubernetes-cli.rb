@@ -1,15 +1,15 @@
 class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
-  homepage "https://kubernetes.io/docs/reference/kubectl/"
-  url "https://github.com/kubernetes/kubernetes.git",
+  homepage "https:kubernetes.iodocsreferencekubectl"
+  url "https:github.comkuberneteskubernetes.git",
       tag:      "v1.29.0",
       revision: "3f7a50f38688eb332e2a1b013678c6435d539ae6"
   license "Apache-2.0"
-  head "https://github.com/kubernetes/kubernetes.git", branch: "master"
+  head "https:github.comkuberneteskubernetes.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,23 +32,23 @@ class KubernetesCli < Formula
     # Don't dirty the git tree
     rm_rf ".brew_home"
 
-    ENV.prepend_path "PATH", Formula["coreutils"].libexec/"gnubin" # needs GNU date
-    system "make", "WHAT=cmd/kubectl"
-    bin.install "_output/bin/kubectl"
+    ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" # needs GNU date
+    system "make", "WHAT=cmdkubectl"
+    bin.install "_outputbinkubectl"
 
-    generate_completions_from_executable(bin/"kubectl", "completion", base_name: "kubectl")
+    generate_completions_from_executable(bin"kubectl", "completion", base_name: "kubectl")
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree
-    system "hack/update-generated-docs.sh"
-    man1.install Dir["docs/man/man1/*.1"]
+    system "hackupdate-generated-docs.sh"
+    man1.install Dir["docsmanman1*.1"]
   end
 
   test do
-    run_output = shell_output("#{bin}/kubectl 2>&1")
+    run_output = shell_output("#{bin}kubectl 2>&1")
     assert_match "kubectl controls the Kubernetes cluster manager.", run_output
 
-    version_output = shell_output("#{bin}/kubectl version --client --output=yaml 2>&1")
+    version_output = shell_output("#{bin}kubectl version --client --output=yaml 2>&1")
     assert_match "gitTreeState: clean", version_output
     if build.stable?
       revision = stable.specs[:revision]

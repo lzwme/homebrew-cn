@@ -1,10 +1,10 @@
 class Sad < Formula
   desc "CLI search and replace | Space Age seD"
-  homepage "https://github.com/ms-jpq/sad"
-  url "https://ghproxy.com/https://github.com/ms-jpq/sad/archive/refs/tags/v0.4.23.tar.gz"
+  homepage "https:github.comms-jpqsad"
+  url "https:github.comms-jpqsadarchiverefstagsv0.4.23.tar.gz"
   sha256 "bdb366b6c3a3cb069d4d4acb33faeff6f6c40d38ed4bbf66fafbe46e71cbafda"
   license "MIT"
-  head "https://github.com/ms-jpq/sad.git", branch: "senpai"
+  head "https:github.comms-jpqsad.git", branch: "senpai"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdfdadb1427daffaa162ec8e3d3bb59e5800bcea3f9a6752c889777d58a2a5d6"
@@ -27,11 +27,11 @@ class Sad < Formula
   end
 
   test do
-    test_file = testpath/"test.txt"
+    test_file = testpath"test.txt"
     test_file.write "a,b,c,d,e\n1,2,3,4,5\n"
-    system "find #{testpath} -name 'test.txt' | #{bin}/sad -k 'a' 'test' > /dev/null"
+    system "find #{testpath} -name 'test.txt' | #{bin}sad -k 'a' 'test' > devnull"
     assert_equal "test,b,c,d,e\n1,2,3,4,5\n", test_file.read
 
-    assert_match "sad #{version}", shell_output("#{bin}/sad --version")
+    assert_match "sad #{version}", shell_output("#{bin}sad --version")
   end
 end

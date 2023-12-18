@@ -1,10 +1,10 @@
 class Cliam < Formula
   desc "Cloud agnostic IAM permissions enumerator"
-  homepage "https://github.com/securisec/cliam"
-  url "https://ghproxy.com/https://github.com/securisec/cliam/archive/refs/tags/2.2.0.tar.gz"
+  homepage "https:github.comsecuriseccliam"
+  url "https:github.comsecuriseccliamarchiverefstags2.2.0.tar.gz"
   sha256 "3fd407787b49645da3ac14960c751cd90acf1cfacec043c57bbf4d81be9b2d9e"
   license "GPL-3.0-or-later"
-  head "https://github.com/securisec/cliam.git", branch: "master"
+  head "https:github.comsecuriseccliam.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "437320520b17ed0562c0aaa5cb931385823cdb79396d80e1a00b38502f3ef1e5"
@@ -21,24 +21,24 @@ class Cliam < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/securisec/cliam/cli/version.BuildDate=#{time.iso8601}
-      -X github.com/securisec/cliam/cli/version.GitCommit=
-      -X github.com/securisec/cliam/cli/version.GitBranch=
-      -X github.com/securisec/cliam/cli/version.Version=#{version}
+      -X github.comsecuriseccliamcliversion.BuildDate=#{time.iso8601}
+      -X github.comsecuriseccliamcliversion.GitCommit=
+      -X github.comsecuriseccliamcliversion.GitBranch=
+      -X github.comsecuriseccliamcliversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cli"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cli"
 
-    generate_completions_from_executable(bin/"cliam", "completion")
+    generate_completions_from_executable(bin"cliam", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/cliam aws utils sts-get-caller-identity " \
+    output = shell_output("#{bin}cliam aws utils sts-get-caller-identity " \
                           "--profile brewtest 2>&1", 1)
     assert_match "SharedCredsLoad: failed to load shared credentials file", output
 
-    output = shell_output("#{bin}/cliam gcp rest enumerate", 1)
+    output = shell_output("#{bin}cliam gcp rest enumerate", 1)
     assert_match "accessapproval", output
 
-    assert_match version.to_s, shell_output("#{bin}/cliam version")
+    assert_match version.to_s, shell_output("#{bin}cliam version")
   end
 end

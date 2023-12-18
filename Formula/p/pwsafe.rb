@@ -1,14 +1,14 @@
 class Pwsafe < Formula
   desc "Generate passwords and manage encrypted password databases"
-  homepage "https://github.com/nsd20463/pwsafe"
-  url "https://src.fedoraproject.org/repo/pkgs/pwsafe/pwsafe-0.2.0.tar.gz/4bb36538a2772ecbf1a542bc7d4746c0/pwsafe-0.2.0.tar.gz"
+  homepage "https:github.comnsd20463pwsafe"
+  url "https:src.fedoraproject.orgrepopkgspwsafepwsafe-0.2.0.tar.gz4bb36538a2772ecbf1a542bc7d4746c0pwsafe-0.2.0.tar.gz"
   sha256 "61e91dc5114fe014a49afabd574eda5ff49b36c81a6d492c03fcb10ba6af47b7"
   license "GPL-2.0-or-later"
   revision 4
 
   livecheck do
-    url "https://src.fedoraproject.org/repo/pkgs/pwsafe/"
-    regex(/href=.*?pwsafe[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:src.fedoraproject.orgrepopkgspwsafe"
+    regex(href=.*?pwsafe[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Pwsafe < Formula
   end
 
   head do
-    url "https://github.com/nsd20463/pwsafe.git", branch: "master"
+    url "https:github.comnsd20463pwsafe.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -36,13 +36,13 @@ class Pwsafe < Formula
 
   # A password database for testing is provided upstream. How nice!
   resource "test-pwsafe-db" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/nsd20463/pwsafe/208de3a94339df36b6e9cd8aeb7e0be0a67fd3d7/test.dat"
+    url "https:raw.githubusercontent.comnsd20463pwsafe208de3a94339df36b6e9cd8aeb7e0be0a67fd3d7test.dat"
     sha256 "7ecff955871e6e58e55e0794d21dfdea44a962ff5925c2cd0683875667fbcc79"
   end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--mandir=#{man}",
                           "--without-x"
     system "make", "install"
@@ -55,10 +55,10 @@ class Pwsafe < Formula
 
     resource("test-pwsafe-db").stage do
       Utils.popen(
-        "#{bin}/pwsafe -f test.dat -p #{test_account_name}", "r+"
+        "#{bin}pwsafe -f test.dat -p #{test_account_name}", "r+"
       ) do |pipe|
         pipe.puts test_db_passphrase
-        assert_match(/^#{Regexp.escape(test_account_pass)}$/, pipe.read)
+        assert_match(^#{Regexp.escape(test_account_pass)}$, pipe.read)
       end
     end
   end

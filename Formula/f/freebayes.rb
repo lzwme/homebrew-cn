@@ -1,11 +1,11 @@
 class Freebayes < Formula
   desc "Bayesian haplotype-based genetic polymorphism discovery and genotyping"
-  homepage "https://github.com/freebayes/freebayes"
-  url "https://github.com/freebayes/freebayes.git",
+  homepage "https:github.comfreebayesfreebayes"
+  url "https:github.comfreebayesfreebayes.git",
       tag:      "v1.3.7",
       revision: "ae60517162d34ab6217bd6c58e2b71551abacac2"
   license "MIT"
-  head "https://github.com/freebayes/freebayes.git", branch: "master"
+  head "https:github.comfreebayesfreebayes.git", branch: "master"
 
   # The Git repository contains a few older tags that erroneously omit a
   # leading zero in the version (e.g., `v9.9.2` should have been `v0.9.9.2`)
@@ -43,8 +43,8 @@ class Freebayes < Formula
   end
 
   test do
-    cp_r pkgshare/"test/tiny/.", testpath
-    output = shell_output("#{bin}/freebayes -f q.fa NA12878.chr22.tiny.bam")
+    cp_r pkgshare"testtiny.", testpath
+    output = shell_output("#{bin}freebayes -f q.fa NA12878.chr22.tiny.bam")
     assert_match "q\t186", output
   end
 end

@@ -1,7 +1,7 @@
 class Libfido2 < Formula
   desc "Provides library functionality for FIDO U2F & FIDO 2.0, including USB"
-  homepage "https://developers.yubico.com/libfido2/"
-  url "https://ghproxy.com/https://github.com/Yubico/libfido2/archive/refs/tags/1.14.0.tar.gz"
+  homepage "https:developers.yubico.comlibfido2"
+  url "https:github.comYubicolibfido2archiverefstags1.14.0.tar.gz"
   sha256 "3601792e320032d428002c4cce8499a4c7b803319051a25a0c9f1f138ffee45a"
   license "BSD-2-Clause"
 
@@ -28,7 +28,7 @@ class Libfido2 < Formula
   def install
     args = std_cmake_args
 
-    args << "-DUDEV_RULES_DIR=#{lib}/udev/rules.d" if OS.linux?
+    args << "-DUDEV_RULES_DIR=#{lib}udevrules.d" if OS.linux?
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -40,13 +40,13 @@ class Libfido2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOF
+    (testpath"test.c").write <<-EOF
     #include <stddef.h>
     #include <stdio.h>
     #include <fido.h>
     int main(void) {
       fido_init(FIDO_DEBUG);
-      // Attempt to enumerate up to five FIDO/U2F devices. Five is an arbitrary number.
+       Attempt to enumerate up to five FIDOU2F devices. Five is an arbitrary number.
       size_t max_devices = 5;
       fido_dev_info_t *devlist;
       if ((devlist = fido_dev_info_new(max_devices)) == NULL)
@@ -54,12 +54,12 @@ class Libfido2 < Formula
       size_t found_devices = 0;
       int error;
       if ((error = fido_dev_info_manifest(devlist, max_devices, &found_devices)) == FIDO_OK)
-        printf("FIDO/U2F devices found: %s\\n", found_devices ? "Some" : "None");
+        printf("FIDOU2F devices found: %s\\n", found_devices ? "Some" : "None");
       fido_dev_info_free(&devlist, max_devices);
     }
     EOF
     system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["openssl@3"].include}", "-o", "test",
                    "-L#{lib}", "-lfido2"
-    system "./test"
+    system ".test"
   end
 end

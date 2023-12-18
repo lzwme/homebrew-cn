@@ -1,14 +1,14 @@
 class Udis86 < Formula
   desc "Minimalistic disassembler library for x86"
-  homepage "https://sourceforge.net/projects/udis86/"
-  url "https://downloads.sourceforge.net/project/udis86/udis86/1.7/udis86-1.7.2.tar.gz"
+  homepage "https:sourceforge.netprojectsudis86"
+  url "https:downloads.sourceforge.netprojectudis86udis861.7udis86-1.7.2.tar.gz"
   sha256 "9c52ac626ac6f531e1d6828feaad7e797d0f3cce1e9f34ad4e84627022b3c2f4"
   license "BSD-2-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/udis86[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?udis86[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -28,12 +28,12 @@ class Udis86 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--enable-shared",
                           "--with-python=#{which("python3.12")}"
     system "make"
@@ -41,6 +41,6 @@ class Udis86 < Formula
   end
 
   test do
-    assert_match("int 0x80", pipe_output("#{bin}/udcli -x", "cd 80").split.last(2).join(" "))
+    assert_match("int 0x80", pipe_output("#{bin}udcli -x", "cd 80").split.last(2).join(" "))
   end
 end

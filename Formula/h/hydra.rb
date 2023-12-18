@@ -1,11 +1,11 @@
 class Hydra < Formula
   desc "Network logon cracker which supports many services"
-  homepage "https://github.com/vanhauser-thc/thc-hydra"
-  url "https://ghproxy.com/https://github.com/vanhauser-thc/thc-hydra/archive/refs/tags/v9.5.tar.gz"
+  homepage "https:github.comvanhauser-thcthc-hydra"
+  url "https:github.comvanhauser-thcthc-hydraarchiverefstagsv9.5.tar.gz"
   sha256 "9dd193b011fdb3c52a17b0da61a38a4148ffcad731557696819d4721d1bee76b"
   license "AGPL-3.0-only"
   revision 2
-  head "https://github.com/vanhauser-thc/thc-hydra.git", branch: "master"
+  head "https:github.comvanhauser-thcthc-hydra.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3b5572227a5ef2ff439b5d95e41502d3aac78efc01c43ed4316fa9570acc0554"
@@ -31,23 +31,23 @@ class Hydra < Formula
   def install
     inreplace "configure" do |s|
       # Link against our OpenSSL
-      # https://github.com/vanhauser-thc/thc-hydra/issues/80
-      s.gsub!(/^SSL_PATH=""$/, "SSL_PATH=#{Formula["openssl@3"].opt_lib}")
-      s.gsub!(/^SSL_IPATH=""$/, "SSL_IPATH=#{Formula["openssl@3"].opt_include}")
-      s.gsub!(/^SSLNEW=""$/, "SSLNEW=YES")
-      s.gsub!(/^CRYPTO_PATH=""$/, "CRYPTO_PATH=#{Formula["openssl@3"].opt_lib}")
-      s.gsub!(/^SSH_PATH=""$/, "SSH_PATH=#{Formula["libssh"].opt_lib}")
-      s.gsub!(/^SSH_IPATH=""$/, "SSH_IPATH=#{Formula["libssh"].opt_include}")
-      s.gsub!(/^MYSQL_PATH=""$/, "MYSQL_PATH=#{Formula["mysql-client"].opt_lib}")
-      s.gsub!(/^MYSQL_IPATH=""$/, "MYSQL_IPATH=#{Formula["mysql-client"].opt_include}/mysql")
-      s.gsub!(/^PCRE_PATH=""$/, "PCRE_PATH=#{Formula["pcre2"].opt_lib}")
-      s.gsub!(/^PCRE_IPATH=""$/, "PCRE_IPATH=#{Formula["pcre2"].opt_include}")
+      # https:github.comvanhauser-thcthc-hydraissues80
+      s.gsub!(^SSL_PATH=""$, "SSL_PATH=#{Formula["openssl@3"].opt_lib}")
+      s.gsub!(^SSL_IPATH=""$, "SSL_IPATH=#{Formula["openssl@3"].opt_include}")
+      s.gsub!(^SSLNEW=""$, "SSLNEW=YES")
+      s.gsub!(^CRYPTO_PATH=""$, "CRYPTO_PATH=#{Formula["openssl@3"].opt_lib}")
+      s.gsub!(^SSH_PATH=""$, "SSH_PATH=#{Formula["libssh"].opt_lib}")
+      s.gsub!(^SSH_IPATH=""$, "SSH_IPATH=#{Formula["libssh"].opt_include}")
+      s.gsub!(^MYSQL_PATH=""$, "MYSQL_PATH=#{Formula["mysql-client"].opt_lib}")
+      s.gsub!(^MYSQL_IPATH=""$, "MYSQL_IPATH=#{Formula["mysql-client"].opt_include}mysql")
+      s.gsub!(^PCRE_PATH=""$, "PCRE_PATH=#{Formula["pcre2"].opt_lib}")
+      s.gsub!(^PCRE_IPATH=""$, "PCRE_IPATH=#{Formula["pcre2"].opt_include}")
       if OS.mac?
-        s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{MacOS.sdk_path_if_needed}/usr/lib")
-        s.gsub!(/^CURSES_IPATH=""$/, "CURSES_IPATH=#{MacOS.sdk_path_if_needed}/usr/include")
+        s.gsub!(^CURSES_PATH=""$, "CURSES_PATH=#{MacOS.sdk_path_if_needed}usrlib")
+        s.gsub!(^CURSES_IPATH=""$, "CURSES_IPATH=#{MacOS.sdk_path_if_needed}usrinclude")
       else
-        s.gsub!(/^CURSES_PATH=""$/, "CURSES_PATH=#{Formula["ncurses"].opt_lib}")
-        s.gsub!(/^CURSES_IPATH=""$/, "CURSES_IPATH=#{Formula["ncurses"].opt_include}")
+        s.gsub!(^CURSES_PATH=""$, "CURSES_PATH=#{Formula["ncurses"].opt_lib}")
+        s.gsub!(^CURSES_IPATH=""$, "CURSES_IPATH=#{Formula["ncurses"].opt_include}")
       end
       # Avoid opportunistic linking of everything
       %w[
@@ -65,14 +65,14 @@ class Hydra < Formula
     end
 
     # Having our gcc in the PATH first can cause issues. Monitor this.
-    # https://github.com/vanhauser-thc/thc-hydra/issues/22
-    system "./configure", "--prefix=#{prefix}"
+    # https:github.comvanhauser-thcthc-hydraissues22
+    system ".configure", "--prefix=#{prefix}"
     bin.mkpath
     system "make", "all", "install"
-    share.install prefix/"man" # Put man pages in correct place
+    share.install prefix"man" # Put man pages in correct place
   end
 
   test do
-    assert_match(/ mysql .* ssh /, shell_output("#{bin}/hydra", 255))
+    assert_match( mysql .* ssh , shell_output("#{bin}hydra", 255))
   end
 end

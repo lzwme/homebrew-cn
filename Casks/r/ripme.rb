@@ -2,10 +2,10 @@ cask "ripme" do
   version "1.7.95"
   sha256 "008201e406f401b27248277a4188f26203bb9da0170872de900125f8a6c8b558"
 
-  url "https://ghproxy.com/https://github.com/RipMeApp/ripme/releases/download/#{version}/ripme.jar"
+  url "https:github.comRipMeAppripmereleasesdownload#{version}ripme.jar"
   name "RipMe"
   desc "Album ripper for various websites"
-  homepage "https://github.com/RipMeApp/ripme"
+  homepage "https:github.comRipMeAppripme"
 
   auto_updates true
   container type: :naked

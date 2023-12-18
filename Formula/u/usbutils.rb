@@ -1,14 +1,14 @@
 class Usbutils < Formula
   desc "List detailed info about USB devices"
   # Homepage for multiple Linux USB tools, 'usbutils' is one of them.
-  homepage "http://www.linux-usb.org/"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-017.tar.gz"
+  homepage "http:www.linux-usb.org"
+  url "https:mirrors.edge.kernel.orgpublinuxutilsusbusbutilsusbutils-017.tar.gz"
   sha256 "f704c4cb78a060db88b43aac6ebfd3d93c2c5cf1d6dd0e42936faaf00814ab00"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
-    url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/"
-    regex(/href=.*?usbutils[._-]v?(\d+(?:\.\d+)*)\.t/i)
+    url "https:mirrors.edge.kernel.orgpublinuxutilsusbusbutils"
+    regex(href=.*?usbutils[._-]v?(\d+(?:\.\d+)*)\.ti)
   end
 
   bottle do
@@ -30,13 +30,13 @@ class Usbutils < Formula
   conflicts_with "lsusb", because: "both provide an `lsusb` binary"
 
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/12f3d34/usbutils/portable.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches12f3d34usbutilsportable.patch"
     sha256 "0f504a173191a1e1e2f56b41584fcc0468eab7b7dfefd225910b91b5ea65cfbe"
   end
 
   def install
     system "autoreconf", "--verbose", "--force", "--install"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           *std_configure_args
 
     system "make", "install"
@@ -50,6 +50,6 @@ class Usbutils < Formula
   end
 
   test do
-    assert_empty shell_output("#{bin}/lsusb -d ffff:ffff", 1)
+    assert_empty shell_output("#{bin}lsusb -d ffff:ffff", 1)
   end
 end

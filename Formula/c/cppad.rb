@@ -1,15 +1,15 @@
 class Cppad < Formula
   desc "Differentiation of C++ Algorithms"
-  homepage "https://www.coin-or.org/CppAD"
-  url "https://ghproxy.com/https://github.com/coin-or/CppAD/archive/refs/tags/20230000.0.tar.gz"
+  homepage "https:www.coin-or.orgCppAD"
+  url "https:github.comcoin-orCppADarchiverefstags20230000.0.tar.gz"
   sha256 "339018f18effe35e1d9845bb7c7070e726396f37244b1855fb242c8b89d0b623"
   license "EPL-2.0"
   version_scheme 1
-  head "https://github.com/coin-or/CppAD.git", branch: "master"
+  head "https:github.comcoin-orCppAD.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -37,10 +37,10 @@ class Cppad < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <cassert>
-      #include <cppad/local/temp_file.hpp>
-      #include <cppad/utility/thread_alloc.hpp>
+      #include <cppadlocaltemp_file.hpp>
+      #include <cppadutilitythread_alloc.hpp>
 
       int main(void) {
         extern bool acos(void);
@@ -50,9 +50,9 @@ class Cppad < Formula
       }
     EOS
 
-    system ENV.cxx, "#{pkgshare}/example/general/acos.cpp", "-std=c++11", "-I#{include}",
+    system ENV.cxx, "#{pkgshare}examplegeneralacos.cpp", "-std=c++11", "-I#{include}",
                     "-L#{lib}", "-lcppad_lib",
                     "test.cpp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class Wasm3 < Formula
   desc "High performance WebAssembly interpreter"
-  homepage "https://github.com/wasm3/wasm3"
-  url "https://ghproxy.com/https://github.com/wasm3/wasm3/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:github.comwasm3wasm3"
+  url "https:github.comwasm3wasm3archiverefstagsv0.5.0.tar.gz"
   sha256 "b778dd72ee2251f4fe9e2666ee3fe1c26f06f517c3ffce572416db067546536c"
   license "MIT"
 
@@ -28,11 +28,11 @@ class Wasm3 < Formula
       bin.install "wasm3"
     end
     # fib32.wasm is used for testing
-    prefix.install "test/lang/fib32.wasm"
+    prefix.install "testlangfib32.wasm"
   end
 
   test do
     # Run function fib(24) and check the result is 46368
-    assert_equal "Result: 46368", shell_output("#{bin}/wasm3 --func fib #{prefix}/fib32.wasm 24 2>&1").strip
+    assert_equal "Result: 46368", shell_output("#{bin}wasm3 --func fib #{prefix}fib32.wasm 24 2>&1").strip
   end
 end

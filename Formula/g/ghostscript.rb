@@ -1,18 +1,18 @@
 class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
-  homepage "https://www.ghostscript.com/"
+  homepage "https:www.ghostscript.com"
   license "AGPL-3.0-or-later"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10021/ghostpdl-10.02.1.tar.xz"
+    url "https:github.comArtifexSoftwareghostpdl-downloadsreleasesdownloadgs10021ghostpdl-10.02.1.tar.xz"
     sha256 "01f4b699f031566b04cec495506811866e17896b26847c14e5333fb3adfc0619"
 
     on_macos do
       # 1. Make sure shared libraries follow platform naming conventions.
       # 2. Prevent dependent rebuilds on minor version bumps.
       # Reported upstream at:
-      #   https://bugs.ghostscript.com/show_bug.cgi?id=705907
-      #   https://bugs.ghostscript.com/show_bug.cgi?id=705908
+      #   https:bugs.ghostscript.comshow_bug.cgi?id=705907
+      #   https:bugs.ghostscript.comshow_bug.cgi?id=705908
       patch :DATA
     end
   end
@@ -22,8 +22,8 @@ class Ghostscript < Formula
   # version may be tagged before the release is available on GitHub, so we
   # check the version from the first-party website instead.
   livecheck do
-    url "https://www.ghostscript.com/json/settings.json"
-    regex(/["']GS_VER["']:\s*?["']v?(\d+(?:\.\d+)+)["']/i)
+    url "https:www.ghostscript.comjsonsettings.json"
+    regex(["']GS_VER["']:\s*?["']v?(\d+(?:\.\d+)+)["']i)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class Ghostscript < Formula
   end
 
   head do
-    url "https://git.ghostscript.com/ghostpdl.git", branch: "master"
+    url "https:git.ghostscript.comghostpdl.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -62,18 +62,18 @@ class Ghostscript < Formula
 
   fails_with gcc: "5"
 
-  # https://sourceforge.net/projects/gs-fonts/
+  # https:sourceforge.netprojectsgs-fonts
   resource "fonts" do
-    url "https://downloads.sourceforge.net/project/gs-fonts/gs-fonts/8.11%20%28base%2035%2C%20GPL%29/ghostscript-fonts-std-8.11.tar.gz"
+    url "https:downloads.sourceforge.netprojectgs-fontsgs-fonts8.11%20%28base%2035%2C%20GPL%29ghostscript-fonts-std-8.11.tar.gz"
     sha256 "0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401"
   end
 
-  # fmemopen is only supported from 10.13 onwards (https://news.ycombinator.com/item?id=25968777).
+  # fmemopen is only supported from 10.13 onwards (https:news.ycombinator.comitem?id=25968777).
   # For earlier versions of MacOS, needs to be excluded.
   # This should be removed once patch added to next release of leptonica (which is incorporated by ghostscript in
   # tarballs).
   patch do
-    url "https://github.com/DanBloomberg/leptonica/commit/848df62ff7ad06965dd77ac556da1b2878e5e575.patch?full_index=1"
+    url "https:github.comDanBloombergleptonicacommit848df62ff7ad06965dd77ac556da1b2878e5e575.patch?full_index=1"
     sha256 "7de1c4e596aad5c3d2628b309cea1e4fc1ff65e9c255fe64de1922b3fd2d60fc"
     directory "leptonica"
   end
@@ -81,9 +81,9 @@ class Ghostscript < Formula
   def install
     # Delete local vendored sources so build uses system dependencies
     libs = %w[expat freetype jbig2dec jpeg lcms2mt libpng openjpeg tiff zlib]
-    libs.each { |l| (buildpath/l).rmtree }
+    libs.each { |l| (buildpathl).rmtree }
 
-    configure = build.head? ? "./autogen.sh" : "./configure"
+    configure = build.head? ? ".autogen.sh" : ".configure"
     system configure, *std_configure_args,
                       "--disable-compile-inits",
                       "--disable-cups",
@@ -95,20 +95,20 @@ class Ghostscript < Formula
     system "make", "install"
     ENV.deparallelize { system "make", "install-so" }
 
-    (pkgshare/"fonts").install resource("fonts")
+    (pkgshare"fonts").install resource("fonts")
   end
 
   test do
     ps = test_fixtures("test.ps")
-    assert_match "Hello World!", shell_output("#{bin}/ps2ascii #{ps}")
+    assert_match "Hello World!", shell_output("#{bin}ps2ascii #{ps}")
   end
 end
 
 __END__
-diff --git a/base/unix-dll.mak b/base/unix-dll.mak
+diff --git abaseunix-dll.mak bbaseunix-dll.mak
 index 89dfa5a..c907831 100644
---- a/base/unix-dll.mak
-+++ b/base/unix-dll.mak
+--- abaseunix-dll.mak
++++ bbaseunix-dll.mak
 @@ -100,10 +100,26 @@ GS_DLLEXT=$(DLL_EXT)
  
  
@@ -140,10 +140,10 @@ index 89dfa5a..c907831 100644
  #LDFLAGS_SO=-dynamiclib -flat_namespace
  #LDFLAGS_SO_MAC=-dynamiclib -install_name $(GS_SONAME_MAJOR_MINOR)
  #LDFLAGS_SO=-dynamiclib -install_name $(FRAMEWORK_NAME)
-diff --git a/configure b/configure
+diff --git aconfigure bconfigure
 index bfa0985..8de469c 100755
---- a/configure
-+++ b/configure
+--- aconfigure
++++ bconfigure
 @@ -12805,11 +12805,11 @@ case $host in
      ;;
      *-darwin*)

@@ -2,11 +2,11 @@ cask "stellarium" do
   version "23.3"
   sha256 "96fb8c70b0aaa6ff5c1a863d906151df42a040eab81f151e8fd2b08fd822dabd"
 
-  url "https://ghproxy.com/https://github.com/Stellarium/stellarium/releases/download/v#{version.major_minor}/Stellarium-#{version}-qt6-macOS.zip",
-      verified: "github.com/Stellarium/stellarium/"
+  url "https:github.comStellariumstellariumreleasesdownloadv#{version.major_minor}Stellarium-#{version}-qt6-macOS.zip",
+      verified: "github.comStellariumstellarium"
   name "Stellarium"
   desc "Tool to render realistic skies in real time on the screen"
-  homepage "https://stellarium.org/"
+  homepage "https:stellarium.org"
 
   livecheck do
     url :url
@@ -17,5 +17,5 @@ cask "stellarium" do
 
   app "Stellarium.app"
 
-  zap trash: "~/Library/Preferences/Stellarium"
+  zap trash: "~LibraryPreferencesStellarium"
 end

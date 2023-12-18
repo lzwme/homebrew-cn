@@ -1,10 +1,10 @@
 class Grantlee < Formula
   desc "Libraries for text templating with Qt"
-  homepage "https://github.com/steveire/grantlee"
-  url "https://ghproxy.com/https://github.com/steveire/grantlee/releases/download/v5.3.1/grantlee-5.3.1.tar.gz"
+  homepage "https:github.comsteveiregrantlee"
+  url "https:github.comsteveiregrantleereleasesdownloadv5.3.1grantlee-5.3.1.tar.gz"
   sha256 "ba288ae9ed37ec0c3622ceb40ae1f7e1e6b2ea89216ad8587f0863d64be24f06"
   license "LGPL-2.1-or-later"
-  head "https://github.com/steveire/grantlee.git", branch: "master"
+  head "https:github.comsteveiregrantlee.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -25,7 +25,7 @@ class Grantlee < Formula
   depends_on "qt"
 
   patch do
-    url "https://github.com/steveire/grantlee/commit/1efeb1cb61947e69b8c99ddbfc5b75cd27013a87.patch?full_index=1"
+    url "https:github.comsteveiregrantleecommit1efeb1cb61947e69b8c99ddbfc5b75cd27013a87.patch?full_index=1"
     sha256 "6c5fa321c5df2b970ec2873df610ec43dd2d50977cb0a104d0d7c4ecb90621c2"
   end
 
@@ -35,13 +35,13 @@ class Grantlee < Formula
     system "cmake", "--install", "build"
 
     system "cmake", "--build", "build", "--target", "docs"
-    (pkgshare/"doc").install Dir["build/apidox/*"]
+    (pkgshare"doc").install Dir["buildapidox*"]
 
     pkgshare.install "examples"
   end
 
   test do
-    system "cmake", (pkgshare/"examples/codegen"), "-DGRANTLEE_BUILD_WITH_QT6=TRUE", *std_cmake_args
+    system "cmake", (pkgshare"examplescodegen"), "-DGRANTLEE_BUILD_WITH_QT6=TRUE", *std_cmake_args
     system "cmake", "--build", "."
   end
 end

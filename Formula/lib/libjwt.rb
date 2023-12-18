@@ -1,7 +1,7 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
-  homepage "https://github.com/benmcollins/libjwt"
-  url "https://ghproxy.com/https://github.com/benmcollins/libjwt/releases/download/v1.16.0/libjwt-1.16.0.tar.bz2"
+  homepage "https:github.combenmcollinslibjwt"
+  url "https:github.combenmcollinslibjwtreleasesdownloadv1.16.0libjwt-1.16.0.tar.bz2"
   sha256 "ea9d0bff35b8b8f8f4df9d9920123f366ea4e6bb1c90ebe16143d840f146f2ed"
   license "MPL-2.0"
 
@@ -16,7 +16,7 @@ class Libjwt < Formula
   end
 
   head do
-    url "https://github.com/benmcollins/libjwt.git", branch: "master"
+    url "https:github.combenmcollinslibjwt.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -28,12 +28,12 @@ class Libjwt < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
       #include <jwt.h>
 
@@ -44,6 +44,6 @@ class Libjwt < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-ljwt", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -2,12 +2,12 @@ cask "font-ibm-plex-sans-kr" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ibmplexsanskr"
+      only_path: "oflibmplexsanskr"
   name "IBM Plex Sans KR"
-  homepage "https://fonts.google.com/specimen/IBM+Plex+Sans+KR"
+  homepage "https:fonts.google.comspecimenIBM+Plex+Sans+KR"
 
   font "IBMPlexSansKR-Bold.ttf"
   font "IBMPlexSansKR-ExtraLight.ttf"

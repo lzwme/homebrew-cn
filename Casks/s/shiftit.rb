@@ -2,19 +2,19 @@ cask "shiftit" do
   version "1.6.6"
   sha256 "858045662074579856a521dcf967ddfc818f68583ddc96fe73612d82e071bd00"
 
-  url "https://ghproxy.com/https://github.com/fikovnik/ShiftIt/releases/download/version-#{version}/ShiftIt-#{version}.zip"
+  url "https:github.comfikovnikShiftItreleasesdownloadversion-#{version}ShiftIt-#{version}.zip"
   name "ShiftIt"
   desc "Tool to manage the size and position of windows"
-  homepage "https://github.com/fikovnik/ShiftIt/"
+  homepage "https:github.comfikovnikShiftIt"
 
   auto_updates true
 
   app "ShiftIt.app"
 
   zap trash: [
-    "~/Library/Application Support/ShiftIt",
-    "~/Library/Caches/org.shiftitapp.ShiftIt",
-    "~/Library/Preferences/org.shiftitapp.ShiftIt.plist",
+    "~LibraryApplication SupportShiftIt",
+    "~LibraryCachesorg.shiftitapp.ShiftIt",
+    "~LibraryPreferencesorg.shiftitapp.ShiftIt.plist",
   ]
 
   caveats do

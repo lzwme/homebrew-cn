@@ -2,9 +2,9 @@ cask "font-blokk-neue" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/los-gordos/BLOKK/blob/master/BLOKKNeue-Regular.otf"
+  url "https:github.comlos-gordosBLOKKblobmasterBLOKKNeue-Regular.otf"
   name "BLOKK Neue"
-  homepage "https://github.com/los-gordos/BLOKK"
+  homepage "https:github.comlos-gordosBLOKK"
 
   font "BLOKKNeue-Regular.otf"
 

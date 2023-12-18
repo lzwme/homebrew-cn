@@ -1,7 +1,7 @@
 class CargoMake < Formula
   desc "Rust task runner and build tool"
-  homepage "https://github.com/sagiegurari/cargo-make"
-  url "https://ghproxy.com/https://github.com/sagiegurari/cargo-make/archive/refs/tags/0.37.5.tar.gz"
+  homepage "https:github.comsagieguraricargo-make"
+  url "https:github.comsagieguraricargo-makearchiverefstags0.37.5.tar.gz"
   sha256 "d235f81d06c7f00fe8cd3359e967c7c3a5e81b26e91adcb00b951e6927cc91df"
   license "Apache-2.0"
 
@@ -24,21 +24,21 @@ class CargoMake < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     text = "it's working!"
-    (testpath/"Makefile.toml").write <<~EOF
+    (testpath"Makefile.toml").write <<~EOF
       [tasks.is_working]
       command = "echo"
       args = ["#{text}"]
     EOF
 
     assert_match text, shell_output("cargo make is_working")
-    assert_match text, shell_output("#{bin}/cargo-make make is_working")
-    assert_match text, shell_output("#{bin}/makers is_working")
+    assert_match text, shell_output("#{bin}cargo-make make is_working")
+    assert_match text, shell_output("#{bin}makers is_working")
   end
 end

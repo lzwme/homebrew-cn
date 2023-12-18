@@ -1,10 +1,10 @@
 class Msgpuck < Formula
   desc "Simple and efficient MsgPack binary serialization library"
-  homepage "https://rtsisyk.github.io/msgpuck/"
-  url "https://ghproxy.com/https://github.com/rtsisyk/msgpuck/archive/refs/tags/2.0.tar.gz"
+  homepage "https:rtsisyk.github.iomsgpuck"
+  url "https:github.comrtsisykmsgpuckarchiverefstags2.0.tar.gz"
   sha256 "01e6aa55d4d52a5b19f7ce9a9845506d9ab3f5abcf844a75e880b8378150a63d"
   license "BSD-2-Clause"
-  head "https://github.com/rtsisyk/msgpuck.git", branch: "master"
+  head "https:github.comrtsisykmsgpuck.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d53fd2848632fe20526ee4808f269706c4788b7e3f8d41f329fbb9c2437b77b"
@@ -31,8 +31,8 @@ class Msgpuck < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      /* Encode and decode an array */
+    (testpath"test.c").write <<~EOS
+      * Encode and decode an array *
       #include <assert.h>
       #include <msgpuck.h>
 
@@ -64,6 +64,6 @@ class Msgpuck < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lmsgpuck", "-o", "test"
-    system "#{testpath}/test"
+    system "#{testpath}test"
   end
 end

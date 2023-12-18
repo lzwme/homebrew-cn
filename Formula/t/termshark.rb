@@ -1,7 +1,7 @@
 class Termshark < Formula
   desc "Terminal UI for tshark, inspired by Wireshark"
-  homepage "https://termshark.io"
-  url "https://ghproxy.com/https://github.com/gcla/termshark/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:termshark.io"
+  url "https:github.comgclatermsharkarchiverefstagsv2.4.0.tar.gz"
   sha256 "949c71866fcd2f9ed71a754ea9e3d1bdc23dee85969dcdc78180f1d18ca8b087"
   license "MIT"
 
@@ -26,17 +26,17 @@ class Termshark < Formula
     # Don't set GOPATH because we want to build using go modules to
     # ensure our dependencies are the ones specified in go.mod.
     mkdir_p buildpath
-    ln_sf buildpath, buildpath/"termshark"
+    ln_sf buildpath, buildpath"termshark"
 
     cd "termshark" do
-      system "go", "build", "-o", bin/"termshark",
-             "cmd/termshark/termshark.go"
+      system "go", "build", "-o", bin"termshark",
+             "cmdtermsharktermshark.go"
     end
   end
 
   test do
     assert_match "termshark v#{version}",
-                 shell_output("#{bin}/termshark -v --pass-thru=false")
+                 shell_output("#{bin}termshark -v --pass-thru=false")
 
     # Build a test pcap programmatically. Termshark will read this
     # from a temp file.
@@ -69,18 +69,18 @@ class Termshark < Formula
     packet += [0x6d, 0x2e, 0x31, 0x00, 0x6f, 0x63, 0x74, 0x65]
     packet += [0x74, 0x00]
 
-    File.write("#{HOMEBREW_TEMP}/termshark-test.pcap", packet.pack("C*"))
+    File.write("#{HOMEBREW_TEMP}termshark-test.pcap", packet.pack("C*"))
 
     # Rely on exit code of grep - if termshark works correctly, it will
     # detect stdout is not a tty, defer to tshark and display the grepped IP.
     system [
-      "#{bin}/termshark -r #{HOMEBREW_TEMP}/termshark-test.pcap",
+      "#{bin}termshark -r #{HOMEBREW_TEMP}termshark-test.pcap",
       " | grep 192.168.44.123",
     ].join
 
     # Pretend to be a tty and run termshark with the temporary pcap. Queue up
     # 'q' and 'enter' to terminate.  Rely on the exit code of termshark, which
-    # should be EXIT_SUCCESS/0. Output is piped to /dev/null to avoid
+    # should be EXIT_SUCCESS0. Output is piped to devnull to avoid
     # interfering with the outer terminal. The quit command is delayed five
     # seconds to provide ample time for termshark to load the pcap (there is
     # no external mechanism to tell when the load is complete).
@@ -89,18 +89,18 @@ class Termshark < Formula
       "socat - EXEC:'sh -c \\\"",
       "stty rows 50 cols 80 && ",
       "TERM=xterm ",
-      "#{bin}/termshark -r #{HOMEBREW_TEMP}/termshark-test.pcap",
-      "\\\"',pty,setsid,ctty > /dev/null",
+      "#{bin}termshark -r #{HOMEBREW_TEMP}termshark-test.pcap",
+      "\\\"',pty,setsid,ctty > devnull",
     ]
     system testcmds.join
 
     # "Scrape" the terminal UI for a specific IP address contained in the test
     # pcap. Since the output contains ansi terminal codes, use the -a flag to
     # grep to ensure it's not treated as binary input.
-    testcmds[5] = "\\\"',pty,setsid,ctty | grep -a 192.168.44.123 > /dev/null"
+    testcmds[5] = "\\\"',pty,setsid,ctty | grep -a 192.168.44.123 > devnull"
     system testcmds.join
 
     # Clean up.
-    File.delete("#{HOMEBREW_TEMP}/termshark-test.pcap")
+    File.delete("#{HOMEBREW_TEMP}termshark-test.pcap")
   end
 end

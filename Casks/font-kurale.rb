@@ -2,10 +2,10 @@ cask "font-kurale" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kurale/Kurale-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkuraleKurale-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kurale"
-  homepage "https://fonts.google.com/specimen/Kurale"
+  homepage "https:fonts.google.comspecimenKurale"
 
   font "Kurale-Regular.ttf"
 

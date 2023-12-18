@@ -1,7 +1,7 @@
 class Cocoapods < Formula
   desc "Dependency manager for Cocoa projects"
-  homepage "https://cocoapods.org/"
-  url "https://ghproxy.com/https://github.com/CocoaPods/CocoaPods/archive/refs/tags/1.14.3.tar.gz"
+  homepage "https:cocoapods.org"
+  url "https:github.comCocoaPodsCocoaPodsarchiverefstags1.14.3.tar.gz"
   sha256 "de05766e5771e0cef7af89f73b0e42a1f1c52a76ce1288592cd9511bcd688a9e"
   license "MIT"
 
@@ -24,11 +24,11 @@ class Cocoapods < Formula
     system "gem", "build", "cocoapods.gemspec"
     system "gem", "install", "cocoapods-#{version}.gem"
     # Other executables don't work currently.
-    bin.install libexec/"bin/pod", libexec/"bin/xcodeproj"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec"binpod", libexec"binxcodeproj"
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    system "#{bin}/pod", "list"
+    system "#{bin}pod", "list"
   end
 end

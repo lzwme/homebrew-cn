@@ -1,10 +1,10 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
-  homepage "https://github.com/facebook/folly"
-  url "https://ghproxy.com/https://github.com/facebook/folly/archive/refs/tags/v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookfolly"
+  url "https:github.comfacebookfollyarchiverefstagsv2023.12.04.00.tar.gz"
   sha256 "6b13903f058fbb795d3c41124fe9df0da6dc07470348868dedafff3c2b106033"
   license "Apache-2.0"
-  head "https://github.com/facebook/folly.git", branch: "main"
+  head "https:github.comfacebookfolly.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "91bfe19e9707fb78b63bb7447be8c43d9c36200415d17592ef6361f13581956b"
@@ -37,7 +37,7 @@ class Folly < Formula
 
   fails_with :clang do
     build 1100
-    # https://github.com/facebook/folly/issues/1545
+    # https:github.comfacebookfollyissues1545
     cause <<-EOS
       Undefined symbols for architecture x86_64:
         "std::__1::__fs::filesystem::path::lexically_normal() const"
@@ -54,26 +54,26 @@ class Folly < Formula
       -DFOLLY_USE_JEMALLOC=OFF
     ]
 
-    system "cmake", "-S", ".", "-B", "build/shared",
+    system "cmake", "-S", ".", "-B", "buildshared",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *args, *std_cmake_args
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    system "cmake", "-S", ".", "-B", "build/static",
+    system "cmake", "-S", ".", "-B", "buildstatic",
                     "-DBUILD_SHARED_LIBS=OFF",
                     *args, *std_cmake_args
-    system "cmake", "--build", "build/static"
-    lib.install "build/static/libfolly.a", "build/static/folly/libfollybenchmark.a"
+    system "cmake", "--build", "buildstatic"
+    lib.install "buildstaticlibfolly.a", "buildstaticfollylibfollybenchmark.a"
   end
 
   test do
     # Force use of Clang rather than LLVM Clang
     ENV.clang if OS.mac?
 
-    (testpath/"test.cc").write <<~EOS
-      #include <folly/FBVector.h>
+    (testpath"test.cc").write <<~EOS
+      #include <follyFBVector.h>
       int main() {
         folly::fbvector<int> numbers({0, 1, 2, 3});
         numbers.reserve(10);
@@ -86,6 +86,6 @@ class Folly < Formula
     EOS
     system ENV.cxx, "-std=c++14", "test.cc", "-I#{include}", "-L#{lib}",
                     "-lfolly", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

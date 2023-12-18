@@ -1,14 +1,14 @@
 class Zmap < Formula
   desc "Network scanner for Internet-wide network studies"
-  homepage "https://zmap.io"
-  url "https://ghproxy.com/https://github.com/zmap/zmap/archive/refs/tags/v3.0.0.tar.gz"
+  homepage "https:zmap.io"
+  url "https:github.comzmapzmaparchiverefstagsv3.0.0.tar.gz"
   sha256 "e3151cdcdf695ab7581e01a7c6ee78678717d6a62ef09849b34db39682535454"
   license "Apache-2.0"
-  head "https://github.com/zmap/zmap.git", branch: "main"
+  head "https:github.comzmapzmap.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,7 +36,7 @@ class Zmap < Formula
   uses_from_macos "libpcap"
 
   def install
-    inreplace ["conf/zmap.conf", "src/constants.h", "src/zopt.ggo.in"], "/etc", etc
+    inreplace ["confzmap.conf", "srcconstants.h", "srczopt.ggo.in"], "etc", etc
     args = %w[-DENABLE_DEVELOPMENT=OFF -DRESPECT_INSTALL_PREFIX_CONFIG=ON]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -45,6 +45,6 @@ class Zmap < Formula
   end
 
   test do
-    system "#{sbin}/zmap", "--version"
+    system "#{sbin}zmap", "--version"
   end
 end

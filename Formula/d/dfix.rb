@@ -1,15 +1,15 @@
 class Dfix < Formula
   desc "Auto-upgrade tool for D source code"
-  homepage "https://github.com/dlang-community/dfix"
-  url "https://github.com/dlang-community/dfix.git",
+  homepage "https:github.comdlang-communitydfix"
+  url "https:github.comdlang-communitydfix.git",
       tag:      "v0.3.5",
       revision: "5265a8db4b0fdc54a3d0837a7ddf520ee94579c4"
   license "BSL-1.0"
-  head "https://github.com/dlang-community/dfix.git", branch: "master"
+  head "https:github.comdlang-communitydfix.git", branch: "master"
 
   livecheck do
-    url "https://code.dlang.org/packages/dfix"
-    regex(%r{"badge">v?(\d+(?:\.\d+)+)</strong>}i)
+    url "https:code.dlang.orgpackagesdfix"
+    regex(%r{"badge">v?(\d+(?:\.\d+)+)<strong>}i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Dfix < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc5f77825702b1aada0824cb46ea1b8575d9b101c4a7aec7e49381bef1f7f045"
   end
 
-  # https://github.com/dlang-community/dfix/issues/60
+  # https:github.comdlang-communitydfixissues60
   deprecate! date: "2023-06-25", because: :unmaintained
 
   on_arm do
@@ -40,18 +40,18 @@ class Dfix < Formula
       "dmd -fPIC"
     end
     system "make"
-    bin.install "bin/dfix"
-    pkgshare.install "test/testfile_expected.d", "test/testfile_master.d"
+    bin.install "bindfix"
+    pkgshare.install "testtestfile_expected.d", "testtestfile_master.d"
   end
 
   test do
-    system "#{bin}/dfix", "--help"
+    system "#{bin}dfix", "--help"
 
-    cp "#{pkgshare}/testfile_master.d", "testfile.d"
-    system "#{bin}/dfix", "testfile.d"
-    system "diff", "testfile.d", "#{pkgshare}/testfile_expected.d"
+    cp "#{pkgshare}testfile_master.d", "testfile.d"
+    system "#{bin}dfix", "testfile.d"
+    system "diff", "testfile.d", "#{pkgshare}testfile_expected.d"
     # Make sure that running dfix on the output of dfix changes nothing.
-    system "#{bin}/dfix", "testfile.d"
-    system "diff", "testfile.d", "#{pkgshare}/testfile_expected.d"
+    system "#{bin}dfix", "testfile.d"
+    system "diff", "testfile.d", "#{pkgshare}testfile_expected.d"
   end
 end

@@ -2,28 +2,28 @@ cask "aerial" do
   version "3.3.5"
   sha256 "69f2db4c75e0f7cad34ff1b3f3ebdf3f6714024c064894c6ac1795f1d4608c02"
 
-  url "https://ghproxy.com/https://github.com/JohnCoates/Aerial/releases/download/v#{version}/Aerial.saver.zip",
-      verified: "github.com/JohnCoates/Aerial/"
+  url "https:github.comJohnCoatesAerialreleasesdownloadv#{version}Aerial.saver.zip",
+      verified: "github.comJohnCoatesAerial"
   name "Aerial Screensaver"
   desc "Apple TV Aerial screensaver"
-  homepage "https://aerialscreensaver.github.io/"
+  homepage "https:aerialscreensaver.github.io"
 
-  conflicts_with cask: "homebrew/cask-versions/aerial-beta"
+  conflicts_with cask: "homebrewcask-versionsaerial-beta"
   depends_on macos: ">= :sierra"
 
   screen_saver "Aerial.saver"
 
   zap trash: [
-    "~/Library/Application Support/Aerial",
-    "~/Library/Caches/Aerial",
-    "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64/Data/Library/" \
-    "Application Support/Aerial",
-    "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64/Data/Library/Caches/Aerial",
-    "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver/Data/Library/Application Support/Aerial",
-    "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver/Data/Library/Caches/Aerial",
-    "~/Library/Containers/com.apple.ScreenSaver.Engine.legacyScreenSaver/Data/Library/Preferences/" \
-    "ByHost/com.JohnCoates.Aerial*.plist",
-    "~/Library/Preferences/ByHost/com.JohnCoates.Aerial*",
-    "~/Library/Screen Savers/Aerial.saver",
+    "~LibraryApplication SupportAerial",
+    "~LibraryCachesAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibrary" \
+    "Application SupportAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibraryCachesAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryApplication SupportAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryCachesAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferences" \
+    "ByHostcom.JohnCoates.Aerial*.plist",
+    "~LibraryPreferencesByHostcom.JohnCoates.Aerial*",
+    "~LibraryScreen SaversAerial.saver",
   ]
 end

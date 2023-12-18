@@ -1,7 +1,7 @@
 class Multitime < Formula
   desc "Time command execution over multiple executions"
-  homepage "https://tratt.net/laurie/src/multitime/"
-  url "https://ghproxy.com/https://github.com/ltratt/multitime/archive/refs/tags/multitime-1.4.tar.gz"
+  homepage "https:tratt.netlauriesrcmultitime"
+  url "https:github.comltrattmultitimearchiverefstagsmultitime-1.4.tar.gz"
   sha256 "31597066239896ee74a3aaaea3b22931a50a1ec1470090c5457ef35500c44249"
   license "MIT"
 
@@ -25,7 +25,7 @@ class Multitime < Formula
     system "autoconf"
     system "autoheader"
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
 
@@ -33,7 +33,7 @@ class Multitime < Formula
   end
 
   test do
-    output = shell_output("#{bin}/multitime -n 2 sleep 1 2>&1")
-    assert_match(/((real|user|sys)\s+([01].\d{3}\s*){5}){3}/m, output)
+    output = shell_output("#{bin}multitime -n 2 sleep 1 2>&1")
+    assert_match(((real|user|sys)\s+([01].\d{3}\s*){5}){3}m, output)
   end
 end

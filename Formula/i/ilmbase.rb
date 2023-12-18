@@ -1,7 +1,7 @@
 class Ilmbase < Formula
   desc "OpenEXR ILM Base libraries (high dynamic-range image file format)"
-  homepage "https://www.openexr.com/"
-  url "https://ghproxy.com/https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v2.5.8.tar.gz"
+  homepage "https:www.openexr.com"
+  url "https:github.comAcademySoftwareFoundationopenexrarchiverefstagsv2.5.8.tar.gz"
   sha256 "db261a7fcc046ec6634e4c5696a2fc2ce8b55f50aac6abe034308f54c8495f55"
   license "BSD-3-Clause"
 
@@ -20,7 +20,7 @@ class Ilmbase < Formula
 
   keg_only "ilmbase conflicts with `openexr` and `imath`"
 
-  # https://github.com/AcademySoftwareFoundation/openexr/pull/929
+  # https:github.comAcademySoftwareFoundationopenexrpull929
   deprecate! date: "2023-02-04", because: :unsupported
 
   depends_on "cmake" => :build
@@ -33,7 +33,7 @@ class Ilmbase < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~'EOS'
+    (testpath"test.cpp").write <<~'EOS'
       #include <ImathRoots.h>
       #include <algorithm>
       #include <iostream>
@@ -49,7 +49,7 @@ class Ilmbase < Formula
         std::cout << n << ", " << x[0] << ", " << x[1] << "\n";
       }
     EOS
-    system ENV.cxx, "-I#{include}/OpenEXR", "-o", testpath/"test", "test.cpp"
-    assert_equal "2, -2, -1\n", shell_output("./test")
+    system ENV.cxx, "-I#{include}OpenEXR", "-o", testpath"test", "test.cpp"
+    assert_equal "2, -2, -1\n", shell_output(".test")
   end
 end

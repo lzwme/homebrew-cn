@@ -1,10 +1,10 @@
 class Wellington < Formula
   desc "Project-focused tool to manage Sass and spriting"
-  homepage "https://github.com/wellington/wellington"
-  url "https://ghproxy.com/https://github.com/wellington/wellington/archive/refs/tags/v1.0.5.tar.gz"
+  homepage "https:github.comwellingtonwellington"
+  url "https:github.comwellingtonwellingtonarchiverefstagsv1.0.5.tar.gz"
   sha256 "e2379722849cdd8e5f094849290aacba4b789d4d65c733dec859565c728e7205"
   license "Apache-2.0"
-  head "https://github.com/wellington/wellington.git", branch: "master"
+  head "https:github.comwellingtonwellington.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e4f2c4f169fbf4616d15989a2bfa0bed5447e1cb86be630b546c757ac79713e3"
@@ -21,24 +21,24 @@ class Wellington < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1efe7a942728970650560a933ba9344e79cf5a63e96c18553cef995ab77445ef"
   end
 
-  # upstream go1.20 support report, https://github.com/wellington/wellington/issues/223
+  # upstream go1.20 support report, https:github.comwellingtonwellingtonissues223
   deprecate! date: "2023-08-20", because: :unmaintained
 
   # Bump to 1.20 on the next release, if possible.
   depends_on "go@1.19" => :build
 
   def install
-    ldflags = "-X github.com/wellington/wellington/version.Version=#{version}"
-    system "go", "build", *std_go_args(output: bin/"wt", ldflags: ldflags), "wt/main.go"
+    ldflags = "-X github.comwellingtonwellingtonversion.Version=#{version}"
+    system "go", "build", *std_go_args(output: bin"wt", ldflags: ldflags), "wtmain.go"
   end
 
   test do
     s = "div { p { color: red; } }"
     expected = <<~EOS
-      /* line 1, stdin */
+      * line 1, stdin *
       div p {
         color: red; }
     EOS
-    assert_equal expected, pipe_output("#{bin}/wt --comment", s, 0)
+    assert_equal expected, pipe_output("#{bin}wt --comment", s, 0)
   end
 end

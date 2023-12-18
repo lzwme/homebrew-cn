@@ -2,10 +2,10 @@ cask "font-stint-ultra-expanded" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/stintultraexpanded/StintUltraExpanded-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflstintultraexpandedStintUltraExpanded-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Stint Ultra Expanded"
-  homepage "https://fonts.google.com/specimen/Stint+Ultra+Expanded"
+  homepage "https:fonts.google.comspecimenStint+Ultra+Expanded"
 
   font "StintUltraExpanded-Regular.ttf"
 

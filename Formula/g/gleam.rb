@@ -1,10 +1,10 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
-  homepage "https://gleam.run"
-  url "https://ghproxy.com/https://github.com/gleam-lang/gleam/archive/refs/tags/v0.32.4.tar.gz"
+  homepage "https:gleam.run"
+  url "https:github.comgleam-langgleamarchiverefstagsv0.32.4.tar.gz"
   sha256 "60aa2e873168af2c6644a81b193b46521d44bc7d16d0b33ffd23ebe4d7872f6d"
   license "Apache-2.0"
-  head "https://github.com/gleam-lang/gleam.git", branch: "main"
+  head "https:github.comgleam-langgleam.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,8 +35,8 @@ class Gleam < Formula
 
   test do
     Dir.chdir testpath
-    system bin/"gleam", "new", "test_project"
+    system bin"gleam", "new", "test_project"
     Dir.chdir "test_project"
-    system bin/"gleam", "test"
+    system bin"gleam", "test"
   end
 end

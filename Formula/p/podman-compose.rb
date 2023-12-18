@@ -2,8 +2,8 @@ class PodmanCompose < Formula
   include Language::Python::Virtualenv
 
   desc "Alternative to docker-compose using podman"
-  homepage "https://github.com/containers/podman-compose"
-  url "https://files.pythonhosted.org/packages/65/a8/d77d2eaa85414d013047584d3aa10fac47edb328f5180ca54a13543af03a/podman-compose-1.0.6.tar.gz"
+  homepage "https:github.comcontainerspodman-compose"
+  url "https:files.pythonhosted.orgpackages65a8d77d2eaa85414d013047584d3aa10fac47edb328f5180ca54a13543af03apodman-compose-1.0.6.tar.gz"
   sha256 "2db235049fca50a5a4ffd511a917808c960dacb8defd5481dd8b36a77d4da2e5"
   license "GPL-2.0-only"
 
@@ -23,7 +23,7 @@ class PodmanCompose < Formula
   depends_on "pyyaml"
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/31/06/1ef763af20d0572c032fa22882cfbfb005fba6e7300715a37840858c919e/python-dotenv-1.0.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages31061ef763af20d0572c032fa22882cfbfb005fba6e7300715a37840858c919epython-dotenv-1.0.0.tar.gz"
     sha256 "a8df96034aae6d2d50a4ebe8216326c61c3eb64836776504fcca410e5937a3ba"
   end
 
@@ -34,7 +34,7 @@ class PodmanCompose < Formula
   test do
     port = free_port
 
-    (testpath/"compose.yml").write <<~EOS
+    (testpath"compose.yml").write <<~EOS
       version: "3"
       services:
         test:
@@ -46,9 +46,9 @@ class PodmanCompose < Formula
     EOS
 
     # If it's trying to connect to Podman, we know it at least found the
-    # compose.yml file and parsed/validated the contents
+    # compose.yml file and parsedvalidated the contents
     expected = OS.linux? ? "Error: cannot re-exec process" : "Cannot connect to Podman"
-    assert_match expected, shell_output("#{bin}/podman-compose up -d 2>&1", 1)
-    assert_match expected, shell_output("#{bin}/podman-compose down 2>&1")
+    assert_match expected, shell_output("#{bin}podman-compose up -d 2>&1", 1)
+    assert_match expected, shell_output("#{bin}podman-compose down 2>&1")
   end
 end

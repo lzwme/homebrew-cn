@@ -1,15 +1,15 @@
 class Chipmunk < Formula
   desc "2D rigid body physics library written in C"
-  homepage "https://chipmunk-physics.net/"
-  url "https://chipmunk-physics.net/release/Chipmunk-7.x/Chipmunk-7.0.3.tgz"
-  mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/chipmunk/Chipmunk-7.0.3.tgz"
+  homepage "https:chipmunk-physics.net"
+  url "https:chipmunk-physics.netreleaseChipmunk-7.xChipmunk-7.0.3.tgz"
+  mirror "https:www.mirrorservice.orgsitesdistfiles.macports.orgchipmunkChipmunk-7.0.3.tgz"
   sha256 "048b0c9eff91c27bab8a54c65ad348cebd5a982ac56978e8f63667afbb63491a"
   license "MIT"
-  head "https://github.com/slembcke/Chipmunk2D.git", branch: "master"
+  head "https:github.comslembckeChipmunk2D.git", branch: "master"
 
   livecheck do
-    url "https://chipmunk-physics.net/downloads.php"
-    regex(/>\s*Chipmunk2D\s+v?(\d+(?:\.\d+)+)\s*</i)
+    url "https:chipmunk-physics.netdownloads.php"
+    regex(>\s*Chipmunk2D\s+v?(\d+(?:\.\d+)+)\s*<i)
   end
 
   bottle do
@@ -34,11 +34,11 @@ class Chipmunk < Formula
     system "cmake", ".", "-DBUILD_DEMOS=OFF", *std_cmake_args
     system "make", "install"
 
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <chipmunk.h>
 
@@ -51,8 +51,8 @@ class Chipmunk < Formula
         return 0;
       }
     EOS
-    system ENV.cc, testpath/"test.c", "-o", testpath/"test", "-pthread",
-                   "-I#{include}/chipmunk", "-L#{lib}", "-lchipmunk"
-    system "./test"
+    system ENV.cc, testpath"test.c", "-o", testpath"test", "-pthread",
+                   "-I#{include}chipmunk", "-L#{lib}", "-lchipmunk"
+    system ".test"
   end
 end

@@ -2,10 +2,10 @@ cask "font-peddana" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/peddana/Peddana-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpeddanaPeddana-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Peddana"
-  homepage "https://fonts.google.com/specimen/Peddana"
+  homepage "https:fonts.google.comspecimenPeddana"
 
   font "Peddana-Regular.ttf"
 

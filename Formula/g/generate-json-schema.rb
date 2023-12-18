@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class GenerateJsonSchema < Formula
   desc "Generate a JSON Schema from Sample JSON"
-  homepage "https://github.com/Nijikokun/generate-schema"
-  url "https://registry.npmjs.org/generate-schema/-/generate-schema-2.6.0.tgz"
+  homepage "https:github.comNijikokungenerate-schema"
+  url "https:registry.npmjs.orggenerate-schema-generate-schema-2.6.0.tgz"
   sha256 "1ddbf91aab2d649108308d1de7af782d9270a086919edb706f48d0216d51374a"
   license "MIT"
-  head "https://github.com/Nijikokun/generate-schema.git", branch: "master"
+  head "https:github.comNijikokungenerate-schema.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -17,11 +17,11 @@ class GenerateJsonSchema < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    (testpath/"test.json").write <<~EOS
+    (testpath"test.json").write <<~EOS
       {
           "id": 2,
           "name": "An ice sculpture",
@@ -38,6 +38,6 @@ class GenerateJsonSchema < Formula
           }
       }
     EOS
-    assert_match "schema.org", shell_output("#{bin}/generate-schema test.json", 1)
+    assert_match "schema.org", shell_output("#{bin}generate-schema test.json", 1)
   end
 end

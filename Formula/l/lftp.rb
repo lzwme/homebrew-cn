@@ -1,13 +1,13 @@
 class Lftp < Formula
   desc "Sophisticated file transfer program"
-  homepage "https://lftp.yar.ru/"
-  url "https://lftp.yar.ru/ftp/lftp-4.9.2.tar.xz"
+  homepage "https:lftp.yar.ru"
+  url "https:lftp.yar.ruftplftp-4.9.2.tar.xz"
   sha256 "c517c4f4f9c39bd415d7313088a2b1e313b2d386867fe40b7692b83a20f0670d"
   license "GPL-3.0-or-later"
   revision 1
 
   livecheck do
-    url "https://github.com/lavv17/lftp.git"
+    url "https:github.comlavv17lftp.git"
   end
 
   bottle do
@@ -38,10 +38,10 @@ class Lftp < Formula
     end
 
     # Fix compile with newer Clang
-    # https://github.com/lavv17/lftp/issues/611
+    # https:github.comlavv17lftpissues611
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           "--with-readline=#{Formula["readline"].opt_prefix}",
@@ -51,6 +51,6 @@ class Lftp < Formula
   end
 
   test do
-    system "#{bin}/lftp", "-c", "open https://ftp.gnu.org/; ls"
+    system "#{bin}lftp", "-c", "open https:ftp.gnu.org; ls"
   end
 end

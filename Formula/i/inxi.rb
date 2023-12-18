@@ -1,10 +1,10 @@
 class Inxi < Formula
   desc "Full featured CLI system information tool"
-  homepage "https://smxi.org/docs/inxi.htm"
-  url "https://ghproxy.com/https://github.com/smxi/inxi/archive/refs/tags/3.3.31-2.tar.gz"
+  homepage "https:smxi.orgdocsinxi.htm"
+  url "https:github.comsmxiinxiarchiverefstags3.3.31-2.tar.gz"
   sha256 "ff5d138392ac557e31ede6cf96d73d1b9f972f42f6529d47fec2c51184bff338"
   license "GPL-3.0-or-later"
-  head "https://github.com/smxi/inxi.git", branch: "master"
+  head "https:github.comsmxiinxi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "883ca553bb369a2cd94b41c37f0a4d27285dc88aa5b4960a63c65dd923b24d7a"
@@ -28,7 +28,7 @@ class Inxi < Formula
   end
 
   test do
-    inxi_output = shell_output("#{bin}/inxi")
+    inxi_output = shell_output("#{bin}inxi")
     uname_r = shell_output("uname -r").strip
     assert_match uname_r.to_str, inxi_output.to_s
   end

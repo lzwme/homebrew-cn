@@ -1,11 +1,11 @@
 class Srtp < Formula
   desc "Implementation of the Secure Real-time Transport Protocol"
-  homepage "https://github.com/cisco/libsrtp"
-  url "https://ghproxy.com/https://github.com/cisco/libsrtp/archive/refs/tags/v2.5.0.tar.gz"
+  homepage "https:github.comciscolibsrtp"
+  url "https:github.comciscolibsrtparchiverefstagsv2.5.0.tar.gz"
   sha256 "8a43ef8e9ae2b665292591af62aa1a4ae41e468b6d98d8258f91478735da4e09"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/cisco/libsrtp.git", branch: "master"
+  head "https:github.comciscolibsrtp.git", branch: "master"
 
   livecheck do
     url :stable
@@ -28,14 +28,14 @@ class Srtp < Formula
   depends_on "openssl@3"
 
   def install
-    system "./configure", "--disable-debug", "--prefix=#{prefix}", "--enable-openssl"
+    system ".configure", "--disable-debug", "--prefix=#{prefix}", "--enable-openssl"
     system "make", "test"
     system "make", "shared_library"
     system "make", "install" # Can't go in parallel of building the dylib
-    libexec.install "test/rtpw"
+    libexec.install "testrtpw"
   end
 
   test do
-    system libexec/"rtpw", "-l"
+    system libexec"rtpw", "-l"
   end
 end

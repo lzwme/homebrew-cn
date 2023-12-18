@@ -2,8 +2,8 @@ class Principalmapper < Formula
   include Language::Python::Virtualenv
 
   desc "Quickly evaluate IAM permissions in AWS"
-  homepage "https://github.com/nccgroup/PMapper"
-  url "https://files.pythonhosted.org/packages/3f/8c/3d2efe475e9244bd45e3a776ea8207f34a9bb15caaa02f6c95e473b2ada2/principalmapper-1.1.5.tar.gz"
+  homepage "https:github.comnccgroupPMapper"
+  url "https:files.pythonhosted.orgpackages3f8c3d2efe475e9244bd45e3a776ea8207f34a9bb15caaa02f6c95e473b2ada2principalmapper-1.1.5.tar.gz"
   sha256 "04cb9dcff0cc512df4714b3c4ea63a261001f271f95c8a453b2805290c57bbc2"
   license "AGPL-3.0-or-later"
   revision 3
@@ -25,33 +25,33 @@ class Principalmapper < Formula
   depends_on "six"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    url "https:files.pythonhosted.orgpackages4230e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555botocore-1.31.65.tar.gz"
     sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages002ae867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
   end
 
   resource "pydot" do
-    url "https://files.pythonhosted.org/packages/13/6e/916cdf94f9b38ae0777b254c75c3bdddee49a54cc4014aac1460a7a172b3/pydot-1.4.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages136e916cdf94f9b38ae0777b254c75c3bdddee49a54cc4014aac1460a7a172b3pydot-1.4.2.tar.gz"
     sha256 "248081a39bcb56784deb018977e428605c1c758f10897a339fce1dd728ff007d"
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
+    url "https:files.pythonhosted.orgpackagesaf47b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3curllib3-2.0.7.tar.gz"
     sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   # Support Python 3.10, remove on next release
   patch do
-    url "https://github.com/nccgroup/PMapper/commit/88bad89bd84a20a264165514363e52a84d39e8d7.patch?full_index=1"
+    url "https:github.comnccgroupPMappercommit88bad89bd84a20a264165514363e52a84d39e8d7.patch?full_index=1"
     sha256 "9c731e2613095ea5098eda7141ae854fceec3fc8477a7a7e3202ed6c751e68dc"
   end
 
@@ -60,6 +60,6 @@ class Principalmapper < Formula
   end
 
   test do
-    assert_equal "Account IDs:\n---", shell_output("#{bin}/pmapper graph list").strip
+    assert_equal "Account IDs:\n---", shell_output("#{bin}pmapper graph list").strip
   end
 end

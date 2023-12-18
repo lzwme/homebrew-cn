@@ -2,8 +2,8 @@ class Tarsnapper < Formula
   include Language::Python::Virtualenv
 
   desc "Tarsnap wrapper which expires backups using a gfs-scheme"
-  homepage "https://github.com/miracle2k/tarsnapper"
-  url "https://files.pythonhosted.org/packages/4e/c5/0a08950e5faba96e211715571c68ef64ee37b399ef4f0c4ab55e66c3c4fe/tarsnapper-0.5.0.tar.gz"
+  homepage "https:github.commiracle2ktarsnapper"
+  url "https:files.pythonhosted.orgpackages4ec50a08950e5faba96e211715571c68ef64ee37b399ef4f0c4ab55e66c3c4fetarsnapper-0.5.0.tar.gz"
   sha256 "b129b0fba3a24b2ce80c8a2ecd4375e36b6c7428b400e7b7ab9ea68ec9bb23ec"
   license "BSD-2-Clause"
   revision 1
@@ -26,12 +26,12 @@ class Tarsnapper < Formula
   depends_on "tarsnap"
 
   resource "pexpect" do
-    url "https://files.pythonhosted.org/packages/e5/9b/ff402e0e930e70467a7178abb7c128709a30dfb22d8777c043e501bc1b10/pexpect-4.8.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagese59bff402e0e930e70467a7178abb7c128709a30dfb22d8777c043e501bc1b10pexpect-4.8.0.tar.gz"
     sha256 "fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"
   end
 
   resource "ptyprocess" do
-    url "https://files.pythonhosted.org/packages/20/e5/16ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4e/ptyprocess-0.7.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages20e516ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4eptyprocess-0.7.0.tar.gz"
     sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
   end
 
@@ -40,6 +40,6 @@ class Tarsnapper < Formula
   end
 
   test do
-    assert_match "usage: tarsnapper", shell_output("#{bin}/tarsnapper --help")
+    assert_match "usage: tarsnapper", shell_output("#{bin}tarsnapper --help")
   end
 end

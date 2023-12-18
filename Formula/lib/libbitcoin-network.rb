@@ -1,7 +1,7 @@
 class LibbitcoinNetwork < Formula
   desc "Bitcoin P2P Network Library"
-  homepage "https://github.com/libbitcoin/libbitcoin-network"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-network/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comlibbitcoinlibbitcoin-network"
+  url "https:github.comlibbitcoinlibbitcoin-networkarchiverefstagsv3.8.0.tar.gz"
   sha256 "d317582bc6d00cba99a0ef01903a542c326c2a4262ef78a4aa682d3826fd14ad"
   license "AGPL-3.0"
   revision 1
@@ -19,23 +19,23 @@ class LibbitcoinNetwork < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
   deprecate! date: "2023-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # https:github.comlibbitcoinlibbitcoin-systemissues1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-system"
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
 
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
@@ -44,8 +44,8 @@ class LibbitcoinNetwork < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath/"test.cpp").write <<~EOS
-      #include <bitcoin/network.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <bitcoinnetwork.hpp>
       int main() {
         const bc::network::settings configuration;
         bc::network::p2p network(configuration);
@@ -59,6 +59,6 @@ class LibbitcoinNetwork < Formula
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-network",
                     "-L#{boost.lib}", "-lboost_system"
-    system "./test"
+    system ".test"
   end
 end

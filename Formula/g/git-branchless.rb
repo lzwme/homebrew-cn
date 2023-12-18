@@ -1,12 +1,12 @@
 class GitBranchless < Formula
   desc "High-velocity, monorepo-scale workflow for Git"
-  homepage "https://github.com/arxanas/git-branchless"
+  homepage "https:github.comarxanasgit-branchless"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://ghproxy.com/https://github.com/arxanas/git-branchless/archive/refs/tags/v0.8.0.tar.gz"
+  url "https:github.comarxanasgit-branchlessarchiverefstagsv0.8.0.tar.gz"
   sha256 "f9e13d9a3de960b32fb684a59492defd812bb0785df48facc964478f675f0355"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/arxanas/git-branchless.git", branch: "master"
+  head "https:github.comarxanasgit-branchless.git", branch: "master"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's
@@ -31,11 +31,11 @@ class GitBranchless < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/arxanas/git-branchless/blob/v#{version}/Cargo.lock
+  # 1. Search for `libgit2-sys` version at https:github.comarxanasgit-branchlessblobv#{version}Cargo.lock
   # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
   #    - Migrate to the corresponding `libgit2` formula.
   #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
+  #      See: https:github.comrust-langgit2-rscommit59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
   depends_on "libgit2@1.6"
 
   def install
@@ -49,17 +49,17 @@ class GitBranchless < Formula
 
   test do
     system "git", "init"
-    %w[haunted house].each { |f| touch testpath/f }
+    %w[haunted house].each { |f| touch testpathf }
     system "git", "add", "haunted", "house"
     system "git", "commit", "-a", "-m", "Initial Commit"
 
     system "git", "branchless", "init"
     assert_match "Initial Commit", shell_output("git sl").strip
 
-    linkage_with_libgit2 = (bin/"git-branchless").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"git-branchless").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.6"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2@1.6"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

@@ -1,7 +1,7 @@
 class ReFlex < Formula
   desc "Regex-centric, fast and flexible scanner generator for C++"
-  homepage "https://www.genivia.com/doc/reflex/html"
-  url "https://ghproxy.com/https://github.com/Genivia/RE-flex/archive/refs/tags/v3.5.1.tar.gz"
+  homepage "https:www.genivia.comdocreflexhtml"
+  url "https:github.comGeniviaRE-flexarchiverefstagsv3.5.1.tar.gz"
   sha256 "e08ed24a6799a6976f6e32312be1ee059b4b6b55f8af3b433a3016d63250c0e4"
   license "BSD-3-Clause"
 
@@ -18,14 +18,14 @@ class ReFlex < Formula
   depends_on "pcre2"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"echo.l").write <<~EOS
+    (testpath"echo.l").write <<~EOS
       %{
       #include <stdio.h>
       %}
@@ -34,7 +34,7 @@ class ReFlex < Formula
       .+  ECHO;
       %%
     EOS
-    system "#{bin}/reflex", "--flex", "echo.l"
-    assert_predicate testpath/"lex.yy.cpp", :exist?
+    system "#{bin}reflex", "--flex", "echo.l"
+    assert_predicate testpath"lex.yy.cpp", :exist?
   end
 end

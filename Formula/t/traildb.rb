@@ -1,13 +1,13 @@
 class Traildb < Formula
   desc "Blazingly-fast database for log-structured data"
-  homepage "https://traildb.io/"
-  url "https://ghproxy.com/https://github.com/traildb/traildb/archive/refs/tags/0.6.tar.gz"
+  homepage "https:traildb.io"
+  url "https:github.comtraildbtraildbarchiverefstags0.6.tar.gz"
   sha256 "f73515fe56c547f861296cf8eecc98b8e8bf00d175ad9fb7f4b981ad7cf8b67c"
   license "MIT"
 
   livecheck do
-    url "https://github.com/traildb/traildb.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.comtraildbtraildb.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,19 +32,19 @@ class Traildb < Formula
   # Update waf script for Python 3
   # Use resource instead of patch since applying corrupts waf
   resource "waf" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/traildb/traildb/053ed8e5d0301c792f3ee703cd9936c49ecf41a1/waf"
+    url "https:raw.githubusercontent.comtraildbtraildb053ed8e5d0301c792f3ee703cd9936c49ecf41a1waf"
     sha256 "2e0cf83a63843da127610420cef1d3126f1187d8e572b6b3a28052fc2250d4bf"
   end
 
   def install
     ENV["PREFIX"] = prefix
     buildpath.install resource("waf")
-    system "python3", "./waf", "configure", "install"
+    system "python3", ".waf", "configure", "install"
   end
 
   test do
     # Check that the library has been installed correctly
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <traildb.h>
       #include <assert.h>
       int main() {
@@ -58,10 +58,10 @@ class Traildb < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-ltraildb", "-o", "test"
-    system "./test"
+    system ".test"
 
     # Check that the provided tdb binary works correctly
-    (testpath/"in.csv").write("1234 1234\n")
-    system bin/"tdb", "make", "-c", "-i", "in.csv", "--tdb-format", "pkg"
+    (testpath"in.csv").write("1234 1234\n")
+    system bin"tdb", "make", "-c", "-i", "in.csv", "--tdb-format", "pkg"
   end
 end

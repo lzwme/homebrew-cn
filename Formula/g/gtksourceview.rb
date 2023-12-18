@@ -1,7 +1,7 @@
 class Gtksourceview < Formula
-  desc "Text view with syntax, undo/redo, and text marks"
-  homepage "https://projects.gnome.org/gtksourceview/"
-  url "https://download.gnome.org/sources/gtksourceview/2.10/gtksourceview-2.10.5.tar.gz"
+  desc "Text view with syntax, undoredo, and text marks"
+  homepage "https:projects.gnome.orggtksourceview"
+  url "https:download.gnome.orgsourcesgtksourceview2.10gtksourceview-2.10.5.tar.gz"
   sha256 "f5c3dda83d69c8746da78c1434585169dd8de1eecf2a6bcdda0d9925bf857c97"
   revision 7
 
@@ -17,7 +17,7 @@ class Gtksourceview < Formula
     sha256 x86_64_linux:   "138535f8db7f04bd9beb9d9dea5762b006b0425662d93397fad10cd88647d0f7"
   end
 
-  # GTK 2 is EOL: https://blog.gtk.org/2020/12/16/gtk-4-0/
+  # GTK 2 is EOL: https:blog.gtk.org20201216gtk-4-0
   deprecate! date: "2023-01-18", because: :unmaintained
 
   depends_on "intltool" => :build
@@ -33,7 +33,7 @@ class Gtksourceview < Formula
 
   resource "gtk-mac-integration" do
     on_macos do
-      url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.1.tar.xz"
+      url "https:download.gnome.orgsourcesgtk-mac-integration3.0gtk-mac-integration-3.0.1.tar.xz"
       sha256 "f19e35bc4534963127bbe629b9b3ccb9677ef012fc7f8e97fd5e890873ceb22d"
     end
   end
@@ -43,14 +43,14 @@ class Gtksourceview < Formula
   # These are already integrated upstream in their gnome-2-30 branch but a release of
   # this remains highly unlikely
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/gtksourceview/2.10.5.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9gtksourceview2.10.5.patch"
     sha256 "1c91cd534d73a0f9b0189da572296c5bd9f99e0bb0d3004a5e9cbd9f828edfaf"
   end
 
   def install
     if OS.mac?
       resource("gtk-mac-integration").stage do
-        system "./configure", "--prefix=#{libexec}",
+        system ".configure", "--prefix=#{libexec}",
                               "--disable-dependency-tracking",
                               "--disable-silent-rules",
                               "--with-gtk2",
@@ -58,18 +58,18 @@ class Gtksourceview < Formula
                               "--enable-introspection=no"
         system "make", "install"
       end
-      ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", libexec"libpkgconfig"
     else
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5"
+      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5"
     end
 
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gtksourceview/gtksourceview.h>
+    (testpath"test.c").write <<~EOS
+      #include <gtksourceviewgtksourceview.h>
 
       int main(int argc, char *argv[]) {
         GtkWidget *widget = gtk_source_view_new();
@@ -90,21 +90,21 @@ class Gtksourceview < Formula
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx.opt_include}/gtk-2.0
-      -I#{gtkx.opt_lib}/gtk-2.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/gtksourceview-2.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gtkx.opt_include}gtk-2.0
+      -I#{gtkx.opt_lib}gtk-2.0include
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}gtksourceview-2.0
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -132,6 +132,6 @@ class Gtksourceview < Formula
       ]
     end
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

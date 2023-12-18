@@ -1,7 +1,7 @@
 class GitWorkspace < Formula
   desc "Sync personal and work git repositories from multiple providers"
-  homepage "https://github.com/orf/git-workspace"
-  url "https://ghproxy.com/https://github.com/orf/git-workspace/archive/refs/tags/v1.4.0.tar.gz"
+  homepage "https:github.comorfgit-workspace"
+  url "https:github.comorfgit-workspacearchiverefstagsv1.4.0.tar.gz"
   sha256 "fb66b03f4068950ba2fac73b445a964b2b941137f9b31f5db9f4fba1a73d3d4d"
   license "MIT"
 
@@ -27,15 +27,15 @@ class GitWorkspace < Formula
   test do
     ENV["GIT_WORKSPACE"] = Pathname.pwd
     ENV["GITHUB_TOKEN"] = "foo"
-    system "#{bin}/git-workspace", "add", "github", "foo"
+    system "#{bin}git-workspace", "add", "github", "foo"
     assert_match "provider = \"github\"", File.read("workspace.toml")
-    output = shell_output("#{bin}/git-workspace update 2>&1", 1)
-    assert_match "Error fetching repositories from Github user/org foo", output
+    output = shell_output("#{bin}git-workspace update 2>&1", 1)
+    assert_match "Error fetching repositories from Github userorg foo", output
 
-    linkage_with_libgit2 = (bin/"git-workspace").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"git-workspace").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

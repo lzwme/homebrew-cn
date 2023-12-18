@@ -1,7 +1,7 @@
 class Gaze < Formula
   desc "Execute commands for you"
-  homepage "https://github.com/wtetsu/gaze"
-  url "https://ghproxy.com/https://github.com/wtetsu/gaze/archive/refs/tags/v1.1.6.tar.gz"
+  homepage "https:github.comwtetsugaze"
+  url "https:github.comwtetsugazearchiverefstagsv1.1.6.tar.gz"
   sha256 "3fd0ab0b3451e78b85bf2104d5b23b3c4d018cc8f2ed824e103761f8a327c713"
   license "MIT"
 
@@ -20,12 +20,12 @@ class Gaze < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/gaze/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmdgazemain.go"
   end
 
   test do
     pid = fork do
-      exec bin/"gaze", "-c", "cp test.txt out.txt", "test.txt"
+      exec bin"gaze", "-c", "cp test.txt out.txt", "test.txt"
     end
     sleep 5
     File.write("test.txt", "hello, world!")

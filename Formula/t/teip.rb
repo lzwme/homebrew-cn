@@ -1,10 +1,10 @@
 class Teip < Formula
   desc 'Masking tape to help commands "do one thing well"'
-  homepage "https://github.com/greymd/teip"
-  url "https://ghproxy.com/https://github.com/greymd/teip/archive/refs/tags/v2.3.0.tar.gz"
+  homepage "https:github.comgreymdteip"
+  url "https:github.comgreymdteiparchiverefstagsv2.3.0.tar.gz"
   sha256 "4c39466613f39d27fa22ae2a6309ac732ea94fdbc8711ecd4149fc1ecdfbaedf"
   license "MIT"
-  head "https://github.com/greymd/teip.git", branch: "main"
+  head "https:github.comgreymdteip.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -18,7 +18,7 @@ class Teip < Formula
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
-  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # https:github.comrust-langrust-bindgenissues2312.
   # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
   # updated to 0.62.0 or newer. There is a check in the `install` method.
   depends_on "llvm@15" => :build # for libclang
@@ -28,8 +28,8 @@ class Teip < Formula
 
   def install
     bindgen_version = Version.new(
-      (buildpath/"Cargo.lock").read
-                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+      (buildpath"Cargo.lock").read
+                              .match(name = "bindgen"\nversion = "(.*)")[1],
     )
     if bindgen_version >= "0.62.0"
       odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
@@ -43,10 +43,10 @@ class Teip < Formula
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
     system "cargo", "install", "--features", "oniguruma", *std_cargo_args
-    man1.install "man/teip.1"
-    zsh_completion.install "completion/zsh/_teip"
-    fish_completion.install "completion/fish/teip.fish"
-    bash_completion.install "completion/bash/teip"
+    man1.install "manteip.1"
+    zsh_completion.install "completionzsh_teip"
+    fish_completion.install "completionfishteip.fish"
+    bash_completion.install "completionbashteip"
   end
 
   def check_binary_linkage(binary, library)
@@ -59,12 +59,12 @@ class Teip < Formula
 
   test do
     ENV["TEIP_HIGHLIGHT"] = "<{}>"
-    assert_match "<1>23", pipe_output("#{bin}/teip -c 1", "123", 0)
+    assert_match "<1>23", pipe_output("#{bin}teip -c 1", "123", 0)
 
     [
-      Formula["oniguruma"].opt_lib/shared_library("libonig"),
+      Formula["oniguruma"].opt_libshared_library("libonig"),
     ].each do |library|
-      assert check_binary_linkage(bin/"teip", library),
+      assert check_binary_linkage(bin"teip", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

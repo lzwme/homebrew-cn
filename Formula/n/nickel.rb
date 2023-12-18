@@ -1,10 +1,10 @@
 class Nickel < Formula
   desc "Better configuration for less"
-  homepage "https://github.com/tweag/nickel"
-  url "https://ghproxy.com/https://github.com/tweag/nickel/archive/refs/tags/1.3.0.tar.gz"
+  homepage "https:github.comtweagnickel"
+  url "https:github.comtweagnickelarchiverefstags1.3.0.tar.gz"
   sha256 "cd6919eb945992721bd164291ebee11dbb62f06004061c0cfc5fa73e98197224"
   license "MIT"
-  head "https://github.com/tweag/nickel.git", branch: "master"
+  head "https:github.comtweagnickel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f1c678b1835a86dc1d2d741fa7e44eecdb913e3ac7efb0b3425c7fd3ae3d788"
@@ -23,17 +23,17 @@ class Nickel < Formula
 
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin/"nickel", "gen-completions")
+    generate_completions_from_executable(bin"nickel", "gen-completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/nickel --version")
+    assert_match version.to_s, shell_output("#{bin}nickel --version")
 
-    (testpath/"program.ncl").write <<~EOS
+    (testpath"program.ncl").write <<~EOS
       let s = "world" in "Hello, " ++ s
     EOS
 
-    output = shell_output("#{bin}/nickel eval program.ncl")
+    output = shell_output("#{bin}nickel eval program.ncl")
     assert_match "Hello, world", output
   end
 end

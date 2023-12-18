@@ -1,10 +1,10 @@
 class Staticcheck < Formula
   desc "State of the art linter for the Go programming language"
-  homepage "https://staticcheck.io/"
-  url "https://ghproxy.com/https://github.com/dominikh/go-tools/archive/refs/tags/2023.1.6.tar.gz"
+  homepage "https:staticcheck.io"
+  url "https:github.comdominikhgo-toolsarchiverefstags2023.1.6.tar.gz"
   sha256 "c3a45209348ac0a6ea2018f4b25d483467ad5800ceff483834bce6345256fa62"
   license "MIT"
-  head "https://github.com/dominikh/go-tools.git", branch: "master"
+  head "https:github.comdominikhgo-tools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "687dbae190708996143671cfd2a63fe554ea28a2e1fd6987a5e10c853c684c07"
@@ -21,11 +21,11 @@ class Staticcheck < Formula
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args, "./cmd/staticcheck"
+    system "go", "build", *std_go_args, ".cmdstaticcheck"
   end
 
   test do
-    (testpath/"test.go").write <<~EOS
+    (testpath"test.go").write <<~EOS
       package main
 
       import "fmt"
@@ -36,7 +36,7 @@ class Staticcheck < Formula
         fmt.Println(x)
       }
     EOS
-    json_output = JSON.parse(shell_output("#{bin}/staticcheck -f json test.go", 1))
+    json_output = JSON.parse(shell_output("#{bin}staticcheck -f json test.go", 1))
     assert_equal json_output["code"], "S1021"
   end
 end

@@ -1,7 +1,7 @@
 class Rnr < Formula
   desc "Command-line tool to batch rename files and directories"
-  homepage "https://github.com/ismaelgv/rnr"
-  url "https://ghproxy.com/https://github.com/ismaelgv/rnr/archive/refs/tags/v0.4.2.tar.gz"
+  homepage "https:github.comismaelgvrnr"
+  url "https:github.comismaelgvrnrarchiverefstagsv0.4.2.tar.gz"
   sha256 "cde8e5366552263300e60133b82f6a3868aeced2fe83abc91c2168085dff0998"
   license "MIT"
 
@@ -23,19 +23,19 @@ class Rnr < Formula
     ENV["SHELL_COMPLETIONS_DIR"] = buildpath
     system "cargo", "install", *std_cargo_args
 
-    deploy_dir = Dir["target/release/build/rnr-*/out"].first
-    zsh_completion.install "#{deploy_dir}/_rnr" => "_rnr"
-    bash_completion.install "#{deploy_dir}/rnr.bash" => "rnr"
-    fish_completion.install "#{deploy_dir}/rnr.fish"
+    deploy_dir = Dir["targetreleasebuildrnr-*out"].first
+    zsh_completion.install "#{deploy_dir}_rnr" => "_rnr"
+    bash_completion.install "#{deploy_dir}rnr.bash" => "rnr"
+    fish_completion.install "#{deploy_dir}rnr.fish"
   end
 
   test do
     touch "foo.doc"
     mkdir "one"
-    touch "one/foo.doc"
+    touch "onefoo.doc"
 
-    system "#{bin}/rnr", "-f", "doc", "txt", "foo.doc", "one/foo.doc"
-    refute_predicate testpath/"foo.doc", :exist?
-    assert_predicate testpath/"foo.txt", :exist?
+    system "#{bin}rnr", "-f", "doc", "txt", "foo.doc", "onefoo.doc"
+    refute_predicate testpath"foo.doc", :exist?
+    assert_predicate testpath"foo.txt", :exist?
   end
 end

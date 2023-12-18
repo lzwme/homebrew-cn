@@ -1,10 +1,10 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
-  homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://ghproxy.com/https://github.com/harfbuzz/harfbuzz/archive/refs/tags/8.3.0.tar.gz"
+  homepage "https:github.comharfbuzzharfbuzz"
+  url "https:github.comharfbuzzharfbuzzarchiverefstags8.3.0.tar.gz"
   sha256 "6a093165442348d99f3307480ea87ed83bdabaf642cdd9548cff6b329e93bfac"
   license "MIT"
-  head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
+  head "https:github.comharfbuzzharfbuzz.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "b887133a87078eaa6e1ad50d0d429a981b756c1e43fc6c16fa49b10af31b382c"
@@ -29,7 +29,7 @@ class Harfbuzz < Formula
   depends_on "icu4c"
 
   resource "homebrew-test-ttf" do
-    url "https://github.com/harfbuzz/harfbuzz/raw/fc0daafab0336b847ac14682e581a8838f36a0bf/test/shaping/fonts/sha1sum/270b89df543a7e48e206a2d830c0e10e5265c630.ttf"
+    url "https:github.comharfbuzzharfbuzzrawfc0daafab0336b847ac14682e581a8838f36a0bftestshapingfontssha1sum270b89df543a7e48e206a2d830c0e10e5265c630.ttf"
     sha256 "9535d35dab9e002963eef56757c46881f6b3d3b27db24eefcc80929781856c77"
   end
 
@@ -54,7 +54,7 @@ class Harfbuzz < Formula
 
   test do
     resource("homebrew-test-ttf").stage do
-      shape = pipe_output("#{bin}/hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf", "സ്റ്റ്").chomp
+      shape = pipe_output("#{bin}hb-shape 270b89df543a7e48e206a2d830c0e10e5265c630.ttf", "സ്റ്റ്").chomp
       assert_equal "[glyph201=0+1183|U0D4D=0+0]", shape
     end
     system "python3.12", "-c", "from gi.repository import HarfBuzz"

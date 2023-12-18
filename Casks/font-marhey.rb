@@ -2,11 +2,11 @@ cask "font-marhey" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/marhey/Marhey%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmarheyMarhey%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Marhey"
   desc "Playful display typeface, custom hand lettering with contrast strokes"
-  homepage "https://fonts.google.com/specimen/Marhey"
+  homepage "https:fonts.google.comspecimenMarhey"
 
   font "Marhey[wght].ttf"
 

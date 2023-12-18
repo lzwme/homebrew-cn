@@ -3,11 +3,11 @@ cask "sonic-robo-blast-2" do
   version "2.2.13"
   sha256 "06e1d7f9e47cb095b950daaedf2a232e4275c0c2a8894d0ac1110242289efeb4"
 
-  url "https://ghproxy.com/https://github.com/STJr/SRB2/releases/download/SRB2_release_#{version}/SRB2-#{version}-macOS-Installer.dmg",
-      verified: "github.com/STJr/SRB2/"
+  url "https:github.comSTJrSRB2releasesdownloadSRB2_release_#{version}SRB2-#{version}-macOS-Installer.dmg",
+      verified: "github.comSTJrSRB2"
   name "Sonic Robo Blast 2"
   desc "3D open-source Sonic the Hedgehog fangame built using a Doom Legacy port of Doom"
-  homepage "https://www.srb2.org/"
+  homepage "https:www.srb2.org"
 
   livecheck do
     url :url
@@ -16,5 +16,5 @@ cask "sonic-robo-blast-2" do
 
   app "Sonic Robo Blast 2.app"
 
-  zap trash: "~/srb2"
+  zap trash: "~srb2"
 end

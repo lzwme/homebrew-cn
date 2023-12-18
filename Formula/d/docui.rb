@@ -1,10 +1,10 @@
 class Docui < Formula
   desc "TUI Client for Docker"
-  homepage "https://github.com/skanehira/docui"
-  url "https://ghproxy.com/https://github.com/skanehira/docui/archive/refs/tags/2.0.4.tar.gz"
+  homepage "https:github.comskanehiradocui"
+  url "https:github.comskanehiradocuiarchiverefstags2.0.4.tar.gz"
   sha256 "9af1a720aa7c68bea4469f1d7eea81ccb68e15a47ccfc9c83011a06d696ad30d"
   license "MIT"
-  head "https://github.com/skanehira/docui.git", branch: "master"
+  head "https:github.comskanehiradocui.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "de82677b66e326d6af704b75aa714a5da131360dd5e4ddaed8c4db3c960d6351"
@@ -27,9 +27,9 @@ class Docui < Formula
   end
 
   test do
-    system "#{bin}/docui", "-h"
+    system "#{bin}docui", "-h"
 
-    assert_match "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?",
-      shell_output("#{bin}/docui 2>&1", 1)
+    assert_match "Cannot connect to the Docker daemon at unix:varrundocker.sock. Is the docker daemon running?",
+      shell_output("#{bin}docui 2>&1", 1)
   end
 end

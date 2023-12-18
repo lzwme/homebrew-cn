@@ -1,10 +1,10 @@
 class Honcho < Formula
   desc "Python clone of Foreman, for managing Procfile-based applications"
-  homepage "https://github.com/nickstenning/honcho"
-  url "https://files.pythonhosted.org/packages/0e/7c/c0aa47711b5ada100273cbe190b33cc12297065ce559989699fd6c1ec0cb/honcho-1.1.0.tar.gz"
+  homepage "https:github.comnickstenninghoncho"
+  url "https:files.pythonhosted.orgpackages0e7cc0aa47711b5ada100273cbe190b33cc12297065ce559989699fd6c1ec0cbhoncho-1.1.0.tar.gz"
   sha256 "c5eca0bded4bef6697a23aec0422fd4f6508ea3581979a3485fc4b89357eb2a9"
   license "MIT"
-  head "https://github.com/nickstenning/honcho.git", branch: "main"
+  head "https:github.comnickstenninghoncho.git", branch: "main"
 
   bottle do
     rebuild 4
@@ -21,9 +21,9 @@ class Honcho < Formula
   depends_on "python@3.12"
 
   # Replace pkg_resources with importlib for 3.12
-  # https://github.com/nickstenning/honcho/pull/236
+  # https:github.comnickstenninghonchopull236
   patch do
-    url "https://github.com/nickstenning/honcho/commit/ce96b41796ad3072abc90cfab857063a0da4610f.patch?full_index=1"
+    url "https:github.comnickstenninghonchocommitce96b41796ad3072abc90cfab857063a0da4610f.patch?full_index=1"
     sha256 "a20f222f57d23f33e732cc23ba4cc22000eb38e2f9cd5c71fdbc6321e0eb364f"
   end
 
@@ -36,8 +36,8 @@ class Honcho < Formula
   end
 
   test do
-    (testpath/"Procfile").write("talk: echo $MY_VAR")
-    (testpath/".env").write("MY_VAR=hi")
-    assert_match(/talk\.\d+ \| hi/, shell_output("#{bin}/honcho start"))
+    (testpath"Procfile").write("talk: echo $MY_VAR")
+    (testpath".env").write("MY_VAR=hi")
+    assert_match(talk\.\d+ \| hi, shell_output("#{bin}honcho start"))
   end
 end

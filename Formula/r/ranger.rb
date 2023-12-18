@@ -2,12 +2,12 @@ class Ranger < Formula
   include Language::Python::Shebang
 
   desc "File browser"
-  homepage "https://ranger.github.io"
-  url "https://ranger.github.io/ranger-1.9.3.tar.gz"
+  homepage "https:ranger.github.io"
+  url "https:ranger.github.ioranger-1.9.3.tar.gz"
   sha256 "ce088a04c91c25263a9675dc5c43514b7ec1b38c8ea43d9a9d00923ff6cdd251"
   license "GPL-3.0-or-later"
   revision 2
-  head "https://github.com/ranger/ranger.git", branch: "master"
+  head "https:github.comrangerranger.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -24,7 +24,7 @@ class Ranger < Formula
   depends_on "python@3.12"
 
   def python
-    Formula["python@3.12"].opt_libexec/"bin/python"
+    Formula["python@3.12"].opt_libexec"binpython"
   end
 
   def install
@@ -32,13 +32,13 @@ class Ranger < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ranger --version")
+    assert_match version.to_s, shell_output("#{bin}ranger --version")
 
     code = "print('Hello World!')\n"
-    (testpath/"test.py").write code
-    assert_equal code, shell_output("#{bin}/rifle -w cat test.py")
+    (testpath"test.py").write code
+    assert_equal code, shell_output("#{bin}rifle -w cat test.py")
 
     ENV.prepend_path "PATH", python.parent
-    assert_equal "Hello World!\n", shell_output("#{bin}/rifle -p 2 test.py")
+    assert_equal "Hello World!\n", shell_output("#{bin}rifle -p 2 test.py")
   end
 end

@@ -1,14 +1,14 @@
 class DeviceMapper < Formula
   desc "Userspace library and tools for logical volume management"
-  homepage "https://sourceware.org/dm"
-  url "https://sourceware.org/git/lvm2.git",
+  homepage "https:sourceware.orgdm"
+  url "https:sourceware.orggitlvm2.git",
       tag:      "v2_03_22",
       revision: "016e469caf856f1eb8dde39df0d1aa2e74225aed"
   license "LGPL-2.1-only"
 
   livecheck do
     url :stable
-    regex(/href=.*?;a=tag;.*?>Release (\d+(?:\.\d+)+)</i)
+    regex(href=.*?;a=tag;.*?>Release (\d+(?:\.\d+)+)<i)
     strategy :page_match
   end
 
@@ -20,9 +20,9 @@ class DeviceMapper < Formula
   depends_on :linux
 
   def install
-    # https://github.com/NixOS/nixpkgs/pull/52597
+    # https:github.comNixOSnixpkgspull52597
     ENV.deparallelize
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -32,7 +32,7 @@ class DeviceMapper < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <libdevmapper.h>
 
       int main() {
@@ -41,6 +41,6 @@ class DeviceMapper < Formula
       }
     EOS
     system ENV.cc, "-I#{include}", "-L#{lib}", "-ldevmapper", "test.c", "-o", "test"
-    system testpath/"test"
+    system testpath"test"
   end
 end

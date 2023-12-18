@@ -1,13 +1,13 @@
 class Libsolv < Formula
   desc "Library for solving packages and reading repositories"
-  homepage "https://github.com/openSUSE/libsolv"
-  url "https://ghproxy.com/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.27.tar.gz"
+  homepage "https:github.comopenSUSElibsolv"
+  url "https:github.comopenSUSElibsolvarchiverefstags0.7.27.tar.gz"
   sha256 "5c492ab1847dfd0ac485c0bb35609e7ff18fe9645a26498e2d5373ab728cfd3f"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -54,9 +54,9 @@ class Libsolv < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <solv/pool.h>
-      #include <solv/repo.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <solvpool.h>
+      #include <solvrepo.h>
 
       int main(int argc, char **argv) {
         Pool *pool = pool_create();
@@ -67,6 +67,6 @@ class Libsolv < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lsolv", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

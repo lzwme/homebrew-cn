@@ -1,11 +1,11 @@
 class ProtocGenGogofaster < Formula
   desc "Protocol Buffers for Go with Gadgets"
-  homepage "https://github.com/gogo/protobuf"
-  url "https://ghproxy.com/https://github.com/gogo/protobuf/archive/refs/tags/v1.3.2.tar.gz"
+  homepage "https:github.comgogoprotobuf"
+  url "https:github.comgogoprotobufarchiverefstagsv1.3.2.tar.gz"
   sha256 "2bb4b13d6e56b3911f09b8e9ddd15708477fbff8823c057cc79dd99c9a452b34"
   license "BSD-3-Clause"
   revision 2
-  head "https://github.com/gogo/protobuf.git", branch: "master"
+  head "https:github.comgogoprotobuf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "431013b7d133ac74d5ff547246f2bc641936067d1b10eb4b93ad015032836661"
@@ -22,18 +22,18 @@ class ProtocGenGogofaster < Formula
   end
 
   # gogoprotobuf is officially deprecated:
-  # https://github.com/gogo/protobuf/commit/f67b8970b736e53dbd7d0a27146c8f1ac52f74e5
+  # https:github.comgogoprotobufcommitf67b8970b736e53dbd7d0a27146c8f1ac52f74e5
   deprecate! date: "2023-03-02", because: :deprecated_upstream
 
   depends_on "go" => :build
   depends_on "protobuf"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./protoc-gen-gogofaster"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".protoc-gen-gogofaster"
   end
 
   test do
-    protofile = testpath/"proto3.proto"
+    protofile = testpath"proto3.proto"
     protofile.write <<~EOS
       syntax = "proto3";
       package proto3;
@@ -43,7 +43,7 @@ class ProtocGenGogofaster < Formula
       }
     EOS
     system "protoc", "--gogofaster_out=.", "proto3.proto"
-    assert_predicate testpath/"proto3.pb.go", :exist?
-    refute_predicate (testpath/"proto3.pb.go").size, :zero?
+    assert_predicate testpath"proto3.pb.go", :exist?
+    refute_predicate (testpath"proto3.pb.go").size, :zero?
   end
 end

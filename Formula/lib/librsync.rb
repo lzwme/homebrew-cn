@@ -1,7 +1,7 @@
 class Librsync < Formula
   desc "Library that implements the rsync remote-delta algorithm"
-  homepage "https://librsync.github.io/"
-  url "https://ghproxy.com/https://github.com/librsync/librsync/archive/refs/tags/v2.3.4.tar.gz"
+  homepage "https:librsync.github.io"
+  url "https:github.comlibrsynclibrsyncarchiverefstagsv2.3.4.tar.gz"
   sha256 "a0dedf9fff66d8e29e7c25d23c1f42beda2089fb4eac1b36e6acd8a29edfbd1f"
   license "LGPL-2.1-or-later"
 
@@ -23,11 +23,11 @@ class Librsync < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
-    man1.install "doc/rdiff.1"
-    man3.install "doc/librsync.3"
+    man1.install "docrdiff.1"
+    man3.install "doclibrsync.3"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/rdiff -V")
+    assert_match version.to_s, shell_output("#{bin}rdiff -V")
   end
 end

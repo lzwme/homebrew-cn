@@ -1,10 +1,10 @@
 class Smlpkg < Formula
   desc "Package manager for Standard ML libraries and programs"
-  homepage "https://github.com/diku-dk/smlpkg"
-  url "https://ghproxy.com/https://github.com/diku-dk/smlpkg/archive/refs/tags/v0.1.5.tar.gz"
+  homepage "https:github.comdiku-dksmlpkg"
+  url "https:github.comdiku-dksmlpkgarchiverefstagsv0.1.5.tar.gz"
   sha256 "53440d8b0166dd689330fc686738076225ac883a00b283e65394cf9312575c33"
   license "MIT"
-  head "https://github.com/diku-dk/smlpkg.git", branch: "master"
+  head "https:github.comdiku-dksmlpkg.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -18,7 +18,7 @@ class Smlpkg < Formula
   end
 
   depends_on "mlkit" => :build
-  depends_on arch: :x86_64 # https://github.com/melsman/mlkit/issues/115
+  depends_on arch: :x86_64 # https:github.commelsmanmlkitissues115
 
   def install
     system "make", "-C", "src", "smlpkg"
@@ -27,14 +27,14 @@ class Smlpkg < Formula
 
   test do
     expected_pkg = <<~EOS
-      package github.com/diku-dk/testpkg
+      package github.comdiku-dktestpkg
 
       require {
-        github.com/diku-dk/sml-random 0.1.0 #8b329d10b0df570da087f9e15f3c829c9a1d74c2
+        github.comdiku-dksml-random 0.1.0 #8b329d10b0df570da087f9e15f3c829c9a1d74c2
       }
     EOS
-    system bin/"smlpkg", "init", "github.com/diku-dk/testpkg"
-    system bin/"smlpkg", "add", "github.com/diku-dk/sml-random", "0.1.0"
-    assert_equal expected_pkg, (testpath/"sml.pkg").read
+    system bin"smlpkg", "init", "github.comdiku-dktestpkg"
+    system bin"smlpkg", "add", "github.comdiku-dksml-random", "0.1.0"
+    assert_equal expected_pkg, (testpath"sml.pkg").read
   end
 end

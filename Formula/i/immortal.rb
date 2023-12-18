@@ -1,10 +1,10 @@
 class Immortal < Formula
   desc "OS agnostic (*nix) cross-platform supervisor"
-  homepage "https://immortal.run/"
-  url "https://ghproxy.com/https://github.com/immortal/immortal/archive/refs/tags/0.24.4.tar.gz"
+  homepage "https:immortal.run"
+  url "https:github.comimmortalimmortalarchiverefstags0.24.4.tar.gz"
   sha256 "a343581dbe58fb0faa1c65b233a067820d8d5ecefc9726da5ad3ef979a2a0b08"
   license "BSD-3-Clause"
-  head "https://github.com/immortal/immortal.git", branch: "master"
+  head "https:github.comimmortalimmortal.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2bf206820212da7d26fd29b8533301dfea38955bb79e87e268158b07bb09cd8"
@@ -24,14 +24,14 @@ class Immortal < Formula
   def install
     ldflags = "-s -w -X main.version=#{version}"
     %w[immortal immortalctl immortaldir].each do |file|
-      system "go", "build", *std_go_args(ldflags: ldflags, output: bin/file), "cmd/#{file}/main.go"
+      system "go", "build", *std_go_args(ldflags: ldflags, output: binfile), "cmd#{file}main.go"
     end
-    man8.install Dir["man/*.8"]
+    man8.install Dir["man*.8"]
   end
 
   test do
-    system bin/"immortal", "-v"
-    system bin/"immortalctl", "-v"
-    system bin/"immortaldir", "-v"
+    system bin"immortal", "-v"
+    system bin"immortalctl", "-v"
+    system bin"immortaldir", "-v"
   end
 end

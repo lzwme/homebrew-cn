@@ -1,10 +1,10 @@
 class Cereal < Formula
   desc "C++11 library for serialization"
-  homepage "https://uscilab.github.io/cereal/"
-  url "https://ghproxy.com/https://github.com/USCiLab/cereal/archive/refs/tags/v1.3.2.tar.gz"
+  homepage "https:uscilab.github.iocereal"
+  url "https:github.comUSCiLabcerealarchiverefstagsv1.3.2.tar.gz"
   sha256 "16a7ad9b31ba5880dac55d62b5d6f243c3ebc8d46a3514149e56b5e7ea81f85f"
   license "BSD-3-Clause"
-  head "https://github.com/USCiLab/cereal.git", branch: "develop"
+  head "https:github.comUSCiLabcereal.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "13b3cb91e465c3857b307912e79bc1531167deccf9a2823d1c6e69abb8833792"
@@ -18,10 +18,10 @@ class Cereal < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <cereal/types/unordered_map.hpp>
-      #include <cereal/types/memory.hpp>
-      #include <cereal/archives/binary.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <cerealtypesunordered_map.hpp>
+      #include <cerealtypesmemory.hpp>
+      #include <cerealarchivesbinary.hpp>
       #include <fstream>
 
       struct MyRecord
@@ -68,7 +68,7 @@ class Cereal < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
-    system "./test"
-    assert_predicate testpath/"out.cereal", :exist?
+    system ".test"
+    assert_predicate testpath"out.cereal", :exist?
   end
 end

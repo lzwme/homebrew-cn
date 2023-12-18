@@ -2,11 +2,11 @@ cask "zettelkasten" do
   version "3.2023.10"
   sha256 "3c9bf950bc6eda0e335b463be6625e3ca668c8339dde0f600707afdb87e3c924"
 
-  url "https://ghproxy.com/https://github.com/Zettelkasten-Team/Zettelkasten/releases/download/v#{version}/Package.dmg.zip",
-      verified: "github.com/Zettelkasten-Team/Zettelkasten/"
+  url "https:github.comZettelkasten-TeamZettelkastenreleasesdownloadv#{version}Package.dmg.zip",
+      verified: "github.comZettelkasten-TeamZettelkasten"
   name "Zettelkasten"
   desc "Note box according to Luhmann"
-  homepage "http://zettelkasten.danielluedecke.de/"
+  homepage "http:zettelkasten.danielluedecke.de"
 
   livecheck do
     url :url

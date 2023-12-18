@@ -1,10 +1,10 @@
 class Yh < Formula
   desc "YAML syntax highlighter to bring colours where only jq could"
-  homepage "https://github.com/andreazorzetto/yh"
-  url "https://ghproxy.com/https://github.com/andreazorzetto/yh/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:github.comandreazorzettoyh"
+  url "https:github.comandreazorzettoyharchiverefstagsv0.4.0.tar.gz"
   sha256 "78ef799c500c00164ea05aacafc5c34dccc565e364285f05636c920c2c356d73"
   license "Apache-2.0"
-  head "https://github.com/andreazorzetto/yh.git", branch: "master"
+  head "https:github.comandreazorzettoyh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4719f7e1a8166248cf84ac5efe7d8bf0df277a08ed4cba8e1b071f87622dfb67"
@@ -28,6 +28,6 @@ class Yh < Formula
   end
 
   test do
-    assert_equal "\e[91mfoo\e[0m: \e[33mbar\e[0m\n", pipe_output("#{bin}/yh", "foo: bar")
+    assert_equal "\e[91mfoo\e[0m: \e[33mbar\e[0m\n", pipe_output("#{bin}yh", "foo: bar")
   end
 end

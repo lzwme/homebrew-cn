@@ -1,11 +1,11 @@
 class Carthage < Formula
   desc "Decentralized dependency manager for Cocoa"
-  homepage "https://github.com/Carthage/Carthage"
-  url "https://github.com/Carthage/Carthage.git",
+  homepage "https:github.comCarthageCarthage"
+  url "https:github.comCarthageCarthage.git",
       tag:      "0.39.1",
       revision: "edf085cc652b9be8270720c21d2ca1b9fb12ff94"
   license "MIT"
-  head "https://github.com/Carthage/Carthage.git", branch: "master"
+  head "https:github.comCarthageCarthage.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba4ee0fbdfad0f3759def555de4c32802bc56993c97a82d0b515247de138f773"
@@ -23,13 +23,13 @@ class Carthage < Formula
 
   def install
     system "make", "prefix_install", "PREFIX=#{prefix}"
-    bash_completion.install "Source/Scripts/carthage-bash-completion" => "carthage"
-    zsh_completion.install "Source/Scripts/carthage-zsh-completion" => "_carthage"
-    fish_completion.install "Source/Scripts/carthage-fish-completion" => "carthage.fish"
+    bash_completion.install "SourceScriptscarthage-bash-completion" => "carthage"
+    zsh_completion.install "SourceScriptscarthage-zsh-completion" => "_carthage"
+    fish_completion.install "SourceScriptscarthage-fish-completion" => "carthage.fish"
   end
 
   test do
-    (testpath/"Cartfile").write 'github "jspahrsummers/xcconfigs"'
-    system bin/"carthage", "update"
+    (testpath"Cartfile").write 'github "jspahrsummersxcconfigs"'
+    system bin"carthage", "update"
   end
 end

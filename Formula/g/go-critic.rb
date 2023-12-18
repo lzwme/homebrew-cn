@@ -1,14 +1,14 @@
 class GoCritic < Formula
   desc "Opinionated Go source code linter"
-  homepage "https://go-critic.com"
-  url "https://ghproxy.com/https://github.com/go-critic/go-critic/archive/refs/tags/v0.10.0.tar.gz"
+  homepage "https:go-critic.com"
+  url "https:github.comgo-criticgo-criticarchiverefstagsv0.10.0.tar.gz"
   sha256 "fe9f1ade9ee20a59ccbed1ae2cfdfcab66b5e95d1f62f6a3d0bc0dc02b3815bb"
   license "MIT"
-  head "https://github.com/go-critic/go-critic.git", branch: "master"
+  head "https:github.comgo-criticgo-critic.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,11 +26,11 @@ class GoCritic < Formula
   def install
     ldflags = "-s -w"
     ldflags += " -X main.Version=v#{version}" unless build.head?
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"gocritic"), "./cmd/gocritic"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"gocritic"), ".cmdgocritic"
   end
 
   test do
-    (testpath/"main.go").write <<~EOS
+    (testpath"main.go").write <<~EOS
       package main
 
       import "fmt"
@@ -43,7 +43,7 @@ class GoCritic < Formula
       }
     EOS
 
-    output = shell_output("#{bin}/gocritic check main.go 2>&1", 1)
+    output = shell_output("#{bin}gocritic check main.go 2>&1", 1)
     assert_match "sloppyLen: len(str) <= 0 can be len(str) == 0", output
   end
 end

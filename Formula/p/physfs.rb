@@ -1,10 +1,10 @@
 class Physfs < Formula
   desc "Library to provide abstract access to various archives"
-  homepage "https://icculus.org/physfs/"
-  url "https://ghproxy.com/https://github.com/icculus/physfs/archive/refs/tags/release-3.2.0.tar.gz"
+  homepage "https:icculus.orgphysfs"
+  url "https:github.comicculusphysfsarchiverefstagsrelease-3.2.0.tar.gz"
   sha256 "1991500eaeb8d5325e3a8361847ff3bf8e03ec89252b7915e1f25b3f8ab5d560"
   license "Zlib"
-  head "https://github.com/icculus/physfs.git", branch: "main"
+  head "https:github.comicculusphysfs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7556de6af5b763d6ce5fbb4e56acd432aefd2752a8bd27b38377de64f7f0ffc6"
@@ -36,13 +36,13 @@ class Physfs < Formula
   end
 
   test do
-    (testpath/"test.txt").write "homebrew"
+    (testpath"test.txt").write "homebrew"
     system "zip", "test.zip", "test.txt"
-    (testpath/"test").write <<~EOS
+    (testpath"test").write <<~EOS
       addarchive test.zip 1
       cat test.txt
     EOS
-    output = shell_output("#{bin}/test_physfs < test 2>&1")
+    output = shell_output("#{bin}test_physfs < test 2>&1")
     expected = if OS.mac?
       "Successful.\nhomebrew"
     else

@@ -1,10 +1,10 @@
 class CargoBloat < Formula
   desc "Find out what takes most of the space in your executable"
-  homepage "https://github.com/RazrFalcon/cargo-bloat"
-  url "https://ghproxy.com/https://github.com/RazrFalcon/cargo-bloat/archive/refs/tags/v0.11.1.tar.gz"
+  homepage "https:github.comRazrFalconcargo-bloat"
+  url "https:github.comRazrFalconcargo-bloatarchiverefstagsv0.11.1.tar.gz"
   sha256 "4f338c1a7f7ee6bcac150f7856ed1f32cf8d9009cfd513ca6c1aac1e6685c35f"
   license "MIT"
-  head "https://github.com/RazrFalcon/cargo-bloat.git", branch: "master"
+  head "https:github.comRazrFalconcargo-bloat.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,18 +29,18 @@ class CargoBloat < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     system "cargo", "new", "hello_world", "--bin"
     cd "hello_world" do
-      output = shell_output("#{bin}/cargo-bloat --release -n 10 2>&1", 1)
+      output = shell_output("#{bin}cargo-bloat --release -n 10 2>&1", 1)
       assert_match "Error: can be run only via `cargo bloat`", output
       output = shell_output("cargo bloat --release -n 10 2>&1")
-      assert_match "Analyzing target/release/hello_world", output
+      assert_match "Analyzing targetreleasehello_world", output
     end
   end
 end

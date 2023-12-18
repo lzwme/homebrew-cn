@@ -1,7 +1,7 @@
 class Profanity < Formula
   desc "Console based XMPP client"
-  homepage "https://profanity-im.github.io"
-  url "https://profanity-im.github.io/tarballs/profanity-0.14.0.tar.gz"
+  homepage "https:profanity-im.github.io"
+  url "https:profanity-im.github.iotarballsprofanity-0.14.0.tar.gz"
   sha256 "fd23ffd38a31907974a680a3900c959e14d44e16f1fb7df2bdb7f6c67bd7cf7f"
   license "GPL-3.0-or-later"
 
@@ -16,7 +16,7 @@ class Profanity < Formula
   end
 
   head do
-    url "https://github.com/profanity-im/profanity.git", branch: "master"
+    url "https:github.comprofanity-improfanity.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -40,20 +40,20 @@ class Profanity < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin"
 
-    system "./bootstrap.sh" if build.head?
+    system ".bootstrap.sh" if build.head?
 
     # We need to pass `BREW` to `configure` to make sure it can be found inside the sandbox in non-default
-    # prefixes. `configure` knows to check `/opt/homebrew` and `/usr/local`, but the sanitised build
+    # prefixes. `configure` knows to check `opthomebrew` and `usrlocal`, but the sanitised build
     # environment will prevent any other `brew` installations from being found.
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "BREW=#{HOMEBREW_BREW_FILE}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/profanity", "-v"
+    system "#{bin}profanity", "-v"
   end
 end

@@ -1,10 +1,10 @@
 class OpenscaCli < Formula
   desc "OpenSCA is a supply-chain security tool for security researchers and developers"
-  homepage "https://opensca.xmirror.cn"
-  url "https://ghproxy.com/https://github.com/XmirrorSecurity/OpenSCA-cli/archive/refs/tags/v3.0.0.tar.gz"
+  homepage "https:opensca.xmirror.cn"
+  url "https:github.comXmirrorSecurityOpenSCA-cliarchiverefstagsv3.0.0.tar.gz"
   sha256 "65633f9a76e00a218abc9f71a487cc1bb93a8951885915bd05337ebbaec52884"
   license "Apache-2.0"
-  head "https://github.com/XmirrorSecurity/OpenSCA-cli.git", branch: "master"
+  head "https:github.comXmirrorSecurityOpenSCA-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c8f1c4758080385aace1b5f3c29ce37fe1e550c3b293304eb06ac86546a55da"
@@ -24,8 +24,8 @@ class OpenscaCli < Formula
   end
 
   test do
-    system bin/"opensca-cli", "-path", testpath
-    assert_predicate testpath/"opensca.log", :exist?
-    assert_match version.to_s, shell_output(bin/"opensca-cli -version")
+    system bin"opensca-cli", "-path", testpath
+    assert_predicate testpath"opensca.log", :exist?
+    assert_match version.to_s, shell_output(bin"opensca-cli -version")
   end
 end

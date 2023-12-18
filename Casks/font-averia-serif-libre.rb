@@ -2,12 +2,12 @@ cask "font-averia-serif-libre" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/averiaseriflibre"
+      only_path: "oflaveriaseriflibre"
   name "Averia Serif Libre"
-  homepage "https://fonts.google.com/specimen/Averia+Serif+Libre"
+  homepage "https:fonts.google.comspecimenAveria+Serif+Libre"
 
   font "AveriaSerifLibre-Bold.ttf"
   font "AveriaSerifLibre-BoldItalic.ttf"

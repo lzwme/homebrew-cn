@@ -2,10 +2,10 @@ cask "font-concert-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/concertone/ConcertOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflconcertoneConcertOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Concert One"
-  homepage "https://fonts.google.com/specimen/Concert+One"
+  homepage "https:fonts.google.comspecimenConcert+One"
 
   font "ConcertOne-Regular.ttf"
 

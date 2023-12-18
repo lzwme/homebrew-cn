@@ -1,7 +1,7 @@
 class GumboParser < Formula
   desc "C99 library for parsing HTML5"
-  homepage "https://github.com/google/gumbo-parser"
-  url "https://ghproxy.com/https://github.com/google/gumbo-parser/archive/refs/tags/v0.10.1.tar.gz"
+  homepage "https:github.comgooglegumbo-parser"
+  url "https:github.comgooglegumbo-parserarchiverefstagsv0.10.1.tar.gz"
   sha256 "28463053d44a5dfbc4b77bcf49c8cee119338ffa636cc17fc3378421d714efad"
   license "Apache-2.0"
 
@@ -27,8 +27,8 @@ class GumboParser < Formula
   depends_on "libtool" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -36,16 +36,16 @@ class GumboParser < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "gumbo.h"
 
       int main() {
-        GumboOutput* output = gumbo_parse("<h1>Hello, World!</h1>");
+        GumboOutput* output = gumbo_parse("<h1>Hello, World!<h1>");
         gumbo_destroy_output(&kGumboDefaultOptions, output);
         return 0;
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lgumbo", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

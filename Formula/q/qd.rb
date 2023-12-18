@@ -1,12 +1,12 @@
 class Qd < Formula
-  desc "C++/Fortran-90 double-double and quad-double package"
-  homepage "https://www.davidhbailey.com/dhbsoftware/"
-  url "https://www.davidhbailey.com/dhbsoftware/qd-2.3.24.tar.gz"
+  desc "C++Fortran-90 double-double and quad-double package"
+  homepage "https:www.davidhbailey.comdhbsoftware"
+  url "https:www.davidhbailey.comdhbsoftwareqd-2.3.24.tar.gz"
   sha256 "ad6738e8330928308e10346ff7fd357ed17386408f8fb7a23704cd6f5d52a6c8"
 
   livecheck do
     url :homepage
-    regex(/href=.*?qd[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?qd[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -23,18 +23,18 @@ class Qd < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--enable-shared",
+    system ".configure", "--disable-dependency-tracking", "--enable-shared",
                           "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/qd-config --configure-args")
+    assert_match version.to_s, shell_output("#{bin}qd-config --configure-args")
   end
 end

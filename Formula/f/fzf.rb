@@ -1,10 +1,10 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
-  homepage "https://github.com/junegunn/fzf"
-  url "https://ghproxy.com/https://github.com/junegunn/fzf/archive/refs/tags/0.44.1.tar.gz"
+  homepage "https:github.comjunegunnfzf"
+  url "https:github.comjunegunnfzfarchiverefstags0.44.1.tar.gz"
   sha256 "295f3aec9519f0cf2dce67a14e94d8a743d82c19520e5671f39c71c9ea04f90c"
   license "MIT"
-  head "https://github.com/junegunn/fzf.git", branch: "master"
+  head "https:github.comjunegunnfzf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91b30c40eeb135cc8d7fc43883db66b888e96a9c993f1d9f97b70715017c33e8"
@@ -22,23 +22,23 @@ class Fzf < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.revision=brew")
-    man1.install "man/man1/fzf.1", "man/man1/fzf-tmux.1"
-    bin.install "bin/fzf-tmux"
+    man1.install "manman1fzf.1", "manman1fzf-tmux.1"
+    bin.install "binfzf-tmux"
 
     # Please don't install these into standard locations (e.g. `zsh_completion`, etc.)
-    # See: https://github.com/Homebrew/homebrew-core/pull/137432
-    #      https://github.com/Homebrew/legacy-homebrew/pull/27348
-    #      https://github.com/Homebrew/homebrew-core/pull/70543
+    # See: https:github.comHomebrewhomebrew-corepull137432
+    #      https:github.comHomebrewlegacy-homebrewpull27348
+    #      https:github.comHomebrewhomebrew-corepull70543
     prefix.install "install", "uninstall"
-    (prefix/"shell").install %w[bash zsh fish].map { |s| "shell/key-bindings.#{s}" }
-    (prefix/"shell").install %w[bash zsh].map { |s| "shell/completion.#{s}" }
-    (prefix/"plugin").install "plugin/fzf.vim"
+    (prefix"shell").install %w[bash zsh fish].map { |s| "shellkey-bindings.#{s}" }
+    (prefix"shell").install %w[bash zsh].map { |s| "shellcompletion.#{s}" }
+    (prefix"plugin").install "pluginfzf.vim"
   end
 
   def caveats
     <<~EOS
       To install useful keybindings and fuzzy completion:
-        #{opt_prefix}/install
+        #{opt_prefix}install
 
       To use fzf in Vim, add the following line to your .vimrc:
         set rtp+=#{opt_prefix}
@@ -46,7 +46,7 @@ class Fzf < Formula
   end
 
   test do
-    (testpath/"list").write %w[hello world].join($INPUT_RECORD_SEPARATOR)
-    assert_equal "world", pipe_output("#{bin}/fzf -f wld", (testpath/"list").read).chomp
+    (testpath"list").write %w[hello world].join($INPUT_RECORD_SEPARATOR)
+    assert_equal "world", pipe_output("#{bin}fzf -f wld", (testpath"list").read).chomp
   end
 end

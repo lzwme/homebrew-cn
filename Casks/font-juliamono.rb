@@ -2,10 +2,10 @@ cask "font-juliamono" do
   version "0.052"
   sha256 "1fc8afcecbea05d9363c7032941a4c67427f23661c88ad5c650e7ad9e7c93c69"
 
-  url "https://ghproxy.com/https://github.com/cormullion/juliamono/releases/download/v#{version}/JuliaMono.tar.gz"
+  url "https:github.comcormullionjuliamonoreleasesdownloadv#{version}JuliaMono.tar.gz"
   name "JuliaMono"
   desc "Monospaced typeface designed for programming in Julia"
-  homepage "https://github.com/cormullion/juliamono"
+  homepage "https:github.comcormullionjuliamono"
 
   font "JuliaMono-Black.ttf"
   font "JuliaMono-BlackItalic.ttf"

@@ -2,16 +2,16 @@ cask "font-ia-writer-duospace" do
   version :latest
   sha256 :no_check
 
-  url "https://codeload.github.com/iaolo/iA-Fonts/zip/master"
+  url "https:codeload.github.comiaoloiA-Fontszipmaster"
   name "iA Writer Duospace"
-  homepage "https://github.com/iaolo/iA-Fonts"
+  homepage "https:github.comiaoloiA-Fonts"
 
-  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-Bold.ttf"
-  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-BoldItalic.ttf"
-  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-Italic.ttf"
-  font "iA-Fonts-master/iA Writer Duo/Static/iAWriterDuoS-Regular.ttf"
-  font "iA-Fonts-master/iA Writer Duo/Variable/iAWriterDuoV-Italic.ttf"
-  font "iA-Fonts-master/iA Writer Duo/Variable/iAWriterDuoV.ttf"
+  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-Bold.ttf"
+  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-BoldItalic.ttf"
+  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-Italic.ttf"
+  font "iA-Fonts-masteriA Writer DuoStaticiAWriterDuoS-Regular.ttf"
+  font "iA-Fonts-masteriA Writer DuoVariableiAWriterDuoV-Italic.ttf"
+  font "iA-Fonts-masteriA Writer DuoVariableiAWriterDuoV.ttf"
 
   # No zap stanza required
 end

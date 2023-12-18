@@ -1,16 +1,16 @@
 class Cryptominisat < Formula
   desc "Advanced SAT solver"
-  homepage "https://www.msoos.org/cryptominisat5/"
-  url "https://ghproxy.com/https://github.com/msoos/cryptominisat/archive/refs/tags/5.11.15.tar.gz"
+  homepage "https:www.msoos.orgcryptominisat5"
+  url "https:github.commsooscryptominisatarchiverefstags5.11.15.tar.gz"
   sha256 "b2ee17e7a5c6e6843420230215b6c70923b6955f3bef1e443c40555fc59510b0"
-  # Everything that's needed to run/build/install/link the system is MIT licensed. This allows
+  # Everything that's needed to runbuildinstalllink the system is MIT licensed. This allows
   # easy distribution and running of the system everywhere.
   license "MIT"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,8 +34,8 @@ class Cryptominisat < Formula
   end
 
   def install
-    # fix audit failure with `lib/libcryptominisat5.5.7.dylib`
-    inreplace "src/GitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+    # fix audit failure with `liblibcryptominisat5.5.7.dylib`
+    inreplace "srcGitSHA1.cpp.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
     args = %W[-DNOM4RI=ON -DMIT=ON -DCMAKE_INSTALL_RPATH=#{rpath}]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -46,17 +46,17 @@ class Cryptominisat < Formula
   end
 
   test do
-    (testpath/"simple.cnf").write <<~EOS
+    (testpath"simple.cnf").write <<~EOS
       p cnf 3 4
       1 0
       -2 0
       -3 0
       -1 2 3 0
     EOS
-    result = shell_output("#{bin}/cryptominisat5 simple.cnf", 20)
+    result = shell_output("#{bin}cryptominisat5 simple.cnf", 20)
     assert_match "s UNSATISFIABLE", result
 
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       import pycryptosat
       solver = pycryptosat.Solver()
       solver.add_clause([1])

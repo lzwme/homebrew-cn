@@ -2,15 +2,15 @@ cask "lumen" do
   version "1.2.2"
   sha256 "608321c996b736b931b9048c85268bc95ec96ebeb40d329cd73656daac4cb440"
 
-  url "https://ghproxy.com/https://github.com/anishathalye/lumen/releases/download/v#{version}/Lumen.zip"
+  url "https:github.comanishathalyelumenreleasesdownloadv#{version}Lumen.zip"
   name "Lumen"
   desc "Magic auto brightness based on screen contents"
-  homepage "https://github.com/anishathalye/lumen"
+  homepage "https:github.comanishathalyelumen"
 
   app "Lumen.app"
 
   zap trash: [
-    "~/Library/Caches/com.anishathalye.Lumen",
-    "~/Library/Preferences/com.anishathalye.Lumen.plist",
+    "~LibraryCachescom.anishathalye.Lumen",
+    "~LibraryPreferencescom.anishathalye.Lumen.plist",
   ]
 end

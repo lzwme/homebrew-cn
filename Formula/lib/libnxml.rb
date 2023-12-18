@@ -1,11 +1,11 @@
 class Libnxml < Formula
   desc "C library for parsing, writing, and creating XML files"
-  homepage "https://github.com/bakulf/libnxml"
+  homepage "https:github.combakulflibnxml"
   # Update to use an archive from GitHub once there's a release after 0.18.3
-  url "https://www.autistici.org/bakunin/libnxml/libnxml-0.18.3.tar.gz"
+  url "https:www.autistici.orgbakuninlibnxmllibnxml-0.18.3.tar.gz"
   sha256 "0f9460e3ba16b347001caf6843f0050f5482e36ebcb307f709259fd6575aa547"
   license "LGPL-2.1-or-later"
-  head "https://github.com/bakulf/libnxml.git", branch: "master"
+  head "https:github.combakulflibnxml.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -35,19 +35,19 @@ class Libnxml < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
-      <root>Hello world!<child>This is a child element.</child></root>
+      <root>Hello world!<child>This is a child element.<child><root>
     EOS
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <nxml.h>
 
       int main(int argc, char **argv) {
@@ -83,6 +83,6 @@ class Libnxml < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lnxml", "-o", "test"
-    assert_equal("root: Hello world!\n", shell_output("./test"))
+    assert_equal("root: Hello world!\n", shell_output(".test"))
   end
 end

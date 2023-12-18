@@ -1,7 +1,7 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
-  homepage "https://www.freerdp.com/"
-  url "https://ghproxy.com/https://github.com/FreeRDP/FreeRDP/archive/refs/tags/2.11.2.tar.gz"
+  homepage "https:www.freerdp.com"
+  url "https:github.comFreeRDPFreeRDParchiverefstags2.11.2.tar.gz"
   sha256 "674b5600bc2ae3e16e5b5a811c7d5b0daaff6198601ba278bd15b4cb9b281044"
   license "Apache-2.0"
 
@@ -18,7 +18,7 @@ class Freerdp < Formula
   end
 
   head do
-    url "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
+    url "https:github.comFreeRDPFreeRDP.git", branch: "master"
     depends_on xcode: :build
   end
 
@@ -78,7 +78,7 @@ class Freerdp < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    success = `#{bin}/xfreerdp --version` # not using system as expected non-zero exit code
+    success = `#{bin}xfreerdp --version` # not using system as expected non-zero exit code
     details = $CHILD_STATUS
     raise "Unexpected exit code #{$CHILD_STATUS} while running xfreerdp" if !success && details.exitstatus != 128
   end

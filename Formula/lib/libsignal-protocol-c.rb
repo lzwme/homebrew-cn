@@ -1,7 +1,7 @@
 class LibsignalProtocolC < Formula
   desc "Signal Protocol C Library"
-  homepage "https://github.com/signalapp/libsignal-protocol-c"
-  url "https://ghproxy.com/https://github.com/signalapp/libsignal-protocol-c/archive/refs/tags/v2.3.3.tar.gz"
+  homepage "https:github.comsignalapplibsignal-protocol-c"
+  url "https:github.comsignalapplibsignal-protocol-carchiverefstagsv2.3.3.tar.gz"
   sha256 "c22e7690546e24d46210ca92dd808f17c3102e1344cd2f9a370136a96d22319d"
   license "GPL-3.0"
 
@@ -30,7 +30,7 @@ class LibsignalProtocolC < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <signal_protocol.h>
       #include <session_builder.h>
       #include <session_cipher.h>
@@ -102,9 +102,9 @@ class LibsignalProtocolC < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}/signal",
+    system ENV.cc, "test.c", "-I#{include}signal",
                    "-L#{lib}", "-lsignal-protocol-c",
                    "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -2,10 +2,10 @@ cask "font-electrolize" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/electrolize/Electrolize-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflelectrolizeElectrolize-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Electrolize"
-  homepage "https://fonts.google.com/specimen/Electrolize"
+  homepage "https:fonts.google.comspecimenElectrolize"
 
   font "Electrolize-Regular.ttf"
 

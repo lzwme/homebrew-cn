@@ -1,10 +1,10 @@
 class PinboardNotesBackup < Formula
   desc "Efficiently back up the notes you've saved to Pinboard"
-  homepage "https://github.com/bdesham/pinboard-notes-backup"
-  url "https://ghproxy.com/https://github.com/bdesham/pinboard-notes-backup/archive/refs/tags/v1.0.5.6.tar.gz"
+  homepage "https:github.combdeshampinboard-notes-backup"
+  url "https:github.combdeshampinboard-notes-backuparchiverefstagsv1.0.5.6.tar.gz"
   sha256 "0b544d5e3dfd0ebf029b50fcb405045f601dac1f103fbd95f2b24b5aefd4ef40"
   license "GPL-3.0-or-later"
-  head "https://github.com/bdesham/pinboard-notes-backup.git", branch: "main"
+  head "https:github.combdeshampinboard-notes-backup.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -25,13 +25,13 @@ class PinboardNotesBackup < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
-    man1.install "man/pnbackup.1"
+    man1.install "manpnbackup.1"
   end
 
   # A real test would require hard-coding someone's Pinboard API key here
   test do
-    assert_match "TOKEN", shell_output("#{bin}/pnbackup Notes.sqlite 2>&1", 1)
-    output = shell_output("#{bin}/pnbackup -t token Notes.sqlite 2>&1", 1)
+    assert_match "TOKEN", shell_output("#{bin}pnbackup Notes.sqlite 2>&1", 1)
+    output = shell_output("#{bin}pnbackup -t token Notes.sqlite 2>&1", 1)
     assert_match "HTTP 500 response", output
   end
 end

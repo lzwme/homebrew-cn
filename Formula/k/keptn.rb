@@ -1,13 +1,13 @@
 class Keptn < Formula
   desc "CLI for keptn.sh, a message-driven control-plane for application delivery"
-  homepage "https://keptn.sh"
-  url "https://ghproxy.com/https://github.com/keptn/keptn/archive/refs/tags/1.4.4.tar.gz"
+  homepage "https:keptn.sh"
+  url "https:github.comkeptnkeptnarchiverefstags1.4.4.tar.gz"
   sha256 "96fa4b0c903a582c1be02dc48b13d2ac86e45f583116d0402fcd71f4a033afbb"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,26 +25,26 @@ class Keptn < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/keptn/keptn/cli/cmd.Version=#{version}
+      -X github.comkeptnkeptnclicmd.Version=#{version}
       -X main.KubeServerVersionConstraints=""
     ]
 
-    cd buildpath/"cli" do
+    cd buildpath"cli" do
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
   end
 
   test do
-    system bin/"keptn", "set", "config", "AutomaticVersionCheck", "false"
-    system bin/"keptn", "set", "config", "kubeContextCheck", "false"
+    system bin"keptn", "set", "config", "AutomaticVersionCheck", "false"
+    system bin"keptn", "set", "config", "kubeContextCheck", "false"
 
-    assert_match "Keptn CLI version: #{version}", shell_output(bin/"keptn version 2>&1")
+    assert_match "Keptn CLI version: #{version}", shell_output(bin"keptn version 2>&1")
 
-    output = shell_output(bin/"keptn status 2>&1", 1)
+    output = shell_output(bin"keptn status 2>&1", 1)
     if OS.mac?
       assert_match "Error: credentials not found in native keychain", output
     else
-      assert_match ".keptn/.keptn____keptn: no such file or directory", output
+      assert_match ".keptn.keptn____keptn: no such file or directory", output
     end
   end
 end

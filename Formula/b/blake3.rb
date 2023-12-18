@@ -1,7 +1,7 @@
 class Blake3 < Formula
   desc "C implementation of the BLAKE3 cryptographic hash function"
-  homepage "https://github.com/BLAKE3-team/BLAKE3"
-  url "https://ghproxy.com/https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.5.0.tar.gz"
+  homepage "https:github.comBLAKE3-teamBLAKE3"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.0.tar.gz"
   sha256 "f506140bc3af41d3432a4ce18b3b83b08eaa240e94ef161eb72b2e57cdc94c69"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
@@ -28,7 +28,7 @@ class Blake3 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <errno.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -47,7 +47,7 @@ class Blake3 < Formula
           if (n > 0) {
             blake3_hasher_update(&hasher, buf, n);
           } else if (n == 0) {
-            break; // end of file
+            break;  end of file
           } else {
             fprintf(stderr, "read failed: %s\\n", strerror(errno));
             exit(1);
@@ -64,12 +64,12 @@ class Blake3 < Formula
         return 0;
       }
     EOS
-    (testpath/"input.txt").write <<~EOS
+    (testpath"input.txt").write <<~EOS
       content
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lblake3", "-o", "test"
-    output = shell_output("./test <input.txt")
+    output = shell_output(".test <input.txt")
     assert_equal "df0c40684c6bda3958244ee330300fdcbc5a37fb7ae06fe886b786bc474be87e", output.strip
   end
 end

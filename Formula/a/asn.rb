@@ -1,10 +1,10 @@
 class Asn < Formula
-  desc "Organization lookup and server tool (ASN / IPv4 / IPv6 / Prefix / AS Path)"
-  homepage "https://github.com/nitefood/asn"
-  url "https://ghproxy.com/https://github.com/nitefood/asn/archive/refs/tags/v0.75.2.tar.gz"
+  desc "Organization lookup and server tool (ASN  IPv4  IPv6  Prefix  AS Path)"
+  homepage "https:github.comnitefoodasn"
+  url "https:github.comnitefoodasnarchiverefstagsv0.75.2.tar.gz"
   sha256 "b3d2f768f296bd8a8e6ab9f8e28287915390feca661d20110518c79580871b00"
   license "MIT"
-  head "https://github.com/nitefood/asn.git", branch: "master"
+  head "https:github.comnitefoodasn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "baa02015b1f3bc5a444df56681901d0a91af52616ea102448b6fc9ae29039f1b"
@@ -32,7 +32,7 @@ class Asn < Formula
 
   test do
     test_ip = "8.8.8.8"
-    output = shell_output("#{bin}/asn #{test_ip} 2>&1")
+    output = shell_output("#{bin}asn #{test_ip} 2>&1")
     assert_match "ASN lookup for #{test_ip}", output
   end
 end

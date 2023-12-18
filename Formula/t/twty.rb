@@ -1,7 +1,7 @@
 class Twty < Formula
   desc "Command-line twitter client written in golang"
-  homepage "https://github.com/mattn/twty/"
-  url "https://ghproxy.com/https://github.com/mattn/twty/archive/refs/tags/v0.0.13.tar.gz"
+  homepage "https:github.commattntwty"
+  url "https:github.commattntwtyarchiverefstagsv0.0.13.tar.gz"
   sha256 "4e76ada5e7c5f2e20881fbf303fb50d3d4a443a8e37f2444371a90102737e49b"
   license "MIT"
 
@@ -26,14 +26,14 @@ class Twty < Formula
 
   test do
     # Prevent twty executing open or xdg-open
-    testpath_bin = testpath/"bin"
+    testpath_bin = testpath"bin"
     ENV.prepend_path "PATH", testpath_bin
     testpath_bin.install_symlink which("true") => "open"
     testpath_bin.install_symlink which("true") => "xdg-open"
 
     # twty requires PIN code from stdin and putting nothing to stdin to make authentication failed
     require "pty"
-    PTY.spawn(bin/"twty") do |r, w, _pid|
+    PTY.spawn(bin"twty") do |r, w, _pid|
       output = r.gets
       assert_match "cannot request temporary credentials: OAuth server status 401", output
       assert_match "{\"errors\":[{\"code\":32,\"message\":\"Could not authenticate you.\"}]}", output

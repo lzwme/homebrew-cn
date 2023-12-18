@@ -1,10 +1,10 @@
 class Evtx < Formula
   desc "Windows XML Event Log parser"
-  homepage "https://github.com/omerbenamram/evtx"
-  url "https://ghproxy.com/https://github.com/omerbenamram/evtx/archive/refs/tags/v0.8.1.tar.gz"
+  homepage "https:github.comomerbenamramevtx"
+  url "https:github.comomerbenamramevtxarchiverefstagsv0.8.1.tar.gz"
   sha256 "a42133deecbe47ade28e14ed55e4e87a2c9b5d9400867eacec8b32070a2cd95e"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/omerbenamram/evtx.git", branch: "master"
+  head "https:github.comomerbenamramevtx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e503806bd4e9ed800b4362f6e9bb4a4ede7e370195b1584d17ee872cc5b9403d"
@@ -27,10 +27,10 @@ class Evtx < Formula
   end
 
   test do
-    cp pkgshare/"samples/issue_201.evtx", testpath
+    cp pkgshare"samplesissue_201.evtx", testpath
     assert_match "Remote-ManagementShell-Unknown",
-      shell_output("#{bin}/evtx_dump #{pkgshare}/samples/issue_201.evtx")
+      shell_output("#{bin}evtx_dump #{pkgshare}samplesissue_201.evtx")
 
-    assert_match "EVTX Parser #{version}", shell_output("#{bin}/evtx_dump --version")
+    assert_match "EVTX Parser #{version}", shell_output("#{bin}evtx_dump --version")
   end
 end

@@ -2,12 +2,12 @@ cask "font-economica" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/economica"
+      only_path: "ofleconomica"
   name "Economica"
-  homepage "https://fonts.google.com/specimen/Economica"
+  homepage "https:fonts.google.comspecimenEconomica"
 
   font "Economica-Bold.ttf"
   font "Economica-BoldItalic.ttf"

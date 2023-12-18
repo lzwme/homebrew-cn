@@ -2,12 +2,12 @@ cask "font-grenze" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/grenze"
+      only_path: "oflgrenze"
   name "Grenze"
-  homepage "https://fonts.google.com/specimen/Grenze"
+  homepage "https:fonts.google.comspecimenGrenze"
 
   font "Grenze-Black.ttf"
   font "Grenze-BlackItalic.ttf"

@@ -1,7 +1,7 @@
 class Pmd < Formula
   desc "Source code analyzer for Java, JavaScript, and more"
-  homepage "https://pmd.github.io"
-  url "https://ghproxy.com/https://github.com/pmd/pmd/releases/download/pmd_releases/6.55.0/pmd-bin-6.55.0.zip"
+  homepage "https:pmd.github.io"
+  url "https:github.compmdpmdreleasesdownloadpmd_releases6.55.0pmd-bin-6.55.0.zip"
   sha256 "21acf96d43cb40d591cacccc1c20a66fc796eaddf69ea61812594447bac7a11d"
   license "BSD-4-Clause"
 
@@ -12,9 +12,9 @@ class Pmd < Formula
   depends_on "openjdk"
 
   def install
-    rm Dir["bin/*.bat"]
+    rm Dir["bin*.bat"]
     libexec.install Dir["*"]
-    (bin/"pmd").write_env_script libexec/"bin/run.sh", Language::Java.overridable_java_home_env
+    (bin"pmd").write_env_script libexec"binrun.sh", Language::Java.overridable_java_home_env
   end
 
   def caveats
@@ -24,9 +24,9 @@ class Pmd < Formula
   end
 
   test do
-    (testpath/"java/testClass.java").write <<~EOS
+    (testpath"javatestClass.java").write <<~EOS
       public class BrewTestClass {
-        // dummy constant
+         dummy constant
         public String SOME_CONST = "foo";
 
         public boolean doTest () {
@@ -35,7 +35,7 @@ class Pmd < Formula
       }
     EOS
 
-    system "#{bin}/pmd", "pmd", "-d", "#{testpath}/java", "-R",
-      "rulesets/java/basic.xml", "-f", "textcolor", "-l", "java"
+    system "#{bin}pmd", "pmd", "-d", "#{testpath}java", "-R",
+      "rulesetsjavabasic.xml", "-f", "textcolor", "-l", "java"
   end
 end

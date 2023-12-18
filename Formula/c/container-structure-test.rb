@@ -1,10 +1,10 @@
 class ContainerStructureTest < Formula
   desc "Validate the structure of your container images"
-  homepage "https://github.com/GoogleContainerTools/container-structure-test"
-  url "https://ghproxy.com/https://github.com/GoogleContainerTools/container-structure-test/archive/refs/tags/v1.16.1.tar.gz"
+  homepage "https:github.comGoogleContainerToolscontainer-structure-test"
+  url "https:github.comGoogleContainerToolscontainer-structure-testarchiverefstagsv1.16.1.tar.gz"
   sha256 "704c8e2768ae560c41025a8bf31a3969b6db2a7c83375ad1aa69267322d41bbf"
   license "Apache-2.0"
-  head "https://github.com/GoogleContainerTools/container-structure-test.git", branch: "master"
+  head "https:github.comGoogleContainerToolscontainer-structure-test.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f038adce4df86137afbd1bdbd1f9585eb7fa218db412ca6693b4342f746387b1"
@@ -19,34 +19,34 @@ class ContainerStructureTest < Formula
   depends_on "go" => :build
 
   def install
-    project = "github.com/GoogleContainerTools/container-structure-test"
+    project = "github.comGoogleContainerToolscontainer-structure-test"
     ldflags = %W[
       -s -w
-      -X #{project}/pkg/version.version=#{version}
-      -X #{project}/pkg/version.buildDate=#{time.iso8601}
+      -X #{project}pkgversion.version=#{version}
+      -X #{project}pkgversion.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/container-structure-test"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcontainer-structure-test"
   end
 
   test do
     # Small Docker image to run tests against
     resource "homebrew-test_resource" do
-      url "https://gist.github.com/AndiDog/1fab301b2dbc812b1544cd45db939e94/raw/5160ab30de17833fdfe183fc38e4e5f69f7bbae0/busybox-1.31.1.tar", using: :nounzip
+      url "https:gist.github.comAndiDog1fab301b2dbc812b1544cd45db939e94raw5160ab30de17833fdfe183fc38e4e5f69f7bbae0busybox-1.31.1.tar", using: :nounzip
       sha256 "ab5088c314316f39ff1d1a452b486141db40813351731ec8d5300db3eb35a316"
     end
 
-    (testpath/"test.yml").write <<~EOF
+    (testpath"test.yml").write <<~EOF
       schemaVersion: "2.0.0"
 
       fileContentTests:
         - name: root user
-          path: "/etc/passwd"
+          path: "etcpasswd"
           expectedContents:
-            - "root:x:0:0:root:/root:/bin/sh\\n.*"
+            - "root:x:0:0:root:root:binsh\\n.*"
 
       fileExistenceTests:
         - name: Basic executable
-          path: /bin/test
+          path: bintest
           shouldExist: yes
           permissions: '-rwxr-xr-x'
     EOF
@@ -59,7 +59,7 @@ class ContainerStructureTest < Formula
     ].join(" ")
 
     resource("homebrew-test_resource").stage testpath
-    json_text = shell_output("#{bin}/container-structure-test test #{args}")
+    json_text = shell_output("#{bin}container-structure-test test #{args}")
     res = JSON.parse(json_text)
     assert_equal res["Pass"], 2
     assert_equal res["Fail"], 0

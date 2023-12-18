@@ -1,10 +1,10 @@
 class Ittapi < Formula
   desc "Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API"
-  homepage "https://github.com/intel/ittapi"
-  url "https://ghproxy.com/https://github.com/intel/ittapi/archive/refs/tags/v3.24.4.tar.gz"
+  homepage "https:github.comintelittapi"
+  url "https:github.comintelittapiarchiverefstagsv3.24.4.tar.gz"
   sha256 "f7341c563f228f4358b645fce526208c742fe13e61fc3ba2c777ba94d36e98f5"
   license "GPL-2.0-only"
-  head "https://github.com/intel/ittapi.git", branch: "master"
+  head "https:github.comintelittapi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85b1e860b8c33ba0b1cbe5e4f2457e4b067f29d974a8914dedc28b3036f3fb2c"
@@ -25,7 +25,7 @@ class Ittapi < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <ittnotify.h>
 
       __itt_domain* domain = __itt_domain_create("Example.Domain.Global");
@@ -41,6 +41,6 @@ class Ittapi < Formula
     system ENV.cxx, "test.cpp", "-o", "test",
                     "-I#{include}",
                     "-L#{lib}", "-littnotify"
-    system "./test"
+    system ".test"
   end
 end

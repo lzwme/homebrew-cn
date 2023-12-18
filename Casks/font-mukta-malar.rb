@@ -2,12 +2,12 @@ cask "font-mukta-malar" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/muktamalar"
+      only_path: "oflmuktamalar"
   name "Mukta Malar"
-  homepage "https://fonts.google.com/specimen/Mukta+Malar"
+  homepage "https:fonts.google.comspecimenMukta+Malar"
 
   font "MuktaMalar-Bold.ttf"
   font "MuktaMalar-ExtraBold.ttf"

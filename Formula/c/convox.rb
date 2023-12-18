@@ -1,7 +1,7 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
-  homepage "https://convox.com/"
-  url "https://ghproxy.com/https://github.com/convox/convox/archive/refs/tags/3.14.3.tar.gz"
+  homepage "https:convox.com"
+  url "https:github.comconvoxconvoxarchiverefstags3.14.3.tar.gz"
   sha256 "dccc133ed178b4513fa7a7851e5fb8b3dc90247391737be781e3811df88aa1a6"
   license "Apache-2.0"
   version_scheme 1
@@ -29,11 +29,11 @@ class Convox < Formula
       -X main.version=#{version}
     ]
 
-    system "go", "build", "-mod=readonly", *std_go_args(ldflags: ldflags), "./cmd/convox"
+    system "go", "build", "-mod=readonly", *std_go_args(ldflags: ldflags), ".cmdconvox"
   end
 
   test do
     assert_equal "Authenticating with localhost... ERROR: invalid login\n",
-      shell_output("#{bin}/convox login -t invalid localhost 2>&1", 1)
+      shell_output("#{bin}convox login -t invalid localhost 2>&1", 1)
   end
 end

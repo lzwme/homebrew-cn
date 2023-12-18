@@ -1,14 +1,14 @@
 class Mysql < Formula
   desc "Open source relational database management system"
-  homepage "https://dev.mysql.com/doc/refman/8.2/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.2/mysql-boost-8.2.0.tar.gz"
+  homepage "https:dev.mysql.comdocrefman8.2en"
+  url "https:cdn.mysql.comDownloadsMySQL-8.2mysql-boost-8.2.0.tar.gz"
   sha256 "9a6fe88c889dfb54a8ee203a3aaa2af4d21c97fbaf171dadaf5956714552010e"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
   revision 1
 
   livecheck do
-    url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
-    regex(/href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dev.mysql.comdownloadsmysql?tpl=files&os=src"
+    regex(href=.*?mysql[._-](?:boost[._-])?v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -49,14 +49,14 @@ class Mysql < Formula
 
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
-  # https://github.com/Homebrew/homebrew-test-bot/pull/820
+  # https:github.comHomebrewhomebrew-test-botpull820
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/bd61f2edc4c551856f894d307140b855edb2b4f5/mysql/boost-check.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patchesbd61f2edc4c551856f894d307140b855edb2b4f5mysqlboost-check.patch"
     sha256 "b90c6f78fa347cec6388d2419ee4bc9a5dc9261771eff2800d99610e1c449244"
   end
 
   def datadir
-    var/"mysql"
+    var"mysql"
   end
 
   def install
@@ -67,18 +67,18 @@ class Mysql < Formula
       ENV.append_to_cflags "-fPIC"
 
       # Disable ABI checking
-      inreplace "cmake/abi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
+      inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     end
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
-      -DINSTALL_DOCDIR=share/doc/#{name}
-      -DINSTALL_INCLUDEDIR=include/mysql
-      -DINSTALL_INFODIR=share/info
-      -DINSTALL_MANDIR=share/man
-      -DINSTALL_MYSQLSHAREDIR=share/mysql
-      -DINSTALL_PLUGINDIR=lib/plugin
+      -DINSTALL_DOCDIR=sharedoc#{name}
+      -DINSTALL_INCLUDEDIR=includemysql
+      -DINSTALL_INFODIR=shareinfo
+      -DINSTALL_MANDIR=shareman
+      -DINSTALL_MYSQLSHAREDIR=sharemysql
+      -DINSTALL_PLUGINDIR=libplugin
       -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
       -DWITH_SYSTEM_LIBS=ON
@@ -101,28 +101,28 @@ class Mysql < Formula
     system "cmake", "--install", "build"
 
     # Fix bad linker flags in `mysql_config`.
-    # https://bugs.mysql.com/bug.php?id=111011
-    inreplace bin/"mysql_config", "-lzlib", "-lz"
+    # https:bugs.mysql.combug.php?id=111011
+    inreplace bin"mysql_config", "-lzlib", "-lz"
 
-    (prefix/"mysql-test").cd do
-      system "./mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"
+    (prefix"mysql-test").cd do
+      system ".mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"
     end
 
     # Remove the tests directory
-    rm_rf prefix/"mysql-test"
+    rm_rf prefix"mysql-test"
 
     # Don't create databases inside of the prefix!
-    # See: https://github.com/Homebrew/homebrew/issues/4975
-    rm_rf prefix/"data"
+    # See: https:github.comHomebrewhomebrewissues4975
+    rm_rf prefix"data"
 
     # Fix up the control script and link into bin.
-    inreplace "#{prefix}/support-files/mysql.server",
-              /^(PATH=".*)(")/,
-              "\\1:#{HOMEBREW_PREFIX}/bin\\2"
-    bin.install_symlink prefix/"support-files/mysql.server"
+    inreplace "#{prefix}support-filesmysql.server",
+              ^(PATH=".*)("),
+              "\\1:#{HOMEBREW_PREFIX}bin\\2"
+    bin.install_symlink prefix"support-filesmysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath/"my.cnf").write <<~EOS
+    (buildpath"my.cnf").write <<~EOS
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
@@ -133,16 +133,16 @@ class Mysql < Formula
   end
 
   def post_install
-    # Make sure the var/mysql directory exists
-    (var/"mysql").mkpath
+    # Make sure the varmysql directory exists
+    (var"mysql").mkpath
 
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless (datadir/"mysql/general_log.CSM").exist?
+    unless (datadir"mysqlgeneral_log.CSM").exist?
       ENV["TMPDIR"] = nil
-      system bin/"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-        "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=/tmp"
+      system bin"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
+        "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=tmp"
     end
   end
 
@@ -156,7 +156,7 @@ class Mysql < Formula
       To connect run:
           mysql -u root
     EOS
-    if (my_cnf = ["/etc/my.cnf", "/etc/mysql/my.cnf"].find { |x| File.exist? x })
+    if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
       s += <<~EOS
 
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
@@ -167,24 +167,24 @@ class Mysql < Formula
   end
 
   service do
-    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
+    run [opt_bin"mysqld_safe", "--datadir=#{var}mysql"]
     keep_alive true
-    working_dir var/"mysql"
+    working_dir var"mysql"
   end
 
   test do
-    (testpath/"mysql").mkpath
-    (testpath/"tmp").mkpath
-    system bin/"mysqld", "--no-defaults", "--initialize-insecure", "--user=#{ENV["USER"]}",
-      "--basedir=#{prefix}", "--datadir=#{testpath}/mysql", "--tmpdir=#{testpath}/tmp"
+    (testpath"mysql").mkpath
+    (testpath"tmp").mkpath
+    system bin"mysqld", "--no-defaults", "--initialize-insecure", "--user=#{ENV["USER"]}",
+      "--basedir=#{prefix}", "--datadir=#{testpath}mysql", "--tmpdir=#{testpath}tmp"
     port = free_port
     fork do
-      system "#{bin}/mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
-        "--datadir=#{testpath}/mysql", "--port=#{port}", "--tmpdir=#{testpath}/tmp"
+      system "#{bin}mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
+        "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
     end
     sleep 5
     assert_match "information_schema",
-      shell_output("#{bin}/mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system "#{bin}/mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+      shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
+    system "#{bin}mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end

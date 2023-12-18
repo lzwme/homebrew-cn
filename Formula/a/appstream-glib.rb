@@ -1,7 +1,7 @@
 class AppstreamGlib < Formula
   desc "Helper library for reading and writing AppStream metadata"
-  homepage "https://github.com/hughsie/appstream-glib"
-  url "https://ghproxy.com/https://github.com/hughsie/appstream-glib/archive/refs/tags/appstream_glib_0_8_2.tar.gz"
+  homepage "https:github.comhughsieappstream-glib"
+  url "https:github.comhughsieappstream-glibarchiverefstagsappstream_glib_0_8_2.tar.gz"
   sha256 "83907d3b2c13029c72dfd11191762ef19f4031ac05c758297914cf0eb04bc641"
   license "LGPL-2.1-or-later"
 
@@ -35,12 +35,12 @@ class AppstreamGlib < Formula
     depends_on "util-linux"
   end
 
-  # see https://github.com/hughsie/appstream-glib/issues/258
+  # see https:github.comhughsieappstream-glibissues258
   patch :DATA
 
   def install
     # Find our docbook catalog
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
     system "meson", *std_meson_args, "build", "-Dbuilder=false", "-Drpm=false", "-Ddep11=false", "-Dstemmer=false"
     system "meson", "compile", "-C", "build", "--verbose"
@@ -48,7 +48,7 @@ class AppstreamGlib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <appstream-glib.h>
 
       int main(int argc, char *argv[]) {
@@ -61,12 +61,12 @@ class AppstreamGlib < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/gio-unix-2.0/
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/libappstream-glib
+      -I#{glib.opt_include}gio-unix-2.0
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}libappstream-glib
       -L#{gdk_pixbuf.opt_lib}
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
@@ -79,16 +79,16 @@ class AppstreamGlib < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
-    system "#{bin}/appstream-util", "--help"
+    system ".test"
+    system "#{bin}appstream-util", "--help"
   end
 end
 
 __END__
-diff --git a/libappstream-glib/meson.build b/libappstream-glib/meson.build
+diff --git alibappstream-glibmeson.build blibappstream-glibmeson.build
 index 5f726b0..7d29ac8 100644
---- a/libappstream-glib/meson.build
-+++ b/libappstream-glib/meson.build
+--- alibappstream-glibmeson.build
++++ blibappstream-glibmeson.build
 @@ -136,7 +136,6 @@ asglib = shared_library(
    dependencies : deps,
    c_args : cargs,

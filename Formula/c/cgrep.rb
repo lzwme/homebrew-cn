@@ -1,10 +1,10 @@
 class Cgrep < Formula
   desc "Context-aware grep for source code"
-  homepage "https://github.com/awgn/cgrep"
-  url "https://ghproxy.com/https://github.com/awgn/cgrep/archive/refs/tags/v8.1.2.tar.gz"
+  homepage "https:github.comawgncgrep"
+  url "https:github.comawgncgreparchiverefstagsv8.1.2.tar.gz"
   sha256 "1b705013a432e6ea90247f03e4cfeceb5a37f795d879178e4bf0085ce6191316"
   license "GPL-2.0-or-later"
-  head "https://github.com/awgn/cgrep.git", branch: "master"
+  head "https:github.comawgncgrep.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7d9998fa1119f6dbada06ff9e7a544ba62a0e55dd455f637beb5463c86ed8080"
@@ -27,14 +27,14 @@ class Cgrep < Formula
   end
 
   test do
-    (testpath/"t.rb").write <<~EOS
+    (testpath"t.rb").write <<~EOS
       # puts test comment.
       puts "test literal."
     EOS
 
-    assert_match ":1", shell_output("#{bin}/cgrep --count --comment test t.rb")
-    assert_match ":1", shell_output("#{bin}/cgrep --count --literal test t.rb")
-    assert_match ":1", shell_output("#{bin}/cgrep --count --code puts t.rb")
-    assert_match ":2", shell_output("#{bin}/cgrep --count puts t.rb")
+    assert_match ":1", shell_output("#{bin}cgrep --count --comment test t.rb")
+    assert_match ":1", shell_output("#{bin}cgrep --count --literal test t.rb")
+    assert_match ":1", shell_output("#{bin}cgrep --count --code puts t.rb")
+    assert_match ":2", shell_output("#{bin}cgrep --count puts t.rb")
   end
 end

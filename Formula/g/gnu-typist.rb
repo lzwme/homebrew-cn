@@ -1,8 +1,8 @@
 class GnuTypist < Formula
   desc "GNU typing tutor"
-  homepage "https://www.gnu.org/software/gtypist/"
-  url "https://ftp.gnu.org/gnu/gtypist/gtypist-2.9.5.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gtypist/gtypist-2.9.5.tar.xz"
+  homepage "https:www.gnu.orgsoftwaregtypist"
+  url "https:ftp.gnu.orggnugtypistgtypist-2.9.5.tar.xz"
+  mirror "https:ftpmirror.gnu.orggtypistgtypist-2.9.5.tar.xz"
   sha256 "c13af40b12479f8219ffa6c66020618c0ce305ad305590fde02d2c20eb9cf977"
   revision 2
 
@@ -25,7 +25,7 @@ class GnuTypist < Formula
   # Use Apple's ncurses instead of ncursesw.
   # TODO: use an IFDEF for apple and submit upstream
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/42c4b96/gnu-typist/2.9.5.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches42c4b96gnu-typist2.9.5.patch"
     sha256 "a408ecb8be3ffdc184fe1fa94c8c2a452f72b181ce9be4f72557c992508474db"
   end
 
@@ -33,7 +33,7 @@ class GnuTypist < Formula
     # libiconv is not linked properly without this
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-lispdir=#{elisp}"
     system "make"
@@ -42,7 +42,7 @@ class GnuTypist < Formula
 
   test do
     session = fork do
-      exec bin/"gtypist", "-t", "-q", "-l", "DEMO_0", share/"gtypist/demo.typ"
+      exec bin"gtypist", "-t", "-q", "-l", "DEMO_0", share"gtypistdemo.typ"
     end
     sleep 2
     Process.kill("TERM", session)

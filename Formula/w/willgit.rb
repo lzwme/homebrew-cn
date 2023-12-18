@@ -1,10 +1,10 @@
 class Willgit < Formula
   desc "William's miscellaneous git tools"
-  homepage "https://github.com/DanielVartanov/willgit"
-  url "https://ghproxy.com/https://github.com/DanielVartanov/willgit/archive/refs/tags/1.0.0.tar.gz"
+  homepage "https:github.comDanielVartanovwillgit"
+  url "https:github.comDanielVartanovwillgitarchiverefstags1.0.0.tar.gz"
   sha256 "3bb99d6ec2614a90f40962311daf51f393b3d0abfdb0f9e0a14ba7340b33a2c8"
   license "MIT"
-  head "https://github.com/DanielVartanov/willgit.git", branch: "master"
+  head "https:github.comDanielVartanovwillgit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "471907584cfb2691323566ad760ea0686de7aac0e2f20edc2ad0575146caee83"
@@ -16,7 +16,7 @@ class Willgit < Formula
 
   test do
     system "git", "init"
-    (testpath/"README.md").write "# My Awesome Project"
+    (testpath"README.md").write "# My Awesome Project"
     system "git", "add", "README.md"
     system "git", "commit", "-m", "init"
     assert_equal "Local branch: master",

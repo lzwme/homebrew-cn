@@ -1,8 +1,8 @@
 class Grin < Formula
   desc "Minimal implementation of the Mimblewimble protocol"
-  homepage "https://grin.mw/"
+  homepage "https:grin.mw"
   # TODO: remove the `cargo update` line when this is next updated (5.2.x).
-  url "https://ghproxy.com/https://github.com/mimblewimble/grin/archive/refs/tags/v5.1.2.tar.gz"
+  url "https:github.commimblewimblegrinarchiverefstagsv5.1.2.tar.gz"
   sha256 "a4856335d88630e742b75e877f1217d7c9180b89f030d2e1d1c780c0f8cc475c"
   license "Apache-2.0"
 
@@ -20,7 +20,7 @@ class Grin < Formula
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
-  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # https:github.comrust-langrust-bindgenissues2312.
   # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
   # updated to 0.62.0 or newer. There is a check in the `install` method.
   depends_on "llvm@15" => :build # for libclang
@@ -29,9 +29,9 @@ class Grin < Formula
   uses_from_macos "ncurses"
 
   # Patch to build with rust 1.71.0, remove in next release
-  # upstream PR ref, https://github.com/mimblewimble/grin/pull/3763
+  # upstream PR ref, https:github.commimblewimblegrinpull3763
   patch do
-    url "https://github.com/mimblewimble/grin/commit/399fb19c3014a4a5c3f0575dd222e7df6fda8c83.patch?full_index=1"
+    url "https:github.commimblewimblegrincommit399fb19c3014a4a5c3f0575dd222e7df6fda8c83.patch?full_index=1"
     sha256 "0966dd64d8b91a3179207c38f0590ffbeb61ff911ddd3dc4be45045c9331eebf"
   end
 
@@ -45,21 +45,21 @@ class Grin < Formula
     system "cargo", "update", "--package", "socket2", "--precise", "0.3.16"
 
     bindgen_version = Version.new(
-      (buildpath/"Cargo.lock").read
-                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+      (buildpath"Cargo.lock").read
+                              .match(name = "bindgen"\nversion = "(.*)")[1],
     )
     if bindgen_version >= "0.62.0"
       odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
            'this check and try switching to `uses_from_macos "llvm" => :build`.'
     end
 
-    ENV["CLANG_PATH"] = Formula["llvm@15"].opt_bin/"clang"
+    ENV["CLANG_PATH"] = Formula["llvm@15"].opt_bin"clang"
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system bin/"grin", "server", "config"
-    assert_predicate testpath/"grin-server.toml", :exist?
+    system bin"grin", "server", "config"
+    assert_predicate testpath"grin-server.toml", :exist?
   end
 end

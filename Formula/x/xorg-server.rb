@@ -1,7 +1,7 @@
 class XorgServer < Formula
   desc "X Window System display server"
-  homepage "https://www.x.org"
-  url "https://www.x.org/releases/individual/xserver/xorg-server-21.1.10.tar.xz"
+  homepage "https:www.x.org"
+  url "https:www.x.orgreleasesindividualxserverxorg-server-21.1.10.tar.xz"
   sha256 "ceb0b3a2efc57ac3ccf388d3dc88b97615068639fb284d469689ae3d105611d0"
   license all_of: ["MIT", "APSL-2.0"]
 
@@ -52,12 +52,12 @@ class XorgServer < Formula
     depends_on "systemd"
 
     resource "xvfb-run" do
-      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.4-1/debian/local/xvfb-run"
+      url "https:salsa.debian.orgxorg-teamxserverxorg-server-rawxorg-server-2_21.1.4-1debianlocalxvfb-run"
       sha256 "fd05e0f8e6207c3984b980a0f037381c9c4a6f22a6dd94fdcfa995318db2a0a4"
     end
 
     resource "xvfb-run.1" do
-      url "https://salsa.debian.org/xorg-team/xserver/xorg-server/-/raw/xorg-server-2_21.1.4-1/debian/local/xvfb-run.1"
+      url "https:salsa.debian.orgxorg-teamxserverxorg-server-rawxorg-server-2_21.1.4-1debianlocalxvfb-run.1"
       sha256 "08f14f55e14e52e5d98713c4d8f25ae68d67e2ee188dc0247770c6ada6e27c05"
     end
   end
@@ -84,13 +84,13 @@ class XorgServer < Formula
     end
 
     # X11.app need startx etc. in the same directory
-    destdir = buildpath/"dest"
+    destdir = buildpath"dest"
     system "meson", "setup", *meson_args, "build"
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build", "--destdir", destdir
-    prefix.install Dir["#{destdir}#{HOMEBREW_PREFIX}/*"]
-    # follow https://github.com/XQuartz/XQuartz/blob/main/compile.sh#L955
-    bin.install_symlink bin/"Xquartz" => "X" if OS.mac?
+    prefix.install Dir["#{destdir}#{HOMEBREW_PREFIX}*"]
+    # follow https:github.comXQuartzXQuartzblobmaincompile.sh#L955
+    bin.install_symlink bin"Xquartz" => "X" if OS.mac?
 
     if OS.linux?
       bin.install resource("xvfb-run")
@@ -104,14 +104,14 @@ class XorgServer < Formula
       especially on macOS, otherwise X11.app will not work:
         brew install xinit
       If cask xquartz is installed, this link may be helpful:
-        https://www.xquartz.org/FAQs.html#want-another-x11app-server
+        https:www.xquartz.orgFAQs.html#want-another-x11app-server
     EOS
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
-      #include <xcb/xcb.h>
+      #include <xcbxcb.h>
 
       int main(void) {
         xcb_connection_t *connection = xcb_connect(NULL, NULL);
@@ -122,15 +122,15 @@ class XorgServer < Formula
       }
     EOS
     xcb = Formula["libxcb"]
-    system ENV.cc, "./test.c", "-o", "test", "-I#{xcb.include}", "-L#{xcb.lib}", "-lxcb"
+    system ENV.cc, ".test.c", "-o", "test", "-I#{xcb.include}", "-L#{xcb.lib}", "-lxcb"
 
     fork do
-      exec bin/"Xvfb", ":1"
+      exec bin"Xvfb", ":1"
     end
     ENV["DISPLAY"] = ":1"
     sleep 10
-    system "./test"
+    system ".test"
 
-    system bin/"xvfb-run", "./test" if OS.linux?
+    system bin"xvfb-run", ".test" if OS.linux?
   end
 end

@@ -1,7 +1,7 @@
 class Zoro < Formula
   desc "Expose local server to external network"
-  homepage "https://github.com/txthinking/zoro"
-  url "https://ghproxy.com/https://github.com/txthinking/zoro/archive/refs/tags/v20211230.tar.gz"
+  homepage "https:github.comtxthinkingzoro"
+  url "https:github.comtxthinkingzoroarchiverefstagsv20211230.tar.gz"
   sha256 "5e78704f4d955cc4fd6dcc3395392e52516f00296cb65454f6959d4b7b54e319"
   license "GPL-3.0-only"
 
@@ -21,25 +21,25 @@ class Zoro < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/zoro"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".clizoro"
   end
 
   test do
-    (testpath/"index.html").write <<~EOF
+    (testpath"index.html").write <<~EOF
       <!DOCTYPE HTML>
       <html>
       <body>
-        <p>passed</p>
-      </body>
-      </html>
+        <p>passed<p>
+      <body>
+      <html>
     EOF
     zoro_server_port = free_port
     server_port = free_port
     client_port = free_port
-    server_pid = fork { exec bin/"zoro", "server", "-l", ":#{zoro_server_port}", "-p", "password" }
+    server_pid = fork { exec bin"zoro", "server", "-l", ":#{zoro_server_port}", "-p", "password" }
     sleep 5
     client_pid = fork do
-      exec bin/"zoro", "client", "-s", "127.0.0.1:#{zoro_server_port}",
+      exec bin"zoro", "client", "-s", "127.0.0.1:#{zoro_server_port}",
                                 "-p", "password",
                                 "--serverport", server_port.to_s,
                                 "--dir", testpath,

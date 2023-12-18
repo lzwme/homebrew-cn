@@ -2,10 +2,10 @@ cask "font-zen-tokyo-zoo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/zentokyozoo/ZenTokyoZoo-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflzentokyozooZenTokyoZoo-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Zen Tokyo Zoo"
-  homepage "https://fonts.google.com/specimen/Zen+Tokyo+Zoo"
+  homepage "https:fonts.google.comspecimenZen+Tokyo+Zoo"
 
   font "ZenTokyoZoo-Regular.ttf"
 

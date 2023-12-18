@@ -1,7 +1,7 @@
 class CucumberCpp < Formula
   desc "Support for writing Cucumber step definitions in C++"
-  homepage "https://cucumber.io"
-  url "https://ghproxy.com/https://github.com/cucumber/cucumber-cpp/archive/refs/tags/v0.5.tar.gz"
+  homepage "https:cucumber.io"
+  url "https:github.comcucumbercucumber-cpparchiverefstagsv0.5.tar.gz"
   sha256 "9e1b5546187290b265e43f47f67d4ce7bf817ae86ee2bc5fb338115b533f8438"
   license "MIT"
   revision 9
@@ -45,19 +45,19 @@ class CucumberCpp < Formula
 
     system "gem", "install", "activesupport:7.0.8", "cucumber:5.2.0"
 
-    (testpath/"features/test.feature").write <<~EOS
+    (testpath"featurestest.feature").write <<~EOS
       Feature: Test
         Scenario: Just for test
           Given A given statement
           When A when statement
           Then A then statement
     EOS
-    (testpath/"features/step_definitions/cucumber.wire").write <<~EOS
+    (testpath"featuresstep_definitionscucumber.wire").write <<~EOS
       host: localhost
       port: 3902
     EOS
-    (testpath/"test.cpp").write <<~EOS
-      #include <cucumber-cpp/generic.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <cucumber-cppgeneric.hpp>
       GIVEN("^A given statement$") {
       }
       WHEN("^A when statement$") {
@@ -71,12 +71,12 @@ class CucumberCpp < Formula
            "-lboost_program_options", "-lboost_filesystem", "-lboost_chrono",
            "-pthread"
     begin
-      pid = fork { exec "./test" }
+      pid = fork { exec ".test" }
       sleep 5
       expected = <<~EOS
         Feature: Test
 
-          Scenario: Just for test   # features/test.feature:2
+          Scenario: Just for test   # featurestest.feature:2
             Given A given statement # test.cpp:2
             When A when statement   # test.cpp:4
             Then A then statement   # test.cpp:6
@@ -84,7 +84,7 @@ class CucumberCpp < Formula
         1 scenario (1 passed)
         3 steps (3 passed)
       EOS
-      assert_match expected, shell_output("#{testpath}/bin/cucumber --publish-quiet")
+      assert_match expected, shell_output("#{testpath}bincucumber --publish-quiet")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

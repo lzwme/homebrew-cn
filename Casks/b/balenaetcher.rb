@@ -2,11 +2,11 @@ cask "balenaetcher" do
   version "1.18.11"
   sha256 "251f403b79f53bbf7c558cb0b6ce085bd9d4f1fb7f70d96fdfc10ecbc493e70f"
 
-  url "https://ghproxy.com/https://github.com/balena-io/etcher/releases/download/v#{version}/balenaEtcher-#{version}.dmg",
-      verified: "github.com/balena-io/etcher/"
+  url "https:github.combalena-ioetcherreleasesdownloadv#{version}balenaEtcher-#{version}.dmg",
+      verified: "github.combalena-ioetcher"
   name "Etcher"
   desc "Tool to flash OS images to SD cards & USB drives"
-  homepage "https://balena.io/etcher"
+  homepage "https:balena.ioetcher"
 
   livecheck do
     url :url
@@ -18,9 +18,9 @@ cask "balenaetcher" do
   uninstall quit: "io.balena.etcher.*"
 
   zap trash: [
-    "~/Library/Application Support/balena-etcher",
-    "~/Library/Preferences/io.balena.etcher.helper.plist",
-    "~/Library/Preferences/io.balena.etcher.plist",
-    "~/Library/Saved Application State/io.balena.etcher.savedState",
+    "~LibraryApplication Supportbalena-etcher",
+    "~LibraryPreferencesio.balena.etcher.helper.plist",
+    "~LibraryPreferencesio.balena.etcher.plist",
+    "~LibrarySaved Application Stateio.balena.etcher.savedState",
   ]
 end

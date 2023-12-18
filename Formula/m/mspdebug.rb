@@ -1,10 +1,10 @@
 class Mspdebug < Formula
   desc "Debugger for use with MSP430 MCUs"
-  homepage "https://dlbeer.co.nz/mspdebug/"
-  url "https://ghproxy.com/https://github.com/dlbeer/mspdebug/archive/refs/tags/v0.25.tar.gz"
+  homepage "https:dlbeer.co.nzmspdebug"
+  url "https:github.comdlbeermspdebugarchiverefstagsv0.25.tar.gz"
   sha256 "347b5ae5d0ab0cddb54363b72abe482f9f5d6aedb8f230048de0ded28b7d1503"
   license "GPL-2.0"
-  head "https://github.com/dlbeer/mspdebug.git"
+  head "https:github.comdlbeermspdebug.git"
 
   bottle do
     sha256                               arm64_sonoma:   "b2afc19ddfc781ba82c0a1ec660cd0484285f4341bef4123f56c19b8e99c66c7"
@@ -27,7 +27,7 @@ class Mspdebug < Formula
   depends_on "libusb-compat"
 
   def install
-    ENV.append_to_cflags "-I#{Formula["hidapi"].opt_include}/hidapi"
+    ENV.append_to_cflags "-I#{Formula["hidapi"].opt_include}hidapi"
     system "make", "PREFIX=#{prefix}", "install"
   end
 
@@ -35,11 +35,11 @@ class Mspdebug < Formula
     <<~EOS
       You may need to install a kernel extension if you're having trouble with
       RF2500-like devices such as the TI Launchpad:
-        https://dlbeer.co.nz/mspdebug/faq.html#rf2500_osx
+        https:dlbeer.co.nzmspdebugfaq.html#rf2500_osx
     EOS
   end
 
   test do
-    system bin/"mspdebug", "--help"
+    system bin"mspdebug", "--help"
   end
 end

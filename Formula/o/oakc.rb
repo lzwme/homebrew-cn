@@ -1,14 +1,14 @@
 class Oakc < Formula
   desc "Portable programming language with a compact intermediate representation"
-  homepage "https://github.com/adam-mcdaniel/oakc"
-  url "https://static.crates.io/crates/oakc/oakc-0.6.1.crate"
+  homepage "https:github.comadam-mcdanieloakc"
+  url "https:static.crates.iocratesoakcoakc-0.6.1.crate"
   sha256 "1f4a90a3fd5c8ae32cb55c7a38730b6bfcf634f75e6ade0fd51c9db2a2431683"
   license "Apache-2.0"
-  head "https://github.com/adam-mcdaniel/oakc.git", branch: "develop"
+  head "https:github.comadam-mcdanieloakc.git", branch: "develop"
 
   livecheck do
-    url "https://crates.io/api/v1/crates/oakc/versions"
-    regex(/"num":\s*"(\d+(?:\.\d+)+)"/i)
+    url "https:crates.ioapiv1cratesoakcversions"
+    regex("num":\s*"(\d+(?:\.\d+)+)"i)
   end
 
   bottle do
@@ -34,9 +34,9 @@ class Oakc < Formula
   end
 
   test do
-    system bin/"oak", "-c", "c", pkgshare/"examples/hello_world.ok"
-    assert_equal "Hello world!\n", shell_output("./main")
+    system bin"oak", "-c", "c", pkgshare"exampleshello_world.ok"
+    assert_equal "Hello world!\n", shell_output(".main")
     assert_match "This file tests Oak's doc subcommand",
-                 shell_output("#{bin}/oak doc #{pkgshare}/examples/flags/doc.ok")
+                 shell_output("#{bin}oak doc #{pkgshare}examplesflagsdoc.ok")
   end
 end

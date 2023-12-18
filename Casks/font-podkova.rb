@@ -2,10 +2,10 @@ cask "font-podkova" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/podkova/Podkova%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpodkovaPodkova%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Podkova"
-  homepage "https://fonts.google.com/specimen/Podkova"
+  homepage "https:fonts.google.comspecimenPodkova"
 
   font "Podkova[wght].ttf"
 

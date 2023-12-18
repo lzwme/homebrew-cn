@@ -1,7 +1,7 @@
 class Ponyc < Formula
   desc "Object-oriented, actor-model, capabilities-secure programming language"
-  homepage "https://www.ponylang.io/"
-  url "https://github.com/ponylang/ponyc.git",
+  homepage "https:www.ponylang.io"
+  url "https:github.componylangponyc.git",
       tag:      "0.58.0",
       revision: "a161b7c97666f820bbacbb328d95dc820f353edd"
   license "BSD-2-Clause"
@@ -25,7 +25,7 @@ class Ponyc < Formula
   # We use LLVM to work around an error while building bundled `google-benchmark` with GCC
   fails_with :gcc do
     cause <<-EOS
-      .../src/gbenchmark/src/thread_manager.h:50:31: error: expected ')' before '(' token
+      ...srcgbenchmarksrcthread_manager.h:50:31: error: expected ')' before '(' token
          50 |   GUARDED_BY(GetBenchmarkMutex()) Result results;
             |                               ^
     EOS
@@ -47,14 +47,14 @@ class Ponyc < Formula
     # ENV["CC"] returns llvm_clang, which does not work in a test block.
     ENV.clang
 
-    system "#{bin}/ponyc", "-rexpr", "#{prefix}/packages/stdlib"
+    system "#{bin}ponyc", "-rexpr", "#{prefix}packagesstdlib"
 
-    (testpath/"test/main.pony").write <<~EOS
+    (testpath"testmain.pony").write <<~EOS
       actor Main
         new create(env: Env) =>
           env.out.print("Hello World!")
     EOS
-    system "#{bin}/ponyc", "test"
-    assert_equal "Hello World!", shell_output("./test1").strip
+    system "#{bin}ponyc", "test"
+    assert_equal "Hello World!", shell_output(".test1").strip
   end
 end

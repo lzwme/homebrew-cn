@@ -1,10 +1,10 @@
 class Handbrake < Formula
   desc "Open-source video transcoder available for Linux, Mac, and Windows"
-  homepage "https://handbrake.fr/"
-  url "https://ghproxy.com/https://github.com/HandBrake/HandBrake/releases/download/1.7.1/HandBrake-1.7.1-source.tar.bz2"
+  homepage "https:handbrake.fr"
+  url "https:github.comHandBrakeHandBrakereleasesdownload1.7.1HandBrake-1.7.1-source.tar.bz2"
   sha256 "733e42c8f254f6c2f8f6b40f0d3572fd49167ebf30742beae605effa16939edc"
   license "GPL-2.0-only"
-  head "https://github.com/HandBrake/HandBrake.git", branch: "master"
+  head "https:github.comHandBrakeHandBrake.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e9cd30f03be5c3edd01042c85c6cd1f6a7d56601dcbd1c42a57ff8f444b491a"
@@ -49,11 +49,11 @@ class Handbrake < Formula
   end
 
   def install
-    inreplace "contrib/ffmpeg/module.defs", "$(FFMPEG.GCC.gcc)", "cc"
+    inreplace "contribffmpegmodule.defs", "$(FFMPEG.GCC.gcc)", "cc"
 
-    ENV.append "CFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2" if OS.linux?
+    ENV.append "CFLAGS", "-I#{Formula["libxml2"].opt_include}libxml2" if OS.linux?
 
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-xcode",
                           "--disable-gtk"
     system "make", "-C", "build"
@@ -61,6 +61,6 @@ class Handbrake < Formula
   end
 
   test do
-    system bin/"HandBrakeCLI", "--help"
+    system bin"HandBrakeCLI", "--help"
   end
 end

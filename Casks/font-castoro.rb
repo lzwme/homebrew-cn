@@ -2,13 +2,13 @@ cask "font-castoro" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/castoro"
+      only_path: "oflcastoro"
   name "Castoro"
   desc "Named for the north american beaver, castor canadensis"
-  homepage "https://fonts.google.com/specimen/Castoro"
+  homepage "https:fonts.google.comspecimenCastoro"
 
   font "Castoro-Italic.ttf"
   font "Castoro-Regular.ttf"

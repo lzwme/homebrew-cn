@@ -2,10 +2,10 @@ cask "font-rampart-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rampartone/RampartOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrampartoneRampartOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rampart One"
-  homepage "https://fonts.google.com/specimen/Rampart+One"
+  homepage "https:fonts.google.comspecimenRampart+One"
 
   font "RampartOne-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Wangle < Formula
-  desc "Modular, composable client/server abstractions framework"
-  homepage "https://github.com/facebook/wangle"
-  url "https://ghproxy.com/https://github.com/facebook/wangle/releases/download/v2023.12.04.00/wangle-v2023.12.04.00.tar.gz"
+  desc "Modular, composable clientserver abstractions framework"
+  homepage "https:github.comfacebookwangle"
+  url "https:github.comfacebookwanglereleasesdownloadv2023.12.04.00wangle-v2023.12.04.00.tar.gz"
   sha256 "e990af29b00e23251d877ecf895e4bba01c8ac0c260445765ce01bc2390bbbf0"
   license "Apache-2.0"
-  head "https://github.com/facebook/wangle.git", branch: "main"
+  head "https:github.comfacebookwangle.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "751907591659e28eb5ad912ff6e5b791f08265e5f7d4f03f57a2639851954835"
@@ -43,9 +43,9 @@ class Wangle < Formula
       system "make", "clean"
       system "cmake", ".", "-DBUILD_TESTS=OFF", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
       system "make"
-      lib.install "lib/libwangle.a"
+      lib.install "liblibwangle.a"
 
-      pkgshare.install Dir["example/echo/*.cpp"]
+      pkgshare.install Dir["exampleecho*.cpp"]
     end
   end
 
@@ -72,23 +72,23 @@ class Wangle < Formula
       cxx_flags << "-lpthread"
     end
 
-    system ENV.cxx, pkgshare/"EchoClient.cpp", *cxx_flags, "-o", "EchoClient"
-    system ENV.cxx, pkgshare/"EchoServer.cpp", *cxx_flags, "-o", "EchoServer"
+    system ENV.cxx, pkgshare"EchoClient.cpp", *cxx_flags, "-o", "EchoClient"
+    system ENV.cxx, pkgshare"EchoServer.cpp", *cxx_flags, "-o", "EchoServer"
 
     port = free_port
-    fork { exec testpath/"EchoServer", "-port", port.to_s }
+    fork { exec testpath"EchoServer", "-port", port.to_s }
     sleep 10
 
     require "pty"
     output = ""
-    PTY.spawn(testpath/"EchoClient", "-port", port.to_s) do |r, w, pid|
+    PTY.spawn(testpath"EchoClient", "-port", port.to_s) do |r, w, pid|
       w.write "Hello from Homebrew!\nAnother test line.\n"
       sleep 20
       Process.kill "TERM", pid
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
     assert_match("Hello from Homebrew!", output)

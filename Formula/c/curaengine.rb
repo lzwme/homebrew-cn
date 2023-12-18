@@ -1,11 +1,11 @@
 class Curaengine < Formula
   desc "C++ 3D printing GCode generator"
-  homepage "https://github.com/Ultimaker/CuraEngine"
-  url "https://ghproxy.com/https://github.com/Ultimaker/CuraEngine/archive/refs/tags/4.13.1.tar.gz"
+  homepage "https:github.comUltimakerCuraEngine"
+  url "https:github.comUltimakerCuraEnginearchiverefstags4.13.1.tar.gz"
   sha256 "283f62326c6072cdcef9d9b84cb8141a6072747f08e1cae6534d08ad85b1c657"
   license "AGPL-3.0-or-later"
   version_scheme 1
-  head "https://github.com/Ultimaker/CuraEngine.git", branch: "master"
+  head "https:github.comUltimakerCuraEngine.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,15 +28,15 @@ class Curaengine < Formula
 
   fails_with gcc: "5"
 
-  # The version tag in these resources (e.g., `/1.2.3/`) should be changed as
+  # The version tag in these resources (e.g., `1.2.3`) should be changed as
   # part of updating this formula to a new version.
   resource "fdmextruder_defaults" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Ultimaker/Cura/4.13.1/resources/definitions/fdmextruder.def.json"
+    url "https:raw.githubusercontent.comUltimakerCura4.13.1resourcesdefinitionsfdmextruder.def.json"
     sha256 "c03847252f9dea37277a3151c0eaeec32ded5e4cd91eed62b58e420ad8cb7fef"
   end
 
   resource "fdmprinter_defaults" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Ultimaker/Cura/4.13.1/resources/definitions/fdmprinter.def.json"
+    url "https:raw.githubusercontent.comUltimakerCura4.13.1resourcesdefinitionsfdmprinter.def.json"
     sha256 "6634679e3a9571f877e52e57a688d883dc4dc9fe6855a04c3b7be19b60f3a0b7"
   end
 
@@ -47,13 +47,13 @@ class Curaengine < Formula
                             "-DENABLE_ARCUS=OFF"
       system "make", "install"
     end
-    bin.install "build/CuraEngine"
+    bin.install "buildCuraEngine"
   end
 
   test do
     testpath.install resource("fdmextruder_defaults")
     testpath.install resource("fdmprinter_defaults")
-    (testpath/"t.stl").write <<~EOS
+    (testpath"t.stl").write <<~EOS
       solid t
         facet normal 0 -1 0
          outer loop
@@ -65,6 +65,6 @@ class Curaengine < Formula
       endsolid Star
     EOS
 
-    system "#{bin}/CuraEngine", "slice", "-j", "fdmprinter.def.json", "-l", "#{testpath}/t.stl"
+    system "#{bin}CuraEngine", "slice", "-j", "fdmprinter.def.json", "-l", "#{testpath}t.stl"
   end
 end

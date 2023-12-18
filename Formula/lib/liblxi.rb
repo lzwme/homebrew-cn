@@ -1,10 +1,10 @@
 class Liblxi < Formula
   desc "Simple C API for communicating with LXI compatible instruments"
-  homepage "https://github.com/lxi-tools/liblxi"
-  url "https://ghproxy.com/https://github.com/lxi-tools/liblxi/archive/refs/tags/v1.20.tar.gz"
+  homepage "https:github.comlxi-toolsliblxi"
+  url "https:github.comlxi-toolsliblxiarchiverefstagsv1.20.tar.gz"
   sha256 "4ee8dc2daea6bf581c1da32c51c4cb08e3f3b42d4c77d8a19777f5bbae93f57a"
   license "BSD-3-Clause"
-  head "https://github.com/lxi-tools/liblxi.git", branch: "master"
+  head "https:github.comlxi-toolsliblxi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f8b148d72e20e4613b694ae38ca3b032f4d105fb97e659887c7a86ab9adb42c1"
@@ -35,7 +35,7 @@ class Liblxi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <lxi.h>
       #include <stdio.h>
 
@@ -48,6 +48,6 @@ class Liblxi < Formula
     args += %W[-L#{Formula["libtirpc"].opt_lib} -ltirpc] if OS.linux?
 
     system ENV.cc, "test.c", *args, "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

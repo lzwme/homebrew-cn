@@ -1,7 +1,7 @@
 class Gdmap < Formula
   desc "Tool to inspect the used space of folders"
-  homepage "https://sourceforge.net/projects/gdmap/"
-  url "https://downloads.sourceforge.net/project/gdmap/gdmap/0.8.1/gdmap-0.8.1.tar.gz"
+  homepage "https:sourceforge.netprojectsgdmap"
+  url "https:downloads.sourceforge.netprojectgdmapgdmap0.8.1gdmap-0.8.1.tar.gz"
   sha256 "a200c98004b349443f853bf611e49941403fce46f2335850913f85c710a2285b"
   license "GPL-2.0-or-later"
   revision 2
@@ -37,21 +37,21 @@ class Gdmap < Formula
   # The first patch turns off this disablement, making the code work fine as intended
   # The second patch is to remove an unused system header import on one of the files.
   # This header file doesn't exist in OSX and the program compiles and runs fine without it.
-  # Filed bug upstream as https://sourceforge.net/p/gdmap/bugs/19/
+  # Filed bug upstream as https:sourceforge.netpgdmapbugs19
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/gdmap/0.8.1.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9gdmap0.8.1.patch"
     sha256 "292cc974405f0a8c7f6dc32770f81057e67eac6e4fcb1fc575e1f02e044cf9c3"
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec"libperl5" unless OS.mac?
 
-    system "./configure", *std_configure_args, "LIBS=-lm"
+    system ".configure", *std_configure_args, "LIBS=-lm"
 
     system "make", "install"
   end
 
   test do
-    system "#{bin}/gdmap", "--help"
+    system "#{bin}gdmap", "--help"
   end
 end

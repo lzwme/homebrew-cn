@@ -1,11 +1,11 @@
 class Hugo < Formula
   desc "Configurable static site generator"
-  homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo.git",
+  homepage "https:gohugo.io"
+  url "https:github.comgohugoiohugo.git",
       tag:      "v0.121.1",
       revision: "00b46fed8e47f7bb0a85d7cfc2d9f1356379b740"
   license "Apache-2.0"
-  head "https://github.com/gohugoio/hugo.git", branch: "master"
+  head "https:github.comgohugoiohugo.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f10509e063b2f2443485afe896a0635fd6eeff481abe288c6aceec93ce2f9ea"
@@ -22,21 +22,21 @@ class Hugo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/gohugoio/hugo/common/hugo.commitHash=#{Utils.git_head}
-      -X github.com/gohugoio/hugo/common/hugo.buildDate=#{time.iso8601}
-      -X github.com/gohugoio/hugo/common/hugo.vendorInfo=brew
+      -X github.comgohugoiohugocommonhugo.commitHash=#{Utils.git_head}
+      -X github.comgohugoiohugocommonhugo.buildDate=#{time.iso8601}
+      -X github.comgohugoiohugocommonhugo.vendorInfo=brew
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "extended"
 
-    generate_completions_from_executable(bin/"hugo", "completion")
-    system bin/"hugo", "gen", "man", "--dir", man1
+    generate_completions_from_executable(bin"hugo", "completion")
+    system bin"hugo", "gen", "man", "--dir", man1
   end
 
   test do
-    site = testpath/"hops-yeast-malt-water"
-    system bin/"hugo", "new", "site", site
-    assert_predicate site/"hugo.toml", :exist?
+    site = testpath"hops-yeast-malt-water"
+    system bin"hugo", "new", "site", site
+    assert_predicate site"hugo.toml", :exist?
 
-    assert_match version.to_s, shell_output(bin/"hugo version")
+    assert_match version.to_s, shell_output(bin"hugo version")
   end
 end

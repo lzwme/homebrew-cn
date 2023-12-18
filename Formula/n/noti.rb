@@ -1,7 +1,7 @@
 class Noti < Formula
   desc "Trigger notifications when a process completes"
-  homepage "https://github.com/variadico/noti"
-  url "https://ghproxy.com/https://github.com/variadico/noti/archive/refs/tags/3.7.0.tar.gz"
+  homepage "https:github.comvariadiconoti"
+  url "https:github.comvariadiconotiarchiverefstags3.7.0.tar.gz"
   sha256 "f970a4dd242e6b58edf51320aa237bb20d689bbc8fd0f7d0db5aa1980a2dc269"
   license "MIT"
 
@@ -22,15 +22,15 @@ class Noti < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/variadico/noti/internal/command.Version=#{version}
+      -X github.comvariadiconotiinternalcommand.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "cmd/noti/main.go"
-    man1.install "docs/man/dist/noti.1"
-    man5.install "docs/man/dist/noti.yaml.5"
+    system "go", "build", *std_go_args(ldflags: ldflags), "cmdnotimain.go"
+    man1.install "docsmandistnoti.1"
+    man5.install "docsmandistnoti.yaml.5"
   end
 
   test do
-    assert_match "noti version #{version}", shell_output("#{bin}/noti --version").chomp
-    system bin/"noti", "-t", "Noti", "-m", "'Noti recipe installation test has finished.'"
+    assert_match "noti version #{version}", shell_output("#{bin}noti --version").chomp
+    system bin"noti", "-t", "Noti", "-m", "'Noti recipe installation test has finished.'"
   end
 end

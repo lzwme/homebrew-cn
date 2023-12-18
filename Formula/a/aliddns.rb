@@ -1,11 +1,11 @@
 class Aliddns < Formula
   desc "Aliyun(Alibaba Cloud) ddns for golang"
-  homepage "https://github.com/OpenIoTHub/aliddns"
-  url "https://github.com/OpenIoTHub/aliddns.git",
+  homepage "https:github.comOpenIoTHubaliddns"
+  url "https:github.comOpenIoTHubaliddns.git",
       tag:      "v0.0.23",
       revision: "0b3a93644030e1917f34ab76d4cbc279f090653c"
   license "MIT"
-  head "https://github.com/OpenIoTHub/aliddns.git", branch: "master"
+  head "https:github.comOpenIoTHubaliddns.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "90af620562ae9c772f7d5cc14f6398c498d06ea9e77cd67bc759512ab677a94f"
@@ -31,15 +31,15 @@ class Aliddns < Formula
   end
 
   service do
-    run [opt_bin/"aliddns", "-c", etc/"aliddns/aliddns.yaml"]
+    run [opt_bin"aliddns", "-c", etc"aliddnsaliddns.yaml"]
     keep_alive true
-    log_path var/"log/aliddns.log"
-    error_log_path var/"log/aliddns.log"
+    log_path var"logaliddns.log"
+    error_log_path var"logaliddns.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/aliddns -v 2>&1")
-    assert_match "config created", shell_output("#{bin}/aliddns init --config=aliddns.yml 2>&1")
-    assert_predicate testpath/"aliddns.yml", :exist?
+    assert_match version.to_s, shell_output("#{bin}aliddns -v 2>&1")
+    assert_match "config created", shell_output("#{bin}aliddns init --config=aliddns.yml 2>&1")
+    assert_predicate testpath"aliddns.yml", :exist?
   end
 end

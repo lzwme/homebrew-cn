@@ -1,7 +1,7 @@
 class Arjun < Formula
   desc "HTTP parameter discovery suite"
-  homepage "https://github.com/s0md3v/Arjun"
-  url "https://files.pythonhosted.org/packages/83/2d/e521035e38c81c9d7f4aa02a287dddeb163ad51ebca28bef7563fc503c07/arjun-2.2.2.tar.gz"
+  homepage "https:github.coms0md3vArjun"
+  url "https:files.pythonhosted.orgpackages832de521035e38c81c9d7f4aa02a287dddeb163ad51ebca28bef7563fc503c07arjun-2.2.2.tar.gz"
   sha256 "3b2235144e91466b14474ab0cad1bcff6fb1313edb943a690c64ed0ff995cc46"
   license "AGPL-3.0-only"
 
@@ -30,7 +30,7 @@ class Arjun < Formula
   end
 
   test do
-    output = shell_output("#{bin}/arjun -u https://mockbin.org/ -m GET")
+    output = shell_output("#{bin}arjun -u https:mockbin.org -m GET")
     assert_match "No parameters were discovered", output
   end
 end

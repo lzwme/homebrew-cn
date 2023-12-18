@@ -1,7 +1,7 @@
 class Kondo < Formula
   desc "Save disk space by cleaning non-essential files from software projects"
-  homepage "https://github.com/tbillington/kondo"
-  url "https://ghproxy.com/https://github.com/tbillington/kondo/archive/refs/tags/v0.7.tar.gz"
+  homepage "https:github.comtbillingtonkondo"
+  url "https:github.comtbillingtonkondoarchiverefstagsv0.7.tar.gz"
   sha256 "b7535807ba98bde86adfb920ec439e98b7c652361feb6a224e55c88cda569ff2"
   license "MIT"
 
@@ -30,10 +30,10 @@ class Kondo < Formula
     require "open3"
 
     # Write a Cargo.toml file so kondo will interpret this directory as a Cargo project.
-    (testpath/"Cargo.toml").write("")
+    (testpath"Cargo.toml").write("")
 
     # Create a dummy file which we will delete via kondo.
-    dummy_artifact_path = (testpath/"target/foo")
+    dummy_artifact_path = (testpath"targetfoo")
 
     # Write 10 bytes into the dummy file.
     dummy_artifact_path.write("0123456789")
@@ -41,14 +41,14 @@ class Kondo < Formula
     # Run kondo. It should detect the Cargo.toml file and interpret the directory as a Cargo project.
     # The output should look roughly like the following:
     #
-    # /private/tmp/kondo-test-20200731-55654-i9otaa Cargo project
+    # privatetmpkondo-test-20200731-55654-i9otaa Cargo project
     #     target (10.0B)
     #   delete above artifact directories? ([y]es, [n]o, [a]ll, [q]uit):
     #
     # We're going to simulate a user pressing "n" for no.
     # The result of this should be that the dummy file still exists after kondo has exited.
-    Open3.popen3(bin/"kondo") do |stdin, _stdout, _, wait_thr|
-      # Simulate a user pressing "n" then pressing return/enter.
+    Open3.popen3(bin"kondo") do |stdin, _stdout, _, wait_thr|
+      # Simulate a user pressing "n" then pressing returnenter.
       stdin.write("n\n")
 
       # Wait for the kondo process to exit.
@@ -60,8 +60,8 @@ class Kondo < Formula
 
     # The concept is the same as the above test, except this time we will simulate pressing "y" for yes.
     # The result of this should be that the dummy file still no longer exists after kondo has exited.
-    Open3.popen3(bin/"kondo") do |stdin, _stdout, _, wait_thr|
-      # Simulate a user pressing "y" then pressing return/enter.
+    Open3.popen3(bin"kondo") do |stdin, _stdout, _, wait_thr|
+      # Simulate a user pressing "y" then pressing returnenter.
       stdin.write("y\n")
 
       # Wait for the kondo process to exit.

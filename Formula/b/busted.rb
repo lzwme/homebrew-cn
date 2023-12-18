@@ -1,10 +1,10 @@
 class Busted < Formula
   desc "Elegant Lua unit testing"
-  homepage "https://lunarmodules.github.io/busted/"
-  url "https://ghproxy.com/https://github.com/lunarmodules/busted/archive/refs/tags/v2.2.0.tar.gz"
+  homepage "https:lunarmodules.github.iobusted"
+  url "https:github.comlunarmodulesbustedarchiverefstagsv2.2.0.tar.gz"
   sha256 "befca10f573bb476fa1db2e3149150d65f802a71d34d1682679e640665f2dc2b"
   license "MIT"
-  head "https://github.com/lunarmodules/busted.git", branch: "master"
+  head "https:github.comlunarmodulesbusted.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9267e5bd352ff30b679465035c1a6180df40dabdec7b4e14f31f1857155ebe00"
@@ -23,11 +23,11 @@ class Busted < Formula
 
   def install
     system "luarocks", "make", "--tree=#{libexec}", "--global", "--lua-dir=#{Formula["lua"].opt_prefix}"
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    test_file = testpath/"test.lua"
+    test_file = testpath"test.lua"
 
     test_file.write <<~EOS
       describe("brewtest", function()
@@ -37,8 +37,8 @@ class Busted < Formula
       end)
     EOS
 
-    assert_match "1 success / 0 failures", shell_output("#{bin}/busted #{test_file}")
+    assert_match "1 success  0 failures", shell_output("#{bin}busted #{test_file}")
 
-    assert_match version.to_s, shell_output("#{bin}/busted --version")
+    assert_match version.to_s, shell_output("#{bin}busted --version")
   end
 end

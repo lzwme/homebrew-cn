@@ -1,10 +1,10 @@
 class Hexyl < Formula
   desc "Command-line hex viewer"
-  homepage "https://github.com/sharkdp/hexyl"
-  url "https://ghproxy.com/https://github.com/sharkdp/hexyl/archive/refs/tags/v0.14.0.tar.gz"
+  homepage "https:github.comsharkdphexyl"
+  url "https:github.comsharkdphexylarchiverefstagsv0.14.0.tar.gz"
   sha256 "5205fa1a483c66997f5a7179cdd1a277ebb5e0a743bb269a962d20b29dd735f8"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/sharkdp/hexyl.git", branch: "master"
+  head "https:github.comsharkdphexyl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47840f2ffb16fcb2d4a78556a79c00e2cd18d5cbe723c358eaa92b1edf5e7a72"
@@ -22,13 +22,13 @@ class Hexyl < Formula
   def install
     system "cargo", "install", *std_cargo_args
     system "pandoc", "-s", "-f", "markdown", "-t", "man",
-                     "doc/hexyl.1.md", "-o", "hexyl.1"
+                     "dochexyl.1.md", "-o", "hexyl.1"
     man1.install "hexyl.1"
   end
 
   test do
     pdf = test_fixtures("test.pdf")
-    output = shell_output("#{bin}/hexyl -n 100 #{pdf}")
+    output = shell_output("#{bin}hexyl -n 100 #{pdf}")
     assert_match "00000000", output
   end
 end

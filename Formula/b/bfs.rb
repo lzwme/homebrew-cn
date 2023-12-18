@@ -1,7 +1,7 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
-  homepage "https://tavianator.com/projects/bfs.html"
-  url "https://ghproxy.com/https://github.com/tavianator/bfs/archive/refs/tags/3.0.4.tar.gz"
+  homepage "https:tavianator.comprojectsbfs.html"
+  url "https:github.comtavianatorbfsarchiverefstags3.0.4.tar.gz"
   sha256 "7196f5a624871c91ad051752ea21043c198a875189e08c70ab3167567a72889d"
   license "0BSD"
 
@@ -36,6 +36,6 @@ class Bfs < Formula
   test do
     touch "foo_file"
     touch "test_file"
-    assert_equal "./test_file", shell_output("#{bin}/bfs -name 'test*' -depth 1").chomp
+    assert_equal ".test_file", shell_output("#{bin}bfs -name 'test*' -depth 1").chomp
   end
 end

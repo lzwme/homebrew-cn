@@ -1,7 +1,7 @@
 class Xwin < Formula
   desc "Microsoft CRT and Windows SDK headers and libraries loader"
-  homepage "https://github.com/Jake-Shadle/xwin"
-  url "https://ghproxy.com/https://github.com/Jake-Shadle/xwin/archive/refs/tags/0.5.0.tar.gz"
+  homepage "https:github.comJake-Shadlexwin"
+  url "https:github.comJake-Shadlexwinarchiverefstags0.5.0.tar.gz"
   sha256 "77179655fa2c3d9d969ff0c365fa0edea32a59ac7098022e4f2753cf3ef0c58e"
   license "Apache-2.0"
 
@@ -22,7 +22,7 @@ class Xwin < Formula
   end
 
   test do
-    system bin/"xwin", "--accept-license", "splat", "--disable-symlinks"
-    assert_predicate testpath/".xwin-cache/splat", :exist?
+    system bin"xwin", "--accept-license", "splat", "--disable-symlinks"
+    assert_predicate testpath".xwin-cachesplat", :exist?
   end
 end

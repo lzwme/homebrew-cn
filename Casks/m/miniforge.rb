@@ -5,14 +5,14 @@ cask "miniforge" do
   sha256 arm:   "51d15ed1471ef8633f99574dc0c43fc972ce1981ebf08eade4d9b249bb7640e4",
          intel: "d8eef4816b28f1bfc099d8fc2cdac4fb0ebbe1ddd27f4acb66d83d66c260cb63"
 
-  url "https://ghproxy.com/https://github.com/conda-forge/miniforge/releases/download/#{version}/Miniforge3-#{version}-MacOSX-#{arch}.sh"
+  url "https:github.comconda-forgeminiforgereleasesdownload#{version}Miniforge3-#{version}-MacOSX-#{arch}.sh"
   name "miniforge"
   desc "Minimal installer for conda specific to conda-forge"
-  homepage "https://github.com/conda-forge/miniforge"
+  homepage "https:github.comconda-forgeminiforge"
 
   livecheck do
     url :homepage
-    regex(/v?(\d+(?:[.-]\d+)+)/i)
+    regex(v?(\d+(?:[.-]\d+)+)i)
     strategy :github_latest
   end
 
@@ -22,15 +22,15 @@ cask "miniforge" do
 
   installer script: {
     executable: "Miniforge3-#{version}-MacOSX-#{arch}.sh",
-    args:       ["-b", "-p", "#{caskroom_path}/base"],
+    args:       ["-b", "-p", "#{caskroom_path}base"],
   }
-  binary "#{caskroom_path}/base/condabin/conda"
+  binary "#{caskroom_path}basecondabinconda"
 
-  uninstall delete: "#{caskroom_path}/base"
+  uninstall delete: "#{caskroom_path}base"
 
   zap trash: [
-    "~/.condarc",
-    "~/.conda",
+    "~.condarc",
+    "~.conda",
   ]
 
   caveats <<~EOS

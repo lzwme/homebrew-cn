@@ -1,15 +1,15 @@
 class ArduinoCli < Formula
   desc "Arduino command-line interface"
-  homepage "https://github.com/arduino/arduino-cli"
-  url "https://github.com/arduino/arduino-cli.git",
+  homepage "https:github.comarduinoarduino-cli"
+  url "https:github.comarduinoarduino-cli.git",
       tag:      "0.34.2",
       revision: "963c1a76c9d2a6ea37956a100c0cd8070260208f"
   license "GPL-3.0-only"
-  head "https://github.com/arduino/arduino-cli.git", branch: "master"
+  head "https:github.comarduinoarduino-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,24 +29,24 @@ class ArduinoCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/arduino/arduino-cli/version.versionString=#{version}
-      -X github.com/arduino/arduino-cli/version.commit=#{Utils.git_head(length: 8)}
-      -X github.com/arduino/arduino-cli/version.date=#{time.iso8601}
+      -X github.comarduinoarduino-cliversion.versionString=#{version}
+      -X github.comarduinoarduino-cliversion.commit=#{Utils.git_head(length: 8)}
+      -X github.comarduinoarduino-cliversion.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"arduino-cli", "completion")
+    generate_completions_from_executable(bin"arduino-cli", "completion")
   end
 
   test do
-    system "#{bin}/arduino-cli", "sketch", "new", "test_sketch"
-    assert File.directory?("#{testpath}/test_sketch")
+    system "#{bin}arduino-cli", "sketch", "new", "test_sketch"
+    assert File.directory?("#{testpath}test_sketch")
 
-    version_output = shell_output("#{bin}/arduino-cli version 2>&1")
+    version_output = shell_output("#{bin}arduino-cli version 2>&1")
     assert_match("arduino-cli  Version: #{version}", version_output)
     assert_match("Commit:", version_output)
-    assert_match(/[a-f0-9]{8}/, version_output)
+    assert_match([a-f0-9]{8}, version_output)
     assert_match("Date: ", version_output)
-    assert_match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/, version_output)
+    assert_match(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z, version_output)
   end
 end

@@ -1,10 +1,10 @@
 class FseventWatch < Formula
   desc "macOS FSEvents client"
-  homepage "https://github.com/proger/fsevent_watch"
-  url "https://ghproxy.com/https://github.com/proger/fsevent_watch/archive/refs/tags/v0.2.tar.gz"
+  homepage "https:github.comprogerfsevent_watch"
+  url "https:github.comprogerfsevent_watcharchiverefstagsv0.2.tar.gz"
   sha256 "1cfd66d551bb5a7ef80b53bcc7952b766cf81ce2059aacdf7380a9870aa0af6c"
   license "MIT"
-  head "https://github.com/proger/fsevent_watch.git", branch: "master"
+  head "https:github.comprogerfsevent_watch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b52aa2f7b37774ad1250f27ea993c494de0e338a1e27be12c16773c41a9a69e7"
@@ -27,6 +27,6 @@ class FseventWatch < Formula
   end
 
   test do
-    system "#{bin}/fsevent_watch", "--version"
+    system "#{bin}fsevent_watch", "--version"
   end
 end

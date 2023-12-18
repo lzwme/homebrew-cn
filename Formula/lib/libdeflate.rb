@@ -1,7 +1,7 @@
 class Libdeflate < Formula
-  desc "Heavily optimized DEFLATE/zlib/gzip compression and decompression"
-  homepage "https://github.com/ebiggers/libdeflate"
-  url "https://ghproxy.com/https://github.com/ebiggers/libdeflate/archive/refs/tags/v1.19.tar.gz"
+  desc "Heavily optimized DEFLATEzlibgzip compression and decompression"
+  homepage "https:github.comebiggerslibdeflate"
+  url "https:github.comebiggerslibdeflatearchiverefstagsv1.19.tar.gz"
   sha256 "27bf62d71cd64728ff43a9feb92f2ac2f2bf748986d856133cc1e51992428c25"
   license "MIT"
 
@@ -26,9 +26,9 @@ class Libdeflate < Formula
   end
 
   test do
-    (testpath/"foo").write "test"
-    system "#{bin}/libdeflate-gzip", "foo"
-    system "#{bin}/libdeflate-gunzip", "-d", "foo.gz"
-    assert_equal "test", File.read(testpath/"foo")
+    (testpath"foo").write "test"
+    system "#{bin}libdeflate-gzip", "foo"
+    system "#{bin}libdeflate-gunzip", "-d", "foo.gz"
+    assert_equal "test", File.read(testpath"foo")
   end
 end

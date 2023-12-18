@@ -1,7 +1,7 @@
 class Ganglia < Formula
   desc "Scalable distributed monitoring system"
-  homepage "https://ganglia.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/3.7.2/ganglia-3.7.2.tar.gz"
+  homepage "https:ganglia.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectgangliaganglia%20monitoring%20core3.7.2ganglia-3.7.2.tar.gz"
   sha256 "042dbcaf580a661b55ae4d9f9b3566230b2232169a0898e91a797a4c61888409"
   license "BSD-3-Clause"
   revision 3
@@ -20,14 +20,14 @@ class Ganglia < Formula
   end
 
   head do
-    url "https://github.com/ganglia/monitor-core.git", branch: "master"
+    url "https:github.comgangliamonitor-core.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
 
-  # https://www.mail-archive.com/ganglia-developers@lists.sourceforge.net/msg06873.html
+  # https:www.mail-archive.comganglia-developers@lists.sourceforge.netmsg06873.html
   deprecate! date: "2023-06-05", because: :unmaintained
 
   depends_on "pkg-config" => :build
@@ -40,50 +40,50 @@ class Ganglia < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     if build.head?
       inreplace "bootstrap", "libtoolize", "glibtoolize"
-      inreplace "libmetrics/bootstrap", "libtoolize", "glibtoolize"
-      system "./bootstrap"
+      inreplace "libmetricsbootstrap", "libtoolize", "glibtoolize"
+      system ".bootstrap"
     end
 
-    inreplace "configure", 'varstatedir="/var/lib"', %Q(varstatedir="#{var}/lib")
-    system "./configure", "--disable-debug",
+    inreplace "configure", 'varstatedir="varlib"', %Q(varstatedir="#{var}lib")
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--sbindir=#{bin}",
                           "--sysconfdir=#{etc}",
                           "--mandir=#{man}",
                           "--with-gmetad",
-                          "--with-libapr=#{Formula["apr"].opt_bin}/apr-1-config",
+                          "--with-libapr=#{Formula["apr"].opt_bin}apr-1-config",
                           "--with-libpcre=#{Formula["pcre"].opt_prefix}"
     system "make", "install"
 
     # Generate the default config file
-    system "#{bin}/gmond -t > #{etc}/gmond.conf" unless File.exist? "#{etc}/gmond.conf"
+    system "#{bin}gmond -t > #{etc}gmond.conf" unless File.exist? "#{etc}gmond.conf"
   end
 
   def post_install
-    (var/"lib/ganglia/rrds").mkpath
+    (var"libgangliarrds").mkpath
   end
 
   def caveats
     <<~EOS
       If you didn't have a default config file, one was created here:
-        #{etc}/gmond.conf
+        #{etc}gmond.conf
     EOS
   end
 
   test do
     pid = fork do
-      exec bin/"gmetad", "--pid-file=#{testpath}/pid"
+      exec bin"gmetad", "--pid-file=#{testpath}pid"
     end
     sleep 30
-    assert_predicate testpath/"pid", :exist?
+    assert_predicate testpath"pid", :exist?
   ensure
     Process.kill "TERM", pid
     Process.wait pid

@@ -2,25 +2,25 @@ cask "webtorrent" do
   version "0.24.0"
   sha256 "9cf28d0f0ef74d793cca5a0fee0d7195a11c055b4a6c118cea295c308a3bfd9d"
 
-  url "https://ghproxy.com/https://github.com/webtorrent/webtorrent-desktop/releases/download/v#{version}/WebTorrent-v#{version}.dmg",
-      verified: "github.com/webtorrent/webtorrent-desktop/"
+  url "https:github.comwebtorrentwebtorrent-desktopreleasesdownloadv#{version}WebTorrent-v#{version}.dmg",
+      verified: "github.comwebtorrentwebtorrent-desktop"
   name "WebTorrent Desktop"
   desc "Torrent streaming application"
-  homepage "https://webtorrent.io/desktop/"
+  homepage "https:webtorrent.iodesktop"
 
   app "WebTorrent.app"
 
   zap trash: [
-    "~/Library/Application Support/io.webtorrent.webtorrent.ShipIt",
-    "~/Library/Application Support/WebTorrent",
-    "~/Library/Caches/io.webtorrent.webtorrent",
-    "~/Library/Caches/io.webtorrent.webtorrent.ShipIt",
-    "~/Library/Caches/WebTorrent",
-    "~/Library/Cookies/io.webtorrent.webtorrent.binarycookies",
-    "~/Library/Preferences/ByHost/io.webtorrent.webtorrent.ShipIt.*.plist",
-    "~/Library/Preferences/io.webtorrent.webtorrent-helper.plist",
-    "~/Library/Preferences/io.webtorrent.webtorrent.plist",
-    "~/Library/Saved Application State/io.webtorrent.webtorrent.savedState",
-    "~/Library/WebKit/io.webtorrent.webtorrent",
+    "~LibraryApplication Supportio.webtorrent.webtorrent.ShipIt",
+    "~LibraryApplication SupportWebTorrent",
+    "~LibraryCachesio.webtorrent.webtorrent",
+    "~LibraryCachesio.webtorrent.webtorrent.ShipIt",
+    "~LibraryCachesWebTorrent",
+    "~LibraryCookiesio.webtorrent.webtorrent.binarycookies",
+    "~LibraryPreferencesByHostio.webtorrent.webtorrent.ShipIt.*.plist",
+    "~LibraryPreferencesio.webtorrent.webtorrent-helper.plist",
+    "~LibraryPreferencesio.webtorrent.webtorrent.plist",
+    "~LibrarySaved Application Stateio.webtorrent.webtorrent.savedState",
+    "~LibraryWebKitio.webtorrent.webtorrent",
   ]
 end

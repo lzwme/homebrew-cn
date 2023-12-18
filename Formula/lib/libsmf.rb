@@ -1,7 +1,7 @@
 class Libsmf < Formula
   desc "C library for handling SMF ('*.mid') files"
-  homepage "https://sourceforge.net/projects/libsmf/"
-  url "https://downloads.sourceforge.net/project/libsmf/libsmf/1.3/libsmf-1.3.tar.gz"
+  homepage "https:sourceforge.netprojectslibsmf"
+  url "https:downloads.sourceforge.netprojectlibsmflibsmf1.3libsmf-1.3.tar.gz"
   sha256 "d3549f15de94ac8905ad365639ac6a2689cb1b51fdfa02d77fa6640001b18099"
   license "BSD-2-Clause"
   revision 1
@@ -20,29 +20,29 @@ class Libsmf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5670da1ec13772870636e0cfe96e851f021ebe997a3307725331cbea22062246"
   end
 
-  # Linked development repo is gone: https://github.com/nilsgey/libsmf
-  # Potential alt repo has no activity: https://github.com/stump/libsmf
+  # Linked development repo is gone: https:github.comnilsgeylibsmf
+  # Potential alt repo has no activity: https:github.comstumplibsmf
   disable! date: "2023-06-19", because: :unmaintained
 
   # Added automake as a build dependency to update config files for ARM support.
-  # Issue ref in alt repo: https://github.com/stump/libsmf/issues/10
+  # Issue ref in alt repo: https:github.comstumplibsmfissues10
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
   depends_on "glib"
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     # Workaround for ancient config files not recognizing aarch64 macos.
     %w[config.guess config.sub].each do |fn|
-      (buildpath/fn).unlink
-      cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, fn
+      (buildpathfn).unlink
+      cp Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"fn, fn
     end
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 end

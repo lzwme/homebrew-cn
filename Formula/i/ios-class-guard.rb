@@ -1,10 +1,10 @@
 class IosClassGuard < Formula
   desc "Objective-C obfuscator for Mach-O executables"
-  homepage "https://github.com/Polidea/ios-class-guard/"
-  url "https://ghproxy.com/https://github.com/Polidea/ios-class-guard/archive/refs/tags/0.8.tar.gz"
+  homepage "https:github.comPolideaios-class-guard"
+  url "https:github.comPolideaios-class-guardarchiverefstags0.8.tar.gz"
   sha256 "4446993378f1e84ce1d1b3cbace0375661e3fe2fa1a63b9bf2c5e9370a6058ff"
   license "GPL-2.0"
-  head "https://github.com/Polidea/ios-class-guard.git", branch: "master"
+  head "https:github.comPolideaios-class-guard.git", branch: "master"
 
   # The latest version tags in the Git repository are `0.8` (2015-10-14) and
   # `0.6` (2014-08-20) but versions before these are like `3.5` (2013-11-16),
@@ -15,7 +15,7 @@ class IosClassGuard < Formula
   # future, this check will also need to be updated.
   livecheck do
     url :stable
-    regex(/^v?(0(?:\.\d+)+)$/i)
+    regex(^v?(0(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -41,19 +41,19 @@ class IosClassGuard < Formula
                "-scheme", "ios-class-guard",
                "-configuration", "Release",
                "SYMROOT=build", "PREFIX=#{prefix}", "ONLY_ACTIVE_ARCH=YES"
-    bin.install "build/Release/ios-class-guard"
+    bin.install "buildReleaseios-class-guard"
   end
 
   test do
-    (testpath/"crashdump").write <<~EOS
+    (testpath"crashdump").write <<~EOS
       1   MYAPP                           0x0006573a -[C03B setR02:] + 42
     EOS
-    (testpath/"symbols.json").write <<~EOS
+    (testpath"symbols.json").write <<~EOS
       {
         "C03B" : "MyViewController",
         "setR02" : "setRightButtons"
       }
     EOS
-    system "#{bin}/ios-class-guard", "-c", "crashdump", "-m", "symbols.json"
+    system "#{bin}ios-class-guard", "-c", "crashdump", "-m", "symbols.json"
   end
 end

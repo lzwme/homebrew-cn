@@ -1,7 +1,7 @@
 class Tctl < Formula
   desc "Temporal CLI (tctl)"
-  homepage "https://temporal.io/"
-  url "https://ghproxy.com/https://github.com/temporalio/tctl/archive/refs/tags/v1.18.0.tar.gz"
+  homepage "https:temporal.io"
+  url "https:github.comtemporaliotctlarchiverefstagsv1.18.0.tar.gz"
   sha256 "46d9bcd8c011205b81f4564023267638ddc1be64a28c61d5c531d0c60af1ad43"
   license "MIT"
 
@@ -20,17 +20,17 @@ class Tctl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/tctl/main.go"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"tctl-authorization-plugin",
-      "./cmd/plugins/tctl-authorization-plugin/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtctlmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin"tctl-authorization-plugin",
+      ".cmdpluginstctl-authorization-pluginmain.go"
   end
 
   test do
     # Given tctl is pointless without a server, not much interesting to test here.
-    run_output = shell_output("#{bin}/tctl --version 2>&1")
+    run_output = shell_output("#{bin}tctl --version 2>&1")
     assert_match "tctl version", run_output
 
-    run_output = shell_output("#{bin}/tctl --ad 192.0.2.0:1234 n l 2>&1", 1)
+    run_output = shell_output("#{bin}tctl --ad 192.0.2.0:1234 n l 2>&1", 1)
     assert_match "rpc error", run_output
   end
 end

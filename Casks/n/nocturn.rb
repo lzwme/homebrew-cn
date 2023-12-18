@@ -2,10 +2,10 @@ cask "nocturn" do
   version "1.8.4"
   sha256 "c51eac959ccbd4eaf657ff93735de2dbc138faa26d2d56a7f89aeeea30751e9b"
 
-  url "https://ghproxy.com/https://github.com/k0kubun/Nocturn/releases/download/v#{version}/Nocturn-darwin-x64.zip"
+  url "https:github.comk0kubunNocturnreleasesdownloadv#{version}Nocturn-darwin-x64.zip"
   name "Nocturn"
   desc "Multi-platform Twitter client"
-  homepage "https://github.com/k0kubun/Nocturn"
+  homepage "https:github.comk0kubunNocturn"
 
-  app "Nocturn-darwin-x64/Nocturn.app"
+  app "Nocturn-darwin-x64Nocturn.app"
 end

@@ -1,11 +1,11 @@
 class Wordgrinder < Formula
   desc "Unicode-aware word processor that runs in a terminal"
-  homepage "https://cowlark.com/wordgrinder"
-  url "https://ghproxy.com/https://github.com/davidgiven/wordgrinder/archive/refs/tags/0.8.tar.gz"
+  homepage "https:cowlark.comwordgrinder"
+  url "https:github.comdavidgivenwordgrinderarchiverefstags0.8.tar.gz"
   sha256 "856cbed2b4ccd5127f61c4997a30e642d414247970f69932f25b4b5a81b18d3f"
   license "MIT"
   revision 1
-  head "https://github.com/davidgiven/wordgrinder.git", branch: "master"
+  head "https:github.comdavidgivenwordgrinder.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "01e1ab04fb507afd5e62ddfee96e629ae7405671a3a6ad107eca9f30771b76b8"
@@ -30,14 +30,14 @@ class Wordgrinder < Formula
 
   def install
     ENV["CURSES_PACKAGE"] = "ncursesw"
-    system "make", "OBJDIR=#{buildpath}/wg-build"
-    bin.install "bin/wordgrinder-builtin-curses-release" => "wordgrinder"
-    man1.install "bin/wordgrinder.1"
+    system "make", "OBJDIR=#{buildpath}wg-build"
+    bin.install "binwordgrinder-builtin-curses-release" => "wordgrinder"
+    man1.install "binwordgrinder.1"
     doc.install "README.wg"
   end
 
   test do
-    system "#{bin}/wordgrinder", "--convert", "#{doc}/README.wg", "#{testpath}/converted.txt"
-    assert_predicate testpath/"converted.txt", :exist?
+    system "#{bin}wordgrinder", "--convert", "#{doc}README.wg", "#{testpath}converted.txt"
+    assert_predicate testpath"converted.txt", :exist?
   end
 end

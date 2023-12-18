@@ -1,10 +1,10 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
-  homepage "https://ccache.dev/"
-  url "https://ghproxy.com/https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.xz"
+  homepage "https:ccache.dev"
+  url "https:github.comccacheccachereleasesdownloadv4.8.3ccache-4.8.3.tar.xz"
   sha256 "e47374c810b248cfca3665ee1d86c7c763ffd68d9944bc422d9c1872611f2b11"
   license "GPL-3.0-or-later"
-  head "https://github.com/ccache/ccache.git", branch: "master"
+  head "https:github.comccacheccache.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b9e31cd96e0ed3288cae78824d32a201b9e37e785b2b534f3b09faec2e2ccd6d"
@@ -35,7 +35,7 @@ class Ccache < Formula
     # We run the test suite for ccache because it provides a more in-depth functional test of the software
     # (especially with IPO enabled), adds negligible time to the build process, and we don't actually test
     # this formula properly in the test block since doing so would be too complicated.
-    # See https://github.com/Homebrew/homebrew-core/pull/83900#issuecomment-90624064
+    # See https:github.comHomebrewhomebrew-corepull83900#issuecomment-90624064
     with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
       system "ctest", "-j#{ENV.make_jobs}", "--test-dir", "build"
     end
@@ -60,7 +60,7 @@ class Ccache < Formula
       i686-w64-mingw32-gcc i686-w64-mingw32-g++
       x86_64-w64-mingw32-gcc x86_64-w64-mingw32-g++
     ].each do |prog|
-      libexec.install_symlink bin/"ccache" => prog
+      libexec.install_symlink bin"ccache" => prog
     end
   end
 
@@ -81,7 +81,7 @@ class Ccache < Formula
 
   test do
     ENV.prepend_path "PATH", opt_libexec
-    assert_equal "#{opt_libexec}/gcc", shell_output("which gcc").chomp
-    system "#{bin}/ccache", "-s"
+    assert_equal "#{opt_libexec}gcc", shell_output("which gcc").chomp
+    system "#{bin}ccache", "-s"
   end
 end

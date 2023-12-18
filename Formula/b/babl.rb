@@ -1,15 +1,15 @@
 class Babl < Formula
   desc "Dynamic, any-to-any, pixel format translation library"
-  homepage "https://www.gegl.org/babl/"
-  url "https://download.gimp.org/pub/babl/0.1/babl-0.1.106.tar.xz"
+  homepage "https:www.gegl.orgbabl"
+  url "https:download.gimp.orgpubbabl0.1babl-0.1.106.tar.xz"
   sha256 "d325135d3304f088c134cc620013acf035de2e5d125a50a2d91054e7377c415f"
   license "LGPL-3.0-or-later"
   # Use GitHub instead of GNOME's git. The latter is unreliable.
-  head "https://github.com/GNOME/babl.git", branch: "master"
+  head "https:github.comGNOMEbabl.git", branch: "master"
 
   livecheck do
-    url "https://download.gimp.org/pub/babl/0.1/"
-    regex(/href=.*?babl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:download.gimp.orgpubbabl0.1"
+    regex(href=.*?babl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -40,8 +40,8 @@ class Babl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <babl/babl.h>
+    (testpath"test.c").write <<~EOS
+      #include <bablbabl.h>
       int main() {
         babl_init();
         const Babl *srgb = babl_format ("R'G'B' u8");
@@ -51,9 +51,9 @@ class Babl < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "-I#{include}/babl-0.1", testpath/"test.c", "-L#{lib}", "-lbabl-0.1", "-o", "test"
-    system testpath/"test"
+    system ENV.cc, "-I#{include}babl-0.1", testpath"test.c", "-L#{lib}", "-lbabl-0.1", "-o", "test"
+    system testpath"test"
 
-    system Formula["gobject-introspection"].opt_bin/"g-ir-inspect", "--print-typelibs", "--print-shlibs", "Babl"
+    system Formula["gobject-introspection"].opt_bin"g-ir-inspect", "--print-typelibs", "--print-shlibs", "Babl"
   end
 end

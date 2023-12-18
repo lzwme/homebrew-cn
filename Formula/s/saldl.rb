@@ -1,10 +1,10 @@
 class Saldl < Formula
   desc "CLI downloader optimized for speed and early preview"
-  homepage "https://saldl.github.io/"
-  url "https://ghproxy.com/https://github.com/saldl/saldl/archive/refs/tags/v41.tar.gz"
+  homepage "https:saldl.github.io"
+  url "https:github.comsaldlsaldlarchiverefstagsv41.tar.gz"
   sha256 "fc9980922f1556fd54a8c04fd671933fdc5b1e6847c1493a5fec89e164722d8e"
   license "AGPL-3.0-or-later"
-  head "https://github.com/saldl/saldl.git", branch: "master"
+  head "https:github.comsaldlsaldl.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,17 +30,17 @@ class Saldl < Formula
 
   # Update waf for python 3.11
   # Use resource instead of patch since applying corrupts waf
-  # https://github.com/saldl/saldl/pull/15
+  # https:github.comsaldlsaldlpull15
   resource "waf" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/saldl/saldl/360c29d6c8cee5f7e608af42237928be429c3407/waf"
+    url "https:raw.githubusercontent.comsaldlsaldl360c29d6c8cee5f7e608af42237928be429c3407waf"
     sha256 "93909bca823a675f9f40af7c65b24887c3a3c0efdf411ff1978ba827194bdeb0"
   end
 
   def install
     ENV.refurbish_args
 
-    # a2x/asciidoc needs this to build the man page successfully
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    # a2xasciidoc needs this to build the man page successfully
+    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
 
     args = ["--prefix=#{prefix}"]
 
@@ -48,13 +48,13 @@ class Saldl < Formula
     args << "--saldl-version=v#{version}" unless build.head?
 
     buildpath.install resource("waf")
-    system "python3", "./waf", "configure", *args
-    system "python3", "./waf", "build"
-    system "python3", "./waf", "install"
+    system "python3", ".waf", "configure", *args
+    system "python3", ".waf", "build"
+    system "python3", ".waf", "install"
   end
 
   test do
-    system bin/"saldl", "https://brew.sh/index.html"
-    assert_predicate testpath/"index.html", :exist?
+    system bin"saldl", "https:brew.shindex.html"
+    assert_predicate testpath"index.html", :exist?
   end
 end

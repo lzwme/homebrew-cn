@@ -2,11 +2,11 @@ cask "syncthing" do
   version "1.27.1-1"
   sha256 "b5d8035909057e98836bc9c72a67c2e85c0a6f4866a9e3dd50b4898695c95429"
 
-  url "https://ghproxy.com/https://github.com/syncthing/syncthing-macos/releases/download/v#{version}/Syncthing-#{version}.dmg",
-      verified: "github.com/syncthing/syncthing-macos/"
+  url "https:github.comsyncthingsyncthing-macosreleasesdownloadv#{version}Syncthing-#{version}.dmg",
+      verified: "github.comsyncthingsyncthing-macos"
   name "Syncthing"
   desc "Real time file synchronization software"
-  homepage "https://syncthing.net/"
+  homepage "https:syncthing.net"
 
   auto_updates true
   depends_on macos: ">= :sierra"
@@ -14,9 +14,9 @@ cask "syncthing" do
   app "Syncthing.app"
 
   zap trash: [
-    "~/Library/Application Support/Syncthing-macOS",
-    "~/Library/Caches/com.github.xor-gate.syncthing-macosx",
-    "~/Library/Cookies/com.github.xor-gate.syncthing-macosx.binarycookies",
-    "~/Library/Preferences/com.github.xor-gate.syncthing-macosx.plist",
+    "~LibraryApplication SupportSyncthing-macOS",
+    "~LibraryCachescom.github.xor-gate.syncthing-macosx",
+    "~LibraryCookiescom.github.xor-gate.syncthing-macosx.binarycookies",
+    "~LibraryPreferencescom.github.xor-gate.syncthing-macosx.plist",
   ]
 end

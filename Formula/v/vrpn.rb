@@ -1,10 +1,10 @@
 class Vrpn < Formula
   desc "Virtual reality peripheral network"
-  homepage "https://github.com/vrpn/vrpn/wiki"
-  url "https://ghproxy.com/https://github.com/vrpn/vrpn/releases/download/version_07.35/vrpn_07.35.zip"
+  homepage "https:github.comvrpnvrpnwiki"
+  url "https:github.comvrpnvrpnreleasesdownloadversion_07.35vrpn_07.35.zip"
   sha256 "06b74a40b0fb215d4238148517705d0075235823c0941154d14dd660ba25af19"
   license "BSL-1.0"
-  head "https://github.com/vrpn/vrpn.git", branch: "master"
+  head "https:github.comvrpnvrpn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "761817673c366cc4107359c8da2ad4d98c0b0baba8a804ac58f30d56a5ed81bc"

@@ -1,13 +1,13 @@
 class Unifdef < Formula
   desc "Selectively process conditional C preprocessor directives"
-  homepage "https://dotat.at/prog/unifdef/"
-  url "https://dotat.at/prog/unifdef/unifdef-2.12.tar.gz"
+  homepage "https:dotat.atprogunifdef"
+  url "https:dotat.atprogunifdefunifdef-2.12.tar.gz"
   sha256 "fba564a24db7b97ebe9329713ac970627b902e5e9e8b14e19e024eb6e278d10b"
   license all_of: [
     "BSD-2-Clause",
     "BSD-3-Clause", # only for `unifdef.1`
   ]
-  head "https://github.com/fanf2/unifdef.git", branch: "master"
+  head "https:github.comfanf2unifdef.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c67a592e10c3d607f6ea9676fe8bb6ac59472b2eec185261e9d382d186f65707"
@@ -31,6 +31,6 @@ class Unifdef < Formula
   end
 
   test do
-    pipe_output("#{bin}/unifdef", "echo ''")
+    pipe_output("#{bin}unifdef", "echo ''")
   end
 end

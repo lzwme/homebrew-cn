@@ -2,10 +2,10 @@ cask "aegisub" do
   version "3.2.2"
   sha256 "d71fa46f074a2d5a252f30779e0b8d913d5157258f5d9fc333411f8c9493f42b"
 
-  url "https://ghproxy.com/https://github.com/Aegisub/Aegisub/releases/download/v#{version}/Aegisub-#{version}.dmg"
+  url "https:github.comAegisubAegisubreleasesdownloadv#{version}Aegisub-#{version}.dmg"
   name "Aegisub"
   desc "Create and modify subtitles"
-  homepage "https://github.com/Aegisub/Aegisub"
+  homepage "https:github.comAegisubAegisub"
 
   livecheck do
     url :url
@@ -17,8 +17,8 @@ cask "aegisub" do
   uninstall quit: "com.aegisub.aegisub"
 
   zap trash: [
-    "~/Library/Application Support/Aegisub",
-    "~/Library/Preferences/com.aegisub.aegisub.plist",
-    "~/Library/Saved Application State/com.aegisub.aegisub.savedState",
+    "~LibraryApplication SupportAegisub",
+    "~LibraryPreferencescom.aegisub.aegisub.plist",
+    "~LibrarySaved Application Statecom.aegisub.aegisub.savedState",
   ]
 end

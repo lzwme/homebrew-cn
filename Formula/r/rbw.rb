@@ -1,10 +1,10 @@
 class Rbw < Formula
   desc "Unofficial Bitwarden CLI client"
-  homepage "https://github.com/doy/rbw"
-  url "https://ghproxy.com/https://github.com/doy/rbw/archive/refs/tags/1.8.3.tar.gz"
+  homepage "https:github.comdoyrbw"
+  url "https:github.comdoyrbwarchiverefstags1.8.3.tar.gz"
   sha256 "fc04572a7215f89de018621c003c38c0400befd02e16efe8a00677d88ebe3c35"
   license "MIT"
-  head "https://github.com/doy/rbw.git", branch: "master"
+  head "https:github.comdoyrbw.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1410a4480e874a39c54ab31d9d8274f3c21adb9e208dcaf264b6f1c834f58c8b"
@@ -24,12 +24,12 @@ class Rbw < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"rbw", "gen-completions")
+    generate_completions_from_executable(bin"rbw", "gen-completions")
   end
 
   test do
     expected = "ERROR: Before using rbw"
-    output = shell_output("#{bin}/rbw ls 2>&1 > /dev/null", 1).each_line.first.strip
+    output = shell_output("#{bin}rbw ls 2>&1 > devnull", 1).each_line.first.strip
     assert_match expected, output
   end
 end

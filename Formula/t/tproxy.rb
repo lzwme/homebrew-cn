@@ -1,10 +1,10 @@
 class Tproxy < Formula
   desc "CLI tool to proxy and analyze TCP connections"
-  homepage "https://github.com/kevwan/tproxy"
-  url "https://ghproxy.com/https://github.com/kevwan/tproxy/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:github.comkevwantproxy"
+  url "https:github.comkevwantproxyarchiverefstagsv0.8.0.tar.gz"
   sha256 "a6de7bc8b98c1db6ced19f8d5c98765d377cf81c3a5db97e7ffaaf153ebae2d5"
   license "MIT"
-  head "https://github.com/kevwan/tproxy.git", branch: "main"
+  head "https:github.comkevwantproxy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dab038b678fa637b05267a3c888dcea29832366b6a69f50439ce3230ffb81ef7"
@@ -29,7 +29,7 @@ class Tproxy < Formula
     port = free_port
 
     # proxy localhost:80 with delay of 100ms
-    r, _, pid = PTY.spawn("#{bin}/tproxy -p #{port} -r localhost:80 -d 100ms")
+    r, _, pid = PTY.spawn("#{bin}tproxy -p #{port} -r localhost:80 -d 100ms")
     assert_match "Listening on 127.0.0.1:#{port}", r.readline
   ensure
     Process.kill("TERM", pid)

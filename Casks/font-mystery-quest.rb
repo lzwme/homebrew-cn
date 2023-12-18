@@ -2,10 +2,10 @@ cask "font-mystery-quest" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mysteryquest/MysteryQuest-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmysteryquestMysteryQuest-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mystery Quest"
-  homepage "https://fonts.google.com/specimen/Mystery+Quest"
+  homepage "https:fonts.google.comspecimenMystery+Quest"
 
   font "MysteryQuest-Regular.ttf"
 

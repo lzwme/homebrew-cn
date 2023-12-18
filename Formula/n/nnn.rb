@@ -1,10 +1,10 @@
 class Nnn < Formula
   desc "Tiny, lightning fast, feature-packed file manager"
-  homepage "https://github.com/jarun/nnn"
-  url "https://ghproxy.com/https://github.com/jarun/nnn/archive/refs/tags/v4.9.tar.gz"
+  homepage "https:github.comjarunnnn"
+  url "https:github.comjarunnnnarchiverefstagsv4.9.tar.gz"
   sha256 "9e25465a856d3ba626d6163046669c0d4010d520f2fb848b0d611e1ec6af1b22"
   license "BSD-2-Clause"
-  head "https://github.com/jarun/nnn.git", branch: "master"
+  head "https:github.comjarunnnn.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -25,29 +25,29 @@ class Nnn < Formula
     args = %w[
       O_NERD=1
     ]
-    # args: choose one of O_NERD/O_EMOJI/O_ICONS
+    # args: choose one of O_NERDO_EMOJIO_ICONS
 
     system "make", "install", "PREFIX=#{prefix}", *args
 
-    bash_completion.install "misc/auto-completion/bash/nnn-completion.bash"
-    zsh_completion.install "misc/auto-completion/zsh/_nnn"
-    fish_completion.install "misc/auto-completion/fish/nnn.fish"
+    bash_completion.install "miscauto-completionbashnnn-completion.bash"
+    zsh_completion.install "miscauto-completionzsh_nnn"
+    fish_completion.install "miscauto-completionfishnnn.fish"
 
-    pkgshare.install "misc/quitcd"
+    pkgshare.install "miscquitcd"
   end
 
   test do
-    # Test fails on CI: Input/output error @ io_fread - /dev/pts/0
-    # Fixing it involves pty/ruby voodoo, which is not worth spending time on
+    # Test fails on CI: Inputoutput error @ io_fread - devpts0
+    # Fixing it involves ptyruby voodoo, which is not worth spending time on
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     # Testing this curses app requires a pty
     require "pty"
 
-    (testpath/"testdir").mkdir
-    PTY.spawn(bin/"nnn", testpath/"testdir") do |r, w, _pid|
+    (testpath"testdir").mkdir
+    PTY.spawn(bin"nnn", testpath"testdir") do |r, w, _pid|
       w.write "q"
-      assert_match "~/testdir", r.read
+      assert_match "~testdir", r.read
     end
   end
 end

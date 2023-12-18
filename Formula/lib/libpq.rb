@@ -1,14 +1,14 @@
 class Libpq < Formula
   desc "Postgres C API library"
-  homepage "https://www.postgresql.org/docs/current/libpq.html"
-  url "https://ftp.postgresql.org/pub/source/v16.1/postgresql-16.1.tar.bz2"
+  homepage "https:www.postgresql.orgdocscurrentlibpq.html"
+  url "https:ftp.postgresql.orgpubsourcev16.1postgresql-16.1.tar.bz2"
   sha256 "ce3c4d85d19b0121fe0d3f8ef1fa601f71989e86f8a66f7dc3ad546dd5564fec"
   license "PostgreSQL"
   revision 1
 
   livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https:ftp.postgresql.orgpubsource"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Libpq < Formula
   depends_on "pkg-config" => :build
   depends_on "icu4c"
   # GSSAPI provided by Kerberos.framework crashes when forked.
-  # See https://github.com/Homebrew/homebrew-core/issues/47494.
+  # See https:github.comHomebrewhomebrew-coreissues47494.
   depends_on "krb5"
   depends_on "openssl@3"
 
@@ -38,11 +38,11 @@ class Libpq < Formula
 
   # Fix compatibility with OpenSSL 3.2
   # Remove once merged
-  # Ref https://www.postgresql.org/message-id/CX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
+  # Ref https:www.postgresql.orgmessage-idCX9SU44GH3P4.17X6ZZUJ5D40N%40neon.tech
   patch :DATA
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--prefix=#{prefix}",
                           "--with-gssapi",
                           "--with-openssl",
@@ -51,21 +51,21 @@ class Libpq < Formula
     dirs = %W[
       libdir=#{lib}
       includedir=#{include}
-      pkgincludedir=#{include}/postgresql
-      includedir_server=#{include}/postgresql/server
-      includedir_internal=#{include}/postgresql/internal
+      pkgincludedir=#{include}postgresql
+      includedir_server=#{include}postgresqlserver
+      includedir_internal=#{include}postgresqlinternal
     ]
     system "make"
-    system "make", "-C", "src/bin", "install", *dirs
-    system "make", "-C", "src/include", "install", *dirs
-    system "make", "-C", "src/interfaces", "install", *dirs
-    system "make", "-C", "src/common", "install", *dirs
-    system "make", "-C", "src/port", "install", *dirs
+    system "make", "-C", "srcbin", "install", *dirs
+    system "make", "-C", "srcinclude", "install", *dirs
+    system "make", "-C", "srcinterfaces", "install", *dirs
+    system "make", "-C", "srccommon", "install", *dirs
+    system "make", "-C", "srcport", "install", *dirs
     system "make", "-C", "doc", "install", *dirs
   end
 
   test do
-    (testpath/"libpq.c").write <<~EOS
+    (testpath"libpq.c").write <<~EOS
       #include <stdlib.h>
       #include <stdio.h>
       #include <libpq-fe.h>
@@ -79,7 +79,7 @@ class Libpq < Formula
 
           conn = PQconnectdb(conninfo);
 
-          if (PQstatus(conn) != CONNECTION_OK) // This should always fail
+          if (PQstatus(conn) != CONNECTION_OK)  This should always fail
           {
               printf("Connection to database attempted and failed");
               PQfinish(conn);
@@ -90,18 +90,18 @@ class Libpq < Formula
         }
     EOS
     system ENV.cc, "libpq.c", "-L#{lib}", "-I#{include}", "-lpq", "-o", "libpqtest"
-    assert_equal "Connection to database attempted and failed", shell_output("./libpqtest")
+    assert_equal "Connection to database attempted and failed", shell_output(".libpqtest")
   end
 end
 
 __END__
-diff --git a/src/backend/libpq/be-secure-openssl.c b/src/backend/libpq/be-secure-openssl.c
+diff --git asrcbackendlibpqbe-secure-openssl.c bsrcbackendlibpqbe-secure-openssl.c
 index e9c86d08df..49dca0cda9 100644
---- a/src/backend/libpq/be-secure-openssl.c
-+++ b/src/backend/libpq/be-secure-openssl.c
+--- asrcbackendlibpqbe-secure-openssl.c
++++ bsrcbackendlibpqbe-secure-openssl.c
 @@ -844,11 +844,6 @@ be_tls_write(Port *port, void *ptr, size_t len, int *waitfor)
   * to retry; do we need to adopt their logic for that?
-  */
+  *
 
 -#ifndef HAVE_BIO_GET_DATA
 -#define BIO_get_data(bio) (bio->ptr)
@@ -138,13 +138,13 @@ index e9c86d08df..49dca0cda9 100644
 
  	BIO_set_fd(bio, fd, BIO_NOCLOSE);
  	SSL_set_bio(port->ssl, bio, bio);
-diff --git a/src/interfaces/libpq/fe-secure-openssl.c b/src/interfaces/libpq/fe-secure-openssl.c
+diff --git asrcinterfaceslibpqfe-secure-openssl.c bsrcinterfaceslibpqfe-secure-openssl.c
 index 390c888c96..b730352b86 100644
---- a/src/interfaces/libpq/fe-secure-openssl.c
-+++ b/src/interfaces/libpq/fe-secure-openssl.c
+--- asrcinterfaceslibpqfe-secure-openssl.c
++++ bsrcinterfaceslibpqfe-secure-openssl.c
 @@ -1830,11 +1830,6 @@ PQsslAttribute(PGconn *conn, const char *attribute_name)
   * to retry; do we need to adopt their logic for that?
-  */
+  *
 
 -#ifndef HAVE_BIO_GET_DATA
 -#define BIO_get_data(bio) (bio->ptr)

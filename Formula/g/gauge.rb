@@ -1,10 +1,10 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
-  homepage "https://gauge.org"
-  url "https://ghproxy.com/https://github.com/getgauge/gauge/archive/refs/tags/v1.5.6.tar.gz"
+  homepage "https:gauge.org"
+  url "https:github.comgetgaugegaugearchiverefstagsv1.5.6.tar.gz"
   sha256 "ca5c36d3c0988c050ddeeacf7aad1d90524a6b69550221d2ac6137c80e2b01eb"
   license "Apache-2.0"
-  head "https://github.com/getgauge/gauge.git", branch: "master"
+  head "https:github.comgetgaugegauge.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5a0d75d656b2e2486dc1df107caeb49da3824841c2fd74d65816e3836b94355"
@@ -19,12 +19,12 @@ class Gauge < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "run", "build/make.go"
-    system "go", "run", "build/make.go", "--install", "--prefix", prefix
+    system "go", "run", "buildmake.go"
+    system "go", "run", "buildmake.go", "--install", "--prefix", prefix
   end
 
   test do
-    (testpath/"manifest.json").write <<~EOS
+    (testpath"manifest.json").write <<~EOS
       {
         "Plugins": [
           "html-report"
@@ -32,12 +32,12 @@ class Gauge < Formula
       }
     EOS
 
-    system("#{bin}/gauge", "install")
-    assert_predicate testpath/".gauge/plugins", :exist?
+    system("#{bin}gauge", "install")
+    assert_predicate testpath".gaugeplugins", :exist?
 
-    system("#{bin}/gauge", "config", "check_updates", "false")
-    assert_match "false", shell_output("#{bin}/gauge config check_updates")
+    system("#{bin}gauge", "config", "check_updates", "false")
+    assert_match "false", shell_output("#{bin}gauge config check_updates")
 
-    assert_match version.to_s, shell_output("#{bin}/gauge -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}gauge -v 2>&1")
   end
 end

@@ -1,7 +1,7 @@
 class Cppinsights < Formula
   desc "See your source code with the eyes of a compiler"
-  homepage "https://cppinsights.io/"
-  url "https://ghproxy.com/https://github.com/andreasfertig/cppinsights/archive/refs/tags/v_16.0.tar.gz"
+  homepage "https:cppinsights.io"
+  url "https:github.comandreasfertigcppinsightsarchiverefstagsv_16.0.tar.gz"
   sha256 "5cb850ed35f33edb322ec5ddd7ddca9caec6eefb7550632226630e70f6ab4e0e"
   license "MIT"
 
@@ -38,11 +38,11 @@ class Cppinsights < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       int main() {
         int arr[5]{2,3,4};
       }
     EOS
-    assert_match "{2, 3, 4, 0, 0}", shell_output("#{bin}/insights ./test.cpp")
+    assert_match "{2, 3, 4, 0, 0}", shell_output("#{bin}insights .test.cpp")
   end
 end

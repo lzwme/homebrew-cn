@@ -1,7 +1,7 @@
 class Pillar < Formula
   desc "Manage migrations for Cassandra data stores"
-  homepage "https://github.com/comeara/pillar"
-  url "https://ghproxy.com/https://github.com/comeara/pillar/archive/refs/tags/v2.3.0.tar.gz"
+  homepage "https:github.comcomearapillar"
+  url "https:github.comcomearapillararchiverefstagsv2.3.0.tar.gz"
   sha256 "f1bb1f2913b10529263b5cf738dd171b14aff70e97a3c9f654c6fb49c91ef16f"
   license "MIT"
   revision 1
@@ -18,7 +18,7 @@ class Pillar < Formula
 
   # Last release on 2016-08-16
   # Also, build uses deprecated sbt.version==0.13.11 and is not compatible with newer version.
-  # Ref: https://github.com/comeara/pillar/blob/master/project/build.properties
+  # Ref: https:github.comcomearapillarblobmasterprojectbuild.properties
   deprecate! date: "2023-12-15", because: :unmaintained
 
   depends_on "sbt" => :build
@@ -26,20 +26,20 @@ class Pillar < Formula
   depends_on "openjdk@8"
 
   def install
-    inreplace "src/main/bash/pillar" do |s|
-      s.gsub! "$JAVA ", "#{Formula["openjdk@8"].bin}/java "
-      s.gsub! "${PILLAR_ROOT}/lib/pillar.jar", "#{libexec}/pillar-assembly-#{version}.jar"
-      s.gsub! "${PILLAR_ROOT}/conf", "#{etc}/pillar-log4j.properties"
+    inreplace "srcmainbashpillar" do |s|
+      s.gsub! "$JAVA ", "#{Formula["openjdk@8"].bin}java "
+      s.gsub! "${PILLAR_ROOT}libpillar.jar", "#{libexec}pillar-assembly-#{version}.jar"
+      s.gsub! "${PILLAR_ROOT}conf", "#{etc}pillar-log4j.properties"
     end
 
     system "sbt", "assembly"
 
-    bin.install "src/main/bash/pillar"
-    etc.install "src/main/resources/pillar-log4j.properties"
-    libexec.install "target/scala-2.10/pillar-assembly-#{version}.jar"
+    bin.install "srcmainbashpillar"
+    etc.install "srcmainresourcespillar-log4j.properties"
+    libexec.install "targetscala-2.10pillar-assembly-#{version}.jar"
   end
 
   test do
-    assert_match "Missing parameter", shell_output("#{bin}/pillar 2>&1", 1)
+    assert_match "Missing parameter", shell_output("#{bin}pillar 2>&1", 1)
   end
 end

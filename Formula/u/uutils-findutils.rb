@@ -1,10 +1,10 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
-  homepage "https://github.com/uutils/findutils"
-  url "https://ghproxy.com/https://github.com/uutils/findutils/archive/refs/tags/0.4.2.tar.gz"
+  homepage "https:github.comuutilsfindutils"
+  url "https:github.comuutilsfindutilsarchiverefstags0.4.2.tar.gz"
   sha256 "b02fce9219393b47384229b397c7fbe479435ae8ccf8947f4b6cf7ac159d80f9"
   license "MIT"
-  head "https://github.com/uutils/findutils.git", branch: "main"
+  head "https:github.comuutilsfindutils.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -18,7 +18,7 @@ class UutilsFindutils < Formula
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
-  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # https:github.comrust-langrust-bindgenissues2312.
   # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
   # updated to 0.62.0 or newer. There is a check in the `install` method.
   depends_on "llvm@15" => :build # for libclang
@@ -34,8 +34,8 @@ class UutilsFindutils < Formula
 
   def install
     bindgen_version = Version.new(
-      (buildpath/"Cargo.lock").read
-                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+      (buildpath"Cargo.lock").read
+                              .match(name = "bindgen"\nversion = "(.*)")[1],
     )
     if bindgen_version >= "0.62.0"
       odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
@@ -51,9 +51,9 @@ class UutilsFindutils < Formula
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
 
     system "cargo", "install", *std_cargo_args(root: libexec)
-    mv libexec/"bin", libexec/"uubin"
-    Dir.children(libexec/"uubin").each do |cmd|
-      bin.install_symlink libexec/"uubin"/cmd => "u#{cmd}" unless unwanted_bin_link? cmd
+    mv libexec"bin", libexec"uubin"
+    Dir.children(libexec"uubin").each do |cmd|
+      bin.install_symlink libexec"uubin"cmd => "u#{cmd}" unless unwanted_bin_link? cmd
     end
   end
 
@@ -62,7 +62,7 @@ class UutilsFindutils < Formula
       Commands also provided by macOS have been installed with the prefix "u".
       If you need to use these commands with their normal names, you
       can add a "uubin" directory to your PATH from your bashrc like:
-        PATH="#{opt_libexec}/uubin:$PATH"
+        PATH="#{opt_libexec}uubin:$PATH"
     EOS
   end
 
@@ -76,15 +76,15 @@ class UutilsFindutils < Formula
 
   test do
     touch "HOMEBREW"
-    assert_match "HOMEBREW", shell_output("#{bin}/ufind .")
-    assert_match "HOMEBREW", shell_output("#{opt_libexec}/uubin/find .")
+    assert_match "HOMEBREW", shell_output("#{bin}ufind .")
+    assert_match "HOMEBREW", shell_output("#{opt_libexec}uubinfind .")
 
     expected_linkage = {
-      libexec/"uubin/find"  => [
-        Formula["oniguruma"].opt_lib/shared_library("libonig"),
+      libexec"uubinfind"  => [
+        Formula["oniguruma"].opt_libshared_library("libonig"),
       ],
-      libexec/"uubin/xargs" => [
-        Formula["oniguruma"].opt_lib/shared_library("libonig"),
+      libexec"uubinxargs" => [
+        Formula["oniguruma"].opt_libshared_library("libonig"),
       ],
     }
     missing_linkage = []

@@ -1,7 +1,7 @@
 class Fgbio < Formula
   desc "Tools for working with genomic and high throughput sequencing data"
-  homepage "https://fulcrumgenomics.github.io/fgbio/"
-  url "https://ghproxy.com/https://github.com/fulcrumgenomics/fgbio/releases/download/2.2.0/fgbio-2.2.0.jar"
+  homepage "https:fulcrumgenomics.github.iofgbio"
+  url "https:github.comfulcrumgenomicsfgbioreleasesdownload2.2.0fgbio-2.2.0.jar"
   sha256 "e3907b0edf525f9becc69472f843fa3bf5a5fd6e2e03b88532d6622aa264ed3d"
   license "MIT"
 
@@ -13,16 +13,16 @@ class Fgbio < Formula
 
   def install
     libexec.install "fgbio-#{version}.jar"
-    bin.write_jar_script libexec/"fgbio-#{version}.jar", "fgbio"
+    bin.write_jar_script libexec"fgbio-#{version}.jar", "fgbio"
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCT
       ctgtgtggattaaaaaaagagtgtctgatagcagc
     EOS
-    cmd = "#{bin}/fgbio HardMaskFasta -i test.fasta -o /dev/stdout"
+    cmd = "#{bin}fgbio HardMaskFasta -i test.fasta -o devstdout"
     assert_match "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN", shell_output(cmd)
   end
 end

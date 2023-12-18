@@ -2,11 +2,11 @@ cask "font-babylonica" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/babylonica/Babylonica-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbabylonicaBabylonica-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Babylonica"
   desc "Interrupted by upright or back-slanted forms giving it an interrupted stress"
-  homepage "https://fonts.google.com/specimen/Babylonica"
+  homepage "https:fonts.google.comspecimenBabylonica"
 
   font "Babylonica-Regular.ttf"
 

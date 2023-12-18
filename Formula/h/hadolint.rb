@@ -1,8 +1,8 @@
 class Hadolint < Formula
   desc "Smarter Dockerfile linter to validate best practices"
-  homepage "https://github.com/hadolint/hadolint"
+  homepage "https:github.comhadolinthadolint"
   # TODO: Try to switch `ghc@9.2` to `ghc` when spdx supports base>=4.17
-  url "https://ghproxy.com/https://github.com/hadolint/hadolint/archive/refs/tags/v2.12.0.tar.gz"
+  url "https:github.comhadolinthadolintarchiverefstagsv2.12.0.tar.gz"
   sha256 "1f972f070fa068a8a18b62016c9cbd00df994006e069647038694fc6cde45545"
   license "GPL-3.0-only"
 
@@ -20,7 +20,7 @@ class Hadolint < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build # https://github.com/hadolint/hadolint/issues/904
+  depends_on "ghc@9.2" => :build # https:github.comhadolinthadolintissues904
 
   uses_from_macos "xz"
 
@@ -30,10 +30,10 @@ class Hadolint < Formula
   end
 
   test do
-    df = testpath/"Dockerfile"
+    df = testpath"Dockerfile"
     df.write <<~EOS
       FROM debian
     EOS
-    assert_match "DL3006", shell_output("#{bin}/hadolint #{df}", 1)
+    assert_match "DL3006", shell_output("#{bin}hadolint #{df}", 1)
   end
 end

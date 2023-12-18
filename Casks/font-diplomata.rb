@@ -2,10 +2,10 @@ cask "font-diplomata" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/diplomata/Diplomata-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldiplomataDiplomata-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Diplomata"
-  homepage "https://fonts.google.com/specimen/Diplomata"
+  homepage "https:fonts.google.comspecimenDiplomata"
 
   font "Diplomata-Regular.ttf"
 

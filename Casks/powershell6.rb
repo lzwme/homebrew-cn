@@ -2,10 +2,10 @@ cask "powershell6" do
   version "6.2.7"
   sha256 "d968da998b00178f666f342c9823c7df5038947a46d153892b1b20580be8d6d4"
 
-  url "https://ghproxy.com/https://github.com/PowerShell/PowerShell/releases/download/v#{version}/powershell-#{version}-osx-x64.pkg"
+  url "https:github.comPowerShellPowerShellreleasesdownloadv#{version}powershell-#{version}-osx-x64.pkg"
   name "PowerShell"
   desc "Command-line shell and scripting language"
-  homepage "https://github.com/PowerShell/PowerShell"
+  homepage "https:github.comPowerShellPowerShell"
 
   conflicts_with cask: "powershell"
   depends_on macos: ">= :high_sierra"
@@ -15,15 +15,15 @@ cask "powershell6" do
   uninstall pkgutil: "com.microsoft.powershell"
 
   zap trash: [
-        "~/.cache/powershell",
-        "~/.config/PowerShell",
-        "~/.local/share/powershell",
+        "~.cachepowershell",
+        "~.configPowerShell",
+        "~.localsharepowershell",
       ],
       rmdir: [
-        "~/.cache",
-        "~/.config",
-        "~/.local/share",
-        "~/.local",
+        "~.cache",
+        "~.config",
+        "~.localshare",
+        "~.local",
       ]
 
   caveats do

@@ -1,11 +1,11 @@
 class MinizipNg < Formula
   desc "Zip file manipulation library with minizip 1.x compatibility layer"
-  homepage "https://github.com/zlib-ng/minizip-ng"
-  url "https://ghproxy.com/https://github.com/zlib-ng/minizip-ng/archive/refs/tags/4.0.3.tar.gz"
+  homepage "https:github.comzlib-ngminizip-ng"
+  url "https:github.comzlib-ngminizip-ngarchiverefstags4.0.3.tar.gz"
   sha256 "e39a736d4f55c22fa548e68225b2e92bc22aedd9ab90d002b0c5851e3a7bdace"
   license "Zlib"
   revision 1
-  head "https://github.com/zlib-ng/minizip-ng.git", branch: "dev"
+  head "https:github.comzlib-ngminizip-ng.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ea68a12a79402cb2482c122ab769b964bcb44667fe2c0f1bcd5cb2bf0bee2d69"
@@ -37,17 +37,17 @@ class MinizipNg < Formula
       -DMZ_ZLIB=ON
     ]
 
-    system "cmake", "-S", ".", "-B", "build/shared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "-S", ".", "-B", "buildshared", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    system "cmake", "-S", ".", "-B", "build/static", *args, *std_cmake_args
-    system "cmake", "--build", "build/static"
-    lib.install "build/static/libminizip-ng.a"
+    system "cmake", "-S", ".", "-B", "buildstatic", *args, *std_cmake_args
+    system "cmake", "--build", "buildstatic"
+    lib.install "buildstaticlibminizip-ng.a"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
       #include <stdint.h>
       #include <time.h>
@@ -60,7 +60,7 @@ class MinizipNg < Formula
       }
     EOS
 
-    system ENV.cc, "test.c", "-I#{include}/minizip-ng", "-L#{lib}", "-lminizip-ng", "-o", "test"
-    system "./test"
+    system ENV.cc, "test.c", "-I#{include}minizip-ng", "-L#{lib}", "-lminizip-ng", "-o", "test"
+    system ".test"
   end
 end

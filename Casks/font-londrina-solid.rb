@@ -2,12 +2,12 @@ cask "font-londrina-solid" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/londrinasolid"
+      only_path: "ofllondrinasolid"
   name "Londrina Solid"
-  homepage "https://fonts.google.com/specimen/Londrina+Solid"
+  homepage "https:fonts.google.comspecimenLondrina+Solid"
 
   font "LondrinaSolid-Black.ttf"
   font "LondrinaSolid-Light.ttf"

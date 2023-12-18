@@ -1,10 +1,10 @@
 class Joker < Formula
   desc "Small Clojure interpreter, linter and formatter"
-  homepage "https://joker-lang.org/"
-  url "https://ghproxy.com/https://github.com/candid82/joker/archive/refs/tags/v1.3.1.tar.gz"
+  homepage "https:joker-lang.org"
+  url "https:github.comcandid82jokerarchiverefstagsv1.3.1.tar.gz"
   sha256 "52ddab431c7e8ebd3f3733679c55639fe99964c9ffba969042c537a3d0e809d9"
   license "EPL-1.0"
-  head "https://github.com/candid82/joker.git", branch: "master"
+  head "https:github.comcandid82joker.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca73ed7b6f3a9925d707805b4f9f7494e7b15e96ab84800faac0db071029d965"
@@ -19,23 +19,23 @@ class Joker < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "generate", "./..."
+    system "go", "generate", "...."
     system "go", "build", *std_go_args
   end
 
   test do
-    test_file = testpath/"test.clj"
+    test_file = testpath"test.clj"
     test_file.write <<~EOS
       (ns brewtest)
       (defn -main [& args]
         (let [a 1]))
     EOS
 
-    system bin/"joker", "--format", test_file
-    output = shell_output("#{bin}/joker --lint #{test_file} 2>&1", 1)
+    system bin"joker", "--format", test_file
+    output = shell_output("#{bin}joker --lint #{test_file} 2>&1", 1)
     assert_match "Parse warning: let form with empty body", output
     assert_match "Parse warning: unused binding: a", output
 
-    assert_match version.to_s, shell_output("#{bin}/joker -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}joker -v 2>&1")
   end
 end

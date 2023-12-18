@@ -1,7 +1,7 @@
 class Umple < Formula
-  desc "Modeling tool/programming language that enables Model-Oriented Programming"
-  homepage "https://www.umple.org"
-  url "https://ghproxy.com/https://github.com/umple/umple/releases/download/v1.32.1/umple-1.32.1.6535.66c005ced.jar"
+  desc "Modeling toolprogramming language that enables Model-Oriented Programming"
+  homepage "https:www.umple.org"
+  url "https:github.comumpleumplereleasesdownloadv1.32.1umple-1.32.1.6535.66c005ced.jar"
   version "1.32.1"
   sha256 "fb2555ffef27ff6073365dc37f8672a6d254a258323441bda6015d4789e78f45"
   license "MIT"
@@ -22,13 +22,13 @@ class Umple < Formula
     filename = File.basename(stable.url)
 
     libexec.install filename
-    bin.write_jar_script libexec/filename, "umple"
+    bin.write_jar_script libexecfilename, "umple"
   end
 
   test do
-    (testpath/"test.ump").write("class X{ a; }")
-    system "#{bin}/umple", "test.ump", "-c", "-"
-    assert_predicate testpath/"X.java", :exist?
-    assert_predicate testpath/"X.class", :exist?
+    (testpath"test.ump").write("class X{ a; }")
+    system "#{bin}umple", "test.ump", "-c", "-"
+    assert_predicate testpath"X.java", :exist?
+    assert_predicate testpath"X.class", :exist?
   end
 end

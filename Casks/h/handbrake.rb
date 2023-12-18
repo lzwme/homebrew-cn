@@ -2,11 +2,11 @@ cask "handbrake" do
   version "1.7.1"
   sha256 "9df40a04846c51452da9e9dfdc7195608e959eaed32553010356e235357ce741"
 
-  url "https://ghproxy.com/https://github.com/HandBrake/HandBrake/releases/download/#{version}/HandBrake-#{version}.dmg",
-      verified: "github.com/HandBrake/HandBrake/"
+  url "https:github.comHandBrakeHandBrakereleasesdownload#{version}HandBrake-#{version}.dmg",
+      verified: "github.comHandBrakeHandBrake"
   name "HandBrake"
   desc "Open-source video transcoder"
-  homepage "https://handbrake.fr/"
+  homepage "https:handbrake.fr"
 
   livecheck do
     url :url
@@ -19,10 +19,10 @@ cask "handbrake" do
   app "HandBrake.app"
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/fr.handbrake.handbrake.sfl*",
-    "~/Library/Application Support/HandBrake",
-    "~/Library/Caches/fr.handbrake.HandBrake",
-    "~/Library/Preferences/fr.handbrake.HandBrake.plist",
-    "~/Library/Saved Application State/fr.handbrake.HandBrake.savedState",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsfr.handbrake.handbrake.sfl*",
+    "~LibraryApplication SupportHandBrake",
+    "~LibraryCachesfr.handbrake.HandBrake",
+    "~LibraryPreferencesfr.handbrake.HandBrake.plist",
+    "~LibrarySaved Application Statefr.handbrake.HandBrake.savedState",
   ]
 end

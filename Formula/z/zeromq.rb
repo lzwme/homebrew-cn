@@ -1,14 +1,14 @@
 class Zeromq < Formula
   desc "High-performance, asynchronous messaging library"
-  homepage "https://zeromq.org/"
-  url "https://ghproxy.com/https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz"
+  homepage "https:zeromq.org"
+  url "https:github.comzeromqlibzmqreleasesdownloadv4.3.5zeromq-4.3.5.tar.gz"
   sha256 "6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43"
   license "MPL-2.0"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Zeromq < Formula
   end
 
   head do
-    url "https://github.com/zeromq/libzmq.git", branch: "master"
+    url "https:github.comzeromqlibzmq.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,19 +42,19 @@ class Zeromq < Formula
       ENV.delete("SDKROOT")
     end
 
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
     # Disable libunwind support due to pkg-config problem
-    # https://github.com/Homebrew/homebrew-core/pull/35940#issuecomment-454177261
+    # https:github.comHomebrewhomebrew-corepull35940#issuecomment-454177261
 
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}", "--with-libsodium"
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}", "--with-libsodium"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
       #include <zmq.h>
 
@@ -66,7 +66,7 @@ class Zeromq < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lzmq", "-o", "test"
-    system "./test"
+    system ".test"
     system "pkg-config", "libzmq", "--cflags"
     system "pkg-config", "libzmq", "--libs"
   end

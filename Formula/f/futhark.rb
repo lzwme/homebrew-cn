@@ -1,11 +1,11 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
-  homepage "https://futhark-lang.org/"
+  homepage "https:futhark-lang.org"
   # TODO: Try to switch `ghc@9.4` to `ghc` when futhark.cabal allows base>=4.17
-  url "https://ghproxy.com/https://github.com/diku-dk/futhark/archive/refs/tags/v0.25.10.tar.gz"
+  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.10.tar.gz"
   sha256 "e3556f593f84e48943b103dcd1f50083b944226540933c74cdafca4db8c1c5f4"
   license "ISC"
-  head "https://github.com/diku-dk/futhark.git", branch: "master"
+  head "https:github.comdiku-dkfuthark.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a91face15095ad16a1638a653a5b1007b19b5f78d7fe07bb14880d38d9a505b"
@@ -29,14 +29,14 @@ class Futhark < Formula
     system "cabal", "v2-install", *std_cabal_v2_args
 
     system "make", "-C", "docs", "man"
-    man1.install Dir["docs/_build/man/*.1"]
+    man1.install Dir["docs_buildman*.1"]
   end
 
   test do
-    (testpath/"test.fut").write <<~EOS
+    (testpath"test.fut").write <<~EOS
       def main (n: i32) = reduce (*) 1 (1...n)
     EOS
-    system "#{bin}/futhark", "c", "test.fut"
-    assert_equal "3628800i32", pipe_output("./test", "10", 0).chomp
+    system "#{bin}futhark", "c", "test.fut"
+    assert_equal "3628800i32", pipe_output(".test", "10", 0).chomp
   end
 end

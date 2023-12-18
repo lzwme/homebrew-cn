@@ -2,10 +2,10 @@ cask "font-mclaren" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mclaren/McLaren-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmclarenMcLaren-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "McLaren"
-  homepage "https://fonts.google.com/specimen/McLaren"
+  homepage "https:fonts.google.comspecimenMcLaren"
 
   font "McLaren-Regular.ttf"
 

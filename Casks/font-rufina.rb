@@ -2,12 +2,12 @@ cask "font-rufina" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/rufina"
+      only_path: "oflrufina"
   name "Rufina"
-  homepage "https://fonts.google.com/specimen/Rufina"
+  homepage "https:fonts.google.comspecimenRufina"
 
   font "Rufina-Bold.ttf"
   font "Rufina-Regular.ttf"

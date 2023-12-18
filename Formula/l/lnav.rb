@@ -1,7 +1,7 @@
 class Lnav < Formula
   desc "Curses-based tool for viewing and analyzing log files"
-  homepage "https://lnav.org/"
-  url "https://ghproxy.com/https://github.com/tstack/lnav/releases/download/v0.11.2/lnav-0.11.2.tar.gz"
+  homepage "https:lnav.org"
+  url "https:github.comtstacklnavreleasesdownloadv0.11.2lnav-0.11.2.tar.gz"
   sha256 "3aae3b0cc3dbcf877ecaf7d92bb73867f1aa8c5ad46bd30163dcd6d787c57864"
   license "BSD-2-Clause"
   revision 1
@@ -22,7 +22,7 @@ class Lnav < Formula
   end
 
   head do
-    url "https://github.com/tstack/lnav.git", branch: "master"
+    url "https:github.comtstacklnav.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,8 +39,8 @@ class Lnav < Formula
   fails_with gcc: "5"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
+    system ".autogen.sh" if build.head?
+    system ".configure", *std_configure_args,
                           "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
                           "--with-readline=#{Formula["readline"].opt_prefix}",
                           "--with-libarchive=#{Formula["libarchive"].opt_prefix}",
@@ -49,6 +49,6 @@ class Lnav < Formula
   end
 
   test do
-    system "#{bin}/lnav", "-V"
+    system "#{bin}lnav", "-V"
   end
 end

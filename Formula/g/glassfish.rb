@@ -1,14 +1,14 @@
 class Glassfish < Formula
   desc "Java EE application server"
-  homepage "https://glassfish.org/"
-  url "https://download.eclipse.org/ee4j/glassfish/glassfish-7.0.9.zip"
-  mirror "https://ghproxy.com/https://github.com/eclipse-ee4j/glassfish/releases/download/7.0.9/glassfish-7.0.9.zip"
+  homepage "https:glassfish.org"
+  url "https:download.eclipse.orgee4jglassfishglassfish-7.0.9.zip"
+  mirror "https:github.comeclipse-ee4jglassfishreleasesdownload7.0.9glassfish-7.0.9.zip"
   sha256 "b9387b8769539ecbee401d1e3695416fa4d2cd92556df6e9a9e6afb94065be6b"
   license "EPL-2.0"
 
   livecheck do
-    url "https://projects.eclipse.org/projects/ee4j.glassfish/downloads"
-    regex(/href=.*?glassfish[._-]v?(\d+(?:\.\d+)+)\.zip/i)
+    url "https:projects.eclipse.orgprojectsee4j.glassfishdownloads"
+    regex(href=.*?glassfish[._-]v?(\d+(?:\.\d+)+)\.zipi)
   end
 
   bottle do
@@ -21,16 +21,16 @@ class Glassfish < Formula
 
   def install
     # Remove all windows files
-    rm_rf Dir["bin/*.bat", "glassfish/bin/*.bat"]
+    rm_rf Dir["bin*.bat", "glassfishbin*.bat"]
 
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}/bin/*"]
+    bin.install Dir["#{libexec}bin*"]
 
     env = Language::Java.overridable_java_home_env("17")
     env["GLASSFISH_HOME"] = libexec
-    bin.env_script_all_files libexec/"bin", env
+    bin.env_script_all_files libexec"bin", env
 
-    File.open(libexec/"glassfish/config/asenv.conf", "a") do |file|
+    File.open(libexec"glassfishconfigasenv.conf", "a") do |file|
       file.puts "AS_JAVA=\"#{env[:JAVA_HOME]}\""
     end
   end
@@ -47,17 +47,17 @@ class Glassfish < Formula
     # `asadmin` needs this to talk to a custom port when running `asadmin version`
     ENV["AS_ADMIN_PORT"] = port.to_s
 
-    cp_r libexec/"glassfish/domains", testpath
-    inreplace testpath/"domains/domain1/config/domain.xml", "port=\"4848\"", "port=\"#{port}\""
+    cp_r libexec"glassfishdomains", testpath
+    inreplace testpath"domainsdomain1configdomain.xml", "port=\"4848\"", "port=\"#{port}\""
 
     fork do
-      exec bin/"asadmin", "start-domain", "--domaindir=#{testpath}/domains", "domain1"
+      exec bin"asadmin", "start-domain", "--domaindir=#{testpath}domains", "domain1"
     end
     sleep 60
 
     output = shell_output("curl -s -X GET localhost:#{port}")
     assert_match "GlassFish Server", output
 
-    assert_match version.to_s, shell_output("#{bin}/asadmin version")
+    assert_match version.to_s, shell_output("#{bin}asadmin version")
   end
 end

@@ -1,7 +1,7 @@
 class Kalker < Formula
   desc "Full-featured calculator with math syntax"
-  homepage "https://kalker.strct.net"
-  url "https://ghproxy.com/https://github.com/PaddiM8/kalker/archive/refs/tags/v2.0.4.tar.gz"
+  homepage "https:kalker.strct.net"
+  url "https:github.comPaddiM8kalkerarchiverefstagsv2.0.4.tar.gz"
   sha256 "f9ea40521f8e435adfc5db7f811c63bab7276407c6c0a95a40673f777f57c3bd"
   license "MIT"
 
@@ -28,6 +28,6 @@ class Kalker < Formula
   end
 
   test do
-    assert_equal shell_output("#{bin}/kalker 'sum(n=1, 3, 2n+1)'").chomp, "15"
+    assert_equal shell_output("#{bin}kalker 'sum(n=1, 3, 2n+1)'").chomp, "15"
   end
 end

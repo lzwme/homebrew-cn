@@ -1,10 +1,10 @@
 class Timewarrior < Formula
   desc "Command-line time tracking application"
-  homepage "https://timewarrior.net/"
-  url "https://ghproxy.com/https://github.com/GothenburgBitFactory/timewarrior/releases/download/v1.6.0/timew-1.6.0.tar.gz"
+  homepage "https:timewarrior.net"
+  url "https:github.comGothenburgBitFactorytimewarriorreleasesdownloadv1.6.0timew-1.6.0.tar.gz"
   sha256 "cd1aa610ed50558bb2cf141022fa7b41523091ac3ae5fbb9c2d459cfe1afc782"
   license "MIT"
-  head "https://github.com/GothenburgBitFactory/timewarrior.git", branch: "dev"
+  head "https:github.comGothenburgBitFactorytimewarrior.git", branch: "dev"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5b85bc69baaf5f3a7b4fc9f8cad837345e2ef1d9b7f3640dcba31f3d2c2860a"
@@ -33,11 +33,11 @@ class Timewarrior < Formula
   end
 
   test do
-    (testpath/".timewarrior/data").mkpath
-    (testpath/".timewarrior/extensions").mkpath
-    touch testpath/".timewarrior/timewarrior.cfg"
+    (testpath".timewarriordata").mkpath
+    (testpath".timewarriorextensions").mkpath
+    touch testpath".timewarriortimewarrior.cfg"
     man = OS.mac? ? "man" : "gman"
     system man, "-P", "cat", "timew-summary"
-    assert_match "Tracking foo", shell_output("#{bin}/timew start foo")
+    assert_match "Tracking foo", shell_output("#{bin}timew start foo")
   end
 end

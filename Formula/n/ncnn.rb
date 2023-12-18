@@ -1,11 +1,11 @@
 class Ncnn < Formula
   desc "High-performance neural network inference framework"
-  homepage "https://github.com/Tencent/ncnn"
-  url "https://ghproxy.com/https://github.com/Tencent/ncnn/archive/refs/tags/20231027.tar.gz"
+  homepage "https:github.comTencentncnn"
+  url "https:github.comTencentncnnarchiverefstags20231027.tar.gz"
   sha256 "8d85896ed095d09f05fff32fc85d75eea0b971796ce0f48a9874d93d3d347674"
   license "BSD-3-Clause"
   revision 2
-  head "https://github.com/Tencent/ncnn.git", branch: "master"
+  head "https:github.comTencentncnn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b23c9027141674a70d605d9327042f903d0bb03dc7985d378ca7f739dad7ae87"
@@ -29,7 +29,7 @@ class Ncnn < Formula
 
   def install
     # fix `libabsl_log_internal_check_op.so.2301.0.0: error adding symbols: DSO missing from command line` error
-    # https://stackoverflow.com/a/55086637
+    # https:stackoverflow.coma55086637
     ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
 
     args = std_cmake_args + %w[
@@ -43,22 +43,22 @@ class Ncnn < Formula
     if OS.mac?
       args += %W[
         -DNCNN_SYSTEM_GLSLANG=ON
-        -DGLSLANG_TARGET_DIR=#{Formula["glslang"].opt_lib/"cmake"}
+        -DGLSLANG_TARGET_DIR=#{Formula["glslang"].opt_lib"cmake"}
         -DNCNN_VULKAN=ON
         -DVulkan_INCLUDE_DIR=#{Formula["molten-vk"].opt_include}
-        -DVulkan_LIBRARY=#{Formula["molten-vk"].opt_lib/shared_library("libMoltenVK")}
+        -DVulkan_LIBRARY=#{Formula["molten-vk"].opt_libshared_library("libMoltenVK")}
       ]
     end
 
-    inreplace "src/gpu.cpp", "glslang/glslang", "glslang"
+    inreplace "srcgpu.cpp", "glslangglslang", "glslang"
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <ncnn/mat.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <ncnnmat.h>
 
       int main(void) {
           ncnn::Mat myMat = ncnn::Mat(500, 500);
@@ -73,6 +73,6 @@ class Ncnn < Formula
     system ENV.cxx, "test.cpp", "-std=c++11",
                     "-I#{Formula["vulkan-headers"].opt_include}", "-I#{include}", "-L#{lib}", "-lncnn",
                     "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

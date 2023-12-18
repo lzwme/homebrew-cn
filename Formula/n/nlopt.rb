@@ -1,10 +1,10 @@
 class Nlopt < Formula
-  desc "Free/open-source library for nonlinear optimization"
-  homepage "https://nlopt.readthedocs.io/"
-  url "https://ghproxy.com/https://github.com/stevengj/nlopt/archive/refs/tags/v2.7.1.tar.gz"
+  desc "Freeopen-source library for nonlinear optimization"
+  homepage "https:nlopt.readthedocs.io"
+  url "https:github.comstevengjnloptarchiverefstagsv2.7.1.tar.gz"
   sha256 "db88232fa5cef0ff6e39943fc63ab6074208831dc0031cf1545f6ecd31ae2a1a"
   license "LGPL-2.1"
-  head "https://github.com/stevengj/nlopt.git", branch: "master"
+  head "https:github.comstevengjnlopt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6e028c84b18b298cec89e695032458b7d9ef9a5f26a7becafdc14077d998e6e8"
@@ -37,19 +37,19 @@ class Nlopt < Formula
       system "make", "install"
     end
 
-    pkgshare.install "test/box.c"
+    pkgshare.install "testbox.c"
   end
 
   test do
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.0)
       project(box C)
       find_package(NLopt REQUIRED)
-      add_executable(box "#{pkgshare}/box.c")
+      add_executable(box "#{pkgshare}box.c")
       target_link_libraries(box NLopt::nlopt)
     EOS
     system "cmake", "."
     system "make"
-    assert_match "found", shell_output("./box")
+    assert_match "found", shell_output(".box")
   end
 end

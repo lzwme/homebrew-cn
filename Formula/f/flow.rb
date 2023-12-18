@@ -1,10 +1,10 @@
 class Flow < Formula
   desc "Static type checker for JavaScript"
-  homepage "https://flowtype.org/"
-  url "https://ghproxy.com/https://github.com/facebook/flow/archive/refs/tags/v0.224.0.tar.gz"
+  homepage "https:flowtype.org"
+  url "https:github.comfacebookflowarchiverefstagsv0.224.0.tar.gz"
   sha256 "9dbb187df1a1578a1aa59d897f8f8152abd9d405e24dab29dc1d79612e60ac02"
   license "MIT"
-  head "https://github.com/facebook/flow.git", branch: "main"
+  head "https:github.comfacebookflow.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b44208f41dfa9f3f3369f166852416e3a5942cfa2c2e6ec1c4bd75d9a3b705e"
@@ -26,19 +26,19 @@ class Flow < Formula
   def install
     system "make", "all-homebrew"
 
-    bin.install "bin/flow"
+    bin.install "binflow"
 
-    bash_completion.install "resources/shell/bash-completion" => "flow-completion.bash"
-    zsh_completion.install_symlink bash_completion/"flow-completion.bash" => "_flow"
+    bash_completion.install "resourcesshellbash-completion" => "flow-completion.bash"
+    zsh_completion.install_symlink bash_completion"flow-completion.bash" => "_flow"
   end
 
   test do
-    system "#{bin}/flow", "init", testpath
-    (testpath/"test.js").write <<~EOS
-      /* @flow */
+    system "#{bin}flow", "init", testpath
+    (testpath"test.js").write <<~EOS
+      * @flow *
       var x: string = 123;
     EOS
-    expected = /Found 1 error/
-    assert_match expected, shell_output("#{bin}/flow check #{testpath}", 2)
+    expected = Found 1 error
+    assert_match expected, shell_output("#{bin}flow check #{testpath}", 2)
   end
 end

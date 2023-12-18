@@ -1,10 +1,10 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
-  homepage "https://github.com/KhronosGroup/Vulkan-Tools"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.268.tar.gz"
+  homepage "https:github.comKhronosGroupVulkan-Tools"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.3.268.tar.gz"
   sha256 "07b08b45812da1e82921ac707076558ec9b2f6f00eefefb69b911a1ba0715294"
   license "Apache-2.0"
-  head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
+  head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b4d41df7875f155c4fdadc3345f49901772efcb8d70424fe389f6a4c856126af"
@@ -40,13 +40,13 @@ class VulkanTools < Formula
     if OS.mac?
       # account for using already-built MoltenVK instead of the source repo
       inreplace "mac_common.cmake",
-                "${MOLTENVK_DIR}/MoltenVK/icd/MoltenVK_icd.json",
-                "${MOLTENVK_DIR}/share/vulkan/icd.d/MoltenVK_icd.json"
-      inreplace buildpath.glob("*/macOS/*/*.cmake") do |s|
-        s.gsub! "${MOLTENVK_DIR}/MoltenVK/include",
-                "${MOLTENVK_DIR}/include"
-        s.gsub! "${MOLTENVK_DIR}/MoltenVK/dylib/macOS/libMoltenVK.dylib",
-                "${MOLTENVK_DIR}/lib/libMoltenVK.dylib"
+                "${MOLTENVK_DIR}MoltenVKicdMoltenVK_icd.json",
+                "${MOLTENVK_DIR}sharevulkanicd.dMoltenVK_icd.json"
+      inreplace buildpath.glob("*macOS**.cmake") do |s|
+        s.gsub! "${MOLTENVK_DIR}MoltenVKinclude",
+                "${MOLTENVK_DIR}include"
+        s.gsub! "${MOLTENVK_DIR}MoltenVKdylibmacOSlibMoltenVK.dylib",
+                "${MOLTENVK_DIR}liblibMoltenVK.dylib"
       end
     end
 
@@ -74,35 +74,35 @@ class VulkanTools < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (lib/"mock_icd").install (buildpath/"build/icd/VkICD_mock_icd.json").realpath,
-                             shared_library("build/icd/libVkICD_mock_icd")
+    (lib"mock_icd").install (buildpath"buildicdVkICD_mock_icd.json").realpath,
+                             shared_library("buildicdlibVkICD_mock_icd")
 
     return unless OS.mac?
 
     targets = [
-      Formula["molten-vk"].opt_lib/shared_library("libMoltenVK"),
-      Formula["vulkan-loader"].opt_lib/shared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
+      Formula["molten-vk"].opt_libshared_library("libMoltenVK"),
+      Formula["vulkan-loader"].opt_libshared_library("libvulkan", Formula["vulkan-loader"].version.to_s),
     ]
-    prefix.glob("cube/*.app/Contents/Frameworks").each do |framework_dir|
+    prefix.glob("cube*.appContentsFrameworks").each do |framework_dir|
       ln_sf targets, framework_dir, verbose: true
     end
 
-    bin.install prefix/"vulkaninfo/vulkaninfo"
-    (bin/"vkcube").write_env_script "/usr/bin/open", "-a #{prefix}/cube/vkcube.app", {}
-    (bin/"vkcubepp").write_env_script "/usr/bin/open", "-a #{prefix}/cube/vkcubepp.app", {}
+    bin.install prefix"vulkaninfovulkaninfo"
+    (bin"vkcube").write_env_script "usrbinopen", "-a #{prefix}cubevkcube.app", {}
+    (bin"vkcubepp").write_env_script "usrbinopen", "-a #{prefix}cubevkcubepp.app", {}
   end
 
   def caveats
     <<~EOS
       The mock ICD files have been installed in
-        #{opt_lib}/mock_icd
+        #{opt_lib}mock_icd
       You can use them with the Vulkan Loader by setting
-        export VK_ICD_FILENAMES=#{opt_lib}/mock_icd/VkICD_mock_icd.json
+        export VK_ICD_FILENAMES=#{opt_lib}mock_icdVkICD_mock_icd.json
     EOS
   end
 
   test do
-    ENV["VK_ICD_FILENAMES"] = lib/"mock_icd/VkICD_mock_icd.json"
-    system bin/"vulkaninfo", "--summary"
+    ENV["VK_ICD_FILENAMES"] = lib"mock_icdVkICD_mock_icd.json"
+    system bin"vulkaninfo", "--summary"
   end
 end

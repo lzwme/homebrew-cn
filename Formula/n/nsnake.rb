@@ -1,10 +1,10 @@
 class Nsnake < Formula
   desc "Classic snake game with textual interface"
-  homepage "https://github.com/alexdantas/nSnake"
-  url "https://downloads.sourceforge.net/project/nsnake/GNU-Linux/nsnake-3.0.1.tar.gz"
+  homepage "https:github.comalexdantasnSnake"
+  url "https:downloads.sourceforge.netprojectnsnakeGNU-Linuxnsnake-3.0.1.tar.gz"
   sha256 "e0a39e0e188a6a8502cb9fc05de3fa83dd4d61072c5b93a182136d1bccd39bb9"
   license "GPL-3.0"
-  head "https://github.com/alexdantas/nSnake.git", branch: "master"
+  head "https:github.comalexdantasnSnake.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,12 +28,12 @@ class Nsnake < Formula
     system "make", "install", "PREFIX=#{prefix}"
 
     # No need for Linux desktop
-    (share/"applications").rmtree
-    (share/"icons").rmtree
-    (share/"pixmaps").rmtree
+    (share"applications").rmtree
+    (share"icons").rmtree
+    (share"pixmaps").rmtree
   end
 
   test do
-    assert_match "nsnake v#{version} ", shell_output("#{bin}/nsnake -v")
+    assert_match "nsnake v#{version} ", shell_output("#{bin}nsnake -v")
   end
 end

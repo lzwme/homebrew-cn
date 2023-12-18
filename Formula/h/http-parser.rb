@@ -1,7 +1,7 @@
 class HttpParser < Formula
-  desc "HTTP request/response parser for c"
-  homepage "https://github.com/nodejs/http-parser"
-  url "https://ghproxy.com/https://github.com/nodejs/http-parser/archive/refs/tags/v2.9.4.tar.gz"
+  desc "HTTP requestresponse parser for c"
+  homepage "https:github.comnodejshttp-parser"
+  url "https:github.comnodejshttp-parserarchiverefstagsv2.9.4.tar.gz"
   sha256 "467b9e30fd0979ee301065e70f637d525c28193449e1b13fbcb1b1fab3ad224f"
   license "MIT"
 
@@ -21,7 +21,7 @@ class HttpParser < Formula
   end
 
   # "http-parser is not actively maintained. New projects and projects looking
-  # to migrate should consider llhttp (https://github.com/nodejs/llhttp)."
+  # to migrate should consider llhttp (https:github.comnodejsllhttp)."
   deprecate! date: "2023-01-03", because: :repo_archived
 
   depends_on "coreutils" => :build
@@ -33,8 +33,8 @@ class HttpParser < Formula
 
   test do
     # Set HTTP_PARSER_STRICT=0 to bypass "tab in URL" test on macOS
-    system ENV.cc, pkgshare/"test.c", "-o", "test", "-L#{lib}", "-lhttp_parser",
+    system ENV.cc, pkgshare"test.c", "-o", "test", "-L#{lib}", "-lhttp_parser",
            "-DHTTP_PARSER_STRICT=0"
-    system "./test"
+    system ".test"
   end
 end

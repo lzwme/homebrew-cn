@@ -1,14 +1,14 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
-  homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.13-src.tar.bz2"
+  homepage "https:pypy.org"
+  url "https:downloads.python.orgpypypypy2.7-v7.3.13-src.tar.bz2"
   sha256 "976984bc6ca5ec9d37ae4e219b020cbed2751d1a02267033f59ed700ba8cec40"
   license "MIT"
-  head "https://foss.heptapod.net/pypy/pypy", using: :hg
+  head "https:foss.heptapod.netpypypypy", using: :hg
 
   livecheck do
-    url "https://downloads.python.org/pypy/"
-    regex(/href=.*?pypy2(?:\.\d+)*[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
+    url "https:downloads.python.orgpypy"
+    regex(href=.*?pypy2(?:\.\d+)*[._-]v?(\d+(?:\.\d+)+)-src\.ti)
   end
 
   bottle do
@@ -37,31 +37,31 @@ class Pypy < Formula
   resource "bootstrap" do
     on_macos do
       on_arm do
-        url "https://downloads.python.org/pypy/pypy2.7-v7.3.11-macos_arm64.tar.bz2"
+        url "https:downloads.python.orgpypypypy2.7-v7.3.11-macos_arm64.tar.bz2"
         sha256 "cc5696ab4f93cd3481c1e4990b5dedd7ba60ac0602fa1890d368889a6c5bf771"
       end
       on_intel do
-        url "https://downloads.python.org/pypy/pypy2.7-v7.3.11-macos_x86_64.tar.bz2"
+        url "https:downloads.python.orgpypypypy2.7-v7.3.11-macos_x86_64.tar.bz2"
         sha256 "56deee9c22640f5686c35b9d64fdb1ce3abd044583e4078f0b171ca2fd2a198e"
       end
     end
     on_linux do
-      url "https://downloads.python.org/pypy/pypy2.7-v7.3.11-linux64.tar.bz2"
+      url "https:downloads.python.orgpypypypy2.7-v7.3.11-linux64.tar.bz2"
       sha256 "ba8ed958a905c0735a4cfff2875c25089954dc020e087d982b0ffa5b9da316cd"
     end
   end
 
   # > Setuptools as a project continues to support Python 2 with bugfixes and important features on Setuptools 44.x.
-  # See https://setuptools.readthedocs.io/en/latest/python%202%20sunset.html#python-2-sunset
+  # See https:setuptools.readthedocs.ioenlatestpython%202%20sunset.html#python-2-sunset
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/b2/40/4e00501c204b457f10fe410da0c97537214b2265247bc9a5bc6edd55b9e4/setuptools-44.1.1.zip"
+    url "https:files.pythonhosted.orgpackagesb2404e00501c204b457f10fe410da0c97537214b2265247bc9a5bc6edd55b9e4setuptools-44.1.1.zip"
     sha256 "c67aa55db532a0dadc4d2e20ba9961cbd3ccc84d544e9029699822542b5a476b"
   end
 
   # > pip 20.3 was the last version of pip that supported Python 2.
-  # See https://pip.pypa.io/en/stable/development/release-process/#python-2-support
+  # See https:pip.pypa.ioenstabledevelopmentrelease-process#python-2-support
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/53/7f/55721ad0501a9076dbc354cc8c63ffc2d6f1ef360f49ad0fbcce19d68538/pip-20.3.4.tar.gz"
+    url "https:files.pythonhosted.orgpackages537f55721ad0501a9076dbc354cc8c63ffc2d6f1ef360f49ad0fbcce19d68538pip-20.3.4.tar.gz"
     sha256 "6773934e5f5fc3eaa8c5a44949b5b924fc122daa0a8aa9f80c835b4ca2a543fc"
   end
 
@@ -71,28 +71,28 @@ class Pypy < Formula
   patch :DATA
 
   def install
-    # The `tcl-tk` library paths are hardcoded and need to be modified for non-/usr/local prefix
-    inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
-      s.gsub! "/usr/local/opt/tcl-tk/", Formula["tcl-tk"].opt_prefix/""
-      s.gsub! "/include'", "/include/tcl-tk'"
+    # The `tcl-tk` library paths are hardcoded and need to be modified for non-usrlocal prefix
+    inreplace "lib_pypy_tkintertklib_build.py" do |s|
+      s.gsub! "usrlocalopttcl-tk", Formula["tcl-tk"].opt_prefix""
+      s.gsub! "include'", "includetcl-tk'"
     end
 
-    # See https://github.com/Homebrew/homebrew/issues/24364
+    # See https:github.comHomebrewhomebrewissues24364
     ENV["PYTHONPATH"] = ""
     ENV["PYPY_USESSION_DIR"] = buildpath
 
-    resource("bootstrap").stage buildpath/"bootstrap"
-    python = buildpath/"bootstrap/bin/pypy"
+    resource("bootstrap").stage buildpath"bootstrap"
+    python = buildpath"bootstrapbinpypy"
 
-    cd "pypy/goal" do
-      system python, "../../rpython/bin/rpython", "--opt", "jit",
+    cd "pypygoal" do
+      system python, "....rpythonbinrpython", "--opt", "jit",
                                                   "--cc", ENV.cc,
                                                   "--make-jobs", ENV.make_jobs,
                                                   "--shared",
                                                   "--verbose"
     end
 
-    system python, "pypy/tool/release/package.py", "--archive-name", "pypy",
+    system python, "pypytoolreleasepackage.py", "--archive-name", "pypy",
                                                    "--targetdir", ".",
                                                    "--no-embedded-dependencies",
                                                    "--no-keep-debug",
@@ -101,11 +101,11 @@ class Pypy < Formula
     system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
 
     # The PyPy binary install instructions suggest installing somewhere
-    # (like /opt) and symlinking in binaries as needed. Specifically,
+    # (like opt) and symlinking in binaries as needed. Specifically,
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
-    bin.install_symlink libexec/"bin/pypy"
-    lib.install_symlink libexec/"bin"/shared_library("libpypy-c")
+    bin.install_symlink libexec"binpypy"
+    lib.install_symlink libexec"bin"shared_library("libpypy-c")
   end
 
   def post_install
@@ -117,33 +117,33 @@ class Pypy < Formula
     prefix_site_packages.mkpath
 
     # Symlink the prefix site-packages into the cellar.
-    unless (libexec/"site-packages").symlink?
-      # fix the case where libexec/site-packages/site-packages was installed
-      rm_rf libexec/"site-packages/site-packages"
-      mv Dir[libexec/"site-packages/*"], prefix_site_packages
-      rm_rf libexec/"site-packages"
+    unless (libexec"site-packages").symlink?
+      # fix the case where libexecsite-packagessite-packages was installed
+      rm_rf libexec"site-packagessite-packages"
+      mv Dir[libexec"site-packages*"], prefix_site_packages
+      rm_rf libexec"site-packages"
     end
     libexec.install_symlink prefix_site_packages
 
     # Tell distutils-based installers where to put scripts
     scripts_folder.mkpath
-    (distutils/"distutils.cfg").atomic_write <<~EOS
+    (distutils"distutils.cfg").atomic_write <<~EOS
       [install]
       install-scripts=#{scripts_folder}
     EOS
 
     %w[setuptools pip].each do |pkg|
       resource(pkg).stage do
-        system bin/"pypy", "-s", "setup.py", "--no-user-cfg", "install", "--force", "--verbose"
+        system bin"pypy", "-s", "setup.py", "--no-user-cfg", "install", "--force", "--verbose"
       end
     end
 
     # Symlinks to easy_install_pypy and pip_pypy
-    bin.install_symlink scripts_folder/"easy_install" => "easy_install_pypy"
-    bin.install_symlink scripts_folder/"pip" => "pip_pypy"
+    bin.install_symlink scripts_folder"easy_install" => "easy_install_pypy"
+    bin.install_symlink scripts_folder"pip" => "pip_pypy"
 
     # post_install happens after linking
-    %w[easy_install_pypy pip_pypy].each { |e| (HOMEBREW_PREFIX/"bin").install_symlink bin/e }
+    %w[easy_install_pypy pip_pypy].each { |e| (HOMEBREW_PREFIX"bin").install_symlink bine }
   end
 
   def caveats
@@ -155,7 +155,7 @@ class Pypy < Formula
 
       If you install Python packages via "pypy setup.py install", easy_install_pypy,
       or pip_pypy, any provided scripts will go into the install-scripts folder
-      above, so you may want to add it to your PATH *after* #{HOMEBREW_PREFIX}/bin
+      above, so you may want to add it to your PATH *after* #{HOMEBREW_PREFIX}bin
       so you don't overwrite tools from CPython.
 
       Setuptools and pip have been installed, so you can use easy_install_pypy and
@@ -163,35 +163,35 @@ class Pypy < Formula
       To update setuptools and pip between pypy releases, run:
           pip_pypy install --upgrade pip setuptools
 
-      See: https://docs.brew.sh/Homebrew-and-Python
+      See: https:docs.brew.shHomebrew-and-Python
     EOS
   end
 
   # The HOMEBREW_PREFIX location of site-packages
   def prefix_site_packages
-    HOMEBREW_PREFIX/"lib/pypy/site-packages"
+    HOMEBREW_PREFIX"libpypysite-packages"
   end
 
   # Where setuptools will install executable scripts
   def scripts_folder
-    HOMEBREW_PREFIX/"share/pypy"
+    HOMEBREW_PREFIX"sharepypy"
   end
 
   # The Cellar location of distutils
   def distutils
-    libexec/"lib-python/2.7/distutils"
+    libexec"lib-python2.7distutils"
   end
 
   test do
-    system bin/"pypy", "-c", "print('Hello, world!')"
-    system bin/"pypy", "-c", "import time; time.clock()"
-    system scripts_folder/"pip", "list"
+    system bin"pypy", "-c", "print('Hello, world!')"
+    system bin"pypy", "-c", "import time; time.clock()"
+    system scripts_folder"pip", "list"
   end
 end
 
 __END__
---- a/lib_pypy/_tkinter/tklib_build.py
-+++ b/lib_pypy/_tkinter/tklib_build.py
+--- alib_pypy_tkintertklib_build.py
++++ blib_pypy_tkintertklib_build.py
 @@ -17,7 +17,7 @@ elif sys.platform == 'win32':
      incdirs = []
      linklibs = ['tcl86t', 'tk86t']
@@ -200,13 +200,13 @@ __END__
 +else:
      # homebrew
      homebrew = os.environ.get('HOMEBREW_PREFIX', '')
-     incdirs = ['/usr/local/opt/tcl-tk/include']
+     incdirs = ['usrlocalopttcl-tkinclude']
 @@ -26,7 +26,7 @@ elif sys.platform == 'darwin':
      if homebrew:
-         incdirs.append(homebrew + '/include')
-         libdirs.append(homebrew + '/opt/tcl-tk/lib')
+         incdirs.append(homebrew + 'include')
+         libdirs.append(homebrew + 'opttcl-tklib')
 -else:
 +if False: # disable Linux system tcl-tk detection
      # On some Linux distributions, the tcl and tk libraries are
-     # stored in /usr/include, so we must check this case also
+     # stored in usrinclude, so we must check this case also
      libdirs = []

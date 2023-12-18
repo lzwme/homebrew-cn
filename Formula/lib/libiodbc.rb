@@ -1,7 +1,7 @@
 class Libiodbc < Formula
   desc "Database connectivity layer based on ODBC. (alternative to unixodbc)"
-  homepage "https://www.iodbc.org/"
-  url "https://ghproxy.com/https://github.com/openlink/iODBC/archive/refs/tags/v3.52.16.tar.gz"
+  homepage "https:www.iodbc.org"
+  url "https:github.comopenlinkiODBCarchiverefstagsv3.52.16.tar.gz"
   sha256 "a0cf0375b462f98c0081c2ceae5ef78276003e57cdf1eb86bd04508fb62a0660"
   license any_of: ["BSD-3-Clause", "LGPL-2.0-only"]
 
@@ -24,12 +24,12 @@ class Libiodbc < Formula
   depends_on "libtool" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin/"iodbc-config", "--version"
+    system bin"iodbc-config", "--version"
   end
 end

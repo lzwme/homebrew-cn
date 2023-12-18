@@ -1,10 +1,10 @@
 class Janet < Formula
   desc "Dynamic language and bytecode vm"
-  homepage "https://janet-lang.org"
-  url "https://ghproxy.com/https://github.com/janet-lang/janet/archive/refs/tags/v1.32.1.tar.gz"
+  homepage "https:janet-lang.org"
+  url "https:github.comjanet-langjanetarchiverefstagsv1.32.1.tar.gz"
   sha256 "ac74444f1b545830c34738fe9ebb58c865ea4b819b0b0c3124315c646d9ce4cb"
   license "MIT"
-  head "https://github.com/janet-lang/janet.git", branch: "master"
+  head "https:github.comjanet-langjanet.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "624cbfb4dafbb08f23bb449d8bd8a5d136227a300bafaa521c217af2f29f958d"
@@ -20,7 +20,7 @@ class Janet < Formula
   depends_on "ninja" => :build
 
   resource "jpm" do
-    url "https://ghproxy.com/https://github.com/janet-lang/jpm/archive/refs/tags/v1.1.0.tar.gz"
+    url "https:github.comjanet-langjpmarchiverefstagsv1.1.0.tar.gz"
     sha256 "337c40d9b8c087b920202287b375c2962447218e8e127ce3a5a12e6e47ac6f16"
   end
 
@@ -32,14 +32,14 @@ class Janet < Formula
     end
     ENV["PREFIX"] = prefix
     resource("jpm").stage do
-      system bin/"janet", "bootstrap.janet"
+      system bin"janet", "bootstrap.janet"
     end
   end
 
   test do
-    assert_equal "12", shell_output("#{bin}/janet -e '(print (+ 5 7))'").strip
-    assert_predicate HOMEBREW_PREFIX/"bin/jpm", :exist?, "jpm must exist"
-    assert_predicate HOMEBREW_PREFIX/"bin/jpm", :executable?, "jpm must be executable"
-    assert_match prefix.to_s, shell_output("#{bin}/jpm show-paths")
+    assert_equal "12", shell_output("#{bin}janet -e '(print (+ 5 7))'").strip
+    assert_predicate HOMEBREW_PREFIX"binjpm", :exist?, "jpm must exist"
+    assert_predicate HOMEBREW_PREFIX"binjpm", :executable?, "jpm must be executable"
+    assert_match prefix.to_s, shell_output("#{bin}jpm show-paths")
   end
 end

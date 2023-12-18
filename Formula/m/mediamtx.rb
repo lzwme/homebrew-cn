@@ -1,7 +1,7 @@
 class Mediamtx < Formula
   desc "Zero-dependency real-time media server and media proxy"
-  homepage "https://github.com/bluenviron/mediamtx"
-  url "https://ghproxy.com/https://github.com/bluenviron/mediamtx/archive/refs/tags/v1.4.0.tar.gz"
+  homepage "https:github.combluenvironmediamtx"
+  url "https:github.combluenvironmediamtxarchiverefstagsv1.4.0.tar.gz"
   sha256 "8360d5e0337df599efb7a4200956caf59870965019140f976aba53673e81dc50"
   license "MIT"
 
@@ -18,36 +18,36 @@ class Mediamtx < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/bluenviron/mediamtx/internal/core.version=#{version}"
+    ldflags = "-s -w -X github.combluenvironmediamtxinternalcore.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install default config
-    (etc/"mediamtx").install "mediamtx.yml"
+    (etc"mediamtx").install "mediamtx.yml"
   end
 
   def post_install
-    (var/"log/mediamtx").mkpath
+    (var"logmediamtx").mkpath
   end
 
   service do
-    run [opt_bin/"mediamtx", etc/"mediamtx/mediamtx.yml"]
+    run [opt_bin"mediamtx", etc"mediamtxmediamtx.yml"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/mediamtx/output.log"
-    error_log_path var/"log/mediamtx/error.log"
+    log_path var"logmediamtxoutput.log"
+    error_log_path var"logmediamtxerror.log"
   end
 
   test do
-    assert_equal version, shell_output(bin/"mediamtx --version")
+    assert_equal version, shell_output(bin"mediamtx --version")
 
     mediamtx_api = "127.0.0.1:#{free_port}"
     mediamtx = fork do
-      exec({ "MTX_API" => "yes", "MTX_APIADDRESS" => mediamtx_api }, bin/"mediamtx", etc/"mediamtx/mediamtx.yml")
+      exec({ "MTX_API" => "yes", "MTX_APIADDRESS" => mediamtx_api }, bin"mediamtx", etc"mediamtxmediamtx.yml")
     end
     sleep 3
 
     # Check API output matches configuration
-    curl_output = shell_output("curl --silent http://#{mediamtx_api}/v3/config/global/get")
+    curl_output = shell_output("curl --silent http:#{mediamtx_api}v3configglobalget")
     assert_match "\"apiAddress\":\"#{mediamtx_api}\"", curl_output
   ensure
     Process.kill("TERM", mediamtx)

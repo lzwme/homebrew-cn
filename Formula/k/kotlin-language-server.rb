@@ -1,7 +1,7 @@
 class KotlinLanguageServer < Formula
-  desc "Intelligent Kotlin support for any editor/IDE using the Language Server Protocol"
-  homepage "https://github.com/fwcd/kotlin-language-server"
-  url "https://ghproxy.com/https://github.com/fwcd/kotlin-language-server/archive/refs/tags/1.3.7.tar.gz"
+  desc "Intelligent Kotlin support for any editorIDE using the Language Server Protocol"
+  homepage "https:github.comfwcdkotlin-language-server"
+  url "https:github.comfwcdkotlin-language-serverarchiverefstags1.3.7.tar.gz"
   sha256 "a9144242b3892fe7f90cf800d1b6e0960f55829efd5e26cdd83c14344a53aaf7"
   license "MIT"
 
@@ -25,9 +25,9 @@ class KotlinLanguageServer < Formula
 
     system "gradle", ":server:installDist", "-PjavaVersion=17"
 
-    libexec.install Dir["server/build/install/server/*"]
+    libexec.install Dir["serverbuildinstallserver*"]
 
-    (bin/"kotlin-language-server").write_env_script libexec/"bin/kotlin-language-server",
+    (bin"kotlin-language-server").write_env_script libexec"binkotlin-language-server",
       Language::Java.overridable_java_home_env("17")
   end
 
@@ -39,8 +39,8 @@ class KotlinLanguageServer < Formula
       "processId\":88075,\"rootUri\":null,\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
 
-    output = pipe_output("#{bin}/kotlin-language-server", input, 0)
+    output = pipe_output("#{bin}kotlin-language-server", input, 0)
 
-    assert_match(/^Content-Length: \d+/i, output)
+    assert_match(^Content-Length: \d+i, output)
   end
 end

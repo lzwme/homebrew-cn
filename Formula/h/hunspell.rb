@@ -1,7 +1,7 @@
 class Hunspell < Formula
   desc "Spell checker and morphological analyzer"
-  homepage "https://hunspell.github.io"
-  url "https://ghproxy.com/https://github.com/hunspell/hunspell/releases/download/v1.7.2/hunspell-1.7.2.tar.gz"
+  homepage "https:hunspell.github.io"
+  url "https:github.comhunspellhunspellreleasesdownloadv1.7.2hunspell-1.7.2.tar.gz"
   sha256 "11ddfa39afe28c28539fe65fc4f1592d410c1e9b6dd7d8a91ca25d85e9ec65b8"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
@@ -28,7 +28,7 @@ class Hunspell < Formula
   conflicts_with "freeling", because: "both install 'analyze' binary"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-ui",
                           "--with-readline"
@@ -40,14 +40,14 @@ class Hunspell < Formula
   def caveats
     <<~EOS
       Dictionary files (*.aff and *.dic) should be placed in
-      ~/Library/Spelling/ or /Library/Spelling/.  Homebrew itself
+      ~LibrarySpelling or LibrarySpelling.  Homebrew itself
       provides no dictionaries for Hunspell, but you can download
       compatible dictionaries from other sources, such as
-      https://cgit.freedesktop.org/libreoffice/dictionaries/tree/ .
+      https:cgit.freedesktop.orglibreofficedictionariestree .
     EOS
   end
 
   test do
-    system bin/"hunspell", "--help"
+    system bin"hunspell", "--help"
   end
 end

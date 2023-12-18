@@ -2,12 +2,12 @@ cask "font-asul" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/asul"
+      only_path: "oflasul"
   name "Asul"
-  homepage "https://fonts.google.com/specimen/Asul"
+  homepage "https:fonts.google.comspecimenAsul"
 
   font "Asul-Bold.ttf"
   font "Asul-Regular.ttf"

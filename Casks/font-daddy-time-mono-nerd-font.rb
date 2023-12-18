@@ -2,10 +2,10 @@ cask "font-daddy-time-mono-nerd-font" do
   version "3.1.1"
   sha256 "bba9ce975f3144bf92e8771ba13abcee0e08e2314775d83a58567ef7576df992"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/DaddyTimeMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}DaddyTimeMono.zip"
   name "DaddyTimeMono Nerd Font (DaddyTimeMono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

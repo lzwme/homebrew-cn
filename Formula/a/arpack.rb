@@ -1,10 +1,10 @@
 class Arpack < Formula
   desc "Routines to solve large scale eigenvalue problems"
-  homepage "https://github.com/opencollab/arpack-ng"
-  url "https://ghproxy.com/https://github.com/opencollab/arpack-ng/archive/refs/tags/3.9.1.tar.gz"
+  homepage "https:github.comopencollabarpack-ng"
+  url "https:github.comopencollabarpack-ngarchiverefstags3.9.1.tar.gz"
   sha256 "f6641deb07fa69165b7815de9008af3ea47eb39b2bb97521fbf74c97aba6e844"
   license "BSD-3-Clause"
-  head "https://github.com/opencollab/arpack-ng.git", branch: "master"
+  head "https:github.comopencollabarpack-ng.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6a70cd362206df794dd14f27e7bf9e5ada8a72218c58f75ac0fab36ef48040b5"
@@ -37,23 +37,23 @@ class Arpack < Formula
       --enable-icb-exmm
     ]
 
-    system "./bootstrap"
-    system "./configure", *args
+    system ".bootstrap"
+    system ".configure", *args
     system "make"
     system "make", "install"
 
-    lib.install_symlink Dir["#{libexec}/lib/*"].select { |f| File.file?(f) }
-    (lib/"pkgconfig").install_symlink Dir["#{libexec}/lib/pkgconfig/*"]
-    pkgshare.install "TESTS/testA.mtx", "TESTS/dnsimp.f",
-                     "TESTS/mmio.f", "TESTS/debug.h"
+    lib.install_symlink Dir["#{libexec}lib*"].select { |f| File.file?(f) }
+    (lib"pkgconfig").install_symlink Dir["#{libexec}libpkgconfig*"]
+    pkgshare.install "TESTStestA.mtx", "TESTSdnsimp.f",
+                     "TESTSmmio.f", "TESTSdebug.h"
   end
 
   test do
     ENV.fortran
-    system ENV.fc, "-o", "test", pkgshare/"dnsimp.f", pkgshare/"mmio.f",
+    system ENV.fc, "-o", "test", pkgshare"dnsimp.f", pkgshare"mmio.f",
                        "-L#{lib}", "-larpack",
                        "-L#{Formula["openblas"].opt_lib}", "-lopenblas"
-    cp_r pkgshare/"testA.mtx", testpath
-    assert_match "reached", shell_output("./test")
+    cp_r pkgshare"testA.mtx", testpath
+    assert_match "reached", shell_output(".test")
   end
 end

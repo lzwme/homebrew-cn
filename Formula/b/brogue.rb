@@ -1,10 +1,10 @@
 class Brogue < Formula
   desc "Roguelike game"
-  homepage "https://sites.google.com/site/broguegame/"
-  url "https://ghproxy.com/https://github.com/tmewett/BrogueCE/archive/refs/tags/v1.13.tar.gz"
+  homepage "https:sites.google.comsitebroguegame"
+  url "https:github.comtmewettBrogueCEarchiverefstagsv1.13.tar.gz"
   sha256 "4c63e91639902d58565ab3c2852d89a4206cdd60200b585fa9d93d6a5881906c"
   license "AGPL-3.0-or-later"
-  head "https://github.com/tmewett/BrogueCE.git", branch: "master"
+  head "https:github.comtmewettBrogueCE.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "9315807bc80d4f5c5e0a6ba9a553204a86cc57654682f9a3a18636ec5b1161a8"
@@ -23,33 +23,33 @@ class Brogue < Formula
 
   # build patch for sdl_image.h include, remove in next release
   patch do
-    url "https://github.com/tmewett/BrogueCE/commit/baff9b5081c60ec3c0117913e419fa05126025db.patch?full_index=1"
+    url "https:github.comtmewettBrogueCEcommitbaff9b5081c60ec3c0117913e419fa05126025db.patch?full_index=1"
     sha256 "7b51b43ca542958cd2051d6edbe8de3cbe73a5f1ac3e0d8e3c9bff99554f877e"
   end
 
   def install
-    system "make", "bin/brogue", "RELEASE=YES", "TERMINAL=YES", "DATADIR=#{libexec}"
-    libexec.install "bin/brogue", "bin/keymap.txt", "bin/assets"
+    system "make", "binbrogue", "RELEASE=YES", "TERMINAL=YES", "DATADIR=#{libexec}"
+    libexec.install "binbrogue", "binkeymap.txt", "binassets"
 
     # Use var directory to save highscores and replay files across upgrades
-    (bin/"brogue").write <<~EOS
-      #!/bin/bash
-      cd "#{var}/brogue" && exec "#{libexec}/brogue" "$@"
+    (bin"brogue").write <<~EOS
+      #!binbash
+      cd "#{var}brogue" && exec "#{libexec}brogue" "$@"
     EOS
   end
 
   def post_install
-    (var/"brogue").mkpath
+    (var"brogue").mkpath
   end
 
   def caveats
     <<~EOS
       If you are upgrading from 1.7.2, you need to copy your highscores file:
-          cp #{HOMEBREW_PREFIX}/Cellar/#{name}/1.7.2/BrogueHighScores.txt #{var}/brogue/
+          cp #{HOMEBREW_PREFIX}Cellar#{name}1.7.2BrogueHighScores.txt #{var}brogue
     EOS
   end
 
   test do
-    system "#{bin}/brogue", "--version"
+    system "#{bin}brogue", "--version"
   end
 end

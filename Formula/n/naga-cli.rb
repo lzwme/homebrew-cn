@@ -1,14 +1,14 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
-  homepage "https://github.com/gfx-rs/naga"
-  url "https://ghproxy.com/https://github.com/gfx-rs/naga/archive/refs/tags/v0.14.0.tar.gz"
+  homepage "https:github.comgfx-rsnaga"
+  url "https:github.comgfx-rsnagaarchiverefstagsv0.14.0.tar.gz"
   sha256 "408128a255eba79763d9b7c5422d9c9d6a62019001f80f5ab28d34436c6189eb"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/gfx-rs/naga.git", branch: "master"
+  head "https:github.comgfx-rsnaga.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class NagaCli < Formula
 
   test do
     # sample taken from the Naga test suite
-    test_wgsl = testpath/"test.wgsl"
+    test_wgsl = testpath"test.wgsl"
     test_wgsl.write <<~EOF
       @fragment
       fn derivatives(@builtin(position) foo: vec4<f32>) -> @location(0) vec4<f32> {
@@ -41,13 +41,13 @@ class NagaCli < Formula
           return (x + y) * z;
       }
     EOF
-    assert_equal "Validation successful", shell_output("#{bin/"naga"} #{test_wgsl}").strip
-    test_out_wgsl = testpath/"test_out.wgsl"
-    test_out_frag = testpath/"test_out.frag"
-    test_out_metal = testpath/"test_out.metal"
-    test_out_hlsl = testpath/"test_out.hlsl"
-    test_out_dot = testpath/"test_out.dot"
-    system bin/"naga", test_wgsl, test_out_wgsl, test_out_frag, test_out_metal, test_out_hlsl, test_out_dot,
+    assert_equal "Validation successful", shell_output("#{bin"naga"} #{test_wgsl}").strip
+    test_out_wgsl = testpath"test_out.wgsl"
+    test_out_frag = testpath"test_out.frag"
+    test_out_metal = testpath"test_out.metal"
+    test_out_hlsl = testpath"test_out.hlsl"
+    test_out_dot = testpath"test_out.dot"
+    system bin"naga", test_wgsl, test_out_wgsl, test_out_frag, test_out_metal, test_out_hlsl, test_out_dot,
            "--profile", "es310", "--entry-point", "derivatives"
     assert_equal test_out_wgsl.read, <<~EOF
       @fragment#{" "}
@@ -77,9 +77,9 @@ class NagaCli < Formula
 
     EOF
     assert_equal test_out_metal.read, <<~EOF
-      // language: metal1.0
+       language: metal1.0
       #include <metal_stdlib>
-      #include <simd/simd.h>
+      #include <simdsimd.h>
 
       using metal::uint;
 
@@ -118,7 +118,7 @@ class NagaCli < Formula
       		label="Globals"
       	}
       	subgraph cluster_ep0 {
-      		label="Fragment/'derivatives'"
+      		label="Fragment'derivatives'"
       		node [ style=filled ]
       		ep0_e0 [ color="#8dd3c7" label="[1] Argument[0]" ]
       		ep0_e1 [ color="#fccde5" label="[2] dXNone" ]

@@ -1,41 +1,41 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
-  homepage "https://d2lang.com/"
-  url "https://ghproxy.com/https://github.com/terrastruct/d2/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "a6de0a9b99fd77176fb62bba095f6320b7fdd96928326a84516206561744062c"
+  homepage "https:d2lang.com"
+  url "https:github.comterrastructd2archiverefstagsv0.6.3.tar.gz"
+  sha256 "e7df127e20ec37c83c881e15c6fb3fbefb55cbfeeb9380a78575164726144bd9"
   license "MPL-2.0"
-  head "https://github.com/terrastruct/d2.git", branch: "master"
+  head "https:github.comterrastructd2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c2964b2cb9d7849ef072048c785a6245049297c41c910ead47a7b43301a09861"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "feb3ef7ab6feb895633b70013d721ac50fb6dc157f13e1319aa2dc1cb8fbee46"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40e79a18d4f191e18a67c1cd9fefa634dbec0a1856218d2eae51fa39e676b396"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9585665ddb99b84ce69395fa4574c951018b75d10484362c56b896aac8b0491d"
-    sha256 cellar: :any_skip_relocation, ventura:        "700bd4d42f912744a990262756e081f0acf75598734084d9893ef6e73a4e77c4"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c28b62d08adf49de57cf8043b08207259bcc707f4b48f8af476cb65c122a1d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "155ff9c2b9f14487a6081148cedc6e72488612a6bb719fa092d2028eca260c6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fe73ebb390941c620177e27cabc4b8e53f93bb0c7235c68e7ffaa2d0a46ecc0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1efbe689cf17735288ea51d9081773c561b56b0d13de28e82697e427a7a327c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a7ae2ab809333166533e2f4a8011ffc5c231e01c521353f283d01b3d8b45908"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b843d5a5fb1f69c9f98fefd3e10730069230457914480ba61f3d7c091856d067"
+    sha256 cellar: :any_skip_relocation, ventura:        "a24e70b809153b120cae373865d485632632fced7cc027ecf60fd3859903085b"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d119d85ed9816db269acba29acd07557cb8d991a95d125fd240cf5a85c074ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76e0665995664f122041fffdd4ba4f1c30ba8ea5c15f7aa7cc0c6aaeb405160f"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X oss.terrastruct.com/d2/lib/version.Version=#{version}"
+    ldflags = "-s -w -X oss.terrastruct.comd2libversion.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
-    man1.install "ci/release/template/man/d2.1"
+    man1.install "cireleasetemplatemand2.1"
   end
 
   test do
-    test_file = testpath/"test.d2"
+    test_file = testpath"test.d2"
     test_file.write <<~EOS
       homebrew-core -> brew: depends
     EOS
 
-    system bin/"d2", "test.d2"
-    assert_predicate testpath/"test.svg", :exist?
+    system bin"d2", "test.d2"
+    assert_predicate testpath"test.svg", :exist?
 
     assert_match "dagre is a directed graph layout library for JavaScript",
-      shell_output("#{bin}/d2 layout dagre")
+      shell_output("#{bin}d2 layout dagre")
 
-    assert_match version.to_s, shell_output("#{bin}/d2 version")
+    assert_match version.to_s, shell_output("#{bin}d2 version")
   end
 end

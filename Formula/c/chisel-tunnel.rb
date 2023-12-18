@@ -1,10 +1,10 @@
 class ChiselTunnel < Formula
-  desc "Fast TCP/UDP tunnel over HTTP"
-  homepage "https://github.com/jpillora/chisel"
-  url "https://ghproxy.com/https://github.com/jpillora/chisel/archive/refs/tags/v1.9.1.tar.gz"
+  desc "Fast TCPUDP tunnel over HTTP"
+  homepage "https:github.comjpillorachisel"
+  url "https:github.comjpillorachiselarchiverefstagsv1.9.1.tar.gz"
   sha256 "7323fb3510a36f14949337cd03efd078f4a5d6159259c20539e3a8e1960a7c7e"
   license "MIT"
-  head "https://github.com/jpillora/chisel.git", branch: "master"
+  head "https:github.comjpillorachisel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5037b5ae58ec1a0eb1fe11b26efa6838587c624a37c2bd770a1628ac9cb3316"
@@ -21,7 +21,7 @@ class ChiselTunnel < Formula
   conflicts_with "chisel", because: "both install `chisel` binaries"
 
   def install
-    system "go", "build", *std_go_args(output: bin/"chisel", ldflags: "-X github.com/jpillora/chisel/share.BuildVersion=v#{version}")
+    system "go", "build", *std_go_args(output: bin"chisel", ldflags: "-X github.comjpillorachiselshare.BuildVersion=v#{version}")
   end
 
   test do
@@ -29,7 +29,7 @@ class ChiselTunnel < Formula
     server_port = free_port
 
     server_pid = fork do
-      exec "#{bin}/chisel server -p #{server_port}", out: write, err: write
+      exec "#{bin}chisel server -p #{server_port}", out: write, err: write
     end
 
     sleep 2

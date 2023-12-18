@@ -1,7 +1,7 @@
 class Pmix < Formula
   desc "Process Management Interface for HPC environments"
-  homepage "https://openpmix.github.io/"
-  url "https://ghproxy.com/https://github.com/openpmix/openpmix/releases/download/v4.2.7/pmix-4.2.7.tar.bz2"
+  homepage "https:openpmix.github.io"
+  url "https:github.comopenpmixopenpmixreleasesdownloadv4.2.7pmix-4.2.7.tar.bz2"
   sha256 "ac9cf58a0bf01bfacd51d342100234f04c740ec14257e4492d1dd0207ff2a917"
   license "BSD-3-Clause"
 
@@ -21,7 +21,7 @@ class Pmix < Formula
   end
 
   head do
-    url "https://github.com/openpmix/openpmix.git", branch: "master"
+    url "https:github.comopenpmixopenpmix.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,7 +37,7 @@ class Pmix < Formula
   def install
     # Avoid references to the Homebrew shims directory
     cc = OS.linux? ? "gcc" : ENV.cc
-    inreplace "src/tools/pmix_info/support.c", "PMIX_CC_ABSOLUTE", "\"#{cc}\""
+    inreplace "srctoolspmix_infosupport.c", "PMIX_CC_ABSOLUTE", "\"#{cc}\""
 
     args = %W[
       --disable-silent-rules
@@ -48,13 +48,13 @@ class Pmix < Formula
       --with-sge
     ]
 
-    system "./autogen.pl", "--force" if build.head?
-    system "./configure", *args, *std_configure_args
+    system ".autogen.pl", "--force" if build.head?
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <pmix.h>
 
@@ -68,8 +68,8 @@ class Pmix < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpmix", "-o", "test"
-    system "./test"
+    system ".test"
 
-    assert_match "PMIX: #{version}", shell_output("#{bin}/pmix_info --pretty-print")
+    assert_match "PMIX: #{version}", shell_output("#{bin}pmix_info --pretty-print")
   end
 end

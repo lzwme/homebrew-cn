@@ -2,11 +2,11 @@ class Pyinstaller < Formula
   include Language::Python::Virtualenv
 
   desc "Bundle a Python application and all its dependencies"
-  homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/5c/b5/79e53c645c3f458cde165493ed71c1cac478fce67f204ad6ecca48b47440/pyinstaller-6.3.0.tar.gz"
+  homepage "https:pyinstaller.org"
+  url "https:files.pythonhosted.orgpackages5cb579e53c645c3f458cde165493ed71c1cac478fce67f204ad6ecca48b47440pyinstaller-6.3.0.tar.gz"
   sha256 "914d4c96cc99472e37ac552fdd82fbbe09e67bb592d0717fcffaa99ea74273df"
   license "GPL-2.0-or-later"
-  head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
+  head "https:github.compyinstallerpyinstaller.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b72481dddaba2d38a5ca2e7753005e3232ef497688efc84d888f2a4178391a9f"
@@ -23,37 +23,37 @@ class Pyinstaller < Formula
   depends_on "python@3.12"
 
   resource "altgraph" do
-    url "https://files.pythonhosted.org/packages/de/a8/7145824cf0b9e3c28046520480f207df47e927df83aa9555fb47f8505922/altgraph-0.17.4.tar.gz"
+    url "https:files.pythonhosted.orgpackagesdea87145824cf0b9e3c28046520480f207df47e927df83aa9555fb47f8505922altgraph-0.17.4.tar.gz"
     sha256 "1b5afbb98f6c4dcadb2e2ae6ab9fa994bbb8c1d75f4fa96d340f9437ae454406"
   end
 
   resource "macholib" do
-    url "https://files.pythonhosted.org/packages/95/ee/af1a3842bdd5902ce133bd246eb7ffd4375c38642aeb5dc0ae3a0329dfa2/macholib-1.16.3.tar.gz"
+    url "https:files.pythonhosted.orgpackages95eeaf1a3842bdd5902ce133bd246eb7ffd4375c38642aeb5dc0ae3a0329dfa2macholib-1.16.3.tar.gz"
     sha256 "07ae9e15e8e4cd9a788013d81f5908b3609aa76f9b1421bae9c4d7606ec86a30"
   end
 
   resource "pyinstaller-hooks-contrib" do
-    url "https://files.pythonhosted.org/packages/3d/e0/d41437880dc87abfc28cb6ae965d113dfd9d7151ef61223b71488062a114/pyinstaller-hooks-contrib-2023.10.tar.gz"
+    url "https:files.pythonhosted.orgpackages3de0d41437880dc87abfc28cb6ae965d113dfd9d7151ef61223b71488062a114pyinstaller-hooks-contrib-2023.10.tar.gz"
     sha256 "4b4a998036abb713774cb26534ca06b7e6e09e4c628196017a10deb11a48747f"
   end
 
   def install
     cd "bootloader" do
-      system "python3.12", "./waf", "all", "--no-universal2", "STRIP=/usr/bin/strip"
+      system "python3.12", ".waf", "all", "--no-universal2", "STRIP=usrbinstrip"
     end
     virtualenv_install_with_resources
   end
 
   test do
-    (testpath/"easy_install.py").write <<~EOS
+    (testpath"easy_install.py").write <<~EOS
       """Run the EasyInstall command"""
 
       if __name__ == '__main__':
           from setuptools.command.easy_install import main
           main()
     EOS
-    system bin/"pyinstaller", "-F", "--distpath=#{testpath}/dist", "--workpath=#{testpath}/build",
-                              "#{testpath}/easy_install.py"
-    assert_predicate testpath/"dist/easy_install", :exist?
+    system bin"pyinstaller", "-F", "--distpath=#{testpath}dist", "--workpath=#{testpath}build",
+                              "#{testpath}easy_install.py"
+    assert_predicate testpath"disteasy_install", :exist?
   end
 end

@@ -1,14 +1,14 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
-  homepage "https://flix.dev/"
-  url "https://ghproxy.com/https://github.com/flix/flix/archive/refs/tags/v0.42.0.tar.gz"
+  homepage "https:flix.dev"
+  url "https:github.comflixflixarchiverefstagsv0.42.0.tar.gz"
   sha256 "e112648588b669f4b3b92eee51455dfd491e20501104313d62f3af6cb91b4f2e"
   license "Apache-2.0"
-  head "https://github.com/flix/flix.git", branch: "master"
+  head "https:github.comflixflix.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?\.?(\d+(?:\.\d+)+)$/i)
+    regex(^v?\.?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,14 +26,14 @@ class Flix < Formula
   depends_on "openjdk"
 
   def install
-    system Formula["gradle"].bin/"gradle", "build", "jar"
-    prefix.install "build/libs/flix-#{version}.jar"
-    bin.write_jar_script prefix/"flix-#{version}.jar", "flix"
+    system Formula["gradle"].bin"gradle", "build", "jar"
+    prefix.install "buildlibsflix-#{version}.jar"
+    bin.write_jar_script prefix"flix-#{version}.jar", "flix"
   end
 
   test do
-    system bin/"flix", "init"
-    assert_match "Hello World!", shell_output("#{bin}/flix run")
-    assert_match "Running 1 tests...", shell_output("#{bin}/flix test 2>&1")
+    system bin"flix", "init"
+    assert_match "Hello World!", shell_output("#{bin}flix run")
+    assert_match "Running 1 tests...", shell_output("#{bin}flix test 2>&1")
   end
 end

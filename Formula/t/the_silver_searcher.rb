@@ -1,10 +1,10 @@
 class TheSilverSearcher < Formula
   desc "Code-search similar to ack"
-  homepage "https://github.com/ggreer/the_silver_searcher"
-  url "https://ghproxy.com/https://github.com/ggreer/the_silver_searcher/archive/refs/tags/2.2.0.tar.gz"
+  homepage "https:github.comggreerthe_silver_searcher"
+  url "https:github.comggreerthe_silver_searcherarchiverefstags2.2.0.tar.gz"
   sha256 "6a0a19ca5e73b2bef9481c29a508d2413ca1a0a9a5a6b1bd9bbd695a7626cbf9"
   license "Apache-2.0"
-  head "https://github.com/ggreer/the_silver_searcher.git", branch: "master"
+  head "https:github.comggreerthe_silver_searcher.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fb4b711bc05b5c42950dffd4b21b867989524a9f8ee0ff91da42c09dbbf2fce2"
@@ -32,7 +32,7 @@ class TheSilverSearcher < Formula
   def install
     # Stable tarball does not include pre-generated configure script
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make"
     system "make", "install"
@@ -41,7 +41,7 @@ class TheSilverSearcher < Formula
   end
 
   test do
-    (testpath/"Hello.txt").write("Hello World!")
-    system "#{bin}/ag", "Hello World!", testpath
+    (testpath"Hello.txt").write("Hello World!")
+    system "#{bin}ag", "Hello World!", testpath
   end
 end

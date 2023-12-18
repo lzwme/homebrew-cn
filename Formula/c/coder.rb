@@ -1,7 +1,7 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
-  homepage "https://coder.com"
-  url "https://ghproxy.com/https://github.com/coder/coder/archive/refs/tags/v2.5.1.tar.gz"
+  homepage "https:coder.com"
+  url "https:github.comcodercoderarchiverefstagsv2.5.1.tar.gz"
   sha256 "21b1dc6192eeb8282ac70f316b9ddf23565f8229b2577b130f4e0801adc5d0e4"
   license "AGPL-3.0-only"
 
@@ -20,18 +20,18 @@ class Coder < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/coder/coder/v2/buildinfo.tag=#{version}
-      -X github.com/coder/coder/v2/buildinfo.agpl=true
+      -X github.comcodercoderv2buildinfo.tag=#{version}
+      -X github.comcodercoderv2buildinfo.agpl=true
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "slim", "./cmd/coder"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "slim", ".cmdcoder"
   end
 
   test do
-    version_output = shell_output("#{bin}/coder version")
+    version_output = shell_output("#{bin}coder version")
     assert_match version.to_s, version_output
     assert_match "AGPL", version_output
     assert_match "Slim build", version_output
 
-    assert_match "You are not logged in", shell_output("#{bin}/coder netcheck 2>&1", 1)
+    assert_match "You are not logged in", shell_output("#{bin}coder netcheck 2>&1", 1)
   end
 end

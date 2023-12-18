@@ -1,7 +1,7 @@
 class GitLfs < Formula
   desc "Git extension for versioning large files"
-  homepage "https://git-lfs.github.com/"
-  url "https://ghproxy.com/https://github.com/git-lfs/git-lfs/releases/download/v3.4.1/git-lfs-v3.4.1.tar.gz"
+  homepage "https:git-lfs.github.com"
+  url "https:github.comgit-lfsgit-lfsreleasesdownloadv3.4.1git-lfs-v3.4.1.tar.gz"
   sha256 "89acbe51799c5d7bdf6d8e6704fcd1a07735ee7d1ed67a0bc646a5d9a9d1099f"
   license "MIT"
 
@@ -25,13 +25,13 @@ class GitLfs < Formula
     ENV["VERSION"] = version
 
     system "make"
-    system "make", "man", "RONN=#{Formula["ronn"].bin}/ronn"
+    system "make", "man", "RONN=#{Formula["ronn"].bin}ronn"
 
-    bin.install "bin/git-lfs"
-    man1.install Dir["man/man1/*.1"]
-    man5.install Dir["man/man5/*.5"]
-    man7.install Dir["man/man7/*.7"]
-    doc.install Dir["man/html/*.html"]
+    bin.install "bingit-lfs"
+    man1.install Dir["manman1*.1"]
+    man5.install Dir["manman5*.5"]
+    man7.install Dir["manman7*.7"]
+    doc.install Dir["manhtml*.html"]
   end
 
   def caveats
@@ -49,6 +49,6 @@ class GitLfs < Formula
   test do
     system "git", "init"
     system "git", "lfs", "track", "test"
-    assert_match(/^test filter=lfs/, File.read(".gitattributes"))
+    assert_match(^test filter=lfs, File.read(".gitattributes"))
   end
 end

@@ -1,16 +1,16 @@
 class ClickhouseOdbc < Formula
   desc "Official ODBC driver implementation for accessing ClickHouse as a data source"
-  homepage "https://github.com/ClickHouse/clickhouse-odbc#readme"
-  url "https://github.com/ClickHouse/clickhouse-odbc.git",
+  homepage "https:github.comClickHouseclickhouse-odbc#readme"
+  url "https:github.comClickHouseclickhouse-odbc.git",
       tag:      "v1.2.1.20220905",
       revision: "fab6efc57d671155c3a386f49884666b2a02c7b7"
   license "Apache-2.0"
   revision 4
-  head "https://github.com/ClickHouse/clickhouse-odbc.git", branch: "master"
+  head "https:github.comClickHouseclickhouse-odbc.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class ClickhouseOdbc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d6e08e8ba3cdeff98402a304e88bc44c416081b13aa0147d9ab9c82e6404982"
   end
 
-  # https://github.com/facebook/folly/issues/1867
+  # https:github.comfacebookfollyissues1867
   deprecate! date:    "2023-06-15",
              because: "vendors an old version of folly that is incompatible with new versions of libc++"
 
@@ -45,7 +45,7 @@ class ClickhouseOdbc < Formula
 
   def install
     # Remove bundled libraries excluding required bundled `folly` headers
-    %w[googletest nanodbc poco ssl].each { |l| (buildpath/"contrib"/l).rmtree }
+    %w[googletest nanodbc poco ssl].each { |l| (buildpath"contrib"l).rmtree }
 
     args = %W[
       -DCH_ODBC_PREFER_BUNDLED_THIRD_PARTIES=OFF
@@ -65,25 +65,25 @@ class ClickhouseOdbc < Formula
   end
 
   test do
-    (testpath/"my.odbcinst.ini").write <<~EOS
+    (testpath"my.odbcinst.ini").write <<~EOS
       [ODBC Drivers]
       ClickHouse ODBC Test Driver A = Installed
       ClickHouse ODBC Test Driver W = Installed
 
       [ClickHouse ODBC Test Driver A]
       Description = ODBC Driver for ClickHouse (ANSI)
-      Driver      = #{lib/shared_library("libclickhouseodbc")}
-      Setup       = #{lib/shared_library("libclickhouseodbc")}
+      Driver      = #{libshared_library("libclickhouseodbc")}
+      Setup       = #{libshared_library("libclickhouseodbc")}
       UsageCount  = 1
 
       [ClickHouse ODBC Test Driver W]
       Description = ODBC Driver for ClickHouse (Unicode)
-      Driver      = #{lib/shared_library("libclickhouseodbcw")}
-      Setup       = #{lib/shared_library("libclickhouseodbcw")}
+      Driver      = #{libshared_library("libclickhouseodbcw")}
+      Setup       = #{libshared_library("libclickhouseodbcw")}
       UsageCount  = 1
     EOS
 
-    (testpath/"my.odbc.ini").write <<~EOS
+    (testpath"my.odbc.ini").write <<~EOS
       [ODBC Data Sources]
       ClickHouse ODBC Test DSN A = ClickHouse ODBC Test Driver A
       ClickHouse ODBC Test DSN W = ClickHouse ODBC Test Driver W
@@ -91,32 +91,32 @@ class ClickhouseOdbc < Formula
       [ClickHouse ODBC Test DSN A]
       Driver      = ClickHouse ODBC Test Driver A
       Description = DSN for ClickHouse ODBC Test Driver (ANSI)
-      Url         = https://default:password@example.com:8443/query?database=default
+      Url         = https:default:password@example.com:8443query?database=default
 
       [ClickHouse ODBC Test DSN W]
       Driver      = ClickHouse ODBC Test Driver W
       Description = DSN for ClickHouse ODBC Test Driver (Unicode)
-      Url         = https://default:password@example.com:8443/query?database=default
+      Url         = https:default:password@example.com:8443query?database=default
     EOS
 
     ENV["ODBCSYSINI"] = testpath
     ENV["ODBCINSTINI"] = "my.odbcinst.ini"
-    ENV["ODBCINI"] = "#{ENV["ODBCSYSINI"]}/my.odbc.ini"
+    ENV["ODBCINI"] = "#{ENV["ODBCSYSINI"]}my.odbc.ini"
 
     if OS.mac?
-      ENV["ODBCINSTINI"] = "#{ENV["ODBCSYSINI"]}/#{ENV["ODBCINSTINI"]}"
+      ENV["ODBCINSTINI"] = "#{ENV["ODBCSYSINI"]}#{ENV["ODBCINSTINI"]}"
 
       assert_match "SQL>",
-        pipe_output("#{Formula["libiodbc"].bin}/iodbctest 'DSN=ClickHouse ODBC Test DSN A'", "exit\n")
+        pipe_output("#{Formula["libiodbc"].bin}iodbctest 'DSN=ClickHouse ODBC Test DSN A'", "exit\n")
 
       assert_match "SQL>",
-        pipe_output("#{Formula["libiodbc"].bin}/iodbctestw 'DSN=ClickHouse ODBC Test DSN W'", "exit\n")
+        pipe_output("#{Formula["libiodbc"].bin}iodbctestw 'DSN=ClickHouse ODBC Test DSN W'", "exit\n")
     elsif OS.linux?
       assert_match "Connected!",
-        pipe_output("#{Formula["unixodbc"].bin}/isql 'ClickHouse ODBC Test DSN A'", "quit\n")
+        pipe_output("#{Formula["unixodbc"].bin}isql 'ClickHouse ODBC Test DSN A'", "quit\n")
 
       assert_match "Connected!",
-        pipe_output("#{Formula["unixodbc"].bin}/iusql 'ClickHouse ODBC Test DSN W'", "quit\n")
+        pipe_output("#{Formula["unixodbc"].bin}iusql 'ClickHouse ODBC Test DSN W'", "quit\n")
     end
   end
 end

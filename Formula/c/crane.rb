@@ -1,7 +1,7 @@
 class Crane < Formula
   desc "Tool for interacting with remote images and registries"
-  homepage "https://github.com/google/go-containerregistry"
-  url "https://ghproxy.com/https://github.com/google/go-containerregistry/archive/refs/tags/v0.17.0.tar.gz"
+  homepage "https:github.comgooglego-containerregistry"
+  url "https:github.comgooglego-containerregistryarchiverefstagsv0.17.0.tar.gz"
   sha256 "6f43e3b70d855e59303cc1c58ed0a748c3fc09ffe16db7808932fa3d75858f7f"
   license "Apache-2.0"
 
@@ -20,16 +20,16 @@ class Crane < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/google/go-containerregistry/cmd/crane/cmd.Version=#{version}
+      -X github.comgooglego-containerregistrycmdcranecmd.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/crane"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcrane"
 
-    generate_completions_from_executable(bin/"crane", "completion")
+    generate_completions_from_executable(bin"crane", "completion")
   end
 
   test do
-    json_output = shell_output("#{bin}/crane manifest gcr.io/go-containerregistry/crane")
+    json_output = shell_output("#{bin}crane manifest gcr.iogo-containerregistrycrane")
     manifest = JSON.parse(json_output)
     assert_equal manifest["schemaVersion"], 2
   end

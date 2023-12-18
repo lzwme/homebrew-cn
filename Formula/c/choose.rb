@@ -2,12 +2,12 @@ class Choose < Formula
   include Language::Python::Shebang
 
   desc "Make choices on the command-line"
-  homepage "https://github.com/geier/choose"
-  url "https://ghproxy.com/https://github.com/geier/choose/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https:github.comgeierchoose"
+  url "https:github.comgeierchoosearchiverefstagsv0.1.0.tar.gz"
   sha256 "d09a679920480e66bff36c76dd4d33e8ad739a53eace505d01051c114a829633"
   license "MIT"
   revision 4
-  head "https://github.com/geier/choose.git", branch: "master"
+  head "https:github.comgeierchoose.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -27,29 +27,29 @@ class Choose < Formula
   conflicts_with "choose-rust", because: "both install a `choose` binary"
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/5f/cf/2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25d/urwid-2.2.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages5fcf2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25durwid-2.2.2.tar.gz"
     sha256 "5f83b241c1cbf3ec6c4b8c6b908127e0c9ad7481c5d3145639524157fc4e1744"
   end
 
   def install
     python3 = "python3.12"
-    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
+    ENV.prepend_create_path "PYTHONPATH", libexecLanguage::Python.site_packages(python3)
 
     resource("urwid").stage do
       system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
     end
 
     bin.install "choose"
-    rewrite_shebang detected_python_shebang, bin/"choose"
-    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
+    rewrite_shebang detected_python_shebang, bin"choose"
+    bin.env_script_all_files(libexec"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do
-    assert_predicate bin/"choose", :executable?
+    assert_predicate bin"choose", :executable?
 
-    # [Errno 6] No such device or address: '/dev/tty'
+    # [Errno 6] No such device or address: 'devtty'
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_equal "homebrew-test", pipe_output("#{bin}/choose", "homebrew-test\n").strip
+    assert_equal "homebrew-test", pipe_output("#{bin}choose", "homebrew-test\n").strip
   end
 end

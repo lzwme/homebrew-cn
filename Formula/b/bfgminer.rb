@@ -1,10 +1,10 @@
 class Bfgminer < Formula
-  desc "Modular CPU/GPU/ASIC/FPGA miner written in C"
-  homepage "http://bfgminer.org"
-  url "http://bfgminer.org/files/latest/bfgminer-5.5.0.txz"
+  desc "Modular CPUGPUASICFPGA miner written in C"
+  homepage "http:bfgminer.org"
+  url "http:bfgminer.orgfileslatestbfgminer-5.5.0.txz"
   sha256 "ac254da9a40db375cb25cacdd2f84f95ffd7f442e31d2b9a7f357a48d32cc681"
   license "GPL-3.0-or-later"
-  head "https://github.com/luke-jr/bfgminer.git", branch: "bfgminer"
+  head "https:github.comluke-jrbfgminer.git", branch: "bfgminer"
 
   bottle do
     sha256 arm64_ventura:  "b45669226e0d2a3155e437d643ef700ff143ce071dd3c4affce7a80ef24ab568"
@@ -38,13 +38,13 @@ class Bfgminer < Formula
       --enable-bitmain
       --enable-alchemist
     ]
-    configure_args << "--with-udevrulesdir=#{lib}/udev" if OS.linux?
+    configure_args << "--with-udevrulesdir=#{lib}udev" if OS.linux?
 
-    system "./configure", *configure_args
+    system ".configure", *configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "Work items generated", shell_output("bash -c \"#{bin}/bfgminer --benchmark 2>/dev/null <<< q\"")
+    assert_match "Work items generated", shell_output("bash -c \"#{bin}bfgminer --benchmark 2>devnull <<< q\"")
   end
 end

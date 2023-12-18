@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class ProtocGenGrpcWeb < Formula
   desc "Protoc plugin that generates code for gRPC-Web clients"
-  homepage "https://github.com/grpc/grpc-web"
-  url "https://ghproxy.com/https://github.com/grpc/grpc-web/archive/refs/tags/1.5.0.tar.gz"
+  homepage "https:github.comgrpcgrpc-web"
+  url "https:github.comgrpcgrpc-webarchiverefstags1.5.0.tar.gz"
   sha256 "d3043633f1c284288e98e44c802860ca7203c7376b89572b5f5a9e376c2392d5"
   license "Apache-2.0"
 
@@ -27,8 +27,8 @@ class ProtocGenGrpcWeb < Formula
     system "make", "install-plugin", "PREFIX=#{prefix}"
 
     # Remove these two lines when this formula depends on unversioned `protobuf`.
-    libexec.install bin/"protoc-gen-grpc-web"
-    (bin/"protoc-gen-grpc-web").write_env_script libexec/"protoc-gen-grpc-web",
+    libexec.install bin"protoc-gen-grpc-web"
+    (bin"protoc-gen-grpc-web").write_env_script libexec"protoc-gen-grpc-web",
                                                  PATH: "#{Formula["protobuf@3"].opt_bin}:${PATH}"
   end
 
@@ -52,20 +52,20 @@ class ProtocGenGrpcWeb < Formula
         rpc RunTest(Test) returns (TestResult);
       }
     EOS
-    (testpath/"test.proto").write testdata
-    system "protoc", "test.proto", "--plugin=#{bin}/protoc-gen-grpc-web",
+    (testpath"test.proto").write testdata
+    system "protoc", "test.proto", "--plugin=#{bin}protoc-gen-grpc-web",
                      "--js_out=import_style=commonjs:.",
                      "--grpc-web_out=import_style=typescript,mode=grpcwebtext:."
 
     # Now see if we can import them.
     testts = <<~EOS
       import * as grpcWeb from 'grpc-web';
-      import {TestServiceClient} from './TestServiceClientPb';
-      import {Test, TestResult} from './test_pb';
+      import {TestServiceClient} from '.TestServiceClientPb';
+      import {Test, TestResult} from '.test_pb';
     EOS
-    (testpath/"test.ts").write testts
-    system "npm", "install", *Language::Node.local_npm_install_args, "grpc-web", "@types/google-protobuf"
-    # Specify including lib for `tsc` since `es6` is required for `@types/google-protobuf`.
+    (testpath"test.ts").write testts
+    system "npm", "install", *Language::Node.local_npm_install_args, "grpc-web", "@typesgoogle-protobuf"
+    # Specify including lib for `tsc` since `es6` is required for `@typesgoogle-protobuf`.
     system "tsc", "--lib", "es6", "test.ts"
   end
 end

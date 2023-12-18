@@ -1,10 +1,10 @@
 class Urlfinder < Formula
   desc "Extracting URLs and subdomains from JS files on a website"
-  homepage "https://github.com/pingc0y/URLFinder"
-  url "https://ghproxy.com/https://github.com/pingc0y/URLFinder/archive/refs/tags/2023.9.9.tar.gz"
+  homepage "https:github.compingc0yURLFinder"
+  url "https:github.compingc0yURLFinderarchiverefstags2023.9.9.tar.gz"
   sha256 "033944c58814547d240182daf8506bdf6cd0cd54b25a57212a87e2e70ec92bc7"
   license "MIT"
-  head "https://github.com/pingc0y/URLFinder.git", branch: "master"
+  head "https:github.compingc0yURLFinder.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2696316763f9ba4efd365b8d76c62ff87a417b4b06aa1cc566da1f4f2b01faf8"
@@ -25,7 +25,7 @@ class Urlfinder < Formula
   end
 
   test do
-    assert_match "Start 1 Spider...", shell_output("#{bin}/urlfinder -u https://example.com")
-    assert_match version.to_s, shell_output("#{bin}/urlfinder version")
+    assert_match "Start 1 Spider...", shell_output("#{bin}urlfinder -u https:example.com")
+    assert_match version.to_s, shell_output("#{bin}urlfinder version")
   end
 end

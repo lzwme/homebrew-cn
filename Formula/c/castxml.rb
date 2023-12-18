@@ -1,15 +1,15 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
-  homepage "https://github.com/CastXML/CastXML"
-  url "https://ghproxy.com/https://github.com/CastXML/CastXML/archive/refs/tags/v0.6.2.tar.gz"
+  homepage "https:github.comCastXMLCastXML"
+  url "https:github.comCastXMLCastXMLarchiverefstagsv0.6.2.tar.gz"
   sha256 "9bb108de1b3348a257be5b08a9f8418f89fdcd4af2e6ee271d68b0203ac75d5e"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/CastXML/castxml.git", branch: "master"
+  head "https:github.comCastXMLcastxml.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -35,12 +35,12 @@ class Castxml < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       int main() {
         return 0;
       }
     EOS
-    system bin/"castxml", "-c", "-x", "c++", "--castxml-cc-gnu", ENV.cxx,
+    system bin"castxml", "-c", "-x", "c++", "--castxml-cc-gnu", ENV.cxx,
                           "--castxml-gccxml", "-o", "test.xml", "test.cpp"
   end
 end

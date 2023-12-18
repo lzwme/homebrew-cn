@@ -1,10 +1,10 @@
 class Osm2pgsql < Formula
   desc "OpenStreetMap data to PostgreSQL converter"
-  homepage "https://osm2pgsql.org"
-  url "https://ghproxy.com/https://github.com/openstreetmap/osm2pgsql/archive/refs/tags/1.10.0.tar.gz"
+  homepage "https:osm2pgsql.org"
+  url "https:github.comopenstreetmaposm2pgsqlarchiverefstags1.10.0.tar.gz"
   sha256 "33849d8edacbca5ab5492fed32ac954de14f92ab6b3028c03ef88bb7ab596d20"
   license "GPL-2.0-only"
-  head "https://github.com/openstreetmap/osm2pgsql.git", branch: "master"
+  head "https:github.comopenstreetmaposm2pgsql.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "acea4b76321ad63f5affa3195e25e5e9a0886c3898ad2cfcc332dd40ed10e6a8"
@@ -30,8 +30,8 @@ class Osm2pgsql < Formula
   def install
     # This is essentially a CMake disrespects superenv problem
     # rather than an upstream issue to handle.
-    lua_version = Formula["lua"].version.to_s.match(/\d\.\d/)
-    inreplace "cmake/FindLua.cmake", /set\(LUA_VERSIONS5( \d\.\d)+\)/,
+    lua_version = Formula["lua"].version.to_s.match(\d\.\d)
+    inreplace "cmakeFindLua.cmake", set\(LUA_VERSIONS5( \d\.\d)+\),
                                      "set(LUA_VERSIONS5 #{lua_version})"
 
     args = %w[
@@ -46,6 +46,6 @@ class Osm2pgsql < Formula
 
   test do
     assert_match "Connecting to database failed: connection to server",
-                 shell_output("#{bin}/osm2pgsql /dev/null 2>&1", 1)
+                 shell_output("#{bin}osm2pgsql devnull 2>&1", 1)
   end
 end

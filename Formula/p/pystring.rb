@@ -1,10 +1,10 @@
 class Pystring < Formula
   desc "Collection of C++ functions for the interface of Python's string class methods"
-  homepage "https://github.com/imageworks/pystring"
-  url "https://ghproxy.com/https://github.com/imageworks/pystring/archive/refs/tags/v1.1.4.tar.gz"
+  homepage "https:github.comimageworkspystring"
+  url "https:github.comimageworkspystringarchiverefstagsv1.1.4.tar.gz"
   sha256 "49da0fe2a049340d3c45cce530df63a2278af936003642330287b68cefd788fb"
   license "BSD-3-Clause"
-  head "https://github.com/imageworks/pystring.git", branch: "master"
+  head "https:github.comimageworkspystring.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c26e8b819cc438eca6d9cbc63695d5de3946e8593e2a6ae7a80dad9f00755291"
@@ -29,8 +29,8 @@ class Pystring < Formula
   end
 
   test do
-    system ENV.cxx, pkgshare/"test.cpp", "-I#{include}", "-I#{pkgshare}", "-L#{lib}",
+    system ENV.cxx, pkgshare"test.cpp", "-I#{include}", "-I#{pkgshare}", "-L#{lib}",
                     "-lpystring", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

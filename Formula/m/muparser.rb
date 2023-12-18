@@ -1,10 +1,10 @@
 class Muparser < Formula
   desc "C++ math expression parser library"
-  homepage "https://github.com/beltoforion/muparser"
-  url "https://ghproxy.com/https://github.com/beltoforion/muparser/archive/refs/tags/v2.3.4.tar.gz"
+  homepage "https:github.combeltoforionmuparser"
+  url "https:github.combeltoforionmuparserarchiverefstagsv2.3.4.tar.gz"
   sha256 "0c3fa54a3ebf36dda0ed3e7cd5451c964afbb15102bdbcba08aafb359a290121"
   license "BSD-2-Clause"
-  head "https://github.com/beltoforion/muparser.git", branch: "master"
+  head "https:github.combeltoforionmuparser.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "badcf6bec2378a87e78207e2b378d525a75ce0fc3511e47c7dc10fc8e5ed5fbb"
@@ -30,7 +30,7 @@ class Muparser < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include "muParser.h"
 
@@ -52,7 +52,7 @@ class Muparser < Formula
 
           for (std::size_t a=0; a<100; ++a)
           {
-            fVal = a;  // Change value of variable a
+            fVal = a;   Change value of variable a
             std::cout << p.Eval() << std::endl;
           }
         }
@@ -64,8 +64,8 @@ class Muparser < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "-I#{include}",
-           testpath/"test.cpp", "-L#{lib}", "-lmuparser",
-           "-o", testpath/"test"
-    system "./test"
+           testpath"test.cpp", "-L#{lib}", "-lmuparser",
+           "-o", testpath"test"
+    system ".test"
   end
 end

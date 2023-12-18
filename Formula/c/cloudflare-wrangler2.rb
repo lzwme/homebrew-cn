@@ -1,11 +1,11 @@
-require "language/node"
+require "languagenode"
 
 class CloudflareWrangler2 < Formula
   include Language::Node::Shebang
 
   desc "CLI tool for Cloudflare Workers"
-  homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-3.21.0.tgz"
+  homepage "https:github.comcloudflareworkers-sdk"
+  url "https:registry.npmjs.orgwrangler-wrangler-3.21.0.tgz"
   sha256 "bca38f389b5df094a16454564013d5c571bb59f46147324a1d6a33a3dd2e2240"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -25,15 +25,15 @@ class CloudflareWrangler2 < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    rewrite_shebang detected_node_shebang, *Dir["#{libexec}/lib/node_modules/**/*"]
-    bin.install_symlink Dir["#{libexec}/bin/wrangler*"]
+    rewrite_shebang detected_node_shebang, *Dir["#{libexec}libnode_modules***"]
+    bin.install_symlink Dir["#{libexec}binwrangler*"]
 
     # Replace universal binaries with their native slices
-    deuniversalize_machos libexec/"lib/node_modules/wrangler/node_modules/fsevents/fsevents.node"
+    deuniversalize_machos libexec"libnode_moduleswranglernode_modulesfseventsfsevents.node"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/wrangler -v")
-    assert_match "Required Worker name missing", shell_output("#{bin}/wrangler secret list 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}wrangler -v")
+    assert_match "Required Worker name missing", shell_output("#{bin}wrangler secret list 2>&1", 1)
   end
 end

@@ -1,11 +1,11 @@
 class PythonBuild < Formula
   desc "Simple, correct PEP 517 build frontend"
-  homepage "https://github.com/pypa/build"
-  url "https://files.pythonhosted.org/packages/98/e3/83a89a9d338317f05a68c86a2bbc9af61235bc55a0c6a749d37598fb2af1/build-1.0.3.tar.gz"
+  homepage "https:github.compypabuild"
+  url "https:files.pythonhosted.orgpackages98e383a89a9d338317f05a68c86a2bbc9af61235bc55a0c6a749d37598fb2af1build-1.0.3.tar.gz"
   sha256 "538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b"
   license "MIT"
   revision 1
-  head "https://github.com/pypa/build.git", branch: "main"
+  head "https:github.compypabuild.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e124971150ba80ab9d16393fc8459e5467cc2a830109c50aa1ea6469481a88cf"
@@ -29,7 +29,7 @@ class PythonBuild < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
@@ -42,14 +42,14 @@ class PythonBuild < Formula
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import build"
     end
 
     stable.stage do
-      system bin/"pyproject-build"
-      assert_predicate Pathname.pwd/"dist/build-#{stable.version}.tar.gz", :exist?
-      assert_predicate Pathname.pwd/"dist/build-#{stable.version}-py3-none-any.whl", :exist?
+      system bin"pyproject-build"
+      assert_predicate Pathname.pwd"distbuild-#{stable.version}.tar.gz", :exist?
+      assert_predicate Pathname.pwd"distbuild-#{stable.version}-py3-none-any.whl", :exist?
     end
   end
 end

@@ -1,15 +1,15 @@
 class Powerman < Formula
   desc "Control (remotely and in parallel) switched power distribution units"
-  homepage "https://github.com/chaos/powerman"
+  homepage "https:github.comchaospowerman"
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://ghproxy.com/https://github.com/chaos/powerman/releases/download/v2.3.27/powerman-2.3.27.tar.gz"
+    url "https:github.comchaospowermanreleasesdownloadv2.3.27powerman-2.3.27.tar.gz"
     sha256 "1575f0c2cc49ba14482582b9bbba19e95496434f95d52de6ad2412e66200d2d8"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
@@ -28,7 +28,7 @@ class Powerman < Formula
   end
 
   head do
-    url "https://github.com/chaos/powerman.git", branch: "master"
+    url "https:github.comchaospowerman.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -38,8 +38,8 @@ class Powerman < Formula
   depends_on "curl"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--localstatedir=#{var}",
                           "--with-httppower",
@@ -51,6 +51,6 @@ class Powerman < Formula
   end
 
   test do
-    system "#{sbin}/powermand", "-h"
+    system "#{sbin}powermand", "-h"
   end
 end

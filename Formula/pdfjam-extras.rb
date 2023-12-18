@@ -1,8 +1,8 @@
 class PdfjamExtras < Formula
   desc "Wrapper scripts for pdfjam"
-  homepage "https://github.com/rrthomas/pdfjam-extras"
+  homepage "https:github.comrrthomaspdfjam-extras"
   license "GPL-2.0"
-  head "https://github.com/rrthomas/pdfjam-extras.git", branch: "master"
+  head "https:github.comrrthomaspdfjam-extras.git", branch: "master"
 
   livecheck do
     skip "head-only formula"
@@ -11,11 +11,11 @@ class PdfjamExtras < Formula
   depends_on "pdfjam"
 
   def install
-    bin.install Dir["bin/*"]
+    bin.install Dir["bin*"]
     man.install "man1"
   end
 
   test do
-    system "#{bin}/pdfnup", "-h"
+    system "#{bin}pdfnup", "-h"
   end
 end

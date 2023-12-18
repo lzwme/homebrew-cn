@@ -22,36 +22,36 @@ cask "iterm2" do
 
     livecheck do
       # workaround for
-      # - https://github.com/Homebrew/homebrew-cask/pull/104019
-      # - https://github.com/gnachman/iterm2-website/issues/82
-      # url "https://iterm2.com/appcasts/final_modern.xml"
-      url "https://ghproxy.com/https://raw.githubusercontent.com/gnachman/iterm2-website/master/source/appcasts/final_modern.xml"
+      # - https:github.comHomebrewhomebrew-caskpull104019
+      # - https:github.comgnachmaniterm2-websiteissues82
+      # url "https:iterm2.comappcastsfinal_modern.xml"
+      url "https:raw.githubusercontent.comgnachmaniterm2-websitemastersourceappcastsfinal_modern.xml"
       strategy :sparkle
     end
   end
 
-  url "https://iterm2.com/downloads/stable/iTerm2-#{version.dots_to_underscores}.zip"
+  url "https:iterm2.comdownloadsstableiTerm2-#{version.dots_to_underscores}.zip"
   name "iTerm2"
   desc "Terminal emulator as alternative to Apple's Terminal app"
-  homepage "https://www.iterm2.com/"
+  homepage "https:www.iterm2.com"
 
   auto_updates true
   conflicts_with cask: [
-    "homebrew/cask-versions/iterm2-beta",
-    "homebrew/cask-versions/iterm2-legacy",
-    "homebrew/cask-versions/iterm2-nightly",
+    "homebrewcask-versionsiterm2-beta",
+    "homebrewcask-versionsiterm2-legacy",
+    "homebrewcask-versionsiterm2-nightly",
   ]
   depends_on macos: ">= :catalina"
 
   app "iTerm.app"
 
   zap trash: [
-    "~/Library/Application Support/iTerm",
-    "~/Library/Application Support/iTerm2",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.googlecode.iterm2.sfl*",
-    "~/Library/Caches/com.googlecode.iterm2",
-    "~/Library/Cookies/com.googlecode.iterm2.binarycookies",
-    "~/Library/Preferences/com.googlecode.iterm2.plist",
-    "~/Library/Saved Application State/com.googlecode.iterm2.savedState",
+    "~LibraryApplication SupportiTerm",
+    "~LibraryApplication SupportiTerm2",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.googlecode.iterm2.sfl*",
+    "~LibraryCachescom.googlecode.iterm2",
+    "~LibraryCookiescom.googlecode.iterm2.binarycookies",
+    "~LibraryPreferencescom.googlecode.iterm2.plist",
+    "~LibrarySaved Application Statecom.googlecode.iterm2.savedState",
   ]
 end

@@ -1,15 +1,15 @@
 class Netcdf < Formula
   desc "Libraries and data formats for array-oriented scientific data"
-  homepage "https://www.unidata.ucar.edu/software/netcdf/"
-  url "https://ghproxy.com/https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.9.2.tar.gz"
+  homepage "https:www.unidata.ucar.edusoftwarenetcdf"
+  url "https:github.comUnidatanetcdf-carchiverefstagsv4.9.2.tar.gz"
   sha256 "bc104d101278c68b303359b3dc4192f81592ae8640f1aee486921138f7f88cb7"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/Unidata/netcdf-c.git", branch: "main"
+  head "https:github.comUnidatanetcdf-c.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^(?:netcdf[._-])?v?(\d+(?:\.\d+)+)$/i)
+    regex(^(?:netcdf[._-])?v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -43,15 +43,15 @@ class Netcdf < Formula
     system "cmake", "--install", "build_shared"
     system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_static/liblib/libnetcdf.a"
+    lib.install "build_staticlibliblibnetcdf.a"
 
     # Remove shim paths
-    inreplace [bin/"nc-config", lib/"pkgconfig/netcdf.pc", lib/"cmake/netCDF/netCDFConfig.cmake",
-               lib/"libnetcdf.settings"], Superenv.shims_path/ENV.cc, ENV.cc
+    inreplace [bin"nc-config", lib"pkgconfignetcdf.pc", lib"cmakenetCDFnetCDFConfig.cmake",
+               lib"libnetcdf.settings"], Superenv.shims_pathENV.cc, ENV.cc
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include "netcdf_meta.h"
       int main()
@@ -63,9 +63,9 @@ class Netcdf < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lnetcdf",
                    "-o", "test"
     if head?
-      assert_match(/^\d+(?:\.\d+)+/, `./test`)
+      assert_match(^\d+(?:\.\d+)+, `.test`)
     else
-      assert_equal version.to_s, `./test`
+      assert_equal version.to_s, `.test`
     end
   end
 end

@@ -2,10 +2,10 @@ cask "font-trykker" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/trykker/Trykker-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofltrykkerTrykker-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Trykker"
-  homepage "https://fonts.google.com/specimen/Trykker"
+  homepage "https:fonts.google.comspecimenTrykker"
 
   font "Trykker-Regular.ttf"
 

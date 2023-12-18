@@ -1,10 +1,10 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
-  homepage "https://hysteria.network/"
-  url "https://ghproxy.com/https://github.com/apernet/hysteria/archive/refs/tags/app/v2.2.2.tar.gz"
+  homepage "https:hysteria.network"
+  url "https:github.comapernethysteriaarchiverefstagsappv2.2.2.tar.gz"
   sha256 "b4088f9ea4cf1299a1c372b39a088063e57d9dde61dfdf2a3ca7f04b89bc9536"
   license "MIT"
-  head "https://github.com/apernet/hysteria.git", branch: "master"
+  head "https:github.comapernethysteria.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c9215d37580d13082b7ee495bd371d4df50d17512057c189153805b7afd36ed"
@@ -21,27 +21,27 @@ class Hysteria < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/apernet/hysteria/app/cmd.appVersion=v#{version}
-      -X github.com/apernet/hysteria/app/cmd.appDate=#{time.iso8601}
-      -X github.com/apernet/hysteria/app/cmd.appType=release
-      -X github.com/apernet/hysteria/app/cmd.appCommit=#{tap.user}
-      -X github.com/apernet/hysteria/app/cmd.appPlatform=#{OS.kernel_name.downcase}
-      -X github.com/apernet/hysteria/app/cmd.appArch=#{Hardware::CPU.arch}
+      -X github.comapernethysteriaappcmd.appVersion=v#{version}
+      -X github.comapernethysteriaappcmd.appDate=#{time.iso8601}
+      -X github.comapernethysteriaappcmd.appType=release
+      -X github.comapernethysteriaappcmd.appCommit=#{tap.user}
+      -X github.comapernethysteriaappcmd.appPlatform=#{OS.kernel_name.downcase}
+      -X github.comapernethysteriaappcmd.appArch=#{Hardware::CPU.arch}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./app"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".app"
 
-    generate_completions_from_executable(bin/"hysteria", "completion")
+    generate_completions_from_executable(bin"hysteria", "completion")
   end
 
   service do
-    run [opt_bin/"hysteria", "--config", etc/"hysteria/config.json"]
+    run [opt_bin"hysteria", "--config", etc"hysteriaconfig.json"]
     run_type :immediate
     keep_alive true
   end
 
   test do
     port = free_port
-    (testpath/"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~EOS
       listen: :#{port}
       acme:
         domains:
@@ -53,9 +53,9 @@ class Hysteria < Formula
         salamander:
           password: cry_me_a_r1ver
     EOS
-    output = shell_output("#{bin}/hysteria server --disable-update-check -c #{testpath}/config.yaml 2>&1", 1)
+    output = shell_output("#{bin}hysteria server --disable-update-check -c #{testpath}config.yaml 2>&1", 1)
     assert_match "maintenance	started background certificate maintenance", output
 
-    assert_match version.to_s, shell_output("#{bin}/hysteria version")
+    assert_match version.to_s, shell_output("#{bin}hysteria version")
   end
 end

@@ -1,7 +1,7 @@
 class Coursier < Formula
   desc "Pure Scala Artifact Fetching"
-  homepage "https://get-coursier.io/"
-  url "https://ghproxy.com/https://github.com/coursier/coursier/releases/download/v2.1.8/coursier.jar"
+  homepage "https:get-coursier.io"
+  url "https:github.comcoursiercoursierreleasesdownloadv2.1.8coursier.jar"
   sha256 "2b78bfdd3ef13fd1f42f158de0f029d7cbb1f4f652d51773445cf2b6f7918a87"
   license "Apache-2.0"
 
@@ -20,15 +20,15 @@ class Coursier < Formula
   depends_on "openjdk"
 
   def install
-    (libexec/"bin").install "coursier.jar"
-    chmod 0755, libexec/"bin/coursier.jar"
-    (bin/"coursier").write_env_script libexec/"bin/coursier.jar", Language::Java.overridable_java_home_env
+    (libexec"bin").install "coursier.jar"
+    chmod 0755, libexec"bincoursier.jar"
+    (bin"coursier").write_env_script libexec"bincoursier.jar", Language::Java.overridable_java_home_env
 
-    generate_completions_from_executable("bash", bin/"coursier", "completions", shells: [:bash, :zsh])
+    generate_completions_from_executable("bash", bin"coursier", "completions", shells: [:bash, :zsh])
   end
 
   test do
-    system bin/"coursier", "list"
-    assert_match "scalafix", shell_output("#{bin}/coursier search scalafix")
+    system bin"coursier", "list"
+    assert_match "scalafix", shell_output("#{bin}coursier search scalafix")
   end
 end

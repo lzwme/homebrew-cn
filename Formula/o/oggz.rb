@@ -1,14 +1,14 @@
 class Oggz < Formula
   desc "Command-line tool for manipulating Ogg files"
-  homepage "https://www.xiph.org/oggz/"
-  url "https://downloads.xiph.org/releases/liboggz/liboggz-1.1.1.tar.gz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/liboggz/liboggz-1.1.1.tar.gz"
+  homepage "https:www.xiph.orgoggz"
+  url "https:downloads.xiph.orgreleasesliboggzliboggz-1.1.1.tar.gz", using: :homebrew_curl
+  mirror "https:ftp.osuosl.orgpubxiphreleasesliboggzliboggz-1.1.1.tar.gz"
   sha256 "6bafadb1e0a9ae4ac83304f38621a5621b8e8e32927889e65a98706d213d415a"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://ftp.osuosl.org/pub/xiph/releases/liboggz/?C=M&O=D"
-    regex(/href=.*?liboggz[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ftp.osuosl.orgpubxiphreleasesliboggz?C=M&O=D"
+    regex(href=.*?liboggz[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,18 +33,18 @@ class Oggz < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-debug",
                           "--disable-dependency-tracking"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/oggz", "known-codecs"
+    system "#{bin}oggz", "known-codecs"
   end
 end

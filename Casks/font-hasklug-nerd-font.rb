@@ -2,10 +2,10 @@ cask "font-hasklug-nerd-font" do
   version "3.1.1"
   sha256 "a6825db98cc521dab0c18766e28c662c6f1a3ebd36e40e8b191942ad3bd439f9"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Hasklig.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hasklig.zip"
   name "Hasklug Nerd Font (Hasklig)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

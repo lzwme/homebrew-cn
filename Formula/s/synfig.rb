@@ -1,23 +1,23 @@
 class Synfig < Formula
   desc "Command-line renderer"
-  homepage "https://synfig.org/"
+  homepage "https:synfig.org"
   license "GPL-3.0-or-later"
   revision 4
 
   stable do
-    url "https://downloads.sourceforge.net/project/synfig/development/1.5.1/synfig-1.5.1.tar.gz"
-    mirror "https://ghproxy.com/https://github.com/synfig/synfig/releases/download/v1.5.1/synfig-1.5.1.tar.gz"
+    url "https:downloads.sourceforge.netprojectsynfigdevelopment1.5.1synfig-1.5.1.tar.gz"
+    mirror "https:github.comsynfigsynfigreleasesdownloadv1.5.1synfig-1.5.1.tar.gz"
     sha256 "aa91593c28a89f269be1be9c8bd9ecca6491f9e6af26744d1c160c6553ee2ced"
 
     # Apply upstream commit to fix build with ffmpeg:
-    # https://github.com/synfig/synfig/commit/f684b24f0db31ab8ea7aadc417fc23e3084b4138
+    # https:github.comsynfigsynfigcommitf684b24f0db31ab8ea7aadc417fc23e3084b4138
     # Removew with next release.
     patch :DATA
   end
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/synfig[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?synfig[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class Synfig < Formula
   end
 
   head do
-    url "https://github.com/synfig/synfig.git", branch: "master"
+    url "https:github.comsynfigsynfig.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -60,14 +60,14 @@ class Synfig < Formula
   fails_with gcc: "5"
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["intltool"].libexec"libperl5" unless OS.mac?
     ENV.cxx11
 
     if build.head?
       cd "synfig-core"
-      system "./bootstrap.sh"
+      system ".bootstrap.sh"
     end
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-boost=#{Formula["boost"].opt_prefix}",
                           "--without-jpeg"
@@ -75,9 +75,9 @@ class Synfig < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <stddef.h>
-      #include <synfig/version.h>
+      #include <synfigversion.h>
       int main(int argc, char *argv[])
       {
         const char *version = synfig::get_version();
@@ -99,26 +99,26 @@ class Synfig < Formula
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{cairo.opt_include}/cairo
-      -I#{etl.opt_include}/ETL
+      -I#{cairo.opt_include}cairo
+      -I#{etl.opt_include}ETL
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
+      -I#{freetype.opt_include}freetype2
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{glibmm.opt_include}/giomm-2.4
-      -I#{glibmm.opt_include}/glibmm-2.4
-      -I#{glibmm.opt_lib}/giomm-2.4/include
-      -I#{glibmm.opt_lib}/glibmm-2.4/include
-      -I#{include}/synfig-1.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{libsigcxx.opt_include}/sigc++-2.0
-      -I#{libsigcxx.opt_lib}/sigc++-2.0/include
-      -I#{libxmlxx.opt_include}/libxml++-2.6
-      -I#{libxmlxx.opt_lib}/libxml++-2.6/include
-      -I#{mlt.opt_include}/mlt-7
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{glibmm.opt_include}giomm-2.4
+      -I#{glibmm.opt_include}glibmm-2.4
+      -I#{glibmm.opt_lib}giomm-2.4include
+      -I#{glibmm.opt_lib}glibmm-2.4include
+      -I#{include}synfig-1.0
+      -I#{libpng.opt_include}libpng16
+      -I#{libsigcxx.opt_include}sigc++-2.0
+      -I#{libsigcxx.opt_lib}sigc++-2.0include
+      -I#{libxmlxx.opt_include}libxml++-2.6
+      -I#{libxmlxx.opt_lib}libxml++-2.6include
+      -I#{mlt.opt_include}mlt-7
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{cairo.opt_lib}
       -L#{gettext.opt_lib}
@@ -147,34 +147,34 @@ class Synfig < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end
 
 __END__
-diff --git a/src/modules/mod_libavcodec/trgt_av.cpp b/src/modules/mod_libavcodec/trgt_av.cpp
+diff --git asrcmodulesmod_libavcodectrgt_av.cpp bsrcmodulesmod_libavcodectrgt_av.cpp
 index 6baccb4..bea55cc 100644
---- a/src/modules/mod_libavcodec/trgt_av.cpp
-+++ b/src/modules/mod_libavcodec/trgt_av.cpp
+--- asrcmodulesmod_libavcodectrgt_av.cpp
++++ bsrcmodulesmod_libavcodectrgt_av.cpp
 @@ -38,6 +38,7 @@
  extern "C"
  {
  #ifdef HAVE_LIBAVFORMAT_AVFORMAT_H
-+#   include <libavcodec/avcodec.h>
- #	include <libavformat/avformat.h>
++#   include <libavcodecavcodec.h>
+ #	include <libavformatavformat.h>
  #elif defined(HAVE_AVFORMAT_H)
  #	include <avformat.h>
 @@ -232,12 +233,14 @@ public:
  		close();
 
  		if (!av_registered) {
-+#if LIBAVCODEC_VERSION_MAJOR < 59 // FFMPEG < 5.0
++#if LIBAVCODEC_VERSION_MAJOR < 59  FFMPEG < 5.0
  			av_register_all();
 +#endif
  			av_registered = true;
  		}
 
- 		// guess format
+ 		 guess format
 -		AVOutputFormat *format = av_guess_format(NULL, filename.c_str(), NULL);
 +		const AVOutputFormat *format = av_guess_format(NULL, filename.c_str(), NULL);
  		if (!format) {
@@ -184,7 +184,7 @@ index 6baccb4..bea55cc 100644
  		context = avformat_alloc_context();
  		assert(context);
  		context->oformat = format;
-+#if LIBAVCODEC_VERSION_MAJOR < 59 // FFMPEG < 5.0
++#if LIBAVCODEC_VERSION_MAJOR < 59  FFMPEG < 5.0
  		if (filename.size() + 1 > sizeof(context->filename)) {
  			synfig::error(
  				"Target_LibAVCodec: filename too long, max length is %d, filename is '%s'",

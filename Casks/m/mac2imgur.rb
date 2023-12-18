@@ -2,15 +2,15 @@ cask "mac2imgur" do
   version "226"
   sha256 "8faeb435fcb866267fa67d4b93d5fc9fb82bcfb2e959c7fcc6f59ab15fb05ccb"
 
-  url "https://ghproxy.com/https://github.com/mileswd/mac2imgur/releases/download/b#{version}/mac2imgur.zip"
+  url "https:github.commileswdmac2imgurreleasesdownloadb#{version}mac2imgur.zip"
   name "mac2imgur"
   desc "Upload images and screenshots to Imgur"
-  homepage "https://github.com/mileswd/mac2imgur"
+  homepage "https:github.commileswdmac2imgur"
 
   app "mac2imgur.app"
 
   zap trash: [
-    "~/Library/Caches/com.mileswd.mac2imgur",
-    "~/Library/Preferences/com.mileswd.mac2imgur.plist",
+    "~LibraryCachescom.mileswd.mac2imgur",
+    "~LibraryPreferencescom.mileswd.mac2imgur.plist",
   ]
 end

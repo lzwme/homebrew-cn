@@ -2,11 +2,11 @@ cask "vassal" do
   version "3.7.6"
   sha256 "bd3dff1b080bcd602df192fda1d8915d0e900655328d5cbaca0ea68ee53337fd"
 
-  url "https://ghproxy.com/https://github.com/vassalengine/vassal/releases/download/#{version}/VASSAL-#{version}-macos-universal.dmg",
-      verified: "github.com/vassalengine/vassal/"
+  url "https:github.comvassalenginevassalreleasesdownload#{version}VASSAL-#{version}-macos-universal.dmg",
+      verified: "github.comvassalenginevassal"
   name "VASSAL"
   desc "Board game engine"
-  homepage "https://www.vassalengine.org/"
+  homepage "https:www.vassalengine.org"
 
   livecheck do
     url :url
@@ -15,5 +15,5 @@ cask "vassal" do
 
   app "VASSAL.app"
 
-  zap trash: "~/Library/Application Support/VASSAL"
+  zap trash: "~LibraryApplication SupportVASSAL"
 end

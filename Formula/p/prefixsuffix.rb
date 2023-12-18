@@ -1,7 +1,7 @@
 class Prefixsuffix < Formula
   desc "GUI batch renaming utility"
-  homepage "https://github.com/murraycu/prefixsuffix"
-  url "https://download.gnome.org/sources/prefixsuffix/0.6/prefixsuffix-0.6.9.tar.xz"
+  homepage "https:github.commurraycuprefixsuffix"
+  url "https:download.gnome.orgsourcesprefixsuffix0.6prefixsuffix-0.6.9.tar.xz"
   sha256 "fc3202bddf2ebbb93ffd31fc2a079cfc05957e4bf219535f26e6d8784d859e9b"
   license "GPL-2.0-or-later"
   revision 10
@@ -28,9 +28,9 @@ class Prefixsuffix < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
     ENV.cxx11
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--disable-schemas-compile"
@@ -38,11 +38,11 @@ class Prefixsuffix < Formula
   end
 
   def post_install
-    system "#{Formula["glib"].opt_bin}/glib-compile-schemas", "#{HOMEBREW_PREFIX}/share/glib-2.0/schemas"
+    system "#{Formula["glib"].opt_bin}glib-compile-schemas", "#{HOMEBREW_PREFIX}shareglib-2.0schemas"
   end
 
   test do
     # Disable this part of the test on Linux because display is not available.
-    system "#{bin}/prefixsuffix", "--version" if OS.mac?
+    system "#{bin}prefixsuffix", "--version" if OS.mac?
   end
 end

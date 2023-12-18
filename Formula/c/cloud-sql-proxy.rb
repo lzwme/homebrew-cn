@@ -1,10 +1,10 @@
 class CloudSqlProxy < Formula
   desc "Utility for connecting securely to your Cloud SQL instances"
-  homepage "https://github.com/GoogleCloudPlatform/cloud-sql-proxy"
-  url "https://ghproxy.com/https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.8.1.tar.gz"
+  homepage "https:github.comGoogleCloudPlatformcloud-sql-proxy"
+  url "https:github.comGoogleCloudPlatformcloud-sql-proxyarchiverefstagsv2.8.1.tar.gz"
   sha256 "1886cf74f7a4f31bd4d5c7865f0fd5ca166060a0436fbae21e73cabd840b5401"
   license "Apache-2.0"
-  head "https://github.com/GoogleCloudPlatform/cloud-sql-proxy.git", branch: "main"
+  head "https:github.comGoogleCloudPlatformcloud-sql-proxy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41d0dcdee07bd06bada3ec90a979c8fa8b1e54bd3e6c681a1b0d9ee1574b1dfe"
@@ -23,7 +23,7 @@ class CloudSqlProxy < Formula
   end
 
   test do
-    assert_match "cloud-sql-proxy version #{version}", shell_output("#{bin}/cloud-sql-proxy --version")
-    assert_match "could not find default credentials", shell_output("#{bin}/cloud-sql-proxy test 2>&1", 1)
+    assert_match "cloud-sql-proxy version #{version}", shell_output("#{bin}cloud-sql-proxy --version")
+    assert_match "could not find default credentials", shell_output("#{bin}cloud-sql-proxy test 2>&1", 1)
   end
 end

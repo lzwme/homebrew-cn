@@ -2,12 +2,12 @@ cask "font-hind-kochi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/hindkochi"
+      only_path: "oflhindkochi"
   name "Hind Kochi"
-  homepage "https://fonts.google.com/specimen/Hind"
+  homepage "https:fonts.google.comspecimenHind"
 
   font "HindKochi-Bold.ttf"
   font "HindKochi-Light.ttf"

@@ -1,10 +1,10 @@
 class MathComp < Formula
   desc "Mathematical Components for the Coq proof assistant"
-  homepage "https://math-comp.github.io/math-comp/"
-  url "https://ghproxy.com/https://github.com/math-comp/math-comp/archive/refs/tags/mathcomp-1.18.0.tar.gz"
+  homepage "https:math-comp.github.iomath-comp"
+  url "https:github.commath-compmath-comparchiverefstagsmathcomp-1.18.0.tar.gz"
   sha256 "7623544e912dcee643fda4b4c89e07fc011a515fd60e976462b6cc29cd5f2d1e"
   license "CECILL-B"
-  head "https://github.com/math-comp/math-comp.git", branch: "master"
+  head "https:github.commath-compmath-comp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf9910e17e82f0da672a0ab92f12291f36fd3dc39b43321f34d37017fbdca828"
@@ -21,9 +21,9 @@ class MathComp < Formula
   depends_on "coq"
 
   def install
-    coqlib = "#{lib}/coq/"
+    coqlib = "#{lib}coq"
 
-    (buildpath/"mathcomp/Makefile.coq.local").write <<~EOS
+    (buildpath"mathcompMakefile.coq.local").write <<~EOS
       COQLIB=#{coqlib}
     EOS
 
@@ -32,25 +32,25 @@ class MathComp < Formula
       system "make", "-f", "Makefile.coq", "MAKEFLAGS=#{ENV["MAKEFLAGS"]}"
       system "make", "install", "MAKEFLAGS=#{ENV["MAKEFLAGS"]}"
 
-      elisp.install "ssreflect/pg-ssr.el"
+      elisp.install "ssreflectpg-ssr.el"
     end
 
-    doc.install Dir["docs/*"]
+    doc.install Dir["docs*"]
   end
 
   test do
-    (testpath/"testing.v").write <<~EOS
+    (testpath"testing.v").write <<~EOS
       From mathcomp Require Import ssreflect seq.
 
       Parameter T: Type.
       Theorem test (s1 s2: seq T): size (s1 ++ s2) = size s1 + size s2.
-      Proof. by elim : s1 =>//= x s1 ->. Qed.
+      Proof. by elim : s1 =>= x s1 ->. Qed.
 
       Check test.
     EOS
 
-    coqc = Formula["coq"].opt_bin/"coqc"
-    cmd = "#{coqc} -R #{lib}/coq/user-contrib/mathcomp mathcomp testing.v"
-    assert_match(/\Atest\s+: forall/, shell_output(cmd))
+    coqc = Formula["coq"].opt_bin"coqc"
+    cmd = "#{coqc} -R #{lib}coquser-contribmathcomp mathcomp testing.v"
+    assert_match(\Atest\s+: forall, shell_output(cmd))
   end
 end

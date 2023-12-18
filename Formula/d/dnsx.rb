@@ -1,10 +1,10 @@
 class Dnsx < Formula
   desc "DNS query and resolution tool"
-  homepage "https://github.com/projectdiscovery/dnsx"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/dnsx/archive/refs/tags/v1.1.6.tar.gz"
+  homepage "https:github.comprojectdiscoverydnsx"
+  url "https:github.comprojectdiscoverydnsxarchiverefstagsv1.1.6.tar.gz"
   sha256 "5fc857feceac3438ab1a3d9a577412ad153be5206887d4396247f87939be8e9c"
   license "MIT"
-  head "https://github.com/projectdiscovery/dnsx.git", branch: "master"
+  head "https:github.comprojectdiscoverydnsx.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48bbeace45b889a2291bacaa84ac74c69b2303a27a6a1a6a10e8f47e5d4395b1"
@@ -19,13 +19,13 @@ class Dnsx < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/dnsx"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmddnsx"
   end
 
   test do
-    (testpath/"domains.txt").write "docs.brew.sh"
+    (testpath"domains.txt").write "docs.brew.sh"
     expected_output = "docs.brew.sh [homebrew.github.io]"
     assert_equal expected_output,
-      shell_output("#{bin}/dnsx -silent -l #{testpath}/domains.txt -cname -resp").strip
+      shell_output("#{bin}dnsx -silent -l #{testpath}domains.txt -cname -resp").strip
   end
 end

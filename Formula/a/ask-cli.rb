@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
-  homepage "https://github.com/alexa/ask-cli"
-  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.30.6.tgz"
+  homepage "https:github.comalexaask-cli"
+  url "https:registry.npmjs.orgask-cli-ask-cli-2.30.6.tgz"
   sha256 "0847c471956e67a0defdd59f06e69fd985738ffb6581a61b74d0ad5bc0d38a33"
   license "Apache-2.0"
 
@@ -21,14 +21,14 @@ class AskCli < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.write_exec_script libexec/"bin/ask"
+    bin.write_exec_script libexec"binask"
 
     # Replace universal binaries with native slices
     deuniversalize_machos
   end
 
   test do
-    output = shell_output("#{bin}/ask deploy 2>&1", 1)
-    assert_match "File #{testpath}/.ask/cli_config not exists.", output
+    output = shell_output("#{bin}ask deploy 2>&1", 1)
+    assert_match "File #{testpath}.askcli_config not exists.", output
   end
 end

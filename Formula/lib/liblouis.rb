@@ -1,7 +1,7 @@
 class Liblouis < Formula
   desc "Open-source braille translator and back-translator"
-  homepage "https://liblouis.io"
-  url "https://ghproxy.com/https://github.com/liblouis/liblouis/releases/download/v3.28.0/liblouis-3.28.0.tar.gz"
+  homepage "https:liblouis.io"
+  url "https:github.comliblouisliblouisreleasesdownloadv3.28.0liblouis-3.28.0.tar.gz"
   sha256 "69eddef2cf2118748a1d548cab3671ba31140c37dd821a2d893d95bc2796e1b0"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
@@ -16,7 +16,7 @@ class Liblouis < Formula
   end
 
   head do
-    url "https://github.com/liblouis/liblouis.git", branch: "master"
+    url "https:github.comliblouisliblouis.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,19 +33,19 @@ class Liblouis < Formula
   end
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".autogen.sh" if build.head?
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "check"
     system "make", "install"
-    system python3, "-m", "pip", "install", *std_pip_args, "./python"
-    (prefix/"tools").install bin/"lou_maketable", bin/"lou_maketable.d"
+    system python3, "-m", "pip", "install", *std_pip_args, ".python"
+    (prefix"tools").install bin"lou_maketable", bin"lou_maketable.d"
   end
 
   test do
-    assert_equal "⠼⠙⠃", pipe_output("#{bin}/lou_translate unicode.dis,en-us-g2.ctb", "42")
+    assert_equal "⠼⠙⠃", pipe_output("#{bin}lou_translate unicode.dis,en-us-g2.ctb", "42")
 
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       import louis
       print(louis.translateString(["unicode.dis", "en-us-g2.ctb"], "42"))
     EOS

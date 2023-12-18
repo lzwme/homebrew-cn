@@ -1,7 +1,7 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
-  homepage "https://github.com/cilium/hubble"
-  url "https://ghproxy.com/https://github.com/cilium/hubble/archive/refs/tags/v0.12.3.tar.gz"
+  homepage "https:github.comciliumhubble"
+  url "https:github.comciliumhubblearchiverefstagsv0.12.3.tar.gz"
   sha256 "34d2127677dace7f4b54524dd29c9b1d0a7856ef71d45f3d48d32d00699ccd97"
   license "Apache-2.0"
 
@@ -18,13 +18,13 @@ class Hubble < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/cilium/hubble/pkg.Version=#{version}"
+    ldflags = "-s -w -X github.comciliumhubblepkg.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"hubble", "completion")
+    generate_completions_from_executable(bin"hubble", "completion")
   end
 
   test do
-    assert_match(/tls-allow-insecure:/, shell_output("#{bin}/hubble config get"))
+    assert_match(tls-allow-insecure:, shell_output("#{bin}hubble config get"))
   end
 end

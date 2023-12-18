@@ -1,11 +1,11 @@
 class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
-  homepage "https://goreleaser.com/"
-  url "https://github.com/goreleaser/goreleaser.git",
+  homepage "https:goreleaser.com"
+  url "https:github.comgoreleasergoreleaser.git",
       tag:      "v1.22.1",
       revision: "52d976beaea9ba8a5b0f09f90f22135b468c33c2"
   license "MIT"
-  head "https://github.com/goreleaser/goreleaser.git", branch: "main"
+  head "https:github.comgoreleasergoreleaser.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2f2a53167f69facf4eae312e2f373e50f6e079d1f96e0b41d34a963c81ea2b0"
@@ -30,12 +30,12 @@ class Goreleaser < Formula
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install shell completions
-    generate_completions_from_executable(bin/"goreleaser", "completion")
+    generate_completions_from_executable(bin"goreleaser", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/goreleaser -v 2>&1")
-    assert_match "config created", shell_output("#{bin}/goreleaser init --config=.goreleaser.yml 2>&1")
-    assert_predicate testpath/".goreleaser.yml", :exist?
+    assert_match version.to_s, shell_output("#{bin}goreleaser -v 2>&1")
+    assert_match "config created", shell_output("#{bin}goreleaser init --config=.goreleaser.yml 2>&1")
+    assert_predicate testpath".goreleaser.yml", :exist?
   end
 end

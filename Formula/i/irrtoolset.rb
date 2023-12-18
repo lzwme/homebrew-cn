@@ -1,14 +1,14 @@
 class Irrtoolset < Formula
   desc "Tools to work with Internet routing policies"
-  homepage "https://github.com/irrtoolset/irrtoolset"
-  url "https://ghproxy.com/https://github.com/irrtoolset/irrtoolset/archive/refs/tags/release-5.1.3.tar.gz"
+  homepage "https:github.comirrtoolsetirrtoolset"
+  url "https:github.comirrtoolsetirrtoolsetarchiverefstagsrelease-5.1.3.tar.gz"
   sha256 "a3eff14c2574f21be5b83302549d1582e509222d05f7dd8e5b68032ff6f5874a"
   license :cannot_represent
-  head "https://github.com/irrtoolset/irrtoolset.git", branch: "master"
+  head "https:github.comirrtoolsetirrtoolset.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:[._-]\d+)+)/i)
+    regex(v?(\d+(?:[._-]\d+)+)i)
     strategy :github_latest
   end
 
@@ -41,11 +41,11 @@ class Irrtoolset < Formula
 
   def install
     system "autoreconf", "-iv"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/peval", "ANY"
+    system "#{bin}peval", "ANY"
   end
 end

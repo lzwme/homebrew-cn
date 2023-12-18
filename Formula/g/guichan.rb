@@ -1,7 +1,7 @@
 class Guichan < Formula
   desc "Small, efficient C++ GUI library designed for games"
-  homepage "https://guichan.sourceforge.net/"
-  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/guichan/guichan-0.8.2.tar.gz"
+  homepage "https:guichan.sourceforge.net"
+  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comguichanguichan-0.8.2.tar.gz"
   sha256 "eedf206eae5201eaae027b133226d0793ab9a287bfd74c5f82c7681e3684eeab"
   revision 1
 
@@ -31,24 +31,24 @@ class Guichan < Formula
   end
 
   resource "fixedfont.bmp" do
-    url "https://guichan.sourceforge.net/oldsite/images/fixedfont.bmp"
+    url "https:guichan.sourceforge.netoldsiteimagesfixedfont.bmp"
     sha256 "fc6144c8fefa27c207560820450abb41378c705a0655f536ce33e44a5332c5cc"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     gl_lib = OS.mac? ? "-framework OpenGL" : "-lGL"
-    ENV.append "CPPFLAGS", "-I#{Formula["sdl_image"].opt_include}/SDL"
+    ENV.append "CPPFLAGS", "-I#{Formula["sdl_image"].opt_include}SDL"
     ENV.append "LDFLAGS", "-lSDL -lSDL_image #{gl_lib}"
-    inreplace "src/opengl/Makefile.in", "-no-undefined", " "
-    inreplace "src/sdl/Makefile.in", "-no-undefined", " "
+    inreplace "srcopenglMakefile.in", "-no-undefined", " "
+    inreplace "srcsdlMakefile.in", "-no-undefined", " "
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -57,25 +57,25 @@ class Guichan < Formula
 
   test do
     testpath.install resource("fixedfont.bmp")
-    (testpath/"helloworld.cpp").write <<~EOS
+    (testpath"helloworld.cpp").write <<~EOS
       #include <iostream>
       #include <guichan.hpp>
-      #include <guichan/sdl.hpp>
-      #include "SDL/SDL.h"
+      #include <guichansdl.hpp>
+      #include "SDLSDL.h"
 
       bool running = true;
 
       SDL_Surface* screen;
       SDL_Event event;
 
-      gcn::SDLInput* input;             // Input driver
-      gcn::SDLGraphics* graphics;       // Graphics driver
-      gcn::SDLImageLoader* imageLoader; // For loading images
+      gcn::SDLInput* input;              Input driver
+      gcn::SDLGraphics* graphics;        Graphics driver
+      gcn::SDLImageLoader* imageLoader;  For loading images
 
-      gcn::Gui* gui;            // A Gui object - binds it all together
-      gcn::Container* top;      // A top container
-      gcn::ImageFont* font;     // A font
-      gcn::Label* label;        // And a label for the Hello World text
+      gcn::Gui* gui;             A Gui object - binds it all together
+      gcn::Container* top;       A top container
+      gcn::ImageFont* font;      A font
+      gcn::Label* label;         And a label for the Hello World text
 
       void init()
       {
@@ -129,7 +129,7 @@ class Guichan < Formula
                   {
                       if (event.key.keysym.mod & KMOD_CTRL)
                       {
-                          // Works with X11 only
+                           Works with X11 only
                           SDL_WM_ToggleFullScreen(screen);
                       }
                   }
@@ -181,7 +181,7 @@ class Guichan < Formula
     EOS
 
     flags = [
-      "-I#{HOMEBREW_PREFIX}/include/SDL",
+      "-I#{HOMEBREW_PREFIX}includeSDL",
       "-L#{Formula["sdl12-compat"].opt_lib}",
       "-L#{Formula["sdl_image"].opt_lib}",
       "-lSDL", "-lSDLmain", "-lSDL_image",
@@ -202,7 +202,7 @@ class Guichan < Formula
     system ENV.cc, "helloworld.cpp", ENV.cppflags,
                    *flags, "-o", "helloworld"
     helloworld = fork do
-      system testpath/"helloworld"
+      system testpath"helloworld"
     end
     Process.kill("TERM", helloworld)
   end

@@ -2,10 +2,10 @@ cask "font-reem-kufi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/reemkufi/ReemKufi%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflreemkufiReemKufi%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Reem Kufi"
-  homepage "https://fonts.google.com/specimen/Reem+Kufi"
+  homepage "https:fonts.google.comspecimenReem+Kufi"
 
   font "ReemKufi[wght].ttf"
 

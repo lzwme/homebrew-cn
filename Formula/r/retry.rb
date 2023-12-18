@@ -1,7 +1,7 @@
 class Retry < Formula
   desc "Repeat a command until the command succeeds"
-  homepage "https://github.com/minfrin/retry"
-  url "https://ghproxy.com/https://github.com/minfrin/retry/releases/download/retry-1.0.5/retry-1.0.5.tar.bz2"
+  homepage "https:github.comminfrinretry"
+  url "https:github.comminfrinretryreleasesdownloadretry-1.0.5retry-1.0.5.tar.bz2"
   sha256 "68e241d10f0e2d784a165634bb2eb12b7baf0a9fd9d27c4d54315382597d892e"
   license "Apache-2.0"
 
@@ -18,14 +18,14 @@ class Retry < Formula
   uses_from_macos "curl" => :test
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
     require "socket"
     port = free_port
-    command = "#{bin}/retry --delay 1 --until 0,28 -- curl --max-time 1 telnet://localhost:#{port}"
+    command = "#{bin}retry --delay 1 --until 0,28 -- curl --max-time 1 telnet:localhost:#{port}"
     _, stdout = Open3.popen2e(command)
     sleep 3
 

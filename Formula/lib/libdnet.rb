@@ -1,13 +1,13 @@
 class Libdnet < Formula
   desc "Portable low-level networking library"
-  homepage "https://github.com/ofalk/libdnet"
-  url "https://ghproxy.com/https://github.com/ofalk/libdnet/archive/refs/tags/libdnet-1.17.0.tar.gz"
+  homepage "https:github.comofalklibdnet"
+  url "https:github.comofalklibdnetarchiverefstagslibdnet-1.17.0.tar.gz"
   sha256 "6be1ed0763151ede4c9665a403f1c9d974b2ffab2eacdb26b22078e461aae1dc"
   license "BSD-3-Clause"
 
   livecheck do
     url :homepage
-    regex(/^libdnet[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^libdnet[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,11 +31,11 @@ class Libdnet < Formula
     system "autoreconf", "-ivf"
 
     args = std_configure_args - ["--disable-debug"]
-    system "./configure", *args, "--mandir=#{man}", "--disable-check"
+    system ".configure", *args, "--mandir=#{man}", "--disable-check"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/dnet-config", "--version"
+    system "#{bin}dnet-config", "--version"
   end
 end

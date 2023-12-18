@@ -1,7 +1,7 @@
 class LibbitcoinConsensus < Formula
   desc "Bitcoin Consensus Library (optional)"
-  homepage "https://github.com/libbitcoin/libbitcoin-consensus"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-consensus/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comlibbitcoinlibbitcoin-consensus"
+  url "https:github.comlibbitcoinlibbitcoin-consensusarchiverefstagsv3.8.0.tar.gz"
   sha256 "3f63b233a25323ff81de71a6c96455a6f5141e21cb0678a2304b36b56e771ca2"
   license "AGPL-3.0"
 
@@ -24,15 +24,15 @@ class LibbitcoinConsensus < Formula
   depends_on "pkg-config" => :build
 
   resource "secp256k1" do
-    url "https://ghproxy.com/https://github.com/libbitcoin/secp256k1/archive/refs/tags/v0.1.0.20.tar.gz"
+    url "https:github.comlibbitcoinsecp256k1archiverefstagsv0.1.0.20.tar.gz"
     sha256 "61583939f1f25b92e6401e5b819e399da02562de663873df3056993b40148701"
   end
 
   def install
     ENV.cxx11
     resource("secp256k1").stage do
-      system "./autogen.sh"
-      system "./configure", "--disable-dependency-tracking",
+      system ".autogen.sh"
+      system ".configure", "--disable-dependency-tracking",
                             "--disable-silent-rules",
                             "--prefix=#{libexec}",
                             "--enable-module-recovery",
@@ -40,10 +40,10 @@ class LibbitcoinConsensus < Formula
       system "make", "install"
     end
 
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{libexec}/lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", "#{libexec}libpkgconfig"
 
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}"
@@ -51,11 +51,11 @@ class LibbitcoinConsensus < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <string>
       #include <vector>
       #include <assert.h>
-      #include <bitcoin/consensus.hpp>
+      #include <bitcoinconsensus.hpp>
       typedef std::vector<uint8_t> data_chunk;
       static unsigned from_hex(const char ch)
       {
@@ -78,10 +78,10 @@ class LibbitcoinConsensus < Formula
       }
       static bool decode_base16(data_chunk& out, const std::string& in)
       {
-        // This prevents a last odd character from being ignored:
+         This prevents a last odd character from being ignored:
         if (in.size() % 2 != 0)
           return false;
-        data_chunk result(in.size() / 2);
+        data_chunk result(in.size()  2);
         if (!decode_base16_private(result.data(), result.size(), in.data()))
           return false;
         out = result;
@@ -106,10 +106,10 @@ class LibbitcoinConsensus < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp",
-                    "-I#{libexec}/include",
-                    "-L#{lib}", "-L#{libexec}/lib",
+                    "-I#{libexec}include",
+                    "-L#{lib}", "-L#{libexec}lib",
                     "-lbitcoin-consensus",
                     "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

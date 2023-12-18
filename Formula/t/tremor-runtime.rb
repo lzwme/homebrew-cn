@@ -1,10 +1,10 @@
 class TremorRuntime < Formula
   desc "Early-stage event processing system for unstructured data"
-  homepage "https://www.tremor.rs/"
-  url "https://ghproxy.com/https://github.com/tremor-rs/tremor-runtime/archive/refs/tags/v0.12.4.tar.gz"
+  homepage "https:www.tremor.rs"
+  url "https:github.comtremor-rstremor-runtimearchiverefstagsv0.12.4.tar.gz"
   sha256 "91cbe0ca5c4adda14b8456652dfaa148df9878e09dd65ac6988bb781e3df52af"
   license "Apache-2.0"
-  head "https://github.com/tremor-rs/tremor-runtime.git", branch: "main"
+  head "https:github.comtremor-rstremor-runtime.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -26,7 +26,7 @@ class TremorRuntime < Formula
 
   on_linux do
     # Use `llvm@15` to work around build failure with Clang 16 described in
-    # https://github.com/rust-lang/rust-bindgen/issues/2312.
+    # https:github.comrust-langrust-bindgenissues2312.
     # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
     # updated to 0.62.0 or newer. There is a check in the `install` method.
     depends_on "llvm@15" => :build
@@ -41,7 +41,7 @@ class TremorRuntime < Formula
   # Fix invalid usage of `macro_export`.
   # Remove on next release.
   patch do
-    url "https://github.com/tremor-rs/tremor-runtime/commit/986fae5cf1022790e60175125b848dc84f67214f.patch?full_index=1"
+    url "https:github.comtremor-rstremor-runtimecommit986fae5cf1022790e60175125b848dc84f67214f.patch?full_index=1"
     sha256 "ff772097264185213cbea09addbcdacc017eda4f90c97d0dad36b0156e3e9dbc"
   end
 
@@ -50,46 +50,46 @@ class TremorRuntime < Formula
     ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
 
     bindgen_version = Version.new(
-      (buildpath/"Cargo.lock").read
-                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+      (buildpath"Cargo.lock").read
+                              .match(name = "bindgen"\nversion = "(.*)")[1],
     )
     if bindgen_version >= "0.62.0"
       odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
            'this check and try switching to `uses_from_macos "llvm" => :build`.'
     end
 
-    inreplace ".cargo/config", "+avx,+avx2,", ""
+    inreplace ".cargoconfig", "+avx,+avx2,", ""
 
     system "cargo", "install", *std_cargo_args(path: "tremor-cli")
 
-    generate_completions_from_executable(bin/"tremor", "completions", base_name: "tremor")
+    generate_completions_from_executable(bin"tremor", "completions", base_name: "tremor")
 
     # main binary
-    bin.install "target/release/tremor"
+    bin.install "targetreleasetremor"
 
     # stdlib
-    (lib/"tremor-script").install (buildpath/"tremor-script/lib").children
+    (lib"tremor-script").install (buildpath"tremor-scriptlib").children
 
     # sample config for service
-    (etc/"tremor").install "docker/config/docker.troy" => "main.troy"
+    (etc"tremor").install "dockerconfigdocker.troy" => "main.troy"
 
     # wrapper
-    (bin/"tremor-wrapper").write_env_script (bin/"tremor"), TREMOR_PATH: "#{lib}/tremor-script"
+    (bin"tremor-wrapper").write_env_script (bin"tremor"), TREMOR_PATH: "#{lib}tremor-script"
   end
 
   # demo service
   service do
-    run [opt_bin/"tremor-wrapper", "run", etc/"tremor/main.troy"]
+    run [opt_bin"tremor-wrapper", "run", etc"tremormain.troy"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/tremor.log"
-    error_log_path var/"log/tremor_error.log"
+    log_path var"logtremor.log"
+    error_log_path var"logtremor_error.log"
   end
 
   test do
-    assert_match "tremor #{version}\n", shell_output("#{bin}/tremor --version")
+    assert_match "tremor #{version}\n", shell_output("#{bin}tremor --version")
 
-    (testpath/"test.troy").write <<~EOS
+    (testpath"test.troy").write <<~EOS
       define flow test
       flow
           use tremor::connectors;
@@ -105,10 +105,10 @@ class TremorRuntime < Formula
           end;
 
           define connector file_in from file
-              with codec="string", config={"path": "#{testpath}/in.txt", "mode": "read"}
+              with codec="string", config={"path": "#{testpath}in.txt", "mode": "read"}
           end;
           define connector file_out from file
-              with codec="string", config={"path": "#{testpath}/out.txt", "mode": "truncate"}
+              with codec="string", config={"path": "#{testpath}out.txt", "mode": "truncate"}
           end;
 
           create pipeline capitalize from capitalize;
@@ -116,18 +116,18 @@ class TremorRuntime < Formula
           create connector output from file_out;
           create connector exit from connectors::exit;
 
-          connect /connector/input to /pipeline/capitalize;
-          connect /pipeline/capitalize to /connector/output;
-          connect /pipeline/capitalize/exit to /connector/exit;
+          connect connectorinput to pipelinecapitalize;
+          connect pipelinecapitalize to connectoroutput;
+          connect pipelinecapitalizeexit to connectorexit;
       end;
 
       deploy flow test;
     EOS
 
-    (testpath/"in.txt").write("hello")
+    (testpath"in.txt").write("hello")
 
-    system bin/"tremor-wrapper", "run", testpath/"test.troy"
+    system bin"tremor-wrapper", "run", testpath"test.troy"
 
-    assert_match(/^HELLO/, (testpath/"out.txt").readlines.first)
+    assert_match(^HELLO, (testpath"out.txt").readlines.first)
   end
 end

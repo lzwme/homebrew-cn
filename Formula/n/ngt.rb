@@ -1,7 +1,7 @@
 class Ngt < Formula
   desc "Neighborhood graph and tree for indexing high-dimensional data"
-  homepage "https://github.com/yahoojapan/NGT"
-  url "https://ghproxy.com/https://github.com/yahoojapan/NGT/archive/refs/tags/v2.1.6.tar.gz"
+  homepage "https:github.comyahoojapanNGT"
+  url "https:github.comyahoojapanNGTarchiverefstagsv2.1.6.tar.gz"
   sha256 "5c6c9a193a22a4d166db812fb5daf4fba487b10d772c1b196eb31839d7af51fb"
   license "Apache-2.0"
 
@@ -38,7 +38,7 @@ class Ngt < Formula
   end
 
   test do
-    cp_r (pkgshare/"data"), testpath
-    system "#{bin}/ngt", "-d", "128", "-o", "c", "create", "index", "data/sift-dataset-5k.tsv"
+    cp_r (pkgshare"data"), testpath
+    system "#{bin}ngt", "-d", "128", "-o", "c", "create", "index", "datasift-dataset-5k.tsv"
   end
 end

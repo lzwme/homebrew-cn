@@ -1,7 +1,7 @@
 class Libart < Formula
   desc "Library for high-performance 2D graphics"
-  homepage "https://github.com/armon/libart"
-  url "https://download.gnome.org/sources/libart_lgpl/2.3/libart_lgpl-2.3.21.tar.bz2"
+  homepage "https:github.comarmonlibart"
+  url "https:download.gnome.orgsourceslibart_lgpl2.3libart_lgpl-2.3.21.tar.bz2"
   sha256 "fdc11e74c10fc9ffe4188537e2b370c0abacca7d89021d4d303afdf7fd7476fa"
   license "LGPL-2.0-or-later"
 
@@ -9,7 +9,7 @@ class Libart < Formula
   # minor is stable" version scheme.
   livecheck do
     url :stable
-    regex(/libart_lgpl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(libart_lgpl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,12 +31,12 @@ class Libart < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 end

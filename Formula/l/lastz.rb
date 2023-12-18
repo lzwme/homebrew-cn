@@ -1,10 +1,10 @@
 class Lastz < Formula
   desc "Pairwise aligner for DNA sequences"
-  homepage "https://lastz.github.io/lastz/"
-  url "https://ghproxy.com/https://github.com/lastz/lastz/archive/refs/tags/1.04.22.tar.gz"
+  homepage "https:lastz.github.iolastz"
+  url "https:github.comlastzlastzarchiverefstags1.04.22.tar.gz"
   sha256 "4c829603ba4aed7ddf64255b528cd88850e4557382fca29580d3576c25c5054a"
   license "MIT"
-  head "https://github.com/lastz/lastz.git", branch: "master"
+  head "https:github.comlastzlastz.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11f902131e41dc1f91a235e30fac2fd5eabc1267edec376cb1a65efb8845ae45"
@@ -26,9 +26,9 @@ class Lastz < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/lastz --version", 1)
-    assert_match "MAF", shell_output("#{bin}/lastz --help=formats", 1)
-    dir = pkgshare/"test_data"
-    assert_match "#:lav", shell_output("#{bin}/lastz #{dir}/pseudocat.fa #{dir}/pseudopig.fa")
+    assert_match version.to_s, shell_output("#{bin}lastz --version", 1)
+    assert_match "MAF", shell_output("#{bin}lastz --help=formats", 1)
+    dir = pkgshare"test_data"
+    assert_match "#:lav", shell_output("#{bin}lastz #{dir}pseudocat.fa #{dir}pseudopig.fa")
   end
 end

@@ -1,7 +1,7 @@
 class Sextractor < Formula
   desc "Extract catalogs of sources from astronomical images"
-  homepage "https://github.com/astromatic/sextractor"
-  url "https://ghproxy.com/https://github.com/astromatic/sextractor/archive/refs/tags/2.28.0.tar.gz"
+  homepage "https:github.comastromaticsextractor"
+  url "https:github.comastromaticsextractorarchiverefstags2.28.0.tar.gz"
   sha256 "36f5afcdfe74cbf1904038a4def0166c1e1dde883e0030b87280dfbdfcd81969"
   license "GPL-3.0-or-later"
 
@@ -25,21 +25,21 @@ class Sextractor < Formula
 
   def install
     openblas = Formula["openblas"]
-    system "./autogen.sh"
-    system "./configure", *std_configure_args,
+    system ".autogen.sh"
+    system ".configure", *std_configure_args,
            "--disable-silent-rules",
            "--enable-openblas",
            "--with-openblas-libdir=#{openblas.lib}",
            "--with-openblas-incdir=#{openblas.include}"
     system "make", "install"
     # Remove references to Homebrew shims
-    rm Dir["tests/Makefile*"]
+    rm Dir["testsMakefile*"]
     pkgshare.install "tests"
   end
 
   test do
-    cp_r Dir[pkgshare/"tests/*"], testpath
-    system "#{bin}/sex", "galaxies.fits", "-WEIGHT_IMAGE", "galaxies.weight.fits", "-CATALOG_NAME", "galaxies.cat"
-    assert_predicate testpath/"galaxies.cat", :exist?, "Failed to create galaxies.cat"
+    cp_r Dir[pkgshare"tests*"], testpath
+    system "#{bin}sex", "galaxies.fits", "-WEIGHT_IMAGE", "galaxies.weight.fits", "-CATALOG_NAME", "galaxies.cat"
+    assert_predicate testpath"galaxies.cat", :exist?, "Failed to create galaxies.cat"
   end
 end

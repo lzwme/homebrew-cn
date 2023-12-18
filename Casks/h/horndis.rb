@@ -2,10 +2,10 @@ cask "horndis" do
   version "9.2"
   sha256 "15f5c6cbe14e5c0f11bf27172dfbcdf3b753122d128807d6bad94c8f4c2b71e1"
 
-  url "https://ghproxy.com/https://github.com/jwise/HoRNDIS/releases/download/rel#{version}/HoRNDIS-#{version}.pkg"
+  url "https:github.comjwiseHoRNDISreleasesdownloadrel#{version}HoRNDIS-#{version}.pkg"
   name "HoRNDIS"
   desc "Android USB tethering driver"
-  homepage "https://github.com/jwise/HoRNDIS"
+  homepage "https:github.comjwiseHoRNDIS"
 
   depends_on macos: [
     :el_capitan,

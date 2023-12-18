@@ -1,14 +1,14 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
-  homepage "https://risor.io/"
-  url "https://ghproxy.com/https://github.com/risor-io/risor/archive/refs/tags/v1.2.0.tar.gz"
+  homepage "https:risor.io"
+  url "https:github.comrisor-iorisorarchiverefstagsv1.2.0.tar.gz"
   sha256 "dbe5073663e36113232401a92ef10d20db1494d212a6f2ded812ff54837246b4"
   license "Apache-2.0"
-  head "https://github.com/risor-io/risor.git", branch: "main"
+  head "https:github.comrisor-iorisor.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,17 +24,17 @@ class Risor < Formula
   depends_on "go" => :build
 
   def install
-    chdir "cmd/risor" do
+    chdir "cmdrisor" do
       ldflags = "-s -w -X 'main.version=#{version}' -X 'main.date=#{time.iso8601}'"
       system "go", "build", "-tags", "aws", *std_go_args(ldflags: ldflags), "."
-      generate_completions_from_executable(bin/"risor", "completion")
+      generate_completions_from_executable(bin"risor", "completion")
     end
   end
 
   test do
-    output = shell_output("#{bin}/risor -c \"time.now()\"")
-    assert_match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/, output)
-    assert_match version.to_s, shell_output("#{bin}/risor version")
-    assert_match "module(aws)", shell_output("#{bin}/risor -c aws")
+    output = shell_output("#{bin}risor -c \"time.now()\"")
+    assert_match(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}, output)
+    assert_match version.to_s, shell_output("#{bin}risor version")
+    assert_match "module(aws)", shell_output("#{bin}risor -c aws")
   end
 end

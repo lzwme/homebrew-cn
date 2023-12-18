@@ -1,18 +1,18 @@
 class Tectonic < Formula
-  desc "Modernized, complete, self-contained TeX/LaTeX engine"
-  homepage "https://tectonic-typesetting.github.io/"
-  url "https://ghproxy.com/https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.14.1.tar.gz"
+  desc "Modernized, complete, self-contained TeXLaTeX engine"
+  homepage "https:tectonic-typesetting.github.io"
+  url "https:github.comtectonic-typesettingtectonicarchiverefstagstectonic@0.14.1.tar.gz"
   sha256 "3703a4fc768b3c7be6a4560857b17b2671f19023faee414aa7b6befd24ec9d25"
   license "MIT"
   revision 2
-  head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
+  head "https:github.comtectonic-typesettingtectonic.git", branch: "master"
 
   # As of writing, only the tags starting with `tectonic@` are release versions.
   # NOTE: The `GithubLatest` strategy cannot be used here because the "latest"
   # release on GitHub sometimes points to a tag that isn't a release version.
   livecheck do
     url :stable
-    regex(/^tectonic@v?(\d+(?:\.\d+)+)$/i)
+    regex(^tectonic@v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -45,16 +45,16 @@ class Tectonic < Formula
     end
 
     # Ensure that the `openssl` crate picks up the intended library.
-    # https://crates.io/crates/openssl#manual-configuration
+    # https:crates.iocratesopenssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     system "cargo", "install", "--features", "external-harfbuzz", *std_cargo_args
   end
 
   test do
-    (testpath/"test.tex").write 'Hello, World!\bye'
-    system bin/"tectonic", "-o", testpath, "--format", "plain", testpath/"test.tex"
-    assert_predicate testpath/"test.pdf", :exist?, "Failed to create test.pdf"
+    (testpath"test.tex").write 'Hello, World!\bye'
+    system bin"tectonic", "-o", testpath, "--format", "plain", testpath"test.tex"
+    assert_predicate testpath"test.pdf", :exist?, "Failed to create test.pdf"
     assert_match "PDF document", shell_output("file test.pdf")
   end
 end

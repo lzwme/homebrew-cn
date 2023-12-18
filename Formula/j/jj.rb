@@ -1,10 +1,10 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
-  homepage "https://github.com/martinvonz/jj"
-  url "https://ghproxy.com/https://github.com/martinvonz/jj/archive/refs/tags/v0.12.0.tar.gz"
+  homepage "https:github.commartinvonzjj"
+  url "https:github.commartinvonzjjarchiverefstagsv0.12.0.tar.gz"
   sha256 "da90259cd1003d9f87af277c8b20625f3b07c3fe785fb490fe17659f2082852f"
   license "Apache-2.0"
-  head "https://github.com/martinvonz/jj.git", branch: "main"
+  head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c66dfd7cab6c8757ffada9710fcf174157098750567144b03045a5dcba551401"
@@ -26,12 +26,12 @@ class Jj < Formula
 
   def install
     system "cargo", "install", "--no-default-features", "--bin", "jj", *std_cargo_args(path: "cli")
-    generate_completions_from_executable(bin/"jj", "util", "completion", shell_parameter_format: :flag)
-    (man1/"jj.1").write Utils.safe_popen_read(bin/"jj", "util", "mangen")
+    generate_completions_from_executable(bin"jj", "util", "completion", shell_parameter_format: :flag)
+    (man1"jj.1").write Utils.safe_popen_read(bin"jj", "util", "mangen")
   end
 
   test do
-    system bin/"jj", "init", "--git"
-    assert_predicate testpath/".jj", :exist?
+    system bin"jj", "init", "--git"
+    assert_predicate testpath".jj", :exist?
   end
 end

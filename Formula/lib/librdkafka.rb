@@ -1,14 +1,14 @@
 class Librdkafka < Formula
-  desc "Apache Kafka C/C++ library"
-  homepage "https://github.com/edenhill/librdkafka"
-  url "https://ghproxy.com/https://github.com/edenhill/librdkafka/archive/refs/tags/v2.3.0.tar.gz"
+  desc "Apache Kafka CC++ library"
+  homepage "https:github.comedenhilllibrdkafka"
+  url "https:github.comedenhilllibrdkafkaarchiverefstagsv2.3.0.tar.gz"
   sha256 "2d49c35c77eeb3d42fa61c43757fcbb6a206daa560247154e60642bcdcc14d12"
   license "BSD-2-Clause"
-  head "https://github.com/edenhill/librdkafka.git", branch: "master"
+  head "https:github.comedenhilllibrdkafka.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -33,23 +33,23 @@ class Librdkafka < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <librdkafka/rdkafka.h>
+    (testpath"test.c").write <<~EOS
+      #include <librdkafkardkafka.h>
 
       int main (int argc, char **argv)
       {
-        int partition = RD_KAFKA_PARTITION_UA; /* random */
+        int partition = RD_KAFKA_PARTITION_UA; * random *
         int version = rd_kafka_version();
         return 0;
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lrdkafka", "-lz", "-lpthread", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

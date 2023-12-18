@@ -2,12 +2,12 @@ cask "font-baskervville" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/baskervville"
+      only_path: "oflbaskervville"
   name "Baskervville"
-  homepage "https://fonts.google.com/specimen/Baskervville"
+  homepage "https:fonts.google.comspecimenBaskervville"
 
   font "Baskervville-Italic.ttf"
   font "Baskervville-Regular.ttf"

@@ -2,12 +2,12 @@ cask "font-arapey" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/arapey"
+      only_path: "oflarapey"
   name "Arapey"
-  homepage "https://fonts.google.com/specimen/Arapey"
+  homepage "https:fonts.google.comspecimenArapey"
 
   font "Arapey-Italic.ttf"
   font "Arapey-Regular.ttf"

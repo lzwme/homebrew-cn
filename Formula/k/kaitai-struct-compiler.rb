@@ -1,14 +1,14 @@
 class KaitaiStructCompiler < Formula
   desc "Compiler for generating binary data parsers"
-  homepage "https://kaitai.io/"
+  homepage "https:kaitai.io"
   # Move to packages.kaitai.io when available.
-  url "https://ghproxy.com/https://github.com/kaitai-io/kaitai_struct_compiler/releases/download/0.10/kaitai-struct-compiler-0.10.zip"
+  url "https:github.comkaitai-iokaitai_struct_compilerreleasesdownload0.10kaitai-struct-compiler-0.10.zip"
   sha256 "3d11d6cc46d058afb4680fda2e7195f645ca03b2843501d652a529646e55d16b"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :homepage
-    regex(/href=.*?kaitai-struct-compiler[._-]v?(\d+(?:\.\d+)+)\.zip/i)
+    regex(href=.*?kaitai-struct-compiler[._-]v?(\d+(?:\.\d+)+)\.zipi)
   end
 
   bottle do
@@ -19,12 +19,12 @@ class KaitaiStructCompiler < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin/"kaitai-struct-compiler").write_env_script libexec/"bin/kaitai-struct-compiler",
+    (bin"kaitai-struct-compiler").write_env_script libexec"binkaitai-struct-compiler",
                                                     JAVA_HOME: Formula["openjdk"].opt_prefix
   end
 
   test do
-    (testpath/"Test.ksy").write <<~EOS
+    (testpath"Test.ksy").write <<~EOS
       meta:
         id: test
         endian: le
@@ -33,7 +33,7 @@ class KaitaiStructCompiler < Formula
         - id: header
           type: u4
     EOS
-    system bin/"kaitai-struct-compiler", "Test.ksy", "-t", "java", "--outdir", testpath
-    assert_predicate testpath/"Test.java", :exist?
+    system bin"kaitai-struct-compiler", "Test.ksy", "-t", "java", "--outdir", testpath
+    assert_predicate testpath"Test.java", :exist?
   end
 end

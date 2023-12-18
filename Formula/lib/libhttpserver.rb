@@ -1,10 +1,10 @@
 class Libhttpserver < Formula
   desc "C++ library of embedded Rest HTTP server"
-  homepage "https://github.com/etr/libhttpserver"
-  url "https://ghproxy.com/https://github.com/etr/libhttpserver/archive/refs/tags/0.19.0.tar.gz"
+  homepage "https:github.cometrlibhttpserver"
+  url "https:github.cometrlibhttpserverarchiverefstags0.19.0.tar.gz"
   sha256 "b108769ed68d72c58961c517ab16c3a64e4efdc4c45687723bb45bb9e04c5193"
   license "LGPL-2.1-or-later"
-  head "https://github.com/etr/libhttpserver.git", branch: "master"
+  head "https:github.cometrlibhttpserver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8656daf385c457a28484c8bff0d6271a5271980ab97899b249c1890274617fb7"
@@ -33,9 +33,9 @@ class Libhttpserver < Formula
       "--prefix=#{prefix}",
     ]
 
-    system "./bootstrap"
+    system ".bootstrap"
     mkdir "build" do
-      system "../configure", *args
+      system "..configure", *args
       system "make", "install"
     end
     pkgshare.install "examples"
@@ -44,16 +44,16 @@ class Libhttpserver < Formula
   test do
     port = free_port
 
-    cp pkgshare/"examples/minimal_hello_world.cpp", testpath
+    cp pkgshare"examplesminimal_hello_world.cpp", testpath
     inreplace "minimal_hello_world.cpp", "create_webserver(8080)",
                                          "create_webserver(#{port})"
 
     system ENV.cxx, "minimal_hello_world.cpp",
       "-std=c++17", "-o", "minimal_hello_world", "-L#{lib}", "-lhttpserver", "-lcurl"
 
-    fork { exec "./minimal_hello_world" }
+    fork { exec ".minimal_hello_world" }
     sleep 3 # grace time for server start
 
-    assert_match "Hello, World!", shell_output("curl http://127.0.0.1:#{port}/hello")
+    assert_match "Hello, World!", shell_output("curl http:127.0.0.1:#{port}hello")
   end
 end

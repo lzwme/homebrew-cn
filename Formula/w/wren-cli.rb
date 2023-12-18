@@ -1,7 +1,7 @@
 class WrenCli < Formula
   desc "Simple REPL and CLI tool for running Wren scripts"
-  homepage "https://github.com/wren-lang/wren-cli"
-  url "https://ghproxy.com/https://github.com/wren-lang/wren-cli/archive/refs/tags/0.4.0.tar.gz"
+  homepage "https:github.comwren-langwren-cli"
+  url "https:github.comwren-langwren-cliarchiverefstags0.4.0.tar.gz"
   sha256 "fafdc5d6615114d40de3956cd3a255e8737dadf8bd758b48bac00db61563cb4c"
   license "MIT"
 
@@ -20,16 +20,16 @@ class WrenCli < Formula
 
   def install
     if OS.mac?
-      system "make", "-C", "projects/make.mac"
+      system "make", "-C", "projectsmake.mac"
     else
-      system "make", "-C", "projects/make"
+      system "make", "-C", "projectsmake"
     end
-    bin.install "bin/wren_cli"
+    bin.install "binwren_cli"
     pkgshare.install "example"
   end
 
   test do
-    cp pkgshare/"example/hello.wren", testpath
-    assert_equal "Hello, world!\n", shell_output("#{bin}/wren_cli hello.wren")
+    cp pkgshare"examplehello.wren", testpath
+    assert_equal "Hello, world!\n", shell_output("#{bin}wren_cli hello.wren")
   end
 end

@@ -1,7 +1,7 @@
 class Volk < Formula
   desc "Vector Optimized Library of Kernels"
-  homepage "https://www.libvolk.org/"
-  url "https://ghproxy.com/https://github.com/gnuradio/volk/releases/download/v3.1.0/volk-3.1.0.tar.gz"
+  homepage "https:www.libvolk.org"
+  url "https:github.comgnuradiovolkreleasesdownloadv3.1.0volk-3.1.0.tar.gz"
   sha256 "4f5bb84f535ce86cfadc953379587bdd5a1a171d684b0a6f35adcaf2ac46fd01"
   license "LGPL-3.0-or-later"
 
@@ -27,13 +27,13 @@ class Volk < Formula
     depends_on "cpu_features"
   end
 
-  fails_with gcc: "5" # https://github.com/gnuradio/volk/issues/375
+  fails_with gcc: "5" # https:github.comgnuradiovolkissues375
 
   def install
     python = "python3.12"
 
     # Avoid references to the Homebrew shims directory
-    inreplace "lib/CMakeLists.txt" do |s|
+    inreplace "libCMakeLists.txt" do |s|
       s.gsub! "${CMAKE_C_COMPILER}", ENV.cc
       s.gsub! "${CMAKE_CXX_COMPILER}", ENV.cxx
     end
@@ -50,7 +50,7 @@ class Volk < Formula
   end
 
   test do
-    system "#{bin}/volk_modtool", "--help"
-    system "#{bin}/volk_profile", "--iter", "10"
+    system "#{bin}volk_modtool", "--help"
+    system "#{bin}volk_profile", "--iter", "10"
   end
 end

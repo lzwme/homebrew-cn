@@ -12,15 +12,15 @@
 # - unison
 class Ocaml < Formula
   desc "General purpose programming language in the ML family"
-  homepage "https://ocaml.org/"
-  url "https://caml.inria.fr/pub/distrib/ocaml-5.1/ocaml-5.1.0.tar.xz"
+  homepage "https:ocaml.org"
+  url "https:caml.inria.frpubdistribocaml-5.1ocaml-5.1.0.tar.xz"
   sha256 "6ce8db393aafc264e5af731c68fbeb20920ab6ae84d5bf93511965b7423351ab"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  head "https://github.com/ocaml/ocaml.git", branch: "trunk"
+  head "https:github.comocamlocaml.git", branch: "trunk"
 
   livecheck do
-    url "https://ocaml.org/releases"
-    regex(%r{href=.*?/releases/v?(\d+(?:\.\d+)+)/?["']}i)
+    url "https:ocaml.orgreleases"
+    regex(%r{href=.*?releasesv?(\d+(?:\.\d+)+)?["']}i)
   end
 
   bottle do
@@ -39,27 +39,27 @@ class Ocaml < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     ENV.deparallelize # Builds are not parallel-safe, esp. with many cores
 
-    # the ./configure in this package is NOT a GNU autoconf script!
+    # the .configure in this package is NOT a GNU autoconf script!
     args = %W[
       --prefix=#{HOMEBREW_PREFIX}
       --enable-debug-runtime
       --mandir=#{man}
     ]
-    system "./configure", *args
+    system ".configure", *args
     system "make", "world.opt"
     system "make", "prefix=#{prefix}", "install"
   end
 
   test do
-    output = pipe_output("#{bin}/ocaml 2>&1", "let x = 1 ;;")
+    output = pipe_output("#{bin}ocaml 2>&1", "let x = 1 ;;")
     assert_match "val x : int = 1", output
-    assert_match HOMEBREW_PREFIX.to_s, shell_output("#{bin}/ocamlc -where")
+    assert_match HOMEBREW_PREFIX.to_s, shell_output("#{bin}ocamlc -where")
   end
 end

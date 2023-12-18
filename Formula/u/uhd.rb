@@ -1,12 +1,12 @@
 class Uhd < Formula
   desc "Hardware driver for all USRP devices"
-  homepage "https://files.ettus.com/manual/"
+  homepage "https:files.ettus.commanual"
   # The build system uses git to recover version information
-  url "https://github.com/EttusResearch/uhd.git",
+  url "https:github.comEttusResearchuhd.git",
       tag:      "v4.6.0.0",
       revision: "50fa3baa2e11ea3b30d5a7e397558e9ae76d8b00"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  head "https://github.com/EttusResearch/uhd.git", branch: "master"
+  head "https:github.comEttusResearchuhd.git", branch: "master"
 
   livecheck do
     url :stable
@@ -38,12 +38,12 @@ class Uhd < Formula
   end
 
   def install
-    system "cmake", "-S", "host", "-B", "host/build", "-DENABLE_TESTS=OFF", *std_cmake_args
-    system "cmake", "--build", "host/build"
-    system "cmake", "--install", "host/build"
+    system "cmake", "-S", "host", "-B", "hostbuild", "-DENABLE_TESTS=OFF", *std_cmake_args
+    system "cmake", "--build", "hostbuild"
+    system "cmake", "--install", "hostbuild"
   end
 
   test do
-    assert_match version.major_minor_patch.to_s, shell_output("#{bin}/uhd_config_info --version")
+    assert_match version.major_minor_patch.to_s, shell_output("#{bin}uhd_config_info --version")
   end
 end

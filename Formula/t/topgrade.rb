@@ -1,7 +1,7 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
-  homepage "https://github.com/topgrade-rs/topgrade"
-  url "https://ghproxy.com/https://github.com/topgrade-rs/topgrade/archive/refs/tags/v13.0.0.tar.gz"
+  homepage "https:github.comtopgrade-rstopgrade"
+  url "https:github.comtopgrade-rstopgradearchiverefstagsv13.0.0.tar.gz"
   sha256 "6d83af871b6ce108dd4773c81835734d306b41425c41c533095ca5a82324b049"
   license "GPL-3.0-or-later"
 
@@ -27,20 +27,20 @@ class Topgrade < Formula
   end
 
   test do
-    # Configuration path details: https://github.com/r-darwish/topgrade/blob/HEAD/README.md#configuration-path
-    # Sample config file: https://github.com/r-darwish/topgrade/blob/HEAD/config.example.toml
-    (testpath/"Library/Preferences/topgrade.toml").write <<~EOS
+    # Configuration path details: https:github.comr-darwishtopgradeblobHEADREADME.md#configuration-path
+    # Sample config file: https:github.comr-darwishtopgradeblobHEADconfig.example.toml
+    (testpath"LibraryPreferencestopgrade.toml").write <<~EOS
       # Additional git repositories to pull
       #git_repos = [
-      #    "~/src/*/",
-      #    "~/.config/something"
+      #    "~src*",
+      #    "~.configsomething"
       #]
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}/topgrade --version")
+    assert_match version.to_s, shell_output("#{bin}topgrade --version")
 
-    output = shell_output("#{bin}/topgrade -n --only brew_formula")
-    assert_match %r{Dry running: (?:#{HOMEBREW_PREFIX}/bin/)?brew upgrade}o, output
-    refute_match(/\sSelf update\s/, output)
+    output = shell_output("#{bin}topgrade -n --only brew_formula")
+    assert_match %r{Dry running: (?:#{HOMEBREW_PREFIX}bin)?brew upgrade}o, output
+    refute_match(\sSelf update\s, output)
   end
 end

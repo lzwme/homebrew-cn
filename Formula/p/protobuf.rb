@@ -1,7 +1,7 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
-  homepage "https://protobuf.dev/"
-  url "https://ghproxy.com/https://github.com/protocolbuffers/protobuf/releases/download/v25.1/protobuf-25.1.tar.gz"
+  homepage "https:protobuf.dev"
+  url "https:github.comprotocolbuffersprotobufreleasesdownloadv25.1protobuf-25.1.tar.gz"
   sha256 "9bd87b8280ef720d3240514f884e56a712f2218f0d693b48050c836028940a42"
   license "BSD-3-Clause"
 
@@ -32,8 +32,8 @@ class Protobuf < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .select { |f| f.name.match?(^python@\d\.\d+$) }
+        .map { |f| f.opt_libexec"binpython" }
   end
 
   def install
@@ -54,12 +54,12 @@ class Protobuf < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (share/"vim/vimfiles/syntax").install "editors/proto.vim"
-    elisp.install "editors/protobuf-mode.el"
+    (share"vimvimfilessyntax").install "editorsproto.vim"
+    elisp.install "editorsprotobuf-mode.el"
 
     ENV.append_to_cflags "-I#{include}"
     ENV.append_to_cflags "-L#{lib}"
-    ENV["PROTOC"] = bin/"protoc"
+    ENV["PROTOC"] = bin"protoc"
 
     cd "python" do
       # Keep C++ standard in sync with `abseil.rb`.
@@ -67,7 +67,7 @@ class Protobuf < Formula
                             "extra_compile_args.append('-std=c++#{abseil_cxx_standard}')"
 
       pythons.each do |python|
-        pyext_dir = prefix/Language::Python.site_packages(python)/"google/protobuf/pyext"
+        pyext_dir = prefixLanguage::Python.site_packages(python)"googleprotobufpyext"
         with_env(LDFLAGS: "-Wl,-rpath,#{rpath(source: pyext_dir)} #{ENV.ldflags}".strip) do
           system python, *Language::Python.setup_install_args(prefix, python), "--cpp_implementation"
         end
@@ -86,8 +86,8 @@ class Protobuf < Formula
         repeated TestCase case = 1;
       }
     EOS
-    (testpath/"test.proto").write testdata
-    system bin/"protoc", "test.proto", "--cpp_out=."
+    (testpath"test.proto").write testdata
+    system bin"protoc", "test.proto", "--cpp_out=."
 
     pythons.each do |python|
       system python, "-c", "from google.protobuf.pyext import _message"

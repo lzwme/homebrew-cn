@@ -1,18 +1,18 @@
 class Perkeep < Formula
   desc "Lets you permanently keep your stuff, for life"
-  homepage "https://perkeep.org/"
+  homepage "https:perkeep.org"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/perkeep/perkeep.git", branch: "master"
+  head "https:github.comperkeepperkeep.git", branch: "master"
 
   stable do
-    url "https://github.com/perkeep/perkeep.git",
+    url "https:github.comperkeepperkeep.git",
         tag:      "0.11",
         revision: "76755286451a1b08e2356f549574be3eea0185e5"
 
     # Newer gopherjs to support a newer Go version.
     resource "gopherjs" do
-      url "https://ghproxy.com/https://github.com/gopherjs/gopherjs/archive/refs/tags/v1.18.0-beta2+go1.18.5.tar.gz"
+      url "https:github.comgopherjsgopherjsarchiverefstagsv1.18.0-beta2+go1.18.5.tar.gz"
       sha256 "8dc2e85245343862e47ce9293e7c4b364cbd7aada734b823366ba10e72cfb93e"
     end
   end
@@ -44,30 +44,30 @@ class Perkeep < Formula
       ENV["GOPATH"] = buildpath
       ENV["CAMLI_GOPHERJS_GOROOT"] = Formula["go@1.18"].opt_libexec
 
-      (buildpath/"src/perkeep.org").install buildpath.children
+      (buildpath"srcperkeep.org").install buildpath.children
 
       # Vendored version of gopherjs requires go 1.10, so use the newest available gopherjs, which
       # supports newer Go versions.
-      rm_rf buildpath/"src/perkeep.org/vendor/github.com/gopherjs/gopherjs"
-      resource("gopherjs").stage buildpath/"src/perkeep.org/vendor/github.com/gopherjs/gopherjs"
+      rm_rf buildpath"srcperkeep.orgvendorgithub.comgopherjsgopherjs"
+      resource("gopherjs").stage buildpath"srcperkeep.orgvendorgithub.comgopherjsgopherjs"
 
-      cd "src/perkeep.org" do
+      cd "srcperkeep.org" do
         system "go", "run", "make.go"
       end
 
-      bin.install Dir["bin/*"].select { |f| File.executable? f }
+      bin.install Dir["bin*"].select { |f| File.executable? f }
     else
       system "go", "run", "make.go"
-      bin.install Dir[".brew_home/go/bin/*"].select { |f| File.executable? f }
+      bin.install Dir[".brew_homegobin*"].select { |f| File.executable? f }
     end
   end
 
   service do
-    run [opt_bin/"perkeepd", "-openbrowser=false"]
+    run [opt_bin"perkeepd", "-openbrowser=false"]
     keep_alive true
   end
 
   test do
-    system bin/"pk-get", "-version"
+    system bin"pk-get", "-version"
   end
 end

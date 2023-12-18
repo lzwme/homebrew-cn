@@ -1,13 +1,13 @@
 class GnustepMake < Formula
   desc "Basic GNUstep Makefiles"
-  homepage "http://gnustep.org"
-  url "https://ghproxy.com/https://github.com/gnustep/tools-make/releases/download/make-2_9_1/gnustep-make-2.9.1.tar.gz"
+  homepage "http:gnustep.org"
+  url "https:github.comgnusteptools-makereleasesdownloadmake-2_9_1gnustep-make-2.9.1.tar.gz"
   sha256 "c3d6e70cf156b27e7d1ed2501c57df3f96e27488ce2f351b93e479c58c01eae7"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
-    regex(/^make[._-]v?(\d+(?:[._]\d+)+)$/i)
+    regex(^make[._-]v?(\d+(?:[._]\d+)+)$i)
     strategy :github_latest do |json, regex|
       json["tag_name"]&.scan(regex)&.map { |match| match[0].tr("_", ".") }
     end
@@ -26,13 +26,13 @@ class GnustepMake < Formula
   end
 
   def install
-    system "./configure", *std_configure_args,
-                          "--with-config-file=#{prefix}/etc/GNUstep.conf",
+    system ".configure", *std_configure_args,
+                          "--with-config-file=#{prefix}etcGNUstep.conf",
                           "--enable-native-objc-exceptions"
     system "make", "install", "tooldir=#{libexec}"
   end
 
   test do
-    assert_match shell_output("#{libexec}/gnustep-config --variable=CC").chomp, ENV.cc
+    assert_match shell_output("#{libexec}gnustep-config --variable=CC").chomp, ENV.cc
   end
 end

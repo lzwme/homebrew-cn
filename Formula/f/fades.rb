@@ -1,10 +1,10 @@
 class Fades < Formula
   desc "Automatically handle virtualenvs for python scripts"
-  homepage "https://fades.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/8b/e8/87a44f1c33c41d1ad6ee6c0b87e957bf47150eb12e9f62cc90fdb6bf8669/fades-9.0.2.tar.gz"
+  homepage "https:fades.readthedocs.io"
+  url "https:files.pythonhosted.orgpackages8be887a44f1c33c41d1ad6ee6c0b87e957bf47150eb12e9f62cc90fdb6bf8669fades-9.0.2.tar.gz"
   sha256 "4a2212f48c4c377bbe4da376c4459fe2d79aea2e813f0cb60d9b9fdf43d205cc"
   license "GPL-3.0-only"
-  head "https://github.com/PyAr/fades.git", branch: "master"
+  head "https:github.comPyArfades.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -27,12 +27,12 @@ class Fades < Formula
   def install
     system python3, "-m", "pip", "install", *std_pip_args, "."
 
-    man1.install buildpath/"man/fades.1"
-    rm_f bin/"fades.cmd" # remove windows cmd file
+    man1.install buildpath"manfades.1"
+    rm_f bin"fades.cmd" # remove windows cmd file
   end
 
   test do
-    (testpath/"test.py").write("print('it works')")
-    system bin/"fades", testpath/"test.py"
+    (testpath"test.py").write("print('it works')")
+    system bin"fades", testpath"test.py"
   end
 end

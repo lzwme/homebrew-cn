@@ -1,14 +1,14 @@
 class GoJsonnet < Formula
   desc "Go implementation of configuration language for defining JSON data"
-  homepage "https://jsonnet.org/"
-  url "https://ghproxy.com/https://github.com/google/go-jsonnet/archive/refs/tags/v0.20.0.tar.gz"
+  homepage "https:jsonnet.org"
+  url "https:github.comgooglego-jsonnetarchiverefstagsv0.20.0.tar.gz"
   sha256 "bf9923a848dba65fa99f6e926221ab4222c2f259ba837d279b43917962bc7d70"
   license "Apache-2.0"
-  head "https://github.com/google/go-jsonnet.git", branch: "master"
+  head "https:github.comgooglego-jsonnet.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,14 +28,14 @@ class GoJsonnet < Formula
   conflicts_with "jsonnet", because: "both install binaries with the same name"
 
   def install
-    system "go", "build", "-o", bin/"jsonnet", "./cmd/jsonnet"
-    system "go", "build", "-o", bin/"jsonnetfmt", "./cmd/jsonnetfmt"
-    system "go", "build", "-o", bin/"jsonnet-lint", "./cmd/jsonnet-lint"
-    system "go", "build", "-o", bin/"jsonnet-deps", "./cmd/jsonnet-deps"
+    system "go", "build", "-o", bin"jsonnet", ".cmdjsonnet"
+    system "go", "build", "-o", bin"jsonnetfmt", ".cmdjsonnetfmt"
+    system "go", "build", "-o", bin"jsonnet-lint", ".cmdjsonnet-lint"
+    system "go", "build", "-o", bin"jsonnet-deps", ".cmdjsonnet-deps"
   end
 
   test do
-    (testpath/"example.jsonnet").write <<~EOS
+    (testpath"example.jsonnet").write <<~EOS
       {
         person1: {
           name: "Alice",
@@ -56,7 +56,7 @@ class GoJsonnet < Formula
       },
     }
 
-    output = shell_output("#{bin}/jsonnet #{testpath}/example.jsonnet")
+    output = shell_output("#{bin}jsonnet #{testpath}example.jsonnet")
     assert_equal expected_output, JSON.parse(output)
   end
 end

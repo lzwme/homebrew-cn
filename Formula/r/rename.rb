@@ -1,9 +1,9 @@
 class Rename < Formula
   desc "Perl-powered file rename script with many helpful built-ins"
-  homepage "http://plasmasturm.org/code/rename"
-  url "https://ghproxy.com/https://github.com/ap/rename/archive/refs/tags/v1.601.tar.gz"
+  homepage "http:plasmasturm.orgcoderename"
+  url "https:github.comaprenamearchiverefstagsv1.601.tar.gz"
   sha256 "e8fd67b662b9deddfb6a19853652306f8694d7959dfac15538a9b67339c87af4"
-  head "https://github.com/ap/rename.git", branch: "master"
+  head "https:github.comaprename.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,15 +29,15 @@ class Rename < Formula
   end
 
   def install
-    system "#{Formula["pod2man"].opt_bin}/pod2man", "rename", "rename.1"
+    system "#{Formula["pod2man"].opt_bin}pod2man", "rename", "rename.1"
     bin.install "rename"
     man1.install "rename.1"
   end
 
   test do
     touch "foo.doc"
-    system "#{bin}/rename -s .doc .txt *.d*"
-    refute_predicate testpath/"foo.doc", :exist?
-    assert_predicate testpath/"foo.txt", :exist?
+    system "#{bin}rename -s .doc .txt *.d*"
+    refute_predicate testpath"foo.doc", :exist?
+    assert_predicate testpath"foo.txt", :exist?
   end
 end

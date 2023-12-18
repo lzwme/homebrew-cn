@@ -1,7 +1,7 @@
 class Fpart < Formula
   desc "Sorts file trees and packs them into bags"
-  homepage "https://github.com/martymac/fpart/"
-  url "https://ghproxy.com/https://github.com/martymac/fpart/archive/refs/tags/fpart-1.5.1.tar.gz"
+  homepage "https:github.commartymacfpart"
+  url "https:github.commartymacfpartarchiverefstagsfpart-1.5.1.tar.gz"
   sha256 "c353a28f48e4c08f597304cb4ebb88b382f66b7fabfc8d0328ccbb0ceae9220c"
   license "BSD-2-Clause"
 
@@ -23,7 +23,7 @@ class Fpart < Formula
 
   def install
     system "autoreconf", "-i"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -31,12 +31,12 @@ class Fpart < Formula
   end
 
   test do
-    (testpath/"myfile1").write("")
-    (testpath/"myfile2").write("")
-    system bin/"fpart", "-n", "2", "-o", (testpath/"mypart"), (testpath/"myfile1"), (testpath/"myfile2")
-    assert_predicate testpath/"mypart.1", :exist?
-    assert_predicate testpath/"mypart.2", :exist?
-    refute_predicate testpath/"mypart.0", :exist?
-    refute_predicate testpath/"mypart.3", :exist?
+    (testpath"myfile1").write("")
+    (testpath"myfile2").write("")
+    system bin"fpart", "-n", "2", "-o", (testpath"mypart"), (testpath"myfile1"), (testpath"myfile2")
+    assert_predicate testpath"mypart.1", :exist?
+    assert_predicate testpath"mypart.2", :exist?
+    refute_predicate testpath"mypart.0", :exist?
+    refute_predicate testpath"mypart.3", :exist?
   end
 end

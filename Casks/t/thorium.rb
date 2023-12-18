@@ -2,11 +2,11 @@ cask "thorium" do
   version "2.3.0"
   sha256 "87680fb4bdf63f2dcaed9507f9af10a8e8f8f20412fcdc455f611eefc99458f6"
 
-  url "https://ghproxy.com/https://github.com/edrlab/thorium-reader/releases/download/v#{version}/Thorium-#{version}.dmg",
-      verified: "github.com/edrlab/thorium-reader/"
+  url "https:github.comedrlabthorium-readerreleasesdownloadv#{version}Thorium-#{version}.dmg",
+      verified: "github.comedrlabthorium-reader"
   name "Thorium Reader"
   desc "Epub reader"
-  homepage "https://www.edrlab.org/software/thorium-reader/"
+  homepage "https:www.edrlab.orgsoftwarethorium-reader"
 
   livecheck do
     url :url
@@ -16,7 +16,7 @@ cask "thorium" do
   app "Thorium.app"
 
   zap trash: [
-    "~/Library/Application Support/EDRLab.ThoriumReader",
-    "~/Library/Preferences/io.github.edrlab.thorium.plist",
+    "~LibraryApplication SupportEDRLab.ThoriumReader",
+    "~LibraryPreferencesio.github.edrlab.thorium.plist",
   ]
 end

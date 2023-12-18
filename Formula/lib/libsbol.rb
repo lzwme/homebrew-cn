@@ -1,7 +1,7 @@
 class Libsbol < Formula
   desc "Read and write files in the Synthetic Biology Open Language (SBOL)"
-  homepage "https://synbiodex.github.io/libSBOL"
-  url "https://ghproxy.com/https://github.com/SynBioDex/libSBOL/archive/refs/tags/v2.3.2.tar.gz"
+  homepage "https:synbiodex.github.iolibSBOL"
+  url "https:github.comSynBioDexlibSBOLarchiverefstagsv2.3.2.tar.gz"
   sha256 "c85de13b35dec40c920ff8a848a91c86af6f7c7ee77ed3c750f414bbbbb53924"
   license "Apache-2.0"
   revision 2
@@ -29,18 +29,18 @@ class Libsbol < Formula
   uses_from_macos "libxslt"
 
   def install
-    # upstream issue: https://github.com/SynBioDex/libSBOL/issues/215
-    inreplace "source/CMakeLists.txt", "measure.h", "measurement.h"
+    # upstream issue: https:github.comSynBioDexlibSBOLissues215
+    inreplace "sourceCMakeLists.txt", "measure.h", "measurement.h"
 
     args = std_cmake_args
     args << "-DSBOL_BUILD_SHARED=TRUE"
-    args << "-DRAPTOR_INCLUDE_DIR=#{Formula["raptor"].opt_include}/raptor2"
+    args << "-DRAPTOR_INCLUDE_DIR=#{Formula["raptor"].opt_include}raptor2"
     args << "-DRASQAL_INCLUDE_DIR=#{Formula["rasqal"].opt_include}"
 
     if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
-      args << "-DCURL_LIBRARY=#{sdk}/usr/lib/libcurl.tbd"
-      args << "-DLIBXSLT_INCLUDE_DIR=#{sdk}/usr/include/"
-      args << "-DLIBXSLT_LIBRARIES=#{sdk}/usr/lib/libxslt.tbd"
+      args << "-DCURL_LIBRARY=#{sdk}usrliblibcurl.tbd"
+      args << "-DLIBXSLT_INCLUDE_DIR=#{sdk}usrinclude"
+      args << "-DLIBXSLT_LIBRARIES=#{sdk}usrliblibxslt.tbd"
     end
 
     system "cmake", ".", *args
@@ -48,8 +48,8 @@ class Libsbol < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "sbol/sbol.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "sbolsbol.h"
 
       using namespace sbol;
 
@@ -60,12 +60,12 @@ class Libsbol < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11",
-                    "-I/System/Library/Frameworks/Python.framework/Headers",
-                    "-I#{Formula["raptor"].opt_include}/raptor2",
+                    "-ISystemLibraryFrameworksPython.frameworkHeaders",
+                    "-I#{Formula["raptor"].opt_include}raptor2",
                     "-I#{include}", "-L#{lib}",
                     "-L#{Formula["jsoncpp"].opt_lib}",
                     "-L#{Formula["raptor"].opt_lib}",
                     "-ljsoncpp", "-lcurl", "-lraptor2", "-lsbol"
-    system "./test"
+    system ".test"
   end
 end

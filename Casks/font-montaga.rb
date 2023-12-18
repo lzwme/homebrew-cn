@@ -2,10 +2,10 @@ cask "font-montaga" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/montaga/Montaga-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmontagaMontaga-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Montaga"
-  homepage "https://fonts.google.com/specimen/Montaga"
+  homepage "https:fonts.google.comspecimenMontaga"
 
   font "Montaga-Regular.ttf"
 

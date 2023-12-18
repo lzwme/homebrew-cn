@@ -1,7 +1,7 @@
 class GhzWeb < Formula
   desc "Web interface for ghz"
-  homepage "https://ghz.sh"
-  url "https://ghproxy.com/https://github.com/bojand/ghz/archive/refs/tags/v0.117.0.tar.gz"
+  homepage "https:ghz.sh"
+  url "https:github.combojandghzarchiverefstagsv0.117.0.tar.gz"
   sha256 "33014936ee67f8f139e89e342756d8415880b65c6bb6acb9fbf97132745a1528"
   license "Apache-2.0"
 
@@ -26,18 +26,18 @@ class GhzWeb < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmd/ghz-web/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "cmdghz-webmain.go"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ghz-web -v 2>&1")
+    assert_match version.to_s, shell_output("#{bin}ghz-web -v 2>&1")
     port = free_port
     ENV["GHZ_SERVER_PORT"] = port.to_s
     fork do
-      exec "#{bin}/ghz-web"
+      exec "#{bin}ghz-web"
     end
     sleep 1
-    cmd = "curl -sIm3 -XGET http://localhost:#{port}/"
+    cmd = "curl -sIm3 -XGET http:localhost:#{port}"
     assert_match "200 OK", shell_output(cmd)
   end
 end

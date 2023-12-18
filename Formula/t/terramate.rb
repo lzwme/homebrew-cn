@@ -1,11 +1,11 @@
 class Terramate < Formula
   desc "Managing Terraform stacks with change detections and code generations"
-  homepage "https://terramate.io/docs/cli/"
-  url "https://ghproxy.com/https://github.com/terramate-io/terramate/archive/refs/tags/v0.4.3.tar.gz"
+  homepage "https:terramate.iodocscli"
+  url "https:github.comterramate-ioterramatearchiverefstagsv0.4.3.tar.gz"
   sha256 "e5df311ea9aa5897541042e51ac37c97c202401dd2a0a09e8cd4f5c07c583387"
   license "MPL-2.0"
   revision 1
-  head "https://github.com/terramate-io/terramate.git", branch: "main"
+  head "https:github.comterramate-ioterramate.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c51cfef39a4aca1cddf80d7e72ca8c66307d068c697056ff1f403b5f3d7e7f9b"
@@ -20,12 +20,12 @@ class Terramate < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"terramate", ldflags: "-s -w"), "./cmd/terramate"
-    system "go", "build", *std_go_args(output: bin/"terramate-ls", ldflags: "-s -w"), "./cmd/terramate-ls"
+    system "go", "build", *std_go_args(output: bin"terramate", ldflags: "-s -w"), ".cmdterramate"
+    system "go", "build", *std_go_args(output: bin"terramate-ls", ldflags: "-s -w"), ".cmdterramate-ls"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/terramate version")
-    assert_match version.to_s, shell_output("#{bin}/terramate-ls -version")
+    assert_match version.to_s, shell_output("#{bin}terramate version")
+    assert_match version.to_s, shell_output("#{bin}terramate-ls -version")
   end
 end

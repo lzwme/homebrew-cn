@@ -1,10 +1,10 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
-  homepage "https://github.com/microsoft/sbom-tool"
-  url "https://ghproxy.com/https://github.com/microsoft/sbom-tool/archive/refs/tags/v2.0.0.tar.gz"
+  homepage "https:github.commicrosoftsbom-tool"
+  url "https:github.commicrosoftsbom-toolarchiverefstagsv2.0.0.tar.gz"
   sha256 "2ee856c667d14f2b6a7f4081b330a8d9e9b0af18923aebacc88ed092736d7bd6"
   license "MIT"
-  head "https://github.com/microsoft/sbom-tool.git", branch: "main"
+  head "https:github.commicrosoftsbom-tool.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "417e819cd53ff31758904737aa81b97d0f7cb878ec2e80b252565bfe957753a0"
@@ -44,8 +44,8 @@ class SbomTool < Formula
       -p:DebugSymbols=false
     ]
 
-    system "dotnet", "publish", "src/Microsoft.Sbom.Tool/Microsoft.Sbom.Tool.csproj", *args
-    (bin/"sbom-tool").write_env_script libexec/"Microsoft.Sbom.Tool",
+    system "dotnet", "publish", "srcMicrosoft.Sbom.ToolMicrosoft.Sbom.Tool.csproj", *args
+    (bin"sbom-tool").write_env_script libexec"Microsoft.Sbom.Tool",
                                        DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}"
   end
 
@@ -56,12 +56,12 @@ class SbomTool < Formula
       -pn TestProject
       -pv 1.2.3
       -ps Homebrew
-      -nsb http://formulae.brew.sh
+      -nsb http:formulae.brew.sh
     ]
 
-    system bin/"sbom-tool", "generate", *args
+    system bin"sbom-tool", "generate", *args
 
-    json = JSON.parse((testpath/"_manifest/spdx_2.2/manifest.spdx.json").read)
+    json = JSON.parse((testpath"_manifestspdx_2.2manifest.spdx.json").read)
     assert_equal json["name"], "TestProject 1.2.3"
   end
 end

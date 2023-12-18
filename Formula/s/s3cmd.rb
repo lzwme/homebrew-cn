@@ -1,10 +1,10 @@
 class S3cmd < Formula
   desc "Command-line tool for the Amazon S3 service"
-  homepage "https://s3tools.org/s3cmd"
-  url "https://files.pythonhosted.org/packages/b3/9c/ad4cd51328bd7a058bfda6739bc061c63ee3531ad2fbc6e672518a1eed01/s3cmd-2.4.0.tar.gz"
+  homepage "https:s3tools.orgs3cmd"
+  url "https:files.pythonhosted.orgpackagesb39cad4cd51328bd7a058bfda6739bc061c63ee3531ad2fbc6e672518a1eed01s3cmd-2.4.0.tar.gz"
   sha256 "6b567521be1c151323f2059c8feec85ded96b6f184ff80535837fea33798b40b"
   license "GPL-2.0-or-later"
-  head "https://github.com/s3tools/s3cmd.git", branch: "master"
+  head "https:github.coms3toolss3cmd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ba98097521dc3a454edba2847b2e49cab73954e17ef711698085b399ab855b3"
@@ -31,7 +31,7 @@ class S3cmd < Formula
   end
 
   test do
-    assert_match ".s3cfg: None", shell_output("#{bin}/s3cmd ls s3://brewtest 2>&1", 78)
-    assert_match "s3cmd version #{version}", shell_output("#{bin}/s3cmd --version")
+    assert_match ".s3cfg: None", shell_output("#{bin}s3cmd ls s3:brewtest 2>&1", 78)
+    assert_match "s3cmd version #{version}", shell_output("#{bin}s3cmd --version")
   end
 end

@@ -1,10 +1,10 @@
 class Flif < Formula
   desc "Free Loseless Image Format"
-  homepage "https://flif.info/"
-  url "https://ghproxy.com/https://github.com/FLIF-hub/FLIF/archive/refs/tags/v0.4.tar.gz"
+  homepage "https:flif.info"
+  url "https:github.comFLIF-hubFLIFarchiverefstagsv0.4.tar.gz"
   sha256 "cc98313ef0dbfef65d72bc21f730edf2a97a414f14bd73ad424368ce032fdb7f"
   license "LGPL-3.0-or-later"
-  head "https://github.com/FLIF-hub/FLIF.git", branch: "master"
+  head "https:github.comFLIF-hubFLIF.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6e2f70fa17688130a568e64fd6a4abdfe8e61681c1948cf2ecca01dfb04ee535"
@@ -25,7 +25,7 @@ class Flif < Formula
   depends_on "sdl2"
 
   resource "homebrew-test_c" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/FLIF-hub/FLIF/dcc2011/tools/test.c"
+    url "https:raw.githubusercontent.comFLIF-hubFLIFdcc2011toolstest.c"
     sha256 "a20b625ba0efdb09ad21a8c1c9844f686f636656f0e9bd6c24ad441375223afe"
   end
 
@@ -33,16 +33,16 @@ class Flif < Formula
     system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    doc.install "doc/flif.pdf"
+    doc.install "docflif.pdf"
   end
 
   test do
     testpath.install resource("homebrew-test_c")
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lflif", "-o", "test"
-    system "./test", "dummy.flif"
-    system bin/"flif", "-i", "dummy.flif"
-    system bin/"flif", "-I", test_fixtures("test.png"), "test.flif"
-    system bin/"flif", "-d", "test.flif", "test.png"
-    assert_predicate testpath/"test.png", :exist?, "Failed to decode test.flif"
+    system ".test", "dummy.flif"
+    system bin"flif", "-i", "dummy.flif"
+    system bin"flif", "-I", test_fixtures("test.png"), "test.flif"
+    system bin"flif", "-d", "test.flif", "test.png"
+    assert_predicate testpath"test.png", :exist?, "Failed to decode test.flif"
   end
 end

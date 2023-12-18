@@ -1,11 +1,11 @@
 class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
-  homepage "https://www.vcluster.com"
-  url "https://github.com/loft-sh/vcluster.git",
+  homepage "https:www.vcluster.com"
+  url "https:github.comloft-shvcluster.git",
       tag:      "v0.18.1",
       revision: "52581de84156b35615afb134ab7e8e992da8d97a"
   license "Apache-2.0"
-  head "https://github.com/loft-sh/vcluster.git", branch: "main"
+  head "https:github.comloft-shvcluster.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "093d037a3400be4ce07bb2571f77e57bec38762c0bb8a3d17e1de54bb4726642"
@@ -28,20 +28,20 @@ class Vcluster < Formula
       -X main.buildDate=#{time.iso8601}
       -X main.version=#{version}
     ]
-    system "go", "generate", "./..."
-    system "go", "build", "-mod", "vendor", *std_go_args(ldflags: ldflags), "./cmd/vclusterctl/main.go"
-    generate_completions_from_executable(bin/"vcluster", "completion")
+    system "go", "generate", "...."
+    system "go", "build", "-mod", "vendor", *std_go_args(ldflags: ldflags), ".cmdvclusterctlmain.go"
+    generate_completions_from_executable(bin"vcluster", "completion")
   end
 
   test do
     help_output = "vcluster root command"
-    assert_match help_output, shell_output("#{bin}/vcluster --help")
+    assert_match help_output, shell_output("#{bin}vcluster --help")
 
     create_output = "there is an error loading your current kube config " \
                     "(invalid configuration: no configuration has been provided, " \
                     "try setting KUBERNETES_MASTER environment variable), " \
                     "please make sure you have access to a kubernetes cluster and the command " \
                     "`kubectl get namespaces` is working"
-    assert_match create_output, shell_output("#{bin}/vcluster create vcluster -n vcluster --create-namespace 2>&1", 1)
+    assert_match create_output, shell_output("#{bin}vcluster create vcluster -n vcluster --create-namespace 2>&1", 1)
   end
 end

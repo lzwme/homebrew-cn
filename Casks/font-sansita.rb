@@ -2,12 +2,12 @@ cask "font-sansita" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/sansita"
+      only_path: "oflsansita"
   name "Sansita"
-  homepage "https://fonts.google.com/specimen/Sansita"
+  homepage "https:fonts.google.comspecimenSansita"
 
   font "Sansita-Black.ttf"
   font "Sansita-BlackItalic.ttf"

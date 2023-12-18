@@ -1,15 +1,15 @@
 class ZeroInstall < Formula
   desc "Decentralised cross-platform software installation system"
-  homepage "https://0install.net/"
-  url "https://github.com/0install/0install.git",
+  homepage "https:0install.net"
+  url "https:github.com0install0install.git",
       tag:      "v2.18",
       revision: "b58af5db6afd496cfd4a5f85fb23f30ba8dfbc87"
   license "LGPL-2.1-or-later"
-  head "https://github.com/0install/0install.git", branch: "master"
+  head "https:github.com0install0install.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -60,38 +60,38 @@ class ZeroInstall < Formula
       ]
       system "opam", "config", "exec", "opam", "install", *modules
 
-      # mkdir: <buildpath>/build: File exists.
-      # https://github.com/0install/0install/issues/87
+      # mkdir: <buildpath>build: File exists.
+      # https:github.com0install0installissues87
       ENV.deparallelize { system "opam", "config", "exec", "make" }
 
-      inreplace "dist/install.sh" do |s|
-        s.gsub! '"/usr/local"', prefix
-        s.gsub! '"${PREFIX}/man"', man
+      inreplace "distinstall.sh" do |s|
+        s.gsub! '"usrlocal"', prefix
+        s.gsub! '"${PREFIX}man"', man
       end
       system "make", "install"
     end
   end
 
   test do
-    (testpath/"hello.sh").write <<~EOS
-      #!/bin/sh
+    (testpath"hello.sh").write <<~EOS
+      #!binsh
       echo "hello world"
     EOS
-    chmod 0755, testpath/"hello.sh"
-    (testpath/"hello.xml").write <<~EOS
+    chmod 0755, testpath"hello.sh"
+    (testpath"hello.xml").write <<~EOS
       <?xml version="1.0" ?>
-      <interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" xmlns:compile="http://zero-install.sourceforge.net/2006/namespaces/0compile">
-        <name>hello-bash</name>
-        <summary>template source package for a bash program</summary>
-        <description>This package demonstrates how to create a simple program that uses bash.</description>
+      <interface xmlns="http:zero-install.sourceforge.net2004injectorinterface" xmlns:compile="http:zero-install.sourceforge.net2006namespaces0compile">
+        <name>hello-bash<name>
+        <summary>template source package for a bash program<summary>
+        <description>This package demonstrates how to create a simple program that uses bash.<description>
 
         <group>
           <implementation id="." version="0.1-pre" compile:min-version='1.1'>
-            <command name='run' path='hello.sh'></command>
-          </implementation>
-        </group>
-      </interface>
+            <command name='run' path='hello.sh'><command>
+          <implementation>
+        <group>
+      <interface>
     EOS
-    assert_equal "hello world\n", shell_output("#{bin}/0launch --console hello.xml")
+    assert_equal "hello world\n", shell_output("#{bin}0launch --console hello.xml")
   end
 end

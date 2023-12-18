@@ -1,7 +1,7 @@
 class Websocketpp < Formula
   desc "WebSocket++ is a cross platform header only C++ library"
-  homepage "https://www.zaphoyd.com/websocketpp"
-  url "https://ghproxy.com/https://github.com/zaphoyd/websocketpp/archive/refs/tags/0.8.2.tar.gz"
+  homepage "https:www.zaphoyd.comwebsocketpp"
+  url "https:github.comzaphoydwebsocketpparchiverefstags0.8.2.tar.gz"
   sha256 "6ce889d85ecdc2d8fa07408d6787e7352510750daa66b5ad44aacb47bea76755"
   license "BSD-3-Clause"
 
@@ -19,10 +19,10 @@ class Websocketpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <stdio.h>
-      #include <websocketpp/config/asio_no_tls_client.hpp>
-      #include <websocketpp/client.hpp>
+      #include <websocketppconfigasio_no_tls_client.hpp>
+      #include <websocketppclient.hpp>
       typedef websocketpp::client<websocketpp::config::asio_client> client;
       int main(int argc, char ** argv)
       {
@@ -38,6 +38,6 @@ class Websocketpp < Formula
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{Formula["boost"].opt_lib}",
                     "-lboost_random", "-pthread", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

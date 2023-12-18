@@ -1,7 +1,7 @@
 class Catch2 < Formula
   desc "Modern, C++-native, header-only, test framework"
-  homepage "https://github.com/catchorg/Catch2"
-  url "https://ghproxy.com/https://github.com/catchorg/Catch2/archive/refs/tags/v3.5.0.tar.gz"
+  homepage "https:github.comcatchorgCatch2"
+  url "https:github.comcatchorgCatch2archiverefstagsv3.5.0.tar.gz"
   sha256 "f6d4f8d78a9b59ec72a81d49f58d18eb317372ac07f8d9432710a079e69fd66a"
   license "BSL-1.0"
 
@@ -24,8 +24,8 @@ class Catch2 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <catch2/catch_all.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <catch2catch_all.hpp>
       TEST_CASE("Basic", "[catch2]") {
         int x = 1;
         SECTION("Test section 1") {
@@ -38,6 +38,6 @@ class Catch2 < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++14", "-L#{lib}", "-lCatch2Main", "-lCatch2", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

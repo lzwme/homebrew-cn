@@ -2,12 +2,12 @@ cask "font-mukta-mahee" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/muktamahee"
+      only_path: "oflmuktamahee"
   name "Mukta Mahee"
-  homepage "https://fonts.google.com/specimen/Mukta+Mahee"
+  homepage "https:fonts.google.comspecimenMukta+Mahee"
 
   font "MuktaMahee-Bold.ttf"
   font "MuktaMahee-ExtraBold.ttf"

@@ -1,15 +1,15 @@
 class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
-  homepage "https://github.com/kubernetes-sigs/kustomize"
-  url "https://github.com/kubernetes-sigs/kustomize.git",
-      tag:      "kustomize/v5.3.0",
+  homepage "https:github.comkubernetes-sigskustomize"
+  url "https:github.comkubernetes-sigskustomize.git",
+      tag:      "kustomizev5.3.0",
       revision: "9da0cf8b4c6bc3bd6d492c66757c89df74d8f63e"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/kustomize.git", branch: "master"
+  head "https:github.comkubernetes-sigskustomize.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^kustomize/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^kustomizev?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -28,26 +28,26 @@ class Kustomize < Formula
     cd "kustomize" do
       ldflags = %W[
         -s -w
-        -X sigs.k8s.io/kustomize/api/provenance.version=#{name}/v#{version}
-        -X sigs.k8s.io/kustomize/api/provenance.buildDate=#{time.iso8601}
+        -X sigs.k8s.iokustomizeapiprovenance.version=#{name}v#{version}
+        -X sigs.k8s.iokustomizeapiprovenance.buildDate=#{time.iso8601}
       ]
 
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
 
-    generate_completions_from_executable(bin/"kustomize", "completion")
+    generate_completions_from_executable(bin"kustomize", "completion")
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/kustomize version")
+    assert_match "v#{version}", shell_output("#{bin}kustomize version")
 
-    (testpath/"kustomization.yaml").write <<~EOS
+    (testpath"kustomization.yaml").write <<~EOS
       resources:
       - service.yaml
       patches:
       - path: patch.yaml
     EOS
-    (testpath/"patch.yaml").write <<~EOS
+    (testpath"patch.yaml").write <<~EOS
       apiVersion: v1
       kind: Service
       metadata:
@@ -56,7 +56,7 @@ class Kustomize < Formula
         selector:
           app: foo
     EOS
-    (testpath/"service.yaml").write <<~EOS
+    (testpath"service.yaml").write <<~EOS
       apiVersion: v1
       kind: Service
       metadata:
@@ -64,7 +64,7 @@ class Kustomize < Formula
       spec:
         type: LoadBalancer
     EOS
-    output = shell_output("#{bin}/kustomize build #{testpath}")
-    assert_match(/type:\s+"?LoadBalancer"?/, output)
+    output = shell_output("#{bin}kustomize build #{testpath}")
+    assert_match(type:\s+"?LoadBalancer"?, output)
   end
 end

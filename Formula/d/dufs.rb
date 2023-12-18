@@ -1,7 +1,7 @@
 class Dufs < Formula
   desc "Static file server"
-  homepage "https://github.com/sigoden/dufs"
-  url "https://ghproxy.com/https://github.com/sigoden/dufs/archive/refs/tags/v0.38.0.tar.gz"
+  homepage "https:github.comsigodendufs"
+  url "https:github.comsigodendufsarchiverefstagsv0.38.0.tar.gz"
   sha256 "763e29ef0e6ca886d01f3974d8b0f3475eedf536eb3600bc13edf6fb6f9fabb8"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -20,20 +20,20 @@ class Dufs < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"dufs", "--completions")
+    generate_completions_from_executable(bin"dufs", "--completions")
   end
 
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}/dufs", bin.to_s, "-b", "127.0.0.1", "--port", port.to_s
+      exec "#{bin}dufs", bin.to_s, "-b", "127.0.0.1", "--port", port.to_s
     end
 
     sleep 2
 
     begin
-      read = (bin/"dufs").read
-      assert_equal read, shell_output("curl localhost:#{port}/dufs")
+      read = (bin"dufs").read
+      assert_equal read, shell_output("curl localhost:#{port}dufs")
     ensure
       Process.kill("SIGINT", pid)
       Process.wait(pid)

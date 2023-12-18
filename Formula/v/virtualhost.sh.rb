@@ -1,9 +1,9 @@
 class VirtualhostSh < Formula
   desc "Script for macOS to create Apache virtual hosts"
-  homepage "https://github.com/virtualhost/virtualhost.sh"
-  url "https://ghproxy.com/https://github.com/virtualhost/virtualhost.sh/archive/refs/tags/1.35.tar.gz"
+  homepage "https:github.comvirtualhostvirtualhost.sh"
+  url "https:github.comvirtualhostvirtualhost.sharchiverefstags1.35.tar.gz"
   sha256 "75d34b807e71acd253876c6a99cdbc11ce31ffb159155373c83a99af862fffcc"
-  head "https://github.com/virtualhost/virtualhost.sh.git", branch: "master"
+  head "https:github.comvirtualhostvirtualhost.sh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "69fa9f84d063cdb79b54c2e198110a9ee786851f8ff9174e43a2565ccd5fbc7e"

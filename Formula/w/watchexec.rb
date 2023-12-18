@@ -1,14 +1,14 @@
 class Watchexec < Formula
   desc "Execute commands when watched files change"
-  homepage "https://github.com/watchexec/watchexec"
-  url "https://ghproxy.com/https://github.com/watchexec/watchexec/archive/refs/tags/v1.24.1.tar.gz"
+  homepage "https:github.comwatchexecwatchexec"
+  url "https:github.comwatchexecwatchexecarchiverefstagsv1.24.1.tar.gz"
   sha256 "9afc736fd4c0f895c89b7d6b1bbbb831fdb255400f785dcd3a414f62a5db6bd5"
   license "Apache-2.0"
-  head "https://github.com/watchexec/watchexec.git", branch: "main"
+  head "https:github.comwatchexecwatchexec.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^(?:cli[._-])?v?(\d+(?:\.\d+)+)$/i)
+    regex(^(?:cli[._-])?v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,12 +26,12 @@ class Watchexec < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/cli")
-    man1.install "doc/watchexec.1"
+    system "cargo", "install", *std_cargo_args(path: "cratescli")
+    man1.install "docwatchexec.1"
   end
 
   test do
-    o = IO.popen("#{bin}/watchexec -1 --postpone -- echo 'saw file change'")
+    o = IO.popen("#{bin}watchexec -1 --postpone -- echo 'saw file change'")
     sleep 15
     touch "test"
     sleep 15

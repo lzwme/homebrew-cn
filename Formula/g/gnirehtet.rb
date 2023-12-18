@@ -1,10 +1,10 @@
 class Gnirehtet < Formula
   desc "Reverse tethering tool for Android"
-  homepage "https://github.com/Genymobile/gnirehtet"
-  url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/archive/refs/tags/v2.5.1.tar.gz"
+  homepage "https:github.comGenymobilegnirehtet"
+  url "https:github.comGenymobilegnirehtetarchiverefstagsv2.5.1.tar.gz"
   sha256 "0d41361b9ac8b3b7fa4f4a0aff933472a72886556bd3fc4659be299b546274e6"
   license "Apache-2.0"
-  head "https://github.com/Genymobile/gnirehtet.git", branch: "master"
+  head "https:github.comGenymobilegnirehtet.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab10ed478b79d0bd8877a477d1f8bdecf2ca129755cbc3a8270d99e11d911c97"
@@ -22,7 +22,7 @@ class Gnirehtet < Formula
   depends_on "socat" => :test
 
   resource "java_bundle" do
-    url "https://ghproxy.com/https://github.com/Genymobile/gnirehtet/releases/download/v2.5.1/gnirehtet-java-v2.5.1.zip"
+    url "https:github.comGenymobilegnirehtetreleasesdownloadv2.5.1gnirehtet-java-v2.5.1.zip"
     sha256 "816748078fa6a304600a294a13338a06ac778bcc0e57b62d88328c7968ad2d3a"
   end
 
@@ -30,9 +30,9 @@ class Gnirehtet < Formula
     resource("java_bundle").stage { libexec.install "gnirehtet.apk" }
 
     system "cargo", "install", *std_cargo_args(root: libexec, path: "relay-rust")
-    mv "#{libexec}/bin/gnirehtet", "#{libexec}/gnirehtet"
+    mv "#{libexec}bingnirehtet", "#{libexec}gnirehtet"
 
-    (bin/"gnirehtet").write_env_script("#{libexec}/gnirehtet", GNIREHTET_APK: "#{libexec}/gnirehtet.apk")
+    (bin"gnirehtet").write_env_script("#{libexec}gnirehtet", GNIREHTET_APK: "#{libexec}gnirehtet.apk")
   end
 
   def caveats
@@ -45,8 +45,8 @@ class Gnirehtet < Formula
   end
 
   test do
-    gnirehtet_err = testpath/"gnirehtet.err"
-    gnirehtet_out = testpath/"gnirehtet.out"
+    gnirehtet_err = testpath"gnirehtet.err"
+    gnirehtet_out = testpath"gnirehtet.out"
 
     port = free_port
     begin
@@ -54,7 +54,7 @@ class Gnirehtet < Formula
         Process.setsid
         $stdout.reopen(gnirehtet_out, "w")
         $stderr.reopen(gnirehtet_err, "w")
-        exec bin/"gnirehtet", "relay", "-p", port.to_s
+        exec bin"gnirehtet", "relay", "-p", port.to_s
       end
       sleep 3
       system "socat", "-T", "1", "-", "TCP4:127.0.0.1:#{port}"

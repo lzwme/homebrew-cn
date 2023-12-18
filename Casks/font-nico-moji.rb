@@ -2,10 +2,10 @@ cask "font-nico-moji" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/nicomoji/NicoMoji-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnicomojiNicoMoji-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Nico Moji"
-  homepage "https://fonts.google.com/specimen/Nico+Moji"
+  homepage "https:fonts.google.comspecimenNico+Moji"
 
   font "NicoMoji-Regular.ttf"
 

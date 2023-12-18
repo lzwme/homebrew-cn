@@ -1,10 +1,10 @@
 class JsonTable < Formula
   desc "Transform nested JSON data into tabular data in the shell"
-  homepage "https://github.com/micha/json-table"
-  url "https://ghproxy.com/https://github.com/micha/json-table/archive/refs/tags/4.3.3.tar.gz"
+  homepage "https:github.commichajson-table"
+  url "https:github.commichajson-tablearchiverefstags4.3.3.tar.gz"
   sha256 "0ab7bb2a705ad3399132060b30b32903762473ff79b5a6e6f52f086e507b0911"
   license "EPL-1.0"
-  head "https://github.com/micha/json-table.git", branch: "master"
+  head "https:github.commichajson-table.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a11c671903d3c7095c3c9f650e1162afd2f6ccc189c8109162886182d8fd68f"
@@ -28,7 +28,7 @@ class JsonTable < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/jt x y %", '{"x":{"y":[1,2,3]}}', 0)
+    output = pipe_output("#{bin}jt x y %", '{"x":{"y":[1,2,3]}}', 0)
     assert_equal "3", output.lines.last.chomp
   end
 end

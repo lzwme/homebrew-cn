@@ -1,10 +1,10 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
-  homepage "https://ohmyposh.dev"
-  url "https://ghproxy.com/https://github.com/JanDeDobbeleer/oh-my-posh/archive/refs/tags/v19.2.1.tar.gz"
+  homepage "https:ohmyposh.dev"
+  url "https:github.comJanDeDobbeleeroh-my-posharchiverefstagsv19.2.1.tar.gz"
   sha256 "7147e1cfb16740ae0280447b355d59debadf17de388226a55ee955fdd6c3094a"
   license "MIT"
-  head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
+  head "https:github.comJanDeDobbeleeroh-my-posh.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18d420f9fd134cf81a0604d92f922b86394653291991da36b030b92e72faf009"
@@ -21,19 +21,19 @@ class OhMyPosh < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/jandedobbeleer/oh-my-posh/src/build.Version=#{version}
-      -X github.com/jandedobbeleer/oh-my-posh/src/build.Date=#{time.iso8601}
+      -X github.comjandedobbeleeroh-my-poshsrcbuild.Version=#{version}
+      -X github.comjandedobbeleeroh-my-poshsrcbuild.Date=#{time.iso8601}
     ]
     cd "src" do
       system "go", "build", *std_go_args(ldflags: ldflags)
     end
 
     prefix.install "themes"
-    pkgshare.install_symlink prefix/"themes"
+    pkgshare.install_symlink prefix"themes"
   end
 
   test do
-    assert_match "oh-my-posh", shell_output("#{bin}/oh-my-posh --init --shell bash")
-    assert_match version.to_s, shell_output("#{bin}/oh-my-posh --version")
+    assert_match "oh-my-posh", shell_output("#{bin}oh-my-posh --init --shell bash")
+    assert_match version.to_s, shell_output("#{bin}oh-my-posh --version")
   end
 end

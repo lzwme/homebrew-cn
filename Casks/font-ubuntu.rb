@@ -2,13 +2,13 @@ cask "font-ubuntu" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ufl/ubuntu"
+      only_path: "uflubuntu"
   name "Ubuntu"
   desc "Sans-serif typeface manually hinted for clarity"
-  homepage "https://fonts.google.com/specimen/Ubuntu"
+  homepage "https:fonts.google.comspecimenUbuntu"
 
   font "Ubuntu-Bold.ttf"
   font "Ubuntu-BoldItalic.ttf"

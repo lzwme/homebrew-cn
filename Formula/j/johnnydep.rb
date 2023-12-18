@@ -2,8 +2,8 @@ class Johnnydep < Formula
   include Language::Python::Virtualenv
 
   desc "Display dependency tree of Python distribution"
-  homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/16/bf/158fac439f5465bf7a84d59c45677154e36f0d37e7eb1b0551a75f9dd779/johnnydep-1.20.4.tar.gz"
+  homepage "https:github.comwimglennjohnnydep"
+  url "https:files.pythonhosted.orgpackages16bf158fac439f5465bf7a84d59c45677154e36f0d37e7eb1b0551a75f9dd779johnnydep-1.20.4.tar.gz"
   sha256 "34b5f44839fd6b42a0377e338ca7e6f1cadd8262936963c2d4799c4548876659"
   license "MIT"
 
@@ -25,32 +25,32 @@ class Johnnydep < Formula
   depends_on "six"
 
   resource "anytree" do
-    url "https://files.pythonhosted.org/packages/f9/44/2dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7dea/anytree-2.12.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesf9442dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7deaanytree-2.12.1.tar.gz"
     sha256 "244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/10/21/1b6880557742c49d5b0c4dcf0cf544b441509246cdd71182e0847ac859d5/cachetools-5.3.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages10211b6880557742c49d5b0c4dcf0cf544b441509246cdd71182e0847ac859d5cachetools-5.3.2.tar.gz"
     sha256 "086ee420196f7b2ab9ca2db2520aca326318b68fe5ba8bc4d49cca91add450f2"
   end
 
   resource "oyaml" do
-    url "https://files.pythonhosted.org/packages/00/71/c721b9a524f6fe6f73469c90ec44784f0b2b1b23c438da7cc7daac1ede76/oyaml-1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages0071c721b9a524f6fe6f73469c90ec44784f0b2b1b23c438da7cc7daac1ede76oyaml-1.0.tar.gz"
     sha256 "ed8fc096811f4763e1907dce29c35895d6d5936c4d0400fe843a91133d4744ed"
   end
 
   resource "structlog" do
-    url "https://files.pythonhosted.org/packages/99/4c/67e8cc235bbeb0a87053739c4c9d0619e3f284730ebdb2b34349488d9e8a/structlog-23.2.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages994c67e8cc235bbeb0a87053739c4c9d0619e3f284730ebdb2b34349488d9e8astructlog-23.2.0.tar.gz"
     sha256 "334666b94707f89dbc4c81a22a8ccd34449f0201d5b1ee097a030b577fa8c858"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/b0/b4/bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97b/wheel-0.42.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb0b4bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97bwheel-0.42.0.tar.gz"
     sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
   end
 
   resource "wimpy" do
-    url "https://files.pythonhosted.org/packages/6e/bc/88b1b2abdd0086354a54fb0e9d2839dd1054b740a3381eb2517f1e0ace81/wimpy-0.6.tar.gz"
+    url "https:files.pythonhosted.orgpackages6ebc88b1b2abdd0086354a54fb0e9d2839dd1054b740a3381eb2517f1e0ace81wimpy-0.6.tar.gz"
     sha256 "5d82b60648861e81cab0a1868ae6396f678d7eeb077efbd7c91524de340844b3"
   end
 
@@ -59,7 +59,7 @@ class Johnnydep < Formula
   end
 
   test do
-    output = shell_output("#{bin}/johnnydep johnnydep")
+    output = shell_output("#{bin}johnnydep johnnydep")
     resources.each do |r|
       assert_match r.name, output
     end

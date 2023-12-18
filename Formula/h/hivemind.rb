@@ -1,10 +1,10 @@
 class Hivemind < Formula
   desc "Process manager for Procfile-based applications"
-  homepage "https://github.com/DarthSim/hivemind"
-  url "https://ghproxy.com/https://github.com/DarthSim/hivemind/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:github.comDarthSimhivemind"
+  url "https:github.comDarthSimhivemindarchiverefstagsv1.1.0.tar.gz"
   sha256 "b4f7259663ef5b99906af0d98fe4b964d8f9a4d86a8f5aff30ab8df305d3a996"
   license "MIT"
-  head "https://github.com/DarthSim/hivemind.git", branch: "master"
+  head "https:github.comDarthSimhivemind.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4aff69e5552065591bb76b91c80ee7ea9b072e32b339cf6d7fe658cc8e3d5f3"
@@ -26,7 +26,7 @@ class Hivemind < Formula
   end
 
   test do
-    (testpath/"Procfile").write("test: echo 'test message'")
-    assert_match "test message", shell_output("#{bin}/hivemind")
+    (testpath"Procfile").write("test: echo 'test message'")
+    assert_match "test message", shell_output("#{bin}hivemind")
   end
 end

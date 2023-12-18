@@ -1,10 +1,10 @@
 class Hub < Formula
   desc "Add GitHub support to git on the command-line"
-  homepage "https://hub.github.com/"
-  url "https://ghproxy.com/https://github.com/github/hub/archive/refs/tags/v2.14.2.tar.gz"
+  homepage "https:hub.github.com"
+  url "https:github.comgithubhubarchiverefstagsv2.14.2.tar.gz"
   sha256 "e19e0fdfd1c69c401e1c24dd2d4ecf3fd9044aa4bd3f8d6fd942ed1b2b2ad21a"
   license "MIT"
-  head "https://github.com/github/hub.git", branch: "master"
+  head "https:github.comgithubhub.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7df6f6e443e8e00fa18c8bd5e88fa666fe0a40659832e478a0d2345233ca374d"
@@ -38,16 +38,16 @@ class Hub < Formula
 
     prefix.install_metafiles
 
-    bash_completion.install "etc/hub.bash_completion.sh"
-    zsh_completion.install "etc/hub.zsh_completion" => "_hub"
-    fish_completion.install "etc/hub.fish_completion" => "hub.fish"
+    bash_completion.install "etchub.bash_completion.sh"
+    zsh_completion.install "etchub.zsh_completion" => "_hub"
+    fish_completion.install "etchub.fish_completion" => "hub.fish"
   end
 
   test do
     system "git", "init"
-    %w[haunted house].each { |f| touch testpath/f }
+    %w[haunted house].each { |f| touch testpathf }
     system "git", "add", "haunted", "house"
     system "git", "commit", "-a", "-m", "Initial Commit"
-    assert_equal "haunted\nhouse", shell_output("#{bin}/hub ls-files").strip
+    assert_equal "haunted\nhouse", shell_output("#{bin}hub ls-files").strip
   end
 end

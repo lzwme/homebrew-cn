@@ -1,29 +1,29 @@
 class Wrangler < Formula
   desc "Refactoring tool for Erlang with emacs and Eclipse integration"
-  homepage "https://refactoringtools.github.io/docs/wrangler/"
+  homepage "https:refactoringtools.github.iodocswrangler"
   license all_of: ["BSD-3-Clause", "ErlPL-1.1", "GPL-2.0-or-later", "GPL-3.0-or-later"]
   revision 4
-  head "https://github.com/RefactoringTools/wrangler.git", branch: "master"
+  head "https:github.comRefactoringToolswrangler.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/RefactoringTools/wrangler/archive/refs/tags/wrangler1.2.tar.gz"
+    url "https:github.comRefactoringToolswranglerarchiverefstagswrangler1.2.tar.gz"
     sha256 "a6a87ad0513b95bf208c660d112b77ae1951266b7b4b60d8a2a6da7159310b87"
 
-    # upstream commit "Fix -spec's to compile in Erlang/OTP 19"
+    # upstream commit "Fix -spec's to compile in ErlangOTP 19"
     patch do
-      url "https://github.com/RefactoringTools/wrangler/commit/d81b888fd200dda17d341ec457d6786ef912b25d.patch?full_index=1"
+      url "https:github.comRefactoringToolswranglercommitd81b888fd200dda17d341ec457d6786ef912b25d.patch?full_index=1"
       sha256 "b7911206315c32ee08fc89776015cf5b26c97b6cb4f6eff0b73dcf2d583cfe31"
     end
 
     # upstream commit "fixes to make wrangler compile with R21"
     patch do
-      url "https://github.com/RefactoringTools/wrangler/commit/1149d6150eb92dcfefb91445179e7566952e184f.patch?full_index=1"
+      url "https:github.comRefactoringToolswranglercommit1149d6150eb92dcfefb91445179e7566952e184f.patch?full_index=1"
       sha256 "e84cba2ead98f47a16d9bb50182bbf3edf3ea27afefa36b78adc5afdf4aeabd5"
     end
 
     # upstream commit "Update to work with newest OTP"
     patch do
-      url "https://github.com/RefactoringTools/wrangler/commit/d3d84879b4269759b26d009013edc5bcff49a1af.patch?full_index=1"
+      url "https:github.comRefactoringToolswranglercommitd3d84879b4269759b26d009013edc5bcff49a1af.patch?full_index=1"
       sha256 "cc37f3042433d2c862f4cd4caa0d5a6b0716bdcb8f4840098ba1b46bca52f24b"
     end
   end
@@ -48,13 +48,13 @@ class Wrangler < Formula
     # suffix_tree.o:(.bss+0x10): multiple definition of `ST_ERROR'; main.o:(.bss+0x0): first defined here
     ENV.append_to_cflags "-fcommon" if OS.linux?
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    suffixtree = Dir.glob("#{lib}/erlang/*/*/*/suffixtree").shift
+    suffixtree = Dir.glob("#{lib}erlang***suffixtree").shift
     assert_predicate Pathname.new(suffixtree), :executable?, "suffixtree must be executable"
   end
 end

@@ -1,10 +1,10 @@
 class Bacon < Formula
   desc "Background rust code check"
-  homepage "https://dystroy.org/bacon/"
-  url "https://ghproxy.com/https://github.com/Canop/bacon/archive/refs/tags/v2.13.0.tar.gz"
+  homepage "https:dystroy.orgbacon"
+  url "https:github.comCanopbaconarchiverefstagsv2.13.0.tar.gz"
   sha256 "009c7ca9e3903ea7141d9979a1006ef0e3bf0d6e5e294c88d4ea76194422c3e0"
   license "AGPL-3.0-or-later"
-  head "https://github.com/Canop/bacon.git", branch: "main"
+  head "https:github.comCanopbacon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "feff5f6315ea4df528c36fe87be464af1e2e909558c838de8e6cbfdbcc1168f9"
@@ -27,15 +27,15 @@ class Bacon < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"src/main.rs").write <<~EOS
+      (crate"srcmain.rs").write <<~EOS
         #[cfg(test)]
         mod tests {
           #[test]
@@ -44,18 +44,18 @@ class Bacon < Formula
           }
         }
       EOS
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"
         license = "MIT"
       EOS
 
-      system bin/"bacon", "--init"
-      assert_match "[jobs.check]", (crate/"bacon.toml").read
+      system bin"bacon", "--init"
+      assert_match "[jobs.check]", (crate"bacon.toml").read
     end
 
-    output = shell_output("#{bin}/bacon --version")
+    output = shell_output("#{bin}bacon --version")
     assert_match version.to_s, output
   end
 end

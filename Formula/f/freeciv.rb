@@ -1,14 +1,14 @@
 class Freeciv < Formula
   desc "Free and Open Source empire-building strategy game"
-  homepage "http://freeciv.org"
-  url "https://downloads.sourceforge.net/project/freeciv/Freeciv%203.0/3.0.9/freeciv-3.0.9.tar.xz"
+  homepage "http:freeciv.org"
+  url "https:downloads.sourceforge.netprojectfreecivFreeciv%203.03.0.9freeciv-3.0.9.tar.xz"
   sha256 "16c46a9c378b4a511c1e3d3a7c435a78230a432d8b852202aaf5d5d584962742"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/freeciv[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)/}i)
+    regex(%r{url=.*?freeciv[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)}i)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Freeciv < Formula
   end
 
   head do
-    url "https://github.com/freeciv/freeciv.git", branch: "master"
+    url "https:github.comfreecivfreeciv.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -71,23 +71,23 @@ class Freeciv < Formula
     ]
 
     if build.head?
-      inreplace "./autogen.sh", "libtoolize", "glibtoolize"
-      system "./autogen.sh", *args
+      inreplace ".autogen.sh", "libtoolize", "glibtoolize"
+      system ".autogen.sh", *args
     else
-      system "./configure", *args
+      system ".configure", *args
     end
 
     system "make", "install"
   end
 
   test do
-    system bin/"freeciv-manual"
-    assert_predicate testpath/"civ2civ36.mediawiki", :exist?
+    system bin"freeciv-manual"
+    assert_predicate testpath"civ2civ36.mediawiki", :exist?
 
     fork do
-      system bin/"freeciv-server", "-l", testpath/"test.log"
+      system bin"freeciv-server", "-l", testpath"test.log"
     end
     sleep 5
-    assert_predicate testpath/"test.log", :exist?
+    assert_predicate testpath"test.log", :exist?
   end
 end

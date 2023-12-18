@@ -1,10 +1,10 @@
 class Dutree < Formula
   desc "Tool to analyze file system usage written in Rust"
-  homepage "https://github.com/nachoparker/dutree"
-  url "https://ghproxy.com/https://github.com/nachoparker/dutree/archive/refs/tags/v0.2.18.tar.gz"
+  homepage "https:github.comnachoparkerdutree"
+  url "https:github.comnachoparkerdutreearchiverefstagsv0.2.18.tar.gz"
   sha256 "55c30e57cc339dd16141510af33245cc3b82f588f22419fc034f02b36ebecba0"
   license "GPL-3.0-only"
-  head "https://github.com/nachoparker/dutree.git", branch: "master"
+  head "https:github.comnachoparkerdutree.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "235807c35ae72d2b7c0ce81eba444d8fa0db6dcc657deb5de876b58037dde646"
@@ -25,9 +25,9 @@ class Dutree < Formula
   end
 
   test do
-    touch testpath/"brewtest"
-    assert_match "brewtest", shell_output("#{bin}/dutree --usage #{testpath}")
+    touch testpath"brewtest"
+    assert_match "brewtest", shell_output("#{bin}dutree --usage #{testpath}")
 
-    assert_match "dutree version #{version}", shell_output("#{bin}/dutree --version")
+    assert_match "dutree version #{version}", shell_output("#{bin}dutree --version")
   end
 end

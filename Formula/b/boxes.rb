@@ -1,10 +1,10 @@
 class Boxes < Formula
   desc "Draw boxes around text"
-  homepage "https://boxes.thomasjensen.com/"
-  url "https://ghproxy.com/https://github.com/ascii-boxes/boxes/archive/refs/tags/v2.2.1.tar.gz"
+  homepage "https:boxes.thomasjensen.com"
+  url "https:github.comascii-boxesboxesarchiverefstagsv2.2.1.tar.gz"
   sha256 "fa4f7cd1876e4b22e950b4ca7c90776eb8edcf137316bdfd9c1780cf7cfb5d73"
   license "GPL-3.0-only"
-  head "https://github.com/ascii-boxes/boxes.git", branch: "master"
+  head "https:github.comascii-boxesboxes.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "83ac7aecc647b41c7d293e02799dbbbdb51881cfc2987baa207c68a982db9232"
@@ -25,17 +25,17 @@ class Boxes < Formula
   uses_from_macos "flex" => :build
 
   def install
-    # distro uses /usr/share/boxes change to prefix
-    system "make", "GLOBALCONF=#{share}/boxes-config",
+    # distro uses usrshareboxes change to prefix
+    system "make", "GLOBALCONF=#{share}boxes-config",
                    "CC=#{ENV.cc}",
-                   "YACC=#{Formula["bison"].opt_bin/"bison"}"
+                   "YACC=#{Formula["bison"].opt_bin"bison"}"
 
-    bin.install "out/boxes"
-    man1.install "doc/boxes.1"
+    bin.install "outboxes"
+    man1.install "docboxes.1"
     share.install "boxes-config"
   end
 
   test do
-    assert_match "test brew", pipe_output("#{bin}/boxes", "test brew")
+    assert_match "test brew", pipe_output("#{bin}boxes", "test brew")
   end
 end

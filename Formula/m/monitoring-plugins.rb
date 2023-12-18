@@ -1,13 +1,13 @@
 class MonitoringPlugins < Formula
   desc "Plugins for nagios compatible monitoring systems"
-  homepage "https://www.monitoring-plugins.org"
-  url "https://www.monitoring-plugins.org/download/monitoring-plugins-2.3.5.tar.gz"
+  homepage "https:www.monitoring-plugins.org"
+  url "https:www.monitoring-plugins.orgdownloadmonitoring-plugins-2.3.5.tar.gz"
   sha256 "f3edd79a9254f231a1b46b32d14def806648f5267e133ef0c0d39329587ee38b"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https://www.monitoring-plugins.org/download.html"
-    regex(/href=.*?monitoring-plugins[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.monitoring-plugins.orgdownload.html"
+    regex(href=.*?monitoring-plugins[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class MonitoringPlugins < Formula
   conflicts_with "nagios-plugins", because: "both install their plugins to the same folder"
 
   # Prevent -lcrypto from showing up in Makefile dependencies
-  # Reported upstream: https://github.com/monitoring-plugins/monitoring-plugins/pull/1970
+  # Reported upstream: https:github.commonitoring-pluginsmonitoring-pluginspull1970
   patch :DATA
 
   def install
@@ -42,43 +42,43 @@ class MonitoringPlugins < Formula
     args = %W[
       --disable-dependency-tracking
       --prefix=#{libexec}
-      --libexecdir=#{libexec}/sbin
+      --libexecdir=#{libexec}sbin
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    system "aclocal", "-I", "gl/m4", "-I", "m4"
+    system "aclocal", "-I", "glm4", "-I", "m4"
     system "autoupdate"
     system "automake", "--add-missing"
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
-    sbin.write_exec_script Dir["#{libexec}/sbin/*"]
+    sbin.write_exec_script Dir["#{libexec}sbin*"]
   end
 
   def caveats
     <<~EOS
       All plugins have been installed in:
-        #{HOMEBREW_PREFIX}/sbin
+        #{HOMEBREW_PREFIX}sbin
     EOS
   end
 
   test do
-    output = shell_output("#{sbin}/check_dns -H brew.sh -s 8.8.8.8 -t 3")
+    output = shell_output("#{sbin}check_dns -H brew.sh -s 8.8.8.8 -t 3")
     assert_match "DNS OK", output
   end
 end
 
 __END__
-diff --git a/plugins-root/Makefile.am b/plugins-root/Makefile.am
+diff --git aplugins-rootMakefile.am bplugins-rootMakefile.am
 index 40aa020..a80229e 100644
---- a/plugins-root/Makefile.am
-+++ b/plugins-root/Makefile.am
+--- aplugins-rootMakefile.am
++++ bplugins-rootMakefile.am
 @@ -26,7 +26,7 @@ EXTRA_PROGRAMS = pst3
  
  EXTRA_DIST = t pst3.c
  
--BASEOBJS = ../plugins/utils.o ../lib/libmonitoringplug.a ../gl/libgnu.a $(LIB_CRYPTO)
-+BASEOBJS = ../plugins/utils.o ../lib/libmonitoringplug.a ../gl/libgnu.a
- NETOBJS = ../plugins/netutils.o $(BASEOBJS) $(EXTRA_NETOBJS)
+-BASEOBJS = ..pluginsutils.o ..liblibmonitoringplug.a ..gllibgnu.a $(LIB_CRYPTO)
++BASEOBJS = ..pluginsutils.o ..liblibmonitoringplug.a ..gllibgnu.a
+ NETOBJS = ..pluginsnetutils.o $(BASEOBJS) $(EXTRA_NETOBJS)
  NETLIBS = $(NETOBJS) $(SOCKETLIBS)
  
 @@ -80,8 +80,8 @@ install-exec-local: $(noinst_PROGRAMS)

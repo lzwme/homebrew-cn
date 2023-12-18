@@ -1,7 +1,7 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
-  homepage "https://kuma.io/"
-  url "https://ghproxy.com/https://github.com/kumahq/kuma/archive/refs/tags/2.5.1.tar.gz"
+  homepage "https:kuma.io"
+  url "https:github.comkumahqkumaarchiverefstags2.5.1.tar.gz"
   sha256 "57f5dab796e46a8c8f03dadeebb7b88d5b7b2d0affd4ea5ba8bda7afe7548b97"
   license "Apache-2.0"
 
@@ -25,27 +25,27 @@ class Kumactl < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/kumahq/kuma/pkg/version.version=#{version}
-      -X github.com/kumahq/kuma/pkg/version.gitTag=#{version}
-      -X github.com/kumahq/kuma/pkg/version.buildDate=#{time.strftime("%F")}
+      -X github.comkumahqkumapkgversion.version=#{version}
+      -X github.comkumahqkumapkgversion.gitTag=#{version}
+      -X github.comkumahqkumapkgversion.buildDate=#{time.strftime("%F")}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./app/kumactl"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".appkumactl"
 
-    generate_completions_from_executable(bin/"kumactl", "completion")
+    generate_completions_from_executable(bin"kumactl", "completion")
 
     ENV["DESTDIR"] = buildpath
     ENV["FORMAT"] = "man"
-    system "go", "run", "tools/docs/generate.go"
-    man1.install Dir["kumactl/*.1"]
+    system "go", "run", "toolsdocsgenerate.go"
+    man1.install Dir["kumactl*.1"]
   end
 
   test do
-    assert_match "Management tool for Kuma.", shell_output("#{bin}/kumactl")
-    assert_match version.to_s, shell_output("#{bin}/kumactl version 2>&1")
+    assert_match "Management tool for Kuma.", shell_output("#{bin}kumactl")
+    assert_match version.to_s, shell_output("#{bin}kumactl version 2>&1")
 
-    touch testpath/"config.yml"
+    touch testpath"config.yml"
     assert_match "Error: no resource(s) passed to apply",
-    shell_output("#{bin}/kumactl apply -f config.yml 2>&1", 1)
+    shell_output("#{bin}kumactl apply -f config.yml 2>&1", 1)
   end
 end

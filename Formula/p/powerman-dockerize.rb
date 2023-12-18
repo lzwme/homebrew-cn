@@ -1,7 +1,7 @@
 class PowermanDockerize < Formula
   desc "Utility to simplify running applications in docker containers"
-  homepage "https://github.com/powerman/dockerize"
-  url "https://ghproxy.com/https://github.com/powerman/dockerize/archive/refs/tags/v0.19.0.tar.gz"
+  homepage "https:github.compowermandockerize"
+  url "https:github.compowermandockerizearchiverefstagsv0.19.0.tar.gz"
   sha256 "192c142ab25893c7a1e8a135280d8e72f05f12b56c1e2b5d932946707ec68c6b"
   license "MIT"
 
@@ -21,11 +21,11 @@ class PowermanDockerize < Formula
   conflicts_with "dockerize", because: "powerman-dockerize and dockerize install conflicting executables"
 
   def install
-    system "go", "build", *std_go_args(output: bin/"dockerize", ldflags: "-s -w -X main.ver=#{version}")
+    system "go", "build", *std_go_args(output: bin"dockerize", ldflags: "-s -w -X main.ver=#{version}")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dockerize --version")
-    system "#{bin}/dockerize", "-wait", "https://www.google.com/", "-wait-retry-interval=1s", "-timeout", "5s"
+    assert_match version.to_s, shell_output("#{bin}dockerize --version")
+    system "#{bin}dockerize", "-wait", "https:www.google.com", "-wait-retry-interval=1s", "-timeout", "5s"
   end
 end

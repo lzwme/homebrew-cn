@@ -1,10 +1,10 @@
 class Simde < Formula
   desc "Implementations of SIMD intrinsics for systems which don't natively support them"
-  homepage "https://github.com/simd-everywhere/simde"
-  url "https://ghproxy.com/https://github.com/simd-everywhere/simde/archive/refs/tags/v0.7.6.tar.gz"
+  homepage "https:github.comsimd-everywheresimde"
+  url "https:github.comsimd-everywheresimdearchiverefstagsv0.7.6.tar.gz"
   sha256 "c63e6c61392e324728da1c7e5de308cb31410908993a769594f5e21ff8de962b"
   license "MIT"
-  head "https://github.com/simd-everywhere/simde.git", branch: "master"
+  head "https:github.comsimd-everywheresimde.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e236c17b7eb174dbefb648865412d7b59263447f4161fb92fe13fa383b42fbab"
@@ -20,10 +20,10 @@ class Simde < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
-      #include <simde/arm/neon.h>
-      #include <simde/x86/sse2.h>
+      #include <simdearmneon.h>
+      #include <simdex86sse2.h>
 
       int main() {
         int64_t a = 1, b = 2;
@@ -37,6 +37,6 @@ class Simde < Formula
     EOS
 
     system ENV.cc, "test.c", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

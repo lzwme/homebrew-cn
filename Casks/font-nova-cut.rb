@@ -2,10 +2,10 @@ cask "font-nova-cut" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/novacut/NovaCut.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnovacutNovaCut.ttf",
+      verified: "github.comgooglefonts"
   name "Nova Cut"
-  homepage "https://fonts.google.com/specimen/Nova+Cut"
+  homepage "https:fonts.google.comspecimenNova+Cut"
 
   font "NovaCut.ttf"
 

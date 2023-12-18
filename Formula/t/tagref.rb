@@ -1,7 +1,7 @@
 class Tagref < Formula
   desc "Refer to other locations in your codebase"
-  homepage "https://github.com/stepchowfun/tagref"
-  url "https://ghproxy.com/https://github.com/stepchowfun/tagref/archive/refs/tags/v1.8.4.tar.gz"
+  homepage "https:github.comstepchowfuntagref"
+  url "https:github.comstepchowfuntagrefarchiverefstagsv1.8.4.tar.gz"
   sha256 "dfa5e59312c06a3bf5dceee12045e193b6ae3d4eeb7fab42f1c1edb3f9fe838e"
   license "MIT"
 
@@ -24,31 +24,31 @@ class Tagref < Formula
   end
 
   test do
-    (testpath/"file-1.txt").write <<~EOS
+    (testpath"file-1.txt").write <<~EOS
       Here's a reference to the tag below: [ref:foo]
       Here's a reference to a tag in another file: [ref:bar]
       Here's a tag: [tag:foo]
     EOS
 
-    (testpath/"file-2.txt").write <<~EOS
+    (testpath"file-2.txt").write <<~EOS
       Here's a tag: [tag:bar]
     EOS
 
     ENV["NO_COLOR"] = "true"
-    output = shell_output("#{bin}/tagref 2>&1")
+    output = shell_output("#{bin}tagref 2>&1")
     assert_match(
-      /2 tags and 2 references validated in \d+ files\./,
+      2 tags and 2 references validated in \d+ files\.,
       output,
       "Tagref did not find all the tags.",
     )
 
-    (testpath/"file-3.txt").write <<~EOS
+    (testpath"file-3.txt").write <<~EOS
       Here's a reference to a non-existent tag: [ref:baz]
     EOS
 
-    output = shell_output("#{bin}/tagref 2>&1", 1)
+    output = shell_output("#{bin}tagref 2>&1", 1)
     assert_match(
-      "No tag found for [ref:baz] @ ./file-3.txt:1.",
+      "No tag found for [ref:baz] @ .file-3.txt:1.",
       output,
       "Tagref did not complain about a missing tag.",
     )

@@ -1,7 +1,7 @@
 class Libusbmuxd < Formula
   desc "USB multiplexor library for iOS devices"
-  homepage "https://www.libimobiledevice.org/"
-  url "https://ghproxy.com/https://github.com/libimobiledevice/libusbmuxd/archive/refs/tags/2.0.2.tar.gz"
+  homepage "https:www.libimobiledevice.org"
+  url "https:github.comlibimobiledevicelibusbmuxdarchiverefstags2.0.2.tar.gz"
   sha256 "8ae3e1d9340177f8f3a785be276435869363de79f491d05d8a84a59efc8a8fdc"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
@@ -22,7 +22,7 @@ class Libusbmuxd < Formula
   # libimobiledevice-glue is required for building future versions
   # Move outside of HEAD clause when there's a new release.
   head do
-    url "https://github.com/libimobiledevice/libusbmuxd.git", branch: "master"
+    url "https:github.comlibimobiledevicelibusbmuxd.git", branch: "master"
     depends_on "libimobiledevice-glue"
   end
 
@@ -35,7 +35,7 @@ class Libusbmuxd < Formula
   uses_from_macos "netcat" => :test
 
   def install
-    system "./autogen.sh", *std_configure_args, "--disable-silent-rules"
+    system ".autogen.sh", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
@@ -43,7 +43,7 @@ class Libusbmuxd < Formula
     source = free_port
     dest = free_port
     fork do
-      exec bin/"iproxy", "-s", "localhost", "#{source}:#{dest}"
+      exec bin"iproxy", "-s", "localhost", "#{source}:#{dest}"
     end
 
     sleep(2)

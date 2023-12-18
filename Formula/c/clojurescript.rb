@@ -1,14 +1,14 @@
 class Clojurescript < Formula
   desc "Clojure to JS compiler"
-  homepage "https://github.com/clojure/clojurescript"
-  url "https://ghproxy.com/https://github.com/clojure/clojurescript/releases/download/r1.11.60/cljs.jar"
+  homepage "https:github.comclojureclojurescript"
+  url "https:github.comclojureclojurescriptreleasesdownloadr1.11.60cljs.jar"
   sha256 "db13c578cbe9bc4ac12f62856db731da231710da2fb2b93eddbb9b9eda7bf2d7"
   license "EPL-1.0"
-  head "https://github.com/clojure/clojurescript.git", branch: "master"
+  head "https:github.comclojureclojurescript.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/r?(\d+(?:\.\d+)+)/i)
+    regex(r?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -20,7 +20,7 @@ class Clojurescript < Formula
 
   def install
     libexec.install "cljs.jar"
-    bin.write_jar_script libexec/"cljs.jar", "cljsc"
+    bin.write_jar_script libexec"cljs.jar", "cljsc"
   end
 
   def caveats
@@ -31,12 +31,12 @@ class Clojurescript < Formula
   end
 
   test do
-    (testpath/"t.cljs").write <<~EOS
+    (testpath"t.cljs").write <<~EOS
       (ns hello)
       (defn ^:export greet [n]
         (str "Hello " n))
     EOS
 
-    system "#{bin}/cljsc", testpath/"t.cljs"
+    system "#{bin}cljsc", testpath"t.cljs"
   end
 end

@@ -2,10 +2,10 @@ cask "font-aubrey" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/aubrey/Aubrey-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflaubreyAubrey-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Aubrey"
-  homepage "https://fonts.google.com/specimen/Aubrey"
+  homepage "https:fonts.google.comspecimenAubrey"
 
   font "Aubrey-Regular.ttf"
 

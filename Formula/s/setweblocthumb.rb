@@ -1,7 +1,7 @@
 class Setweblocthumb < Formula
   desc "Assigns custom icons to webloc files"
-  homepage "https://hasseg.org/setWeblocThumb/"
-  url "https://ghproxy.com/https://github.com/ali-rantakari/setWeblocThumb/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:hasseg.orgsetWeblocThumb"
+  url "https:github.comali-rantakarisetWeblocThumbarchiverefstagsv1.0.0.tar.gz"
   sha256 "0258fdabbd24eed2ad3ff425b7832c4cd9bc706254861a6339f886efc28e35be"
   license "Apache-2.0"
 
@@ -24,7 +24,7 @@ class Setweblocthumb < Formula
   depends_on :macos
 
   def install
-    # https://github.com/ali-rantakari/setWeblocThumb/issues/3
+    # https:github.comali-rantakarisetWeblocThumbissues3
     inreplace "Makefile", "-force_cpusubtype_ALL -mmacosx-version-min=10.5 -arch i386", ""
 
     system "make"
@@ -32,7 +32,7 @@ class Setweblocthumb < Formula
   end
 
   test do
-    Pathname.new("google.webloc").write('{URL = "https://google.com";}')
-    system "#{bin}/setWeblocThumb", "google.webloc"
+    Pathname.new("google.webloc").write('{URL = "https:google.com";}')
+    system "#{bin}setWeblocThumb", "google.webloc"
   end
 end

@@ -2,10 +2,10 @@ cask "font-ntr" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/ntr/NTR-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflntrNTR-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "NTR"
-  homepage "https://fonts.google.com/specimen/NTR"
+  homepage "https:fonts.google.comspecimenNTR"
 
   font "NTR-Regular.ttf"
 

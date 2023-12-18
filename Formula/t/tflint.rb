@@ -1,10 +1,10 @@
 class Tflint < Formula
   desc "Linter for Terraform files"
-  homepage "https://github.com/terraform-linters/tflint"
-  url "https://ghproxy.com/https://github.com/terraform-linters/tflint/archive/refs/tags/v0.49.0.tar.gz"
+  homepage "https:github.comterraform-linterstflint"
+  url "https:github.comterraform-linterstflintarchiverefstagsv0.49.0.tar.gz"
   sha256 "556ddf20e24f687595eb55b9982276ec38974a75eb10f1fe6917e34d7cd725a8"
   license "MPL-2.0"
-  head "https://github.com/terraform-linters/tflint.git", branch: "master"
+  head "https:github.comterraform-linterstflint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2de61acee493eb05718aee68fcf9e0bf06dc24899f33aaaf3ed840f2bba30ae3"
@@ -23,11 +23,11 @@ class Tflint < Formula
   end
 
   test do
-    (testpath/"test.tf").write <<~EOS
+    (testpath"test.tf").write <<~EOS
       terraform {
         required_providers {
           aws = {
-            source = "hashicorp/aws"
+            source = "hashicorpaws"
             version = "~> 4"
           }
         }
@@ -39,7 +39,7 @@ class Tflint < Formula
     EOS
 
     # tflint returns exitstatus: 0 (no issues), 2 (errors occurred), 3 (no errors but issues found)
-    assert_empty shell_output("#{bin}/tflint --filter=test.tf")
-    assert_match version.to_s, shell_output("#{bin}/tflint --version")
+    assert_empty shell_output("#{bin}tflint --filter=test.tf")
+    assert_match version.to_s, shell_output("#{bin}tflint --version")
   end
 end

@@ -1,10 +1,10 @@
 class Duc < Formula
   desc "Suite of tools for inspecting disk usage"
-  homepage "https://duc.zevv.nl/"
-  url "https://ghproxy.com/https://github.com/zevv/duc/releases/download/1.4.5/duc-1.4.5.tar.gz"
+  homepage "https:duc.zevv.nl"
+  url "https:github.comzevvducreleasesdownload1.4.5duc-1.4.5.tar.gz"
   sha256 "c69512ca85b443e42ffbb4026eedd5492307af612047afb9c469df923b468bfd"
   license "LGPL-3.0"
-  head "https://github.com/zevv/duc.git", branch: "master"
+  head "https:github.comzevvduc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "df0c4ee04b4b588ebd6c627e769773354c8c990bd62dcb1d5a2cd4d7d8f7eaa8"
@@ -26,7 +26,7 @@ class Duc < Formula
   depends_on "tokyo-cabinet"
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -36,11 +36,11 @@ class Duc < Formula
   end
 
   test do
-    db_file = testpath/"duc.db"
+    db_file = testpath"duc.db"
     touch db_file
-    system "dd", "if=/dev/zero", "of=test", "count=1"
-    system "#{bin}/duc", "index", "-d", db_file, "."
-    system "#{bin}/duc", "graph", "-d", db_file, "-o", "duc.png"
-    assert_predicate testpath/"duc.png", :exist?, "Failed to create duc.png!"
+    system "dd", "if=devzero", "of=test", "count=1"
+    system "#{bin}duc", "index", "-d", db_file, "."
+    system "#{bin}duc", "graph", "-d", db_file, "-o", "duc.png"
+    assert_predicate testpath"duc.png", :exist?, "Failed to create duc.png!"
   end
 end

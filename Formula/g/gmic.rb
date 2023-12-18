@@ -1,14 +1,14 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
-  homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.3.2.tar.gz"
+  homepage "https:gmic.eu"
+  url "https:gmic.eufilessourcegmic_3.3.2.tar.gz"
   sha256 "d95ead2339c552378cef2947e844d5ec247f3a8485471786395aee10f566f868"
   license "CECILL-2.1"
-  head "https://github.com/GreycLab/gmic.git", branch: "master"
+  head "https:github.comGreycLabgmic.git", branch: "master"
 
   livecheck do
-    url "https://gmic.eu/files/source/"
-    regex(/href=.*?gmic[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:gmic.eufilessource"
+    regex(href=.*?gmic[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -38,7 +38,7 @@ class Gmic < Formula
   # Use .dylibs instead of .so on macOS
   patch do
     on_macos do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/macports/macports-ports/a859c5929c929548f5156f5cab13a2f341982e72/science/gmic/files/patch-src-Makefile.diff"
+      url "https:raw.githubusercontent.commacportsmacports-portsa859c5929c929548f5156f5cab13a2f341982e72sciencegmicfilespatch-src-Makefile.diff"
       sha256 "5b4914a05135f6c137bb5980d0c3bf8d94405f03d4e12b6ee38bd0e0e004a358"
       directory "src"
     end
@@ -46,13 +46,13 @@ class Gmic < Formula
 
   def install
     # The Makefile is not safe to run in parallel.
-    # Issue ref: https://github.com/dtschump/gmic/issues/406
+    # Issue ref: https:github.comdtschumpgmicissues406
     ENV.deparallelize
 
-    # Use PLUGINDIR to avoid trying to create "/plug-ins" on Linux without GIMP.
-    # Disable X11 by using the values from Makefile when "/usr/X11" doesn't exist.
+    # Use PLUGINDIR to avoid trying to create "plug-ins" on Linux without GIMP.
+    # Disable X11 by using the values from Makefile when "usrX11" doesn't exist.
     args = %W[
-      PLUGINDIR=#{buildpath}/plug-ins
+      PLUGINDIR=#{buildpath}plug-ins
       USR=#{prefix}
       X11_CFLAGS=-Dcimg_display=0
       X11_LIBS=-lpthread
@@ -60,20 +60,20 @@ class Gmic < Formula
     ]
     system "make", "lib", "cli_shared", *args
     system "make", "install", *args, "PREFIX=#{prefix}"
-    lib.install "src/libgmic.a"
+    lib.install "srclibgmic.a"
 
     # Need gmic binary to build completions
     ENV.prepend_path "PATH", bin
     system "make", "bashcompletion", *args
-    bash_completion.install "resources/gmic_bashcompletion.sh" => "gmic"
+    bash_completion.install "resourcesgmic_bashcompletion.sh" => "gmic"
   end
 
   test do
     %w[test.jpg test.png].each do |file|
-      system bin/"gmic", test_fixtures(file)
+      system bin"gmic", test_fixtures(file)
     end
-    system bin/"gmic", "-input", test_fixtures("test.jpg"), "rodilius", "10,4,400,16",
-           "smooth", "60,0,1,1,4", "normalize_local", "10,16", "-output", testpath/"test_rodilius.jpg"
-    assert_predicate testpath/"test_rodilius.jpg", :exist?
+    system bin"gmic", "-input", test_fixtures("test.jpg"), "rodilius", "10,4,400,16",
+           "smooth", "60,0,1,1,4", "normalize_local", "10,16", "-output", testpath"test_rodilius.jpg"
+    assert_predicate testpath"test_rodilius.jpg", :exist?
   end
 end

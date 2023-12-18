@@ -1,19 +1,19 @@
 class VorbisTools < Formula
   desc "Ogg Vorbis CODEC tools"
-  homepage "https://github.com/xiph/vorbis-tools"
-  url "https://downloads.xiph.org/releases/vorbis/vorbis-tools-1.4.2.tar.gz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/vorbis/vorbis-tools-1.4.2.tar.gz"
+  homepage "https:github.comxiphvorbis-tools"
+  url "https:downloads.xiph.orgreleasesvorbisvorbis-tools-1.4.2.tar.gz", using: :homebrew_curl
+  mirror "https:ftp.osuosl.orgpubxiphreleasesvorbisvorbis-tools-1.4.2.tar.gz"
   sha256 "db7774ec2bf2c939b139452183669be84fda5774d6400fc57fde37f77624f0b0"
   license all_of: [
-    "LGPL-2.0-or-later", # intl/ (libintl)
-    "GPL-2.0-or-later", # share/
-    "GPL-2.0-only", # oggenc/, vorbiscomment/
+    "LGPL-2.0-or-later", # intl (libintl)
+    "GPL-2.0-or-later", # share
+    "GPL-2.0-only", # oggenc, vorbiscomment
   ]
   revision 1
 
   livecheck do
-    url "https://ftp.osuosl.org/pub/xiph/releases/vorbis/?C=M&O=D"
-    regex(/href=.*?vorbis-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ftp.osuosl.orgpubxiphreleasesvorbis?C=M&O=D"
+    regex(href=.*?vorbis-tools[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -60,23 +60,23 @@ class VorbisTools < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", *std_configure_args, "--disable-nls"
+    system ".configure", *std_configure_args, "--disable-nls"
     system "make", "install"
   end
 
   test do
-    system bin/"oggenc", test_fixtures("test.wav"), "-o", "test.ogg"
-    assert_predicate testpath/"test.ogg", :exist?
-    output = shell_output("#{bin}/ogginfo test.ogg")
-    assert_match "20.625000 kb/s", output
+    system bin"oggenc", test_fixtures("test.wav"), "-o", "test.ogg"
+    assert_predicate testpath"test.ogg", :exist?
+    output = shell_output("#{bin}ogginfo test.ogg")
+    assert_match "20.625000 kbs", output
   end
 end
 
 __END__
-diff --git a/share/Makefile.am b/share/Makefile.am
+diff --git ashareMakefile.am bshareMakefile.am
 index 1011f1d..bd69a67 100644
---- a/share/Makefile.am
-+++ b/share/Makefile.am
+--- ashareMakefile.am
++++ bshareMakefile.am
 @@ -11,7 +11,7 @@ libgetopt_a_SOURCES = getopt.c getopt1.c
  libbase64_a_SOURCES = base64.c
  

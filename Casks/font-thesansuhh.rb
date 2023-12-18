@@ -1,14 +1,14 @@
-require_relative "../lib/b2_download_strategy" unless defined?(B2DownloadStrategy)
+require_relative "..libb2_download_strategy" unless defined?(B2DownloadStrategy)
 
 cask "font-thesansuhh" do
   version "1.003"
   sha256 "b8c0467e09d516311094562b5d7bc41795677566423304c2c2cc50a8eaef99e7"
 
-  url "b2://backblazeb2.com/brewery/fonts/thesansuhh-1.003.zip",
-      verified: "backblazeb2.com/brewery/"
+  url "b2:backblazeb2.combreweryfontsthesansuhh-1.003.zip",
+      verified: "backblazeb2.combrewery"
   name "TheSansUHH"
   desc "TheSansUHH font family"
-  homepage "https://github.com/codello/homebrew-brewery"
+  homepage "https:github.comcodellohomebrew-brewery"
 
   font "TheSansUHH Regular.ttf"
   font "TheSansUHH Bold.ttf"

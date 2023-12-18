@@ -2,12 +2,12 @@ cask "font-martel" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/martel"
+      only_path: "oflmartel"
   name "Martel"
-  homepage "https://fonts.google.com/specimen/Martel"
+  homepage "https:fonts.google.comspecimenMartel"
 
   font "Martel-Bold.ttf"
   font "Martel-DemiBold.ttf"

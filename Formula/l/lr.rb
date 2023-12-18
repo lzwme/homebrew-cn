@@ -1,10 +1,10 @@
 class Lr < Formula
   desc "File list utility with features from ls(1), find(1), stat(1), and du(1)"
-  homepage "https://github.com/leahneukirchen/lr"
-  url "https://ghproxy.com/https://github.com/leahneukirchen/lr/archive/refs/tags/v1.6.tar.gz"
+  homepage "https:github.comleahneukirchenlr"
+  url "https:github.comleahneukirchenlrarchiverefstagsv1.6.tar.gz"
   sha256 "5c1160848b5379e2a51c56be5642b382f4ba2b579b7f43834c80e6d856c09b10"
   license "MIT"
-  head "https://github.com/leahneukirchen/lr.git", branch: "master"
+  head "https:github.comleahneukirchenlr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f6e26a4e87af89c61b15d5b15dd275393b411153c40a35cd3e5e79bf9ccc10a"
@@ -23,6 +23,6 @@ class Lr < Formula
   end
 
   test do
-    assert_match(/^\.\n(.*\n)?Library\n/, shell_output("#{bin}/lr -1"))
+    assert_match(^\.\n(.*\n)?Library\n, shell_output("#{bin}lr -1"))
   end
 end

@@ -1,13 +1,13 @@
 class Bonniexx < Formula
   desc "Benchmark suite for file systems and hard drives"
-  homepage "https://www.coker.com.au/bonnie++/"
-  url "https://www.coker.com.au/bonnie++/bonnie++-2.00a.tgz"
+  homepage "https:www.coker.com.aubonnie++"
+  url "https:www.coker.com.aubonnie++bonnie++-2.00a.tgz"
   sha256 "a8d33bbd81bc7eb559ce5bf6e584b9b53faea39ccfb4ae92e58f27257e468f0e"
   license "GPL-2.0-only"
 
   livecheck do
-    url "https://doc.coker.com.au/projects/bonnie/"
-    regex(/href=.*?bonnie\+\+[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
+    url "https:doc.coker.com.auprojectsbonnie"
+    regex(href=.*?bonnie\+\+[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
   end
 
   bottle do
@@ -29,18 +29,18 @@ class Bonniexx < Formula
   # also incorrectly tests for it in the first place. The ideal fix would be to
   # replace the AC_TRY_RUN() in configure.in if the fail code actually worked.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/913b5a25087d2c64d3b6459635d5d64012b83042/bonnie%2B%2B/remove-large-file-support-macros.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches913b5a25087d2c64d3b6459635d5d64012b83042bonnie%2B%2Bremove-large-file-support-macros.diff"
     sha256 "368a7ea0cf202a169467efb81cb6649c1b6306999ccd54b85641fd4b458a46b7"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make", "install"
   end
 
   test do
-    system "#{sbin}/bonnie++", "-s", "0"
+    system "#{sbin}bonnie++", "-s", "0"
   end
 end

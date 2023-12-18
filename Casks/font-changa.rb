@@ -2,10 +2,10 @@ cask "font-changa" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/changa/Changa%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflchangaChanga%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Changa"
-  homepage "https://fonts.google.com/specimen/Changa"
+  homepage "https:fonts.google.comspecimenChanga"
 
   font "Changa[wght].ttf"
 

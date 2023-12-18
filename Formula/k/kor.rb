@@ -1,7 +1,7 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
-  homepage "https://github.com/yonahd/kor"
-  url "https://ghproxy.com/https://github.com/yonahd/kor/archive/refs/tags/v0.3.2.tar.gz"
+  homepage "https:github.comyonahdkor"
+  url "https:github.comyonahdkorarchiverefstagsv0.3.2.tar.gz"
   sha256 "1d6ea66ed25c17048edd6e12a99b57bc737f1424a5f2c9a2829d96814fa7842d"
   license "MIT"
 
@@ -22,27 +22,27 @@ class Kor < Formula
   end
 
   test do
-    (testpath/"mock-kubeconfig").write <<~EOS
+    (testpath"mock-kubeconfig").write <<~EOS
       apiVersion: v1
       clusters:
         - cluster:
-            server: https://mock-server:6443
+            server: https:mock-server:6443
           name: mock-server:6443
       contexts:
         - context:
             cluster: mock-server:6443
             namespace: default
-            user: mockUser/mock-server:6443
-          name: default/mock-server:6443/mockUser
-      current-context: default/mock-server:6443/mockUser
+            user: mockUsermock-server:6443
+          name: defaultmock-server:6443mockUser
+      current-context: defaultmock-server:6443mockUser
       kind: Config
       preferences: {}
       users:
-        - name: kube:admin/mock-server:6443
+        - name: kube:adminmock-server:6443
           user:
             token: sha256~QTYGVumELfyzLS9H9gOiDhVA2B1VnlsNaRsiztOnae0
     EOS
-    out = shell_output("#{bin}/kor all -k #{testpath}/mock-kubeconfig 2>&1", 1)
-    assert_match "Failed to retrieve namespaces: Get \"https://mock-server:6443/api/v1/namespaces\"", out
+    out = shell_output("#{bin}kor all -k #{testpath}mock-kubeconfig 2>&1", 1)
+    assert_match "Failed to retrieve namespaces: Get \"https:mock-server:6443apiv1namespaces\"", out
   end
 end

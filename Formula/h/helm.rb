@@ -1,11 +1,11 @@
 class Helm < Formula
   desc "Kubernetes package manager"
-  homepage "https://helm.sh/"
-  url "https://github.com/helm/helm.git",
+  homepage "https:helm.sh"
+  url "https:github.comhelmhelm.git",
       tag:      "v3.13.3",
       revision: "c8b948945e52abba22ff885446a1486cb5fd3474"
   license "Apache-2.0"
-  head "https://github.com/helm/helm.git", branch: "main"
+  head "https:github.comhelmhelm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a6fd49305a1d9aa469785bb6d02cdbaf618a31db1752ccfce5015ce3fd2740b"
@@ -24,21 +24,21 @@ class Helm < Formula
     rm_rf ".brew_home"
 
     system "make", "build"
-    bin.install "bin/helm"
+    bin.install "binhelm"
 
     mkdir "man1" do
-      system bin/"helm", "docs", "--type", "man"
+      system bin"helm", "docs", "--type", "man"
       man1.install Dir["*"]
     end
 
-    generate_completions_from_executable(bin/"helm", "completion")
+    generate_completions_from_executable(bin"helm", "completion")
   end
 
   test do
-    system bin/"helm", "create", "foo"
-    assert File.directory? testpath/"foo/charts"
+    system bin"helm", "create", "foo"
+    assert File.directory? testpath"foocharts"
 
-    version_output = shell_output(bin/"helm version 2>&1")
+    version_output = shell_output(bin"helm version 2>&1")
     assert_match "GitTreeState:\"clean\"", version_output
     if build.stable?
       revision = stable.specs[:revision]

@@ -1,14 +1,14 @@
 class KitchenSync < Formula
   desc "Fast efficiently sync database without dumping & reloading"
-  homepage "https://github.com/willbryant/kitchen_sync"
-  url "https://ghproxy.com/https://github.com/willbryant/kitchen_sync/archive/refs/tags/v2.20.tar.gz"
+  homepage "https:github.comwillbryantkitchen_sync"
+  url "https:github.comwillbryantkitchen_syncarchiverefstagsv2.20.tar.gz"
   sha256 "e79e5dfad48b8345b1d80444a0e992b2f9b9c53f29f6f607647e567292a7d0f2"
   license "MIT"
-  head "https://github.com/willbryant/kitchen_sync.git", branch: "master"
+  head "https:github.comwillbryantkitchen_sync.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class KitchenSync < Formula
 
   def install
     system "cmake", ".",
-                    "-DMySQL_INCLUDE_DIR=#{Formula["mysql-client"].opt_include}/mysql",
+                    "-DMySQL_INCLUDE_DIR=#{Formula["mysql-client"].opt_include}mysql",
                     "-DMySQL_LIBRARY_DIR=#{Formula["mysql-client"].opt_lib}",
                     "-DPostgreSQL_INCLUDE_DIR=#{Formula["libpq"].opt_include}",
                     "-DPostgreSQL_LIBRARY_DIR=#{Formula["libpq"].opt_lib}",
@@ -39,7 +39,7 @@ class KitchenSync < Formula
   end
 
   test do
-    output = shell_output("#{bin}/ks --from mysql://b/ --to mysql://d/ 2>&1", 1)
+    output = shell_output("#{bin}ks --from mysql:b --to mysql:d 2>&1", 1)
 
     assert_match "Unknown MySQL server host", output
     assert_match "Kitchen Syncing failed.", output

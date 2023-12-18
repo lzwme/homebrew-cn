@@ -1,10 +1,10 @@
 class ChainBench < Formula
   desc "Software supply chain auditing tool based on CIS benchmark"
-  homepage "https://github.com/aquasecurity/chain-bench"
-  url "https://ghproxy.com/https://github.com/aquasecurity/chain-bench/archive/refs/tags/v0.1.9.tar.gz"
+  homepage "https:github.comaquasecuritychain-bench"
+  url "https:github.comaquasecuritychain-bencharchiverefstagsv0.1.9.tar.gz"
   sha256 "debeff7a47acbe86f74b5cfdb970cb4843a547f3b363f56b3b45b89762dd5e60"
   license "Apache-2.0"
-  head "https://github.com/aquasecurity/chain-bench.git", branch: "main"
+  head "https:github.comaquasecuritychain-bench.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -27,15 +27,15 @@ class ChainBench < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), "./cmd/chain-bench"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), ".cmdchain-bench"
 
-    generate_completions_from_executable(bin/"chain-bench", "completion")
+    generate_completions_from_executable(bin"chain-bench", "completion")
   end
 
   test do
-    repo_url = "https://github.com/Homebrew/homebrew-core"
-    assert_match "Fetch Starting", shell_output("#{bin}/chain-bench scan --repository-url #{repo_url}")
+    repo_url = "https:github.comHomebrewhomebrew-core"
+    assert_match "Fetch Starting", shell_output("#{bin}chain-bench scan --repository-url #{repo_url}")
 
-    assert_match version.to_s, shell_output("#{bin}/chain-bench --version")
+    assert_match version.to_s, shell_output("#{bin}chain-bench --version")
   end
 end

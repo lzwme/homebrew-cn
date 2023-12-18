@@ -1,7 +1,7 @@
 class Sambamba < Formula
-  desc "Tools for working with SAM/BAM data"
-  homepage "https://lomereiter.github.io/sambamba/"
-  url "https://ghproxy.com/https://github.com/biod/sambamba/archive/refs/tags/v1.0.1.tar.gz"
+  desc "Tools for working with SAMBAM data"
+  homepage "https:lomereiter.github.iosambamba"
+  url "https:github.combiodsambambaarchiverefstagsv1.0.1.tar.gz"
   sha256 "955a51a00be9122aa9b0c27796874bfdda85de58aa0181148ef63548ea5192b0"
   license "GPL-2.0-or-later"
 
@@ -26,32 +26,32 @@ class Sambamba < Formula
 
   def install
     system "make", "release"
-    bin.install "bin/sambamba-#{version}" => "sambamba"
+    bin.install "binsambamba-#{version}" => "sambamba"
   end
 
   test do
     resource "homebrew-testdata" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/biod/sambamba/f898046c5b9c1a97156ef041e61ac3c42955a716/test/ex1_header.sam"
+      url "https:raw.githubusercontent.combiodsambambaf898046c5b9c1a97156ef041e61ac3c42955a716testex1_header.sam"
       sha256 "63c39c2e31718237a980c178b404b6b9a634a66e83230b8584e30454a315cc5e"
     end
 
     resource("homebrew-testdata").stage testpath
-    system "#{bin}/sambamba", "view", "-S", "ex1_header.sam", "-f", "bam", "-o", "ex1_header.bam"
-    system "#{bin}/sambamba", "sort", "-t2", "-n", "ex1_header.bam", "-o", "ex1_header.sorted.bam", "-m", "200K"
-    assert_predicate testpath/"ex1_header.sorted.bam", :exist?
+    system "#{bin}sambamba", "view", "-S", "ex1_header.sam", "-f", "bam", "-o", "ex1_header.bam"
+    system "#{bin}sambamba", "sort", "-t2", "-n", "ex1_header.bam", "-o", "ex1_header.sorted.bam", "-m", "200K"
+    assert_predicate testpath"ex1_header.sorted.bam", :exist?
   end
 end
 
 __END__
-diff --git a/Makefile b/Makefile
+diff --git aMakefile bMakefile
 index 57bbc55..1faa80d 100644
---- a/Makefile
-+++ b/Makefile
+--- aMakefile
++++ bMakefile
 @@ -41,7 +41,6 @@ endif
 
- BIOD_PATH=./BioD:./BioD/contrib/msgpack-d/src
+ BIOD_PATH=.BioD:.BioDcontribmsgpack-dsrc
  DFLAGS      = -wi -I. -I$(BIOD_PATH) -g -J.
 -LDFLAGS     = -L=-flto=full
 
- # DLIBS       = $(LIBRARY_PATH)/libphobos2-ldc.a $(LIBRARY_PATH)/libdruntime-ldc.a
- # DLIBS_DEBUG = $(LIBRARY_PATH)/libphobos2-ldc-debug.a $(LIBRARY_PATH)/libdruntime-ldc-debug.a
+ # DLIBS       = $(LIBRARY_PATH)libphobos2-ldc.a $(LIBRARY_PATH)libdruntime-ldc.a
+ # DLIBS_DEBUG = $(LIBRARY_PATH)libphobos2-ldc-debug.a $(LIBRARY_PATH)libdruntime-ldc-debug.a

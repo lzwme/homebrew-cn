@@ -2,12 +2,12 @@ cask "font-amaranth" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/amaranth"
+      only_path: "oflamaranth"
   name "Amaranth"
-  homepage "https://fonts.google.com/specimen/Amaranth"
+  homepage "https:fonts.google.comspecimenAmaranth"
 
   font "Amaranth-Bold.ttf"
   font "Amaranth-BoldItalic.ttf"

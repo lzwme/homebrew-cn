@@ -1,10 +1,10 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
-  homepage "https://github.com/gabime/spdlog"
-  url "https://ghproxy.com/https://github.com/gabime/spdlog/archive/refs/tags/v1.12.0.tar.gz"
+  homepage "https:github.comgabimespdlog"
+  url "https:github.comgabimespdlogarchiverefstagsv1.12.0.tar.gz"
   sha256 "4dccf2d10f410c1e2feaff89966bfc49a1abb29ef6f08246335b110e001e09a9"
   license "MIT"
-  head "https://github.com/gabime/spdlog.git", branch: "v1.x"
+  head "https:github.comgabimespdlog.git", branch: "v1.x"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "65a9e01ffa151f110a87beca645ecd09aeaa6c4f9be28545fd46724c85bc07d9"
@@ -27,7 +27,7 @@ class Spdlog < Formula
   def install
     ENV.cxx11
 
-    inreplace "include/spdlog/tweakme.h", "// #define SPDLOG_FMT_EXTERNAL", <<~EOS
+    inreplace "includespdlogtweakme.h", " #define SPDLOG_FMT_EXTERNAL", <<~EOS
       #ifndef SPDLOG_FMT_EXTERNAL
       #define SPDLOG_FMT_EXTERNAL
       #endif
@@ -44,18 +44,18 @@ class Spdlog < Formula
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "build", "-DSPDLOG_BUILD_SHARED=OFF", *args
     system "cmake", "--build", "build"
-    lib.install "build/libspdlog.a"
+    lib.install "buildlibspdlog.a"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "spdlog/sinks/basic_file_sink.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "spdlogsinksbasic_file_sink.h"
       #include <iostream>
       #include <memory>
       int main()
       {
         try {
-          auto console = spdlog::basic_logger_mt("basic_logger", "#{testpath}/basic-log.txt");
+          auto console = spdlog::basic_logger_mt("basic_logger", "#{testpath}basic-log.txt");
           console->info("Test");
         }
         catch (const spdlog::spdlog_ex &ex)
@@ -67,8 +67,8 @@ class Spdlog < Formula
     EOS
 
     system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}", "-L#{Formula["fmt"].opt_lib}", "-lfmt", "-o", "test"
-    system "./test"
-    assert_predicate testpath/"basic-log.txt", :exist?
-    assert_match "Test", (testpath/"basic-log.txt").read
+    system ".test"
+    assert_predicate testpath"basic-log.txt", :exist?
+    assert_match "Test", (testpath"basic-log.txt").read
   end
 end

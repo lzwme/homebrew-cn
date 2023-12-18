@@ -1,7 +1,7 @@
 class AptDater < Formula
   desc "Manage package updates on remote hosts using SSH"
-  homepage "https://github.com/DE-IBH/apt-dater"
-  url "https://ghproxy.com/https://github.com/DE-IBH/apt-dater/archive/refs/tags/v1.0.4.tar.gz"
+  homepage "https:github.comDE-IBHapt-dater"
+  url "https:github.comDE-IBHapt-daterarchiverefstagsv1.0.4.tar.gz"
   sha256 "a4bd5f70a199b844a34a3b4c4677ea56780c055db7c557ff5bd8f2772378a4d6"
   license "GPL-2.0"
   revision 1
@@ -34,16 +34,16 @@ class AptDater < Formula
 
   def install
     system "autoreconf", "-ivf"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
     # Global config overrides local config, so delete global config to prioritize the
-    # config in $HOME/.config/apt-dater
-    (prefix/"etc").rmtree
+    # config in $HOME.configapt-dater
+    (prefix"etc").rmtree
   end
 
   test do
-    system "#{bin}/apt-dater", "-v"
+    system "#{bin}apt-dater", "-v"
   end
 end

@@ -1,11 +1,11 @@
 class Zookeeper < Formula
   desc "Centralized server for distributed coordination of services"
-  homepage "https://zookeeper.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=zookeeper/zookeeper-3.9.1/apache-zookeeper-3.9.1.tar.gz"
-  mirror "https://archive.apache.org/dist/zookeeper/zookeeper-3.9.1/apache-zookeeper-3.9.1.tar.gz"
+  homepage "https:zookeeper.apache.org"
+  url "https:www.apache.orgdyncloser.lua?path=zookeeperzookeeper-3.9.1apache-zookeeper-3.9.1.tar.gz"
+  mirror "https:archive.apache.orgdistzookeeperzookeeper-3.9.1apache-zookeeper-3.9.1.tar.gz"
   sha256 "918f0fcf4ca8c53c2cccb97237ea72d2ccba978233ca85eff08f8ba077a8dadf"
   license "Apache-2.0"
-  head "https://gitbox.apache.org/repos/asf/zookeeper.git", branch: "master"
+  head "https:gitbox.apache.orgreposasfzookeeper.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6d5ffb43a83151ff619d066340428409ae5aaea6272da415a6b59929323cbb3f"
@@ -28,75 +28,75 @@ class Zookeeper < Formula
   depends_on "openssl@3"
 
   resource "default_logback_xml" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/apache/zookeeper/release-3.9.0/conf/logback.xml"
+    url "https:raw.githubusercontent.comapachezookeeperrelease-3.9.0conflogback.xml"
     sha256 "2fae7f51e4f92e8e3536e5f9ac193cb0f4237d194b982bb00b5c8644389c901f"
   end
 
   def default_zk_env
     <<~EOS
-      [ -z "$ZOOCFGDIR" ] && export ZOOCFGDIR="#{etc}/zookeeper"
+      [ -z "$ZOOCFGDIR" ] && export ZOOCFGDIR="#{etc}zookeeper"
     EOS
   end
 
   def install
     system "mvn", "install", "-Pfull-build", "-DskipTests"
 
-    system "tar", "-xf", "zookeeper-assembly/target/apache-zookeeper-#{version}-bin.tar.gz"
+    system "tar", "-xf", "zookeeper-assemblytargetapache-zookeeper-#{version}-bin.tar.gz"
     binpfx = "apache-zookeeper-#{version}-bin"
-    libexec.install binpfx+"/bin", binpfx+"/lib", "zookeeper-contrib"
-    rm_f Dir["build-bin/bin/*.cmd"]
+    libexec.install binpfx+"bin", binpfx+"lib", "zookeeper-contrib"
+    rm_f Dir["build-binbin*.cmd"]
 
-    system "tar", "-xf", "zookeeper-assembly/target/apache-zookeeper-#{version}-lib.tar.gz"
+    system "tar", "-xf", "zookeeper-assemblytargetapache-zookeeper-#{version}-lib.tar.gz"
     libpfx = "apache-zookeeper-#{version}-lib"
-    include.install Dir[libpfx+"/usr/include/*"]
-    lib.install Dir[libpfx+"/usr/lib/*"]
+    include.install Dir[libpfx+"usrinclude*"]
+    lib.install Dir[libpfx+"usrlib*"]
 
     bin.mkpath
-    (etc/"zookeeper").mkpath
-    (var/"log/zookeeper").mkpath
-    (var/"run/zookeeper/data").mkpath
+    (etc"zookeeper").mkpath
+    (var"logzookeeper").mkpath
+    (var"runzookeeperdata").mkpath
 
-    Pathname.glob("#{libexec}/bin/*.sh") do |path|
-      next if path == libexec+"bin/zkEnv.sh"
+    Pathname.glob("#{libexec}bin*.sh") do |path|
+      next if path == libexec+"binzkEnv.sh"
 
       script_name = path.basename
       bin_name    = path.basename ".sh"
       (bin+bin_name).write <<~EOS
-        #!/bin/bash
+        #!binbash
         export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
-        . "#{etc}/zookeeper/defaults"
-        exec "#{libexec}/bin/#{script_name}" "$@"
+        . "#{etc}zookeeperdefaults"
+        exec "#{libexec}bin#{script_name}" "$@"
       EOS
     end
 
-    cp "conf/zoo_sample.cfg", "conf/zoo.cfg"
-    inreplace "conf/zoo.cfg",
-              /^dataDir=.*/, "dataDir=#{var}/run/zookeeper/data"
-    (etc/"zookeeper").install "conf/zoo.cfg"
+    cp "confzoo_sample.cfg", "confzoo.cfg"
+    inreplace "confzoo.cfg",
+              ^dataDir=.*, "dataDir=#{var}runzookeeperdata"
+    (etc"zookeeper").install "confzoo.cfg"
 
-    (pkgshare/"examples").install "conf/logback.xml", "conf/zoo_sample.cfg"
+    (pkgshare"examples").install "conflogback.xml", "confzoo_sample.cfg"
   end
 
   def post_install
     tmpdir = Pathname.new(Dir.mktmpdir)
     tmpdir.install resource("default_logback_xml")
 
-    defaults = etc/"zookeeper/defaults"
+    defaults = etc"zookeeperdefaults"
     defaults.write(default_zk_env) unless defaults.exist?
 
-    logback_xml = etc/"zookeeper/logback.xml"
-    logback_xml.write(tmpdir/"default_logback_xml") unless logback_xml.exist?
+    logback_xml = etc"zookeeperlogback.xml"
+    logback_xml.write(tmpdir"default_logback_xml") unless logback_xml.exist?
   end
 
   service do
-    run [opt_bin/"zkServer", "start-foreground"]
+    run [opt_bin"zkServer", "start-foreground"]
     environment_variables SERVER_JVMFLAGS: "-Dapple.awt.UIElement=true"
     keep_alive successful_exit: false
     working_dir var
   end
 
   test do
-    output = shell_output("#{bin}/zkServer -h 2>&1")
-    assert_match "Using config: #{etc}/zookeeper/zoo.cfg", output
+    output = shell_output("#{bin}zkServer -h 2>&1")
+    assert_match "Using config: #{etc}zookeeperzoo.cfg", output
   end
 end

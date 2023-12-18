@@ -1,7 +1,7 @@
 class Libnfs < Formula
   desc "C client library for NFS"
-  homepage "https://github.com/sahlberg/libnfs"
-  url "https://ghproxy.com/https://github.com/sahlberg/libnfs/archive/refs/tags/libnfs-5.0.2.tar.gz"
+  homepage "https:github.comsahlberglibnfs"
+  url "https:github.comsahlberglibnfsarchiverefstagslibnfs-5.0.2.tar.gz"
   sha256 "637e56643b19da9fba98f06847788c4dad308b723156a64748041035dcdf9bd3"
   license "LGPL-2.1-or-later"
 
@@ -23,8 +23,8 @@ class Libnfs < Formula
   depends_on "libtool" => :build
 
   def install
-    system "./bootstrap"
-    system "./configure", "--disable-dependency-tracking",
+    system ".bootstrap"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
 
@@ -32,12 +32,12 @@ class Libnfs < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #if defined(__linux__)
-      # include <sys/time.h>
+      # include <systime.h>
       #endif
       #include <stddef.h>
-      #include <nfsc/libnfs.h>
+      #include <nfsclibnfs.h>
 
       int main(void)
       {
@@ -54,6 +54,6 @@ class Libnfs < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lnfs", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

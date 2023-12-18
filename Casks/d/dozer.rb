@@ -2,10 +2,10 @@ cask "dozer" do
   version "4.0.0"
   sha256 "d8d37a114c9dab2f16a56e60d8a977115ba34fe408ff7947d0d74028f1f22843"
 
-  url "https://ghproxy.com/https://github.com/Mortennn/Dozer/releases/download/v#{version}/Dozer.#{version}.dmg"
+  url "https:github.comMortennnDozerreleasesdownloadv#{version}Dozer.#{version}.dmg"
   name "Dozer"
   desc "Tool to hide status bar icons"
-  homepage "https://github.com/Mortennn/Dozer"
+  homepage "https:github.comMortennnDozer"
 
   auto_updates true
   depends_on macos: ">= :high_sierra"
@@ -13,11 +13,11 @@ cask "dozer" do
   app "Dozer.app"
 
   zap trash: [
-    "~/Library/Application Support/com.mortennn.Dozer",
-    "~/Library/Preferences/com.mortennn.Dozer.plist",
+    "~LibraryApplication Supportcom.mortennn.Dozer",
+    "~LibraryPreferencescom.mortennn.Dozer.plist",
   ]
 
-  # upstream discussion, https://github.com/Mortennn/Dozer/issues/178
+  # upstream discussion, https:github.comMortennnDozerissues178
   caveats do
     discontinued
   end

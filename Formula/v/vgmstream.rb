@@ -1,17 +1,17 @@
 class Vgmstream < Formula
   desc "Library for playing streamed audio formats from video games"
-  homepage "https://vgmstream.org"
-  url "https://github.com/vgmstream/vgmstream.git",
+  homepage "https:vgmstream.org"
+  url "https:github.comvgmstreamvgmstream.git",
       tag:      "r1896",
       revision: "8e5dbc563a8822886d3d3e6abb4faa2585742cf7"
   version "r1896"
   license "ISC"
   version_scheme 1
-  head "https://github.com/vgmstream/vgmstream.git", branch: "master"
+  head "https:github.comvgmstreamvgmstream.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/([^"' >]+)/i)
+    regex(([^"' >]+)i)
     strategy :github_latest
   end
 
@@ -39,14 +39,14 @@ class Vgmstream < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
-    ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX/"lib"
+    ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX"lib"
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_AUDACIOUS:BOOL=OFF", "-DUSE_CELT=OFF", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "build/cli/vgmstream-cli", "build/cli/vgmstream123"
-    lib.install "build/src/libvgmstream.a"
+    bin.install "buildclivgmstream-cli", "buildclivgmstream123"
+    lib.install "buildsrclibvgmstream.a"
   end
 
   test do
-    assert_match "decode", shell_output("#{bin}/vgmstream-cli 2>&1", 1)
+    assert_match "decode", shell_output("#{bin}vgmstream-cli 2>&1", 1)
   end
 end

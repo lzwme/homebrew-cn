@@ -2,10 +2,10 @@ cask "font-patua-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/patuaone/PatuaOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpatuaonePatuaOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Patua One"
-  homepage "https://fonts.google.com/specimen/Patua+One"
+  homepage "https:fonts.google.comspecimenPatua+One"
 
   font "PatuaOne-Regular.ttf"
 

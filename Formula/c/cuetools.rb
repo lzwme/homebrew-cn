@@ -1,10 +1,10 @@
 class Cuetools < Formula
   desc "Utilities for .cue and .toc files"
-  homepage "https://github.com/svend/cuetools"
-  url "https://ghproxy.com/https://github.com/svend/cuetools/archive/refs/tags/1.4.1.tar.gz"
+  homepage "https:github.comsvendcuetools"
+  url "https:github.comsvendcuetoolsarchiverefstags1.4.1.tar.gz"
   sha256 "24a2420f100c69a6539a9feeb4130d19532f9f8a0428a8b9b289c6da761eb107"
   license "GPL-2.0"
-  head "https://github.com/svend/cuetools.git", branch: "master"
+  head "https:github.comsvendcuetools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d73bc896a9509dae8389723d55e686f56d361f361ce19913092d7e3c294acdd1"
@@ -30,31 +30,31 @@ class Cuetools < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
-  # see https://github.com/svend/cuetools/pull/18
+  # see https:github.comsvendcuetoolspull18
   patch :DATA
 
   def install
     system "autoreconf", "-i"
-    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cue").write <<~EOS
+    (testpath"test.cue").write <<~EOS
       FILE "sampleimage.bin" BINARY
-        TRACK 01 MODE1/2352
+        TRACK 01 MODE12352
           INDEX 01 00:00:00
     EOS
-    system "#{bin}/cueconvert", testpath/"test.cue", testpath/"test.toc"
-    assert_predicate testpath/"test.toc", :exist?
+    system "#{bin}cueconvert", testpath"test.cue", testpath"test.toc"
+    assert_predicate testpath"test.toc", :exist?
   end
 end
 
 __END__
-diff --git a/configure.ac b/configure.ac
+diff --git aconfigure.ac bconfigure.ac
 index f54bb92..84ab467 100644
---- a/configure.ac
-+++ b/configure.ac
+--- aconfigure.ac
++++ bconfigure.ac
 @@ -1,5 +1,5 @@
  AC_INIT([cuetools], [1.4.0], [svend@ciffer.net])
 -AM_INIT_AUTOMAKE([-Wall -Werror foreign])

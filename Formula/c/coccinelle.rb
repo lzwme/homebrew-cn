@@ -1,43 +1,43 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
-  homepage "https://coccinelle.lip6.fr/"
+  homepage "https:coccinelle.lip6.fr"
   license "GPL-2.0-only"
   revision 1
-  head "https://github.com/coccinelle/coccinelle.git", branch: "master"
+  head "https:github.comcoccinellecoccinelle.git", branch: "master"
 
   stable do
-    url "https://github.com/coccinelle/coccinelle.git",
+    url "https:github.comcoccinellecoccinelle.git",
         tag:      "1.1.1",
         revision: "5444e14106ff17404e63d7824b9eba3c0e7139ba"
 
     # Backport compatibility with OCaml 5. Remove in the next release.
     patch do
-      url "https://github.com/coccinelle/coccinelle/commit/f13b03aa20a08e5187ce36bfd5e606f18acd2888.patch?full_index=1"
+      url "https:github.comcoccinellecoccinellecommitf13b03aa20a08e5187ce36bfd5e606f18acd2888.patch?full_index=1"
       sha256 "84f06551652d9fcee63451fe8d3bce3845c01fe054087cde50bb3b8308014445"
     end
     patch do
-      url "https://github.com/coccinelle/coccinelle/commit/1d0733a27006b06eef712f541000a8bf10246804.patch?full_index=1"
+      url "https:github.comcoccinellecoccinellecommit1d0733a27006b06eef712f541000a8bf10246804.patch?full_index=1"
       sha256 "391ee079fc18ac4727af089fdf686cd41d4b2ba7847c4bcf2b3b04caf5b6d457"
     end
 
     # Backport usage of non-bundled packages to allow versions installed by opam
     patch do
-      url "https://github.com/coccinelle/coccinelle/commit/3f54340c8ac907e528dbe1475a4a7141e77b9cdd.patch?full_index=1"
+      url "https:github.comcoccinellecoccinellecommit3f54340c8ac907e528dbe1475a4a7141e77b9cdd.patch?full_index=1"
       sha256 "94b23b53c023270368601bc5debefc918a99f87b7489e25acddf9c967ddb4486"
     end
     patch do
-      url "https://github.com/coccinelle/coccinelle/commit/2afa9f669b565badf17104176cc4850a2dff67f6.patch?full_index=1"
+      url "https:github.comcoccinellecoccinellecommit2afa9f669b565badf17104176cc4850a2dff67f6.patch?full_index=1"
       sha256 "882fe080f7fbce4b0f08b8854a5b02212c17efbc2a62c145eae562842d8e2337"
     end
     patch do
-      url "https://github.com/coccinelle/coccinelle/commit/d9ce82a556e313684af74912cf204bb902e04436.patch?full_index=1"
+      url "https:github.comcoccinellecoccinellecommitd9ce82a556e313684af74912cf204bb902e04436.patch?full_index=1"
       sha256 "4b27d81d27363efb1a83064abba1df1c09a1f1f064c81cc621ca61b79f58d83e"
     end
   end
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -70,8 +70,8 @@ class Coccinelle < Formula
       ENV["OPAMVERBOSE"] = "1"
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       system "opam", "exec", "--", "opam", "install", ".", "--deps-only", "-y", "--no-depexts"
-      system "./autogen"
-      system "opam", "exec", "--", "./configure", *std_configure_args,
+      system ".autogen"
+      system "opam", "exec", "--", ".configure", *std_configure_args,
                                                   "--disable-silent-rules",
                                                   "--enable-ocaml",
                                                   "--enable-opt",
@@ -82,18 +82,18 @@ class Coccinelle < Formula
       system "make", "install"
     end
 
-    pkgshare.install "demos/simple.cocci", "demos/simple.c"
+    pkgshare.install "demossimple.cocci", "demossimple.c"
   end
 
   test do
-    system "#{bin}/spatch", "-sp_file", "#{pkgshare}/simple.cocci",
-                            "#{pkgshare}/simple.c", "-o", "new_simple.c"
+    system "#{bin}spatch", "-sp_file", "#{pkgshare}simple.cocci",
+                            "#{pkgshare}simple.c", "-o", "new_simple.c"
     expected = <<~EOS
       int main(int i) {
         f("ca va", 3);
         f(g("ca va pas"), 3);
       }
     EOS
-    assert_equal expected, (testpath/"new_simple.c").read
+    assert_equal expected, (testpath"new_simple.c").read
   end
 end

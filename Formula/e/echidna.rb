@@ -1,14 +1,14 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
-  homepage "https://github.com/crytic/echidna"
-  url "https://ghproxy.com/https://github.com/crytic/echidna/archive/refs/tags/v2.2.1.tar.gz"
+  homepage "https:github.comcryticechidna"
+  url "https:github.comcryticechidnaarchiverefstagsv2.2.1.tar.gz"
   sha256 "cd98ba4c42df459e9ea438deac0d157cbc0edead9cc76dad3c9424f470c5a5b5"
   license "AGPL-3.0-only"
-  head "https://github.com/crytic/echidna.git", branch: "master"
+  head "https:github.comcryticechidna.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -61,11 +61,11 @@ class Echidna < Formula
     system "truffle", "init"
 
     # echidna does not appear to work with 'shanghai' EVM targets yet, which became the
-    # default in solc 0.8.20 / truffle 5.9.1
+    # default in solc 0.8.20  truffle 5.9.1
     # Use an explicit 'paris' EVM target meanwhile, which was the previous default
-    inreplace "truffle-config.js", %r{//\s*evmVersion:.*$}, "evmVersion: 'paris'"
+    inreplace "truffle-config.js", %r{\s*evmVersion:.*$}, "evmVersion: 'paris'"
 
-    (testpath/"contracts/test.sol").write <<~EOS
+    (testpath"contractstest.sol").write <<~EOS
       pragma solidity ^0.8.0;
       contract True {
         function f() public returns (bool) {
@@ -78,6 +78,6 @@ class Echidna < Formula
     EOS
 
     assert_match("echidna_true: passing",
-                 shell_output("#{bin}/echidna --format text --contract True #{testpath}"))
+                 shell_output("#{bin}echidna --format text --contract True #{testpath}"))
   end
 end

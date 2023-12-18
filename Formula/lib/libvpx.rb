@@ -1,10 +1,10 @@
 class Libvpx < Formula
-  desc "VP8/VP9 video codec"
-  homepage "https://www.webmproject.org/code/"
-  url "https://ghproxy.com/https://github.com/webmproject/libvpx/archive/refs/tags/v1.13.1.tar.gz"
+  desc "VP8VP9 video codec"
+  homepage "https:www.webmproject.orgcode"
+  url "https:github.comwebmprojectlibvpxarchiverefstagsv1.13.1.tar.gz"
   sha256 "00dae80465567272abd077f59355f95ac91d7809a2d3006f9ace2637dd429d14"
   license "BSD-3-Clause"
-  head "https://chromium.googlesource.com/webm/libvpx.git", branch: "main"
+  head "https:chromium.googlesource.comwebmlibvpx.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "484698903af5db7c9b7d6b4e5791f702ae99a9167a0119773b30d1c9b34ffdba"
@@ -25,7 +25,7 @@ class Libvpx < Formula
 
   def install
     # NOTE: `libvpx` will fail to build on new macOS versions before the
-    # `configure` and `build/make/configure.sh` files are updated to support
+    # `configure` and `buildmakeconfigure.sh` files are updated to support
     # the new target (e.g., `arm64-darwin23-gcc` for macOS 14). We [temporarily]
     # patch these files to add the new target (until there is a new version).
     # If we don't want to create a patch each year, we can consider using
@@ -48,29 +48,29 @@ class Libvpx < Formula
     end
 
     mkdir "macbuild" do
-      system "../configure", *args
+      system "..configure", *args
       system "make", "install"
     end
   end
 
   test do
-    system "ar", "-x", "#{lib}/libvpx.a"
+    system "ar", "-x", "#{lib}libvpx.a"
   end
 end
 
 __END__
-diff --git a/build/make/configure.sh b/build/make/configure.sh
+diff --git abuildmakeconfigure.sh bbuildmakeconfigure.sh
 index 4bf090f006f8fc86d45e533b33a4603efc0afac1..5d9b9622fc96c4e841d8c2833d149d9a79f5ab08 100644
---- a/build/make/configure.sh
-+++ b/build/make/configure.sh
+--- abuildmakeconfigure.sh
++++ bbuildmakeconfigure.sh
 @@ -791,7 +791,7 @@ process_common_toolchain() {
          tgt_isa=x86_64
-         tgt_os=`echo $gcctarget | sed 's/.*\(darwin1[0-9]\).*/\1/'`
+         tgt_os=`echo $gcctarget | sed 's.*\(darwin1[0-9]\).*\1'`
          ;;
 -      *darwin2[0-2]*)
 +      *darwin2[0-3]*)
          tgt_isa=`uname -m`
-         tgt_os=`echo $gcctarget | sed 's/.*\(darwin2[0-9]\).*/\1/'`
+         tgt_os=`echo $gcctarget | sed 's.*\(darwin2[0-9]\).*\1'`
          ;;
 @@ -940,7 +940,7 @@ process_common_toolchain() {
        add_cflags  "-mmacosx-version-min=10.15"
@@ -81,10 +81,10 @@ index 4bf090f006f8fc86d45e533b33a4603efc0afac1..5d9b9622fc96c4e841d8c2833d149d9a
        add_cflags  "-arch ${toolchain%%-*}"
        add_ldflags "-arch ${toolchain%%-*}"
        ;;
-diff --git a/configure b/configure
+diff --git aconfigure bconfigure
 index ae289f77b4a1994f3a1632573193124071f793b1..513556b2f81eefb2e69350188b6d6dcded1814ed 100755
---- a/configure
-+++ b/configure
+--- aconfigure
++++ bconfigure
 @@ -102,6 +102,7 @@ all_platforms="${all_platforms} arm64-darwin-gcc"
  all_platforms="${all_platforms} arm64-darwin20-gcc"
  all_platforms="${all_platforms} arm64-darwin21-gcc"

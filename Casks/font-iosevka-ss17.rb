@@ -1,26 +1,26 @@
 cask "font-iosevka-ss17" do
-  version "27.3.5"
-  sha256 "07f04ef2d00a4d011dfe6cd3bba24c0797c444ff67d9ae59983f98702c21c279"
+  version "28.0.1"
+  sha256 "a7f06f52b626262cf11dc51e2c895316a62f96890ff4abe6ef18560c983cf7c1"
 
-  url "https://ghproxy.com/https://github.com/be5invis/Iosevka/releases/download/v#{version}/ttc-iosevka-ss17-#{version}.zip"
+  url "https:github.combe5invisIosevkareleasesdownloadv#{version}PkgTTC-IosevkaSS17-#{version}.zip"
   name "Iosevka SS17"
   desc "Sans-serif, slab-serif, monospace and quasi‑proportional typeface family"
-  homepage "https://github.com/be5invis/Iosevka/"
+  homepage "https:github.combe5invisIosevka"
 
   livecheck do
     url :url
     strategy :github_latest
   end
 
-  font "iosevka-ss17-bold.ttc"
-  font "iosevka-ss17-extrabold.ttc"
-  font "iosevka-ss17-extralight.ttc"
-  font "iosevka-ss17-heavy.ttc"
-  font "iosevka-ss17-light.ttc"
-  font "iosevka-ss17-medium.ttc"
-  font "iosevka-ss17-regular.ttc"
-  font "iosevka-ss17-semibold.ttc"
-  font "iosevka-ss17-thin.ttc"
+  font "IosevkaSS17-Bold.ttc"
+  font "IosevkaSS17-ExtraBold.ttc"
+  font "IosevkaSS17-ExtraLight.ttc"
+  font "IosevkaSS17-Heavy.ttc"
+  font "IosevkaSS17-Light.ttc"
+  font "IosevkaSS17-Medium.ttc"
+  font "IosevkaSS17-Regular.ttc"
+  font "IosevkaSS17-SemiBold.ttc"
+  font "IosevkaSS17-Thin.ttc"
 
   # No zap stanza required
 end

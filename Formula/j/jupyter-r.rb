@@ -1,7 +1,7 @@
 class JupyterR < Formula
   desc "R support for Jupyter"
-  homepage "https://irkernel.github.io"
-  url "https://ghproxy.com/https://github.com/IRkernel/IRkernel/archive/refs/tags/1.3.2.tar.gz", using: :nounzip
+  homepage "https:irkernel.github.io"
+  url "https:github.comIRkernelIRkernelarchiverefstags1.3.2.tar.gz", using: :nounzip
   sha256 "4ef2df1371e4b80dc1520da9186242998eb89eb0acfbc7d78de9aef4416bc358"
   license "MIT"
   revision 2
@@ -24,110 +24,110 @@ class JupyterR < Formula
   uses_from_macos "expect" => :test
 
   resource "rlang" do
-    url "https://cloud.r-project.org/src/contrib/rlang_1.1.2.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/rlang/rlang_1.1.2.tar.gz"
+    url "https:cloud.r-project.orgsrccontribrlang_1.1.2.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiverlangrlang_1.1.2.tar.gz"
     sha256 "2a0ee1dc6e5c59b283c32db5e74e869922a336197cb406fe92622b6ec66f8092"
   end
 
   resource "fastmap" do
-    url "https://cloud.r-project.org/src/contrib/fastmap_1.1.1.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/fastmap/fastmap_1.1.1.tar.gz"
+    url "https:cloud.r-project.orgsrccontribfastmap_1.1.1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivefastmapfastmap_1.1.1.tar.gz"
     sha256 "3623809dd016ae8abd235200ba7834effc4b916915a059deb76044137c5c7173"
   end
 
   resource "ellipsis" do
-    url "https://cloud.r-project.org/src/contrib/ellipsis_0.3.2.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/ellipsis/ellipsis_0.3.2.tar.gz"
+    url "https:cloud.r-project.orgsrccontribellipsis_0.3.2.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveellipsisellipsis_0.3.2.tar.gz"
     sha256 "a90266e5eb59c7f419774d5c6d6bd5e09701a26c9218c5933c9bce6765aa1558"
   end
 
   resource "cli" do
-    url "https://cloud.r-project.org/src/contrib/cli_3.6.1.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/cli/cli_3.6.1.tar.gz"
+    url "https:cloud.r-project.orgsrccontribcli_3.6.1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveclicli_3.6.1.tar.gz"
     sha256 "be3006cec7e67f9ae25e21b4658c4bec680038c2ef7467df5f14da3311a05e36"
   end
 
   resource "fansi" do
-    url "https://cloud.r-project.org/src/contrib/fansi_1.0.6.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/fansi/fansi_1.0.6.tar.gz"
+    url "https:cloud.r-project.orgsrccontribfansi_1.0.6.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivefansifansi_1.0.6.tar.gz"
     sha256 "ea9dc690dfe50a7fad7c5eb863c157d70385512173574c56f4253b6dfe431863"
   end
 
   resource "glue" do
-    url "https://cloud.r-project.org/src/contrib/glue_1.6.2.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/glue/glue_1.6.2.tar.gz"
+    url "https:cloud.r-project.orgsrccontribglue_1.6.2.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveglueglue_1.6.2.tar.gz"
     sha256 "9da518f12be584c90e75fe8e07f711ee3f6fc0d03d817f72c25dc0f66499fdbf"
   end
 
   resource "lifecycle" do
-    url "https://cloud.r-project.org/src/contrib/lifecycle_1.0.4.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/lifecycle/lifecycle_1.0.4.tar.gz"
+    url "https:cloud.r-project.orgsrccontriblifecycle_1.0.4.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivelifecyclelifecycle_1.0.4.tar.gz"
     sha256 "ada4d3c7e84b0c93105e888647c5754219a8334f6e1f82d5afaf83d4855b91cc"
   end
 
   resource "utf8" do
-    url "https://cloud.r-project.org/src/contrib/utf8_1.2.4.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/utf8/utf8_1.2.4.tar.gz"
+    url "https:cloud.r-project.orgsrccontributf8_1.2.4.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveutf8utf8_1.2.4.tar.gz"
     sha256 "418f824bbd9cd868d2d8a0d4345545c62151d321224cdffca8b1ffd98a167b7d"
   end
 
   resource "vctrs" do
-    url "https://cloud.r-project.org/src/contrib/vctrs_0.6.5.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/vctrs/vctrs_0.6.5.tar.gz"
+    url "https:cloud.r-project.orgsrccontribvctrs_0.6.5.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivevctrsvctrs_0.6.5.tar.gz"
     sha256 "43167d2248fd699594044b5c8f1dbb7ed163f2d64761e08ba805b04e7ec8e402"
   end
 
   resource "base64enc" do
-    url "https://cloud.r-project.org/src/contrib/base64enc_0.1-3.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/base64enc/base64enc_0.1-3.tar.gz"
+    url "https:cloud.r-project.orgsrccontribbase64enc_0.1-3.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivebase64encbase64enc_0.1-3.tar.gz"
     sha256 "6d856d8a364bcdc499a0bf38bfd283b7c743d08f0b288174fba7dbf0a04b688d"
   end
 
   resource "digest" do
-    url "https://cloud.r-project.org/src/contrib/digest_0.6.33.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/digest/digest_0.6.33.tar.gz"
+    url "https:cloud.r-project.orgsrccontribdigest_0.6.33.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivedigestdigest_0.6.33.tar.gz"
     sha256 "be702c886b1639be7eda4ea25a4261b30ce418c580f79bd78ec8d6cb4d327819"
   end
 
   resource "htmltools" do
-    url "https://cloud.r-project.org/src/contrib/htmltools_0.5.7.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/htmltools/htmltools_0.5.7.tar.gz"
+    url "https:cloud.r-project.orgsrccontribhtmltools_0.5.7.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivehtmltoolshtmltools_0.5.7.tar.gz"
     sha256 "ecb0d82619063f49e4d001c44fcc1b811a06928fd66c2bb8c86632798d98b386"
   end
 
   resource "pillar" do
-    url "https://cloud.r-project.org/src/contrib/pillar_1.9.0.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/pillar/pillar_1.9.0.tar.gz"
+    url "https:cloud.r-project.orgsrccontribpillar_1.9.0.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivepillarpillar_1.9.0.tar.gz"
     sha256 "f23eb486c087f864c2b4072d5cba01d5bebf2f554118bcba6886d8dbceb87acc"
   end
 
   resource "jsonlite" do
-    url "https://cloud.r-project.org/src/contrib/jsonlite_1.8.8.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/jsonlite/jsonlite_1.8.8.tar.gz"
+    url "https:cloud.r-project.orgsrccontribjsonlite_1.8.8.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivejsonlitejsonlite_1.8.8.tar.gz"
     sha256 "7de21316984c3ba3d7423d12f43d1c30c716007c5e39bf07e11885e0ceb0caa4"
   end
 
   resource "repr" do
-    url "https://cloud.r-project.org/src/contrib/repr_1.1.6.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/repr/repr_1.1.6.tar.gz"
+    url "https:cloud.r-project.orgsrccontribrepr_1.1.6.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivereprrepr_1.1.6.tar.gz"
     sha256 "3d2e6c9b363c1ec4811688deff7fb22093cadc9e0a333930382093d93c16673f"
   end
 
   resource "evaluate" do
-    url "https://cloud.r-project.org/src/contrib/evaluate_0.23.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/evaluate/evaluate_0.23.tar.gz"
+    url "https:cloud.r-project.orgsrccontribevaluate_0.23.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveevaluateevaluate_0.23.tar.gz"
     sha256 "c9cf9c37502b8fbfa78e4eb96b8c3d1789060e49505c86c07cb7476da804a45c"
   end
 
   resource "IRdisplay" do
-    url "https://cloud.r-project.org/src/contrib/IRdisplay_1.1.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/IRdisplay/IRdisplay_1.1.tar.gz"
+    url "https:cloud.r-project.orgsrccontribIRdisplay_1.1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveIRdisplayIRdisplay_1.1.tar.gz"
     sha256 "83eb030ff91f546cb647899f8aa3f5dc9fe163a89a981696447ea49cc98e8d2b"
   end
 
   resource "pbdZMQ" do
-    url "https://cloud.r-project.org/src/contrib/pbdZMQ_0.3-10.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/pbdZMQ/pbdZMQ_0.3-10.tar.gz"
+    url "https:cloud.r-project.orgsrccontribpbdZMQ_0.3-10.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivepbdZMQpbdZMQ_0.3-10.tar.gz"
     sha256 "39a20058e4027fab6f4a4cf0f557fef4e77409c9656d00252ef31cb6d90ad191"
 
     # Remove use of -flat_namespace.
@@ -135,20 +135,20 @@ class JupyterR < Formula
   end
 
   resource "crayon" do
-    url "https://cloud.r-project.org/src/contrib/crayon_1.5.2.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/crayon/crayon_1.5.2.tar.gz"
+    url "https:cloud.r-project.orgsrccontribcrayon_1.5.2.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivecrayoncrayon_1.5.2.tar.gz"
     sha256 "70a9a505b5b3c0ee6682ad8b965e28b7e24d9f942160d0a2bad18eec22b45a7a"
   end
 
   resource "uuid" do
-    url "https://cloud.r-project.org/src/contrib/uuid_1.1-1.tar.gz"
-    mirror "https://cloud.r-project.org/src/contrib/Archive/uuid/uuid_1.1-1.tar.gz"
+    url "https:cloud.r-project.orgsrccontribuuid_1.1-1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveuuiduuid_1.1-1.tar.gz"
     sha256 "1611240eb706e6f53400b25c9cf792ad90f151b72ed0918a1e756997f7abb716"
   end
 
   def install
-    rscript = Formula["r"].opt_bin/"Rscript"
-    site_library = lib/"R/site-library"
+    rscript = Formula["r"].opt_bin"Rscript"
+    site_library = lib"Rsite-library"
     site_library.mkpath
 
     resources.each do |r|
@@ -166,27 +166,27 @@ class JupyterR < Formula
     end
 
     system rscript, "-e",
-      "install.packages(pkgs='#{buildpath}/IRkernel-#{version}.tar.gz', lib='#{site_library}', type='source', repos=NULL)"
+      "install.packages(pkgs='#{buildpath}IRkernel-#{version}.tar.gz', lib='#{site_library}', type='source', repos=NULL)"
 
-    inreplace "#{site_library}/pbdZMQ/etc/Makeconf" do |s|
-      s.gsub!(/PKG_CONFIG = .+/, "PKG_CONFIG = #{HOMEBREW_PREFIX}/bin/pkg-config")
+    inreplace "#{site_library}pbdZMQetcMakeconf" do |s|
+      s.gsub!(PKG_CONFIG = .+, "PKG_CONFIG = #{HOMEBREW_PREFIX}binpkg-config")
       s.gsub! Formula["zeromq"].prefix.realpath, Formula["zeromq"].opt_prefix
     end
 
     ENV["R_LIBS"] = site_library
     system rscript, "-e", "library(IRkernel); IRkernel::installspec(user=FALSE, prefix='#{prefix}')"
-    inreplace share/"jupyter/kernels/ir/kernel.json", Formula["r"].prefix.realpath, Formula["r"].opt_prefix
+    inreplace share"jupyterkernelsirkernel.json", Formula["r"].prefix.realpath, Formula["r"].opt_prefix
   end
 
   test do
     r_version = Formula["r"].version
-    jupyter = Formula["jupyterlab"].opt_bin/"jupyter"
+    jupyter = Formula["jupyterlab"].opt_bin"jupyter"
 
-    ENV["JUPYTER_PATH"] = share/"jupyter"
-    ENV["R_LIBS_SITE"] = lib/"R/site-library"
+    ENV["JUPYTER_PATH"] = share"jupyter"
+    ENV["R_LIBS_SITE"] = lib"Rsite-library"
     assert_match " ir ", shell_output("#{jupyter} kernelspec list")
 
-    (testpath/"console.exp").write <<~EOS
+    (testpath"console.exp").write <<~EOS
       spawn #{jupyter} console --kernel=ir
       expect -timeout 60 "In "
       send "print('Hello Homebrew')\r"
@@ -200,8 +200,8 @@ class JupyterR < Formula
 end
 
 __END__
---- a/src/zmqsrc/config/libtool.m4
-+++ b/src/zmqsrc/config/libtool.m4
+--- asrczmqsrcconfiglibtool.m4
++++ bsrczmqsrcconfiglibtool.m4
 @@ -1045,16 +1045,11 @@ _LT_EOF
        _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
      darwin1.*)
@@ -223,8 +223,8 @@ __END__
  	  _lt_dar_allow_undefined='${wl}-undefined ${wl}dynamic_lookup' ;;
        esac
      ;;
---- a/src/zmqsrc/configure
-+++ b/src/zmqsrc/configure
+--- asrczmqsrcconfigure
++++ bsrczmqsrcconfigure
 @@ -10686,16 +10686,11 @@ $as_echo "$lt_cv_ld_force_load" >&6; }
        _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
      darwin1.*)

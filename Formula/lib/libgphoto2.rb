@@ -1,13 +1,13 @@
 class Libgphoto2 < Formula
   desc "Gphoto2 digital camera library"
-  homepage "http://www.gphoto.org/proj/libgphoto2/"
-  url "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.31/libgphoto2-2.5.31.tar.bz2"
+  homepage "http:www.gphoto.orgprojlibgphoto2"
+  url "https:downloads.sourceforge.netprojectgphotolibgphoto2.5.31libgphoto2-2.5.31.tar.bz2"
   sha256 "4f81c34c0b812bee67afd5f144940fbcbe01a2055586a6a1fa2d0626024a545b"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/libgphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?libgphoto2[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Libgphoto2 < Formula
   end
 
   head do
-    url "https://github.com/gphoto/libgphoto2.git", branch: "master"
+    url "https:github.comgphotolibgphoto2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,21 +42,21 @@ class Libgphoto2 < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gphoto2/gphoto2-camera.h>
+    (testpath"test.c").write <<~EOS
+      #include <gphoto2gphoto2-camera.h>
       int main(void) {
         Camera *camera;
         return gp_camera_new(&camera);
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lgphoto2", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class Nixpacks < Formula
   desc "App source + Nix packages + Docker = Image"
-  homepage "https://nixpacks.com/"
-  url "https://ghproxy.com/https://github.com/railwayapp/nixpacks/archive/refs/tags/v1.20.0.tar.gz"
+  homepage "https:nixpacks.com"
+  url "https:github.comrailwayappnixpacksarchiverefstagsv1.20.0.tar.gz"
   sha256 "0f2cdd80879dc97d07ffb36a84aaf56f524b1466f88276afd210cdcc9f07e462"
   license "MIT"
-  head "https://github.com/railwayapp/nixpacks.git", branch: "main"
+  head "https:github.comrailwayappnixpacks.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7664f754b0e1cd00a7dfad32d3a28ae2fab4b866319d61b0b7463a26e82449d"
@@ -23,9 +23,9 @@ class Nixpacks < Formula
   end
 
   test do
-    output = shell_output("#{bin}/nixpacks build #{testpath} --name test", 1)
+    output = shell_output("#{bin}nixpacks build #{testpath} --name test", 1)
     assert_match "Nixpacks was unable to generate a build plan for this app", output
 
-    assert_equal "nixpacks #{version}", shell_output("#{bin}/nixpacks -V").chomp
+    assert_equal "nixpacks #{version}", shell_output("#{bin}nixpacks -V").chomp
   end
 end

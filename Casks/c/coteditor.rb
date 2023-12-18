@@ -65,24 +65,24 @@ cask "coteditor" do
     end
   end
 
-  url "https://ghproxy.com/https://github.com/coteditor/CotEditor/releases/download/#{version}/CotEditor_#{version}.dmg",
-      verified: "github.com/coteditor/CotEditor/"
+  url "https:github.comcoteditorCotEditorreleasesdownload#{version}CotEditor_#{version}.dmg",
+      verified: "github.comcoteditorCotEditor"
   name "CotEditor"
   desc "Plain-text editor for web pages, program source codes and more"
-  homepage "https://coteditor.com/"
+  homepage "https:coteditor.com"
 
   auto_updates true
   depends_on macos: ">= :monterey"
 
   app "CotEditor.app"
-  binary "#{appdir}/CotEditor.app/Contents/SharedSupport/bin/cot"
+  binary "#{appdir}CotEditor.appContentsSharedSupportbincot"
 
   zap trash: [
-    "~/Library/Application Scripts/com.coteditor.CotEditor",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.coteditor.coteditor.sfl*",
-    "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/com.coteditor.CotEditor.help*",
-    "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/Japanese/HelpSDMIndexFile/com.coteditor.CotEditor.help*",
-    "~/Library/Containers/com.coteditor.CotEditor",
-    "~/Library/Preferences/com.coteditor.CotEditor.plist",
+    "~LibraryApplication Scriptscom.coteditor.CotEditor",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.coteditor.coteditor.sfl*",
+    "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFilecom.coteditor.CotEditor.help*",
+    "~LibraryCachescom.apple.helpdSDMHelpDataOtherJapaneseHelpSDMIndexFilecom.coteditor.CotEditor.help*",
+    "~LibraryContainerscom.coteditor.CotEditor",
+    "~LibraryPreferencescom.coteditor.CotEditor.plist",
   ]
 end

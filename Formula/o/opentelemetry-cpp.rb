@@ -1,10 +1,10 @@
 class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
-  homepage "https://opentelemetry.io/"
-  url "https://ghproxy.com/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.13.0.tar.gz"
+  homepage "https:opentelemetry.io"
+  url "https:github.comopen-telemetryopentelemetry-cpparchiverefstagsv1.13.0.tar.gz"
   sha256 "7735cc56507149686e6019e06f588317099d4522480be5f38a2a09ec69af1706"
   license "Apache-2.0"
-  head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
+  head "https:github.comopen-telemetryopentelemetry-cpp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7816e2e5f56db74edfe4bdfee4fa042549d2b5e195b616cf50442e3923378611"
@@ -45,12 +45,12 @@ class OpentelemetryCpp < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
-      #include "opentelemetry/sdk/trace/simple_processor.h"
-      #include "opentelemetry/sdk/trace/tracer_provider.h"
-      #include "opentelemetry/trace/provider.h"
-      #include "opentelemetry/exporters/ostream/span_exporter.h"
-      #include "opentelemetry/exporters/otlp/otlp_recordable_utils.h"
+    (testpath"test.cc").write <<~EOS
+      #include "opentelemetrysdktracesimple_processor.h"
+      #include "opentelemetrysdktracetracer_provider.h"
+      #include "opentelemetrytraceprovider.h"
+      #include "opentelemetryexportersostreamspan_exporter.h"
+      #include "opentelemetryexportersotlpotlp_recordable_utils.h"
 
       namespace trace_api = opentelemetry::trace;
       namespace trace_sdk = opentelemetry::sdk::trace;
@@ -65,7 +65,7 @@ class OpentelemetryCpp < Formula
         auto provider = nostd::shared_ptr<trace_api::TracerProvider>(
             new trace_sdk::TracerProvider(std::move(processor)));
 
-        // Set the global trace provider
+         Set the global trace provider
         trace_api::Provider::SetTracerProvider(provider);
 
         auto tracer = provider->GetTracer("foo_library", "1.0.0");
@@ -81,6 +81,6 @@ class OpentelemetryCpp < Formula
                     "-lopentelemetry_common",
                     "-pthread",
                     "-o", "simple-example"
-    system "./simple-example"
+    system ".simple-example"
   end
 end

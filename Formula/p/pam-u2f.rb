@@ -1,15 +1,15 @@
 class PamU2f < Formula
   desc "Provides an easy way to use U2F-compliant authenticators with PAM"
-  homepage "https://developers.yubico.com/pam-u2f/"
-  url "https://developers.yubico.com/pam-u2f/Releases/pam_u2f-1.3.0.tar.gz"
+  homepage "https:developers.yubico.compam-u2f"
+  url "https:developers.yubico.compam-u2fReleasespam_u2f-1.3.0.tar.gz"
   sha256 "72360c6875485eb4df409da8f8f52b17893f05e4d998529c238814480e115220"
   license "BSD-2-Clause"
   revision 1
-  head "https://github.com/Yubico/pam-u2f.git", branch: "master"
+  head "https:github.comYubicopam-u2f.git", branch: "master"
 
   livecheck do
-    url "https://developers.yubico.com/pam-u2f/Releases/"
-    regex(/href=.*?pam_u2f[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:developers.yubico.compam-u2fReleases"
+    regex(href=.*?pam_u2f[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -39,23 +39,23 @@ class PamU2f < Formula
   def install
     system "autoreconf", "--install"
 
-    ENV["A2X"] = "#{Formula["asciidoc"].opt_bin}/a2x --no-xmllint"
-    system "./configure", "--prefix=#{prefix}", "--with-pam-dir=#{lib}/pam"
+    ENV["A2X"] = "#{Formula["asciidoc"].opt_bin}a2x --no-xmllint"
+    system ".configure", "--prefix=#{prefix}", "--with-pam-dir=#{lib}pam"
     system "make", "install"
   end
 
   def caveats
     <<~EOS
       To use a U2F key for PAM authentication, specify the full path to the
-      module (#{opt_lib}/pam/pam_u2f.so) in a PAM
-      configuration. You can find all PAM configurations in /etc/pam.d.
+      module (#{opt_lib}pampam_u2f.so) in a PAM
+      configuration. You can find all PAM configurations in etcpam.d.
 
       For further installation instructions, please visit
-      https://developers.yubico.com/pam-u2f/#installation.
+      https:developers.yubico.compam-u2f#installation.
     EOS
   end
 
   test do
-    system "#{bin}/pamu2fcfg", "--version"
+    system "#{bin}pamu2fcfg", "--version"
   end
 end

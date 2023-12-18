@@ -2,17 +2,17 @@ cask "transmission-remote-gui" do
   version "5.18.0"
   sha256 "fe32f0cdd5c8f9777bace0eceb92d6b269a2b20210f4cc0552112861ddead759"
 
-  url "https://ghproxy.com/https://github.com/transmission-remote-gui/transgui/releases/download/v#{version}/transgui-#{version}.dmg"
+  url "https:github.comtransmission-remote-guitransguireleasesdownloadv#{version}transgui-#{version}.dmg"
   name "Transmission Remote GUI"
-  homepage "https://github.com/transmission-remote-gui/transgui"
+  homepage "https:github.comtransmission-remote-guitransgui"
 
   app "Transmission Remote GUI.app"
 
   uninstall quit: "com.transgui"
 
   zap trash: [
-    "~/.config/Transmission Remote GUI/",
-    "~/Library/Preferences/com.transgui.plist",
-    "~/Library/Saved Application State/com.transgui.savedState",
+    "~.configTransmission Remote GUI",
+    "~LibraryPreferencescom.transgui.plist",
+    "~LibrarySaved Application Statecom.transgui.savedState",
   ]
 end

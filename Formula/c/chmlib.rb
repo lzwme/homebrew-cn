@@ -1,14 +1,14 @@
 class Chmlib < Formula
-  desc "Library for dealing with Microsoft ITSS/CHM files"
-  homepage "http://www.jedrea.com/chmlib/"
-  url "http://www.jedrea.com/chmlib/chmlib-0.40.tar.gz"
-  mirror "https://download.tuxfamily.org/slitaz/sources/packages/c/chmlib-0.40.tar.gz"
+  desc "Library for dealing with Microsoft ITSSCHM files"
+  homepage "http:www.jedrea.comchmlib"
+  url "http:www.jedrea.comchmlibchmlib-0.40.tar.gz"
+  mirror "https:download.tuxfamily.orgslitazsourcespackagescchmlib-0.40.tar.gz"
   sha256 "512148ed1ca86dea051ebcf62e6debbb00edfdd9720cde28f6ed98071d3a9617"
   license "LGPL-2.1-or-later"
 
   livecheck do
     url :homepage
-    regex(/href=.*?chmlib[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?chmlib[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,68 +31,68 @@ class Chmlib < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   # Add aarch64 to 64-bit integer platform list.
-  # Fix implicit function declarations, for C99 compatibility: https://github.com/jedwing/CHMLib/pull/17
+  # Fix implicit function declarations, for C99 compatibility: https:github.comjedwingCHMLibpull17
   patch :DATA
 
   def install
-    system "./configure", "--disable-io64", "--enable-examples", "--prefix=#{prefix}"
+    system ".configure", "--disable-io64", "--enable-examples", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <chm_lib.h>
       int main() {
         struct chmFile* chm = chm_open("file-that-doesnt-exist.chm");
-        return chm != 0; // Fail if non-null.
+        return chm != 0;  Fail if non-null.
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lchm", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end
 
 __END__
-diff --git a/src/chm_lib.c b/src/chm_lib.c
+diff --git asrcchm_lib.c bsrcchm_lib.c
 index 6c6736c..06908c0 100644
---- a/src/chm_lib.c
-+++ b/src/chm_lib.c
+--- asrcchm_lib.c
++++ bsrcchm_lib.c
 @@ -164,7 +164,7 @@ typedef unsigned long long      UInt64;
 
- /* x86-64 */
- /* Note that these may be appropriate for other 64-bit machines. */
+ * x86-64 *
+ * Note that these may be appropriate for other 64-bit machines. *
 -#elif __x86_64__ || __ia64__
 +#elif __x86_64__ || __ia64__ || __aarch64__
  typedef unsigned char           UChar;
  typedef short                   Int16;
  typedef unsigned short          UInt16;
-diff --git a/src/chm_http.c b/src/chm_http.c
+diff --git asrcchm_http.c bsrcchm_http.c
 index 237e85a..1df2adb 100644
---- a/src/chm_http.c
-+++ b/src/chm_http.c
+--- asrcchm_http.c
++++ bsrcchm_http.c
 @@ -43,6 +43,8 @@
- #include <sys/socket.h>
- #include <sys/types.h>
- #include <netinet/in.h>
-+#include <arpa/inet.h>
+ #include <syssocket.h>
+ #include <systypes.h>
+ #include <netinetin.h>
++#include <arpainet.h>
 +#include <unistd.h>
  
- /* threading includes */
+ * threading includes *
  #include <pthread.h>
-diff --git a/src/chm_lib.c b/src/chm_lib.c
+diff --git asrcchm_lib.c bsrcchm_lib.c
 index ffd213c..9eb9d1b 100644
---- a/src/chm_lib.c
-+++ b/src/chm_lib.c
+--- asrcchm_lib.c
++++ bsrcchm_lib.c
 @@ -48,6 +48,8 @@
   *                                                                         *
-  ***************************************************************************/
+  ***************************************************************************
  
-+#define _LARGEFILE64_SOURCE /* for pread64 */
++#define _LARGEFILE64_SOURCE * for pread64 *
 +
  #include "chm_lib.h"
  

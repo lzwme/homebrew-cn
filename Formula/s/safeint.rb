@@ -1,17 +1,17 @@
 class Safeint < Formula
   desc "Class library for C++ that manages integer overflows"
-  homepage "https://github.com/dcleblanc/SafeInt"
-  url "https://ghproxy.com/https://github.com/dcleblanc/SafeInt/archive/refs/tags/3.0.28a.tar.gz"
+  homepage "https:github.comdcleblancSafeInt"
+  url "https:github.comdcleblancSafeIntarchiverefstags3.0.28a.tar.gz"
   version "3.0.28a"
   sha256 "9e652d065a3cef80623287d5dc61edcf6a95ddab38a9dfeb34f155261fc9cef7"
   license "MIT"
-  head "https://github.com/dcleblanc/SafeInt.git", branch: "master"
+  head "https:github.comdcleblancSafeInt.git", branch: "master"
 
   # The `GithubLatest` strategy is used here because upstream changed their
   # version numbering so that 3.0.26 follows 3.24.
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
+    regex(v?(\d+(?:\.\d+)+[a-z]?)i)
     strategy :github_latest
   end
 
@@ -29,8 +29,8 @@ class Safeint < Formula
 
   test do
     # Modified from:
-    #   https://learn.microsoft.com/en-us/cpp/safeint/safeint-class?view=msvc-170#example
-    (testpath/"test.cc").write <<~EOS
+    #   https:learn.microsoft.comen-uscppsafeintsafeint-class?view=msvc-170#example
+    (testpath"test.cc").write <<~EOS
       #ifdef NDEBUG
       #undef NDEBUG
       #endif
@@ -43,17 +43,17 @@ class Safeint < Formula
         int dividend = 6;
         int result;
 
-        bool success = SafeDivide(dividend, divisor, result); // result = 2
+        bool success = SafeDivide(dividend, divisor, result);  result = 2
         assert(result == 2);
         assert(success);
 
-        success = SafeDivide(dividend, 0, result); // expect fail. result isn't modified.
+        success = SafeDivide(dividend, 0, result);  expect fail. result isn't modified.
         assert(result == 2);
         assert(!success);
       }
     EOS
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "-o", "test", "test.cc"
-    system "./test"
+    system ".test"
   end
 end

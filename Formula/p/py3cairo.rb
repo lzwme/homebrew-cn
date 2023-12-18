@@ -1,7 +1,7 @@
 class Py3cairo < Formula
   desc "Python 3 bindings for the Cairo graphics library"
-  homepage "https://cairographics.org/pycairo/"
-  url "https://ghproxy.com/https://github.com/pygobject/pycairo/releases/download/v1.25.1/pycairo-1.25.1.tar.gz"
+  homepage "https:cairographics.orgpycairo"
+  url "https:github.compygobjectpycairoreleasesdownloadv1.25.1pycairo-1.25.1.tar.gz"
   sha256 "7e2be4fbc3b4536f16db7a11982cbf713e75069a4d73d44fe5a49b68423f5c0c"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
 
@@ -24,8 +24,8 @@ class Py3cairo < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .select { |f| f.name.match?(^python@\d\.\d+$) }
+        .map { |f| f.opt_libexec"binpython" }
   end
 
   def install

@@ -1,9 +1,9 @@
 class Airspy < Formula
   desc "Driver and tools for a software-defined radio"
-  homepage "https://airspy.com/"
-  url "https://ghproxy.com/https://github.com/airspy/airspyone_host/archive/refs/tags/v1.0.10.tar.gz"
+  homepage "https:airspy.com"
+  url "https:github.comairspyairspyone_hostarchiverefstagsv1.0.10.tar.gz"
   sha256 "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613"
-  head "https://github.com/airspy/airspyone_host.git", branch: "master"
+  head "https:github.comairspyairspyone_host.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8c086845772a91ed241283aa4175e0ba598e9e80530b660fceb413857211901f"
@@ -27,8 +27,8 @@ class Airspy < Formula
     args = std_cmake_args
 
     libusb = Formula["libusb"]
-    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}/libusb-1.0"
-    args << "-DLIBUSB_LIBRARIES=#{libusb.opt_lib}/#{shared_library("libusb-1.0")}"
+    args << "-DLIBUSB_INCLUDE_DIR=#{libusb.opt_include}libusb-1.0"
+    args << "-DLIBUSB_LIBRARIES=#{libusb.opt_lib}#{shared_library("libusb-1.0")}"
 
     mkdir "build" do
       system "cmake", "..", *args
@@ -37,6 +37,6 @@ class Airspy < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/airspy_lib_version").chomp
+    assert_match version.to_s, shell_output("#{bin}airspy_lib_version").chomp
   end
 end

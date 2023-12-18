@@ -1,12 +1,12 @@
 class Dronedb < Formula
   desc "Free and open source software for aerial data storage"
-  homepage "https://github.com/DroneDB/DroneDB"
-  url "https://github.com/DroneDB/DroneDB.git",
+  homepage "https:github.comDroneDBDroneDB"
+  url "https:github.comDroneDBDroneDB.git",
        tag:      "v1.0.12",
        revision: "849e92fa94dc7cf65eb756ecf3824f0fe9dbb797"
   license "MPL-2.0"
   revision 7
-  head "https://github.com/DroneDB/DroneDB.git", branch: "master"
+  head "https:github.comDroneDBDroneDB.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f3d3142c0a755873b372896657872fcac7e3a91a40f8576ffa5faf2a59630737"
@@ -26,7 +26,7 @@ class Dronedb < Formula
 
   # Build patch for xcode 14.3
   patch do
-    url "https://github.com/DroneDB/DroneDB/commit/28aa869dee5920c2d948e1b623f2f9d518bdcb1e.patch?full_index=1"
+    url "https:github.comDroneDBDroneDBcommit28aa869dee5920c2d948e1b623f2f9d518bdcb1e.patch?full_index=1"
     sha256 "50e581aad0fd3226fe5999cc91f9a61fdcbc42c5ba2394d9def89b70183f9c96"
   end
 
@@ -37,9 +37,9 @@ class Dronedb < Formula
   end
 
   test do
-    system "#{bin}/ddb", "--version"
-    system "#{bin}/ddb", "info", "."
-    system "#{bin}/ddb", "init"
-    assert_predicate testpath/".ddb/dbase.sqlite", :exist?
+    system "#{bin}ddb", "--version"
+    system "#{bin}ddb", "info", "."
+    system "#{bin}ddb", "init"
+    assert_predicate testpath".ddbdbase.sqlite", :exist?
   end
 end

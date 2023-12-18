@@ -1,14 +1,14 @@
 class Openmsx < Formula
   desc "MSX emulator"
-  homepage "https://openmsx.org/"
-  url "https://ghproxy.com/https://github.com/openMSX/openMSX/releases/download/RELEASE_19_1/openmsx-19.1.tar.gz"
+  homepage "https:openmsx.org"
+  url "https:github.comopenMSXopenMSXreleasesdownloadRELEASE_19_1openmsx-19.1.tar.gz"
   sha256 "979b1322215095d82d5ea4a455c5e089fcbc4916c0725d6362a15b7022c0e249"
   license "GPL-2.0-or-later"
-  head "https://github.com/openMSX/openMSX.git", branch: "master"
+  head "https:github.comopenMSXopenMSX.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/RELEASE[._-]v?(\d+(?:[._]\d+)+)/i)
+    regex(RELEASE[._-]v?(\d+(?:[._]\d+)+)i)
     strategy :github_latest
   end
 
@@ -57,25 +57,25 @@ class Openmsx < Formula
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
 
     # Hardcode prefix
-    inreplace "build/custom.mk", "/opt/openMSX", prefix
-    inreplace "build/probe.py", "platform == 'darwin'", "platform == 'linux'" if OS.linux?
-    inreplace "build/probe.py", "/usr/local", HOMEBREW_PREFIX
+    inreplace "buildcustom.mk", "optopenMSX", prefix
+    inreplace "buildprobe.py", "platform == 'darwin'", "platform == 'linux'" if OS.linux?
+    inreplace "buildprobe.py", "usrlocal", HOMEBREW_PREFIX
 
-    # Help finding Tcl (https://github.com/openMSX/openMSX/issues/1082)
-    ENV["TCL_CONFIG"] = OS.mac? ? MacOS.sdk_path/"System/Library/Frameworks/Tcl.framework" : Formula["tcl-tk"].lib
+    # Help finding Tcl (https:github.comopenMSXopenMSXissues1082)
+    ENV["TCL_CONFIG"] = OS.mac? ? MacOS.sdk_path"SystemLibraryFrameworksTcl.framework" : Formula["tcl-tk"].lib
 
-    system "./configure"
+    system ".configure"
     system "make", "CXX=#{ENV.cxx}"
 
     if OS.mac?
-      prefix.install Dir["derived/**/openMSX.app"]
-      bin.write_exec_script "#{prefix}/openMSX.app/Contents/MacOS/openmsx"
+      prefix.install Dir["derived**openMSX.app"]
+      bin.write_exec_script "#{prefix}openMSX.appContentsMacOSopenmsx"
     else
       system "make", "install"
     end
   end
 
   test do
-    system "#{bin}/openmsx", "-testconfig"
+    system "#{bin}openmsx", "-testconfig"
   end
 end

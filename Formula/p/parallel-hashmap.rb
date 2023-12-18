@@ -1,10 +1,10 @@
 class ParallelHashmap < Formula
   desc "Family of header-only, fast, memory-friendly C++ hashmap and btree containers"
-  homepage "https://greg7mdp.github.io/parallel-hashmap/"
-  url "https://ghproxy.com/https://github.com/greg7mdp/parallel-hashmap/archive/refs/tags/1.37.tar.gz"
+  homepage "https:greg7mdp.github.ioparallel-hashmap"
+  url "https:github.comgreg7mdpparallel-hashmaparchiverefstags1.37.tar.gz"
   sha256 "2ac652be0552fcb53a1163c08c1f28f29f0756594fcc587eebb4d8b363153709"
   license "Apache-2.0"
-  head "https://github.com/greg7mdp/parallel-hashmap.git", branch: "master"
+  head "https:github.comgreg7mdpparallel-hashmap.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d35958ae9cb30dbf15d9cca4b5dc4a6b3d50aced16db2cca21b96d1c2a550216"
@@ -18,10 +18,10 @@ class ParallelHashmap < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <string>
-      #include <parallel_hashmap/phmap.h>
+      #include <parallel_hashmapphmap.h>
 
       using phmap::flat_hash_map;
 
@@ -41,6 +41,6 @@ class ParallelHashmap < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
-    assert_equal "foo:a\nbar:b\nbaz:c\n", shell_output("./test")
+    assert_equal "foo:a\nbar:b\nbaz:c\n", shell_output(".test")
   end
 end

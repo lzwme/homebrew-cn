@@ -1,7 +1,7 @@
 class Networkit < Formula
   desc "Performance toolkit for large-scale network analysis"
-  homepage "https://networkit.github.io"
-  url "https://ghproxy.com/https://github.com/networkit/networkit/archive/refs/tags/10.1.tar.gz"
+  homepage "https:networkit.github.io"
+  url "https:github.comnetworkitnetworkitarchiverefstags10.1.tar.gz"
   sha256 "35d11422b731f3e3f06ec05615576366be96ce26dd23aa16c8023b97f2fe9039"
   license "MIT"
   revision 1
@@ -34,10 +34,10 @@ class Networkit < Formula
   def install
     site_packages = Language::Python.site_packages(python3)
 
-    ENV.prepend_create_path "PYTHONPATH", prefix/site_packages
-    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
+    ENV.prepend_create_path "PYTHONPATH", prefixsite_packages
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexecsite_packages
 
-    networkit_site_packages = prefix/site_packages/"networkit"
+    networkit_site_packages = prefixsite_packages"networkit"
     extra_rpath = rpath(source: networkit_site_packages, target: Formula["libnetworkit"].opt_lib)
     system python3, "setup.py", "build_ext", "--networkit-external-core",
                                              "--external-tlx=#{Formula["tlx"].opt_prefix}",

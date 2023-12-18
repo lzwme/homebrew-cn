@@ -1,14 +1,14 @@
 class Ncmpcpp < Formula
   desc "Ncurses-based client for the Music Player Daemon"
-  homepage "https://rybczak.net/ncmpcpp/"
-  url "https://rybczak.net/ncmpcpp/stable/ncmpcpp-0.9.2.tar.bz2"
+  homepage "https:rybczak.netncmpcpp"
+  url "https:rybczak.netncmpcppstablencmpcpp-0.9.2.tar.bz2"
   sha256 "faabf6157c8cb1b24a059af276e162fa9f9a3b9cd3810c43b9128860c9383a1b"
   license "GPL-2.0-or-later"
   revision 13
 
   livecheck do
-    url "https://rybczak.net/ncmpcpp/installation/"
-    regex(/href=.*?ncmpcpp[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:rybczak.netncmpcppinstallation"
+    regex(href=.*?ncmpcpp[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Ncmpcpp < Formula
   end
 
   head do
-    url "https://github.com/ncmpcpp/ncmpcpp.git", branch: "master"
+    url "https:github.comncmpcppncmpcpp.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -59,14 +59,14 @@ class Ncmpcpp < Formula
       --with-taglib
     ]
 
-    system "./autogen.sh" if build.head?
-    system "./configure", *args
+    system ".autogen.sh" if build.head?
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
     ENV.delete("LC_CTYPE")
-    assert_match version.to_s, shell_output("#{bin}/ncmpcpp --version")
+    assert_match version.to_s, shell_output("#{bin}ncmpcpp --version")
   end
 end

@@ -2,12 +2,12 @@ cask "font-cormorant-infant" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/cormorantinfant"
+      only_path: "oflcormorantinfant"
   name "Cormorant Infant"
-  homepage "https://fonts.google.com/specimen/Cormorant+Infant"
+  homepage "https:fonts.google.comspecimenCormorant+Infant"
 
   font "CormorantInfant-Bold.ttf"
   font "CormorantInfant-BoldItalic.ttf"

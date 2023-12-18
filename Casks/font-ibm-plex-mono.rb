@@ -2,13 +2,13 @@ cask "font-ibm-plex-mono" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ibmplexmono"
+      only_path: "oflibmplexmono"
   name "IBM Plex Mono"
   desc "Corporate typeface for IBM"
-  homepage "https://fonts.google.com/specimen/IBM+Plex+Mono"
+  homepage "https:fonts.google.comspecimenIBM+Plex+Mono"
 
   font "IBMPlexMono-Bold.ttf"
   font "IBMPlexMono-BoldItalic.ttf"

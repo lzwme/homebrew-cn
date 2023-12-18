@@ -1,10 +1,10 @@
 class SwiftOutdated < Formula
   desc "Check for outdated Swift package manager dependencies"
-  homepage "https://github.com/kiliankoe/swift-outdated"
-  url "https://ghproxy.com/https://github.com/kiliankoe/swift-outdated/archive/refs/tags/0.9.0.tar.gz"
+  homepage "https:github.comkiliankoeswift-outdated"
+  url "https:github.comkiliankoeswift-outdatedarchiverefstags0.9.0.tar.gz"
   sha256 "b6ee31edc45711c6425d047fe1b4f177da2498201dab5d94dbe86d8bd483419c"
   license "MIT"
-  head "https://github.com/kiliankoe/swift-outdated.git", branch: "main"
+  head "https:github.comkiliankoeswift-outdated.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e51d1646a256b47a32512952ba7fa916f1744b11c3c09ddc3c5a576845ed270a"
@@ -23,11 +23,11 @@ class SwiftOutdated < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/swift-outdated"
+    bin.install ".buildreleaseswift-outdated"
   end
 
   test do
-    assert_match "No Package.resolved found", shell_output("#{bin}/swift-outdated 2>&1", 1)
-    assert_match version.to_s, shell_output("#{bin}/swift-outdated --version")
+    assert_match "No Package.resolved found", shell_output("#{bin}swift-outdated 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}swift-outdated --version")
   end
 end

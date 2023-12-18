@@ -2,10 +2,10 @@ cask "bossa" do
   version "1.9.1"
   sha256 "ef325525d2ce1fa6078732e5aa0c16cf78114bd3cf867016c4b948022d1cb31f"
 
-  url "https://ghproxy.com/https://github.com/shumatech/BOSSA/releases/download/#{version}/bossa-#{version}.dmg",
-      verified: "github.com/shumatech/BOSSA/"
+  url "https:github.comshumatechBOSSAreleasesdownload#{version}bossa-#{version}.dmg",
+      verified: "github.comshumatechBOSSA"
   name "bossa"
-  homepage "https://www.shumatech.com/web/products/bossa"
+  homepage "https:www.shumatech.comwebproductsbossa"
 
   app "BOSSA.app"
   binary "bossac"

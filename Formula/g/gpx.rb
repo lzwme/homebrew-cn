@@ -1,10 +1,10 @@
 class Gpx < Formula
   desc "Gcode to x3g converter for 3D printers running Sailfish"
-  homepage "https://github.com/markwal/GPX/blob/HEAD/README.md"
-  url "https://ghproxy.com/https://github.com/markwal/GPX/archive/refs/tags/2.6.8.tar.gz"
+  homepage "https:github.commarkwalGPXblobHEADREADME.md"
+  url "https:github.commarkwalGPXarchiverefstags2.6.8.tar.gz"
   sha256 "0877de07d405e7ced8428caa9dd989ebf90e7bdb7b1c34b85b2d3ee30ed28360"
   license "GPL-2.0"
-  head "https://github.com/markwal/GPX.git", branch: "master"
+  head "https:github.commarkwalGPX.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61e0254f04e3d84c686ebdc03b55e1e8cfdbf8763a562d7bebb098e9a350216d"
@@ -21,14 +21,14 @@ class Gpx < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.gcode").write("G28 X Y Z")
-    system "#{bin}/gpx", "test.gcode"
+    (testpath"test.gcode").write("G28 X Y Z")
+    system "#{bin}gpx", "test.gcode"
   end
 end

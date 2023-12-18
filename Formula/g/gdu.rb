@@ -1,7 +1,7 @@
 class Gdu < Formula
   desc "Disk usage analyzer with console interface written in Go"
-  homepage "https://github.com/dundee/gdu"
-  url "https://ghproxy.com/https://github.com/dundee/gdu/archive/refs/tags/v5.25.0.tar.gz"
+  homepage "https:github.comdundeegdu"
+  url "https:github.comdundeegduarchiverefstagsv5.25.0.tar.gz"
   sha256 "83fe876d953b4f2f7a856552e758aae4aa0cd9569dcf1aded61bdc834b834275"
   license "MIT"
 
@@ -26,12 +26,12 @@ class Gdu < Formula
 
     ldflags = %W[
       -s -w
-      -X "github.com/dundee/gdu/v#{major}/build.Version=v#{version}"
-      -X "github.com/dundee/gdu/v#{major}/build.Time=#{time}"
-      -X "github.com/dundee/gdu/v#{major}/build.User=#{user}"
+      -X "github.comdundeegduv#{major}build.Version=v#{version}"
+      -X "github.comdundeegduv#{major}build.Time=#{time}"
+      -X "github.comdundeegduv#{major}build.User=#{user}"
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags, output: "#{bin}/gdu-go"), "./cmd/gdu"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: "#{bin}gdu-go"), ".cmdgdu"
   end
 
   def caveats
@@ -41,13 +41,13 @@ class Gdu < Formula
   end
 
   test do
-    mkdir_p testpath/"test_dir"
-    (testpath/"test_dir"/"file1").write "hello"
-    (testpath/"test_dir"/"file2").write "brew"
+    mkdir_p testpath"test_dir"
+    (testpath"test_dir""file1").write "hello"
+    (testpath"test_dir""file2").write "brew"
 
-    assert_match version.to_s, shell_output("#{bin}/gdu-go -v")
-    assert_match "colorized", shell_output("#{bin}/gdu-go --help 2>&1")
-    output = shell_output("#{bin}/gdu-go --non-interactive --no-progress #{testpath}/test_dir 2>&1")
+    assert_match version.to_s, shell_output("#{bin}gdu-go -v")
+    assert_match "colorized", shell_output("#{bin}gdu-go --help 2>&1")
+    output = shell_output("#{bin}gdu-go --non-interactive --no-progress #{testpath}test_dir 2>&1")
     assert_match "4.0 KiB file1", output
   end
 end

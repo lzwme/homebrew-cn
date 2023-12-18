@@ -1,10 +1,10 @@
 class Arttime < Formula
   desc "Clock, timer, time manager and ASCII+ text-art viewer for the terminal"
-  homepage "https://github.com/poetaman/arttime"
-  url "https://ghproxy.com/https://github.com/poetaman/arttime/archive/refs/tags/v2.1.3.tar.gz"
+  homepage "https:github.compoetamanarttime"
+  url "https:github.compoetamanarttimearchiverefstagsv2.1.3.tar.gz"
   sha256 "672ff70cdac1a9359ce71c0cfbfc2d94b4ea91ce894d3da999ecdd8d80aa71ae"
   license "GPL-3.0-only"
-  head "https://github.com/poetaman/arttime.git", branch: "main"
+  head "https:github.compoetamanarttime.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ce4701467f25a4360da345e7f9706f9491e065a6d568567d0dc37f3ff0aedfd"
@@ -28,11 +28,11 @@ class Arttime < Formula
 
   def install
     ENV["TERM"]="xterm"
-    system "./install.sh", "--noupdaterc", "--prefix", prefix, "--zcompdir", zsh_completion
+    system ".install.sh", "--noupdaterc", "--prefix", prefix, "--zcompdir", zsh_completion
   end
 
   test do
     # arttime is a GUI application
-    system bin/"arttime", "--version"
+    system bin"arttime", "--version"
   end
 end

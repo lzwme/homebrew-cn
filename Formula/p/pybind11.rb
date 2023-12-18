@@ -1,13 +1,13 @@
 class Pybind11 < Formula
   desc "Seamless operability between C++11 and Python"
-  homepage "https://github.com/pybind/pybind11"
-  url "https://ghproxy.com/https://github.com/pybind/pybind11/archive/refs/tags/v2.11.1.tar.gz"
+  homepage "https:github.compybindpybind11"
+  url "https:github.compybindpybind11archiverefstagsv2.11.1.tar.gz"
   sha256 "d475978da0cdc2d43b73f30910786759d593a9d8ee05b1b6846d1eb16c6d2e0c"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,25 +28,25 @@ class Pybind11 < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@3\.\d+$/) }
+        .select { |f| f.name.match?(^python@3\.\d+$) }
   end
 
   def install
-    # Install /include and /share/cmake to the global location
+    # Install include and sharecmake to the global location
     system "cmake", "-S", ".", "-B", "build", "-DPYBIND11_TEST=OFF", "-DPYBIND11_NOPYTHON=ON", *std_cmake_args
     system "cmake", "--install", "build"
 
     pythons.each do |python|
       # Install Python package too
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
 
       site_packages = Language::Python.site_packages(python_exe)
-      pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-      (prefix/site_packages/"homebrew-pybind11.pth").write pth_contents
+      pth_contents = "import site; site.addsitedir('#{libexecsite_packages}')\n"
+      (prefixsite_packages"homebrew-pybind11.pth").write pth_contents
 
       pyversion = Language::Python.major_minor_version(python_exe)
-      bin.install libexec/"bin/pybind11-config" => "pybind11-config-#{pyversion}"
+      bin.install libexec"binpybind11-config" => "pybind11-config-#{pyversion}"
 
       next if python != pythons.max_by(&:version)
 
@@ -56,8 +56,8 @@ class Pybind11 < Formula
   end
 
   test do
-    (testpath/"example.cpp").write <<~EOS
-      #include <pybind11/pybind11.h>
+    (testpath"example.cpp").write <<~EOS
+      #include <pybind11pybind11.h>
 
       int add(int i, int j) {
           return i + j;
@@ -69,18 +69,18 @@ class Pybind11 < Formula
       }
     EOS
 
-    (testpath/"example.py").write <<~EOS
+    (testpath"example.py").write <<~EOS
       import example
       example.add(1,2)
     EOS
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       pyversion = Language::Python.major_minor_version(python_exe)
       site_packages = Language::Python.site_packages(python_exe)
 
       python_flags = Utils.safe_popen_read(
-        python.opt_libexec/"bin/python-config",
+        python.opt_libexec"binpython-config",
         "--cflags",
         "--ldflags",
         "--embed",
@@ -89,15 +89,15 @@ class Pybind11 < Formula
       system python_exe, "example.py"
 
       test_module = shell_output("#{python_exe} -m pybind11 --includes")
-      assert_match (libexec/site_packages).to_s, test_module
+      assert_match (libexecsite_packages).to_s, test_module
 
-      test_script = shell_output("#{bin}/pybind11-config-#{pyversion} --includes")
+      test_script = shell_output("#{bin}pybind11-config-#{pyversion} --includes")
       assert_match test_module, test_script
 
       next if python != pythons.max_by(&:version)
 
       test_module = shell_output("#{python_exe} -m pybind11 --includes")
-      test_script = shell_output("#{bin}/pybind11-config --includes")
+      test_script = shell_output("#{bin}pybind11-config --includes")
       assert_match test_module, test_script
     end
   end

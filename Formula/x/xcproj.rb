@@ -1,9 +1,9 @@
 class Xcproj < Formula
   desc "Manipulate Xcode project files"
-  homepage "https://github.com/0xced/xcproj"
-  url "https://ghproxy.com/https://github.com/0xced/xcproj/archive/refs/tags/0.2.1.tar.gz"
+  homepage "https:github.com0xcedxcproj"
+  url "https:github.com0xcedxcprojarchiverefstags0.2.1.tar.gz"
   sha256 "8c31f85d57945cd5bb306d7a0ff7912f2a0d53fa3c888657e0a69ca5d27348cb"
-  head "https://github.com/0xced/xcproj.git", branch: "develop"
+  head "https:github.com0xcedxcproj.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee550d8dc738e61612b6d058f201e736c54cb45f451c4767775067f68fc7ee7f"
@@ -21,7 +21,7 @@ class Xcproj < Formula
   end
 
   # upstream issue tracker for license
-  # https://github.com/0xced/xcproj/issues/6
+  # https:github.com0xcedxcprojissues6
   disable! date: "2023-09-25", because: "no license for the project"
 
   depends_on :macos
@@ -33,7 +33,7 @@ class Xcproj < Formula
                "-scheme", "xcproj",
                "SYMROOT=build",
                "DSTROOT=#{prefix}",
-               "INSTALL_PATH=/bin",
+               "INSTALL_PATH=bin",
                "-verbose",
                "install"
   end
@@ -52,6 +52,6 @@ class Xcproj < Formula
   end
 
   test do
-    system "#{bin}/xcproj", "--version"
+    system "#{bin}xcproj", "--version"
   end
 end

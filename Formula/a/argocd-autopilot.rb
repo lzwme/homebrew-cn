@@ -1,7 +1,7 @@
 class ArgocdAutopilot < Formula
   desc "Opinionated way of installing Argo CD and managing GitOps repositories"
-  homepage "https://argoproj.io"
-  url "https://github.com/argoproj-labs/argocd-autopilot.git",
+  homepage "https:argoproj.io"
+  url "https:github.comargoproj-labsargocd-autopilot.git",
       tag:      "v0.4.17",
       revision: "17ffa4b689c320672c0a5c88627d922cc9df7f7e"
   license "Apache-2.0"
@@ -20,15 +20,15 @@ class ArgocdAutopilot < Formula
 
   def install
     system "make", "cli-package", "DEV_MODE=false"
-    bin.install "dist/argocd-autopilot"
+    bin.install "distargocd-autopilot"
 
-    generate_completions_from_executable(bin/"argocd-autopilot", "completion")
+    generate_completions_from_executable(bin"argocd-autopilot", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/argocd-autopilot version")
+    assert_match version.to_s, shell_output("#{bin}argocd-autopilot version")
 
     assert_match "required flag(s) \\\"git-token\\\" not set\"",
-      shell_output("#{bin}/argocd-autopilot repo bootstrap --repo https://github.com/example/repo 2>&1", 1)
+      shell_output("#{bin}argocd-autopilot repo bootstrap --repo https:github.comexamplerepo 2>&1", 1)
   end
 end

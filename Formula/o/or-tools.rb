@@ -1,11 +1,11 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
-  homepage "https://developers.google.com/optimization/"
-  url "https://ghproxy.com/https://github.com/google/or-tools/archive/refs/tags/v9.8.tar.gz"
+  homepage "https:developers.google.comoptimization"
+  url "https:github.comgoogleor-toolsarchiverefstagsv9.8.tar.gz"
   sha256 "85e10e7acf0a9d9a3b891b9b108f76e252849418c6230daea94ac429af8a4ea4"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/google/or-tools.git", branch: "stable"
+  head "https:github.comgoogleor-tools.git", branch: "stable"
 
   livecheck do
     url :stable
@@ -48,31 +48,31 @@ class OrTools < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "ortools/linear_solver/samples/simple_lp_program.cc"
-    pkgshare.install "ortools/constraint_solver/samples/simple_routing_program.cc"
-    pkgshare.install "ortools/sat/samples/simple_sat_program.cc"
+    pkgshare.install "ortoolslinear_solversamplessimple_lp_program.cc"
+    pkgshare.install "ortoolsconstraint_solversamplessimple_routing_program.cc"
+    pkgshare.install "ortoolssatsamplessimple_sat_program.cc"
   end
 
   test do
     # Linear Solver & Glop Solver
-    system ENV.cxx, "-std=c++17", pkgshare/"simple_lp_program.cc",
+    system ENV.cxx, "-std=c++17", pkgshare"simple_lp_program.cc",
                     "-I#{include}", "-L#{lib}", "-lortools",
                     *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
                     "-o", "simple_lp_program"
-    system "./simple_lp_program"
+    system ".simple_lp_program"
 
     # Routing Solver
-    system ENV.cxx, "-std=c++17", pkgshare/"simple_routing_program.cc",
+    system ENV.cxx, "-std=c++17", pkgshare"simple_routing_program.cc",
                     "-I#{include}", "-L#{lib}", "-lortools",
                     *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
                     "-o", "simple_routing_program"
-    system "./simple_routing_program"
+    system ".simple_routing_program"
 
     # Sat Solver
-    system ENV.cxx, "-std=c++17", pkgshare/"simple_sat_program.cc",
+    system ENV.cxx, "-std=c++17", pkgshare"simple_sat_program.cc",
                     "-I#{include}", "-L#{lib}", "-lortools",
                     *shell_output("pkg-config --cflags --libs absl_log absl_raw_hash_set").chomp.split,
                     "-o", "simple_sat_program"
-    system "./simple_sat_program"
+    system ".simple_sat_program"
   end
 end

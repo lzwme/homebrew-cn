@@ -1,7 +1,7 @@
 class Quazip < Formula
-  desc "C++ wrapper over Gilles Vollant's ZIP/UNZIP package"
-  homepage "https://github.com/stachenov/quazip/"
-  url "https://ghproxy.com/https://github.com/stachenov/quazip/archive/refs/tags/v1.4.tar.gz"
+  desc "C++ wrapper over Gilles Vollant's ZIPUNZIP package"
+  homepage "https:github.comstachenovquazip"
+  url "https:github.comstachenovquaziparchiverefstagsv1.4.tar.gz"
   sha256 "79633fd3a18e2d11a7d5c40c4c79c1786ba0c74b59ad752e8429746fe1781dd6"
   license "LGPL-2.1-only"
 
@@ -29,13 +29,13 @@ class Quazip < Formula
     system "cmake", "--install", "build"
 
     cd include do
-      include.install_symlink "QuaZip-Qt#{Formula["qt"].version.major}-#{version}/quazip" => "quazip"
+      include.install_symlink "QuaZip-Qt#{Formula["qt"].version.major}-#{version}quazip" => "quazip"
     end
   end
 
   test do
     ENV.delete "CPATH"
-    (testpath/"test.pro").write <<~EOS
+    (testpath"test.pro").write <<~EOS
       TEMPLATE        = app
       CONFIG         += console
       CONFIG         -= app_bundle
@@ -47,17 +47,17 @@ class Quazip < Formula
       QMAKE_RPATHDIR += #{lib}
     EOS
 
-    (testpath/"test.cpp").write <<~EOS
-      #include <quazip/quazip.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <quazipquazip.h>
       int main() {
         QuaZip zip;
         return 0;
       }
     EOS
 
-    system Formula["qt"].bin/"qmake", "test.pro"
+    system Formula["qt"].bin"qmake", "test.pro"
     system "make"
-    assert_predicate testpath/"test", :exist?, "test output file does not exist!"
-    system "./test"
+    assert_predicate testpath"test", :exist?, "test output file does not exist!"
+    system ".test"
   end
 end

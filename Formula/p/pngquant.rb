@@ -1,14 +1,14 @@
 class Pngquant < Formula
   desc "PNG image optimizing utility"
-  homepage "https://pngquant.org/"
-  url "https://static.crates.io/crates/pngquant/pngquant-3.0.2.crate"
+  homepage "https:pngquant.org"
+  url "https:static.crates.iocratespngquantpngquant-3.0.2.crate"
   sha256 "33f8501d8b81f34cb6f028a5d06772b9d7940e0bc2b15a5d0bce138cb74233cb"
   license :cannot_represent
-  head "https://github.com/kornelski/pngquant.git", branch: "main"
+  head "https:github.comkornelskipngquant.git", branch: "main"
 
   livecheck do
-    url "https://crates.io/api/v1/crates/pngquant/versions"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:crates.ioapiv1cratespngquantversions"
+    regex(^v?(\d+(?:\.\d+)+)$i)
     strategy :json do |json|
       json["versions"]&.map do |version|
         next if version["yanked"] == true
@@ -40,7 +40,7 @@ class Pngquant < Formula
   end
 
   test do
-    system "#{bin}/pngquant", test_fixtures("test.png"), "-o", "out.png"
-    assert_predicate testpath/"out.png", :exist?
+    system "#{bin}pngquant", test_fixtures("test.png"), "-o", "out.png"
+    assert_predicate testpath"out.png", :exist?
   end
 end

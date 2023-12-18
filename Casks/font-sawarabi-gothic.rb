@@ -2,10 +2,10 @@ cask "font-sawarabi-gothic" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/sawarabigothic/SawarabiGothic-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsawarabigothicSawarabiGothic-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Sawarabi Gothic"
-  homepage "https://fonts.google.com/specimen/Sawarabi+Gothic"
+  homepage "https:fonts.google.comspecimenSawarabi+Gothic"
 
   font "SawarabiGothic-Regular.ttf"
 

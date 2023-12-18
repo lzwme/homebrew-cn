@@ -2,13 +2,13 @@ cask "font-shippori-mincho" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/shipporimincho"
+      only_path: "oflshipporimincho"
   name "Shippori Mincho"
   desc "Based on the Tsukiji Typeface making facility of Tokyo"
-  homepage "https://fonts.google.com/specimen/Shippori+Mincho"
+  homepage "https:fonts.google.comspecimenShippori+Mincho"
 
   font "ShipporiMincho-Bold.ttf"
   font "ShipporiMincho-ExtraBold.ttf"

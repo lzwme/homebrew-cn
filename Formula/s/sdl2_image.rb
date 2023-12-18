@@ -1,7 +1,7 @@
 class Sdl2Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
-  homepage "https://github.com/libsdl-org/SDL_image"
-  url "https://ghproxy.com/https://github.com/libsdl-org/SDL_image/releases/download/release-2.8.1/SDL2_image-2.8.1.tar.gz"
+  homepage "https:github.comlibsdl-orgSDL_image"
+  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.1SDL2_image-2.8.1.tar.gz"
   sha256 "e4cab9a58c347a490c46723c17553b4e12233cd821d3b993a8475a50497f5a3e"
   license "Zlib"
 
@@ -9,7 +9,7 @@ class Sdl2Image < Formula
   # release version instead of Git tags.
   livecheck do
     url :stable
-    regex(/release[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(release[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -24,7 +24,7 @@ class Sdl2Image < Formula
   end
 
   head do
-    url "https://github.com/libsdl-org/SDL_image.git", branch: "main"
+    url "https:github.comlibsdl-orgSDL_image.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,9 +43,9 @@ class Sdl2Image < Formula
   def install
     inreplace "SDL2_image.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
 
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-imageio",
                           "--disable-avif-shared",
                           "--disable-jpg-shared",
@@ -58,8 +58,8 @@ class Sdl2Image < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <SDL2/SDL_image.h>
+    (testpath"test.c").write <<~EOS
+      #include <SDL2SDL_image.h>
 
       int main()
       {
@@ -69,7 +69,7 @@ class Sdl2Image < Formula
           return result == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
-    system "./test"
+    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_image", "-o", "test"
+    system ".test"
   end
 end

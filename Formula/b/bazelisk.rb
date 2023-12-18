@@ -1,11 +1,11 @@
 class Bazelisk < Formula
   desc "User-friendly launcher for Bazel"
-  homepage "https://github.com/bazelbuild/bazelisk/"
-  url "https://github.com/bazelbuild/bazelisk.git",
+  homepage "https:github.combazelbuildbazelisk"
+  url "https:github.combazelbuildbazelisk.git",
       tag:      "v1.19.0",
       revision: "c7c6c19799ff408c48bdce6b7557217ad0050b17"
   license "Apache-2.0"
-  head "https://github.com/bazelbuild/bazelisk.git", branch: "master"
+  head "https:github.combazelbuildbazelisk.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd6823ba3af14f849242f972c28717afa5d1f4539a20c65d44f835b32570800f"
@@ -22,7 +22,7 @@ class Bazelisk < Formula
   conflicts_with "bazel", because: "Bazelisk replaces the bazel binary"
 
   resource "bazel_zsh_completion" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/bazelbuild/bazel/036e533/scripts/zsh_completion/_bazel"
+    url "https:raw.githubusercontent.combazelbuildbazel036e533scriptszsh_completion_bazel"
     sha256 "4094dc84add2f23823bc341186adf6b8487fbd5d4164bd52d98891c41511eba4"
   end
 
@@ -38,13 +38,13 @@ class Bazelisk < Formula
 
   test do
     ENV["USE_BAZEL_VERSION"] = Formula["bazel"].version
-    assert_match "Build label: #{Formula["bazel"].version}", shell_output("#{bin}/bazelisk version")
+    assert_match "Build label: #{Formula["bazel"].version}", shell_output("#{bin}bazelisk version")
 
     # This is an older than current version, so that we can test that bazelisk
     # will target an explicit version we specify. This version shouldn't need to
     # be bumped.
     bazel_version = Hardware::CPU.arm? ? "4.1.0" : "4.0.0"
     ENV["USE_BAZEL_VERSION"] = bazel_version
-    assert_match "Build label: #{bazel_version}", shell_output("#{bin}/bazelisk version")
+    assert_match "Build label: #{bazel_version}", shell_output("#{bin}bazelisk version")
   end
 end

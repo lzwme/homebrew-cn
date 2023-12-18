@@ -1,10 +1,10 @@
 class AvroCpp < Formula
   desc "Data serialization system"
-  homepage "https://avro.apache.org/"
+  homepage "https:avro.apache.org"
   # Upstreams tar.gz can't be opened by bsdtar on macOS
-  # https://github.com/Homebrew/homebrew-core/pull/146296#issuecomment-1737945877
-  # https://apple.stackexchange.com/questions/197839/why-is-extracting-this-tgz-throwing-an-error-on-my-mac-but-not-on-linux
-  url "https://github.com/apache/avro.git",
+  # https:github.comHomebrewhomebrew-corepull146296#issuecomment-1737945877
+  # https:apple.stackexchange.comquestions197839why-is-extracting-this-tgz-throwing-an-error-on-my-mac-but-not-on-linux
+  url "https:github.comapacheavro.git",
       tag:      "release-1.11.3",
       revision: "35ff8b997738e4d983871902d47bfb67b3250734"
   license "Apache-2.0"
@@ -25,7 +25,7 @@ class AvroCpp < Formula
   depends_on "boost"
 
   def install
-    cd "lang/c++" do
+    cd "langc++" do
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
@@ -33,7 +33,7 @@ class AvroCpp < Formula
   end
 
   test do
-    (testpath/"cpx.json").write <<~EOS
+    (testpath"cpx.json").write <<~EOS
       {
           "type": "record",
           "name": "cpx",
@@ -43,7 +43,7 @@ class AvroCpp < Formula
           ]
       }
     EOS
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "cpx.hh"
 
       int main() {
@@ -51,8 +51,8 @@ class AvroCpp < Formula
         return 0;
       }
     EOS
-    system "#{bin}/avrogencpp", "-i", "cpx.json", "-o", "cpx.hh", "-n", "cpx"
+    system "#{bin}avrogencpp", "-i", "cpx.json", "-o", "cpx.hh", "-n", "cpx"
     system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

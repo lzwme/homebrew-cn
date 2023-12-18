@@ -2,11 +2,11 @@ class Doc8 < Formula
   include Language::Python::Virtualenv
 
   desc "Style checker for Sphinx documentation"
-  homepage "https://github.com/PyCQA/doc8"
-  url "https://files.pythonhosted.org/packages/a1/b5/63a2f2ceba95be5cc15813fd310d560264e8662dbd7495669a1e26d59026/doc8-1.1.1.tar.gz"
+  homepage "https:github.comPyCQAdoc8"
+  url "https:files.pythonhosted.orgpackagesa1b563a2f2ceba95be5cc15813fd310d560264e8662dbd7495669a1e26d59026doc8-1.1.1.tar.gz"
   sha256 "d97a93e8f5a2efc4713a0804657dedad83745cca4cd1d88de9186f77f9776004"
   license "Apache-2.0"
-  head "https://github.com/PyCQA/doc8.git", branch: "main"
+  head "https:github.comPyCQAdoc8.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -24,17 +24,17 @@ class Doc8 < Formula
   depends_on "python@3.12"
 
   resource "pbr" do
-    url "https://files.pythonhosted.org/packages/02/d8/acee75603f31e27c51134a858e0dea28d321770c5eedb9d1d673eb7d3817/pbr-5.11.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages02d8acee75603f31e27c51134a858e0dea28d321770c5eedb9d1d673eb7d3817pbr-5.11.1.tar.gz"
     sha256 "aefc51675b0b533d56bb5fd1c8c6c0522fe31896679882e1c4c63d5e4a0fccb3"
   end
 
   resource "restructuredtext-lint" do
-    url "https://files.pythonhosted.org/packages/48/9c/6d8035cafa2d2d314f34e6cd9313a299de095b26e96f1c7312878f988eec/restructuredtext_lint-1.4.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages489c6d8035cafa2d2d314f34e6cd9313a299de095b26e96f1c7312878f988eecrestructuredtext_lint-1.4.0.tar.gz"
     sha256 "1b235c0c922341ab6c530390892eb9e92f90b9b75046063e047cacfb0f050c45"
   end
 
   resource "stevedore" do
-    url "https://files.pythonhosted.org/packages/ac/d6/77387d3fc81f07bc8877e6f29507bd7943569093583b0a07b28cfa286780/stevedore-5.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesacd677387d3fc81f07bc8877e6f29507bd7943569093583b0a07b28cfa286780stevedore-5.1.0.tar.gz"
     sha256 "a54534acf9b89bc7ed264807013b505bf07f74dbe4bcfa37d32bd063870b087c"
   end
 
@@ -43,11 +43,11 @@ class Doc8 < Formula
   end
 
   test do
-    (testpath/"broken.rst").write <<~EOS
+    (testpath"broken.rst").write <<~EOS
       Heading
       ------
     EOS
-    output = pipe_output("#{bin}/doc8 broken.rst 2>&1")
+    output = pipe_output("#{bin}doc8 broken.rst 2>&1")
     assert_match "D000 Title underline too short.", output
   end
 end

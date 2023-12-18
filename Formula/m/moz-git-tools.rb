@@ -1,10 +1,10 @@
 class MozGitTools < Formula
   desc "Tools for working with Git at Mozilla"
-  homepage "https://github.com/mozilla/moz-git-tools"
-  url "https://ghproxy.com/https://github.com/mozilla/moz-git-tools/archive/refs/tags/v0.1.tar.gz"
+  homepage "https:github.commozillamoz-git-tools"
+  url "https:github.commozillamoz-git-toolsarchiverefstagsv0.1.tar.gz"
   sha256 "defb5c369ff94f72d272692282404044fa21aa616487bcb4d26e51635c3bc188"
   license all_of: ["GPL-2.0-only", "CC0-1.0"]
-  head "https://github.com/mozilla/moz-git-tools.git", branch: "master"
+  head "https:github.commozillamoz-git-tools.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,15 +27,15 @@ class MozGitTools < Formula
 
   test do
     # create a Git repo and check its branchname
-    (testpath/".gitconfig").write <<~EOS
+    (testpath".gitconfig").write <<~EOS
       [user]
         name = Real Person
         email = notacat@hotmail.cat
     EOS
     system "git", "init"
-    (testpath/"myfile").write("my file")
+    (testpath"myfile").write("my file")
     system "git", "add", "myfile"
     system "git", "commit", "-m", "test"
-    assert_match "master", shell_output("#{bin}/git-branchname")
+    assert_match "master", shell_output("#{bin}git-branchname")
   end
 end

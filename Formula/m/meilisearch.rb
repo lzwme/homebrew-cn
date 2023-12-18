@@ -1,13 +1,13 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
-  homepage "https://docs.meilisearch.com/"
-  url "https://ghproxy.com/https://github.com/meilisearch/meilisearch/archive/refs/tags/v1.5.1.tar.gz"
+  homepage "https:docs.meilisearch.com"
+  url "https:github.commeilisearchmeilisearcharchiverefstagsv1.5.1.tar.gz"
   sha256 "1c13850d1735aaaad6e3ff0281ae8ea5868c6a08de04c2c3ee163cadf1dcb434"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,19 +29,19 @@ class Meilisearch < Formula
   end
 
   service do
-    run [opt_bin/"meilisearch", "--db-path", "#{var}/meilisearch/data.ms"]
+    run [opt_bin"meilisearch", "--db-path", "#{var}meilisearchdata.ms"]
     keep_alive false
     working_dir var
-    log_path var/"log/meilisearch.log"
-    error_log_path var/"log/meilisearch.log"
+    log_path var"logmeilisearch.log"
+    error_log_path var"logmeilisearch.log"
   end
 
   test do
     port = free_port
-    fork { exec bin/"meilisearch", "--http-addr", "127.0.0.1:#{port}" }
+    fork { exec bin"meilisearch", "--http-addr", "127.0.0.1:#{port}" }
     sleep_count = Hardware::CPU.arm? ? 3 : 10
     sleep sleep_count
-    output = shell_output("curl -s 127.0.0.1:#{port}/version")
+    output = shell_output("curl -s 127.0.0.1:#{port}version")
     assert_match version.to_s, output
   end
 end

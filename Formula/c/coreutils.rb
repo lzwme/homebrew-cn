@@ -1,8 +1,8 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
-  homepage "https://www.gnu.org/software/coreutils"
-  url "https://ftp.gnu.org/gnu/coreutils/coreutils-9.4.tar.xz"
-  mirror "https://ftpmirror.gnu.org/coreutils/coreutils-9.4.tar.xz"
+  homepage "https:www.gnu.orgsoftwarecoreutils"
+  url "https:ftp.gnu.orggnucoreutilscoreutils-9.4.tar.xz"
+  mirror "https:ftpmirror.gnu.orgcoreutilscoreutils-9.4.tar.xz"
   sha256 "ea613a4cf44612326e917201bbbcdfbd301de21ffc3b59b6e5c07e040b275e52"
   license "GPL-3.0-or-later"
 
@@ -19,7 +19,7 @@ class Coreutils < Formula
   end
 
   head do
-    url "https://git.savannah.gnu.org/git/coreutils.git"
+    url "https:git.savannah.gnu.orggitcoreutils.git"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -48,13 +48,13 @@ class Coreutils < Formula
   conflicts_with "idutils", because: "both install `gid` and `gid.1`"
   conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
 
-  # https://github.com/Homebrew/homebrew-core/pull/36494
+  # https:github.comHomebrewhomebrew-corepull36494
   def breaks_macos_users
     %w[dir dircolors vdir]
   end
 
   def install
-    system "./bootstrap" if build.head?
+    system ".bootstrap" if build.head?
 
     args = %W[
       --prefix=#{prefix}
@@ -63,7 +63,7 @@ class Coreutils < Formula
       --without-selinux
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
 
     no_conflict = if OS.mac?
@@ -75,17 +75,17 @@ class Coreutils < Formula
       ]
     end
 
-    # Symlink all commands into libexec/gnubin without the 'g' prefix
+    # Symlink all commands into libexecgnubin without the 'g' prefix
     coreutils_filenames(bin).each do |cmd|
-      (libexec/"gnubin").install_symlink bin/"g#{cmd}" => cmd
+      (libexec"gnubin").install_symlink bin"g#{cmd}" => cmd
 
       # Find non-conflicting commands on macOS
       which_cmd = which(cmd)
-      no_conflict << cmd if OS.mac? && (which_cmd.nil? || !which_cmd.to_s.start_with?(%r{(/usr)?/s?bin}))
+      no_conflict << cmd if OS.mac? && (which_cmd.nil? || !which_cmd.to_s.start_with?(%r{(usr)?s?bin}))
     end
-    # Symlink all man(1) pages into libexec/gnuman without the 'g' prefix
+    # Symlink all man(1) pages into libexecgnuman without the 'g' prefix
     coreutils_filenames(man1).each do |cmd|
-      (libexec/"gnuman"/"man1").install_symlink man1/"g#{cmd}" => cmd
+      (libexec"gnuman""man1").install_symlink man1"g#{cmd}" => cmd
     end
     libexec.install_symlink "gnuman" => "man"
 
@@ -105,7 +105,7 @@ class Coreutils < Formula
     <<~EOS
       #{msg} have been installed with the prefix "g".
       If you need to use these commands with their normal names, you can add a "gnubin" directory to your PATH with:
-        PATH="#{opt_libexec}/gnubin:$PATH"
+        PATH="#{opt_libexec}gnubin:$PATH"
     EOS
   end
 
@@ -114,15 +114,15 @@ class Coreutils < Formula
     dir.find do |path|
       next if path.directory? || path.basename.to_s == ".DS_Store"
 
-      filenames << path.basename.to_s.sub(/^g/, "")
+      filenames << path.basename.to_s.sub(^g, "")
     end
     filenames.sort
   end
 
   test do
-    (testpath/"test").write("test")
-    (testpath/"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
-    system bin/"gsha1sum", "-c", "test.sha1"
-    system bin/"gln", "-f", "test", "test.sha1"
+    (testpath"test").write("test")
+    (testpath"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
+    system bin"gsha1sum", "-c", "test.sha1"
+    system bin"gln", "-f", "test", "test.sha1"
   end
 end

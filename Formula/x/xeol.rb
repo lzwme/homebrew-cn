@@ -1,7 +1,7 @@
 class Xeol < Formula
   desc "Xcanner for end-of-life software in container images, filesystems, and SBOMs"
-  homepage "https://github.com/xeol-io/xeol"
-  url "https://ghproxy.com/https://github.com/xeol-io/xeol/archive/refs/tags/v0.9.10.tar.gz"
+  homepage "https:github.comxeol-ioxeol"
+  url "https:github.comxeol-ioxeolarchiverefstagsv0.9.10.tar.gz"
   sha256 "cf74990385fdccda05469e9aa996ff88707b05a3988f5985c292f70957e9366f"
   license "Apache-2.0"
 
@@ -25,15 +25,15 @@ class Xeol < Formula
       -X main.buildDate=#{time.iso8601}
       -X main.gitDescription=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/xeol"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdxeol"
 
-    generate_completions_from_executable(bin/"xeol", "completion")
+    generate_completions_from_executable(bin"xeol", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/xeol version")
+    assert_match version.to_s, shell_output("#{bin}xeol version")
 
-    output = shell_output("#{bin}/xeol alpine:latest")
+    output = shell_output("#{bin}xeol alpine:latest")
     assert_match "no EOL software has been found", output
   end
 end

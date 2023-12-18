@@ -2,10 +2,10 @@ cask "font-kirang-haerang" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kiranghaerang/KirangHaerang-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkiranghaerangKirangHaerang-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kirang Haerang"
-  homepage "https://fonts.google.com/specimen/Kirang+Haerang"
+  homepage "https:fonts.google.comspecimenKirang+Haerang"
 
   font "KirangHaerang-Regular.ttf"
 

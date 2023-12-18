@@ -1,14 +1,14 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
-  homepage "https://raphamorim.io/rio/"
-  url "https://ghproxy.com/https://github.com/raphamorim/rio/archive/refs/tags/v0.0.32.tar.gz"
+  homepage "https:raphamorim.iorio"
+  url "https:github.comraphamorimrioarchiverefstagsv0.0.32.tar.gz"
   sha256 "36d6a0a00022b9b21d08857e1d2d9b6b95990d4e5484bfa8c43353d3787a66fa"
   license "MIT"
-  head "https://github.com/raphamorim/rio.git", branch: "main"
+  head "https:github.comraphamorimrio.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,17 +26,17 @@ class Rio < Formula
   depends_on :macos
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "frontends/cross-winit")
+    system "cargo", "install", *std_cargo_args(path: "frontendscross-winit")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/rio --version")
+    assert_match version.to_s, shell_output("#{bin}rio --version")
     return if Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     # This test does pass locally for x86 but it fails for containers
     # which is the case of x86 in the CI
 
-    system bin/"rio", "-e", "touch", testpath/"testfile"
-    assert_predicate testpath/"testfile", :exist?
+    system bin"rio", "-e", "touch", testpath"testfile"
+    assert_predicate testpath"testfile", :exist?
   end
 end

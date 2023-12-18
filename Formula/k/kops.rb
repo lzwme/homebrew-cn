@@ -1,10 +1,10 @@
 class Kops < Formula
   desc "Production Grade K8s Installation, Upgrades, and Management"
-  homepage "https://kops.sigs.k8s.io/"
-  url "https://ghproxy.com/https://github.com/kubernetes/kops/archive/refs/tags/v1.28.1.tar.gz"
+  homepage "https:kops.sigs.k8s.io"
+  url "https:github.comkuberneteskopsarchiverefstagsv1.28.1.tar.gz"
   sha256 "ca9e4c504a6541cffb03bf405ae6a2a5b28f77c9650ab6a13358ef4565953d97"
   license "Apache-2.0"
-  head "https://github.com/kubernetes/kops.git", branch: "master"
+  head "https:github.comkuberneteskops.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,14 +25,14 @@ class Kops < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ldflags = "-s -w -X k8s.io/kops.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "k8s.io/kops/cmd/kops"
+    ldflags = "-s -w -X k8s.iokops.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "k8s.iokopscmdkops"
 
-    generate_completions_from_executable(bin/"kops", "completion")
+    generate_completions_from_executable(bin"kops", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kops version")
-    assert_match "no context set in kubecfg", shell_output("#{bin}/kops validate cluster 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}kops version")
+    assert_match "no context set in kubecfg", shell_output("#{bin}kops validate cluster 2>&1", 1)
   end
 end

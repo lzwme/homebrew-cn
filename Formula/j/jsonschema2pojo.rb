@@ -1,13 +1,13 @@
 class Jsonschema2pojo < Formula
   desc "Generates Java types from JSON Schema (or example JSON)"
-  homepage "https://www.jsonschema2pojo.org/"
-  url "https://ghproxy.com/https://github.com/joelittlejohn/jsonschema2pojo/releases/download/jsonschema2pojo-1.2.1/jsonschema2pojo-1.2.1.tar.gz"
+  homepage "https:www.jsonschema2pojo.org"
+  url "https:github.comjoelittlejohnjsonschema2pojoreleasesdownloadjsonschema2pojo-1.2.1jsonschema2pojo-1.2.1.tar.gz"
   sha256 "8243adb0da7f53cad66c15ac8e094fbd1ff935f328f541f2bace319c97cd9855"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/jsonschema2pojo[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(jsonschema2pojo[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -19,11 +19,11 @@ class Jsonschema2pojo < Formula
 
   def install
     libexec.install "jsonschema2pojo-#{version}-javadoc.jar", "lib"
-    bin.write_jar_script libexec/"lib/jsonschema2pojo-cli-#{version}.jar", "jsonschema2pojo"
+    bin.write_jar_script libexec"libjsonschema2pojo-cli-#{version}.jar", "jsonschema2pojo"
   end
 
   test do
-    (testpath/"src/jsonschema.json").write <<~EOS
+    (testpath"srcjsonschema.json").write <<~EOS
       {
         "type":"object",
         "properties": {
@@ -39,7 +39,7 @@ class Jsonschema2pojo < Formula
         }
       }
     EOS
-    system bin/"jsonschema2pojo", "-s", "src", "-t", testpath
-    assert_predicate testpath/"Jsonschema.java", :exist?, "Failed to generate Jsonschema.java"
+    system bin"jsonschema2pojo", "-s", "src", "-t", testpath
+    assert_predicate testpath"Jsonschema.java", :exist?, "Failed to generate Jsonschema.java"
   end
 end

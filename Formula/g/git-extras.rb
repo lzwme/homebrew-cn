@@ -1,10 +1,10 @@
 class GitExtras < Formula
   desc "Small git utilities"
-  homepage "https://github.com/tj/git-extras"
-  url "https://ghproxy.com/https://github.com/tj/git-extras/archive/refs/tags/7.1.0.tar.gz"
+  homepage "https:github.comtjgit-extras"
+  url "https:github.comtjgit-extrasarchiverefstags7.1.0.tar.gz"
   sha256 "e5c855361d2f1ec1be6ee601247153d9c8c04a221949b6ec3903b32fa736f542"
   license "MIT"
-  head "https://github.com/tj/git-extras.git", branch: "main"
+  head "https:github.comtjgit-extras.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -26,18 +26,18 @@ class GitExtras < Formula
 
   def install
     system "make", "PREFIX=#{prefix}", "INSTALL_VIA=brew", "install"
-    pkgshare.install "etc/git-extras-completion.zsh"
+    pkgshare.install "etcgit-extras-completion.zsh"
   end
 
   def caveats
     <<~EOS
       To load Zsh completions, add the following to your .zshrc:
-        source #{opt_pkgshare}/git-extras-completion.zsh
+        source #{opt_pkgshare}git-extras-completion.zsh
     EOS
   end
 
   test do
     system "git", "init"
-    assert_match(/#{testpath}/, shell_output("#{bin}/git-root"))
+    assert_match(#{testpath}, shell_output("#{bin}git-root"))
   end
 end

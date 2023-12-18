@@ -1,14 +1,14 @@
 class Flatbuffers < Formula
   desc "Serialization library for C++, supporting Java, C#, and Go"
-  homepage "https://google.github.io/flatbuffers"
-  url "https://ghproxy.com/https://github.com/google/flatbuffers/archive/refs/tags/v23.5.26.tar.gz"
+  homepage "https:google.github.ioflatbuffers"
+  url "https:github.comgoogleflatbuffersarchiverefstagsv23.5.26.tar.gz"
   sha256 "1cce06b17cddd896b6d73cc047e36a254fb8df4d7ea18a46acf16c4c0cd3f3f3"
   license "Apache-2.0"
-  head "https://github.com/google/flatbuffers.git", branch: "master"
+  head "https:github.comgoogleflatbuffers.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,13 +38,13 @@ class Flatbuffers < Formula
 
   test do
     testfbs = <<~EOS
-      // example IDL file
+       example IDL file
 
       namespace MyGame.Sample;
 
       enum Color:byte { Red = 0, Green, Blue = 2 }
 
-      union Any { Monster }  // add more elements..
+      union Any { Monster }   add more elements..
 
         struct Vec3 {
           x:float;
@@ -65,7 +65,7 @@ class Flatbuffers < Formula
       root_type Monster;
 
     EOS
-    (testpath/"test.fbs").write(testfbs)
+    (testpath"test.fbs").write(testfbs)
 
     testjson = <<~EOS
       {
@@ -78,8 +78,8 @@ class Flatbuffers < Formula
         name: "MyMonster"
       }
     EOS
-    (testpath/"test.json").write(testjson)
+    (testpath"test.json").write(testjson)
 
-    system bin/"flatc", "-c", "-b", "test.fbs", "test.json"
+    system bin"flatc", "-c", "-b", "test.fbs", "test.json"
   end
 end

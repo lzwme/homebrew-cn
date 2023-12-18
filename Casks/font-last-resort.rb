@@ -2,10 +2,10 @@ cask "font-last-resort" do
   version "15.100"
   sha256 "2c25999fae0a09f4cf5d1c084729b43e81296f497c59e5891a710a7744c724ff"
 
-  url "https://ghproxy.com/https://github.com/unicode-org/last-resort-font/releases/download/#{version}/LastResort-Regular.ttf"
+  url "https:github.comunicode-orglast-resort-fontreleasesdownload#{version}LastResort-Regular.ttf"
   name "Last Resort"
   desc "Special-purpose font, providing glyphs to represent types of Unicode characters"
-  homepage "https://github.com/unicode-org/last-resort-font"
+  homepage "https:github.comunicode-orglast-resort-font"
 
   font "LastResort-Regular.ttf"
 

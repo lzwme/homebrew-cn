@@ -1,10 +1,10 @@
 class SshVault < Formula
-  desc "Encrypt/decrypt using SSH keys"
-  homepage "https://ssh-vault.com/"
-  url "https://ghproxy.com/https://github.com/ssh-vault/ssh-vault/archive/refs/tags/1.0.10.tar.gz"
+  desc "Encryptdecrypt using SSH keys"
+  homepage "https:ssh-vault.com"
+  url "https:github.comssh-vaultssh-vaultarchiverefstags1.0.10.tar.gz"
   sha256 "0e29daebb65422c4909c84dba126292c6e3d88933822b2a02e4ff1627da9dc3e"
   license "BSD-3-Clause"
-  head "https://github.com/ssh-vault/ssh-vault.git", branch: "main"
+  head "https:github.comssh-vaultssh-vault.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4a2349338d9a035c924392a168ec26ec4d2f1a1f79276d7694dd3f0f25d6d2e"
@@ -41,16 +41,16 @@ class SshVault < Formula
 
   test do
     test_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINixf2m2nj8TDeazbWuemUY8ZHNg7znA7hVPN8TJLr2W"
-    (testpath/"public_key").write test_key
-    cmd = "#{bin}/ssh-vault f -k  #{testpath}/public_key"
+    (testpath"public_key").write test_key
+    cmd = "#{bin}ssh-vault f -k  #{testpath}public_key"
     assert_match "SHA256:hgIL5fEHz5zuOWY1CDlUuotdaUl4MvYG7vAgE4q4TzM", shell_output(cmd)
 
     if OS.linux?
       [
-        Formula["openssl@3"].opt_lib/shared_library("libssl"),
-        Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+        Formula["openssl@3"].opt_libshared_library("libssl"),
+        Formula["openssl@3"].opt_libshared_library("libcrypto"),
       ].each do |library|
-        assert check_binary_linkage(bin/"ssh-vault", library),
+        assert check_binary_linkage(bin"ssh-vault", library),
               "No linkage with #{library.basename}! Cargo is likely using a vendored version."
       end
     end

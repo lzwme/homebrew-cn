@@ -1,10 +1,10 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
-  homepage "https://embree.github.io/"
-  url "https://ghproxy.com/https://github.com/embree/embree/archive/refs/tags/v4.3.0.tar.gz"
+  homepage "https:embree.github.io"
+  url "https:github.comembreeembreearchiverefstagsv4.3.0.tar.gz"
   sha256 "baf0a57a45837fc055ba828a139467bce0bc0c6a9a5f2dccb05163d012c12308"
   license "Apache-2.0"
-  head "https://github.com/embree/embree.git", branch: "master"
+  head "https:github.comembreeembree.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8c81da27b990edcb75559c5c3cc7a9a55aa3657dd2636ca468ba1bea7738d10d"
@@ -42,15 +42,15 @@ class Embree < Formula
       system "make", "install"
     end
 
-    # Remove bin/models directory and the resultant empty bin directory since
+    # Remove binmodels directory and the resultant empty bin directory since
     # tutorials are not enabled.
     rm_rf bin
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
-      #include <embree4/rtcore.h>
+      #include <embree4rtcore.h>
       int main() {
         RTCDevice device = rtcNewDevice("verbose=1");
         assert(device != 0);
@@ -60,6 +60,6 @@ class Embree < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lembree4"
-    system "./a.out"
+    system ".a.out"
   end
 end

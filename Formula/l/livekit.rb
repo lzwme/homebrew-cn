@@ -1,10 +1,10 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
-  homepage "https://livekit.io"
-  url "https://ghproxy.com/https://github.com/livekit/livekit/archive/refs/tags/v1.5.1.tar.gz"
+  homepage "https:livekit.io"
+  url "https:github.comlivekitlivekitarchiverefstagsv1.5.1.tar.gz"
   sha256 "9776bc99b71507fcfebc4749407d3c12f2ed1ed8f6df6c3d70e8bd65e39b4ec6"
   license "Apache-2.0"
-  head "https://github.com/livekit/livekit.git", branch: "master"
+  head "https:github.comlivekitlivekit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "88b88bdd5457cc87cbac2a2697c97abaacfde3345164c451dad2dea483643f58"
@@ -19,19 +19,19 @@ class Livekit < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"livekit-server"), "./cmd/server"
+    system "go", "build", *std_go_args(output: bin"livekit-server"), ".cmdserver"
   end
 
   test do
     http_port = free_port
     random_key = "R4AA2dwX3FrMbyY@My3X&Hsmz7W)LuQy"
     fork do
-      exec bin/"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
+      exec bin"livekit-server", "--keys", "test: #{random_key}", "--config-body", "port: #{http_port}"
     end
     sleep 3
-    assert_match "OK", shell_output("curl -s http://localhost:#{http_port}")
+    assert_match "OK", shell_output("curl -s http:localhost:#{http_port}")
 
-    output = shell_output("#{bin}/livekit-server --version")
+    output = shell_output("#{bin}livekit-server --version")
     assert_match "livekit-server version #{version}", output
   end
 end

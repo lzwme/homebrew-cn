@@ -1,7 +1,7 @@
 class Icemon < Formula
   desc "Icecream GUI Monitor"
-  homepage "https://github.com/icecc/icemon"
-  url "https://ghproxy.com/https://github.com/icecc/icemon/archive/refs/tags/v3.3.tar.gz"
+  homepage "https:github.comiceccicemon"
+  url "https:github.comiceccicemonarchiverefstagsv3.3.tar.gz"
   sha256 "3caf14731313c99967f6e4e11ff261b061e4e3d0c7ef7565e89b12e0307814ca"
   license "GPL-2.0-or-later"
   revision 1
@@ -31,16 +31,16 @@ class Icemon < Formula
   fails_with gcc: "5"
 
   def install
-    system "cmake", ".", "-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}/ECM/cmake", *std_cmake_args
+    system "cmake", ".", "-DECM_DIR=#{Formula["extra-cmake-modules"].opt_share}ECMcmake", *std_cmake_args
     system "make", "install"
   end
 
   test do
     if OS.mac?
-      system "#{bin}/icemon", "--version"
+      system "#{bin}icemon", "--version"
     else
       assert_match("qt.qpa.xcb: could not connect to display",
-                         shell_output("#{bin}/icemon --version 2>&1", 134))
+                         shell_output("#{bin}icemon --version 2>&1", 134))
     end
   end
 end

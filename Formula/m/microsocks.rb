@@ -1,10 +1,10 @@
 class Microsocks < Formula
   desc "Tiny, portable SOCKS5 server with very moderate resource usage"
-  homepage "https://github.com/rofl0r/microsocks"
-  url "https://ghproxy.com/https://github.com/rofl0r/microsocks/archive/refs/tags/v1.0.3.tar.gz"
+  homepage "https:github.comrofl0rmicrosocks"
+  url "https:github.comrofl0rmicrosocksarchiverefstagsv1.0.3.tar.gz"
   sha256 "6801559b6f8e17240ed8eef17a36eea8643412b5a7476980fd4e24b02a021b82"
   license "MIT"
-  head "https://github.com/rofl0r/microsocks.git", branch: "master"
+  head "https:github.comrofl0rmicrosocks.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54e0b8dd4c6bdf6131af712c4c9158f735405508d5056553eb8d6b93ff89ba1f"
@@ -26,10 +26,10 @@ class Microsocks < Formula
   test do
     port = free_port
     fork do
-      exec bin/"microsocks", "-p", port.to_s
+      exec bin"microsocks", "-p", port.to_s
     end
     sleep 2
     assert_match "The Missing Package Manager for macOS (or Linux)",
-      shell_output("curl --socks5 0.0.0.0:#{port} https://brew.sh")
+      shell_output("curl --socks5 0.0.0.0:#{port} https:brew.sh")
   end
 end

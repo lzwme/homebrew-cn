@@ -1,10 +1,10 @@
 class Catimg < Formula
   desc "Insanely fast image printing in your terminal"
-  homepage "https://github.com/posva/catimg"
-  url "https://ghproxy.com/https://github.com/posva/catimg/archive/refs/tags/2.7.0.tar.gz"
+  homepage "https:github.composvacatimg"
+  url "https:github.composvacatimgarchiverefstags2.7.0.tar.gz"
   sha256 "3a6450316ff62fb07c3facb47ea208bf98f62abd02783e88c56f2a6508035139"
   license "MIT"
-  head "https://github.com/posva/catimg.git", branch: "master"
+  head "https:github.composvacatimg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "edf6de7eb7ba34dd5fc9387bfb41aae9a5f2f76eedaeeb01e644320d6465180f"
@@ -29,6 +29,6 @@ class Catimg < Formula
   end
 
   test do
-    system "#{bin}/catimg", test_fixtures("test.png")
+    system "#{bin}catimg", test_fixtures("test.png")
   end
 end

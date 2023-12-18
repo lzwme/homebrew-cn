@@ -1,7 +1,7 @@
 class Libchewing < Formula
   desc "Intelligent phonetic input method library"
-  homepage "https://chewing.im/"
-  url "https://ghproxy.com/https://github.com/chewing/libchewing/releases/download/v0.5.1/libchewing-0.5.1.tar.bz2"
+  homepage "https:chewing.im"
+  url "https:github.comchewinglibchewingreleasesdownloadv0.5.1libchewing-0.5.1.tar.bz2"
   sha256 "9708c63415fa6034435c0f38100e7d30d0e1bac927f67bec6dfeb3fef016172b"
   license "LGPL-2.1"
 
@@ -22,7 +22,7 @@ class Libchewing < Formula
   end
 
   head do
-    url "https://github.com/chewing/libchewing.git", branch: "master"
+    url "https:github.comchewinglibchewing.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -32,17 +32,17 @@ class Libchewing < Formula
   uses_from_macos "sqlite"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <stdlib.h>
-      #include <chewing/chewing.h>
+      #include <chewingchewing.h>
       int main()
       {
           ChewingContext *ctx = chewing_new();
@@ -60,6 +60,6 @@ class Libchewing < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-L#{lib}", "-lchewing", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

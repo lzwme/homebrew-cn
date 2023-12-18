@@ -1,10 +1,10 @@
 class Numcpp < Formula
   desc "C++ implementation of the Python Numpy library"
-  homepage "https://dpilger26.github.io/NumCpp"
-  url "https://ghproxy.com/https://github.com/dpilger26/NumCpp/archive/refs/tags/Version_2.12.1.tar.gz"
+  homepage "https:dpilger26.github.ioNumCpp"
+  url "https:github.comdpilger26NumCpparchiverefstagsVersion_2.12.1.tar.gz"
   sha256 "f462ecd27126e6057b31fa38f1f72cef2c4223c9d848515412970714a5bb6d16"
   license "MIT"
-  head "https://github.com/dpilger26/NumCpp.git", branch: "master"
+  head "https:github.comdpilger26NumCpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5fd0a17279c0f7086f4a61824e0372c289f55811299732e9aabebabd62053f8a"
@@ -19,7 +19,7 @@ class Numcpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <NumCpp.hpp>
 
@@ -31,6 +31,6 @@ class Numcpp < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}"
-    assert_equal "1\n5\n9\n", shell_output("./test")
+    assert_equal "1\n5\n9\n", shell_output(".test")
   end
 end

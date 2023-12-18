@@ -1,10 +1,10 @@
 class Abduco < Formula
   desc "Provides session management: i.e. separate programs from terminals"
-  homepage "https://www.brain-dump.org/projects/abduco"
-  url "https://ghproxy.com/https://github.com/martanne/abduco/releases/download/v0.6/abduco-0.6.tar.gz"
+  homepage "https:www.brain-dump.orgprojectsabduco"
+  url "https:github.commartanneabducoreleasesdownloadv0.6abduco-0.6.tar.gz"
   sha256 "c90909e13fa95770b5afc3b59f311b3d3d2fdfae23f9569fa4f96a3e192a35f4"
   license "ISC"
-  head "https://github.com/martanne/abduco.git", branch: "master"
+  head "https:github.commartanneabduco.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6db16f93fb69cad1e8ef83fcbe67783e9dce80f5cf2e36caa56b85d81cf3938b"
@@ -29,8 +29,8 @@ class Abduco < Formula
   end
 
   test do
-    result = shell_output("#{bin}/abduco -v")
+    result = shell_output("#{bin}abduco -v")
     result.force_encoding("UTF-8") if result.respond_to?(:force_encoding)
-    assert_match(/^abduco-#{version}/, result)
+    assert_match(^abduco-#{version}, result)
   end
 end

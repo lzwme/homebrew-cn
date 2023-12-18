@@ -1,7 +1,7 @@
 class Mimic < Formula
   desc "Lightweight text-to-speech engine based on CMU Flite"
-  homepage "https://github.com/MycroftAI/mimic1"
-  url "https://ghproxy.com/https://github.com/MycroftAI/mimic1/archive/refs/tags/1.3.0.1.tar.gz"
+  homepage "https:github.comMycroftAImimic1"
+  url "https:github.comMycroftAImimic1archiverefstags1.3.0.1.tar.gz"
   sha256 "9041f5c7d3720899c90c890ada179c92c3b542b90bb655c247e4a4835df79249"
 
   bottle do
@@ -27,15 +27,15 @@ class Mimic < Formula
   depends_on "portaudio"
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args,
+    system ".autogen.sh"
+    system ".configure", *std_configure_args,
                           "--enable-shared",
                           "--enable-static"
     system "make", "install"
   end
 
   test do
-    system bin/"mimic", "-t", "Hello, Homebrew!", "test.wav"
-    assert_predicate testpath/"test.wav", :exist?
+    system bin"mimic", "-t", "Hello, Homebrew!", "test.wav"
+    assert_predicate testpath"test.wav", :exist?
   end
 end

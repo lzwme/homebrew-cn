@@ -2,8 +2,8 @@ class Nyx < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line monitor for Tor"
-  homepage "https://nyx.torproject.org/"
-  url "https://files.pythonhosted.org/packages/f4/da/68419425cb0f64f996e2150045c7043c2bb61f77b5928c2156c26a21db88/nyx-2.1.0.tar.gz"
+  homepage "https:nyx.torproject.org"
+  url "https:files.pythonhosted.orgpackagesf4da68419425cb0f64f996e2150045c7043c2bb61f77b5928c2156c26a21db88nyx-2.1.0.tar.gz"
   sha256 "88521488d1c9052e457b9e66498a4acfaaa3adf3adc5a199892632f129a5390b"
   license "GPL-3.0-only"
   revision 3
@@ -22,17 +22,17 @@ class Nyx < Formula
   depends_on "python@3.12"
 
   resource "stem" do
-    url "https://files.pythonhosted.org/packages/b2/66/c5515de764bffae1347e671819711268da5c02bfab8406223526822fe5f6/stem-1.8.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesb266c5515de764bffae1347e671819711268da5c02bfab8406223526822fe5f6stem-1.8.1.tar.gz"
     sha256 "81d43a7c668ba9d7bc1103b2e7a911e9d148294b373d27a59ae8da79ef7a3e2f"
 
     # Support python 3.11
-    # Fixed upstream in https://github.com/torproject/stem/commit/b8063b3b23af95e02b27848f6ab5c82edd644609
+    # Fixed upstream in https:github.comtorprojectstemcommitb8063b3b23af95e02b27848f6ab5c82edd644609
     patch :DATA
   end
 
   # Support python 3.11
   patch do
-    url "https://github.com/torproject/nyx/commit/dcaddf2ab7f9d2ef8649f98bb6870995ebe0b893.patch?full_index=1"
+    url "https:github.comtorprojectnyxcommitdcaddf2ab7f9d2ef8649f98bb6870995ebe0b893.patch?full_index=1"
     sha256 "132cf1c3d4ce6e706cc3ad9dd5cd905d3321c7e62386e18219b4eb08816d6849"
   end
 
@@ -41,15 +41,15 @@ class Nyx < Formula
   end
 
   test do
-    assert_match "Connection refused", shell_output("#{bin}/nyx -i 127.0.0.1:#{free_port}", 1)
+    assert_match "Connection refused", shell_output("#{bin}nyx -i 127.0.0.1:#{free_port}", 1)
   end
 end
 
 __END__
-diff --git a/stem/control.py b/stem/control.py
+diff --git astemcontrol.py bstemcontrol.py
 index e192e29..e6fab6c 100644
---- a/stem/control.py
-+++ b/stem/control.py
+--- astemcontrol.py
++++ bstemcontrol.py
 @@ -474,7 +474,7 @@ def with_default(yields = False):
 
    def decorator(func):
@@ -59,10 +59,10 @@ index e192e29..e6fab6c 100644
        default_position = arg_names.index('default') if 'default' in arg_names else None
 
        if default_position is not None and default_position < len(args):
-diff --git a/stem/prereq.py b/stem/prereq.py
+diff --git astemprereq.py bstemprereq.py
 index 4af6c09..4009c31 100644
---- a/stem/prereq.py
-+++ b/stem/prereq.py
+--- astemprereq.py
++++ bstemprereq.py
 @@ -241,7 +241,7 @@ def is_mock_available():
 
      # check for mock's new_callable argument for patch() which was introduced in version 0.8.0
@@ -72,10 +72,10 @@ index 4af6c09..4009c31 100644
        raise ImportError()
 
      return True
-diff --git a/stem/util/conf.py b/stem/util/conf.py
+diff --git astemutilconf.py bstemutilconf.py
 index 8039981..15c4db8 100644
---- a/stem/util/conf.py
-+++ b/stem/util/conf.py
+--- astemutilconf.py
++++ bstemutilconf.py
 @@ -285,7 +285,7 @@ def uses_settings(handle, path, lazy_load = True):
          config.load(path)
          config._settings_loaded = True

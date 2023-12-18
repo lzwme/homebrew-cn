@@ -1,13 +1,13 @@
 class Libunibreak < Formula
   desc "Implementation of the Unicode line- and word-breaking algorithms"
-  homepage "https://github.com/adah1972/libunibreak"
-  url "https://ghproxy.com/https://github.com/adah1972/libunibreak/releases/download/libunibreak_5_1/libunibreak-5.1.tar.gz"
+  homepage "https:github.comadah1972libunibreak"
+  url "https:github.comadah1972libunibreakreleasesdownloadlibunibreak_5_1libunibreak-5.1.tar.gz"
   sha256 "dd1a92d4c5646aa0e457ff41d89812ec5243863be6c20bbcb5ee380f3dd78377"
   license "Zlib"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:[_-]\d+)+)$/i)
+    regex(v?(\d+(?:[_-]\d+)+)$i)
     strategy :git do |tags|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -26,12 +26,12 @@ class Libunibreak < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <unibreakbase.h>
       #include <linebreak.h>
       #include <assert.h>
@@ -57,6 +57,6 @@ class Libunibreak < Formula
     EOS
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lunibreak"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class QalculateGtk < Formula
   desc "Multi-purpose desktop calculator"
-  homepage "https://qalculate.github.io/"
-  url "https://ghproxy.com/https://github.com/Qalculate/qalculate-gtk/releases/download/v4.9.0/qalculate-gtk-4.9.0.tar.gz"
+  homepage "https:qalculate.github.io"
+  url "https:github.comQalculateqalculate-gtkreleasesdownloadv4.9.0qalculate-gtk-4.9.0.tar.gz"
   sha256 "d6f8bae81585088dcf8eb60ea41614c5a11e9096f1f1aec186e94839b030d480"
   license "GPL-2.0-or-later"
 
@@ -28,13 +28,13 @@ class QalculateGtk < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/qalculate-gtk", "-v"
+    system "#{bin}qalculate-gtk", "-v"
   end
 end

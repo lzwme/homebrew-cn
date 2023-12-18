@@ -1,7 +1,7 @@
 class Libmapper < Formula
   desc "Distributed system for media control mapping"
-  homepage "http://www.libmapper.org"
-  url "https://ghproxy.com/https://github.com/libmapper/libmapper/releases/download/2.4.5/libmapper-2.4.5.tar.gz"
+  homepage "http:www.libmapper.org"
+  url "https:github.comlibmapperlibmapperreleasesdownload2.4.5libmapper-2.4.5.tar.gz"
   sha256 "08d4568b7586379373f8e4d85332dd63a97c7f8b45702d5fc178614679f401bc"
   license "LGPL-2.1-or-later"
 
@@ -24,20 +24,20 @@ class Libmapper < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include "mapper/mapper.h"
+      #include "mappermapper.h"
       int main() {
         printf("%s", mpr_get_version());
         return 0;
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lmapper", "-o", "test"
-    assert_match version.to_s, shell_output("./test")
+    assert_match version.to_s, shell_output(".test")
   end
 end

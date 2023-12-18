@@ -2,10 +2,10 @@ cask "leocad" do
   version "23.03"
   sha256 "7ee537139760b1938980435a3d32bd8068d5e7437e310a01a1f7fd8cf6565867"
 
-  url "https://ghproxy.com/https://github.com/leozide/leocad/releases/download/v#{version}/LeoCAD-macOS-#{version}.dmg"
+  url "https:github.comleozideleocadreleasesdownloadv#{version}LeoCAD-macOS-#{version}.dmg"
   name "LeoCAD"
   desc "CAD program for creating virtual LEGO models"
-  homepage "https://github.com/leozide/leocad"
+  homepage "https:github.comleozideleocad"
 
   depends_on macos: ">= :sierra"
 

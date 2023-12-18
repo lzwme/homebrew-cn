@@ -1,10 +1,10 @@
 class Joshuto < Formula
   desc "Ranger-like terminal file manager written in Rust"
-  homepage "https://github.com/kamiyaa/joshuto"
-  url "https://ghproxy.com/https://github.com/kamiyaa/joshuto/archive/refs/tags/v0.9.6.tar.gz"
+  homepage "https:github.comkamiyaajoshuto"
+  url "https:github.comkamiyaajoshutoarchiverefstagsv0.9.6.tar.gz"
   sha256 "78d03e0c7971fe715da7e89c6e848112eedb993f04625e720997156c74578d42"
   license "LGPL-3.0-or-later"
-  head "https://github.com/kamiyaa/joshuto.git", branch: "main"
+  head "https:github.comkamiyaajoshuto.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f54db87868d342a1beec363a8baed41aa8811bb174c5080b4577a3c5adaa616e"
@@ -20,13 +20,13 @@ class Joshuto < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    pkgetc.install Dir["config/*.toml"]
+    pkgetc.install Dir["config*.toml"]
   end
 
   test do
-    (testpath/"test.txt").write("Hello World!")
-    fork { exec bin/"joshuto", "--path", testpath }
+    (testpath"test.txt").write("Hello World!")
+    fork { exec bin"joshuto", "--path", testpath }
 
-    assert_match "joshuto-#{version}", shell_output(bin/"joshuto --version")
+    assert_match "joshuto-#{version}", shell_output(bin"joshuto --version")
   end
 end

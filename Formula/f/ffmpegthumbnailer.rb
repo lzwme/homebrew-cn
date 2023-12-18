@@ -1,21 +1,21 @@
 class Ffmpegthumbnailer < Formula
   desc "Create thumbnails for your video files"
-  homepage "https://github.com/dirkvdb/ffmpegthumbnailer"
+  homepage "https:github.comdirkvdbffmpegthumbnailer"
   license "GPL-2.0-or-later"
   revision 9
-  head "https://github.com/dirkvdb/ffmpegthumbnailer.git", branch: "master"
+  head "https:github.comdirkvdbffmpegthumbnailer.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/dirkvdb/ffmpegthumbnailer/archive/refs/tags/2.2.2.tar.gz"
+    url "https:github.comdirkvdbffmpegthumbnailerarchiverefstags2.2.2.tar.gz"
     sha256 "8c4c42ab68144a9e2349710d42c0248407a87e7dc0ba4366891905322b331f92"
 
     # Backport support for FFmpeg 5. Remove in the next release
     patch do
-      url "https://github.com/dirkvdb/ffmpegthumbnailer/commit/372cd422e57a9a3531eb9a30559d665caecff1ba.patch?full_index=1"
+      url "https:github.comdirkvdbffmpegthumbnailercommit372cd422e57a9a3531eb9a30559d665caecff1ba.patch?full_index=1"
       sha256 "88aecad1b3ba9d564b365a6fa19bf56d14c43d0185de7aefa2e75901669269b9"
     end
     patch do
-      url "https://github.com/dirkvdb/ffmpegthumbnailer/commit/3e63ed4a7f092aa6908a417bb800b25eaf3b1e2d.patch?full_index=1"
+      url "https:github.comdirkvdbffmpegthumbnailercommit3e63ed4a7f092aa6908a417bb800b25eaf3b1e2d.patch?full_index=1"
       sha256 "629ac4ff56cda4066798233c906ca907cfab6c4e36e1d0fb25ead4d7acb1eaaf"
     end
   end
@@ -50,12 +50,12 @@ class Ffmpegthumbnailer < Formula
   end
 
   test do
-    f = Formula["ffmpeg"].opt_bin/"ffmpeg"
+    f = Formula["ffmpeg"].opt_bin"ffmpeg"
     png = test_fixtures("test.png")
     system f.to_s, "-loop", "1", "-i", png.to_s, "-c:v", "libx264", "-t", "30",
                    "-pix_fmt", "yuv420p", "v.mp4"
-    assert_predicate testpath/"v.mp4", :exist?, "Failed to generate source video!"
-    system "#{bin}/ffmpegthumbnailer", "-i", "v.mp4", "-o", "out.jpg"
-    assert_predicate testpath/"out.jpg", :exist?, "Failed to create thumbnail!"
+    assert_predicate testpath"v.mp4", :exist?, "Failed to generate source video!"
+    system "#{bin}ffmpegthumbnailer", "-i", "v.mp4", "-o", "out.jpg"
+    assert_predicate testpath"out.jpg", :exist?, "Failed to create thumbnail!"
   end
 end

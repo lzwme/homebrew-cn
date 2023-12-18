@@ -1,7 +1,7 @@
 class Veraxx < Formula
   desc "Programmable tool for C++ source code"
-  homepage "https://bitbucket.org/verateam/vera"
-  url "https://bitbucket.org/verateam/vera/downloads/vera++-1.3.0.tar.gz"
+  homepage "https:bitbucket.orgverateamvera"
+  url "https:bitbucket.orgverateamveradownloadsvera++-1.3.0.tar.gz"
   sha256 "9415657a09438353489db10ca860dd6459e446cfd9c649a1a2e02268da66f270"
   license "BSL-1.0"
 
@@ -29,23 +29,23 @@ class Veraxx < Formula
 
   # Use prebuilt docs to avoid need for pandoc
   resource "doc" do
-    url "https://bitbucket.org/verateam/vera/downloads/vera++-1.3.0-doc.tar.gz"
+    url "https:bitbucket.orgverateamveradownloadsvera++-1.3.0-doc.tar.gz"
     sha256 "122a15e33a54265d62a6894974ca2f0a8f6ff98742cf8e6152d310cc23099400"
   end
 
   # Custom-built boost, lua, and luabind are used by the build scripts
   resource "boost" do
-    url "https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2"
+    url "https:boostorg.jfrog.ioartifactorymainrelease1.76.0sourceboost_1_76_0.tar.bz2"
     sha256 "f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41"
   end
 
   resource "lua" do
-    url "https://ghproxy.com/https://github.com/LuaDist/lua/archive/refs/tags/5.2.3.tar.gz"
+    url "https:github.comLuaDistluaarchiverefstags5.2.3.tar.gz"
     sha256 "c8aa2c74e8f31861cea8f030ece6b6cb18974477bd1e9e1db4c01aee8f18f5b6"
   end
 
   resource "luabind" do
-    url "https://ghproxy.com/https://github.com/verateam/luabind/archive/refs/tags/vera-1.3.0.tar.gz"
+    url "https:github.comverateamluabindarchiverefstagsvera-1.3.0.tar.gz"
     sha256 "7d93908b7d978e44ebe5dfad6624e6daa033f284a5f24013f37cac162a18f71a"
   end
 
@@ -54,16 +54,16 @@ class Veraxx < Formula
 
   def install
     resource("boost").stage do
-      system "./bootstrap.sh", "--prefix=#{buildpath}/3rdParty",
+      system ".bootstrap.sh", "--prefix=#{buildpath}3rdParty",
              "--with-libraries=filesystem,system,program_options,regex,wave,python"
-      system "./b2", "install", "threading=multi", "link=static", "warnings=off",
+      system ".b2", "install", "threading=multi", "link=static", "warnings=off",
              "cxxflags=-DBOOST_WAVE_SUPPORT_MS_EXTENSIONS=1", "-s NO_BZIP2=1"
     end
 
     resource("lua").stage do
       args = std_cmake_args
       args << "-DBUILD_SHARED_LIBS:BOOL=OFF"
-      args << "-DCMAKE_INSTALL_PREFIX:PATH=#{buildpath}/3rdParty"
+      args << "-DCMAKE_INSTALL_PREFIX:PATH=#{buildpath}3rdParty"
       system "cmake", ".", *args
       system "make", "install"
     end
@@ -71,10 +71,10 @@ class Veraxx < Formula
     resource("luabind").stage do
       args = std_cmake_args
       args << "-DBUILD_TESTING:BOOL=OFF"
-      args << "-DLUA_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include"
-      args << "-DLUA_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/liblua.a"
-      args << "-DBOOST_ROOT:PATH=#{buildpath}/3rdParty"
-      args << "-DCMAKE_INSTALL_PREFIX:PATH=#{buildpath}/3rdParty"
+      args << "-DLUA_INCLUDE_DIR:PATH=#{buildpath}3rdPartyinclude"
+      args << "-DLUA_LIBRARIES:PATH=#{buildpath}3rdPartylibliblua.a"
+      args << "-DBOOST_ROOT:PATH=#{buildpath}3rdParty"
+      args << "-DCMAKE_INSTALL_PREFIX:PATH=#{buildpath}3rdParty"
       system "cmake", ".", *args
       system "make", "install"
     end
@@ -82,18 +82,18 @@ class Veraxx < Formula
     args = std_cmake_args + %W[
       -DVERA_USE_SYSTEM_BOOST:BOOL=ON
       -DBoost_USE_STATIC_LIBS:BOOL=ON
-      -DLUA_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include
-      -DLUA_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/liblua.a
-      -DLUA_LIBRARY:PATH=#{buildpath}/3rdParty/lib/liblua.a
-      -DLUABIND_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include
-      -DLUABIND_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/libluabind.a
-      -DLUABIND_LIBRARY:PATH=#{buildpath}/3rdParty/lib/libluabind.a
-      -DBoost_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include
-      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{buildpath}/3rdParty/lib
+      -DLUA_INCLUDE_DIR:PATH=#{buildpath}3rdPartyinclude
+      -DLUA_LIBRARIES:PATH=#{buildpath}3rdPartylibliblua.a
+      -DLUA_LIBRARY:PATH=#{buildpath}3rdPartylibliblua.a
+      -DLUABIND_INCLUDE_DIR:PATH=#{buildpath}3rdPartyinclude
+      -DLUABIND_LIBRARIES:PATH=#{buildpath}3rdPartyliblibluabind.a
+      -DLUABIND_LIBRARY:PATH=#{buildpath}3rdPartyliblibluabind.a
+      -DBoost_INCLUDE_DIR:PATH=#{buildpath}3rdPartyinclude
+      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{buildpath}3rdPartylib
     ]
     if OS.linux? || MacOS.version >= :monterey
       # Disable building Python rules support since vera++ needs Python 2.
-      # Revisit on release with Python 3: https://bitbucket.org/verateam/vera/issues/108/migrate-to-python-3
+      # Revisit on release with Python 3: https:bitbucket.orgverateamveraissues108migrate-to-python-3
       args << "-DVERA_PYTHON=OFF"
     end
     system "cmake", ".", *args
@@ -106,14 +106,14 @@ class Veraxx < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/vera++ --version").strip
+    assert_equal version.to_s, shell_output("#{bin}vera++ --version").strip
   end
 end
 __END__
-diff --git a/src/boost.cmake b/src/boost.cmake
+diff --git asrcboost.cmake bsrcboost.cmake
 index 797cb60..d8c51c8 100644
---- a/src/boost.cmake
-+++ b/src/boost.cmake
+--- asrcboost.cmake
++++ bsrcboost.cmake
 @@ -8,7 +8,16 @@ mark_as_advanced(VERA_USE_SYSTEM_BOOST)
  
  set(boostLibs filesystem system program_options regex wave)
@@ -127,7 +127,7 @@ index 797cb60..d8c51c8 100644
 +  # distribution-specific suffixes such as 2, 3 or 2.7. These may also
 +  # be used as suffixes, but note that they are not portable.
 +  #
-+  # from https://cmake.org/cmake/help/latest/module/FindBoost.html
++  # from https:cmake.orgcmakehelplatestmoduleFindBoost.html
 +  list(APPEND boostLibs python27)
  endif()
  
@@ -140,10 +140,10 @@ index 797cb60..d8c51c8 100644
    string(REPLACE ";" "," boostLibsComma "${boostLibs}")
    string(REPLACE ";" " --with-" WITH_LIBS "${boostLibs}")
    set(WITH_LIBS "--with-${WITH_LIBS}")
-diff --git a/src/python.cmake b/src/python.cmake
+diff --git asrcpython.cmake bsrcpython.cmake
 index 9df6892..ba4210f 100644
---- a/src/python.cmake
-+++ b/src/python.cmake
+--- asrcpython.cmake
++++ bsrcpython.cmake
 @@ -4,8 +4,8 @@ mark_as_advanced(VERA_USE_SYSTEM_PYTHON)
  
  if(VERA_USE_SYSTEM_PYTHON)

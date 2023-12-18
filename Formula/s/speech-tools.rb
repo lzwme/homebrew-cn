@@ -1,23 +1,23 @@
 class SpeechTools < Formula
   desc "C++ speech software library from the University of Edinburgh"
-  homepage "http://festvox.org/docs/speech_tools-2.4.0/"
+  homepage "http:festvox.orgdocsspeech_tools-2.4.0"
   revision 2
-  head "https://github.com/festvox/speech_tools.git", branch: "master"
+  head "https:github.comfestvoxspeech_tools.git", branch: "master"
 
   stable do
-    url "http://festvox.org/packed/festival/2.5/speech_tools-2.5.0-release.tar.gz"
+    url "http:festvox.orgpackedfestival2.5speech_tools-2.5.0-release.tar.gz"
     sha256 "e4fd97ed78f14464358d09f36dfe91bc1721b7c0fa6503e04364fb5847805dcc"
 
     # Fix build on Apple Silicon. Remove in the next release.
     patch do
-      url "https://github.com/festvox/speech_tools/commit/06141f69d21bf507a9becb5405265dc362edb0df.patch?full_index=1"
+      url "https:github.comfestvoxspeech_toolscommit06141f69d21bf507a9becb5405265dc362edb0df.patch?full_index=1"
       sha256 "a42493982af11a914d2cf8b97edd287a54b5cabffe6c8fe0e4a9076c211e85ef"
     end
   end
 
   livecheck do
-    url "http://festvox.org/packed/festival/?C=M&O=D"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "http:festvox.orgpackedfestival?C=M&O=D"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -49,10 +49,10 @@ class SpeechTools < Formula
     # setting "ac_cv_prog_cxx_openmp" and "LIBS", but this configure
     # script does OpenMP its own way so we need to actually edit the script:
     inreplace "configure", "-fopenmp", "-Xpreprocessor -fopenmp -lomp" if OS.mac?
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     # install all executable files in "main" directory
-    bin.install Dir["main/*"].select { |f| File.file?(f) && File.executable?(f) }
+    bin.install Dir["main*"].select { |f| File.file?(f) && File.executable?(f) }
   end
 
   test do
@@ -67,13 +67,13 @@ class SpeechTools < Formula
     File.open(txtfile, "w") do |f|
       scale = (2 ** 15) - 1
       samples = Array.new(duration_secs * rate_hz) do |i|
-        (scale * Math.sin(frequency_hz * 2 * Math::PI * i / rate_hz)).to_i
+        (scale * Math.sin(frequency_hz * 2 * Math::PI * i  rate_hz)).to_i
       end
       f.puts samples
     end
 
     # convert to wav format using ch_wave
-    system bin/"ch_wave", txtfile,
+    system bin"ch_wave", txtfile,
       "-itype", "raw",
       "-istype", "ascii",
       "-f", rate_hz.to_s,
@@ -81,14 +81,14 @@ class SpeechTools < Formula
       "-otype", "riff"
 
     # pitch tracking to est format using pda
-    system bin/"pda", wavfile,
-      "-shift", (1 / frequency_hz.to_f).to_s,
+    system bin"pda", wavfile,
+      "-shift", (1  frequency_hz.to_f).to_s,
       "-o", ptcfile,
       "-otype", "est"
 
     # extract one frame from the middle using ch_track, capturing stdout
-    value = frequency_hz * duration_secs / 2
-    pitch = shell_output("#{bin}/ch_track #{ptcfile} -from #{value} -to #{value}")
+    value = frequency_hz * duration_secs  2
+    pitch = shell_output("#{bin}ch_track #{ptcfile} -from #{value} -to #{value}")
 
     # should be 100 (Hz)
     assert_equal frequency_hz, pitch.to_i

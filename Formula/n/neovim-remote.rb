@@ -2,11 +2,11 @@ class NeovimRemote < Formula
   include Language::Python::Virtualenv
 
   desc "Control nvim processes using `nvr` command-line tool"
-  homepage "https://github.com/mhinz/neovim-remote"
-  url "https://files.pythonhosted.org/packages/69/50/4fe9ef6fd794929ceae73e476ac8a4ddbf3b0913fa248d834c9bb72978b7/neovim-remote-2.5.1.tar.gz"
+  homepage "https:github.commhinzneovim-remote"
+  url "https:files.pythonhosted.orgpackages69504fe9ef6fd794929ceae73e476ac8a4ddbf3b0913fa248d834c9bb72978b7neovim-remote-2.5.1.tar.gz"
   sha256 "4b3cc35463544c5747c895c52a0343cfdbba15d307647d7f57f1cce0c6a27d02"
   license "MIT"
-  head "https://github.com/mhinz/neovim-remote.git", branch: "master"
+  head "https:github.commhinzneovim-remote.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -24,17 +24,17 @@ class NeovimRemote < Formula
   depends_on "python@3.11"
 
   resource "greenlet" do
-    url "https://files.pythonhosted.org/packages/54/df/718c9b3e90edba70fa919bb3aaa5c3c8dabf3a8252ad1e93d33c348e5ca4/greenlet-3.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages54df718c9b3e90edba70fa919bb3aaa5c3c8dabf3a8252ad1e93d33c348e5ca4greenlet-3.0.1.tar.gz"
     sha256 "816bd9488a94cba78d93e1abb58000e8266fa9cc2aa9ccdd6eb0696acb24005b"
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/c2/d5/5662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1/msgpack-1.0.7.tar.gz"
+    url "https:files.pythonhosted.orgpackagesc2d55662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1msgpack-1.0.7.tar.gz"
     sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
   end
 
   resource "pynvim" do
-    url "https://files.pythonhosted.org/packages/7a/01/2d0898ba6cefbe2736283ee3155cba1c602de641ca5667ac55a0e4857276/pynvim-0.4.3.tar.gz"
+    url "https:files.pythonhosted.orgpackages7a012d0898ba6cefbe2736283ee3155cba1c602de641ca5667ac55a0e4857276pynvim-0.4.3.tar.gz"
     sha256 "3a795378bde5e8092fbeb3a1a99be9c613d2685542f1db0e5c6fd467eed56dff"
   end
 
@@ -43,23 +43,23 @@ class NeovimRemote < Formula
   end
 
   test do
-    socket = testpath/"nvimsocket"
-    file = testpath/"test.txt"
+    socket = testpath"nvimsocket"
+    file = testpath"test.txt"
     ENV["NVIM_LISTEN_ADDRESS"] = socket
 
     nvim = spawn(
       { "NVIM_LISTEN_ADDRESS" => socket },
-      Formula["neovim"].opt_bin/"nvim", "--headless", "-i", "NONE", "-u", "NONE", file,
-      [:out, :err] => "/dev/null"
+      Formula["neovim"].opt_bin"nvim", "--headless", "-i", "NONE", "-u", "NONE", file,
+      [:out, :err] => "devnull"
     )
     sleep 5
 
     str = "Hello from neovim-remote!"
-    system bin/"nvr", "--remote-send", "i#{str}<esc>:write<cr>"
+    system bin"nvr", "--remote-send", "i#{str}<esc>:write<cr>"
     assert_equal str, file.read.chomp
     assert_equal Process.kill(0, nvim), 1
 
-    system bin/"nvr", "--remote-send", ":quit<cr>"
+    system bin"nvr", "--remote-send", ":quit<cr>"
 
     # Test will be terminated by the timeout
     # if `:quit` was not sent correctly

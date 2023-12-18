@@ -1,7 +1,7 @@
 class Vectorscan < Formula
   desc "High-performance regular expression matching library"
-  homepage "https://github.com/VectorCamp/vectorscan"
-  url "https://ghproxy.com/https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.11.tar.gz"
+  homepage "https:github.comVectorCampvectorscan"
+  url "https:github.comVectorCampvectorscanarchiverefstagsvectorscan5.4.11.tar.gz"
   sha256 "905f76ad1fa9e4ae0eb28232cac98afdb96c479666202c5a4c27871fb30a2711"
   license "BSD-3-Clause"
 
@@ -30,9 +30,9 @@ class Vectorscan < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include <hs/hs.h>
+      #include <hshs.h>
       int main()
       {
         printf("hyperscan v%s", hs_version());
@@ -40,6 +40,6 @@ class Vectorscan < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhs", "-o", "test"
-    assert_match version.to_s, shell_output("./test")
+    assert_match version.to_s, shell_output(".test")
   end
 end

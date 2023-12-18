@@ -1,7 +1,7 @@
 class Kotlin < Formula
   desc "Statically typed programming language for the JVM"
-  homepage "https://kotlinlang.org/"
-  url "https://ghproxy.com/https://github.com/JetBrains/kotlin/releases/download/v1.9.21/kotlin-compiler-1.9.21.zip"
+  homepage "https:kotlinlang.org"
+  url "https:github.comJetBrainskotlinreleasesdownloadv1.9.21kotlin-compiler-1.9.21.zip"
   sha256 "cf17e0272bc065d49e64a86953b73af06065370629f090d5b7c2fe353ccf9c1a"
   license "Apache-2.0"
 
@@ -20,19 +20,19 @@ class Kotlin < Formula
 
   def install
     libexec.install "bin", "build.txt", "lib"
-    rm Dir[libexec/"bin/*.bat"]
-    bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
+    rm Dir[libexec"bin*.bat"]
+    bin.install Dir[libexec"bin*"]
+    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env
     prefix.install "license"
   end
 
   test do
-    (testpath/"test.kt").write <<~EOS
+    (testpath"test.kt").write <<~EOS
       fun main(args: Array<String>) {
         println("Hello World!")
       }
     EOS
-    system bin/"kotlinc", "test.kt", "-include-runtime", "-d", "test.jar"
-    system bin/"kotlinc-jvm", "test.kt", "-include-runtime", "-d", "test.jar"
+    system bin"kotlinc", "test.kt", "-include-runtime", "-d", "test.jar"
+    system bin"kotlinc-jvm", "test.kt", "-include-runtime", "-d", "test.jar"
   end
 end

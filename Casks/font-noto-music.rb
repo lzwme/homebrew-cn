@@ -2,10 +2,10 @@ cask "font-noto-music" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notomusic/NotoMusic-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotomusicNotoMusic-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Music"
-  homepage "https://fonts.google.com/specimen/Noto+Music"
+  homepage "https:fonts.google.comspecimenNoto+Music"
 
   font "NotoMusic-Regular.ttf"
 

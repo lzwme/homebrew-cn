@@ -1,10 +1,10 @@
 class Wxwidgets < Formula
   desc "Cross-platform C++ GUI toolkit"
-  homepage "https://www.wxwidgets.org"
-  url "https://ghproxy.com/https://github.com/wxWidgets/wxWidgets/releases/download/v3.2.4/wxWidgets-3.2.4.tar.bz2"
+  homepage "https:www.wxwidgets.org"
+  url "https:github.comwxWidgetswxWidgetsreleasesdownloadv3.2.4wxWidgets-3.2.4.tar.bz2"
   sha256 "0640e1ab716db5af2ecb7389dbef6138d7679261fbff730d23845ba838ca133e"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
-  head "https://github.com/wxWidgets/wxWidgets.git", branch: "master"
+  head "https:github.comwxWidgetswxWidgets.git", branch: "master"
 
   livecheck do
     url :stable
@@ -38,8 +38,8 @@ class Wxwidgets < Formula
 
   def install
     # Remove all bundled libraries excluding `nanosvg` which isn't available as formula
-    %w[catch pcre].each { |l| (buildpath/"3rdparty"/l).rmtree }
-    %w[expat jpeg png tiff zlib].each { |l| (buildpath/"src"/l).rmtree }
+    %w[catch pcre].each { |l| (buildpath"3rdparty"l).rmtree }
+    %w[expat jpeg png tiff zlib].each { |l| (buildpath"src"l).rmtree }
 
     args = [
       "--prefix=#{prefix}",
@@ -73,21 +73,21 @@ class Wxwidgets < Formula
       args << "--with-libiconv"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
 
     # wx-config should reference the public prefix, not wxwidgets's keg
     # this ensures that Python software trying to locate wxpython headers
     # using wx-config can find both wxwidgets and wxpython headers,
     # which are linked to the same place
-    inreplace bin/"wx-config", prefix, HOMEBREW_PREFIX
+    inreplace bin"wx-config", prefix, HOMEBREW_PREFIX
 
     # For consistency with the versioned wxwidgets formulae
-    bin.install_symlink bin/"wx-config" => "wx-config-#{version.major_minor}"
-    (share/"wx"/version.major_minor).install share/"aclocal", share/"bakefile"
+    bin.install_symlink bin"wx-config" => "wx-config-#{version.major_minor}"
+    (share"wx"version.major_minor).install share"aclocal", share"bakefile"
   end
 
   test do
-    system bin/"wx-config", "--libs"
+    system bin"wx-config", "--libs"
   end
 end

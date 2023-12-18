@@ -1,14 +1,14 @@
 class Yasm < Formula
   desc "Modular BSD reimplementation of NASM"
-  homepage "https://yasm.tortall.net/"
-  url "https://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz"
-  mirror "https://ftp.openbsd.org/pub/OpenBSD/distfiles/yasm-1.3.0.tar.gz"
+  homepage "https:yasm.tortall.net"
+  url "https:www.tortall.netprojectsyasmreleasesyasm-1.3.0.tar.gz"
+  mirror "https:ftp.openbsd.orgpubOpenBSDdistfilesyasm-1.3.0.tar.gz"
   sha256 "3dce6601b495f5b3d45b59f7d2492a340ee7e84b5beca17e48f862502bd5603f"
   revision 2
 
   livecheck do
-    url "https://yasm.tortall.net/Download.html"
-    regex(/href=.*?yasm[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:yasm.tortall.netDownload.html"
+    regex(href=.*?yasm[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -28,7 +28,7 @@ class Yasm < Formula
   end
 
   head do
-    url "https://github.com/yasm/yasm.git", branch: "master"
+    url "https:github.comyasmyasm.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,28 +42,28 @@ class Yasm < Formula
       --disable-python
     ]
 
-    # https://github.com/Homebrew/legacy-homebrew/pull/19593
+    # https:github.comHomebrewlegacy-homebrewpull19593
     ENV.deparallelize
 
-    system "./autogen.sh" if build.head?
-    system "./configure", *args
+    system ".autogen.sh" if build.head?
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"foo.s").write <<~EOS
+    (testpath"foo.s").write <<~EOS
       mov eax, 0
       mov ebx, 0
       int 0x80
     EOS
-    system "#{bin}/yasm", "foo.s"
+    system "#{bin}yasm", "foo.s"
     code = File.open("foo", "rb") { |f| f.read.unpack("C*") }
     expected = [0x66, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x66, 0xbb,
                 0x00, 0x00, 0x00, 0x00, 0xcd, 0x80]
     assert_equal expected, code
 
     if OS.mac?
-      (testpath/"test.asm").write <<~EOS
+      (testpath"test.asm").write <<~EOS
         global start
         section .text
         start:
@@ -79,12 +79,12 @@ class Yasm < Formula
         msg:    db      "Hello, world!", 10
         .len:   equ     $ - msg
       EOS
-      system "#{bin}/yasm", "-f", "macho64", "test.asm"
-      system "/usr/bin/ld", "-macosx_version_min", "10.8.0", "-static", "-o", "test", "test.o"
+      system "#{bin}yasm", "-f", "macho64", "test.asm"
+      system "usrbinld", "-macosx_version_min", "10.8.0", "-static", "-o", "test", "test.o"
       assert_match "Mach-O 64-bit object x86_64", shell_output("file test.o")
       assert_match "Mach-O 64-bit executable x86_64", shell_output("file test")
     else
-      (testpath/"test.asm").write <<~EOS
+      (testpath"test.asm").write <<~EOS
         global _start
         section .text
         _start:
@@ -100,9 +100,9 @@ class Yasm < Formula
         msg:    db      "Hello, world!", 10
         .len:   equ     $ - msg
       EOS
-      system "#{bin}/yasm", "-f", "elf64", "test.asm"
-      system "/usr/bin/ld", "-static", "-o", "test", "test.o"
+      system "#{bin}yasm", "-f", "elf64", "test.asm"
+      system "usrbinld", "-static", "-o", "test", "test.o"
     end
-    assert_equal "Hello, world!\n", shell_output("./test") if Hardware::CPU.intel?
+    assert_equal "Hello, world!\n", shell_output(".test") if Hardware::CPU.intel?
   end
 end

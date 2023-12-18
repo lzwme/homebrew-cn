@@ -2,10 +2,10 @@ cask "font-prata" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/prata/Prata-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflprataPrata-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Prata"
-  homepage "https://fonts.google.com/specimen/Prata"
+  homepage "https:fonts.google.comspecimenPrata"
 
   font "Prata-Regular.ttf"
 

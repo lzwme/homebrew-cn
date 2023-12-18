@@ -2,10 +2,10 @@ cask "font-rochester" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/rochester/Rochester-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapacherochesterRochester-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rochester"
-  homepage "https://fonts.google.com/specimen/Rochester"
+  homepage "https:fonts.google.comspecimenRochester"
 
   font "Rochester-Regular.ttf"
 

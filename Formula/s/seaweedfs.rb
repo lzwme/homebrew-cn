@@ -1,11 +1,11 @@
 class Seaweedfs < Formula
   desc "Fast distributed storage system"
-  homepage "https://github.com/seaweedfs/seaweedfs"
-  url "https://github.com/seaweedfs/seaweedfs.git",
+  homepage "https:github.comseaweedfsseaweedfs"
+  url "https:github.comseaweedfsseaweedfs.git",
     tag:      "3.59",
     revision: "27b34f37935fb3eddb9c7759acf397dbae20eb03"
   license "Apache-2.0"
-  head "https://github.com/seaweedfs/seaweedfs.git", branch: "master"
+  head "https:github.comseaweedfsseaweedfs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49057409518be8dc8b828e13a86763fbeabe73c8a07716b92ba5f301e45e5822"
@@ -22,32 +22,32 @@ class Seaweedfs < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/seaweedfs/seaweedfs/weed/util.COMMIT=#{Utils.git_head}
+      -X github.comseaweedfsseaweedfsweedutil.COMMIT=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(output: bin/"weed", ldflags: ldflags), "./weed"
+    system "go", "build", *std_go_args(output: bin"weed", ldflags: ldflags), ".weed"
   end
 
   test do
-    # Start SeaweedFS master server/volume server
+    # Start SeaweedFS master servervolume server
     master_port = free_port
     volume_port = free_port
     master_grpc_port = free_port
     volume_grpc_port = free_port
 
     fork do
-      exec bin/"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
+      exec bin"weed", "server", "-dir=#{testpath}", "-ip.bind=0.0.0.0",
            "-master.port=#{master_port}", "-volume.port=#{volume_port}",
            "-master.port.grpc=#{master_grpc_port}", "-volume.port.grpc=#{volume_grpc_port}"
     end
     sleep 30
 
     # Upload a test file
-    fid = JSON.parse(shell_output("curl http://localhost:#{master_port}/dir/assign"))["fid"]
-    system "curl", "-F", "file=@#{test_fixtures("test.png")}", "http://localhost:#{volume_port}/#{fid}"
+    fid = JSON.parse(shell_output("curl http:localhost:#{master_port}dirassign"))["fid"]
+    system "curl", "-F", "file=@#{test_fixtures("test.png")}", "http:localhost:#{volume_port}#{fid}"
 
     # Download and validate uploaded test file against the original
     expected_sum = Digest::SHA256.hexdigest(File.read(test_fixtures("test.png")))
-    actual_sum = Digest::SHA256.hexdigest(shell_output("curl http://localhost:#{volume_port}/#{fid}"))
+    actual_sum = Digest::SHA256.hexdigest(shell_output("curl http:localhost:#{volume_port}#{fid}"))
     assert_equal expected_sum, actual_sum
   end
 end

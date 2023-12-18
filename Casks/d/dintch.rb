@@ -2,16 +2,16 @@ cask "dintch" do
   version "1.6,2023.05"
   sha256 "61444cc980f6c6f9dc11bf222e60d04d479b96d3c3d5f8cbbae3675809a9292a"
 
-  url "https://eclecticlightdotcom.files.wordpress.com/#{version.csv.second.major}/#{version.csv.second.minor}/dintch#{version.csv.first.no_dots}.zip",
-      verified: "eclecticlightdotcom.files.wordpress.com/"
+  url "https:eclecticlightdotcom.files.wordpress.com#{version.csv.second.major}#{version.csv.second.minor}dintch#{version.csv.first.no_dots}.zip",
+      verified: "eclecticlightdotcom.files.wordpress.com"
   name "Dintch"
   desc "Check the integrity of your files"
-  homepage "https://eclecticlight.co/dintch"
+  homepage "https:eclecticlight.codintch"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/hoakleyelc/updates/master/eclecticapps.plist"
+    url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
     strategy :page_match do |page|
-      match = page.match(%r{(\d+)/(\d+)/dintch(\d+)\.zip}i)
+      match = page.match(%r{(\d+)(\d+)dintch(\d+)\.zip}i)
       next if match.blank?
 
       "#{match[3].split("", 2).join(".")},#{match[1]}.#{match[2]}"
@@ -20,12 +20,12 @@ cask "dintch" do
 
   depends_on macos: ">= :high_sierra"
 
-  app "dintch#{version.csv.first.no_dots}/Dintch.app"
+  app "dintch#{version.csv.first.no_dots}Dintch.app"
 
   zap trash: [
-    "~/Library/Caches/co.eclecticlight.Dintch",
-    "~/Library/HTTPStorages/co.eclecticlight.Dintch",
-    "~/Library/Preferences/co.eclecticlight.Dintch.plist",
-    "~/Library/Saved Application State/co.eclecticlight.Dintch.savedState",
+    "~LibraryCachesco.eclecticlight.Dintch",
+    "~LibraryHTTPStoragesco.eclecticlight.Dintch",
+    "~LibraryPreferencesco.eclecticlight.Dintch.plist",
+    "~LibrarySaved Application Stateco.eclecticlight.Dintch.savedState",
   ]
 end

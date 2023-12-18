@@ -2,10 +2,10 @@ cask "font-schoolbell" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/schoolbell/Schoolbell-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapacheschoolbellSchoolbell-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Schoolbell"
-  homepage "https://fonts.google.com/specimen/Schoolbell"
+  homepage "https:fonts.google.comspecimenSchoolbell"
 
   font "Schoolbell-Regular.ttf"
 

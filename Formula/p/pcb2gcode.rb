@@ -1,11 +1,11 @@
 class Pcb2gcode < Formula
   desc "Command-line tool for isolation, routing and drilling of PCBs"
-  homepage "https://github.com/pcb2gcode/pcb2gcode"
-  url "https://ghproxy.com/https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v2.5.0.tar.gz"
+  homepage "https:github.compcb2gcodepcb2gcode"
+  url "https:github.compcb2gcodepcb2gcodearchiverefstagsv2.5.0.tar.gz"
   sha256 "96f1b1b4fd58e86f152b691202a15593815949dc9250fab9ab02f2346f5c2c52"
   license "GPL-3.0-or-later"
   revision 4
-  head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
+  head "https:github.compcb2gcodepcb2gcode.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -43,12 +43,12 @@ class Pcb2gcode < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"front.gbr").write <<~EOS
+    (testpath"front.gbr").write <<~EOS
       %FSLAX46Y46*%
       %MOMM*%
       G01*
@@ -65,7 +65,7 @@ class Pcb2gcode < Formula
       X127000000Y-63500000D01*
       M02*
     EOS
-    (testpath/"edge.gbr").write <<~EOS
+    (testpath"edge.gbr").write <<~EOS
       %FSLAX46Y46*%
       %MOMM*%
       G01*
@@ -78,7 +78,7 @@ class Pcb2gcode < Formula
       X123190000Y-67310000D01*
       M02*
     EOS
-    (testpath/"drill.drl").write <<~EOS
+    (testpath"drill.drl").write <<~EOS
       M48
       FMAT,2
       METRIC,TZ
@@ -93,7 +93,7 @@ class Pcb2gcode < Formula
       T0
       M30
     EOS
-    (testpath/"millproject").write <<~EOS
+    (testpath"millproject").write <<~EOS
       metric=true
       zchange=10
       zsafe=5
@@ -119,7 +119,7 @@ class Pcb2gcode < Formula
       al-y=15
       software=LinuxCNC
     EOS
-    system "#{bin}/pcb2gcode", "--front=front.gbr",
+    system "#{bin}pcb2gcode", "--front=front.gbr",
                                "--outline=edge.gbr",
                                "--drill=drill.drl"
   end

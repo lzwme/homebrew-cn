@@ -1,10 +1,10 @@
 class Gum < Formula
   desc "Tool for glamorous shell scripts"
-  homepage "https://github.com/charmbracelet/gum"
-  url "https://ghproxy.com/https://github.com/charmbracelet/gum/archive/refs/tags/v0.13.0.tar.gz"
+  homepage "https:github.comcharmbraceletgum"
+  url "https:github.comcharmbraceletgumarchiverefstagsv0.13.0.tar.gz"
   sha256 "329a38f3453b4be1f00e1fcb987aacf574fe3a8cc592084529c05716ddf4e7c4"
   license "MIT"
-  head "https://github.com/charmbracelet/gum.git", branch: "main"
+  head "https:github.comcharmbraceletgum.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "558728b5567bd1dc68e9612a51df346c56019de2f69df592150e77e46a979061"
@@ -21,16 +21,16 @@ class Gum < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
 
-    man_page = Utils.safe_popen_read(bin/"gum", "man")
-    (man1/"gum.1").write man_page
+    man_page = Utils.safe_popen_read(bin"gum", "man")
+    (man1"gum.1").write man_page
 
-    generate_completions_from_executable(bin/"gum", "completion")
+    generate_completions_from_executable(bin"gum", "completion")
   end
 
   test do
-    assert_match "Gum", shell_output("#{bin}/gum format 'Gum'").chomp
-    assert_equal "foo", shell_output("#{bin}/gum style foo").chomp
-    assert_equal "foo\nbar", shell_output("#{bin}/gum join --vertical foo bar").chomp
-    assert_equal "foobar", shell_output("#{bin}/gum join foo bar").chomp
+    assert_match "Gum", shell_output("#{bin}gum format 'Gum'").chomp
+    assert_equal "foo", shell_output("#{bin}gum style foo").chomp
+    assert_equal "foo\nbar", shell_output("#{bin}gum join --vertical foo bar").chomp
+    assert_equal "foobar", shell_output("#{bin}gum join foo bar").chomp
   end
 end

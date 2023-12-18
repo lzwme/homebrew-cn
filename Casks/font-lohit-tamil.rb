@@ -2,10 +2,10 @@ cask "font-lohit-tamil" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/lohittamil/Lohit-Tamil.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofllohittamilLohit-Tamil.ttf",
+      verified: "github.comgooglefonts"
   name "Lohit Tamil"
-  homepage "https://fonts.google.com/specimen/Lohit+Tamil"
+  homepage "https:fonts.google.comspecimenLohit+Tamil"
 
   font "Lohit-Tamil.ttf"
 

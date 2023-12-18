@@ -1,7 +1,7 @@
 class CargoUdeps < Formula
   desc "Find unused dependencies in Cargo.toml"
-  homepage "https://github.com/est31/cargo-udeps"
-  url "https://ghproxy.com/https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.44.tar.gz"
+  homepage "https:github.comest31cargo-udeps"
+  url "https:github.comest31cargo-udepsarchiverefstagsv0.1.44.tar.gz"
   sha256 "2ec238af19b352933a1637fd1fdcd97403eefb8cc17e6f09623bd3f207cd828b"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -45,16 +45,16 @@ class CargoUdeps < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"src/main.rs").write "// Dummy file"
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"srcmain.rs").write " Dummy file"
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -69,12 +69,12 @@ class CargoUdeps < Formula
     end
 
     [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libssh2"].opt_libshared_library("libssh2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"cargo-udeps", library),
+      assert check_binary_linkage(bin"cargo-udeps", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

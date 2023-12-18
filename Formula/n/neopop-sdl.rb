@@ -1,7 +1,7 @@
 class NeopopSdl < Formula
   desc "NeoGeo Pocket emulator"
-  homepage "https://nih.at/NeoPop-SDL/"
-  url "https://nih.at/NeoPop-SDL/NeoPop-SDL-0.2.tar.bz2", using: :homebrew_curl
+  homepage "https:nih.atNeoPop-SDL"
+  url "https:nih.atNeoPop-SDLNeoPop-SDL-0.2.tar.bz2", using: :homebrew_curl
   sha256 "2df1b717faab9e7cb597fab834dc80910280d8abf913aa8b0dcfae90f472352e"
   license "GPL-2.0-or-later"
   revision 1
@@ -18,7 +18,7 @@ class NeopopSdl < Formula
   end
 
   head do
-    url "https://github.com/nih-at/NeoPop-SDL.git", branch: "master"
+    url "https:github.comnih-atNeoPop-SDL.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "pkg-config" => :build
@@ -40,10 +40,10 @@ class NeopopSdl < Formula
     else
       # Workaround for ancient config files not recognizing aarch64 macos.
       %w[config.guess config.sub].each do |fn|
-        cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, fn
+        cp Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"fn, fn
       end
     end
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
@@ -54,6 +54,6 @@ class NeopopSdl < Formula
     # Test fails on headless CI: "cannot initialize SDL: No available video device"
     return if ENV["HOMEBREW_GITHUB_ACTIONS"] && OS.linux?
 
-    assert_equal "NeoPop (SDL) v0.71 (SDL-Version #{version})", shell_output("#{bin}/NeoPop-SDL -V").chomp
+    assert_equal "NeoPop (SDL) v0.71 (SDL-Version #{version})", shell_output("#{bin}NeoPop-SDL -V").chomp
   end
 end

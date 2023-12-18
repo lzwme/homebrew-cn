@@ -1,7 +1,7 @@
 class Avra < Formula
   desc "Assembler for the Atmel AVR microcontroller family"
-  homepage "https://github.com/Ro5bert/avra"
-  url "https://ghproxy.com/https://github.com/Ro5bert/avra/archive/refs/tags/1.4.2.tar.gz"
+  homepage "https:github.comRo5bertavra"
+  url "https:github.comRo5bertavraarchiverefstags1.4.2.tar.gz"
   sha256 "cc56837be973d1a102dc6936a0b7235a1d716c0f7cd053bf77e0620577cff986"
   license "GPL-2.0"
 
@@ -25,14 +25,14 @@ class Avra < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}", "OS=osx"
-    pkgshare.install Dir["includes/*"]
+    pkgshare.install Dir["includes*"]
   end
 
   test do
-    (testpath/"test.asm").write " .device attiny10\n ldi r16,0x42\n"
-    output = shell_output("#{bin}/avra -l test.lst test.asm")
+    (testpath"test.asm").write " .device attiny10\n ldi r16,0x42\n"
+    output = shell_output("#{bin}avra -l test.lst test.asm")
     assert_match "Assembly complete with no errors.", output
-    assert_predicate testpath/"test.hex", :exist?
+    assert_predicate testpath"test.hex", :exist?
     assert_match "ldi r16,0x42", File.read("test.lst")
   end
 end

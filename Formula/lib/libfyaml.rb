@@ -1,7 +1,7 @@
 class Libfyaml < Formula
   desc "Fully feature complete YAML parser and emitter"
-  homepage "https://github.com/pantoniou/libfyaml"
-  url "https://ghproxy.com/https://github.com/pantoniou/libfyaml/releases/download/v0.9/libfyaml-0.9.tar.gz"
+  homepage "https:github.compantonioulibfyaml"
+  url "https:github.compantonioulibfyamlreleasesdownloadv0.9libfyaml-0.9.tar.gz"
   sha256 "7731edc5dfcc345d5c5c9f6ce597133991a689dabede393cd77bae89b327cd6d"
   license "MIT"
 
@@ -15,13 +15,13 @@ class Libfyaml < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #ifdef HAVE_CONFIG_H
       #include "config.h"
       #endif
@@ -37,7 +37,7 @@ class Libfyaml < Formula
     EOS
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lfyaml", "-o", "test"
     assert_equal 0, $CHILD_STATUS.exitstatus
-    assert_equal version.to_s, shell_output("#{testpath}/test").strip
-    assert_equal version.to_s, shell_output("#{bin}/fy-tool --version").strip
+    assert_equal version.to_s, shell_output("#{testpath}test").strip
+    assert_equal version.to_s, shell_output("#{bin}fy-tool --version").strip
   end
 end

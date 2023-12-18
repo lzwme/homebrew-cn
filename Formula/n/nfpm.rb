@@ -1,10 +1,10 @@
 class Nfpm < Formula
   desc "Simple deb and rpm packager"
-  homepage "https://nfpm.goreleaser.com/"
-  url "https://ghproxy.com/https://github.com/goreleaser/nfpm/archive/refs/tags/v2.34.0.tar.gz"
+  homepage "https:nfpm.goreleaser.com"
+  url "https:github.comgoreleasernfpmarchiverefstagsv2.34.0.tar.gz"
   sha256 "0ab290538866352d8b13a18f211dfabe6af1bf02addec87b234ee580ace70e65"
   license "MIT"
-  head "https://github.com/goreleaser/nfpm.git", branch: "master"
+  head "https:github.comgoreleasernfpm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb3994f57fb0f710b404dbe85e18cd8432a7c853cc8004f5d009ebeef6287812"
@@ -19,22 +19,22 @@ class Nfpm < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), "./cmd/nfpm"
+    system "go", "build", *std_go_args(ldflags: "-X main.version=v#{version}"), ".cmdnfpm"
 
-    generate_completions_from_executable(bin/"nfpm", "completion")
+    generate_completions_from_executable(bin"nfpm", "completion")
   end
 
   test do
     assert_match version.to_s,
-      shell_output("#{bin}/nfpm --version 2>&1")
+      shell_output("#{bin}nfpm --version 2>&1")
 
-    system bin/"nfpm", "init"
-    assert_match "nfpm example configuration file", File.read(testpath/"nfpm.yaml")
+    system bin"nfpm", "init"
+    assert_match "nfpm example configuration file", File.read(testpath"nfpm.yaml")
 
     # remove the generated default one
     # and use stubbed one for another test
-    File.delete(testpath/"nfpm.yaml")
-    (testpath/"nfpm.yaml").write <<~EOS
+    File.delete(testpath"nfpm.yaml")
+    (testpath"nfpm.yaml").write <<~EOS
       name: "foo"
       arch: "amd64"
       platform: "linux"
@@ -43,7 +43,7 @@ class Nfpm < Formula
       priority: "extra"
     EOS
 
-    system bin/"nfpm", "pkg", "--packager", "deb", "--target", "."
-    assert_predicate testpath/"foo_1.0.0_amd64.deb", :exist?
+    system bin"nfpm", "pkg", "--packager", "deb", "--target", "."
+    assert_predicate testpath"foo_1.0.0_amd64.deb", :exist?
   end
 end

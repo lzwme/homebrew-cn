@@ -1,10 +1,10 @@
 class Zchunk < Formula
   desc "Compressed file format for efficient deltas"
-  homepage "https://github.com/zchunk/zchunk"
-  url "https://ghproxy.com/https://github.com/zchunk/zchunk/archive/refs/tags/1.3.2.tar.gz"
+  homepage "https:github.comzchunkzchunk"
+  url "https:github.comzchunkzchunkarchiverefstags1.3.2.tar.gz"
   sha256 "4d923d32af7db33f3c0a6655b258e857a2ca564912cf85ddce14e9b1b7d495bf"
   license "BSD-2-Clause"
-  head "https://github.com/zchunk/zchunk.git", branch: "main"
+  head "https:github.comzchunkzchunk.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "60cb58ec52cfe85e491151078212316420be58c7ace22bb63afc46594ed5d192"
@@ -35,8 +35,8 @@ class Zchunk < Formula
   end
 
   test do
-    system bin/"zck", test_fixtures("test.png")
-    system bin/"unzck", testpath/"test.png.zck"
-    assert_equal test_fixtures("test.png").read, (testpath/"test.png").read
+    system bin"zck", test_fixtures("test.png")
+    system bin"unzck", testpath"test.png.zck"
+    assert_equal test_fixtures("test.png").read, (testpath"test.png").read
   end
 end

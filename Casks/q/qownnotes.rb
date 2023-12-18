@@ -2,11 +2,11 @@ cask "qownnotes" do
   version "23.12.3"
   sha256 "1a18ecc8b19d7ff58bfe33488563814bbc70679a26370fefa0139451cb5567af"
 
-  url "https://ghproxy.com/https://github.com/pbek/QOwnNotes/releases/download/v#{version}/QOwnNotes.dmg",
-      verified: "github.com/pbek/QOwnNotes/"
+  url "https:github.compbekQOwnNotesreleasesdownloadv#{version}QOwnNotes.dmg",
+      verified: "github.compbekQOwnNotes"
   name "QOwnNotes"
   desc "Plain-text file notepad and todo-list manager"
-  homepage "https://www.qownnotes.org/"
+  homepage "https:www.qownnotes.org"
 
   livecheck do
     url :url
@@ -19,7 +19,7 @@ cask "qownnotes" do
   app "QOwnNotes.app"
 
   zap trash: [
-    "~/Library/Preferences/com.pbe.QOwnNotes.plist",
-    "~/Library/Saved Application State/com.PBE.QOwnNotes.savedState",
+    "~LibraryPreferencescom.pbe.QOwnNotes.plist",
+    "~LibrarySaved Application Statecom.PBE.QOwnNotes.savedState",
   ]
 end

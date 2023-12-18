@@ -2,10 +2,10 @@ cask "font-iceland" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/iceland/Iceland-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflicelandIceland-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Iceland"
-  homepage "https://fonts.google.com/specimen/Iceland"
+  homepage "https:fonts.google.comspecimenIceland"
 
   font "Iceland-Regular.ttf"
 

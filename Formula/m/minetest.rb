@@ -1,26 +1,26 @@
 class Minetest < Formula
   desc "Free, open source voxel game engine and game"
-  homepage "https://www.minetest.net/"
+  homepage "https:www.minetest.net"
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://ghproxy.com/https://github.com/minetest/minetest/archive/refs/tags/5.8.0.tar.gz"
+    url "https:github.comminetestminetestarchiverefstags5.8.0.tar.gz"
     sha256 "610c85a24d77acdc3043a69d777bed9e6c00169406ca09df22ad490fe0d68c0c"
 
     resource "irrlichtmt" do
-      url "https://ghproxy.com/https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt13.tar.gz"
+      url "https:github.comminetestirrlichtarchiverefstags1.9.0mt13.tar.gz"
       sha256 "2fde8e27144988210b9c0ff1e202905834d9d25aaa63ce452763fd7171096adc"
     end
 
     resource "minetest_game" do
-      url "https://ghproxy.com/https://github.com/minetest/minetest_game/archive/refs/tags/5.7.0.tar.gz"
+      url "https:github.comminetestminetest_gamearchiverefstags5.7.0.tar.gz"
       sha256 "0787b24cf7b340a8a2be873ca3744cec60c2683011f1d658350a031d1bd5976d"
     end
   end
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,14 +34,14 @@ class Minetest < Formula
   end
 
   head do
-    url "https://github.com/minetest/minetest.git", branch: "master"
+    url "https:github.comminetestminetest.git", branch: "master"
 
     resource "irrlichtmt" do
-      url "https://github.com/minetest/irrlicht.git", branch: "master"
+      url "https:github.comminetestirrlicht.git", branch: "master"
     end
 
     resource "minetest_game" do
-      url "https://github.com/minetest/minetest_game.git", branch: "master"
+      url "https:github.comminetestminetest_game.git", branch: "master"
     end
   end
 
@@ -72,13 +72,13 @@ class Minetest < Formula
 
   def install
     # Disable CMake fixup_bundle to prevent copying dylibs into app bundle
-    inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
+    inreplace "srcCMakeLists.txt", "fixup_bundle(", "# \\0"
 
     # Remove bundled libraries to prevent fallback
-    %w[lua gmp jsoncpp].each { |lib| (buildpath/"lib"/lib).rmtree }
+    %w[lua gmp jsoncpp].each { |lib| (buildpath"lib"lib).rmtree }
 
-    (buildpath/"games/minetest_game").install resource("minetest_game")
-    (buildpath/"lib/irrlichtmt").install resource("irrlichtmt")
+    (buildpath"gamesminetest_game").install resource("minetest_game")
+    (buildpath"libirrlichtmt").install resource("irrlichtmt")
 
     args = %W[
       -DBUILD_CLIENT=1
@@ -89,17 +89,17 @@ class Minetest < Formula
       -DCUSTOM_GETTEXT_PATH=#{Formula["gettext"].opt_prefix}
     ]
     # Workaround for 'Could NOT find GettextLib (missing: ICONV_LIBRARY)'
-    args << "-DICONV_LIBRARY=#{MacOS.sdk_path}/usr/lib/libiconv.tbd" if OS.mac? && MacOS.version >= :big_sur
+    args << "-DICONV_LIBRARY=#{MacOS.sdk_path}usrliblibiconv.tbd" if OS.mac? && MacOS.version >= :big_sur
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.write_exec_script prefix/"minetest.app/Contents/MacOS/minetest" if OS.mac?
+    bin.write_exec_script prefix"minetest.appContentsMacOSminetest" if OS.mac?
   end
 
   test do
-    output = shell_output("#{bin}/minetest --version")
+    output = shell_output("#{bin}minetest --version")
     assert_match "USE_CURL=1", output
     assert_match "USE_GETTEXT=1", output
     assert_match "USE_SOUND=1", output

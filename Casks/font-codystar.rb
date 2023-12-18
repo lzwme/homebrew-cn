@@ -2,12 +2,12 @@ cask "font-codystar" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/codystar"
+      only_path: "oflcodystar"
   name "Codystar"
-  homepage "https://fonts.google.com/specimen/Codystar"
+  homepage "https:fonts.google.comspecimenCodystar"
 
   font "Codystar-Light.ttf"
   font "Codystar-Regular.ttf"

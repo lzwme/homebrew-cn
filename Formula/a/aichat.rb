@@ -1,10 +1,10 @@
 class Aichat < Formula
   desc "ChatGPT cli"
-  homepage "https://github.com/sigoden/aichat"
-  url "https://ghproxy.com/https://github.com/sigoden/aichat/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:github.comsigodenaichat"
+  url "https:github.comsigodenaichatarchiverefstagsv0.11.0.tar.gz"
   sha256 "3f6eede4300048312bd16c1cda2299d179040e1a3b2a1c37fc908db4b40098a7"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/sigoden/aichat.git", branch: "main"
+  head "https:github.comsigodenaichat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73f41cdad2e1dd3fac1d043e7c75f7b0fcc542c10d2b3a53fb17dfe42eaa3640"
@@ -24,7 +24,7 @@ class Aichat < Formula
 
   test do
     ENV["OPENAI_API_KEY"] = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    output = shell_output("#{bin}/aichat --dry-run math 3.2x4.8")
+    output = shell_output("#{bin}aichat --dry-run math 3.2x4.8")
     assert_match "math 3.2x4.8", output
   end
 end

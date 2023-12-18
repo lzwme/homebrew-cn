@@ -1,7 +1,7 @@
 class Ps2eps < Formula
   desc "Convert PostScript to EPS files"
-  homepage "https://github.com/roland-bless/ps2eps"
-  url "https://ghproxy.com/https://github.com/roland-bless/ps2eps/archive/refs/tags/v1.70.tar.gz"
+  homepage "https:github.comroland-blessps2eps"
+  url "https:github.comroland-blessps2epsarchiverefstagsv1.70.tar.gz"
   sha256 "cd7064e3787ddb79246d78dc8f76104007a21c2f97280b1bed3e7d273af97945"
   license "GPL-2.0-or-later"
 
@@ -22,20 +22,20 @@ class Ps2eps < Formula
   depends_on "ghostscript"
 
   def install
-    system ENV.cc, "src/C/bbox.c", "-o", "bbox"
+    system ENV.cc, "srcCbbox.c", "-o", "bbox"
     bin.install "bbox"
-    (libexec/"bin").install "src/perl/ps2eps"
-    (bin/"ps2eps").write <<~EOS
-      #!/bin/sh
-      perl -S #{libexec}/bin/ps2eps "$@"
+    (libexec"bin").install "srcperlps2eps"
+    (bin"ps2eps").write <<~EOS
+      #!binsh
+      perl -S #{libexec}binps2eps "$@"
     EOS
-    man1.install Dir["doc/*.1"]
-    doc.install Dir["doc/*.pdf", "doc/*.html"]
+    man1.install Dir["doc*.1"]
+    doc.install Dir["doc*.pdf", "doc*.html"]
   end
 
   test do
-    cp test_fixtures("test.ps"), testpath/"test.ps"
-    system bin/"ps2eps", testpath/"test.ps"
-    assert_predicate testpath/"test.eps", :exist?
+    cp test_fixtures("test.ps"), testpath"test.ps"
+    system bin"ps2eps", testpath"test.ps"
+    assert_predicate testpath"test.eps", :exist?
   end
 end

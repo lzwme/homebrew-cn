@@ -1,11 +1,11 @@
 class Rtl433 < Formula
   desc "Program to decode radio transmissions from devices"
-  homepage "https://github.com/merbanan/rtl_433"
-  url "https://github.com/merbanan/rtl_433.git",
+  homepage "https:github.commerbananrtl_433"
+  url "https:github.commerbananrtl_433.git",
       tag:      "23.11",
       revision: "59133f44a297eb2288e803e2e56587da4e586ffc"
   license "GPL-2.0-or-later"
-  head "https://github.com/merbanan/rtl_433.git", branch: "master"
+  head "https:github.commerbananrtl_433.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e55a0e0e62f174e25cc3f3d892a8e4dc9ef0b0adb6709cbc793b139b664e3a80"
@@ -24,12 +24,12 @@ class Rtl433 < Formula
   depends_on "openssl@3"
 
   resource("test_cu8") do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
+    url "https:raw.githubusercontent.commerbananrtl_433_testsmastertestsoregon_scientificuvr128g001_433.92M_250k.cu8"
     sha256 "7aa07b72cec9926f463410cda6056eb2411ac9e76006ba4917a0527492c5f65d"
   end
 
   resource("expected_json") do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.json"
+    url "https:raw.githubusercontent.commerbananrtl_433_testsmastertestsoregon_scientificuvr128g001_433.92M_250k.json"
     sha256 "5054c0f322030dd1ee3ca78261b64e691da832900a2c6e4d13cc22f0fbbfbbfa"
   end
 
@@ -44,8 +44,8 @@ class Rtl433 < Formula
     resource("test_cu8").stage testpath
     resource("expected_json").stage testpath
 
-    expected_output = (testpath/"g001_433.92M_250k.json").read
-    rtl_433_output = shell_output("#{bin}/rtl_433 -c 0 -F json -r #{testpath}/g001_433.92M_250k.cu8")
+    expected_output = (testpath"g001_433.92M_250k.json").read
+    rtl_433_output = shell_output("#{bin}rtl_433 -c 0 -F json -r #{testpath}g001_433.92M_250k.cu8")
 
     assert_equal rtl_433_output, expected_output
   end

@@ -1,12 +1,12 @@
-require "language/go"
+require "languagego"
 
 class Gdm < Formula
   desc "Go Dependency Manager (gdm)"
-  homepage "https://github.com/sparrc/gdm"
-  url "https://ghproxy.com/https://github.com/sparrc/gdm/archive/refs/tags/1.4.tar.gz"
+  homepage "https:github.comsparrcgdm"
+  url "https:github.comsparrcgdmarchiverefstags1.4.tar.gz"
   sha256 "2ac8800319d922fe2816e57f30e23ddd9a11ce2e93294c533318b9f081debde4"
   license "Unlicense"
-  head "https://github.com/sparrc/gdm.git", branch: "master"
+  head "https:github.comsparrcgdm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "028f91a50ebe55cb07330ad0044a7dfc3200ede8b34e714bada58ca66bae39e4"
@@ -25,25 +25,25 @@ class Gdm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f0a95d921a3fe45e5f7eb32d5132f56d429475118c43e46de3e767edb9eeb0"
   end
 
-  # https://github.com/sparrc/gdm/issues/29
+  # https:github.comsparrcgdmissues29
   deprecate! date: "2023-06-27", because: :unmaintained
 
   depends_on "go"
 
-  go_resource "golang.org/x/tools" do
-    url "https://go.googlesource.com/tools.git",
+  go_resource "golang.orgxtools" do
+    url "https:go.googlesource.comtools.git",
         revision: "6f233b96dfbc53e33b302e31b88814cf74697ff6"
   end
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    mkdir_p buildpath/"src/github.com/sparrc"
-    ln_sf buildpath, buildpath/"src/github.com/sparrc/gdm"
+    mkdir_p buildpath"srcgithub.comsparrc"
+    ln_sf buildpath, buildpath"srcgithub.comsparrcgdm"
 
-    Language::Go.stage_deps resources, buildpath/"src"
+    Language::Go.stage_deps resources, buildpath"src"
 
-    cd "src/github.com/sparrc/gdm" do
+    cd "srcgithub.comsparrcgdm" do
       system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}")
     end
   end
@@ -51,8 +51,8 @@ class Gdm < Formula
   test do
     ENV["GOPATH"] = testpath.realpath
     ENV["GO111MODULE"] = "auto"
-    assert_match version.to_s, shell_output("#{bin}/gdm version")
-    assert_match testpath.realpath.to_s, shell_output("#{bin}/gdm save")
-    system bin/"gdm", "restore"
+    assert_match version.to_s, shell_output("#{bin}gdm version")
+    assert_match testpath.realpath.to_s, shell_output("#{bin}gdm save")
+    system bin"gdm", "restore"
   end
 end

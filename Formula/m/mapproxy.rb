@@ -2,8 +2,8 @@ class Mapproxy < Formula
   include Language::Python::Virtualenv
 
   desc "Accelerating web map proxy"
-  homepage "https://mapproxy.org/"
-  url "https://files.pythonhosted.org/packages/65/0e/f3ecc15f1f9dbd95ecdf1cd3246712ae13920d9665c3dbed089cd5d12d3b/MapProxy-1.16.0.tar.gz"
+  homepage "https:mapproxy.org"
+  url "https:files.pythonhosted.orgpackages650ef3ecc15f1f9dbd95ecdf1cd3246712ae13920d9665c3dbed089cd5d12d3bMapProxy-1.16.0.tar.gz"
   sha256 "a11157be4729d1ab40680af2ce543fffcfebd991a5fa676e3a307a93fbc56d6b"
   license "Apache-2.0"
   revision 1
@@ -28,11 +28,11 @@ class Mapproxy < Formula
   depends_on "six"
 
   resource "pyproj" do
-    url "https://files.pythonhosted.org/packages/38/77/46fe6a107b934fd23b903cb7402b69c8b2480a6cab9481d9f98c6dc7726e/pyproj-3.6.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages387746fe6a107b934fd23b903cb7402b69c8b2480a6cab9481d9f98c6dc7726epyproj-3.6.0.tar.gz"
     sha256 "a5b111865b3f0f8b77b3983f2fbe4dd6248fc09d3730295949977c8dcd988062"
 
     # Patch to build with cython 3+, remove in 3.6.1+
-    # upstream commit ref, https://github.com/pyproj4/pyproj/commit/1452ba404be58c14a6b64d4551c320022f5aafcf
+    # upstream commit ref, https:github.compyproj4pyprojcommit1452ba404be58c14a6b64d4551c320022f5aafcf
     patch :DATA
   end
 
@@ -41,16 +41,16 @@ class Mapproxy < Formula
   end
 
   test do
-    system bin/"mapproxy-util", "create", "-t", "base-config", testpath
-    assert_predicate testpath/"seed.yaml", :exist?
+    system bin"mapproxy-util", "create", "-t", "base-config", testpath
+    assert_predicate testpath"seed.yaml", :exist?
   end
 end
 
 __END__
-diff --git a/pyproj/_datadir.pxd b/pyproj/_datadir.pxd
+diff --git apyproj_datadir.pxd bpyproj_datadir.pxd
 index 07ec85f..a5cfd2c 100644
---- a/pyproj/_datadir.pxd
-+++ b/pyproj/_datadir.pxd
+--- apyproj_datadir.pxd
++++ bpyproj_datadir.pxd
 @@ -1,7 +1,7 @@
  include "proj.pxi"
  
@@ -61,10 +61,10 @@ index 07ec85f..a5cfd2c 100644
  cdef PJ_CONTEXT* PYPROJ_GLOBAL_CONTEXT
  cdef PJ_CONTEXT* pyproj_context_create() except *
  cdef void pyproj_context_destroy(PJ_CONTEXT* context) except *
-diff --git a/pyproj/_datadir.pyx b/pyproj/_datadir.pyx
+diff --git apyproj_datadir.pyx bpyproj_datadir.pyx
 index 4675aa3..15439dd 100644
---- a/pyproj/_datadir.pyx
-+++ b/pyproj/_datadir.pyx
+--- apyproj_datadir.pyx
++++ bpyproj_datadir.pyx
 @@ -6,7 +6,6 @@ from libc.stdlib cimport free, malloc
  
  from pyproj._compat cimport cstrencode
@@ -99,10 +99,10 @@ index 4675aa3..15439dd 100644
      """
      Log function for catching PROJ errors.
      """
-diff --git a/pyproject.toml b/pyproject.toml
+diff --git apyproject.toml bpyproject.toml
 index fc3f284..29e91a0 100644
---- a/pyproject.toml
-+++ b/pyproject.toml
+--- apyproject.toml
++++ bpyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools>=61.0.0", "wheel", "cython>=0.28.4"]

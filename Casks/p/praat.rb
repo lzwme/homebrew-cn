@@ -2,15 +2,15 @@ cask "praat" do
   version "6.4.01,6401"
   sha256 "899949ff7529452dbe23de1eec25cf887347f8b6c267c3231d60e4bb8cfc8932"
 
-  url "https://ghproxy.com/https://github.com/praat/praat/releases/download/v#{version.csv.first}/praat#{version.csv.second}_mac.dmg",
-      verified: "github.com/praat/praat/"
+  url "https:github.compraatpraatreleasesdownloadv#{version.csv.first}praat#{version.csv.second}_mac.dmg",
+      verified: "github.compraatpraat"
   name "Praat"
   desc "Doing phonetics by computer"
-  homepage "https://www.fon.hum.uva.nl/praat/"
+  homepage "https:www.fon.hum.uva.nlpraat"
 
   livecheck do
     url :url
-    regex(%r{/v?(\d+(?:\.\d+)+)/praat(\d+)[._-]mac\.dmg$}i)
+    regex(%r{v?(\d+(?:\.\d+)+)praat(\d+)[._-]mac\.dmg$}i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["browser_download_url"]&.match(regex)
@@ -22,10 +22,10 @@ cask "praat" do
   end
 
   app "Praat.app"
-  binary "#{appdir}/Praat.app/Contents/MacOS/Praat", target: "praat"
+  binary "#{appdir}Praat.appContentsMacOSPraat", target: "praat"
 
   zap trash: [
-    "~/Library/Preferences/Praat Prefs",
-    "~/Library/Saved Application State/org.praat.Praat.savedState",
+    "~LibraryPreferencesPraat Prefs",
+    "~LibrarySaved Application Stateorg.praat.Praat.savedState",
   ]
 end

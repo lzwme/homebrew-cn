@@ -2,10 +2,10 @@ cask "font-rubik-storm" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rubikstorm/RubikStorm-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrubikstormRubikStorm-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rubik Storm"
-  homepage "https://fonts.google.com/specimen/Rubik+Storm"
+  homepage "https:fonts.google.comspecimenRubik+Storm"
 
   font "RubikStorm-Regular.ttf"
 

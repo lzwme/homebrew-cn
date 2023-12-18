@@ -1,11 +1,11 @@
 class Mabel < Formula
   desc "Fancy BitTorrent client for the terminal"
-  homepage "https://github.com/smmr-software/mabel"
-  url "https://github.com/smmr-software/mabel.git",
+  homepage "https:github.comsmmr-softwaremabel"
+  url "https:github.comsmmr-softwaremabel.git",
       tag:      "v0.1.7",
       revision: "1e74a44f69ce86a0ada6d162c0dabcf2ad3c5077"
   license "GPL-3.0-or-later"
-  head "https://github.com/smmr-software/mabel.git", branch: "main"
+  head "https:github.comsmmr-softwaremabel.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7bf38463d084fe08c99e94d6db50a410bba56792550bacb94e360246eba52620"
@@ -33,13 +33,13 @@ class Mabel < Formula
   end
 
   test do
-    vrsn_out = shell_output("#{bin}/mabel --version")
+    vrsn_out = shell_output("#{bin}mabel --version")
     assert_match "Mabel #{version}", vrsn_out
     assert_match "Built by: #{tap.user}", vrsn_out
 
-    trnt_out = shell_output("#{bin}/mabel 'test.torrent' 2>&1", 1)
+    trnt_out = shell_output("#{bin}mabel 'test.torrent' 2>&1", 1)
     error_message = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
-      "open /dev/tty: no such device or address"
+      "open devtty: no such device or address"
     else
       "open test.torrent: no such file or directory"
     end

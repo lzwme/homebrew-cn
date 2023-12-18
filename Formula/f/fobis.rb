@@ -2,8 +2,8 @@ class Fobis < Formula
   include Language::Python::Virtualenv
 
   desc "KISS build tool for automatically building modern Fortran projects"
-  homepage "https://github.com/szaghi/FoBiS"
-  url "https://files.pythonhosted.org/packages/53/3a/5533ab0277977027478b4c1285bb20b6beb221b222403b10398fb24e81a2/FoBiS.py-3.0.5.tar.gz"
+  homepage "https:github.comszaghiFoBiS"
+  url "https:files.pythonhosted.orgpackages533a5533ab0277977027478b4c1285bb20b6beb221b222403b10398fb24e81a2FoBiS.py-3.0.5.tar.gz"
   sha256 "ef23fde4199277abc693d539a81e0728571c349174da6b7476579f82482ab96c"
   license "GPL-3.0-or-later"
   revision 2
@@ -26,12 +26,12 @@ class Fobis < Formula
   depends_on "python@3.11"
 
   resource "configparser" do
-    url "https://files.pythonhosted.org/packages/4b/c0/3a47084aca7a940ed1334f89ed2e67bcb42168c4f40c486e267fe71e7aa0/configparser-5.3.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages4bc03a47084aca7a940ed1334f89ed2e67bcb42168c4f40c486e267fe71e7aa0configparser-5.3.0.tar.gz"
     sha256 "8be267824b541c09b08db124917f48ab525a6c3e837011f3130781a224c57090"
   end
 
   resource "future" do
-    url "https://files.pythonhosted.org/packages/8f/2e/cf6accf7415237d6faeeebdc7832023c90e0282aa16fd3263db0eb4715ec/future-0.18.3.tar.gz"
+    url "https:files.pythonhosted.orgpackages8f2ecf6accf7415237d6faeeebdc7832023c90e0282aa16fd3263db0eb4715ecfuture-0.18.3.tar.gz"
     sha256 "34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
   end
 
@@ -40,13 +40,13 @@ class Fobis < Formula
   end
 
   test do
-    (testpath/"test-mod.f90").write <<~EOS
+    (testpath"test-mod.f90").write <<~EOS
       module fobis_test_m
         implicit none
         character(*), parameter :: message = "Hello FoBiS"
       end module
     EOS
-    (testpath/"test-prog.f90").write <<~EOS
+    (testpath"test-prog.f90").write <<~EOS
       program fobis_test
         use iso_fortran_env, only: stdout => output_unit
         use fobis_test_m, only: message
@@ -54,7 +54,7 @@ class Fobis < Formula
         write(stdout,'(A)') message
       end program
     EOS
-    system "#{bin}/FoBiS.py", "build", "-compiler", "gnu"
-    assert_match "Hello FoBiS", shell_output(testpath/"test-prog")
+    system "#{bin}FoBiS.py", "build", "-compiler", "gnu"
+    assert_match "Hello FoBiS", shell_output(testpath"test-prog")
   end
 end

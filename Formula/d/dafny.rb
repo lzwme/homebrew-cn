@@ -1,7 +1,7 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
-  homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://ghproxy.com/https://github.com/dafny-lang/dafny/archive/refs/tags/v4.4.0.tar.gz"
+  homepage "https:github.comdafny-langdafnyblobmasterREADME.md"
+  url "https:github.comdafny-langdafnyarchiverefstagsv4.4.0.tar.gz"
   sha256 "7a26b9e8a5f54fb11556201c4a839e04f601e93735a882d7f782191a2c942c56"
   license "MIT"
 
@@ -15,23 +15,23 @@ class Dafny < Formula
 
   depends_on "dotnet@6"
   # We use the latest Java version that is compatible with gradlew version in `dafny`.
-  # https://github.com/dafny-lang/dafny/blob/v#{version}/Source/DafnyRuntime/DafnyRuntimeJava/gradle/wrapper/gradle-wrapper.properties
-  # https://docs.gradle.org/current/userguide/compatibility.html
+  # https:github.comdafny-langdafnyblobv#{version}SourceDafnyRuntimeDafnyRuntimeJavagradlewrappergradle-wrapper.properties
+  # https:docs.gradle.orgcurrentuserguidecompatibility.html
   depends_on "openjdk@17"
   depends_on "z3"
 
   def install
     system "make", "exe"
-    libexec.install Dir["Binaries/*", "Scripts/quicktest.sh"]
+    libexec.install Dir["Binaries*", "Scriptsquicktest.sh"]
 
-    (bin/"dafny").write <<~EOS
-      #!/bin/bash
-      exec "#{Formula["dotnet@6"].opt_bin}/dotnet" "#{libexec}/Dafny.dll" "$@"
+    (bin"dafny").write <<~EOS
+      #!binbash
+      exec "#{Formula["dotnet@6"].opt_bin}dotnet" "#{libexec}Dafny.dll" "$@"
     EOS
   end
 
   test do
-    (testpath/"test.dfy").write <<~EOS
+    (testpath"test.dfy").write <<~EOS
       method Main() {
         var i: nat :| true;
         assert i as int >= -1;
@@ -39,8 +39,8 @@ class Dafny < Formula
       }
     EOS
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\n",
-                  shell_output("#{bin}/dafny verify #{testpath}/test.dfy")
+                  shell_output("#{bin}dafny verify #{testpath}test.dfy")
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nhello, Dafny\n",
-                  shell_output("#{bin}/dafny run #{testpath}/test.dfy")
+                  shell_output("#{bin}dafny run #{testpath}test.dfy")
   end
 end

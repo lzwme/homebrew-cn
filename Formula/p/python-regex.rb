@@ -1,7 +1,7 @@
 class PythonRegex < Formula
   desc "Alternative regular expression module, to replace re"
-  homepage "https://github.com/mrabarnett/mrab-regex"
-  url "https://files.pythonhosted.org/packages/6b/38/49d968981b5ec35dbc0f742f8219acab179fc1567d9c22444152f950cf0d/regex-2023.10.3.tar.gz"
+  homepage "https:github.commrabarnettmrab-regex"
+  url "https:files.pythonhosted.orgpackages6b3849d968981b5ec35dbc0f742f8219acab179fc1567d9c22444152f950cf0dregex-2023.10.3.tar.gz"
   sha256 "3fef4f844d2290ee0ba57addcec17eec9e3df73f10a2748485dfd6a3a188cc0f"
   license "Apache-2.0"
 
@@ -25,14 +25,14 @@ class PythonRegex < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import regex; print(regex.sub('.*', 'x', 'test'))"
     end
   end

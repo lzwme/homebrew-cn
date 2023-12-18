@@ -1,7 +1,7 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
-  homepage "https://xgboost.ai/"
-  url "https://github.com/dmlc/xgboost.git",
+  homepage "https:xgboost.ai"
+  url "https:github.comdmlcxgboost.git",
       tag:      "v2.0.2",
       revision: "41ce8f28b269dbb7efc70e3a120af3c0bb85efe3"
   license "Apache-2.0"
@@ -28,14 +28,14 @@ class Xgboost < Formula
     cause <<-EOS
       clang: error: unable to execute command: Segmentation fault: 11
       clang: error: clang frontend command failed due to signal (use -v to see invocation)
-      make[2]: *** [src/CMakeFiles/objxgboost.dir/tree/updater_quantile_hist.cc.o] Error 254
+      make[2]: *** [srcCMakeFilesobjxgboost.dirtreeupdater_quantile_hist.cc.o] Error 254
     EOS
   end
 
   # Starting in XGBoost 1.6.0, compiling with GCC 5.4.0 results in:
-  # src/linear/coordinate_common.h:414:35: internal compiler error: in tsubst_copy, at cp/pt.c:13039
-  # This compiler bug is fixed in more recent versions of GCC: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=80543
-  # Upstream issue filed at https://github.com/dmlc/xgboost/issues/7820
+  # srclinearcoordinate_common.h:414:35: internal compiler error: in tsubst_copy, at cppt.c:13039
+  # This compiler bug is fixed in more recent versions of GCC: https:gcc.gnu.orgbugzillashow_bug.cgi?id=80543
+  # Upstream issue filed at https:github.comdmlcxgboostissues7820
   fails_with gcc: "5"
 
   def install
@@ -51,10 +51,10 @@ class Xgboost < Formula
     # Force use of Clang on Mojave
     ENV.clang if OS.mac?
 
-    cp_r (pkgshare/"demo"), testpath
-    cd "demo/data" do
-      cp "../CLI/binary_classification/mushroom.conf", "."
-      system "#{bin}/xgboost", "mushroom.conf"
+    cp_r (pkgshare"demo"), testpath
+    cd "demodata" do
+      cp "..CLIbinary_classificationmushroom.conf", "."
+      system "#{bin}xgboost", "mushroom.conf"
     end
   end
 end

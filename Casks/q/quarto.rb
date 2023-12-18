@@ -2,11 +2,11 @@ cask "quarto" do
   version "1.3.450"
   sha256 "6d34d53f2d5e1b34f7aabdd95d620433251e521b734244066d6bc2eb45269879"
 
-  url "https://ghproxy.com/https://github.com/quarto-dev/quarto-cli/releases/download/v#{version}/quarto-#{version}-macos.pkg",
-      verified: "github.com/quarto-dev/quarto-cli/"
+  url "https:github.comquarto-devquarto-clireleasesdownloadv#{version}quarto-#{version}-macos.pkg",
+      verified: "github.comquarto-devquarto-cli"
   name "quarto"
   desc "Scientific and technical publishing system built on Pandoc"
-  homepage "https://www.quarto.org/"
+  homepage "https:www.quarto.org"
 
   livecheck do
     url :url
@@ -19,5 +19,5 @@ cask "quarto" do
 
   uninstall pkgutil: "org.rstudio.quarto"
 
-  zap trash: "~/Library/Caches/quarto"
+  zap trash: "~LibraryCachesquarto"
 end

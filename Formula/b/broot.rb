@@ -1,10 +1,10 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
-  homepage "https://dystroy.org/broot/"
-  url "https://ghproxy.com/https://github.com/Canop/broot/archive/refs/tags/v1.30.1.tar.gz"
+  homepage "https:dystroy.orgbroot"
+  url "https:github.comCanopbrootarchiverefstagsv1.30.1.tar.gz"
   sha256 "ce9defabcc44df97d0e088572bc00b51bb961b451d45f31dc1e57512d2515739"
   license "MIT"
-  head "https://github.com/Canop/broot.git", branch: "master"
+  head "https:github.comCanopbroot.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc5c6abdd4c864cd71507bf68364d6ef8c9682787d27d3187ec3723a3bfdc3da"
@@ -26,37 +26,37 @@ class Broot < Formula
     system "cargo", "install", *std_cargo_args
 
     # Replace man page "#version" and "#date" based on logic in release.sh
-    inreplace "man/page" do |s|
+    inreplace "manpage" do |s|
       s.gsub! "#version", version.to_s
-      s.gsub! "#date", time.strftime("%Y/%m/%d")
+      s.gsub! "#date", time.strftime("%Y%m%d")
     end
-    man1.install "man/page" => "broot.1"
+    man1.install "manpage" => "broot.1"
 
     # Completion scripts are generated in the crate's build directory,
     # which includes a fingerprint hash. Try to locate it first
-    out_dir = Dir["target/release/build/broot-*/out"].first
-    fish_completion.install "#{out_dir}/broot.fish"
-    fish_completion.install "#{out_dir}/br.fish"
-    zsh_completion.install "#{out_dir}/_broot"
-    zsh_completion.install "#{out_dir}/_br"
+    out_dir = Dir["targetreleasebuildbroot-*out"].first
+    fish_completion.install "#{out_dir}broot.fish"
+    fish_completion.install "#{out_dir}br.fish"
+    zsh_completion.install "#{out_dir}_broot"
+    zsh_completion.install "#{out_dir}_br"
     # Bash completions are not compatible with Bash 3 so don't use v1 directory.
     # bash: complete: nosort: invalid option name
-    # Issue ref: https://github.com/clap-rs/clap/issues/5190
-    (share/"bash-completion/completions").install "#{out_dir}/broot.bash" => "broot"
-    (share/"bash-completion/completions").install "#{out_dir}/br.bash" => "br"
+    # Issue ref: https:github.comclap-rsclapissues5190
+    (share"bash-completioncompletions").install "#{out_dir}broot.bash" => "broot"
+    (share"bash-completioncompletions").install "#{out_dir}br.bash" => "br"
   end
 
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output = shell_output("#{bin}/broot --help")
+    output = shell_output("#{bin}broot --help")
     assert_match "lets you explore file hierarchies with a tree-like view", output
 
-    assert_match version.to_s, shell_output("#{bin}/broot --version")
+    assert_match version.to_s, shell_output("#{bin}broot --version")
 
     require "pty"
-    require "io/console"
-    PTY.spawn(bin/"broot", "-c", ":print_tree", "--color", "no", "--outcmd", testpath/"output.txt",
+    require "ioconsole"
+    PTY.spawn(bin"broot", "-c", ":print_tree", "--color", "no", "--outcmd", testpath"output.txt",
                 err: :out) do |r, w, pid|
       r.winsize = [20, 80] # broot dependency terminal requires width > 2
       w.write "n\r"

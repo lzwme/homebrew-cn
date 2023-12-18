@@ -1,11 +1,11 @@
 class Tcpstat < Formula
   desc "Active TCP connections monitoring tool"
-  homepage "https://github.com/jtt/tcpstat"
-  url "https://ghproxy.com/https://github.com/jtt/tcpstat/archive/refs/tags/rel-0-1.tar.gz"
+  homepage "https:github.comjtttcpstat"
+  url "https:github.comjtttcpstatarchiverefstagsrel-0-1.tar.gz"
   version "0.1"
   sha256 "366a221950759015378775862a7499aaf727a3a9de67b15463b0991c2362fdaf"
   license "BSD-2-Clause"
-  head "https://github.com/jtt/tcpstat.git", branch: "master"
+  head "https:github.comjtttcpstat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05facda1f2a318b0253ef9b01500561ed6791d0b5143c5aeb05d1187902a6758"
@@ -33,9 +33,9 @@ class Tcpstat < Formula
   end
 
   test do
-    (testpath/"script.exp").write <<~EOS
+    (testpath"script.exp").write <<~EOS
       set timeout 30
-      spawn "#{bin}/tcpstat"
+      spawn "#{bin}tcpstat"
       send -- "q"
       expect eof
     EOS

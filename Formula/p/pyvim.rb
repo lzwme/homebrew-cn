@@ -2,8 +2,8 @@ class Pyvim < Formula
   include Language::Python::Virtualenv
 
   desc "Pure Python Vim clone"
-  homepage "https://github.com/prompt-toolkit/pyvim"
-  url "https://files.pythonhosted.org/packages/c3/31/04e144ec3a3a0303e3ef1ef9c6c1ec8a3b5ba9e88b98d21442d9152783c1/pyvim-3.0.3.tar.gz"
+  homepage "https:github.comprompt-toolkitpyvim"
+  url "https:files.pythonhosted.orgpackagesc33104e144ec3a3a0303e3ef1ef9c6c1ec8a3b5ba9e88b98d21442d9152783c1pyvim-3.0.3.tar.gz"
   sha256 "2a3506690f73a79dd02cdc45f872d3edf20a214d4c3666d12459e2ce5b644baa"
   license "BSD-3-Clause"
 
@@ -23,22 +23,22 @@ class Pyvim < Formula
   depends_on "six"
 
   resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagesa2558f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9docopt-0.6.2.tar.gz"
     sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/9a/02/76cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2ba/prompt_toolkit-3.0.39.tar.gz"
+    url "https:files.pythonhosted.orgpackages9a0276cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2baprompt_toolkit-3.0.39.tar.gz"
     sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
   end
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/8b/fb/7251eaec19a055ec6aafb3d1395db7622348130d1b9b763f78567b2aab32/pyflakes-3.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages8bfb7251eaec19a055ec6aafb3d1395db7622348130d1b9b763f78567b2aab32pyflakes-3.1.0.tar.gz"
     sha256 "a0aae034c444db0071aa077972ba4768d40c830d9539fd45bf4cd3f8f6992efc"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/cb/ee/20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04ba/wcwidth-0.2.8.tar.gz"
+    url "https:files.pythonhosted.orgpackagescbee20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04bawcwidth-0.2.8.tar.gz"
     sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
   end
 
@@ -49,9 +49,9 @@ class Pyvim < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    # Need a pty due to https://github.com/prompt-toolkit/pyvim/issues/101
+    # Need a pty due to https:github.comprompt-toolkitpyvimissues101
     require "pty"
-    PTY.spawn(bin/"pyvim", "--help") do |r, _w, _pid|
+    PTY.spawn(bin"pyvim", "--help") do |r, _w, _pid|
       assert_match "Vim clone", r.read
     end
   end

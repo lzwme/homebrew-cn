@@ -1,10 +1,10 @@
 class Dsocks < Formula
-  desc "SOCKS client wrapper for *BSD/macOS"
-  homepage "https://monkey.org/~dugsong/dsocks/"
-  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/dsocks/dsocks-1.8.tar.gz"
+  desc "SOCKS client wrapper for *BSDmacOS"
+  homepage "https:monkey.org~dugsongdsocks"
+  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comdsocksdsocks-1.8.tar.gz"
   sha256 "2b57fb487633f6d8b002f7fe1755480ae864c5e854e88b619329d9f51c980f1d"
   license "BSD-2-Clause"
-  head "https://github.com/dugsong/dsocks.git", branch: "master"
+  head "https:github.comdugsongdsocks.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "07f6f3c0e0ca8250eccd463a6cc728bf5ba0400727232ccbfada5137087085b6"
@@ -26,7 +26,7 @@ class Dsocks < Formula
   def install
     system ENV.cc, "-fPIC", "-shared", "-o", shared_library("libdsocks"), "dsocks.c",
                    "atomicio.c", "-lresolv"
-    inreplace "dsocks.sh", "/usr/local", HOMEBREW_PREFIX
+    inreplace "dsocks.sh", "usrlocal", HOMEBREW_PREFIX
 
     lib.install shared_library("libdsocks")
     bin.install "dsocks.sh"

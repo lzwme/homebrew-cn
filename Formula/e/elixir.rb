@@ -1,10 +1,10 @@
 class Elixir < Formula
   desc "Functional metaprogramming aware language built on Erlang VM"
-  homepage "https://elixir-lang.org/"
-  url "https://ghproxy.com/https://github.com/elixir-lang/elixir/archive/refs/tags/v1.15.7.tar.gz"
+  homepage "https:elixir-lang.org"
+  url "https:github.comelixir-langelixirarchiverefstagsv1.15.7.tar.gz"
   sha256 "78bde2786b395515ae1eaa7d26faa7edfdd6632bfcfcd75bccb6341a18e8798f"
   license "Apache-2.0"
-  head "https://github.com/elixir-lang/elixir.git", branch: "main"
+  head "https:github.comelixir-langelixir.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3dc95924f84b9554fc485e47cb7001d16bafa4045727053ecb0fa4658d7a42eb"
@@ -20,17 +20,17 @@ class Elixir < Formula
 
   def install
     system "make"
-    bin.install Dir["bin/*"] - Dir["bin/*.{bat,ps1}"]
+    bin.install Dir["bin*"] - Dir["bin*.{bat,ps1}"]
 
-    Dir.glob("lib/*/ebin") do |path|
+    Dir.glob("lib*ebin") do |path|
       app = File.basename(File.dirname(path))
-      (lib/app).install path
+      (libapp).install path
     end
 
     system "make", "install_man", "PREFIX=#{prefix}"
   end
 
   test do
-    assert_match(%r{(compiled with Erlang/OTP 26)}, shell_output("#{bin}/elixir -v"))
+    assert_match(%r{(compiled with ErlangOTP 26)}, shell_output("#{bin}elixir -v"))
   end
 end

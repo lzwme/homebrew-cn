@@ -1,10 +1,10 @@
 class Jlog < Formula
   desc "Pure C message queue with subscribers and publishers for logs"
-  homepage "https://labs.omniti.com/labs/jlog"
-  url "https://ghproxy.com/https://github.com/omniti-labs/jlog/archive/refs/tags/2.5.4.tar.gz"
+  homepage "https:labs.omniti.comlabsjlog"
+  url "https:github.comomniti-labsjlogarchiverefstags2.5.4.tar.gz"
   sha256 "a6f00f9f41d3664a2f66f6c6aee0d33d6f295354f13a5f7f4033ca7ed20685cd"
   license "BSD-3-Clause"
-  head "https://github.com/omniti-labs/jlog.git", branch: "master"
+  head "https:github.comomniti-labsjlog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c83a14b807e726396394abec4f3a94b60e02c8f2853bc9d2968aa2ae05a023a2"
@@ -24,32 +24,32 @@ class Jlog < Formula
 
   def install
     system "autoconf"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"jlogtest.c").write <<~EOS
+    (testpath"jlogtest.c").write <<~EOS
       #include <stdio.h>
       #include <jlog.h>
       int main() {
         jlog_ctx *ctx;
-        const char *path = "#{testpath}/jlogexample";
+        const char *path = "#{testpath}jlogexample";
         int rv;
 
-        // First, ensure that the jlog is created
+         First, ensure that the jlog is created
         ctx = jlog_new(path);
         if (jlog_ctx_init(ctx) != 0) {
           if(jlog_ctx_err(ctx) != JLOG_ERR_CREATE_EXISTS) {
             fprintf(stderr, "jlog_ctx_init failed: %d %s\\n", jlog_ctx_err(ctx), jlog_ctx_err_string(ctx));
             exit(1);
           }
-          // Make sure it knows about our subscriber(s)
+           Make sure it knows about our subscriber(s)
           jlog_ctx_add_subscriber(ctx, "one", JLOG_BEGIN);
           jlog_ctx_add_subscriber(ctx, "two", JLOG_BEGIN);
         }
 
-        // Now re-open for writing
+         Now re-open for writing
         jlog_ctx_close(ctx);
         ctx = jlog_new(path);
         if (jlog_ctx_open_writer(ctx) != 0) {
@@ -57,7 +57,7 @@ class Jlog < Formula
            exit(0);
         }
 
-        // Send in some data
+         Send in some data
         rv = jlog_ctx_write(ctx, "hello\\n", strlen("hello\\n"));
         if (rv != 0) {
           fprintf(stderr, "jlog_ctx_write_message failed: %d %s\\n", jlog_ctx_err(ctx), jlog_ctx_err_string(ctx));
@@ -66,6 +66,6 @@ class Jlog < Formula
       }
     EOS
     system ENV.cc, "jlogtest.c", "-I#{include}", "-L#{lib}", "-ljlog", "-o", "jlogtest"
-    system testpath/"jlogtest"
+    system testpath"jlogtest"
   end
 end

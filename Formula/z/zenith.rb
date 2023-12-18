@@ -1,11 +1,11 @@
 class Zenith < Formula
   desc "In terminal graphical metrics for your *nix system"
-  homepage "https://github.com/bvaisvil/zenith/"
-  url "https://ghproxy.com/https://github.com/bvaisvil/zenith/archive/refs/tags/0.14.0.tar.gz"
+  homepage "https:github.combvaisvilzenith"
+  url "https:github.combvaisvilzenitharchiverefstags0.14.0.tar.gz"
   sha256 "2cbcea2625cfa97c161b974ad412a47e330f7fd31bec0479e329ed3606cfc569"
   license "MIT"
   version_scheme 1
-  head "https://github.com/bvaisvil/zenith.git", branch: "master"
+  head "https:github.combvaisvilzenith.git", branch: "master"
 
   livecheck do
     url :stable
@@ -34,17 +34,17 @@ class Zenith < Formula
 
   test do
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
-    (testpath/"zenith").mkdir
-    cmd = "#{bin}/zenith --db zenith"
-    cmd += " | tee #{testpath}/out.log" unless OS.mac? # output not showing on PTY IO
+    (testpath"zenith").mkdir
+    cmd = "#{bin}zenith --db zenith"
+    cmd += " | tee #{testpath}out.log" unless OS.mac? # output not showing on PTY IO
     r, w, pid = PTY.spawn cmd
     r.winsize = [80, 43]
     sleep 1
     w.write "q"
-    output = OS.mac? ? r.read : (testpath/"out.log").read
-    assert_match(/PID\s+USER\s+P\s+N\s+↓CPU%\s+MEM%/, output.gsub(/\e\[[;\d]*m/, ""))
+    output = OS.mac? ? r.read : (testpath"out.log").read
+    assert_match(PID\s+USER\s+P\s+N\s+↓CPU%\s+MEM%, output.gsub(\e\[[;\d]*m, ""))
   ensure
     Process.kill("TERM", pid)
   end

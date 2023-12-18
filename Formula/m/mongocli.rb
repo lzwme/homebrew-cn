@@ -1,14 +1,14 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
-  homepage "https://github.com/mongodb/mongodb-atlas-cli"
-  url "https://ghproxy.com/https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/mongocli/v1.31.0.tar.gz"
+  homepage "https:github.commongodbmongodb-atlas-cli"
+  url "https:github.commongodbmongodb-atlas-cliarchiverefstagsmongocliv1.31.0.tar.gz"
   sha256 "2967a73d489b015172df44873ac327f844a63eb7db87ac1d7e82c78a181957c1"
   license "Apache-2.0"
-  head "https://github.com/mongodb/mongodb-atlas-cli.git", branch: "master"
+  head "https:github.commongodbmongodb-atlas-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^mongocli/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^mongocliv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -32,14 +32,14 @@ class Mongocli < Formula
     ) do
       system "make", "build"
     end
-    bin.install "bin/mongocli"
+    bin.install "binmongocli"
 
-    generate_completions_from_executable(bin/"mongocli", "completion")
+    generate_completions_from_executable(bin"mongocli", "completion")
   end
 
   test do
-    assert_match "mongocli version: #{version}", shell_output("#{bin}/mongocli --version")
-    assert_match "Error: this action requires authentication", shell_output("#{bin}/mongocli iam projects ls 2>&1", 1)
-    assert_match "PROFILE NAME", shell_output("#{bin}/mongocli config ls")
+    assert_match "mongocli version: #{version}", shell_output("#{bin}mongocli --version")
+    assert_match "Error: this action requires authentication", shell_output("#{bin}mongocli iam projects ls 2>&1", 1)
+    assert_match "PROFILE NAME", shell_output("#{bin}mongocli config ls")
   end
 end

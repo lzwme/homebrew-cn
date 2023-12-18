@@ -1,7 +1,7 @@
 class Qtkeychain < Formula
   desc "Platform-independent Qt API for storing passwords securely"
-  homepage "https://github.com/frankosterfeld/qtkeychain"
-  url "https://ghproxy.com/https://github.com/frankosterfeld/qtkeychain/archive/refs/tags/0.14.1.tar.gz"
+  homepage "https:github.comfrankosterfeldqtkeychain"
+  url "https:github.comfrankosterfeldqtkeychainarchiverefstags0.14.1.tar.gz"
   sha256 "afb2d120722141aca85f8144c4ef017bd74977ed45b80e5d9e9614015dadd60c"
   license "BSD-2-Clause"
 
@@ -32,8 +32,8 @@ class Qtkeychain < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <qt6keychain/keychain.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <qt6keychainkeychain.h>
       int main() {
         QKeychain::ReadPasswordJob job(QLatin1String(""));
         return 0;
@@ -55,6 +55,6 @@ class Qtkeychain < Formula
     end
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++17", "-I#{include}",
                     "-L#{lib}", "-lqt6keychain", *flags
-    system "./test"
+    system ".test"
   end
 end

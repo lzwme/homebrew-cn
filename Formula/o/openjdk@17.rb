@@ -1,13 +1,13 @@
 class OpenjdkAT17 < Formula
   desc "Development kit for the Java programming language"
-  homepage "https://openjdk.java.net/"
-  url "https://ghproxy.com/https://github.com/openjdk/jdk17u/archive/refs/tags/jdk-17.0.9-ga.tar.gz"
+  homepage "https:openjdk.java.net"
+  url "https:github.comopenjdkjdk17uarchiverefstagsjdk-17.0.9-ga.tar.gz"
   sha256 "365c6b7d506f25e2249cac7658ada8b72b8652ceb15bbc8316de3e6fe8ea0976"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
     url :stable
-    regex(/^jdk[._-]v?(17(?:\.\d+)*)-ga$/i)
+    regex(^jdk[._-]v?(17(?:\.\d+)*)-ga$i)
   end
 
   bottle do
@@ -50,34 +50,34 @@ class OpenjdkAT17 < Formula
 
   fails_with gcc: "5"
 
-  # From https://jdk.java.net/archive/
+  # From https:jdk.java.netarchive
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_macos-aarch64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk17.0.2dfd4a8d0985749f896bed50d7138ee7f8GPLopenjdk-17.0.2_macos-aarch64_bin.tar.gz"
         sha256 "602d7de72526368bb3f80d95c4427696ea639d2e0cc40455f53ff0bbb18c27c8"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_macos-x64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk17.0.2dfd4a8d0985749f896bed50d7138ee7f8GPLopenjdk-17.0.2_macos-x64_bin.tar.gz"
         sha256 "b85c4aaf7b141825ad3a0ea34b965e45c15d5963677e9b27235aa05f65c6df06"
       end
     end
     on_linux do
       on_arm do
-        url "https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk17.0.2dfd4a8d0985749f896bed50d7138ee7f8GPLopenjdk-17.0.2_linux-aarch64_bin.tar.gz"
         sha256 "13bfd976acf8803f862e82c7113fb0e9311ca5458b1decaef8a09ffd91119fa4"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz"
+        url "https:download.java.netjavaGAjdk17.0.2dfd4a8d0985749f896bed50d7138ee7f8GPLopenjdk-17.0.2_linux-x64_bin.tar.gz"
         sha256 "0022753d0cceecacdd3a795dd4cea2bd7ffdf9dc06e22ffd1be98411742fbb44"
       end
     end
   end
 
   def install
-    boot_jdk = buildpath/"boot-jdk"
+    boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
-    boot_jdk /= "Contents/Home" if OS.mac?
+    boot_jdk = "ContentsHome" if OS.mac?
     java_options = ENV.delete("_JAVA_OPTIONS")
 
     args = %W[
@@ -103,7 +103,7 @@ class OpenjdkAT17 < Formula
       --with-zlib=system
     ]
 
-    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}/server"]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}server"]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
@@ -129,29 +129,29 @@ class OpenjdkAT17 < Formula
 
     jdk = libexec
     if OS.mac?
-      libexec.install Dir["build/*/images/jdk-bundle/*"].first => "openjdk.jdk"
-      jdk /= "openjdk.jdk/Contents/Home"
+      libexec.install Dir["build*imagesjdk-bundle*"].first => "openjdk.jdk"
+      jdk = "openjdk.jdkContentsHome"
     else
-      libexec.install Dir["build/linux-*-server-release/images/jdk/*"]
+      libexec.install Dir["buildlinux-*-server-releaseimagesjdk*"]
     end
 
-    bin.install_symlink Dir[jdk/"bin/*"]
-    include.install_symlink Dir[jdk/"include/*.h"]
-    include.install_symlink Dir[jdk/"include"/OS.kernel_name.downcase/"*.h"]
-    man1.install_symlink Dir[jdk/"man/man1/*"]
+    bin.install_symlink Dir[jdk"bin*"]
+    include.install_symlink Dir[jdk"include*.h"]
+    include.install_symlink Dir[jdk"include"OS.kernel_name.downcase"*.h"]
+    man1.install_symlink Dir[jdk"manman1*"]
   end
 
   def caveats
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk-17.jdk
       EOS
     end
   end
 
   test do
-    (testpath/"HelloWorld.java").write <<~EOS
+    (testpath"HelloWorld.java").write <<~EOS
       class HelloWorld {
         public static void main(String args[]) {
           System.out.println("Hello, world!");
@@ -159,8 +159,8 @@ class OpenjdkAT17 < Formula
       }
     EOS
 
-    system bin/"javac", "HelloWorld.java"
+    system bin"javac", "HelloWorld.java"
 
-    assert_match "Hello, world!", shell_output("#{bin}/java HelloWorld")
+    assert_match "Hello, world!", shell_output("#{bin}java HelloWorld")
   end
 end

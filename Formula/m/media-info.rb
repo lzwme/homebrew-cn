@@ -1,14 +1,14 @@
 class MediaInfo < Formula
-  desc "Unified display of technical and tag data for audio/video"
-  homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo/23.11/MediaInfo_CLI_23.11_GNU_FromSource.tar.bz2"
+  desc "Unified display of technical and tag data for audiovideo"
+  homepage "https:mediaarea.net"
+  url "https:mediaarea.netdownloadbinarymediainfo23.11MediaInfo_CLI_23.11_GNU_FromSource.tar.bz2"
   sha256 "34f54a4e51b532bd7d05bc597f19994878e17eedad3cb5a0ea1998359cb9e566"
   license "BSD-2-Clause"
-  head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
+  head "https:github.comMediaAreaMediaInfo.git", branch: "master"
 
   livecheck do
-    url "https://mediaarea.net/en/MediaInfo/Download/Source"
-    regex(/href=.*?mediainfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:mediaarea.netenMediaInfoDownloadSource"
+    regex(href=.*?mediainfo[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -28,13 +28,13 @@ class MediaInfo < Formula
   uses_from_macos "zlib"
 
   def install
-    cd "MediaInfo/Project/GNU/CLI" do
-      system "./configure", *std_configure_args
+    cd "MediaInfoProjectGNUCLI" do
+      system ".configure", *std_configure_args
       system "make", "install"
     end
   end
 
   test do
-    pipe_output("#{bin}/mediainfo", test_fixtures("test.mp3"))
+    pipe_output("#{bin}mediainfo", test_fixtures("test.mp3"))
   end
 end

@@ -1,10 +1,10 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
-  homepage "https://github.com/facebookincubator/mvfst"
-  url "https://ghproxy.com/https://github.com/facebookincubator/mvfst/archive/refs/tags/v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookincubatormvfst"
+  url "https:github.comfacebookincubatormvfstarchiverefstagsv2023.12.04.00.tar.gz"
   sha256 "9b6ef33d9e0ea5c1c3ca23fb1fe341f5f8c54f0c9aa2133a3315d2c4f6874f66"
   license "MIT"
-  head "https://github.com/facebookincubator/mvfst.git", branch: "main"
+  head "https:github.comfacebookincubatormvfst.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64d53d5031e9fc2fbac74decefa11932642246bc4a738310cdabeda258d86e9d"
@@ -39,21 +39,21 @@ class Mvfst < Formula
     ENV.delete "CPATH"
     stable.stage testpath
 
-    (testpath/"CMakeLists.txt").atomic_write <<~CMAKE
+    (testpath"CMakeLists.txt").atomic_write <<~CMAKE
       cmake_minimum_required(VERSION 3.20)
       project(echo CXX)
       set(CMAKE_CXX_STANDARD 17)
 
-      list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+      list(PREPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}cmake")
       find_package(fizz REQUIRED)
       find_package(gflags REQUIRED)
       find_package(GTest REQUIRED)
       find_package(mvfst REQUIRED)
 
       add_executable(echo
-        quic/samples/echo/main.cpp
-        quic/common/test/TestUtils.cpp
-        quic/common/test/TestPacketBuilders.cpp
+        quicsamplesechomain.cpp
+        quiccommontestTestUtils.cpp
+        quiccommontestTestPacketBuilders.cpp
       )
       target_link_libraries(echo ${mvfst_LIBRARIES} fizz::fizz_test_support GTest::gmock)
       target_include_directories(echo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
@@ -63,12 +63,12 @@ class Mvfst < Formula
     system "cmake", "--build", "."
 
     server_port = free_port
-    server_pid = spawn "./echo", "--mode", "server",
+    server_pid = spawn ".echo", "--mode", "server",
                                  "--host", "127.0.0.1", "--port", server_port.to_s
     sleep 5
 
     Open3.popen3(
-      "./echo", "--mode", "client",
+      ".echo", "--mode", "client",
                 "--host", "127.0.0.1", "--port", server_port.to_s
     ) do |stdin, _, stderr|
       stdin.write "Hello world!\n"

@@ -1,10 +1,10 @@
 class PlzCli < Formula
   desc "Copilot for your terminal"
-  homepage "https://github.com/m1guelpf/plz-cli"
-  url "https://ghproxy.com/https://github.com/m1guelpf/plz-cli/archive/refs/tags/v0.1.8.tar.gz"
+  homepage "https:github.comm1guelpfplz-cli"
+  url "https:github.comm1guelpfplz-cliarchiverefstagsv0.1.8.tar.gz"
   sha256 "84a8835f091b305d21f52c36a19b4f4264ee72348f576ea2dd5a4c383f84acce"
   license "MIT"
-  head "https://github.com/m1guelpf/plz-cli.git", branch: "main"
+  head "https:github.comm1guelpfplz-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38e2fc5922b76d9ec280d5001cc06eec43c4b4bc1ddb64dde0a0cc1757949ed7"
@@ -26,6 +26,6 @@ class PlzCli < Formula
 
   test do
     ENV["OPENAI_API_KEY"] = "sk-XXXXXXXX"
-    assert_match "API error", shell_output("#{bin}/plz brewtest", 1)
+    assert_match "API error", shell_output("#{bin}plz brewtest", 1)
   end
 end

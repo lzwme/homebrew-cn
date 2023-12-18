@@ -1,11 +1,11 @@
 class Osm2pgrouting < Formula
   desc "Import OSM data into pgRouting database"
-  homepage "https://pgrouting.org/docs/tools/osm2pgrouting.html"
-  url "https://ghproxy.com/https://github.com/pgRouting/osm2pgrouting/archive/refs/tags/v2.3.8.tar.gz"
+  homepage "https:pgrouting.orgdocstoolsosm2pgrouting.html"
+  url "https:github.compgRoutingosm2pgroutingarchiverefstagsv2.3.8.tar.gz"
   sha256 "e3a58bcacf0c8811e0dcf3cf3791a4a7cc5ea2a901276133eacf227b30fd8355"
   license "GPL-2.0-or-later"
   revision 9
-  head "https://github.com/pgRouting/osm2pgrouting.git", branch: "main"
+  head "https:github.compgRoutingosm2pgrouting.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8beb5585b265e918aab7e5f259cd46c7c5b6f5049a57e56a98c18458d40c13dc"
@@ -35,6 +35,6 @@ class Osm2pgrouting < Formula
   end
 
   test do
-    system bin/"osm2pgrouting", "--help"
+    system bin"osm2pgrouting", "--help"
   end
 end

@@ -1,7 +1,7 @@
 class SdlMixer < Formula
   desc "Sample multi-channel audio mixer library"
-  homepage "https://www.libsdl.org/projects/SDL_mixer/release-1.2.html"
-  url "https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz"
+  homepage "https:www.libsdl.orgprojectsSDL_mixerrelease-1.2.html"
+  url "https:www.libsdl.orgprojectsSDL_mixerreleaseSDL_mixer-1.2.12.tar.gz"
   sha256 "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
   license "Zlib"
   revision 6
@@ -20,7 +20,7 @@ class SdlMixer < Formula
   end
 
   head do
-    url "https://github.com/libsdl-org/SDL_mixer.git", branch: "SDL-1.2"
+    url "https:github.comlibsdl-orgSDL_mixer.git", branch: "SDL-1.2"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,14 +39,14 @@ class SdlMixer < Formula
 
   # Source file for sdl_mixer example
   resource "playwave" do
-    url "https://github.com/libsdl-org/SDL_mixer/raw/1a14d94ed4271e45435ecb5512d61792e1a42932/playwave.c"
+    url "https:github.comlibsdl-orgSDL_mixerraw1a14d94ed4271e45435ecb5512d61792e1a42932playwave.c"
     sha256 "92f686d313f603f3b58431ec1a3a6bf29a36e5f792fb78417ac3d5d5a72b76c9"
   end
 
   def install
     inreplace "SDL_mixer.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
 
     args = %W[
       --prefix=#{prefix}
@@ -57,7 +57,7 @@ class SdlMixer < Formula
       --disable-music-mod-shared
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
@@ -65,13 +65,13 @@ class SdlMixer < Formula
     testpath.install resource("playwave")
     cocoa = []
     cocoa << "-Wl,-framework,Cocoa" if OS.mac?
-    system ENV.cc, "playwave.c", *cocoa, "-I#{include}/SDL",
-                   "-I#{Formula["sdl12-compat"].opt_include}/SDL",
+    system ENV.cc, "playwave.c", *cocoa, "-I#{include}SDL",
+                   "-I#{Formula["sdl12-compat"].opt_include}SDL",
                    "-L#{lib}", "-lSDL_mixer",
                    "-L#{Formula["sdl12-compat"].lib}", "-lSDLmain", "-lSDL",
                    "-o", "playwave"
     Utils.safe_popen_read({ "SDL_VIDEODRIVER" => "dummy", "SDL_AUDIODRIVER" => "disk" },
-                          "./playwave", test_fixtures("test.wav"))
-    assert_predicate testpath/"sdlaudio.raw", :exist?
+                          ".playwave", test_fixtures("test.wav"))
+    assert_predicate testpath"sdlaudio.raw", :exist?
   end
 end

@@ -1,10 +1,10 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
-  homepage "https://github.com/luvit/luv"
-  url "https://ghproxy.com/https://github.com/luvit/luv/archive/refs/tags/1.45.0-0.tar.gz"
+  homepage "https:github.comluvitluv"
+  url "https:github.comluvitluvarchiverefstags1.45.0-0.tar.gz"
   sha256 "97e89940f9eeaa8dfb34f1c19f80dd373299c42719d15228ec790f415d4e4965"
   license "Apache-2.0"
-  head "https://github.com/luvit/luv.git", branch: "master"
+  head "https:github.comluvitluv.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f5661f1ffa089435dd176fc95d245d425f6722d198f3a0fa5223735117b85fc5"
@@ -24,17 +24,17 @@ class Luv < Formula
   depends_on "libuv"
 
   resource "lua-compat-5.3" do
-    url "https://ghproxy.com/https://github.com/keplerproject/lua-compat-5.3/archive/refs/tags/v0.10.tar.gz"
+    url "https:github.comkeplerprojectlua-compat-5.3archiverefstagsv0.10.tar.gz"
     sha256 "d1ed32f091856f6fffab06232da79c48b437afd4cd89e5c1fc85d7905b011430"
   end
 
   def install
-    resource("lua-compat-5.3").stage buildpath/"deps/lua-compat-5.3" unless build.head?
+    resource("lua-compat-5.3").stage buildpath"depslua-compat-5.3" unless build.head?
 
     args = %W[
       -DWITH_SHARED_LIBUV=ON
       -DLUA_BUILD_TYPE=System
-      -DLUA_COMPAT53_DIR=#{buildpath}/deps/lua-compat-5.3
+      -DLUA_COMPAT53_DIR=#{buildpath}depslua-compat-5.3
       -DBUILD_MODULE=ON
     ]
 
@@ -56,7 +56,7 @@ class Luv < Formula
   end
 
   test do
-    (testpath/"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~EOS
       local uv = require('luv')
       local timer = uv.new_timer()
       timer:start(1000, 0, function()

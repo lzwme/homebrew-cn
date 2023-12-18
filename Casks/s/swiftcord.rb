@@ -2,13 +2,13 @@ cask "swiftcord" do
   version "0.6.1"
   sha256 "6da79f88930ce384a58c3fd902f75ad64ef0b9e015aa547db6a85af7d46b2032"
 
-  url "https://ghproxy.com/https://github.com/SwiftcordApp/Swiftcord/releases/download/v#{version}/Swiftcord.#{version}.dmg"
+  url "https:github.comSwiftcordAppSwiftcordreleasesdownloadv#{version}Swiftcord.#{version}.dmg"
   name "Swiftcord"
   desc "Native Discord client built in Swift"
-  homepage "https://github.com/SwiftcordApp/Swiftcord"
+  homepage "https:github.comSwiftcordAppSwiftcord"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/SwiftcordApp/Swiftcord/main/appcast.xml"
+    url "https:raw.githubusercontent.comSwiftcordAppSwiftcordmainappcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -17,9 +17,9 @@ cask "swiftcord" do
   app "Swiftcord.app"
 
   zap trash: [
-    "~/Library/Application Scripts/io.cryptoalgo.swiftcord",
-    "~/Library/Caches/io.cryptoalgo.swiftcord",
-    "~/Library/Containers/io.cryptoalgo.swiftcord",
-    "~/Library/Saved Application State/io.cryptoalgo.swiftcord.savedState",
+    "~LibraryApplication Scriptsio.cryptoalgo.swiftcord",
+    "~LibraryCachesio.cryptoalgo.swiftcord",
+    "~LibraryContainersio.cryptoalgo.swiftcord",
+    "~LibrarySaved Application Stateio.cryptoalgo.swiftcord.savedState",
   ]
 end

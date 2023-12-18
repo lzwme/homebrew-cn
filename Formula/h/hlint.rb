@@ -1,12 +1,12 @@
 class Hlint < Formula
   desc "Haskell source code suggestions"
-  homepage "https://github.com/ndmitchell/hlint"
+  homepage "https:github.comndmitchellhlint"
   # TODO: Switch `ghc@9.6` dependency to `ghc` once the upstream PR
-  # https://github.com/ndmitchell/hlint/pull/1544 is merged and in a release.
-  url "https://hackage.haskell.org/package/hlint-3.6.1/hlint-3.6.1.tar.gz"
+  # https:github.comndmitchellhlintpull1544 is merged and in a release.
+  url "https:hackage.haskell.orgpackagehlint-3.6.1hlint-3.6.1.tar.gz"
   sha256 "3280132bb3c1b39faa4c8c6a937479d4622484914da6a227a2ce4b15a76741fd"
   license "BSD-3-Clause"
-  head "https://github.com/ndmitchell/hlint.git", branch: "master"
+  head "https:github.comndmitchellhlint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c423840eab1c1fd700b28f36c0390645205e457124d92106f4ab96d27241a36"
@@ -28,18 +28,18 @@ class Hlint < Formula
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
-    man1.install "data/hlint.1"
+    man1.install "datahlint.1"
   end
 
   test do
-    (testpath/"test.hs").write <<~EOS
+    (testpath"test.hs").write <<~EOS
       main = do putStrLn "Hello World"
     EOS
-    assert_match "No hints", shell_output("#{bin}/hlint test.hs")
+    assert_match "No hints", shell_output("#{bin}hlint test.hs")
 
-    (testpath/"test1.hs").write <<~EOS
+    (testpath"test1.hs").write <<~EOS
       main = do foo x; return 3; bar z
     EOS
-    assert_match "Redundant return", shell_output("#{bin}/hlint test1.hs", 1)
+    assert_match "Redundant return", shell_output("#{bin}hlint test1.hs", 1)
   end
 end

@@ -1,7 +1,7 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
-  homepage "https://cisco.github.io/ChezScheme/"
-  url "https://ghproxy.com/https://github.com/cisco/ChezScheme/releases/download/v9.6.4/csv9.6.4.tar.gz"
+  homepage "https:cisco.github.ioChezScheme"
+  url "https:github.comciscoChezSchemereleasesdownloadv9.6.4csv9.6.4.tar.gz"
   sha256 "f5827682fa259c47975ffe078785fb561e4a5c54f764331ef66c32132843685d"
   license "Apache-2.0"
 
@@ -13,17 +13,17 @@ class Chezscheme < Formula
   end
 
   depends_on "libx11" => :build
-  depends_on arch: :x86_64 # https://github.com/cisco/ChezScheme/issues/544
+  depends_on arch: :x86_64 # https:github.comciscoChezSchemeissues544
   depends_on "xterm"
   uses_from_macos "ncurses"
 
   def install
-    inreplace "configure", "/opt/X11", Formula["libx11"].opt_prefix
-    inreplace Dir["c/Mf-*osx"], "/opt/X11", Formula["libx11"].opt_prefix
-    inreplace "c/version.h", "/usr/X11R6", Formula["libx11"].opt_prefix
-    inreplace "c/expeditor.c", "/usr/X11/bin/resize", Formula["xterm"].opt_bin/"resize"
+    inreplace "configure", "optX11", Formula["libx11"].opt_prefix
+    inreplace Dir["cMf-*osx"], "optX11", Formula["libx11"].opt_prefix
+    inreplace "cversion.h", "usrX11R6", Formula["libx11"].opt_prefix
+    inreplace "cexpeditor.c", "usrX11binresize", Formula["xterm"].opt_bin"resize"
 
-    system "./configure",
+    system ".configure",
               "--installprefix=#{prefix}",
               "--threads",
               "--installschemename=chez"
@@ -31,7 +31,7 @@ class Chezscheme < Formula
   end
 
   test do
-    (testpath/"hello.ss").write <<~EOS
+    (testpath"hello.ss").write <<~EOS
       (display "Hello, World!") (newline)
     EOS
 
@@ -39,6 +39,6 @@ class Chezscheme < Formula
       Hello, World!
     EOS
 
-    assert_equal expected, shell_output("#{bin}/chez --script hello.ss")
+    assert_equal expected, shell_output("#{bin}chez --script hello.ss")
   end
 end

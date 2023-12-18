@@ -1,10 +1,10 @@
 class VisionmediaWatch < Formula
   desc "Periodically executes the given command"
-  homepage "https://github.com/tj/watch"
-  url "https://ghproxy.com/https://github.com/tj/watch/archive/refs/tags/0.4.0.tar.gz"
+  homepage "https:github.comtjwatch"
+  url "https:github.comtjwatcharchiverefstags0.4.0.tar.gz"
   sha256 "d37ead189a644661d219b566170122b80d44f235c0df6df71b2b250f3b412547"
   license "MIT"
-  head "https://github.com/tj/watch.git", branch: "master"
+  head "https:github.comtjwatch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ae623768a63f7e3c72abb3bc6b06dbcefad5c698195d8298b2e89de2cd04d63"

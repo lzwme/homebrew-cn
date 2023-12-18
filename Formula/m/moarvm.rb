@@ -1,13 +1,13 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
-  homepage "https://moarvm.org"
-  url "https://ghproxy.com/https://github.com/MoarVM/MoarVM/releases/download/2023.11/MoarVM-2023.11.tar.gz"
+  homepage "https:moarvm.org"
+  url "https:github.comMoarVMMoarVMreleasesdownload2023.11MoarVM-2023.11.tar.gz"
   sha256 "32f4b100dcdb7f4bbe8575fca0eea4b7b271f177c701138a8f58418352bdd103"
   license "Artistic-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Moarvm < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with moarvm included"
 
   resource "nqp" do
-    url "https://ghproxy.com/https://github.com/Raku/nqp/releases/download/2023.11/nqp-2023.11.tar.gz"
+    url "https:github.comRakunqpreleasesdownload2023.11nqp-2023.11.tar.gz"
     sha256 "e7176b1a6fbaa98c132e385f325c6211ff9f93c0a3f0a23ceb6ffe823747b297"
   end
 
@@ -42,7 +42,7 @@ class Moarvm < Formula
       --has-libtommath
       --has-libuv
       --optimize
-      --pkgconfig=#{Formula["pkg-config"].opt_bin}/pkg-config
+      --pkgconfig=#{Formula["pkg-config"].opt_bin}pkg-config
       --prefix=#{prefix}
     ]
     system "perl", "Configure.pl", *configure_args
@@ -53,8 +53,8 @@ class Moarvm < Formula
 
   test do
     testpath.install resource("nqp")
-    out = Dir.chdir("src/vm/moar/stage0") do
-      shell_output("#{bin}/moar nqp.moarvm -e 'for (0,1,2,3,4,5,6,7,8,9) { print($_) }'")
+    out = Dir.chdir("srcvmmoarstage0") do
+      shell_output("#{bin}moar nqp.moarvm -e 'for (0,1,2,3,4,5,6,7,8,9) { print($_) }'")
     end
     assert_equal "0123456789", out
   end

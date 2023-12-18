@@ -2,16 +2,16 @@ cask "pennywise" do
   version "0.8.0"
   sha256 "9e6195f1096d399aafd77da74e4461964364fdbeec3b667cd91ecf9704e73b69"
 
-  url "https://ghproxy.com/https://github.com/kamranahmedse/pennywise/releases/download/v#{version}/Pennywise-#{version}.dmg"
+  url "https:github.comkamranahmedsepennywisereleasesdownloadv#{version}Pennywise-#{version}.dmg"
   name "Pennywise"
-  homepage "https://github.com/kamranahmedse/pennywise"
+  homepage "https:github.comkamranahmedsepennywise"
 
   app "Pennywise.app"
 
   zap trash: [
-    "~/Library/Application Support/Pennywise",
-    "~/Library/Logs/Pennywise",
-    "~/Library/Preferences/info.kamranahmed.pennywise.plist",
-    "~/Library/Saved Application State/info.kamranahmed.pennywise.savedState",
+    "~LibraryApplication SupportPennywise",
+    "~LibraryLogsPennywise",
+    "~LibraryPreferencesinfo.kamranahmed.pennywise.plist",
+    "~LibrarySaved Application Stateinfo.kamranahmed.pennywise.savedState",
   ]
 end

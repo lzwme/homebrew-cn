@@ -1,7 +1,7 @@
 class Jp2a < Formula
   desc "Convert JPG images to ASCII"
-  homepage "https://github.com/Talinx/jp2a"
-  url "https://ghproxy.com/https://github.com/Talinx/jp2a/releases/download/v1.1.1/jp2a-1.1.1.tar.bz2"
+  homepage "https:github.comTalinxjp2a"
+  url "https:github.comTalinxjp2areleasesdownloadv1.1.1jp2a-1.1.1.tar.bz2"
   sha256 "3b91f26f79eca4e963b1b1ae2473722a706bf642218f20bfe4ade5333aebb106"
   license "GPL-2.0-or-later"
   version_scheme 1
@@ -22,11 +22,11 @@ class Jp2a < Formula
   depends_on "libpng"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system bin/"jp2a", test_fixtures("test.jpg")
+    system bin"jp2a", test_fixtures("test.jpg")
   end
 end

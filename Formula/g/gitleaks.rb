@@ -1,7 +1,7 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
-  homepage "https://github.com/zricethezav/gitleaks"
-  url "https://ghproxy.com/https://github.com/zricethezav/gitleaks/archive/refs/tags/v8.18.1.tar.gz"
+  homepage "https:github.comzricethezavgitleaks"
+  url "https:github.comzricethezavgitleaksarchiverefstagsv8.18.1.tar.gz"
   sha256 "8901854f09ebf18029e650afb7d908d8e58f13c80d34c01d83d8362944237dcb"
   license "MIT"
 
@@ -18,18 +18,18 @@ class Gitleaks < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-X github.com/zricethezav/gitleaks/v#{version.major}/cmd.Version=#{version}"
+    ldflags = "-X github.comzricethezavgitleaksv#{version.major}cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"gitleaks", "completion")
+    generate_completions_from_executable(bin"gitleaks", "completion")
   end
 
   test do
-    (testpath/"README").write "ghp_deadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+    (testpath"README").write "ghp_deadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
     system "git", "init"
     system "git", "add", "README"
     system "git", "commit", "-m", "Initial commit"
-    assert_match(/WRN\S* leaks found: [1-9]/, shell_output("#{bin}/gitleaks detect 2>&1", 1))
-    assert_equal version.to_s, shell_output("#{bin}/gitleaks version").strip
+    assert_match(WRN\S* leaks found: [1-9], shell_output("#{bin}gitleaks detect 2>&1", 1))
+    assert_equal version.to_s, shell_output("#{bin}gitleaks version").strip
   end
 end

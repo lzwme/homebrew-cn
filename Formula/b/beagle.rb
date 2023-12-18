@@ -1,13 +1,13 @@
 class Beagle < Formula
   desc "Evaluate the likelihood of sequence evolution on trees"
-  homepage "https://github.com/beagle-dev/beagle-lib"
-  url "https://ghproxy.com/https://github.com/beagle-dev/beagle-lib/archive/refs/tags/v4.0.1.tar.gz"
+  homepage "https:github.combeagle-devbeagle-lib"
+  url "https:github.combeagle-devbeagle-libarchiverefstagsv4.0.1.tar.gz"
   sha256 "9d258cd9bedd86d7c28b91587acd1132f4e01d4f095c657ad4dc93bd83d4f120"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Beagle < Formula
 
   def install
     # Avoid building Linux bottle with `-march=native`. Need to enable SSE4.1 for _mm_dp_pd
-    # Issue ref: https://github.com/beagle-dev/beagle-lib/issues/189
+    # Issue ref: https:github.combeagle-devbeagle-libissues189
     inreplace "CMakeLists.txt", "-march=native", "-msse4.1" if OS.linux? && build.bottle?
 
     ENV["JAVA_HOME"] = Language::Java.java_home("11")
@@ -35,19 +35,19 @@ class Beagle < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "libhmsbeagle/platform.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "libhmsbeagleplatform.h"
       int main() { return 0; }
     EOS
-    (testpath/"T.java").write <<~EOS
+    (testpath"T.java").write <<~EOS
       class T {
         static { System.loadLibrary("hmsbeagle-jni"); }
         public static void main(String[] args) {}
       }
     EOS
-    system ENV.cxx, "-I#{include}/libhmsbeagle-1", testpath/"test.cpp", "-o", "test"
-    system "./test"
-    system Formula["openjdk@11"].bin/"javac", "T.java"
-    system Formula["openjdk@11"].bin/"java", "-Djava.library.path=#{lib}", "T"
+    system ENV.cxx, "-I#{include}libhmsbeagle-1", testpath"test.cpp", "-o", "test"
+    system ".test"
+    system Formula["openjdk@11"].bin"javac", "T.java"
+    system Formula["openjdk@11"].bin"java", "-Djava.library.path=#{lib}", "T"
   end
 end

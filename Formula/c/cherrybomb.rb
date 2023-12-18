@@ -1,10 +1,10 @@
 class Cherrybomb < Formula
   desc "Tool designed to valide your spec"
-  homepage "https://blstsecurity.com"
-  url "https://ghproxy.com/https://github.com/blst-security/cherrybomb/archive/refs/tags/v1.0.1.tar.gz"
+  homepage "https:blstsecurity.com"
+  url "https:github.comblst-securitycherrybombarchiverefstagsv1.0.1.tar.gz"
   sha256 "1cbea9046f2a6fb7264d82e1695661e93a759d1d536c6d1e742032e4689efe9f"
   license "Apache-2.0"
-  head "https://github.com/blst-security/cherrybomb.git", branch: "main"
+  head "https:github.comblst-securitycherrybomb.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd0341b2c6a53b6c4e0f42a79e3f1e5bf5a25e2d0c00f317b8fc18254de72951"
@@ -24,13 +24,13 @@ class Cherrybomb < Formula
 
   test do
     resource "homebrew-testconfig" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/blst-security/cherrybomb/9e704e1cadd90c8a8a5be4e99e847dd144c68b0a/images/api-with-examples.yaml"
+      url "https:raw.githubusercontent.comblst-securitycherrybomb9e704e1cadd90c8a8a5be4e99e847dd144c68b0aimagesapi-with-examples.yaml"
       sha256 "f7dc3d69f69ca11ae3e7e6ee702aff13fee3faca565033058d9fd073a15d9d45"
     end
 
     testpath.install resource("homebrew-testconfig")
-    test_config = testpath/"api-with-examples.yaml"
-    output = shell_output("#{bin}/cherrybomb --file=#{test_config} --format json")
+    test_config = testpath"api-with-examples.yaml"
+    output = shell_output("#{bin}cherrybomb --file=#{test_config} --format json")
     assert_match <<~EOS, output
       Starting Cherrybomb...
       Opening OAS file...
@@ -41,6 +41,6 @@ class Cherrybomb < Formula
       No servers supplied
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}/cherrybomb --version")
+    assert_match version.to_s, shell_output("#{bin}cherrybomb --version")
   end
 end

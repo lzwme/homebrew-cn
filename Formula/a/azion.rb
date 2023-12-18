@@ -1,7 +1,7 @@
 class Azion < Formula
   desc "CLI for the Azion service"
-  homepage "https://github.com/aziontech/azion"
-  url "https://ghproxy.com/https://github.com/aziontech/azion/archive/refs/tags/1.10.2.tar.gz"
+  homepage "https:github.comaziontechazion"
+  url "https:github.comaziontechazionarchiverefstags1.10.2.tar.gz"
   sha256 "4b2dc44126240abeadbdb8a95232fbb70466ef117afed8a21f6d0bc12f73a03f"
   license "MIT"
 
@@ -20,18 +20,18 @@ class Azion < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/aziontech/azion-cli/pkg/cmd/version.BinVersion=#{version}
-      -X github.com/aziontech/azion-cli/pkg/constants.StorageApiURL=https://storage-api.azion.com
-      -X github.com/aziontech/azion-cli/pkg/constants.AuthURL=https://sso.azion.com/api
-      -X github.com/aziontech/azion-cli/pkg/constants.ApiURL=https://api.azionapi.net
+      -X github.comaziontechazion-clipkgcmdversion.BinVersion=#{version}
+      -X github.comaziontechazion-clipkgconstants.StorageApiURL=https:storage-api.azion.com
+      -X github.comaziontechazion-clipkgconstants.AuthURL=https:sso.azion.comapi
+      -X github.comaziontechazion-clipkgconstants.ApiURL=https:api.azionapi.net
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/azion"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdazion"
 
-    generate_completions_from_executable(bin/"azion", "completion")
+    generate_completions_from_executable(bin"azion", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/azion --version")
-    assert_match "Failed to build your resource", shell_output("#{bin}/azion dev 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}azion --version")
+    assert_match "Failed to build your resource", shell_output("#{bin}azion dev 2>&1", 1)
   end
 end

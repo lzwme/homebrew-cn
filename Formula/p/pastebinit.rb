@@ -1,7 +1,7 @@
 class Pastebinit < Formula
   desc "Send things to pastebin from the command-line"
-  homepage "https://launchpad.net/pastebinit"
-  url "https://launchpad.net/pastebinit/trunk/1.5/+download/pastebinit-1.5.tar.gz"
+  homepage "https:launchpad.netpastebinit"
+  url "https:launchpad.netpastebinittrunk1.5+downloadpastebinit-1.5.tar.gz"
   sha256 "0d931dddb3744ed38aa2d319dd2d8a2f38a391011ff99db68ce7c83ab8f5b62f"
   license "GPL-2.0-or-later"
   revision 4
@@ -16,14 +16,14 @@ class Pastebinit < Formula
 
   # Remove for next release
   patch do
-    url "https://github.com/lubuntu-team/pastebinit/commit/ab05aa431a6bf76b28586ad97c98069b8de5e46a.patch?full_index=1"
+    url "https:github.comlubuntu-teampastebinitcommitab05aa431a6bf76b28586ad97c98069b8de5e46a.patch?full_index=1"
     sha256 "1abd0ec274cf0952a371e6738fcd3ece67bb9a4dd52f997296cd107f035f5690"
   end
 
   def install
     inreplace "pastebinit" do |s|
-      s.gsub! "/usr/bin/python3", which("python3.12")
-      s.gsub! "/usr/local/etc/pastebin.d", etc/"pastebin.d"
+      s.gsub! "usrbinpython3", which("python3.12")
+      s.gsub! "usrlocaletcpastebin.d", etc"pastebin.d"
     end
 
     system "docbook2man", "pastebinit.xml"
@@ -34,7 +34,7 @@ class Pastebinit < Formula
   end
 
   test do
-    url = pipe_output("#{bin}/pastebinit -a test -b paste.ubuntu.com", "Hello, world!").chomp
-    assert_match "://paste.ubuntu.com/", url
+    url = pipe_output("#{bin}pastebinit -a test -b paste.ubuntu.com", "Hello, world!").chomp
+    assert_match ":paste.ubuntu.com", url
   end
 end

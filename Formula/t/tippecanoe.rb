@@ -1,7 +1,7 @@
 class Tippecanoe < Formula
   desc "Build vector tilesets from collections of GeoJSON features"
-  homepage "https://github.com/felt/tippecanoe"
-  url "https://ghproxy.com/https://github.com/felt/tippecanoe/archive/refs/tags/2.37.1.tar.gz"
+  homepage "https:github.comfelttippecanoe"
+  url "https:github.comfelttippecanoearchiverefstags2.37.1.tar.gz"
   sha256 "2da1dba2786ef1c3b888431c95731ea32a776742ec06b1b9c4c8a98677a91915"
   license "BSD-2-Clause"
 
@@ -23,10 +23,10 @@ class Tippecanoe < Formula
   end
 
   test do
-    (testpath/"test.json").write <<~EOS
+    (testpath"test.json").write <<~EOS
       {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[0,0]}}
     EOS
-    safe_system "#{bin}/tippecanoe", "-o", "test.mbtiles", "test.json"
-    assert_predicate testpath/"test.mbtiles", :exist?, "tippecanoe generated no output!"
+    safe_system "#{bin}tippecanoe", "-o", "test.mbtiles", "test.json"
+    assert_predicate testpath"test.mbtiles", :exist?, "tippecanoe generated no output!"
   end
 end

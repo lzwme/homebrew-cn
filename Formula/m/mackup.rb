@@ -1,10 +1,10 @@
 class Mackup < Formula
   desc "Keep your Mac's application settings in sync"
-  homepage "https://github.com/lra/mackup"
-  url "https://files.pythonhosted.org/packages/47/98/87dfab0ae5d1abad48a56825585dcd406cdc183dbce930e24ef8439769ba/mackup-0.8.40.tar.gz"
+  homepage "https:github.comlramackup"
+  url "https:files.pythonhosted.orgpackages479887dfab0ae5d1abad48a56825585dcd406cdc183dbce930e24ef8439769bamackup-0.8.40.tar.gz"
   sha256 "d267c38719679d4bd162d7f0d0743a51b4da98a5d454d3ec7bb2f3f22e6cadaf"
   license "GPL-3.0-or-later"
-  head "https://github.com/lra/mackup.git", branch: "master"
+  head "https:github.comlramackup.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -28,12 +28,12 @@ class Mackup < Formula
 
   def install
     site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexecsite_packages
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    system "#{bin}/mackup", "--help"
+    system "#{bin}mackup", "--help"
   end
 end

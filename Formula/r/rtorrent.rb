@@ -1,7 +1,7 @@
 class Rtorrent < Formula
   desc "Ncurses BitTorrent client based on libtorrent-rakshasa"
-  homepage "https://github.com/rakshasa/rtorrent"
-  url "https://ghproxy.com/https://github.com/rakshasa/rtorrent/releases/download/v0.9.8/rtorrent-0.9.8.tar.gz"
+  homepage "https:github.comrakshasartorrent"
+  url "https:github.comrakshasartorrentreleasesdownloadv0.9.8rtorrent-0.9.8.tar.gz"
   sha256 "9edf0304bf142215d3bc85a0771446b6a72d0ad8218efbe184b41e4c9c7542af"
   license "GPL-2.0"
   revision 2
@@ -34,17 +34,17 @@ class Rtorrent < Formula
             "--disable-debug", "--disable-dependency-tracking"]
 
     system "sh", "autogen.sh"
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
     pid = fork do
-      exec "#{bin}/rtorrent", "-n", "-s", testpath
+      exec "#{bin}rtorrent", "-n", "-s", testpath
     end
     sleep 3
-    assert_predicate testpath/"rtorrent.lock", :exist?
+    assert_predicate testpath"rtorrent.lock", :exist?
   ensure
     Process.kill("HUP", pid)
   end

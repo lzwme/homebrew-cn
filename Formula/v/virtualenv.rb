@@ -1,10 +1,10 @@
 class Virtualenv < Formula
   desc "Tool for creating isolated virtual python environments"
-  homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/94/d7/adb787076e65dc99ef057e0118e25becf80dd05233ef4c86f07aa35f6492/virtualenv-20.25.0.tar.gz"
+  homepage "https:virtualenv.pypa.io"
+  url "https:files.pythonhosted.orgpackages94d7adb787076e65dc99ef057e0118e25becf80dd05233ef4c86f07aa35f6492virtualenv-20.25.0.tar.gz"
   sha256 "bf51c0d9c7dd63ea8e44086fa1e4fb1093a31e963b86959257378aef020e1f1b"
   license "MIT"
-  head "https://github.com/pypa/virtualenv.git", branch: "main"
+  head "https:github.compypavirtualenv.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33b549d8c2ce12a315931e0c07e6ec2862e0f989069470ede68d45ecd3c43d56"
@@ -34,7 +34,7 @@ class Virtualenv < Formula
   end
 
   test do
-    system "#{bin}/virtualenv", "venv_dir"
-    assert_match "venv_dir", shell_output("venv_dir/bin/python -c 'import sys; print(sys.prefix)'")
+    system "#{bin}virtualenv", "venv_dir"
+    assert_match "venv_dir", shell_output("venv_dirbinpython -c 'import sys; print(sys.prefix)'")
   end
 end

@@ -2,11 +2,11 @@ class Remarshal < Formula
   include Language::Python::Virtualenv
 
   desc "Convert between TOML, YAML and JSON"
-  homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/55/39/d638b7d8012468fe13c072bfb283cd917b12dbcb8e7a10b414d5109b0852/remarshal-0.17.1.tar.gz"
+  homepage "https:github.comdbohdanremarshal"
+  url "https:files.pythonhosted.orgpackages5539d638b7d8012468fe13c072bfb283cd917b12dbcb8e7a10b414d5109b0852remarshal-0.17.1.tar.gz"
   sha256 "826a41d3e3ed9d45422811488d7b28cc146a8d5b2583b18db36302f87091a86d"
   license "MIT"
-  head "https://github.com/dbohdan/remarshal.git", branch: "master"
+  head "https:github.comdbohdanremarshal.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -28,27 +28,27 @@ class Remarshal < Formula
   conflicts_with "msgpack-tools", because: "both install 'json2msgpack' binary"
 
   resource "cbor2" do
-    url "https://files.pythonhosted.org/packages/55/82/20ab03a2a43338927e722e51db457d4d8b56332539612dedb56bbe44e07d/cbor2-5.5.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages558220ab03a2a43338927e722e51db457d4d8b56332539612dedb56bbe44e07dcbor2-5.5.0.tar.gz"
     sha256 "380a427faed0202236dccca6b1dc0491f35c0598bdb6cac983616f6106127bd7"
   end
 
   resource "iniconfig" do
-    url "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesd74bcbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913iniconfig-2.0.0.tar.gz"
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/e5/d0/18209bb95db8ee693a9a04fe056ab0663c6d6b1baf67dd50819dd9cd4bd7/pytest-7.4.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagese5d018209bb95db8ee693a9a04fe056ab0663c6d6b1baf67dd50819dd9cd4bd7pytest-7.4.2.tar.gz"
     sha256 "a766259cfab564a2ad52cb1aae1b881a75c3eb7e34ca3779697c23ed47c47069"
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/0d/07/d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1b/tomlkit-0.12.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages0d07d34a911a98e64b07f862da4b10028de0c1ac2222ab848eaf5dd1877c4b1btomlkit-0.12.1.tar.gz"
     sha256 "38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86"
   end
 
   resource "u-msgpack-python" do
-    url "https://files.pythonhosted.org/packages/36/9d/a40411a475e7d4838994b7f6bcc6bfca9acc5b119ce3a7503608c4428b49/u-msgpack-python-2.8.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages369da40411a475e7d4838994b7f6bcc6bfca9acc5b119ce3a7503608c4428b49u-msgpack-python-2.8.0.tar.gz"
     sha256 "b801a83d6ed75e6df41e44518b4f2a9c221dc2da4bcd5380e3a0feda520bc61a"
   end
 
@@ -68,15 +68,15 @@ class Remarshal < Formula
       qux = 1
 
     EOS
-    assert_equal yaml, pipe_output("#{bin}/remarshal -if=json -of=yaml", json)
-    assert_equal yaml, pipe_output("#{bin}/json2yaml", json)
-    assert_equal toml, pipe_output("#{bin}/remarshal -if=yaml -of=toml", yaml)
-    assert_equal toml, pipe_output("#{bin}/yaml2toml", yaml)
-    assert_equal json, pipe_output("#{bin}/remarshal -if=toml -of=json", toml).chomp
-    assert_equal json, pipe_output("#{bin}/toml2json", toml).chomp
-    assert_equal pipe_output("#{bin}/remarshal -if=yaml -of=msgpack", yaml),
-      pipe_output("#{bin}/remarshal -if=json -of=msgpack", json)
+    assert_equal yaml, pipe_output("#{bin}remarshal -if=json -of=yaml", json)
+    assert_equal yaml, pipe_output("#{bin}json2yaml", json)
+    assert_equal toml, pipe_output("#{bin}remarshal -if=yaml -of=toml", yaml)
+    assert_equal toml, pipe_output("#{bin}yaml2toml", yaml)
+    assert_equal json, pipe_output("#{bin}remarshal -if=toml -of=json", toml).chomp
+    assert_equal json, pipe_output("#{bin}toml2json", toml).chomp
+    assert_equal pipe_output("#{bin}remarshal -if=yaml -of=msgpack", yaml),
+      pipe_output("#{bin}remarshal -if=json -of=msgpack", json)
 
-    assert_match version.to_s, shell_output("#{bin}/remarshal --version")
+    assert_match version.to_s, shell_output("#{bin}remarshal --version")
   end
 end

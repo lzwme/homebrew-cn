@@ -2,10 +2,10 @@ cask "font-bigelow-rules" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bigelowrules/BigelowRules-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbigelowrulesBigelowRules-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bigelow Rules"
-  homepage "https://fonts.google.com/specimen/Bigelow+Rules"
+  homepage "https:fonts.google.comspecimenBigelow+Rules"
 
   font "BigelowRules-Regular.ttf"
 

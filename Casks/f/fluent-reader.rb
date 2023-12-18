@@ -2,22 +2,22 @@ cask "fluent-reader" do
   version "1.1.4"
   sha256 "cdcac2ad7199b214be1c4fe0f0f0c936c86ef87c2e173fb87e9395652399cad6"
 
-  url "https://ghproxy.com/https://github.com/yang991178/fluent-reader/releases/download/v#{version}/Fluent.Reader.#{version}.dmg",
-      verified: "github.com/yang991178/fluent-reader/"
+  url "https:github.comyang991178fluent-readerreleasesdownloadv#{version}Fluent.Reader.#{version}.dmg",
+      verified: "github.comyang991178fluent-reader"
   name "Fluent Reader"
-  desc "RSS/Atom news aggregator"
-  homepage "https://hyliu.me/fluent-reader/"
+  desc "RSSAtom news aggregator"
+  homepage "https:hyliu.mefluent-reader"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   app "Fluent Reader.app"
 
   zap trash: [
-    "~/Library/Application Support/fluent-reader",
-    "~/Library/Preferences/me.hyliu.fluentreader.plist",
-    "~/Library/Saved Application State/me.hyliu.fluentreader.savedState",
+    "~LibraryApplication Supportfluent-reader",
+    "~LibraryPreferencesme.hyliu.fluentreader.plist",
+    "~LibrarySaved Application Stateme.hyliu.fluentreader.savedState",
   ]
 end

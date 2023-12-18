@@ -1,14 +1,14 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
-  homepage "https://rdkit.org/"
-  url "https://ghproxy.com/https://github.com/rdkit/rdkit/archive/refs/tags/Release_2023_09_2.tar.gz"
+  homepage "https:rdkit.org"
+  url "https:github.comrdkitrdkitarchiverefstagsRelease_2023_09_2.tar.gz"
   sha256 "d6ed9e0cdf231550fa850070be7ea53154d46ec6cf32a9b5fd5fec2d34a60c6b"
   license "BSD-3-Clause"
-  head "https://github.com/rdkit/rdkit.git", branch: "master"
+  head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^Release[._-](\d+(?:[._]\d+)+)$/i)
+    regex(^Release[._-](\d+(?:[._]\d+)+)$i)
     strategy :git do |tags|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }.compact
     end
@@ -37,12 +37,12 @@ class Rdkit < Formula
 
   def python
     deps.map(&:to_formula)
-        .find { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .find { |f| f.name.match?(^python@\d\.\d+$) }
   end
 
   # Get Python location
   def python_executable
-    python.opt_libexec/"bin/python"
+    python.opt_libexec"binpython"
   end
 
   def postgresql
@@ -56,15 +56,15 @@ class Rdkit < Formula
 
     py3ver = Language::Python.major_minor_version python_executable
     py3prefix = if OS.mac?
-      python.opt_frameworks/"Python.framework/Versions"/py3ver
+      python.opt_frameworks"Python.frameworkVersions"py3ver
     else
       python.opt_prefix
     end
-    py3include = py3prefix/"include/python#{py3ver}"
+    py3include = py3prefix"includepython#{py3ver}"
     site_packages = Language::Python.site_packages(python_executable)
-    numpy_include = Formula["numpy"].opt_prefix/site_packages/"numpy/core/include"
+    numpy_include = Formula["numpy"].opt_prefixsite_packages"numpycoreinclude"
 
-    pg_config = postgresql.opt_bin/"pg_config"
+    pg_config = postgresql.opt_bin"pg_config"
     postgresql_lib = Utils.safe_popen_read(pg_config, "--pkglibdir").chomp
     postgresql_include = Utils.safe_popen_read(pg_config, "--includedir-server").chomp
 
@@ -96,20 +96,20 @@ class Rdkit < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (prefix/site_packages/"homebrew-rdkit.pth").write libexec/site_packages
+    (prefixsite_packages"homebrew-rdkit.pth").write libexecsite_packages
   end
 
   def caveats
     <<~EOS
       You may need to add RDBASE to your environment variables.
-      For Bash, put something like this in your $HOME/.bashrc:
-        export RDBASE=#{opt_share}/RDKit
+      For Bash, put something like this in your $HOME.bashrc:
+        export RDBASE=#{opt_share}RDKit
     EOS
   end
 
   test do
     system python_executable, "-c", "import rdkit"
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       from rdkit import Chem ; print(Chem.MolToSmiles(Chem.MolFromSmiles('C1=CC=CN=C1')))
     EOS
     assert_match "c1ccncc1", shell_output("#{python_executable} test.py 2>&1")

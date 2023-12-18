@@ -1,16 +1,16 @@
 class Httrack < Formula
-  desc "Website copier/offline browser"
-  homepage "https://www.httrack.com/"
+  desc "Website copieroffline browser"
+  homepage "https:www.httrack.com"
   # Always use mirror.httrack.com when you link to a new version of HTTrack, as
   # link to download.httrack.com will break on next HTTrack update.
-  url "https://mirror.httrack.com/historical/httrack-3.49.2.tar.gz"
+  url "https:mirror.httrack.comhistoricalhttrack-3.49.2.tar.gz"
   sha256 "3477a0e5568e241c63c9899accbfcdb6aadef2812fcce0173688567b4c7d4025"
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
   revision 1
 
   livecheck do
-    url "https://mirror.httrack.com/historical/"
-    regex(/href=.*?httrack[._-]v?(\d+(?:\.\d+)+)\./i)
+    url "https:mirror.httrack.comhistorical"
+    regex(href=.*?httrack[._-]v?(\d+(?:\.\d+)+)\.i)
   end
 
   bottle do
@@ -33,21 +33,21 @@ class Httrack < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     ENV.deparallelize
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
     # Don't need Gnome integration
-    rm_rf Dir["#{share}/{applications,pixmaps}"]
+    rm_rf Dir["#{share}{applications,pixmaps}"]
   end
 
   test do
-    download = "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/homebrew/65c59dedea31/.yardopts"
-    system bin/"httrack", download, "-O", testpath
-    assert_predicate testpath/"raw.githubusercontent.com", :exist?
+    download = "https:raw.githubusercontent.comHomebrewhomebrew65c59dedea31.yardopts"
+    system bin"httrack", download, "-O", testpath
+    assert_predicate testpath"raw.githubusercontent.com", :exist?
   end
 end

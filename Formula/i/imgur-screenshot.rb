@@ -1,10 +1,10 @@
 class ImgurScreenshot < Formula
   desc "Take screenshot selection, upload to imgur. + more cool things"
-  homepage "https://github.com/jomo/imgur-screenshot"
-  url "https://ghproxy.com/https://github.com/jomo/imgur-screenshot/archive/refs/tags/v2.0.0.tar.gz"
+  homepage "https:github.comjomoimgur-screenshot"
+  url "https:github.comjomoimgur-screenshotarchiverefstagsv2.0.0.tar.gz"
   sha256 "1581b3d71e9d6c022362c461aa78ea123b60b519996ed068e25a4ccf5a3409f5"
   license "MIT"
-  head "https://github.com/jomo/imgur-screenshot.git", branch: "master"
+  head "https:github.comjomoimgur-screenshot.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "938fd215acee5d33c41263cd86d05eec350574c671df2eb16adf724f522e30c4"
@@ -29,7 +29,7 @@ class ImgurScreenshot < Formula
       --open false
       --auto-delete 1
     ]
-    system bin/"imgur-screenshot", *args, test_fixtures("test.jpg")
-    system bin/"imgur-screenshot.sh", *args, test_fixtures("test.png")
+    system bin"imgur-screenshot", *args, test_fixtures("test.jpg")
+    system bin"imgur-screenshot.sh", *args, test_fixtures("test.png")
   end
 end

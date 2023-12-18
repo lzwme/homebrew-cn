@@ -2,10 +2,10 @@ cask "font-noto-sans-mende-kikakui" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notosansmendekikakui/NotoSansMendeKikakui-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotosansmendekikakuiNotoSansMendeKikakui-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Sans Mende Kikakui"
-  homepage "https://fonts.google.com/specimen/Noto+Sans+Mende+Kikakui"
+  homepage "https:fonts.google.comspecimenNoto+Sans+Mende+Kikakui"
 
   font "NotoSansMendeKikakui-Regular.ttf"
 

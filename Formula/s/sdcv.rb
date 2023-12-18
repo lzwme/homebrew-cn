@@ -1,11 +1,11 @@
 class Sdcv < Formula
   desc "StarDict Console Version"
-  homepage "https://dushistov.github.io/sdcv/"
-  url "https://ghproxy.com/https://github.com/Dushistov/sdcv/archive/refs/tags/v0.5.5.tar.gz"
+  homepage "https:dushistov.github.iosdcv"
+  url "https:github.comDushistovsdcvarchiverefstagsv0.5.5.tar.gz"
   sha256 "4d2519e8f8479b9301dc91e9cda3e1eefef19970ece0e8c05f0c7b7ade5dc94b"
   license "GPL-2.0-or-later"
   version_scheme 1
-  head "https://github.com/Dushistov/sdcv.git", branch: "master"
+  head "https:github.comDushistovsdcv.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "7c16b9b5e5b3ae014c182f84df89c800bd60cf9da4a0b1c0fda724dfb42d991c"
@@ -34,6 +34,6 @@ class Sdcv < Formula
   end
 
   test do
-    system bin/"sdcv", "-h"
+    system bin"sdcv", "-h"
   end
 end

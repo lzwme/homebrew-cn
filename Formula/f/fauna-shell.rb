@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class FaunaShell < Formula
   desc "Interactive shell for FaunaDB"
-  homepage "https://fauna.com/"
-  url "https://registry.npmjs.org/fauna-shell/-/fauna-shell-1.2.0.tgz"
+  homepage "https:fauna.com"
+  url "https:registry.npmjs.orgfauna-shell-fauna-shell-1.2.0.tgz"
   sha256 "622bb5cfa89221eab05c5bbcf23c10fc7110c9acafa13e454aa059560aa1e03e"
   license "MPL-2.0"
 
@@ -21,26 +21,26 @@ class FaunaShell < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    output = shell_output("#{bin}/fauna endpoint list 2>&1")
+    output = shell_output("#{bin}fauna endpoint list 2>&1")
     assert_match "Available endpoints:\n", output
 
     # FIXME: This test seems to stall indefinitely on Linux.
-    # https://github.com/jdxcode/password-prompt/issues/12
+    # https:github.comjdxcodepassword-promptissues12
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    output = shell_output("#{bin}/fauna endpoint add https://db.fauna.com:443 " \
-                          "--non-interactive --url http://localhost:8443 " \
+    output = shell_output("#{bin}fauna endpoint add https:db.fauna.com:443 " \
+                          "--non-interactive --url http:localhost:8443 " \
                           "--secret your_fauna_secret --set-default")
-    assert_match "Saved endpoint https://db.fauna.com:443", output
+    assert_match "Saved endpoint https:db.fauna.com:443", output
 
     expected = <<~EOS
       Available endpoints:
-      * https://db.fauna.com:443
+      * https:db.fauna.com:443
     EOS
-    assert_equal expected, shell_output("#{bin}/fauna endpoint list")
+    assert_equal expected, shell_output("#{bin}fauna endpoint list")
   end
 end

@@ -1,13 +1,13 @@
 class Libarchive < Formula
   desc "Multi-format archive and compression library"
-  homepage "https://www.libarchive.org"
-  url "https://www.libarchive.org/downloads/libarchive-3.7.2.tar.xz"
+  homepage "https:www.libarchive.org"
+  url "https:www.libarchive.orgdownloadslibarchive-3.7.2.tar.xz"
   sha256 "04357661e6717b6941682cde02ad741ae4819c67a260593dfb2431861b251acb"
   license "BSD-2-Clause"
 
   livecheck do
     url :homepage
-    regex(/href=.*?libarchive[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?libarchive[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Libarchive < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
            "--without-lzo2",    # Use lzop binary instead of lzo2 due to GPL
            "--without-nettle",  # xar hashing option but GPLv3
            "--without-xml2",    # xar hashing option but tricky dependencies
@@ -43,24 +43,24 @@ class Libarchive < Formula
 
     system "make", "install"
 
-    # fixes https://github.com/libarchive/libarchive/issues/1819
+    # fixes https:github.comlibarchivelibarchiveissues1819
     if OS.mac?
-      inreplace lib/"pkgconfig/libarchive.pc", "Libs.private: ", "Libs.private: -liconv "
-      inreplace lib/"pkgconfig/libarchive.pc", "Requires.private: iconv", ""
+      inreplace lib"pkgconfiglibarchive.pc", "Libs.private: ", "Libs.private: -liconv "
+      inreplace lib"pkgconfiglibarchive.pc", "Requires.private: iconv", ""
     end
 
     return unless OS.mac?
 
     # Just as apple does it.
-    ln_s bin/"bsdtar", bin/"tar"
-    ln_s bin/"bsdcpio", bin/"cpio"
-    ln_s man1/"bsdtar.1", man1/"tar.1"
-    ln_s man1/"bsdcpio.1", man1/"cpio.1"
+    ln_s bin"bsdtar", bin"tar"
+    ln_s bin"bsdcpio", bin"cpio"
+    ln_s man1"bsdtar.1", man1"tar.1"
+    ln_s man1"bsdcpio.1", man1"cpio.1"
   end
 
   test do
-    (testpath/"test").write("test")
-    system bin/"bsdtar", "-czvf", "test.tar.gz", "test"
-    assert_match "test", shell_output("#{bin}/bsdtar -xOzf test.tar.gz")
+    (testpath"test").write("test")
+    system bin"bsdtar", "-czvf", "test.tar.gz", "test"
+    assert_match "test", shell_output("#{bin}bsdtar -xOzf test.tar.gz")
   end
 end

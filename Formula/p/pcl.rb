@@ -1,11 +1,11 @@
 class Pcl < Formula
-  desc "Library for 2D/3D image and point cloud processing"
-  homepage "https://pointclouds.org/"
-  url "https://ghproxy.com/https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.13.1.tar.gz"
+  desc "Library for 2D3D image and point cloud processing"
+  homepage "https:pointclouds.org"
+  url "https:github.comPointCloudLibrarypclarchiverefstagspcl-1.13.1.tar.gz"
   sha256 "8ab98a9db371d822de0859084a375a74bdc7f31c96d674147710cf4101b79621"
   license "BSD-3-Clause"
   revision 3
-  head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
+  head "https:github.comPointCloudLibrarypcl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "edbace24153cdcd9382c0fd1fa856e1d21bdc5aa99d7b5a66a614b9968f2f010"
@@ -35,7 +35,7 @@ class Pcl < Formula
   end
 
   # Fix build with Qt 6
-  # https://github.com/PointCloudLibrary/pcl/issues/5776
+  # https:github.comPointCloudLibrarypclissues5776
   patch :DATA
 
   def install
@@ -69,14 +69,14 @@ class Pcl < Formula
     mkdir "build" do
       system "cmake", "..", *args
       system "make", "install"
-      prefix.install Dir["#{bin}/*.app"]
+      prefix.install Dir["#{bin}*.app"]
     end
   end
 
   test do
-    assert_match "tiff files", shell_output("#{bin}/pcl_tiff2pcd -h", 255)
-    # inspired by https://pointclouds.org/documentation/tutorials/writing_pcd.html
-    (testpath/"CMakeLists.txt").write <<~EOS
+    assert_match "tiff files", shell_output("#{bin}pcl_tiff2pcd -h", 255)
+    # inspired by https:pointclouds.orgdocumentationtutorialswriting_pcd.html
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
       project(pcd_write)
       find_package(PCL 1.2 REQUIRED)
@@ -86,16 +86,16 @@ class Pcl < Formula
       add_executable (pcd_write pcd_write.cpp)
       target_link_libraries (pcd_write ${PCL_LIBRARIES})
     EOS
-    (testpath/"pcd_write.cpp").write <<~EOS
+    (testpath"pcd_write.cpp").write <<~EOS
       #include <iostream>
-      #include <pcl/io/pcd_io.h>
-      #include <pcl/point_types.h>
+      #include <pcliopcd_io.h>
+      #include <pclpoint_types.h>
 
       int main (int argc, char** argv)
       {
         pcl::PointCloud<pcl::PointXYZ> cloud;
 
-        // Fill in the cloud data
+         Fill in the cloud data
         cloud.width    = 2;
         cloud.height   = 1;
         cloud.is_dense = false;
@@ -114,16 +114,16 @@ class Pcl < Formula
     EOS
     mkdir "build" do
       # the following line is needed to workaround a bug in test-bot
-      # (Homebrew/homebrew-test-bot#544) when bumping the boost
+      # (Homebrewhomebrew-test-bot#544) when bumping the boost
       # revision without bumping this formula's revision as well
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["eigen"].opt_share/"pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", Formula["eigen"].opt_share"pkgconfig"
       ENV.delete "CPATH" # `error: no member named 'signbit' in the global namespace`
-      args = std_cmake_args + ["-DQt5_DIR=#{Formula["qt@5"].opt_lib}/cmake/Qt5"]
+      args = std_cmake_args + ["-DQt5_DIR=#{Formula["qt@5"].opt_lib}cmakeQt5"]
       args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?
       system "cmake", "..", *args
       system "make"
-      system "./pcd_write"
-      assert_predicate (testpath/"build/test_pcd.pcd"), :exist?
+      system ".pcd_write"
+      assert_predicate (testpath"buildtest_pcd.pcd"), :exist?
       output = File.read("test_pcd.pcd")
       assert_match "POINTS 2", output
       assert_match "1 2 3", output
@@ -132,9 +132,9 @@ class Pcl < Formula
   end
 end
 __END__
-diff -pur a/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h b/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h
---- a/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h	2023-05-10 08:44:47
-+++ b/apps/cloud_composer/include/pcl/apps/cloud_composer/signal_multiplexer.h	2023-07-31 18:04:25
+diff -pur aappscloud_composerincludepclappscloud_composersignal_multiplexer.h bappscloud_composerincludepclappscloud_composersignal_multiplexer.h
+--- aappscloud_composerincludepclappscloud_composersignal_multiplexer.h	2023-05-10 08:44:47
++++ bappscloud_composerincludepclappscloud_composersignal_multiplexer.h	2023-07-31 18:04:25
 @@ -42,6 +42,8 @@
  
  #pragma once

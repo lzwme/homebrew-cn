@@ -1,7 +1,7 @@
 class CmarkGfm < Formula
   desc "C implementation of GitHub Flavored Markdown"
-  homepage "https://github.com/github/cmark-gfm"
-  url "https://ghproxy.com/https://github.com/github/cmark-gfm/archive/refs/tags/0.29.0.gfm.13.tar.gz"
+  homepage "https:github.comgithubcmark-gfm"
+  url "https:github.comgithubcmark-gfmarchiverefstags0.29.0.gfm.13.tar.gz"
   version "0.29.0.gfm.13"
   sha256 "5abc61798ebd9de5660bc076443c07abad2b8d15dbc11094a3a79644b8ad243a"
   license "BSD-2-Clause"
@@ -32,7 +32,7 @@ class CmarkGfm < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/cmark-gfm --extension autolink", "https://brew.sh")
-    assert_equal '<p><a href="https://brew.sh">https://brew.sh</a></p>', output.chomp
+    output = pipe_output("#{bin}cmark-gfm --extension autolink", "https:brew.sh")
+    assert_equal '<p><a href="https:brew.sh">https:brew.sh<a><p>', output.chomp
   end
 end

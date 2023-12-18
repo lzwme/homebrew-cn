@@ -1,10 +1,10 @@
 class Luau < Formula
   desc "Fast, safe, gradually typed embeddable scripting language derived from Lua"
-  homepage "https://luau-lang.org"
-  url "https://ghproxy.com/https://github.com/luau-lang/luau/archive/refs/tags/0.607.tar.gz"
+  homepage "https:luau-lang.org"
+  url "https:github.comluau-langluauarchiverefstags0.607.tar.gz"
   sha256 "519409d7dbb43da13390131a90c831cb0f2ab9c25e337acf15508313a339bf36"
   license "MIT"
-  head "https://github.com/luau-lang/luau.git", branch: "master"
+  head "https:github.comluau-langluau.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51eda54562f57b4afe503feb38c67067c09bae6e2a21c767fb15813ba5ff1232"
@@ -24,16 +24,16 @@ class Luau < Formula
     system "cmake", "-S", ".", "-B", "build", "-DLUAU_BUILD_TESTS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     bin.install %w[
-      build/luau
-      build/luau-analyze
-      build/luau-ast
-      build/luau-compile
-      build/luau-reduce
+      buildluau
+      buildluau-analyze
+      buildluau-ast
+      buildluau-compile
+      buildluau-reduce
     ]
   end
 
   test do
-    (testpath/"test.lua").write "print ('Homebrew is awesome!')\n"
-    assert_match "Homebrew is awesome!", shell_output("#{bin}/luau test.lua")
+    (testpath"test.lua").write "print ('Homebrew is awesome!')\n"
+    assert_match "Homebrew is awesome!", shell_output("#{bin}luau test.lua")
   end
 end

@@ -1,10 +1,10 @@
 class Elvish < Formula
   desc "Friendly and expressive shell"
-  homepage "https://github.com/elves/elvish"
-  url "https://ghproxy.com/https://github.com/elves/elvish/archive/refs/tags/v0.19.2.tar.gz"
+  homepage "https:github.comelveselvish"
+  url "https:github.comelveselvisharchiverefstagsv0.19.2.tar.gz"
   sha256 "ef8032507c74c84369d49b098afcf1da65701aa071be9ee762f8bc456576ac94"
   license "BSD-2-Clause"
-  head "https://github.com/elves/elvish.git", branch: "master"
+  head "https:github.comelveselvish.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1049168465392067fe98ef72f9981c21dcd682f5042bea092ac3cd2e2e77d758"
@@ -22,11 +22,11 @@ class Elvish < Formula
 
   def install
     system "go", "build",
-      *std_go_args(ldflags: "-s -w -X src.elv.sh/pkg/buildinfo.VersionSuffix="), "./cmd/elvish"
+      *std_go_args(ldflags: "-s -w -X src.elv.shpkgbuildinfo.VersionSuffix="), ".cmdelvish"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/elvish -version").chomp
-    assert_match "hello", shell_output("#{bin}/elvish -c 'echo hello'")
+    assert_equal version.to_s, shell_output("#{bin}elvish -version").chomp
+    assert_match "hello", shell_output("#{bin}elvish -c 'echo hello'")
   end
 end

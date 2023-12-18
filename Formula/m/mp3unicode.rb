@@ -1,13 +1,13 @@
 class Mp3unicode < Formula
   desc "Command-line utility to convert mp3 tags between different encodings"
-  homepage "https://mp3unicode.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/alonbl/mp3unicode/releases/download/mp3unicode-1.2.1/mp3unicode-1.2.1.tar.bz2"
+  homepage "https:mp3unicode.sourceforge.net"
+  url "https:github.comalonblmp3unicodereleasesdownloadmp3unicode-1.2.1mp3unicode-1.2.1.tar.bz2"
   sha256 "375b432ce784407e74fceb055d115bf83b1bd04a83b95256171e1a36e00cfe07"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(/(?:mp3unicode[._-])?v?(\d+(?:\.\d+)+)/i)
+    regex((?:mp3unicode[._-])?v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -29,7 +29,7 @@ class Mp3unicode < Formula
   end
 
   head do
-    url "https://github.com/alonbl/mp3unicode.git", branch: "master"
+    url "https:github.comalonblmp3unicode.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,11 +42,11 @@ class Mp3unicode < Formula
     ENV.append "ICONV_LIBS", "-liconv" if OS.mac?
 
     system "autoreconf", "-fvi" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/mp3unicode", "-s", "ASCII", "-w", test_fixtures("test.mp3")
+    system "#{bin}mp3unicode", "-s", "ASCII", "-w", test_fixtures("test.mp3")
   end
 end

@@ -1,7 +1,7 @@
 class OpenZwave < Formula
   desc "Library that interfaces with selected Z-Wave PC controllers"
-  homepage "https://github.com/OpenZWave/open-zwave"
-  url "http://old.openzwave.com/downloads/openzwave-1.6.1914.tar.gz"
+  homepage "https:github.comOpenZWaveopen-zwave"
+  url "http:old.openzwave.comdownloadsopenzwave-1.6.1914.tar.gz"
   sha256 "c4e4eb643709eb73c30cc25cffc24e9e7b6d7c49bd97ee8986c309d168d9ad2f"
   license "LGPL-3.0-or-later"
 
@@ -27,26 +27,26 @@ class OpenZwave < Formula
     ENV["PREFIX"] = prefix
 
     # The following is needed to bypass an issue that will not be fixed upstream
-    ENV["pkgconfigdir"] = "#{lib}/pkgconfig"
+    ENV["pkgconfigdir"] = "#{lib}pkgconfig"
 
     # Make sure library is installed in lib and not lib64 on Linux.
-    inreplace "cpp/build/support.mk", "instlibdir.x86_64 = /lib64/", "instlibdir.x86_64 = /lib/"
+    inreplace "cppbuildsupport.mk", "instlibdir.x86_64 = lib64", "instlibdir.x86_64 = lib"
 
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <functional>
-      #include <openzwave/Manager.h>
+      #include <openzwaveManager.h>
       int main()
       {
         return OpenZWave::Manager::getVersionAsString().empty();
       }
     EOS
-    system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}/openzwave",
+    system ENV.cxx, "-std=c++11", "test.cpp", "-I#{include}openzwave",
                     "-L#{lib}", "-lopenzwave", "-lpthread", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

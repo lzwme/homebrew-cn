@@ -1,24 +1,24 @@
 class GitNow < Formula
   desc "Light, temporary commits for git"
-  homepage "https://github.com/iwata/git-now"
+  homepage "https:github.comiwatagit-now"
   license "GPL-2.0"
-  head "https://github.com/iwata/git-now.git", branch: "master"
+  head "https:github.comiwatagit-now.git", branch: "master"
 
   stable do
     # We switched from git url to tarballs & resource as submodule fetch fails without
-    # https://github.com/iwata/git-now/commit/9beab94649afd0822c2c5bf38db9963c7a997ba7
+    # https:github.comiwatagit-nowcommit9beab94649afd0822c2c5bf38db9963c7a997ba7
     # but we cannot apply a patch before `git submodule update --init --recursive`.
-    url "https://ghproxy.com/https://github.com/iwata/git-now/archive/refs/tags/v0.1.1.0.tar.gz"
+    url "https:github.comiwatagit-nowarchiverefstagsv0.1.1.0.tar.gz"
     sha256 "b6f6b9221dcab10de44514575f54e80daf825dc9f5a72262f5708a7432aa087f"
 
     resource "shFlags" do
-      url "https://ghproxy.com/https://github.com/nvie/shFlags/archive/refs/tags/1.0.3.tar.gz"
+      url "https:github.comnvieshFlagsarchiverefstags1.0.3.tar.gz"
       sha256 "5e8dfddc7eb5f51f56b74b9d928cb64bd969e0d511c3efab5c0a6c2433c6fedd"
     end
 
-    # Fix error on Linux due to /bin/sh using dash
+    # Fix error on Linux due to binsh using dash
     patch do
-      url "https://github.com/iwata/git-now/commit/be74736cb95e8213cd06cc6fe85f467e26b9a3c2.patch?full_index=1"
+      url "https:github.comiwatagit-nowcommitbe74736cb95e8213cd06cc6fe85f467e26b9a3c2.patch?full_index=1"
       sha256 "6f13e7baeb0160e937221e51cd5736fabc57e3b8ba9309b88a8b17b5d14bb767"
     end
   end
@@ -31,14 +31,14 @@ class GitNow < Formula
   depends_on "gnu-getopt"
 
   def install
-    (buildpath/"shFlags").install resource("shFlags")
+    (buildpath"shFlags").install resource("shFlags")
     system "make", "prefix=#{libexec}", "install"
-    (bin/"git-now").write_env_script libexec/"bin/git-now", PATH: "#{Formula["gnu-getopt"].opt_bin}:$PATH"
-    zsh_completion.install "etc/_git-now"
+    (bin"git-now").write_env_script libexec"bingit-now", PATH: "#{Formula["gnu-getopt"].opt_bin}:$PATH"
+    zsh_completion.install "etc_git-now"
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
+    (testpath".gitconfig").write <<~EOS
       [user]
         name = Real Person
         email = notacat@hotmail.cat
@@ -46,7 +46,7 @@ class GitNow < Formula
     touch "file1"
     system "git", "init"
     system "git", "add", "file1"
-    system bin/"git-now"
+    system bin"git-now"
     assert_match "from now", shell_output("git log -1")
   end
 end

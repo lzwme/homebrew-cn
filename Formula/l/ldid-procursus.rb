@@ -1,13 +1,13 @@
 class LdidProcursus < Formula
   desc "Put real or fake signatures in a Mach-O binary"
-  homepage "https://github.com/ProcursusTeam/ldid"
-  url "https://github.com/ProcursusTeam/ldid.git",
+  homepage "https:github.comProcursusTeamldid"
+  url "https:github.comProcursusTeamldid.git",
      tag:      "v2.1.5-procursus7",
      revision: "aaf8f23d7975ecdb8e77e3a8f22253e0a2352cef"
   version "2.1.5-procursus7"
   license "AGPL-3.0-or-later"
   revision 1
-  head "https://github.com/ProcursusTeam/ldid.git", branch: "master"
+  head "https:github.comProcursusTeamldid.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9a0b13b69fa65903e4553bc77e1bbafd986f3f68a7896a3e6c2884a72a0f324e"
@@ -33,22 +33,22 @@ class LdidProcursus < Formula
   end
 
   test do
-    (testpath/"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <!DOCTYPE plist PUBLIC "-AppleDTD PLIST 1.0EN" "http:www.apple.comDTDsPropertyList-1.0.dtd">
       <plist version="1.0">
       <dict>
-      	<key>platform-application</key>
-      	<true/>
-      	<key>com.apple-private.security.no-container</key>
-      	<true/>
-      	<key>com.apple-private.skip-library-validation</key>
-      	<true/>
-      </dict>
-      </plist>
+      	<key>platform-application<key>
+      	<true>
+      	<key>com.apple-private.security.no-container<key>
+      	<true>
+      	<key>com.apple-private.skip-library-validation<key>
+      	<true>
+      <dict>
+      <plist>
     EOS
-    cp test_fixtures("mach/a.out"), testpath
-    system bin/"ldid", "-Stest.xml", "a.out"
-    assert_match (testpath/"test.xml").read, shell_output("#{bin}/ldid -arch x86_64 -e a.out")
+    cp test_fixtures("macha.out"), testpath
+    system bin"ldid", "-Stest.xml", "a.out"
+    assert_match (testpath"test.xml").read, shell_output("#{bin}ldid -arch x86_64 -e a.out")
   end
 end

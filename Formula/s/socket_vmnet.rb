@@ -1,10 +1,10 @@
 class SocketVmnet < Formula
   desc "Daemon to provide vmnet.framework support for rootless QEMU"
-  homepage "https://github.com/lima-vm/socket_vmnet"
-  url "https://ghproxy.com/https://github.com/lima-vm/socket_vmnet/archive/refs/tags/v1.1.3.tar.gz"
+  homepage "https:github.comlima-vmsocket_vmnet"
+  url "https:github.comlima-vmsocket_vmnetarchiverefstagsv1.1.3.tar.gz"
   sha256 "7c7495212fd25883ea877d54cccd33875aa8a908a91bd2a08bfe1177219a086f"
   license "Apache-2.0"
-  head "https://github.com/lima-vm/socket_vmnet.git", branch: "master"
+  head "https:github.comlima-vmsocket_vmnet.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f901ed4594c8248746b09230314406abe0a1c72dcd3a605e373021c04a5fcf98"
@@ -26,27 +26,27 @@ class SocketVmnet < Formula
   end
 
   def post_install
-    (var/"run").mkpath
-    (var/"log/socket_vmnet").mkpath
+    (var"run").mkpath
+    (var"logsocket_vmnet").mkpath
   end
 
   def caveats
     <<~EOS
       socket_vmnet requires root privileges so you will need to run
-        `sudo #{opt_prefix}/socket_vmnet` or `sudo brew services start socket_vmnet`.
+        `sudo #{opt_prefix}socket_vmnet` or `sudo brew services start socket_vmnet`.
       You should be certain that you trust any software you grant root privileges.
     EOS
   end
 
   service do
-    run [opt_bin/"socket_vmnet", "--vmnet-gateway=192.168.105.1", var/"run/socket_vmnet"]
+    run [opt_bin"socket_vmnet", "--vmnet-gateway=192.168.105.1", var"runsocket_vmnet"]
     run_type :immediate
-    error_log_path var/"log/socket_vmnet/stderr"
-    log_path var/"log/socket_vmnet/stdout"
+    error_log_path var"logsocket_vmnetstderr"
+    log_path var"logsocket_vmnetstdout"
     require_root true
   end
 
   test do
-    assert_match "bind: Address already in use", shell_output("#{opt_bin}/socket_vmnet /dev/null 2>&1", 1)
+    assert_match "bind: Address already in use", shell_output("#{opt_bin}socket_vmnet devnull 2>&1", 1)
   end
 end

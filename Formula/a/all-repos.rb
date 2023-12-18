@@ -2,8 +2,8 @@ class AllRepos < Formula
   include Language::Python::Virtualenv
 
   desc "Clone all your repositories and apply sweeping changes"
-  homepage "https://github.com/asottile/all-repos"
-  url "https://files.pythonhosted.org/packages/9a/ea/cdabb519e8afc76df7d70b900403d4f118404c90665d4468c88101265c47/all_repos-1.26.0.tar.gz"
+  homepage "https:github.comasottileall-repos"
+  url "https:files.pythonhosted.orgpackages9aeacdabb519e8afc76df7d70b900403d4f118404c90665d4468c88101265c47all_repos-1.26.0.tar.gz"
   sha256 "52fd543c17064af11c06cfe344bb43eda550f5a69de2be767d5c98661a0783b2"
   license "MIT"
 
@@ -22,7 +22,7 @@ class AllRepos < Formula
   depends_on "python@3.12"
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/5f/19/f3aa63b65be4cdf23ba26984aa04cb21fa04fccfef68355919edafee025c/identify-2.5.30.tar.gz"
+    url "https:files.pythonhosted.orgpackages5f19f3aa63b65be4cdf23ba26984aa04cb21fa04fccfef68355919edafee025cidentify-2.5.30.tar.gz"
     sha256 "f302a4256a15c849b91cfcdcec052a8ce914634b2f77ae87dad29cd749f2d88d"
   end
 
@@ -31,7 +31,7 @@ class AllRepos < Formula
   end
 
   test do
-    (testpath/"all-repos.json").write <<~EOS
+    (testpath"all-repos.json").write <<~EOS
       {
         "output_dir": "out",
         "source": "all_repos.source.json_file",
@@ -41,13 +41,13 @@ class AllRepos < Formula
       }
     EOS
     chmod 0600, "all-repos.json"
-    (testpath/"repos.json").write <<~EOS
-      {"discussions": "https://github.com/Homebrew/discussions"}
+    (testpath"repos.json").write <<~EOS
+      {"discussions": "https:github.comHomebrewdiscussions"}
     EOS
 
-    system bin/"all-repos-clone"
-    assert_predicate testpath/"out/discussions", :exist?
-    output = shell_output("#{bin}/all-repos-grep discussions")
-    assert_match "out/discussions:README.md", output
+    system bin"all-repos-clone"
+    assert_predicate testpath"outdiscussions", :exist?
+    output = shell_output("#{bin}all-repos-grep discussions")
+    assert_match "outdiscussions:README.md", output
   end
 end

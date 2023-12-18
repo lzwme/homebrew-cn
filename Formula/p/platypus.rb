@@ -1,10 +1,10 @@
 class Platypus < Formula
   desc "Create macOS applications from {Perl,Ruby,sh,Python} scripts"
-  homepage "https://sveinbjorn.org/platypus"
-  url "https://sveinbjorn.org/files/software/platypus/platypus5.3.src.zip"
+  homepage "https:sveinbjorn.orgplatypus"
+  url "https:sveinbjorn.orgfilessoftwareplatypusplatypus5.3.src.zip"
   sha256 "b5b707d4f664ab6f60eed545d49a7d38da7557ce8268cc4791886eee7b3ca571"
   license "BSD-3-Clause"
-  head "https://github.com/sveinbjornt/Platypus.git", branch: "master"
+  head "https:github.comsveinbjorntPlatypus.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "f88009d8eb146080f0982ca92183e1a519958a92d299f40144e4a0cf67f2a560"
@@ -21,7 +21,7 @@ class Platypus < Formula
   depends_on :macos
 
   def install
-    xcodebuild "SYMROOT=build", "DSTROOT=#{buildpath}/dst",
+    xcodebuild "SYMROOT=build", "DSTROOT=#{buildpath}dst",
                "-project", "Platypus.xcodeproj",
                "-target", "platypus",
                "-target", "ScriptExec",
@@ -29,11 +29,11 @@ class Platypus < Formula
                "clean",
                "install"
 
-    man1.install "CLT/man/platypus.1"
-    bin.install "dst/platypus_clt" => "platypus"
+    man1.install "CLTmanplatypus.1"
+    bin.install "dstplatypus_clt" => "platypus"
 
-    cd "build/UninstalledProducts/macosx/ScriptExec.app/Contents" do
-      pkgshare.install "Resources/MainMenu.nib", "MacOS/ScriptExec"
+    cd "buildUninstalledProductsmacosxScriptExec.appContents" do
+      pkgshare.install "ResourcesMainMenu.nib", "MacOSScriptExec"
     end
   end
 
@@ -42,7 +42,7 @@ class Platypus < Formula
       This formula only installs the command-line Platypus tool, not the GUI.
 
       The GUI can be downloaded from Platypus' website:
-        https://sveinbjorn.org/platypus
+        https:sveinbjorn.orgplatypus
 
       Alternatively, install with Homebrew Cask:
         brew install --cask platypus
@@ -50,6 +50,6 @@ class Platypus < Formula
   end
 
   test do
-    system "#{bin}/platypus", "-v"
+    system "#{bin}platypus", "-v"
   end
 end

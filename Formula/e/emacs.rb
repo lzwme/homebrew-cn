@@ -1,8 +1,8 @@
 class Emacs < Formula
   desc "GNU Emacs text editor"
-  homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftp.gnu.org/gnu/emacs/emacs-29.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/emacs/emacs-29.1.tar.xz"
+  homepage "https:www.gnu.orgsoftwareemacs"
+  url "https:ftp.gnu.orggnuemacsemacs-29.1.tar.xz"
+  mirror "https:ftpmirror.gnu.orgemacsemacs-29.1.tar.xz"
   sha256 "d2f881a5cc231e2f5a03e86f4584b0438f83edd7598a09d24a21bd8d003e2e01"
   license "GPL-3.0-or-later"
   revision 1
@@ -20,7 +20,7 @@ class Emacs < Formula
   end
 
   head do
-    url "https://github.com/emacs-mirror/emacs.git", branch: "master"
+    url "https:github.comemacs-mirroremacs.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "gnu-sed" => :build
@@ -41,14 +41,14 @@ class Emacs < Formula
 
   def install
     # Mojave uses the Catalina SDK which causes issues like
-    # https://github.com/Homebrew/homebrew-core/issues/46393
-    # https://github.com/Homebrew/homebrew-core/pull/70421
+    # https:github.comHomebrewhomebrew-coreissues46393
+    # https:github.comHomebrewhomebrew-corepull70421
     ENV["ac_cv_func_aligned_alloc"] = "no" if OS.mac? && MacOS.version == :mojave
 
     args = %W[
       --disable-silent-rules
-      --enable-locallisppath=#{HOMEBREW_PREFIX}/share/emacs/site-lisp
-      --infodir=#{info}/emacs
+      --enable-locallisppath=#{HOMEBREW_PREFIX}shareemacssite-lisp
+      --infodir=#{info}emacs
       --prefix=#{prefix}
       --with-gnutls
       --without-x
@@ -62,34 +62,34 @@ class Emacs < Formula
     ]
 
     if build.head?
-      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
-      system "./autogen.sh"
+      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec"gnubin"
+      system ".autogen.sh"
     end
 
-    File.write "lisp/site-load.el", <<~EOS
+    File.write "lispsite-load.el", <<~EOS
       (setq exec-path (delete nil
         (mapcar
           (lambda (elt)
-            (unless (string-match-p "Homebrew/shims" elt) elt))
+            (unless (string-match-p "Homebrewshims" elt) elt))
           exec-path)))
     EOS
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
 
     # Follow MacPorts and don't install ctags from Emacs. This allows Vim
     # and Emacs and ctags to play together without violence.
-    (bin/"ctags").unlink
-    (man1/"ctags.1.gz").unlink
+    (bin"ctags").unlink
+    (man1"ctags.1.gz").unlink
   end
 
   service do
-    run [opt_bin/"emacs", "--fg-daemon"]
+    run [opt_bin"emacs", "--fg-daemon"]
     keep_alive true
   end
 
   test do
-    assert_equal "4", shell_output("#{bin}/emacs --batch --eval=\"(print (+ 2 2))\"").strip
+    assert_equal "4", shell_output("#{bin}emacs --batch --eval=\"(print (+ 2 2))\"").strip
   end
 end

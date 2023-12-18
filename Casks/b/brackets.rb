@@ -2,21 +2,21 @@ cask "brackets" do
   version "2.2.0"
   sha256 "a8864dd5cc4591d885b0264e88ee2bc9a05962c29369b7c5c1f2f269c50fe1b5"
 
-  url "https://ghproxy.com/https://github.com/brackets-cont/brackets/releases/download/v#{version}/brackets.#{version}.dmg",
-      verified: "github.com/brackets-cont/brackets/"
+  url "https:github.combrackets-contbracketsreleasesdownloadv#{version}brackets.#{version}.dmg",
+      verified: "github.combrackets-contbrackets"
   name "Brackets"
   desc "Open-source code editor for web-development"
-  homepage "https://brackets.io/"
+  homepage "https:brackets.io"
 
   livecheck do
     url :homepage
-    regex(/brackets\.(\d+(?:\.\d+)+)\.dmg/i)
+    regex(brackets\.(\d+(?:\.\d+)+)\.dmgi)
   end
 
   app "Brackets.app"
 
   zap trash: [
-    "~/Library/Application Support/Brackets",
-    "~/Library/Preferences/io.brackets.appshell.plist",
+    "~LibraryApplication SupportBrackets",
+    "~LibraryPreferencesio.brackets.appshell.plist",
   ]
 end

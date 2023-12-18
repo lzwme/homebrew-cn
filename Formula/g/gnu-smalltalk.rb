@@ -1,12 +1,12 @@
 class GnuSmalltalk < Formula
   desc "Implementation of the Smalltalk language"
-  homepage "https://www.gnu.org/software/smalltalk/"
-  url "https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz"
-  mirror "https://ftpmirror.gnu.org/smalltalk/smalltalk-3.2.5.tar.xz"
+  homepage "https:www.gnu.orgsoftwaresmalltalk"
+  url "https:ftp.gnu.orggnusmalltalksmalltalk-3.2.5.tar.xz"
+  mirror "https:ftpmirror.gnu.orgsmalltalksmalltalk-3.2.5.tar.xz"
   sha256 "819a15f7ba8a1b55f5f60b9c9a58badd6f6153b3f987b70e7b167e7755d65acc"
   license "GPL-2.0"
   revision 10
-  head "https://github.com/gnu-smalltalk/smalltalk.git", branch: "master"
+  head "https:github.comgnu-smalltalksmalltalk.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -45,15 +45,15 @@ class GnuSmalltalk < Formula
     ]
 
     system "autoreconf", "-ivf"
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    path = testpath/"test.gst"
+    path = testpath"test.gst"
     path.write "0 to: 9 do: [ :n | n display ]\n"
 
-    assert_match "0123456789", shell_output("#{bin}/gst #{path}")
+    assert_match "0123456789", shell_output("#{bin}gst #{path}")
   end
 end

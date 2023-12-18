@@ -2,28 +2,28 @@ cask "webcamoid" do
   version "9.0.0"
   sha256 "420f695e5bafbc1b9760ee5fb9bb06707cb302ff973975374ce7d857093c85dd"
 
-  url "https://ghproxy.com/https://github.com/webcamoid/webcamoid/releases/download/#{version}/webcamoid-portable-mac-#{version}-x86_64.dmg",
-      verified: "github.com/webcamoid/webcamoid/"
+  url "https:github.comwebcamoidwebcamoidreleasesdownload#{version}webcamoid-portable-mac-#{version}-x86_64.dmg",
+      verified: "github.comwebcamoidwebcamoid"
   name "Webcamoid"
   desc "Webcam suite"
-  homepage "https://webcamoid.github.io/"
+  homepage "https:webcamoid.github.io"
 
   app "Webcamoid.app"
 
   uninstall quit:      "com.webcamoidprj.webcamoid",
             launchctl: "org.webcamoid.cmio.AkVCam.Assistant",
-            delete:    "/Library/CoreMediaIO/Plug-Ins/DAL/AkVirtualCamera.plugin"
+            delete:    "LibraryCoreMediaIOPlug-InsDALAkVirtualCamera.plugin"
 
   zap trash: [
-    "~/Library/Application Support/CrashReporter/webcamoid_*.plist",
-    "~/Library/Caches/Webcamoid",
-    "~/Library/LaunchAgents/org.webcamoid.cmio.AkVCam.Assistant.plist",
-    "~/Library/Logs/DiagnosticReports/webcamoid_*.crash",
-    "~/Library/Preferences/com.webcamoid.PluginsCache.plist",
-    "~/Library/Preferences/com.webcamoid.Webcamoid.plist",
-    "~/Library/Preferences/com.webcamoidprj.webcamoid.plist",
-    "~/Library/Preferences/org.webcamoid.cmio.AkVCam.Assistant.plist",
-    "~/Library/Saved Application State/com.webcamoidprj.webcamoid.savedState",
+    "~LibraryApplication SupportCrashReporterwebcamoid_*.plist",
+    "~LibraryCachesWebcamoid",
+    "~LibraryLaunchAgentsorg.webcamoid.cmio.AkVCam.Assistant.plist",
+    "~LibraryLogsDiagnosticReportswebcamoid_*.crash",
+    "~LibraryPreferencescom.webcamoid.PluginsCache.plist",
+    "~LibraryPreferencescom.webcamoid.Webcamoid.plist",
+    "~LibraryPreferencescom.webcamoidprj.webcamoid.plist",
+    "~LibraryPreferencesorg.webcamoid.cmio.AkVCam.Assistant.plist",
+    "~LibrarySaved Application Statecom.webcamoidprj.webcamoid.savedState",
   ]
 
   caveats do

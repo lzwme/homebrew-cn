@@ -1,11 +1,11 @@
 class Rubyfmt < Formula
   desc "Ruby autoformatter"
-  homepage "https://github.com/fables-tales/rubyfmt"
-  url "https://github.com/fables-tales/rubyfmt.git",
+  homepage "https:github.comfables-talesrubyfmt"
+  url "https:github.comfables-talesrubyfmt.git",
     tag:      "v0.10.0",
     revision: "e00d2ab89fd4b0b85a7897fac393c1ad987136de"
   license "MIT"
-  head "https://github.com/fables-tales/rubyfmt.git", branch: "trunk"
+  head "https:github.comfables-talesrubyfmt.git", branch: "trunk"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -29,7 +29,7 @@ class Rubyfmt < Formula
   depends_on "automake" => :build
   depends_on "bison" => :build
   depends_on "rust" => :build
-  # https://bugs.ruby-lang.org/issues/18616
+  # https:bugs.ruby-lang.orgissues18616
   # error: '__declspec' attributes are not enabled;
   # use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
   depends_on macos: :monterey
@@ -37,11 +37,11 @@ class Rubyfmt < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bin.install "target/release/rubyfmt-main" => "rubyfmt"
+    bin.install "targetreleaserubyfmt-main" => "rubyfmt"
   end
 
   test do
-    (testpath/"test.rb").write <<~EOS
+    (testpath"test.rb").write <<~EOS
       def foo; 42; end
     EOS
     expected = <<~EOS
@@ -49,6 +49,6 @@ class Rubyfmt < Formula
         42
       end
     EOS
-    assert_equal expected, shell_output("#{bin}/rubyfmt -- #{testpath}/test.rb")
+    assert_equal expected, shell_output("#{bin}rubyfmt -- #{testpath}test.rb")
   end
 end

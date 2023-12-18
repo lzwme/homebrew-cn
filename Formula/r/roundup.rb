@@ -1,10 +1,10 @@
 class Roundup < Formula
   desc "Unit testing tool"
-  homepage "https://bmizerany.github.io/roundup"
-  url "https://ghproxy.com/https://github.com/bmizerany/roundup/archive/refs/tags/v0.0.6.tar.gz"
+  homepage "https:bmizerany.github.ioroundup"
+  url "https:github.combmizeranyrounduparchiverefstagsv0.0.6.tar.gz"
   sha256 "20741043ed5be7cbc54b1e9a7c7de122a0dacced77052e90e4ff08e41736f01c"
   license "MIT"
-  head "https://github.com/bmizerany/roundup.git", branch: "master"
+  head "https:github.combmizeranyroundup.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4764f6f0e4d46c9937069ed6a6df52b64b6c49515b2e893145a7bd8ab1c85bcc"
@@ -24,7 +24,7 @@ class Roundup < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--bindir=#{bin}",
                           "--mandir=#{man}",
                           "--sysconfdir=#{etc}",
@@ -34,6 +34,6 @@ class Roundup < Formula
   end
 
   test do
-    system "#{bin}/roundup", "-v"
+    system "#{bin}roundup", "-v"
   end
 end

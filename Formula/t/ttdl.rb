@@ -1,7 +1,7 @@
 class Ttdl < Formula
   desc "Terminal Todo List Manager"
-  homepage "https://github.com/VladimirMarkelov/ttdl"
-  url "https://ghproxy.com/https://github.com/VladimirMarkelov/ttdl/archive/refs/tags/v4.1.0.tar.gz"
+  homepage "https:github.comVladimirMarkelovttdl"
+  url "https:github.comVladimirMarkelovttdlarchiverefstagsv4.1.0.tar.gz"
   sha256 "2372e084a3245cdc5d33ca4862668be278e0ee0b25a1481ced94df803c1db669"
   license "MIT"
 
@@ -24,8 +24,8 @@ class Ttdl < Formula
   end
 
   test do
-    assert_match "Added todo", shell_output("#{bin}/ttdl 'add readme due:tomorrow'")
-    assert_predicate testpath/"todo.txt", :exist?
-    assert_match "add readme", shell_output("#{bin}/ttdl list")
+    assert_match "Added todo", shell_output("#{bin}ttdl 'add readme due:tomorrow'")
+    assert_predicate testpath"todo.txt", :exist?
+    assert_match "add readme", shell_output("#{bin}ttdl list")
   end
 end

@@ -1,7 +1,7 @@
 class Sftpgo < Formula
-  desc "Fully featured SFTP server with optional HTTP/S, FTP/S and WebDAV support"
-  homepage "https://github.com/drakkan/sftpgo"
-  url "https://ghproxy.com/https://github.com/drakkan/sftpgo/releases/download/v2.5.5/sftpgo_v2.5.5_src_with_deps.tar.xz"
+  desc "Fully featured SFTP server with optional HTTPS, FTPS and WebDAV support"
+  homepage "https:github.comdrakkansftpgo"
+  url "https:github.comdrakkansftpgoreleasesdownloadv2.5.5sftpgo_v2.5.5_src_with_deps.tar.xz"
   sha256 "886da134f01ef68b2c22e9fc90e437eaf5b4829b5f550a0f1adaa6e9be93432e"
   license "AGPL-3.0-only"
 
@@ -18,46 +18,46 @@ class Sftpgo < Formula
   depends_on "go" => :build
 
   def install
-    git_sha = (buildpath/"VERSION.txt").read.lines.second.strip
+    git_sha = (buildpath"VERSION.txt").read.lines.second.strip
     ldflags = %W[
       -s -w
-      -X github.com/drakkan/sftpgo/v2/internal/util.additionalSharedDataSearchPath=#{opt_pkgshare}
-      -X github.com/drakkan/sftpgo/v2/internal/version.commit=#{git_sha}
-      -X github.com/drakkan/sftpgo/v2/internal/version.date=#{time.iso8601}
+      -X github.comdrakkansftpgov2internalutil.additionalSharedDataSearchPath=#{opt_pkgshare}
+      -X github.comdrakkansftpgov2internalversion.commit=#{git_sha}
+      -X github.comdrakkansftpgov2internalversion.date=#{time.iso8601}
     ].join(" ")
     system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "nopgxregisterdefaulttypes"
-    system bin/"sftpgo", "gen", "man", "-d", man1
+    system bin"sftpgo", "gen", "man", "-d", man1
 
-    generate_completions_from_executable(bin/"sftpgo", "gen", "completion")
+    generate_completions_from_executable(bin"sftpgo", "gen", "completion")
 
     inreplace "sftpgo.json" do |s|
-      s.gsub! "\"users_base_dir\": \"\"", "\"users_base_dir\": \"#{var}/sftpgo/data\""
+      s.gsub! "\"users_base_dir\": \"\"", "\"users_base_dir\": \"#{var}sftpgodata\""
     end
 
     pkgetc.install "sftpgo.json"
     pkgshare.install "static", "templates", "openapi"
-    (var/"sftpgo").mkpath
-    (var/"sftpgo/env.d").mkpath
+    (var"sftpgo").mkpath
+    (var"sftpgoenv.d").mkpath
   end
 
   def caveats
     <<~EOS
       Default data location:
 
-      #{var}/sftpgo
+      #{var}sftpgo
 
       Configuration file location:
 
-      #{pkgetc}/sftpgo.json
+      #{pkgetc}sftpgo.json
     EOS
   end
 
   service do
-    run [opt_bin/"sftpgo", "serve", "--config-file", etc/"sftpgo/sftpgo.json", "--log-file-path",
-         var/"sftpgo/log/sftpgo.log"]
+    run [opt_bin"sftpgo", "serve", "--config-file", etc"sftpgosftpgo.json", "--log-file-path",
+         var"sftpgologsftpgo.log"]
     keep_alive true
     require_root true
-    working_dir var/"sftpgo"
+    working_dir var"sftpgo"
   end
 
   test do
@@ -68,14 +68,14 @@ class Sftpgo < Formula
     ENV["SFTPGO_HTTPD__BINDINGS__0__ADDRESS"] = "127.0.0.1"
     ENV["SFTPGO_SFTPD__BINDINGS__0__PORT"] = sftp_port.to_s
     ENV["SFTPGO_SFTPD__BINDINGS__0__ADDRESS"] = "127.0.0.1"
-    ENV["SFTPGO_SFTPD__HOST_KEYS"] = "#{testpath}/id_ecdsa,#{testpath}/id_ed25519"
+    ENV["SFTPGO_SFTPD__HOST_KEYS"] = "#{testpath}id_ecdsa,#{testpath}id_ed25519"
     ENV["SFTPGO_LOG_FILE_PATH"] = ""
     pid = fork do
-      exec bin/"sftpgo", "serve", "--config-file", "#{pkgetc}/sftpgo.json"
+      exec bin"sftpgo", "serve", "--config-file", "#{pkgetc}sftpgo.json"
     end
 
     sleep 5
-    assert_match expected_output, shell_output("curl -s 127.0.0.1:#{http_port}/healthz")
+    assert_match expected_output, shell_output("curl -s 127.0.0.1:#{http_port}healthz")
     system "ssh-keyscan", "-p", sftp_port.to_s, "127.0.0.1"
   ensure
     Process.kill("TERM", pid)

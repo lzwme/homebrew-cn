@@ -2,12 +2,12 @@ cask "font-montserrat-subrayada" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/montserratsubrayada"
+      only_path: "oflmontserratsubrayada"
   name "Montserrat Subrayada"
-  homepage "https://fonts.google.com/specimen/Montserrat+Subrayada"
+  homepage "https:fonts.google.comspecimenMontserrat+Subrayada"
 
   font "MontserratSubrayada-Bold.ttf"
   font "MontserratSubrayada-Regular.ttf"

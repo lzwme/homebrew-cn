@@ -1,7 +1,7 @@
 class Singularity < Formula
   desc "Application container and unprivileged sandbox platform for Linux"
-  homepage "https://apptainer.org/"
-  url "https://ghproxy.com/https://github.com/apptainer/singularity/releases/download/v3.8.7/singularity-3.8.7.tar.gz"
+  homepage "https:apptainer.org"
+  url "https:github.comapptainersingularityreleasesdownloadv3.8.7singularity-3.8.7.tar.gz"
   sha256 "3329f2e583f84a8343cb2c0380a1d6cbceafae7d1e633b5cbcadf7143eac859b"
   license "BSD-3-Clause"
 
@@ -20,9 +20,9 @@ class Singularity < Formula
   depends_on "squashfs"
 
   def install
-    inreplace "pkg/util/singularityconf/config.go" do |s|
+    inreplace "pkgutilsingularityconfconfig.go" do |s|
       unsquashfs_dir = Formula["squashfs"].bin.to_s
-      s.sub!(/(directive:"mksquashfs path)/, "default:\"#{unsquashfs_dir}\" \\1")
+      s.sub!((directive:"mksquashfs path), "default:\"#{unsquashfs_dir}\" \\1")
     end
     args = %W[
       --prefix=#{prefix}
@@ -33,16 +33,16 @@ class Singularity < Formula
       -v
     ]
     ENV.O0
-    system "./mconfig", *args
-    cd "./builddir" do
+    system ".mconfig", *args
+    cd ".builddir" do
       system "make"
       system "make", "install"
     end
   end
 
   test do
-    assert_match(/There are [0-9]+ container file/, shell_output("#{bin}/singularity cache list"))
+    assert_match(There are [0-9]+ container file, shell_output("#{bin}singularity cache list"))
     # This does not work inside older github runners, but for a simple quick check, run:
-    # singularity exec library://alpine cat /etc/alpine-release
+    # singularity exec library:alpine cat etcalpine-release
   end
 end

@@ -1,14 +1,14 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
-  homepage "https://www.geeqie.org/"
-  url "https://ghproxy.com/https://github.com/BestImageViewer/geeqie/releases/download/v2.1/geeqie-2.1.tar.xz"
+  homepage "https:www.geeqie.org"
+  url "https:github.comBestImageViewergeeqiereleasesdownloadv2.1geeqie-2.1.tar.xz"
   sha256 "d0511b7840169d37e457880d1ab2a787c52b609a0ab8fa1a8a391e841fdd2dde"
   license "GPL-2.0-or-later"
   revision 2
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -61,6 +61,6 @@ class Geeqie < Formula
     # Disable test on Linux because geeqie cannot run without a display.
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system bin/"geeqie", "--version"
+    system bin"geeqie", "--version"
   end
 end

@@ -5,29 +5,29 @@ cask "asciidocfx" do
   sha256 arm:   "cc3912340f5da0f3b39eda6b384e4e94985fdcef9f9af9ba978f6904029ff632",
          intel: "2dcceeca0232652ef60e79ba3e9ed730e086050c8c598c810acded4c8c989956"
 
-  url "https://ghproxy.com/https://github.com/asciidocfx/AsciidocFX/releases/download/v#{version}/AsciidocFX_Mac#{arch}.dmg",
-      verified: "github.com/asciidocfx/AsciidocFX/"
+  url "https:github.comasciidocfxAsciidocFXreleasesdownloadv#{version}AsciidocFX_Mac#{arch}.dmg",
+      verified: "github.comasciidocfxAsciidocFX"
   name "AsciidocFX"
   desc "Asciidoc editor and toolchain to build books, documents and slides"
-  homepage "https://www.asciidocfx.com/"
+  homepage "https:www.asciidocfx.com"
 
   installer script: {
-    executable: "AsciidocFX Installer.app/Contents/MacOS/JavaApplicationStub",
+    executable: "AsciidocFX Installer.appContentsMacOSJavaApplicationStub",
     args:       ["-q"],
     sudo:       true,
   }
 
   uninstall script: {
-    executable: "/Applications/AsciidocFX/AsciidocFX Uninstaller.app/Contents/MacOS/JavaApplicationStub",
+    executable: "ApplicationsAsciidocFXAsciidocFX Uninstaller.appContentsMacOSJavaApplicationStub",
     args:       ["-q"],
     sudo:       true,
   }
 
   zap trash:  [
-        "~/.AsciidocFX-#{version}",
-        "~/Library/Preferences/com.install4j.7853-9376-5862-1224.24.plist",
-        "~/Library/Preferences/com.install4j.installations.plist",
-        "~/Library/Saved Application State/com.install4j.7853-9376-5862-1224.24.savedState",
+        "~.AsciidocFX-#{version}",
+        "~LibraryPreferencescom.install4j.7853-9376-5862-1224.24.plist",
+        "~LibraryPreferencescom.install4j.installations.plist",
+        "~LibrarySaved Application Statecom.install4j.7853-9376-5862-1224.24.savedState",
       ],
-      delete: "/Library/Preferences/com.install4j.installations.plist"
+      delete: "LibraryPreferencescom.install4j.installations.plist"
 end

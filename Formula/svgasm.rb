@@ -1,10 +1,10 @@
 class Svgasm < Formula
   desc "SVG animation from multiple SVGs or single GIF using tracer"
-  homepage "https://github.com/tomkwok/svgasm/"
+  homepage "https:github.comtomkwoksvgasm"
   license "Apache-2.0"
-  head "https://github.com/tomkwok/svgasm.git"
+  head "https:github.comtomkwoksvgasm.git"
 
-  depends_on "nicerloop/nicerloop/svgcleaner"
+  depends_on "nicerloopnicerloopsvgcleaner"
   depends_on "graphicsmagick"
   depends_on "potrace"
 
@@ -14,6 +14,6 @@ class Svgasm < Formula
   end
 
   test do
-    system "#{bin}/svgasm", "-h"
+    system "#{bin}svgasm", "-h"
   end
 end

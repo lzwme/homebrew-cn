@@ -1,7 +1,7 @@
 class Goocanvas < Formula
   desc "Canvas widget for GTK+ using the Cairo 2D library for drawing"
-  homepage "https://wiki.gnome.org/Projects/GooCanvas"
-  url "https://download.gnome.org/sources/goocanvas/3.0/goocanvas-3.0.0.tar.xz"
+  homepage "https:wiki.gnome.orgProjectsGooCanvas"
+  url "https:download.gnome.orgsourcesgoocanvas3.0goocanvas-3.0.0.tar.xz"
   sha256 "670a7557fe185c2703a14a07506156eceb7cea3b4bf75076a573f34ac52b401a"
   revision 1
 
@@ -23,12 +23,12 @@ class Goocanvas < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-gtk-doc-html",
                           "--disable-silent-rules",
                           "--enable-introspection=yes"

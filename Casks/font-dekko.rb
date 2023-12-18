@@ -2,10 +2,10 @@ cask "font-dekko" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/dekko/Dekko-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldekkoDekko-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Dekko"
-  homepage "https://fonts.google.com/specimen/Dekko"
+  homepage "https:fonts.google.comspecimenDekko"
 
   font "Dekko-Regular.ttf"
 

@@ -1,24 +1,24 @@
 class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
-  homepage "https://freeradius.org/"
+  homepage "https:freeradius.org"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 2
-  head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
+  head "https:github.comFreeRADIUSfreeradius-server.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_3.tar.gz"
+    url "https:github.comFreeRADIUSfreeradius-serverarchiverefstagsrelease_3_2_3.tar.gz"
     sha256 "65cdb744471895ea1da49069454a9a73cc0851fba97251f96b40673d3d54bd8f"
 
     # Fix -flat_namespace being used
     patch do
-      url "https://github.com/FreeRADIUS/freeradius-server/commit/6c1cdb0e75ce36f6fadb8ade1a69ba5e16283689.patch?full_index=1"
+      url "https:github.comFreeRADIUSfreeradius-servercommit6c1cdb0e75ce36f6fadb8ade1a69ba5e16283689.patch?full_index=1"
       sha256 "7e7d055d72736880ca8e1be70b81271dd02f2467156404280a117cb5dc8dccdc"
     end
   end
 
   livecheck do
     url :stable
-    regex(/^release[._-](\d+(?:[._]\d+)+)$/i)
+    regex(^release[._-](\d+(?:[._]\d+)+)$i)
   end
 
   bottle do
@@ -62,18 +62,18 @@ class FreeradiusServer < Formula
 
     args << "--without-rlm_python" if OS.mac?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   def post_install
-    (var/"run/radiusd").mkpath
-    (var/"log/radius").mkpath
+    (var"runradiusd").mkpath
+    (var"logradius").mkpath
   end
 
   test do
-    output = shell_output("#{bin}/smbencrypt homebrew")
+    output = shell_output("#{bin}smbencrypt homebrew")
     assert_match "77C8009C912CFFCF3832C92FC614B7D1", output
   end
 end

@@ -1,13 +1,13 @@
 class Libmpd < Formula
   desc "Higher level access to MPD functions"
-  homepage "https://gmpc.fandom.com/wiki/Gnome_Music_Player_Client"
-  url "https://www.musicpd.org/download/libmpd/11.8.17/libmpd-11.8.17.tar.gz"
+  homepage "https:gmpc.fandom.comwikiGnome_Music_Player_Client"
+  url "https:www.musicpd.orgdownloadlibmpd11.8.17libmpd-11.8.17.tar.gz"
   sha256 "fe20326b0d10641f71c4673fae637bf9222a96e1712f71f170fca2fc34bf7a83"
   revision 1
 
   livecheck do
-    url "https://www.musicpd.org/download/libmpd/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https:www.musicpd.orgdownloadlibmpd"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -32,13 +32,13 @@ class Libmpd < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     ENV.append "CFLAGS", "-DHAVE_STRNDUP" unless OS.mac?
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end

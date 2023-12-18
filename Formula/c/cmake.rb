@@ -1,19 +1,19 @@
 class Cmake < Formula
   desc "Cross-platform make"
-  homepage "https://www.cmake.org/"
-  url "https://ghproxy.com/https://github.com/Kitware/CMake/releases/download/v3.28.0/cmake-3.28.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/cmake-3.28.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/cmake-3.28.0.tar.gz"
+  homepage "https:www.cmake.org"
+  url "https:github.comKitwareCMakereleasesdownloadv3.28.0cmake-3.28.0.tar.gz"
+  mirror "http:fresh-center.netlinuxmisccmake-3.28.0.tar.gz"
+  mirror "http:fresh-center.netlinuxmisclegacycmake-3.28.0.tar.gz"
   sha256 "e1dcf9c817ae306e73a45c2ba6d280c65cf4ec00dd958eb144adaf117fb58e71"
   license "BSD-3-Clause"
-  head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
+  head "https:gitlab.kitware.comcmakecmake.git", branch: "master"
 
   # The "latest" release on GitHub has been an unstable version before, and
   # there have been delays between the creation of a tag and the corresponding
   # release, so we check the website's downloads page instead.
   livecheck do
-    url "https://cmake.org/download/"
-    regex(/href=.*?cmake[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:cmake.orgdownload"
+    regex(href=.*?cmake[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -43,9 +43,9 @@ class Cmake < Formula
       --prefix=#{prefix}
       --no-system-libs
       --parallel=#{ENV.make_jobs}
-      --datadir=/share/cmake
-      --docdir=/share/doc/cmake
-      --mandir=/share/man
+      --datadir=sharecmake
+      --docdir=sharedoccmake
+      --mandir=shareman
     ]
     if OS.mac?
       args += %w[
@@ -55,7 +55,7 @@ class Cmake < Formula
       ]
     end
 
-    system "./bootstrap", *args, "--", *std_cmake_args,
+    system ".bootstrap", *args, "--", *std_cmake_args,
                                        "-DCMake_INSTALL_BASH_COMP_DIR=#{bash_completion}",
                                        "-DCMake_INSTALL_EMACS_DIR=#{elisp}",
                                        "-DCMake_BUILD_LTO=ON"
@@ -71,11 +71,11 @@ class Cmake < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write("find_package(Ruby)")
-    system bin/"cmake", "."
+    (testpath"CMakeLists.txt").write("find_package(Ruby)")
+    system bin"cmake", "."
 
     # These should be supplied in a separate cmake-docs formula.
-    refute_path_exists doc/"html"
+    refute_path_exists doc"html"
     refute_path_exists man
   end
 end

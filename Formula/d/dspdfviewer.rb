@@ -1,11 +1,11 @@
 class Dspdfviewer < Formula
   desc "Dual-Screen PDF Viewer for latex-beamer"
-  homepage "https://dspdfviewer.danny-edel.de/"
-  url "https://ghproxy.com/https://github.com/dannyedel/dspdfviewer/archive/refs/tags/v1.15.1.tar.gz"
+  homepage "https:dspdfviewer.danny-edel.de"
+  url "https:github.comdannyedeldspdfviewerarchiverefstagsv1.15.1.tar.gz"
   sha256 "c5b6f8c93d732e65a27810286d49a4b1c6f777d725e26a207b14f6b792307b03"
   license "GPL-2.0-or-later"
   revision 18
-  head "https://github.com/dannyedel/dspdfviewer.git", branch: "master"
+  head "https:github.comdannyedeldspdfviewer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9e17d64b17e955a832d29b18712b7bc273d8cd5104a3730eb88fde62fde0d88e"
@@ -48,6 +48,6 @@ class Dspdfviewer < Formula
 
   test do
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux?
-    system "#{bin}/dspdfviewer", "--help"
+    system "#{bin}dspdfviewer", "--help"
   end
 end

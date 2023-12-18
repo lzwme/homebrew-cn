@@ -1,10 +1,10 @@
 class Aerleon < Formula
   desc "Generate firewall configs for multiple firewall platforms"
-  homepage "https://aerleon.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/b8/e5/f4386abc5d0e7f18bba22650514c1c14dbd235c93e11ac020f6c724614da/aerleon-1.7.0.tar.gz"
+  homepage "https:aerleon.readthedocs.ioenlatest"
+  url "https:files.pythonhosted.orgpackagesb8e5f4386abc5d0e7f18bba22650514c1c14dbd235c93e11ac020f6c724614daaerleon-1.7.0.tar.gz"
   sha256 "f3145c2a04f37c0463fbd80ee650f039bda9bc445e9c7fd4f18d8eeeda1b6ead"
   license "Apache-2.0"
-  head "https://github.com/aerleon/aerleon.git", branch: "main"
+  head "https:github.comaerleonaerleon.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -31,30 +31,30 @@ class Aerleon < Formula
 
   def install
     site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexecsite_packages
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    (testpath/"def/definitions.yaml").write <<~EOS
+    (testpath"defdefinitions.yaml").write <<~EOS
       networks:
         RFC1918:
           values:
-            - address: 10.0.0.0/8
-            - address: 172.16.0.0/12
-            - address: 192.168.0.0/16
+            - address: 10.0.0.08
+            - address: 172.16.0.012
+            - address: 192.168.0.016
         WEB_SERVERS:
           values:
-            - address: 10.0.0.1/32
+            - address: 10.0.0.132
               comment: Web Server 1
-            - address: 10.0.0.2/32
+            - address: 10.0.0.232
               comment: Web Server 2
         MAIL_SERVERS:
           values:
-            - address: 10.0.0.3/32
+            - address: 10.0.0.332
               comment: Mail Server 1
-            - address: 10.0.0.4/32
+            - address: 10.0.0.432
               comment: Mail Server 2
         ALL_SERVERS:
           values:
@@ -77,7 +77,7 @@ class Aerleon < Formula
             protocol: udp
     EOS
 
-    (testpath/"policies/pol/example.pol.yaml").write <<~EOS
+    (testpath"policiespolexample.pol.yaml").write <<~EOS
       filters:
       - header:
           comment: Example inbound
@@ -95,7 +95,7 @@ class Aerleon < Formula
             action: deny#{"  "}
     EOS
 
-    assert_match "writing file: example.pol.acl", shell_output("#{bin}/aclgen 2>&1")
+    assert_match "writing file: example.pol.acl", shell_output("#{bin}aclgen 2>&1")
     assert_path_exists "example.pol.acl"
   end
 end

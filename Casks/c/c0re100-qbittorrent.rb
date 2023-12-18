@@ -2,14 +2,14 @@ cask "c0re100-qbittorrent" do
   version "4.6.2.10"
   sha256 "42a223396f23e2ae4091a6f8ccf22ddcbcefc1377d473679cb37da0e337872b4"
 
-  url "https://ghproxy.com/https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/download/release-#{version}/qBittorrent-Enhanced-Edition-release-#{version}-macOS-universal.dmg"
+  url "https:github.comc0re100qBittorrent-Enhanced-Editionreleasesdownloadrelease-#{version}qBittorrent-Enhanced-Edition-release-#{version}-macOS-universal.dmg"
   name "qBittorrent Enhanced Edition"
   desc "Bittorrent client"
-  homepage "https://github.com/c0re100/qBittorrent-Enhanced-Edition"
+  homepage "https:github.comc0re100qBittorrent-Enhanced-Edition"
 
   livecheck do
     url :url
-    regex(/^release[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^release[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   conflicts_with cask: "qbittorrent"
@@ -18,11 +18,11 @@ cask "c0re100-qbittorrent" do
   app "qbittorrent.app"
 
   zap trash: [
-    "~/.config/qBittorrent",
-    "~/Library/Application Support/qBittorrent",
-    "~/Library/Caches/qBittorrent",
-    "~/Library/Preferences/org.qbittorrent.qBittorrent.plist",
-    "~/Library/Preferences/qBittorrent",
-    "~/Library/Saved Application State/org.qbittorrent.qBittorrent.savedState",
+    "~.configqBittorrent",
+    "~LibraryApplication SupportqBittorrent",
+    "~LibraryCachesqBittorrent",
+    "~LibraryPreferencesorg.qbittorrent.qBittorrent.plist",
+    "~LibraryPreferencesqBittorrent",
+    "~LibrarySaved Application Stateorg.qbittorrent.qBittorrent.savedState",
   ]
 end

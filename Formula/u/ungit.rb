@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Ungit < Formula
   desc "Easiest way to use Git. On any platform. Anywhere"
-  homepage "https://github.com/FredrikNoren/ungit"
-  url "https://registry.npmjs.org/ungit/-/ungit-1.5.24.tgz"
+  homepage "https:github.comFredrikNorenungit"
+  url "https:registry.npmjs.orgungit-ungit-1.5.24.tgz"
   sha256 "76052297abb515acc334cf27a289e7ea983ba755641f293bb711d086deb9c031"
   license "MIT"
 
@@ -23,17 +23,17 @@ class Ungit < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
     port = free_port
 
     fork do
-      exec bin/"ungit", "--no-launchBrowser", "--port=#{port}"
+      exec bin"ungit", "--no-launchBrowser", "--port=#{port}"
     end
     sleep 8
 
-    assert_includes shell_output("curl -s 127.0.0.1:#{port}/"), "<title>ungit</title>"
+    assert_includes shell_output("curl -s 127.0.0.1:#{port}"), "<title>ungit<title>"
   end
 end

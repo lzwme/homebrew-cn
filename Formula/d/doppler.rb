@@ -1,10 +1,10 @@
 class Doppler < Formula
   desc "CLI for interacting with Doppler secrets and configuration"
-  homepage "https://docs.doppler.com/docs"
-  url "https://ghproxy.com/https://github.com/DopplerHQ/cli/archive/refs/tags/3.66.5.tar.gz"
+  homepage "https:docs.doppler.comdocs"
+  url "https:github.comDopplerHQcliarchiverefstags3.66.5.tar.gz"
   sha256 "cd4f8cea2685d286859851f95043506121c05098a7be506e2b6664a42e217e37"
   license "Apache-2.0"
-  head "https://github.com/DopplerHQ/cli.git", branch: "master"
+  head "https:github.comDopplerHQcli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "689515a3f387e88824f1a128526c6762f79eaae34271ac52e6ff6f1b6200d856"
@@ -21,17 +21,17 @@ class Doppler < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/DopplerHQ/cli/pkg/version.ProgramVersion=dev-#{version}
+      -X github.comDopplerHQclipkgversion.ProgramVersion=dev-#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"doppler", "completion")
+    generate_completions_from_executable(bin"doppler", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/doppler --version")
+    assert_match version.to_s, shell_output("#{bin}doppler --version")
 
-    output = shell_output("#{bin}/doppler setup 2>&1", 1)
+    output = shell_output("#{bin}doppler setup 2>&1", 1)
     assert_match "Doppler Error: you must provide a token", output
   end
 end

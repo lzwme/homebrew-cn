@@ -2,12 +2,12 @@ cask "font-mirza" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/mirza"
+      only_path: "oflmirza"
   name "Mirza"
-  homepage "https://fonts.google.com/specimen/Mirza"
+  homepage "https:fonts.google.comspecimenMirza"
 
   font "Mirza-Bold.ttf"
   font "Mirza-Medium.ttf"

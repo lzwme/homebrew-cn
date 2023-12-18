@@ -1,7 +1,7 @@
 class GitMediate < Formula
   desc "Utility to help resolve merge conflicts"
-  homepage "https://github.com/Peaker/git-mediate"
-  url "https://ghproxy.com/https://github.com/Peaker/git-mediate/archive/refs/tags/1.0.9.tar.gz"
+  homepage "https:github.comPeakergit-mediate"
+  url "https:github.comPeakergit-mediatearchiverefstags1.0.9.tar.gz"
   sha256 "ed9b4f5f1ccc295e69d5a368b1b5436968e2290b8e1792a768c0cfae7f91fefb"
   license "GPL-2.0-only"
 
@@ -26,7 +26,7 @@ class GitMediate < Formula
     system "git", "init", "--initial-branch=main"
     system "git", "config", "merge.conflictstyle", "diff3"
     # This initial commit will be the merge base
-    File.write testpath/"testfile", <<~EOS
+    File.write testpath"testfile", <<~EOS
       BASE
     EOS
     system "git", "add", "testfile"
@@ -34,20 +34,20 @@ class GitMediate < Formula
     initial_commit = shell_output("git rev-parse --short HEAD").chomp
     # Make complex change in my-branch
     system "git", "checkout", "-b", "my-branch"
-    File.write testpath/"testfile", <<~EOS
+    File.write testpath"testfile", <<~EOS
       BASE and complex changes here
     EOS
     system "git", "commit", "-am", "'add comment'"
     # Add comment in main branch
     system "git", "checkout", "main"
-    File.write testpath/"testfile", <<~EOS
+    File.write testpath"testfile", <<~EOS
       Added a comment here
       BASE
     EOS
     system "git", "commit", "-am", "'complex changes'"
     shell_output "git merge my-branch", 1
     # There's a merge conflict!
-    assert_equal File.read(testpath/"testfile"), <<~EOS
+    assert_equal File.read(testpath"testfile"), <<~EOS
       <<<<<<< HEAD
       Added a comment here
       BASE
@@ -58,7 +58,7 @@ class GitMediate < Formula
       >>>>>>> my-branch
     EOS
     # Manually apply the simple change (adding a comment) to the other two parts
-    File.write testpath/"testfile", <<~EOS
+    File.write testpath"testfile", <<~EOS
       <<<<<<< HEAD
       Added a comment here
       BASE
@@ -71,8 +71,8 @@ class GitMediate < Formula
       >>>>>>>
     EOS
     # The conflict is now trivial, so git-mediate can resolve it
-    system bin/"git-mediate"
-    assert_equal File.read(testpath/"testfile"), <<~EOS
+    system bin"git-mediate"
+    assert_equal File.read(testpath"testfile"), <<~EOS
       Added a comment here
       BASE and complex changes here
     EOS

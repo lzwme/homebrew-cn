@@ -1,7 +1,7 @@
 class Krakend < Formula
   desc "Ultra-High performance API Gateway built in Go"
-  homepage "https://www.krakend.io/"
-  url "https://ghproxy.com/https://github.com/krakendio/krakend-ce/archive/refs/tags/v2.5.0.tar.gz"
+  homepage "https:www.krakend.io"
+  url "https:github.comkrakendiokrakend-cearchiverefstagsv2.5.0.tar.gz"
   sha256 "6dc08111719256816a4d27bb250803f48e0b628168c5b2132ae8e0829380dcd3"
   license "Apache-2.0"
 
@@ -23,11 +23,11 @@ class Krakend < Formula
   end
 
   test do
-    (testpath/"krakend_unsupported_version.json").write <<~EOS
+    (testpath"krakend_unsupported_version.json").write <<~EOS
       {
         "version": 2,
         "extra_config": {
-          "github_com/devopsfaith/krakend-gologging": {
+          "github_comdevopsfaithkrakend-gologging": {
             "level": "WARNING",
             "prefix": "[KRAKEND]",
             "syslog": false,
@@ -37,22 +37,22 @@ class Krakend < Formula
       }
     EOS
     assert_match "unsupported version",
-      shell_output("#{bin}/krakend check -c krakend_unsupported_version.json 2>&1", 1)
+      shell_output("#{bin}krakend check -c krakend_unsupported_version.json 2>&1", 1)
 
-    (testpath/"krakend_bad_file.json").write <<~EOS
+    (testpath"krakend_bad_file.json").write <<~EOS
       {
         "version": 3,
         "bad": file
       }
     EOS
     assert_match "ERROR",
-      shell_output("#{bin}/krakend check -c krakend_bad_file.json 2>&1", 1)
+      shell_output("#{bin}krakend check -c krakend_bad_file.json 2>&1", 1)
 
-    (testpath/"krakend.json").write <<~EOS
+    (testpath"krakend.json").write <<~EOS
       {
         "version": 3,
         "extra_config": {
-          "telemetry/logging": {
+          "telemetrylogging": {
             "level": "WARNING",
             "prefix": "[KRAKEND]",
             "syslog": false,
@@ -61,12 +61,12 @@ class Krakend < Formula
         },
         "endpoints": [
           {
-            "endpoint": "/test",
+            "endpoint": "test",
             "backend": [
               {
-                "url_pattern": "/backend",
+                "url_pattern": "backend",
                 "host": [
-                  "http://some-host"
+                  "http:some-host"
                 ]
               }
             ]
@@ -75,6 +75,6 @@ class Krakend < Formula
       }
     EOS
     assert_match "Syntax OK",
-      shell_output("#{bin}/krakend check -c krakend.json 2>&1")
+      shell_output("#{bin}krakend check -c krakend.json 2>&1")
   end
 end

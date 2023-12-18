@@ -1,11 +1,11 @@
 class Stubby < Formula
   desc "DNS privacy enabled stub resolver service based on getdns"
-  homepage "https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby"
-  url "https://ghproxy.com/https://github.com/getdnsapi/stubby/archive/refs/tags/v0.4.3.tar.gz"
+  homepage "https:dnsprivacy.orgwikidisplayDPDNS+Privacy+Daemon+-+Stubby"
+  url "https:github.comgetdnsapistubbyarchiverefstagsv0.4.3.tar.gz"
   sha256 "99291ab4f09bce3743000ed3ecbf58961648a35ca955889f1c41d36810cc4463"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/getdnsapi/stubby.git", branch: "develop"
+  head "https:github.comgetdnsapistubby.git", branch: "develop"
 
   bottle do
     sha256 arm64_sonoma:   "eec9c56666a83664194ac6612bba1c330a54d14ead67dba1100757fc303f8edb"
@@ -29,20 +29,20 @@ class Stubby < Formula
   end
 
   def install
-    system "cmake", "-DCMAKE_INSTALL_RUNSTATEDIR=#{HOMEBREW_PREFIX}/var/run/", \
-                    "-DCMAKE_INSTALL_SYSCONFDIR=#{HOMEBREW_PREFIX}/etc", ".", *std_cmake_args
+    system "cmake", "-DCMAKE_INSTALL_RUNSTATEDIR=#{HOMEBREW_PREFIX}varrun", \
+                    "-DCMAKE_INSTALL_SYSCONFDIR=#{HOMEBREW_PREFIX}etc", ".", *std_cmake_args
     system "make", "install"
   end
 
   service do
-    run [opt_bin/"stubby", "-C", etc/"stubby/stubby.yml"]
+    run [opt_bin"stubby", "-C", etc"stubbystubby.yml"]
     keep_alive true
     run_type :immediate
   end
 
   test do
-    assert_predicate etc/"stubby/stubby.yml", :exist?
-    (testpath/"stubby_test.yml").write <<~EOS
+    assert_predicate etc"stubbystubby.yml", :exist?
+    (testpath"stubby_test.yml").write <<~EOS
       resolution_type: GETDNS_RESOLUTION_STUB
       dns_transport_list:
         - GETDNS_TRANSPORT_TLS
@@ -56,11 +56,11 @@ class Stubby < Formula
         - address_data: 8.8.4.4
         - address_data: 1.1.1.1
     EOS
-    output = shell_output("#{bin}/stubby -i -C stubby_test.yml")
+    output = shell_output("#{bin}stubby -i -C stubby_test.yml")
     assert_match "bindata for 8.8.8.8", output
 
     fork do
-      exec "#{bin}/stubby", "-C", testpath/"stubby_test.yml"
+      exec "#{bin}stubby", "-C", testpath"stubby_test.yml"
     end
     sleep 2
 

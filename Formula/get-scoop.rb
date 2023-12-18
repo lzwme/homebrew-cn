@@ -1,7 +1,7 @@
 class GetScoop < Formula
   desc "Installer for scoop Windows command-line portable tools installer"
-  homepage "https://github.com/nicerloop/ScoopInstall/tree/macos"
-  head "https://github.com/nicerloop/ScoopInstall.git", branch: "macos"
+  homepage "https:github.comnicerloopScoopInstalltreemacos"
+  head "https:github.comnicerloopScoopInstall.git", branch: "macos"
 
   livecheck do
     skip "head-only formula"
@@ -14,8 +14,8 @@ class GetScoop < Formula
   def install
     libexec.install Dir["*"]
     bin.join("get-scoop").write <<~SH
-      #!/bin/sh
-      pwsh "#{prefix}/libexec/install.ps1" "$@"
+      #!binsh
+      pwsh "#{prefix}libexecinstall.ps1" "$@"
     SH
   end
 

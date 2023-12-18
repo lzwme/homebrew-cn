@@ -1,10 +1,10 @@
 class Checkmake < Formula
-  desc "Linter/analyzer for Makefiles"
-  homepage "https://github.com/mrtazz/checkmake"
-  url "https://ghproxy.com/https://github.com/mrtazz/checkmake/archive/refs/tags/0.2.2.tar.gz"
+  desc "Linteranalyzer for Makefiles"
+  homepage "https:github.commrtazzcheckmake"
+  url "https:github.commrtazzcheckmakearchiverefstags0.2.2.tar.gz"
   sha256 "4e5914f1ee3e5f384d605406f30799bf556a06b9785d5b0e555fd88b43daf19c"
   license "MIT"
-  head "https://github.com/mrtazz/checkmake.git", branch: "main"
+  head "https:github.commrtazzcheckmake.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7140ec560527466720bbd18e7337f47243ce479bac151a7dea0a84f70a8fd9da"
@@ -30,7 +30,7 @@ class Checkmake < Formula
   end
 
   test do
-    sh = testpath/"Makefile"
+    sh = testpath"Makefile"
     sh.write <<~EOS
       clean:
       \trm bar
@@ -49,6 +49,6 @@ class Checkmake < Formula
 
       .PHONY: clean test
     EOS
-    assert_match "phonydeclared", shell_output("#{bin}/checkmake #{sh}", 2)
+    assert_match "phonydeclared", shell_output("#{bin}checkmake #{sh}", 2)
   end
 end

@@ -1,10 +1,10 @@
 class Stanc3 < Formula
   desc "Stan transpiler"
-  homepage "https://github.com/stan-dev/stanc3"
+  homepage "https:github.comstan-devstanc3"
   # git is needed for dune subst
   # TODO: Update `ocaml@4` dependency to `ocaml` on next release as OCaml 4.14 PR
-  # also adds support for OCaml 5: https://github.com/stan-dev/stanc3/pull/1366
-  url "https://github.com/stan-dev/stanc3.git",
+  # also adds support for OCaml 5: https:github.comstan-devstanc3pull1366
+  url "https:github.comstan-devstanc3.git",
       tag:      "v2.32.2",
       revision: "bcbf83c52c76018ce4a6cd86233de1601ddf9422"
   license "BSD-3-Clause"
@@ -32,20 +32,20 @@ class Stanc3 < Formula
       ENV["OPAMVERBOSE"] = "1"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
-      system "bash", "-x", "scripts/install_build_deps.sh"
+      system "bash", "-x", "scriptsinstall_build_deps.sh"
       system "opam", "exec", "dune", "subst"
       system "opam", "exec", "dune", "build", "@install"
 
-      bin.install "_build/default/src/stanc/stanc.exe" => "stanc"
+      bin.install "_builddefaultsrcstancstanc.exe" => "stanc"
       pkgshare.install "test"
     end
   end
 
   test do
-    assert_match "stanc3 v#{version}", shell_output("#{bin}/stanc --version")
+    assert_match "stanc3 v#{version}", shell_output("#{bin}stanc --version")
 
-    cp pkgshare/"test/integration/good/algebra_solver_good.stan", testpath
-    system bin/"stanc", "algebra_solver_good.stan"
-    assert_predicate testpath/"algebra_solver_good.hpp", :exist?
+    cp pkgshare"testintegrationgoodalgebra_solver_good.stan", testpath
+    system bin"stanc", "algebra_solver_good.stan"
+    assert_predicate testpath"algebra_solver_good.hpp", :exist?
   end
 end

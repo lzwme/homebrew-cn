@@ -2,11 +2,11 @@ cask "fsnotes" do
   version "6.6.2"
   sha256 "6a156f2b10ef729442797e226712b3c509422313657b1c2fd0660775e13beca6"
 
-  url "https://ghproxy.com/https://github.com/glushchenko/fsnotes/releases/download/#{version}/FSNotes_#{version}.zip",
-      verified: "github.com/glushchenko/fsnotes/"
+  url "https:github.comglushchenkofsnotesreleasesdownload#{version}FSNotes_#{version}.zip",
+      verified: "github.comglushchenkofsnotes"
   name "FSNotes"
   desc "Notes manager"
-  homepage "https://fsnot.es/"
+  homepage "https:fsnot.es"
 
   livecheck do
     url :url
@@ -16,7 +16,7 @@ cask "fsnotes" do
   app "FSNotes.app"
 
   zap trash: [
-    "~/Library/Application Scripts/co.fluder.FSNotes",
-    "~/Library/Containers/co.fluder.FSNotes",
+    "~LibraryApplication Scriptsco.fluder.FSNotes",
+    "~LibraryContainersco.fluder.FSNotes",
   ]
 end

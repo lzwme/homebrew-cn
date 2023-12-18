@@ -2,11 +2,11 @@ cask "agi" do
   version "3.3.1"
   sha256 "d8a658b5a81e8be2c98277f128897e5a99b43799cb0713995d22740ab03bd819"
 
-  url "https://ghproxy.com/https://github.com/google/agi/releases/download/#{version}/agi-#{version}-macos.dmg",
-      verified: "github.com/google/agi/"
+  url "https:github.comgoogleagireleasesdownload#{version}agi-#{version}-macos.dmg",
+      verified: "github.comgoogleagi"
   name "agi"
   desc "Android GPU Inspector"
-  homepage "https://gpuinspector.dev/"
+  homepage "https:gpuinspector.dev"
 
   livecheck do
     url :url
@@ -17,5 +17,5 @@ cask "agi" do
 
   app "AGI.app"
 
-  zap trash: "~/.agic"
+  zap trash: "~.agic"
 end

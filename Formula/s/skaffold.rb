@@ -1,11 +1,11 @@
 class Skaffold < Formula
   desc "Easy and Repeatable Kubernetes Development"
-  homepage "https://skaffold.dev/"
-  url "https://github.com/GoogleContainerTools/skaffold.git",
+  homepage "https:skaffold.dev"
+  url "https:github.comGoogleContainerToolsskaffold.git",
       tag:      "v2.9.0",
       revision: "6071a3f7574702c8666a243d89254e9b0d8ff4d7"
   license "Apache-2.0"
-  head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
+  head "https:github.comGoogleContainerToolsskaffold.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2919c33d6a7455444bdf2d7652a2c9f5c159e7fa8b5f39a69e8d189fd4dbddbd"
@@ -21,13 +21,13 @@ class Skaffold < Formula
 
   def install
     system "make"
-    bin.install "out/skaffold"
-    generate_completions_from_executable(bin/"skaffold", "completion")
+    bin.install "outskaffold"
+    generate_completions_from_executable(bin"skaffold", "completion")
   end
 
   test do
-    (testpath/"Dockerfile").write "FROM scratch"
-    output = shell_output("#{bin}/skaffold init --analyze").chomp
+    (testpath"Dockerfile").write "FROM scratch"
+    output = shell_output("#{bin}skaffold init --analyze").chomp
     assert_equal '{"builders":[{"name":"Docker","payload":{"path":"Dockerfile"}}]}', output
   end
 end

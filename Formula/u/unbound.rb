@@ -1,17 +1,17 @@
 class Unbound < Formula
   desc "Validating, recursive, caching DNS resolver"
-  homepage "https://www.unbound.net"
-  url "https://nlnetlabs.nl/downloads/unbound/unbound-1.19.0.tar.gz"
+  homepage "https:www.unbound.net"
+  url "https:nlnetlabs.nldownloadsunboundunbound-1.19.0.tar.gz"
   sha256 "a97532468854c61c2de48ca4170de854fd3bc95c8043bb0cfb0fe26605966624"
   license "BSD-3-Clause"
-  head "https://github.com/NLnetLabs/unbound.git", branch: "master"
+  head "https:github.comNLnetLabsunbound.git", branch: "master"
 
   # We check the GitHub repo tags instead of
-  # https://nlnetlabs.nl/downloads/unbound/ since the first-party site has a
+  # https:nlnetlabs.nldownloadsunbound since the first-party site has a
   # tendency to lead to an `execution expired` error.
   livecheck do
     url :head
-    regex(/^(?:release-)?v?(\d+(?:\.\d+)+)$/i)
+    regex(^(?:release-)?v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -42,17 +42,17 @@ class Unbound < Formula
       --with-ssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    args << "--with-libexpat=#{MacOS.sdk_path}/usr" if OS.mac? && MacOS.sdk_path_if_needed
+    args << "--with-libexpat=#{MacOS.sdk_path}usr" if OS.mac? && MacOS.sdk_path_if_needed
     args << "--with-libexpat=#{Formula["expat"].opt_prefix}" if OS.linux?
-    system "./configure", *args
+    system ".configure", *args
 
-    inreplace "doc/example.conf", 'username: "unbound"', 'username: "@@HOMEBREW-UNBOUND-USER@@"'
+    inreplace "docexample.conf", 'username: "unbound"', 'username: "@@HOMEBREW-UNBOUND-USER@@"'
     system "make"
     system "make", "install"
   end
 
   def post_install
-    conf = etc/"unbound/unbound.conf"
+    conf = etc"unboundunbound.conf"
     return unless conf.exist?
     return unless conf.read.include?('username: "@@HOMEBREW-UNBOUND-USER@@"')
 
@@ -61,12 +61,12 @@ class Unbound < Formula
   end
 
   service do
-    run [opt_sbin/"unbound", "-d", "-c", etc/"unbound/unbound.conf"]
+    run [opt_sbin"unbound", "-d", "-c", etc"unboundunbound.conf"]
     keep_alive true
     require_root true
   end
 
   test do
-    system sbin/"unbound-control-setup", "-d", testpath
+    system sbin"unbound-control-setup", "-d", testpath
   end
 end

@@ -1,15 +1,15 @@
 class Dmd < Formula
   desc "Digital Mars D compiler"
-  homepage "https://dlang.org/"
+  homepage "https:dlang.org"
   license "BSL-1.0"
 
   stable do
     # make sure resources also use the same version
-    url "https://ghproxy.com/https://github.com/dlang/dmd/archive/refs/tags/v2.106.0.tar.gz"
+    url "https:github.comdlangdmdarchiverefstagsv2.106.0.tar.gz"
     sha256 "1079649c41a9b8e0d3e81c573c82d84cd6873b3afc95b37d6f5206842cedc7c9"
 
     resource "phobos" do
-      url "https://ghproxy.com/https://github.com/dlang/phobos/archive/refs/tags/v2.106.0.tar.gz"
+      url "https:github.comdlangphobosarchiverefstagsv2.106.0.tar.gz"
       sha256 "3f926ee26905c2f6fe457e7ad2fe4feac8cad83c571a70adea30b6cd4a4366b6"
     end
   end
@@ -21,10 +21,10 @@ class Dmd < Formula
   end
 
   head do
-    url "https://github.com/dlang/dmd.git", branch: "master"
+    url "https:github.comdlangdmd.git", branch: "master"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos.git", branch: "master"
+      url "https:github.comdlangphobos.git", branch: "master"
     end
   end
 
@@ -35,39 +35,39 @@ class Dmd < Formula
     dmd_make_args = %W[
       INSTALL_DIR=#{prefix}
       SYSCONFDIR=#{etc}
-      HOST_DMD=#{Formula["ldc"].opt_bin/"ldmd2"}
+      HOST_DMD=#{Formula["ldc"].opt_bin"ldmd2"}
       ENABLE_RELEASE=1
       VERBOSE=1
     ]
 
-    system "ldc2", "compiler/src/build.d", "-of=compiler/src/build"
-    system "./compiler/src/build", *dmd_make_args
+    system "ldc2", "compilersrcbuild.d", "-of=compilersrcbuild"
+    system ".compilersrcbuild", *dmd_make_args
 
     make_args = %W[
       INSTALL_DIR=#{prefix}
       MODEL=64
       BUILD=release
       DMD_DIR=#{buildpath}
-      DRUNTIME_PATH=#{buildpath}/druntime
-      PHOBOS_PATH=#{buildpath}/phobos
+      DRUNTIME_PATH=#{buildpath}druntime
+      PHOBOS_PATH=#{buildpath}phobos
       -f posix.mak
     ]
 
-    (buildpath/"phobos").install resource("phobos")
-    system "make", "-C", "phobos", "VERSION=#{buildpath}/VERSION", *make_args
+    (buildpath"phobos").install resource("phobos")
+    system "make", "-C", "phobos", "VERSION=#{buildpath}VERSION", *make_args
 
     kernel_name = OS.mac? ? "osx" : OS.kernel_name.downcase
-    bin.install "generated/#{kernel_name}/release/64/dmd"
-    pkgshare.install "compiler/samples"
-    man.install Dir["compiler/docs/man/*"]
+    bin.install "generated#{kernel_name}release64dmd"
+    pkgshare.install "compilersamples"
+    man.install Dir["compilerdocsman*"]
 
-    (include/"dlang/dmd").install Dir["druntime/import/*"]
-    cp_r ["phobos/std", "phobos/etc"], include/"dlang/dmd"
-    lib.install Dir["druntime/**/libdruntime.*", "phobos/**/libphobos2.*"]
+    (include"dlangdmd").install Dir["druntimeimport*"]
+    cp_r ["phobosstd", "phobosetc"], include"dlangdmd"
+    lib.install Dir["druntime**libdruntime.*", "phobos**libphobos2.*"]
 
-    (buildpath/"dmd.conf").write <<~EOS
+    (buildpath"dmd.conf").write <<~EOS
       [Environment]
-      DFLAGS=-I#{opt_include}/dlang/dmd -L-L#{opt_lib}
+      DFLAGS=-I#{opt_include}dlangdmd -L-L#{opt_lib}
     EOS
     etc.install "dmd.conf"
   end
@@ -76,14 +76,14 @@ class Dmd < Formula
   # dmd.conf.  If it differs from the newly generated one, move it out of place
   # and warn the user.
   def install_new_dmd_conf
-    conf = etc/"dmd.conf"
+    conf = etc"dmd.conf"
 
     # If the new file differs from conf, etc.install drops it here:
-    new_conf = etc/"dmd.conf.default"
+    new_conf = etc"dmd.conf.default"
     # Else, we're already using the latest version:
     return unless new_conf.exist?
 
-    backup = etc/"dmd.conf.old"
+    backup = etc"dmd.conf.old"
     opoo "An old dmd.conf was found and will be moved to #{backup}."
     mv conf, backup
     mv new_conf, conf
@@ -102,7 +102,7 @@ class Dmd < Formula
   test do
     assert_equal version, resource("phobos").version, "`phobos` resource needs updating!" if build.stable?
 
-    system bin/"dmd", "-fPIC", pkgshare/"samples/hello.d"
-    system "./hello"
+    system bin"dmd", "-fPIC", pkgshare"sampleshello.d"
+    system ".hello"
   end
 end

@@ -1,10 +1,10 @@
 class SpringCompletion < Formula
   desc "Bash completion for Spring"
-  homepage "https://github.com/jacaetevha/spring_bash_completion"
-  url "https://ghproxy.com/https://github.com/jacaetevha/spring_bash_completion/archive/refs/tags/v0.0.1.tar.gz"
+  homepage "https:github.comjacaetevhaspring_bash_completion"
+  url "https:github.comjacaetevhaspring_bash_completionarchiverefstagsv0.0.1.tar.gz"
   sha256 "a97b256dbdaca894dfa22bd96a6705ebf4f94fa8206d05f41927f062c3dd60bf"
   license "Unlicense"
-  head "https://github.com/jacaetevha/spring_bash_completion.git", branch: "master"
+  head "https:github.comjacaetevhaspring_bash_completion.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b31b990436b19546a9fe8d392496e6d8b14c1bd0f1e622d1ad01baee4fd4383e"
@@ -26,6 +26,6 @@ class SpringCompletion < Formula
 
   test do
     assert_match "-F _spring",
-      shell_output("bash -c 'source #{bash_completion}/spring && complete -p spring'")
+      shell_output("bash -c 'source #{bash_completion}spring && complete -p spring'")
   end
 end

@@ -2,10 +2,10 @@ cask "font-julee" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/julee/Julee-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofljuleeJulee-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Julee"
-  homepage "https://fonts.google.com/specimen/Julee"
+  homepage "https:fonts.google.comspecimenJulee"
 
   font "Julee-Regular.ttf"
 

@@ -1,14 +1,14 @@
 class Tfenv < Formula
   desc "Terraform version manager inspired by rbenv"
-  homepage "https://github.com/tfutils/tfenv"
-  url "https://ghproxy.com/https://github.com/tfutils/tfenv/archive/refs/tags/v3.0.0.tar.gz"
+  homepage "https:github.comtfutilstfenv"
+  url "https:github.comtfutilstfenvarchiverefstagsv3.0.0.tar.gz"
   sha256 "463132e45a211fa3faf85e62fdfaa9bb746343ff1954ccbad91cae743df3b648"
   license "MIT"
-  head "https://github.com/tfutils/tfenv.git", branch: "master"
+  head "https:github.comtfutilstfenv.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,9 +28,9 @@ class Tfenv < Formula
   end
 
   test do
-    assert_match "0.10.0", shell_output("#{bin}/tfenv list-remote")
+    assert_match "0.10.0", shell_output("#{bin}tfenv list-remote")
     with_env(TFENV_TERRAFORM_VERSION: "0.10.0", TF_AUTO_INSTALL: "false") do
-      assert_equal "0.10.0", shell_output("#{bin}/tfenv version-name").strip
+      assert_equal "0.10.0", shell_output("#{bin}tfenv version-name").strip
     end
   end
 end

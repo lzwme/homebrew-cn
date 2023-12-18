@@ -2,10 +2,10 @@ cask "cardinal" do
   version "23.10"
   sha256 "1c08c92328d3458318d1bf4cca59710131e802b852740ec39894994b290ef6c0"
 
-  url "https://ghproxy.com/https://github.com/DISTRHO/Cardinal/releases/download/#{version}/Cardinal-macOS-universal-10.15-#{version}.pkg"
+  url "https:github.comDISTRHOCardinalreleasesdownload#{version}Cardinal-macOS-universal-10.15-#{version}.pkg"
   name "Cardinal"
   desc "Virtual modular synthesizer plugin"
-  homepage "https://github.com/DISTRHO/Cardinal"
+  homepage "https:github.comDISTRHOCardinal"
 
   pkg "Cardinal-macOS-universal-10.15-#{version}.pkg"
 

@@ -1,7 +1,7 @@
 class Gource < Formula
   desc "Version Control Visualization Tool"
-  homepage "https://github.com/acaudwell/Gource"
-  url "https://ghproxy.com/https://github.com/acaudwell/Gource/releases/download/gource-0.54/gource-0.54.tar.gz"
+  homepage "https:github.comacaudwellGource"
+  url "https:github.comacaudwellGourcereleasesdownloadgource-0.54gource-0.54.tar.gz"
   sha256 "1dcbcedf65d2cf4d69fe0b633e54c202926c08b829bcad0b73eaf9e29cd6fae5"
   license "GPL-3.0-or-later"
   revision 2
@@ -17,7 +17,7 @@ class Gource < Formula
   end
 
   head do
-    url "https://github.com/acaudwell/Gource.git", branch: "master"
+    url "https:github.comacaudwellGource.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -42,7 +42,7 @@ class Gource < Formula
 
     system "autoreconf", "-f", "-i" if build.head?
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-boost=#{Formula["boost"].opt_prefix}",
                           "--without-x"
@@ -50,6 +50,6 @@ class Gource < Formula
   end
 
   test do
-    system "#{bin}/gource", "--help"
+    system "#{bin}gource", "--help"
   end
 end

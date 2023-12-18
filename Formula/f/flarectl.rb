@@ -1,10 +1,10 @@
 class Flarectl < Formula
   desc "CLI application for interacting with a Cloudflare account"
-  homepage "https://github.com/cloudflare/cloudflare-go/tree/master/cmd/flarectl"
-  url "https://ghproxy.com/https://github.com/cloudflare/cloudflare-go/archive/refs/tags/v0.83.0.tar.gz"
+  homepage "https:github.comcloudflarecloudflare-gotreemastercmdflarectl"
+  url "https:github.comcloudflarecloudflare-goarchiverefstagsv0.83.0.tar.gz"
   sha256 "750f1ff272fd35f7aed3acea6ff3dec642d12b5a2607a998bbea60fda18f122f"
   license "BSD-3-Clause"
-  head "https://github.com/cloudflare/cloudflare-go.git", branch: "master"
+  head "https:github.comcloudflarecloudflare-go.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "272a1d7b72e85be41bec5cfb05bf3ef915dbe5ad35a23fc4d457a1442c45f6b0"
@@ -19,11 +19,11 @@ class Flarectl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/flarectl"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdflarectl"
   end
 
   test do
     ENV["CF_API_TOKEN"] = "invalid"
-    assert_match "Invalid request headers (6003)", shell_output("#{bin}/flarectl u i", 1)
+    assert_match "Invalid request headers (6003)", shell_output("#{bin}flarectl u i", 1)
   end
 end

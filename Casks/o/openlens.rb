@@ -5,10 +5,10 @@ cask "openlens" do
   sha256 arm:   "2c53fa3ccf383e10c8a711ba23a6277800415173ba45ef12597b656c9d818e29",
          intel: "22f94468f4ccfe4f24c0580a04f76baa9edadf7f9a6d735d677f828372c139e7"
 
-  url "https://ghproxy.com/https://github.com/MuhammedKalkan/OpenLens/releases/download/v#{version}/OpenLens-#{version}#{arch}.dmg"
+  url "https:github.comMuhammedKalkanOpenLensreleasesdownloadv#{version}OpenLens-#{version}#{arch}.dmg"
   name "OpenLens"
   desc "Open source build of Lens Kubernetes IDE"
-  homepage "https://github.com/MuhammedKalkan/OpenLens/"
+  homepage "https:github.comMuhammedKalkanOpenLens"
 
   auto_updates true
   depends_on macos: ">= :high_sierra"
@@ -16,7 +16,7 @@ cask "openlens" do
   app "OpenLens.app"
 
   zap trash: [
-    "~/Library/Application Support/OpenLens",
-    "~/Library/Logs/OpenLens",
+    "~LibraryApplication SupportOpenLens",
+    "~LibraryLogsOpenLens",
   ]
 end

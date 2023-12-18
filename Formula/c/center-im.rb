@@ -1,13 +1,13 @@
 class CenterIm < Formula
   desc "Text-mode multi-protocol instant messaging client"
-  homepage "https://github.com/petrpavlu/centerim5"
-  url "https://ghproxy.com/https://github.com/petrpavlu/centerim5/releases/download/v5.0.1/centerim5-5.0.1.tar.gz"
+  homepage "https:github.competrpavlucenterim5"
+  url "https:github.competrpavlucenterim5releasesdownloadv5.0.1centerim5-5.0.1.tar.gz"
   sha256 "b80b999e0174b81206255556cf00de6548ea29fa6f3ea9deb1f9ab59d8318313"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,7 +36,7 @@ class CenterIm < Formula
   def install
     # Work around build error on macOS due to `version` file confusing system header.
     # Also allow CMake to correctly set the version number inside binary.
-    # Issue ref: https://github.com/petrpavlu/centerim5/issues/1
+    # Issue ref: https:github.competrpavlucenterim5issues1
     mv "version", ".tarball-version"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -45,7 +45,7 @@ class CenterIm < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/centerim5 --version")
+    assert_match version.to_s, shell_output("#{bin}centerim5 --version")
 
     # FIXME: Unable to run TUI test in Linux CI.
     # Error is "Placing the terminal into raw mode failed."
@@ -54,11 +54,11 @@ class CenterIm < Formula
     ENV["TERM"] = "xterm"
     File.open("output.txt", "w") do |file|
       $stdout.reopen(file)
-      pid = fork { exec bin/"centerim5", "--basedir", testpath }
+      pid = fork { exec bin"centerim5", "--basedir", testpath }
       sleep 10
       Process.kill("TERM", pid)
     end
-    assert_match "Welcome to CenterIM", (testpath/"output.txt").read
-    assert_predicate testpath/"prefs.xml", :exist?
+    assert_match "Welcome to CenterIM", (testpath"output.txt").read
+    assert_predicate testpath"prefs.xml", :exist?
   end
 end

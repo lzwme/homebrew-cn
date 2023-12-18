@@ -1,10 +1,10 @@
 class YubikeyAgent < Formula
   desc "Seamless ssh-agent for YubiKeys and other PIV tokens"
-  homepage "https://filippo.io/yubikey-agent"
-  url "https://ghproxy.com/https://github.com/FiloSottile/yubikey-agent/archive/refs/tags/v0.1.6.tar.gz"
+  homepage "https:filippo.ioyubikey-agent"
+  url "https:github.comFiloSottileyubikey-agentarchiverefstagsv0.1.6.tar.gz"
   sha256 "f156d089376772a34d2995f8261d821369a96a248ab586d27e3be0d9b72d7426"
   license "BSD-3-Clause"
-  head "https://github.com/FiloSottile/yubikey-agent.git", branch: "main"
+  head "https:github.comFiloSottileyubikey-agent.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68bef9f91a8d57edc11813ae0261a1a7c18a9a37afd7b376cb29c5e0b836bd69"
@@ -32,27 +32,27 @@ class YubikeyAgent < Formula
   end
 
   def post_install
-    (var/"run").mkpath
-    (var/"log").mkpath
+    (var"run").mkpath
+    (var"log").mkpath
   end
 
   def caveats
     <<~EOS
-      To use this SSH agent, set this variable in your ~/.zshrc and/or ~/.bashrc:
-        export SSH_AUTH_SOCK="#{var}/run/yubikey-agent.sock"
+      To use this SSH agent, set this variable in your ~.zshrc andor ~.bashrc:
+        export SSH_AUTH_SOCK="#{var}runyubikey-agent.sock"
     EOS
   end
 
   service do
-    run [opt_bin/"yubikey-agent", "-l", var/"run/yubikey-agent.sock"]
+    run [opt_bin"yubikey-agent", "-l", var"runyubikey-agent.sock"]
     keep_alive true
-    log_path var/"log/yubikey-agent.log"
-    error_log_path var/"log/yubikey-agent.log"
+    log_path var"logyubikey-agent.log"
+    error_log_path var"logyubikey-agent.log"
   end
 
   test do
-    socket = testpath/"yubikey-agent.sock"
-    fork { exec bin/"yubikey-agent", "-l", socket }
+    socket = testpath"yubikey-agent.sock"
+    fork { exec bin"yubikey-agent", "-l", socket }
     sleep 1
     assert_predicate socket, :exist?
   end

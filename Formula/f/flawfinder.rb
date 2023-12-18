@@ -2,16 +2,16 @@ class Flawfinder < Formula
   include Language::Python::Shebang
 
   desc "Examines code and reports possible security weaknesses"
-  homepage "https://dwheeler.com/flawfinder/"
-  url "https://dwheeler.com/flawfinder/flawfinder-2.0.19.tar.gz"
+  homepage "https:dwheeler.comflawfinder"
+  url "https:dwheeler.comflawfinderflawfinder-2.0.19.tar.gz"
   sha256 "fe550981d370abfa0a29671346cc0b038229a9bd90b239eab0f01f12212df618"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/david-a-wheeler/flawfinder.git", branch: "master"
+  head "https:github.comdavid-a-wheelerflawfinder.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?flawfinder[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?flawfinder[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,12 +33,12 @@ class Flawfinder < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       int demo(char *a, char *b) {
         strcpy(a, "\n");
         strcpy(a, gettext("Hello there"));
       }
     EOS
-    assert_match("Hits = 2\n", shell_output("#{bin}/flawfinder test.c"))
+    assert_match("Hits = 2\n", shell_output("#{bin}flawfinder test.c"))
   end
 end

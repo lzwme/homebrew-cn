@@ -2,11 +2,11 @@ class Surelog < Formula
   include Language::Python::Virtualenv
 
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
-  homepage "https://github.com/chipsalliance/Surelog"
-  url "https://ghproxy.com/https://github.com/chipsalliance/Surelog/archive/refs/tags/v1.81.tar.gz"
+  homepage "https:github.comchipsallianceSurelog"
+  url "https:github.comchipsallianceSurelogarchiverefstagsv1.81.tar.gz"
   sha256 "5b7a01496f89638576d890b892600b14115f8639ea08b2b4b1b1a7cdde820bf0"
   license "Apache-2.0"
-  head "https://github.com/chipsalliance/Surelog.git", branch: "master"
+  head "https:github.comchipsallianceSurelog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fca25d77f5721defe7c7944205567b02798b9bfb011a785f765126ec18457c21"
@@ -31,7 +31,7 @@ class Surelog < Formula
   depends_on "uhdm"
 
   resource "orderedmultidict" do
-    url "https://files.pythonhosted.org/packages/53/4e/3823a27d764bb8388711f4cb6f24e58453e92d6928f4163fdb01e3a3789f/orderedmultidict-1.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages534e3823a27d764bb8388711f4cb6f24e58453e92d6928f4163fdb01e3a3789forderedmultidict-1.0.1.tar.gz"
     sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
   end
 
@@ -40,7 +40,7 @@ class Surelog < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath/"venv", python3)
+    venv = virtualenv_create(buildpath"venv", python3)
     resources.each do |r|
       venv.pip_install r
     end
@@ -57,30 +57,30 @@ class Surelog < Formula
       "-DGTEST_LIBRARY=unused",
       "-DGTEST_INCLUDE_DIR=unused",
       "-DGTEST_MAIN_LIBRARY=unused",
-      "-DANTLR_JAR_LOCATION=#{Formula["antlr"].opt_prefix}/antlr-#{Formula["antlr"].version}-complete.jar",
+      "-DANTLR_JAR_LOCATION=#{Formula["antlr"].opt_prefix}antlr-#{Formula["antlr"].version}-complete.jar",
       "-DSURELOG_WITH_ZLIB=ON",
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
-      "-DPython3_EXECUTABLE=#{buildpath}/venv/bin/python", *std_cmake_args
+      "-DPython3_EXECUTABLE=#{buildpath}venvbinpython", *std_cmake_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
   end
 
   test do
     # ensure linking is ok
-    system bin/"surelog", "--version"
+    system bin"surelog", "--version"
 
     # ensure library is ok
-    (testpath/"test.cpp").write <<~EOS
-      #include <Surelog/API/Surelog.h>
-      #include <Surelog/CommandLine/CommandLineParser.h>
-      #include <Surelog/Common/FileSystem.h>
-      #include <Surelog/Design/Design.h>
-      #include <Surelog/Design/ModuleInstance.h>
-      #include <Surelog/ErrorReporting/ErrorContainer.h>
-      #include <Surelog/SourceCompile/SymbolTable.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <SurelogAPISurelog.h>
+      #include <SurelogCommandLineCommandLineParser.h>
+      #include <SurelogCommonFileSystem.h>
+      #include <SurelogDesignDesign.h>
+      #include <SurelogDesignModuleInstance.h>
+      #include <SurelogErrorReportingErrorContainer.h>
+      #include <SurelogSourceCompileSymbolTable.h>
       #include <functional>
       #include <iostream>
-      #include <uhdm/uhdm.h>
+      #include <uhdmuhdm.h>
       int main(int argc, const char** argv) {
         uint32_t code = 0;
         SURELOG::SymbolTable* symbolTable = new SURELOG::SymbolTable();
@@ -125,9 +125,9 @@ class Surelog < Formula
     EOS
 
     flags = shell_output("pkg-config --cflags --libs Surelog").chomp.split
-    system ENV.cxx, testpath/"test.cpp", "-o", "test",
-      "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}/lib",
+    system ENV.cxx, testpath"test.cpp", "-o", "test",
+      "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}lib",
       "-fPIC", "-std=c++17", *flags
-    system testpath/"test"
+    system testpath"test"
   end
 end

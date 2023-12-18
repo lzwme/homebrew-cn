@@ -1,7 +1,7 @@
 class Tracy < Formula
   desc "Real-time, nanosecond resolution frame profiler"
-  homepage "https://github.com/wolfpld/tracy"
-  url "https://ghproxy.com/https://github.com/wolfpld/tracy/archive/refs/tags/v0.10.tar.gz"
+  homepage "https:github.comwolfpldtracy"
+  url "https:github.comwolfpldtracyarchiverefstagsv0.10.tar.gz"
   sha256 "a76017d928f3f2727540fb950edd3b736caa97b12dbb4e5edce66542cbea6600"
   license "BSD-3-Clause"
 
@@ -30,26 +30,26 @@ class Tracy < Formula
 
   def install
     %w[capture csvexport import-chrome update].each do |f|
-      system "make", "-C", "#{f}/build/unix", "release"
-      bin.install "#{f}/build/unix/#{f}-release" => "tracy-#{f}"
+      system "make", "-C", "#{f}buildunix", "release"
+      bin.install "#{f}buildunix#{f}-release" => "tracy-#{f}"
     end
 
-    system "make", "-C", "profiler/build/unix", "release"
-    bin.install "profiler/build/unix/Tracy-release" => "tracy"
-    system "make", "-C", "library/unix", "release"
-    lib.install "library/unix/libtracy-release.so" => "libtracy.so"
+    system "make", "-C", "profilerbuildunix", "release"
+    bin.install "profilerbuildunixTracy-release" => "tracy"
+    system "make", "-C", "libraryunix", "release"
+    lib.install "libraryunixlibtracy-release.so" => "libtracy.so"
 
     %w[client common tracy].each do |f|
-      (include/"Tracy/#{f}").install Dir["public/#{f}/*.{h,hpp}"]
+      (include"Tracy#{f}").install Dir["public#{f}*.{h,hpp}"]
     end
   end
 
   test do
     port = free_port
-    assert_match "Tracy Profiler #{version}", shell_output("#{bin}/tracy --help")
+    assert_match "Tracy Profiler #{version}", shell_output("#{bin}tracy --help")
 
     pid = fork do
-      exec "#{bin}/tracy", "-p", port.to_s
+      exec "#{bin}tracy", "-p", port.to_s
     end
     sleep 1
   ensure

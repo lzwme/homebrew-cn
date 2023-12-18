@@ -1,10 +1,10 @@
 class Zpaqfranz < Formula
   desc "Deduplicating command-line archiver and backup tool"
-  homepage "https://github.com/fcorbelli/zpaqfranz"
-  url "https://ghproxy.com/https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/58.11.tar.gz"
+  homepage "https:github.comfcorbellizpaqfranz"
+  url "https:github.comfcorbellizpaqfranzarchiverefstags58.11.tar.gz"
   sha256 "960e669074ea7088637ea4ebd92e2de5ce09379774cf776c2c7dc89369717a55"
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
-  head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
+  head "https:github.comfcorbellizpaqfranz.git", branch: "main"
 
   # Some versions using a stable tag format are marked as pre-release on GitHub,
   # so it's necessary to check release versions instead of tags.
@@ -29,14 +29,14 @@ class Zpaqfranz < Formula
     # JIT only works on Intel (might work on Linux aarch64, but not Apple Silicon)
     ENV.append_to_cflags "-DNOJIT" unless Hardware::CPU.intel?
 
-    system "make", "install", "-f", "NONWINDOWS/Makefile", "BINDIR=#{bin}/#{name}"
-    man1.install Utils::Gzip.compress("man/zpaqfranz.1")
+    system "make", "install", "-f", "NONWINDOWSMakefile", "BINDIR=#{bin}#{name}"
+    man1.install Utils::Gzip.compress("manzpaqfranz.1")
   end
 
   test do
-    system bin/"zpaqfranz", "autotest", "-to", testpath/"archive"
-    system bin/"zpaqfranz", "extract", testpath/"archive/sha256.zpaq", "-to", testpath/"out/"
-    testpath.glob("out/*").each do |path|
+    system bin"zpaqfranz", "autotest", "-to", testpath"archive"
+    system bin"zpaqfranz", "extract", testpath"archivesha256.zpaq", "-to", testpath"out"
+    testpath.glob("out*").each do |path|
       assert_equal path.basename.to_s.downcase, Digest::SHA256.hexdigest(path.read)
     end
   end

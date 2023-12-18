@@ -1,14 +1,14 @@
 class Radare2 < Formula
   desc "Reverse engineering framework"
-  homepage "https://radare.org"
-  url "https://ghproxy.com/https://github.com/radareorg/radare2/archive/refs/tags/5.8.8.tar.gz"
+  homepage "https:radare.org"
+  url "https:github.comradareorgradare2archiverefstags5.8.8.tar.gz"
   sha256 "4f88c33e4391f492c7d0073df9bffcc666cc1e2ca0a95d6e1035decdaa227b26"
   license "LGPL-3.0-only"
-  head "https://github.com/radareorg/radare2.git", branch: "master"
+  head "https:github.comradareorgradare2.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,12 +24,12 @@ class Radare2 < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match "radare2 #{version}", shell_output("#{bin}/r2 -v")
+    assert_match "radare2 #{version}", shell_output("#{bin}r2 -v")
   end
 end

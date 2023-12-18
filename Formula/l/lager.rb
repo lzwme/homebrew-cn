@@ -1,7 +1,7 @@
 class Lager < Formula
   desc "C++ lib for value-oriented design using unidirectional data-flow architecture"
-  homepage "https://sinusoid.es/lager/"
-  url "https://ghproxy.com/https://github.com/arximboldi/lager/archive/refs/tags/v0.1.1.tar.gz"
+  homepage "https:sinusoid.eslager"
+  url "https:github.comarximboldilagerarchiverefstagsv0.1.1.tar.gz"
   sha256 "9e4743c3fe2c95c1653c3fd088a2200108f09d758725697831852dc91d15d174"
   license "MIT"
 
@@ -25,28 +25,28 @@ class Lager < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include <lager/state.hpp>
+      #include <lagerstate.hpp>
       #include <string>
 
       int main() {
         using model = int;
 
         auto state = lager::make_state(model{});
-        std::cout << state.get() << std::endl; // 0
+        std::cout << state.get() << std::endl;  0
         state.set(1);
-        std::cout << state.get() << std::endl; // 0
+        std::cout << state.get() << std::endl;  0
         lager::commit(state);
-        std::cout << state.get() << std::endl; // 1
+        std::cout << state.get() << std::endl;  1
 
         auto state2 = lager::make_state(model{}, lager::automatic_tag{});
         state2.set(2);
-        std::cout << state2.get() << std::endl; // 2
+        std::cout << state2.get() << std::endl;  2
       }
     EOS
 
     system ENV.cxx, "-std=c++17", "-I#{include}", "test.cpp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

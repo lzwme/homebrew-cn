@@ -1,13 +1,13 @@
 class Allure < Formula
   desc "Flexible lightweight test report tool"
-  homepage "https://github.com/allure-framework/allure2"
-  url "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.25.0/allure-commandline-2.25.0.zip"
+  homepage "https:github.comallure-frameworkallure2"
+  url "https:repo.maven.apache.orgmaven2ioqametaallureallure-commandline2.25.0allure-commandline-2.25.0.zip"
   sha256 "baead9b547f2b2ee445523ef4d57f236565a2c7fa6290726e6f6dcb4c584a502"
   license "Apache-2.0"
 
   livecheck do
-    url "https://search.maven.org/remotecontent?filepath=io/qameta/allure/allure-commandline/maven-metadata.xml"
-    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
+    url "https:search.maven.orgremotecontent?filepath=ioqametaallureallure-commandlinemaven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)<version>}i)
   end
 
   bottle do
@@ -18,16 +18,16 @@ class Allure < Formula
 
   def install
     # Remove all windows files
-    rm_f Dir["bin/*.bat"]
+    rm_f Dir["bin*.bat"]
 
     prefix.install_metafiles
     libexec.install Dir["*"]
-    bin.install Dir["#{libexec}/bin/*"]
-    bin.env_script_all_files libexec/"bin", JAVA_HOME: Formula["openjdk"].opt_prefix
+    bin.install Dir["#{libexec}bin*"]
+    bin.env_script_all_files libexec"bin", JAVA_HOME: Formula["openjdk"].opt_prefix
   end
 
   test do
-    (testpath/"allure-results/allure-result.json").write <<~EOS
+    (testpath"allure-resultsallure-result.json").write <<~EOS
       {
         "uuid": "allure",
         "name": "testReportGeneration",
@@ -52,6 +52,6 @@ class Allure < Formula
         ]
       }
     EOS
-    system "#{bin}/allure", "generate", "#{testpath}/allure-results", "-o", "#{testpath}/allure-report"
+    system "#{bin}allure", "generate", "#{testpath}allure-results", "-o", "#{testpath}allure-report"
   end
 end

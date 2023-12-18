@@ -1,7 +1,7 @@
 class Seqtk < Formula
-  desc "Toolkit for processing sequences in FASTA/Q formats"
-  homepage "https://github.com/lh3/seqtk"
-  url "https://ghproxy.com/https://github.com/lh3/seqtk/archive/refs/tags/v1.4.tar.gz"
+  desc "Toolkit for processing sequences in FASTAQ formats"
+  homepage "https:github.comlh3seqtk"
+  url "https:github.comlh3seqtkarchiverefstagsv1.4.tar.gz"
   sha256 "d124604ec24f29ed14ce127426ab90e0f3a2c0280c80d1a3ff8b1c09feede19c"
   license "MIT"
 
@@ -25,11 +25,11 @@ class Seqtk < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCT
       CTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    assert_match "TCTCTG", shell_output("#{bin}/seqtk seq test.fasta")
+    assert_match "TCTCTG", shell_output("#{bin}seqtk seq test.fasta")
   end
 end

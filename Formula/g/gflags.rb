@@ -1,7 +1,7 @@
 class Gflags < Formula
   desc "Library for processing command-line flags"
-  homepage "https://gflags.github.io/gflags/"
-  url "https://ghproxy.com/https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.tar.gz"
+  homepage "https:gflags.github.iogflags"
+  url "https:github.comgflagsgflagsarchiverefstagsv2.2.2.tar.gz"
   sha256 "34af2f15cf7367513b352bdcd2493ab14ce43692d2dcd9dfc499492966c64dcf"
   license "BSD-3-Clause"
 
@@ -29,9 +29,9 @@ class Gflags < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include "gflags/gflags.h"
+      #include "gflagsgflags.h"
 
       DEFINE_bool(verbose, false, "Display program name before message");
       DEFINE_string(message, "Hello world!", "Message to print");
@@ -54,10 +54,10 @@ class Gflags < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lgflags", "-o", "test"
-    assert_match "Hello world!", shell_output("./test")
-    assert_match "Foo bar!", shell_output("./test --message='Foo bar!'")
+    assert_match "Hello world!", shell_output(".test")
+    assert_match "Foo bar!", shell_output(".test --message='Foo bar!'")
 
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 2.8)
       project(cmake_test)
       add_executable(${PROJECT_NAME} test.cpp)
@@ -66,6 +66,6 @@ class Gflags < Formula
     EOS
     system "cmake", testpath.to_s
     system "cmake", "--build", testpath.to_s
-    assert_match "Hello world!", shell_output("./cmake_test")
+    assert_match "Hello world!", shell_output(".cmake_test")
   end
 end

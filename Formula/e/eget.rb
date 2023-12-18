@@ -1,10 +1,10 @@
 class Eget < Formula
   desc "Easily install prebuilt binaries from GitHub"
-  homepage "https://github.com/zyedidia/eget"
-  url "https://ghproxy.com/https://github.com/zyedidia/eget/archive/refs/tags/v1.3.3.tar.gz"
+  homepage "https:github.comzyedidiaeget"
+  url "https:github.comzyedidiaegetarchiverefstagsv1.3.3.tar.gz"
   sha256 "9b392ecb5db6917283f5186c0bd9eee43c04f8c6a0a139a11bf8dea323f717c7"
   license "MIT"
-  head "https://github.com/zyedidia/eget.git", branch: "master"
+  head "https:github.comzyedidiaeget.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49a218d881b21e13652107b3c8e126435f1c7769982ffe6dda0e85d64cd66df9"
@@ -28,14 +28,14 @@ class Eget < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/eget -v")
+    assert_match version.to_s, shell_output("#{bin}eget -v")
 
     # Use eget to install a v1.1.0 release of itself,
     # and verify that the installed binary is functional.
-    system bin/"eget", "zyedidia/eget",
+    system bin"eget", "zyedidiaeget",
                        "--tag", "v1.1.0",
                        "--to", testpath,
                        "--file", "eget"
-    assert_match "eget version 1.1.0", shell_output("./eget -v")
+    assert_match "eget version 1.1.0", shell_output(".eget -v")
   end
 end

@@ -2,10 +2,10 @@ cask "font-calligraffitti" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/calligraffitti/Calligraffitti-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapachecalligraffittiCalligraffitti-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Calligraffitti"
-  homepage "https://fonts.google.com/specimen/Calligraffitti"
+  homepage "https:fonts.google.comspecimenCalligraffitti"
 
   font "Calligraffitti-Regular.ttf"
 

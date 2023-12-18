@@ -2,10 +2,10 @@ cask "font-fasthand" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/fasthand/Fasthand-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflfasthandFasthand-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Fasthand"
-  homepage "https://fonts.google.com/specimen/Fasthand"
+  homepage "https:fonts.google.comspecimenFasthand"
 
   font "Fasthand-Regular.ttf"
 

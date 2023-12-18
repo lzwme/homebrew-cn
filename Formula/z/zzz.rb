@@ -1,10 +1,10 @@
 class Zzz < Formula
   desc "Command-line tool to put Macs to sleep"
-  homepage "https://github.com/Orc/Zzz"
-  url "https://ghproxy.com/https://github.com/Orc/Zzz/archive/refs/tags/v1.tar.gz"
+  homepage "https:github.comOrcZzz"
+  url "https:github.comOrcZzzarchiverefstagsv1.tar.gz"
   sha256 "8c8958b65a74ab1081ce1a950af6d360166828bdb383d71cc8fe37ddb1702576"
   license :public_domain
-  head "https://github.com/Orc/Zzz.git", branch: "main"
+  head "https:github.comOrcZzz.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87aded93dd5a70ab018880e46586b6a7c0929414def405edb1db0e1e6b7a5936"
@@ -28,6 +28,6 @@ class Zzz < Formula
   end
 
   test do
-    assert_predicate bin/"Zzz", :exist?
+    assert_predicate bin"Zzz", :exist?
   end
 end

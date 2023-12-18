@@ -5,11 +5,11 @@ cask "onekey" do
   sha256 arm:   "69f6df76d748b66ca5842485f1501bde7dd8ba6abac13f0ee4146817818e37d8",
          intel: "920b5c04ad447f4a9d80a890693032f41ad31390785179ab54694926ae8f10f6"
 
-  url "https://ghproxy.com/https://github.com/OneKeyHQ/app-monorepo/releases/download/v#{version}/OneKey-Wallet-#{version}-mac-#{arch}.dmg",
-      verified: "github.com/OneKeyHQ/app-monorepo/"
+  url "https:github.comOneKeyHQapp-monoreporeleasesdownloadv#{version}OneKey-Wallet-#{version}-mac-#{arch}.dmg",
+      verified: "github.comOneKeyHQapp-monorepo"
   name "OneKey"
   desc "Crypto wallet"
-  homepage "https://onekey.so/"
+  homepage "https:onekey.so"
 
   livecheck do
     url :url
@@ -21,9 +21,9 @@ cask "onekey" do
   app "OneKey.app"
 
   zap trash: [
-    "~/Library/Application Support/@onekeyhq",
-    "~/Library/Logs/@onekeyhq",
-    "~/Library/Preferences/so.onekey.wallet.desktop.plist",
-    "~/Library/Saved Application State/so.onekey.wallet.desktop.savedState",
+    "~LibraryApplication Support@onekeyhq",
+    "~LibraryLogs@onekeyhq",
+    "~LibraryPreferencesso.onekey.wallet.desktop.plist",
+    "~LibrarySaved Application Stateso.onekey.wallet.desktop.savedState",
   ]
 end

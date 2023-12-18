@@ -1,7 +1,7 @@
 class Um < Formula
   desc "Command-line utility for creating and maintaining personal man pages"
-  homepage "https://github.com/sinclairtarget/um"
-  url "https://ghproxy.com/https://github.com/sinclairtarget/um/archive/refs/tags/4.2.0.tar.gz"
+  homepage "https:github.comsinclairtargetum"
+  url "https:github.comsinclairtargetumarchiverefstags4.2.0.tar.gz"
   sha256 "f8c3f4bc5933cb4ab9643dcef7b01b8e8edf2dcbcd8062ef3ef214d1673ae64e"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Um < Formula
   uses_from_macos "ruby", since: :high_sierra
 
   resource "kramdown" do
-    url "https://rubygems.org/gems/kramdown-1.17.0.gem"
+    url "https:rubygems.orggemskramdown-1.17.0.gem"
     sha256 "5862410a2c1692fde2fcc86d78d2265777c22bd101f11c76442f1698ab242cd8"
   end
 
@@ -39,17 +39,17 @@ class Um < Formula
     system "gem", "build", "um.gemspec"
     system "gem", "install", "--ignore-dependencies", "um-#{version}.gem"
 
-    bin.install libexec/"bin/um"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec"binum"
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
 
     bash_completion.install "um-completion.sh"
-    man1.install Dir["doc/man1/*"]
+    man1.install Dir["docman1*"]
   end
 
   test do
-    system bin/"um", "topic", "-d" # Set default topic
+    system bin"um", "topic", "-d" # Set default topic
 
-    output = shell_output("#{bin}/um topic")
-    assert_match shell_output("#{bin}/um config default_topic"), output
+    output = shell_output("#{bin}um topic")
+    assert_match shell_output("#{bin}um config default_topic"), output
   end
 end

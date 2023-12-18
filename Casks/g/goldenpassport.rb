@@ -2,10 +2,10 @@ cask "goldenpassport" do
   version "0.1.7"
   sha256 "696a2cd0c6245502727b2cab0f0a2d92c636fca6e4c3c1fbfa289e152cadc46c"
 
-  url "https://ghproxy.com/https://github.com/stanzhai/GoldenPassport/releases/download/v#{version}/GoldenPassport.zip"
+  url "https:github.comstanzhaiGoldenPassportreleasesdownloadv#{version}GoldenPassport.zip"
   name "GoldenPassport"
   desc "Native implementation of Google Authenticator based on Swift3"
-  homepage "https://github.com/stanzhai/GoldenPassport"
+  homepage "https:github.comstanzhaiGoldenPassport"
 
   livecheck do
     url :url
@@ -17,7 +17,7 @@ cask "goldenpassport" do
   app "GoldenPassport.app"
 
   zap trash: [
-    "~/Library/Application Support/GoldenPassport",
-    "~/Library/Preferences/site.stanzhai.GoldenPassport.plist",
+    "~LibraryApplication SupportGoldenPassport",
+    "~LibraryPreferencessite.stanzhai.GoldenPassport.plist",
   ]
 end

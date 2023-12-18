@@ -1,7 +1,7 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
-  homepage "https://faust.grame.fr"
-  url "https://ghproxy.com/https://github.com/grame-cncm/faust/releases/download/2.69.3/faust-2.69.3.tar.gz"
+  homepage "https:faust.grame.fr"
+  url "https:github.comgrame-cncmfaustreleasesdownload2.69.3faust-2.69.3.tar.gz"
   sha256 "169a2f1e8a95e159c78c734c1c5dd818bf5c95b3b002a7efd9f6bb8589357062"
   license "GPL-2.0-or-later"
 
@@ -63,16 +63,16 @@ class Faust < Formula
     system "cmake", "--build", "homebrew_build"
     system "cmake", "--install", "homebrew_build"
 
-    system "make", "--directory=tools/sound2faust", "PREFIX=#{prefix}"
-    system "make", "--directory=tools/sound2faust", "install", "PREFIX=#{prefix}"
+    system "make", "--directory=toolssound2faust", "PREFIX=#{prefix}"
+    system "make", "--directory=toolssound2faust", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath/"noise.dsp").write <<~EOS
+    (testpath"noise.dsp").write <<~EOS
       import("stdfaust.lib");
       process = no.noise;
     EOS
 
-    system bin/"faust", "noise.dsp"
+    system bin"faust", "noise.dsp"
   end
 end

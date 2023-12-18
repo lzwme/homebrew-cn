@@ -1,10 +1,10 @@
 class NeovimQt < Formula
   desc "Neovim GUI, in Qt"
-  homepage "https://github.com/equalsraf/neovim-qt"
-  url "https://ghproxy.com/https://github.com/equalsraf/neovim-qt/archive/refs/tags/v0.2.18.tar.gz"
+  homepage "https:github.comequalsrafneovim-qt"
+  url "https:github.comequalsrafneovim-qtarchiverefstagsv0.2.18.tar.gz"
   sha256 "b1e1e019946ecb106b3aea8e35fc6e367d2efce44ca1c1599a2ccdfb35a28635"
   license "ISC"
-  head "https://github.com/equalsraf/neovim-qt.git", branch: "master"
+  head "https:github.comequalsrafneovim-qt.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,8 +30,8 @@ class NeovimQt < Formula
     system "cmake", "--install", "build"
 
     if OS.mac?
-      prefix.install bin/"nvim-qt.app"
-      bin.install_symlink prefix/"nvim-qt.app/Contents/MacOS/nvim-qt"
+      prefix.install bin"nvim-qt.app"
+      bin.install_symlink prefix"nvim-qt.appContentsMacOSnvim-qt"
     end
   end
 
@@ -40,20 +40,20 @@ class NeovimQt < Formula
     #   qt.qpa.xcb: could not connect to display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    # Same test as Formula/neovim.rb
+    # Same test as Formulaneovim.rb
 
-    testfile = testpath/"test.txt"
-    testserver = testpath/"nvim.sock"
+    testfile = testpath"test.txt"
+    testserver = testpath"nvim.sock"
 
-    testcommand = ":s/Vim/Neovim/g<CR>"
+    testcommand = ":sVimNeovimg<CR>"
     testinput = "Hello World from Vim!!"
     testexpected = "Hello World from Neovim!!"
     testfile.write(testinput)
 
     nvim_opts = ["--server", testserver]
 
-    ohai "#{bin}/nvim-qt --nofork -- --listen #{testserver}"
-    nvimqt_pid = spawn bin/"nvim-qt", "--nofork", "--", "--listen", testserver
+    ohai "#{bin}nvim-qt --nofork -- --listen #{testserver}"
+    nvimqt_pid = spawn bin"nvim-qt", "--nofork", "--", "--listen", testserver
     sleep 10
     system "nvim", *nvim_opts, "--remote", testfile
     system "nvim", *nvim_opts, "--remote-send", testcommand

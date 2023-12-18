@@ -1,7 +1,7 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
-  homepage "https://github.com/google/libphonenumber"
-  url "https://ghproxy.com/https://github.com/google/libphonenumber/archive/refs/tags/v8.13.26.tar.gz"
+  homepage "https:github.comgooglelibphonenumber"
+  url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.26.tar.gz"
   sha256 "a7df5f274dafa0b590524560fba72f561284a224344272fa8b2101677a7aa317"
   license "Apache-2.0"
 
@@ -42,9 +42,9 @@ class Libphonenumber < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <phonenumbers/phonenumberutil.h>
-      #include <phonenumbers/phonenumber.pb.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <phonenumbersphonenumberutil.h>
+      #include <phonenumbersphonenumber.pb.h>
       #include <iostream>
       #include <string>
 
@@ -65,6 +65,6 @@ class Libphonenumber < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lphonenumber", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

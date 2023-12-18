@@ -1,10 +1,10 @@
 class Spack < Formula
   desc "Package manager that builds multiple versions and configurations of software"
-  homepage "https://spack.io"
-  url "https://ghproxy.com/https://github.com/spack/spack/archive/refs/tags/v0.21.0.tar.gz"
+  homepage "https:spack.io"
+  url "https:github.comspackspackarchiverefstagsv0.21.0.tar.gz"
   sha256 "98680e52591428dc194a021e673a79bdc7799f394c1217b3fc22c89465159a84"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/spack/spack.git", branch: "develop"
+  head "https:github.comspackspack.git", branch: "develop"
 
   livecheck do
     url :stable
@@ -24,19 +24,19 @@ class Spack < Formula
   uses_from_macos "python"
 
   def install
-    rm Dir["bin/*.bat", "bin/*.ps1", "bin/haspywin.py"] # Remove Windows files.
+    rm Dir["bin*.bat", "bin*.ps1", "binhaspywin.py"] # Remove Windows files.
     prefix.install Dir["*"]
   end
 
   def post_install
-    mkdir_p prefix/"var/spack/junit-report" unless (prefix/"var/spack/junit-report").exist?
+    mkdir_p prefix"varspackjunit-report" unless (prefix"varspackjunit-report").exist?
   end
 
   test do
-    system bin/"spack", "--version"
-    assert_match "zlib", shell_output("#{bin}/spack info zlib")
-    system bin/"spack", "compiler", "find"
+    system bin"spack", "--version"
+    assert_match "zlib", shell_output("#{bin}spack info zlib")
+    system bin"spack", "compiler", "find"
     expected = OS.mac? ? "clang" : "gcc"
-    assert_match expected, shell_output("#{bin}/spack compiler list")
+    assert_match expected, shell_output("#{bin}spack compiler list")
   end
 end

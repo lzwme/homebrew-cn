@@ -1,11 +1,11 @@
 class Robotfindskitten < Formula
   desc "Zen Simulation of robot finding kitten"
-  homepage "http://robotfindskitten.org/"
-  url "https://downloads.sourceforge.net/project/rfk/robotfindskitten-POSIX/ship_it_anyway/robotfindskitten-2.8284271.702.tar.gz"
+  homepage "http:robotfindskitten.org"
+  url "https:downloads.sourceforge.netprojectrfkrobotfindskitten-POSIXship_it_anywayrobotfindskitten-2.8284271.702.tar.gz"
   sha256 "020172e4f4630f7c4f62c03b6ffe2eeeba5637b60374d3e6952ae5816a9f99af"
   license "GPL-2.0"
   revision 1
-  head "https://github.com/robotfindskitten/robotfindskitten.git", branch: "main"
+  head "https:github.comrobotfindskittenrobotfindskitten.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "94751d896df7daed821dfd5ba1a5c89c05b9e014f9e44c3d9f5e0f09a9f512be"
@@ -30,13 +30,13 @@ class Robotfindskitten < Formula
 
   def install
     system "autoreconf", "-ivf"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install", "execgamesdir=#{bin}"
   end
 
   test do
     assert_equal "robotfindskitten: #{version}",
-      shell_output("#{bin}/robotfindskitten -V").chomp
+      shell_output("#{bin}robotfindskitten -V").chomp
   end
 end

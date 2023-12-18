@@ -5,12 +5,12 @@ cask "tabby" do
   sha256 arm:   "17e551b0258affcf1425a2773b53d36936a82bf474fa7d8a8a01de79235271de",
          intel: "666ad1fd7f29cb9bcf6a50285e22280d1b808938f611d193e18ea0866a8be6ae"
 
-  url "https://ghproxy.com/https://github.com/Eugeny/tabby/releases/download/v#{version}/tabby-#{version}-macos-#{arch}.zip",
-      verified: "github.com/Eugeny/tabby/"
+  url "https:github.comEugenytabbyreleasesdownloadv#{version}tabby-#{version}-macos-#{arch}.zip",
+      verified: "github.comEugenytabby"
   name "Tabby"
   name "Terminus"
   desc "Terminal emulator, SSH and serial client"
-  homepage "https://eugeny.github.io/tabby/"
+  homepage "https:eugeny.github.iotabby"
 
   livecheck do
     url :url
@@ -22,11 +22,11 @@ cask "tabby" do
   app "Tabby.app"
 
   zap trash: [
-    "~/Library/Application Support/tabby",
-    "~/Library/Preferences/org.tabby.helper.plist",
-    "~/Library/Preferences/org.tabby.plist",
-    "~/Library/Saved Application State/org.tabby.savedState",
-    "~/Library/Services/Open Tabby here.workflow",
-    "~/Library/Services/Paste path into Tabby.workflow",
+    "~LibraryApplication Supporttabby",
+    "~LibraryPreferencesorg.tabby.helper.plist",
+    "~LibraryPreferencesorg.tabby.plist",
+    "~LibrarySaved Application Stateorg.tabby.savedState",
+    "~LibraryServicesOpen Tabby here.workflow",
+    "~LibraryServicesPaste path into Tabby.workflow",
   ]
 end

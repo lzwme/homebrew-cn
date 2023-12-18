@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class DockerfileLanguageServer < Formula
   desc "Language server for Dockerfiles powered by Node, TypeScript, and VSCode"
-  homepage "https://github.com/rcjsuen/dockerfile-language-server"
-  url "https://registry.npmjs.org/dockerfile-language-server-nodejs/-/dockerfile-language-server-nodejs-0.11.0.tgz"
+  homepage "https:github.comrcjsuendockerfile-language-server"
+  url "https:registry.npmjs.orgdockerfile-language-server-nodejs-dockerfile-language-server-nodejs-0.11.0.tgz"
   sha256 "042cbd1fb9baf818bf5eb0730a45a0ae257d42e74d358c8bf177f5a561f3839b"
   license "MIT"
-  head "https://github.com/rcjsuen/dockerfile-language-server.git", branch: "master"
+  head "https:github.comrcjsuendockerfile-language-server.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b7110ccd0518d69ff46216bebd74f2435570aa1f41e78321ef3d187e9e07f195"
@@ -22,7 +22,7 @@ class DockerfileLanguageServer < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
@@ -40,10 +40,10 @@ class DockerfileLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/docker-langserver", "--stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}docker-langserver", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

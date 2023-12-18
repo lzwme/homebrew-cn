@@ -2,11 +2,11 @@ cask "google-japanese-ime" do
   version "2.28.5050"
   sha256 :no_check
 
-  url "https://dl.google.com/japanese-ime/latest/GoogleJapaneseInput.dmg",
-      verified: "dl.google.com/japanese-ime/"
+  url "https:dl.google.comjapanese-imelatestGoogleJapaneseInput.dmg",
+      verified: "dl.google.comjapanese-ime"
   name "Google Japanese Input Method Editor"
   desc "Japanese input software"
-  homepage "https://www.google.co.jp/ime/"
+  homepage "https:www.google.co.jpime"
 
   livecheck do
     url :url
@@ -18,7 +18,7 @@ cask "google-japanese-ime" do
   pkg "GoogleJapaneseInput.pkg"
 
   # Some launchctl and pkgutil items are shared with other Google apps, they should only be removed in the zap stanza
-  # See: https://github.com/Homebrew/homebrew-cask/pull/92704#issuecomment-727163169
+  # See: https:github.comHomebrewhomebrew-caskpull92704#issuecomment-727163169
   # launchctl: com.google.keystone.daemon, com.google.keystone.system.agent, com.google.keystone.system.xpcservice
   # pkgutil: com.google.pkg.Keystone
   uninstall pkgutil:   "com.google.pkg.GoogleJapaneseInput",
@@ -34,8 +34,8 @@ cask "google-japanese-ime" do
         "com.google.keystone.xpcservice",
       ],
       trash:     [
-        "~/Library/Application Support/Google/JapaneseInput",
-        "~/Library/Logs/GoogleJapaneseInput",
-        "~/Library/Saved Application State/com.google.inputmethod.Japanese.Tool.ConfigDialog.savedState",
+        "~LibraryApplication SupportGoogleJapaneseInput",
+        "~LibraryLogsGoogleJapaneseInput",
+        "~LibrarySaved Application Statecom.google.inputmethod.Japanese.Tool.ConfigDialog.savedState",
       ]
 end

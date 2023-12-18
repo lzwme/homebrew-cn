@@ -1,13 +1,13 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
-  homepage "https://nexte.st"
-  url "https://ghproxy.com/https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.66.tar.gz"
+  homepage "https:nexte.st"
+  url "https:github.comnextest-rsnextestarchiverefstagscargo-nextest-0.9.66.tar.gz"
   sha256 "2525fa66c6945821fc5b957b5cc41922c6879731bca8711f577f8794ef0b389d"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^cargo-nextest[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^cargo-nextest[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,15 +30,15 @@ class CargoNextest < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"src/main.rs").write <<~EOS
+      (crate"srcmain.rs").write <<~EOS
         #[cfg(test)]
         mod tests {
           #[test]
@@ -47,7 +47,7 @@ class CargoNextest < Formula
           }
         }
       EOS
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"

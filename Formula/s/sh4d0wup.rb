@@ -1,7 +1,7 @@
 class Sh4d0wup < Formula
   desc "Signing-key abuse and update exploitation framework"
-  homepage "https://github.com/kpcyrd/sh4d0wup"
-  url "https://ghproxy.com/https://github.com/kpcyrd/sh4d0wup/archive/refs/tags/v0.9.1.tar.gz"
+  homepage "https:github.comkpcyrdsh4d0wup"
+  url "https:github.comkpcyrdsh4d0wuparchiverefstagsv0.9.1.tar.gz"
   sha256 "5f74ad2cfc4babf0a718003e9940892250715f413efa321e0c53aedaed568f65"
   license "GPL-3.0-or-later"
 
@@ -31,7 +31,7 @@ class Sh4d0wup < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"sh4d0wup", "completions")
+    generate_completions_from_executable(bin"sh4d0wup", "completions")
   end
 
   def check_binary_linkage(binary, library)
@@ -43,23 +43,23 @@ class Sh4d0wup < Formula
   end
 
   test do
-    output = shell_output("#{bin}/sh4d0wup keygen tls example.com | openssl x509 -text -noout")
+    output = shell_output("#{bin}sh4d0wup keygen tls example.com | openssl x509 -text -noout")
     assert_match("DNS:example.com", output)
 
-    output = shell_output("#{bin}/sh4d0wup keygen pgp | pgpdump")
+    output = shell_output("#{bin}sh4d0wup keygen pgp | pgpdump")
     assert_match("New: Public Key Packet", output)
 
-    output = shell_output("#{bin}/sh4d0wup keygen ssh --type=ed25519 --bits=256 | ssh-keygen -lf -")
+    output = shell_output("#{bin}sh4d0wup keygen ssh --type=ed25519 --bits=256 | ssh-keygen -lf -")
     assert_match("no comment (ED25519)", output)
 
-    output = shell_output("#{bin}/sh4d0wup keygen openssl --secp256k1 | openssl ec -text -noout")
+    output = shell_output("#{bin}sh4d0wup keygen openssl --secp256k1 | openssl ec -text -noout")
     assert_match("ASN1 OID: secp256k1", output)
 
     [
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"sh4d0wup", library),
+      assert check_binary_linkage(bin"sh4d0wup", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

@@ -2,13 +2,13 @@ cask "mob" do
   version "0.2.2"
   sha256 "a70d66d92310737d9599215d558670a45265795be0be980934a91e9880eb4a73"
 
-  url "https://ghproxy.com/https://github.com/zenghongtu/Mob/releases/download/v#{version}/Mob-#{version}-mac.dmg"
+  url "https:github.comzenghongtuMobreleasesdownloadv#{version}Mob-#{version}-mac.dmg"
   name "Mob"
-  homepage "https://github.com/zenghongtu/Mob"
+  homepage "https:github.comzenghongtuMob"
 
   app "Mob.app"
 
-  zap trash: "~/Library/Application Support/mob"
+  zap trash: "~LibraryApplication Supportmob"
 
   caveats do
     discontinued

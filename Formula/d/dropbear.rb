@@ -1,13 +1,13 @@
 class Dropbear < Formula
-  desc "Small SSH server/client for POSIX-based system"
-  homepage "https://matt.ucc.asn.au/dropbear/dropbear.html"
-  url "https://matt.ucc.asn.au/dropbear/releases/dropbear-2022.83.tar.bz2"
+  desc "Small SSH serverclient for POSIX-based system"
+  homepage "https:matt.ucc.asn.audropbeardropbear.html"
+  url "https:matt.ucc.asn.audropbearreleasesdropbear-2022.83.tar.bz2"
   sha256 "bc5a121ffbc94b5171ad5ebe01be42746d50aa797c9549a4639894a16749443b"
   license "MIT"
 
   livecheck do
     url :homepage
-    regex(/href=.*?dropbear[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?dropbear[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class Dropbear < Formula
   end
 
   head do
-    url "https://github.com/mkj/dropbear.git", branch: "master"
+    url "https:github.commkjdropbear.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -44,19 +44,19 @@ class Dropbear < Formula
       system "autoconf"
       system "autoheader"
     end
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--enable-pam",
                           "--enable-zlib",
                           "--enable-bundled-libtom",
-                          "--sysconfdir=#{etc}/dropbear"
+                          "--sysconfdir=#{etc}dropbear"
     system "make"
     system "make", "install"
   end
 
   test do
-    testfile = testpath/"testec521"
-    system "#{bin}/dbclient", "-h"
-    system "#{bin}/dropbearkey", "-t", "ecdsa", "-f", testfile, "-s", "521"
+    testfile = testpath"testec521"
+    system "#{bin}dbclient", "-h"
+    system "#{bin}dropbearkey", "-t", "ecdsa", "-f", testfile, "-s", "521"
     assert_predicate testfile, :exist?
   end
 end

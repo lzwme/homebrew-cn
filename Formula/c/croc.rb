@@ -1,10 +1,10 @@
 class Croc < Formula
   desc "Securely send things from one computer to another"
-  homepage "https://github.com/schollz/croc"
-  url "https://ghproxy.com/https://github.com/schollz/croc/archive/refs/tags/v9.6.6.tar.gz"
+  homepage "https:github.comschollzcroc"
+  url "https:github.comschollzcrocarchiverefstagsv9.6.6.tar.gz"
   sha256 "9dd954e0068df2be416c71161665bfc283f150d30ba0bf96cee723701e93616f"
   license "MIT"
-  head "https://github.com/schollz/croc.git", branch: "master"
+  head "https:github.comschollzcroc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21b6f7c98dd5036ee4849444cabce50531eccb48a587b46d8e160093656c8a9d"
@@ -26,15 +26,15 @@ class Croc < Formula
     port=free_port
 
     fork do
-      exec bin/"croc", "relay", "--ports=#{port}"
+      exec bin"croc", "relay", "--ports=#{port}"
     end
     sleep 1
 
     fork do
-      exec bin/"croc", "--relay=localhost:#{port}", "send", "--code=homebrew-test", "--text=mytext"
+      exec bin"croc", "--relay=localhost:#{port}", "send", "--code=homebrew-test", "--text=mytext"
     end
     sleep 1
 
-    assert_match shell_output("#{bin}/croc --relay=localhost:#{port} --overwrite --yes homebrew-test").chomp, "mytext"
+    assert_match shell_output("#{bin}croc --relay=localhost:#{port} --overwrite --yes homebrew-test").chomp, "mytext"
   end
 end

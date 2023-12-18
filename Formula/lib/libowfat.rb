@@ -1,11 +1,11 @@
 class Libowfat < Formula
   desc "Reimplements libdjb"
-  homepage "https://www.fefe.de/libowfat/"
-  url "https://www.fefe.de/libowfat/libowfat-0.32.tar.xz"
+  homepage "https:www.fefe.delibowfat"
+  url "https:www.fefe.delibowfatlibowfat-0.32.tar.xz"
   sha256 "f4b9b3d9922dc25bc93adedf9e9ff8ddbebaf623f14c8e7a5f2301bfef7998c1"
   license "GPL-2.0-only"
   revision 1
-  head ":pserver:cvs:@cvs.fefe.de:/cvs", using: :cvs
+  head ":pserver:cvs:@cvs.fefe.de:cvs", using: :cvs
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "65db99117a336254a90e1da30635af40c430bbedb569ff6bc1d4f0fb85714d4f"
@@ -17,11 +17,11 @@ class Libowfat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed6b06c82988da9cee1f3d4fc9f9e7b180fcf656cb1e508237b3cfe225257770"
   end
 
-  # https://github.com/Homebrew/homebrew-core/pull/125418
+  # https:github.comHomebrewhomebrew-corepull125418
   deprecate! date: "2023-05-31", because: :does_not_build
 
   patch do
-    url "https://github.com/mistydemeo/libowfat/commit/278a675a6984e5c202eee9f7e36cda2ae5da658d.patch?full_index=1"
+    url "https:github.commistydemeolibowfatcommit278a675a6984e5c202eee9f7e36cda2ae5da658d.patch?full_index=1"
     sha256 "32eab2348f495f483f7cd34ffd7543bd619f312b7094a4b55be9436af89dd341"
   end
 
@@ -31,14 +31,14 @@ class Libowfat < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libowfat/str.h>
+    (testpath"test.c").write <<~EOS
+      #include <libowfatstr.h>
       int main()
       {
         return str_diff("a", "a");
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lowfat", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

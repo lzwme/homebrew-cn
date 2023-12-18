@@ -1,21 +1,21 @@
 class Audacious < Formula
   desc "Lightweight and versatile audio player"
-  homepage "https://audacious-media-player.org/"
+  homepage "https:audacious-media-player.org"
   license "BSD-2-Clause"
 
   stable do
-    url "https://distfiles.audacious-media-player.org/audacious-4.3.1.tar.bz2"
+    url "https:distfiles.audacious-media-player.orgaudacious-4.3.1.tar.bz2"
     sha256 "85e9e26841505b51e342ee72a2d05f19bef894f567a029ebb3f3e0c1adb42042"
 
     resource "plugins" do
-      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.3.1.tar.bz2"
+      url "https:distfiles.audacious-media-player.orgaudacious-plugins-4.3.1.tar.bz2"
       sha256 "2dea26e3af583a2d684df240b27b2b2932bcd653df4db500a85f4fe5d5fdc8a6"
     end
   end
 
   livecheck do
-    url "https://audacious-media-player.org/download"
-    regex(/href=.*?audacious[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:audacious-media-player.orgdownload"
+    regex(href=.*?audacious[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,10 +31,10 @@ class Audacious < Formula
   end
 
   head do
-    url "https://github.com/audacious-media-player/audacious.git", branch: "master"
+    url "https:github.comaudacious-media-playeraudacious.git", branch: "master"
 
     resource "plugins" do
-      url "https://github.com/audacious-media-player/audacious-plugins.git", branch: "master"
+      url "https:github.comaudacious-media-playeraudacious-plugins.git", branch: "master"
     end
   end
 
@@ -83,7 +83,7 @@ class Audacious < Formula
         -Dmac-media-keys=true
       ]
 
-      ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", lib"pkgconfig"
       system "meson", "setup", "build", *std_meson_args, *args
       system "meson", "compile", "-C", "build", "--verbose"
       system "meson", "install", "-C", "build"
@@ -98,6 +98,6 @@ class Audacious < Formula
   end
 
   test do
-    system bin/"audacious", "--help"
+    system bin"audacious", "--help"
   end
 end

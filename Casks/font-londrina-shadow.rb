@@ -2,10 +2,10 @@ cask "font-londrina-shadow" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/londrinashadow/LondrinaShadow-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofllondrinashadowLondrinaShadow-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Londrina Shadow"
-  homepage "https://fonts.google.com/specimen/Londrina+Shadow"
+  homepage "https:fonts.google.comspecimenLondrina+Shadow"
 
   font "LondrinaShadow-Regular.ttf"
 

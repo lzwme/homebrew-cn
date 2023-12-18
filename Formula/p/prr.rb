@@ -1,10 +1,10 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
-  homepage "https://github.com/danobi/prr"
-  url "https://ghproxy.com/https://github.com/danobi/prr/archive/refs/tags/v0.11.0.tar.gz"
+  homepage "https:github.comdanobiprr"
+  url "https:github.comdanobiprrarchiverefstagsv0.11.0.tar.gz"
   sha256 "4f81770aa28661bb3cc880507ec9d56b46f8d26310acca1efcc6cc29571c0531"
   license "GPL-2.0-only"
-  head "https://github.com/danobi/prr.git", branch: "master"
+  head "https:github.comdanobiprr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "566d97b538c2a086b12d78799da01d3f05b67fc1e1408010050c928f7b965ef9"
@@ -25,7 +25,7 @@ class Prr < Formula
 
   def install
     # Ensure the declared `openssl@3` dependency will be picked up.
-    # https://docs.rs/openssl/latest/openssl/#manual
+    # https:docs.rsopenssllatestopenssl#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
@@ -42,14 +42,14 @@ class Prr < Formula
   end
 
   test do
-    assert_match "Failed to read config", shell_output("#{bin}/prr get Homebrew/homebrew-core/6 2>&1", 1)
+    assert_match "Failed to read config", shell_output("#{bin}prr get Homebrewhomebrew-core6 2>&1", 1)
 
     [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin/"prr", library),
+      assert check_binary_linkage(bin"prr", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

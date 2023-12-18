@@ -1,14 +1,14 @@
 class Angband < Formula
   desc "Dungeon exploration game"
-  homepage "https://angband.github.io/angband/"
-  url "https://ghproxy.com/https://github.com/angband/angband/releases/download/4.2.5/Angband-4.2.5.tar.gz"
+  homepage "https:angband.github.ioangband"
+  url "https:github.comangbandangbandreleasesdownload4.2.5Angband-4.2.5.tar.gz"
   sha256 "c4cacbdf28f726fcb1a0b30b8763100fb06f88dbb570e955232e41d83e0718a6"
   license "GPL-2.0-only"
-  head "https://github.com/angband/angband.git", branch: "master"
+  head "https:github.comangbandangband.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Angband < Formula
   uses_from_macos "ncurses"
 
   def install
-    ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}/usr/bin/ncurses5.4-config" if OS.mac?
+    ENV["NCURSES_CONFIG"] = "#{MacOS.sdk_path}usrbinncurses5.4-config" if OS.mac?
     args = %W[
       --prefix=#{prefix}
       --bindir=#{bin}
@@ -35,16 +35,16 @@ class Angband < Formula
       --disable-sdltest
       --disable-x11
     ]
-    args << "--with-ncurses-prefix=#{MacOS.sdk_path}/usr" if OS.mac?
-    system "./configure", *args
+    args << "--with-ncurses-prefix=#{MacOS.sdk_path}usr" if OS.mac?
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    script = (testpath/"script.exp")
+    script = (testpath"script.exp")
     script.write <<~EOS
-      #!/usr/bin/expect -f
+      #!usrbinexpect -f
       set timeout 10
       spawn angband
       sleep 2

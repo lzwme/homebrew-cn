@@ -1,10 +1,10 @@
 class Caracal < Formula
   desc "Static analyzer for Starknet smart contracts"
-  homepage "https://github.com/crytic/caracal"
-  url "https://ghproxy.com/https://github.com/crytic/caracal/archive/refs/tags/v0.2.2.tar.gz"
+  homepage "https:github.comcryticcaracal"
+  url "https:github.comcryticcaracalarchiverefstagsv0.2.2.tar.gz"
   sha256 "dcc8f8ebbede56c9f68e025f444ede4f5966dc6c1c2695f09f999cf8f26f26af"
   license "AGPL-3.0-only"
-  head "https://github.com/crytic/caracal.git", branch: "master"
+  head "https:github.comcryticcaracal.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "482e4c1e69d93c493507e9fbe032bff7aeca02921d40b0c373e2585be19a4d0a"
@@ -22,19 +22,19 @@ class Caracal < Formula
     system "cargo", "install", *std_cargo_args
 
     # sample test contracts
-    pkgshare.install "tests/detectors"
+    pkgshare.install "testsdetectors"
   end
 
   test do
     resource "corelib" do
-      url "https://ghproxy.com/https://github.com/starkware-libs/cairo/archive/refs/tags/v2.2.0.tar.gz"
+      url "https:github.comstarkware-libscairoarchiverefstagsv2.2.0.tar.gz"
       sha256 "147204fd038332f0a731c99788930eb3a8e042142965b0aa9543e93d532e08df"
     end
 
     resource("corelib").stage do
       assert_match("controlled-library-call Impact: High Confidence: Medium",
-                   shell_output("#{bin}/caracal detect #{pkgshare}/detectors/controlled_library_call.cairo " \
-                                "--corelib corelib/src/"))
+                   shell_output("#{bin}caracal detect #{pkgshare}detectorscontrolled_library_call.cairo " \
+                                "--corelib corelibsrc"))
     end
   end
 end

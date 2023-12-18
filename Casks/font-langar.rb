@@ -2,11 +2,11 @@ cask "font-langar" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/langar/Langar-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofllangarLangar-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Langar"
-  desc "One-weight latin/gurmukhi display font based on informal, playful letterforms"
-  homepage "https://fonts.google.com/specimen/Langar"
+  desc "One-weight latingurmukhi display font based on informal, playful letterforms"
+  homepage "https:fonts.google.comspecimenLangar"
 
   font "Langar-Regular.ttf"
 

@@ -1,7 +1,7 @@
 class Sdl2Ttf < Formula
   desc "Library for using TrueType fonts in SDL applications"
-  homepage "https://github.com/libsdl-org/SDL_ttf"
-  url "https://ghproxy.com/https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2.tar.gz"
+  homepage "https:github.comlibsdl-orgSDL_ttf"
+  url "https:github.comlibsdl-orgSDL_ttfreleasesdownloadrelease-2.20.2SDL2_ttf-2.20.2.tar.gz"
   sha256 "9dc71ed93487521b107a2c4a9ca6bf43fb62f6bddd5c26b055e6b91418a22053"
   license "Zlib"
 
@@ -18,7 +18,7 @@ class Sdl2Ttf < Formula
   end
 
   head do
-    url "https://github.com/libsdl-org/SDL_ttf.git", branch: "main"
+    url "https:github.comlibsdl-orgSDL_ttf.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,11 +33,11 @@ class Sdl2Ttf < Formula
   def install
     inreplace "SDL2_ttf.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
 
     # `--enable-harfbuzz` is the default, but we pass it
     # explicitly to generate an error when it isn't found.
-    system "./configure", "--disable-freetype-builtin",
+    system ".configure", "--disable-freetype-builtin",
                           "--disable-harfbuzz-builtin",
                           "--enable-harfbuzz",
                           *std_configure_args
@@ -45,8 +45,8 @@ class Sdl2Ttf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <SDL2/SDL_ttf.h>
+    (testpath"test.c").write <<~EOS
+      #include <SDL2SDL_ttf.h>
 
       int main()
       {
@@ -55,7 +55,7 @@ class Sdl2Ttf < Formula
           return success;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}/SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
-    system "./test"
+    system ENV.cc, "test.c", "-I#{Formula["sdl2"].opt_include}SDL2", "-L#{lib}", "-lSDL2_ttf", "-o", "test"
+    system ".test"
   end
 end

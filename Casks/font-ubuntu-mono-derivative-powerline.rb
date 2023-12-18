@@ -2,11 +2,11 @@ cask "font-ubuntu-mono-derivative-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/powerline/fonts.git",
+  url "https:github.compowerlinefonts.git",
       branch:    "master",
       only_path: "UbuntuMono"
   name "Ubuntu Mono derivative Powerline"
-  homepage "https://github.com/powerline/fonts/tree/master/UbuntuMono"
+  homepage "https:github.compowerlinefontstreemasterUbuntuMono"
 
   font "Ubuntu Mono derivative Powerline.ttf"
   font "Ubuntu Mono derivative Powerline Bold.ttf"

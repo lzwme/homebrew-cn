@@ -1,11 +1,11 @@
 class CppGsl < Formula
   desc "Microsoft's C++ Guidelines Support Library"
-  homepage "https://github.com/Microsoft/GSL"
-  url "https://ghproxy.com/https://github.com/Microsoft/GSL/archive/refs/tags/v4.0.0.tar.gz"
+  homepage "https:github.comMicrosoftGSL"
+  url "https:github.comMicrosoftGSLarchiverefstagsv4.0.0.tar.gz"
   sha256 "f0e32cb10654fea91ad56bde89170d78cfbf4363ee0b01d8f097de2ba49f6ce9"
   license "MIT"
   revision 1
-  head "https://github.com/Microsoft/GSL.git", branch: "main"
+  head "https:github.comMicrosoftGSL.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5bda1ae8723c554253565ae7f67f0cbf4e7f902722c36c2b0537f1ec953ecfd0"
@@ -19,14 +19,14 @@ class CppGsl < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <gsl/gsl>
+    (testpath"test.cpp").write <<~EOS
+      #include <gslgsl>
       int main() {
         gsl::span<int> z;
         return 0;
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++14"
-    system "./test"
+    system ".test"
   end
 end

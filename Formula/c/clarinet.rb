@@ -1,16 +1,16 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
-  homepage "https://github.com/hirosystems/clarinet"
+  homepage "https:github.comhirosystemsclarinet"
   # pull from git tag to get submodules
-  url "https://github.com/hirosystems/clarinet.git",
+  url "https:github.comhirosystemsclarinet.git",
       tag:      "v2.1.0",
       revision: "28259ef891536fe5ad068a213f55a7131070709a"
   license "GPL-3.0-only"
-  head "https://github.com/hirosystems/clarinet.git", branch: "main"
+  head "https:github.comhirosystemsclarinet.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Clarinet < Formula
   end
 
   test do
-    pipe_output("#{bin}/clarinet new test-project", "n\n")
-    assert_match "name = \"test-project\"", (testpath/"test-project/Clarinet.toml").read
-    system bin/"clarinet", "check", "--manifest-path", "test-project/Clarinet.toml"
+    pipe_output("#{bin}clarinet new test-project", "n\n")
+    assert_match "name = \"test-project\"", (testpath"test-projectClarinet.toml").read
+    system bin"clarinet", "check", "--manifest-path", "test-projectClarinet.toml"
   end
 end

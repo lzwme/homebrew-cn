@@ -2,11 +2,11 @@ cask "jellyfin-media-player" do
   version "1.9.1"
   sha256 "6ed5f5c1489c177de45f46fdbeefee8cc9eee7faff75d03e3840f522849674d2"
 
-  url "https://ghproxy.com/https://github.com/jellyfin/jellyfin-media-player/releases/download/v#{version}/JellyfinMediaPlayer-#{version}-macos-notarized.dmg",
-      verified: "github.com/jellyfin/jellyfin-media-player/"
+  url "https:github.comjellyfinjellyfin-media-playerreleasesdownloadv#{version}JellyfinMediaPlayer-#{version}-macos-notarized.dmg",
+      verified: "github.comjellyfinjellyfin-media-player"
   name "jellyfin-media-player"
   desc "Jellyfin desktop client"
-  homepage "https://jellyfin.org/"
+  homepage "https:jellyfin.org"
 
   livecheck do
     url :url
@@ -16,10 +16,10 @@ cask "jellyfin-media-player" do
   app "Jellyfin Media Player.app"
 
   zap trash: [
-    "~/Library/Application Support/Jellyfin Media Player",
-    "~/Library/Caches/Jellyfin Media Player",
-    "~/Library/Logs/Jellyfin Media Player",
-    "~/Library/Preferences/org.jellyfin.Jellyfin Media Player.plist",
-    "~/Library/Saved Application State/tv.jellyfin.player.savedState",
+    "~LibraryApplication SupportJellyfin Media Player",
+    "~LibraryCachesJellyfin Media Player",
+    "~LibraryLogsJellyfin Media Player",
+    "~LibraryPreferencesorg.jellyfin.Jellyfin Media Player.plist",
+    "~LibrarySaved Application Statetv.jellyfin.player.savedState",
   ]
 end

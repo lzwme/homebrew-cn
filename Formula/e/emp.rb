@@ -1,7 +1,7 @@
 class Emp < Formula
   desc "CLI for Empire"
-  homepage "https://github.com/remind101/empire"
-  url "https://ghproxy.com/https://github.com/remind101/empire/archive/refs/tags/v0.13.0.tar.gz"
+  homepage "https:github.comremind101empire"
+  url "https:github.comremind101empirearchiverefstagsv0.13.0.tar.gz"
   sha256 "1294de5b02eaec211549199c5595ab0dbbcfdeb99f670b66e7890c8ba11db22b"
   license "BSD-2-Clause"
 
@@ -28,17 +28,17 @@ class Emp < Formula
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
 
-    (buildpath/"src/github.com/remind101/").mkpath
-    ln_s buildpath, buildpath/"src/github.com/remind101/empire"
+    (buildpath"srcgithub.comremind101").mkpath
+    ln_s buildpath, buildpath"srcgithub.comremind101empire"
 
-    system "go", "build", "-o", bin/"emp", "./src/github.com/remind101/empire/cmd/emp"
+    system "go", "build", "-o", bin"emp", ".srcgithub.comremind101empirecmdemp"
   end
 
   test do
     require "webrick"
 
     server = WEBrick::HTTPServer.new Port: 8035
-    server.mount_proc "/apps/foo/releases" do |_req, res|
+    server.mount_proc "appsfooreleases" do |_req, res|
       resp = {
         "created_at"  => "2015-10-12T0:00:00.00000000-00:00",
         "description" => "my awesome release",
@@ -55,9 +55,9 @@ class Emp < Formula
     Thread.new { server.start }
 
     begin
-      ENV["EMPIRE_API_URL"] = "http://127.0.0.1:8035"
-      assert_match(/v1  zab  Oct 1(1|2|3)  2015  my awesome release/,
-        shell_output("#{bin}/emp releases -a foo").strip)
+      ENV["EMPIRE_API_URL"] = "http:127.0.0.1:8035"
+      assert_match(v1  zab  Oct 1(1|2|3)  2015  my awesome release,
+        shell_output("#{bin}emp releases -a foo").strip)
     ensure
       server.shutdown
     end

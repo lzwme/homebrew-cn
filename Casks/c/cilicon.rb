@@ -2,10 +2,10 @@ cask "cilicon" do
   version "2.1.0"
   sha256 "af39cff356afb5c22f006349a72f0bf1db02ad55bb2401eeb6bd360308fd9c01"
 
-  url "https://ghproxy.com/https://github.com/traderepublic/Cilicon/releases/download/v#{version}/Cilicon.zip"
+  url "https:github.comtraderepublicCiliconreleasesdownloadv#{version}Cilicon.zip"
   name "Cilicon"
   desc "Self-Hosted ephemeral CI on Apple Silicon"
-  homepage "https://github.com/traderepublic/Cilicon"
+  homepage "https:github.comtraderepublicCilicon"
 
   depends_on macos: ">= :ventura"
   depends_on arch: :arm64
@@ -13,7 +13,7 @@ cask "cilicon" do
   app "Cilicon.app"
 
   zap trash: [
-    "~/cilicon.yml",
-    "~/.cilicon.yml",
+    "~cilicon.yml",
+    "~.cilicon.yml",
   ]
 end

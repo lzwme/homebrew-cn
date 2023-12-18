@@ -1,7 +1,7 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
-  homepage "https://vitess.io"
-  url "https://ghproxy.com/https://github.com/vitessio/vitess/archive/refs/tags/v18.0.1.tar.gz"
+  homepage "https:vitess.io"
+  url "https:github.comvitessiovitessarchiverefstagsv18.0.1.tar.gz"
   sha256 "bcd2392efbf63f2a4fc59699c257877b1cbb636fd6d964ed2b735237121e7795"
   license "Apache-2.0"
 
@@ -31,31 +31,31 @@ class Vitess < Formula
     cell = "testcell"
 
     fork do
-      exec Formula["etcd"].opt_bin/"etcd", "--enable-v2=true",
-                                           "--data-dir=#{testpath}/etcd",
-                                           "--listen-client-urls=http://#{etcd_server}",
-                                           "--advertise-client-urls=http://#{etcd_server}"
+      exec Formula["etcd"].opt_bin"etcd", "--enable-v2=true",
+                                           "--data-dir=#{testpath}etcd",
+                                           "--listen-client-urls=http:#{etcd_server}",
+                                           "--advertise-client-urls=http:#{etcd_server}"
     end
     sleep 3
 
     fork do
-      exec Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}",
-                                    "mkdir", testpath/"global"
+      exec Formula["etcd"].opt_bin"etcdctl", "--endpoints", "http:#{etcd_server}",
+                                    "mkdir", testpath"global"
     end
     sleep 1
 
     fork do
-      exec Formula["etcd"].opt_bin/"etcdctl", "--endpoints", "http://#{etcd_server}",
-                                    "mkdir", testpath/cell
+      exec Formula["etcd"].opt_bin"etcdctl", "--endpoints", "http:#{etcd_server}",
+                                    "mkdir", testpathcell
     end
     sleep 1
 
     fork do
-      exec bin/"vtctl", "--topo_implementation", "etcd2",
+      exec bin"vtctl", "--topo_implementation", "etcd2",
                         "--topo_global_server_address", etcd_server,
-                        "--topo_global_root", testpath/"global",
+                        "--topo_global_root", testpath"global",
                         "VtctldCommand", "AddCellInfo",
-                        "--root", testpath/cell,
+                        "--root", testpathcell,
                         "--server-address", etcd_server,
                         cell
     end
@@ -63,9 +63,9 @@ class Vitess < Formula
 
     port = free_port
     fork do
-      exec bin/"vtgate", "--topo_implementation", "etcd2",
+      exec bin"vtgate", "--topo_implementation", "etcd2",
                          "--topo_global_server_address", etcd_server,
-                         "--topo_global_root", testpath/"global",
+                         "--topo_global_root", testpath"global",
                          "--tablet_types_to_wait", "PRIMARY,REPLICA",
                          "--cell", cell,
                          "--cells_to_watch", cell,
@@ -73,7 +73,7 @@ class Vitess < Formula
     end
     sleep 3
 
-    output = shell_output("curl -s localhost:#{port}/debug/health")
+    output = shell_output("curl -s localhost:#{port}debughealth")
     assert_equal "ok", output
   end
 end

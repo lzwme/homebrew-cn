@@ -2,10 +2,10 @@ cask "font-noto-nerd-font" do
   version "3.1.1"
   sha256 "14a83bf04589405c84b33e52de3d58e63d9272363cc8494c1f776770f1a1ec48"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Noto.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Noto.zip"
   name "Noto Nerd Font families (Noto)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

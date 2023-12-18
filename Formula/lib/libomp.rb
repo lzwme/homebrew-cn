@@ -1,13 +1,13 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
-  homepage "https://openmp.llvm.org/"
-  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/openmp-17.0.6.src.tar.xz"
+  homepage "https:openmp.llvm.org"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6openmp-17.0.6.src.tar.xz"
   sha256 "74334cbb4dc8b73a768448a7561d5a3540404940b2267b1fb9813a6464b320de"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^llvmorg[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^llvmorg[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -20,7 +20,7 @@ class Libomp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2bbf30d064f8024c5018a9c3126092c67c1361cab3b51c9cefc9c9c688a9a44"
   end
 
-  # Ref: https://github.com/Homebrew/homebrew-core/issues/112107
+  # Ref: https:github.comHomebrewhomebrew-coreissues112107
   keg_only "it can override GCC headers and result in broken builds"
 
   depends_on "cmake" => :build
@@ -32,33 +32,33 @@ class Libomp < Formula
   end
 
   resource "cmake" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/cmake-17.0.6.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6cmake-17.0.6.src.tar.xz"
     sha256 "807f069c54dc20cb47b21c1f6acafdd9c649f3ae015609040d6182cab01140f4"
   end
 
   def install
-    (buildpath/"src").install buildpath.children
-    (buildpath/"cmake").install resource("cmake")
+    (buildpath"src").install buildpath.children
+    (buildpath"cmake").install resource("cmake")
 
     # Disable LIBOMP_INSTALL_ALIASES, otherwise the library is installed as
     # libgomp alias which can conflict with GCC's libgomp.
     args = ["-DLIBOMP_INSTALL_ALIASES=OFF"]
     args << "-DOPENMP_ENABLE_LIBOMPTARGET=OFF" if OS.linux?
 
-    system "cmake", "-S", "src", "-B", "build/shared", *std_cmake_args, *args
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "-S", "src", "-B", "buildshared", *std_cmake_args, *args
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    system "cmake", "-S", "src", "-B", "build/static",
+    system "cmake", "-S", "src", "-B", "buildstatic",
                     "-DLIBOMP_ENABLE_SHARED=OFF",
                     *std_cmake_args, *args
-    system "cmake", "--build", "build/static"
-    system "cmake", "--install", "build/static"
+    system "cmake", "--build", "buildstatic"
+    system "cmake", "--install", "buildstatic"
   end
 
   test do
     assert_equal version, resource("cmake").version, "`cmake` resource needs updating!"
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <omp.h>
       #include <array>
       int main (int argc, char** argv) {
@@ -76,6 +76,6 @@ class Libomp < Formula
     EOS
     system ENV.cxx, "-Werror", "-Xpreprocessor", "-fopenmp", "test.cpp", "-std=c++11",
                     "-I#{include}", "-L#{lib}", "-lomp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

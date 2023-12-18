@@ -1,7 +1,7 @@
 class Osqp < Formula
   desc "Operator splitting QP solver"
-  homepage "https://osqp.org/"
-  url "https://ghproxy.com/https://github.com/osqp/osqp/archive/refs/tags/v0.6.3.tar.gz"
+  homepage "https:osqp.org"
+  url "https:github.comosqposqparchiverefstagsv0.6.3.tar.gz"
   sha256 "a6b4148019001f87489c27232e2bdbac37c94f38fa37c1b4ee11eaa5654756d2"
   license "Apache-2.0"
 
@@ -20,13 +20,13 @@ class Osqp < Formula
   depends_on "cmake" => [:build, :test]
 
   resource "qdldl" do
-    url "https://ghproxy.com/https://github.com/osqp/qdldl/archive/refs/tags/v0.1.7.tar.gz"
+    url "https:github.comosqpqdldlarchiverefstagsv0.1.7.tar.gz"
     sha256 "631ae65f367859fa1efade1656e4ba22b7da789c06e010cceb8b29656bf65757"
   end
 
   def install
     # Install qdldl git submodule not included in release source archive.
-    (buildpath/"lin_sys/direct/qdldl/qdldl_sources").install resource("qdldl")
+    (buildpath"lin_sysdirectqdldlqdldl_sources").install resource("qdldl")
 
     args = *std_cmake_args + %w[
       -DENABLE_MKL_PARDISO=OFF
@@ -39,14 +39,14 @@ class Osqp < Formula
     end
 
     # Remove unnecessary qdldl install.
-    rm_rf include/"qdldl"
-    rm_rf lib/"cmake/qdldl"
-    rm lib/"libqdldl.a"
-    rm lib/shared_library("libqdldl")
+    rm_rf include"qdldl"
+    rm_rf lib"cmakeqdldl"
+    rm lib"libqdldl.a"
+    rm libshared_library("libqdldl")
   end
 
   test do
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
       project(osqp_demo LANGUAGES C)
       find_package(osqp CONFIG REQUIRED)
@@ -55,8 +55,8 @@ class Osqp < Formula
       add_executable(osqp_demo_static osqp_demo.c)
       target_link_libraries(osqp_demo_static PRIVATE osqp::osqpstatic -lm)
     EOS
-    # from https://github.com/osqp/osqp/blob/HEAD/tests/demo/test_demo.h
-    (testpath/"osqp_demo.c").write <<~EOS
+    # from https:github.comosqposqpblobHEADtestsdemotest_demo.h
+    (testpath"osqp_demo.c").write <<~EOS
       #include <assert.h>
       #include <osqp.h>
       int main() {
@@ -100,7 +100,7 @@ class Osqp < Formula
     EOS
     system "cmake", "."
     system "make"
-    system "./osqp_demo"
-    system "./osqp_demo_static"
+    system ".osqp_demo"
+    system ".osqp_demo_static"
   end
 end

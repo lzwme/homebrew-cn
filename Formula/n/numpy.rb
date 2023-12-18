@@ -1,10 +1,10 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
-  homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/dd/2b/205ddff2314d4eea852e31d53b8e55eb3f32b292efc3dd86bd827ab9019d/numpy-1.26.2.tar.gz"
+  homepage "https:www.numpy.org"
+  url "https:files.pythonhosted.orgpackagesdd2b205ddff2314d4eea852e31d53b8e55eb3f32b292efc3dd86bd827ab9019dnumpy-1.26.2.tar.gz"
   sha256 "f65738447676ab5777f11e6bbbdb8ce11b785e105f690bc45966574816b6d3ea"
   license "BSD-3-Clause"
-  head "https://github.com/numpy/numpy.git", branch: "main"
+  head "https:github.comnumpynumpy.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -28,14 +28,14 @@ class Numpy < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .sort_by(&:version) # so that `bin/f2py` and `bin/f2py3` use newest python
+        .select { |f| f.name.match?(^python@\d\.\d+$) }
+        .sort_by(&:version) # so that `binf2py` and `binf2py3` use newest python
   end
 
   def install
     openblas = Formula["openblas"]
     ENV["ATLAS"] = "None" # avoid linking against Accelerate.framework
-    ENV["BLAS"] = ENV["LAPACK"] = openblas.opt_lib/shared_library("libopenblas")
+    ENV["BLAS"] = ENV["LAPACK"] = openblas.opt_libshared_library("libopenblas")
 
     config = <<~EOS
       [openblas]
@@ -47,11 +47,11 @@ class Numpy < Formula
     Pathname("site.cfg").write config
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       site_packages = Language::Python.site_packages(python_exe)
-      ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
+      ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexecsite_packages
 
-      system python_exe, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}/gfortran",
+      system python_exe, "setup.py", "build", "--fcompiler=#{Formula["gcc"].opt_bin}gfortran",
                                               "--parallel=#{ENV.make_jobs}"
       system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
     end
@@ -65,7 +65,7 @@ class Numpy < Formula
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", <<~EOS
         import numpy as np
         t = np.ones((3,3), int)

@@ -1,8 +1,8 @@
 class Xrick < Formula
   desc "Clone of Rick Dangerous"
-  homepage "https://www.bigorno.net/xrick/"
-  url "https://www.bigorno.net/xrick/xrick-021212.tgz"
-  # There is a repo at https://github.com/zpqrtbnk/xrick but it is organized
+  homepage "https:www.bigorno.netxrick"
+  url "https:www.bigorno.netxrickxrick-021212.tgz"
+  # There is a repo at https:github.comzpqrtbnkxrick but it is organized
   # differently than the tarball
   sha256 "aa8542120bec97a730258027a294bd16196eb8b3d66134483d085f698588fc2b"
   revision 1
@@ -30,7 +30,7 @@ class Xrick < Formula
     # Makefile override environment variables so we need to inreplace.
     inreplace "Makefile", "echo \"CFLAGS=", "\\0-fcommon " if OS.linux?
 
-    inreplace "src/xrick.c", "data.zip", pkgshare/"data.zip"
+    inreplace "srcxrick.c", "data.zip", pkgshare"data.zip"
     system "make"
     bin.install "xrick"
     man6.install "xrick.6.gz"
@@ -38,6 +38,6 @@ class Xrick < Formula
   end
 
   test do
-    assert_match "xrick [version ##{version}]", shell_output("#{bin}/xrick --help", 1)
+    assert_match "xrick [version ##{version}]", shell_output("#{bin}xrick --help", 1)
   end
 end

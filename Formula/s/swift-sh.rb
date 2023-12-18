@@ -1,10 +1,10 @@
 class SwiftSh < Formula
   desc "Scripting with easy zero-conf dependency imports"
-  homepage "https://github.com/mxcl/swift-sh"
-  url "https://ghproxy.com/https://github.com/mxcl/swift-sh/archive/refs/tags/2.4.0.tar.gz"
+  homepage "https:github.commxclswift-sh"
+  url "https:github.commxclswift-sharchiverefstags2.4.0.tar.gz"
   sha256 "5255e497d985fbbe2df44ed69ed1552b43fb58c175bd2dd254b52e5cf888d629"
   license "Unlicense"
-  head "https://github.com/mxcl/swift-sh.git", branch: "master"
+  head "https:github.commxclswift-sh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68b78e155165e512e75065b689f34c4bdd290e014d16a75298b6869484e6e29a"
@@ -24,13 +24,13 @@ class SwiftSh < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/swift-sh"
-    bin.install ".build/release/swift-sh-edit" if OS.mac?
+    bin.install ".buildreleaseswift-sh"
+    bin.install ".buildreleaseswift-sh-edit" if OS.mac?
   end
 
   test do
-    (testpath/"test.swift").write "#!/usr/bin/env swift sh"
-    system "#{bin}/swift-sh", "eject", "test.swift"
-    assert_predicate testpath/"Test"/"Package.swift", :exist?
+    (testpath"test.swift").write "#!usrbinenv swift sh"
+    system "#{bin}swift-sh", "eject", "test.swift"
+    assert_predicate testpath"Test""Package.swift", :exist?
   end
 end

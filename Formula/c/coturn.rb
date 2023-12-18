@@ -1,14 +1,14 @@
 class Coturn < Formula
   desc "Free open source implementation of TURN and STUN Server"
-  homepage "https://github.com/coturn/coturn"
-  url "https://ghproxy.com/https://github.com/coturn/coturn/archive/refs/tags/4.6.2.tar.gz"
+  homepage "https:github.comcoturncoturn"
+  url "https:github.comcoturncoturnarchiverefstags4.6.2.tar.gz"
   sha256 "13f2a38b66cffb73d86b5ed24acba4e1371d738d758a6039e3a18f0c84c176ad"
   license "BSD-3-Clause"
   revision 1
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,7 +32,7 @@ class Coturn < Formula
   def install
     ENV["SSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
     ENV["SSL_LIBS"] = "-L#{Formula["openssl@3"].opt_lib} -lssl -lcrypto"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--mandir=#{man}",
@@ -45,18 +45,18 @@ class Coturn < Formula
     system "make", "install"
 
     man.mkpath
-    man1.install Dir["man/man1/*"]
+    man1.install Dir["manman1*"]
   end
 
   service do
-    run [opt_bin/"turnserver", "-c", etc/"turnserver.conf"]
+    run [opt_bin"turnserver", "-c", etc"turnserver.conf"]
     keep_alive true
-    error_log_path var/"log/coturn.log"
-    log_path var/"log/coturn.log"
+    error_log_path var"logcoturn.log"
+    log_path var"logcoturn.log"
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    system "#{bin}/turnadmin", "-l"
+    system "#{bin}turnadmin", "-l"
   end
 end

@@ -1,10 +1,10 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
-  homepage "https://caddyserver.com/"
-  url "https://ghproxy.com/https://github.com/caddyserver/caddy/archive/refs/tags/v2.7.6.tar.gz"
+  homepage "https:caddyserver.com"
+  url "https:github.comcaddyservercaddyarchiverefstagsv2.7.6.tar.gz"
   sha256 "e1c524fc4f4bd2b0d39df51679d9d065bb811e381b7e4e51466ba39a0083e3ed"
   license "Apache-2.0"
-  head "https://github.com/caddyserver/caddy.git", branch: "master"
+  head "https:github.comcaddyservercaddy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7967c0bbedbc95f1735bc230669702120f18c73bf5de79cc16c6764cd8a9e902"
@@ -19,7 +19,7 @@ class Caddy < Formula
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://ghproxy.com/https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.3.5.tar.gz"
+    url "https:github.comcaddyserverxcaddyarchiverefstagsv0.3.5.tar.gz"
     sha256 "41188931a3346787f9f4bc9b0f57db1ba59ab228113dcf0c91382e40960ee783"
   end
 
@@ -27,42 +27,42 @@ class Caddy < Formula
     revision = build.head? ? version.commit : "v#{version}"
 
     resource("xcaddy").stage do
-      system "go", "run", "cmd/xcaddy/main.go", "build", revision, "--output", bin/"caddy"
+      system "go", "run", "cmdxcaddymain.go", "build", revision, "--output", bin"caddy"
     end
 
-    generate_completions_from_executable("go", "run", "cmd/caddy/main.go", "completion")
+    generate_completions_from_executable("go", "run", "cmdcaddymain.go", "completion")
   end
 
   service do
-    run [opt_bin/"caddy", "run", "--config", etc/"Caddyfile"]
+    run [opt_bin"caddy", "run", "--config", etc"Caddyfile"]
     keep_alive true
-    error_log_path var/"log/caddy.log"
-    log_path var/"log/caddy.log"
+    error_log_path var"logcaddy.log"
+    log_path var"logcaddy.log"
   end
 
   test do
     port1 = free_port
     port2 = free_port
 
-    (testpath/"Caddyfile").write <<~EOS
+    (testpath"Caddyfile").write <<~EOS
       {
         admin 127.0.0.1:#{port1}
       }
 
-      http://127.0.0.1:#{port2} {
+      http:127.0.0.1:#{port2} {
         respond "Hello, Caddy!"
       }
     EOS
 
     fork do
-      exec bin/"caddy", "run", "--config", testpath/"Caddyfile"
+      exec bin"caddy", "run", "--config", testpath"Caddyfile"
     end
     sleep 2
 
     assert_match "\":#{port2}\"",
-      shell_output("curl -s http://127.0.0.1:#{port1}/config/apps/http/servers/srv0/listen/0")
-    assert_match "Hello, Caddy!", shell_output("curl -s http://127.0.0.1:#{port2}")
+      shell_output("curl -s http:127.0.0.1:#{port1}configappshttpserverssrv0listen0")
+    assert_match "Hello, Caddy!", shell_output("curl -s http:127.0.0.1:#{port2}")
 
-    assert_match version.to_s, shell_output("#{bin}/caddy version")
+    assert_match version.to_s, shell_output("#{bin}caddy version")
   end
 end

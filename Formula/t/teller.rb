@@ -1,11 +1,11 @@
 class Teller < Formula
   desc "Secrets management tool for developers built in Go"
-  homepage "https://tlr.dev/"
-  url "https://github.com/SpectralOps/teller.git",
+  homepage "https:tlr.dev"
+  url "https:github.comSpectralOpsteller.git",
       tag:      "v1.5.6",
       revision: "7b714bc2f1d5e14920f2add828fdf7425148ff6b"
   license "Apache-2.0"
-  head "https://github.com/SpectralOps/teller.git", branch: "master"
+  head "https:github.comSpectralOpsteller.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0b2d3427371a56a0261783681d437a98d622e21e4812355af4695fa0b41f09f"
@@ -33,24 +33,24 @@ class Teller < Formula
   end
 
   test do
-    (testpath/"test.env").write <<~EOS
+    (testpath"test.env").write <<~EOS
       foo: var
     EOS
 
-    (testpath/".teller.yml").write <<~EOS
+    (testpath".teller.yml").write <<~EOS
       project: brewtest
       providers:
         # this will fuse vars with the below .env file
         # use if you'd like to grab secrets from outside of the project tree
         dotenv:
           env_sync:
-            path: #{testpath}/test.env
+            path: #{testpath}test.env
     EOS
 
-    output = shell_output("#{bin}/teller -c #{testpath}/.teller.yml show  2>&1")
-    assert_match "teller: loaded variables for brewtest using #{testpath}/.teller.yml", output
+    output = shell_output("#{bin}teller -c #{testpath}.teller.yml show  2>&1")
+    assert_match "teller: loaded variables for brewtest using #{testpath}.teller.yml", output
     assert_match "foo", output
 
-    assert_match "Teller #{version}", shell_output("#{bin}/teller version")
+    assert_match "Teller #{version}", shell_output("#{bin}teller version")
   end
 end

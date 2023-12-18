@@ -1,13 +1,13 @@
 class SpatialiteTools < Formula
   desc "CLI tools supporting SpatiaLite"
-  homepage "https://www.gaia-gis.it/fossil/spatialite-tools/index"
-  url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/spatialite-tools-5.1.0.tar.gz"
+  homepage "https:www.gaia-gis.itfossilspatialite-toolsindex"
+  url "https:www.gaia-gis.itgaia-sinsspatialite-tools-sourcesspatialite-tools-5.1.0.tar.gz"
   sha256 "df3030367c089ca90fa6630897f3f1a280784da29e1ba634f340dba4b08583b5"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/"
-    regex(/href=.*?spatialite-tools[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)/i)
+    url "https:www.gaia-gis.itgaia-sinsspatialite-tools-sources"
+    regex(href=.*?spatialite-tools[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)i)
   end
 
   bottle do
@@ -28,19 +28,19 @@ class SpatialiteTools < Formula
   depends_on "readosm"
 
   def install
-    # See: https://github.com/Homebrew/homebrew/issues/3328
+    # See: https:github.comHomebrewhomebrewissues3328
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     # Ensure Homebrew SQLite is found before system SQLite.
     sqlite = Formula["sqlite"]
     ENV.prepend "LDFLAGS", "-L#{sqlite.opt_lib} -lsqlite3"
     ENV.prepend "CFLAGS", "-I#{sqlite.opt_include}"
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system bin/"spatialite", "--version"
+    system bin"spatialite", "--version"
   end
 end

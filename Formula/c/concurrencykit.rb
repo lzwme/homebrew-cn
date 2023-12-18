@@ -1,10 +1,10 @@
 class Concurrencykit < Formula
   desc "Aid design and implementation of concurrent systems"
-  homepage "http://concurrencykit.org/"
-  url "https://ghproxy.com/https://github.com/concurrencykit/ck/archive/refs/tags/0.7.0.tar.gz"
+  homepage "http:concurrencykit.org"
+  url "https:github.comconcurrencykitckarchiverefstags0.7.0.tar.gz"
   sha256 "e730cb448fb0ecf9d19bf4c7efe9efc3c04dd9127311d87d8f91484742b0da24"
   license "BSD-2-Clause"
-  head "https://github.com/concurrencykit/ck.git", branch: "master"
+  head "https:github.comconcurrencykitck.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -30,13 +30,13 @@ class Concurrencykit < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <ck_spinlock.h>
       int main()
       {
@@ -46,7 +46,7 @@ class Concurrencykit < Formula
       }
     EOS
     system ENV.cc, "-I#{include}", "-L#{lib}", "-lck",
-           testpath/"test.c", "-o", testpath/"test"
-    system "./test"
+           testpath"test.c", "-o", testpath"test"
+    system ".test"
   end
 end

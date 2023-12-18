@@ -1,7 +1,7 @@
 class Libepoxy < Formula
   desc "Library for handling OpenGL function pointer management"
-  homepage "https://github.com/anholt/libepoxy"
-  url "https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.10.tar.xz"
+  homepage "https:github.comanholtlibepoxy"
+  url "https:download.gnome.orgsourceslibepoxy1.5libepoxy-1.5.10.tar.xz"
   sha256 "072cda4b59dd098bba8c2363a6247299db1fa89411dc221c8b81b8ee8192e623"
   license "MIT"
 
@@ -9,7 +9,7 @@ class Libepoxy < Formula
   # minor is stable" version scheme.
   livecheck do
     url :stable
-    regex(/libepoxy[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(libepoxy[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -43,13 +43,13 @@ class Libepoxy < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
 
-      #include <epoxy/gl.h>
+      #include <epoxygl.h>
       #ifdef OS_MAC
-      #include <OpenGL/CGLContext.h>
-      #include <OpenGL/CGLTypes.h>
-      #include <OpenGL/OpenGL.h>
+      #include <OpenGLCGLContext.h>
+      #include <OpenGLCGLTypes.h>
+      #include <OpenGLOpenGL.h>
       #endif
       int main()
       {
@@ -77,6 +77,6 @@ class Libepoxy < Formula
     system ENV.cc, "test.c", "-L#{lib}", *args
     system "ls", "-lh", "test"
     system "file", "test"
-    system "./test"
+    system ".test"
   end
 end

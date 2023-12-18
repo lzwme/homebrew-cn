@@ -1,7 +1,7 @@
 class Libspnav < Formula
   desc "Client library for connecting to 3Dconnexion's 3D input devices"
-  homepage "https://spacenav.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/FreeSpacenav/libspnav/releases/download/v1.1/libspnav-1.1.tar.gz"
+  homepage "https:spacenav.sourceforge.net"
+  url "https:github.comFreeSpacenavlibspnavreleasesdownloadv1.1libspnav-1.1.tar.gz"
   sha256 "04b297f68a10db4fa40edf68d7f823ba7b9d0442f2b665181889abe2cea42759"
   license "BSD-3-Clause"
 
@@ -26,12 +26,12 @@ class Libspnav < Formula
       --disable-x11
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <spnav.h>
 
       int main() {
@@ -41,6 +41,6 @@ class Libspnav < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lspnav", "-lm", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class Rojo < Formula
   desc "Professional grade Roblox development tools"
-  homepage "https://rojo.space/"
-  url "https://ghproxy.com/https://github.com/rojo-rbx/rojo/archive/refs/tags/v7.3.0.tar.gz"
+  homepage "https:rojo.space"
+  url "https:github.comrojo-rbxrojoarchiverefstagsv7.3.0.tar.gz"
   sha256 "849626d5395ccc58de04c4d6072c905880432c58bb2dc71ca27ab7f794b82187"
   license "MPL-2.0"
-  head "https://github.com/rojo-rbx/rojo.git", branch: "master"
+  head "https:github.comrojo-rbxrojo.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05eef607bde72c6948ee16eb225c3b55d3cb46c412066288d6de4dc2e52fd1d5"
@@ -22,14 +22,14 @@ class Rojo < Formula
   depends_on "wally" => :build
 
   def install
-    system "wally", "install", "--project-path", "./plugin"
+    system "wally", "install", "--project-path", ".plugin"
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system bin/"rojo", "init"
-    assert_predicate testpath/"default.project.json", :exist?
+    system bin"rojo", "init"
+    assert_predicate testpath"default.project.json", :exist?
 
-    assert_match version.to_s, shell_output(bin/"rojo --version")
+    assert_match version.to_s, shell_output(bin"rojo --version")
   end
 end

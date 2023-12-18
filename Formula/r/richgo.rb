@@ -1,10 +1,10 @@
 class Richgo < Formula
   desc "Enrich `go test` outputs with text decorations"
-  homepage "https://github.com/kyoh86/richgo"
-  url "https://ghproxy.com/https://github.com/kyoh86/richgo/archive/refs/tags/v0.3.12.tar.gz"
+  homepage "https:github.comkyoh86richgo"
+  url "https:github.comkyoh86richgoarchiverefstagsv0.3.12.tar.gz"
   sha256 "811db92c36818be053fa3950d40f8cca13912b8a4a9f54b82a63e2f112d2c4fe"
   license "MIT"
-  head "https://github.com/kyoh86/richgo.git", branch: "main"
+  head "https:github.comkyoh86richgo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c1bb646af1a17b66efb00c745ee6d27b14d9a5e492af3bf822e3867c7e2fde7"
@@ -23,13 +23,13 @@ class Richgo < Formula
   end
 
   test do
-    (testpath/"go.mod").write <<~EOS
-      module github.com/Homebrew/brew-test
+    (testpath"go.mod").write <<~EOS
+      module github.comHomebrewbrew-test
 
       go 1.21
     EOS
 
-    (testpath/"main.go").write <<~EOS
+    (testpath"main.go").write <<~EOS
       package main
 
       import "fmt"
@@ -43,7 +43,7 @@ class Richgo < Formula
       }
     EOS
 
-    (testpath/"main_test.go").write <<~EOS
+    (testpath"main_test.go").write <<~EOS
       package main
 
       import "testing"
@@ -57,12 +57,12 @@ class Richgo < Formula
       }
     EOS
 
-    output = shell_output("#{bin}/richgo test ./...")
+    output = shell_output("#{bin}richgo test ....")
 
     expected = if OS.mac?
-      "PASS | github.com/Homebrew/brew-test"
+      "PASS | github.comHomebrewbrew-test"
     else
-      "ok  \tgithub.com/Homebrew/brew-test"
+      "ok  \tgithub.comHomebrewbrew-test"
     end
     assert_match expected, output
   end

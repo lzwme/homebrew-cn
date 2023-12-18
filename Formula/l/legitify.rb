@@ -1,10 +1,10 @@
 class Legitify < Formula
-  desc "Tool to detect/remediate misconfig and security risks of GitHub/GitLab assets"
-  homepage "https://legitify.dev/"
-  url "https://ghproxy.com/https://github.com/Legit-Labs/legitify/archive/refs/tags/v1.0.7.tar.gz"
+  desc "Tool to detectremediate misconfig and security risks of GitHubGitLab assets"
+  homepage "https:legitify.dev"
+  url "https:github.comLegit-Labslegitifyarchiverefstagsv1.0.7.tar.gz"
   sha256 "7f3d59141207d97579a4fbf6d787b1c522b840c2b2be79bac3e056829577040c"
   license "Apache-2.0"
-  head "https://github.com/Legit-Labs/legitify.git", branch: "main"
+  head "https:github.comLegit-Labslegitify.git", branch: "main"
 
   livecheck do
     url :stable
@@ -26,18 +26,18 @@ class Legitify < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/Legit-Labs/legitify/internal/version.Version=#{version}
-      -X github.com/Legit-Labs/legitify/internal/version.Commit=#{tap.user}
+      -X github.comLegit-Labslegitifyinternalversion.Version=#{version}
+      -X github.comLegit-Labslegitifyinternalversion.Commit=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"legitify", "completion")
+    generate_completions_from_executable(bin"legitify", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/legitify generate-docs")
+    output = shell_output("#{bin}legitify generate-docs")
     assert_match "policy_name: actions_can_approve_pull_requests", output
-    assert_match version.to_s, shell_output("#{bin}/legitify version")
+    assert_match version.to_s, shell_output("#{bin}legitify version")
   end
 end

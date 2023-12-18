@@ -2,8 +2,8 @@ class GobjectIntrospection < Formula
   include Language::Python::Shebang
 
   desc "Generate introspection data for GObject libraries"
-  homepage "https://gi.readthedocs.io/en/latest/"
-  url "https://download.gnome.org/sources/gobject-introspection/1.78/gobject-introspection-1.78.1.tar.xz"
+  homepage "https:gi.readthedocs.ioenlatest"
+  url "https:download.gnome.orgsourcesgobject-introspection1.78gobject-introspection-1.78.1.tar.xz"
   sha256 "bd7babd99af7258e76819e45ba4a6bc399608fe762d83fde3cac033c50841bb4"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
@@ -32,11 +32,11 @@ class GobjectIntrospection < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libffi", since: :catalina
 
-  # Fix library search path on non-/usr/local installs (e.g. Apple Silicon)
-  # See: https://github.com/Homebrew/homebrew-core/issues/75020
-  #      https://gitlab.gnome.org/GNOME/gobject-introspection/-/merge_requests/273
+  # Fix library search path on non-usrlocal installs (e.g. Apple Silicon)
+  # See: https:github.comHomebrewhomebrew-coreissues75020
+  #      https:gitlab.gnome.orgGNOMEgobject-introspection-merge_requests273
   patch do
-    url "https://gitlab.gnome.org/tschoonj/gobject-introspection/-/commit/a7be304478b25271166cd92d110f251a8742d16b.diff"
+    url "https:gitlab.gnome.orgtschoonjgobject-introspection-commita7be304478b25271166cd92d110f251a8742d16b.diff"
     sha256 "740c9fba499b1491689b0b1216f9e693e5cb35c9a8565df4314341122ce12f81"
   end
 
@@ -48,17 +48,17 @@ class GobjectIntrospection < Formula
     # Allow scripts to prioritize "python3" from correct Python during build if
     # that Python was altinstall'ed and the linked Python is also in environment
     pyver = Language::Python.major_minor_version python3
-    ENV.prepend_path "PATH", Formula["python@#{pyver}"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@#{pyver}"].opt_libexec"bin"
 
     ENV["GI_SCANNER_DISABLE_CACHE"] = "true"
 
-    inreplace "giscanner/transformer.py", "/usr/share", "#{HOMEBREW_PREFIX}/share"
+    inreplace "giscannertransformer.py", "usrshare", "#{HOMEBREW_PREFIX}share"
     inreplace "meson.build",
       "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))",
-      "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', '#{HOMEBREW_PREFIX}/lib')"
+      "config.set_quoted('GOBJECT_INTROSPECTION_LIBDIR', '#{HOMEBREW_PREFIX}lib')"
 
     system "meson", "setup", "build", "-Dpython=#{python3}",
-                                      "-Dextra_library_paths=#{HOMEBREW_PREFIX}/lib",
+                                      "-Dextra_library_paths=#{HOMEBREW_PREFIX}lib",
                                       *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
@@ -68,12 +68,12 @@ class GobjectIntrospection < Formula
 
   test do
     resource "homebrew-tutorial" do
-      url "https://gist.github.com/tdsmith/7a0023656ccfe309337a.git",
+      url "https:gist.github.comtdsmith7a0023656ccfe309337a.git",
           revision: "499ac89f8a9ad17d250e907f74912159ea216416"
     end
 
     resource("homebrew-tutorial").stage testpath
     system "make"
-    assert_predicate testpath/"Tut-0.1.typelib", :exist?
+    assert_predicate testpath"Tut-0.1.typelib", :exist?
   end
 end

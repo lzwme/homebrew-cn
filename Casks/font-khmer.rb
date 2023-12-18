@@ -2,10 +2,10 @@ cask "font-khmer" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/khmer/Khmer.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkhmerKhmer.ttf",
+      verified: "github.comgooglefonts"
   name "Khmer"
-  homepage "https://fonts.google.com/specimen/Khmer"
+  homepage "https:fonts.google.comspecimenKhmer"
 
   font "Khmer.ttf"
 

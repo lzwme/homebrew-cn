@@ -1,7 +1,7 @@
 class Cdrdao < Formula
   desc "Record CDs in Disk-At-Once mode"
-  homepage "https://cdrdao.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/cdrdao/cdrdao/archive/refs/tags/rel_1_2_5.tar.gz"
+  homepage "https:cdrdao.sourceforge.net"
+  url "https:github.comcdrdaocdrdaoarchiverefstagsrel_1_2_5.tar.gz"
   sha256 "b347189ab550ae5bd1a19d323cdfd8928039853c23aa5e33d7273ab8c750692a"
   license "GPL-2.0-or-later"
 
@@ -28,18 +28,18 @@ class Cdrdao < Formula
   # Fixes build on macOS prior to 12.
   # Remove when merged and released.
   patch do
-    url "https://github.com/cdrdao/cdrdao/commit/105d72a61f510e3c47626476f9bbc9516f824ede.patch?full_index=1"
+    url "https:github.comcdrdaocdrdaocommit105d72a61f510e3c47626476f9bbc9516f824ede.patch?full_index=1"
     sha256 "0e235c0c34abaad56edb03a2526b3792f6f7ea12a8144cee48998cf1326894eb"
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args, "--mandir=#{man}"
+    system ".autogen.sh"
+    system ".configure", *std_configure_args, "--mandir=#{man}"
     system "make", "install"
   end
 
   test do
     assert_match "ERROR: No device specified, no default device found.",
-     shell_output("#{bin}/cdrdao drive-info 2>&1", 1)
+     shell_output("#{bin}cdrdao drive-info 2>&1", 1)
   end
 end

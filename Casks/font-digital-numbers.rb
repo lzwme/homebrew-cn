@@ -2,10 +2,10 @@ cask "font-digital-numbers" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/digitalnumbers/DigitalNumbers-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldigitalnumbersDigitalNumbers-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Digital Numbers"
-  homepage "https://fonts.google.com/specimen/Digital+Numbers"
+  homepage "https:fonts.google.comspecimenDigital+Numbers"
 
   font "DigitalNumbers-Regular.ttf"
 

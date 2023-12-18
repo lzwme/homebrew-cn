@@ -1,10 +1,10 @@
 class Fibjs < Formula
   desc "JavaScript on Fiber"
-  homepage "https://fibjs.org/"
-  url "https://ghproxy.com/https://github.com/fibjs/fibjs/releases/download/v0.36.0/fullsrc.zip"
+  homepage "https:fibjs.org"
+  url "https:github.comfibjsfibjsreleasesdownloadv0.36.0fullsrc.zip"
   sha256 "50b77694c36bc3836be7494807f973e4abe902ea53d8ddd0689978c9be736df7"
   license "GPL-3.0-only"
-  head "https://github.com/fibjs/fibjs.git", branch: "master"
+  head "https:github.comfibjsfibjs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98a0645201c055a9ded884cd4aa295cf5db146dc7c16f3c35ad3a237ee81b0de"
@@ -22,37 +22,37 @@ class Fibjs < Formula
 
   # LLVM is added as a test dependency to work around limitation in Homebrew's
   # test compiler selection when using fails_with. Can remove :test when fixed.
-  # Issue ref: https://github.com/Homebrew/brew/issues/11795
+  # Issue ref: https:github.comHomebrewbrewissues11795
   uses_from_macos "llvm" => [:build, :test]
 
   on_linux do
     depends_on "libx11"
   end
 
-  # https://github.com/fibjs/fibjs/blob/master/BUILDING.md
+  # https:github.comfibjsfibjsblobmasterBUILDING.md
   fails_with :gcc do
     cause "Upstream does not support gcc."
   end
 
   def install
-    # help find X11 headers: fatal error: 'X11/Xlib.h' file not found
-    ENV.append "CXXFLAGS", "-I#{HOMEBREW_PREFIX}/include" if OS.linux?
+    # help find X11 headers: fatal error: 'X11Xlib.h' file not found
+    ENV.append "CXXFLAGS", "-I#{HOMEBREW_PREFIX}include" if OS.linux?
 
     # the build script breaks when CI is set by Homebrew
     with_env(CI: nil) do
-      system "./build", "clean"
-      system "./build", "release", "-j#{ENV.make_jobs}"
+      system ".build", "clean"
+      system ".build", "release", "-j#{ENV.make_jobs}"
     end
 
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    bin.install "bin/#{OS.kernel_name}_#{arch}_release/fibjs"
+    bin.install "bin#{OS.kernel_name}_#{arch}_releasefibjs"
   end
 
   test do
-    path = testpath/"test.js"
+    path = testpath"test.js"
     path.write "console.log('hello');"
 
-    output = shell_output("#{bin}/fibjs #{path}").strip
+    output = shell_output("#{bin}fibjs #{path}").strip
     assert_equal "hello", output
   end
 end

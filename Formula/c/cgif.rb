@@ -1,7 +1,7 @@
 class Cgif < Formula
   desc "GIF encoder written in C"
-  homepage "https://github.com/dloebl/cgif"
-  url "https://ghproxy.com/https://github.com/dloebl/cgif/archive/refs/tags/V0.3.2.tar.gz"
+  homepage "https:github.comdloeblcgif"
+  url "https:github.comdloeblcgifarchiverefstagsV0.3.2.tar.gz"
   sha256 "0abf83b7617f4793d9ab3a4d581f4e8d7548b56a29e3f95b0505f842cbfd7f95"
   license "MIT"
 
@@ -29,7 +29,7 @@ class Cgif < Formula
   end
 
   test do
-    (testpath/"try.c").write <<~EOS
+    (testpath"try.c").write <<~EOS
       #include <cgif.h>
       int main() {
         CGIF_Config config = {0};
@@ -41,6 +41,6 @@ class Cgif < Formula
       }
     EOS
     system ENV.cc, "try.c", "-L#{lib}", "-lcgif", "-o", "try"
-    system "./try"
+    system ".try"
   end
 end

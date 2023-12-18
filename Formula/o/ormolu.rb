@@ -1,10 +1,10 @@
 class Ormolu < Formula
   desc "Formatter for Haskell source code"
-  homepage "https://github.com/tweag/ormolu"
-  url "https://ghproxy.com/https://github.com/tweag/ormolu/archive/refs/tags/0.7.3.0.tar.gz"
+  homepage "https:github.comtweagormolu"
+  url "https:github.comtweagormoluarchiverefstags0.7.3.0.tar.gz"
   sha256 "dfc3cd77ad55e80719a80583f0a0d753b7f6061fe1f1fc49f6805cbb06452c0c"
   license "BSD-3-Clause"
-  head "https://github.com/tweag/ormolu.git", branch: "master"
+  head "https:github.comtweagormolu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4716fa363194d0d5d29efb2767491e2225a32a1ba00401dce93983db6de63ffa"
@@ -25,7 +25,7 @@ class Ormolu < Formula
   end
 
   test do
-    (testpath/"test.hs").write <<~EOS
+    (testpath"test.hs").write <<~EOS
       foo =
         f1
         p1
@@ -59,6 +59,6 @@ class Ormolu < Formula
           p2
           p3
     EOS
-    assert_equal expected, shell_output("#{bin}/ormolu test.hs")
+    assert_equal expected, shell_output("#{bin}ormolu test.hs")
   end
 end

@@ -1,7 +1,7 @@
 class Kubespy < Formula
   desc "Tools for observing Kubernetes resources in realtime"
-  homepage "https://github.com/pulumi/kubespy"
-  url "https://ghproxy.com/https://github.com/pulumi/kubespy/archive/refs/tags/v0.6.2.tar.gz"
+  homepage "https:github.compulumikubespy"
+  url "https:github.compulumikubespyarchiverefstagsv0.6.2.tar.gz"
   sha256 "17a1c75357557f2caa9a6f781bcf628323b4cae42a05b123cd2d73f0bf9bd73c"
   license "Apache-2.0"
 
@@ -20,15 +20,15 @@ class Kubespy < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X github.com/pulumi/kubespy/version.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-X github.compulumikubespyversion.Version=#{version}")
 
-    generate_completions_from_executable(bin/"kubespy", "completion")
+    generate_completions_from_executable(bin"kubespy", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kubespy version")
+    assert_match version.to_s, shell_output("#{bin}kubespy version")
 
     assert_match "invalid configuration: no configuration has been provided",
-                 shell_output("#{bin}/kubespy status v1 Pod nginx 2>&1", 1)
+                 shell_output("#{bin}kubespy status v1 Pod nginx 2>&1", 1)
   end
 end

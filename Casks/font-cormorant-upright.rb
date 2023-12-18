@@ -2,12 +2,12 @@ cask "font-cormorant-upright" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/cormorantupright"
+      only_path: "oflcormorantupright"
   name "Cormorant Upright"
-  homepage "https://fonts.google.com/specimen/Cormorant+Upright"
+  homepage "https:fonts.google.comspecimenCormorant+Upright"
 
   font "CormorantUpright-Bold.ttf"
   font "CormorantUpright-Light.ttf"

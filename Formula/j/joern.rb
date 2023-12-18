@@ -1,14 +1,14 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
-  homepage "https://joern.io/"
+  homepage "https:joern.io"
   # joern should only be updated every 10 releases on multiples of 10
-  url "https://ghproxy.com/https://github.com/joernio/joern/archive/refs/tags/v2.0.180.tar.gz"
+  url "https:github.comjoerniojoernarchiverefstagsv2.0.180.tar.gz"
   sha256 "62116442be2cecd3a8200daf2a76f0d12981e597715b7e3d3d020087e645da86"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Joern < Formula
   def install
     system "sbt", "stage"
 
-    cd "joern-cli/target/universal/stage" do
-      rm_f Dir["**/*.bat"]
+    cd "joern-clitargetuniversalstage" do
+      rm_f Dir["***.bat"]
       libexec.install Pathname.pwd.children
     end
 
@@ -39,17 +39,17 @@ class Joern < Formula
     os = OS.mac? ? "macos" : OS.kernel_name.downcase
     arch = Hardware::CPU.arch.to_s
     goastgen_name = Hardware::CPU.intel? ? "goastgen-#{os}" : "goastgen-#{os}-#{arch}"
-    (libexec/"frontends/gosrc2cpg/bin/goastgen").glob("goastgen-*").each do |f|
+    (libexec"frontendsgosrc2cpgbingoastgen").glob("goastgen-*").each do |f|
       rm f if f.basename.to_s != goastgen_name
     end
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
-      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env
+      (binf.basename).write_env_script f, Language::Java.overridable_java_home_env
     end
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       void print_number(int x) {
         std::cout << x << std::endl;
@@ -61,7 +61,7 @@ class Joern < Formula
       }
     EOS
 
-    assert_match "Parsing code", shell_output("#{bin}/joern-parse test.cpp")
-    assert_predicate testpath/"cpg.bin", :exist?
+    assert_match "Parsing code", shell_output("#{bin}joern-parse test.cpp")
+    assert_predicate testpath"cpg.bin", :exist?
   end
 end

@@ -1,7 +1,7 @@
 class Chroma < Formula
   desc "General purpose syntax highlighter in pure Go"
-  homepage "https://github.com/alecthomas/chroma"
-  url "https://ghproxy.com/https://github.com/alecthomas/chroma/archive/refs/tags/v2.12.0.tar.gz"
+  homepage "https:github.comalecthomaschroma"
+  url "https:github.comalecthomaschromaarchiverefstagsv2.12.0.tar.gz"
   sha256 "56c546a834113493de95585d5034c3c58d42b4518787cff5450601f9d9d0e78d"
   license "MIT"
 
@@ -18,13 +18,13 @@ class Chroma < Formula
   depends_on "go" => :build
 
   def install
-    cd "cmd/chroma" do
+    cd "cmdchroma" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
   end
 
   test do
-    json_output = JSON.parse(shell_output("#{bin}/chroma --json #{test_fixtures("test.diff")}"))
+    json_output = JSON.parse(shell_output("#{bin}chroma --json #{test_fixtures("test.diff")}"))
     assert_equal "GenericHeading", json_output[0]["type"]
   end
 end

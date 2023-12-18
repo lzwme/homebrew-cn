@@ -2,12 +2,12 @@ cask "font-arya" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/arya"
+      only_path: "oflarya"
   name "Arya"
-  homepage "https://fonts.google.com/specimen/Arya"
+  homepage "https:fonts.google.comspecimenArya"
 
   font "Arya-Bold.ttf"
   font "Arya-Regular.ttf"

@@ -2,11 +2,11 @@ class VpnSlice < Formula
   include Language::Python::Virtualenv
 
   desc "Vpnc-script replacement for easy and secure split-tunnel VPN setup"
-  homepage "https://github.com/dlenski/vpn-slice"
-  url "https://files.pythonhosted.org/packages/74/fd/6c9472e8ed83695abace098d83ba0df4ea48e29e7b2f6c77ced73b9f7dce/vpn-slice-0.16.1.tar.gz"
+  homepage "https:github.comdlenskivpn-slice"
+  url "https:files.pythonhosted.orgpackages74fd6c9472e8ed83695abace098d83ba0df4ea48e29e7b2f6c77ced73b9f7dcevpn-slice-0.16.1.tar.gz"
   sha256 "28d02dd1b41210b270470350f28967320b3a34321d57cc9736f53d6121e9ceaa"
   license "GPL-3.0-or-later"
-  head "https://github.com/dlenski/vpn-slice.git", branch: "master"
+  head "https:github.comdlenskivpn-slice.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -23,12 +23,12 @@ class VpnSlice < Formula
   depends_on "python@3.12"
 
   resource "dnspython" do
-    url "https://files.pythonhosted.org/packages/65/2d/372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9/dnspython-2.4.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages652d372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9dnspython-2.4.2.tar.gz"
     sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
   end
 
   resource "setproctitle" do
-    url "https://files.pythonhosted.org/packages/ff/e1/b16b16a1aa12174349d15b73fd4b87e641a8ae3fb1163e80938dbbf6ae98/setproctitle-1.3.3.tar.gz"
+    url "https:files.pythonhosted.orgpackagesffe1b16b16a1aa12174349d15b73fd4b87e641a8ae3fb1163e80938dbbf6ae98setproctitle-1.3.3.tar.gz"
     sha256 "c913e151e7ea01567837ff037a23ca8740192880198b7fbb90b16d181607caae"
   end
 
@@ -37,9 +37,9 @@ class VpnSlice < Formula
   end
 
   test do
-    # vpn-slice needs root/sudo credentials
-    output = `#{bin}/vpn-slice 192.168.0.0/24 2>&1`
-    assert_match "Cannot read/write /etc/hosts", output
+    # vpn-slice needs rootsudo credentials
+    output = `#{bin}vpn-slice 192.168.0.024 2>&1`
+    assert_match "Cannot readwrite etchosts", output
     assert_equal 1, $CHILD_STATUS.exitstatus
   end
 end

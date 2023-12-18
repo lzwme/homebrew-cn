@@ -2,11 +2,11 @@ cask "font-hind-jalandhar" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
+  url "https:github.comgooglefonts.git",
       branch:    "main",
-      only_path: "ofl/hindjalandhar"
+      only_path: "oflhindjalandhar"
   name "Hind Jalandhar"
-  homepage "https://github.com/itfoundry/hind-jalandhar"
+  homepage "https:github.comitfoundryhind-jalandhar"
 
   font "HindJalandhar-Bold.ttf"
   font "HindJalandhar-Light.ttf"

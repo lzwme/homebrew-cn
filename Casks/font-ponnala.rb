@@ -2,10 +2,10 @@ cask "font-ponnala" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/ponnala/Ponnala-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflponnalaPonnala-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Ponnala"
-  homepage "https://fonts.google.com/specimen/Ponnala"
+  homepage "https:fonts.google.comspecimenPonnala"
 
   font "Ponnala-Regular.ttf"
 

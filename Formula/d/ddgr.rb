@@ -2,8 +2,8 @@ class Ddgr < Formula
   include Language::Python::Shebang
 
   desc "DuckDuckGo from the terminal"
-  homepage "https://github.com/jarun/ddgr"
-  url "https://ghproxy.com/https://github.com/jarun/ddgr/archive/refs/tags/v2.1.tar.gz"
+  homepage "https:github.comjarunddgr"
+  url "https:github.comjarunddgrarchiverefstagsv2.1.tar.gz"
   sha256 "fb6601ad533f2925d2d6299ab9e6dd48da0b75e99ef9ed9068f37e516380b5e6"
   license "GPL-3.0-or-later"
 
@@ -17,13 +17,13 @@ class Ddgr < Formula
   def install
     rewrite_shebang detected_python_shebang, "ddgr"
     system "make", "install", "PREFIX=#{prefix}"
-    bash_completion.install "auto-completion/bash/ddgr-completion.bash" => "ddgr"
-    fish_completion.install "auto-completion/fish/ddgr.fish"
-    zsh_completion.install "auto-completion/zsh/_ddgr"
+    bash_completion.install "auto-completionbashddgr-completion.bash" => "ddgr"
+    fish_completion.install "auto-completionfishddgr.fish"
+    zsh_completion.install "auto-completionzsh_ddgr"
   end
 
   test do
     ENV["PYTHONIOENCODING"] = "utf-8"
-    assert_match "q:Homebrew", shell_output("#{bin}/ddgr --debug --noprompt Homebrew 2>&1")
+    assert_match "q:Homebrew", shell_output("#{bin}ddgr --debug --noprompt Homebrew 2>&1")
   end
 end

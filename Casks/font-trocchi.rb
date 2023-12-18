@@ -2,10 +2,10 @@ cask "font-trocchi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/trocchi/Trocchi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofltrocchiTrocchi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Trocchi"
-  homepage "https://fonts.google.com/specimen/Trocchi"
+  homepage "https:fonts.google.comspecimenTrocchi"
 
   font "Trocchi-Regular.ttf"
 

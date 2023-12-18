@@ -1,12 +1,12 @@
 class Ucommon < Formula
   desc "GNU C++ runtime library for threads, sockets, and parsing"
-  homepage "https://www.gnu.org/software/commoncpp/"
-  url "https://ftp.gnu.org/gnu/commonc++/ucommon-7.0.0.tar.gz"
+  homepage "https:www.gnu.orgsoftwarecommoncpp"
+  url "https:ftp.gnu.orggnucommonc++ucommon-7.0.0.tar.gz"
   sha256 "6ac9f76c2af010f97e916e4bae1cece341dc64ca28e3881ff4ddc3bc334060d7"
 
   livecheck do
     url :stable
-    regex(/href=.*?ucommon[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?ucommon[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,13 +31,13 @@ class Ucommon < Formula
 
   # Fix build, reported by email to bug-commoncpp@gnu.org on 2017-10-05
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/77f0d9d2/ucommon/cachelinesize.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches77f0d9d2ucommoncachelinesize.patch"
     sha256 "46aef9108e2012362b6adcb3bea2928146a3a8fe5e699450ffaf931b6db596ff"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -46,13 +46,13 @@ class Ucommon < Formula
     # from the flat namespace patch already used above.
     inreplace "configure", "-undefined suppress -flat_namespace", "-undefined dynamic_lookup"
 
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking",
+    system ".configure", "--prefix=#{prefix}", "--disable-dependency-tracking",
                           "--disable-silent-rules", "--enable-socks",
                           "--with-sslstack=gnutls", "--with-pkg-config"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/ucommon-config", "--libs"
+    system "#{bin}ucommon-config", "--libs"
   end
 end

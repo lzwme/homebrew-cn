@@ -1,16 +1,16 @@
 class DhallLspServer < Formula
   desc "Language Server Protocol (LSP) server for Dhall"
-  homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-lsp-server"
+  homepage "https:github.comdhall-langdhall-haskelltreemasterdhall-lsp-server"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
+  head "https:github.comdhall-langdhall-haskell.git", branch: "master"
 
   stable do
-    url "https://hackage.haskell.org/package/dhall-lsp-server-1.1.3/dhall-lsp-server-1.1.3.tar.gz"
+    url "https:hackage.haskell.orgpackagedhall-lsp-server-1.1.3dhall-lsp-server-1.1.3.tar.gz"
     sha256 "885595eb731bd2eab28073751b9981e0406e69c4a8288748675439d0b0968ded"
 
     # Backport relaxed upper bound on lens. Remove on next release.
     patch :p2 do
-      url "https://github.com/dhall-lang/dhall-haskell/commit/5e817a9c6bccf72123a3c67961af149b32d75c10.patch?full_index=1"
+      url "https:github.comdhall-langdhall-haskellcommit5e817a9c6bccf72123a3c67961af149b32d75c10.patch?full_index=1"
       sha256 "f66004893312b9001e2dd122880c63d0e6fccbc7af0e8a549a08a171d99e2d07"
     end
   end
@@ -52,9 +52,9 @@ class DhallLspServer < Formula
       "\r\n" \
       "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"exit\"}\r\n"
 
-    output = pipe_output("#{bin}/dhall-lsp-server", input, 0)
+    output = pipe_output("#{bin}dhall-lsp-server", input, 0)
 
-    assert_match(/^Content-Length: \d+/i, output)
+    assert_match(^Content-Length: \d+i, output)
     assert_match "dhall.server.lint", output
   end
 end

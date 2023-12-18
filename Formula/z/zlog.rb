@@ -1,7 +1,7 @@
 class Zlog < Formula
   desc "High-performance C logging library"
-  homepage "https://github.com/HardySimpson/zlog"
-  url "https://ghproxy.com/https://github.com/HardySimpson/zlog/archive/refs/tags/1.2.17.tar.gz"
+  homepage "https:github.comHardySimpsonzlog"
+  url "https:github.comHardySimpsonzlogarchiverefstags1.2.17.tar.gz"
   sha256 "7fe412130abbb75a0779df89ae407db5d8f594435cc4ff6b068d924e13fd5c68"
   license "Apache-2.0"
 
@@ -21,13 +21,13 @@ class Zlog < Formula
   end
 
   test do
-    (testpath/"zlog.conf").write <<~EOS
+    (testpath"zlog.conf").write <<~EOS
       [formats]
       simple = "%m%n"
       [rules]
       my_cat.DEBUG    >stdout; simple
     EOS
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <zlog.h>
       int main() {
@@ -54,6 +54,6 @@ class Zlog < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lzlog", "-pthread", "-o", "test"
-    assert_equal "hello, zlog!\n", shell_output("./test")
+    assert_equal "hello, zlog!\n", shell_output(".test")
   end
 end

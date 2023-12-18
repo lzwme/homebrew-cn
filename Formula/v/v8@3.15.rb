@@ -1,7 +1,7 @@
 class V8AT315 < Formula
   desc "Google's open source JavaScript engine"
-  homepage "https://github.com/v8/v8/wiki"
-  url "https://ghproxy.com/https://github.com/v8/v8/archive/refs/tags/3.15.11.18.tar.gz"
+  homepage "https:github.comv8v8wiki"
+  url "https:github.comv8v8archiverefstags3.15.11.18.tar.gz"
   sha256 "93a4945a550e5718d474113d9769a3c010ba21e3764df8f22932903cd106314d"
   license "BSD-3-Clause"
   revision 1
@@ -21,7 +21,7 @@ class V8AT315 < Formula
   disable! date: "2023-06-19", because: "depends on Python 2 to build"
 
   resource "gyp" do
-    url "https://chromium.googlesource.com/external/gyp.git",
+    url "https:chromium.googlesource.comexternalgyp.git",
         revision: "f7bc250ccc4d619a1cf238db87e5979f89ff36d7"
   end
 
@@ -30,12 +30,12 @@ class V8AT315 < Formula
     ENV.cxx11
     ENV["GYP_DEFINES"] = "clang=1 mac_deployment_target=#{MacOS.version}" if OS.mac?
 
-    (buildpath/"build/gyp").install resource("gyp")
+    (buildpath"buildgyp").install resource("gyp")
 
     # fix up libv8.dylib install_name
-    # https://github.com/Homebrew/homebrew/issues/36571
-    # https://code.google.com/p/v8/issues/detail?id=3871
-    inreplace "tools/gyp/v8.gyp",
+    # https:github.comHomebrewhomebrewissues36571
+    # https:code.google.compv8issuesdetail?id=3871
+    inreplace "toolsgypv8.gyp",
               "'OTHER_LDFLAGS': ['-dynamiclib', '-all_load']",
               "\\0, 'DYLIB_INSTALL_NAME_BASE': '#{opt_lib}'"
 
@@ -46,13 +46,13 @@ class V8AT315 < Formula
                    "console=readline"
 
     prefix.install "include"
-    cd "out/native" do
+    cd "outnative" do
       lib.install Dir["lib*"]
       bin.install "d8", "lineprocessor", "mksnapshot", "preparser", "process", "shell" => "v8"
     end
   end
 
   test do
-    assert_equal "Hello World!", pipe_output("#{bin}/v8 -e 'print(\"Hello World!\")'").chomp
+    assert_equal "Hello World!", pipe_output("#{bin}v8 -e 'print(\"Hello World!\")'").chomp
   end
 end

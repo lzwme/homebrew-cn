@@ -2,10 +2,10 @@ cask "menubar-countdown" do
   version "2.1"
   sha256 "9b72a2c3544c7e3e9c9cb60feb9be2ff7905184c9e988f921bea5269a60fb805"
 
-  url "https://ghproxy.com/https://github.com/kristopherjohnson/MenubarCountdown/releases/download/#{version}/Menubar_Countdown_#{version}.zip"
+  url "https:github.comkristopherjohnsonMenubarCountdownreleasesdownload#{version}Menubar_Countdown_#{version}.zip"
   name "Menubar Countdown"
   desc "Countdown timer for the menu bar"
-  homepage "https://github.com/kristopherjohnson/MenubarCountdown"
+  homepage "https:github.comkristopherjohnsonMenubarCountdown"
 
   depends_on macos: ">= :mojave"
 

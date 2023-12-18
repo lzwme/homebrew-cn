@@ -2,10 +2,10 @@ cask "font-allura" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/allura/Allura-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflalluraAllura-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Allura"
-  homepage "https://fonts.google.com/specimen/Allura"
+  homepage "https:fonts.google.comspecimenAllura"
 
   font "Allura-Regular.ttf"
 

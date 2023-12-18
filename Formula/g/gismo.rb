@@ -1,7 +1,7 @@
 class Gismo < Formula
   desc "C++ library for isogeometric analysis (IGA)"
-  homepage "https://gismo.github.io"
-  url "https://ghproxy.com/https://github.com/gismo/gismo/archive/refs/tags/v21.12.0.tar.gz"
+  homepage "https:gismo.github.io"
+  url "https:github.comgismogismoarchiverefstagsv21.12.0.tar.gz"
   sha256 "4001b4c49661ca8b71baf915e773341e115d154077bef218433a3c1d72ee4f0c"
   license "MPL-2.0"
 
@@ -18,7 +18,7 @@ class Gismo < Formula
   end
 
   head do
-    url "https://github.com/gismo/gismo.git", branch: "stable"
+    url "https:github.comgismogismo.git", branch: "stable"
   end
 
   depends_on "cmake" => :build
@@ -51,7 +51,7 @@ class Gismo < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <gismo.h>
       using namespace gismo;
       int main()
@@ -64,7 +64,7 @@ class Gismo < Formula
         gsInfo << M*v << std::endl;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{include}/gismo", "-std=c++14", "-o", "test"
-    assert_equal %w[4 4], shell_output("./test").split
+    system ENV.cxx, "test.cpp", "-I#{include}gismo", "-std=c++14", "-o", "test"
+    assert_equal %w[4 4], shell_output(".test").split
   end
 end

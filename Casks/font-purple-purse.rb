@@ -2,10 +2,10 @@ cask "font-purple-purse" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/purplepurse/PurplePurse-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpurplepursePurplePurse-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Purple Purse"
-  homepage "https://fonts.google.com/specimen/Purple+Purse"
+  homepage "https:fonts.google.comspecimenPurple+Purse"
 
   font "PurplePurse-Regular.ttf"
 

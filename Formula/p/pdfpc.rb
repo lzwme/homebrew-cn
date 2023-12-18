@@ -1,7 +1,7 @@
 class Pdfpc < Formula
   desc "Presenter console with multi-monitor support for PDF files"
-  homepage "https://pdfpc.github.io/"
-  url "https://ghproxy.com/https://github.com/pdfpc/pdfpc/archive/refs/tags/v4.4.1.tar.gz"
+  homepage "https:pdfpc.github.io"
+  url "https:github.compdfpcpdfpcarchiverefstagsv4.4.1.tar.gz"
   sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
   license "GPL-3.0-or-later"
   revision 3
@@ -17,7 +17,7 @@ class Pdfpc < Formula
   end
 
   head do
-    url "https://github.com/pdfpc/pdfpc.git", branch: "master"
+    url "https:github.compdfpcpdfpc.git", branch: "master"
 
     depends_on "discount"
     depends_on "json-glib"
@@ -39,7 +39,7 @@ class Pdfpc < Formula
 
   def install
     # NOTE: You can avoid the `libsoup@2` dependency by passing `-DREST=OFF`.
-    # https://github.com/pdfpc/pdfpc/blob/3310efbf87b5457cbff49076447fcf5f822c2269/src/CMakeLists.txt#L38-L40
+    # https:github.compdfpcpdfpcblob3310efbf87b5457cbff49076447fcf5f822c2269srcCMakeLists.txt#L38-L40
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}",
                     "-DMDVIEW=#{OS.linux?}", # Needs webkitgtk
@@ -52,6 +52,6 @@ class Pdfpc < Formula
     # Gtk-WARNING **: 00:25:01.545: cannot open display
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
-    system bin/"pdfpc", "--version"
+    system bin"pdfpc", "--version"
   end
 end

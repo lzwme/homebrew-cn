@@ -1,14 +1,14 @@
 class Libebml < Formula
   desc "Sort of a sbinary version of XML"
-  homepage "https://www.matroska.org/"
-  url "https://dl.matroska.org/downloads/libebml/libebml-1.4.5.tar.xz"
+  homepage "https:www.matroska.org"
+  url "https:dl.matroska.orgdownloadslibebmllibebml-1.4.5.tar.xz"
   sha256 "4971640b0592da29c2d426f303e137a9b0b3d07e1b81d069c1e56a2f49ab221b"
   license "LGPL-2.1-or-later"
-  head "https://github.com/Matroska-Org/libebml.git", branch: "master"
+  head "https:github.comMatroska-Orglibebml.git", branch: "master"
 
   livecheck do
-    url "https://dl.matroska.org/downloads/libebml/"
-    regex(/href=.*?libebml[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dl.matroska.orgdownloadslibebml"
+    regex(href=.*?libebml[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do

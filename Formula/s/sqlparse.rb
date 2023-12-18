@@ -1,7 +1,7 @@
 class Sqlparse < Formula
   desc "Non-validating SQL parser"
-  homepage "https://github.com/andialbrecht/sqlparse"
-  url "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz"
+  homepage "https:github.comandialbrechtsqlparse"
+  url "https:files.pythonhosted.orgpackages651610f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574sqlparse-0.4.4.tar.gz"
   sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   license "BSD-3-Clause"
 
@@ -26,7 +26,7 @@ class Sqlparse < Formula
 
   def install
     system python3, "-m", "pip", "install", *std_pip_args, "."
-    man1.install "docs/sqlformat.1"
+    man1.install "docssqlformat.1"
   end
 
   test do
@@ -34,7 +34,7 @@ class Sqlparse < Formula
       select *
         from foo
     EOS
-    output = pipe_output("#{bin}/sqlformat - -a", "select * from foo", 0)
+    output = pipe_output("#{bin}sqlformat - -a", "select * from foo", 0)
     assert_equal expected, output
   end
 end

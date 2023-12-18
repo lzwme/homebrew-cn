@@ -33,12 +33,12 @@ cask "datweatherdoe" do
     end
   end
 
-  url "https://ghproxy.com/https://github.com/inderdhir/DatWeatherDoe/releases/download/#{version}/DatWeatherDoe-#{version}.dmg"
+  url "https:github.cominderdhirDatWeatherDoereleasesdownload#{version}DatWeatherDoe-#{version}.dmg"
   name "DatWeatherDoe"
   desc "Menu bar weather app"
-  homepage "https://github.com/inderdhir/DatWeatherDoe"
+  homepage "https:github.cominderdhirDatWeatherDoe"
 
   app "DatWeatherDoe.app"
 
-  zap trash: "~/Library/Preferences/com.inderdhir.DatWeatherDoe.plist"
+  zap trash: "~LibraryPreferencescom.inderdhir.DatWeatherDoe.plist"
 end

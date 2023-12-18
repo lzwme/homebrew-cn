@@ -1,11 +1,11 @@
 class SimpleTiles < Formula
   desc "Image generation library for spatial data"
-  homepage "https://github.com/propublica/simple-tiles"
-  url "https://ghproxy.com/https://github.com/propublica/simple-tiles/archive/refs/tags/v0.6.2.tar.gz"
+  homepage "https:github.compropublicasimple-tiles"
+  url "https:github.compropublicasimple-tilesarchiverefstagsv0.6.2.tar.gz"
   sha256 "343ae52a0b20ee091b14bc145b7c78fed13b7272acd827626283b70f178dfa34"
   license "MIT"
   revision 3
-  head "https://github.com/propublica/simple-tiles.git", branch: "master"
+  head "https:github.compropublicasimple-tiles.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "da79421e0b2c78a449808e4b4cae188720efefc069176d6e1cc054f3a6079712"
@@ -24,14 +24,14 @@ class SimpleTiles < Formula
   depends_on "pango"
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].libexec/"bin"
-    system "./waf", "configure", "--prefix=#{prefix}"
+    ENV.prepend_path "PATH", Formula["python@3.11"].libexec"bin"
+    system ".waf", "configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <simple-tiles/simple_tiles.h>
+    (testpath"test.c").write <<~EOS
+      #include <simple-tilessimple_tiles.h>
 
       int main(){
         simplet_map_t *map = simplet_map_new();
@@ -41,6 +41,6 @@ class SimpleTiles < Formula
     EOS
     cflags = shell_output("pkg-config --cflags simple-tiles").chomp.split
     system ENV.cc, "test.c", *cflags, "-L#{lib}", "-lsimple-tiles", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -2,10 +2,10 @@ cask "font-zen-antique-soft" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/zenantiquesoft/ZenAntiqueSoft-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflzenantiquesoftZenAntiqueSoft-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Zen Antique Soft"
-  homepage "https://fonts.google.com/specimen/Zen+Antique+Soft"
+  homepage "https:fonts.google.comspecimenZen+Antique+Soft"
 
   font "ZenAntiqueSoft-Regular.ttf"
 

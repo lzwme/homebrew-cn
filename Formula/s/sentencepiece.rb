@@ -1,10 +1,10 @@
 class Sentencepiece < Formula
   desc "Unsupervised text tokenizer and detokenizer"
-  homepage "https://github.com/google/sentencepiece"
-  url "https://ghproxy.com/https://github.com/google/sentencepiece/archive/refs/tags/v0.1.99.tar.gz"
+  homepage "https:github.comgooglesentencepiece"
+  url "https:github.comgooglesentencepiecearchiverefstagsv0.1.99.tar.gz"
   sha256 "63617eaf56c7a3857597dcd8780461f57dd21381b56a27716ef7d7e02e14ced4"
   license "Apache-2.0"
-  head "https://github.com/google/sentencepiece.git", branch: "master"
+  head "https:github.comgooglesentencepiece.git", branch: "master"
 
   livecheck do
     url :stable
@@ -37,7 +37,7 @@ class Sentencepiece < Formula
   end
 
   test do
-    cp (pkgshare/"data/botchan.txt"), testpath
-    system "#{bin}/spm_train", "--input=botchan.txt", "--model_prefix=m", "--vocab_size=1000"
+    cp (pkgshare"databotchan.txt"), testpath
+    system "#{bin}spm_train", "--input=botchan.txt", "--model_prefix=m", "--vocab_size=1000"
   end
 end

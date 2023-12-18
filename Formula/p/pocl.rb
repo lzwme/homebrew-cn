@@ -1,16 +1,16 @@
 class Pocl < Formula
   desc "Portable Computing Language"
-  homepage "http://portablecl.org"
+  homepage "http:portablecl.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ghproxy.com/https://github.com/pocl/pocl/archive/refs/tags/v4.0.tar.gz"
+  url "https:github.compoclpoclarchiverefstagsv4.0.tar.gz"
   sha256 "7f4e8ab608b3191c2b21e3f13c193f1344b40aba7738f78762f7b88f45e8ce03"
   license "MIT"
   revision 1
-  head "https://github.com/pocl/pocl.git", branch: "master"
+  head "https:github.compoclpocl.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -33,7 +33,7 @@ class Pocl < Formula
 
   fails_with :clang do
     cause <<-EOS
-      .../pocl-3.1/lib/CL/devices/builtin_kernels.cc:24:10: error: expected expression
+      ...pocl-3.1libCLdevicesbuiltin_kernels.cc:24:10: error: expected expression
                {BIArg("char*", "input", READ_BUF),
                ^
     EOS
@@ -43,37 +43,37 @@ class Pocl < Formula
 
   def install
     llvm = Formula["llvm@16"]
-    # Install the ICD into #{prefix}/etc rather than #{etc} as it contains the realpath
+    # Install the ICD into #{prefix}etc rather than #{etc} as it contains the realpath
     # to the shared library and needs to be kept up-to-date to work with an ICD loader.
     # This relies on `brew link` automatically creating and updating #{etc} symlinks.
     args = %W[
-      -DPOCL_INSTALL_ICD_VENDORDIR=#{prefix}/etc/OpenCL/vendors
-      -DCMAKE_INSTALL_RPATH=#{loader_path};#{rpath(source: lib/"pocl")}
+      -DPOCL_INSTALL_ICD_VENDORDIR=#{prefix}etcOpenCLvendors
+      -DCMAKE_INSTALL_RPATH=#{loader_path};#{rpath(source: lib"pocl")}
       -DENABLE_EXAMPLES=OFF
       -DENABLE_TESTS=OFF
-      -DWITH_LLVM_CONFIG=#{llvm.opt_bin}/llvm-config
+      -DWITH_LLVM_CONFIG=#{llvm.opt_bin}llvm-config
       -DLLVM_PREFIX=#{llvm.opt_prefix}
       -DLLVM_BINDIR=#{llvm.opt_bin}
       -DLLVM_LIBDIR=#{llvm.opt_lib}
       -DLLVM_INCLUDEDIR=#{llvm.opt_include}
     ]
     # Avoid installing another copy of OpenCL headers on macOS
-    args << "-DOPENCL_H=#{Formula["opencl-headers"].opt_include}/CL/opencl.h" if OS.mac?
-    # Only x86_64 supports "distro" which allows runtime detection of SSE/AVX
+    args << "-DOPENCL_H=#{Formula["opencl-headers"].opt_include}CLopencl.h" if OS.mac?
+    # Only x86_64 supports "distro" which allows runtime detection of SSEAVX
     args << "-DKERNELLIB_HOST_CPU_VARIANTS=distro" if Hardware::CPU.intel?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare/"examples").install "examples/poclcc"
+    (pkgshare"examples").install "examplespoclcc"
   end
 
   test do
-    ENV["OCL_ICD_VENDORS"] = "#{opt_prefix}/etc/OpenCL/vendors" # Ignore any other ICD that may be installed
-    cp pkgshare/"examples/poclcc/poclcc.cl", testpath
-    system bin/"poclcc", "-o", "poclcc.cl.pocl", "poclcc.cl"
-    assert_predicate testpath/"poclcc.cl.pocl", :exist?
+    ENV["OCL_ICD_VENDORS"] = "#{opt_prefix}etcOpenCLvendors" # Ignore any other ICD that may be installed
+    cp pkgshare"examplespoclccpoclcc.cl", testpath
+    system bin"poclcc", "-o", "poclcc.cl.pocl", "poclcc.cl"
+    assert_predicate testpath"poclcc.cl.pocl", :exist?
     # Make sure that CMake found our OpenCL headers and didn't install a copy
-    refute_predicate include/"OpenCL", :exist?
+    refute_predicate include"OpenCL", :exist?
   end
 end

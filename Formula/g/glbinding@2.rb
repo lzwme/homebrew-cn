@@ -1,7 +1,7 @@
 class GlbindingAT2 < Formula
   desc "C++ binding for the OpenGL API"
-  homepage "https://github.com/cginternals/glbinding"
-  url "https://ghproxy.com/https://github.com/cginternals/glbinding/archive/refs/tags/v2.1.4.tar.gz"
+  homepage "https:github.comcginternalsglbinding"
+  url "https:github.comcginternalsglbindingarchiverefstagsv2.1.4.tar.gz"
   sha256 "cb5971b086c0d217b2304d31368803fd2b8c12ee0d41c280d40d7c23588f8be2"
   license "MIT"
 
@@ -26,7 +26,7 @@ class GlbindingAT2 < Formula
 
   def install
     # Force install to use system directory structure as the upstream only
-    # considers /usr and /usr/local to be valid for a system installation
+    # considers usr and usrlocal to be valid for a system installation
     inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
 
     system "cmake", "-S", ".", "-B", "build",
@@ -39,9 +39,9 @@ class GlbindingAT2 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <glbinding/gl/gl.h>
-      #include <glbinding/Binding.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <glbindingglgl.h>
+      #include <glbindingBinding.h>
       int main(void)
       {
         glbinding::Binding::initialize();
@@ -51,6 +51,6 @@ class GlbindingAT2 < Formula
     system ENV.cxx, "-o", "test", "test.cpp", "-std=c++11",
                     "-I#{include}", *open_gl,
                     "-L#{lib}", "-lglbinding", *ENV.cflags.to_s.split
-    system "./test"
+    system ".test"
   end
 end

@@ -2,10 +2,10 @@ cask "font-intone-mono-nerd-font" do
   version "3.1.1"
   sha256 "24667fecbf99abfaa86c10b5c9ae5008a8bac98bc699b7dab90c66101b5b5120"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/IntelOneMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IntelOneMono.zip"
   name "IntoneMono Nerd Font (Intel One Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

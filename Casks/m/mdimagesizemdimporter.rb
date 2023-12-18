@@ -2,9 +2,9 @@ cask "mdimagesizemdimporter" do
   version "2.6.1"
   sha256 "ee9e8057d914e3f0330887e72658bc612ba3d665968f742f15190f66eb2e3d54"
 
-  url "https://ghproxy.com/https://github.com/Nyx0uf/qlImageSize/releases/download/#{version}/mdImageSize.mdimporter.zip"
+  url "https:github.comNyx0ufqlImageSizereleasesdownload#{version}mdImageSize.mdimporter.zip"
   name "mdImageSize"
-  homepage "https://github.com/Nyx0uf/qlImageSize"
+  homepage "https:github.comNyx0ufqlImageSize"
 
   depends_on macos: ">= :high_sierra"
 

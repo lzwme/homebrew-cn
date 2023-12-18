@@ -1,11 +1,11 @@
 class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
-  homepage "https://github.com/etcd-io/etcd"
-  url "https://github.com/etcd-io/etcd.git",
+  homepage "https:github.cometcd-ioetcd"
+  url "https:github.cometcd-ioetcd.git",
       tag:      "v3.5.11",
       revision: "3b252db4f6e68c3ae3ecaa87ab1b502f46d39d6e"
   license "Apache-2.0"
-  head "https://github.com/etcd-io/etcd.git", branch: "main"
+  head "https:github.cometcd-ioetcd.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc5f972e316ef6ea5534d2a41ff70a1a494ca673598bcb0eaef026dc183c8bfe"
@@ -21,12 +21,12 @@ class Etcd < Formula
 
   def install
     system "make", "build"
-    bin.install Dir[buildpath/"bin/*"]
+    bin.install Dir[buildpath"bin*"]
   end
 
   service do
     environment_variables ETCD_UNSUPPORTED_ARCH: "arm64" if Hardware::CPU.arm?
-    run [opt_bin/"etcd"]
+    run [opt_bin"etcd"]
     run_type :immediate
     keep_alive true
     working_dir var
@@ -37,12 +37,12 @@ class Etcd < Formula
     etcd_pid = fork do
       if OS.mac? && Hardware::CPU.arm?
         # etcd isn't officially supported on arm64
-        # https://github.com/etcd-io/etcd/issues/10318
-        # https://github.com/etcd-io/etcd/issues/10677
+        # https:github.cometcd-ioetcdissues10318
+        # https:github.cometcd-ioetcdissues10677
         ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
       end
 
-      exec bin/"etcd",
+      exec bin"etcd",
         "--enable-v2", # enable etcd v2 client support
         "--force-new-cluster",
         "--logger=zap", # default logger (`capnslog`) to be deprecated in v3.5
@@ -51,14 +51,14 @@ class Etcd < Formula
     # sleep to let etcd get its wits about it
     sleep 10
 
-    etcd_uri = "http://127.0.0.1:2379/v2/keys/brew_test"
+    etcd_uri = "http:127.0.0.1:2379v2keysbrew_test"
     system "curl", "--silent", "-L", etcd_uri, "-XPUT", "-d", "value=#{test_string}"
     curl_output = shell_output("curl --silent -L #{etcd_uri}")
     response_hash = JSON.parse(curl_output)
     assert_match(test_string, response_hash.fetch("node").fetch("value"))
 
-    assert_equal "OK\n", shell_output("#{bin}/etcdctl put foo bar")
-    assert_equal "foo\nbar\n", shell_output("#{bin}/etcdctl get foo 2>&1")
+    assert_equal "OK\n", shell_output("#{bin}etcdctl put foo bar")
+    assert_equal "foo\nbar\n", shell_output("#{bin}etcdctl get foo 2>&1")
   ensure
     # clean up the etcd process before we leave
     Process.kill("HUP", etcd_pid)

@@ -1,10 +1,10 @@
 class Ox < Formula
   desc "Independent Rust text editor that runs in your terminal"
-  homepage "https://github.com/curlpipe/ox"
-  url "https://ghproxy.com/https://github.com/curlpipe/ox/archive/refs/tags/0.2.7.tar.gz"
+  homepage "https:github.comcurlpipeox"
+  url "https:github.comcurlpipeoxarchiverefstags0.2.7.tar.gz"
   sha256 "ae08c18243b66d8c24f9e0844e499890be2864584a8d3e38f186fdf3aa5c09fc"
   license "GPL-2.0-only"
-  head "https://github.com/curlpipe/ox.git", branch: "master"
+  head "https:github.comcurlpipeox.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbc7e29d479429b0137f9c245df663c83bab5a4d95ec3c33785c620ca7250b11"
@@ -25,13 +25,13 @@ class Ox < Formula
   end
 
   test do
-    # Errno::EIO: Input/output error @ io_fread - /dev/pts/0
+    # Errno::EIO: Inputoutput error @ io_fread - devpts0
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     require "pty"
     ENV["TERM"] = "xterm"
 
-    PTY.spawn(bin/"ox", "test.txt") do |r, w, pid|
+    PTY.spawn(bin"ox", "test.txt") do |r, w, pid|
       sleep 1
       w.write "Hello Homebrew!\n"
       w.write "\cS"
@@ -39,7 +39,7 @@ class Ox < Formula
       w.write "\cQ"
       r.read
 
-      assert_match "Hello Homebrew!\n", (testpath/"test.txt").read
+      assert_match "Hello Homebrew!\n", (testpath"test.txt").read
     ensure
       Process.kill("TERM", pid)
     end

@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class Commitlint < Formula
   desc "Lint commit messages according to a commit convention"
-  homepage "https://commitlint.js.org/#/"
-  url "https://registry.npmjs.org/commitlint/-/commitlint-18.4.3.tgz"
+  homepage "https:commitlint.js.org#"
+  url "https:registry.npmjs.orgcommitlint-commitlint-18.4.3.tgz"
   sha256 "b5561489d36cd73dd10bc817df62036e3c35d3ff2ec994efb9fe22fa4f9b31a3"
   license "MIT"
-  head "https://github.com/conventional-changelog/commitlint.git", branch: "master"
+  head "https:github.comconventional-changelogcommitlint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62fff5002b91dd4879ad5338b575d5003af1178902a183d3c748d70a3b1f3732"
@@ -22,18 +22,18 @@ class Commitlint < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    (testpath/"commitlint.config.js").write <<~EOS
+    (testpath"commitlint.config.js").write <<~EOS
       module.exports = {
           rules: {
             'type-enum': [2, 'always', ['foo']],
           },
         };
     EOS
-    assert_match version.to_s, shell_output("#{bin}/commitlint --version")
-    assert_equal "", pipe_output("#{bin}/commitlint", "foo: message")
+    assert_match version.to_s, shell_output("#{bin}commitlint --version")
+    assert_equal "", pipe_output("#{bin}commitlint", "foo: message")
   end
 end

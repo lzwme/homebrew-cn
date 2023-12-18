@@ -1,7 +1,7 @@
 class GolangMigrate < Formula
   desc "Database migrations CLI tool"
-  homepage "https://github.com/golang-migrate/migrate"
-  url "https://ghproxy.com/https://github.com/golang-migrate/migrate/archive/refs/tags/v4.16.2.tar.gz"
+  homepage "https:github.comgolang-migratemigrate"
+  url "https:github.comgolang-migratemigratearchiverefstagsv4.16.2.tar.gz"
   sha256 "df69eaf9a7850de282409f6a02284ddeb222c0ccbc8e7cc4719545ab62ef6d2d"
   license "MIT"
 
@@ -26,7 +26,7 @@ class GolangMigrate < Formula
 
   test do
     touch "0001_migtest.up.sql"
-    output = shell_output("#{bin}/migrate -database stub: -path . up 2>&1")
-    assert_match "1/u migtest", output
+    output = shell_output("#{bin}migrate -database stub: -path . up 2>&1")
+    assert_match "1u migtest", output
   end
 end

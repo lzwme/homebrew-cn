@@ -1,7 +1,7 @@
 class Libucl < Formula
   desc "Universal configuration library parser"
-  homepage "https://github.com/vstakhov/libucl"
-  url "https://ghproxy.com/https://github.com/vstakhov/libucl/archive/refs/tags/0.8.2.tar.gz"
+  homepage "https:github.comvstakhovlibucl"
+  url "https:github.comvstakhovlibuclarchiverefstags0.8.2.tar.gz"
   sha256 "d95a0e2151cc167a0f3e51864fea4e8977a0f4c473faa805269a347f7fb4e165"
   license "BSD-2-Clause"
 
@@ -23,7 +23,7 @@ class Libucl < Formula
   depends_on "pkg-config" => :build
 
   def install
-    system "./autogen.sh"
+    system ".autogen.sh"
 
     args = %W[
       --disable-debug
@@ -33,12 +33,12 @@ class Libucl < Formula
       --prefix=#{prefix}
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <ucl++.h>
       #include <string>
       #include <cassert>
@@ -53,6 +53,6 @@ class Libucl < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lucl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

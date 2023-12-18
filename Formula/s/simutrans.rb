@@ -1,14 +1,14 @@
 class Simutrans < Formula
   desc "Transport simulator"
-  homepage "https://www.simutrans.com/"
-  url "svn://servers.simutrans.org/simutrans/trunk/", revision: "10421"
+  homepage "https:www.simutrans.com"
+  url "svn:servers.simutrans.orgsimutranstrunk", revision: "10421"
   version "123.0.1"
   license "Artistic-1.0"
-  head "https://github.com/aburch/simutrans.git", branch: "master"
+  head "https:github.comaburchsimutrans.git", branch: "master"
 
   livecheck do
-    url "https://sourceforge.net/projects/simutrans/files/simutrans/"
-    regex(%r{href=.*?/files/simutrans/(\d+(?:[.-]\d+)+)/}i)
+    url "https:sourceforge.netprojectssimutransfilessimutrans"
+    regex(%r{href=.*?filessimutrans(\d+(?:[.-]\d+)+)}i)
     strategy :page_match
   end
 
@@ -38,30 +38,30 @@ class Simutrans < Formula
   fails_with gcc: "5"
 
   resource "pak64" do
-    url "https://downloads.sourceforge.net/project/simutrans/pak64/123-0/simupak64-123-0.zip"
+    url "https:downloads.sourceforge.netprojectsimutranspak64123-0simupak64-123-0.zip"
     sha256 "b8a0a37c682d8f62a3b715c24c49bc738f91d6e1e4600a180bb4d2e9f85b86c1"
   end
 
   def install
     # These translations are dynamically generated.
-    system "./get_lang_files.sh"
+    system ".get_lang_files.sh"
 
     system "cmake", "-B", "build", "-S", ".", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "makeobj"
     system "cmake", "--build", "build", "--target", "nettool"
 
-    simutrans_path = OS.mac? ? "simutrans/simutrans.app/Contents/MacOS" : "simutrans"
-    libexec.install "build/#{simutrans_path}/simutrans" => "simutrans"
-    libexec.install Dir["simutrans/*"]
-    bin.write_exec_script libexec/"simutrans"
-    bin.install "build/makeobj/makeobj"
-    bin.install "build/nettools/nettool"
+    simutrans_path = OS.mac? ? "simutranssimutrans.appContentsMacOS" : "simutrans"
+    libexec.install "build#{simutrans_path}simutrans" => "simutrans"
+    libexec.install Dir["simutrans*"]
+    bin.write_exec_script libexec"simutrans"
+    bin.install "buildmakeobjmakeobj"
+    bin.install "buildnettoolsnettool"
 
     libexec.install resource("pak64")
   end
 
   test do
-    system "#{bin}/simutrans", "--help"
+    system "#{bin}simutrans", "--help"
   end
 end

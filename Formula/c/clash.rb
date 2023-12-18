@@ -1,7 +1,7 @@
 class Clash < Formula
   desc "Rule-based tunnel in Go"
-  homepage "https://github.com/Dreamacro/clash"
-  url "https://ghproxy.com/https://github.com/Dreamacro/clash/archive/refs/tags/v1.18.0.tar.gz"
+  homepage "https:github.comDreamacroclash"
+  url "https:github.comDreamacroclasharchiverefstagsv1.18.0.tar.gz"
   sha256 "139794f50d3d94f438bab31a993cf25d7cbdf8ca8e034f3071e0dd0014069692"
   license "GPL-3.0-only"
 
@@ -25,24 +25,24 @@ class Clash < Formula
   def install
     ldflags = %W[
       -s -w -buildid=
-      -X "github.com/Dreamacro/clash/constant.Version=#{version}"
-      -X "github.com/Dreamacro/clash/constant.BuildTime=#{time.iso8601}"
+      -X "github.comDreamacroclashconstant.Version=#{version}"
+      -X "github.comDreamacroclashconstant.BuildTime=#{time.iso8601}"
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   service do
-    run opt_bin/"clash"
+    run opt_bin"clash"
     keep_alive true
-    error_log_path var/"log/clash.log"
-    log_path var/"log/clash.log"
+    error_log_path var"logclash.log"
+    log_path var"logclash.log"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/clash -v")
+    assert_match version.to_s, shell_output("#{bin}clash -v")
 
     ss_port = free_port
-    (testpath/"shadowsocks-libev.json").write <<~EOS
+    (testpath"shadowsocks-libev.json").write <<~EOS
       {
           "server":"127.0.0.1",
           "server_port":#{ss_port},
@@ -51,10 +51,10 @@ class Clash < Formula
           "method":"chacha20-ietf-poly1305"
       }
     EOS
-    server = fork { exec "ss-server", "-c", testpath/"shadowsocks-libev.json" }
+    server = fork { exec "ss-server", "-c", testpath"shadowsocks-libev.json" }
 
     clash_port = free_port
-    (testpath/"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~EOS
       mixed-port: #{clash_port}
       mode: global
       proxies:
@@ -65,8 +65,8 @@ class Clash < Formula
           password: "test"
           cipher: chacha20-ietf-poly1305
     EOS
-    system "#{bin}/clash", "-t", "-d", testpath # test config && download Country.mmdb
-    client = fork { exec "#{bin}/clash", "-d", testpath }
+    system "#{bin}clash", "-t", "-d", testpath # test config && download Country.mmdb
+    client = fork { exec "#{bin}clash", "-d", testpath }
 
     sleep 3
     begin

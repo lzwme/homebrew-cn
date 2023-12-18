@@ -1,10 +1,10 @@
 class Yq < Formula
   desc "Process YAML, JSON, XML, CSV and properties documents from the CLI"
-  homepage "https://github.com/mikefarah/yq"
-  url "https://ghproxy.com/https://github.com/mikefarah/yq/archive/refs/tags/v4.40.5.tar.gz"
+  homepage "https:github.commikefarahyq"
+  url "https:github.commikefarahyqarchiverefstagsv4.40.5.tar.gz"
   sha256 "6ab08e0332697cf6a95383a38fd70c5162d00c0e28ea4b2311e9646b664aabe3"
   license "MIT"
-  head "https://github.com/mikefarah/yq.git", branch: "master"
+  head "https:github.commikefarahyq.git", branch: "master"
 
   livecheck do
     url :stable
@@ -30,16 +30,16 @@ class Yq < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
     # Install shell completions
-    generate_completions_from_executable(bin/"yq", "shell-completion")
+    generate_completions_from_executable(bin"yq", "shell-completion")
 
     # Install man pages
-    system "./scripts/generate-man-page-md.sh"
-    system "./scripts/generate-man-page.sh"
+    system ".scriptsgenerate-man-page-md.sh"
+    system ".scriptsgenerate-man-page.sh"
     man1.install "yq.1"
   end
 
   test do
-    assert_equal "key: cat", shell_output("#{bin}/yq eval --null-input --no-colors '.key = \"cat\"'").chomp
-    assert_equal "cat", pipe_output("#{bin}/yq eval \".key\" -", "key: cat", 0).chomp
+    assert_equal "key: cat", shell_output("#{bin}yq eval --null-input --no-colors '.key = \"cat\"'").chomp
+    assert_equal "cat", pipe_output("#{bin}yq eval \".key\" -", "key: cat", 0).chomp
   end
 end

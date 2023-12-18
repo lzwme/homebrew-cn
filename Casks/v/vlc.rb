@@ -5,38 +5,38 @@ cask "vlc" do
   sha256 arm:   "5d5f0ee52d81982a622f4021928a64b4705a9554499e20c33d0bac22590b118e",
          intel: "a4dc1441fcab8e2b90c62974ce5399bb88acbf6c70d54f21c6158d9fb1fba279"
 
-  url "https://get.videolan.org/vlc/#{version}/macosx/vlc-#{version}-#{arch}.dmg"
+  url "https:get.videolan.orgvlc#{version}macosxvlc-#{version}-#{arch}.dmg"
   name "VLC media player"
   desc "Multimedia player"
-  homepage "https://www.videolan.org/vlc/"
+  homepage "https:www.videolan.orgvlc"
 
   livecheck do
-    url "https://www.videolan.org/vlc/download-macosx.html"
-    regex(%r{href=.*?/vlc[._-]v?(\d+(?:\.\d+)+)(?:[._-][a-z]\w*)?\.dmg}i)
+    url "https:www.videolan.orgvlcdownload-macosx.html"
+    regex(%r{href=.*?vlc[._-]v?(\d+(?:\.\d+)+)(?:[._-][a-z]\w*)?\.dmg}i)
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/vlc-nightly"
+  conflicts_with cask: "homebrewcask-versionsvlc-nightly"
 
   app "VLC.app"
-  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
-  shimscript = "#{staged_path}/vlc.wrapper.sh"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}vlc.wrapper.sh"
   binary shimscript, target: "vlc"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!/bin/sh
-      exec '#{appdir}/VLC.app/Contents/MacOS/VLC' "$@"
+      #!binsh
+      exec '#{appdir}VLC.appContentsMacOSVLC' "$@"
     EOS
   end
 
   zap trash: [
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.videolan.vlc.sfl*",
-    "~/Library/Application Support/org.videolan.vlc",
-    "~/Library/Application Support/VLC",
-    "~/Library/Caches/org.videolan.vlc",
-    "~/Library/Preferences/org.videolan.vlc",
-    "~/Library/Preferences/org.videolan.vlc.plist",
-    "~/Library/Saved Application State/org.videolan.vlc.savedState",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.videolan.vlc.sfl*",
+    "~LibraryApplication Supportorg.videolan.vlc",
+    "~LibraryApplication SupportVLC",
+    "~LibraryCachesorg.videolan.vlc",
+    "~LibraryPreferencesorg.videolan.vlc",
+    "~LibraryPreferencesorg.videolan.vlc.plist",
+    "~LibrarySaved Application Stateorg.videolan.vlc.savedState",
   ]
 end

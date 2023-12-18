@@ -1,7 +1,7 @@
 class Aide < Formula
   desc "File and directory integrity checker"
-  homepage "https://aide.github.io/"
-  url "https://ghproxy.com/https://github.com/aide/aide/releases/download/v0.18.6/aide-0.18.6.tar.gz"
+  homepage "https:aide.github.io"
+  url "https:github.comaideaidereleasesdownloadv0.18.6aide-0.18.6.tar.gz"
   sha256 "8ff36ce47d37d0cc987762d5d961346d475de74bba8a1832fd006db6edd3c10e"
   license "GPL-2.0-or-later"
 
@@ -18,7 +18,7 @@ class Aide < Formula
   end
 
   head do
-    url "https://github.com/aide/aide.git", branch: "master"
+    url "https:github.comaideaide.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
     depends_on "automake" => :build
@@ -38,7 +38,7 @@ class Aide < Formula
     # use sdk's strnstr instead
     ENV.append_to_cflags "-DHAVE_STRNSTR"
 
-    system "sh", "./autogen.sh" if build.head?
+    system "sh", ".autogen.sh" if build.head?
 
     args = %W[
       --disable-lfs
@@ -54,23 +54,23 @@ class Aide < Formula
       "--with-curl=#{Formula["curl"].prefix}"
     end
 
-    system "./configure", *args
+    system ".configure", *args
 
     system "make", "install"
   end
 
   test do
-    (testpath/"aide.conf").write <<~EOS
-      database_in = file:/var/lib/aide/aide.db
-      database_out = file:/var/lib/aide/aide.db.new
-      database_new = file:/var/lib/aide/aide.db.new
+    (testpath"aide.conf").write <<~EOS
+      database_in = file:varlibaideaide.db
+      database_out = file:varlibaideaide.db.new
+      database_new = file:varlibaideaide.db.new
       gzip_dbout = yes
       report_summarize_changes = yes
       report_grouped = yes
       log_level = info
       database_attrs = sha256
-      /etc p+i+u+g+sha256
+      etc p+i+u+g+sha256
     EOS
-    system "#{bin}/aide", "--config-check", "-c", "aide.conf"
+    system "#{bin}aide", "--config-check", "-c", "aide.conf"
   end
 end

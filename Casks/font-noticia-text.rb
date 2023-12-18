@@ -2,12 +2,12 @@ cask "font-noticia-text" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/noticiatext"
+      only_path: "oflnoticiatext"
   name "Noticia Text"
-  homepage "https://fonts.google.com/specimen/Noticia+Text"
+  homepage "https:fonts.google.comspecimenNoticia+Text"
 
   font "NoticiaText-Bold.ttf"
   font "NoticiaText-BoldItalic.ttf"

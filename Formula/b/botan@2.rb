@@ -1,14 +1,14 @@
 class BotanAT2 < Formula
   desc "Cryptographic algorithms and formats library in C++"
-  homepage "https://botan.randombit.net/"
-  url "https://botan.randombit.net/releases/Botan-2.19.3.tar.xz"
+  homepage "https:botan.randombit.net"
+  url "https:botan.randombit.netreleasesBotan-2.19.3.tar.xz"
   sha256 "dae047f399c5a47f087db5d3d9d9e8f11ae4985d14c928d71da1aff801802d55"
   license "BSD-2-Clause"
-  head "https://github.com/randombit/botan.git", branch: "release-2"
+  head "https:github.comrandombitbotan.git", branch: "release-2"
 
   livecheck do
     url :homepage
-    regex(/href=.*?Botan[._-]v?(2(?:\.\d+)+)\.t/i)
+    regex(href=.*?Botan[._-]v?(2(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -42,7 +42,7 @@ class BotanAT2 < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --docdir=share/doc
+      --docdir=sharedoc
       --with-zlib
       --with-bzip2
       --with-sqlite3
@@ -53,8 +53,8 @@ class BotanAT2 < Formula
   end
 
   test do
-    (testpath/"test.txt").write "Homebrew"
-    (testpath/"testout.txt").write shell_output("#{bin}/botan base64_enc test.txt")
-    assert_match "Homebrew", shell_output("#{bin}/botan base64_dec testout.txt")
+    (testpath"test.txt").write "Homebrew"
+    (testpath"testout.txt").write shell_output("#{bin}botan base64_enc test.txt")
+    assert_match "Homebrew", shell_output("#{bin}botan base64_dec testout.txt")
   end
 end

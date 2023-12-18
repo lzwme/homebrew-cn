@@ -1,14 +1,14 @@
 class Ledit < Formula
   desc "Line editor for interactive commands"
-  homepage "https://pauillac.inria.fr/~ddr/ledit/"
-  url "https://ghproxy.com/https://github.com/chetmurthy/ledit/archive/refs/tags/ledit-2-06.tar.gz"
+  homepage "https:pauillac.inria.fr~ddrledit"
+  url "https:github.comchetmurthyleditarchiverefstagsledit-2-06.tar.gz"
   version "2.06"
   sha256 "9fb4fe256ca9e878a0b47dfd43b4c64c6a3f089c9e76193b2db347f0d90855be"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/^ledit[._-]v?(\d+(?:[.-]\d+)+)$/i)
+    regex(^ledit[._-]v?(\d+(?:[.-]\d+)+)$i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("-", ".") }.compact
     end
@@ -31,14 +31,14 @@ class Ledit < Formula
 
   # Backport Makefile fixes. Remove in the next release.
   patch do
-    url "https://github.com/chetmurthy/ledit/commit/3dbd668d9c69aab5ccd61f6b906c14122ae3271d.patch?full_index=1"
+    url "https:github.comchetmurthyleditcommit3dbd668d9c69aab5ccd61f6b906c14122ae3271d.patch?full_index=1"
     sha256 "f5aafe054a5daa97d311155931bc997f1065b20acfdf23211fbcbf1172fd7e97"
   end
 
   def install
-    # Work around for https://github.com/Homebrew/homebrew-test-bot/issues/805
-    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc/"findlib.conf").exist?
-      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec/"findlib.conf"
+    # Work around for https:github.comHomebrewhomebrew-test-botissues805
+    if ENV["HOMEBREW_GITHUB_ACTIONS"] && !(Formula["ocaml-findlib"].etc"findlib.conf").exist?
+      ENV["OCAMLFIND_CONF"] = Formula["ocaml-findlib"].opt_libexec"findlib.conf"
     end
 
     # like camlp5, this build fails if the jobs are parallelized
@@ -50,8 +50,8 @@ class Ledit < Formula
   end
 
   test do
-    history = testpath/"history"
-    pipe_output("#{bin}/ledit -x -h #{history} bash", "exit\n", 0)
+    history = testpath"history"
+    pipe_output("#{bin}ledit -x -h #{history} bash", "exit\n", 0)
     assert_predicate history, :exist?
     assert_equal "exit\n", history.read
   end

@@ -1,13 +1,13 @@
 class Less < Formula
   desc "Pager program similar to more"
-  homepage "https://www.greenwoodsoftware.com/less/index.html"
-  url "https://www.greenwoodsoftware.com/less/less-643.tar.gz"
+  homepage "https:www.greenwoodsoftware.comlessindex.html"
+  url "https:www.greenwoodsoftware.comlessless-643.tar.gz"
   sha256 "2911b5432c836fa084c8a2e68f6cd6312372c026a58faaa98862731c8b6052e8"
   license "GPL-3.0-or-later"
 
   livecheck do
     url :homepage
-    regex(/less[._-]v?(\d+(?:\.\d+)*).+?released.+?general use/i)
+    regex(less[._-]v?(\d+(?:\.\d+)*).+?released.+?general usei)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Less < Formula
   end
 
   head do
-    url "https://github.com/gwsw/less.git", branch: "master"
+    url "https:github.comgwswless.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "groff" => :build
     uses_from_macos "perl" => :build
@@ -34,11 +34,11 @@ class Less < Formula
 
   def install
     system "make", "-f", "Makefile.aut", "distfiles" if build.head?
-    system "./configure", "--prefix=#{prefix}", "--with-regex=pcre2"
+    system ".configure", "--prefix=#{prefix}", "--with-regex=pcre2"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/lesskey", "-V"
+    system "#{bin}lesskey", "-V"
   end
 end

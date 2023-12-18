@@ -1,10 +1,10 @@
 class Webhook < Formula
   desc "Lightweight, configurable incoming webhook server"
-  homepage "https://github.com/adnanh/webhook"
-  url "https://ghproxy.com/https://github.com/adnanh/webhook/archive/refs/tags/2.8.1.tar.gz"
+  homepage "https:github.comadnanhwebhook"
+  url "https:github.comadnanhwebhookarchiverefstags2.8.1.tar.gz"
   sha256 "a1e3eb2231e5631ebb374b76a79c3bac9cbdc7010974395e2d5e4e2e62ffd187"
   license "MIT"
-  head "https://github.com/adnanh/webhook.git", branch: "master"
+  head "https:github.comadnanhwebhook.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc567cc60391ce928df72e3e2ef625e77ad1707e03eb66f6213916cec614e4fe"
@@ -25,9 +25,9 @@ class Webhook < Formula
   end
 
   test do
-    (testpath/"hooks.yaml").write <<~EOS
+    (testpath"hooks.yaml").write <<~EOS
       - id: test
-        execute-command: /bin/sh
+        execute-command: binsh
         command-working-directory: "#{testpath}"
         pass-arguments-to-command:
         - source: string
@@ -38,12 +38,12 @@ class Webhook < Formula
 
     port = free_port
     fork do
-      exec bin/"webhook", "-hooks", "hooks.yaml", "-port", port.to_s
+      exec bin"webhook", "-hooks", "hooks.yaml", "-port", port.to_s
     end
     sleep 1
 
-    system "curl", "localhost:#{port}/hooks/test"
+    system "curl", "localhost:#{port}hookstest"
     sleep 1
-    assert_equal testpath.to_s, (testpath/"out.txt").read.chomp
+    assert_equal testpath.to_s, (testpath"out.txt").read.chomp
   end
 end

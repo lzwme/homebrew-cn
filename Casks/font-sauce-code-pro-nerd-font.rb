@@ -2,10 +2,10 @@ cask "font-sauce-code-pro-nerd-font" do
   version "3.1.1"
   sha256 "85e311005463815108602faafb4eb3ae8f21403806657f241f2fde220a45042c"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/SourceCodePro.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}SourceCodePro.zip"
   name "SauceCodePro Nerd Font (Source Code Pro)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

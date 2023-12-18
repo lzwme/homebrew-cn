@@ -1,8 +1,8 @@
 class S3Backer < Formula
   desc "FUSE-based single file backing store via Amazon S3"
-  homepage "https://github.com/archiecobbs/s3backer"
-  # Release distributions listed at https://github.com/archiecobbs/s3backer/wiki/Downloads
-  url "https://s3.amazonaws.com/archie-public/s3backer/s3backer-2.1.1.tar.gz"
+  homepage "https:github.comarchiecobbss3backer"
+  # Release distributions listed at https:github.comarchiecobbss3backerwikiDownloads
+  url "https:s3.amazonaws.comarchie-publics3backers3backer-2.1.1.tar.gz"
   sha256 "9ad359d6ad1fa9d3161232872247966740e9ed4ff085e07ddab1b4ca52279f65"
   license "GPL-2.0-or-later"
 
@@ -18,11 +18,11 @@ class S3Backer < Formula
   depends_on "openssl@3"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    system bin/"s3backer", "--version"
+    system bin"s3backer", "--version"
   end
 end

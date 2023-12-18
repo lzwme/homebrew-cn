@@ -1,10 +1,10 @@
 class Vvdec < Formula
   desc "Fraunhofer Versatile Video Decoder"
-  homepage "https://github.com/fraunhoferhhi/vvdec"
-  url "https://ghproxy.com/https://github.com/fraunhoferhhi/vvdec/archive/refs/tags/v2.1.3.tar.gz"
+  homepage "https:github.comfraunhoferhhivvdec"
+  url "https:github.comfraunhoferhhivvdecarchiverefstagsv2.1.3.tar.gz"
   sha256 "ffdbc137204ca0dd4794c0e90602ce59ab00476f191906a6d110c6ea6655935d"
   license "BSD-3-Clause-Clear"
-  head "https://github.com/fraunhoferhhi/vvdec.git", branch: "master"
+  head "https:github.comfraunhoferhhivvdec.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "585404a6b1dee4b141aacc2a3b78a6649346c3347d3231759d64bfcff204a207"
@@ -19,7 +19,7 @@ class Vvdec < Formula
   depends_on "cmake" => :build
 
   resource("homebrew-test-video") do
-    url "https://archive.org/download/testvideo_20230410_202304/test.vvc"
+    url "https:archive.orgdownloadtestvideo_20230410_202304test.vvc"
     sha256 "753261009b6472758cde0dee2c004ff712823b43e62ec3734f0f46380bec8e46"
   end
 
@@ -34,7 +34,7 @@ class Vvdec < Formula
 
   test do
     resource("homebrew-test-video").stage testpath
-    system bin/"vvdecapp", "-b", testpath/"test.vvc", "-o", testpath/"test.yuv"
-    assert_predicate testpath/"test.yuv", :exist?
+    system bin"vvdecapp", "-b", testpath"test.vvc", "-o", testpath"test.yuv"
+    assert_predicate testpath"test.yuv", :exist?
   end
 end

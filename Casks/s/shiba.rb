@@ -2,10 +2,10 @@ cask "shiba" do
   version "1.2.1"
   sha256 "599dc0db44d82145fb71583cdca6561077d72e532bf132a4b013a360f7b9ba82"
 
-  url "https://ghproxy.com/https://github.com/rhysd/Shiba/releases/download/v#{version}/Shiba-darwin-x64.zip"
+  url "https:github.comrhysdShibareleasesdownloadv#{version}Shiba-darwin-x64.zip"
   name "Shiba"
   desc "Rich markdown live preview app with linter"
-  homepage "https://github.com/rhysd/Shiba/"
+  homepage "https:github.comrhysdShiba"
 
-  app "Shiba-darwin-x64/Shiba.app"
+  app "Shiba-darwin-x64Shiba.app"
 end

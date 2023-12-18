@@ -1,7 +1,7 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
-  homepage "https://github.com/tummychow/git-absorb"
-  url "https://ghproxy.com/https://github.com/tummychow/git-absorb/archive/refs/tags/0.6.11.tar.gz"
+  homepage "https:github.comtummychowgit-absorb"
+  url "https:github.comtummychowgit-absorbarchiverefstags0.6.11.tar.gz"
   sha256 "36c3b2c7bcd1d9db5d1dedd02d6b0ac58faaeb6fd50df7ff01f5cf87e5367b52"
   license "BSD-3-Clause"
 
@@ -22,31 +22,31 @@ class GitAbsorb < Formula
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     system "cargo", "install", *std_cargo_args
-    man1.install "Documentation/git-absorb.1"
+    man1.install "Documentationgit-absorb.1"
 
-    generate_completions_from_executable(bin/"git-absorb", "--gen-completions")
+    generate_completions_from_executable(bin"git-absorb", "--gen-completions")
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
+    (testpath".gitconfig").write <<~EOS
       [user]
         name = Real Person
         email = notacat@hotmail.cat
     EOS
     system "git", "init"
-    (testpath/"test").write "foo"
+    (testpath"test").write "foo"
     system "git", "add", "test"
     system "git", "commit", "--message", "Initial commit"
 
-    (testpath/"test").delete
-    (testpath/"test").write "bar"
+    (testpath"test").delete
+    (testpath"test").write "bar"
     system "git", "add", "test"
     system "git", "absorb"
 
-    linkage_with_libgit2 = (bin/"git-absorb").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"git-absorb").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

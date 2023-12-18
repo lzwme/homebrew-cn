@@ -2,10 +2,10 @@ cask "font-hurmit-nerd-font" do
   version "3.1.1"
   sha256 "f8bbe43b45332a8c90700c2700f9fc5308f2ffd6218aa472f164ff5cf6060a04"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Hermit.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hermit.zip"
   name "Hurmit Nerd Font (Hermit)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

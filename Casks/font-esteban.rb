@@ -2,10 +2,10 @@ cask "font-esteban" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/esteban/Esteban-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflestebanEsteban-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Esteban"
-  homepage "https://fonts.google.com/specimen/Esteban"
+  homepage "https:fonts.google.comspecimenEsteban"
 
   font "Esteban-Regular.ttf"
 

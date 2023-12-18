@@ -1,7 +1,7 @@
 class Cake < Formula
   desc "Cross platform build automation system with a C# DSL"
-  homepage "https://cakebuild.net/"
-  url "https://ghproxy.com/https://github.com/cake-build/cake/archive/refs/tags/v4.0.0.tar.gz"
+  homepage "https:cakebuild.net"
+  url "https:github.comcake-buildcakearchiverefstagsv4.0.0.tar.gz"
   sha256 "ea45d7a69f7bc373bd4d38ed708632a4ff7365d36cb9a85c40a107e6a7ae2c1b"
   license "MIT"
 
@@ -29,16 +29,16 @@ class Cake < Formula
       --output #{libexec}
       --runtime #{os}-#{arch}
       --no-self-contained
-      /p:Version=#{version}
+      p:Version=#{version}
     ]
 
-    system "dotnet", "publish", "src/Cake", *args
+    system "dotnet", "publish", "srcCake", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
-    (bin/"cake").write_env_script libexec/"Cake", env
+    (bin"cake").write_env_script libexec"Cake", env
   end
 
   test do
-    (testpath/"build.cake").write <<~EOS
+    (testpath"build.cake").write <<~EOS
       var target = Argument ("target", "info");
 
       Task("info").Does(() =>
@@ -48,6 +48,6 @@ class Cake < Formula
 
       RunTarget ("info");
     EOS
-    assert_match "Hello Homebrew\n", shell_output("#{bin}/cake build.cake")
+    assert_match "Hello Homebrew\n", shell_output("#{bin}cake build.cake")
   end
 end

@@ -2,12 +2,12 @@ cask "font-noto-sans-myanmar-ui" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/notosansmyanmarui"
+      only_path: "oflnotosansmyanmarui"
   name "Noto Sans Myanmar UI"
-  homepage "https://fonts.google.com/specimen/Noto+Sans+Myanmar"
+  homepage "https:fonts.google.comspecimenNoto+Sans+Myanmar"
 
   font "NotoSansMyanmarUI-Black.ttf"
   font "NotoSansMyanmarUI-Bold.ttf"

@@ -1,7 +1,7 @@
 class Eatmemory < Formula
   desc "Simple program to allocate memory from the command-line"
-  homepage "https://github.com/julman99/eatmemory"
-  url "https://ghproxy.com/https://github.com/julman99/eatmemory/archive/refs/tags/v0.1.10.tar.gz"
+  homepage "https:github.comjulman99eatmemory"
+  url "https:github.comjulman99eatmemoryarchiverefstagsv0.1.10.tar.gz"
   sha256 "568622f6aef9e20e7d5c5bb66ab7ce74bec458415b8135921fe6d2425450b374"
   license "MIT"
 
@@ -21,14 +21,14 @@ class Eatmemory < Formula
 
   test do
     # test version match
-    out = shell_output "#{bin}/eatmemory -?"
+    out = shell_output "#{bin}eatmemory -?"
     version_escaped = version.to_s.gsub(".", '\.')
-    assert_match %r{^eatmemory #{version_escaped} - https://github.com/julman99/eatmemory\n.*}, out
+    assert_match %r{^eatmemory #{version_escaped} - https:github.comjulman99eatmemory\n.*}, out
 
     # test for expected output
-    out = shell_output "#{bin}/eatmemory -t 0 10M"
+    out = shell_output "#{bin}eatmemory -t 0 10M"
     assert_match( \
-      /^|\nEating 10485760 bytes in chunks of 1024\.\.\.\nDone, sleeping for 0 seconds before exiting\.\.\.\n/, out
+      ^|\nEating 10485760 bytes in chunks of 1024\.\.\.\nDone, sleeping for 0 seconds before exiting\.\.\.\n, out
     )
 
     # test for memory correctly consumed
@@ -38,12 +38,12 @@ class Eatmemory < Formula
       memory_column = 4 if OS.linux?
 
       fork do
-        shell_output "#{prefix}/bin/eatmemory -t 60 #{memory_mb}M 2>&1"
+        shell_output "#{prefix}bineatmemory -t 60 #{memory_mb}M 2>&1"
       end
       sleep 5 # sleep to allow the forked process to initialize and eat the memory
 
       out = shell_output \
-        "COLUMNS=500 ps aux | grep -v grep | grep -v 'sh -c' | grep '#{prefix}/bin/eatmemory -t 60 #{memory_mb}'"
+        "COLUMNS=500 ps aux | grep -v grep | grep -v 'sh -c' | grep '#{prefix}bineatmemory -t 60 #{memory_mb}'"
 
       columns = out.split
       used_bytes = columns[memory_column].to_i

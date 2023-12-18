@@ -1,7 +1,7 @@
 class ClangFormatAT8 < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
-  homepage "https://clang.llvm.org/docs/ClangFormat.html"
-  url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/llvm-8.0.1.src.tar.xz"
+  homepage "https:clang.llvm.orgdocsClangFormat.html"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1llvm-8.0.1.src.tar.xz"
   sha256 "44787a6d02f7140f145e2250d56c9f849334e11f9ae379827510ed72f12b75e7"
   license "Apache-2.0"
   revision 1
@@ -26,31 +26,31 @@ class ClangFormatAT8 < Formula
   uses_from_macos "zlib"
 
   resource "clang" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/releases/download/llvmorg-8.0.1/cfe-8.0.1.src.tar.xz"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-8.0.1cfe-8.0.1.src.tar.xz"
     sha256 "70effd69f7a8ab249f66b0a68aba8b08af52aa2ab710dfb8a0fba102685b1646"
   end
 
   def install
-    (buildpath/"tools/clang").install resource("clang")
+    (buildpath"toolsclang").install resource("clang")
 
-    mkdir buildpath/"build" do
+    mkdir buildpath"build" do
       args = std_cmake_args
       args << ".."
       system "cmake", "-G", "Ninja", *args
       system "ninja", "clang-format"
     end
 
-    bin.install buildpath/"build/bin/clang-format" => "clang-format-8"
-    bin.install buildpath/"tools/clang/tools/clang-format/git-clang-format" => "git-clang-format-8"
+    bin.install buildpath"buildbinclang-format" => "clang-format-8"
+    bin.install buildpath"toolsclangtoolsclang-formatgit-clang-format" => "git-clang-format-8"
   end
 
   test do
     # NB: below C code is messily formatted on purpose.
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       int         main(char *args) { \n   \t printf("hello"); }
     EOS
 
     assert_equal "int main(char *args) { printf(\"hello\"); }\n",
-        shell_output("#{bin}/clang-format-8 -style=Google test.c")
+        shell_output("#{bin}clang-format-8 -style=Google test.c")
   end
 end

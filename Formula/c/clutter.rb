@@ -1,7 +1,7 @@
 class Clutter < Formula
   desc "Generic high-level canvas library"
-  homepage "https://wiki.gnome.org/Projects/Clutter"
-  url "https://download.gnome.org/sources/clutter/1.26/clutter-1.26.4.tar.xz"
+  homepage "https:wiki.gnome.orgProjectsClutter"
+  url "https:download.gnome.orgsourcesclutter1.26clutter-1.26.4.tar.xz"
   sha256 "8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6"
   license "LGPL-2.1"
 
@@ -20,7 +20,7 @@ class Clutter < Formula
     sha256 x86_64_linux:   "90f6ab166d1dba5dc5bfb9760dfc54ae8d20ac16948ea76783aedb16499487e5"
   end
 
-  # https://blogs.gnome.org/clutter/2022/02/16/retiring-clutter/
+  # https:blogs.gnome.orgclutter20220216retiring-clutter
   disable! date: "2023-09-25", because: :deprecated_upstream
 
   depends_on "gobject-introspection" => :build
@@ -34,7 +34,7 @@ class Clutter < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -62,13 +62,13 @@ class Clutter < Formula
       ]
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <clutter/clutter.h>
+    (testpath"test.c").write <<~EOS
+      #include <clutterclutter.h>
 
       int main(int argc, char *argv[]) {
         GOptionGroup *group = clutter_get_option_group_without_init();
@@ -88,20 +88,20 @@ class Clutter < Formula
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
-      -I#{cogl.opt_include}/cogl
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
+      -I#{cogl.opt_include}cogl
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
+      -I#{freetype.opt_include}freetype2
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/clutter-1.0
-      -I#{json_glib.opt_include}/json-glib-1.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}clutter-1.0
+      -I#{json_glib.opt_include}json-glib-1.0
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -128,6 +128,6 @@ class Clutter < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

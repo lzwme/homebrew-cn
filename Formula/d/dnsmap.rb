@@ -1,9 +1,9 @@
 class Dnsmap < Formula
   desc "Passive DNS network mapper (a.k.a. subdomains bruteforcer)"
-  homepage "https://github.com/resurrecting-open-source-projects/dnsmap"
-  url "https://ghproxy.com/https://github.com/resurrecting-open-source-projects/dnsmap/archive/refs/tags/0.36.tar.gz"
+  homepage "https:github.comresurrecting-open-source-projectsdnsmap"
+  url "https:github.comresurrecting-open-source-projectsdnsmaparchiverefstags0.36.tar.gz"
   sha256 "f52d6d49cbf9a60f601c919f99457f108d51ecd011c63e669d58f38d50ad853c"
-  head "https://github.com/resurrecting-open-source-projects/dnsmap.git", branch: "master"
+  head "https:github.comresurrecting-open-source-projectsdnsmap.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f4f7d4275680826270912ddd68aa2c5e69e83a620004465a412815695388d47"
@@ -22,12 +22,12 @@ class Dnsmap < Formula
   depends_on "automake" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args
+    system ".autogen.sh"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dnsmap", 1)
+    assert_match version.to_s, shell_output("#{bin}dnsmap", 1)
   end
 end

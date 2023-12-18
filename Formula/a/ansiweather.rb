@@ -1,10 +1,10 @@
 class Ansiweather < Formula
   desc "Weather in your terminal, with ANSI colors and Unicode symbols"
-  homepage "https://github.com/fcambus/ansiweather"
-  url "https://ghproxy.com/https://github.com/fcambus/ansiweather/archive/refs/tags/1.19.0.tar.gz"
+  homepage "https:github.comfcambusansiweather"
+  url "https:github.comfcambusansiweatherarchiverefstags1.19.0.tar.gz"
   sha256 "5c902d4604d18d737c6a5d97d2d4a560717d72c8e9e853b384543c008dc46f4d"
   license "BSD-2-Clause"
-  head "https://github.com/fcambus/ansiweather.git", branch: "master"
+  head "https:github.comfcambusansiweather.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "0c1bc49161f466ba2c18219918f324c2aa22e63b0e1078e275d1832f1c349e2f"
@@ -20,6 +20,6 @@ class Ansiweather < Formula
   end
 
   test do
-    assert_match "Wind", shell_output("#{bin}/ansiweather")
+    assert_match "Wind", shell_output("#{bin}ansiweather")
   end
 end

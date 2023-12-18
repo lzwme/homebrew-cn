@@ -1,10 +1,10 @@
 class Terminalimageviewer < Formula
   desc "Display images in a terminal using block graphic characters"
-  homepage "https://github.com/stefanhaustein/TerminalImageViewer"
-  url "https://ghproxy.com/https://github.com/stefanhaustein/TerminalImageViewer/archive/refs/tags/v.1.2.tar.gz"
+  homepage "https:github.comstefanhausteinTerminalImageViewer"
+  url "https:github.comstefanhausteinTerminalImageViewerarchiverefstagsv.1.2.tar.gz"
   sha256 "6807ab4986b3893e97e8ee0eb59f02d93ff74a3994bf524d7747ac80b827184b"
   license "Apache-2.0"
-  head "https://github.com/stefanhaustein/TerminalImageViewer.git", branch: "master"
+  head "https:github.comstefanhausteinTerminalImageViewer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eaaf65db7366655dc972e5a74fd9e83a29a43ae6d2abe999d49bbeb2cc4a106"
@@ -29,6 +29,6 @@ class Terminalimageviewer < Formula
   end
 
   test do
-    system bin/"tiv", test_fixtures("test.png")
+    system bin"tiv", test_fixtures("test.png")
   end
 end

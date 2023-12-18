@@ -1,10 +1,10 @@
 class CargoZigbuild < Formula
   desc "Compile Cargo project with zig as linker"
-  homepage "https://github.com/rust-cross/cargo-zigbuild"
-  url "https://ghproxy.com/https://github.com/rust-cross/cargo-zigbuild/archive/refs/tags/v0.18.1.tar.gz"
+  homepage "https:github.comrust-crosscargo-zigbuild"
+  url "https:github.comrust-crosscargo-zigbuildarchiverefstagsv0.18.1.tar.gz"
   sha256 "2fbd69ebfc30925ccf5e7003900ad14b21fc0469b9e084827851a506900cc056"
   license "MIT"
-  head "https://github.com/rust-cross/cargo-zigbuild.git", branch: "main"
+  head "https:github.comrust-crosscargo-zigbuild.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70cfee1c577db79bf1aec06a30591936323d6192d48e768d8517bd4bd51884d8"
@@ -28,11 +28,11 @@ class CargoZigbuild < Formula
     # Ignore rust installation path check
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
     # Remove errant CPATH environment variable for `cargo zigbuild` test
-    # https://github.com/ziglang/zig/issues/10377
+    # https:github.comziglangzigissues10377
     ENV.delete "CPATH"
 
-    system "#{Formula["rustup-init"].bin}/rustup-init", "-y", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    system "#{Formula["rustup-init"].bin}rustup-init", "-y", "--no-modify-path"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
     system "rustup", "target", "add", "aarch64-unknown-linux-gnu"
 
     system "cargo", "new", "hello_world", "--bin"

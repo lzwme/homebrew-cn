@@ -1,13 +1,13 @@
 class Encfs < Formula
   desc "Encrypted pass-through FUSE file system"
-  homepage "https://vgough.github.io/encfs/"
-  url "https://ghproxy.com/https://github.com/vgough/encfs/archive/refs/tags/v1.9.5.tar.gz"
+  homepage "https:vgough.github.ioencfs"
+  url "https:github.comvgoughencfsarchiverefstagsv1.9.5.tar.gz"
   sha256 "4709f05395ccbad6c0a5b40a4619d60aafe3473b1a79bafb3aa700b1f756fd63"
   # The code comprising the EncFS library (libencfs) is licensed under the LGPL.
   # The main programs (encfs, encfsctl, etc) are licensed under the GPL.
   license "GPL-3.0"
   revision 3
-  head "https://github.com/vgough/encfs.git", branch: "master"
+  head "https:github.comvgoughencfs.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -33,7 +33,7 @@ class Encfs < Formula
 
   test do
     # Functional test violates sandboxing, so punt.
-    # Issue #50602; upstream issue vgough/encfs#151
-    assert_match version.to_s, shell_output("#{bin}/encfs 2>&1", 1)
+    # Issue #50602; upstream issue vgoughencfs#151
+    assert_match version.to_s, shell_output("#{bin}encfs 2>&1", 1)
   end
 end

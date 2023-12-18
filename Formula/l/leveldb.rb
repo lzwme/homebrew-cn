@@ -1,7 +1,7 @@
 class Leveldb < Formula
   desc "Key-value storage library with ordered mapping"
-  homepage "https://github.com/google/leveldb/"
-  url "https://ghproxy.com/https://github.com/google/leveldb/archive/refs/tags/1.23.tar.gz"
+  homepage "https:github.comgoogleleveldb"
+  url "https:github.comgoogleleveldbarchiverefstags1.23.tar.gz"
   sha256 "9a37f8a6174f09bd622bc723b55881dc541cd50747cbd08831c2a82d620f6d76"
   license "BSD-3-Clause"
 
@@ -33,15 +33,15 @@ class Leveldb < Formula
                       *args, "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build_shared"
     system "cmake", "--install", "build_shared"
-    bin.install "build_shared/leveldbutil"
+    bin.install "build_sharedleveldbutil"
 
     system "cmake", "-S", ".", "-B", "build_static",
                       *args, "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_static/libleveldb.a"
+    lib.install "build_staticlibleveldb.a"
   end
 
   test do
-    assert_match "dump files", shell_output("#{bin}/leveldbutil 2>&1", 1)
+    assert_match "dump files", shell_output("#{bin}leveldbutil 2>&1", 1)
   end
 end

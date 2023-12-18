@@ -1,10 +1,10 @@
 class Sse2neon < Formula
-  desc "Translator from Intel SSE intrinsics to Arm/Aarch64 NEON implementation"
-  homepage "https://github.com/DLTcollab/sse2neon"
-  url "https://ghproxy.com/https://github.com/DLTcollab/sse2neon/archive/refs/tags/v1.6.0.tar.gz"
+  desc "Translator from Intel SSE intrinsics to ArmAarch64 NEON implementation"
+  homepage "https:github.comDLTcollabsse2neon"
+  url "https:github.comDLTcollabsse2neonarchiverefstagsv1.6.0.tar.gz"
   sha256 "06f4693219deccb91b457135d836fc514a1c0a57e9fa66b143982901d2d19677"
   license "MIT"
-  head "https://github.com/DLTcollab/sse2neon.git", branch: "master"
+  head "https:github.comDLTcollabsse2neon.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "485a6235165d9415b6996665721102846c8787b5f7c6588bc2f494821b6c287a"
@@ -17,7 +17,7 @@ class Sse2neon < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
       #include <sse2neon.h>
 
@@ -33,6 +33,6 @@ class Sse2neon < Formula
     EOS
 
     system ENV.cc, "test.c", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

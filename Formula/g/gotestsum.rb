@@ -1,10 +1,10 @@
 class Gotestsum < Formula
   desc "Human friendly `go test` runner"
-  homepage "https://github.com/gotestyourself/gotestsum"
-  url "https://ghproxy.com/https://github.com/gotestyourself/gotestsum/archive/refs/tags/v1.11.0.tar.gz"
+  homepage "https:github.comgotestyourselfgotestsum"
+  url "https:github.comgotestyourselfgotestsumarchiverefstagsv1.11.0.tar.gz"
   sha256 "b75695eff12ed246e6720c8ccd283c42bd4d5fd41a897ac258ffa6eebf17d40a"
   license "Apache-2.0"
-  head "https://github.com/gotestyourself/gotestsum.git", branch: "main"
+  head "https:github.comgotestyourselfgotestsum.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4de88d0c22f857e29c16f4829bc0cae7af84e310588ca0f4ae200596cb8fde96"
@@ -21,18 +21,18 @@ class Gotestsum < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    ldflags = "-s -w -X gotest.tools/gotestsum/cmd.version=#{version}"
+    ldflags = "-s -w -X gotest.toolsgotestsumcmd.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    (testpath/"go.mod").write <<~EOS
-      module github.com/Homebrew/brew-test
+    (testpath"go.mod").write <<~EOS
+      module github.comHomebrewbrew-test
 
       go 1.18
     EOS
 
-    (testpath/"main.go").write <<~EOS
+    (testpath"main.go").write <<~EOS
       package main
 
       import "fmt"
@@ -46,7 +46,7 @@ class Gotestsum < Formula
       }
     EOS
 
-    (testpath/"main_test.go").write <<~EOS
+    (testpath"main_test.go").write <<~EOS
       package main
 
       import "testing"
@@ -60,9 +60,9 @@ class Gotestsum < Formula
       }
     EOS
 
-    output = shell_output("#{bin}/gotestsum --format=testname")
+    output = shell_output("#{bin}gotestsum --format=testname")
     assert_match "DONE 1 tests", output
 
-    assert_match version.to_s, shell_output("#{bin}/gotestsum --version")
+    assert_match version.to_s, shell_output("#{bin}gotestsum --version")
   end
 end

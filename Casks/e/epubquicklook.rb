@@ -2,10 +2,10 @@ cask "epubquicklook" do
   version "1.8"
   sha256 "923b2ebcbffc4ee1da42550c2239b41bad088d61956b22b1a92b293329ef6fe5"
 
-  url "https://ghproxy.com/https://github.com/jaketmp/ePub-quicklook/releases/download/v#{version}/epub.qlgenerator.zip"
+  url "https:github.comjaketmpePub-quicklookreleasesdownloadv#{version}epub.qlgenerator.zip"
   name "EPUB QuickLook"
   desc "QuickLook generator and Spotlight importer"
-  homepage "https://github.com/jaketmp/ePub-quicklook"
+  homepage "https:github.comjaketmpePub-quicklook"
 
   depends_on macos: "<= :mojave"
 

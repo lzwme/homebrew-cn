@@ -1,7 +1,7 @@
 class Lf < Formula
   desc "Terminal file manager"
-  homepage "https://godoc.org/github.com/gokcehan/lf"
-  url "https://ghproxy.com/https://github.com/gokcehan/lf/archive/refs/tags/r31.tar.gz"
+  homepage "https:godoc.orggithub.comgokcehanlf"
+  url "https:github.comgokcehanlfarchiverefstagsr31.tar.gz"
   sha256 "ed47fc22c58cf4f4e4116a58c500bdb9f9ccc0b89f87be09f321e8d1431226ab"
   license "MIT"
 
@@ -22,12 +22,12 @@ class Lf < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.gVersion=#{version}")
     man1.install "lf.1"
-    zsh_completion.install "etc/lf.zsh" => "_lf"
-    fish_completion.install "etc/lf.fish"
+    zsh_completion.install "etclf.zsh" => "_lf"
+    fish_completion.install "etclf.fish"
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/lf -version").chomp
-    assert_match "file manager", shell_output("#{bin}/lf -doc")
+    assert_equal version.to_s, shell_output("#{bin}lf -version").chomp
+    assert_match "file manager", shell_output("#{bin}lf -doc")
   end
 end

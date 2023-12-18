@@ -1,10 +1,10 @@
 class DcosCli < Formula
-  desc "Command-line interface for managing DC/OS clusters"
-  homepage "https://docs.d2iq.com/mesosphere/dcos/latest/cli"
-  url "https://ghproxy.com/https://github.com/dcos/dcos-cli/archive/refs/tags/1.2.0.tar.gz"
+  desc "Command-line interface for managing DCOS clusters"
+  homepage "https:docs.d2iq.commesospheredcoslatestcli"
+  url "https:github.comdcosdcos-cliarchiverefstags1.2.0.tar.gz"
   sha256 "d75c4aae6571a7d3f5a2dad0331fe3adab05a79e2966c0715409d6a2be2c6105"
   license "Apache-2.0"
-  head "https://github.com/dcos/dcos-cli.git", branch: "master"
+  head "https:github.comdcosdcos-cli.git", branch: "master"
 
   livecheck do
     url :stable
@@ -34,11 +34,11 @@ class DcosCli < Formula
     kernel_name = OS.kernel_name.downcase
 
     system "make", kernel_name
-    bin.install "build/#{kernel_name}/dcos"
+    bin.install "build#{kernel_name}dcos"
   end
 
   test do
-    run_output = shell_output("#{bin}/dcos --version 2>&1")
+    run_output = shell_output("#{bin}dcos --version 2>&1")
     assert_match "dcoscli.version=#{version}", run_output
   end
 end

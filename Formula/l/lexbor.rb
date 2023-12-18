@@ -1,7 +1,7 @@
 class Lexbor < Formula
   desc "Fast embeddable web browser engine written in C with no dependencies"
-  homepage "https://lexbor.com/"
-  url "https://ghproxy.com/https://github.com/lexbor/lexbor/archive/refs/tags/v2.3.0.tar.gz"
+  homepage "https:lexbor.com"
+  url "https:github.comlexborlexborarchiverefstagsv2.3.0.tar.gz"
   sha256 "522ad446cd01d89cb870c6561944674e897f8ada523f234d5be1f8d2d7d236b7"
   license "Apache-2.0"
 
@@ -25,10 +25,10 @@ class Lexbor < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <lexbor/html/parser.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <lexborhtmlparser.h>
       int main() {
-        static const lxb_char_t html[] = "<div>Hello, World!</div>";
+        static const lxb_char_t html[] = "<div>Hello, World!<div>";
         lxb_html_document_t *document = lxb_html_document_create();
         if (document == NULL) { exit(EXIT_FAILURE); }
         lxb_status_t status = lxb_html_document_parse(document, html, sizeof(html) - 1);
@@ -38,6 +38,6 @@ class Lexbor < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-L#{lib}", "-llexbor", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

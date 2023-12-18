@@ -1,10 +1,10 @@
 class Faudio < Formula
   desc "Accuracy-focused XAudio reimplementation for open platforms"
-  homepage "https://fna-xna.github.io/"
-  url "https://ghproxy.com/https://github.com/FNA-XNA/FAudio/archive/refs/tags/23.12.tar.gz"
+  homepage "https:fna-xna.github.io"
+  url "https:github.comFNA-XNAFAudioarchiverefstags23.12.tar.gz"
   sha256 "15c9d2f34109fc981a86e1fab9a72afd591374f75559ad90c6447501aa02db89"
   license "Zlib"
-  head "https://github.com/FNA-XNA/FAudio.git", branch: "master"
+  head "https:github.comFNA-XNAFAudio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "53a6aa3142acb476dc9b337bd7814180f96b83c92a547952b46309f9a30e3f21"
@@ -26,7 +26,7 @@ class Faudio < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <FAudio.h>
       int main(int argc, char const *argv[])
       {
@@ -35,6 +35,6 @@ class Faudio < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lFAudio", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

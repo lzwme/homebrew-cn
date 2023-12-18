@@ -1,7 +1,7 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
-  homepage "https://k6.io"
-  url "https://ghproxy.com/https://github.com/grafana/k6/archive/refs/tags/v0.48.0.tar.gz"
+  homepage "https:k6.io"
+  url "https:github.comgrafanak6archiverefstagsv0.48.0.tar.gz"
   sha256 "da769e645a053980159e5b247bae92f99d320977fcf5681c7dbcc6f1e9e84109"
   license "AGPL-3.0-or-later"
 
@@ -20,17 +20,17 @@ class K6 < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"k6", "completion")
+    generate_completions_from_executable(bin"k6", "completion")
   end
 
   test do
-    (testpath/"whatever.js").write <<~EOS
+    (testpath"whatever.js").write <<~EOS
       export default function() {
         console.log("whatever");
       }
     EOS
 
-    assert_match "whatever", shell_output("#{bin}/k6 run whatever.js 2>&1")
-    assert_match version.to_s, shell_output("#{bin}/k6 version")
+    assert_match "whatever", shell_output("#{bin}k6 run whatever.js 2>&1")
+    assert_match version.to_s, shell_output("#{bin}k6 version")
   end
 end

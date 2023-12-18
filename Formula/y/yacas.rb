@@ -1,7 +1,7 @@
 class Yacas < Formula
   desc "General purpose computer algebra system"
-  homepage "https://www.yacas.org/"
-  url "https://ghproxy.com/https://github.com/grzegorzmazur/yacas/archive/refs/tags/v1.9.1.tar.gz"
+  homepage "https:www.yacas.org"
+  url "https:github.comgrzegorzmazuryacasarchiverefstagsv1.9.1.tar.gz"
   sha256 "36333e9627a0ed27def7a3d14628ecaab25df350036e274b37f7af1d1ff7ef5b"
   license "LGPL-2.1-or-later"
 
@@ -40,6 +40,6 @@ class Yacas < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/yacas -v")
+    assert_match version.to_s, shell_output("#{bin}yacas -v")
   end
 end

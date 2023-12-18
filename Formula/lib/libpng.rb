@@ -1,14 +1,14 @@
 class Libpng < Formula
   desc "Library for manipulating PNG images"
-  homepage "http://www.libpng.org/pub/png/libpng.html"
-  url "https://downloads.sourceforge.net/project/libpng/libpng16/1.6.40/libpng-1.6.40.tar.xz"
-  mirror "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.40/libpng-1.6.40.tar.xz"
+  homepage "http:www.libpng.orgpubpnglibpng.html"
+  url "https:downloads.sourceforge.netprojectlibpnglibpng161.6.40libpng-1.6.40.tar.xz"
+  mirror "https:sourceforge.mirrorservice.orgllilibpnglibpng161.6.40libpng-1.6.40.tar.xz"
   sha256 "535b479b2467ff231a3ec6d92a525906fb8ef27978be4f66dbe05d3f3a01b3a1"
   license "libpng-2.0"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/libpng[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?libpng[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class Libpng < Formula
   end
 
   head do
-    url "https://github.com/glennrp/libpng.git", branch: "libpng16"
+    url "https:github.comglennrplibpng.git", branch: "libpng16"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -34,7 +34,7 @@ class Libpng < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make"
@@ -42,11 +42,11 @@ class Libpng < Formula
     system "make", "install"
 
     # Avoid rebuilds of dependants that hardcode this path.
-    inreplace lib/"pkgconfig/libpng.pc", prefix, opt_prefix
+    inreplace lib"pkgconfiglibpng.pc", prefix, opt_prefix
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <png.h>
 
       int main()
@@ -58,6 +58,6 @@ class Libpng < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpng", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

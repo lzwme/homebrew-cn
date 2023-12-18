@@ -2,12 +2,12 @@ class Ydcv < Formula
   include Language::Python::Virtualenv
 
   desc "YouDao Console Version"
-  homepage "https://github.com/felixonmars/ydcv"
-  url "https://files.pythonhosted.org/packages/1f/29/17124ebfdea8d810774977474a8652018c04c4a6db1ca413189f7e5b9d52/ydcv-0.7.tar.gz"
+  homepage "https:github.comfelixonmarsydcv"
+  url "https:files.pythonhosted.orgpackages1f2917124ebfdea8d810774977474a8652018c04c4a6db1ca413189f7e5b9d52ydcv-0.7.tar.gz"
   sha256 "53cd59501557496512470e7db5fb14e42ddcb411fe4fa45c00864d919393c1da"
   license "GPL-3.0"
   revision 4
-  head "https://github.com/felixonmars/ydcv.git", branch: "master"
+  head "https:github.comfelixonmarsydcv.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,17 +30,17 @@ class Ydcv < Formula
   def install
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION"] = version
 
-    zsh_completion.install "contrib/zsh_completion" => "_ydcv"
+    zsh_completion.install "contribzsh_completion" => "_ydcv"
     virtualenv_install_with_resources
   end
 
   def caveats
     <<~EOS
-      You need to add a config for API Key, read more at https://github.com/felixonmars/ydcv
+      You need to add a config for API Key, read more at https:github.comfelixonmarsydcv
     EOS
   end
 
   test do
-    system "#{bin}/ydcv", "--help"
+    system "#{bin}ydcv", "--help"
   end
 end

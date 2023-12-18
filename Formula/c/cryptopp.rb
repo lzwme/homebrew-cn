@@ -1,16 +1,16 @@
 class Cryptopp < Formula
   desc "Free C++ class library of cryptographic schemes"
-  homepage "https://cryptopp.com/"
-  url "https://cryptopp.com/cryptopp890.zip"
-  mirror "https://ghproxy.com/https://github.com/weidai11/cryptopp/releases/download/CRYPTOPP_8_9_0/cryptopp890.zip"
+  homepage "https:cryptopp.com"
+  url "https:cryptopp.comcryptopp890.zip"
+  mirror "https:github.comweidai11cryptoppreleasesdownloadCRYPTOPP_8_9_0cryptopp890.zip"
   version "8.9.0"
   sha256 "4cc0ccc324625b80b695fcd3dee63a66f1a460d3e51b71640cdbfc4cd1a3779c"
   license all_of: [:public_domain, "BSL-1.0"]
-  head "https://github.com/weidai11/cryptopp.git", branch: "master"
+  head "https:github.comweidai11cryptopp.git", branch: "master"
 
   livecheck do
     url :head
-    regex(/^CRYPTOPP[._-]V?(\d+(?:[._-]\d+)+)$/i)
+    regex(^CRYPTOPP[._-]V?(\d+(?:[._-]\d+)+)$i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -35,8 +35,8 @@ class Cryptopp < Formula
 
   test do
     # Test program modified from:
-    #   https://www.cryptopp.com/wiki/Advanced_Encryption_Standard
-    (testpath/"test.cc").write <<~EOS
+    #   https:www.cryptopp.comwikiAdvanced_Encryption_Standard
+    (testpath"test.cc").write <<~EOS
       #ifdef NDEBUG
       #undef NDEBUG
       #endif
@@ -44,10 +44,10 @@ class Cryptopp < Formula
       #include <iostream>
       #include <string>
 
-      #include <cryptopp/cryptlib.h>
-      #include <cryptopp/modes.h>
-      #include <cryptopp/osrng.h>
-      #include <cryptopp/rijndael.h>
+      #include <cryptoppcryptlib.h>
+      #include <cryptoppmodes.h>
+      #include <cryptopposrng.h>
+      #include <cryptopprijndael.h>
 
       int main(int argc, char *argv[]) {
         using namespace CryptoPP;
@@ -90,6 +90,6 @@ class Cryptopp < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cc", "-I#{include}", "-L#{lib}",
                     "-lcryptopp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,14 +1,14 @@
 class Isort < Formula
   desc "Sort Python imports automatically"
-  homepage "https://pycqa.github.io/isort/"
-  url "https://files.pythonhosted.org/packages/87/f9/c1eb8635a24e87ade2efce21e3ce8cd6b8630bb685ddc9cdaca1349b2eb5/isort-5.13.2.tar.gz"
+  homepage "https:pycqa.github.ioisort"
+  url "https:files.pythonhosted.orgpackages87f9c1eb8635a24e87ade2efce21e3ce8cd6b8630bb685ddc9cdaca1349b2eb5isort-5.13.2.tar.gz"
   sha256 "48fdfcb9face5d58a4f6dde2e72a1fb8dcaf8ab26f95ab49fab84c2ddefb0109"
   license "MIT"
-  head "https://github.com/PyCQA/isort.git", branch: "main"
+  head "https:github.comPyCQAisort.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(%r{href=.*?/packages.*?/isort[._-]v?(\d+(?:\.\d+)*(?:[a-z]\d+)?)\.t}i)
+    regex(%r{href=.*?packages.*?isort[._-]v?(\d+(?:\.\d+)*(?:[a-z]\d+)?)\.t}i)
   end
 
   bottle do
@@ -30,18 +30,18 @@ class Isort < Formula
 
   def install
     site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexecsite_packages
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
-    (testpath/"isort_test.py").write <<~EOS
+    (testpath"isort_test.py").write <<~EOS
       from third_party import lib
       import os
     EOS
-    system bin/"isort", "isort_test.py"
-    assert_equal "import os\n\nfrom third_party import lib\n", (testpath/"isort_test.py").read
+    system bin"isort", "isort_test.py"
+    assert_equal "import os\n\nfrom third_party import lib\n", (testpath"isort_test.py").read
   end
 end

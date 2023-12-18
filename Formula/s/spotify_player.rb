@@ -1,7 +1,7 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
-  homepage "https://github.com/aome510/spotify-player"
-  url "https://ghproxy.com/https://github.com/aome510/spotify-player/archive/refs/tags/v0.16.2.tar.gz"
+  homepage "https:github.comaome510spotify-player"
+  url "https:github.comaome510spotify-playerarchiverefstagsv0.16.2.tar.gz"
   sha256 "1e956901b844e7aa104b671d1748f4e11e757e9da7a55fba913c68bf37becc3f"
   license "MIT"
 
@@ -31,12 +31,12 @@ class SpotifyPlayer < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", "--features", "image,lyric-finder,notify", *std_cargo_args(path: "spotify_player")
-    bin.install "target/release/spotify_player"
+    bin.install "targetreleasespotify_player"
   end
 
   test do
-    (testpath/"command.exp").write <<~EOS
-      spawn #{bin}/spotify_player -C #{testpath}/cache -c #{testpath}/config
+    (testpath"command.exp").write <<~EOS
+      spawn #{bin}spotify_player -C #{testpath}cache -c #{testpath}config
       expect {
         "Username:" { send "username\n" }
         default { exit 1 }
@@ -54,6 +54,6 @@ class SpotifyPlayer < Formula
 
     system "expect", "-f", "command.exp"
 
-    assert_match version.to_s, shell_output("#{bin}/spotify_player --version")
+    assert_match version.to_s, shell_output("#{bin}spotify_player --version")
   end
 end

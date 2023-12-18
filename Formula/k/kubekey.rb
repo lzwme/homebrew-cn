@@ -1,11 +1,11 @@
 class Kubekey < Formula
-  desc "Installer for Kubernetes and / or KubeSphere, and related cloud-native add-ons"
-  homepage "https://kubesphere.io"
-  url "https://github.com/kubesphere/kubekey.git",
+  desc "Installer for Kubernetes and  or KubeSphere, and related cloud-native add-ons"
+  homepage "https:kubesphere.io"
+  url "https:github.comkubespherekubekey.git",
       tag:      "v3.0.13",
       revision: "ac75d3ef3c22e6a9d999dcea201234d6651b3e72"
   license "Apache-2.0"
-  head "https://github.com/kubesphere/kubekey.git", branch: "master"
+  head "https:github.comkubespherekubekey.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -36,27 +36,27 @@ class Kubekey < Formula
 
   def install
     tags = "exclude_graphdriver_devicemapper exclude_graphdriver_btrfs containers_image_openpgp"
-    project = "github.com/kubesphere/kubekey/v3"
+    project = "github.comkubespherekubekeyv3"
     ldflags = %W[
       -s -w
-      -X #{project}/version.gitMajor=#{version.major}
-      -X #{project}/version.gitMinor=#{version.minor}
-      -X #{project}/version.gitVersion=v#{version}
-      -X #{project}/version.gitCommit=#{Utils.git_head}
-      -X #{project}/version.gitTreeState=clean
-      -X #{project}/version.buildDate=#{time.iso8601}
+      -X #{project}version.gitMajor=#{version.major}
+      -X #{project}version.gitMinor=#{version.minor}
+      -X #{project}version.gitVersion=v#{version}
+      -X #{project}version.gitCommit=#{Utils.git_head}
+      -X #{project}version.gitTreeState=clean
+      -X #{project}version.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"kk"), "-tags", tags, "./cmd/kk"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"kk"), "-tags", tags, ".cmdkk"
 
-    generate_completions_from_executable(bin/"kk", "completion", "--type", shells: [:bash, :zsh], base_name: "kk")
+    generate_completions_from_executable(bin"kk", "completion", "--type", shells: [:bash, :zsh], base_name: "kk")
   end
 
   test do
-    version_output = shell_output(bin/"kk version")
+    version_output = shell_output(bin"kk version")
     assert_match "Version:\"v#{version}\"", version_output
     assert_match "GitTreeState:\"clean\"", version_output
 
-    system bin/"kk", "create", "config", "-f", "homebrew.yaml"
-    assert_predicate testpath/"homebrew.yaml", :exist?
+    system bin"kk", "create", "config", "-f", "homebrew.yaml"
+    assert_predicate testpath"homebrew.yaml", :exist?
   end
 end

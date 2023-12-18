@@ -2,15 +2,15 @@ cask "fontforge" do
   version "2023-01-01,a1dad3e"
   sha256 "b87479dbb8f8f9131ea37983aae63542f016aa182232be5c6a56976350b3ebfd"
 
-  url "https://ghproxy.com/https://github.com/fontforge/fontforge/releases/download/#{version.csv.first.no_hyphens}/FontForge-#{version.csv.first}-#{version.csv.second}.app.dmg",
-      verified: "github.com/fontforge/fontforge/"
+  url "https:github.comfontforgefontforgereleasesdownload#{version.csv.first.no_hyphens}FontForge-#{version.csv.first}-#{version.csv.second}.app.dmg",
+      verified: "github.comfontforgefontforge"
   name "FontForge"
   desc "Font editor and converter for outline and bitmap fonts"
-  homepage "https://fontforge.github.io/en-US/"
+  homepage "https:fontforge.github.ioen-US"
 
   livecheck do
     url :url
-    regex(/^FontForge[._-]v?(\d+(?:-\d+)+)-([0-9a-f]+)\.app\.dmg/i)
+    regex(^FontForge[._-]v?(\d+(?:-\d+)+)-([0-9a-f]+)\.app\.dmgi)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -25,5 +25,5 @@ cask "fontforge" do
 
   app "FontForge.app"
 
-  zap trash: "~/.cache/fontforge"
+  zap trash: "~.cachefontforge"
 end

@@ -1,10 +1,10 @@
 class Fwupd < Formula
   desc "Firmware update daemon"
-  homepage "https://github.com/fwupd/fwupd"
-  url "https://ghproxy.com/https://github.com/fwupd/fwupd/releases/download/1.9.10/fwupd-1.9.10.tar.xz"
+  homepage "https:github.comfwupdfwupd"
+  url "https:github.comfwupdfwupdreleasesdownload1.9.10fwupd-1.9.10.tar.xz"
   sha256 "9b3834852393343ae4cd04b4750d0f8cf6b094fcebe5efecdae9ecd5f47ba81b"
   license "LGPL-2.1-or-later"
-  head "https://github.com/fwupd/fwupd.git", branch: "main"
+  head "https:github.comfwupdfwupd.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "2d5940352dab26daf0f3b810ed73119defc744a7d94aa67aa7565a65db143fde"
@@ -57,7 +57,7 @@ class Fwupd < Formula
                     "-Dplugin_tpm=disabled",
                     "-Dplugin_uefi_capsule=disabled",
                     "-Dplugin_uefi_pk=disabled",
-                    # these two are needed for https://github.com/fwupd/fwupd/pull/6147
+                    # these two are needed for https:github.comfwupdfwupdpull6147
                     "-Dplugin_logitech_scribe=disabled",
                     "-Dplugin_logitech_tap=disabled",
                     *std_meson_args
@@ -67,7 +67,7 @@ class Fwupd < Formula
 
   test do
     # check apps like gnome-firmware can link
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <fwupd.h>
       int main(int argc, char *argv[]) {
         FwupdClient *client = fwupd_client_new();
@@ -78,9 +78,9 @@ class Fwupd < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     flags = %W[
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/fwupd-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}fwupd-1
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
       -L#{lib}
@@ -91,9 +91,9 @@ class Fwupd < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
 
     # this is a lame test, but fwupdtool requires root access to do anything much interesting
-    system "#{bin}/fwupdtool", "-h"
+    system "#{bin}fwupdtool", "-h"
   end
 end

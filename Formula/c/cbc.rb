@@ -1,13 +1,13 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
-  homepage "https://github.com/coin-or/Cbc"
-  url "https://ghproxy.com/https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.11.tar.gz"
+  homepage "https:github.comcoin-orCbc"
+  url "https:github.comcoin-orCbcarchiverefstagsreleases2.10.11.tar.gz"
   sha256 "1fb591dd88336fdaf096b8e42e46111e41671a5eb85d4ee36e45baff1678bd33"
   license "EPL-2.0"
 
   livecheck do
     url :stable
-    regex(%r{^releases/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^releasesv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -28,34 +28,34 @@ class Cbc < Formula
 
   def install
     # Work around for:
-    # Error 1: "mkdir: #{include}/cbc/coin: File exists."
-    mkdir include/"cbc/coin"
+    # Error 1: "mkdir: #{include}cbccoin: File exists."
+    mkdir include"cbccoin"
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--includedir=#{include}/cbc",
+                          "--includedir=#{include}cbc",
                           "--enable-cbc-parallel"
     system "make"
     system "make", "install"
-    pkgshare.install "Cbc/examples"
+    pkgshare.install "Cbcexamples"
   end
 
   test do
-    cp_r pkgshare/"examples/.", testpath
+    cp_r pkgshare"examples.", testpath
     system ENV.cxx, "-std=c++11", "sudoku.cpp",
                     "-L#{lib}", "-lCbc",
                     "-L#{Formula["cgl"].opt_lib}", "-lCgl",
                     "-L#{Formula["clp"].opt_lib}", "-lClp", "-lOsiClp",
                     "-L#{Formula["coinutils"].opt_lib}", "-lCoinUtils",
                     "-L#{Formula["osi"].opt_lib}", "-lOsi",
-                    "-I#{include}/cbc/coin",
-                    "-I#{Formula["cgl"].opt_include}/cgl/coin",
-                    "-I#{Formula["clp"].opt_include}/clp/coin",
-                    "-I#{Formula["coinutils"].opt_include}/coinutils/coin",
-                    "-I#{Formula["osi"].opt_include}/osi/coin",
+                    "-I#{include}cbccoin",
+                    "-I#{Formula["cgl"].opt_include}cglcoin",
+                    "-I#{Formula["clp"].opt_include}clpcoin",
+                    "-I#{Formula["coinutils"].opt_include}coinutilscoin",
+                    "-I#{Formula["osi"].opt_include}osicoin",
                     "-o", "sudoku"
-    assert_match "solution is valid", shell_output("./sudoku")
+    assert_match "solution is valid", shell_output(".sudoku")
   end
 end

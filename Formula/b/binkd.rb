@@ -1,10 +1,10 @@
 class Binkd < Formula
-  desc "TCP/IP FTN Mailer"
-  homepage "https://2f.ru/binkd/"
-  url "https://happy.kiev.ua/pub/fidosoft/mailer/binkd/binkd-1.0.4.tar.gz"
+  desc "TCPIP FTN Mailer"
+  homepage "https:2f.rubinkd"
+  url "https:happy.kiev.uapubfidosoftmailerbinkdbinkd-1.0.4.tar.gz"
   sha256 "917e45c379bbd1a140d1fe43179a591f1b2ec4004b236d6e0c4680be8f1a0dc0"
   license "GPL-2.0-or-later"
-  head "https://github.com/pgul/binkd.git", branch: "master"
+  head "https:github.compgulbinkd.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,9 +27,9 @@ class Binkd < Formula
   uses_from_macos "zlib"
 
   def install
-    cp Dir["mkfls/unix/*"].select { |f| File.file? f }, "."
-    inreplace "binkd.conf", "/var/", "#{var}/" if build.stable?
-    system "./configure", "--disable-debug",
+    cp Dir["mkflsunix*"].select { |f| File.file? f }, "."
+    inreplace "binkd.conf", "var", "#{var}" if build.stable?
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -38,6 +38,6 @@ class Binkd < Formula
   end
 
   test do
-    system "#{sbin}/binkd", "-v"
+    system "#{sbin}binkd", "-v"
   end
 end

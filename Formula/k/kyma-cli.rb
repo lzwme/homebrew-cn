@@ -1,10 +1,10 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
-  homepage "https://kyma-project.io"
-  url "https://ghproxy.com/https://github.com/kyma-project/cli/archive/refs/tags/2.20.1.tar.gz"
+  homepage "https:kyma-project.io"
+  url "https:github.comkyma-projectcliarchiverefstags2.20.1.tar.gz"
   sha256 "5648038946088c0ed0901bd0ff04bfadb25cbbf33230e760e580671fd59ef8c1"
   license "Apache-2.0"
-  head "https://github.com/kyma-project/cli.git", branch: "main"
+  head "https:github.comkyma-projectcli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0918ccc8e9a45f76e838edfb13bc159450eb4fc6cb6bcd16213df16b13500b22"
@@ -21,19 +21,19 @@ class KymaCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/kyma-project/cli/cmd/kyma/version.Version=#{version}
+      -X github.comkyma-projectclicmdkymaversion.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(output: bin/"kyma", ldflags: ldflags), "./cmd"
+    system "go", "build", *std_go_args(output: bin"kyma", ldflags: ldflags), ".cmd"
 
-    generate_completions_from_executable(bin/"kyma", "completion", base_name: "kyma")
+    generate_completions_from_executable(bin"kyma", "completion", base_name: "kyma")
   end
 
   test do
-    touch testpath/"kubeconfig"
+    touch testpath"kubeconfig"
     assert_match "invalid configuration",
-      shell_output("#{bin}/kyma deploy --kubeconfig ./kubeconfig 2>&1", 2)
+      shell_output("#{bin}kyma deploy --kubeconfig .kubeconfig 2>&1", 2)
 
-    assert_match "Kyma CLI version: #{version}", shell_output("#{bin}/kyma version 2>&1", 2)
+    assert_match "Kyma CLI version: #{version}", shell_output("#{bin}kyma version 2>&1", 2)
   end
 end

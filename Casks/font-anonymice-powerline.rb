@@ -2,11 +2,11 @@ cask "font-anonymice-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/powerline/fonts.git",
+  url "https:github.compowerlinefonts.git",
       branch:    "master",
       only_path: "AnonymousPro"
   name "Anonymice Powerline"
-  homepage "https://github.com/powerline/fonts/tree/master/AnonymousPro"
+  homepage "https:github.compowerlinefontstreemasterAnonymousPro"
 
   font "Anonymice Powerline Bold Italic.ttf"
   font "Anonymice Powerline Bold.ttf"

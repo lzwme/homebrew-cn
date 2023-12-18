@@ -1,10 +1,10 @@
 class SlsaVerifier < Formula
   desc "Verify provenance from SLSA compliant builders"
-  homepage "https://github.com/slsa-framework/slsa-verifier"
-  url "https://ghproxy.com/https://github.com/slsa-framework/slsa-verifier/archive/refs/tags/v2.4.1.tar.gz"
+  homepage "https:github.comslsa-frameworkslsa-verifier"
+  url "https:github.comslsa-frameworkslsa-verifierarchiverefstagsv2.4.1.tar.gz"
   sha256 "f601e768a3a1b073a0e89d5933fcece349e4c729f75f149319696eb5a88b8df2"
   license "Apache-2.0"
-  head "https://github.com/slsa-framework/slsa-verifier.git", branch: "main"
+  head "https:github.comslsa-frameworkslsa-verifier.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -29,23 +29,23 @@ class SlsaVerifier < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
-      -X sigs.k8s.io/release-utils/version.gitCommit=brew
-      -X sigs.k8s.io/release-utils/version.gitTreeState=clean
-      -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
+      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
+      -X sigs.k8s.iorelease-utilsversion.gitCommit=brew
+      -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
+      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cli/slsa-verifier"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".clislsa-verifier"
 
-    generate_completions_from_executable(bin/"slsa-verifier", "completion")
+    generate_completions_from_executable(bin"slsa-verifier", "completion")
   end
 
   test do
-    uri = "github.com/alpinelinux/docker-alpine"
-    output = shell_output("#{bin}/slsa-verifier verify-image docker://alpine --source-uri=#{uri} 2>&1", 1)
-    expected_output = "FAILED: SLSA verification failed: the image is mutable: 'docker://alpine'"
+    uri = "github.comalpinelinuxdocker-alpine"
+    output = shell_output("#{bin}slsa-verifier verify-image docker:alpine --source-uri=#{uri} 2>&1", 1)
+    expected_output = "FAILED: SLSA verification failed: the image is mutable: 'docker:alpine'"
     assert_match expected_output, output
 
-    assert_match version.to_s, shell_output("#{bin}/slsa-verifier version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}slsa-verifier version 2>&1")
   end
 end

@@ -1,10 +1,10 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
-  homepage "https://fnproject.io"
-  url "https://ghproxy.com/https://github.com/fnproject/cli/archive/refs/tags/0.6.28.tar.gz"
+  homepage "https:fnproject.io"
+  url "https:github.comfnprojectcliarchiverefstags0.6.28.tar.gz"
   sha256 "15e300b06ff9555a8b4a32cc335d91b6165ef181fd0dd9bb098f47736647e17c"
   license "Apache-2.0"
-  head "https://github.com/fnproject/cli.git", branch: "master"
+  head "https:github.comfnprojectcli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6508fa0f0e0b6e2049862cb2438e30e4e14749854cadd423091628b5d4a199b"
@@ -23,10 +23,10 @@ class Fn < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/fn --version")
-    system "#{bin}/fn", "init", "--runtime", "go", "--name", "myfunc"
-    assert_predicate testpath/"func.go", :exist?, "expected file func.go doesn't exist"
-    assert_predicate testpath/"func.yaml", :exist?, "expected file func.yaml doesn't exist"
+    assert_match version.to_s, shell_output("#{bin}fn --version")
+    system "#{bin}fn", "init", "--runtime", "go", "--name", "myfunc"
+    assert_predicate testpath"func.go", :exist?, "expected file func.go doesn't exist"
+    assert_predicate testpath"func.yaml", :exist?, "expected file func.yaml doesn't exist"
     port = free_port
     server = TCPServer.new("localhost", port)
     pid = fork do
@@ -40,7 +40,7 @@ class Fn < Formula
 
         socket = server.accept
         socket.gets
-        socket.print "HTTP/1.1 200 OK\r\n" \
+        socket.print "HTTP1.1 200 OK\r\n" \
                      "Content-Length: #{response.bytesize}\r\n" \
                      "Connection: close\r\n"
         socket.print "\r\n"
@@ -50,10 +50,10 @@ class Fn < Formula
     end
     sleep 1
     begin
-      ENV["FN_API_URL"] = "http://localhost:#{port}"
+      ENV["FN_API_URL"] = "http:localhost:#{port}"
       ENV["FN_REGISTRY"] = "fnproject"
       expected = "Successfully created app:  myapp"
-      output = shell_output("#{bin}/fn create app myapp")
+      output = shell_output("#{bin}fn create app myapp")
       assert_match expected, output.chomp
     ensure
       Process.kill("TERM", pid)

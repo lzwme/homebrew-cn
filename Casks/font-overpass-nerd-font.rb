@@ -2,10 +2,10 @@ cask "font-overpass-nerd-font" do
   version "3.1.1"
   sha256 "d2ef91eb8fa3ecd06144bbb38becc34b463fb26075212f9dce306503c8329bc0"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Overpass.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Overpass.zip"
   name "Overpass Nerd Font families (Overpass)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

@@ -1,11 +1,11 @@
 class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
-  homepage "https://www.elastic.co/beats/metricbeat"
-  url "https://github.com/elastic/beats.git",
+  homepage "https:www.elastic.cobeatsmetricbeat"
+  url "https:github.comelasticbeats.git",
       tag:      "v8.11.3",
       revision: "bfdd9fb0a3c4eeeacf5a5bc2110164a177e4cb08"
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git", branch: "master"
+  head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d00ec806fb82ad267bef8870f2bf85c1e69a1a31b140a6351d4ab73599e0e84"
@@ -27,7 +27,7 @@ class Metricbeat < Formula
     rm_rf "x-pack"
 
     cd "metricbeat" do
-      # don't build docs because it would fail creating the combined OSS/x-pack
+      # don't build docs because it would fail creating the combined OSSx-pack
       # docs and we aren't installing them anyway
       inreplace "magefile.go", "mg.Deps(CollectDocs, FieldsDocs)", ""
 
@@ -35,55 +35,55 @@ class Metricbeat < Formula
       ENV.deparallelize
       system "mage", "-v", "update"
 
-      (etc/"metricbeat").install Dir["metricbeat.*", "fields.yml", "modules.d"]
-      (libexec/"bin").install "metricbeat"
-      prefix.install "build/kibana"
+      (etc"metricbeat").install Dir["metricbeat.*", "fields.yml", "modules.d"]
+      (libexec"bin").install "metricbeat"
+      prefix.install "buildkibana"
     end
 
-    (bin/"metricbeat").write <<~EOS
-      #!/bin/sh
-      exec #{libexec}/bin/metricbeat \
-        --path.config #{etc}/metricbeat \
-        --path.data #{var}/lib/metricbeat \
+    (bin"metricbeat").write <<~EOS
+      #!binsh
+      exec #{libexec}binmetricbeat \
+        --path.config #{etc}metricbeat \
+        --path.data #{var}libmetricbeat \
         --path.home #{prefix} \
-        --path.logs #{var}/log/metricbeat \
+        --path.logs #{var}logmetricbeat \
         "$@"
     EOS
 
-    chmod 0555, bin/"metricbeat" # generate_completions_from_executable fails otherwise
-    generate_completions_from_executable(bin/"metricbeat", "completion", shells: [:bash, :zsh])
+    chmod 0555, bin"metricbeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin"metricbeat", "completion", shells: [:bash, :zsh])
   end
 
   service do
-    run opt_bin/"metricbeat"
+    run opt_bin"metricbeat"
   end
 
   test do
-    (testpath/"config/metricbeat.yml").write <<~EOS
+    (testpath"configmetricbeat.yml").write <<~EOS
       metricbeat.modules:
       - module: system
         metricsets: ["load"]
         period: 1s
       output.file:
         enabled: true
-        path: #{testpath}/data
+        path: #{testpath}data
         filename: metricbeat
     EOS
 
-    (testpath/"logs").mkpath
-    (testpath/"data").mkpath
+    (testpath"logs").mkpath
+    (testpath"data").mkpath
 
     fork do
-      exec bin/"metricbeat", "-path.config", testpath/"config", "-path.data",
-                             testpath/"data"
+      exec bin"metricbeat", "-path.config", testpath"config", "-path.data",
+                             testpath"data"
     end
 
     sleep 15
 
-    output = JSON.parse((testpath/"data/meta.json").read)
+    output = JSON.parse((testpath"datameta.json").read)
     assert_includes output, "first_start"
 
-    (testpath/"data").glob("metricbeat-*.ndjson") do |file|
+    (testpath"data").glob("metricbeat-*.ndjson") do |file|
       s = JSON.parse(file.read.lines.first.chomp)
       assert_match "metricbeat", s["@metadata"]["beat"]
     end

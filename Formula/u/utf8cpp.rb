@@ -1,7 +1,7 @@
 class Utf8cpp < Formula
   desc "UTF-8 with C++ in a Portable Way"
-  homepage "https://github.com/nemtrif/utfcpp"
-  url "https://ghproxy.com/https://github.com/nemtrif/utfcpp/archive/refs/tags/v4.0.4.tar.gz"
+  homepage "https:github.comnemtrifutfcpp"
+  url "https:github.comnemtrifutfcpparchiverefstagsv4.0.4.tar.gz"
   sha256 "7c8a403d0c575d52473c8644cd9eb46c6ba028d2549bc3e0cdc2d45f5cfd78a0"
   license "BSL-1.0"
 
@@ -18,15 +18,15 @@ class Utf8cpp < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
       project(utf8_append LANGUAGES CXX)
       find_package(utf8cpp REQUIRED CONFIG)
       add_executable(utf8_append utf8_append.cpp)
     EOS
 
-    (testpath/"utf8_append.cpp").write <<~EOS
-      #include <utf8cpp/utf8.h>
+    (testpath"utf8_append.cpp").write <<~EOS
+      #include <utf8cpputf8.h>
       int main() {
         unsigned char u[5] = {0, 0, 0, 0, 0};
         utf8::append(0x0448, u);
@@ -36,6 +36,6 @@ class Utf8cpp < Formula
 
     system "cmake", ".", "-DCMAKE_PREFIX_PATH:STRING=#{opt_lib}", "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON"
     system "make"
-    system "./utf8_append"
+    system ".utf8_append"
   end
 end

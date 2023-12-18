@@ -1,14 +1,14 @@
 class Xapian < Formula
   desc "C++ search engine library"
-  homepage "https://xapian.org/"
-  url "https://oligarchy.co.uk/xapian/1.4.24/xapian-core-1.4.24.tar.xz"
+  homepage "https:xapian.org"
+  url "https:oligarchy.co.ukxapian1.4.24xapian-core-1.4.24.tar.xz"
   sha256 "eda5ae6dcf6b0553a8676af64b1fd304e998cd20f779031ccaaf7ab9a373531a"
   license "GPL-2.0-or-later"
   version_scheme 1
 
   livecheck do
-    url "https://xapian.org/download"
-    regex(/href=.*?xapian-core[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:xapian.orgdownload"
+    regex(href=.*?xapian-core[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,13 +33,13 @@ class Xapian < Formula
   skip_clean :la
 
   resource "bindings" do
-    url "https://oligarchy.co.uk/xapian/1.4.23/xapian-bindings-1.4.23.tar.xz"
+    url "https:oligarchy.co.ukxapian1.4.23xapian-bindings-1.4.23.tar.xz"
     sha256 "e0bc8cc0ecf0568549c50b51fd59e4cffb5318d6f202afcd4465855ef5f33f7d"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -49,26 +49,26 @@ class Xapian < Formula
 
   def install
     ENV["PYTHON"] = which(python3)
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
 
     resource("bindings").stage do
-      ENV["XAPIAN_CONFIG"] = bin/"xapian-config"
+      ENV["XAPIAN_CONFIG"] = bin"xapian-config"
       ENV.delete "PYTHONDONTWRITEBYTECODE" # makefile relies on install .pyc files
 
       site_packages = Language::Python.site_packages(python3)
-      ENV.prepend_create_path "PYTHON3_LIB", prefix/site_packages
+      ENV.prepend_create_path "PYTHON3_LIB", prefixsite_packages
 
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/site_packages
-      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec/"vendor"/site_packages
+      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexecsite_packages
+      ENV.append_path "PYTHONPATH", Formula["sphinx-doc"].opt_libexec"vendor"site_packages
 
-      system "./configure", *std_configure_args, "--disable-silent-rules", "--with-python3"
+      system ".configure", *std_configure_args, "--disable-silent-rules", "--with-python3"
       system "make", "install"
     end
   end
 
   test do
-    system bin/"xapian-config", "--libs"
+    system bin"xapian-config", "--libs"
     system python3, "-c", "import xapian"
   end
 end

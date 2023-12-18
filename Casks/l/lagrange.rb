@@ -5,11 +5,11 @@ cask "lagrange" do
   sha256 arm:   "a52b96f7e33d82929514111deb651592216064d3126c6ca14255b3581b271330",
          intel: "486e7d6934ebc4f184c4e3b261ac53514016dfe1104ac2cac96108679ddfed52"
 
-  url "https://ghproxy.com/https://github.com/skyjake/lagrange/releases/download/v#{version}/lagrange_v#{version}_macos#{arch}.tbz",
-      verified: "github.com/skyjake/lagrange/"
+  url "https:github.comskyjakelagrangereleasesdownloadv#{version}lagrange_v#{version}_macos#{arch}.tbz",
+      verified: "github.comskyjakelagrange"
   name "Lagrange"
   desc "Desktop GUI client for browsing Geminispace"
-  homepage "https://gmi.skyjake.fi/lagrange/"
+  homepage "https:gmi.skyjake.filagrange"
 
   livecheck do
     url :url
@@ -22,8 +22,8 @@ cask "lagrange" do
   app "Lagrange.app"
 
   zap trash: [
-    "~/Library/Application Support/fi.skyjake.Lagrange",
-    "~/Library/Preferences/fi.skyjake.Lagrange.plist",
-    "~/Library/Saved Application State/fi.skyjake.Lagrange.savedState",
+    "~LibraryApplication Supportfi.skyjake.Lagrange",
+    "~LibraryPreferencesfi.skyjake.Lagrange.plist",
+    "~LibrarySaved Application Statefi.skyjake.Lagrange.savedState",
   ]
 end

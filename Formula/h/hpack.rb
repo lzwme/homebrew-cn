@@ -1,10 +1,10 @@
 class Hpack < Formula
   desc "Modern format for Haskell packages"
-  homepage "https://github.com/sol/hpack"
-  url "https://ghproxy.com/https://github.com/sol/hpack/archive/refs/tags/0.36.0.tar.gz"
+  homepage "https:github.comsolhpack"
+  url "https:github.comsolhpackarchiverefstags0.36.0.tar.gz"
   sha256 "f9b903b040d6736335fc2210c9243b0f18c41f52b7da2560a700ba6d8648bd77"
   license "MIT"
-  head "https://github.com/sol/hpack.git", branch: "main"
+  head "https:github.comsolhpack.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd6577e594dd7884e7180d1c1ae35c52c4f1817e0502d3db5d055a28e4d81221"
@@ -34,7 +34,7 @@ class Hpack < Formula
   # be aware that failures here can probably be fixed by tweaking the
   # expected output a bit.
   test do
-    (testpath/"package.yaml").write <<~EOS
+    (testpath"package.yaml").write <<~EOS
       name: homebrew
       dependencies: base
       library:
@@ -55,9 +55,9 @@ class Hpack < Formula
         default-language: Haskell2010
     EOS
 
-    system "#{bin}/hpack"
+    system "#{bin}hpack"
 
     # Skip the first lines because they contain the hpack version number.
-    assert_equal expected, (testpath/"homebrew.cabal").read.lines[6..].join
+    assert_equal expected, (testpath"homebrew.cabal").read.lines[6..].join
   end
 end

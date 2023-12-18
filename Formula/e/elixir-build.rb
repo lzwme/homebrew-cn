@@ -1,10 +1,10 @@
 class ElixirBuild < Formula
   desc "Elixir version of ruby-build"
-  homepage "https://github.com/mururu/elixir-build"
-  url "https://ghproxy.com/https://github.com/mururu/elixir-build/archive/refs/tags/v20141001.tar.gz"
+  homepage "https:github.commururuelixir-build"
+  url "https:github.commururuelixir-buildarchiverefstagsv20141001.tar.gz"
   sha256 "825637780a580b7ebe8c5265a43d37ceff9f3876e771aa2f824079e504ad7347"
   license "MIT"
-  head "https://github.com/mururu/elixir-build.git", branch: "master"
+  head "https:github.commururuelixir-build.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "0f434ba340b50a81c737a8de0b167293c1ce596972fa15a9f57abc81c6f69499"
@@ -16,10 +16,10 @@ class ElixirBuild < Formula
 
   def install
     ENV["PREFIX"] = prefix
-    system "./install.sh"
+    system ".install.sh"
   end
 
   test do
-    system "#{bin}/elixir-build", "--version"
+    system "#{bin}elixir-build", "--version"
   end
 end

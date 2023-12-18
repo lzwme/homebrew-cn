@@ -1,14 +1,14 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
-  homepage "https://github.com/kraflab/dsda-doom"
-  url "https://ghproxy.com/https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.27.5.tar.gz"
+  homepage "https:github.comkraflabdsda-doom"
+  url "https:github.comkraflabdsda-doomarchiverefstagsv0.27.5.tar.gz"
   sha256 "5e01be417033e1abf708bb22509d4d910b158a159a2790c4d5b46690daba67f0"
   license "GPL-2.0-only"
-  head "https://github.com/kraflab/dsda-doom.git", branch: "master"
+  head "https:github.comkraflabdsda-doom.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -38,7 +38,7 @@ class DsdaDoom < Formula
   end
 
   def doomwaddir(root)
-    root/"share/games/doom"
+    root"sharegamesdoom"
   end
 
   def install
@@ -69,6 +69,6 @@ class DsdaDoom < Formula
 
   test do
     expected_output = "dsda-doom v#{version.major_minor_patch}"
-    assert_match expected_output, shell_output("#{bin}/dsda-doom -iwad invalid_wad 2>&1", 255)
+    assert_match expected_output, shell_output("#{bin}dsda-doom -iwad invalid_wad 2>&1", 255)
   end
 end

@@ -2,12 +2,12 @@ cask "font-kanit" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/kanit"
+      only_path: "oflkanit"
   name "Kanit"
-  homepage "https://fonts.google.com/specimen/Kanit"
+  homepage "https:fonts.google.comspecimenKanit"
 
   font "Kanit-Black.ttf"
   font "Kanit-BlackItalic.ttf"

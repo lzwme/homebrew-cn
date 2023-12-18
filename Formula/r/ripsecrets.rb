@@ -1,10 +1,10 @@
 class Ripsecrets < Formula
   desc "Prevent committing secret keys into your source code"
-  homepage "https://github.com/sirwart/ripsecrets"
-  url "https://ghproxy.com/https://github.com/sirwart/ripsecrets/archive/refs/tags/v0.1.7.tar.gz"
+  homepage "https:github.comsirwartripsecrets"
+  url "https:github.comsirwartripsecretsarchiverefstagsv0.1.7.tar.gz"
   sha256 "12e1dfcd217bba34f74fd639d1a8de7dcf93ff2ae69398e093dfd794811db3ca"
   license "MIT"
-  head "https://github.com/sirwart/ripsecrets.git", branch: "main"
+  head "https:github.comsirwartripsecrets.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b415b9920dbb68c100df02345b2db0cf022d4cd2d613ce0bc8e9605c8024d3c"
@@ -29,8 +29,8 @@ class Ripsecrets < Formula
     keyspace = "A".upto("Z").to_a + "a".upto("z").to_a + "0".upto("9").to_a + ["_"]
     fake_key = Array.new(36).map { keyspace.sample }
     # but mark it as allowed to test more of the program
-    (testpath/"test.txt").write("ghp_#{fake_key.join} # pragma: allowlist secret")
+    (testpath"test.txt").write("ghp_#{fake_key.join} # pragma: allowlist secret")
 
-    system "#{bin}/ripsecrets", (testpath/"test.txt")
+    system "#{bin}ripsecrets", (testpath"test.txt")
   end
 end

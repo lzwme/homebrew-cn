@@ -1,10 +1,10 @@
 class Configen < Formula
   desc "Configuration file code generator for use in Xcode projects"
-  homepage "https://github.com/theappbusiness/ConfigGenerator"
-  url "https://ghproxy.com/https://github.com/theappbusiness/ConfigGenerator/archive/refs/tags/1.1.2.tar.gz"
+  homepage "https:github.comtheappbusinessConfigGenerator"
+  url "https:github.comtheappbusinessConfigGeneratorarchiverefstags1.1.2.tar.gz"
   sha256 "24a0d51f90b36d56c2f75ced9653cf34fe396fd687305903b31eeb822d520608"
   license "MIT"
-  head "https://github.com/theappbusiness/ConfigGenerator.git", branch: "main"
+  head "https:github.comtheappbusinessConfigGenerator.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5af8473413de2042d5216b397e93a126cb21577eafbcab7bbe3657047c676de"
@@ -23,29 +23,29 @@ class Configen < Formula
 
   def install
     xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build"
-    bin.install "build/Release/configen"
+    bin.install "buildReleaseconfigen"
   end
 
   test do
-    (testpath/"test.plist").write <<~EOS
+    (testpath"test.plist").write <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <!DOCTYPE plist PUBLIC "-AppleDTD PLIST 1.0EN" "http:www.apple.comDTDsPropertyList-1.0.dtd">
       <plist version="1.0">
       <dict>
-        <key>testURL</key>
-        <string>https://example.com/api</string>
-        <key>retryCount</key>
-        <integer>2</integer>
-      </dict>
-      </plist>
+        <key>testURL<key>
+        <string>https:example.comapi<string>
+        <key>retryCount<key>
+        <integer>2<integer>
+      <dict>
+      <plist>
     EOS
-    (testpath/"test.map").write <<~EOS
+    (testpath"test.map").write <<~EOS
       testURL : URL
       retryCount : Int
     EOS
-    system bin/"configen", "-p", "test.plist", "-h", "test.map", "-n", "AppConfig", "-o", testpath
-    assert_predicate testpath/"AppConfig.swift", :exist?, "Failed to create config class!"
-    assert_match "static let testURL: URL = URL(string: \"https://example.com/api\")", File.read("AppConfig.swift")
+    system bin"configen", "-p", "test.plist", "-h", "test.map", "-n", "AppConfig", "-o", testpath
+    assert_predicate testpath"AppConfig.swift", :exist?, "Failed to create config class!"
+    assert_match "static let testURL: URL = URL(string: \"https:example.comapi\")", File.read("AppConfig.swift")
     assert_match "static let retryCount: Int = 2", File.read("AppConfig.swift")
   end
 end

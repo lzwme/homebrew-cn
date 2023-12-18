@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Zx < Formula
   desc "Tool for writing better scripts"
-  homepage "https://github.com/google/zx"
-  url "https://registry.npmjs.org/zx/-/zx-7.2.3.tgz"
+  homepage "https:github.comgooglezx"
+  url "https:registry.npmjs.orgzx-zx-7.2.3.tgz"
   sha256 "2644e2e596dc2e60f0a37491a342301594f07e073495da14665fa244e9b01aac"
   license "Apache-2.0"
 
@@ -23,22 +23,22 @@ class Zx < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    (testpath/"test.mjs").write <<~EOS
-      #!/usr/bin/env zx
+    (testpath"test.mjs").write <<~EOS
+      #!usrbinenv zx
 
       let name = YAML.parse('foo: bar').foo
       console.log(`name is ${name}`)
       await $`touch ${name}`
     EOS
 
-    output = shell_output("#{bin}/zx #{testpath}/test.mjs")
+    output = shell_output("#{bin}zx #{testpath}test.mjs")
     assert_match "name is bar", output
-    assert_predicate testpath/"bar", :exist?
+    assert_predicate testpath"bar", :exist?
 
-    assert_match version.to_s, shell_output("#{bin}/zx --version")
+    assert_match version.to_s, shell_output("#{bin}zx --version")
   end
 end

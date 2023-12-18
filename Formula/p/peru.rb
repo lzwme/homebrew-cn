@@ -2,8 +2,8 @@ class Peru < Formula
   include Language::Python::Virtualenv
 
   desc "Dependency retriever for version control and archives"
-  homepage "https://github.com/buildinspace/peru"
-  url "https://files.pythonhosted.org/packages/8e/c7/c451e70443c0b82440384d51f4b9517b921d4fe44172d63dc10a09da114f/peru-1.3.1.tar.gz"
+  homepage "https:github.combuildinspaceperu"
+  url "https:files.pythonhosted.orgpackages8ec7c451e70443c0b82440384d51f4b9517b921d4fe44172d63dc10a09da114fperu-1.3.1.tar.gz"
   sha256 "31cbcc3b1c0663866fcfb2065cb7ac26fda1843a3e5638f260cc0d78b3372f39"
   license "MIT"
 
@@ -22,28 +22,28 @@ class Peru < Formula
   depends_on "pyyaml"
 
   resource "docopt" do
-    url "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagesa2558f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9docopt-0.6.2.tar.gz"
     sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
   end
 
   def install
     # Fix plugins (executed like an executable) looking for Python outside the virtualenv
-    Dir["peru/resources/plugins/**/*.py"].each do |f|
-      inreplace f, "#! /usr/bin/env python3", "#!#{libexec}/bin/python3.12"
+    Dir["peruresourcesplugins***.py"].each do |f|
+      inreplace f, "#! usrbinenv python3", "#!#{libexec}binpython3.12"
     end
 
     virtualenv_install_with_resources
   end
 
   test do
-    (testpath/"peru.yaml").write <<~EOS
+    (testpath"peru.yaml").write <<~EOS
       imports:
         peru: peru
       git module peru:
-        url: https://github.com/buildinspace/peru.git
+        url: https:github.combuildinspaceperu.git
     EOS
-    system "#{bin}/peru", "sync"
-    assert_predicate testpath/".peru", :exist?
-    assert_predicate testpath/"peru", :exist?
+    system "#{bin}peru", "sync"
+    assert_predicate testpath".peru", :exist?
+    assert_predicate testpath"peru", :exist?
   end
 end

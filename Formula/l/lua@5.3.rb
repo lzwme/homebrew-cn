@@ -1,13 +1,13 @@
 class LuaAT53 < Formula
   desc "Powerful, lightweight programming language"
-  homepage "https://www.lua.org/"
-  url "https://www.lua.org/ftp/lua-5.3.6.tar.gz"
+  homepage "https:www.lua.org"
+  url "https:www.lua.orgftplua-5.3.6.tar.gz"
   sha256 "fc5fd69bb8736323f026672b1b7235da613d7177e72558893a0bdcd320466d60"
   license "MIT"
 
   livecheck do
-    url "https://www.lua.org/ftp/"
-    regex(/href=.*?lua[._-]v?(5\.3(?:\.\d+)*)\.t/i)
+    url "https:www.lua.orgftp"
+    regex(href=.*?lua[._-]v?(5\.3(?:\.\d+)*)\.ti)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class LuaAT53 < Formula
 
   keg_only :versioned_formula
 
-  # See: https://www.lua.org/versions.html#5.3
+  # See: https:www.lua.orgversions.html#5.3
   # Last release on 2020-09-25
   deprecate! date: "2023-12-14", because: :deprecated_upstream
 
@@ -35,7 +35,7 @@ class LuaAT53 < Formula
 
   on_macos do
     # Be sure to build a dylib, or else runtime modules will pull in another static copy of liblua = crashy
-    # See: https://github.com/Homebrew/legacy-homebrew/pull/5043
+    # See: https:github.comHomebrewlegacy-homebrewpull5043
     # ***Update me with each version bump!***
     patch :DATA
   end
@@ -45,24 +45,24 @@ class LuaAT53 < Formula
 
     # Add shared library for linux
     # Equivalent to the mac patch carried around here ... that will probably never get upstreamed
-    # Inspired from https://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
+    # Inspired from https:www.linuxfromscratch.orgblfsviewcvsgenerallua.html
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/c2d33768512f73b3590e15c47b319af50576b24c/lua@5.3/lua-so.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patchesc2d33768512f73b3590e15c47b319af50576b24clua@5.3lua-so.patch"
       sha256 "b9bba9d10ed5d34335c831972a02ec48471ca1dbf95230edc13fe5f575d5542c"
     end
   end
 
   def install
     if OS.linux?
-      # Fix: /usr/bin/ld: lapi.o: relocation R_X86_64_32 against `luaO_nilobject_' can not be used
+      # Fix: usrbinld: lapi.o: relocation R_X86_64_32 against `luaO_nilobject_' can not be used
       # when making a shared object; recompile with -fPIC
-      # See https://www.linuxfromscratch.org/blfs/view/cvs/general/lua.html
+      # See https:www.linuxfromscratch.orgblfsviewcvsgenerallua.html
       ENV.append_to_cflags "-fPIC"
     end
 
-    # Substitute formula prefix in `src/Makefile` for install name (dylib ID).
-    # Use our CC/CFLAGS to compile.
-    inreplace "src/Makefile" do |s|
+    # Substitute formula prefix in `srcMakefile` for install name (dylib ID).
+    # Use our CCCFLAGS to compile.
+    inreplace "srcMakefile" do |s|
       s.gsub! "@LUA_PREFIX@", prefix if OS.mac?
       s.remove_make_var! "CC"
       s.change_make_var! "CFLAGS", "#{ENV.cflags} -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)"
@@ -70,7 +70,7 @@ class LuaAT53 < Formula
     end
 
     # Fix path in the config header
-    inreplace "src/luaconf.h", "/usr/local", HOMEBREW_PREFIX
+    inreplace "srcluaconf.h", "usrlocal", HOMEBREW_PREFIX
 
     os = if OS.mac?
       "macosx"
@@ -78,25 +78,25 @@ class LuaAT53 < Formula
       "linux"
     end
 
-    system "make", os, "INSTALL_TOP=#{prefix}", "INSTALL_INC=#{include}/lua", "INSTALL_MAN=#{man1}"
-    system "make", "install", "INSTALL_TOP=#{prefix}", "INSTALL_INC=#{include}/lua", "INSTALL_MAN=#{man1}"
+    system "make", os, "INSTALL_TOP=#{prefix}", "INSTALL_INC=#{include}lua", "INSTALL_MAN=#{man1}"
+    system "make", "install", "INSTALL_TOP=#{prefix}", "INSTALL_INC=#{include}lua", "INSTALL_MAN=#{man1}"
 
     # We ship our own pkg-config file as Lua no longer provide them upstream.
     libs = %W[-llua#{version.major_minor} -lm]
     libs << "-ldl" if OS.linux?
-    (lib/"pkgconfig/lua.pc").write <<~EOS
+    (lib"pkgconfiglua.pc").write <<~EOS
       V= #{version.major_minor}
       R= #{version}
       prefix=#{opt_prefix}
-      INSTALL_BIN= ${prefix}/bin
-      INSTALL_INC= ${prefix}/include/lua
-      INSTALL_LIB= ${prefix}/lib
-      INSTALL_MAN= ${prefix}/share/man/man1
-      INSTALL_LMOD= ${prefix}/share/lua/${V}
-      INSTALL_CMOD= ${prefix}/lib/lua/${V}
+      INSTALL_BIN= ${prefix}bin
+      INSTALL_INC= ${prefix}includelua
+      INSTALL_LIB= ${prefix}lib
+      INSTALL_MAN= ${prefix}sharemanman1
+      INSTALL_LMOD= ${prefix}sharelua${V}
+      INSTALL_CMOD= ${prefix}liblua${V}
       exec_prefix=${prefix}
-      libdir=${exec_prefix}/lib
-      includedir=${prefix}/include/lua
+      libdir=${exec_prefix}lib
+      includedir=${prefix}includelua
 
       Name: Lua
       Description: An Extensible Extension Language
@@ -111,12 +111,12 @@ class LuaAT53 < Formula
     bin.install_symlink "lua" => "lua-#{version.major_minor}"
     bin.install_symlink "luac" => "luac#{version.major_minor}"
     bin.install_symlink "luac" => "luac-#{version.major_minor}"
-    (include/"lua#{version.major_minor}").install_symlink Dir[include/"lua/*"]
+    (include"lua#{version.major_minor}").install_symlink Dir[include"lua*"]
     lib.install_symlink shared_library("liblua", version.major_minor.to_s) => shared_library("liblua#{version.major_minor}")
-    (lib/"pkgconfig").install_symlink "lua.pc" => "lua#{version.major_minor}.pc"
-    (lib/"pkgconfig").install_symlink "lua.pc" => "lua-#{version.major_minor}.pc"
+    (lib"pkgconfig").install_symlink "lua.pc" => "lua#{version.major_minor}.pc"
+    (lib"pkgconfig").install_symlink "lua.pc" => "lua-#{version.major_minor}.pc"
 
-    lib.install Dir[shared_library("src/liblua", "*")] if OS.linux?
+    lib.install Dir[shared_library("srcliblua", "*")] if OS.linux?
   end
 
   def caveats
@@ -127,15 +127,15 @@ class LuaAT53 < Formula
   end
 
   test do
-    assert_match "Ducks are terrifying.", shell_output("#{bin}/lua -e \"print ('Ducks are terrifying.')\"")
+    assert_match "Ducks are terrifying.", shell_output("#{bin}lua -e \"print ('Ducks are terrifying.')\"")
   end
 end
 
 __END__
-diff --git a/Makefile b/Makefile
+diff --git aMakefile bMakefile
 index 7fa91c8..a825198 100644
---- a/Makefile
-+++ b/Makefile
+--- aMakefile
++++ bMakefile
 @@ -41,7 +41,7 @@ PLATS= aix bsd c89 freebsd generic linux macosx mingw posix solaris
  # What to install.
  TO_BIN= lua luac
@@ -149,15 +149,15 @@ index 7fa91c8..a825198 100644
 	cd src && $(INSTALL_DATA) $(TO_INC) $(INSTALL_INC)
 	cd src && $(INSTALL_DATA) $(TO_LIB) $(INSTALL_LIB)
 	cd doc && $(INSTALL_DATA) $(TO_MAN) $(INSTALL_MAN)
-+	ln -s -f liblua.5.3.6.dylib $(INSTALL_LIB)/liblua.5.3.dylib
-+	ln -s -f liblua.5.3.dylib $(INSTALL_LIB)/liblua.dylib
++	ln -s -f liblua.5.3.6.dylib $(INSTALL_LIB)liblua.5.3.dylib
++	ln -s -f liblua.5.3.dylib $(INSTALL_LIB)liblua.dylib
 
  uninstall:
 	cd src && cd $(INSTALL_BIN) && $(RM) $(TO_BIN)
-diff --git a/src/Makefile b/src/Makefile
+diff --git asrcMakefile bsrcMakefile
 index 2e7a412..d0c4898 100644
---- a/src/Makefile
-+++ b/src/Makefile
+--- asrcMakefile
++++ bsrcMakefile
 @@ -28,7 +28,7 @@ MYOBJS=
 
  PLATS= aix bsd c89 freebsd generic linux macosx mingw posix solaris
@@ -173,7 +173,7 @@ index 2e7a412..d0c4898 100644
  $(LUA_A): $(BASE_O)
 -	$(AR) $@ $(BASE_O)
 -	$(RANLIB) $@
-+	$(CC) -dynamiclib -install_name @LUA_PREFIX@/lib/liblua.5.3.dylib \
++	$(CC) -dynamiclib -install_name @LUA_PREFIX@libliblua.5.3.dylib \
 +		-compatibility_version 5.3 -current_version 5.3.6 \
 +		-o liblua.5.3.6.dylib $^
 

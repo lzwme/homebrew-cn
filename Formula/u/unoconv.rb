@@ -2,12 +2,12 @@ class Unoconv < Formula
   include Language::Python::Shebang
 
   desc "Convert between any document format supported by OpenOffice"
-  homepage "https://github.com/unoconv/unoconv"
-  url "https://files.pythonhosted.org/packages/ab/40/b4cab1140087f3f07b2f6d7cb9ca1c14b9bdbb525d2d83a3b29c924fe9ae/unoconv-0.9.0.tar.gz"
+  homepage "https:github.comunoconvunoconv"
+  url "https:files.pythonhosted.orgpackagesab40b4cab1140087f3f07b2f6d7cb9ca1c14b9bdbb525d2d83a3b29c924fe9aeunoconv-0.9.0.tar.gz"
   sha256 "308ebfd98e67d898834876348b27caf41470cd853fbe2681cc7dacd8fd5e6031"
   license "GPL-2.0-only"
   revision 3
-  head "https://github.com/unoconv/unoconv.git", branch: "master"
+  head "https:github.comunoconvunoconv.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -36,6 +36,6 @@ class Unoconv < Formula
   end
 
   test do
-    assert_match "office installation", pipe_output("#{bin}/unoconv 2>&1")
+    assert_match "office installation", pipe_output("#{bin}unoconv 2>&1")
   end
 end

@@ -1,7 +1,7 @@
 class Gerbv < Formula
   desc "Gerber (RS-274X) viewer"
-  homepage "https://gerbv.github.io/"
-  url "https://ghproxy.com/https://github.com/gerbv/gerbv/archive/refs/tags/v2.10.0.tar.gz"
+  homepage "https:gerbv.github.io"
+  url "https:github.comgerbvgerbvarchiverefstagsv2.10.0.tar.gz"
   sha256 "3eef8eb8a2755da8400e7a4394229475ad4cf1a2f85345720ee1da135a1aec44"
   license "GPL-2.0-or-later"
   revision 1
@@ -21,19 +21,19 @@ class Gerbv < Formula
   depends_on "gettext" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "gtk+" # GTK3/GTK4 issue: https://github.com/gerbv/gerbv/issues/71
+  depends_on "gtk+" # GTK3GTK4 issue: https:github.comgerbvgerbvissues71
 
   def install
     ENV.append "CPPFLAGS", "-DQUARTZ" if OS.mac?
     inreplace "autogen.sh", "libtool", "glibtool"
 
     # Disable commit reference in include dir
-    inreplace "utils/git-version-gen.sh" do |s|
+    inreplace "utilsgit-version-gen.sh" do |s|
       s.gsub! 'RELEASE_COMMIT=`"${GIT}" rev-parse HEAD`', "RELEASE_COMMIT=\"\""
       s.gsub! "${PREFIX}~", "${PREFIX}"
     end
-    system "./autogen.sh"
-    system "./configure", *std_configure_args,
+    system ".autogen.sh"
+    system ".configure", *std_configure_args,
                           "--disable-dependency-tracking",
                           "--disable-update-desktop-database",
                           "--disable-schemas-compile"
@@ -43,9 +43,9 @@ class Gerbv < Formula
 
   test do
     # executable (GUI) test
-    system "#{bin}/gerbv", "--version"
+    system "#{bin}gerbv", "--version"
     # API test
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <gerbv.h>
 
       int main(int argc, char *argv[]) {
@@ -66,21 +66,21 @@ class Gerbv < Formula
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx.opt_include}/gtk-2.0
-      -I#{gtkx.opt_lib}/gtk-2.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/gerbv-#{version}
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gtkx.opt_include}gtk-2.0
+      -I#{gtkx.opt_lib}gtk-2.0include
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}gerbv-#{version}
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -108,6 +108,6 @@ class Gerbv < Formula
       ]
     end
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

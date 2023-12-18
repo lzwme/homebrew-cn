@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Jscpd < Formula
-  desc "Copy/paste detector for programming source code"
-  homepage "https://github.com/kucherenko/jscpd"
-  url "https://registry.npmjs.org/jscpd/-/jscpd-3.5.10.tgz"
+  desc "Copypaste detector for programming source code"
+  homepage "https:github.comkucherenkojscpd"
+  url "https:registry.npmjs.orgjscpd-jscpd-3.5.10.tgz"
   sha256 "6f42fba5d2935f5068af0798545bb60c4bde5b64346061e7286e51cfe703de0c"
   license "MIT"
 
@@ -23,12 +23,12 @@ class Jscpd < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    test_file = testpath/"test.js"
-    test_file2 = testpath/"test2.js"
+    test_file = testpath"test.js"
+    test_file2 = testpath"test2.js"
     test_file.write <<~EOS
       console.log("Hello, world!");
     EOS
@@ -36,9 +36,9 @@ class Jscpd < Formula
       console.log("Hello, brewtest!");
     EOS
 
-    output = shell_output("#{bin}/jscpd --min-lines 1 #{testpath}/*.js 2>&1")
+    output = shell_output("#{bin}jscpd --min-lines 1 #{testpath}*.js 2>&1")
     assert_match "Found 0 clones", output
 
-    assert_match version.to_s, shell_output("#{bin}/jscpd --version")
+    assert_match version.to_s, shell_output("#{bin}jscpd --version")
   end
 end

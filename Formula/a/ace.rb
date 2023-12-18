@@ -1,13 +1,13 @@
 class Ace < Formula
   desc "ADAPTIVE Communication Environment: OO network programming in C++"
-  homepage "https://www.dre.vanderbilt.edu/~schmidt/ACE.html"
-  url "https://ghproxy.com/https://github.com/DOCGroup/ACE_TAO/releases/download/ACE%2BTAO-7_1_2/ACE+TAO-7.1.2.tar.bz2"
+  homepage "https:www.dre.vanderbilt.edu~schmidtACE.html"
+  url "https:github.comDOCGroupACE_TAOreleasesdownloadACE%2BTAO-7_1_2ACE+TAO-7.1.2.tar.bz2"
   sha256 "9910d1018d73db91c89affd20c9b9fa2265aa8e5b42ea4fff30bfb4a8e7d313b"
   license "DOC"
 
   livecheck do
     url :stable
-    regex(/^ACE(?:\+[A-Z]+)*?[._-]v?(\d+(?:[._]\d+)+)$/i)
+    regex(^ACE(?:\+[A-Z]+)*?[._-]v?(\d+(?:[._]\d+)+)$i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -25,30 +25,30 @@ class Ace < Formula
 
   def install
     os = OS.mac? ? "macosx" : "linux"
-    ln_sf "config-#{os}.h", "ace/config.h"
-    ln_sf "platform_#{os}.GNU", "include/makeinclude/platform_macros.GNU"
+    ln_sf "config-#{os}.h", "aceconfig.h"
+    ln_sf "platform_#{os}.GNU", "includemakeincludeplatform_macros.GNU"
 
     ENV["ACE_ROOT"] = buildpath
-    ENV["DYLD_LIBRARY_PATH"] = "#{buildpath}/lib"
+    ENV["DYLD_LIBRARY_PATH"] = "#{buildpath}lib"
 
     # Done! We go ahead and build.
     system "make", "-C", "ace", "-f", "GNUmakefile.ACE",
                    "INSTALL_PREFIX=#{prefix}",
                    "LDFLAGS=",
                    "DESTDIR=",
-                   "INST_DIR=/ace",
+                   "INST_DIR=ace",
                    "debug=0",
                    "shared_libs=1",
                    "static_libs=0",
                    "install"
 
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}" if OS.mac?
-    system "make", "-C", "examples/Log_Msg"
+    system "make", "-C", "examplesLog_Msg"
     pkgshare.install "examples"
   end
 
   test do
-    cp_r "#{pkgshare}/examples/Log_Msg/.", testpath
-    system "./test_callback"
+    cp_r "#{pkgshare}examplesLog_Msg.", testpath
+    system ".test_callback"
   end
 end

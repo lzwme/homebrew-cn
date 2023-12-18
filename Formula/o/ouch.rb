@@ -1,10 +1,10 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
-  homepage "https://github.com/ouch-org/ouch"
-  url "https://ghproxy.com/https://github.com/ouch-org/ouch/archive/refs/tags/0.5.1.tar.gz"
+  homepage "https:github.comouch-orgouch"
+  url "https:github.comouch-orgoucharchiverefstags0.5.1.tar.gz"
   sha256 "46cc2b14f53de2f706436df59300eb90c5a58f08ac8c738fd976fcb8ec0cd335"
   license "MIT"
-  head "https://github.com/ouch-org/ouch.git", branch: "main"
+  head "https:github.comouch-orgouch.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96516fad49dade5fd195d9b6610c189750a29e19d8151b63d30e9bc5eed7ccb0"
@@ -27,16 +27,16 @@ class Ouch < Formula
   end
 
   test do
-    (testpath/"file1").write "Hello"
-    (testpath/"file2").write "World!"
+    (testpath"file1").write "Hello"
+    (testpath"file2").write "World!"
 
     %w[tar zip tar.bz2 tar.gz tar.xz tar.zst].each do |format|
-      system bin/"ouch", "compress", "file1", "file2", "archive.#{format}"
-      assert_predicate testpath/"archive.#{format}", :exist?
+      system bin"ouch", "compress", "file1", "file2", "archive.#{format}"
+      assert_predicate testpath"archive.#{format}", :exist?
 
-      system bin/"ouch", "decompress", "-y", "archive.#{format}", "--dir", testpath/format
-      assert_equal "Hello", (testpath/format/"archive/file1").read
-      assert_equal "World!", (testpath/format/"archive/file2").read
+      system bin"ouch", "decompress", "-y", "archive.#{format}", "--dir", testpathformat
+      assert_equal "Hello", (testpathformat"archivefile1").read
+      assert_equal "World!", (testpathformat"archivefile2").read
     end
   end
 end

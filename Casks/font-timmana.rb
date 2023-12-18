@@ -2,10 +2,10 @@ cask "font-timmana" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/timmana/Timmana-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofltimmanaTimmana-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Timmana"
-  homepage "https://fonts.google.com/specimen/Timmana"
+  homepage "https:fonts.google.comspecimenTimmana"
 
   font "Timmana-Regular.ttf"
 

@@ -2,12 +2,12 @@ cask "font-cormorant-sc" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/cormorantsc"
+      only_path: "oflcormorantsc"
   name "Cormorant SC"
-  homepage "https://fonts.google.com/specimen/Cormorant+SC"
+  homepage "https:fonts.google.comspecimenCormorant+SC"
 
   font "CormorantSC-Bold.ttf"
   font "CormorantSC-Light.ttf"

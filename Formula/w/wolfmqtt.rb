@@ -1,10 +1,10 @@
 class Wolfmqtt < Formula
   desc "Small, fast, portable MQTT client C implementation"
-  homepage "https://github.com/wolfSSL/wolfMQTT"
-  url "https://ghproxy.com/https://github.com/wolfSSL/wolfMQTT/archive/refs/tags/v1.17.1.tar.gz"
+  homepage "https:github.comwolfSSLwolfMQTT"
+  url "https:github.comwolfSSLwolfMQTTarchiverefstagsv1.17.1.tar.gz"
   sha256 "c88e57aa9cf06d1b30bd8ebd1229fcc899fb1646e3af5873c6b8013180235284"
   license "GPL-2.0-or-later"
-  head "https://github.com/wolfSSL/wolfMQTT.git", branch: "master"
+  head "https:github.comwolfSSLwolfMQTT.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4fe1e795bfa1676df99d8f6a240c7b167270b8cd3484a66ee60614807be6bca8"
@@ -36,21 +36,21 @@ class Wolfmqtt < Formula
       --enable-sn
     ]
 
-    system "./autogen.sh"
-    system "./configure", *args
+    system ".autogen.sh"
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOT
-      #include <wolfmqtt/mqtt_client.h>
+    (testpath"test.cpp").write <<~EOT
+      #include <wolfmqttmqtt_client.h>
       int main() {
         MqttClient mqttClient;
         return 0;
       }
     EOT
     system ENV.cc, "test.cpp", "-L#{lib}", "-lwolfmqtt", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

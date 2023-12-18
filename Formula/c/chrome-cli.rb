@@ -1,10 +1,10 @@
 class ChromeCli < Formula
   desc "Control Google Chrome from the command-line"
-  homepage "https://github.com/prasmussen/chrome-cli"
-  url "https://ghproxy.com/https://github.com/prasmussen/chrome-cli/archive/refs/tags/1.9.3.tar.gz"
+  homepage "https:github.comprasmussenchrome-cli"
+  url "https:github.comprasmussenchrome-cliarchiverefstags1.9.3.tar.gz"
   sha256 "cc213ebd087bafd6f1faaaeb4cc1fae4da2a7e1c484ee9265cf113f6ce108376"
   license "MIT"
-  head "https://github.com/prasmussen/chrome-cli.git", branch: "master"
+  head "https:github.comprasmussenchrome-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "738e99293907931fa3fd0a22084d2f9474ace9d5435bb019bf7638f3397022a5"
@@ -23,17 +23,17 @@ class ChromeCli < Formula
   def install
     # Release builds
     xcodebuild "-arch", Hardware::CPU.arch.to_s, "SYMROOT=build"
-    bin.install "build/Release/chrome-cli"
+    bin.install "buildReleasechrome-cli"
 
     # Install wrapper scripts for chrome compatible browsers
-    bin.install "scripts/chrome-canary-cli"
-    bin.install "scripts/chromium-cli"
-    bin.install "scripts/brave-cli"
-    bin.install "scripts/vivaldi-cli"
-    bin.install "scripts/edge-cli"
+    bin.install "scriptschrome-canary-cli"
+    bin.install "scriptschromium-cli"
+    bin.install "scriptsbrave-cli"
+    bin.install "scriptsvivaldi-cli"
+    bin.install "scriptsedge-cli"
   end
 
   test do
-    system "#{bin}/chrome-cli", "version"
+    system "#{bin}chrome-cli", "version"
   end
 end

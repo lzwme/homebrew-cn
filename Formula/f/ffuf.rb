@@ -1,7 +1,7 @@
 class Ffuf < Formula
   desc "Fast web fuzzer written in Go"
-  homepage "https://github.com/ffuf/ffuf"
-  url "https://ghproxy.com/https://github.com/ffuf/ffuf/archive/refs/tags/v2.1.0.tar.gz"
+  homepage "https:github.comffufffuf"
+  url "https:github.comffufffufarchiverefstagsv2.1.0.tar.gz"
   sha256 "52d3daf5b97528a74b7b3305decd4bb01a553a8f18d39fc107ebc15dc3113de7"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Ffuf < Formula
   end
 
   test do
-    (testpath/"words.txt").write <<~EOS
+    (testpath"words.txt").write <<~EOS
       dog
       cat
       horse
@@ -32,7 +32,7 @@ class Ffuf < Formula
       ape
     EOS
 
-    output = shell_output("#{bin}/ffuf -u https://example.org/FUZZ -w words.txt 2>&1")
-    assert_match %r{:: Progress: \[5/5\].*Errors: 0 ::$}, output
+    output = shell_output("#{bin}ffuf -u https:example.orgFUZZ -w words.txt 2>&1")
+    assert_match %r{:: Progress: \[55\].*Errors: 0 ::$}, output
   end
 end

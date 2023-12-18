@@ -1,7 +1,7 @@
 class TtyShare < Formula
   desc "Terminal sharing over the Internet"
-  homepage "https://tty-share.com/"
-  url "https://ghproxy.com/https://github.com/elisescu/tty-share/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:tty-share.com"
+  url "https:github.comelisescutty-sharearchiverefstagsv2.4.0.tar.gz"
   sha256 "90e566cd4c064a1c0b31a418c149a1766f158dd01b3563e7501c98dafd8c244f"
   license "MIT"
 
@@ -28,7 +28,7 @@ class TtyShare < Formula
   test do
     # Running `echo 1 | tty-share` ensures that the tty-share command doesn't have a tty at stdin,
     # no matter the environment where the test runs in.
-    output_when_notty = `echo 1 | #{bin}/tty-share`
+    output_when_notty = `echo 1 | #{bin}tty-share`
     assert_equal output_when_notty, "Input not a tty\n"
   end
 end

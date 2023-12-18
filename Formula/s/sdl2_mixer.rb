@@ -1,7 +1,7 @@
 class Sdl2Mixer < Formula
   desc "Sample multi-channel audio mixer library"
-  homepage "https://github.com/libsdl-org/SDL_mixer"
-  url "https://ghproxy.com/https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.3/SDL2_mixer-2.6.3.tar.gz"
+  homepage "https:github.comlibsdl-orgSDL_mixer"
+  url "https:github.comlibsdl-orgSDL_mixerreleasesdownloadrelease-2.6.3SDL2_mixer-2.6.3.tar.gz"
   sha256 "7a6ba86a478648ce617e3a5e9277181bc67f7ce9876605eea6affd4a0d6eea8f"
   license "Zlib"
   revision 1
@@ -10,7 +10,7 @@ class Sdl2Mixer < Formula
   # release version instead of Git tags.
   livecheck do
     url :stable
-    regex(/release[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(release[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -27,7 +27,7 @@ class Sdl2Mixer < Formula
   end
 
   head do
-    url "https://github.com/libsdl-org/SDL_mixer.git", branch: "main"
+    url "https:github.comlibsdl-orgSDL_mixer.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -48,10 +48,10 @@ class Sdl2Mixer < Formula
 
     if build.head?
       mkdir "build"
-      system "./autogen.sh"
+      system ".autogen.sh"
     end
 
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
       "--enable-music-wave",
       "--enable-music-mod",
       "--enable-music-mod-xmp",
@@ -82,9 +82,9 @@ class Sdl2Mixer < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
-      #include <SDL2/SDL_mixer.h>
+      #include <SDL2SDL_mixer.h>
 
       int main()
       {
@@ -94,8 +94,8 @@ class Sdl2Mixer < Formula
           return success == INIT_FLAGS ? EXIT_SUCCESS : EXIT_FAILURE;
       }
     EOS
-    system ENV.cc, "-I#{Formula["sdl2"].opt_include}/SDL2",
+    system ENV.cc, "-I#{Formula["sdl2"].opt_include}SDL2",
            "test.c", "-L#{lib}", "-lSDL2_mixer", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

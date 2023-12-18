@@ -1,7 +1,7 @@
 class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
-  homepage "https://tarantool.org/"
-  url "https://github.com/tarantool/cartridge-cli.git",
+  homepage "https:tarantool.org"
+  url "https:github.comtarantoolcartridge-cli.git",
       tag:      "2.12.10",
       revision: "76044114f412b1fa15e353f84e7de1f0c3d98566"
   license "BSD-2-Clause"
@@ -21,16 +21,16 @@ class CartridgeCli < Formula
   def install
     system "mage", "build"
     bin.install "cartridge"
-    system bin/"cartridge", "gen", "completion"
+    system bin"cartridge", "gen", "completion"
 
-    bash_completion.install "completion/bash/cartridge"
-    zsh_completion.install "completion/zsh/_cartridge"
+    bash_completion.install "completionbashcartridge"
+    zsh_completion.install "completionzsh_cartridge"
   end
 
   test do
     project_path = Pathname("test-project")
     project_path.rmtree if project_path.exist?
-    system bin/"cartridge", "create", "--name", project_path
+    system bin"cartridge", "create", "--name", project_path
     assert_predicate project_path, :exist?
     assert_predicate project_path.join("init.lua"), :exist?
   end

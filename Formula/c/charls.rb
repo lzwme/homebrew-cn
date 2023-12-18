@@ -1,10 +1,10 @@
 class Charls < Formula
   desc "C++ JPEG-LS library implementation"
-  homepage "https://github.com/team-charls/charls"
-  url "https://ghproxy.com/https://github.com/team-charls/charls/archive/refs/tags/2.4.2.tar.gz"
+  homepage "https:github.comteam-charlscharls"
+  url "https:github.comteam-charlscharlsarchiverefstags2.4.2.tar.gz"
   sha256 "d1c2c35664976f1e43fec7764d72755e6a50a80f38eca70fcc7553cad4fe19d9"
   license "BSD-3-Clause"
-  head "https://github.com/team-charls/charls.git", branch: "main"
+  head "https:github.comteam-charlscharls.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "76dca903581c658d0db0f4f7102cf6f766def35e259b8f5fd1b7b215f294b684"
@@ -34,8 +34,8 @@ class Charls < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <charls/charls.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <charlscharls.h>
       #include <iostream>
 
       int main() {
@@ -46,6 +46,6 @@ class Charls < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{lib}", "-lcharls", "-o", "test"
-    assert_equal "ok", shell_output(testpath/"test").chomp
+    assert_equal "ok", shell_output(testpath"test").chomp
   end
 end

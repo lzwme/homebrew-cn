@@ -1,14 +1,14 @@
 class Cling < Formula
   desc "C++ interpreter"
-  homepage "https://root.cern.ch/cling"
-  url "https://github.com/root-project/cling.git",
+  homepage "https:root.cern.chcling"
+  url "https:github.comroot-projectcling.git",
       tag:      "v0.9",
       revision: "f3768a4c43b0f3b23eccc6075fa178861a002a10"
   license any_of: ["LGPL-2.1-only", "NCSA"]
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -22,8 +22,8 @@ class Cling < Formula
   end
 
   # Does not build on Ventura
-  # https://github.com/Homebrew/homebrew-core/pull/131473
-  # https://github.com/root-project/cling/issues/492#issuecomment-1555938334
+  # https:github.comHomebrewhomebrew-corepull131473
+  # https:github.comroot-projectclingissues492#issuecomment-1555938334
   deprecate! date: "2023-08-24", because: :does_not_build
 
   depends_on "cmake" => :build
@@ -33,35 +33,35 @@ class Cling < Formula
   uses_from_macos "zlib"
 
   resource "clang" do
-    url "http://root.cern.ch/git/clang.git",
+    url "http:root.cern.chgitclang.git",
         tag:      "cling-v0.9",
         revision: "b7fa7dcfd21cac3d67688be9bdc83a35778e53e1"
   end
 
   resource "llvm" do
-    url "http://root.cern.ch/git/llvm.git",
+    url "http:root.cern.chgitllvm.git",
         tag:      "cling-v0.9",
         revision: "85e42859fb6de405e303fc8d92e37ff2b652b4b5"
   end
 
   def install
-    (buildpath/"src").install resource("llvm")
-    (buildpath/"src/tools/cling").install buildpath.children - [buildpath/"src"]
-    (buildpath/"src/tools/clang").install resource("clang")
+    (buildpath"src").install resource("llvm")
+    (buildpath"srctoolscling").install buildpath.children - [buildpath"src"]
+    (buildpath"srctoolsclang").install resource("clang")
     mkdir "build" do
-      system "cmake", *std_cmake_args, "../src",
+      system "cmake", *std_cmake_args, "..src",
                       "-DCMAKE_INSTALL_PREFIX=#{libexec}",
                       "-DCLING_CXX_PATH=clang++"
       system "make", "install"
     end
-    bin.install_symlink libexec/"bin/cling"
-    prefix.install_metafiles buildpath/"src/tools/cling"
+    bin.install_symlink libexec"bincling"
+    prefix.install_metafiles buildpath"srctoolscling"
   end
 
   test do
     test = <<~EOS
       '#include <stdio.h>' 'printf("Hello!")'
     EOS
-    assert_equal "Hello!(int) 6", shell_output("#{bin}/cling #{test}").chomp
+    assert_equal "Hello!(int) 6", shell_output("#{bin}cling #{test}").chomp
   end
 end

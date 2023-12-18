@@ -1,10 +1,10 @@
 class SqlMigrate < Formula
   desc "SQL schema migration tool for Go"
-  homepage "https://github.com/rubenv/sql-migrate"
-  url "https://ghproxy.com/https://github.com/rubenv/sql-migrate/archive/refs/tags/v1.5.2.tar.gz"
+  homepage "https:github.comrubenvsql-migrate"
+  url "https:github.comrubenvsql-migratearchiverefstagsv1.5.2.tar.gz"
   sha256 "5171e69fbb8cfd276afc3b8ac1be965cffcaa8fdc86d886d0a990b4b28bd50ad"
   license "MIT"
-  head "https://github.com/rubenv/sql-migrate.git", branch: "master"
+  head "https:github.comrubenvsql-migrate.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98701a8483d714b07aaf72729ec310f88aa0717ffd53226ecd6b4d3fc42707a7"
@@ -21,28 +21,28 @@ class SqlMigrate < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X Main.Version=#{version}"), "./sql-migrate"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X Main.Version=#{version}"), ".sql-migrate"
   end
 
   test do
     ENV["TZ"] = "UTC"
 
-    test_config = testpath/"dbconfig.yml"
+    test_config = testpath"dbconfig.yml"
     test_config.write <<~EOS
       development:
         dialect: sqlite3
         datasource: test.db
-        dir: migrations/sqlite3
+        dir: migrationssqlite3
     EOS
 
-    mkdir testpath/"migrations/sqlite3"
-    system bin/"sql-migrate", "new", "brewtest"
+    mkdir testpath"migrationssqlite3"
+    system bin"sql-migrate", "new", "brewtest"
 
     timestamp = Time.now.utc.strftime("%Y%m%d%H%M%S")
-    test_sql = testpath/"migrations/sqlite3/#{timestamp}-brewtest.sql"
+    test_sql = testpath"migrationssqlite3#{timestamp}-brewtest.sql"
     assert_predicate test_sql, :exist?, "failed to create test.sql"
 
-    output = shell_output("#{bin}/sql-migrate status")
+    output = shell_output("#{bin}sql-migrate status")
     expected = <<~EOS
       +-----------------------------+---------+
       |          MIGRATION          | APPLIED |

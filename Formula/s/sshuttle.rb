@@ -2,11 +2,11 @@ class Sshuttle < Formula
   include Language::Python::Virtualenv
 
   desc "Proxy server that works as a poor man's VPN"
-  homepage "https://github.com/sshuttle/sshuttle"
-  url "https://files.pythonhosted.org/packages/f1/4d/91c8bff8fabe44cd88edce0b18e874e60f1e11d4e9d37c254f2671e1a3d4/sshuttle-1.1.1.tar.gz"
+  homepage "https:github.comsshuttlesshuttle"
+  url "https:files.pythonhosted.orgpackagesf14d91c8bff8fabe44cd88edce0b18e874e60f1e11d4e9d37c254f2671e1a3d4sshuttle-1.1.1.tar.gz"
   sha256 "f5a3ed1e5ab1213c7a6df860af41f1a903ab2cafbfef71f371acdcff21e69ee6"
   license "LGPL-2.1-or-later"
-  head "https://github.com/sshuttle/sshuttle.git", branch: "master"
+  head "https:github.comsshuttlesshuttle.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -29,6 +29,6 @@ class Sshuttle < Formula
   end
 
   test do
-    system bin/"sshuttle", "-h"
+    system bin"sshuttle", "-h"
   end
 end

@@ -2,11 +2,11 @@ cask "psst" do
   version "0.1.0,20231005.013111"
   sha256 :no_check
 
-  url "https://nightly.link/jpochyla/psst/workflows/build/master/Psst-x64.dmg.zip",
-      verified: "nightly.link/jpochyla/psst/workflows/build/master/"
+  url "https:nightly.linkjpochylapsstworkflowsbuildmasterPsst-x64.dmg.zip",
+      verified: "nightly.linkjpochylapsstworkflowsbuildmaster"
   name "Psst"
   desc "Spotify client"
-  homepage "https://github.com/jpochyla/psst/"
+  homepage "https:github.comjpochylapsst"
 
   livecheck do
     url :url
@@ -16,10 +16,10 @@ cask "psst" do
   app "Psst.app"
 
   zap trash: [
-    "~/Library/Application Support/Psst",
-    "~/Library/Caches/com.jpochyla.psst",
-    "~/Library/Caches/Psst",
-    "~/Library/HTTPStorages/com.jpochyla.psst",
-    "~/Library/Saved Application State/com.jpochyla.psst.savedState",
+    "~LibraryApplication SupportPsst",
+    "~LibraryCachescom.jpochyla.psst",
+    "~LibraryCachesPsst",
+    "~LibraryHTTPStoragescom.jpochyla.psst",
+    "~LibrarySaved Application Statecom.jpochyla.psst.savedState",
   ]
 end

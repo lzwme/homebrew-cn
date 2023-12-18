@@ -1,10 +1,10 @@
 class Libmonome < Formula
   desc "Library for easy interaction with monome devices"
-  homepage "https://monome.org/"
-  url "https://ghproxy.com/https://github.com/monome/libmonome/archive/refs/tags/v1.4.6.tar.gz"
+  homepage "https:monome.org"
+  url "https:github.commonomelibmonomearchiverefstagsv1.4.6.tar.gz"
   sha256 "dbb886eacb465ea893465beb7b5ed8340ae77c25b24098ab36abcb69976ef748"
   license "ISC"
-  head "https://github.com/monome/libmonome.git", branch: "main"
+  head "https:github.commonomelibmonome.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -24,14 +24,14 @@ class Libmonome < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
-    system "python3", "./waf", "build"
-    system "python3", "./waf", "install"
+    system "python3", ".waf", "configure", "--prefix=#{prefix}"
+    system "python3", ".waf", "build"
+    system "python3", ".waf", "install"
 
-    pkgshare.install Dir["examples/*.c"]
+    pkgshare.install Dir["examples*.c"]
   end
 
   test do
-    assert_match "failed to open", shell_output("#{bin}/monomeserial", 1)
+    assert_match "failed to open", shell_output("#{bin}monomeserial", 1)
   end
 end

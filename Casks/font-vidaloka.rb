@@ -2,10 +2,10 @@ cask "font-vidaloka" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/vidaloka/Vidaloka-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflvidalokaVidaloka-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Vidaloka"
-  homepage "https://fonts.google.com/specimen/Vidaloka"
+  homepage "https:fonts.google.comspecimenVidaloka"
 
   font "Vidaloka-Regular.ttf"
 

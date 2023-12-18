@@ -1,10 +1,10 @@
 class Goproxy < Formula
   desc "Global proxy for Go modules"
-  homepage "https://github.com/goproxyio/goproxy"
-  url "https://ghproxy.com/https://github.com/goproxyio/goproxy/archive/refs/tags/v2.0.7.tar.gz"
+  homepage "https:github.comgoproxyiogoproxy"
+  url "https:github.comgoproxyiogoproxyarchiverefstagsv2.0.7.tar.gz"
   sha256 "d87f3928467520f8d6b0ba8adcbf5957dc6eb2dc9936249edd6568ceb01a71ca"
   license "MIT"
-  head "https://github.com/goproxyio/goproxy.git", branch: "master"
+  head "https:github.comgoproxyiogoproxy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "908b96ecd4bb860988e68fa7072067bd4d20b1ed8ee2d4a0e2ed1d5a27b6b06b"
@@ -30,13 +30,13 @@ class Goproxy < Formula
     ENV["GOPATH"] = testpath.to_s
     bind_address = "127.0.0.1:#{free_port}"
     begin
-      server = IO.popen("#{bin}/goproxy -proxy=https://goproxy.io -listen=#{bind_address}", err: [:child, :out])
+      server = IO.popen("#{bin}goproxy -proxy=https:goproxy.io -listen=#{bind_address}", err: [:child, :out])
       sleep 1
-      ENV["GOPROXY"] = "http://#{bind_address}"
-      system "go", "install", "golang.org/x/tools/cmd/guru@latest"
+      ENV["GOPROXY"] = "http:#{bind_address}"
+      system "go", "install", "golang.orgxtoolscmdguru@latest"
     ensure
       Process.kill("SIGINT", server.pid)
     end
-    assert_match "200 /golang.org/x/tools/", server.read
+    assert_match "200 golang.orgxtools", server.read
   end
 end

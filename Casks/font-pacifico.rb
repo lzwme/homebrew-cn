@@ -2,10 +2,10 @@ cask "font-pacifico" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/pacifico/Pacifico-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpacificoPacifico-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Pacifico"
-  homepage "https://fonts.google.com/specimen/Pacifico"
+  homepage "https:fonts.google.comspecimenPacifico"
 
   font "Pacifico-Regular.ttf"
 

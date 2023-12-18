@@ -1,7 +1,7 @@
 class Re2c < Formula
   desc "Generate C-based recognizers from regular expressions"
-  homepage "https://re2c.org"
-  url "https://ghproxy.com/https://github.com/skvadrik/re2c/releases/download/3.1/re2c-3.1.tar.xz"
+  homepage "https:re2c.org"
+  url "https:github.comskvadrikre2creleasesdownload3.1re2c-3.1.tar.xz"
   sha256 "0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029"
   license :public_domain
 
@@ -20,13 +20,13 @@ class Re2c < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       unsigned int stou (const char * s)
       {
       #   define YYCTYPE char
@@ -35,15 +35,15 @@ class Re2c < Formula
 
           for (;;)
           {
-              /*!re2c
+              *!re2c
                   re2c:yyfill:enable = 0;
 
                   "\x00" { return result; }
                   [0-9]  { result = result * 10 + c; continue; }
-              */
+              *
           }
       }
     EOS
-    system bin/"re2c", "-is", testpath/"test.c"
+    system bin"re2c", "-is", testpath"test.c"
   end
 end

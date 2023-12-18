@@ -1,10 +1,10 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
-  homepage "https://github.com/dandavison/delta"
-  url "https://ghproxy.com/https://github.com/dandavison/delta/archive/refs/tags/0.16.5.tar.gz"
+  homepage "https:github.comdandavisondelta"
+  url "https:github.comdandavisondeltaarchiverefstags0.16.5.tar.gz"
   sha256 "00d4740e9da4f543f34a2a0503615f8190d307d1180dfb753b6911aa6940197f"
   license "MIT"
-  head "https://github.com/dandavison/delta.git", branch: "master"
+  head "https:github.comdandavisondelta.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bea4e9b357ea0dbd9fb45bf30896fc23ee5e95a189ef3568779dc4f0eca30afa"
@@ -25,12 +25,12 @@ class GitDelta < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "etc/completion/completion.bash" => "delta"
-    fish_completion.install "etc/completion/completion.fish" => "delta.fish"
-    zsh_completion.install "etc/completion/completion.zsh" => "_delta"
+    bash_completion.install "etccompletioncompletion.bash" => "delta"
+    fish_completion.install "etccompletioncompletion.fish" => "delta.fish"
+    zsh_completion.install "etccompletioncompletion.zsh" => "_delta"
   end
 
   test do
-    assert_match "delta #{version}", `#{bin}/delta --version`.chomp
+    assert_match "delta #{version}", `#{bin}delta --version`.chomp
   end
 end

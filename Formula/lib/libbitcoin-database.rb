@@ -1,7 +1,7 @@
 class LibbitcoinDatabase < Formula
   desc "Bitcoin High Performance Blockchain Database"
-  homepage "https://github.com/libbitcoin/libbitcoin-database"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-database/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comlibbitcoinlibbitcoin-database"
+  url "https:github.comlibbitcoinlibbitcoin-databasearchiverefstagsv3.8.0.tar.gz"
   sha256 "37dba4c01515fba82be125d604bbe55dbdcc69e41d41f8cf6fbaddaaab68c038"
   license "AGPL-3.0"
   revision 1
@@ -19,22 +19,22 @@ class LibbitcoinDatabase < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
   deprecate! date: "2023-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # https:github.comlibbitcoinlibbitcoin-systemissues1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-system"
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
 
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
@@ -43,8 +43,8 @@ class LibbitcoinDatabase < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath/"test.cpp").write <<~EOS
-      #include <bitcoin/database.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <bitcoindatabase.hpp>
       using namespace libbitcoin::database;
       using namespace libbitcoin::chain;
       int main() {
@@ -60,6 +60,6 @@ class LibbitcoinDatabase < Formula
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-database",
                     "-L#{boost.lib}", "-lboost_system"
-    system "./test"
+    system ".test"
   end
 end

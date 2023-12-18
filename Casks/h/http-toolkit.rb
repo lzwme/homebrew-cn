@@ -2,11 +2,11 @@ cask "http-toolkit" do
   version "1.14.8"
   sha256 "93e9f5c823372f8bcfa6a6b2342078256f61437e1f4d5dae9efe4a06457f7b9a"
 
-  url "https://ghproxy.com/https://github.com/httptoolkit/httptoolkit-desktop/releases/download/v#{version}/HttpToolkit-#{version}.dmg",
-      verified: "github.com/httptoolkit/httptoolkit-desktop/"
+  url "https:github.comhttptoolkithttptoolkit-desktopreleasesdownloadv#{version}HttpToolkit-#{version}.dmg",
+      verified: "github.comhttptoolkithttptoolkit-desktop"
   name "HTTP Toolkit"
   desc "HTTP(S) debugging proxy, analyzer, and client"
-  homepage "https://httptoolkit.tech/"
+  homepage "https:httptoolkit.tech"
 
   livecheck do
     url :url
@@ -16,11 +16,11 @@ cask "http-toolkit" do
   app "HTTP Toolkit.app"
 
   zap trash: [
-    "~/Library/Application Support/HTTP Toolkit",
-    "~/Library/Caches/httptoolkit-server",
-    "~/Library/Logs/HTTP Toolkit",
-    "~/Library/Preferences/httptoolkit",
-    "~/Library/Preferences/tech.httptoolkit.desktop.plist",
-    "~/Library/Saved Application State/tech.httptoolkit.desktop.savedState",
+    "~LibraryApplication SupportHTTP Toolkit",
+    "~LibraryCacheshttptoolkit-server",
+    "~LibraryLogsHTTP Toolkit",
+    "~LibraryPreferenceshttptoolkit",
+    "~LibraryPreferencestech.httptoolkit.desktop.plist",
+    "~LibrarySaved Application Statetech.httptoolkit.desktop.savedState",
   ]
 end

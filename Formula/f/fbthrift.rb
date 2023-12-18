@@ -1,10 +1,10 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
-  homepage "https://github.com/facebook/fbthrift"
-  url "https://ghproxy.com/https://github.com/facebook/fbthrift/archive/refs/tags/v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookfbthrift"
+  url "https:github.comfacebookfbthriftarchiverefstagsv2023.12.04.00.tar.gz"
   sha256 "c3d6a85ca734d04892bffa42309f79454f8d079a3f0da8c9bc5a9494c7d3b0b3"
   license "Apache-2.0"
-  head "https://github.com/facebook/fbthrift.git", branch: "main"
+  head "https:github.comfacebookfbthrift.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2bc2be3a4199fb07854da3aaccecb1645321d78c0124090246d340b79de96ca3"
@@ -51,16 +51,16 @@ class Fbthrift < Formula
     ENV.append_to_cflags "-fPIC" if OS.linux?
 
     # Setting `BUILD_SHARED_LIBS=ON` fails the build.
-    system "cmake", "-S", ".", "-B", "build/shared", *std_cmake_args
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "-S", ".", "-B", "buildshared", *std_cmake_args
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    elisp.install "thrift/contrib/thrift.el"
-    (share/"vim/vimfiles/syntax").install "thrift/contrib/thrift.vim"
+    elisp.install "thriftcontribthrift.el"
+    (share"vimvimfilessyntax").install "thriftcontribthrift.vim"
   end
 
   test do
-    (testpath/"example.thrift").write <<~EOS
+    (testpath"example.thrift").write <<~EOS
       namespace cpp tamvm
 
       service ExampleService {
@@ -68,8 +68,8 @@ class Fbthrift < Formula
       }
     EOS
 
-    system bin/"thrift1", "--gen", "mstch_cpp2", "example.thrift"
-    assert_predicate testpath/"gen-cpp2", :exist?
-    assert_predicate testpath/"gen-cpp2", :directory?
+    system bin"thrift1", "--gen", "mstch_cpp2", "example.thrift"
+    assert_predicate testpath"gen-cpp2", :exist?
+    assert_predicate testpath"gen-cpp2", :directory?
   end
 end

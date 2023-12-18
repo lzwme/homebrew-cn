@@ -1,10 +1,10 @@
 class Csvtk < Formula
-  desc "Cross-platform, efficient and practical CSV/TSV toolkit in Golang"
-  homepage "https://bioinf.shenwei.me/csvtk"
-  url "https://ghproxy.com/https://github.com/shenwei356/csvtk/archive/refs/tags/v0.29.0.tar.gz"
+  desc "Cross-platform, efficient and practical CSVTSV toolkit in Golang"
+  homepage "https:bioinf.shenwei.mecsvtk"
+  url "https:github.comshenwei356csvtkarchiverefstagsv0.29.0.tar.gz"
   sha256 "ed5992bd275bdfcbfb2ad5abd5e577c780fbd8436725b792243b1955ca048bd9"
   license "MIT"
-  head "https://github.com/shenwei356/csvtk.git", branch: "master"
+  head "https:github.comshenwei356csvtk.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00464fe0a321d715d654899f53896e9e4285bc717197608bc266e22fbea4a686"
@@ -19,18 +19,18 @@ class Csvtk < Formula
   depends_on "go" => :build
 
   resource "homebrew-testdata" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/shenwei356/csvtk/e7b72224a70b7d40a8a80482be6405cb7121fb12/testdata/1.csv"
+    url "https:raw.githubusercontent.comshenwei356csvtke7b72224a70b7d40a8a80482be6405cb7121fb12testdata1.csv"
     sha256 "3270b0b14178ef5a75be3f2e3fdcf93152e3949f9f8abb3382cb00755b62505b"
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./csvtk"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".csvtk"
 
     # We do this because the command to generate completions doesn't print them
     # to stdout and only writes them to a file
-    system bin/"csvtk", "genautocomplete", "--shell", "bash", "--file", "csvtk.bash"
-    system bin/"csvtk", "genautocomplete", "--shell", "zsh", "--file", "_csvtk"
-    system bin/"csvtk", "genautocomplete", "--shell", "fish", "--file", "csvtk.fish"
+    system bin"csvtk", "genautocomplete", "--shell", "bash", "--file", "csvtk.bash"
+    system bin"csvtk", "genautocomplete", "--shell", "zsh", "--file", "_csvtk"
+    system bin"csvtk", "genautocomplete", "--shell", "fish", "--file", "csvtk.fish"
     bash_completion.install "csvtk.bash" => "csvtk"
     zsh_completion.install "_csvtk"
     fish_completion.install "csvtk.fish"
@@ -39,7 +39,7 @@ class Csvtk < Formula
   test do
     resource("homebrew-testdata").stage do
       assert_equal "3,bar,handsome\n",
-      shell_output("#{bin}/csvtk grep -H -N -n -f 2 -p handsome 1.csv")
+      shell_output("#{bin}csvtk grep -H -N -n -f 2 -p handsome 1.csv")
     end
   end
 end

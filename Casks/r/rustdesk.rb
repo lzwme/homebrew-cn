@@ -5,11 +5,11 @@ cask "rustdesk" do
   sha256 arm:   "647bc014238086d7a73a3d8f1543a1a559b5240f1796e1311a2142be0b57152e",
          intel: "63f1f5bbe2a308495be039604886adc83937bc36e97b09d4fd9b675ee108ee09"
 
-  url "https://ghproxy.com/https://github.com/rustdesk/rustdesk/releases/download/#{version}/rustdesk-#{version}-#{arch}.dmg",
-      verified: "github.com/rustdesk/rustdesk/"
+  url "https:github.comrustdeskrustdeskreleasesdownload#{version}rustdesk-#{version}-#{arch}.dmg",
+      verified: "github.comrustdeskrustdesk"
   name "RustDesk"
-  desc "Open source virtual/remote desktop application"
-  homepage "https://rustdesk.com/"
+  desc "Open source virtualremote desktop application"
+  homepage "https:rustdesk.com"
 
   livecheck do
     url :url
@@ -23,10 +23,10 @@ cask "rustdesk" do
   uninstall quit: "com.carriez.rustdesk"
 
   zap trash: [
-    "/Library/LaunchAgents/com.carriez.RustDesk_server.plist",
-    "/Library/LaunchDaemons/com.carriez.RustDesk_service.plist",
-    "~/Library/Logs/RustDesk",
-    "~/Library/Preferences/com.carriez.RustDesk",
-    "~/Library/Saved Application State/com.carriez.rustdesk.savedState",
+    "LibraryLaunchAgentscom.carriez.RustDesk_server.plist",
+    "LibraryLaunchDaemonscom.carriez.RustDesk_service.plist",
+    "~LibraryLogsRustDesk",
+    "~LibraryPreferencescom.carriez.RustDesk",
+    "~LibrarySaved Application Statecom.carriez.rustdesk.savedState",
   ]
 end

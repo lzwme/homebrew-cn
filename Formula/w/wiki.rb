@@ -1,7 +1,7 @@
 class Wiki < Formula
   desc "Fetch summaries from MediaWiki wikis, like Wikipedia"
-  homepage "https://github.com/walle/wiki"
-  url "https://ghproxy.com/https://github.com/walle/wiki/archive/refs/tags/v1.4.1.tar.gz"
+  homepage "https:github.comwallewiki"
+  url "https:github.comwallewikiarchiverefstagsv1.4.1.tar.gz"
   sha256 "529c6a58b3b5c5eb3faab07f2bf752155868b912e4f753e432d14040ff4f4262"
   license "MIT"
 
@@ -23,12 +23,12 @@ class Wiki < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin/"wiki", "cmd/wiki/main.go"
+    system "go", "build", "-o", bin"wiki", "cmdwikimain.go"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/wiki --version")
+    assert_match version.to_s, shell_output("#{bin}wiki --version")
 
-    assert_match "Read more: https://en.wikipedia.org/wiki/Go", shell_output("#{bin}/wiki golang")
+    assert_match "Read more: https:en.wikipedia.orgwikiGo", shell_output("#{bin}wiki golang")
   end
 end

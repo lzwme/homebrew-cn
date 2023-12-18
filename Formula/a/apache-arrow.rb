@@ -1,12 +1,12 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
-  homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-14.0.1/apache-arrow-14.0.1.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-14.0.1/apache-arrow-14.0.1.tar.gz"
+  homepage "https:arrow.apache.org"
+  url "https:www.apache.orgdyncloser.lua?path=arrowarrow-14.0.1apache-arrow-14.0.1.tar.gz"
+  mirror "https:archive.apache.orgdistarrowarrow-14.0.1apache-arrow-14.0.1.tar.gz"
   sha256 "5c70eafb1011f9d124bafb328afe54f62cc5b9280b7080e1e3d668f78c0e407e"
   license "Apache-2.0"
   revision 2
-  head "https://github.com/apache/arrow.git", branch: "main"
+  head "https:github.comapachearrow.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "6ac14a1a1b5be3d5ba95103936cc2e1830f17972dfa1d4b5179067d616d8aa34"
@@ -79,14 +79,14 @@ class ApacheArrow < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "arrow/api.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "arrowapi.h"
       int main(void) {
         arrow::int64();
         return 0;
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-larrow", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

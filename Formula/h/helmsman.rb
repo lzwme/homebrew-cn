@@ -1,11 +1,11 @@
 class Helmsman < Formula
   desc "Helm Charts as Code tool"
-  homepage "https://github.com/Praqma/helmsman"
-  url "https://github.com/Praqma/helmsman.git",
+  homepage "https:github.comPraqmahelmsman"
+  url "https:github.comPraqmahelmsman.git",
       tag:      "v3.17.0",
       revision: "85824a11ac957153badc2d9ca8db94ce6660326e"
   license "MIT"
-  head "https://github.com/Praqma/helmsman.git", branch: "master"
+  head "https:github.comPraqmahelmsman.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04c03b758cb3971548ff178ffd8285f12e192161b5451d78ba1419e0f17434b2"
@@ -24,18 +24,18 @@ class Helmsman < Formula
   depends_on "kubernetes-cli"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/helmsman"
-    pkgshare.install "examples/example.yaml"
-    pkgshare.install "examples/job.yaml"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdhelmsman"
+    pkgshare.install "examplesexample.yaml"
+    pkgshare.install "examplesjob.yaml"
   end
 
   test do
     ENV["ORG_PATH"] = "brewtest"
     ENV["VALUE"] = "brewtest"
 
-    output = shell_output("#{bin}/helmsman --apply -f #{pkgshare}/example.yaml 2>&1", 1)
+    output = shell_output("#{bin}helmsman --apply -f #{pkgshare}example.yaml 2>&1", 1)
     assert_match "helm diff not found", output
 
-    assert_match version.to_s, shell_output("#{bin}/helmsman version")
+    assert_match version.to_s, shell_output("#{bin}helmsman version")
   end
 end

@@ -1,15 +1,15 @@
 class Reminiscence < Formula
   desc "Flashback engine reimplementation"
-  homepage "http://cyxdown.free.fr/reminiscence/"
+  homepage "http:cyxdown.free.frreminiscence"
   # A mirror is used as the primary URL because the official one rate limits
   # too heavily that CI almost always fails.
-  url "https://pkg.freebsd.org/ports-distfiles/REminiscence-0.5.1.tar.bz2"
-  mirror "http://cyxdown.free.fr/reminiscence/REminiscence-0.5.1.tar.bz2"
+  url "https:pkg.freebsd.orgports-distfilesREminiscence-0.5.1.tar.bz2"
+  mirror "http:cyxdown.free.frreminiscenceREminiscence-0.5.1.tar.bz2"
   sha256 "6b02b8568a75af5fbad3b123d2efe033614091d83f128bc7f3b8b533db6e4b29"
 
   livecheck do
     url :homepage
-    regex(/href=.*?REminiscence[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?REminiscence[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,13 +33,13 @@ class Reminiscence < Formula
   uses_from_macos "zlib"
 
   resource "stb_vorbis" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/nothings/stb/1ee679ca2ef753a528db5ba6801e1067b40481b8/stb_vorbis.c"
+    url "https:raw.githubusercontent.comnothingsstb1ee679ca2ef753a528db5ba6801e1067b40481b8stb_vorbis.c"
     version "1.22"
     sha256 "4c7cb2ff1f7011e9d67950446b7eb9ca044f2e464d76bfbb0b84dd2e23e65636"
   end
 
   resource "tremor" do
-    url "https://gitlab.xiph.org/xiph/tremor.git",
+    url "https:gitlab.xiph.orgxiphtremor.git",
         revision: "7c30a66346199f3f09017a09567c6c8a3a0eedc8"
   end
 
@@ -49,18 +49,18 @@ class Reminiscence < Formula
     end
 
     resource("tremor").stage do
-      system "./autogen.sh", "--disable-dependency-tracking",
+      system ".autogen.sh", "--disable-dependency-tracking",
                              "--disable-silent-rules",
                              "--prefix=#{libexec}",
                              "--disable-static"
       system "make", "install"
     end
 
-    ENV.prepend "CPPFLAGS", "-I#{libexec}/include"
-    ENV.prepend "LDFLAGS", "-L#{libexec}/lib"
+    ENV.prepend "CPPFLAGS", "-I#{libexec}include"
+    ENV.prepend "LDFLAGS", "-L#{libexec}lib"
     if OS.linux?
       # Fixes: reminiscence: error while loading shared libraries: libvorbisidec.so.1
-      ENV.append "LDFLAGS", "-Wl,-rpath=#{libexec}/lib"
+      ENV.append "LDFLAGS", "-Wl,-rpath=#{libexec}lib"
     end
 
     system "make"
@@ -68,6 +68,6 @@ class Reminiscence < Formula
   end
 
   test do
-    system bin/"reminiscence", "--help"
+    system bin"reminiscence", "--help"
   end
 end

@@ -1,11 +1,11 @@
 class C2048 < Formula
   desc "Console version of 2048"
-  homepage "https://github.com/mevdschee/2048.c"
-  url "https://github.com/mevdschee/2048.c.git",
+  homepage "https:github.commevdschee2048.c"
+  url "https:github.commevdschee2048.c.git",
       revision: "6c04517bb59c28f3831585da338f021bc2ea86d6"
   version "0.20221023"
   license "MIT"
-  head "https://github.com/mevdschee/2048.c.git", branch: "main"
+  head "https:github.commevdschee2048.c.git", branch: "main"
 
   livecheck do
     skip "No version information available"
@@ -39,6 +39,6 @@ class C2048 < Formula
   end
 
   test do
-    system "#{bin}/2048", "test"
+    system "#{bin}2048", "test"
   end
 end

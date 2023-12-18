@@ -1,7 +1,7 @@
 class Axel < Formula
   desc "Light UNIX download accelerator"
-  homepage "https://github.com/axel-download-accelerator/axel"
-  url "https://ghproxy.com/https://github.com/axel-download-accelerator/axel/releases/download/v2.17.11/axel-2.17.11.tar.xz"
+  homepage "https:github.comaxel-download-acceleratoraxel"
+  url "https:github.comaxel-download-acceleratoraxelreleasesdownloadv2.17.11axel-2.17.11.tar.xz"
   sha256 "580b2c18692482fd7f1e2b2819159484311ffc50f6d18924dceb80fd41d4ccf9"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
@@ -20,7 +20,7 @@ class Axel < Formula
   end
 
   head do
-    url "https://github.com/axel-download-accelerator/axel.git", branch: "master"
+    url "https:github.comaxel-download-acceleratoraxel.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -28,7 +28,7 @@ class Axel < Formula
     depends_on "gawk" => :build
 
     resource "txt2man" do
-      url "https://ghproxy.com/https://github.com/mvertes/txt2man/archive/refs/tags/txt2man-1.7.1.tar.gz"
+      url "https:github.commvertestxt2manarchiverefstagstxt2man-1.7.1.tar.gz"
       sha256 "4d9b1bfa2b7a5265b4e5cb3aebc1078323b029aa961b6836d8f96aba6a9e434d"
     end
   end
@@ -39,20 +39,20 @@ class Axel < Formula
 
   def install
     if build.head?
-      resource("txt2man").stage { (buildpath/"txt2man").install "txt2man" }
-      ENV.prepend_path "PATH", buildpath/"txt2man"
+      resource("txt2man").stage { (buildpath"txt2man").install "txt2man" }
+      ENV.prepend_path "PATH", buildpath"txt2man"
       system "autoreconf", "--force", "--install", "--verbose"
     end
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--sysconfdir=#{etc}"
     system "make", "install"
   end
 
   test do
-    filename = (testpath/"axel.tar.gz")
-    system bin/"axel", "-o", "axel.tar.gz", stable.url
+    filename = (testpath"axel.tar.gz")
+    system bin"axel", "-o", "axel.tar.gz", stable.url
     filename.verify_checksum stable.checksum
-    assert_predicate testpath/"axel.tar.gz", :exist?
+    assert_predicate testpath"axel.tar.gz", :exist?
   end
 end

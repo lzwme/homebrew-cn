@@ -1,10 +1,10 @@
 class Bwa < Formula
   desc "Burrow-Wheeler Aligner for pairwise alignment of DNA"
-  homepage "https://github.com/lh3/bwa"
-  url "https://ghproxy.com/https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2"
+  homepage "https:github.comlh3bwa"
+  url "https:github.comlh3bwareleasesdownloadv0.7.17bwa-0.7.17.tar.bz2"
   sha256 "de1b4d4e745c0b7fc3e107b5155a51ac063011d33a5d82696331ecf4bed8d0fd"
   license "GPL-3.0"
-  head "https://github.com/lh3/bwa.git", branch: "master"
+  head "https:github.comlh3bwa.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a3ccdfdc0f75dbe5efff72c4d12d933a22659e5973431cc4186f655615eb173"
@@ -30,20 +30,20 @@ class Bwa < Formula
   end
 
   def install
-    # PR ref: https://github.com/lh3/bwa/pull/344
+    # PR ref: https:github.comlh3bwapull344
     inreplace "ksw.c", "<emmintrin.h>", "<sse2neon.h>" if Hardware::CPU.arm?
 
     system "make"
 
-    # "make install" requested 26 Dec 2017 https://github.com/lh3/bwa/issues/172
+    # "make install" requested 26 Dec 2017 https:github.comlh3bwaissues172
     bin.install "bwa"
     man1.install "bwa.1"
   end
 
   test do
-    (testpath/"test.fasta").write ">0\nAGATGTGCTG\n"
-    system bin/"bwa", "index", "test.fasta"
-    assert_predicate testpath/"test.fasta.bwt", :exist?
-    assert_match "AGATGTGCTG", shell_output("#{bin}/bwa mem test.fasta test.fasta")
+    (testpath"test.fasta").write ">0\nAGATGTGCTG\n"
+    system bin"bwa", "index", "test.fasta"
+    assert_predicate testpath"test.fasta.bwt", :exist?
+    assert_match "AGATGTGCTG", shell_output("#{bin}bwa mem test.fasta test.fasta")
   end
 end

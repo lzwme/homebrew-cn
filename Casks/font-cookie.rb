@@ -2,10 +2,10 @@ cask "font-cookie" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/cookie/Cookie-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcookieCookie-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Cookie"
-  homepage "https://fonts.google.com/specimen/Cookie"
+  homepage "https:fonts.google.comspecimenCookie"
 
   font "Cookie-Regular.ttf"
 

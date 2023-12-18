@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
-  homepage "https://hasura.io"
-  url "https://ghproxy.com/https://github.com/hasura/graphql-engine/archive/refs/tags/v2.36.0.tar.gz"
+  homepage "https:hasura.io"
+  url "https:github.comhasuragraphql-enginearchiverefstagsv2.36.0.tar.gz"
   sha256 "8626169b94530d5112e28a7b0518027f115e8f53e5baf7161474e43eee37cd60"
   license "Apache-2.0"
 
@@ -33,32 +33,32 @@ class HasuraCli < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/hasura/graphql-engine/cli/v2/version.BuildVersion=#{version}
-      -X github.com/hasura/graphql-engine/cli/v2/plugins.IndexBranchRef=master
+      -X github.comhasuragraphql-enginecliv2version.BuildVersion=#{version}
+      -X github.comhasuragraphql-enginecliv2plugins.IndexBranchRef=master
     ]
 
     # Based on `make build-cli-ext`, but only build a single host-specific binary
     cd "cli-ext" do
-      # TODO: Remove `npm update pkg` when https://github.com/hasura/graphql-engine/issues/9440 is resolved.
+      # TODO: Remove `npm update pkg` when https:github.comhasuragraphql-engineissues9440 is resolved.
       system "npm", "update", "pkg"
       system "npm", "install", *Language::Node.local_npm_install_args
       system "npm", "run", "prebuild"
-      system "./node_modules/.bin/pkg", "./build/command.js", "--output", "./bin/cli-ext-hasura", "-t", "host"
+      system ".node_modules.binpkg", ".buildcommand.js", "--output", ".bincli-ext-hasura", "-t", "host"
     end
 
     cd "cli" do
       arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
       os = OS.kernel_name.downcase
 
-      cp "../cli-ext/bin/cli-ext-hasura", "./internal/cliext/static-bin/#{os}/#{arch}/cli-ext"
-      system "go", "build", *std_go_args(output: bin/"hasura", ldflags: ldflags), "./cmd/hasura/"
+      cp "..cli-extbincli-ext-hasura", ".internalcliextstatic-bin#{os}#{arch}cli-ext"
+      system "go", "build", *std_go_args(output: bin"hasura", ldflags: ldflags), ".cmdhasura"
 
-      generate_completions_from_executable(bin/"hasura", "completion", base_name: "hasura", shells: [:bash, :zsh])
+      generate_completions_from_executable(bin"hasura", "completion", base_name: "hasura", shells: [:bash, :zsh])
     end
   end
 
   test do
-    system bin/"hasura", "init", "testdir"
-    assert_predicate testpath/"testdir/config.yaml", :exist?
+    system bin"hasura", "init", "testdir"
+    assert_predicate testpath"testdirconfig.yaml", :exist?
   end
 end

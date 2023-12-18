@@ -1,7 +1,7 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
-  homepage "https://github.com/oras-project/oras"
-  url "https://ghproxy.com/https://github.com/oras-project/oras/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:github.comoras-projectoras"
+  url "https:github.comoras-projectorasarchiverefstagsv1.1.0.tar.gz"
   sha256 "87059bbf96781980ba9826603ee10e2bb3cfafbe7b9410ba1c65fe336b9d4ee0"
   license "Apache-2.0"
 
@@ -22,16 +22,16 @@ class Oras < Formula
   def install
     ldflags = %W[
       -s -w
-      -X oras.land/oras/internal/version.Version=#{version}
-      -X oras.land/oras/internal/version.BuildMetadata=Homebrew
+      -X oras.landorasinternalversion.Version=#{version}
+      -X oras.landorasinternalversion.BuildMetadata=Homebrew
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/oras"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdoras"
 
-    generate_completions_from_executable(bin/"oras", "completion")
+    generate_completions_from_executable(bin"oras", "completion")
   end
 
   test do
-    assert_match "#{version}+Homebrew", shell_output("#{bin}/oras version")
+    assert_match "#{version}+Homebrew", shell_output("#{bin}oras version")
 
     port = free_port
     contents = <<~EOS
@@ -40,13 +40,13 @@ class Oras < Formula
         "this is": "a test"
       }
     EOS
-    (testpath/"test.json").write(contents)
+    (testpath"test.json").write(contents)
 
     # Although it might not make much sense passing the JSON as both manifest and payload,
     # it helps make the test consistent as the error can randomly switch between either hash
-    output = shell_output("#{bin}/oras push localhost:#{port}/test-artifact:v1 " \
-                          "--config test.json:application/vnd.homebrew.test.config.v1+json " \
-                          "./test.json 2>&1", 1)
+    output = shell_output("#{bin}oras push localhost:#{port}test-artifact:v1 " \
+                          "--config test.json:applicationvnd.homebrew.test.config.v1+json " \
+                          ".test.json 2>&1", 1)
     assert_match "#{port}: connect: connection refused", output
   end
 end

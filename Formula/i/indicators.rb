@@ -1,10 +1,10 @@
 class Indicators < Formula
   desc "Activity indicators for modern C++"
-  homepage "https://github.com/p-ranav/indicators"
-  url "https://ghproxy.com/https://github.com/p-ranav/indicators/archive/refs/tags/v2.3.tar.gz"
+  homepage "https:github.comp-ranavindicators"
+  url "https:github.comp-ranavindicatorsarchiverefstagsv2.3.tar.gz"
   sha256 "70da7a693ff7a6a283850ab6d62acf628eea17d386488af8918576d0760aef7b"
   license "MIT"
-  head "https://github.com/p-ranav/indicators.git", branch: "master"
+  head "https:github.comp-ranavindicators.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "722fdcb2c0acf2eb576eaec0f91171d503b65c10910ec70abf1bf50bd45979bf"
@@ -18,9 +18,9 @@ class Indicators < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <indicators/cursor_control.hpp>
-      #include <indicators/progress_bar.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <indicatorscursor_control.hpp>
+      #include <indicatorsprogress_bar.hpp>
       #include <vector>
       int main() {
         using namespace indicators;
@@ -57,9 +57,9 @@ class Indicators < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-o", "test"
-    output = shell_output("./test")
+    output = shell_output(".test")
 
-    assert_equal output.scan(/(?=Brewing...)/).count, 100
+    assert_equal output.scan((?=Brewing...)).count, 100
     100.times do |n|
       assert_match "#{n}%", output
     end

@@ -1,7 +1,7 @@
 class MagicEnum < Formula
   desc "Static reflection for enums (to string, from string, iteration) for modern C++"
-  homepage "https://github.com/Neargye/magic_enum"
-  url "https://ghproxy.com/https://github.com/Neargye/magic_enum/archive/refs/tags/v0.9.5.tar.gz"
+  homepage "https:github.comNeargyemagic_enum"
+  url "https:github.comNeargyemagic_enumarchiverefstagsv0.9.5.tar.gz"
   sha256 "44ad80db5a72f5047e01d90e18315751d9ac90c0ab42cbea7a6f9ec66a4cd679"
   license "MIT"
 
@@ -16,12 +16,12 @@ class MagicEnum < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
-    system "./test/test-cpp17"
-    system "./test/test-cpp17"
+    system ".testtest-cpp17"
+    system ".testtest-cpp17"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <magic_enum.hpp>
 
@@ -36,6 +36,6 @@ class MagicEnum < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-std=c++17", "-o", "test"
-    assert_equal "RED\n", shell_output(testpath/"test")
+    assert_equal "RED\n", shell_output(testpath"test")
   end
 end

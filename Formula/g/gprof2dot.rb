@@ -1,10 +1,10 @@
 class Gprof2dot < Formula
   desc "Convert the output from many profilers into a Graphviz dot graph"
-  homepage "https://github.com/jrfonseca/gprof2dot"
-  url "https://files.pythonhosted.org/packages/ab/0b/fc056b26a90c1836aa6c6e1332372dc13050d384f017e388131854ead8cf/gprof2dot-2022.7.29.tar.gz"
+  homepage "https:github.comjrfonsecagprof2dot"
+  url "https:files.pythonhosted.orgpackagesab0bfc056b26a90c1836aa6c6e1332372dc13050d384f017e388131854ead8cfgprof2dot-2022.7.29.tar.gz"
   sha256 "45b4d298bd36608fccf9511c3fd88a773f7a1abc04d6cd39445b11ba43133ec5"
   license "LGPL-3.0-or-later"
-  head "https://github.com/jrfonseca/gprof2dot.git", branch: "master"
+  head "https:github.comjrfonsecagprof2dot.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -34,14 +34,14 @@ class Gprof2dot < Formula
   end
 
   test do
-    (testpath/"gprof.output").write <<~EOS
+    (testpath"gprof.output").write <<~EOS
       Flat profile:
 
       Each sample counts as 0.01 seconds.
        no time accumulated
 
         %   cumulative   self              self     total
-       time   seconds   seconds    calls  Ts/call  Ts/call  name
+       time   seconds   seconds    calls  Tscall  Tscall  name
         0.00      0.00     0.00        2     0.00     0.00  manager
         0.00      0.00     0.00        2     0.00     0.00  worker1
         0.00      0.00     0.00        2     0.00     0.00  worker2
@@ -62,11 +62,11 @@ class Gprof2dot < Formula
                  this function is profiled, else blank.
 
        self      the average number of milliseconds spent in this
-      ms/call    function per call, if this function is profiled,
+      mscall    function per call, if this function is profiled,
              else blank.
 
        total     the average number of milliseconds spent in this
-      ms/call    function and its descendents per call, if this
+      mscall    function and its descendents per call, if this
              function is profiled, else blank.
 
       name       the name of the function.  This is the minor sort
@@ -81,25 +81,25 @@ class Gprof2dot < Formula
       granularity: each sample hit covers 2 byte(s) no time propagated
 
       index % time    self  children    called     name
-                      0.00    0.00       1/2           project1 [4]
-                      0.00    0.00       1/2           project2 [5]
+                      0.00    0.00       12           project1 [4]
+                      0.00    0.00       12           project2 [5]
       [1]      0.0    0.00    0.00       2         manager [1]
-                      0.00    0.00       2/2           worker1 [2]
-                      0.00    0.00       2/2           worker2 [3]
+                      0.00    0.00       22           worker1 [2]
+                      0.00    0.00       22           worker2 [3]
       -----------------------------------------------
-                      0.00    0.00       2/2           manager [1]
+                      0.00    0.00       22           manager [1]
       [2]      0.0    0.00    0.00       2         worker1 [2]
       -----------------------------------------------
-                      0.00    0.00       2/2           manager [1]
+                      0.00    0.00       22           manager [1]
       [3]      0.0    0.00    0.00       2         worker2 [3]
       -----------------------------------------------
-                      0.00    0.00       1/1           main [12]
+                      0.00    0.00       11           main [12]
       [4]      0.0    0.00    0.00       1         project1 [4]
-                      0.00    0.00       1/2           manager [1]
+                      0.00    0.00       12           manager [1]
       -----------------------------------------------
-                      0.00    0.00       1/1           main [12]
+                      0.00    0.00       11           main [12]
       [5]      0.0    0.00    0.00       1         project2 [5]
-                      0.00    0.00       1/2           manager [1]
+                      0.00    0.00       12           manager [1]
       -----------------------------------------------
 
        This table describes the call tree of the program, and was sorted by
@@ -145,9 +145,9 @@ class Gprof2dot < Formula
               the function's children into this parent.
 
            called    This is the number of times this parent called the
-              function `/' the total number of times the function
+              function `' the total number of times the function
               was called.  Recursive calls to the function are not
-              included in the number after the `/'.
+              included in the number after the `'.
 
            name    This is the name of the parent.  The parent's index
               number is printed after it.  If the parent is a
@@ -167,9 +167,9 @@ class Gprof2dot < Formula
               child's children to the function.
 
            called    This is the number of times the function called
-              this child `/' the total number of times the child
+              this child `' the total number of times the child
               was called.  Recursive calls by the child are not
-              listed in the number after the `/'.
+              listed in the number after the `'.
 
            name    This is the name of the child.  The child's index
               number is printed after it.  If the child is a
@@ -190,7 +190,7 @@ class Gprof2dot < Formula
          [1] manager                 [5] project2                [3] worker2
          [4] project1                [2] worker1
     EOS
-    system bin/"gprof2dot", testpath/"gprof.output", "-o", testpath/"call_graph.dot"
-    assert_predicate testpath/"call_graph.dot", :exist?
+    system bin"gprof2dot", testpath"gprof.output", "-o", testpath"call_graph.dot"
+    assert_predicate testpath"call_graph.dot", :exist?
   end
 end

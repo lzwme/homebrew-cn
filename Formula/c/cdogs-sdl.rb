@@ -1,10 +1,10 @@
 class CdogsSdl < Formula
   desc "Classic overhead run-and-gun game"
-  homepage "https://cxong.github.io/cdogs-sdl/"
-  url "https://ghproxy.com/https://github.com/cxong/cdogs-sdl/archive/refs/tags/1.5.0.tar.gz"
+  homepage "https:cxong.github.iocdogs-sdl"
+  url "https:github.comcxongcdogs-sdlarchiverefstags1.5.0.tar.gz"
   sha256 "ca1a25fae68ddaf5e05dcc1cfe07d786863026599865111782ac6b2aa7a2f73f"
   license "GPL-2.0-or-later"
-  head "https://github.com/cxong/cdogs-sdl.git", branch: "master"
+  head "https:github.comcxongcdogs-sdl.git", branch: "master"
 
   livecheck do
     url :stable
@@ -38,20 +38,20 @@ class CdogsSdl < Formula
 
   def install
     args = std_cmake_args
-    args << "-DCDOGS_DATA_DIR=#{pkgshare}/"
+    args << "-DCDOGS_DATA_DIR=#{pkgshare}"
     system "cmake", ".", *args
     system "make"
-    bin.install %w[src/cdogs-sdl src/cdogs-sdl-editor]
+    bin.install %w[srccdogs-sdl srccdogs-sdl-editor]
     pkgshare.install %w[data dogfights graphics missions music sounds]
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
   end
 
   test do
     pid = fork do
-      exec bin/"cdogs-sdl"
+      exec bin"cdogs-sdl"
     end
     sleep 7
-    assert_predicate testpath/".config/cdogs-sdl",
+    assert_predicate testpath".configcdogs-sdl",
                      :exist?, "User config directory should exist"
   ensure
     Process.kill("TERM", pid)

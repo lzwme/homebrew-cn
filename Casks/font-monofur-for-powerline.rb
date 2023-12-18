@@ -2,11 +2,11 @@ cask "font-monofur-for-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/powerline/fonts.git",
+  url "https:github.compowerlinefonts.git",
       branch:    "master",
       only_path: "Monofur"
   name "monofur for Powerline"
-  homepage "https://github.com/powerline/fonts/tree/master/Monofur"
+  homepage "https:github.compowerlinefontstreemasterMonofur"
 
   font "Monofur Bold for Powerline.ttf"
   font "Monofur Italic for Powerline.ttf"

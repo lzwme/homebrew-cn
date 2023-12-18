@@ -1,14 +1,14 @@
 class SpirvHeaders < Formula
   desc "Headers for SPIR-V"
-  homepage "https://github.com/KhronosGroup/SPIRV-Headers"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/SPIRV-Headers/archive/refs/tags/sdk-1.3.261.1.tar.gz"
+  homepage "https:github.comKhronosGroupSPIRV-Headers"
+  url "https:github.comKhronosGroupSPIRV-Headersarchiverefstagssdk-1.3.261.1.tar.gz"
   sha256 "32b4c6ae6a2fa9b56c2c17233c8056da47e331f76e117729925825ea3e77a739"
   license "MIT"
-  head "https://github.com/KhronosGroup/SPIRV-Headers.git", branch: "main"
+  head "https:github.comKhronosGroupSPIRV-Headers.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^sdk[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^sdk[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,13 +26,13 @@ class SpirvHeaders < Formula
   end
 
   test do
-    cp pkgshare/"tests/example.cpp", testpath
+    cp pkgshare"testsexample.cpp", testpath
 
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       add_library(SPIRV-Headers-example
-                  ${CMAKE_CURRENT_SOURCE_DIR}/example.cpp)
+                  ${CMAKE_CURRENT_SOURCE_DIR}example.cpp)
       target_include_directories(SPIRV-Headers-example
-                  PRIVATE ${SPIRV-Headers_SOURCE_DIR}/include)
+                  PRIVATE ${SPIRV-Headers_SOURCE_DIR}include)
     EOS
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

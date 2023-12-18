@@ -1,10 +1,10 @@
 class Reflex < Formula
   desc "Run a command when files change"
-  homepage "https://github.com/cespare/reflex"
-  url "https://ghproxy.com/https://github.com/cespare/reflex/archive/refs/tags/v0.3.1.tar.gz"
+  homepage "https:github.comcesparereflex"
+  url "https:github.comcesparereflexarchiverefstagsv0.3.1.tar.gz"
   sha256 "efe3dc7bc64b5a978c6e7f790e3d210aed16bd7e43c7fbc2713fe4b16a7a183e"
   license "MIT"
-  head "https://github.com/cespare/reflex.git", branch: "main"
+  head "https:github.comcesparereflex.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7203be2c2bcb77f967584006bb447f041897f78748cb3a6f8e84fd770c66016e"
@@ -23,7 +23,7 @@ class Reflex < Formula
   end
 
   test do
-    output = shell_output("#{bin}/reflex 2>&1", 1)
+    output = shell_output("#{bin}reflex 2>&1", 1)
     assert_match "Could not make reflex for config: must give command to execute", output
   end
 end

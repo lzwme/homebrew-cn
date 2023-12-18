@@ -2,10 +2,10 @@ cask "font-dashicons" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/WordPress/dashicons/raw/master/icon-font/fonts/dashicons.ttf",
-      verified: "github.com/WordPress/dashicons/"
+  url "https:github.comWordPressdashiconsrawmastericon-fontfontsdashicons.ttf",
+      verified: "github.comWordPressdashicons"
   name "Dashicons"
-  homepage "https://developer.wordpress.org/resource/dashicons"
+  homepage "https:developer.wordpress.orgresourcedashicons"
 
   font "dashicons.ttf"
 

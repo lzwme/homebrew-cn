@@ -1,15 +1,15 @@
 class Rust < Formula
   desc "Safe, concurrent, practical language"
-  homepage "https://www.rust-lang.org/"
+  homepage "https:www.rust-lang.org"
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.74.0-src.tar.gz"
+    url "https:static.rust-lang.orgdistrustc-1.74.0-src.tar.gz"
     sha256 "882b584bc321c5dcfe77cdaa69f277906b936255ef7808fcd5c7492925cf1049"
 
-    # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
+    # From https:github.comrust-langrusttree#{version}srctools
     resource "cargo" do
-      url "https://ghproxy.com/https://github.com/rust-lang/cargo/archive/refs/tags/0.75.0.tar.gz"
+      url "https:github.comrust-langcargoarchiverefstags0.75.0.tar.gz"
       sha256 "d6b9512bca4b4d692a242188bfe83e1b696c44903007b7b48a56b287d01c063b"
     end
   end
@@ -26,10 +26,10 @@ class Rust < Formula
   end
 
   head do
-    url "https://github.com/rust-lang/rust.git", branch: "master"
+    url "https:github.comrust-langrust.git", branch: "master"
 
     resource "cargo" do
-      url "https://github.com/rust-lang/cargo.git", branch: "master"
+      url "https:github.comrust-langcargo.git", branch: "master"
     end
   end
 
@@ -44,38 +44,38 @@ class Rust < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
-  # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.json
+  # From https:github.comrust-langrustblob#{version}srcstage0.json
   resource "cargobootstrap" do
     on_macos do
       on_arm do
-        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-aarch64-apple-darwin.tar.xz"
+        url "https:static.rust-lang.orgdist2023-10-05cargo-1.73.0-aarch64-apple-darwin.tar.xz"
         sha256 "caa855d28ade0ecb70567d886048d392b3b90f15a7751f9733d4c189ce67bb71"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-x86_64-apple-darwin.tar.xz"
+        url "https:static.rust-lang.orgdist2023-10-05cargo-1.73.0-x86_64-apple-darwin.tar.xz"
         sha256 "94f9eb5836fe59a3ef1d1d4c99623d602b0cec48964c5676453be4205df3b28a"
       end
     end
 
     on_linux do
       on_arm do
-        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-aarch64-unknown-linux-gnu.tar.xz"
+        url "https:static.rust-lang.orgdist2023-10-05cargo-1.73.0-aarch64-unknown-linux-gnu.tar.xz"
         sha256 "1195a1d37280802574d729cf00e0dadc63a7c9312a9ae3ef2cf99645f7be0a77"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2023-10-05/cargo-1.73.0-x86_64-unknown-linux-gnu.tar.xz"
+        url "https:static.rust-lang.orgdist2023-10-05cargo-1.73.0-x86_64-unknown-linux-gnu.tar.xz"
         sha256 "7c3ce5738d570eaea97dd3d213ea73c8beda4f0c61e7486f95e497b7b10c4e2d"
       end
     end
   end
 
-  # Fixes 'could not read dir ".../codegen-backends"' on 12-arm64.
-  # See https://github.com/Homebrew/homebrew-core/pull/154526#issuecomment-1814795860
+  # Fixes 'could not read dir "...codegen-backends"' on 12-arm64.
+  # See https:github.comHomebrewhomebrew-corepull154526#issuecomment-1814795860
   patch :DATA
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https://docs.rs/openssl/latest/openssl/#manual
+    # https:docs.rsopenssllatestopenssl#manual
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     ENV["LIBGIT2_NO_VENDOR"] = "1"
@@ -90,16 +90,16 @@ class Rust < Formula
     end
 
     resource("cargobootstrap").stage do
-      system "./install.sh", "--prefix=#{buildpath}/cargobootstrap"
+      system ".install.sh", "--prefix=#{buildpath}cargobootstrap"
     end
-    ENV.prepend_path "PATH", buildpath/"cargobootstrap/bin"
+    ENV.prepend_path "PATH", buildpath"cargobootstrapbin"
 
-    cargo_src_path = buildpath/"src/tools/cargo"
+    cargo_src_path = buildpath"srctoolscargo"
     cargo_src_path.rmtree
     resource("cargo").stage cargo_src_path
     if OS.mac?
-      inreplace cargo_src_path/"Cargo.toml",
-                /^curl\s*=\s*"(.+)"$/,
+      inreplace cargo_src_path"Cargo.toml",
+                ^curl\s*=\s*"(.+)"$,
                 'curl = { version = "\\1", features = ["force-system-lib-on-osx"] }'
     end
 
@@ -132,23 +132,23 @@ class Rust < Formula
       args << "--release-channel=stable"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
 
-    (lib/"rustlib/src/rust").install "library"
+    (lib"rustlibsrcrust").install "library"
     rm_f [
       bin.glob("*.old"),
-      lib/"rustlib/install.log",
-      lib/"rustlib/uninstall.sh",
-      (lib/"rustlib").glob("manifest-*"),
+      lib"rustlibinstall.log",
+      lib"rustlibuninstall.sh",
+      (lib"rustlib").glob("manifest-*"),
     ]
   end
 
   def post_install
-    Dir["#{lib}/rustlib/**/*.dylib"].each do |dylib|
+    Dir["#{lib}rustlib***.dylib"].each do |dylib|
       chmod 0664, dylib
-      MachO::Tools.change_dylib_id(dylib, "@rpath/#{File.basename(dylib)}")
+      MachO::Tools.change_dylib_id(dylib, "@rpath#{File.basename(dylib)}")
       MachO.codesign!(dylib) if Hardware::CPU.arm?
       chmod 0444, dylib
     end
@@ -163,30 +163,30 @@ class Rust < Formula
   end
 
   test do
-    system bin/"rustdoc", "-h"
-    (testpath/"hello.rs").write <<~EOS
+    system bin"rustdoc", "-h"
+    (testpath"hello.rs").write <<~EOS
       fn main() {
         println!("Hello World!");
       }
     EOS
-    system bin/"rustc", "hello.rs"
-    assert_equal "Hello World!\n", shell_output("./hello")
-    system bin/"cargo", "new", "hello_world", "--bin"
-    assert_equal "Hello, world!", cd("hello_world") { shell_output("#{bin}/cargo run").split("\n").last }
+    system bin"rustc", "hello.rs"
+    assert_equal "Hello World!\n", shell_output(".hello")
+    system bin"cargo", "new", "hello_world", "--bin"
+    assert_equal "Hello, world!", cd("hello_world") { shell_output("#{bin}cargo run").split("\n").last }
 
     # We only check the tools' linkage here. No need to check rustc.
     expected_linkage = {
-      bin/"cargo" => [
-        Formula["libgit2"].opt_lib/shared_library("libgit2"),
-        Formula["libssh2"].opt_lib/shared_library("libssh2"),
-        Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
-        Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      bin"cargo" => [
+        Formula["libgit2"].opt_libshared_library("libgit2"),
+        Formula["libssh2"].opt_libshared_library("libssh2"),
+        Formula["openssl@3"].opt_libshared_library("libcrypto"),
+        Formula["openssl@3"].opt_libshared_library("libssl"),
       ],
     }
     unless OS.mac?
-      expected_linkage[bin/"cargo"] += [
-        Formula["curl"].opt_lib/shared_library("libcurl"),
-        Formula["zlib"].opt_lib/shared_library("libz"),
+      expected_linkage[bin"cargo"] += [
+        Formula["curl"].opt_libshared_library("libcurl"),
+        Formula["zlib"].opt_libshared_library("libz"),
       ]
     end
     missing_linkage = []
@@ -202,12 +202,12 @@ class Rust < Formula
 end
 
 __END__
-diff --git a/src/bootstrap/compile.rs b/src/bootstrap/compile.rs
+diff --git asrcbootstrapcompile.rs bsrcbootstrapcompile.rs
 index 292ccc5780f..7266badf501 100644
---- a/src/bootstrap/compile.rs
-+++ b/src/bootstrap/compile.rs
+--- asrcbootstrapcompile.rs
++++ bsrcbootstrapcompile.rs
 @@ -546,7 +546,9 @@ fn run(self, builder: &Builder<'_>) {
-                 .join("stage0/lib/rustlib")
+                 .join("stage0librustlib")
                  .join(&host)
                  .join("codegen-backends");
 -            builder.cp_r(&stage0_codegen_backends, &sysroot_codegen_backends);

@@ -2,13 +2,13 @@ cask "font-biz-udmincho" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/bizudmincho"
+      only_path: "oflbizudmincho"
   name "BIZ UDMincho"
   desc "Universal design typeface in the Japanese Mincho type tradition"
-  homepage "https://fonts.google.com/specimen/BIZ+UDMincho"
+  homepage "https:fonts.google.comspecimenBIZ+UDMincho"
 
   font "BIZUDMincho-Bold.ttf"
   font "BIZUDMincho-Regular.ttf"

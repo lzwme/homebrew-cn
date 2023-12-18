@@ -1,12 +1,12 @@
 class Tracebox < Formula
   desc "Middlebox detection tool"
-  homepage "https://www.github.com/tracebox/tracebox"
-  url "https://github.com/tracebox/tracebox.git",
+  homepage "https:www.github.comtraceboxtracebox"
+  url "https:github.comtraceboxtracebox.git",
       tag:      "v0.4.4",
       revision: "4fc12b2e330e52d340ecd64b3a33dbc34c160390"
   license "GPL-2.0-only"
   revision 3
-  head "https://github.com/tracebox/tracebox.git", branch: "master"
+  head "https:github.comtraceboxtracebox.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -33,11 +33,11 @@ class Tracebox < Formula
   def install
     ENV.append_to_cflags "-I#{Formula["libpcap"].opt_include}"
     ENV.append "LIBS", "-L#{Formula["libpcap"].opt_lib} -lpcap -lm"
-    ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}/lua"
+    ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}lua"
     ENV["LUA_LIB"] = "-L#{Formula["lua"].opt_lib} -llua"
     ENV.libcxx
     system "autoreconf", "--install"
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-libpcap=yes"
     system "make"
@@ -54,6 +54,6 @@ class Tracebox < Formula
   end
 
   test do
-    system bin/"tracebox", "-v"
+    system bin"tracebox", "-v"
   end
 end

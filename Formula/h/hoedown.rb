@@ -1,7 +1,7 @@
 class Hoedown < Formula
   desc "Secure Markdown processing (a revived fork of Sundown)"
-  homepage "https://github.com/hoedown/hoedown"
-  url "https://ghproxy.com/https://github.com/hoedown/hoedown/archive/refs/tags/3.0.7.tar.gz"
+  homepage "https:github.comhoedownhoedown"
+  url "https:github.comhoedownhoedownarchiverefstags3.0.7.tar.gz"
   sha256 "01b6021b1ec329b70687c0d240b12edcaf09c4aa28423ddf344d2bd9056ba920"
   license "ISC"
 
@@ -29,9 +29,9 @@ class Hoedown < Formula
   end
 
   test do
-    system "perl", "#{prefix}/test/MarkdownTest_1.0.3/MarkdownTest.pl",
-                   "--script=#{bin}/hoedown",
-                   "--testdir=#{prefix}/test/MarkdownTest_1.0.3/Tests",
+    system "perl", "#{prefix}testMarkdownTest_1.0.3MarkdownTest.pl",
+                   "--script=#{bin}hoedown",
+                   "--testdir=#{prefix}testMarkdownTest_1.0.3Tests",
                    "--tidy"
   end
 end

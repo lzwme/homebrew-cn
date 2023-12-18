@@ -1,17 +1,17 @@
 class Ponysay < Formula
   desc "Cowsay but with ponies"
-  homepage "https://github.com/erkin/ponysay/"
+  homepage "https:github.comerkinponysay"
   license "GPL-3.0-or-later"
   revision 7
-  head "https://github.com/erkin/ponysay.git", branch: "master"
+  head "https:github.comerkinponysay.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/erkin/ponysay/archive/refs/tags/3.0.3.tar.gz"
+    url "https:github.comerkinponysayarchiverefstags3.0.3.tar.gz"
     sha256 "c382d7f299fa63667d1a4469e1ffbf10b6813dcd29e861de6be55e56dc52b28a"
 
     # upstream commit 16 Nov 2019, `fix: do not compare literal with "is not"`
     patch do
-      url "https://github.com/erkin/ponysay/commit/69c23e3a.patch?full_index=1"
+      url "https:github.comerkinponysaycommit69c23e3a.patch?full_index=1"
       sha256 "2c58d5785186d1f891474258ee87450a88f799408e3039a1dc4a62784de91b63"
     end
   end
@@ -36,17 +36,17 @@ class Ponysay < Formula
   end
 
   def install
-    system "./setup.py",
+    system ".setup.py",
            "--freedom=partial",
            "--prefix=#{prefix}",
-           "--cache-dir=#{prefix}/var/cache",
-           "--sysconf-dir=#{prefix}/etc",
-           "--with-custom-env-python=#{Formula["python@3.12"].opt_bin}/python3.12",
+           "--cache-dir=#{prefix}varcache",
+           "--sysconf-dir=#{prefix}etc",
+           "--with-custom-env-python=#{Formula["python@3.12"].opt_bin}python3.12",
            "install"
   end
 
   test do
-    output = shell_output("#{bin}/ponysay test")
+    output = shell_output("#{bin}ponysay test")
     assert_match "test", output
     assert_match "____", output
   end

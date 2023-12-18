@@ -1,13 +1,13 @@
 class GnupgPkcs11Scd < Formula
   desc "Enable the use of PKCS#11 tokens with GnuPG"
-  homepage "https://gnupg-pkcs11.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/alonbl/gnupg-pkcs11-scd/releases/download/gnupg-pkcs11-scd-0.10.0/gnupg-pkcs11-scd-0.10.0.tar.bz2"
+  homepage "https:gnupg-pkcs11.sourceforge.net"
+  url "https:github.comalonblgnupg-pkcs11-scdreleasesdownloadgnupg-pkcs11-scd-0.10.0gnupg-pkcs11-scd-0.10.0.tar.bz2"
   sha256 "29bf29e7780f921c6d3a11f608e2b0483c1bb510c5afa8473090249dd57c5249"
   license "BSD-3-Clause"
 
   livecheck do
     url :stable
-    regex(/gnupg-pkcs11-scd[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(gnupg-pkcs11-scd[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -36,7 +36,7 @@ class GnupgPkcs11Scd < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--with-libgpg-error-prefix=#{Formula["libgpg-error"].opt_prefix}",
                           "--with-libassuan-prefix=#{Formula["libassuan"].opt_prefix}",
                           "--with-libgcrypt-prefix=#{Formula["libgcrypt"].opt_prefix}",
@@ -47,6 +47,6 @@ class GnupgPkcs11Scd < Formula
   end
 
   test do
-    system "#{bin}/gnupg-pkcs11-scd", "--help"
+    system "#{bin}gnupg-pkcs11-scd", "--help"
   end
 end

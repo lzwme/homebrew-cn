@@ -1,28 +1,28 @@
 class Libplacebo < Formula
   include Language::Python::Virtualenv
 
-  desc "Reusable library for GPU-accelerated image/video processing primitives"
-  homepage "https://code.videolan.org/videolan/libplacebo"
+  desc "Reusable library for GPU-accelerated imagevideo processing primitives"
+  homepage "https:code.videolan.orgvideolanlibplacebo"
   license "LGPL-2.1-or-later"
   revision 1
-  head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
+  head "https:code.videolan.orgvideolanlibplacebo.git", branch: "master"
 
   stable do
-    url "https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.1/libplacebo-v6.338.1.tar.bz2"
+    url "https:code.videolan.orgvideolanlibplacebo-archivev6.338.1libplacebo-v6.338.1.tar.bz2"
     sha256 "66f173e511884ad96c23073e6c3a846215db804f098e11698132abe5a63d6f72"
 
     resource "fast_float" do
-      url "https://ghproxy.com/https://github.com/fastfloat/fast_float/archive/refs/tags/v5.2.0.tar.gz"
+      url "https:github.comfastfloatfast_floatarchiverefstagsv5.2.0.tar.gz"
       sha256 "72bbfd1914e414c920e39abdc81378adf910a622b62c45b4c61d344039425d18"
     end
 
     resource "glad2" do
-      url "https://files.pythonhosted.org/packages/8b/b3/191508033476b6a409c070c6166b1c41ebb547cc6136260e9157343e6a2b/glad2-2.0.4.tar.gz"
+      url "https:files.pythonhosted.orgpackages8bb3191508033476b6a409c070c6166b1c41ebb547cc6136260e9157343e6a2bglad2-2.0.4.tar.gz"
       sha256 "ede1639f69f2ba08f1f498a40a707f34a609d24eb2ea0d6c9364689a798cf7d0"
     end
 
     resource "jinja2" do
-      url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
+      url "https:files.pythonhosted.orgpackages7aff75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cceJinja2-3.1.2.tar.gz"
       sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
     end
   end
@@ -54,16 +54,16 @@ class Libplacebo < Formula
       # Override resource name to use expected directory name
       dir_name = case r.name
       when "glad2", "jinja2"
-        r.name.sub(/\d+$/, "")
+        r.name.sub(\d+$, "")
       else
         r.name
       end
 
-      r.stage(Pathname("3rdparty")/dir_name)
+      r.stage(Pathname("3rdparty")dir_name)
     end
 
     system "meson", "setup", "build",
-                    "-Dvulkan-registry=#{Formula["vulkan-headers"].share}/vulkan/registry/vk.xml",
+                    "-Dvulkan-registry=#{Formula["vulkan-headers"].share}vulkanregistryvk.xml",
                     "-Dshaderc=enabled", "-Dvulkan=enabled", "-Dlcms=enabled",
                     *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -71,8 +71,8 @@ class Libplacebo < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libplacebo/config.h>
+    (testpath"test.c").write <<~EOS
+      #include <libplaceboconfig.h>
       #include <stdlib.h>
       int main() {
         return (pl_version() != NULL) ? 0 : 1;
@@ -80,6 +80,6 @@ class Libplacebo < Formula
     EOS
     system ENV.cc, "-o", "test", "test.c", "-I#{include}",
                    "-L#{lib}", "-lplacebo"
-    system "./test"
+    system ".test"
   end
 end

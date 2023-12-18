@@ -1,7 +1,7 @@
 class Leptonica < Formula
   desc "Image processing and image analysis library"
-  homepage "http://www.leptonica.org/"
-  url "https://ghproxy.com/https://github.com/DanBloomberg/leptonica/releases/download/1.83.1/leptonica-1.83.1.tar.gz"
+  homepage "http:www.leptonica.org"
+  url "https:github.comDanBloombergleptonicareleasesdownload1.83.1leptonica-1.83.1.tar.gz"
   sha256 "8f18615e0743af7df7f50985c730dfcf0c93548073d1f56621e4156a8b54d3dd"
   license "BSD-2-Clause"
 
@@ -26,16 +26,16 @@ class Leptonica < Formula
   depends_on "webp"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--with-libwebp",
                           "--with-libopenjpeg"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include <leptonica/allheaders.h>
+      #include <leptonicaallheaders.h>
 
       int main(int argc, char **argv) {
           fprintf(stdout, "%d.%d.%d", LIBLEPT_MAJOR_VERSION, LIBLEPT_MINOR_VERSION, LIBLEPT_PATCH_VERSION);
@@ -43,8 +43,8 @@ class Leptonica < Formula
       }
     EOS
 
-    flags = ["-I#{include}/leptonica"] + ENV.cflags.to_s.split
+    flags = ["-I#{include}leptonica"] + ENV.cflags.to_s.split
     system ENV.cxx, "test.cpp", *flags
-    assert_equal version.to_s, `./a.out`
+    assert_equal version.to_s, `.a.out`
   end
 end

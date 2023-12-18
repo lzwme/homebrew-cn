@@ -1,7 +1,7 @@
 class Pagmo < Formula
   desc "Scientific library for massively parallel optimization"
-  homepage "https://esa.github.io/pagmo2/"
-  url "https://ghproxy.com/https://github.com/esa/pagmo2/archive/refs/tags/v2.19.0.tar.gz"
+  homepage "https:esa.github.iopagmo2"
+  url "https:github.comesapagmo2archiverefstagsv2.19.0.tar.gz"
   sha256 "701ada528de7d454201e92a5d88903dd1c22ea64f43861d9694195ddfef82a70"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
   revision 2
@@ -32,38 +32,38 @@ class Pagmo < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
 
-      #include <pagmo/algorithm.hpp>
-      #include <pagmo/algorithms/sade.hpp>
-      #include <pagmo/archipelago.hpp>
-      #include <pagmo/problem.hpp>
-      #include <pagmo/problems/schwefel.hpp>
+      #include <pagmoalgorithm.hpp>
+      #include <pagmoalgorithmssade.hpp>
+      #include <pagmoarchipelago.hpp>
+      #include <pagmoproblem.hpp>
+      #include <pagmoproblemsschwefel.hpp>
 
       using namespace pagmo;
 
       int main()
       {
-          // 1 - Instantiate a pagmo problem constructing it from a UDP
-          // (i.e., a user-defined problem, in this case the 30-dimensional
-          // generalised Schwefel test function).
+           1 - Instantiate a pagmo problem constructing it from a UDP
+           (i.e., a user-defined problem, in this case the 30-dimensional
+           generalised Schwefel test function).
           problem prob{schwefel(30)};
 
-          // 2 - Instantiate a pagmo algorithm (self-adaptive differential
-          // evolution, 100 generations).
+           2 - Instantiate a pagmo algorithm (self-adaptive differential
+           evolution, 100 generations).
           algorithm algo{sade(100)};
 
-          // 3 - Instantiate an archipelago with 16 islands having each 20 individuals.
+           3 - Instantiate an archipelago with 16 islands having each 20 individuals.
           archipelago archi{16u, algo, prob, 20u};
 
-          // 4 - Run the evolution in parallel on the 16 separate islands 10 times.
+           4 - Run the evolution in parallel on the 16 separate islands 10 times.
           archi.evolve(10);
 
-          // 5 - Wait for the evolutions to finish.
+           5 - Wait for the evolutions to finish.
           archi.wait_check();
 
-          // 6 - Print the fitness of the best solution in each island.
+           6 - Print the fitness of the best solution in each island.
           for (const auto &isl : archi) {
               std::cout << isl.get_population().champion_f()[0] << std::endl;
           }
@@ -74,6 +74,6 @@ class Pagmo < Formula
 
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lpagmo",
                     "-std=c++17", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

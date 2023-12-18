@@ -1,8 +1,8 @@
 class Solargraph < Formula
   desc "Ruby language server"
-  homepage "https://solargraph.org"
+  homepage "https:solargraph.org"
   # Must be git, because solargraph.gemspec uses git ls-files
-  url "https://github.com/castwide/solargraph.git",
+  url "https:github.comcastwidesolargraph.git",
       tag:      "v0.50.0",
       revision: "58f3b8d0f31a3bded0b1cdbb6b2934eee262f03b"
   license "MIT"
@@ -25,8 +25,8 @@ class Solargraph < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
-    bin.install libexec/"bin/#{name}"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec"bin#{name}"
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
@@ -44,10 +44,10 @@ class Solargraph < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/solargraph", "stdio") do |stdin, stdout, _, _|
+    Open3.popen3("#{bin}solargraph", "stdio") do |stdin, stdout, _, _|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

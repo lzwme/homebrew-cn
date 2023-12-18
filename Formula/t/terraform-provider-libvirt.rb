@@ -1,7 +1,7 @@
 class TerraformProviderLibvirt < Formula
   desc "Terraform provisioning with Linux KVM using libvirt"
-  homepage "https://github.com/dmacvicar/terraform-provider-libvirt"
-  url "https://ghproxy.com/https://github.com/dmacvicar/terraform-provider-libvirt/archive/refs/tags/v0.7.6.tar.gz"
+  homepage "https:github.comdmacvicarterraform-provider-libvirt"
+  url "https:github.comdmacvicarterraform-provider-libvirtarchiverefstagsv0.7.6.tar.gz"
   sha256 "03a8305b3f2361dc8a147ac4ea0897ca3cc66387ef4e7346d2233324135e1b8c"
   license "Apache-2.0"
 
@@ -25,6 +25,6 @@ class TerraformProviderLibvirt < Formula
   end
 
   test do
-    assert_match(/This binary is a plugin/, shell_output("#{bin}/terraform-provider-libvirt 2>&1", 1))
+    assert_match(This binary is a plugin, shell_output("#{bin}terraform-provider-libvirt 2>&1", 1))
   end
 end

@@ -1,11 +1,11 @@
 class Gh < Formula
   desc "GitHub command-line tool"
-  homepage "https://cli.github.com/"
-  url "https://ghproxy.com/https://github.com/cli/cli/archive/refs/tags/v2.40.1.tar.gz"
+  homepage "https:cli.github.com"
+  url "https:github.comclicliarchiverefstagsv2.40.1.tar.gz"
   sha256 "0bb2af951b4716067747184b5b5bbd90c270edee5b45a84e62a5a803bf7ef467"
   license "MIT"
 
-  head "https://github.com/cli/cli.git", branch: "trunk"
+  head "https:github.comclicli.git", branch: "trunk"
 
   livecheck do
     url :stable
@@ -27,18 +27,18 @@ class Gh < Formula
   def install
     with_env(
       "GH_VERSION" => version.to_s,
-      "GO_LDFLAGS" => "-s -w -X main.updaterEnabled=cli/cli",
+      "GO_LDFLAGS" => "-s -w -X main.updaterEnabled=clicli",
     ) do
-      system "make", "bin/gh", "manpages"
+      system "make", "bingh", "manpages"
     end
-    bin.install "bin/gh"
-    man1.install Dir["share/man/man1/gh*.1"]
-    generate_completions_from_executable(bin/"gh", "completion", "-s")
+    bin.install "bingh"
+    man1.install Dir["sharemanman1gh*.1"]
+    generate_completions_from_executable(bin"gh", "completion", "-s")
   end
 
   test do
-    assert_match "gh version #{version}", shell_output("#{bin}/gh --version")
-    assert_match "Work with GitHub issues", shell_output("#{bin}/gh issue 2>&1")
-    assert_match "Work with GitHub pull requests", shell_output("#{bin}/gh pr 2>&1")
+    assert_match "gh version #{version}", shell_output("#{bin}gh --version")
+    assert_match "Work with GitHub issues", shell_output("#{bin}gh issue 2>&1")
+    assert_match "Work with GitHub pull requests", shell_output("#{bin}gh pr 2>&1")
   end
 end

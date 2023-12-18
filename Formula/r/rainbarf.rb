@@ -1,10 +1,10 @@
 class Rainbarf < Formula
-  desc "CPU/RAM/battery stats chart bar for tmux (and GNU screen)"
-  homepage "https://github.com/creaktive/rainbarf"
-  url "https://ghproxy.com/https://github.com/creaktive/rainbarf/archive/refs/tags/v1.4.tar.gz"
+  desc "CPURAMbattery stats chart bar for tmux (and GNU screen)"
+  homepage "https:github.comcreaktiverainbarf"
+  url "https:github.comcreaktiverainbarfarchiverefstagsv1.4.tar.gz"
   sha256 "066579c0805616075c49c705d1431fb4b7c94a08ef2b27dd8846bd3569a188a4"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  head "https://github.com/creaktive/rainbarf.git", branch: "master"
+  head "https:github.comcreaktiverainbarf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad16c485a0cb8c9f09c48a8747c0989e69ee897c77699e6441e9e1778eea4607"
@@ -25,14 +25,14 @@ class Rainbarf < Formula
   uses_from_macos "perl"
 
   def install
-    system "#{Formula["pod2man"].opt_bin}/pod2man", "rainbarf", "rainbarf.1"
+    system "#{Formula["pod2man"].opt_bin}pod2man", "rainbarf", "rainbarf.1"
     man1.install "rainbarf.1"
     bin.install "rainbarf"
   end
 
   test do
     # Avoid "Use of uninitialized value $battery" and sandbox violation
-    # Reported 5 Sep 2016 https://github.com/creaktive/rainbarf/issues/30
-    assert_match version.to_s, shell_output("#{bin}/rainbarf --help", 1)
+    # Reported 5 Sep 2016 https:github.comcreaktiverainbarfissues30
+    assert_match version.to_s, shell_output("#{bin}rainbarf --help", 1)
   end
 end

@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class MarkdownToc < Formula
   desc "Generate a markdown TOC (table of contents) with Remarkable"
-  homepage "https://github.com/jonschlinkert/markdown-toc"
-  url "https://registry.npmjs.org/markdown-toc/-/markdown-toc-1.2.0.tgz"
+  homepage "https:github.comjonschlinkertmarkdown-toc"
+  url "https:registry.npmjs.orgmarkdown-toc-markdown-toc-1.2.0.tgz"
   sha256 "4a5bf3efafb21217889ab240caacd795a1101bfbe07cd8abb228cc44937acd9c"
   license "MIT"
 
@@ -15,11 +15,11 @@ class MarkdownToc < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
     assert_equal "- [One](#one)\n- [Two](#two)",
-      shell_output("bash -c \"#{bin}/markdown-toc - <<< $'# One\\n\\n# Two'\"").strip
+      shell_output("bash -c \"#{bin}markdown-toc - <<< $'# One\\n\\n# Two'\"").strip
   end
 end

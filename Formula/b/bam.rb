@@ -1,10 +1,10 @@
 class Bam < Formula
   desc "Build system that uses Lua to describe the build process"
-  homepage "https://matricks.github.io/bam/"
-  url "https://ghproxy.com/https://github.com/matricks/bam/archive/refs/tags/v0.5.1.tar.gz"
+  homepage "https:matricks.github.iobam"
+  url "https:github.commatricksbamarchiverefstagsv0.5.1.tar.gz"
   sha256 "cc8596af3325ecb18ebd6ec2baee550e82cb7b2da19588f3f843b02e943a15a9"
   license "Zlib"
-  head "https://github.com/matricks/bam.git", branch: "master"
+  head "https:github.commatricksbam.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f96e777038d7de85e3cc3d52b30692f7980c1da78c82fa19447a1c0610c3e46"
@@ -24,12 +24,12 @@ class Bam < Formula
   end
 
   def install
-    system "./make_unix.sh"
+    system ".make_unix.sh"
     bin.install "bam"
   end
 
   test do
-    (testpath/"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~EOS
       #include <stdio.h>
       int main() {
         printf("hello\\n");
@@ -37,13 +37,13 @@ class Bam < Formula
       }
     EOS
 
-    (testpath/"bam.lua").write <<~EOS
+    (testpath"bam.lua").write <<~EOS
       settings = NewSettings()
       objs = Compile(settings, Collect("*.c"))
       exe = Link(settings, "hello", objs)
     EOS
 
-    system bin/"bam", "-v"
-    assert_equal "hello", shell_output("./hello").chomp
+    system bin"bam", "-v"
+    assert_equal "hello", shell_output(".hello").chomp
   end
 end

@@ -1,7 +1,7 @@
 class GitSeries < Formula
   desc "Track changes to a patch series over time"
-  homepage "https://github.com/git-series/git-series"
-  url "https://ghproxy.com/https://github.com/git-series/git-series/archive/refs/tags/0.9.1.tar.gz"
+  homepage "https:github.comgit-seriesgit-series"
+  url "https:github.comgit-seriesgit-seriesarchiverefstags0.9.1.tar.gz"
   sha256 "c0362e19d3fa168a7cb0e260fcdecfe070853b163c9f2dfd2ad8213289bc7e5f"
   license "MIT"
   revision 10
@@ -26,7 +26,7 @@ class GitSeries < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    # https://crates.io/crates/openssl#manual-configuration
+    # https:crates.iocratesopenssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
@@ -49,32 +49,32 @@ class GitSeries < Formula
   end
 
   test do
-    (testpath/".gitconfig").write <<~EOS
+    (testpath".gitconfig").write <<~EOS
       [user]
         name = Real Person
         email = notacat@hotmail.cat
     EOS
 
     system "git", "init"
-    (testpath/"test").write "foo"
+    (testpath"test").write "foo"
     system "git", "add", "test"
     system "git", "commit", "-m", "Initial commit"
-    (testpath/"test").append_lines "bar"
+    (testpath"test").append_lines "bar"
     system "git", "commit", "-m", "Second commit", "test"
-    system bin/"git-series", "start", "feature"
+    system bin"git-series", "start", "feature"
     system "git", "checkout", "HEAD~1"
-    system bin/"git-series", "base", "HEAD"
-    system bin/"git-series", "commit", "-a", "-m", "new feature v1"
+    system bin"git-series", "base", "HEAD"
+    system bin"git-series", "commit", "-a", "-m", "new feature v1"
 
     linked_libraries = [
-      Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libssh2"].opt_libshared_library("libssh2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
     ]
-    linked_libraries << (Formula["openssl@3"].opt_lib/shared_library("libcrypto")) if OS.mac?
+    linked_libraries << (Formula["openssl@3"].opt_libshared_library("libcrypto")) if OS.mac?
 
     linked_libraries.each do |library|
-      assert check_binary_linkage(bin/"git-series", library),
+      assert check_binary_linkage(bin"git-series", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

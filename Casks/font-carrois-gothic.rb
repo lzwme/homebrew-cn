@@ -2,10 +2,10 @@ cask "font-carrois-gothic" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/carroisgothic/CarroisGothic-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcarroisgothicCarroisGothic-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Carrois Gothic"
-  homepage "https://fonts.google.com/specimen/Carrois+Gothic"
+  homepage "https:fonts.google.comspecimenCarrois+Gothic"
 
   font "CarroisGothic-Regular.ttf"
 

@@ -5,15 +5,15 @@ cask "alex313031-thorium" do
   sha256 arm:   "3d3e0ff5ee0f32848e327877a86bb1279a2bc28ec4a2ffc690b7b85a9fb73c07",
          intel: "894a49d108fd9a82ddf8d6b52d223784a089279ef5bf7a701334de391e8fddb9"
 
-  url "https://ghproxy.com/https://github.com/Alex313031/Thorium-MacOS/releases/download/#{version}/Thorium_MacOS_#{arch}.dmg",
-      verified: "github.com/Alex313031/Thorium-MacOS/"
+  url "https:github.comAlex313031Thorium-MacOSreleasesdownload#{version}Thorium_MacOS_#{arch}.dmg",
+      verified: "github.comAlex313031Thorium-MacOS"
   name "Thorium"
   desc "Web browser"
-  homepage "https://thorium.rocks/"
+  homepage "https:thorium.rocks"
 
   livecheck do
     url :url
-    regex(/^(M?\d+(?:\.\d+)+)$/i)
+    regex(^(M?\d+(?:\.\d+)+)$i)
     strategy :github_latest
   end
 
@@ -21,21 +21,21 @@ cask "alex313031-thorium" do
   depends_on macos: ">= :high_sierra"
 
   app "Thorium.app"
-  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
-  shimscript = "#{staged_path}/thorium.wrapper.sh"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}thorium.wrapper.sh"
   binary shimscript, target: "thorium"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!/bin/bash
-      exec '#{appdir}/Thorium.app/Contents/MacOS/Thorium' "$@"
+      #!binbash
+      exec '#{appdir}Thorium.appContentsMacOSThorium' "$@"
     EOS
   end
 
   zap trash: [
-    "~/Library/Application Support/Thorium",
-    "~/Library/Caches/Thorium",
-    "~/Library/Preferences/org.chromium.Thorium.plist",
-    "~/Library/Saved Application State/org.chromium.Thorium.savedState",
+    "~LibraryApplication SupportThorium",
+    "~LibraryCachesThorium",
+    "~LibraryPreferencesorg.chromium.Thorium.plist",
+    "~LibrarySaved Application Stateorg.chromium.Thorium.savedState",
   ]
 end

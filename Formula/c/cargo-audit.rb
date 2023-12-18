@@ -1,14 +1,14 @@
 class CargoAudit < Formula
   desc "Audit Cargo.lock files for crates with security vulnerabilities"
-  homepage "https://rustsec.org/"
-  url "https://ghproxy.com/https://github.com/RustSec/rustsec/archive/refs/tags/cargo-audit/v0.18.3.tar.gz"
+  homepage "https:rustsec.org"
+  url "https:github.comRustSecrustsecarchiverefstagscargo-auditv0.18.3.tar.gz"
   sha256 "db58c773e4a6d308ec71ce7119435c9139d271bf60bcf0e42b6ba9bb1aa6879f"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/RustSec/rustsec.git", branch: "main"
+  head "https:github.comRustSecrustsec.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(%r{^cargo-audit/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^cargo-auditv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -33,15 +33,15 @@ class CargoAudit < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cargo-audit")
     # test cargo-audit
-    pkgshare.install "cargo-audit/tests/support"
+    pkgshare.install "cargo-audittestssupport"
   end
 
   test do
-    output = shell_output("#{bin}/cargo-audit audit 2>&1", 2)
-    assert_predicate HOMEBREW_CACHE/"cargo_cache/advisory-db", :exist?
+    output = shell_output("#{bin}cargo-audit audit 2>&1", 2)
+    assert_predicate HOMEBREW_CACHE"cargo_cacheadvisory-db", :exist?
     assert_match "not found: Couldn't load Cargo.lock", output
 
-    cp_r "#{pkgshare}/support/base64_vuln/.", testpath
-    assert_match "error: 1 vulnerability found!", shell_output("#{bin}/cargo-audit audit 2>&1", 1)
+    cp_r "#{pkgshare}supportbase64_vuln.", testpath
+    assert_match "error: 1 vulnerability found!", shell_output("#{bin}cargo-audit audit 2>&1", 1)
   end
 end

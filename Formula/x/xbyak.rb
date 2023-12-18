@@ -1,14 +1,14 @@
 class Xbyak < Formula
   desc "C++ JIT assembler for x86 (IA32), x64 (AMD64, x86-64)"
-  homepage "https://github.com/herumi/xbyak"
-  url "https://ghproxy.com/https://github.com/herumi/xbyak/archive/refs/tags/v7.00.tar.gz"
+  homepage "https:github.comherumixbyak"
+  url "https:github.comherumixbyakarchiverefstagsv7.00.tar.gz"
   sha256 "9bc479d99bb3bbd30669813ca9719126fe93ab1bae857bd799d2b16a1fcb4c32"
   license "BSD-3-Clause"
-  head "https://github.com/herumi/xbyak.git", branch: "master"
+  head "https:github.comherumixbyak.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,8 +24,8 @@ class Xbyak < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <xbyak/xbyak_util.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <xbyakxbyak_util.h>
 
       int main() {
         Xbyak::util::Cpu cpu;

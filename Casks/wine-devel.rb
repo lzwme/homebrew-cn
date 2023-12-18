@@ -4,17 +4,17 @@ cask "wine-devel" do
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
-  # See https://www.winehq.org/pipermail/wine-devel/2021-July/191504.html
-  url "https://ghproxy.com/https://github.com/Gcenx/macOS_Wine_builds/releases/download/#{version}/wine-devel-#{version}-osx64.tar.xz",
-      verified: "github.com/Gcenx/macOS_Wine_builds/"
+  # See https:www.winehq.orgpipermailwine-devel2021-July191504.html
+  url "https:github.comGcenxmacOS_Wine_buildsreleasesdownload#{version}wine-devel-#{version}-osx64.tar.xz",
+      verified: "github.comGcenxmacOS_Wine_builds"
   name "WineHQ-devel"
   desc "Compatibility layer to run Windows applications"
-  homepage "https://wiki.winehq.org/MacOS"
+  homepage "https:wiki.winehq.orgMacOS"
 
   livecheck do
     url :url
     strategy :github_latest
-    regex(/^v?((?:\d+(?:\.\d+)+)(?:-RC\d)?)$/i)
+    regex(^v?((?:\d+(?:\.\d+)+)(?:-RC\d)?)$i)
   end
 
   conflicts_with cask: [
@@ -24,36 +24,36 @@ cask "wine-devel" do
   depends_on cask: "gstreamer-runtime"
 
   app "Wine Devel.app"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/start/bin/appdb"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/start/bin/winehelp"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/msiexec"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/notepad"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/regedit"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/regsvr32"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/wine"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/wine64"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/wineboot"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/winecfg"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/wineconsole"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/winedbg"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/winefile"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/winemine"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/winepath"
-  binary "#{appdir}/Wine Devel.app/Contents/Resources/wine/bin/wineserver"
+  binary "#{appdir}Wine Devel.appContentsResourcesstartbinappdb"
+  binary "#{appdir}Wine Devel.appContentsResourcesstartbinwinehelp"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinmsiexec"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinnotepad"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinregedit"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinregsvr32"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwine"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwine64"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwineboot"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwinecfg"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwineconsole"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwinedbg"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwinefile"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwinemine"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwinepath"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwineserver"
 
   zap trash: [
-        "~/.local/share/applications/wine*",
-        "~/.local/share/icons/hicolor/**/application-x-wine*",
-        "~/.local/share/mime/application/x-wine*",
-        "~/.local/share/mime/packages/x-wine*",
-        "~/.wine",
-        "~/.wine32",
-        "~/Library/Saved Application State/org.winehq.wine-devel.wine.savedState",
+        "~.localshareapplicationswine*",
+        "~.localshareiconshicolor**application-x-wine*",
+        "~.localsharemimeapplicationx-wine*",
+        "~.localsharemimepackagesx-wine*",
+        "~.wine",
+        "~.wine32",
+        "~LibrarySaved Application Stateorg.winehq.wine-devel.wine.savedState",
       ],
       rmdir: [
-        "~/.local/share/applications",
-        "~/.local/share/icons",
-        "~/.local/share/mime",
+        "~.localshareapplications",
+        "~.localshareicons",
+        "~.localsharemime",
       ]
 
   caveats <<~EOS
@@ -63,8 +63,8 @@ cask "wine-devel" do
     variable which can be set to either win32 or win64.
 
     To create a new pure 32-bit prefix, you can run:
-      $ WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
+      $ WINEARCH=win32 WINEPREFIX=~.wine32 winecfg
 
-    See the Wine FAQ for details: https://wiki.winehq.org/FAQ#Wineprefixes
+    See the Wine FAQ for details: https:wiki.winehq.orgFAQ#Wineprefixes
   EOS
 end

@@ -1,7 +1,7 @@
 class Kubecfg < Formula
   desc "Manage complex enterprise Kubernetes environments as code"
-  homepage "https://github.com/kubecfg/kubecfg"
-  url "https://ghproxy.com/https://github.com/kubecfg/kubecfg/archive/refs/tags/v0.34.2.tar.gz"
+  homepage "https:github.comkubecfgkubecfg"
+  url "https:github.comkubecfgkubecfgarchiverefstagsv0.34.2.tar.gz"
   sha256 "85931a3a4fa1e16973a7861a4cc70cc783973641556ed433ef7a9fb02f110f7a"
   license "Apache-2.0"
 
@@ -23,10 +23,10 @@ class Kubecfg < Formula
     pkgshare.install Pathname("examples").children
     pkgshare.install Pathname("testdata").children
 
-    generate_completions_from_executable(bin/"kubecfg", "completion", "--shell")
+    generate_completions_from_executable(bin"kubecfg", "completion", "--shell")
   end
 
   test do
-    system bin/"kubecfg", "show", "--alpha", pkgshare/"kubecfg_test.jsonnet"
+    system bin"kubecfg", "show", "--alpha", pkgshare"kubecfg_test.jsonnet"
   end
 end

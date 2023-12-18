@@ -5,11 +5,11 @@ cask "bloop" do
   sha256 arm:   "ad8d21aef94b90348e32255ee7c83aa9680f4b219fb6b45bfebd03e5f08367b0",
          intel: "30bebe04ed4044e47f10ecc96f7a2a8fdd4696a7bac5426bdedeee78830bfe2b"
 
-  url "https://ghproxy.com/https://github.com/BloopAI/bloop/releases/download/v#{version}/bloop_#{version}_#{arch}.dmg",
-      verified: "github.com/BloopAI/bloop/"
+  url "https:github.comBloopAIbloopreleasesdownloadv#{version}bloop_#{version}_#{arch}.dmg",
+      verified: "github.comBloopAIbloop"
   name "bloop"
   desc "Code search engine"
-  homepage "https://bloop.ai/"
+  homepage "https:bloop.ai"
 
   livecheck do
     url :url
@@ -21,9 +21,9 @@ cask "bloop" do
   app "bloop.app"
 
   zap trash: [
-    "~/Library/Caches/ai.bloop.bloop",
-    "~/Library/Preferences/ai.bloop.bloop.plist",
-    "~/Library/Saved Application State/ai.bloop.bloop.savedState",
-    "~/Library/WebKit/ai.bloop.bloop",
+    "~LibraryCachesai.bloop.bloop",
+    "~LibraryPreferencesai.bloop.bloop.plist",
+    "~LibrarySaved Application Stateai.bloop.bloop.savedState",
+    "~LibraryWebKitai.bloop.bloop",
   ]
 end

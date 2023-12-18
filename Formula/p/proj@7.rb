@@ -1,7 +1,7 @@
 class ProjAT7 < Formula
   desc "Cartographic Projections Library"
-  homepage "https://proj.org/"
-  url "https://ghproxy.com/https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz"
+  homepage "https:proj.org"
+  url "https:github.comOSGeoPROJreleasesdownload7.2.1proj-7.2.1.tar.gz"
   sha256 "b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14"
   license "MIT"
   revision 1
@@ -20,7 +20,7 @@ class ProjAT7 < Formula
 
   keg_only :versioned_formula
 
-  # https://github.com/OSGeo/PROJ/issues/3067
+  # https:github.comOSGeoPROJissues3067
   deprecate! date: "2023-02-09", because: :versioned_formula
 
   depends_on "pkg-config" => :build
@@ -33,19 +33,19 @@ class ProjAT7 < Formula
 
   # The datum grid files are required to support datum shifting
   resource "datumgrid" do
-    url "https://download.osgeo.org/proj/proj-datumgrid-1.8.zip"
+    url "https:download.osgeo.orgprojproj-datumgrid-1.8.zip"
     sha256 "b9838ae7e5f27ee732fb0bfed618f85b36e8bb56d7afb287d506338e9f33861e"
   end
 
   def install
-    (buildpath/"nad").install resource("datumgrid")
-    system "./configure", "--disable-dependency-tracking",
+    (buildpath"nad").install resource("datumgrid")
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test").write <<~EOS
+    (testpath"test").write <<~EOS
       45d15n 71d07w Boston, United States
       40d40n 73d58w New York, United States
       48d51n 2d20e Paris, France
@@ -58,7 +58,7 @@ class ProjAT7 < Formula
       -8101.66\t5707500.23 London, England
     EOS
 
-    output = shell_output("#{bin}/proj +proj=poly +ellps=clrk66 -r #{testpath}/test")
+    output = shell_output("#{bin}proj +proj=poly +ellps=clrk66 -r #{testpath}test")
     assert_equal match, output
   end
 end

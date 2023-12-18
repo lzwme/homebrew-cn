@@ -2,11 +2,11 @@ cask "font-zen-dots" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/zendots/ZenDots-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflzendotsZenDots-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Zen Dots"
   desc "One of three latin fonts part of the zen fonts collection"
-  homepage "https://fonts.google.com/specimen/Zen+Dots"
+  homepage "https:fonts.google.comspecimenZen+Dots"
 
   font "ZenDots-Regular.ttf"
 

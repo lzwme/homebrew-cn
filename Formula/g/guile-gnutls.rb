@@ -1,10 +1,10 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
-  homepage "https://gitlab.com/gnutls/guile"
-  url "https://gitlab.com/gnutls/guile/uploads/9060bc55069cedb40ab46cea49b439c0/guile-gnutls-4.0.0.tar.gz"
+  homepage "https:gitlab.comgnutlsguile"
+  url "https:gitlab.comgnutlsguileuploads9060bc55069cedb40ab46cea49b439c0guile-gnutls-4.0.0.tar.gz"
   sha256 "5b4cb926032076ec346bb5c0bc0d0231f968fe0f565913cc16934bb793afb239"
   license "LGPL-2.1-or-later"
-  head "https://gitlab.com/gnutls/guile.git", branch: "master"
+  head "https:gitlab.comgnutlsguile.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "fa04d75c5e4ce832178da0dd59c0903976517ec88bab6e447c2635f8efabcf86"
@@ -22,18 +22,18 @@ class GuileGnutls < Formula
   depends_on "guile"
 
   def install
-    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] },
-                          "--with-guile-site-dir=#{share}/guile/site/3.0",
-                          "--with-guile-site-ccache-dir=#{lib}/guile/3.0/site-ccache",
-                          "--with-guile-extension-dir=#{lib}/guile/3.0/extensions",
+    system ".configure", *std_configure_args.reject { |s| s["--disable-debug"] },
+                          "--with-guile-site-dir=#{share}guilesite3.0",
+                          "--with-guile-site-ccache-dir=#{lib}guile3.0site-ccache",
+                          "--with-guile-extension-dir=#{lib}guile3.0extensions",
                           "--disable-silent-rules"
     system "make", "install"
   end
 
   def post_install
     # Touch gnutls.go to avoid Guile recompilation.
-    # See https://github.com/Homebrew/homebrew-core/pull/60307#discussion_r478917491
-    touch lib/"guile/3.0/site-ccache/gnutls.go"
+    # See https:github.comHomebrewhomebrew-corepull60307#discussion_r478917491
+    touch lib"guile3.0site-ccachegnutls.go"
   end
 
   def caveats
@@ -41,21 +41,21 @@ class GuileGnutls < Formula
       If you are going to use the Guile bindings you will need to add the following
       to your .bashrc or equivalent in order for Guile to find the TLS certificates
       database:
-        export GUILE_TLS_CERTIFICATE_DIRECTORY=#{Formula["gnutls"].pkgetc}/
+        export GUILE_TLS_CERTIFICATE_DIRECTORY=#{Formula["gnutls"].pkgetc}
     EOS
   end
 
   test do
-    gnutls = testpath/"gnutls.scm"
+    gnutls = testpath"gnutls.scm"
     gnutls.write <<~EOS
       (use-modules (gnutls))
       (gnutls-version)
     EOS
 
     ENV["GUILE_AUTO_COMPILE"] = "0"
-    ENV["GUILE_LOAD_PATH"] = HOMEBREW_PREFIX/"share/guile/site/3.0"
-    ENV["GUILE_LOAD_COMPILED_PATH"] = HOMEBREW_PREFIX/"lib/guile/3.0/site-ccache"
-    ENV["GUILE_SYSTEM_EXTENSIONS_PATH"] = HOMEBREW_PREFIX/"lib/guile/3.0/extensions"
+    ENV["GUILE_LOAD_PATH"] = HOMEBREW_PREFIX"shareguilesite3.0"
+    ENV["GUILE_LOAD_COMPILED_PATH"] = HOMEBREW_PREFIX"libguile3.0site-ccache"
+    ENV["GUILE_SYSTEM_EXTENSIONS_PATH"] = HOMEBREW_PREFIX"libguile3.0extensions"
 
     system "guile", gnutls
   end

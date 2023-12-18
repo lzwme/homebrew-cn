@@ -1,10 +1,10 @@
 class Erigon < Formula
   desc "Implementation of Ethereum (execution client), on the efficiency frontier"
-  homepage "https://github.com/ledgerwatch/erigon"
-  url "https://ghproxy.com/https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.55.1.tar.gz"
+  homepage "https:github.comledgerwatcherigon"
+  url "https:github.comledgerwatcherigonarchiverefstagsv2.55.1.tar.gz"
   sha256 "2e340bb5504f565bb9fe8c4d246dea50bd54bfcf6a91e9196aeb4fbda722ae9e"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
-  head "https://github.com/ledgerwatch/erigon.git", branch: "devel"
+  head "https:github.comledgerwatcherigon.git", branch: "devel"
 
   livecheck do
     url :stable
@@ -34,11 +34,11 @@ class Erigon < Formula
     end
 
     system "make", "all"
-    bin.install Dir["build/bin/*"]
+    bin.install Dir["buildbin*"]
   end
 
   test do
-    (testpath/"genesis.json").write <<~EOS
+    (testpath"genesis.json").write <<~EOS
       {
         "config": {
           "homesteadBlock": 10
@@ -59,7 +59,7 @@ class Erigon < Formula
       --log.dir.verbosity debug
       --log.dir.path #{testpath}
     ]
-    system "#{bin}/erigon", *args, "init", "genesis.json"
-    assert_predicate testpath/"erigon.log", :exist?
+    system "#{bin}erigon", *args, "init", "genesis.json"
+    assert_predicate testpath"erigon.log", :exist?
   end
 end

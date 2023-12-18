@@ -1,8 +1,8 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
-  homepage "https://github.com/pavel-odintsov/fastnetmon/"
+  homepage "https:github.compavel-odintsovfastnetmon"
   # TODO: Check if we can use unversioned `grpc` at version bump
-  url "https://ghproxy.com/https://github.com/pavel-odintsov/fastnetmon/archive/refs/tags/v1.2.6.tar.gz"
+  url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
   revision 2
@@ -50,43 +50,43 @@ class Fastnetmon < Formula
 
   service do
     run [
-      opt_sbin/"fastnetmon",
+      opt_sbin"fastnetmon",
       "--configuration_file",
-      etc/"fastnetmon.conf",
+      etc"fastnetmon.conf",
       "--log_to_console",
       "--disable_pid_logic",
     ]
     keep_alive false
     working_dir HOMEBREW_PREFIX
-    log_path var/"log/fastnetmon.log"
-    error_log_path var/"log/fastnetmon.log"
+    log_path var"logfastnetmon.log"
+    error_log_path var"logfastnetmon.log"
   end
 
   test do
-    cp etc/"fastnetmon.conf", testpath
+    cp etc"fastnetmon.conf", testpath
 
-    inreplace testpath/"fastnetmon.conf", "/tmp/fastnetmon.dat", (testpath/"fastnetmon.dat").to_s
+    inreplace testpath"fastnetmon.conf", "tmpfastnetmon.dat", (testpath"fastnetmon.dat").to_s
 
-    inreplace testpath/"fastnetmon.conf", "/tmp/fastnetmon_ipv6.dat", (testpath/"fastnetmon_ipv6.dat").to_s
+    inreplace testpath"fastnetmon.conf", "tmpfastnetmon_ipv6.dat", (testpath"fastnetmon_ipv6.dat").to_s
 
     fastnetmon_pid = fork do
-      exec opt_sbin/"fastnetmon",
+      exec opt_sbin"fastnetmon",
            "--configuration_file",
-           testpath/"fastnetmon.conf",
+           testpath"fastnetmon.conf",
            "--log_to_console",
            "--disable_pid_logic"
     end
 
     sleep 15
 
-    assert_path_exists testpath/"fastnetmon.dat"
+    assert_path_exists testpath"fastnetmon.dat"
 
-    ipv4_stats_output = (testpath/"fastnetmon.dat").read
+    ipv4_stats_output = (testpath"fastnetmon.dat").read
     assert_match("Incoming traffic", ipv4_stats_output)
 
-    assert_path_exists testpath/"fastnetmon_ipv6.dat"
+    assert_path_exists testpath"fastnetmon_ipv6.dat"
 
-    ipv6_stats_output = (testpath/"fastnetmon_ipv6.dat").read
+    ipv6_stats_output = (testpath"fastnetmon_ipv6.dat").read
     assert_match("Incoming traffic", ipv6_stats_output)
   ensure
     Process.kill "SIGTERM", fastnetmon_pid

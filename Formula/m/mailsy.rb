@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Mailsy < Formula
   desc "Quickly generate a temporary email address"
-  homepage "https://github.com/BalliAsghar/Mailsy"
-  url "https://registry.npmjs.org/mailsy/-/mailsy-4.0.1.tgz"
+  homepage "https:github.comBalliAsgharMailsy"
+  url "https:registry.npmjs.orgmailsy-mailsy-4.0.1.tgz"
   sha256 "de0f20fa8ea5594300a9edc07126d375105f270e3572d185ed30e063a2d1adac"
   license "MIT"
 
@@ -23,11 +23,11 @@ class Mailsy < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    assert_match "Account not created yet", shell_output("#{bin}/mailsy me")
-    assert_match "Account not created yet", shell_output("#{bin}/mailsy d")
+    assert_match "Account not created yet", shell_output("#{bin}mailsy me")
+    assert_match "Account not created yet", shell_output("#{bin}mailsy d")
   end
 end

@@ -1,13 +1,13 @@
 class Openmodelica < Formula
   desc "Open-source modeling and simulation tool"
-  homepage "https://openmodelica.org/"
+  homepage "https:openmodelica.org"
   # GitHub's archives lack submodules, must pull:
-  url "https://github.com/OpenModelica/OpenModelica.git",
+  url "https:github.comOpenModelicaOpenModelica.git",
       tag:      "v1.18.0",
       revision: "49be4faa5a625a18efbbd74cc2f5be86aeea37bb"
   license "GPL-3.0-only"
   revision 6
-  head "https://github.com/OpenModelica/OpenModelica.git", branch: "master"
+  head "https:github.comOpenModelicaOpenModelica.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_monterey: "ca8e1b846f44e62ae8492eb6973307d5878451d9d12b55ab581a5d0db30835b1"
@@ -16,7 +16,7 @@ class Openmodelica < Formula
     sha256 cellar: :any, big_sur:        "727699c2d6e510c6cb271594644ef0eec12f28e7b4acb047c778ffa1f68efbf0"
   end
 
-  # https://openmodelica.org/download/download-mac
+  # https:openmodelica.orgdownloaddownload-mac
   # The Mac builds of OpenModelica were discontinued after version 1.16.
   # Depends on legacy qt@5
   disable! date: "2023-10-18", because: :unsupported
@@ -52,7 +52,7 @@ class Openmodelica < Formula
 
   def install
     if MacOS.version >= :catalina
-      ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}/usr/include/ffi"
+      ENV.append_to_cflags "-I#{MacOS.sdk_path_if_needed}usrincludeffi"
     else
       ENV.append_to_cflags "-I#{Formula["libffi"].opt_include}"
     end
@@ -68,32 +68,32 @@ class Openmodelica < Formula
     ]
 
     system "autoreconf", "--install", "--verbose", "--force"
-    system "./configure", *args
+    system ".configure", *args
     # omplot needs qt & OpenModelica #7240.
     # omparser needs OpenModelica #7247
     # omshell, omedit, omnotebook, omoptim need QTWebKit: #19391 & #19438
     # omsens_qt fails with: "OMSens_Qt is not supported on MacOS"
     system "make", "omc", "omlibrary-core", "omsimulator"
-    prefix.install Dir["build/*"]
+    prefix.install Dir["build*"]
   end
 
   test do
-    system "#{bin}/omc", "--version"
-    system "#{bin}/OMSimulator", "--version"
-    (testpath/"test.mo").write <<~EOS
+    system "#{bin}omc", "--version"
+    system "#{bin}OMSimulator", "--version"
+    (testpath"test.mo").write <<~EOS
       model test
       Real x;
       initial equation x = 10;
       equation der(x) = -x;
       end test;
     EOS
-    assert_match "class test", shell_output("#{bin}/omc #{testpath/"test.mo"}")
+    assert_match "class test", shell_output("#{bin}omc #{testpath"test.mo"}")
   end
 end
 
 __END__
---- a/OMCompiler/3rdParty/lis-1.4.12/m4/libtool.m4
-+++ b/OMCompiler/3rdParty/lis-1.4.12/m4/libtool.m4
+--- aOMCompiler3rdPartylis-1.4.12m4libtool.m4
++++ bOMCompiler3rdPartylis-1.4.12m4libtool.m4
 @@ -1067,16 +1067,11 @@ _LT_EOF
        _lt_dar_allow_undefined='$wl-undefined ${wl}suppress' ;;
      darwin1.*)

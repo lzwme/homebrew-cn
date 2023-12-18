@@ -1,10 +1,10 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
-  homepage "https://goplus.org"
-  url "https://ghproxy.com/https://github.com/goplus/gop/archive/refs/tags/v1.1.13.tar.gz"
+  homepage "https:goplus.org"
+  url "https:github.comgoplusgoparchiverefstagsv1.1.13.tar.gz"
   sha256 "335c60bf09e33b60a1cc5a6925ee40417f8bc4b73d3b8ebefb49aa71826838ff"
   license "Apache-2.0"
-  head "https://github.com/goplus/gop.git", branch: "main"
+  head "https:github.comgoplusgop.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "6cc87471a11edd69c1c099cbf359786fd4b04a38719c1b6b13f053c1d03f2211"
@@ -20,30 +20,30 @@ class Goplus < Formula
 
   def install
     ENV["GOPROOT_FINAL"] = libexec
-    system "go", "run", "cmd/make.go", "--install"
+    system "go", "run", "cmdmake.go", "--install"
 
     libexec.install Dir["*"] - Dir[".*"]
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
   end
 
   test do
-    (testpath/"hello.gop").write <<~EOS
+    (testpath"hello.gop").write <<~EOS
       println("Hello World")
     EOS
 
     # Run gop fmt, run, build
     ENV.prepend "GO111MODULE", "on"
 
-    assert_equal "v#{version}", shell_output("#{bin}/gop env GOPVERSION").chomp unless head?
-    system bin/"gop", "fmt", "hello.gop"
-    assert_equal "Hello World\n", shell_output("#{bin}/gop run hello.gop")
+    assert_equal "v#{version}", shell_output("#{bin}gop env GOPVERSION").chomp unless head?
+    system bin"gop", "fmt", "hello.gop"
+    assert_equal "Hello World\n", shell_output("#{bin}gop run hello.gop")
 
-    (testpath/"go.mod").write <<~EOS
+    (testpath"go.mod").write <<~EOS
       module hello
     EOS
 
-    system "go", "get", "github.com/goplus/gop/builtin"
-    system bin/"gop", "build", "-o", "hello"
-    assert_equal "Hello World\n", shell_output("./hello")
+    system "go", "get", "github.comgoplusgopbuiltin"
+    system bin"gop", "build", "-o", "hello"
+    assert_equal "Hello World\n", shell_output(".hello")
   end
 end

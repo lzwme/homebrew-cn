@@ -1,11 +1,11 @@
 class Caf < Formula
   # Renamed from libccpa
   desc "Implementation of the Actor Model for C++"
-  homepage "https://www.actor-framework.org/"
-  url "https://ghproxy.com/https://github.com/actor-framework/actor-framework/archive/refs/tags/0.19.4.tar.gz"
+  homepage "https:www.actor-framework.org"
+  url "https:github.comactor-frameworkactor-frameworkarchiverefstags0.19.4.tar.gz"
   sha256 "114d43e3a7a2305ca1d2106cd0daeff471564f62b90db1e453ba9eb5c47c02f6"
   license "BSD-3-Clause"
-  head "https://github.com/actor-framework/actor-framework.git", branch: "master"
+  head "https:github.comactor-frameworkactor-framework.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d0a8d3c6b13d2d74323eac03e6c53ac2341b14e093ac8f16a5aa1a3160cd5f2d"
@@ -23,7 +23,7 @@ class Caf < Formula
   fails_with gcc: "5"
 
   def install
-    tools = pkgshare/"tools"
+    tools = pkgshare"tools"
     rpaths = [rpath, rpath(source: tools)]
     args = ["-DCAF_ENABLE_TESTING=OFF", "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}"]
 
@@ -33,9 +33,9 @@ class Caf < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
-      #include <caf/all.hpp>
+      #include <cafall.hpp>
       using namespace caf;
       void caf_main(actor_system& system) {
         scoped_actor self{system};
@@ -46,6 +46,6 @@ class Caf < Formula
       CAF_MAIN()
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lcaf_core", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

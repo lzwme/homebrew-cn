@@ -1,7 +1,7 @@
 class DockerMachineDriverVmware < Formula
   desc "VMware Fusion & Workstation docker-machine driver"
-  homepage "https://www.vmware.com/products/personal-desktop-virtualization.html"
-  url "https://github.com/machine-drivers/docker-machine-driver-vmware.git",
+  homepage "https:www.vmware.comproductspersonal-desktop-virtualization.html"
+  url "https:github.commachine-driversdocker-machine-driver-vmware.git",
       tag:      "v0.1.5",
       revision: "faa4b93573820340d44333ffab35e2beee3f984a"
   license "Apache-2.0"
@@ -28,7 +28,7 @@ class DockerMachineDriverVmware < Formula
   end
 
   test do
-    docker_machine = Formula["docker-machine"].opt_bin/"docker-machine"
+    docker_machine = Formula["docker-machine"].opt_bin"docker-machine"
     output = shell_output("#{docker_machine} create --driver vmware -h")
     assert_match "engine-env", output
   end

@@ -1,10 +1,10 @@
 class S2n < Formula
-  desc "Implementation of the TLS/SSL protocols"
-  homepage "https://github.com/aws/s2n-tls"
-  url "https://ghproxy.com/https://github.com/aws/s2n-tls/archive/refs/tags/v1.4.0.tar.gz"
+  desc "Implementation of the TLSSSL protocols"
+  homepage "https:github.comawss2n-tls"
+  url "https:github.comawss2n-tlsarchiverefstagsv1.4.0.tar.gz"
   sha256 "3f786cb2f35e0551e120e1747e7b510a8228cd852073afa241313939672046cb"
   license "Apache-2.0"
-  head "https://github.com/aws/s2n-tls.git", branch: "main"
+  head "https:github.comawss2n-tls.git", branch: "main"
 
   livecheck do
     url :stable
@@ -25,17 +25,17 @@ class S2n < Formula
   depends_on "openssl@3"
 
   def install
-    system "cmake", "-S", ".", "-B", "build/static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "build/static"
-    system "cmake", "--install", "build/static"
+    system "cmake", "-S", ".", "-B", "buildstatic", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
+    system "cmake", "--build", "buildstatic"
+    system "cmake", "--install", "buildstatic"
 
-    system "cmake", "-S", ".", "-B", "build/shared", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "-S", ".", "-B", "buildshared", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
       #include <s2n.h>
       int main() {
@@ -45,6 +45,6 @@ class S2n < Formula
     EOS
     system ENV.cc, "test.c", "-L#{opt_lib}", "-ls2n", "-o", "test"
     ENV["S2N_DONT_MLOCK"] = "1" if OS.linux?
-    system "./test"
+    system ".test"
   end
 end

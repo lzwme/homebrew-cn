@@ -1,10 +1,10 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
-  homepage "https://www.assimp.org/"
-  url "https://ghproxy.com/https://github.com/assimp/assimp/archive/refs/tags/v5.3.1.tar.gz"
+  homepage "https:www.assimp.org"
+  url "https:github.comassimpassimparchiverefstagsv5.3.1.tar.gz"
   sha256 "a07666be71afe1ad4bc008c2336b7c688aca391271188eb9108d0c6db1be53f1"
   license :cannot_represent
-  head "https://github.com/assimp/assimp.git", branch: "master"
+  head "https:github.comassimpassimp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8ceed09a9c989320467f6b90692caac628c8313dcfdad38e6291170b1c98e66a"
@@ -37,18 +37,18 @@ class Assimp < Formula
 
   test do
     # Library test.
-    (testpath/"test.cpp").write <<~EOS
-      #include <assimp/Importer.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <assimpImporter.hpp>
       int main() {
         Assimp::Importer importer;
         return 0;
       }
     EOS
     system ENV.cc, "-std=c++11", "test.cpp", "-L#{lib}", "-lassimp", "-o", "test"
-    system "./test"
+    system ".test"
 
     # Application test.
-    (testpath/"test.obj").write <<~EOS
+    (testpath"test.obj").write <<~EOS
       # WaveFront .obj file - a single square based pyramid
 
       # Start a new group:
@@ -78,6 +78,6 @@ class Assimp < Formula
       # Triangle on right side
       f 2 3 5
     EOS
-    system bin/"assimp", "export", "test.obj", "test.ply"
+    system bin"assimp", "export", "test.obj", "test.ply"
   end
 end

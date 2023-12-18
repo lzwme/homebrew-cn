@@ -1,7 +1,7 @@
 class BasisUniversal < Formula
   desc "Basis Universal GPU texture codec command-line compression tool"
-  homepage "https://github.com/BinomialLLC/basis_universal"
-  url "https://ghproxy.com/https://github.com/BinomialLLC/basis_universal/archive/refs/tags/1.16.4.tar.gz"
+  homepage "https:github.comBinomialLLCbasis_universal"
+  url "https:github.comBinomialLLCbasis_universalarchiverefstags1.16.4.tar.gz"
   sha256 "e5740fd623a2f8472c9700b9447a8725a6f27d65b0b47c3e3926a60db41b8a64"
   license "Apache-2.0"
 
@@ -25,7 +25,7 @@ class BasisUniversal < Formula
   end
 
   test do
-    system "#{bin}/basisu", test_fixtures("test.png")
-    assert_predicate testpath/"test.basis", :exist?
+    system "#{bin}basisu", test_fixtures("test.png")
+    assert_predicate testpath"test.basis", :exist?
   end
 end

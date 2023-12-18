@@ -1,10 +1,10 @@
 class Ruler < Formula
   desc "Tool to abuse Exchange services"
-  homepage "https://github.com/sensepost/ruler"
-  url "https://ghproxy.com/https://github.com/sensepost/ruler/archive/refs/tags/2.5.0.tar.gz"
+  homepage "https:github.comsensepostruler"
+  url "https:github.comsensepostrulerarchiverefstags2.5.0.tar.gz"
   sha256 "e7344c60c604fa08f73dd30978f6815979cc26ca78bca71e132d0c66cc152718"
   license "CC-BY-NC-SA-4.0"
-  head "https://github.com/sensepost/ruler.git", branch: "master"
+  head "https:github.comsensepostruler.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1db97c959bbb99094e58e6fe0950bb4e00a377141ed4ab0461c27361d6e18d5"
@@ -23,23 +23,23 @@ class Ruler < Formula
   end
 
   test do
-    test_config = testpath/"config.yml"
+    test_config = testpath"config.yml"
     test_config.write <<~EOS
       username: ""
       email: ""
       password: ""
       hash: ""
       domain: ""
-      userdn: "/o=First Organization/ou=Exchange Administrative Group(FYDIBOHF23SPDLT)/cn=Recipients/cn=0003BFFDFEF9FB24"
+      userdn: "o=First Organizationou=Exchange Administrative Group(FYDIBOHF23SPDLT)cn=Recipientscn=0003BFFDFEF9FB24"
       mailbox: "0003bffd-fef9-fb24-0000-000000000000@outlook.com"
-      rpcurl: "https://outlook.office365.com/rpc/rpcproxy.dll"
+      rpcurl: "https:outlook.office365.comrpcrpcproxy.dll"
       rpc: false
       rpcencrypt: true
       ntlm: true
-      mapiurl: "https://outlook.office365.com/mapi/emsmdb/"
+      mapiurl: "https:outlook.office365.commapiemsmdb"
     EOS
 
-    output = shell_output("#{bin}/ruler --config #{test_config} check 2>&1", 1)
-    assert_match "Missing username and/or email argument.", output
+    output = shell_output("#{bin}ruler --config #{test_config} check 2>&1", 1)
+    assert_match "Missing username andor email argument.", output
   end
 end

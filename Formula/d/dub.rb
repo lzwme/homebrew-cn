@@ -1,14 +1,14 @@
 class Dub < Formula
   desc "Build tool for D projects"
-  homepage "https://code.dlang.org/getting_started"
-  url "https://ghproxy.com/https://github.com/dlang/dub/archive/refs/tags/v1.35.0.tar.gz"
+  homepage "https:code.dlang.orggetting_started"
+  url "https:github.comdlangdubarchiverefstagsv1.35.0.tar.gz"
   sha256 "7275cfbff1b8c8e2cb4a93ae98a8f4a6acdac88bbdc49e14aa66ea82a8539c94"
   license "MIT"
   version_scheme 1
-  head "https://github.com/dlang/dub.git", branch: "master"
+  head "https:github.comdlangdub.git", branch: "master"
 
   livecheck do
-    url "https://code.dlang.org/api/packages/dub/latest"
+    url "https:code.dlang.orgapipackagesdublatest"
     strategy :json do |json|
       json
     end
@@ -31,30 +31,30 @@ class Dub < Formula
 
   def install
     ENV["GITVER"] = version.to_s
-    system "ldc2", "-run", "./build.d"
-    system "bin/dub", "scripts/man/gen_man.d"
-    bin.install "bin/dub"
-    man1.install Dir["scripts/man/*.1"]
+    system "ldc2", "-run", ".build.d"
+    system "bindub", "scriptsmangen_man.d"
+    bin.install "bindub"
+    man1.install Dir["scriptsman*.1"]
 
-    bash_completion.install "scripts/bash-completion/dub.bash" => "dub"
-    zsh_completion.install "scripts/zsh-completion/_dub"
-    fish_completion.install "scripts/fish-completion/dub.fish"
+    bash_completion.install "scriptsbash-completiondub.bash" => "dub"
+    zsh_completion.install "scriptszsh-completion_dub"
+    fish_completion.install "scriptsfish-completiondub.fish"
   end
 
   test do
-    assert_match "DUB version #{version}", shell_output("#{bin}/dub --version")
+    assert_match "DUB version #{version}", shell_output("#{bin}dub --version")
 
-    (testpath/"dub.json").write <<~EOS
+    (testpath"dub.json").write <<~EOS
       {
         "name": "brewtest",
         "description": "A simple D application"
       }
     EOS
-    (testpath/"source/app.d").write <<~EOS
+    (testpath"sourceapp.d").write <<~EOS
       import std.stdio;
       void main() { writeln("Hello, world!"); }
     EOS
-    system "#{bin}/dub", "build", "--compiler=#{Formula["ldc"].opt_bin}/ldc2"
-    assert_equal "Hello, world!", shell_output("#{testpath}/brewtest").chomp
+    system "#{bin}dub", "build", "--compiler=#{Formula["ldc"].opt_bin}ldc2"
+    assert_equal "Hello, world!", shell_output("#{testpath}brewtest").chomp
   end
 end

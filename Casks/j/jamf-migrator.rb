@@ -1,19 +1,19 @@
 cask "jamf-migrator" do
-  version "7.3.0"
-  sha256 "8d2d108654341cadbb8b7e65e80d51bcd35f4f7cdde8c08db9ca6f7c7eb671fa"
+  version "7.3.1"
+  sha256 "18f3a21dca3cc142d300a6f0a0015e2d02adf0301d2fc86ce796dd07de7ebb22"
 
-  url "https://ghproxy.com/https://github.com/jamf/JamfMigrator/releases/download/v#{version}/jamf-migrator.zip"
+  url "https:github.comjamfJamfMigratorreleasesdownloadv#{version}jamf-migrator.zip"
   name "JamfMigrator"
   desc "Tool to migrate data granularly between Jamf Pro servers"
-  homepage "https://github.com/jamf/JamfMigrator"
+  homepage "https:github.comjamfJamfMigrator"
 
   depends_on macos: ">= :high_sierra"
 
   app "jamf-migrator.app"
 
   zap trash: [
-    "~/Library/Application Scripts/com.jamf.jamf-migrator",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.jamf.jamf-migrator.sfl*",
-    "~/Library/Containers/com.jamf.jamf-migrator",
+    "~LibraryApplication Scriptscom.jamf.jamf-migrator",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.jamf.jamf-migrator.sfl*",
+    "~LibraryContainerscom.jamf.jamf-migrator",
   ]
 end

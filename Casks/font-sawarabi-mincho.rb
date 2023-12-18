@@ -2,10 +2,10 @@ cask "font-sawarabi-mincho" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/sawarabimincho/SawarabiMincho-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsawarabiminchoSawarabiMincho-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Sawarabi Mincho"
-  homepage "https://fonts.google.com/specimen/Sawarabi+Mincho"
+  homepage "https:fonts.google.comspecimenSawarabi+Mincho"
 
   font "SawarabiMincho-Regular.ttf"
 

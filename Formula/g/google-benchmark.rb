@@ -1,10 +1,10 @@
 class GoogleBenchmark < Formula
   desc "C++ microbenchmark support library"
-  homepage "https://github.com/google/benchmark"
-  url "https://ghproxy.com/https://github.com/google/benchmark/archive/refs/tags/v1.8.3.tar.gz"
+  homepage "https:github.comgooglebenchmark"
+  url "https:github.comgooglebenchmarkarchiverefstagsv1.8.3.tar.gz"
   sha256 "6bc180a57d23d4d9515519f92b0c83d61b05b5bab188961f36ac7b06b0d9e9ce"
   license "Apache-2.0"
-  head "https://github.com/google/benchmark.git", branch: "main"
+  head "https:github.comgooglebenchmark.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "645b8944295b33279cfa7464992f5fe3f13ef10a49a111428ff1546d29121c2e"
@@ -31,9 +31,9 @@ class GoogleBenchmark < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <string>
-      #include <benchmark/benchmark.h>
+      #include <benchmarkbenchmark.h>
       static void BM_StringCreation(benchmark::State& state) {
         while (state.KeepRunning())
           std::string empty_string;
@@ -43,6 +43,6 @@ class GoogleBenchmark < Formula
     EOS
     flags = ["-I#{include}", "-L#{lib}", "-lbenchmark", "-pthread"] + ENV.cflags.to_s.split
     system ENV.cxx, "-o", "test", "test.cpp", *flags
-    system "./test"
+    system ".test"
   end
 end

@@ -1,12 +1,12 @@
 class Retdec < Formula
   desc "Retargetable machine-code decompiler based on LLVM"
-  homepage "https://github.com/avast/retdec"
-  url "https://github.com/avast/retdec.git",
+  homepage "https:github.comavastretdec"
+  url "https:github.comavastretdec.git",
       tag:      "v5.0",
       revision: "53e55b4b26e9b843787f0e06d867441e32b1604e"
   license all_of: ["MIT", "Zlib"]
   revision 1
-  head "https://github.com/avast/retdec.git", branch: "master"
+  head "https:github.comavastretdec.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -40,6 +40,6 @@ class Retdec < Formula
 
   test do
     assert_match "Running phase: cleanup",
-    shell_output("#{bin}/retdec-decompiler -o #{testpath}/a.c #{test_fixtures("mach/a.out")} 2>/dev/null")
+    shell_output("#{bin}retdec-decompiler -o #{testpath}a.c #{test_fixtures("macha.out")} 2>devnull")
   end
 end

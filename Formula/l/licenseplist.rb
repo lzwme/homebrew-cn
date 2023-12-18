@@ -1,7 +1,7 @@
 class Licenseplist < Formula
   desc "License list generator of all your dependencies for iOS applications"
-  homepage "https://www.slideshare.net/mono0926/licenseplist-a-license-list-generator-of-all-your-dependencies-for-ios-applications"
-  url "https://ghproxy.com/https://github.com/mono0926/LicensePlist/archive/refs/tags/3.25.1.tar.gz"
+  homepage "https:www.slideshare.netmono0926licenseplist-a-license-list-generator-of-all-your-dependencies-for-ios-applications"
+  url "https:github.commono0926LicensePlistarchiverefstags3.25.1.tar.gz"
   sha256 "f78887b2043d02108fda19ac587391b88ee9c911bf6558c119b261e6d220e2b5"
   license "MIT"
 
@@ -23,9 +23,9 @@ class Licenseplist < Formula
   end
 
   test do
-    (testpath/"Cartfile.resolved").write <<~EOS
-      github "realm/realm-swift" "v10.20.2"
+    (testpath"Cartfile.resolved").write <<~EOS
+      github "realmrealm-swift" "v10.20.2"
     EOS
-    assert_match "None", shell_output("#{bin}/license-plist --suppress-opening-directory")
+    assert_match "None", shell_output("#{bin}license-plist --suppress-opening-directory")
   end
 end

@@ -2,13 +2,13 @@ cask "font-carlito" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/carlito"
+      only_path: "oflcarlito"
   name "Carlito"
   desc "Metric-compatible with calibri"
-  homepage "https://fonts.google.com/specimen/Carlito"
+  homepage "https:fonts.google.comspecimenCarlito"
 
   font "Carlito-Bold.ttf"
   font "Carlito-BoldItalic.ttf"

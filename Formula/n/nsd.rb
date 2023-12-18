@@ -1,16 +1,16 @@
 class Nsd < Formula
   desc "Name server daemon"
-  homepage "https://www.nlnetlabs.nl/projects/nsd/"
-  url "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.8.0.tar.gz"
+  homepage "https:www.nlnetlabs.nlprojectsnsd"
+  url "https:www.nlnetlabs.nldownloadsnsdnsd-4.8.0.tar.gz"
   sha256 "820da4e384721915f4bcaf7f2bed98519da563c6e4c130c742c724760ec02a0a"
   license "BSD-3-Clause"
 
   # We check the GitHub repo tags instead of
-  # https://www.nlnetlabs.nl/downloads/nsd/ since the first-party site has a
+  # https:www.nlnetlabs.nldownloadsnsd since the first-party site has a
   # tendency to lead to an `execution expired` error.
   livecheck do
-    url "https://github.com/NLnetLabs/nsd.git"
-    regex(/^NSD[._-]v?(\d+(?:[._]\d+)+)[._-]REL$/i)
+    url "https:github.comNLnetLabsnsd.git"
+    regex(^NSD[._-]v?(\d+(?:[._]\d+)+)[._-]REL$i)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class Nsd < Formula
   depends_on "openssl@3"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--with-libevent=#{Formula["libevent"].opt_prefix}",
@@ -36,6 +36,6 @@ class Nsd < Formula
   end
 
   test do
-    system "#{sbin}/nsd", "-v"
+    system "#{sbin}nsd", "-v"
   end
 end

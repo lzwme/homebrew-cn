@@ -1,11 +1,11 @@
 class Packetbeat < Formula
   desc "Lightweight Shipper for Network Data"
-  homepage "https://www.elastic.co/products/beats/packetbeat"
-  url "https://github.com/elastic/beats.git",
+  homepage "https:www.elastic.coproductsbeatspacketbeat"
+  url "https:github.comelasticbeats.git",
       tag:      "v8.11.3",
       revision: "bfdd9fb0a3c4eeeacf5a5bc2110164a177e4cb08"
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git", branch: "master"
+  head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7a51419ef82b9af7f7c32a7f07d67fc6dcf08e1643378a8a1f417bbebf266e2"
@@ -36,27 +36,27 @@ class Packetbeat < Formula
 
       inreplace "packetbeat.yml", "packetbeat.interfaces.device: any", "packetbeat.interfaces.device: en0"
 
-      (etc/"packetbeat").install Dir["packetbeat.*", "fields.yml"]
-      (libexec/"bin").install "packetbeat"
-      prefix.install "_meta/kibana"
+      (etc"packetbeat").install Dir["packetbeat.*", "fields.yml"]
+      (libexec"bin").install "packetbeat"
+      prefix.install "_metakibana"
     end
 
-    (bin/"packetbeat").write <<~EOS
-      #!/bin/sh
-      exec #{libexec}/bin/packetbeat \
-        --path.config #{etc}/packetbeat \
-        --path.data #{var}/lib/packetbeat \
+    (bin"packetbeat").write <<~EOS
+      #!binsh
+      exec #{libexec}binpacketbeat \
+        --path.config #{etc}packetbeat \
+        --path.data #{var}libpacketbeat \
         --path.home #{prefix} \
-        --path.logs #{var}/log/packetbeat \
+        --path.logs #{var}logpacketbeat \
         "$@"
     EOS
 
-    chmod 0555, bin/"packetbeat" # generate_completions_from_executable fails otherwise
-    generate_completions_from_executable(bin/"packetbeat", "completion", shells: [:bash, :zsh])
+    chmod 0555, bin"packetbeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin"packetbeat", "completion", shells: [:bash, :zsh])
   end
 
   service do
-    run opt_bin/"packetbeat"
+    run opt_bin"packetbeat"
   end
 
   test do
@@ -65,7 +65,7 @@ class Packetbeat < Formula
     else
       "eth"
     end
-    assert_match "0: #{eth}0", shell_output("#{bin}/packetbeat devices")
-    assert_match version.to_s, shell_output("#{bin}/packetbeat version")
+    assert_match "0: #{eth}0", shell_output("#{bin}packetbeat devices")
+    assert_match version.to_s, shell_output("#{bin}packetbeat version")
   end
 end

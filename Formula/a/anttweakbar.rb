@@ -1,7 +1,7 @@
 class Anttweakbar < Formula
-  desc "C/C++ library for adding GUIs to OpenGL apps"
-  homepage "https://anttweakbar.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/anttweakbar/AntTweakBar_116.zip"
+  desc "CC++ library for adding GUIs to OpenGL apps"
+  homepage "https:anttweakbar.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectanttweakbarAntTweakBar_116.zip"
   version "1.16"
   sha256 "fbceb719c13ceb13b9fd973840c2c950527b6e026f9a7a80968c14f76fcf6e7c"
 
@@ -19,7 +19,7 @@ class Anttweakbar < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae09470f66b8f8d6d6aae8125cc871565ab2fe349d5fc293c8e5534f90b8d1fc"
   end
 
-  # From https://sourceforge.net/projects/anttweakbar/:
+  # From https:sourceforge.netprojectsanttweakbar:
   # "The project is not maintained anymore but feel free to download
   # and modify the source code to fit your needs or fix issues."
   deprecate! date: "2023-02-14", because: :unmaintained
@@ -31,29 +31,29 @@ class Anttweakbar < Formula
   end
 
   # See:
-  # https://sourceforge.net/p/anttweakbar/code/ci/5a076d13f143175a6bda3c668e29a33406479339/tree/src/LoadOGLCore.h?diff=5528b167ed12395a60949d7c643262b6668f15d5&diformat=regular
-  # https://sourceforge.net/p/anttweakbar/tickets/14/
+  # https:sourceforge.netpanttweakbarcodeci5a076d13f143175a6bda3c668e29a33406479339treesrcLoadOGLCore.h?diff=5528b167ed12395a60949d7c643262b6668f15d5&diformat=regular
+  # https:sourceforge.netpanttweakbartickets14
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/62e79481/anttweakbar/anttweakbar.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches62e79481anttweakbaranttweakbar.diff"
     sha256 "3be2cb71cc00a9948c8b474da7e15ec85e3d094ed51ad2fab5c8991a9ad66fc2"
   end
 
   def install
     makefile = OS.mac? ? "Makefile.osx" : "Makefile"
     system "make", "-C", "src", "-f", makefile
-    lib.install shared_library("lib/libAntTweakBar"), "lib/libAntTweakBar.a"
-    include.install "include/AntTweakBar.h"
+    lib.install shared_library("liblibAntTweakBar"), "liblibAntTweakBar.a"
+    include.install "includeAntTweakBar.h"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <AntTweakBar.h>
       int main() {
-        TwBar *bar; // TwBar is an internal structure of AntTweakBar
+        TwBar *bar;  TwBar is an internal structure of AntTweakBar
         return 0;
       }
     EOS
     system ENV.cc, "test.cpp", "-L#{lib}", "-lAntTweakBar", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

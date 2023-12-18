@@ -1,7 +1,7 @@
 class Libass < Formula
-  desc "Subtitle renderer for the ASS/SSA subtitle format"
-  homepage "https://github.com/libass/libass"
-  url "https://ghproxy.com/https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.xz"
+  desc "Subtitle renderer for the ASSSSA subtitle format"
+  homepage "https:github.comlibasslibass"
+  url "https:github.comlibasslibassreleasesdownload0.17.1libass-0.17.1.tar.xz"
   sha256 "f0da0bbfba476c16ae3e1cfd862256d30915911f7abaa1b16ce62ee653192784"
   license "ISC"
 
@@ -18,7 +18,7 @@ class Libass < Formula
   end
 
   head do
-    url "https://github.com/libass/libass.git", branch: "master"
+    url "https:github.comlibasslibass.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -47,13 +47,13 @@ class Libass < Formula
     ]
     # libass uses coretext on macOS, fontconfig on Linux
     args << "--disable-fontconfig" if OS.mac?
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "ass/ass.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "assass.h"
       int main() {
         ASS_Library *library;
         ASS_Renderer *renderer;
@@ -76,6 +76,6 @@ class Libass < Formula
       }
     EOS
     system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lass", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

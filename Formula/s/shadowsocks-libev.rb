@@ -1,7 +1,7 @@
 class ShadowsocksLibev < Formula
   desc "Libev port of shadowsocks"
-  homepage "https://github.com/shadowsocks/shadowsocks-libev"
-  url "https://ghproxy.com/https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.3.5/shadowsocks-libev-3.3.5.tar.gz"
+  homepage "https:github.comshadowsocksshadowsocks-libev"
+  url "https:github.comshadowsocksshadowsocks-libevreleasesdownloadv3.3.5shadowsocks-libev-3.3.5.tar.gz"
   sha256 "cfc8eded35360f4b67e18dc447b0c00cddb29cc57a3cec48b135e5fb87433488"
   license "GPL-3.0-or-later"
   revision 5
@@ -17,7 +17,7 @@ class ShadowsocksLibev < Formula
   end
 
   head do
-    url "https://github.com/shadowsocks/shadowsocks-libev.git", branch: "master"
+    url "https:github.comshadowsocksshadowsocks-libev.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -33,13 +33,13 @@ class ShadowsocksLibev < Formula
   depends_on "pcre"
 
   def install
-    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    system "./autogen.sh" if build.head?
+    ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
+    system ".autogen.sh" if build.head?
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
 
-    (buildpath/"shadowsocks-libev.json").write <<~EOS
+    (buildpath"shadowsocks-libev.json").write <<~EOS
       {
           "server":"localhost",
           "server_port":8388,
@@ -55,7 +55,7 @@ class ShadowsocksLibev < Formula
   end
 
   service do
-    run [opt_bin/"ss-local", "-c", etc/"shadowsocks-libev.json"]
+    run [opt_bin"ss-local", "-c", etc"shadowsocks-libev.json"]
     keep_alive true
   end
 
@@ -63,7 +63,7 @@ class ShadowsocksLibev < Formula
     server_port = free_port
     local_port = free_port
 
-    (testpath/"shadowsocks-libev.json").write <<~EOS
+    (testpath"shadowsocks-libev.json").write <<~EOS
       {
           "server":"127.0.0.1",
           "server_port":#{server_port},
@@ -74,8 +74,8 @@ class ShadowsocksLibev < Formula
           "method":null
       }
     EOS
-    server = fork { exec bin/"ss-server", "-c", testpath/"shadowsocks-libev.json" }
-    client = fork { exec bin/"ss-local", "-c", testpath/"shadowsocks-libev.json" }
+    server = fork { exec bin"ss-server", "-c", testpath"shadowsocks-libev.json" }
+    client = fork { exec bin"ss-local", "-c", testpath"shadowsocks-libev.json" }
     sleep 3
     begin
       system "curl", "--socks5", "127.0.0.1:#{local_port}", "github.com"

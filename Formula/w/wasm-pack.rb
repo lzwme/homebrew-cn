@@ -1,10 +1,10 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
-  homepage "https://rustwasm.github.io/wasm-pack/"
-  url "https://ghproxy.com/https://github.com/rustwasm/wasm-pack/archive/refs/tags/v0.12.1.tar.gz"
+  homepage "https:rustwasm.github.iowasm-pack"
+  url "https:github.comrustwasmwasm-packarchiverefstagsv0.12.1.tar.gz"
   sha256 "afa164fec0b119e2c47e38aad9e83351cb414e8ca3c062de292ec8008a45ac09"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/rustwasm/wasm-pack.git", branch: "master"
+  head "https:github.comrustwasmwasm-pack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd0285a53af8bf89c1f8a1d20569e68ee274c3a777ce77ca46d7f38b4d8cd7b1"
@@ -26,13 +26,13 @@ class WasmPack < Formula
   end
 
   test do
-    assert_match "wasm-pack #{version}", shell_output("#{bin}/wasm-pack --version")
+    assert_match "wasm-pack #{version}", shell_output("#{bin}wasm-pack --version")
 
-    system "#{Formula["rustup-init"].bin}/rustup-init", "-y", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    system "#{Formula["rustup-init"].bin}rustup-init", "-y", "--no-modify-path"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    system bin/"wasm-pack", "new", "hello-wasm"
-    system bin/"wasm-pack", "build", "hello-wasm"
-    assert_predicate testpath/"hello-wasm/pkg/hello_wasm_bg.wasm", :exist?
+    system bin"wasm-pack", "new", "hello-wasm"
+    system bin"wasm-pack", "build", "hello-wasm"
+    assert_predicate testpath"hello-wasmpkghello_wasm_bg.wasm", :exist?
   end
 end

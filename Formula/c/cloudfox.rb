@@ -1,10 +1,10 @@
 class Cloudfox < Formula
   desc "Automating situational awareness for cloud penetration tests"
-  homepage "https://github.com/BishopFox/cloudfox"
-  url "https://ghproxy.com/https://github.com/BishopFox/cloudfox/archive/refs/tags/v1.12.2.tar.gz"
+  homepage "https:github.comBishopFoxcloudfox"
+  url "https:github.comBishopFoxcloudfoxarchiverefstagsv1.12.2.tar.gz"
   sha256 "e6f2d5597140b812bda78b3934b17d279a36c33fb4011d6a34880806ff2ef65a"
   license "MIT"
-  head "https://github.com/BishopFox/cloudfox.git", branch: "main"
+  head "https:github.comBishopFoxcloudfox.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "778c3b2df7380aeba7407aed30cce5e26667cd89b20d0f45463014c3e1863318"
@@ -22,16 +22,16 @@ class Cloudfox < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    generate_completions_from_executable(bin/"cloudfox", "completion")
+    generate_completions_from_executable(bin"cloudfox", "completion")
   end
 
   test do
     ENV["AWS_ACCESS_KEY_ID"] = "test"
     ENV["AWS_SECRET_ACCESS_KEY"] = "test"
 
-    output = shell_output("#{bin}/cloudfox aws principals 2>&1")
+    output = shell_output("#{bin}cloudfox aws principals 2>&1")
     assert_match "Could not get caller's identity", output
 
-    assert_match version.to_s, shell_output("#{bin}/cloudfox --version")
+    assert_match version.to_s, shell_output("#{bin}cloudfox --version")
   end
 end

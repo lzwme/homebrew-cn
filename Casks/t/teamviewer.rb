@@ -4,8 +4,8 @@ cask "teamviewer" do
     sha256 "fe7daf80f9aee056f97d11183941470fa1c5823101a0951990340b6264a2651a"
 
     livecheck do
-      url "https://download.teamviewer.com/download/update/macupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=10.11.1&type=1&channel=1"
-      regex(%r{url=.*update/v?(\d+(?:\.\d+)+)/Teamviewer\.pkg}i)
+      url "https:download.teamviewer.comdownloadupdatemacupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=10.11.1&type=1&channel=1"
+      regex(%r{url=.*updatev?(\d+(?:\.\d+)+)Teamviewer\.pkg}i)
     end
 
     pkg "TeamViewer.pkg"
@@ -15,7 +15,7 @@ cask "teamviewer" do
     sha256 "3357bc366cd0295dd100b790d6af6216d349d34451ea18ba08692a51eadd6cf7"
 
     livecheck do
-      url "https://download.teamviewer.com/download/update/macupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=10.14.1&type=1&channel=1"
+      url "https:download.teamviewer.comdownloadupdatemacupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=10.14.1&type=1&channel=1"
       strategy :sparkle
     end
 
@@ -26,12 +26,12 @@ cask "teamviewer" do
     sha256 "3357bc366cd0295dd100b790d6af6216d349d34451ea18ba08692a51eadd6cf7"
 
     livecheck do
-      url "https://download.teamviewer.com/download/update/macupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=10.15.1&type=1&channel=1"
+      url "https:download.teamviewer.comdownloadupdatemacupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=10.15.1&type=1&channel=1"
       strategy :sparkle
     end
 
     # This Cask should be installed and uninstalled manually on Catalina.
-    # See https://github.com/Homebrew/homebrew-cask/issues/76829
+    # See https:github.comHomebrewhomebrew-caskissues76829
     installer manual: "TeamViewer.pkg"
 
     caveats <<~EOS
@@ -46,17 +46,17 @@ cask "teamviewer" do
     sha256 "646131a58f09218182fa0b71dba7c46d2a3d8506a40983f29b17244e02940fd6"
 
     livecheck do
-      url "https://download.teamviewer.com/download/update/macupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=11.7&type=1&channel=1"
+      url "https:download.teamviewer.comdownloadupdatemacupdates.xml?id=0&lang=en&version=#{version}&os=macos&osversion=11.7&type=1&channel=1"
       strategy :sparkle
     end
 
     pkg "TeamViewer.pkg"
   end
 
-  url "https://dl.teamviewer.com/download/version_15x/update/#{version}/TeamViewer.pkg"
+  url "https:dl.teamviewer.comdownloadversion_15xupdate#{version}TeamViewer.pkg"
   name "TeamViewer"
   desc "Remote access and connectivity software focused on security"
-  homepage "https://www.teamviewer.com/"
+  homepage "https:www.teamviewer.com"
 
   auto_updates true
   conflicts_with cask: "teamviewer-host"
@@ -67,7 +67,7 @@ cask "teamviewer" do
     retries ||= 3
     ohai "The TeamViewer package postinstall script launches the TeamViewer app" if retries >= 3
     ohai "Attempting to close the TeamViewer app to avoid unwanted user intervention" if retries >= 3
-    return unless system_command "/usr/bin/pkill", args: ["-f", "/Applications/TeamViewer.app"]
+    return unless system_command "usrbinpkill", args: ["-f", "ApplicationsTeamViewer.app"]
   rescue RuntimeError
     sleep 1
     retry unless (retries -= 1).zero?
@@ -75,8 +75,8 @@ cask "teamviewer" do
   end
 
   uninstall delete:    [
-              "/Applications/TeamViewer.app",
-              "/Library/Preferences/com.teamviewer*",
+              "ApplicationsTeamViewer.app",
+              "LibraryPreferencescom.teamviewer*",
             ],
             pkgutil:   [
               "com.teamviewer.AuthorizationPlugin",
@@ -100,12 +100,12 @@ cask "teamviewer" do
             ]
 
   zap trash: [
-    "~/Library/Application Support/TeamViewer",
-    "~/Library/Caches/com.teamviewer.TeamViewer",
-    "~/Library/Caches/TeamViewer",
-    "~/Library/Cookies/com.teamviewer.TeamViewer.binarycookies",
-    "~/Library/Logs/TeamViewer",
-    "~/Library/Preferences/com.teamviewer*",
-    "~/Library/Saved Application State/com.teamviewer.TeamViewer.savedState",
+    "~LibraryApplication SupportTeamViewer",
+    "~LibraryCachescom.teamviewer.TeamViewer",
+    "~LibraryCachesTeamViewer",
+    "~LibraryCookiescom.teamviewer.TeamViewer.binarycookies",
+    "~LibraryLogsTeamViewer",
+    "~LibraryPreferencescom.teamviewer*",
+    "~LibrarySaved Application Statecom.teamviewer.TeamViewer.savedState",
   ]
 end

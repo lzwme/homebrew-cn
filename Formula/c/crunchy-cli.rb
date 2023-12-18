@@ -1,10 +1,10 @@
 class CrunchyCli < Formula
   desc "Command-line downloader for Crunchyroll"
-  homepage "https://github.com/crunchy-labs/crunchy-cli"
-  url "https://ghproxy.com/https://github.com/crunchy-labs/crunchy-cli/archive/refs/tags/v3.1.1.tar.gz"
+  homepage "https:github.comcrunchy-labscrunchy-cli"
+  url "https:github.comcrunchy-labscrunchy-cliarchiverefstagsv3.1.1.tar.gz"
   sha256 "24bf02b777c19ef06f6fa19dda82fed96751de0e2281b0435dfdc5442b36469b"
   license "MIT"
-  head "https://github.com/crunchy-labs/crunchy-cli.git", branch: "master"
+  head "https:github.comcrunchy-labscrunchy-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "532c5820922d3726f2203a01794a5b82731f63e522776580283c141993d78cdc"
@@ -23,16 +23,16 @@ class CrunchyCli < Formula
 
   def install
     system "cargo", "install", "--no-default-features", "--features", "openssl-tls", *std_cargo_args
-    man1.install Dir["target/release/manpages/*"]
-    bash_completion.install "target/release/completions/crunchy-cli.bash"
-    fish_completion.install "target/release/completions/crunchy-cli.fish"
-    zsh_completion.install "target/release/completions/_crunchy-cli"
+    man1.install Dir["targetreleasemanpages*"]
+    bash_completion.install "targetreleasecompletionscrunchy-cli.bash"
+    fish_completion.install "targetreleasecompletionscrunchy-cli.fish"
+    zsh_completion.install "targetreleasecompletions_crunchy-cli"
   end
 
   test do
-    agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0"
+    agent = "Mozilla5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko20100101 Firefox119.0"
     opts = "--anonymous --user-agent '#{agent}'"
-    output = shell_output("#{bin}/crunchy-cli #{opts} login 2>&1", 1).strip
-    assert_match(/(An error occurred: Anonymous login cannot be saved|Triggered Cloudflare bot protection)/, output)
+    output = shell_output("#{bin}crunchy-cli #{opts} login 2>&1", 1).strip
+    assert_match((An error occurred: Anonymous login cannot be saved|Triggered Cloudflare bot protection), output)
   end
 end

@@ -1,10 +1,10 @@
 class Sniffnet < Formula
   desc "Cross-platform application to monitor your network traffic"
-  homepage "https://github.com/GyulyVGC/sniffnet"
-  url "https://ghproxy.com/https://github.com/GyulyVGC/sniffnet/archive/refs/tags/v1.2.2.tar.gz"
+  homepage "https:github.comGyulyVGCsniffnet"
+  url "https:github.comGyulyVGCsniffnetarchiverefstagsv1.2.2.tar.gz"
   sha256 "d6ee2f8ac8ffb337184e3f1ed4ae1d71a4a62a6d87065b4901ce725394747584"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/GyulyVGC/sniffnet.git", branch: "main"
+  head "https:github.comGyulyVGCsniffnet.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "052e9aad0c48e75a89c247fb6d2e99ce6b8d6ec215f98803f571522cb485ecab"
@@ -36,7 +36,7 @@ class Sniffnet < Formula
   test do
     pid = fork do
       # sniffet is a GUI application
-      exec bin/"sniffnet"
+      exec bin"sniffnet"
     end
     sleep 1
   ensure

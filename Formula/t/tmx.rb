@@ -1,7 +1,7 @@
 class Tmx < Formula
   desc "Portable C library to load tiled maps in your games"
-  homepage "https://github.com/baylej/tmx"
-  url "https://ghproxy.com/https://github.com/baylej/tmx/archive/refs/tags/tmx_1.4.0.tar.gz"
+  homepage "https:github.combaylejtmx"
+  url "https:github.combaylejtmxarchiverefstagstmx_1.4.0.tar.gz"
   sha256 "5ab52e72976141260edd1b15ea34e1626c0f4ba9b8d2afe7f4d68b51fc9fedf7"
   license "BSD-2-Clause"
 
@@ -29,23 +29,23 @@ class Tmx < Formula
   end
 
   test do
-    (testpath/"test.tmx").write <<-EOS
+    (testpath"test.tmx").write <<-EOS
       <?xml version="1.0" encoding="UTF-8"?>
       <map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="28" height="18" tilewidth="32" tileheight="32">
         <tileset firstgid="1" name="base" tilewidth="32" tileheight="32" spacing="1" tilecount="9" columns="3">
-          <image source="numbers.png" width="100" height="100"/>
-          <tile id="0"/>
-        </tileset>
+          <image source="numbers.png" width="100" height="100">
+          <tile id="0">
+        <tileset>
         <group name="Group">
           <layer name="Layer" width="28" height="18">
           <data encoding="base64" compression="zlib">
-          eJy9lN0OgCAIRjX/6v1fuLXZxr7BB9bq4twochioLaVUfqAB11qfyLisYK1nOFsnReztYr8bTsvP9vJ0Yfyq7yno6x/7iuF7mucQRH3WeZYL96y4TZmfVyeueTV4Pq8fXq+YM+Ibk0g9GIv1sX56OTTnGx/mqwTWd80X6T3+ffgPRubNfOjEv0DC3suKTzoHYfV+RtgJlkd7f7fTm4OWi6GdZXNn93H1rqLzBIoiCFE=
-          </data>
-          </layer>
-        </group>
-      </map>
+          eJy9lN0OgCAIRjX6v1fuLXZxr7BB9bq4twochioLaVUfqAB11qfyLisYK1nOFsnReztYr8bTsvP9vJ0Yfyq7yno6x7iuF7mucQRH3WeZYL96y4TZmfVyeueTV4Pq8fXq+YM+Ibk0g9GIv1sX56OTTnGxmqwTWd80X6T3+ffgPRubNfOjEv0DC3suKTzoHYfV+RtgJlkd7f7fTm4OWi6GdZXNn93H1rqLzBIoiCFE=
+          <data>
+          <layer>
+        <group>
+      <map>
     EOS
-    (testpath/"test.c").write <<-EOS
+    (testpath"test.c").write <<-EOS
       #include <tmx.h>
 
       int main(void) {
@@ -58,7 +58,7 @@ class Tmx < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "#{lib}/#{shared_library("libtmx")}", "-lz", "-lxml2", "-o", "test"
-    system "./test"
+    system ENV.cc, "test.c", "#{lib}#{shared_library("libtmx")}", "-lz", "-lxml2", "-o", "test"
+    system ".test"
   end
 end

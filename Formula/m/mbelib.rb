@@ -1,10 +1,10 @@
 class Mbelib < Formula
   desc "P25 Phase 1 and ProVoice vocoder"
-  homepage "https://github.com/szechyjs/mbelib"
-  url "https://ghproxy.com/https://github.com/szechyjs/mbelib/archive/refs/tags/v1.3.0.tar.gz"
+  homepage "https:github.comszechyjsmbelib"
+  url "https:github.comszechyjsmbelibarchiverefstagsv1.3.0.tar.gz"
   sha256 "5a2d5ca37cef3b6deddd5ce8c73918f27936c50eb0e63b27e4b4fc493310518d"
   license "ISC"
-  head "https://github.com/szechyjs/mbelib.git", branch: "master"
+  head "https:github.comszechyjsmbelib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "cd9b0cc3c21687f175d3f4aee0229bd9b7aafe34eba6360f26f0619296a0acfe"
@@ -35,7 +35,7 @@ class Mbelib < Formula
   end
 
   test do
-    (testpath/"mb.cpp").write <<~EOS
+    (testpath"mb.cpp").write <<~EOS
       extern "C" {
       #include "mbelib.h"
       }
@@ -46,6 +46,6 @@ class Mbelib < Formula
       }
     EOS
     system ENV.cxx, "mb.cpp", "-o", "test", "-L#{lib}", "-lmbe"
-    system "./test"
+    system ".test"
   end
 end

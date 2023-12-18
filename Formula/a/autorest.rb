@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Autorest < Formula
   desc "Swagger (OpenAPI) Specification code generator"
-  homepage "https://github.com/Azure/autorest"
-  url "https://registry.npmjs.org/autorest/-/autorest-3.7.1.tgz"
+  homepage "https:github.comAzureautorest"
+  url "https:registry.npmjs.orgautorest-autorest-3.7.1.tgz"
   sha256 "fe148defacd8f859b6f1fb9284e4ff685b242a7581452a1c1b432b5d8c528ee9"
   license "MIT"
 
@@ -20,21 +20,21 @@ class Autorest < Formula
   depends_on "node"
 
   resource "homebrew-petstore" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Azure/autorest/5c170a02c009d032e10aa9f5ab7841e637b3d53b/Samples/1b-code-generation-multilang/petstore.yaml"
+    url "https:raw.githubusercontent.comAzureautorest5c170a02c009d032e10aa9f5ab7841e637b3d53bSamples1b-code-generation-multilangpetstore.yaml"
     sha256 "e981f21115bc9deba47c74e5c533d92a94cf5dbe880c4304357650083283ce13"
   end
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
     resource("homebrew-petstore").stage do
-      system (bin/"autorest"), "--input-file=petstore.yaml",
+      system (bin"autorest"), "--input-file=petstore.yaml",
                                "--typescript",
                                "--output-folder=petstore"
-      assert_includes File.read("petstore/package.json"), "Microsoft Corporation"
+      assert_includes File.read("petstorepackage.json"), "Microsoft Corporation"
     end
   end
 end

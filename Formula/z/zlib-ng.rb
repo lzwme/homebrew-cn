@@ -1,7 +1,7 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
-  homepage "https://github.com/zlib-ng/zlib-ng"
-  url "https://ghproxy.com/https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.1.5.tar.gz"
+  homepage "https:github.comzlib-ngzlib-ng"
+  url "https:github.comzlib-ngzlib-ngarchiverefstags2.1.5.tar.gz"
   sha256 "3f6576971397b379d4205ae5451ff5a68edf6c103b2f03c4188ed7075fbb5f04"
   license "Zlib"
 
@@ -15,14 +15,14 @@ class ZlibNg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "591d6f97690527cad8c7896df332762ee706968ca7baf9136e2ccdb9ab94605d"
   end
 
-  # https://zlib.net/zlib_how.html
+  # https:zlib.netzlib_how.html
   resource "homebrew-test_artifact" do
-    url "https://zlib.net/zpipe.c"
+    url "https:zlib.netzpipe.c"
     sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -43,7 +43,7 @@ class ZlibNg < Formula
     system ENV.cc, "zpipe.c", "-I#{include}", "-L#{lib}", "-lz-ng", "-o", "zpipe"
 
     content = "Hello, Homebrew!"
-    compressed = pipe_output("./zpipe", content)
-    assert_equal content, pipe_output("./zpipe -d", compressed)
+    compressed = pipe_output(".zpipe", content)
+    assert_equal content, pipe_output(".zpipe -d", compressed)
   end
 end

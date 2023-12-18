@@ -1,14 +1,14 @@
 class Libpcap < Formula
   desc "Portable library for network traffic capture"
-  homepage "https://www.tcpdump.org/"
-  url "https://www.tcpdump.org/release/libpcap-1.10.4.tar.gz"
+  homepage "https:www.tcpdump.org"
+  url "https:www.tcpdump.orgreleaselibpcap-1.10.4.tar.gz"
   sha256 "ed19a0383fad72e3ad435fd239d7cd80d64916b87269550159d20e47160ebe5f"
   license "BSD-3-Clause"
-  head "https://github.com/the-tcpdump-group/libpcap.git", branch: "master"
+  head "https:github.comthe-tcpdump-grouplibpcap.git", branch: "master"
 
   livecheck do
-    url "https://www.tcpdump.org/release/"
-    regex(/href=.*?libpcap[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.tcpdump.orgrelease"
+    regex(href=.*?libpcap[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -29,13 +29,13 @@ class Libpcap < Formula
   uses_from_macos "flex" => :build
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--enable-ipv6",
                           "--disable-universal"
     system "make", "install"
   end
 
   test do
-    assert_match "lpcap", shell_output("#{bin}/pcap-config --libs")
+    assert_match "lpcap", shell_output("#{bin}pcap-config --libs")
   end
 end

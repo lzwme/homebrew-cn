@@ -1,7 +1,7 @@
 class FluidSynthAT21 < Formula
   desc "Real-time software synthesizer based on the SoundFont 2 specs"
-  homepage "https://www.fluidsynth.org"
-  url "https://ghproxy.com/https://github.com/FluidSynth/fluidsynth/archive/refs/tags/v2.1.9.tar.gz"
+  homepage "https:www.fluidsynth.org"
+  url "https:github.comFluidSynthfluidsyntharchiverefstagsv2.1.9.tar.gz"
   sha256 "365642cc64bafe0491149ad643ef7327877f99412d5abb93f1fa54e252028484"
   license "LGPL-2.1-or-later"
   revision 1
@@ -29,7 +29,7 @@ class FluidSynthAT21 < Formula
   depends_on "readline"
 
   resource "example_midi" do
-    url "https://upload.wikimedia.org/wikipedia/commons/6/61/Drum_sample.mid"
+    url "https:upload.wikimedia.orgwikipediacommons661Drum_sample.mid"
     sha256 "a1259360c48adc81f2c5b822f221044595632bd1a76302db1f9d983c44f45a30"
   end
 
@@ -53,8 +53,8 @@ class FluidSynthAT21 < Formula
   test do
     # Synthesize wav file from example midi
     resource("example_midi").stage testpath
-    wavout = testpath/"Drum_sample.wav"
-    system bin/"fluidsynth", "-F", wavout, pkgshare/"sf2/VintageDreamsWaves-v2.sf2", testpath/"Drum_sample.mid"
+    wavout = testpath"Drum_sample.wav"
+    system bin"fluidsynth", "-F", wavout, pkgshare"sf2VintageDreamsWaves-v2.sf2", testpath"Drum_sample.mid"
     assert_predicate wavout, :exist?
   end
 end

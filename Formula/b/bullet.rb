@@ -1,10 +1,10 @@
 class Bullet < Formula
   desc "Physics SDK"
-  homepage "https://bulletphysics.org/"
-  url "https://ghproxy.com/https://github.com/bulletphysics/bullet3/archive/refs/tags/3.25.tar.gz"
+  homepage "https:bulletphysics.org"
+  url "https:github.combulletphysicsbullet3archiverefstags3.25.tar.gz"
   sha256 "c45afb6399e3f68036ddb641c6bf6f552bf332d5ab6be62f7e6c54eda05ceb77"
   license "Zlib"
-  head "https://github.com/bulletphysics/bullet3.git", branch: "master"
+  head "https:github.combulletphysicsbullet3.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -26,7 +26,7 @@ class Bullet < Formula
 
   def install
     # C++11 for nullptr usage in examples. Can remove when fixed upstream.
-    # Issue ref: https://github.com/bulletphysics/bullet3/pull/4243
+    # Issue ref: https:github.combulletphysicsbullet3pull4243
     ENV.cxx11 if OS.linux?
 
     common_args = %w[
@@ -37,7 +37,7 @@ class Bullet < Formula
     ]
 
     double_args = std_cmake_args + %W[
-      -DCMAKE_INSTALL_RPATH=#{opt_lib}/bullet/double
+      -DCMAKE_INSTALL_RPATH=#{opt_lib}bulletdouble
       -DUSE_DOUBLE_PRECISION=ON
       -DBUILD_SHARED_LIBS=ON
     ]
@@ -47,7 +47,7 @@ class Bullet < Formula
       system "make", "install"
     end
     dbllibs = lib.children
-    (lib/"bullet/double").install dbllibs
+    (lib"bulletdouble").install dbllibs
 
     args = std_cmake_args + %W[
       -DBUILD_PYBULLET_NUMPY=ON
@@ -64,17 +64,17 @@ class Bullet < Formula
       system "make", "install"
     end
 
-    # Install single-precision library symlinks into `lib/"bullet/single"` for consistency
+    # Install single-precision library symlinks into `lib"bulletsingle"` for consistency
     lib.each_child do |f|
-      next if f == lib/"bullet"
+      next if f == lib"bullet"
 
-      (lib/"bullet/single").install_symlink f
+      (lib"bulletsingle").install_symlink f
     end
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "LinearMath/btPolarDecomposition.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "LinearMathbtPolarDecomposition.h"
       int main() {
         btMatrix3x3 I = btMatrix3x3::getIdentity();
         btMatrix3x3 u, h;
@@ -90,13 +90,13 @@ class Bullet < Formula
     end
 
     # Test single-precision library
-    system ENV.cc, "test.cpp", "-I#{include}/bullet", "-L#{lib}",
+    system ENV.cc, "test.cpp", "-I#{include}bullet", "-L#{lib}",
                    "-lLinearMath", cxx_lib, "-o", "test"
-    system "./test"
+    system ".test"
 
     # Test double-precision library
-    system ENV.cc, "test.cpp", "-I#{include}/bullet", "-L#{lib}/bullet/double",
+    system ENV.cc, "test.cpp", "-I#{include}bullet", "-L#{lib}bulletdouble",
                    "-lLinearMath", cxx_lib, "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

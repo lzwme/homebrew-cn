@@ -1,7 +1,7 @@
 class Libcsv < Formula
   desc "CSV library in ANSI C89"
-  homepage "https://sourceforge.net/projects/libcsv/"
-  url "https://downloads.sourceforge.net/project/libcsv/libcsv/libcsv-3.0.3/libcsv-3.0.3.tar.gz"
+  homepage "https:sourceforge.netprojectslibcsv"
+  url "https:downloads.sourceforge.netprojectlibcsvlibcsvlibcsv-3.0.3libcsv-3.0.3.tar.gz"
   sha256 "d9c0431cb803ceb9896ce74f683e6e5a0954e96ae1d9e4028d6e0f967bebd7e4"
   license "GPL-2.0"
 
@@ -25,18 +25,18 @@ class Libcsv < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <csv.h>
       int main(void) {
         struct csv_parser p;
@@ -44,6 +44,6 @@ class Libcsv < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcsv", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

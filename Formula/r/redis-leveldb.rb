@@ -1,11 +1,11 @@
 class RedisLeveldb < Formula
   desc "Redis-protocol compatible frontend to leveldb"
-  homepage "https://github.com/KDr2/redis-leveldb"
-  url "https://ghproxy.com/https://github.com/KDr2/redis-leveldb/archive/refs/tags/v1.4.tar.gz"
+  homepage "https:github.comKDr2redis-leveldb"
+  url "https:github.comKDr2redis-leveldbarchiverefstagsv1.4.tar.gz"
   sha256 "b34365ca5b788c47b116ea8f86a7a409b765440361b6c21a46161a66f631797c"
   license "MIT"
   revision 3
-  head "https://github.com/KDr2/redis-leveldb.git", branch: "master"
+  head "https:github.comKDr2redis-leveldb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "14e20960b64bbccf61906791c432997c805a853eee48593f9d7881490e71d403"
@@ -28,13 +28,13 @@ class RedisLeveldb < Formula
   depends_on "snappy"
 
   def install
-    inreplace "src/Makefile", "../vendor/libleveldb.a", Formula["leveldb"].opt_lib/"libleveldb.a"
+    inreplace "srcMakefile", "..vendorlibleveldb.a", Formula["leveldb"].opt_lib"libleveldb.a"
     ENV.prepend "LDFLAGS", "-lsnappy"
     system "make"
     bin.install "redis-leveldb"
   end
 
   test do
-    system "#{bin}/redis-leveldb", "-h"
+    system "#{bin}redis-leveldb", "-h"
   end
 end

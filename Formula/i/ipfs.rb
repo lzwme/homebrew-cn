@@ -1,18 +1,18 @@
 class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
-  homepage "https://ipfs.tech/"
-  url "https://github.com/ipfs/kubo.git",
+  homepage "https:ipfs.tech"
+  url "https:github.comipfskubo.git",
       tag:      "v0.25.0",
       revision: "413a52d0eed8582e4c1511e210d7e3f36fe2fe3a"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
   ]
-  head "https://github.com/ipfs/kubo.git", branch: "master"
+  head "https:github.comipfskubo.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,16 +29,16 @@ class Ipfs < Formula
 
   def install
     system "make", "build"
-    bin.install "cmd/ipfs/ipfs"
+    bin.install "cmdipfsipfs"
 
-    generate_completions_from_executable(bin/"ipfs", "commands", "completion", shells: [:bash])
+    generate_completions_from_executable(bin"ipfs", "commands", "completion", shells: [:bash])
   end
 
   service do
-    run [opt_bin/"ipfs", "daemon"]
+    run [opt_bin"ipfs", "daemon"]
   end
 
   test do
-    assert_match "initializing IPFS node", shell_output(bin/"ipfs init")
+    assert_match "initializing IPFS node", shell_output(bin"ipfs init")
   end
 end

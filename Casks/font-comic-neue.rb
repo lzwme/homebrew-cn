@@ -2,13 +2,13 @@ cask "font-comic-neue" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/comicneue"
+      only_path: "oflcomicneue"
   name "Comic Neue"
   desc "Original reinterpretation of the classic, comic sans"
-  homepage "https://fonts.google.com/specimen/Comic+Neue"
+  homepage "https:fonts.google.comspecimenComic+Neue"
 
   font "ComicNeue-Bold.ttf"
   font "ComicNeue-BoldItalic.ttf"

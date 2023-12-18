@@ -1,16 +1,16 @@
 class Cups < Formula
   desc "Common UNIX Printing System"
-  homepage "https://github.com/OpenPrinting/cups"
+  homepage "https:github.comOpenPrintingcups"
   # This is the author's fork of CUPS. Debian have switched to this fork:
-  # https://lists.debian.org/debian-printing/2020/12/msg00006.html
-  url "https://ghproxy.com/https://github.com/OpenPrinting/cups/releases/download/v2.4.7/cups-2.4.7-source.tar.gz"
+  # https:lists.debian.orgdebian-printing202012msg00006.html
+  url "https:github.comOpenPrintingcupsreleasesdownloadv2.4.7cups-2.4.7-source.tar.gz"
   sha256 "dd54228dd903526428ce7e37961afaed230ad310788141da75cebaa08362cf6c"
   license "Apache-2.0"
-  head "https://github.com/OpenPrinting/cups.git", branch: "master"
+  head "https:github.comOpenPrintingcups.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^(?:release[._-])?v?(\d+(?:\.\d+)+(?:op\d*)?)$/i)
+    regex(^(?:release[._-])?v?(\d+(?:\.\d+)+(?:op\d*)?)$i)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Cups < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--with-components=core",
                           "--with-tls=openssl",
                           "--without-bundledir"
@@ -44,7 +44,7 @@ class Cups < Formula
   test do
     port = free_port.to_s
     pid = fork do
-      exec "#{bin}/ippeveprinter", "-p", port, "Homebrew Test Printer"
+      exec "#{bin}ippeveprinter", "-p", port, "Homebrew Test Printer"
     end
 
     begin

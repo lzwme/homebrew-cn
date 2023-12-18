@@ -1,10 +1,10 @@
 class Sl < Formula
   desc "Prints a steam locomotive if you type sl instead of ls"
-  homepage "https://github.com/mtoyoda/sl"
-  url "https://ghproxy.com/https://github.com/mtoyoda/sl/archive/refs/tags/5.02.tar.gz"
+  homepage "https:github.commtoyodasl"
+  url "https:github.commtoyodaslarchiverefstags5.02.tar.gz"
   sha256 "1e5996757f879c81f202a18ad8e982195cf51c41727d3fea4af01fdcbbb5563a"
   license "MIT"
-  head "https://github.com/mtoyoda/sl.git", branch: "master"
+  head "https:github.commtoyodasl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c867d7c636940322cd83ce8edc47d04be3b67293194fecc6ffafcba71a464bc3"
@@ -32,6 +32,6 @@ class Sl < Formula
   end
 
   test do
-    system "#{bin}/sl", "-c"
+    system "#{bin}sl", "-c"
   end
 end

@@ -1,14 +1,14 @@
 class Tgenv < Formula
   desc "Terragrunt version manager inspired by tfenv"
-  homepage "https://github.com/cunymatthieu/tgenv"
-  url "https://ghproxy.com/https://github.com/cunymatthieu/tgenv/archive/refs/tags/v0.0.3.tar.gz"
+  homepage "https:github.comcunymatthieutgenv"
+  url "https:github.comcunymatthieutgenvarchiverefstagsv0.0.3.tar.gz"
   sha256 "e59c4cc9dfccb7d52b9ff714b726ceee694cfa389474cbe01a65c5f9bc13eca4"
   license "MIT"
-  head "https://github.com/cunymatthieu/tgenv.git", branch: "master"
+  head "https:github.comcunymatthieutgenv.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,6 +24,6 @@ class Tgenv < Formula
   end
 
   test do
-    assert_match "0.40.0", shell_output("#{bin}/tgenv list-remote")
+    assert_match "0.40.0", shell_output("#{bin}tgenv list-remote")
   end
 end

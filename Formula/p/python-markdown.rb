@@ -1,10 +1,10 @@
 class PythonMarkdown < Formula
   desc "Python implementation of Markdown"
-  homepage "https://python-markdown.github.io"
-  url "https://files.pythonhosted.org/packages/35/14/1ec9742e151f3b06a723a20d9af7201a389ebd3aae8b7d93b521819489dc/Markdown-3.5.1.tar.gz"
+  homepage "https:python-markdown.github.io"
+  url "https:files.pythonhosted.orgpackages35141ec9742e151f3b06a723a20d9af7201a389ebd3aae8b7d93b521819489dcMarkdown-3.5.1.tar.gz"
   sha256 "b65d7beb248dc22f2e8a31fb706d93798093c308dc1aba295aedeb9d41a813bd"
   license "BSD-3-Clause"
-  head "https://github.com/Python-Markdown/markdown.git", branch: "master"
+  head "https:github.comPython-Markdownmarkdown.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1994fa6e4c06e2a89d55e7e336ac61753e3d1632a43483288765870999320317"
@@ -26,7 +26,7 @@ class PythonMarkdown < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
@@ -38,11 +38,11 @@ class PythonMarkdown < Formula
   end
 
   test do
-    (testpath/"test.md").write("# Hello World!")
-    assert_equal "<h1>Hello World!</h1>", shell_output(bin/"markdown_py test.md").strip
+    (testpath"test.md").write("# Hello World!")
+    assert_equal "<h1>Hello World!<h1>", shell_output(bin"markdown_py test.md").strip
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import markdown;"
     end
   end

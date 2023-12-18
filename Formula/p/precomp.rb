@@ -1,10 +1,10 @@
 class Precomp < Formula
   desc "Command-line precompressor to achieve better compression"
-  homepage "http://schnaader.info/precomp.php"
-  url "https://ghproxy.com/https://github.com/schnaader/precomp-cpp/archive/refs/tags/v0.4.7.tar.gz"
+  homepage "http:schnaader.infoprecomp.php"
+  url "https:github.comschnaaderprecomp-cpparchiverefstagsv0.4.7.tar.gz"
   sha256 "b4064f9a18b9885e574c274f93d73d8a4e7f2bbd9e959beaa773f2e61292fb2b"
   license "Apache-2.0"
-  head "https://github.com/schnaader/precomp-cpp.git", branch: "master"
+  head "https:github.comschnaaderprecomp-cpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "33c0801e82dd120a4300a93190e59d99da46d28acb0cef6f6946ec9a75cad1e0"
@@ -29,12 +29,12 @@ class Precomp < Formula
   end
 
   test do
-    cp "#{bin}/precomp", testpath/"precomp"
-    system "gzip", "-1", testpath/"precomp"
+    cp "#{bin}precomp", testpath"precomp"
+    system "gzip", "-1", testpath"precomp"
 
-    system "#{bin}/precomp", testpath/"precomp.gz"
-    rm testpath/"precomp.gz", force: true
-    system "#{bin}/precomp", "-r", testpath/"precomp.pcf"
-    system "gzip", "-d", testpath/"precomp.gz"
+    system "#{bin}precomp", testpath"precomp.gz"
+    rm testpath"precomp.gz", force: true
+    system "#{bin}precomp", "-r", testpath"precomp.pcf"
+    system "gzip", "-d", testpath"precomp.gz"
   end
 end

@@ -1,14 +1,14 @@
 class GitAppraise < Formula
   desc "Distributed code review system for Git repos"
-  homepage "https://github.com/google/git-appraise"
+  homepage "https:github.comgooglegit-appraise"
   license "Apache-2.0"
-  head "https://github.com/google/git-appraise.git", branch: "master"
+  head "https:github.comgooglegit-appraise.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/google/git-appraise/archive/refs/tags/v0.7.tar.gz"
+    url "https:github.comgooglegit-appraisearchiverefstagsv0.7.tar.gz"
     sha256 "b57dd4ac4746486e253658b2c93422515fd8dc6fdca873b5450a6fb0f9487fb3"
 
-    # Backport go.mod from https://github.com/google/git-appraise/pull/111
+    # Backport go.mod from https:github.comgooglegit-appraisepull111
     patch :DATA
   end
 
@@ -28,42 +28,42 @@ class GitAppraise < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./git-appraise"
+    system "go", "build", *std_go_args, ".git-appraise"
   end
 
   test do
     system "git", "init", "--initial-branch=master"
     system "git", "config", "user.email", "user@email.com"
-    (testpath/"README").write "test"
+    (testpath"README").write "test"
     system "git", "add", "README"
     system "git", "commit", "-m", "Init"
-    system "git", "branch", "user/test"
-    system "git", "checkout", "user/test"
-    (testpath/"README").append_lines "test2"
+    system "git", "branch", "usertest"
+    system "git", "checkout", "usertest"
+    (testpath"README").append_lines "test2"
     system "git", "add", "README"
     system "git", "commit", "-m", "Update"
     system "git", "appraise", "request", "--allow-uncommitted"
-    assert_predicate testpath/".git/refs/notes/devtools/reviews", :exist?
+    assert_predicate testpath".gitrefsnotesdevtoolsreviews", :exist?
   end
 end
 
 __END__
-diff --git a/go.mod b/go.mod
+diff --git ago.mod bgo.mod
 new file mode 100644
 index 00000000..28bed68b
---- /dev/null
-+++ b/go.mod
+--- devnull
++++ bgo.mod
 @@ -0,0 +1,5 @@
-+module github.com/google/git-appraise
++module github.comgooglegit-appraise
 +
 +go 1.18
 +
-+require golang.org/x/sys v0.0.0-20220406163625-3f8b81556e12
-diff --git a/go.sum b/go.sum
++require golang.orgxsys v0.0.0-20220406163625-3f8b81556e12
+diff --git ago.sum bgo.sum
 new file mode 100644
 index 00000000..b22c466b
---- /dev/null
-+++ b/go.sum
+--- devnull
++++ bgo.sum
 @@ -0,0 +1,2 @@
-+golang.org/x/sys v0.0.0-20220406163625-3f8b81556e12 h1:QyVthZKMsyaQwBTJE04jdNN0Pp5Fn9Qga0mrgxyERQM=
-+golang.org/x/sys v0.0.0-20220406163625-3f8b81556e12/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
++golang.orgxsys v0.0.0-20220406163625-3f8b81556e12 h1:QyVthZKMsyaQwBTJE04jdNN0Pp5Fn9Qga0mrgxyERQM=
++golang.orgxsys v0.0.0-20220406163625-3f8b81556e12go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=

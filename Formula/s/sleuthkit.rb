@@ -1,13 +1,13 @@
 class Sleuthkit < Formula
   desc "Forensic toolkit"
-  homepage "https://www.sleuthkit.org/"
-  url "https://ghproxy.com/https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.12.1/sleuthkit-4.12.1.tar.gz"
+  homepage "https:www.sleuthkit.org"
+  url "https:github.comsleuthkitsleuthkitreleasesdownloadsleuthkit-4.12.1sleuthkit-4.12.1.tar.gz"
   sha256 "6b2de0baabc6a38429a33993114ca3820329b477d5038cbf45fcf69fca8addfd"
   license all_of: ["IPL-1.0", "CPL-1.0", "GPL-2.0-or-later"]
 
   livecheck do
     url :stable
-    regex(/sleuthkit[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(sleuthkit[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -35,21 +35,21 @@ class Sleuthkit < Formula
 
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-    ENV["ANT_FOUND"] = Formula["ant"].opt_bin/"ant"
+    ENV["ANT_FOUND"] = Formula["ant"].opt_bin"ant"
     ENV.append_to_cflags "-DNDEBUG"
 
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
 
-    cd "bindings/java" do
+    cd "bindingsjava" do
       system "ant"
 
-      inreplace ["Makefile", "jni/Makefile"], Superenv.shims_path/"ld", "ld" if OS.linux?
+      inreplace ["Makefile", "jniMakefile"], Superenv.shims_path"ld", "ld" if OS.linux?
     end
     prefix.install "bindings"
   end
 
   test do
-    system "#{bin}/tsk_loaddb", "-V"
+    system "#{bin}tsk_loaddb", "-V"
   end
 end

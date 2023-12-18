@@ -1,10 +1,10 @@
 class Texlab < Formula
   desc "Implementation of the Language Server Protocol for LaTeX"
-  homepage "https://texlab.netlify.com/"
-  url "https://ghproxy.com/https://github.com/latex-lsp/texlab/archive/refs/tags/v5.12.0.tar.gz"
+  homepage "https:texlab.netlify.com"
+  url "https:github.comlatex-lsptexlabarchiverefstagsv5.12.0.tar.gz"
   sha256 "61662cab58931b0865372cb1d32efb4701237cd50d77c0888d619a8ec3765e01"
   license "GPL-3.0-only"
-  head "https://github.com/latex-lsp/texlab.git", branch: "master"
+  head "https:github.comlatex-lsptexlab.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bacfd9eac6f59165145bc9d928410d10f5a3604a264194bd087f6b515ee8e66"
@@ -19,7 +19,7 @@ class Texlab < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/texlab")
+    system "cargo", "install", *std_cargo_args(path: "cratestexlab")
   end
 
   def rpc(json)
@@ -33,7 +33,7 @@ class Texlab < Formula
       "id":1,
       "method":"initialize",
       "params": {
-        "rootUri": "file:/dev/null",
+        "rootUri": "file:devnull",
         "capabilities": {}
       }
     }
@@ -64,8 +64,8 @@ class Texlab < Formula
     }
     EOF
 
-    output = /Content-Length: \d+\r\n\r\n/
+    output = Content-Length: \d+\r\n\r\n
 
-    assert_match output, pipe_output("#{bin}/texlab", input, 0)
+    assert_match output, pipe_output("#{bin}texlab", input, 0)
   end
 end

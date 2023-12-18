@@ -1,25 +1,25 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
-  homepage "https://nmap.org/"
+  homepage "https:nmap.org"
   license :cannot_represent
   revision 1
-  head "https://svn.nmap.org/nmap/"
+  head "https:svn.nmap.orgnmap"
 
   # TODO: Remove stable block in next release.
   stable do
-    url "https://nmap.org/dist/nmap-7.94.tar.bz2"
+    url "https:nmap.orgdistnmap-7.94.tar.bz2"
     sha256 "d71be189eec43d7e099bac8571509d316c4577ca79491832ac3e1217bc8f92cc"
 
     # Fix build with Lua 5.4. Remove in next release.
     patch do
-      url "https://github.com/nmap/nmap/commit/b9263f056ab3acd666d25af84d399410560d48ac.patch?full_index=1"
+      url "https:github.comnmapnmapcommitb9263f056ab3acd666d25af84d399410560d48ac.patch?full_index=1"
       sha256 "088d426dc168b78ee4e0450d6b357deef13e0e896b8988164ba2bb8fd8b8767c"
     end
   end
 
   livecheck do
-    url "https://nmap.org/dist/"
-    regex(/href=.*?nmap[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:nmap.orgdist"
+    regex(href=.*?nmap[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -37,7 +37,7 @@ class Nmap < Formula
 
   depends_on "liblinear"
   depends_on "libssh2"
-  # Check supported Lua version at https://github.com/nmap/nmap/tree/master/liblua.
+  # Check supported Lua version at https:github.comnmapnmaptreemasterliblua.
   depends_on "lua"
   depends_on "openssl@3"
   depends_on "pcre"
@@ -53,7 +53,7 @@ class Nmap < Formula
     ENV.deparallelize
 
     libpcap_path = if OS.mac?
-      MacOS.sdk_path/"usr/"
+      MacOS.sdk_path"usr"
     else
       Formula["libpcap"].opt_prefix
     end
@@ -68,17 +68,17 @@ class Nmap < Formula
       --without-zenmap
     ]
 
-    system "./configure", *args, *std_configure_args
+    system ".configure", *args, *std_configure_args
     system "make" # separate steps required otherwise the build fails
     system "make", "install"
 
     bin.glob("uninstall_*").map(&:unlink) # Users should use brew uninstall.
-    return unless (bin/"ndiff").exist? # Needs Python
+    return unless (bin"ndiff").exist? # Needs Python
 
     # We can't use `rewrite_shebang` here because `detected_python_shebang` only works
-    # for shebangs that start with `/usr/bin`, but the shebang we want to replace
-    # might start with `/Applications` (for the `python3` inside Xcode.app).
-    inreplace bin/"ndiff", %r{\A#!.*/python(\d+(\.\d+)?)?$}, "#!/usr/bin/env python3"
+    # for shebangs that start with `usrbin`, but the shebang we want to replace
+    # might start with `Applications` (for the `python3` inside Xcode.app).
+    inreplace bin"ndiff", %r{\A#!.*python(\d+(\.\d+)?)?$}, "#!usrbinenv python3"
   end
 
   def caveats
@@ -91,6 +91,6 @@ class Nmap < Formula
   end
 
   test do
-    system bin/"nmap", "-p80,443", "google.com"
+    system bin"nmap", "-p80,443", "google.com"
   end
 end

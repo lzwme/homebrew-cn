@@ -1,10 +1,10 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
-  homepage "https://github.com/brocode/fblog"
-  url "https://ghproxy.com/https://github.com/brocode/fblog/archive/refs/tags/v4.7.0.tar.gz"
+  homepage "https:github.combrocodefblog"
+  url "https:github.combrocodefblogarchiverefstagsv4.7.0.tar.gz"
   sha256 "3b3489216db6671b26bbf68237ae81d9d983cc3a8e9d8814644f197f65d57792"
   license "WTFPL"
-  head "https://github.com/brocode/fblog.git", branch: "master"
+  head "https:github.combrocodefblog.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54f0d3087746dcdf7a201f778b3410865dc70d68b3ddca45e9ae3ce1de413524"
@@ -26,7 +26,7 @@ class Fblog < Formula
   end
 
   test do
-    output = shell_output("#{bin}/fblog #{pkgshare/"sample.json.log"}")
+    output = shell_output("#{bin}fblog #{pkgshare"sample.json.log"}")
 
     assert_match "Trust key rsa-43fe6c3d-6242-11e7-8b0c-02420a000007 found in cache", output
     assert_match "Content-Type set both in header", output

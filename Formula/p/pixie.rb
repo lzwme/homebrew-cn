@@ -1,15 +1,15 @@
 class Pixie < Formula
   desc "Observability tool for Kubernetes applications"
-  homepage "https://px.dev/"
-  url "https://github.com/pixie-io/pixie.git",
-      tag:      "release/cli/v0.8.2",
+  homepage "https:px.dev"
+  url "https:github.compixie-iopixie.git",
+      tag:      "releasecliv0.8.2",
       revision: "401c92c1ed086eaa35dbe17b4fbcfd96e7b1ca4f"
   license "Apache-2.0"
-  head "https://github.com/pixie-io/pixie.git", branch: "main"
+  head "https:github.compixie-iopixie.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(%r{^release/cli/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^releasecliv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -30,21 +30,21 @@ class Pixie < Formula
     semver = build.head? ? "0.0.0-dev" : version
     ldflags = %W[
       -s -w
-      -X px.dev/pixie/src/shared/goversion.buildSCMRevision=#{Utils.git_short_head}
-      -X px.dev/pixie/src/shared/goversion.buildSCMStatus=Distribution
-      -X px.dev/pixie/src/shared/goversion.buildSemver=#{semver}
-      -X px.dev/pixie/src/shared/goversion.buildTimeStamp=#{time.to_i}
-      -X px.dev/pixie/src/shared/goversion.buildNumber=#{revision + bottle&.rebuild.to_i + 1}
-      -X px.dev/pixie/src/shared/goversion.builtBy=#{tap.user}
+      -X px.devpixiesrcsharedgoversion.buildSCMRevision=#{Utils.git_short_head}
+      -X px.devpixiesrcsharedgoversion.buildSCMStatus=Distribution
+      -X px.devpixiesrcsharedgoversion.buildSemver=#{semver}
+      -X px.devpixiesrcsharedgoversion.buildTimeStamp=#{time.to_i}
+      -X px.devpixiesrcsharedgoversion.buildNumber=#{revision + bottle&.rebuild.to_i + 1}
+      -X px.devpixiesrcsharedgoversion.builtBy=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"px"), "./src/pixie_cli"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"px"), ".srcpixie_cli"
 
-    generate_completions_from_executable(bin/"px", "completion", base_name: "px")
+    generate_completions_from_executable(bin"px", "completion", base_name: "px")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/px version")
-    assert_match tap.user.to_s, shell_output("#{bin}/px version")
-    assert_match "You must be logged in to perform this operation.", shell_output("#{bin}/px deploy 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}px version")
+    assert_match tap.user.to_s, shell_output("#{bin}px version")
+    assert_match "You must be logged in to perform this operation.", shell_output("#{bin}px deploy 2>&1", 1)
   end
 end

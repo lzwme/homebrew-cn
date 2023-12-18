@@ -1,7 +1,7 @@
 class Katago < Formula
   desc "Neural Network Go engine with no human-provided knowledge"
-  homepage "https://github.com/lightvector/KataGo"
-  url "https://ghproxy.com/https://github.com/lightvector/KataGo/archive/refs/tags/v1.13.2.tar.gz"
+  homepage "https:github.comlightvectorKataGo"
+  url "https:github.comlightvectorKataGoarchiverefstagsv1.13.2.tar.gz"
   sha256 "f1a5659ff6dcec246f11bd250dcb41f1879dbbd41d4e909ae030954acfebde41"
   license "MIT"
 
@@ -28,17 +28,17 @@ class Katago < Formula
   depends_on macos: :mojave
 
   resource "20b-network" do
-    url "https://ghproxy.com/https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170e-b20c256x2-s5303129600-d1228401921.bin.gz", using: :nounzip
+    url "https:github.comlightvectorKataGoreleasesdownloadv1.4.5g170e-b20c256x2-s5303129600-d1228401921.bin.gz", using: :nounzip
     sha256 "7c8a84ed9ee737e9c7e741a08bf242d63db37b648e7f64942f3a8b1b5101e7c2"
   end
 
   resource "30b-network" do
-    url "https://ghproxy.com/https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b30c320x2-s4824661760-d1229536699.bin.gz", using: :nounzip
+    url "https:github.comlightvectorKataGoreleasesdownloadv1.4.5g170-b30c320x2-s4824661760-d1229536699.bin.gz", using: :nounzip
     sha256 "1e601446c870228932d44c8ad25fd527cb7dbf0cf13c3536f5c37cff1993fee6"
   end
 
   resource "40b-network" do
-    url "https://ghproxy.com/https://github.com/lightvector/KataGo/releases/download/v1.4.5/g170-b40c256x2-s5095420928-d1229425124.bin.gz", using: :nounzip
+    url "https:github.comlightvectorKataGoreleasesdownloadv1.4.5g170-b40c256x2-s5095420928-d1229425124.bin.gz", using: :nounzip
     sha256 "2b3a78981d2b6b5fae1cf8972e01bf3e48d2b291bc5e52ef41c9b65c53d59a71"
   end
 
@@ -60,7 +60,7 @@ class Katago < Formula
   end
 
   test do
-    system "#{bin}/katago", "version"
-    assert_match(/All tests passed$/, shell_output("#{bin}/katago runtests").strip)
+    system "#{bin}katago", "version"
+    assert_match(All tests passed$, shell_output("#{bin}katago runtests").strip)
   end
 end

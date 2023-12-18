@@ -1,7 +1,7 @@
 class TerraformDocs < Formula
   desc "Tool to generate documentation from Terraform modules"
-  homepage "https://github.com/terraform-docs/terraform-docs"
-  url "https://ghproxy.com/https://github.com/terraform-docs/terraform-docs/archive/refs/tags/v0.16.0.tar.gz"
+  homepage "https:github.comterraform-docsterraform-docs"
+  url "https:github.comterraform-docsterraform-docsarchiverefstagsv0.16.0.tar.gz"
   sha256 "e370fd106ca74caebc8632834cc28412a3a6a160952392da71f213515bba2085"
   license "MIT"
 
@@ -26,22 +26,22 @@ class TerraformDocs < Formula
     cpu = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     os = OS.kernel_name.downcase
 
-    bin.install "bin/#{os}-#{cpu}/terraform-docs"
+    bin.install "bin#{os}-#{cpu}terraform-docs"
     prefix.install_metafiles
 
-    generate_completions_from_executable(bin/"terraform-docs", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"terraform-docs", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    (testpath/"main.tf").write <<~EOS
-      /**
+    (testpath"main.tf").write <<~EOS
+      **
        * Module usage:
        *
        *      module "foo" {
-       *        source = "github.com/foo/baz"
+       *        source = "github.comfoobaz"
        *        subnet_ids = "${join(",", subnet.*.id)}"
        *      }
-       */
+       *
 
       variable "subnet_ids" {
         description = "a comma-separated list of subnet IDs"
@@ -64,11 +64,11 @@ class TerraformDocs < Formula
         }
       }
 
-      // The VPC ID.
+       The VPC ID.
       output "vpc_id" {
         value = "vpc-5c1f55fd"
       }
     EOS
-    system "#{bin}/terraform-docs", "json", testpath
+    system "#{bin}terraform-docs", "json", testpath
   end
 end

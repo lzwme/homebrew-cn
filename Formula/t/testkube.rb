@@ -1,14 +1,14 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
-  homepage "https://testkube.io"
-  url "https://ghproxy.com/https://github.com/kubeshop/testkube/archive/refs/tags/v1.16.16.tar.gz"
+  homepage "https:testkube.io"
+  url "https:github.comkubeshoptestkubearchiverefstagsv1.16.16.tar.gz"
   sha256 "290e4996e8f6fbfa626d930d40e507dcfd50a24653a4d16bd0fabf3f294b1abe"
   license "MIT"
-  head "https://github.com/kubeshop/testkube.git", branch: "main"
+  head "https:github.comkubeshoptestkube.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,19 +32,19 @@ class Testkube < Formula
       -X main.builtBy=#{tap.user}
     ]
 
-    system "go", "build", *std_go_args(output: bin/"kubectl-testkube", ldflags: ldflags),
-      "cmd/kubectl-testkube/main.go"
+    system "go", "build", *std_go_args(output: bin"kubectl-testkube", ldflags: ldflags),
+      "cmdkubectl-testkubemain.go"
 
     bin.install_symlink "kubectl-testkube" => "testkube"
 
-    generate_completions_from_executable(bin/"kubectl-testkube", "completion")
+    generate_completions_from_executable(bin"kubectl-testkube", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/kubectl-testkube get tests 2>&1", 1)
+    output = shell_output("#{bin}kubectl-testkube get tests 2>&1", 1)
     assert_match("no configuration has been provided", output)
 
-    output = shell_output("#{bin}/kubectl-testkube help")
+    output = shell_output("#{bin}kubectl-testkube help")
     assert_match("Testkube entrypoint for kubectl plugin", output)
   end
 end

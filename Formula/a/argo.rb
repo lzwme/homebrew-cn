@@ -1,7 +1,7 @@
 class Argo < Formula
   desc "Get stuff done with container-native workflows for Kubernetes"
-  homepage "https://argoproj.io"
-  url "https://github.com/argoproj/argo-workflows.git",
+  homepage "https:argoproj.io"
+  url "https:github.comargoprojargo-workflows.git",
       tag:      "v3.5.2",
       revision: "5b6ad2be163ecd3f0251a931ab84dba3c6085ad2"
   license "Apache-2.0"
@@ -23,19 +23,19 @@ class Argo < Formula
   def install
     # this needs to be remove to prevent multiple 'operation not permitted' errors
     inreplace "Makefile", "CGO_ENABLED=0", ""
-    system "make", "dist/argo"
-    bin.install "dist/argo"
+    system "make", "distargo"
+    bin.install "distargo"
 
-    generate_completions_from_executable(bin/"argo", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"argo", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    assert_match "argo: v#{version}", shell_output("#{bin}/argo version")
+    assert_match "argo: v#{version}", shell_output("#{bin}argo version")
 
     # argo consumes the Kubernetes configuration with the `--kubeconfig` flag
     # Since it is an empty file we expect it to be invalid
-    touch testpath/"kubeconfig"
+    touch testpath"kubeconfig"
     assert_match "invalid configuration",
-      shell_output("#{bin}/argo lint --kubeconfig ./kubeconfig ./kubeconfig 2>&1", 1)
+      shell_output("#{bin}argo lint --kubeconfig .kubeconfig .kubeconfig 2>&1", 1)
   end
 end

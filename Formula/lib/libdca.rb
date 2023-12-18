@@ -1,13 +1,13 @@
 class Libdca < Formula
   desc "Library for decoding DTS Coherent Acoustics streams"
-  homepage "https://www.videolan.org/developers/libdca.html"
-  url "https://download.videolan.org/pub/videolan/libdca/0.0.7/libdca-0.0.7.tar.bz2"
+  homepage "https:www.videolan.orgdeveloperslibdca.html"
+  url "https:download.videolan.orgpubvideolanlibdca0.0.7libdca-0.0.7.tar.bz2"
   sha256 "3a0b13815f582c661d2388ffcabc2f1ea82f471783c400f765f2ec6c81065f6a"
   license "GPL-2.0"
 
   livecheck do
-    url "https://download.videolan.org/pub/videolan/libdca/"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)[/"'>]}i)
+    url "https:download.videolan.orgpubvideolanlibdca"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)["'>]}i)
   end
 
   bottle do
@@ -31,11 +31,11 @@ class Libdca < Formula
 
   def install
     # Fixes "duplicate symbol ___sputc" error when building with clang
-    # https://github.com/Homebrew/homebrew/issues/31456
+    # https:github.comHomebrewhomebrewissues31456
     ENV.append_to_cflags "-std=gnu89"
 
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make"
     system "make", "install"

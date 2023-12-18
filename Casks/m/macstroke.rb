@@ -2,19 +2,19 @@ cask "macstroke" do
   version "2.0.5"
   sha256 "113116367df18a2d3278d9540afdb0476f6b45dd6fbd09a565c9c038bb5e1a88"
 
-  url "https://ghproxy.com/https://github.com/mtjo/MacStroke/releases/download/#{version}/MacStroke.zip"
+  url "https:github.commtjoMacStrokereleasesdownload#{version}MacStroke.zip"
   name "MacStroke"
   desc "Configurable global mouse gestures"
-  homepage "https://github.com/mtjo/MacStroke/"
+  homepage "https:github.commtjoMacStroke"
 
   app "MacStroke.app"
 
   zap trash: [
-    "~/Library/Application Scripts/net.mtjo.MacStroke.FinderSyncExtension",
-    "~/Library/Caches/MacStroke",
-    "~/Library/Caches/net.mtjo.MacStroke",
-    "~/Library/Containers/net.mtjo.MacStroke.FinderSyncExtension",
-    "~/Library/Cookies/net.mtjo.MacStroke.binarycookies",
-    "~/Library/Preferences/net.mtjo.MacStroke.plist",
+    "~LibraryApplication Scriptsnet.mtjo.MacStroke.FinderSyncExtension",
+    "~LibraryCachesMacStroke",
+    "~LibraryCachesnet.mtjo.MacStroke",
+    "~LibraryContainersnet.mtjo.MacStroke.FinderSyncExtension",
+    "~LibraryCookiesnet.mtjo.MacStroke.binarycookies",
+    "~LibraryPreferencesnet.mtjo.MacStroke.plist",
   ]
 end

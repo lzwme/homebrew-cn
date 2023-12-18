@@ -1,8 +1,8 @@
 class Taskell < Formula
-  desc "Command-line Kanban board/task manager with support for Trello"
-  homepage "https://taskell.app"
+  desc "Command-line Kanban boardtask manager with support for Trello"
+  homepage "https:taskell.app"
   # TODO: Try to switch `ghc@9.2` to `ghc` when a release supports brick>=1
-  url "https://ghproxy.com/https://github.com/smallhadroncollider/taskell/archive/refs/tags/1.11.4.tar.gz"
+  url "https:github.comsmallhadroncollidertaskellarchiverefstags1.11.4.tar.gz"
   sha256 "0d4f3f54fb0b975f969d7ef8a810bbc7a78e0b46aec28cc4cb337ee36e8abdfc"
   license "BSD-3-Clause"
 
@@ -27,10 +27,10 @@ class Taskell < Formula
 
   def install
     # Work around build failure from Brick v1 API.
-    # src/Taskell.hs:64:13: error:
+    # srcTaskell.hs:64:13: error:
     #     Not in scope: 'Brick.continue'
     #     Module 'Brick' does not export 'continue'.
-    # Issue ref: https://github.com/smallhadroncollider/taskell/issues/125
+    # Issue ref: https:github.comsmallhadroncollidertaskellissues125
     cabal_install_constraints = ["--constraint=brick<1", "--constraint=vty<6"]
 
     system "hpack"
@@ -39,7 +39,7 @@ class Taskell < Formula
   end
 
   test do
-    (testpath/"test.md").write <<~EOS
+    (testpath"test.md").write <<~EOS
       ## To Do
 
       - A thing
@@ -52,6 +52,6 @@ class Taskell < Formula
       Tasks: 2
     EOS
 
-    assert_match expected, shell_output("#{bin}/taskell -i test.md")
+    assert_match expected, shell_output("#{bin}taskell -i test.md")
   end
 end

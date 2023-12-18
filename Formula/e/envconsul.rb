@@ -1,7 +1,7 @@
 class Envconsul < Formula
   desc "Launch process with environment variables from Consul and Vault"
-  homepage "https://github.com/hashicorp/envconsul"
-  url "https://github.com/hashicorp/envconsul.git",
+  homepage "https:github.comhashicorpenvconsul"
+  url "https:github.comhashicorpenvconsul.git",
       tag:      "v0.13.2",
       revision: "dd416cebc7373914548a2df69af0a97c9432ef91"
   license "MPL-2.0"
@@ -51,8 +51,8 @@ class Envconsul < Formula
         end
         sleep 5
       end
-      system "consul", "kv", "put", "homebrew-recipe-test/working", "1"
-      output = shell_output("#{bin}/envconsul " \
+      system "consul", "kv", "put", "homebrew-recipe-testworking", "1"
+      output = shell_output("#{bin}envconsul " \
                             "-upcase -prefix homebrew-recipe-test env")
       assert_match "WORKING=1", output
     ensure

@@ -1,7 +1,7 @@
 class Minica < Formula
   desc "Small, simple certificate authority"
-  homepage "https://github.com/jsha/minica"
-  url "https://ghproxy.com/https://github.com/jsha/minica/archive/refs/tags/v1.0.2.tar.gz"
+  homepage "https:github.comjshaminica"
+  url "https:github.comjshaminicaarchiverefstagsv1.0.2.tar.gz"
   sha256 "c5b7e6c890ad472eb39f7e44d777da1b623930fd099b414213ced14bb599c6ec"
   license "MIT"
 
@@ -23,11 +23,11 @@ class Minica < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin/"minica"
+    system "go", "build", "-o", bin"minica"
   end
 
   test do
-    system "#{bin}/minica", "--domains", "foo.com"
-    assert_predicate testpath/"minica.pem", :exist?
+    system "#{bin}minica", "--domains", "foo.com"
+    assert_predicate testpath"minica.pem", :exist?
   end
 end

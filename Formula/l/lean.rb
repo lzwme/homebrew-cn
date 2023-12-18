@@ -1,14 +1,14 @@
 class Lean < Formula
   desc "Theorem prover"
-  homepage "https://leanprover-community.github.io/"
-  url "https://ghproxy.com/https://github.com/leanprover-community/lean/archive/refs/tags/v3.51.1.tar.gz"
+  homepage "https:leanprover-community.github.io"
+  url "https:github.comleanprover-communityleanarchiverefstagsv3.51.1.tar.gz"
   sha256 "5a4734bf345d6c5ba6eacd2d33d86d9540eea7d008b4ebf8dde126e729fcbcaf"
   license "Apache-2.0"
-  head "https://github.com/leanprover-community/lean.git", branch: "master"
+  head "https:github.comleanprover-communitylean.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
     strategy :git do |tags, regex|
       tags.map do |tag|
         version = tag[regex, 1]
@@ -52,13 +52,13 @@ class Lean < Formula
       -DCMAKE_CXX_FLAGS='-std=c++14'
     ]
 
-    system "cmake", "-S", "src", "-B", "src/build", *args
-    system "cmake", "--build", "src/build"
-    system "cmake", "--install", "src/build"
+    system "cmake", "-S", "src", "-B", "srcbuild", *args
+    system "cmake", "--build", "srcbuild"
+    system "cmake", "--install", "srcbuild"
   end
 
   test do
-    (testpath/"hello.lean").write <<~EOS
+    (testpath"hello.lean").write <<~EOS
       def id' {α : Type} (x : α) : α := x
 
       inductive tree (α : Type) : Type
@@ -70,7 +70,7 @@ class Lean < Formula
           split, repeat { assumption }
       end
     EOS
-    system bin/"lean", testpath/"hello.lean"
-    system bin/"leanpkg", "help"
+    system bin"lean", testpath"hello.lean"
+    system bin"leanpkg", "help"
   end
 end

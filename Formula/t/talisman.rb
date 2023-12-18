@@ -1,11 +1,11 @@
 class Talisman < Formula
   desc "Tool to detect and prevent secrets from getting checked in"
-  homepage "https://thoughtworks.github.io/talisman/"
-  url "https://ghproxy.com/https://github.com/thoughtworks/talisman/archive/refs/tags/v1.31.0.tar.gz"
+  homepage "https:thoughtworks.github.iotalisman"
+  url "https:github.comthoughtworkstalismanarchiverefstagsv1.31.0.tar.gz"
   sha256 "7f3a04e19381b00cde566627382b4cc0fcf9c5fc08722ea6b965d9fb3b0be7ed"
   license "MIT"
   version_scheme 1
-  head "https://github.com/thoughtworks/talisman.git", branch: "master"
+  head "https:github.comthoughtworkstalisman.git", branch: "master"
 
   livecheck do
     url :stable
@@ -27,11 +27,11 @@ class Talisman < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), "./cmd"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), ".cmd"
   end
 
   test do
     system "git", "init", "."
-    assert_match "talisman scan report", shell_output(bin/"talisman --scan")
+    assert_match "talisman scan report", shell_output(bin"talisman --scan")
   end
 end

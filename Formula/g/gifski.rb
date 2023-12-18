@@ -1,7 +1,7 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
-  homepage "https://gif.ski/"
-  url "https://ghproxy.com/https://github.com/ImageOptim/gifski/archive/refs/tags/1.31.1.tar.gz"
+  homepage "https:gif.ski"
+  url "https:github.comImageOptimgifskiarchiverefstags1.31.1.tar.gz"
   sha256 "5d06fc2eeefb4abc8ce4e2a7722178e177837c561561fc1019d1438ba85999b5"
   license "AGPL-3.0-only"
 
@@ -29,8 +29,8 @@ class Gifski < Formula
 
   test do
     png = test_fixtures("test.png")
-    system bin/"gifski", "-o", "out.gif", png, png
-    assert_predicate testpath/"out.gif", :exist?
-    refute_predicate (testpath/"out.gif").size, :zero?
+    system bin"gifski", "-o", "out.gif", png, png
+    assert_predicate testpath"out.gif", :exist?
+    refute_predicate (testpath"out.gif").size, :zero?
   end
 end

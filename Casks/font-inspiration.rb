@@ -2,10 +2,10 @@ cask "font-inspiration" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/inspiration/Inspiration-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflinspirationInspiration-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Inspiration"
-  homepage "https://fonts.google.com/specimen/Inspiration"
+  homepage "https:fonts.google.comspecimenInspiration"
 
   font "Inspiration-Regular.ttf"
 

@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
-  homepage "https://github.com/CycloneDX/cdxgen"
-  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-9.9.9.tgz"
+  homepage "https:github.comCycloneDXcdxgen"
+  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-9.9.9.tgz"
   sha256 "00d7c0f5415696dc62f1bfa884e6fa7316f7143aff7a0709589ba3328bfb5ba4"
   license "Apache-2.0"
 
@@ -21,14 +21,14 @@ class Cdxgen < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    node_modules = libexec/"lib/node_modules/@cyclonedx/cdxgen/node_modules"
-    cdxgen_plugins = node_modules/"@cyclonedx/cdxgen-plugins-bin/plugins"
-    cdxgen_plugins.glob("*/*").each do |f|
+    node_modules = libexec"libnode_modules@cyclonedxcdxgennode_modules"
+    cdxgen_plugins = node_modules"@cyclonedxcdxgen-plugins-binplugins"
+    cdxgen_plugins.glob("**").each do |f|
       next if f.basename.to_s.end_with?("-#{os}-#{arch}")
 
       rm f
@@ -36,9 +36,9 @@ class Cdxgen < Formula
   end
 
   test do
-    (testpath/"Gemfile.lock").write <<~EOS
+    (testpath"Gemfile.lock").write <<~EOS
       GEM
-        remote: https://rubygems.org/
+        remote: https:rubygems.org
         specs:
           hello (0.0.1)
       PLATFORMS
@@ -49,8 +49,8 @@ class Cdxgen < Formula
         2.4.12
     EOS
 
-    assert_match "BOM includes 1 components and 0 dependencies", shell_output("#{bin}/cdxgen -p")
+    assert_match "BOM includes 1 components and 0 dependencies", shell_output("#{bin}cdxgen -p")
 
-    assert_match version.to_s, shell_output("#{bin}/cdxgen --version")
+    assert_match version.to_s, shell_output("#{bin}cdxgen --version")
   end
 end

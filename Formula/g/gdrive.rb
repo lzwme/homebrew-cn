@@ -1,10 +1,10 @@
 class Gdrive < Formula
   desc "Google Drive CLI Client"
-  homepage "https://github.com/glotlabs/gdrive"
-  url "https://ghproxy.com/https://github.com/glotlabs/gdrive/archive/refs/tags/3.9.0.tar.gz"
+  homepage "https:github.comglotlabsgdrive"
+  url "https:github.comglotlabsgdrivearchiverefstags3.9.0.tar.gz"
   sha256 "a4476480f0cf759f6a7ac475e06f819cbebfe6bb6f1e0038deff1c02597a275a"
   license "MIT"
-  head "https://github.com/glotlabs/gdrive.git", branch: "main"
+  head "https:github.comglotlabsgdrive.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4561fa71b34e9b35bc364c4804713a764f5670edf4060fe907b288d6e3becbd"
@@ -23,8 +23,8 @@ class Gdrive < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gdrive version")
-    assert_match "Usage: gdrive <COMMAND>", shell_output("#{bin}/gdrive 2>&1", 2)
-    assert_match "Error: No accounts found", shell_output("#{bin}/gdrive account list 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}gdrive version")
+    assert_match "Usage: gdrive <COMMAND>", shell_output("#{bin}gdrive 2>&1", 2)
+    assert_match "Error: No accounts found", shell_output("#{bin}gdrive account list 2>&1", 1)
   end
 end

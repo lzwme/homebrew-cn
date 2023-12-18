@@ -1,10 +1,10 @@
 class Xe < Formula
   desc "Simple xargs and apply replacement"
-  homepage "https://github.com/leahneukirchen/xe"
-  url "https://ghproxy.com/https://github.com/leahneukirchen/xe/archive/refs/tags/v1.0.tar.gz"
+  homepage "https:github.comleahneukirchenxe"
+  url "https:github.comleahneukirchenxearchiverefstagsv1.0.tar.gz"
   sha256 "1e2484c6295f4eb1c1b789d8edab4b728cf9ea7e4c40ef52a56073f9a273ce30"
   license :public_domain
-  head "https://github.com/leahneukirchen/xe.git", branch: "master"
+  head "https:github.comleahneukirchenxe.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16095f122ae4444d568eea11511c33f99c7b0760655af5b245d6f21bfad2f1d0"
@@ -23,7 +23,7 @@ class Xe < Formula
   end
 
   test do
-    (testpath/"input").write "a\nb\nc\nd\n"
-    assert_equal "b a\nd c\n", shell_output("#{bin}/xe -f #{testpath}/input -N2 -s 'echo $2 $1'")
+    (testpath"input").write "a\nb\nc\nd\n"
+    assert_equal "b a\nd c\n", shell_output("#{bin}xe -f #{testpath}input -N2 -s 'echo $2 $1'")
   end
 end

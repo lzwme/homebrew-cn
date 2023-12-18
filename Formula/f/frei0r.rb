@@ -1,7 +1,7 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
-  homepage "https://frei0r.dyne.org/"
-  url "https://ghproxy.com/https://github.com/dyne/frei0r/archive/refs/tags/v2.3.2.tar.gz"
+  homepage "https:frei0r.dyne.org"
+  url "https:github.comdynefrei0rarchiverefstagsv2.3.2.tar.gz"
   sha256 "304291e0ecb456a8b054fe04e14adc50ace54d0223b7b29165ff5343e820ef9d"
   license "GPL-2.0-or-later"
 
@@ -32,7 +32,7 @@ class Frei0r < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <frei0r.h>
 
       int main()
@@ -46,6 +46,6 @@ class Frei0r < Formula
       }
     EOS
     system ENV.cc, "-L#{lib}", "test.c", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

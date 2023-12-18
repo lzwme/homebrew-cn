@@ -1,14 +1,14 @@
 class Pdns < Formula
   desc "Authoritative nameserver"
-  homepage "https://www.powerdns.com"
-  url "https://downloads.powerdns.com/releases/pdns-4.8.3.tar.bz2"
+  homepage "https:www.powerdns.com"
+  url "https:downloads.powerdns.comreleasespdns-4.8.3.tar.bz2"
   sha256 "77b91199bdf71874334501c67e26469c2667a373d8423803fe657417295c77ba"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https://downloads.powerdns.com/releases/"
-    regex(/href=.*?pdns[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:downloads.powerdns.comreleases"
+    regex(href=.*?pdns[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -22,7 +22,7 @@ class Pdns < Formula
   end
 
   head do
-    url "https://github.com/powerdns/pdns.git", branch: "master"
+    url "https:github.compowerdnspdns.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,25 +43,25 @@ class Pdns < Formula
   def install
     args = %W[
       --prefix=#{prefix}
-      --sysconfdir=#{etc}/powerdns
+      --sysconfdir=#{etc}powerdns
       --with-lua
       --with-libcrypto=#{Formula["openssl@3"].opt_prefix}
       --with-sqlite3
       --with-modules=gsqlite3
     ]
 
-    system "./bootstrap" if build.head?
-    system "./configure", *args
+    system ".bootstrap" if build.head?
+    system ".configure", *args
     system "make", "install"
   end
 
   service do
-    run opt_sbin/"pdns_server"
+    run opt_sbin"pdns_server"
     keep_alive true
   end
 
   test do
-    output = shell_output("#{sbin}/pdns_server --version 2>&1", 99)
+    output = shell_output("#{sbin}pdns_server --version 2>&1", 99)
     assert_match "PowerDNS Authoritative Server #{version}", output
   end
 end

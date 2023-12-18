@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
-  homepage "https://ooni.org/"
+  homepage "https:ooni.org"
   # TODO: check if we can build with go1.21
-  url "https://ghproxy.com/https://github.com/ooni/probe-cli/archive/refs/tags/v3.20.0.tar.gz"
+  url "https:github.comooniprobe-cliarchiverefstagsv3.20.0.tar.gz"
   sha256 "701bdcbd42ef34fc04b581b278b3cda914c5a78b39bbba9d7ffa74095472bdb2"
   license "GPL-3.0-or-later"
 
@@ -19,22 +19,22 @@ class Ooniprobe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a8a563b82592d101032ca1135362bacf1a090db1160c9a5086a95f3a39ffc1d"
   end
 
-  # go1.21 build issue report, https://github.com/ooni/probe/issues/2548
+  # go1.21 build issue report, https:github.comooniprobeissues2548
   depends_on "go@1.20" => :build
   depends_on "tor"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/ooniprobe"
-    (var/"ooniprobe").mkpath
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdooniprobe"
+    (var"ooniprobe").mkpath
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ooniprobe version")
+    assert_match version.to_s, shell_output("#{bin}ooniprobe version")
 
     # failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 2048 kiB, got: 416 kiB).
     return if OS.linux?
 
-    (testpath/"config.json").write <<~EOS
+    (testpath"config.json").write <<~EOS
       {
         "_version": 3,
         "_informed_consent": false,
@@ -56,9 +56,9 @@ class Ooniprobe < Formula
       }
     EOS
 
-    mkdir_p "#{testpath}/ooni_home"
-    ENV["OONI_HOME"] = "#{testpath}/ooni_home"
-    Open3.popen3(bin/"ooniprobe", "--config", testpath/"config.json", "run", "websites", "--batch") do |_, _, stderr|
+    mkdir_p "#{testpath}ooni_home"
+    ENV["OONI_HOME"] = "#{testpath}ooni_home"
+    Open3.popen3(bin"ooniprobe", "--config", testpath"config.json", "run", "websites", "--batch") do |_, _, stderr|
       stderr.to_a.each do |line|
         j_line = JSON.parse(line)
         assert_equal j_line["level"], "info"

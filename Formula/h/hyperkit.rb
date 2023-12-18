@@ -1,7 +1,7 @@
 class Hyperkit < Formula
   desc "Toolkit for embedding hypervisor capabilities in your application"
-  homepage "https://github.com/moby/hyperkit"
-  url "https://ghproxy.com/https://github.com/moby/hyperkit/archive/refs/tags/v0.20210107.tar.gz"
+  homepage "https:github.commobyhyperkit"
+  url "https:github.commobyhyperkitarchiverefstagsv0.20210107.tar.gz"
   sha256 "095f5f5ef550d7cad10e4d13e9c9ce8b58cc319d654a6d837d8d87ee70537835"
   license "BSD-2-Clause"
 
@@ -21,18 +21,18 @@ class Hyperkit < Formula
   depends_on :macos # Uses Hypervisor.framework, a component of macOS.
 
   resource "tinycorelinux" do
-    url "https://github.com/Homebrew/homebrew-core/files/6405545/tinycorelinux_8.x.tar.gz"
+    url "https:github.comHomebrewhomebrew-corefiles6405545tinycorelinux_8.x.tar.gz"
     sha256 "560c1d2d3a0f12f9b1200eec57ca5c1d107cf4823d3880e09505fcd9cd39141a"
   end
 
   def install
     system "opam", "init", "--disable-sandboxing", "--no-setup"
-    opam_dir = "#{buildpath}/.brew_home/.opam"
-    ENV["CAML_LD_LIBRARY_PATH"] = "#{opam_dir}/system/lib/stublibs:#{Formula["ocaml"].opt_lib}/ocaml/stublibs"
+    opam_dir = "#{buildpath}.brew_home.opam"
+    ENV["CAML_LD_LIBRARY_PATH"] = "#{opam_dir}systemlibstublibs:#{Formula["ocaml"].opt_lib}ocamlstublibs"
     ENV["OPAMUTF8MSGS"] = "1"
-    ENV["PERL5LIB"] = "#{opam_dir}/system/lib/perl5"
-    ENV["OCAML_TOPLEVEL_PATH"] = "#{opam_dir}/system/lib/toplevel"
-    ENV.prepend_path "PATH", "#{opam_dir}/system/bin"
+    ENV["PERL5LIB"] = "#{opam_dir}systemlibperl5"
+    ENV["OCAML_TOPLEVEL_PATH"] = "#{opam_dir}systemlibtoplevel"
+    ENV.prepend_path "PATH", "#{opam_dir}systembin"
 
     system "opam", "exec", "--",
            "opam", "install", "-y", "uri.4.2.0", "qcow.0.11.0", "conduit.2.1.0", "lwt.5.3.0",
@@ -43,12 +43,12 @@ class Hyperkit < Formula
     args << "GIT_VERSION=#{version}"
     system "opam", "exec", "--", "make", *args
 
-    bin.install "build/hyperkit"
+    bin.install "buildhyperkit"
     man1.install "hyperkit.1"
   end
 
   test do
-    assert_match(version.to_s, shell_output("#{bin}/hyperkit -v 2>&1"))
+    assert_match(version.to_s, shell_output("#{bin}hyperkit -v 2>&1"))
 
     if Hardware::CPU.features.include? :vmx
       resource("tinycorelinux").stage do |context|
@@ -58,17 +58,17 @@ class Hyperkit < Formula
         cp(File.join(path_resource_versioned, "initrd.gz"), testpath)
       end
 
-      (testpath / "test_hyperkit.exp").write <<-EOS
-        #!/usr/bin/env expect -d
-        set KERNEL "./vmlinuz"
-        set KERNEL_INITRD "./initrd.gz"
+      (testpath  "test_hyperkit.exp").write <<-EOS
+        #!usrbinenv expect -d
+        set KERNEL ".vmlinuz"
+        set KERNEL_INITRD ".initrd.gz"
         set KERNEL_CMDLINE "earlyprintk=serial console=ttyS0"
         set MEM {512M}
         set PCI_DEV1 {0:0,hostbridge}
         set PCI_DEV2 {31,lpc}
         set LPC_DEV {com1,stdio}
         set ACPI {-A}
-        spawn #{bin}/hyperkit $ACPI -m $MEM -s $PCI_DEV1 -s $PCI_DEV2 -l $LPC_DEV -f kexec,$KERNEL,$KERNEL_INITRD,$KERNEL_CMDLINE
+        spawn #{bin}hyperkit $ACPI -m $MEM -s $PCI_DEV1 -s $PCI_DEV2 -l $LPC_DEV -f kexec,$KERNEL,$KERNEL_INITRD,$KERNEL_CMDLINE
         set pid [exp_pid]
         set timeout 20
         expect {

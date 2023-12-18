@@ -1,10 +1,10 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
-  homepage "https://uncrustify.sourceforge.net/"
-  url "https://ghproxy.com/https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.78.1.tar.gz"
+  homepage "https:uncrustify.sourceforge.net"
+  url "https:github.comuncrustifyuncrustifyarchiverefstagsuncrustify-0.78.1.tar.gz"
   sha256 "ecaf4c0adca14c36dfffa30bc28e69865115ecd602c90eb16a8cddccb41caad2"
   license "GPL-2.0-or-later"
-  head "https://github.com/uncrustify/uncrustify.git", branch: "master"
+  head "https:github.comuncrustifyuncrustify.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "988940baed6f80db45a495d387cfab38a75496ca60daf7f301adf34b1b445a57"
@@ -28,11 +28,11 @@ class Uncrustify < Formula
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
-    doc.install (buildpath/"documentation").children
+    doc.install (buildpath"documentation").children
   end
 
   test do
-    (testpath/"t.c").write <<~EOS
+    (testpath"t.c").write <<~EOS
       #include <stdio.h>
       int main(void) {return 0;}
     EOS
@@ -43,7 +43,7 @@ class Uncrustify < Formula
       }
     EOS
 
-    system "#{bin}/uncrustify", "-c", "#{doc}/htdocs/default.cfg", "t.c"
-    assert_equal expected, File.read("#{testpath}/t.c.uncrustify")
+    system "#{bin}uncrustify", "-c", "#{doc}htdocsdefault.cfg", "t.c"
+    assert_equal expected, File.read("#{testpath}t.c.uncrustify")
   end
 end

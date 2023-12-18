@@ -1,10 +1,10 @@
 class Nave < Formula
   desc "Virtual environments for Node.js"
-  homepage "https://github.com/isaacs/nave"
-  url "https://ghproxy.com/https://github.com/isaacs/nave/archive/refs/tags/v3.5.1.tar.gz"
+  homepage "https:github.comisaacsnave"
+  url "https:github.comisaacsnavearchiverefstagsv3.5.1.tar.gz"
   sha256 "a3d84ce87980fd8d1d98876bfc82b1c85eb22f6fab4ef971a81a1e36028da76a"
   license "ISC"
-  head "https://github.com/isaacs/nave.git", branch: "master"
+  head "https:github.comisaacsnave.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58ec21b9754af33112168f4878cbe6035e9da081baba466208ccdad4d2b11704"
@@ -23,6 +23,6 @@ class Nave < Formula
   end
 
   test do
-    assert_match "0.10.30", shell_output("#{bin}/nave ls-remote")
+    assert_match "0.10.30", shell_output("#{bin}nave ls-remote")
   end
 end

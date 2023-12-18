@@ -1,14 +1,14 @@
 class Genders < Formula
   desc "Static cluster configuration database for cluster management"
-  homepage "https://github.com/chaos/genders"
-  url "https://ghproxy.com/https://github.com/chaos/genders/archive/refs/tags/genders-1-28-1.tar.gz"
+  homepage "https:github.comchaosgenders"
+  url "https:github.comchaosgendersarchiverefstagsgenders-1-28-1.tar.gz"
   version "1.28.1"
   sha256 "3ca8b4771b2bf39383a3c383d36d308fa113de5c481e16fdef9cabd643359d09"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(/^genders[._-]v?(\d+(?:[.-]\d+)+)$/i)
+    regex(^genders[._-]v?(\d+(?:[.-]\d+)+)$i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("-", ".") }
     end
@@ -33,27 +33,27 @@ class Genders < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
     ENV["PYTHON"] = which("python3")
-    system "./configure", "--prefix=#{prefix}", "--with-java-extensions=no"
+    system ".configure", "--prefix=#{prefix}", "--with-java-extensions=no"
     system "make", "install"
 
     # Move man page out of top level mandir on Linux
-    man3.install (prefix/"man/man3").children unless OS.mac?
+    man3.install (prefix"manman3").children unless OS.mac?
   end
 
   test do
-    (testpath/"cluster").write <<~EOS
+    (testpath"cluster").write <<~EOS
       # slc cluster genders file
       slci,slcj,slc[0-15]  eth2=e%n,cluster=slc,all
       slci                 passwdhost
       slci,slcj            management
       slc[1-15]            compute
     EOS
-    assert_match "0 parse errors discovered", shell_output("#{bin}/nodeattr -f cluster -k 2>&1")
+    assert_match "0 parse errors discovered", shell_output("#{bin}nodeattr -f cluster -k 2>&1")
   end
 end

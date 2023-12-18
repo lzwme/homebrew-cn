@@ -5,19 +5,19 @@ cask "biglybt" do
   sha256 arm:   "45b50b8452fb00b13eefbd5d84dadf2d3fb65cf5f8bf3540205a1ae68da3da3c",
          intel: "479f737d015ecca811c21e120f89264f4815d251c895b88bf5206249a3dc41b7"
 
-  url "https://ghproxy.com/https://github.com/BiglySoftware/BiglyBT/releases/download/v#{version}/GitHub_BiglyBT_Mac_#{arch}_Installer.dmg",
-      verified: "github.com/BiglySoftware/BiglyBT/"
+  url "https:github.comBiglySoftwareBiglyBTreleasesdownloadv#{version}GitHub_BiglyBT_Mac_#{arch}_Installer.dmg",
+      verified: "github.comBiglySoftwareBiglyBT"
   name "biglybt"
   desc "Bittorrent client based on the Azureus open source project"
-  homepage "https://www.biglybt.com/"
+  homepage "https:www.biglybt.com"
 
   auto_updates true
   depends_on macos: ">= :el_capitan"
 
   preflight do
-    system_command "#{staged_path}/BiglyBT Installer.app/Contents/MacOS/JavaApplicationStub",
+    system_command "#{staged_path}BiglyBT Installer.appContentsMacOSJavaApplicationStub",
                    args:         [
-                     "-dir", "#{appdir}/BiglyBT",
+                     "-dir", "#{appdir}BiglyBT",
                      "-q",
                      "-Dinstall4j.suppressStdout=true",
                      "-Dinstall4j.debug=false",
@@ -28,12 +28,12 @@ cask "biglybt" do
                    sudo:         true
   end
 
-  uninstall delete: "#{appdir}/BiglyBT"
+  uninstall delete: "#{appdir}BiglyBT"
 
   zap trash: [
-    "~/Library/Application Support/BiglyBT",
-    "~/Library/Preferences/com.biglybt.plist",
-    "~/Library/Saved Application State/com.biglybt.savedState",
+    "~LibraryApplication SupportBiglyBT",
+    "~LibraryPreferencescom.biglybt.plist",
+    "~LibrarySaved Application Statecom.biglybt.savedState",
   ]
 
   caveats do

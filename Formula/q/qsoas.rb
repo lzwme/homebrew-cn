@@ -1,13 +1,13 @@
 class Qsoas < Formula
   desc "Versatile software for data analysis"
-  homepage "https://bip.cnrs.fr/groups/bip06/software/"
-  url "https://bip.cnrs.fr/wp-content/uploads/qsoas/qsoas-3.2.tar.gz"
+  homepage "https:bip.cnrs.frgroupsbip06software"
+  url "https:bip.cnrs.frwp-contentuploadsqsoasqsoas-3.2.tar.gz"
   sha256 "0cd0e3b0d77666797a1447b5ff7cf9ed35b53efd091fa7525fad4913c896de79"
   license "GPL-2.0-only"
 
   livecheck do
-    url "https://github.com/fourmond/QSoas.git"
-    regex(/(\d+(?:\.\d+)+)$/i)
+    url "https:github.comfourmondQSoas.git"
+    regex((\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,18 +30,18 @@ class Qsoas < Formula
 
   fails_with gcc: "5"
 
-  # Needs mruby 2, see https://github.com/fourmond/QSoas/issues/4
+  # Needs mruby 2, see https:github.comfourmondQSoasissues4
   resource "mruby2" do
-    url "https://ghproxy.com/https://github.com/mruby/mruby/archive/refs/tags/2.1.2.tar.gz"
+    url "https:github.commrubymrubyarchiverefstags2.1.2.tar.gz"
     sha256 "4dc0017e36d15e81dc85953afb2a643ba2571574748db0d8ede002cefbba053b"
   end
 
   def install
     resource("mruby2").stage do
-      inreplace "build_config.rb", /default/, "full-core"
+      inreplace "build_config.rb", default, "full-core"
       system "make"
 
-      cd "build/host/" do
+      cd "buildhost" do
         libexec.install %w[bin lib mrbgems mrblib]
       end
 
@@ -51,14 +51,14 @@ class Qsoas < Formula
     gsl = Formula["gsl"].opt_prefix
     qt5 = Formula["qt@5"].opt_prefix
 
-    system "#{qt5}/bin/qmake", "MRUBY_DIR=#{libexec}",
-                               "GSL_DIR=#{gsl}/include",
-                               "QMAKE_LFLAGS=-L#{libexec}/lib -L#{gsl}/lib"
+    system "#{qt5}binqmake", "MRUBY_DIR=#{libexec}",
+                               "GSL_DIR=#{gsl}include",
+                               "QMAKE_LFLAGS=-L#{libexec}lib -L#{gsl}lib"
     system "make"
 
     if OS.mac?
       prefix.install "QSoas.app"
-      bin.write_exec_script "#{prefix}/QSoas.app/Contents/MacOS/QSoas"
+      bin.write_exec_script "#{prefix}QSoas.appContentsMacOSQSoas"
     else
       bin.install "QSoas"
     end
@@ -68,6 +68,6 @@ class Qsoas < Formula
     # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     assert_match "mfit-linear-kinetic-system",
-                 shell_output("#{bin}/QSoas --list-commands")
+                 shell_output("#{bin}QSoas --list-commands")
   end
 end

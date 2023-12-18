@@ -1,10 +1,10 @@
 class SshAudit < Formula
   desc "SSH server & client auditing"
-  homepage "https://github.com/jtesta/ssh-audit"
-  url "https://files.pythonhosted.org/packages/f2/b9/88c7f0ecba0a8fbf07e0d7674b7eac3dbf5270ac39a3b48bc34bb7c5a22c/ssh-audit-3.0.0.tar.gz"
+  homepage "https:github.comjtestassh-audit"
+  url "https:files.pythonhosted.orgpackagesf2b988c7f0ecba0a8fbf07e0d7674b7eac3dbf5270ac39a3b48bc34bb7c5a22cssh-audit-3.0.0.tar.gz"
   sha256 "a6a9f94f6f718b56961b70dbf1efcc0e42b3441822e1ea7b0c043fce1f749072"
   license "MIT"
-  head "https://github.com/jtesta/ssh-audit.git", branch: "master"
+  head "https:github.comjtestassh-audit.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -29,9 +29,9 @@ class SshAudit < Formula
   end
 
   test do
-    output = shell_output("#{bin}/ssh-audit -nt 0 ssh.github.com", 1)
+    output = shell_output("#{bin}ssh-audit -nt 0 ssh.github.com", 1)
     assert_match "[exception] cannot connect to ssh.github.com port 22", output
 
-    assert_match "ssh-audit v#{version}", shell_output("#{bin}/ssh-audit -h")
+    assert_match "ssh-audit v#{version}", shell_output("#{bin}ssh-audit -h")
   end
 end

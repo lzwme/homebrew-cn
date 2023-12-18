@@ -2,11 +2,11 @@ cask "font-mooli" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mooli/Mooli-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmooliMooli-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mooli"
   desc "Derived from the mulish font family"
-  homepage "https://fonts.google.com/specimen/Mooli"
+  homepage "https:fonts.google.comspecimenMooli"
 
   font "Mooli-Regular.ttf"
 

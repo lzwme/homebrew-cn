@@ -1,16 +1,16 @@
 class Smpeg2 < Formula
   desc "SDL MPEG Player Library"
-  homepage "https://icculus.org/smpeg/"
+  homepage "https:icculus.orgsmpeg"
   # license change was done in 2021 Aug, which is 8 years after 2.0.0 release
-  # commit ref, https://github.com/icculus/smpeg/commit/ffa0d54
-  url "https://ghproxy.com/https://github.com/icculus/smpeg/archive/refs/tags/release_2_0_0.tar.gz"
+  # commit ref, https:github.comicculussmpegcommitffa0d54
+  url "https:github.comicculussmpegarchiverefstagsrelease_2_0_0.tar.gz"
   sha256 "fdd431bd607efcf0f35789fb3105d7535d4f0e8b46e673e9c0051726e8d1e701"
   license "LGPL-2.0-or-later"
-  head "https://github.com/icculus/smpeg.git", branch: "main"
+  head "https:github.comicculussmpeg.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^release[._-]v?(2(?:[._]\d+)+)$/i)
+    regex(^release[._-]v?(2(?:[._]\d+)+)$i)
     strategy :git do |tags, regex|
       tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
@@ -40,8 +40,8 @@ class Smpeg2 < Formula
   patch :DATA
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}",
                           "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}",
                           "--disable-dependency-tracking",
                           "--disable-debug",
@@ -50,20 +50,20 @@ class Smpeg2 < Formula
     system "make", "install"
 
     # To avoid a possible conflict with smpeg 0.x
-    mv "#{bin}/plaympeg", "#{bin}/plaympeg2"
-    mv "#{man1}/plaympeg.1", "#{man1}/plaympeg2.1"
+    mv "#{bin}plaympeg", "#{bin}plaympeg2"
+    mv "#{man1}plaympeg.1", "#{man1}plaympeg2.1"
   end
 
   test do
-    system "#{bin}/plaympeg2", "--version"
+    system "#{bin}plaympeg2", "--version"
   end
 end
 
 __END__
-diff --git a/acinclude/libtool.m4 b/acinclude/libtool.m4
+diff --git aacincludelibtool.m4 bacincludelibtool.m4
 index 7dfd109..f8b1ac0 100644
---- a/acinclude/libtool.m4
-+++ b/acinclude/libtool.m4
+--- aacincludelibtool.m4
++++ bacincludelibtool.m4
 @@ -947,18 +947,13 @@ m4_defun_once([_LT_REQUIRED_DARWIN_CHECKS],[
        _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
      darwin1.*)

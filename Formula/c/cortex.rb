@@ -1,7 +1,7 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
-  homepage "https://cortexmetrics.io/"
-  url "https://ghproxy.com/https://github.com/cortexproject/cortex/archive/refs/tags/v1.16.0.tar.gz"
+  homepage "https:cortexmetrics.io"
+  url "https:github.comcortexprojectcortexarchiverefstagsv1.16.0.tar.gz"
   sha256 "9377a555164535c8da27c86a7f29cd877e3825f00891c6d4957353d8cca8498f"
   license "Apache-2.0"
 
@@ -23,18 +23,18 @@ class Cortex < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cortex"
-    cd "docs/configuration" do
-      inreplace "single-process-config-blocks.yaml", "/tmp", var
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcortex"
+    cd "docsconfiguration" do
+      inreplace "single-process-config-blocks.yaml", "tmp", var
       etc.install "single-process-config-blocks.yaml" => "cortex.yaml"
     end
   end
 
   service do
-    run [opt_bin/"cortex", "-config.file=#{etc}/cortex.yaml"]
+    run [opt_bin"cortex", "-config.file=#{etc}cortex.yaml"]
     keep_alive true
-    error_log_path var/"log/cortex.log"
-    log_path var/"log/cortex.log"
+    error_log_path var"logcortex.log"
+    log_path var"logcortex.log"
     working_dir var
   end
 
@@ -45,8 +45,8 @@ class Cortex < Formula
     port = free_port
 
     # A minimal working config modified from
-    # https://github.com/cortexproject/cortex/blob/master/docs/configuration/single-process-config-blocks.yaml
-    (testpath/"cortex.yaml").write <<~EOS
+    # https:github.comcortexprojectcortexblobmasterdocsconfigurationsingle-process-config-blocks.yaml
+    (testpath"cortex.yaml").write <<~EOS
       server:
         http_listen_port: #{port}
       ingester:
@@ -58,11 +58,11 @@ class Cortex < Formula
       blocks_storage:
         backend: filesystem
         filesystem:
-          dir: #{testpath}/data/tsdb
+          dir: #{testpath}datatsdb
     EOS
 
     Open3.popen3(
-      bin/"cortex", "-config.file=cortex.yaml",
+      bin"cortex", "-config.file=cortex.yaml",
                     "-server.grpc-listen-port=#{free_port}"
     ) do |_, _, stderr, wait_thr|
       Timeout.timeout(5) do
@@ -72,7 +72,7 @@ class Cortex < Formula
           # may shadow errors that only occur when modules are fully loaded.
           break if line.include? "Cortex started"
         end
-        output = shell_output("curl -s http://localhost:#{port}/services")
+        output = shell_output("curl -s http:localhost:#{port}services")
         assert_match "Running", output
       end
     ensure

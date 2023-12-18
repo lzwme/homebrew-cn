@@ -1,11 +1,11 @@
 class Easeprobe < Formula
-  desc "Simple, standalone, and lightWeight tool that can do health/status checking"
-  homepage "https://github.com/megaease/easeprobe"
-  url "https://github.com/megaease/easeprobe.git",
+  desc "Simple, standalone, and lightWeight tool that can do healthstatus checking"
+  homepage "https:github.commegaeaseeaseprobe"
+  url "https:github.commegaeaseeaseprobe.git",
       tag:      "v2.1.1",
       revision: "5b3a33c0eacafeffde0d38f9a65a0218468d5fb0"
   license "Apache-2.0"
-  head "https://github.com/megaease/easeprobe.git", branch: "main"
+  head "https:github.commegaeaseeaseprobe.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db40c79d44d902061406cadf9f76938cb59f9f605fc6b47dcef0b0b63ae98770"
@@ -24,29 +24,29 @@ class Easeprobe < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/megaease/easeprobe/pkg/version.RELEASE=#{version}
-      -X github.com/megaease/easeprobe/pkg/version.COMMIT=#{Utils.git_head}
-      -X github.com/megaease/easeprobe/pkg/version.REPO=megaease/easeprobe
+      -X github.commegaeaseeaseprobepkgversion.RELEASE=#{version}
+      -X github.commegaeaseeaseprobepkgversion.COMMIT=#{Utils.git_head}
+      -X github.commegaeaseeaseprobepkgversion.REPO=megaeaseeaseprobe
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/easeprobe"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdeaseprobe"
   end
 
   test do
-    (testpath/"config.yml").write <<~EOS.chomp
+    (testpath"config.yml").write <<~EOS.chomp
       http:
         - name: "brew.sh"
-          url: "https://brew.sh"
+          url: "https:brew.sh"
       notify:
         log:
           - name: "logfile"
-            file: #{testpath}/easeprobe.log
+            file: #{testpath}easeprobe.log
     EOS
 
-    easeprobe_stdout = (testpath/"easeprobe.log")
+    easeprobe_stdout = (testpath"easeprobe.log")
 
     pid = fork do
       $stdout.reopen(easeprobe_stdout)
-      exec bin/"easeprobe", "-f", testpath/"config.yml"
+      exec bin"easeprobe", "-f", testpath"config.yml"
     end
     sleep 2
     assert_match "Ready to monitor(http): brew.sh", easeprobe_stdout.read

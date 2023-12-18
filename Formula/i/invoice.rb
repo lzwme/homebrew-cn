@@ -1,10 +1,10 @@
 class Invoice < Formula
   desc "Command-line invoice generator"
-  homepage "https://github.com/maaslalani/invoice"
-  url "https://ghproxy.com/https://github.com/maaslalani/invoice/archive/refs/tags/v0.1.0.tar.gz"
+  homepage "https:github.commaaslalaniinvoice"
+  url "https:github.commaaslalaniinvoicearchiverefstagsv0.1.0.tar.gz"
   sha256 "f34f20f6491f42c0e94dbde433a578f0dba98938f2e3186018d3e16d050abdaf"
   license "MIT"
-  head "https://github.com/maaslalani/invoice.git", branch: "main"
+  head "https:github.commaaslalaniinvoice.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfd3dde3902f66423f1a09b951ad977729e31b6e7b81e5e6f4f61de4765e438a"
@@ -23,11 +23,11 @@ class Invoice < Formula
   end
 
   test do
-    cmd = "#{bin}/invoice generate --from \"Dream, Inc.\" --to \"Imagine, Inc.\" " \
+    cmd = "#{bin}invoice generate --from \"Dream, Inc.\" --to \"Imagine, Inc.\" " \
           "--item \"Rubber Duck\" --quantity 2 --rate 25 " \
           "--tax 0.13 --discount 0.15 " \
           "--note \"For debugging purposes.\""
     assert_equal "Generated invoice.pdf", shell_output(cmd).chomp
-    assert_predicate testpath/"invoice.pdf", :exist?
+    assert_predicate testpath"invoice.pdf", :exist?
   end
 end

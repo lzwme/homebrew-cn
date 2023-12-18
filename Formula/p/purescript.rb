@@ -1,11 +1,11 @@
 class Purescript < Formula
   desc "Strongly typed programming language that compiles to JavaScript"
-  homepage "https://www.purescript.org/"
+  homepage "https:www.purescript.org"
   # TODO: Try to switch `ghc@9.2` to `ghc` when purescript.cabal allows base>=4.17
-  url "https://hackage.haskell.org/package/purescript-0.15.13/purescript-0.15.13.tar.gz"
+  url "https:hackage.haskell.orgpackagepurescript-0.15.13purescript-0.15.13.tar.gz"
   sha256 "cb3e8ed2c54af63e950e784426e18a02c572bf356325f20fbff3a98df04222af"
   license "BSD-3-Clause"
-  head "https://github.com/purescript/purescript.git", branch: "master"
+  head "https:github.compurescriptpurescript.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9635623fa99414c51f6513d033286e1dbaf26f0ddc2809f81293f9d9edf01ae"
@@ -26,22 +26,22 @@ class Purescript < Formula
   def install
     # Use ncurses in REPL, providing an improved experience when editing long
     # lines in the REPL.
-    # See https://github.com/purescript/purescript/issues/3696#issuecomment-657282303.
+    # See https:github.compurescriptpurescriptissues3696#issuecomment-657282303.
     inreplace "stack.yaml", "terminfo: false", "terminfo: true"
 
     system "stack", "install", "--system-ghc", "--no-install-ghc", "--skip-ghc-check", "--local-bin-path=#{bin}"
   end
 
   test do
-    test_module_path = testpath/"Test.purs"
-    test_target_path = testpath/"test-module.js"
+    test_module_path = testpath"Test.purs"
+    test_target_path = testpath"test-module.js"
     test_module_path.write <<~EOS
       module Test where
 
       main :: Int
       main = 1
     EOS
-    system bin/"purs", "compile", test_module_path, "-o", test_target_path
+    system bin"purs", "compile", test_module_path, "-o", test_target_path
     assert_predicate test_target_path, :exist?
   end
 end

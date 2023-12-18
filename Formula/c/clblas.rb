@@ -1,7 +1,7 @@
 class Clblas < Formula
   desc "Library containing BLAS functions written in OpenCL"
-  homepage "https://github.com/clMathLibraries/clBLAS"
-  url "https://ghproxy.com/https://github.com/clMathLibraries/clBLAS/archive/refs/tags/v2.12.tar.gz"
+  homepage "https:github.comclMathLibrariesclBLAS"
+  url "https:github.comclMathLibrariesclBLASarchiverefstagsv2.12.tar.gz"
   sha256 "7269c7cb06a43c5e96772010eba032e6d54e72a3abff41f16d765a5e524297a9"
   license "Apache-2.0"
   revision 1
@@ -29,9 +29,9 @@ class Clblas < Formula
   end
 
   # Fix missing stdlib.h includes.
-  # PR ref: https://github.com/clMathLibraries/clBLAS/pull/360
+  # PR ref: https:github.comclMathLibrariesclBLASpull360
   patch do
-    url "https://github.com/clMathLibraries/clBLAS/commit/68ce5f0b824d7cf9d71b09bb235cf219defcc7b4.patch?full_index=1"
+    url "https:github.comclMathLibrariesclBLAScommit68ce5f0b824d7cf9d71b09bb235cf219defcc7b4.patch?full_index=1"
     sha256 "df5dc87e9ae543a043608cf790d01b985627b5b6355356c860cfd45a47ba2c36"
   end
 
@@ -44,14 +44,14 @@ class Clblas < Formula
                     "-DPYTHON_EXECUTABLE=#{which("python3") || which("python")}",
                     "-DSUFFIX_LIB:STRING="
     system "make", "install"
-    pkgshare.install "src/samples/example_srot.c"
+    pkgshare.install "srcsamplesexample_srot.c"
   end
 
   test do
     # We do not run the test, as it fails on CI machines
     # ("clGetDeviceIDs() failed with -1")
     opencl_lib = OS.mac? ? ["-framework", "OpenCL"] : ["-lOpenCL"]
-    system ENV.cc, pkgshare/"example_srot.c", "-I#{include}", "-L#{lib}",
+    system ENV.cc, pkgshare"example_srot.c", "-I#{include}", "-L#{lib}",
                    "-lclBLAS", *opencl_lib, "-Wno-implicit-function-declaration"
   end
 end

@@ -1,7 +1,7 @@
 class Portmidi < Formula
-  desc "Cross-platform library for real-time MIDI I/O"
-  homepage "https://github.com/PortMidi/portmidi"
-  url "https://ghproxy.com/https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.4.tar.gz"
+  desc "Cross-platform library for real-time MIDI IO"
+  homepage "https:github.comPortMidiportmidi"
+  url "https:github.comPortMidiportmidiarchiverefstagsv2.0.4.tar.gz"
   sha256 "64893e823ae146cabd3ad7f9a9a9c5332746abe7847c557b99b2577afa8a607c"
   license "MIT"
   revision 1
@@ -31,13 +31,13 @@ class Portmidi < Formula
   #  Threads::Threads
   # but the target was not found.
   patch do
-    url "https://github.com/PortMidi/portmidi/commit/a47be8c58b25e2c122588e0b56306c0cfdce756c.patch?full_index=1"
+    url "https:github.comPortMidiportmidicommita47be8c58b25e2c122588e0b56306c0cfdce756c.patch?full_index=1"
     sha256 "aeeb22a3809fb79d370003936a6d5b110d33cfc88b39fc0f83d060e1b79dab4c"
   end
 
   def install
     if OS.mac? && MacOS.version <= :sierra
-      # Fix "fatal error: 'os/availability.h' file not found" on 10.11 and
+      # Fix "fatal error: 'osavailability.h' file not found" on 10.11 and
       # "error: expected function body after function declarator" on 10.12
       # Requires the CLT to be the active developer directory if Xcode is
       # installed
@@ -50,7 +50,7 @@ class Portmidi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <portmidi.h>
 
       int main()
@@ -64,6 +64,6 @@ class Portmidi < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lportmidi", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -2,10 +2,10 @@ cask "font-chonburi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/chonburi/Chonburi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflchonburiChonburi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Chonburi"
-  homepage "https://fonts.google.com/specimen/Chonburi"
+  homepage "https:fonts.google.comspecimenChonburi"
 
   font "Chonburi-Regular.ttf"
 

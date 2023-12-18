@@ -1,10 +1,10 @@
 class HppFcl < Formula
   desc "Extension of the Flexible Collision Library"
-  homepage "https://github.com/humanoid-path-planner/hpp-fcl"
-  url "https://ghproxy.com/https://github.com/humanoid-path-planner/hpp-fcl/releases/download/v2.4.0/hpp-fcl-2.4.0.tar.gz"
+  homepage "https:github.comhumanoid-path-plannerhpp-fcl"
+  url "https:github.comhumanoid-path-plannerhpp-fclreleasesdownloadv2.4.0hpp-fcl-2.4.0.tar.gz"
   sha256 "15b5f1d6fe98fd3bf175913821296c14b31ce1822ef303d9c6dff8ad2fefc733"
   license "BSD-2-Clause"
-  head "https://github.com/humanoid-path-planner/hpp-fcl.git", branch: "devel"
+  head "https:github.comhumanoid-path-plannerhpp-fcl.git", branch: "devel"
 
   livecheck do
     url :stable
@@ -38,8 +38,8 @@ class HppFcl < Formula
   end
 
   def install
-    ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefix/Language::Python.site_packages(python3)
-    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share/"eigen3/cmake"
+    ENV.prepend_path "PYTHONPATH", Formula["eigenpy"].opt_prefixLanguage::Python.site_packages(python3)
+    ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share"eigen3cmake"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DPYTHON_EXECUTABLE=#{which(python3)}",

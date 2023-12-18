@@ -2,12 +2,12 @@ cask "font-kodchasan" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/kodchasan"
+      only_path: "oflkodchasan"
   name "Kodchasan"
-  homepage "https://fonts.google.com/specimen/Kodchasan"
+  homepage "https:fonts.google.comspecimenKodchasan"
 
   font "Kodchasan-Bold.ttf"
   font "Kodchasan-BoldItalic.ttf"

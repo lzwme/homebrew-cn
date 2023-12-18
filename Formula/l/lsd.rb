@@ -1,10 +1,10 @@
 class Lsd < Formula
   desc "Clone of ls with colorful output, file type icons, and more"
-  homepage "https://github.com/lsd-rs/lsd"
-  url "https://ghproxy.com/https://github.com/lsd-rs/lsd/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:github.comlsd-rslsd"
+  url "https:github.comlsd-rslsdarchiverefstagsv1.0.0.tar.gz"
   sha256 "ab34e9c85bc77cfa42b43bfb54414200433a37419f3b1947d0e8cfbb4b7a6325"
   license "Apache-2.0"
-  head "https://github.com/lsd-rs/lsd.git", branch: "master"
+  head "https:github.comlsd-rslsd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96842f513bc310991a5aed5d259fa2e3dcb28293c1f2582158fd2fc7825cebf3"
@@ -30,12 +30,12 @@ class Lsd < Formula
     fish_completion.install "lsd.fish"
     zsh_completion.install "_lsd"
 
-    system "pandoc", "doc/lsd.md", "--standalone", "--to=man", "-o", "doc/lsd.1"
-    man1.install "doc/lsd.1"
+    system "pandoc", "doclsd.md", "--standalone", "--to=man", "-o", "doclsd.1"
+    man1.install "doclsd.1"
   end
 
   test do
-    output = shell_output("#{bin}/lsd -l #{prefix}")
+    output = shell_output("#{bin}lsd -l #{prefix}")
     assert_match "README.md", output
   end
 end

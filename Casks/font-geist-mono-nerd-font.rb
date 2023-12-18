@@ -2,10 +2,10 @@ cask "font-geist-mono-nerd-font" do
   version "3.1.1"
   sha256 "62102011b97e01ab0cbafec5664e99d26828e208610c2d3a09f90512dcf0b793"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/GeistMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}GeistMono.zip"
   name "GeistMono Nerd Font (Geist Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

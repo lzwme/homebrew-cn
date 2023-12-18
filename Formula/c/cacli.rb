@@ -1,7 +1,7 @@
 class Cacli < Formula
   desc "Train machine learning models from Cloud Annotations"
-  homepage "https://cloud.annotations.ai"
-  url "https://ghproxy.com/https://github.com/cloud-annotations/cloud-annotations/archive/refs/tags/v1.3.2.tar.gz"
+  homepage "https:cloud.annotations.ai"
+  url "https:github.comcloud-annotationscloud-annotationsarchiverefstagsv1.3.2.tar.gz"
   sha256 "e7d8fd54f16098a6ac9a612b021beea3218d9747672d49eff20a285cdee69101"
   license "MIT"
 
@@ -24,18 +24,18 @@ class Cacli < Formula
 
   def install
     cd "cacli" do
-      project = "github.com/cloud-annotations/training/cacli"
+      project = "github.comcloud-annotationstrainingcacli"
       system "go", "build",
-             "-ldflags", "-s -w -X #{project}/version.Version=#{version}",
-             "-o", bin/"cacli"
+             "-ldflags", "-s -w -X #{project}version.Version=#{version}",
+             "-o", bin"cacli"
     end
   end
 
   test do
     # Attempt to list training runs without credentials and confirm that it
     # fails as expected.
-    output = shell_output("#{bin}/cacli list 2>&1", 1).strip
-    cleaned = output.gsub(/\e\[([;\d]+)?m/, "") # Remove colors from output.
+    output = shell_output("#{bin}cacli list 2>&1", 1).strip
+    cleaned = output.gsub(\e\[([;\d]+)?m, "") # Remove colors from output.
     assert_match "FAILED\nNot logged in. Use 'cacli login' to log in.", cleaned
   end
 end

@@ -2,10 +2,10 @@ cask "font-mallanna" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mallanna/Mallanna-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmallannaMallanna-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mallanna"
-  homepage "https://fonts.google.com/specimen/Mallanna"
+  homepage "https:fonts.google.comspecimenMallanna"
 
   font "Mallanna-Regular.ttf"
 

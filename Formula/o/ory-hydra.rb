@@ -1,7 +1,7 @@
 class OryHydra < Formula
   desc "OpenID Certified OAuth 2.0 Server and OpenID Connect Provider"
-  homepage "https://www.ory.sh/hydra/"
-  url "https://github.com/ory/hydra.git",
+  homepage "https:www.ory.shhydra"
+  url "https:github.comoryhydra.git",
       tag:      "v2.1.2",
       revision: "d94ed6e4486ee270d8903e6e9376134931a742d9"
   license "Apache-2.0"
@@ -30,18 +30,18 @@ class OryHydra < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/ory/hydra/v2/driver/config.Version=v#{version}
-      -X github.com/ory/hydra/v2/driver/config.Date=#{time.iso8601}
-      -X github.com/ory/hydra/v2/driver/config.Commit=#{Utils.git_head}
+      -X github.comoryhydrav2driverconfig.Version=v#{version}
+      -X github.comoryhydrav2driverconfig.Date=#{time.iso8601}
+      -X github.comoryhydrav2driverconfig.Commit=#{Utils.git_head}
     ].join(" ")
-    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "sqlite", "-o", bin/"hydra"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "sqlite", "-o", bin"hydra"
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"hydra version")
+    assert_match version.to_s, shell_output(bin"hydra version")
 
     admin_port = free_port
-    (testpath/"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~EOS
       dsn: memory
       serve:
         public:
@@ -50,11 +50,11 @@ class OryHydra < Formula
           port: #{admin_port}
     EOS
 
-    fork { exec bin/"hydra", "serve", "all", "--config", "#{testpath}/config.yaml" }
+    fork { exec bin"hydra", "serve", "all", "--config", "#{testpath}config.yaml" }
     sleep 20
 
-    endpoint = "http://127.0.0.1:#{admin_port}/"
-    output = shell_output("#{bin}/hydra list clients --endpoint #{endpoint}")
+    endpoint = "http:127.0.0.1:#{admin_port}"
+    output = shell_output("#{bin}hydra list clients --endpoint #{endpoint}")
     assert_match "CLIENT ID\tCLIENT SECRET", output
   end
 end

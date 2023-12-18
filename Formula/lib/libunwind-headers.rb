@@ -1,7 +1,7 @@
 class LibunwindHeaders < Formula
   desc "C API for determining the call-chain of a program"
-  homepage "https://opensource.apple.com/"
-  url "https://ghproxy.com/https://github.com/apple-oss-distributions/libunwind/archive/refs/tags/libunwind-201.tar.gz"
+  homepage "https:opensource.apple.com"
+  url "https:github.comapple-oss-distributionslibunwindarchiverefstagslibunwind-201.tar.gz"
   sha256 "bbe469bd8778ba5a3e420823b9bf96ae98757a250f198893dee4628e0a432899"
   license "APSL-2.0"
 
@@ -13,8 +13,8 @@ class LibunwindHeaders < Formula
 
   def install
     cd "libunwind" do
-      include.install Dir["include/*"]
-      (include/"libunwind").install Dir["src/*.h*"]
+      include.install Dir["include*"]
+      (include"libunwind").install Dir["src*.h*"]
     end
   end
 end

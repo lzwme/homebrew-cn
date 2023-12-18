@@ -1,7 +1,7 @@
 class Gat < Formula
   desc "Cat alternative written in Go"
-  homepage "https://github.com/koki-develop/gat"
-  url "https://ghproxy.com/https://github.com/koki-develop/gat/archive/refs/tags/v0.14.0.tar.gz"
+  homepage "https:github.comkoki-developgat"
+  url "https:github.comkoki-developgatarchiverefstagsv0.14.0.tar.gz"
   sha256 "b735faf5ef39911c3cfdb5fdcfe4f515e99b0c87f20b6f517ce2451caebfd201"
   license "MIT"
 
@@ -20,15 +20,15 @@ class Gat < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/koki-develop/gat/cmd.version=v#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comkoki-developgatcmd.version=v#{version}")
   end
 
   test do
-    (testpath/"test.sh").write 'echo "hello gat"'
+    (testpath"test.sh").write 'echo "hello gat"'
 
     assert_equal \
       "\e[38;5;231mecho\e[0m\e[38;5;231m \e[0m\e[38;5;186m\"hello gat\"\e[0m",
-      shell_output("#{bin}/gat --force-color test.sh")
-    assert_match version.to_s, shell_output("#{bin}/gat --version")
+      shell_output("#{bin}gat --force-color test.sh")
+    assert_match version.to_s, shell_output("#{bin}gat --version")
   end
 end

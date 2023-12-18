@@ -1,16 +1,16 @@
 class Gluon < Formula
   desc "Static, type inferred and embeddable language written in Rust"
-  homepage "https://gluon-lang.org"
-  url "https://ghproxy.com/https://github.com/gluon-lang/gluon/archive/refs/tags/v0.18.2.tar.gz"
+  homepage "https:gluon-lang.org"
+  url "https:github.comgluon-langgluonarchiverefstagsv0.18.2.tar.gz"
   sha256 "b5f82fecdf56b8b25ed516a023d31bcaf576b2bb3b2aee3e53d6f50ea8f281a3"
   license "MIT"
-  head "https://github.com/gluon-lang/gluon.git", branch: "master"
+  head "https:github.comgluon-langgluon.git", branch: "master"
 
   # There's a lot of false tags here.
   # Those prefixed with 'v' seem to be ok.
   livecheck do
     url :stable
-    regex(/^v(\d+(?:\.\d+)+)$/i)
+    regex(^v(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,10 +32,10 @@ class Gluon < Formula
   end
 
   test do
-    (testpath/"test.glu").write <<~EOS
+    (testpath"test.glu").write <<~EOS
       let io = import! std.io
       io.print "Hello world!\\n"
     EOS
-    assert_equal "Hello world!\n", shell_output("#{bin}/gluon test.glu")
+    assert_equal "Hello world!\n", shell_output("#{bin}gluon test.glu")
   end
 end

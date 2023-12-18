@@ -1,7 +1,7 @@
 class ValaLanguageServer < Formula
   desc "Code Intelligence for Vala & Genie"
-  homepage "https://github.com/vala-lang/vala-language-server"
-  url "https://ghproxy.com/https://github.com/vala-lang/vala-language-server/releases/download/0.48.7/vala-language-server-0.48.7.tar.xz"
+  homepage "https:github.comvala-langvala-language-server"
+  url "https:github.comvala-langvala-language-serverreleasesdownload0.48.7vala-language-server-0.48.7.tar.xz"
   sha256 "a93e09497738144792466d0c5ccb1347583d84a9987b65b08f6aa5d5a1e3f431"
   license "LGPL-2.1-only"
 
@@ -40,7 +40,7 @@ class ValaLanguageServer < Formula
       "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"" \
       "processId\":88075,\"rootPath\":\"#{testpath}\",\"capabilities\":{},\"trace\":\"ver" \
       "bose\",\"workspaceFolders\":null}}\r\n"
-    output = pipe_output("#{bin}/vala-language-server", input, 0)
-    assert_match(/^Content-Length: \d+/i, output)
+    output = pipe_output("#{bin}vala-language-server", input, 0)
+    assert_match(^Content-Length: \d+i, output)
   end
 end

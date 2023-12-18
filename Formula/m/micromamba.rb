@@ -1,10 +1,10 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
-  homepage "https://github.com/mamba-org/mamba"
-  url "https://ghproxy.com/https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.5.5.tar.gz"
+  homepage "https:github.commamba-orgmamba"
+  url "https:github.commamba-orgmambaarchiverefstagsmicromamba-1.5.5.tar.gz"
   sha256 "fe6e0d223062e7ce616e9d3aaa529cd11f1a46847f6cbaa8e87a6868570e108b"
   license "BSD-3-Clause"
-  head "https://github.com/mamba-org/mamba.git", branch: "main"
+  head "https:github.commamba-orgmamba.git", branch: "main"
 
   livecheck do
     url :stable
@@ -45,7 +45,7 @@ class Micromamba < Formula
 
   resource "libarchive-headers" do
     on_monterey :or_newer do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-121.40.3.tar.gz"
+      url "https:github.comapple-oss-distributionslibarchivearchiverefstagslibarchive-121.40.3.tar.gz"
       sha256 "bb972360581fe5326ef5d313ec51579b1c1a4c8a6f20a5068851032a0fa74f33"
     end
   end
@@ -61,12 +61,12 @@ class Micromamba < Formula
 
     if OS.mac? && MacOS.version >= :monterey
       resource("libarchive-headers").stage do
-        cd "libarchive/libarchive" do
-          (buildpath/"homebrew/include").install "archive.h", "archive_entry.h"
+        cd "libarchivelibarchive" do
+          (buildpath"homebrewinclude").install "archive.h", "archive_entry.h"
         end
       end
-      args << "-DLibArchive_INCLUDE_DIR=#{buildpath}/homebrew/include"
-      ENV.append_to_cflags "-I#{buildpath}/homebrew/include"
+      args << "-DLibArchive_INCLUDE_DIR=#{buildpath}homebrewinclude"
+      ENV.append_to_cflags "-I#{buildpath}homebrewinclude"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -77,16 +77,16 @@ class Micromamba < Formula
   def caveats
     <<~EOS
       Please run the following to setup your shell:
-        #{opt_bin}/micromamba shell init -s <your-shell> -p ~/micromamba
+        #{opt_bin}micromamba shell init -s <your-shell> -p ~micromamba
       and restart your terminal.
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/micromamba --version").strip
+    assert_match version.to_s, shell_output("#{bin}micromamba --version").strip
 
     python_version = "3.9.13"
-    system "#{bin}/micromamba", "create", "-n", "test", "python=#{python_version}", "-y", "-c", "conda-forge"
-    assert_match "Python #{python_version}", shell_output("#{bin}/micromamba run -n test python --version").strip
+    system "#{bin}micromamba", "create", "-n", "test", "python=#{python_version}", "-y", "-c", "conda-forge"
+    assert_match "Python #{python_version}", shell_output("#{bin}micromamba run -n test python --version").strip
   end
 end

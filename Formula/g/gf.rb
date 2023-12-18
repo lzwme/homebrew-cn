@@ -1,10 +1,10 @@
 class Gf < Formula
   desc "App development framework of Golang"
-  homepage "https://goframe.org"
-  url "https://ghproxy.com/https://github.com/gogf/gf/archive/refs/tags/v2.5.7.tar.gz"
+  homepage "https:goframe.org"
+  url "https:github.comgogfgfarchiverefstagsv2.5.7.tar.gz"
   sha256 "3f1888518d50120ff8723fb49cfba908bd969c02584979a6d44143d41c99de60"
   license "MIT"
-  head "https://github.com/gogf/gf.git", branch: "master"
+  head "https:github.comgogfgf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b27cff8ab9ee00e0df36dd0262aeb3aa38140d60762f442566e9acb0186a84d3"
@@ -19,17 +19,17 @@ class Gf < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    cd "cmd/gf" do
+    cd "cmdgf" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
   end
 
   test do
-    output = shell_output("#{bin}/gf --version 2>&1")
+    output = shell_output("#{bin}gf --version 2>&1")
     assert_match "v#{version}\nWelcome to GoFrame!", output
     assert_match "GF Version(go.mod): cannot find go.mod", output
 
-    output = shell_output("#{bin}/gf init test 2>&1")
+    output = shell_output("#{bin}gf init test 2>&1")
     assert_match "you can now run \"cd test && gf run main.go\" to start your journey, enjoy!", output
   end
 end

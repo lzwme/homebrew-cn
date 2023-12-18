@@ -2,11 +2,11 @@ cask "sabnzbd" do
   version "4.1.0"
   sha256 "8148d22f657efeff7522f97fe695cf507cc051164cb089d0465ceb44564f7b7a"
 
-  url "https://ghproxy.com/https://github.com/sabnzbd/sabnzbd/releases/download/#{version}/SABnzbd-#{version}-osx.dmg",
-      verified: "github.com/sabnzbd/sabnzbd/"
+  url "https:github.comsabnzbdsabnzbdreleasesdownload#{version}SABnzbd-#{version}-osx.dmg",
+      verified: "github.comsabnzbdsabnzbd"
   name "SABnzbd"
   desc "Binary newsreader"
-  homepage "https://sabnzbd.org/"
+  homepage "https:sabnzbd.org"
 
   livecheck do
     url :url
@@ -15,5 +15,5 @@ cask "sabnzbd" do
 
   app "SABnzbd.app"
 
-  zap trash: "~/Library/Application Support/SABnzbd"
+  zap trash: "~LibraryApplication SupportSABnzbd"
 end

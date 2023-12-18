@@ -1,7 +1,7 @@
 class Ctail < Formula
   desc "Tool for operating tail across large clusters of machines"
-  homepage "https://github.com/pquerna/ctail"
-  url "https://ghproxy.com/https://github.com/pquerna/ctail/archive/refs/tags/ctail-0.1.0.tar.gz"
+  homepage "https:github.compquernactail"
+  url "https:github.compquernactailarchiverefstagsctail-0.1.0.tar.gz"
   sha256 "864efb235a5d076167277c9f7812ad5678b477ff9a2e927549ffc19ed95fa911"
   license "Apache-2.0"
 
@@ -35,7 +35,7 @@ class Ctail < Formula
     # Workaround for ancient config files not recognizing aarch64 macos.
     system "autoreconf", "--force", "--install", "--verbose" if Hardware::CPU.arm?
 
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--with-apr=#{Formula["apr"].opt_bin}",
                           "--with-apr-util=#{Formula["apr-util"].opt_bin}"
     system "make", "LIBTOOL=glibtool --tag=CC"
@@ -43,6 +43,6 @@ class Ctail < Formula
   end
 
   test do
-    system "#{bin}/ctail", "-h"
+    system "#{bin}ctail", "-h"
   end
 end

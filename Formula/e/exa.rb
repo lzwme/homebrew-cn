@@ -1,11 +1,11 @@
 class Exa < Formula
   desc "Modern replacement for 'ls'"
-  homepage "https://the.exa.website"
-  url "https://ghproxy.com/https://github.com/ogham/exa/archive/refs/tags/v0.10.1.tar.gz"
+  homepage "https:the.exa.website"
+  url "https:github.comoghamexaarchiverefstagsv0.10.1.tar.gz"
   sha256 "ff0fa0bfc4edef8bdbbb3cabe6fdbd5481a71abbbcc2159f402dea515353ae7c"
   license "MIT"
   revision 2
-  head "https://github.com/ogham/exa.git", branch: "master"
+  head "https:github.comoghamexa.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -20,7 +20,7 @@ class Exa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d05214f3c9390661f6b3357c3053fbab35f547a31a1a4e6cb9e8340dc655eb1"
   end
 
-  # https://github.com/ogham/exa/commit/fb05c421ae98e076989eb6e8b1bcf42c07c1d0fe
+  # https:github.comoghamexacommitfb05c421ae98e076989eb6e8b1bcf42c07c1d0fe
   deprecate! date: "2023-09-05", because: :unmaintained
 
   depends_on "pandoc" => :build
@@ -32,22 +32,22 @@ class Exa < Formula
     system "cargo", "install", *std_cargo_args
 
     if build.head?
-      bash_completion.install "completions/bash/exa"
-      zsh_completion.install  "completions/zsh/_exa"
-      fish_completion.install "completions/fish/exa.fish"
+      bash_completion.install "completionsbashexa"
+      zsh_completion.install  "completionszsh_exa"
+      fish_completion.install "completionsfishexa.fish"
     else
       # Remove after >0.10.1 build
-      bash_completion.install "completions/completions.bash" => "exa"
-      zsh_completion.install  "completions/completions.zsh"  => "_exa"
-      fish_completion.install "completions/completions.fish" => "exa.fish"
+      bash_completion.install "completionscompletions.bash" => "exa"
+      zsh_completion.install  "completionscompletions.zsh"  => "_exa"
+      fish_completion.install "completionscompletions.fish" => "exa.fish"
     end
 
     args = %w[
       --standalone
       --to=man
     ]
-    system "pandoc", *args, "man/exa.1.md", "-o", "exa.1"
-    system "pandoc", *args, "man/exa_colors.5.md", "-o", "exa_colors.5"
+    system "pandoc", *args, "manexa.1.md", "-o", "exa.1"
+    system "pandoc", *args, "manexa_colors.5.md", "-o", "exa_colors.5"
     man1.install "exa.1"
     man5.install "exa_colors.5"
   end
@@ -55,11 +55,11 @@ class Exa < Formula
   test do
     testfile = "test.txt"
     touch testfile
-    assert_match testfile, shell_output(bin/"exa")
+    assert_match testfile, shell_output(bin"exa")
 
     # Test git integration
     flags = "--long --git --no-permissions --no-filesize --no-user --no-time --color=never"
-    exa_output = proc { shell_output("#{bin}/exa #{flags}").lines.grep(/#{testfile}/).first.split.first }
+    exa_output = proc { shell_output("#{bin}exa #{flags}").lines.grep(#{testfile}).first.split.first }
     system "git", "init"
     assert_equal "-N", exa_output.call
     system "git", "add", testfile
@@ -67,10 +67,10 @@ class Exa < Formula
     system "git", "commit", "-m", "Initial commit"
     assert_equal "--", exa_output.call
 
-    linkage_with_libgit2 = (bin/"exa").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"exa").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

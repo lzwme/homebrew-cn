@@ -1,10 +1,10 @@
 class Pgrouting < Formula
-  desc "Provides geospatial routing for PostGIS/PostgreSQL database"
-  homepage "https://pgrouting.org/"
-  url "https://ghproxy.com/https://github.com/pgRouting/pgrouting/releases/download/v3.6.1/pgrouting-3.6.1.tar.gz"
+  desc "Provides geospatial routing for PostGISPostgreSQL database"
+  homepage "https:pgrouting.org"
+  url "https:github.compgRoutingpgroutingreleasesdownloadv3.6.1pgrouting-3.6.1.tar.gz"
   sha256 "30231dfe01211f709fca9ac0140454ba6bd812f2b7f45fb30222169cd4e8b061"
   license "GPL-2.0-or-later"
-  head "https://github.com/pgRouting/pgrouting.git", branch: "main"
+  head "https:github.compgRoutingpgrouting.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,32 +35,32 @@ class Pgrouting < Formula
   def install
     mkdir "stage"
     mkdir "build" do
-      system "cmake", "-DPOSTGRESQL_PG_CONFIG=#{postgresql.opt_bin}/pg_config", "..", *std_cmake_args
+      system "cmake", "-DPOSTGRESQL_PG_CONFIG=#{postgresql.opt_bin}pg_config", "..", *std_cmake_args
       system "make"
-      system "make", "install", "DESTDIR=#{buildpath}/stage"
+      system "make", "install", "DESTDIR=#{buildpath}stage"
     end
 
     stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpath/stage_path/"lib").children
-    share.install (buildpath/stage_path/"share").children
+    lib.install (buildpathstage_path"lib").children
+    share.install (buildpathstage_path"share").children
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
 
       shared_preload_libraries = 'libpgrouting-#{version.major_minor}'
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"pgrouting\" CASCADE;", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop", "-D", testpath"test"
     end
   end
 end

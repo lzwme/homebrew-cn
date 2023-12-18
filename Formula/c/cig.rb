@@ -1,10 +1,10 @@
 class Cig < Formula
   desc "CLI app for checking the state of your git repositories"
-  homepage "https://github.com/stevenjack/cig"
-  url "https://ghproxy.com/https://github.com/stevenjack/cig/archive/refs/tags/v0.1.5.tar.gz"
+  homepage "https:github.comstevenjackcig"
+  url "https:github.comstevenjackcigarchiverefstagsv0.1.5.tar.gz"
   sha256 "545a4a8894e73c4152e0dcf5515239709537e0192629dc56257fe7cfc995da24"
   license "MIT"
-  head "https://github.com/stevenjack/cig.git", branch: "master"
+  head "https:github.comstevenjackcig.git", branch: "master"
 
   bottle do
     rebuild 3
@@ -25,9 +25,9 @@ class Cig < Formula
 
   # Patch to remove godep dependency.
   # Remove when the following PR is merged into release:
-  # https://github.com/stevenjack/cig/pull/44
+  # https:github.comstevenjackcigpull44
   patch do
-    url "https://github.com/stevenjack/cig/compare/2d834ee..f0e78f0.patch?full_index"
+    url "https:github.comstevenjackcigcompare2d834ee..f0e78f0.patch?full_index"
     sha256 "3aa14ecfa057ec6aba08d6be3ea0015d9df550b4ede1c3d4eb76bdc441a59a47"
   end
 
@@ -36,11 +36,11 @@ class Cig < Formula
   end
 
   test do
-    repo_path = "#{testpath}/test"
+    repo_path = "#{testpath}test"
     system "git", "init", "--bare", repo_path
-    (testpath/".cig.yaml").write <<~EOS
+    (testpath".cig.yaml").write <<~EOS
       test_project: #{repo_path}
     EOS
-    system "#{bin}/cig", "--cp=#{testpath}"
+    system "#{bin}cig", "--cp=#{testpath}"
   end
 end

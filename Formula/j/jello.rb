@@ -1,7 +1,7 @@
 class Jello < Formula
   desc "Filter JSON and JSON Lines data with Python syntax"
-  homepage "https://github.com/kellyjonbrazil/jello"
-  url "https://files.pythonhosted.org/packages/8a/1d/25e13e337f0c5c8076a4fc42db02b726529b611a69d816b71f8d591cf0f5/jello-1.6.0.tar.gz"
+  homepage "https:github.comkellyjonbraziljello"
+  url "https:files.pythonhosted.orgpackages8a1d25e13e337f0c5c8076a4fc42db02b726529b611a69d816b71f8d591cf0f5jello-1.6.0.tar.gz"
   sha256 "f0a369b2bd0c1db6cb07abbfd014034c22158c160e3df2a9d55b258bc6fbfa42"
   license "MIT"
 
@@ -26,10 +26,10 @@ class Jello < Formula
 
   def install
     system python3, "-m", "pip", "install", *std_pip_args, "."
-    man1.install "man/jello.1"
+    man1.install "manjello.1"
   end
 
   test do
-    assert_equal "1\n", pipe_output("#{bin}/jello _.foo", "{\"foo\":1}")
+    assert_equal "1\n", pipe_output("#{bin}jello _.foo", "{\"foo\":1}")
   end
 end

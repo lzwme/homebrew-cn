@@ -1,10 +1,10 @@
 class Wasmer < Formula
   desc "Universal WebAssembly Runtime"
-  homepage "https://wasmer.io"
-  url "https://ghproxy.com/https://github.com/wasmerio/wasmer/archive/refs/tags/v4.2.4.tar.gz"
+  homepage "https:wasmer.io"
+  url "https:github.comwasmeriowasmerarchiverefstagsv4.2.4.tar.gz"
   sha256 "183fd1c28eb778eae53c15d11031a2bf35e7615b22a3d8838e3e2ad0ed2c541b"
   license "MIT"
-  head "https://github.com/wasmerio/wasmer.git", branch: "master"
+  head "https:github.comwasmeriowasmer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8f53562f6172c55f2a7bf2e158bcb0b73428cb51359dde4be998f024d8b4a00"
@@ -26,13 +26,13 @@ class Wasmer < Formula
   end
 
   def install
-    system "cargo", "install", "--features", "cranelift", *std_cargo_args(path: "lib/cli")
+    system "cargo", "install", "--features", "cranelift", *std_cargo_args(path: "libcli")
   end
 
   test do
     wasm = ["0061736d0100000001070160027f7f017f030201000707010373756d00000a09010700200020016a0b"].pack("H*")
-    (testpath/"sum.wasm").write(wasm)
+    (testpath"sum.wasm").write(wasm)
     assert_equal "3\n",
-      shell_output("#{bin}/wasmer run #{testpath/"sum.wasm"} --invoke sum 1 2")
+      shell_output("#{bin}wasmer run #{testpath"sum.wasm"} --invoke sum 1 2")
   end
 end

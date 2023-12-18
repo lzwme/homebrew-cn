@@ -1,10 +1,10 @@
 class MacosTrash < Formula
   desc "Move files and folders to the trash"
-  homepage "https://github.com/sindresorhus/macos-trash"
-  url "https://ghproxy.com/https://github.com/sindresorhus/macos-trash/archive/refs/tags/v1.2.0.tar.gz"
+  homepage "https:github.comsindresorhusmacos-trash"
+  url "https:github.comsindresorhusmacos-trasharchiverefstagsv1.2.0.tar.gz"
   sha256 "c4472b5c8024806720779bc867da1958fe871fbd93d200af8a2cc4ad1941be28"
   license "MIT"
-  head "https://github.com/sindresorhus/macos-trash.git", branch: "main"
+  head "https:github.comsindresorhusmacos-trash.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34f68f4aaee66e7a5db78072b47c51b9926b11b03b4fad43a71338f5db9e06b7"
@@ -27,11 +27,11 @@ class MacosTrash < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/trash"
+    bin.install ".buildreleasetrash"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/trash --version")
-    system "#{bin}/trash", "--help"
+    assert_match version.to_s, shell_output("#{bin}trash --version")
+    system "#{bin}trash", "--help"
   end
 end

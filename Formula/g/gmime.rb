@@ -1,7 +1,7 @@
 class Gmime < Formula
   desc "MIME mail utilities"
-  homepage "https://github.com/jstedfast/gmime"
-  url "https://ghproxy.com/https://github.com/jstedfast/gmime/releases/download/3.2.14/gmime-3.2.14.tar.xz"
+  homepage "https:github.comjstedfastgmime"
+  url "https:github.comjstedfastgmimereleasesdownload3.2.14gmime-3.2.14.tar.xz"
   sha256 "a5eb3dd675f72e545c8bc1cd12107e4aad2eaec1905eb7b4013cdb1fbe5e2317"
   license "LGPL-2.1-or-later"
 
@@ -18,7 +18,7 @@ class Gmime < Formula
   end
 
   head do
-    url "https://github.com/jstedfast/gmime.git", branch: "master"
+    url "https:github.comjstedfastgmime.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,16 +40,16 @@ class Gmime < Formula
       --enable-introspection
     ]
 
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
 
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include <gmime/gmime.h>
+      #include <gmimegmime.h>
       int main (int argc, char **argv)
       {
         g_mime_init();
@@ -66,9 +66,9 @@ class Gmime < Formula
     flags = (ENV.cflags || "").split + (ENV.cppflags || "").split + (ENV.ldflags || "").split
     flags += %W[
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/gmime-3.0
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}gmime-3.0
       -I#{pcre.opt_include}
       -D_REENTRANT
       -L#{gettext.opt_lib}
@@ -81,6 +81,6 @@ class Gmime < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "-o", "test", "test.c", *flags
-    system "./test"
+    system ".test"
   end
 end

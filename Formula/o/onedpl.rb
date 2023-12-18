@@ -1,14 +1,14 @@
 class Onedpl < Formula
   desc "C++ standard library algorithms with support for execution policies"
-  homepage "https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-library.html"
-  url "https://ghproxy.com/https://github.com/oneapi-src/oneDPL/archive/refs/tags/oneDPL-2022.0.0-release.tar.gz"
+  homepage "https:software.intel.comcontentwwwusendeveloptoolsoneapicomponentsdpc-library.html"
+  url "https:github.comoneapi-srconeDPLarchiverefstagsoneDPL-2022.0.0-release.tar.gz"
   sha256 "e22eb0155258abdccd810dc131baa3eac4a856507b6eef37462a077d37cd810e"
   # Apache License Version 2.0 with LLVM exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   livecheck do
     url :stable
-    regex(/^oneDPL[._-](\d+(?:\.\d+)+)(?:[._-]release)?$/i)
+    regex(^oneDPL[._-](\d+(?:\.\d+)+)(?:[._-]release)?$i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class Onedpl < Formula
   test do
     tbb = Formula["tbb"]
 
-    (testpath/"test.cpp").write <<~EOS
-      #include <oneapi/dpl/execution>
-      #include <oneapi/dpl/algorithm>
+    (testpath"test.cpp").write <<~EOS
+      #include <oneapidplexecution>
+      #include <oneapidplalgorithm>
       #include <array>
       #include <assert.h>
 
@@ -42,7 +42,7 @@ class Onedpl < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++17", "-L#{tbb.opt_lib}", "-ltbb", "-I#{tbb.opt_include}",
-                    "-I#{prefix}/stdlib", "-I#{include}", "-o", "test"
-    system "./test"
+                    "-I#{prefix}stdlib", "-I#{include}", "-o", "test"
+    system ".test"
   end
 end

@@ -1,14 +1,14 @@
 class Flint < Formula
   desc "C library for number theory"
-  homepage "https://flintlib.org/"
-  url "https://flintlib.org/flint-3.0.1.tar.gz"
+  homepage "https:flintlib.org"
+  url "https:flintlib.orgflint-3.0.1.tar.gz"
   sha256 "7b311a00503a863881eb8177dbeb84322f29399f3d7d72f3b1a4c9ba1d5794b4"
   license "LGPL-2.1-or-later"
-  head "https://github.com/wbhart/flint2.git", branch: "trunk"
+  head "https:github.comwbhartflint2.git", branch: "trunk"
 
   livecheck do
-    url "https://flintlib.org/downloads.html"
-    regex(/href=.*?flint[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:flintlib.orgdownloads.html"
+    regex(href=.*?flint[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,13 +33,13 @@ class Flint < Formula
       --with-ntl=#{Formula["ntl"].prefix}
       --prefix=#{prefix}
     ]
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<-EOS
+    (testpath"test.c").write <<-EOS
       #include <stdlib.h>
       #include <stdio.h>
       #include "flint.h"
@@ -89,8 +89,8 @@ class Flint < Formula
           return EXIT_SUCCESS;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}/flint", "-L#{lib}", "-L#{Formula["gmp"].lib}",
+    system ENV.cc, "test.c", "-I#{include}flint", "-L#{lib}", "-L#{Formula["gmp"].lib}",
            "-lflint", "-lgmp", "-o", "test"
-    system "./test", "2"
+    system ".test", "2"
   end
 end

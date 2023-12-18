@@ -2,12 +2,12 @@ cask "font-content" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/content"
+      only_path: "oflcontent"
   name "Content"
-  homepage "https://fonts.google.com/specimen/Content"
+  homepage "https:fonts.google.comspecimenContent"
 
   font "Content-Bold.ttf"
   font "Content-Regular.ttf"

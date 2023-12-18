@@ -2,13 +2,13 @@ cask "font-tiro-kannada" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tirokannada"
+      only_path: "ofltirokannada"
   name "Tiro Kannada"
   desc "Especially suited to traditional literary publishing"
-  homepage "https://fonts.google.com/specimen/Tiro+Kannada"
+  homepage "https:fonts.google.comspecimenTiro+Kannada"
 
   font "TiroKannada-Italic.ttf"
   font "TiroKannada-Regular.ttf"

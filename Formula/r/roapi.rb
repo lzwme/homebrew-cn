@@ -1,7 +1,7 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
-  homepage "https://roapi.github.io/docs"
-  url "https://ghproxy.com/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.10.0.tar.gz"
+  homepage "https:roapi.github.iodocs"
+  url "https:github.comroapiroapiarchiverefstagsroapi-v0.10.0.tar.gz"
   sha256 "85d194b78dfef8aaab5da0c609d8c6d126ee0d474e6b1455b6ca3c7f1b8afd06"
   license "Apache-2.0"
 
@@ -26,20 +26,20 @@ class Roapi < Formula
 
   test do
     # test that versioning works
-    assert_equal "roapi #{version}", shell_output("#{bin}/roapi -V").strip
+    assert_equal "roapi #{version}", shell_output("#{bin}roapi -V").strip
 
     # test CSV reading + JSON response
     port = free_port
-    (testpath/"data.csv").write "name,age\nsam,27\n"
+    (testpath"data.csv").write "name,age\nsam,27\n"
     expected_output = '[{"name":"sam"}]'
 
     begin
       pid = fork do
-        exec bin/"roapi", "-a", "localhost:#{port}", "-t", "#{testpath}/data.csv"
+        exec bin"roapi", "-a", "localhost:#{port}", "-t", "#{testpath}data.csv"
       end
       query = "SELECT name from data"
-      header = "ACCEPT: application/json"
-      url = "localhost:#{port}/api/sql"
+      header = "ACCEPT: applicationjson"
+      url = "localhost:#{port}apisql"
       assert_match expected_output, shell_output("curl -s -X POST -H '#{header}' -d '#{query}' #{url}")
     ensure
       Process.kill("TERM", pid)

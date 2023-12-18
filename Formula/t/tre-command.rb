@@ -1,10 +1,10 @@
 class TreCommand < Formula
   desc "Tree command, improved"
-  homepage "https://github.com/dduan/tre"
-  url "https://ghproxy.com/https://github.com/dduan/tre/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:github.comdduantre"
+  url "https:github.comdduantrearchiverefstagsv0.4.0.tar.gz"
   sha256 "280243cfa837661f0c3fff41e4a63c6768631073c9f6ce9982d9ed08e038788a"
   license "MIT"
-  head "https://github.com/dduan/tre.git", branch: "main"
+  head "https:github.comdduantre.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -24,11 +24,11 @@ class TreCommand < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "manual/tre.1"
+    man1.install "manualtre.1"
   end
 
   test do
-    (testpath/"foo.txt").write("")
-    assert_match("── foo.txt", shell_output("#{bin}/tre"))
+    (testpath"foo.txt").write("")
+    assert_match("── foo.txt", shell_output("#{bin}tre"))
   end
 end

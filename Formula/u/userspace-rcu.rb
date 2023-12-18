@@ -1,13 +1,13 @@
 class UserspaceRcu < Formula
   desc "Library for userspace RCU (read-copy-update)"
-  homepage "https://liburcu.org"
-  url "https://lttng.org/files/urcu/userspace-rcu-0.14.0.tar.bz2"
+  homepage "https:liburcu.org"
+  url "https:lttng.orgfilesurcuuserspace-rcu-0.14.0.tar.bz2"
   sha256 "ca43bf261d4d392cff20dfae440836603bf009fce24fdc9b2697d837a2239d4f"
   license all_of: ["LGPL-2.1-or-later", "MIT"]
 
   livecheck do
-    url "https://lttng.org/files/urcu/"
-    regex(/href=.*?userspace-rcu[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:lttng.orgfilesurcu"
+    regex(href=.*?userspace-rcu[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class UserspaceRcu < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -35,13 +35,13 @@ class UserspaceRcu < Formula
       --prefix=#{prefix}
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    cp_r "#{doc}/examples", testpath
+    cp_r "#{doc}examples", testpath
     system "make", "CFLAGS=-pthread", "-C", "examples"
   end
 end

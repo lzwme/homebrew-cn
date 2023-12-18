@@ -1,10 +1,10 @@
 class Cadence < Formula
   desc "Resource-oriented smart contract programming language"
-  homepage "https://github.com/onflow/cadence"
-  url "https://ghproxy.com/https://github.com/onflow/cadence/archive/refs/tags/v0.42.6.tar.gz"
+  homepage "https:github.comonflowcadence"
+  url "https:github.comonflowcadencearchiverefstagsv0.42.6.tar.gz"
   sha256 "ed35a7b1ac5c58696a193456713c388c223b163dca27daf9becafca7e1c1979c"
   license "Apache-2.0"
-  head "https://github.com/onflow/cadence.git", branch: "master"
+  head "https:github.comonflowcadence.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and
@@ -29,15 +29,15 @@ class Cadence < Formula
   conflicts_with "cadence-workflow", because: "both install a `cadence` executable"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./runtime/cmd/main"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".runtimecmdmain"
   end
 
   test do
-    (testpath/"hello.cdc").write <<~EOS
+    (testpath"hello.cdc").write <<~EOS
       pub fun main(): Int {
         return 0
       }
     EOS
-    system "#{bin}/cadence", "hello.cdc"
+    system "#{bin}cadence", "hello.cdc"
   end
 end

@@ -1,10 +1,10 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
-  homepage "https://www.scipy.org"
-  url "https://files.pythonhosted.org/packages/6e/1f/91144ba78dccea567a6466262922786ffc97be1e9b06ed9574ef0edc11e1/scipy-1.11.4.tar.gz"
+  homepage "https:www.scipy.org"
+  url "https:files.pythonhosted.orgpackages6e1f91144ba78dccea567a6466262922786ffc97be1e9b06ed9574ef0edc11e1scipy-1.11.4.tar.gz"
   sha256 "90a2b78e7f5733b9de748f589f09225013685f9b218275257f8a8168ededaeaa"
   license "BSD-3-Clause"
-  head "https://github.com/scipy/scipy.git", branch: "main"
+  head "https:github.comscipyscipy.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -40,30 +40,30 @@ class Scipy < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["libcython"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["libcython"].opt_libexec"bin"
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       site_packages = Language::Python.site_packages(python_exe)
-      ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
+      ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexecsite_packages
 
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   # cleanup leftover .pyc files from previous installs which can cause problems
-  # see https://github.com/Homebrew/homebrew-python/issues/185#issuecomment-67534979
+  # see https:github.comHomebrewhomebrew-pythonissues185#issuecomment-67534979
   def post_install
-    rm_f Dir["#{HOMEBREW_PREFIX}/lib/python*.*/site-packages/scipy/**/*.pyc"]
+    rm_f Dir["#{HOMEBREW_PREFIX}libpython*.*site-packagesscipy***.pyc"]
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       from scipy import special
       print(special.exp10(3))
     EOS
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       assert_equal "1000.0", shell_output("#{python_exe} test.py").chomp
     end
   end

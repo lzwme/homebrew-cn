@@ -1,7 +1,7 @@
 class Libqalculate < Formula
   desc "Library for Qalculate! program"
-  homepage "https://qalculate.github.io/"
-  url "https://ghproxy.com/https://github.com/Qalculate/libqalculate/releases/download/v4.9.0/libqalculate-4.9.0.tar.gz"
+  homepage "https:qalculate.github.io"
+  url "https:github.comQalculatelibqalculatereleasesdownloadv4.9.0libqalculate-4.9.0.tar.gz"
   sha256 "6130ed28f7fb8688bccede4f3749b7f75e4a000b8080840794969d21d1c1bf0f"
   license "GPL-2.0-or-later"
 
@@ -30,9 +30,9 @@ class Libqalculate < Formula
   end
 
   def install
-    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec/"lib/perl5" unless OS.mac?
+    ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5" unless OS.mac?
     ENV.cxx11
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--without-icu",
                           "--prefix=#{prefix}"
@@ -40,6 +40,6 @@ class Libqalculate < Formula
   end
 
   test do
-    system "#{bin}/qalc", "-nocurrencies", "(2+2)/4 hours to minutes"
+    system "#{bin}qalc", "-nocurrencies", "(2+2)4 hours to minutes"
   end
 end

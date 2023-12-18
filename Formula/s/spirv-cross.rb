@@ -1,7 +1,7 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
-  homepage "https://github.com/KhronosGroup/SPIRV-Cross"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/sdk-1.3.261.1.tar.gz"
+  homepage "https:github.comKhronosGroupSPIRV-Cross"
+  url "https:github.comKhronosGroupSPIRV-Crossarchiverefstagssdk-1.3.261.1.tar.gz"
   sha256 "a5cf99ed62e93800232e50b782890321d4d7e053dcaa71bd8efc0c48a00bd1dd"
   license all_of: [
     "Apache-2.0",
@@ -13,7 +13,7 @@ class SpirvCross < Formula
 
   livecheck do
     url :stable
-    regex(/^sdk[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^sdk[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -39,27 +39,27 @@ class SpirvCross < Formula
     end
     # required for tests
     prefix.install "samples"
-    (include/"spirv_cross").install Dir["include/spirv_cross/*"]
+    (include"spirv_cross").install Dir["includespirv_cross*"]
   end
 
   test do
-    cp_r Dir[prefix/"samples/cpp/*"], testpath
-    inreplace "Makefile", "-I../../include", "-I#{include}"
-    inreplace "Makefile", "../../spirv-cross", bin/"spirv-cross"
-    inreplace "Makefile", "glslangValidator", Formula["glslang"].bin/"glslangValidator"
+    cp_r Dir[prefix"samplescpp*"], testpath
+    inreplace "Makefile", "-I....include", "-I#{include}"
+    inreplace "Makefile", "....spirv-cross", bin"spirv-cross"
+    inreplace "Makefile", "glslangValidator", Formula["glslang"].bin"glslangValidator"
 
     # fix technically invalid shader code (#version should be first)
     # allows test to pass with newer glslangValidator
     before = <<~EOS
-      // Copyright 2016-2021 The Khronos Group Inc.
-      // SPDX-License-Identifier: Apache-2.0
+       Copyright 2016-2021 The Khronos Group Inc.
+       SPDX-License-Identifier: Apache-2.0
 
       #version 310 es
     EOS
     after = <<~EOS
       #version 310 es
-      // Copyright 2016-2021 The Khronos Group Inc.
-      // SPDX-License-Identifier: Apache-2.0
+       Copyright 2016-2021 The Khronos Group Inc.
+       SPDX-License-Identifier: Apache-2.0
 
     EOS
     (Dir["*.comp"]).each do |shader_file|

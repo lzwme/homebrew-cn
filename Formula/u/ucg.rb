@@ -1,10 +1,10 @@
 class Ucg < Formula
   desc "Tool for searching large bodies of source code (like grep)"
-  homepage "https://github.com/gvansickle/ucg"
-  url "https://ghproxy.com/https://github.com/gvansickle/ucg/releases/download/0.3.3/universalcodegrep-0.3.3.tar.gz"
+  homepage "https:github.comgvansickleucg"
+  url "https:github.comgvansickleucgreleasesdownload0.3.3universalcodegrep-0.3.3.tar.gz"
   sha256 "116d832bbc743c7dd469e5e7f1b20addb3b7a08df4b4441d59da3acf221caf2d"
   license "GPL-3.0-or-later"
-  head "https://github.com/gvansickle/ucg.git", branch: "master"
+  head "https:github.comgvansickleucg.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -24,24 +24,24 @@ class Ucg < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on arch: :x86_64 # https://github.com/gvansickle/ucg/issues/123
+  depends_on arch: :x86_64 # https:github.comgvansickleucgissues123
   depends_on "pcre2"
 
   on_macos do
     depends_on "argp-standalone" => :build
   end
 
-  # Fix Xcode 9 compilation issue: https://github.com/gvansickle/ucg/issues/118
-  # Patch adapted from upstream: https://github.com/gvansickle/ucg/commit/395f89
+  # Fix Xcode 9 compilation issue: https:github.comgvansickleucgissues118
+  # Patch adapted from upstream: https:github.comgvansickleucgcommit395f89
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/00615b433f5d2e3eaaf0075fbf4c63d0d732f8c8/ucg/xcode9.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches00615b433f5d2e3eaaf0075fbf4c63d0d732f8c8ucgxcode9.patch"
     sha256 "3005fda5923cfa3093ce53ad84435fd7a5974f960b2e222e0e59afa90414af90"
   end
 
   def install
     system "autoreconf", "-i" if build.head?
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -49,7 +49,7 @@ class Ucg < Formula
   end
 
   test do
-    (testpath/"test.txt").write("Hello World!")
-    assert_match "Hello World!", shell_output("#{bin}/ucg 'Hello World' #{testpath}")
+    (testpath"test.txt").write("Hello World!")
+    assert_match "Hello World!", shell_output("#{bin}ucg 'Hello World' #{testpath}")
   end
 end

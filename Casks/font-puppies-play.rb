@@ -2,11 +2,11 @@ cask "font-puppies-play" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/puppiesplay/PuppiesPlay-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpuppiesplayPuppiesPlay-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Puppies Play"
   desc "Fun, bouncy script with connectors that give a playful flow"
-  homepage "https://fonts.google.com/specimen/Puppies+Play"
+  homepage "https:fonts.google.comspecimenPuppies+Play"
 
   font "PuppiesPlay-Regular.ttf"
 

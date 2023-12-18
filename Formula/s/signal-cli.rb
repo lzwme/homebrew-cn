@@ -1,7 +1,7 @@
 class SignalCli < Formula
-  desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
-  homepage "https://github.com/AsamK/signal-cli"
-  url "https://ghproxy.com/https://github.com/AsamK/signal-cli/archive/refs/tags/v0.12.7.tar.gz"
+  desc "CLI and dbus interface for WhisperSystemslibsignal-service-java"
+  homepage "https:github.comAsamKsignal-cli"
+  url "https:github.comAsamKsignal-cliarchiverefstagsv0.12.7.tar.gz"
   sha256 "f266a5f688f0bab7c94c198de95702950d2fffc84466a67d88d3d2f1c5126081"
   license "GPL-3.0-or-later"
 
@@ -19,7 +19,7 @@ class SignalCli < Formula
   depends_on "gradle" => :build
   depends_on "protobuf" => :build
   # the libsignal-client build targets a specific rustc listed in the file
-  # https://github.com/signalapp/libsignal/blob/#{libsignal-client.version}/rust-toolchain
+  # https:github.comsignalapplibsignalblob#{libsignal-client.version}rust-toolchain
   # which doesn't automatically happen if we use brew-installed rust. rustup-init
   # allows us to use a toolchain that lives in HOMEBREW_CACHE
   depends_on "rustup-init" => :build
@@ -29,31 +29,31 @@ class SignalCli < Formula
   uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
 
-  # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
+  # https:github.comAsamKsignal-cliwikiProvide-native-lib-for-libsignal#determine-the-required-libsignal-client-version
   # To check the version of `libsignal-client`, run:
-  # url=https://ghproxy.com/https://github.com/AsamK/signal-cli/releases/download/v$version/signal-cli-$version.tar.gz
+  # url=https:github.comAsamKsignal-clireleasesdownloadv$versionsignal-cli-$version.tar.gz
   # curl -fsSL $url | tar -tz | grep libsignal-client
   resource "libsignal-client" do
-    url "https://ghproxy.com/https://github.com/signalapp/libsignal/archive/refs/tags/v0.36.1.tar.gz"
+    url "https:github.comsignalapplibsignalarchiverefstagsv0.36.1.tar.gz"
     sha256 "5b16d6826c11471aee4d0c7756878164dba3ff583def2803ee6be488e3d7d2ab"
   end
 
   def install
     system "gradle", "build"
     system "gradle", "installDist"
-    libexec.install (buildpath/"build/install/signal-cli").children
-    (libexec/"bin/signal-cli.bat").unlink
-    (bin/"signal-cli").write_env_script libexec/"bin/signal-cli", Language::Java.overridable_java_home_env
+    libexec.install (buildpath"buildinstallsignal-cli").children
+    (libexec"binsignal-cli.bat").unlink
+    (bin"signal-cli").write_env_script libexec"binsignal-cli", Language::Java.overridable_java_home_env
 
-    # this will install the necessary cargo/rustup toolchain bits in HOMEBREW_CACHE
-    system Formula["rustup-init"].bin/"rustup-init", "-qy", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    # this will install the necessary cargorustup toolchain bits in HOMEBREW_CACHE
+    system Formula["rustup-init"].bin"rustup-init", "-qy", "--no-modify-path"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     resource("libsignal-client").stage do |r|
-      # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#manual-build
+      # https:github.comAsamKsignal-cliwikiProvide-native-lib-for-libsignal#manual-build
 
-      libsignal_client_jar = libexec.glob("lib/libsignal-client-*.jar").first
-      embedded_jar_version = Version.new(libsignal_client_jar.to_s[/libsignal-client-(.*)\.jar$/, 1])
+      libsignal_client_jar = libexec.glob("liblibsignal-client-*.jar").first
+      embedded_jar_version = Version.new(libsignal_client_jar.to_s[libsignal-client-(.*)\.jar$, 1])
       res = r.resource
       odie "#{res.name} needs to be updated to #{embedded_jar_version}!" if embedded_jar_version != res.version
 
@@ -63,8 +63,8 @@ class SignalCli < Formula
       # build & embed library for current platform
       cd "java" do
         inreplace "settings.gradle", "include ':android'", ""
-        system "./build_jni.sh", "desktop"
-        cd "shared/resources" do
+        system ".build_jni.sh", "desktop"
+        cd "sharedresources" do
           system "zip", "-u", libsignal_client_jar, shared_library("libsignal_jni")
         end
       end
@@ -73,17 +73,17 @@ class SignalCli < Formula
 
   test do
     # test 1: checks class loading is working and version is correct
-    output = shell_output("#{bin}/signal-cli --version")
+    output = shell_output("#{bin}signal-cli --version")
     assert_match "signal-cli #{version}", output
 
     # test 2: ensure crypto is working
     begin
-      io = IO.popen("#{bin}/signal-cli link", err: [:child, :out])
+      io = IO.popen("#{bin}signal-cli link", err: [:child, :out])
       sleep 24
     ensure
       Process.kill("SIGINT", io.pid)
       Process.wait(io.pid)
     end
-    assert_match "sgnl://linkdevice?uuid=", io.read
+    assert_match "sgnl:linkdevice?uuid=", io.read
   end
 end

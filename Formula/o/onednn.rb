@@ -1,14 +1,14 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
-  homepage "https://www.oneapi.io/open-source/"
-  url "https://ghproxy.com/https://github.com/oneapi-src/oneDNN/archive/refs/tags/v3.3.3.tar.gz"
+  homepage "https:www.oneapi.ioopen-source"
+  url "https:github.comoneapi-srconeDNNarchiverefstagsv3.3.3.tar.gz"
   sha256 "24e726989785c5873d45ccb8ab698b22b53798c773e96f4226f2aa622694ea40"
   license "Apache-2.0"
-  head "https://github.com/oneapi-src/onednn.git", branch: "master"
+  head "https:github.comoneapi-srconednn.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,8 +32,8 @@ class Onednn < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <oneapi/dnnl/dnnl.h>
+    (testpath"test.c").write <<~EOS
+      #include <oneapidnnldnnl.h>
       int main() {
         dnnl_engine_t engine;
         dnnl_status_t status = dnnl_engine_create(&engine, dnnl_cpu, 0);
@@ -41,6 +41,6 @@ class Onednn < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-ldnnl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

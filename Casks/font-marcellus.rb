@@ -2,10 +2,10 @@ cask "font-marcellus" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/marcellus/Marcellus-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmarcellusMarcellus-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Marcellus"
-  homepage "https://fonts.google.com/specimen/Marcellus"
+  homepage "https:fonts.google.comspecimenMarcellus"
 
   font "Marcellus-Regular.ttf"
 

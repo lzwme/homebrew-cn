@@ -1,10 +1,10 @@
 class Tsung < Formula
   desc "Load testing for HTTP, PostgreSQL, Jabber, and others"
-  homepage "http://tsung.erlang-projects.org/"
-  url "http://tsung.erlang-projects.org/dist/tsung-1.8.0.tar.gz"
+  homepage "http:tsung.erlang-projects.org"
+  url "http:tsung.erlang-projects.orgdisttsung-1.8.0.tar.gz"
   sha256 "91e8643026017e3d0088a6710fb11c4f617477e826ebe4c5fe586aa63147fc92"
   license "GPL-2.0-or-later"
-  head "https://github.com/processone/tsung.git", branch: "develop"
+  head "https:github.comprocessonetsung.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f3513c9c20699e5a307bbc22ca89e15c4d476508ff4df5ef55c79357895fdf0"
@@ -22,13 +22,13 @@ class Tsung < Formula
   depends_on "gnuplot"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     ENV.deparallelize
     system "make", "install"
   end
 
   test do
-    system bin/"tsung", "status"
+    system bin"tsung", "status"
   end
 end

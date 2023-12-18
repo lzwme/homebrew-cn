@@ -1,10 +1,10 @@
 class Exodriver < Formula
   desc "Thin interface to LabJack devices"
-  homepage "https://labjack.com/support/linux-and-mac-os-x-drivers"
-  url "https://ghproxy.com/https://github.com/labjack/exodriver/archive/refs/tags/v2.7.0.tar.gz"
+  homepage "https:labjack.comsupportlinux-and-mac-os-x-drivers"
+  url "https:github.comlabjackexodriverarchiverefstagsv2.7.0.tar.gz"
   sha256 "ef11760322b31f16802ec202406e780339f54bde774689b97e926778417d6c79"
   license "MIT"
-  head "https://github.com/labjack/exodriver.git", branch: "master"
+  head "https:github.comlabjackexodriver.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "459ce6ca331aeac97187dda22c289353e521a130ca33f3db6db8810b64d9ad6c"
@@ -25,12 +25,12 @@ class Exodriver < Formula
            "PREFIX=#{prefix}", "RUN_LDCONFIG=0", "LINK_SO=1"
     ENV.prepend "CPPFLAGS", "-I#{include}"
     ENV.prepend "LDFLAGS", "-L#{lib}"
-    system "make", "-C", "examples/Modbus"
-    pkgshare.install "examples/Modbus/testModbusFunctions"
+    system "make", "-C", "examplesModbus"
+    pkgshare.install "examplesModbustestModbusFunctions"
   end
 
   test do
-    output = shell_output("#{pkgshare}/testModbusFunctions")
-    assert_match(/Result:\s+writeBuffer:/, output)
+    output = shell_output("#{pkgshare}testModbusFunctions")
+    assert_match(Result:\s+writeBuffer:, output)
   end
 end

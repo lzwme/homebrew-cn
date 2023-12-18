@@ -1,7 +1,7 @@
 class NetcdfCxx < Formula
   desc "C++ libraries and utilities for NetCDF"
-  homepage "https://www.unidata.ucar.edu/software/netcdf/"
-  url "https://ghproxy.com/https://github.com/Unidata/netcdf-cxx4/archive/refs/tags/v4.3.1.tar.gz"
+  homepage "https:www.unidata.ucar.edusoftwarenetcdf"
+  url "https:github.comUnidatanetcdf-cxx4archiverefstagsv4.3.1.tar.gz"
   sha256 "e3fe3d2ec06c1c2772555bf1208d220aab5fee186d04bd265219b0bc7a978edc"
   license "NetCDF"
   revision 1
@@ -32,17 +32,17 @@ class NetcdfCxx < Formula
 
     system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build_static"
-    lib.install "build_static/cxx4/libnetcdf-cxx4.a"
+    lib.install "build_staticcxx4libnetcdf-cxx4.a"
 
     # Remove shim paths
-    inreplace [bin/"ncxx4-config", lib/"libnetcdf-cxx.settings"] do |s|
-      s.gsub!(Superenv.shims_path/ENV.cc, ENV.cc, false)
-      s.gsub!(Superenv.shims_path/ENV.cxx, ENV.cxx, false)
+    inreplace [bin"ncxx4-config", lib"libnetcdf-cxx.settings"] do |s|
+      s.gsub!(Superenv.shims_pathENV.cc, ENV.cc, false)
+      s.gsub!(Superenv.shims_pathENV.cxx, ENV.cxx, false)
     end
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <netcdf>
 
@@ -64,6 +64,6 @@ class NetcdfCxx < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-I#{include}", "-lnetcdf-cxx4", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

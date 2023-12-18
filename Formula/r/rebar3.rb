@@ -1,13 +1,13 @@
 class Rebar3 < Formula
   desc "Erlang build tool"
-  homepage "https://github.com/erlang/rebar3"
-  url "https://ghproxy.com/https://github.com/erlang/rebar3/archive/refs/tags/3.22.1.tar.gz"
+  homepage "https:github.comerlangrebar3"
+  url "https:github.comerlangrebar3archiverefstags3.22.1.tar.gz"
   sha256 "2855b5784300865d2e43cb7a135cb2bba144cf15214c619065b918afc8cc6eb9"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,15 +25,15 @@ class Rebar3 < Formula
   depends_on "erlang"
 
   def install
-    system "./bootstrap"
+    system ".bootstrap"
     bin.install "rebar3"
 
-    bash_completion.install "apps/rebar/priv/shell-completion/bash/rebar3"
-    zsh_completion.install "apps/rebar/priv/shell-completion/zsh/_rebar3"
-    fish_completion.install "apps/rebar/priv/shell-completion/fish/rebar3.fish"
+    bash_completion.install "appsrebarprivshell-completionbashrebar3"
+    zsh_completion.install "appsrebarprivshell-completionzsh_rebar3"
+    fish_completion.install "appsrebarprivshell-completionfishrebar3.fish"
   end
 
   test do
-    system bin/"rebar3", "--version"
+    system bin"rebar3", "--version"
   end
 end

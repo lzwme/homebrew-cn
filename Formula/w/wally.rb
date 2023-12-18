@@ -1,10 +1,10 @@
 class Wally < Formula
   desc "Modern package manager for Roblox projects inspired by Cargo"
-  homepage "https://github.com/UpliftGames/wally"
-  url "https://ghproxy.com/https://github.com/UpliftGames/wally/archive/refs/tags/v0.3.2.tar.gz"
+  homepage "https:github.comUpliftGameswally"
+  url "https:github.comUpliftGameswallyarchiverefstagsv0.3.2.tar.gz"
   sha256 "f7da2a10865b05efe97273aa1d08e0efbb9d26fecb770d819bdc01fbb98a0ad9"
   license "MPL-2.0"
-  head "https://github.com/UpliftGames/wally.git", branch: "main"
+  head "https:github.comUpliftGameswally.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c98969ccbc9fcce5f9d14618ba96de22687718a8b82d3739ef5fa5b773b7082a"
@@ -31,17 +31,17 @@ class Wally < Formula
   end
 
   test do
-    (testpath/"wally.toml").write <<~EOS
+    (testpath"wally.toml").write <<~EOS
       [package]
-      name = "test/test"
+      name = "testtest"
       version = "0.1.0"
       license = "MIT"
       realm = "server"
-      registry = "https://github.com/UpliftGames/wally-index"
+      registry = "https:github.comUpliftGameswally-index"
       [dependencies]
     EOS
 
-    system bin/"wally", "install"
-    assert_predicate testpath/"wally.lock", :exist?
+    system bin"wally", "install"
+    assert_predicate testpath"wally.lock", :exist?
   end
 end

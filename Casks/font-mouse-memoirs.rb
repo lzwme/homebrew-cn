@@ -2,10 +2,10 @@ cask "font-mouse-memoirs" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mousememoirs/MouseMemoirs-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmousememoirsMouseMemoirs-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mouse Memoirs"
-  homepage "https://fonts.google.com/specimen/Mouse+Memoirs"
+  homepage "https:fonts.google.comspecimenMouse+Memoirs"
 
   font "MouseMemoirs-Regular.ttf"
 

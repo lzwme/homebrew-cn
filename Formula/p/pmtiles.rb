@@ -1,7 +1,7 @@
 class Pmtiles < Formula
   desc "Single-file executable tool for creating, reading and uploading PMTiles archives"
-  homepage "https://protomaps.com/docs/pmtiles"
-  url "https://ghproxy.com/https://github.com/protomaps/go-pmtiles/archive/refs/tags/v1.11.1.tar.gz"
+  homepage "https:protomaps.comdocspmtiles"
+  url "https:github.comprotomapsgo-pmtilesarchiverefstagsv1.11.1.tar.gz"
   sha256 "7314e3dc86464daa68e0276676703199214b08c789392e24367a9fc014122d3f"
   license "BSD-3-Clause"
 
@@ -30,10 +30,10 @@ class Pmtiles < Formula
     port = free_port
 
     pid = fork do
-      exec "#{bin}/pmtiles", "serve", ".", "--port", port.to_s
+      exec "#{bin}pmtiles", "serve", ".", "--port", port.to_s
     end
     sleep 3
-    output = shell_output("curl -sI http://localhost:#{port}")
+    output = shell_output("curl -sI http:localhost:#{port}")
     assert_match "404 Not Found", output
   ensure
     Process.kill("HUP", pid)

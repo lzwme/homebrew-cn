@@ -1,7 +1,7 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
-  homepage "https://rbspy.github.io/"
-  url "https://ghproxy.com/https://github.com/rbspy/rbspy/archive/refs/tags/v0.17.1.tar.gz"
+  homepage "https:rbspy.github.io"
+  url "https:github.comrbspyrbspyarchiverefstagsv0.17.1.tar.gz"
   sha256 "69c003ef9978b8727a1e25e9aac7337e2bd326a3783329031acc10186fb83472"
   license "MIT"
 
@@ -25,14 +25,14 @@ class Rbspy < Formula
     recording = <<~EOS
       H4sICDJNbmAAA3JlcG9ydAC9ks1OwzAQhO88RbUnkKzGqfPTRIi34FRV1to11MKxLdtphaq8O
       w5QVEEPnHrd2ZlPu5ogon+nq7sTRBy8UTxgUtCXlBIIs8YPKkTtLPRAl9WSAYGYMCSe9JAXs0
-      /JyKO2UnHlndxnc1O2bcfWrCJg0bpfct2UrOsopdOUsSmgzDmbU16dAyEapfxiIxcvo5Upk7c
-      ZGZTBpA+Ke0w5Au5H+2bd0T5kDUV0ZkxnzY7GEDDaKuugpxP5SUbEK1Hfd/vgXgMOyyD+RkLx
+      JyKO2UnHlndxnc1O2bcfWrCJg0bpfct2UrOsopdOUsSmgzDmbU16dAyEapfxiIxcvo5Upk7c
+      ZGZTBpA+Ke0w5Au5H+2bd0T5kDUV0ZkxnzY7GEDDaKuugpxP5SUbEK1HfdvgXgMOyyD+RkLx
       HPMXChHUsfj8SnHNdWayC6YQ4ibM9oIppbwJsywvoI8Davt0Gy6btgS83uWzq1XTEkj7oHDH5
-      0lVreuqrlmTC/yPitZXK1rSlrbNV0U/ACePNHUiAwAA
+      0lVreuqrlmTCyPitZXK1rSlrbNV0UACePNHUiAwAA
     EOS
 
-    (testpath/"recording.gz").write Base64.decode64(recording.delete("\n"))
-    system bin/"rbspy", "report", "-f", "summary", "-i", "recording.gz",
+    (testpath"recording.gz").write Base64.decode64(recording.delete("\n"))
+    system bin"rbspy", "report", "-f", "summary", "-i", "recording.gz",
                         "-o", "result"
 
     expected_result = <<~EOS

@@ -1,11 +1,11 @@
 class Blockhash < Formula
   desc "Perceptual image hash calculation tool"
-  homepage "https://github.com/commonsmachinery/blockhash"
-  url "https://ghproxy.com/https://github.com/commonsmachinery/blockhash/archive/refs/tags/v0.3.3.tar.gz"
+  homepage "https:github.comcommonsmachineryblockhash"
+  url "https:github.comcommonsmachineryblockhasharchiverefstagsv0.3.3.tar.gz"
   sha256 "3c48af7bdb1f673b2f3c9f8c0bfa9107a7019b54ac3b4e30964bc0707debdd3a"
   license "MIT"
   revision 2
-  head "https://github.com/commonsmachinery/blockhash.git", branch: "master"
+  head "https:github.comcommonsmachineryblockhash.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "251e7a3a447adf80f2d2756a929382245415ea57396dc23c88b5712acedee62e"
@@ -25,23 +25,23 @@ class Blockhash < Formula
   uses_from_macos "python" => :build
 
   resource "homebrew-testdata" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/commonsmachinery/blockhash/ce08b465b658c4e886d49ec33361cee767f86db6/testdata/clipper_ship.jpg"
+    url "https:raw.githubusercontent.comcommonsmachineryblockhashce08b465b658c4e886d49ec33361cee767f86db6testdataclipper_ship.jpg"
     sha256 "a9f6858876adadc83c8551b664632a9cf669c2aea4fec0c09d81171cc3b8a97f"
   end
 
   def install
-    system "python3", "./waf", "configure", "--prefix=#{prefix}"
+    system "python3", ".waf", "configure", "--prefix=#{prefix}"
     # pkg-config adds -fopenmp flag during configuring
     # This fails the build on system clang, and OpenMP is not used in blockhash
-    inreplace "build/c4che/_cache.py", "-fopenmp", ""
-    system "python3", "./waf"
-    system "python3", "./waf", "install"
+    inreplace "buildc4che_cache.py", "-fopenmp", ""
+    system "python3", ".waf"
+    system "python3", ".waf", "install"
   end
 
   test do
     resource("homebrew-testdata").stage testpath
     hash = "00007ff07ff07fe07fe67ff07560600077fe701e7f5e000079fd40410001ffff"
-    result = shell_output("#{bin}/blockhash #{testpath}/clipper_ship.jpg")
+    result = shell_output("#{bin}blockhash #{testpath}clipper_ship.jpg")
     assert_match hash, result
   end
 end

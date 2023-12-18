@@ -1,10 +1,10 @@
 class Ohcount < Formula
   desc "Source code line counter"
-  homepage "https://github.com/blackducksoftware/ohcount"
-  url "https://ghproxy.com/https://github.com/blackducksoftware/ohcount/archive/refs/tags/4.0.0.tar.gz"
+  homepage "https:github.comblackducksoftwareohcount"
+  url "https:github.comblackducksoftwareohcountarchiverefstags4.0.0.tar.gz"
   sha256 "d71f69fd025f5bae58040988108f0d8d84f7204edda1247013cae555bfdae1b9"
   license "GPL-2.0"
-  head "https://github.com/blackducksoftware/ohcount.git", branch: "master"
+  head "https:github.comblackducksoftwareohcount.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "27c7e0899c7845d03e7f17f2a97f2fa6e47a6923fb1c232ce50551cd5a95122a"
@@ -28,17 +28,17 @@ class Ohcount < Formula
   depends_on "ragel"
 
   def install
-    system "./build", "ohcount"
-    bin.install "bin/ohcount"
+    system ".build", "ohcount"
+    bin.install "binohcount"
   end
 
   test do
-    (testpath/"test.rb").write <<~EOS
+    (testpath"test.rb").write <<~EOS
       # comment
       puts
       puts
     EOS
-    stats = shell_output("#{bin}/ohcount -i test.rb").lines.last
+    stats = shell_output("#{bin}ohcount -i test.rb").lines.last
     assert_equal ["ruby", "2", "1", "33.3%"], stats.split[0..3]
   end
 end

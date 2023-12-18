@@ -1,10 +1,10 @@
 class Mold < Formula
   desc "Modern Linker"
-  homepage "https://github.com/rui314/mold"
-  url "https://ghproxy.com/https://github.com/rui314/mold/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:github.comrui314mold"
+  url "https:github.comrui314moldarchiverefstagsv2.4.0.tar.gz"
   sha256 "be65f3d785d32ece7b3204ecaa57810847fdd25c232cf704cbfff2dafb1ac107"
   license "MIT"
-  head "https://github.com/rui314/mold.git", branch: "main"
+  head "https:github.comrui314mold.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "2ae7f9e6c901a7ed68e2b3213cb4a8664b51211fb8bf1875c0e69347b0b7c866"
@@ -45,9 +45,9 @@ class Mold < Formula
 
     # Avoid embedding libdir in the binary.
     # This helps make the bottle relocatable.
-    inreplace "common/config.h.in", "@CMAKE_INSTALL_FULL_LIBDIR@", ""
+    inreplace "commonconfig.h.in", "@CMAKE_INSTALL_FULL_LIBDIR@", ""
     # Ensure we're using Homebrew-provided versions of these dependencies.
-    %w[blake3 mimalloc tbb zlib zstd].each { |dir| (buildpath/"third-party"/dir).rmtree }
+    %w[blake3 mimalloc tbb zlib zstd].each { |dir| (buildpath"third-party"dir).rmtree }
     args = %w[
       -DMOLD_LTO=ON
       -DMOLD_USE_MIMALLOC=ON
@@ -66,18 +66,18 @@ class Mold < Formula
   def caveats
     <<~EOS
       Support for Mach-O targets has been removed.
-      See https://github.com/bluewhalesystems/sold for macOS/iOS support.
+      See https:github.combluewhalesystemssold for macOSiOS support.
     EOS
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       int main(void) { return 0; }
     EOS
 
     linker_flag = case ENV.compiler
-    when /^gcc(-(\d|10|11))?$/ then "-B#{libexec}/mold"
-    when :clang, /^gcc-\d{2,}$/ then "-fuse-ld=mold"
+    when ^gcc(-(\d|10|11))?$ then "-B#{libexec}mold"
+    when :clang, ^gcc-\d{2,}$ then "-fuse-ld=mold"
     else odie "unexpected compiler"
     end
 
@@ -86,35 +86,35 @@ class Mold < Formula
 
     system ENV.cc, linker_flag, *extra_flags, "test.c"
     if OS.linux?
-      system "./a.out"
+      system ".a.out"
     else
       assert_match "ELF 64-bit LSB pie executable, x86-64", shell_output("file a.out")
     end
 
     return unless OS.linux?
 
-    cp_r pkgshare/"test", testpath
+    cp_r pkgshare"test", testpath
 
     # Remove non-native tests.
     arch = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch.to_s
-    testpath.glob("test/elf/*.sh")
-            .reject { |f| f.basename(".sh").to_s.match?(/^(#{arch}_)?[^_]+$/) }
+    testpath.glob("testelf*.sh")
+            .reject { |f| f.basename(".sh").to_s.match?(^(#{arch}_)?[^_]+$) }
             .each(&:unlink)
 
-    inreplace testpath.glob("test/elf/*.sh") do |s|
-      s.gsub!(%r{(\./|`pwd`/)?mold-wrapper}, lib/"mold/mold-wrapper", false)
-      s.gsub!(%r{(\.|`pwd`)/mold}, bin/"mold", false)
-      s.gsub!(/-B(\.|`pwd`)/, "-B#{libexec}/mold", false)
+    inreplace testpath.glob("testelf*.sh") do |s|
+      s.gsub!(%r{(\.|`pwd`)?mold-wrapper}, lib"moldmold-wrapper", false)
+      s.gsub!(%r{(\.|`pwd`)mold}, bin"mold", false)
+      s.gsub!(-B(\.|`pwd`), "-B#{libexec}mold", false)
     end
 
     # The `inreplace` rules above do not work well on this test. To avoid adding
     # too much complexity to the regex rules, it is manually tested below
     # instead.
-    (testpath/"test/elf/mold-wrapper2.sh").unlink
+    (testpath"testelfmold-wrapper2.sh").unlink
     assert_match "mold-wrapper.so",
-      shell_output("#{bin}/mold -run bash -c 'echo $LD_PRELOAD'")
+      shell_output("#{bin}mold -run bash -c 'echo $LD_PRELOAD'")
 
     # Run the remaining tests.
-    testpath.glob("test/elf/*.sh").each { |t| system "bash", t }
+    testpath.glob("testelf*.sh").each { |t| system "bash", t }
   end
 end

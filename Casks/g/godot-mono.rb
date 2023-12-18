@@ -2,15 +2,15 @@ cask "godot-mono" do
   version "4.2.1"
   sha256 "b0b4924f715cdf6b1cdabd97f3509cf4252a5f5226c537740d6e109e92c141ce"
 
-  url "https://ghproxy.com/https://github.com/godotengine/godot/releases/download/#{version}-stable/Godot_v#{version}-stable_mono_macos.universal.zip",
-      verified: "github.com/godotengine/godot/"
+  url "https:github.comgodotenginegodotreleasesdownload#{version}-stableGodot_v#{version}-stable_mono_macos.universal.zip",
+      verified: "github.comgodotenginegodot"
   name "Godot Engine"
   desc "C# scripting capable version of Godot game engine"
-  homepage "https://godotengine.org/"
+  homepage "https:godotengine.org"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)[._-]stable$/i)
+    regex(^v?(\d+(?:\.\d+)+)[._-]stable$i)
     strategy :github_latest
   end
 
@@ -20,8 +20,8 @@ cask "godot-mono" do
   app "Godot_mono.app"
 
   zap trash: [
-    "~/Library/Application Support/Godot",
-    "~/Library/Caches/Godot",
-    "~/Library/Saved Application State/org.godotengine.godot.savedState",
+    "~LibraryApplication SupportGodot",
+    "~LibraryCachesGodot",
+    "~LibrarySaved Application Stateorg.godotengine.godot.savedState",
   ]
 end

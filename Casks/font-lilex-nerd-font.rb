@@ -2,10 +2,10 @@ cask "font-lilex-nerd-font" do
   version "3.1.1"
   sha256 "334fdc1ec134393bcb2a1bdd27fa101bb363805d167e25436fdaab43cec14c3a"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Lilex.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Lilex.zip"
   name "Lilex Nerd Font families (Lilex)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

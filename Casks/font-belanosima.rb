@@ -2,13 +2,13 @@ cask "font-belanosima" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/belanosima"
+      only_path: "oflbelanosima"
   name "Belanosima"
   desc "Inspired by geometric sans serif designs from the 1920s"
-  homepage "https://fonts.google.com/specimen/Belanosima"
+  homepage "https:fonts.google.comspecimenBelanosima"
 
   font "Belanosima-Bold.ttf"
   font "Belanosima-Regular.ttf"

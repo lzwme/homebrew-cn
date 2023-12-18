@@ -2,12 +2,12 @@ cask "font-ropa-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ropasans"
+      only_path: "oflropasans"
   name "Ropa Sans"
-  homepage "https://fonts.google.com/specimen/Ropa+Sans"
+  homepage "https:fonts.google.comspecimenRopa+Sans"
 
   font "RopaSans-Italic.ttf"
   font "RopaSans-Regular.ttf"

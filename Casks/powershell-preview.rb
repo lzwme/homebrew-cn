@@ -5,14 +5,14 @@ cask "powershell-preview" do
   sha256 arm:   "cc64facf7b8f6587e178a415548895604e3e95e077fc021b1df6b2b817dc857f",
          intel: "935be0cdc877be27d84062de268edde2c5f11a9859d09dd6bac9aaa100229ccd"
 
-  url "https://ghproxy.com/https://github.com/PowerShell/PowerShell/releases/download/v#{version}/powershell-#{version}-osx-#{arch}.pkg"
+  url "https:github.comPowerShellPowerShellreleasesdownloadv#{version}powershell-#{version}-osx-#{arch}.pkg"
   name "PowerShell"
   desc "Command-line shell and scripting language"
-  homepage "https://github.com/PowerShell/PowerShell"
+  homepage "https:github.comPowerShellPowerShell"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+[_-](?:preview|rc)(?:\.\d+)?)$/i)
+    regex(^v?(\d+(?:\.\d+)+[_-](?:preview|rc)(?:\.\d+)?)$i)
   end
 
   depends_on formula: "openssl"
@@ -23,19 +23,19 @@ cask "powershell-preview" do
   uninstall pkgutil: "com.microsoft.powershell-preview"
 
   zap trash: [
-        "~/.cache/powershell",
-        "~/.config/PowerShell",
-        "~/.local/share/powershell",
+        "~.cachepowershell",
+        "~.configPowerShell",
+        "~.localsharepowershell",
       ],
       rmdir: [
-        "~/.cache",
-        "~/.config",
-        "~/.local",
-        "~/.local/share",
+        "~.cache",
+        "~.config",
+        "~.local",
+        "~.localshare",
       ]
 
   caveats <<~EOS
     To use Homebrew in PowerShell, set:
-      Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}/bin/brew shellenv) | Invoke-Expression'
+      Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(#{HOMEBREW_PREFIX}binbrew shellenv) | Invoke-Expression'
   EOS
 end

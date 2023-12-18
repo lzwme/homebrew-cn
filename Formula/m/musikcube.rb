@@ -1,14 +1,14 @@
 class Musikcube < Formula
   desc "Terminal-based audio engine, library, player and server"
-  homepage "https://musikcube.com"
-  url "https://ghproxy.com/https://github.com/clangen/musikcube/archive/refs/tags/3.0.2.tar.gz"
+  homepage "https:musikcube.com"
+  url "https:github.comclangenmusikcubearchiverefstags3.0.2.tar.gz"
   sha256 "65f82db36d635bdbfd99f67d1d68c9e1aedf8e38efa627f303cf7971c306d063"
   license "BSD-3-Clause"
-  head "https://github.com/clangen/musikcube.git", branch: "master"
+  head "https:github.comclangenmusikcube.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -47,10 +47,10 @@ class Musikcube < Formula
   end
 
   test do
-    system bin/"musikcubed", "--start"
+    system bin"musikcubed", "--start"
     system "sleep", "5"
-    assert_path_exists "/tmp/musikcubed.lock"
+    assert_path_exists "tmpmusikcubed.lock"
     system "sleep", "5"
-    system bin/"musikcubed", "--stop"
+    system bin"musikcubed", "--stop"
   end
 end

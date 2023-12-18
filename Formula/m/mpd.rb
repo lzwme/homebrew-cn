@@ -1,10 +1,10 @@
 class Mpd < Formula
   desc "Music Player Daemon"
-  homepage "https://web.archive.org/web/20230506090801/https://www.musicpd.org/"
-  url "https://ghproxy.com/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.23.14.tar.gz"
+  homepage "https:web.archive.orgweb20230506090801https:www.musicpd.org"
+  url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.23.14.tar.gz"
   sha256 "3547237437368962c8a8bdec088a369a94ef66f7afc22f6fc0d643c1406bd533"
   license "GPL-2.0-or-later"
-  head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
+  head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "367b98185a3776ebba3dc4940be453761ad8833420a9eeac58bb7628dec44551"
@@ -72,52 +72,52 @@ class Mpd < Formula
       -Dupnp=pupnp
       -Dvorbisenc=enabled
       -Dwavpack=enabled
-      -Dsystemd_system_unit_dir=#{lib}/systemd/system
-      -Dsystemd_user_unit_dir=#{lib}/systemd/user
+      -Dsystemd_system_unit_dir=#{lib}systemdsystem
+      -Dsystemd_user_unit_dir=#{lib}systemduser
     ]
 
-    system "meson", "setup", "output/release", *args, *std_meson_args
-    system "meson", "compile", "-C", "output/release", "--verbose"
+    system "meson", "setup", "outputrelease", *args, *std_meson_args
+    system "meson", "compile", "-C", "outputrelease", "--verbose"
     ENV.deparallelize # Directories are created in parallel, so let's not do that
-    system "meson", "install", "-C", "output/release"
+    system "meson", "install", "-C", "outputrelease"
 
-    pkgetc.install "doc/mpdconf.example" => "mpd.conf"
+    pkgetc.install "docmpdconf.example" => "mpd.conf"
   end
 
   def caveats
     <<~EOS
       MPD requires a config file to start.
-      Please copy it from #{etc}/mpd/mpd.conf into one of these paths:
-        - ~/.mpd/mpd.conf
-        - ~/.mpdconf
+      Please copy it from #{etc}mpdmpd.conf into one of these paths:
+        - ~.mpdmpd.conf
+        - ~.mpdconf
       and tailor it to your needs.
     EOS
   end
 
   service do
-    run [opt_bin/"mpd", "--no-daemon"]
+    run [opt_bin"mpd", "--no-daemon"]
     keep_alive true
     process_type :interactive
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    # oss_output: Error opening OSS device "/dev/dsp": No such file or directory
-    # oss_output: Error opening OSS device "/dev/sound/dsp": No such file or directory
+    # oss_output: Error opening OSS device "devdsp": No such file or directory
+    # oss_output: Error opening OSS device "devsounddsp": No such file or directory
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "[wavpack] wv", shell_output("#{bin}/mpd --version")
+    assert_match "[wavpack] wv", shell_output("#{bin}mpd --version")
 
     require "expect"
 
     port = free_port
 
-    (testpath/"mpd.conf").write <<~EOS
+    (testpath"mpd.conf").write <<~EOS
       bind_to_address "127.0.0.1"
       port "#{port}"
     EOS
 
-    io = IO.popen("#{bin}/mpd --stdout --no-daemon #{testpath}/mpd.conf 2>&1", "r")
+    io = IO.popen("#{bin}mpd --stdout --no-daemon #{testpath}mpd.conf 2>&1", "r")
     io.expect("output: Successfully detected a osx audio device", 30)
 
     ohai "Connect to MPD command (localhost:#{port})"

@@ -1,7 +1,7 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
-  homepage "https://sympy.org"
-  url "https://ghproxy.com/https://github.com/symengine/symengine/releases/download/v0.11.2/symengine-0.11.2.tar.gz"
+  homepage "https:sympy.org"
+  url "https:github.comsymenginesymenginereleasesdownloadv0.11.2symengine-0.11.2.tar.gz"
   sha256 "f6972acd6a65354f6414e69460d2e175729470632bdac05919bc2f7f32e48cbd"
   license "MIT"
 
@@ -30,12 +30,12 @@ class Symengine < Formula
   # An alternative workaround is to use `lld` with `-fuse-ld=lld`.
   # TODO(carlocab): Upstream a version of this patch.
   patch do
-    url "https://gitweb.gentoo.org/repo/gentoo.git/plain/sci-libs/symengine/files/symengine-0.8.1-fix_llvm.patch?id=83ab9587be9f89e667506b861208d613a2f016e5"
+    url "https:gitweb.gentoo.orgrepogentoo.gitplainsci-libssymenginefilessymengine-0.8.1-fix_llvm.patch?id=83ab9587be9f89e667506b861208d613a2f016e5"
     sha256 "c654ea7c4ee44c689433e87f71c7ae78e6c04968e7dfe89be5e4ba4c8c53713b"
   end
 
   def install
-    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+)?$/) }
+    llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DWITH_GMP=ON",
@@ -44,7 +44,7 @@ class Symengine < Formula
                     "-DINTEGER_CLASS=flint",
                     "-DWITH_LLVM=ON",
                     "-DWITH_COTIRE=OFF",
-                    "-DLLVM_DIR=#{llvm.opt_lib}/cmake/llvm",
+                    "-DLLVM_DIR=#{llvm.opt_lib}cmakellvm",
                     "-DWITH_SYMENGINE_THREAD_SAFE=ON",
                     "-DWITH_SYSTEM_CEREAL=ON",
                     *std_cmake_args
@@ -54,8 +54,8 @@ class Symengine < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <symengine/expression.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <symengineexpression.h>
       using SymEngine::Expression;
       int main() {
         auto x=Expression('x');
@@ -71,6 +71,6 @@ class Symengine < Formula
     ]
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lsymengine", *lib_flags, "-o", "test"
 
-    system "./test"
+    system ".test"
   end
 end

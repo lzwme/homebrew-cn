@@ -2,10 +2,10 @@ cask "font-sevillana" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/sevillana/Sevillana-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsevillanaSevillana-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Sevillana"
-  homepage "https://fonts.google.com/specimen/Sevillana"
+  homepage "https:fonts.google.comspecimenSevillana"
 
   font "Sevillana-Regular.ttf"
 

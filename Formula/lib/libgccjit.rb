@@ -1,23 +1,23 @@
 class Libgccjit < Formula
   desc "JIT library for the GNU compiler collection"
-  homepage "https://gcc.gnu.org/"
+  homepage "https:gcc.gnu.org"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
-  head "https://gcc.gnu.org/git/gcc.git", branch: "master"
+  head "https:gcc.gnu.orggitgcc.git", branch: "master"
 
   stable do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
+    url "https:ftp.gnu.orggnugccgcc-13.2.0gcc-13.2.0.tar.xz"
+    mirror "https:ftpmirror.gnu.orggccgcc-13.2.0gcc-13.2.0.tar.xz"
     sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-13-branch
+    # Apple Silicon support, located at https:github.comiainsgcc-13-branch
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/3c5cbc8e9cf444a1967786af48e430588e1eb481/gcc/gcc-13.2.0.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches3c5cbc8e9cf444a1967786af48e430588e1eb481gccgcc-13.2.0.diff"
       sha256 "2df7ef067871a30b2531a2013b3db661ec9e61037341977bfc451e30bf2c1035"
     end
 
     # Upstream fix to deal with macOS 14 SDK <math.h> header
-    # https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=93f803d53b5ccaabded9d7b4512b54da81c1c616
+    # https:gcc.gnu.orggit?p=gcc.git;a=commitdiff;h=93f803d53b5ccaabded9d7b4512b54da81c1c616
     patch :DATA
   end
 
@@ -60,10 +60,10 @@ class Libgccjit < Formula
 
     pkgversion = "Homebrew GCC #{pkg_version} #{build.used_options*" "}".strip
 
-    # Use `lib/gcc/current` to align with the GCC formula.
+    # Use `libgcccurrent` to align with the GCC formula.
     args = %W[
       --prefix=#{prefix}
-      --libdir=#{lib}/gcc/current
+      --libdir=#{lib}gcccurrent
       --disable-nls
       --enable-checking=release
       --with-gcc-major-version-only
@@ -81,14 +81,14 @@ class Libgccjit < Formula
       cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
       args << "--build=#{cpu}-apple-darwin#{OS.kernel_version.major}"
 
-      # System headers may not be in /usr/include
+      # System headers may not be in usrinclude
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
 
       # Work around a bug in Xcode 15's new linker (FB13038083)
       if DevelopmentTools.clang_build_version >= 1500
-        toolchain_path = "/Library/Developer/CommandLineTools"
-        args << "--with-ld=#{toolchain_path}/usr/bin/ld-classic"
+        toolchain_path = "LibraryDeveloperCommandLineTools"
+        args << "--with-ld=#{toolchain_path}usrbinld-classic"
       end
 
       ["BOOT_LDFLAGS=-Wl,-headerpad_max_install_names"]
@@ -96,19 +96,19 @@ class Libgccjit < Formula
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
 
-      # Fix Linux error: gnu/stubs-32.h: No such file or directory.
+      # Fix Linux error: gnustubs-32.h: No such file or directory.
       args << "--disable-multilib"
 
       # Change the default directory name for 64-bit libraries to `lib`
-      # https://stackoverflow.com/a/54038769
-      inreplace "gcc/config/i386/t-linux64", "m64=../lib64", "m64="
+      # https:stackoverflow.coma54038769
+      inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
 
       []
     end
 
     # Building jit needs --enable-host-shared, which slows down the compiler.
     mkdir "build-jit" do
-      system "../configure", *args, "--enable-languages=jit", "--enable-host-shared"
+      system "..configure", *args, "--enable-languages=jit", "--enable-host-shared"
       system "make", *make_args
       system "make", "install"
     end
@@ -118,12 +118,12 @@ class Libgccjit < Formula
       rm_rf f if !f.directory? && !f.basename.to_s.start_with?("libgccjit")
     end
 
-    # Provide a `lib/gcc/xy` directory to align with the versioned GCC formulae.
-    (lib/"gcc"/version.major).install_symlink (lib/"gcc/current").children
+    # Provide a `libgccxy` directory to align with the versioned GCC formulae.
+    (lib"gcc"version.major).install_symlink (lib"gcccurrent").children
   end
 
   test do
-    (testpath/"test-libgccjit.c").write <<~EOS
+    (testpath"test-libgccjit.c").write <<~EOS
       #include <libgccjit.h>
       #include <stdlib.h>
       #include <stdio.h>
@@ -175,18 +175,18 @@ class Libgccjit < Formula
     EOS
 
     gcc_major_ver = Formula["gcc"].any_installed_version.major
-    gcc = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
-    libs = "#{HOMEBREW_PREFIX}/lib/gcc/#{gcc_major_ver}"
+    gcc = Formula["gcc"].opt_bin"gcc-#{gcc_major_ver}"
+    libs = "#{HOMEBREW_PREFIX}libgcc#{gcc_major_ver}"
 
     system gcc.to_s, "-I#{include}", "test-libgccjit.c", "-o", "test", "-L#{libs}", "-lgccjit"
-    assert_equal "hello world", shell_output("./test")
+    assert_equal "hello world", shell_output(".test")
   end
 end
 __END__
-diff --git a/fixincludes/fixincl.x b/fixincludes/fixincl.x
+diff --git afixincludesfixincl.x bfixincludesfixincl.x
 index 416d2c2e3a4..e52f11d8460 100644
---- a/fixincludes/fixincl.x
-+++ b/fixincludes/fixincl.x
+--- afixincludesfixincl.x
++++ bfixincludesfixincl.x
 @@ -2,11 +2,11 @@
   *
   * DO NOT EDIT THIS FILE   (fixincl.x)
@@ -195,15 +195,15 @@ index 416d2c2e3a4..e52f11d8460 100644
 + * It has been AutoGen-ed  August 17, 2023 at 10:16:38 AM by AutoGen 5.18.12
   * From the definitions    inclhack.def
   * and the template file   fixincl
-  */
--/* DO NOT SVN-MERGE THIS FILE, EITHER Sun Jan 22 21:03:29 CET 2023
-+/* DO NOT SVN-MERGE THIS FILE, EITHER Thu Aug 17 10:16:38 CEST 2023
   *
-  * You must regenerate it.  Use the ./genfixes script.
+-* DO NOT SVN-MERGE THIS FILE, EITHER Sun Jan 22 21:03:29 CET 2023
++* DO NOT SVN-MERGE THIS FILE, EITHER Thu Aug 17 10:16:38 CEST 2023
+  *
+  * You must regenerate it.  Use the .genfixes script.
   *
 @@ -3674,7 +3674,7 @@ tSCC* apzDarwin_Flt_Eval_MethodMachs[] = {
   *  content selection pattern - do fix if pattern found
-  */
+  *
  tSCC zDarwin_Flt_Eval_MethodSelect0[] =
 -       "^#if __FLT_EVAL_METHOD__ == 0$";
 +       "^#if __FLT_EVAL_METHOD__ == 0( \\|\\| __FLT_EVAL_METHOD__ == -1)?$";
@@ -211,18 +211,18 @@ index 416d2c2e3a4..e52f11d8460 100644
  #define    DARWIN_FLT_EVAL_METHOD_TEST_CT  1
  static tTestDesc aDarwin_Flt_Eval_MethodTests[] = {
 @@ -3685,7 +3685,7 @@ static tTestDesc aDarwin_Flt_Eval_MethodTests[] = {
-  */
+  *
  static const char* apzDarwin_Flt_Eval_MethodPatch[] = {
      "format",
 -    "#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == 16",
 +    "%0 || __FLT_EVAL_METHOD__ == 16",
      (char*)NULL };
  
- /* * * * * * * * * * * * * * * * * * * * * * * * * *
-diff --git a/fixincludes/inclhack.def b/fixincludes/inclhack.def
+ * * * * * * * * * * * * * * * * * * * * * * * * * *
+diff --git afixincludesinclhack.def bfixincludesinclhack.def
 index 45e0cbc0c10..19e0ea2df66 100644
---- a/fixincludes/inclhack.def
-+++ b/fixincludes/inclhack.def
+--- afixincludesinclhack.def
++++ bfixincludesinclhack.def
 @@ -1819,10 +1819,11 @@ fix = {
      hackname  = darwin_flt_eval_method;
      mach      = "*-*-darwin*";
@@ -237,17 +237,17 @@ index 45e0cbc0c10..19e0ea2df66 100644
 +		"#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == -1";
  };
  
- /*
-diff --git a/fixincludes/tests/base/math.h b/fixincludes/tests/base/math.h
+ *
+diff --git afixincludestestsbasemath.h bfixincludestestsbasemath.h
 index 29b67579748..7b92f29a409 100644
---- a/fixincludes/tests/base/math.h
-+++ b/fixincludes/tests/base/math.h
+--- afixincludestestsbasemath.h
++++ bfixincludestestsbasemath.h
 @@ -32,6 +32,7 @@
  
  #if defined( DARWIN_FLT_EVAL_METHOD_CHECK )
  #if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == 16
 +#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == -1 || __FLT_EVAL_METHOD__ == 16
- #endif  /* DARWIN_FLT_EVAL_METHOD_CHECK */
+ #endif  * DARWIN_FLT_EVAL_METHOD_CHECK *
  
  
 -- 

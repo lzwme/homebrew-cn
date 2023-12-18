@@ -1,7 +1,7 @@
 class Fontforge < Formula
-  desc "Command-line outline and bitmap font editor/converter"
-  homepage "https://fontforge.github.io"
-  url "https://ghproxy.com/https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz"
+  desc "Command-line outline and bitmap font editorconverter"
+  homepage "https:fontforge.github.io"
+  url "https:github.comfontforgefontforgereleasesdownload20230101fontforge-20230101.tar.xz"
   sha256 "ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8"
   license "GPL-3.0-or-later"
   revision 1
@@ -42,9 +42,9 @@ class Fontforge < Formula
   uses_from_macos "libxml2"
 
   # build patch for po translation files
-  # upstream bug report, https://github.com/fontforge/fontforge/issues/5251
+  # upstream bug report, https:github.comfontforgefontforgeissues5251
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/9403988/fontforge/20230101.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches9403988fontforge20230101.patch"
     sha256 "e784c4c0fcf28e5e6c5b099d7540f53436d1be2969898ebacd25654d315c0072"
   end
 
@@ -64,7 +64,7 @@ class Fontforge < Formula
         This formula only installs the command line utilities.
 
         FontForge.app can be downloaded directly from the website:
-          https://fontforge.github.io
+          https:fontforge.github.io
 
         Alternatively, install with Homebrew Cask:
           brew install --cask fontforge
@@ -74,22 +74,22 @@ class Fontforge < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/fontforge/fontforge/1346ce6e4c004c312589fdb67e31d4b2c32a1656/tests/fonts/Ambrosia.sfd"
+      url "https:raw.githubusercontent.comfontforgefontforge1346ce6e4c004c312589fdb67e31d4b2c32a1656testsfontsAmbrosia.sfd"
       sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
     end
 
-    python = Formula["python@3.11"].opt_bin/"python3.11"
-    system bin/"fontforge", "-version"
-    system bin/"fontforge", "-lang=py", "-c", "import fontforge; fontforge.font()"
+    python = Formula["python@3.11"].opt_bin"python3.11"
+    system bin"fontforge", "-version"
+    system bin"fontforge", "-lang=py", "-c", "import fontforge; fontforge.font()"
     system python, "-c", "import fontforge; fontforge.font()"
 
     resource("homebrew-testdata").stage do
-      ffscript = "fontforge.open('Ambrosia.sfd').generate('#{testpath}/Ambrosia.woff2')"
-      system bin/"fontforge", "-c", ffscript
+      ffscript = "fontforge.open('Ambrosia.sfd').generate('#{testpath}Ambrosia.woff2')"
+      system bin"fontforge", "-c", ffscript
     end
-    assert_predicate testpath/"Ambrosia.woff2", :exist?
+    assert_predicate testpath"Ambrosia.woff2", :exist?
 
-    fileres = shell_output("/usr/bin/file #{testpath}/Ambrosia.woff2")
+    fileres = shell_output("usrbinfile #{testpath}Ambrosia.woff2")
     assert_match "Web Open Font Format (Version 2)", fileres
   end
 end

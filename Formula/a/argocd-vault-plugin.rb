@@ -1,7 +1,7 @@
 class ArgocdVaultPlugin < Formula
   desc "Argo CD plugin to retrieve secrets from Secret Management tools"
-  homepage "https://argocd-vault-plugin.readthedocs.io"
-  url "https://github.com/argoproj-labs/argocd-vault-plugin.git",
+  homepage "https:argocd-vault-plugin.readthedocs.io"
+  url "https:github.comargoproj-labsargocd-vault-plugin.git",
       tag:      "v1.17.0",
       revision: "b393c7afa63a43197c084a99959a78d0d26e5e74"
   license "Apache-2.0"
@@ -23,22 +23,22 @@ class ArgocdVaultPlugin < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/argoproj-labs/argocd-vault-plugin/version.Version=#{version}
-      -X github.com/argoproj-labs/argocd-vault-plugin/version.BuildDate=#{time.iso8601}
-      -X github.com/argoproj-labs/argocd-vault-plugin/version.CommitSHA=#{Utils.git_head}
+      -X github.comargoproj-labsargocd-vault-pluginversion.Version=#{version}
+      -X github.comargoproj-labsargocd-vault-pluginversion.BuildDate=#{time.iso8601}
+      -X github.comargoproj-labsargocd-vault-pluginversion.CommitSHA=#{Utils.git_head}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"argocd-vault-plugin", "completion")
+    generate_completions_from_executable(bin"argocd-vault-plugin", "completion")
   end
 
   test do
     assert_match "This is a plugin to replace <placeholders> with Vault secrets",
-      shell_output("#{bin}/argocd-vault-plugin --help")
+      shell_output("#{bin}argocd-vault-plugin --help")
 
-    touch testpath/"empty.yaml"
+    touch testpath"empty.yaml"
     assert_match "Error: Must provide a supported Vault Type",
-      shell_output("#{bin}/argocd-vault-plugin generate ./empty.yaml 2>&1", 1)
+      shell_output("#{bin}argocd-vault-plugin generate .empty.yaml 2>&1", 1)
   end
 end

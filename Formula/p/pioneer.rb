@@ -1,10 +1,10 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
-  homepage "https://pioneerspacesim.net/"
-  url "https://ghproxy.com/https://github.com/pioneerspacesim/pioneer/archive/refs/tags/20230203.tar.gz"
+  homepage "https:pioneerspacesim.net"
+  url "https:github.compioneerspacesimpioneerarchiverefstags20230203.tar.gz"
   sha256 "80eea94e0f7e4d8e6a0c4629bdfb89201f82aae2f59ee7a1f7a487eeeccf27c7"
   license "GPL-3.0-only"
-  head "https://github.com/pioneerspacesim/pioneer.git", branch: "master"
+  head "https:github.compioneerspacesimpioneer.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "f987336d46f0d5541dff2ef1aacfb20d632e2c345db9b4428f5e64155d2b9293"
@@ -41,7 +41,7 @@ class Pioneer < Formula
   end
 
   test do
-    assert_match "#{name} #{version}", shell_output("#{bin}/pioneer -v 2>&1").chomp
-    assert_match "modelcompiler #{version}", shell_output("#{bin}/modelcompiler -v 2>&1").chomp
+    assert_match "#{name} #{version}", shell_output("#{bin}pioneer -v 2>&1").chomp
+    assert_match "modelcompiler #{version}", shell_output("#{bin}modelcompiler -v 2>&1").chomp
   end
 end

@@ -1,7 +1,7 @@
 class Dpp < Formula
   desc "Directly include C headers in D source code"
-  homepage "https://github.com/atilaneves/dpp"
-  url "https://github.com/atilaneves/dpp.git",
+  homepage "https:github.comatilanevesdpp"
+  url "https:github.comatilanevesdpp.git",
       tag:      "v0.5.5",
       revision: "c74291190d5fe81ff23ec1d21290fd7047c256a9"
   license "BSL-1.0"
@@ -24,24 +24,24 @@ class Dpp < Formula
 
   # Match versions from dub.selections.json
   resource "libclang" do
-    url "https://code.dlang.org/packages/libclang/0.3.2.zip"
+    url "https:code.dlang.orgpackageslibclang0.3.2.zip"
     sha256 "c54c01b65f2a62c93a2929c4d7acee05ed502d841839bf9f4c212e5d18ded137"
   end
 
   resource "sumtype" do
-    url "https://code.dlang.org/packages/sumtype/0.7.1.zip"
+    url "https:code.dlang.orgpackagessumtype0.7.1.zip"
     sha256 "e27e026505bd9a7eb8f11cda12a3030c190a3d93f6b8dccfe7b22ffc36694e4e"
   end
 
   resource "unit-threaded" do
-    url "https://code.dlang.org/packages/unit-threaded/2.1.3.zip"
+    url "https:code.dlang.orgpackagesunit-threaded2.1.3.zip"
     sha256 "bb306506cc69f51e3ff712590c9ce02dba16832171d34c0a6243a47ba4a936d6"
   end
 
   def install
     resources.each do |r|
-      r.stage buildpath/"dub-packages"/r.name
-      system "dub", "add-local", buildpath/"dub-packages"/r.name, r.version
+      r.stage buildpath"dub-packages"r.name
+      system "dub", "add-local", buildpath"dub-packages"r.name, r.version
     end
 
     if OS.mac?
@@ -50,29 +50,29 @@ class Dpp < Formula
       toolchain_paths << MacOS::Xcode.toolchain_path if MacOS::Xcode.installed?
       dflags = toolchain_paths.flat_map do |path|
         %W[
-          -L-L#{path}/usr/lib
+          -L-L#{path}usrlib
           -L-rpath
-          -L#{path}/usr/lib
+          -L#{path}usrlib
         ]
       end
       ENV["DFLAGS"] = dflags.join(" ")
     end
     system "dub", "add-local", buildpath
     system "dub", "build", "--skip-registry=all", "dpp"
-    bin.install "bin/d++"
+    bin.install "bind++"
   end
 
   test do
-    (testpath/"c.h").write <<~EOS
+    (testpath"c.h").write <<~EOS
       #define FOO_ID(x) (x*3)
       int twice(int i);
     EOS
 
-    (testpath/"c.c").write <<~EOS
+    (testpath"c.c").write <<~EOS
       int twice(int i) { return i * 2; }
     EOS
 
-    (testpath/"foo.dpp").write <<~EOS
+    (testpath"foo.dpp").write <<~EOS
       #include "c.h"
       void main() {
           import std.stdio;
@@ -81,7 +81,7 @@ class Dpp < Formula
     EOS
 
     system ENV.cc, "-c", "c.c"
-    system bin/"d++", "--compiler=ldc2", "foo.dpp", "c.o"
-    assert_match "30", shell_output("./foo")
+    system bin"d++", "--compiler=ldc2", "foo.dpp", "c.o"
+    assert_match "30", shell_output(".foo")
   end
 end

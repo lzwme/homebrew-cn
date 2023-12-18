@@ -1,10 +1,10 @@
 class Tm < Formula
   desc "TriggerMesh CLI to work with knative objects"
-  homepage "https://triggermesh.com"
-  url "https://ghproxy.com/https://github.com/triggermesh/tm/archive/refs/tags/v1.21.0.tar.gz"
+  homepage "https:triggermesh.com"
+  url "https:github.comtriggermeshtmarchiverefstagsv1.21.0.tar.gz"
   sha256 "865d62d11ac28536ed630562088ca8537ceb5c54fcbc413788171f98ab301df2"
   license "Apache-2.0"
-  head "https://github.com/triggermesh/tm.git", branch: "main"
+  head "https:github.comtriggermeshtm.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb35c98edad2b1a8ea811001ca4c9df94cd4313717622b0da3ee0b04e518e6fd"
@@ -24,19 +24,19 @@ class Tm < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/triggermesh/tm/cmd.version=v#{version}
+      -X github.comtriggermeshtmcmd.version=v#{version}
     ].join(" ")
 
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    (testpath/"kubeconfig").write <<~EOS
+    (testpath"kubeconfig").write <<~EOS
       apiVersion: v1
       clusters:
       - cluster:
           certificate-authority-data: test
-          server: http://127.0.0.1:8080
+          server: http:127.0.0.1:8080
         name: test
       contexts:
       - context:
@@ -52,46 +52,46 @@ class Tm < Formula
           token: test
     EOS
 
-    ENV["KUBECONFIG"] = testpath/"kubeconfig"
+    ENV["KUBECONFIG"] = testpath"kubeconfig"
 
     # version
-    version_output = shell_output("#{bin}/tm version")
+    version_output = shell_output("#{bin}tm version")
     assert_match "Triggermesh CLI, version v#{version}", version_output
 
     # node
-    system "#{bin}/tm", "generate", "node", "foo-node"
-    assert_predicate testpath/"foo-node/serverless.yaml", :exist?
-    assert_predicate testpath/"foo-node/handler.js", :exist?
+    system "#{bin}tm", "generate", "node", "foo-node"
+    assert_predicate testpath"foo-nodeserverless.yaml", :exist?
+    assert_predicate testpath"foo-nodehandler.js", :exist?
 
-    runtime = "https://ghproxy.com/https://raw.githubusercontent.com/triggermesh/knative-lambda-runtime/master/node10/runtime.yaml"
-    yaml = File.read("foo-node/serverless.yaml")
+    runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemasternode10runtime.yaml"
+    yaml = File.read("foo-nodeserverless.yaml")
     assert_match "runtime: #{runtime}", yaml
 
     # python
-    system "#{bin}/tm", "generate", "python", "foo-python"
-    assert_predicate testpath/"foo-python/serverless.yaml", :exist?
-    assert_predicate testpath/"foo-python/handler.py", :exist?
+    system "#{bin}tm", "generate", "python", "foo-python"
+    assert_predicate testpath"foo-pythonserverless.yaml", :exist?
+    assert_predicate testpath"foo-pythonhandler.py", :exist?
 
-    runtime = "https://ghproxy.com/https://raw.githubusercontent.com/triggermesh/knative-lambda-runtime/master/python37/runtime.yaml"
-    yaml = File.read("foo-python/serverless.yaml")
+    runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemasterpython37runtime.yaml"
+    yaml = File.read("foo-pythonserverless.yaml")
     assert_match "runtime: #{runtime}", yaml
 
     # go
-    system "#{bin}/tm", "generate", "go", "foo-go"
-    assert_predicate testpath/"foo-go/serverless.yaml", :exist?
-    assert_predicate testpath/"foo-go/main.go", :exist?
+    system "#{bin}tm", "generate", "go", "foo-go"
+    assert_predicate testpath"foo-goserverless.yaml", :exist?
+    assert_predicate testpath"foo-gomain.go", :exist?
 
-    runtime = "https://ghproxy.com/https://raw.githubusercontent.com/triggermesh/knative-lambda-runtime/master/go/runtime.yaml"
-    yaml = File.read("foo-go/serverless.yaml")
+    runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemastergoruntime.yaml"
+    yaml = File.read("foo-goserverless.yaml")
     assert_match "runtime: #{runtime}", yaml
 
     # ruby
-    system "#{bin}/tm", "generate", "ruby", "foo-ruby"
-    assert_predicate testpath/"foo-ruby/serverless.yaml", :exist?
-    assert_predicate testpath/"foo-ruby/handler.rb", :exist?
+    system "#{bin}tm", "generate", "ruby", "foo-ruby"
+    assert_predicate testpath"foo-rubyserverless.yaml", :exist?
+    assert_predicate testpath"foo-rubyhandler.rb", :exist?
 
-    runtime = "https://ghproxy.com/https://raw.githubusercontent.com/triggermesh/knative-lambda-runtime/master/ruby25/runtime.yaml"
-    yaml = File.read("foo-ruby/serverless.yaml")
+    runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemasterruby25runtime.yaml"
+    yaml = File.read("foo-rubyserverless.yaml")
     assert_match "runtime: #{runtime}", yaml
   end
 end

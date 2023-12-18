@@ -1,18 +1,18 @@
 class Calabash < Formula
   desc "XProc (XML Pipeline Language) implementation"
-  homepage "https://xmlcalabash.com/"
-  url "https://ghproxy.com/https://github.com/ndw/xmlcalabash1/releases/download/1.5.7-120/xmlcalabash-1.5.7-120.zip"
+  homepage "https:xmlcalabash.com"
+  url "https:github.comndwxmlcalabash1releasesdownload1.5.7-120xmlcalabash-1.5.7-120.zip"
   sha256 "40a932910f36e78b445bd756acb405155d39b98541091298c0cf4971895cb8c3"
   license any_of: ["GPL-2.0-only", "CDDL-1.0"]
 
-  # According to ndw/xmlcalabash1#342, each release comes in "flavours" that
+  # According to ndwxmlcalabash1#342, each release comes in "flavours" that
   # target different Saxon versions (e.g. 1.5.4-110 targets Saxon 11.x).
   # The "latest" release on GitHub may not target the same version as our
   # `saxon` formula, so we have to check multiple releases to find the newest
   # applicable version.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    regex(^v?(\d+(?:[.-]\d+)+)$i)
     strategy :github_releases do |json, regex|
       saxon_suffix = "-#{Formula["saxon"].version.major}0"
 
@@ -36,12 +36,12 @@ class Calabash < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.write_jar_script libexec/"xmlcalabash-#{version}.jar", "calabash", "-Xmx1024m"
+    bin.write_jar_script libexec"xmlcalabash-#{version}.jar", "calabash", "-Xmx1024m"
   end
 
   test do
     # This small XML pipeline (*.xpl) that comes with Calabash
     # is basically its equivalent "Hello World" program.
-    system "#{bin}/calabash", "#{libexec}/xpl/pipe.xpl"
+    system "#{bin}calabash", "#{libexec}xplpipe.xpl"
   end
 end

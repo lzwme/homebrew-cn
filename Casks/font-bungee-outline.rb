@@ -2,10 +2,10 @@ cask "font-bungee-outline" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bungeeoutline/BungeeOutline-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbungeeoutlineBungeeOutline-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bungee Outline"
-  homepage "https://fonts.google.com/specimen/Bungee+Outline"
+  homepage "https:fonts.google.comspecimenBungee+Outline"
 
   font "BungeeOutline-Regular.ttf"
 

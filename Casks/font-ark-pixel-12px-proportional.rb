@@ -2,10 +2,10 @@ cask "font-ark-pixel-12px-proportional" do
   version "2023.11.26"
   sha256 "ee3499ef90f18b88f579f44859e76099a01996fb0ad6688940dd2b343ee34597"
 
-  url "https://ghproxy.com/https://github.com/TakWolf/ark-pixel-font/releases/download/#{version}/ark-pixel-font-12px-proportional-otf-v#{version}.zip"
+  url "https:github.comTakWolfark-pixel-fontreleasesdownload#{version}ark-pixel-font-12px-proportional-otf-v#{version}.zip"
   name "Ark Pixel 12px Proportional"
   desc "Open source Pan-CJK pixel font"
-  homepage "https://github.com/TakWolf/ark-pixel-font"
+  homepage "https:github.comTakWolfark-pixel-font"
 
   font "ark-pixel-12px-proportional-ja.otf"
   font "ark-pixel-12px-proportional-ko.otf"

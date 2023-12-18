@@ -2,10 +2,10 @@ cask "font-lekton-nerd-font" do
   version "3.1.1"
   sha256 "1a74da432c6b1f806066fbaeaa9119f5e6f6c347758486067a2e20d0c6b5864e"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Lekton.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Lekton.zip"
   name "Lekton Nerd Font (Lekton)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

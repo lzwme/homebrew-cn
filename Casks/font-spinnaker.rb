@@ -2,10 +2,10 @@ cask "font-spinnaker" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/spinnaker/Spinnaker-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflspinnakerSpinnaker-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Spinnaker"
-  homepage "https://fonts.google.com/specimen/Spinnaker"
+  homepage "https:fonts.google.comspecimenSpinnaker"
 
   font "Spinnaker-Regular.ttf"
 

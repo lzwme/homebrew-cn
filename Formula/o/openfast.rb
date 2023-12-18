@@ -1,7 +1,7 @@
 class Openfast < Formula
   desc "NREL-supported OpenFAST whole-turbine simulation code"
-  homepage "https://openfast.readthedocs.io"
-  url "https://ghproxy.com/https://github.com/openfast/openfast/archive/refs/tags/v3.5.1.tar.gz"
+  homepage "https:openfast.readthedocs.io"
+  url "https:github.comopenfastopenfastarchiverefstagsv3.5.1.tar.gz"
   sha256 "94da085f1d8861a93ab32b6b39335a403d182be0b5f7ff48f63d5805eb7f2b2c"
   license "Apache-2.0"
 
@@ -28,12 +28,12 @@ class Openfast < Formula
     mkdir "build" do
       system "cmake", "..", *args
       system "make", "openfast"
-      bin.install "glue-codes/openfast/openfast"
+      bin.install "glue-codesopenfastopenfast"
     end
   end
 
   test do
-    (testpath/"homebrew.fst").write <<~EOS
+    (testpath"homebrew.fst").write <<~EOS
       ------- OpenFAST INPUT FILE ----------------------------------------------------
       Simple test case to validate Homebrew installation
       ---------------------- SIMULATION CONTROL --------------------------------------
@@ -41,7 +41,7 @@ class Openfast < Formula
           "FATAL"   AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
             0.01    TMax            - Total run time (s)
             0.005   DT              - Recommended module time step (s)
-                2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
+                2   InterpOrder     - Interpolation order for inputoutput time history (-) {1=linear, 2=quadratic}
                 0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
             99999   DT_UJac         - Time between calls to get Jacobians (s)
             1E+06   UJacSclFact     - Scaling factor used in Jacobians (-)
@@ -56,11 +56,11 @@ class Openfast < Formula
                 0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
                 0   MHK             - MHK turbine type (switch) {0: not an MHK turbine, 1: fixed MHK turbine, 2: floating MHK turbine}
       ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------------------------
-           9.8066   Gravity         - Gravity (m/s^2).
-            1.225   AirDens         - AirDens - Air density (kg/m^3)
-             1025   WtrDens         - Water density (kg/m^3)
-       1.4639E-05   KinVisc         - Kinematic air viscosity, m^2/sec
-              335   SpdSound        - Speed of sound in working fluid (m/s)
+           9.8066   Gravity         - Gravity (ms^2).
+            1.225   AirDens         - AirDens - Air density (kgm^3)
+             1025   WtrDens         - Water density (kgm^3)
+       1.4639E-05   KinVisc         - Kinematic air viscosity, m^2sec
+              335   SpdSound        - Speed of sound in working fluid (ms)
         1.035e+05   Patm            - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
           1.7e+03   Pvap            - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
                50   WtrDpth         - Water Depth (m) positive value.
@@ -91,9 +91,9 @@ class Openfast < Formula
            False    CalcSteady      - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)
                3    TrimCase        - Controller parameter to be trimmed {1:yaw; 2:torque; 3:pitch} [used only if CalcSteady=True] (-)
            0.001    TrimTol         - Tolerance for the rotational speed convergence [used only if CalcSteady=True] (-)
-            0.01    TrimGain        - Proportional gain for the rotational speed error (>0) [used only if CalcSteady=True] (rad/(rad/s) for yaw or pitch; Nm/(rad/s) for torque)
-               0    Twr_Kdmp        - Damping factor for the tower [used only if CalcSteady=True] (N/(m/s))
-               0    Bld_Kdmp        - Damping factor for the blades [used only if CalcSteady=True] (N/(m/s))
+            0.01    TrimGain        - Proportional gain for the rotational speed error (>0) [used only if CalcSteady=True] (rad(rads) for yaw or pitch; Nm(rads) for torque)
+               0    Twr_Kdmp        - Damping factor for the tower [used only if CalcSteady=True] (N(ms))
+               0    Bld_Kdmp        - Damping factor for the blades [used only if CalcSteady=True] (N(ms))
                2    NLinTimes       - Number of times to linearize (-) [>=1] [unused if Linearize=False]
            30,60    LinTimes        - List of times at which to linearize (s) [1 to NLinTimes] [unused if Linearize=False]
                1    LinInputs       - Inputs included in linearization (switch) {0=none; 1=standard; 2=all module inputs (debug)} [unused if Linearize=False]
@@ -102,14 +102,14 @@ class Openfast < Formula
            False    LinOutMod       - Write module-level linearization output files in addition to output for full system? (flag) [unused if Linearize=False]
       ---------------------- VISUALIZATION ------------------------------------------
                0    WrVTK           - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation}
-               2    VTK_type        - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0]
-           false    VTK_fields      - Write mesh fields to VTK data files? (flag) {true/false} [unused if WrVTK=0]
+               2    VTK_type        - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (linespoints); 3=all meshes (debug)} [unused if WrVTK=0]
+           false    VTK_fields      - Write mesh fields to VTK data files? (flag) {truefalse} [unused if WrVTK=0]
               15    VTK_fps         - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2]
     EOS
 
-    (testpath/"blade.dat").write <<~EOS
+    (testpath"blade.dat").write <<~EOS
       ------- ELASTODYN V1.00.* INDIVIDUAL BLADE INPUT FILE --------------------------
-      AOC 15/50 blade file.  GJStiff -> EdgEAof are mostly lies.
+      AOC 1550 blade file.  GJStiff -> EdgEAof are mostly lies.
       ---------------------- BLADE PARAMETERS ----------------------------------------
               11   NBlInpSt    - Number of blade input stations (-)
                 4   BldFlDmp(1) - Blade flap mode #1 structural damping in percent of critical (%)
@@ -123,7 +123,7 @@ class Openfast < Formula
                 1   AdjEdSt     - Factor to adjust blade edge stiffness (-)
       ---------------------- DISTRIBUTED BLADE PROPERTIES ----------------------------
           BlFract      PitchAxis      StrcTwst       BMassDen        FlpStff        EdgStff
-            (-)           (-)          (deg)          (kg/m)         (Nm^2)         (Nm^2)
+            (-)           (-)          (deg)          (kgm)         (Nm^2)         (Nm^2)
       0.0000000E+00  2.5000000E-01  7.6900000E+00  4.9750000E+01  8.2448500E+06  7.6431600E+06
       1.0000000E-01  2.5000000E-01  5.3500000E+00  3.3570000E+01  5.7297000E+06  1.0364760E+07
       2.0000000E-01  2.5000000E-01  4.6600000E+00  2.1680000E+01  2.6900000E+06  1.0999800E+07
@@ -153,7 +153,7 @@ class Openfast < Formula
           -0.7874   BldEdgSh(6) -            , coeff of x^6
     EOS
 
-    (testpath/"tower.dat").write <<~EOS
+    (testpath"tower.dat").write <<~EOS
       ------- ELASTODYN V1.00.* TOWER INPUT FILE -------------------------------------
       AOC tower data.  This is pure fiction.
       ---------------------- TOWER PARAMETERS ----------------------------------------
@@ -172,7 +172,7 @@ class Openfast < Formula
                 1   AdjSSSt     - Factor to adjust tower side-to-side stiffness (-)
       ---------------------- DISTRIBUTED TOWER PROPERTIES ----------------------------
         HtFract       TMassDen         TwFAStif       TwSSStif
-        (-)           (kg/m)           (Nm^2)         (Nm^2)
+        (-)           (kgm)           (Nm^2)         (Nm^2)
       0.0000000E+00  1.5110000E+02  2.3500000E+09  2.3500000E+09
       1.0000000E-01  1.4170000E+02  2.1200000E+09  2.1200000E+09
       2.0000000E-01  1.3560000E+02  1.8800000E+09  1.8800000E+09
@@ -208,9 +208,9 @@ class Openfast < Formula
         -11.5696   TwSSM2Sh(6) -       , coefficient of x^6 term
     EOS
 
-    (testpath/"elastodyn.dat").write <<~EOS
+    (testpath"elastodyn.dat").write <<~EOS
       ------- ELASTODYN v1.03.* INPUT FILE -------------------------------------------
-      FAST certification Test #08: AOC 15/50 with many DOFs with fixed yaw error and steady wind. Many parameters are pure fiction.
+      FAST certification Test #08: AOC 1550 with many DOFs with fixed yaw error and steady wind. Many parameters are pure fiction.
       ---------------------- SIMULATION CONTROL --------------------------------------
       False         Echo        - Echo input data to "<RootName>.ech" (flag)
                 3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
@@ -261,7 +261,7 @@ class Openfast < Formula
                 0   HubCM       - Distance from rotor apex to hub mass [positive downwind] (meters)
                 0   UndSling    - Undersling length [distance from teeter pin to the rotor apex] (meters) [unused for 3 blades]
                 0   Delta3      - Delta-3 angle for teetering rotors (degrees) [unused for 3 blades]
-                0   AzimB1Up    - Azimuth value to use for I/O when blade 1 points up (degrees)
+                0   AzimB1Up    - Azimuth value to use for IO when blade 1 points up (degrees)
             1.341   OverHang    - Distance from yaw axis to rotor apex [3 blades] or teeter pin [2 blades] (meters)
               0.5   ShftGagL    - Distance from rotor apex [3 blades] or teeter pin [2 blades] to shaft strain gages [positive for upwind rotors] (meters)
                 0   ShftTilt    - Rotor shaft tilt angle (degrees)
@@ -298,19 +298,19 @@ class Openfast < Formula
       "blade.dat"    BldFile(2)  - Name of file containing properties for blade 2 (quoted string)
       "blade.dat"    BldFile(3)  - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
       ---------------------- ROTOR-TEETER --------------------------------------------
-                0   TeetMod     - Rotor-teeter spring/damper model {0: none, 1: standard, 2: user-defined from routine UserTeet} (switch) [unused for 3 blades]
+                0   TeetMod     - Rotor-teeter springdamper model {0: none, 1: standard, 2: user-defined from routine UserTeet} (switch) [unused for 3 blades]
                 0   TeetDmpP    - Rotor-teeter damper position (degrees) [used only for 2 blades and when TeetMod=1]
-                0   TeetDmp     - Rotor-teeter damping constant (N-m/(rad/s)) [used only for 2 blades and when TeetMod=1]
+                0   TeetDmp     - Rotor-teeter damping constant (N-m(rads)) [used only for 2 blades and when TeetMod=1]
                 0   TeetCDmp    - Rotor-teeter rate-independent Coulomb-damping moment (N-m) [used only for 2 blades and when TeetMod=1]
                 0   TeetSStP    - Rotor-teeter soft-stop position (degrees) [used only for 2 blades and when TeetMod=1]
                 0   TeetHStP    - Rotor-teeter hard-stop position (degrees) [used only for 2 blades and when TeetMod=1]
-                0   TeetSSSp    - Rotor-teeter soft-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
-                0   TeetHSSp    - Rotor-teeter hard-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
+                0   TeetSSSp    - Rotor-teeter soft-stop linear-spring constant (N-mrad) [used only for 2 blades and when TeetMod=1]
+                0   TeetHSSp    - Rotor-teeter hard-stop linear-spring constant (N-mrad) [used only for 2 blades and when TeetMod=1]
       ---------------------- DRIVETRAIN ----------------------------------------------
               100   GBoxEff     - Gearbox efficiency (%)
             28.25   GBRatio     - Gearbox ratio (-)
-          600000   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
-          100000   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
+          600000   DTTorSpr    - Drivetrain torsional spring (N-mrad)
+          100000   DTTorDmp    - Drivetrain torsional damper (N-m(rads))
       ---------------------- FURLING -------------------------------------------------
       False         Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
       "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
@@ -337,7 +337,7 @@ class Openfast < Formula
       ---------------------------------------------------------------------------------------
     EOS
 
-    system bin/"openfast", "homebrew.fst"
-    assert_predicate testpath/"homebrew.out", :exist?
+    system bin"openfast", "homebrew.fst"
+    assert_predicate testpath"homebrew.out", :exist?
   end
 end

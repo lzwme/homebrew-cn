@@ -2,10 +2,10 @@ cask "font-bokor" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bokor/Bokor-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbokorBokor-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bokor"
-  homepage "https://fonts.google.com/specimen/Bokor"
+  homepage "https:fonts.google.comspecimenBokor"
 
   font "Bokor-Regular.ttf"
 

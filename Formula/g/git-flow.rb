@@ -1,17 +1,17 @@
 class GitFlow < Formula
   desc "Extensions to follow Vincent Driessen's branching model"
-  homepage "https://github.com/nvie/gitflow"
+  homepage "https:github.comnviegitflow"
   license "BSD-2-Clause"
   revision 1
 
   stable do
     # Use the tag instead of the tarball to get submodules
-    url "https://github.com/nvie/gitflow.git",
+    url "https:github.comnviegitflow.git",
         tag:      "0.4.1",
         revision: "1ffb6b1091f05466d3cd27f2da9c532a38586ed5"
 
     resource "completion" do
-      url "https://ghproxy.com/https://github.com/bobthecow/git-flow-completion/archive/refs/tags/0.4.2.2.tar.gz"
+      url "https:github.combobthecowgit-flow-completionarchiverefstags0.4.2.2.tar.gz"
       sha256 "1e82d039596c0e73bfc8c59d945ded34e4fce777d9b9bb45c3586ee539048ab9"
     end
   end
@@ -21,10 +21,10 @@ class GitFlow < Formula
   end
 
   head do
-    url "https://github.com/nvie/gitflow.git", branch: "develop"
+    url "https:github.comnviegitflow.git", branch: "develop"
 
     resource "completion" do
-      url "https://github.com/bobthecow/git-flow-completion.git", branch: "develop"
+      url "https:github.combobthecowgit-flow-completion.git", branch: "develop"
     end
   end
 
@@ -32,10 +32,10 @@ class GitFlow < Formula
 
   def install
     system "make", "prefix=#{libexec}", "install"
-    bin.write_exec_script libexec/"bin/git-flow"
+    bin.write_exec_script libexec"bingit-flow"
     resource("completion").stage do
-      # Fix a comment referencing `/usr/local` that causes deviations between bottles.
-      inreplace "git-flow-completion.bash", "/usr/local", HOMEBREW_PREFIX
+      # Fix a comment referencing `usrlocal` that causes deviations between bottles.
+      inreplace "git-flow-completion.bash", "usrlocal", HOMEBREW_PREFIX
       bash_completion.install "git-flow-completion.bash"
     end
   end

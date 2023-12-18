@@ -1,10 +1,10 @@
 class Cli11 < Formula
   desc "Simple and intuitive command-line parser for C++11"
-  homepage "https://cliutils.github.io/CLI11/book/"
-  url "https://ghproxy.com/https://github.com/CLIUtils/CLI11/archive/refs/tags/v2.3.2.tar.gz"
+  homepage "https:cliutils.github.ioCLI11book"
+  url "https:github.comCLIUtilsCLI11archiverefstagsv2.3.2.tar.gz"
   sha256 "aac0ab42108131ac5d3344a9db0fdf25c4db652296641955720a4fbe52334e22"
   license "BSD-3-Clause"
-  head "https://github.com/CLIUtils/CLI11.git", branch: "master"
+  head "https:github.comCLIUtilsCLI11.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "3d5ba7a68bb33ef0ba52b9d8d60cf1cbe3a608def227663bd3d3940ec52c22bd"
@@ -18,10 +18,10 @@ class Cli11 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "CLI/App.hpp"
-      #include "CLI/Formatter.hpp"
-      #include "CLI/Config.hpp"
+    (testpath"test.cpp").write <<~EOS
+      #include "CLIApp.hpp"
+      #include "CLIFormatter.hpp"
+      #include "CLIConfig.hpp"
 
       int main(int argc, char** argv) {
           CLI::App app{"App description"};
@@ -35,6 +35,6 @@ class Cli11 < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
-    assert_equal "foo\n", shell_output("./test -r foo")
+    assert_equal "foo\n", shell_output(".test -r foo")
   end
 end

@@ -1,17 +1,17 @@
 class Arabica < Formula
   desc "XML toolkit written in C++"
-  homepage "https://www.jezuk.co.uk/tags/arabica.html"
-  url "https://ghproxy.com/https://github.com/jezhiggins/arabica/archive/refs/tags/2020-April.tar.gz"
+  homepage "https:www.jezuk.co.uktagsarabica.html"
+  url "https:github.comjezhigginsarabicaarchiverefstags2020-April.tar.gz"
   version "20200425"
   sha256 "b00c7b8afd2c3f17b5a22171248136ecadf0223b598fd9631c23f875a5ce87fe"
   license "BSD-3-Clause"
-  head "https://github.com/jezhiggins/arabica.git", branch: "main"
+  head "https:github.comjezhigginsarabica.git", branch: "main"
 
   # The formula uses a YYYYMMDD version format, so we have to check the release
   # information to generate a version from the publish datetime.
   livecheck do
     url :stable
-    regex(/^(\d{4}-\d{2}-\d{2})T.+$/i)
+    regex(^(\d{4}-\d{2}-\d{2})T.+$i)
     strategy :github_latest do |json, regex|
       json["published_at"]&.scan(regex)&.map { |match| match[0].tr("-", "") }
     end
@@ -43,14 +43,14 @@ class Arabica < Formula
 
   def install
     system "autoreconf", "-fvi"
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}/mangle")
+    output = shell_output("#{bin}mangle")
     assert_match "mangle is an (in-development) XSLT processor", output
   end
 end

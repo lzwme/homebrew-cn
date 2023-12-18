@@ -1,14 +1,14 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
-  homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-7.2.3.tar.gz"
+  homepage "https:redis.io"
+  url "https:download.redis.ioreleasesredis-7.2.3.tar.gz"
   sha256 "3e2b196d6eb4ddb9e743088bfc2915ccbb42d40f5a8a3edd8cb69c716ec34be7"
   license "BSD-3-Clause"
-  head "https://github.com/redis/redis.git", branch: "unstable"
+  head "https:github.comredisredis.git", branch: "unstable"
 
   livecheck do
-    url "https://download.redis.io/releases/"
-    regex(/href=.*?redis[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:download.redis.ioreleases"
+    regex(href=.*?redis[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -26,13 +26,13 @@ class Redis < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
 
-    %w[run db/redis log].each { |p| (var/p).mkpath }
+    %w[run dbredis log].each { |p| (varp).mkpath }
 
     # Fix up default conf file to match our paths
     inreplace "redis.conf" do |s|
-      s.gsub! "/var/run/redis.pid", var/"run/redis.pid"
-      s.gsub! "dir ./", "dir #{var}/db/redis/"
-      s.sub!(/^bind .*$/, "bind 127.0.0.1 ::1")
+      s.gsub! "varrunredis.pid", var"runredis.pid"
+      s.gsub! "dir .", "dir #{var}dbredis"
+      s.sub!(^bind .*$, "bind 127.0.0.1 ::1")
     end
 
     etc.install "redis.conf"
@@ -40,15 +40,15 @@ class Redis < Formula
   end
 
   service do
-    run [opt_bin/"redis-server", etc/"redis.conf"]
+    run [opt_bin"redis-server", etc"redis.conf"]
     keep_alive true
-    error_log_path var/"log/redis.log"
-    log_path var/"log/redis.log"
+    error_log_path var"logredis.log"
+    log_path var"logredis.log"
     working_dir var
   end
 
   test do
-    system bin/"redis-server", "--test-memory", "2"
-    %w[run db/redis log].each { |p| assert_predicate var/p, :exist?, "#{var/p} doesn't exist!" }
+    system bin"redis-server", "--test-memory", "2"
+    %w[run dbredis log].each { |p| assert_predicate varp, :exist?, "#{varp} doesn't exist!" }
   end
 end

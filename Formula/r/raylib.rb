@@ -1,10 +1,10 @@
 class Raylib < Formula
   desc "Simple and easy-to-use library to learn videogames programming"
-  homepage "https://www.raylib.com/"
-  url "https://ghproxy.com/https://github.com/raysan5/raylib/archive/refs/tags/5.0.tar.gz"
+  homepage "https:www.raylib.com"
+  url "https:github.comraysan5raylibarchiverefstags5.0.tar.gz"
   sha256 "98f049b9ea2a9c40a14e4e543eeea1a7ec3090ebdcd329c4ca2cf98bc9793482"
   license "Zlib"
-  head "https://github.com/raysan5/raylib.git", branch: "master"
+  head "https:github.comraysan5raylib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "df780cb94deb60db33809e7fed26dfb908f0e56b94ba9446b81feb81341429a4"
@@ -44,11 +44,11 @@ class Raylib < Formula
                                "-DBUILD_GAMES=OFF",
                                *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-static/raylib/libraylib.a"
+    lib.install "build-staticrayliblibraylib.a"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
       #include <raylib.h>
       int main(void)
@@ -72,6 +72,6 @@ class Raylib < Formula
       ]
     end
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lraylib", *flags
-    system "./test"
+    system ".test"
   end
 end

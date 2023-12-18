@@ -1,7 +1,7 @@
 class Primecount < Formula
-  desc "Fast prime counting function program and C/C++ library"
-  homepage "https://github.com/kimwalisch/primecount"
-  url "https://ghproxy.com/https://github.com/kimwalisch/primecount/archive/refs/tags/v7.9.tar.gz"
+  desc "Fast prime counting function program and CC++ library"
+  homepage "https:github.comkimwalischprimecount"
+  url "https:github.comkimwalischprimecountarchiverefstagsv7.9.tar.gz"
   sha256 "872975ba2cbb43f5cc1ff5f5fda9ec4ec3f2be1eb3e3e906abe5d0b29a997f5b"
   license "BSD-2-Clause"
 
@@ -34,6 +34,6 @@ class Primecount < Formula
   end
 
   test do
-    assert_equal "37607912018\n", shell_output("#{bin}/primecount 1e12")
+    assert_equal "37607912018\n", shell_output("#{bin}primecount 1e12")
   end
 end

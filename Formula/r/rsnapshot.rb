@@ -1,10 +1,10 @@
 class Rsnapshot < Formula
   desc "File system snapshot utility (based on rsync)"
-  homepage "https://www.rsnapshot.org/"
-  url "https://ghproxy.com/https://github.com/rsnapshot/rsnapshot/releases/download/1.4.5/rsnapshot-1.4.5.tar.gz"
+  homepage "https:www.rsnapshot.org"
+  url "https:github.comrsnapshotrsnapshotreleasesdownload1.4.5rsnapshot-1.4.5.tar.gz"
   sha256 "10b75e01ca25511e8266aacd495531975ad1a8ad556216b6a57c76d028b38242"
   license "GPL-2.0-or-later"
-  head "https://github.com/rsnapshot/rsnapshot.git", branch: "master"
+  head "https:github.comrsnapshotrsnapshot.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ffe1eafe7c869b14ade9f1befcb45e41eea2ed44e82fb4ad03181e5753c90ee"
@@ -21,11 +21,11 @@ class Rsnapshot < Formula
   uses_from_macos "rsync" => :build
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/rsnapshot", "--version"
+    system "#{bin}rsnapshot", "--version"
   end
 end

@@ -1,16 +1,16 @@
 class Mosquitto < Formula
   desc "Message broker implementing the MQTT protocol"
-  homepage "https://mosquitto.org/"
-  url "https://mosquitto.org/files/source/mosquitto-2.0.18.tar.gz"
+  homepage "https:mosquitto.org"
+  url "https:mosquitto.orgfilessourcemosquitto-2.0.18.tar.gz"
   sha256 "d665fe7d0032881b1371a47f34169ee4edab67903b2cd2b4c083822823f4448a"
   # # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is pretty the same as BSD-3-Clause,
-  # see discussions in https://github.com/spdx/license-list-XML/issues/1149
+  # see discussions in https:github.comspdxlicense-list-XMLissues1149
   license any_of: ["EPL-1.0", "BSD-3-Clause"]
 
   livecheck do
-    url "https://mosquitto.org/download/"
-    regex(/href=.*?mosquitto[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:mosquitto.orgdownload"
+    regex(href=.*?mosquitto[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -44,29 +44,29 @@ class Mosquitto < Formula
   end
 
   def post_install
-    (var/"mosquitto").mkpath
+    (var"mosquitto").mkpath
   end
 
   def caveats
     <<~EOS
       mosquitto has been installed with a default configuration file.
       You can make changes to the configuration by editing:
-          #{etc}/mosquitto/mosquitto.conf
+          #{etc}mosquittomosquitto.conf
     EOS
   end
 
   service do
-    run [opt_sbin/"mosquitto", "-c", etc/"mosquitto/mosquitto.conf"]
+    run [opt_sbin"mosquitto", "-c", etc"mosquittomosquitto.conf"]
     keep_alive false
-    working_dir var/"mosquitto"
+    working_dir var"mosquitto"
   end
 
   test do
-    quiet_system "#{sbin}/mosquitto", "-h"
+    quiet_system "#{sbin}mosquitto", "-h"
     assert_equal 3, $CHILD_STATUS.exitstatus
-    quiet_system "#{bin}/mosquitto_ctrl", "dynsec", "help"
+    quiet_system "#{bin}mosquitto_ctrl", "dynsec", "help"
     assert_equal 0, $CHILD_STATUS.exitstatus
-    quiet_system "#{bin}/mosquitto_passwd", "-c", "-b", "/tmp/mosquitto.pass", "foo", "bar"
+    quiet_system "#{bin}mosquitto_passwd", "-c", "-b", "tmpmosquitto.pass", "foo", "bar"
     assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

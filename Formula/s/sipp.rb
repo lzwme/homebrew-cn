@@ -1,7 +1,7 @@
 class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
-  homepage "https://sipp.sourceforge.net/"
-  url "https://github.com/SIPp/sipp.git",
+  homepage "https:sipp.sourceforge.net"
+  url "https:github.comSIPpsipp.git",
       tag:      "v3.7.2",
       revision: "e3b7748d7be7f32dcaeeed5ccd241a342635ac23"
   license "GPL-2.0-or-later"
@@ -34,6 +34,6 @@ class Sipp < Formula
   end
 
   test do
-    assert_match "SIPp v#{version}", shell_output("#{bin}/sipp -v", 99)
+    assert_match "SIPp v#{version}", shell_output("#{bin}sipp -v", 99)
   end
 end

@@ -1,13 +1,13 @@
 class Libfreehand < Formula
-  desc "Interpret and import Aldus/Macromedia/Adobe FreeHand documents"
-  homepage "https://wiki.documentfoundation.org/DLP/Libraries/libfreehand"
-  url "https://dev-www.libreoffice.org/src/libfreehand/libfreehand-0.1.2.tar.xz"
+  desc "Interpret and import AldusMacromediaAdobe FreeHand documents"
+  homepage "https:wiki.documentfoundation.orgDLPLibrarieslibfreehand"
+  url "https:dev-www.libreoffice.orgsrclibfreehandlibfreehand-0.1.2.tar.xz"
   sha256 "0e422d1564a6dbf22a9af598535425271e583514c0f7ba7d9091676420de34ac"
   revision 5
 
   livecheck do
-    url "https://dev-www.libreoffice.org/src/"
-    regex(/href=["']?libfreehand[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dev-www.libreoffice.orgsrc"
+    regex(href=["']?libfreehand[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,12 +34,12 @@ class Libfreehand < Formula
 
   # remove with version >=0.1.3
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/7bb2149f314dd174f242a76d4dde8d95d20cbae0/libfreehand/0.1.2.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches7bb2149f314dd174f242a76d4dde8d95d20cbae0libfreehand0.1.2.patch"
     sha256 "abfa28461b313ccf3c59ce35d0a89d0d76c60dd2a14028b8fea66e411983160e"
   end
 
   def install
-    system "./configure", "--without-docs",
+    system ".configure", "--without-docs",
                           "--disable-dependency-tracking",
                           "--enable-static=no",
                           "--disable-werror",
@@ -49,19 +49,19 @@ class Libfreehand < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <libfreehand/libfreehand.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <libfreehandlibfreehand.h>
       int main() {
         libfreehand::FreeHandDocument::isSupported(0);
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test",
-                    "-I#{Formula["librevenge"].include}/librevenge-0.0",
-                    "-I#{include}/libfreehand-0.1",
+                    "-I#{Formula["librevenge"].include}librevenge-0.0",
+                    "-I#{include}libfreehand-0.1",
                     "-L#{Formula["librevenge"].lib}",
                     "-L#{lib}",
                     "-lrevenge-0.0",
                     "-lfreehand-0.1"
-    system "./test"
+    system ".test"
   end
 end

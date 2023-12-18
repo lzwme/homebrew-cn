@@ -1,13 +1,13 @@
 class Gambit < Formula
   desc "Software tools for game theory"
-  homepage "http://www.gambit-project.org"
-  url "https://ghproxy.com/https://github.com/gambitproject/gambit/archive/refs/tags/v16.1.0.tar.gz"
+  homepage "http:www.gambit-project.org"
+  url "https:github.comgambitprojectgambitarchiverefstagsv16.1.0.tar.gz"
   sha256 "de3e3d561cf46aeaec135efaf23f41ddef28968d9071251ca8cb6266babece62"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,27 +27,27 @@ class Gambit < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-wx-prefix=#{Formula["wxwidgets"].opt_prefix}"
     system "make", "install"
 
     # Sanitise references to Homebrew shims
-    rm Dir["contrib/**/Makefile*"]
+    rm Dir["contrib**Makefile*"]
     pkgshare.install "contrib"
   end
 
   test do
-    system bin/"gambit-enumpure", pkgshare/"contrib/games/e02.efg"
-    system bin/"gambit-enummixed", pkgshare/"contrib/games/e02.nfg"
-    system bin/"gambit-gnm", pkgshare/"contrib/games/e02.nfg"
-    system bin/"gambit-ipa", pkgshare/"contrib/games/e02.nfg"
-    system bin/"gambit-lcp", pkgshare/"contrib/games/e02.efg"
-    system bin/"gambit-lp", pkgshare/"contrib/games/2x2const.nfg"
-    system bin/"gambit-liap", pkgshare/"contrib/games/e02.nfg"
-    system bin/"gambit-simpdiv", pkgshare/"contrib/games/e02.nfg"
-    system bin/"gambit-logit", pkgshare/"contrib/games/e02.efg"
-    system bin/"gambit-convert", "-O", "html", pkgshare/"contrib/games/2x2.nfg"
+    system bin"gambit-enumpure", pkgshare"contribgamese02.efg"
+    system bin"gambit-enummixed", pkgshare"contribgamese02.nfg"
+    system bin"gambit-gnm", pkgshare"contribgamese02.nfg"
+    system bin"gambit-ipa", pkgshare"contribgamese02.nfg"
+    system bin"gambit-lcp", pkgshare"contribgamese02.efg"
+    system bin"gambit-lp", pkgshare"contribgames2x2const.nfg"
+    system bin"gambit-liap", pkgshare"contribgamese02.nfg"
+    system bin"gambit-simpdiv", pkgshare"contribgamese02.nfg"
+    system bin"gambit-logit", pkgshare"contribgamese02.efg"
+    system bin"gambit-convert", "-O", "html", pkgshare"contribgames2x2.nfg"
   end
 end

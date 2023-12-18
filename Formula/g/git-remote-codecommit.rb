@@ -2,12 +2,12 @@ class GitRemoteCodecommit < Formula
   include Language::Python::Virtualenv
 
   desc "Git Remote Helper to interact with AWS CodeCommit"
-  homepage "https://github.com/aws/git-remote-codecommit"
-  url "https://files.pythonhosted.org/packages/6c/a0/feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89dae/git-remote-codecommit-1.17.tar.gz"
+  homepage "https:github.comawsgit-remote-codecommit"
+  url "https:files.pythonhosted.orgpackages6ca0feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89daegit-remote-codecommit-1.17.tar.gz"
   sha256 "fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e"
   license "Apache-2.0"
   revision 2
-  head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
+  head "https:github.comawsgit-remote-codecommit.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -26,12 +26,12 @@ class GitRemoteCodecommit < Formula
   depends_on "six"
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/42/30/e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555/botocore-1.31.65.tar.gz"
+    url "https:files.pythonhosted.orgpackages4230e5e2126eca77baedbf51e48241c898d99784d272bcf2fb47f5a10360e555botocore-1.31.65.tar.gz"
     sha256 "90716c6f1af97e5c2f516e9a3379767ebdddcc6cbed79b026fa5038ce4e5e43e"
   end
 
   resource "jmespath" do
-    url "https://files.pythonhosted.org/packages/00/2a/e867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6/jmespath-1.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages002ae867e8531cf3e36b41201936b7fa7ba7b5702dbef42922193f05c8976cd6jmespath-1.0.1.tar.gz"
     sha256 "90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"
   end
 
@@ -41,6 +41,6 @@ class GitRemoteCodecommit < Formula
 
   test do
     assert_match "The following URL is malformed",
-      pipe_output("#{bin}/git-remote-codecommit capabilities invalid 2>&1")
+      pipe_output("#{bin}git-remote-codecommit capabilities invalid 2>&1")
   end
 end

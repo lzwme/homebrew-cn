@@ -1,10 +1,10 @@
 class Ne < Formula
   desc "Text editor based on the POSIX standard"
-  homepage "https://github.com/vigna/ne"
-  url "https://ghproxy.com/https://github.com/vigna/ne/archive/refs/tags/3.3.3.tar.gz"
+  homepage "https:github.comvignane"
+  url "https:github.comvignanearchiverefstags3.3.3.tar.gz"
   sha256 "4f7509bb552e10348f9599f39856c8b7a2a74ea54c980dd2c9e15be212a1a6f0"
   license "GPL-3.0-only"
-  head "https://github.com/vigna/ne.git", branch: "master"
+  head "https:github.comvignane.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "8a550b3330062f58387f3addb83b6c8c31a16fb7e41f14486430c61deee7fd91"
@@ -29,8 +29,8 @@ class Ne < Formula
     # Use newer env on Linux that supports -S option.
     unless OS.mac?
       inreplace "version.pl",
-                "/usr/bin/env",
-                Formula["coreutils"].libexec/"gnubin/env"
+                "usrbinenv",
+                Formula["coreutils"].libexec"gnubinenv"
     end
     ENV.deparallelize
     cd "src" do
@@ -43,8 +43,8 @@ class Ne < Formula
     require "pty"
 
     ENV["TERM"] = "xterm"
-    document = testpath/"test.txt"
-    macros = testpath/"macros"
+    document = testpath"test.txt"
+    macros = testpath"macros"
     document.write <<~EOS
       This is a test document.
     EOS
@@ -54,7 +54,7 @@ class Ne < Formula
       InsertLine
       Exit
     EOS
-    PTY.spawn(bin/"ne", "--macro", macros, document) do |_r, _w, pid|
+    PTY.spawn(bin"ne", "--macro", macros, document) do |_r, _w, pid|
       sleep 1
       Process.kill "KILL", pid
     end

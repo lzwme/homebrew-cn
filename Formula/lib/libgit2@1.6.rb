@@ -1,14 +1,14 @@
 class Libgit2AT16 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
-  homepage "https://libgit2.github.com/"
-  url "https://ghproxy.com/https://github.com/libgit2/libgit2/archive/refs/tags/v1.6.4.tar.gz"
+  homepage "https:libgit2.github.com"
+  url "https:github.comlibgit2libgit2archiverefstagsv1.6.4.tar.gz"
   sha256 "d25866a4ee275a64f65be2d9a663680a5cf1ed87b7ee4c534997562c828e500d"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
-  head "https://github.com/libgit2/libgit2.git", branch: "maint/v1.6"
+  head "https:github.comlibgit2libgit2.git", branch: "maintv1.6"
 
   livecheck do
     url :stable
-    regex(/v?(1\.6(?:\.\d+)+)/i)
+    regex(v?(1\.6(?:\.\d+)+)i)
   end
 
   bottle do
@@ -39,11 +39,11 @@ class Libgit2AT16 < Formula
 
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=OFF", *args, *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-static/libgit2.a"
+    lib.install "build-staticlibgit2.a"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <git2.h>
       #include <assert.h>
 
@@ -61,6 +61,6 @@ class Libgit2AT16 < Formula
       -lgit2
     ]
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

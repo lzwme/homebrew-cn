@@ -2,15 +2,15 @@ cask "opensc" do
   version "0.24.0"
   sha256 "96eb53af88f91d25e6e127081bceb7687a8e53a5790914b5a47c6651783a0b44"
 
-  url "https://ghproxy.com/https://github.com/OpenSC/OpenSC/releases/download/#{version}/OpenSC-#{version}.dmg"
+  url "https:github.comOpenSCOpenSCreleasesdownload#{version}OpenSC-#{version}.dmg"
   name "OpenSC"
   desc "Smart card libraries and utilities"
-  homepage "https://github.com/OpenSC/OpenSC/wiki"
+  homepage "https:github.comOpenSCOpenSCwiki"
 
   pkg "OpenSC #{version}.pkg"
 
   uninstall script:    {
-              executable: "/usr/local/bin/opensc-uninstall",
+              executable: "usrlocalbinopensc-uninstall",
               sudo:       true,
             },
             pkgutil:   [
@@ -22,5 +22,5 @@ cask "opensc" do
               "org.opensc-project.mac.pkcs11-register",
             ]
 
-  zap trash: "~/Library/Saved Application State/org.opensc-project.mac.opensctoken.OpenSCTokenApp.savedState"
+  zap trash: "~LibrarySaved Application Stateorg.opensc-project.mac.opensctoken.OpenSCTokenApp.savedState"
 end

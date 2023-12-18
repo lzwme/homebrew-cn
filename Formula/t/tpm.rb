@@ -1,7 +1,7 @@
 class Tpm < Formula
   desc "Plugin manager for tmux"
-  homepage "https://github.com/tmux-plugins/tpm"
-  url "https://ghproxy.com/https://github.com/tmux-plugins/tpm/archive/refs/tags/v3.1.0.tar.gz"
+  homepage "https:github.comtmux-pluginstpm"
+  url "https:github.comtmux-pluginstpmarchiverefstagsv3.1.0.tar.gz"
   sha256 "2411fc416c4475d297f61078d0a03afb3a1f5322fff26a13fdb4f20d7e975570"
   license "MIT"
 
@@ -18,12 +18,12 @@ class Tpm < Formula
   def caveats
     <<~EOS
       To initialize TPM add this to your tmux configuration file
-      (~/.tmux.conf or $XDG_CONFIG_HOME/tmux/tmux.conf):
-        run '#{opt_pkgshare}/tpm'
+      (~.tmux.conf or $XDG_CONFIG_HOMEtmuxtmux.conf):
+        run '#{opt_pkgshare}tpm'
     EOS
   end
 
   test do
-    assert_empty shell_output(pkgshare/"tpm")
+    assert_empty shell_output(pkgshare"tpm")
   end
 end

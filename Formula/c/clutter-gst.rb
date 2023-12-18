@@ -1,7 +1,7 @@
 class ClutterGst < Formula
   desc "ClutterMedia interface using GStreamer for video and audio"
-  homepage "https://gitlab.gnome.org/GNOME/clutter-gst"
-  url "https://download.gnome.org/sources/clutter-gst/3.0/clutter-gst-3.0.27.tar.xz"
+  homepage "https:gitlab.gnome.orgGNOMEclutter-gst"
+  url "https:download.gnome.orgsourcesclutter-gst3.0clutter-gst-3.0.27.tar.xz"
   sha256 "fe69bd6c659d24ab30da3f091eb91cd1970026d431179b0724f13791e8ad9f9d"
   revision 1
 
@@ -20,7 +20,7 @@ class ClutterGst < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "18921a2acf74c92279704d160c2780d96d8c8205beee06cd3cc1715b8355fed8"
   end
 
-  # https://blogs.gnome.org/clutter/2022/02/16/retiring-clutter/
+  # https:blogs.gnome.orgclutter20220216retiring-clutter
   disable! date: "2023-04-26", because: :deprecated_upstream
 
   depends_on "gobject-introspection" => :build
@@ -31,7 +31,7 @@ class ClutterGst < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -45,13 +45,13 @@ class ClutterGst < Formula
       --disable-gtk-doc-html
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <clutter-gst/clutter-gst.h>
+    (testpath"test.c").write <<~EOS
+      #include <clutter-gstclutter-gst.h>
 
       int main(int argc, char *argv[]) {
         clutter_gst_init(&argc, &argv);
@@ -75,25 +75,25 @@ class ClutterGst < Formula
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
-      -I#{clutter.opt_include}/clutter-1.0
-      -I#{cogl.opt_include}/cogl
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
+      -I#{clutter.opt_include}clutter-1.0
+      -I#{cogl.opt_include}cogl
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gst_plugins_base.opt_include}/gstreamer-1.0
-      -I#{gstreamer.opt_include}/gstreamer-1.0
-      -I#{gstreamer.opt_lib}/gstreamer-1.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/clutter-gst-3.0
-      -I#{json_glib.opt_include}/json-glib-1.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gst_plugins_base.opt_include}gstreamer-1.0
+      -I#{gstreamer.opt_include}gstreamer-1.0
+      -I#{gstreamer.opt_lib}gstreamer-1.0include
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}clutter-gst-3.0
+      -I#{json_glib.opt_include}json-glib-1.0
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -128,6 +128,6 @@ class ClutterGst < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

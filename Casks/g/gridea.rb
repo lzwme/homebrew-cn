@@ -2,11 +2,11 @@ cask "gridea" do
   version "0.9.3"
   sha256 "16c9c9a1fdf4773f165878f995a9eb4b0a9c6eb815410a723170623dd23e4354"
 
-  url "https://ghproxy.com/https://github.com/getgridea/gridea/releases/download/v#{version}/Gridea-#{version}.dmg",
-      verified: "github.com/getgridea/gridea/"
+  url "https:github.comgetgrideagrideareleasesdownloadv#{version}Gridea-#{version}.dmg",
+      verified: "github.comgetgrideagridea"
   name "Gridea"
   desc "Static blog writing client"
-  homepage "https://gridea.dev/"
+  homepage "https:gridea.dev"
 
   auto_updates true
 

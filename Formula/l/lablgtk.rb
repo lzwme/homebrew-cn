@@ -1,7 +1,7 @@
 class Lablgtk < Formula
   desc "Objective Caml interface to gtk+"
-  homepage "http://lablgtk.forge.ocamlcore.org"
-  url "https://ghproxy.com/https://github.com/garrigue/lablgtk/archive/refs/tags/2.18.12.tar.gz"
+  homepage "http:lablgtk.forge.ocamlcore.org"
+  url "https:github.comgarriguelablgtkarchiverefstags2.18.12.tar.gz"
   sha256 "43b2640b6b6d6ba352fa0c4265695d6e0b5acb8eb1da17290493e99ae6879b18"
   license "LGPL-2.1"
   revision 1
@@ -19,7 +19,7 @@ class Lablgtk < Formula
     sha256               x86_64_linux:   "1e5f02345d7be4fdfa1ab57097b866248c0e9f8465f751a526909870cbeb926b"
   end
 
-  # GTK 2 is EOL: https://blog.gtk.org/2020/12/16/gtk-4-0/
+  # GTK 2 is EOL: https:blog.gtk.org20201216gtk-4-0
   # GTK 3 supported package is named `lablgtk3` so may be better as separate formula
   deprecate! date: "2023-01-18", because: :unmaintained
 
@@ -30,21 +30,21 @@ class Lablgtk < Formula
   depends_on "ocaml"
 
   def install
-    system "./configure", "--bindir=#{bin}",
+    system ".configure", "--bindir=#{bin}",
                           "--libdir=#{lib}",
                           "--mandir=#{man}",
-                          "--with-libdir=#{lib}/ocaml"
+                          "--with-libdir=#{lib}ocaml"
     ENV.deparallelize
     system "make", "world"
     system "make", "old-install"
   end
 
   test do
-    (testpath/"test.ml").write <<~EOS
+    (testpath"test.ml").write <<~EOS
       let _ =
         GtkMain.Main.init ()
     EOS
-    ENV["CAML_LD_LIBRARY_PATH"] = "#{lib}/ocaml/stublibs"
+    ENV["CAML_LD_LIBRARY_PATH"] = "#{lib}ocamlstublibs"
     cclibs = [
       "-cclib", "-latk-1.0",
       "-cclib", "-lcairo",
@@ -59,9 +59,9 @@ class Lablgtk < Formula
       "-cclib", "-lpangocairo-1.0"
     ]
     cclibs += ["-cclib", "-lintl"] if OS.mac?
-    system "ocamlc", "-I", "#{opt_lib}/ocaml/lablgtk2", "lablgtk.cma", "gtkInit.cmo", "test.ml",
+    system "ocamlc", "-I", "#{opt_lib}ocamllablgtk2", "lablgtk.cma", "gtkInit.cmo", "test.ml",
            "-o", "test", *cclibs
     # Disable this part of the test because display is not available on Linux.
-    system "./test" if OS.mac?
+    system ".test" if OS.mac?
   end
 end

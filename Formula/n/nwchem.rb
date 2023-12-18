@@ -1,14 +1,14 @@
 class Nwchem < Formula
   desc "High-performance computational chemistry tools"
-  homepage "https://nwchemgit.github.io"
-  url "https://ghproxy.com/https://github.com/nwchemgit/nwchem/releases/download/v7.2.2-release/nwchem-7.2.2-release.revision-74936fb9-src.2023-11-03.tar.xz"
+  homepage "https:nwchemgit.github.io"
+  url "https:github.comnwchemgitnwchemreleasesdownloadv7.2.2-releasenwchem-7.2.2-release.revision-74936fb9-src.2023-11-03.tar.xz"
   version "7.2.2"
   sha256 "037e8c80a946683d10f995a4b5eff7d8247b3c28cf1158f8f752fd2cb49227c5"
   license "ECL-2.0"
 
   livecheck do
-    url "https://github.com/nwchemgit/nwchem.git"
-    regex(/^v?(\d+(?:\.\d+)+)-release$/i)
+    url "https:github.comnwchemgitnwchem.git"
+    regex(^v?(\d+(?:\.\d+)+)-release$i)
   end
 
   bottle do
@@ -35,7 +35,7 @@ class Nwchem < Formula
   # fixes a performance issue due to the fact that homembrew uses OpenMP for OpenBLAS threading
   # Remove in next release.
   patch do
-    url "https://github.com/nwchemgit/nwchem/commit/7ffbf689ceba4258cfe656cf979e783ee8debcdd.patch?full_index=1"
+    url "https:github.comnwchemgitnwchemcommit7ffbf689ceba4258cfe656cf979e783ee8debcdd.patch?full_index=1"
     sha256 "fcfc2b505a3afb0cc234cd0ac587c09c4d74e295f24496c899db7dc09dc7029b"
   end
 
@@ -43,28 +43,28 @@ class Nwchem < Formula
     pkgshare.install "QA"
 
     cd "src" do
-      (prefix/"etc").mkdir
-      (prefix/"etc/nwchemrc").write <<~EOS
-        nwchem_basis_library #{pkgshare}/libraries/
-        nwchem_nwpw_library #{pkgshare}/libraryps/
+      (prefix"etc").mkdir
+      (prefix"etcnwchemrc").write <<~EOS
+        nwchem_basis_library #{pkgshare}libraries
+        nwchem_nwpw_library #{pkgshare}libraryps
         ffield amber
-        amber_1 #{pkgshare}/amber_s/
-        amber_2 #{pkgshare}/amber_q/
-        amber_3 #{pkgshare}/amber_x/
-        amber_4 #{pkgshare}/amber_u/
-        spce    #{pkgshare}/solvents/spce.rst
-        charmm_s #{pkgshare}/charmm_s/
-        charmm_x #{pkgshare}/charmm_x/
+        amber_1 #{pkgshare}amber_s
+        amber_2 #{pkgshare}amber_q
+        amber_3 #{pkgshare}amber_x
+        amber_4 #{pkgshare}amber_u
+        spce    #{pkgshare}solventsspce.rst
+        charmm_s #{pkgshare}charmm_s
+        charmm_x #{pkgshare}charmm_x
       EOS
 
-      inreplace "util/util_nwchemrc.F", "/etc/nwchemrc", "#{etc}/nwchemrc"
+      inreplace "utilutil_nwchemrc.F", "etcnwchemrc", "#{etc}nwchemrc"
 
       # needed to use python 3.X to skip using default python2
       ENV["PYTHONVERSION"] = Language::Python.major_minor_version "python3.12"
       ENV["BLASOPT"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["LAPACK_LIB"] = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       ENV["BLAS_SIZE"] = "4"
-      ENV["SCALAPACK"] = "-L#{Formula["scalapack"].opt_prefix}/lib -lscalapack"
+      ENV["SCALAPACK"] = "-L#{Formula["scalapack"].opt_prefix}lib -lscalapack"
       ENV["SCALAPACK_SIZE"] = "4"
       ENV["USE_64TO32"] = "y"
       ENV["USE_HWOPT"] = "n"
@@ -75,22 +75,22 @@ class Nwchem < Formula
       system "make", "nwchem_config", "NWCHEM_MODULES=all python gwmol", "USE_MPI=Y"
       system "make", "NWCHEM_TARGET=#{os}", "USE_MPI=Y"
 
-      bin.install "../bin/#{os}/nwchem"
-      pkgshare.install "basis/libraries"
-      pkgshare.install "basis/libraries.bse"
-      pkgshare.install "nwpw/libraryps"
-      pkgshare.install Dir["data/*"]
+      bin.install "..bin#{os}nwchem"
+      pkgshare.install "basislibraries"
+      pkgshare.install "basislibraries.bse"
+      pkgshare.install "nwpwlibraryps"
+      pkgshare.install Dir["data*"]
     end
   end
 
   test do
-    cp_r pkgshare/"QA", testpath
+    cp_r pkgshare"QA", testpath
     cd "QA" do
       ENV["OMP_NUM_THREADS"] = "1"
       ENV["NWCHEM_TOP"] = testpath
       ENV["NWCHEM_TARGET"] = OS.mac? ? "MACX64" : "LINUX64"
-      ENV["NWCHEM_EXECUTABLE"] = "#{bin}/nwchem"
-      system "./runtests.mpi.unix", "procs", "0", "dft_he2+", "pyqa3", "prop_mep_gcube", "pspw", "tddft_h2o", "tce_n2"
+      ENV["NWCHEM_EXECUTABLE"] = "#{bin}nwchem"
+      system ".runtests.mpi.unix", "procs", "0", "dft_he2+", "pyqa3", "prop_mep_gcube", "pspw", "tddft_h2o", "tce_n2"
     end
   end
 end

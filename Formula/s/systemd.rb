@@ -1,10 +1,10 @@
 class Systemd < Formula
   desc "System and service manager"
-  homepage "https://wiki.freedesktop.org/www/Software/systemd/"
-  url "https://ghproxy.com/https://github.com/systemd/systemd-stable/archive/refs/tags/v255.1.tar.gz"
+  homepage "https:wiki.freedesktop.orgwwwSoftwaresystemd"
+  url "https:github.comsystemdsystemd-stablearchiverefstagsv255.1.tar.gz"
   sha256 "3d966e331f124c9485a72edf359fa1eaa48629cbcf189c888bdab903313f5590"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  head "https://github.com/systemd/systemd.git", branch: "main"
+  head "https:github.comsystemdsystemd.git", branch: "main"
 
   bottle do
     sha256 x86_64_linux: "8fae046b8eb14b33f77f4d712c2214a3df3eeb4bccd214611b270546472966dd"
@@ -39,31 +39,31 @@ class Systemd < Formula
   uses_from_macos "libxcrypt"
 
   resource "docbook" do
-    url "https://downloads.sourceforge.net/docbook/docbook-xsl/1.79.1/docbook-xsl-1.79.1.tar.bz2"
+    url "https:downloads.sourceforge.netdocbookdocbook-xsl1.79.1docbook-xsl-1.79.1.tar.bz2"
     sha256 "725f452e12b296956e8bfb876ccece71eeecdd14b94f667f3ed9091761a4a968"
   end
 
   resource "oasis-open-4.2" do
-    url "https://www.oasis-open.org/docbook/xml/4.2/docbook-xml-4.2.zip"
+    url "https:www.oasis-open.orgdocbookxml4.2docbook-xml-4.2.zip"
     sha256 "acc4601e4f97a196076b7e64b368d9248b07c7abf26b34a02cca40eeebe60fa2"
   end
 
   resource "oasis-open-4.5" do
-    url "https://www.oasis-open.org/docbook/xml/4.5/docbook-xml-4.5.zip"
+    url "https:www.oasis-open.orgdocbookxml4.5docbook-xml-4.5.zip"
     sha256 "4e4e037a2b83c98c6c94818390d4bdd3f6e10f6ec62dd79188594e26190dc7b4"
   end
 
   def install
-    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.12")
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/systemd"
+    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexecLanguage::Python.site_packages("python3.12")
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}systemd"
 
     args = %W[
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       -Drootprefix=#{prefix}
-      -Dsysvinit-path=#{etc}/init.d
-      -Dsysvrcnd-path=#{etc}/rc.d
-      -Dpamconfdir=#{etc}/pam.d
+      -Dsysvinit-path=#{etc}init.d
+      -Dsysvrcnd-path=#{etc}rc.d
+      -Dpamconfdir=#{etc}pam.d
       -Dbashcompletiondir=#{bash_completion}
       -Dcreate-log-dirs=false
       -Dhwdb=false
@@ -74,14 +74,14 @@ class Systemd < Formula
     ]
 
     %w[docbook oasis-open-4.2 oasis-open-4.5].each do |r|
-      resource(r).stage "man/#{r}"
+      resource(r).stage "man#{r}"
     end
 
-    inreplace "man/custom-man.xsl", "http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl",
-              "docbook/manpages/docbook.xsl"
-    inreplace Dir["man/*.xml"] do |f|
-      f.gsub! "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd", "oasis-open-4.2/docbookx.dtd", false
-      f.gsub! "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd", "oasis-open-4.5/docbookx.dtd", false
+    inreplace "mancustom-man.xsl", "http:docbook.sourceforge.netreleasexslcurrentmanpagesdocbook.xsl",
+              "docbookmanpagesdocbook.xsl"
+    inreplace Dir["man*.xml"] do |f|
+      f.gsub! "http:www.oasis-open.orgdocbookxml4.2docbookx.dtd", "oasis-open-4.2docbookx.dtd", false
+      f.gsub! "http:www.oasis-open.orgdocbookxml4.5docbookx.dtd", "oasis-open-4.5docbookx.dtd", false
     end
 
     system "meson", "setup", "build", *args, *std_meson_args
@@ -90,6 +90,6 @@ class Systemd < Formula
   end
 
   test do
-    assert_match "temporary: /tmp", shell_output("#{bin}/systemd-path")
+    assert_match "temporary: tmp", shell_output("#{bin}systemd-path")
   end
 end

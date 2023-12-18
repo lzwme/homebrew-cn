@@ -1,7 +1,7 @@
 class Fsql < Formula
   desc "Search through your filesystem with SQL-esque queries"
-  homepage "https://github.com/kashav/fsql"
-  url "https://ghproxy.com/https://github.com/kashav/fsql/archive/refs/tags/v0.5.2.tar.gz"
+  homepage "https:github.comkashavfsql"
+  url "https:github.comkashavfsqlarchiverefstagsv0.5.2.tar.gz"
   sha256 "21f12261516bfa2ebc4136b7e7e08a23743809e847dfdace3c1f6ac88023277d"
   license "MIT"
 
@@ -18,17 +18,17 @@ class Fsql < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/fsql"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdfsql"
   end
 
   test do
-    (testpath/"bar.txt").write("hello")
-    (testpath/"foo/baz.txt").write("world")
-    cmd = "#{bin}/fsql SELECT FULLPATH\\(name\\) FROM foo"
-    assert_match %r{^foo\s+foo/baz.txt$}, shell_output(cmd)
-    cmd = "#{bin}/fsql SELECT name FROM . WHERE name = bar.txt"
+    (testpath"bar.txt").write("hello")
+    (testpath"foobaz.txt").write("world")
+    cmd = "#{bin}fsql SELECT FULLPATH\\(name\\) FROM foo"
+    assert_match %r{^foo\s+foobaz.txt$}, shell_output(cmd)
+    cmd = "#{bin}fsql SELECT name FROM . WHERE name = bar.txt"
     assert_equal "bar.txt", shell_output(cmd).chomp
-    cmd = "#{bin}/fsql SELECT name FROM . WHERE FORMAT\\(size, GB\\) \\> 500"
+    cmd = "#{bin}fsql SELECT name FROM . WHERE FORMAT\\(size, GB\\) \\> 500"
     assert_equal "", shell_output(cmd)
   end
 end

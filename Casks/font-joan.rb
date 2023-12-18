@@ -2,11 +2,11 @@ cask "font-joan" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/joan/Joan-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofljoanJoan-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Joan"
   desc "Under development"
-  homepage "https://fonts.google.com/specimen/Joan"
+  homepage "https:fonts.google.comspecimenJoan"
 
   font "Joan-Regular.ttf"
 

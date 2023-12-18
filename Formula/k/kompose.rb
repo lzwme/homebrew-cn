@@ -1,7 +1,7 @@
 class Kompose < Formula
   desc "Tool to move from `docker-compose` to Kubernetes"
-  homepage "https://kompose.io/"
-  url "https://ghproxy.com/https://github.com/kubernetes/kompose/archive/refs/tags/v1.31.2.tar.gz"
+  homepage "https:kompose.io"
+  url "https:github.comkuberneteskomposearchiverefstagsv1.31.2.tar.gz"
   sha256 "6c3bb81f9845941d949fd4d950967639fdc502508fa5fe5b030a4daee6776f8d"
   license "Apache-2.0"
 
@@ -20,10 +20,10 @@ class Kompose < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"kompose", "completion")
+    generate_completions_from_executable(bin"kompose", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/kompose version")
+    assert_match version.to_s, shell_output("#{bin}kompose version")
   end
 end

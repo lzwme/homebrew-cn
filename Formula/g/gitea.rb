@@ -1,13 +1,13 @@
 class Gitea < Formula
   desc "Painless self-hosted all-in-one software development service"
-  homepage "https://about.gitea.com/"
-  url "https://dl.gitea.com/gitea/1.21.2/gitea-src-1.21.2.tar.gz"
+  homepage "https:about.gitea.com"
+  url "https:dl.gitea.comgitea1.21.2gitea-src-1.21.2.tar.gz"
   sha256 "fb31b8b722634b0a1c2035703a3e1187017b87fe96042386ffa8f80750035dab"
   license "MIT"
-  head "https://github.com/go-gitea/gitea.git", branch: "main"
+  head "https:github.comgo-giteagitea.git", branch: "main"
 
   livecheck do
-    url "https://dl.gitea.com/gitea/version.json"
+    url "https:dl.gitea.comgiteaversion.json"
     strategy :json do |json|
       json.dig("latest", "version")
     end
@@ -36,11 +36,11 @@ class Gitea < Formula
   end
 
   service do
-    run [opt_bin/"gitea", "web"]
+    run [opt_bin"gitea", "web"]
     keep_alive true
     working_dir opt_libexec
-    log_path var/"log/gitea.log"
-    error_log_path var/"log/gitea.log"
+    log_path var"loggitea.log"
+    error_log_path var"loggitea.log"
   end
 
   test do
@@ -48,17 +48,17 @@ class Gitea < Formula
     port = free_port
 
     pid = fork do
-      exec bin/"gitea", "web", "--port", port.to_s, "--install-port", port.to_s
+      exec bin"gitea", "web", "--port", port.to_s, "--install-port", port.to_s
     end
     sleep 5
 
-    output = shell_output("curl -s http://localhost:#{port}/api/settings/api")
+    output = shell_output("curl -s http:localhost:#{port}apisettingsapi")
     assert_match "Go to default page", output
 
-    output = shell_output("curl -s http://localhost:#{port}/")
+    output = shell_output("curl -s http:localhost:#{port}")
     assert_match "Installation - Gitea: Git with a cup of tea", output
 
-    assert_match version.to_s, shell_output("#{bin}/gitea -v")
+    assert_match version.to_s, shell_output("#{bin}gitea -v")
   ensure
     Process.kill("TERM", pid)
     Process.wait(pid)

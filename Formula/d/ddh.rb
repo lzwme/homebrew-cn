@@ -1,13 +1,13 @@
 class Ddh < Formula
   desc "Fast duplicate file finder"
-  homepage "https://github.com/darakian/ddh"
-  url "https://ghproxy.com/https://github.com/darakian/ddh/archive/refs/tags/0.13.0.tar.gz"
+  homepage "https:github.comdarakianddh"
+  url "https:github.comdarakianddharchiverefstags0.13.0.tar.gz"
   sha256 "87010f845fa68945d2def4a05a3eb796222b67c5d3cea41e576cfaf2ab078ef8"
   license "LGPL-3.0-only"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,8 +30,8 @@ class Ddh < Formula
   end
 
   test do
-    (testpath/"test/file1").write "brew test"
-    (testpath/"test/file2").write "brew test"
+    (testpath"testfile1").write "brew test"
+    (testpath"testfile2").write "brew test"
 
     expected = <<~EOS
       2 Total files (with duplicates): 0 Kilobytes
@@ -41,8 +41,8 @@ class Ddh < Formula
       Standard results written to Results.txt
     EOS
 
-    assert_equal expected, shell_output("#{bin}/ddh -d test")
+    assert_equal expected, shell_output("#{bin}ddh -d test")
 
-    assert_match "Duplicates", (testpath/"Results.txt").read
+    assert_match "Duplicates", (testpath"Results.txt").read
   end
 end

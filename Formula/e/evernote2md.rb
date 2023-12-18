@@ -1,7 +1,7 @@
 class Evernote2md < Formula
   desc "Convert Evernote .enex file to Markdown"
-  homepage "https://github.com/wormi4ok/evernote2md"
-  url "https://ghproxy.com/https://github.com/wormi4ok/evernote2md/archive/refs/tags/v0.20.0.tar.gz"
+  homepage "https:github.comwormi4okevernote2md"
+  url "https:github.comwormi4okevernote2mdarchiverefstagsv0.20.0.tar.gz"
   sha256 "c70750c4bd4663a1b4c65e891d435dfa4d767adc9f1bd3ecd3a058614a36e069"
   license "MIT"
 
@@ -22,20 +22,20 @@ class Evernote2md < Formula
   end
 
   test do
-    (testpath/"export.enex").write <<~EOF
+    (testpath"export.enex").write <<~EOF
       <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE en-export SYSTEM "http://xml.evernote.com/pub/evernote-export3.dtd">
+      <!DOCTYPE en-export SYSTEM "http:xml.evernote.compubevernote-export3.dtd">
       <en-export>
         <note>
-          <title>Test</title>
+          <title>Test<title>
           <content>
             <![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-      <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note><div><br /></div></en-note>]]>
-          </content>
-        </note>
-      </en-export>
+      <!DOCTYPE en-note SYSTEM "http:xml.evernote.compubenml2.dtd"><en-note><div><br ><div><en-note>]]>
+          <content>
+        <note>
+      <en-export>
     EOF
-    system bin/"evernote2md", "export.enex"
-    assert_predicate testpath/"notes/Test.md", :exist?
+    system bin"evernote2md", "export.enex"
+    assert_predicate testpath"notesTest.md", :exist?
   end
 end

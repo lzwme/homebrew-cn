@@ -1,7 +1,7 @@
 class RustAnalyzer < Formula
   desc "Experimental Rust compiler front-end for IDEs"
-  homepage "https://rust-analyzer.github.io/"
-  url "https://github.com/rust-lang/rust-analyzer.git",
+  homepage "https:rust-analyzer.github.io"
+  url "https:github.comrust-langrust-analyzer.git",
        tag:      "2023-12-11",
        revision: "457b966b171b09a7e57acb710fbca29a4b3526f0"
   license any_of: ["Apache-2.0", "MIT"]
@@ -19,7 +19,7 @@ class RustAnalyzer < Formula
   depends_on "rust" => :build
 
   def install
-    cd "crates/rust-analyzer" do
+    cd "cratesrust-analyzer" do
       system "cargo", "install", "--bin", "rust-analyzer", *std_cargo_args
     end
   end
@@ -37,7 +37,7 @@ class RustAnalyzer < Formula
       "id":1,
       "method":"initialize",
       "params": {
-        "rootUri": "file:/dev/null",
+        "rootUri": "file:devnull",
         "capabilities": {}
       }
     }
@@ -68,8 +68,8 @@ class RustAnalyzer < Formula
     }
     EOF
 
-    output = /Content-Length: \d+\r\n\r\n/
+    output = Content-Length: \d+\r\n\r\n
 
-    assert_match output, pipe_output("#{bin}/rust-analyzer", input, 0)
+    assert_match output, pipe_output("#{bin}rust-analyzer", input, 0)
   end
 end

@@ -1,8 +1,8 @@
 class Antiword < Formula
   desc "Utility to read Word (.doc) files"
-  homepage "https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl/"
-  url "https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz"
-  mirror "https://fossies.org/linux/misc/old/antiword-0.37.tar.gz"
+  homepage "https:web.archive.orgweb20221207132720http:www.winfield.demon.nl"
+  url "https:web.archive.orgweb20221207132720http:www.winfield.demon.nllinuxantiword-0.37.tar.gz"
+  mirror "https:fossies.orglinuxmiscoldantiword-0.37.tar.gz"
   sha256 "8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac"
   license "GPL-2.0-or-later"
 
@@ -31,12 +31,12 @@ class Antiword < Formula
   # deprecate! date: "2023-09-24", because: :unmaintained
 
   resource "testdoc.doc" do
-    url "https://github.com/rsdoiel/antiword/raw/fe4b579067122a2d9d62647efb1ee7cfe3ca92bb/Docs/testdoc.doc"
+    url "https:github.comrsdoielantiwordrawfe4b579067122a2d9d62647efb1ee7cfe3ca92bbDocstestdoc.doc"
     sha256 "4ea5fe94a8ff9d8cd1e21a5e233efb681f2026de48ab1ac2cbaabdb953ca25ac"
   end
 
   def install
-    inreplace "antiword.h", "/usr/share/antiword", pkgshare
+    inreplace "antiword.h", "usrshareantiword", pkgshare
 
     system "make", "CC=#{ENV.cc}",
                    "LD=#{ENV.cc}",
@@ -44,19 +44,19 @@ class Antiword < Formula
                    "GLOBAL_INSTALL_DIR=#{bin}",
                    "GLOBAL_RESOURCES_DIR=#{pkgshare}"
     bin.install "antiword"
-    pkgshare.install Dir["Resources/*"]
-    man1.install "Docs/antiword.1"
+    pkgshare.install Dir["Resources*"]
+    man1.install "Docsantiword.1"
   end
 
   def caveats
     <<~EOS
-      You can install mapping files in ~/.antiword
+      You can install mapping files in ~.antiword
     EOS
   end
 
   test do
     resource("testdoc.doc").stage do
-      assert_match <<~EOS, shell_output("#{bin}/antiword testdoc.doc")
+      assert_match <<~EOS, shell_output("#{bin}antiword testdoc.doc")
         This is just a small test document.
 
 

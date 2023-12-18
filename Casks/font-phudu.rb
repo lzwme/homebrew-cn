@@ -2,10 +2,10 @@ cask "font-phudu" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/phudu/Phudu%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflphuduPhudu%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Phudu"
-  homepage "https://fonts.google.com/specimen/Phudu"
+  homepage "https:fonts.google.comspecimenPhudu"
 
   font "Phudu[wght].ttf"
 

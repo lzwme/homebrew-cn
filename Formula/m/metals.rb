@@ -1,7 +1,7 @@
 class Metals < Formula
   desc "Scala language server"
-  homepage "https://github.com/scalameta/metals"
-  url "https://ghproxy.com/https://github.com/scalameta/metals/archive/refs/tags/v1.2.0.tar.gz"
+  homepage "https:github.comscalametametals"
+  url "https:github.comscalametametalsarchiverefstagsv1.2.0.tar.gz"
   sha256 "96fde076ec2441fb98346819b32ef6ef06e7603d4c28ac2479838aa8a636fc1d"
   license "Apache-2.0"
 
@@ -28,27 +28,27 @@ class Metals < Formula
 
   def install
     ENV["CI"] = "TRUE"
-    inreplace "build.sbt", /version ~=.+?,/m, "version := \"#{version}\","
+    inreplace "build.sbt", version ~=.+?,m, "version := \"#{version}\","
 
     system "sbt", "package"
 
     # Following Arch AUR to get the dependencies.
-    dep_pattern = /^.+?Attributed\((.+?\.jar)\).*$/
-    sbt_deps_output = Utils.safe_popen_read("sbt 'show metals/dependencyClasspath' 2>/dev/null")
+    dep_pattern = ^.+?Attributed\((.+?\.jar)\).*$
+    sbt_deps_output = Utils.safe_popen_read("sbt 'show metalsdependencyClasspath' 2>devnull")
     deps_jars = sbt_deps_output.lines.grep(dep_pattern) { |it| it.strip.gsub(dep_pattern, '\1') }
     deps_jars.each do |jar|
-      (libexec/"lib").install jar
+      (libexec"lib").install jar
     end
 
-    (libexec/"lib").install buildpath.glob("metals/target/scala-*/metals_*-#{version}.jar")
-    (libexec/"lib").install buildpath.glob("mtags/target/scala-*/mtags_*-#{version}.jar")
-    (libexec/"lib").install buildpath.glob("mtags-shared/target/scala-*/mtags-shared_*-#{version}.jar")
-    (libexec/"lib").install "mtags-interfaces/target/mtags-interfaces-#{version}.jar"
+    (libexec"lib").install buildpath.glob("metalstargetscala-*metals_*-#{version}.jar")
+    (libexec"lib").install buildpath.glob("mtagstargetscala-*mtags_*-#{version}.jar")
+    (libexec"lib").install buildpath.glob("mtags-sharedtargetscala-*mtags-shared_*-#{version}.jar")
+    (libexec"lib").install "mtags-interfacestargetmtags-interfaces-#{version}.jar"
 
-    args = %W[-cp "#{libexec/"lib"}/*" scala.meta.metals.Main]
+    args = %W[-cp "#{libexec"lib"}*" scala.meta.metals.Main]
     env = Language::Java.overridable_java_home_env
-    env["PATH"] = "$JAVA_HOME/bin:$PATH"
-    (bin/"metals").write_env_script "java", args.join(" "), env
+    env["PATH"] = "$JAVA_HOMEbin:$PATH"
+    (bin"metals").write_env_script "java", args.join(" "), env
   end
 
   test do
@@ -64,10 +64,10 @@ class Metals < Formula
         }
       }
     JSON
-    Open3.popen3("#{bin}/metals") do |stdin, stdout, _e, w|
+    Open3.popen3("#{bin}metals") do |stdin, stdout, _e, w|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
       Process.kill("KILL", w.pid)
     end
   end

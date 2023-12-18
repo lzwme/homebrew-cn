@@ -1,8 +1,8 @@
 class Trafshow < Formula
   desc "Continuous network traffic display"
   # Upstream homepage down since late 2014, but only displays a manpage.
-  homepage "https://web.archive.org/web/20130707021442/soft.risp.ru/trafshow/index_en.shtml"
-  url "https://pkg.freebsd.org/ports-distfiles/trafshow-5.2.3.tgz"
+  homepage "https:web.archive.orgweb20130707021442soft.risp.rutrafshowindex_en.shtml"
+  url "https:pkg.freebsd.orgports-distfilestrafshow-5.2.3.tgz"
   sha256 "ea7e22674a66afcc7174779d0f803c1f25b42271973b4f75fab293b8d7db11fc"
   revision 1
 
@@ -34,7 +34,7 @@ class Trafshow < Formula
     "configure"         => "c6e34dddd6c159cbd373b2b593f7643642cb10449c6bc6c606e160586bc5b794",
   }.each do |name, sha|
     patch :p0 do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/be6fd4a/trafshow/patch-#{name}"
+      url "https:raw.githubusercontent.comHomebrewformula-patchesbe6fd4atrafshowpatch-#{name}"
       sha256 sha
     end
   end
@@ -42,19 +42,19 @@ class Trafshow < Formula
   # libpcap on 10.12 has pcap_lib_version() instead of pcap_version
   patch :p0 do
     on_sierra :or_newer do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/7ad7c77/trafshow/patch-pcap-version-sierra.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches7ad7c77trafshowpatch-pcap-version-sierra.diff"
       sha256 "03213c8b8b46241ecef8f427cdbec9b09f5fdc35b9d67672ad4b370a1186aed5"
     end
   end
 
   def install
-    cp Dir["#{Formula["libtool"].opt_pkgshare}/*/config.{guess,sub}"], buildpath
+    cp Dir["#{Formula["libtool"].opt_pkgshare}*config.{guess,sub}"], buildpath
 
     # Fix build for newer libpcap.
     # Reported to maintainer by email.
     inreplace "trafshow.c", "pcap_init", "pcap_initialize" unless OS.mac?
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-slang"
@@ -65,6 +65,6 @@ class Trafshow < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/trafshow -v 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}trafshow -v 2>&1", 1)
   end
 end

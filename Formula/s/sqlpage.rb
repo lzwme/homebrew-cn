@@ -1,10 +1,10 @@
 class Sqlpage < Formula
   desc "Web application framework, for creation of websites with simple database queries"
-  homepage "https://sql.ophir.dev/"
-  url "https://ghproxy.com/https://github.com/lovasoa/SQLpage/archive/refs/tags/v0.17.1.tar.gz"
+  homepage "https:sql.ophir.dev"
+  url "https:github.comlovasoaSQLpagearchiverefstagsv0.17.1.tar.gz"
   sha256 "6217976a1e7eda32cbfb25924e27e0754617f76ccbae0a3201df2b83f94879a7"
   license "MIT"
-  head "https://github.com/lovasoa/SQLpage.git", branch: "main"
+  head "https:github.comlovasoaSQLpage.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82b2977c337ab1c8a69b0077ae1fb2d2ddadd66c8f2a377653ef7b55636f5e3c"
@@ -29,7 +29,7 @@ class Sqlpage < Formula
       exec "sqlpage"
     end
     sleep(2)
-    assert_match "It works", shell_output("curl -s http://localhost:#{port}")
+    assert_match "It works", shell_output("curl -s http:localhost:#{port}")
     Process.kill(9, pid)
   end
 end

@@ -2,15 +2,15 @@ cask "conferences" do
   version "0.0.1-alpha22"
   sha256 "61cd7c47ecc718613c9e1ba803ae36e26c37c98bb6a46b5ced2898942c9771a5"
 
-  url "https://ghproxy.com/https://github.com/zagahr/Conferences.digital/releases/download/#{version}/Conferences_v#{version}.zip"
+  url "https:github.comzagahrConferences.digitalreleasesdownload#{version}Conferences_v#{version}.zip"
   name "Conferences.digital"
   desc "App to watch conference videos"
-  homepage "https://github.com/zagahr/Conferences.digital"
+  homepage "https:github.comzagahrConferences.digital"
 
   livecheck do
-    url "https://zagahr.github.io/Conferences.digital/appcast.xml"
+    url "https:zagahr.github.ioConferences.digitalappcast.xml"
     strategy :sparkle do |item|
-      item.url[/_v(\d+(?:\.\d+)*-.*?)\.zip/i, 1]
+      item.url[_v(\d+(?:\.\d+)*-.*?)\.zipi, 1]
     end
   end
 
@@ -19,11 +19,11 @@ cask "conferences" do
   app "Conferences.app"
 
   zap trash: [
-    "~/Library/Application Support/digital.conferences.macos",
-    "~/Library/Caches/digital.conferences.macos",
-    "~/Library/HTTPStorages/digital.conferences.macos",
-    "~/Library/Preferences/digital.conferences.macos.plist",
-    "~/Library/Saved Application State/digital.conferences.macos.savedState",
-    "~/Library/WebKit/digital.conferences.macos",
+    "~LibraryApplication Supportdigital.conferences.macos",
+    "~LibraryCachesdigital.conferences.macos",
+    "~LibraryHTTPStoragesdigital.conferences.macos",
+    "~LibraryPreferencesdigital.conferences.macos.plist",
+    "~LibrarySaved Application Statedigital.conferences.macos.savedState",
+    "~LibraryWebKitdigital.conferences.macos",
   ]
 end

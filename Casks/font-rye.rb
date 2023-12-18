@@ -2,10 +2,10 @@ cask "font-rye" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rye/Rye-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflryeRye-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rye"
-  homepage "https://fonts.google.com/specimen/Rye"
+  homepage "https:fonts.google.comspecimenRye"
 
   font "Rye-Regular.ttf"
 

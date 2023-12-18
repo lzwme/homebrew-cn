@@ -1,11 +1,11 @@
 class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
-  homepage "https://odo.dev"
-  url "https://github.com/redhat-developer/odo.git",
+  homepage "https:odo.dev"
+  url "https:github.comredhat-developerodo.git",
       tag:      "v3.15.0",
       revision: "10b5e8a8f5011703a8cb62b4001eead5ae58cf45"
   license "Apache-2.0"
-  head "https://github.com/redhat-developer/odo.git", branch: "main"
+  head "https:github.comredhat-developerodo.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -38,20 +38,20 @@ class OdoDev < Formula
 
   test do
     # try set preference
-    ENV["GLOBALODOCONFIG"] = "#{testpath}/preference.yaml"
-    system bin/"odo", "preference", "set", "ConsentTelemetry", "false"
-    system bin/"odo", "preference", "add", "registry", "StagingRegistry", "https://registry.stage.devfile.io"
-    assert_predicate testpath/"preference.yaml", :exist?
+    ENV["GLOBALODOCONFIG"] = "#{testpath}preference.yaml"
+    system bin"odo", "preference", "set", "ConsentTelemetry", "false"
+    system bin"odo", "preference", "add", "registry", "StagingRegistry", "https:registry.stage.devfile.io"
+    assert_predicate testpath"preference.yaml", :exist?
 
     # test version
-    version_output = shell_output("#{bin}/odo version --client 2>&1").strip
-    assert_match(/odo v#{version} \([a-f0-9]{9}-Homebrew\)/, version_output)
+    version_output = shell_output("#{bin}odo version --client 2>&1").strip
+    assert_match(odo v#{version} \([a-f0-9]{9}-Homebrew\), version_output)
 
     # try to create a new component
-    system bin/"odo", "init", "--devfile", "nodejs", "--name", "test", "--devfile-registry", "StagingRegistry"
-    assert_predicate testpath/"devfile.yaml", :exist?
+    system bin"odo", "init", "--devfile", "nodejs", "--name", "test", "--devfile-registry", "StagingRegistry"
+    assert_predicate testpath"devfile.yaml", :exist?
 
-    dev_output = shell_output("#{bin}/odo dev 2>&1", 1).strip
+    dev_output = shell_output("#{bin}odo dev 2>&1", 1).strip
     assert_match "✗  unable to access the cluster", dev_output
   end
 end

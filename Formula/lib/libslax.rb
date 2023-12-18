@@ -1,11 +1,11 @@
 class Libslax < Formula
   desc "Implementation of the SLAX language (an XSLT alternative)"
-  homepage "http://www.libslax.org/"
-  url "https://ghproxy.com/https://github.com/Juniper/libslax/releases/download/0.22.1/libslax-0.22.1.tar.gz"
+  homepage "http:www.libslax.org"
+  url "https:github.comJuniperlibslaxreleasesdownload0.22.1libslax-0.22.1.tar.gz"
   sha256 "4da6fb9886e50d75478d5ecc6868c90dae9d30ba7fc6e6d154fc92e6a48d9a95"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/Juniper/libslax.git", branch: "master"
+  head "https:github.comJuniperlibslax.git", branch: "master"
 
   livecheck do
     url :stable
@@ -36,23 +36,23 @@ class Libslax < Formula
   uses_from_macos "libxslt"
   uses_from_macos "sqlite"
 
-  conflicts_with "genometools", because: "both install `bin/gt`"
+  conflicts_with "genometools", because: "both install `bingt`"
   conflicts_with "libxi", because: "both install `libxi.a`"
 
   # Fix compilation when using bison 3.7.6+. Patch accepted upstream, remove on next release
   patch do
-    url "https://github.com/Juniper/libslax/commit/cc693df657bc078cd11abe910cbb94ce2acaed67.patch?full_index=1"
+    url "https:github.comJuniperlibslaxcommitcc693df657bc078cd11abe910cbb94ce2acaed67.patch?full_index=1"
     sha256 "68cdafb11450cd07bdfd15e5309979040e5956c3e36d9f8978890c29c8f20e87"
   end
 
   # Fix detection of libxml2 in configure. Two following patches accepted upstream, remove on next release
   patch do
-    url "https://github.com/Juniper/libslax/commit/5fda392d357b753f7e163f94b8795c028300b024.patch?full_index=1"
+    url "https:github.comJuniperlibslaxcommit5fda392d357b753f7e163f94b8795c028300b024.patch?full_index=1"
     sha256 "0a424f900e76faa8f1f1c7de282455d1b77c402329a6dc0be7e6370e9aa790de"
   end
 
   patch do
-    url "https://github.com/Juniper/libslax/commit/c1b0ba1a342bd4f1ee58f8a339cbd29938d58ba9.patch?full_index=1"
+    url "https:github.comJuniperlibslaxcommitc1b0ba1a342bd4f1ee58f8a339cbd29938d58ba9.patch?full_index=1"
     sha256 "fa5ecd56672843838cef62d7d44520613c5fa0e5904e3497266d0ee45b16df04"
   end
 
@@ -68,20 +68,20 @@ class Libslax < Formula
     args = std_configure_args + %w[--enable-libedit]
     args << "--with-sqlite3=#{Formula["sqlite"].opt_prefix}" if OS.linux?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"hello.slax").write <<~EOS
+    (testpath"hello.slax").write <<~EOS
       version 1.0;
 
-      match / {
+      match  {
           expr "Hello World!";
       }
     EOS
-    system "#{bin}/slaxproc", "--slax-to-xslt", "hello.slax", "hello.xslt"
-    assert_predicate testpath/"hello.xslt", :exist?
-    assert_match "<xsl:text>Hello World!</xsl:text>", File.read("hello.xslt")
+    system "#{bin}slaxproc", "--slax-to-xslt", "hello.slax", "hello.xslt"
+    assert_predicate testpath"hello.xslt", :exist?
+    assert_match "<xsl:text>Hello World!<xsl:text>", File.read("hello.xslt")
   end
 end

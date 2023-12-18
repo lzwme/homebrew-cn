@@ -2,12 +2,12 @@ cask "font-ranga" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/ranga"
+      only_path: "oflranga"
   name "Ranga"
-  homepage "https://fonts.google.com/specimen/Ranga"
+  homepage "https:fonts.google.comspecimenRanga"
 
   font "Ranga-Bold.ttf"
   font "Ranga-Regular.ttf"

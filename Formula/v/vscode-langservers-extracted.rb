@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class VscodeLangserversExtracted < Formula
   desc "Language servers for HTML, CSS, JavaScript, and JSON extracted from vscode"
-  homepage "https://github.com/hrsh7th/vscode-langservers-extracted"
-  url "https://registry.npmjs.org/vscode-langservers-extracted/-/vscode-langservers-extracted-4.8.0.tgz"
+  homepage "https:github.comhrsh7thvscode-langservers-extracted"
+  url "https:registry.npmjs.orgvscode-langservers-extracted-vscode-langservers-extracted-4.8.0.tgz"
   sha256 "8c7102927a32fa145077f0406b66bb3a7d85f5b0a208d4efeb40702b5a6cd2e1"
   license "MIT"
 
@@ -15,7 +15,7 @@ class VscodeLangserversExtracted < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
@@ -34,10 +34,10 @@ class VscodeLangserversExtracted < Formula
     JSON
 
     %w[css eslint html json markdown].each do |lang|
-      Open3.popen3("#{bin}/vscode-#{lang}-language-server", "--stdio") do |stdin, stdout|
+      Open3.popen3("#{bin}vscode-#{lang}-language-server", "--stdio") do |stdin, stdout|
         stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
         sleep 3
-        assert_match(/^Content-Length: \d+/i, stdout.readline)
+        assert_match(^Content-Length: \d+i, stdout.readline)
       end
     end
   end

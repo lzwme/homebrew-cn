@@ -1,15 +1,15 @@
 class Sapling < Formula
   desc "Source control client"
-  homepage "https://sapling-scm.com"
-  url "https://ghproxy.com/https://github.com/facebook/sapling/archive/refs/tags/0.2.20231113-145254+995db0d6.tar.gz"
+  homepage "https:sapling-scm.com"
+  url "https:github.comfacebooksaplingarchiverefstags0.2.20231113-145254+995db0d6.tar.gz"
   version "0.2.20231113-145254-995db0d6"
   sha256 "e927c386336ddd047d36a33d6dfb06286960d9c2a56c843fbb2d5ed1ecaf749a"
   license "GPL-2.0-or-later"
-  head "https://github.com/facebook/sapling.git", branch: "main"
+  head "https:github.comfacebooksapling.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:[.-]\d+)+[+-]\h+)$/i)
+    regex(^v?(\d+(?:[.-]\d+)+[+-]\h+)$i)
     strategy :github_latest
   end
 
@@ -44,13 +44,13 @@ class Sapling < Formula
   def modified_version
     # If installing through `brew install sapling --HEAD`, version will be HEAD-<hash>, which
     # still doesn't make `setuptools` happy. However, since installing through this method
-    # will get a git repo, we can use the ci/tag-name.sh script for determining the version no.
+    # will get a git repo, we can use the citag-name.sh script for determining the version no.
     build_version = if version.to_s.start_with?("HEAD")
-      Utils.safe_popen_read("ci/tag-name.sh").chomp + ".dev"
+      Utils.safe_popen_read("citag-name.sh").chomp + ".dev"
     else
       version
     end
-    segments = build_version.to_s.split(/[-+]/)
+    segments = build_version.to_s.split([-+])
     "#{segments.take(2).join("-")}+#{segments.last}"
   end
 
@@ -58,11 +58,11 @@ class Sapling < Formula
     if OS.mac?
       # Avoid vendored libcurl.
       inreplace %w[
-        eden/scm/lib/http-client/Cargo.toml
-        eden/scm/lib/doctor/network/Cargo.toml
-        eden/scm/lib/revisionstore/Cargo.toml
+        edenscmlibhttp-clientCargo.toml
+        edenscmlibdoctornetworkCargo.toml
+        edenscmlibrevisionstoreCargo.toml
       ],
-        /^curl = { version = "(.+)", features = \["http2"\] }$/,
+        ^curl = { version = "(.+)", features = \["http2"\] }$,
         'curl = { version = "\\1", features = ["http2", "force-system-lib-on-osx"] }'
     end
 
@@ -72,8 +72,8 @@ class Sapling < Formula
     ENV["SAPLING_VERSION"] = modified_version
 
     # Don't allow the build to break our shim configuration.
-    inreplace "eden/scm/distutils_rust/__init__.py", '"HOMEBREW_CCCFG"', '"NONEXISTENT"'
-    system "make", "-C", "eden/scm", "install-oss", "PREFIX=#{prefix}", "PYTHON=#{python3}", "PYTHON3=#{python3}"
+    inreplace "edenscmdistutils_rust__init__.py", '"HOMEBREW_CCCFG"', '"NONEXISTENT"'
+    system "make", "-C", "edenscm", "install-oss", "PREFIX=#{prefix}", "PYTHON=#{python3}", "PYTHON3=#{python3}"
   end
 
   def check_binary_linkage(binary, library)
@@ -85,20 +85,20 @@ class Sapling < Formula
   end
 
   test do
-    assert_equal("Sapling #{modified_version}", shell_output("#{bin}/sl --version").chomp)
-    system "#{bin}/sl", "config", "--user", "ui.username", "Sapling <sapling@sapling-scm.com>"
-    system "#{bin}/sl", "init", "--git", "foobarbaz"
+    assert_equal("Sapling #{modified_version}", shell_output("#{bin}sl --version").chomp)
+    system "#{bin}sl", "config", "--user", "ui.username", "Sapling <sapling@sapling-scm.com>"
+    system "#{bin}sl", "init", "--git", "foobarbaz"
     cd "foobarbaz" do
       touch "a"
-      system "#{bin}/sl", "add"
-      system "#{bin}/sl", "commit", "-m", "first"
-      assert_equal("first", shell_output("#{bin}/sl log -l 1 -T {desc}").chomp)
+      system "#{bin}sl", "add"
+      system "#{bin}sl", "commit", "-m", "first"
+      assert_equal("first", shell_output("#{bin}sl log -l 1 -T {desc}").chomp)
     end
 
     [
-      Formula["curl"].opt_lib/shared_library("libcurl"),
+      Formula["curl"].opt_libshared_library("libcurl"),
     ].each do |library|
-      assert check_binary_linkage(bin/"sl", library),
+      assert check_binary_linkage(bin"sl", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

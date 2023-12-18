@@ -1,8 +1,8 @@
 class Libiconv < Formula
   desc "Conversion library"
-  homepage "https://www.gnu.org/software/libiconv/"
-  url "https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libiconv/libiconv-1.17.tar.gz"
+  homepage "https:www.gnu.orgsoftwarelibiconv"
+  url "https:ftp.gnu.orggnulibiconvlibiconv-1.17.tar.gz"
+  mirror "https:ftpmirror.gnu.orglibiconvlibiconv-1.17.tar.gz"
   sha256 "8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
 
@@ -23,7 +23,7 @@ class Libiconv < Formula
   depends_on :macos # is not needed on Linux, where iconv.h is provided by glibc
 
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/patches/9be2793af/libiconv/patch-utf8mac.diff"
+    url "https:raw.githubusercontent.comHomebrewpatches9be2793aflibiconvpatch-utf8mac.diff"
     sha256 "e8128732f22f63b5c656659786d2cf76f1450008f36bcf541285268c66cabeab"
   end
 
@@ -32,7 +32,7 @@ class Libiconv < Formula
   def install
     ENV.deparallelize
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-extra-encodings",
@@ -43,16 +43,16 @@ class Libiconv < Formula
   end
 
   test do
-    system bin/"iconv", "--help"
+    system bin"iconv", "--help"
   end
 end
 
 
 __END__
-diff --git a/lib/flags.h b/lib/flags.h
+diff --git alibflags.h blibflags.h
 index d7cda21..4cabcac 100644
---- a/lib/flags.h
-+++ b/lib/flags.h
+--- alibflags.h
++++ blibflags.h
 @@ -14,6 +14,7 @@
 
  #define ei_ascii_oflags (0)

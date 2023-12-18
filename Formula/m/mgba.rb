@@ -1,10 +1,10 @@
 class Mgba < Formula
   desc "Game Boy Advance emulator"
-  homepage "https://mgba.io/"
-  url "https://ghproxy.com/https://github.com/mgba-emu/mgba/archive/refs/tags/0.10.2.tar.gz"
+  homepage "https:mgba.io"
+  url "https:github.commgba-emumgbaarchiverefstags0.10.2.tar.gz"
   sha256 "60afef8fb79ba1f7be565b737bae73c6604a790391c737f291482a7422d675ae"
   license "MPL-2.0"
-  head "https://github.com/mgba-emu/mgba.git", branch: "master"
+  head "https:github.commgba-emumgba.git", branch: "master"
 
   livecheck do
     url :stable
@@ -42,23 +42,23 @@ class Mgba < Formula
   end
 
   def install
-    # Install .app bundle into prefix, not prefix/Applications
-    inreplace "src/platform/qt/CMakeLists.txt", "Applications", "."
+    # Install .app bundle into prefix, not prefixApplications
+    inreplace "srcplatformqtCMakeLists.txt", "Applications", "."
 
     system "cmake", ".", *std_cmake_args
     system "make", "install"
 
     # Replace SDL frontend binary with a script for running Qt frontend
     # -DBUILD_SDL=OFF would be easier, but disable joystick support in Qt frontend
-    rm bin/"mgba"
+    rm bin"mgba"
     if OS.mac?
-      bin.write_exec_script "#{prefix}/mGBA.app/Contents/MacOS/mGBA"
+      bin.write_exec_script "#{prefix}mGBA.appContentsMacOSmGBA"
     else
-      mv bin/"mgba-qt", bin/"mGBA"
+      mv bin"mgba-qt", bin"mGBA"
     end
   end
 
   test do
-    system "#{bin}/mGBA", "-h"
+    system "#{bin}mGBA", "-h"
   end
 end

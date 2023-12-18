@@ -1,10 +1,10 @@
 class Html2text < Formula
   desc "Advanced HTML-to-text converter"
-  homepage "https://github.com/grobian/html2text"
-  url "https://ghproxy.com/https://github.com/grobian/html2text/releases/download/v2.2.3/html2text-2.2.3.tar.gz"
+  homepage "https:github.comgrobianhtml2text"
+  url "https:github.comgrobianhtml2textreleasesdownloadv2.2.3html2text-2.2.3.tar.gz"
   sha256 "859133528b3fd893562e41d84bc1ebc1f9166dd281d0fa8e17e7dd26337f5752"
   license "GPL-2.0-or-later"
-  head "https://github.com/grobian/html2text.git", branch: "master"
+  head "https:github.comgrobianhtml2text.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03b77ee2ee4c1a68b990f2d386ddf70ff2f072da841441f2d4ae0aecf3e95f26"
@@ -21,22 +21,22 @@ class Html2text < Formula
   def install
     ENV.cxx11
 
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "all"
     system "make", "install", "PREFIX=#{prefix}", "BINDIR=#{bin}", "MANDIR=#{man}", "DOCDIR=#{doc}"
   end
 
   test do
-    path = testpath/"index.html"
+    path = testpath"index.html"
     path.write <<~EOS
       <!DOCTYPE html>
       <html>
-        <head><title>Home</title></head>
-        <body><p>Hello World</p></body>
-      </html>
+        <head><title>Home<title><head>
+        <body><p>Hello World<p><body>
+      <html>
     EOS
 
-    output = `#{bin}/html2text #{path}`.strip
+    output = `#{bin}html2text #{path}`.strip
     assert_equal "Hello World", output
     assert_equal 0, $CHILD_STATUS.exitstatus
   end

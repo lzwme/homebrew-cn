@@ -1,10 +1,10 @@
 class Reshape < Formula
   desc "Easy-to-use, zero-downtime schema migration tool for Postgres"
-  homepage "https://github.com/fabianlindfors/reshape"
-  url "https://ghproxy.com/https://github.com/fabianlindfors/reshape/archive/refs/tags/v0.6.1.tar.gz"
+  homepage "https:github.comfabianlindforsreshape"
+  url "https:github.comfabianlindforsreshapearchiverefstagsv0.6.1.tar.gz"
   sha256 "5d22b7b2f015c79734f35d0fcd43b21bac89d9032dd66307450b3b8c4cc0a33b"
   license "MIT"
-  head "https://github.com/fabianlindfors/reshape.git", branch: "main"
+  head "https:github.comfabianlindforsreshape.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -27,7 +27,7 @@ class Reshape < Formula
   end
 
   test do
-    (testpath/"migrations/test.toml").write <<~EOS
+    (testpath"migrationstest.toml").write <<~EOS
       [[actions]]
       type = "create_table"
       name = "users"
@@ -44,9 +44,9 @@ class Reshape < Formula
     EOS
 
     assert_match "SET search_path TO migration_test",
-      shell_output("#{bin}/reshape generate-schema-query")
+      shell_output("#{bin}reshape generate-schema-query")
 
     assert_match "Error: error connecting to server:",
-      shell_output("#{bin}/reshape migrate 2>&1", 1)
+      shell_output("#{bin}reshape migrate 2>&1", 1)
   end
 end

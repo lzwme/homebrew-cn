@@ -1,15 +1,15 @@
 class Yorkie < Formula
   desc "Document store for collaborative applications"
-  homepage "https://yorkie.dev/"
-  url "https://github.com/yorkie-team/yorkie.git",
+  homepage "https:yorkie.dev"
+  url "https:github.comyorkie-teamyorkie.git",
     tag:      "v0.4.10",
     revision: "1006b647b75195bfb5ff6791db672c381cb4de54"
   license "Apache-2.0"
-  head "https://github.com/yorkie-team/yorkie.git", branch: "main"
+  head "https:github.comyorkie-teamyorkie.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,11 +28,11 @@ class Yorkie < Formula
     system "make", "build"
     prefix.install "bin"
 
-    generate_completions_from_executable(bin/"yorkie", "completion")
+    generate_completions_from_executable(bin"yorkie", "completion")
   end
 
   service do
-    run opt_bin/"yorkie"
+    run opt_bin"yorkie"
     run_type :immediate
     keep_alive true
     working_dir var
@@ -40,14 +40,14 @@ class Yorkie < Formula
 
   test do
     yorkie_pid = fork do
-      exec bin/"yorkie", "server"
+      exec bin"yorkie", "server"
     end
     # sleep to let yorkie get ready
     sleep 3
-    system bin/"yorkie", "login", "-u", "admin", "-p", "admin", "--insecure"
+    system bin"yorkie", "login", "-u", "admin", "-p", "admin", "--insecure"
 
     test_project = "test"
-    output = shell_output("#{bin}/yorkie project create #{test_project} 2>&1")
+    output = shell_output("#{bin}yorkie project create #{test_project} 2>&1")
     project_info = JSON.parse(output)
     assert_equal test_project, project_info.fetch("name")
   ensure

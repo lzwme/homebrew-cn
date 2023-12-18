@@ -1,11 +1,11 @@
 class Zk < Formula
   desc "Plain text note-taking assistant"
-  homepage "https://github.com/mickael-menu/zk"
-  url "https://ghproxy.com/https://github.com/mickael-menu/zk/archive/refs/tags/v0.14.0.tar.gz"
+  homepage "https:github.commickael-menuzk"
+  url "https:github.commickael-menuzkarchiverefstagsv0.14.0.tar.gz"
   sha256 "bd96f93d50e2e72ce05f36c3dab5b7942ae205756f26d4c68ba2a7ccc783abc8"
   license "GPL-3.0-only"
   revision 1
-  head "https://github.com/mickael-menu/zk.git", branch: "main"
+  head "https:github.commickael-menuzk.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "5b642fa155209f8d1ca526c4c465957b109a888b74261041b770cde5445591af"
@@ -29,12 +29,12 @@ class Zk < Formula
   end
 
   test do
-    system "#{bin}/zk", "init", "--no-input"
-    system "#{bin}/zk", "index", "--no-input"
-    (testpath/"testnote.md").write "note content"
-    (testpath/"anothernote.md").write "todolist"
+    system "#{bin}zk", "init", "--no-input"
+    system "#{bin}zk", "index", "--no-input"
+    (testpath"testnote.md").write "note content"
+    (testpath"anothernote.md").write "todolist"
 
-    output = pipe_output("#{bin}/zk list --quiet").chomp
+    output = pipe_output("#{bin}zk list --quiet").chomp
     assert_match "note content", output
     assert_match "todolist", output
   end

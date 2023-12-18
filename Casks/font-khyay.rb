@@ -2,10 +2,10 @@ cask "font-khyay" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/khyay/Khyay-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkhyayKhyay-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Khyay"
-  homepage "https://fonts.google.com/earlyaccess"
+  homepage "https:fonts.google.comearlyaccess"
 
   font "Khyay-Regular.ttf"
 

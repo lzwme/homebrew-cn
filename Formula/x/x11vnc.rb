@@ -1,17 +1,17 @@
 class X11vnc < Formula
   desc "VNC server for real X displays"
-  homepage "https://github.com/LibVNC/x11vnc"
+  homepage "https:github.comLibVNCx11vnc"
   license "GPL-2.0-or-later" => { with: "x11vnc-openssl-exception" }
   revision 1
-  head "https://github.com/LibVNC/x11vnc.git", branch: "master"
+  head "https:github.comLibVNCx11vnc.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz"
+    url "https:github.comLibVNCx11vncarchiverefstags0.9.16.tar.gz"
     sha256 "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd"
 
     # Fix build with -fno-common. Remove in the next release
     patch do
-      url "https://github.com/LibVNC/x11vnc/commit/a48b0b1cd887d7f3ae67f525d7d334bd2feffe60.patch?full_index=1"
+      url "https:github.comLibVNCx11vnccommita48b0b1cd887d7f3ae67f525d7d334bd2feffe60.patch?full_index=1"
       sha256 "c8c699f0dd4af42a91782df4291459ba2855b22661dc9e6698a0a63ca361a832"
     end
   end
@@ -40,9 +40,9 @@ class X11vnc < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib"pkgconfig"
 
-    system "./autogen.sh", *std_configure_args,
+    system ".autogen.sh", *std_configure_args,
                            "--disable-silent-rules",
                            "--mandir=#{man}",
                            "--without-x"
@@ -50,6 +50,6 @@ class X11vnc < Formula
   end
 
   test do
-    system bin/"x11vnc", "--version"
+    system bin"x11vnc", "--version"
   end
 end

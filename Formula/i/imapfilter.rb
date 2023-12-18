@@ -1,7 +1,7 @@
 class Imapfilter < Formula
-  desc "IMAP message processor/filter"
-  homepage "https://github.com/lefcha/imapfilter/"
-  url "https://ghproxy.com/https://github.com/lefcha/imapfilter/archive/refs/tags/v2.8.1.tar.gz"
+  desc "IMAP message processorfilter"
+  homepage "https:github.comlefchaimapfilter"
+  url "https:github.comlefchaimapfilterarchiverefstagsv2.8.1.tar.gz"
   sha256 "758a0f78aff30935916426c878d2cc803bdcd31c74982fbfcd2372e6744262cc"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Imapfilter < Formula
 
   def install
     # find Homebrew's libpcre and lua
-    ENV.append "CPPFLAGS", "-I#{Formula["lua"].opt_include}/lua"
+    ENV.append "CPPFLAGS", "-I#{Formula["lua"].opt_include}lua"
     ENV.append "LDFLAGS", "-L#{Formula["pcre2"].opt_lib}"
     ENV.append "LDFLAGS", "-L#{Formula["lua"].opt_lib}"
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
@@ -35,13 +35,13 @@ class Imapfilter < Formula
 
   def caveats
     <<~EOS
-      You will need to create a ~/.imapfilter/config.lua file.
+      You will need to create a ~.imapfilterconfig.lua file.
       Samples can be found in:
-        #{prefix}/samples
+        #{prefix}samples
     EOS
   end
 
   test do
-    system "#{bin}/imapfilter", "-V"
+    system "#{bin}imapfilter", "-V"
   end
 end

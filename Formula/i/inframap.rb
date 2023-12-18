@@ -1,10 +1,10 @@
 class Inframap < Formula
   desc "Read your tfstate or HCL to generate a graph"
-  homepage "https://github.com/cycloidio/inframap"
-  url "https://ghproxy.com/https://github.com/cycloidio/inframap/archive/refs/tags/v0.6.7.tar.gz"
+  homepage "https:github.comcycloidioinframap"
+  url "https:github.comcycloidioinframaparchiverefstagsv0.6.7.tar.gz"
   sha256 "e9d6daa48c6fa1a8ecc5437c7121cb5072eb81c29c88ca9e6d778637c8442332"
   license "MIT"
-  head "https://github.com/cycloidio/inframap.git", branch: "master"
+  head "https:github.comcycloidioinframap.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55f89ff914adfc37f6903c85cd7504f3703e9e93a1e29f1056477c14dc15f085"
@@ -23,18 +23,18 @@ class Inframap < Formula
   depends_on "go" => :build
 
   resource "test_resource" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/cycloidio/inframap/7ef22e7/generate/testdata/azure.tfstate"
+    url "https:raw.githubusercontent.comcycloidioinframap7ef22e7generatetestdataazure.tfstate"
     sha256 "633033074a8ac43df3d0ef0881f14abd47a850b4afd5f1fbe02d3885b8e8104d"
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/cycloidio/inframap/cmd.Version=v#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comcycloidioinframapcmd.Version=v#{version}")
   end
 
   test do
-    assert_match "v#{version}", shell_output("#{bin}/inframap version")
+    assert_match "v#{version}", shell_output("#{bin}inframap version")
     testpath.install resource("test_resource")
-    output = shell_output("#{bin}/inframap generate --tfstate #{testpath}/azure.tfstate")
+    output = shell_output("#{bin}inframap generate --tfstate #{testpath}azure.tfstate")
     assert_match "strict digraph G {", output
     assert_match "\"azurerm_virtual_network.myterraformnetwork\"->\"azurerm_virtual_network.myterraformnetwork2\";",
       output

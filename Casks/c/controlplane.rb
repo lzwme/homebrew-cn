@@ -2,10 +2,10 @@ cask "controlplane" do
   version "1.6.7"
   sha256 "beb444b8117ed91898921a6babc384501dfd92679f5b718fceb6d3aa7a0bf651"
 
-  url "https://ghproxy.com/https://github.com/dustinrue/ControlPlane/releases/download/#{version}/ControlPlane-#{version}.dmg",
-      verified: "github.com/dustinrue/ControlPlane/"
+  url "https:github.comdustinrueControlPlanereleasesdownload#{version}ControlPlane-#{version}.dmg",
+      verified: "github.comdustinrueControlPlane"
   name "ControlPlane"
-  homepage "https://www.controlplaneapp.com/"
+  homepage "https:www.controlplaneapp.com"
 
   livecheck do
     url :url
@@ -14,5 +14,5 @@ cask "controlplane" do
 
   app "ControlPlane.app"
 
-  zap trash: "~/Library/Preferences/com.dustinrue.ControlPlane.plist"
+  zap trash: "~LibraryPreferencescom.dustinrue.ControlPlane.plist"
 end

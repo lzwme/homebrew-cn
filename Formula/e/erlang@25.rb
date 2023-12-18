@@ -1,14 +1,14 @@
 class ErlangAT25 < Formula
   desc "Programming language for highly scalable real-time systems"
-  homepage "https://www.erlang.org/"
+  homepage "https:www.erlang.org"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3.2.7/otp_src_25.3.2.7.tar.gz"
+  url "https:github.comerlangotpreleasesdownloadOTP-25.3.2.7otp_src_25.3.2.7.tar.gz"
   sha256 "a8662859d153d3c4253c6a3a4d1538d0f32ce1cf02bb5484b17c9c176da37b37"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^OTP[._-]v?(25(?:\.\d+)+)$/i)
+    regex(^OTP[._-]v?(25(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,7 +30,7 @@ class ErlangAT25 < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
 
   resource "html" do
-    url "https://ghproxy.com/https://github.com/erlang/otp/releases/download/OTP-25.3.2.7/otp_doc_html_25.3.2.7.tar.gz"
+    url "https:github.comerlangotpreleasesdownloadOTP-25.3.2.7otp_doc_html_25.3.2.7.tar.gz"
     sha256 "7c510198f1d777dc428566af03dcbcce12746e8a38b242a38e3408a19d2f3eba"
   end
 
@@ -40,7 +40,7 @@ class ErlangAT25 < Formula
     %w[LIBS FLAGS AFLAGS ZFLAGS].each { |k| ENV.delete("ERL_#{k}") }
 
     # Do this if building from a checkout to generate configure
-    system "./otp_build", "autoconf" unless File.exist? "configure"
+    system ".otp_build", "autoconf" unless File.exist? "configure"
 
     args = %W[
       --disable-debug
@@ -63,7 +63,7 @@ class ErlangAT25 < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
 
@@ -77,7 +77,7 @@ class ErlangAT25 < Formula
   def caveats
     <<~EOS
       Man pages can be found in:
-        #{opt_lib}/erlang/man
+        #{opt_lib}erlangman
 
       Access them with `erl -man`, or add this directory to MANPATH.
     EOS
@@ -86,9 +86,9 @@ class ErlangAT25 < Formula
   test do
     assert_equal version, resource("html").version, "`html` resource needs updating!"
 
-    system "#{bin}/erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
-    (testpath/"factorial").write <<~EOS
-      #!#{bin}/escript
+    system "#{bin}erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
+    (testpath"factorial").write <<~EOS
+      #!#{bin}escript
       %% -*- erlang -*-
       %%! -smp enable -sname factorial -mnesia debug verbose
       main([String]) ->
@@ -110,7 +110,7 @@ class ErlangAT25 < Formula
       fac(N) -> N * fac(N-1).
     EOS
     chmod 0755, "factorial"
-    assert_match "usage: factorial integer", shell_output("./factorial")
-    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output("./factorial 42")
+    assert_match "usage: factorial integer", shell_output(".factorial")
+    assert_match "factorial 42 = 1405006117752879898543142606244511569936384000000000", shell_output(".factorial 42")
   end
 end

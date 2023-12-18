@@ -1,10 +1,10 @@
 class Tere < Formula
   desc "Terminal file explorer"
-  homepage "https://github.com/mgunyho/tere"
-  url "https://ghproxy.com/https://github.com/mgunyho/tere/archive/refs/tags/v1.5.1.tar.gz"
+  homepage "https:github.commgunyhotere"
+  url "https:github.commgunyhoterearchiverefstagsv1.5.1.tar.gz"
   sha256 "d7f657371ffbd469c4d8855c2a2734c20b53ae632fe3cbf9bb7cab94bd726326"
   license "EUPL-1.2"
-  head "https://github.com/mgunyho/tere.git", branch: "master"
+  head "https:github.commgunyhotere.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54719b8dfd7e1d8d4f4c9b5169efeed05410bf4359b0262218032ded09275807"
@@ -26,14 +26,14 @@ class Tere < Formula
 
   test do
     # Launch `tere` and then immediately exit to test whether `tere` runs without errors.
-    PTY.spawn(bin/"tere") do |r, w, _pid|
+    PTY.spawn(bin"tere") do |r, w, _pid|
       r.winsize = [80, 43]
       sleep 1
       w.write "\e"
       begin
         r.read
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
   end

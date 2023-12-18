@@ -1,15 +1,15 @@
 class Cdparanoia < Formula
   desc "Audio extraction tool for sampling CDs"
-  homepage "https://www.xiph.org/paranoia/"
-  url "https://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/cdparanoia/cdparanoia-III-10.2.src.tgz"
+  homepage "https:www.xiph.orgparanoia"
+  url "https:downloads.xiph.orgreleasescdparanoiacdparanoia-III-10.2.src.tgz", using: :homebrew_curl
+  mirror "https:ftp.osuosl.orgpubxiphreleasescdparanoiacdparanoia-III-10.2.src.tgz"
   sha256 "005db45ef4ee017f5c32ec124f913a0546e77014266c6a1c50df902a55fe64df"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 1
 
   livecheck do
-    url "https://ftp.osuosl.org/pub/xiph/releases/cdparanoia/?C=M&O=D"
-    regex(/href=.*?cdparanoia-III[._-]v?(\d+(?:\.\d+)+)\.src\.t/i)
+    url "https:ftp.osuosl.orgpubxiphreleasescdparanoia?C=M&O=D"
+    regex(href=.*?cdparanoia-III[._-]v?(\d+(?:\.\d+)+)\.src\.ti)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class Cdparanoia < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b198eb38176c050af6da82d82ef25035dc43a1bfc94a02f064b9103b85a5593"
   end
 
-  # see https://github.com/orgs/Homebrew/discussions/4154
+  # see https:github.comorgsHomebrewdiscussions4154
   deprecate! date: "2023-05-15", because: :unmaintained
 
   depends_on "autoconf" => :build
@@ -33,14 +33,14 @@ class Cdparanoia < Formula
   # Patches via MacPorts
   patch do
     on_macos do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/8e0aff2/cdparanoia/osx_interface.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patches8e0aff2cdparanoiaosx_interface.patch"
       sha256 "c4e22315b639535f41afd904188d8cc875e1642fcf59672c8b9ee06fc77e6b68"
     end
   end
 
   patch do
     on_linux do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/bfad134/cdparanoia/linux_fpic.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patchesbfad134cdparanoialinux_fpic.patch"
       sha256 "496f53d21dde7e23f4c9cf1cc28219efcbb5464fe2abbd5a073635279281c9c4"
     end
   end
@@ -56,13 +56,13 @@ class Cdparanoia < Formula
     # RPATH to libexec on Linux must be added so that the linker can find keg-only libraries.
     unless OS.mac?
       ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}"
-      inreplace "paranoia/Makefile.in",
-                "-L ../interface",
-                "-Wl,-rpath,#{Formula["cdparanoia"].libexec} -L ../interface"
+      inreplace "paranoiaMakefile.in",
+                "-L ..interface",
+                "-Wl,-rpath,#{Formula["cdparanoia"].libexec} -L ..interface"
     end
 
     system "autoreconf", "-fiv"
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--libdir=#{libexec}"
     system "make", "all"
@@ -70,6 +70,6 @@ class Cdparanoia < Formula
   end
 
   test do
-    system "#{bin}/cdparanoia", "--version"
+    system "#{bin}cdparanoia", "--version"
   end
 end

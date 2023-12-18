@@ -2,10 +2,10 @@ cask "finicky" do
   version "3.4.0"
   sha256 "da572a168b670d3271e449ac83d55f1d642aa73695ef50da0c022c0f19da925c"
 
-  url "https://ghproxy.com/https://github.com/johnste/finicky/releases/download/v#{version}/Finicky.zip"
+  url "https:github.comjohnstefinickyreleasesdownloadv#{version}Finicky.zip"
   name "Finicky"
   desc "Utility for customizing which browser to start"
-  homepage "https://github.com/johnste/finicky"
+  homepage "https:github.comjohnstefinicky"
 
   livecheck do
     url :url
@@ -16,5 +16,5 @@ cask "finicky" do
 
   app "Finicky.app"
 
-  zap trash: "~/Library/Preferences/net.kassett.finicky.plist"
+  zap trash: "~LibraryPreferencesnet.kassett.finicky.plist"
 end

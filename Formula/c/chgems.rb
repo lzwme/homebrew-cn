@@ -1,10 +1,10 @@
 class Chgems < Formula
   desc "Chroot for Ruby gems"
-  homepage "https://github.com/postmodern/chgems#readme"
-  url "https://ghproxy.com/https://github.com/postmodern/chgems/archive/refs/tags/v0.3.2.tar.gz"
+  homepage "https:github.compostmodernchgems#readme"
+  url "https:github.compostmodernchgemsarchiverefstagsv0.3.2.tar.gz"
   sha256 "515d1bfebb5d5183a41a502884e329fd4c8ddccb14ba8a6548a1f8912013f3dd"
   license "MIT"
-  head "https://github.com/postmodern/chgems.git", branch: "master"
+  head "https:github.compostmodernchgems.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "37e35e913e37a9a68c1b51951ff0ce8adcf7a5422b73e5d1f8e8be46c15ed0fa"
@@ -27,7 +27,7 @@ class Chgems < Formula
   end
 
   test do
-    output = shell_output("#{bin}/chgems . gem env")
+    output = shell_output("#{bin}chgems . gem env")
     assert_match "rubygems.org", output
   end
 end

@@ -1,8 +1,8 @@
 class Gitversion < Formula
   desc "Easy semantic versioning for projects using Git"
-  homepage "https://gitversion.net"
+  homepage "https:gitversion.net"
   # TODO: Switch `dotnet@6` to `dotnet` with v6 release
-  url "https://ghproxy.com/https://github.com/GitTools/GitVersion/archive/refs/tags/5.12.0.tar.gz"
+  url "https:github.comGitToolsGitVersionarchiverefstags5.12.0.tar.gz"
   sha256 "fe2ecbd2d63a4458f19eb9f0ee6853b5041e8b2f6d7c75b0fa606be2d1a81476"
   license "MIT"
 
@@ -34,21 +34,21 @@ class Gitversion < Formula
     ]
     args << "-p:OsxArm64=true" if OS.mac? && Hardware::CPU.arm?
 
-    system "dotnet", "publish", "src/GitVersion.App/GitVersion.App.csproj", *args
+    system "dotnet", "publish", "srcGitVersion.AppGitVersion.App.csproj", *args
     env = { DOTNET_ROOT: "${DOTNET_ROOT:-#{dotnet.opt_libexec}}" }
-    (bin/"gitversion").write_env_script libexec/"gitversion", env
+    (bin"gitversion").write_env_script libexec"gitversion", env
   end
 
   test do
     # Circumvent GitVersion's build server detection scheme:
     ENV["GITHUB_ACTIONS"] = nil
 
-    (testpath/"test.txt").write("test")
+    (testpath"test.txt").write("test")
     system "git", "init"
     system "git", "config", "user.name", "Test"
     system "git", "config", "user.email", "test@example.com"
     system "git", "add", "test.txt"
     system "git", "commit", "-q", "--message='Test'"
-    assert_match '"FullSemVer": "0.1.0+0"', shell_output("#{bin}/gitversion -output json")
+    assert_match '"FullSemVer": "0.1.0+0"', shell_output("#{bin}gitversion -output json")
   end
 end

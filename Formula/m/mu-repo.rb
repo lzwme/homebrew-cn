@@ -1,7 +1,7 @@
 class MuRepo < Formula
   desc "Tool to work with multiple git repositories"
-  homepage "https://github.com/fabioz/mu-repo"
-  url "https://files.pythonhosted.org/packages/fc/3f/46e5e7a3445a46197335e769bc3bf7933b94f2fe7207cc636c15fb98ba70/mu_repo-1.8.2.tar.gz"
+  homepage "https:github.comfabiozmu-repo"
+  url "https:files.pythonhosted.orgpackagesfc3f46e5e7a3445a46197335e769bc3bf7933b94f2fe7207cc636c15fb98ba70mu_repo-1.8.2.tar.gz"
   sha256 "1394e8fa05eb23efb5b1cf54660470aba6f443a35719082595d8a8b9d39b3592"
   license "GPL-3.0-only"
 
@@ -30,7 +30,7 @@ class MuRepo < Formula
   end
 
   test do
-    assert_empty shell_output("#{bin}/mu group add test --empty")
-    assert_match "* test", shell_output("#{bin}/mu group")
+    assert_empty shell_output("#{bin}mu group add test --empty")
+    assert_match "* test", shell_output("#{bin}mu group")
   end
 end

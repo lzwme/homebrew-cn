@@ -2,12 +2,12 @@ cask "font-tangerine" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tangerine"
+      only_path: "ofltangerine"
   name "Tangerine"
-  homepage "https://fonts.google.com/specimen/Tangerine"
+  homepage "https:fonts.google.comspecimenTangerine"
 
   font "Tangerine-Bold.ttf"
   font "Tangerine-Regular.ttf"

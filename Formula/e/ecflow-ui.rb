@@ -1,13 +1,13 @@
 class EcflowUi < Formula
-  desc "User interface for client/server workflow package"
-  homepage "https://confluence.ecmwf.int/display/ECFLOW"
-  url "https://confluence.ecmwf.int/download/attachments/8650755/ecFlow-5.11.4-Source.tar.gz"
+  desc "User interface for clientserver workflow package"
+  homepage "https:confluence.ecmwf.intdisplayECFLOW"
+  url "https:confluence.ecmwf.intdownloadattachments8650755ecFlow-5.11.4-Source.tar.gz"
   sha256 "4836a876277c9a65a47a3dc87cae116c3009699f8a25bab4e3afabf160bcf212"
   license "Apache-2.0"
 
   livecheck do
-    url "https://confluence.ecmwf.int/display/ECFLOW/Releases"
-    regex(/href=.*?ecFlow[._-]v?(\d+(?:\.\d+)+)[._-]Source\.t/i)
+    url "https:confluence.ecmwf.intdisplayECFLOWReleases"
+    regex(href=.*?ecFlow[._-]v?(\d+(?:\.\d+)+)[._-]Source\.ti)
   end
 
   bottle do
@@ -29,9 +29,9 @@ class EcflowUi < Formula
   fails_with gcc: "5"
 
   # Fixes a typo in upstream's code. Remove once merged and released.
-  # PR ref: https://github.com/ecmwf/ecflow/pull/35
+  # PR ref: https:github.comecmwfecflowpull35
   patch do
-    url "https://github.com/ecmwf/ecflow/commit/5bf5f8490f3ba0a39c9119ba03f8a9b349f6c3ec.patch?full_index=1"
+    url "https:github.comecmwfecflowcommit5bf5f8490f3ba0a39c9119ba03f8a9b349f6c3ec.patch?full_index=1"
     sha256 "747e7d8bfb84e3e60c7775a58607bdbf666d83b9c3cc544dc79bbf9ff3e2922b"
   end
 
@@ -53,12 +53,12 @@ class EcflowUi < Formula
   test do
     # check that the binary runs and that it can read its config and picks up the
     # correct version number from it
-    binary_version_out = shell_output("#{bin}/ecflow_ui.x --version")
+    binary_version_out = shell_output("#{bin}ecflow_ui.x --version")
     assert_match @version.to_s, binary_version_out
 
     #  check that the startup script runs
-    system "#{bin}/ecflow_ui", "-h"
-    help_out = shell_output("#{bin}/ecflow_ui -h")
+    system "#{bin}ecflow_ui", "-h"
+    help_out = shell_output("#{bin}ecflow_ui -h")
     assert_match "ecFlowUI", help_out
     assert_match "fontsize", help_out
     assert_match "start with the specified configuration directory", help_out

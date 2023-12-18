@@ -1,7 +1,7 @@
 class Imath < Formula
   desc "Library of 2D and 3D vector, matrix, and math operations"
-  homepage "https://www.openexr.com/"
-  url "https://ghproxy.com/https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v3.1.9.tar.gz"
+  homepage "https:www.openexr.com"
+  url "https:github.comAcademySoftwareFoundationImatharchiverefstagsv3.1.9.tar.gz"
   sha256 "f1d8aacd46afed958babfced3190d2d3c8209b66da451f556abd6da94c165cf3"
   license "BSD-3-Clause"
 
@@ -20,8 +20,8 @@ class Imath < Formula
   depends_on "cmake" => :build
 
   # These used to be provided by `ilmbase`
-  link_overwrite "lib/libImath.dylib"
-  link_overwrite "lib/libImath.so"
+  link_overwrite "liblibImath.dylib"
+  link_overwrite "liblibImath.so"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -30,7 +30,7 @@ class Imath < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~'EOS'
+    (testpath"test.cpp").write <<~'EOS'
       #include <ImathRoots.h>
       #include <algorithm>
       #include <iostream>
@@ -46,7 +46,7 @@ class Imath < Formula
         std::cout << n << ", " << x[0] << ", " << x[1] << "\n";
       }
     EOS
-    system ENV.cxx, "-std=c++11", "-I#{include}/Imath", "-o", testpath/"test", "test.cpp"
-    assert_equal "2, -2, -1\n", shell_output("./test")
+    system ENV.cxx, "-std=c++11", "-I#{include}Imath", "-o", testpath"test", "test.cpp"
+    assert_equal "2, -2, -1\n", shell_output(".test")
   end
 end

@@ -1,11 +1,11 @@
 cask "font-iosevka" do
-  version "28.0.0"
-  sha256 "ac41fc18fbdf29e8bb45b8cf5ee316acd86fcf3d1898d60184c8f4d1d0ba8ff2"
+  version "28.0.1"
+  sha256 "66348ffaaa97d896a38c9a92810f3ec1103d7348d601a9a7f313f131041909c0"
 
-  url "https://ghproxy.com/https://github.com/be5invis/Iosevka/releases/download/v#{version}/PkgTTC-Iosevka-#{version}.zip"
+  url "https:github.combe5invisIosevkareleasesdownloadv#{version}PkgTTC-Iosevka-#{version}.zip"
   name "Iosevka"
   desc "Sans-serif, slab-serif, monospace and quasi‑proportional typeface family"
-  homepage "https://github.com/be5invis/Iosevka/"
+  homepage "https:github.combe5invisIosevka"
 
   livecheck do
     url :url
@@ -13,13 +13,13 @@ cask "font-iosevka" do
   end
 
   font "Iosevka-Bold.ttc"
-  font "Iosevka-Extrabold.ttc"
-  font "Iosevka-Extralight.ttc"
+  font "Iosevka-ExtraBold.ttc"
+  font "Iosevka-ExtraLight.ttc"
   font "Iosevka-Heavy.ttc"
   font "Iosevka-Light.ttc"
   font "Iosevka-Medium.ttc"
   font "Iosevka-Regular.ttc"
-  font "Iosevka-Semibold.ttc"
+  font "Iosevka-SemiBold.ttc"
   font "Iosevka-Thin.ttc"
 
   # No zap stanza required

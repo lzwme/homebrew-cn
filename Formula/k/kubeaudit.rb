@@ -1,10 +1,10 @@
 class Kubeaudit < Formula
   desc "Helps audit your Kubernetes clusters against common security controls"
-  homepage "https://github.com/Shopify/kubeaudit"
-  url "https://ghproxy.com/https://github.com/Shopify/kubeaudit/archive/refs/tags/v0.22.1.tar.gz"
+  homepage "https:github.comShopifykubeaudit"
+  url "https:github.comShopifykubeauditarchiverefstagsv0.22.1.tar.gz"
   sha256 "0cb5659b8fb22b07e7cdea3ca5b6c46ca6f8e6d02204577d713fcfb0f67b7a05"
   license "MIT"
-  head "https://github.com/Shopify/kubeaudit.git", branch: "main"
+  head "https:github.comShopifykubeaudit.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb4d609b1f2a416a8fb34a4977993fe03b271869a8a6e9795d06d6c6c4a21024"
@@ -21,17 +21,17 @@ class Kubeaudit < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/Shopify/kubeaudit/cmd.Version=#{version}
-      -X github.com/Shopify/kubeaudit/cmd.BuildDate=#{time.strftime("%F")}
+      -X github.comShopifykubeauditcmd.Version=#{version}
+      -X github.comShopifykubeauditcmd.BuildDate=#{time.strftime("%F")}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmd"
 
-    generate_completions_from_executable(bin/"kubeaudit", "completion")
+    generate_completions_from_executable(bin"kubeaudit", "completion")
   end
 
   test do
-    output = shell_output(bin/"kubeaudit --kubeconfig /some-file-that-does-not-exist all 2>&1", 1).chomp
-    assert_match "failed to open kubeconfig file /some-file-that-does-not-exist", output
+    output = shell_output(bin"kubeaudit --kubeconfig some-file-that-does-not-exist all 2>&1", 1).chomp
+    assert_match "failed to open kubeconfig file some-file-that-does-not-exist", output
   end
 end

@@ -1,14 +1,14 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
-  homepage "https://www.openttd.org/"
-  url "https://cdn.openttd.org/openttd-releases/13.4/openttd-13.4-source.tar.xz"
+  homepage "https:www.openttd.org"
+  url "https:cdn.openttd.orgopenttd-releases13.4openttd-13.4-source.tar.xz"
   sha256 "2a1deba01bfe58e2188879f450c3fa4f3819271ab49bf348dd66545f040d146f"
   license "GPL-2.0-only"
-  head "https://github.com/OpenTTD/OpenTTD.git", branch: "master"
+  head "https:github.comOpenTTDOpenTTD.git", branch: "master"
 
   livecheck do
-    url "https://cdn.openttd.org/openttd-releases/latest.yaml"
-    regex(/version:\s*?v?(\d+(?:\.\d+)+)/i)
+    url "https:cdn.openttd.orgopenttd-releaseslatest.yaml"
+    regex(version:\s*?v?(\d+(?:\.\d+)+)i)
   end
 
   bottle do
@@ -44,38 +44,38 @@ class Openttd < Formula
   fails_with gcc: "5"
 
   resource "opengfx" do
-    url "https://cdn.openttd.org/opengfx-releases/7.1/opengfx-7.1-all.zip"
+    url "https:cdn.openttd.orgopengfx-releases7.1opengfx-7.1-all.zip"
     sha256 "928fcf34efd0719a3560cbab6821d71ce686b6315e8825360fba87a7a94d7846"
 
     livecheck do
-      url "https://cdn.openttd.org/opengfx-releases/latest.yaml"
-      regex(/version:\s*?v?(\d+(?:\.\d+)+)/i)
+      url "https:cdn.openttd.orgopengfx-releaseslatest.yaml"
+      regex(version:\s*?v?(\d+(?:\.\d+)+)i)
     end
   end
 
   resource "openmsx" do
-    url "https://cdn.openttd.org/openmsx-releases/0.4.2/openmsx-0.4.2-all.zip"
+    url "https:cdn.openttd.orgopenmsx-releases0.4.2openmsx-0.4.2-all.zip"
     sha256 "5a4277a2e62d87f2952ea5020dc20fb2f6ffafdccf9913fbf35ad45ee30ec762"
 
     livecheck do
-      url "https://cdn.openttd.org/openmsx-releases/latest.yaml"
-      regex(/version:\s*?v?(\d+(?:\.\d+)+)/i)
+      url "https:cdn.openttd.orgopenmsx-releaseslatest.yaml"
+      regex(version:\s*?v?(\d+(?:\.\d+)+)i)
     end
   end
 
   resource "opensfx" do
-    url "https://cdn.openttd.org/opensfx-releases/1.0.3/opensfx-1.0.3-all.zip"
+    url "https:cdn.openttd.orgopensfx-releases1.0.3opensfx-1.0.3-all.zip"
     sha256 "e0a218b7dd9438e701503b0f84c25a97c1c11b7c2f025323fb19d6db16ef3759"
 
     livecheck do
-      url "https://cdn.openttd.org/opensfx-releases/latest.yaml"
-      regex(/version:\s*?v?(\d+(?:\.\d+)+)/i)
+      url "https:cdn.openttd.orgopensfx-releaseslatest.yaml"
+      regex(version:\s*?v?(\d+(?:\.\d+)+)i)
     end
   end
 
   def install
     # Disable CMake fixup_bundle to prevent copying dylibs
-    inreplace "cmake/PackageBundle.cmake", "fixup_bundle(", "# \\0"
+    inreplace "cmakePackageBundle.cmake", "fixup_bundle(", "# \\0"
 
     args = std_cmake_args
     unless OS.mac?
@@ -94,22 +94,22 @@ class Openttd < Formula
     end
 
     arch = Hardware::CPU.arm? ? "arm64" : "amd64"
-    app = "build/_CPack_Packages/#{arch}/Bundle/openttd-#{version}-macos-#{arch}/OpenTTD.app"
+    app = "build_CPack_Packages#{arch}Bundleopenttd-#{version}-macos-#{arch}OpenTTD.app"
     resources.each do |r|
       if OS.mac?
-        (buildpath/"#{app}/Contents/Resources/baseset/#{r.name}").install r
+        (buildpath"#{app}ContentsResourcesbaseset#{r.name}").install r
       else
-        (pkgshare/"baseset"/r.name).install r
+        (pkgshare"baseset"r.name).install r
       end
     end
 
     if OS.mac?
       prefix.install app
-      bin.write_exec_script "#{prefix}/OpenTTD.app/Contents/MacOS/openttd"
+      bin.write_exec_script "#{prefix}OpenTTD.appContentsMacOSopenttd"
     end
   end
 
   test do
-    assert_match "OpenTTD #{version}\n", shell_output("#{bin}/openttd -h")
+    assert_match "OpenTTD #{version}\n", shell_output("#{bin}openttd -h")
   end
 end

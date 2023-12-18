@@ -1,10 +1,10 @@
 class Libfreenect < Formula
   desc "Drivers and libraries for the Xbox Kinect device"
-  homepage "https://openkinect.org/"
-  url "https://ghproxy.com/https://github.com/OpenKinect/libfreenect/archive/refs/tags/v0.7.0.tar.gz"
+  homepage "https:openkinect.org"
+  url "https:github.comOpenKinectlibfreenectarchiverefstagsv0.7.0.tar.gz"
   sha256 "adbfc6e7ce72f77cccb3341807a1e2cc6fe2ee62e1bc4d70a6c9b05fac83fe8f"
   license any_of: ["Apache-2.0", "GPL-2.0-only"]
-  head "https://github.com/OpenKinect/libfreenect.git", branch: "master"
+  head "https:github.comOpenKinectlibfreenect.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "fdd9e58ec7fee1c96b631972651db11b4386ccf9ac8e9ba54c41dd30a5df5102"
@@ -30,6 +30,6 @@ class Libfreenect < Formula
   end
 
   test do
-    system bin/"fakenect-record", "-h"
+    system bin"fakenect-record", "-h"
   end
 end

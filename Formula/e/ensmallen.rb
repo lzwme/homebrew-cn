@@ -1,10 +1,10 @@
 class Ensmallen < Formula
   desc "Flexible C++ library for efficient mathematical optimization"
-  homepage "https://ensmallen.org"
-  url "https://ghproxy.com/https://github.com/mlpack/ensmallen/archive/refs/tags/2.21.0.tar.gz"
+  homepage "https:ensmallen.org"
+  url "https:github.commlpackensmallenarchiverefstags2.21.0.tar.gz"
   sha256 "076f9d84e1ebc84c0ae19ee63accfc8fd3ec850f8993784bd9277776c3af2932"
   license "BSD-3-Clause"
-  head "https://github.com/mlpack/ensmallen.git", branch: "master"
+  head "https:github.commlpackensmallen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "38946e793cc9a23f4de65d1cf3cdd4ffc2c2acd46148233fef8f963127d68eea"
@@ -21,7 +21,7 @@ class Ensmallen < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <ensmallen.hpp>
       using namespace ens;
       int main()

@@ -1,14 +1,14 @@
 class Scummvm < Formula
   desc "Graphic adventure game interpreter"
-  homepage "https://www.scummvm.org/"
-  url "https://downloads.scummvm.org/frs/scummvm/2.7.1/scummvm-2.7.1.tar.xz"
+  homepage "https:www.scummvm.org"
+  url "https:downloads.scummvm.orgfrsscummvm2.7.1scummvm-2.7.1.tar.xz"
   sha256 "d6bbf62e33154759a609d59f3034d71652ecdb64ed5c800156718ab1f1d5d063"
   license "GPL-3.0-or-later"
-  head "https://github.com/scummvm/scummvm.git", branch: "master"
+  head "https:github.comscummvmscummvm.git", branch: "master"
 
   livecheck do
-    url "https://www.scummvm.org/downloads/"
-    regex(/href=.*?scummvm[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.scummvm.orgdownloads"
+    regex(href=.*?scummvm[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -37,19 +37,19 @@ class Scummvm < Formula
   depends_on "theora"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--enable-release",
                           "--with-sdl-prefix=#{Formula["sdl2"].opt_prefix}"
     system "make"
     system "make", "install"
-    (share/"pixmaps").rmtree
-    (share/"icons").rmtree
+    (share"pixmaps").rmtree
+    (share"icons").rmtree
   end
 
   test do
     # Use dummy driver to avoid issues with headless CI
     ENV["SDL_VIDEODRIVER"] = "dummy"
     ENV["SDL_AUDIODRIVER"] = "dummy"
-    system bin/"scummvm", "-v"
+    system bin"scummvm", "-v"
   end
 end

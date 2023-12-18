@@ -1,7 +1,7 @@
 class TbbAT2020 < Formula
   desc "Rich and complete approach to parallelism in C++"
-  homepage "https://github.com/oneapi-src/oneTBB"
-  url "https://ghproxy.com/https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2020.3.tar.gz"
+  homepage "https:github.comoneapi-srconeTBB"
+  url "https:github.comoneapi-srconeTBBarchiverefstagsv2020.3.tar.gz"
   version "2020_U3"
   sha256 "ebc4f6aa47972daed1f7bf71d100ae5bf6931c2e3144cf299c8cc7d041dca2f3"
   license "Apache-2.0"
@@ -27,44 +27,44 @@ class TbbAT2020 < Formula
   depends_on "python@3.9"
 
   # Remove when upstream fix is released
-  # https://github.com/oneapi-src/oneTBB/pull/258
+  # https:github.comoneapi-srconeTBBpull258
   patch do
-    url "https://github.com/oneapi-src/oneTBB/commit/86f6dcdc17a8f5ef2382faaef860cfa5243984fe.patch?full_index=1"
+    url "https:github.comoneapi-srconeTBBcommit86f6dcdc17a8f5ef2382faaef860cfa5243984fe.patch?full_index=1"
     sha256 "d62cb666de4010998c339cde6f41c7623a07e9fc69e498f2e149821c0c2c6dd0"
   end
 
   def install
     compiler = (ENV.compiler == :clang) ? "clang" : "gcc"
     system "make", "tbb_build_prefix=BUILDPREFIX", "compiler=#{compiler}"
-    lib.install Dir["build/BUILDPREFIX_release/#{shared_library("*")}"]
+    lib.install Dir["buildBUILDPREFIX_release#{shared_library("*")}"]
 
     # Build and install static libraries
     system "make", "tbb_build_prefix=BUILDPREFIX", "compiler=#{compiler}",
                    "extra_inc=big_iron.inc"
-    lib.install Dir["build/BUILDPREFIX_release/*.a"]
-    include.install "include/tbb"
+    lib.install Dir["buildBUILDPREFIX_release*.a"]
+    include.install "includetbb"
 
     cd "python" do
       ENV["TBBROOT"] = prefix
       if OS.linux?
         system "make", "-C", "rml", "compiler=#{compiler}", "CPATH=#{include}"
-        lib.install Dir["rml/libirml.so*"]
+        lib.install Dir["rmllibirml.so*"]
       end
-      system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+      system Formula["python@3.9"].opt_bin"python3", *Language::Python.setup_install_args(prefix)
     end
 
     system "cmake", *std_cmake_args,
-                    "-DINSTALL_DIR=lib/cmake/TBB",
+                    "-DINSTALL_DIR=libcmakeTBB",
                     "-DSYSTEM_NAME=#{OS.kernel_name}",
-                    "-DTBB_VERSION_FILE=#{include}/tbb/tbb_stddef.h",
-                    "-P", "cmake/tbb_config_installer.cmake"
+                    "-DTBB_VERSION_FILE=#{include}tbbtbb_stddef.h",
+                    "-P", "cmaketbb_config_installer.cmake"
 
-    (lib/"cmake"/"TBB").install Dir["lib/cmake/TBB/*.cmake"]
+    (lib"cmake""TBB").install Dir["libcmakeTBB*.cmake"]
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <tbb/task_scheduler_init.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <tbbtask_scheduler_init.h>
       #include <iostream>
 
       int main()
@@ -74,6 +74,6 @@ class TbbAT2020 < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-I#{include}", "-ltbb", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

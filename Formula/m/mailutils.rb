@@ -1,8 +1,8 @@
 class Mailutils < Formula
   desc "Swiss Army knife of email handling"
-  homepage "https://mailutils.org/"
-  url "https://ftp.gnu.org/gnu/mailutils/mailutils-3.16.tar.gz"
-  mirror "https://ftpmirror.gnu.org/mailutils/mailutils-3.16.tar.gz"
+  homepage "https:mailutils.org"
+  url "https:ftp.gnu.orggnumailutilsmailutils-3.16.tar.gz"
+  mirror "https:ftpmirror.gnu.orgmailutilsmailutils-3.16.tar.gz"
   sha256 "a034af5f02c7376da7dd3251bbc23f01001b22556450aaffe61e2bcab1b60fef"
   license "GPL-3.0-or-later"
 
@@ -27,18 +27,18 @@ class Mailutils < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     # This is hardcoded to be owned by `root`, but we have no privileges on installation.
-    inreplace buildpath.glob("dotlock/Makefile.*") do |s|
+    inreplace buildpath.glob("dotlockMakefile.*") do |s|
       s.gsub! "chown root:mail", "true"
       s.gsub! "chmod 2755", "chmod 755"
     end
 
-    system "./configure", "--disable-mh",
+    system ".configure", "--disable-mh",
                           "--prefix=#{prefix}",
                           "--without-fribidi",
                           "--without-gdbm",
@@ -48,6 +48,6 @@ class Mailutils < Formula
   end
 
   test do
-    system "#{bin}/movemail", "--version"
+    system "#{bin}movemail", "--version"
   end
 end

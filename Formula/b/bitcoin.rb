@@ -1,14 +1,14 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
-  homepage "https://bitcoincore.org/"
-  url "https://bitcoincore.org/bin/bitcoin-core-25.1/bitcoin-25.1.tar.gz"
+  homepage "https:bitcoincore.org"
+  url "https:bitcoincore.orgbinbitcoin-core-25.1bitcoin-25.1.tar.gz"
   sha256 "bec2a598d8dfa8c2365b77f13012a733ec84b8c30386343b7ac1996e901198c9"
   license "MIT"
-  head "https://github.com/bitcoin/bitcoin.git", branch: "master"
+  head "https:github.combitcoinbitcoin.git", branch: "master"
 
   livecheck do
-    url "https://bitcoincore.org/en/download/"
-    regex(/latest version.*?v?(\d+(?:\.\d+)+)/i)
+    url "https:bitcoincore.orgendownload"
+    regex(latest version.*?v?(\d+(?:\.\d+)+)i)
   end
 
   bottle do
@@ -26,8 +26,8 @@ class Bitcoin < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   # berkeley db should be kept at version 4
-  # https://github.com/bitcoin/bitcoin/blob/master/doc/build-osx.md
-  # https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md
+  # https:github.combitcoinbitcoinblobmasterdocbuild-osx.md
+  # https:github.combitcoinbitcoinblobmasterdocbuild-unix.md
   depends_on "berkeley-db@4"
   depends_on "boost"
   depends_on "libevent"
@@ -47,27 +47,27 @@ class Bitcoin < Formula
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args,
+    system ".autogen.sh"
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}"
     system "make", "install"
-    pkgshare.install "share/rpcauth"
+    pkgshare.install "sharerpcauth"
   end
 
   service do
-    run opt_bin/"bitcoind"
+    run opt_bin"bitcoind"
   end
 
   test do
-    system "#{bin}/test_bitcoin"
+    system "#{bin}test_bitcoin"
 
     # Test that we're using the right version of `berkeley-db`.
     port = free_port
-    bitcoind = spawn bin/"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}"
+    bitcoind = spawn bin"bitcoind", "-regtest", "-rpcport=#{port}", "-listen=0", "-datadir=#{testpath}"
     sleep 15
     # This command will fail if we have too new a version.
-    system bin/"bitcoin-cli", "-regtest", "-datadir=#{testpath}", "-rpcport=#{port}",
+    system bin"bitcoin-cli", "-regtest", "-datadir=#{testpath}", "-rpcport=#{port}",
                               "createwallet", "test-wallet", "false", "false", "", "false", "false"
   ensure
     Process.kill "TERM", bitcoind

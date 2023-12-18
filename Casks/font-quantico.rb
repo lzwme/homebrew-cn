@@ -2,12 +2,12 @@ cask "font-quantico" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/quantico"
+      only_path: "oflquantico"
   name "Quantico"
-  homepage "https://fonts.google.com/specimen/Quantico"
+  homepage "https:fonts.google.comspecimenQuantico"
 
   font "Quantico-Bold.ttf"
   font "Quantico-BoldItalic.ttf"

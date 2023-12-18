@@ -1,13 +1,13 @@
 class Latex2html < Formula
   desc "LaTeX-to-HTML translator"
-  homepage "https://www.latex2html.org"
-  url "https://ghproxy.com/https://github.com/latex2html/latex2html/archive/refs/tags/v2023.2.tar.gz"
+  homepage "https:www.latex2html.org"
+  url "https:github.comlatex2htmllatex2htmlarchiverefstagsv2023.2.tar.gz"
   sha256 "2a3f50621a71c9c0c425fb6709ae69bb2cf4df4bfe72ac661c2ea302e5aba185"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)*)$/i)
+    regex(^v?(\d+(?:\.\d+)*)$i)
   end
 
   bottle do
@@ -26,14 +26,14 @@ class Latex2html < Formula
   depends_on "netpbm"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--without-mktexlsr",
-                          "--with-texpath=#{share}/texmf/tex/latex/html"
+                          "--with-texpath=#{share}texmftexlatexhtml"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.tex").write <<~EOS
+    (testpath"test.tex").write <<~EOS
       \\documentclass{article}
       \\usepackage[utf8]{inputenc}
       \\title{Experimental Setup}
@@ -42,7 +42,7 @@ class Latex2html < Formula
       \\maketitle
       \\end{document}
     EOS
-    system "#{bin}/latex2html", "test.tex"
-    assert_match "Experimental Setup", File.read("test/test.html")
+    system "#{bin}latex2html", "test.tex"
+    assert_match "Experimental Setup", File.read("testtest.html")
   end
 end

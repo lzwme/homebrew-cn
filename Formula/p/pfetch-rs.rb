@@ -1,10 +1,10 @@
 class PfetchRs < Formula
   desc "Pretty system information tool written in Rust"
-  homepage "https://github.com/Gobidev/pfetch-rs"
-  url "https://ghproxy.com/https://github.com/Gobidev/pfetch-rs/archive/refs/tags/v2.8.1.tar.gz"
+  homepage "https:github.comGobidevpfetch-rs"
+  url "https:github.comGobidevpfetch-rsarchiverefstagsv2.8.1.tar.gz"
   sha256 "f3ae46062d2d9dc928433b32000c08954df89b731b7f72a764aa9a97cac8594e"
   license "MIT"
-  head "https://github.com/Gobidev/pfetch-rs.git", branch: "main"
+  head "https:github.comGobidevpfetch-rs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9da9655d70408761e5aa924baf03a3852652a27edcf298fd51dc10762ed44808"
@@ -23,6 +23,6 @@ class PfetchRs < Formula
   end
 
   test do
-    assert_match "uptime", shell_output("#{bin}/pfetch")
+    assert_match "uptime", shell_output("#{bin}pfetch")
   end
 end

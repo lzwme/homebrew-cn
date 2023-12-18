@@ -4,15 +4,15 @@ cask "multipass" do
 
   on_arm do
     postflight do
-      File.symlink("/Library/Application Support/com.canonical.multipass/Resources/completions/bash/multipass",
-                   "#{HOMEBREW_PREFIX}/etc/bash_completion.d/multipass")
+      File.symlink("LibraryApplication Supportcom.canonical.multipassResourcescompletionsbashmultipass",
+                   "#{HOMEBREW_PREFIX}etcbash_completion.dmultipass")
     end
   end
 
-  url "https://ghproxy.com/https://github.com/canonical/multipass/releases/download/v#{version}/multipass-#{version}+mac-Darwin.pkg"
+  url "https:github.comcanonicalmultipassreleasesdownloadv#{version}multipass-#{version}+mac-Darwin.pkg"
   name "Multipass"
   desc "Orchestrates virtual Ubuntu instances"
-  homepage "https://github.com/canonical/multipass/"
+  homepage "https:github.comcanonicalmultipass"
 
   livecheck do
     url :url
@@ -26,18 +26,18 @@ cask "multipass" do
   uninstall launchctl: "com.canonical.multipassd",
             pkgutil:   "com.canonical.multipass.*",
             delete:    [
-              "#{HOMEBREW_PREFIX}/etc/bash_completion.d/multipass",
-              "/Applications/Multipass.app",
-              "/Library/Application Support/com.canonical.multipass",
-              "/Library/Logs/Multipass",
-              "/usr/local/bin/multipass",
-              "/usr/local/etc/bash_completion.d/multipass",
+              "#{HOMEBREW_PREFIX}etcbash_completion.dmultipass",
+              "ApplicationsMultipass.app",
+              "LibraryApplication Supportcom.canonical.multipass",
+              "LibraryLogsMultipass",
+              "usrlocalbinmultipass",
+              "usrlocaletcbash_completion.dmultipass",
             ]
 
   zap trash: [
-    "~/Library/Application Support/multipass",
-    "~/Library/Application Support/multipass-gui",
-    "~/Library/LaunchAgents/com.canonical.multipass.gui.autostart.plist",
-    "~/Library/Preferences/multipass",
+    "~LibraryApplication Supportmultipass",
+    "~LibraryApplication Supportmultipass-gui",
+    "~LibraryLaunchAgentscom.canonical.multipass.gui.autostart.plist",
+    "~LibraryPreferencesmultipass",
   ]
 end

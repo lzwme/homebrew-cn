@@ -1,10 +1,10 @@
 class Fcl < Formula
   desc "Flexible Collision Library"
-  homepage "https://flexible-collision-library.github.io/"
-  url "https://ghproxy.com/https://github.com/flexible-collision-library/fcl/archive/refs/tags/0.7.0.tar.gz"
+  homepage "https:flexible-collision-library.github.io"
+  url "https:github.comflexible-collision-libraryfclarchiverefstags0.7.0.tar.gz"
   sha256 "90409e940b24045987506a6b239424a4222e2daf648c86dd146cbcb692ebdcbc"
   license "BSD-3-Clause"
-  head "https://github.com/flexible-collision-library/fcl.git", branch: "master"
+  head "https:github.comflexible-collision-libraryfcl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "65fc084fe681299eb81a12aadd510c8e490c70e067ebd05de97abb3edffb39e4"
@@ -34,8 +34,8 @@ class Fcl < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <fcl/geometry/shape/box.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <fclgeometryshapebox.h>
       #include <cassert>
 
       int main() {
@@ -44,8 +44,8 @@ class Fcl < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}",
-                    "-I#{Formula["eigen"].include}/eigen3",
+                    "-I#{Formula["eigen"].include}eigen3",
                     "-L#{lib}", "-lfcl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

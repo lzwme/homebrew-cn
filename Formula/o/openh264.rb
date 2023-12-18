@@ -1,10 +1,10 @@
 class Openh264 < Formula
   desc "H.264 codec from Cisco"
-  homepage "https://www.openh264.org/"
-  url "https://ghproxy.com/https://github.com/cisco/openh264/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:www.openh264.org"
+  url "https:github.comciscoopenh264archiverefstagsv2.4.0.tar.gz"
   sha256 "a44d1ccc348a790f9a272bba2d1c2eb9a9bbd0302e4e9b655d709e1c32f92691"
   license "BSD-2-Clause"
-  head "https://github.com/cisco/openh264.git", branch: "master"
+  head "https:github.comciscoopenh264.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "79a53414d694747723a7a5ab644a7f259f2e84d341a8b0c2cc3188b2755cabf5"
@@ -23,8 +23,8 @@ class Openh264 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <wels/codec_api.h>
+    (testpath"test.c").write <<~EOS
+      #include <welscodec_api.h>
       int main() {
         ISVCDecoder *dec;
         WelsCreateDecoder (&dec);
@@ -33,6 +33,6 @@ class Openh264 < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lopenh264", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

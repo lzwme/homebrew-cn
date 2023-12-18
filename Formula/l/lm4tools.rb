@@ -1,7 +1,7 @@
 class Lm4tools < Formula
   desc "Tools for TI Stellaris Launchpad boards"
-  homepage "https://github.com/utzig/lm4tools"
-  url "https://ghproxy.com/https://github.com/utzig/lm4tools/archive/refs/tags/v0.1.3.tar.gz"
+  homepage "https:github.comutziglm4tools"
+  url "https:github.comutziglm4toolsarchiverefstagsv0.1.3.tar.gz"
   sha256 "e8064ace3c424b429b7e0b50e58b467d8ed92962b6a6dfa7f6a39942416b1627"
   license "GPL-2.0"
 
@@ -26,22 +26,22 @@ class Lm4tools < Formula
   depends_on "libusb"
 
   def install
-    # Fix for https://github.com/utzig/lm4tools/issues/32
+    # Fix for https:github.comutziglm4toolsissues32
     libusb = Formula["libusb"]
-    inreplace "lmicdiusb/Makefile",
-              "LIBUSB_CFLAGS := -I/usr/local/include/libusb-1.0",
-              "LIBUSB_CFLAGS := -I#{libusb.opt_include}/libusb-#{libusb.version.major_minor}"
-    inreplace "lmicdiusb/Makefile",
-              "LIBUSB_LIBDIR := /usr/local/lib",
+    inreplace "lmicdiusbMakefile",
+              "LIBUSB_CFLAGS := -Iusrlocalincludelibusb-1.0",
+              "LIBUSB_CFLAGS := -I#{libusb.opt_include}libusb-#{libusb.version.major_minor}"
+    inreplace "lmicdiusbMakefile",
+              "LIBUSB_LIBDIR := usrlocallib",
               "LIBUSB_LIBDIR := #{libusb.opt_lib}"
-    inreplace "lmicdiusb/Makefile",
+    inreplace "lmicdiusbMakefile",
               "lmicdi: lmicdi.o socket.o gdb.o $(LIBUSB_LIBS)",
-              "lmicdi: lmicdi.o socket.o gdb.o #{libusb.opt_lib}/#{shared_library("libusb-1.0")}"
+              "lmicdi: lmicdi.o socket.o gdb.o #{libusb.opt_lib}#{shared_library("libusb-1.0")}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    output = pipe_output("#{bin}/lm4flash - 2>&1", "data", 2)
+    output = pipe_output("#{bin}lm4flash - 2>&1", "data", 2)
     assert_equal "Unable to find any ICDI devices\n", output
   end
 end

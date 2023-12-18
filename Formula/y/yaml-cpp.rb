@@ -1,7 +1,7 @@
 class YamlCpp < Formula
   desc "C++ YAML parser and emitter for YAML 1.2 spec"
-  homepage "https://github.com/jbeder/yaml-cpp"
-  url "https://ghproxy.com/https://github.com/jbeder/yaml-cpp/archive/refs/tags/0.8.0.tar.gz"
+  homepage "https:github.comjbederyaml-cpp"
+  url "https:github.comjbederyaml-cpparchiverefstags0.8.0.tar.gz"
   sha256 "fbe74bbdcee21d656715688706da3c8becfd946d92cd44705cc6098bb23b3a16"
   license "MIT"
 
@@ -26,8 +26,8 @@ class YamlCpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <yaml-cpp/yaml.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <yaml-cppyaml.h>
       int main() {
         YAML::Node node  = YAML::Load("[0, 0, 0]");
         node[0] = 1;
@@ -35,6 +35,6 @@ class YamlCpp < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{lib}", "-lyaml-cpp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class Libva < Formula
   desc "Hardware accelerated video processing library"
-  homepage "https://github.com/intel/libva"
-  url "https://ghproxy.com/https://github.com/intel/libva/releases/download/2.20.0/libva-2.20.0.tar.bz2"
+  homepage "https:github.comintellibva"
+  url "https:github.comintellibvareleasesdownload2.20.0libva-2.20.0.tar.bz2"
   sha256 "f72bdb4f48dfe71ad01f1cbefe069672a2c949a6abd51cf3c4d4784210badc49"
   license "MIT"
 
@@ -23,7 +23,7 @@ class Libva < Formula
   depends_on "wayland"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "--disable-dependency-tracking",
@@ -40,8 +40,8 @@ class Libva < Formula
     %w[libva libva-drm libva-wayland libva-x11].each do |name|
       assert_match "-I#{include}", shell_output("pkg-config --cflags #{name}")
     end
-    (testpath/"test.c").write <<~EOS
-      #include <va/va.h>
+    (testpath"test.c").write <<~EOS
+      #include <vava.h>
       int main(int argc, char *argv[]) {
         VADisplay display;
         vaDisplayIsValid(display);
@@ -49,6 +49,6 @@ class Libva < Formula
       }
     EOS
     system ENV.cc, "test.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lva"
-    system "./test"
+    system ".test"
   end
 end

@@ -5,11 +5,11 @@ cask "netdownloadhelpercoapp" do
   sha256 arm:   "f17c6aa209aeedd893dcef7edf3f6f245a7b12eeb19534a06beb3bc173583035",
          intel: "58c188fbc331c7502229f2e48209675ed91ab983e005ff8e2fbc8f7b038bcfc6"
 
-  url "https://ghproxy.com/https://github.com/mi-g/vdhcoapp/releases/download/v#{version}/vdhcoapp-#{version}-mac-#{arch}-installer.pkg",
-      verified: "github.com/mi-g/vdhcoapp/"
+  url "https:github.commi-gvdhcoappreleasesdownloadv#{version}vdhcoapp-#{version}-mac-#{arch}-installer.pkg",
+      verified: "github.commi-gvdhcoapp"
   name "Video DownloadHelper Companion App"
   desc "Allows video downloads from the Web"
-  homepage "https://www.downloadhelper.net/install-coapp"
+  homepage "https:www.downloadhelper.netinstall-coapp"
 
   livecheck do
     url :url
@@ -20,5 +20,5 @@ cask "netdownloadhelpercoapp" do
 
   uninstall pkgutil: "net.downloadhelper.coapp"
 
-  zap rmdir: "~/dwhelper"
+  zap rmdir: "~dwhelper"
 end

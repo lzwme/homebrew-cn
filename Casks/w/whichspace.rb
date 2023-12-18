@@ -2,10 +2,10 @@ cask "whichspace" do
   version "0.3.2"
   sha256 "8a59e12862af491de4c42413c839426c28dcb2f29138bfa2f45529c079119ce8"
 
-  url "https://ghproxy.com/https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.zip"
+  url "https:github.comgechrWhichSpacereleasesdownloadv#{version}WhichSpace.zip"
   name "WhichSpace"
   desc "Active space menu bar icon"
-  homepage "https://github.com/gechr/WhichSpace"
+  homepage "https:github.comgechrWhichSpace"
 
   auto_updates true
   depends_on macos: ">= :el_capitan"
@@ -15,9 +15,9 @@ cask "whichspace" do
   uninstall quit: "io.gechr.WhichSpace"
 
   zap trash: [
-    "~/Library/Caches/io.gechr.WhichSpace",
-    "~/Library/Cookies/io.gechr.WhichSpace.binarycookies",
-    "~/Library/Preferences/io.gechr.WhichSpace.plist",
-    "~/Library/Saved Application State/io.gechr.WhichSpace.savedState",
+    "~LibraryCachesio.gechr.WhichSpace",
+    "~LibraryCookiesio.gechr.WhichSpace.binarycookies",
+    "~LibraryPreferencesio.gechr.WhichSpace.plist",
+    "~LibrarySaved Application Stateio.gechr.WhichSpace.savedState",
   ]
 end

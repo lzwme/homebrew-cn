@@ -1,9 +1,9 @@
 class Vimpager < Formula
   desc "Use ViM as PAGER"
-  homepage "https://github.com/rkitover/vimpager"
-  url "https://ghproxy.com/https://github.com/rkitover/vimpager/archive/refs/tags/2.06.tar.gz"
+  homepage "https:github.comrkitovervimpager"
+  url "https:github.comrkitovervimpagerarchiverefstags2.06.tar.gz"
   sha256 "cc616d0840a6f2501704eea70de222ab662421f34b2da307e11fb62aa70bda5d"
-  head "https://github.com/rkitover/vimpager.git", branch: "master"
+  head "https:github.comrkitovervimpager.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b414a1f47556bd96038f4314fdcc4a5794c7064990e2b464c951717043c7c0c0"
@@ -37,10 +37,10 @@ class Vimpager < Formula
   end
 
   test do
-    (testpath/"test.txt").write <<~EOS
+    (testpath"test.txt").write <<~EOS
       This is test
     EOS
 
-    assert_match(/This is test/, shell_output("#{bin}/vimcat test.txt"))
+    assert_match(This is test, shell_output("#{bin}vimcat test.txt"))
   end
 end

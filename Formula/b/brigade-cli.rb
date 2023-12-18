@@ -1,15 +1,15 @@
 class BrigadeCli < Formula
   desc "Brigade command-line interface"
-  homepage "https://brigade.sh"
-  url "https://github.com/brigadecore/brigade.git",
+  homepage "https:brigade.sh"
+  url "https:github.combrigadecorebrigade.git",
       tag:      "v2.6.0",
       revision: "e455508e5ec5bb9352e635c179ab44b0bc44c320"
   license "Apache-2.0"
-  head "https://github.com/brigadecore/brigade.git", branch: "main"
+  head "https:github.combrigadecorebrigade.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -35,14 +35,14 @@ class BrigadeCli < Formula
 
     os = Utils.safe_popen_read("go", "env", "GOOS").strip
     arch = Utils.safe_popen_read("go", "env", "GOARCH").strip
-    bin.install "bin/brig-#{os}-#{arch}" => "brig"
+    bin.install "binbrig-#{os}-#{arch}" => "brig"
   end
 
   test do
-    system bin/"brig", "init", "--id", "foo"
-    assert_predicate testpath/".brigade", :directory?
+    system bin"brig", "init", "--id", "foo"
+    assert_predicate testpath".brigade", :directory?
 
-    version_output = shell_output(bin/"brig version 2>&1")
+    version_output = shell_output(bin"brig version 2>&1")
     assert_match "Brigade client:", version_output
 
     return unless build.stable?

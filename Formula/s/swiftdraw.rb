@@ -1,10 +1,10 @@
 class Swiftdraw < Formula
   desc "Convert SVG into PDF, PNG, JPEG or SF Symbol"
-  homepage "https://github.com/swhitty/SwiftDraw"
-  url "https://ghproxy.com/https://github.com/swhitty/SwiftDraw/archive/refs/tags/0.16.2.tar.gz"
+  homepage "https:github.comswhittySwiftDraw"
+  url "https:github.comswhittySwiftDrawarchiverefstags0.16.2.tar.gz"
   sha256 "bd2c5e770363276efb2c6c9f84decaca61327026069758ea08b2a73c28736a7b"
   license "Zlib"
-  head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
+  head "https:github.comswhittySwiftDraw.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94f3e84835305d03f7b9f41b31508d5460d49dbb5972e21895d861cfdd1b55ea"
@@ -21,17 +21,17 @@ class Swiftdraw < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/swiftdraw"
+    bin.install ".buildreleaseswiftdraw"
   end
 
   test do
-    (testpath/"fish.svg").write <<~EOS
+    (testpath"fish.svg").write <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="160" height="160">
-        <path d="m 80 20 a 50 50 0 1 0 50 50 h -50 z" fill="pink" stroke="black" stroke-width="2" transform="rotate(45, 80, 80)"/>
-      </svg>
+      <svg version="1.1" xmlns="http:www.w3.org2000svg" width="160" height="160">
+        <path d="m 80 20 a 50 50 0 1 0 50 50 h -50 z" fill="pink" stroke="black" stroke-width="2" transform="rotate(45, 80, 80)">
+      <svg>
     EOS
-    system bin/"swiftdraw", testpath/"fish.svg", "--format", "sfsymbol"
-    assert_path_exists testpath/"fish-symbol.svg"
+    system bin"swiftdraw", testpath"fish.svg", "--format", "sfsymbol"
+    assert_path_exists testpath"fish-symbol.svg"
   end
 end

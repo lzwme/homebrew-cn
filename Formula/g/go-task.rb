@@ -1,10 +1,10 @@
 class GoTask < Formula
-  desc "Task is a task runner/build tool that aims to be simpler and easier to use"
-  homepage "https://taskfile.dev/"
-  url "https://ghproxy.com/https://github.com/go-task/task/archive/refs/tags/v3.32.0.tar.gz"
+  desc "Task is a task runnerbuild tool that aims to be simpler and easier to use"
+  homepage "https:taskfile.dev"
+  url "https:github.comgo-tasktaskarchiverefstagsv3.32.0.tar.gz"
   sha256 "04666e5f763af99bcf98c6897d726f483165a7ed04801a35ffe1e55f78bbfe2f"
   license "MIT"
-  head "https://github.com/go-task/task.git", branch: "main"
+  head "https:github.comgo-tasktask.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "535fde105a90e6a73e9815f3b0a3e3780ce021501d5c97fb93a7c9fa0735ac9c"
@@ -23,19 +23,19 @@ class GoTask < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/go-task/task/v3/internal/version.version=#{version}
+      -X github.comgo-tasktaskv3internalversion.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"task"), "./cmd/task"
-    bash_completion.install "completion/bash/task.bash" => "task"
-    zsh_completion.install "completion/zsh/_task" => "_task"
-    fish_completion.install "completion/fish/task.fish"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"task"), ".cmdtask"
+    bash_completion.install "completionbashtask.bash" => "task"
+    zsh_completion.install "completionzsh_task" => "_task"
+    fish_completion.install "completionfishtask.fish"
   end
 
   test do
-    str_version = shell_output("#{bin}/task --version")
+    str_version = shell_output("#{bin}task --version")
     assert_match "Task version: #{version}", str_version
 
-    taskfile = testpath/"Taskfile.yml"
+    taskfile = testpath"Taskfile.yml"
     taskfile.write <<~EOS
       version: '3'
 
@@ -50,7 +50,7 @@ class GoTask < Formula
       --silent
     ].join(" ")
 
-    ok_test = shell_output("#{bin}/task #{args} test")
+    ok_test = shell_output("#{bin}task #{args} test")
     assert_match "Testing Taskfile", ok_test
   end
 end

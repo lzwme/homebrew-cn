@@ -1,11 +1,11 @@
 class Soapyrtlsdr < Formula
   desc "SoapySDR RTL-SDR Support Module"
-  homepage "https://github.com/pothosware/SoapyRTLSDR/wiki"
-  url "https://ghproxy.com/https://github.com/pothosware/SoapyRTLSDR/archive/refs/tags/soapy-rtl-sdr-0.3.3.tar.gz"
+  homepage "https:github.compothoswareSoapyRTLSDRwiki"
+  url "https:github.compothoswareSoapyRTLSDRarchiverefstagssoapy-rtl-sdr-0.3.3.tar.gz"
   sha256 "757c3c3bd17c5a12c7168db2f2f0fd274457e65f35e23c5ec9aec34e3ef54ece"
   license "MIT"
   revision 1
-  head "https://github.com/pothosware/SoapyRTLSDR.git", branch: "master"
+  head "https:github.compothoswareSoapyRTLSDR.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "67a24a0b9ea8b7e000cb5b29b9a84048268c31e621a2c406b8d4bcaff94d08d5"
@@ -30,6 +30,6 @@ class Soapyrtlsdr < Formula
 
   test do
     assert_match "Checking driver 'rtlsdr'... PRESENT",
-                 shell_output("#{Formula["soapysdr"].bin}/SoapySDRUtil --check=rtlsdr")
+                 shell_output("#{Formula["soapysdr"].bin}SoapySDRUtil --check=rtlsdr")
   end
 end

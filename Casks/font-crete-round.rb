@@ -2,12 +2,12 @@ cask "font-crete-round" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/creteround"
+      only_path: "oflcreteround"
   name "Crete Round"
-  homepage "https://fonts.google.com/specimen/Crete+Round"
+  homepage "https:fonts.google.comspecimenCrete+Round"
 
   font "CreteRound-Italic.ttf"
   font "CreteRound-Regular.ttf"

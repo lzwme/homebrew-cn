@@ -1,7 +1,7 @@
 class Samtools < Formula
   desc "Tools for manipulating next-generation sequencing data"
-  homepage "https://www.htslib.org/"
-  url "https://ghproxy.com/https://github.com/samtools/samtools/releases/download/1.19/samtools-1.19.tar.bz2"
+  homepage "https:www.htslib.org"
+  url "https:github.comsamtoolssamtoolsreleasesdownload1.19samtools-1.19.tar.bz2"
   sha256 "fa6b3b18e20851b6f3cb55afaf3205d02fcb79dae3b849fcf52e8fc10ff08b83"
   license "MIT"
 
@@ -20,17 +20,17 @@ class Samtools < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--with-htslib=#{Formula["htslib"].opt_prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    system bin/"samtools", "faidx", "test.fasta"
-    assert_equal "U00096.2:1-70\t70\t15\t70\t71\n", (testpath/"test.fasta.fai").read
+    system bin"samtools", "faidx", "test.fasta"
+    assert_equal "U00096.2:1-70\t70\t15\t70\t71\n", (testpath"test.fasta.fai").read
   end
 end

@@ -1,14 +1,14 @@
 class Unnethack < Formula
   desc "Fork of Nethack"
-  homepage "https://unnethack.wordpress.com/"
-  url "https://ghproxy.com/https://github.com/UnNetHack/UnNetHack/archive/refs/tags/5.3.2.tar.gz"
+  homepage "https:unnethack.wordpress.com"
+  url "https:github.comUnNetHackUnNetHackarchiverefstags5.3.2.tar.gz"
   sha256 "a32a2c0e758eb91842033d53d43f718f3bc719a346e993d9b23bac06f0ac9004"
   license "NGPL"
-  head "https://github.com/UnNetHack/UnNetHack.git", branch: "master"
+  head "https:github.comUnNetHackUnNetHack.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+(?:[._-]\d{6,8})?)$/i)
+    regex(^v?(\d+(?:\.\d+)+(?:[._-]\d{6,8})?)$i)
   end
 
   bottle do
@@ -34,37 +34,37 @@ class Unnethack < Formula
   end
 
   # directory for temporary level data of running games
-  skip_clean "var/unnethack/level"
+  skip_clean "varunnethacklevel"
 
   # Apply upstream commit to fix build with newer bison. Remove with next release.
   patch do
-    url "https://github.com/UnNetHack/UnNetHack/commit/04f0a3a850a94eb8837ddcef31303968240d1c31.patch?full_index=1"
+    url "https:github.comUnNetHackUnNetHackcommit04f0a3a850a94eb8837ddcef31303968240d1c31.patch?full_index=1"
     sha256 "5285dc2e57b378bc77c01879399e2af248ef967977ed50e0c13a80b1993a7081"
   end
 
   # Fix implicit `ioctl` function declaration. Remove with the next release.
   patch do
-    url "https://github.com/UnNetHack/UnNetHack/commit/33a3bb6539452875a88efbf6da0148a1cccc00c1.patch?full_index=1"
+    url "https:github.comUnNetHackUnNetHackcommit33a3bb6539452875a88efbf6da0148a1cccc00c1.patch?full_index=1"
     sha256 "07e1bb472c4f20957dafc6cfc49fcfd3178a5e04fcebf93a4fc7922ec8c0a963"
   end
 
   def install
     # directory for version specific files that shouldn't be deleted when
-    # upgrading/uninstalling
-    version_specific_directory = "#{var}/unnethack/#{version}"
+    # upgradinguninstalling
+    version_specific_directory = "#{var}unnethack#{version}"
 
     args = [
       "--prefix=#{prefix}",
       "--with-owner=#{`id -un`}",
       # common xlogfile for all versions
-      "--enable-xlogfile=#{var}/unnethack/xlogfile",
-      "--with-bonesdir=#{version_specific_directory}/bones",
-      "--with-savesdir=#{version_specific_directory}/saves",
+      "--enable-xlogfile=#{var}unnethackxlogfile",
+      "--with-bonesdir=#{version_specific_directory}bones",
+      "--with-savesdir=#{version_specific_directory}saves",
       "--enable-wizmode=#{`id -un`}",
     ]
     args << "--with-group=admin" if OS.mac?
 
-    system "./configure", *args
+    system ".configure", *args
     ENV.deparallelize # Race condition in make
 
     # disable the `chgrp` calls

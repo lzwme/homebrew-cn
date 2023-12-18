@@ -1,7 +1,7 @@
 class Librsvg < Formula
   desc "Library to render SVG files using Cairo"
-  homepage "https://wiki.gnome.org/Projects/LibRsvg"
-  url "https://download.gnome.org/sources/librsvg/2.57/librsvg-2.57.1.tar.xz"
+  homepage "https:wiki.gnome.orgProjectsLibRsvg"
+  url "https:download.gnome.orgsourceslibrsvg2.57librsvg-2.57.1.tar.xz"
   sha256 "074671a3ed6fbcd67cae2a40e539107f4f097ca8a4ab1a894c05e2524ff340ef"
   license "LGPL-2.1-or-later"
 
@@ -10,7 +10,7 @@ class Librsvg < Formula
   # those are development releases.
   livecheck do
     url :stable
-    regex(/librsvg[._-]v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)\.t/i)
+    regex(librsvg[._-]v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)\.ti)
   end
 
   bottle do
@@ -41,29 +41,29 @@ class Librsvg < Formula
       --enable-introspection=yes
     ]
 
-    system "./configure", *args
+    system ".configure", *args
 
     # disable updating gdk-pixbuf cache, we will do this manually in post_install
-    # https://github.com/Homebrew/homebrew/issues/40833
-    inreplace "gdk-pixbuf-loader/Makefile",
+    # https:github.comHomebrewhomebrewissues40833
+    inreplace "gdk-pixbuf-loaderMakefile",
               "$(GDK_PIXBUF_QUERYLOADERS) > $(DESTDIR)$(gdk_pixbuf_cache_file) ;",
               ""
 
     system "make", "install",
-      "gdk_pixbuf_binarydir=#{lib}/gdk-pixbuf-2.0/2.10.0/loaders",
-      "gdk_pixbuf_moduledir=#{lib}/gdk-pixbuf-2.0/2.10.0/loaders"
+      "gdk_pixbuf_binarydir=#{lib}gdk-pixbuf-2.02.10.0loaders",
+      "gdk_pixbuf_moduledir=#{lib}gdk-pixbuf-2.02.10.0loaders"
   end
 
   def post_install
     # librsvg is not aware GDK_PIXBUF_MODULEDIR must be set
     # set GDK_PIXBUF_MODULEDIR and update loader cache
-    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders"
-    system "#{Formula["gdk-pixbuf"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
+    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}libgdk-pixbuf-2.02.10.0loaders"
+    system "#{Formula["gdk-pixbuf"].opt_bin}gdk-pixbuf-query-loaders", "--update-cache"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <librsvg/rsvg.h>
+    (testpath"test.c").write <<~EOS
+      #include <librsvgrsvg.h>
 
       int main(int argc, char *argv[]) {
         RsvgHandle *handle = rsvg_handle_new();
@@ -79,16 +79,16 @@ class Librsvg < Formula
     libpng = Formula["libpng"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{cairo.opt_include}/cairo
+      -I#{cairo.opt_include}cairo
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/librsvg-2.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{include}librsvg-2.0
+      -I#{libpng.opt_include}libpng16
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{cairo.opt_lib}
       -L#{gdk_pixbuf.opt_lib}
@@ -105,6 +105,6 @@ class Librsvg < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

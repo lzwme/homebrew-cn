@@ -1,10 +1,10 @@
 class Httpdiff < Formula
   desc "Compare two HTTP(S) responses"
-  homepage "https://github.com/jgrahamc/httpdiff"
-  url "https://ghproxy.com/https://github.com/jgrahamc/httpdiff/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:github.comjgrahamchttpdiff"
+  url "https:github.comjgrahamchttpdiffarchiverefstagsv1.0.0.tar.gz"
   sha256 "b2d3ed4c8a31c0b060c61bd504cff3b67cd23f0da8bde00acd1bfba018830f7f"
   license "GPL-2.0"
-  head "https://github.com/jgrahamc/httpdiff.git", branch: "master"
+  head "https:github.comjgrahamchttpdiff.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e8f493a6c29a4edf788d888adc111c2f3727b0a725661f0b62c9934292f1c43"
@@ -27,10 +27,10 @@ class Httpdiff < Formula
 
   def install
     ENV["GO111MODULE"] = "auto"
-    system "go", "build", "-o", bin/"httpdiff"
+    system "go", "build", "-o", bin"httpdiff"
   end
 
   test do
-    system bin/"httpdiff", "https://brew.sh/", "https://brew.sh/"
+    system bin"httpdiff", "https:brew.sh", "https:brew.sh"
   end
 end

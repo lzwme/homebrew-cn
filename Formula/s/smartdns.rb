@@ -1,10 +1,10 @@
 class Smartdns < Formula
-  desc "Rule-based DNS server for fast IP resolution, DoT/DoH/DoQ supported"
-  homepage "https://github.com/mokeyish/smartdns-rs"
-  url "https://ghproxy.com/https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.6.5.tar.gz"
+  desc "Rule-based DNS server for fast IP resolution, DoTDoHDoQ supported"
+  homepage "https:github.commokeyishsmartdns-rs"
+  url "https:github.commokeyishsmartdns-rsarchiverefstags0.6.5.tar.gz"
   sha256 "eabb03adc91a5cc985c4fbbcb64dfaa5bd475051060d6c3540dfd03c8d379f11"
   license "GPL-3.0-only"
-  head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
+  head "https:github.commokeyishsmartdns-rs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b1fdcb11703b1103631f598aae02d429e473097db99445c01f60cb34df97752"
@@ -24,12 +24,12 @@ class Smartdns < Formula
 
   def install
     system "cargo", "install", "--features", "homebrew", *std_cargo_args
-    sbin.install bin/"smartdns"
-    pkgetc.install "etc/smartdns/smartdns.conf"
+    sbin.install bin"smartdns"
+    pkgetc.install "etcsmartdnssmartdns.conf"
   end
 
   service do
-    run [opt_sbin/"smartdns", "run", "-c", etc/"smartdns/smartdns.conf"]
+    run [opt_sbin"smartdns", "run", "-c", etc"smartdnssmartdns.conf"]
     keep_alive true
     require_root true
   end
@@ -37,14 +37,14 @@ class Smartdns < Formula
   test do
     port = free_port
 
-    (testpath/"smartdns.conf").write <<~EOS
+    (testpath"smartdns.conf").write <<~EOS
       bind 127.0.0.1:#{port}
       server 8.8.8.8
       local-ttl 3
-      address /example.com/1.2.3.4
+      address example.com1.2.3.4
     EOS
     fork do
-      exec sbin/"smartdns", "run", "-c", testpath/"smartdns.conf"
+      exec sbin"smartdns", "run", "-c", testpath"smartdns.conf"
     end
     sleep(2)
     output = shell_output("dig @127.0.0.1 -p #{port} example.com.")

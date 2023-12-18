@@ -2,10 +2,10 @@ cask "font-roboto-mono-nerd-font" do
   version "3.1.1"
   sha256 "e84acfb5838ab8636c77a1a3f319e82f7466ee3911dff42be78d086bc5843988"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/RobotoMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}RobotoMono.zip"
   name "RobotoMono Nerd Font (Roboto Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

@@ -1,9 +1,9 @@
 class KnownHosts < Formula
   desc "Command-line manager for known hosts"
-  homepage "https://github.com/markmcconachie/known_hosts"
-  url "https://ghproxy.com/https://github.com/markmcconachie/known_hosts/archive/refs/tags/1.0.0.tar.gz"
+  homepage "https:github.commarkmcconachieknown_hosts"
+  url "https:github.commarkmcconachieknown_hostsarchiverefstags1.0.0.tar.gz"
   sha256 "80a080aa3850af927fd332e5616eaf82e6226d904c96c6949d6034deb397ac63"
-  head "https://github.com/markmcconachie/known_hosts.git", branch: "master"
+  head "https:github.commarkmcconachieknown_hosts.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73c6ecbb88d20e53661a6d9244a811183e100f5d4b9dc6f37329cb3b69eae2c9"
@@ -23,7 +23,7 @@ class KnownHosts < Formula
   end
 
   # upstream issue tracker for license
-  # https://github.com/markmcconachie/known_hosts/issues/7
+  # https:github.commarkmcconachieknown_hostsissues7
   disable! date: "2023-10-13", because: "no license for the project"
 
   depends_on "cmake" => :build
@@ -35,6 +35,6 @@ class KnownHosts < Formula
   end
 
   test do
-    system "#{bin}/known_hosts", "version"
+    system "#{bin}known_hosts", "version"
   end
 end

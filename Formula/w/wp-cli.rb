@@ -1,7 +1,7 @@
 class WpCli < Formula
   desc "Command-line interface for WordPress"
-  homepage "https://wp-cli.org/"
-  url "https://ghproxy.com/https://github.com/wp-cli/wp-cli/releases/download/v2.9.0/wp-cli-2.9.0.phar"
+  homepage "https:wp-cli.org"
+  url "https:github.comwp-cliwp-clireleasesdownloadv2.9.0wp-cli-2.9.0.phar"
   sha256 "af6b7ccc21ed0907cb504db5a059f0e120117905a6017bfdd4375cee3c93d864"
   license "MIT"
 
@@ -22,7 +22,7 @@ class WpCli < Formula
 
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -34,7 +34,7 @@ class WpCli < Formula
   end
 
   test do
-    output = shell_output("#{bin}/wp core download --path=wptest")
+    output = shell_output("#{bin}wp core download --path=wptest")
     assert_match "Success: WordPress downloaded.", output
   end
 end

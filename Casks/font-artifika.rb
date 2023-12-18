@@ -2,10 +2,10 @@ cask "font-artifika" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/artifika/Artifika-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflartifikaArtifika-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Artifika"
-  homepage "https://fonts.google.com/specimen/Artifika"
+  homepage "https:fonts.google.comspecimenArtifika"
 
   font "Artifika-Regular.ttf"
 

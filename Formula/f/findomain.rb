@@ -1,7 +1,7 @@
 class Findomain < Formula
   desc "Cross-platform subdomain enumerator"
-  homepage "https://github.com/Findomain/Findomain"
-  url "https://ghproxy.com/https://github.com/Findomain/Findomain/archive/refs/tags/9.0.4.tar.gz"
+  homepage "https:github.comFindomainFindomain"
+  url "https:github.comFindomainFindomainarchiverefstags9.0.4.tar.gz"
   sha256 "98c142e2e6ed67726bdea7a1726a54fb6773a8d1ccaa262e008804432af29190"
   license "GPL-3.0-or-later"
 
@@ -28,6 +28,6 @@ class Findomain < Formula
   end
 
   test do
-    assert_match "Good luck Hax0r", shell_output("#{bin}/findomain -t brew.sh")
+    assert_match "Good luck Hax0r", shell_output("#{bin}findomain -t brew.sh")
   end
 end

@@ -1,14 +1,14 @@
 class Coq < Formula
   desc "Proof assistant for higher-order logic"
-  homepage "https://coq.inria.fr/"
-  url "https://ghproxy.com/https://github.com/coq/coq/archive/refs/tags/V8.18.0.tar.gz"
+  homepage "https:coq.inria.fr"
+  url "https:github.comcoqcoqarchiverefstagsV8.18.0.tar.gz"
   sha256 "00a18c796a6e154a1f1bac7e1aef9e14107e0295fa4e0a18f10cdea6fc2e840b"
   license "LGPL-2.1-only"
-  head "https://github.com/coq/coq.git", branch: "master"
+  head "https:github.comcoqcoq.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -31,11 +31,11 @@ class Coq < Formula
   uses_from_macos "unzip" => :build
 
   def install
-    ENV.prepend_path "OCAMLPATH", Formula["ocaml-zarith"].opt_lib/"ocaml"
-    ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib/"ocaml"
-    system "./configure", "-prefix", prefix,
+    ENV.prepend_path "OCAMLPATH", Formula["ocaml-zarith"].opt_lib"ocaml"
+    ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib"ocaml"
+    system ".configure", "-prefix", prefix,
                           "-mandir", man,
-                          "-docdir", pkgshare/"latex"
+                          "-docdir", pkgshare"latex"
     system "make", "dunestrap"
     system "dune", "build", "-p", "coq-core,coq-stdlib,coqide-server,coq"
     system "dune", "install", "--prefix=#{prefix}",
@@ -47,7 +47,7 @@ class Coq < Formula
   end
 
   test do
-    (testpath/"testing.v").write <<~EOS
+    (testpath"testing.v").write <<~EOS
       Require Coq.micromega.Lia.
       Require Coq.ZArith.ZArith.
 
@@ -72,6 +72,6 @@ class Coq < Formula
       intros; lia.
       Qed.
     EOS
-    system bin/"coqc", testpath/"testing.v"
+    system bin"coqc", testpath"testing.v"
   end
 end

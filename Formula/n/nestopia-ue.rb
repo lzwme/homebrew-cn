@@ -1,10 +1,10 @@
 class NestopiaUe < Formula
   desc "NES emulator"
-  homepage "http://0ldsk00l.ca/nestopia/"
-  url "https://ghproxy.com/https://github.com/0ldsk00l/nestopia/archive/refs/tags/1.52.0.tar.gz"
+  homepage "http:0ldsk00l.canestopia"
+  url "https:github.com0ldsk00lnestopiaarchiverefstags1.52.0.tar.gz"
   sha256 "eae1d2f536ae8585edb8d723caf905f4ae65349edee4ffbee45f9f52b5e3b06c"
   license "GPL-2.0-or-later"
-  head "https://github.com/0ldsk00l/nestopia.git", branch: "master"
+  head "https:github.com0ldsk00lnestopia.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "921c56334048e73daac86b4af93dd1e6986bc5fa243d4c10a74215bb67417c40"
@@ -30,13 +30,13 @@ class NestopiaUe < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--disable-silent-rules",
+    system ".configure", "--disable-silent-rules",
                           "--datarootdir=#{pkgshare}",
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "Nestopia UE #{version}", shell_output("#{bin}/nestopia --version")
+    assert_match "Nestopia UE #{version}", shell_output("#{bin}nestopia --version")
   end
 end

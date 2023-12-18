@@ -2,11 +2,11 @@ cask "mechvibes" do
   version "2.3.4"
   sha256 "ba1d345a8c1eb7ff9445e0621b2a9bd2e051a2e92541323dde5d4051f78acef0"
 
-  url "https://ghproxy.com/https://github.com/hainguyents13/mechvibes/releases/download/v#{version}/Mechvibes-#{version}.dmg",
-      verified: "github.com/hainguyents13/mechvibes/"
+  url "https:github.comhainguyents13mechvibesreleasesdownloadv#{version}Mechvibes-#{version}.dmg",
+      verified: "github.comhainguyents13mechvibes"
   name "Mechvibes"
   desc "Play mechanical keyboard sounds as you type"
-  homepage "https://mechvibes.com/"
+  homepage "https:mechvibes.com"
 
   livecheck do
     url :url
@@ -16,9 +16,9 @@ cask "mechvibes" do
   app "Mechvibes.app"
 
   zap trash: [
-        "~/Library/Application Support/Mechvibes",
-        "~/Library/Preferences/com.electron.mechvibes.plist",
-        "~/Library/Saved Application State/com.electron.mechvibes.savedState",
+        "~LibraryApplication SupportMechvibes",
+        "~LibraryPreferencescom.electron.mechvibes.plist",
+        "~LibrarySaved Application Statecom.electron.mechvibes.savedState",
       ],
-      rmdir: "~/mechvibes_custom"
+      rmdir: "~mechvibes_custom"
 end

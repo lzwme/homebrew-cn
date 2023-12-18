@@ -2,12 +2,12 @@ cask "font-crimson-text" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/crimsontext"
+      only_path: "oflcrimsontext"
   name "Crimson Text"
-  homepage "https://fonts.google.com/specimen/Crimson+Text"
+  homepage "https:fonts.google.comspecimenCrimson+Text"
 
   font "CrimsonText-Bold.ttf"
   font "CrimsonText-BoldItalic.ttf"

@@ -1,10 +1,10 @@
 class Scry < Formula
   desc "Code analysis server for Crystal programming language"
-  homepage "https://github.com/crystal-lang-tools/scry/"
-  url "https://ghproxy.com/https://github.com/crystal-lang-tools/scry/archive/refs/tags/v0.9.1.tar.gz"
+  homepage "https:github.comcrystal-lang-toolsscry"
+  url "https:github.comcrystal-lang-toolsscryarchiverefstagsv0.9.1.tar.gz"
   sha256 "53bf972557f8b6a697d2aa727df465d6e7d04f6426fcd4559a4d77c90becad81"
   license "MIT"
-  head "https://github.com/crystal-lang-tools/scry.git", branch: "master"
+  head "https:github.comcrystal-lang-toolsscry.git", branch: "master"
 
   bottle do
     sha256 arm64_monterey: "e2b0c14e2bf3ca241385406bba1cdc4b7a317bae8c0472832468a882fbee4aef"
@@ -16,7 +16,7 @@ class Scry < Formula
     sha256 x86_64_linux:   "9aa343ca7529d5b803fa98ef2c702cc63423233a376963ea590a89458de61545"
   end
 
-  # https://github.com/crystal-lang-tools/scry/issues/186
+  # https:github.comcrystal-lang-toolsscryissues186
   disable! date: "2023-01-01", because: :does_not_build
 
   depends_on "bdw-gc"
@@ -28,7 +28,7 @@ class Scry < Formula
     system "shards", "build",
            "--release", "--no-debug", "--verbose",
            "--ignore-crystal-version"
-    bin.install "bin/scry"
+    bin.install "binscry"
   end
 
   def rpc(json)
@@ -39,9 +39,9 @@ class Scry < Formula
 
   test do
     input = rpc '{ "jsonrpc": "2.0", "id": 1, "method": "initialize", "params": ' \
-                '{ "processId": 1, "rootPath": "/dev/null", "capabilities": {}, "trace": "off" } }'
+                '{ "processId": 1, "rootPath": "devnull", "capabilities": {}, "trace": "off" } }'
     input += rpc '{ "jsonrpc": "2.0", "method": "initialized", "params": {} }'
     input += rpc '{ "jsonrpc": "2.0", "id":  1, "method": "shutdown" }'
-    assert_match(/"capabilities"\s*:\s*{/, pipe_output(bin/"scry", input, 0))
+    assert_match("capabilities"\s*:\s*{, pipe_output(bin"scry", input, 0))
   end
 end

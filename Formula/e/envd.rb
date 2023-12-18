@@ -1,10 +1,10 @@
 class Envd < Formula
-  desc "Reproducible development environment for AI/ML"
-  homepage "https://envd.tensorchord.ai"
-  url "https://ghproxy.com/https://github.com/tensorchord/envd/archive/refs/tags/v0.3.40.tar.gz"
+  desc "Reproducible development environment for AIML"
+  homepage "https:envd.tensorchord.ai"
+  url "https:github.comtensorchordenvdarchiverefstagsv0.3.40.tar.gz"
   sha256 "3923fad229064604c3539d0b03de7a4491962a7e724df748cdf84aaa817b319a"
   license "Apache-2.0"
-  head "https://github.com/tensorchord/envd.git", branch: "main"
+  head "https:github.comtensorchordenvd.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93aa35dee3290ad62d6399a0a0b5a7da16de66ee37671b27cd6aa7573d847f47"
@@ -23,20 +23,20 @@ class Envd < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/tensorchord/envd/pkg/version.buildDate=#{time.iso8601}
-      -X github.com/tensorchord/envd/pkg/version.version=#{version}
-      -X github.com/tensorchord/envd/pkg/version.gitTag=v#{version}
-      -X github.com/tensorchord/envd/pkg/version.gitCommit=#{tap.user}
-      -X github.com/tensorchord/envd/pkg/version.gitTreeState=clean
+      -X github.comtensorchordenvdpkgversion.buildDate=#{time.iso8601}
+      -X github.comtensorchordenvdpkgversion.version=#{version}
+      -X github.comtensorchordenvdpkgversion.gitTag=v#{version}
+      -X github.comtensorchordenvdpkgversion.gitCommit=#{tap.user}
+      -X github.comtensorchordenvdpkgversion.gitTreeState=clean
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/envd"
-    generate_completions_from_executable(bin/"envd", "completion", "--no-install",
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdenvd"
+    generate_completions_from_executable(bin"envd", "completion", "--no-install",
                                          shell_parameter_format: "--shell=",
                                          shells:                 [:bash, :zsh, :fish])
   end
 
   test do
-    output = shell_output("#{bin}/envd version --short")
+    output = shell_output("#{bin}envd version --short")
     assert_equal "envd: v#{version}", output.strip
 
     expected = if OS.mac?
@@ -45,7 +45,7 @@ class Envd < Formula
       "failed to list containers: Got permission denied while trying to connect to the Docker daemon"
     end
 
-    stderr = shell_output("#{bin}/envd env list 2>&1", 1)
+    stderr = shell_output("#{bin}envd env list 2>&1", 1)
     assert_match expected, stderr
   end
 end

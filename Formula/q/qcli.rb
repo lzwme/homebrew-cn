@@ -1,11 +1,11 @@
 class Qcli < Formula
   desc "Report audiovisual metrics via libavfilter"
-  homepage "https://bavc.org/preserve-media/preservation-tools"
-  url "https://github.com/bavc/qctools.git",
+  homepage "https:bavc.orgpreserve-mediapreservation-tools"
+  url "https:github.combavcqctools.git",
       tag:      "v1.3.1",
       revision: "0573c33953d02db53812a2420f174d6b1233751e"
   license "GPL-3.0-or-later"
-  head "https://github.com/bavc/qctools.git", branch: "master"
+  head "https:github.combavcqctools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ebfb848efd1dcab735f34f617a6c727a118b9c387bb9b0812218b01161071bb7"
@@ -27,11 +27,11 @@ class Qcli < Formula
   def install
     ENV["USE_BREW"]="true"
 
-    cd "Project/QtCreator/qctools-lib" do
+    cd "ProjectQtCreatorqctools-lib" do
       system "qmake", "qctools-lib.pro"
       system "make"
     end
-    cd "Project/QtCreator/qctools-cli" do
+    cd "ProjectQtCreatorqctools-cli" do
       system "qmake", "qctools-cli.pro"
       system "make"
       bin.install "qcli"
@@ -40,11 +40,11 @@ class Qcli < Formula
 
   test do
     # Create an example mp4 file
-    mp4out = testpath/"video.mp4"
-    system "#{Formula["ffmpeg"].bin}/ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath"video.mp4"
+    system "#{Formula["ffmpeg"].bin}ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     # Create a qcli report from the mp4
-    qcliout = testpath/"video.mp4.qctools.xml.gz"
-    system bin/"qcli", "-i", mp4out, "-o", qcliout
+    qcliout = testpath"video.mp4.qctools.xml.gz"
+    system bin"qcli", "-i", mp4out, "-o", qcliout
     assert_predicate qcliout, :exist?
   end
 end

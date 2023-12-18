@@ -1,14 +1,14 @@
 class Mbedtls < Formula
-  desc "Cryptographic & SSL/TLS library"
-  homepage "https://tls.mbed.org/"
-  url "https://ghproxy.com/https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/mbedtls-3.5.1.tar.gz"
+  desc "Cryptographic & SSLTLS library"
+  homepage "https:tls.mbed.org"
+  url "https:github.comMbed-TLSmbedtlsarchiverefstagsmbedtls-3.5.1.tar.gz"
   sha256 "0da345cda55ec6f6d71afa84cfae55632a16ba0b8b4644f4d0e8a32c9d1117b0"
   license "Apache-2.0"
-  head "https://github.com/Mbed-TLS/mbedtls.git", branch: "development"
+  head "https:github.comMbed-TLSmbedtls.git", branch: "development"
 
   livecheck do
     url :stable
-    regex(/(?:mbedtls[._-])?v?(\d+(?:\.\d+)+)/i)
+    regex((?:mbedtls[._-])?v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -26,13 +26,13 @@ class Mbedtls < Formula
   depends_on "python@3.12" => :build
 
   def install
-    inreplace "include/mbedtls/mbedtls_config.h" do |s|
+    inreplace "includembedtlsmbedtls_config.h" do |s|
       # enable pthread mutexes
-      s.gsub! "//#define MBEDTLS_THREADING_PTHREAD", "#define MBEDTLS_THREADING_PTHREAD"
+      s.gsub! "#define MBEDTLS_THREADING_PTHREAD", "#define MBEDTLS_THREADING_PTHREAD"
       # allow use of mutexes within mbed TLS
-      s.gsub! "//#define MBEDTLS_THREADING_C", "#define MBEDTLS_THREADING_C"
+      s.gsub! "#define MBEDTLS_THREADING_C", "#define MBEDTLS_THREADING_C"
       # enable DTLS-SRTP extension
-      s.gsub! "//#define MBEDTLS_SSL_DTLS_SRTP", "#define MBEDTLS_SSL_DTLS_SRTP"
+      s.gsub! "#define MBEDTLS_SSL_DTLS_SRTP", "#define MBEDTLS_SSL_DTLS_SRTP"
     end
 
     system "cmake", "-S", ".", "-B", "build",
@@ -43,25 +43,25 @@ class Mbedtls < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     # We run CTest because this is a crypto library. Running tests in parallel causes failures.
-    # https://github.com/Mbed-TLS/mbedtls/issues/4980
+    # https:github.comMbed-TLSmbedtlsissues4980
     with_env(CC: DevelopmentTools.locate(DevelopmentTools.default_compiler)) do
       system "ctest", "--parallel", "1", "--test-dir", "build", "--rerun-failed", "--output-on-failure"
     end
     system "cmake", "--install", "build"
 
     # Why does Mbedtls ship with a "Hello World" executable. Let's remove that.
-    rm_f bin/"hello"
+    rm_f bin"hello"
     # Rename benchmark & selftest, which are awfully generic names.
-    mv bin/"benchmark", bin/"mbedtls-benchmark"
-    mv bin/"selftest", bin/"mbedtls-selftest"
+    mv bin"benchmark", bin"mbedtls-benchmark"
+    mv bin"selftest", bin"mbedtls-selftest"
     # Demonstration files shouldn't be in the main bin
-    libexec.install bin/"mpi_demo"
+    libexec.install bin"mpi_demo"
   end
 
   test do
-    (testpath/"testfile.txt").write("This is a test file")
+    (testpath"testfile.txt").write("This is a test file")
     # Don't remove the space between the checksum and filename. It will break.
     expected_checksum = "e2d0fe1585a63ec6009c8016ff8dda8b17719a637405a4e23c0ff81339148249  testfile.txt"
-    assert_equal expected_checksum, shell_output("#{bin}/generic_sum SHA256 testfile.txt").strip
+    assert_equal expected_checksum, shell_output("#{bin}generic_sum SHA256 testfile.txt").strip
   end
 end

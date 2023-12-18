@@ -1,7 +1,7 @@
 class NetcdfFortran < Formula
   desc "Fortran libraries and utilities for NetCDF"
-  homepage "https://www.unidata.ucar.edu/software/netcdf/"
-  url "https://ghproxy.com/https://github.com/Unidata/netcdf-fortran/archive/refs/tags/v4.6.1.tar.gz"
+  homepage "https:www.unidata.ucar.edusoftwarenetcdf"
+  url "https:github.comUnidatanetcdf-fortranarchiverefstagsv4.6.1.tar.gz"
   sha256 "40b534e0c81b853081c67ccde095367bd8a5eead2ee883431331674e7aa9509f"
   license "NetCDF"
 
@@ -31,15 +31,15 @@ class NetcdfFortran < Formula
 
     system "cmake", "-S", ".", "-B", "build_static", *args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build_static"
-    lib.install "build_static/fortran/libnetcdff.a"
+    lib.install "build_staticfortranlibnetcdff.a"
 
     # Remove shim paths
-    inreplace [bin/"nf-config", lib/"libnetcdff.settings", lib/"pkgconfig/netcdf-fortran.pc"],
-      Superenv.shims_path/ENV.cc, ENV.cc
+    inreplace [bin"nf-config", lib"libnetcdff.settings", lib"pkgconfignetcdf-fortran.pc"],
+      Superenv.shims_pathENV.cc, ENV.cc
   end
 
   test do
-    (testpath/"test.f90").write <<~EOS
+    (testpath"test.f90").write <<~EOS
       program test
         use netcdf
         integer :: ncid, varid, dimids(2)
@@ -54,12 +54,12 @@ class NetcdfFortran < Formula
       contains
         subroutine check(status)
           integer, intent(in) :: status
-          if (status /= nf90_noerr) call abort
+          if (status = nf90_noerr) call abort
         end subroutine check
       end program test
     EOS
     system "gfortran", "test.f90", "-L#{lib}", "-I#{include}", "-lnetcdff",
                        "-o", "testf"
-    system "./testf"
+    system ".testf"
   end
 end

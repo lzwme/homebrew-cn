@@ -2,10 +2,10 @@ cask "font-stalinist-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/stalinistone/StalinistOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflstalinistoneStalinistOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Stalinist One"
-  homepage "https://fonts.google.com/specimen/Stalinist+One"
+  homepage "https:fonts.google.comspecimenStalinist+One"
 
   font "StalinistOne-Regular.ttf"
 

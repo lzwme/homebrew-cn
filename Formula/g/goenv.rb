@@ -1,15 +1,15 @@
 class Goenv < Formula
   desc "Go version management"
-  homepage "https://github.com/go-nv/goenv"
-  url "https://ghproxy.com/https://github.com/go-nv/goenv/archive/refs/tags/2.1.11.tar.gz"
+  homepage "https:github.comgo-nvgoenv"
+  url "https:github.comgo-nvgoenvarchiverefstags2.1.11.tar.gz"
   sha256 "e792d02c5613ef16cc6e988888a3379c9b4b931a8ed2e5d3f741a06c37a32f61"
   license "MIT"
   version_scheme 1
-  head "https://github.com/go-nv/goenv.git", branch: "master"
+  head "https:github.comgo-nvgoenv.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,20 +24,20 @@ class Goenv < Formula
 
   def install
     inreplace_files = [
-      "libexec/goenv",
-      "plugins/go-build/install.sh",
-      "test/goenv.bats",
-      "test/test_helper.bash",
+      "libexecgoenv",
+      "pluginsgo-buildinstall.sh",
+      "testgoenv.bats",
+      "testtest_helper.bash",
     ]
-    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
+    inreplace inreplace_files, "usrlocal", HOMEBREW_PREFIX
 
     prefix.install Dir["*"]
     %w[goenv-install goenv-uninstall go-build].each do |cmd|
-      bin.install_symlink "#{prefix}/plugins/go-build/bin/#{cmd}"
+      bin.install_symlink "#{prefix}pluginsgo-buildbin#{cmd}"
     end
   end
 
   test do
-    assert_match "Usage: goenv <command> [<args>]", shell_output("#{bin}/goenv help")
+    assert_match "Usage: goenv <command> [<args>]", shell_output("#{bin}goenv help")
   end
 end

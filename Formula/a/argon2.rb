@@ -1,11 +1,11 @@
 class Argon2 < Formula
   desc "Password hashing library and CLI utility"
-  homepage "https://github.com/P-H-C/phc-winner-argon2"
-  url "https://ghproxy.com/https://github.com/P-H-C/phc-winner-argon2/archive/refs/tags/20190702.tar.gz"
+  homepage "https:github.comP-H-Cphc-winner-argon2"
+  url "https:github.comP-H-Cphc-winner-argon2archiverefstags20190702.tar.gz"
   sha256 "daf972a89577f8772602bf2eb38b6a3dd3d922bf5724d45e7f9589b5e830442c"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/P-H-C/phc-winner-argon2.git", branch: "master"
+  head "https:github.comP-H-Cphc-winner-argon2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c503692d2a7d5538d5cb241b69c283d998bde91b38e3065c01bc79fdbe8cd197"
@@ -31,7 +31,7 @@ class Argon2 < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/argon2 somesalt -t 2 -m 16 -p 4", "password")
-    assert_match "c29tZXNhbHQ$IMit9qkFULCMA/ViizL57cnTLOa5DiVM9eMwpAvPw", output
+    output = pipe_output("#{bin}argon2 somesalt -t 2 -m 16 -p 4", "password")
+    assert_match "c29tZXNhbHQ$IMit9qkFULCMAViizL57cnTLOa5DiVM9eMwpAvPw", output
   end
 end

@@ -1,11 +1,11 @@
 class Dirt < Formula
   desc "Experimental sample playback"
-  homepage "https://github.com/tidalcycles/Dirt"
-  url "https://ghproxy.com/https://github.com/tidalcycles/Dirt/archive/refs/tags/1.1.tar.gz"
+  homepage "https:github.comtidalcyclesDirt"
+  url "https:github.comtidalcyclesDirtarchiverefstags1.1.tar.gz"
   sha256 "bb1ae52311813d0ea3089bf3837592b885562518b4b44967ce88a24bc10802b6"
   license "GPL-3.0-or-later"
   revision 1
-  head "https://github.com/tidalcycles/Dirt.git", branch: "master"
+  head "https:github.comtidalcyclesDirt.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -33,6 +33,6 @@ class Dirt < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/dirt --help; :")
+    assert_match "Usage", shell_output("#{bin}dirt --help; :")
   end
 end

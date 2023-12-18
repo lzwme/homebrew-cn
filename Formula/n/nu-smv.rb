@@ -1,7 +1,7 @@
 class NuSmv < Formula
   desc "Reimplementation and extension of SMV symbolic model checker"
-  homepage "https://nusmv.fbk.eu"
-  url "https://nusmv.fbk.eu/distrib/NuSMV-2.6.0.tar.gz"
+  homepage "https:nusmv.fbk.eu"
+  url "https:nusmv.fbk.eudistribNuSMV-2.6.0.tar.gz"
   sha256 "dba953ed6e69965a68cd4992f9cdac6c449a3d15bf60d200f704d3a02e4bbcbb"
 
   bottle do
@@ -16,25 +16,25 @@ class NuSmv < Formula
   end
 
   # Requires Python2 to run a build script.
-  # https://github.com/Homebrew/homebrew-core/issues/93940
+  # https:github.comHomebrewhomebrew-coreissues93940
   disable! date: "2023-03-11", because: :unsupported
 
   depends_on "cmake" => :build
 
   def install
-    mkdir "NuSMV/build" do
+    mkdir "NuSMVbuild" do
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end
   end
 
   test do
-    (testpath/"test.smv").write <<~EOS
+    (testpath"test.smv").write <<~EOS
       MODULE main
       SPEC TRUE = TRUE
     EOS
 
-    output = shell_output("#{bin}/NuSMV test.smv")
+    output = shell_output("#{bin}NuSMV test.smv")
     assert_match "specification TRUE = TRUE  is true", output
   end
 end

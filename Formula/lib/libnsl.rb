@@ -1,7 +1,7 @@
 class Libnsl < Formula
   desc "Public client interface for NIS(YP) and NIS+"
-  homepage "https://github.com/thkukuk/libnsl"
-  url "https://ghproxy.com/https://github.com/thkukuk/libnsl/releases/download/v2.0.1/libnsl-2.0.1.tar.xz"
+  homepage "https:github.comthkukuklibnsl"
+  url "https:github.comthkukuklibnslreleasesdownloadv2.0.1libnsl-2.0.1.tar.xz"
   sha256 "5c9e470b232a7acd3433491ac5221b4832f0c71318618dc6aa04dd05ffcd8fd9"
   license "LGPL-2.1-or-later"
 
@@ -13,20 +13,20 @@ class Libnsl < Formula
   depends_on "libtirpc"
   depends_on :linux
 
-  link_overwrite "include/rpcsvc"
-  link_overwrite "lib/libnsl.a"
-  link_overwrite "lib/libnsl.so"
+  link_overwrite "includerpcsvc"
+  link_overwrite "liblibnsl.a"
+  link_overwrite "liblibnsl.so"
 
   def install
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules"
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~'EOS'
-      #include <rpcsvc/ypclnt.h>
+    (testpath"test.c").write <<~'EOS'
+      #include <rpcsvcypclnt.h>
 
       int main(int argc, char *argv[]) {
          char *domain;
@@ -48,7 +48,7 @@ class Libnsl < Formula
     domain = Utils.popen_read("ypdomainname").chomp
     domain_exists = $CHILD_STATUS.success?
 
-    output = shell_output("./test").chomp
+    output = shell_output(".test").chomp
     if domain_exists
       assert_equal "Domain: #{domain}", output
     else

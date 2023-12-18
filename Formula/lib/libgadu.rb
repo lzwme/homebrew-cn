@@ -1,7 +1,7 @@
 class Libgadu < Formula
   desc "Library for ICQ instant messenger protocol"
-  homepage "https://libgadu.net/"
-  url "https://ghproxy.com/https://github.com/wojtekka/libgadu/releases/download/1.12.2/libgadu-1.12.2.tar.gz"
+  homepage "https:libgadu.net"
+  url "https:github.comwojtekkalibgadureleasesdownload1.12.2libgadu-1.12.2.tar.gz"
   sha256 "28e70fb3d56ed01c01eb3a4c099cc84315d2255869ecf08e9af32c41d4cbbf5d"
   license "LGPL-2.1"
 
@@ -26,12 +26,12 @@ class Libgadu < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-debug",
+    system ".configure", "--prefix=#{prefix}", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--without-pthread"
     system "make", "install"

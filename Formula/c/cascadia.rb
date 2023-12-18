@@ -1,10 +1,10 @@
 class Cascadia < Formula
   desc "Go cascadia package command-line CSS selector"
-  homepage "https://github.com/suntong/cascadia"
-  url "https://ghproxy.com/https://github.com/suntong/cascadia/archive/refs/tags/v1.3.0.tar.gz"
+  homepage "https:github.comsuntongcascadia"
+  url "https:github.comsuntongcascadiaarchiverefstagsv1.3.0.tar.gz"
   sha256 "1ee285d683aa3956dbeb28cd9ee2c60f0ab3a5da8e66a98ca3fb718d3214b775"
   license "MIT"
-  head "https://github.com/suntong/cascadia.git", branch: "master"
+  head "https:github.comsuntongcascadia.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c632f95d33e3db0a0ec037480cc5763b0d9d157588f0bbd921b886c42ed6c47"
@@ -25,12 +25,12 @@ class Cascadia < Formula
   end
 
   test do
-    assert_match "Version #{version}", shell_output("#{bin}/cascadia --help")
+    assert_match "Version #{version}", shell_output("#{bin}cascadia --help")
 
-    test_html = "<foo><bar>aaa</bar><baz>bbb</baz></foo>"
+    test_html = "<foo><bar>aaa<bar><baz>bbb<baz><foo>"
     test_css_selector = "foo > bar"
-    expected_html_output = "<bar>aaa</bar>"
+    expected_html_output = "<bar>aaa<bar>"
     assert_equal expected_html_output,
-      pipe_output("#{bin}/cascadia --in --out --css '#{test_css_selector}'", test_html).strip
+      pipe_output("#{bin}cascadia --in --out --css '#{test_css_selector}'", test_html).strip
   end
 end

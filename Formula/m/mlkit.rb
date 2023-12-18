@@ -1,14 +1,14 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
-  homepage "https://melsman.github.io/mlkit"
-  url "https://ghproxy.com/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.5.tar.gz"
+  homepage "https:melsman.github.iomlkit"
+  url "https:github.commelsmanmlkitarchiverefstagsv4.7.5.tar.gz"
   sha256 "59ad0b34ba511b8fe10a83bb5dd92e76588b97e551071a61a9d76ad13a9934b8"
   license "GPL-2.0-or-later"
-  head "https://github.com/melsman/mlkit.git", branch: "master"
+  head "https:github.commelsmanmlkit.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -20,12 +20,12 @@ class Mlkit < Formula
 
   depends_on "autoconf" => :build
   depends_on "mlton" => :build
-  depends_on arch: :x86_64 # https://github.com/melsman/mlkit/issues/115
+  depends_on arch: :x86_64 # https:github.commelsmanmlkitissues115
   depends_on "gmp"
 
   def install
-    system "sh", "./autobuild"
-    system "./configure", "--prefix=#{prefix}"
+    system "sh", ".autobuild"
+    system ".configure", "--prefix=#{prefix}"
 
     # The ENV.permit_arch_flags specification is needed on 64-bit
     # machines because the mlkit compiler generates 32-bit machine
@@ -44,14 +44,14 @@ class Mlkit < Formula
   end
 
   test do
-    (testpath/"test.sml").write <<~EOS
+    (testpath"test.sml").write <<~EOS
       fun f(x) = x + 2
       val a = [1,2,3,10]
       val b = List.foldl (op +) 0 (List.map f a)
       val res = if b = 24 then "OK" else "ERR"
       val () = print ("Result: " ^ res ^ "\\n")
     EOS
-    system "#{bin}/mlkit", "-o", "test", "test.sml"
-    assert_equal "Result: OK\n", shell_output("./test")
+    system "#{bin}mlkit", "-o", "test", "test.sml"
+    assert_equal "Result: OK\n", shell_output(".test")
   end
 end

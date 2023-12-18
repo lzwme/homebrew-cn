@@ -1,10 +1,10 @@
 class Dasel < Formula
   desc "JSON, YAML, TOML, XML, and CSV query and modification tool"
-  homepage "https://github.com/TomWright/dasel"
-  url "https://ghproxy.com/https://github.com/TomWright/dasel/archive/refs/tags/v2.5.0.tar.gz"
+  homepage "https:github.comTomWrightdasel"
+  url "https:github.comTomWrightdaselarchiverefstagsv2.5.0.tar.gz"
   sha256 "0e4ec875912a3ede0b84b381b14b64293c218fb9cf1472dd085bcccd1ab097a1"
   license "MIT"
-  head "https://github.com/TomWright/dasel.git", branch: "master"
+  head "https:github.comTomWrightdasel.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bd8b5be779104bb97fcde346900b45c17e4b56334aabfd4bfd0ff4d8439f4ec"
@@ -19,14 +19,14 @@ class Dasel < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-X 'github.com/tomwright/dasel/v2/internal.Version=#{version}'"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/dasel"
+    ldflags = "-X 'github.comtomwrightdaselv2internal.Version=#{version}'"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmddasel"
 
-    generate_completions_from_executable(bin/"dasel", "completion")
+    generate_completions_from_executable(bin"dasel", "completion")
   end
 
   test do
-    assert_equal "\"Tom\"", shell_output("echo '{\"name\": \"Tom\"}' | #{bin}/dasel -r json 'name'").chomp
-    assert_match version.to_s, shell_output("#{bin}/dasel --version")
+    assert_equal "\"Tom\"", shell_output("echo '{\"name\": \"Tom\"}' | #{bin}dasel -r json 'name'").chomp
+    assert_match version.to_s, shell_output("#{bin}dasel --version")
   end
 end

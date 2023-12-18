@@ -1,7 +1,7 @@
 class Mint < Formula
   desc "Dependency manager that installs and runs Swift command-line tool packages"
-  homepage "https://github.com/yonaskolb/Mint"
-  url "https://ghproxy.com/https://github.com/yonaskolb/Mint/archive/refs/tags/0.17.5.tar.gz"
+  homepage "https:github.comyonaskolbMint"
+  url "https:github.comyonaskolbMintarchiverefstags0.17.5.tar.gz"
   sha256 "f55350f7778c4ccd38311ed36f39287ff74bb63eb230f6d448e35e7f934c489c"
   license "MIT"
 
@@ -23,13 +23,13 @@ class Mint < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/#{name}"
+    bin.install ".buildrelease#{name}"
   end
 
   test do
     # Test by showing the help scree
-    system "#{bin}/mint", "help"
+    system "#{bin}mint", "help"
     # Test showing list of installed tools
-    system "#{bin}/mint", "list"
+    system "#{bin}mint", "list"
   end
 end

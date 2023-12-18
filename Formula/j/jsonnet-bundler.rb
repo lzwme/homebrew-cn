@@ -1,7 +1,7 @@
 class JsonnetBundler < Formula
   desc "Package manager for Jsonnet"
-  homepage "https://github.com/jsonnet-bundler/jsonnet-bundler"
-  url "https://github.com/jsonnet-bundler/jsonnet-bundler.git",
+  homepage "https:github.comjsonnet-bundlerjsonnet-bundler"
+  url "https:github.comjsonnet-bundlerjsonnet-bundler.git",
       tag:      "v0.5.1",
       revision: "451a33c1c1f6950bc3a7d25353e35bed1b983370"
   license "Apache-2.0"
@@ -24,17 +24,17 @@ class JsonnetBundler < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}", output: bin/"jb"), "./cmd/jb"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}", output: bin"jb"), ".cmdjb"
   end
 
   test do
-    assert_match "A jsonnet package manager", shell_output("#{bin}/jb 2>&1")
+    assert_match "A jsonnet package manager", shell_output("#{bin}jb 2>&1")
 
-    system bin/"jb", "init"
-    assert_predicate testpath/"jsonnetfile.json", :exist?
+    system bin"jb", "init"
+    assert_predicate testpath"jsonnetfile.json", :exist?
 
-    system bin/"jb", "install", "https://github.com/grafana/grafonnet-lib"
-    assert_predicate testpath/"vendor", :directory?
-    assert_predicate testpath/"jsonnetfile.lock.json", :exist?
+    system bin"jb", "install", "https:github.comgrafanagrafonnet-lib"
+    assert_predicate testpath"vendor", :directory?
+    assert_predicate testpath"jsonnetfile.lock.json", :exist?
   end
 end

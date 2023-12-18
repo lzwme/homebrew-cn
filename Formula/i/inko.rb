@@ -1,10 +1,10 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
-  homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.13.2.tar.gz"
+  homepage "https:inko-lang.org"
+  url "https:releases.inko-lang.org0.13.2.tar.gz"
   sha256 "3f188a4a2242c61624081d757b66281ba0f0cfb193ebb590f1470f1f6400f773"
   license "MPL-2.0"
-  head "https://github.com/inko-lang/inko.git", branch: "main"
+  head "https:github.cominko-langinko.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "5cd62e064bd214153243af83a9aa800b436bb39ecd2e434ed099a2b61755f151"
@@ -23,13 +23,13 @@ class Inko < Formula
   uses_from_macos "ruby", since: :sierra
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].opt_libexec/"gnubin"
+    ENV.prepend_path "PATH", Formula["coreutils"].opt_libexec"gnubin"
     system "make", "build", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath/"hello.inko").write <<~EOS
+    (testpath"hello.inko").write <<~EOS
       import std.stdio.STDOUT
 
       class async Main {
@@ -38,6 +38,6 @@ class Inko < Formula
         }
       }
     EOS
-    assert_equal "Hello, world!\n", shell_output("#{bin}/inko run hello.inko")
+    assert_equal "Hello, world!\n", shell_output("#{bin}inko run hello.inko")
   end
 end

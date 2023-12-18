@@ -1,10 +1,10 @@
 class TranslateToolkit < Formula
   desc "Toolkit for localization engineers"
-  homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/2d/96/02265cf887313ca433d177ea4b1153826cf167c78a1456a5919c20eafd1c/translate-toolkit-3.11.1.tar.gz"
+  homepage "https:toolkit.translatehouse.org"
+  url "https:files.pythonhosted.orgpackages2d9602265cf887313ca433d177ea4b1153826cf167c78a1456a5919c20eafd1ctranslate-toolkit-3.11.1.tar.gz"
   sha256 "eb88f9874e622536774de9d40da3105d8aecdd2c114f18faadb3116e9d59c610"
   license "GPL-2.0-or-later"
-  head "https://github.com/translate/translate.git", branch: "master"
+  head "https:github.comtranslatetranslate.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,11 +30,11 @@ class TranslateToolkit < Formula
   end
 
   test do
-    test_file = testpath/"test.po"
+    test_file = testpath"test.po"
     touch test_file
-    assert_match "Processing file : #{test_file}", shell_output("#{bin}/pocount --no-color #{test_file}")
+    assert_match "Processing file : #{test_file}", shell_output("#{bin}pocount --no-color #{test_file}")
 
-    assert_match version.to_s, shell_output("#{bin}/pretranslate --version")
-    assert_match version.to_s, shell_output("#{bin}/podebug --version")
+    assert_match version.to_s, shell_output("#{bin}pretranslate --version")
+    assert_match version.to_s, shell_output("#{bin}podebug --version")
   end
 end

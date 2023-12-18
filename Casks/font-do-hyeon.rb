@@ -2,10 +2,10 @@ cask "font-do-hyeon" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/dohyeon/DoHyeon-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldohyeonDoHyeon-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Do Hyeon"
-  homepage "https://fonts.google.com/specimen/Do+Hyeon"
+  homepage "https:fonts.google.comspecimenDo+Hyeon"
 
   font "DoHyeon-Regular.ttf"
 

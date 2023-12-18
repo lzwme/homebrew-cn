@@ -1,7 +1,7 @@
 class OktaAwsCli < Formula
   desc "Okta federated identity for AWS CLI"
-  homepage "https://github.com/okta/okta-aws-cli"
-  url "https://ghproxy.com/https://github.com/okta/okta-aws-cli/archive/refs/tags/v1.2.2.tar.gz"
+  homepage "https:github.comoktaokta-aws-cli"
+  url "https:github.comoktaokta-aws-cliarchiverefstagsv1.2.2.tar.gz"
   sha256 "f617b105e885fc8dc53accd7f3f8a2c3165b28b52abfbe7151e8353ad7eb427b"
   license "Apache-2.0"
 
@@ -20,14 +20,14 @@ class OktaAwsCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/okta-aws-cli"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdokta-aws-cli"
   end
 
   test do
-    str_help = shell_output("#{bin}/okta-aws-cli --help")
+    str_help = shell_output("#{bin}okta-aws-cli --help")
     assert_match "Usage:", str_help
     assert_match "Flags:", str_help
-    str_error = shell_output("#{bin}/okta-aws-cli -o example.org -c homebrew-test 2>&1", 1)
+    str_error = shell_output("#{bin}okta-aws-cli -o example.org -c homebrew-test 2>&1", 1)
     assert_match 'Error: authorize received API response "404 Not Found"', str_error
   end
 end

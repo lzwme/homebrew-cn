@@ -2,10 +2,10 @@ cask "kmbmpdc" do
   version "2.0.1"
   sha256 "6a0c00c1b7801465f203508926911d91d99e3fc25c4bebfebae3edaeb678cfdd"
 
-  url "https://ghproxy.com/https://github.com/arttuperala/kmbmpdc/releases/download/v#{version}/kmbmpdc.tar.gz"
+  url "https:github.comarttuperalakmbmpdcreleasesdownloadv#{version}kmbmpdc.tar.gz"
   name "kmbmpdc"
   name "kawaii menu bar music player daemon controller"
-  homepage "https://github.com/arttuperala/kmbmpdc"
+  homepage "https:github.comarttuperalakmbmpdc"
 
   auto_updates true
   depends_on macos: ">= :el_capitan"

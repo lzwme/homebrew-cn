@@ -2,10 +2,10 @@ cask "battery" do
   version "1.2.0"
   sha256 "9601e755ce31e24e159d3c2cf53123fae5385916830e57b6746734b3d07163c0"
 
-  url "https://ghproxy.com/https://github.com/actuallymentor/battery/releases/download/v#{version}/battery-#{version}-mac-arm64.dmg"
+  url "https:github.comactuallymentorbatteryreleasesdownloadv#{version}battery-#{version}-mac-arm64.dmg"
   name "Battery"
   desc "CLI for managing the battery charging status"
-  homepage "https://github.com/actuallymentor/battery/"
+  homepage "https:github.comactuallymentorbattery"
 
   auto_updates true
   depends_on macos: ">= :high_sierra"
@@ -13,14 +13,14 @@ cask "battery" do
 
   app "battery.app"
 
-  uninstall delete: "/usr/local/bin/smc"
+  uninstall delete: "usrlocalbinsmc"
 
   zap trash: [
-    "~/.battery",
-    "~/Library/Application Support/battery",
-    "~/Library/LaunchAgents/battery.plist",
-    "~/Library/Preferences/co.palokaj.battery.plist",
-    "~/Library/Preferences/org.mentor.Battery.plist",
-    "~/Library/Saved Application State/co.palokaj.battery.savedState",
+    "~.battery",
+    "~LibraryApplication Supportbattery",
+    "~LibraryLaunchAgentsbattery.plist",
+    "~LibraryPreferencesco.palokaj.battery.plist",
+    "~LibraryPreferencesorg.mentor.Battery.plist",
+    "~LibrarySaved Application Stateco.palokaj.battery.savedState",
   ]
 end

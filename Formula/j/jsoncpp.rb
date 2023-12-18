@@ -1,10 +1,10 @@
 class Jsoncpp < Formula
   desc "Library for interacting with JSON"
-  homepage "https://github.com/open-source-parsers/jsoncpp"
-  url "https://ghproxy.com/https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/1.9.5.tar.gz"
+  homepage "https:github.comopen-source-parsersjsoncpp"
+  url "https:github.comopen-source-parsersjsoncpparchiverefstags1.9.5.tar.gz"
   sha256 "f409856e5920c18d0c2fb85276e24ee607d2a09b5e7d5f0a371368903c275da2"
   license "MIT"
-  head "https://github.com/open-source-parsers/jsoncpp.git", branch: "master"
+  head "https:github.comopen-source-parsersjsoncpp.git", branch: "master"
 
   livecheck do
     url :stable
@@ -25,8 +25,8 @@ class Jsoncpp < Formula
   end
 
   # NOTE: Do not change this to use CMake, because the CMake build is deprecated.
-  # See: https://github.com/open-source-parsers/jsoncpp/wiki/Building#building-and-testing-with-cmake
-  #      https://github.com/Homebrew/homebrew-core/pull/103386
+  # See: https:github.comopen-source-parsersjsoncppwikiBuilding#building-and-testing-with-cmake
+  #      https:github.comHomebrewhomebrew-corepull103386
   depends_on "meson" => :build
   depends_on "ninja" => :build
 
@@ -37,8 +37,8 @@ class Jsoncpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <json/json.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <jsonjson.h>
       int main() {
           Json::Value root;
           Json::CharReaderBuilder builder;
@@ -48,10 +48,10 @@ class Jsoncpp < Formula
           return Json::parseFromStream(builder, stream1, &root, &errs) ? 0: 1;
       }
     EOS
-    system ENV.cxx, "-std=c++11", testpath/"test.cpp", "-o", "test",
-                  "-I#{include}/jsoncpp",
+    system ENV.cxx, "-std=c++11", testpath"test.cpp", "-o", "test",
+                  "-I#{include}jsoncpp",
                   "-L#{lib}",
                   "-ljsoncpp"
-    system "./test"
+    system ".test"
   end
 end

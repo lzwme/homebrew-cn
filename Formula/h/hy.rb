@@ -2,8 +2,8 @@ class Hy < Formula
   include Language::Python::Virtualenv
 
   desc "Dialect of Lisp that's embedded in Python"
-  homepage "https://github.com/hylang/hy"
-  url "https://files.pythonhosted.org/packages/93/5a/47276218f7419e134c659061150aeae2bdd80d7cfbb814447b466b59d546/hy-0.27.0.tar.gz"
+  homepage "https:github.comhylanghy"
+  url "https:files.pythonhosted.orgpackages935a47276218f7419e134c659061150aeae2bdd80d7cfbb814447b466b59d546hy-0.27.0.tar.gz"
   sha256 "5d646e32b01fea740057b856639c672489d27ec7f9cc882363951c748d2b5ceb"
   license "MIT"
 
@@ -21,7 +21,7 @@ class Hy < Formula
   depends_on "python@3.12"
 
   resource "funcparserlib" do
-    url "https://files.pythonhosted.org/packages/93/44/a21dfd9c45ad6909257e5186378a4fedaf41406824ce1ec06bc2a6c168e7/funcparserlib-1.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages9344a21dfd9c45ad6909257e5186378a4fedaf41406824ce1ec06bc2a6c168e7funcparserlib-1.0.1.tar.gz"
     sha256 "a2c4a0d7942f7a0e7635c369d921066c8d4cae7f8b5bf7914466bec3c69837f4"
   end
 
@@ -31,11 +31,11 @@ class Hy < Formula
 
   test do
     python3 = "python3.12"
-    ENV.prepend_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", libexecLanguage::Python.site_packages(python3)
 
-    (testpath/"test.hy").write "(print (+ 2 2))"
-    assert_match "4", shell_output("#{bin}/hy test.hy")
-    (testpath/"test.py").write shell_output("#{bin}/hy2py test.hy")
+    (testpath"test.hy").write "(print (+ 2 2))"
+    assert_match "4", shell_output("#{bin}hy test.hy")
+    (testpath"test.py").write shell_output("#{bin}hy2py test.hy")
     assert_match "4", shell_output("#{python3} test.py")
   end
 end

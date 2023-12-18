@@ -2,10 +2,10 @@ cask "font-caskaydia-mono-nerd-font" do
   version "3.1.1"
   sha256 "dcd25e34bcb63f1d191ec184cad4ddd37674953c42d7cb88baca0b3758bf7157"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/CascadiaMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}CascadiaMono.zip"
   name "CaskaydiaMono Nerd Font (Cascadia Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

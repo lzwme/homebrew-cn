@@ -1,14 +1,14 @@
 class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
-  homepage "https://www.runatlantis.io/"
-  url "https://ghproxy.com/https://github.com/runatlantis/atlantis/archive/refs/tags/v0.27.0.tar.gz"
+  homepage "https:www.runatlantis.io"
+  url "https:github.comrunatlantisatlantisarchiverefstagsv0.27.0.tar.gz"
   sha256 "fc0b9cfe189d66a20c6061af98cc32bd60414d6d64a6e015c528fe62a45b2e8d"
   license "Apache-2.0"
-  head "https://github.com/runatlantis/atlantis.git", branch: "main"
+  head "https:github.comrunatlantisatlantis.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,15 +29,15 @@ class Atlantis < Formula
   end
 
   test do
-    system bin/"atlantis", "version"
+    system bin"atlantis", "version"
     port = free_port
     loglevel = "info"
     gh_args = "--gh-user INVALID --gh-token INVALID --gh-webhook-secret INVALID --repo-allowlist INVALID"
-    command = bin/"atlantis server --atlantis-url http://invalid/ --port #{port} #{gh_args} --log-level #{loglevel}"
+    command = bin"atlantis server --atlantis-url http:invalid --port #{port} #{gh_args} --log-level #{loglevel}"
     pid = Process.spawn(command)
     system "sleep", "5"
-    output = `curl -vk# 'http://localhost:#{port}/' 2>&1`
-    assert_match %r{HTTP/1.1 200 OK}m, output
+    output = `curl -vk# 'http:localhost:#{port}' 2>&1`
+    assert_match %r{HTTP1.1 200 OK}m, output
     assert_match "atlantis", output
     Process.kill("TERM", pid)
   end

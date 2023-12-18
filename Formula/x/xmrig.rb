@@ -1,10 +1,10 @@
 class Xmrig < Formula
   desc "Monero (XMR) CPU miner"
-  homepage "https://github.com/xmrig/xmrig"
-  url "https://ghproxy.com/https://github.com/xmrig/xmrig/archive/refs/tags/v6.21.0.tar.gz"
+  homepage "https:github.comxmrigxmrig"
+  url "https:github.comxmrigxmrigarchiverefstagsv6.21.0.tar.gz"
   sha256 "4b197c71fa06030216b641b4ea57f7a3d977a17df1b55bd13759d4705dbf5941"
   license "GPL-3.0-or-later"
-  head "https://github.com/xmrig/xmrig.git", branch: "dev"
+  head "https:github.comxmrigxmrig.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -27,25 +27,25 @@ class Xmrig < Formula
   depends_on "openssl@3"
 
   def install
-    # Use shared OpenSSL on macOS. In cmake/OpenSSL.cmake:
+    # Use shared OpenSSL on macOS. In cmakeOpenSSL.cmake:
     # elseif (APPLE)
     #   set(OPENSSL_USE_STATIC_LIBS TRUE)
     # endif()
-    inreplace "cmake/OpenSSL.cmake", "OPENSSL_USE_STATIC_LIBS TRUE", "OPENSSL_USE_STATIC_LIBS FALSE"
+    inreplace "cmakeOpenSSL.cmake", "OPENSSL_USE_STATIC_LIBS TRUE", "OPENSSL_USE_STATIC_LIBS FALSE"
 
-    # Allow using shared libuv. In cmake/FindUV.cmake:
+    # Allow using shared libuv. In cmakeFindUV.cmake:
     # find_library(UV_LIBRARY NAMES libuv.a uv libuv ...)
-    inreplace "cmake/FindUV.cmake", "libuv.a", ""
+    inreplace "cmakeFindUV.cmake", "libuv.a", ""
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
-    bin.install "build/xmrig"
-    pkgshare.install "src/config.json"
+    bin.install "buildxmrig"
+    pkgshare.install "srcconfig.json"
   end
 
   test do
     require "pty"
-    assert_match version.to_s, shell_output("#{bin}/xmrig -V")
+    assert_match version.to_s, shell_output("#{bin}xmrig -V")
     test_server = "donotexist.localhost:65535"
     output = ""
     args = %W[
@@ -56,17 +56,17 @@ class Xmrig < Formula
       --retries=1
       --url=#{test_server}
     ]
-    PTY.spawn(bin/"xmrig", *args) do |r, _w, pid|
+    PTY.spawn(bin"xmrig", *args) do |r, _w, pid|
       sleep 5
       Process.kill("SIGINT", pid)
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
 
-    assert_match(/POOL #1\s+#{Regexp.escape(test_server)} algo auto/, output)
+    assert_match(POOL #1\s+#{Regexp.escape(test_server)} algo auto, output)
 
     if OS.mac?
       assert_match "#{test_server} DNS error: \"unknown node or service\"", output

@@ -1,10 +1,10 @@
 class Gotags < Formula
   desc "Tag generator for Go, compatible with ctags"
-  homepage "https://github.com/jstemmer/gotags"
-  url "https://ghproxy.com/https://github.com/jstemmer/gotags/archive/refs/tags/v1.4.1.tar.gz"
+  homepage "https:github.comjstemmergotags"
+  url "https:github.comjstemmergotagsarchiverefstagsv1.4.1.tar.gz"
   sha256 "2df379527eaa7af568734bc4174febe7752eb5af1b6194da84cd098b7c873343"
   license "MIT"
-  head "https://github.com/jstemmer/gotags.git", branch: "master"
+  head "https:github.comjstemmergotags.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,7 +30,7 @@ class Gotags < Formula
   end
 
   test do
-    (testpath/"test.go").write <<~EOS
+    (testpath"test.go").write <<~EOS
       package main
 
       type Foo struct {
@@ -38,6 +38,6 @@ class Gotags < Formula
       }
     EOS
 
-    assert_match(/^Bar.*test.go.*$/, shell_output("#{bin}/gotags #{testpath}/test.go"))
+    assert_match(^Bar.*test.go.*$, shell_output("#{bin}gotags #{testpath}test.go"))
   end
 end

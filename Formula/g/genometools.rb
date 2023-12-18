@@ -1,11 +1,11 @@
 class Genometools < Formula
   desc "Versatile open source genome analysis software"
-  homepage "http://genometools.org/"
+  homepage "http:genometools.org"
   # genometools does not have source code on par with their binary dist on their website
-  url "https://ghproxy.com/https://github.com/genometools/genometools/archive/refs/tags/v1.6.5.tar.gz"
+  url "https:github.comgenometoolsgenometoolsarchiverefstagsv1.6.5.tar.gz"
   sha256 "f71b95c84761847223cd52a17d30ad9e6d55854448c2139fcd0aac437f73fbbe"
   license "ISC"
-  head "https://github.com/genometools/genometools.git", branch: "master"
+  head "https:github.comgenometoolsgenometools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b77af810fa9096b084bb34232bb09883a7237ddac28d7fc35957793892a516eb"
@@ -27,7 +27,7 @@ class Genometools < Formula
     depends_on "libpthread-stubs" => :build
   end
 
-  conflicts_with "libslax", because: "both install `bin/gt`"
+  conflicts_with "libslax", because: "both install `bingt`"
 
   def python3
     which("python3.12")
@@ -39,9 +39,9 @@ class Genometools < Formula
 
     cd "gtpython" do
       # Use the shared library from this specific version of genometools.
-      inreplace "gt/dlload.py",
+      inreplace "gtdlload.py",
         "gtlib = CDLL(\"libgenometools\" + soext)",
-        "gtlib = CDLL(\"#{lib}/libgenometools\" + soext)"
+        "gtlib = CDLL(\"#{lib}libgenometools\" + soext)"
 
       system python3, "-m", "pip", "install", *std_pip_args, "."
       system python3, "-m", "unittest", "discover", "tests"
@@ -49,7 +49,7 @@ class Genometools < Formula
   end
 
   test do
-    system bin/"gt", "-test"
+    system bin"gt", "-test"
     system python3, "-c", "import gt"
   end
 end

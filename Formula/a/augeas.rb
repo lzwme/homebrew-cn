@@ -1,14 +1,14 @@
 class Augeas < Formula
   desc "Configuration editing tool and API"
-  homepage "https://augeas.net/"
-  url "https://ghproxy.com/https://github.com/hercules-team/augeas/releases/download/release-1.14.1/augeas-1.14.1.tar.gz"
+  homepage "https:augeas.net"
+  url "https:github.comhercules-teamaugeasreleasesdownloadrelease-1.14.1augeas-1.14.1.tar.gz"
   sha256 "368bfdd782e4b9c7163baadd621359c82b162734864b667051ff6bcb57b9edff"
   license "LGPL-2.1-or-later"
-  head "https://github.com/hercules-team/augeas.git", branch: "master"
+  head "https:github.comhercules-teamaugeas.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/\D*?(\d+(?:\.\d+)+)/i)
+    regex(\D*?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -35,15 +35,15 @@ class Augeas < Formula
   # Fixes `implicit-function-declaration` error
   # Remove when merged and released
   patch do
-    url "https://github.com/hercules-team/augeas/commit/26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
+    url "https:github.comhercules-teamaugeascommit26d297825000dd2cdc45d0fa6bf68dcc14b08d7d.patch?full_index=1"
     sha256 "6bed3c3201eabb1849cbc729d42e33a3692069a06d298ce3f4a8bce7cdbf9f0e"
   end
 
   def install
     if build.head?
-      system "./autogen.sh", *std_configure_args
+      system ".autogen.sh", *std_configure_args
     else
-      system "./configure", *std_configure_args
+      system ".configure", *std_configure_args
     end
 
     system "make", "install"
@@ -52,35 +52,35 @@ class Augeas < Formula
   def caveats
     <<~EOS
       Lenses have been installed to:
-        #{HOMEBREW_PREFIX}/share/augeas/lenses/dist
+        #{HOMEBREW_PREFIX}shareaugeaslensesdist
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/augtool --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}augtool --version 2>&1")
 
-    (testpath/"etc/hosts").write <<~EOS
+    (testpath"etchosts").write <<~EOS
       192.168.0.1 brew.sh test
     EOS
 
     expected_augtool_output = <<~EOS
-      /files/etc/hosts/1
-      /files/etc/hosts/1/ipaddr = "192.168.0.1"
-      /files/etc/hosts/1/canonical = "brew.sh"
-      /files/etc/hosts/1/alias = "test"
+      filesetchosts1
+      filesetchosts1ipaddr = "192.168.0.1"
+      filesetchosts1canonical = "brew.sh"
+      filesetchosts1alias = "test"
     EOS
     assert_equal expected_augtool_output,
-                 shell_output("#{bin}/augtool --root #{testpath} 'print /files/etc/hosts/1'")
+                 shell_output("#{bin}augtool --root #{testpath} 'print filesetchosts1'")
 
     expected_augprint_output = <<~EOS
-      setm /augeas/load/*[incl='/etc/hosts' and label() != 'hosts']/excl '/etc/hosts'
-      transform hosts incl /etc/hosts
-      load-file /etc/hosts
-      set /files/etc/hosts/seq::*[ipaddr='192.168.0.1']/ipaddr '192.168.0.1'
-      set /files/etc/hosts/seq::*[ipaddr='192.168.0.1']/canonical 'brew.sh'
-      set /files/etc/hosts/seq::*[ipaddr='192.168.0.1']/alias 'test'
+      setm augeasload*[incl='etchosts' and label() != 'hosts']excl 'etchosts'
+      transform hosts incl etchosts
+      load-file etchosts
+      set filesetchostsseq::*[ipaddr='192.168.0.1']ipaddr '192.168.0.1'
+      set filesetchostsseq::*[ipaddr='192.168.0.1']canonical 'brew.sh'
+      set filesetchostsseq::*[ipaddr='192.168.0.1']alias 'test'
     EOS
     assert_equal expected_augprint_output,
-                 shell_output("#{bin}/augprint --lens=hosts --target=/etc/hosts #{testpath}/etc/hosts")
+                 shell_output("#{bin}augprint --lens=hosts --target=etchosts #{testpath}etchosts")
   end
 end

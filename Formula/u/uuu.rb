@@ -1,14 +1,14 @@
 class Uuu < Formula
   desc "Universal Update Utility, mfgtools 3.0. NXP I.MX Chip image deploy tools"
-  homepage "https://github.com/nxp-imx/mfgtools"
-  url "https://ghproxy.com/https://github.com/nxp-imx/mfgtools/releases/download/uuu_1.5.125/uuu_source-uuu_1.5.125.tar.gz"
+  homepage "https:github.comnxp-imxmfgtools"
+  url "https:github.comnxp-imxmfgtoolsreleasesdownloaduuu_1.5.125uuu_source-uuu_1.5.125.tar.gz"
   sha256 "085d7f6308ee6b77dfb131fac40704575525adf6da45cdc446c00a0b29e4c21a"
   license "BSD-3-Clause"
-  head "https://github.com/nxp-imx/mfgtools.git", branch: "master"
+  head "https:github.comnxp-imxmfgtools.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/(?:uuu[._-])?v?(\d+(?:\.\d+)+)/i)
+    regex((?:uuu[._-])?v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -36,9 +36,9 @@ class Uuu < Formula
   end
 
   test do
-    assert_match "Universal Update Utility", shell_output("#{bin}/uuu -h")
+    assert_match "Universal Update Utility", shell_output("#{bin}uuu -h")
 
-    cmd_result = shell_output("#{bin}/uuu -dry FB: ucmd setenv fastboot_buffer ${loadaddr}")
+    cmd_result = shell_output("#{bin}uuu -dry FB: ucmd setenv fastboot_buffer ${loadaddr}")
     assert_match "Wait for Known USB Device Appear", cmd_result
     assert_match "Start Cmd:FB: ucmd setenv fastboot_buffer", cmd_result
     assert_match "Okay", cmd_result

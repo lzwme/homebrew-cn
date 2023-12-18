@@ -1,7 +1,7 @@
 class Lammps < Formula
   desc "Molecular Dynamics Simulator"
-  homepage "https://lammps.sandia.gov/"
-  url "https://ghproxy.com/https://github.com/lammps/lammps/archive/refs/tags/stable_2Aug2023.tar.gz"
+  homepage "https:lammps.sandia.gov"
+  url "https:github.comlammpslammpsarchiverefstagsstable_2Aug2023.tar.gz"
   # lammps releases are named after their release date. We transform it to
   # YYYY-MM-DD (year-month-day) so that we get a sane version numbering.
   # We only track stable releases as announced on the LAMMPS homepage.
@@ -14,7 +14,7 @@ class Lammps < Formula
   # to be able to do proper `Version` comparison.
   livecheck do
     url :stable
-    regex(/^stable[._-](\d{1,2}\w+\d{2,4})(?:[._-](update\d*))?$/i)
+    regex(^stable[._-](\d{1,2}\w+\d{2,4})(?:[._-](update\d*))?$i)
     strategy :git do |tags, regex|
       tags.map do |tag|
         match = tag.match(regex)
@@ -54,8 +54,8 @@ class Lammps < Formula
   def install
     %w[serial mpi].each do |variant|
       system "cmake", "-S", "cmake", "-B", "build_#{variant}",
-                      "-C", "cmake/presets/all_on.cmake",
-                      "-C", "cmake/presets/nolib.cmake",
+                      "-C", "cmakepresetsall_on.cmake",
+                      "-C", "cmakepresetsnolib.cmake",
                       "-DPKG_INTEL=no",
                       "-DPKG_KIM=yes",
                       "-DLAMMPS_MACHINE=#{variant}",
@@ -76,6 +76,6 @@ class Lammps < Formula
   end
 
   test do
-    system "#{bin}/lmp_serial", "-in", "#{pkgshare}/bench/in.lj"
+    system "#{bin}lmp_serial", "-in", "#{pkgshare}benchin.lj"
   end
 end

@@ -1,15 +1,15 @@
 class JohnJumbo < Formula
   desc "Enhanced version of john, a UNIX password cracker"
-  homepage "https://www.openwall.com/john/"
-  url "https://openwall.com/john/k/john-1.9.0-jumbo-1.tar.xz"
+  homepage "https:www.openwall.comjohn"
+  url "https:openwall.comjohnkjohn-1.9.0-jumbo-1.tar.xz"
   version "1.9.0"
   sha256 "f5d123f82983c53d8cc598e174394b074be7a77756f5fb5ed8515918c81e7f3b"
   license "GPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https://github.com/openwall/john.git"
-    regex(/^v?(\d+(?:\.\d+)+)-jumbo-\d$/i)
+    url "https:github.comopenwalljohn.git"
+    regex(^v?(\d+(?:\.\d+)+)-jumbo-\d$i)
   end
 
   bottle do
@@ -35,49 +35,49 @@ class JohnJumbo < Formula
   conflicts_with "john", because: "both install the same binaries"
 
   # Fixed setup `-mno-sse4.1` for some machines.
-  # See details for example from here: https://github.com/openwall/john/pull/4100
+  # See details for example from here: https:github.comopenwalljohnpull4100
   patch do
-    url "https://github.com/openwall/john/commit/a537bbca37c1c2452ffcfccea6d2366447ec05c2.patch?full_index=1"
+    url "https:github.comopenwalljohncommita537bbca37c1c2452ffcfccea6d2366447ec05c2.patch?full_index=1"
     sha256 "bb6cfff297f1223dd1177a515657b8f1f780c55f790e5b6e6518bb2cb0986b7b"
   end
 
   # Fixed setup of openssl@1.1 over series of patches
-  # See details for example from here: https://github.com/openwall/john/pull/4101
+  # See details for example from here: https:github.comopenwalljohnpull4101
   patch do
-    url "https://github.com/openwall/john/commit/4844c79bf43dbdbb6ae3717001173355b3de5517.patch?full_index=1"
+    url "https:github.comopenwalljohncommit4844c79bf43dbdbb6ae3717001173355b3de5517.patch?full_index=1"
     sha256 "8469b8eb1d880365121491d45421d132b634983fdcaf4028df8ae8b9085c98ae"
   end
   patch do
-    url "https://github.com/openwall/john/commit/26750d4cff0e650f836974dc3c9c4d446f3f8d0e.patch?full_index=1"
+    url "https:github.comopenwalljohncommit26750d4cff0e650f836974dc3c9c4d446f3f8d0e.patch?full_index=1"
     sha256 "43d259266b6b986a0a3daff484cfb90214ca7f57cd4703175e3ff95d48ddd3e2"
   end
   patch do
-    url "https://github.com/openwall/john/commit/f03412b789d905b1a8d50f5f4b76d158b01c81c1.patch?full_index=1"
+    url "https:github.comopenwalljohncommitf03412b789d905b1a8d50f5f4b76d158b01c81c1.patch?full_index=1"
     sha256 "65a4aacc22f82004e102607c03149395e81c7b6104715e5b90b4bbc016e5e0f7"
   end
 
-  # Upstream M1/ARM64 Support.
+  # Upstream M1ARM64 Support.
   # Combined diff of the following four commits, minus the doc changes
   # that block this formula from using these commits otherwise.
-  # https://github.com/openwall/john/commit/d6c87924b85323b82994ce01724d6e458223fd36
-  # https://github.com/openwall/john/commit/d531f97180a6e5ae52e21db177727a17a76bd2b4
-  # https://github.com/openwall/john/commit/c9825e688d1fb9fdd8942ceb0a6b4457b0f9f9b4
-  # https://github.com/openwall/john/commit/716279addd5a0870620fac8a6e944916b2228cc2
+  # https:github.comopenwalljohncommitd6c87924b85323b82994ce01724d6e458223fd36
+  # https:github.comopenwalljohncommitd531f97180a6e5ae52e21db177727a17a76bd2b4
+  # https:github.comopenwalljohncommitc9825e688d1fb9fdd8942ceb0a6b4457b0f9f9b4
+  # https:github.comopenwalljohncommit716279addd5a0870620fac8a6e944916b2228cc2
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/50a00afbf4549fbc0ffd3855c884f7d045cf4f93/john-jumbo/john_jumbo_m1.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches50a00afbf4549fbc0ffd3855c884f7d045cf4f93john-jumbojohn_jumbo_m1.diff"
     sha256 "6658f02056fd6d54231d3fdbf84135b32d47c09345fc07c6f861a1feebd00902"
   end
 
   # Fix alignment compile errors on GCC 11. Remove in the next release
   patch do
-    url "https://github.com/openwall/john/commit/8152ac071bce1ebc98fac6bed962e90e9b92d8cf.patch?full_index=1"
+    url "https:github.comopenwalljohncommit8152ac071bce1ebc98fac6bed962e90e9b92d8cf.patch?full_index=1"
     sha256 "efb4e3597c47930d63f51efbf18c409f436ea6bd0012a4290b05135a54d7edd4"
   end
 
   def install
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE=1"
-    ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_EXEC='\"#{share}/john\"'"
-    ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_HOME='\"#{share}/john\"'"
+    ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_EXEC='\"#{share}john\"'"
+    ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_HOME='\"#{share}john\"'"
 
     if build.bottle? && Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse4?)
       ENV.append "CFLAGS", "-mno-sse4.1"
@@ -87,25 +87,25 @@ class JohnJumbo < Formula
     ENV["OPENSSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
 
     cd "src" do
-      system "./configure", "--disable-native-tests"
+      system ".configure", "--disable-native-tests"
       system "make", "clean"
       system "make"
     end
 
-    doc.install Dir["doc/*"]
+    doc.install Dir["doc*"]
 
     # Only symlink the main binary into bin
-    (share/"john").install Dir["run/*"]
-    bin.install_symlink share/"john/john"
+    (share"john").install Dir["run*"]
+    bin.install_symlink share"johnjohn"
 
-    bash_completion.install share/"john/john.bash_completion" => "john.bash"
-    zsh_completion.install share/"john/john.zsh_completion" => "_john"
+    bash_completion.install share"johnjohn.bash_completion" => "john.bash"
+    zsh_completion.install share"johnjohn.zsh_completion" => "_john"
   end
 
   test do
     touch "john2.pot"
-    (testpath/"test").write "dave:#{`printf secret | /usr/bin/openssl md5 -r | cut -d' ' -f1`}"
-    assert_match(/secret/, shell_output("#{bin}/john --pot=#{testpath}/john2.pot --format=raw-md5 test"))
-    assert_match(/secret/, (testpath/"john2.pot").read)
+    (testpath"test").write "dave:#{`printf secret | usrbinopenssl md5 -r | cut -d' ' -f1`}"
+    assert_match(secret, shell_output("#{bin}john --pot=#{testpath}john2.pot --format=raw-md5 test"))
+    assert_match(secret, (testpath"john2.pot").read)
   end
 end

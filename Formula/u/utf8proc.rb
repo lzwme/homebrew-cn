@@ -1,7 +1,7 @@
 class Utf8proc < Formula
   desc "Clean C library for processing UTF-8 Unicode data"
-  homepage "https://juliastrings.github.io/utf8proc/"
-  url "https://ghproxy.com/https://github.com/JuliaStrings/utf8proc/archive/refs/tags/v2.9.0.tar.gz"
+  homepage "https:juliastrings.github.ioutf8proc"
+  url "https:github.comJuliaStringsutf8procarchiverefstagsv2.9.0.tar.gz"
   sha256 "18c1626e9fc5a2e192311e36b3010bfc698078f692888940f1fa150547abb0c1"
   license all_of: ["MIT", "Unicode-DFS-2015"]
 
@@ -20,7 +20,7 @@ class Utf8proc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <string.h>
       #include <utf8proc.h>
 
@@ -31,6 +31,6 @@ class Utf8proc < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lutf8proc", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

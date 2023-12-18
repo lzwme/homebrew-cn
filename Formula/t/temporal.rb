@@ -1,10 +1,10 @@
 class Temporal < Formula
   desc "Command-line interface for running and interacting with Temporal Server and UI"
-  homepage "https://temporal.io/"
-  url "https://ghproxy.com/https://github.com/temporalio/cli/archive/refs/tags/v0.10.7.tar.gz"
+  homepage "https:temporal.io"
+  url "https:github.comtemporaliocliarchiverefstagsv0.10.7.tar.gz"
   sha256 "23ec436df5bb5fcd3ad25ace1ba5fc5af9666f28426d47d8a64a7bdf660b069a"
   license "MIT"
-  head "https://github.com/temporalio/cli.git", branch: "main"
+  head "https:github.comtemporaliocli.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -20,16 +20,16 @@ class Temporal < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/temporalio/cli/headers.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/temporal"
-    generate_completions_from_executable(bin/"temporal", "completion", shells: [:bash, :zsh])
+    ldflags = "-s -w -X github.comtemporaliocliheaders.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtemporal"
+    generate_completions_from_executable(bin"temporal", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    run_output = shell_output("#{bin}/temporal --version")
+    run_output = shell_output("#{bin}temporal --version")
     assert_match "temporal version #{version}", run_output
 
-    run_output = shell_output("#{bin}/temporal workflow list --address 192.0.2.0:1234 2>&1", 1)
+    run_output = shell_output("#{bin}temporal workflow list --address 192.0.2.0:1234 2>&1", 1)
     assert_match "failed reaching server", run_output
   end
 end

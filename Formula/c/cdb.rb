@@ -1,13 +1,13 @@
 class Cdb < Formula
   desc "Create and read constant databases"
-  homepage "https://cr.yp.to/cdb.html"
-  url "https://cr.yp.to/cdb/cdb-0.75.tar.gz"
+  homepage "https:cr.yp.tocdb.html"
+  url "https:cr.yp.tocdbcdb-0.75.tar.gz"
   sha256 "1919577799a50c080a8a05a1cbfa5fa7e7abc823d8d7df2eeb181e624b7952c5"
   license :public_domain
 
   livecheck do
-    url "https://cr.yp.to/cdb/install.html"
-    regex(/href=.*?cdb[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:cr.yp.tocdbinstall.html"
+    regex(href=.*?cdb[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -29,20 +29,20 @@ class Cdb < Formula
   # Fix build failure because of missing #include errno.h on Linux.
   # Patch has been submitted to the cdb mailing list.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/515bc4f1322a1eb128d0e7a3a3db6544b94fc82a/cdb/errno.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches515bc4f1322a1eb128d0e7a3a3db6544b94fc82acdberrno.patch"
     sha256 "9116b3577b29e01372a92ccbdbfa5f2b0957ae1b9f42f7df9bac101252f3538c"
   end
 
   def install
-    inreplace "conf-home", "/usr/local", prefix
+    inreplace "conf-home", "usrlocal", prefix
     system "make", "setup"
   end
 
   test do
     record = "+4,8:test->homebrew\n\n"
-    pipe_output("#{bin}/cdbmake db dbtmp", record, 0)
-    assert_predicate testpath/"db", :exist?
+    pipe_output("#{bin}cdbmake db dbtmp", record, 0)
+    assert_predicate testpath"db", :exist?
     assert_equal(record,
-                 pipe_output("#{bin}/cdbdump", (testpath/"db").binread, 0))
+                 pipe_output("#{bin}cdbdump", (testpath"db").binread, 0))
   end
 end

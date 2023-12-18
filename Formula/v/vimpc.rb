@@ -1,10 +1,10 @@
 class Vimpc < Formula
   desc "Ncurses based mpd client with vi like key bindings"
-  homepage "https://sourceforge.net/projects/vimpc/"
-  url "https://ghproxy.com/https://github.com/boysetsfrog/vimpc/archive/refs/tags/v0.09.2.tar.gz"
+  homepage "https:sourceforge.netprojectsvimpc"
+  url "https:github.comboysetsfrogvimpcarchiverefstagsv0.09.2.tar.gz"
   sha256 "caa772f984e35b1c2fbe0349bc9068fc00c17bcfcc0c596f818fa894cac035ce"
   license "GPL-3.0"
-  head "https://github.com/boysetsfrog/vimpc.git", branch: "master"
+  head "https:github.comboysetsfrogvimpc.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "08b6a0c50415af4361a442810e8d4fb190e64f123230087604359fd00b10e654"
@@ -33,13 +33,13 @@ class Vimpc < Formula
   uses_from_macos "curl"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/vimpc", "-v"
+    system "#{bin}vimpc", "-v"
   end
 end

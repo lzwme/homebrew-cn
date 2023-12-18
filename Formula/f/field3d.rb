@@ -1,7 +1,7 @@
 class Field3d < Formula
   desc "Library for storing voxel data on disk and in memory"
-  homepage "https://sites.google.com/site/field3d/"
-  url "https://ghproxy.com/https://github.com/imageworks/Field3D/archive/refs/tags/v1.7.3.tar.gz"
+  homepage "https:sites.google.comsitefield3d"
+  url "https:github.comimageworksField3Darchiverefstagsv1.7.3.tar.gz"
   sha256 "b6168bc27abe0f5e9b8d01af7794b3268ae301ac72b753712df93125d51a0fd4"
   license "BSD-3-Clause"
   revision 10
@@ -19,7 +19,7 @@ class Field3d < Formula
   end
 
   # Depends on deprecated `ilmbase` and upstream has been discussing
-  # archiving repo in https://groups.google.com/g/field3d-dev/c/nBrVsNQ9SHo
+  # archiving repo in https:groups.google.comgfield3d-devcnBrVsNQ9SHo
   # Last release on 2020-03-11
   deprecate! date: "2023-02-03", because: :unmaintained
 
@@ -38,13 +38,13 @@ class Field3d < Formula
       system "cmake", "..", *std_cmake_args, "-DMPI_FOUND=OFF"
       system "make", "install"
     end
-    man1.install "man/f3dinfo.1"
-    pkgshare.install "contrib", "test", "apps/sample_code"
+    man1.install "manf3dinfo.1"
+    pkgshare.install "contrib", "test", "appssample_code"
   end
 
   test do
     system ENV.cxx, "-std=c++11", "-I#{include}",
-           pkgshare/"sample_code/create_and_write/main.cpp",
+           pkgshare"sample_codecreate_and_writemain.cpp",
            "-L#{lib}", "-lField3D",
            "-I#{Formula["boost"].opt_include}",
            "-L#{Formula["boost"].opt_lib}", "-lboost_system",
@@ -52,6 +52,6 @@ class Field3d < Formula
            "-L#{Formula["hdf5"].opt_lib}", "-lhdf5",
            "-I#{Formula["ilmbase"].opt_include}",
            "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

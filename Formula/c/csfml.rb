@@ -1,12 +1,12 @@
 class Csfml < Formula
   # Don't update CSFML until there's a corresponding SFML release
   desc "SMFL bindings for C"
-  homepage "https://www.sfml-dev.org/"
-  url "https://ghproxy.com/https://github.com/SFML/CSFML/archive/refs/tags/2.5.2.tar.gz"
+  homepage "https:www.sfml-dev.org"
+  url "https:github.comSFMLCSFMLarchiverefstags2.5.2.tar.gz"
   sha256 "2671f1cd2a4e54e86f7483c4683132466c01a6ca90fa010bc4964a8820c36f06"
   license "Zlib"
   revision 1
-  head "https://github.com/SFML/CSFML.git", branch: "master"
+  head "https:github.comSFMLCSFML.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9faf9aff5b2bd8f901055d477e3ff0702fa675ccb6dea5fc1f34f79ce50acd38"
@@ -24,13 +24,13 @@ class Csfml < Formula
   depends_on "sfml"
 
   def install
-    system "cmake", ".", "-DCMAKE_MODULE_PATH=#{Formula["sfml"].share}/SFML/cmake/Modules/", *std_cmake_args
+    system "cmake", ".", "-DCMAKE_MODULE_PATH=#{Formula["sfml"].share}SFMLcmakeModules", *std_cmake_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <SFML/Window.h>
+    (testpath"test.c").write <<~EOS
+      #include <SFMLWindow.h>
 
       int main (void)
       {
@@ -40,6 +40,6 @@ class Csfml < Formula
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lcsfml-window", "-o", "test"
     # Disable this part of the test on Linux because display is not available.
-    system "./test" if OS.mac?
+    system ".test" if OS.mac?
   end
 end

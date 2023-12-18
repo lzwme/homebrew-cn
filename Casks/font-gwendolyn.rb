@@ -2,12 +2,12 @@ cask "font-gwendolyn" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/gwendolyn"
+      only_path: "oflgwendolyn"
   name "Gwendolyn"
-  homepage "https://fonts.google.com/specimen/Gwendolyn"
+  homepage "https:fonts.google.comspecimenGwendolyn"
 
   font "Gwendolyn-Bold.ttf"
   font "Gwendolyn-Regular.ttf"

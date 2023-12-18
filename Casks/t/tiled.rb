@@ -4,19 +4,19 @@ cask "tiled" do
   on_catalina :or_older do
     sha256 "9cd3dae263fd142c72ede7d6b78190860e25580f7ae645145daa39d918aa1ce5"
 
-    url "https://ghproxy.com/https://github.com/mapeditor/tiled/releases/download/v#{version}/Tiled-#{version}_macOS-10.12-10.15.zip",
-        verified: "github.com/mapeditor/tiled/"
+    url "https:github.commapeditortiledreleasesdownloadv#{version}Tiled-#{version}_macOS-10.12-10.15.zip",
+        verified: "github.commapeditortiled"
   end
   on_big_sur :or_newer do
     sha256 "0e82e42daa384644a8a795730efcad600cc35ca631693328a6ce65830dc8afa0"
 
-    url "https://ghproxy.com/https://github.com/mapeditor/tiled/releases/download/v#{version}/Tiled-#{version}_macOS-11+.zip",
-        verified: "github.com/mapeditor/tiled/"
+    url "https:github.commapeditortiledreleasesdownloadv#{version}Tiled-#{version}_macOS-11+.zip",
+        verified: "github.commapeditortiled"
   end
 
   name "Tiled"
   desc "Flexible level editor"
-  homepage "https://www.mapeditor.org/"
+  homepage "https:www.mapeditor.org"
 
   livecheck do
     url :url
@@ -26,20 +26,20 @@ cask "tiled" do
   depends_on macos: ">= :sierra"
 
   app "Tiled.app"
-  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
-  shimscript = "#{staged_path}/tiled.wrapper.sh"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}tiled.wrapper.sh"
   binary shimscript, target: "tiled"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!/bin/bash
-      exec '#{appdir}/Tiled.app/Contents/MacOS/Tiled' "$@"
+      #!binbash
+      exec '#{appdir}Tiled.appContentsMacOSTiled' "$@"
     EOS
   end
 
   zap trash: [
-    "~/Library/Application Support/Tiled",
-    "~/Library/Preferences/org.mapeditor.Tiled.plist",
-    "~/Library/Preferences/Tiled",
+    "~LibraryApplication SupportTiled",
+    "~LibraryPreferencesorg.mapeditor.Tiled.plist",
+    "~LibraryPreferencesTiled",
   ]
 end

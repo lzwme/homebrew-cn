@@ -1,10 +1,10 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
-  homepage "https://onflow.org"
-  url "https://ghproxy.com/https://github.com/onflow/flow-cli/archive/refs/tags/v1.8.0.tar.gz"
+  homepage "https:onflow.org"
+  url "https:github.comonflowflow-cliarchiverefstagsv1.8.0.tar.gz"
   sha256 "34a0d9d59e8f815b94b6f928665c082f130b14398614b0f87c416f834933b006"
   license "Apache-2.0"
-  head "https://github.com/onflow/flow-cli.git", branch: "master"
+  head "https:github.comonflowflow-cli.git", branch: "master"
 
   livecheck do
     url :stable
@@ -24,18 +24,18 @@ class FlowCli < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "cmd/flow/flow", "VERSION=v#{version}"
-    bin.install "cmd/flow/flow"
+    system "make", "cmdflowflow", "VERSION=v#{version}"
+    bin.install "cmdflowflow"
 
-    generate_completions_from_executable(bin/"flow", "completion", base_name: "flow")
+    generate_completions_from_executable(bin"flow", "completion", base_name: "flow")
   end
 
   test do
-    (testpath/"hello.cdc").write <<~EOS
+    (testpath"hello.cdc").write <<~EOS
       pub fun main() {
         log("Hello, world!")
       }
     EOS
-    system "#{bin}/flow", "cadence", "hello.cdc"
+    system "#{bin}flow", "cadence", "hello.cdc"
   end
 end

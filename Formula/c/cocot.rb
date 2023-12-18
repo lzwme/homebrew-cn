@@ -1,10 +1,10 @@
 class Cocot < Formula
   desc "Code converter on tty"
-  homepage "https://vmi.jp/software/cygwin/cocot.html"
-  url "https://ghproxy.com/https://github.com/vmi/cocot/archive/refs/tags/cocot-1.2-20171118.tar.gz"
+  homepage "https:vmi.jpsoftwarecygwincocot.html"
+  url "https:github.comvmicocotarchiverefstagscocot-1.2-20171118.tar.gz"
   sha256 "b718630ce3ddf79624d7dcb625fc5a17944cbff0b76574d321fb80c61bb91e4c"
   license "BSD-3-Clause"
-  head "https://github.com/vmi/cocot.git", branch: "master"
+  head "https:github.comvmicocot.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f9cbd95ef6d76b5354943e896cd03342392a266eeffe2784499ce138ad1fd22"
@@ -24,7 +24,7 @@ class Cocot < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 end

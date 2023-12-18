@@ -1,10 +1,10 @@
 class Nq < Formula
   desc "Unix command-line queue utility"
-  homepage "https://github.com/leahneukirchen/nq"
-  url "https://ghproxy.com/https://github.com/leahneukirchen/nq/archive/refs/tags/v0.5.tar.gz"
+  homepage "https:github.comleahneukirchennq"
+  url "https:github.comleahneukirchennqarchiverefstagsv0.5.tar.gz"
   sha256 "3f01aaf0b8eee4f5080ed1cd71887cb6485d366257d4cf5470878da2b734b030"
   license "CC0-1.0"
-  head "https://github.com/leahneukirchen/nq.git", branch: "master"
+  head "https:github.comleahneukirchennq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4711f28cc5781e6a6c3049192e4de16dd65a87dd1b33fcc610fbf4e93f80d36a"
@@ -24,8 +24,8 @@ class Nq < Formula
   end
 
   test do
-    system "#{bin}/nq", "touch", "TEST"
-    assert_match "exited with status 0", shell_output("#{bin}/fq -a")
-    assert_predicate testpath/"TEST", :exist?
+    system "#{bin}nq", "touch", "TEST"
+    assert_match "exited with status 0", shell_output("#{bin}fq -a")
+    assert_predicate testpath"TEST", :exist?
   end
 end

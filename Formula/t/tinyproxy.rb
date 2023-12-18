@@ -1,7 +1,7 @@
 class Tinyproxy < Formula
-  desc "HTTP/HTTPS proxy for POSIX systems"
-  homepage "https://tinyproxy.github.io/"
-  url "https://ghproxy.com/https://github.com/tinyproxy/tinyproxy/releases/download/1.11.1/tinyproxy-1.11.1.tar.xz"
+  desc "HTTPHTTPS proxy for POSIX systems"
+  homepage "https:tinyproxy.github.io"
+  url "https:github.comtinyproxytinyproxyreleasesdownload1.11.1tinyproxy-1.11.1.tar.xz"
   sha256 "d66388448215d0aeb90d0afdd58ed00386fb81abc23ebac9d80e194fceb40f7c"
   license "GPL-2.0-or-later"
 
@@ -22,7 +22,7 @@ class Tinyproxy < Formula
   depends_on "docbook-xsl" => :build
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
     args = %W[
       --disable-debug
@@ -37,28 +37,28 @@ class Tinyproxy < Formula
       --enable-transparent
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   def post_install
-    (var/"log/tinyproxy").mkpath
-    (var/"run/tinyproxy").mkpath
+    (var"logtinyproxy").mkpath
+    (var"runtinyproxy").mkpath
   end
 
   service do
-    run [opt_bin/"tinyproxy", "-d"]
+    run [opt_bin"tinyproxy", "-d"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
   end
 
   test do
     port = free_port
-    cp etc/"tinyproxy/tinyproxy.conf", testpath/"tinyproxy.conf"
-    inreplace testpath/"tinyproxy.conf", "Port 8888", "Port #{port}"
+    cp etc"tinyproxytinyproxy.conf", testpath"tinyproxy.conf"
+    inreplace testpath"tinyproxy.conf", "Port 8888", "Port #{port}"
 
     pid = fork do
-      exec "#{bin}/tinyproxy", "-c", testpath/"tinyproxy.conf"
+      exec "#{bin}tinyproxy", "-c", testpath"tinyproxy.conf"
     end
     sleep 2
 

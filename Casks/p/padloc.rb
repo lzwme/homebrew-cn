@@ -5,11 +5,11 @@ cask "padloc" do
   sha256 arm:   "0b20d0941d2c54a3201269954e92662444fef14baf06c2bd8410df9eb50158fb",
          intel: "fcc1e0dac20d2b95eef4343186ecfff7429754632be4a3a7c953432ffebceb91"
 
-  url "https://ghproxy.com/https://github.com/padloc/padloc/releases/download/v#{version}/padloc_#{version}_macos_electron_#{arch}.dmg",
-      verified: "github.com/padloc/padloc/"
+  url "https:github.compadlocpadlocreleasesdownloadv#{version}padloc_#{version}_macos_electron_#{arch}.dmg",
+      verified: "github.compadlocpadloc"
   name "Padloc"
   desc "Modern password manager"
-  homepage "https://padloc.app/"
+  homepage "https:padloc.app"
 
   livecheck do
     url :url
@@ -19,7 +19,7 @@ cask "padloc" do
   app "Padloc.app"
 
   zap trash: [
-    "~/Library/Application Support/Caches/padloc-updater",
-    "~/Library/Application Support/Padloc",
+    "~LibraryApplication SupportCachespadloc-updater",
+    "~LibraryApplication SupportPadloc",
   ]
 end

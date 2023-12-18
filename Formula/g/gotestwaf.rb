@@ -1,10 +1,10 @@
 class Gotestwaf < Formula
   desc "Tool for API and OWASP attack simulation"
-  homepage "https://lab.wallarm.com/test-your-waf-before-hackers/"
-  url "https://ghproxy.com/https://github.com/wallarm/gotestwaf/archive/refs/tags/v0.4.9.tar.gz"
+  homepage "https:lab.wallarm.comtest-your-waf-before-hackers"
+  url "https:github.comwallarmgotestwafarchiverefstagsv0.4.9.tar.gz"
   sha256 "1146ec43b3e801a6b02e2a976805f15346eaba26f2b288e7a1ad57014bf07da1"
   license "MIT"
-  head "https://github.com/wallarm/gotestwaf.git", branch: "master"
+  head "https:github.comwallarmgotestwaf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6667b782e98a5b779f1a8af77097b17d621db3e6ca7b0d9c138d7776afc29929"
@@ -19,14 +19,14 @@ class Gotestwaf < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/wallarm/gotestwaf/internal/version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
+    ldflags = "-s -w -X github.comwallarmgotestwafinternalversion.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmd"
     pkgetc.install "config.yaml"
   end
 
   test do
-    cp pkgetc/"config.yaml", testpath
-    (testpath/"testcases/sql-injection/test.yaml").write <<~EOS
+    cp pkgetc"config.yaml", testpath
+    (testpath"testcasessql-injectiontest.yaml").write <<~EOS
       ---
       payload:
         - '"union select -7431.1, name, @aaa from u_base--w-'
@@ -42,10 +42,10 @@ class Gotestwaf < Formula
         - JsonBody
         - Header
     EOS
-    output = shell_output("#{bin}/gotestwaf --url https://example.com/ 2>&1", 1)
+    output = shell_output("#{bin}gotestwaf --url https:example.com 2>&1", 1)
     assert_match "Try to identify WAF solution", output
     assert_match "error=\"WAF was not detected", output
 
-    assert_match version.to_s, shell_output("#{bin}/gotestwaf --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}gotestwaf --version 2>&1")
   end
 end

@@ -1,11 +1,11 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
-  homepage "https://www.snort.org"
-  url "https://ghproxy.com/https://github.com/snort3/snort3/archive/refs/tags/3.1.76.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.76.0.tar.gz"
+  homepage "https:www.snort.org"
+  url "https:github.comsnort3snort3archiverefstags3.1.76.0.tar.gz"
+  mirror "https:fossies.orglinuxmiscsnort3-3.1.76.0.tar.gz"
   sha256 "5586199be8b7a7c6a1b73e0af2e2e004db8417b8282668b10583071e35c9c7a9"
   license "GPL-2.0-only"
-  head "https://github.com/snort3/snort3.git", branch: "master"
+  head "https:github.comsnort3snort3.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -53,9 +53,9 @@ class Snort < Formula
   fails_with gcc: "5"
 
   def install
-    # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).
+    # These flags are not needed for LuaJIT 2.1 (Ref: https:luajit.orginstall.html).
     # On Apple ARM, building with flags results in broken binaries and they need to be removed.
-    inreplace "cmake/FindLuaJIT.cmake", " -pagezero_size 10000 -image_base 100000000\"", "\""
+    inreplace "cmakeFindLuaJIT.cmake", " -pagezero_size 10000 -image_base 100000000\"", "\""
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_TCMALLOC=ON"
     system "cmake", "--build", "build"
@@ -64,14 +64,14 @@ class Snort < Formula
 
   def caveats
     <<~EOS
-      For snort to be functional, you need to update the permissions for /dev/bpf*
+      For snort to be functional, you need to update the permissions for devbpf*
       so that they can be read by non-root users.  This can be done manually using:
-          sudo chmod o+r /dev/bpf*
+          sudo chmod o+r devbpf*
       or you could create a startup item to do this for you.
     EOS
   end
 
   test do
-    assert_match "Version #{version}", shell_output("#{bin}/snort -V")
+    assert_match "Version #{version}", shell_output("#{bin}snort -V")
   end
 end

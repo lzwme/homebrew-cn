@@ -2,10 +2,10 @@ cask "font-eater" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/eater/Eater-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofleaterEater-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Eater"
-  homepage "https://fonts.google.com/specimen/Eater"
+  homepage "https:fonts.google.comspecimenEater"
 
   font "Eater-Regular.ttf"
 

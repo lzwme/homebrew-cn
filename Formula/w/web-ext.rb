@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class WebExt < Formula
   desc "Command-line tool to help build, run, and test web extensions"
-  homepage "https://github.com/mozilla/web-ext"
-  url "https://registry.npmjs.org/web-ext/-/web-ext-7.9.0.tgz"
+  homepage "https:github.commozillaweb-ext"
+  url "https:registry.npmjs.orgweb-ext-web-ext-7.9.0.tgz"
   sha256 "d38d5b3efdbf7acc9278cb89246f79feb998aa53fe3ed8c4cdbb9707e4e22f3e"
   license "MPL-2.0"
 
@@ -24,31 +24,31 @@ class WebExt < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = libexec/"lib/node_modules/web-ext/node_modules/node-notifier/vendor"
+    node_notifier_vendor_dir = libexec"libnode_modulesweb-extnode_modulesnode-notifiervendor"
     node_notifier_vendor_dir.rmtree # remove vendored pre-built binaries
 
     if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
+      terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
   end
 
   test do
-    (testpath/"manifest.json").write <<~EOF
+    (testpath"manifest.json").write <<~EOF
       {
         "manifest_version": 2,
         "name": "minimal web extension",
         "version": "0.0.1"
       }
     EOF
-    assert_equal <<~EOF, shell_output("#{bin}/web-ext lint").gsub(/ +$/, "")
+    assert_equal <<~EOF, shell_output("#{bin}web-ext lint").gsub( +$, "")
       Validation Summary:
 
       errors          0
@@ -57,6 +57,6 @@ class WebExt < Formula
 
     EOF
 
-    assert_match version.to_s, shell_output("#{bin}/web-ext --version")
+    assert_match version.to_s, shell_output("#{bin}web-ext --version")
   end
 end

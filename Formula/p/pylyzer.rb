@@ -1,7 +1,7 @@
 class Pylyzer < Formula
   desc "Fast static code analyzer & language server for Python"
-  homepage "https://github.com/mtshiba/pylyzer"
-  url "https://ghproxy.com/https://github.com/mtshiba/pylyzer/archive/refs/tags/v0.0.51.tar.gz"
+  homepage "https:github.commtshibapylyzer"
+  url "https:github.commtshibapylyzerarchiverefstagsv0.0.51.tar.gz"
   sha256 "23e9486f08165187b67e7ca11cbbeeeb16c2f8c1993f7e1724ce60f702d0c448"
   license "MIT"
 
@@ -18,15 +18,15 @@ class Pylyzer < Formula
   depends_on "rust" => :build
 
   def install
-    ENV["HOME"] = buildpath # The build will write to HOME/.erg
+    ENV["HOME"] = buildpath # The build will write to HOME.erg
     system "cargo", "install", *std_cargo_args(root: libexec)
-    erg_path = libexec/"erg"
-    erg_path.install Dir[buildpath/".erg/*"]
-    (bin/"pylyzer").write_env_script(libexec/"bin/pylyzer", ERG_PATH: erg_path)
+    erg_path = libexec"erg"
+    erg_path.install Dir[buildpath".erg*"]
+    (bin"pylyzer").write_env_script(libexec"binpylyzer", ERG_PATH: erg_path)
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       print("test")
     EOS
 
@@ -35,8 +35,8 @@ class Pylyzer < Formula
       \e[92mAll checks OK\e[m: test.py
     EOS
 
-    assert_equal expected, shell_output("#{bin}/pylyzer #{testpath}/test.py")
+    assert_equal expected, shell_output("#{bin}pylyzer #{testpath}test.py")
 
-    assert_match "pylyzer #{version}", shell_output("#{bin}/pylyzer --version")
+    assert_match "pylyzer #{version}", shell_output("#{bin}pylyzer --version")
   end
 end

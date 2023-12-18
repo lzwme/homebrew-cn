@@ -1,15 +1,15 @@
 class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
-  homepage "https://ledger-cli.org/"
-  url "https://ghproxy.com/https://github.com/ledger/ledger/archive/refs/tags/v3.3.2.tar.gz"
+  homepage "https:ledger-cli.org"
+  url "https:github.comledgerledgerarchiverefstagsv3.3.2.tar.gz"
   sha256 "555296ee1e870ff04e2356676977dcf55ebab5ad79126667bc56464cb1142035"
   license "BSD-3-Clause"
   revision 2
-  head "https://github.com/ledger/ledger.git", branch: "master"
+  head "https:github.comledgerledger.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -39,7 +39,7 @@ class Ledger < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin"
 
     args = %W[
       --jobs=#{ENV.make_jobs}
@@ -53,21 +53,21 @@ class Ledger < Formula
       -DPython_FIND_VERSION_MAJOR=3
       -DUSE_GPGME=1
     ] + std_cmake_args
-    system "./acprep", "opt", "make", *args
-    system "./acprep", "opt", "make", "doc", *args
-    system "./acprep", "opt", "make", "install", *args
+    system ".acprep", "opt", "make", *args
+    system ".acprep", "opt", "make", "doc", *args
+    system ".acprep", "opt", "make", "install", *args
 
-    (pkgshare/"examples").install Dir["test/input/*.dat"]
+    (pkgshare"examples").install Dir["testinput*.dat"]
     pkgshare.install "contrib"
-    elisp.install Dir["lisp/*.el", "lisp/*.elc"]
-    bash_completion.install pkgshare/"contrib/ledger-completion.bash"
+    elisp.install Dir["lisp*.el", "lisp*.elc"]
+    bash_completion.install pkgshare"contribledger-completion.bash"
   end
 
   test do
-    balance = testpath/"output"
-    system bin/"ledger",
+    balance = testpath"output"
+    system bin"ledger",
       "--args-only",
-      "--file", "#{pkgshare}/examples/sample.dat",
+      "--file", "#{pkgshare}examplessample.dat",
       "--output", balance,
       "balance", "--collapse", "equity"
     assert_equal "          $-2,500.00  Equity", balance.read.chomp

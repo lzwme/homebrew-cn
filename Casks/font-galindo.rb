@@ -2,10 +2,10 @@ cask "font-galindo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/galindo/Galindo-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflgalindoGalindo-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Galindo"
-  homepage "https://fonts.google.com/specimen/Galindo"
+  homepage "https:fonts.google.comspecimenGalindo"
 
   font "Galindo-Regular.ttf"
 

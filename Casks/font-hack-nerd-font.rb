@@ -2,10 +2,10 @@ cask "font-hack-nerd-font" do
   version "3.1.1"
   sha256 "5cffb9dab5aeba7294cab8b32a8d50c8263f63d6083b38411e4003d13424068e"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Hack.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Hack.zip"
   name "Hack Nerd Font (Hack)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

@@ -1,11 +1,11 @@
 class Virgil < Formula
   desc "CLI tool to manage your Virgil account and applications"
-  homepage "https://github.com/VirgilSecurity/virgil-cli"
-  url "https://github.com/VirgilSecurity/virgil-cli.git",
+  homepage "https:github.comVirgilSecurityvirgil-cli"
+  url "https:github.comVirgilSecurityvirgil-cli.git",
      tag:      "v5.2.9",
      revision: "604e4339d100c9cd133f4730ba0efbd599321ecb"
   license "BSD-3-Clause"
-  head "https://github.com/VirgilSecurity/virgil-cli.git", branch: "master"
+  head "https:github.comVirgilSecurityvirgil-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, sonoma:       "0d6baf5fbae58063f78f30264489c23a91179d000db777feb19d88d67786862d"
@@ -19,7 +19,7 @@ class Virgil < Formula
   end
 
   depends_on "go" => :build
-  # https://github.com/VirgilSecurity/virgil-cli/issues/58
+  # https:github.comVirgilSecurityvirgil-cliissues58
   depends_on arch: :x86_64
 
   def install
@@ -28,7 +28,7 @@ class Virgil < Formula
   end
 
   test do
-    result = shell_output "#{bin}/virgil purekit keygen"
+    result = shell_output "#{bin}virgil purekit keygen"
     assert_match "SK.1.", result
   end
 end

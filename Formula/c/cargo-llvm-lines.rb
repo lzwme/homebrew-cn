@@ -1,10 +1,10 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
-  homepage "https://github.com/dtolnay/cargo-llvm-lines"
-  url "https://ghproxy.com/https://github.com/dtolnay/cargo-llvm-lines/archive/refs/tags/0.4.36.tar.gz"
+  homepage "https:github.comdtolnaycargo-llvm-lines"
+  url "https:github.comdtolnaycargo-llvm-linesarchiverefstags0.4.36.tar.gz"
   sha256 "7b38c20001dfa5012ea2d2a4050d297cdd335df727d7867545a3682ccbb53de5"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/dtolnay/cargo-llvm-lines.git", branch: "master"
+  head "https:github.comdtolnaycargo-llvm-lines.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c635b48b3fd2382b832a0aa51966612e7b10d9e19d37c52a75fb380509fa6aa"
@@ -25,11 +25,11 @@ class CargoLlvmLines < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     system "cargo", "new", "hello_world", "--bin"
     cd "hello_world" do

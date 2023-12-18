@@ -1,11 +1,11 @@
 class Bluepill < Formula
   desc "Testing tool for iOS that runs UI tests using multiple simulators"
-  homepage "https://github.com/MobileNativeFoundation/bluepill"
-  url "https://github.com/MobileNativeFoundation/bluepill.git",
+  homepage "https:github.comMobileNativeFoundationbluepill"
+  url "https:github.comMobileNativeFoundationbluepill.git",
       tag:      "v5.12.5",
       revision: "a8e6c3391290394a4a4bfeb7e3dd232faa8e2d00"
   license "BSD-2-Clause"
-  head "https://github.com/MobileNativeFoundation/bluepill.git", branch: "master"
+  head "https:github.comMobileNativeFoundationbluepill.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -26,20 +26,20 @@ class Bluepill < Formula
   depends_on :macos
 
   def install
-    pbxprojs = ["bluepill", "bp"].map { |name| "#{name}/#{name}.xcodeproj/project.pbxproj" }
+    pbxprojs = ["bluepill", "bp"].map { |name| "#{name}#{name}.xcodeprojproject.pbxproj" }
     inreplace pbxprojs, "x86_64", Hardware::CPU.arch.to_s
 
     xcodebuild "-workspace", "Bluepill.xcworkspace",
                "-scheme", "bluepill",
                "-configuration", "Release",
                "-IDECustomDerivedDataLocation=#{buildpath}",
-               "SYMROOT=../",
+               "SYMROOT=..",
                "ARCHS=#{Hardware::CPU.arch}"
-    bin.install "Release/bluepill", "Release/bp"
+    bin.install "Releasebluepill", "Releasebp"
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/bluepill -h")
-    assert_match "Usage:", shell_output("#{bin}/bp -h")
+    assert_match "Usage:", shell_output("#{bin}bluepill -h")
+    assert_match "Usage:", shell_output("#{bin}bp -h")
   end
 end

@@ -1,10 +1,10 @@
 class Pygit2 < Formula
   desc "Bindings to the libgit2 shared library"
-  homepage "https://github.com/libgit2/pygit2"
-  url "https://files.pythonhosted.org/packages/09/50/f0795db653ceda94f4388d2b40598c188aa4990715909fabcf16b381b843/pygit2-1.13.3.tar.gz"
+  homepage "https:github.comlibgit2pygit2"
+  url "https:files.pythonhosted.orgpackages0950f0795db653ceda94f4388d2b40598c188aa4990715909fabcf16b381b843pygit2-1.13.3.tar.gz"
   sha256 "0257c626011e4afb99bdb20875443f706f84201d4c92637f02215b98eac13ded"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
-  head "https://github.com/libgit2/pygit2.git", branch: "master"
+  head "https:github.comlibgit2pygit2.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3e18c0e320d819c2be32109fa63371cde46e618c3bf4fd4466602e4527b53909"
@@ -29,7 +29,7 @@ class Pygit2 < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
@@ -38,14 +38,14 @@ class Pygit2 < Formula
     assert_empty resources, "This formula should not have any resources!"
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       pyversion = Language::Python.major_minor_version(python_exe)
 
-      (testpath/"#{pyversion}/hello.txt").write "Hello, pygit2."
+      (testpath"#{pyversion}hello.txt").write "Hello, pygit2."
       mkdir pyversion do
         system python_exe, "-c", <<~PYTHON
           import pygit2
-          repo = pygit2.init_repository('#{testpath}/#{pyversion}', False) # git init
+          repo = pygit2.init_repository('#{testpath}#{pyversion}', False) # git init
 
           index = repo.index
           index.add('hello.txt')

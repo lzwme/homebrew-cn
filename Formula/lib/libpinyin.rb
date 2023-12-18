@@ -1,7 +1,7 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
-  homepage "https://github.com/libpinyin/libpinyin"
-  url "https://ghproxy.com/https://github.com/libpinyin/libpinyin/archive/refs/tags/2.8.1.tar.gz"
+  homepage "https:github.comlibpinyinlibpinyin"
+  url "https:github.comlibpinyinlibpinyinarchiverefstags2.8.1.tar.gz"
   sha256 "42c4f899f71fc26bcc57bb1e2a9309c2733212bb241a0008ba3c9b5ebd951443"
   license "GPL-3.0-or-later"
 
@@ -19,16 +19,16 @@ class Libpinyin < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   # macOS `ld64` does not like the `.la` files created during the build.
-  # upstream issue report, https://github.com/libpinyin/libpinyin/issues/158
+  # upstream issue report, https:github.comlibpinyinlibpinyinissues158
   depends_on "llvm" => :build if DevelopmentTools.clang_build_version >= 1400
   depends_on "pkg-config" => :build
   depends_on "berkeley-db"
   depends_on "glib"
 
   # The language model file is independently maintained by the project owner.
-  # To update this resource block, the URL can be found in data/Makefile.am.
+  # To update this resource block, the URL can be found in dataMakefile.am.
   resource "model" do
-    url "https://downloads.sourceforge.net/libpinyin/models/model19.text.tar.gz"
+    url "https:downloads.sourceforge.netlibpinyinmodelsmodel19.text.tar.gz"
     sha256 "56422a4ee5966c2c809dd065692590ee8def934e52edbbe249b8488daaa1f50b"
   end
 
@@ -36,14 +36,14 @@ class Libpinyin < Formula
     # Workaround for Xcode 14 ld.
     ENV.append_to_cflags "-fuse-ld=lld" if DevelopmentTools.clang_build_version >= 1400
 
-    resource("model").stage buildpath/"data"
-    system "./autogen.sh", "--enable-libzhuyin=yes",
+    resource("model").stage buildpath"data"
+    system ".autogen.sh", "--enable-libzhuyin=yes",
                            "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include <pinyin.h>
 
       int main()
@@ -67,17 +67,17 @@ class Libpinyin < Formula
     EOS
     glib = Formula["glib"]
     flags = %W[
-      -I#{include}/libpinyin-#{version}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
+      -I#{include}libpinyin-#{version}
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
       -L#{lib}
       -L#{glib.opt_lib}
-      -DLIBPINYIN_DATADIR="#{lib}/libpinyin/data/"
+      -DLIBPINYIN_DATADIR="#{lib}libpinyindata"
       -lglib-2.0
       -lpinyin
     ]
     system ENV.cxx, "test.cc", "-o", "test", *flags
     touch "user.conf"
-    system "./test"
+    system ".test"
   end
 end

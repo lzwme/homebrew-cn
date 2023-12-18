@@ -1,14 +1,14 @@
 class IslAT018 < Formula
   desc "Integer Set Library for the polyhedral model"
-  homepage "https://libisl.sourceforge.io/"
+  homepage "https:libisl.sourceforge.io"
   # NOTE: Always use tarball instead of git tag for stable version.
   #
   # Currently isl detects its version using source code directory name
   # and update isl_version() function accordingly.  All other names will
   # result in isl_version() function returning "UNKNOWN" and hence break
   # package detection.
-  url "https://libisl.sourceforge.io/isl-0.18.tar.xz"
-  mirror "https://deb.debian.org/debian/pool/main/i/isl/isl_0.18.orig.tar.xz"
+  url "https:libisl.sourceforge.ioisl-0.18.tar.xz"
+  mirror "https:deb.debian.orgdebianpoolmainiislisl_0.18.orig.tar.xz"
   sha256 "0f35051cc030b87c673ac1f187de40e386a1482a0cfdf2c552dd6031b307ddc4"
   license "MIT"
 
@@ -36,24 +36,24 @@ class IslAT018 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-gmp=system",
                           "--with-gmp-prefix=#{Formula["gmp"].opt_prefix}"
     system "make"
     system "make", "install"
-    (share/"gdb/auto-load").install Dir["#{lib}/*-gdb.py"]
+    (share"gdbauto-load").install Dir["#{lib}*-gdb.py"]
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <isl/ctx.h>
+    (testpath"test.c").write <<~EOS
+      #include <islctx.h>
 
       int main()
       {
@@ -63,6 +63,6 @@ class IslAT018 < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lisl", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class GitUrlSub < Formula
   desc "Recursively substitute remote URLs for multiple repos"
-  homepage "https://gosuri.github.io/git-url-sub"
-  url "https://ghproxy.com/https://github.com/gosuri/git-url-sub/archive/refs/tags/1.0.1.tar.gz"
+  homepage "https:gosuri.github.iogit-url-sub"
+  url "https:github.comgosurigit-url-subarchiverefstags1.0.1.tar.gz"
   sha256 "6c943b55087e786e680d360cb9e085d8f1d7b9233c88e8f2e6a36f8e598a00a9"
   license "MIT"
-  head "https://github.com/gosuri/git-url-sub.git", branch: "master"
+  head "https:github.comgosurigit-url-sub.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85dd820e3a0638da112171e6ebb8087b1894d9d6c6c301161e9abe772f399fed"
@@ -29,7 +29,7 @@ class GitUrlSub < Formula
   test do
     system "git", "init"
     system "git", "remote", "add", "origin", "foo"
-    system "#{bin}/git-url-sub", "-c", "foo", "bar"
-    assert_match(/origin\s+bar \(fetch\)/, shell_output("git remote -v"))
+    system "#{bin}git-url-sub", "-c", "foo", "bar"
+    assert_match(origin\s+bar \(fetch\), shell_output("git remote -v"))
   end
 end

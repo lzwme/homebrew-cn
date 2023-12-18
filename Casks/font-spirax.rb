@@ -2,10 +2,10 @@ cask "font-spirax" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/spirax/Spirax-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflspiraxSpirax-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Spirax"
-  homepage "https://fonts.google.com/specimen/Spirax"
+  homepage "https:fonts.google.comspecimenSpirax"
 
   font "Spirax-Regular.ttf"
 

@@ -2,10 +2,10 @@ cask "font-acme" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/acme/Acme-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflacmeAcme-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Acme"
-  homepage "https://fonts.google.com/specimen/Acme"
+  homepage "https:fonts.google.comspecimenAcme"
 
   font "Acme-Regular.ttf"
 

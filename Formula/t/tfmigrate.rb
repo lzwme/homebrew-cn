@@ -1,10 +1,10 @@
 class Tfmigrate < Formula
-  desc "Terraform/OpenTofu state migration tool for GitOps"
-  homepage "https://github.com/minamijoyo/tfmigrate"
-  url "https://ghproxy.com/https://github.com/minamijoyo/tfmigrate/archive/refs/tags/v0.3.19.tar.gz"
+  desc "TerraformOpenTofu state migration tool for GitOps"
+  homepage "https:github.comminamijoyotfmigrate"
+  url "https:github.comminamijoyotfmigratearchiverefstagsv0.3.19.tar.gz"
   sha256 "2175782a4cfba523ebf0b075293306fcd62a79242d16e45bc2a24729dcb6a8ed"
   license "MIT"
-  head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
+  head "https:github.comminamijoyotfmigrate.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e11c5d66131c3db0c156f4f0901b59b3793ae7e14e89fa918df048c5b7ac4fbc"
@@ -26,17 +26,17 @@ class Tfmigrate < Formula
   test do
     ENV["TFMIGRATE_EXEC_PATH"] = "tofu"
 
-    (testpath/"tfmigrate.hcl").write <<~EOS
+    (testpath"tfmigrate.hcl").write <<~EOS
       migration "state" "brew" {
         actions = [
           "mv aws_security_group.foo aws_security_group.baz",
         ]
       }
     EOS
-    output = shell_output(bin/"tfmigrate plan tfmigrate.hcl 2>&1", 1)
+    output = shell_output(bin"tfmigrate plan tfmigrate.hcl 2>&1", 1)
     assert_match "[migrator@.] compute a new state", output
     assert_match "No state file was found!", output
 
-    assert_match version.to_s, shell_output(bin/"tfmigrate --version")
+    assert_match version.to_s, shell_output(bin"tfmigrate --version")
   end
 end

@@ -1,25 +1,25 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
-  homepage "https://github.com/universal-ctags/ctags"
-  url "https://ghproxy.com/https://github.com/universal-ctags/ctags/archive/refs/tags/p6.0.20231210.0.tar.gz"
-  version "p6.0.20231210.0"
-  sha256 "15d2fd73d23a1a44c5c1524cdbb1323a6f2f4848a3d1a7968a291e1a3b7603e9"
+  homepage "https:github.comuniversal-ctagsctags"
+  url "https:github.comuniversal-ctagsctagsarchiverefstagsp6.0.20231217.0.tar.gz"
+  version "p6.0.20231217.0"
+  sha256 "9a666412ea5398143a4ce178ffb9decc5ec39e9d72dec8b4281aa38aa35c942b"
   license "GPL-2.0-only"
-  head "https://github.com/universal-ctags/ctags.git", branch: "master"
+  head "https:github.comuniversal-ctagsctags.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^(p\d+(?:\.\d+)+)$/i)
+    regex(^(p\d+(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bdb4e9b2ece9ffa773e7d77583b9aafbdd8a64deabe94e59b25ba2867561d916"
-    sha256 cellar: :any,                 arm64_ventura:  "5d2d106ab391b6fcea088ef0e714640284edf3c75b2219aa40edbc092d2acf8a"
-    sha256 cellar: :any,                 arm64_monterey: "a8e338757115f4eb7fb4409e7f84ecca19fc4296d70fc33faa318299d538cf97"
-    sha256 cellar: :any,                 sonoma:         "f8fc4b54dc393587a6e4dea73b431c15c02b2a057666d97ab926eb3340f02794"
-    sha256 cellar: :any,                 ventura:        "2358ad15aef375fe62ca2fbef067746561f593f50ffd97e11cb73f8931d9c069"
-    sha256 cellar: :any,                 monterey:       "5c0cd1f8ccdf59cd82c20e03823fe1d7e24cb63d8532fd865afff90d21ee8f9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4808ec5550784fd7e71776c1ab60390b2e74e22a5e41ce8c84e54fdf97a8cd6"
+    sha256 cellar: :any,                 arm64_sonoma:   "b067a3db8b0013a7fc193ab6f6d75073bdb58f5e1d24498a23baf226340c7530"
+    sha256 cellar: :any,                 arm64_ventura:  "213a5b3d7c22c88babd65b730d812be82e6a6ed15823d20ffe8172b5547fbfad"
+    sha256 cellar: :any,                 arm64_monterey: "871cd0c7432c3f16aa482ab103afddde067117c47bb6c6b83e8282f96ae2f6fc"
+    sha256 cellar: :any,                 sonoma:         "850901a5bde9d243923cb67e002462b917c3d73d4d01cadb55d3a08dc3126c39"
+    sha256 cellar: :any,                 ventura:        "8dc29cbe9fec51ba153d537072d947a1b3d50ec38588f8c1da42b93576c11f42"
+    sha256 cellar: :any,                 monterey:       "4870c554a7038a4b12e9c7cdb9a369c3e0f3b24e46755015e5dff3214054d647"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3aa82c34ce00b5d7b38d908654157cf72a6a9662fa00aa8660f0dca750298e8"
   end
 
   depends_on "autoconf" => :build
@@ -36,14 +36,14 @@ class UniversalCtags < Formula
   conflicts_with "ctags", because: "this formula installs the same executable as the ctags formula"
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args
+    system ".autogen.sh"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <stdlib.h>
 
@@ -58,7 +58,7 @@ class UniversalCtags < Formula
         return 0;
       }
     EOS
-    system bin/"ctags", "-R", "."
-    assert_match(/func.*test\.c/, File.read("tags"))
+    system bin"ctags", "-R", "."
+    assert_match(func.*test\.c, File.read("tags"))
   end
 end

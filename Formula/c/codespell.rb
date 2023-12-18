@@ -1,7 +1,7 @@
 class Codespell < Formula
   desc "Fix common misspellings in source code and text files"
-  homepage "https://github.com/codespell-project/codespell"
-  url "https://files.pythonhosted.org/packages/e1/97/df3e00b4d795c96233e35d269c211131c5572503d2270afb6fed7d859cc2/codespell-2.2.6.tar.gz"
+  homepage "https:github.comcodespell-projectcodespell"
+  url "https:files.pythonhosted.orgpackagese197df3e00b4d795c96233e35d269c211131c5572503d2270afb6fed7d859cc2codespell-2.2.6.tar.gz"
   sha256 "a8c65d8eb3faa03deabab6b3bbe798bea72e1799c7e9e955d57eca4096abcff9"
   license "GPL-2.0-only"
 
@@ -28,6 +28,6 @@ class Codespell < Formula
   end
 
   test do
-    assert_equal "1: teh\n\tteh ==> the\n", pipe_output("#{bin}/codespell -", "teh", 65)
+    assert_equal "1: teh\n\tteh ==> the\n", pipe_output("#{bin}codespell -", "teh", 65)
   end
 end

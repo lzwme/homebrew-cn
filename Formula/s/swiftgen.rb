@@ -1,17 +1,17 @@
 class Swiftgen < Formula
   desc "Swift code generator for assets, storyboards, Localizable.strings, etc."
-  homepage "https://github.com/SwiftGen/SwiftGen"
-  url "https://ghproxy.com/https://github.com/SwiftGen/SwiftGen/archive/refs/tags/6.6.2.tar.gz"
+  homepage "https:github.comSwiftGenSwiftGen"
+  url "https:github.comSwiftGenSwiftGenarchiverefstags6.6.2.tar.gz"
   sha256 "73b73e32ce22554c9db44c8edf0fa0ada33b413c73e8f991eebfaac4073df3de"
   license "MIT"
-  head "https://github.com/SwiftGen/SwiftGen.git", branch: "stable"
+  head "https:github.comSwiftGenSwiftGen.git", branch: "stable"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "22d90e985b8a6ab49311800eeb7ab721f4872bc85a60b44b7ad57954453569c8"
     sha256 cellar: :any_skip_relocation, monterey:       "3c158aecb7ced0c489ef11f6a4c15a9d1449a40ad554388a0310116f510ec316"
   end
 
-  # https://github.com/SwiftGen/SwiftGen/issues/1030
+  # https:github.comSwiftGenSwiftGenissues1030
   deprecate! date: "2023-06-07", because: :does_not_build
 
   depends_on xcode: ["13.3", :build]
@@ -20,15 +20,15 @@ class Swiftgen < Formula
   uses_from_macos "ruby" => :build, since: :high_sierra
 
   resource("testdata") do
-    url "https://ghproxy.com/https://github.com/SwiftGen/SwiftGen/archive/refs/tags/6.6.2.tar.gz"
+    url "https:github.comSwiftGenSwiftGenarchiverefstags6.6.2.tar.gz"
     sha256 "73b73e32ce22554c9db44c8edf0fa0ada33b413c73e8f991eebfaac4073df3de"
   end
 
   def install
     # Install bundler (needed for our rake tasks)
-    ENV["GEM_HOME"] = buildpath/"gem_home"
+    ENV["GEM_HOME"] = buildpath"gem_home"
     system "gem", "install", "bundler"
-    ENV.prepend_path "PATH", buildpath/"gem_home/bin"
+    ENV.prepend_path "PATH", buildpath"gem_homebin"
     system "bundle", "install", "--without", "development", "release"
 
     # Disable linting
@@ -37,23 +37,23 @@ class Swiftgen < Formula
     # Install SwiftGen in `libexec` (because of our resource bundle)
     # Then create a script to invoke it
     system "bundle", "exec", "rake", "cli:install[#{libexec}]"
-    bin.write_exec_script "#{libexec}/swiftgen"
+    bin.write_exec_script "#{libexec}swiftgen"
   end
 
   test do
     # prepare test data
     resource("testdata").stage testpath
-    fixtures = testpath/"Sources/TestUtils/Fixtures"
+    fixtures = testpath"SourcesTestUtilsFixtures"
     test_command = lambda { |command, template, resource_group, generated, fixture, params = nil|
       assert_equal(
-        (fixtures/"Generated/#{resource_group}/#{template}/#{generated}").read.strip,
-        shell_output("#{bin}/swiftgen run #{command} " \
-                     "--templateName #{template} #{params} #{fixtures}/Resources/#{resource_group}/#{fixture}").strip,
+        (fixtures"Generated#{resource_group}#{template}#{generated}").read.strip,
+        shell_output("#{bin}swiftgen run #{command} " \
+                     "--templateName #{template} #{params} #{fixtures}Resources#{resource_group}#{fixture}").strip,
         "swiftgen run #{command} failed",
       )
     }
 
-    system bin/"swiftgen", "--version"
+    system bin"swiftgen", "--version"
 
     #                 command     template             rsrc_group  generated            fixture & params
     test_command.call "colors",   "swift5",            "Colors",   "defaults.swift",    "colors.xml"

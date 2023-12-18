@@ -2,10 +2,10 @@ cask "font-aguafina-script" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/aguafinascript/AguafinaScript-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflaguafinascriptAguafinaScript-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Aguafina Script"
-  homepage "https://fonts.google.com/specimen/Aguafina+Script"
+  homepage "https:fonts.google.comspecimenAguafina+Script"
 
   font "AguafinaScript-Regular.ttf"
 

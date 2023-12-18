@@ -1,7 +1,7 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
-  homepage "https://github.com/pkolaczk/fclones"
-  url "https://ghproxy.com/https://github.com/pkolaczk/fclones/archive/refs/tags/v0.34.0.tar.gz"
+  homepage "https:github.compkolaczkfclones"
+  url "https:github.compkolaczkfclonesarchiverefstagsv0.34.0.tar.gz"
   sha256 "5e8c94bb5fb313a5c228bdc870cf6605487338f31c5a14305e54e7e3ac15d0ad"
   license "MIT"
 
@@ -22,12 +22,12 @@ class Fclones < Formula
   end
 
   test do
-    (testpath/"foo1.txt").write "foo"
-    (testpath/"foo2.txt").write "foo"
-    (testpath/"foo3.txt").write "foo"
-    (testpath/"bar1.txt").write "bar"
-    (testpath/"bar2.txt").write "bar"
-    output = shell_output("#{bin}/fclones group #{testpath}")
+    (testpath"foo1.txt").write "foo"
+    (testpath"foo2.txt").write "foo"
+    (testpath"foo3.txt").write "foo"
+    (testpath"bar1.txt").write "bar"
+    (testpath"bar2.txt").write "bar"
+    output = shell_output("#{bin}fclones group #{testpath}")
     assert_match "Redundant: 9 B (9 B) in 3 files", output
     assert_match "2c28c7a023ea186855cfa528bb7e70a9", output
     assert_match "e7c4901ca83ec8cb7e41399ff071aa16", output

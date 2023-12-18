@@ -1,11 +1,11 @@
 class Regula < Formula
-  desc "Checks infrastructure as code templates using Open Policy Agent/Rego"
-  homepage "https://regula.dev/"
-  url "https://github.com/fugue/regula.git",
+  desc "Checks infrastructure as code templates using Open Policy AgentRego"
+  homepage "https:regula.dev"
+  url "https:github.comfugueregula.git",
       tag:      "v3.2.1",
       revision: "fed1e441b187504a5928e2999a6210b88279139c"
   license "Apache-2.0"
-  head "https://github.com/fugue/regula.git", branch: "master"
+  head "https:github.comfugueregula.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40388fa42fc5f575c9fb2a660dfa64ea996ae9626d38befc13a6a68ef65d3d0e"
@@ -24,17 +24,17 @@ class Regula < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/fugue/regula/v3/pkg/version.Version=#{version}
-      -X github.com/fugue/regula/v3/pkg/version.GitCommit=#{Utils.git_short_head}
+      -X github.comfugueregulav3pkgversion.Version=#{version}
+      -X github.comfugueregulav3pkgversion.GitCommit=#{Utils.git_short_head}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"regula", "completion")
+    generate_completions_from_executable(bin"regula", "completion")
   end
 
   test do
-    (testpath/"infra/test.tf").write <<~EOS
+    (testpath"infratest.tf").write <<~EOS
       resource "aws_s3_bucket" "foo-bucket" {
         region        = "us-east-1"
         bucket        = "test"
@@ -47,8 +47,8 @@ class Regula < Formula
       }
     EOS
 
-    assert_match "Found 10 problems", shell_output(bin/"regula run infra", 1)
+    assert_match "Found 10 problems", shell_output(bin"regula run infra", 1)
 
-    assert_match version.to_s, shell_output(bin/"regula version")
+    assert_match version.to_s, shell_output(bin"regula version")
   end
 end

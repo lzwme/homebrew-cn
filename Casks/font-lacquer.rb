@@ -2,10 +2,10 @@ cask "font-lacquer" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/lacquer/Lacquer-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofllacquerLacquer-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Lacquer"
-  homepage "https://fonts.google.com/specimen/Lacquer"
+  homepage "https:fonts.google.comspecimenLacquer"
 
   font "Lacquer-Regular.ttf"
 

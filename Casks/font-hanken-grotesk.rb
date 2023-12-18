@@ -2,13 +2,13 @@ cask "font-hanken-grotesk" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/hankengrotesk"
+      only_path: "oflhankengrotesk"
   name "Hanken Grotesk"
   desc "Led by alfredo marco pradil"
-  homepage "https://fonts.google.com/specimen/Hanken+Grotesk"
+  homepage "https:fonts.google.comspecimenHanken+Grotesk"
 
   font "HankenGrotesk-Italic[wght].ttf"
   font "HankenGrotesk[wght].ttf"

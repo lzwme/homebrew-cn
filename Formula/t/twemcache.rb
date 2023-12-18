@@ -1,11 +1,11 @@
 class Twemcache < Formula
   desc "Twitter fork of memcached"
-  homepage "https://github.com/twitter/twemcache"
-  url "https://ghproxy.com/https://github.com/twitter/twemcache/archive/refs/tags/v2.6.3.tar.gz"
+  homepage "https:github.comtwittertwemcache"
+  url "https:github.comtwittertwemcachearchiverefstagsv2.6.3.tar.gz"
   sha256 "ab05927f7d930b7935790450172187afedca742ee7963d5db1e62164e7f4c92b"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/twitter/twemcache.git", branch: "master"
+  head "https:github.comtwittertwemcache.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "ee379e8fe4efe1fdfb0fe05def379e9370e363e623f2616c25801860bd3da0bb"
@@ -29,12 +29,12 @@ class Twemcache < Formula
 
   def install
     system "autoreconf", "-fvi"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin/"twemcache", "--help"
+    system bin"twemcache", "--help"
   end
 end

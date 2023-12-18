@@ -1,7 +1,7 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
-  homepage "https://dart.dev"
-  url "https://ghproxy.com/https://github.com/dart-lang/sdk/archive/refs/tags/3.1.5.tar.gz"
+  homepage "https:dart.dev"
+  url "https:github.comdart-langsdkarchiverefstags3.1.5.tar.gz"
   sha256 "099c560da26a81788c64f066c54be59b7988491f74f227d1641976aa58bd9a34"
   license "BSD-3-Clause"
 
@@ -23,32 +23,32 @@ class DartSdk < Formula
   uses_from_macos "xz" => :build
 
   resource "depot-tools" do
-    url "https://chromium.googlesource.com/chromium/tools/depot_tools.git",
+    url "https:chromium.googlesource.comchromiumtoolsdepot_tools.git",
         revision: "27ea34f94ea114fec4fc4a10720492dbe8f3d738"
   end
 
   def install
-    resource("depot-tools").stage(buildpath/"depot-tools")
+    resource("depot-tools").stage(buildpath"depot-tools")
 
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
-    ENV.append_path "PATH", "#{buildpath}/depot-tools"
+    ENV.append_path "PATH", "#{buildpath}depot-tools"
 
-    system "gclient", "config", "--name", "sdk", "https://dart.googlesource.com/sdk.git@#{version}"
+    system "gclient", "config", "--name", "sdk", "https:dart.googlesource.comsdk.git@#{version}"
     system "gclient", "sync", "--no-history"
 
     chdir "sdk" do
       arch = Hardware::CPU.arm? ? "arm64" : "x64"
-      system "./tools/build.py", "--no-goma", "--mode=release", "--arch=#{arch}", "create_sdk"
+      system ".toolsbuild.py", "--no-goma", "--mode=release", "--arch=#{arch}", "create_sdk"
       out = OS.linux? ? "out" : "xcodebuild"
-      libexec.install Dir["#{out}/Release#{arch.capitalize}/dart-sdk/*"]
+      libexec.install Dir["#{out}Release#{arch.capitalize}dart-sdk*"]
     end
-    bin.install_symlink libexec/"bin/dart"
+    bin.install_symlink libexec"bindart"
   end
 
   test do
-    system bin/"dart", "create", "dart-test"
+    system bin"dart", "create", "dart-test"
     chdir "dart-test" do
-      assert_match "Hello world: 42!", shell_output(bin/"dart run")
+      assert_match "Hello world: 42!", shell_output(bin"dart run")
     end
   end
 end

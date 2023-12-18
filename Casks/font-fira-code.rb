@@ -2,17 +2,17 @@ cask "font-fira-code" do
   version "6.2"
   sha256 "0949915ba8eb24d89fd93d10a7ff623f42830d7c5ffc3ecbf960e4ecad3e3e79"
 
-  url "https://ghproxy.com/https://github.com/tonsky/FiraCode/releases/download/#{version}/Fira_Code_v#{version}.zip"
+  url "https:github.comtonskyFiraCodereleasesdownload#{version}Fira_Code_v#{version}.zip"
   name "Fira Code"
   desc "Free monospaced font with programming ligatures"
-  homepage "https://github.com/tonsky/FiraCode"
+  homepage "https:github.comtonskyFiraCode"
 
-  font "ttf/FiraCode-Bold.ttf"
-  font "ttf/FiraCode-Light.ttf"
-  font "ttf/FiraCode-Medium.ttf"
-  font "ttf/FiraCode-Regular.ttf"
-  font "ttf/FiraCode-Retina.ttf"
-  font "ttf/FiraCode-SemiBold.ttf"
+  font "ttfFiraCode-Bold.ttf"
+  font "ttfFiraCode-Light.ttf"
+  font "ttfFiraCode-Medium.ttf"
+  font "ttfFiraCode-Regular.ttf"
+  font "ttfFiraCode-Retina.ttf"
+  font "ttfFiraCode-SemiBold.ttf"
 
   # No zap stanza required
 end

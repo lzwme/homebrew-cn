@@ -1,10 +1,10 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
-  homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://ghproxy.com/https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.3.4.tar.gz"
+  homepage "https:github.comfastfetch-clifastfetch"
+  url "https:github.comfastfetch-clifastfetcharchiverefstags2.3.4.tar.gz"
   sha256 "d132775816685b7ceb8adc164af50a96814af879b97ad453efca3a285efd96d0"
   license "MIT"
-  head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
+  head "https:github.comfastfetch-clifastfetch.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -49,11 +49,11 @@ class Fastfetch < Formula
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bash_completion.install share/"bash-completion/completions/fastfetch"
+    bash_completion.install share"bash-completioncompletionsfastfetch"
   end
 
   test do
-    assert_match "fastfetch", shell_output("#{bin}/fastfetch --version")
-    assert_match "OS", shell_output("#{bin}/fastfetch --structure OS --pipe")
+    assert_match "fastfetch", shell_output("#{bin}fastfetch --version")
+    assert_match "OS", shell_output("#{bin}fastfetch --structure OS --pipe")
   end
 end

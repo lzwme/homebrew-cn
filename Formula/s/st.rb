@@ -1,11 +1,11 @@
 class St < Formula
   desc "Statistics from the command-line"
-  homepage "https://github.com/nferraz/st"
-  url "https://ghproxy.com/https://github.com/nferraz/st/archive/refs/tags/v1.1.4.tar.gz"
+  homepage "https:github.comnferrazst"
+  url "https:github.comnferrazstarchiverefstagsv1.1.4.tar.gz"
   sha256 "c02a16f67e4c357690a5438319843149fd700c223128f9ffebecab2849c58bb8"
   license "MIT"
   revision 1
-  head "https://github.com/nferraz/st.git", branch: "master"
+  head "https:github.comnferrazst.git", branch: "master"
 
   livecheck do
     url :stable
@@ -27,16 +27,16 @@ class St < Formula
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", lib/"perl5/"
+    ENV.prepend_create_path "PERL5LIB", lib"perl5"
 
     system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}", "INSTALLSITEMAN1DIR=#{man1}", "INSTALLSITEMAN3DIR=#{man3}"
     system "make", "install"
 
-    bin.env_script_all_files libexec/"bin", PERL5LIB: ENV["PERL5LIB"]
+    bin.env_script_all_files libexec"bin", PERL5LIB: ENV["PERL5LIB"]
   end
 
   test do
-    (testpath/"test.txt").write((1..100).map(&:to_s).join("\n"))
-    assert_equal "5050", pipe_output("#{bin}/st --sum test.txt").chomp
+    (testpath"test.txt").write((1..100).map(&:to_s).join("\n"))
+    assert_equal "5050", pipe_output("#{bin}st --sum test.txt").chomp
   end
 end

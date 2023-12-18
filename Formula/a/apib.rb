@@ -1,10 +1,10 @@
 class Apib < Formula
   desc "HTTP performance-testing tool"
-  homepage "https://github.com/apigee/apib"
-  url "https://ghproxy.com/https://github.com/apigee/apib/archive/refs/tags/APIB_1_2_1.tar.gz"
+  homepage "https:github.comapigeeapib"
+  url "https:github.comapigeeapibarchiverefstagsAPIB_1_2_1.tar.gz"
   sha256 "e47f639aa6ffc14a2e5b03bf95e8b0edc390fa0bb2594a521f779d6e17afc14c"
   license "Apache-2.0"
-  head "https://github.com/apigee/apib.git", branch: "master"
+  head "https:github.comapigeeapib.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -28,10 +28,10 @@ class Apib < Formula
     system "cmake", ".", *std_cmake_args
     system "make", "apib", "apibmon"
 
-    bin.install "apib/apib", "apib/apibmon"
+    bin.install "apibapib", "apibapibmon"
   end
 
   test do
-    system "#{bin}/apib", "-c 1", "-d 1", "https://www.google.com"
+    system "#{bin}apib", "-c 1", "-d 1", "https:www.google.com"
   end
 end

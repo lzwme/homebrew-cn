@@ -1,7 +1,7 @@
 class Shelltestrunner < Formula
   desc "Portable command-line tool for testing command-line programs"
-  homepage "https://github.com/simonmichael/shelltestrunner"
-  url "https://hackage.haskell.org/package/shelltestrunner-1.10/shelltestrunner-1.10.tar.gz"
+  homepage "https:github.comsimonmichaelshelltestrunner"
+  url "https:hackage.haskell.orgpackageshelltestrunner-1.10shelltestrunner-1.10.tar.gz"
   sha256 "07bd3365fbbde9b4c80a3139792c30c1b1929736175fc207b4af1285bb97cbb0"
   license "GPL-3.0-or-later"
 
@@ -26,8 +26,8 @@ class Shelltestrunner < Formula
   end
 
   test do
-    (testpath/"test").write "$$$ {exe} {in}\n>>> /{out}/\n>>>= 0"
+    (testpath"test").write "$$$ {exe} {in}\n>>> {out}\n>>>= 0"
     args = "-D{exe}=echo -D{in}=message -D{out}=message -D{doNotExist}=null"
-    assert_match "Passed", shell_output("#{bin}/shelltest #{args} test")
+    assert_match "Passed", shell_output("#{bin}shelltest #{args} test")
   end
 end

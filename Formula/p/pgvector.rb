@@ -1,7 +1,7 @@
 class Pgvector < Formula
   desc "Open-source vector similarity search for Postgres"
-  homepage "https://github.com/pgvector/pgvector"
-  url "https://ghproxy.com/https://github.com/pgvector/pgvector/archive/refs/tags/v0.5.1.tar.gz"
+  homepage "https:github.compgvectorpgvector"
+  url "https:github.compgvectorpgvectorarchiverefstagsv0.5.1.tar.gz"
   sha256 "cc7a8e034a96e30a819911ac79d32f6bc47bdd1aa2de4d7d4904e26b83209dc8"
   license "PostgreSQL"
 
@@ -22,29 +22,29 @@ class Pgvector < Formula
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
 
     system "make"
-    (lib/postgresql.name).install "vector.so"
-    (share/postgresql.name/"extension").install "vector.control"
-    (share/postgresql.name/"extension").install Dir["sql/vector--*.sql"]
-    (include/postgresql.name/"server/extension/vector").install "src/vector.h"
+    (libpostgresql.name).install "vector.so"
+    (sharepostgresql.name"extension").install "vector.control"
+    (sharepostgresql.name"extension").install Dir["sqlvector--*.sql"]
+    (includepostgresql.name"serverextensionvector").install "srcvector.h"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
-    psql = postgresql.opt_bin/"psql"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
     port = free_port
 
-    system pg_ctl, "initdb", "-D", testpath/"test"
-    (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
       port = #{port}
     EOS
-    system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
     begin
       system psql, "-p", port.to_s, "-c", "CREATE EXTENSION vector;", "postgres"
     ensure
-      system pg_ctl, "stop", "-D", testpath/"test"
+      system pg_ctl, "stop", "-D", testpath"test"
     end
   end
 end

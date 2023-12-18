@@ -2,15 +2,15 @@ cask "wwdc" do
   version "7.4.2,1040"
   sha256 "023abb817eb971eb514c27c53a0e1fb55913e680e7293742201ed0a69df6faa5"
 
-  url "https://ghproxy.com/https://github.com/insidegui/WWDC/releases/download/#{version.csv.first}/WWDC_v#{version.csv.first}-#{version.csv.second}.dmg",
-      verified: "github.com/insidegui/WWDC/"
+  url "https:github.cominsideguiWWDCreleasesdownload#{version.csv.first}WWDC_v#{version.csv.first}-#{version.csv.second}.dmg",
+      verified: "github.cominsideguiWWDC"
   name "WWDC"
   desc "Allows access to WWDC livestreams, videos and sessions"
-  homepage "https://wwdc.io/"
+  homepage "https:wwdc.io"
 
   livecheck do
     url :url
-    regex(/^WWDC[._-]v?(\d+(?:[.-]\d+)+)\.dmg$/i)
+    regex(^WWDC[._-]v?(\d+(?:[.-]\d+)+)\.dmg$i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -27,9 +27,9 @@ cask "wwdc" do
   app "WWDC.app"
 
   zap trash: [
-    "~/Library/Application Support/io.wwdc.app",
-    "~/Library/Application Support/io.wwdc.app.TranscriptIndexingService",
-    "~/Library/Application Support/WWDC",
-    "~/Library/Preferences/io.wwdc.app.plist",
+    "~LibraryApplication Supportio.wwdc.app",
+    "~LibraryApplication Supportio.wwdc.app.TranscriptIndexingService",
+    "~LibraryApplication SupportWWDC",
+    "~LibraryPreferencesio.wwdc.app.plist",
   ]
 end

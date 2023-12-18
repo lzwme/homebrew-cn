@@ -1,10 +1,10 @@
 class BrewPhpSwitcher < Formula
-  desc "Switch Apache / Valet / CLI configs between PHP versions"
-  homepage "https://github.com/philcook/brew-php-switcher"
-  url "https://ghproxy.com/https://github.com/philcook/brew-php-switcher/archive/refs/tags/v2.5.tar.gz"
+  desc "Switch Apache  Valet  CLI configs between PHP versions"
+  homepage "https:github.comphilcookbrew-php-switcher"
+  url "https:github.comphilcookbrew-php-switcherarchiverefstagsv2.5.tar.gz"
   sha256 "a14414488275a64d82d1837e766e77c094577f7c5ee02ec89dc35baba236bd3e"
   license "MIT"
-  head "https://github.com/philcook/brew-php-switcher.git", branch: "master"
+  head "https:github.comphilcookbrew-php-switcher.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e0825664daa7aa3179f0893c1293a4db3c9fc7255f23f4c84b5a3d9e7f3f2f0a"
@@ -19,6 +19,6 @@ class BrewPhpSwitcher < Formula
 
   test do
     assert_match "usage: brew-php-switcher version",
-                 shell_output("#{bin}/brew-php-switcher")
+                 shell_output("#{bin}brew-php-switcher")
   end
 end

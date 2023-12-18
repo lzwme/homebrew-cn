@@ -1,14 +1,14 @@
 class Aubio < Formula
   desc "Extract annotations from audio signals"
-  homepage "https://github.com/aubio/aubio"
-  url "http://sources.buildroot.net/aubio/aubio-0.4.9.tar.bz2"
+  homepage "https:github.comaubioaubio"
+  url "http:sources.buildroot.netaubioaubio-0.4.9.tar.bz2"
   sha256 "d48282ae4dab83b3dc94c16cf011bcb63835c1c02b515490e1883049c3d1f3da"
   license "GPL-3.0-or-later"
   revision 3
 
   livecheck do
-    url "https://aubio.org/pub/"
-    regex(/href=.*?aubio[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:aubio.orgpub"
+    regex(href=.*?aubio[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,14 +31,14 @@ class Aubio < Formula
   depends_on "python@3.11"
 
   resource "homebrew-aiff" do
-    url "https://archive.org/download/TestAifAiffFile/02DayIsDone.aif"
+    url "https:archive.orgdownloadTestAifAiffFile02DayIsDone.aif"
     sha256 "bca81e8d13f3f6526cd54110ec1196afd5bda6c93b16a7ba5023e474901e050d"
   end
 
   # Fix build with Python 3.11 using Fedora patch. Failure is due to old waf 2.0.14.
   # Remove on next release as HEAD has newer waf.
   patch do
-    url "https://src.fedoraproject.org/rpms/aubio/raw/29fb7e383b5465f4704b1cdc7db27df716e1b45c/f/aubio-python39.patch"
+    url "https:src.fedoraproject.orgrpmsaubioraw29fb7e383b5465f4704b1cdc7db27df716e1b45cfaubio-python39.patch"
     sha256 "2f9cb8913b1c4840588df2f437f702c329b4de4e46eff4dcf68aff4b5024a358"
   end
 
@@ -50,21 +50,21 @@ class Aubio < Formula
     # Needed due to issue with recent clang (-fno-fused-madd))
     ENV.refurbish_args
 
-    system python3, "./waf", "configure", "--prefix=#{prefix}"
-    system python3, "./waf", "build"
-    system python3, "./waf", "install"
+    system python3, ".waf", "configure", "--prefix=#{prefix}"
+    system python3, ".waf", "build"
+    system python3, ".waf", "install"
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     testpath.install resource("homebrew-aiff")
-    system bin/"aubiocut", "--verbose", "02DayIsDone.aif"
-    system bin/"aubioonset", "--verbose", "02DayIsDone.aif"
+    system bin"aubiocut", "--verbose", "02DayIsDone.aif"
+    system bin"aubioonset", "--verbose", "02DayIsDone.aif"
 
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       import aubio
-      src = aubio.source('#{testpath}/02DayIsDone.aif')
+      src = aubio.source('#{testpath}02DayIsDone.aif')
       total_frames = 0
       while True:
         samples, read = src()

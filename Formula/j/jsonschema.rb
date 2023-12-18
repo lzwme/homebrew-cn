@@ -2,11 +2,11 @@ class Jsonschema < Formula
   include Language::Python::Virtualenv
 
   desc "Implementation of JSON Schema for Python"
-  homepage "https://github.com/python-jsonschema/jsonschema"
-  url "https://files.pythonhosted.org/packages/36/3d/ca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7/jsonschema-4.17.3.tar.gz"
+  homepage "https:github.compython-jsonschemajsonschema"
+  url "https:files.pythonhosted.orgpackages363dca032d5ac064dff543aa13c984737795ac81abc9fb130cd2fcff17cfabc7jsonschema-4.17.3.tar.gz"
   sha256 "0f864437ab8b6076ba6707453ef8f98a6a0d512a80e93f8abdb676f737ecb60d"
   license "MIT"
-  head "https://github.com/python-jsonschema/jsonschema.git", branch: "main"
+  head "https:github.compython-jsonschemajsonschema.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -26,12 +26,12 @@ class Jsonschema < Formula
   depends_on "python@3.11"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages21313f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07attrs-22.2.0.tar.gz"
     sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
   end
 
   resource "pyrsistent" do
-    url "https://files.pythonhosted.org/packages/bf/90/445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89/pyrsistent-0.19.3.tar.gz"
+    url "https:files.pythonhosted.orgpackagesbf90445a7dbd275c654c268f47fa9452152709134f61f09605cf776407055a89pyrsistent-0.19.3.tar.gz"
     sha256 "1a2994773706bbb4995c31a97bc94f1418314923bd1048c6d964837040376440"
   end
 
@@ -40,14 +40,14 @@ class Jsonschema < Formula
   end
 
   test do
-    (testpath/"test.json").write <<~EOS
+    (testpath"test.json").write <<~EOS
       {
       	"name" : "Eggs",
       	"price" : 34.99
       }
     EOS
 
-    (testpath/"test.schema").write <<~EOS
+    (testpath"test.schema").write <<~EOS
       {
         "type": "object",
         "properties": {
@@ -57,7 +57,7 @@ class Jsonschema < Formula
       }
     EOS
 
-    out = shell_output("#{bin}/jsonschema --output pretty --instance #{testpath}/test.json #{testpath}/test.schema")
+    out = shell_output("#{bin}jsonschema --output pretty --instance #{testpath}test.json #{testpath}test.schema")
     assert_match "SUCCESS", out
   end
 end

@@ -1,7 +1,7 @@
 class Nrpe < Formula
   desc "Nagios remote plugin executor"
-  homepage "https://www.nagios.org/"
-  url "https://ghproxy.com/https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.1.0/nrpe-4.1.0.tar.gz"
+  homepage "https:www.nagios.org"
+  url "https:github.comNagiosEnterprisesnrpereleasesdownloadnrpe-4.1.0nrpe-4.1.0.tar.gz"
   sha256 "a1f14aa8aaf935b576cc55ab5d77b7cb9c920d7702aff44c9d18c4c841ef8ecc"
   license "GPL-2.0"
 
@@ -23,23 +23,23 @@ class Nrpe < Formula
     user  = `id -un`.chomp
     group = `id -gn`.chomp
 
-    system "./configure", "--prefix=#{prefix}",
-                          "--libexecdir=#{HOMEBREW_PREFIX}/sbin",
-                          "--with-piddir=#{var}/run",
+    system ".configure", "--prefix=#{prefix}",
+                          "--libexecdir=#{HOMEBREW_PREFIX}sbin",
+                          "--with-piddir=#{var}run",
                           "--sysconfdir=#{etc}",
                           "--with-nrpe-user=#{user}",
                           "--with-nrpe-group=#{group}",
                           "--with-nagios-user=#{user}",
                           "--with-nagios-group=#{group}",
                           "--with-ssl=#{Formula["openssl@3"].opt_prefix}",
-                          # Set both or it still looks for /usr/lib
+                          # Set both or it still looks for usrlib
                           "--with-ssl-lib=#{Formula["openssl@3"].opt_lib}",
                           "--enable-ssl",
                           "--enable-command-args"
 
-    inreplace "src/Makefile" do |s|
+    inreplace "srcMakefile" do |s|
       s.gsub! "$(LIBEXECDIR)", "$(SBINDIR)"
-      s.gsub! "$(DESTDIR)#{HOMEBREW_PREFIX}/sbin", "$(SBINDIR)"
+      s.gsub! "$(DESTDIR)#{HOMEBREW_PREFIX}sbin", "$(SBINDIR)"
     end
 
     system "make", "all"
@@ -47,22 +47,22 @@ class Nrpe < Formula
   end
 
   def post_install
-    (var/"run").mkpath
+    (var"run").mkpath
   end
 
   service do
-    run [opt_bin/"nrpe", "-c", etc/"nrpe.cfg", "-d"]
+    run [opt_bin"nrpe", "-c", etc"nrpe.cfg", "-d"]
   end
 
   test do
     pid = fork do
-      exec "#{bin}/nrpe", "-n", "-c", "#{etc}/nrpe.cfg", "-d"
+      exec "#{bin}nrpe", "-n", "-c", "#{etc}nrpe.cfg", "-d"
     end
     sleep 2
 
     begin
       output = shell_output("netstat -an")
-      assert_match(/.*\*\.5666.*LISTEN/, output, "nrpe did not start")
+      assert_match(.*\*\.5666.*LISTEN, output, "nrpe did not start")
       pid_nrpe = shell_output("pgrep nrpe").to_i
     ensure
       Process.kill("SIGINT", pid_nrpe)

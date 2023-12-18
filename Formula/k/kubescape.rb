@@ -1,14 +1,14 @@
 class Kubescape < Formula
   desc "Kubernetes testing according to Hardening Guidance by NSA and CISA"
-  homepage "https://kubescape.io"
-  url "https://ghproxy.com/https://github.com/kubescape/kubescape/archive/refs/tags/v3.0.1.tar.gz"
+  homepage "https:kubescape.io"
+  url "https:github.comkubescapekubescapearchiverefstagsv3.0.1.tar.gz"
   sha256 "31ee32770b4eb5514b2f8885a1fde83abb0a5d6d409704a8789c87948dfb806c"
   license "Apache-2.0"
-  head "https://github.com/kubescape/kubescape.git", branch: "master"
+  head "https:github.comkubescapekubescape.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,18 +26,18 @@ class Kubescape < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/kubescape/kubescape/v3/core/cautils.BuildNumber=v#{version}
+      -X github.comkubescapekubescapev3corecautils.BuildNumber=v#{version}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"kubescape", "completion")
+    generate_completions_from_executable(bin"kubescape", "completion")
   end
 
   test do
-    manifest = "https://ghproxy.com/https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/main/release/kubernetes-manifests.yaml"
-    assert_match "Failed resources by severity:", shell_output("#{bin}/kubescape scan framework nsa #{manifest}")
+    manifest = "https:raw.githubusercontent.comGoogleCloudPlatformmicroservices-demomainreleasekubernetes-manifests.yaml"
+    assert_match "Failed resources by severity:", shell_output("#{bin}kubescape scan framework nsa #{manifest}")
 
-    assert_match version.to_s, shell_output("#{bin}/kubescape version")
+    assert_match version.to_s, shell_output("#{bin}kubescape version")
   end
 end

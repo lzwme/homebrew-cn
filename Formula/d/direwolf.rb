@@ -1,10 +1,10 @@
 class Direwolf < Formula
-  desc "Software \"soundcard\" AX.25 packet modem/TNC and APRS encoder/decoder"
-  homepage "https://github.com/wb2osz/direwolf"
-  url "https://ghproxy.com/https://github.com/wb2osz/direwolf/archive/refs/tags/1.7.tar.gz"
+  desc "Software \"soundcard\" AX.25 packet modemTNC and APRS encoderdecoder"
+  homepage "https:github.comwb2oszdirewolf"
+  url "https:github.comwb2oszdirewolfarchiverefstags1.7.tar.gz"
   sha256 "6301f6a43e5db9ef754765875592a58933f6b78585e9272afc850acf7c5914be"
   license "GPL-2.0-only"
-  head "https://github.com/wb2osz/direwolf.git", branch: "master"
+  head "https:github.comwb2oszdirewolf.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "f15cf78ea350bac7d0daf8663e54242eed663f577400de7630f8225c4e08e340"
@@ -27,8 +27,8 @@ class Direwolf < Formula
   depends_on "portaudio"
 
   def install
-    inreplace "src/decode_aprs.c", "/opt/local/share", share
-    inreplace "src/symbols.c", "/opt/local/share", share
+    inreplace "srcdecode_aprs.c", "optlocalshare", share
+    inreplace "srcsymbols.c", "optlocalshare", share
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -37,9 +37,9 @@ class Direwolf < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/direwolf -u")
+    assert_match version.to_s, shell_output("#{bin}direwolf -u")
 
-    touch testpath/"direwolf.conf"
-    assert_match "Pointless to continue without audio device.", shell_output("#{bin}/direwolf brew", 1)
+    touch testpath"direwolf.conf"
+    assert_match "Pointless to continue without audio device.", shell_output("#{bin}direwolf brew", 1)
   end
 end

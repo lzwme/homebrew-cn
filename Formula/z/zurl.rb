@@ -2,8 +2,8 @@ class Zurl < Formula
   include Language::Python::Virtualenv
 
   desc "HTTP and WebSocket client worker with ZeroMQ interface"
-  homepage "https://github.com/fanout/zurl"
-  url "https://ghproxy.com/https://github.com/fanout/zurl/releases/download/v1.12.0/zurl-1.12.0.tar.bz2"
+  homepage "https:github.comfanoutzurl"
+  url "https:github.comfanoutzurlreleasesdownloadv1.12.0zurl-1.12.0.tar.bz2"
   sha256 "46d13ac60509a1566a4e3ad3eaed5262adf86eb5601ff892dba49affb0b63750"
   license "GPL-3.0-or-later"
 
@@ -33,7 +33,7 @@ class Zurl < Formula
   fails_with gcc: "5"
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/3f/7c/69d31a75a3fe9bbab349de7935badac61396f22baf4ab53179a8d940d58e/pyzmq-25.1.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages3f7c69d31a75a3fe9bbab349de7935badac61396f22baf4ab53179a8d940d58epyzmq-25.1.1.tar.gz"
     sha256 "259c22485b71abacdfa8bf79720cd7bcf4b9d128b30ea554f01ae71fdbfdaa23"
   end
 
@@ -41,7 +41,7 @@ class Zurl < Formula
     args = ["--qtselect=#{Formula["qt"].version.major}"]
     args << "--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}" if OS.mac?
 
-    system "./configure", "--prefix=#{prefix}", *args
+    system ".configure", "--prefix=#{prefix}", *args
     system "make"
     system "make", "install"
   end
@@ -49,17 +49,17 @@ class Zurl < Formula
   test do
     python3 = "python3.12"
 
-    conffile = testpath/"zurl.conf"
-    ipcfile = testpath/"zurl-req"
-    runfile = testpath/"test.py"
+    conffile = testpath"zurl.conf"
+    ipcfile = testpath"zurl-req"
+    runfile = testpath"test.py"
 
-    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexec/Language::Python.site_packages(python3)
-    venv = virtualenv_create(testpath/"vendor", python3)
+    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexecLanguage::Python.site_packages(python3)
+    venv = virtualenv_create(testpath"vendor", python3)
     venv.pip_install(resource("pyzmq"), build_isolation: false)
 
     conffile.write(<<~EOS,
       [General]
-      in_req_spec=ipc://#{ipcfile}
+      in_req_spec=ipc:#{ipcfile}
       defpolicy=allow
       timeout=10
     EOS
@@ -94,8 +94,8 @@ class Zurl < Formula
       c.release()
       ctx = zmq.Context()
       sock = ctx.socket(zmq.REQ)
-      sock.connect('ipc://#{ipcfile}')
-      req = {'id': '1', 'method': 'GET', 'uri': 'http://localhost:#{port}/test'}
+      sock.connect('ipc:#{ipcfile}')
+      req = {'id': '1', 'method': 'GET', 'uri': 'http:localhost:#{port}test'}
       sock.send_string('J' + json.dumps(req))
       poller = zmq.Poller()
       poller.register(sock, zmq.POLLIN)
@@ -108,11 +108,11 @@ class Zurl < Formula
                  )
 
     pid = fork do
-      exec "#{bin}/zurl", "--config=#{conffile}"
+      exec "#{bin}zurl", "--config=#{conffile}"
     end
 
     begin
-      system testpath/"vendor/bin/#{python3}", runfile
+      system testpath"vendorbin#{python3}", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

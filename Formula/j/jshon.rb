@@ -1,7 +1,7 @@
 class Jshon < Formula
   desc "Parse, read, and create JSON from the shell"
-  homepage "http://kmkeen.com/jshon/"
-  url "https://ghproxy.com/https://github.com/keenerd/jshon/archive/refs/tags/20131105.tar.gz"
+  homepage "http:kmkeen.comjshon"
+  url "https:github.comkeenerdjshonarchiverefstags20131105.tar.gz"
   sha256 "28420f6f02c6b762732898692cc0b0795cfe1a59fbfb24e67b80f332cf6d4fa2"
   license "MIT"
 
@@ -31,10 +31,10 @@ class Jshon < Formula
   end
 
   test do
-    (testpath/"test.json").write <<~EOS
+    (testpath"test.json").write <<~EOS
       {"a":1,"b":2}
     EOS
 
-    assert_equal "2", pipe_output("#{bin}/jshon -l < test.json").strip
+    assert_equal "2", pipe_output("#{bin}jshon -l < test.json").strip
   end
 end

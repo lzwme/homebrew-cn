@@ -2,10 +2,10 @@ cask "font-martian-mono" do
   version "1.0.0"
   sha256 "82683f519651fb05e29d47d075f10e8db40ff5328a50e641e5c30f5fa94297b6"
 
-  url "https://ghproxy.com/https://github.com/evilmartians/mono/releases/download/v#{version}/martian-mono-#{version}-otf.zip"
+  url "https:github.comevilmartiansmonoreleasesdownloadv#{version}martian-mono-#{version}-otf.zip"
   name "Martian Mono"
   desc "Monospaced font from Evil Martians"
-  homepage "https://github.com/evilmartians/mono"
+  homepage "https:github.comevilmartiansmono"
 
   font "MartianMono-CnBd.otf"
   font "MartianMono-CnLt.otf"

@@ -1,7 +1,7 @@
 class Gssh < Formula
   desc "SSH automation tool based on Groovy DSL"
-  homepage "https://github.com/int128/groovy-ssh"
-  url "https://ghproxy.com/https://github.com/int128/groovy-ssh/archive/refs/tags/2.11.2.tar.gz"
+  homepage "https:github.comint128groovy-ssh"
+  url "https:github.comint128groovy-ssharchiverefstags2.11.2.tar.gz"
   sha256 "0e078b37fe1ba1a9ca7191e706818e3b423588cac55484dda82dbbd1cdfe0b24"
   license "Apache-2.0"
 
@@ -23,11 +23,11 @@ class Gssh < Formula
     ENV["CIRCLE_TAG"] = version
     ENV["GROOVY_SSH_VERSION"] = version
     system "gradle", "shadowJar", "--no-daemon"
-    libexec.install "cli/build/libs/gssh.jar"
-    bin.write_jar_script libexec/"gssh.jar", "gssh"
+    libexec.install "clibuildlibsgssh.jar"
+    bin.write_jar_script libexec"gssh.jar", "gssh"
   end
 
   test do
-    assert_match "groovy-ssh-#{version}", shell_output("#{bin}/gssh --version")
+    assert_match "groovy-ssh-#{version}", shell_output("#{bin}gssh --version")
   end
 end

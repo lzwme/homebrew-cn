@@ -1,14 +1,14 @@
 class GitSubrepo < Formula
   desc "Git Submodule Alternative"
-  homepage "https://github.com/ingydotnet/git-subrepo"
-  url "https://ghproxy.com/https://github.com/ingydotnet/git-subrepo/archive/refs/tags/0.4.6.tar.gz"
+  homepage "https:github.comingydotnetgit-subrepo"
+  url "https:github.comingydotnetgit-subrepoarchiverefstags0.4.6.tar.gz"
   sha256 "6dcfce781007e7a755444c59e3622eb436e5671c197b8031eaf69fdbaea2b189"
   license "MIT"
-  head "https://github.com/ingydotnet/git-subrepo.git", branch: "master"
+  head "https:github.comingydotnetgit-subrepo.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,11 +28,11 @@ class GitSubrepo < Formula
   def install
     libexec.mkpath
     system "make", "PREFIX=#{prefix}", "INSTALL_LIB=#{libexec}", "install"
-    bin.install_symlink libexec/"git-subrepo"
+    bin.install_symlink libexec"git-subrepo"
 
-    mv "share/completion.bash", "share/git-subrepo"
-    bash_completion.install "share/git-subrepo"
-    zsh_completion.install "share/zsh-completion/_git-subrepo"
+    mv "sharecompletion.bash", "sharegit-subrepo"
+    bash_completion.install "sharegit-subrepo"
+    zsh_completion.install "sharezsh-completion_git-subrepo"
   end
 
   test do
@@ -49,8 +49,8 @@ class GitSubrepo < Formula
       system "git", "add", ".gitignore"
       system "git", "commit", "-m", "testing"
 
-      assert_match(/cloned into/,
-                   shell_output("git subrepo clone ../mod mod"))
+      assert_match(cloned into,
+                   shell_output("git subrepo clone ..mod mod"))
     end
   end
 end

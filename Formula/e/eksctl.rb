@@ -1,11 +1,11 @@
 class Eksctl < Formula
   desc "Simple command-line tool for creating clusters on Amazon EKS"
-  homepage "https://eksctl.io"
-  url "https://github.com/weaveworks/eksctl.git",
+  homepage "https:eksctl.io"
+  url "https:github.comweaveworkseksctl.git",
       tag:      "0.166.0",
       revision: "a5a595e697e4220583a19d4e8ae2b929f885139c"
   license "Apache-2.0"
-  head "https://github.com/weaveworks/eksctl.git", branch: "main"
+  head "https:github.comweaveworkseksctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc4ff867f8a8c5e93c4cba13a2efae8e6fa8a3cfe61d033f2e827a9f38c8aa95"
@@ -25,19 +25,19 @@ class Eksctl < Formula
   depends_on "aws-iam-authenticator"
 
   def install
-    ENV["GOBIN"] = HOMEBREW_PREFIX/"bin"
+    ENV["GOBIN"] = HOMEBREW_PREFIX"bin"
     ENV.deparallelize # Makefile prerequisites need to be run in order
     system "make", "build"
     bin.install "eksctl"
 
-    generate_completions_from_executable(bin/"eksctl", "completion")
+    generate_completions_from_executable(bin"eksctl", "completion")
   end
 
   test do
     assert_match "The official CLI for Amazon EKS",
-      shell_output("#{bin}/eksctl --help")
+      shell_output("#{bin}eksctl --help")
 
     assert_match "Error: couldn't create node group filter from command line options: --cluster must be set",
-      shell_output("#{bin}/eksctl create nodegroup 2>&1", 1)
+      shell_output("#{bin}eksctl create nodegroup 2>&1", 1)
   end
 end

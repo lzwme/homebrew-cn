@@ -1,13 +1,13 @@
 class Rakudo < Formula
   desc "Mature, production-ready implementation of the Raku language"
-  homepage "https://rakudo.org"
-  url "https://ghproxy.com/https://github.com/rakudo/rakudo/releases/download/2023.11/rakudo-2023.11.tar.gz"
+  homepage "https:rakudo.org"
+  url "https:github.comrakudorakudoreleasesdownload2023.11rakudo-2023.11.tar.gz"
   sha256 "09ac43eb6b9eb7ffe363d098ca7b5b522896d85d78319e2cf832fb365f24fe32"
   license "Artistic-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,14 +34,14 @@ class Rakudo < Formula
     system "perl", "Configure.pl",
                    "--backends=moar",
                    "--prefix=#{prefix}",
-                   "--with-nqp=#{Formula["nqp"].bin}/nqp"
+                   "--with-nqp=#{Formula["nqp"].bin}nqp"
     system "make"
     system "make", "install"
-    bin.install "tools/install-dist.raku" => "raku-install-dist"
+    bin.install "toolsinstall-dist.raku" => "raku-install-dist"
   end
 
   test do
-    out = shell_output("#{bin}/raku -e 'loop (my $i = 0; $i < 10; $i++) { print $i }'")
+    out = shell_output("#{bin}raku -e 'loop (my $i = 0; $i < 10; $i++) { print $i }'")
     assert_equal "0123456789", out
   end
 end

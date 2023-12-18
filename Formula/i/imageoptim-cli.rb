@@ -1,15 +1,15 @@
-require "language/node"
+require "languagenode"
 
 class ImageoptimCli < Formula
   desc "CLI for ImageOptim, ImageAlpha and JPEGmini"
-  homepage "https://jamiemason.github.io/ImageOptim-CLI/"
-  url "https://ghproxy.com/https://github.com/JamieMason/ImageOptim-CLI/archive/refs/tags/3.1.9.tar.gz"
+  homepage "https:jamiemason.github.ioImageOptim-CLI"
+  url "https:github.comJamieMasonImageOptim-CLIarchiverefstags3.1.9.tar.gz"
   sha256 "35aee4c380d332355d9f17c97396e626eea6a2e83f9777cc9171f699e2887b33"
   license "MIT"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,10 +28,10 @@ class ImageoptimCli < Formula
     system "yarn"
     system "npm", "run", "build"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/imageoptim -V").chomp
+    assert_equal version.to_s, shell_output("#{bin}imageoptim -V").chomp
   end
 end

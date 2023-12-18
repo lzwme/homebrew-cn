@@ -1,11 +1,11 @@
 class Apngasm < Formula
   desc "Next generation of apngasm, the APNG assembler"
-  homepage "https://github.com/apngasm/apngasm"
-  url "https://ghproxy.com/https://github.com/apngasm/apngasm/archive/refs/tags/3.1.10.tar.gz"
+  homepage "https:github.comapngasmapngasm"
+  url "https:github.comapngasmapngasmarchiverefstags3.1.10.tar.gz"
   sha256 "8171e2c1d37ab231a2061320cb1e5d15cee37642e3ce78e8ab0b8dfc45b80f6c"
   license "Zlib"
   revision 8
-  head "https://github.com/apngasm/apngasm.git", branch: "master"
+  head "https:github.comapngasmapngasm.git", branch: "master"
 
   bottle do
     sha256                               arm64_sonoma:   "1482f26eabdfedaa35741d0c281e315d863d4678fe3d92677653d2460694d36b"
@@ -30,17 +30,17 @@ class Apngasm < Formula
   end
 
   def install
-    inreplace "cli/CMakeLists.txt", "${CMAKE_INSTALL_PREFIX}/man/man1",
-                                    "${CMAKE_INSTALL_PREFIX}/share/man/man1"
+    inreplace "cliCMakeLists.txt", "${CMAKE_INSTALL_PREFIX}manman1",
+                                    "${CMAKE_INSTALL_PREFIX}sharemanman1"
     ENV.cxx11
     ENV.deparallelize # Build error: ld: library not found for -lapngasm
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare/"test").install "test/samples"
+    (pkgshare"test").install "testsamples"
   end
 
   test do
-    system bin/"apngasm", "#{pkgshare}/test/samples/clock*.png"
+    system bin"apngasm", "#{pkgshare}testsamplesclock*.png"
   end
 end

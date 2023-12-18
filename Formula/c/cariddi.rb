@@ -1,10 +1,10 @@
 class Cariddi < Formula
   desc "Scan for endpoints, secrets, API keys, file extensions, tokens and more"
-  homepage "https://github.com/edoardottt/cariddi"
-  url "https://ghproxy.com/https://github.com/edoardottt/cariddi/archive/refs/tags/v1.3.2.tar.gz"
+  homepage "https:github.comedoardotttcariddi"
+  url "https:github.comedoardotttcariddiarchiverefstagsv1.3.2.tar.gz"
   sha256 "7c99f35e92e936820992a540def7ee0165e75d4c765765c4f3f154e9f3d46f55"
   license "GPL-3.0-or-later"
-  head "https://github.com/edoardottt/cariddi.git", branch: "main"
+  head "https:github.comedoardotttcariddi.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9654c116bd6e57393a2a4462c56de10303c06ed36d6c9fc005f47a3e57c4d59b"
@@ -19,13 +19,13 @@ class Cariddi < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cariddi"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcariddi"
   end
 
   test do
-    output = pipe_output("#{bin}/cariddi", "http://testphp.vulnweb.com")
-    assert_match "http://testphp.vulnweb.com/login.php", output
+    output = pipe_output("#{bin}cariddi", "http:testphp.vulnweb.com")
+    assert_match "http:testphp.vulnweb.comlogin.php", output
 
-    assert_match version.to_s, shell_output("#{bin}/cariddi -version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}cariddi -version 2>&1")
   end
 end

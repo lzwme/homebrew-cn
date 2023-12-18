@@ -1,11 +1,11 @@
 class Tilt < Formula
   desc "Define your dev environment as code. For microservice apps on Kubernetes"
-  homepage "https://tilt.dev/"
-  url "https://github.com/tilt-dev/tilt.git",
+  homepage "https:tilt.dev"
+  url "https:github.comtilt-devtilt.git",
     tag:      "v0.33.10",
     revision: "30a6ff34a41a89f732113fd9f15de7193b9442f9"
   license "Apache-2.0"
-  head "https://github.com/tilt-dev/tilt.git", branch: "master"
+  head "https:github.comtilt-devtilt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eab77dc0edc681f3caafc90543de88a1741083b012f2acfca75079b2e2b5ae07"
@@ -34,14 +34,14 @@ class Tilt < Formula
       -X main.commit=#{Utils.git_head}
       -X main.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tilt"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtilt"
 
-    generate_completions_from_executable(bin/"tilt", "completion")
+    generate_completions_from_executable(bin"tilt", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/tilt version")
+    assert_match version.to_s, shell_output("#{bin}tilt version")
 
-    assert_match "Error: No tilt apiserver found: tilt-default", shell_output("#{bin}/tilt api-resources 2>&1", 1)
+    assert_match "Error: No tilt apiserver found: tilt-default", shell_output("#{bin}tilt api-resources 2>&1", 1)
   end
 end

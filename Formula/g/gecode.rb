@@ -1,13 +1,13 @@
 class Gecode < Formula
   desc "Toolkit for developing constraint-based systems and applications"
-  homepage "https://www.gecode.org/"
-  url "https://ghproxy.com/https://github.com/Gecode/gecode/archive/refs/tags/release-6.2.0.tar.gz"
+  homepage "https:www.gecode.org"
+  url "https:github.comGecodegecodearchiverefstagsrelease-6.2.0.tar.gz"
   sha256 "27d91721a690db1e96fa9bb97cec0d73a937e9dc8062c3327f8a4ccb08e951fd"
   license "MIT"
   revision 1
 
   livecheck do
-    url "https://github.com/Gecode/gecode"
+    url "https:github.comGecodegecode"
   end
 
   bottle do
@@ -35,15 +35,15 @@ class Gecode < Formula
       --enable-qt
     ]
     ENV.cxx11
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <gecode/driver.hh>
-      #include <gecode/int.hh>
-      #include <QtWidgets/QtWidgets>
+    (testpath"test.cpp").write <<~EOS
+      #include <gecodedriver.hh>
+      #include <gecodeint.hh>
+      #include <QtWidgetsQtWidgets>
       using namespace Gecode;
       class Test : public Script {
       public:
@@ -100,6 +100,6 @@ class Gecode < Formula
     end
 
     system ENV.cxx, "test.cpp", *args
-    assert_match "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}", shell_output("./test")
+    assert_match "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}", shell_output(".test")
   end
 end

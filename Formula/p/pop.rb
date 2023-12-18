@@ -1,7 +1,7 @@
 class Pop < Formula
   desc "Send emails from your terminal"
-  homepage "https://github.com/charmbracelet/pop"
-  url "https://ghproxy.com/https://github.com/charmbracelet/pop/archive/refs/tags/v0.2.0.tar.gz"
+  homepage "https:github.comcharmbraceletpop"
+  url "https:github.comcharmbraceletpoparchiverefstagsv0.2.0.tar.gz"
   sha256 "360db66ff46cf6331b2851f53477b7bf3a49303b0b46aaacff3d6c1027bf3f40"
   license "MIT"
 
@@ -21,20 +21,20 @@ class Pop < Formula
 
   # patch error status code, remove in next release
   patch do
-    url "https://github.com/charmbracelet/pop/commit/65b34a366addd90a9d4da32ac8e5d22268ec16bd.patch?full_index=1"
+    url "https:github.comcharmbraceletpopcommit65b34a366addd90a9d4da32ac8e5d22268ec16bd.patch?full_index=1"
     sha256 "386fda7d26240d5574b7f402595d01497d7c2d3254e6ad9276a8dd02de0513b7"
   end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
-    generate_completions_from_executable(bin/"pop", "completion")
-    (man1/"pop.1").write Utils.safe_popen_read(bin/"pop", "man")
+    generate_completions_from_executable(bin"pop", "completion")
+    (man1"pop.1").write Utils.safe_popen_read(bin"pop", "man")
   end
 
   test do
     assert_match "environment variable is required",
-      shell_output("#{bin}/pop --body 'hi' --subject 'Hello'", 1).chomp
+      shell_output("#{bin}pop --body 'hi' --subject 'Hello'", 1).chomp
 
-    assert_match version.to_s, shell_output("#{bin}/pop --version")
+    assert_match version.to_s, shell_output("#{bin}pop --version")
   end
 end

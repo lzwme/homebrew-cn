@@ -1,7 +1,7 @@
 class PythonColorama < Formula
   desc "Cross-platform colored terminal text"
-  homepage "https://github.com/tartley/colorama"
-  url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
+  homepage "https:github.comtartleycolorama"
+  url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
   sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   license "BSD-3-Clause"
 
@@ -25,17 +25,17 @@ class PythonColorama < Formula
 
   def install
     # no need to install tests files
-    rm_rf "colorama/tests"
+    rm_rf "coloramatests"
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import colorama"
     end
   end

@@ -1,7 +1,7 @@
 class Snapraid < Formula
   desc "Backup program for disk arrays"
-  homepage "https://www.snapraid.it/"
-  url "https://ghproxy.com/https://github.com/amadvance/snapraid/releases/download/v12.2/snapraid-12.2.tar.gz"
+  homepage "https:www.snapraid.it"
+  url "https:github.comamadvancesnapraidreleasesdownloadv12.2snapraid-12.2.tar.gz"
   sha256 "9d30993aef7fd390369dcaf422ac35f3990e8c91f0fb26151f5b84ccb73d3e01"
   license "GPL-3.0"
 
@@ -19,19 +19,19 @@ class Snapraid < Formula
   end
 
   head do
-    url "https://github.com/amadvance/snapraid.git", branch: "master"
+    url "https:github.comamadvancesnapraid.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system ".autogen.sh" if build.head?
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/snapraid --version")
+    assert_match version.to_s, shell_output("#{bin}snapraid --version")
   end
 end

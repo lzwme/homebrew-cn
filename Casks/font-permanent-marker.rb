@@ -2,10 +2,10 @@ cask "font-permanent-marker" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/permanentmarker/PermanentMarker-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapachepermanentmarkerPermanentMarker-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Permanent Marker"
-  homepage "https://fonts.google.com/specimen/Permanent+Marker"
+  homepage "https:fonts.google.comspecimenPermanent+Marker"
 
   font "PermanentMarker-Regular.ttf"
 

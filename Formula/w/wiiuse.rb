@@ -1,7 +1,7 @@
 class Wiiuse < Formula
   desc "Connect Nintendo Wii Remotes"
-  homepage "https://github.com/wiiuse/wiiuse"
-  url "https://ghproxy.com/https://github.com/wiiuse/wiiuse/archive/refs/tags/0.15.5.tar.gz"
+  homepage "https:github.comwiiusewiiuse"
+  url "https:github.comwiiusewiiusearchiverefstags0.15.5.tar.gz"
   sha256 "d22b66eb13b92513c7736cc5e867fed40b25a0e398a70aa059711fc4f4769363"
   license "GPL-3.0"
 
@@ -34,7 +34,7 @@ class Wiiuse < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <wiiuse.h>
       int main()
       {
@@ -45,6 +45,6 @@ class Wiiuse < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-l", "wiiuse", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

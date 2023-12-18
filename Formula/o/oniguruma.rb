@@ -1,14 +1,14 @@
 class Oniguruma < Formula
   desc "Regular expressions library"
-  homepage "https://github.com/kkos/oniguruma/"
-  url "https://ghproxy.com/https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-6.9.9.tar.gz"
+  homepage "https:github.comkkosoniguruma"
+  url "https:github.comkkosonigurumareleasesdownloadv6.9.9onig-6.9.9.tar.gz"
   sha256 "60162bd3b9fc6f4886d4c7a07925ffd374167732f55dce8c491bfd9cd818a6cf"
   license "BSD-2-Clause"
-  head "https://github.com/kkos/oniguruma.git", branch: "master"
+  head "https:github.comkkosoniguruma.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+(?:[._-](?:mark|rev)\d+)?)$/i)
+    regex(^v?(\d+(?:\.\d+)+(?:[._-](?:mark|rev)\d+)?)$i)
   end
 
   bottle do
@@ -27,12 +27,12 @@ class Oniguruma < Formula
 
   def install
     system "autoreconf", "-vfi"
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match(/#{prefix}/, shell_output("#{bin}/onig-config --prefix"))
+    assert_match(#{prefix}, shell_output("#{bin}onig-config --prefix"))
   end
 end

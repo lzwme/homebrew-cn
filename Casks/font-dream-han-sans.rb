@@ -2,14 +2,14 @@ cask "font-dream-han-sans" do
   version "3.00,2.004,2.001"
   sha256 "e2b4a748a281dae43da2a0011b27daa7b46d99b740562ba261241afdf13b2712"
 
-  url "https://ghproxy.com/https://github.com/Pal3love/dream-han-cjk/releases/download/dream-#{version.csv.first}-sans-#{version.csv.second}-serif-#{version.csv.third}/DreamHanSans.zip"
+  url "https:github.comPal3lovedream-han-cjkreleasesdownloaddream-#{version.csv.first}-sans-#{version.csv.second}-serif-#{version.csv.third}DreamHanSans.zip"
   name "Dream Han Sans"
   desc "Pan-CJK font families with range of weights"
-  homepage "https://github.com/Pal3love/dream-han-cjk/"
+  homepage "https:github.comPal3lovedream-han-cjk"
 
   livecheck do
-    url "https://github.com/Pal3love/dream-han-cjk/releases/latest"
-    regex(/dream[._-]v?(\d+(?:\.\d+)+)[._-]sans[._-]v?(\d+(?:\.\d+)+)[._-]serif[._-]v?(\d+(?:\.\d+)+)/i)
+    url "https:github.comPal3lovedream-han-cjkreleaseslatest"
+    regex(dream[._-]v?(\d+(?:\.\d+)+)[._-]sans[._-]v?(\d+(?:\.\d+)+)[._-]serif[._-]v?(\d+(?:\.\d+)+)i)
     strategy :header_match do |headers, regex|
       match = headers["location"]&.match(regex)
       next if match.blank?

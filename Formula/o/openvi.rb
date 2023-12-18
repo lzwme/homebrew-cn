@@ -1,10 +1,10 @@
 class Openvi < Formula
   desc "Portable OpenBSD vi for UNIX systems"
-  homepage "https://github.com/johnsonjh/OpenVi#readme"
-  url "https://ghproxy.com/https://github.com/johnsonjh/OpenVi/archive/refs/tags/7.4.27.tar.gz"
+  homepage "https:github.comjohnsonjhOpenVi#readme"
+  url "https:github.comjohnsonjhOpenViarchiverefstags7.4.27.tar.gz"
   sha256 "7a40c9388c4f34d039a1fcac0ce24cc4ed6cb892d016fe26c0aaa6f42293ad47"
   license "BSD-3-Clause"
-  head "https://github.com/johnsonjh/OpenVi.git", branch: "master"
+  head "https:github.comjohnsonjhOpenVi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d626305e066850196c3c153840f8ad7d938098225abbf99345cc5368ea66188c"
@@ -16,15 +16,15 @@ class Openvi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "693dbc0eb5a41e6bfce9f829700d330f8ef300678a5b2e3acd033d876ca8f66b"
   end
 
-  depends_on "ncurses" # https://github.com/johnsonjh/OpenVi/issues/32
+  depends_on "ncurses" # https:github.comjohnsonjhOpenViissues32
 
   def install
     system "make", "install", "CHOWN=true", "LTO=1", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath/"test").write("This is toto!\n")
-    pipe_output("#{bin}/ovi -e test", "%s/toto/tutu/g\nwq\n")
+    (testpath"test").write("This is toto!\n")
+    pipe_output("#{bin}ovi -e test", "%stototutug\nwq\n")
     assert_equal "This is tutu!\n", File.read("test")
   end
 end

@@ -1,7 +1,7 @@
 class Mrboom < Formula
   desc "Eight player Bomberman clone"
-  homepage "http://mrboom.mumblecore.org/"
-  url "https://ghproxy.com/https://github.com/Javanaise/mrboom-libretro/releases/download/5.3/MrBoom-src-5.3.tar.gz"
+  homepage "http:mrboom.mumblecore.org"
+  url "https:github.comJavanaisemrboom-libretroreleasesdownload5.3MrBoom-src-5.3.tar.gz"
   sha256 "75c3812878809c908094416b0d50e8b380d158d0ad12b9ae6a9a95ab926866c1"
   license "MIT"
 
@@ -24,23 +24,23 @@ class Mrboom < Formula
   # Remove in next release
   # Fixes: common.cpp:115:10: fatal error: 'SDL_mixer.h' file not found
   patch do
-    url "https://github.com/Javanaise/mrboom-libretro/commit/d483c2dc308ddaf831fb81bff965a1bca266b7c8.patch?full_index=1"
+    url "https:github.comJavanaisemrboom-libretrocommitd483c2dc308ddaf831fb81bff965a1bca266b7c8.patch?full_index=1"
     sha256 "573f11c68b97190398f7f0bcb3338c6f387bf4be39e4fbd3896278b611d0cf59"
   end
 
   def install
     system "make", "mrboom", "LIBSDL2=1"
-    system "make", "install", "PREFIX=#{prefix}", "MANDIR=share/man/man6"
+    system "make", "install", "PREFIX=#{prefix}", "MANDIR=sharemanman6"
   end
 
   test do
     require "pty"
     require "expect"
     require "timeout"
-    PTY.spawn(bin/"mrboom", "-m", "-f 0", "-z") do |r, _w, pid|
+    PTY.spawn(bin"mrboom", "-m", "-f 0", "-z") do |r, _w, pid|
       sleep 15
       Process.kill "SIGINT", pid
-      assert_match "monster", r.expect(/monster/, 10)[0]
+      assert_match "monster", r.expect(monster, 10)[0]
     ensure
       begin
         Timeout.timeout(30) do

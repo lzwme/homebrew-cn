@@ -1,7 +1,7 @@
 class Diamond < Formula
   desc "Accelerated BLAST compatible local sequence aligner"
-  homepage "https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/diamond/"
-  url "https://ghproxy.com/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.8.tar.gz"
+  homepage "https:www.wsi.uni-tuebingen.delehrstuehlealgorithms-in-bioinformaticssoftwarediamond"
+  url "https:github.combbuchfinkdiamondarchiverefstagsv2.1.8.tar.gz"
   sha256 "b6088259f2bc92d1f9dc4add44590cff68321bcbf91eefbc295a3525118b9415"
   license "GPL-3.0-or-later"
 
@@ -27,7 +27,7 @@ class Diamond < Formula
   end
 
   test do
-    (testpath/"nr.faa").write <<~EOS
+    (testpath"nr.faa").write <<~EOS
       >gnl|alu|HSU14568_Alu_Sb_consensus_rf1
       grarwltpvipalweaeaggsrgqeietilantvkprlyXkyknXpgvvagacspsysgg
       XgrrmaXtreaelavsrdratalqpgrqsetpsqkk
@@ -47,7 +47,7 @@ class Diamond < Formula
       ffetesrsvaqagvqwrdlgslqapppgftpfsclslpsswdyrrppprpanfcifsrdg
       vspcXpgwsrspdlvirpprppkvlglqaXatapg
     EOS
-    output = shell_output("#{bin}/diamond makedb --in nr.faa -d nr 2>&1")
+    output = shell_output("#{bin}diamond makedb --in nr.faa -d nr 2>&1")
     assert_match "Database sequences  6\n  Database letters  572", output
   end
 end

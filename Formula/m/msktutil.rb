@@ -1,7 +1,7 @@
 class Msktutil < Formula
   desc "Active Directory keytab management"
-  homepage "https://github.com/msktutil/msktutil"
-  url "https://ghproxy.com/https://github.com/msktutil/msktutil/releases/download/1.2.1/msktutil-1.2.1.tar.bz2"
+  homepage "https:github.commsktutilmsktutil"
+  url "https:github.commsktutilmsktutilreleasesdownload1.2.1msktutil-1.2.1.tar.bz2"
   sha256 "f9686237c4e24414802415f4c8627c7343da365c5a3bcdef7a853fa3cd27b45d"
   license "GPL-2.0-or-later"
 
@@ -20,7 +20,7 @@ class Msktutil < Formula
   uses_from_macos "openldap"
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -29,6 +29,6 @@ class Msktutil < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}/msktutil --version")
+    assert_match version.to_s, shell_output("#{sbin}msktutil --version")
   end
 end

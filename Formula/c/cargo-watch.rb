@@ -1,10 +1,10 @@
 class CargoWatch < Formula
   desc "Watches over your Cargo project's source"
-  homepage "https://watchexec.github.io/#cargo-watch"
-  url "https://ghproxy.com/https://github.com/watchexec/cargo-watch/archive/refs/tags/v8.4.1.tar.gz"
+  homepage "https:watchexec.github.io#cargo-watch"
+  url "https:github.comwatchexeccargo-watcharchiverefstagsv8.4.1.tar.gz"
   sha256 "af1b649de787630144ccbb510b854d2e2a21b91df6cc7e0f420fd14518978572"
   license "CC0-1.0"
-  head "https://github.com/watchexec/cargo-watch.git", branch: "main"
+  head "https:github.comwatchexeccargo-watch.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc25a60737c3df7314140c666340c8001e34accafdd1180b07e0d0c5dbe24d09"
@@ -27,15 +27,15 @@ class CargoWatch < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    output = shell_output("#{bin}/cargo-watch -x build 2>&1", 1)
+    output = shell_output("#{bin}cargo-watch -x build 2>&1", 1)
     assert_match "error: project root does not exist", output
 
-    assert_equal "cargo-watch #{version}", shell_output("#{bin}/cargo-watch --version").strip
+    assert_equal "cargo-watch #{version}", shell_output("#{bin}cargo-watch --version").strip
   end
 end

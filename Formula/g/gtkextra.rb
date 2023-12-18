@@ -1,7 +1,7 @@
 class Gtkextra < Formula
   desc "Widgets for creating GUIs for GTK+"
-  homepage "https://gtkextra.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/gtkextra/3.3/gtkextra-3.3.4.tar.gz"
+  homepage "https:gtkextra.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectgtkextra3.3gtkextra-3.3.4.tar.gz"
   sha256 "651b738a78edbd5d6ccb64f5a256c39ec35fbbed898e54a3ab7e6cf8fd82f1d6"
   license "GPL-2.0-or-later"
   revision 3
@@ -18,7 +18,7 @@ class Gtkextra < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "63ff3052d9c03812e4c97cf79786a4395b9cf431588fc7f771331d049bbe6127"
   end
 
-  # https://gtkextra.sourceforge.net/cms/index.php?option=com_content&view=article&id=63:new-maintainer-searched&catid=3:news
+  # https:gtkextra.sourceforge.netcmsindex.php?option=com_content&view=article&id=63:new-maintainer-searched&catid=3:news
   deprecate! date: "2023-01-18", because: :unmaintained
 
   depends_on "pkg-config" => :build
@@ -26,12 +26,12 @@ class Gtkextra < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--enable-tests",
@@ -41,8 +41,8 @@ class Gtkextra < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gtkextra/gtkextra.h>
+    (testpath"test.c").write <<~EOS
+      #include <gtkextragtkextra.h>
       int main(int argc, char *argv[]) {
         GtkWidget *canvas = gtk_plot_canvas_new(GTK_PLOT_A4_H, GTK_PLOT_A4_W, 0.8);
         return 0;
@@ -68,21 +68,21 @@ class Gtkextra < Formula
     end
 
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx.opt_include}/gtk-2.0
-      -I#{gtkx.opt_lib}/gtk-2.0/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/gtkextra-3.0
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gtkx.opt_include}gtk-2.0
+      -I#{gtkx.opt_lib}gtk-2.0include
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}gtkextra-3.0
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -106,6 +106,6 @@ class Gtkextra < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class CargoDocset < Formula
-  desc "Cargo subcommand to generate a Dash/Zeal docset for your Rust packages"
-  homepage "https://github.com/Robzz/cargo-docset"
-  url "https://ghproxy.com/https://github.com/Robzz/cargo-docset/archive/refs/tags/v0.3.1.tar.gz"
+  desc "Cargo subcommand to generate a DashZeal docset for your Rust packages"
+  homepage "https:github.comRobzzcargo-docset"
+  url "https:github.comRobzzcargo-docsetarchiverefstagsv0.3.1.tar.gz"
   sha256 "98e7aec301ad5840d442f6027bba02b41de3f03b1f3c85b23adcc6dd7ca8c415"
   license "Apache-2.0"
-  head "https://github.com/Robzz/cargo-docset.git", branch: "master"
+  head "https:github.comRobzzcargo-docset.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d3967143668a150164b116c2f82996ed07bf150f8c2418d913fce73c0414cb4"
@@ -28,20 +28,20 @@ class CargoDocset < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"src/main.rs").write <<~EOS
+      (crate"srcmain.rs").write <<~EOS
         fn main() {
           println!("Hello BrewTestBot!");
         }
       EOS
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -49,7 +49,7 @@ class CargoDocset < Formula
       EOS
 
       output = shell_output("cargo docset --all-features")
-      assert_predicate crate/"target/docset/demo-crate.docset", :exist?
+      assert_predicate crate"targetdocsetdemo-crate.docset", :exist?
       assert_match "Docset succesfully generated", output
     end
   end

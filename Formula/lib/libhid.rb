@@ -1,7 +1,7 @@
 class Libhid < Formula
   desc "Library to access and interact with USB HID devices"
-  homepage "https://directory.fsf.org/wiki/Libhid"
-  url "https://pkg.freebsd.org/ports-distfiles/libhid-0.2.16.tar.gz"
+  homepage "https:directory.fsf.orgwikiLibhid"
+  url "https:pkg.freebsd.orgports-distfileslibhid-0.2.16.tar.gz"
   sha256 "f6809ab3b9c907cbb05ceba9ee6ca23a705f85fd71588518e14b3a7d9f2550e5"
   license "GPL-2.0"
 
@@ -31,13 +31,13 @@ class Libhid < Formula
 
   # Fix compilation error on 10.9
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/libhid/0.2.16.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9libhid0.2.16.patch"
     sha256 "443a3218902054b7fc7a9f91fd1601d50e2cc7bdca3f16e75419b3b60f2dab81"
   end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-swig"
 
@@ -45,7 +45,7 @@ class Libhid < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <hid.h>
       int main(void) {
         hid_init();
@@ -53,6 +53,6 @@ class Libhid < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lhid", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class BoreCli < Formula
   desc "Modern, simple TCP tunnel in Rust that exposes local ports to a remote server"
-  homepage "https://github.com/ekzhang/bore"
-  url "https://ghproxy.com/https://github.com/ekzhang/bore/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:github.comekzhangbore"
+  url "https:github.comekzhangborearchiverefstagsv0.5.0.tar.gz"
   sha256 "d084024cfa14b3b1df065fdf760fced511c228ff2441eda7874e3608f7563783"
   license "MIT"
-  head "https://github.com/ekzhang/bore.git", branch: "main"
+  head "https:github.comekzhangbore.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "282b75b9ae8f66be3673c5b773f61155e14b3bef8c0f0b55185ed423503ca45f"
@@ -25,10 +25,10 @@ class BoreCli < Formula
   end
 
   test do
-    _, stdout, wait_thr = Open3.popen2("#{bin}/bore server")
+    _, stdout, wait_thr = Open3.popen2("#{bin}bore server")
     assert_match "server listening", stdout.gets("\n")
 
-    assert_match version.to_s, shell_output("#{bin}/bore --version")
+    assert_match version.to_s, shell_output("#{bin}bore --version")
   ensure
     Process.kill("TERM", wait_thr.pid)
     Process.wait(wait_thr.pid)

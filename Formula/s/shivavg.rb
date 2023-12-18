@@ -1,7 +1,7 @@
 class Shivavg < Formula
   desc "OpenGL based ANSI C implementation of the OpenVG standard"
-  homepage "https://sourceforge.net/projects/shivavg/"
-  url "https://downloads.sourceforge.net/project/shivavg/ShivaVG/0.2.1/ShivaVG-0.2.1.zip"
+  homepage "https:sourceforge.netprojectsshivavg"
+  url "https:downloads.sourceforge.netprojectshivavgShivaVG0.2.1ShivaVG-0.2.1.zip"
   sha256 "9735079392829f7aaf79e02ed84dd74f5c443c39c02ff461cfdd19cfc4ae89c4"
   license "LGPL-2.1"
 
@@ -34,16 +34,16 @@ class Shivavg < Formula
 
   # Apply upstream commit to fix build on Linux. Remove with next release.
   patch do
-    url "https://github.com/Ecognize/ShivaVG/commit/fe3bb03d7b03591b26ab7c399f51edcd130f0f4e.patch?full_index=1"
+    url "https:github.comEcognizeShivaVGcommitfe3bb03d7b03591b26ab7c399f51edcd130f0f4e.patch?full_index=1"
     sha256 "f4eb595afb053eb0a093dcf50748b54e01eff729f4589f82deb8f6f2ce8f571b"
   end
 
   def install
-    system "/bin/sh", "autogen.sh"
+    system "binsh", "autogen.sh"
     # Temporary Homebrew-specific work around for linker flag ordering problem in Ubuntu 16.04.
     # Remove after migration to 18.04.
     inreplace "configure", "$LDFLAGS conftest.$ac_ext", "conftest.$ac_ext $LDFLAGS" unless OS.mac?
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-example-all=no"
     system "make", "install"

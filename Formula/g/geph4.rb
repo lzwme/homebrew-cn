@@ -1,10 +1,10 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
-  homepage "https://geph.io/"
-  url "https://ghproxy.com/https://github.com/geph-official/geph4-client/archive/refs/tags/v4.11.0.tar.gz"
+  homepage "https:geph.io"
+  url "https:github.comgeph-officialgeph4-clientarchiverefstagsv4.11.0.tar.gz"
   sha256 "b1ae2cb61b60014736855e2af35032deeed74fbf6375be4b862daeb0d98ccb24"
   license "GPL-3.0-only"
-  head "https://github.com/geph-official/geph4-client.git", branch: "master"
+  head "https:github.comgeph-officialgeph4-client.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b969551fe5fc15a042febd043c7115aeeebfdebcdd404db38c929d1ef0aa015d"
@@ -28,14 +28,14 @@ class Geph4 < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
-    (buildpath/".cargo").rmtree
+    (buildpath".cargo").rmtree
     system "cargo", "install", *std_cargo_args
   end
 
   test do
     assert_match "Error: invalid credentials",
-     shell_output("#{bin}/geph4-client sync --credential-cache ~/test.db auth-password 2>&1", 1)
+     shell_output("#{bin}geph4-client sync --credential-cache ~test.db auth-password 2>&1", 1)
 
-    assert_match version.to_s, shell_output("#{bin}/geph4-client --version")
+    assert_match version.to_s, shell_output("#{bin}geph4-client --version")
   end
 end

@@ -1,10 +1,10 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
-  homepage "https://github.com/facebook/fb303"
-  url "https://ghproxy.com/https://github.com/facebook/fb303/archive/refs/tags/v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookfb303"
+  url "https:github.comfacebookfb303archiverefstagsv2023.12.04.00.tar.gz"
   sha256 "8ecef8c934bef17cded7231a32771a3819166fb46bc5bdb59eb72aea903a0fb6"
   license "Apache-2.0"
-  head "https://github.com/facebook/fb303.git", branch: "main"
+  head "https:github.comfacebookfb303.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "66faaccc00b54886ab21f729d2e56cc4373cb1db61a414970cb870544d6bb073"
@@ -41,8 +41,8 @@ class Fb303 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "fb303/thrift/gen-cpp2/BaseService.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "fb303thriftgen-cpp2BaseService.h"
       #include <iostream>
       int main() {
         auto service = facebook::fb303::cpp2::BaseServiceSvIf();
@@ -65,6 +65,6 @@ class Fb303 < Formula
                     "-L#{Formula["fbthrift"].opt_lib}", "-lthriftprotocol", "-lthriftcpp2",
                     "-L#{Formula["boost"].opt_lib}", "-lboost_context-mt",
                     "-ldl"
-    assert_equal "BaseService", shell_output("./test").strip
+    assert_equal "BaseService", shell_output(".test").strip
   end
 end

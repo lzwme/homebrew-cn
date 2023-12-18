@@ -1,7 +1,7 @@
 class Rfcmarkup < Formula
   desc "Add HTML markup and links to internet-drafts and RFCs"
-  homepage "https://tools.ietf.org/tools/rfcmarkup/"
-  url "https://tools.ietf.org/tools/rfcmarkup/rfcmarkup-1.129.tgz"
+  homepage "https:tools.ietf.orgtoolsrfcmarkup"
+  url "https:tools.ietf.orgtoolsrfcmarkuprfcmarkup-1.129.tgz"
   sha256 "369d1b1e6ed27930150b7b0e51a5fc4e068a8980c59924abc0ece10758c6cfd7"
   license "GPL-2.0-or-later"
 
@@ -15,7 +15,7 @@ class Rfcmarkup < Formula
   end
 
   # Requires Python2.
-  # https://github.com/Homebrew/homebrew-core/issues/93940
+  # https:github.comHomebrewhomebrew-coreissues93940
   disable! date: "2023-04-30", because: :unsupported
 
   depends_on :macos # Due to Python 2
@@ -25,6 +25,6 @@ class Rfcmarkup < Formula
   end
 
   test do
-    system bin/"rfcmarkup", "--help"
+    system bin"rfcmarkup", "--help"
   end
 end

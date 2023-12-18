@@ -1,10 +1,10 @@
 class K2tf < Formula
   desc "Kubernetes YAML to Terraform HCL converter"
-  homepage "https://github.com/sl1pm4t/k2tf"
-  url "https://ghproxy.com/https://github.com/sl1pm4t/k2tf/archive/refs/tags/v0.7.0.tar.gz"
+  homepage "https:github.comsl1pm4tk2tf"
+  url "https:github.comsl1pm4tk2tfarchiverefstagsv0.7.0.tar.gz"
   sha256 "f1422861041d2a6eb03292ecce21002ad70ee24fb8ef6ded0118358a3204ce17"
   license "MPL-2.0"
-  head "https://github.com/sl1pm4t/k2tf.git", branch: "master"
+  head "https:github.comsl1pm4tk2tf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aae9f1ad20e6f32ca8347332bf9c37c856e1ef527e409fd17fab3c1fd5434861"
@@ -22,7 +22,7 @@ class K2tf < Formula
   depends_on "go" => :build
 
   resource("test") do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/sl1pm4t/k2tf/b1ea03a68bd27b34216c080297924c8fa2a2ad36/test-fixtures/service.tf.golden"
+    url "https:raw.githubusercontent.comsl1pm4tk2tfb1ea03a68bd27b34216c080297924c8fa2a2ad36test-fixturesservice.tf.golden"
     sha256 "c970a1f15d2e318a6254b4505610cf75a2c9887e1a7ba3d24489e9e03ea7fe90"
   end
 
@@ -33,11 +33,11 @@ class K2tf < Formula
   end
 
   test do
-    cp pkgshare/"test-fixtures/service.yaml", testpath
+    cp pkgshare"test-fixturesservice.yaml", testpath
     testpath.install resource("test")
-    system bin/"k2tf", "-f", "service.yaml", "-o", testpath/"service.tf"
-    assert compare_file(testpath/"service.tf.golden", testpath/"service.tf")
+    system bin"k2tf", "-f", "service.yaml", "-o", testpath"service.tf"
+    assert compare_file(testpath"service.tf.golden", testpath"service.tf")
 
-    assert_match version.to_s, shell_output(bin/"k2tf --version")
+    assert_match version.to_s, shell_output(bin"k2tf --version")
   end
 end

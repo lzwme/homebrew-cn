@@ -1,10 +1,10 @@
 class Massdriver < Formula
   desc "Manage applications and infrastructure on Massdriver Cloud"
-  homepage "https://www.massdriver.cloud/"
-  url "https://ghproxy.com/https://github.com/massdriver-cloud/mass/archive/refs/tags/1.5.13.tar.gz"
+  homepage "https:www.massdriver.cloud"
+  url "https:github.commassdriver-cloudmassarchiverefstags1.5.13.tar.gz"
   sha256 "5c4ad8f4a1d51bceb69883999008b5dd0ae2a321ad77e1eff0f1d0be90757de3"
   license "Apache-2.0"
-  head "https://github.com/massdriver-cloud/mass.git", branch: "main"
+  head "https:github.commassdriver-cloudmass.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec6059e969a61da2996df44d224aabb75ecc4ce6c44ae87b9513d82e19365464"
@@ -21,20 +21,20 @@ class Massdriver < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/massdriver-cloud/mass/pkg/version.version=#{version}
-      -X github.com/massdriver-cloud/mass/pkg/version.gitSHA=#{tap.user}
+      -X github.commassdriver-cloudmasspkgversion.version=#{version}
+      -X github.commassdriver-cloudmasspkgversion.gitSHA=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"mass")
-    generate_completions_from_executable(bin/"mass", "completion")
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"mass")
+    generate_completions_from_executable(bin"mass", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/mass bundle build 2>&1", 1)
+    output = shell_output("#{bin}mass bundle build 2>&1", 1)
     assert_match "Error: open massdriver.yaml: no such file or directory", output
 
-    output = shell_output("#{bin}/mass bundle lint 2>&1", 1)
+    output = shell_output("#{bin}mass bundle lint 2>&1", 1)
     assert_match "OrgID: missing required value: MASSDRIVER_ORG_ID", output
 
-    assert_match version.to_s, shell_output("#{bin}/mass version")
+    assert_match version.to_s, shell_output("#{bin}mass version")
   end
 end

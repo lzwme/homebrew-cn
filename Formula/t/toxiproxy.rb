@@ -1,7 +1,7 @@
 class Toxiproxy < Formula
   desc "TCP proxy to simulate network & system conditions for chaos & resiliency testing"
-  homepage "https://github.com/shopify/toxiproxy"
-  url "https://ghproxy.com/https://github.com/Shopify/toxiproxy/archive/refs/tags/v2.7.0.tar.gz"
+  homepage "https:github.comshopifytoxiproxy"
+  url "https:github.comShopifytoxiproxyarchiverefstagsv2.7.0.tar.gz"
   sha256 "e61c3fac7cfb21ec9df2c176dcc5b999a588468068094d0255cb7a2dd2688684"
   license "MIT"
 
@@ -18,42 +18,42 @@ class Toxiproxy < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/Shopify/toxiproxy/v2.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"toxiproxy-server", "./cmd/server"
-    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"toxiproxy-cli", "./cmd/cli"
+    ldflags = "-s -w -X github.comShopifytoxiproxyv2.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin"toxiproxy-server", ".cmdserver"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin"toxiproxy-cli", ".cmdcli"
   end
 
   service do
-    run opt_bin/"toxiproxy-server"
+    run opt_bin"toxiproxy-server"
     keep_alive true
-    log_path var/"log/toxiproxy.log"
-    error_log_path var/"log/toxiproxy.log"
+    log_path var"logtoxiproxy.log"
+    error_log_path var"logtoxiproxy.log"
   end
 
   test do
     require "webrick"
 
-    assert_match version.to_s, shell_output(bin/"toxiproxy-server --version")
-    assert_match version.to_s, shell_output(bin/"toxiproxy-cli --version")
+    assert_match version.to_s, shell_output(bin"toxiproxy-server --version")
+    assert_match version.to_s, shell_output(bin"toxiproxy-cli --version")
 
     proxy_port = free_port
-    fork { system bin/"toxiproxy-server", "--port", proxy_port.to_s }
+    fork { system bin"toxiproxy-server", "--port", proxy_port.to_s }
 
     upstream_port = free_port
     server = WEBrick::HTTPServer.new Port: upstream_port
-    server.mount_proc("/") { |_req, res| res.body = "Hello Homebrew" }
+    server.mount_proc("") { |_req, res| res.body = "Hello Homebrew" }
 
     Thread.new { server.start }
     sleep(3)
 
     begin
       listen_port = free_port
-      system bin/"toxiproxy-cli", "--host", "127.0.0.1:#{proxy_port}", "create",
+      system bin"toxiproxy-cli", "--host", "127.0.0.1:#{proxy_port}", "create",
                                   "--listen", "127.0.0.1:#{listen_port}",
                                   "--upstream", "127.0.0.1:#{upstream_port}",
                                   "hello-homebrew"
 
-      assert_equal "Hello Homebrew", shell_output("curl -s http://127.0.0.1:#{listen_port}/")
+      assert_equal "Hello Homebrew", shell_output("curl -s http:127.0.0.1:#{listen_port}")
     ensure
       server.shutdown
     end

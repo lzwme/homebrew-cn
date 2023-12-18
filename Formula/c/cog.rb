@@ -1,10 +1,10 @@
 class Cog < Formula
   desc "Containers for machine learning"
-  homepage "https://github.com/replicate/cog"
-  url "https://ghproxy.com/https://github.com/replicate/cog/archive/refs/tags/v0.8.6.tar.gz"
+  homepage "https:github.comreplicatecog"
+  url "https:github.comreplicatecogarchiverefstagsv0.8.6.tar.gz"
   sha256 "7e83e5f185ed1074863e219cae382759e66821d7ba0d3a89bb0862fc80cc2ef5"
   license "Apache-2.0"
-  head "https://github.com/replicate/cog.git", branch: "main"
+  head "https:github.comreplicatecog.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "92ae7776c73b341f96cbf01cbe24f5b93838b06ef39e1146afacb53a474cebda"
@@ -24,11 +24,11 @@ class Cog < Formula
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION"] = version.to_s
     system "make", "COG_VERSION=#{version}", "PYTHON=python3"
     bin.install "cog"
-    generate_completions_from_executable(bin/"cog", "completion")
+    generate_completions_from_executable(bin"cog", "completion")
   end
 
   test do
-    assert_match "cog version #{version}", shell_output("#{bin}/cog --version")
-    assert_match "cog.yaml not found", shell_output("#{bin}/cog build 2>&1", 1)
+    assert_match "cog version #{version}", shell_output("#{bin}cog --version")
+    assert_match "cog.yaml not found", shell_output("#{bin}cog build 2>&1", 1)
   end
 end

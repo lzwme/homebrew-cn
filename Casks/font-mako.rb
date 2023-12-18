@@ -2,10 +2,10 @@ cask "font-mako" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mako/Mako-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmakoMako-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mako"
-  homepage "https://fonts.google.com/specimen/Mako"
+  homepage "https:fonts.google.comspecimenMako"
 
   font "Mako-Regular.ttf"
 

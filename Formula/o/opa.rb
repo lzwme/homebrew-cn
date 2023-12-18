@@ -1,10 +1,10 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
-  homepage "https://www.openpolicyagent.org"
-  url "https://ghproxy.com/https://github.com/open-policy-agent/opa/archive/refs/tags/v0.59.0.tar.gz"
+  homepage "https:www.openpolicyagent.org"
+  url "https:github.comopen-policy-agentopaarchiverefstagsv0.59.0.tar.gz"
   sha256 "d178d4126d3209566dba1a230dc2e77d377710d65e4f74830749148e2bf2cedc"
   license "Apache-2.0"
-  head "https://github.com/open-policy-agent/opa.git", branch: "main"
+  head "https:github.comopen-policy-agentopa.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e1599ac14db5af02e5f53cf4609583184d6e0e41d0f9084d73983c7acf23f42"
@@ -21,18 +21,18 @@ class Opa < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/open-policy-agent/opa/version.Version=#{version}
+      -X github.comopen-policy-agentopaversion.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
-    system "./build/gen-man.sh", "man1"
+    system ".buildgen-man.sh", "man1"
     man.install "man1"
 
-    generate_completions_from_executable(bin/"opa", "completion")
+    generate_completions_from_executable(bin"opa", "completion")
   end
 
   test do
-    output = shell_output("#{bin}/opa eval -f pretty '[x, 2] = [1, y]' 2>&1")
+    output = shell_output("#{bin}opa eval -f pretty '[x, 2] = [1, y]' 2>&1")
     assert_equal "+---+---+\n| x | y |\n+---+---+\n| 1 | 2 |\n+---+---+\n", output
-    assert_match "Version: #{version}", shell_output("#{bin}/opa version 2>&1")
+    assert_match "Version: #{version}", shell_output("#{bin}opa version 2>&1")
   end
 end

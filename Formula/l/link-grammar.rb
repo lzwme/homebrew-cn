@@ -1,10 +1,10 @@
 class LinkGrammar < Formula
   desc "Carnegie Mellon University's link grammar parser"
-  homepage "https://github.com/opencog/link-grammar"
-  url "https://ghproxy.com/https://github.com/opencog/link-grammar/archive/refs/tags/link-grammar-5.12.3.tar.gz"
+  homepage "https:github.comopencoglink-grammar"
+  url "https:github.comopencoglink-grammararchiverefstagslink-grammar-5.12.3.tar.gz"
   sha256 "e0cd1b94cc9af20e5bd9a04604a714e11efe21ae5e453b639cdac050b6ac4150"
   license "LGPL-2.1-or-later"
-  head "https://github.com/opencog/link-grammar.git", branch: "master"
+  head "https:github.comopencoglink-grammar.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,9 +30,9 @@ class LinkGrammar < Formula
   uses_from_macos "libedit"
   uses_from_macos "sqlite"
 
-  # upstream build patch ref, https://github.com/opencog/link-grammar/pull/1473
+  # upstream build patch ref, https:github.comopencoglink-grammarpull1473
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/6de1efe/link-grammar/5.12.3.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches6de1efelink-grammar5.12.3.patch"
     sha256 "20d2c503ee2b50198d09ce5b69e39b4b88d9e8df849621e7b9f493f45c78ed1d"
   end
 
@@ -41,19 +41,19 @@ class LinkGrammar < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     ENV["PYTHON_LIBS"] = "-undefined dynamic_lookup"
-    inreplace "bindings/python/Makefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
+    inreplace "bindingspythonMakefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
                                              "$(PYTHON_LDFLAGS) -module"
     system "autoreconf", "--verbose", "--install", "--force"
-    system "./configure", *std_configure_args, "--with-regexlib=c"
+    system ".configure", *std_configure_args, "--with-regexlib=c"
 
     # Work around error due to install using detected path inside Python formula.
-    # install: .../site-packages/linkgrammar.pth: Operation not permitted
-    site_packages = prefix/Language::Python.site_packages("python3.12")
+    # install: ...site-packageslinkgrammar.pth: Operation not permitted
+    site_packages = prefixLanguage::Python.site_packages("python3.12")
     system "make", "install", "pythondir=#{site_packages}",
                               "pyexecdir=#{site_packages}"
   end
 
   test do
-    system "#{bin}/link-parser", "--version"
+    system "#{bin}link-parser", "--version"
   end
 end

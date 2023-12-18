@@ -1,10 +1,10 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
-  homepage "https://python-pillow.org"
-  url "https://files.pythonhosted.org/packages/80/d7/c4b258c9098b469c4a4e77b0a99b5f4fd21e359c2e486c977d231f52fc71/Pillow-10.1.0.tar.gz"
+  homepage "https:python-pillow.org"
+  url "https:files.pythonhosted.orgpackages80d7c4b258c9098b469c4a4e77b0a99b5f4fd21e359c2e486c977d231f52fc71Pillow-10.1.0.tar.gz"
   sha256 "e6bf8de6c36ed96c86ea3b6e1d5273c53f46ef518a062464cd7ef5dd2cf92e38"
   license "HPND"
-  head "https://github.com/python-pillow/Pillow.git", branch: "master"
+  head "https:github.compython-pillowPillow.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -35,8 +35,8 @@ class Pillow < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .select { |f| f.name.match?(^python@\d\.\d+$) }
+        .map { |f| f.opt_libexec"binpython" }
   end
 
   def install
@@ -61,7 +61,7 @@ class Pillow < Formula
   end
 
   test do
-    (testpath/"test.py").write <<~EOS
+    (testpath"test.py").write <<~EOS
       from PIL import Image
       im = Image.open("#{test_fixtures("test.jpg")}")
       print(im.format, im.size, im.mode)

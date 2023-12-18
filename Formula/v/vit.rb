@@ -2,11 +2,11 @@ class Vit < Formula
   include Language::Python::Virtualenv
 
   desc "Full-screen terminal interface for Taskwarrior"
-  homepage "https://taskwarrior.org/news/news.20140406.html"
-  url "https://files.pythonhosted.org/packages/a2/24/71ef618e17ced54d3ad706215165ebeb6ebc86f5d71ded58c4dbcba62b83/vit-2.3.2.tar.gz"
+  homepage "https:taskwarrior.orgnewsnews.20140406.html"
+  url "https:files.pythonhosted.orgpackagesa22471ef618e17ced54d3ad706215165ebeb6ebc86f5d71ded58c4dbcba62b83vit-2.3.2.tar.gz"
   sha256 "a837d8e865a70d0e384a1e78d314330f000d108fa62e3a72d9aec6dec7ca233c"
   license "MIT"
-  head "https://github.com/vit-project/vit.git", branch: "2.x"
+  head "https:github.comvit-projectvit.git", branch: "2.x"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07c6838801cde2043cc4be85222d134f3add125a7e0e8f6bda6f718bf9a6fb73"
@@ -22,12 +22,12 @@ class Vit < Formula
   depends_on "task"
 
   resource "tasklib" do
-    url "https://files.pythonhosted.org/packages/3e/50/3e876f39e31bad8783fd3fe117577cbf1dde836e161f8446631bde71aeb4/tasklib-2.5.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages3e503e876f39e31bad8783fd3fe117577cbf1dde836e161f8446631bde71aeb4tasklib-2.5.1.tar.gz"
     sha256 "5ccd731b52636dd10457a8b8d858cb0d026ffaab1e3e751baf791bf803e37d7b"
   end
 
   resource "urwid" do
-    url "https://files.pythonhosted.org/packages/5f/cf/2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25d/urwid-2.2.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages5fcf2f01d2231e7fb52bd8190954b6165c89baa17e713c690bdb2dfea1dcd25durwid-2.2.2.tar.gz"
     sha256 "5f83b241c1cbf3ec6c4b8c6b908127e0c9ad7481c5d3145639524157fc4e1744"
   end
 
@@ -36,15 +36,15 @@ class Vit < Formula
   end
 
   test do
-    (testpath/".vit").mkpath
-    touch testpath/".vit/config.ini"
-    touch testpath/".taskrc"
+    (testpath".vit").mkpath
+    touch testpath".vitconfig.ini"
+    touch testpath".taskrc"
 
     require "pty"
-    PTY.spawn(bin/"vit") do |_stdout, _stdin, pid|
+    PTY.spawn(bin"vit") do |_stdout, _stdin, pid|
       sleep 3
       Process.kill "TERM", pid
     end
-    assert_predicate testpath/".task", :exist?
+    assert_predicate testpath".task", :exist?
   end
 end

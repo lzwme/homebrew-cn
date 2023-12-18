@@ -1,11 +1,11 @@
 class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
-  homepage "https://openrct2.io/"
-  url "https://github.com/OpenRCT2/OpenRCT2.git",
+  homepage "https:openrct2.io"
+  url "https:github.comOpenRCT2OpenRCT2.git",
       tag:      "v0.4.6",
       revision: "b40b5da5a570155298335e276839a41588337b5d"
   license "GPL-3.0-only"
-  head "https://github.com/OpenRCT2/OpenRCT2.git", branch: "develop"
+  head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "1c94a3bc76cbc4e9fd7e5662a37bc87659931e87a584c1e2ef6827d79022b96c"
@@ -44,19 +44,19 @@ class Openrct2 < Formula
   fails_with gcc: "5" # C++17
 
   resource "title-sequences" do
-    url "https://ghproxy.com/https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.6/title-sequences.zip"
+    url "https:github.comOpenRCT2title-sequencesreleasesdownloadv0.4.6title-sequences.zip"
     sha256 "24a189cdaf1f78fb6d6caede8f1ab3cedf8ab9f819cd2260a09b2cce4c710d98"
   end
 
   resource "objects" do
-    url "https://ghproxy.com/https://github.com/OpenRCT2/objects/releases/download/v1.3.11/objects.zip"
+    url "https:github.comOpenRCT2objectsreleasesdownloadv1.3.11objects.zip"
     sha256 "bf85d88e4fb11ca2e5915567390898747dc2459b3c7a057bdc32b829c91780b4"
   end
 
   def install
     # Avoid letting CMake download things during the build process.
-    (buildpath/"data/title").install resource("title-sequences")
-    (buildpath/"data/object").install resource("objects")
+    (buildpath"datatitle").install resource("title-sequences")
+    (buildpath"dataobject").install resource("objects")
 
     mkdir "build" do
       cmake_args = [
@@ -73,14 +73,14 @@ class Openrct2 < Formula
     end
 
     # By default macOS build only looks up data in app bundle Resources
-    libexec.install bin/"openrct2"
-    (bin/"openrct2").write <<~EOS
-      #!/bin/bash
-      exec "#{libexec}/openrct2" "$@" "--openrct2-data-path=#{pkgshare}"
+    libexec.install bin"openrct2"
+    (bin"openrct2").write <<~EOS
+      #!binbash
+      exec "#{libexec}openrct2" "$@" "--openrct2-data-path=#{pkgshare}"
     EOS
   end
 
   test do
-    assert_match "OpenRCT2, v#{version}", shell_output("#{bin}/openrct2 -v")
+    assert_match "OpenRCT2, v#{version}", shell_output("#{bin}openrct2 -v")
   end
 end

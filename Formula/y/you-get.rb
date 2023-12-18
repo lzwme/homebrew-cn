@@ -2,11 +2,11 @@ class YouGet < Formula
   include Language::Python::Virtualenv
 
   desc "Dumb downloader that scrapes the web"
-  homepage "https://you-get.org/"
-  url "https://files.pythonhosted.org/packages/92/39/423701a8346435292fdde5ad78beb5437ebb7718f6faa16e1546d3ef479b/you-get-0.4.1650.tar.gz"
+  homepage "https:you-get.org"
+  url "https:files.pythonhosted.orgpackages9239423701a8346435292fdde5ad78beb5437ebb7718f6faa16e1546d3ef479byou-get-0.4.1650.tar.gz"
   sha256 "b3c944cf7a63cc468cccc8816dce7fc008c2e6b5ba52aefe5ce2081818a3ad47"
   license "MIT"
-  head "https://github.com/soimort/you-get.git", branch: "develop"
+  head "https:github.comsoimortyou-get.git", branch: "develop"
 
   bottle do
     rebuild 1
@@ -23,17 +23,17 @@ class YouGet < Formula
   depends_on "rtmpdump"
 
   # Support Python 3.12
-  # https://github.com/soimort/you-get/pull/2677
+  # https:github.comsoimortyou-getpull2677
   patch do
-    url "https://github.com/soimort/you-get/commit/aedf3e458f3ec6083ebe4c3e3c0f21e1eb582000.patch?full_index=1"
+    url "https:github.comsoimortyou-getcommitaedf3e458f3ec6083ebe4c3e3c0f21e1eb582000.patch?full_index=1"
     sha256 "a585310a37a54bcbe077bcbff99f39dcbfe53457179dbf035409cbdda042275f"
   end
 
   def install
     virtualenv_install_with_resources
-    bash_completion.install "contrib/completion/you-get-completion.bash" => "you-get"
-    fish_completion.install "contrib/completion/you-get.fish"
-    zsh_completion.install "contrib/completion/_you-get"
+    bash_completion.install "contribcompletionyou-get-completion.bash" => "you-get"
+    fish_completion.install "contribcompletionyou-get.fish"
+    zsh_completion.install "contribcompletion_you-get"
   end
 
   def caveats
@@ -41,6 +41,6 @@ class YouGet < Formula
   end
 
   test do
-    system bin/"you-get", "--info", "https://youtu.be/he2a4xK8ctk"
+    system bin"you-get", "--info", "https:youtu.behe2a4xK8ctk"
   end
 end

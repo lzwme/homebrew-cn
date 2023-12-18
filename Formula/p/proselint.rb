@@ -2,12 +2,12 @@ class Proselint < Formula
   include Language::Python::Virtualenv
 
   desc "Linter for prose"
-  homepage "https://github.com/amperser/proselint"
-  url "https://files.pythonhosted.org/packages/a2/be/2c1bcc43d85b23fe97dae02efd3e39b27cd66cca4a9f9c70921718b74ac2/proselint-0.13.0.tar.gz"
+  homepage "https:github.comamperserproselint"
+  url "https:files.pythonhosted.orgpackagesa2be2c1bcc43d85b23fe97dae02efd3e39b27cd66cca4a9f9c70921718b74ac2proselint-0.13.0.tar.gz"
   sha256 "7dd2b63cc2aa390877c4144fcd3c80706817e860b017f04882fbcd2ab0852a58"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/amperser/proselint.git", branch: "main"
+  head "https:github.comamperserproselint.git", branch: "main"
 
   bottle do
     rebuild 3
@@ -24,12 +24,12 @@ class Proselint < Formula
   depends_on "six"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
     sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "future" do
-    url "https://files.pythonhosted.org/packages/8f/2e/cf6accf7415237d6faeeebdc7832023c90e0282aa16fd3263db0eb4715ec/future-0.18.3.tar.gz"
+    url "https:files.pythonhosted.orgpackages8f2ecf6accf7415237d6faeeebdc7832023c90e0282aa16fd3263db0eb4715ecfuture-0.18.3.tar.gz"
     sha256 "34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
   end
 
@@ -38,7 +38,7 @@ class Proselint < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/proselint --compact -", "John is very unique.")
+    output = pipe_output("#{bin}proselint --compact -", "John is very unique.")
     assert_match "Comparison of an uncomparable", output
   end
 end

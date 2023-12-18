@@ -1,7 +1,7 @@
 class BashCompletionAT2 < Formula
   desc "Programmable completion for Bash 4.2+"
-  homepage "https://github.com/scop/bash-completion"
-  url "https://ghproxy.com/https://github.com/scop/bash-completion/releases/download/2.11/bash-completion-2.11.tar.xz"
+  homepage "https:github.comscopbash-completion"
+  url "https:github.comscopbash-completionreleasesdownload2.11bash-completion-2.11.tar.xz"
   sha256 "73a8894bad94dee83ab468fa09f628daffd567e8bef1a24277f1e9a0daf911ac"
   license "GPL-2.0"
 
@@ -22,7 +22,7 @@ class BashCompletionAT2 < Formula
   end
 
   head do
-    url "https://github.com/scop/bash-completion.git", branch: "master"
+    url "https:github.comscopbash-completion.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,30 +37,30 @@ class BashCompletionAT2 < Formula
     inreplace "bash_completion" do |s|
       s.gsub! "readlink -f", "readlink" if OS.mac?
       if build.head?
-        s.gsub! "(/etc/bash_completion.d)", "(#{etc}/bash_completion.d)"
+        s.gsub! "(etcbash_completion.d)", "(#{etc}bash_completion.d)"
       else
         # Automatically read Homebrew's existing v1 completions
-        s.gsub! ":-/etc/bash_completion.d", ":-#{etc}/bash_completion.d"
+        s.gsub! ":-etcbash_completion.d", ":-#{etc}bash_completion.d"
         # Automatically read Homebrew's v2 completions.
         # TODO: Remove in the next release as script is able to find via PATH.
-        s.gsub! ":-/usr/local/share:", ":-#{HOMEBREW_PREFIX}/share:/usr/local/share:"
+        s.gsub! ":-usrlocalshare:", ":-#{HOMEBREW_PREFIX}share:usrlocalshare:"
       end
     end
 
     system "autoreconf", "-i" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     ENV.deparallelize
     system "make", "install"
   end
 
   def caveats
     <<~EOS
-      Add the following line to your ~/.bash_profile:
-        [[ -r "#{etc}/profile.d/bash_completion.sh" ]] && . "#{etc}/profile.d/bash_completion.sh"
+      Add the following line to your ~.bash_profile:
+        [[ -r "#{etc}profile.dbash_completion.sh" ]] && . "#{etc}profile.dbash_completion.sh"
     EOS
   end
 
   test do
-    system "test", "-f", "#{share}/bash-completion/bash_completion"
+    system "test", "-f", "#{share}bash-completionbash_completion"
   end
 end

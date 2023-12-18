@@ -1,11 +1,11 @@
 class Revive < Formula
   desc "Fast, configurable, extensible, flexible, and beautiful linter for Go"
-  homepage "https://revive.run"
-  url "https://github.com/mgechev/revive.git",
+  homepage "https:revive.run"
+  url "https:github.commgechevrevive.git",
       tag:      "v1.3.4",
       revision: "93219dac49afec56cdacc7e69080add535e7e088"
   license "MIT"
-  head "https://github.com/mgechev/revive.git", branch: "master"
+  head "https:github.commgechevrevive.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "728e04384b88fbde733917c69ff26eaf3c83a137f31858232f59001c47d1c666"
@@ -32,7 +32,7 @@ class Revive < Formula
   end
 
   test do
-    (testpath/"main.go").write <<~EOS
+    (testpath"main.go").write <<~EOS
       package main
 
       import "fmt"
@@ -42,7 +42,7 @@ class Revive < Formula
         fmt.Println(my_string)
       }
     EOS
-    output = shell_output("#{bin}/revive main.go")
+    output = shell_output("#{bin}revive main.go")
     assert_match "don't use underscores in Go names", output
   end
 end

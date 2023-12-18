@@ -2,10 +2,10 @@ cask "font-bentham" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bentham/Bentham-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbenthamBentham-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bentham"
-  homepage "https://fonts.google.com/specimen/Bentham"
+  homepage "https:fonts.google.comspecimenBentham"
 
   font "Bentham-Regular.ttf"
 

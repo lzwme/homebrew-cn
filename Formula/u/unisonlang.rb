@@ -1,18 +1,18 @@
-require "language/node"
+require "languagenode"
 
 class Unisonlang < Formula
   desc "Friendly programming language from the future"
-  homepage "https://unison-lang.org/"
-  url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M5j",
+  homepage "https:unison-lang.org"
+  url "https:github.comunisonwebunison.git",
+      tag:      "releaseM5j",
       revision: "7778bdc1a1e97e82a6ae3910a7ed10074297ff27"
   version "M5j"
   license "MIT"
-  head "https://github.com/unisonweb/unison.git", branch: "trunk"
+  head "https:github.comunisonwebunison.git", branch: "trunk"
 
   livecheck do
     url :stable
-    regex(%r{^release/(M\d+[a-z]*)$}i)
+    regex(%r{^release(M\d+[a-z]*)$}i)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Unisonlang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d594aae90116a8136956555221276bd192bccd2155c64b71cface577c8f5d981"
   end
 
-  depends_on "ghc@9.2" => :build # GHC 9.4 PR: https://github.com/unisonweb/unison/pull/4009
+  depends_on "ghc@9.2" => :build # GHC 9.4 PR: https:github.comunisonwebunisonpull4009
   depends_on "haskell-stack" => :build
   depends_on "node@18" => :build
 
@@ -42,7 +42,7 @@ class Unisonlang < Formula
   end
 
   resource "local-ui" do
-    url "https://ghproxy.com/https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M5j.tar.gz"
+    url "https:github.comunisonwebunison-local-uiarchiverefstagsreleaseM5j.tar.gz"
     version "M5j"
     sha256 "99f8dd4c86b1cae263f16b2e04ace88764a8a1b138cead4756ceaadb7899c338"
   end
@@ -56,19 +56,19 @@ class Unisonlang < Formula
       system "npm", "install", *Language::Node.local_npm_install_args
       if Hardware::CPU.arm?
         # Replace x86_64 elm binary to avoid dependency on Rosetta
-        elm = Pathname("node_modules/elm/bin/elm")
+        elm = Pathname("node_moduleselmbinelm")
         elm.unlink
-        elm.parent.install_symlink Formula["elm"].opt_bin/"elm"
+        elm.parent.install_symlink Formula["elm"].opt_bin"elm"
       end
       # HACK: Flaky command occasionally stalls build indefinitely so we force fail
       # if that occurs. Problem seems to happening while running `elm-json install`.
-      # Issue ref: https://github.com/zwilias/elm-json/issues/50
+      # Issue ref: https:github.comzwiliaselm-jsonissues50
       Timeout.timeout(300) do
         system "npm", "run", "ui-core-install"
       end
       system "npm", "run", "build"
 
-      prefix.install "dist/unisonLocal" => "ui"
+      prefix.install "distunisonLocal" => "ui"
     end
 
     stack_args = [
@@ -83,14 +83,14 @@ class Unisonlang < Formula
     system "stack", "-j#{jobs}", "build", "--flag", "unison-parser-typechecker:optimized", *stack_args
 
     prefix.install "unison" => "ucm"
-    bin.install_symlink prefix/"ucm"
+    bin.install_symlink prefix"ucm"
   end
 
   test do
     # Ensure the local-ui version matches the ucm version
     assert_equal version, resource("local-ui").version
 
-    (testpath/"hello.u").write <<~EOS
+    (testpath"hello.u").write <<~EOS
       helloTo : Text ->{IO, Exception} ()
       helloTo name =
         printLine ("Hello " ++ name)
@@ -100,15 +100,15 @@ class Unisonlang < Formula
         helloTo "Homebrew"
     EOS
 
-    (testpath/"hello.md").write <<~EOS
+    (testpath"hello.md").write <<~EOS
       ```ucm
       .> project.create test
-      test/main> load hello.u
-      test/main> add
-      test/main> run hello
+      testmain> load hello.u
+      testmain> add
+      testmain> run hello
       ```
     EOS
 
-    assert_match "Hello Homebrew", shell_output("#{bin}/ucm --codebase-create ./ transcript.fork hello.md")
+    assert_match "Hello Homebrew", shell_output("#{bin}ucm --codebase-create . transcript.fork hello.md")
   end
 end

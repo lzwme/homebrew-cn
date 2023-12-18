@@ -5,15 +5,15 @@ cask "gramps" do
   sha256 arm:   "a7a8b3ea24a7acf09112b7414183d54136df90308388d780b66f2a366af428f3",
          intel: "456add4d982bf98750935069efd93b2cdd96d888ad4f7d6d5e938d820730558e"
 
-  url "https://ghproxy.com/https://github.com/gramps-project/gramps/releases/download/v#{version.csv.first}/Gramps-#{arch}-#{version.csv.first}-#{version.csv.second}.dmg",
-      verified: "github.com/gramps-project/gramps/"
+  url "https:github.comgramps-projectgrampsreleasesdownloadv#{version.csv.first}Gramps-#{arch}-#{version.csv.first}-#{version.csv.second}.dmg",
+      verified: "github.comgramps-projectgramps"
   name "Gramps"
   desc "Genealogy software"
-  homepage "https://gramps-project.org/blog/"
+  homepage "https:gramps-project.orgblog"
 
   livecheck do
     url :url
-    regex(/^Gramps[._-]#{arch}[._-]v?(\d+(?:.\d+)+)[._-](\d+)\.dmg$/i)
+    regex(^Gramps[._-]#{arch}[._-]v?(\d+(?:.\d+)+)[._-](\d+)\.dmg$i)
     strategy :github_latest do |json, regex|
       json["assets"]&.map do |asset|
         match = asset["name"]&.match(regex)
@@ -27,8 +27,8 @@ cask "gramps" do
   app "Gramps.app"
 
   zap trash: [
-    "~/Library/Application Support/gramps",
-    "~/Library/Preferences/org.gramps-project.gramps.plist",
-    "~/Library/Saved Application State/org.gramps-project.gramps.savedState",
+    "~LibraryApplication Supportgramps",
+    "~LibraryPreferencesorg.gramps-project.gramps.plist",
+    "~LibrarySaved Application Stateorg.gramps-project.gramps.savedState",
   ]
 end

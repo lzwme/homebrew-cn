@@ -1,7 +1,7 @@
 class Afflib < Formula
   desc "Advanced Forensic Format"
-  homepage "https://github.com/sshock/AFFLIBv3"
-  url "https://ghproxy.com/https://github.com/sshock/AFFLIBv3/archive/refs/tags/v3.7.20.tar.gz"
+  homepage "https:github.comsshockAFFLIBv3"
+  url "https:github.comsshockAFFLIBv3archiverefstagsv3.7.20.tar.gz"
   sha256 "7264d705ff53185f0847c69abdfce072779c0b907257e087a6372c7608108f65"
   license all_of: [
     "BSD-4-Clause", # AFFLIB 2.0a14 and before
@@ -38,25 +38,25 @@ class Afflib < Formula
 
   def install
     # Fix build with Python 3.12 by regenerating cythonized file.
-    (buildpath/"pyaff/pyaff.c").unlink
+    (buildpath"pyaffpyaff.c").unlink
     site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexec/site_packages
+    ENV.prepend_path "PYTHONPATH", Formula["libcython"].opt_libexecsite_packages
 
     ENV["PYTHON"] = python3
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--enable-s3",
                           "--enable-python",
                           "--disable-fuse"
 
     # Prevent installation into HOMEBREW_PREFIX.
-    inreplace "pyaff/Makefile", "--single-version-externally-managed",
-                                "--install-lib=#{prefix/site_packages} \\0"
+    inreplace "pyaffMakefile", "--single-version-externally-managed",
+                                "--install-lib=#{prefixsite_packages} \\0"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/affcat", "-v"
+    system "#{bin}affcat", "-v"
     system python3, "-c", "import pyaff"
   end
 end

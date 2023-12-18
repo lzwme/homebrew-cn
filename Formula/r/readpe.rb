@@ -1,10 +1,10 @@
 class Readpe < Formula
   desc "PE analysis toolkit"
-  homepage "https://github.com/mentebinaria/readpe"
-  url "https://ghproxy.com/https://github.com/mentebinaria/readpe/archive/refs/tags/v0.83.tar.gz"
+  homepage "https:github.commentebinariareadpe"
+  url "https:github.commentebinariareadpearchiverefstagsv0.83.tar.gz"
   sha256 "4f84d186f8f6ff1622a0e47e3edb30a5cff6f3fe901ab9906800b850c2da8bc3"
   license "GPL-2.0-or-later"
-  head "https://github.com/mentebinaria/readpe.git", branch: "master"
+  head "https:github.commentebinariareadpe.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "d8de00dac05b1f8dbe223eb101e99f52e54540cbe564450499f52a12b03aa5d4"
@@ -19,20 +19,20 @@ class Readpe < Formula
   depends_on "openssl@3"
 
   resource "homebrew-testfile" do
-    url "https://the.earth.li/~sgtatham/putty/0.78/w64/putty.exe"
+    url "https:the.earth.li~sgtathamputty0.78w64putty.exe"
     sha256 "fc6f9dbdf4b9f8dd1f5f3a74cb6e55119d3fe2c9db52436e10ba07842e6c3d7c"
   end
 
   def install
     ENV.deparallelize
-    inreplace "lib/libpe/Makefile", "-flat_namespace", ""
+    inreplace "liblibpeMakefile", "-flat_namespace", ""
     system "make", "prefix=#{prefix}", "CC=#{ENV.cc}"
     system "make", "prefix=#{prefix}", "install"
   end
 
   test do
     resource("homebrew-testfile").stage do
-      assert_match(/Bytes in last page:\s+120/, shell_output("#{bin}/readpe ./putty.exe"))
+      assert_match(Bytes in last page:\s+120, shell_output("#{bin}readpe .putty.exe"))
     end
   end
 end

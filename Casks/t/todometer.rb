@@ -2,16 +2,16 @@ cask "todometer" do
   version "2.0.1"
   sha256 "b8de5c09dc1d5d026130555f3cc85c949ddd7bd0cbf63a45bd1d4c2aba6cbf31"
 
-  url "https://ghproxy.com/https://github.com/cassidoo/todometer/releases/download/v#{version}/todometer.for.mac.zip",
-      verified: "github.com/cassidoo/todometer/"
+  url "https:github.comcassidootodometerreleasesdownloadv#{version}todometer.for.mac.zip",
+      verified: "github.comcassidootodometer"
   name "todometer"
   desc "Meter-based to-do list"
-  homepage "https://cassidoo.github.io/todometer/"
+  homepage "https:cassidoo.github.iotodometer"
 
-  app "mac/todometer.app"
+  app "mactodometer.app"
 
   zap trash: [
-    "~/Library/Application Support/todometer",
-    "~/Library/Preferences/com.electron.todometer.plist",
+    "~LibraryApplication Supporttodometer",
+    "~LibraryPreferencescom.electron.todometer.plist",
   ]
 end

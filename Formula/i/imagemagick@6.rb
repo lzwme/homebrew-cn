@@ -1,14 +1,14 @@
 class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
-  homepage "https://legacy.imagemagick.org/"
-  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.13-1.tar.xz"
+  homepage "https:legacy.imagemagick.org"
+  url "https:imagemagick.orgarchivereleasesImageMagick-6.9.13-1.tar.xz"
   sha256 "dea17ba878b1e70b8c5d670a980706c82d7592028018eaff2a826df5ad022167"
   license "ImageMagick"
-  head "https://github.com/imagemagick/imagemagick6.git", branch: "main"
+  head "https:github.comimagemagickimagemagick6.git", branch: "main"
 
   livecheck do
-    url "https://imagemagick.org/archive/"
-    regex(/href=.*?ImageMagick[._-]v?(6(?:[.-]\d+)+)\.t/i)
+    url "https:imagemagick.orgarchive"
+    regex(href=.*?ImageMagick[._-]v?(6(?:[.-]\d+)+)\.ti)
   end
 
   bottle do
@@ -42,7 +42,7 @@ class ImagemagickAT6 < Formula
 
   def install
     # Avoid references to shim
-    inreplace Dir["**/*-config.in"], "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
+    inreplace Dir["***-config.in"], "@PKG_CONFIG@", Formula["pkg-config"].opt_bin"pkg-config"
     # versioned stuff in main tree is pointless for us
     inreplace "configure", "${PACKAGE_NAME}-${PACKAGE_BASE_VERSION}", "${PACKAGE_NAME}"
 
@@ -58,7 +58,7 @@ class ImagemagickAT6 < Formula
       --with-webp=yes
       --with-openjp2
       --with-gslib
-      --with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts
+      --with-gs-font-dir=#{HOMEBREW_PREFIX}shareghostscriptfonts
       --without-djvu
       --without-fftw
       --without-pango
@@ -66,14 +66,14 @@ class ImagemagickAT6 < Formula
       --without-wmf
     ]
 
-    system "./configure", *std_configure_args, *args
+    system ".configure", *std_configure_args, *args
     system "make", "install"
   end
 
   test do
-    assert_match "PNG", shell_output("#{bin}/identify #{test_fixtures("test.png")}")
+    assert_match "PNG", shell_output("#{bin}identify #{test_fixtures("test.png")}")
     # Check support for recommended features and delegates.
-    features = shell_output("#{bin}/convert -version")
+    features = shell_output("#{bin}convert -version")
     %w[Modules freetype jpeg png tiff].each do |feature|
       assert_match feature, features
     end

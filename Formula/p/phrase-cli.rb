@@ -1,7 +1,7 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
-  homepage "https://phrase.com/"
-  url "https://ghproxy.com/https://github.com/phrase/phrase-cli/archive/refs/tags/2.19.0.tar.gz"
+  homepage "https:phrase.com"
+  url "https:github.comphrasephrase-cliarchiverefstags2.19.0.tar.gz"
   sha256 "e089e8e31196881adc0872c7ef25779c0b29aa41eaa24885dd12d9c87806e832"
   license "MIT"
 
@@ -20,16 +20,16 @@ class PhraseCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/phrase/phrase-cli/cmd.PHRASE_CLIENT_VERSION=#{version}
+      -X github.comphrasephrase-clicmd.PHRASE_CLIENT_VERSION=#{version}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
     bin.install_symlink "phrase-cli" => "phrase"
 
-    generate_completions_from_executable(bin/"phrase", "completion", base_name: "phrase", shells: [:bash])
+    generate_completions_from_executable(bin"phrase", "completion", base_name: "phrase", shells: [:bash])
   end
 
   test do
-    assert_match "ERROR: no targets for download specified", shell_output("#{bin}/phrase pull 2>&1", 1)
-    assert_match version.to_s, shell_output("#{bin}/phrase version")
+    assert_match "ERROR: no targets for download specified", shell_output("#{bin}phrase pull 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}phrase version")
   end
 end

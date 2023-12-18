@@ -2,10 +2,10 @@ cask "futurerestore-gui" do
   version "1.98.3"
   sha256 "44d37f7d74393018b71c641dd98e229e78eb95915b4733aa586723856235c04f"
 
-  url "https://ghproxy.com/https://github.com/CoocooFroggy/FutureRestore-GUI/releases/download/v#{version}/FutureRestore-GUI-Mac-#{version}.dmg"
+  url "https:github.comCoocooFroggyFutureRestore-GUIreleasesdownloadv#{version}FutureRestore-GUI-Mac-#{version}.dmg"
   name "FutureRestore GUI"
   desc "Graphical interface for FutureRestore"
-  homepage "https://github.com/CoocooFroggy/FutureRestore-GUI/"
+  homepage "https:github.comCoocooFroggyFutureRestore-GUI"
 
   livecheck do
     url :url
@@ -14,5 +14,5 @@ cask "futurerestore-gui" do
 
   app "FutureRestore GUI.app"
 
-  zap trash: "~/FutureRestoreGUI"
+  zap trash: "~FutureRestoreGUI"
 end

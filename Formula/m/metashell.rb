@@ -1,7 +1,7 @@
 class Metashell < Formula
   desc "Metaprogramming shell for C++ templates"
-  homepage "http://metashell.org"
-  url "https://ghproxy.com/https://github.com/metashell/metashell/archive/refs/tags/v5.0.0.tar.gz"
+  homepage "http:metashell.org"
+  url "https:github.commetashellmetashellarchiverefstagsv5.0.0.tar.gz"
   sha256 "028e37be072ec4e85d18ead234a208d07225cf335c0bb1c98d4d4c3e30c71f0e"
   license "GPL-3.0-or-later"
 
@@ -29,25 +29,25 @@ class Metashell < Formula
 
   def install
     # Build internal Clang
-    system "cmake", "-S", "3rd/templight/llvm",
-                    "-B", "build/templight",
+    system "cmake", "-S", "3rdtemplightllvm",
+                    "-B", "buildtemplight",
                     "-DLIBCLANG_BUILD_STATIC=ON",
                     "-DLLVM_ENABLE_TERMINFO=OFF",
                     "-DLLVM_ENABLE_PROJECTS=clang",
                     *std_cmake_args
-    system "cmake", "--build", "build/templight", "--target", "templight"
+    system "cmake", "--build", "buildtemplight", "--target", "templight"
 
-    system "cmake", "-S", ".", "-B", "build/metashell", *std_cmake_args
-    system "cmake", "--build", "build/metashell"
-    system "cmake", "--install", "build/metashell"
+    system "cmake", "-S", ".", "-B", "buildmetashell", *std_cmake_args
+    system "cmake", "--build", "buildmetashell"
+    system "cmake", "--install", "buildmetashell"
   end
 
   test do
-    (testpath/"test.hpp").write <<~EOS
+    (testpath"test.hpp").write <<~EOS
       template <class T> struct add_const { using type = const T; };
       add_const<int>::type
     EOS
-    output = pipe_output("#{bin}/metashell -H", (testpath/"test.hpp").read)
+    output = pipe_output("#{bin}metashell -H", (testpath"test.hpp").read)
     assert_match "const int", output
   end
 end

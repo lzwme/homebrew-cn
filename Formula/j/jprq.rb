@@ -1,10 +1,10 @@
 class Jprq < Formula
   desc "Join Public Router, Quickly"
-  homepage "https://jprq.io/"
-  url "https://ghproxy.com/https://github.com/azimjohn/jprq/archive/refs/tags/2.2.tar.gz"
+  homepage "https:jprq.io"
+  url "https:github.comazimjohnjprqarchiverefstags2.2.tar.gz"
   sha256 "6121e0ac74512052ed00c57c363f0f0b66910618ebd8134cfa72acca05b09163"
   license "BSD-3-Clause"
-  head "https://github.com/azimjohn/jprq.git", branch: "master"
+  head "https:github.comazimjohnjprq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "456e989dc2308d2cf7aa857dc56b905d0f14b66ab4ac60998ecd9150d5b94b9d"
@@ -20,14 +20,14 @@ class Jprq < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cli"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cli"
   end
 
   test do
-    assert_match "auth token has been set", shell_output("#{bin}/jprq auth jprqbolmagin 2>&1")
-    output = shell_output("#{bin}/jprq serve #{testpath} 2>&1", 1)
+    assert_match "auth token has been set", shell_output("#{bin}jprq auth jprqbolmagin 2>&1")
+    output = shell_output("#{bin}jprq serve #{testpath} 2>&1", 1)
     assert_match "authentication failed", output
 
-    assert_match version.to_s, shell_output("#{bin}/jprq --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}jprq --version 2>&1")
   end
 end

@@ -2,13 +2,13 @@ cask "font-agdasima" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/agdasima"
+      only_path: "oflagdasima"
   name "Agdasima"
   desc "Based on big shoulders, a condensed american gothic sans-serif font family"
-  homepage "https://fonts.google.com/specimen/Agdasima"
+  homepage "https:fonts.google.comspecimenAgdasima"
 
   font "Agdasima-Bold.ttf"
   font "Agdasima-Regular.ttf"

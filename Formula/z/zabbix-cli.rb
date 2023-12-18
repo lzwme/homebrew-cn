@@ -1,14 +1,14 @@
 class ZabbixCli < Formula
   desc "CLI tool for interacting with Zabbix monitoring system"
-  homepage "https://github.com/unioslo/zabbix-cli/"
-  url "https://ghproxy.com/https://github.com/unioslo/zabbix-cli/archive/refs/tags/2.3.2.tar.gz"
+  homepage "https:github.comunioslozabbix-cli"
+  url "https:github.comunioslozabbix-cliarchiverefstags2.3.2.tar.gz"
   sha256 "e56b6be1c13c42c516c8e8e6b01948fc81591eae83f8babb7bee6d2025299c26"
   license "GPL-3.0-or-later"
-  head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
+  head "https:github.comunioslozabbix-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,16 +30,16 @@ class ZabbixCli < Formula
   end
 
   def install
-    # script tries to install config into /usr/local/bin (macOS) or /usr/share (Linux)
-    inreplace %w[setup.py etc/zabbix-cli.conf zabbix_cli/config.py], %r{(["' ])/usr/share/}, "\\1#{share}/"
-    inreplace "setup.py", "/usr/local/bin", share
+    # script tries to install config into usrlocalbin (macOS) or usrshare (Linux)
+    inreplace %w[setup.py etczabbix-cli.conf zabbix_cliconfig.py], %r{(["' ])usrshare}, "\\1#{share}"
+    inreplace "setup.py", "usrlocalbin", share
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
-    system bin/"zabbix-cli-init", "-z", "https://homebrew-test.example.com/"
-    config = testpath/".zabbix-cli/zabbix-cli.conf"
+    system bin"zabbix-cli-init", "-z", "https:homebrew-test.example.com"
+    config = testpath".zabbix-clizabbix-cli.conf"
     assert_predicate config, :exist?
     assert_match "homebrew-test.example.com", config.read
   end

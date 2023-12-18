@@ -1,10 +1,10 @@
 class Libharu < Formula
   desc "Library for generating PDF files"
-  homepage "https://github.com/libharu/libharu"
-  url "https://ghproxy.com/https://github.com/libharu/libharu/archive/refs/tags/v2.4.4.tar.gz"
+  homepage "https:github.comlibharulibharu"
+  url "https:github.comlibharulibharuarchiverefstagsv2.4.4.tar.gz"
   sha256 "227ab0ae62979ad65c27a9bc36d85aa77794db3375a0a30af18acdf4d871aee6"
   license "Zlib"
-  head "https://github.com/libharu/libharu.git", branch: "master"
+  head "https:github.comlibharulibharu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e4b858b562266a0505c2cfcf35cd0ce115fa96389a9f003e8cb9467d0a11a030"
@@ -31,11 +31,11 @@ class Libharu < Formula
     # Build static library
     system "cmake", "-S", ".", "-B", "build-static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "build-static"
-    lib.install "build-static/src/libhpdf.a"
+    lib.install "build-staticsrclibhpdf.a"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include "hpdf.h"
 
       int main(void)
@@ -56,6 +56,6 @@ class Libharu < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lhpdf", "-lz", "-lm", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

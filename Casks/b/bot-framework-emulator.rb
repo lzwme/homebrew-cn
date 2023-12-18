@@ -2,10 +2,10 @@ cask "bot-framework-emulator" do
   version "4.14.1"
   sha256 "274363551f54f64093437ad81109098639c62d70449a5f4afb0a0bc6033ce270"
 
-  url "https://ghproxy.com/https://github.com/Microsoft/BotFramework-Emulator/releases/download/v#{version}/botframework-emulator-#{version}-mac.zip"
+  url "https:github.comMicrosoftBotFramework-Emulatorreleasesdownloadv#{version}botframework-emulator-#{version}-mac.zip"
   name "Microsoft Bot Framework Emulator"
   desc "Test and debug chat bots built with the Bot Framework SDK"
-  homepage "https://github.com/Microsoft/BotFramework-Emulator"
+  homepage "https:github.comMicrosoftBotFramework-Emulator"
 
   auto_updates true
 
@@ -14,11 +14,11 @@ cask "bot-framework-emulator" do
   uninstall quit: "com.electron.botframework-emulator"
 
   zap trash: [
-    "~/Library/Application Support/botframework-emulator",
-    "~/Library/Caches/com.electron.botframework-emulator",
-    "~/Library/Caches/com.electron.botframework-emulator.ShipIt",
-    "~/Library/Preferences/com.electron.botframework-emulator.helper.plist",
-    "~/Library/Preferences/com.electron.botframework-emulator.plist",
-    "~/Library/Saved Application State/com.electron.botframework-emulator.savedState",
+    "~LibraryApplication Supportbotframework-emulator",
+    "~LibraryCachescom.electron.botframework-emulator",
+    "~LibraryCachescom.electron.botframework-emulator.ShipIt",
+    "~LibraryPreferencescom.electron.botframework-emulator.helper.plist",
+    "~LibraryPreferencescom.electron.botframework-emulator.plist",
+    "~LibrarySaved Application Statecom.electron.botframework-emulator.savedState",
   ]
 end

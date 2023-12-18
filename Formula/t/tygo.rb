@@ -1,11 +1,11 @@
 class Tygo < Formula
   desc "Generate Typescript types from Golang source code"
-  homepage "https://github.com/gzuidhof/tygo"
-  url "https://github.com/gzuidhof/tygo.git",
+  homepage "https:github.comgzuidhoftygo"
+  url "https:github.comgzuidhoftygo.git",
       tag:      "v0.2.13",
       revision: "1e537aa5f15d640c781cceed3ebedd830140a146"
   license "MIT"
-  head "https://github.com/gzuidhof/tygo.git", branch: "main"
+  head "https:github.comgzuidhoftygo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "923c473b1a0dfe08f39025f059383bdc6479dab8f9ce54b2e85d313d42ee407d"
@@ -22,34 +22,34 @@ class Tygo < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/gzuidhof/tygo/cmd.version=#{version}
-      -X github.com/gzuidhof/tygo/cmd.commit=#{Utils.git_head}
-      -X github.com/gzuidhof/tygo/cmd.commitDate=#{time.iso8601}
+      -X github.comgzuidhoftygocmd.version=#{version}
+      -X github.comgzuidhoftygocmd.commit=#{Utils.git_head}
+      -X github.comgzuidhoftygocmd.commitDate=#{time.iso8601}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"tygo", "completion")
+    generate_completions_from_executable(bin"tygo", "completion")
     pkgshare.install "examples"
   end
 
   test do
-    (testpath/"tygo.yml").write <<~EOS
+    (testpath"tygo.yml").write <<~EOS
       packages:
         - path: "simple"
           type_mappings:
-            time.Time: "string /* RFC3339 */"
+            time.Time: "string * RFC3339 *"
             null.String: "null | string"
             null.Bool: "null | boolean"
-            uuid.UUID: "string /* uuid */"
-            uuid.NullUUID: "null | string /* uuid */"
+            uuid.UUID: "string * uuid *"
+            uuid.NullUUID: "null | string * uuid *"
     EOS
 
     system "go", "mod", "init", "simple"
-    cp pkgshare/"examples/simple/simple.go", testpath
-    system bin/"tygo", "--config", testpath/"tygo.yml", "generate"
-    assert_match "source: simple.go", (testpath/"index.ts").read
+    cp pkgshare"examplessimplesimple.go", testpath
+    system bin"tygo", "--config", testpath"tygo.yml", "generate"
+    assert_match "source: simple.go", (testpath"index.ts").read
 
-    assert_match version.to_s, shell_output("#{bin}/tygo --version")
+    assert_match version.to_s, shell_output("#{bin}tygo --version")
   end
 end

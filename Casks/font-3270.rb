@@ -2,14 +2,14 @@ cask "font-3270" do
   version "3.0.1,d916271"
   sha256 "623fb815b16d6c4940b5014a21c5474ef6cddb02c325d03f153341b676b4cffa"
 
-  url "https://ghproxy.com/https://github.com/rbanffy/3270font/releases/download/v#{version.csv.first}/3270_fonts_#{version.csv.second}.zip"
+  url "https:github.comrbanffy3270fontreleasesdownloadv#{version.csv.first}3270_fonts_#{version.csv.second}.zip"
   name "IBM 3270"
   desc "Derived from the x3270 font"
-  homepage "https://github.com/rbanffy/3270font"
+  homepage "https:github.comrbanffy3270font"
 
   livecheck do
-    url "https://github.com/rbanffy/3270font/releases/latest"
-    regex(%r{v?(\d+(?:\.\d+)+)/3270[._-]fonts[._-](.*)\.zip}i)
+    url "https:github.comrbanffy3270fontreleaseslatest"
+    regex(%r{v?(\d+(?:\.\d+)+)3270[._-]fonts[._-](.*)\.zip}i)
     strategy :github_releases do |json, regex|
       json.first["assets"].map do |asset|
         match = asset["browser_download_url"].match(regex)

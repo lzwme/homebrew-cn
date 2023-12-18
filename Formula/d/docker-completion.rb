@@ -1,11 +1,11 @@
 class DockerCompletion < Formula
   desc "Bash, Zsh and Fish completion for Docker"
-  homepage "https://www.docker.com/"
-  url "https://github.com/docker/cli.git",
+  homepage "https:www.docker.com"
+  url "https:github.comdockercli.git",
       tag:      "v24.0.7",
       revision: "afdd53b4e341be38d2056a42113b938559bb1d94"
   license "Apache-2.0"
-  head "https://github.com/docker/cli.git", branch: "master"
+  head "https:github.comdockercli.git", branch: "master"
 
   livecheck do
     formula "docker"
@@ -22,18 +22,18 @@ class DockerCompletion < Formula
   end
 
   # These used to also be provided by the `docker` formula.
-  link_overwrite "etc/bash_completion.d/docker"
-  link_overwrite "share/fish/vendor_completions.d/docker.fish"
-  link_overwrite "share/zsh/site-functions/_docker"
+  link_overwrite "etcbash_completion.ddocker"
+  link_overwrite "sharefishvendor_completions.ddocker.fish"
+  link_overwrite "sharezshsite-functions_docker"
 
   def install
-    bash_completion.install "contrib/completion/bash/docker"
-    fish_completion.install "contrib/completion/fish/docker.fish"
-    zsh_completion.install "contrib/completion/zsh/_docker"
+    bash_completion.install "contribcompletionbashdocker"
+    fish_completion.install "contribcompletionfishdocker.fish"
+    zsh_completion.install "contribcompletionzsh_docker"
   end
 
   test do
     assert_match "-F _docker",
-      shell_output("bash -c 'source #{bash_completion}/docker && complete -p docker'")
+      shell_output("bash -c 'source #{bash_completion}docker && complete -p docker'")
   end
 end

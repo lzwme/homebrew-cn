@@ -1,14 +1,14 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
-  homepage "https://github.com/bytecodealliance/wasm-tools"
-  url "https://ghproxy.com/https://github.com/bytecodealliance/wasm-tools/archive/refs/tags/wasm-tools-1.0.54.tar.gz"
+  homepage "https:github.combytecodealliancewasm-tools"
+  url "https:github.combytecodealliancewasm-toolsarchiverefstagswasm-tools-1.0.54.tar.gz"
   sha256 "3d6d53800409aac71ba6c425525fd4135b6661254af50f15da3cbb667ee12162"
   license "Apache-2.0" => { with: "LLVM-exception" }
-  head "https://github.com/bytecodealliance/wasm-tools.git", branch: "main"
+  head "https:github.combytecodealliancewasm-tools.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^wasm-tools[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^wasm-tools[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,8 +29,8 @@ class WasmTools < Formula
 
   test do
     wasm = ["0061736d0100000001070160027f7f017f030201000707010373756d00000a09010700200020016a0b"].pack("H*")
-    (testpath/"sum.wasm").write(wasm)
-    system bin/"wasm-tools", "validate", testpath/"sum.wasm"
+    (testpath"sum.wasm").write(wasm)
+    system bin"wasm-tools", "validate", testpath"sum.wasm"
 
     expected = <<~EOS.strip
       (module
@@ -43,6 +43,6 @@ class WasmTools < Formula
         (export "sum" (func 0))
       )
     EOS
-    assert_equal expected, shell_output("#{bin}/wasm-tools print #{testpath}/sum.wasm")
+    assert_equal expected, shell_output("#{bin}wasm-tools print #{testpath}sum.wasm")
   end
 end

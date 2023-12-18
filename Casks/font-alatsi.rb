@@ -2,10 +2,10 @@ cask "font-alatsi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/alatsi/Alatsi-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflalatsiAlatsi-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Alatsi"
-  homepage "https://fonts.google.com/specimen/Alatsi"
+  homepage "https:fonts.google.comspecimenAlatsi"
 
   font "Alatsi-Regular.ttf"
 

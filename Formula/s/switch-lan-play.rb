@@ -1,7 +1,7 @@
 class SwitchLanPlay < Formula
   desc "Make you and your friends play games like in a LAN"
-  homepage "https://github.com/spacemeowx2/switch-lan-play"
-  url "https://github.com/spacemeowx2/switch-lan-play.git",
+  homepage "https:github.comspacemeowx2switch-lan-play"
+  url "https:github.comspacemeowx2switch-lan-play.git",
       tag:      "v0.2.3",
       revision: "c0c663e3fdc95d6d6e8ab401caa2bfb5b5872e00"
   license "GPL-3.0-or-later"
@@ -33,7 +33,7 @@ class SwitchLanPlay < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/lan-play --version")
-    assert_match "1.", shell_output("#{bin}/lan-play --list-if")
+    assert_match version.to_s, shell_output("#{bin}lan-play --version")
+    assert_match "1.", shell_output("#{bin}lan-play --list-if")
   end
 end

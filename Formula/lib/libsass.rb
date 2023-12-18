@@ -1,11 +1,11 @@
 class Libsass < Formula
   desc "C implementation of a Sass compiler"
-  homepage "https://github.com/sass/libsass"
-  url "https://github.com/sass/libsass.git",
+  homepage "https:github.comsasslibsass"
+  url "https:github.comsasslibsass.git",
       tag:      "3.6.5",
       revision: "f6afdbb9288d20d1257122e71d88e53348a53af3"
   license "MIT"
-  head "https://github.com/sass/libsass.git", branch: "master"
+  head "https:github.comsasslibsass.git", branch: "master"
 
   livecheck do
     url :stable
@@ -33,15 +33,15 @@ class Libsass < Formula
   def install
     ENV.cxx11
     system "autoreconf", "-fvi"
-    system "./configure", "--prefix=#{prefix}", "--disable-silent-rules",
+    system ".configure", "--prefix=#{prefix}", "--disable-silent-rules",
                           "--disable-dependency-tracking"
     system "make", "install"
   end
 
   test do
     # This will need to be updated when devel = stable due to API changes.
-    (testpath/"test.c").write <<~EOS
-      #include <sass/context.h>
+    (testpath"test.c").write <<~EOS
+      #include <sasscontext.h>
       #include <string.h>
 
       int main()
@@ -63,6 +63,6 @@ class Libsass < Formula
       }
     EOS
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lsass"
-    system "./test"
+    system ".test"
   end
 end

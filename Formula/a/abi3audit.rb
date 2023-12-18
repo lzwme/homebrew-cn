@@ -2,8 +2,8 @@ class Abi3audit < Formula
   include Language::Python::Virtualenv
 
   desc "Scans Python packages for abi3 violations and inconsistencies"
-  homepage "https://github.com/trailofbits/abi3audit"
-  url "https://files.pythonhosted.org/packages/a3/4d/1f08c6db0b6cf02ef0fe33be39144d4477030910c3f61bffa3b2a9b09e87/abi3audit-0.0.9.tar.gz"
+  homepage "https:github.comtrailofbitsabi3audit"
+  url "https:files.pythonhosted.orgpackagesa34d1f08c6db0b6cf02ef0fe33be39144d4477030910c3f61bffa3b2a9b09e87abi3audit-0.0.9.tar.gz"
   sha256 "4f469e146d911f238724d49fd280d8bb7f411ff5d224865b13e47d4132e776a6"
   license "MIT"
 
@@ -33,42 +33,42 @@ class Abi3audit < Formula
   end
 
   resource "abi3info" do
-    url "https://files.pythonhosted.org/packages/4f/d9/366f6670b677f68c96cb06a5ab58c410be888bcb19bd39743e7e177db9d0/abi3info-2023.10.22.tar.gz"
+    url "https:files.pythonhosted.orgpackages4fd9366f6670b677f68c96cb06a5ab58c410be888bcb19bd39743e7e177db9d0abi3info-2023.10.22.tar.gz"
     sha256 "b02a11119d417e02e2e2ebb0adf247f6796fa19906d2c49926d207b22f19e3ef"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
     sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "cattrs" do
-    url "https://files.pythonhosted.org/packages/91/dc/9e8bcf0ee80835cfc7da6d506ccc85ef6cb7a0ea924a61e029ba81093b1a/cattrs-23.2.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages91dc9e8bcf0ee80835cfc7da6d506ccc85ef6cb7a0ea924a61e029ba81093b1acattrs-23.2.2.tar.gz"
     sha256 "b790b1c2be1ce042611e33f740e343c2593918bbf3c1cc88cdddac4defc09655"
   end
 
   resource "kaitaistruct" do
-    url "https://files.pythonhosted.org/packages/54/04/dd60b9cb65d580ef6cb6eaee975ad1bdd22d46a3f51b07a1e0606710ea88/kaitaistruct-0.10.tar.gz"
+    url "https:files.pythonhosted.orgpackages5404dd60b9cb65d580ef6cb6eaee975ad1bdd22d46a3f51b07a1e0606710ea88kaitaistruct-0.10.tar.gz"
     sha256 "a044dee29173d6afbacf27bcac39daf89b654dd418cfa009ab82d9178a9ae52a"
   end
 
   resource "pefile" do
-    url "https://files.pythonhosted.org/packages/78/c5/3b3c62223f72e2360737fd2a57c30e5b2adecd85e70276879609a7403334/pefile-2023.2.7.tar.gz"
+    url "https:files.pythonhosted.orgpackages78c53b3c62223f72e2360737fd2a57c30e5b2adecd85e70276879609a7403334pefile-2023.2.7.tar.gz"
     sha256 "82e6114004b3d6911c77c3953e3838654b04511b8b66e8583db70c65998017dc"
   end
 
   resource "pyelftools" do
-    url "https://files.pythonhosted.org/packages/84/05/fd41cd647de044d1ffec90ce5aaae935126ac217f8ecb302186655284fc8/pyelftools-0.30.tar.gz"
+    url "https:files.pythonhosted.orgpackages8405fd41cd647de044d1ffec90ce5aaae935126ac217f8ecb302186655284fc8pyelftools-0.30.tar.gz"
     sha256 "2fc92b0d534f8b081f58c7c370967379123d8e00984deb53c209364efd575b40"
   end
 
   resource "requests-cache" do
-    url "https://files.pythonhosted.org/packages/4d/b6/24aeda90d94fb1fd2cd755d6ce176e526ef61d407f87fd77de6ab0d03157/requests_cache-1.1.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages4db624aeda90d94fb1fd2cd755d6ce176e526ef61d407f87fd77de6ab0d03157requests_cache-1.1.1.tar.gz"
     sha256 "764f93d3fa860be72125a568c2cc8eafb151cf29b4dc2515433a56ee657e1c60"
   end
 
   resource "url-normalize" do
-    url "https://files.pythonhosted.org/packages/ec/ea/780a38c99fef750897158c0afb83b979def3b379aaac28b31538d24c4e8f/url-normalize-1.4.3.tar.gz"
+    url "https:files.pythonhosted.orgpackagesecea780a38c99fef750897158c0afb83b979def3b379aaac28b31538d24c4e8furl-normalize-1.4.3.tar.gz"
     sha256 "d23d3a070ac52a67b83a1c59a0e68f8608d1cd538783b401bc9de2c0fac999b2"
   end
 
@@ -77,7 +77,7 @@ class Abi3audit < Formula
   end
 
   test do
-    output = shell_output("#{bin}/abi3audit sip 2>&1", 1)
-    assert_match(/sip: \d+ extensions scanned; \d+ ABI version mismatches and \d+ ABI\s+violations found/, output)
+    output = shell_output("#{bin}abi3audit sip 2>&1", 1)
+    assert_match(sip: \d+ extensions scanned; \d+ ABI version mismatches and \d+ ABI\s+violations found, output)
   end
 end

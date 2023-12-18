@@ -1,11 +1,11 @@
 class Cpptoml < Formula
   desc "Header-only library for parsing TOML"
-  homepage "https://github.com/skystrife/cpptoml"
-  url "https://ghproxy.com/https://github.com/skystrife/cpptoml/archive/refs/tags/v0.1.1.tar.gz"
+  homepage "https:github.comskystrifecpptoml"
+  url "https:github.comskystrifecpptomlarchiverefstagsv0.1.1.tar.gz"
   sha256 "23af72468cfd4040984d46a0dd2a609538579c78ddc429d6b8fd7a10a6e24403"
   license "MIT"
   revision 1
-  head "https://github.com/skystrife/cpptoml.git", branch: "master"
+  head "https:github.comskystrifecpptoml.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5dd8ccfa15e88651af7ad7815bf041ead83e5afbf72f7a6d7c2e5da4a1e0da5b"
@@ -14,9 +14,9 @@ class Cpptoml < Formula
   depends_on "cmake" => :build
 
   # Fix library support for GCC 11+ by adding include for limits header.
-  # Upstream PR: https://github.com/skystrife/cpptoml/pull/123
+  # Upstream PR: https:github.comskystrifecpptomlpull123
   patch do
-    url "https://github.com/skystrife/cpptoml/commit/c55a516e90133d89d67285429c6474241346d27a.patch?full_index=1"
+    url "https:github.comskystrifecpptomlcommitc55a516e90133d89d67285429c6474241346d27a.patch?full_index=1"
     sha256 "29d720fa096f0afab8a6a42b3382e98ce09a8d2958d0ad2980cf7c70060eb2c1"
   end
 
@@ -32,7 +32,7 @@ class Cpptoml < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath"test.cc").write <<~EOS
       #include "cpptoml.h"
       #include <iostream>
 
@@ -49,11 +49,11 @@ class Cpptoml < Formula
       }
     EOS
 
-    (testpath/"brew.toml").write <<~EOS
+    (testpath"brew.toml").write <<~EOS
       str = "Hello, Homebrew."
     EOS
 
     system ENV.cxx, "-std=c++11", "-I#{include}", "test.cc", "-o", "test"
-    assert_equal "Hello, Homebrew.", shell_output("./test").strip
+    assert_equal "Hello, Homebrew.", shell_output(".test").strip
   end
 end

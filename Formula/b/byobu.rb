@@ -1,7 +1,7 @@
 class Byobu < Formula
   desc "Text-based window manager and terminal multiplexer"
-  homepage "https://launchpad.net/byobu"
-  url "https://launchpad.net/byobu/trunk/5.133/+download/byobu_5.133.orig.tar.gz"
+  homepage "https:launchpad.netbyobu"
+  url "https:launchpad.netbyobutrunk5.133+downloadbyobu_5.133.orig.tar.gz"
   sha256 "4d8ea48f8c059e56f7174df89b04a08c32286bae5a21562c5c6f61be6dab7563"
   license "GPL-3.0-only"
   revision 3
@@ -11,7 +11,7 @@ class Byobu < Formula
   end
 
   head do
-    url "https://github.com/dustinkirkland/byobu.git", branch: "master"
+    url "https:github.comdustinkirklandbyobu.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -29,27 +29,27 @@ class Byobu < Formula
 
   def install
     if build.head?
-      cp "./debian/changelog", "./ChangeLog"
+      cp ".debianchangelog", ".ChangeLog"
       system "autoreconf", "--force", "--install", "--verbose"
     end
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
 
     byobu_python = Formula["newt"].deps
-                                  .find { |d| d.name.match?(/^python@\d\.\d+$/) }
+                                  .find { |d| d.name.match?(^python@\d\.\d+$) }
                                   .to_formula
-                                  .libexec/"bin/python"
+                                  .libexec"binpython"
 
-    lib.glob("byobu/include/*.py").each do |script|
+    lib.glob("byobuinclude*.py").each do |script|
       byobu_script = "byobu-#{script.basename(".py")}"
 
-      libexec.install(bin/byobu_script)
-      (bin/byobu_script).write_env_script(libexec/byobu_script, BYOBU_PYTHON: byobu_python)
+      libexec.install(binbyobu_script)
+      (binbyobu_script).write_env_script(libexecbyobu_script, BYOBU_PYTHON: byobu_python)
     end
   end
 
   test do
-    system bin/"byobu-status"
-    assert_match "open terminal failed", shell_output("#{bin}/byobu-select-session 2>&1", 1)
+    system bin"byobu-status"
+    assert_match "open terminal failed", shell_output("#{bin}byobu-select-session 2>&1", 1)
   end
 end

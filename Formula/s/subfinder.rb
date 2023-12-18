@@ -1,10 +1,10 @@
 class Subfinder < Formula
   desc "Subdomain discovery tool"
-  homepage "https://github.com/projectdiscovery/subfinder"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/subfinder/archive/refs/tags/v2.6.3.tar.gz"
+  homepage "https:github.comprojectdiscoverysubfinder"
+  url "https:github.comprojectdiscoverysubfinderarchiverefstagsv2.6.3.tar.gz"
   sha256 "bd587a7545504949b18e7bf781fe4165e62785881a32969e42f911e85f95cf14"
   license "MIT"
-  head "https://github.com/projectdiscovery/subfinder.git", branch: "master"
+  head "https:github.comprojectdiscoverysubfinder.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae519580605dbb78bc4be8370b966a2098f487a500d0f73a8ccc024dc715386f"
@@ -22,12 +22,12 @@ class Subfinder < Formula
 
   def install
     cd "v2" do
-      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/subfinder"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdsubfinder"
     end
   end
 
   test do
-    assert_match "docs.brew.sh", shell_output("#{bin}/subfinder -d brew.sh")
-    assert_predicate testpath/".config/subfinder/config.yaml", :exist?
+    assert_match "docs.brew.sh", shell_output("#{bin}subfinder -d brew.sh")
+    assert_predicate testpath".configsubfinderconfig.yaml", :exist?
   end
 end

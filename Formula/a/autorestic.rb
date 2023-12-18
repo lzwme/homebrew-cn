@@ -1,10 +1,10 @@
 class Autorestic < Formula
   desc "High level CLI utility for restic"
-  homepage "https://autorestic.vercel.app/"
-  url "https://ghproxy.com/https://github.com/cupcakearmy/autorestic/archive/refs/tags/v1.7.9.tar.gz"
+  homepage "https:autorestic.vercel.app"
+  url "https:github.comcupcakearmyautoresticarchiverefstagsv1.7.9.tar.gz"
   sha256 "e57bbc045edee4aabd850da2e61da9c18a6d12bd323866be1eb3edca4709b363"
   license "Apache-2.0"
-  head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
+  head "https:github.comcupcakearmyautorestic.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b2ea517f5dcd33825bb1c27c3d427a772d7856f4e86e684f22ab9de77f65222"
@@ -20,8 +20,8 @@ class Autorestic < Formula
   depends_on "restic"
 
   def install
-    system "go", "build", *std_go_args, "./main.go"
-    generate_completions_from_executable(bin/"autorestic", "completion")
+    system "go", "build", *std_go_args, ".main.go"
+    generate_completions_from_executable(bin"autorestic", "completion")
   end
 
   test do
@@ -31,11 +31,11 @@ class Autorestic < Formula
       "backends"  => { "bar" => { "type" => "local", "key" => "secret", "path" => "data" } },
     }
     config["version"] = 2
-    File.write(testpath/".autorestic.yml", config.to_yaml)
-    (testpath/"repo"/"test.txt").write("This is a testfile")
-    system "#{bin}/autorestic", "check"
-    system "#{bin}/autorestic", "backup", "-a"
-    system "#{bin}/autorestic", "restore", "-l", "foo", "--to", "restore"
-    assert compare_file testpath/"repo"/"test.txt", testpath/"restore"/testpath/"repo"/"test.txt"
+    File.write(testpath".autorestic.yml", config.to_yaml)
+    (testpath"repo""test.txt").write("This is a testfile")
+    system "#{bin}autorestic", "check"
+    system "#{bin}autorestic", "backup", "-a"
+    system "#{bin}autorestic", "restore", "-l", "foo", "--to", "restore"
+    assert compare_file testpath"repo""test.txt", testpath"restore"testpath"repo""test.txt"
   end
 end

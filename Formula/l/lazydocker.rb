@@ -1,7 +1,7 @@
 class Lazydocker < Formula
   desc "Lazier way to manage everything docker"
-  homepage "https://github.com/jesseduffield/lazydocker"
-  url "https://github.com/jesseduffield/lazydocker.git",
+  homepage "https:github.comjesseduffieldlazydocker"
+  url "https:github.comjesseduffieldlazydocker.git",
       tag:      "v0.23.1",
       revision: "1060e17731c80372335446eabe6a56ba4facd2b3"
   license "MIT"
@@ -24,8 +24,8 @@ class Lazydocker < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/lazydocker --version")
+    assert_match version.to_s, shell_output("#{bin}lazydocker --version")
 
-    assert_match "language: auto", shell_output("#{bin}/lazydocker --config")
+    assert_match "language: auto", shell_output("#{bin}lazydocker --config")
   end
 end

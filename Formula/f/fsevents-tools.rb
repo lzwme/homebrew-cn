@@ -1,13 +1,13 @@
 class FseventsTools < Formula
   desc "Command-line utilities for the FSEvents API"
-  homepage "https://geoff.greer.fm/fsevents/"
-  url "https://geoff.greer.fm/fsevents/releases/fsevents-tools-1.0.0.tar.gz"
+  homepage "https:geoff.greer.fmfsevents"
+  url "https:geoff.greer.fmfseventsreleasesfsevents-tools-1.0.0.tar.gz"
   sha256 "498528e1794fa2b0cf920bd96abaf7ced15df31c104d1a3650e06fa3f95ec628"
   license "Apache-2.0"
 
   livecheck do
     url :homepage
-    regex(/href=.*?fsevents-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?fsevents-tools[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -27,7 +27,7 @@ class FseventsTools < Formula
   end
 
   head do
-    url "https://github.com/ggreer/fsevents-tools.git", branch: "master"
+    url "https:github.comggreerfsevents-tools.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,8 +37,8 @@ class FseventsTools < Formula
   depends_on :macos
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
@@ -49,6 +49,6 @@ class FseventsTools < Formula
       sleep 2
       touch "testfile"
     end
-    assert_match "notifying", shell_output("#{bin}/notifywait testfile")
+    assert_match "notifying", shell_output("#{bin}notifywait testfile")
   end
 end

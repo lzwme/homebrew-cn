@@ -1,7 +1,7 @@
 class Librem < Formula
   desc "Toolkit library for real-time audio and video processing"
-  homepage "https://github.com/baresip/rem"
-  url "https://ghproxy.com/https://github.com/baresip/rem/archive/refs/tags/v2.12.0.tar.gz"
+  homepage "https:github.combaresiprem"
+  url "https:github.combaresipremarchiverefstagsv2.12.0.tar.gz"
   sha256 "0583221e8fa9404eb9805a99ec96446f1fea9731250b01707e7225cece7878a4"
   license "BSD-3-Clause"
 
@@ -26,7 +26,7 @@ class Librem < Formula
     libre = Formula["libre"]
     args = %W[
       -DCMAKE_BUILD_TYPE=Release
-      -DRE_INCLUDE_DIR=#{libre.opt_include}/re
+      -DRE_INCLUDE_DIR=#{libre.opt_include}re
     ]
     system "cmake", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build", "-j"
@@ -34,15 +34,15 @@ class Librem < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdint.h>
-      #include <re/re.h>
-      #include <rem/rem.h>
+      #include <rere.h>
+      #include <remrem.h>
       int main() {
         return (NULL != vidfmt_name(VID_FMT_YUV420P)) ? 0 : 1;
       }
     EOS
     system ENV.cc, "test.c", "-L#{opt_lib}", "-lrem", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

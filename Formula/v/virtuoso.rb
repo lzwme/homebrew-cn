@@ -1,7 +1,7 @@
 class Virtuoso < Formula
   desc "High-performance object-relational SQL database"
-  homepage "https://virtuoso.openlinksw.com/wiki/main/"
-  url "https://ghproxy.com/https://github.com/openlink/virtuoso-opensource/releases/download/v7.2.11/virtuoso-opensource-7.2.11.tar.gz"
+  homepage "https:virtuoso.openlinksw.comwikimain"
+  url "https:github.comopenlinkvirtuoso-opensourcereleasesdownloadv7.2.11virtuoso-opensource-7.2.11.tar.gz"
   sha256 "a15175be0e03887e20a776a0b21064fc2fae79beb2796d89bed5a91bf22b6256"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
 
@@ -16,7 +16,7 @@ class Virtuoso < Formula
   end
 
   head do
-    url "https://github.com/openlink/virtuoso-opensource.git", branch: "develop/7"
+    url "https:github.comopenlinkvirtuoso-opensource.git", branch: "develop7"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -41,8 +41,8 @@ class Virtuoso < Formula
   skip_clean :la
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
+    system ".autogen.sh" if build.head?
+    system ".configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--without-internal-zlib"
     system "make", "install"
@@ -56,6 +56,6 @@ class Virtuoso < Formula
   end
 
   test do
-    system bin/"virtuoso-t", "+checkpoint-only"
+    system bin"virtuoso-t", "+checkpoint-only"
   end
 end

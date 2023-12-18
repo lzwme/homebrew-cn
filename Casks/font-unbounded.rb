@@ -2,11 +2,11 @@ cask "font-unbounded" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/unbounded/Unbounded%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflunboundedUnbounded%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Unbounded"
   desc "Possibly the first on-chain funded font in the world"
-  homepage "https://fonts.google.com/specimen/Unbounded"
+  homepage "https:fonts.google.comspecimenUnbounded"
 
   font "Unbounded[wght].ttf"
 

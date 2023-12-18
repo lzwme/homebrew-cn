@@ -2,10 +2,10 @@ cask "crystalfetch" do
   version "2.1.0"
   sha256 "a2791be006e92496c2871caeee557950ecba620c6394075071938ce31051459d"
 
-  url "https://ghproxy.com/https://github.com/TuringSoftware/CrystalFetch/releases/download/v#{version}/CrystalFetch.dmg"
+  url "https:github.comTuringSoftwareCrystalFetchreleasesdownloadv#{version}CrystalFetch.dmg"
   name "Crystalfetch"
   desc "UI for creating Windows installer ISO from UUPDump"
-  homepage "https://github.com/TuringSoftware/CrystalFetch"
+  homepage "https:github.comTuringSoftwareCrystalFetch"
 
   livecheck do
     url :url
@@ -17,7 +17,7 @@ cask "crystalfetch" do
   app "CrystalFetch.app"
 
   zap trash: [
-    "~/Library/Application Scripts/llc.turing.CrystalFetch",
-    "~/Library/Containers/llc.turing.CrystalFetch",
+    "~LibraryApplication Scriptsllc.turing.CrystalFetch",
+    "~LibraryContainersllc.turing.CrystalFetch",
   ]
 end

@@ -1,10 +1,10 @@
 class Snappystream < Formula
   desc "C++ snappy stream realization (compatible with snappy)"
-  homepage "https://github.com/hoxnox/snappystream"
-  url "https://ghproxy.com/https://github.com/hoxnox/snappystream/archive/refs/tags/1.0.0.tar.gz"
+  homepage "https:github.comhoxnoxsnappystream"
+  url "https:github.comhoxnoxsnappystreamarchiverefstags1.0.0.tar.gz"
   sha256 "a50a1765eac1999bf42d0afd46d8704e8c4040b6e6c05dcfdffae6dcd5c6c6b8"
   license "Apache-2.0"
-  head "https://github.com/hoxnox/snappystream.git", branch: "master"
+  head "https:github.comhoxnoxsnappystream.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,7 +29,7 @@ class Snappystream < Formula
   end
 
   test do
-    (testpath/"test.cxx").write <<~EOS
+    (testpath"test.cxx").write <<~EOS
       #include <iostream>
       #include <fstream>
       #include <iterator>
@@ -53,6 +53,6 @@ class Snappystream < Formula
     system ENV.cxx, "test.cxx", "-o", "test",
                     "-L#{Formula["snappy"].opt_lib}", "-lsnappy",
                     "-L#{lib}", "-lsnappystream"
-    system "./test < #{__FILE__} > out.dat && diff #{__FILE__} out.dat"
+    system ".test < #{__FILE__} > out.dat && diff #{__FILE__} out.dat"
   end
 end

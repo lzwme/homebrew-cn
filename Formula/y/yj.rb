@@ -1,10 +1,10 @@
 class Yj < Formula
   desc "CLI to convert between YAML, TOML, JSON and HCL"
-  homepage "https://github.com/sclevine/yj"
-  url "https://ghproxy.com/https://github.com/sclevine/yj/archive/refs/tags/v5.1.0.tar.gz"
+  homepage "https:github.comsclevineyj"
+  url "https:github.comsclevineyjarchiverefstagsv5.1.0.tar.gz"
   sha256 "9a3e9895181d1cbd436a1b02ccf47579afacd181c73f341e697a8fe74f74f99d"
   license "Apache-2.0"
-  head "https://github.com/sclevine/yj.git", branch: "master"
+  head "https:github.comsclevineyj.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b768047213c8d89fbf913d6a7558bc7375b2bb212c3de790dc818f4b5220886"
@@ -27,6 +27,6 @@ class Yj < Formula
   end
 
   test do
-    assert_match '{"a":1}', pipe_output("#{bin}/yj -t", "a=1")
+    assert_match '{"a":1}', pipe_output("#{bin}yj -t", "a=1")
   end
 end

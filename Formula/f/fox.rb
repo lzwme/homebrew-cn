@@ -1,7 +1,7 @@
 class Fox < Formula
   desc "Toolkit for developing Graphical User Interfaces easily"
-  homepage "http://fox-toolkit.org/"
-  url "http://fox-toolkit.org/ftp/fox-1.6.56.tar.gz"
+  homepage "http:fox-toolkit.org"
+  url "http:fox-toolkit.orgftpfox-1.6.56.tar.gz"
   sha256 "c517e5fcac0e6b78ca003cc167db4f79d89e230e5085334253e1d3f544586cb2"
   license "LGPL-2.1-or-later"
   revision 4
@@ -41,24 +41,24 @@ class Fox < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     # Needed for libxft to find ftbuild2.h provided by freetype
-    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
-    system "./configure", *std_configure_args,
+    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}freetype2"
+    system ".configure", *std_configure_args,
                           "--enable-release",
                           "--with-x",
                           "--with-opengl"
     # Unset LDFLAGS, "-s" causes the linker to crash
     system "make", "install", "LDFLAGS="
-    (bin/"Adie.stx").unlink
+    (bin"Adie.stx").unlink
   end
 
   test do
-    system bin/"reswrap", "-t", "-o", "text.txt", test_fixtures("test.jpg")
+    system bin"reswrap", "-t", "-o", "text.txt", test_fixtures("test.jpg")
     assert_match "\\x00\\x85\\x80\\x0f\\xae\\x03\\xff\\xd9", File.read("text.txt")
   end
 end

@@ -1,13 +1,13 @@
 class Nqp < Formula
   desc "Lightweight Raku-like environment for virtual machines"
-  homepage "https://github.com/Raku/nqp"
-  url "https://ghproxy.com/https://github.com/Raku/nqp/releases/download/2023.11/nqp-2023.11.tar.gz"
+  homepage "https:github.comRakunqp"
+  url "https:github.comRakunqpreleasesdownload2023.11nqp-2023.11.tar.gz"
   sha256 "e7176b1a6fbaa98c132e385f325c6211ff9f93c0a3f0a23ceb6ffe823747b297"
   license "Artistic-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -33,18 +33,18 @@ class Nqp < Formula
     ENV.deparallelize
 
     # Work around Homebrew's directory structure and help find moarvm libraries
-    inreplace "tools/build/gen-version.pl", "$libdir, 'MAST'", "'#{Formula["moarvm"].opt_share}/nqp/lib/MAST'"
+    inreplace "toolsbuildgen-version.pl", "$libdir, 'MAST'", "'#{Formula["moarvm"].opt_share}nqplibMAST'"
 
     system "perl", "Configure.pl",
                    "--backends=moar",
                    "--prefix=#{prefix}",
-                   "--with-moar=#{Formula["moarvm"].bin}/moar"
+                   "--with-moar=#{Formula["moarvm"].bin}moar"
     system "make"
     system "make", "install"
   end
 
   test do
-    out = shell_output("#{bin}/nqp -e 'for (0,1,2,3,4,5,6,7,8,9) { print($_) }'")
+    out = shell_output("#{bin}nqp -e 'for (0,1,2,3,4,5,6,7,8,9) { print($_) }'")
     assert_equal "0123456789", out
   end
 end

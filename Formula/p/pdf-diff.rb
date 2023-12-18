@@ -1,10 +1,10 @@
 class PdfDiff < Formula
   desc "Tool for visualizing differences between two pdf files"
-  homepage "https://github.com/serhack/pdf-diff"
-  url "https://ghproxy.com/https://github.com/serhack/pdf-diff/archive/refs/tags/v0.0.1.tar.gz"
+  homepage "https:github.comserhackpdf-diff"
+  url "https:github.comserhackpdf-diffarchiverefstagsv0.0.1.tar.gz"
   sha256 "13053afc3bbe14b84639d5a6a6416863e8c6d93e4f3c2c8ba7c38d4c427ae707"
   license "MIT"
-  head "https://github.com/serhack/pdf-diff.git", branch: "main"
+  head "https:github.comserhackpdf-diff.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9880f5520ed55ad05c505196a7d9c826c1a9afebefd1c96b56d9f38fca232a6d"
@@ -37,6 +37,6 @@ class PdfDiff < Formula
       The pages number 1 are the same.
     EOS
     assert_equal expected,
-      shell_output("#{bin}/pdf-diff #{pdf} #{pdf}")
+      shell_output("#{bin}pdf-diff #{pdf} #{pdf}")
   end
 end

@@ -1,7 +1,7 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
-  homepage "https://libical.github.io/libical/"
-  url "https://ghproxy.com/https://github.com/libical/libical/releases/download/v3.0.17/libical-3.0.17.tar.gz"
+  homepage "https:libical.github.iolibical"
+  url "https:github.comlibicallibicalreleasesdownloadv3.0.17libical-3.0.17.tar.gz"
   sha256 "bcda9a6db6870240328752854d1ea475af9bbc6356e6771018200e475e5f781b"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
@@ -32,17 +32,17 @@ class Libical < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #define LIBICAL_GLIB_UNSTABLE_API 1
-      #include <libical-glib/libical-glib.h>
+      #include <libical-gliblibical-glib.h>
       int main(int argc, char *argv[]) {
         ICalParser *parser = i_cal_parser_new();
         return 0;
       }
     EOS
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lical-glib",
-                   "-I#{Formula["glib"].opt_include}/glib-2.0",
-                   "-I#{Formula["glib"].opt_lib}/glib-2.0/include"
-    system "./test"
+                   "-I#{Formula["glib"].opt_include}glib-2.0",
+                   "-I#{Formula["glib"].opt_lib}glib-2.0include"
+    system ".test"
   end
 end

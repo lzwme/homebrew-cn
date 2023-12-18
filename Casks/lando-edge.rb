@@ -5,15 +5,15 @@ cask "lando-edge" do
   sha256 arm:   "111a4994b1b7badc8cb91a4a29f1f7064bc1e29ef0f225e3d040b72fbb6c0037",
          intel: "43503628455d34da6e429cc7c88cc49acca14311a6756270241a96528061c528"
 
-  url "https://ghproxy.com/https://github.com/lando/lando/releases/download/v#{version}/lando-#{arch}-v#{version}.dmg",
-      verified: "github.com/lando/lando/"
+  url "https:github.comlandolandoreleasesdownloadv#{version}lando-#{arch}-v#{version}.dmg",
+      verified: "github.comlandolando"
   name "Lando Edge"
   desc "Local development environment and DevOps tool built on Docker"
-  homepage "https://docs.lando.dev/"
+  homepage "https:docs.lando.dev"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   conflicts_with cask: "lando"
@@ -35,5 +35,5 @@ cask "lando-edge" do
 
   uninstall pkgutil: "dev.lando.pkg.lando"
 
-  zap trash: "~/.lando"
+  zap trash: "~.lando"
 end

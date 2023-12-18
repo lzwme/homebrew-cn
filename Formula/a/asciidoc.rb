@@ -1,14 +1,14 @@
 class Asciidoc < Formula
-  desc "Formatter/translator for text files to numerous formats"
-  homepage "https://asciidoc-py.github.io/"
-  url "https://files.pythonhosted.org/packages/8a/57/50180e0430fdb552539da9b5f96f1da6f09c4bfa951b39a6e1b4fbe37d75/asciidoc-10.2.0.tar.gz"
+  desc "Formattertranslator for text files to numerous formats"
+  homepage "https:asciidoc-py.github.io"
+  url "https:files.pythonhosted.orgpackages8a5750180e0430fdb552539da9b5f96f1da6f09c4bfa951b39a6e1b4fbe37d75asciidoc-10.2.0.tar.gz"
   sha256 "91ff1dd4c85af7b235d03e0860f0c4e79dd1ff580fb610668a39b5c77b4ccace"
   license "GPL-2.0-or-later"
-  head "https://github.com/asciidoc-py/asciidoc-py.git", branch: "main"
+  head "https:github.comasciidoc-pyasciidoc-py.git", branch: "main"
 
   livecheck do
     url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -41,7 +41,7 @@ class Asciidoc < Formula
       (such as a2x for manpage generation) you need to add something
       like:
 
-        export XML_CATALOG_FILES=#{etc}/xml/catalog
+        export XML_CATALOG_FILES=#{etc}xmlcatalog
 
       to your shell rc file so that xmllint can find AsciiDoc's
       catalog files.
@@ -51,8 +51,8 @@ class Asciidoc < Formula
   end
 
   test do
-    (testpath/"test.txt").write("== Hello World!")
-    system "#{bin}/asciidoc", "-b", "html5", "-o", testpath/"test.html", testpath/"test.txt"
-    assert_match %r{<h2 id="_hello_world">Hello World!</h2>}, File.read(testpath/"test.html")
+    (testpath"test.txt").write("== Hello World!")
+    system "#{bin}asciidoc", "-b", "html5", "-o", testpath"test.html", testpath"test.txt"
+    assert_match %r{<h2 id="_hello_world">Hello World!<h2>}, File.read(testpath"test.html")
   end
 end

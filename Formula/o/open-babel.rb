@@ -1,12 +1,12 @@
 class OpenBabel < Formula
   desc "Chemical toolbox"
-  homepage "https://github.com/openbabel/openbabel"
-  url "https://ghproxy.com/https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-3-1-1.tar.gz"
+  homepage "https:github.comopenbabelopenbabel"
+  url "https:github.comopenbabelopenbabelarchiverefstagsopenbabel-3-1-1.tar.gz"
   version "3.1.1"
   sha256 "c97023ac6300d26176c97d4ef39957f06e68848d64f1a04b0b284ccff2744f02"
   license "GPL-2.0-only"
   revision 2
-  head "https://github.com/openbabel/openbabel.git", branch: "master"
+  head "https:github.comopenbabelopenbabel.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -45,7 +45,7 @@ class OpenBabel < Formula
   end
 
   test do
-    system bin/"obabel", "-:'C1=CC=CC=C1Br'", "-omol"
+    system bin"obabel", "-:'C1=CC=CC=C1Br'", "-omol"
     system python3, "-c", "from openbabel import openbabel"
   end
 end

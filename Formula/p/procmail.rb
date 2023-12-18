@@ -1,8 +1,8 @@
 class Procmail < Formula
   desc "Autonomous mail processor"
-  homepage "https://web.archive.org/web/20151013184044/procmail.org/"
+  homepage "https:web.archive.orgweb20151013184044procmail.org"
   # NOTE: Use the patched version from Apple
-  url "https://ghproxy.com/https://github.com/apple-oss-distributions/procmail/archive/refs/tags/procmail-14.tar.gz"
+  url "https:github.comapple-oss-distributionsprocmailarchiverefstagsprocmail-14.tar.gz"
   sha256 "835e95c34bf93e603ecdc98113ce41bb8fa610d7dd0efe56977a66b131c5335d"
   license any_of: ["GPL-2.0-or-later", "Artistic-1.0-Perl"]
 
@@ -27,7 +27,7 @@ class Procmail < Formula
   end
 
   test do
-    path = testpath/"test.mail"
+    path = testpath"test.mail"
     path.write <<~EOS
       From alice@example.net Tue Sep 15 15:33:41 2015
       Date: Tue, 15 Sep 2015 15:33:41 +0200
@@ -37,7 +37,7 @@ class Procmail < Formula
 
       please ignore
     EOS
-    assert_match "Subject: Test", shell_output("#{bin}/formail -X 'Subject' < #{path}")
-    assert_match "please ignore", shell_output("#{bin}/formail -I '' < #{path}")
+    assert_match "Subject: Test", shell_output("#{bin}formail -X 'Subject' < #{path}")
+    assert_match "please ignore", shell_output("#{bin}formail -I '' < #{path}")
   end
 end

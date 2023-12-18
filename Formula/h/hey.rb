@@ -1,7 +1,7 @@
 class Hey < Formula
   desc "HTTP load generator, ApacheBench (ab) replacement"
-  homepage "https://github.com/rakyll/hey"
-  url "https://ghproxy.com/https://github.com/rakyll/hey/archive/refs/tags/v0.1.4.tar.gz"
+  homepage "https:github.comrakyllhey"
+  url "https:github.comrakyllheyarchiverefstagsv0.1.4.tar.gz"
   sha256 "944097e62dd0bd5012d3b355d9fe2e7b7afcf13cc0b2c06151e0f4c2babfc279"
   license "Apache-2.0"
 
@@ -28,6 +28,6 @@ class Hey < Formula
 
   test do
     output = "[200]	200 responses"
-    assert_match output.to_s, shell_output("#{bin}/hey https://google.com")
+    assert_match output.to_s, shell_output("#{bin}hey https:google.com")
   end
 end

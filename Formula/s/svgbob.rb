@@ -1,10 +1,10 @@
 class Svgbob < Formula
   desc "Convert your ascii diagram scribbles into happy little SVG"
-  homepage "https://ivanceras.github.io/svgbob-editor/"
-  url "https://ghproxy.com/https://github.com/ivanceras/svgbob/archive/refs/tags/0.7.2.tar.gz"
+  homepage "https:ivanceras.github.iosvgbob-editor"
+  url "https:github.comivancerassvgbobarchiverefstags0.7.2.tar.gz"
   sha256 "a48c80bbbe1ca7575d1dc07a0a02b8d7116689dde0ffee7953f89865ae008357"
   license "Apache-2.0"
-  head "https://github.com/ivanceras/svgbob.git", branch: "master"
+  head "https:github.comivancerassvgbob.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a95291ecc34de16fee752808e98f2c6df881477516f2c8f2638ae0488f71a5f1"
@@ -21,14 +21,14 @@ class Svgbob < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "packages/svgbob_cli")
+    system "cargo", "install", *std_cargo_args(path: "packagessvgbob_cli")
     # The cli tool was renamed (0.6.2 -> 0.6.3)
     # Create a symlink to not break compatibility
-    bin.install_symlink bin/"svgbob_cli" => "svgbob"
+    bin.install_symlink bin"svgbob_cli" => "svgbob"
   end
 
   test do
-    (testpath/"ascii.txt").write <<~EOS
+    (testpath"ascii.txt").write <<~EOS
       +------------------+
       |                  |
       |  Hello Homebrew  |
@@ -36,9 +36,9 @@ class Svgbob < Formula
       +------------------+
     EOS
 
-    system bin/"svgbob", "ascii.txt", "-o", "out.svg"
-    contents = (testpath/"out.svg").read
-    assert_match %r{<text.*?>Hello</text>}, contents
-    assert_match %r{<text.*?>Homebrew</text>}, contents
+    system bin"svgbob", "ascii.txt", "-o", "out.svg"
+    contents = (testpath"out.svg").read
+    assert_match %r{<text.*?>Hello<text>}, contents
+    assert_match %r{<text.*?>Homebrew<text>}, contents
   end
 end

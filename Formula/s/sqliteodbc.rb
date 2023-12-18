@@ -1,13 +1,13 @@
 class Sqliteodbc < Formula
   desc "ODBC driver for SQLite"
-  homepage "https://ch-werner.homepage.t-online.de/sqliteodbc/"
-  url "https://ch-werner.homepage.t-online.de/sqliteodbc/sqliteodbc-0.99991.tar.gz"
+  homepage "https:ch-werner.homepage.t-online.desqliteodbc"
+  url "https:ch-werner.homepage.t-online.desqliteodbcsqliteodbc-0.99991.tar.gz"
   sha256 "4d94adb8d3cde1fa94a28aeb0dfcc7be73145bcdfcdf3d5e225434db31dc8a5c"
   license "TCL"
 
   livecheck do
     url :homepage
-    regex(/href=.*?sqliteodbc[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?sqliteodbc[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,7 +33,7 @@ class Sqliteodbc < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
@@ -41,7 +41,7 @@ class Sqliteodbc < Formula
     if Hardware::CPU.arm?
       # Workaround for ancient config files not recognizing aarch64 macos.
       %w[config.guess config.sub].each do |fn|
-        cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, fn
+        cp Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"fn, fn
       end
     end
 
@@ -50,14 +50,14 @@ class Sqliteodbc < Formula
             "--with-sqlite3=#{Formula["sqlite"].opt_prefix}"]
     args << "--with-libxml2=#{Formula["libxml2"].opt_prefix}" if OS.linux?
 
-    system "./configure", "--prefix=#{prefix}", *args
+    system ".configure", "--prefix=#{prefix}", *args
     system "make"
     system "make", "install"
-    lib.install_symlink lib/"libsqlite3odbc.dylib" => "libsqlite3odbc.so" if OS.mac?
+    lib.install_symlink lib"libsqlite3odbc.dylib" => "libsqlite3odbc.so" if OS.mac?
   end
 
   test do
-    output = shell_output("#{Formula["unixodbc"].opt_bin}/dltest #{lib}/libsqlite3odbc.so")
-    assert_equal "SUCCESS: Loaded #{lib}/libsqlite3odbc.so\n", output
+    output = shell_output("#{Formula["unixodbc"].opt_bin}dltest #{lib}libsqlite3odbc.so")
+    assert_equal "SUCCESS: Loaded #{lib}libsqlite3odbc.so\n", output
   end
 end

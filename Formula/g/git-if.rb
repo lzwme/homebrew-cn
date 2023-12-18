@@ -1,11 +1,11 @@
 class GitIf < Formula
   desc "Glulx interpreter that is optimized for speed"
-  homepage "https://ifarchive.org/indexes/if-archiveXprogrammingXglulxXinterpretersXgit.html"
-  url "https://ifarchive.org/if-archive/programming/glulx/interpreters/git/git-138.zip"
+  homepage "https:ifarchive.orgindexesif-archiveXprogrammingXglulxXinterpretersXgit.html"
+  url "https:ifarchive.orgif-archiveprogrammingglulxinterpretersgitgit-138.zip"
   version "1.3.8"
   sha256 "59de132505fdf2d212db569211c18ff0f1f4c1032c5370b95272d2c2b4e95c00"
   license "MIT"
-  head "https://github.com/DavidKinder/Git.git", branch: "master"
+  head "https:github.comDavidKinderGit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfcee8f4eaa935d5d9ae04a218a2c6e23b3a61dc28efcc07c6e2324951270f52"
@@ -25,15 +25,15 @@ class GitIf < Formula
     glk = Formula["glktermw"]
 
     inreplace "Makefile", "GLK = cheapglk", "GLK = #{glk.name}"
-    inreplace "Makefile", "GLKINCLUDEDIR = ../$(GLK)", "GLKINCLUDEDIR = #{glk.include}"
-    inreplace "Makefile", "GLKLIBDIR = ../$(GLK)", "GLKLIBDIR = #{glk.lib}"
-    inreplace "Makefile", /^OPTIONS = /, "OPTIONS = -DUSE_MMAP -DUSE_INLINE"
+    inreplace "Makefile", "GLKINCLUDEDIR = ..$(GLK)", "GLKINCLUDEDIR = #{glk.include}"
+    inreplace "Makefile", "GLKLIBDIR = ..$(GLK)", "GLKLIBDIR = #{glk.lib}"
+    inreplace "Makefile", ^OPTIONS = , "OPTIONS = -DUSE_MMAP -DUSE_INLINE"
 
     system "make"
     bin.install "git" => "git-if"
   end
 
   test do
-    assert pipe_output("#{bin}/git-if -v").start_with? "GlkTerm, library version"
+    assert pipe_output("#{bin}git-if -v").start_with? "GlkTerm, library version"
   end
 end

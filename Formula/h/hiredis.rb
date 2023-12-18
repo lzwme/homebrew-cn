@@ -1,10 +1,10 @@
 class Hiredis < Formula
   desc "Minimalistic client for Redis"
-  homepage "https://github.com/redis/hiredis"
-  url "https://ghproxy.com/https://github.com/redis/hiredis/archive/refs/tags/v1.2.0.tar.gz"
+  homepage "https:github.comredishiredis"
+  url "https:github.comredishiredisarchiverefstagsv1.2.0.tar.gz"
   sha256 "82ad632d31ee05da13b537c124f819eb88e18851d9cb0c30ae0552084811588c"
   license "BSD-3-Clause"
-  head "https://github.com/redis/hiredis.git", branch: "master"
+  head "https:github.comredishiredis.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -27,10 +27,10 @@ class Hiredis < Formula
   end
 
   test do
-    # running `./test` requires a database to connect to, so just make
+    # running `.test` requires a database to connect to, so just make
     # sure it compiles
-    system ENV.cc, pkgshare/"examples/example.c", "-o", testpath/"test",
-                   "-I#{include}/hiredis", "-L#{lib}", "-lhiredis"
-    assert_predicate testpath/"test", :exist?
+    system ENV.cc, pkgshare"examplesexample.c", "-o", testpath"test",
+                   "-I#{include}hiredis", "-L#{lib}", "-lhiredis"
+    assert_predicate testpath"test", :exist?
   end
 end

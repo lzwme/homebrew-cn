@@ -1,14 +1,14 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
-  homepage "https://github.com/cargo-bins/cargo-binstall"
-  url "https://ghproxy.com/https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.4.8.tar.gz"
+  homepage "https:github.comcargo-binscargo-binstall"
+  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.4.8.tar.gz"
   sha256 "4e532d895da8a661dcc6b694a24b02b5ee2ac5bdb955e5253b1ea7896f46490b"
   license "GPL-3.0-only"
-  head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
+  head "https:github.comcargo-binscargo-binstall.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,13 +24,13 @@ class CargoBinstall < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/bin")
+    system "cargo", "install", *std_cargo_args(path: "cratesbin")
   end
 
   test do
-    output = shell_output("#{bin}/cargo-binstall --dry-run radio-sx128x")
+    output = shell_output("#{bin}cargo-binstall --dry-run radio-sx128x")
     assert_match "resolve: Resolving package: 'radio-sx128x'", output
 
-    assert_equal version.to_s, shell_output("#{bin}/cargo-binstall -V").chomp
+    assert_equal version.to_s, shell_output("#{bin}cargo-binstall -V").chomp
   end
 end

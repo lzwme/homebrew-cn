@@ -1,7 +1,7 @@
 class GitTown < Formula
   desc "High-level command-line interface for Git"
-  homepage "https://www.git-town.com/"
-  url "https://ghproxy.com/https://github.com/git-town/git-town/archive/refs/tags/v11.1.0.tar.gz"
+  homepage "https:www.git-town.com"
+  url "https:github.comgit-towngit-townarchiverefstagsv11.1.0.tar.gz"
   sha256 "59386dce9d849c68a5363106e5f1200c8a930c998059ecfdc46cd5aa1acff49b"
   license "MIT"
 
@@ -20,23 +20,23 @@ class GitTown < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/git-town/git-town/v11/src/cmd.version=v#{version}
-      -X github.com/git-town/git-town/v11/src/cmd.buildDate=#{time.strftime("%Y/%m/%d")}
+      -X github.comgit-towngit-townv11srccmd.version=v#{version}
+      -X github.comgit-towngit-townv11srccmd.buildDate=#{time.strftime("%Y%m%d")}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     # Install shell completions
-    generate_completions_from_executable(bin/"git-town", "completions")
+    generate_completions_from_executable(bin"git-town", "completions")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/git-town -V")
+    assert_match version.to_s, shell_output("#{bin}git-town -V")
 
     system "git", "init"
     touch "testing.txt"
     system "git", "add", "testing.txt"
     system "git", "commit", "-m", "Testing!"
 
-    system bin/"git-town", "config"
+    system bin"git-town", "config"
   end
 end

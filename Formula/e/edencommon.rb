@@ -1,10 +1,10 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
-  homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://ghproxy.com/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookexperimentaledencommon"
+  url "https:github.comfacebookexperimentaledencommonarchiverefstagsv2023.12.04.00.tar.gz"
   sha256 "6de3a32ca6adf35c2fb0e1aff55bf3caa0785d80262e864353e667d82b16d1d9"
   license "MIT"
-  head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
+  head "https:github.comfacebookexperimentaledencommon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ca9628cd2b804b54f3c56761addbc845c79502a3cf238831a417f16fdd5eff62"
@@ -26,11 +26,11 @@ class Edencommon < Formula
 
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
-    inreplace buildpath.glob("eden/common/{os,utils}/test/CMakeLists.txt"),
-              /gtest_discover_tests\((.*)\)/,
+    inreplace buildpath.glob("edencommon{os,utils}testCMakeLists.txt"),
+              gtest_discover_tests\((.*)\),
               "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
-    inreplace "eden/common/utils/test/CMakeLists.txt",
-              /gtest_discover_tests\((.*)\)/,
+    inreplace "edencommonutilstestCMakeLists.txt",
+              gtest_discover_tests\((.*)\),
               "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
 
     system "cmake", "-S", ".", "-B", "_build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
@@ -39,8 +39,8 @@ class Edencommon < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
-      #include <eden/common/utils/ProcessInfo.h>
+    (testpath"test.cc").write <<~EOS
+      #include <edencommonutilsProcessInfo.h>
       #include <cstdlib>
       #include <iostream>
 
@@ -58,6 +58,6 @@ class Edencommon < Formula
                     "-L#{lib}", "-L#{Formula["folly"].opt_lib}",
                     "-L#{Formula["boost"].opt_lib}", "-L#{Formula["glog"].opt_lib}",
                     "-ledencommon_utils", "-lfolly", "-lboost_context-mt", "-lglog", "-o", "test"
-    assert_match "ruby", shell_output("./test #{Process.pid}")
+    assert_match "ruby", shell_output(".test #{Process.pid}")
   end
 end

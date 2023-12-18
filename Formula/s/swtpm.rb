@@ -1,7 +1,7 @@
 class Swtpm < Formula
   desc "Software TPM Emulator based on libtpms"
-  homepage "https://github.com/stefanberger/swtpm"
-  url "https://ghproxy.com/https://github.com/stefanberger/swtpm/archive/refs/tags/v0.8.1.tar.gz"
+  homepage "https:github.comstefanbergerswtpm"
+  url "https:github.comstefanbergerswtpmarchiverefstagsv0.8.1.tar.gz"
   sha256 "7bba52aa41090f75087034fac5fe8daed10c3e7e7234df7c9558849318927f41"
   license "BSD-3-Clause"
 
@@ -37,7 +37,7 @@ class Swtpm < Formula
   end
 
   def install
-    system "./autogen.sh", *std_configure_args, "--with-openssl"
+    system ".autogen.sh", *std_configure_args, "--with-openssl"
     system "make"
     system "make", "install"
   end
@@ -45,10 +45,10 @@ class Swtpm < Formula
   test do
     port = free_port
     pid = fork do
-      system bin/"swtpm", "socket", "--ctrl", "type=tcp,port=#{port}"
+      system bin"swtpm", "socket", "--ctrl", "type=tcp,port=#{port}"
     end
     sleep 2
-    system bin/"swtpm_ioctl", "--tcp", "127.0.0.1:#{port}", "-s"
+    system bin"swtpm_ioctl", "--tcp", "127.0.0.1:#{port}", "-s"
   ensure
     Process.wait pid
   end

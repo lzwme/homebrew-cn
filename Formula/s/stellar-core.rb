@@ -1,11 +1,11 @@
 class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
-  homepage "https://www.stellar.org/"
-  url "https://github.com/stellar/stellar-core.git",
+  homepage "https:www.stellar.org"
+  url "https:github.comstellarstellar-core.git",
       tag:      "v19.14.0",
       revision: "5664eff4e76ca6a277883d4085711dc3fa7c318a"
   license "Apache-2.0"
-  head "https://github.com/stellar/stellar-core.git", branch: "master"
+  head "https:github.comstellarstellar-core.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "9c02b5f80dc1e5bc67c5345cb9e41d950a72ff5dd95e87dc1a692ae739aaf6ad"
@@ -34,15 +34,15 @@ class StellarCore < Formula
     depends_on "libunwind"
   end
 
-  # https://github.com/stellar/stellar-core/blob/master/INSTALL.md#build-dependencies
+  # https:github.comstellarstellar-coreblobmasterINSTALL.md#build-dependencies
   fails_with :gcc do
     version "7"
     cause "Requires C++17 filesystem"
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-debug",
+    system ".autogen.sh"
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
@@ -57,7 +57,7 @@ class StellarCore < Formula
       topology
       upgrades
     ]
-    system "#{bin}/stellar-core", "test",
+    system "#{bin}stellar-core", "test",
       test_categories.map { |category| "[#{category}]" }.join(",")
   end
 end

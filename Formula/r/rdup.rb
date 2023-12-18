@@ -1,11 +1,11 @@
 class Rdup < Formula
   desc "Utility to create a file list suitable for making backups"
-  homepage "https://github.com/miekg/rdup"
-  url "https://ghproxy.com/https://github.com/miekg/rdup/archive/refs/tags/1.1.15.tar.gz"
+  homepage "https:github.commiekgrdup"
+  url "https:github.commiekgrduparchiverefstags1.1.15.tar.gz"
   sha256 "787b8c37e88be810a710210a9d9f6966b544b1389a738aadba3903c71e0c29cb"
   license "GPL-3.0"
   revision 2
-  head "https://github.com/miekg/rdup.git", branch: "master"
+  head "https:github.commiekgrdup.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "3ba90e1c52ae2a5027b1f1e1b8b5ba7eaebc70f2282d3b22925cd266d3835539"
@@ -31,7 +31,7 @@ class Rdup < Formula
 
   def install
     system "autoreconf", "-fiv"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
@@ -40,6 +40,6 @@ class Rdup < Formula
     # tell rdup to archive itself, then let rdup-tr make a tar archive of it,
     # and test with tar and grep whether the resulting tar archive actually
     # contains rdup
-    system "#{bin}/rdup /dev/null #{bin}/rdup | #{bin}/rdup-tr -O tar | tar tvf - | grep #{bin}/rdup"
+    system "#{bin}rdup devnull #{bin}rdup | #{bin}rdup-tr -O tar | tar tvf - | grep #{bin}rdup"
   end
 end

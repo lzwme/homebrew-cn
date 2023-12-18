@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class IosSim < Formula
   desc "Command-line application launcher for the iOS Simulator"
-  homepage "https://github.com/ios-control/ios-sim"
-  url "https://ghproxy.com/https://github.com/ios-control/ios-sim/archive/refs/tags/9.0.0.tar.gz"
+  homepage "https:github.comios-controlios-sim"
+  url "https:github.comios-controlios-simarchiverefstags9.0.0.tar.gz"
   sha256 "8c72c8c5f9b0682c218678549c08ca01b3ac2685417fc2ab5b4b803d65a21958"
   license "Apache-2.0"
-  head "https://github.com/ios-control/ios-sim.git", branch: "master"
+  head "https:github.comios-controlios-sim.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24800ebb5c539325cb0f1b7e5cefe34ab9398f9973a07bbdd65ac77992a6cbb8"
@@ -27,10 +27,10 @@ class IosSim < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    system bin/"ios-sim", "--help"
+    system bin"ios-sim", "--help"
   end
 end

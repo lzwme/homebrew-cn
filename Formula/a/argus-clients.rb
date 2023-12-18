@@ -1,7 +1,7 @@
 class ArgusClients < Formula
   desc "Audit Record Generation and Utilization System clients"
-  homepage "https://openargus.org"
-  url "https://ghproxy.com/https://github.com/openargus/clients/archive/refs/tags/v3.0.8.4.tar.gz"
+  homepage "https:openargus.org"
+  url "https:github.comopenargusclientsarchiverefstagsv3.0.8.4.tar.gz"
   sha256 "1e71e1ec84a311af4ac6c6c9e7a3231e10591e215b84d7e0841735b11db3127a"
 
   bottle do
@@ -25,14 +25,14 @@ class ArgusClients < Formula
   end
 
   def install
-    ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}/tirpc" if OS.linux?
+    ENV.append_to_cflags "-I#{Formula["libtirpc"].opt_include}tirpc" if OS.linux?
     ENV.append "CFLAGS", "-std=gnu89"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match "Ra Version #{version}", shell_output("#{bin}/ra -h", 1)
+    assert_match "Ra Version #{version}", shell_output("#{bin}ra -h", 1)
   end
 end

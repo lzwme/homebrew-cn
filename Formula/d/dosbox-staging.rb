@@ -1,11 +1,11 @@
 class DosboxStaging < Formula
   desc "Modernized DOSBox soft-fork"
-  homepage "https://dosbox-staging.github.io/"
-  url "https://ghproxy.com/https://github.com/dosbox-staging/dosbox-staging/archive/refs/tags/v0.80.1.tar.gz"
+  homepage "https:dosbox-staging.github.io"
+  url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.80.1.tar.gz"
   sha256 "2ca69e65e6c181197b63388c60487a3bcea804232a28c44c37704e70d49a0392"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/dosbox-staging/dosbox-staging.git", branch: "main"
+  head "https:github.comdosbox-stagingdosbox-staging.git", branch: "main"
 
   # New releases of dosbox-staging are indicated by a GitHub release (and
   # an announcement on the homepage), not just a new version tag.
@@ -51,23 +51,23 @@ class DosboxStaging < Formula
   fails_with gcc: "5"
 
   def install
-    (buildpath/"subprojects").rmtree # Ensure we don't use vendored dependencies
+    (buildpath"subprojects").rmtree # Ensure we don't use vendored dependencies
     args = %w[-Ddefault_library=shared -Db_lto=true -Dtracy=false]
 
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
 
-    mv bin/"dosbox", bin/"dosbox-staging"
-    mv man1/"dosbox.1", man1/"dosbox-staging.1"
+    mv bin"dosbox", bin"dosbox-staging"
+    mv man1"dosbox.1", man1"dosbox-staging.1"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dosbox-staging -version")
-    config_path = OS.mac? ? "Library/Preferences/DOSBox" : ".config/dosbox"
-    mkdir testpath/config_path
-    touch testpath/config_path/"dosbox-staging.conf"
-    output = shell_output("#{bin}/dosbox-staging -printconf")
-    assert_equal testpath/config_path/"dosbox-staging.conf", Pathname(output.chomp)
+    assert_match version.to_s, shell_output("#{bin}dosbox-staging -version")
+    config_path = OS.mac? ? "LibraryPreferencesDOSBox" : ".configdosbox"
+    mkdir testpathconfig_path
+    touch testpathconfig_path"dosbox-staging.conf"
+    output = shell_output("#{bin}dosbox-staging -printconf")
+    assert_equal testpathconfig_path"dosbox-staging.conf", Pathname(output.chomp)
   end
 end

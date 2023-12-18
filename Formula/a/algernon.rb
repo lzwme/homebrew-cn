@@ -1,11 +1,11 @@
 class Algernon < Formula
-  desc "Pure Go web server with Lua, Markdown, HTTP/2 and template support"
-  homepage "https://github.com/xyproto/algernon"
-  url "https://ghproxy.com/https://github.com/xyproto/algernon/archive/refs/tags/v1.15.5.tar.gz"
+  desc "Pure Go web server with Lua, Markdown, HTTP2 and template support"
+  homepage "https:github.comxyprotoalgernon"
+  url "https:github.comxyprotoalgernonarchiverefstagsv1.15.5.tar.gz"
   sha256 "00440c18ebe08c1498c0ddfbebe10e5d70936251295d9ab0d8673a431e38cd48"
   license "BSD-3-Clause"
   version_scheme 1
-  head "https://github.com/xyproto/algernon.git", branch: "main"
+  head "https:github.comxyprotoalgernon.git", branch: "main"
 
   livecheck do
     url :stable
@@ -27,18 +27,18 @@ class Algernon < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"
 
-    bin.install "desktop/mdview"
+    bin.install "desktopmdview"
   end
 
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}/algernon", "-s", "-q", "--httponly", "--boltdb", "tmp.db",
+      exec "#{bin}algernon", "-s", "-q", "--httponly", "--boltdb", "tmp.db",
                               "--addr", ":#{port}"
     end
     sleep 20
-    output = shell_output("curl -sIm3 -o- http://localhost:#{port}")
-    assert_match(/200 OK.*Server: Algernon/m, output)
+    output = shell_output("curl -sIm3 -o- http:localhost:#{port}")
+    assert_match(200 OK.*Server: Algernonm, output)
   ensure
     Process.kill("HUP", pid)
   end

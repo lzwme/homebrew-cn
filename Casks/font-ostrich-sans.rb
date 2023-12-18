@@ -2,20 +2,20 @@ cask "font-ostrich-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/theleagueof/ostrich-sans/archive/master.zip",
-      verified: "github.com/theleagueof/ostrich-sans/"
+  url "https:github.comtheleagueofostrich-sansarchivemaster.zip",
+      verified: "github.comtheleagueofostrich-sans"
   name "Ostrich Sans"
-  homepage "https://www.theleagueofmoveabletype.com/ostrich-sans"
+  homepage "https:www.theleagueofmoveabletype.comostrich-sans"
 
-  font "ostrich-sans-master/OstrichSans-Black.otf"
-  font "ostrich-sans-master/OstrichSans-Bold.otf"
-  font "ostrich-sans-master/OstrichSans-Heavy.otf"
-  font "ostrich-sans-master/OstrichSans-Light.otf"
-  font "ostrich-sans-master/OstrichSans-Medium.otf"
-  font "ostrich-sans-master/OstrichSansDashed-Medium.otf"
-  font "ostrich-sans-master/OstrichSansInline-Italic.otf"
-  font "ostrich-sans-master/OstrichSansInline-Regular.otf"
-  font "ostrich-sans-master/OstrichSansRounded-Medium.otf"
+  font "ostrich-sans-masterOstrichSans-Black.otf"
+  font "ostrich-sans-masterOstrichSans-Bold.otf"
+  font "ostrich-sans-masterOstrichSans-Heavy.otf"
+  font "ostrich-sans-masterOstrichSans-Light.otf"
+  font "ostrich-sans-masterOstrichSans-Medium.otf"
+  font "ostrich-sans-masterOstrichSansDashed-Medium.otf"
+  font "ostrich-sans-masterOstrichSansInline-Italic.otf"
+  font "ostrich-sans-masterOstrichSansInline-Regular.otf"
+  font "ostrich-sans-masterOstrichSansRounded-Medium.otf"
 
   # No zap stanza required
 end

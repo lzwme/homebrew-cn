@@ -21,10 +21,10 @@ cask "cd-to" do
     depends_on macos: ">= :monterey"
   end
 
-  url "https://ghproxy.com/https://github.com/jbtule/cdto/releases/download/v#{version}/cdto_#{version.dots_to_underscores}.zip"
+  url "https:github.comjbtulecdtoreleasesdownloadv#{version}cdto_#{version.dots_to_underscores}.zip"
   name "cd to"
   desc "Finder Toolbar app to open the current directory in the Terminal"
-  homepage "https://github.com/jbtule/cdto"
+  homepage "https:github.comjbtulecdto"
 
   app "cd to.app"
 

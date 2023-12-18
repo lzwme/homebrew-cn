@@ -1,37 +1,37 @@
 class Geckodriver < Formula
   desc "WebDriver <-> Marionette proxy"
-  homepage "https://github.com/mozilla/geckodriver"
+  homepage "https:github.commozillageckodriver"
   license "MPL-2.0"
-  head "https://hg.mozilla.org/mozilla-central/", using: :hg
+  head "https:hg.mozilla.orgmozilla-central", using: :hg
 
   stable do
     # Get the hg_revision for stable releases from
-    # https://searchfox.org/mozilla-central/source/testing/geckodriver/CHANGES.md
-    # Get long hash via `https://hg.mozilla.org/mozilla-central/rev/<commit-short-hash>`
+    # https:searchfox.orgmozilla-centralsourcetestinggeckodriverCHANGES.md
+    # Get long hash via `https:hg.mozilla.orgmozilla-centralrev<commit-short-hash>`
     hg_revision = "a80e5fd61076eda50fbf755f90bd30440ad12cc7"
-    url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/geckodriver/"
+    url "https:hg.mozilla.orgmozilla-centralarchive#{hg_revision}.ziptestinggeckodriver"
     version "0.33.0"
     sha256 "0cc493ff77bb809e6925edd28baf6237b8e60950b7d3d2632847339bd1384b3e"
 
     resource "webdriver" do
-      url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/webdriver/"
+      url "https:hg.mozilla.orgmozilla-centralarchive#{hg_revision}.ziptestingwebdriver"
       sha256 "70e571deb26b80ebf23984218ba253bcb329b10a02ce3e96ab84ba36214f52ea"
     end
 
     resource "mozbase" do
-      url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/mozbase/rust/"
+      url "https:hg.mozilla.orgmozilla-centralarchive#{hg_revision}.ziptestingmozbaserust"
       sha256 "55faf1bd9c8239cff541c6d7c92fb63c284543f90a6eb6ad934e506d4d3f115c"
     end
 
     resource "Cargo.lock" do
-      url "https://hg.mozilla.org/mozilla-central/raw-file/#{hg_revision}/Cargo.lock"
+      url "https:hg.mozilla.orgmozilla-centralraw-file#{hg_revision}Cargo.lock"
       sha256 "40b7cd177ae5f9a1f1d40232fca9c1d6d7538b8e0df535e851c0c4d93e07c659"
     end
   end
 
   livecheck do
-    url "https://github.com/mozilla/geckodriver.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.commozillageckodriver.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -55,24 +55,24 @@ class Geckodriver < Formula
     unless build.head?
       # we need to do this, because all archives are containing a top level testing directory
       %w[webdriver mozbase].each do |r|
-        (buildpath/"staging").install resource(r)
-        mv buildpath/"staging"/"testing"/r, buildpath/"testing"
-        rm_rf buildpath/"staging"/"testing"
+        (buildpath"staging").install resource(r)
+        mv buildpath"staging""testing"r, buildpath"testing"
+        rm_rf buildpath"staging""testing"
       end
-      rm_rf buildpath/"staging"
-      (buildpath/"testing"/"geckodriver").install resource("Cargo.lock")
+      rm_rf buildpath"staging"
+      (buildpath"testing""geckodriver").install resource("Cargo.lock")
     end
 
-    cd "testing/geckodriver" do
+    cd "testinggeckodriver" do
       system "cargo", "install", *std_cargo_args
     end
-    bin.install_symlink bin/"geckodriver" => "wires"
+    bin.install_symlink bin"geckodriver" => "wires"
   end
 
   test do
     test_port = free_port
     fork do
-      exec "#{bin}/geckodriver --port #{test_port}"
+      exec "#{bin}geckodriver --port #{test_port}"
     end
     sleep 2
 

@@ -1,10 +1,10 @@
 class Makefile2graph < Formula
   desc "Create a graph of dependencies from GNU-Make"
-  homepage "https://github.com/lindenb/makefile2graph"
-  url "https://ghproxy.com/https://github.com/lindenb/makefile2graph/archive/refs/tags/2021.11.06.tar.gz"
+  homepage "https:github.comlindenbmakefile2graph"
+  url "https:github.comlindenbmakefile2grapharchiverefstags2021.11.06.tar.gz"
   sha256 "5be8e528fa2945412357a8ef233e68fa3729639307ec1c38fd63768aad642c41"
   license "MIT"
-  head "https://github.com/lindenb/makefile2graph.git", branch: "master"
+  head "https:github.comlindenbmakefile2graph.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19431085aae2ceefa936a5a426a0d56d30ffd2f1385723741dd8b0fba4d7b624"
@@ -30,7 +30,7 @@ class Makefile2graph < Formula
   end
 
   test do
-    (testpath/"Makefile").write <<~EOS
+    (testpath"Makefile").write <<~EOS
       all: foo
       all: bar
       foo: ook
@@ -38,8 +38,8 @@ class Makefile2graph < Formula
       ook:
     EOS
     system "make -Bnd >make-Bnd"
-    system "#{bin}/make2graph <make-Bnd"
-    system "#{bin}/make2graph --root <make-Bnd"
-    system "#{bin}/makefile2graph"
+    system "#{bin}make2graph <make-Bnd"
+    system "#{bin}make2graph --root <make-Bnd"
+    system "#{bin}makefile2graph"
   end
 end

@@ -1,7 +1,7 @@
 class Dolt < Formula
   desc "Git for Data"
-  homepage "https://github.com/dolthub/dolt"
-  url "https://ghproxy.com/https://github.com/dolthub/dolt/archive/refs/tags/v1.29.5.tar.gz"
+  homepage "https:github.comdolthubdolt"
+  url "https:github.comdolthubdoltarchiverefstagsv1.29.5.tar.gz"
   sha256 "0fad14394c82c4dccd1863494679183497593270a86aeee4a92e35f0962b0612"
   license "Apache-2.0"
 
@@ -24,7 +24,7 @@ class Dolt < Formula
 
   def install
     chdir "go" do
-      system "go", "build", *std_go_args, "./cmd/dolt"
+      system "go", "build", *std_go_args, ".cmddolt"
     end
   end
 
@@ -32,9 +32,9 @@ class Dolt < Formula
     ENV["DOLT_ROOT_PATH"] = testpath
 
     mkdir "state-populations" do
-      system bin/"dolt", "init", "--name", "test", "--email", "test"
-      system bin/"dolt", "sql", "-q", "create table state_populations ( state varchar(14), primary key (state) )"
-      assert_match "state_populations", shell_output("#{bin}/dolt sql -q 'show tables'")
+      system bin"dolt", "init", "--name", "test", "--email", "test"
+      system bin"dolt", "sql", "-q", "create table state_populations ( state varchar(14), primary key (state) )"
+      assert_match "state_populations", shell_output("#{bin}dolt sql -q 'show tables'")
     end
   end
 end

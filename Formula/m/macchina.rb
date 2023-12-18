@@ -1,7 +1,7 @@
 class Macchina < Formula
   desc "System information fetcher, with an emphasis on performance and minimalism"
-  homepage "https://github.com/Macchina-CLI/macchina"
-  url "https://ghproxy.com/https://github.com/Macchina-CLI/macchina/archive/refs/tags/v6.1.8.tar.gz"
+  homepage "https:github.comMacchina-CLImacchina"
+  url "https:github.comMacchina-CLImacchinaarchiverefstagsv6.1.8.tar.gz"
   sha256 "e827f640b55fe47a6127dd0c276e76b597e3cb83916be37351cdd6a81d75311e"
   license "MIT"
 
@@ -24,6 +24,6 @@ class Macchina < Formula
   end
 
   test do
-    assert_match "Let's check your system for errors...", shell_output("#{bin}/macchina --doctor")
+    assert_match "Let's check your system for errors...", shell_output("#{bin}macchina --doctor")
   end
 end

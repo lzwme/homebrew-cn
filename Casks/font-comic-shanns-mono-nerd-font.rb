@@ -2,10 +2,10 @@ cask "font-comic-shanns-mono-nerd-font" do
   version "3.1.1"
   sha256 "166ae17fc8351401d2b3b75bb6e9797077dfdee5aa275217f6a4b0e31a027327"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/ComicShannsMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}ComicShannsMono.zip"
   name "ComicShannsMono Nerd Font (Comic Shanns Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

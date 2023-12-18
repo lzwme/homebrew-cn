@@ -2,10 +2,10 @@ cask "font-hammersmith-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/hammersmithone/HammersmithOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflhammersmithoneHammersmithOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Hammersmith One"
-  homepage "https://fonts.google.com/specimen/Hammersmith+One"
+  homepage "https:fonts.google.comspecimenHammersmith+One"
 
   font "HammersmithOne-Regular.ttf"
 

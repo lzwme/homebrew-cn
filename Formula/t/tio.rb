@@ -1,10 +1,10 @@
 class Tio < Formula
-  desc "Simple TTY terminal I/O application"
-  homepage "https://tio.github.io"
-  url "https://ghproxy.com/https://github.com/tio/tio/releases/download/v2.7/tio-2.7.tar.xz"
+  desc "Simple TTY terminal IO application"
+  homepage "https:tio.github.io"
+  url "https:github.comtiotioreleasesdownloadv2.7tio-2.7.tar.xz"
   sha256 "bf8fe434848c2c1b6540af0b42503c986068176ddc1a988cf02e521e7de5daa5"
   license "GPL-2.0-or-later"
-  head "https://github.com/tio/tio.git", branch: "master"
+  head "https:github.comtiotio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "8b5af18879b92601b2d54f48016cc38547d84ea924568ecda5bb28b00fc43187"
@@ -36,9 +36,9 @@ class Tio < Formula
     # Use `script` to run tio with its stdio attached to a PTY, otherwise it will complain about that instead.
     expected = "Error: Not a tty device"
     output = if OS.mac?
-      shell_output("script -q /dev/null #{bin}/tio /dev/null", 1).strip
+      shell_output("script -q devnull #{bin}tio devnull", 1).strip
     else
-      shell_output("script -q /dev/null -e -c \"#{bin}/tio /dev/null\"", 1).strip
+      shell_output("script -q devnull -e -c \"#{bin}tio devnull\"", 1).strip
     end
     assert_match expected, output
   end

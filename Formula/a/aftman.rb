@@ -1,14 +1,14 @@
 class Aftman < Formula
   desc "Toolchain manager for Roblox, the prodigal sequel to Foreman"
-  homepage "https://github.com/LPGhatguy/aftman"
-  url "https://ghproxy.com/https://github.com/LPGhatguy/aftman/archive/refs/tags/v0.2.7.tar.gz"
+  homepage "https:github.comLPGhatguyaftman"
+  url "https:github.comLPGhatguyaftmanarchiverefstagsv0.2.7.tar.gz"
   sha256 "2c4f191bfce631abff185a658b947105055da687c409e09ea80786be4c32b75e"
   license "MIT"
-  head "https://github.com/LPGhatguy/aftman.git", branch: "main"
+  head "https:github.comLPGhatguyaftman.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -35,13 +35,13 @@ class Aftman < Formula
   end
 
   test do
-    (testpath/"aftman.toml").write <<~EOS
+    (testpath"aftman.toml").write <<~EOS
       [tools]
-      rojo = "rojo-rbx/rojo@7.2.1"
+      rojo = "rojo-rbxrojo@7.2.1"
     EOS
 
-    system bin/"aftman", "install", "--no-trust-check"
+    system bin"aftman", "install", "--no-trust-check"
 
-    assert_predicate testpath/".aftman", :exist?
+    assert_predicate testpath".aftman", :exist?
   end
 end

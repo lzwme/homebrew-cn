@@ -1,7 +1,7 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
-  homepage "https://psalm.dev"
-  url "https://ghproxy.com/https://github.com/vimeo/psalm/releases/download/5.18.0/psalm.phar"
+  homepage "https:psalm.dev"
+  url "https:github.comvimeopsalmreleasesdownload5.18.0psalm.phar"
   sha256 "1372b723692256b6995ffe14da4ecf708df85913fd4c206c24c8ab8b1a96552a"
   license "MIT"
 
@@ -18,7 +18,7 @@ class Psalm < Formula
   depends_on "composer" => :test
   depends_on "php"
 
-  # Keg-relocation breaks the formula when it replaces `/usr/local` with a non-default prefix
+  # Keg-relocation breaks the formula when it replaces `usrlocal` with a non-default prefix
   on_macos do
     on_intel do
       pour_bottle? only_if: :default_prefix
@@ -30,9 +30,9 @@ class Psalm < Formula
   end
 
   test do
-    (testpath/"composer.json").write <<~EOS
+    (testpath"composer.json").write <<~EOS
       {
-        "name": "homebrew/psalm-test",
+        "name": "homebrewpsalm-test",
         "description": "Testing if Psalm has been installed properly.",
         "type": "project",
         "require": {
@@ -41,14 +41,14 @@ class Psalm < Formula
         "license": "MIT",
         "autoload": {
           "psr-4": {
-            "Homebrew\\\\PsalmTest\\\\": "src/"
+            "Homebrew\\\\PsalmTest\\\\": "src"
           }
         },
         "minimum-stability": "stable"
       }
     EOS
 
-    (testpath/"src/Email.php").write <<~EOS
+    (testpath"srcEmail.php").write <<~EOS
       <?php
       declare(strict_types=1);
 
@@ -65,9 +65,9 @@ class Psalm < Formula
           $this->email = $email;
         }
 
-        /**
+        **
         * @psalm-suppress PossiblyUnusedMethod
-        */
+        *
         public static function fromString(string $email): self
         {
           return new self($email);
@@ -95,7 +95,7 @@ class Psalm < Formula
     system "composer", "install"
 
     assert_match "Config file created successfully. Please re-run psalm.",
-                 shell_output("#{bin}/psalm --init")
-    system bin/"psalm", "--no-progress"
+                 shell_output("#{bin}psalm --init")
+    system bin"psalm", "--no-progress"
   end
 end

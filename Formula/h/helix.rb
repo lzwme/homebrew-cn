@@ -1,10 +1,10 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
-  homepage "https://helix-editor.com"
-  url "https://ghproxy.com/https://github.com/helix-editor/helix/releases/download/23.10/helix-23.10-source.tar.xz"
+  homepage "https:helix-editor.com"
+  url "https:github.comhelix-editorhelixreleasesdownload23.10helix-23.10-source.tar.xz"
   sha256 "4e7bcac200b1a15bc9f196bdfd161e4e448dc670359349ae14c18ccc512153e8"
   license "MPL-2.0"
-  head "https://github.com/helix-editor/helix.git", branch: "master"
+  head "https:github.comhelix-editorhelix.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -22,18 +22,18 @@ class Helix < Formula
   fails_with gcc: "5" # For C++17
 
   def install
-    ENV["HELIX_DEFAULT_RUNTIME"] = libexec/"runtime"
+    ENV["HELIX_DEFAULT_RUNTIME"] = libexec"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")
-    rm_r "runtime/grammars/sources/"
+    rm_r "runtimegrammarssources"
     libexec.install "runtime"
 
-    bash_completion.install "contrib/completion/hx.bash" => "hx"
-    fish_completion.install "contrib/completion/hx.fish"
-    zsh_completion.install "contrib/completion/hx.zsh" => "_hx"
+    bash_completion.install "contribcompletionhx.bash" => "hx"
+    fish_completion.install "contribcompletionhx.fish"
+    zsh_completion.install "contribcompletionhx.zsh" => "_hx"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/hx -V")
-    assert_match "✓", shell_output("#{bin}/hx --health")
+    assert_match version.to_s, shell_output("#{bin}hx -V")
+    assert_match "✓", shell_output("#{bin}hx --health")
   end
 end

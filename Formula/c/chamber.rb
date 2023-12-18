@@ -1,14 +1,14 @@
 class Chamber < Formula
   desc "CLI for managing secrets through AWS SSM Parameter Store"
-  homepage "https://github.com/segmentio/chamber"
-  url "https://ghproxy.com/https://github.com/segmentio/chamber/archive/refs/tags/v2.13.6.tar.gz"
+  homepage "https:github.comsegmentiochamber"
+  url "https:github.comsegmentiochamberarchiverefstagsv2.13.6.tar.gz"
   sha256 "53c346fa3b4f59519d710b06e725bbc272cfc00f1d7d6e33508f93839f03d432"
   license "MIT"
-  head "https://github.com/segmentio/chamber.git", branch: "master"
+  head "https:github.comsegmentiochamber.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+(?:-ci\d)?)/i)
+    regex(v?(\d+(?:\.\d+)+(?:-ci\d)?)i)
     strategy :github_latest
   end
 
@@ -26,16 +26,16 @@ class Chamber < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}")
-    generate_completions_from_executable(bin/"chamber", "completion")
+    generate_completions_from_executable(bin"chamber", "completion")
   end
 
   test do
     ENV.delete "AWS_REGION"
-    output = shell_output("#{bin}/chamber list service 2>&1", 1)
+    output = shell_output("#{bin}chamber list service 2>&1", 1)
     assert_match "MissingRegion", output
 
     ENV["AWS_REGION"] = "us-west-2"
-    output = shell_output("#{bin}/chamber list service 2>&1", 1)
+    output = shell_output("#{bin}chamber list service 2>&1", 1)
     assert_match "NoCredentialProviders", output
   end
 end

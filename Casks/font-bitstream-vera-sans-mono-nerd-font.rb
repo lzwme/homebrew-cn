@@ -2,10 +2,10 @@ cask "font-bitstream-vera-sans-mono-nerd-font" do
   version "3.1.1"
   sha256 "820916a95b4a39a7ae3ebb17290ff2060d5b2e98abed4cca378ace2bec9bca60"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/BitstreamVeraSansMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}BitstreamVeraSansMono.zip"
   name "BitstromWera Nerd Font (Bitstream Vera Sans Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

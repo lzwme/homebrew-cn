@@ -1,7 +1,7 @@
 class Ydiff < Formula
   desc "View colored diff with side by side and auto pager support"
-  homepage "https://github.com/ymattw/ydiff"
-  url "https://files.pythonhosted.org/packages/1e/ed/e25e1f4fffbdfd0446f1c45504759e54676da0cde5a844d201181583fce4/ydiff-1.2.tar.gz"
+  homepage "https:github.comymattwydiff"
+  url "https:files.pythonhosted.orgpackages1eede25e1f4fffbdfd0446f1c45504759e54676da0cde5a844d201181583fce4ydiff-1.2.tar.gz"
   sha256 "f5430577ecd30974d766ee9b8333e06dc76a947b4aae36d39612a0787865a121"
   license "BSD-3-Clause"
   revision 2
@@ -31,6 +31,6 @@ class Ydiff < Formula
   test do
     diff_fixture = test_fixtures("test.diff").read
     assert_equal diff_fixture,
-      pipe_output("#{bin}/ydiff -cnever", diff_fixture)
+      pipe_output("#{bin}ydiff -cnever", diff_fixture)
   end
 end

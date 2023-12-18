@@ -1,14 +1,14 @@
 class Atari800 < Formula
   desc "Atari 8-bit machine emulator"
-  homepage "https://atari800.github.io/"
-  url "https://ghproxy.com/https://github.com/atari800/atari800/releases/download/ATARI800_5_0_0/atari800-5.0.0-src.tgz"
+  homepage "https:atari800.github.io"
+  url "https:github.comatari800atari800releasesdownloadATARI800_5_0_0atari800-5.0.0-src.tgz"
   sha256 "eaa2df7b76646f1e49d5e564391707e5a4b56d961810cff6bc7c809bfa774605"
   license "GPL-2.0"
   revision 1
 
   livecheck do
     url :stable
-    regex(/ATARI800[._-]v?(\d+(?:[._]\d+)+)/i)
+    regex(ATARI800[._-]v?(\d+(?:[._]\d+)+)i)
     strategy :github_latest
   end
 
@@ -29,7 +29,7 @@ class Atari800 < Formula
   depends_on "sdl12-compat"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-sdltest",
                           "--disable-riodevice"
     system "make", "install"
@@ -37,6 +37,6 @@ class Atari800 < Formula
 
   test do
     assert_equal "Atari 800 Emulator, Version #{version}",
-                 shell_output("#{bin}/atari800 -v", 3).strip
+                 shell_output("#{bin}atari800 -v", 3).strip
   end
 end

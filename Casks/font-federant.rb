@@ -2,10 +2,10 @@ cask "font-federant" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/federant/Federant-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflfederantFederant-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Federant"
-  homepage "https://fonts.google.com/specimen/Federant"
+  homepage "https:fonts.google.comspecimenFederant"
 
   font "Federant-Regular.ttf"
 

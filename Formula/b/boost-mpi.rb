@@ -1,10 +1,10 @@
 class BoostMpi < Formula
-  desc "C++ library for C++/MPI interoperability"
-  homepage "https://www.boost.org/"
-  url "https://ghproxy.com/https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz"
+  desc "C++ library for C++MPI interoperability"
+  homepage "https:www.boost.org"
+  url "https:github.comboostorgboostreleasesdownloadboost-1.83.0boost-1.83.0.tar.xz"
   sha256 "c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614"
   license "BSL-1.0"
-  head "https://github.com/boostorg/boost.git", branch: "master"
+  head "https:github.comboostorgboost.git", branch: "master"
 
   livecheck do
     formula "boost"
@@ -21,7 +21,7 @@ class BoostMpi < Formula
   end
 
   # Test with cmake to avoid issues like:
-  # https://github.com/Homebrew/homebrew-core/issues/67285
+  # https:github.comHomebrewhomebrew-coreissues67285
   depends_on "cmake" => :test
   depends_on "boost"
   depends_on "open-mpi"
@@ -52,33 +52,33 @@ class BoostMpi < Formula
       file.write "using mpi ;\n"
     end
 
-    system "./bootstrap.sh", "--prefix=#{prefix}", "--libdir=#{lib}", "--with-libraries=mpi"
+    system ".bootstrap.sh", "--prefix=#{prefix}", "--libdir=#{lib}", "--with-libraries=mpi"
 
-    system "./b2",
+    system ".b2",
            "--prefix=install-mpi",
-           "--libdir=install-mpi/lib",
+           "--libdir=install-mpilib",
            *args
 
-    lib.install Dir["install-mpi/lib/*mpi*"]
-    (lib/"cmake").install Dir["install-mpi/lib/cmake/*mpi*"]
+    lib.install Dir["install-mpilib*mpi*"]
+    (lib"cmake").install Dir["install-mpilibcmake*mpi*"]
 
     if OS.mac?
       # libboost_mpi links to libboost_serialization, which comes from the main boost formula
       boost = Formula["boost"]
-      MachO::Tools.change_install_name("#{lib}/libboost_mpi-mt.dylib",
+      MachO::Tools.change_install_name("#{lib}libboost_mpi-mt.dylib",
                                        "libboost_serialization-mt.dylib",
-                                       "#{boost.lib}/libboost_serialization-mt.dylib")
-      MachO::Tools.change_install_name("#{lib}/libboost_mpi.dylib",
+                                       "#{boost.lib}libboost_serialization-mt.dylib")
+      MachO::Tools.change_install_name("#{lib}libboost_mpi.dylib",
                                        "libboost_serialization.dylib",
-                                       "#{boost.lib}/libboost_serialization.dylib")
+                                       "#{boost.lib}libboost_serialization.dylib")
     end
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <boost/mpi.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <boostmpi.hpp>
       #include <iostream>
-      #include <boost/serialization/string.hpp>
+      #include <boostserializationstring.hpp>
       namespace mpi = boost::mpi;
 
       int main(int argc, char* argv[])
@@ -115,9 +115,9 @@ class BoostMpi < Formula
     end
 
     system "mpic++", "test.cpp", *args, "-o", "test"
-    system "mpirun", "-np", "2", "./test"
+    system "mpirun", "-np", "2", ".test"
 
-    (testpath/"CMakeLists.txt").write "find_package(Boost COMPONENTS mpi REQUIRED)"
+    (testpath"CMakeLists.txt").write "find_package(Boost COMPONENTS mpi REQUIRED)"
     system "cmake", ".", "-Wno-dev"
   end
 end

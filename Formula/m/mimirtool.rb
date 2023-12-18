@@ -1,15 +1,15 @@
 class Mimirtool < Formula
   desc "CLI for interacting with Grafana Mimir"
-  homepage "https://grafana.com/docs/mimir/latest/operators-guide/tools/mimirtool/"
-  url "https://github.com/grafana/mimir.git",
+  homepage "https:grafana.comdocsmimirlatestoperators-guidetoolsmimirtool"
+  url "https:github.comgrafanamimir.git",
         tag:      "mimir-2.10.5",
         revision: "fbecc927058cc19f2d5d1a65e98cfdc76e3ce5c8"
   license "AGPL-3.0-only"
-  head "https://github.com/grafana/mimir.git", branch: "main"
+  head "https:github.comgrafanamimir.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^mimir-(\d+\.\d+\.\d+)$/i)
+    regex(^mimir-(\d+\.\d+\.\d+)$i)
   end
 
   bottle do
@@ -25,13 +25,13 @@ class Mimirtool < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmd/mimirtool/mimirtool"
-    bin.install "cmd/mimirtool/mimirtool"
+    system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmdmimirtoolmimirtool"
+    bin.install "cmdmimirtoolmimirtool"
   end
 
   test do
     # Check that the version number was correctly embedded in the binary
-    assert_match version.to_s, shell_output("#{bin}/mimirtool version")
+    assert_match version.to_s, shell_output("#{bin}mimirtool version")
 
     # Check that the binary runs as expected by testing the 'rules check' command
     test_rule = <<~EOF
@@ -44,9 +44,9 @@ class Mimirtool < Formula
               expr: sum by (job) (http_inprogress_requests)
     EOF
 
-    (testpath/"rule.yaml").write(test_rule)
+    (testpath"rule.yaml").write(test_rule)
 
-    output = shell_output("#{bin}/mimirtool rules check #{testpath / "rule.yaml"} 2>&1", 1)
+    output = shell_output("#{bin}mimirtool rules check #{testpath  "rule.yaml"} 2>&1", 1)
     expected = "recording rule name does not match level:metric:operation format, must contain at least one colon"
     assert_match expected, output
   end

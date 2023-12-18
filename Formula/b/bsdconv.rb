@@ -1,10 +1,10 @@
 class Bsdconv < Formula
-  desc "Charset/encoding converter library"
-  homepage "https://github.com/buganini/bsdconv"
-  url "https://ghproxy.com/https://github.com/buganini/bsdconv/archive/refs/tags/11.6.tar.gz"
+  desc "Charsetencoding converter library"
+  homepage "https:github.combuganinibsdconv"
+  url "https:github.combuganinibsdconvarchiverefstags11.6.tar.gz"
   sha256 "e856e24474deb3731ac059a96af0078ba951895f2cb3b31f125148a29cc32b70"
   license "BSD-2-Clause"
-  head "https://github.com/buganini/bsdconv.git", branch: "master"
+  head "https:github.combuganinibsdconv.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "d5f2086f8915426931817985ce3a3b379b4cac7ba2c31ea1b8ba69f46a51ebb2"
@@ -26,7 +26,7 @@ class Bsdconv < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/bsdconv BIG5:UTF-8", "\263\134\273\134")
+    output = pipe_output("#{bin}bsdconv BIG5:UTF-8", "\263\134\273\134")
     output.force_encoding("UTF-8") if output.respond_to?(:force_encoding)
     assert_equal "許蓋", output
   end

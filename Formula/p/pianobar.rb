@@ -1,15 +1,15 @@
 class Pianobar < Formula
-  desc "Command-line player for https://pandora.com"
-  homepage "https://6xq.net/pianobar/"
-  url "https://6xq.net/pianobar/pianobar-2022.04.01.tar.bz2"
+  desc "Command-line player for https:pandora.com"
+  homepage "https:6xq.netpianobar"
+  url "https:6xq.netpianobarpianobar-2022.04.01.tar.bz2"
   sha256 "1670b28865a8b82a57bb6dfea7f16e2fa4145d2f354910bb17380b32c9b94763"
   license "MIT"
   revision 2
-  head "https://github.com/PromyLOPh/pianobar.git", branch: "master"
+  head "https:github.comPromyLOPhpianobar.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?pianobar[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?pianobar[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -39,7 +39,7 @@ class Pianobar < Formula
     ENV["CFLAGS"] = "-O2 -DNDEBUG " +
                     # Or it doesn't build at all
                     "-std=c99 " +
-                    # build if we aren't /usr/local'
+                    # build if we aren't usrlocal'
                     "#{ENV.cppflags} #{ENV.ldflags}"
     system "make", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
@@ -51,7 +51,7 @@ class Pianobar < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     require "pty"
-    PTY.spawn(bin/"pianobar") do |stdout, stdin, _pid|
+    PTY.spawn(bin"pianobar") do |stdout, stdin, _pid|
       stdin.putc "\n"
       assert_match "pianobar (#{version})", stdout.read
     end

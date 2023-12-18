@@ -1,13 +1,13 @@
 class Fltk < Formula
   desc "Cross-platform C++ GUI toolkit"
-  homepage "https://www.fltk.org/"
-  url "https://www.fltk.org/pub/fltk/1.3.9/fltk-1.3.9-source.tar.gz"
+  homepage "https:www.fltk.org"
+  url "https:www.fltk.orgpubfltk1.3.9fltk-1.3.9-source.tar.gz"
   sha256 "d736b0445c50d607432c03d5ba5e82f3fba2660b10bc1618db8e077a42d9511b"
   license "LGPL-2.0-only" => { with: "FLTK-exception" }
 
   livecheck do
-    url "https://www.fltk.org/software.php"
-    regex(/href=.*?fltk[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)-source\.t/i)
+    url "https:www.fltk.orgsoftware.php"
+    regex(href=.*?fltk[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)-source\.ti)
   end
 
   bottle do
@@ -21,7 +21,7 @@ class Fltk < Formula
   end
 
   head do
-    url "https://github.com/fltk/fltk.git", branch: "master"
+    url "https:github.comfltkfltk.git", branch: "master"
     depends_on "cmake" => :build
   end
 
@@ -39,7 +39,7 @@ class Fltk < Formula
     if build.head?
       args = std_cmake_args
 
-      # Don't build docs / require doxygen
+      # Don't build docs  require doxygen
       args << "-DOPTION_BUILD_HTML_DOCUMENTATION=OFF"
       args << "-DOPTION_BUILD_PDF_DOCUMENTATION=OFF"
 
@@ -53,7 +53,7 @@ class Fltk < Formula
       system "cmake", "--build", "."
       system "cmake", "--install", "."
     else
-      system "./configure", "--prefix=#{prefix}",
+      system ".configure", "--prefix=#{prefix}",
                             "--enable-threads",
                             "--enable-shared"
       system "make", "install"
@@ -61,10 +61,10 @@ class Fltk < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <FL/Fl.H>
-      #include <FL/Fl_Window.H>
-      #include <FL/Fl_Box.H>
+    (testpath"test.cpp").write <<~EOS
+      #include <FLFl.H>
+      #include <FLFl_Window.H>
+      #include <FLFl_Box.H>
       int main(int argc, char **argv) {
         Fl_Window *window = new Fl_Window(340,180);
         Fl_Box *box = new Fl_Box(20,40,300,100,"Hello, World!");
@@ -77,6 +77,6 @@ class Fltk < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lfltk", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

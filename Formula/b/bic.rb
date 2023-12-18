@@ -1,7 +1,7 @@
 class Bic < Formula
   desc "C interpreter and API explorer"
-  homepage "https://github.com/hexagonal-sun/bic"
-  url "https://ghproxy.com/https://github.com/hexagonal-sun/bic/releases/download/v1.0.0/bic-v1.0.0.tar.gz"
+  homepage "https:github.comhexagonal-sunbic"
+  url "https:github.comhexagonal-sunbicreleasesdownloadv1.0.0bic-v1.0.0.tar.gz"
   sha256 "553324e39d87df59930d093a264c14176d5e3aaa24cd8bff276531fb94775100"
   license "GPL-2.0"
 
@@ -16,7 +16,7 @@ class Bic < Formula
   end
 
   head do
-    url "https://github.com/hexagonal-sun/bic.git", branch: "master"
+    url "https:github.comhexagonal-sunbic.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -36,7 +36,7 @@ class Bic < Formula
 
   def install
     system "autoreconf", "-fi" if build.head?
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
            "--disable-dependency-tracking",
           "--disable-silent-rules",
            "--prefix=#{prefix}"
@@ -44,12 +44,12 @@ class Bic < Formula
   end
 
   test do
-    (testpath/"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~EOS
       #include <stdio.h>
       int main () {
         puts("Hello Homebrew!");
       }
     EOS
-    assert_equal "Hello Homebrew!", shell_output("#{bin}/bic -s hello.c").strip
+    assert_equal "Hello Homebrew!", shell_output("#{bin}bic -s hello.c").strip
   end
 end

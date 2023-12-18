@@ -1,10 +1,10 @@
 class IamPolicyJsonToTerraform < Formula
   desc "Convert a JSON IAM Policy into terraform"
-  homepage "https://github.com/flosell/iam-policy-json-to-terraform"
-  url "https://ghproxy.com/https://github.com/flosell/iam-policy-json-to-terraform/archive/refs/tags/1.8.2.tar.gz"
+  homepage "https:github.comfloselliam-policy-json-to-terraform"
+  url "https:github.comfloselliam-policy-json-to-terraformarchiverefstags1.8.2.tar.gz"
   sha256 "b771e27aa863e8ec899e36c858e6b78d788123f7784bfb3ece8e6350853a3f9b"
   license "Apache-2.0"
-  head "https://github.com/flosell/iam-policy-json-to-terraform.git", branch: "master"
+  head "https:github.comfloselliam-policy-json-to-terraform.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa5f0cec6807f3437d92a0a71cfb29b60c615cef638b3d7468ff4c9c762e62d6"
@@ -26,11 +26,11 @@ class IamPolicyJsonToTerraform < Formula
 
   test do
     # test version
-    assert_match version.to_s, shell_output("#{bin}/iam-policy-json-to-terraform -version")
+    assert_match version.to_s, shell_output("#{bin}iam-policy-json-to-terraform -version")
 
     # test functionality
     test_input = '{"Statement":[{"Effect":"Allow","Action":["ec2:Describe*"],"Resource":"*"}]}'
-    output = pipe_output("#{bin}/iam-policy-json-to-terraform", test_input)
+    output = pipe_output("#{bin}iam-policy-json-to-terraform", test_input)
     assert_match "ec2:Describe*", output
   end
 end

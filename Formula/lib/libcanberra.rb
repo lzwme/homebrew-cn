@@ -1,21 +1,21 @@
 class Libcanberra < Formula
   desc "Implementation of XDG Sound Theme and Name Specifications"
-  homepage "https://0pointer.de/lennart/projects/libcanberra/"
+  homepage "https:0pointer.delennartprojectslibcanberra"
 
   stable do
-    url "https://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz"
+    url "https:0pointer.delennartprojectslibcanberralibcanberra-0.30.tar.xz"
     sha256 "c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
       sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
     end
   end
 
   livecheck do
     url :homepage
-    regex(/href=.*?libcanberra[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?libcanberra[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,7 +35,7 @@ class Libcanberra < Formula
   end
 
   head do
-    url "git://git.0pointer.de/libcanberra", branch: "master"
+    url "git:git.0pointer.delibcanberra", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -47,19 +47,19 @@ class Libcanberra < Formula
   depends_on "libvorbis"
 
   def install
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
 
     # ld: unknown option: --as-needed" and then the same for `--gc-sections`
     # Reported 7 May 2016: lennart@poettering.net and mzyvopnaoreen@0pointer.de
-    system "./configure", "--prefix=#{prefix}", "--no-create"
+    system ".configure", "--prefix=#{prefix}", "--no-create"
     inreplace "config.status", "-Wl,--as-needed -Wl,--gc-sections", ""
-    system "./config.status"
+    system ".config.status"
 
     system "make", "install"
   end
 
   test do
-    (testpath/"lc.c").write <<~EOS
+    (testpath"lc.c").write <<~EOS
       #include <canberra.h>
       int main()
       {
@@ -69,6 +69,6 @@ class Libcanberra < Formula
       }
     EOS
     system ENV.cc, "lc.c", "-I#{include}", "-L#{lib}", "-lcanberra", "-o", "lc"
-    system "./lc"
+    system ".lc"
   end
 end

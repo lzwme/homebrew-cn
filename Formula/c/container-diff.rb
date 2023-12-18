@@ -1,7 +1,7 @@
 class ContainerDiff < Formula
   desc "Diff your Docker containers"
-  homepage "https://github.com/GoogleContainerTools/container-diff"
-  url "https://ghproxy.com/https://github.com/GoogleContainerTools/container-diff/archive/refs/tags/v0.17.0.tar.gz"
+  homepage "https:github.comGoogleContainerToolscontainer-diff"
+  url "https:github.comGoogleContainerToolscontainer-diffarchiverefstagsv0.17.0.tar.gz"
   sha256 "b1d909c4eff0e3355ba45516daddef0adfa4cdcd0c8b41863060c66f524353f9"
   license "Apache-2.0"
 
@@ -22,13 +22,13 @@ class ContainerDiff < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "github.com/GoogleContainerTools/container-diff/version"
+    pkg = "github.comGoogleContainerToolscontainer-diffversion"
     system "go", "build", *std_go_args(ldflags: "-s -w -X #{pkg}.version=#{version}")
   end
 
   test do
-    image = "daemon://gcr.io/google-appengine/golang:2018-01-04_15_24"
-    output = shell_output("#{bin}/container-diff analyze #{image} 2>&1", 1)
-    assert_match "error retrieving image daemon://gcr.io/google-appengine/golang:2018-01-04_15_24", output
+    image = "daemon:gcr.iogoogle-appenginegolang:2018-01-04_15_24"
+    output = shell_output("#{bin}container-diff analyze #{image} 2>&1", 1)
+    assert_match "error retrieving image daemon:gcr.iogoogle-appenginegolang:2018-01-04_15_24", output
   end
 end

@@ -1,10 +1,10 @@
 class Cpuid < Formula
   desc "CPU feature identification for Go"
-  homepage "https://github.com/klauspost/cpuid"
-  url "https://ghproxy.com/https://github.com/klauspost/cpuid/archive/refs/tags/v2.2.6.tar.gz"
+  homepage "https:github.comklauspostcpuid"
+  url "https:github.comklauspostcpuidarchiverefstagsv2.2.6.tar.gz"
   sha256 "7a32884f6adb94f870761bf3d174c6216d56d8ccd12ae1b00e220466cdfa290c"
   license "MIT"
-  head "https://github.com/klauspost/cpuid.git", branch: "master"
+  head "https:github.comklauspostcpuid.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d080e3e206d595fda2d83d9d2e3375d08e2c8c971fe7f7840fc54be255b139ce"
@@ -19,11 +19,11 @@ class Cpuid < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/cpuid"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcpuid"
   end
 
   test do
-    json = shell_output("#{bin}/cpuid -json")
+    json = shell_output("#{bin}cpuid -json")
     assert_match "BrandName", json
     assert_match "VendorID", json
     assert_match "VendorString", json

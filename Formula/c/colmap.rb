@@ -1,7 +1,7 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
-  homepage "https://colmap.github.io/"
-  url "https://ghproxy.com/https://github.com/colmap/colmap/archive/refs/tags/3.8.tar.gz"
+  homepage "https:colmap.github.io"
+  url "https:github.comcolmapcolmaparchiverefstags3.8.tar.gz"
   sha256 "02288f8f61692fe38049d65608ed832b31246e7792692376afb712fa4cef8775"
   license "BSD-3-Clause"
   revision 1
@@ -37,8 +37,8 @@ class Colmap < Formula
     ENV.append_path "CMAKE_PREFIX_PATH", Formula["qt@5"].prefix
 
     # Use C++17 for compatibility with ceres-solver >= 2.2.0.
-    # Issue ref: https://github.com/colmap/colmap/issues/2247
-    inreplace "src/CMakeLists.txt", "-std=c++14", "-std=c++17"
+    # Issue ref: https:github.comcolmapcolmapissues2247
+    inreplace "srcCMakeLists.txt", "-std=c++14", "-std=c++17"
 
     system "cmake", "-S", ".", "-B", "build", "-DCUDA_ENABLED=OFF", *std_cmake_args
     system "cmake", "--build", "build"
@@ -46,7 +46,7 @@ class Colmap < Formula
   end
 
   test do
-    system "#{bin}/colmap", "database_creator", "--database_path", (testpath / "db")
-    assert_path_exists (testpath / "db")
+    system "#{bin}colmap", "database_creator", "--database_path", (testpath  "db")
+    assert_path_exists (testpath  "db")
   end
 end

@@ -1,11 +1,11 @@
 class Valabind < Formula
   desc "Vala bindings for radare, reverse engineering framework"
-  homepage "https://github.com/radare/valabind"
-  url "https://ghproxy.com/https://github.com/radare/valabind/archive/refs/tags/1.8.0.tar.gz"
+  homepage "https:github.comradarevalabind"
+  url "https:github.comradarevalabindarchiverefstags1.8.0.tar.gz"
   sha256 "3eba8c36c923eda932a95b8d0c16b7b30e8cdda442252431990436519cf87cdd"
   license "GPL-3.0-or-later"
   revision 3
-  head "https://github.com/radare/valabind.git", branch: "master"
+  head "https:github.comradarevalabind.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "80030cd7d5a34964e901ca0423f7544e4303e8303f3d19f9bed8fe7d05e69944"
@@ -28,11 +28,11 @@ class Valabind < Formula
   uses_from_macos "flex" => :build
 
   def install
-    system "make", "VALA_PKGLIBDIR=#{Formula["vala"].opt_lib}/vala-#{Formula["vala"].version.major_minor}"
+    system "make", "VALA_PKGLIBDIR=#{Formula["vala"].opt_lib}vala-#{Formula["vala"].version.major_minor}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    system bin/"valabind", "--help"
+    system bin"valabind", "--help"
   end
 end

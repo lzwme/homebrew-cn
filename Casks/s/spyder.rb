@@ -2,11 +2,11 @@ cask "spyder" do
   version "5.5.0"
   sha256 "5a8a17c7eeee4999022ba4f45466349a6232c05c1d4e291acb43fcfc88faef94"
 
-  url "https://ghproxy.com/https://github.com/spyder-ide/spyder/releases/download/v#{version}/Spyder.dmg",
-      verified: "github.com/spyder-ide/spyder/"
+  url "https:github.comspyder-idespyderreleasesdownloadv#{version}Spyder.dmg",
+      verified: "github.comspyder-idespyder"
   name "Spyder"
   desc "Scientific Python IDE"
-  homepage "https://www.spyder-ide.org/"
+  homepage "https:www.spyder-ide.org"
 
   livecheck do
     url :url
@@ -18,10 +18,10 @@ cask "spyder" do
   app "Spyder.app"
 
   zap trash: [
-    "~/.spyder-py3",
-    "~/Library/Application Support/Spyder",
-    "~/Library/Caches/Spyder",
-    "~/Library/Saved Application State/org.spyder-ide.Spyder.savedState",
+    "~.spyder-py3",
+    "~LibraryApplication SupportSpyder",
+    "~LibraryCachesSpyder",
+    "~LibrarySaved Application Stateorg.spyder-ide.Spyder.savedState",
   ]
 
   caveats do

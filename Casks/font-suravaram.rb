@@ -2,10 +2,10 @@ cask "font-suravaram" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/suravaram/Suravaram-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsuravaramSuravaram-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Suravaram"
-  homepage "https://fonts.google.com/specimen/Suravaram"
+  homepage "https:fonts.google.comspecimenSuravaram"
 
   font "Suravaram-Regular.ttf"
 

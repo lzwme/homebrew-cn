@@ -2,13 +2,13 @@ cask "font-brygada-1918" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/brygada1918"
+      only_path: "oflbrygada1918"
   name "Brygada 1918"
   desc "Available on the project's website"
-  homepage "https://fonts.google.com/specimen/Brygada+1918"
+  homepage "https:fonts.google.comspecimenBrygada+1918"
 
   font "Brygada1918-Italic[wght].ttf"
   font "Brygada1918[wght].ttf"

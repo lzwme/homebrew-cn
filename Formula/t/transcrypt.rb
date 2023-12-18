@@ -1,10 +1,10 @@
 class Transcrypt < Formula
   desc "Configure transparent encryption of files in a Git repo"
-  homepage "https://github.com/elasticdog/transcrypt"
-  url "https://ghproxy.com/https://github.com/elasticdog/transcrypt/archive/refs/tags/v2.2.3.tar.gz"
+  homepage "https:github.comelasticdogtranscrypt"
+  url "https:github.comelasticdogtranscryptarchiverefstagsv2.2.3.tar.gz"
   sha256 "69cf95b2a4d7e89c1f5c84bc4c32aa35f78d08b8f457a003ab9e8be7361a24e5"
   license "MIT"
-  head "https://github.com/elasticdog/transcrypt.git", branch: "main"
+  head "https:github.comelasticdogtranscrypt.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -18,19 +18,19 @@ class Transcrypt < Formula
 
   def install
     bin.install "transcrypt"
-    man1.install "man/transcrypt.1"
-    bash_completion.install "contrib/bash/transcrypt"
-    zsh_completion.install "contrib/zsh/_transcrypt"
+    man1.install "mantranscrypt.1"
+    bash_completion.install "contribbashtranscrypt"
+    zsh_completion.install "contribzsh_transcrypt"
   end
 
   test do
     system "git", "init"
-    system bin/"transcrypt", "--password", "guest", "--yes"
+    system bin"transcrypt", "--password", "guest", "--yes"
 
-    (testpath/".gitattributes").atomic_write <<~EOS
+    (testpath".gitattributes").atomic_write <<~EOS
       sensitive_file  filter=crypt diff=crypt merge=crypt
     EOS
-    (testpath/"sensitive_file").write "secrets"
+    (testpath"sensitive_file").write "secrets"
     system "git", "add", ".gitattributes", "sensitive_file"
     system "git", "commit", "--message", "Add encrypted version of file"
 

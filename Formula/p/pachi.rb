@@ -1,10 +1,10 @@
 class Pachi < Formula
-  desc "Software for the Board Game of Go/Weiqi/Baduk"
-  homepage "https://pachi.or.cz/"
-  url "https://ghproxy.com/https://github.com/pasky/pachi/archive/refs/tags/pachi-12.84.tar.gz"
+  desc "Software for the Board Game of GoWeiqiBaduk"
+  homepage "https:pachi.or.cz"
+  url "https:github.compaskypachiarchiverefstagspachi-12.84.tar.gz"
   sha256 "5ced9ffd9fdb0ee4cdb24ad341abbcb7df0ab8a7f244932b7dd3bfa0ff6180ba"
   license "GPL-2.0-only"
-  head "https://github.com/pasky/pachi.git", branch: "master"
+  head "https:github.compaskypachi.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "57b6e6f43f52e5ef856feccee3a1a828872a90fb45a9e72149147ef8aa1e129d"
@@ -17,7 +17,7 @@ class Pachi < Formula
   end
 
   resource "datafiles" do
-    url "https://ghproxy.com/https://github.com/pasky/pachi/releases/download/pachi-12.84/pachi-12.84-linux-static.tgz", using: :nounzip
+    url "https:github.compaskypachireleasesdownloadpachi-12.84pachi-12.84-linux-static.tgz", using: :nounzip
     sha256 "c9b080a93468cb4eacfb6cb43ccd3c6ca2caacc784b02ebe5ec7ba3e4e071922"
   end
 
@@ -26,7 +26,7 @@ class Pachi < Formula
     ENV["GENERIC"] = "1"
     ENV["DOUBLE_FLOATING"] = "1"
 
-    # https://github.com/pasky/pachi/issues/78
+    # https:github.compaskypachiissues78
     inreplace "Makefile" do |s|
       unless build.head?
         s.gsub! "build.h: build.h.git", "build.h:"
@@ -37,12 +37,12 @@ class Pachi < Formula
     end
 
     # Manually extract data files from Linux build, which is actually a zip file
-    system "unzip", "-oj", resource("datafiles").cached_download, "*/*", "-x", "*/*/*", "-d", buildpath
+    system "unzip", "-oj", resource("datafiles").cached_download, "**", "-x", "***", "-d", buildpath
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match(/^= [A-T][0-9]+$/, pipe_output("#{bin}/pachi", "genmove b\n", 0))
+    assert_match(^= [A-T][0-9]+$, pipe_output("#{bin}pachi", "genmove b\n", 0))
   end
 end

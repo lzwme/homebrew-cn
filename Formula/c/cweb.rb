@@ -1,14 +1,14 @@
 class Cweb < Formula
   desc "Literate documentation system for C, C++, and Java"
-  homepage "https://cs.stanford.edu/~knuth/cweb.html"
-  url "https://ghproxy.com/https://github.com/ascherer/cweb/archive/refs/tags/cweb-4.11.tar.gz"
+  homepage "https:cs.stanford.edu~knuthcweb.html"
+  url "https:github.comascherercwebarchiverefstagscweb-4.11.tar.gz"
   sha256 "527699448053028080b186e8e05fd14930f61504c8a5689d14d968662607f29d"
-  # See discussions in this thread, https://github.com/ascherer/cweb/issues/29
+  # See discussions in this thread, https:github.comascherercwebissues29
   license :cannot_represent
 
   livecheck do
     url :stable
-    regex(/^cweb[._-]v?(\d+(?:\.\d+)+[a-z]*?)$/i)
+    regex(^cweb[._-]v?(\d+(?:\.\d+)+[a-z]*?)$i)
   end
 
   bottle do
@@ -26,14 +26,14 @@ class Cweb < Formula
   def install
     ENV.deparallelize
 
-    macrosdir = share/"texmf/tex/generic"
-    cwebinputs = lib/"cweb"
+    macrosdir = share"texmftexgeneric"
+    cwebinputs = lib"cweb"
 
     # make install doesn't use `mkdir -p` so this is needed
     [bin, man1, macrosdir, elisp, cwebinputs].each(&:mkpath)
 
     system "make", "install",
-      "DESTDIR=#{bin}/",
+      "DESTDIR=#{bin}",
       "MANDIR=#{man1}",
       "MANEXT=1",
       "MACROSDIR=#{macrosdir}",
@@ -42,7 +42,7 @@ class Cweb < Formula
   end
 
   test do
-    (testpath/"test.w").write <<~EOS
+    (testpath"test.w").write <<~EOS
       @* Hello World
       This is a minimal program written in CWEB.
 
@@ -52,8 +52,8 @@ class Cweb < Formula
           printf("Hello world!");
       }
     EOS
-    system bin/"ctangle", "test.w"
+    system bin"ctangle", "test.w"
     system ENV.cc, "test.c", "-o", "hello"
-    assert_equal "Hello world!", pipe_output("./hello")
+    assert_equal "Hello world!", pipe_output(".hello")
   end
 end

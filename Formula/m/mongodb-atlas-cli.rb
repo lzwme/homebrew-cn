@@ -1,14 +1,14 @@
 class MongodbAtlasCli < Formula
   desc "Atlas CLI enables you to manage your MongoDB Atlas"
-  homepage "https://www.mongodb.com/docs/atlas/cli/stable/"
-  url "https://ghproxy.com/https://github.com/mongodb/mongodb-atlas-cli/archive/refs/tags/atlascli/v1.14.0.tar.gz"
+  homepage "https:www.mongodb.comdocsatlasclistable"
+  url "https:github.commongodbmongodb-atlas-cliarchiverefstagsatlascliv1.14.0.tar.gz"
   sha256 "385c9a4a86527643ff5fd73b9b59ea4d8c95dedcd00f7726e82454f4a90253ba"
   license "Apache-2.0"
-  head "https://github.com/mongodb/mongodb-atlas-cli.git", branch: "master"
+  head "https:github.commongodbmongodb-atlas-cli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(%r{^atlascli/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^atlascliv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -32,14 +32,14 @@ class MongodbAtlasCli < Formula
     ) do
       system "make", "build-atlascli"
     end
-    bin.install "bin/atlas"
+    bin.install "binatlas"
 
-    generate_completions_from_executable(bin/"atlas", "completion", base_name: "atlas")
+    generate_completions_from_executable(bin"atlas", "completion", base_name: "atlas")
   end
 
   test do
-    assert_match "atlascli version: #{version}", shell_output("#{bin}/atlas --version")
-    assert_match "Error: this action requires authentication", shell_output("#{bin}/atlas projects ls 2>&1", 1)
-    assert_match "PROFILE NAME", shell_output("#{bin}/atlas config ls")
+    assert_match "atlascli version: #{version}", shell_output("#{bin}atlas --version")
+    assert_match "Error: this action requires authentication", shell_output("#{bin}atlas projects ls 2>&1", 1)
+    assert_match "PROFILE NAME", shell_output("#{bin}atlas config ls")
   end
 end

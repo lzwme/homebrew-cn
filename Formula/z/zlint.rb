@@ -1,11 +1,11 @@
 class Zlint < Formula
   desc "X.509 Certificate Linter focused on Web PKI standards and requirements"
-  homepage "https://github.com/zmap/zlint"
-  url "https://github.com/zmap/zlint.git",
+  homepage "https:github.comzmapzlint"
+  url "https:github.comzmapzlint.git",
       tag:      "v3.5.0",
       revision: "45e8dff6fe0d2a6989366a3dbd44713c360afc8f"
   license "Apache-2.0"
-  head "https://github.com/zmap/zlint.git", branch: "master"
+  head "https:github.comzmapzlint.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6e8676ab7323d994d3dfb7ed10811e76b0ee1dbb8356d5faae44e737f2ddbfb"
@@ -23,30 +23,30 @@ class Zlint < Formula
 
   def install
     system "make", "--directory=v3", "GIT_VERSION=v#{version}", "zlint"
-    bin.install "v3/zlint"
+    bin.install "v3zlint"
   end
 
   test do
     assert_match "ZLint version v#{version}",
-      shell_output("#{bin}/zlint -version")
+      shell_output("#{bin}zlint -version")
 
-    (testpath/"cert.pem").write <<~EOS
+    (testpath"cert.pem").write <<~EOS
       -----BEGIN CERTIFICATE-----
       MIIB3jCCAWSgAwIBAgIUU3hxzxSDV5V1DeRyZjgzdPKatBEwCgYIKoZIzj0EAwMw
       HjEcMBoGA1UEAwwTaG9tZWJyZXctemxpbnQtdGVzdDAeFw0yMjAxMDEwMDAwMDBa
       Fw0yMzAxMDEwMDAwMDBaMB4xHDAaBgNVBAMME2hvbWVicmV3LXpsaW50LXRlc3Qw
       djAQBgcqhkjOPQIBBgUrgQQAIgNiAASn3DDorzrDQiWnnXv0uS722si9zx1HK6Va
-      CXQpHm/8t1SmMEYdVIU4j5UzbVKpoMIkk9twC3AiDUVZwdBNL2rqO8smZiKOh0Tz
+      CXQpHm8t1SmMEYdVIU4j5UzbVKpoMIkk9twC3AiDUVZwdBNL2rqO8smZiKOh0Tz
       BnRf8OBu55C7fsCHRayljjW0IpyZCjCjYzBhMB0GA1UdDgQWBBRIDxULqVXg4e4Z
       +3QzKRG4UpfiFjAfBgNVHSMEGDAWgBRIDxULqVXg4e4Z+3QzKRG4UpfiFjAPBgNV
-      HRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBhjAKBggqhkjOPQQDAwNoADBlAjBO
-      c1zwDbnya5VkmlROFco5TpcZM7w1L4eRFdJ/q7rZF5udqVuy4vtu0dJaazwiMusC
+      HRMBAf8EBTADAQHMA4GA1UdDwEBwQEAwIBhjAKBggqhkjOPQQDAwNoADBlAjBO
+      c1zwDbnya5VkmlROFco5TpcZM7w1L4eRFdJq7rZF5udqVuy4vtu0dJaazwiMusC
       MQDEMciPyBdrKwnJilT2kVwIMdMmxAjcmV048Ai0CImT5iRERKdBa7QeydMcJo3Z
       7zs=
       -----END CERTIFICATE-----
     EOS
 
-    output = shell_output("#{bin}/zlint -longSummary cert.pem")
+    output = shell_output("#{bin}zlint -longSummary cert.pem")
     %w[
       e_ca_organization_name_missing
       e_ca_country_name_missing

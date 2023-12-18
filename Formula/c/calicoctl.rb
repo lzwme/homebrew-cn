@@ -1,15 +1,15 @@
 class Calicoctl < Formula
   desc "Calico CLI tool"
-  homepage "https://www.projectcalico.org"
-  url "https://github.com/projectcalico/calico.git",
+  homepage "https:www.projectcalico.org"
+  url "https:github.comprojectcalicocalico.git",
       tag:      "v3.27.0",
       revision: "711528eeb00fd90dde38e87ecee7d1c155cab0e6"
   license "Apache-2.0"
-  head "https://github.com/projectcalico/calico.git", branch: "master"
+  head "https:github.comprojectcalicocalico.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -25,17 +25,17 @@ class Calicoctl < Formula
   depends_on "go" => :build
 
   def install
-    commands = "github.com/projectcalico/calico/calicoctl/calicoctl/commands"
+    commands = "github.comprojectcalicocalicocalicoctlcalicoctlcommands"
     ldflags = "-X #{commands}.VERSION=#{version} " \
               "-X #{commands}.GIT_REVISION=#{Utils.git_short_head} " \
               "-s -w"
-    system "go", "build", *std_go_args(ldflags: ldflags), "calicoctl/calicoctl/calicoctl.go"
+    system "go", "build", *std_go_args(ldflags: ldflags), "calicoctlcalicoctlcalicoctl.go"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/calicoctl version")
+    assert_match version.to_s, shell_output("#{bin}calicoctl version")
 
     assert_match "invalid configuration: no configuration has been provided",
-      shell_output("#{bin}/calicoctl datastore migrate lock 2>&1", 1)
+      shell_output("#{bin}calicoctl datastore migrate lock 2>&1", 1)
   end
 end

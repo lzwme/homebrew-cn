@@ -1,14 +1,14 @@
 class Libdivecomputer < Formula
   desc "Library for communication with various dive computers"
-  homepage "https://www.libdivecomputer.org/"
-  url "https://www.libdivecomputer.org/releases/libdivecomputer-0.8.0.tar.gz"
+  homepage "https:www.libdivecomputer.org"
+  url "https:www.libdivecomputer.orgreleaseslibdivecomputer-0.8.0.tar.gz"
   sha256 "275ecce7923644ed581faab9dcb4f1a69ad251bceb0721c4e5f85fb631617a0e"
   license "LGPL-2.1-or-later"
-  head "https://github.com/libdivecomputer/libdivecomputer.git", branch: "master"
+  head "https:github.comlibdivecomputerlibdivecomputer.git", branch: "master"
 
   livecheck do
-    url "https://www.libdivecomputer.org/releases/"
-    regex(/href=.*?libdivecomputer[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.libdivecomputer.orgreleases"
+    regex(href=.*?libdivecomputer[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,15 +31,15 @@ class Libdivecomputer < Formula
 
   def install
     system "autoreconf", "--install" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libdivecomputer/context.h>
-      #include <libdivecomputer/descriptor.h>
-      #include <libdivecomputer/iterator.h>
+    (testpath"test.c").write <<~EOS
+      #include <libdivecomputercontext.h>
+      #include <libdivecomputerdescriptor.h>
+      #include <libdivecomputeriterator.h>
       int main(int argc, char *argv[]) {
         dc_iterator_t *iterator;
         dc_descriptor_t *descriptor;
@@ -58,6 +58,6 @@ class Libdivecomputer < Formula
       -ldivecomputer
     ]
     system ENV.cc, "-v", "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

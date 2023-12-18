@@ -1,11 +1,11 @@
 class Amp < Formula
   desc "Text editor for your terminal"
-  homepage "https://amp.rs"
-  url "https://ghproxy.com/https://github.com/jmacdonald/amp/archive/refs/tags/0.6.2.tar.gz"
+  homepage "https:amp.rs"
+  url "https:github.comjmacdonaldamparchiverefstags0.6.2.tar.gz"
   sha256 "9279efcecdb743b8987fbedf281f569d84eaf42a0eee556c3447f3dc9c9dfe3b"
   license "GPL-3.0-or-later"
   revision 2
-  head "https://github.com/jmacdonald/amp.git", branch: "main"
+  head "https:github.comjmacdonaldamp.git", branch: "main"
 
   bottle do
     rebuild 2
@@ -31,11 +31,11 @@ class Amp < Formula
   end
 
   def install
-    # Upstream specifies very old versions of onig_sys/cc that
+    # Upstream specifies very old versions of onig_syscc that
     # cause issues when using Homebrew's clang shim on Apple Silicon.
     # Forcefully upgrade `onig_sys` and `cc` to slightly newer versions
     # that enable a successful build.
-    # https://github.com/jmacdonald/amp/issues/222
+    # https:github.comjmacdonaldampissues222
     inreplace "Cargo.lock" do |f|
       f.gsub! "68.0.1", "68.2.1"
       f.gsub! "5c6be7c4f985508684e54f18dd37f71e66f3e1ad9318336a520d7e42f0d3ea8e",
@@ -50,9 +50,9 @@ class Amp < Formula
 
   test do
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
-    PTY.spawn(bin/"amp", "test.txt") do |r, w, _pid|
+    PTY.spawn(bin"amp", "test.txt") do |r, w, _pid|
       r.winsize = [80, 43]
       sleep 1
       # switch to insert mode and add data
@@ -69,10 +69,10 @@ class Amp < Formula
       begin
         r.read
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
 
-    assert_match "test data\n", (testpath/"test.txt").read
+    assert_match "test data\n", (testpath"test.txt").read
   end
 end

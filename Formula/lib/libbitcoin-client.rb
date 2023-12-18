@@ -1,7 +1,7 @@
 class LibbitcoinClient < Formula
   desc "Bitcoin Client Query Library"
-  homepage "https://github.com/libbitcoin/libbitcoin-client"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-client/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comlibbitcoinlibbitcoin-client"
+  url "https:github.comlibbitcoinlibbitcoin-clientarchiverefstagsv3.8.0.tar.gz"
   sha256 "cfd9685becf620eec502ad53774025105dda7947811454e0c9fea30b27833840"
   license "AGPL-3.0"
   revision 2
@@ -17,14 +17,14 @@ class LibbitcoinClient < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
   deprecate! date: "2023-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  # https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # https:github.comlibbitcoinlibbitcoin-systemissues1234
   depends_on "boost@1.76"
   depends_on "libbitcoin-protocol"
   depends_on "libsodium"
@@ -32,10 +32,10 @@ class LibbitcoinClient < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
 
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
@@ -44,8 +44,8 @@ class LibbitcoinClient < Formula
 
   test do
     boost = Formula["boost@1.76"]
-    (testpath/"test.cpp").write <<~EOS
-      #include <bitcoin/client.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <bitcoinclient.hpp>
       class stream_fixture
         : public libbitcoin::client::stream
       {
@@ -105,6 +105,6 @@ class LibbitcoinClient < Formula
                     "-L#{Formula["libbitcoin"].opt_lib}", "-lbitcoin-system",
                     "-L#{lib}", "-lbitcoin-client",
                     "-L#{boost.lib}", "-lboost_system"
-    system "./test"
+    system ".test"
   end
 end

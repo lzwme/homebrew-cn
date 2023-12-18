@@ -1,15 +1,15 @@
 class Beast < Formula
   desc "Bayesian Evolutionary Analysis Sampling Trees"
-  homepage "https://beast.community/"
-  url "https://ghproxy.com/https://github.com/beast-dev/beast-mcmc/archive/refs/tags/v1.10.4.tar.gz"
+  homepage "https:beast.community"
+  url "https:github.combeast-devbeast-mcmcarchiverefstagsv1.10.4.tar.gz"
   sha256 "6e28e2df680364867e088acd181877a5d6a1d664f70abc6eccc2ce3a34f3c54a"
   license "LGPL-2.1-or-later"
   revision 1
-  head "https://github.com/beast-dev/beast-mcmc.git", branch: "master"
+  head "https:github.combeast-devbeast-mcmc.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,28 +32,28 @@ class Beast < Formula
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("11")
     system "ant", "linux"
-    libexec.install Dir["release/Linux/BEASTv*/*"]
-    pkgshare.install_symlink libexec/"examples"
-    bin.install Dir[libexec/"bin/*"]
+    libexec.install Dir["releaseLinuxBEASTv**"]
+    pkgshare.install_symlink libexec"examples"
+    bin.install Dir[libexec"bin*"]
 
     env = Language::Java.overridable_java_home_env("11")
-    env["PATH"] = "$JAVA_HOME/bin:$PATH" if OS.linux?
-    bin.env_script_all_files libexec/"bin", env
-    inreplace libexec/"bin/beast", "/usr/local", HOMEBREW_PREFIX
+    env["PATH"] = "$JAVA_HOMEbin:$PATH" if OS.linux?
+    bin.env_script_all_files libexec"bin", env
+    inreplace libexec"binbeast", "usrlocal", HOMEBREW_PREFIX
   end
 
   test do
-    cp pkgshare/"examples/TestXML/ClockModels/testUCRelaxedClockLogNormal.xml", testpath
+    cp pkgshare"examplesTestXMLClockModelstestUCRelaxedClockLogNormal.xml", testpath
 
     # Run fewer generations to speed up tests
     inreplace "testUCRelaxedClockLogNormal.xml", 'chainLength="10000000"',
                                                  'chainLength="100000"'
 
-    system "#{bin}/beast", "testUCRelaxedClockLogNormal.xml"
+    system "#{bin}beast", "testUCRelaxedClockLogNormal.xml"
 
     %w[ops log trees].each do |ext|
       output = "testUCRelaxedClockLogNormal." + ext
-      assert_predicate testpath/output, :exist?, "Failed to create #{output}"
+      assert_predicate testpathoutput, :exist?, "Failed to create #{output}"
     end
   end
 end

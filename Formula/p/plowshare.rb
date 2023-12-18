@@ -1,7 +1,7 @@
 class Plowshare < Formula
-  desc "Download/upload tool for popular file sharing websites"
-  homepage "https://github.com/mcrapet/plowshare"
-  url "https://ghproxy.com/https://github.com/mcrapet/plowshare/archive/refs/tags/v2.1.7.tar.gz"
+  desc "Downloadupload tool for popular file sharing websites"
+  homepage "https:github.commcrapetplowshare"
+  url "https:github.commcrapetplowsharearchiverefstagsv2.1.7.tar.gz"
   sha256 "c17d0cc1b3323f72b2c1a5b183a9fcef04e8bfc53c9679a4e1523642310d22ad"
   license "GPL-3.0-or-later"
   revision 1
@@ -33,12 +33,12 @@ class Plowshare < Formula
   end
 
   def install
-    sed_args = OS.mac? ? ["patch_gnused", "GNU_SED=#{Formula["gnu-sed"].opt_bin}/gsed"] : []
+    sed_args = OS.mac? ? ["patch_gnused", "GNU_SED=#{Formula["gnu-sed"].opt_bin}gsed"] : []
     system "make", "install", *sed_args, "PREFIX=#{prefix}"
   end
 
   test do
-    output = shell_output("#{bin}/plowlist 2>&1", 15)
+    output = shell_output("#{bin}plowlist 2>&1", 15)
     assert_match "no folder URL specified!", output
   end
 end

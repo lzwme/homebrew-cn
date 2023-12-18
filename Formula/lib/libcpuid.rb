@@ -1,10 +1,10 @@
 class Libcpuid < Formula
   desc "Small C library for x86 CPU detection and feature extraction"
-  homepage "https://github.com/anrieff/libcpuid"
-  url "https://ghproxy.com/https://github.com/anrieff/libcpuid/archive/refs/tags/v0.6.4.tar.gz"
+  homepage "https:github.comanriefflibcpuid"
+  url "https:github.comanriefflibcpuidarchiverefstagsv0.6.4.tar.gz"
   sha256 "1cbb1a79bfe6c37884a538b56504fa0975e78e492aee7c265a42f654c6056cb3"
   license "BSD-2-Clause"
-  head "https://github.com/anrieff/libcpuid.git", branch: "master"
+  head "https:github.comanriefflibcpuid.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 sonoma:       "bb30d48382c4ba6dc5e79a8fa5c228c057acf5daeefc9f15b890b1a611fd2fb6"
@@ -20,7 +20,7 @@ class Libcpuid < Formula
 
   def install
     system "autoreconf", "-ivf"
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -28,9 +28,9 @@ class Libcpuid < Formula
   end
 
   test do
-    system bin/"cpuid_tool"
-    assert_predicate testpath/"raw.txt", :exist?
-    assert_predicate testpath/"report.txt", :exist?
-    assert_match "CPUID is present", File.read(testpath/"report.txt")
+    system bin"cpuid_tool"
+    assert_predicate testpath"raw.txt", :exist?
+    assert_predicate testpath"report.txt", :exist?
+    assert_match "CPUID is present", File.read(testpath"report.txt")
   end
 end

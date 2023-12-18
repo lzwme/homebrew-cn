@@ -1,7 +1,7 @@
 class Tinyxml < Formula
   desc "XML parser"
-  homepage "http://www.grinninglizard.com/tinyxml/"
-  url "https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz"
+  homepage "http:www.grinninglizard.comtinyxml"
+  url "https:downloads.sourceforge.netprojecttinyxmltinyxml2.6.2tinyxml_2_6_2.tar.gz"
   sha256 "15bdfdcec58a7da30adc87ac2b078e4417dbe5392f3afb719f9ba6d062645593"
   license "Zlib"
 
@@ -27,36 +27,36 @@ class Tinyxml < Formula
   # The first two patches are taken from the debian packaging of tinyxml.
   #   The first patch enforces use of stl strings, rather than a custom string type.
   #   The second patch is a fix for incorrect encoding of elements with special characters
-  #   originally posted at https://sourceforge.net/p/tinyxml/patches/51/
+  #   originally posted at https:sourceforge.netptinyxmlpatches51
   # The third patch adds a CMakeLists.txt file to build a shared library and provide an install target
-  #   submitted upstream as https://sourceforge.net/p/tinyxml/patches/66/
+  #   submitted upstream as https:sourceforge.netptinyxmlpatches66
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/robotology/yarp/59eedfbaa1069aa5f03a4a9980d984d59decd55c/extern/tinyxml/patches/enforce-use-stl.patch"
+    url "https:raw.githubusercontent.comrobotologyyarp59eedfbaa1069aa5f03a4a9980d984d59decd55cexterntinyxmlpatchesenforce-use-stl.patch"
     sha256 "16a5b5e842eb0336be606131e5fb12a9165970f7bd943780ba09df2e1e8b29b1"
   end
 
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/robotology/yarp/59eedfbaa1069aa5f03a4a9980d984d59decd55c/extern/tinyxml/patches/entity-encoding.patch"
+    url "https:raw.githubusercontent.comrobotologyyarp59eedfbaa1069aa5f03a4a9980d984d59decd55cexterntinyxmlpatchesentity-encoding.patch"
     sha256 "c5128e03933cd2e22eb85554d58f615f4dbc9177bd144cae2913c0bd7b140c2b"
   end
 
   patch do
-    url "https://ghproxy.com/https://gist.githubusercontent.com/scpeters/6325123/raw/cfb079be67997cb19a1aee60449714a1dedefed5/tinyxml_CMakeLists.patch"
+    url "https:gist.githubusercontent.comscpeters6325123rawcfb079be67997cb19a1aee60449714a1dedefed5tinyxml_CMakeLists.patch"
     sha256 "32160135c27dc9fb7f7b8fb6cf0bf875a727861db9a07cf44535d39770b1e3c7"
   end
 
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
-    (lib+"pkgconfig/tinyxml.pc").write pc_file
+    (lib+"pkgconfigtinyxml.pc").write pc_file
   end
 
   def pc_file
     <<~EOS
       prefix=#{opt_prefix}
       exec_prefix=${prefix}
-      libdir=${exec_prefix}/lib
-      includedir=${prefix}/include
+      libdir=${exec_prefix}lib
+      includedir=${prefix}include
 
       Name: TinyXml
       Description: Simple, small, C++ XML parser
@@ -67,11 +67,11 @@ class Tinyxml < Formula
   end
 
   test do
-    (testpath/"test.xml").write <<~EOS
+    (testpath"test.xml").write <<~EOS
       <?xml version="1.0" ?>
-      <Hello>World</Hello>
+      <Hello>World<Hello>
     EOS
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <tinyxml.h>
 
       int main()
@@ -82,6 +82,6 @@ class Tinyxml < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-L#{lib}", "-ltinyxml", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class Gotify < Formula
-  desc "Command-line interface for pushing messages to gotify/server"
-  homepage "https://github.com/gotify/cli"
-  url "https://ghproxy.com/https://github.com/gotify/cli/archive/refs/tags/v2.2.3.tar.gz"
+  desc "Command-line interface for pushing messages to gotifyserver"
+  homepage "https:github.comgotifycli"
+  url "https:github.comgotifycliarchiverefstagsv2.2.3.tar.gz"
   sha256 "9446aa09a675bca2a8fd0448e6c45e28630e31f7578cc9e1587d09f24e59f66a"
   license "MIT"
-  head "https://github.com/gotify/cli.git", branch: "master"
+  head "https:github.comgotifycli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fd505d7e456bca1972d7b793ee81d805ad59ba1b71b148a4d4718860cd9dcff"
@@ -23,11 +23,11 @@ class Gotify < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}
                                        -X main.BuildDate=#{time.iso8601}
-                                       -X main.Commit=N/A")
+                                       -X main.Commit=NA")
   end
 
   test do
     assert_match "token is not configured, run 'gotify init'",
-      shell_output("#{bin}/gotify p test", 1)
+      shell_output("#{bin}gotify p test", 1)
   end
 end

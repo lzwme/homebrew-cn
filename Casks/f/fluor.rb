@@ -17,10 +17,10 @@ cask "fluor" do
     end
   end
 
-  url "https://ghproxy.com/https://github.com/Pyroh/Fluor/releases/download/#{version}/Fluor.#{version}.dmg"
+  url "https:github.comPyrohFluorreleasesdownload#{version}Fluor.#{version}.dmg"
   name "Fluor"
   desc "Change the behavior of the fn keys depending on the active application"
-  homepage "https://github.com/Pyroh/Fluor"
+  homepage "https:github.comPyrohFluor"
 
   auto_updates true
   depends_on macos: ">= :sierra"
@@ -29,5 +29,5 @@ cask "fluor" do
 
   uninstall quit: "com.pyrolyse.Fluor"
 
-  zap trash: "~/Library/Preferences/com.pyrolyse.Fluor.plist"
+  zap trash: "~LibraryPreferencescom.pyrolyse.Fluor.plist"
 end

@@ -1,10 +1,10 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
-  homepage "https://github.com/JuliaLang/juliaup"
-  url "https://ghproxy.com/https://github.com/JuliaLang/juliaup/archive/refs/tags/v1.12.5.tar.gz"
+  homepage "https:github.comJuliaLangjuliaup"
+  url "https:github.comJuliaLangjuliauparchiverefstagsv1.12.5.tar.gz"
   sha256 "c68d05d594569203fa8846e16f9e4e8ea485837c527dce637bde60aee54cca7e"
   license "MIT"
-  head "https://github.com/JuliaLang/juliaup.git", branch: "master"
+  head "https:github.comJuliaLangjuliaup.git", branch: "master"
 
   livecheck do
     url :stable
@@ -34,6 +34,6 @@ class Juliaup < Formula
 
   test do
     expected = "Default  Channel  Version  Update"
-    assert_equal expected, shell_output("#{bin}/juliaup status").lines.first.strip
+    assert_equal expected, shell_output("#{bin}juliaup status").lines.first.strip
   end
 end

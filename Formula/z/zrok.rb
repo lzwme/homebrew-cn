@@ -1,12 +1,12 @@
-require "language/node"
+require "languagenode"
 
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
-  homepage "https://zrok.io"
-  url "https://ghproxy.com/https://github.com/openziti/zrok/archive/refs/tags/v0.4.19.tar.gz"
+  homepage "https:zrok.io"
+  url "https:github.comopenzitizrokarchiverefstagsv0.4.19.tar.gz"
   sha256 "636c6a7aaa6a77ba19613f6756beef729212fe99c33ad5d3b39127387887cb9c"
   license "Apache-2.0"
-  head "https://github.com/openziti/zrok.git", branch: "main"
+  head "https:github.comopenzitizrok.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "267f1a523b0c4dc8afd0a1a595e9bcfc32e97bc45263a528559d324f6eb47aec"
@@ -22,28 +22,28 @@ class Zrok < Formula
   depends_on "node" => :build
 
   def install
-    cd buildpath/"ui" do
+    cd buildpath"ui" do
       system "npm", "install", *Language::Node.local_npm_install_args
       system "npm", "run", "build"
     end
-    ldflags = ["-X github.com/openziti/zrok/build.Version=#{version}",
-               "-X github.com/openziti/zrok/build.Hash=brew"]
-    system "go", "build", *std_go_args(ldflags: ldflags), "github.com/openziti/zrok/cmd/zrok"
+    ldflags = ["-X github.comopenzitizrokbuild.Version=#{version}",
+               "-X github.comopenzitizrokbuild.Hash=brew"]
+    system "go", "build", *std_go_args(ldflags: ldflags), "github.comopenzitizrokcmdzrok"
   end
 
   test do
-    (testpath/"ctrl.yml").write <<~EOS
+    (testpath"ctrl.yml").write <<~EOS
       v: 3
       maintenance:
         registration:
           expiration_timeout: 24h
     EOS
 
-    version_output = shell_output("#{bin}/zrok version")
+    version_output = shell_output("#{bin}zrok version")
     assert_match(version.to_s, version_output)
-    assert_match(/[[a-f0-9]{40}]/, version_output)
+    assert_match([[a-f0-9]{40}], version_output)
 
-    status_output = shell_output("#{bin}/zrok controller validate #{testpath}/ctrl.yml 2>&1")
+    status_output = shell_output("#{bin}zrok controller validate #{testpath}ctrl.yml 2>&1")
     assert_match("expiration_timeout = 24h0m0s", status_output)
   end
 end

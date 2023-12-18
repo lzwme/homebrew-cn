@@ -2,10 +2,10 @@ cask "font-kenia" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kenia/Kenia-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkeniaKenia-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kenia"
-  homepage "https://fonts.google.com/specimen/Kenia"
+  homepage "https:fonts.google.comspecimenKenia"
 
   font "Kenia-Regular.ttf"
 

@@ -2,10 +2,10 @@ cask "font-mochiy-pop-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/mochiypopone/MochiyPopOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmochiypoponeMochiyPopOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Mochiy Pop One"
-  homepage "https://fonts.google.com/specimen/Mochiy+Pop+One"
+  homepage "https:fonts.google.comspecimenMochiy+Pop+One"
 
   font "MochiyPopOne-Regular.ttf"
 

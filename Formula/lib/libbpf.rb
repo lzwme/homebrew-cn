@@ -1,7 +1,7 @@
 class Libbpf < Formula
   desc "Berkeley Packet Filter library"
-  homepage "https://github.com/libbpf/libbpf"
-  url "https://ghproxy.com/https://github.com/libbpf/libbpf/archive/refs/tags/v1.3.0.tar.gz"
+  homepage "https:github.comlibbpflibbpf"
+  url "https:github.comlibbpflibbpfarchiverefstagsv1.3.0.tar.gz"
   sha256 "11db86acd627e468bc48b7258c1130aba41a12c4d364f78e184fd2f5a913d861"
   license "BSD-2-Clause"
 
@@ -21,8 +21,8 @@ class Libbpf < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include "bpf/libbpf.h"
+    (testpath"test.c").write <<~EOS
+      #include "bpflibbpf.h"
       #include <stdio.h>
 
       int main() {
@@ -31,6 +31,6 @@ class Libbpf < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lbpf", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

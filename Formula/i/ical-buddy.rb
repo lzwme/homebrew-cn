@@ -1,11 +1,11 @@
 class IcalBuddy < Formula
   desc "Get events and tasks from the macOS calendar database"
-  homepage "https://hasseg.org/icalBuddy/"
-  url "https://ghproxy.com/https://github.com/dkaluta/icalBuddy64/archive/refs/tags/v1.10.1.tar.gz"
+  homepage "https:hasseg.orgicalBuddy"
+  url "https:github.comdkalutaicalBuddy64archiverefstagsv1.10.1.tar.gz"
   sha256 "aff42b809044efbf9a1f7df7598e9e110c1c4de0a4c27ddccde5ea325ddc4b77"
   license "MIT"
   revision 1
-  head "https://github.com/dkaluta/icalBuddy64.git", branch: "master"
+  head "https:github.comdkalutaicalBuddy64.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b5931088a2e5f1df062e44902d454d0c9bfeb466c6baf49ed06a946599f3c15"

@@ -2,12 +2,12 @@ cask "font-lisu-bosa" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/lisubosa"
+      only_path: "ofllisubosa"
   name "Lisu Bosa"
-  homepage "https://fonts.google.com/specimen/Lisu+Bosa"
+  homepage "https:fonts.google.comspecimenLisu+Bosa"
 
   font "LisuBosa-Black.ttf"
   font "LisuBosa-BlackItalic.ttf"

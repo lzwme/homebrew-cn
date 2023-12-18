@@ -1,7 +1,7 @@
 class Kalign < Formula
   desc "Fast multiple sequence alignment program for biological sequences"
-  homepage "https://github.com/TimoLassmann/kalign"
-  url "https://ghproxy.com/https://github.com/TimoLassmann/kalign/archive/refs/tags/v3.4.0.tar.gz"
+  homepage "https:github.comTimoLassmannkalign"
+  url "https:github.comTimoLassmannkalignarchiverefstagsv3.4.0.tar.gz"
   sha256 "67d1a562d54b3b7622cc3164588c05b9e2bf8f1a5140bb48a4e816c61a87d4a8"
   license "GPL-3.0-or-later"
 
@@ -30,8 +30,8 @@ class Kalign < Formula
 
   test do
     input = ">1\nA\n>2\nA"
-    (testpath/"test.fa").write(input)
-    output = shell_output("#{bin}/kalign test.fa")
+    (testpath"test.fa").write(input)
+    output = shell_output("#{bin}kalign test.fa")
     assert_match input, output
   end
 end

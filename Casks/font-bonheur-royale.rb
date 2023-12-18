@@ -2,10 +2,10 @@ cask "font-bonheur-royale" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/bonheurroyale/BonheurRoyale-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflbonheurroyaleBonheurRoyale-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bonheur Royale"
-  homepage "https://fonts.google.com/specimen/Bonheur+Royale"
+  homepage "https:fonts.google.comspecimenBonheur+Royale"
 
   font "BonheurRoyale-Regular.ttf"
 

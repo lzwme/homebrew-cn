@@ -2,11 +2,11 @@ cask "font-caramel" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/caramel/Caramel-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcaramelCaramel-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Caramel"
   desc "Fun, hand lettered script with three variations"
-  homepage "https://fonts.google.com/specimen/Caramel"
+  homepage "https:fonts.google.comspecimenCaramel"
 
   font "Caramel-Regular.ttf"
 

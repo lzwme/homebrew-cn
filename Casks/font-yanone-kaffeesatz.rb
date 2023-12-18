@@ -2,10 +2,10 @@ cask "font-yanone-kaffeesatz" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/yanonekaffeesatz/YanoneKaffeesatz%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflyanonekaffeesatzYanoneKaffeesatz%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Yanone Kaffeesatz"
-  homepage "https://fonts.google.com/specimen/Yanone+Kaffeesatz"
+  homepage "https:fonts.google.comspecimenYanone+Kaffeesatz"
 
   font "YanoneKaffeesatz[wght].ttf"
 

@@ -2,11 +2,11 @@ cask "font-post-no-bills-jaffna" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
+  url "https:github.comgooglefonts.git",
       branch:    "main",
-      only_path: "ofl/postnobillsjaffna"
+      only_path: "oflpostnobillsjaffna"
   name "Post No Bills Jaffna"
-  homepage "https://github.com/mooniak/post-no-bills-font"
+  homepage "https:github.commooniakpost-no-bills-font"
 
   font "PostNoBillsJaffna-Bold.ttf"
   font "PostNoBillsJaffna-ExtraBold.ttf"

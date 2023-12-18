@@ -3,28 +3,28 @@ cask "v2rayx" do
   version "1.5.1"
   sha256 "007ec1de5c8f768eb7be42df1980a4998fbf953d29d6c80019bd826272855239"
 
-  url "https://ghproxy.com/https://github.com/Cenmrev/V2RayX/releases/download/v#{version}/V2RayX.app.zip"
+  url "https:github.comCenmrevV2RayXreleasesdownloadv#{version}V2RayX.app.zip"
   name "V2RayX"
   desc "GUI for v2ray-core"
-  homepage "https://github.com/Cenmrev/V2RayX"
+  homepage "https:github.comCenmrevV2RayX"
 
   app "V2RayX.app"
 
   uninstall_preflight do
-    set_ownership "/Library/Application Support/V2RayX"
+    set_ownership "LibraryApplication SupportV2RayX"
   end
 
-  uninstall delete:    "/Library/Application Support/V2RayX",
+  uninstall delete:    "LibraryApplication SupportV2RayX",
             launchctl: "v2rayproject.v2rayx.v2ray-core",
             script:    {
-              executable: "#{appdir}/V2RayX.app/Contents/Resources/v2rayx_sysconf",
+              executable: "#{appdir}V2RayX.appContentsResourcesv2rayx_sysconf",
               args:       ["off"],
               sudo:       true,
             },
             signal:    ["TERM", "cenmrev.V2RayX"]
 
   zap trash: [
-    "~/Library/Application Support/V2RayX",
-    "~/Library/Preferences/cenmrev.V2RayX.plist",
+    "~LibraryApplication SupportV2RayX",
+    "~LibraryPreferencescenmrev.V2RayX.plist",
   ]
 end

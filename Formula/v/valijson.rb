@@ -1,7 +1,7 @@
 class Valijson < Formula
   desc "Header-only C++ library for JSON Schema validation"
-  homepage "https://github.com/tristanpenman/valijson"
-  url "https://ghproxy.com/https://github.com/tristanpenman/valijson/archive/refs/tags/v1.0.2.tar.gz"
+  homepage "https:github.comtristanpenmanvalijson"
+  url "https:github.comtristanpenmanvalijsonarchiverefstagsv1.0.2.tar.gz"
   sha256 "35d86e54fc727f1265226434dc996e33000a570f833537a25c8b702b0b824431"
   license "BSD-2-Clause"
 
@@ -19,14 +19,14 @@ class Valijson < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <valijson/schema.hpp>
-      #include <valijson/adapters/jsoncpp_adapter.hpp>
-      #include <valijson/utils/jsoncpp_utils.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <valijsonschema.hpp>
+      #include <valijsonadaptersjsoncpp_adapter.hpp>
+      #include <valijsonutilsjsoncpp_utils.hpp>
 
       int main (void) { std::cout << "Hello world"; }
     EOS
     system ENV.cxx, "test.cpp", "-std=c++11", "-L#{Formula["jsoncpp"].opt_lib}", "-ljsoncpp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

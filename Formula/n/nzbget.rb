@@ -1,10 +1,10 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
-  homepage "https://nzbget.net/"
-  url "https://ghproxy.com/https://github.com/nzbget/nzbget/releases/download/v21.1/nzbget-21.1-src.tar.gz"
+  homepage "https:nzbget.net"
+  url "https:github.comnzbgetnzbgetreleasesdownloadv21.1nzbget-21.1-src.tar.gz"
   sha256 "4e8fc1beb80dc2af2d6a36a33a33f44dedddd4486002c644f4c4793043072025"
   license "GPL-2.0-or-later"
-  head "https://github.com/nzbget/nzbget.git", branch: "develop"
+  head "https:github.comnzbgetnzbget.git", branch: "develop"
 
   bottle do
     rebuild 2
@@ -29,9 +29,9 @@ class Nzbget < Formula
   uses_from_macos "ncurses"
 
   # Fix OpenSSL 3 compatibility
-  # upstream PR ref, https://github.com/nzbget/nzbget/pull/793
+  # upstream PR ref, https:github.comnzbgetnzbgetpull793
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/56a864d/nzbget/openssl-3.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches56a864dnzbgetopenssl-3.patch"
     sha256 "7fd5e300c6ba456df20307a2d3de630e3cb6d5dfdc2662abd567190eb55ac3be"
   end
 
@@ -39,27 +39,27 @@ class Nzbget < Formula
     ENV.cxx11
 
     # Fix "ncurses library not found"
-    # Reported 14 Aug 2016: https://github.com/nzbget/nzbget/issues/264
+    # Reported 14 Aug 2016: https:github.comnzbgetnzbgetissues264
     if OS.mac?
-      (buildpath/"brew_include").install_symlink MacOS.sdk_path/"usr/include/ncurses.h"
-      ENV["ncurses_CFLAGS"] = "-I#{buildpath}/brew_include"
-      ENV["ncurses_LIBS"] = "-L/usr/lib -lncurses"
+      (buildpath"brew_include").install_symlink MacOS.sdk_path"usrincludencurses.h"
+      ENV["ncurses_CFLAGS"] = "-I#{buildpath}brew_include"
+      ENV["ncurses_LIBS"] = "-Lusrlib -lncurses"
     else
       ENV["ncurses_CFLAGS"] = "-I#{Formula["ncurses"].opt_include}"
       ENV["ncurses_LIBS"] = "-L#{Formula["ncurses"].opt_lib} -lncurses"
     end
 
     # Tell configure to use OpenSSL
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-tlslib=OpenSSL"
     system "make"
     ENV.deparallelize
     system "make", "install"
-    pkgshare.install_symlink "nzbget.conf" => "webui/nzbget.conf"
+    pkgshare.install_symlink "nzbget.conf" => "webuinzbget.conf"
 
     # Set upstream's recommended values for file systems without
-    # sparse-file support (e.g., HFS+); see Homebrew/homebrew-core#972
+    # sparse-file support (e.g., HFS+); see Homebrewhomebrew-core#972
     if OS.mac?
       inreplace "nzbget.conf", "DirectWrite=yes", "DirectWrite=no"
       inreplace "nzbget.conf", "ArticleCache=0", "ArticleCache=700"
@@ -69,20 +69,20 @@ class Nzbget < Formula
   end
 
   service do
-    run [opt_bin/"nzbget", "-c", HOMEBREW_PREFIX/"etc/nzbget.conf", "-s", "-o", "OutputMode=Log",
-         "-o", "ConfigTemplate=#{HOMEBREW_PREFIX}/opt/nzbget/share/nzbget/nzbget.conf",
-         "-o", "WebDir=#{HOMEBREW_PREFIX}/opt/nzbget/share/nzbget/webui"]
+    run [opt_bin"nzbget", "-c", HOMEBREW_PREFIX"etcnzbget.conf", "-s", "-o", "OutputMode=Log",
+         "-o", "ConfigTemplate=#{HOMEBREW_PREFIX}optnzbgetsharenzbgetnzbget.conf",
+         "-o", "WebDir=#{HOMEBREW_PREFIX}optnzbgetsharenzbgetwebui"]
     keep_alive true
-    environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    environment_variables PATH: "#{HOMEBREW_PREFIX}bin:usrbin:bin:usrsbin:sbin"
   end
 
   test do
-    (testpath/"downloads/dst").mkpath
+    (testpath"downloadsdst").mkpath
     # Start nzbget as a server in daemon-mode
-    system "#{bin}/nzbget", "-D", "-c", etc/"nzbget.conf"
+    system "#{bin}nzbget", "-D", "-c", etc"nzbget.conf"
     # Query server for version information
-    system "#{bin}/nzbget", "-V", "-c", etc/"nzbget.conf"
+    system "#{bin}nzbget", "-V", "-c", etc"nzbget.conf"
     # Shutdown server daemon
-    system "#{bin}/nzbget", "-Q", "-c", etc/"nzbget.conf"
+    system "#{bin}nzbget", "-Q", "-c", etc"nzbget.conf"
   end
 end

@@ -1,10 +1,10 @@
 class Hcxtools < Formula
-  desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
-  homepage "https://github.com/ZerBea/hcxtools"
-  url "https://ghproxy.com/https://github.com/ZerBea/hcxtools/archive/refs/tags/6.3.2.tar.gz"
+  desc "Utils for conversion of cappcappcapng WiFi dump files"
+  homepage "https:github.comZerBeahcxtools"
+  url "https:github.comZerBeahcxtoolsarchiverefstags6.3.2.tar.gz"
   sha256 "555e46a59df6a77c5aa73b99ffa8c1e84fa79e24ffaf5180de1d3a7f4ab7a470"
   license "MIT"
-  head "https://github.com/ZerBea/hcxtools.git", branch: "master"
+  head "https:github.comZerBeahcxtools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e579104b0f72973624df8560b968c59a8f8d2d039c891d920cfadc736fe60234"
@@ -29,18 +29,18 @@ class Hcxtools < Formula
 
   test do
     # Create file with 22000 hash line
-    testhash = testpath/"test.22000"
-    (testpath/"test.22000").write <<~EOS
+    testhash = testpath"test.22000"
+    (testpath"test.22000").write <<~EOS
       WPA*01*4d4fe7aac3a2cecab195321ceb99a7d0*fc690c158264*f4747f87f9f4*686173686361742d6573736964***
     EOS
 
     # Convert hash to .cap file
-    testcap = testpath/"test.cap"
-    system "#{bin}/hcxhash2cap", "--pmkid-eapol=#{testhash}", "-c", testpath/"test.cap"
+    testcap = testpath"test.cap"
+    system "#{bin}hcxhash2cap", "--pmkid-eapol=#{testhash}", "-c", testpath"test.cap"
 
     # Convert .cap file back to hash file
-    newhash = testpath/"new.22000"
-    system "#{bin}/hcxpcapngtool", "-o", newhash, testcap
+    newhash = testpath"new.22000"
+    system "#{bin}hcxpcapngtool", "-o", newhash, testcap
 
     expected = "WPA*01*4d4fe7aac3a2cecab195321ceb99a7d0*fc690c158264*f4747f87f9f4*686173686361742d6573736964***01"
     assert_equal expected, newhash.read.chomp

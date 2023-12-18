@@ -1,14 +1,14 @@
 class G2o < Formula
   desc "General framework for graph optimization"
-  homepage "https://openslam-org.github.io/g2o.html"
-  url "https://ghproxy.com/https://github.com/RainerKuemmerle/g2o/archive/refs/tags/20230806_git.tar.gz"
+  homepage "https:openslam-org.github.iog2o.html"
+  url "https:github.comRainerKuemmerleg2oarchiverefstags20230806_git.tar.gz"
   version "20230806"
   sha256 "e717d3b96cc6d00fcbbaf637aae648c9823599e6aa8fcf4546fc9ad4034dcde5"
   license "BSD-2-Clause"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)*)(?:[._-]git)?$/i)
+    regex(^v?(\d+(?:\.\d+)*)(?:[._-]git)?$i)
   end
 
   bottle do
@@ -27,14 +27,14 @@ class G2o < Formula
   depends_on "eigen"
 
   resource "homebrew-testdata" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/OpenSLAM-org/openslam_g2o/2362b9e1e9dab318625cd0af9ba314c47ba8de48/data/2d/intel/intel.g2o"
+    url "https:raw.githubusercontent.comOpenSLAM-orgopenslam_g2o2362b9e1e9dab318625cd0af9ba314c47ba8de48data2dintelintel.g2o"
     sha256 "4d87aaf96e1e04e47c723c371386b15358c71e98c05dad16b786d585f9fd70ff"
   end
 
   def install
     cmake_args = std_cmake_args + %w[-DG2O_BUILD_EXAMPLES=OFF]
     # For Intel: manually set desired SSE features to enable support for older machines.
-    # See https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html for supported CPU features
+    # See https:gcc.gnu.orgonlinedocsgccx86-Options.html for supported CPU features
     if Hardware::CPU.intel?
       cmake_args << "-DDO_SSE_AUTODETECT=OFF"
       case Hardware.oldest_cpu
@@ -50,25 +50,25 @@ class G2o < Formula
     system "cmake", "-S", ".", "-B", "build", *cmake_args
 
     # Avoid references to Homebrew shims
-    inreplace "build/g2o/config.h", Superenv.shims_path/ENV.cxx, ENV.cxx
+    inreplace "buildg2oconfig.h", Superenv.shims_pathENV.cxx, ENV.cxx
 
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (pkgshare/"examples").install "g2o/examples/simple_optimize"
+    (pkgshare"examples").install "g2oexamplessimple_optimize"
   end
 
   test do
-    cp_r pkgshare/"examples/simple_optimize", testpath/"src"
+    cp_r pkgshare"examplessimple_optimize", testpath"src"
     libs = %w[-lg2o_core -lg2o_solver_eigen -lg2o_stuff -lg2o_types_slam2d -lg2o_types_slam3d]
     cd "src" do
       system ENV.cxx, "simple_optimize.cpp",
-             "-I#{opt_include}", "-I#{Formula["eigen"].opt_include}/eigen3",
-             "-L#{opt_lib}", *libs, "-std=c++17", "-o", testpath/"simple_optimize"
+             "-I#{opt_include}", "-I#{Formula["eigen"].opt_include}eigen3",
+             "-L#{opt_lib}", *libs, "-std=c++17", "-o", testpath"simple_optimize"
     end
 
     resource("homebrew-testdata").stage do
-      last_output = shell_output(testpath/"simple_optimize intel.g2o 2>&1").lines.last
+      last_output = shell_output(testpath"simple_optimize intel.g2o 2>&1").lines.last
       assert_match("edges= 1837", last_output)
     end
   end

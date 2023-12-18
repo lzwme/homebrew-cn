@@ -1,20 +1,20 @@
 # NOTE: Odd release numbers indicate unstable releases.
 # Please only submit PRs for [x.even.x] version numbers:
-# https://github.com/djcb/mu/commit/23f4a64bdcdee3f9956a39b9a5a4fd0c5c2370ba
+# https:github.comdjcbmucommit23f4a64bdcdee3f9956a39b9a5a4fd0c5c2370ba
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
-  homepage "https://www.djcbsoftware.nl/code/mu/"
-  url "https://ghproxy.com/https://github.com/djcb/mu/releases/download/v1.10.8/mu-1.10.8.tar.xz"
+  homepage "https:www.djcbsoftware.nlcodemu"
+  url "https:github.comdjcbmureleasesdownloadv1.10.8mu-1.10.8.tar.xz"
   sha256 "6b11d8add2a7eeb0ebc4a5c7a6b9a9b3e1be8c5175c0c1c019a7ad8d7e363589"
   license "GPL-3.0-or-later"
-  head "https://github.com/djcb/mu.git", branch: "master"
+  head "https:github.comdjcbmu.git", branch: "master"
 
   # We restrict matching to versions with an even-numbered minor version number,
   # as an odd-numbered minor version number indicates a development version:
-  # https://github.com/djcb/mu/commit/23f4a64bdcdee3f9956a39b9a5a4fd0c5c2370ba
+  # https:github.comdjcbmucommit23f4a64bdcdee3f9956a39b9a5a4fd0c5c2370ba
   livecheck do
     url :stable
-    regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
+    regex(^v?(\d+\.\d*[02468](?:\.\d+)*)$i)
   end
 
   bottle do
@@ -47,8 +47,8 @@ class Mu < Formula
 
   fails_with gcc: "5"
 
-  # upstream bug report, https://github.com/djcb/mu/issues/2531
-  # reverts https://github.com/djcb/mu/pull/2522
+  # upstream bug report, https:github.comdjcbmuissues2531
+  # reverts https:github.comdjcbmupull2522
   patch :DATA
 
   def install
@@ -58,13 +58,13 @@ class Mu < Formula
   end
 
   # Regression test for:
-  # https://github.com/djcb/mu/issues/397
-  # https://github.com/djcb/mu/issues/380
-  # https://github.com/djcb/mu/issues/332
+  # https:github.comdjcbmuissues397
+  # https:github.comdjcbmuissues380
+  # https:github.comdjcbmuissues332
   test do
-    mkdir (testpath/"cur")
+    mkdir (testpath"cur")
 
-    (testpath/"cur/1234567890.11111_1.host1!2,S").write <<~EOS
+    (testpath"cur1234567890.11111_1.host1!2,S").write <<~EOS
       From: "Road Runner" <fasterthanyou@example.com>
       To: "Wile E. Coyote" <wile@example.com>
       Date: Mon, 4 Aug 2008 11:40:49 +0200
@@ -73,7 +73,7 @@ class Mu < Formula
       Beep beep!
     EOS
 
-    (testpath/"cur/0987654321.22222_2.host2!2,S").write <<~EOS
+    (testpath"cur0987654321.22222_2.host2!2,S").write <<~EOS
       From: "Wile E. Coyote" <wile@example.com>
       To: "Road Runner" <fasterthanyou@example.com>
       Date: Mon, 4 Aug 2008 12:40:49 +0200
@@ -83,26 +83,26 @@ class Mu < Formula
       This used to happen outdoors. It was more fun then.
     EOS
 
-    system "#{bin}/mu", "init", "--muhome=#{testpath}", "--maildir=#{testpath}"
-    system "#{bin}/mu", "index", "--muhome=#{testpath}"
+    system "#{bin}mu", "init", "--muhome=#{testpath}", "--maildir=#{testpath}"
+    system "#{bin}mu", "index", "--muhome=#{testpath}"
 
-    mu_find = "#{bin}/mu find --muhome=#{testpath} "
+    mu_find = "#{bin}mu find --muhome=#{testpath} "
     find_message = "#{mu_find} msgid:2222222222@example.com"
     find_message_and_related = "#{mu_find} --include-related msgid:2222222222@example.com"
 
     assert_equal 1, shell_output(find_message).lines.count
     assert_equal 2, shell_output(find_message_and_related).lines.count, <<~EOS
-      You tripped over https://github.com/djcb/mu/issues/380
+      You tripped over https:github.comdjcbmuissues380
         --related doesn't work. Everything else should
     EOS
   end
 end
 
 __END__
-diff --git a/guile/meson.build b/guile/meson.build
+diff --git aguilemeson.build bguilemeson.build
 index 933553c..ca051d1 100644
---- a/guile/meson.build
-+++ b/guile/meson.build
+--- aguilemeson.build
++++ bguilemeson.build
 @@ -73,9 +73,7 @@ lib_guile_mu = shared_module(
    [ 'mu-guile.cc',
      'mu-guile-message.cc' ],

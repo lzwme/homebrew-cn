@@ -1,10 +1,10 @@
 class Lefthook < Formula
   desc "Fast and powerful Git hooks manager for any type of projects"
-  homepage "https://github.com/evilmartians/lefthook"
-  url "https://ghproxy.com/https://github.com/evilmartians/lefthook/archive/refs/tags/v1.5.5.tar.gz"
+  homepage "https:github.comevilmartianslefthook"
+  url "https:github.comevilmartianslefthookarchiverefstagsv1.5.5.tar.gz"
   sha256 "0065b2cc32aee190fac936d12e50e46d950be6830ddfd848ab27da9961bb3d87"
   license "MIT"
-  head "https://github.com/evilmartians/lefthook.git", branch: "master"
+  head "https:github.comevilmartianslefthook.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46fa47d85a5b70845cf4facafc40883c6f02473724fe48a61f9b98e2cdd7c309"
@@ -21,14 +21,14 @@ class Lefthook < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"lefthook", "completion")
+    generate_completions_from_executable(bin"lefthook", "completion")
   end
 
   test do
     system "git", "init"
-    system bin/"lefthook", "install"
+    system bin"lefthook", "install"
 
-    assert_predicate testpath/"lefthook.yml", :exist?
-    assert_match version.to_s, shell_output("#{bin}/lefthook version")
+    assert_predicate testpath"lefthook.yml", :exist?
+    assert_match version.to_s, shell_output("#{bin}lefthook version")
   end
 end

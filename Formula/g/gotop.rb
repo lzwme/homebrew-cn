@@ -1,7 +1,7 @@
 class Gotop < Formula
   desc "Terminal based graphical activity monitor inspired by gtop and vtop"
-  homepage "https://github.com/xxxserxxx/gotop"
-  url "https://ghproxy.com/https://github.com/xxxserxxx/gotop/archive/refs/tags/v4.2.0.tar.gz"
+  homepage "https:github.comxxxserxxxgotop"
+  url "https:github.comxxxserxxxgotoparchiverefstagsv4.2.0.tar.gz"
   sha256 "e9d9041903acb6bd3ffe94e0a02e69eea53f1128274da1bfe00fe44331ccceb1"
   license "BSD-3-Clause"
 
@@ -25,18 +25,18 @@ class Gotop < Formula
       -X main.Version=#{version}
       -X main.BuildDate=#{time.strftime("%Y%m%dT%H%M%S")}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gotop"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgotop"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/gotop --version").chomp
+    assert_match version.to_s, shell_output("#{bin}gotop --version").chomp
 
-    system bin/"gotop", "--write-config"
+    system bin"gotop", "--write-config"
     conf_path = if OS.mac?
-      "Library/Application Support/gotop/gotop.conf"
+      "LibraryApplication Supportgotopgotop.conf"
     else
-      ".config/gotop/gotop.conf"
+      ".configgotopgotop.conf"
     end
-    assert_predicate testpath/conf_path, :exist?
+    assert_predicate testpathconf_path, :exist?
   end
 end

@@ -2,11 +2,11 @@ cask "font-droid-sans-mono-for-powerline" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/powerline/fonts.git",
+  url "https:github.compowerlinefonts.git",
       branch:    "master",
       only_path: "DroidSansMono"
   name "Droid Sans Mono for Powerline"
-  homepage "https://github.com/powerline/fonts/tree/master/DroidSansMono"
+  homepage "https:github.compowerlinefontstreemasterDroidSansMono"
 
   font "Droid Sans Mono for Powerline.otf"
 

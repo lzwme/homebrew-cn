@@ -1,14 +1,14 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
-  homepage "https://blog.sbstp.ca/introducing-kubie/"
-  url "https://ghproxy.com/https://github.com/sbstp/kubie/archive/refs/tags/v0.23.0.tar.gz"
+  homepage "https:blog.sbstp.caintroducing-kubie"
+  url "https:github.comsbstpkubiearchiverefstagsv0.23.0.tar.gz"
   sha256 "e6722811998ca497edd365e27d96c7f672221ffb5d7fd59ec9fbf181831b01f8"
   license "Zlib"
-  head "https://github.com/sbstp/kubie.git", branch: "master"
+  head "https:github.comsbstpkubie.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,16 +26,16 @@ class Kubie < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "./completion/kubie.bash"
-    fish_completion.install "./completion/kubie.fish"
+    bash_completion.install ".completionkubie.bash"
+    fish_completion.install ".completionkubie.fish"
   end
 
   test do
-    (testpath/".kube/kubie-test.yaml").write <<~EOS
+    (testpath".kubekubie-test.yaml").write <<~EOS
       apiVersion: v1
       clusters:
       - cluster:
-          server: http://0.0.0.0/
+          server: http:0.0.0.0
         name: kubie-test-cluster
       contexts:
       - context:
@@ -52,6 +52,6 @@ class Kubie < Formula
     EOS
 
     assert_match "The connection to the server 0.0.0.0 was refused - did you specify the right host or port?",
-      shell_output("#{bin}/kubie exec kubie-test kubie-test-namespace kubectl get pod 2>&1")
+      shell_output("#{bin}kubie exec kubie-test kubie-test-namespace kubectl get pod 2>&1")
   end
 end

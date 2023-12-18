@@ -1,7 +1,7 @@
 class Libpointing < Formula
   desc "Provides direct access to HID pointing devices"
-  homepage "https://github.com/INRIA/libpointing"
-  url "https://ghproxy.com/https://github.com/INRIA/libpointing/releases/download/v1.0.8/libpointing-mac-1.0.8.tar.gz"
+  homepage "https:github.comINRIAlibpointing"
+  url "https:github.comINRIAlibpointingreleasesdownloadv1.0.8libpointing-mac-1.0.8.tar.gz"
   sha256 "b19a701b9181be05c3879bbfc901709055c27de7995bd59ada4e3f631dfad8f2"
   license "GPL-2.0"
 
@@ -27,8 +27,8 @@ class Libpointing < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <pointing/pointing.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <pointingpointing.h>
       #include <iostream>
       int main() {
         std::cout << LIBPOINTING_VER_STRING << " |" ;
@@ -41,6 +41,6 @@ class Libpointing < Formula
       }
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lpointing", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class Tengo < Formula
   desc "Fast script language for Go"
-  homepage "https://tengolang.com"
-  url "https://ghproxy.com/https://github.com/d5/tengo/archive/refs/tags/v2.16.1.tar.gz"
+  homepage "https:tengolang.com"
+  url "https:github.comd5tengoarchiverefstagsv2.16.1.tar.gz"
   sha256 "e8af90295be400f89455f6fc3200cedb29b94d834b95df22ffbc7c6afc28829e"
   license "MIT"
 
@@ -20,11 +20,11 @@ class Tengo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "./cmd/tengo"
+    system "go", "build", *std_go_args, ".cmdtengo"
   end
 
   test do
-    (testpath/"main.tengo").write <<~EOS
+    (testpath"main.tengo").write <<~EOS
       fmt := import("fmt")
 
       each := func(seq, fn) {
@@ -36,9 +36,9 @@ class Tengo < Formula
           return init
       }
 
-      fmt.println(sum(0, [1, 2, 3]))   // "6"
-      fmt.println(sum("", [1, 2, 3]))  // "123"
+      fmt.println(sum(0, [1, 2, 3]))    "6"
+      fmt.println(sum("", [1, 2, 3]))   "123"
     EOS
-    assert_equal shell_output("#{bin}/tengo #{testpath}/main.tengo"), "6\n123\n"
+    assert_equal shell_output("#{bin}tengo #{testpath}main.tengo"), "6\n123\n"
   end
 end

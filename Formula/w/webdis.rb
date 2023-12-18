@@ -1,7 +1,7 @@
 class Webdis < Formula
   desc "Redis HTTP interface with JSON output"
-  homepage "https://webd.is/"
-  url "https://ghproxy.com/https://github.com/nicolasff/webdis/archive/refs/tags/0.1.22.tar.gz"
+  homepage "https:webd.is"
+  url "https:github.comnicolasffwebdisarchiverefstags0.1.22.tar.gz"
   sha256 "4ee465f85999aeba3743a8ed6c7d79690bffe7a8ffb6c7ddec1d4bb6bd1d8685"
   license "BSD-2-Clause"
 
@@ -24,34 +24,34 @@ class Webdis < Formula
     bin.install "webdis"
 
     inreplace "webdis.prod.json" do |s|
-      s.gsub! "/var/log/webdis.log", "#{var}/log/webdis.log"
-      s.gsub!(/daemonize":\s*true/, "daemonize\":\tfalse")
+      s.gsub! "varlogwebdis.log", "#{var}logwebdis.log"
+      s.gsub!(daemonize":\s*true, "daemonize\":\tfalse")
     end
 
     etc.install "webdis.json", "webdis.prod.json"
   end
 
   def post_install
-    (var/"log").mkpath
+    (var"log").mkpath
   end
 
   service do
-    run [opt_bin/"webdis", etc/"webdis.prod.json"]
+    run [opt_bin"webdis", etc"webdis.prod.json"]
     keep_alive true
     working_dir var
   end
 
   test do
     port = free_port
-    cp "#{etc}/webdis.json", "#{testpath}/webdis.json"
-    inreplace "#{testpath}/webdis.json", "\"http_port\":\t7379,", "\"http_port\":\t#{port},"
+    cp "#{etc}webdis.json", "#{testpath}webdis.json"
+    inreplace "#{testpath}webdis.json", "\"http_port\":\t7379,", "\"http_port\":\t#{port},"
 
     server = fork do
-      exec "#{bin}/webdis", "#{testpath}/webdis.json"
+      exec "#{bin}webdis", "#{testpath}webdis.json"
     end
     sleep 0.5
     # Test that the response is from webdis
-    assert_match(/Server: Webdis/, shell_output("curl --silent -XGET -I http://localhost:#{port}/PING"))
+    assert_match(Server: Webdis, shell_output("curl --silent -XGET -I http:localhost:#{port}PING"))
   ensure
     Process.kill "TERM", server
     Process.wait server

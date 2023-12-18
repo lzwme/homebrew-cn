@@ -1,10 +1,10 @@
 class DhallJson < Formula
   desc "Dhall to JSON compiler and a Dhall to YAML compiler"
-  homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-json"
-  url "https://hackage.haskell.org/package/dhall-json-1.7.12/dhall-json-1.7.12.tar.gz"
+  homepage "https:github.comdhall-langdhall-haskelltreemasterdhall-json"
+  url "https:hackage.haskell.orgpackagedhall-json-1.7.12dhall-json-1.7.12.tar.gz"
   sha256 "ca48cd434380cbd979dbb12889f90da8fdc1ea90bc266cab14f061c60e19d5fa"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
+  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c953aa5b6578f99c770fcfea9d3ab337fbbb36dd35130f423b067b81aa32433c"
@@ -29,6 +29,6 @@ class DhallJson < Formula
   end
 
   test do
-    assert_match "1", pipe_output("#{bin}/dhall-to-json", "1", 0)
+    assert_match "1", pipe_output("#{bin}dhall-to-json", "1", 0)
   end
 end

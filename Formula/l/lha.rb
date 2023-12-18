@@ -1,8 +1,8 @@
 class Lha < Formula
   desc "Utility for creating and opening lzh archives"
-  homepage "https://lha.osdn.jp/"
-  # Canonical: https://osdn.net/dl/lha/lha-1.14i-ac20050924p1.tar.gz
-  url "https://dotsrc.dl.osdn.net/osdn/lha/22231/lha-1.14i-ac20050924p1.tar.gz"
+  homepage "https:lha.osdn.jp"
+  # Canonical: https:osdn.netdllhalha-1.14i-ac20050924p1.tar.gz
+  url "https:dotsrc.dl.osdn.netosdnlha22231lha-1.14i-ac20050924p1.tar.gz"
   version "1.14i-ac20050924p1"
   sha256 "b5261e9f98538816aa9e64791f23cb83f1632ecda61f02e54b6749e9ca5e9ee4"
   license "MIT"
@@ -13,8 +13,8 @@ class Lha < Formula
   # The portion of the regex that captures the version is looser than usual
   # because the version format is unusual and may change in the future.
   livecheck do
-    url "https://osdn.net/projects/lha/releases/"
-    regex(%r{href=.*?/projects/lha/releases/[^>]+?>\s*?v?(\d+(?:[.-][\da-z]+)+)}im)
+    url "https:osdn.netprojectslhareleases"
+    regex(%r{href=.*?projectslhareleases[^>]+?>\s*?v?(\d+(?:[.-][\da-z]+)+)}im)
   end
 
   bottle do
@@ -33,7 +33,7 @@ class Lha < Formula
   end
 
   head do
-    url "https://github.com/jca02266/lha.git", branch: "master"
+    url "https:github.comjca02266lha.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -45,7 +45,7 @@ class Lha < Formula
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
     system "autoreconf", "-is" if build.head?
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
@@ -53,9 +53,9 @@ class Lha < Formula
   end
 
   test do
-    (testpath/"foo").write "test"
-    system "#{bin}/lha", "c", "foo.lzh", "foo"
+    (testpath"foo").write "test"
+    system "#{bin}lha", "c", "foo.lzh", "foo"
     assert_equal "::::::::\nfoo\n::::::::\ntest",
-      shell_output("#{bin}/lha p foo.lzh")
+      shell_output("#{bin}lha p foo.lzh")
   end
 end

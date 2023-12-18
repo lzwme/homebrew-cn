@@ -1,10 +1,10 @@
 class Nanoflann < Formula
   desc "Header-only library for Nearest Neighbor search with KD-trees"
-  homepage "https://github.com/jlblancoc/nanoflann"
-  url "https://ghproxy.com/https://github.com/jlblancoc/nanoflann/archive/refs/tags/v1.5.3.tar.gz"
+  homepage "https:github.comjlblancocnanoflann"
+  url "https:github.comjlblancocnanoflannarchiverefstagsv1.5.3.tar.gz"
   sha256 "850119b57226c12d03dfc73075771da4feae994e35e82d352e5f7b295a41fec2"
   license "BSD-3-Clause"
-  head "https://github.com/jlblancoc/nanoflann.git", branch: "master"
+  head "https:github.comjlblancocnanoflann.git", branch: "master"
 
   livecheck do
     url :stable
@@ -23,7 +23,7 @@ class Nanoflann < Formula
 
   fails_with :clang do
     build 1200
-    cause "https://bugs.llvm.org/show_bug.cgi?id=23029"
+    cause "https:bugs.llvm.orgshow_bug.cgi?id=23029"
   end
 
   def install
@@ -33,7 +33,7 @@ class Nanoflann < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <nanoflann.hpp>
       int main() {
         nanoflann::KNNResultSet<size_t> resultSet(1);
@@ -41,6 +41,6 @@ class Nanoflann < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test", "-std=c++11"
-    system "./test"
+    system ".test"
   end
 end

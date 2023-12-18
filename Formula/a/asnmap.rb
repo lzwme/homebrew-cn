@@ -1,10 +1,10 @@
 class Asnmap < Formula
   desc "Quickly map organization network ranges using ASN information"
-  homepage "https://github.com/projectdiscovery/asnmap"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/asnmap/archive/refs/tags/v1.0.6.tar.gz"
+  homepage "https:github.comprojectdiscoveryasnmap"
+  url "https:github.comprojectdiscoveryasnmaparchiverefstagsv1.0.6.tar.gz"
   sha256 "a11b7262134b959347b8bb3e380e8788d1fb07d5a0c31860f7053a96e4134612"
   license "MIT"
-  head "https://github.com/projectdiscovery/asnmap.git", branch: "main"
+  head "https:github.comprojectdiscoveryasnmap.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d584d116081a7064acc68e52693045a494032bfc51c42d8b80c05063fa64ef7"
@@ -19,11 +19,11 @@ class Asnmap < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/asnmap"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdasnmap"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/asnmap -version 2>&1")
-    assert_match "1.1.1.0/24", shell_output("#{bin}/asnmap -i 1.1.1.1")
+    assert_match version.to_s, shell_output("#{bin}asnmap -version 2>&1")
+    assert_match "1.1.1.024", shell_output("#{bin}asnmap -i 1.1.1.1")
   end
 end

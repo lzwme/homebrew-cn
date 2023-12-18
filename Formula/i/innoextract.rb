@@ -1,15 +1,15 @@
 class Innoextract < Formula
   desc "Tool to unpack installers created by Inno Setup"
-  homepage "https://constexpr.org/innoextract/"
-  url "https://constexpr.org/innoextract/files/innoextract-1.9.tar.gz"
+  homepage "https:constexpr.orginnoextract"
+  url "https:constexpr.orginnoextractfilesinnoextract-1.9.tar.gz"
   sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
   license "Zlib"
   revision 6
-  head "https://github.com/dscharrer/innoextract.git", branch: "master"
+  head "https:github.comdscharrerinnoextract.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?innoextract[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?innoextract[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,6 +35,6 @@ class Innoextract < Formula
   end
 
   test do
-    system "#{bin}/innoextract", "--version"
+    system "#{bin}innoextract", "--version"
   end
 end

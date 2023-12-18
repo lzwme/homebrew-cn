@@ -1,7 +1,7 @@
 class Scalariform < Formula
   desc "Scala source code formatter"
-  homepage "https://github.com/scala-ide/scalariform"
-  url "https://ghproxy.com/https://github.com/scala-ide/scalariform/releases/download/0.2.10/scalariform.jar"
+  homepage "https:github.comscala-idescalariform"
+  url "https:github.comscala-idescalariformreleasesdownload0.2.10scalariform.jar"
   sha256 "59d7c26f26c13bdbc27e3011da244f01001d55741058062f49e4626862b7991e"
   license "MIT"
 
@@ -16,7 +16,7 @@ class Scalariform < Formula
   end
 
   head do
-    url "https://github.com/scala-ide/scalariform.git", branch: "master"
+    url "https:github.comscala-idescalariform.git", branch: "master"
     depends_on "sbt" => :build
   end
 
@@ -25,11 +25,11 @@ class Scalariform < Formula
   def install
     if build.head?
       system "sbt", "project cli", "assembly"
-      libexec.install Dir["cli/target/scala-*/cli-assembly-*.jar"]
-      bin.write_jar_script Dir[libexec/"cli-assembly-*.jar"][0], "scalariform"
+      libexec.install Dir["clitargetscala-*cli-assembly-*.jar"]
+      bin.write_jar_script Dir[libexec"cli-assembly-*.jar"][0], "scalariform"
     else
       libexec.install "scalariform.jar"
-      bin.write_jar_script libexec/"scalariform.jar", "scalariform"
+      bin.write_jar_script libexec"scalariform.jar", "scalariform"
     end
   end
 
@@ -46,8 +46,8 @@ class Scalariform < Formula
       }
     EOS
 
-    (testpath/"foo.scala").write before_data
-    system bin/"scalariform", "-indentSpaces=3", testpath/"foo.scala"
-    assert_equal after_data, (testpath/"foo.scala").read
+    (testpath"foo.scala").write before_data
+    system bin"scalariform", "-indentSpaces=3", testpath"foo.scala"
+    assert_equal after_data, (testpath"foo.scala").read
   end
 end

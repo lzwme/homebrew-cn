@@ -1,11 +1,11 @@
 class GitReview < Formula
   desc "Submit git branches to gerrit for review"
-  homepage "https://opendev.org/opendev/git-review"
-  url "https://files.pythonhosted.org/packages/8e/5c/18f534e16b193be36d140939b79a8046e07f343b426054c084b12d59cf0b/git-review-2.3.1.tar.gz"
+  homepage "https:opendev.orgopendevgit-review"
+  url "https:files.pythonhosted.orgpackages8e5c18f534e16b193be36d140939b79a8046e07f343b426054c084b12d59cf0bgit-review-2.3.1.tar.gz"
   sha256 "24e938136eecb6e6cbb38b5e2b034a286b70b5bb8b5a2853585c9ed23636014f"
   license "Apache-2.0"
   revision 3
-  head "https://opendev.org/opendev/git-review.git", branch: "master"
+  head "https:opendev.orgopendevgit-review.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -34,11 +34,11 @@ class GitReview < Formula
     system "git", "init"
     system "git", "config", "user.name", "BrewTestBot"
     system "git", "config", "user.email", "BrewTestBot@test.com"
-    system "git", "remote", "add", "gerrit", "https://github.com/Homebrew/brew.sh"
-    (testpath/".git/hooks/commit-msg").write "# empty - make git-review happy"
-    (testpath/"foo").write "test file"
+    system "git", "remote", "add", "gerrit", "https:github.comHomebrewbrew.sh"
+    (testpath".githookscommit-msg").write "# empty - make git-review happy"
+    (testpath"foo").write "test file"
     system "git", "add", "foo"
     system "git", "commit", "-m", "test"
-    system "#{bin}/git-review", "--dry-run"
+    system "#{bin}git-review", "--dry-run"
   end
 end

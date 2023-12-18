@@ -2,11 +2,11 @@ cask "mission-control-plus" do
   version "1.23"
   sha256 "58ffd154bad723dbd413bb793b389c81e60f5a57611dae32e87c2fea65f2597b"
 
-  url "https://ghproxy.com/https://github.com/ronyfadel/MissionControlPlusReleases/releases/download/v#{version}/Mission.Control.Plus.tgz",
-      verified: "github.com/ronyfadel/MissionControlPlusReleases/"
+  url "https:github.comronyfadelMissionControlPlusReleasesreleasesdownloadv#{version}Mission.Control.Plus.tgz",
+      verified: "github.comronyfadelMissionControlPlusReleases"
   name "Mission Control Plus"
   desc "Manage your windows in Mission Control"
-  homepage "https://fadel.io/MissionControlPlus"
+  homepage "https:fadel.ioMissionControlPlus"
 
   depends_on macos: ">= :high_sierra"
 

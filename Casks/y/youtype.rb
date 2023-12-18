@@ -2,13 +2,13 @@ cask "youtype" do
   version "0.7.3"
   sha256 :no_check
 
-  url "https://github.com/freefelt/YouType/raw/main/YouType.zip"
+  url "https:github.comfreefeltYouTyperawmainYouType.zip"
   name "YouType"
   desc "Input method helper"
-  homepage "https://github.com/freefelt/YouType"
+  homepage "https:github.comfreefeltYouType"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/freefelt/YouType/main/appcast.xml"
+    url "https:raw.githubusercontent.comfreefeltYouTypemainappcast.xml"
     strategy :sparkle
   end
 
@@ -20,7 +20,7 @@ cask "youtype" do
   uninstall quit: "com.AVKorotkov.YouType"
 
   zap trash: [
-    "~/Library/Caches/com.AVKorotkov.YouType",
-    "~/Library/Preferences/com.AVKorotkov.YouType.plist",
+    "~LibraryCachescom.AVKorotkov.YouType",
+    "~LibraryPreferencescom.AVKorotkov.YouType.plist",
   ]
 end

@@ -1,7 +1,7 @@
 class Mdless < Formula
   desc "Provides a formatted and highlighted view of Markdown files in Terminal"
-  homepage "https://github.com/ttscoff/mdless"
-  url "https://ghproxy.com/https://github.com/ttscoff/mdless/archive/refs/tags/2.1.33.tar.gz"
+  homepage "https:github.comttscoffmdless"
+  url "https:github.comttscoffmdlessarchiverefstags2.1.33.tar.gz"
   sha256 "e8f43defe78ce64cb676363905e1a9c9ea621324a9ae4ed6f23ff875849b77c8"
   license "MIT"
 
@@ -22,18 +22,18 @@ class Mdless < Formula
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
-    bin.install libexec/"bin/#{name}"
-    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
+    bin.install libexec"bin#{name}"
+    bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    assert_match "mdless #{version}", shell_output("#{bin}/mdless --version")
-    (testpath/"test.md").write <<~EOS
+    assert_match "mdless #{version}", shell_output("#{bin}mdless --version")
+    (testpath"test.md").write <<~EOS
       # title first level
       ## title second level
     EOS
-    out = shell_output("#{bin}/mdless --no-color -P test.md")
-    assert_match(/^title first level =+$/, out)
-    assert_match(/^title second level -+$/, out)
+    out = shell_output("#{bin}mdless --no-color -P test.md")
+    assert_match(^title first level =+$, out)
+    assert_match(^title second level -+$, out)
   end
 end

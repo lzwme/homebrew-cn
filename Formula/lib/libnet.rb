@@ -1,7 +1,7 @@
 class Libnet < Formula
   desc "C library for creating IP packets"
-  homepage "https://github.com/libnet/libnet"
-  url "https://ghproxy.com/https://github.com/libnet/libnet/releases/download/v1.3/libnet-1.3.tar.gz"
+  homepage "https:github.comlibnetlibnet"
+  url "https:github.comlibnetlibnetreleasesdownloadv1.3libnet-1.3.tar.gz"
   sha256 "ad1e2dd9b500c58ee462acd839d0a0ea9a2b9248a1287840bc601e774fb6b28f"
   license "BSD-2-Clause"
 
@@ -19,13 +19,13 @@ class Libnet < Formula
   depends_on "pkg-config" => :test
 
   def install
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
     flags = shell_output("pkg-config --libs --cflags libnet").chomp.split
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <stdint.h>
       #include <libnet.h>
@@ -38,6 +38,6 @@ class Libnet < Formula
     EOS
 
     system ENV.cc, "test.c", *flags, "-o", "test"
-    assert_match version.to_s, shell_output("./test")
+    assert_match version.to_s, shell_output(".test")
   end
 end

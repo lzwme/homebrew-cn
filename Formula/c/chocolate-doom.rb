@@ -1,13 +1,13 @@
 class ChocolateDoom < Formula
   desc "Accurate source port of Doom"
-  homepage "https://www.chocolate-doom.org/"
-  url "https://www.chocolate-doom.org/downloads/3.0.1/chocolate-doom-3.0.1.tar.gz"
+  homepage "https:www.chocolate-doom.org"
+  url "https:www.chocolate-doom.orgdownloads3.0.1chocolate-doom-3.0.1.tar.gz"
   sha256 "d435d6177423491d60be706da9f07d3ab4fabf3e077ec2a3fc216e394fcfc8c7"
   license "GPL-2.0"
 
   livecheck do
-    url "https://www.chocolate-doom.org/downloads/"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https:www.chocolate-doom.orgdownloads"
+    regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class ChocolateDoom < Formula
   end
 
   head do
-    url "https://github.com/chocolate-doom/chocolate-doom.git", branch: "master"
+    url "https:github.comchocolate-doomchocolate-doom.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,14 +40,14 @@ class ChocolateDoom < Formula
   depends_on "sdl2_net"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", "--prefix=#{prefix}",
+    system ".autogen.sh" if build.head?
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--disable-sdltest"
     system "make", "install", "execgamesdir=#{bin}"
-    (share/"applications").rmtree
-    (share/"icons").rmtree
+    (share"applications").rmtree
+    (share"icons").rmtree
   end
 
   def caveats
@@ -62,6 +62,6 @@ class ChocolateDoom < Formula
   end
 
   test do
-    assert_match "Chocolate Doom #{version}", shell_output("#{bin}/chocolate-doom -nogui", 255)
+    assert_match "Chocolate Doom #{version}", shell_output("#{bin}chocolate-doom -nogui", 255)
   end
 end

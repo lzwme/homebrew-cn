@@ -2,10 +2,10 @@ cask "font-shrikhand" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/shrikhand/Shrikhand-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflshrikhandShrikhand-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Shrikhand"
-  homepage "https://fonts.google.com/specimen/Shrikhand"
+  homepage "https:fonts.google.comspecimenShrikhand"
 
   font "Shrikhand-Regular.ttf"
 

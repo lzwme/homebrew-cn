@@ -2,12 +2,12 @@ cask "font-reddit-sans" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
+  url "https:github.comgooglefonts.git",
       branch:    "main",
-      only_path: "ofl/redditsans"
+      only_path: "oflredditsans"
   name "Reddit Sans"
   desc "Complemented by reddit sans condensed and reddit mono"
-  homepage "https://github.com/googlefonts/redditsans.git"
+  homepage "https:github.comgooglefontsredditsans.git"
 
   font "RedditSans-Bold.ttf"
   font "RedditSans-BoldItalic.ttf"

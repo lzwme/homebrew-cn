@@ -1,13 +1,13 @@
 class Gwt < Formula
   desc "Google web toolkit"
-  homepage "https://www.gwtproject.org/"
-  url "https://ghproxy.com/https://github.com/gwtproject/gwt/releases/download/2.10.0/gwt-2.10.0.zip"
+  homepage "https:www.gwtproject.org"
+  url "https:github.comgwtprojectgwtreleasesdownload2.10.0gwt-2.10.0.zip"
   sha256 "3be5fe11c27e8fd5a513eff8b14c2f26999faf4b991a8ad428f1916a36884427"
   license "Apache-2.0"
 
   livecheck do
-    url "https://github.com/gwtproject/gwt.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.comgwtprojectgwt.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -20,12 +20,12 @@ class Gwt < Formula
     rm Dir["*.cmd"] # remove Windows cmd files
     libexec.install Dir["*"]
 
-    (bin/"i18nCreator").write_env_script libexec/"i18nCreator", Language::Java.overridable_java_home_env
-    (bin/"webAppCreator").write_env_script libexec/"webAppCreator", Language::Java.overridable_java_home_env
+    (bin"i18nCreator").write_env_script libexec"i18nCreator", Language::Java.overridable_java_home_env
+    (bin"webAppCreator").write_env_script libexec"webAppCreator", Language::Java.overridable_java_home_env
   end
 
   test do
-    system bin/"webAppCreator", "sh.brew.test"
-    assert_predicate testpath/"src/sh/brew/test.gwt.xml", :exist?
+    system bin"webAppCreator", "sh.brew.test"
+    assert_predicate testpath"srcshbrewtest.gwt.xml", :exist?
   end
 end

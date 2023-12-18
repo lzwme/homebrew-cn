@@ -1,10 +1,10 @@
 class Capstone < Formula
   desc "Multi-platform, multi-architecture disassembly framework"
-  homepage "https://www.capstone-engine.org/"
-  url "https://ghproxy.com/https://github.com/capstone-engine/capstone/archive/refs/tags/5.0.1.tar.gz"
+  homepage "https:www.capstone-engine.org"
+  url "https:github.comcapstone-enginecapstonearchiverefstags5.0.1.tar.gz"
   sha256 "2b9c66915923fdc42e0e32e2a9d7d83d3534a45bb235e163a70047951890c01a"
   license "BSD-3-Clause"
-  head "https://github.com/capstone-engine/capstone.git", branch: "next"
+  head "https:github.comcapstone-enginecapstone.git", branch: "next"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "667f0e0d8960724b71c950ccc7769e747269b828c9e1c90009dc5708d285a941"
@@ -21,16 +21,16 @@ class Capstone < Formula
   def install
     ENV["HOMEBREW_CAPSTONE"] = "1"
     ENV["PREFIX"] = prefix
-    system "./make.sh"
+    system ".make.sh"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    # code comes from https://www.capstone-engine.org/lang_c.html
-    (testpath/"test.c").write <<~EOS
+    # code comes from https:www.capstone-engine.orglang_c.html
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <inttypes.h>
-      #include <capstone/capstone.h>
+      #include <capstonecapstone.h>
       #define CODE "\\x55\\x48\\x8b\\x05\\xb8\\x13\\x00\\x00"
 
       int main()
@@ -54,6 +54,6 @@ class Capstone < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lcapstone", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

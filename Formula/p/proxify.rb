@@ -1,10 +1,10 @@
 class Proxify < Formula
-  desc "Portable proxy for capturing, manipulating, and replaying HTTP/HTTPS traffic"
-  homepage "https://github.com/projectdiscovery/proxify"
-  url "https://ghproxy.com/https://github.com/projectdiscovery/proxify/archive/refs/tags/v0.0.12.tar.gz"
+  desc "Portable proxy for capturing, manipulating, and replaying HTTPHTTPS traffic"
+  homepage "https:github.comprojectdiscoveryproxify"
+  url "https:github.comprojectdiscoveryproxifyarchiverefstagsv0.0.12.tar.gz"
   sha256 "ed58d5e2cf5d25f7f067e5b9d9b6c5de82d6d989dd04c7be40b4aef0beddb1ed"
   license "MIT"
-  head "https://github.com/projectdiscovery/proxify.git", branch: "main"
+  head "https:github.comprojectdiscoveryproxify.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5cb50cadfb17e4cb5aac19dcbf5c02fab196ccd4a761f7d63683f21de580009"
@@ -21,12 +21,12 @@ class Proxify < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/proxify"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdproxify"
   end
 
   test do
     # Other commands start proxify, which causes Homebrew CI to time out
-    assert_match version.to_s, shell_output("#{bin}/proxify -version 2>&1")
-    assert_match "given config file 'brew' does not exist", shell_output("#{bin}/proxify -config brew 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}proxify -version 2>&1")
+    assert_match "given config file 'brew' does not exist", shell_output("#{bin}proxify -config brew 2>&1", 1)
   end
 end

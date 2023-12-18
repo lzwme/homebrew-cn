@@ -1,11 +1,11 @@
 class Tile38 < Formula
   desc "In-memory geolocation data store, spatial index, and realtime geofence"
-  homepage "https://tile38.com/"
-  url "https://github.com/tidwall/tile38.git",
+  homepage "https:tile38.com"
+  url "https:github.comtidwalltile38.git",
       tag:      "1.32.1",
       revision: "c494fe5459f7040a1595fc0913f7f54e932a6201"
   license "MIT"
-  head "https://github.com/tidwall/tile38.git", branch: "master"
+  head "https:github.comtidwalltile38.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6686165c300f0116f67190bbe5b6944b04a2a10e242a3b036486095e5a4410b5"
@@ -20,18 +20,18 @@ class Tile38 < Formula
   depends_on "go" => :build
 
   def datadir
-    var/"tile38/data"
+    var"tile38data"
   end
 
   def install
     ldflags = %W[
       -s -w
-      -X github.com/tidwall/tile38/core.Version=#{version}
-      -X github.com/tidwall/tile38/core.GitSHA=#{Utils.git_short_head}
+      -X github.comtidwalltile38core.Version=#{version}
+      -X github.comtidwalltile38core.GitSHA=#{Utils.git_short_head}
     ].join(" ")
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"tile38-server", "./cmd/tile38-server"
-    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"tile38-cli", "./cmd/tile38-cli"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin"tile38-server", ".cmdtile38-server"
+    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin"tile38-cli", ".cmdtile38-cli"
   end
 
   def post_install
@@ -46,25 +46,25 @@ class Tile38 < Formula
   end
 
   service do
-    run [opt_bin/"tile38-server", "-d", var/"tile38/data"]
+    run [opt_bin"tile38-server", "-d", var"tile38data"]
     keep_alive true
     working_dir var
-    log_path var/"log/tile38.log"
-    error_log_path var/"log/tile38.log"
+    log_path var"logtile38.log"
+    error_log_path var"logtile38.log"
   end
 
   test do
     port = free_port
     pid = fork do
-      exec "#{bin}/tile38-server", "-q", "-p", port.to_s
+      exec "#{bin}tile38-server", "-q", "-p", port.to_s
     end
     sleep 2
     # remove `$408` in the first line output
-    json_output = shell_output("#{bin}/tile38-cli -p #{port} server")
+    json_output = shell_output("#{bin}tile38-cli -p #{port} server")
     tile38_server = JSON.parse(json_output)
 
     assert_equal tile38_server["ok"], true
-    assert_predicate testpath/"data", :exist?
+    assert_predicate testpath"data", :exist?
   ensure
     Process.kill("HUP", pid)
   end

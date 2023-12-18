@@ -1,8 +1,8 @@
 class Libmrss < Formula
   desc "C library for RSS files or streams"
-  homepage "https://github.com/bakulf/libmrss"
+  homepage "https:github.combakulflibmrss"
   # Update to use an archive from GitHub once there's a release after 0.19.2
-  url "https://www.autistici.org/bakunin/libmrss/libmrss-0.19.2.tar.gz"
+  url "https:www.autistici.orgbakuninlibmrsslibmrss-0.19.2.tar.gz"
   sha256 "071416adcae5c1a9317a4a313f2deb34667e3cc2be4487fb3076528ce45b210b"
   license "LGPL-2.1-or-later"
 
@@ -23,7 +23,7 @@ class Libmrss < Formula
   end
 
   head do
-    url "https://github.com/bakulf/libmrss.git", branch: "master"
+    url "https:github.combakulflibmrss.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -43,12 +43,12 @@ class Libmrss < Formula
     if build.head?
       mkdir "m4"
       inreplace "autogen.sh", "libtoolize", "glibtoolize"
-      system "./autogen.sh"
+      system ".autogen.sh"
     elsif OS.mac?
       system "autoreconf", "--force", "--verbose", "--install"
     end
 
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"

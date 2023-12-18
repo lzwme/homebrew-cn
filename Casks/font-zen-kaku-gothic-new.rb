@@ -2,13 +2,13 @@ cask "font-zen-kaku-gothic-new" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/zenkakugothicnew"
+      only_path: "oflzenkakugothicnew"
   name "Zen Kaku Gothic New"
   desc "Classical yet simple and stylish version"
-  homepage "https://fonts.google.com/specimen/Zen+Kaku+Gothic+New"
+  homepage "https:fonts.google.comspecimenZen+Kaku+Gothic+New"
 
   font "ZenKakuGothicNew-Black.ttf"
   font "ZenKakuGothicNew-Bold.ttf"

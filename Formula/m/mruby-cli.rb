@@ -1,10 +1,10 @@
 class MrubyCli < Formula
   desc "Build native command-line applications for Linux, MacOS, and Windows"
-  homepage "https://github.com/hone/mruby-cli"
-  url "https://ghproxy.com/https://github.com/hone/mruby-cli/archive/refs/tags/v0.0.4.tar.gz"
+  homepage "https:github.comhonemruby-cli"
+  url "https:github.comhonemruby-cliarchiverefstagsv0.0.4.tar.gz"
   sha256 "97d889b5980193c562e82b42089b937e675b73950fa0d0c4e46fbe71d16d719f"
   license "MIT"
-  head "https://github.com/hone/mruby-cli.git", branch: "master"
+  head "https:github.comhonemruby-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4495dfded8fc9a3f3f90961612d6943113b3cc81b787e0cba2d4eadab304cd08"
@@ -33,24 +33,24 @@ class MrubyCli < Formula
     ENV["MRUBY_CLI_LOCAL"] = "true"
 
     # Edit config to skip building Linux and Windows binaries
-    rm buildpath/"build_config.rb"
+    rm buildpath"build_config.rb"
 
-    (buildpath/"build_config.rb").write <<~EOS
+    (buildpath"build_config.rb").write <<~EOS
       MRuby::Build.new do |conf|
         toolchain :#{(ENV.compiler == :gcc) ? "gcc" : "clang"}
 
         conf.gem File.expand_path(File.dirname(__FILE__))
-        conf.gem :github => 'iij/mruby-io'
+        conf.gem :github => 'iijmruby-io'
       end
     EOS
 
     system "rake", "compile"
-    bin.install "mruby/build/host/bin/mruby-cli"
+    bin.install "mrubybuildhostbinmruby-cli"
   end
 
   test do
-    system "#{bin}/mruby-cli", "--setup=brew"
-    assert File.file? "brew/mrblib/brew.rb"
-    assert File.file? "brew/tools/brew/brew.c"
+    system "#{bin}mruby-cli", "--setup=brew"
+    assert File.file? "brewmrblibbrew.rb"
+    assert File.file? "brewtoolsbrewbrew.c"
   end
 end

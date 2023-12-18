@@ -1,11 +1,11 @@
 class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
-  homepage "https://tanka.dev"
-  url "https://github.com/grafana/tanka.git",
+  homepage "https:tanka.dev"
+  url "https:github.comgrafanatanka.git",
       tag:      "v0.26.0",
       revision: "965612cecec8466a6f10c1ec1930b59d276b1766"
   license "Apache-2.0"
-  head "https://github.com/grafana/tanka.git", branch: "main"
+  head "https:github.comgrafanatanka.git", branch: "main"
 
   livecheck do
     url :stable
@@ -31,13 +31,13 @@ class Tanka < Formula
     ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
-      -X github.com/grafana/tanka/pkg/tanka.CurrentVersion=#{version}
+      -X github.comgrafanatankapkgtanka.CurrentVersion=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: bin/"tk"), "./cmd/tk"
+    system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: bin"tk"), ".cmdtk"
   end
 
   test do
-    system "git", "clone", "https://github.com/sh0rez/grafana.libsonnet"
-    system "#{bin}/tk", "show", "--dangerous-allow-redirect", "grafana.libsonnet/environments/default"
+    system "git", "clone", "https:github.comsh0rezgrafana.libsonnet"
+    system "#{bin}tk", "show", "--dangerous-allow-redirect", "grafana.libsonnetenvironmentsdefault"
   end
 end

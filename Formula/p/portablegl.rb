@@ -1,11 +1,11 @@
 class Portablegl < Formula
   desc "Implementation of OpenGL 3.x-ish in clean C"
-  homepage "https://github.com/rswinkle/PortableGL"
-  url "https://github.com/rswinkle/PortableGL.git",
+  homepage "https:github.comrswinklePortableGL"
+  url "https:github.comrswinklePortableGL.git",
     tag:      "0.97.1",
     revision: "24f8840b800f247c328860c578c19b0535be6d58"
   license "MIT"
-  head "https://github.com/rswinkle/PortableGL.git", branch: "master"
+  head "https:github.comrswinklePortableGL.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
@@ -23,7 +23,7 @@ class Portablegl < Formula
   def install
     include.install "portablegl.h"
     include.install "portablegl_unsafe.h"
-    (pkgshare/"tests").install %w[glcommon media testing]
+    (pkgshare"tests").install %w[glcommon media testing]
   end
 
   test do
@@ -31,10 +31,10 @@ class Portablegl < Formula
     # Such exactness may be broken by -march=native.
     ENV.remove_from_cflags "-march=native"
 
-    cp_r Dir["#{pkgshare}/tests/*"], testpath
+    cp_r Dir["#{pkgshare}tests*"], testpath
     cd "testing" do
       system "make", "run_tests"
-      assert_match "All tests passed", shell_output("./run_tests")
+      assert_match "All tests passed", shell_output(".run_tests")
     end
   end
 end

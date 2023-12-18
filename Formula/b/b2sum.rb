@@ -1,7 +1,7 @@
 class B2sum < Formula
   desc "BLAKE2 b2sum reference binary"
-  homepage "https://github.com/BLAKE2/BLAKE2"
-  url "https://ghproxy.com/https://github.com/BLAKE2/BLAKE2/archive/refs/tags/20190724.tar.gz"
+  homepage "https:github.comBLAKE2BLAKE2"
+  url "https:github.comBLAKE2BLAKE2archiverefstags20190724.tar.gz"
   sha256 "7f2c72859d462d604ab3c9b568c03e97b50a4052092205ad18733d254070ddc2"
   license "CC0-1.0"
 
@@ -24,7 +24,7 @@ class B2sum < Formula
 
   def install
     cd "b2sum" do
-      inreplace "makefile", "../sse", "../neon" if Hardware::CPU.arm?
+      inreplace "makefile", "..sse", "..neon" if Hardware::CPU.arm?
       system "make", "NO_OPENMP=1"
       system "make", "install", "PREFIX=#{prefix}", "MANDIR=#{man}"
     end
@@ -36,6 +36,6 @@ class B2sum < Formula
       aab792dc252d5de4533cc9518d38aa8dbf1925ab92386edd4009923  -
     EOS
     assert_equal checksum.delete!("\n"),
-                 pipe_output("#{bin}/b2sum -", "abc").chomp
+                 pipe_output("#{bin}b2sum -", "abc").chomp
   end
 end

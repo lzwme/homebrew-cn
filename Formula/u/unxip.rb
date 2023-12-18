@@ -1,11 +1,11 @@
 class Unxip < Formula
   desc "Fast Xcode unarchiver"
-  homepage "https://github.com/saagarjha/unxip"
-  url "https://github.com/saagarjha/unxip.git",
+  homepage "https:github.comsaagarjhaunxip"
+  url "https:github.comsaagarjhaunxip.git",
       tag:      "v3.0",
       revision: "aeb6160a8a8e8b2bdc2e0b9f747a4b941046c624"
   license "LGPL-3.0-only"
-  head "https://github.com/saagarjha/unxip.git", branch: "main"
+  head "https:github.comsaagarjhaunxip.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5df678380dc576645ab13265af663404c88cef771a7edf7ca0c72e7d7d2bf22d"
@@ -23,17 +23,17 @@ class Unxip < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/unxip"
+    bin.install ".buildreleaseunxip"
   end
 
   test do
-    assert_equal "unxip #{version}", shell_output("#{bin}/unxip --version").strip
+    assert_equal "unxip #{version}", shell_output("#{bin}unxip --version").strip
 
     # Create a sample xar archive just to satisfy a .xip header, then test
     # the failure case of expanding to a non-existent directory
     touch "foo.txt"
     system "xar", "-c", "-f", "foo.xip", "foo.txt"
-    assert_match %r{^Failed to access output directory at /not/a/real/dir.*$},
-      shell_output("2>&1 #{bin}/unxip foo.xip /not/a/real/dir", 1)
+    assert_match %r{^Failed to access output directory at notarealdir.*$},
+      shell_output("2>&1 #{bin}unxip foo.xip notarealdir", 1)
   end
 end

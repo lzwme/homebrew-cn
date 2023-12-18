@@ -1,10 +1,10 @@
 class Skeema < Formula
   desc "Declarative pure-SQL schema management for MySQL and MariaDB"
-  homepage "https://www.skeema.io/"
-  url "https://ghproxy.com/https://github.com/skeema/skeema/archive/refs/tags/v1.11.1.tar.gz"
+  homepage "https:www.skeema.io"
+  url "https:github.comskeemaskeemaarchiverefstagsv1.11.1.tar.gz"
   sha256 "3da0888c67f90875e8c086f4f965965055d5990fb152359a4c898837cd7d0c51"
   license "Apache-2.0"
-  head "https://github.com/skeema/skeema.git", branch: "main"
+  head "https:github.comskeemaskeema.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c8d149fa3bbdea602c3a4821aba1dc222a78bf66f52f4dbf11a995e9c7c7866"
@@ -24,11 +24,11 @@ class Skeema < Formula
 
   test do
     assert_match "Option --host must be supplied on the command-line",
-      shell_output("#{bin}/skeema init 2>&1", 78)
+      shell_output("#{bin}skeema init 2>&1", 78)
 
     assert_match "Unable to connect to localhost",
-      shell_output("#{bin}/skeema init -h localhost -u root --password=test 2>&1", 2)
+      shell_output("#{bin}skeema init -h localhost -u root --password=test 2>&1", 2)
 
-    assert_match version.to_s, shell_output("#{bin}/skeema --version")
+    assert_match version.to_s, shell_output("#{bin}skeema --version")
   end
 end

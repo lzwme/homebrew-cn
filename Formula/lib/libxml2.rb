@@ -1,7 +1,7 @@
 class Libxml2 < Formula
   desc "GNOME XML library"
-  homepage "http://xmlsoft.org/"
-  url "https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.3.tar.xz"
+  homepage "http:xmlsoft.org"
+  url "https:download.gnome.orgsourceslibxml22.12libxml2-2.12.3.tar.xz"
   sha256 "8c8f1092340a89ff32bc44ad5c9693aff9bc8a7a3e161bb239666e5d15ac9aaa"
   license "MIT"
 
@@ -9,7 +9,7 @@ class Libxml2 < Formula
   # minor is stable" version scheme.
   livecheck do
     url :stable
-    regex(/libxml2[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(libxml2[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Libxml2 < Formula
   end
 
   head do
-    url "https://gitlab.gnome.org/GNOME/libxml2.git", branch: "master"
+    url "https:gitlab.gnome.orgGNOMElibxml2.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -44,13 +44,13 @@ class Libxml2 < Formula
 
   def pythons
     deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .map { |f| f.opt_libexec/"bin/python" }
+        .select { |f| f.name.match?(^python@\d\.\d+$) }
+        .map { |f| f.opt_libexec"binpython" }
   end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", *std_configure_args,
+    system ".configure", *std_configure_args,
                           "--sysconfdir=#{etc}",
                           "--disable-silent-rules",
                           "--with-history",
@@ -62,9 +62,9 @@ class Libxml2 < Formula
     cd "python" do
       sdk_include = if OS.mac?
         sdk = MacOS.sdk_path_if_needed
-        sdk/"usr/include" if sdk
+        sdk"usrinclude" if sdk
       else
-        HOMEBREW_PREFIX/"include"
+        HOMEBREW_PREFIX"include"
       end
 
       includes = [include, sdk_include].compact.map do |inc|
@@ -76,8 +76,8 @@ class Libxml2 < Formula
                             "includes_dir = [#{includes}"
 
       # Needed for Python 3.12+.
-      # https://github.com/Homebrew/homebrew-core/pull/154551#issuecomment-1820102786
-      with_env(PYTHONPATH: buildpath/"python") do
+      # https:github.comHomebrewhomebrew-corepull154551#issuecomment-1820102786
+      with_env(PYTHONPATH: buildpath"python") do
         pythons.each do |python|
           system python, "-m", "pip", "install", *std_pip_args, "."
         end
@@ -86,8 +86,8 @@ class Libxml2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <libxml/tree.h>
+    (testpath"test.c").write <<~EOS
+      #include <libxmltree.h>
 
       int main()
       {
@@ -100,18 +100,18 @@ class Libxml2 < Formula
     EOS
 
     # Test build with xml2-config
-    args = shell_output("#{bin}/xml2-config --cflags --libs").split
+    args = shell_output("#{bin}xml2-config --cflags --libs").split
     system ENV.cc, "test.c", "-o", "test", *args
-    system "./test"
+    system ".test"
 
     # Test build with pkg-config
-    ENV.append "PKG_CONFIG_PATH", lib/"pkgconfig"
-    args = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs libxml-2.0").split
+    ENV.append "PKG_CONFIG_PATH", lib"pkgconfig"
+    args = shell_output("#{Formula["pkg-config"].opt_bin}pkg-config --cflags --libs libxml-2.0").split
     system ENV.cc, "test.c", "-o", "test", *args
-    system "./test"
+    system ".test"
 
     pythons.each do |python|
-      with_env(PYTHONPATH: prefix/Language::Python.site_packages(python)) do
+      with_env(PYTHONPATH: prefixLanguage::Python.site_packages(python)) do
         system python, "-c", "import libxml2"
       end
     end

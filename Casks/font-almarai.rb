@@ -2,12 +2,12 @@ cask "font-almarai" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/almarai"
+      only_path: "oflalmarai"
   name "Almarai"
-  homepage "https://fonts.google.com/specimen/Almarai"
+  homepage "https:fonts.google.comspecimenAlmarai"
 
   font "Almarai-Bold.ttf"
   font "Almarai-ExtraBold.ttf"

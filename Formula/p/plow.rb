@@ -1,7 +1,7 @@
 class Plow < Formula
   desc "High-performance and real-time metrics displaying HTTP benchmarking tool"
-  homepage "https://github.com/six-ddc/plow"
-  url "https://ghproxy.com/https://github.com/six-ddc/plow/archive/refs/tags/v1.3.1.tar.gz"
+  homepage "https:github.comsix-ddcplow"
+  url "https:github.comsix-ddcplowarchiverefstagsv1.3.1.tar.gz"
   sha256 "0ae69218fc61d4bc036a62f3cc8a4e5f29fad0edefe9e991f0446f71d9e6d9ba"
   license "Apache-2.0"
 
@@ -26,6 +26,6 @@ class Plow < Formula
 
   test do
     output = "2xx"
-    assert_match output.to_s, shell_output("#{bin}/plow -n 1 https://httpbin.org/get")
+    assert_match output.to_s, shell_output("#{bin}plow -n 1 https:httpbin.orgget")
   end
 end

@@ -1,11 +1,11 @@
 class Awk < Formula
   desc "Text processing scripting language"
-  homepage "https://www.cs.princeton.edu/~bwk/btl.mirror/"
-  url "https://ghproxy.com/https://github.com/onetrueawk/awk/archive/refs/tags/20230909.tar.gz"
+  homepage "https:www.cs.princeton.edu~bwkbtl.mirror"
+  url "https:github.comonetrueawkawkarchiverefstags20230909.tar.gz"
   sha256 "24e554feb609fa2f5eb911fb8fe006c68d9042e34b2caafaad1f2200ce967c50"
-  # https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#Standard_ML_of_New_Jersey_Variant
+  # https:fedoraproject.orgwikiLicensing:MIT?rd=LicensingMIT#Standard_ML_of_New_Jersey_Variant
   license "MIT"
-  head "https://github.com/onetrueawk/awk.git", branch: "master"
+  head "https:github.comonetrueawkawk.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3741938ae9a555470dcfe75975f7f98b6d838bce024b561b1e380b8112ee6981"
@@ -32,6 +32,6 @@ class Awk < Formula
   end
 
   test do
-    assert_match "test", pipe_output("#{bin}/awk '{print $1}'", "test")
+    assert_match "test", pipe_output("#{bin}awk '{print $1}'", "test")
   end
 end

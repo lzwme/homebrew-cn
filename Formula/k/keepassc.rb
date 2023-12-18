@@ -2,8 +2,8 @@ class Keepassc < Formula
   include Language::Python::Virtualenv
 
   desc "Curses-based password manager for KeePass v.1.x and KeePassX"
-  homepage "https://github.com/raymontag/keepassc"
-  url "https://files.pythonhosted.org/packages/c8/87/a7d40d4a884039e9c967fb2289aa2aefe7165110a425c4fb74ea758e9074/keepassc-1.8.2.tar.gz"
+  homepage "https:github.comraymontagkeepassc"
+  url "https:files.pythonhosted.orgpackagesc887a7d40d4a884039e9c967fb2289aa2aefe7165110a425c4fb74ea758e9074keepassc-1.8.2.tar.gz"
   sha256 "2e1fc6ccd5325c6f745f2d0a3bb2be26851b90d2095402dd1481a5c197a7b24e"
   license "ISC"
   revision 4
@@ -22,23 +22,23 @@ class Keepassc < Formula
   depends_on "python@3.12"
 
   resource "kppy" do
-    url "https://files.pythonhosted.org/packages/c8/d9/6ced04177b4790ccb1ba44e466c5b67f3a1cfe4152fb05ef5f990678f94f/kppy-1.5.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagesc8d96ced04177b4790ccb1ba44e466c5b67f3a1cfe4152fb05ef5f990678f94fkppy-1.5.2.tar.gz"
     sha256 "08fc48462541a891debe8254208fe162bcc1cd40aba3f4ca98286401faf65f28"
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/14/c9/09d5df04c9f29ae1b49d0e34c9934646b53bb2131a55e8ed2a0d447c7c53/pycryptodomex-3.19.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages14c909d5df04c9f29ae1b49d0e34c9934646b53bb2131a55e8ed2a0d447c7c53pycryptodomex-3.19.0.tar.gz"
     sha256 "af83a554b3f077564229865c45af0791be008ac6469ef0098152139e6bd4b5b6"
   end
 
   def install
     virtualenv_install_with_resources
-    man1.install_symlink libexec.glob("share/man/man1/*.1")
+    man1.install_symlink libexec.glob("sharemanman1*.1")
   end
 
   test do
     # Fetching help is the only non-interactive action we can perform, and since
     # interactive actions are un-scriptable, there nothing more we can do.
-    system bin/"keepassc", "--help"
+    system bin"keepassc", "--help"
   end
 end

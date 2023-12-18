@@ -1,10 +1,10 @@
 class GitTracker < Formula
   desc "Integrate Pivotal Tracker into your Git workflow"
-  homepage "https://github.com/stevenharman/git_tracker"
-  url "https://ghproxy.com/https://github.com/stevenharman/git_tracker/archive/refs/tags/v2.0.0.tar.gz"
+  homepage "https:github.comstevenharmangit_tracker"
+  url "https:github.comstevenharmangit_trackerarchiverefstagsv2.0.0.tar.gz"
   sha256 "ec0a8d6dd056b8ae061d9ada08f1cc2db087e13aaecf4e0d150c1808e0250504"
   license "MIT"
-  head "https://github.com/stevenharman/git_tracker.git", branch: "main"
+  head "https:github.comstevenharmangit_tracker.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -26,11 +26,11 @@ class GitTracker < Formula
     system "rake", "standalone:install", "prefix=#{prefix}"
 
     # Replace `ruby` cellar path in shebang
-    inreplace bin/"git-tracker", Formula["ruby"].prefix.realpath, Formula["ruby"].opt_prefix unless OS.mac?
+    inreplace bin"git-tracker", Formula["ruby"].prefix.realpath, Formula["ruby"].opt_prefix unless OS.mac?
   end
 
   test do
-    output = shell_output("#{bin}/git-tracker help")
-    assert_match(/git-tracker \d+(\.\d+)* is installed\./, output)
+    output = shell_output("#{bin}git-tracker help")
+    assert_match(git-tracker \d+(\.\d+)* is installed\., output)
   end
 end

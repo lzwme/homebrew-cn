@@ -1,16 +1,16 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
-  homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.30.02.source.tar.gz"
+  homepage "https:root.cern.ch"
+  url "https:root.cern.chdownloadroot_v6.30.02.source.tar.gz"
   sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
   license "LGPL-2.1-or-later"
-  head "https://github.com/root-project/root.git", branch: "master"
+  head "https:github.comroot-projectroot.git", branch: "master"
 
   livecheck do
-    url "https://root.cern/install/all_releases/"
-    regex(%r{Release\s+v?(\d+(?:[./]\d*[02468])+)[ >]}i)
+    url "https:root.cerninstallall_releases"
+    regex(%r{Release\s+v?(\d+(?:[.]\d*[02468])+)[ >]}i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match[0].tr("/", ".") }
+      page.scan(regex).map { |match| match[0].tr("", ".") }
     end
   end
 
@@ -70,13 +70,13 @@ class Root < Formula
   end
 
   def install
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/root"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}root"
     ENV.remove "HOMEBREW_INCLUDE_PATHS", Formula["util-linux"].opt_include if OS.mac?
 
-    inreplace "cmake/modules/SearchInstalledSoftware.cmake" do |s|
+    inreplace "cmakemodulesSearchInstalledSoftware.cmake" do |s|
       # Enforce secure downloads of vendored dependencies. These are
       # checksummed in the cmake file with sha256.
-      s.gsub! "http://lcgpackages", "https://lcgpackages"
+      s.gsub! "http:lcgpackages", "https:lcgpackages"
       # Patch out check that skips using brewed glew.
       s.gsub! "CMAKE_VERSION VERSION_GREATER 3.15", "CMAKE_VERSION VERSION_GREATER 99.99"
     end
@@ -146,19 +146,19 @@ class Root < Formula
     ]
 
     # Workaround the shim directory being embedded into the output
-    inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
+    inreplace "buildunixcompiledata.sh", "`type -path $CXX`", ENV.cxx
 
-    # Homebrew now sets CMAKE_INSTALL_LIBDIR to /lib, which is incorrect
+    # Homebrew now sets CMAKE_INSTALL_LIBDIR to lib, which is incorrect
     # for ROOT with gnuinstall, so we set it back here.
-    system "cmake", "-S", ".", "-B", "builddir", *args, *std_cmake_args(install_libdir: "lib/root")
+    system "cmake", "-S", ".", "-B", "builddir", *args, *std_cmake_args(install_libdir: "libroot")
     system "cmake", "--build", "builddir"
     system "ctest", "-R", "tutorial-tree", "--verbose", "--parallel", ENV.make_jobs, "--test-dir", "builddir"
     system "cmake", "--install", "builddir"
 
     chmod 0755, bin.glob("*.*sh")
 
-    pth_contents = "import site; site.addsitedir('#{lib}/root')\n"
-    (prefix/Language::Python.site_packages(python3)/"homebrew-root.pth").write pth_contents
+    pth_contents = "import site; site.addsitedir('#{lib}root')\n"
+    (prefixLanguage::Python.site_packages(python3)"homebrew-root.pth").write pth_contents
   end
 
   def caveats
@@ -167,18 +167,18 @@ class Root < Formula
       depend on the custom variables set by them, you can still run them:
 
       For bash users:
-        . #{HOMEBREW_PREFIX}/bin/thisroot.sh
+        . #{HOMEBREW_PREFIX}binthisroot.sh
       For zsh users:
-        pushd #{HOMEBREW_PREFIX} >/dev/null; . bin/thisroot.sh; popd >/dev/null
-      For csh/tcsh users:
-        source #{HOMEBREW_PREFIX}/bin/thisroot.csh
+        pushd #{HOMEBREW_PREFIX} >devnull; . binthisroot.sh; popd >devnull
+      For cshtcsh users:
+        source #{HOMEBREW_PREFIX}binthisroot.csh
       For fish users:
-        . #{HOMEBREW_PREFIX}/bin/thisroot.fish
+        . #{HOMEBREW_PREFIX}binthisroot.fish
     EOS
   end
 
   test do
-    (testpath/"test.C").write <<~EOS
+    (testpath"test.C").write <<~EOS
       #include <iostream>
       void test() {
         std::cout << "Hello, world!" << std::endl;
@@ -186,18 +186,18 @@ class Root < Formula
     EOS
 
     # Test ROOT command line mode
-    system bin/"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
+    system bin"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"
 
     # Test ROOT executable
     assert_equal "\nProcessing test.C...\nHello, world!\n",
-                 shell_output("#{bin}/root -l -b -n -q test.C")
+                 shell_output("#{bin}root -l -b -n -q test.C")
 
     # Test ACLiC
     assert_equal "\nProcessing test.C+...\nHello, world!\n",
-                 shell_output("#{bin}/root -l -b -n -q test.C+")
+                 shell_output("#{bin}root -l -b -n -q test.C+")
 
     # Test linking
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <TString.h>
       int main() {
@@ -205,10 +205,10 @@ class Root < Formula
         return 0;
       }
     EOS
-    flags = %w[cflags libs ldflags].map { |f| "$(#{bin}/root-config --#{f})" }
-    flags << "-Wl,-rpath,#{lib}/root"
-    shell_output("$(#{bin}/root-config --cxx) test.cpp #{flags.join(" ")}")
-    assert_equal "Hello, world!\n", shell_output("./a.out")
+    flags = %w[cflags libs ldflags].map { |f| "$(#{bin}root-config --#{f})" }
+    flags << "-Wl,-rpath,#{lib}root"
+    shell_output("$(#{bin}root-config --cxx) test.cpp #{flags.join(" ")}")
+    assert_equal "Hello, world!\n", shell_output(".a.out")
 
     # Test Python module
     system python3, "-c", "import ROOT; ROOT.gSystem.LoadAllLibraries()"

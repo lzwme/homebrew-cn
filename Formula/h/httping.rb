@@ -1,7 +1,7 @@
 class Httping < Formula
   desc "Ping-like tool for HTTP requests"
-  homepage "https://github.com/folkertvanheusden/HTTPing"
-  url "https://ghproxy.com/https://github.com/folkertvanheusden/HTTPing/archive/refs/tags/v2.9.tar.gz"
+  homepage "https:github.comfolkertvanheusdenHTTPing"
+  url "https:github.comfolkertvanheusdenHTTPingarchiverefstagsv2.9.tar.gz"
   sha256 "37da3c89b917611d2ff81e2f6c9e9de39d160ef0ca2cb6ffec0bebcb9b45ef5d"
   license "GPL-3.0-only"
 
@@ -28,15 +28,15 @@ class Httping < Formula
   end
 
   def install
-    # Reported upstream, see: https://github.com/folkertvanheusden/HTTPing/issues/4
+    # Reported upstream, see: https:github.comfolkertvanheusdenHTTPingissues4
     inreplace "utils.h", "useconds_t", "unsigned int"
-    # Reported upstream, see: https://github.com/folkertvanheusden/HTTPing/issues/7
+    # Reported upstream, see: https:github.comfolkertvanheusdenHTTPingissues7
     inreplace %w[configure Makefile], "lncursesw", "lncurses"
     ENV.append "LDFLAGS", "-lintl" if OS.mac?
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    system bin/"httping", "-c", "2", "-g", "https://brew.sh/"
+    system bin"httping", "-c", "2", "-g", "https:brew.sh"
   end
 end

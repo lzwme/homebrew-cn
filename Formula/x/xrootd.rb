@@ -1,15 +1,15 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
-  homepage "https://xrootd.slac.stanford.edu/"
-  url "https://ghproxy.com/https://github.com/xrootd/xrootd/releases/download/v5.6.4/xrootd-5.6.4.tar.gz"
-  mirror "https://xrootd.slac.stanford.edu/download/v5.6.4/xrootd-5.6.4.tar.gz"
+  homepage "https:xrootd.slac.stanford.edu"
+  url "https:github.comxrootdxrootdreleasesdownloadv5.6.4xrootd-5.6.4.tar.gz"
+  mirror "https:xrootd.slac.stanford.edudownloadv5.6.4xrootd-5.6.4.tar.gz"
   sha256 "52f041ab2eaa4bf7c6087a7246c3d5f90fbab0b0622b57c018b65f60bf677fad"
   license "LGPL-3.0-or-later"
-  head "https://github.com/xrootd/xrootd.git", branch: "master"
+  head "https:github.comxrootdxrootd.git", branch: "master"
 
   livecheck do
-    url "https://xrootd.slac.stanford.edu/dload.html"
-    regex(/href=.*?xrootd[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:xrootd.slac.stanford.edudload.html"
+    regex(href=.*?xrootd[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -64,7 +64,7 @@ class Xrootd < Formula
   end
 
   test do
-    system "#{bin}/xrootd", "-H"
+    system "#{bin}xrootd", "-H"
     system "python3.12", "-c", <<~EOS
       import XRootD
       from XRootD import client

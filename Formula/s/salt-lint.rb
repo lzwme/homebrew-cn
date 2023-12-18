@@ -1,7 +1,7 @@
 class SaltLint < Formula
   desc "Check for best practices in SaltStack"
-  homepage "https://github.com/warpnet/salt-lint"
-  url "https://files.pythonhosted.org/packages/e5/e9/4df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5c/salt-lint-0.9.2.tar.gz"
+  homepage "https:github.comwarpnetsalt-lint"
+  url "https:files.pythonhosted.orgpackagese5e94df64ca147c084ca1cdbea9210549758d07f4ed94ac37d1cd1c99288ef5csalt-lint-0.9.2.tar.gz"
   sha256 "7f74e682e7fd78722a6d391ea8edc9fc795113ecfd40657d68057d404ee7be8e"
   license "MIT"
 
@@ -30,12 +30,12 @@ class SaltLint < Formula
   end
 
   test do
-    (testpath/"test.sls").write <<~EOS
-      /tmp/testfile:
+    (testpath"test.sls").write <<~EOS
+      tmptestfile:
         file.managed:
-            - source: salt://{{unspaced_var}}/example
+            - source: salt:{{unspaced_var}}example
     EOS
-    out = shell_output("#{bin}/salt-lint #{testpath}/test.sls", 2)
+    out = shell_output("#{bin}salt-lint #{testpath}test.sls", 2)
     assert_match "[206] Jinja variables should have spaces before and after: '{{ var_name }}'", out
   end
 end

@@ -1,10 +1,10 @@
 class SpicetifyCli < Formula
   desc "Command-line tool to customize Spotify client"
-  homepage "https://github.com/spicetify/spicetify-cli"
-  url "https://ghproxy.com/https://github.com/spicetify/spicetify-cli/archive/refs/tags/v2.28.1/v2.28.1.tar.gz"
+  homepage "https:github.comspicetifyspicetify-cli"
+  url "https:github.comspicetifyspicetify-cliarchiverefstagsv2.28.1v2.28.1.tar.gz"
   sha256 "62b866cf2175f174eb2c878a3cec86479df0348f1058a49f2886b39ebcc46b45"
   license "LGPL-2.1-only"
-  head "https://github.com/spicetify/spicetify-cli.git", branch: "master"
+  head "https:github.comspicetifyspicetify-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d07ad647aa227bab55a1d6a097e9b8775e05f684c07d05d26bd1885a5a705ce6"
@@ -23,7 +23,7 @@ class SpicetifyCli < Formula
       -s -w
       -X main.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: libexec/"spicetify")
+    system "go", "build", *std_go_args(ldflags: ldflags, output: libexec"spicetify")
     cd buildpath do
       libexec.install [
         "css-map.json",
@@ -33,24 +33,24 @@ class SpicetifyCli < Formula
         "jsHelper",
         "Themes",
       ]
-      bin.install_symlink libexec/"spicetify"
+      bin.install_symlink libexec"spicetify"
     end
   end
 
   test do
-    spotify_folder = testpath/"com.spotify.Client"
-    pref_file = spotify_folder/"com.spotify.client.plist"
+    spotify_folder = testpath"com.spotify.Client"
+    pref_file = spotify_folder"com.spotify.client.plist"
     mkdir_p spotify_folder
     touch pref_file
-    path = testpath/".config/spicetify/config-xpui.ini"
+    path = testpath".configspicetifyconfig-xpui.ini"
     path.write <<~EOS
       [Setting]
       spotify_path            = #{spotify_folder}
       current_theme           = SpicetifyDefault
       prefs_path              = #{pref_file}
     EOS
-    quiet_system bin/"spicetify", "config"
-    assert_match version.to_s, shell_output("#{bin}/spicetify -v")
-    assert_match "SpicetifyDefault", shell_output("#{bin}/spicetify config current_theme")
+    quiet_system bin"spicetify", "config"
+    assert_match version.to_s, shell_output("#{bin}spicetify -v")
+    assert_match "SpicetifyDefault", shell_output("#{bin}spicetify config current_theme")
   end
 end

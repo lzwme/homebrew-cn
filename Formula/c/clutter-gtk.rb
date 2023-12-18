@@ -1,7 +1,7 @@
 class ClutterGtk < Formula
   desc "GTK+ integration library for Clutter"
-  homepage "https://wiki.gnome.org/Projects/Clutter"
-  url "https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz"
+  homepage "https:wiki.gnome.orgProjectsClutter"
+  url "https:download.gnome.orgsourcesclutter-gtk1.8clutter-gtk-1.8.4.tar.xz"
   sha256 "521493ec038973c77edcb8bc5eac23eed41645117894aaee7300b2487cb42b06"
   revision 4
 
@@ -18,7 +18,7 @@ class ClutterGtk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae50137a8bf0f24cc4ea36fe43e5d16f295968ab2efa30c9af8abcb5513ba70f"
   end
 
-  # https://blogs.gnome.org/clutter/2022/02/16/retiring-clutter/
+  # https:blogs.gnome.orgclutter20220216retiring-clutter
   disable! date: "2023-09-25", because: :deprecated_upstream
 
   depends_on "gobject-introspection" => :build
@@ -30,7 +30,7 @@ class ClutterGtk < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
@@ -44,13 +44,13 @@ class ClutterGtk < Formula
       --disable-gtk-doc-html
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <clutter-gtk/clutter-gtk.h>
+    (testpath"test.c").write <<~EOS
+      #include <clutter-gtkclutter-gtk.h>
 
       int main(int argc, char *argv[]) {
         GOptionGroup *group = gtk_clutter_get_option_group();
@@ -74,25 +74,25 @@ class ClutterGtk < Formula
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
-      -I#{atk.opt_include}/atk-1.0
-      -I#{cairo.opt_include}/cairo
-      -I#{clutter.opt_include}/clutter-1.0
-      -I#{cogl.opt_include}/cogl
+      -I#{atk.opt_include}atk-1.0
+      -I#{cairo.opt_include}cairo
+      -I#{clutter.opt_include}clutter-1.0
+      -I#{cogl.opt_include}cogl
       -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gdk_pixbuf.opt_include}/gdk-pixbuf-2.0
+      -I#{freetype.opt_include}freetype2
+      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
       -I#{gettext.opt_include}
-      -I#{glib.opt_include}/gio-unix-2.0/
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtkx3.opt_include}/gtk-3.0
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/clutter-gtk-1.0
-      -I#{json_glib.opt_include}/json-glib-1.0
+      -I#{glib.opt_include}gio-unix-2.0
+      -I#{glib.opt_include}glib-2.0
+      -I#{glib.opt_lib}glib-2.0include
+      -I#{gtkx3.opt_include}gtk-3.0
+      -I#{harfbuzz.opt_include}harfbuzz
+      -I#{include}clutter-gtk-1.0
+      -I#{json_glib.opt_include}json-glib-1.0
       -I#{libepoxy.opt_include}
-      -I#{libpng.opt_include}/libpng16
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
+      -I#{libpng.opt_include}libpng16
+      -I#{pango.opt_include}pango-1.0
+      -I#{pixman.opt_include}pixman-1
       -D_REENTRANT
       -L#{atk.opt_lib}
       -L#{cairo.opt_lib}
@@ -126,6 +126,6 @@ class ClutterGtk < Formula
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags
-    system "./test"
+    system ".test"
   end
 end

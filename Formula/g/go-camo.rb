@@ -1,7 +1,7 @@
 class GoCamo < Formula
   desc "Secure image proxy server"
-  homepage "https://github.com/cactus/go-camo"
-  url "https://ghproxy.com/https://github.com/cactus/go-camo/archive/refs/tags/v2.4.7.tar.gz"
+  homepage "https:github.comcactusgo-camo"
+  url "https:github.comcactusgo-camoarchiverefstagsv2.4.7.tar.gz"
   sha256 "5ca7d386c5a254e67e52c40163d905730db9bdb4be3a23185c358a28eede3a6c"
   license "MIT"
 
@@ -19,20 +19,20 @@ class GoCamo < Formula
 
   def install
     system "make", "build", "APP_VER=#{version}"
-    bin.install Dir["build/bin/*"]
+    bin.install Dir["buildbin*"]
   end
 
   test do
     port = free_port
     fork do
-      exec bin/"go-camo", "--key", "somekey", "--listen", "127.0.0.1:#{port}", "--metrics"
+      exec bin"go-camo", "--key", "somekey", "--listen", "127.0.0.1:#{port}", "--metrics"
     end
     sleep 1
-    assert_match "200 OK", shell_output("curl -sI http://localhost:#{port}/metrics")
+    assert_match "200 OK", shell_output("curl -sI http:localhost:#{port}metrics")
 
-    url = "http://golang.org/doc/gopher/frontpage.png"
-    encoded = shell_output("#{bin}/url-tool -k 'test' encode -p 'https://img.example.org' '#{url}'").chomp
-    decoded = shell_output("#{bin}/url-tool -k 'test' decode '#{encoded}'").chomp
+    url = "http:golang.orgdocgopherfrontpage.png"
+    encoded = shell_output("#{bin}url-tool -k 'test' encode -p 'https:img.example.org' '#{url}'").chomp
+    decoded = shell_output("#{bin}url-tool -k 'test' decode '#{encoded}'").chomp
     assert_equal url, decoded
   end
 end

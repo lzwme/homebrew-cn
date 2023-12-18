@@ -1,10 +1,10 @@
 class DockerCompose < Formula
   desc "Isolated development environments using Docker"
-  homepage "https://docs.docker.com/compose/"
-  url "https://ghproxy.com/https://github.com/docker/compose/archive/refs/tags/v2.23.3.tar.gz"
+  homepage "https:docs.docker.comcompose"
+  url "https:github.comdockercomposearchiverefstagsv2.23.3.tar.gz"
   sha256 "29ba96c8d398fbc6f7c791c65e70b97e7df116223f2996062441093258d914fe"
   license "Apache-2.0"
-  head "https://github.com/docker/compose.git", branch: "main"
+  head "https:github.comdockercompose.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c18c382593eb2cd4281ea9d0c2efe4b4d6b6f489575c206cca9b8f1b89ba044"
@@ -21,21 +21,21 @@ class DockerCompose < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/docker/compose/v2/internal.Version=#{version}
+      -X github.comdockercomposev2internal.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmd"
   end
 
   def caveats
     <<~EOS
       Compose is now a Docker plugin. For Docker to find this plugin, symlink it:
-        mkdir -p ~/.docker/cli-plugins
-        ln -sfn #{opt_bin}/docker-compose ~/.docker/cli-plugins/docker-compose
+        mkdir -p ~.dockercli-plugins
+        ln -sfn #{opt_bin}docker-compose ~.dockercli-pluginsdocker-compose
     EOS
   end
 
   test do
-    output = shell_output(bin/"docker-compose up 2>&1", 14)
+    output = shell_output(bin"docker-compose up 2>&1", 14)
     assert_match "no configuration file provided", output
   end
 end

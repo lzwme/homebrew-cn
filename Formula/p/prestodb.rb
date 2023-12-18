@@ -2,17 +2,17 @@ class Prestodb < Formula
   include Language::Python::Shebang
 
   desc "Distributed SQL query engine for big data"
-  homepage "https://prestodb.io"
-  url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/0.284/presto-server-0.284.tar.gz"
+  homepage "https:prestodb.io"
+  url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-server0.284presto-server-0.284.tar.gz"
   sha256 "2f5fa06f209ee62f8b4ce3be65e56d50cee44e364ed52866ba5832759008d18d"
   license "Apache-2.0"
 
   # Upstream has said that we should check Maven for Presto version information
   # and the highest version found there is newest:
-  # https://github.com/prestodb/presto/issues/16200
+  # https:github.comprestodbprestoissues16200
   livecheck do
-    url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-server/"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-server"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
   bottle do
@@ -23,26 +23,26 @@ class Prestodb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "893fd8e9e243f59a8e745fb1bc4d2e5e8b5e88997ad0df1724316171dfd2aabf"
   end
 
-  # https://github.com/prestodb/presto/issues/17146
+  # https:github.comprestodbprestoissues17146
   depends_on arch: :x86_64
   depends_on "openjdk@11"
   depends_on "python@3.12"
 
   resource "presto-cli" do
-    url "https://search.maven.org/remotecontent?filepath=com/facebook/presto/presto-cli/0.284/presto-cli-0.284-executable.jar"
+    url "https:search.maven.orgremotecontent?filepath=comfacebookprestopresto-cli0.284presto-cli-0.284-executable.jar"
     sha256 "628f71ee15c4ddbec7d6394fc069980f158af7c2d6eefc58758ea86dd46daff8"
   end
 
   def install
     libexec.install Dir["*"]
 
-    (libexec/"etc/node.properties").write <<~EOS
+    (libexec"etcnode.properties").write <<~EOS
       node.environment=production
       node.id=ffffffff-ffff-ffff-ffff-ffffffffffff
-      node.data-dir=#{var}/presto/data
+      node.data-dir=#{var}prestodata
     EOS
 
-    (libexec/"etc/jvm.config").write <<~EOS
+    (libexec"etcjvm.config").write <<~EOS
       -server
       -Xmx16G
       -XX:+UseG1GC
@@ -54,32 +54,32 @@ class Prestodb < Formula
       -Djdk.attach.allowAttachSelf=true
     EOS
 
-    (libexec/"etc/config.properties").write <<~EOS
+    (libexec"etcconfig.properties").write <<~EOS
       coordinator=true
       node-scheduler.include-coordinator=true
       http-server.http.port=8080
       query.max-memory=5GB
       query.max-memory-per-node=1GB
       discovery-server.enabled=true
-      discovery.uri=http://localhost:8080
+      discovery.uri=http:localhost:8080
     EOS
 
-    (libexec/"etc/log.properties").write "com.facebook.presto=INFO"
+    (libexec"etclog.properties").write "com.facebook.presto=INFO"
 
-    (libexec/"etc/catalog/jmx.properties").write "connector.name=jmx"
+    (libexec"etccatalogjmx.properties").write "connector.name=jmx"
 
-    rewrite_shebang detected_python_shebang, libexec/"bin/launcher.py"
+    rewrite_shebang detected_python_shebang, libexec"binlauncher.py"
     env = Language::Java.overridable_java_home_env("11")
-    env["PATH"] = "$JAVA_HOME/bin:$PATH"
-    (bin/"presto-server").write_env_script libexec/"bin/launcher", env
+    env["PATH"] = "$JAVA_HOMEbin:$PATH"
+    (bin"presto-server").write_env_script libexec"binlauncher", env
 
     resource("presto-cli").stage do
       libexec.install "presto-cli-#{version}-executable.jar"
-      bin.write_jar_script libexec/"presto-cli-#{version}-executable.jar", "presto", java_version: "11"
+      bin.write_jar_script libexec"presto-cli-#{version}-executable.jar", "presto", java_version: "11"
     end
 
     # Remove incompatible pre-built binaries
-    libprocname_dirs = libexec.glob("bin/procname/*")
+    libprocname_dirs = libexec.glob("binprocname*")
     # Keep the Linux-x86_64 directory to make bottles identical
     libprocname_dirs.reject! { |dir| dir.basename.to_s == "Linux-x86_64" }
     libprocname_dirs.reject! { |dir| dir.basename.to_s == "#{OS.kernel_name}-#{Hardware::CPU.arch}" }
@@ -87,34 +87,34 @@ class Prestodb < Formula
   end
 
   def post_install
-    (var/"presto/data").mkpath
+    (var"prestodata").mkpath
   end
 
   def caveats
     <<~EOS
-      Add connectors to #{opt_libexec}/etc/catalog/. See:
-      https://prestodb.io/docs/current/connector.html
+      Add connectors to #{opt_libexec}etccatalog. See:
+      https:prestodb.iodocscurrentconnector.html
     EOS
   end
 
   service do
-    run [opt_bin/"presto-server", "run"]
+    run [opt_bin"presto-server", "run"]
     working_dir opt_libexec
   end
 
   test do
     port = free_port
-    cp libexec/"etc/config.properties", testpath/"config.properties"
-    inreplace testpath/"config.properties", "8080", port.to_s
+    cp libexec"etcconfig.properties", testpath"config.properties"
+    inreplace testpath"config.properties", "8080", port.to_s
     server = fork do
-      exec bin/"presto-server", "run", "--verbose",
+      exec bin"presto-server", "run", "--verbose",
                                        "--data-dir", testpath,
-                                       "--config", testpath/"config.properties"
+                                       "--config", testpath"config.properties"
     end
     sleep 30
 
     query = "SELECT state FROM system.runtime.nodes"
-    output = shell_output(bin/"presto --debug --server localhost:#{port} --execute '#{query}'")
+    output = shell_output(bin"presto --debug --server localhost:#{port} --execute '#{query}'")
     assert_match "\"active\"", output
   ensure
     Process.kill("TERM", server)

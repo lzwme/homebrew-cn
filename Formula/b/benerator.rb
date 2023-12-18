@@ -1,7 +1,7 @@
 class Benerator < Formula
   desc "Tool for realistic test data generation"
-  homepage "https://rapiddweller.github.io/homebrew-benerator/"
-  url "https://ghproxy.com/https://github.com/rapiddweller/rapiddweller-benerator-ce/releases/download/3.1.0/rapiddweller-benerator-ce-3.1.0-jdk-11-dist.tar.gz"
+  homepage "https:rapiddweller.github.iohomebrew-benerator"
+  url "https:github.comrapiddwellerrapiddweller-benerator-cereleasesdownload3.1.0rapiddweller-benerator-ce-3.1.0-jdk-11-dist.tar.gz"
   sha256 "194feb051ae18cfcd407b8e1668ce9c60561394bc454f9fc9747c274166843bc"
   license "Apache-2.0"
 
@@ -13,87 +13,87 @@ class Benerator < Formula
 
   def install
     # Remove unnecessary files
-    rm_f Dir["bin/*.bat", "bin/pom.xml"]
+    rm_f Dir["bin*.bat", "binpom.xml"]
 
     # Installs only the "bin" and "lib" directories from the tarball
     libexec.install Dir["bin", "lib"]
     # Generate a script that sets the necessary environment variables
     env = Language::Java.overridable_java_home_env
     env["BENERATOR_HOME"] = libexec
-    (bin/"benerator").write_env_script(libexec/"bin/benerator", env)
+    (bin"benerator").write_env_script(libexec"binbenerator", env)
   end
 
   test do
     # Test if version is correct
     assert_match "Benerator Community Edition #{version}-jdk-11",
-                 shell_output("#{bin}/benerator --version")
-    assert_match "Java version:  #{Formula["openjdk"].version}", shell_output("#{bin}/benerator --version")
+                 shell_output("#{bin}benerator --version")
+    assert_match "Java version:  #{Formula["openjdk"].version}", shell_output("#{bin}benerator --version")
     # Test if data is generated follow the corrected scheme.
-    # We feed benerator an xml and a scheme in demo/db/script/h2.multischema.sql.
-    # The XML scheme in myscript.xml have an inhouse test in <evaluate /> to check if the data is generated correctly,
+    # We feed benerator an xml and a scheme in demodbscripth2.multischema.sql.
+    # The XML scheme in myscript.xml have an inhouse test in <evaluate > to check if the data is generated correctly,
     # If no, benerator will throw an error, otherwise a success message will be printed.
-    (testpath/"myscript.xml").write <<~XML
+    (testpath"myscript.xml").write <<~XML
       <setup defaultDataset="US" defaultLocale="en_US">
-      <import domains="person,net,product"/>
-      <import platforms="db"/>
+      <import domains="person,net,product">
+      <import platforms="db">
 
-      <comment>setting default values</comment>
-      <setting name="stage" default="development"/>
-      <setting name="database" default="h2"/>
-      <setting name="dbUrl" default="jdbc:h2:mem:benerator"/>
-      <setting name="dbDriver" default="org.h2.Driver"/>
-      <setting name="dbSchema" default="public"/>
-      <setting name="dbUser" default="sa"/>
+      <comment>setting default values<comment>
+      <setting name="stage" default="development">
+      <setting name="database" default="h2">
+      <setting name="dbUrl" default="jdbc:h2:mem:benerator">
+      <setting name="dbDriver" default="org.h2.Driver">
+      <setting name="dbSchema" default="public">
+      <setting name="dbUser" default="sa">
 
-      <comment>log the settings to the console</comment>
-      <echo>{ftl:encoding:${context.defaultEncoding} default pageSize:${context.defaultPageSize}}</echo>
-      <echo>{ftl:JDBC URL: ${dbUrl}}</echo>
+      <comment>log the settings to the console<comment>
+      <echo>{ftl:encoding:${context.defaultEncoding} default pageSize:${context.defaultPageSize}}<echo>
+      <echo>{ftl:JDBC URL: ${dbUrl}}<echo>
 
-      <comment>define a database that will be referred by the id 'db' subsequently</comment>
+      <comment>define a database that will be referred by the id 'db' subsequently<comment>
       <database id="db"
       url="{dbUrl}"
       driver="{dbDriver}"
       schema="{dbSchema}"
       user="{dbUser}"
-      />
+      >
 
-      <execute type="sql" target="db" uri="demo/db/script/h2.multischema.sql"/>
+      <execute type="sql" target="db" uri="demodbscripth2.multischema.sql">
 
       <database id="schema1" url="{dbUrl}" driver="{dbDriver}" schema="schema1"
-      user="{dbUser}"/>
+      user="{dbUser}">
       <database id="schema3" url="{dbUrl}" driver="{dbDriver}" schema="schema3"
-      user="{dbUser}"/>
+      user="{dbUser}">
 
       <generate type="db_manufacturer" count="100" consumer="schema3">
-      <id name="id" generator="IncrementGenerator"/>
-      <attribute name="name" pattern="[A-Z][A-Z]{5,12}"/>
-      </generate>
+      <id name="id" generator="IncrementGenerator">
+      <attribute name="name" pattern="[A-Z][A-Z]{5,12}">
+      <generate>
       <generate type="db_Category" count="10" consumer="schema1">
-      <id name="id" generator="IncrementGenerator"/>
-      </generate>
+      <id name="id" generator="IncrementGenerator">
+      <generate>
       <generate type="db_product" count="100" consumer="schema1">
-      <id name="ean_code" generator="EANGenerator"/>
-      <attribute name="price" pattern="[1-9]{1,2}"/>
-      <attribute name="name" pattern="[A-Z][A-Z]{5,12}"/>
-      <attribute name="notes" pattern="[A-Z][\n][a-z][0-9]{1,256}"/>
-      <attribute name="description" pattern="[A-Z][\n][a-z][0-9]{1,256}"/>
-      <reference name="manufacturer_id" source="schema3" targetType="db_manufacturer"/>
-      </generate>
+      <id name="ean_code" generator="EANGenerator">
+      <attribute name="price" pattern="[1-9]{1,2}">
+      <attribute name="name" pattern="[A-Z][A-Z]{5,12}">
+      <attribute name="notes" pattern="[A-Z][\n][a-z][0-9]{1,256}">
+      <attribute name="description" pattern="[A-Z][\n][a-z][0-9]{1,256}">
+      <reference name="manufacturer_id" source="schema3" targetType="db_manufacturer">
+      <generate>
 
-      <echo>Printing all generated data</echo>
-      <iterate name="CAT_TRANS" type="db_Category" source="schema1" consumer="ConsoleExporter"/>
-      <iterate name="PROD_TRANS" type="db_product" source="schema1" consumer="ConsoleExporter"/>
-      <iterate name="MAN_TRANS" type="db_manufacturer" source="schema3" consumer="ConsoleExporter"/>
+      <echo>Printing all generated data<echo>
+      <iterate name="CAT_TRANS" type="db_Category" source="schema1" consumer="ConsoleExporter">
+      <iterate name="PROD_TRANS" type="db_product" source="schema1" consumer="ConsoleExporter">
+      <iterate name="MAN_TRANS" type="db_manufacturer" source="schema3" consumer="ConsoleExporter">
 
-      <echo>Verifying generated data</echo>
-      <evaluate assert="result == 10" target="schema1">select count(*) from "schema1"."db_Category"</evaluate>
-      <evaluate assert="result == 100" target="schema1">select count(*) from "schema1"."db_product"</evaluate>
-      <evaluate assert="result == 100" target="schema3">select count(*) from "schema3"."db_manufacturer"</evaluate>
-      <echo>No Error Occurs. Data Generated Correctly</echo>
-      </setup>
+      <echo>Verifying generated data<echo>
+      <evaluate assert="result == 10" target="schema1">select count(*) from "schema1"."db_Category"<evaluate>
+      <evaluate assert="result == 100" target="schema1">select count(*) from "schema1"."db_product"<evaluate>
+      <evaluate assert="result == 100" target="schema3">select count(*) from "schema3"."db_manufacturer"<evaluate>
+      <echo>No Error Occurs. Data Generated Correctly<echo>
+      <setup>
     XML
 
     assert_match "No Error Occurs. Data Generated Correctly",
-      shell_output("#{bin}/benerator myscript.xml")
+      shell_output("#{bin}benerator myscript.xml")
   end
 end

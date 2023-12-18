@@ -1,10 +1,10 @@
 class Vitetris < Formula
   desc "Terminal-based Tetris clone"
-  homepage "https://www.victornils.net/tetris/"
-  url "https://ghproxy.com/https://github.com/vicgeralds/vitetris/archive/refs/tags/v0.59.1.tar.gz"
+  homepage "https:www.victornils.nettetris"
+  url "https:github.comvicgeraldsvitetrisarchiverefstagsv0.59.1.tar.gz"
   sha256 "699443df03c8d4bf2051838c1015da72039bbbdd0ab0eede891c59c840bdf58d"
   license "BSD-2-Clause"
-  head "https://github.com/vicgeralds/vitetris.git", branch: "master"
+  head "https:github.comvicgeraldsvitetris.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -26,11 +26,11 @@ class Vitetris < Formula
     # 'install'
     inreplace "Makefile", "-strip --strip-all $(PROGNAME)", "-strip $(PROGNAME)"
 
-    system "./configure", "--prefix=#{prefix}", "--without-xlib"
+    system ".configure", "--prefix=#{prefix}", "--without-xlib"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/tetris", "-hiscore"
+    system "#{bin}tetris", "-hiscore"
   end
 end

@@ -1,19 +1,19 @@
-require "language/node"
+require "languagenode"
 
 class Lanraragi < Formula
-  desc "Web application for archival and reading of manga/doujinshi"
-  homepage "https://github.com/Difegue/LANraragi"
+  desc "Web application for archival and reading of mangadoujinshi"
+  homepage "https:github.comDifegueLANraragi"
   license "MIT"
-  head "https://github.com/Difegue/LANraragi.git", branch: "dev"
+  head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   stable do
-    url "https://ghproxy.com/https://github.com/Difegue/LANraragi/archive/refs/tags/v.0.9.0.tar.gz"
+    url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.0.tar.gz"
     sha256 "76390a12c049216c708b522372a7eed9f2fcf8f8d462af107d881dbb1ce3a79f"
 
-    # patch for `Can't load application from file ".../lanraragi": Can't open file "oshino"`
+    # patch for `Can't load application from file "...lanraragi": Can't open file "oshino"`
     # remove in next release
     patch do
-      url "https://github.com/Difegue/LANraragi/commit/d2ab6807cc4b1ed1fe902c264cba7750ae07f435.patch?full_index=1"
+      url "https:github.comDifegueLANraragicommitd2ab6807cc4b1ed1fe902c264cba7750ae07f435.patch?full_index=1"
       sha256 "3edc8e1248e5931bfc7f983af93b92354bb85368582d4ccedcd1af93013ce24a"
     end
   end
@@ -46,23 +46,23 @@ class Lanraragi < Formula
 
   resource "libarchive-headers" do
     on_macos do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-121.tar.gz"
+      url "https:github.comapple-oss-distributionslibarchivearchiverefstagslibarchive-121.tar.gz"
       sha256 "f38736ffdbf9005726bdc126e68ff34ddaee25326ae51d58e4385de717bc773f"
     end
   end
 
   resource "Image::Magick" do
-    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.1-20.tar.gz"
+    url "https:cpan.metacpan.orgauthorsidJJCJCRISTYImage-Magick-7.1.1-20.tar.gz"
     sha256 "a0c0305d0071b95d8580f1c18548beb683453d59d12cd8d9a9d3f6abe922ea38"
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", "#{libexec}/lib/perl5"
-    ENV.prepend_path "PERL5LIB", "#{libexec}/lib"
+    ENV.prepend_create_path "PERL5LIB", "#{libexec}libperl5"
+    ENV.prepend_path "PERL5LIB", "#{libexec}lib"
 
     # On Linux, use the headers provided by the libarchive formula rather than the ones provided by Apple.
     ENV["CFLAGS"] = if OS.mac?
-      "-I#{libexec}/include"
+      "-I#{libexec}include"
     else
       "-I#{Formula["libarchive"].opt_include}"
     end
@@ -72,8 +72,8 @@ class Lanraragi < Formula
     imagemagick = Formula["imagemagick"]
     resource("Image::Magick").stage do
       inreplace "Makefile.PL" do |s|
-        s.gsub! "/usr/local/include/ImageMagick-#{imagemagick.version.major}",
-                "#{imagemagick.opt_include}/ImageMagick-#{imagemagick.version.major}"
+        s.gsub! "usrlocalincludeImageMagick-#{imagemagick.version.major}",
+                "#{imagemagick.opt_include}ImageMagick-#{imagemagick.version.major}"
       end
 
       system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
@@ -83,20 +83,20 @@ class Lanraragi < Formula
 
     if OS.mac?
       resource("libarchive-headers").stage do
-        cd "libarchive/libarchive" do
-          (libexec/"include").install "archive.h", "archive_entry.h"
+        cd "libarchivelibarchive" do
+          (libexec"include").install "archive.h", "archive_entry.h"
         end
       end
     end
 
     system "cpanm", "Config::AutoConf", "--notest", "-l", libexec
     system "npm", "install", *Language::Node.local_npm_install_args
-    system "perl", "./tools/install.pl", "install-full"
+    system "perl", ".toolsinstall.pl", "install-full"
 
     prefix.install "README.md"
-    (libexec/"lib").install Dir["lib/*"]
+    (libexec"lib").install Dir["lib*"]
     libexec.install "script", "package.json", "public", "templates", "tests", "lrr.conf"
-    cd "tools/build/homebrew" do
+    cd "toolsbuildhomebrew" do
       bin.install "lanraragi"
       libexec.install "redis.conf"
     end
@@ -115,7 +115,7 @@ class Lanraragi < Formula
     %w[server.pid shinobu.pid minion.pid].each { |file| touch file }
 
     # Set PERL5LIB as we're not calling the launcher script
-    ENV["PERL5LIB"] = libexec/"lib/perl5"
+    ENV["PERL5LIB"] = libexec"libperl5"
 
     # This can't have its _user-facing_ functionality tested in the `brew test`
     # environment because it needs Redis. It fails spectacularly tho with some

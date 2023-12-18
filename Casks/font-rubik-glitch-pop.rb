@@ -2,9 +2,9 @@ cask "font-rubik-glitch-pop" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rubikglitchpop/RubikGlitchPop-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflrubikglitchpopRubikGlitchPop-Regular.ttf"
   name "Rubik Glitch Pop"
-  homepage "https://github.com/NaN-xyz/Rubik-Filtered"
+  homepage "https:github.comNaN-xyzRubik-Filtered"
 
   font "RubikGlitchPop-Regular.ttf"
 

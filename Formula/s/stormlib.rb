@@ -1,10 +1,10 @@
 class Stormlib < Formula
   desc "Library for handling Blizzard MPQ archives"
-  homepage "http://www.zezula.net/en/mpq/stormlib.html"
-  url "https://ghproxy.com/https://github.com/ladislav-zezula/StormLib/archive/refs/tags/v9.25.tar.gz"
+  homepage "http:www.zezula.netenmpqstormlib.html"
+  url "https:github.comladislav-zezulaStormLibarchiverefstagsv9.25.tar.gz"
   sha256 "414ebf1bdd220f3c8bc9eb93c063bb30238b45b2cd6e403d6415e5b71d0c3a40"
   license "MIT"
-  head "https://github.com/ladislav-zezula/StormLib.git", branch: "master"
+  head "https:github.comladislav-zezulaStormLib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "53a8d5890e45c6ef1cda6f3bf291cdbfbe686eae992c410cbac35761bab6e89b"
@@ -23,7 +23,7 @@ class Stormlib < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # prevents cmake from trying to write to /Library/Frameworks/
+  # prevents cmake from trying to write to LibraryFrameworks
   patch :DATA
 
   def install
@@ -34,7 +34,7 @@ class Stormlib < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <StormLib.h>
 
@@ -44,15 +44,15 @@ class Stormlib < Formula
       }
     EOS
     system ENV.cc, "-o", "test", "test.c"
-    assert_equal version.to_s, shell_output("./test")
+    assert_equal version.to_s, shell_output(".test")
   end
 end
 
 __END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
+diff --git aCMakeLists.txt bCMakeLists.txt
 index 9cf1050..b33e544 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
+--- aCMakeLists.txt
++++ bCMakeLists.txt
 @@ -340,7 +340,6 @@ if(BUILD_SHARED_LIBS)
      message(STATUS "Linking against dependent libraries dynamically")
 

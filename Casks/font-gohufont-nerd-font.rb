@@ -2,10 +2,10 @@ cask "font-gohufont-nerd-font" do
   version "3.1.1"
   sha256 "98bb2be01c1b3e955da08d4f4d7a2b351ffeec927787a84db41d4616c1eb9124"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/Gohu.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}Gohu.zip"
   name "GohuFont  Nerd Font families (Gohu)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

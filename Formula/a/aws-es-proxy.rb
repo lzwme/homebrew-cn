@@ -1,7 +1,7 @@
 class AwsEsProxy < Formula
   desc "Small proxy between HTTP client and AWS Elasticsearch"
-  homepage "https://github.com/abutaha/aws-es-proxy"
-  url "https://ghproxy.com/https://github.com/abutaha/aws-es-proxy/archive/refs/tags/v1.5.tar.gz"
+  homepage "https:github.comabutahaaws-es-proxy"
+  url "https:github.comabutahaaws-es-proxyarchiverefstagsv1.5.tar.gz"
   sha256 "ac6dca6cc271f57831ccf4a413e210d175641932e13dcd12c8d6036e8030e3a5"
   license "Apache-2.0"
 
@@ -21,7 +21,7 @@ class AwsEsProxy < Formula
 
   # patch to add the missing go.sum file, remove in next release
   patch do
-    url "https://github.com/abutaha/aws-es-proxy/commit/5a40bd821e26ce7b6827327f25b22854a07b8880.patch?full_index=1"
+    url "https:github.comabutahaaws-es-proxycommit5a40bd821e26ce7b6827327f25b22854a07b8880.patch?full_index=1"
     sha256 "b604cf8d51d3d325bd9810feb54f7bb1a1a7a226cada71a08dd93c5a76ffc15f"
   end
 
@@ -40,9 +40,9 @@ class AwsEsProxy < Formula
 
   test do
     address = "127.0.0.1:#{free_port}"
-    endpoint = "https://dummy-host.eu-west-1.es.amazonaws.com"
+    endpoint = "https:dummy-host.eu-west-1.es.amazonaws.com"
 
-    fork { exec "#{bin}/aws-es-proxy", "-listen=#{address}", "-endpoint=#{endpoint}" }
+    fork { exec "#{bin}aws-es-proxy", "-listen=#{address}", "-endpoint=#{endpoint}" }
     sleep 2
 
     output = shell_output("curl --silent #{address}")

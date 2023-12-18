@@ -1,7 +1,7 @@
 class Bomber < Formula
   desc "Scans Software Bill of Materials for security vulnerabilities"
-  homepage "https://github.com/devops-kung-fu/bomber"
-  url "https://ghproxy.com/https://github.com/devops-kung-fu/bomber/archive/refs/tags/v0.4.8.tar.gz"
+  homepage "https:github.comdevops-kung-fubomber"
+  url "https:github.comdevops-kung-fubomberarchiverefstagsv0.4.8.tar.gz"
   sha256 "f5bc3af8ea376a3cf4a2feadf33d6be7f9fb0da7371960c11dd70ace67dc92c5"
   license "MPL-2.0"
 
@@ -20,16 +20,16 @@ class Bomber < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"bomber", "completion")
+    generate_completions_from_executable(bin"bomber", "completion")
 
     pkgshare.install "_TESTDATA_"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bomber --version")
+    assert_match version.to_s, shell_output("#{bin}bomber --version")
 
-    cp pkgshare/"_TESTDATA_/sbom/bomber.spdx.json", testpath
-    output = shell_output("#{bin}/bomber scan bomber.spdx.json")
+    cp pkgshare"_TESTDATA_sbombomber.spdx.json", testpath
+    output = shell_output("#{bin}bomber scan bomber.spdx.json")
     assert_match "Total vulnerabilities found:", output
   end
 end

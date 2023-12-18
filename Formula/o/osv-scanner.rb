@@ -1,10 +1,10 @@
 class OsvScanner < Formula
   desc "Vulnerability scanner which uses the OSV database"
-  homepage "https://github.com/google/osv-scanner"
-  url "https://ghproxy.com/https://github.com/google/osv-scanner/archive/refs/tags/v1.5.0.tar.gz"
+  homepage "https:github.comgoogleosv-scanner"
+  url "https:github.comgoogleosv-scannerarchiverefstagsv1.5.0.tar.gz"
   sha256 "4de0d5f942270ac57a81d7f1ff42b68e6042be5a1afc5d119f4797952a0197d2"
   license "Apache-2.0"
-  head "https://github.com/google/osv-scanner.git", branch: "main"
+  head "https:github.comgoogleosv-scanner.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33a68970b8596bd120bc06f34358fded843c6e1028edfb9e948dbb59ed1e1193"
@@ -19,21 +19,21 @@ class OsvScanner < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/osv-scanner"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdosv-scanner"
   end
 
   test do
-    (testpath/"go.mod").write <<~EOS
+    (testpath"go.mod").write <<~EOS
       module my-library
 
       require (
-        github.com/BurntSushi/toml v1.0.0
+        github.comBurntSushitoml v1.0.0
       )
     EOS
 
-    scan_output = shell_output("#{bin}/osv-scanner --lockfile #{testpath}/go.mod").strip
+    scan_output = shell_output("#{bin}osv-scanner --lockfile #{testpath}go.mod").strip
     expected_output = <<~EOS.chomp
-      Scanned #{testpath}/go.mod file and found 2 packages
+      Scanned #{testpath}go.mod file and found 2 packages
       No issues found
     EOS
     assert_equal expected_output, scan_output

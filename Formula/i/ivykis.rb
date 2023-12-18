@@ -1,13 +1,13 @@
 class Ivykis < Formula
-  desc "Async I/O-assisting library"
-  homepage "https://sourceforge.net/projects/libivykis/"
-  url "https://ghproxy.com/https://github.com/buytenh/ivykis/archive/refs/tags/v0.42.4-trunk.tar.gz"
+  desc "Async IO-assisting library"
+  homepage "https:sourceforge.netprojectslibivykis"
+  url "https:github.combuytenhivykisarchiverefstagsv0.42.4-trunk.tar.gz"
   sha256 "b724516d6734f4d5c5f86ad80bde8fc7213c5a70ce2d46b9a2d86e8d150402b5"
   license "LGPL-2.1"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)(?:[._-]trunk)?$/i)
+    regex(^v?(\d+(?:\.\d+)+)(?:[._-]trunk)?$i)
   end
 
   bottle do
@@ -32,14 +32,14 @@ class Ivykis < Formula
 
   def install
     system "autoreconf", "-i"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    (testpath/"test_ivykis.c").write <<~EOS
+    (testpath"test_ivykis.c").write <<~EOS
       #include <stdio.h>
       #include <iv.h>
       int main()
@@ -50,6 +50,6 @@ class Ivykis < Formula
       }
     EOS
     system ENV.cc, "test_ivykis.c", "-L#{lib}", "-livykis", "-o", "test_ivykis"
-    system "./test_ivykis"
+    system ".test_ivykis"
   end
 end

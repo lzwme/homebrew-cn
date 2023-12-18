@@ -5,15 +5,15 @@ cask "openmw" do
   sha256 arm:   "72fdb7bc24d55685dfcd2973555e7a41bf7b7aabba0515c02904a48f48be6b05",
          intel: "b3fa91fe8055690cc0b3b5518e6cbbdd31825b5b3c937a748843c95400336ccf"
 
-  url "https://ghproxy.com/https://github.com/OpenMW/openmw/releases/download/openmw-#{version}/OpenMW-#{version}-macos-#{arch}.dmg",
-      verified: "github.com/OpenMW/openmw/"
+  url "https:github.comOpenMWopenmwreleasesdownloadopenmw-#{version}OpenMW-#{version}-macos-#{arch}.dmg",
+      verified: "github.comOpenMWopenmw"
   name "OpenMW"
   desc "Open-source open-world RPG game engine that supports playing Morrowind"
-  homepage "https://openmw.org/"
+  homepage "https:openmw.org"
 
   livecheck do
     url :url
-    regex(/openmw[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(openmw[._-]v?(\d+(?:\.\d+)+)i)
     strategy :github_latest
   end
 
@@ -21,9 +21,9 @@ cask "openmw" do
   app "OpenMW-CS.app"
 
   zap trash: [
-    "~/Library/Application Support/openmw",
-    "~/Library/Preferences/openmw",
-    "~/Library/Preferences/org.openmw.openmw.plist",
-    "~/Library/Saved Application State/org.openmw.*.savedState",
+    "~LibraryApplication Supportopenmw",
+    "~LibraryPreferencesopenmw",
+    "~LibraryPreferencesorg.openmw.openmw.plist",
+    "~LibrarySaved Application Stateorg.openmw.*.savedState",
   ]
 end

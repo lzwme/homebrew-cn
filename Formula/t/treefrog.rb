@@ -1,14 +1,14 @@
 class Treefrog < Formula
   desc "High-speed C++ MVC Framework for Web Application"
-  homepage "https://www.treefrogframework.org/"
-  url "https://ghproxy.com/https://github.com/treefrogframework/treefrog-framework/archive/refs/tags/v2.7.1.tar.gz"
+  homepage "https:www.treefrogframework.org"
+  url "https:github.comtreefrogframeworktreefrog-frameworkarchiverefstagsv2.7.1.tar.gz"
   sha256 "c7d2cb55a8796d7d0710af62068471dfb606fc5fdcdbaf7c91ec4b2c31a63a26"
   license "BSD-3-Clause"
-  head "https://github.com/treefrogframework/treefrog-framework.git", branch: "master"
+  head "https:github.comtreefrogframeworktreefrog-framework.git", branch: "master"
 
   livecheck do
     url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,14 +34,14 @@ class Treefrog < Formula
   fails_with gcc: "5"
 
   def install
-    # src/corelib.pro hardcodes different paths for mongo-c-driver headers on macOS and Linux.
+    # srccorelib.pro hardcodes different paths for mongo-c-driver headers on macOS and Linux.
     if OS.mac?
-      inreplace "src/corelib.pro", "/usr/local", HOMEBREW_PREFIX
+      inreplace "srccorelib.pro", "usrlocal", HOMEBREW_PREFIX
     else
-      inreplace "src/corelib.pro", "/usr/lib", HOMEBREW_PREFIX/"lib"
+      inreplace "srccorelib.pro", "usrlib", HOMEBREW_PREFIX"lib"
     end
 
-    system "./configure", "--prefix=#{prefix}", "--enable-shared-mongoc", "--enable-shared-glog"
+    system ".configure", "--prefix=#{prefix}", "--enable-shared-mongoc", "--enable-shared-glog"
 
     cd "src" do
       system "make"
@@ -56,15 +56,15 @@ class Treefrog < Formula
 
   test do
     ENV.delete "CPATH"
-    system bin/"tspawn", "new", "hello"
-    assert_predicate testpath/"hello", :exist?
+    system bin"tspawn", "new", "hello"
+    assert_predicate testpath"hello", :exist?
     cd "hello" do
-      assert_predicate Pathname.pwd/"hello.pro", :exist?
+      assert_predicate Pathname.pwd"hello.pro", :exist?
 
-      system Formula["qt"].opt_bin/"qmake"
-      assert_predicate Pathname.pwd/"Makefile", :exist?
+      system Formula["qt"].opt_bin"qmake"
+      assert_predicate Pathname.pwd"Makefile", :exist?
       system "make"
-      system bin/"treefrog", "-v"
+      system bin"treefrog", "-v"
     end
   end
 end

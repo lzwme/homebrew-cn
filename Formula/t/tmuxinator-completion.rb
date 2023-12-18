@@ -1,10 +1,10 @@
 class TmuxinatorCompletion < Formula
   desc "Shell completion for Tmuxinator"
-  homepage "https://github.com/tmuxinator/tmuxinator"
-  url "https://ghproxy.com/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.0.5.tar.gz"
+  homepage "https:github.comtmuxinatortmuxinator"
+  url "https:github.comtmuxinatortmuxinatorarchiverefstagsv3.0.5.tar.gz"
   sha256 "f67296a0b600fb5d8e51bf8fc9f8376a887754fd74cd59b6a8d9c962ad8f80a4"
   license "MIT"
-  head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"
+  head "https:github.comtmuxinatortmuxinator.git", branch: "master"
 
   livecheck do
     formula "tmuxinator"
@@ -17,13 +17,13 @@ class TmuxinatorCompletion < Formula
   conflicts_with "tmuxinator", because: "the tmuxinator formula includes completion"
 
   def install
-    bash_completion.install "completion/tmuxinator.bash" => "tmuxinator"
-    zsh_completion.install "completion/tmuxinator.zsh" => "_tmuxinator"
-    fish_completion.install Dir["completion/*.fish"]
+    bash_completion.install "completiontmuxinator.bash" => "tmuxinator"
+    zsh_completion.install "completiontmuxinator.zsh" => "_tmuxinator"
+    fish_completion.install Dir["completion*.fish"]
   end
 
   test do
     assert_match "-F _tmuxinator",
-      shell_output("bash -c 'source #{bash_completion}/tmuxinator && complete -p tmuxinator'")
+      shell_output("bash -c 'source #{bash_completion}tmuxinator && complete -p tmuxinator'")
   end
 end

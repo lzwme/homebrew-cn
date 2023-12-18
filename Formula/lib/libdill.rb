@@ -1,7 +1,7 @@
 class Libdill < Formula
   desc "Structured concurrency in C"
-  homepage "http://libdill.org/"
-  url "https://ghproxy.com/https://github.com/sustrik/libdill/archive/refs/tags/2.14.tar.gz"
+  homepage "http:libdill.org"
+  url "https:github.comsustriklibdillarchiverefstags2.14.tar.gz"
   sha256 "ebba0e5b433ec123b74a57d49b89dfa673aa258e03e6a452959e556b4c4529b9"
   license "MIT"
 
@@ -28,28 +28,28 @@ class Libdill < Formula
   on_arm do
     # Using Apple clang to compile test results in executable that
     # causes a segmentation fault, but LLVM clang or GCC seem to work.
-    # Issue ref: https://github.com/sustrik/libdill/issues/208
+    # Issue ref: https:github.comsustriklibdillissues208
     depends_on "llvm" => :test
   end
 
   # Apply upstream commit to fix build with newer GCC.
   # Remove with next release.
   patch do
-    url "https://github.com/sustrik/libdill/commit/775bc53e2cf92672cf03cc43019e12948e669c04.patch?full_index=1"
+    url "https:github.comsustriklibdillcommit775bc53e2cf92672cf03cc43019e12948e669c04.patch?full_index=1"
     sha256 "4002852086909a5572c406f3c629df994d06647690e3db113f2701a42e976413"
   end
 
   def install
-    system "./autogen.sh"
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".autogen.sh"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    # Issue ref: https://github.com/sustrik/libdill/issues/208
-    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if Hardware::CPU.arm?
+    # Issue ref: https:github.comsustriklibdillissues208
+    ENV["CC"] = Formula["llvm"].opt_bin"clang" if Hardware::CPU.arm?
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <libdill.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -69,6 +69,6 @@ class Libdill < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ldill", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class Cloog < Formula
   desc "Generate code for scanning Z-polyhedra"
-  homepage "https://github.com/periscop/cloog"
-  url "https://ghproxy.com/https://github.com/periscop/cloog/releases/download/cloog-0.21.1/cloog-0.21.1.tar.gz"
+  homepage "https:github.comperiscopcloog"
+  url "https:github.comperiscopcloogreleasesdownloadcloog-0.21.1cloog-0.21.1.tar.gz"
   sha256 "d370cf9990d2be24bfb24750e355bac26110051248cabf2add61f9b3867fb1d7"
   license "LGPL-2.1-or-later"
 
@@ -25,7 +25,7 @@ class Cloog < Formula
     # Avoid doc build.
     ENV["ac_cv_prog_TEXI2DVI"] = ""
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-gmp=system",
@@ -36,7 +36,7 @@ class Cloog < Formula
   end
 
   test do
-    (testpath/"test.cloog").write <<~EOS
+    (testpath"test.cloog").write <<~EOS
       c
 
       0 2
@@ -52,7 +52,7 @@ class Cloog < Formula
       0
     EOS
 
-    assert_match %r{Generated from #{testpath}/test.cloog by CLooG},
-                 shell_output("#{bin}/cloog #{testpath}/test.cloog")
+    assert_match %r{Generated from #{testpath}test.cloog by CLooG},
+                 shell_output("#{bin}cloog #{testpath}test.cloog")
   end
 end

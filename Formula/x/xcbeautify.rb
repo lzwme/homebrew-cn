@@ -1,11 +1,11 @@
 class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
-  homepage "https://github.com/tuist/xcbeautify"
-  url "https://github.com/tuist/xcbeautify.git",
+  homepage "https:github.comtuistxcbeautify"
+  url "https:github.comtuistxcbeautify.git",
       tag:      "1.1.1",
       revision: "6ba826167c6b301e7adeb35398cf7d1c27367661"
   license "MIT"
-  head "https://github.com/tuist/xcbeautify.git", branch: "master"
+  head "https:github.comtuistxcbeautify.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03ea177ebe6523fcf9d66b803be30cd69d33ef568ddb427ac6a68831e3c6c099"
@@ -24,14 +24,14 @@ class Xcbeautify < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/xcbeautify"
+    bin.install ".buildreleasexcbeautify"
   end
 
   test do
-    log = "CompileStoryboard /Users/admin/MyApp/MyApp/Main.storyboard (in target: MyApp)"
+    log = "CompileStoryboard UsersadminMyAppMyAppMain.storyboard (in target: MyApp)"
     assert_match "[MyApp] Compiling Main.storyboard",
-      pipe_output("#{bin}/xcbeautify --disable-colored-output", log).chomp
+      pipe_output("#{bin}xcbeautify --disable-colored-output", log).chomp
     assert_match version.to_s,
-      shell_output("#{bin}/xcbeautify --version").chomp
+      shell_output("#{bin}xcbeautify --version").chomp
   end
 end

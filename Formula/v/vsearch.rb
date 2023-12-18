@@ -1,7 +1,7 @@
 class Vsearch < Formula
   desc "Versatile open-source tool for microbiome analysis"
-  homepage "https://github.com/torognes/vsearch"
-  url "https://ghproxy.com/https://github.com/torognes/vsearch/archive/refs/tags/v2.26.1.tar.gz"
+  homepage "https:github.comtorognesvsearch"
+  url "https:github.comtorognesvsearcharchiverefstagsv2.26.1.tar.gz"
   sha256 "dc8513376405fc01ca3742624177113752870b05bb682fe1bf62d190d0a696bd"
   license any_of: ["BSD-2-Clause", "GPL-3.0-or-later"]
 
@@ -19,8 +19,8 @@ class Vsearch < Formula
   depends_on "automake" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make"
@@ -28,11 +28,11 @@ class Vsearch < Formula
   end
 
   test do
-    (testpath/"test.fasta").write <<~EOS
+    (testpath"test.fasta").write <<~EOS
       >U00096.2:1-70
       AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
     EOS
-    system bin/"vsearch", "--rereplicate", "test.fasta", "--output", "output.txt"
-    assert_predicate testpath/"output.txt", :exist?
+    system bin"vsearch", "--rereplicate", "test.fasta", "--output", "output.txt"
+    assert_predicate testpath"output.txt", :exist?
   end
 end

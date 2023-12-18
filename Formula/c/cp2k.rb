@@ -1,7 +1,7 @@
 class Cp2k < Formula
   desc "Quantum chemistry and solid state physics software package"
-  homepage "https://www.cp2k.org/"
-  url "https://ghproxy.com/https://github.com/cp2k/cp2k/releases/download/v2023.2/cp2k-2023.2.tar.bz2"
+  homepage "https:www.cp2k.org"
+  url "https:github.comcp2kcp2kreleasesdownloadv2023.2cp2k-2023.2.tar.bz2"
   sha256 "adbcc903c1a78cba98f49fe6905a62b49f12e3dfd7cedea00616d1a5f50550db"
   license "GPL-2.0-or-later"
   revision 1
@@ -35,14 +35,14 @@ class Cp2k < Formula
   fails_with :clang # needs OpenMP support
 
   resource "libint" do
-    url "https://ghproxy.com/https://github.com/cp2k/libint-cp2k/releases/download/v2.6.0/libint-v2.6.0-cp2k-lmax-5.tgz"
+    url "https:github.comcp2klibint-cp2kreleasesdownloadv2.6.0libint-v2.6.0-cp2k-lmax-5.tgz"
     sha256 "1cd72206afddb232bcf2179c6229fbf6e42e4ba8440e701e6aa57ff1e871e9db"
   end
 
   def install
     resource("libint").stage do
       ENV.append "FCFLAGS", "-fPIE" if OS.linux?
-      system "./configure", "--prefix=#{libexec}", "--enable-fortran"
+      system ".configure", "--prefix=#{libexec}", "--enable-fortran"
       system "make"
       ENV.deparallelize { system "make", "install" }
     end
@@ -51,9 +51,9 @@ class Cp2k < Formula
     if OS.mac?
       arch = "Darwin-gfortran"
 
-      # libint needs `-lstdc++` (https://github.com/cp2k/cp2k/blob/master/INSTALL.md)
+      # libint needs `-lstdc++` (https:github.comcp2kcp2kblobmasterINSTALL.md)
       # Can remove if added upstream to Darwin-gfortran.psmp and Darwin-gfortran.ssmp
-      # PR submitted: https://github.com/cp2k/cp2k/pull/2966
+      # PR submitted: https:github.comcp2kcp2kpull2966
       libs = %W[
         -L#{Formula["fftw"].opt_lib}
         -lfftw3
@@ -62,22 +62,22 @@ class Cp2k < Formula
 
       ENV["LIBXC_INCLUDE_DIR"] = Formula["libxc"].opt_include
       ENV["LIBXC_LIB_DIR"] = Formula["libxc"].opt_lib
-      ENV["LIBINT_INCLUDE_DIR"] = libexec/"include"
-      ENV["LIBINT_LIB_DIR"] = libexec/"lib"
+      ENV["LIBINT_INCLUDE_DIR"] = libexec"include"
+      ENV["LIBINT_LIB_DIR"] = libexec"lib"
 
       # CP2K configuration is done through editing of arch files
-      inreplace Dir["arch/Darwin-gfortran.*"].to_a.each do |s|
-        s.gsub!(/DFLAGS *=/, "DFLAGS = -D__FFTW3")
-        s.gsub!(/FCFLAGS *=/, "FCFLAGS = -I#{Formula["fftw"].opt_include}")
-        s.gsub!(/LIBS *=/, "LIBS = #{libs.join(" ")}")
+      inreplace Dir["archDarwin-gfortran.*"].to_a.each do |s|
+        s.gsub!(DFLAGS *=, "DFLAGS = -D__FFTW3")
+        s.gsub!(FCFLAGS *=, "FCFLAGS = -I#{Formula["fftw"].opt_include}")
+        s.gsub!(LIBS *=, "LIBS = #{libs.join(" ")}")
       end
 
       # MPI versions link to scalapack
-      inreplace Dir["arch/Darwin-gfortran.p*"].to_a,
-                /LIBS *=/, "LIBS = -L#{Formula["scalapack"].opt_lib}"
+      inreplace Dir["archDarwin-gfortran.p*"].to_a,
+                LIBS *=, "LIBS = -L#{Formula["scalapack"].opt_lib}"
 
       # OpenMP versions link to specific fftw3 library
-      inreplace Dir["arch/Darwin-gfortran.*smp"].to_a,
+      inreplace Dir["archDarwin-gfortran.*smp"].to_a,
                 "-lfftw3", "-lfftw3 -lfftw3_threads"
     else
       args = %W[
@@ -116,27 +116,27 @@ class Cp2k < Formula
       ]
       args << "--target-cpu=generic" if build.bottle?
 
-      cd "tools/toolchain" do
-        # Need OpenBLAS source to get proc arch info in scripts/get_openblas_arch.sh
-        Formula["openblas"].stable.stage Pathname.pwd/"build/OpenBLAS"
+      cd "toolstoolchain" do
+        # Need OpenBLAS source to get proc arch info in scriptsget_openblas_arch.sh
+        Formula["openblas"].stable.stage Pathname.pwd"buildOpenBLAS"
 
-        system "./install_cp2k_toolchain.sh", *args
-        (buildpath/"arch").install (Pathname.pwd/"install/arch").children
+        system ".install_cp2k_toolchain.sh", *args
+        (buildpath"arch").install (Pathname.pwd"installarch").children
       end
     end
 
     # Now we build
     %w[ssmp psmp].each do |exe|
       system "make", "ARCH=#{arch}", "VERSION=#{exe}"
-      bin.install "exe/#{arch}/cp2k.#{exe}"
-      bin.install "exe/#{arch}/cp2k_shell.#{exe}"
+      bin.install "exe#{arch}cp2k.#{exe}"
+      bin.install "exe#{arch}cp2k_shell.#{exe}"
     end
 
-    (pkgshare/"tests").install "tests/Fist/water.inp"
+    (pkgshare"tests").install "testsFistwater.inp"
   end
 
   test do
-    system bin/"cp2k.ssmp", pkgshare/"tests/water.inp"
-    system "mpirun", bin/"cp2k.psmp", pkgshare/"tests/water.inp"
+    system bin"cp2k.ssmp", pkgshare"testswater.inp"
+    system "mpirun", bin"cp2k.psmp", pkgshare"testswater.inp"
   end
 end

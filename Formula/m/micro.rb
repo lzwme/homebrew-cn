@@ -1,11 +1,11 @@
 class Micro < Formula
   desc "Modern and intuitive terminal-based text editor"
-  homepage "https://github.com/zyedidia/micro"
-  url "https://github.com/zyedidia/micro.git",
+  homepage "https:github.comzyedidiamicro"
+  url "https:github.comzyedidiamicro.git",
       tag:      "v2.0.13",
       revision: "68d88b571de6dca9fb8f03e2a3caafa2287c38d4"
   license "MIT"
-  head "https://github.com/zyedidia/micro.git", branch: "master"
+  head "https:github.comzyedidiamicro.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8090777c1195b1a6b02310097fe38b49f465ee288f74afc7412b5e59b9f154f"
@@ -22,11 +22,11 @@ class Micro < Formula
   def install
     system "make", "build-tags"
     bin.install "micro"
-    man1.install "assets/packaging/micro.1"
+    man1.install "assetspackagingmicro.1"
     prefix.install_metafiles
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/micro -version")
+    assert_match version.to_s, shell_output("#{bin}micro -version")
   end
 end

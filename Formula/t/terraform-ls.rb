@@ -1,10 +1,10 @@
 class TerraformLs < Formula
   desc "Terraform Language Server"
-  homepage "https://github.com/hashicorp/terraform-ls"
-  url "https://ghproxy.com/https://github.com/hashicorp/terraform-ls/archive/refs/tags/v0.32.4.tar.gz"
+  homepage "https:github.comhashicorpterraform-ls"
+  url "https:github.comhashicorpterraform-lsarchiverefstagsv0.32.4.tar.gz"
   sha256 "a7d9c19c9118b4815b268fafcd49d0f663eea111a63bc9519a7896b7347997ed"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/terraform-ls.git", branch: "main"
+  head "https:github.comhashicorpterraform-ls.git", branch: "main"
 
   livecheck do
     url :stable
@@ -35,7 +35,7 @@ class TerraformLs < Formula
     port = free_port
 
     pid = fork do
-      exec "#{bin}/terraform-ls serve -port #{port} /dev/null"
+      exec "#{bin}terraform-ls serve -port #{port} devnull"
     end
     sleep 2
 

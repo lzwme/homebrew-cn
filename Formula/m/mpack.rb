@@ -1,8 +1,8 @@
 class Mpack < Formula
   desc "MIME mail packing and unpacking"
-  homepage "https://web.archive.org/web/20190220145801/ftp.andrew.cmu.edu/pub/mpack/"
-  url "https://ftp.gwdg.de/pub/misc/mpack/mpack-1.6.tar.gz"
-  mirror "https://fossies.org/linux/misc/old/mpack-1.6.tar.gz"
+  homepage "https:web.archive.orgweb20190220145801ftp.andrew.cmu.edupubmpack"
+  url "https:ftp.gwdg.depubmiscmpackmpack-1.6.tar.gz"
+  mirror "https:fossies.orglinuxmiscoldmpack-1.6.tar.gz"
   sha256 "274108bb3a39982a4efc14fb3a65298e66c8e71367c3dabf49338162d207a94c"
   license "BSD-3-Clause"
 
@@ -21,18 +21,18 @@ class Mpack < Formula
 
   # Fix missing return value; clang refuses to compile otherwise
   patch :p0 do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/1ad38a9c/mpack/uudecode.c.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches1ad38a9cmpackuudecode.c.patch"
     sha256 "52ad1592ee4b137cde6ddb3c26e3541fa0dcea55c53ae8b37546cd566c897a43"
   end
 
   # Fix build failure because of missing include statements on Linux.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/6e7bc4dd7b971cabc3cc794236e62e732981102f/mpack/linux.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches6e7bc4dd7b971cabc3cc794236e62e732981102fmpacklinux.patch"
     sha256 "3123446e13b34a083cab8408e16fce0a4dba78c170887722f4cd4306798c54d0"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make", "install"
   end

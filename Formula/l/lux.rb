@@ -1,10 +1,10 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
-  homepage "https://github.com/iawia002/lux"
-  url "https://ghproxy.com/https://github.com/iawia002/lux/archive/refs/tags/v0.22.0.tar.gz"
+  homepage "https:github.comiawia002lux"
+  url "https:github.comiawia002luxarchiverefstagsv0.22.0.tar.gz"
   sha256 "34352ad29006e443b41bad04c24f89783efd063755e71cb98484b165953d4b59"
   license "MIT"
-  head "https://github.com/iawia002/lux.git", branch: "master"
+  head "https:github.comiawia002lux.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f85252c4fb66ebbc21aa8bef5f1477a97529dda80add0c72847d2e5883005305"
@@ -23,6 +23,6 @@ class Lux < Formula
   end
 
   test do
-    system bin/"lux", "-i", "https://github.githubassets.com/images/modules/site/icons/footer/github-logo.svg"
+    system bin"lux", "-i", "https:github.githubassets.comimagesmodulessiteiconsfootergithub-logo.svg"
   end
 end

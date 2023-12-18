@@ -1,7 +1,7 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
-  homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.3.tar.xz"
+  homepage "https:github.comutil-linuxutil-linux"
+  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.39util-linux-2.39.3.tar.xz"
   sha256 "7b6605e48d1a49f43cc4b4cfc59f313d0dd5402fa40b96810bd572e167dfed0f"
   license "GPL-2.0-or-later"
 
@@ -27,19 +27,19 @@ class GnuGetopt < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
 
-    system "make", "getopt", "misc-utils/getopt.1"
+    system "make", "getopt", "misc-utilsgetopt.1"
 
     bin.install "getopt"
-    man1.install "misc-utils/getopt.1"
-    bash_completion.install "bash-completion/getopt"
-    doc.install "misc-utils/getopt-example.bash", "misc-utils/getopt-example.tcsh"
+    man1.install "misc-utilsgetopt.1"
+    bash_completion.install "bash-completiongetopt"
+    doc.install "misc-utilsgetopt-example.bash", "misc-utilsgetopt-example.tcsh"
   end
 
   test do
-    system "#{bin}/getopt", "-o", "--test"
+    system "#{bin}getopt", "-o", "--test"
   end
 end

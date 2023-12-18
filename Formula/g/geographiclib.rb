@@ -1,14 +1,14 @@
 class Geographiclib < Formula
   desc "C++ geography library"
-  homepage "https://geographiclib.sourceforge.io/"
-  url "https://ghproxy.com/https://github.com/geographiclib/geographiclib/archive/refs/tags/r2.3.tar.gz"
+  homepage "https:geographiclib.sourceforge.io"
+  url "https:github.comgeographiclibgeographiclibarchiverefstagsr2.3.tar.gz"
   sha256 "cb1135f1612da26bae0eea1e65d97272d2c2c1811f611a8202b08f1ec79c7881"
   license "MIT"
-  head "https://github.com/geographiclib/geographiclib.git", branch: "main"
+  head "https:github.comgeographiclibgeographiclib.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^r(\d+(?:\.\d+)+)$/i)
+    regex(^r(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -34,6 +34,6 @@ class Geographiclib < Formula
   end
 
   test do
-    system bin/"GeoConvert", "-p", "-3", "-m", "--input-string", "33.3 44.4"
+    system bin"GeoConvert", "-p", "-3", "-m", "--input-string", "33.3 44.4"
   end
 end

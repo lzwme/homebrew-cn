@@ -1,10 +1,10 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
-  homepage "https://aquasecurity.github.io/trivy/"
-  url "https://ghproxy.com/https://github.com/aquasecurity/trivy/archive/refs/tags/v0.48.0.tar.gz"
+  homepage "https:aquasecurity.github.iotrivy"
+  url "https:github.comaquasecuritytrivyarchiverefstagsv0.48.0.tar.gz"
   sha256 "3ae1fa2989b25f9b993b60169275abbb8c7eaba30f88792d0d18307db8fd85e6"
   license "Apache-2.0"
-  head "https://github.com/aquasecurity/trivy.git", branch: "main"
+  head "https:github.comaquasecuritytrivy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd2b756ae713669559b5fd76cbe43d9b5c65bd8acac39c445346c08fd77ad436"
@@ -21,15 +21,15 @@ class Trivy < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/aquasecurity/trivy/pkg/version.ver=#{version}
+      -X github.comaquasecuritytrivypkgversion.ver=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/trivy"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtrivy"
   end
 
   test do
-    output = shell_output("#{bin}/trivy image alpine:3.10")
-    assert_match(/\(UNKNOWN: \d+, LOW: \d+, MEDIUM: \d+, HIGH: \d+, CRITICAL: \d+\)/, output)
+    output = shell_output("#{bin}trivy image alpine:3.10")
+    assert_match(\(UNKNOWN: \d+, LOW: \d+, MEDIUM: \d+, HIGH: \d+, CRITICAL: \d+\), output)
 
-    assert_match version.to_s, shell_output("#{bin}/trivy --version")
+    assert_match version.to_s, shell_output("#{bin}trivy --version")
   end
 end

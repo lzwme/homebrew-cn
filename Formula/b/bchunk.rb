@@ -1,14 +1,14 @@
 class Bchunk < Formula
-  desc "Convert CD images from .bin/.cue to .iso/.cdr"
-  homepage "http://he.fi/bchunk/"
-  url "http://he.fi/bchunk/bchunk-1.2.2.tar.gz"
+  desc "Convert CD images from .bin.cue to .iso.cdr"
+  homepage "http:he.fibchunk"
+  url "http:he.fibchunkbchunk-1.2.2.tar.gz"
   sha256 "e7d99b5b60ff0b94c540379f6396a670210400124544fb1af985dd3551eabd89"
   license "GPL-2.0"
-  head "https://github.com/hessu/bchunk.git", branch: "master"
+  head "https:github.comhessubchunk.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?bchunk[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?bchunk[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,15 +35,15 @@ class Bchunk < Formula
   end
 
   test do
-    (testpath/"foo.cue").write <<~EOS
+    (testpath"foo.cue").write <<~EOS
       foo.bin BINARY
-      TRACK 01 MODE1/2352
+      TRACK 01 MODE12352
       INDEX 01 00:00:00
     EOS
 
-    touch testpath/"foo.bin"
+    touch testpath"foo.bin"
 
-    system "#{bin}/bchunk", "foo.bin", "foo.cue", "foo"
-    assert_predicate testpath/"foo01.iso", :exist?
+    system "#{bin}bchunk", "foo.bin", "foo.cue", "foo"
+    assert_predicate testpath"foo01.iso", :exist?
   end
 end

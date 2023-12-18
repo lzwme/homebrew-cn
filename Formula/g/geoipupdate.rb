@@ -1,10 +1,10 @@
 class Geoipupdate < Formula
   desc "Automatic updates of GeoIP2 and GeoIP Legacy databases"
-  homepage "https://github.com/maxmind/geoipupdate"
-  url "https://ghproxy.com/https://github.com/maxmind/geoipupdate/archive/refs/tags/v6.0.0.tar.gz"
+  homepage "https:github.commaxmindgeoipupdate"
+  url "https:github.commaxmindgeoipupdatearchiverefstagsv6.0.0.tar.gz"
   sha256 "50a403fb8f94029824766b32d4bf46e67c051699f761df8c4e2c916ecca4126e"
   license "Apache-2.0"
-  head "https://github.com/maxmind/geoipupdate.git", branch: "main"
+  head "https:github.commaxmindgeoipupdate.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "49f24731d597989bdb83dba886556eddb60e14735737854effbf84cc95a5e64c"
@@ -25,19 +25,19 @@ class Geoipupdate < Formula
   uses_from_macos "zlib"
 
   def install
-    system "make", "CONFFILE=#{etc}/GeoIP.conf", "DATADIR=#{var}/GeoIP", "VERSION=#{version} (homebrew)"
+    system "make", "CONFFILE=#{etc}GeoIP.conf", "DATADIR=#{var}GeoIP", "VERSION=#{version} (homebrew)"
 
-    bin.install  "build/geoipupdate"
-    etc.install  "build/GeoIP.conf"
-    man1.install "build/geoipupdate.1"
-    man5.install "build/GeoIP.conf.5"
+    bin.install  "buildgeoipupdate"
+    etc.install  "buildGeoIP.conf"
+    man1.install "buildgeoipupdate.1"
+    man5.install "buildGeoIP.conf.5"
   end
 
   def post_install
-    (var/"GeoIP").mkpath
+    (var"GeoIP").mkpath
   end
 
   test do
-    system "#{bin}/geoipupdate", "-V"
+    system "#{bin}geoipupdate", "-V"
   end
 end

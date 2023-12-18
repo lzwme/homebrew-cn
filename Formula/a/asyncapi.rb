@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
-  homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-1.2.23.tgz"
+  homepage "https:github.comasyncapicli"
+  url "https:registry.npmjs.org@asyncapicli-cli-1.2.23.tgz"
   sha256 "93e8781a6915e093ec2846f8fc032df2d3ac0c103bf78982566947af4dae0e47"
   license "Apache-2.0"
 
@@ -21,18 +21,18 @@ class Asyncapi < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Delete native binaries installed by npm, as we dont support `musl` for a `libc` implementation
-    node_modules = libexec/"lib/node_modules/@asyncapi/cli/node_modules"
-    (node_modules/"@swc/core-linux-x64-musl/swc.linux-x64-musl.node").unlink if OS.linux?
+    node_modules = libexec"libnode_modules@asyncapiclinode_modules"
+    (node_modules"@swccore-linux-x64-muslswc.linux-x64-musl.node").unlink if OS.linux?
 
     # Replace universal binaries with their native slices
     deuniversalize_machos
   end
 
   test do
-    system bin/"asyncapi", "new", "--file-name=asyncapi.yml", "--example=default-example.yaml", "--no-tty"
-    assert_predicate testpath/"asyncapi.yml", :exist?, "AsyncAPI file was not created"
+    system bin"asyncapi", "new", "--file-name=asyncapi.yml", "--example=default-example.yaml", "--no-tty"
+    assert_predicate testpath"asyncapi.yml", :exist?, "AsyncAPI file was not created"
   end
 end

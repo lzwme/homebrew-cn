@@ -1,14 +1,14 @@
 class PipesSh < Formula
   desc "Animated pipes terminal screensaver"
-  homepage "https://github.com/pipeseroni/pipes.sh"
-  url "https://ghproxy.com/https://github.com/pipeseroni/pipes.sh/archive/refs/tags/v1.3.0.tar.gz"
+  homepage "https:github.compipeseronipipes.sh"
+  url "https:github.compipeseronipipes.sharchiverefstagsv1.3.0.tar.gz"
   sha256 "532976dd8dc2d98330c45a8bcb6d7dc19e0b0e30bba8872dcce352361655a426"
   license "MIT"
-  head "https://github.com/pipeseroni/pipes.sh.git", branch: "master"
+  head "https:github.compipeseronipipes.sh.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -23,6 +23,6 @@ class PipesSh < Formula
   end
 
   test do
-    assert_equal version.to_s, shell_output("#{bin}/pipes.sh -v").strip.split[-1]
+    assert_equal version.to_s, shell_output("#{bin}pipes.sh -v").strip.split[-1]
   end
 end

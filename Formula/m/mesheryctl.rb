@@ -1,11 +1,11 @@
 class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
-  homepage "https://meshery.io"
-  url "https://github.com/meshery/meshery.git",
+  homepage "https:meshery.io"
+  url "https:github.commesherymeshery.git",
       tag:      "v0.7.1",
       revision: "ef8db2827cab7e4e233203dc013147cef00c66af"
   license "Apache-2.0"
-  head "https://github.com/meshery/meshery.git", branch: "master"
+  head "https:github.commesherymeshery.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c7ce998552f4b763f2152954d03f61d07acace78c0e17eafa0e877387083797"
@@ -24,21 +24,21 @@ class Mesheryctl < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/layer5io/meshery/mesheryctl/internal/cli/root/constants.version=v#{version}
-      -X github.com/layer5io/meshery/mesheryctl/internal/cli/root/constants.commitsha=#{Utils.git_short_head}
-      -X github.com/layer5io/meshery/mesheryctl/internal/cli/root/constants.releasechannel=stable
+      -X github.comlayer5iomesherymesheryctlinternalclirootconstants.version=v#{version}
+      -X github.comlayer5iomesherymesheryctlinternalclirootconstants.commitsha=#{Utils.git_short_head}
+      -X github.comlayer5iomesherymesheryctlinternalclirootconstants.releasechannel=stable
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./mesheryctl/cmd/mesheryctl"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".mesheryctlcmdmesheryctl"
 
-    generate_completions_from_executable(bin/"mesheryctl", "completion")
+    generate_completions_from_executable(bin"mesheryctl", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/mesheryctl version 2>&1")
-    assert_match "Channel: stable", shell_output("#{bin}/mesheryctl system channel view 2>&1")
+    assert_match version.to_s, shell_output("#{bin}mesheryctl version 2>&1")
+    assert_match "Channel: stable", shell_output("#{bin}mesheryctl system channel view 2>&1")
 
     # Test kubernetes error on trying to start meshery
-    assert_match "The Kubernetes cluster is not accessible.", shell_output("#{bin}/mesheryctl system start 2>&1", 1)
+    assert_match "The Kubernetes cluster is not accessible.", shell_output("#{bin}mesheryctl system start 2>&1", 1)
   end
 end

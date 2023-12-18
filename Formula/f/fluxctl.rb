@@ -1,7 +1,7 @@
 class Fluxctl < Formula
   desc "Command-line tool to access Weave Flux, the Kubernetes GitOps operator"
-  homepage "https://github.com/fluxcd/flux"
-  url "https://github.com/fluxcd/flux.git",
+  homepage "https:github.comfluxcdflux"
+  url "https:github.comfluxcdflux.git",
       tag:      "1.25.4",
       revision: "95493343346f2000299996bab0fc49caf31201dd"
   license "Apache-2.0"
@@ -25,24 +25,24 @@ class Fluxctl < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fluxctl"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdfluxctl"
 
-    generate_completions_from_executable(bin/"fluxctl", "completion")
+    generate_completions_from_executable(bin"fluxctl", "completion")
   end
 
   test do
-    run_output = shell_output("#{bin}/fluxctl 2>&1")
+    run_output = shell_output("#{bin}fluxctl 2>&1")
     assert_match "fluxctl helps you deploy your code.", run_output
 
-    version_output = shell_output("#{bin}/fluxctl version 2>&1")
+    version_output = shell_output("#{bin}fluxctl version 2>&1")
     assert_match version.to_s, version_output
 
     # As we can't bring up a Kubernetes cluster in this test, we simply
     # run "fluxctl sync" and check that it 1) errors out, and 2) complains
-    # about a missing .kube/config file.
+    # about a missing .kubeconfig file.
     require "pty"
     require "timeout"
-    r, _w, pid = PTY.spawn("#{bin}/fluxctl sync", err: :out)
+    r, _w, pid = PTY.spawn("#{bin}fluxctl sync", err: :out)
     begin
       Timeout.timeout(5) do
         assert_match "Error: Could not load kubernetes configuration file", r.gets.chomp

@@ -1,7 +1,7 @@
 class Libheif < Formula
-  desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
-  homepage "https://www.libde265.org/"
-  url "https://ghproxy.com/https://github.com/strukturag/libheif/releases/download/v1.17.5/libheif-1.17.5.tar.gz"
+  desc "ISOIEC 23008-12:2017 HEIF file format decoder and encoder"
+  homepage "https:www.libde265.org"
+  url "https:github.comstrukturaglibheifreleasesdownloadv1.17.5libheif-1.17.5.tar.gz"
   sha256 "38ab01938ef419dbebb98346dc0b1c8bb503a0449ea61a0e409a988786c2af5b"
   license "LGPL-3.0-only"
 
@@ -34,31 +34,31 @@ class Libheif < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "examples/example.heic"
-    pkgshare.install "examples/example.avif"
+    pkgshare.install "examplesexample.heic"
+    pkgshare.install "examplesexample.avif"
     system "cmake", "-S", ".", "-B", "static", *args, *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
-    lib.install "static/libheif/libheif.a"
+    lib.install "staticlibheiflibheif.a"
   end
 
   def post_install
-    system Formula["shared-mime-info"].opt_bin/"update-mime-database", "#{HOMEBREW_PREFIX}/share/mime"
+    system Formula["shared-mime-info"].opt_bin"update-mime-database", "#{HOMEBREW_PREFIX}sharemime"
   end
 
   test do
     output = "File contains 2 images"
-    example = pkgshare/"example.heic"
-    exout = testpath/"exampleheic.jpg"
+    example = pkgshare"example.heic"
+    exout = testpath"exampleheic.jpg"
 
-    assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
-    assert_predicate testpath/"exampleheic-1.jpg", :exist?
-    assert_predicate testpath/"exampleheic-2.jpg", :exist?
+    assert_match output, shell_output("#{bin}heif-convert #{example} #{exout}")
+    assert_predicate testpath"exampleheic-1.jpg", :exist?
+    assert_predicate testpath"exampleheic-2.jpg", :exist?
 
     output = "File contains 1 image"
-    example = pkgshare/"example.avif"
-    exout = testpath/"exampleavif.jpg"
+    example = pkgshare"example.avif"
+    exout = testpath"exampleavif.jpg"
 
-    assert_match output, shell_output("#{bin}/heif-convert #{example} #{exout}")
-    assert_predicate testpath/"exampleavif.jpg", :exist?
+    assert_match output, shell_output("#{bin}heif-convert #{example} #{exout}")
+    assert_predicate testpath"exampleavif.jpg", :exist?
   end
 end

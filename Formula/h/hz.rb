@@ -1,14 +1,14 @@
 class Hz < Formula
   desc "Golang HTTP framework for microservices"
-  homepage "https://github.com/cloudwego/hertz"
-  url "https://ghproxy.com/https://github.com/cloudwego/hertz/archive/refs/tags/cmd/hz/v0.7.1.tar.gz"
+  homepage "https:github.comcloudwegohertz"
+  url "https:github.comcloudwegohertzarchiverefstagscmdhzv0.7.1.tar.gz"
   sha256 "b77329ebc4f8c6e53d749d61e4a46972044ff209326f3ba8e5e8e9c412162d46"
   license "Apache-2.0"
-  head "https://github.com/cloudwego/hertz.git", branch: "develop"
+  head "https:github.comcloudwegohertz.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(%r{^cmd/hz/v?(\d+(?:\.\d+)+)$}i)
+    regex(%r{^cmdhzv?(\d+(?:\.\d+)+)$}i)
   end
 
   bottle do
@@ -24,19 +24,19 @@ class Hz < Formula
   depends_on "go" => :build
 
   def install
-    cd "cmd/hz" do
+    cd "cmdhz" do
       system "go", "build", *std_go_args(ldflags: "-s -w")
     end
-    bin.install_symlink "#{bin}/hz" => "thrift-gen-hertz"
-    bin.install_symlink "#{bin}/hz" => "protoc-gen-hertz"
+    bin.install_symlink "#{bin}hz" => "thrift-gen-hertz"
+    bin.install_symlink "#{bin}hz" => "protoc-gen-hertz"
   end
 
   test do
-    output = shell_output("#{bin}/hz --version 2>&1")
+    output = shell_output("#{bin}hz --version 2>&1")
     assert_match "hz version v#{version}", output
 
-    system "#{bin}/hz", "new", "--mod=test"
-    assert_predicate testpath/"main.go", :exist?
-    refute_predicate (testpath/"main.go").size, :zero?
+    system "#{bin}hz", "new", "--mod=test"
+    assert_predicate testpath"main.go", :exist?
+    refute_predicate (testpath"main.go").size, :zero?
   end
 end

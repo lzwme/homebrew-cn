@@ -1,7 +1,7 @@
 class Partio < Formula
   desc "Particle library for 3D graphics"
-  homepage "https://github.com/wdas/partio"
-  url "https://ghproxy.com/https://github.com/wdas/partio/archive/refs/tags/v1.17.1.tar.gz"
+  homepage "https:github.comwdaspartio"
+  url "https:github.comwdaspartioarchiverefstagsv1.17.1.tar.gz"
   sha256 "5d00fbfc55817acb310bcaf61212a78b2c602e08b839060dfee69570b4b82464"
   license "BSD-3-Clause"
 
@@ -36,10 +36,10 @@ class Partio < Formula
       system "make", "doc"
       system "make", "install"
     end
-    pkgshare.install "src/data"
+    pkgshare.install "srcdata"
   end
 
   test do
-    assert_match "Number of particles:  25", shell_output("#{bin}/partinfo #{pkgshare}/data/scatter.bgeo")
+    assert_match "Number of particles:  25", shell_output("#{bin}partinfo #{pkgshare}datascatter.bgeo")
   end
 end

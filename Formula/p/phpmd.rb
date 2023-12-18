@@ -1,7 +1,7 @@
 class Phpmd < Formula
   desc "PHP Mess Detector"
-  homepage "https://phpmd.org"
-  url "https://ghproxy.com/https://github.com/phpmd/phpmd/releases/download/2.15.0/phpmd.phar"
+  homepage "https:phpmd.org"
+  url "https:github.comphpmdphpmdreleasesdownload2.15.0phpmd.phar"
   sha256 "6a28ef55de0c753b070d1d1580bb08a0d146016f89f0eddcef60ac4fc1083544"
   license "BSD-3-Clause"
 
@@ -16,7 +16,7 @@ class Phpmd < Formula
   end
 
   test do
-    (testpath/"src/HelloWorld/Greetings.php").write <<~EOS
+    (testpath"srcHelloWorldGreetings.php").write <<~EOS
       <?php
       namespace HelloWorld;
       class Greetings {
@@ -27,6 +27,6 @@ class Phpmd < Formula
     EOS
 
     assert_match "Avoid unused parameters such as '$name'.",
-      shell_output("#{bin}/phpmd --ignore-violations-on-exit src/HelloWorld/Greetings.php text unusedcode")
+      shell_output("#{bin}phpmd --ignore-violations-on-exit srcHelloWorldGreetings.php text unusedcode")
   end
 end

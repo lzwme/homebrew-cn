@@ -1,10 +1,10 @@
 class Changie < Formula
   desc "Automated changelog tool for preparing releases"
-  homepage "https://changie.dev/"
-  url "https://ghproxy.com/https://github.com/miniscruff/changie/archive/refs/tags/v1.17.0.tar.gz"
+  homepage "https:changie.dev"
+  url "https:github.comminiscruffchangiearchiverefstagsv1.17.0.tar.gz"
   sha256 "6d33ceff946315c5bab7f8d91b558cfbd022fd52d5179edc51949611fa7b3668"
   license "MIT"
-  head "https://github.com/miniscruff/changie.git", branch: "main"
+  head "https:github.comminiscruffchangie.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5b554334ab7ed1e5f5ab7f36b1be65817c3083361807b414ac301924ae3c960"
@@ -22,13 +22,13 @@ class Changie < Formula
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"changie", "completion")
+    generate_completions_from_executable(bin"changie", "completion")
   end
 
   test do
-    system bin/"changie", "init"
-    assert_match "All notable changes to this project", (testpath/"CHANGELOG.md").read
+    system bin"changie", "init"
+    assert_match "All notable changes to this project", (testpath"CHANGELOG.md").read
 
-    assert_match version.to_s, shell_output("#{bin}/changie --version")
+    assert_match version.to_s, shell_output("#{bin}changie --version")
   end
 end

@@ -2,10 +2,10 @@ cask "qlcommonmark" do
   version "1.1"
   sha256 "7778fae360f844fc17b17a4d5f8d3a01db811b0f78e174b70bea4410de2b12c7"
 
-  url "https://ghproxy.com/https://github.com/digitalmoksha/QLCommonMark/releases/download/v#{version}/QLCommonMark.qlgenerator.zip"
+  url "https:github.comdigitalmokshaQLCommonMarkreleasesdownloadv#{version}QLCommonMark.qlgenerator.zip"
   name "QLCommonMark"
   desc "QuickLook plugin for CommonMark and Markdown"
-  homepage "https://github.com/digitalmoksha/QLCommonMark/"
+  homepage "https:github.comdigitalmokshaQLCommonMark"
 
   qlplugin "QLCommonMark.qlgenerator"
 

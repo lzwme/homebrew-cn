@@ -1,7 +1,7 @@
 class Gobuster < Formula
-  desc "Directory/file & DNS busting tool written in Go"
-  homepage "https://github.com/OJ/gobuster"
-  url "https://ghproxy.com/https://github.com/OJ/gobuster/archive/refs/tags/v3.6.0.tar.gz"
+  desc "Directoryfile & DNS busting tool written in Go"
+  homepage "https:github.comOJgobuster"
+  url "https:github.comOJgobusterarchiverefstagsv3.6.0.tar.gz"
   sha256 "509b16ca713de02f8fcdc7b33d97e7e18b687bb99634dde076be38297d4b401b"
   license "Apache-2.0"
 
@@ -22,11 +22,11 @@ class Gobuster < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"gobuster", "completion")
+    generate_completions_from_executable(bin"gobuster", "completion")
   end
 
   test do
-    (testpath/"words.txt").write <<~EOS
+    (testpath"words.txt").write <<~EOS
       dog
       cat
       horse
@@ -34,9 +34,9 @@ class Gobuster < Formula
       ape
     EOS
 
-    output = shell_output("#{bin}/gobuster dir -u https://buffered.io -w words.txt 2>&1")
+    output = shell_output("#{bin}gobuster dir -u https:buffered.io -w words.txt 2>&1")
     assert_match "Finished", output
 
-    assert_match version.major_minor.to_s, shell_output(bin/"gobuster version")
+    assert_match version.major_minor.to_s, shell_output(bin"gobuster version")
   end
 end

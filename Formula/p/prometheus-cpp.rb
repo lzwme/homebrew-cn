@@ -1,11 +1,11 @@
 class PrometheusCpp < Formula
   desc "Prometheus Client Library for Modern C++"
-  homepage "https://github.com/jupp0r/prometheus-cpp"
-  url "https://github.com/jupp0r/prometheus-cpp.git",
+  homepage "https:github.comjupp0rprometheus-cpp"
+  url "https:github.comjupp0rprometheus-cpp.git",
       tag:      "v1.1.0",
       revision: "c9ffcdda9086ffd9e1283ea7a0276d831f3c8a8d"
   license "MIT"
-  head "https://github.com/jupp0r/prometheus-cpp.git", branch: "master"
+  head "https:github.comjupp0rprometheus-cpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e77071a73a92d8433236e2d532224f02a62fd7408070db00f124cbdb61c4282"
@@ -30,14 +30,14 @@ class PrometheusCpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <prometheus/registry.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <prometheusregistry.h>
       int main() {
         prometheus::Registry reg;
         return 0;
       }
     EOS
     system ENV.cxx, "-std=c++14", "test.cpp", "-I#{include}", "-L#{lib}", "-lprometheus-cpp-core", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

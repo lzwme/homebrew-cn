@@ -2,10 +2,10 @@ cask "font-dejavu-sans-mono-nerd-font" do
   version "3.1.1"
   sha256 "f46c6fb56b7ee4a5faa08b6ba32830692204a5240fe1fcb3b848fceef2d6e526"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/DejaVuSansMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}DejaVuSansMono.zip"
   name "DejaVuSansM Nerd Font (DejaVu Sans Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

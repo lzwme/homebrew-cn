@@ -2,14 +2,14 @@ cask "swish" do
   version "1.10.3"
   sha256 "b41b769d7ca7cdc8abf36fb6a27dd00ca9548af11634ab24c73cafa653f44608"
 
-  url "https://ghproxy.com/https://github.com/chrenn/swish-dl/releases/download/#{version}/Swish.dmg",
-      verified: "github.com/chrenn/swish-dl/"
+  url "https:github.comchrennswish-dlreleasesdownload#{version}Swish.dmg",
+      verified: "github.comchrennswish-dl"
   name "Swish"
   desc "Control windows and applications right from your trackpad"
-  homepage "https://highlyopinionated.co/swish/"
+  homepage "https:highlyopinionated.coswish"
 
   livecheck do
-    url "https://highlyopinionated.co/swish/appcast.xml"
+    url "https:highlyopinionated.coswishappcast.xml"
     strategy :sparkle, &:short_version
   end
 
@@ -19,9 +19,9 @@ cask "swish" do
   app "Swish.app"
 
   zap trash: [
-    "~/Library/Application Support/Swish",
-    "~/Library/Caches/co.highlyopinionated.swish",
-    "~/Library/Cookies/co.highlyopinionated.swish.binarycookies",
-    "~/Library/Preferences/co.highlyopinionated.swish.plist",
+    "~LibraryApplication SupportSwish",
+    "~LibraryCachesco.highlyopinionated.swish",
+    "~LibraryCookiesco.highlyopinionated.swish.binarycookies",
+    "~LibraryPreferencesco.highlyopinionated.swish.plist",
   ]
 end

@@ -1,10 +1,10 @@
 class CargoAuditable < Formula
   desc "Make production Rust binaries auditable"
-  homepage "https://github.com/rust-secure-code/cargo-auditable"
-  url "https://ghproxy.com/https://github.com/rust-secure-code/cargo-auditable/archive/refs/tags/v0.6.1.tar.gz"
+  homepage "https:github.comrust-secure-codecargo-auditable"
+  url "https:github.comrust-secure-codecargo-auditablearchiverefstagsv0.6.1.tar.gz"
   sha256 "091dc954c09408a9a2bdf1b01fa34f3e4bf7a7621966d2f4c4d5fc689a3baaf4"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/rust-secure-code/cargo-auditable.git", branch: "master"
+  head "https:github.comrust-secure-codecargo-auditable.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1d23238c3b31a6084aab88296f36318928d92b6228c3fc961db2323a0ba78c3"
@@ -23,25 +23,25 @@ class CargoAuditable < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cargo-auditable")
-    man1.install "cargo-auditable/cargo-auditable.1"
+    man1.install "cargo-auditablecargo-auditable.1"
   end
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    crate = testpath/"demo-crate"
+    crate = testpath"demo-crate"
     mkdir crate do
-      (crate/"src/main.rs").write <<~EOS
+      (crate"srcmain.rs").write <<~EOS
         fn main() {
           println!("Hello BrewTestBot!");
         }
       EOS
-      (crate/"Cargo.toml").write <<~EOS
+      (crate"Cargo.toml").write <<~EOS
         [package]
         name = "demo-crate"
         version = "0.1.0"
@@ -49,8 +49,8 @@ class CargoAuditable < Formula
       EOS
 
       system "cargo", "auditable", "build", "--release"
-      assert_predicate crate/"target/release/demo-crate", :exist?
-      output = shell_output("./target/release/demo-crate")
+      assert_predicate crate"targetreleasedemo-crate", :exist?
+      output = shell_output(".targetreleasedemo-crate")
       assert_match "Hello BrewTestBot!", output
     end
   end

@@ -2,10 +2,10 @@ cask "font-gafata" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/gafata/Gafata-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflgafataGafata-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Gafata"
-  homepage "https://fonts.google.com/specimen/Gafata"
+  homepage "https:fonts.google.comspecimenGafata"
 
   font "Gafata-Regular.ttf"
 

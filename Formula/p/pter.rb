@@ -2,8 +2,8 @@ class Pter < Formula
   include Language::Python::Virtualenv
 
   desc "Your console and graphical UI to manage your todo.txt file(s)"
-  homepage "https://vonshednob.cc/pter/"
-  url "https://files.pythonhosted.org/packages/9a/51/804f61e32b6ac5c4e84bcb9c72e748e49cb96940abb97bc823fb747f69b4/pter-3.11.2.tar.gz"
+  homepage "https:vonshednob.ccpter"
+  url "https:files.pythonhosted.orgpackages9a51804f61e32b6ac5c4e84bcb9c72e748e49cb96940abb97bc823fb747f69b4pter-3.11.2.tar.gz"
   sha256 "563bab0ba753da631c968fd0e7de8b203873d70f5205ffcac34ae74ae63322d9"
   license "MIT"
 
@@ -17,16 +17,16 @@ class Pter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "efd38a2e3495e1892471312829f1c4f2e5f00e12ebc4af4585b8056e406bc4e6"
   end
 
-  # upstream py3.12 support issue, https://github.com/vonshednob/pter/issues/30
+  # upstream py3.12 support issue, https:github.comvonshednobpterissues30
   depends_on "python@3.11"
 
   resource "cursedspace" do
-    url "https://files.pythonhosted.org/packages/cd/3b/72657c9e867dd5034814dcea21b1128a70a1b8427e48c7de8b3b9ea3dd93/cursedspace-1.5.2.tar.gz"
+    url "https:files.pythonhosted.orgpackagescd3b72657c9e867dd5034814dcea21b1128a70a1b8427e48c7de8b3b9ea3dd93cursedspace-1.5.2.tar.gz"
     sha256 "21043f80498db9a79d5ee1bb52229fd28ad8871a360601c8f9120ff9dadc2aec"
   end
 
   resource "pytodotxt" do
-    url "https://files.pythonhosted.org/packages/51/18/a8f4d15eb31bcde441b0ec090c5d97c435beabc9620199e7f90d2f5ad1af/pytodotxt-1.5.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages5118a8f4d15eb31bcde441b0ec090c5d97c435beabc9620199e7f90d2f5ad1afpytodotxt-1.5.0.tar.gz"
     sha256 "99be359438c52e0c4fc007e11a89f5a03af00fc6851a6ba7070dfe0e00189009"
   end
 
@@ -35,15 +35,15 @@ class Pter < Formula
   end
 
   test do
-    PTY.spawn(bin/"pter", "todo.txt") do |r, w, _pid|
+    PTY.spawn(bin"pter", "todo.txt") do |r, w, _pid|
       w.write "n"         # Create new task
       w.write "some task" # Task description
       w.write "\r"        # Confirm
       w.write "q"         # Quit
       r.read
     rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
+      # GNULinux raises EIO when read is done on closed pty
     end
-    assert_match "some task", (testpath/"todo.txt").read
+    assert_match "some task", (testpath"todo.txt").read
   end
 end

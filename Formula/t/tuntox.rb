@@ -1,10 +1,10 @@
 class Tuntox < Formula
   desc "Tunnel TCP connections over the Tox protocol"
-  homepage "https://gdr.name/tuntox/"
-  url "https://ghproxy.com/https://github.com/gjedeer/tuntox/archive/refs/tags/0.0.10.1.tar.gz"
+  homepage "https:gdr.nametuntox"
+  url "https:github.comgjedeertuntoxarchiverefstags0.0.10.1.tar.gz"
   sha256 "7f04ccf7789467ff5308ababbf24d44c300ca54f4035137f35f8e6cb2d779b12"
   license "GPL-3.0-only"
-  head "https://github.com/gjedeer/tuntox.git", branch: "master"
+  head "https:github.comgjedeertuntox.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "880d486454923edadb84110e8a318081260529b455c3efc848333b4ab798bdf9"
@@ -24,7 +24,7 @@ class Tuntox < Formula
   depends_on "toxcore"
 
   def install
-    inreplace "gitversion.h", /.*/, '#define GITVERSION "N/A"'
+    inreplace "gitversion.h", .*, '#define GITVERSION "NA"'
     inreplace "Makefile" do |s|
       s.gsub! "gitversion.h: FORCE", ""
       # -lrt substitution can be removed after 0.0.10.1
@@ -36,7 +36,7 @@ class Tuntox < Formula
   test do
     require "open3"
 
-    Open3.popen2e("#{bin}/tuntox") do |stdin, stdout_err, th|
+    Open3.popen2e("#{bin}tuntox") do |stdin, stdout_err, th|
       pid = th.pid
       stdin.close
       sleep 2

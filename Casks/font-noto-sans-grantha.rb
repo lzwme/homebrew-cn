@@ -2,10 +2,10 @@ cask "font-noto-sans-grantha" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notosansgrantha/NotoSansGrantha-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotosansgranthaNotoSansGrantha-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Sans Grantha"
-  homepage "https://fonts.google.com/specimen/Noto+Sans+Grantha"
+  homepage "https:fonts.google.comspecimenNoto+Sans+Grantha"
 
   font "NotoSansGrantha-Regular.ttf"
 

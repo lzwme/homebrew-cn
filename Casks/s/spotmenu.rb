@@ -2,10 +2,10 @@ cask "spotmenu" do
   version "1.9"
   sha256 "306fc07e2fa2987bd46eae15012808ab2341e47bc56c7b0ebef151752155fd6f"
 
-  url "https://ghproxy.com/https://github.com/kmikiy/SpotMenu/releases/download/v#{version}/SpotMenu.zip"
+  url "https:github.comkmikiySpotMenureleasesdownloadv#{version}SpotMenu.zip"
   name "SpotMenu"
   desc "Spotify and iTunes in the menu bar"
-  homepage "https://github.com/kmikiy/SpotMenu"
+  homepage "https:github.comkmikiySpotMenu"
 
   auto_updates true
 
@@ -15,10 +15,10 @@ cask "spotmenu" do
             login_item: "SpotMenu"
 
   zap trash: [
-    "~/Library/Application Scripts/com.KMikiy.SpotMenu.SpotMenuToday",
-    "~/Library/Application Support/com.KMikiy.SpotMenu",
-    "~/Library/Containers/com.KMikiy.SpotMenu.SpotMenuToday",
-    "~/Library/Group Containers/group.KMikiy.SpotMenu",
-    "~/Library/Preferences/com.KMikiy.SpotMenu.plist",
+    "~LibraryApplication Scriptscom.KMikiy.SpotMenu.SpotMenuToday",
+    "~LibraryApplication Supportcom.KMikiy.SpotMenu",
+    "~LibraryContainerscom.KMikiy.SpotMenu.SpotMenuToday",
+    "~LibraryGroup Containersgroup.KMikiy.SpotMenu",
+    "~LibraryPreferencescom.KMikiy.SpotMenu.plist",
   ]
 end

@@ -1,11 +1,11 @@
 class Haxe < Formula
   desc "Multi-platform programming language"
-  homepage "https://haxe.org/"
-  url "https://github.com/HaxeFoundation/haxe.git",
+  homepage "https:haxe.org"
+  url "https:github.comHaxeFoundationhaxe.git",
       tag:      "4.3.3",
       revision: "de2888959192e92ad5849b2b66c2782ba775adcc"
   license all_of: ["GPL-2.0-or-later", "MIT"]
-  head "https://github.com/HaxeFoundation/haxe.git", branch: "development"
+  head "https:github.comHaxeFoundationhaxe.git", branch: "development"
 
   livecheck do
     url :stable
@@ -40,12 +40,12 @@ class Haxe < Formula
   end
 
   resource "String::ShellQuote" do
-    url "https://cpan.metacpan.org/authors/id/R/RO/ROSCH/String-ShellQuote-1.04.tar.gz"
+    url "https:cpan.metacpan.orgauthorsidRROROSCHString-ShellQuote-1.04.tar.gz"
     sha256 "e606365038ce20d646d255c805effdd32f86475f18d43ca75455b00e4d86dd35"
   end
 
   resource "IPC::System::Simple" do
-    url "https://cpan.metacpan.org/authors/id/J/JK/JKEENAN/IPC-System-Simple-1.30.tar.gz"
+    url "https:cpan.metacpan.orgauthorsidJJKJKEENANIPC-System-Simple-1.30.tar.gz"
     sha256 "22e6f5222b505ee513058fdca35ab7a1eab80539b98e5ca4a923a70a8ae9ba9e"
   end
 
@@ -53,7 +53,7 @@ class Haxe < Formula
     # Build requires targets to be built in specific order
     ENV.deparallelize
 
-    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+    ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
     resources.each do |r|
       r.stage do
         system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
@@ -72,38 +72,38 @@ class Haxe < Formula
     end
 
     # Rebuild haxelib as a valid binary
-    cd "extra/haxelib_src" do
+    cd "extrahaxelib_src" do
       system "cmake", ".", *std_cmake_args
       system "make"
     end
     rm "haxelib"
-    cp "extra/haxelib_src/haxelib", "haxelib"
+    cp "extrahaxelib_srchaxelib", "haxelib"
 
     bin.mkpath
     system "make", "install", "INSTALL_BIN_DIR=#{bin}",
-           "INSTALL_LIB_DIR=#{lib}/haxe", "INSTALL_STD_DIR=#{lib}/haxe/std"
+           "INSTALL_LIB_DIR=#{lib}haxe", "INSTALL_STD_DIR=#{lib}haxestd"
   end
 
   def caveats
     <<~EOS
       Add the following line to your .bashrc or equivalent:
-        export HAXE_STD_PATH="#{HOMEBREW_PREFIX}/lib/haxe/std"
+        export HAXE_STD_PATH="#{HOMEBREW_PREFIX}libhaxestd"
     EOS
   end
 
   test do
-    ENV["HAXE_STD_PATH"] = "#{HOMEBREW_PREFIX}/lib/haxe/std"
-    system "#{bin}/haxe", "-v", "Std"
-    system "#{bin}/haxelib", "version"
+    ENV["HAXE_STD_PATH"] = "#{HOMEBREW_PREFIX}libhaxestd"
+    system "#{bin}haxe", "-v", "Std"
+    system "#{bin}haxelib", "version"
 
-    (testpath/"HelloWorld.hx").write <<~EOS
+    (testpath"HelloWorld.hx").write <<~EOS
       import js.html.Console;
 
       class HelloWorld {
           static function main() Console.log("Hello world!");
       }
     EOS
-    system "#{bin}/haxe", "-js", "out.js", "-main", "HelloWorld"
+    system "#{bin}haxe", "-js", "out.js", "-main", "HelloWorld"
 
     cmd = if OS.mac?
       "osascript -so -lJavaScript out.js 2>&1"

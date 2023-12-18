@@ -1,10 +1,10 @@
 class Kahip < Formula
   desc "Karlsruhe High Quality Partitioning"
-  homepage "https://algo2.iti.kit.edu/documents/kahip/index.html"
-  url "https://ghproxy.com/https://github.com/KaHIP/KaHIP/archive/refs/tags/v3.16.tar.gz"
+  homepage "https:algo2.iti.kit.edudocumentskahipindex.html"
+  url "https:github.comKaHIPKaHIParchiverefstagsv3.16.tar.gz"
   sha256 "b0ef72a26968d37d9baa1304f7a113b61e925966a15e86578d44e26786e76c75"
   license "MIT"
-  head "https://github.com/KaHIP/KaHIP.git", branch: "master"
+  head "https:github.comKaHIPKaHIP.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "970fe2a3d90298de2d44a30bce8a60f9bbcf2e0be59f2035c617d825fd4713e7"
@@ -34,7 +34,7 @@ class Kahip < Formula
   end
 
   test do
-    output = shell_output("#{bin}/interface_test")
+    output = shell_output("#{bin}interface_test")
     assert_match "edge cut 2", output
   end
 end

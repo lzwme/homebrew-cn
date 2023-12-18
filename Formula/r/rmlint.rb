@@ -1,7 +1,7 @@
 class Rmlint < Formula
   desc "Extremely fast tool to remove dupes and other lint from your filesystem"
-  homepage "https://github.com/sahib/rmlint"
-  url "https://ghproxy.com/https://github.com/sahib/rmlint/archive/refs/tags/v2.10.2.tar.gz"
+  homepage "https:github.comsahibrmlint"
+  url "https:github.comsahibrmlintarchiverefstagsv2.10.2.tar.gz"
   sha256 "0a0233ad517e0fb721f21e188a57cdee5279dd5329b38acb56d5d5312ce46388"
   license "GPL-3.0-or-later"
 
@@ -42,12 +42,12 @@ class Rmlint < Formula
     system "scons", "config"
     system "scons"
     bin.install "rmlint"
-    man1.install "docs/rmlint.1.gz"
+    man1.install "docsrmlint.1.gz"
   end
 
   test do
-    (testpath/"1.txt").write("1")
-    (testpath/"2.txt").write("1")
-    assert_match "# Duplicate(s):", shell_output("#{bin}/rmlint")
+    (testpath"1.txt").write("1")
+    (testpath"2.txt").write("1")
+    assert_match "# Duplicate(s):", shell_output("#{bin}rmlint")
   end
 end

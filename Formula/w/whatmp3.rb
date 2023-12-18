@@ -2,12 +2,12 @@ class Whatmp3 < Formula
   include Language::Python::Shebang
 
   desc "Small script to create mp3 torrents out of FLACs"
-  homepage "https://github.com/RecursiveForest/whatmp3"
-  url "https://ghproxy.com/https://github.com/RecursiveForest/whatmp3/archive/refs/tags/v3.8.tar.gz"
+  homepage "https:github.comRecursiveForestwhatmp3"
+  url "https:github.comRecursiveForestwhatmp3archiverefstagsv3.8.tar.gz"
   sha256 "0d8ba70a1c72835663a3fde9ba8df0ff7007268ec0a2efac76c896dea4fcf489"
   license "MIT"
   revision 5
-  head "https://github.com/RecursiveForest/whatmp3.git", branch: "master"
+  head "https:github.comRecursiveForestwhatmp3.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -22,13 +22,13 @@ class Whatmp3 < Formula
   def install
     system "make", "PREFIX=#{prefix}", "install"
 
-    rewrite_shebang detected_python_shebang, bin/"whatmp3"
+    rewrite_shebang detected_python_shebang, bin"whatmp3"
   end
 
   test do
-    (testpath/"flac").mkpath
+    (testpath"flac").mkpath
     cp test_fixtures("test.flac"), "flac"
-    system "#{bin}/whatmp3", "--notorrent", "--V0", "flac"
-    assert_predicate testpath/"V0/test.mp3", :exist?
+    system "#{bin}whatmp3", "--notorrent", "--V0", "flac"
+    assert_predicate testpath"V0test.mp3", :exist?
   end
 end

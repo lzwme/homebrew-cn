@@ -1,7 +1,7 @@
 class Hayai < Formula
   desc "C++ benchmarking framework inspired by the googletest framework"
-  homepage "https://bruun.co/2012/02/07/easy-cpp-benchmarking"
-  url "https://ghproxy.com/https://github.com/nickbruun/hayai/archive/refs/tags/v1.0.2.tar.gz"
+  homepage "https:bruun.co20120207easy-cpp-benchmarking"
+  url "https:github.comnickbruunhayaiarchiverefstagsv1.0.2.tar.gz"
   sha256 "e30e69b107361c132c831a2c8b2040ea51225bb9ed50675b51099435b8cd6594"
   license "Apache-2.0"
 
@@ -30,8 +30,8 @@ class Hayai < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <hayai/hayai.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <hayaihayai.hpp>
       #include <iostream>
       int main() {
         hayai::Benchmarker::RunAllTests();
@@ -45,6 +45,6 @@ class Hayai < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-L#{lib}", "-lhayai_main", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

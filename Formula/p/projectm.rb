@@ -1,7 +1,7 @@
 class Projectm < Formula
   desc "Milkdrop-compatible music visualizer"
-  homepage "https://github.com/projectM-visualizer/projectm"
-  url "https://ghproxy.com/https://github.com/projectM-visualizer/projectm/releases/download/v3.1.12/projectM-3.1.12.tar.gz"
+  homepage "https:github.comprojectM-visualizerprojectm"
+  url "https:github.comprojectM-visualizerprojectmreleasesdownloadv3.1.12projectM-3.1.12.tar.gz"
   sha256 "b6b99dde5c8f0822ae362606a0429628ee478f4ec943a156723841b742954707"
   license "LGPL-2.1-or-later"
 
@@ -20,7 +20,7 @@ class Projectm < Formula
   end
 
   head do
-    url "https://github.com/projectM-visualizer/projectm.git", branch: "master"
+    url "https:github.comprojectM-visualizerprojectm.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -35,23 +35,23 @@ class Projectm < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    assert_predicate prefix/"share/projectM/config.inp", :exist?
-    assert_predicate prefix/"share/projectM/presets", :exist?
+    assert_predicate prefix"shareprojectMconfig.inp", :exist?
+    assert_predicate prefix"shareprojectMpresets", :exist?
 
-    (testpath/"test.cpp").write <<~EOS
-      #include <libprojectM/projectM.hpp>
-      #include <SDL2/SDL.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <libprojectMprojectM.hpp>
+      #include <SDL2SDL.h>
       #include <stdlib.h>
       #include <stdio.h>
 
       int main()
       {
-        // initialize SDL video + openGL
+         initialize SDL video + openGL
         if (SDL_Init(SDL_INIT_VIDEO) < 0)
         {
           fprintf(stderr, "Video init failed: %s", SDL_GetError());
@@ -66,7 +66,7 @@ class Projectm < Formula
         auto *settings = new projectM::Settings();
         auto *pm = new projectM(*settings, projectM::FLAG_DISABLE_PLAYLIST_LOAD);
 
-        // if we get this far without crashing we're in good shape
+         if we get this far without crashing we're in good shape
         return 0;
       }
     EOS
@@ -76,6 +76,6 @@ class Projectm < Formula
     # Fails in Linux CI with "Video init failed: No available video device"
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "./test"
+    system ".test"
   end
 end

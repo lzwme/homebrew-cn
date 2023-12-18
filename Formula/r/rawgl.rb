@@ -1,9 +1,9 @@
 class Rawgl < Formula
   desc "Rewritten engine for Another World"
-  homepage "https://github.com/cyxx/rawgl"
-  url "https://ghproxy.com/https://github.com/cyxx/rawgl/archive/refs/tags/rawgl-0.2.1.tar.gz"
+  homepage "https:github.comcyxxrawgl"
+  url "https:github.comcyxxrawglarchiverefstagsrawgl-0.2.1.tar.gz"
   sha256 "da00d4abbc266e94c3755c2fd214953c48698826011b1d4afbebb99396240073"
-  head "https://github.com/cyxx/rawgl.git", branch: "master"
+  head "https:github.comcyxxrawgl.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -23,7 +23,7 @@ class Rawgl < Formula
 
   # Upstream fix for SDL2_mixer >= 2.0.2
   patch do
-    url "https://github.com/cyxx/rawgl/commit/483492fb.patch?full_index=1"
+    url "https:github.comcyxxrawglcommit483492fb.patch?full_index=1"
     sha256 "b1f6fb1e4f6ee52a79d128dccd63a7d5a20ced25bb435e934235b679d1299862"
   end
 
@@ -33,6 +33,6 @@ class Rawgl < Formula
   end
 
   test do
-    system bin/"rawgl", "--help"
+    system bin"rawgl", "--help"
   end
 end

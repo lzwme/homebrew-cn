@@ -1,10 +1,10 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
-  homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://ghproxy.com/https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.268.tar.gz"
+  homepage "https:github.comKhronosGroupVulkan-ExtensionLayer"
+  url "https:github.comKhronosGroupVulkan-ExtensionLayerarchiverefstagsv1.3.268.tar.gz"
   sha256 "038fe8be301a7169b57c5fef7fbcdfa61a52f2b0fb3dabcf61218dfa417ba7dc"
   license "Apache-2.0"
-  head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
+  head "https:github.comKhronosGroupVulkan-ExtensionLayer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4863eafe85a71d3f47029d5d3b1098a3a36b9ee200fc7481e8d335980fdc8841"
@@ -49,13 +49,13 @@ class VulkanExtensionlayer < Formula
   def caveats
     <<~EOS
       In order to use these layers in a Vulkan application, you may need to place them in the environment with
-        export VK_LAYER_PATH=#{opt_share}/vulkan/explicit_layer.d
+        export VK_LAYER_PATH=#{opt_share}vulkanexplicit_layer.d
     EOS
   end
 
   test do
-    ENV.prepend_path "VK_LAYER_PATH", share/"vulkan/explicit_layer.d"
-    ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
+    ENV.prepend_path "VK_LAYER_PATH", share"vulkanexplicit_layer.d"
+    ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib"mock_icdVkICD_mock_icd.json"
 
     expected = <<~EOS
       Instance Layers: count = 3

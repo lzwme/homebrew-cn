@@ -1,14 +1,14 @@
 class Agda < Formula
   desc "Dependently typed functional programming language"
-  homepage "https://wiki.portal.chalmers.se/agda/"
+  homepage "https:wiki.portal.chalmers.seagda"
   license "BSD-3-Clause"
 
   stable do
-    url "https://hackage.haskell.org/package/Agda-2.6.4.1/Agda-2.6.4.1.tar.gz"
+    url "https:hackage.haskell.orgpackageAgda-2.6.4.1Agda-2.6.4.1.tar.gz"
     sha256 "23248a9b3c50c81ea4751518a66f2a6144617b6a5a9202686b54e33bc9cbd080"
 
     resource "stdlib" do
-      url "https://ghproxy.com/https://github.com/agda/agda-stdlib/archive/refs/tags/v1.7.3.tar.gz"
+      url "https:github.comagdaagda-stdlibarchiverefstagsv1.7.3.tar.gz"
       sha256 "91c42323fdc94d032a8c98ea9249d9d77e7ba3b51749fe85f18536dbbe603437"
     end
   end
@@ -24,10 +24,10 @@ class Agda < Formula
   end
 
   head do
-    url "https://github.com/agda/agda.git", branch: "master"
+    url "https:github.comagdaagda.git", branch: "master"
 
     resource "stdlib" do
-      url "https://github.com/agda/agda-stdlib.git", branch: "master"
+      url "https:github.comagdaagda-stdlib.git", branch: "master"
     end
   end
 
@@ -43,22 +43,22 @@ class Agda < Formula
     system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
 
     # generate the standard library's documentation and vim highlighting files
-    agdalib = lib/"agda"
+    agdalib = lib"agda"
     resource("stdlib").stage agdalib
     cd agdalib do
       cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
       system "cabal", "v2-update"
-      system "cabal", "--store-dir=#{libexec}", "v2-install", *cabal_args, "--installdir=#{lib}/agda"
-      system "./GenerateEverything"
-      system bin/"agda", "-i", ".", "-i", "src", "--html", "--vim", "README.agda"
+      system "cabal", "--store-dir=#{libexec}", "v2-install", *cabal_args, "--installdir=#{lib}agda"
+      system ".GenerateEverything"
+      system bin"agda", "-i", ".", "-i", "src", "--html", "--vim", "README.agda"
     end
 
     # Clean up references to Homebrew shims
-    rm_rf "#{lib}/agda/dist-newstyle/cache"
+    rm_rf "#{lib}agdadist-newstylecache"
   end
 
   test do
-    simpletest = testpath/"SimpleTest.agda"
+    simpletest = testpath"SimpleTest.agda"
     simpletest.write <<~EOS
       module SimpleTest where
 
@@ -83,7 +83,7 @@ class Agda < Formula
       +-assoc (suc m) n o = cong suc (+-assoc m n o)
     EOS
 
-    stdlibtest = testpath/"StdlibTest.agda"
+    stdlibtest = testpath"StdlibTest.agda"
     stdlibtest.write <<~EOS
       module StdlibTest where
 
@@ -95,7 +95,7 @@ class Agda < Formula
       +-assoc (suc m) n o = cong suc (+-assoc m n o)
     EOS
 
-    iotest = testpath/"IOTest.agda"
+    iotest = testpath"IOTest.agda"
     iotest.write <<~EOS
       module IOTest where
 
@@ -113,16 +113,16 @@ class Agda < Formula
 
     # we need a test-local copy of the stdlib as the test writes to
     # the stdlib directory
-    resource("stdlib").stage testpath/"lib/agda"
+    resource("stdlib").stage testpath"libagda"
 
     # typecheck a simple module
-    system bin/"agda", simpletest
+    system bin"agda", simpletest
 
     # typecheck a module that uses the standard library
-    system bin/"agda", "-i", testpath/"lib/agda/src", stdlibtest
+    system bin"agda", "-i", testpath"libagdasrc", stdlibtest
 
     # compile a simple module using the JS backend
-    system bin/"agda", "--js", simpletest
+    system bin"agda", "--js", simpletest
 
     # test the GHC backend
     cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
@@ -132,7 +132,7 @@ class Agda < Formula
     system "cabal", "v2-install", "text", "--lib", *cabal_args
 
     # compile and run a simple program
-    system bin/"agda", "--ghc-flag=-fno-warn-star-is-type", "-c", iotest
-    assert_equal "", shell_output(testpath/"IOTest")
+    system bin"agda", "--ghc-flag=-fno-warn-star-is-type", "-c", iotest
+    assert_equal "", shell_output(testpath"IOTest")
   end
 end

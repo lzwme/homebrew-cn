@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
-  homepage "https://keploy.io"
-  url "https://ghproxy.com/https://github.com/keploy/keploy/archive/refs/tags/v0.9.1.tar.gz"
+  homepage "https:keploy.io"
+  url "https:github.comkeploykeployarchiverefstagsv0.9.1.tar.gz"
   sha256 "0e45207362bc17dd37e2efa8c881c72878525bca79ddfc45e6c242ea97fb12a1"
   license "Apache-2.0"
 
@@ -22,7 +22,7 @@ class Keploy < Formula
   depends_on "node"
 
   resource("ui") do
-    url "https://ghproxy.com/https://github.com/keploy/ui/archive/refs/tags/0.1.0.tar.gz"
+    url "https:github.comkeployuiarchiverefstags0.1.0.tar.gz"
     sha256 "d12cdad7fa1c77b8bd755030e9479007e9fcb476fecd0fa6938f076f6633028e"
   end
 
@@ -31,10 +31,10 @@ class Keploy < Formula
       ENV["SHARP_IGNORE_GLOBAL_LIBVIPS"] = "1"
       system "npm", "install", "--legacy-peer-deps", *Language::Node.local_npm_install_args
       system "gatsby", "build"
-      buildpath.install "./public"
+      buildpath.install ".public"
     end
     cp_r "public", "web", remove_destination: true
-    system "go", "build", *std_go_args, "./cmd/server"
+    system "go", "build", *std_go_args, ".cmdserver"
   end
 
   test do
@@ -42,7 +42,7 @@ class Keploy < Formula
 
     port = free_port
     env = { "PORT" => port.to_s }
-    executable = bin/"keploy"
+    executable = bin"keploy"
 
     output = ""
     PTY.spawn(env, executable) do |r, _w, pid|
@@ -51,7 +51,7 @@ class Keploy < Formula
       begin
         r.each_line { |line| output += line }
       rescue Errno::EIO
-        # GNU/Linux raises EIO when read is done on closed pty
+        # GNULinux raises EIO when read is done on closed pty
       end
     end
     assert_match("keploy started at port #{port}", output)

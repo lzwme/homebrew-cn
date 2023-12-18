@@ -2,10 +2,10 @@ cask "font-kreon" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/kreon/Kreon%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflkreonKreon%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Kreon"
-  homepage "https://fonts.google.com/specimen/Kreon"
+  homepage "https:fonts.google.comspecimenKreon"
 
   font "Kreon[wght].ttf"
 

@@ -1,22 +1,22 @@
 class Loudmouth < Formula
   desc "Lightweight C library for the Jabber protocol"
-  homepage "https://mcabber.com"
+  homepage "https:mcabber.com"
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://mcabber.com/files/loudmouth/loudmouth-1.5.4.tar.bz2"
+    url "https:mcabber.comfilesloudmouthloudmouth-1.5.4.tar.bz2"
     sha256 "31cbc91c1fddcc5346b3373b8fb45594e9ea9cc7fe36d0595e8912c47ad94d0d"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
     url :homepage
-    regex(/href=.*?loudmouth[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?loudmouth[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -34,7 +34,7 @@ class Loudmouth < Formula
   end
 
   head do
-    url "https://github.com/mcabber/loudmouth.git", branch: "master"
+    url "https:github.commcabberloudmouth.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -48,22 +48,22 @@ class Loudmouth < Formula
   depends_on "libidn"
 
   def install
-    system "./autogen.sh", "-n" if build.head?
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+    system ".autogen.sh", "-n" if build.head?
+    system ".configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}", "--with-ssl=gnutls"
     system "make"
     system "make", "check"
     system "make", "install"
-    (pkgshare/"examples").install Dir["examples/*.c"]
+    (pkgshare"examples").install Dir["examples*.c"]
   end
 
   test do
-    cp pkgshare/"examples/lm-send-async.c", testpath
+    cp pkgshare"exampleslm-send-async.c", testpath
     system ENV.cc, "lm-send-async.c", "-o", "test",
       "-L#{lib}", "-L#{Formula["glib"].opt_lib}", "-lloudmouth-1", "-lglib-2.0",
-      "-I#{include}/loudmouth-1.0",
-      "-I#{Formula["glib"].opt_include}/glib-2.0",
-      "-I#{Formula["glib"].opt_lib}/glib-2.0/include"
-    system "./test", "--help"
+      "-I#{include}loudmouth-1.0",
+      "-I#{Formula["glib"].opt_include}glib-2.0",
+      "-I#{Formula["glib"].opt_lib}glib-2.0include"
+    system ".test", "--help"
   end
 end

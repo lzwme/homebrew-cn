@@ -1,7 +1,7 @@
 class Staq < Formula
   desc "Full-stack quantum processing toolkit"
-  homepage "https://github.com/softwareQinc/staq"
-  url "https://ghproxy.com/https://github.com/softwareQinc/staq/archive/refs/tags/v3.4.tar.gz"
+  homepage "https:github.comsoftwareQincstaq"
+  url "https:github.comsoftwareQincstaqarchiverefstagsv3.4.tar.gz"
   sha256 "6a39d5ff9dace12fe29ad379d378bdf21a6d2515aba93f6008465280291381c2"
   license "MIT"
 
@@ -24,7 +24,7 @@ class Staq < Formula
   end
 
   test do
-    (testpath/"input.qasm").write <<~EOS
+    (testpath"input.qasm").write <<~EOS
       OPENQASM 2.0;
       include "qelib1.inc";
 
@@ -34,7 +34,7 @@ class Staq < Formula
       h q[0];
       measure q->c;
     EOS
-    assert_equal <<~EOS, shell_output("#{bin}/staq -O3 ./input.qasm").chomp
+    assert_equal <<~EOS, shell_output("#{bin}staq -O3 .input.qasm").chomp
       OPENQASM 2.0;
       include "qelib1.inc";
 

@@ -2,13 +2,13 @@ cask "font-material-symbols" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/material-design-icons.git",
-      verified:  "github.com/google/material-design-icons",
+  url "https:github.comgooglematerial-design-icons.git",
+      verified:  "github.comgooglematerial-design-icons",
       branch:    "master",
       only_path: "variablefont"
   name "Material Symbols"
   desc "Icons based on Material Design principles as variable fonts"
-  homepage "https://fonts.google.com/icons"
+  homepage "https:fonts.google.comicons"
 
   font "MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf"
   font "MaterialSymbolsRounded[FILL,GRAD,opsz,wght].ttf"

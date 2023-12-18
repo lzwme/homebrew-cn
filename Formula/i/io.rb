@@ -1,11 +1,11 @@
 class Io < Formula
   desc "Small prototype-based programming language"
-  homepage "http://iolanguage.com/"
-  url "https://ghproxy.com/https://github.com/IoLanguage/io/archive/refs/tags/2017.09.06.tar.gz"
+  homepage "http:iolanguage.com"
+  url "https:github.comIoLanguageioarchiverefstags2017.09.06.tar.gz"
   sha256 "9ac5cd94bbca65c989cd254be58a3a716f4e4f16480f0dc81070457aa353c217"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/IoLanguage/io.git", branch: "master"
+  head "https:github.comIoLanguageio.git", branch: "master"
 
   bottle do
     sha256 sonoma:       "18dfd552cc463cf9be8dab9be3c3c4704f3996ec9a9e66d45cfcde7c531d88a5"
@@ -20,7 +20,7 @@ class Io < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on arch: :x86_64 # https://github.com/IoLanguage/io/issues/465
+  depends_on arch: :x86_64 # https:github.comIoLanguageioissues465
 
   uses_from_macos "libxml2"
 
@@ -46,10 +46,10 @@ class Io < Formula
   end
 
   test do
-    (testpath/"test.io").write <<~EOS
+    (testpath"test.io").write <<~EOS
       "it works!" println
     EOS
 
-    assert_equal "it works!\n", shell_output("#{bin}/io test.io")
+    assert_equal "it works!\n", shell_output("#{bin}io test.io")
   end
 end

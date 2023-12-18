@@ -1,11 +1,11 @@
 class Ettercap < Formula
-  desc "Multipurpose sniffer/interceptor/logger for switched LAN"
-  homepage "https://ettercap.github.io/ettercap/"
+  desc "Multipurpose snifferinterceptorlogger for switched LAN"
+  homepage "https:ettercap.github.ioettercap"
   license "GPL-2.0-or-later"
   revision 2
 
   stable do
-    url "https://ghproxy.com/https://github.com/Ettercap/ettercap/archive/refs/tags/v0.8.3.1.tar.gz"
+    url "https:github.comEttercapettercaparchiverefstagsv0.8.3.1.tar.gz"
     sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
 
     depends_on "pcre"
@@ -13,20 +13,20 @@ class Ettercap < Formula
     # Part of libmaxminddb backport that cannot be added via patch.
     # Remove in the next release along with corresponding install
     resource "GeoLite2-Country.mmdb" do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Ettercap/ettercap/741c4d3bcd5c3e37d7d6b0fe0e748a955b2f43f5/share/GeoLite2-Country.mmdb"
+      url "https:raw.githubusercontent.comEttercapettercap741c4d3bcd5c3e37d7d6b0fe0e748a955b2f43f5shareGeoLite2-Country.mmdb"
       sha256 "b22fd1cc9bd76c0706ed6cafefcd07c2bfb5a22581faebdcd9161b9d8a44d0c0"
     end
 
     # Fix build for curl 8+
-    # https://github.com/Ettercap/ettercap/pull/1221
+    # https:github.comEttercapettercappull1221
     patch do
-      url "https://github.com/Ettercap/ettercap/commit/40534662043b7d831d1f6c70448afa9d374a9b63.patch?full_index=1"
+      url "https:github.comEttercapettercapcommit40534662043b7d831d1f6c70448afa9d374a9b63.patch?full_index=1"
       sha256 "ac9edbd2f5d2e809835f8b111a7f20000ffab0efca2d6f17f4b199bb325009b1"
     end
 
     # Backport libmaxminddb support. Remove in the next release.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/1857153707716e38c40ebb5dc641a30a471e2962/ettercap/libmaxminddb-backport.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches1857153707716e38c40ebb5dc641a30a471e2962ettercaplibmaxminddb-backport.diff"
       sha256 "b7869963df256af7cfae0f9e936e6dac4ec51a8b38dcfef6ea909e81e3ab8d0e"
     end
   end
@@ -43,7 +43,7 @@ class Ettercap < Formula
   end
 
   head do
-    url "https://github.com/Ettercap/ettercap.git", branch: "master"
+    url "https:github.comEttercapettercap.git", branch: "master"
 
     depends_on "pcre2"
   end
@@ -64,17 +64,17 @@ class Ettercap < Formula
 
   on_macos do
     # Use ninja to work around build failure with make:
-    # .../tapi stubify -isysroot ... -o libettercap-ui.0.8.3.1.tbd libettercap-ui.0.8.3.1.dylib
+    # ...tapi stubify -isysroot ... -o libettercap-ui.0.8.3.1.tbd libettercap-ui.0.8.3.1.dylib
     # error: no such file or directory: 'libettercap-ui.0.8.3.1.dylib'
     depends_on "ninja" => :build
   end
 
   def install
-    (buildpath/"share").install resource("GeoLite2-Country.mmdb") if build.stable?
+    (buildpath"share").install resource("GeoLite2-Country.mmdb") if build.stable?
 
     # Work around a CMake bug affecting harfbuzz headers and pango
-    # https://gitlab.kitware.com/cmake/cmake/issues/19531
-    ENV.append_to_cflags "-I#{Formula["harfbuzz"].opt_include}/harfbuzz"
+    # https:gitlab.kitware.comcmakecmakeissues19531
+    ENV.append_to_cflags "-I#{Formula["harfbuzz"].opt_include}harfbuzz"
 
     args = %W[
       -DBUNDLED_LIBS=OFF
@@ -86,15 +86,15 @@ class Ettercap < Formula
       -DENABLE_PDF_DOCS=OFF
       -DENABLE_PLUGINS=ON
       -DGTK_BUILD_TYPE=GTK3
-      -DGTK3_GLIBCONFIG_INCLUDE_DIR=#{Formula["glib"].opt_lib}/glib-2.0/include
+      -DGTK3_GLIBCONFIG_INCLUDE_DIR=#{Formula["glib"].opt_lib}glib-2.0include
       -DINSTALL_DESKTOP=ON
       -DINSTALL_SYSCONFDIR=#{etc}
     ]
 
     if OS.linux?
       # Fix build error on wdg_file.c: fatal error: menu.h: No such file or directory
-      ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw"
-      args << "-DPOLKIT_DIR=#{share}/polkit-1/actions/"
+      ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}ncursesw"
+      args << "-DPOLKIT_DIR=#{share}polkit-1actions"
     else
       args << "-GNinja"
     end
@@ -105,6 +105,6 @@ class Ettercap < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/ettercap --version")
+    assert_match version.to_s, shell_output("#{bin}ettercap --version")
   end
 end

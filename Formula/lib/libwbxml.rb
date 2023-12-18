@@ -1,10 +1,10 @@
 class Libwbxml < Formula
   desc "Library and tools to parse and encode WBXML documents"
-  homepage "https://github.com/libwbxml/libwbxml"
-  url "https://ghproxy.com/https://github.com/libwbxml/libwbxml/archive/refs/tags/libwbxml-0.11.8.tar.gz"
+  homepage "https:github.comlibwbxmllibwbxml"
+  url "https:github.comlibwbxmllibwbxmlarchiverefstagslibwbxml-0.11.8.tar.gz"
   sha256 "a6fe0e55369280c1a7698859a5c2bb37c8615c57a919b574cd8c16458279db66"
   license "LGPL-2.1"
-  head "https://github.com/libwbxml/libwbxml.git", branch: "master"
+  head "https:github.comlibwbxmllibwbxml.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,8 +30,8 @@ class Libwbxml < Formula
   def install
     # Sandbox fix:
     # Install in Cellar & then automatically symlink into top-level Module path
-    inreplace "cmake/CMakeLists.txt", "${CMAKE_ROOT}/Modules/",
-                                      "#{share}/cmake/Modules"
+    inreplace "cmakeCMakeLists.txt", "${CMAKE_ROOT}Modules",
+                                      "#{share}cmakeModules"
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args,

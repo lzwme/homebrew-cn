@@ -1,11 +1,11 @@
 class Iocextract < Formula
   desc "Defanged indicator of compromise extractor"
-  homepage "https://inquest.readthedocs.io/projects/iocextract/en/latest/"
-  url "https://files.pythonhosted.org/packages/ad/4b/19934df6cd6a0f6923aabae391a67b630fdd03c12c1226377c99a747a4f1/iocextract-1.16.1.tar.gz"
+  homepage "https:inquest.readthedocs.ioprojectsiocextractenlatest"
+  url "https:files.pythonhosted.orgpackagesad4b19934df6cd6a0f6923aabae391a67b630fdd03c12c1226377c99a747a4f1iocextract-1.16.1.tar.gz"
   sha256 "ec1389a76a5083f643652579610e8313d27ed5821fc57e7b046c23ddec181d44"
   license "GPL-2.0-only"
   revision 2
-  head "https://github.com/InQuest/iocextract.git", branch: "master"
+  head "https:github.comInQuestiocextract.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -32,11 +32,11 @@ class Iocextract < Formula
   end
 
   test do
-    (testpath/"test.txt").write <<~EOS
+    (testpath"test.txt").write <<~EOS
       InQuest customers have had detection for threats delivered from hotfixmsupload[.]com
-      since 6/3/2017 and cdnverify[.]net since 2/1/18.
+      since 632017 and cdnverify[.]net since 2118.
     EOS
 
-    assert_match "hotfixmsupload[.]com\ncdnverify[.]net", shell_output("#{bin}/iocextract -i #{testpath}/test.txt")
+    assert_match "hotfixmsupload[.]com\ncdnverify[.]net", shell_output("#{bin}iocextract -i #{testpath}test.txt")
   end
 end

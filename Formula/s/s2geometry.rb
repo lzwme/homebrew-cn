@@ -1,14 +1,14 @@
 class S2geometry < Formula
   desc "Computational geometry and spatial indexing on the sphere"
-  homepage "https://github.com/google/s2geometry"
-  url "https://ghproxy.com/https://github.com/google/s2geometry/archive/refs/tags/v0.10.0.tar.gz"
+  homepage "https:github.comgoogles2geometry"
+  url "https:github.comgoogles2geometryarchiverefstagsv0.10.0.tar.gz"
   sha256 "1c17b04f1ea20ed09a67a83151ddd5d8529716f509dde49a8190618d70532a3d"
   license "Apache-2.0"
   revision 5
 
   livecheck do
     url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -40,29 +40,29 @@ class S2geometry < Formula
       -DWITH_GLOG=1
     ]
 
-    system "cmake", "-S", ".", "-B", "build/shared", *args
-    system "cmake", "--build", "build/shared"
-    system "cmake", "--install", "build/shared"
+    system "cmake", "-S", ".", "-B", "buildshared", *args
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
 
-    system "cmake", "-S", ".", "-B", "build/static", *args,
+    system "cmake", "-S", ".", "-B", "buildstatic", *args,
                     "-DBUILD_SHARED_LIBS=OFF",
                     "-DOPENSSL_USE_STATIC_LIBS=TRUE"
-    system "cmake", "--build", "build/static"
-    lib.install "build/static/libs2.a"
+    system "cmake", "--build", "buildstatic"
+    lib.install "buildstaticlibs2.a"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <cinttypes>
       #include <cmath>
       #include <cstdint>
       #include <cstdio>
-      #include "s2/base/commandlineflags.h"
-      #include "s2/s2earth.h"
-      #include "absl/flags/flag.h"
-      #include "s2/s1chord_angle.h"
-      #include "s2/s2closest_point_query.h"
-      #include "s2/s2point_index.h"
+      #include "s2basecommandlineflags.h"
+      #include "s2s2earth.h"
+      #include "abslflagsflag.h"
+      #include "s2s1chord_angle.h"
+      #include "s2s2closest_point_query.h"
+      #include "s2s2point_index.h"
 
       S2_DEFINE_int32(num_index_points, 10000, "Number of points to index");
       S2_DEFINE_int32(num_queries, 10000, "Number of queries");
@@ -76,7 +76,7 @@ class S2geometry < Formula
         for (int bits = 0; bits < num_bits; bits += RAND_BITS) {
           result = (result << RAND_BITS) + random();
         }
-        if (num_bits < 64) {  // Not legal to shift by full bitwidth of type
+        if (num_bits < 64) {   Not legal to shift by full bitwidth of type
           result &= ((1ULL << num_bits) - 1);
         }
         return result;
@@ -121,6 +121,6 @@ class S2geometry < Formula
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{Formula["openssl@3"].opt_include}",
                     "-L#{lib}", "-ls2"
-    system "./test"
+    system ".test"
   end
 end

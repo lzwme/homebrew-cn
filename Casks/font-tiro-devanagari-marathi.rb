@@ -2,13 +2,13 @@ cask "font-tiro-devanagari-marathi" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tirodevanagarimarathi"
+      only_path: "ofltirodevanagarimarathi"
   name "Tiro Devanagari Marathi"
   desc "Broader proportions, generous counters, and strong diagonal strokes"
-  homepage "https://fonts.google.com/specimen/Tiro+Devanagari+Marathi"
+  homepage "https:fonts.google.comspecimenTiro+Devanagari+Marathi"
 
   font "TiroDevanagariMarathi-Italic.ttf"
   font "TiroDevanagariMarathi-Regular.ttf"

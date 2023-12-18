@@ -2,10 +2,10 @@ cask "font-ubuntu-mono-nerd-font" do
   version "3.1.1"
   sha256 "af7b9940dfe959712a293add9e90d0ea9d43088d9001682767a30741dc52e9b9"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/UbuntuMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}UbuntuMono.zip"
   name "UbuntuMono Nerd Font (Ubuntu Mono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

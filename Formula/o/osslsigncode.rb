@@ -1,7 +1,7 @@
 class Osslsigncode < Formula
-  desc "OpenSSL based Authenticode signing for PE/MSI/Java CAB files"
-  homepage "https://github.com/mtrojnar/osslsigncode"
-  url "https://ghproxy.com/https://github.com/mtrojnar/osslsigncode/archive/refs/tags/2.7.tar.gz"
+  desc "OpenSSL based Authenticode signing for PEMSIJava CAB files"
+  homepage "https:github.commtrojnarosslsigncode"
+  url "https:github.commtrojnarosslsigncodearchiverefstags2.7.tar.gz"
   sha256 "00fc2b43395d89a2d07ebbd4981e7a9dbc676c7115d122a1385441c0294239b8"
   license "GPL-3.0-or-later"
 
@@ -36,19 +36,19 @@ class Osslsigncode < Formula
 
   test do
     # Requires Windows PE executable as input, so we're just showing the version
-    assert_match "osslsigncode", shell_output("#{bin}/osslsigncode --version")
+    assert_match "osslsigncode", shell_output("#{bin}osslsigncode --version")
   end
 end
 
 __END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
+diff --git aCMakeLists.txt bCMakeLists.txt
 index 2ffeb4e..7e2bc01 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
+--- aCMakeLists.txt
++++ bCMakeLists.txt
 @@ -33,7 +33,6 @@ include(FindCURL)
 
  # load CMake project modules
- set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}cmake")
 -include(SetBashCompletion)
  include(FindHeaders)
 

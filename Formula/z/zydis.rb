@@ -1,11 +1,11 @@
 class Zydis < Formula
-  desc "Fast and lightweight x86/x86_64 disassembler library"
-  homepage "https://zydis.re"
-  url "https://github.com/zyantific/zydis.git",
+  desc "Fast and lightweight x86x86_64 disassembler library"
+  homepage "https:zydis.re"
+  url "https:github.comzyantificzydis.git",
       tag:      "v4.0.0",
       revision: "1ba75aeefae37094c7be8eba07ff81d4fe0f1f20"
   license "MIT"
-  head "https://github.com/zyantific/zydis.git", branch: "master"
+  head "https:github.comzyantificzydis.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a9b9409fa72390de45dd9df63e39402f7ae0a70ae7c4c600f08de8302a0d9ba"
@@ -28,7 +28,7 @@ class Zydis < Formula
   end
 
   test do
-    output = shell_output("#{bin}/ZydisInfo -64 66 3E 65 2E F0 F2 F3 48 01 A4 98 2C 01 00 00")
+    output = shell_output("#{bin}ZydisInfo -64 66 3E 65 2E F0 F2 F3 48 01 A4 98 2C 01 00 00")
     assert_match "xrelease lock add qword ptr gs:[rax+rbx*4+0x12C], rsp", output
   end
 end

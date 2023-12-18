@@ -1,16 +1,16 @@
 class Kcov < Formula
   desc "Code coverage tester for compiled programs, Python, and shell scripts"
-  homepage "https://simonkagstrom.github.io/kcov/"
-  url "https://ghproxy.com/https://github.com/SimonKagstrom/kcov/archive/refs/tags/v42.tar.gz"
+  homepage "https:simonkagstrom.github.iokcov"
+  url "https:github.comSimonKagstromkcovarchiverefstagsv42.tar.gz"
   sha256 "2c47d75397af248bc387f60cdd79180763e1f88f3dd71c94bb52478f8e74a1f8"
   license "GPL-2.0-or-later"
-  head "https://github.com/SimonKagstrom/kcov.git", branch: "master"
+  head "https:github.comSimonKagstromkcov.git", branch: "master"
 
   # We check the Git tags because, as of writing, the "latest" release on GitHub
   # is a prerelease version (`pre-v40`), so we can't rely on it being correct.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)*)$/i)
+    regex(^v?(\d+(?:\.\d+)*)$i)
   end
 
   bottle do
@@ -45,29 +45,29 @@ class Kcov < Formula
   end
 
   test do
-    (testpath/"hello.bash").write <<~EOS
-      #!/bin/bash
+    (testpath"hello.bash").write <<~EOS
+      #!binbash
       echo "Hello, world!"
     EOS
-    system "#{bin}/kcov", testpath/"out", testpath/"hello.bash"
-    assert_predicate testpath/"out/hello.bash/coverage.json", :exist?
+    system "#{bin}kcov", testpath"out", testpath"hello.bash"
+    assert_predicate testpath"outhello.bashcoverage.json", :exist?
   end
 end
 __END__
-diff --git a/src/engines/mach-engine.cc b/src/engines/mach-engine.cc
+diff --git asrcenginesmach-engine.cc bsrcenginesmach-engine.cc
 index ece8a1d..d9d475b 100644
---- a/src/engines/mach-engine.cc
-+++ b/src/engines/mach-engine.cc
+--- asrcenginesmach-engine.cc
++++ bsrcenginesmach-engine.cc
 @@ -26,7 +26,12 @@
  #include <set>
  #include <signal.h>
  #include <spawn.h>
-+#include <sys/errno.h>
-+// clang-format off
-+// sys/ptrace.h needs sys/types.h, so make sure clang-format doesn't change the order
-+#include <sys/types.h>
- #include <sys/ptrace.h>
-+// clang-format on
++#include <syserrno.h>
++ clang-format off
++ sysptrace.h needs systypes.h, so make sure clang-format doesn't change the order
++#include <systypes.h>
+ #include <sysptrace.h>
++ clang-format on
  #include <unistd.h>
  #include <unordered_map>
  #include <utils.hh>

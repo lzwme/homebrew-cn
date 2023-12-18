@@ -1,11 +1,11 @@
 class Aztfexport < Formula
   desc "Bring your existing Azure resources under the management of Terraform"
-  homepage "https://azure.github.io/aztfexport/"
-  url "https://github.com/Azure/aztfexport.git",
+  homepage "https:azure.github.ioaztfexport"
+  url "https:github.comAzureaztfexport.git",
       tag:      "v0.14.0",
       revision: "fb772ba9d0a129a48d2a2a4c26df4eb6f2f7d948"
   license "MPL-2.0"
-  head "https://github.com/Azure/aztfexport.git", branch: "main"
+  head "https:github.comAzureaztfexport.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34f9f530e3d23d43d76d0c0901b421ef20ada197d926584dccaa3cec4528d869"
@@ -25,11 +25,11 @@ class Aztfexport < Formula
   end
 
   test do
-    version_output = shell_output("#{bin}/aztfexport -v")
+    version_output = shell_output("#{bin}aztfexport -v")
     assert_match version.to_s, version_output
 
     mkdir "test" do
-      no_resource_group_specified_output = shell_output("#{bin}/aztfexport rg 2>&1", 1)
+      no_resource_group_specified_output = shell_output("#{bin}aztfexport rg 2>&1", 1)
       assert_match("Error: retrieving subscription id from CLI", no_resource_group_specified_output)
     end
   end

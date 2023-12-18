@@ -1,10 +1,10 @@
 class Vde < Formula
   desc "Ethernet compliant virtual network"
-  homepage "https://github.com/virtualsquare/vde-2"
-  url "https://ghproxy.com/https://github.com/virtualsquare/vde-2/archive/refs/tags/v2.3.3.tar.gz"
+  homepage "https:github.comvirtualsquarevde-2"
+  url "https:github.comvirtualsquarevde-2archiverefstagsv2.3.3.tar.gz"
   sha256 "a7d2cc4c3d0c0ffe6aff7eb0029212f2b098313029126dcd12dc542723972379"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  head "https://github.com/virtualsquare/vde-2.git", branch: "master"
+  head "https:github.comvirtualsquarevde-2.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "3d2231810ad7229ba6a68178d648ab1f13bdfe50b214cb2d299d644d66e03762"
@@ -25,11 +25,11 @@ class Vde < Formula
 
   def install
     system "autoreconf", "--install"
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "#{bin}/vde_switch", "-v"
+    system "#{bin}vde_switch", "-v"
   end
 end

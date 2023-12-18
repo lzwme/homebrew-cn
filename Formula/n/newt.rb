@@ -1,13 +1,13 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
-  homepage "https://pagure.io/newt"
-  url "https://releases.pagure.org/newt/newt-0.52.24.tar.gz"
+  homepage "https:pagure.ionewt"
+  url "https:releases.pagure.orgnewtnewt-0.52.24.tar.gz"
   sha256 "5ded7e221f85f642521c49b1826c8de19845aa372baf5d630a51774b544fbdbb"
   license "LGPL-2.0-or-later"
 
   livecheck do
-    url "https://releases.pagure.org/newt/"
-    regex(/href=.*?newt[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:releases.pagure.orgnewt"
+    regex(href=.*?newt[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -36,19 +36,19 @@ class Newt < Formula
     if OS.mac?
       inreplace "Makefile.in" do |s|
         # name libraries correctly
-        # https://bugzilla.redhat.com/show_bug.cgi?id=1192285
+        # https:bugzilla.redhat.comshow_bug.cgi?id=1192285
         s.gsub! "libnewt.$(SOEXT).$(SONAME)", "libnewt.$(SONAME).dylib"
         s.gsub! "libnewt.$(SOEXT).$(VERSION)", "libnewt.$(VERSION).dylib"
 
         # don't link to libpython.dylib
-        # causes https://github.com/Homebrew/homebrew/issues/30252
-        # https://bugzilla.redhat.com/show_bug.cgi?id=1192286
+        # causes https:github.comHomebrewhomebrewissues30252
+        # https:bugzilla.redhat.comshow_bug.cgi?id=1192286
         s.gsub! "`$$pyconfig --ldflags`", '"-undefined dynamic_lookup"'
         s.gsub! "`$$pyconfig --libs`", '""'
       end
     end
 
-    system "./configure", "--prefix=#{prefix}", "--without-tcl", "--with-python=#{python3}"
+    system ".configure", "--prefix=#{prefix}", "--without-tcl", "--with-python=#{python3}"
     system "make", "install"
   end
 
@@ -56,7 +56,7 @@ class Newt < Formula
     ENV["TERM"] = "xterm"
     system python3, "-c", "import snack"
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #import <newt.h>
       int main() {
         newtInit();
@@ -64,6 +64,6 @@ class Newt < Formula
       }
     EOS
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lnewt"
-    system "./test"
+    system ".test"
   end
 end

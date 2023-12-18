@@ -1,10 +1,10 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
-  homepage "https://proj.org/"
-  url "https://ghproxy.com/https://github.com/OSGeo/PROJ/releases/download/9.3.1/proj-9.3.1.tar.gz"
+  homepage "https:proj.org"
+  url "https:github.comOSGeoPROJreleasesdownload9.3.1proj-9.3.1.tar.gz"
   sha256 "b0f919cb9e1f42f803a3e616c2b63a78e4d81ecfaed80978d570d3a5e29d10bc"
   license "MIT"
-  head "https://github.com/OSGeo/proj.git", branch: "master"
+  head "https:github.comOSGeoproj.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "ec90fde843082577113b551174890de34996913041ad149b061dfa9aa62cbcd0"
@@ -30,7 +30,7 @@ class Proj < Formula
 
   # The datum grid files are required to support datum shifting
   resource "proj-data" do
-    url "https://download.osgeo.org/proj/proj-data-1.16.tar.gz"
+    url "https:download.osgeo.orgprojproj-data-1.16.tar.gz"
     sha256 "21a31840c86c23b9926bafebb847bacff8f88728779c3a9bd0f9b2edf8135a01"
   end
 
@@ -40,14 +40,14 @@ class Proj < Formula
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "static", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "static"
-    lib.install Dir["static/lib/*.a"]
+    lib.install Dir["staticlib*.a"]
     resource("proj-data").stage do
       cp_r Dir["*"], pkgshare
     end
   end
 
   test do
-    (testpath/"test").write <<~EOS
+    (testpath"test").write <<~EOS
       45d15n 71d07w Boston, United States
       40d40n 73d58w New York, United States
       48d51n 2d20e Paris, France
@@ -60,7 +60,7 @@ class Proj < Formula
       -8101.66\t5707500.23 London, England
     EOS
 
-    output = shell_output("#{bin}/proj +proj=poly +ellps=clrk66 -r #{testpath}/test")
+    output = shell_output("#{bin}proj +proj=poly +ellps=clrk66 -r #{testpath}test")
     assert_equal match, output
   end
 end

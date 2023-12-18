@@ -1,7 +1,7 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
-  homepage "https://solana.com"
-  url "https://ghproxy.com/https://github.com/solana-labs/solana/archive/refs/tags/v1.16.23.tar.gz"
+  homepage "https:solana.com"
+  url "https:github.comsolana-labssolanaarchiverefstagsv1.16.23.tar.gz"
   sha256 "50478a2ebe58153ca04e65ee41735b1a0810edd27eb5de7ee079af29f59c5141"
   license "Apache-2.0"
   version_scheme 1
@@ -11,7 +11,7 @@ class Solana < Formula
   # from releases with "Mainnet" in the title (e.g. "Mainnet - v1.2.3").
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -46,7 +46,7 @@ class Solana < Formula
   end
 
   # Backport part of upstream commit to build with newer Rust.
-  # Ref: https://github.com/solana-labs/solana/commit/9e703f85de4184f577f22a1c72a0d33612f2feb1
+  # Ref: https:github.comsolana-labssolanacommit9e703f85de4184f577f22a1c72a0d33612f2feb1
   patch :DATA
 
   def install
@@ -67,21 +67,21 @@ class Solana < Formula
 
   test do
     assert_match "Generating a new keypair",
-      shell_output("#{bin}/solana-keygen new --no-bip39-passphrase --no-outfile")
-    assert_match version.to_s, shell_output("#{bin}/solana-keygen --version")
+      shell_output("#{bin}solana-keygen new --no-bip39-passphrase --no-outfile")
+    assert_match version.to_s, shell_output("#{bin}solana-keygen --version")
   end
 end
 
 __END__
-diff --git a/sdk/program/src/account_info.rs b/sdk/program/src/account_info.rs
+diff --git asdkprogramsrcaccount_info.rs bsdkprogramsrcaccount_info.rs
 index 372370d0e15a0f2877b02ad29586e5b352438b24..3db3e9839b6535786e60be5602c03d0c909bf937 100644
---- a/sdk/program/src/account_info.rs
-+++ b/sdk/program/src/account_info.rs
+--- asdkprogramsrcaccount_info.rs
++++ bsdkprogramsrcaccount_info.rs
 @@ -182,6 +182,7 @@ impl<'a> AccountInfo<'a> {
          Ok(())
      }
  
 +    #[rustversion::attr(since(1.72), allow(invalid_reference_casting))]
      pub fn assign(&self, new_owner: &Pubkey) {
-         // Set the non-mut owner field
+          Set the non-mut owner field
          unsafe {

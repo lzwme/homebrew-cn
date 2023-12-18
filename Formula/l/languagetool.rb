@@ -1,16 +1,16 @@
 class Languagetool < Formula
   desc "Style and grammar checker"
-  homepage "https://www.languagetool.org/"
-  url "https://github.com/languagetool-org/languagetool.git",
+  homepage "https:www.languagetool.org"
+  url "https:github.comlanguagetool-orglanguagetool.git",
       tag:      "v6.3-branch",
       revision: "fb238b2a32bc72714632a399c9b47abbe9f1c0c1"
   version "6.3"
   license "LGPL-2.1-or-later"
-  head "https://github.com/languagetool-org/languagetool.git", branch: "master"
+  head "https:github.comlanguagetool-orglanguagetool.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)(-branch)?$/i)
+    regex(^v?(\d+(?:\.\d+)+)(-branch)?$i)
   end
 
   bottle do
@@ -34,31 +34,31 @@ class Languagetool < Formula
     # We need to strip one path level from the distribution zipball,
     # so extract it into a temporary directory then install it.
     mktemp "zip" do
-      system "unzip", Dir["#{buildpath}/languagetool-standalone/target/*.zip"].first, "-d", "."
-      libexec.install Dir["*/*"]
+      system "unzip", Dir["#{buildpath}languagetool-standalonetarget*.zip"].first, "-d", "."
+      libexec.install Dir["**"]
     end
 
-    bin.write_jar_script libexec/"languagetool-commandline.jar", "languagetool", java_version: java_version
-    bin.write_jar_script libexec/"languagetool.jar", "languagetool-gui", java_version: java_version
-    (bin/"languagetool-server").write <<~EOS
-      #!/bin/bash
+    bin.write_jar_script libexec"languagetool-commandline.jar", "languagetool", java_version: java_version
+    bin.write_jar_script libexec"languagetool.jar", "languagetool-gui", java_version: java_version
+    (bin"languagetool-server").write <<~EOS
+      #!binbash
       export JAVA_HOME="#{Language::Java.overridable_java_home_env(java_version)[:JAVA_HOME]}"
-      exec "${JAVA_HOME}/bin/java" -cp "#{libexec}/languagetool-server.jar" org.languagetool.server.HTTPServer "$@"
+      exec "${JAVA_HOME}binjava" -cp "#{libexec}languagetool-server.jar" org.languagetool.server.HTTPServer "$@"
     EOS
   end
 
   service do
-    run [opt_bin/"languagetool-server", "--port", "8081", "--allow-origin"]
+    run [opt_bin"languagetool-server", "--port", "8081", "--allow-origin"]
     keep_alive true
-    log_path var/"log/languagetool/languagetool-server.log"
-    error_log_path var/"log/languagetool/languagetool-server.log"
+    log_path var"loglanguagetoollanguagetool-server.log"
+    error_log_path var"loglanguagetoollanguagetool-server.log"
   end
 
   test do
-    (testpath/"test.txt").write <<~EOS
+    (testpath"test.txt").write <<~EOS
       Homebrew, this is an test
     EOS
-    output = shell_output("#{bin}/languagetool -l en-US test.txt 2>&1")
-    assert_match(/Message: Use \Wa\W instead of \Wan\W/, output)
+    output = shell_output("#{bin}languagetool -l en-US test.txt 2>&1")
+    assert_match(Message: Use \Wa\W instead of \Wan\W, output)
   end
 end

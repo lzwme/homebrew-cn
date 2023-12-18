@@ -1,20 +1,20 @@
-require "language/node"
+require "languagenode"
 
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
-  homepage "https://emscripten.org/"
-  url "https://ghproxy.com/https://github.com/emscripten-core/emscripten/archive/refs/tags/3.1.50.tar.gz"
+  homepage "https:emscripten.org"
+  url "https:github.comemscripten-coreemscriptenarchiverefstags3.1.50.tar.gz"
   sha256 "6cebaac67c957441152c3075a901c91c41460c2d2df3d4ba45e6309fbc3b1e18"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
     any_of: ["MIT", "NCSA"], # emscripten
   ]
-  head "https://github.com/emscripten-core/emscripten.git", branch: "main"
+  head "https:github.comemscripten-coreemscripten.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -47,22 +47,22 @@ class Emscripten < Formula
   fails_with gcc: "5"
 
   # Use emscripten's recommended binaryen revision to avoid build failures.
-  # https://github.com/emscripten-core/emscripten/issues/12252
+  # https:github.comemscripten-coreemscriptenissues12252
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
-    url "https://github.com/WebAssembly/binaryen.git",
+    url "https:github.comWebAssemblybinaryen.git",
         revision: "dbcac17d645d8ace8ae2cb69d6ba36b22d59b7cf"
   end
 
   # emscripten does not support using the stable version of LLVM.
-  # https://github.com/emscripten-core/emscripten/issues/11362
+  # https:github.comemscripten-coreemscriptenissues11362
   # To find the correct llvm revision, find a corresponding commit at:
-  # https://github.com/emscripten-core/emsdk/blob/main/emscripten-releases-tags.json
+  # https:github.comemscripten-coreemsdkblobmainemscripten-releases-tags.json
   # Then take this commit and go to:
-  # https://chromium.googlesource.com/emscripten-releases/+/<commit>/DEPS
+  # https:chromium.googlesource.comemscripten-releases+<commit>DEPS
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
-    url "https://ghproxy.com/https://github.com/llvm/llvm-project/archive/14028ec0a62210d68a4dd7a046ac79c8c3b7727e.tar.gz"
+    url "https:github.comllvmllvm-projectarchive14028ec0a62210d68a4dd7a046ac79c8c3b7727e.tar.gz"
     sha256 "abcf9561cc66292f7ee9beba4ef76daa6d8ddf2ce8bb513bbb5c6501265e9625"
   end
 
@@ -79,11 +79,11 @@ class Emscripten < Formula
     # repository.
     libexec.install buildpath.children
 
-    # Remove unneeded files. See `tools/install.py`.
-    (libexec/"test/third_party").rmtree
+    # Remove unneeded files. See `toolsinstall.py`.
+    (libexec"testthird_party").rmtree
 
     # emscripten needs an llvm build with the following executables:
-    # https://github.com/emscripten-core/emscripten/blob/#{version}/docs/packaging.md#dependencies
+    # https:github.comemscripten-coreemscriptenblob#{version}docspackaging.md#dependencies
     resource("llvm").stage do
       projects = %w[
         clang
@@ -98,8 +98,8 @@ class Emscripten < Formula
       # Apple's libstdc++ is too old to build LLVM
       ENV.libcxx if ENV.compiler == :clang
 
-      # See upstream configuration in `src/build.py` at
-      # https://chromium.googlesource.com/emscripten-releases/
+      # See upstream configuration in `srcbuild.py` at
+      # https:chromium.googlesource.comemscripten-releases
       args = %W[
         -DLLVM_ENABLE_LIBXML2=OFF
         -DLLVM_INCLUDE_EXAMPLES=OFF
@@ -123,81 +123,81 @@ class Emscripten < Formula
 
       system "cmake", "-S", "llvm", "-B", "build",
                       "-G", "Unix Makefiles",
-                      *args, *std_cmake_args(install_prefix: libexec/"llvm")
+                      *args, *std_cmake_args(install_prefix: libexec"llvm")
       system "cmake", "--build", "build"
       system "cmake", "--build", "build", "--target", "install"
 
-      # Remove unneeded tools. Taken from upstream `src/build.py`.
+      # Remove unneeded tools. Taken from upstream `srcbuild.py`.
       unneeded = %w[
         check cl cpp extef-mapping format func-mapping import-test offload-bundler refactor rename scan-deps
       ].map { |suffix| "clang-#{suffix}" }
       unneeded += %w[lld-link ld.lld ld64.lld llvm-lib ld64.lld.darwinnew ld64.lld.darwinold]
-      (libexec/"llvm/bin").glob("{#{unneeded.join(",")}}").map(&:unlink)
-      (libexec/"llvm/lib").glob("libclang.{dylib,so.*}").map(&:unlink)
+      (libexec"llvmbin").glob("{#{unneeded.join(",")}}").map(&:unlink)
+      (libexec"llvmlib").glob("libclang.{dylib,so.*}").map(&:unlink)
 
       # Include needed tools omitted by `LLVM_INSTALL_TOOLCHAIN_ONLY`.
-      # Taken from upstream `src/build.py`.
+      # Taken from upstream `srcbuild.py`.
       extra_tools = %w[FileCheck llc llvm-as llvm-dis llvm-link llvm-mc
                        llvm-nm llvm-objdump llvm-readobj llvm-size opt
                        llvm-dwarfdump llvm-dwp]
-      (libexec/"llvm/bin").install extra_tools.map { |tool| "build/bin/#{tool}" }
+      (libexec"llvmbin").install extra_tools.map { |tool| "buildbin#{tool}" }
 
       %w[clang clang++].each do |compiler|
-        (libexec/"llvm/bin").install_symlink compiler => "wasm32-#{compiler}"
-        (libexec/"llvm/bin").install_symlink compiler => "wasm32-wasi-#{compiler}"
-        bin.install_symlink libexec/"llvm/bin/wasm32-#{compiler}"
-        bin.install_symlink libexec/"llvm/bin/wasm32-wasi-#{compiler}"
+        (libexec"llvmbin").install_symlink compiler => "wasm32-#{compiler}"
+        (libexec"llvmbin").install_symlink compiler => "wasm32-wasi-#{compiler}"
+        bin.install_symlink libexec"llvmbinwasm32-#{compiler}"
+        bin.install_symlink libexec"llvmbinwasm32-wasi-#{compiler}"
       end
     end
 
     resource("binaryen").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: libexec/"binaryen")
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: libexec"binaryen")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     cd libexec do
       system "npm", "install", *Language::Node.local_npm_install_args
-      rm_f "node_modules/ws/builderror.log" # Avoid references to Homebrew shims
+      rm_f "node_moduleswsbuilderror.log" # Avoid references to Homebrew shims
       # Delete native GraalVM image in incompatible platforms.
       if OS.linux?
-        rm_rf "node_modules/google-closure-compiler-linux"
+        rm_rf "node_modulesgoogle-closure-compiler-linux"
       elsif Hardware::CPU.arm?
-        rm_rf "node_modules/google-closure-compiler-osx"
+        rm_rf "node_modulesgoogle-closure-compiler-osx"
       end
     end
 
     # Add JAVA_HOME to env_script on ARM64 macOS and Linux, so that google-closure-compiler
     # can find OpenJDK
-    emscript_env = { PYTHON: Formula["python@3.12"].opt_bin/"python3.12" }
+    emscript_env = { PYTHON: Formula["python@3.12"].opt_bin"python3.12" }
     emscript_env.merge! Language::Java.overridable_java_home_env if OS.linux? || Hardware::CPU.arm?
 
     emscripts.each do |emscript|
-      (bin/emscript).write_env_script libexec/emscript, emscript_env
+      (binemscript).write_env_script libexecemscript, emscript_env
     end
   end
 
   def post_install
-    return if File.exist?("#{Dir.home}/.emscripten")
-    return if (libexec/".emscripten").exist?
+    return if File.exist?("#{Dir.home}.emscripten")
+    return if (libexec".emscripten").exist?
 
-    system bin/"emcc", "--generate-config"
-    inreplace libexec/".emscripten" do |s|
-      s.change_make_var! "LLVM_ROOT", "'#{libexec}/llvm/bin'"
-      s.change_make_var! "BINARYEN_ROOT", "'#{libexec}/binaryen'"
-      s.change_make_var! "NODE_JS", "'#{Formula["node"].opt_bin}/node'"
-      s.change_make_var! "JAVA", "'#{Formula["openjdk"].opt_bin}/java'"
+    system bin"emcc", "--generate-config"
+    inreplace libexec".emscripten" do |s|
+      s.change_make_var! "LLVM_ROOT", "'#{libexec}llvmbin'"
+      s.change_make_var! "BINARYEN_ROOT", "'#{libexec}binaryen'"
+      s.change_make_var! "NODE_JS", "'#{Formula["node"].opt_bin}node'"
+      s.change_make_var! "JAVA", "'#{Formula["openjdk"].opt_bin}java'"
     end
   end
 
   def caveats
-    return unless File.exist?("#{Dir.home}/.emscripten")
-    return if (libexec/".emscripten").exist?
+    return unless File.exist?("#{Dir.home}.emscripten")
+    return if (libexec".emscripten").exist?
 
     <<~EOS
-      You have a ~/.emscripten configuration file, so the default configuration
+      You have a ~.emscripten configuration file, so the default configuration
       file was not generated. To generate the default configuration:
-        rm ~/.emscripten
+        rm ~.emscripten
         brew postinstall emscripten
     EOS
   end
@@ -210,7 +210,7 @@ class Emscripten < Formula
 
     ENV["NODE_OPTIONS"] = "--no-experimental-fetch"
 
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       int main()
       {
@@ -219,7 +219,7 @@ class Emscripten < Formula
       }
     EOS
 
-    system bin/"emcc", "test.c", "-o", "test.js", "-s", "NO_EXIT_RUNTIME=0"
+    system bin"emcc", "test.c", "-o", "test.js", "-s", "NO_EXIT_RUNTIME=0"
     assert_equal "Hello World!", shell_output("node test.js").chomp
   end
 end

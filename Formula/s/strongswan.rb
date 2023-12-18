@@ -1,13 +1,13 @@
 class Strongswan < Formula
   desc "VPN based on IPsec"
-  homepage "https://www.strongswan.org"
-  url "https://download.strongswan.org/strongswan-5.9.13.tar.bz2"
+  homepage "https:www.strongswan.org"
+  url "https:download.strongswan.orgstrongswan-5.9.13.tar.bz2"
   sha256 "56e30effb578fd9426d8457e3b76c8c3728cd8a5589594b55649b2719308ba55"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://download.strongswan.org/"
-    regex(/href=.*?strongswan[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
+    url "https:download.strongswan.org"
+    regex(href=.*?strongswan[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
   end
 
   bottle do
@@ -20,7 +20,7 @@ class Strongswan < Formula
   end
 
   head do
-    url "https://github.com/strongswan/strongswan.git", branch: "master"
+    url "https:github.comstrongswanstrongswan.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -73,8 +73,8 @@ class Strongswan < Formula
 
     args << "--enable-kernel-pfroute" << "--enable-osx-attr" if OS.mac?
 
-    system "./autogen.sh" if build.head?
-    system "./configure", *args
+    system ".autogen.sh" if build.head?
+    system ".configure", *args
     system "make", "install"
   end
 
@@ -85,7 +85,7 @@ class Strongswan < Formula
   end
 
   test do
-    system "#{bin}/ipsec", "--version"
-    system "#{bin}/charon-cmd", "--version"
+    system "#{bin}ipsec", "--version"
+    system "#{bin}charon-cmd", "--version"
   end
 end

@@ -1,11 +1,11 @@
 class Flagd < Formula
   desc "Feature flag daemon with a Unix philosophy"
-  homepage "https://github.com/open-feature/flagd"
-  url "https://github.com/open-feature/flagd.git",
-      tag:      "flagd/v0.7.2",
+  homepage "https:github.comopen-featureflagd"
+  url "https:github.comopen-featureflagd.git",
+      tag:      "flagdv0.7.2",
       revision: "9e6e8d77eceaa8b75c181951a672064be649143b"
   license "Apache-2.0"
-  head "https://github.com/open-feature/flagd.git", branch: "main"
+  head "https:github.comopen-featureflagd.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddd6737a67542b946a2ea8f37360ac6d2a980b45fb015bcfd0f9f7040c516cb8"
@@ -20,7 +20,7 @@ class Flagd < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOPRIVATE"] = "buf.build/gen/go"
+    ENV["GOPRIVATE"] = "buf.buildgengo"
     ldflags = %W[
       -s -w
       -X main.version=#{version}
@@ -29,8 +29,8 @@ class Flagd < Formula
     ]
 
     system "make", "workspace-init"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./flagd/main.go"
-    generate_completions_from_executable(bin/"flagd", "completion")
+    system "go", "build", *std_go_args(ldflags: ldflags), ".flagdmain.go"
+    generate_completions_from_executable(bin"flagd", "completion")
   end
 
   test do
@@ -38,17 +38,17 @@ class Flagd < Formula
 
     begin
       pid = fork do
-        exec bin/"flagd", "start", "-f",
-            "https://ghproxy.com/https://raw.githubusercontent.com/open-feature/flagd/main/config/samples/example_flags.json",
+        exec bin"flagd", "start", "-f",
+            "https:raw.githubusercontent.comopen-featureflagdmainconfigsamplesexample_flags.json",
             "-p", port.to_s
       end
       sleep 3
 
       resolve_boolean_command = <<-BASH
-        curl -X POST "localhost:#{port}/schema.v1.Service/ResolveBoolean" -d '{"flagKey":"myBoolFlag","context":{}}' -H "Content-Type: application/json"
+        curl -X POST "localhost:#{port}schema.v1.ServiceResolveBoolean" -d '{"flagKey":"myBoolFlag","context":{}}' -H "Content-Type: applicationjson"
       BASH
 
-      expected_output = /true/
+      expected_output = true
 
       assert_match expected_output, shell_output(resolve_boolean_command)
     ensure

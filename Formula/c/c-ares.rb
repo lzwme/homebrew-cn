@@ -1,17 +1,17 @@
 class CAres < Formula
   desc "Asynchronous DNS library"
-  homepage "https://c-ares.org/"
-  url "https://c-ares.org/download/c-ares-1.23.0.tar.gz"
-  mirror "https://ghproxy.com/https://github.com/c-ares/c-ares/releases/download/cares-1_17_2/c-ares-1.23.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/dns/c-ares-1.23.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/dns/legacy/c-ares-1.23.0.tar.gz"
+  homepage "https:c-ares.org"
+  url "https:c-ares.orgdownloadc-ares-1.23.0.tar.gz"
+  mirror "https:github.comc-aresc-aresreleasesdownloadcares-1_17_2c-ares-1.23.0.tar.gz"
+  mirror "http:fresh-center.netlinuxmiscdnsc-ares-1.23.0.tar.gz"
+  mirror "http:fresh-center.netlinuxmiscdnslegacyc-ares-1.23.0.tar.gz"
   sha256 "cb614ecf78b477d35963ebffcf486fc9d55cc3d3216f00700e71b7d4868f79f5"
   license "MIT"
-  head "https://github.com/c-ares/c-ares.git", branch: "main"
+  head "https:github.comc-aresc-ares.git", branch: "main"
 
   livecheck do
     url :homepage
-    regex(/href=.*?c-ares[._-](\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?c-ares[._-](\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -40,7 +40,7 @@ class CAres < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <ares.h>
 
@@ -52,8 +52,8 @@ class CAres < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lcares", "-o", "test"
-    system "./test"
+    system ".test"
 
-    system "#{bin}/ahost", "127.0.0.1"
+    system "#{bin}ahost", "127.0.0.1"
   end
 end

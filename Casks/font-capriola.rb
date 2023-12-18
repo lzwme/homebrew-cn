@@ -2,10 +2,10 @@ cask "font-capriola" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/capriola/Capriola-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcapriolaCapriola-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Capriola"
-  homepage "https://fonts.google.com/specimen/Capriola"
+  homepage "https:fonts.google.comspecimenCapriola"
 
   font "Capriola-Regular.ttf"
 

@@ -2,10 +2,10 @@ cask "font-stylish" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/stylish/Stylish-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflstylishStylish-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Stylish"
-  homepage "https://fonts.google.com/specimen/Stylish"
+  homepage "https:fonts.google.comspecimenStylish"
 
   font "Stylish-Regular.ttf"
 

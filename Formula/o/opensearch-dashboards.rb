@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
-  homepage "https://opensearch.org/docs/dashboards/index/"
-  url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
+  homepage "https:opensearch.orgdocsdashboardsindex"
+  url "https:github.comopensearch-projectOpenSearch-Dashboards.git",
       tag:      "2.9.0",
       revision: "1f82eda3935dc5b648cb31587662c84cb43f3801"
   license "Apache-2.0"
@@ -26,25 +26,25 @@ class OpensearchDashboards < Formula
   depends_on "node@18"
 
   # - Do not download node and discard all actions related to this node
-  # - Support Apple Silicon (https://github.com/opensearch-project/OpenSearch-Dashboards/pull/4983)
+  # - Support Apple Silicon (https:github.comopensearch-projectOpenSearch-Dashboardspull4983)
   patch :DATA
 
   def install
     system "yarn", "osd", "bootstrap"
-    system "node", "scripts/build", "--release", "--skip-os-packages", "--skip-archives", "--skip-node-download"
+    system "node", "scriptsbuild", "--release", "--skip-os-packages", "--skip-archives", "--skip-node-download"
 
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    cd "build/opensearch-dashboards-#{version}-#{os}-#{arch}" do
-      inreplace "bin/use_node",
-                /NODE=".+"/,
-                "NODE=\"#{Formula["node@18"].opt_bin/"node"}\""
+    cd "buildopensearch-dashboards-#{version}-#{os}-#{arch}" do
+      inreplace "binuse_node",
+                NODE=".+",
+                "NODE=\"#{Formula["node@18"].opt_bin"node"}\""
 
-      inreplace "config/opensearch_dashboards.yml",
-                /#\s*pid\.file: .+$/,
-                "pid.file: #{var}/run/opensearchDashboards.pid"
+      inreplace "configopensearch_dashboards.yml",
+                #\s*pid\.file: .+$,
+                "pid.file: #{var}runopensearchDashboards.pid"
 
-      (etc/"opensearch-dashboards").install Dir["config/*"]
+      (etc"opensearch-dashboards").install Dir["config*"]
       rm_rf Dir["{config,data,plugins}"]
 
       prefix.install Dir["*"]
@@ -52,51 +52,51 @@ class OpensearchDashboards < Formula
   end
 
   def post_install
-    (var/"log/opensearch-dashboards").mkpath
+    (var"logopensearch-dashboards").mkpath
 
-    (var/"lib/opensearch-dashboards").mkpath
-    ln_s var/"lib/opensearch-dashboards", prefix/"data" unless (prefix/"data").exist?
+    (var"libopensearch-dashboards").mkpath
+    ln_s var"libopensearch-dashboards", prefix"data" unless (prefix"data").exist?
 
-    (var/"opensearch-dashboards/plugins").mkpath
-    ln_s var/"opensearch-dashboards/plugins", prefix/"plugins" unless (prefix/"plugins").exist?
+    (var"opensearch-dashboardsplugins").mkpath
+    ln_s var"opensearch-dashboardsplugins", prefix"plugins" unless (prefix"plugins").exist?
 
-    ln_s etc/"opensearch-dashboards", prefix/"config" unless (prefix/"config").exist?
+    ln_s etc"opensearch-dashboards", prefix"config" unless (prefix"config").exist?
   end
 
   def caveats
     <<~EOS
-      Data:    #{var}/lib/opensearch-dashboards/
-      Logs:    #{var}/log/opensearch-dashboards/opensearch-dashboards.log
-      Plugins: #{var}/opensearch-dashboards/plugins/
-      Config:  #{etc}/opensearch-dashboards/
+      Data:    #{var}libopensearch-dashboards
+      Logs:    #{var}logopensearch-dashboardsopensearch-dashboards.log
+      Plugins: #{var}opensearch-dashboardsplugins
+      Config:  #{etc}opensearch-dashboards
     EOS
   end
 
   service do
-    run opt_bin/"opensearch-dashboards"
-    log_path var/"log/opensearch-dashboards.log"
-    error_log_path var/"log/opensearch-dashboards.log"
+    run opt_bin"opensearch-dashboards"
+    log_path var"logopensearch-dashboards.log"
+    error_log_path var"logopensearch-dashboards.log"
   end
 
   test do
-    ENV["BABEL_CACHE_PATH"] = testpath/".babelcache.json"
+    ENV["BABEL_CACHE_PATH"] = testpath".babelcache.json"
 
     os_port = free_port
-    (testpath/"data").mkdir
-    (testpath/"logs").mkdir
+    (testpath"data").mkdir
+    (testpath"logs").mkdir
     fork do
-      exec Formula["opensearch"].bin/"opensearch", "-Ehttp.port=#{os_port}",
-                                                   "-Epath.data=#{testpath}/data",
-                                                   "-Epath.logs=#{testpath}/logs"
+      exec Formula["opensearch"].bin"opensearch", "-Ehttp.port=#{os_port}",
+                                                   "-Epath.data=#{testpath}data",
+                                                   "-Epath.logs=#{testpath}logs"
     end
 
-    (testpath/"config.yml").write <<~EOS
-      path.data: #{testpath}/data
-      opensearch.hosts: ["http://127.0.0.1:#{os_port}"]
+    (testpath"config.yml").write <<~EOS
+      path.data: #{testpath}data
+      opensearch.hosts: ["http:127.0.0.1:#{os_port}"]
     EOS
 
     osd_port = free_port
-    fork { exec bin/"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath/"config.yml" }
+    fork { exec bin"opensearch-dashboards", "-p", osd_port.to_s, "-c", testpath"config.yml" }
 
     output = nil
 
@@ -113,15 +113,15 @@ class OpensearchDashboards < Formula
       break if output.present? && output != "OpenSearch Dashboards server is not ready yet"
     end
 
-    assert_includes output, "<title>OpenSearch Dashboards</title>"
+    assert_includes output, "<title>OpenSearch Dashboards<title>"
   end
 end
 
 __END__
-diff --git a/src/dev/build/args.ts b/src/dev/build/args.ts
+diff --git asrcdevbuildargs.ts bsrcdevbuildargs.ts
 index 7e131174e3..71745e5305 100644
---- a/src/dev/build/args.ts
-+++ b/src/dev/build/args.ts
+--- asrcdevbuildargs.ts
++++ bsrcdevbuildargs.ts
 @@ -133,6 +133,7 @@ export function readCliArgs(argv: string[]) {
      targetPlatforms: {
        windows: Boolean(flags.windows),
@@ -130,23 +130,23 @@ index 7e131174e3..71745e5305 100644
        linux: Boolean(flags.linux),
        linuxArm: Boolean(flags['linux-arm']),
      },
-diff --git a/src/dev/build/build_distributables.ts b/src/dev/build/build_distributables.ts
+diff --git asrcdevbuildbuild_distributables.ts bsrcdevbuildbuild_distributables.ts
 index d764c5df28..e37b71e04a 100644
---- a/src/dev/build/build_distributables.ts
-+++ b/src/dev/build/build_distributables.ts
+--- asrcdevbuildbuild_distributables.ts
++++ bsrcdevbuildbuild_distributables.ts
 @@ -63,8 +63,6 @@ export async function buildDistributables(log: ToolingLog, options: BuildOptions
-    */
+    *
    await run(Tasks.VerifyEnv);
    await run(Tasks.Clean);
 -  await run(options.downloadFreshNode ? Tasks.DownloadNodeBuilds : Tasks.VerifyExistingNodeBuilds);
 -  await run(Tasks.ExtractNodeBuilds);
 
-   /**
+   **
     * run platform-generic build tasks
-diff --git a/src/dev/build/lib/config.ts b/src/dev/build/lib/config.ts
+diff --git asrcdevbuildlibconfig.ts bsrcdevbuildlibconfig.ts
 index 6af5b8e690..1296eb65e4 100644
---- a/src/dev/build/lib/config.ts
-+++ b/src/dev/build/lib/config.ts
+--- asrcdevbuildlibconfig.ts
++++ bsrcdevbuildlibconfig.ts
 @@ -155,6 +155,7 @@ export class Config {
 
      const platforms: Platform[] = [];
@@ -155,10 +155,10 @@ index 6af5b8e690..1296eb65e4 100644
      if (this.targetPlatforms.linux) platforms.push(this.getPlatform('linux', 'x64'));
      if (this.targetPlatforms.windows) platforms.push(this.getPlatform('win32', 'x64'));
      if (this.targetPlatforms.linuxArm) platforms.push(this.getPlatform('linux', 'arm64'));
-diff --git a/src/dev/build/lib/platform.ts b/src/dev/build/lib/platform.ts
+diff --git asrcdevbuildlibplatform.ts bsrcdevbuildlibplatform.ts
 index 673356ec62..f83107f737 100644
---- a/src/dev/build/lib/platform.ts
-+++ b/src/dev/build/lib/platform.ts
+--- asrcdevbuildlibplatform.ts
++++ bsrcdevbuildlibplatform.ts
 @@ -33,6 +33,7 @@ export type PlatformArchitecture = 'x64' | 'arm64';
 
  export interface TargetPlatforms {
@@ -174,10 +174,10 @@ index 673356ec62..f83107f737 100644
 +  new Platform('darwin', 'arm64', 'darwin-arm64'),
    new Platform('win32', 'x64', 'windows-x64'),
  ];
-diff --git a/src/dev/build/tasks/create_archives_sources_task.ts b/src/dev/build/tasks/create_archives_sources_task.ts
+diff --git asrcdevbuildtaskscreate_archives_sources_task.ts bsrcdevbuildtaskscreate_archives_sources_task.ts
 index 55d9b5313f..b4ecbb0d3d 100644
---- a/src/dev/build/tasks/create_archives_sources_task.ts
-+++ b/src/dev/build/tasks/create_archives_sources_task.ts
+--- asrcdevbuildtaskscreate_archives_sources_task.ts
++++ bsrcdevbuildtaskscreate_archives_sources_task.ts
 @@ -41,34 +41,6 @@ export const CreateArchivesSources: Task = {
            source: build.resolvePath(),
            destination: build.resolvePathForPlatform(platform),
@@ -189,14 +189,14 @@ index 55d9b5313f..b4ecbb0d3d 100644
 -          'specific build directory'
 -        );
 -
--        // copy node.js install
+-         copy node.js install
 -        await scanCopy({
 -          source: (await getNodeDownloadInfo(config, platform)).extractDir,
 -          destination: build.resolvePathForPlatform(platform, 'node'),
 -        });
 -
--        // ToDo [NODE14]: Remove this Node.js 14 fallback download
--        // Copy the Node.js 14 binaries into node/fallback to be used by `use_node`
+-         ToDo [NODE14]: Remove this Node.js 14 fallback download
+-         Copy the Node.js 14 binaries into nodefallback to be used by `use_node`
 -        await scanCopy({
 -          source: (
 -            await getNodeVersionDownloadInfo(
@@ -213,10 +213,10 @@ index 55d9b5313f..b4ecbb0d3d 100644
        })
      );
    },
-diff --git a/src/dev/notice/generate_build_notice_text.js b/src/dev/notice/generate_build_notice_text.js
+diff --git asrcdevnoticegenerate_build_notice_text.js bsrcdevnoticegenerate_build_notice_text.js
 index b32e200915..2aab53f3ea 100644
---- a/src/dev/notice/generate_build_notice_text.js
-+++ b/src/dev/notice/generate_build_notice_text.js
+--- asrcdevnoticegenerate_build_notice_text.js
++++ bsrcdevnoticegenerate_build_notice_text.js
 @@ -48,7 +48,7 @@ export async function generateBuildNoticeText(options = {}) {
 
    const packageNotices = await Promise.all(packages.map(generatePackageNoticeText));

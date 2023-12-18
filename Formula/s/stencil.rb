@@ -1,10 +1,10 @@
 class Stencil < Formula
   desc "Smart templating engine for service development"
-  homepage "https://engineering.outreach.io/stencil/"
-  url "https://ghproxy.com/https://github.com/getoutreach/stencil/archive/refs/tags/v1.37.1.tar.gz"
+  homepage "https:engineering.outreach.iostencil"
+  url "https:github.comgetoutreachstencilarchiverefstagsv1.37.1.tar.gz"
   sha256 "cddede3013e7f363718bf09eac93f66dbc0cb0cf63a1f2c99915eabff4d80b1d"
   license "Apache-2.0"
-  head "https://github.com/getoutreach/stencil.git", branch: "main"
+  head "https:github.comgetoutreachstencil.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db4ae7d01ac744c5d340b82cc3a3eda0e69aa6da210a7bbf43cb21aa89026db0"
@@ -19,13 +19,13 @@ class Stencil < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/getoutreach/gobox/pkg/app.Version=v#{version} -X github.com/getoutreach/gobox/pkg/updater/Disabled=true"),
-      "./cmd/stencil"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comgetoutreachgoboxpkgapp.Version=v#{version} -X github.comgetoutreachgoboxpkgupdaterDisabled=true"),
+      ".cmdstencil"
   end
 
   test do
-    (testpath/"service.yaml").write "name: test"
-    system bin/"stencil"
-    assert_predicate testpath/"stencil.lock", :exist?
+    (testpath"service.yaml").write "name: test"
+    system bin"stencil"
+    assert_predicate testpath"stencil.lock", :exist?
   end
 end

@@ -1,7 +1,7 @@
 class Aalib < Formula
   desc "Portable ASCII art graphics library"
-  homepage "https://aa-project.sourceforge.net/aalib/"
-  url "https://downloads.sourceforge.net/project/aa-project/aa-lib/1.4rc5/aalib-1.4rc5.tar.gz"
+  homepage "https:aa-project.sourceforge.netaalib"
+  url "https:downloads.sourceforge.netprojectaa-projectaa-lib1.4rc5aalib-1.4rc5.tar.gz"
   sha256 "fbddda9230cf6ee2a4f5706b4b11e2190ae45f5eda1f0409dc4f99b35e0a70ee"
   license "GPL-2.0-or-later"
   revision 2
@@ -9,8 +9,8 @@ class Aalib < Formula
   # The latest version in the formula is a release candidate, so we have to
   # allow matching of unstable versions.
   livecheck do
-    url "https://sourceforge.net/projects/aa-project/rss?path=/aa-lib"
-    regex(%r{url=.*?/aalib[._-]v?(\d+(?:\.\d+)+.*?)\.t}i)
+    url "https:sourceforge.netprojectsaa-projectrss?path=aa-lib"
+    regex(%r{url=.*?aalib[._-]v?(\d+(?:\.\d+)+.*?)\.t}i)
   end
 
   bottle do
@@ -27,16 +27,16 @@ class Aalib < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ba926f8aadec9e5c30880ae6e6497d44f9045d1ca1f680baf28e67309bd8ecd"
   end
 
-  # Fix malloc/stdlib issue on macOS
+  # Fix mallocstdlib issue on macOS
   # Fix underquoted definition of AM_PATH_AALIB in aalib.m4
   # Fix implicit function declarations
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/4cd6785/aalib/1.4rc5.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches4cd6785aalib1.4rc5.patch"
     sha256 "9843e109d580e7112291871248140b8657108faac6d90ce5caf66cd25e8d0d1e"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}",
@@ -48,12 +48,12 @@ class Aalib < Formula
   end
 
   test do
-    output = shell_output("#{bin}/aainfo -width 100 -height 50")
+    output = shell_output("#{bin}aainfo -width 100 -height 50")
     assert_match "AAlib version:#{version.major_minor}", output
-    assert_match(/Width +:100$/, output)
-    assert_match(/Height +:50$/, output)
+    assert_match(Width +:100$, output)
+    assert_match(Height +:50$, output)
 
-    output = shell_output("yes '' | #{bin}/aatest -width 20 -height 10")
+    output = shell_output("yes '' | #{bin}aatest -width 20 -height 10")
     assert_match <<~EOS, output
       floyd-steelberg dith
       ering. . ....----:.:

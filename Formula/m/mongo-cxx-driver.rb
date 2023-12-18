@@ -1,14 +1,14 @@
 class MongoCxxDriver < Formula
   desc "C++ driver for MongoDB"
-  homepage "https://github.com/mongodb/mongo-cxx-driver"
-  url "https://ghproxy.com/https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.9.0/mongo-cxx-driver-r3.9.0.tar.gz"
+  homepage "https:github.commongodbmongo-cxx-driver"
+  url "https:github.commongodbmongo-cxx-driverreleasesdownloadr3.9.0mongo-cxx-driver-r3.9.0.tar.gz"
   sha256 "09526c61b38f6adce86aa9ff682c061d08a5184cfe14e3aea12d8ecaf35364a2"
   license "Apache-2.0"
-  head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "master"
+  head "https:github.commongodbmongo-cxx-driver.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^[rv]?(\d+(?:\.\d+)+)$/i)
+    regex(^[rv]?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,9 +27,9 @@ class MongoCxxDriver < Formula
 
   def install
     # We want to avoid shims referencing in examples,
-    # but we need to have examples/CMakeLists.txt file to make cmake happy
+    # but we need to have examplesCMakeLists.txt file to make cmake happy
     pkgshare.install "examples"
-    (buildpath / "examples/CMakeLists.txt").write ""
+    (buildpath  "examplesCMakeLists.txt").write ""
 
     mongo_c_prefix = Formula["mongo-c-driver"].opt_prefix
     args = %W[
@@ -46,14 +46,14 @@ class MongoCxxDriver < Formula
 
   test do
     pkg_config_flags = shell_output("pkg-config --cflags --libs libbsoncxx").chomp.split
-    system ENV.cc, "-std=c++11", pkgshare/"examples/bsoncxx/builder_basic.cpp",
+    system ENV.cc, "-std=c++11", pkgshare"examplesbsoncxxbuilder_basic.cpp",
       *pkg_config_flags, "-lstdc++", "-o", "test"
-    system "./test"
+    system ".test"
 
     pkg_config_flags = shell_output("pkg-config --cflags --libs libbsoncxx libmongocxx").chomp.split
-    system ENV.cc, "-std=c++11", pkgshare/"examples/mongocxx/connect.cpp",
+    system ENV.cc, "-std=c++11", pkgshare"examplesmongocxxconnect.cpp",
       *pkg_config_flags, "-lstdc++", "-o", "test"
     assert_match "No suitable servers",
-      shell_output("./test mongodb://0.0.0.0 2>&1", 1)
+      shell_output(".test mongodb:0.0.0.0 2>&1", 1)
   end
 end

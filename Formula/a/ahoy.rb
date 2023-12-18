@@ -1,7 +1,7 @@
 class Ahoy < Formula
   desc "Creates self documenting CLI programs from commands in YAML files"
-  homepage "https://ahoy-cli.readthedocs.io/"
-  url "https://ghproxy.com/https://github.com/ahoy-cli/ahoy/archive/refs/tags/v2.1.1.tar.gz"
+  homepage "https:ahoy-cli.readthedocs.io"
+  url "https:github.comahoy-cliahoyarchiverefstagsv2.1.1.tar.gz"
   sha256 "38189a92e39e3ae3a34be491dd2cd010928debe46b112ad82336fafa852556b9"
   license "MIT"
 
@@ -33,20 +33,20 @@ class Ahoy < Formula
 
       See other changes at:
 
-      https://github.com/ahoy-cli/ahoy
+      https:github.comahoy-cliahoy
 
     EOS
   end
 
   test do
-    (testpath/".ahoy.yml").write <<~EOS
+    (testpath".ahoy.yml").write <<~EOS
       ahoyapi: v2
       commands:
         hello:
           cmd: echo "Hello Homebrew!"
     EOS
-    assert_equal "Hello Homebrew!\n", `#{bin}/ahoy hello`
+    assert_equal "Hello Homebrew!\n", `#{bin}ahoy hello`
 
-    assert_equal "#{version}-homebrew", shell_output("#{bin}/ahoy --version").strip
+    assert_equal "#{version}-homebrew", shell_output("#{bin}ahoy --version").strip
   end
 end

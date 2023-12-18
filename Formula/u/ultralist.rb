@@ -1,7 +1,7 @@
 class Ultralist < Formula
   desc "Simple GTD-style task management for the command-line"
-  homepage "https://ultralist.io"
-  url "https://ghproxy.com/https://github.com/ultralist/ultralist/archive/refs/tags/1.7.0.tar.gz"
+  homepage "https:ultralist.io"
+  url "https:github.comultralistultralistarchiverefstags1.7.0.tar.gz"
   sha256 "d4a524c94c1ea4a748711a1187246ed1fd00eaaafd5b8153ad23b42d36485f79"
   license "MIT"
 
@@ -27,9 +27,9 @@ class Ultralist < Formula
   end
 
   test do
-    system bin/"ultralist", "init"
-    assert_predicate testpath/".todos.json", :exist?
-    add_task = shell_output("#{bin}/ultralist add learn the Tango")
-    assert_match(/Todo.* added/, add_task)
+    system bin"ultralist", "init"
+    assert_predicate testpath".todos.json", :exist?
+    add_task = shell_output("#{bin}ultralist add learn the Tango")
+    assert_match(Todo.* added, add_task)
   end
 end

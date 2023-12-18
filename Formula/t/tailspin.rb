@@ -1,10 +1,10 @@
 class Tailspin < Formula
   desc "Log file highlighter"
-  homepage "https://github.com/bensadeh/tailspin"
-  url "https://ghproxy.com/https://github.com/bensadeh/tailspin/archive/refs/tags/2.2.0.tar.gz"
+  homepage "https:github.combensadehtailspin"
+  url "https:github.combensadehtailspinarchiverefstags2.2.0.tar.gz"
   sha256 "afa7ffa24d47d6266ea96b06ca9b30cc9898095dd4d077e8fe9618ace96c6b89"
   license "MIT"
-  head "https://github.com/bensadeh/tailspin.git", branch: "main"
+  head "https:github.combensadehtailspin.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f73e5286a216647fab5b78e442919a8427ea22224b4139171f03216b882d2f1c"
@@ -23,7 +23,7 @@ class Tailspin < Formula
   end
 
   test do
-    output = shell_output("#{bin}/tspin --tail 2>&1")
+    output = shell_output("#{bin}tspin --tail 2>&1")
 
     expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       ""
@@ -32,6 +32,6 @@ class Tailspin < Formula
     end
     assert_match expected, output
 
-    assert_match version.to_s, shell_output("#{bin}/tspin --version")
+    assert_match version.to_s, shell_output("#{bin}tspin --version")
   end
 end

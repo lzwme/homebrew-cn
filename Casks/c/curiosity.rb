@@ -2,10 +2,10 @@ cask "curiosity" do
   version "0.5.5"
   sha256 "cee2a11755b23c55d96a2226750e80ee991ae8bff74bda4ff757717bcbdf9cad"
 
-  url "https://ghproxy.com/https://github.com/Dimillian/RedditOS/releases/download/#{version}/Curiosity.zip"
+  url "https:github.comDimillianRedditOSreleasesdownload#{version}Curiosity.zip"
   name "Curiosity"
   desc "SwiftUI Reddit client"
-  homepage "https://github.com/Dimillian/RedditOS"
+  homepage "https:github.comDimillianRedditOS"
 
   livecheck do
     url :url
@@ -16,5 +16,5 @@ cask "curiosity" do
 
   app "Curiosity.app"
 
-  zap trash: "~/Library/Containers/com.thomasricouard.curiosity"
+  zap trash: "~LibraryContainerscom.thomasricouard.curiosity"
 end

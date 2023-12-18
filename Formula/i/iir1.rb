@@ -1,7 +1,7 @@
 class Iir1 < Formula
   desc "DSP IIR realtime filter library written in C++"
-  homepage "https://berndporr.github.io/iir1/"
-  url "https://ghproxy.com/https://github.com/berndporr/iir1/archive/refs/tags/1.9.4.tar.gz"
+  homepage "https:berndporr.github.ioiir1"
+  url "https:github.comberndporriir1archiverefstags1.9.4.tar.gz"
   sha256 "67d0982356f33fd37522e4711cda12f70a981a9c83de332386f89de3d7601d2b"
   license "MIT"
 
@@ -23,12 +23,12 @@ class Iir1 < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare/"test").install "test/butterworth.cpp", "test/assert_print.h"
+    (pkgshare"test").install "testbutterworth.cpp", "testassert_print.h"
   end
 
   test do
-    cp (pkgshare/"test").children, testpath
+    cp (pkgshare"test").children, testpath
     system ENV.cxx, "-std=c++11", "butterworth.cpp", "-o", "test", "-L#{lib}", "-liir"
-    system "./test"
+    system ".test"
   end
 end

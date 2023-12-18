@@ -2,8 +2,8 @@ class Eralchemy < Formula
   include Language::Python::Virtualenv
 
   desc "Simple entity relation (ER) diagrams generation"
-  homepage "https://github.com/Alexis-benoist/eralchemy"
-  url "https://files.pythonhosted.org/packages/87/40/07b58c29406ad9cc8747e567e3e37dd74c0a8756130ad8fd3a4d71c796e3/ERAlchemy-1.2.10.tar.gz"
+  homepage "https:github.comAlexis-benoisteralchemy"
+  url "https:files.pythonhosted.orgpackages874007b58c29406ad9cc8747e567e3e37dd74c0a8756130ad8fd3a4d71c796e3ERAlchemy-1.2.10.tar.gz"
   sha256 "be992624878278195c3240b90523acb35d97453f1a350c44b4311d4333940f0d"
   license "Apache-2.0"
   revision 7
@@ -27,17 +27,17 @@ class Eralchemy < Formula
   depends_on "python@3.12"
 
   resource "pygraphviz" do
-    url "https://files.pythonhosted.org/packages/19/db/cc09516573e79a35ac73f437bdcf27893939923d1d06b439897ffc7f3217/pygraphviz-1.11.zip"
+    url "https:files.pythonhosted.orgpackages19dbcc09516573e79a35ac73f437bdcf27893939923d1d06b439897ffc7f3217pygraphviz-1.11.zip"
     sha256 "a97eb5ced266f45053ebb1f2c6c6d29091690503e3a5c14be7f908b37b06f2d4"
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/ae/e2/47f40dc06472df5a906dd8eb9fe4ee2eb1c6b109c43545708f922b406acc/SQLAlchemy-2.0.22.tar.gz"
+    url "https:files.pythonhosted.orgpackagesaee247f40dc06472df5a906dd8eb9fe4ee2eb1c6b109c43545708f922b406accSQLAlchemy-2.0.22.tar.gz"
     sha256 "5434cc601aa17570d79e5377f5fd45ff92f9379e2abed0be5e8c2fba8d353d2b"
   end
 
   resource "er_example" do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Alexis-benoist/eralchemy/v1.1.0/example/newsmeme.er"
+    url "https:raw.githubusercontent.comAlexis-benoisteralchemyv1.1.0examplenewsmeme.er"
     sha256 "5c475bacd91a63490e1cbbd1741dc70a3435e98161b5b9458d195ee97f40a3fa"
   end
 
@@ -48,10 +48,10 @@ class Eralchemy < Formula
   end
 
   test do
-    system "#{bin}/eralchemy", "-v"
+    system "#{bin}eralchemy", "-v"
     resource("er_example").stage do
-      system "#{bin}/eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
-      assert_predicate Pathname.pwd/"test_eralchemy.pdf", :exist?
+      system "#{bin}eralchemy", "-i", "newsmeme.er", "-o", "test_eralchemy.pdf"
+      assert_predicate Pathname.pwd"test_eralchemy.pdf", :exist?
     end
   end
 end

@@ -1,10 +1,10 @@
 class SfPwgen < Formula
   desc "Generate passwords using SecurityFoundation framework"
-  homepage "https://github.com/anders/pwgen/"
-  url "https://ghproxy.com/https://github.com/anders/pwgen/archive/refs/tags/1.5.tar.gz"
+  homepage "https:github.comanderspwgen"
+  url "https:github.comanderspwgenarchiverefstags1.5.tar.gz"
   sha256 "e1f1d575638f216c82c2d1e9b52181d1d43fd05e7169db1d6f9f5d8a2247b475"
   license "Zlib"
-  head "https://github.com/anders/pwgen.git", branch: "master"
+  head "https:github.comanderspwgen.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38d7fb2634658ff623e2a50d1b8b180ca70f05438d3f4a239ed7fd365b789158"
@@ -29,6 +29,6 @@ class SfPwgen < Formula
   end
 
   test do
-    assert_equal 20, shell_output("#{bin}/sf-pwgen -a memorable -c 1 -l 20").chomp.length
+    assert_equal 20, shell_output("#{bin}sf-pwgen -a memorable -c 1 -l 20").chomp.length
   end
 end

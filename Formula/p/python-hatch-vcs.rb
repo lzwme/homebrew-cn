@@ -1,7 +1,7 @@
 class PythonHatchVcs < Formula
   desc "Hatch plugin for versioning with your preferred VCS"
-  homepage "https://github.com/ofek/hatch-vcs"
-  url "https://files.pythonhosted.org/packages/f5/c9/54bb4fa27b4e4a014ef3bb17710cdf692b3aa2cbc7953da885f1bf7e06ea/hatch_vcs-0.4.0.tar.gz"
+  homepage "https:github.comofekhatch-vcs"
+  url "https:files.pythonhosted.orgpackagesf5c954bb4fa27b4e4a014ef3bb17710cdf692b3aa2cbc7953da885f1bf7e06eahatch_vcs-0.4.0.tar.gz"
   sha256 "093810748fe01db0d451fabcf2c1ac2688caefd232d4ede967090b1c1b07d9f7"
   license "MIT"
 
@@ -25,14 +25,14 @@ class PythonHatchVcs < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import hatch_vcs"
     end
   end

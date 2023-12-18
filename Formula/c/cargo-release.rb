@@ -1,12 +1,12 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
-  homepage "https://github.com/crate-ci/cargo-release"
+  homepage "https:github.comcrate-cicargo-release"
   # TODO: check if we can use unversioned `libgit2` at version bump.
   # See comments below for details.
-  url "https://ghproxy.com/https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.25.0.tar.gz"
+  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.0.tar.gz"
   sha256 "fbde90b749180128e2d4171b5d411a1895819e911bcf560264808dc610d0c5ff"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/crate-ci/cargo-release.git", branch: "master"
+  head "https:github.comcrate-cicargo-release.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3675b6cb9832967d904ce2e195ed69233c4a8d176e72357129dde3729e7c15e2"
@@ -22,11 +22,11 @@ class CargoRelease < Formula
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   # To check for `libgit2` version:
-  # 1. Search for `libgit2-sys` version at https://github.com/crate-ci/cargo-release/blob/v#{version}/Cargo.lock
+  # 1. Search for `libgit2-sys` version at https:github.comcrate-cicargo-releaseblobv#{version}Cargo.lock
   # 2. If the version suffix of `libgit2-sys` is newer than +1.6.*, then:
   #    - Migrate to the corresponding `libgit2` formula.
   #    - Change the `LIBGIT2_SYS_USE_PKG_CONFIG` env var below to `LIBGIT2_NO_VENDOR`.
-  #      See: https://github.com/rust-lang/git2-rs/commit/59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
+  #      See: https:github.comrust-langgit2-rscommit59a81cac9ada22b5ea6ca2841f5bd1229f1dd659.
   depends_on "libgit2@1.6"
 
   def install
@@ -45,11 +45,11 @@ class CargoRelease < Formula
 
   test do
     # Show that we can use a different toolchain than the one provided by the `rust` formula.
-    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    # https:github.comHomebrewhomebrew-corepull134074#pullrequestreview-1484979359
     ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
-    rustup_init = Formula["rustup-init"].bin/"rustup-init"
+    rustup_init = Formula["rustup-init"].bin"rustup-init"
     system rustup_init, "-y", "--profile", "minimal", "--default-toolchain", "beta", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
     system "cargo", "new", "hello_world", "--bin"
     cd "hello_world" do
@@ -57,9 +57,9 @@ class CargoRelease < Formula
     end
 
     [
-      Formula["libgit2@1.6"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2@1.6"].opt_libshared_library("libgit2"),
     ].each do |library|
-      assert check_binary_linkage(bin/"cargo-release", library),
+      assert check_binary_linkage(bin"cargo-release", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

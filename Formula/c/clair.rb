@@ -1,13 +1,13 @@
 class Clair < Formula
   desc "Vulnerability Static Analysis for Containers"
-  homepage "https://github.com/quay/clair"
-  url "https://ghproxy.com/https://github.com/quay/clair/archive/refs/tags/v4.7.2.tar.gz"
+  homepage "https:github.comquayclair"
+  url "https:github.comquayclairarchiverefstagsv4.7.2.tar.gz"
   sha256 "dfeccda372f8298a84a8b4bceebb4fb2f893e77f232e6b5d453db1652d345c78"
   license "Apache-2.0"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,14 +28,14 @@ class Clair < Formula
       -X main.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/clair"
-    (etc/"clair").install "config.yaml.sample"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdclair"
+    (etc"clair").install "config.yaml.sample"
   end
 
   test do
     http_port = free_port
     db_port = free_port
-    (testpath/"config.yaml").write <<~EOS
+    (testpath"config.yaml").write <<~EOS
       ---
       introspection_addr: "localhost:#{free_port}"
       http_listen_addr: "localhost:#{http_port}"
@@ -50,7 +50,7 @@ class Clair < Formula
         connstring: host=localhost port=#{db_port} user=clair dbname=clair sslmode=disable
     EOS
 
-    output = shell_output("#{bin}/clair -conf #{testpath}/config.yaml -mode combo 2>&1", 1)
+    output = shell_output("#{bin}clair -conf #{testpath}config.yaml -mode combo 2>&1", 1)
     # requires a Postgres database
     assert_match "service initialization failed: failed to initialize indexer: failed to create ConnPool", output
   end

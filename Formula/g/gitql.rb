@@ -1,10 +1,10 @@
 class Gitql < Formula
   desc "Git query language"
-  homepage "https://github.com/filhodanuvem/gitql"
-  url "https://ghproxy.com/https://github.com/filhodanuvem/gitql/archive/refs/tags/v2.3.1.tar.gz"
+  homepage "https:github.comfilhodanuvemgitql"
+  url "https:github.comfilhodanuvemgitqlarchiverefstagsv2.3.1.tar.gz"
   sha256 "e3d34649f3dc714cb3189638103918314cf63b1ddbfd99a067d802730d1119b2"
   license "MIT"
-  head "https://github.com/filhodanuvem/gitql.git", branch: "main"
+  head "https:github.comfilhodanuvemgitql.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "331949f049d7c58c277f5842a3dda54101c55499a070c22f1481f288d573fcfd"
@@ -28,9 +28,9 @@ class Gitql < Formula
     system "git", "init"
     system "git", "config", "user.name", "A U Thor"
     system "git", "config", "user.email", "author@example.com"
-    (testpath/"README").write "test"
+    (testpath"README").write "test"
     system "git", "add", "README"
     system "git", "commit", "-m", "Initial commit"
-    assert_match "Initial commit", shell_output("#{bin}/gitql 'SELECT * FROM commits'")
+    assert_match "Initial commit", shell_output("#{bin}gitql 'SELECT * FROM commits'")
   end
 end

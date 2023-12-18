@@ -1,7 +1,7 @@
 class Libdpp < Formula
   desc "C++ Discord API Bot Library"
-  homepage "https://github.com/brainboxdotcc/DPP"
-  url "https://ghproxy.com/https://github.com/brainboxdotcc/DPP/releases/download/v10.0.29/DPP-10.0.29.tar.gz"
+  homepage "https:github.combrainboxdotccDPP"
+  url "https:github.combrainboxdotccDPPreleasesdownloadv10.0.29DPP-10.0.29.tar.gz"
   sha256 "a37e91fbdabee20cb0313700588db4077abf0ebabafe386457d999d22d2d0682"
   license "Apache-2.0"
 
@@ -31,8 +31,8 @@ class Libdpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <dpp/dpp.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <dppdpp.h>
 
       int main() {
         dpp::cluster bot("invalid_token");
@@ -50,6 +50,6 @@ class Libdpp < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "-L#{lib}", "-I#{include}", "test.cpp", "-o", "test", "-ldpp"
-    assert_equal "Invalid token.", shell_output("./test").strip
+    assert_equal "Invalid token.", shell_output(".test").strip
   end
 end

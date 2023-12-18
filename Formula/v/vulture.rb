@@ -1,10 +1,10 @@
 class Vulture < Formula
   desc "Find dead Python code"
-  homepage "https://github.com/jendrikseipp/vulture"
-  url "https://files.pythonhosted.org/packages/ba/1a/d4154700ed512e5274ef923b4281e5a33a3da107a6c609e0e5c68be9355c/vulture-2.10.tar.gz"
+  homepage "https:github.comjendrikseippvulture"
+  url "https:files.pythonhosted.orgpackagesba1ad4154700ed512e5274ef923b4281e5a33a3da107a6c609e0e5c68be9355cvulture-2.10.tar.gz"
   sha256 "2a5c3160bffba77595b6e6dfcc412016bd2a09cd4b66cdf7fbba913684899f6f"
   license "MIT"
-  head "https://github.com/jendrikseipp/vulture.git", branch: "main"
+  head "https:github.comjendrikseippvulture.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -30,11 +30,11 @@ class Vulture < Formula
   end
 
   test do
-    assert_equal "vulture #{version}\n", shell_output("#{bin}/vulture --version")
+    assert_equal "vulture #{version}\n", shell_output("#{bin}vulture --version")
 
-    (testpath/"unused.py").write "class Unused: pass"
-    assert_match "unused.py:1: unused class 'Unused'", shell_output("#{bin}/vulture #{testpath}/unused.py", 3)
-    (testpath/"used.py").write "print(1+1)"
-    assert_empty shell_output("#{bin}/vulture #{testpath}/used.py")
+    (testpath"unused.py").write "class Unused: pass"
+    assert_match "unused.py:1: unused class 'Unused'", shell_output("#{bin}vulture #{testpath}unused.py", 3)
+    (testpath"used.py").write "print(1+1)"
+    assert_empty shell_output("#{bin}vulture #{testpath}used.py")
   end
 end

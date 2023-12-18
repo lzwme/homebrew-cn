@@ -2,10 +2,10 @@ cask "font-paprika" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/paprika/Paprika-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflpaprikaPaprika-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Paprika"
-  homepage "https://fonts.google.com/specimen/Paprika"
+  homepage "https:fonts.google.comspecimenPaprika"
 
   font "Paprika-Regular.ttf"
 

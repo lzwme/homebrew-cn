@@ -1,7 +1,7 @@
 class Reaver < Formula
-  desc "Implements brute force attack to recover WPA/WPA2 passkeys"
-  homepage "https://github.com/t6x/reaver-wps-fork-t6x"
-  url "https://ghproxy.com/https://github.com/t6x/reaver-wps-fork-t6x/releases/download/v1.6.6/reaver-1.6.6.tar.xz"
+  desc "Implements brute force attack to recover WPAWPA2 passkeys"
+  homepage "https:github.comt6xreaver-wps-fork-t6x"
+  url "https:github.comt6xreaver-wps-fork-t6xreleasesdownloadv1.6.6reaver-1.6.6.tar.xz"
   sha256 "e329a0da0b6dd888916046535ff86a6aa144644561937954e560bb1810ab6702"
   license "GPL-2.0-or-later"
 
@@ -24,11 +24,11 @@ class Reaver < Formula
   uses_from_macos "sqlite"
 
   def install
-    # reported upstream in https://github.com/t6x/reaver-wps-fork-t6x/issues/195
-    man1.install "docs/reaver.1"
+    # reported upstream in https:github.comt6xreaver-wps-fork-t6xissues195
+    man1.install "docsreaver.1"
     prefix.install_metafiles "docs"
     cd "src"
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     system "make"
     bin.mkpath
     system "make", "install"

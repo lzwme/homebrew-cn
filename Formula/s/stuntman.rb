@@ -1,14 +1,14 @@
 class Stuntman < Formula
   desc "Implementation of the STUN protocol"
-  homepage "https://www.stunprotocol.org"
-  url "https://www.stunprotocol.org/stunserver-1.2.16.tgz"
+  homepage "https:www.stunprotocol.org"
+  url "https:www.stunprotocol.orgstunserver-1.2.16.tgz"
   sha256 "4479e1ae070651dfc4836a998267c7ac2fba4f011abcfdca3b8ccd7736d4fd26"
   license "Apache-2.0"
-  head "https://github.com/jselbie/stunserver.git", branch: "master"
+  head "https:github.comjselbiestunserver.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?stunserver[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?stunserver[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -38,6 +38,6 @@ class Stuntman < Formula
   end
 
   test do
-    system "#{bin}/stuntestcode"
+    system "#{bin}stuntestcode"
   end
 end

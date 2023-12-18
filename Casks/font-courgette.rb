@@ -2,10 +2,10 @@ cask "font-courgette" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/courgette/Courgette-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflcourgetteCourgette-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Courgette"
-  homepage "https://fonts.google.com/specimen/Courgette"
+  homepage "https:fonts.google.comspecimenCourgette"
 
   font "Courgette-Regular.ttf"
 

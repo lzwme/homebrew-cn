@@ -1,7 +1,7 @@
 class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
-  homepage "https://fortio.org/"
-  url "https://github.com/fortio/fortio.git",
+  homepage "https:fortio.org"
+  url "https:github.comfortiofortio.git",
       tag:      "v1.63.0",
       revision: "6b492e20fffc070f3ab624cf960793a01651cd19"
   license "Apache-2.0"
@@ -27,21 +27,21 @@ class Fortio < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "-j1", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}/fortio",
-      "BUILD_DIR=./tmp/fortio_build"
+    system "make", "-j1", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}fortio",
+      "BUILD_DIR=.tmpfortio_build"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/fortio version")
+    assert_match version.to_s, shell_output("#{bin}fortio version")
 
     port = free_port
     begin
       pid = fork do
-        exec bin/"fortio", "server", "-http-port", port.to_s
+        exec bin"fortio", "server", "-http-port", port.to_s
       end
       sleep 2
-      output = shell_output("#{bin}/fortio load http://localhost:#{port}/ 2>&1")
-      assert_match(/^All\sdone/, output.lines.last)
+      output = shell_output("#{bin}fortio load http:localhost:#{port} 2>&1")
+      assert_match(^All\sdone, output.lines.last)
     ensure
       Process.kill("SIGTERM", pid)
     end

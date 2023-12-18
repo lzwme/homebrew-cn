@@ -16,19 +16,19 @@ cask "free-gpgmail" do
     sha256 "b633571b30a990e2a14bab0b9c6543c6e6f4dba172802ae1472d8a083e18d15b"
   end
 
-  url "https://ghproxy.com/https://github.com/Free-GPGMail/Free-GPGMail/releases/download/v#{version.csv.second}/Free-GPGMail_#{version.csv.first}-#{version.csv.second}#{version.csv.third}.mailbundle.zip"
+  url "https:github.comFree-GPGMailFree-GPGMailreleasesdownloadv#{version.csv.second}Free-GPGMail_#{version.csv.first}-#{version.csv.second}#{version.csv.third}.mailbundle.zip"
   name "Free-GPGMail"
   desc "Apple Mail plugin for GnuPG encrypted e-mails"
-  homepage "https://github.com/Free-GPGMail/Free-GPGMail"
+  homepage "https:github.comFree-GPGMailFree-GPGMail"
 
   # This restricts matching to new releases that use the same major as the
   # cask `version` (based on the execution environment). As such, this won't
   # surface a new major version and that will need to be handled manually.
   livecheck do
     url :url
-    regex(/^Free-GPGMail[._-]v?(\d+(?:\.\d+)*)[_-](\d+(?:\.\d+)+)([_-].+?)?[._-]mailbundle\.zip$/i)
+    regex(^Free-GPGMail[._-]v?(\d+(?:\.\d+)*)[_-](\d+(?:\.\d+)+)([_-].+?)?[._-]mailbundle\.zip$i)
     strategy :github_releases do |json, regex|
-      version_suffix = version.csv.third&.sub(/^[_-]/, "")
+      version_suffix = version.csv.third&.sub(^[_-], "")
 
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -37,7 +37,7 @@ cask "free-gpgmail" do
           match = asset["name"]&.match(regex)
           next if match.blank?
           next if match[1].split(".").first != version.csv.first.split(".").first
-          next if match[3]&.sub(/^[_-]/, "") != version_suffix
+          next if match[3]&.sub(^[_-], "") != version_suffix
 
           "#{match[1]},#{match[2]},#{match[3]}"
         end
@@ -48,10 +48,10 @@ cask "free-gpgmail" do
   depends_on cask: "gpg-suite-no-mail"
   depends_on macos: ">= :mojave"
 
-  artifact "Free-GPGMail_#{version.csv.first.major}.mailbundle", target: "~/Library/Mail/Bundles/Free-GPGMail_#{version.csv.first.major}.mailbundle"
+  artifact "Free-GPGMail_#{version.csv.first.major}.mailbundle", target: "~LibraryMailBundlesFree-GPGMail_#{version.csv.first.major}.mailbundle"
 
   uninstall quit:   "org.gpgtools.gpgmail.upgrader",
-            delete: "~/Library/Mail/Bundles/Free-GPGMail_#{version.csv.first.major}.mailbundle"
+            delete: "~LibraryMailBundlesFree-GPGMail_#{version.csv.first.major}.mailbundle"
 
   # No zap stanza required
 end

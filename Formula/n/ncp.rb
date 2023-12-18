@@ -1,9 +1,9 @@
 class Ncp < Formula
   desc "File copy tool for LANs"
-  homepage "https://www.fefe.de/ncp/"
-  url "https://dl.fefe.de/ncp-1.2.4.tar.bz2"
+  homepage "https:www.fefe.dencp"
+  url "https:dl.fefe.dencp-1.2.4.tar.bz2"
   sha256 "6cfa72edd5f7717bf7a4a93ccc74c4abd89892360e2e0bb095a73c24b9359b88"
-  head ":pserver:cvs:@cvs.fefe.de:/cvs", using: :cvs
+  head ":pserver:cvs:@cvs.fefe.de:cvs", using: :cvs
 
   bottle do
     rebuild 1
@@ -25,7 +25,7 @@ class Ncp < Formula
 
   # fixes man and libowfat paths and "strip" command in Makefile
   patch do
-    url "https://ghproxy.com/https://gist.githubusercontent.com/plumbojumbo/9331146/raw/560e46a688ac9493ffbc1464e59cc062c0940532/GNUmakefile.diff"
+    url "https:gist.githubusercontent.complumbojumbo9331146raw560e46a688ac9493ffbc1464e59cc062c0940532GNUmakefile.diff"
     sha256 "b269c3a024583918d2279324660f467060f0c2adb57db31c19c05f7bbd958b19"
   end
 
@@ -38,10 +38,10 @@ class Ncp < Formula
   test do
     ping = "Hello, brew!\n"
     pong = ""
-    IO.popen("#{bin}/npush -b 2>/dev/null", "r+") do |push|
+    IO.popen("#{bin}npush -b 2>devnull", "r+") do |push|
       push.puts ping
       push.close_write
-      IO.popen("#{bin}/npoll 127.0.0.1 2>/dev/null", "r") do |poll|
+      IO.popen("#{bin}npoll 127.0.0.1 2>devnull", "r") do |poll|
         pong = poll.gets
       end
     end

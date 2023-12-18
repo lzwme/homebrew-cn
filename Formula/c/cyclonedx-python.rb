@@ -2,11 +2,11 @@ class CyclonedxPython < Formula
   include Language::Python::Virtualenv
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
-  homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/df/f5/6057f76ca661ec89d14241a3181ec85d2c46bb47f7996298d04857b919b2/cyclonedx_bom-3.11.7.tar.gz"
+  homepage "https:cyclonedx.org"
+  url "https:files.pythonhosted.orgpackagesdff56057f76ca661ec89d14241a3181ec85d2c46bb47f7996298d04857b919b2cyclonedx_bom-3.11.7.tar.gz"
   sha256 "656a6df47511abff82c159dfa947a6f881ec971d1b9861ec14802bc50bc29e05"
   license "Apache-2.0"
-  head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
+  head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "31a8b997e812f5e465106af492237848a31b7d467342489898d0fce442d5ca51"
@@ -25,27 +25,27 @@ class CyclonedxPython < Formula
   depends_on "python@3.12"
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
     sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/dd/0d/2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561bada/cyclonedx_python_lib-3.1.5.tar.gz"
+    url "https:files.pythonhosted.orgpackagesdd0d2d77978ff3ebe445c00ffc209eb205d126ef7a8ece69e7f3d014e561badacyclonedx_python_lib-3.1.5.tar.gz"
     sha256 "1ccd482024a30b95c4fffb3fe567a9df97b705f34c1075f8abde8537867600c3"
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/33/34/a7843f732e1e0b01e961f6ae835b3fd6bd4e361c1a3a72debd31244cb718/packageurl-python-0.11.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages3334a7843f732e1e0b01e961f6ae835b3fd6bd4e361c1a3a72debd31244cb718packageurl-python-0.11.2.tar.gz"
     sha256 "01fbf74a41ef85cf413f1ede529a1411f658bda66ed22d45d27280ad9ceba471"
   end
 
   resource "pip-requirements-parser" do
-    url "https://files.pythonhosted.org/packages/5e/2a/63b574101850e7f7b306ddbdb02cb294380d37948140eecd468fae392b54/pip-requirements-parser-32.0.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages5e2a63b574101850e7f7b306ddbdb02cb294380d37948140eecd468fae392b54pip-requirements-parser-32.0.1.tar.gz"
     sha256 "b4fa3a7a0be38243123cf9d1f3518da10c51bdb165a2b2985566247f9155a7d3"
   end
 
   resource "sortedcontainers" do
-    url "https://files.pythonhosted.org/packages/e8/c4/ba2f8066cceb6f23394729afe52f3bf7adec04bf9ed2c820b39e19299111/sortedcontainers-2.4.0.tar.gz"
+    url "https:files.pythonhosted.orgpackagese8c4ba2f8066cceb6f23394729afe52f3bf7adec04bf9ed2c820b39e19299111sortedcontainers-2.4.0.tar.gz"
     sha256 "25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88"
   end
 
@@ -54,10 +54,10 @@ class CyclonedxPython < Formula
   end
 
   test do
-    (testpath/"requirements.txt").write <<~EOS
+    (testpath"requirements.txt").write <<~EOS
       requests==2.31.0
     EOS
-    system bin/"cyclonedx-py", "-r", "-i", testpath/"requirements.txt"
-    assert_match "pkg:pypi/requests@2.31.0", (testpath/"cyclonedx.xml").read
+    system bin"cyclonedx-py", "-r", "-i", testpath"requirements.txt"
+    assert_match "pkg:pypirequests@2.31.0", (testpath"cyclonedx.xml").read
   end
 end

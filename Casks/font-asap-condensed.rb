@@ -2,12 +2,12 @@ cask "font-asap-condensed" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/asapcondensed"
+      only_path: "oflasapcondensed"
   name "Asap Condensed"
-  homepage "https://fonts.google.com/specimen/Asap+Condensed"
+  homepage "https:fonts.google.comspecimenAsap+Condensed"
 
   font "AsapCondensed-Black.ttf"
   font "AsapCondensed-BlackItalic.ttf"

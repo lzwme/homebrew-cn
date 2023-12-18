@@ -1,7 +1,7 @@
 class Libzzip < Formula
   desc "Library providing read access on ZIP-archives"
-  homepage "https://github.com/gdraheim/zziplib"
-  url "https://ghproxy.com/https://github.com/gdraheim/zziplib/archive/refs/tags/v0.13.72.tar.gz"
+  homepage "https:github.comgdraheimzziplib"
+  url "https:github.comgdraheimzziplibarchiverefstagsv0.13.72.tar.gz"
   sha256 "93ef44bf1f1ea24fc66080426a469df82fa631d13ca3b2e4abaeab89538518dc"
   license any_of: ["LGPL-2.0-or-later", "MPL-1.1"]
   revision 1
@@ -38,8 +38,8 @@ class Libzzip < Formula
   end
 
   test do
-    (testpath/"README.txt").write("Hello World!")
+    (testpath"README.txt").write("Hello World!")
     system "zip", "test.zip", "README.txt"
-    assert_equal "Hello World!", shell_output("#{bin}/zzcat test/README.txt")
+    assert_equal "Hello World!", shell_output("#{bin}zzcat testREADME.txt")
   end
 end

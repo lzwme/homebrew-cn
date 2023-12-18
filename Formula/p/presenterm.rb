@@ -1,10 +1,10 @@
 class Presenterm < Formula
   desc "Terminal slideshow tool"
-  homepage "https://github.com/mfontanini/presenterm"
-  url "https://ghproxy.com/https://github.com/mfontanini/presenterm/archive/refs/tags/v0.3.0.tar.gz"
+  homepage "https:github.commfontaninipresenterm"
+  url "https:github.commfontaninipresentermarchiverefstagsv0.3.0.tar.gz"
   sha256 "f239e5f2f6cbd5b16d5170e78ff773b8164e433a8260f4187faa5670dbbd521f"
   license "BSD-2-Clause"
-  head "https://github.com/mfontanini/presenterm.git", branch: "master"
+  head "https:github.commfontaninipresenterm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c19860dea2e66a0a661fe1c8dd16944cd7418f82540bcdede7a49a7ac5a93292"
@@ -23,9 +23,9 @@ class Presenterm < Formula
   end
 
   test do
-    output = shell_output("#{bin}/presenterm non_exist.md 2>&1", 1)
+    output = shell_output("#{bin}presenterm non_exist.md 2>&1", 1)
     assert_match "reading presentation: No such file or directory", output
 
-    assert_match version.to_s, shell_output("#{bin}/presenterm --version")
+    assert_match version.to_s, shell_output("#{bin}presenterm --version")
   end
 end

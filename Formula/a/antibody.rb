@@ -1,7 +1,7 @@
 class Antibody < Formula
   desc "Shell plugin manager"
-  homepage "https://getantibody.github.io/"
-  url "https://ghproxy.com/https://github.com/getantibody/antibody/archive/refs/tags/v6.1.1.tar.gz"
+  homepage "https:getantibody.github.io"
+  url "https:github.comgetantibodyantibodyarchiverefstagsv6.1.1.tar.gz"
   sha256 "87bced5fba8cf5d587ea803d33dda72e8bcbd4e4c9991a9b40b2de4babbfc24f"
   license "MIT"
 
@@ -23,12 +23,12 @@ class Antibody < Formula
   depends_on "go@1.17" => :build
 
   def install
-    system "go", "build", "-ldflags", "-s -w -X main.version=#{version}", "-trimpath", "-o", bin/"antibody"
+    system "go", "build", "-ldflags", "-s -w -X main.version=#{version}", "-trimpath", "-o", bin"antibody"
   end
 
   test do
     # See if antibody can install a bundle correctly
-    system "#{bin}/antibody", "bundle", "rupa/z"
-    assert_match("rupa/z", shell_output("#{bin}/antibody list"))
+    system "#{bin}antibody", "bundle", "rupaz"
+    assert_match("rupaz", shell_output("#{bin}antibody list"))
   end
 end

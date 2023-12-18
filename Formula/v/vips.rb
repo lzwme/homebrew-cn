@@ -1,7 +1,7 @@
 class Vips < Formula
   desc "Image processing library"
-  homepage "https://github.com/libvips/libvips"
-  url "https://ghproxy.com/https://github.com/libvips/libvips/releases/download/v8.15.0/vips-8.15.0.tar.xz"
+  homepage "https:github.comlibvipslibvips"
+  url "https:github.comlibvipslibvipsreleasesdownloadv8.15.0vips-8.15.0.tar.xz"
   sha256 "d33f81c6ab4bd1faeedc36dc32f880b19e9d5ff69b502e59d175332dfb8f63f1"
   license "LGPL-2.1-or-later"
   revision 1
@@ -61,7 +61,7 @@ class Vips < Formula
 
   def install
     # mozjpeg needs to appear before libjpeg, otherwise it's not used
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["mozjpeg"].opt_lib"pkgconfig"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -72,24 +72,24 @@ class Vips < Formula
       # keg-only so it needs to look for the pkgconfig file in libarchive's opt
       # path.
       libarchive = Formula["libarchive"].opt_prefix
-      inreplace [lib/"pkgconfig/vips.pc", lib/"pkgconfig/vips-cpp.pc"] do |s|
-        s.gsub!(/^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$/,
-                "Requires.private:\\1#{libarchive}/lib/pkgconfig/libarchive.pc\\3")
+      inreplace [lib"pkgconfigvips.pc", lib"pkgconfigvips-cpp.pc"] do |s|
+        s.gsub!(^Requires\.private:(.*)\blibarchive\b(.*?)(,.*)?$,
+                "Requires.private:\\1#{libarchive}libpkgconfiglibarchive.pc\\3")
       end
     end
   end
 
   test do
-    system "#{bin}/vips", "-l"
-    cmd = "#{bin}/vipsheader -f width #{test_fixtures("test.png")}"
+    system "#{bin}vips", "-l"
+    cmd = "#{bin}vipsheader -f width #{test_fixtures("test.png")}"
     assert_equal "8", shell_output(cmd).chomp
 
     # --trellis-quant requires mozjpeg, vips warns if it's not present
-    cmd = "#{bin}/vips jpegsave #{test_fixtures("test.png")} #{testpath}/test.jpg --trellis-quant 2>&1"
+    cmd = "#{bin}vips jpegsave #{test_fixtures("test.png")} #{testpath}test.jpg --trellis-quant 2>&1"
     assert_equal "", shell_output(cmd)
 
     # [palette] requires libimagequant, vips warns if it's not present
-    cmd = "#{bin}/vips copy #{test_fixtures("test.png")} #{testpath}/test.png[palette] 2>&1"
+    cmd = "#{bin}vips copy #{test_fixtures("test.png")} #{testpath}test.png[palette] 2>&1"
     assert_equal "", shell_output(cmd)
 
     # Make sure `pkg-config` can parse `vips.pc` and `vips-cpp.pc` after the `inreplace`.

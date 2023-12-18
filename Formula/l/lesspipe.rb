@@ -1,7 +1,7 @@
 class Lesspipe < Formula
   desc "Input filter for the pager less"
-  homepage "https://www-zeuthen.desy.de/~friebel/unix/lesspipe.html"
-  url "https://ghproxy.com/https://github.com/wofr06/lesspipe/archive/refs/tags/v2.11.tar.gz"
+  homepage "https:www-zeuthen.desy.de~friebelunixlesspipe.html"
+  url "https:github.comwofr06lesspipearchiverefstagsv2.11.tar.gz"
   sha256 "8e8eebf80f8a249c49b31e775728f4d3062f0a97ff7ef7363ccba522f51ffa3c"
   license "GPL-2.0-only"
 
@@ -16,15 +16,15 @@ class Lesspipe < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}"
     man1.mkpath
     system "make", "install"
   end
 
   def caveats
     <<~EOS
-      add the following to your shell profile e.g. ~/.profile or ~/.zshrc:
-        export LESSOPEN="|#{HOMEBREW_PREFIX}/bin/lesspipe.sh %s"
+      add the following to your shell profile e.g. ~.profile or ~.zshrc:
+        export LESSOPEN="|#{HOMEBREW_PREFIX}binlesspipe.sh %s"
     EOS
   end
 
@@ -33,7 +33,7 @@ class Lesspipe < Formula
     touch "file2.txt"
     system "tar", "-cvzf", "homebrew.tar.gz", "file1.txt", "file2.txt"
 
-    assert_predicate testpath/"homebrew.tar.gz", :exist?
-    assert_match "file2.txt", pipe_output(bin/"archive_color", shell_output("tar -tvzf homebrew.tar.gz"))
+    assert_predicate testpath"homebrew.tar.gz", :exist?
+    assert_match "file2.txt", pipe_output(bin"archive_color", shell_output("tar -tvzf homebrew.tar.gz"))
   end
 end

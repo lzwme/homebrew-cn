@@ -2,11 +2,11 @@ cask "virtual-desktop-streamer" do
   version "1.29.10"
   sha256 "6d9b17de0a423775b610238eb881d6ec3cc92739c072d3afe1ce7f4e66dc682f"
 
-  url "https://ghproxy.com/https://github.com/guygodin/VirtualDesktop/releases/download/v#{version}/VirtualDesktop.Streamer.Setup.dmg",
-      verified: "github.com/guygodin/VirtualDesktop/"
+  url "https:github.comguygodinVirtualDesktopreleasesdownloadv#{version}VirtualDesktop.Streamer.Setup.dmg",
+      verified: "github.comguygodinVirtualDesktop"
   name "Virtual Desktop Streamer"
   desc "VR Virtual Desktop Streamer"
-  homepage "https://www.vrdesktop.net/"
+  homepage "https:www.vrdesktop.net"
 
   livecheck do
     url :url
@@ -20,7 +20,7 @@ cask "virtual-desktop-streamer" do
     retries ||= 3
     ohai "The Virtual Desktop package postinstall script launches the Streamer app" if retries >= 3
     ohai "Attempting to close the Streamer app to avoid unwanted user intervention" if retries >= 3
-    return unless system_command "/usr/bin/pkill", args: ["-f", "/Applications/Virtual Desktop Streamer.app"]
+    return unless system_command "usrbinpkill", args: ["-f", "ApplicationsVirtual Desktop Streamer.app"]
   rescue RuntimeError
     sleep 1
     retry unless (retries -= 1).zero?
@@ -40,15 +40,15 @@ cask "virtual-desktop-streamer" do
               "com.VirtualDesktop.launch",
               "com.VirtualDesktop.uninstall",
             ],
-            delete:    "/usr/local/bin/virtualdesktop/"
+            delete:    "usrlocalbinvirtualdesktop"
 
   zap trash: [
-    "/tmp/.vdready",
-    "/tmp/.vdrequestclean",
-    "/tmp/.vdupdatedetail",
-    "~/Library/Caches/com.virtualDesktopInc.Mac.Streamer",
-    "~/Library/HTTPStorages/com.virtualDesktopInc.Mac.Streamer",
-    "~/Library/Preferences/com.virtualDesktopInc.Mac.Streamer.plist",
-    "~/Library/Saved Application State/com.virtualDesktopInc.Mac.Streamer.savedState",
+    "tmp.vdready",
+    "tmp.vdrequestclean",
+    "tmp.vdupdatedetail",
+    "~LibraryCachescom.virtualDesktopInc.Mac.Streamer",
+    "~LibraryHTTPStoragescom.virtualDesktopInc.Mac.Streamer",
+    "~LibraryPreferencescom.virtualDesktopInc.Mac.Streamer.plist",
+    "~LibrarySaved Application Statecom.virtualDesktopInc.Mac.Streamer.savedState",
   ]
 end

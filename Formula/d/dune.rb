@@ -1,10 +1,10 @@
 class Dune < Formula
   desc "Composable build system for OCaml"
-  homepage "https://dune.build/"
-  url "https://ghproxy.com/https://github.com/ocaml/dune/releases/download/3.12.1/dune-3.12.1.tbz"
+  homepage "https:dune.build"
+  url "https:github.comocamldunereleasesdownload3.12.1dune-3.12.1.tbz"
   sha256 "b9fd6560879f9d340ae8a87c967b0d2bcd3c4120cffcd9fb661f325078f74f6f"
   license "MIT"
-  head "https://github.com/ocaml/dune.git", branch: "main"
+  head "https:github.comocamldune.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39e62a9ee02586660d3369fbb79406052b1463762dcc31c5ef5ef99ad3cb39e5"
@@ -21,16 +21,16 @@ class Dune < Formula
   def install
     system "make", "release"
     system "make", "PREFIX=#{prefix}", "install"
-    share.install prefix/"man"
-    elisp.install Dir[share/"emacs/site-lisp/*"]
+    share.install prefix"man"
+    elisp.install Dir[share"emacssite-lisp*"]
   end
 
   test do
     contents = "bar"
     target_fname = "foo.txt"
-    (testpath/"dune").write("(rule (with-stdout-to #{target_fname} (echo #{contents})))")
-    system bin/"dune", "build", "foo.txt", "--root", "."
-    output = File.read(testpath/"_build/default/#{target_fname}")
+    (testpath"dune").write("(rule (with-stdout-to #{target_fname} (echo #{contents})))")
+    system bin"dune", "build", "foo.txt", "--root", "."
+    output = File.read(testpath"_builddefault#{target_fname}")
     assert_match contents, output
   end
 end

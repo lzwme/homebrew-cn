@@ -1,10 +1,10 @@
 class PhylumCli < Formula
   desc "Command-line interface for the Phylum API"
-  homepage "https://www.phylum.io"
-  url "https://ghproxy.com/https://github.com/phylum-dev/cli/archive/refs/tags/v6.0.0.tar.gz"
+  homepage "https:www.phylum.io"
+  url "https:github.comphylum-devcliarchiverefstagsv6.0.0.tar.gz"
   sha256 "6d690a17be074ba2c174bd03868665332dead3deaa35fe9b1fcac7a1f4d416bd"
   license "GPL-3.0-or-later"
-  head "https://github.com/phylum-dev/cli.git", branch: "main"
+  head "https:github.comphylum-devcli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad346082a054091e9eb8b5d5a5bea242d86e7c3aab0dd3f05d9ffed10df61bca"
@@ -26,9 +26,9 @@ class PhylumCli < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/phylum version")
+    assert_match version.to_s, shell_output("#{bin}phylum version")
 
-    output = shell_output("#{bin}/phylum extension")
+    output = shell_output("#{bin}phylum extension")
     assert_match "No extensions are currently installed.", output
   end
 end

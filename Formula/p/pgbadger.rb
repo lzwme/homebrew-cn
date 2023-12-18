@@ -1,10 +1,10 @@
 class Pgbadger < Formula
   desc "Log analyzer for PostgreSQL"
-  homepage "https://pgbadger.darold.net/"
-  url "https://ghproxy.com/https://github.com/darold/pgbadger/archive/refs/tags/v12.3.tar.gz"
+  homepage "https:pgbadger.darold.net"
+  url "https:github.comdaroldpgbadgerarchiverefstagsv12.3.tar.gz"
   sha256 "c3d5a583d12b09f7b47e628760ccb7409362c54b5ca574de4cfd3ccf51c35106"
   license "PostgreSQL"
-  head "https://github.com/darold/pgbadger.git", branch: "master"
+  head "https:github.comdaroldpgbadger.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2547486d3f93f5286b8dfec62e5c9e76d581ed1f288ee26aac17c03c0c6b3ed4"
@@ -22,18 +22,18 @@ class Pgbadger < Formula
     system "make", "install"
 
     man_dir = if OS.mac?
-      "share/man/man1"
+      "sharemanman1"
     else
-      "man/man1"
+      "manman1"
     end
-    bin.install "usr/local/bin/pgbadger"
-    man1.install "usr/local/#{man_dir}/pgbadger.1p"
+    bin.install "usrlocalbinpgbadger"
+    man1.install "usrlocal#{man_dir}pgbadger.1p"
   end
 
   def caveats
     <<~EOS
       You must configure your PostgreSQL server before using pgBadger.
-      Edit postgresql.conf (in #{var}/postgres if you use Homebrew's
+      Edit postgresql.conf (in #{var}postgres if you use Homebrew's
       PostgreSQL), set the following parameters, and restart PostgreSQL:
 
         log_destination = 'stderr'
@@ -51,11 +51,11 @@ class Pgbadger < Formula
   end
 
   test do
-    (testpath/"server.log").write <<~EOS
+    (testpath"server.log").write <<~EOS
       LOG:  autovacuum launcher started
       LOG:  database system is ready to accept connections
     EOS
-    system bin/"pgbadger", "-f", "syslog", "server.log"
-    assert_predicate testpath/"out.html", :exist?
+    system bin"pgbadger", "-f", "syslog", "server.log"
+    assert_predicate testpath"out.html", :exist?
   end
 end

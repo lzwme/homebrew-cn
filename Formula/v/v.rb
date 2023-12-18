@@ -1,10 +1,10 @@
 class V < Formula
   desc "Z for vim"
-  homepage "https://github.com/rupa/v"
-  url "https://ghproxy.com/https://github.com/rupa/v/archive/refs/tags/v1.1.tar.gz"
+  homepage "https:github.comrupav"
+  url "https:github.comrupavarchiverefstagsv1.1.tar.gz"
   sha256 "6483ef1248dcbc6f360b0cdeb9f9c11879815bd18b0c4f053a18ddd56a69b81f"
   revision 1
-  head "https://github.com/rupa/v.git", branch: "master"
+  head "https:github.comrupav.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "964e9564884fc6fd21c705d73966a4b64f7b19c7d568e894006cb45f8b1565ff"
@@ -27,8 +27,8 @@ class V < Formula
   end
 
   test do
-    (testpath/".vimrc").write "set viminfo='25,\"50,n#{testpath}/.viminfo"
-    system "vim", "-u", testpath/".vimrc", "+wq", "test.txt"
-    assert_equal "#{testpath}/test.txt", shell_output("#{bin}/v -a --debug").chomp
+    (testpath".vimrc").write "set viminfo='25,\"50,n#{testpath}.viminfo"
+    system "vim", "-u", testpath".vimrc", "+wq", "test.txt"
+    assert_equal "#{testpath}test.txt", shell_output("#{bin}v -a --debug").chomp
   end
 end

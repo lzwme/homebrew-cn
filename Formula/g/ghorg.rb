@@ -1,7 +1,7 @@
 class Ghorg < Formula
   desc "Quickly clone an entire org's or user's repositories into one directory"
-  homepage "https://github.com/gabrie30/ghorg"
-  url "https://ghproxy.com/https://github.com/gabrie30/ghorg/archive/refs/tags/v1.9.9.tar.gz"
+  homepage "https:github.comgabrie30ghorg"
+  url "https:github.comgabrie30ghorgarchiverefstagsv1.9.9.tar.gz"
   sha256 "df174bfcd08fc89d4b606334559827865ab1ae7f5877b2f001963832ed083b20"
   license "Apache-2.0"
 
@@ -22,10 +22,10 @@ class Ghorg < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    generate_completions_from_executable(bin/"ghorg", "completion")
+    generate_completions_from_executable(bin"ghorg", "completion")
   end
 
   test do
-    assert_match "No clones found", shell_output("#{bin}/ghorg ls")
+    assert_match "No clones found", shell_output("#{bin}ghorg ls")
   end
 end

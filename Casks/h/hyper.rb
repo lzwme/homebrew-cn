@@ -5,11 +5,11 @@ cask "hyper" do
   sha256 arm:   "7d2440fdd93fde4101e603fe2de46732b54292a868ad17dbcb55288e6f8430a8",
          intel: "aa6ab73fdc60f60d428eb0247b270f958e58709249077b5102c7ab24aff19683"
 
-  url "https://ghproxy.com/https://github.com/vercel/hyper/releases/download/v#{version}/Hyper-#{version}-mac-#{arch}.zip",
-      verified: "github.com/vercel/hyper/"
+  url "https:github.comvercelhyperreleasesdownloadv#{version}Hyper-#{version}-mac-#{arch}.zip",
+      verified: "github.comvercelhyper"
   name "Hyper"
   desc "Terminal built on web technologies"
-  homepage "https://hyper.is/"
+  homepage "https:hyper.is"
 
   livecheck do
     url :url
@@ -17,23 +17,23 @@ cask "hyper" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/hyper-canary"
+  conflicts_with cask: "homebrewcask-versionshyper-canary"
 
   app "Hyper.app"
-  binary "#{appdir}/Hyper.app/Contents/Resources/bin/hyper"
+  binary "#{appdir}Hyper.appContentsResourcesbinhyper"
 
   zap trash: [
-    "~/.hyper_plugins",
-    "~/.hyper.js",
-    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/co.zeit.hyper.sfl*",
-    "~/Library/Application Support/Hyper",
-    "~/Library/Caches/co.zeit.hyper.ShipIt",
-    "~/Library/Caches/co.zeit.hyper",
-    "~/Library/Cookies/co.zeit.hyper.binarycookies",
-    "~/Library/Logs/Hyper",
-    "~/Library/Preferences/ByHost/co.zeit.hyper.ShipIt.*.plist",
-    "~/Library/Preferences/co.zeit.hyper.helper.plist",
-    "~/Library/Preferences/co.zeit.hyper.plist",
-    "~/Library/Saved Application State/co.zeit.hyper.savedState",
+    "~.hyper_plugins",
+    "~.hyper.js",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.zeit.hyper.sfl*",
+    "~LibraryApplication SupportHyper",
+    "~LibraryCachesco.zeit.hyper.ShipIt",
+    "~LibraryCachesco.zeit.hyper",
+    "~LibraryCookiesco.zeit.hyper.binarycookies",
+    "~LibraryLogsHyper",
+    "~LibraryPreferencesByHostco.zeit.hyper.ShipIt.*.plist",
+    "~LibraryPreferencesco.zeit.hyper.helper.plist",
+    "~LibraryPreferencesco.zeit.hyper.plist",
+    "~LibrarySaved Application Stateco.zeit.hyper.savedState",
   ]
 end

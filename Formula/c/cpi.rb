@@ -1,10 +1,10 @@
 class Cpi < Formula
   desc "Tiny c++ interpreter"
-  homepage "https://treefrogframework.github.io/cpi/"
-  url "https://ghproxy.com/https://github.com/treefrogframework/cpi/archive/refs/tags/v2.0.4.tar.gz"
+  homepage "https:treefrogframework.github.iocpi"
+  url "https:github.comtreefrogframeworkcpiarchiverefstagsv2.0.4.tar.gz"
   sha256 "55e98b851976d258c1211d3c04d99ce2ec104580cc78f5d30064accef6e3d952"
   license "MIT"
-  head "https://github.com/treefrogframework/cpi.git", branch: "master"
+  head "https:github.comtreefrogframeworkcpi.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -33,7 +33,7 @@ class Cpi < Formula
   end
 
   test do
-    (testpath/"test1.cpp").write <<~EOS
+    (testpath"test1.cpp").write <<~EOS
       #include <iostream>
       int main()
       {
@@ -42,9 +42,9 @@ class Cpi < Formula
       }
     EOS
 
-    assert_match "Hello world", shell_output("#{bin}/cpi #{testpath}/test1.cpp")
+    assert_match "Hello world", shell_output("#{bin}cpi #{testpath}test1.cpp")
 
-    (testpath/"test2.cpp").write <<~EOS
+    (testpath"test2.cpp").write <<~EOS
       #include <iostream>
       #include <cmath>
       #include <cstdlib>
@@ -55,9 +55,9 @@ class Cpi < Formula
           std::cout << sqrt(atoi(argv[1])) << std::endl;
           return 0;
       }
-      // CompileOptions: -lm
+       CompileOptions: -lm
     EOS
 
-    assert_match "1.41421", shell_output("#{bin}/cpi #{testpath}/test2.cpp 2")
+    assert_match "1.41421", shell_output("#{bin}cpi #{testpath}test2.cpp 2")
   end
 end

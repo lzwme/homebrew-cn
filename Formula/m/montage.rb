@@ -1,11 +1,11 @@
 class Montage < Formula
   desc "Toolkit for assembling FITS images into custom mosaics"
-  homepage "http://montage.ipac.caltech.edu"
-  url "http://montage.ipac.caltech.edu/download/Montage_v6.0.tar.gz"
+  homepage "http:montage.ipac.caltech.edu"
+  url "http:montage.ipac.caltech.edudownloadMontage_v6.0.tar.gz"
   sha256 "1f540a7389d30fcf9f8cd9897617cc68b19350fbcde97c4d1cdc5634de1992c6"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/Caltech-IPAC/Montage.git", branch: "main"
+  head "https:github.comCaltech-IPACMontage.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -30,27 +30,27 @@ class Montage < Formula
   def install
     # Avoid building bundled libraries
     libs = %w[bzip2 cfitsio freetype jpeg]
-    buildpath.glob("lib/src/{#{libs.join(",")}}*").map(&:rmtree)
-    inreplace "lib/src/Makefile", /^[ \t]*\(cd (?:#{libs.join("|")}).*\)$/, ""
-    inreplace "MontageLib/Makefile", %r{^.*/lib/src/(?:#{libs.join("|")}).*$\n}, ""
-    inreplace "MontageLib/Viewer/Makefile.#{OS.kernel_name.upcase}",
-              "-I../../lib/freetype/include/freetype2",
-              "-I#{Formula["freetype"].opt_include}/freetype2"
+    buildpath.glob("libsrc{#{libs.join(",")}}*").map(&:rmtree)
+    inreplace "libsrcMakefile", ^[ \t]*\(cd (?:#{libs.join("|")}).*\)$, ""
+    inreplace "MontageLibMakefile", %r{^.*libsrc(?:#{libs.join("|")}).*$\n}, ""
+    inreplace "MontageLibViewerMakefile.#{OS.kernel_name.upcase}",
+              "-I....libfreetypeincludefreetype2",
+              "-I#{Formula["freetype"].opt_include}freetype2"
 
     ENV.deparallelize # Build requires targets to be built in specific order
     system "make"
-    bin.install Dir["bin/m*"]
+    bin.install Dir["binm*"]
   end
 
   def caveats
     <<~EOS
-      Montage is under the Caltech/JPL non-exclusive, non-commercial software
+      Montage is under the CaltechJPL non-exclusive, non-commercial software
       licence agreement available at:
-        http://montage.ipac.caltech.edu/docs/download.html
+        http:montage.ipac.caltech.edudocsdownload.html
     EOS
   end
 
   test do
-    system bin/"mHdr", "m31", "1", "template.hdr"
+    system bin"mHdr", "m31", "1", "template.hdr"
   end
 end

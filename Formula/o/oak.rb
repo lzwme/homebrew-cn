@@ -1,10 +1,10 @@
 class Oak < Formula
   desc "Expressive, simple, dynamic programming language"
-  homepage "https://oaklang.org/"
-  url "https://ghproxy.com/https://github.com/thesephist/oak/archive/refs/tags/v0.3.tar.gz"
+  homepage "https:oaklang.org"
+  url "https:github.comthesephistoakarchiverefstagsv0.3.tar.gz"
   sha256 "05bc1c09da8f8d199d169e5a5c5ab2f2923bad6fac624f497f5ea365f378e38a"
   license "MIT"
-  head "https://github.com/thesephist/oak.git", branch: "main"
+  head "https:github.comthesephistoak.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb8d9531ce0034422a0233fb27c1e77c94910d91f544e18407b8420f67f7f3e3"
@@ -26,6 +26,6 @@ class Oak < Formula
   end
 
   test do
-    assert_equal "Hello, World!\n14\n", shell_output("#{bin}/oak eval \"std.println('Hello, World!')\"")
+    assert_equal "Hello, World!\n14\n", shell_output("#{bin}oak eval \"std.println('Hello, World!')\"")
   end
 end

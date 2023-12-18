@@ -1,23 +1,23 @@
 class Harbour < Formula
   desc "Portable, xBase-compatible programming language and environment"
-  homepage "https://harbour.github.io"
+  homepage "https:harbour.github.io"
   license "GPL-2.0"
   revision 2
-  head "https://github.com/harbour/core.git", branch: "master"
+  head "https:github.comharbourcore.git", branch: "master"
 
   stable do
-    url "https://downloads.sourceforge.net/project/harbour-project/source/3.0.0/harbour-3.0.0.tar.bz2"
+    url "https:downloads.sourceforge.netprojectharbour-projectsource3.0.0harbour-3.0.0.tar.bz2"
     sha256 "4e99c0c96c681b40c7e586be18523e33db24baea68eb4e394989a3b7a6b5eaad"
 
     # Missing a header that was deprecated by libcurl @ version 7.12.0 and
     # deleted sometime after Harbour 3.0.0 release.
-    # Also backport upstream changes in src/rtl/arc4.c for glibc 2.30+.
+    # Also backport upstream changes in srcrtlarc4.c for glibc 2.30+.
     patch :DATA
   end
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/harbour[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?harbour[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -43,12 +43,12 @@ class Harbour < Formula
 
   def install
     # Delete files that cause vendored libraries for minizip and expat to be built.
-    rm "contrib/hbmzip/3rd/minizip/minizip.hbp"
-    rm "contrib/hbexpat/3rd/expat/expat.hbp"
+    rm "contribhbmzip3rdminizipminizip.hbp"
+    rm "contribhbexpat3rdexpatexpat.hbp"
 
     # Fix flat namespace usage.
-    # Upstreamed here: https://github.com/harbour/core/pull/263.
-    inreplace "config/darwin/clang.mk", "-flat_namespace -undefined warning", "-undefined dynamic_lookup"
+    # Upstreamed here: https:github.comharbourcorepull263.
+    inreplace "configdarwinclang.mk", "-flat_namespace -undefined warning", "-undefined dynamic_lookup"
 
     # The following optional dependencies are not being used at this time:
     # allegro, cairo, cups, freeimage, gd, ghostscript, libmagic, mysql, postgresql, qt@5, unixodbc
@@ -64,20 +64,20 @@ class Harbour < Formula
     ENV["HB_WITH_X11"] = "no"
     ENV["HB_WITH_JPEG"] = Formula["jpeg-turbo"].opt_include
     ENV["HB_WITH_LIBHARU"] = Formula["libharu"].opt_include
-    ENV["HB_WITH_MINIZIP"] = Formula["minizip"].opt_include/"minizip"
+    ENV["HB_WITH_MINIZIP"] = Formula["minizip"].opt_include"minizip"
     ENV["HB_WITH_PCRE"] = Formula["pcre"].opt_include
     ENV["HB_WITH_PNG"] = Formula["libpng"].opt_include
     ENV["HB_WITH_XDIFF"] = Formula["libxdiff"].opt_include
 
     if OS.mac?
       ENV["HB_COMPILER"] = ENV.cc
-      ENV["HB_USER_DFLAGS"] = "-L#{MacOS.sdk_path}/usr/lib"
-      ENV["HB_WITH_BZIP2"] = MacOS.sdk_path/"usr/include"
-      ENV["HB_WITH_CURL"] = MacOS.sdk_path/"usr/include"
-      ENV["HB_WITH_CURSES"] = MacOS.sdk_path/"usr/include"
-      ENV["HB_WITH_EXPAT"] = MacOS.sdk_path/"usr/include"
-      ENV["HB_WITH_SQLITE3"] = MacOS.sdk_path/"usr/include"
-      ENV["HB_WITH_ZLIB"] = MacOS.sdk_path/"usr/include"
+      ENV["HB_USER_DFLAGS"] = "-L#{MacOS.sdk_path}usrlib"
+      ENV["HB_WITH_BZIP2"] = MacOS.sdk_path"usrinclude"
+      ENV["HB_WITH_CURL"] = MacOS.sdk_path"usrinclude"
+      ENV["HB_WITH_CURSES"] = MacOS.sdk_path"usrinclude"
+      ENV["HB_WITH_EXPAT"] = MacOS.sdk_path"usrinclude"
+      ENV["HB_WITH_SQLITE3"] = MacOS.sdk_path"usrinclude"
+      ENV["HB_WITH_ZLIB"] = MacOS.sdk_path"usrinclude"
     else
       ENV["HB_WITH_BZIP2"] = Formula["bzip2"].opt_include
       ENV["HB_WITH_CURL"] = Formula["curl"].opt_include
@@ -91,13 +91,13 @@ class Harbour < Formula
 
     system "make", "install"
 
-    rm Dir[bin/"hbmk2.*.hbl"]
-    rm bin/"contrib.hbr" if build.head?
-    rm bin/"harbour.ucf" if build.head?
+    rm Dir[bin"hbmk2.*.hbl"]
+    rm bin"contrib.hbr" if build.head?
+    rm bin"harbour.ucf" if build.head?
   end
 
   test do
-    (testpath/"hello.prg").write <<~EOS
+    (testpath"hello.prg").write <<~EOS
       procedure Main()
          OutStd( ;
             "Hello, world!" + hb_eol() + ;
@@ -106,43 +106,43 @@ class Harbour < Formula
          return
     EOS
 
-    assert_match "Hello, world!", shell_output("#{bin}/hbmk2 hello.prg -run")
+    assert_match "Hello, world!", shell_output("#{bin}hbmk2 hello.prg -run")
   end
 end
 
 __END__
-diff --git a/contrib/hbcurl/core.c b/contrib/hbcurl/core.c
+diff --git acontribhbcurlcore.c bcontribhbcurlcore.c
 index 00caaa8..53618ed 100644
---- a/contrib/hbcurl/core.c
-+++ b/contrib/hbcurl/core.c
+--- acontribhbcurlcore.c
++++ bcontribhbcurlcore.c
 @@ -53,8 +53,12 @@
-  */
+  *
 
- #include <curl/curl.h>
--#include <curl/types.h>
--#include <curl/easy.h>
+ #include <curlcurl.h>
+-#include <curltypes.h>
+-#include <curleasy.h>
 +#if LIBCURL_VERSION_NUM < 0x070A03
-+#  include <curl/easy.h>
++#  include <curleasy.h>
 +#endif
 +#if LIBCURL_VERSION_NUM < 0x070C00
-+#  include <curl/types.h>
++#  include <curltypes.h>
 +#endif
 
  #include "hbapi.h"
  #include "hbapiitm.h"
-diff --git a/src/rtl/arc4.c b/src/rtl/arc4.c
+diff --git asrcrtlarc4.c bsrcrtlarc4.c
 index 8a3527c..69b4e8b 100644
---- a/src/rtl/arc4.c
-+++ b/src/rtl/arc4.c
+--- asrcrtlarc4.c
++++ bsrcrtlarc4.c
 @@ -54,7 +54,15 @@
- /* XXX: Check and possibly extend this to other Unix-like platforms */
+ * XXX: Check and possibly extend this to other Unix-like platforms *
  #if ( defined( HB_OS_BSD ) && ! defined( HB_OS_DARWIN ) ) || \
      ( defined( HB_OS_LINUX ) && ! defined ( HB_OS_ANDROID ) && ! defined ( __WATCOMC__ ) )
 -#  define HAVE_SYS_SYSCTL_H
-+    /*
++    *
 +     * sysctl() on Linux has fallen into depreciation. Not available in current
 +     * runtime C libraries, like musl and glibc >= 2.30.
-+     */
++     *
 +#  if ( ! defined( HB_OS_LINUX ) || \
 +      ( ( defined( __GLIBC__ ) && ! ( ( __GLIBC__ > 2 ) || ( ( __GLIBC__ == 2 ) && ( __GLIBC_MINOR__ >= 30 ) ) ) ) ) || \
 +      defined( __UCLIBC__ ) )

@@ -1,27 +1,27 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
-  homepage "https://ffmpeg.org/"
+  homepage "https:ffmpeg.org"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
   revision 2
-  head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
+  head "https:github.comFFmpegFFmpeg.git", branch: "master"
 
   stable do
-    url "https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz"
+    url "https:ffmpeg.orgreleasesffmpeg-6.0.tar.xz"
     sha256 "57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082"
 
     # Fix for binutils, remove with `stable` block on next release
-    # https://www.linuxquestions.org/questions/slackware-14/regression-on-current-with-ffmpeg-4175727691/
+    # https:www.linuxquestions.orgquestionsslackware-14regression-on-current-with-ffmpeg-4175727691
     patch do
-      url "https://github.com/FFmpeg/FFmpeg/commit/effadce6c756247ea8bae32dc13bb3e6f464f0eb.patch?full_index=1"
+      url "https:github.comFFmpegFFmpegcommiteffadce6c756247ea8bae32dc13bb3e6f464f0eb.patch?full_index=1"
       sha256 "9800c708313da78d537b61cfb750762bb8ad006ca9335b1724dbbca5669f5b24"
     end
   end
 
   livecheck do
-    url "https://ffmpeg.org/download.html"
-    regex(/href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ffmpeg.orgdownload.html"
+    regex(href=.*?ffmpeg[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -88,14 +88,14 @@ class Ffmpeg < Formula
   fails_with gcc: "5"
 
   # Fix for QtWebEngine, do not remove
-  # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270209
+  # https:bugs.freebsd.orgbugzillashow_bug.cgi?id=270209
   patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/ffmpeg/-/raw/5670ccd86d3b816f49ebc18cab878125eca2f81f/add-av_stream_get_first_dts-for-chromium.patch"
+    url "https:gitlab.archlinux.orgarchlinuxpackagingpackagesffmpeg-raw5670ccd86d3b816f49ebc18cab878125eca2f81fadd-av_stream_get_first_dts-for-chromium.patch"
     sha256 "57e26caced5a1382cb639235f9555fc50e45e7bf8333f7c9ae3d49b3241d3f77"
   end
 
   def install
-    # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
+    # The new linker leads to duplicate symbol issue https:github.comhomebrew-ffmpeghomebrew-ffmpegissues140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
     args = %W[
@@ -153,21 +153,21 @@ class Ffmpeg < Formula
     args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install Dir["tools/*"].select { |f| File.executable? f }
+    bin.install Dir["tools*"].select { |f| File.executable? f }
 
-    # Fix for Non-executables that were installed to bin/
-    mv bin/"python", pkgshare/"python", force: true
+    # Fix for Non-executables that were installed to bin
+    mv bin"python", pkgshare"python", force: true
   end
 
   test do
     # Create an example mp4 file
-    mp4out = testpath/"video.mp4"
-    system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    mp4out = testpath"video.mp4"
+    system bin"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     assert_predicate mp4out, :exist?
   end
 end

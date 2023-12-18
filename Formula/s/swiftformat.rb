@@ -1,10 +1,10 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
-  homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://ghproxy.com/https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.52.11.tar.gz"
+  homepage "https:github.comnicklockwoodSwiftFormat"
+  url "https:github.comnicklockwoodSwiftFormatarchiverefstags0.52.11.tar.gz"
   sha256 "7c27ffb780f449dc16f7d29d620cc08cd47d2dc117cc84d19ddad2a7e8d05972"
   license "MIT"
-  head "https://github.com/nicklockwood/SwiftFormat.git", branch: "master"
+  head "https:github.comnicklockwoodSwiftFormat.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1dabab20931536f6cb157767e6e732ecbabb093ffaaae7325f9971f3c6b6db5"
@@ -22,15 +22,15 @@ class Swiftformat < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
-    bin.install ".build/release/swiftformat"
+    bin.install ".buildreleaseswiftformat"
   end
 
   test do
-    (testpath/"potato.swift").write <<~EOS
+    (testpath"potato.swift").write <<~EOS
       struct Potato {
         let baked: Bool
       }
     EOS
-    system "#{bin}/swiftformat", "#{testpath}/potato.swift"
+    system "#{bin}swiftformat", "#{testpath}potato.swift"
   end
 end

@@ -1,14 +1,14 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
-  homepage "https://github.com/rancher/cli"
-  url "https://ghproxy.com/https://github.com/rancher/cli/archive/refs/tags/v2.8.0.tar.gz"
+  homepage "https:github.comranchercli"
+  url "https:github.comranchercliarchiverefstagsv2.8.0.tar.gz"
   sha256 "9281abbd864706ebc58f40ae2bef098b79ecb26e8667b825e806635908ce8c77"
   license "Apache-2.0"
-  head "https://github.com/rancher/cli.git", branch: "master"
+  head "https:github.comranchercli.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -24,11 +24,11 @@ class RancherCli < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}"), "-o", bin/"rancher"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.VERSION=#{version}"), "-o", bin"rancher"
   end
 
   test do
-    assert_match "Failed to parse SERVERURL", shell_output("#{bin}/rancher login localhost -t foo 2>&1", 1)
-    assert_match "invalid token", shell_output("#{bin}/rancher login https://127.0.0.1 -t foo 2>&1", 1)
+    assert_match "Failed to parse SERVERURL", shell_output("#{bin}rancher login localhost -t foo 2>&1", 1)
+    assert_match "invalid token", shell_output("#{bin}rancher login https:127.0.0.1 -t foo 2>&1", 1)
   end
 end

@@ -1,7 +1,7 @@
 class Fennel < Formula
   desc "Lua Lisp Language"
-  homepage "https://fennel-lang.org"
-  url "https://ghproxy.com/https://github.com/bakpakin/Fennel/archive/refs/tags/1.4.0.tar.gz"
+  homepage "https:fennel-lang.org"
+  url "https:github.combakpakinFennelarchiverefstags1.4.0.tar.gz"
   sha256 "161eb7f17f86e95de09070214d042fb25372f71ad266f451431f3109e87965c7"
   license "MIT"
 
@@ -16,10 +16,10 @@ class Fennel < Formula
     bin.install "fennel"
 
     lua = Formula["lua"]
-    (share/"lua"/lua.version.major_minor).install "fennel.lua"
+    (share"lua"lua.version.major_minor).install "fennel.lua"
   end
 
   test do
-    assert_match "hello, world!", shell_output("#{bin}/fennel -e '(print \"hello, world!\")'")
+    assert_match "hello, world!", shell_output("#{bin}fennel -e '(print \"hello, world!\")'")
   end
 end

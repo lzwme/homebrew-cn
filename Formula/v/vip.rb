@@ -1,7 +1,7 @@
 class Vip < Formula
   desc "Program that provides for interactive editing in a pipeline"
-  homepage "https://www.cs.duke.edu/~des/vip.html"
-  url "https://www.cs.duke.edu/~des/scripts/vip"
+  homepage "https:www.cs.duke.edu~desvip.html"
+  url "https:www.cs.duke.edu~desscriptsvip"
   version "19971113"
   sha256 "171278e8bd43abdbd3a4c35addda27a0d3c74fc784dbe60e4783d317ac249d11"
 
@@ -19,13 +19,13 @@ class Vip < Formula
   end
 
   resource "man" do
-    url "https://www.cs.duke.edu/~des/scripts/vip.man"
+    url "https:www.cs.duke.edu~desscriptsvip.man"
     sha256 "37b2753f7c7b39c81f97b10ea3f8e2dd5ea92ea8d130144fa99ed54306565f6f"
   end
 
-  # use awk and /var/tmp as temporary directory
+  # use awk and vartmp as temporary directory
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/85fa66a9/vip/19971113.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches85fa66a9vip19971113.patch"
     sha256 "96879c8d778f21b21aa27eb138424a82ffa8e8192b8cf15b2c4a5794908ef790"
   end
 

@@ -1,13 +1,13 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
-  homepage "https://www.wildfly.org/"
-  url "https://ghproxy.com/https://github.com/wildfly/wildfly/releases/download/30.0.1.Final/wildfly-30.0.1.Final.tar.gz"
+  homepage "https:www.wildfly.org"
+  url "https:github.comwildflywildflyreleasesdownload30.0.1.Finalwildfly-30.0.1.Final.tar.gz"
   sha256 "c9c5db601ed47cd181a9c18740977817809986a517fd15b719a83a6bac74ed0f"
   license "Apache-2.0"
 
   livecheck do
-    url "https://www.wildfly.org/downloads/"
-    regex(/href=.*?wildfly[._-]v?(\d+(?:\.\d+)+)\.Final\.t/i)
+    url "https:www.wildfly.orgdownloads"
+    regex(href=.*?wildfly[._-]v?(\d+(?:\.\d+)+)\.Final\.ti)
   end
 
   bottle do
@@ -24,23 +24,23 @@ class WildflyAs < Formula
   depends_on "openjdk"
 
   def install
-    buildpath.glob("bin/*.{bat,ps1}").map(&:unlink)
-    buildpath.glob("**/win-x86_64").map(&:rmtree)
-    buildpath.glob("**/linux-i686").map(&:rmtree)
-    buildpath.glob("**/linux-s390x").map(&:rmtree)
-    buildpath.glob("**/linux-x86_64").map(&:rmtree)
-    buildpath.glob("**/netty-transport-native-epoll/**/native").map(&:rmtree)
+    buildpath.glob("bin*.{bat,ps1}").map(&:unlink)
+    buildpath.glob("**win-x86_64").map(&:rmtree)
+    buildpath.glob("**linux-i686").map(&:rmtree)
+    buildpath.glob("**linux-s390x").map(&:rmtree)
+    buildpath.glob("**linux-x86_64").map(&:rmtree)
+    buildpath.glob("**netty-transport-native-epoll**native").map(&:rmtree)
     if Hardware::CPU.intel?
-      buildpath.glob("**/*_aarch_64.jnilib").map(&:unlink)
+      buildpath.glob("***_aarch_64.jnilib").map(&:unlink)
     else
-      buildpath.glob("**/macosx-x86_64").map(&:rmtree)
-      buildpath.glob("**/*_x86_64.jnilib").map(&:unlink)
+      buildpath.glob("**macosx-x86_64").map(&:rmtree)
+      buildpath.glob("***_x86_64.jnilib").map(&:unlink)
     end
 
-    inreplace "bin/standalone.sh", /JAVA="[^"]*"/, "JAVA='#{Formula["openjdk"].opt_bin}/java'"
+    inreplace "binstandalone.sh", JAVA="[^"]*", "JAVA='#{Formula["openjdk"].opt_bin}java'"
 
     libexec.install Dir["*"]
-    mkdir_p libexec/"standalone/log"
+    mkdir_p libexec"standalonelog"
   end
 
   def caveats
@@ -49,38 +49,38 @@ class WildflyAs < Formula
         #{opt_libexec}
       You may want to add the following to your .bash_profile:
         export JBOSS_HOME=#{opt_libexec}
-        export PATH=${PATH}:${JBOSS_HOME}/bin
+        export PATH=${PATH}:${JBOSS_HOME}bin
     EOS
   end
 
   service do
-    run [opt_libexec/"bin/standalone.sh", "--server-config=standalone.xml"]
+    run [opt_libexec"binstandalone.sh", "--server-config=standalone.xml"]
     environment_variables JBOSS_HOME: opt_libexec, WILDFLY_HOME: opt_libexec
     keep_alive successful_exit: false, crashed: true
   end
 
   test do
     ENV["JBOSS_HOME"] = opt_libexec
-    system "#{opt_libexec}/bin/standalone.sh --version | grep #{version}"
+    system "#{opt_libexec}binstandalone.sh --version | grep #{version}"
 
     port = free_port
 
-    pidfile = testpath/"pidfile"
+    pidfile = testpath"pidfile"
     ENV["LAUNCH_JBOSS_IN_BACKGROUND"] = "true"
     ENV["JBOSS_PIDFILE"] = pidfile
 
-    mkdir testpath/"standalone"
-    mkdir testpath/"standalone/deployments"
-    cp_r libexec/"standalone/configuration", testpath/"standalone"
+    mkdir testpath"standalone"
+    mkdir testpath"standalonedeployments"
+    cp_r libexec"standaloneconfiguration", testpath"standalone"
     fork do
-      exec opt_libexec/"bin/standalone.sh", "--server-config=standalone.xml",
+      exec opt_libexec"binstandalone.sh", "--server-config=standalone.xml",
                                             "-Djboss.http.port=#{port}",
-                                            "-Djboss.server.base.dir=#{testpath}/standalone"
+                                            "-Djboss.server.base.dir=#{testpath}standalone"
     end
     sleep 10
 
     begin
-      system "curl", "-X", "GET", "localhost:#{port}/"
+      system "curl", "-X", "GET", "localhost:#{port}"
       output = shell_output("curl -s -X GET localhost:#{port}")
       assert_match "Welcome to WildFly", output
     ensure

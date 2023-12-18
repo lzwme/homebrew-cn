@@ -1,7 +1,7 @@
 class Curlpp < Formula
   desc "C++ wrapper for libcURL"
-  homepage "https://www.curlpp.org/"
-  url "https://ghproxy.com/https://github.com/jpbarrette/curlpp/archive/refs/tags/v0.8.1.tar.gz"
+  homepage "https:www.curlpp.org"
+  url "https:github.comjpbarrettecurlpparchiverefstagsv0.8.1.tar.gz"
   sha256 "97e3819bdcffc3e4047b6ac57ca14e04af85380bd93afe314bee9dd5c7f46a0a"
   license "MIT"
   revision 1
@@ -28,21 +28,21 @@ class Curlpp < Formula
     ENV.cxx11
     system "cmake", ".", *std_cmake_args
     system "make", "install"
-    inreplace bin/"curlpp-config", Superenv.shims_path/ENV.cc, ENV.cc
+    inreplace bin"curlpp-config", Superenv.shims_pathENV.cc, ENV.cc
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <curlpp/cURLpp.hpp>
-      #include <curlpp/Easy.hpp>
-      #include <curlpp/Options.hpp>
-      #include <curlpp/Exception.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <curlppcURLpp.hpp>
+      #include <curlppEasy.hpp>
+      #include <curlppOptions.hpp>
+      #include <curlppException.hpp>
 
       int main() {
         try {
           curlpp::Cleanup myCleanup;
           curlpp::Easy myHandle;
-          myHandle.setOpt(new curlpp::options::Url("https://google.com"));
+          myHandle.setOpt(new curlpp::options::Url("https:google.com"));
           myHandle.perform();
         } catch (curlpp::RuntimeError & e) {
           std::cout << e.what() << std::endl;
@@ -57,6 +57,6 @@ class Curlpp < Formula
     EOS
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}",
                     "-L#{lib}", "-lcurlpp", "-lcurl"
-    system "./test"
+    system ".test"
   end
 end

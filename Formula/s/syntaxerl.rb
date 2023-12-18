@@ -1,7 +1,7 @@
 class Syntaxerl < Formula
   desc "Syntax checker for Erlang code and config files"
-  homepage "https://github.com/ten0s/syntaxerl"
-  url "https://ghproxy.com/https://github.com/ten0s/syntaxerl/archive/refs/tags/0.15.0.tar.gz"
+  homepage "https:github.comten0ssyntaxerl"
+  url "https:github.comten0ssyntaxerlarchiverefstags0.15.0.tar.gz"
   sha256 "61d2d58e87a7a5eab1f58c5857b1a9c84a091d18cd683385258c3c0d7256eb64"
   license "MIT"
 
@@ -25,16 +25,16 @@ class Syntaxerl < Formula
 
   def install
     system "make", "REBAR3=#{which("rebar3")}"
-    bin.install "_build/default/bin/syntaxerl"
+    bin.install "_builddefaultbinsyntaxerl"
   end
 
   test do
-    (testpath/"app.config").write "[{app,[{arg1,1},{arg2,2}]}]."
+    (testpath"app.config").write "[{app,[{arg1,1},{arg2,2}]}]."
     assert_equal "",
-      shell_output("#{bin}/syntaxerl #{testpath}/app.config")
+      shell_output("#{bin}syntaxerl #{testpath}app.config")
 
-    (testpath/"invalid.config").write "]["
+    (testpath"invalid.config").write "]["
     assert_match "invalid.config:1: syntax error before: ']'",
-      shell_output("#{bin}/syntaxerl #{testpath}/invalid.config", 1)
+      shell_output("#{bin}syntaxerl #{testpath}invalid.config", 1)
   end
 end

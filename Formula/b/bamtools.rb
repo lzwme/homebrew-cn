@@ -1,11 +1,11 @@
 class Bamtools < Formula
   desc "C++ API and command-line toolkit for BAM data"
-  homepage "https://github.com/pezmaster31/bamtools"
-  url "https://ghproxy.com/https://github.com/pezmaster31/bamtools/archive/refs/tags/v2.5.2.tar.gz"
+  homepage "https:github.compezmaster31bamtools"
+  url "https:github.compezmaster31bamtoolsarchiverefstagsv2.5.2.tar.gz"
   sha256 "4d8b84bd07b673d0ed41031348f10ca98dd6fa6a4460f9b9668d6f1d4084dfc8"
   license "MIT"
   revision 1
-  head "https://github.com/pezmaster31/bamtools.git", branch: "master"
+  head "https:github.compezmaster31bamtools.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4971914ba3c1f62ef3b16f7d7605edea2a4163f9ccfed63602b1d61df323ddb9"
@@ -28,7 +28,7 @@ class Bamtools < Formula
 
   def install
     # Delete bundled jsoncpp to avoid fallback
-    (buildpath/"src/third_party/jsoncpp").rmtree
+    (buildpath"srcthird_partyjsoncpp").rmtree
 
     # Build shared library
     system "cmake", "-S", ".", "-B", "build_shared",
@@ -41,20 +41,20 @@ class Bamtools < Formula
     # Build static library
     system "cmake", "-S", ".", "-B", "build_static", *std_cmake_args
     system "cmake", "--build", "build_static"
-    lib.install "build_static/src/libbamtools.a"
+    lib.install "build_staticsrclibbamtools.a"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include "api/BamWriter.h"
+    (testpath"test.cpp").write <<~EOS
+      #include "apiBamWriter.h"
       using namespace BamTools;
       int main() {
         BamWriter writer;
         writer.Close();
       }
     EOS
-    system ENV.cxx, "test.cpp", "-I#{include}/bamtools", "-L#{lib}",
+    system ENV.cxx, "test.cpp", "-I#{include}bamtools", "-L#{lib}",
                     "-lbamtools", "-lz", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

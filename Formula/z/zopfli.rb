@@ -1,11 +1,11 @@
 class Zopfli < Formula
   desc "New zlib (gzip, deflate) compatible compressor"
-  homepage "https://github.com/google/zopfli"
-  url "https://ghproxy.com/https://github.com/google/zopfli/archive/refs/tags/zopfli-1.0.3.tar.gz"
+  homepage "https:github.comgooglezopfli"
+  url "https:github.comgooglezopfliarchiverefstagszopfli-1.0.3.tar.gz"
   sha256 "e955a7739f71af37ef3349c4fa141c648e8775bceb2195be07e86f8e638814bd"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/google/zopfli.git", branch: "master"
+  head "https:github.comgooglezopfli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "171ca3e9b77ac8ebac1b2c082c4938d845605d599e30c671003ca3b5f8f0f795"
@@ -29,8 +29,8 @@ class Zopfli < Formula
   end
 
   test do
-    system "#{bin}/zopfli"
-    system "#{bin}/zopflipng", test_fixtures("test.png"), "#{testpath}/out.png"
-    assert_predicate testpath/"out.png", :exist?
+    system "#{bin}zopfli"
+    system "#{bin}zopflipng", test_fixtures("test.png"), "#{testpath}out.png"
+    assert_predicate testpath"out.png", :exist?
   end
 end

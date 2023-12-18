@@ -1,22 +1,22 @@
 class Cln < Formula
   desc "Class Library for Numbers"
-  homepage "https://www.ginac.de/CLN/"
+  homepage "https:www.ginac.deCLN"
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://www.ginac.de/CLN/cln-1.3.6.tar.bz2"
+    url "https:www.ginac.deCLNcln-1.3.6.tar.bz2"
     sha256 "f492530e8879bda529009b6033e1923c8f4aae843149fc28c667c20b094d984a"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   livecheck do
     url :homepage
-    regex(/href=.*?cln[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?cln[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -31,7 +31,7 @@ class Cln < Formula
   end
 
   head do
-    url "git://www.ginac.de/cln.git", branch: "master"
+    url "git:www.ginac.decln.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -45,14 +45,14 @@ class Cln < Formula
   depends_on "gmp"
 
   def install
-    system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args
+    system ".autogen.sh" if build.head?
+    system ".configure", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"
   end
 
   test do
-    assert_match "3.14159", shell_output("#{bin}/pi 6")
+    assert_match "3.14159", shell_output("#{bin}pi 6")
   end
 end

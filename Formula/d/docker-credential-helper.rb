@@ -1,10 +1,10 @@
 class DockerCredentialHelper < Formula
   desc "Platform keystore credential helper for Docker"
-  homepage "https://github.com/docker/docker-credential-helpers"
-  url "https://ghproxy.com/https://github.com/docker/docker-credential-helpers/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:github.comdockerdocker-credential-helpers"
+  url "https:github.comdockerdocker-credential-helpersarchiverefstagsv0.8.0.tar.gz"
   sha256 "ca0eb4680ae171828672ea3761a2319d21aeccccbb7c7e67832fed8a91c5af56"
   license "MIT"
-  head "https://github.com/docker/docker-credential-helpers.git", branch: "master"
+  head "https:github.comdockerdocker-credential-helpers.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6439ce15817d83c212dadfb69e541861ff71a30ab2c01f7d945c0add0463dcec"
@@ -28,24 +28,24 @@ class DockerCredentialHelper < Formula
   def install
     if OS.mac?
       system "make", "osxkeychain"
-      bin.install "bin/build/docker-credential-osxkeychain"
+      bin.install "binbuilddocker-credential-osxkeychain"
     else
       system "make", "pass"
       system "make", "secretservice"
-      bin.install "bin/build/docker-credential-pass"
-      bin.install "bin/build/docker-credential-secretservice"
+      bin.install "binbuilddocker-credential-pass"
+      bin.install "binbuilddocker-credential-secretservice"
     end
   end
 
   test do
     if OS.mac?
-      run_output = shell_output("#{bin}/docker-credential-osxkeychain", 1)
+      run_output = shell_output("#{bin}docker-credential-osxkeychain", 1)
       assert_match "Usage: docker-credential-osxkeychain", run_output
     else
-      run_output = shell_output("#{bin}/docker-credential-pass list")
+      run_output = shell_output("#{bin}docker-credential-pass list")
       assert_match "{}", run_output
 
-      run_output = shell_output("#{bin}/docker-credential-secretservice list", 1)
+      run_output = shell_output("#{bin}docker-credential-secretservice list", 1)
       assert_match "Cannot autolaunch D-Bus without X11", run_output
     end
   end

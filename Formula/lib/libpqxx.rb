@@ -1,7 +1,7 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
-  homepage "https://pqxx.org/development/libpqxx/"
-  url "https://ghproxy.com/https://github.com/jtv/libpqxx/archive/refs/tags/7.8.1.tar.gz"
+  homepage "https:pqxx.orgdevelopmentlibpqxx"
+  url "https:github.comjtvlibpqxxarchiverefstags7.8.1.tar.gz"
   sha256 "0f4c0762de45a415c9fd7357ce508666fa88b9a4a463f5fb76c235bc80dd6a84"
   license "BSD-3-Clause"
 
@@ -27,16 +27,16 @@ class Libpqxx < Formula
 
   def install
     ENV.append "CXXFLAGS", "-std=c++17"
-    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
-    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
+    ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec"bin"
+    ENV["PG_CONFIG"] = Formula["libpq"].opt_bin"pg_config"
 
-    system "./configure", "--prefix=#{prefix}", "--enable-shared"
+    system ".configure", "--prefix=#{prefix}", "--enable-shared"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <pqxx/pqxx>
+    (testpath"test.cpp").write <<~EOS
+      #include <pqxxpqxx>
       int main(int argc, char** argv) {
         pqxx::connection con;
         return 0;
@@ -44,7 +44,7 @@ class Libpqxx < Formula
     EOS
     system ENV.cxx, "-std=c++17", "test.cpp", "-L#{lib}", "-lpqxx",
            "-I#{include}", "-o", "test"
-    # Running ./test will fail because there is no running postgresql server
-    # system "./test"
+    # Running .test will fail because there is no running postgresql server
+    # system ".test"
   end
 end

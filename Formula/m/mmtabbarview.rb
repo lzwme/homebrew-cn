@@ -1,7 +1,7 @@
 class Mmtabbarview < Formula
   desc "Modernized and view-based rewrite of PSMTabBarControl"
-  homepage "https://mimo42.github.io/MMTabBarView/"
-  url "https://ghproxy.com/https://github.com/MiMo42/MMTabBarView/archive/refs/tags/v1.4.2.tar.gz"
+  homepage "https:mimo42.github.ioMMTabBarView"
+  url "https:github.comMiMo42MMTabBarViewarchiverefstagsv1.4.2.tar.gz"
   sha256 "a5b79f1b50f6cabe97558f4c24a6317c448c534f15655309b6b29a532590e976"
   license "BSD-3-Clause"
 
@@ -25,12 +25,12 @@ class Mmtabbarview < Formula
                "-scheme", "MMTabBarView",
                "-configuration", "Release",
                "SYMROOT=build", "ONLY_ACTIVE_ARCH=YES"
-    frameworks.install "MMTabBarView/build/Release/MMTabBarView.framework"
+    frameworks.install "MMTabBarViewbuildReleaseMMTabBarView.framework"
   end
 
   test do
-    (testpath/"test.m").write <<~EOS
-      #import <MMTabBarView/MMTabBarView.h>
+    (testpath"test.m").write <<~EOS
+      #import <MMTabBarViewMMTabBarView.h>
       int main() {
         MMTabBarView *view = [MMTabBarView alloc];
         [view release];
@@ -38,6 +38,6 @@ class Mmtabbarview < Formula
       }
     EOS
     system ENV.cc, "test.m", "-F#{frameworks}", "-framework", "MMTabBarView", "-framework", "Foundation", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

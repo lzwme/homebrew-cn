@@ -1,11 +1,11 @@
 class SourceToImage < Formula
   desc "Tool for building source and injecting into docker images"
-  homepage "https://github.com/openshift/source-to-image"
-  url "https://github.com/openshift/source-to-image.git",
+  homepage "https:github.comopenshiftsource-to-image"
+  url "https:github.comopenshiftsource-to-image.git",
       tag:      "v1.3.9",
       revision: "574a264097de0c4371017bcb1bc3e6f95f8d3690"
   license "Apache-2.0"
-  head "https://github.com/openshift/source-to-image.git", branch: "master"
+  head "https:github.comopenshiftsource-to-image.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "526491cf1ce64d64e31308e14345183b9fdd27af8c388d32132e704eba9ba2da"
@@ -20,15 +20,15 @@ class SourceToImage < Formula
   depends_on "go" => :build
 
   def install
-    system "hack/build-go.sh"
+    system "hackbuild-go.sh"
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-    bin.install "_output/local/bin/#{OS.kernel_name.downcase}/#{arch}/s2i"
+    bin.install "_outputlocalbin#{OS.kernel_name.downcase}#{arch}s2i"
 
-    generate_completions_from_executable(bin/"s2i", "completion", shells: [:bash, :zsh], base_name: "s2i")
+    generate_completions_from_executable(bin"s2i", "completion", shells: [:bash, :zsh], base_name: "s2i")
   end
 
   test do
-    system "#{bin}/s2i", "create", "testimage", testpath
-    assert_predicate testpath/"Dockerfile", :exist?, "s2i did not create the files."
+    system "#{bin}s2i", "create", "testimage", testpath
+    assert_predicate testpath"Dockerfile", :exist?, "s2i did not create the files."
   end
 end

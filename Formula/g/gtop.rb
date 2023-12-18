@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Gtop < Formula
   desc "System monitoring dashboard for terminal"
-  homepage "https://github.com/aksakalli/gtop"
-  url "https://registry.npmjs.org/gtop/-/gtop-1.1.5.tgz"
+  homepage "https:github.comaksakalligtop"
+  url "https:registry.npmjs.orggtop-gtop-1.1.5.tgz"
   sha256 "a8e90b828e33160c6a0ac4fb11231f292496e8049c0dac814e46fdd0c90817c1"
   license "MIT"
 
@@ -23,10 +23,10 @@ class Gtop < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir[libexec/"bin/*"]
+    bin.install_symlink Dir[libexec"bin*"]
   end
 
   test do
-    assert_match "Error: Width must be multiple of 2", shell_output(bin/"gtop 2>&1", 1)
+    assert_match "Error: Width must be multiple of 2", shell_output(bin"gtop 2>&1", 1)
   end
 end

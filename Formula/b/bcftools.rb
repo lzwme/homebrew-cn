@@ -1,9 +1,9 @@
 class Bcftools < Formula
-  desc "Tools for BCF/VCF files and variant calling from samtools"
-  homepage "https://www.htslib.org/"
-  url "https://ghproxy.com/https://github.com/samtools/bcftools/releases/download/1.19/bcftools-1.19.tar.bz2"
+  desc "Tools for BCFVCF files and variant calling from samtools"
+  homepage "https:www.htslib.org"
+  url "https:github.comsamtoolsbcftoolsreleasesdownload1.19bcftools-1.19.tar.bz2"
   sha256 "782b5f1bc690415192231e82213b3493b047f45e630dc8ef6f154d6126ab3e68"
-  # The bcftools source code is MIT/Expat-licensed, but when it is configured
+  # The bcftools source code is MITExpat-licensed, but when it is configured
   # with --enable-libgsl the resulting executable is GPL-licensed.
   license "GPL-3.0-or-later"
 
@@ -26,16 +26,16 @@ class Bcftools < Formula
   depends_on "htslib"
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--with-htslib=#{Formula["htslib"].opt_prefix}",
                           "--enable-libgsl"
     system "make", "install"
-    pkgshare.install "test/query.vcf"
+    pkgshare.install "testquery.vcf"
   end
 
   test do
-    output = shell_output("#{bin}/bcftools stats #{pkgshare}/query.vcf")
+    output = shell_output("#{bin}bcftools stats #{pkgshare}query.vcf")
     assert_match "number of SNPs:\t3", output
-    assert_match "fixploidy", shell_output("#{bin}/bcftools plugin -l")
+    assert_match "fixploidy", shell_output("#{bin}bcftools plugin -l")
   end
 end

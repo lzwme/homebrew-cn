@@ -1,11 +1,11 @@
 class Heksa < Formula
   desc "CLI hex dumper with colors"
-  homepage "https://github.com/raspi/heksa"
-  url "https://github.com/raspi/heksa.git",
+  homepage "https:github.comraspiheksa"
+  url "https:github.comraspiheksa.git",
       tag:      "v1.14.0",
       revision: "045ea335825556c856b2f4dee606ae91c61afe7d"
   license "Apache-2.0"
-  head "https://github.com/raspi/heksa.git", branch: "master"
+  head "https:github.comraspiheksa.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2e5970a9ac9da77a4e75733b5afe87fdba4704007b938e35855714c204ab9d8"
@@ -25,20 +25,20 @@ class Heksa < Formula
 
   def install
     system "make", "build"
-    bin.install "bin/heksa"
+    bin.install "binheksa"
   end
 
   test do
     require "pty"
 
-    r, _w, pid = PTY.spawn("#{bin}/heksa -l 16 -f asc -o no #{test_fixtures("test.png")}")
+    r, _w, pid = PTY.spawn("#{bin}heksa -l 16 -f asc -o no #{test_fixtures("test.png")}")
 
     # remove ANSI colors
     begin
-      output = r.read.gsub(/\e\[([;\d]+)?m/, "")
-      assert_match(/^.PNG/, output)
+      output = r.read.gsub(\e\[([;\d]+)?m, "")
+      assert_match(^.PNG, output)
     rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
+      # GNULinux raises EIO when read is done on closed pty
     end
 
     Process.wait(pid)

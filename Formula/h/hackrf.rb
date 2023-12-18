@@ -1,10 +1,10 @@
 class Hackrf < Formula
   desc "Low cost software radio platform"
-  homepage "https://github.com/greatscottgadgets/hackrf"
-  url "https://ghproxy.com/https://github.com/greatscottgadgets/hackrf/releases/download/v2023.01.1/hackrf-2023.01.1.tar.xz"
+  homepage "https:github.comgreatscottgadgetshackrf"
+  url "https:github.comgreatscottgadgetshackrfreleasesdownloadv2023.01.1hackrf-2023.01.1.tar.xz"
   sha256 "32a03f943a30be4ba478e94bf69f14a5b7d55be6761007f4a4f5453418206a11"
   license "GPL-2.0-or-later"
-  head "https://github.com/greatscottgadgets/hackrf.git", branch: "master"
+  head "https:github.comgreatscottgadgetshackrf.git", branch: "master"
 
   livecheck do
     url :stable
@@ -34,16 +34,16 @@ class Hackrf < Formula
 
       if OS.linux?
         args << "-DUDEV_RULES_GROUP=plugdev"
-        args << "-DUDEV_RULES_PATH=#{lib}/udev/rules.d"
+        args << "-DUDEV_RULES_PATH=#{lib}udevrules.d"
       end
 
       system "cmake", ".", *args
       system "make", "install"
     end
-    pkgshare.install "firmware-bin/"
+    pkgshare.install "firmware-bin"
   end
 
   test do
-    shell_output("#{bin}/hackrf_transfer", 1)
+    shell_output("#{bin}hackrf_transfer", 1)
   end
 end

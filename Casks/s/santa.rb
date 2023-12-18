@@ -2,10 +2,10 @@ cask "santa" do
   version "2023.10"
   sha256 "b89be5dd23f1738576cd8a9d8e011dc42264cfc7c2f33422cf20cf1f42fe8482"
 
-  url "https://ghproxy.com/https://github.com/google/santa/releases/download/#{version}/santa-#{version}.dmg"
+  url "https:github.comgooglesantareleasesdownload#{version}santa-#{version}.dmg"
   name "Santa"
   desc "Binary authorization system"
-  homepage "https://github.com/google/santa"
+  homepage "https:github.comgooglesanta"
 
   livecheck do
     url :url
@@ -15,8 +15,8 @@ cask "santa" do
   pkg "santa-#{version}.pkg"
 
   uninstall delete:    [
-              "/Applications/Santa.app",
-              "/usr/local/bin/santactl",
+              "ApplicationsSanta.app",
+              "usrlocalbinsantactl",
             ],
             kext:      "com.google.santa-driver",
             launchctl: [

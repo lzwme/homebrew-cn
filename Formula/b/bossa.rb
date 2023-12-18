@@ -1,10 +1,10 @@
 class Bossa < Formula
   desc "Flash utility for Atmel SAM microcontrollers"
-  homepage "https://github.com/shumatech/BOSSA"
-  url "https://ghproxy.com/https://github.com/shumatech/BOSSA/archive/refs/tags/1.9.1.tar.gz"
+  homepage "https:github.comshumatechBOSSA"
+  url "https:github.comshumatechBOSSAarchiverefstags1.9.1.tar.gz"
   sha256 "ca650455dfa36cbd029010167347525bea424717a71a691381c0811591c93e72"
   license "BSD-3-Clause"
-  head "https://github.com/shumatech/BOSSA.git", branch: "master"
+  head "https:github.comshumatechBOSSA.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7ca492e595832676559c6b646e3d702ddd46dcb0610bf8d03c225b49c6d4624"
@@ -23,13 +23,13 @@ class Bossa < Formula
   end
 
   def install
-    system "make", "bin/bossac", "bin/bossash"
-    bin.install "bin/bossac"
-    bin.install "bin/bossash"
+    system "make", "binbossac", "binbossash"
+    bin.install "binbossac"
+    bin.install "binbossash"
   end
 
   test do
-    expected_output = /^No device found.*/
-    assert_match expected_output, shell_output("#{bin}/bossac -i 2>&1", 1)
+    expected_output = ^No device found.*
+    assert_match expected_output, shell_output("#{bin}bossac -i 2>&1", 1)
   end
 end

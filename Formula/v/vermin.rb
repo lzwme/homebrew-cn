@@ -1,10 +1,10 @@
 class Vermin < Formula
   desc "Concurrently detect the minimum Python versions needed to run code"
-  homepage "https://github.com/netromdk/vermin"
-  url "https://files.pythonhosted.org/packages/3d/26/7b871396c33006c445c25ef7da605ecbd6cef830d577b496d2b73a554f9d/vermin-1.6.0.tar.gz"
+  homepage "https:github.comnetromdkvermin"
+  url "https:files.pythonhosted.orgpackages3d267b871396c33006c445c25ef7da605ecbd6cef830d577b496d2b73a554f9dvermin-1.6.0.tar.gz"
   sha256 "6266ca02f55d1c2aa189a610017c132eb2d1934f09e72a955b1eb3820ee6d4ef"
   license "MIT"
-  head "https://github.com/netromdk/vermin.git", branch: "master"
+  head "https:github.comnetromdkvermin.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95a7e3486feb8990603dfa27834dbe16be6ad931a1546309a5c3dd5f53593803"
@@ -28,11 +28,11 @@ class Vermin < Formula
   end
 
   test do
-    assert_equal <<~EOS, shell_output("#{bin}/vermin --no-parse-comments #{bin}/vermin")
+    assert_equal <<~EOS, shell_output("#{bin}vermin --no-parse-comments #{bin}vermin")
       Minimum required versions: ~2, ~3
       Note: Not enough evidence to conclude it won't work with Python 2 or 3.
     EOS
 
-    assert_match version.to_s, shell_output("#{bin}/vermin --version")
+    assert_match version.to_s, shell_output("#{bin}vermin --version")
   end
 end

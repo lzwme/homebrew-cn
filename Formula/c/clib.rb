@@ -1,14 +1,14 @@
 class Clib < Formula
   desc "Package manager for C programming"
-  homepage "https://github.com/clibs/clib"
-  url "https://ghproxy.com/https://github.com/clibs/clib/archive/refs/tags/2.8.5.tar.gz"
+  homepage "https:github.comclibsclib"
+  url "https:github.comclibsclibarchiverefstags2.8.5.tar.gz"
   sha256 "181cd5c6c73aa1e090af06c1d6dfa4e6477312bba877850a89ed107717b7c1dc"
   license "MIT"
-  head "https://github.com/clibs/clib.git", branch: "master"
+  head "https:github.comclibsclib.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,6 +29,6 @@ class Clib < Formula
   end
 
   test do
-    system "#{bin}/clib", "install", "stephenmathieson/rot13.c"
+    system "#{bin}clib", "install", "stephenmathiesonrot13.c"
   end
 end

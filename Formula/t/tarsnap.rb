@@ -1,14 +1,14 @@
 class Tarsnap < Formula
   desc "Online backups for the truly paranoid"
-  homepage "https://www.tarsnap.com/"
-  url "https://www.tarsnap.com/download/tarsnap-autoconf-1.0.40.tgz"
+  homepage "https:www.tarsnap.com"
+  url "https:www.tarsnap.comdownloadtarsnap-autoconf-1.0.40.tgz"
   sha256 "bccae5380c1c1d6be25dccfb7c2eaa8364ba3401aafaee61e3c5574203c27fd5"
   license "0BSD"
   revision 1
 
   livecheck do
-    url "https://www.tarsnap.com/download.html"
-    regex(/href=.*?tarsnap-autoconf[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
+    url "https:www.tarsnap.comdownload.html"
+    regex(href=.*?tarsnap-autoconf[._-]v?(\d+(?:\.\d+)+[a-z]?)\.ti)
   end
 
   bottle do
@@ -24,7 +24,7 @@ class Tarsnap < Formula
   end
 
   head do
-    url "https://github.com/Tarsnap/tarsnap.git", branch: "master"
+    url "https:github.comTarsnaptarsnap.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -51,11 +51,11 @@ class Tarsnap < Formula
       --without-lzmadec
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    system bin/"tarsnap", "-c", "--dry-run", testpath
+    system bin"tarsnap", "-c", "--dry-run", testpath
   end
 end

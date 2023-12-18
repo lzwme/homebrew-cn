@@ -1,14 +1,14 @@
 cask "chatall" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.54.82"
-  sha256 arm:   "0c9fcf652a1eb0883a2c50e277a087d15557c0e95cbb3a301df0573158ccb320",
-         intel: "3f8040d71511b21c050f2c18bba7d151e16280d59486231d284df128377642d5"
+  version "1.54.83"
+  sha256 arm:   "bf3e6e0263a0df28709d674f4745f93f76bd66bb3709f998ae17940e401432eb",
+         intel: "68dc858f89be6ca3687bba3e0e3761d2fe7b4ef5ba01e8bec001afe2ae1b6a53"
 
-  url "https://ghproxy.com/https://github.com/sunner/ChatALL/releases/download/v#{version}/ChatALL-#{version}-mac-#{arch}.dmg"
+  url "https:github.comsunnerChatALLreleasesdownloadv#{version}ChatALL-#{version}-mac-#{arch}.dmg"
   name "ChatALL"
   desc "Concurrently chat with ChatGPT, Bing Chat, Bard, Claude, ChatGLM and more"
-  homepage "https://github.com/sunner/ChatALL"
+  homepage "https:github.comsunnerChatALL"
 
   livecheck do
     url :url
@@ -21,9 +21,9 @@ cask "chatall" do
   app "ChatALL.app"
 
   zap trash: [
-    "~/Library/Application Support/ChatALL",
-    "~/Library/Caches/ai.chatall",
-    "~/Library/Preferences/ai.chatall.plist",
-    "~/Library/Saved Application State/ai.chatall.savedState",
+    "~LibraryApplication SupportChatALL",
+    "~LibraryCachesai.chatall",
+    "~LibraryPreferencesai.chatall.plist",
+    "~LibrarySaved Application Stateai.chatall.savedState",
   ]
 end

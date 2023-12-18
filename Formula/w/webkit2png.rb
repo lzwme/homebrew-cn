@@ -1,7 +1,7 @@
 class Webkit2png < Formula
   desc "Create screenshots of webpages from the terminal"
-  homepage "https://www.paulhammond.org/webkit2png/"
-  url "https://ghproxy.com/https://github.com/paulhammond/webkit2png/archive/refs/tags/v0.7.tar.gz"
+  homepage "https:www.paulhammond.orgwebkit2png"
+  url "https:github.compaulhammondwebkit2pngarchiverefstagsv0.7.tar.gz"
   sha256 "9b810edb6f54cc23ba86b0212f203e6c3bbafc3cbdb62b9c33887548c91015bf"
   license "MIT"
 
@@ -17,6 +17,6 @@ class Webkit2png < Formula
   end
 
   test do
-    system "#{bin}/webkit2png", "--version"
+    system "#{bin}webkit2png", "--version"
   end
 end

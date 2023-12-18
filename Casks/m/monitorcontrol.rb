@@ -20,10 +20,10 @@ cask "monitorcontrol" do
     sha256 "43deae2bac157b50f6b8bbd62fea4547a2dc9ab53b7209abd98e6d3efbd30e02"
   end
 
-  url "https://ghproxy.com/https://github.com/MonitorControl/MonitorControl/releases/download/v#{version}/MonitorControl.#{version}.dmg"
+  url "https:github.comMonitorControlMonitorControlreleasesdownloadv#{version}MonitorControl.#{version}.dmg"
   name "MonitorControl"
   desc "Tool to control external monitor brightness & volume"
-  homepage "https://github.com/MonitorControl/MonitorControl"
+  homepage "https:github.comMonitorControlMonitorControl"
 
   auto_updates true
   depends_on macos: ">= :sierra"
@@ -31,8 +31,8 @@ cask "monitorcontrol" do
   app "MonitorControl.app"
 
   zap trash: [
-    "~/Library/Application Scripts/me.guillaumeb.MonitorControlHelper",
-    "~/Library/Containers/me.guillaumeb.MonitorControlHelper",
-    "~/Library/Preferences/me.guillaumeb.MonitorControl.plist",
+    "~LibraryApplication Scriptsme.guillaumeb.MonitorControlHelper",
+    "~LibraryContainersme.guillaumeb.MonitorControlHelper",
+    "~LibraryPreferencesme.guillaumeb.MonitorControl.plist",
   ]
 end

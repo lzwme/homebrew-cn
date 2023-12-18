@@ -2,10 +2,10 @@ cask "font-boogaloo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/boogaloo/Boogaloo-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflboogalooBoogaloo-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Boogaloo"
-  homepage "https://fonts.google.com/specimen/Boogaloo"
+  homepage "https:fonts.google.comspecimenBoogaloo"
 
   font "Boogaloo-Regular.ttf"
 

@@ -1,7 +1,7 @@
 class Libconfini < Formula
   desc "Yet another INI parser"
-  homepage "https://madmurphy.github.io/libconfini/"
-  url "https://ghproxy.com/https://github.com/madmurphy/libconfini/releases/download/1.16.4/libconfini-1.16.4-with-configure.tar.gz"
+  homepage "https:madmurphy.github.iolibconfini"
+  url "https:github.commadmurphylibconfinireleasesdownload1.16.4libconfini-1.16.4-with-configure.tar.gz"
   sha256 "f4ba881e68d0d14f4f11f27c7dd9a9567c549f1bf155f4f8158119fb9bc9efd6"
   license "GPL-3.0-or-later"
 
@@ -16,13 +16,13 @@ class Libconfini < Formula
   end
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.ini").write "[users]\nknown_users = alice, bob, carol\n"
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.ini").write "[users]\nknown_users = alice, bob, carol\n"
+    (testpath"test.c").write <<~EOS
       #include <confini.h>
 
       static int callback (IniDispatch * disp, void * v_other) {
@@ -47,7 +47,7 @@ class Libconfini < Formula
       }
     EOS
 
-    system ENV.cc, testpath/"test.c", "-I#{include}", "-L#{lib}", "-lconfini", "-o", "test"
-    assert_match "Known Users: alice, bob, carol", shell_output(testpath/"test").chomp
+    system ENV.cc, testpath"test.c", "-I#{include}", "-L#{lib}", "-lconfini", "-o", "test"
+    assert_match "Known Users: alice, bob, carol", shell_output(testpath"test").chomp
   end
 end

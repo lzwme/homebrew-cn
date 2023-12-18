@@ -1,13 +1,13 @@
 class Calceph < Formula
   desc "C library to access the binary planetary ephemeris files"
-  homepage "https://www.imcce.fr/inpop/calceph"
-  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-3.5.4.tar.gz"
+  homepage "https:www.imcce.frinpopcalceph"
+  url "https:www.imcce.frcontentmediasrechercheequipesasdcalcephcalceph-3.5.4.tar.gz"
   sha256 "c9a834e823cf376de6c0f826458b5f19555ed45dfd26880781e61a91849925b5"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage
-    regex(/href=.*?calceph[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?calceph[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -24,12 +24,12 @@ class Calceph < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
@@ -38,7 +38,7 @@ class Calceph < Formula
   end
 
   test do
-    (testpath/"testcalceph.c").write <<~EOS
+    (testpath"testcalceph.c").write <<~EOS
       #include <calceph.h>
       #include <assert.h>
 
@@ -56,6 +56,6 @@ class Calceph < Formula
       }
     EOS
     system ENV.cc, "testcalceph.c", "-L#{lib}", "-lcalceph", "-o", "testcalceph"
-    system "./testcalceph"
+    system ".testcalceph"
   end
 end

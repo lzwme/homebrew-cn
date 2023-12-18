@@ -1,14 +1,14 @@
 class Opensaml < Formula
   desc "Library for Security Assertion Markup Language"
-  homepage "https://wiki.shibboleth.net/confluence/display/OpenSAML/Home"
-  url "https://shibboleth.net/downloads/c++-opensaml/3.2.1/opensaml-3.2.1.tar.bz2"
+  homepage "https:wiki.shibboleth.netconfluencedisplayOpenSAMLHome"
+  url "https:shibboleth.netdownloadsc++-opensaml3.2.1opensaml-3.2.1.tar.bz2"
   sha256 "b402a89a130adcb76869054b256429c1845339fe5c5226ee888686b6a026a337"
   license "Apache-2.0"
   revision 2
 
   livecheck do
-    url "https://shibboleth.net/downloads/c++-opensaml/latest/"
-    regex(/href=.*?opensaml[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:shibboleth.netdownloadsc++-opensamllatest"
+    regex(href=.*?opensaml[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -32,18 +32,18 @@ class Opensaml < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
     ENV.cxx11
 
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "see documentation for usage", shell_output("#{bin}/samlsign 2>&1", 255)
+    assert_match "see documentation for usage", shell_output("#{bin}samlsign 2>&1", 255)
   end
 end

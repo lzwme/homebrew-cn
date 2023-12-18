@@ -1,7 +1,7 @@
 class Dxpy < Formula
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
-  homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/70/38/ffe0f40f320401900446a93d74f4462848c2288b1d27e342589bdc8a52e3/dxpy-0.367.0.tar.gz"
+  homepage "https:github.comdnanexusdx-toolkit"
+  url "https:files.pythonhosted.orgpackages7038ffe0f40f320401900446a93d74f4462848c2288b1d27e342589bdc8a52e3dxpy-0.367.0.tar.gz"
   sha256 "21491f943b3cd1aeb5d0ad33b8f5e269653c43f23ce796b129c93599204d7caa"
   license "Apache-2.0"
 
@@ -37,12 +37,12 @@ class Dxpy < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/d4/91/c89518dd4fe1f3a4e3f6ab7ff23cb00ef2e8c9adf99dacc618ad5e068e28/certifi-2023.11.17.tar.gz"
+    url "https:files.pythonhosted.orgpackagesd491c89518dd4fe1f3a4e3f6ab7ff23cb00ef2e8c9adf99dacc618ad5e068e28certifi-2023.11.17.tar.gz"
     sha256 "9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/36/dd/a6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6/urllib3-2.1.0.tar.gz"
+    url "https:files.pythonhosted.orgpackages36dda6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6urllib3-2.1.0.tar.gz"
     sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
@@ -59,6 +59,6 @@ class Dxpy < Formula
       Current folder		None
       Current user		None
     EOS
-    assert_match dxenv, shell_output("#{bin}/dx env")
+    assert_match dxenv, shell_output("#{bin}dx env")
   end
 end

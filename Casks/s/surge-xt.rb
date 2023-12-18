@@ -2,11 +2,11 @@ cask "surge-xt" do
   version "1.3.0"
   sha256 "96b0927dd3c3081fa708a8c07382645c85985ba4c4dba0fbbc2fa1d98f4bb8c6"
 
-  url "https://ghproxy.com/https://github.com/surge-synthesizer/releases-xt/releases/download/#{version}/surge-xt-macOS-#{version}.dmg",
-      verified: "github.com/surge-synthesizer/releases-xt/"
+  url "https:github.comsurge-synthesizerreleases-xtreleasesdownload#{version}surge-xt-macOS-#{version}.dmg",
+      verified: "github.comsurge-synthesizerreleases-xt"
   name "Surge XT"
   desc "Hybrid synthesizer"
-  homepage "https://surge-synthesizer.github.io/"
+  homepage "https:surge-synthesizer.github.io"
 
   pkg "surge-xt-macOS-#{version}.pkg"
 
@@ -29,8 +29,8 @@ cask "surge-xt" do
               "org.surge-synth-team.surge-xt.clap.pkg",
             ],
             delete:  [
-              "/Applications/Surge XT Effects.app",
-              "/Applications/Surge XT.app",
+              "ApplicationsSurge XT Effects.app",
+              "ApplicationsSurge XT.app",
             ]
 
   # No zap stanza required

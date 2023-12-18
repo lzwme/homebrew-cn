@@ -1,10 +1,10 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
-  homepage "https://imgproxy.net"
-  url "https://ghproxy.com/https://github.com/imgproxy/imgproxy/archive/refs/tags/v3.21.0.tar.gz"
+  homepage "https:imgproxy.net"
+  url "https:github.comimgproxyimgproxyarchiverefstagsv3.21.0.tar.gz"
   sha256 "f8c3b94c6db8674028e419da43adfdb9636c39c3e7f45ef8191ce0990106aeba"
   license "MIT"
-  head "https://github.com/imgproxy/imgproxy.git", branch: "master"
+  head "https:github.comimgproxyimgproxy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e9f6257016da12e06ac81d07750399a283ed4bea9dd5149d9236bc3d172f5ca1"
@@ -31,20 +31,20 @@ class Imgproxy < Formula
   test do
     port = free_port
 
-    cp(test_fixtures("test.jpg"), testpath/"test.jpg")
+    cp(test_fixtures("test.jpg"), testpath"test.jpg")
 
     ENV["IMGPROXY_BIND"] = "127.0.0.1:#{port}"
     ENV["IMGPROXY_LOCAL_FILESYSTEM_ROOT"] = testpath
 
     pid = fork do
-      exec bin/"imgproxy"
+      exec bin"imgproxy"
     end
     sleep 20
 
-    output = testpath/"test-converted.png"
+    output = testpath"test-converted.png"
 
     system "curl", "-s", "-o", output,
-           "http://127.0.0.1:#{port}/insecure/resize:fit:100:100:true/plain/local:///test.jpg@png"
+           "http:127.0.0.1:#{port}insecureresize:fit:100:100:trueplainlocal:test.jpg@png"
     assert_predicate output, :exist?
 
     file_output = shell_output("file #{output}")

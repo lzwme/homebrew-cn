@@ -1,7 +1,7 @@
 class NagiosPlugins < Formula
   desc "Plugins for the nagios network monitoring system"
-  homepage "https://www.nagios-plugins.org/"
-  url "https://ghproxy.com/https://github.com/nagios-plugins/nagios-plugins/releases/download/2.4.8/nagios-plugins-2.4.8.tar.gz"
+  homepage "https:www.nagios-plugins.org"
+  url "https:github.comnagios-pluginsnagios-pluginsreleasesdownload2.4.8nagios-plugins-2.4.8.tar.gz"
   sha256 "8e09e9ec1676ecead7e7c7d41d5ea48d5c4bfdfaddfc756d0dd732df7c8f85e4"
   license "GPL-3.0-or-later"
 
@@ -28,24 +28,24 @@ class NagiosPlugins < Formula
     args = %W[
       --disable-dependency-tracking
       --prefix=#{libexec}
-      --libexecdir=#{libexec}/sbin
+      --libexecdir=#{libexec}sbin
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
     ]
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
-    sbin.write_exec_script Dir["#{libexec}/sbin/*"]
+    sbin.write_exec_script Dir["#{libexec}sbin*"]
   end
 
   def caveats
     <<~EOS
       All plugins have been installed in:
-        #{HOMEBREW_PREFIX}/sbin
+        #{HOMEBREW_PREFIX}sbin
     EOS
   end
 
   test do
-    output = shell_output("#{sbin}/check_dns -H brew.sh -s 8.8.8.8 -t 3")
+    output = shell_output("#{sbin}check_dns -H brew.sh -s 8.8.8.8 -t 3")
     assert_match "DNS OK", output
   end
 end

@@ -1,10 +1,10 @@
 class Nsq < Formula
   desc "Realtime distributed messaging platform"
-  homepage "https://nsq.io/"
-  url "https://ghproxy.com/https://github.com/nsqio/nsq/archive/refs/tags/v1.2.1.tar.gz"
+  homepage "https:nsq.io"
+  url "https:github.comnsqionsqarchiverefstagsv1.2.1.tar.gz"
   sha256 "5fd252be4e9bf5bc0962e5b67ef5ec840895e73b1748fd0c1610fa4950cb9ee1"
   license "MIT"
-  head "https://github.com/nsqio/nsq.git", branch: "master"
+  head "https:github.comnsqionsq.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -29,38 +29,38 @@ class Nsq < Formula
   end
 
   def post_install
-    (var/"log").mkpath
-    (var/"nsq").mkpath
+    (var"log").mkpath
+    (var"nsq").mkpath
   end
 
   service do
-    run [opt_bin/"nsqd", "-data-path=#{var}/nsq"]
+    run [opt_bin"nsqd", "-data-path=#{var}nsq"]
     keep_alive true
-    working_dir var/"nsq"
-    log_path var/"log/nsqd.log"
-    error_log_path var/"log/nsqd.error.log"
+    working_dir var"nsq"
+    log_path var"lognsqd.log"
+    error_log_path var"lognsqd.error.log"
   end
 
   test do
     lookupd = fork do
-      exec bin/"nsqlookupd"
+      exec bin"nsqlookupd"
     end
     sleep 2
     d = fork do
-      exec bin/"nsqd", "--lookupd-tcp-address=127.0.0.1:4160"
+      exec bin"nsqd", "--lookupd-tcp-address=127.0.0.1:4160"
     end
     sleep 2
     admin = fork do
-      exec bin/"nsqadmin", "--lookupd-http-address=127.0.0.1:4161"
+      exec bin"nsqadmin", "--lookupd-http-address=127.0.0.1:4161"
     end
     sleep 2
     to_file = fork do
-      exec bin/"nsq_to_file", "--lookupd-http-address=127.0.0.1:4161",
+      exec bin"nsq_to_file", "--lookupd-http-address=127.0.0.1:4161",
                               "--output-dir=#{testpath}",
                               "--topic=test"
     end
     sleep 2
-    system "curl", "-d", "hello", "http://127.0.0.1:4151/pub?topic=test"
+    system "curl", "-d", "hello", "http:127.0.0.1:4151pub?topic=test"
     sleep 2
     dat = File.read(Dir["*.dat"].first)
     assert_match "test", dat

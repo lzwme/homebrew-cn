@@ -5,18 +5,18 @@ cask "forkgram-telegram" do
   sha256 arm:   "7af73957c6d764a4965e3c9fed775e83f1e265637577a9882368f0669a381ea5",
          intel: "755cf3af4303c7b94046ac027e0c0174730a339fbf68a5d7ccbfc60f4a62d26a"
 
-  url "https://ghproxy.com/https://github.com/Forkgram/tdesktop/releases/download/v#{version}/Forkgram.macOS.no.auto-update_#{arch}.zip"
+  url "https:github.comForkgramtdesktopreleasesdownloadv#{version}Forkgram.macOS.no.auto-update_#{arch}.zip"
   name "Forkgram"
   desc "Fork of Telegram Desktop"
-  homepage "https://github.com/Forkgram/"
+  homepage "https:github.comForkgram"
 
   # Not every GitHub release provides a file for macOS, so we check multiple
   # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
     strategy :github_releases do |json, regex|
-      file_regex = /^Forkgram[._-]macOS[._-].*?#{arch}\.zip$/i
+      file_regex = ^Forkgram[._-]macOS[._-].*?#{arch}\.zip$i
 
       json.map do |release|
         next if release["draft"] || release["prerelease"]
@@ -33,5 +33,5 @@ cask "forkgram-telegram" do
   # Renamed to avoid conflict with telegram
   app "Telegram.app", target: "Forkgram.app"
 
-  zap trash: "~/Library/Application Support/Forkgram Desktop"
+  zap trash: "~LibraryApplication SupportForkgram Desktop"
 end

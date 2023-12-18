@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
-  homepage "https://github.com/tailwindlabs/tailwindcss-intellisense/tree/HEAD/packages/tailwindcss-language-server#readme"
-  url "https://registry.npmjs.org/@tailwindcss/language-server/-/language-server-0.0.14.tgz"
+  homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server#readme"
+  url "https:registry.npmjs.org@tailwindcsslanguage-server-language-server-0.0.14.tgz"
   sha256 "2e6f29b4d9acab4de233a6d56ae2e0cbcef8036a399e688b799c95604eadb877"
   license "MIT"
 
@@ -21,10 +21,10 @@ class TailwindcssLanguageServer < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Replace universal binaries with their native slices
-    (libexec/"lib/node_modules/@tailwindcss/language-server/bin").glob("*.node").each do |f|
+    (libexec"libnode_modules@tailwindcsslanguage-serverbin").glob("*.node").each do |f|
       next if f.arch == Hardware::CPU.arch
 
       if OS.mac? && f.universal?
@@ -33,7 +33,7 @@ class TailwindcssLanguageServer < Formula
         rm f
       end
     end
-    (libexec/"lib/node_modules/@tailwindcss/language-server/bin").glob("*.musl-*.node").map(&:unlink) if OS.linux?
+    (libexec"libnode_modules@tailwindcsslanguage-serverbin").glob("*.musl-*.node").map(&:unlink) if OS.linux?
   end
 
   test do
@@ -51,10 +51,10 @@ class TailwindcssLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/tailwindcss-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}tailwindcss-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
       sleep 3
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

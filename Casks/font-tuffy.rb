@@ -2,12 +2,12 @@ cask "font-tuffy" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/tuffy"
+      only_path: "ofltuffy"
   name "Tuffy"
-  homepage "http://tulrich.com/fonts/"
+  homepage "http:tulrich.comfonts"
 
   font "Tuffy-Bold.ttf"
   font "Tuffy-BoldItalic.ttf"

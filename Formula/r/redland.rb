@@ -1,14 +1,14 @@
 class Redland < Formula
   desc "RDF Library"
-  homepage "https://librdf.org/"
-  url "https://download.librdf.org/source/redland-1.0.17.tar.gz"
+  homepage "https:librdf.org"
+  url "https:download.librdf.orgsourceredland-1.0.17.tar.gz"
   sha256 "de1847f7b59021c16bdc72abb4d8e2d9187cd6124d69156f3326dd34ee043681"
   license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
   revision 1
 
   livecheck do
     url :homepage
-    regex(/href=.*?redland[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?redland[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,18 +35,18 @@ class Redland < Formula
   depends_on "unixodbc"
 
   resource "bindings" do
-    url "https://download.librdf.org/source/redland-bindings-1.0.17.1.tar.gz"
+    url "https:download.librdf.orgsourceredland-bindings-1.0.17.1.tar.gz"
     sha256 "ff72b587ab55f09daf81799cb3f9d263708fad5df7a5458f0c28566a2563b7f5"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
     sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-bdb=no",

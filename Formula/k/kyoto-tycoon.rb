@@ -1,14 +1,14 @@
 class KyotoTycoon < Formula
   desc "Database server with interface to Kyoto Cabinet"
-  homepage "https://dbmx.net/kyototycoon/"
-  url "https://dbmx.net/kyototycoon/pkg/kyototycoon-0.9.56.tar.gz"
+  homepage "https:dbmx.netkyototycoon"
+  url "https:dbmx.netkyototycoonpkgkyototycoon-0.9.56.tar.gz"
   sha256 "553e4ea83237d9153cc5e17881092cefe0b224687f7ebcc406b061b2f31c75c6"
   license "GPL-3.0-or-later"
   revision 5
 
   livecheck do
-    url "https://dbmx.net/kyototycoon/pkg/"
-    regex(/href=.*?kyototycoon[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dbmx.netkyototycoonpkg"
+    regex(href=.*?kyototycoon[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -33,18 +33,18 @@ class KyotoTycoon < Formula
 
   # Build patch (submitted upstream)
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/955ce09/kyoto-tycoon/0.9.56.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches955ce09kyoto-tycoon0.9.56.patch"
     sha256 "7a5efe02a38e3f5c96fd5faa81d91bdd2c1d2ffeb8c3af52878af4a2eab3d830"
   end
 
   # Homebrew-specific patch to support testing with ephemeral ports (submitted upstream)
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/9925c07/kyoto-tycoon/ephemeral-ports.patch"
+    url "https:raw.githubusercontent.comHomebrewformula-patches9925c07kyoto-tycoonephemeral-ports.patch"
     sha256 "736603b28e9e7562837d0f376d89c549f74a76d31658bf7d84b57c5e66512672"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--with-kc=#{Formula["kyoto-cabinet"].opt_prefix}",
                           "--with-lua=#{Formula["lua"].opt_prefix}"
     system "make"
@@ -52,7 +52,7 @@ class KyotoTycoon < Formula
   end
 
   test do
-    (testpath/"test.lua").write <<~EOS
+    (testpath"test.lua").write <<~EOS
       kt = __kyototycoon__
       db = kt.db
       -- echo back the input data as the output data
@@ -66,10 +66,10 @@ class KyotoTycoon < Formula
     port = free_port
 
     fork do
-      exec bin/"ktserver", "-port", port.to_s, "-scr", testpath/"test.lua"
+      exec bin"ktserver", "-port", port.to_s, "-scr", testpath"test.lua"
     end
     sleep 5
 
-    assert_match "Homebrew\tCool", shell_output("#{bin}/ktremotemgr script -port #{port} echo Homebrew Cool 2>&1")
+    assert_match "Homebrew\tCool", shell_output("#{bin}ktremotemgr script -port #{port} echo Homebrew Cool 2>&1")
   end
 end

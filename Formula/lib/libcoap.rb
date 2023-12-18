@@ -1,7 +1,7 @@
 class Libcoap < Formula
   desc "Lightweight application-protocol for resource-constrained devices"
-  homepage "https://github.com/obgm/libcoap"
-  url "https://ghproxy.com/https://github.com/obgm/libcoap/archive/refs/tags/v4.3.4.tar.gz"
+  homepage "https:github.comobgmlibcoap"
+  url "https:github.comobgmlibcoaparchiverefstagsv4.3.4.tar.gz"
   sha256 "ae61a48c21f7b40e1442c9e1da9aab9e6f2cf0deccb02f3fed4de232a0b0522e"
   license "BSD-2-Clause"
 
@@ -23,8 +23,8 @@ class Libcoap < Formula
   depends_on "openssl@3"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}",
                           "--disable-examples",
                           "--disable-manpages"
     system "make"
@@ -33,7 +33,7 @@ class Libcoap < Formula
 
   test do
     %w[coap-client coap-server].each do |src|
-      system ENV.cc, pkgshare/"examples/#{src}.c",
+      system ENV.cc, pkgshare"examples#{src}.c",
         "-I#{Formula["openssl@3"].opt_include}", "-I#{include}",
         "-L#{Formula["openssl@3"].opt_lib}", "-L#{lib}",
         "-lcrypto", "-lssl", "-lcoap-3-openssl", "-o", src
@@ -41,11 +41,11 @@ class Libcoap < Formula
 
     port = free_port
     fork do
-      exec testpath/"coap-server", "-p", port.to_s
+      exec testpath"coap-server", "-p", port.to_s
     end
 
     sleep 1
-    output = shell_output(testpath/"coap-client -B 5 -m get coap://localhost:#{port}")
+    output = shell_output(testpath"coap-client -B 5 -m get coap:localhost:#{port}")
     assert_match "This is a test server made with libcoap", output
   end
 end

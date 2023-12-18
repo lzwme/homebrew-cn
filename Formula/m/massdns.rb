@@ -1,7 +1,7 @@
 class Massdns < Formula
   desc "High-performance DNS stub resolver"
-  homepage "https://github.com/blechschmidt/massdns"
-  url "https://ghproxy.com/https://github.com/blechschmidt/massdns/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:github.comblechschmidtmassdns"
+  url "https:github.comblechschmidtmassdnsarchiverefstagsv1.0.0.tar.gz"
   sha256 "0eba00a03e74a02a78628819741c75c2832fb94223d0ff632249f2cc55d0fdbb"
   license "GPL-3.0-only"
 
@@ -29,14 +29,14 @@ class Massdns < Formula
       system "make"
     end
 
-    bin.install "build/bin/massdns"
+    bin.install "buildbinmassdns"
     etc.install Dir["lists", "scripts"]
   end
 
   test do
-    cp_r etc/"lists/resolvers.txt", testpath
-    (testpath/"domains.txt").write "docs.brew.sh"
-    system bin/"massdns", "-r", testpath/"resolvers.txt", "-t", "AAAA", "-w", "results.txt", testpath/"domains.txt"
+    cp_r etc"listsresolvers.txt", testpath
+    (testpath"domains.txt").write "docs.brew.sh"
+    system bin"massdns", "-r", testpath"resolvers.txt", "-t", "AAAA", "-w", "results.txt", testpath"domains.txt"
 
     assert_match ";; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:", File.read("results.txt")
     assert_match "IN CNAME homebrew.github.io.", File.read("results.txt")

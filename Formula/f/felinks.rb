@@ -1,7 +1,7 @@
 class Felinks < Formula
   desc "Text mode browser and Gemini, NNTP, FTP, Gopher, Finger, and BitTorrent client"
-  homepage "https://github.com/rkd77/elinks#readme"
-  url "https://ghproxy.com/https://github.com/rkd77/elinks/releases/download/v0.16.1.1/elinks-0.16.1.1.tar.xz"
+  homepage "https:github.comrkd77elinks#readme"
+  url "https:github.comrkd77elinksreleasesdownloadv0.16.1.1elinks-0.16.1.1.tar.xz"
   sha256 "303c6f830b98658dcb813b68432ecde27d3857ccf1e765109fb6b0edb89f5095"
   license "GPL-2.0-only"
 
@@ -18,7 +18,7 @@ class Felinks < Formula
   end
 
   head do
-    url "https://github.com/rkd77/elinks.git", branch: "master"
+    url "https:github.comrkd77elinks.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -38,10 +38,10 @@ class Felinks < Formula
   conflicts_with "elinks", because: "both install the same binaries"
 
   def install
-    # https://github.com/rkd77/elinks/issues/47#issuecomment-1190547847 parallelization issue.
+    # https:github.comrkd77elinksissues47#issuecomment-1190547847 parallelization issue.
     ENV.deparallelize
-    system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args,
+    system ".autogen.sh" if build.head?
+    system ".configure", *std_configure_args,
                           "--disable-nls",
                           "--enable-256-colors",
                           "--enable-88-colors",
@@ -67,12 +67,12 @@ class Felinks < Formula
   end
 
   test do
-    (testpath/"test.html").write <<~EOS
+    (testpath"test.html").write <<~EOS
       <!DOCTYPE html>
-      <title>Hello World!</title>
+      <title>Hello World!<title>
       Abracadabra
     EOS
     assert_match "Abracadabra",
-      shell_output("#{bin}/elinks -dump test.html").chomp
+      shell_output("#{bin}elinks -dump test.html").chomp
   end
 end

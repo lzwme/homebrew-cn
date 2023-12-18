@@ -1,15 +1,15 @@
 class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
-  homepage "https://sdk.operatorframework.io/"
-  url "https://github.com/operator-framework/operator-sdk.git",
+  homepage "https:sdk.operatorframework.io"
+  url "https:github.comoperator-frameworkoperator-sdk.git",
       tag:      "v1.32.0",
       revision: "4dcbbe343b29d325fd8a14cc60366335298b40a3"
   license "Apache-2.0"
-  head "https://github.com/operator-framework/operator-sdk.git", branch: "master"
+  head "https:github.comoperator-frameworkoperator-sdk.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -28,22 +28,22 @@ class OperatorSdk < Formula
     ENV["GOBIN"] = bin
     system "make", "install"
 
-    generate_completions_from_executable(bin/"operator-sdk", "completion")
+    generate_completions_from_executable(bin"operator-sdk", "completion")
   end
 
   test do
     if build.stable?
-      version_output = shell_output("#{bin}/operator-sdk version")
+      version_output = shell_output("#{bin}operator-sdk version")
       assert_match "version: \"v#{version}\"", version_output
-      commit_regex = /[a-f0-9]{40}/
+      commit_regex = [a-f0-9]{40}
       assert_match commit_regex, version_output
     end
 
     mkdir "test" do
-      output = shell_output("#{bin}/operator-sdk init --domain=example.com --repo=github.com/example/memcached")
+      output = shell_output("#{bin}operator-sdk init --domain=example.com --repo=github.comexamplememcached")
       assert_match "$ operator-sdk create api", output
 
-      output = shell_output("#{bin}/operator-sdk create api --group c --version v1 --kind M --resource --controller")
+      output = shell_output("#{bin}operator-sdk create api --group c --version v1 --kind M --resource --controller")
       assert_match "$ make manifests", output
     end
   end

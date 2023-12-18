@@ -1,13 +1,13 @@
 class Otf2 < Formula
   desc "Open Trace Format 2 file handling library"
-  homepage "https://www.vi-hps.org/projects/score-p/"
-  url "https://perftools.pages.jsc.fz-juelich.de/cicd/otf2/tags/otf2-3.0.3/otf2-3.0.3.tar.gz", using: :homebrew_curl
+  homepage "https:www.vi-hps.orgprojectsscore-p"
+  url "https:perftools.pages.jsc.fz-juelich.decicdotf2tagsotf2-3.0.3otf2-3.0.3.tar.gz", using: :homebrew_curl
   sha256 "18a3905f7917340387e3edc8e5766f31ab1af41f4ecc5665da6c769ca21c4ee8"
   license "BSD-3-Clause"
 
   livecheck do
     url :homepage
-    regex(/href=.*?otf2[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?otf2[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -30,31 +30,31 @@ class Otf2 < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     directory "build-frontend"
   end
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
     sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     directory "build-backend"
   end
 
   def install
     ENV["PYTHON"] = which("python3.11")
-    ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin/"sphinx-build"
+    ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin"sphinx-build"
 
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
 
-    inreplace pkgshare/"otf2.summary", "#{Superenv.shims_path}/", ""
+    inreplace pkgshare"otf2.summary", "#{Superenv.shims_path}", ""
   end
 
   test do
-    cp_r share/"doc/otf2/examples", testpath
-    workdir = testpath/"examples"
-    chdir "#{testpath}/examples" do
+    cp_r share"docotf2examples", testpath
+    workdir = testpath"examples"
+    chdir "#{testpath}examples" do
       # build serial tests
       system "make", "serial", "mpi", "pthread"
       %w[
@@ -64,22 +64,22 @@ class Otf2 < Formula
         otf2_pthread_writer_example
         otf2_reader_example
         otf2_writer_example
-      ].each { |p| assert_predicate workdir/p, :exist? }
-      system "./otf2_writer_example"
-      assert_predicate workdir/"ArchivePath/ArchiveName.otf2", :exist?
-      system "./otf2_reader_example"
-      rm_rf "./ArchivePath"
-      system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_writer_example"
-      assert_predicate workdir/"ArchivePath/ArchiveName.otf2", :exist?
+      ].each { |p| assert_predicate workdirp, :exist? }
+      system ".otf2_writer_example"
+      assert_predicate workdir"ArchivePathArchiveName.otf2", :exist?
+      system ".otf2_reader_example"
+      rm_rf ".ArchivePath"
+      system Formula["open-mpi"].opt_bin"mpirun", "-n", "2", ".otf2_mpi_writer_example"
+      assert_predicate workdir"ArchivePathArchiveName.otf2", :exist?
       2.times do |n|
-        assert_predicate workdir/"ArchivePath/ArchiveName/#{n}.evt", :exist?
+        assert_predicate workdir"ArchivePathArchiveName#{n}.evt", :exist?
       end
-      system Formula["open-mpi"].opt_bin/"mpirun", "-n", "2", "./otf2_mpi_reader_example"
-      system "./otf2_reader_example"
-      rm_rf "./ArchivePath"
-      system "./otf2_pthread_writer_example"
-      assert_predicate workdir/"ArchivePath/ArchiveName.otf2", :exist?
-      system "./otf2_reader_example"
+      system Formula["open-mpi"].opt_bin"mpirun", "-n", "2", ".otf2_mpi_reader_example"
+      system ".otf2_reader_example"
+      rm_rf ".ArchivePath"
+      system ".otf2_pthread_writer_example"
+      assert_predicate workdir"ArchivePathArchiveName.otf2", :exist?
+      system ".otf2_reader_example"
     end
   end
 end

@@ -1,10 +1,10 @@
 class Dcp < Formula
   desc "Docker cp made easy"
-  homepage "https://github.com/exdx/dcp"
-  url "https://ghproxy.com/https://github.com/exdx/dcp/archive/refs/tags/v0.4.1.tar.gz"
+  homepage "https:github.comexdxdcp"
+  url "https:github.comexdxdcparchiverefstagsv0.4.1.tar.gz"
   sha256 "7d9caa94c6a099762f367901cb0ccbe63130026f903e5477f4403d0cfff98b53"
   license "MIT"
-  head "https://github.com/exdx/dcp.git", branch: "main"
+  head "https:github.comexdxdcp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a86398dd892b4756ffcfb7d9c6027b6cd4fa9e1372b3e6ed7a3a83b85cd7b6e"
@@ -23,9 +23,9 @@ class Dcp < Formula
   end
 
   test do
-    output = shell_output("#{bin}/dcp busybox 2>&1", 1)
+    output = shell_output("#{bin}dcp busybox 2>&1", 1)
     assert_match "docker socket not found: falling back to podman configuration", output
 
-    assert_match version.to_s, shell_output("#{bin}/dcp --version")
+    assert_match version.to_s, shell_output("#{bin}dcp --version")
   end
 end

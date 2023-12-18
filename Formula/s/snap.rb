@@ -1,7 +1,7 @@
 class Snap < Formula
   desc "Tool to work with .snap files"
-  homepage "https://snapcraft.io/"
-  url "https://ghproxy.com/https://github.com/snapcore/snapd/releases/download/2.61.1/snapd_2.61.1.vendor.tar.xz"
+  homepage "https:snapcraft.io"
+  url "https:github.comsnapcoresnapdreleasesdownload2.61.1snapd_2.61.1.vendor.tar.xz"
   version "2.61.1"
   sha256 "775b7a250f5241b3bfcebcb3df5055b9c9304c4520502b7abf12438a1cdd771d"
   license "GPL-3.0-only"
@@ -25,25 +25,25 @@ class Snap < Formula
   depends_on "squashfs"
 
   def install
-    system "./mkversion.sh", version.to_s
+    system ".mkversion.sh", version.to_s
     tags = OS.mac? ? ["-tags=nosecboot"] : []
-    system "go", "build", *std_go_args(ldflags: "-s -w"), *tags, "./cmd/snap"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), *tags, ".cmdsnap"
 
-    bash_completion.install "data/completion/bash/snap"
-    zsh_completion.install "data/completion/zsh/_snap"
+    bash_completion.install "datacompletionbashsnap"
+    zsh_completion.install "datacompletionzsh_snap"
 
-    (man8/"snap.8").write Utils.safe_popen_read(bin/"snap", "help", "--man")
+    (man8"snap.8").write Utils.safe_popen_read(bin"snap", "help", "--man")
   end
 
   test do
-    (testpath/"pkg/meta").mkpath
-    (testpath/"pkg/meta/snap.yaml").write <<~EOS
+    (testpath"pkgmeta").mkpath
+    (testpath"pkgmetasnap.yaml").write <<~EOS
       name: test-snap
       version: 1.0.0
       summary: simple summary
       description: short description
     EOS
-    system bin/"snap", "pack", "pkg"
-    system bin/"snap", "version"
+    system bin"snap", "pack", "pkg"
+    system bin"snap", "version"
   end
 end

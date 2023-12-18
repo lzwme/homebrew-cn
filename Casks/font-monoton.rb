@@ -2,10 +2,10 @@ cask "font-monoton" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/monoton/Monoton-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmonotonMonoton-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Monoton"
-  homepage "https://fonts.google.com/specimen/Monoton"
+  homepage "https:fonts.google.comspecimenMonoton"
 
   font "Monoton-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Rhash < Formula
   desc "Utility for computing and verifying hash sums of files"
-  homepage "https://sourceforge.net/projects/rhash/"
-  url "https://downloads.sourceforge.net/project/rhash/rhash/1.4.4/rhash-1.4.4-src.tar.gz"
+  homepage "https:sourceforge.netprojectsrhash"
+  url "https:downloads.sourceforge.netprojectrhashrhash1.4.4rhash-1.4.4-src.tar.gz"
   sha256 "8e7d1a8ccac0143c8fe9b68ebac67d485df119ea17a613f4038cda52f84ef52a"
   license "0BSD"
-  head "https://github.com/rhash/RHash.git", branch: "master"
+  head "https:github.comrhashRHash.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "ec69940028e8fcb9278ebba41f8f4eaf9c2fd551b361ebadb57b46724aaf92af"
@@ -19,16 +19,16 @@ class Rhash < Formula
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-gettext"
+    system ".configure", "--prefix=#{prefix}", "--disable-gettext"
     system "make"
     system "make", "install"
-    lib.install "librhash/#{shared_library("librhash")}"
+    lib.install "librhash#{shared_library("librhash")}"
     system "make", "-C", "librhash", "install-lib-headers"
   end
 
   test do
-    (testpath/"test").write("test")
-    (testpath/"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
-    system "#{bin}/rhash", "-c", "test.sha1"
+    (testpath"test").write("test")
+    (testpath"test.sha1").write("a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 test")
+    system "#{bin}rhash", "-c", "test.sha1"
   end
 end

@@ -1,7 +1,7 @@
 class KubernetesServiceCatalogClient < Formula
   desc "Consume Services in k8s using the OSB API"
-  homepage "https://svc-cat.io/"
-  url "https://ghproxy.com/https://github.com/kubernetes-retired/service-catalog/archive/refs/tags/v0.3.1.tar.gz"
+  homepage "https:svc-cat.io"
+  url "https:github.comkubernetes-retiredservice-catalogarchiverefstagsv0.3.1.tar.gz"
   sha256 "5b463be2102b32bd5a5fed5d433ef53da4d1f70bf007b5a4b78eee7024ca52e3"
   license "Apache-2.0"
 
@@ -26,15 +26,15 @@ class KubernetesServiceCatalogClient < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/kubernetes-retired/service-catalog/pkg.VERSION=v#{version}
+      -X github.comkubernetes-retiredservice-catalogpkg.VERSION=v#{version}
     ]
     system "go", "build", "-ldflags", ldflags.join(" "), "-o",
-            bin/"svcat", "./cmd/svcat"
+            bin"svcat", ".cmdsvcat"
     prefix.install_metafiles
   end
 
   test do
-    version_output = shell_output("#{bin}/svcat version --client 2>&1", 1)
+    version_output = shell_output("#{bin}svcat version --client 2>&1", 1)
     assert_match "Error: could not get Kubernetes config for context", version_output
   end
 end

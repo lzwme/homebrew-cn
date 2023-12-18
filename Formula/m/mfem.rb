@@ -1,11 +1,11 @@
 class Mfem < Formula
   desc "Free, lightweight, scalable C++ library for FEM"
-  homepage "http://www.mfem.org/"
-  url "https://ghproxy.com/https://github.com/mfem/mfem/archive/refs/tags/v4.6.tar.gz"
+  homepage "http:www.mfem.org"
+  url "https:github.commfemmfemarchiverefstagsv4.6.tar.gz"
   sha256 "250bb6aa0fd5f6a6002c072d357656241ed38acfc750e43e87d8c36a8f8a4b4f"
   license "BSD-3-Clause"
   revision 1
-  head "https://github.com/mfem/mfem.git", branch: "master"
+  head "https:github.commfemmfem.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62ff9733940e031a023deaba54716e3800d9ed9187d21e10407a15c7ea69a584"
@@ -24,12 +24,12 @@ class Mfem < Formula
   depends_on "suite-sparse"
 
   def install
-    # fix `lib/cmake/mfem/MFEMConfig.cmake` file audit failure
-    inreplace "config/cmake/MFEMConfig.cmake.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
+    # fix `libcmakemfemMFEMConfig.cmake` file audit failure
+    inreplace "configcmakeMFEMConfig.cmake.in", "@CMAKE_CXX_COMPILER@", ENV.cxx
 
-    # fix `share/mfem/config.mk` file audit failure
-    inreplace "config/config.mk.in", "@MFEM_CXX@", ENV.cxx
-    inreplace "config/config.mk.in", "@MFEM_HOST_CXX@", ENV.cxx
+    # fix `sharemfemconfig.mk` file audit failure
+    inreplace "configconfig.mk.in", "@MFEM_CXX@", ENV.cxx
+    inreplace "configconfig.mk.in", "@MFEM_HOST_CXX@", ENV.cxx
 
     args = [
       "-DMFEM_USE_MPI=YES",
@@ -46,11 +46,11 @@ class Mfem < Formula
   end
 
   test do
-    cp_r pkgshare/"examples", testpath
-    cp pkgshare/"data/star.mesh", testpath/"examples"
-    system "make", "-C", testpath/"examples", "all", "MFEM_INSTALL_DIR=#{prefix}", "CONFIG_MK=#{pkgshare}/config.mk"
-    args = ["-m", testpath/"examples/star.mesh", "--no-visualization"]
-    system testpath/"examples/ex1", *args
-    system "mpirun", "-np", "1", testpath/"examples/ex1p", *args
+    cp_r pkgshare"examples", testpath
+    cp pkgshare"datastar.mesh", testpath"examples"
+    system "make", "-C", testpath"examples", "all", "MFEM_INSTALL_DIR=#{prefix}", "CONFIG_MK=#{pkgshare}config.mk"
+    args = ["-m", testpath"examplesstar.mesh", "--no-visualization"]
+    system testpath"examplesex1", *args
+    system "mpirun", "-np", "1", testpath"examplesex1p", *args
   end
 end

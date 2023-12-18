@@ -1,10 +1,10 @@
 class WoodpeckerCli < Formula
   desc "CLI client for the Woodpecker Continuous Integration server"
-  homepage "https://woodpecker-ci.org/"
-  url "https://ghproxy.com/https://github.com/woodpecker-ci/woodpecker/archive/refs/tags/v2.0.0.tar.gz"
+  homepage "https:woodpecker-ci.org"
+  url "https:github.comwoodpecker-ciwoodpeckerarchiverefstagsv2.0.0.tar.gz"
   sha256 "56429d9cbe1e6e81ab019b1549e6de49f2fa8b5abbc6322203a266b92139ca68"
   license "Apache-2.0"
-  head "https://github.com/woodpecker-ci/woodpecker.git", branch: "main"
+  head "https:github.comwoodpecker-ciwoodpecker.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7de61040a5a56c51360ef03558e8393af0b61c9be6b9f7aded27da25d679c08f"
@@ -19,17 +19,17 @@ class WoodpeckerCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X go.woodpecker-ci.org/woodpecker/version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cli"
+    ldflags = "-s -w -X go.woodpecker-ci.orgwoodpeckerversion.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcli"
   end
 
   test do
-    output = shell_output("#{bin}/woodpecker-cli info 2>&1", 1)
+    output = shell_output("#{bin}woodpecker-cli info 2>&1", 1)
     assert_match "Error: you must provide the Woodpecker server address", output
 
-    output = shell_output("#{bin}/woodpecker-cli lint 2>&1", 1)
+    output = shell_output("#{bin}woodpecker-cli lint 2>&1", 1)
     assert_match "could not detect pipeline config", output
 
-    assert_match version.to_s, shell_output("#{bin}/woodpecker-cli --version")
+    assert_match version.to_s, shell_output("#{bin}woodpecker-cli --version")
   end
 end

@@ -1,11 +1,11 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
-  homepage "https://github.com/swsnr/mdcat"
-  url "https://ghproxy.com/https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.1.0.tar.gz"
+  homepage "https:github.comswsnrmdcat"
+  url "https:github.comswsnrmdcatarchiverefstagsmdcat-2.1.0.tar.gz"
   sha256 "96ed4b74c202514987610a69af7fc71afd3b826d0449f9326661fd5244c5d5ee"
   license "MPL-2.0"
   revision 1
-  head "https://github.com/swsnr/mdcat.git", branch: "main"
+  head "https:github.comswsnrmdcat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eff2b11b0fedccc888d3ac76249dfaddf063713ed24d0e9a1883a21c490640d"
@@ -29,18 +29,18 @@ class Mdcat < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    outdir = Dir["target/release/build/mdcat-*/out"].first
-    man1.install "#{outdir}/mdcat.1"
-    bash_completion.install "#{outdir}/completions/mdcat.bash" => "mdcat"
-    fish_completion.install "#{outdir}/completions/mdcat.fish"
-    zsh_completion.install "#{outdir}/completions/_mdcat"
+    outdir = Dir["targetreleasebuildmdcat-*out"].first
+    man1.install "#{outdir}mdcat.1"
+    bash_completion.install "#{outdir}completionsmdcat.bash" => "mdcat"
+    fish_completion.install "#{outdir}completionsmdcat.fish"
+    zsh_completion.install "#{outdir}completions_mdcat"
   end
 
   test do
-    (testpath/"test.md").write <<~EOS
+    (testpath"test.md").write <<~EOS
       _lorem_ **ipsum** dolor **sit** _amet_
     EOS
-    output = shell_output("#{bin}/mdcat --no-colour test.md")
+    output = shell_output("#{bin}mdcat --no-colour test.md")
     assert_match "lorem ipsum dolor sit amet", output
   end
 end

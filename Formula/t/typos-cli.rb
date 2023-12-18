@@ -1,13 +1,13 @@
 class TyposCli < Formula
   desc "Source code spell checker"
-  homepage "https://github.com/crate-ci/typos"
-  url "https://ghproxy.com/https://github.com/crate-ci/typos/archive/refs/tags/v1.16.25.tar.gz"
+  homepage "https:github.comcrate-citypos"
+  url "https:github.comcrate-cityposarchiverefstagsv1.16.25.tar.gz"
   sha256 "e5541cef7727163c332e4aede94bc6d99802c472bcbcc0fc69502601fac9659e"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -23,11 +23,11 @@ class TyposCli < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/typos-cli")
+    system "cargo", "install", *std_cargo_args(path: "cratestypos-cli")
   end
 
   test do
-    assert_match "error: `teh` should be `the`", pipe_output("#{bin}/typos -", "teh", 2)
-    assert_empty pipe_output("#{bin}/typos -", "the")
+    assert_match "error: `teh` should be `the`", pipe_output("#{bin}typos -", "teh", 2)
+    assert_empty pipe_output("#{bin}typos -", "the")
   end
 end

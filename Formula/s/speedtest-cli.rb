@@ -1,13 +1,13 @@
 class SpeedtestCli < Formula
   include Language::Python::Shebang
 
-  desc "Command-line interface for https://speedtest.net bandwidth tests"
-  homepage "https://github.com/sivel/speedtest-cli"
-  url "https://ghproxy.com/https://github.com/sivel/speedtest-cli/archive/refs/tags/v2.1.3.tar.gz"
+  desc "Command-line interface for https:speedtest.net bandwidth tests"
+  homepage "https:github.comsivelspeedtest-cli"
+  url "https:github.comsivelspeedtest-cliarchiverefstagsv2.1.3.tar.gz"
   sha256 "45e3ca21c3ce3c339646100de18db8a26a27d240c29f1c9e07b6c13995a969be"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/sivel/speedtest-cli.git", branch: "master"
+  head "https:github.comsivelspeedtest-cli.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -18,7 +18,7 @@ class SpeedtestCli < Formula
 
   # Support Python 3.10, remove on next release
   patch do
-    url "https://github.com/sivel/speedtest-cli/commit/22210ca35228f0bbcef75a7c14587c4ecb875ab4.patch?full_index=1"
+    url "https:github.comsivelspeedtest-clicommit22210ca35228f0bbcef75a7c14587c4ecb875ab4.patch?full_index=1"
     sha256 "d0456eb9fded20fb1580dbc6e3bc451a10c3fbcd3441efea66035aa848440c09"
   end
 
@@ -31,8 +31,8 @@ class SpeedtestCli < Formula
 
   test do
     assert_match "speedtest-cli",
-                 shell_output(bin/"speedtest --version")
+                 shell_output(bin"speedtest --version")
     assert_match "Command line interface for testing internet bandwidth using speedtest.net",
-                 shell_output(bin/"speedtest --help")
+                 shell_output(bin"speedtest --help")
   end
 end

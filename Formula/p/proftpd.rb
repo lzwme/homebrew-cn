@@ -1,9 +1,9 @@
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
-  homepage "http://www.proftpd.org/"
-  url "https://ghproxy.com/https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.8a.tar.gz"
-  mirror "https://fossies.org/linux/misc/proftpd-1.3.8a.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/proftpd/proftpd-1.3.8a.tar.gz"
+  homepage "http:www.proftpd.org"
+  url "https:github.comproftpdproftpdarchiverefstagsv1.3.8a.tar.gz"
+  mirror "https:fossies.orglinuxmiscproftpd-1.3.8a.tar.gz"
+  mirror "https:ftp.osuosl.orgpubblfsconglomerationproftpdproftpd-1.3.8a.tar.gz"
   version "1.3.8a"
   sha256 "56093b890a712220b09b98e29de2974a590e8fae6b36ed78c698a90945466aaf"
   license "GPL-2.0-or-later"
@@ -13,7 +13,7 @@ class Proftpd < Formula
   # beta respectively. Prerelease versions use a format like `1.2.3rc1`.
   livecheck do
     url :stable
-    regex(/v?(\d+(?:\.\d+)+[a-z]?)/i)
+    regex(v?(\d+(?:\.\d+)+[a-z]?)i)
     strategy :github_latest
   end
 
@@ -31,10 +31,10 @@ class Proftpd < Formula
 
   def install
     # fixes unknown group 'nogroup'
-    # http://www.proftpd.org/docs/faq/linked/faq-ch4.html#AEN434
-    inreplace "sample-configurations/basic.conf", "nogroup", "nobody"
+    # http:www.proftpd.orgdocsfaqlinkedfaq-ch4.html#AEN434
+    inreplace "sample-configurationsbasic.conf", "nogroup", "nobody"
 
-    system "./configure", "--prefix=#{prefix}",
+    system ".configure", "--prefix=#{prefix}",
                           "--sbindir=#{sbin}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
@@ -46,14 +46,14 @@ class Proftpd < Formula
   end
 
   service do
-    run [opt_sbin/"proftpd"]
+    run [opt_sbin"proftpd"]
     keep_alive false
     working_dir HOMEBREW_PREFIX
-    log_path "/dev/null"
-    error_log_path "/dev/null"
+    log_path "devnull"
+    error_log_path "devnull"
   end
 
   test do
-    assert_match "ProFTPD Version #{version}", shell_output("#{opt_sbin}/proftpd -v")
+    assert_match "ProFTPD Version #{version}", shell_output("#{opt_sbin}proftpd -v")
   end
 end

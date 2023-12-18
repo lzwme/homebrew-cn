@@ -2,11 +2,11 @@ cask "cashnotify" do
   version "3.6.4"
   sha256 "f195b73ad787a0afef91728b7d516f5a5c6a3c9d05c2b37642e407c2346d893d"
 
-  url "https://ghproxy.com/https://github.com/BaguetteEngineering/download.cashnotify.com/releases/download/v#{version}/CashNotify-#{version}.dmg",
-      verified: "github.com/BaguetteEngineering/download.cashnotify.com/"
+  url "https:github.comBaguetteEngineeringdownload.cashnotify.comreleasesdownloadv#{version}CashNotify-#{version}.dmg",
+      verified: "github.comBaguetteEngineeringdownload.cashnotify.com"
   name "CashNotify"
   desc "Monitor your Stripe and Paypal accounts from your menubar"
-  homepage "https://cashnotify.com/"
+  homepage "https:cashnotify.com"
 
   auto_updates true
 
@@ -16,13 +16,13 @@ cask "cashnotify" do
             quit:      "com.baguetteengineering.cashnotify"
 
   zap trash: [
-    "~/Library/Application Support/Caches/cashnotify-updater",
-    "~/Library/Application Support/CashNotify",
-    "~/Library/Caches/com.baguetteengineering.cashnotify",
-    "~/Library/Caches/com.baguetteengineering.cashnotify.ShipIt",
-    "~/Library/Logs/CashNotify",
-    "~/Library/Preferences/com.baguetteengineering.cashnotify.helper.plist",
-    "~/Library/Preferences/com.baguetteengineering.cashnotify.plist",
-    "~/Library/Saved Application State/com.baguetteengineering.cashnotify.savedState",
+    "~LibraryApplication SupportCachescashnotify-updater",
+    "~LibraryApplication SupportCashNotify",
+    "~LibraryCachescom.baguetteengineering.cashnotify",
+    "~LibraryCachescom.baguetteengineering.cashnotify.ShipIt",
+    "~LibraryLogsCashNotify",
+    "~LibraryPreferencescom.baguetteengineering.cashnotify.helper.plist",
+    "~LibraryPreferencescom.baguetteengineering.cashnotify.plist",
+    "~LibrarySaved Application Statecom.baguetteengineering.cashnotify.savedState",
   ]
 end

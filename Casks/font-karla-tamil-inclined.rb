@@ -2,12 +2,12 @@ cask "font-karla-tamil-inclined" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/karlatamilinclined"
+      only_path: "oflkarlatamilinclined"
   name "Karla Tamil Inclined"
-  homepage "https://fonts.google.com/specimen/Karla"
+  homepage "https:fonts.google.comspecimenKarla"
 
   font "KarlaTamilInclined-Bold.ttf"
   font "KarlaTamilInclined-Regular.ttf"

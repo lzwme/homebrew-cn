@@ -2,8 +2,8 @@ class Litani < Formula
   include Language::Python::Virtualenv
 
   desc "Metabuild system"
-  homepage "https://awslabs.github.io/aws-build-accumulator/"
-  url "https://github.com/awslabs/aws-build-accumulator.git",
+  homepage "https:awslabs.github.ioaws-build-accumulator"
+  url "https:github.comawslabsaws-build-accumulator.git",
       tag:      "1.29.0",
       revision: "8002c240ef4f424039ed3cc32e076c0234d01768"
   license "Apache-2.0"
@@ -30,35 +30,35 @@ class Litani < Formula
   depends_on "pyyaml"
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
+    url "https:files.pythonhosted.orgpackages7aff75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cceJinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
   def install
-    ENV.prepend_path "PATH", libexec/"vendor/bin"
-    venv = virtualenv_create(libexec/"vendor", "python3.12")
+    ENV.prepend_path "PATH", libexec"vendorbin"
+    venv = virtualenv_create(libexec"vendor", "python3.12")
     venv.pip_install resources
 
     libexec.install Dir["*"] - ["test", "examples"]
-    (bin/"litani").write_env_script libexec/"litani", PATH: "\"#{libexec}/vendor/bin:${PATH}\""
+    (bin"litani").write_env_script libexec"litani", PATH: "\"#{libexec}vendorbin:${PATH}\""
 
-    cd libexec/"doc" do
-      system libexec/"vendor/bin/python3", "configure"
+    cd libexec"doc" do
+      system libexec"vendorbinpython3", "configure"
       system "ninja", "--verbose"
     end
-    man1.install libexec.glob("doc/out/man/*.1")
-    man5.install libexec.glob("doc/out/man/*.5")
-    man7.install libexec.glob("doc/out/man/*.7")
-    doc.install libexec/"doc/out/html/index.html"
-    rm_rf libexec/"doc"
+    man1.install libexec.glob("docoutman*.1")
+    man5.install libexec.glob("docoutman*.5")
+    man7.install libexec.glob("docoutman*.7")
+    doc.install libexec"docouthtmlindex.html"
+    rm_rf libexec"doc"
   end
 
   test do
-    system bin/"litani", "init", "--project-name", "test-installation"
-    system bin/"litani", "add-job",
-           "--command", "/usr/bin/true",
+    system bin"litani", "init", "--project-name", "test-installation"
+    system bin"litani", "add-job",
+           "--command", "usrbintrue",
            "--pipeline-name", "test-installation",
            "--ci-stage", "test"
-    system bin/"litani", "run-build"
+    system bin"litani", "run-build"
   end
 end

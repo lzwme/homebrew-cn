@@ -2,10 +2,10 @@ cask "font-martian-mono-nerd-font" do
   version "3.1.1"
   sha256 "3b52842f3a3cf65e83feb21a87fdcbf9f9effdd6ded42461a96ac62e788a5dd2"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/MartianMono.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}MartianMono.zip"
   name "MartianMono Nerd Font (MartianMono)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

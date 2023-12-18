@@ -1,16 +1,16 @@
 class Uvg266 < Formula
-  desc "Open-source VVC/H.266 encoder"
-  homepage "https://github.com/ultravideo/uvg266"
+  desc "Open-source VVCH.266 encoder"
+  homepage "https:github.comultravideouvg266"
   license "BSD-3-Clause"
-  head "https://github.com/ultravideo/uvg266.git", branch: "master"
+  head "https:github.comultravideouvg266.git", branch: "master"
 
   stable do
-    url "https://ghproxy.com/https://github.com/ultravideo/uvg266/archive/refs/tags/v0.8.0.tar.gz"
+    url "https:github.comultravideouvg266archiverefstagsv0.8.0.tar.gz"
     sha256 "27e4306577fe646951bd3c12685c1527b41385bfcb95262233669fc7f44f21bd"
 
     # Fix attempts to build AVX2 code on arm64 - remove on next release
     patch do
-      url "https://github.com/ultravideo/uvg266/commit/e5e32d67f43ba73db4a1a17aa975a070f15496be.patch?full_index=1"
+      url "https:github.comultravideouvg266commite5e32d67f43ba73db4a1a17aa975a070f15496be.patch?full_index=1"
       sha256 "2b2e0938eeab7ea9900ec2f40e09debdcd908e13fffb44f66556baa904edaeff"
     end
   end
@@ -28,7 +28,7 @@ class Uvg266 < Formula
   depends_on "cmake" => :build
 
   resource "homebrew-videosample" do
-    url "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
+    url "https:samples.mplayerhq.huV-codecslm20.avi"
     sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
   end
 
@@ -43,8 +43,8 @@ class Uvg266 < Formula
   test do
     # download small sample and try to encode it
     resource("homebrew-videosample").stage do
-      system bin/"uvg266", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.vvc"
-      assert_predicate Pathname.pwd/"lm20.vvc", :exist?
+      system bin"uvg266", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.vvc"
+      assert_predicate Pathname.pwd"lm20.vvc", :exist?
     end
   end
 end

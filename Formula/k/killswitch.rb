@@ -1,7 +1,7 @@
 class Killswitch < Formula
   desc "VPN kill switch for macOS"
-  homepage "https://vpn-kill-switch.com"
-  url "https://ghproxy.com/https://github.com/vpn-kill-switch/killswitch/archive/refs/tags/v0.7.3.tar.gz"
+  homepage "https:vpn-kill-switch.com"
+  url "https:github.comvpn-kill-switchkillswitcharchiverefstagsv0.7.3.tar.gz"
   sha256 "dbc1fc04e9945049e0cad3aa18740394cac9d93a0aacca00d45c82ec891346f1"
   license "BSD-3-Clause"
 
@@ -19,10 +19,10 @@ class Killswitch < Formula
 
   def install
     system "go", "build", "-mod=readonly", *std_go_args(ldflags: "-s -w -X main.version=#{version}"),
-           "cmd/killswitch/main.go"
+           "cmdkillswitchmain.go"
   end
 
   test do
-    assert_match "No VPN interface found", shell_output("#{bin}/killswitch 2>&1", 1)
+    assert_match "No VPN interface found", shell_output("#{bin}killswitch 2>&1", 1)
   end
 end

@@ -1,7 +1,7 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
-  homepage "https://github.com/ReagentX/imessage-exporter"
-  url "https://ghproxy.com/https://github.com/ReagentX/imessage-exporter/archive/refs/tags/1.8.0.tar.gz"
+  homepage "https:github.comReagentXimessage-exporter"
+  url "https:github.comReagentXimessage-exporterarchiverefstags1.8.0.tar.gz"
   sha256 "59ecddd92cf995396efa779ce7384d26b38d983e80b3d590c7b776b350350b96"
   license "GPL-3.0-only"
 
@@ -19,14 +19,14 @@ class ImessageExporter < Formula
 
   def install
     # manifest set to 0.0.0 for some reason, matching upstream build behavior
-    # https://github.com/ReagentX/imessage-exporter/blob/develop/build.sh
-    inreplace "imessage-exporter/Cargo.toml", "version = \"0.0.0\"",
+    # https:github.comReagentXimessage-exporterblobdevelopbuild.sh
+    inreplace "imessage-exporterCargo.toml", "version = \"0.0.0\"",
                                               "version = \"#{version}\""
     system "cargo", "install", *std_cargo_args(path: "imessage-exporter")
   end
 
   test do
-    assert_match version.to_s, shell_output(bin/"imessage-exporter --version")
-    assert_match "Unable to launch", shell_output(bin/"imessage-exporter --diagnostics 2>&1")
+    assert_match version.to_s, shell_output(bin"imessage-exporter --version")
+    assert_match "Unable to launch", shell_output(bin"imessage-exporter --diagnostics 2>&1")
   end
 end

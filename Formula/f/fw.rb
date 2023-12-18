@@ -1,7 +1,7 @@
 class Fw < Formula
   desc "Workspace productivity booster"
-  homepage "https://github.com/brocode/fw"
-  url "https://ghproxy.com/https://github.com/brocode/fw/archive/refs/tags/v2.19.1.tar.gz"
+  homepage "https:github.combrocodefw"
+  url "https:github.combrocodefwarchiverefstagsv2.19.1.tar.gz"
   sha256 "f949c3e29e11688c3ab2a7448b9fea2caf07d89d95da7bef00976541f4d957e7"
   license "WTFPL"
 
@@ -30,7 +30,7 @@ class Fw < Formula
   uses_from_macos "zlib"
 
   resource "fw.1" do
-    url "https://ghproxy.com/https://github.com/brocode/fw/releases/download/v2.19.0/fw.1"
+    url "https:github.combrocodefwreleasesdownloadv2.19.0fw.1"
     sha256 "b19e2ccb837e4210d7ee8bb7a33b7c967a5734e52c6d050cc716490cac061470"
   end
 
@@ -44,7 +44,7 @@ class Fw < Formula
   end
 
   test do
-    assert_match "Synchronizing everything", shell_output("#{bin}/fw sync 2>&1", 1)
-    assert_match "fw #{version}", shell_output("#{bin}/fw --version")
+    assert_match "Synchronizing everything", shell_output("#{bin}fw sync 2>&1", 1)
+    assert_match "fw #{version}", shell_output("#{bin}fw --version")
   end
 end

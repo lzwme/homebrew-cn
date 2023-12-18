@@ -1,10 +1,10 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
-  homepage "https://github.com/facebook/watchman"
-  url "https://ghproxy.com/https://github.com/facebook/watchman/archive/refs/tags/v2023.12.04.00.tar.gz"
+  homepage "https:github.comfacebookwatchman"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2023.12.04.00.tar.gz"
   sha256 "f7f664d74b00713a1aa93a5af7f849fb864d2e356d15213047a6c7bd89845533"
   license "MIT"
-  head "https://github.com/facebook/watchman.git", branch: "main"
+  head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "71ba771348e2bbcff73f79dc7d671bb68c97a5505286c5b1ee75fd38ff59974b"
@@ -16,7 +16,7 @@ class Watchman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7b49a58c8f934acbf197566eb9f728396d424559db23d45b4f9cf4cb97bc66c"
   end
 
-  # https://github.com/facebook/watchman/issues/963
+  # https:github.comfacebookwatchmanissues963
   pour_bottle? only_if: :default_prefix
 
   depends_on "cmake" => :build
@@ -44,7 +44,7 @@ class Watchman < Formula
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "CMakeLists.txt",
-              /gtest_discover_tests\((.*)\)/,
+              gtest_discover_tests\((.*)\),
               "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
 
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
@@ -57,23 +57,23 @@ class Watchman < Formula
                     "-DPython3_EXECUTABLE=#{which("python3.11")}",
                     "-DWATCHMAN_VERSION_OVERRIDE=#{version}",
                     "-DWATCHMAN_BUILDINFO_OVERRIDE=#{tap.user}",
-                    "-DWATCHMAN_STATE_DIR=#{var}/run/watchman",
+                    "-DWATCHMAN_STATE_DIR=#{var}runwatchman",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     path = Pathname.new(File.join(prefix, HOMEBREW_PREFIX))
-    bin.install (path/"bin").children
-    lib.install (path/"lib").children
+    bin.install (path"bin").children
+    lib.install (path"lib").children
     path.rmtree
   end
 
   def post_install
-    (var/"run/watchman").mkpath
-    chmod 042777, var/"run/watchman"
+    (var"runwatchman").mkpath
+    chmod 042777, var"runwatchman"
   end
 
   test do
-    assert_equal(version.to_s, shell_output("#{bin}/watchman -v").chomp)
+    assert_equal(version.to_s, shell_output("#{bin}watchman -v").chomp)
   end
 end

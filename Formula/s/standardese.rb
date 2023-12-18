@@ -1,21 +1,21 @@
 class Standardese < Formula
   desc "Next-gen documentation generator for C++"
-  homepage "https://standardese.github.io"
+  homepage "https:standardese.github.io"
   # TODO: use resource blocks for vendored deps
   license "MIT"
   revision 16
-  head "https://github.com/standardese/standardese.git", branch: "master"
+  head "https:github.comstandardesestandardese.git", branch: "master"
 
   # Remove stable block when patch is no longer needed.
   stable do
-    url "https://github.com/standardese/standardese.git",
+    url "https:github.comstandardesestandardese.git",
         tag:      "0.5.2",
         revision: "0b23537e235690e01ba7f8362a22d45125e7b675"
 
     # Fix build with new GCC.
-    # https://github.com/standardese/standardese/pull/233
+    # https:github.comstandardesestandardesepull233
     patch do
-      url "https://github.com/standardese/standardese/commit/15e05be2301fe43d1e209b2f749c99a95c356e04.patch?full_index=1"
+      url "https:github.comstandardesestandardesecommit15e05be2301fe43d1e209b2f749c99a95c356e04.patch?full_index=1"
       sha256 "e5f03ea321572dd52b9241c2a01838dfe7e6df7e363a8d19bfeac5861baf5d3f"
     end
   end
@@ -44,48 +44,48 @@ class Standardese < Formula
     # Disable building test objects because they use an outdated vendored version of catch2.
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=OFF",
-                    "-DCMARK_LIBRARY=#{Formula["cmark-gfm"].opt_lib/shared_library("libcmark-gfm")}",
+                    "-DCMARK_LIBRARY=#{Formula["cmark-gfm"].opt_libshared_library("libcmark-gfm")}",
                     "-DCMARK_INCLUDE_DIR=#{Formula["cmark-gfm"].opt_include}",
                     "-DSTANDARDESE_BUILD_TEST=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    include.install "include/standardese"
-    (lib/"cmake/standardese").install "standardese-config.cmake"
+    include.install "includestandardese"
+    (lib"cmakestandardese").install "standardese-config.cmake"
   end
 
   test do
-    (testpath/"test.hpp").write <<~EOS
+    (testpath"test.hpp").write <<~EOS
       #pragma once
 
       #include <string>
       using namespace std;
 
-      /// \\brief A namespace.
-      ///
-      /// Namespaces are cool!
+       \\brief A namespace.
+      
+       Namespaces are cool!
       namespace test {
-          //! A class.
-          /// \\effects Lots!
+          ! A class.
+           \\effects Lots!
           class Test {
           public:
-              int foo; //< Something to do with an index into [bar](<> "test::Test::bar").
-              wstring bar; //< A [wide string](<> "std::wstring").
+              int foo; < Something to do with an index into [bar](<> "test::Test::bar").
+              wstring bar; < A [wide string](<> "std::wstring").
 
-              /// \\requires The parameter must be properly constructed.
+               \\requires The parameter must be properly constructed.
               explicit Test(const Test &) noexcept;
 
               ~Test() noexcept;
           };
 
-          /// \\notes Some stuff at the end.
+           \\notes Some stuff at the end.
           using Baz = Test;
       };
     EOS
-    system bin/"standardese", "--compilation.standard", "c++17",
+    system bin"standardese", "--compilation.standard", "c++17",
                               "--output.format", "xml",
-                              testpath/"test.hpp"
-    assert_includes (testpath/"doc_test.xml").read, "<subdocument output-name=\"doc_test\" title=\"test.hpp\">"
+                              testpath"test.hpp"
+    assert_includes (testpath"doc_test.xml").read, "<subdocument output-name=\"doc_test\" title=\"test.hpp\">"
   end
 end

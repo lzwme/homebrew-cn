@@ -1,7 +1,7 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
-  homepage "https://github.com/helmfile/helmfile"
-  url "https://ghproxy.com/https://github.com/helmfile/helmfile/archive/refs/tags/v0.159.0.tar.gz"
+  homepage "https:github.comhelmfilehelmfile"
+  url "https:github.comhelmfilehelmfilearchiverefstagsv0.159.0.tar.gz"
   sha256 "56a9c510cd5832373468623b2897948b679e09ad090b9e41991b11fecd553360"
   license "MIT"
   version_scheme 1
@@ -22,22 +22,22 @@ class Helmfile < Formula
   def install
     ldflags = %W[
       -s -w
-      -X go.szostok.io/version.version=v#{version}
-      -X go.szostok.io/version.buildDate=#{time.iso8601}
-      -X go.szostok.io/version.commit="brew"
-      -X go.szostok.io/version.commitDate=#{time.iso8601}
-      -X go.szostok.io/version.dirtyBuild=false
+      -X go.szostok.ioversion.version=v#{version}
+      -X go.szostok.ioversion.buildDate=#{time.iso8601}
+      -X go.szostok.ioversion.commit="brew"
+      -X go.szostok.ioversion.commitDate=#{time.iso8601}
+      -X go.szostok.ioversion.dirtyBuild=false
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"helmfile", "completion")
+    generate_completions_from_executable(bin"helmfile", "completion")
   end
 
   test do
-    (testpath/"helmfile.yaml").write <<~EOS
+    (testpath"helmfile.yaml").write <<~EOS
       repositories:
       - name: stable
-        url: https://charts.helm.sh/stable
+        url: https:charts.helm.shstable
 
       releases:
       - name: vault            # name of this release
@@ -45,12 +45,12 @@ class Helmfile < Formula
         createNamespace: true  # helm 3.2+ automatically create release namespace (default true)
         labels:                # Arbitrary key value pairs for filtering releases
           foo: bar
-        chart: stable/vault    # the chart being installed to create this release, referenced by `repository/chart` syntax
+        chart: stablevault    # the chart being installed to create this release, referenced by `repositorychart` syntax
         version: ~1.24.1       # the semver of the chart. range constraint is supported
     EOS
-    system Formula["helm"].opt_bin/"helm", "create", "foo"
-    output = "Adding repo stable https://charts.helm.sh/stable"
-    assert_match output, shell_output("#{bin}/helmfile -f helmfile.yaml repos 2>&1")
-    assert_match version.to_s, shell_output("#{bin}/helmfile -v")
+    system Formula["helm"].opt_bin"helm", "create", "foo"
+    output = "Adding repo stable https:charts.helm.shstable"
+    assert_match output, shell_output("#{bin}helmfile -f helmfile.yaml repos 2>&1")
+    assert_match version.to_s, shell_output("#{bin}helmfile -v")
   end
 end

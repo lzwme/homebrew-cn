@@ -1,10 +1,10 @@
 class Minder < Formula
   desc "CLI for interacting with Stacklok's Minder platform"
-  homepage "https://minder-docs.stacklok.dev"
-  url "https://ghproxy.com/https://github.com/stacklok/minder/archive/refs/tags/v0.0.21.tar.gz"
+  homepage "https:minder-docs.stacklok.dev"
+  url "https:github.comstacklokminderarchiverefstagsv0.0.21.tar.gz"
   sha256 "cf4679938a37d64a1c9e16bd9862f7347ac532a8b8254f780508bc692460ed3a"
   license "Apache-2.0"
-  head "https://github.com/stacklok/minder.git", branch: "main"
+  head "https:github.comstacklokminder.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbf38b317dcfb030a1e1fa206a7a1f749dc86b7cf10d1d378030d218fd8c0785"
@@ -21,17 +21,17 @@ class Minder < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/stacklok/minder/internal/constants.CLIVersion=#{version}
+      -X github.comstacklokminderinternalconstants.CLIVersion=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cli"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcli"
 
-    generate_completions_from_executable(bin/"minder", "completion")
+    generate_completions_from_executable(bin"minder", "completion")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/minder version")
+    assert_match version.to_s, shell_output("#{bin}minder version")
 
-    output = shell_output("#{bin}/minder artifact list -p github 2>&1", 16)
+    output = shell_output("#{bin}minder artifact list -p github 2>&1", 16)
     assert_match "Details: Unauthenticated indicates the request does not have valid", output
   end
 end

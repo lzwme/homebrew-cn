@@ -1,7 +1,7 @@
 class StormsshCompletion < Formula
   desc "Completion for storm-ssh"
-  homepage "https://github.com/vigo/stormssh-completion"
-  url "https://ghproxy.com/https://github.com/vigo/stormssh-completion/archive/refs/tags/0.1.1.tar.gz"
+  homepage "https:github.comvigostormssh-completion"
+  url "https:github.comvigostormssh-completionarchiverefstags0.1.1.tar.gz"
   sha256 "cbdc35d674919aacc18723c42f2b6354fcd3efdcbfbb28e1fe60fbd1c1c7b18d"
   license "MIT"
 
@@ -18,6 +18,6 @@ class StormsshCompletion < Formula
 
   test do
     assert_match "-F __stormssh",
-      shell_output("bash -c 'source #{bash_completion}/stormssh && complete -p storm'")
+      shell_output("bash -c 'source #{bash_completion}stormssh && complete -p storm'")
   end
 end

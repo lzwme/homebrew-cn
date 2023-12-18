@@ -1,10 +1,10 @@
 class Librealsense < Formula
   desc "Intel RealSense D400 series and SR300 capture"
-  homepage "https://github.com/IntelRealSense/librealsense"
-  url "https://ghproxy.com/https://github.com/IntelRealSense/librealsense/archive/refs/tags/v2.54.2.tar.gz"
+  homepage "https:github.comIntelRealSenselibrealsense"
+  url "https:github.comIntelRealSenselibrealsensearchiverefstagsv2.54.2.tar.gz"
   sha256 "e3a767337ff40ae41000049a490ab84bd70b00cbfef65e8cdbadf17fd2e1e5a8"
   license "Apache-2.0"
-  head "https://github.com/IntelRealSense/librealsense.git", branch: "master"
+  head "https:github.comIntelRealSenselibrealsense.git", branch: "master"
 
   livecheck do
     url :stable
@@ -27,7 +27,7 @@ class Librealsense < Formula
   depends_on "libusb"
   depends_on "openssl@3"
   # Build on Apple Silicon fails when generating Unix Makefiles.
-  # Ref: https://github.com/IntelRealSense/librealsense/issues/8090
+  # Ref: https:github.comIntelRealSenselibrealsenseissues8090
   on_arm do
     depends_on xcode: :build
   end
@@ -51,8 +51,8 @@ class Librealsense < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <librealsense2/rs.h>
+    (testpath"test.c").write <<~EOS
+      #include <librealsense2rs.h>
       #include <stdio.h>
       int main()
       {
@@ -61,6 +61,6 @@ class Librealsense < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-o", "test"
-    assert_equal version.to_s, shell_output("./test").strip
+    assert_equal version.to_s, shell_output(".test").strip
   end
 end

@@ -1,14 +1,14 @@
 class Logtalk < Formula
   desc "Declarative object-oriented logic programming language"
-  homepage "https://logtalk.org/"
-  url "https://ghproxy.com/https://github.com/LogtalkDotOrg/logtalk3/archive/refs/tags/lgt3730stable.tar.gz"
+  homepage "https:logtalk.org"
+  url "https:github.comLogtalkDotOrglogtalk3archiverefstagslgt3730stable.tar.gz"
   version "3.73.0"
   sha256 "a1b3c886889d2cda2a0ad9fbc065352e22cdd3a959ff07bfe59cc09fa4271246"
   license "Apache-2.0"
 
   livecheck do
-    url "https://logtalk.org/download.html"
-    regex(/Latest stable version:.*?v?(\d+(?:\.\d+)+)/i)
+    url "https:logtalk.orgdownload.html"
+    regex(Latest stable version:.*?v?(\d+(?:\.\d+)+)i)
   end
 
   bottle do
@@ -24,6 +24,6 @@ class Logtalk < Formula
   depends_on "gnu-prolog"
 
   def install
-    cd("scripts") { system "./install.sh", "-p", prefix }
+    cd("scripts") { system ".install.sh", "-p", prefix }
   end
 end

@@ -1,14 +1,14 @@
 class Hypre < Formula
   desc "Library featuring parallel multigrid methods for grid problems"
-  homepage "https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods"
-  url "https://ghproxy.com/https://github.com/hypre-space/hypre/archive/refs/tags/v2.30.0.tar.gz"
+  homepage "https:computing.llnl.govprojectshypre-scalable-linear-solvers-multigrid-methods"
+  url "https:github.comhypre-spacehyprearchiverefstagsv2.30.0.tar.gz"
   sha256 "8e2af97d9a25bf44801c6427779f823ebc6f306438066bba7fcbc2a5f9b78421"
   license any_of: ["MIT", "Apache-2.0"]
-  head "https://github.com/hypre-space/hypre.git", branch: "master"
+  head "https:github.comhypre-spacehypre.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Hypre < Formula
 
   def install
     cd "src" do
-      system "./configure", "--prefix=#{prefix}",
+      system ".configure", "--prefix=#{prefix}",
                             "--with-MPI",
                             "--enable-bigint"
       system "make", "install"
@@ -34,7 +34,7 @@ class Hypre < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include "HYPRE_struct_ls.h"
       int main(int argc, char* argv[]) {
         HYPRE_StructGrid grid;
@@ -42,6 +42,6 @@ class Hypre < Formula
     EOS
 
     system ENV.cxx, "test.cpp", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

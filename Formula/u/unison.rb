@@ -1,16 +1,16 @@
 class Unison < Formula
   desc "File synchronization tool"
-  homepage "https://www.cis.upenn.edu/~bcpierce/unison/"
-  url "https://ghproxy.com/https://github.com/bcpierce00/unison/archive/refs/tags/v2.53.3.tar.gz"
+  homepage "https:www.cis.upenn.edu~bcpierceunison"
+  url "https:github.combcpierce00unisonarchiverefstagsv2.53.3.tar.gz"
   sha256 "aaea04fc5bc76dcfe8627683c9659ee4c194d4f992cc8aaa15bbb2820fc8de46"
   license "GPL-3.0-or-later"
-  head "https://github.com/bcpierce00/unison.git", branch: "master"
+  head "https:github.combcpierce00unison.git", branch: "master"
 
   # The "latest" release on GitHub sometimes points to unstable versions (e.g.,
   # release candidates), so we check the Git tags instead.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,15 +30,15 @@ class Unison < Formula
   def install
     ENV.deparallelize
     ENV.delete "CFLAGS" # ocamlopt reads CFLAGS but doesn't understand common options
-    ENV.delete "NAME" # https://github.com/Homebrew/homebrew/issues/28642
+    ENV.delete "NAME" # https:github.comHomebrewhomebrewissues28642
     system "make", "UISTYLE=text"
-    bin.install "src/unison"
+    bin.install "srcunison"
     # unison-fsmonitor is built just for Linux targets
-    bin.install "src/unison-fsmonitor" if OS.linux?
+    bin.install "srcunison-fsmonitor" if OS.linux?
     prefix.install_metafiles "src"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/unison -version")
+    assert_match version.to_s, shell_output("#{bin}unison -version")
   end
 end

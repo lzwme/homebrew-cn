@@ -1,11 +1,11 @@
 class Wtfutil < Formula
   desc "Personal information dashboard for your terminal"
-  homepage "https://wtfutil.com"
-  url "https://github.com/wtfutil/wtf.git",
+  homepage "https:wtfutil.com"
+  url "https:github.comwtfutilwtf.git",
       tag:      "v0.43.0",
       revision: "ea7f6ed1ce0e3a96c7ce7aa337bfdae9cfc27a93"
   license "MPL-2.0"
-  head "https://github.com/wtfutil/wtf.git", branch: "master"
+  head "https:github.comwtfutilwtf.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "56f84f075efbdd2db2a81171b4e1574cb0b9aac21f600ab3a41d9662ae12093c"
@@ -31,7 +31,7 @@ class Wtfutil < Formula
   end
 
   test do
-    testconfig = testpath/"config.yml"
+    testconfig = testpath"config.yml"
     testconfig.write <<~EOS
       wtf:
         colors:
@@ -69,7 +69,7 @@ class Wtfutil < Formula
 
     begin
       pid = fork do
-        exec "#{bin}/wtfutil", "--config=#{testconfig}"
+        exec "#{bin}wtfutil", "--config=#{testconfig}"
       end
     ensure
       Process.kill("HUP", pid)

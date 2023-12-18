@@ -1,10 +1,10 @@
 class Rdap < Formula
   desc "Command-line client for the Registration Data Access Protocol"
-  homepage "https://www.openrdap.org"
-  url "https://ghproxy.com/https://github.com/openrdap/rdap/archive/refs/tags/v0.9.1.tar.gz"
+  homepage "https:www.openrdap.org"
+  url "https:github.comopenrdaprdaparchiverefstagsv0.9.1.tar.gz"
   sha256 "06a330a9e7d87d89274a0bcedc5852b9f6a4df81baec438fdb6156f49068996d"
   license "MIT"
-  head "https://github.com/openrdap/rdap.git", branch: "master"
+  head "https:github.comopenrdaprdap.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f017c594a757f00c98b0b48306a8b3a3a438d312b16a77c3840553c2debcbef4"
@@ -19,18 +19,18 @@ class Rdap < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/rdap"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdrdap"
   end
 
   test do
     # check version
-    assert_match "OpenRDAP v#{version}", shell_output("#{bin}/rdap --help 2>&1", 1)
+    assert_match "OpenRDAP v#{version}", shell_output("#{bin}rdap --help 2>&1", 1)
 
     # no localhost rdap server
-    assert_match "No RDAP servers found for", shell_output("#{bin}/rdap -t ip 127.0.0.1 2>&1", 1)
+    assert_match "No RDAP servers found for", shell_output("#{bin}rdap -t ip 127.0.0.1 2>&1", 1)
 
     # check github.com domain on rdap
-    output = shell_output("#{bin}/rdap github.com")
+    output = shell_output("#{bin}rdap github.com")
     assert_match "Domain Name: GITHUB.COM", output
     assert_match "Nameserver:", output
   end

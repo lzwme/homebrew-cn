@@ -2,10 +2,10 @@ cask "font-sora" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/sora/Sora%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflsoraSora%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Sora"
-  homepage "https://fonts.google.com/specimen/Sora"
+  homepage "https:fonts.google.comspecimenSora"
 
   font "Sora[wght].ttf"
 

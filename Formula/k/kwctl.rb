@@ -1,10 +1,10 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
-  homepage "https://www.kubewarden.io/"
-  url "https://ghproxy.com/https://github.com/kubewarden/kwctl/archive/refs/tags/v1.9.1.tar.gz"
+  homepage "https:www.kubewarden.io"
+  url "https:github.comkubewardenkwctlarchiverefstagsv1.9.1.tar.gz"
   sha256 "7bf6ee53c3e27117122b5e025421b0fa606eab580197edae0eddf2e063709568"
   license "Apache-2.0"
-  head "https://github.com/kubewarden/kwctl.git", branch: "main"
+  head "https:github.comkubewardenkwctl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3533fc941cc2693cea9ddc0e3326eef09c193ab5dbe8b3e8a0729a3b87ad9e98"
@@ -27,12 +27,12 @@ class Kwctl < Formula
   end
 
   test do
-    test_policy = "ghcr.io/kubewarden/policies/safe-labels:v0.1.7"
-    assert_equal "kwctl #{version}", shell_output("#{bin}/kwctl --version").strip.split("\n")[0]
-    system "#{bin}/kwctl", "pull", test_policy
-    assert_match test_policy, shell_output("#{bin}/kwctl policies")
+    test_policy = "ghcr.iokubewardenpoliciessafe-labels:v0.1.7"
+    assert_equal "kwctl #{version}", shell_output("#{bin}kwctl --version").strip.split("\n")[0]
+    system "#{bin}kwctl", "pull", test_policy
+    assert_match test_policy, shell_output("#{bin}kwctl policies")
 
-    (testpath/"ingress.json").write <<~EOS
+    (testpath"ingress.json").write <<~EOS
       {
         "uid": "1299d386-525b-4032-98ae-1949f69f9cfc",
         "kind": {
@@ -55,7 +55,7 @@ class Kwctl < Formula
           ]
         },
         "object": {
-          "apiVersion": "networking.k8s.io/v1",
+          "apiVersion": "networking.k8s.iov1",
           "kind": "Ingress",
           "metadata": {
             "name": "tls-example-ingress",
@@ -68,7 +68,7 @@ class Kwctl < Formula
         }
       }
     EOS
-    (testpath/"policy-settings.json").write <<~EOS
+    (testpath"policy-settings.json").write <<~EOS
       {
         "denied_labels": [
           "owner"
@@ -77,10 +77,10 @@ class Kwctl < Formula
     EOS
 
     output = shell_output(
-      "#{bin}/kwctl run " \
-      "registry://#{test_policy} " \
-      "--request-path #{testpath}/ingress.json " \
-      "--settings-path #{testpath}/policy-settings.json",
+      "#{bin}kwctl run " \
+      "registry:#{test_policy} " \
+      "--request-path #{testpath}ingress.json " \
+      "--settings-path #{testpath}policy-settings.json",
     )
     assert_match "The following labels are denied: owner", output
   end

@@ -2,10 +2,10 @@ cask "font-envy-code-r-nerd-font" do
   version "3.1.1"
   sha256 "16febf27a6b9b0e8c40658efa80cf4e99cd0fabee8ae7aadf4276be0193d398e"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/EnvyCodeR.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}EnvyCodeR.zip"
   name "EnvyCodeR Nerd Font (Envy Code R)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

@@ -1,7 +1,7 @@
 class Yder < Formula
   desc "Logging library for C applications"
-  homepage "https://babelouest.github.io/yder/"
-  url "https://ghproxy.com/https://github.com/babelouest/yder/archive/refs/tags/v1.4.20.tar.gz"
+  homepage "https:babelouest.github.ioyder"
+  url "https:github.combabelouestyderarchiverefstagsv1.4.20.tar.gz"
   sha256 "c1a7f2281514d0d0bba912b6b70f371d8c127ccfd644b8c438c9301a0fd4c5f2"
   license "LGPL-2.1-only"
 
@@ -40,7 +40,7 @@ class Yder < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include <yder.h>
 
@@ -52,6 +52,6 @@ class Yder < Formula
       }
     EOS
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lyder", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

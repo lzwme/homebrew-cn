@@ -2,12 +2,12 @@ cask "font-post-no-bills-colombo" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/postnobillscolombo"
+      only_path: "oflpostnobillscolombo"
   name "Post No Bills Colombo"
-  homepage "https://fonts.google.com/specimen/Stick+No+Bills"
+  homepage "https:fonts.google.comspecimenStick+No+Bills"
 
   font "PostNoBillsColombo-Bold.ttf"
   font "PostNoBillsColombo-ExtraBold.ttf"

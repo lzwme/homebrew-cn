@@ -1,11 +1,11 @@
 class LibjsonRpcCpp < Formula
   desc "C++ framework for json-rpc"
-  homepage "https://github.com/cinemast/libjson-rpc-cpp"
-  url "https://ghproxy.com/https://github.com/cinemast/libjson-rpc-cpp/archive/refs/tags/v1.4.1.tar.gz"
+  homepage "https:github.comcinemastlibjson-rpc-cpp"
+  url "https:github.comcinemastlibjson-rpc-cpparchiverefstagsv1.4.1.tar.gz"
   sha256 "7a057e50d6203e4ea0a10ba5e4dbf344c48b177e5a3bf82e850eb3a783c11eb5"
   license "MIT"
   revision 2
-  head "https://github.com/cinemast/libjson-rpc-cpp.git", branch: "master"
+  head "https:github.comcinemastlibjson-rpc-cpp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "237918e75ba97d474515ef9d3a532aa44d1d3a6c5736dc826f243fd4f195376d"
@@ -35,6 +35,6 @@ class LibjsonRpcCpp < Formula
   end
 
   test do
-    system "#{bin}/jsonrpcstub", "-h"
+    system "#{bin}jsonrpcstub", "-h"
   end
 end

@@ -1,7 +1,7 @@
 class Rlog < Formula
   desc "Flexible message logging facility for C++"
-  homepage "https://github.com/vgough/rlog"
-  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rlog/rlog-1.4.tar.gz"
+  homepage "https:github.comvgoughrlog"
+  url "https:storage.googleapis.comgoogle-code-archive-downloadsv2code.google.comrlogrlog-1.4.tar.gz"
   sha256 "a938eeedeb4d56f1343dc5561bc09ae70b24e8f70d07a6f8d4b6eed32e783f79"
   license "LGPL-2.1"
 
@@ -28,16 +28,16 @@ class Rlog < Formula
     # Fix flat namespace usage
     inreplace "configure", "${wl}-flat_namespace ${wl}-undefined ${wl}suppress", "${wl}-undefined ${wl}dynamic_lookup"
 
-    system "./configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system ".configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
 end
 
 # This patch solves an OSX build issue, should not be necessary for the next release according to
-# https://code.google.com/p/rlog/issues/detail?id=7
+# https:code.google.comprlogissuesdetail?id=7
 __END__
---- orig/rlog/common.h.in	2008-06-14 20:10:13.000000000 -0700
-+++ new/rlog/common.h.in	2009-05-18 16:05:04.000000000 -0700
+--- origrlogcommon.h.in	2008-06-14 20:10:13.000000000 -0700
++++ newrlogcommon.h.in	2009-05-18 16:05:04.000000000 -0700
 @@ -52,7 +52,12 @@
 
  # define PRINTF(FMT,X) __attribute__ (( __format__ ( __printf__, FMT, X)))

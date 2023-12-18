@@ -1,7 +1,7 @@
 class Libcue < Formula
   desc "Cue sheet parser library for C"
-  homepage "https://github.com/lipnitsk/libcue"
-  url "https://ghproxy.com/https://github.com/lipnitsk/libcue/archive/refs/tags/v2.3.0.tar.gz"
+  homepage "https:github.comlipnitsklibcue"
+  url "https:github.comlipnitsklibcuearchiverefstagsv2.3.0.tar.gz"
   sha256 "cc1b3a65c60bd88b77a1ddd1574042d83cf7cc32b85fe9481c99613359eb7cfe"
   license "GPL-2.0"
 
@@ -23,14 +23,14 @@ class Libcue < Formula
   def install
     system "cmake", ".", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "make", "install"
-    (pkgshare/"tests").install Dir["t/*"]
+    (pkgshare"tests").install Dir["t*"]
   end
 
   test do
-    cp_r (pkgshare/"tests").children, testpath
+    cp_r (pkgshare"tests").children, testpath
     Dir["*.c"].each do |f|
       system ENV.cc, f, "-o", "test", "-L#{lib}", "-lcue", "-I#{include}"
-      system "./test"
+      system ".test"
       rm "test"
     end
   end

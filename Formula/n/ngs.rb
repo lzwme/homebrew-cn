@@ -1,10 +1,10 @@
 class Ngs < Formula
   desc "Powerful programming language and shell designed specifically for Ops"
-  homepage "https://ngs-lang.org/"
-  url "https://ghproxy.com/https://github.com/ngs-lang/ngs/archive/refs/tags/v0.2.16.tar.gz"
+  homepage "https:ngs-lang.org"
+  url "https:github.comngs-langngsarchiverefstagsv0.2.16.tar.gz"
   sha256 "282bcd00164044a01b025b5373ed2e0b03d6e5b3d04cea2f363629a7ea5b92c7"
   license "GPL-3.0-only"
-  head "https://github.com/ngs-lang/ngs.git", branch: "master"
+  head "https:github.comngs-langngs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "3dc53e9e67cb000b4c98e40caabe6a04f7d7a6a54933d66e42414b8376d7885e"
@@ -33,10 +33,10 @@ class Ngs < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    share.install prefix/"man" unless OS.mac?
+    share.install prefix"man" unless OS.mac?
   end
 
   test do
-    assert_match "Hello World!", shell_output("#{bin}/ngs -e 'echo(\"Hello World!\")'")
+    assert_match "Hello World!", shell_output("#{bin}ngs -e 'echo(\"Hello World!\")'")
   end
 end

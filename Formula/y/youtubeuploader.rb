@@ -1,15 +1,15 @@
 class Youtubeuploader < Formula
   desc "Scripted uploads to Youtube"
-  homepage "https://github.com/porjo/youtubeuploader"
-  url "https://ghproxy.com/https://github.com/porjo/youtubeuploader/archive/refs/tags/23.06.tar.gz"
+  homepage "https:github.comporjoyoutubeuploader"
+  url "https:github.comporjoyoutubeuploaderarchiverefstags23.06.tar.gz"
   sha256 "54161eac7efc92dba00ad98a92bfd9e067bdf7cd7208d370e0e0e4bf58faa105"
   license "Apache-2.0"
-  head "https://github.com/porjo/youtubeuploader.git", branch: "master"
+  head "https:github.comporjoyoutubeuploader.git", branch: "master"
 
   # Upstream creates stable version tags (e.g., `23.03`) before a release but
   # the version isn't considered to be released until a corresponding release
   # is created on GitHub, so it's necessary to use the `GithubLatest` strategy.
-  # https://github.com/porjo/youtubeuploader/issues/169
+  # https:github.comporjoyoutubeuploaderissues169
   livecheck do
     url :stable
     strategy :github_latest
@@ -29,30 +29,30 @@ class Youtubeuploader < Formula
 
   def install
     ldflags = "-s -X main.appVersion=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/youtubeuploader"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdyoutubeuploader"
   end
 
   test do
     # Version
-    assert_match version.to_s, shell_output("#{bin}/youtubeuploader -version")
+    assert_match version.to_s, shell_output("#{bin}youtubeuploader -version")
 
     # OAuth
-    (testpath/"client_secrets.json").write <<~EOS
+    (testpath"client_secrets.json").write <<~EOS
       {
         "installed": {
           "client_id": "foo_client_id",
           "client_secret": "foo_client_secret",
           "redirect_uris": [
-            "http://localhost:8080/oauth2callback",
-            "https://localhost:8080/oauth2callback"
+            "http:localhost:8080oauth2callback",
+            "https:localhost:8080oauth2callback"
            ],
-          "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-          "token_uri": "https://accounts.google.com/o/oauth2/token"
+          "auth_uri": "https:accounts.google.comooauth2auth",
+          "token_uri": "https:accounts.google.comooauth2token"
         }
       }
     EOS
 
-    (testpath/"request.token").write <<~EOS
+    (testpath"request.token").write <<~EOS
       {
         "access_token": "test",
         "token_type": "Bearer",
@@ -61,7 +61,7 @@ class Youtubeuploader < Formula
       }
     EOS
 
-    output = shell_output("#{bin}/youtubeuploader -filename #{test_fixtures("test.m4a")} 2>&1", 1)
+    output = shell_output("#{bin}youtubeuploader -filename #{test_fixtures("test.m4a")} 2>&1", 1)
     assert_match 'oauth2: "invalid_client" "The OAuth client was not found."', output
   end
 end

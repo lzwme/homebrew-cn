@@ -2,22 +2,22 @@ cask "virtualbox" do
   version "7.0.12,159484"
   sha256 "d9e46fe33c0e25e1cb50a38e892d8713e7775d5e9cc87b29fd10452bae2709b7"
 
-  url "https://download.virtualbox.org/virtualbox/#{version.csv.first}/VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
+  url "https:download.virtualbox.orgvirtualbox#{version.csv.first}VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
   name "Oracle VirtualBox"
   desc "Virtualizer for x86 hardware"
-  homepage "https://www.virtualbox.org/"
+  homepage "https:www.virtualbox.org"
 
   livecheck do
-    url "https://www.virtualbox.org/wiki/Downloads"
+    url "https:www.virtualbox.orgwikiDownloads"
     strategy :page_match do |page|
-      match = page.match(/href=.*?VirtualBox-(\d+(?:\.\d+)+)-(\d+)-OSX.dmg/)
+      match = page.match(href=.*?VirtualBox-(\d+(?:\.\d+)+)-(\d+)-OSX.dmg)
       next if match.blank?
 
       "#{match[1]},#{match[2]}"
     end
   end
 
-  conflicts_with cask: "homebrew/cask-versions/virtualbox-beta"
+  conflicts_with cask: "homebrewcask-versionsvirtualbox-beta"
   depends_on macos: ">= :catalina"
   depends_on arch: :x86_64
 
@@ -46,10 +46,10 @@ cask "virtualbox" do
       ]
 
   postflight do
-    # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew, it creates it itself
+    # If VirtualBox is installed before `usrlocallibpkgconfig` is created by Homebrew, it creates it itself
     # with incorrect permissions that break other packages
-    # See https://github.com/Homebrew/homebrew-cask/issues/68730#issuecomment-534363026
-    set_ownership "/usr/local/lib/pkgconfig"
+    # See https:github.comHomebrewhomebrew-caskissues68730#issuecomment-534363026
+    set_ownership "usrlocallibpkgconfig"
   end
 
   uninstall script:  {
@@ -58,14 +58,14 @@ cask "virtualbox" do
               sudo:       true,
             },
             pkgutil: "org.virtualbox.pkg.*",
-            delete:  "/usr/local/bin/vboximg-mount"
+            delete:  "usrlocalbinvboximg-mount"
 
   zap trash: [
-        "/Library/Application Support/VirtualBox",
-        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.virtualbox.app.virtualbox*",
-        "~/Library/Preferences/org.virtualbox.app.VirtualBox*",
-        "~/Library/Saved Application State/org.virtualbox.app.VirtualBox*",
-        "~/Library/VirtualBox",
+        "LibraryApplication SupportVirtualBox",
+        "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.virtualbox.app.virtualbox*",
+        "~LibraryPreferencesorg.virtualbox.app.VirtualBox*",
+        "~LibrarySaved Application Stateorg.virtualbox.app.VirtualBox*",
+        "~LibraryVirtualBox",
       ],
-      rmdir: "~/VirtualBox VMs"
+      rmdir: "~VirtualBox VMs"
 end

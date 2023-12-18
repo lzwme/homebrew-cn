@@ -1,7 +1,7 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
-  homepage "https://lib.rs/crates/dua-cli"
-  url "https://ghproxy.com/https://github.com/Byron/dua-cli/archive/refs/tags/v2.23.0.tar.gz"
+  homepage "https:lib.rscratesdua-cli"
+  url "https:github.comByrondua-cliarchiverefstagsv2.23.0.tar.gz"
   sha256 "61f6fd0c13949d23224d9776c2fd444956d73dd363501e867cf11df6ca89ddfa"
   license "MIT"
 
@@ -23,14 +23,14 @@ class DuaCli < Formula
 
   test do
     # Test that usage is correct for these 2 files.
-    (testpath/"empty.txt").write("")
-    (testpath/"file.txt").write("01")
+    (testpath"empty.txt").write("")
+    (testpath"file.txt").write("01")
 
     expected = %r{
-      \e\[32m\s*0\s*B\e\[39m\ #{testpath}/empty.txt\n
-      \e\[32m\s*2\s*B\e\[39m\ #{testpath}/file.txt\n
+      \e\[32m\s*0\s*B\e\[39m\ #{testpath}empty.txt\n
+      \e\[32m\s*2\s*B\e\[39m\ #{testpath}file.txt\n
       \e\[32m\s*2\s*B\e\[39m\ total\n
     }x
-    assert_match expected, shell_output("#{bin}/dua -A #{testpath}/*.txt")
+    assert_match expected, shell_output("#{bin}dua -A #{testpath}*.txt")
   end
 end

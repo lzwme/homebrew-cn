@@ -1,11 +1,11 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
-  homepage "https://mamedev.org/"
-  url "https://ghproxy.com/https://github.com/mamedev/mame/archive/refs/tags/mame0261.tar.gz"
+  homepage "https:mamedev.org"
+  url "https:github.commamedevmamearchiverefstagsmame0261.tar.gz"
   version "0.261"
   sha256 "51d5ce1563897709ceb7a924c31a70cc5ff2bec466aab8d0cc9ff3cc72b38899"
   license "GPL-2.0-or-later"
-  head "https://github.com/mamedev/mame.git", branch: "master"
+  head "https:github.commamedevmame.git", branch: "master"
 
   livecheck do
     formula "mame"
@@ -46,7 +46,7 @@ class RomTools < Formula
 
   def install
     # Cut sdl2-config's invalid option.
-    inreplace "scripts/src/osd/sdl.lua", "--static", ""
+    inreplace "scriptssrcosdsdl.lua", "--static", ""
 
     args = %W[
       PYTHON_EXECUTABLE=#{which("python3.11")}
@@ -70,26 +70,26 @@ class RomTools < Formula
     ]
     bin.install "split" => "rom-split"
     bin.install "aueffectutil" if OS.mac?
-    man1.install Dir["docs/man/*.1"]
+    man1.install Dir["docsman*.1"]
   end
 
   # Needs more comprehensive tests
   test do
-    # system "#{bin}/aueffectutil" # segmentation fault
-    system "#{bin}/castool"
-    assert_match "chdman info", shell_output("#{bin}/chdman help info", 1)
-    system "#{bin}/floptool"
-    system "#{bin}/imgtool", "listformats"
-    system "#{bin}/jedutil", "-viewlist"
-    assert_match "linear equation", shell_output("#{bin}/ldresample 2>&1", 1)
-    assert_match "avifile.avi", shell_output("#{bin}/ldverify 2>&1", 1)
-    system "#{bin}/nltool", "--help"
-    system "#{bin}/nlwav", "--help"
-    assert_match "image1", shell_output("#{bin}/pngcmp 2>&1", 10)
-    assert_match "summary", shell_output("#{bin}/regrep 2>&1", 1)
-    system "#{bin}/romcmp"
-    system "#{bin}/rom-split"
-    system "#{bin}/srcclean"
-    assert_match "architecture", shell_output("#{bin}/unidasm", 1)
+    # system "#{bin}aueffectutil" # segmentation fault
+    system "#{bin}castool"
+    assert_match "chdman info", shell_output("#{bin}chdman help info", 1)
+    system "#{bin}floptool"
+    system "#{bin}imgtool", "listformats"
+    system "#{bin}jedutil", "-viewlist"
+    assert_match "linear equation", shell_output("#{bin}ldresample 2>&1", 1)
+    assert_match "avifile.avi", shell_output("#{bin}ldverify 2>&1", 1)
+    system "#{bin}nltool", "--help"
+    system "#{bin}nlwav", "--help"
+    assert_match "image1", shell_output("#{bin}pngcmp 2>&1", 10)
+    assert_match "summary", shell_output("#{bin}regrep 2>&1", 1)
+    system "#{bin}romcmp"
+    system "#{bin}rom-split"
+    system "#{bin}srcclean"
+    assert_match "architecture", shell_output("#{bin}unidasm", 1)
   end
 end

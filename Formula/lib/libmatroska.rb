@@ -1,14 +1,14 @@
 class Libmatroska < Formula
-  desc "Extensible, open standard container format for audio/video"
-  homepage "https://www.matroska.org/"
-  url "https://dl.matroska.org/downloads/libmatroska/libmatroska-1.7.1.tar.xz"
+  desc "Extensible, open standard container format for audiovideo"
+  homepage "https:www.matroska.org"
+  url "https:dl.matroska.orgdownloadslibmatroskalibmatroska-1.7.1.tar.xz"
   sha256 "572a3033b8d93d48a6a858e514abce4b2f7a946fe1f02cbfeca39bfd703018b3"
   license "LGPL-2.1"
-  head "https://github.com/Matroska-Org/libmatroska.git", branch: "master"
+  head "https:github.comMatroska-Orglibmatroska.git", branch: "master"
 
   livecheck do
-    url "https://dl.matroska.org/downloads/libmatroska/"
-    regex(/href=.*?libmatroska[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:dl.matroska.orgdownloadslibmatroska"
+    regex(href=.*?libmatroska[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do

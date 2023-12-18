@@ -1,10 +1,10 @@
 class TerraformInventory < Formula
   desc "Go app which generates a dynamic Ansible inventory from a Terraform state file"
-  homepage "https://github.com/adammck/terraform-inventory"
-  url "https://ghproxy.com/https://github.com/adammck/terraform-inventory/archive/refs/tags/v0.10.tar.gz"
+  homepage "https:github.comadammckterraform-inventory"
+  url "https:github.comadammckterraform-inventoryarchiverefstagsv0.10.tar.gz"
   sha256 "8bd8956da925d4f24c45874bc7b9012eb6d8b4aa11cfc9b6b1b7b7c9321365ac"
   license "MIT"
-  head "https://github.com/adammck/terraform-inventory.git", branch: "master"
+  head "https:github.comadammckterraform-inventory.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45e0a0a0852cc89534be9dc22760628b624e1e085d25b6a30bcd6ec1f25fb9d6"
@@ -55,7 +55,7 @@ class TerraformInventory < Formula
           ]
       }
     EOS
-    (testpath/"example.tfstate").write(example)
-    assert_match(/example_instance/, shell_output("#{bin}/terraform-inventory --list example.tfstate"))
+    (testpath"example.tfstate").write(example)
+    assert_match(example_instance, shell_output("#{bin}terraform-inventory --list example.tfstate"))
   end
 end

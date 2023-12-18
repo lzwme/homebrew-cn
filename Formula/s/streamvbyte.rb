@@ -1,10 +1,10 @@
 class Streamvbyte < Formula
   desc "Fast integer compression in C"
-  homepage "https://github.com/lemire/streamvbyte"
-  url "https://ghproxy.com/https://github.com/lemire/streamvbyte/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https:github.comlemirestreamvbyte"
+  url "https:github.comlemirestreamvbytearchiverefstagsv1.0.0.tar.gz"
   sha256 "6b1920e9865146ba444cc317aa61cd39cdf760236e354ef7956011a9fe577882"
   license "Apache-2.0"
-  head "https://github.com/lemire/streamvbyte.git", branch: "master"
+  head "https:github.comlemirestreamvbyte.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e58906595b65fac184e748a2ccb212eac960b0b7d44cf0883913c0c7545a50da"
@@ -24,11 +24,11 @@ class Streamvbyte < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "examples/example.c"
+    pkgshare.install "examplesexample.c"
   end
 
   test do
-    system ENV.cc, pkgshare/"example.c", "-I#{include}", "-L#{lib}", "-lstreamvbyte", "-o", "test"
-    system testpath/"test"
+    system ENV.cc, pkgshare"example.c", "-I#{include}", "-L#{lib}", "-lstreamvbyte", "-o", "test"
+    system testpath"test"
   end
 end

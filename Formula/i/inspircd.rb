@@ -1,14 +1,14 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
-  homepage "https://www.inspircd.org/"
-  url "https://ghproxy.com/https://github.com/inspircd/inspircd/archive/refs/tags/v3.16.1.tar.gz"
+  homepage "https:www.inspircd.org"
+  url "https:github.cominspircdinspircdarchiverefstagsv3.16.1.tar.gz"
   sha256 "cee0eca7b0c91ac0665199fdfb8ed4edb436a08b8b850b35e19da607c102aec0"
   license "GPL-2.0-only"
   revision 2
 
   livecheck do
-    url "https://github.com/inspircd/inspircd.git"
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https:github.cominspircdinspircd.git"
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -36,15 +36,15 @@ class Inspircd < Formula
 
   def install
     ENV.cxx11
-    system "./configure", "--enable-extras",
+    system ".configure", "--enable-extras",
                           "argon2 ldap mysql pgsql regex_posix regex_stdlib ssl_gnutls sslrehashsignal"
-    system "./configure", "--disable-auto-extras",
+    system ".configure", "--disable-auto-extras",
                           "--distribution-label", "homebrew-#{revision}",
                           "--prefix", prefix
     system "make", "install"
   end
 
   test do
-    assert_match("ERROR: Cannot open config file", shell_output("#{bin}/inspircd", 2))
+    assert_match("ERROR: Cannot open config file", shell_output("#{bin}inspircd", 2))
   end
 end

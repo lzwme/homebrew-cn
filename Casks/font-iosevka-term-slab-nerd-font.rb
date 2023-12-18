@@ -2,10 +2,10 @@ cask "font-iosevka-term-slab-nerd-font" do
   version "3.1.1"
   sha256 "32655d4b3c38be3732abfede2e6bcb5d71079be0b3d424e9474b65a79188e75b"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/IosevkaTermSlab.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}IosevkaTermSlab.zip"
   name "IosevkaTermSlab Nerd Font (Iosevka Term Slab)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

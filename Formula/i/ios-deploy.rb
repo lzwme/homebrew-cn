@@ -1,10 +1,10 @@
 class IosDeploy < Formula
   desc "Install and debug iPhone apps from the command-line"
-  homepage "https://github.com/ios-control/ios-deploy"
-  url "https://ghproxy.com/https://github.com/ios-control/ios-deploy/archive/refs/tags/1.12.2.tar.gz"
+  homepage "https:github.comios-controlios-deploy"
+  url "https:github.comios-controlios-deployarchiverefstags1.12.2.tar.gz"
   sha256 "2a1e9836192967f60194334261e7af4de2ba72e4047a3e54376e5caa57a1db70"
   license all_of: ["GPL-3.0-or-later", "BSD-3-Clause"]
-  head "https://github.com/ios-control/ios-deploy.git", branch: "master"
+  head "https:github.comios-controlios-deploy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d9ac2ff01049d41618a63ef47738fe9e01cf9b77154b9773bde884a42dd31e1"
@@ -31,10 +31,10 @@ class IosDeploy < Formula
                "SYMROOT=build",
                "-arch", Hardware::CPU.arch
 
-    bin.install "build/Release/ios-deploy"
+    bin.install "buildReleaseios-deploy"
   end
 
   test do
-    system "#{bin}/ios-deploy", "-V"
+    system "#{bin}ios-deploy", "-V"
   end
 end

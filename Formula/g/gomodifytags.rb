@@ -1,7 +1,7 @@
 class Gomodifytags < Formula
   desc "Go tool to modify struct field tags"
-  homepage "https://github.com/fatih/gomodifytags"
-  url "https://ghproxy.com/https://github.com/fatih/gomodifytags/archive/refs/tags/v1.16.0.tar.gz"
+  homepage "https:github.comfatihgomodifytags"
+  url "https:github.comfatihgomodifytagsarchiverefstagsv1.16.0.tar.gz"
   sha256 "276526aede6e42c3d540cdaa5fe67cbd276837acfea5d9f5ca19c3a8d16a82ed"
   license "BSD-3-Clause"
 
@@ -26,7 +26,7 @@ class Gomodifytags < Formula
   end
 
   test do
-    (testpath/"test.go").write <<~EOS
+    (testpath"test.go").write <<~EOS
       package main
 
       type Server struct {
@@ -55,6 +55,6 @@ class Gomodifytags < Formula
       }
 
     EOS
-    assert_equal expected, shell_output("#{bin}/gomodifytags -file test.go -struct Server -add-tags json")
+    assert_equal expected, shell_output("#{bin}gomodifytags -file test.go -struct Server -add-tags json")
   end
 end

@@ -1,10 +1,10 @@
 class Xlsxio < Formula
   desc "C library for reading values from and writing values to .xlsx files"
-  homepage "https://github.com/brechtsanders/xlsxio"
-  url "https://ghproxy.com/https://github.com/brechtsanders/xlsxio/archive/refs/tags/0.2.34.tar.gz"
+  homepage "https:github.combrechtsandersxlsxio"
+  url "https:github.combrechtsandersxlsxioarchiverefstags0.2.34.tar.gz"
   sha256 "726e3bc3cf571ac20e5c39b1f192f3793d24ebfdeaadcd210de74aa1ec100bb6"
   license "MIT"
-  head "https://github.com/brechtsanders/xlsxio.git", branch: "master"
+  head "https:github.combrechtsandersxlsxio.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "4a4ae609f94e1caba2512020665977c99a6c5cac293527a28fcff4a445353988"
@@ -26,7 +26,7 @@ class Xlsxio < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdlib.h>
       #include <stdio.h>
       #include <unistd.h>
@@ -43,7 +43,7 @@ class Xlsxio < Formula
     EOS
 
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxlsxio_read", "-lxlsxio_write", "-o", "test"
-    system "./test"
-    assert_predicate testpath/"myexcel.xlsx", :exist?, "Failed to create xlsx file"
+    system ".test"
+    assert_predicate testpath"myexcel.xlsx", :exist?, "Failed to create xlsx file"
   end
 end

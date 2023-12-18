@@ -1,10 +1,10 @@
 class Has < Formula
   desc "Checks presence of various command-line tools and their versions on the path"
-  homepage "https://github.com/kdabir/has"
-  url "https://ghproxy.com/https://github.com/kdabir/has/archive/refs/tags/v1.5.0.tar.gz"
+  homepage "https:github.comkdabirhas"
+  url "https:github.comkdabirhasarchiverefstagsv1.5.0.tar.gz"
   sha256 "d45be15f234556cdbaffa46edae417b214858a4bd427a44a2a94aaa893da7d99"
   license "MIT"
-  head "https://github.com/kdabir/has.git", branch: "master"
+  head "https:github.comkdabirhas.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e9e38ec67613f798b702a0d489566adf51ca3f2e7486b0f6960ce0b5fa7f44f"
@@ -23,7 +23,7 @@ class Has < Formula
   end
 
   test do
-    assert_match "git", shell_output("#{bin}/has git")
-    assert_match version.to_s, shell_output("#{bin}/has --version")
+    assert_match "git", shell_output("#{bin}has git")
+    assert_match version.to_s, shell_output("#{bin}has --version")
   end
 end

@@ -1,10 +1,10 @@
 class Wego < Formula
   desc "Weather app for the terminal"
-  homepage "https://github.com/schachmat/wego"
-  url "https://ghproxy.com/https://github.com/schachmat/wego/archive/refs/tags/2.2.tar.gz"
+  homepage "https:github.comschachmatwego"
+  url "https:github.comschachmatwegoarchiverefstags2.2.tar.gz"
   sha256 "e7a6d40cb44f4408aedceebbed5854b3b992936cc762df6b76f5a9dca7909321"
   license "ISC"
-  head "https://github.com/schachmat/wego.git", branch: "master"
+  head "https:github.comschachmatwego.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "85a6d02edc64b7bc6b8c3b8ae12a85a0b04d8d3692b58ac79fc87658a806867b"
@@ -25,7 +25,7 @@ class Wego < Formula
   end
 
   test do
-    ENV["WEGORC"] = testpath/".wegorc"
-    assert_match(/No .*API key specified./, shell_output("#{bin}/wego 2>&1", 1))
+    ENV["WEGORC"] = testpath".wegorc"
+    assert_match(No .*API key specified., shell_output("#{bin}wego 2>&1", 1))
   end
 end

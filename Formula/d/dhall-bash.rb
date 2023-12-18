@@ -1,10 +1,10 @@
 class DhallBash < Formula
   desc "Compile Dhall to Bash"
-  homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-bash"
-  url "https://hackage.haskell.org/package/dhall-bash-1.0.41/dhall-bash-1.0.41.tar.gz"
+  homepage "https:github.comdhall-langdhall-haskelltreemasterdhall-bash"
+  url "https:hackage.haskell.orgpackagedhall-bash-1.0.41dhall-bash-1.0.41.tar.gz"
   sha256 "2aeb9316c22ddbc0c9c53ca0b347c49087351f326cba7a1cb95f4265691a5f26"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
+  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6932266f568e291768e86c3e995c625d9295a6b5aa6e0509694b64da1befe55"
@@ -29,7 +29,7 @@ class DhallBash < Formula
   end
 
   test do
-    assert_match "true", pipe_output("#{bin}/dhall-to-bash", "Natural/even 100", 0)
-    assert_match "unset FOO", pipe_output("#{bin}/dhall-to-bash --declare FOO", "None Natural", 0)
+    assert_match "true", pipe_output("#{bin}dhall-to-bash", "Naturaleven 100", 0)
+    assert_match "unset FOO", pipe_output("#{bin}dhall-to-bash --declare FOO", "None Natural", 0)
   end
 end

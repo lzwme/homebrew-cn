@@ -1,19 +1,19 @@
 class Clusterctl < Formula
   desc "Home for the Cluster Management API work, a subproject of sig-cluster-lifecycle"
-  homepage "https://cluster-api.sigs.k8s.io"
-  url "https://github.com/kubernetes-sigs/cluster-api.git",
+  homepage "https:cluster-api.sigs.k8s.io"
+  url "https:github.comkubernetes-sigscluster-api.git",
       tag:      "v1.6.0",
       revision: "14efefeb46dbe8d0cd0f5b7d1718e00ec58fc079"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/cluster-api.git", branch: "main"
+  head "https:github.comkubernetes-sigscluster-api.git", branch: "main"
 
-  # Upstream creates releases on GitHub for the two most recent major/minor
+  # Upstream creates releases on GitHub for the two most recent majorminor
   # versions (e.g., 0.3.x, 0.4.x), so the "latest" release can be incorrect. We
   # don't check the Git tags for this project because a version may not be
   # considered released until the GitHub release is created.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
     strategy :github_releases
   end
 
@@ -36,11 +36,11 @@ class Clusterctl < Formula
     system "make", "clusterctl"
     prefix.install "bin"
 
-    generate_completions_from_executable(bin/"clusterctl", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"clusterctl", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    output = shell_output("KUBECONFIG=/homebrew.config  #{bin}/clusterctl init --infrastructure docker 2>&1", 1)
+    output = shell_output("KUBECONFIG=homebrew.config  #{bin}clusterctl init --infrastructure docker 2>&1", 1)
     assert_match "Error: invalid kubeconfig file; clusterctl requires a valid kubeconfig", output
   end
 end

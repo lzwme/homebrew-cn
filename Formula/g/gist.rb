@@ -1,10 +1,10 @@
 class Gist < Formula
   desc "Command-line utility for uploading Gists"
-  homepage "https://github.com/defunkt/gist"
-  url "https://ghproxy.com/https://github.com/defunkt/gist/archive/refs/tags/v6.0.0.tar.gz"
+  homepage "https:github.comdefunktgist"
+  url "https:github.comdefunktgistarchiverefstagsv6.0.0.tar.gz"
   sha256 "ddfb33c039f8825506830448a658aa22685fc0c25dbe6d0240490982c4721812"
   license "MIT"
-  head "https://github.com/defunkt/gist.git", branch: "master"
+  head "https:github.comdefunktgist.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -18,7 +18,7 @@ class Gist < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/gist", "homebrew")
+    output = pipe_output("#{bin}gist", "homebrew")
     assert_match "GitHub now requires credentials", output
   end
 end

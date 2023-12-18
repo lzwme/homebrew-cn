@@ -1,7 +1,7 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
-  homepage "https://github.com/mvdan/gofumpt"
-  url "https://ghproxy.com/https://github.com/mvdan/gofumpt/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:github.commvdangofumpt"
+  url "https:github.commvdangofumptarchiverefstagsv0.5.0.tar.gz"
   sha256 "e27f04b8b5619747ebfb955699d6895c1e4c7c5e4478507ca4e2d8b658b8b51c"
   license "BSD-3-Clause"
 
@@ -20,12 +20,12 @@ class Gofumpt < Formula
   depends_on "go"
 
   def install
-    ldflags = "-s -w -X mvdan.cc/gofumpt/internal/version.version=#{version}"
+    ldflags = "-s -w -X mvdan.ccgofumptinternalversion.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    (testpath/"test.go").write <<~EOS
+    (testpath"test.go").write <<~EOS
       package foo
 
       func foo() {
@@ -34,7 +34,7 @@ class Gofumpt < Formula
       }
     EOS
 
-    (testpath/"expected.go").write <<~EOS
+    (testpath"expected.go").write <<~EOS
       package foo
 
       func foo() {
@@ -42,6 +42,6 @@ class Gofumpt < Formula
       }
     EOS
 
-    assert_match shell_output("#{bin}/gofumpt test.go"), (testpath/"expected.go").read
+    assert_match shell_output("#{bin}gofumpt test.go"), (testpath"expected.go").read
   end
 end

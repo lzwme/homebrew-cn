@@ -2,10 +2,10 @@ cask "font-darker-grotesque" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/darkergrotesque/DarkerGrotesque%5Bwght%5D.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainofldarkergrotesqueDarkerGrotesque%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Darker Grotesque"
-  homepage "https://fonts.google.com/specimen/Darker+Grotesque"
+  homepage "https:fonts.google.comspecimenDarker+Grotesque"
 
   font "DarkerGrotesque[wght].ttf"
 

@@ -1,14 +1,14 @@
 class Omake < Formula
   desc "Build system designed for scalability, portability, and concision"
-  homepage "http://projects.camlcity.org/projects/omake.html"
-  url "https://ghproxy.com/https://github.com/ocaml-omake/omake/archive/refs/tags/omake-0.10.6.tar.gz"
+  homepage "http:projects.camlcity.orgprojectsomake.html"
+  url "https:github.comocaml-omakeomakearchiverefstagsomake-0.10.6.tar.gz"
   sha256 "f84f4cbb18a075782a7432bbf9abd5ef177eb0603fc1c69afffce8c2c25e30ee"
   license "GPL-2.0-only"
-  head "https://github.com/ocaml-omake/omake.git", branch: "master"
+  head "https:github.comocaml-omakeomake.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^(?:omake[._-])?v?(\d+(?:\.\d+)+)$/i)
+    regex(^(?:omake[._-])?v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -30,17 +30,17 @@ class Omake < Formula
   conflicts_with "etsh", because: "both install 'osh' binaries"
 
   def install
-    system "./configure", "-prefix", prefix
+    system ".configure", "-prefix", prefix
     system "make"
     system "make", "install"
 
-    share.install prefix/"man"
+    share.install prefix"man"
   end
 
   test do
     # example run adapted from the documentation's "quickstart guide"
-    system bin/"omake", "--install"
-    (testpath/"hello_code.c").write <<~EOF
+    system bin"omake", "--install"
+    (testpath"hello_code.c").write <<~EOF
       #include <stdio.h>
 
       int main(int argc, char **argv)
@@ -49,14 +49,14 @@ class Omake < Formula
           return 0;
       }
     EOF
-    rm testpath/"OMakefile"
-    (testpath/"OMakefile").write <<~EOF
+    rm testpath"OMakefile"
+    (testpath"OMakefile").write <<~EOF
       CC = #{ENV.cc}
       CFLAGS += #{ENV.cflags}
       CProgram(hello, hello_code)
       .DEFAULT: hello$(EXE)
     EOF
-    system bin/"omake", "hello"
-    assert_equal shell_output(testpath/"hello"), "Hello, world!\n"
+    system bin"omake", "hello"
+    assert_equal shell_output(testpath"hello"), "Hello, world!\n"
   end
 end

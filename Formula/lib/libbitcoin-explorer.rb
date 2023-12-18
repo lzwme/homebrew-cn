@@ -1,7 +1,7 @@
 class LibbitcoinExplorer < Formula
   desc "Bitcoin command-line tool"
-  homepage "https://github.com/libbitcoin/libbitcoin-explorer"
-  url "https://ghproxy.com/https://github.com/libbitcoin/libbitcoin-explorer/archive/refs/tags/v3.8.0.tar.gz"
+  homepage "https:github.comlibbitcoinlibbitcoin-explorer"
+  url "https:github.comlibbitcoinlibbitcoin-explorerarchiverefstagsv3.8.0.tar.gz"
   sha256 "c10993ab4846e98ec4618ca2d2aab31669dc091fa2feb17d421eb96b9c35c340"
   license "AGPL-3.0"
   revision 2
@@ -17,7 +17,7 @@ class LibbitcoinExplorer < Formula
   end
 
   # About 2 years since request for release with support for recent `boost`.
-  # Ref: https://github.com/libbitcoin/libbitcoin-system/issues/1234
+  # Ref: https:github.comlibbitcoinlibbitcoin-systemissues1234
   deprecate! date: "2023-12-14", because: "uses deprecated `boost@1.76`"
 
   depends_on "autoconf" => :build
@@ -31,16 +31,16 @@ class LibbitcoinExplorer < Formula
 
   def install
     ENV.cxx11
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec/"lib/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libbitcoin"].opt_libexec"libpkgconfig"
 
-    system "./autogen.sh"
-    system "./configure", "--disable-dependency-tracking",
+    system ".autogen.sh"
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
 
-    bash_completion.install "data/bx"
+    bash_completion.install "databx"
   end
 
   test do
@@ -49,13 +49,13 @@ class LibbitcoinExplorer < Formula
     expected_public_key = "023b899a380c81b35647fff5f7e1988c617fe8417a5485217e653cda80bc4670ef"
     expected_address = "1AxX5HyQi7diPVXUH2ji7x5k6jZTxbkxfW"
 
-    private_key = shell_output("#{bin}/bx ec-new #{seed}").chomp
+    private_key = shell_output("#{bin}bx ec-new #{seed}").chomp
     assert_equal expected_private_key, private_key
 
-    public_key = shell_output("#{bin}/bx ec-to-public #{private_key}").chomp
+    public_key = shell_output("#{bin}bx ec-to-public #{private_key}").chomp
     assert_equal expected_public_key, public_key
 
-    address = shell_output("#{bin}/bx ec-to-address #{public_key}").chomp
+    address = shell_output("#{bin}bx ec-to-address #{public_key}").chomp
     assert_equal expected_address, address
   end
 end

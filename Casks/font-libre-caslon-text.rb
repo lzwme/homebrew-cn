@@ -2,13 +2,13 @@ cask "font-libre-caslon-text" do
   version :latest
   sha256 :no_check
 
-  url "https://ghproxy.com/https://github.com/impallari/Libre-Caslon-Text/archive/master.zip"
+  url "https:github.comimpallariLibre-Caslon-Textarchivemaster.zip"
   name "Libre Caslon Text"
-  homepage "https://github.com/impallari/Libre-Caslon-Text/"
+  homepage "https:github.comimpallariLibre-Caslon-Text"
 
-  font "Libre-Caslon-Text-master/fonts/OTF/LibreCaslonText-Bold.otf"
-  font "Libre-Caslon-Text-master/fonts/OTF/LibreCaslonText-Italic.otf"
-  font "Libre-Caslon-Text-master/fonts/OTF/LibreCaslonText-Regular.otf"
+  font "Libre-Caslon-Text-masterfontsOTFLibreCaslonText-Bold.otf"
+  font "Libre-Caslon-Text-masterfontsOTFLibreCaslonText-Italic.otf"
+  font "Libre-Caslon-Text-masterfontsOTFLibreCaslonText-Regular.otf"
 
   # No zap stanza required
 end

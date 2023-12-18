@@ -1,7 +1,7 @@
 class Libccd < Formula
   desc "Collision detection between two convex shapes"
-  homepage "https://github.com/danfis/libccd"
-  url "https://ghproxy.com/https://github.com/danfis/libccd/archive/refs/tags/v2.1.tar.gz"
+  homepage "https:github.comdanfislibccd"
+  url "https:github.comdanfislibccdarchiverefstagsv2.1.tar.gz"
   sha256 "542b6c47f522d581fbf39e51df32c7d1256ac0c626e7c2b41f1040d4b9d50d1e"
   license "BSD-3-Clause"
   revision 1
@@ -28,10 +28,10 @@ class Libccd < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <assert.h>
-      #include <ccd/config.h>
-      #include <ccd/vec3.h>
+      #include <ccdconfig.h>
+      #include <ccdvec3.h>
       int main() {
       #ifndef CCD_DOUBLE
         assert(false);
@@ -43,6 +43,6 @@ class Libccd < Formula
       }
     EOS
     system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lccd"
-    system "./test"
+    system ".test"
   end
 end

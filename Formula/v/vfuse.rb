@@ -1,7 +1,7 @@
 class Vfuse < Formula
   desc "Convert bootable DMG images for use in VMware Fusion"
-  homepage "https://github.com/chilcote/vfuse"
-  url "https://ghproxy.com/https://github.com/chilcote/vfuse/archive/refs/tags/2.2.6.tar.gz"
+  homepage "https:github.comchilcotevfuse"
+  url "https:github.comchilcotevfusearchiverefstags2.2.6.tar.gz"
   sha256 "fbf5f8a1c664b03c7513a70aa05c3fc501a7ebdb53f128f1f05c24395871a314"
   license "Apache-2.0"
 
@@ -22,12 +22,12 @@ class Vfuse < Formula
     # Fix upstream artifact packaging issue
     # remove in the next release
     inreplace "Makefile", "2.2.5", "2.2.6"
-    inreplace "pkgroot/usr/local/vfuse/bin/vfuse", "2.2.5", "2.2.6"
+    inreplace "pkgrootusrlocalvfusebinvfuse", "2.2.5", "2.2.6"
 
-    bin.install Dir["pkgroot/usr/local/vfuse/bin/*"]
+    bin.install Dir["pkgrootusrlocalvfusebin*"]
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/vfuse --version")
+    assert_match version.to_s, shell_output("#{bin}vfuse --version")
   end
 end

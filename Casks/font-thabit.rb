@@ -2,12 +2,12 @@ cask "font-thabit" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/thabit"
+      only_path: "oflthabit"
   name "Thabit"
-  homepage "https://fonts.google.com/earlyaccess"
+  homepage "https:fonts.google.comearlyaccess"
 
   font "Thabit-Bold.ttf"
   font "Thabit-BoldOblique.ttf"

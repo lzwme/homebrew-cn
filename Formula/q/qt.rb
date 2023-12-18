@@ -2,7 +2,7 @@ class Qt < Formula
   include Language::Python::Virtualenv
 
   desc "Cross-platform application and UI framework"
-  homepage "https://www.qt.io/"
+  homepage "https:www.qt.io"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -10,18 +10,18 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  head "https://code.qt.io/qt/qt5.git", branch: "dev"
+  head "https:code.qt.ioqtqt5.git", branch: "dev"
 
   stable do
-    url "https://download.qt.io/official_releases/qt/6.6/6.6.1/single/qt-everywhere-src-6.6.1.tar.xz"
-    mirror "https://qt.mirror.constant.com/archive/qt/6.6/6.6.1/single/qt-everywhere-src-6.6.1.tar.xz"
-    mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.6/6.6.1/single/qt-everywhere-src-6.6.1.tar.xz"
+    url "https:download.qt.ioofficial_releasesqt6.66.6.1singleqt-everywhere-src-6.6.1.tar.xz"
+    mirror "https:qt.mirror.constant.comarchiveqt6.66.6.1singleqt-everywhere-src-6.6.1.tar.xz"
+    mirror "https:mirrors.ukfast.co.uksitesqt.ioarchiveqt6.66.6.1singleqt-everywhere-src-6.6.1.tar.xz"
     sha256 "dd3668f65645fe270bc615d748bd4dc048bd17b9dc297025106e6ecc419ab95d"
 
     # Backport fix for QTBUG-117765 which can cause build failure in `qca`
-    # .../MacOSX.sdk/usr/include/c++/v1/concept:318:1: error: Parse error at "::"
+    # ...MacOSX.sdkusrincludec++v1concept:318:1: error: Parse error at "::"
     patch do
-      url "https://github.com/qt/qtbase/commit/a8c1c38f94ba9011b7646fe4f756ca213479cd30.patch?full_index=1"
+      url "https:github.comqtqtbasecommita8c1c38f94ba9011b7646fe4f756ca213479cd30.patch?full_index=1"
       directory "qtbase"
       sha256 "dc33174b2b829f2cabb096bad654a984294986aea5d4a226ff225b951e77acfc"
     end
@@ -31,7 +31,7 @@ class Qt < Formula
   # so we check the `head` repository tags instead.
   livecheck do
     url :head
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -125,15 +125,15 @@ class Qt < Formula
     depends_on "xcb-util-wm"
 
     # Backport Chromium changes for libxml 2.12 compatibility
-    # https://chromium.googlesource.com/chromium/src/+/871f8ae9b65ce2679b0bc0be36902d65edf0c1e4
+    # https:chromium.googlesource.comchromiumsrc+871f8ae9b65ce2679b0bc0be36902d65edf0c1e4
     patch do
-      url "https://chromium-review.googlesource.com/changes/chromium%2Fsrc~4985186/revisions/4/patch?zip&path=third_party%2Fblink%2Frenderer%2Fcore%2Fxml%2Fxslt_processor.h"
-      directory "qtwebengine/src/3rdparty/chromium"
+      url "https:chromium-review.googlesource.comchangeschromium%2Fsrc~4985186revisions4patch?zip&path=third_party%2Fblink%2Frenderer%2Fcore%2Fxml%2Fxslt_processor.h"
+      directory "qtwebenginesrc3rdpartychromium"
       sha256 "61d0352bb43ab796e1702f003f119a0838e5357517ee90f71bcc5cd0ba184e36"
     end
     patch do
-      url "https://chromium-review.googlesource.com/changes/chromium%2Fsrc~4985186/revisions/4/patch?zip&path=third_party%2Fblink%2Frenderer%2Fcore%2Fxml%2Fxslt_processor_libxslt.cc"
-      directory "qtwebengine/src/3rdparty/chromium"
+      url "https:chromium-review.googlesource.comchangeschromium%2Fsrc~4985186revisions4patch?zip&path=third_party%2Fblink%2Frenderer%2Fcore%2Fxml%2Fxslt_processor_libxslt.cc"
+      directory "qtwebenginesrc3rdpartychromium"
       sha256 "dc8cf92c07cad7da51510d2233968af4b0f408ff6857153ffa1d7387bb77f1b7"
     end
   end
@@ -141,18 +141,18 @@ class Qt < Formula
   fails_with gcc: "5"
 
   resource "html5lib" do
-    url "https://files.pythonhosted.org/packages/ac/b6/b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2/html5lib-1.1.tar.gz"
+    url "https:files.pythonhosted.orgpackagesacb6b55c3f49042f1df3dcd422b7f224f939892ee94f22abcf503a9b7339eaf2html5lib-1.1.tar.gz"
     sha256 "b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f"
   end
 
   resource "webencodings" do
-    url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
+    url "https:files.pythonhosted.orgpackages0b02ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47webencodings-0.5.1.tar.gz"
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
   end
 
   # Use Gentoo's patch for ICU 74 support until Chromium updates their bundled copy
   patch do
-    url "https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-qt/qtwebengine/files/qtwebengine-6.5.3-icu74.patch?id=ba397fa71f9bc9a074d9c65b63759e0145bb9fa0"
+    url "https:gitweb.gentoo.orgrepogentoo.gitplaindev-qtqtwebenginefilesqtwebengine-6.5.3-icu74.patch?id=ba397fa71f9bc9a074d9c65b63759e0145bb9fa0"
     directory "qtwebengine"
     sha256 "ceee91eb3161b385f54c0070f0e4800202b0674c63c40c8556cb69ac522e6999"
   end
@@ -160,35 +160,35 @@ class Qt < Formula
   def install
     # Allow -march options to be passed through, as Qt builds
     # arch-specific code with runtime detection of capabilities:
-    # https://bugreports.qt.io/browse/QTBUG-113391
+    # https:bugreports.qt.iobrowseQTBUG-113391
     ENV.runtime_cpu_detection
 
     python = "python3.11"
     # Install python dependencies for QtWebEngine
-    venv_root = buildpath/"venv"
+    venv_root = buildpath"venv"
     venv = virtualenv_create(venv_root, python)
     venv.pip_install resources
-    ENV.prepend_path "PYTHONPATH", venv_root/Language::Python.site_packages(python)
+    ENV.prepend_path "PYTHONPATH", venv_rootLanguage::Python.site_packages(python)
 
-    # FIXME: GN requires clang in clangBasePath/bin
-    inreplace "qtwebengine/src/3rdparty/chromium/build/toolchain/apple/toolchain.gni",
-              'rebase_path("$clang_base_path/bin/", root_build_dir)', '""'
+    # FIXME: GN requires clang in clangBasePathbin
+    inreplace "qtwebenginesrc3rdpartychromiumbuildtoolchainappletoolchain.gni",
+              'rebase_path("$clang_base_pathbin", root_build_dir)', '""'
 
-    # FIXME: See https://bugreports.qt.io/browse/QTBUG-89559
-    # and https://codereview.qt-project.org/c/qt/qtbase/+/327393
+    # FIXME: See https:bugreports.qt.iobrowseQTBUG-89559
+    # and https:codereview.qt-project.orgcqtqtbase+327393
     # It is not friendly to Homebrew or macOS
-    # because on macOS `/tmp` -> `/private/tmp`
-    inreplace "qtwebengine/src/3rdparty/gn/src/base/files/file_util_posix.cc",
+    # because on macOS `tmp` -> `privatetmp`
+    inreplace "qtwebenginesrc3rdpartygnsrcbasefilesfile_util_posix.cc",
               "FilePath(full_path)", "FilePath(input)"
 
     # Modify Assistant path as we manually move `*.app` bundles from `bin` to `libexec`.
     # This fixes invocation of Assistant via the Help menu of apps like Designer and
     # Linguist as they originally relied on Assistant.app being in `bin`.
     assistant_files = %w[
-      qttools/src/designer/src/designer/assistantclient.cpp
-      qttools/src/linguist/linguist/mainwindow.cpp
+      qttoolssrcdesignersrcdesignerassistantclient.cpp
+      qttoolssrclinguistlinguistmainwindow.cpp
     ]
-    inreplace assistant_files, '"Assistant.app/Contents/MacOS/Assistant"', '"Assistant"'
+    inreplace assistant_files, '"Assistant.appContentsMacOSAssistant"', '"Assistant"'
 
     config_args = %W[
       -release
@@ -196,10 +196,10 @@ class Qt < Formula
       -prefix #{HOMEBREW_PREFIX}
       -extprefix #{prefix}
 
-      -archdatadir share/qt
-      -datadir share/qt
-      -examplesdir share/qt/examples
-      -testsdir share/qt/tests
+      -archdatadir shareqt
+      -datadir shareqt
+      -examplesdir shareqtexamples
+      -testsdir shareqttests
 
       -no-feature-relocatable
       -system-harfbuzz
@@ -212,7 +212,7 @@ class Qt < Formula
 
     cmake_args = std_cmake_args(install_prefix: HOMEBREW_PREFIX, find_framework: "FIRST") + %w[
       -DFEATURE_pkg_config=ON
-      -DINSTALL_MKSPECSDIR=share/qt/mkspecs
+      -DINSTALL_MKSPECSDIR=shareqtmkspecs
       -DQT_FEATURE_webengine_proprietary_codecs=ON
       -DQT_FEATURE_webengine_kerberos=ON
       -DQT_ALLOW_SYMLINK_IN_PATHS=ON
@@ -220,7 +220,7 @@ class Qt < Formula
 
     if OS.mac?
       # Fix a regression in Qt 6.5.2 w.r.t. system libpng
-      # https://bugreports.qt.io/browse/QTBUG-115357
+      # https:bugreports.qt.iobrowseQTBUG-115357
       cmake_args << "-DQT_FEATURE_webengine_system_libpng=OFF"
 
       cmake_args << "-DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}.0"
@@ -230,7 +230,7 @@ class Qt < Formula
       config_args << "-skip" << "qtwebengine" if DevelopmentTools.clang_build_version <= 1200
     else
       # Explicitly specify QT_BUILD_INTERNALS_RELOCATABLE_INSTALL_PREFIX so
-      # that cmake does not think $HOMEBREW_PREFIX/lib is the install prefix.
+      # that cmake does not think $HOMEBREW_PREFIXlib is the install prefix.
       cmake_args << "-DQT_BUILD_INTERNALS_RELOCATABLE_INSTALL_PREFIX=#{prefix}"
 
       # The vendored copy of libjpeg is also used instead of the brewed copy, because the build
@@ -256,11 +256,11 @@ class Qt < Formula
       cmake_args << "-DQT_FEATURE_webengine_ozone_x11=ON"
     end
 
-    system "./configure", *config_args, "--", *cmake_args
+    system ".configure", *config_args, "--", *cmake_args
     system "cmake", "--build", "."
     system "cmake", "--install", "."
 
-    inreplace lib/"cmake/Qt6/qt.toolchain.cmake", "#{Superenv.shims_path}/", ""
+    inreplace lib"cmakeQt6qt.toolchain.cmake", "#{Superenv.shims_path}", ""
 
     # Install a qtversion.xml to ease integration with QtCreator
     # As far as we can tell, there is no ability to make the Qt buildsystem
@@ -270,29 +270,29 @@ class Qt < Formula
     # Given Qt upstream seems extremely unlikely to accept this: let's ship our
     # own version.
     # If you read this and you can eliminate it or upstream it: please do!
-    # More context in https://github.com/Homebrew/homebrew-core/pull/124923
-    qtversion_xml = share/"qtcreator/QtProject/qtcreator/qtversion.xml"
+    # More context in https:github.comHomebrewhomebrew-corepull124923
+    qtversion_xml = share"qtcreatorQtProjectqtcreatorqtversion.xml"
     qtversion_xml.dirname.mkpath
     qtversion_xml.write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE QtCreatorQtVersions>
       <qtcreator>
       <data>
-        <variable>QtVersion.0</variable>
+        <variable>QtVersion.0<variable>
         <valuemap type="QVariantMap">
-        <value type="int" key="Id">1</value>
-        <value type="QString" key="Name">Qt %{Qt:Version} (#{HOMEBREW_PREFIX})</value>
-        <value type="QString" key="QMakePath">#{opt_bin}/qmake</value>
-        <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop</value>
-        <value type="QString" key="autodetectionSource"></value>
-        <value type="bool" key="isAutodetected">false</value>
-        </valuemap>
-      </data>
+        <value type="int" key="Id">1<value>
+        <value type="QString" key="Name">Qt %{Qt:Version} (#{HOMEBREW_PREFIX})<value>
+        <value type="QString" key="QMakePath">#{opt_bin}qmake<value>
+        <value type="QString" key="QtVersion.Type">Qt4ProjectManager.QtVersion.Desktop<value>
+        <value type="QString" key="autodetectionSource"><value>
+        <value type="bool" key="isAutodetected">false<value>
+        <valuemap>
       <data>
-        <variable>Version</variable>
-        <value type="int">1</value>
-      </data>
-      </qtcreator>
+      <data>
+        <variable>Version<variable>
+        <value type="int">1<value>
+      <data>
+      <qtcreator>
     XML
 
     return unless OS.mac?
@@ -301,17 +301,17 @@ class Qt < Formula
     # `include` directory. Make this so by creating symlinks from `include` to
     # the Frameworks' Headers folders.
     # Tracking issues:
-    # https://bugreports.qt.io/browse/QTBUG-86080
-    # https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6363
+    # https:bugreports.qt.iobrowseQTBUG-86080
+    # https:gitlab.kitware.comcmakecmake-merge_requests6363
     lib.glob("*.framework") do |f|
       # Some config scripts will only find Qt in a "Frameworks" folder
       frameworks.install_symlink f
-      include.install_symlink f/"Headers" => f.stem
+      include.install_symlink f"Headers" => f.stem
     end
 
     bin.glob("*.app") do |app|
       libexec.install app
-      bin.write_exec_script libexec/app.basename/"Contents/MacOS"/app.stem
+      bin.write_exec_script libexecapp.basename"ContentsMacOS"app.stem
     end
   end
 
@@ -325,7 +325,7 @@ class Qt < Formula
   end
 
   test do
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION #{Formula["cmake"].version})
 
       project(test VERSION 1.0.0 LANGUAGES CXX)
@@ -350,7 +350,7 @@ class Qt < Formula
       )
     EOS
 
-    (testpath/"test.pro").write <<~EOS
+    (testpath"test.pro").write <<~EOS
       QT       += core svg 3dcore network networkauth quick3d \
         sql gui widgets webenginecore
       TARGET = test
@@ -361,7 +361,7 @@ class Qt < Formula
       INCLUDEPATH += #{Formula["vulkan-headers"].opt_include}
     EOS
 
-    (testpath/"main.cpp").write <<~EOS
+    (testpath"main.cpp").write <<~EOS
       #undef QT_NO_DEBUG
       #include <QCoreApplication>
       #include <Qt3DCore>
@@ -386,9 +386,9 @@ class Qt < Formula
         Q_ASSERT(QSqlDatabase::isDriverAvailable("QSQLITE"));
         const auto &list = QImageReader::supportedImageFormats();
         QVulkanInstance inst;
-        // See https://github.com/actions/runner-images/issues/1779
-        // if (!inst.create())
-        //   qFatal("Failed to create Vulkan instance: %d", inst.errorCode());
+         See https:github.comactionsrunner-imagesissues1779
+         if (!inst.create())
+           qFatal("Failed to create Vulkan instance: %d", inst.errorCode());
         for(const char* fmt:{"bmp", "cur", "gif",
           #ifdef __APPLE__
             "heic", "heif",
@@ -402,16 +402,16 @@ class Qt < Formula
       }
     EOS
 
-    ENV["QT_VULKAN_LIB"] = Formula["vulkan-loader"].opt_lib/(shared_library "libvulkan")
+    ENV["QT_VULKAN_LIB"] = Formula["vulkan-loader"].opt_lib(shared_library "libvulkan")
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "cmake", testpath
     system "make"
-    system "./test"
+    system ".test"
 
     ENV.delete "CPATH" if OS.mac? && MacOS.version > :mojave
-    system bin/"qmake", testpath/"test.pro"
+    system bin"qmake", testpath"test.pro"
     system "make"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,7 +1,7 @@
 class SimpleMtpfs < Formula
   desc "Simple MTP fuse filesystem driver"
-  homepage "https://github.com/phatina/simple-mtpfs"
-  url "https://ghproxy.com/https://github.com/phatina/simple-mtpfs/archive/refs/tags/v0.4.0.tar.gz"
+  homepage "https:github.comphatinasimple-mtpfs"
+  url "https:github.comphatinasimple-mtpfsarchiverefstagsv0.4.0.tar.gz"
   sha256 "1d011df3fa09ad0a5c09d48d84c03e6cddf86390af9eb4e0c178193f32f0e2fc"
   license "GPL-2.0"
 
@@ -21,15 +21,15 @@ class SimpleMtpfs < Formula
   fails_with gcc: "5"
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
-      "CPPFLAGS=-I/usr/local/include/osxfuse -I/usr/local/include/osxfuse/fuse",
-      "LDFLAGS=-L/usr/local/include/osxfuse"
+    system ".autogen.sh"
+    system ".configure", "--prefix=#{prefix}",
+      "CPPFLAGS=-Iusrlocalincludeosxfuse -Iusrlocalincludeosxfusefuse",
+      "LDFLAGS=-Lusrlocalincludeosxfuse"
     system "make"
     system "make", "install"
   end
 
   test do
-    system bin/"simple-mtpfs", "-h"
+    system bin"simple-mtpfs", "-h"
   end
 end

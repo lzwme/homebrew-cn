@@ -1,7 +1,7 @@
 class YarnCompletion < Formula
   desc "Bash completion for Yarn"
-  homepage "https://github.com/dsifford/yarn-completion"
-  url "https://ghproxy.com/https://github.com/dsifford/yarn-completion/archive/refs/tags/v0.17.0.tar.gz"
+  homepage "https:github.comdsiffordyarn-completion"
+  url "https:github.comdsiffordyarn-completionarchiverefstagsv0.17.0.tar.gz"
   sha256 "cc9d86bd8d4c662833424f86f1f86cfa0516c0835874768d9cf84aaf79fb8b21"
   license "MIT"
 
@@ -17,6 +17,6 @@ class YarnCompletion < Formula
 
   test do
     assert_match "complete -F _yarn yarn",
-      shell_output("#{Formula["bash"].opt_bin}/bash -c 'source #{bash_completion}/yarn && complete -p yarn'")
+      shell_output("#{Formula["bash"].opt_bin}bash -c 'source #{bash_completion}yarn && complete -p yarn'")
   end
 end

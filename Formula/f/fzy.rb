@@ -1,10 +1,10 @@
 class Fzy < Formula
   desc "Fast, simple fuzzy text selector with an advanced scoring algorithm"
-  homepage "https://github.com/jhawthorn/fzy"
-  url "https://ghproxy.com/https://github.com/jhawthorn/fzy/releases/download/1.0/fzy-1.0.tar.gz"
+  homepage "https:github.comjhawthornfzy"
+  url "https:github.comjhawthornfzyreleasesdownload1.0fzy-1.0.tar.gz"
   sha256 "80257fd74579e13438b05edf50dcdc8cf0cdb1870b4a2bc5967bd1fdbed1facf"
   license "MIT"
-  head "https://github.com/jhawthorn/fzy.git", branch: "master"
+  head "https:github.comjhawthornfzy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "250fc5952135704c7a93c1066a13fbb27322358dedc115d7792da91cd56d12ed"
@@ -28,6 +28,6 @@ class Fzy < Formula
   end
 
   test do
-    assert_equal "foo", pipe_output("#{bin}/fzy -e foo", "bar\nfoo\nqux").chomp
+    assert_equal "foo", pipe_output("#{bin}fzy -e foo", "bar\nfoo\nqux").chomp
   end
 end

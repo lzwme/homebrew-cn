@@ -1,10 +1,10 @@
 class V2rayPlugin < Formula
   desc "SIP003 plugin based on v2ray for shadowsocks"
-  homepage "https://github.com/shadowsocks/v2ray-plugin"
-  url "https://ghproxy.com/https://github.com/shadowsocks/v2ray-plugin/archive/refs/tags/v1.3.1.tar.gz"
+  homepage "https:github.comshadowsocksv2ray-plugin"
+  url "https:github.comshadowsocksv2ray-pluginarchiverefstagsv1.3.1.tar.gz"
   sha256 "86d37a8ecef82457b4750a1af9e8d093b25ae0d32ea7dcc2ad5c0068fe2d3d74"
   license "MIT"
-  head "https://github.com/shadowsocks/v2ray-plugin.git", branch: "master"
+  head "https:github.comshadowsocksv2ray-plugin.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00532fce7d2293129d839b5d0fc33993f916f79c8f748c35be37c4724dab1819"
@@ -22,7 +22,7 @@ class V2rayPlugin < Formula
   end
 
   # v2ray-plugin does not even build with go1.19,
-  # upstream bug report https://github.com/shadowsocks/v2ray-plugin/issues/292
+  # upstream bug report https:github.comshadowsocksv2ray-pluginissues292
   deprecate! date: "2023-08-13", because: :unmaintained
 
   depends_on "go" => :build
@@ -34,10 +34,10 @@ class V2rayPlugin < Formula
 
   test do
     server = fork do
-      exec bin/"v2ray-plugin", "-localPort", "54000", "-remoteAddr", "github.com", "-remotePort", "80", "-server"
+      exec bin"v2ray-plugin", "-localPort", "54000", "-remoteAddr", "github.com", "-remotePort", "80", "-server"
     end
     client = fork do
-      exec bin/"v2ray-plugin", "-localPort", "54001", "-remotePort", "54000"
+      exec bin"v2ray-plugin", "-localPort", "54001", "-remotePort", "54000"
     end
     sleep 2
     begin

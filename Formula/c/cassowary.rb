@@ -1,10 +1,10 @@
 class Cassowary < Formula
   desc "Modern cross-platform HTTP load-testing tool written in Go"
-  homepage "https://github.com/rogerwelin/cassowary"
-  url "https://ghproxy.com/https://github.com/rogerwelin/cassowary/archive/refs/tags/v0.16.0.tar.gz"
+  homepage "https:github.comrogerwelincassowary"
+  url "https:github.comrogerwelincassowaryarchiverefstagsv0.16.0.tar.gz"
   sha256 "672981232e2ae859f831de5d3e5a9f0c749739bcc41c0b17d511ca186ff56b93"
   license "MIT"
-  head "https://github.com/rogerwelin/cassowary.git", branch: "master"
+  head "https:github.comrogerwelincassowary.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95cc38116cb5d9c779544089e3379fda9951172643174b9e70d189a41793d185"
@@ -22,13 +22,13 @@ class Cassowary < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/cassowary"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdcassowary"
   end
 
   test do
-    system("#{bin}/cassowary", "run", "-u", "http://www.example.com", "-c", "10", "-n", "100", "--json-metrics")
-    assert_match "\"base_url\":\"http://www.example.com\"", File.read("#{testpath}/out.json")
+    system("#{bin}cassowary", "run", "-u", "http:www.example.com", "-c", "10", "-n", "100", "--json-metrics")
+    assert_match "\"base_url\":\"http:www.example.com\"", File.read("#{testpath}out.json")
 
-    assert_match version.to_s, shell_output("#{bin}/cassowary --version")
+    assert_match version.to_s, shell_output("#{bin}cassowary --version")
   end
 end

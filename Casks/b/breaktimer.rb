@@ -2,27 +2,27 @@ cask "breaktimer" do
   version "1.2.0"
   sha256 "feebd9f838df0892664a1377f4e2cd568ffe823132390b82f6592da17d164566"
 
-  url "https://ghproxy.com/https://github.com/tom-james-watson/breaktimer-app/releases/download/v#{version}/BreakTimer.dmg",
-      verified: "github.com/tom-james-watson/breaktimer-app/"
+  url "https:github.comtom-james-watsonbreaktimer-appreleasesdownloadv#{version}BreakTimer.dmg",
+      verified: "github.comtom-james-watsonbreaktimer-app"
   name "BreakTimer"
   desc "Tool to manage periodic breaks"
-  homepage "https://breaktimer.app/"
+  homepage "https:breaktimer.app"
 
   auto_updates true
 
   app "BreakTimer.app"
-  binary "#{appdir}/BreakTimer.app/Contents/MacOS/BreakTimer", target: "breaktimer"
+  binary "#{appdir}BreakTimer.appContentsMacOSBreakTimer", target: "breaktimer"
 
   uninstall quit:      "com.tomjwatson.breaktimer",
             launchctl: "com.tomjwatson.breaktimer.ShipIt"
 
   zap trash: [
-    "~/Library/Application Support/BreakTimer",
-    "~/Library/Caches/com.tomjwatson.breaktimer",
-    "~/Library/Caches/com.tomjwatson.breaktimer.ShipIt",
-    "~/Library/Logs/BreakTimer",
-    "~/Library/Preferences/ByHost/com.tomjwatson.breaktimer.ShipIt.*.plist",
-    "~/Library/Preferences/com.tomjwatson.breaktimer.plist",
-    "~/Library/Saved Application State/com.tomjwatson.breaktimer.savedState",
+    "~LibraryApplication SupportBreakTimer",
+    "~LibraryCachescom.tomjwatson.breaktimer",
+    "~LibraryCachescom.tomjwatson.breaktimer.ShipIt",
+    "~LibraryLogsBreakTimer",
+    "~LibraryPreferencesByHostcom.tomjwatson.breaktimer.ShipIt.*.plist",
+    "~LibraryPreferencescom.tomjwatson.breaktimer.plist",
+    "~LibrarySaved Application Statecom.tomjwatson.breaktimer.savedState",
   ]
 end

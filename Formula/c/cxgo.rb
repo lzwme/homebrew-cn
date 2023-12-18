@@ -1,11 +1,11 @@
 class Cxgo < Formula
   desc "Transpiling C to Go"
-  homepage "https://github.com/gotranspile/cxgo"
-  url "https://github.com/gotranspile/cxgo.git",
+  homepage "https:github.comgotranspilecxgo"
+  url "https:github.comgotranspilecxgo.git",
       tag:      "v0.3.7",
       revision: "cfc1ca865f59182eea902a45ce96b4cdda0f2b8c"
   license "MIT"
-  head "https://github.com/gotranspile/cxgo.git", branch: "main"
+  head "https:github.comgotranspilecxgo.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c65c05bac7e287fcb4f8cc5b34b3116ad2b2ace2315621e0675c551072d896d1"
@@ -30,11 +30,11 @@ class Cxgo < Formula
       -X main.date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/cxgo"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcxgo"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       int main() {
         printf("Hello, World!");
@@ -46,7 +46,7 @@ class Cxgo < Formula
       package main
 
       import (
-      \t"github.com/gotranspile/cxgo/runtime/stdio"
+      \t"github.comgotranspilecxgoruntimestdio"
       \t"os"
       )
 
@@ -56,9 +56,9 @@ class Cxgo < Formula
       }
     EOS
 
-    system bin/"cxgo", "file", testpath/"test.c"
-    assert_equal expected, (testpath/"test.go").read
+    system bin"cxgo", "file", testpath"test.c"
+    assert_equal expected, (testpath"test.go").read
 
-    assert_match version.to_s, shell_output("#{bin}/cxgo version")
+    assert_match version.to_s, shell_output("#{bin}cxgo version")
   end
 end

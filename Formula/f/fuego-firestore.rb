@@ -1,7 +1,7 @@
 class FuegoFirestore < Formula
   desc "Command-line client for the Firestore database"
-  homepage "https://github.com/sgarciac/fuego"
-  url "https://ghproxy.com/https://github.com/sgarciac/fuego/archive/refs/tags/0.34.0.tar.gz"
+  homepage "https:github.comsgarciacfuego"
+  url "https:github.comsgarciacfuegoarchiverefstags0.34.0.tar.gz"
   sha256 "25f67ad001b77c242b74a82a3ea7793f655d437e9eadf5578d27ff365e68702a"
   license "GPL-3.0-only"
 
@@ -20,11 +20,11 @@ class FuegoFirestore < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"fuego", ldflags: "-s -w")
+    system "go", "build", *std_go_args(output: bin"fuego", ldflags: "-s -w")
   end
 
   test do
-    collections_output = shell_output("#{bin}/fuego collections 2>&1", 80)
+    collections_output = shell_output("#{bin}fuego collections 2>&1", 80)
     assert_match "Failed to create client.", collections_output
   end
 end

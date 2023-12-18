@@ -1,7 +1,7 @@
 class Cmusfm < Formula
   desc "Last.fm standalone scrobbler for the cmus music player"
-  homepage "https://github.com/Arkq/cmusfm"
-  url "https://ghproxy.com/https://github.com/Arkq/cmusfm/archive/refs/tags/v0.5.0.tar.gz"
+  homepage "https:github.comArkqcmusfm"
+  url "https:github.comArkqcmusfmarchiverefstagsv0.5.0.tar.gz"
   sha256 "17aae8fc805e79b367053ad170854edceee5f4c51a9880200d193db9862d8363"
   license "GPL-3.0-or-later"
 
@@ -31,17 +31,17 @@ class Cmusfm < Formula
   def install
     system "autoreconf", "--install"
     mkdir "build" do
-      system "../configure", "--prefix=#{prefix}", "--disable-dependency-tracking", "--disable-silent-rules"
+      system "..configure", "--prefix=#{prefix}", "--disable-dependency-tracking", "--disable-silent-rules"
       system "make", "install"
     end
   end
 
   test do
-    cmus_home = testpath/".config/cmus"
-    cmusfm_conf = cmus_home/"cmusfm.conf"
-    cmusfm_sock = cmus_home/"cmusfm.socket"
-    cmusfm_cache = cmus_home/"cmusfm.cache"
-    faketime_conf = testpath/".faketimerc"
+    cmus_home = testpath".configcmus"
+    cmusfm_conf = cmus_home"cmusfm.conf"
+    cmusfm_sock = cmus_home"cmusfm.socket"
+    cmusfm_cache = cmus_home"cmusfm.cache"
+    faketime_conf = testpath".faketimerc"
 
     test_artist = "Test Artist"
     test_title = "Test Title"
@@ -59,13 +59,13 @@ class Cmusfm < Formula
       server = fork do
         faketime_conf.write "+0"
         if OS.mac?
-          ENV["DYLD_INSERT_LIBRARIES"] = Formula["libfaketime"].lib/"faketime"/"libfaketime.1.dylib"
+          ENV["DYLD_INSERT_LIBRARIES"] = Formula["libfaketime"].lib"faketime""libfaketime.1.dylib"
           ENV["DYLD_FORCE_FLAT_NAMESPACE"] = "1"
         else
-          ENV["LD_PRELOAD"] = Formula["libfaketime"].lib/"faketime"/"libfaketime.so.1"
+          ENV["LD_PRELOAD"] = Formula["libfaketime"].lib"faketime""libfaketime.so.1"
         end
         ENV["FAKETIME_NO_CACHE"] = "1"
-        exec bin/"cmusfm", "server"
+        exec bin"cmusfm", "server"
       end
       loop do
         sleep 0.5
@@ -73,10 +73,10 @@ class Cmusfm < Formula
         break if cmusfm_sock.exist?
       end
 
-      system bin/"cmusfm", "status", "playing", *status_args
+      system bin"cmusfm", "status", "playing", *status_args
       sleep 5
       faketime_conf.atomic_write "+#{test_duration}"
-      system bin/"cmusfm", "status", "stopped", *status_args
+      system bin"cmusfm", "status", "stopped", *status_args
     ensure
       Process.kill :TERM, server
       Process.wait server
@@ -84,7 +84,7 @@ class Cmusfm < Formula
 
     assert_predicate cmusfm_cache, :exist?
     strings = shell_output "strings #{cmusfm_cache}"
-    assert_match(/^#{test_artist}$/, strings)
-    assert_match(/^#{test_title}$/, strings)
+    assert_match(^#{test_artist}$, strings)
+    assert_match(^#{test_title}$, strings)
   end
 end

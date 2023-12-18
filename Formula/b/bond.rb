@@ -1,7 +1,7 @@
 class Bond < Formula
   desc "Cross-platform framework for working with schematized data"
-  homepage "https://github.com/microsoft/bond"
-  url "https://ghproxy.com/https://github.com/microsoft/bond/archive/refs/tags/10.0.0.tar.gz"
+  homepage "https:github.commicrosoftbond"
+  url "https:github.commicrosoftbondarchiverefstags10.0.0.tar.gz"
   sha256 "87858b597a1da74421974d5c3cf3a9ea56339643b19b48274d44b13bc9483f29"
   license "MIT"
 
@@ -33,15 +33,15 @@ class Bond < Formula
       system "make"
       system "make", "install"
     end
-    chmod 0755, bin/"gbc"
+    chmod 0755, bin"gbc"
     pkgshare.install "examples"
   end
 
   test do
-    cp_r pkgshare/"examples/cpp/core/serialization/.", testpath
-    system bin/"gbc", "c++", "serialization.bond"
+    cp_r pkgshare"examplescppcoreserialization.", testpath
+    system bin"gbc", "c++", "serialization.bond"
     system ENV.cxx, "-std=c++11", "serialization_types.cpp", "serialization.cpp",
-                    "-o", "test", "-L#{lib}/bond", "-lbond", "-lbond_apply"
-    system "./test"
+                    "-o", "test", "-L#{lib}bond", "-lbond", "-lbond_apply"
+    system ".test"
   end
 end

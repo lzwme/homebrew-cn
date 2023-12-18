@@ -1,7 +1,7 @@
 class Zola < Formula
   desc "Fast static site generator in a single binary with everything built-in"
-  homepage "https://www.getzola.org/"
-  url "https://ghproxy.com/https://github.com/getzola/zola/archive/refs/tags/v0.17.2.tar.gz"
+  homepage "https:www.getzola.org"
+  url "https:github.comgetzolazolaarchiverefstagsv0.17.2.tar.gz"
   sha256 "471238f38076803cb2af1c53cf418280ae51694fbcc2e547da3f6715a718c750"
   license "MIT"
 
@@ -29,26 +29,26 @@ class Zola < Formula
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
     system "cargo", "install", "--features", "native-tls", *std_cargo_args
 
-    generate_completions_from_executable(bin/"zola", "completion")
+    generate_completions_from_executable(bin"zola", "completion")
   end
 
   test do
-    system "yes '' | #{bin}/zola init mysite"
-    (testpath/"mysite/content/blog/_index.md").write <<~EOS
+    system "yes '' | #{bin}zola init mysite"
+    (testpath"mysitecontentblog_index.md").write <<~EOS
       +++
       +++
 
       Hi I'm Homebrew.
     EOS
-    (testpath/"mysite/templates/section.html").write <<~EOS
+    (testpath"mysitetemplatessection.html").write <<~EOS
       {{ section.content | safe }}
     EOS
 
-    cd testpath/"mysite" do
-      system bin/"zola", "build"
+    cd testpath"mysite" do
+      system bin"zola", "build"
     end
 
-    assert_equal "<p>Hi I'm Homebrew.</p>",
-      (testpath/"mysite/public/blog/index.html").read.strip
+    assert_equal "<p>Hi I'm Homebrew.<p>",
+      (testpath"mysitepublicblogindex.html").read.strip
   end
 end

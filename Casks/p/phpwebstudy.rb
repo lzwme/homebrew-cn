@@ -5,14 +5,14 @@ cask "phpwebstudy" do
   sha256 arm:   "e62ec3b8096ecc9f535d351f42071036144deb047b361c88163511de772db8f7",
          intel: "e374a94b30a16dc288978967fbed951d89092b96cb6982684913cd2680b90fa7"
 
-  url "https://ghproxy.com/https://github.com/xpf0000/PhpWebStudy/releases/download/v#{version}/PhpWebStudy-#{version}#{arch}-mac.zip",
-      verified: "github.com/xpf0000/PhpWebStudy/"
+  url "https:github.comxpf0000PhpWebStudyreleasesdownloadv#{version}PhpWebStudy-#{version}#{arch}-mac.zip",
+      verified: "github.comxpf0000PhpWebStudy"
   name "PhpWebStudy"
   desc "PHP and Web development environment manager"
-  homepage "https://www.macphpstudy.com/"
+  homepage "https:www.macphpstudy.com"
 
   livecheck do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/xpf0000/PhpWebStudy/master/latest-mac.yml"
+    url "https:raw.githubusercontent.comxpf0000PhpWebStudymasterlatest-mac.yml"
     strategy :electron_builder
   end
 
@@ -21,8 +21,8 @@ cask "phpwebstudy" do
   app "PhpWebStudy.app"
 
   zap trash: [
-    "~/Library/Application Support/PhpWebStudy",
-    "~/Library/Logs/PhpWebStudy",
-    "~/Library/PhpWebStudy",
+    "~LibraryApplication SupportPhpWebStudy",
+    "~LibraryLogsPhpWebStudy",
+    "~LibraryPhpWebStudy",
   ]
 end

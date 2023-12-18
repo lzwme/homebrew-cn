@@ -1,10 +1,10 @@
 class Httm < Formula
-  desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
-  homepage "https://github.com/kimono-koans/httm"
-  url "https://ghproxy.com/https://github.com/kimono-koans/httm/archive/refs/tags/0.33.0.tar.gz"
+  desc "Interactive, file-level Time Machine-like tool for ZFSbtrfs"
+  homepage "https:github.comkimono-koanshttm"
+  url "https:github.comkimono-koanshttmarchiverefstags0.33.0.tar.gz"
   sha256 "0f5a59a67e3088f5adffa6a189da7729facaf755e25b08f6dc881e701c7839da"
   license "MPL-2.0"
-  head "https://github.com/kimono-koans/httm.git", branch: "master"
+  head "https:github.comkimono-koanshttm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a86f449959d34e1024dd13ddf97c58b28dbb7369774f9cb9e0b05c0f270a306"
@@ -24,9 +24,9 @@ class Httm < Formula
   end
 
   test do
-    touch testpath/"foo"
+    touch testpath"foo"
     assert_equal "Error: httm could not find any valid datasets on the system.",
-      shell_output("#{bin}/httm #{testpath}/foo 2>&1", 1).strip
-    assert_equal "httm #{version}", shell_output("#{bin}/httm --version").strip
+      shell_output("#{bin}httm #{testpath}foo 2>&1", 1).strip
+    assert_equal "httm #{version}", shell_output("#{bin}httm --version").strip
   end
 end

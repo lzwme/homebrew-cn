@@ -1,13 +1,13 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
-  homepage "https://ser2net.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.6.0.tar.gz"
+  homepage "https:ser2net.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectser2netser2netser2net-4.6.0.tar.gz"
   sha256 "58a7ba97761f96b9228bccf6367c2715c0c0be1f99e0a114d429d8c1fcb9c8b2"
   license "GPL-2.0-only"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/ser2net[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?ser2net[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -24,50 +24,50 @@ class Ser2net < Formula
 
   # pin to use gensio 2.4.1 due to arm build issue with 2.6.7
   resource "gensio" do
-    url "https://downloads.sourceforge.net/project/ser2net/ser2net/gensio-2.4.1.tar.gz"
+    url "https:downloads.sourceforge.netprojectser2netser2netgensio-2.4.1.tar.gz"
     sha256 "949438b558bdca142555ec482db6092eca87447d23a4fb60c1836e9e16b23ead"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
     end
   end
 
   def install
     resource("gensio").stage do
-      system "./configure", "--disable-dependency-tracking",
-                            "--prefix=#{libexec}/gensio",
+      system ".configure", "--disable-dependency-tracking",
+                            "--prefix=#{libexec}gensio",
                             "--with-python=no",
                             "--with-tcl=no"
       system "make", "install"
     end
 
-    ENV.append_path "PKG_CONFIG_PATH", "#{libexec}/gensio/lib/pkgconfig"
-    ENV.append_path "CFLAGS", "-I#{libexec}/gensio/include"
-    ENV.append_path "LDFLAGS", "-L#{libexec}/gensio/lib"
+    ENV.append_path "PKG_CONFIG_PATH", "#{libexec}gensiolibpkgconfig"
+    ENV.append_path "CFLAGS", "-I#{libexec}gensioinclude"
+    ENV.append_path "LDFLAGS", "-L#{libexec}gensiolib"
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make", "install"
 
-    (etc/"ser2net").install "ser2net.yaml"
+    (etc"ser2net").install "ser2net.yaml"
   end
 
   def caveats
     <<~EOS
-      To configure ser2net, edit the example configuration in #{etc}/ser2net/ser2net.yaml
+      To configure ser2net, edit the example configuration in #{etc}ser2netser2net.yaml
     EOS
   end
 
   service do
-    run [opt_sbin/"ser2net", "-p", "12345"]
+    run [opt_sbin"ser2net", "-p", "12345"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}/ser2net -v", 1)
+    assert_match version.to_s, shell_output("#{sbin}ser2net -v", 1)
   end
 end

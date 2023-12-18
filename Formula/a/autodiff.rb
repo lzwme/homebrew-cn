@@ -1,10 +1,10 @@
 class Autodiff < Formula
   desc "Automatic differentiation made easier for C++"
-  homepage "https://autodiff.github.io"
-  url "https://ghproxy.com/https://github.com/autodiff/autodiff/archive/refs/tags/v1.0.3.tar.gz"
+  homepage "https:autodiff.github.io"
+  url "https:github.comautodiffautodiffarchiverefstagsv1.0.3.tar.gz"
   sha256 "21b57ce60864857913cacb856c3973ae10f7539b6bb00bcc04f85b2f00db0ce2"
   license "MIT"
-  head "https://github.com/autodiff/autodiff.git", branch: "main"
+  head "https:github.comautodiffautodiff.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -36,17 +36,17 @@ class Autodiff < Formula
                     *std_cmake_args
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
-    (pkgshare/"test").install "examples/forward/example-forward-single-variable-function.cpp" => "forward.cpp"
-    (pkgshare/"test").install "examples/reverse/example-reverse-single-variable-function.cpp" => "reverse.cpp"
+    (pkgshare"test").install "examplesforwardexample-forward-single-variable-function.cpp" => "forward.cpp"
+    (pkgshare"test").install "examplesreverseexample-reverse-single-variable-function.cpp" => "reverse.cpp"
   end
 
   test do
-    system ENV.cxx, pkgshare/"test/forward.cpp", "--std=c++17",
+    system ENV.cxx, pkgshare"testforward.cpp", "--std=c++17",
                     "-I#{include}", "-I#{Formula["eigen"].opt_include}", "-o", "forward"
-    system ENV.cxx, pkgshare/"test/reverse.cpp", "--std=c++17",
+    system ENV.cxx, pkgshare"testreverse.cpp", "--std=c++17",
                     "-I#{include}", "-I#{Formula["eigen"].opt_include}", "-o", "reverse"
-    assert_match "u = 8.19315\ndu/dx = 5.25\n", shell_output(testpath/"forward")
-    assert_match "u = 8.19315\nux = 5.25\n", shell_output(testpath/"reverse")
+    assert_match "u = 8.19315\ndudx = 5.25\n", shell_output(testpath"forward")
+    assert_match "u = 8.19315\nux = 5.25\n", shell_output(testpath"reverse")
     system python3, "-c", "import autodiff"
   end
 end

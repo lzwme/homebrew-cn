@@ -1,7 +1,7 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
-  homepage "https://rakudo.org/"
-  url "https://ghproxy.com/https://github.com/rakudo/star/releases/download/2023.11/rakudo-star-2023.11.tar.gz"
+  homepage "https:rakudo.org"
+  url "https:github.comrakudostarreleasesdownload2023.11rakudo-star-2023.11.tar.gz"
   sha256 "336f7d29f002d2511215b36d6afef31378874ce794e7ea774651f553179219f5"
   license "Artistic-2.0"
 
@@ -31,7 +31,7 @@ class RakudoStar < Formula
     if !OS.mac? || MacOS.version < :catalina
       libffi = Formula["libffi"]
       ENV.remove "CPPFLAGS", "-I#{libffi.include}"
-      ENV.prepend "CPPFLAGS", "-I#{libffi.lib}/libffi-#{libffi.version}/include"
+      ENV.prepend "CPPFLAGS", "-I#{libffi.lib}libffi-#{libffi.version}include"
     end
 
     ENV.deparallelize # An intermittent race condition causes random build failures.
@@ -45,20 +45,20 @@ class RakudoStar < Formula
     openssl_prefix = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_PREFIX"] = openssl_prefix.to_s
 
-    system "bin/rstar", "install", "-p", prefix.to_s
+    system "binrstar", "install", "-p", prefix.to_s
 
-    #  Installed scripts are now in share/perl/{site|vendor}/bin, so we need to symlink it too.
-    bin.install_symlink (share/"perl6/vendor/bin").children
-    bin.install_symlink (share/"perl6/site/bin").children
+    #  Installed scripts are now in shareperl{site|vendor}bin, so we need to symlink it too.
+    bin.install_symlink (share"perl6vendorbin").children
+    bin.install_symlink (share"perl6sitebin").children
 
     # Move the man pages out of the top level into share.
     # Not all backends seem to generate man pages at this point (moar does not, parrot does),
     # so we need to check if the directory exists first.
-    share.install prefix/"man" if (prefix/"man").directory?
+    share.install prefix"man" if (prefix"man").directory?
   end
 
   test do
-    out = shell_output("#{bin}/raku -e 'loop (my $i = 0; $i < 10; $i++) { print $i }'")
+    out = shell_output("#{bin}raku -e 'loop (my $i = 0; $i < 10; $i++) { print $i }'")
     assert_equal "0123456789", out
   end
 end

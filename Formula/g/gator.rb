@@ -1,10 +1,10 @@
 class Gator < Formula
   desc "CLI Utility for Open Policy Agent Gatekeeper"
-  homepage "https://open-policy-agent.github.io/gatekeeper/website/docs/gator"
-  url "https://ghproxy.com/https://github.com/open-policy-agent/gatekeeper/archive/refs/tags/v3.14.0.tar.gz"
+  homepage "https:open-policy-agent.github.iogatekeeperwebsitedocsgator"
+  url "https:github.comopen-policy-agentgatekeeperarchiverefstagsv3.14.0.tar.gz"
   sha256 "85fd4da39be9b852f6be8ae519d091151e4991f8ba7c7870d705f396086e8038"
   license "Apache-2.0"
-  head "https://github.com/open-policy-agent/gatekeeper.git", branch: "master"
+  head "https:github.comopen-policy-agentgatekeeper.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "210d5d9c058ab95264e15d5d8118ce162f431cfe2a22b1465f35e3ab534300ec"
@@ -21,24 +21,24 @@ class Gator < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/open-policy-agent/gatekeeper/v3/pkg/version.Version=#{version}
+      -X github.comopen-policy-agentgatekeeperv3pkgversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gator"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgator"
 
-    generate_completions_from_executable(bin/"gator", "completion")
+    generate_completions_from_executable(bin"gator", "completion")
   end
 
   test do
-    assert_match "gator is a suite of authorship tools for Gatekeeper", shell_output("#{bin}/gator -h")
+    assert_match "gator is a suite of authorship tools for Gatekeeper", shell_output("#{bin}gator -h")
 
     # Create a test manifest file
-    (testpath/"gator-manifest.yaml").write <<~EOS
-      apiVersion: networking.k8s.io/v1
+    (testpath"gator-manifest.yaml").write <<~EOS
+      apiVersion: networking.k8s.iov1
       kind: Ingress
       metadata:
         name: ingress-demo-disallowed
         annotations:
-          kubernetes.io/ingress.allow-http: "false"
+          kubernetes.ioingress.allow-http: "false"
       spec:
         tls: [{}]
         rules:
@@ -46,7 +46,7 @@ class Gator < Formula
             http:
               paths:
               - pathType: Prefix
-                path: "/"
+                path: ""
                 backend:
                   service:
                     name: nginx
@@ -54,8 +54,8 @@ class Gator < Formula
                       number: 80
     EOS
     # Create a test constraint template
-    (testpath/"template-and-constraints/gator-constraint-template.yaml").write <<~EOS
-      apiVersion: templates.gatekeeper.sh/v1
+    (testpath"template-and-constraintsgator-constraint-template.yaml").write <<~EOS
+      apiVersion: templates.gatekeeper.shv1
       kind: ConstraintTemplate
       metadata:
         name: k8shttpsonly
@@ -64,9 +64,9 @@ class Gator < Formula
             Requires Ingress resources to be HTTPS only.
             Ingress resources must:
             - include a valid TLS configuration
-            - include the `kubernetes.io/ingress.allow-http` annotation, set to
+            - include the `kubernetes.ioingress.allow-http` annotation, set to
               `false`.
-            https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
+            https:kubernetes.iodocsconceptsservices-networkingingress#tls
       spec:
         crd:
           spec:
@@ -78,7 +78,7 @@ class Gator < Formula
               package k8shttpsonly
               violation[{"msg": msg}] {
                 input.review.object.kind == "Ingress"
-                re_match("^(extensions|networking.k8s.io)/", input.review.object.apiVersion)
+                re_match("^(extensions|networking.k8s.io)", input.review.object.apiVersion)
                 ingress := input.review.object
                 not https_complete(ingress)
                 msg := sprintf("Ingress should be https. tls configuration and allow-http=false annotation are required for %v", [ingress.metadata.name])
@@ -86,12 +86,12 @@ class Gator < Formula
               https_complete(ingress) = true {
                 ingress.spec["tls"]
                 count(ingress.spec.tls) > 0
-                ingress.metadata.annotations["kubernetes.io/ingress.allow-http"] == "false"
+                ingress.metadata.annotations["kubernetes.ioingress.allow-http"] == "false"
               }
     EOS
     # Create a test constraint file
-    (testpath/"template-and-constraints/gator-constraint.yaml").write <<~EOS
-      apiVersion: constraints.gatekeeper.sh/v1beta1
+    (testpath"template-and-constraintsgator-constraint.yaml").write <<~EOS
+      apiVersion: constraints.gatekeeper.shv1beta1
       kind: K8sHttpsOnly
       metadata:
         name: ingress-https-only
@@ -102,8 +102,8 @@ class Gator < Formula
               kinds: ["Ingress"]
     EOS
 
-    assert_empty shell_output("#{bin}/gator test -f gator-manifest.yaml -f template-and-constraints/")
+    assert_empty shell_output("#{bin}gator test -f gator-manifest.yaml -f template-and-constraints")
 
-    assert_match version.to_s, shell_output("#{bin}/gator --version")
+    assert_match version.to_s, shell_output("#{bin}gator --version")
   end
 end

@@ -1,10 +1,10 @@
 class Podsync < Formula
   desc "Turn YouTube or Vimeo channels, users, or playlists into podcast feeds"
-  homepage "https://github.com/mxpv/podsync"
-  url "https://ghproxy.com/https://github.com/mxpv/podsync/archive/refs/tags/v2.6.1.tar.gz"
+  homepage "https:github.commxpvpodsync"
+  url "https:github.commxpvpodsyncarchiverefstagsv2.6.1.tar.gz"
   sha256 "e9d1653c4b8424b8f02dc1812c2848cfc930f400e996979464228cad0e16ec9b"
   license "MIT"
-  head "https://github.com/mxpv/podsync.git", branch: "main"
+  head "https:github.commxpvpodsync.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -23,13 +23,13 @@ class Podsync < Formula
 
   def install
     system "make", "build"
-    bin.install "bin/podsync"
+    bin.install "binpodsync"
   end
 
   test do
     port = free_port
 
-    (testpath/"config.toml").write <<~EOS
+    (testpath"config.toml").write <<~EOS
       [server]
       port = #{port}
 
@@ -38,21 +38,21 @@ class Podsync < Formula
 
       [storage]
         [storage.local]
-        data_dir = "data/podsync/"
+        data_dir = "datapodsync"
 
       [feeds]
         [feeds.ID1]
-        url = "https://www.youtube.com/channel/UCxC5Ls6DwqV0e-CYcAKkExQ"
+        url = "https:www.youtube.comchannelUCxC5Ls6DwqV0e-CYcAKkExQ"
     EOS
 
     pid = fork do
-      exec bin/"podsync"
+      exec bin"podsync"
     end
     sleep 1
 
     Process.kill("SIGINT", pid)
     Process.wait(pid)
 
-    assert_predicate testpath/"podsync.log", :exist?
+    assert_predicate testpath"podsync.log", :exist?
   end
 end

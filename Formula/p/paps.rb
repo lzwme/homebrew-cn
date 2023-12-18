@@ -1,7 +1,7 @@
 class Paps < Formula
   desc "Pango to PostScript converter"
-  homepage "https://github.com/dov/paps"
-  url "https://ghproxy.com/https://github.com/dov/paps/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:github.comdovpaps"
+  url "https:github.comdovpapsarchiverefstagsv0.8.0.tar.gz"
   sha256 "8fd8db04e6f8c5c164806d2c1b5fea6096daf583f83f06d1e4813ea61edc291f"
   license "LGPL-2.0-or-later"
   revision 1
@@ -32,8 +32,8 @@ class Paps < Formula
   end
 
   test do
-    system bin/"paps", pkgshare/"examples/small-hello.utf8", "--encoding=UTF-8", "-o", "paps.ps"
-    assert_predicate testpath/"paps.ps", :exist?
-    assert_match "%!PS-Adobe-3.0", (testpath/"paps.ps").read
+    system bin"paps", pkgshare"examplessmall-hello.utf8", "--encoding=UTF-8", "-o", "paps.ps"
+    assert_predicate testpath"paps.ps", :exist?
+    assert_match "%!PS-Adobe-3.0", (testpath"paps.ps").read
   end
 end

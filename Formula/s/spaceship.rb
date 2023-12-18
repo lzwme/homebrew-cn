@@ -1,10 +1,10 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
-  homepage "https://spaceship-prompt.sh"
-  url "https://ghproxy.com/https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v4.15.0.tar.gz"
+  homepage "https:spaceship-prompt.sh"
+  url "https:github.comspaceship-promptspaceship-promptarchiverefstagsv4.15.0.tar.gz"
   sha256 "7fcac06c846269ebc3c7e01fb8e3ba4c9605788ddcd8f6dd2dbabea1efa84391"
   license "MIT"
-  head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
+  head "https:github.comspaceship-promptspaceship-prompt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7aaf9b85404f9dde679da4969ce895f8da6c59382c0b6e822b4e86c7f2d3459b"
@@ -26,14 +26,14 @@ class Spaceship < Formula
 
   def caveats
     <<~EOS
-      To activate Spaceship, add the following line to ~/.zshrc:
-        source "#{opt_prefix}/spaceship.zsh"
+      To activate Spaceship, add the following line to ~.zshrc:
+        source "#{opt_prefix}spaceship.zsh"
       If your .zshrc sets ZSH_THEME, remove that line.
     EOS
   end
 
   test do
     assert_match "SUCCESS",
-      shell_output("zsh -fic '. #{opt_prefix}/spaceship.zsh && (( ${+SPACESHIP_VERSION} )) && echo SUCCESS'")
+      shell_output("zsh -fic '. #{opt_prefix}spaceship.zsh && (( ${+SPACESHIP_VERSION} )) && echo SUCCESS'")
   end
 end

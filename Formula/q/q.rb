@@ -2,11 +2,11 @@ class Q < Formula
   include Language::Python::Virtualenv
 
   desc "Run SQL directly on CSV or TSV files"
-  homepage "https://harelba.github.io/q/"
-  url "https://ghproxy.com/https://github.com/harelba/q/archive/refs/tags/2.0.20.tar.gz"
+  homepage "https:harelba.github.ioq"
+  url "https:github.comharelbaqarchiverefstags2.0.20.tar.gz"
   sha256 "46793aef623aac3700856c699cc04810b7a53533f829318729cee900c499a7e1"
   license "GPL-3.0-or-later"
-  head "https://github.com/harelba/q.git", branch: "master"
+  head "https:github.comharelbaq.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a1d9fe022e696e90b6f45aa3e83e9fccd7959849d475dbb7688a894c7bda353"
@@ -19,7 +19,7 @@ class Q < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bed14a331133ff96b85fa37e0729ca695bd273f78ee82e792185d137edf9917a"
   end
 
-  disable! date: "2022-12-30", because: "requires PyOxidizer, which is a disallowed dependency in homebrew/core"
+  disable! date: "2022-12-30", because: "requires PyOxidizer, which is a disallowed dependency in homebrewcore"
 
   depends_on "ronn" => :build
   depends_on "python@3.9"
@@ -27,15 +27,15 @@ class Q < Formula
 
   def install
     # broken symlink, fixed in next version
-    rm_f "bin/qtextasdata.py"
+    rm_f "binqtextasdata.py"
     virtualenv_install_with_resources
-    system "ronn", "--roff", "--section=1", "doc/USAGE.markdown"
-    man1.install "doc/USAGE.1" => "q.1"
+    system "ronn", "--roff", "--section=1", "docUSAGE.markdown"
+    man1.install "docUSAGE.1" => "q.1"
   end
 
   test do
     seq = (1..100).map(&:to_s).join("\n")
-    output = pipe_output("#{bin}/q -c 1 'select sum(c1) from -'", seq)
+    output = pipe_output("#{bin}q -c 1 'select sum(c1) from -'", seq)
     assert_equal "5050\n", output
   end
 end

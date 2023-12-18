@@ -1,11 +1,11 @@
 class Mitie < Formula
   desc "Library and tools for information extraction"
-  homepage "https://github.com/mit-nlp/MITIE/"
-  url "https://ghproxy.com/https://github.com/mit-nlp/MITIE/archive/refs/tags/v0.7.tar.gz"
+  homepage "https:github.commit-nlpMITIE"
+  url "https:github.commit-nlpMITIEarchiverefstagsv0.7.tar.gz"
   sha256 "0830955e64c2a4cceab803884355f090cf8e9086e68ac5df43058f05c34697e8"
   license "BSL-1.0"
   revision 3
-  head "https://github.com/mit-nlp/MITIE.git", branch: "master"
+  head "https:github.commit-nlpMITIE.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -21,21 +21,21 @@ class Mitie < Formula
   depends_on "python@3.12"
 
   resource "models-english" do
-    url "https://downloads.sourceforge.net/project/mitie/binaries/MITIE-models-v0.2.tar.bz2"
+    url "https:downloads.sourceforge.netprojectmitiebinariesMITIE-models-v0.2.tar.bz2"
     sha256 "dc073eaef980e65d68d18c7193d94b9b727beb254a0c2978f39918f158d91b31"
   end
 
   def install
-    (share/"MITIE-models").install resource("models-english")
+    (share"MITIE-models").install resource("models-english")
 
-    inreplace "mitielib/makefile", "libmitie.so", "libmitie.dylib" if OS.mac?
+    inreplace "mitielibmakefile", "libmitie.so", "libmitie.dylib" if OS.mac?
     system "make", "mitielib"
     system "make"
 
-    include.install Dir["mitielib/include/*"]
-    lib.install "mitielib/#{shared_library("libmitie")}", "mitielib/libmitie.a"
+    include.install Dir["mitielibinclude*"]
+    lib.install "mitielib#{shared_library("libmitie")}", "mitieliblibmitie.a"
 
-    (prefix/Language::Python.site_packages("python3.12")).install "mitielib/mitie.py"
+    (prefixLanguage::Python.site_packages("python3.12")).install "mitielibmitie.py"
     pkgshare.install "examples", "sample_text.txt",
                      "sample_text.reference-output",
                      "sample_text.reference-output-relations"
@@ -43,10 +43,10 @@ class Mitie < Formula
   end
 
   test do
-    system ENV.cc, pkgshare/"examples/C/ner/ner_example.c",
+    system ENV.cc, pkgshare"examplesCnerner_example.c",
            "-I#{include}", "-L#{lib}", "-lmitie", "-lpthread",
-           "-o", testpath/"ner_example"
-    system "./ner_example", share/"MITIE-models/english/ner_model.dat",
-           pkgshare/"sample_text.txt"
+           "-o", testpath"ner_example"
+    system ".ner_example", share"MITIE-modelsenglishner_model.dat",
+           pkgshare"sample_text.txt"
   end
 end

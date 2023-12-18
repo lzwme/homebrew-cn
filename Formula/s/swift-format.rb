@@ -1,12 +1,12 @@
 class SwiftFormat < Formula
   desc "Formatting technology for Swift source code"
-  homepage "https://github.com/apple/swift-format"
-  url "https://github.com/apple/swift-format.git",
+  homepage "https:github.comappleswift-format"
+  url "https:github.comappleswift-format.git",
       tag:      "509.0.0",
       revision: "83248b4fa37919f78ffbd4650946759bcc54c2b5"
   license "Apache-2.0"
   version_scheme 1
-  head "https://github.com/apple/swift-format.git", branch: "main"
+  head "https:github.comappleswift-format.git", branch: "main"
 
   livecheck do
     url :stable
@@ -33,12 +33,12 @@ class SwiftFormat < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/swift-format"
-    doc.install "Documentation/Configuration.md"
+    bin.install ".buildreleaseswift-format"
+    doc.install "DocumentationConfiguration.md"
   end
 
   test do
-    (testpath/"test.swift").write " print(  \"Hello, World\"  ) ;"
-    assert_equal "print(\"Hello, World\")\n", shell_output("#{bin}/swift-format test.swift")
+    (testpath"test.swift").write " print(  \"Hello, World\"  ) ;"
+    assert_equal "print(\"Hello, World\")\n", shell_output("#{bin}swift-format test.swift")
   end
 end

@@ -1,13 +1,13 @@
 class Filebeat < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
-  homepage "https://www.elastic.co/products/beats/filebeat"
-  url "https://github.com/elastic/beats.git",
+  homepage "https:www.elastic.coproductsbeatsfilebeat"
+  url "https:github.comelasticbeats.git",
       tag:      "v8.11.3",
       revision: "bfdd9fb0a3c4eeeacf5a5bc2110164a177e4cb08"
   # Outside of the "x-pack" folder, source code in a given file is licensed
   # under the Apache License Version 2.0
   license "Apache-2.0"
-  head "https://github.com/elastic/beats.git", branch: "master"
+  head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "132036c7af195d12e066e5dd0fad2cd1f38bb115520cd4023ae9829522e60e11"
@@ -30,7 +30,7 @@ class Filebeat < Formula
     rm_rf "x-pack"
 
     cd "filebeat" do
-      # don't build docs because it would fail creating the combined OSS/x-pack
+      # don't build docs because it would fail creating the combined OSSx-pack
       # docs and we aren't installing them anyway
       inreplace "magefile.go", "mg.SerialDeps(Fields, Dashboards, Config, includeList, fieldDocs,",
                                "mg.SerialDeps(Fields, Dashboards, Config, includeList,"
@@ -40,35 +40,35 @@ class Filebeat < Formula
       system "mage", "-v", "build"
       system "mage", "-v", "update"
 
-      (etc/"filebeat").install Dir["filebeat.*", "fields.yml", "modules.d"]
-      (etc/"filebeat"/"module").install Dir["build/package/modules/*"]
-      (libexec/"bin").install "filebeat"
-      prefix.install "build/kibana"
+      (etc"filebeat").install Dir["filebeat.*", "fields.yml", "modules.d"]
+      (etc"filebeat""module").install Dir["buildpackagemodules*"]
+      (libexec"bin").install "filebeat"
+      prefix.install "buildkibana"
     end
 
-    (bin/"filebeat").write <<~EOS
-      #!/bin/sh
-      exec #{libexec}/bin/filebeat \
-        --path.config #{etc}/filebeat \
-        --path.data #{var}/lib/filebeat \
+    (bin"filebeat").write <<~EOS
+      #!binsh
+      exec #{libexec}binfilebeat \
+        --path.config #{etc}filebeat \
+        --path.data #{var}libfilebeat \
         --path.home #{prefix} \
-        --path.logs #{var}/log/filebeat \
+        --path.logs #{var}logfilebeat \
         "$@"
     EOS
 
-    chmod 0555, bin/"filebeat" # generate_completions_from_executable fails otherwise
-    generate_completions_from_executable(bin/"filebeat", "completion", shells: [:bash, :zsh])
+    chmod 0555, bin"filebeat" # generate_completions_from_executable fails otherwise
+    generate_completions_from_executable(bin"filebeat", "completion", shells: [:bash, :zsh])
   end
 
   service do
-    run opt_bin/"filebeat"
+    run opt_bin"filebeat"
   end
 
   test do
-    log_file = testpath/"test.log"
+    log_file = testpath"test.log"
     touch log_file
 
-    (testpath/"filebeat.yml").write <<~EOS
+    (testpath"filebeat.yml").write <<~EOS
       filebeat:
         inputs:
           -
@@ -80,14 +80,14 @@ class Filebeat < Formula
           path: #{testpath}
     EOS
 
-    (testpath/"log").mkpath
-    (testpath/"data").mkpath
+    (testpath"log").mkpath
+    (testpath"data").mkpath
 
     fork do
-      exec "#{bin}/filebeat", "-c", "#{testpath}/filebeat.yml",
-           "-path.config", "#{testpath}/filebeat",
+      exec "#{bin}filebeat", "-c", "#{testpath}filebeat.yml",
+           "-path.config", "#{testpath}filebeat",
            "-path.home=#{testpath}",
-           "-path.logs", "#{testpath}/log",
+           "-path.logs", "#{testpath}log",
            "-path.data", testpath
     end
 
@@ -95,7 +95,7 @@ class Filebeat < Formula
     log_file.append_lines "foo bar baz"
     sleep 5
 
-    assert_predicate testpath/"meta.json", :exist?
-    assert_predicate testpath/"registry/filebeat", :exist?
+    assert_predicate testpath"meta.json", :exist?
+    assert_predicate testpath"registryfilebeat", :exist?
   end
 end

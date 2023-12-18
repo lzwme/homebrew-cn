@@ -1,7 +1,7 @@
 class Liqoctl < Formula
   desc "Is a CLI tool to install and manage Liqo-enabled clusters"
-  homepage "https://liqo.io"
-  url "https://ghproxy.com/https://github.com/liqotech/liqo/archive/refs/tags/v0.10.1.tar.gz"
+  homepage "https:liqo.io"
+  url "https:github.comliqotechliqoarchiverefstagsv0.10.1.tar.gz"
   sha256 "357de695f83d875ad28088ba6d93c018f005b9527574cb948e647a9a0b78b954"
   license "Apache-2.0"
 
@@ -22,17 +22,17 @@ class Liqoctl < Formula
 
     ldflags = %W[
       -s -w
-      -X github.com/liqotech/liqo/pkg/liqoctl/version.liqoctlVersion=v#{version}
+      -X github.comliqotechliqopkgliqoctlversion.liqoctlVersion=v#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/liqoctl"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdliqoctl"
 
-    generate_completions_from_executable(bin/"liqoctl", "completion")
+    generate_completions_from_executable(bin"liqoctl", "completion")
   end
 
   test do
-    run_output = shell_output("#{bin}/liqoctl 2>&1")
+    run_output = shell_output("#{bin}liqoctl 2>&1")
     assert_match "liqoctl is a CLI tool to install and manage Liqo.", run_output
-    assert_match version.to_s, shell_output("#{bin}/liqoctl version --client")
+    assert_match version.to_s, shell_output("#{bin}liqoctl version --client")
   end
 end

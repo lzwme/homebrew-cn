@@ -2,10 +2,10 @@ cask "font-itim" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/itim/Itim-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflitimItim-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Itim"
-  homepage "https://fonts.google.com/specimen/Itim"
+  homepage "https:fonts.google.comspecimenItim"
 
   font "Itim-Regular.ttf"
 

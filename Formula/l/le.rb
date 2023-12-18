@@ -1,7 +1,7 @@
 class Le < Formula
   desc "Text editor with block and binary operations"
-  homepage "https://github.com/lavv17/le"
-  url "https://ghproxy.com/https://github.com/lavv17/le/releases/download/v1.16.7/le-1.16.7.tar.gz"
+  homepage "https:github.comlavv17le"
+  url "https:github.comlavv17lereleasesdownloadv1.16.7le-1.16.7.tar.gz"
   sha256 "1cbe081eba31e693363c9b8a8464af107e4babfd2354a09a17dc315b3605af41"
   license "GPL-3.0"
 
@@ -30,17 +30,17 @@ class Le < Formula
   def install
     # Configure script makes bad assumptions about curses locations.
     # Future versions allow this to be manually specified:
-    # https://github.com/lavv17/le/commit/d921a3cdb3e1a0b50624d17e5efeb5a76d64f29d
-    ncurses = OS.mac? ? MacOS.sdk_path/"usr/include" : Formula["ncurses"].include
-    inreplace "configure", "/usr/local/include/ncurses", ncurses
+    # https:github.comlavv17lecommitd921a3cdb3e1a0b50624d17e5efeb5a76d64f29d
+    ncurses = OS.mac? ? MacOS.sdk_path"usrinclude" : Formula["ncurses"].include
+    inreplace "configure", "usrlocalincludencurses", ncurses
 
     ENV.deparallelize
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/le --help", 1)
+    assert_match "Usage", shell_output("#{bin}le --help", 1)
   end
 end

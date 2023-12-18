@@ -1,16 +1,16 @@
 class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
-  homepage "https://github.com/minio/mc"
-  url "https://github.com/minio/mc.git",
+  homepage "https:github.comminiomc"
+  url "https:github.comminiomc.git",
       tag:      "RELEASE.2023-12-14T00-37-41Z",
       revision: "8da737f8fd63de58dc475bf88eb9e285d206e3ae"
   version "20231214003741"
   license "AGPL-3.0-or-later"
-  head "https://github.com/minio/mc.git", branch: "master"
+  head "https:github.comminiomc.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^(?:RELEASE[._-]?)?([\dTZ-]+)$/i)
+    regex(^(?:RELEASE[._-]?)?([\dTZ-]+)$i)
     strategy :github_latest do |json, regex|
       json["tag_name"]&.scan(regex)&.map { |match| match[0].tr("TZ-", "") }
     end
@@ -32,22 +32,22 @@ class MinioMc < Formula
 
   def install
     if build.head?
-      system "go", "build", *std_go_args(output: bin/"mc")
+      system "go", "build", *std_go_args(output: bin"mc")
     else
       minio_release = stable.specs[:tag]
-      minio_version = minio_release.gsub("RELEASE.", "").chomp.gsub(/T(\d+)-(\d+)-(\d+)Z/, 'T\1:\2:\3Z')
-      proj = "github.com/minio/mc"
+      minio_version = minio_release.gsub("RELEASE.", "").chomp.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
+      proj = "github.comminiomc"
       ldflags = %W[
-        -X #{proj}/cmd.Version=#{minio_version}
-        -X #{proj}/cmd.ReleaseTag=#{minio_release}
-        -X #{proj}/cmd.CommitID=#{Utils.git_head}
+        -X #{proj}cmd.Version=#{minio_version}
+        -X #{proj}cmd.ReleaseTag=#{minio_release}
+        -X #{proj}cmd.CommitID=#{Utils.git_head}
       ]
-      system "go", "build", *std_go_args(output: bin/"mc", ldflags: ldflags)
+      system "go", "build", *std_go_args(output: bin"mc", ldflags: ldflags)
     end
   end
 
   test do
-    system bin/"mc", "mb", testpath/"test"
-    assert_predicate testpath/"test", :exist?
+    system bin"mc", "mb", testpath"test"
+    assert_predicate testpath"test", :exist?
   end
 end

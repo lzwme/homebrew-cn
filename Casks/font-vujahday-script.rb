@@ -2,10 +2,10 @@ cask "font-vujahday-script" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/vujahdayscript/VujahdayScript-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflvujahdayscriptVujahdayScript-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Vujahday Script"
-  homepage "https://fonts.google.com/specimen/Vujahday+Script"
+  homepage "https:fonts.google.comspecimenVujahday+Script"
 
   font "VujahdayScript-Regular.ttf"
 

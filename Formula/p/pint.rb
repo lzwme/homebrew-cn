@@ -1,7 +1,7 @@
 class Pint < Formula
-  desc "Prometheus rule linter/validator"
-  homepage "https://cloudflare.github.io/pint/"
-  url "https://ghproxy.com/https://github.com/cloudflare/pint/archive/refs/tags/v0.53.0.tar.gz"
+  desc "Prometheus rule lintervalidator"
+  homepage "https:cloudflare.github.iopint"
+  url "https:github.comcloudflarepintarchiverefstagsv0.53.0.tar.gz"
   sha256 "6bc852dd64387a7ff708d3e0262656090536ca8e58fdc27e8705a15043458077"
   license "Apache-2.0"
 
@@ -23,13 +23,13 @@ class Pint < Formula
       -X main.version=#{version}
       -X main.commit=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/pint"
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdpint"
 
-    pkgshare.install "docs/examples"
+    pkgshare.install "docsexamples"
   end
 
   test do
-    (testpath/"test.yaml").write <<~EOS
+    (testpath"test.yaml").write <<~EOS
       groups:
       - name: example
         rules:
@@ -42,12 +42,12 @@ class Pint < Formula
             summary: High request latency
     EOS
 
-    cp pkgshare/"examples/simple.hcl", testpath/".pint.hcl"
+    cp pkgshare"examplessimple.hcl", testpath".pint.hcl"
 
-    output = shell_output("#{bin}/pint -n lint #{testpath}/test.yaml 2>&1")
+    output = shell_output("#{bin}pint -n lint #{testpath}test.yaml 2>&1")
     assert_match "level=INFO msg=\"Loading configuration file\" path=.pint.hcl", output
     assert_match "level=INFO msg=\"Problems found\" Warning=4", output
 
-    assert_match version.to_s, shell_output("#{bin}/pint version")
+    assert_match version.to_s, shell_output("#{bin}pint version")
   end
 end

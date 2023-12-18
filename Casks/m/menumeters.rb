@@ -2,11 +2,11 @@ cask "menumeters" do
   version "2.1.6.1"
   sha256 "6c8a1a62e5f84ca043898e2503f4750c8cd8447588c6fb52d3be9c505a5cdff8"
 
-  url "https://ghproxy.com/https://github.com/yujitach/MenuMeters/releases/download/#{version}/MenuMeters_#{version}.zip",
-      verified: "github.com/yujitach/MenuMeters/"
+  url "https:github.comyujitachMenuMetersreleasesdownload#{version}MenuMeters_#{version}.zip",
+      verified: "github.comyujitachMenuMeters"
   name "MenuMeters for El Capitan (and later)"
   desc "Set of CPU, memory, disk, and network monitoring tools"
-  homepage "https://member.ipmu.jp/yuji.tachikawa/MenuMetersElCapitan/"
+  homepage "https:member.ipmu.jpyuji.tachikawaMenuMetersElCapitan"
 
   auto_updates true
   depends_on macos: ">= :el_capitan"
@@ -16,9 +16,9 @@ cask "menumeters" do
   uninstall quit: "com.yujitach.MenuMeters"
 
   zap trash: [
-    "~/Library/Caches/com.yujitach.MenuMeters",
-    "~/Library/PreferencesPanes/MenuMeters.prefPane",
-    "~/Library/Preferences/com.ragingmenace.MenuMeters.plist",
-    "~/Library/Preferences/com.yujitach.MenuMeters.plist",
+    "~LibraryCachescom.yujitach.MenuMeters",
+    "~LibraryPreferencesPanesMenuMeters.prefPane",
+    "~LibraryPreferencescom.ragingmenace.MenuMeters.plist",
+    "~LibraryPreferencescom.yujitach.MenuMeters.plist",
   ]
 end

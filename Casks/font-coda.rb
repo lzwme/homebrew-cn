@@ -2,12 +2,12 @@ cask "font-coda" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/coda"
+      only_path: "oflcoda"
   name "Coda"
-  homepage "https://fonts.google.com/specimen/Coda"
+  homepage "https:fonts.google.comspecimenCoda"
 
   font "Coda-ExtraBold.ttf"
   font "Coda-Regular.ttf"

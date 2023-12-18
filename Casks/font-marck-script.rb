@@ -2,10 +2,10 @@ cask "font-marck-script" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/marckscript/MarckScript-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflmarckscriptMarckScript-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Marck Script"
-  homepage "https://fonts.google.com/specimen/Marck+Script"
+  homepage "https:fonts.google.comspecimenMarck+Script"
 
   font "MarckScript-Regular.ttf"
 

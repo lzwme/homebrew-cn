@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class SqlLanguageServer < Formula
   desc "Language Server for SQL"
-  homepage "https://github.com/joe-re/sql-language-server"
-  url "https://registry.npmjs.org/sql-language-server/-/sql-language-server-1.7.0.tgz"
+  homepage "https:github.comjoe-resql-language-server"
+  url "https:registry.npmjs.orgsql-language-server-sql-language-server-1.7.0.tgz"
   sha256 "c66e8d94863c52c34cab0865be3bac61f152e8029ba32d95778d984c8e0a49b1"
   license "MIT"
 
@@ -26,23 +26,23 @@ class SqlLanguageServer < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
 
     # Remove vendored pre-built binary `terminal-notifier`
-    node_notifier_vendor_dir = libexec/"lib/node_modules/sql-language-server/node_modules/node-notifier/vendor"
+    node_notifier_vendor_dir = libexec"libnode_modulessql-language-servernode_modulesnode-notifiervendor"
     node_notifier_vendor_dir.rmtree # remove vendored pre-built binaries
 
     if OS.mac?
-      terminal_notifier_dir = node_notifier_vendor_dir/"mac.noindex"
+      terminal_notifier_dir = node_notifier_vendor_dir"mac.noindex"
       terminal_notifier_dir.mkpath
 
       # replace vendored `terminal-notifier` with our own
-      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix/"terminal-notifier.app"
+      terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
 
     # Replace universal binaries with their native slices
-    deuniversalize_machos libexec/"lib/node_modules/sql-language-server/node_modules/fsevents/fsevents.node"
+    deuniversalize_machos libexec"libnode_modulessql-language-servernode_modulesfseventsfsevents.node"
   end
 
   test do
@@ -60,9 +60,9 @@ class SqlLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/sql-language-server", "up", "--method", "stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}sql-language-server", "up", "--method", "stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

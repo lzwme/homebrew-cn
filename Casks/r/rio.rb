@@ -2,10 +2,10 @@ cask "rio" do
   version "0.0.32"
   sha256 "b562d999f66d1e5e398eaaf279ea7d50f1b4fc6e2848786e0f1c17f272125240"
 
-  url "https://ghproxy.com/https://github.com/raphamorim/rio/releases/download/v#{version}/Rio-v#{version}.dmg"
+  url "https:github.comraphamorimrioreleasesdownloadv#{version}Rio-v#{version}.dmg"
   name "Rio"
   desc "Hardware-accelerated GPU terminal emulator"
-  homepage "https://github.com/raphamorim/rio/"
+  homepage "https:github.comraphamorimrio"
 
   livecheck do
     url :url
@@ -13,9 +13,9 @@ cask "rio" do
   end
 
   app "Rio.app"
-  binary "Rio.app/Contents/MacOS/rio"
-  binary "Rio.app/Contents/Resources/72/rio",
-         target: "#{ENV.fetch("TERMINFO", "~/.terminfo")}/72/rio"
+  binary "Rio.appContentsMacOSrio"
+  binary "Rio.appContentsResources72rio",
+         target: "#{ENV.fetch("TERMINFO", "~.terminfo")}72rio"
 
-  zap trash: "~/Library/Saved Application State/com.raphaelamorim.rio.savedState"
+  zap trash: "~LibrarySaved Application Statecom.raphaelamorim.rio.savedState"
 end

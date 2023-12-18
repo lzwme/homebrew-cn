@@ -1,10 +1,10 @@
 class Criterion < Formula
   desc "Cross-platform C and C++ unit testing framework for the 21st century"
-  homepage "https://github.com/Snaipe/Criterion"
-  url "https://ghproxy.com/https://github.com/Snaipe/Criterion/releases/download/v2.4.2/criterion-2.4.2.tar.xz"
+  homepage "https:github.comSnaipeCriterion"
+  url "https:github.comSnaipeCriterionreleasesdownloadv2.4.2criterion-2.4.2.tar.xz"
   sha256 "e3c52fae0e90887aeefa1d45066b1fde64b82517d7750db7a0af9226ca6571c0"
   license "MIT"
-  head "https://github.com/Snaipe/Criterion.git", branch: "bleeding"
+  head "https:github.comSnaipeCriterion.git", branch: "bleeding"
 
   bottle do
     sha256 cellar: :any, arm64_sonoma:   "dfcc1663c7ca47642db565c77773a3e68866cfc0d5d353629e20ef47649191d0"
@@ -33,8 +33,8 @@ class Criterion < Formula
   end
 
   test do
-    (testpath/"test-criterion.c").write <<~EOS
-      #include <criterion/criterion.h>
+    (testpath"test-criterion.c").write <<~EOS
+      #include <criterioncriterion.h>
 
       Test(suite_name, test_name)
       {
@@ -43,6 +43,6 @@ class Criterion < Formula
     EOS
 
     system ENV.cc, "test-criterion.c", "-I#{include}", "-L#{lib}", "-lcriterion", "-o", "test-criterion"
-    system "./test-criterion"
+    system ".test-criterion"
   end
 end

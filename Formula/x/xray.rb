@@ -1,10 +1,10 @@
 class Xray < Formula
   desc "Platform for building proxies to bypass network restrictions"
-  homepage "https://xtls.github.io/"
-  url "https://ghproxy.com/https://github.com/XTLS/Xray-core/archive/refs/tags/v1.8.6.tar.gz"
+  homepage "https:xtls.github.io"
+  url "https:github.comXTLSXray-corearchiverefstagsv1.8.6.tar.gz"
   sha256 "d828296c9f29f9e59a61ab73d44f072ab2a30fe979679e39aea43b33ddb7d6bf"
   license all_of: ["MPL-2.0", "CC-BY-SA-4.0"]
-  head "https://github.com/XTLS/Xray-core.git", branch: "main"
+  head "https:github.comXTLSXray-core.git", branch: "main"
 
   livecheck do
     url :stable
@@ -24,26 +24,26 @@ class Xray < Formula
   depends_on "go" => :build
 
   resource "geoip" do
-    url "https://ghproxy.com/https://github.com/v2fly/geoip/releases/download/202308310037/geoip.dat"
+    url "https:github.comv2flygeoipreleasesdownload202308310037geoip.dat"
     sha256 "536d7aa9f54af747153d4f982adaa3181025dd72faaba8f532b3f514b467eff8"
   end
 
   resource "geosite" do
-    url "https://ghproxy.com/https://github.com/v2fly/domain-list-community/releases/download/20230825070717/dlc.dat"
+    url "https:github.comv2flydomain-list-communityreleasesdownload20230825070717dlc.dat"
     sha256 "231a6fb4915f7652ad9b2027965fbbb27435ffa9b3a0734ad2b69693e95d6604"
   end
 
   resource "example_config" do
     # borrow v2ray example config
-    url "https://ghproxy.com/https://raw.githubusercontent.com/v2fly/v2ray-core/v4.45.2/release/config/config.json"
+    url "https:raw.githubusercontent.comv2flyv2ray-corev4.45.2releaseconfigconfig.json"
     sha256 "1bbadc5e1dfaa49935005e8b478b3ca49c519b66d3a3aee0b099730d05589978"
   end
 
   def install
     ldflags = "-s -w -buildid="
-    execpath = libexec/name
-    system "go", "build", *std_go_args(output: execpath, ldflags: ldflags), "./main"
-    (bin/"xray").write_env_script execpath,
+    execpath = libexecname
+    system "go", "build", *std_go_args(output: execpath, ldflags: ldflags), ".main"
+    (bin"xray").write_env_script execpath,
       XRAY_LOCATION_ASSET: "${XRAY_LOCATION_ASSET:-#{pkgshare}}"
 
     pkgshare.install resource("geoip")
@@ -55,21 +55,21 @@ class Xray < Formula
 
   def caveats
     <<~EOS
-      An example config is installed to #{etc}/xray/config.json
+      An example config is installed to #{etc}xrayconfig.json
     EOS
   end
 
   service do
-    run [opt_bin/"xray", "run", "--config", "#{etc}/xray/config.json"]
+    run [opt_bin"xray", "run", "--config", "#{etc}xrayconfig.json"]
     run_type :immediate
     keep_alive true
   end
 
   test do
-    (testpath/"config.json").write <<~EOS
+    (testpath"config.json").write <<~EOS
       {
         "log": {
-          "access": "#{testpath}/log"
+          "access": "#{testpath}log"
         },
         "outbounds": [
           {
@@ -97,9 +97,9 @@ class Xray < Formula
         }
       }
     EOS
-    output = shell_output "#{bin}/xray -c #{testpath}/config.json -test"
+    output = shell_output "#{bin}xray -c #{testpath}config.json -test"
 
     assert_match "Configuration OK", output
-    assert_predicate testpath/"log", :exist?
+    assert_predicate testpath"log", :exist?
   end
 end

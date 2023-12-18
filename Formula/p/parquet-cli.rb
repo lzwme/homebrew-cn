@@ -1,11 +1,11 @@
 class ParquetCli < Formula
   desc "Apache Parquet command-line tools and utilities"
-  homepage "https://parquet.apache.org/"
-  url "https://github.com/apache/parquet-mr.git",
+  homepage "https:parquet.apache.org"
+  url "https:github.comapacheparquet-mr.git",
       tag:      "apache-parquet-1.13.1",
       revision: "db4183109d5b734ec5930d870cdae161e408ddba"
   license "Apache-2.0"
-  head "https://github.com/apache/parquet-mr.git", branch: "master"
+  head "https:github.comapacheparquet-mr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7defb69f6e030edd438986e145e292414b0c9b3fc7187d120fc3c9714a5a02a6"
@@ -21,7 +21,7 @@ class ParquetCli < Formula
   depends_on "maven" => :build
 
   # parquet-cli has problems running on Linux, for more information:
-  # https://github.com/Homebrew/homebrew-core/pull/94318#issuecomment-1049229342
+  # https:github.comHomebrewhomebrew-corepull94318#issuecomment-1049229342
   depends_on :macos
 
   depends_on "openjdk"
@@ -29,7 +29,7 @@ class ParquetCli < Formula
   # This file generated with `red-parquet` gem:
   #   Arrow::Table.new("values" => ["foo", "Homebrew", "bar"]).save("homebrew.parquet")
   resource("homebrew-test-parquet") do
-    url "https://gist.github.com/bayandin/2144b5fc6052153c1a33fd2679d50d95/raw/7d793910a1afd75ee4677f8c327491f7bdd2256b/homebrew.parquet"
+    url "https:gist.github.combayandin2144b5fc6052153c1a33fd2679d50d95raw7d793910a1afd75ee4677f8c327491f7bdd2256bhomebrew.parquet"
     sha256 "5caf572cb0df5ce9d6893609de82d2369b42c3c81c611847b6f921d912040118"
   end
 
@@ -37,12 +37,12 @@ class ParquetCli < Formula
     cd "parquet-cli" do
       system "mvn", "clean", "package", "-DskipTests=true"
       system "mvn", "dependency:copy-dependencies"
-      libexec.install "target/parquet-cli-#{version}-runtime.jar"
-      libexec.install Dir["target/dependency/*"]
-      (bin/"parquet").write <<~EOS
-        #!/bin/sh
+      libexec.install "targetparquet-cli-#{version}-runtime.jar"
+      libexec.install Dir["targetdependency*"]
+      (bin"parquet").write <<~EOS
+        #!binsh
         set -e
-        exec "#{Formula["openjdk"].opt_bin}/java" -cp "#{libexec}/*" org.apache.parquet.cli.Main "$@"
+        exec "#{Formula["openjdk"].opt_bin}java" -cp "#{libexec}*" org.apache.parquet.cli.Main "$@"
       EOS
     end
   end
@@ -50,7 +50,7 @@ class ParquetCli < Formula
   test do
     resource("homebrew-test-parquet").stage testpath
 
-    output = shell_output("#{bin}/parquet cat #{testpath}/homebrew.parquet")
+    output = shell_output("#{bin}parquet cat #{testpath}homebrew.parquet")
     assert_match "{\"values\": \"Homebrew\"}", output
   end
 end

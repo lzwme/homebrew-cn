@@ -2,10 +2,10 @@ cask "font-fira-code-nerd-font" do
   version "3.1.1"
   sha256 "1ad776cc5c186ff7ba1e2a05eea6701dfa57f7a1763e1db3422979301fb86209"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/FiraCode.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}FiraCode.zip"
   name "FiraCode Nerd Font (Fira Code)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

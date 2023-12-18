@@ -2,12 +2,12 @@ cask "font-suwannaphum" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/suwannaphum"
+      only_path: "oflsuwannaphum"
   name "Suwannaphum"
-  homepage "https://fonts.google.com/specimen/Suwannaphum"
+  homepage "https:fonts.google.comspecimenSuwannaphum"
 
   font "Suwannaphum-Black.ttf"
   font "Suwannaphum-Bold.ttf"

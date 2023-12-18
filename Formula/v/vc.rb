@@ -1,7 +1,7 @@
 class Vc < Formula
   desc "SIMD Vector Classes for C++"
-  homepage "https://github.com/VcDevel/Vc"
-  url "https://ghproxy.com/https://github.com/VcDevel/Vc/releases/download/1.4.2/Vc-1.4.2.tar.gz"
+  homepage "https:github.comVcDevelVc"
+  url "https:github.comVcDevelVcreleasesdownload1.4.2Vc-1.4.2.tar.gz"
   sha256 "50d3f151e40b0718666935aa71d299d6370fafa67411f0a9e249fbce3e6e3952"
   license "BSD-3-Clause"
 
@@ -29,8 +29,8 @@ class Vc < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <Vc/Vc>
+    (testpath"test.cpp").write <<~EOS
+      #include <VcVc>
 
       using Vc::float_v;
       using Vec3D = std::array<float_v, 3>;
@@ -46,6 +46,6 @@ class Vc < Formula
     extra_flags = []
     extra_flags += ["-lm", "-lstdc++"] unless OS.mac?
     system ENV.cc, "test.cpp", "-std=c++11", "-L#{lib}", "-lVc", *extra_flags, "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,10 +1,10 @@
 class Cjdns < Formula
   desc "Advanced mesh routing system with cryptographic addressing"
-  homepage "https://github.com/cjdelisle/cjdns/"
-  url "https://ghproxy.com/https://github.com/cjdelisle/cjdns/archive/refs/tags/cjdns-v22.tar.gz"
+  homepage "https:github.comcjdelislecjdns"
+  url "https:github.comcjdelislecjdnsarchiverefstagscjdns-v22.tar.gz"
   sha256 "21b555f7850f94cc42134f59cb99558baaaa18acf4c5544e8647387d4a5019ec"
   license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "BSD-3-Clause", "MIT"]
-  head "https://github.com/cjdelisle/cjdns.git", branch: "master"
+  head "https:github.comcjdelislecjdns.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff8c49f78499d690c7e298220a109e52f0c92da7510409ae18b06ba9063af3f1"
@@ -25,22 +25,22 @@ class Cjdns < Formula
 
   def install
     # Libuv build fails on macOS with: env: python: No such file or directory
-    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin" if OS.mac?
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin" if OS.mac?
 
     # Avoid using -march=native
-    inreplace "node_build/make.js",
+    inreplace "node_buildmake.js",
               "var NO_MARCH_FLAG = ['arm', 'ppc', 'ppc64', 'arm64'];",
               "var NO_MARCH_FLAG = ['x64', 'arm', 'arm64', 'ppc', 'ppc64'];"
 
-    system "./do"
+    system ".do"
     bin.install("cjdroute")
 
-    man1.install "doc/man/cjdroute.1"
-    man5.install "doc/man/cjdroute.conf.5"
+    man1.install "docmancjdroute.1"
+    man5.install "docmancjdroute.conf.5"
   end
 
   test do
-    sample_conf = JSON.parse(shell_output("#{bin}/cjdroute --genconf"))
+    sample_conf = JSON.parse(shell_output("#{bin}cjdroute --genconf"))
     assert_equal "NONE", sample_conf["admin"]["password"]
   end
 end

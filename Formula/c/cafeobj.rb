@@ -1,18 +1,18 @@
 class Cafeobj < Formula
   desc "New generation algebraic specification and programming language"
-  homepage "https://cafeobj.org/"
-  url "https://ghproxy.com/https://github.com/CafeOBJ/cafeobj/archive/refs/tags/v1.6.1.tar.gz"
+  homepage "https:cafeobj.org"
+  url "https:github.comCafeOBJcafeobjarchiverefstagsv1.6.1.tar.gz"
   sha256 "12780724a2b63ee45b12b79fd574ea1dc2870b59a4964ae51d9acc47dbbcff3d"
   license all_of: [
     "BSD-2-Clause",
-    :public_domain, # comlib/let-over-lambda.lisp
+    :public_domain, # comliblet-over-lambda.lisp
     "MIT", # asdf.lisp
   ]
-  head "https://github.com/CafeOBJ/cafeobj.git", branch: "master"
+  head "https:github.comCafeOBJcafeobj.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -29,11 +29,11 @@ class Cafeobj < Formula
   depends_on "sbcl"
 
   def install
-    system "./configure", "--with-lisp=sbcl", "--prefix=#{prefix}", "--with-lispdir=#{share}/emacs/site-lisp/cafeobj"
+    system ".configure", "--with-lisp=sbcl", "--prefix=#{prefix}", "--with-lispdir=#{share}emacssite-lispcafeobj"
     system "make", "install"
   end
 
   test do
-    system "#{bin}/cafeobj", "-batch"
+    system "#{bin}cafeobj", "-batch"
   end
 end

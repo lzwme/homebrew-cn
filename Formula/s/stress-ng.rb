@@ -1,7 +1,7 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
-  homepage "https://wiki.ubuntu.com/Kernel/Reference/stress-ng"
-  url "https://ghproxy.com/https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.17.03.tar.gz"
+  homepage "https:wiki.ubuntu.comKernelReferencestress-ng"
+  url "https:github.comColinIanKingstress-ngarchiverefstagsV0.17.03.tar.gz"
   sha256 "3646118dcd683bf1929357e67d36c75f950e849db48f26d298b11028e78f3e7a"
   license "GPL-2.0-or-later"
 
@@ -22,16 +22,16 @@ class StressNg < Formula
 
   def install
     inreplace "Makefile" do |s|
-      s.gsub! "/usr", prefix
-      s.change_make_var! "BASHDIR", prefix/"etc/bash_completion.d"
+      s.gsub! "usr", prefix
+      s.change_make_var! "BASHDIR", prefix"etcbash_completion.d"
     end
     system "make"
     system "make", "install"
-    bash_completion.install "bash-completion/stress-ng"
+    bash_completion.install "bash-completionstress-ng"
   end
 
   test do
-    output = shell_output("#{bin}/stress-ng -c 1 -t 1 2>&1")
+    output = shell_output("#{bin}stress-ng -c 1 -t 1 2>&1")
     assert_match "successful run completed", output
   end
 end

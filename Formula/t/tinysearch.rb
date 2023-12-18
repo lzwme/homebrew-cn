@@ -1,10 +1,10 @@
 class Tinysearch < Formula
   desc "Tiny, full-text search engine for static websites built with Rust and Wasm"
-  homepage "https://github.com/tinysearch/tinysearch"
-  url "https://ghproxy.com/https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.8.2.tar.gz"
+  homepage "https:github.comtinysearchtinysearch"
+  url "https:github.comtinysearchtinysearcharchiverefstagsv0.8.2.tar.gz"
   sha256 "103214d77f0624bbb7e396667136156fdb8c8c7abeb6860adb231bf2a00b256d"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/tinysearch/tinysearch.git", branch: "master"
+  head "https:github.comtinysearchtinysearch.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22ba810fa21cf5ed9b4b3da171f5c528812ee9a7347ed87f658dd9c6cb930b22"
@@ -29,11 +29,11 @@ class Tinysearch < Formula
   end
 
   test do
-    system "#{Formula["rustup-init"].bin}/rustup-init", "-y", "--no-modify-path"
-    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    system "#{Formula["rustup-init"].bin}rustup-init", "-y", "--no-modify-path"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE"cargo_cachebin"
 
-    system bin/"tinysearch", pkgshare/"fixtures/index.json"
-    assert_predicate testpath/"wasm_output/tinysearch_engine_bg.wasm", :exist?
-    assert_match "A tiny search engine for static websites", (testpath/"wasm_output/package.json").read
+    system bin"tinysearch", pkgshare"fixturesindex.json"
+    assert_predicate testpath"wasm_outputtinysearch_engine_bg.wasm", :exist?
+    assert_match "A tiny search engine for static websites", (testpath"wasm_outputpackage.json").read
   end
 end

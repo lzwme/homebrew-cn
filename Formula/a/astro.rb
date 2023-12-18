@@ -1,7 +1,7 @@
 class Astro < Formula
   desc "To build and run Airflow DAGs locally and interact with the Astronomer API"
-  homepage "https://www.astronomer.io/"
-  url "https://ghproxy.com/https://github.com/astronomer/astro-cli/archive/refs/tags/v1.21.0.tar.gz"
+  homepage "https:www.astronomer.io"
+  url "https:github.comastronomerastro-cliarchiverefstagsv1.21.0.tar.gz"
   sha256 "cb303df149815f873dc405497c4f67c3760fccc5ecafcf67a32f41dfc56d6e4c"
   license "Apache-2.0"
 
@@ -24,20 +24,20 @@ class Astro < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/astronomer/astro-cli/version.CurrVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comastronomerastro-cliversion.CurrVersion=#{version}")
 
-    generate_completions_from_executable(bin/"astro", "completion")
+    generate_completions_from_executable(bin"astro", "completion")
   end
 
   test do
-    version_output = shell_output("#{bin}/astro version")
+    version_output = shell_output("#{bin}astro version")
     assert_match("Astro CLI Version: #{version}", version_output)
 
-    run_output = shell_output("echo 'y' | #{bin}/astro dev init")
-    assert_match(/^Initializing Astro project*/, run_output)
-    assert_predicate testpath/".astro/config.yaml", :exist?
+    run_output = shell_output("echo 'y' | #{bin}astro dev init")
+    assert_match(^Initializing Astro project*, run_output)
+    assert_predicate testpath".astroconfig.yaml", :exist?
 
-    run_output = shell_output("echo 'test@invalid.io' | #{bin}/astro login astronomer.io --token-login=test", 1)
-    assert_match(/^Welcome to the Astro CLI*/, run_output)
+    run_output = shell_output("echo 'test@invalid.io' | #{bin}astro login astronomer.io --token-login=test", 1)
+    assert_match(^Welcome to the Astro CLI*, run_output)
   end
 end

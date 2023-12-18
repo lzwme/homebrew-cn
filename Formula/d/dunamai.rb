@@ -1,7 +1,7 @@
 class Dunamai < Formula
   desc "Dynamic version generation"
-  homepage "https://github.com/mtkennerly/dunamai"
-  url "https://files.pythonhosted.org/packages/1d/03/338fba56a6c76ea6d99ca0b7af3098292c2dd6597ed656daa6ae26a07a77/dunamai-1.19.0.tar.gz"
+  homepage "https:github.commtkennerlydunamai"
+  url "https:files.pythonhosted.orgpackages1d03338fba56a6c76ea6d99ca0b7af3098292c2dd6597ed656daa6ae26a07a77dunamai-1.19.0.tar.gz"
   sha256 "6ad99ae34f7cd290550a2ef1305d2e0292e6e6b5b1b830dfc07ceb7fd35fec09"
   license "MIT"
 
@@ -25,7 +25,7 @@ class Dunamai < Formula
 
   def install
     site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexec/site_packages
+    ENV.prepend_path "PYTHONPATH", Formula["poetry"].opt_libexecsite_packages
 
     system python3, "-m", "pip", "install", *std_pip_args, "."
   end
@@ -38,6 +38,6 @@ class Dunamai < Formula
     system "git", "add", "foo"
     system "git", "commit", "-m", "bar"
     system "git", "tag", "v0.1"
-    assert_equal "0.1", shell_output("#{bin}/dunamai from any").chomp
+    assert_equal "0.1", shell_output("#{bin}dunamai from any").chomp
   end
 end

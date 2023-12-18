@@ -1,7 +1,7 @@
 class Libjuice < Formula
   desc "UDP Interactive Connectivity Establishment (ICE) library"
-  homepage "https://github.com/paullouisageneau/libjuice"
-  url "https://ghproxy.com/https://github.com/paullouisageneau/libjuice/archive/refs/tags/v1.3.3.tar.gz"
+  homepage "https:github.compaullouisageneaulibjuice"
+  url "https:github.compaullouisageneaulibjuicearchiverefstagsv1.3.3.tar.gz"
   sha256 "b260d5b9247f6c6a4f1651914e4bd2876fc885159bd16e68e8acd4acdf8ff11c"
   license "MPL-2.0"
 
@@ -24,9 +24,9 @@ class Libjuice < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
-      #include "juice/juice.h"
+      #include "juicejuice.h"
 
       int main() {
           juice_config_t config;
@@ -52,6 +52,6 @@ class Libjuice < Formula
     EOS
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-ljuice", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

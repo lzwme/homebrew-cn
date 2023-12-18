@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class Kubevious < Formula
   desc "Detects and prevents Kubernetes misconfigurations and violations"
-  homepage "https://github.com/kubevious/cli"
-  url "https://registry.npmjs.org/kubevious/-/kubevious-1.0.60.tgz"
+  homepage "https:github.comkubeviouscli"
+  url "https:registry.npmjs.orgkubevious-kubevious-1.0.60.tgz"
   sha256 "d03e17806812c60575bcd6e47b11f5dbf2a95b1f0f4b45fb33cdad22a342ac36"
   license "Apache-2.0"
 
@@ -21,15 +21,15 @@ class Kubevious < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
     assert_match version.to_s,
-      shell_output("#{bin}/kubevious --version")
+      shell_output("#{bin}kubevious --version")
 
-    (testpath/"deployment.yml").write <<~EOF
-      apiVersion: apps/v1
+    (testpath"deployment.yml").write <<~EOF
+      apiVersion: appsv1
       kind: Deployment
       metadata:
         name: nginx
@@ -51,10 +51,10 @@ class Kubevious < Formula
     EOF
 
     assert_match "Lint Succeeded",
-      shell_output("#{bin}/kubevious lint #{testpath}/deployment.yml")
+      shell_output("#{bin}kubevious lint #{testpath}deployment.yml")
 
-    (testpath/"bad-deployment.yml").write <<~EOF
-      apiVersion: apps/v1
+    (testpath"bad-deployment.yml").write <<~EOF
+      apiVersion: appsv1
       kind: BadDeployment
       metadata:
         name: nginx
@@ -76,15 +76,15 @@ class Kubevious < Formula
     EOF
 
     assert_match "Lint Failed",
-      shell_output("#{bin}/kubevious lint #{testpath}/bad-deployment.yml", 100)
+      shell_output("#{bin}kubevious lint #{testpath}bad-deployment.yml", 100)
 
     assert_match "Guard Succeeded",
-      shell_output("#{bin}/kubevious guard #{testpath}/deployment.yml")
+      shell_output("#{bin}kubevious guard #{testpath}deployment.yml")
 
     assert_match "Guard Failed",
-      shell_output("#{bin}/kubevious guard #{testpath}/bad-deployment.yml", 100)
+      shell_output("#{bin}kubevious guard #{testpath}bad-deployment.yml", 100)
 
-    (testpath/"service.yml").write <<~EOF
+    (testpath"service.yml").write <<~EOF
       apiVersion: v1
       kind: Service
       metadata:
@@ -102,9 +102,9 @@ class Kubevious < Formula
     EOF
 
     assert_match "Guard Failed",
-      shell_output("#{bin}/kubevious guard #{testpath}/service.yml", 100)
+      shell_output("#{bin}kubevious guard #{testpath}service.yml", 100)
 
     assert_match "Guard Succeeded",
-      shell_output("#{bin}/kubevious guard #{testpath}/service.yml #{testpath}/deployment.yml")
+      shell_output("#{bin}kubevious guard #{testpath}service.yml #{testpath}deployment.yml")
   end
 end

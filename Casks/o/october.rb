@@ -5,11 +5,11 @@ cask "october" do
   sha256 arm:   "ad12fd61c789155e635f5ae1f5a8faf26405f4b6c19b12a01fbf4e653c274777",
          intel: "f8a707aaec4c4c74e5d5dba722346ffe9ad48db59af74adeb7d6da7bbe9b7855"
 
-  url "https://ghproxy.com/https://github.com/marcus-crane/october/releases/download/v#{version}/october_#{version}_darwin_#{arch}.zip",
-      verified: "github.com/marcus-crane/october/"
+  url "https:github.commarcus-craneoctoberreleasesdownloadv#{version}october_#{version}_darwin_#{arch}.zip",
+      verified: "github.commarcus-craneoctober"
   name "October"
   desc "GUI for retrieving Kobo highlights and syncing them with Readwise"
-  homepage "https://october.utf9k.net/"
+  homepage "https:october.utf9k.net"
 
   livecheck do
     url :url
@@ -20,5 +20,5 @@ cask "october" do
 
   app "October.app"
 
-  zap trash: "~/Library/Application Support/october"
+  zap trash: "~LibraryApplication Supportoctober"
 end

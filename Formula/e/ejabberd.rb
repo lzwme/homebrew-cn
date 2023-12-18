@@ -1,10 +1,10 @@
 class Ejabberd < Formula
   desc "XMPP application server"
-  homepage "https://www.ejabberd.im"
-  url "https://ghproxy.com/https://github.com/processone/ejabberd/archive/refs/tags/23.10.tar.gz"
+  homepage "https:www.ejabberd.im"
+  url "https:github.comprocessoneejabberdarchiverefstags23.10.tar.gz"
   sha256 "0d6e7f0d82d91cda89e2575d99a83507413da2ffde39b2151804947a2a0fa258"
   license "GPL-2.0-only"
-  head "https://github.com/processone/ejabberd.git", branch: "master"
+  head "https:github.comprocessoneejabberd.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -38,7 +38,7 @@ class Ejabberd < Formula
   conflicts_with "couchdb", because: "both install `jiffy` lib"
 
   def install
-    ENV["TARGET_DIR"] = ENV["DESTDIR"] = "#{lib}/ejabberd/erlang/lib/ejabberd-#{version}"
+    ENV["TARGET_DIR"] = ENV["DESTDIR"] = "#{lib}ejabberderlanglibejabberd-#{version}"
     ENV["MAN_DIR"] = man
     ENV["SBIN_DIR"] = sbin
 
@@ -50,25 +50,25 @@ class Ejabberd < Formula
             "--enable-odbc",
             "--enable-pam"]
 
-    system "./autogen.sh"
-    system "./configure", *args
+    system ".autogen.sh"
+    system ".configure", *args
 
     # Set CPP to work around cpp shim issue:
-    # https://github.com/Homebrew/brew/issues/5153
+    # https:github.comHomebrewbrewissues5153
     system "make", "CPP=#{ENV.cc} -E"
 
     ENV.deparallelize
     system "make", "install"
 
-    (etc/"ejabberd").mkpath
+    (etc"ejabberd").mkpath
   end
 
   def post_install
-    (var/"lib/ejabberd").mkpath
-    (var/"spool/ejabberd").mkpath
+    (var"libejabberd").mkpath
+    (var"spoolejabberd").mkpath
 
     # Create the vm.args file, if it does not exist. Put a random cookie in it to secure the instance.
-    vm_args_file = etc/"ejabberd/vm.args"
+    vm_args_file = etc"ejabberdvm.args"
     unless vm_args_file.exist?
       require "securerandom"
       cookie = SecureRandom.hex
@@ -81,18 +81,18 @@ class Ejabberd < Formula
   def caveats
     <<~EOS
       If you face nodedown problems, concat your machine name to:
-        /private/etc/hosts
+        privateetchosts
       after 'localhost'.
     EOS
   end
 
   service do
-    run [opt_sbin/"ejabberdctl", "start"]
-    environment_variables HOME: var/"lib/ejabberd"
-    working_dir var/"lib/ejabberd"
+    run [opt_sbin"ejabberdctl", "start"]
+    environment_variables HOME: var"libejabberd"
+    working_dir var"libejabberd"
   end
 
   test do
-    system sbin/"ejabberdctl", "ping"
+    system sbin"ejabberdctl", "ping"
   end
 end

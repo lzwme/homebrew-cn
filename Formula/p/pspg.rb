@@ -1,10 +1,10 @@
 class Pspg < Formula
   desc "Unix pager optimized for psql"
-  homepage "https://github.com/okbob/pspg"
-  url "https://ghproxy.com/https://github.com/okbob/pspg/archive/refs/tags/5.8.1.tar.gz"
+  homepage "https:github.comokbobpspg"
+  url "https:github.comokbobpspgarchiverefstags5.8.1.tar.gz"
   sha256 "57f086f91927e0c1c2cfe1660049d7bed03b075c742a40c16bea5702a22169d0"
   license "BSD-2-Clause"
-  head "https://github.com/okbob/pspg.git", branch: "master"
+  head "https:github.comokbobpspg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "ef2bc0ffad7bb57b4220fcf8ddb9226d21ac5fc648adda3bfa04b22af6dfb92f"
@@ -21,14 +21,14 @@ class Pspg < Formula
   depends_on "readline"
 
   def install
-    system "./configure", "--disable-debug",
+    system ".configure", "--disable-debug",
                           "--prefix=#{prefix}"
     system "make", "install"
   end
 
   def caveats
     <<~EOS
-      Add the following line to your psql profile (e.g. ~/.psqlrc)
+      Add the following line to your psql profile (e.g. ~.psqlrc)
         \\setenv PAGER pspg
         \\pset border 2
         \\pset linestyle unicode
@@ -36,6 +36,6 @@ class Pspg < Formula
   end
 
   test do
-    assert_match "pspg-#{version}", shell_output("#{bin}/pspg --version")
+    assert_match "pspg-#{version}", shell_output("#{bin}pspg --version")
   end
 end

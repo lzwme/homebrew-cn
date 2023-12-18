@@ -1,10 +1,10 @@
 class Goresym < Formula
   desc "Go symbol recovery tool"
-  homepage "https://github.com/mandiant/GoReSym"
-  url "https://ghproxy.com/https://github.com/mandiant/GoReSym/archive/refs/tags/v2.6.4.tar.gz"
+  homepage "https:github.commandiantGoReSym"
+  url "https:github.commandiantGoReSymarchiverefstagsv2.6.4.tar.gz"
   sha256 "2ff64e97576f4109247f3204b9e143fdea53fa5d7495cd0e6b9eeefbd0b13ff9"
   license "MIT"
-  head "https://github.com/mandiant/GoReSym.git", branch: "master"
+  head "https:github.commandiantGoReSym.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bcdf8a5dbf63326b6c752caf83c250b70d9a5227fa3a2318139f9c3ab54db9c"
@@ -23,7 +23,7 @@ class Goresym < Formula
   end
 
   test do
-    json_output = JSON.parse(shell_output("#{bin}/goresym '#{bin}/goresym'"))
-    assert_equal json_output["BuildInfo"]["Main"]["Path"], "github.com/mandiant/GoReSym"
+    json_output = JSON.parse(shell_output("#{bin}goresym '#{bin}goresym'"))
+    assert_equal json_output["BuildInfo"]["Main"]["Path"], "github.commandiantGoReSym"
   end
 end

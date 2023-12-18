@@ -1,10 +1,10 @@
 class Levant < Formula
   desc "Templating and deployment tool for HashiCorp Nomad jobs"
-  homepage "https://github.com/hashicorp/levant"
-  url "https://ghproxy.com/https://github.com/hashicorp/levant/archive/refs/tags/v0.3.3.tar.gz"
+  homepage "https:github.comhashicorplevant"
+  url "https:github.comhashicorplevantarchiverefstagsv0.3.3.tar.gz"
   sha256 "0e87c27e2d4be7cd2a24cb0459d0a55f1bb7b5d65e6f7da4a2babd7d95d1bd92"
   license "MPL-2.0"
-  head "https://github.com/hashicorp/levant.git", branch: "main"
+  head "https:github.comhashicorplevant.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8cb3d327f3a6c17677eab41ee6563397989c678c6db90894684c2e0979a46ff"
@@ -21,22 +21,22 @@ class Levant < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.com/hashicorp/levant/version.Version=#{version}
-      -X github.com/hashicorp/levant/version.VersionPrerelease=#{tap.user}
+      -X github.comhashicorplevantversion.Version=#{version}
+      -X github.comhashicorplevantversion.VersionPrerelease=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    (testpath/"template.nomad").write <<~EOS
+    (testpath"template.nomad").write <<~EOS
       resources {
           cpu    = [[.resources.cpu]]
           memory = [[.resources.memory]]
       }
     EOS
 
-    (testpath/"variables.json").write <<~EOS
+    (testpath"variables.json").write <<~EOS
       {
         "resources":{
           "cpu":250,
@@ -49,8 +49,8 @@ class Levant < Formula
     EOS
 
     assert_match "resources {\n    cpu    = 250\n    memory = 512\n}\n",
-      shell_output("#{bin}/levant render -var-file=#{testpath}/variables.json #{testpath}/template.nomad")
+      shell_output("#{bin}levant render -var-file=#{testpath}variables.json #{testpath}template.nomad")
 
-    assert_match "Levant v#{version}-#{tap.user}", shell_output("#{bin}/levant --version")
+    assert_match "Levant v#{version}-#{tap.user}", shell_output("#{bin}levant --version")
   end
 end

@@ -1,7 +1,7 @@
 class LuckyCommit < Formula
   desc "Customize your git commit hashes!"
-  homepage "https://github.com/not-an-aardvark/lucky-commit"
-  url "https://ghproxy.com/https://github.com/not-an-aardvark/lucky-commit/archive/refs/tags/v2.2.2.tar.gz"
+  homepage "https:github.comnot-an-aardvarklucky-commit"
+  url "https:github.comnot-an-aardvarklucky-commitarchiverefstagsv2.2.2.tar.gz"
   sha256 "80d056c55cda794ce20b4f257bc77bd82aacf15962b7855d187098068a5be02c"
   license "MIT"
 
@@ -33,7 +33,7 @@ class LuckyCommit < Formula
     system "git", "config", "user.email", "you@example.com"
     system "git", "config", "user.name", "Your Name"
     system "git", "commit", "-m", "Initial commit"
-    system bin/"lucky_commit", "1010101"
+    system bin"lucky_commit", "1010101"
     assert_equal "1010101", Utils.git_short_head
   end
 end

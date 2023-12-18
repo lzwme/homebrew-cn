@@ -1,14 +1,14 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
-  homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://ghproxy.com/https://github.com/jesseduffield/lazygit/archive/refs/tags/v0.40.2.tar.gz"
+  homepage "https:github.comjesseduffieldlazygit"
+  url "https:github.comjesseduffieldlazygitarchiverefstagsv0.40.2.tar.gz"
   sha256 "146bd63995fcf2f2373bbc2143b3565b7a2be49a1d4e385496265ac0f69e4128"
   license "MIT"
-  head "https://github.com/jesseduffield/lazygit.git", branch: "master"
+  head "https:github.comjesseduffieldlazygit.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,10 +32,10 @@ class Lazygit < Formula
 
   # lazygit is a terminal GUI, but it can be run in 'client mode' to do certain tasks
   test do
-    (testpath/"git-rebase-todo").write ""
+    (testpath"git-rebase-todo").write ""
     ENV["LAZYGIT_DAEMON_KIND"] = "2" # cherry pick commit
     ENV["LAZYGIT_DAEMON_INSTRUCTION"] = "{\"Todo\":\"pick 401a0c3\"}"
-    system "#{bin}/lazygit", "git-rebase-todo"
-    assert_match "pick 401a0c3", (testpath/"git-rebase-todo").read
+    system "#{bin}lazygit", "git-rebase-todo"
+    assert_match "pick 401a0c3", (testpath"git-rebase-todo").read
   end
 end

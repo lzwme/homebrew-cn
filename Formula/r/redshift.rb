@@ -1,7 +1,7 @@
 class Redshift < Formula
   desc "Adjust color temperature of your screen according to your surroundings"
-  homepage "http://jonls.dk/redshift/"
-  url "https://ghproxy.com/https://github.com/jonls/redshift/releases/download/v1.12/redshift-1.12.tar.xz"
+  homepage "http:jonls.dkredshift"
+  url "https:github.comjonlsredshiftreleasesdownloadv1.12redshift-1.12.tar.xz"
   sha256 "d2f8c5300e3ce2a84fe6584d2f1483aa9eadc668ab1951b2c2b8a03ece3a22ba"
   license "GPL-3.0-or-later"
   revision 1
@@ -22,7 +22,7 @@ class Redshift < Formula
   end
 
   head do
-    url "https://github.com/jonls/redshift.git", branch: "master"
+    url "https:github.comjonlsredshift.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -50,8 +50,8 @@ class Redshift < Formula
       args << "--enable-quartz"
     end
 
-    system "./bootstrap" if build.head?
-    system "./configure", *args
+    system ".bootstrap" if build.head?
+    system ".configure", *args
     system "make", "install"
     pkgshare.install "redshift.conf.sample"
   end
@@ -61,18 +61,18 @@ class Redshift < Formula
       A sample .conf file has been installed to #{opt_pkgshare}.
 
       Please note redshift expects to read its configuration file from
-      #{Dir.home}/.config/redshift/redshift.conf
+      #{Dir.home}.configredshiftredshift.conf
     EOS
   end
 
   service do
-    run opt_bin/"redshift"
+    run opt_bin"redshift"
     keep_alive true
-    log_path "/dev/null"
-    error_log_path "/dev/null"
+    log_path "devnull"
+    error_log_path "devnull"
   end
 
   test do
-    system "#{bin}/redshift", "-V"
+    system "#{bin}redshift", "-V"
   end
 end

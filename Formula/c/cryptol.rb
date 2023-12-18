@@ -1,12 +1,12 @@
 class Cryptol < Formula
   desc "Domain-specific language for specifying cryptographic algorithms"
-  homepage "https://www.cryptol.net/"
-  # TODO: Try to switch `ghc@9.4` to `ghc@9.6`/`ghc` on next release
-  # Ref: https://github.com/GaloisInc/cryptol/pull/1572
-  url "https://hackage.haskell.org/package/cryptol-3.0.0/cryptol-3.0.0.tar.gz"
+  homepage "https:www.cryptol.net"
+  # TODO: Try to switch `ghc@9.4` to `ghc@9.6``ghc` on next release
+  # Ref: https:github.comGaloisInccryptolpull1572
+  url "https:hackage.haskell.orgpackagecryptol-3.0.0cryptol-3.0.0.tar.gz"
   sha256 "844660c6a85170f3765161e15e8719c637d96b9c292f96bd455b4cb18dc5d54f"
   license "BSD-3-Clause"
-  head "https://github.com/GaloisInc/cryptol.git", branch: "master"
+  head "https:github.comGaloisInccryptol.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ee1cc0497c66d8e27dc787709cd35a871d7742cbbf95df0154a7bb6a2ad2eef"
@@ -33,11 +33,11 @@ class Cryptol < Formula
   end
 
   test do
-    (testpath/"helloworld.icry").write <<~EOS
+    (testpath"helloworld.icry").write <<~EOS
       :prove \\(x : [8]) -> x == x
       :prove \\(x : [32]) -> x + zero == x
     EOS
-    expected = /Q\.E\.D\..*Q\.E\.D/m
-    assert_match expected, shell_output("#{bin}/cryptol -b helloworld.icry")
+    expected = Q\.E\.D\..*Q\.E\.Dm
+    assert_match expected, shell_output("#{bin}cryptol -b helloworld.icry")
   end
 end

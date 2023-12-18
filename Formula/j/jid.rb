@@ -1,7 +1,7 @@
 class Jid < Formula
   desc "Json incremental digger"
-  homepage "https://github.com/simeji/jid"
-  url "https://ghproxy.com/https://github.com/simeji/jid/archive/refs/tags/v0.7.6.tar.gz"
+  homepage "https:github.comsimejijid"
+  url "https:github.comsimejijidarchiverefstagsv0.7.6.tar.gz"
   sha256 "0912050b3be3760804afaf7ecd6b42bfe79e7160066587fbc0afa5324b03fb48"
   license "MIT"
 
@@ -24,10 +24,10 @@ class Jid < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/jid/jid.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmdjidjid.go"
   end
 
   test do
-    assert_match "jid version v#{version}", shell_output("#{bin}/jid --version")
+    assert_match "jid version v#{version}", shell_output("#{bin}jid --version")
   end
 end

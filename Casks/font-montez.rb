@@ -2,10 +2,10 @@ cask "font-montez" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/montez/Montez-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapachemontezMontez-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Montez"
-  homepage "https://fonts.google.com/specimen/Montez"
+  homepage "https:fonts.google.comspecimenMontez"
 
   font "Montez-Regular.ttf"
 

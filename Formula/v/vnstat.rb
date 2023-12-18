@@ -1,10 +1,10 @@
 class Vnstat < Formula
   desc "Console-based network traffic monitor"
-  homepage "https://humdi.net/vnstat/"
-  url "https://humdi.net/vnstat/vnstat-2.11.tar.gz"
+  homepage "https:humdi.netvnstat"
+  url "https:humdi.netvnstatvnstat-2.11.tar.gz"
   sha256 "babc3f1583cc40e4e8ffb2f53296d93d308cb5a5043e85054f6eaf7b4ae57856"
   license "GPL-2.0-only"
-  head "https://github.com/vergoh/vnstat.git", branch: "master"
+  head "https:github.comvergohvnstat.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "82a27759165561abdcb95bee69b60f460ba21c77e411695452669a614168ec2f"
@@ -23,17 +23,17 @@ class Vnstat < Formula
   uses_from_macos "sqlite"
 
   def install
-    inreplace %w[src/cfg.c src/common.h man/vnstat.1 man/vnstatd.8 man/vnstati.1
-                 man/vnstat.conf.5].each do |s|
-      s.gsub! "/etc/vnstat.conf", "#{etc}/vnstat.conf", false
-      s.gsub! "/var/", "#{var}/", false
-      s.gsub! "var/lib", "var/db", false
-      # https://github.com/Homebrew/homebrew-core/pull/84695#issuecomment-913043888
+    inreplace %w[srccfg.c srccommon.h manvnstat.1 manvnstatd.8 manvnstati.1
+                 manvnstat.conf.5].each do |s|
+      s.gsub! "etcvnstat.conf", "#{etc}vnstat.conf", false
+      s.gsub! "var", "#{var}", false
+      s.gsub! "varlib", "vardb", false
+      # https:github.comHomebrewhomebrew-corepull84695#issuecomment-913043888
       # network interface difference between macos and linux
       s.gsub! "\"eth0\"", "\"en0\"", false if OS.mac?
     end
 
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
@@ -43,19 +43,19 @@ class Vnstat < Formula
   end
 
   def post_install
-    (var/"db/vnstat").mkpath
-    (var/"log/vnstat").mkpath
-    (var/"run/vnstat").mkpath
+    (var"dbvnstat").mkpath
+    (var"logvnstat").mkpath
+    (var"runvnstat").mkpath
   end
 
   def caveats
     <<~EOS
-      To monitor interfaces other than "en0" edit #{etc}/vnstat.conf
+      To monitor interfaces other than "en0" edit #{etc}vnstat.conf
     EOS
   end
 
   service do
-    run [opt_bin/"vnstatd", "--nodaemon", "--config", etc/"vnstat.conf"]
+    run [opt_bin"vnstatd", "--nodaemon", "--config", etc"vnstat.conf"]
     keep_alive true
     require_root true
     working_dir var
@@ -63,14 +63,14 @@ class Vnstat < Formula
   end
 
   test do
-    cp etc/"vnstat.conf", testpath
-    inreplace "vnstat.conf", var, testpath/"var"
+    cp etc"vnstat.conf", testpath
+    inreplace "vnstat.conf", var, testpath"var"
     inreplace "vnstat.conf", ";Interface", "Interface"
     inreplace "vnstat.conf", ";DatabaseDir", "DatabaseDir"
-    (testpath/"var/db/vnstat").mkpath
+    (testpath"vardbvnstat").mkpath
 
     begin
-      stat = IO.popen("#{bin}/vnstatd --nodaemon --config vnstat.conf")
+      stat = IO.popen("#{bin}vnstatd --nodaemon --config vnstat.conf")
       sleep 1
     ensure
       Process.kill "SIGINT", stat.pid

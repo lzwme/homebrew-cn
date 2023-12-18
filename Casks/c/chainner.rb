@@ -2,11 +2,11 @@ cask "chainner" do
   version "0.20.2"
   sha256 "4d0cb96e14f31c40fd50310065723b288f10991d0ff20c23fb10d633111684e1"
 
-  url "https://ghproxy.com/https://github.com/chaiNNer-org/chaiNNer/releases/download/v#{version}/chaiNNer-#{version}-macos-universal.dmg",
-      verified: "github.com/chaiNNer-org/chaiNNer/"
+  url "https:github.comchaiNNer-orgchaiNNerreleasesdownloadv#{version}chaiNNer-#{version}-macos-universal.dmg",
+      verified: "github.comchaiNNer-orgchaiNNer"
   name "chaiNNer"
   desc "Flowchart-based image processing GUI"
-  homepage "https://chainner.app/"
+  homepage "https:chainner.app"
 
   livecheck do
     url :url
@@ -18,10 +18,10 @@ cask "chainner" do
   app "chaiNNer.app"
 
   zap trash: [
-    "~/Library/Application Support/chaiNNer",
-    "~/Library/Caches/chainner_pip",
-    "~/Library/Logs/chaiNNer",
-    "~/Library/Preferences/com.electron.chainner.plist",
-    "~/Library/Saved Application State/com.electron.chainner.savedState",
+    "~LibraryApplication SupportchaiNNer",
+    "~LibraryCacheschainner_pip",
+    "~LibraryLogschaiNNer",
+    "~LibraryPreferencescom.electron.chainner.plist",
+    "~LibrarySaved Application Statecom.electron.chainner.savedState",
   ]
 end

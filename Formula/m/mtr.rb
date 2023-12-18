@@ -1,10 +1,10 @@
 class Mtr < Formula
   desc "'traceroute' and 'ping' in a single tool"
-  homepage "https://www.bitwizard.nl/mtr/"
-  url "https://ghproxy.com/https://github.com/traviscross/mtr/archive/refs/tags/v0.95.tar.gz"
+  homepage "https:www.bitwizard.nlmtr"
+  url "https:github.comtraviscrossmtrarchiverefstagsv0.95.tar.gz"
   sha256 "12490fb660ba5fb34df8c06a0f62b4f9cbd11a584fc3f6eceda0a99124e8596f"
   license "GPL-2.0-only"
-  head "https://github.com/traviscross/mtr.git", branch: "master"
+  head "https:github.comtraviscrossmtr.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d1d03f6a4f9a9e49321d656b787d4e53f1f6acad08384d68bb4ad8199bf1626e"
@@ -27,7 +27,7 @@ class Mtr < Formula
   def install
     # Fix UNKNOWN version reported by `mtr --version`.
     inreplace "configure.ac",
-              "m4_esyscmd([build-aux/git-version-gen .tarball-version])",
+              "m4_esyscmd([build-auxgit-version-gen .tarball-version])",
               version.to_s
 
     # We need to add this because nameserver8_compat.h has been removed in Snow Leopard
@@ -38,8 +38,8 @@ class Mtr < Formula
       --without-glib
       --without-gtk
     ]
-    system "./bootstrap.sh"
-    system "./configure", *args
+    system ".bootstrap.sh"
+    system ".configure", *args
     system "make", "install"
   end
 
@@ -52,10 +52,10 @@ class Mtr < Formula
 
   test do
     # We patch generation of the version, so let's check that we did that properly.
-    assert_match "mtr #{version}", shell_output("#{sbin}/mtr --version")
+    assert_match "mtr #{version}", shell_output("#{sbin}mtr --version")
     # mtr will not run without root privileges
-    assert_match "Failure to open", shell_output("#{sbin}/mtr google.com 2>&1", 1)
+    assert_match "Failure to open", shell_output("#{sbin}mtr google.com 2>&1", 1)
     # Check that the `--json` flag is recognised.
-    assert_match "Failure to open", shell_output("#{sbin}/mtr --json google.com 2>&1", 1)
+    assert_match "Failure to open", shell_output("#{sbin}mtr --json google.com 2>&1", 1)
   end
 end

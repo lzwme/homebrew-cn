@@ -1,10 +1,10 @@
 class Sdb < Formula
-  desc "Ondisk/memory hashtable based on CDB"
-  homepage "https://github.com/radareorg/sdb"
-  url "https://ghproxy.com/https://github.com/radareorg/sdb/archive/refs/tags/1.9.6.tar.gz"
+  desc "Ondiskmemory hashtable based on CDB"
+  homepage "https:github.comradareorgsdb"
+  url "https:github.comradareorgsdbarchiverefstags1.9.6.tar.gz"
   sha256 "da7ee00ed239f68dbb6a8fad165911ccbe332c6c664a5896cbd867fc9209c934"
   license "MIT"
-  head "https://github.com/radareorg/sdb.git", branch: "master"
+  head "https:github.comradareorgsdb.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "dcbca1dbb80c50ebbb646436add082beb9a968dfbcc36618018f6dbe7299f562"
@@ -27,7 +27,7 @@ class Sdb < Formula
   # patch build to fix version.h not found
   # remove in next release
   patch do
-    url "https://github.com/radareorg/sdb/commit/3bc55289a73bddbd63a11d993c949f57e8a7f7cc.patch?full_index=1"
+    url "https:github.comradareorgsdbcommit3bc55289a73bddbd63a11d993c949f57e8a7f7cc.patch?full_index=1"
     sha256 "d272212a0308a4e8f45f1413c67fb027409d885f3e97166e1a896c7d6b772c4b"
   end
 
@@ -38,7 +38,7 @@ class Sdb < Formula
   end
 
   test do
-    system bin/"sdb", testpath/"d", "hello=world"
-    assert_equal "world", shell_output("#{bin}/sdb #{testpath}/d hello").strip
+    system bin"sdb", testpath"d", "hello=world"
+    assert_equal "world", shell_output("#{bin}sdb #{testpath}d hello").strip
   end
 end

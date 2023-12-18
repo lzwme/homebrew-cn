@@ -2,10 +2,10 @@ cask "font-kranky" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/apache/kranky/Kranky-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainapachekrankyKranky-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Kranky"
-  homepage "https://fonts.google.com/specimen/Kranky"
+  homepage "https:fonts.google.comspecimenKranky"
 
   font "Kranky-Regular.ttf"
 

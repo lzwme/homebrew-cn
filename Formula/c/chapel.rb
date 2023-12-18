@@ -1,10 +1,10 @@
 class Chapel < Formula
   desc "Programming language for productive parallel computing at scale"
-  homepage "https://chapel-lang.org/"
-  url "https://ghproxy.com/https://github.com/chapel-lang/chapel/releases/download/1.33.0/chapel-1.33.0.tar.gz"
+  homepage "https:chapel-lang.org"
+  url "https:github.comchapel-langchapelreleasesdownload1.33.0chapel-1.33.0.tar.gz"
   sha256 "9dfd9bbab3eb1acf10242db909ccf17c1b07634452ca6ba8b238e69788d82883"
   license "Apache-2.0"
-  head "https://github.com/chapel-lang/chapel.git", branch: "main"
+  head "https:github.comchapel-langchapel.git", branch: "main"
 
   bottle do
     sha256 arm64_sonoma:   "286a196bd78427601f3e6ada8cb953b3c2ee9d8071db132ef194e6995bf50be5"
@@ -32,7 +32,7 @@ class Chapel < Formula
     python = "python3.11"
     # It should be noted that this will expand to: 'for cmd in python3.11 python3 python python2; do'
     # in our find-python.sh script.
-    inreplace "util/config/find-python.sh", /^(for cmd in )(python3 )/, "\\1#{python} \\2"
+    inreplace "utilconfigfind-python.sh", ^(for cmd in )(python3 ), "\\1#{python} \\2"
 
     libexec.install Dir["*"]
     # Chapel uses this ENV to work out where to install.
@@ -40,19 +40,19 @@ class Chapel < Formula
     ENV["CHPL_GMP"] = "system"
     # don't try to set CHPL_LLVM_GCC_PREFIX since the llvm
     # package should be configured to use a reasonable GCC
-    (libexec/"chplconfig").write <<~EOS
+    (libexec"chplconfig").write <<~EOS
       CHPL_RE2=bundled
       CHPL_GMP=system
       CHPL_MEM=cstdlib
       CHPL_TASKS=fifo
-      CHPL_LLVM_CONFIG=#{llvm.opt_bin}/llvm-config
+      CHPL_LLVM_CONFIG=#{llvm.opt_bin}llvm-config
       CHPL_LLVM_GCC_PREFIX=none
     EOS
 
     # Must be built from within CHPL_HOME to prevent build bugs.
-    # https://github.com/Homebrew/legacy-homebrew/pull/35166
+    # https:github.comHomebrewlegacy-homebrewpull35166
     cd libexec do
-      system "./util/printchplenv", "--all"
+      system ".utilprintchplenv", "--all"
       with_env(CHPL_PIP_FROM_SOURCE: "1") do
         system "make", "test-venv"
       end
@@ -68,39 +68,39 @@ class Chapel < Formula
       system "make", "mason"
       system "make", "cleanall"
 
-      rm_rf("third-party/llvm/llvm-src/")
-      rm_rf("third-party/gasnet/gasnet-src")
-      rm_rf("third-party/libfabric/libfabric-src")
-      rm_rf("third-party/fltk/fltk-1.3.5-source.tar.gz")
-      rm_rf("third-party/libunwind/libunwind-1.1.tar.gz")
-      rm_rf("third-party/gmp/gmp-src/")
-      rm_rf("third-party/qthread/qthread-src/installed")
+      rm_rf("third-partyllvmllvm-src")
+      rm_rf("third-partygasnetgasnet-src")
+      rm_rf("third-partylibfabriclibfabric-src")
+      rm_rf("third-partyfltkfltk-1.3.5-source.tar.gz")
+      rm_rf("third-partylibunwindlibunwind-1.1.tar.gz")
+      rm_rf("third-partygmpgmp-src")
+      rm_rf("third-partyqthreadqthread-srcinstalled")
     end
 
-    # Install chpl and other binaries (e.g. chpldoc) into bin/ as exec scripts.
+    # Install chpl and other binaries (e.g. chpldoc) into bin as exec scripts.
     platform = if OS.linux? && Hardware::CPU.is_64_bit?
       "linux64-#{Hardware::CPU.arch}"
     else
       "#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}"
     end
 
-    bin.install libexec.glob("bin/#{platform}/*")
-    bin.env_script_all_files libexec/"bin"/platform, CHPL_HOME: libexec
-    man1.install_symlink libexec.glob("man/man1/*.1")
+    bin.install libexec.glob("bin#{platform}*")
+    bin.env_script_all_files libexec"bin"platform, CHPL_HOME: libexec
+    man1.install_symlink libexec.glob("manman1*.1")
   end
 
   test do
     ENV["CHPL_HOME"] = libexec
-    ENV["CHPL_INCLUDE_PATH"] = HOMEBREW_PREFIX/"include"
-    ENV["CHPL_LIB_PATH"] = HOMEBREW_PREFIX/"lib"
+    ENV["CHPL_INCLUDE_PATH"] = HOMEBREW_PREFIX"include"
+    ENV["CHPL_LIB_PATH"] = HOMEBREW_PREFIX"lib"
     cd libexec do
       with_env(CHPL_LLVM: "system") do
-        system "util/test/checkChplInstall"
+        system "utiltestcheckChplInstall"
       end
       with_env(CHPL_LLVM: "none") do
-        system "util/test/checkChplInstall"
+        system "utiltestcheckChplInstall"
       end
     end
-    system bin/"chpl", "--print-passes", "--print-commands", libexec/"examples/hello.chpl"
+    system bin"chpl", "--print-passes", "--print-commands", libexec"exampleshello.chpl"
   end
 end

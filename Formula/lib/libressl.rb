@@ -1,15 +1,15 @@
 class Libressl < Formula
-  desc "Version of the SSL/TLS protocol forked from OpenSSL"
-  homepage "https://www.libressl.org/"
+  desc "Version of the SSLTLS protocol forked from OpenSSL"
+  homepage "https:www.libressl.org"
   # Please ensure when updating version the release is from stable branch.
-  url "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz"
-  mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz"
+  url "https:ftp.openbsd.orgpubOpenBSDLibreSSLlibressl-3.8.2.tar.gz"
+  mirror "https:mirrorservice.orgpubOpenBSDLibreSSLlibressl-3.8.2.tar.gz"
   sha256 "6d4b8d5bbb25a1f8336639e56ec5088052d43a95256697a85c4ce91323c25954"
   license "OpenSSL"
 
   livecheck do
     url :homepage
-    regex(/latest stable release is (\d+(?:\.\d+)+)/i)
+    regex(latest stable release is (\d+(?:\.\d+)+)i)
   end
 
   bottle do
@@ -23,7 +23,7 @@ class Libressl < Formula
   end
 
   head do
-    url "https://github.com/libressl/portable.git", branch: "master"
+    url "https:github.comlibresslportable.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -39,19 +39,19 @@ class Libressl < Formula
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
-      --with-openssldir=#{etc}/libressl
-      --sysconfdir=#{etc}/libressl
+      --with-openssldir=#{etc}libressl
+      --sysconfdir=#{etc}libressl
     ]
 
-    system "./autogen.sh" if build.head?
-    system "./configure", *args
+    system ".autogen.sh" if build.head?
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   def post_install
-    rm_f pkgetc/"cert.pem"
-    pkgetc.install_symlink Formula["ca-certificates"].pkgetc/"cert.pem"
+    rm_f pkgetc"cert.pem"
+    pkgetc.install_symlink Formula["ca-certificates"].pkgetc"cert.pem"
   end
 
   def caveats
@@ -59,22 +59,22 @@ class Libressl < Formula
       A CA file has been bootstrapped using certificates from the SystemRoots
       keychain. To add additional certificates (e.g. the certificates added in
       the System keychain), place .pem files in
-        #{etc}/libressl/certs
+        #{etc}libresslcerts
 
       and run
-        #{opt_bin}/openssl certhash #{etc}/libressl/certs
+        #{opt_bin}openssl certhash #{etc}libresslcerts
     EOS
   end
 
   test do
     # Make sure the necessary .cnf file exists, otherwise LibreSSL gets moody.
-    assert_predicate HOMEBREW_PREFIX/"etc/libressl/openssl.cnf", :exist?,
+    assert_predicate HOMEBREW_PREFIX"etclibresslopenssl.cnf", :exist?,
             "LibreSSL requires the .cnf file for some functionality"
 
     # Check LibreSSL itself functions as expected.
-    (testpath/"testfile.txt").write("This is a test file")
+    (testpath"testfile.txt").write("This is a test file")
     expected_checksum = "e2d0fe1585a63ec6009c8016ff8dda8b17719a637405a4e23c0ff81339148249"
-    system "#{bin}/openssl", "dgst", "-sha256", "-out", "checksum.txt", "testfile.txt"
+    system "#{bin}openssl", "dgst", "-sha256", "-out", "checksum.txt", "testfile.txt"
     open("checksum.txt") do |f|
       checksum = f.read(100).split("=").last.strip
       assert_equal checksum, expected_checksum

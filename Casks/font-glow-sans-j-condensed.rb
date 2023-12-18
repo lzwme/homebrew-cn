@@ -2,9 +2,9 @@ cask "font-glow-sans-j-condensed" do
   version "0.93"
   sha256 "3b6d38f707d204a2e8341b06ff0402dd9bb7daa095a6d5ab9da132c1966597b5"
 
-  url "https://ghproxy.com/https://github.com/welai/glow-sans/releases/download/v#{version}/GlowSansJ-Condensed-v#{version}.zip"
+  url "https:github.comwelaiglow-sansreleasesdownloadv#{version}GlowSansJ-Condensed-v#{version}.zip"
   name "Glow Sans J Condensed"
-  homepage "https://github.com/welai/glow-sans"
+  homepage "https:github.comwelaiglow-sans"
 
   font "GlowSansJ-Condensed-Bold.otf"
   font "GlowSansJ-Condensed-Book.otf"

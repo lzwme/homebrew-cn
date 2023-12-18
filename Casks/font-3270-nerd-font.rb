@@ -2,10 +2,10 @@ cask "font-3270-nerd-font" do
   version "3.1.1"
   sha256 "62a02e0936f9348aecdd337a03221368068272b80944d4cdbb241472ae48cba4"
 
-  url "https://ghproxy.com/https://github.com/ryanoasis/nerd-fonts/releases/download/v#{version}/3270.zip"
+  url "https:github.comryanoasisnerd-fontsreleasesdownloadv#{version}3270.zip"
   name "3270 Nerd Font (IBM 3270)"
   desc "Developer targeted fonts with a high number of glyphs"
-  homepage "https://github.com/ryanoasis/nerd-fonts"
+  homepage "https:github.comryanoasisnerd-fonts"
 
   livecheck do
     url :url

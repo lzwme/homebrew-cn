@@ -1,11 +1,11 @@
 class Krew < Formula
   desc "Package manager for kubectl plugins"
-  homepage "https://sigs.k8s.io/krew/"
-  url "https://github.com/kubernetes-sigs/krew.git",
+  homepage "https:sigs.k8s.iokrew"
+  url "https:github.comkubernetes-sigskrew.git",
       tag:      "v0.4.4",
       revision: "343e657d45564940387fe028bb3310a6eaf147d3"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/krew.git", branch: "master"
+  head "https:github.comkubernetes-sigskrew.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33b93a07f10a575d8710808a3c40e22bb89be4c5bbb10e07c91b87ba6b005574"
@@ -27,23 +27,23 @@ class Krew < Formula
 
     ldflags = %W[
       -w
-      -X sigs.k8s.io/krew/internal/version.gitCommit=#{Utils.git_short_head(length: 8)}
-      -X sigs.k8s.io/krew/internal/version.gitTag=v#{version}
+      -X sigs.k8s.iokrewinternalversion.gitCommit=#{Utils.git_short_head(length: 8)}
+      -X sigs.k8s.iokrewinternalversion.gitTag=v#{version}
     ]
 
-    system "go", "build", *std_go_args(output: bin/"kubectl-krew", ldflags: ldflags),
-           "-tags", "netgo", "./cmd/krew"
+    system "go", "build", *std_go_args(output: bin"kubectl-krew", ldflags: ldflags),
+           "-tags", "netgo", ".cmdkrew"
   end
 
   test do
     ENV["KREW_ROOT"] = testpath
-    kubectl = Formula["kubernetes-cli"].opt_bin/"kubectl"
+    kubectl = Formula["kubernetes-cli"].opt_bin"kubectl"
 
-    system bin/"kubectl-krew", "update"
-    system bin/"kubectl-krew", "install", "ctx"
-    assert_predicate testpath/"bin/kubectl-ctx", :exist?
+    system bin"kubectl-krew", "update"
+    system bin"kubectl-krew", "install", "ctx"
+    assert_predicate testpath"binkubectl-ctx", :exist?
 
-    assert_match "v#{version}", shell_output("#{bin}/kubectl-krew version")
-    assert_match (HOMEBREW_PREFIX/"bin/kubectl-krew").to_s, shell_output("#{kubectl} plugin list")
+    assert_match "v#{version}", shell_output("#{bin}kubectl-krew version")
+    assert_match (HOMEBREW_PREFIX"binkubectl-krew").to_s, shell_output("#{kubectl} plugin list")
   end
 end

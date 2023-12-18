@@ -1,11 +1,11 @@
 class Soapysdr < Formula
   desc "Vendor and platform neutral SDR support library"
-  homepage "https://github.com/pothosware/SoapySDR/wiki"
-  url "https://ghproxy.com/https://github.com/pothosware/SoapySDR/archive/refs/tags/soapy-sdr-0.8.1.tar.gz"
+  homepage "https:github.compothoswareSoapySDRwiki"
+  url "https:github.compothoswareSoapySDRarchiverefstagssoapy-sdr-0.8.1.tar.gz"
   sha256 "a508083875ed75d1090c24f88abef9895ad65f0f1b54e96d74094478f0c400e6"
   license "BSL-1.0"
   revision 1
-  head "https://github.com/pothosware/SoapySDR.git", branch: "master"
+  head "https:github.compothoswareSoapySDR.git", branch: "master"
 
   bottle do
     rebuild 2
@@ -41,7 +41,7 @@ class Soapysdr < Formula
   end
 
   test do
-    assert_match "Loading modules... done", shell_output("#{bin}/SoapySDRUtil --check=null")
+    assert_match "Loading modules... done", shell_output("#{bin}SoapySDRUtil --check=null")
     system python3, "-c", "import SoapySDR"
   end
 end

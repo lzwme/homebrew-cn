@@ -1,7 +1,7 @@
 class Aravis < Formula
   desc "Vision library for genicam based cameras"
-  homepage "https://wiki.gnome.org/Projects/Aravis"
-  url "https://ghproxy.com/https://github.com/AravisProject/aravis/releases/download/0.8.30/aravis-0.8.30.tar.xz"
+  homepage "https:wiki.gnome.orgProjectsAravis"
+  url "https:github.comAravisProjectaravisreleasesdownload0.8.30aravis-0.8.30.tar.xz"
   sha256 "40380f06fa04524a7875bd456e5a5ea78b2c058fa84b5598bc6e0642fcef00b0"
   license "LGPL-2.1-or-later"
   revision 1
@@ -30,7 +30,7 @@ class Aravis < Formula
   depends_on "libusb"
 
   def install
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -38,19 +38,19 @@ class Aravis < Formula
   end
 
   def post_install
-    system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+    system "#{Formula["gtk+3"].opt_bin}gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}shareiconshicolor"
   end
 
   def caveats
     <<~EOS
       For GStreamer to find the bundled plugin:
-        export GST_PLUGIN_PATH=#{opt_lib}/gstreamer-1.0
+        export GST_PLUGIN_PATH=#{opt_lib}gstreamer-1.0
     EOS
   end
 
   test do
     lib_ext = OS.mac? ? "dylib" : "so"
-    output = shell_output("gst-inspect-1.0 #{lib}/gstreamer-1.0/libgstaravis.#{version.major_minor}.#{lib_ext}")
-    assert_match(/Description *Aravis Video Source/, output)
+    output = shell_output("gst-inspect-1.0 #{lib}gstreamer-1.0libgstaravis.#{version.major_minor}.#{lib_ext}")
+    assert_match(Description *Aravis Video Source, output)
   end
 end

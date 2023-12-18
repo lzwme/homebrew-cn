@@ -1,10 +1,10 @@
 class Jr < Formula
   desc "CLI program that helps you to create quality random data for your applications"
-  homepage "https://jrnd.io/"
-  url "https://ghproxy.com/https://github.com/ugol/jr/archive/refs/tags/v0.3.3.tar.gz"
+  homepage "https:jrnd.io"
+  url "https:github.comugoljrarchiverefstagsv0.3.3.tar.gz"
   sha256 "fa60365c0ca7b5ff70ef357ff362c7da069aa07a5daa8303f0af04ae75d04f67"
   license "MIT"
-  head "https://github.com/ugol/jr.git", branch: "main"
+  head "https:github.comugoljr.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb26ad57ef2455ff9e7453c3375592a5ebadffa199e9dfa7f9354a59566a46b9"
@@ -22,13 +22,13 @@ class Jr < Formula
 
   def install
     system "make", "all"
-    libexec.install Dir["build/*"]
-    pkgetc.install "config/jrconfig.json"
+    libexec.install Dir["build*"]
+    pkgetc.install "configjrconfig.json"
     pkgetc.install "templates"
-    (bin/"jr").write_env_script libexec/"jr", JR_HOME: pkgetc
+    (bin"jr").write_env_script libexec"jr", JR_HOME: pkgetc
   end
 
   test do
-    assert_match "net_device", shell_output("#{bin}/jr template list").strip
+    assert_match "net_device", shell_output("#{bin}jr template list").strip
   end
 end

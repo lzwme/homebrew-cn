@@ -1,10 +1,10 @@
 class Cc65 < Formula
   desc "6502 C compiler"
-  homepage "https://cc65.github.io/cc65/"
-  url "https://ghproxy.com/https://github.com/cc65/cc65/archive/refs/tags/V2.19.tar.gz"
+  homepage "https:cc65.github.iocc65"
+  url "https:github.comcc65cc65archiverefstagsV2.19.tar.gz"
   sha256 "157b8051aed7f534e5093471e734e7a95e509c577324099c3c81324ed9d0de77"
   license "Zlib"
-  head "https://github.com/cc65/cc65.git", branch: "master"
+  head "https:github.comcc65cc65.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "41632cc243d34d069cc66bd938aaa297265ab1f5438c59bfef49d8c49965c0a2"
@@ -33,9 +33,9 @@ class Cc65 < Formula
   end
 
   test do
-    (testpath/"foo.c").write "int main (void) { return 0; }"
+    (testpath"foo.c").write "int main (void) { return 0; }"
 
-    system bin/"cl65", "foo.c" # compile and link
-    assert_predicate testpath/"foo", :exist? # binary
+    system bin"cl65", "foo.c" # compile and link
+    assert_predicate testpath"foo", :exist? # binary
   end
 end

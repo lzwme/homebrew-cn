@@ -1,10 +1,10 @@
 class Jump < Formula
   desc "Helps you navigate your file system faster by learning your habits"
-  homepage "https://github.com/gsamokovarov/jump"
-  url "https://ghproxy.com/https://github.com/gsamokovarov/jump/archive/refs/tags/v0.51.0.tar.gz"
+  homepage "https:github.comgsamokovarovjump"
+  url "https:github.comgsamokovarovjumparchiverefstagsv0.51.0.tar.gz"
   sha256 "ce297cada71e1dca33cd7759e55b28518d2bf317cdced1f3b3f79f40fa1958b5"
   license "MIT"
-  head "https://github.com/gsamokovarov/jump.git", branch: "main"
+  head "https:github.comgsamokovarovjump.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "401b76cacc9038c0df59f48eca22bd5edf35c33ac5e2dd9ae9e885e5fd404dfc"
@@ -23,15 +23,15 @@ class Jump < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
-    man1.install "man/jump.1"
-    man1.install "man/j.1"
+    man1.install "manjump.1"
+    man1.install "manj.1"
   end
 
   test do
-    (testpath/"test_dir").mkpath
+    (testpath"test_dir").mkpath
     ENV["JUMP_HOME"] = testpath.to_s
-    system "#{bin}/jump", "chdir", "#{testpath}/test_dir"
+    system "#{bin}jump", "chdir", "#{testpath}test_dir"
 
-    assert_equal (testpath/"test_dir").to_s, shell_output("#{bin}/jump cd tdir").chomp
+    assert_equal (testpath"test_dir").to_s, shell_output("#{bin}jump cd tdir").chomp
   end
 end

@@ -2,10 +2,10 @@ cask "font-peralta" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/peralta/Peralta-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflperaltaPeralta-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Peralta"
-  homepage "https://fonts.google.com/specimen/Peralta"
+  homepage "https:fonts.google.comspecimenPeralta"
 
   font "Peralta-Regular.ttf"
 

@@ -1,10 +1,10 @@
 class Age < Formula
   desc "Simple, modern, secure file encryption"
-  homepage "https://github.com/FiloSottile/age"
-  url "https://ghproxy.com/https://github.com/FiloSottile/age/archive/refs/tags/v1.1.1.tar.gz"
+  homepage "https:github.comFiloSottileage"
+  url "https:github.comFiloSottileagearchiverefstagsv1.1.1.tar.gz"
   sha256 "f1f3dbade631976701cd295aa89308681318d73118f5673cced13f127a91178c"
   license "BSD-3-Clause"
-  head "https://github.com/FiloSottile/age.git", branch: "main"
+  head "https:github.comFiloSottileage.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb6ae25bd119151a8d3449a170c0893a515ab89646bac0889d45ed849ddaab67"
@@ -22,14 +22,14 @@ class Age < Formula
 
   def install
     bin.mkpath
-    system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "-o", bin, "filippo.io/age/cmd/..."
-    man1.install "doc/age.1"
-    man1.install "doc/age-keygen.1"
+    system "go", "build", *std_go_args(ldflags: "-X main.Version=v#{version}"), "-o", bin, "filippo.ioagecmd..."
+    man1.install "docage.1"
+    man1.install "docage-keygen.1"
   end
 
   test do
-    system bin/"age-keygen", "-o", "key.txt"
-    pipe_output("#{bin}/age -e -i key.txt -o test.age", "test")
-    assert_equal "test", shell_output("#{bin}/age -d -i key.txt test.age")
+    system bin"age-keygen", "-o", "key.txt"
+    pipe_output("#{bin}age -e -i key.txt -o test.age", "test")
+    assert_equal "test", shell_output("#{bin}age -d -i key.txt test.age")
   end
 end

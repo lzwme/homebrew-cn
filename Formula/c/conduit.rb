@@ -1,14 +1,14 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
-  homepage "https://conduit.io/"
-  url "https://ghproxy.com/https://github.com/ConduitIO/conduit/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:conduit.io"
+  url "https:github.comConduitIOconduitarchiverefstagsv0.8.0.tar.gz"
   sha256 "859529d66cabaf9280e4fb05ab15bbf111cf86780a219a203ab7da755150b27a"
   license "Apache-2.0"
-  head "https://github.com/ConduitIO/conduit.git", branch: "main"
+  head "https:github.comConduitIOconduit.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -32,21 +32,21 @@ class Conduit < Formula
 
   test do
     # Assert conduit version
-    assert_match(version.to_s, shell_output("#{bin}/conduit -version"))
+    assert_match(version.to_s, shell_output("#{bin}conduit -version"))
 
     File.open("output.txt", "w") do |file|
       # redirect stdout to the file
       $stdout.reopen(file)
       pid = fork do
         # Run conduit with random free ports for gRPC and HTTP servers
-        exec bin/"conduit", "--grpc.address", ":0",
+        exec bin"conduit", "--grpc.address", ":0",
                             "--http.address", ":0"
       end
       sleep(5)
       # Kill process
       Process.kill("SIGKILL", pid)
     end
-    assert_match "grpc server started", (testpath/"output.txt").read
-    assert_match "http server started", (testpath/"output.txt").read
+    assert_match "grpc server started", (testpath"output.txt").read
+    assert_match "http server started", (testpath"output.txt").read
   end
 end

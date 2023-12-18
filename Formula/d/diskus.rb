@@ -1,7 +1,7 @@
 class Diskus < Formula
   desc "Minimal, fast alternative to 'du -sh'"
-  homepage "https://github.com/sharkdp/diskus"
-  url "https://ghproxy.com/https://github.com/sharkdp/diskus/archive/refs/tags/v0.7.0.tar.gz"
+  homepage "https:github.comsharkdpdiskus"
+  url "https:github.comsharkdpdiskusarchiverefstagsv0.7.0.tar.gz"
   sha256 "64b1b2e397ef4de81ea20274f98ec418b0fe19b025860e33beaba5494d3b8bd1"
   license any_of: ["Apache-2.0", "MIT"]
 
@@ -22,12 +22,12 @@ class Diskus < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    man1.install "doc/diskus.1"
+    man1.install "docdiskus.1"
   end
 
   test do
-    (testpath/"test.txt").write("Hello World")
-    output = shell_output("#{bin}/diskus #{testpath}/test.txt")
+    (testpath"test.txt").write("Hello World")
+    output = shell_output("#{bin}diskus #{testpath}test.txt")
     assert_match "4096", output
   end
 end

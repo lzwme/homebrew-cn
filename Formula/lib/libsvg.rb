@@ -1,14 +1,14 @@
 class Libsvg < Formula
   desc "Library for SVG files"
-  homepage "https://cairographics.org/"
-  url "https://cairographics.org/snapshots/libsvg-0.1.4.tar.gz"
+  homepage "https:cairographics.org"
+  url "https:cairographics.orgsnapshotslibsvg-0.1.4.tar.gz"
   sha256 "4c3bf9292e676a72b12338691be64d0f38cd7f2ea5e8b67fbbf45f1ed404bc8f"
   license "LGPL-2.1-or-later"
   revision 2
 
   livecheck do
-    url "https://cairographics.org/snapshots/"
-    regex(/href=.*?libsvg[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:cairographics.orgsnapshots"
+    regex(href=.*?libsvg[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -35,26 +35,26 @@ class Libsvg < Formula
 
   # Fix undefined reference to 'png_set_gray_1_2_4_to_8' in libpng 1.4.0+
   patch do
-    url "https://ghproxy.com/https://raw.githubusercontent.com/buildroot/buildroot/45c3b0ec49fac67cc81651f0bed063722a48dc29/package/libsvg/0002-Fix-undefined-symbol-png_set_gray_1_2_4_to_8.patch"
+    url "https:raw.githubusercontent.combuildrootbuildroot45c3b0ec49fac67cc81651f0bed063722a48dc29packagelibsvg0002-Fix-undefined-symbol-png_set_gray_1_2_4_to_8.patch"
     sha256 "a0ca1e25ea6bd5cb9aac57ac541c90ebe3b12c1340dbc5762d487d827064e0b9"
   end
 
   # Allow building on M1 Macs. This patch is adapted from
-  # https://cgit.freedesktop.org/cairo/commit/?id=afdf3917ee86a7d8ae17f556db96478682674a76
+  # https:cgit.freedesktop.orgcairocommit?id=afdf3917ee86a7d8ae17f556db96478682674a76
   patch :DATA
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.svg").write <<~EOS
+    (testpath"test.svg").write <<~EOS
       <?xml version="1.0" encoding="utf-8"?>
-      <svg xmlns:svg="http://www.w3.org/2000/svg" height="72pt" width="144pt" viewBox="0 -20 144 72"><text font-size="12" text-anchor="left" y="0" x="0" font-family="Times New Roman" fill="green">sample text here</text></svg>
+      <svg xmlns:svg="http:www.w3.org2000svg" height="72pt" width="144pt" viewBox="0 -20 144 72"><text font-size="12" text-anchor="left" y="0" x="0" font-family="Times New Roman" fill="green">sample text here<text><svg>
     EOS
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <stdio.h>
       #include "svg.h"
 
@@ -67,7 +67,7 @@ class Libsvg < Formula
           result = svg_create(&svg);
           if (SVG_STATUS_SUCCESS != result) {
               printf ("svg_create failed\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -1;
           }
 
@@ -75,7 +75,7 @@ class Libsvg < Formula
           result = svg_parse(svg, "test.svg");
           if (SVG_STATUS_SUCCESS != result) {
               printf ("svg_parse failed\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -2;
           }
 
@@ -83,7 +83,7 @@ class Libsvg < Formula
           result = svg_destroy(svg);
           if (SVG_STATUS_SUCCESS != result) {
               printf ("svg_destroy failed\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -3;
           }
           svg = NULL;
@@ -92,14 +92,14 @@ class Libsvg < Formula
           result = svg_create(&svg);
           if (SVG_STATUS_SUCCESS != result) {
               printf ("svg_create failed\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -4;
           }
 
           fp = fopen("test.svg", "r");
           if (NULL == fp) {
               printf ("failed to fopen test.svg\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -5;
           }
 
@@ -107,7 +107,7 @@ class Libsvg < Formula
           result = svg_parse_file(svg, fp);
           if (SVG_STATUS_SUCCESS != result) {
               printf ("svg_parse_file failed\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -6;
           }
 
@@ -115,7 +115,7 @@ class Libsvg < Formula
           result = svg_destroy(svg);
           if (SVG_STATUS_SUCCESS != result) {
               printf ("svg_destroy failed\\n");
-              /* Fail if alloc failed */
+              * Fail if alloc failed *
               return -7;
           }
           svg = NULL;
@@ -130,16 +130,16 @@ class Libsvg < Formula
                    "-L#{Formula["libpng"].opt_lib}", "-lpng",
                    "-L#{Formula["jpeg-turbo"].opt_lib}", "-ljpeg",
                    "-Wl,-rpath,#{Formula["jpeg-turbo"].opt_lib}",
-                   "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
-    assert_equal "1\n2\n3\n4\n5\n6\nSUCCESS\n", shell_output("./test")
+                   "-Wl,-rpath,#{HOMEBREW_PREFIX}lib"
+    assert_equal "1\n2\n3\n4\n5\n6\nSUCCESS\n", shell_output(".test")
   end
 end
 
 __END__
-diff --git a/configure.in b/configure.in
+diff --git aconfigure.in bconfigure.in
 index a9f871e..c84d417 100755
---- a/configure.in
-+++ b/configure.in
+--- aconfigure.in
++++ bconfigure.in
 @@ -8,18 +8,18 @@ LIBSVG_VERSION=0.1.4
  # libtool shared library version
  

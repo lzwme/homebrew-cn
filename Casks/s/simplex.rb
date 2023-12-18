@@ -5,11 +5,11 @@ cask "simplex" do
   sha256 arm:   "02a2f77e33c277941e96d7a55dcee3907d5c85b497f9c2df6cc3ceae122c29eb",
          intel: "52bdc0e5daea57ada3cf240747f03c442cd275b4541e11596262f3a68b71ece7"
 
-  url "https://ghproxy.com/https://github.com/simplex-chat/simplex-chat/releases/download/v#{version}/simplex-desktop-macos-#{arch}.dmg",
-      verified: "github.com/simplex-chat/simplex-chat/"
+  url "https:github.comsimplex-chatsimplex-chatreleasesdownloadv#{version}simplex-desktop-macos-#{arch}.dmg",
+      verified: "github.comsimplex-chatsimplex-chat"
   name "SimpleX Chat"
   desc "Messenger for SimpleX protocol"
-  homepage "https://simplex.chat/"
+  homepage "https:simplex.chat"
 
   livecheck do
     url :url
@@ -20,5 +20,5 @@ cask "simplex" do
 
   app "SimpleX.app"
 
-  zap trash: "~/Library/Saved Application State/chat.simplex.app.savedState"
+  zap trash: "~LibrarySaved Application Statechat.simplex.app.savedState"
 end

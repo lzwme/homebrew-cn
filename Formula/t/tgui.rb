@@ -1,7 +1,7 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
-  homepage "https://tgui.eu"
-  url "https://ghproxy.com/https://github.com/texus/TGUI/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:tgui.eu"
+  url "https:github.comtexusTGUIarchiverefstagsv1.1.0.tar.gz"
   sha256 "765e2db29ef4521dcf3947ce7e020614adce4eb662145bb5774685ecb68847f8"
   license "Zlib"
 
@@ -35,9 +35,9 @@ class Tgui < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <TGUI/TGUI.hpp>
-      #include <TGUI/Backend/SFML-Graphics.hpp>
+    (testpath"test.cpp").write <<~EOS
+      #include <TGUITGUI.hpp>
+      #include <TGUIBackendSFML-Graphics.hpp>
       int main()
       {
         sf::Text text;
@@ -49,6 +49,6 @@ class Tgui < Formula
       "-L#{lib}", "-L#{Formula["sfml"].opt_lib}",
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",
       "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

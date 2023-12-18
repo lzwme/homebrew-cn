@@ -1,13 +1,13 @@
 class MkConfigure < Formula
   desc "Lightweight replacement for GNU autotools"
-  homepage "https://github.com/cheusov/mk-configure"
-  url "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.38.3/mk-configure-0.38.3.tar.gz"
+  homepage "https:github.comcheusovmk-configure"
+  url "https:downloads.sourceforge.netprojectmk-configuremk-configuremk-configure-0.38.3mk-configure-0.38.3.tar.gz"
   sha256 "c6b5dfdca304eb9462f7d61f94f591844ef2a1ea7c0bbe1397eeff9c9b912afa"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT", "MIT-CMU"]
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/mk-configure[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(%r{url=.*?mk-configure[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -29,10 +29,10 @@ class MkConfigure < Formula
 
     system "bmake", "all"
     system "bmake", "install"
-    doc.install "presentation/presentation.pdf"
+    doc.install "presentationpresentation.pdf"
   end
 
   test do
-    system "#{bin}/mkcmake", "-V", "MAKE_VERSION", "-f", "/dev/null"
+    system "#{bin}mkcmake", "-V", "MAKE_VERSION", "-f", "devnull"
   end
 end

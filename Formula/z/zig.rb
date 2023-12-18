@@ -1,14 +1,14 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
-  homepage "https://ziglang.org/"
+  homepage "https:ziglang.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://ziglang.org/download/0.11.0/zig-0.11.0.tar.xz"
+  url "https:ziglang.orgdownload0.11.0zig-0.11.0.tar.xz"
   sha256 "72014e700e50c0d3528cef3adf80b76b26ab27730133e8202716a187a799e951"
   license "MIT"
 
   livecheck do
-    url "https://ziglang.org/download/"
-    regex(/href=.*?zig[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ziglang.orgdownload"
+    regex(href=.*?zig[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -24,11 +24,11 @@ class Zig < Formula
   end
 
   depends_on "cmake" => :build
-  # Check: https://github.com/ziglang/zig/blob/#{version}/CMakeLists.txt
+  # Check: https:github.comziglangzigblob#{version}CMakeLists.txt
   # for supported LLVM version.
   # When switching to `llvm`, remove the `on_linux` block below.
   depends_on "llvm@16" => :build
-  depends_on macos: :big_sur # https://github.com/ziglang/zig/issues/13313
+  depends_on macos: :big_sur # https:github.comziglangzigissues13313
   depends_on "z3"
   depends_on "zstd"
   uses_from_macos "ncurses"
@@ -45,16 +45,16 @@ class Zig < Formula
   def install
     # Make sure `llvm@16` is used.
     ENV.prepend_path "PATH", Formula["llvm@16"].opt_bin
-    ENV["CC"] = Formula["llvm@16"].opt_bin/"clang"
-    ENV["CXX"] = Formula["llvm@16"].opt_bin/"clang++"
+    ENV["CC"] = Formula["llvm@16"].opt_bin"clang"
+    ENV["CXX"] = Formula["llvm@16"].opt_bin"clang++"
 
     # Work around duplicate symbols with Xcode 15 linker.
     # Remove on next release.
-    # https://github.com/ziglang/zig/issues/17050
+    # https:github.comziglangzigissues17050
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    # Workaround for https://github.com/Homebrew/homebrew-core/pull/141453#discussion_r1320821081.
-    # This will likely be fixed upstream by https://github.com/ziglang/zig/pull/16062.
+    # Workaround for https:github.comHomebrewhomebrew-corepull141453#discussion_r1320821081.
+    # This will likely be fixed upstream by https:github.comziglangzigpull16062.
     if OS.linux?
       ENV["NIX_LDFLAGS"] = ENV["HOMEBREW_RPATH_PATHS"].split(":")
                                                       .map { |p| "-rpath #{p}" }
@@ -75,27 +75,27 @@ class Zig < Formula
   end
 
   test do
-    (testpath/"hello.zig").write <<~EOS
+    (testpath"hello.zig").write <<~EOS
       const std = @import("std");
       pub fn main() !void {
           const stdout = std.io.getStdOut().writer();
           try stdout.print("Hello, world!", .{});
       }
     EOS
-    system "#{bin}/zig", "build-exe", "hello.zig"
-    assert_equal "Hello, world!", shell_output("./hello")
+    system "#{bin}zig", "build-exe", "hello.zig"
+    assert_equal "Hello, world!", shell_output(".hello")
 
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
-    # https://github.com/ziglang/zig/issues/10377
+    # https:github.comziglangzigissues10377
     ENV.delete "CPATH"
-    (testpath/"hello.c").write <<~EOS
+    (testpath"hello.c").write <<~EOS
       #include <stdio.h>
       int main() {
         fprintf(stdout, "Hello, world!");
         return 0;
       }
     EOS
-    system "#{bin}/zig", "cc", "hello.c", "-o", "hello"
-    assert_equal "Hello, world!", shell_output("./hello")
+    system "#{bin}zig", "cc", "hello.c", "-o", "hello"
+    assert_equal "Hello, world!", shell_output(".hello")
   end
 end

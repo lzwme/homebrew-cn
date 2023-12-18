@@ -1,7 +1,7 @@
 class Lsyncd < Formula
   desc "Synchronize local directories with remote targets"
-  homepage "https://github.com/lsyncd/lsyncd"
-  url "https://ghproxy.com/https://github.com/lsyncd/lsyncd/archive/refs/tags/release-2.3.1.tar.gz"
+  homepage "https:github.comlsyncdlsyncd"
+  url "https:github.comlsyncdlsyncdarchiverefstagsrelease-2.3.1.tar.gz"
   sha256 "fc19a77b2258dc6dbb16a74f023de7cd62451c26984cedbec63e20ff22bcbdd8"
   license "GPL-2.0-or-later"
 
@@ -22,41 +22,41 @@ class Lsyncd < Formula
   depends_on "lua"
 
   resource "xnu" do
-    # From https://opensource.apple.com/releases/
+    # From https:opensource.apple.comreleases
     on_sonoma :or_newer do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-10002.41.9.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-10002.41.9.tar.gz"
       sha256 "f158a10e01702aa59a90af60ab097c3253123ab3f05d9953530730d241a9cba4"
     end
     on_ventura do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-8792.61.2.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-8792.61.2.tar.gz"
       sha256 "61c5758d4423ede45e3cbe70b4316d982af59dc91fc482cd9afc145b2ad2226a"
     end
     on_monterey do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-8020.140.41.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-8020.140.41.tar.gz"
       sha256 "b11e05d6529806aa6ec046ae462d997dfb36a26df6c0eb0452d7a67cc08ad9e7"
     end
     on_big_sur do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-7195.141.2.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-7195.141.2.tar.gz"
       sha256 "ec5aa94ebbe09afa6a62d8beb8d15e4e9dd8eb0a7e7e82c8b8cf9ca427004b6d"
     end
     on_catalina do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-6153.141.1.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-6153.141.1.tar.gz"
       sha256 "886388632a7cc1e482a4ca4921db3c80344792e7255258461118652e8c632d34"
     end
     on_mojave do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-4903.270.47.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-4903.270.47.tar.gz"
       sha256 "099c1c50c4cef4db5fcf4df6a6314498693ad52ed5e813201e2cf442e22985fe"
     end
     on_high_sierra do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-4570.71.2.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-4570.71.2.tar.gz"
       sha256 "b9e2c84c3ee62819917d3bc845e10c2f4bde1194e731c192b6cf0239da5a5a14"
     end
     on_sierra do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-3789.70.16.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-3789.70.16.tar.gz"
       sha256 "0bc4cf425513dd16f3032f189d93cdb6bef48696951bd2e5bf4878dacdcd10d2"
     end
     on_el_capitan :or_older do
-      url "https://ghproxy.com/https://github.com/apple-oss-distributions/xnu/archive/refs/tags/xnu-3248.60.10.tar.gz"
+      url "https:github.comapple-oss-distributionsxnuarchiverefstagsxnu-3248.60.10.tar.gz"
       sha256 "a4f646c6d34814df5a729a2c0b380c541dd5282b5d82e35e31bf66c034c2b761"
     end
   end
@@ -64,8 +64,8 @@ class Lsyncd < Formula
   def install
     args = ["-DCMAKE_INSTALL_MANDIR=#{man}"]
     if OS.mac?
-      resource("xnu").stage buildpath/"xnu"
-      args += %W[-DWITH_INOTIFY=OFF -DWITH_FSEVENTS=ON -DXNU_DIR=#{buildpath}/xnu]
+      resource("xnu").stage buildpath"xnu"
+      args += %W[-DWITH_INOTIFY=OFF -DWITH_FSEVENTS=ON -DXNU_DIR=#{buildpath}xnu]
     else
       args += %w[-DWITH_INOTIFY=ON -DWITH_FSEVENTS=OFF]
     end
@@ -75,6 +75,6 @@ class Lsyncd < Formula
   end
 
   test do
-    system bin/"lsyncd", "--version"
+    system bin"lsyncd", "--version"
   end
 end

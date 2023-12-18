@@ -1,15 +1,15 @@
 class Dbus < Formula
   # releases: even (1.12.x) = stable, odd (1.13.x) = development
   desc "Message bus system, providing inter-application communication"
-  homepage "https://wiki.freedesktop.org/www/Software/dbus"
-  url "https://dbus.freedesktop.org/releases/dbus/dbus-1.14.10.tar.xz"
-  mirror "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.14.10.orig.tar.xz"
+  homepage "https:wiki.freedesktop.orgwwwSoftwaredbus"
+  url "https:dbus.freedesktop.orgreleasesdbusdbus-1.14.10.tar.xz"
+  mirror "https:deb.debian.orgdebianpoolmainddbusdbus_1.14.10.orig.tar.xz"
   sha256 "ba1f21d2bd9d339da2d4aa8780c09df32fea87998b73da24f49ab9df1e36a50f"
   license any_of: ["AFL-2.1", "GPL-2.0-or-later"]
 
   livecheck do
-    url "https://dbus.freedesktop.org/releases/dbus/"
-    regex(/href=.*?dbus[._-]v?(\d+\.\d*?[02468](?:\.\d+)*)\.t/i)
+    url "https:dbus.freedesktop.orgreleasesdbus"
+    regex(href=.*?dbus[._-]v?(\d+\.\d*?[02468](?:\.\d+)*)\.ti)
   end
 
   bottle do
@@ -25,7 +25,7 @@ class Dbus < Formula
   end
 
   head do
-    url "https://gitlab.freedesktop.org/dbus/dbus.git", branch: "master"
+    url "https:gitlab.freedesktop.orgdbusdbus.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "autoconf-archive" => :build
@@ -38,21 +38,21 @@ class Dbus < Formula
 
   uses_from_macos "expat"
 
-  # Patch applies the config templating fixed in https://bugs.freedesktop.org/show_bug.cgi?id=94494
-  # Homebrew pr/issue: 50219
+  # Patch applies the config templating fixed in https:bugs.freedesktop.orgshow_bug.cgi?id=94494
+  # Homebrew prissue: 50219
   patch do
     on_macos do
-      url "https://ghproxy.com/https://raw.githubusercontent.com/Homebrew/formula-patches/0a8a55872e/d-bus/org.freedesktop.dbus-session.plist.osx.diff"
+      url "https:raw.githubusercontent.comHomebrewformula-patches0a8a55872ed-busorg.freedesktop.dbus-session.plist.osx.diff"
       sha256 "a8aa6fe3f2d8f873ad3f683013491f5362d551bf5d4c3b469f1efbc5459a20dc"
     end
   end
 
   def install
     # Fix the TMPDIR to one D-Bus doesn't reject due to odd symbols
-    ENV["TMPDIR"] = "/tmp"
-    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+    ENV["TMPDIR"] = "tmp"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
-    system "./autogen.sh", "--no-configure" if build.head?
+    system ".autogen.sh", "--no-configure" if build.head?
 
     args = [
       "--disable-dependency-tracking",
@@ -70,13 +70,13 @@ class Dbus < Formula
       args << "--with-launchd-agent-dir=#{prefix}"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   def post_install
     # Generate D-Bus's UUID for this machine
-    system "#{bin}/dbus-uuidgen", "--ensure=#{var}/lib/dbus/machine-id"
+    system "#{bin}dbus-uuidgen", "--ensure=#{var}libdbusmachine-id"
   end
 
   service do
@@ -84,6 +84,6 @@ class Dbus < Formula
   end
 
   test do
-    system "#{bin}/dbus-daemon", "--version"
+    system "#{bin}dbus-daemon", "--version"
   end
 end

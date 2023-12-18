@@ -1,7 +1,7 @@
 class Octomap < Formula
   desc "Efficient probabilistic 3D mapping framework based on octrees"
-  homepage "https://octomap.github.io/"
-  url "https://ghproxy.com/https://github.com/OctoMap/octomap/archive/refs/tags/v1.9.8.tar.gz"
+  homepage "https:octomap.github.io"
+  url "https:github.comOctoMapoctomaparchiverefstagsv1.9.8.tar.gz"
   sha256 "417af6da4e855e9a83b93458aa98b01a2c88f880088baad2b59d323ce162586e"
   license "BSD-3-Clause"
 
@@ -28,9 +28,9 @@ class Octomap < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
+    (testpath"test.cpp").write <<~EOS
       #include <cassert>
-      #include <octomap/octomap.h>
+      #include <octomapoctomap.h>
       int main() {
         octomap::OcTree tree(0.05);
         assert(tree.size() == 0);
@@ -39,6 +39,6 @@ class Octomap < Formula
     EOS
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}",
                     "-loctomath", "-loctomap", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

@@ -1,9 +1,9 @@
-require "language/node"
+require "languagenode"
 
 class PurescriptLanguageServer < Formula
   desc "Language Server Protocol server for PureScript"
-  homepage "https://github.com/nwolverson/purescript-language-server"
-  url "https://registry.npmjs.org/purescript-language-server/-/purescript-language-server-0.17.3.tgz"
+  homepage "https:github.comnwolversonpurescript-language-server"
+  url "https:registry.npmjs.orgpurescript-language-server-purescript-language-server-0.17.3.tgz"
   sha256 "133074c6db810b990980e8a23ccedbbed5878c490ab3bfef6cff18fab8976736"
   license "MIT"
 
@@ -16,7 +16,7 @@ class PurescriptLanguageServer < Formula
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
@@ -34,9 +34,9 @@ class PurescriptLanguageServer < Formula
       }
     JSON
 
-    Open3.popen3("#{bin}/purescript-language-server", "--stdio") do |stdin, stdout|
+    Open3.popen3("#{bin}purescript-language-server", "--stdio") do |stdin, stdout|
       stdin.write "Content-Length: #{json.size}\r\n\r\n#{json}"
-      assert_match(/^Content-Length: \d+/i, stdout.readline)
+      assert_match(^Content-Length: \d+i, stdout.readline)
     end
   end
 end

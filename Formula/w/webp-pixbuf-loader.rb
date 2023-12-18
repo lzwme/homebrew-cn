@@ -1,17 +1,17 @@
 class WebpPixbufLoader < Formula
   desc "WebP Image format GdkPixbuf loader"
-  homepage "https://github.com/aruiz/webp-pixbuf-loader"
+  homepage "https:github.comaruizwebp-pixbuf-loader"
   license "LGPL-2.0-or-later"
-  head "https://github.com/aruiz/webp-pixbuf-loader.git", branch: "mainline"
+  head "https:github.comaruizwebp-pixbuf-loader.git", branch: "mainline"
 
   stable do
-    url "https://ghproxy.com/https://github.com/aruiz/webp-pixbuf-loader/archive/refs/tags/0.2.5.tar.gz"
+    url "https:github.comaruizwebp-pixbuf-loaderarchiverefstags0.2.5.tar.gz"
     sha256 "e1b76c538a1d3b3fc41323d044c7c84365ab9bd5ab3dcc8de7efb0c7dc2f206b"
 
     # patch libweb version constraint
-    # upstream PR, https://github.com/aruiz/webp-pixbuf-loader/pull/74
+    # upstream PR, https:github.comaruizwebp-pixbuf-loaderpull74
     patch do
-      url "https://github.com/aruiz/webp-pixbuf-loader/commit/bc50244c13d9e86eb6d2271442f1a2cae27e71b8.patch?full_index=1"
+      url "https:github.comaruizwebp-pixbuf-loadercommitbc50244c13d9e86eb6d2271442f1a2cae27e71b8.patch?full_index=1"
       sha256 "bb41d87c160a5b6c0984ad20f9d94e0045b53a9dd00384bfa3443cc651127f3b"
     end
   end
@@ -46,28 +46,28 @@ class WebpPixbufLoader < Formula
 
   # Subfolder that pixbuf loaders are installed into.
   def module_subdir
-    "lib/gdk-pixbuf-#{gdk_so_ver}/#{gdk_module_ver}/loaders"
+    "libgdk-pixbuf-#{gdk_so_ver}#{gdk_module_ver}loaders"
   end
 
   def install
-    system "meson", "setup", "build", *std_meson_args, "-Dgdk_pixbuf_moduledir=#{prefix}/#{module_subdir}"
+    system "meson", "setup", "build", *std_meson_args, "-Dgdk_pixbuf_moduledir=#{prefix}#{module_subdir}"
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
   # After the loader is linked in, update the global cache of pixbuf loaders
   def post_install
-    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}/#{module_subdir}"
-    system "#{Formula["gdk-pixbuf"].opt_bin}/gdk-pixbuf-query-loaders", "--update-cache"
+    ENV["GDK_PIXBUF_MODULEDIR"] = "#{HOMEBREW_PREFIX}#{module_subdir}"
+    system "#{Formula["gdk-pixbuf"].opt_bin}gdk-pixbuf-query-loaders", "--update-cache"
   end
 
   test do
     # Generate a .webp file to test with.
-    system "#{Formula["webp"].opt_bin}/cwebp", test_fixtures("test.png"), "-o", "test.webp"
+    system "#{Formula["webp"].opt_bin}cwebp", test_fixtures("test.png"), "-o", "test.webp"
 
     # Sample program to load a .webp file via gdk-pixbuf.
-    (testpath/"test.c").write <<~EOS
-      #include <gdk-pixbuf/gdk-pixbuf.h>
+    (testpath"test.c").write <<~EOS
+      #include <gdk-pixbufgdk-pixbuf.h>
 
       gint main (gint argc, gchar **argv)  {
         GError *error = NULL;
@@ -86,6 +86,6 @@ class WebpPixbufLoader < Formula
 
     flags = shell_output("pkg-config --cflags --libs gdk-pixbuf-#{gdk_so_ver}").chomp.split
     system ENV.cc, "test.c", "-o", "test_loader", *flags
-    system "./test_loader", "test.webp"
+    system ".test_loader", "test.webp"
   end
 end

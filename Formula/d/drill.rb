@@ -1,10 +1,10 @@
 class Drill < Formula
   desc "HTTP load testing application written in Rust"
-  homepage "https://github.com/fcsonline/drill"
-  url "https://ghproxy.com/https://github.com/fcsonline/drill/archive/refs/tags/0.8.3.tar.gz"
+  homepage "https:github.comfcsonlinedrill"
+  url "https:github.comfcsonlinedrillarchiverefstags0.8.3.tar.gz"
   sha256 "12096bfeb57fa567f9104615c872b5fec787bacf5b9efcc9f14d496c08efe30d"
   license "GPL-3.0-or-later"
-  head "https://github.com/fcsonline/drill.git", branch: "master"
+  head "https:github.comfcsonlinedrill.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "339d49f914baa6c8493f438e6c68b87ea51bdbb3dceca074c9e6fafbb207b728"
@@ -32,24 +32,24 @@ class Drill < Formula
   end
 
   test do
-    (testpath/"benchmark.yml").write <<~EOS
+    (testpath"benchmark.yml").write <<~EOS
       ---
       concurrency: 4
-      base: 'https://dummyjson.com'
+      base: 'https:dummyjson.com'
       iterations: 5
       rampup: 2
 
       plan:
         - name: Http status
           request:
-            url: /http/200
+            url: http200
 
         - name: Check products API
           request:
-            url: /products/1
+            url: products1
     EOS
 
     assert_match "Total requests            10",
-      shell_output("#{bin}/drill --benchmark #{testpath}/benchmark.yml --stats")
+      shell_output("#{bin}drill --benchmark #{testpath}benchmark.yml --stats")
   end
 end

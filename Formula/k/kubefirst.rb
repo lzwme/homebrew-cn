@@ -1,10 +1,10 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
-  homepage "https://kubefirst.io/"
-  url "https://ghproxy.com/https://github.com/kubefirst/kubefirst/archive/refs/tags/v2.3.7.tar.gz"
+  homepage "https:kubefirst.io"
+  url "https:github.comkubefirstkubefirstarchiverefstagsv2.3.7.tar.gz"
   sha256 "7e6809854da3f71aea99dabed6e85cede4e4d24ce783142a027e3879deae2bdd"
   license "MIT"
-  head "https://github.com/kubefirst/kubefirst.git", branch: "main"
+  head "https:github.comkubefirstkubefirst.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released, so it's necessary to check release versions instead of tags.
@@ -26,16 +26,16 @@ class Kubefirst < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/kubefirst/runtime/configs.K1Version=v#{version}"
+    ldflags = "-s -w -X github.comkubefirstruntimeconfigs.K1Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
-    system bin/"kubefirst", "info"
-    assert_match "k1-paths:", (testpath/".kubefirst").read
-    assert_predicate testpath/".k1/logs", :exist?
+    system bin"kubefirst", "info"
+    assert_match "k1-paths:", (testpath".kubefirst").read
+    assert_predicate testpath".k1logs", :exist?
 
-    output = shell_output("#{bin}/kubefirst version")
+    output = shell_output("#{bin}kubefirst version")
     expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       ""
     else

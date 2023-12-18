@@ -1,7 +1,7 @@
 class Osmcoastline < Formula
   desc "Extracts coastline data from OpenStreetMap planet file"
-  homepage "https://osmcode.org/osmcoastline/"
-  url "https://ghproxy.com/https://github.com/osmcode/osmcoastline/archive/refs/tags/v2.4.0.tar.gz"
+  homepage "https:osmcode.orgosmcoastline"
+  url "https:github.comosmcodeosmcoastlinearchiverefstagsv2.4.0.tar.gz"
   sha256 "2c1a28313ed19d6e2fb1cb01cde8f4f44ece378393993b0059f447c5fce11f50"
   license "GPL-3.0-or-later"
   revision 4
@@ -30,24 +30,24 @@ class Osmcoastline < Formula
 
   # To fix gdal-3.7.0
   patch do
-    url "https://github.com/osmcode/osmcoastline/commit/67cc33161069f65e315acae952492ab5ee07af15.patch?full_index=1"
+    url "https:github.comosmcodeosmcoastlinecommit67cc33161069f65e315acae952492ab5ee07af15.patch?full_index=1"
     sha256 "31b89e33b22ccdfe289a5da67480f9791bdd4f410c6a7831f0c1e007c4258e68"
   end
 
   def install
-    protozero = Formula["libosmium"].opt_libexec/"include"
+    protozero = Formula["libosmium"].opt_libexec"include"
     system "cmake", ".", "-DPROTOZERO_INCLUDE_DIR=#{protozero}", *std_cmake_args
     system "make", "install"
   end
 
   test do
-    (testpath/"input.opl").write <<~EOS
+    (testpath"input.opl").write <<~EOS
       n100 v1 x1.01 y1.01
       n101 v1 x1.04 y1.01
       n102 v1 x1.04 y1.04
       n103 v1 x1.01 y1.04
       w200 v1 Tnatural=coastline Nn100,n101,n102,n103,n100
     EOS
-    system "#{bin}/osmcoastline", "-v", "-o", "output.db", "input.opl"
+    system "#{bin}osmcoastline", "-v", "-o", "output.db", "input.opl"
   end
 end

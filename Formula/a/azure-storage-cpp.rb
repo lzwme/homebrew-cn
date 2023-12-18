@@ -1,7 +1,7 @@
 class AzureStorageCpp < Formula
   desc "Microsoft Azure Storage Client Library for C++"
-  homepage "https://azure.github.io/azure-storage-cpp"
-  url "https://ghproxy.com/https://github.com/Azure/azure-storage-cpp/archive/refs/tags/v7.5.0.tar.gz"
+  homepage "https:azure.github.ioazure-storage-cpp"
+  url "https:github.comAzureazure-storage-cpparchiverefstagsv7.5.0.tar.gz"
   sha256 "446a821d115949f6511b7eb01e6a0e4f014b17bfeba0f3dc33a51750a9d5eca5"
   license "Apache-2.0"
   revision 7
@@ -35,9 +35,9 @@ class AzureStorageCpp < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<~EOS
-      #include <was/common.h>
-      #include <was/storage_account.h>
+    (testpath"test.cpp").write <<~EOS
+      #include <wascommon.h>
+      #include <wasstorage_account.h>
       using namespace azure;
       int main() {
         utility::string_t storage_connection_string(_XPLATSTR("DefaultEndpointsProtocol=https;AccountName=myaccountname;AccountKey=myaccountkey"));
@@ -59,6 +59,6 @@ class AzureStorageCpp < Formula
              "-lcpprest", "-lboost_system-mt", "-lssl", "-lcrypto", "-lazurestorage"]
     flags << "-stdlib=libc++" if OS.mac?
     system ENV.cxx, "-o", "test_azurestoragecpp", "test.cpp", *flags
-    system "./test_azurestoragecpp"
+    system ".test_azurestoragecpp"
   end
 end

@@ -1,7 +1,7 @@
 class Libtcod < Formula
   desc "API for roguelike developers"
-  homepage "https://github.com/libtcod/libtcod"
-  url "https://ghproxy.com/https://github.com/libtcod/libtcod/archive/refs/tags/1.24.0.tar.gz"
+  homepage "https:github.comlibtcodlibtcod"
+  url "https:github.comlibtcodlibtcodarchiverefstags1.24.0.tar.gz"
   sha256 "13e7ed49f91b897ac637e29295df8eeac24e284fbd9129bb09fd05dba0dcc1fb"
   license "BSD-3-Clause"
 
@@ -30,15 +30,15 @@ class Libtcod < Formula
   fails_with gcc: "5"
 
   def install
-    cd "buildsys/autotools" do
+    cd "buildsysautotools" do
       system "autoreconf", "-fiv"
-      system "./configure"
+      system ".configure"
       system "make"
-      lib.install Dir[".libs/*{.a,.dylib}"]
+      lib.install Dir[".libs*{.a,.dylib}"]
     end
     Dir.chdir("src") do
-      Dir.glob("libtcod/**/*.{h,hpp}") do |f|
-        (include/File.dirname(f)).install f
+      Dir.glob("libtcod***.{h,hpp}") do |f|
+        (includeFile.dirname(f)).install f
       end
     end
     # don't yet know what this is for
@@ -46,8 +46,8 @@ class Libtcod < Formula
   end
 
   test do
-    (testpath/"version-c.c").write <<~EOS
-      #include <libtcod/libtcod.h>
+    (testpath"version-c.c").write <<~EOS
+      #include <libtcodlibtcod.h>
       #include <stdio.h>
       int main()
       {
@@ -56,9 +56,9 @@ class Libtcod < Formula
       }
     EOS
     system ENV.cc, "-I#{include}", "-L#{lib}", "-ltcod", "version-c.c", "-o", "version-c"
-    assert_equal version.to_s, shell_output("./version-c").strip
-    (testpath/"version-cc.cc").write <<~EOS
-      #include <libtcod/libtcod.hpp>
+    assert_equal version.to_s, shell_output(".version-c").strip
+    (testpath"version-cc.cc").write <<~EOS
+      #include <libtcodlibtcod.hpp>
       #include <iostream>
       int main()
       {
@@ -67,6 +67,6 @@ class Libtcod < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "-I#{include}", "-L#{lib}", "-ltcod", "version-cc.cc", "-o", "version-cc"
-    assert_equal version.to_s, shell_output("./version-cc").strip
+    assert_equal version.to_s, shell_output(".version-cc").strip
   end
 end

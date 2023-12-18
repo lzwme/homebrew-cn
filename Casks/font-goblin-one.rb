@@ -2,10 +2,10 @@ cask "font-goblin-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/goblinone/GoblinOne.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflgoblinoneGoblinOne.ttf",
+      verified: "github.comgooglefonts"
   name "Goblin One"
-  homepage "https://fonts.google.com/specimen/Goblin+One"
+  homepage "https:fonts.google.comspecimenGoblin+One"
 
   font "GoblinOne.ttf"
 

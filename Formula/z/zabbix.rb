@@ -1,14 +1,14 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
-  homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/6.4/zabbix-6.4.10.tar.gz"
+  homepage "https:www.zabbix.com"
+  url "https:cdn.zabbix.comzabbixsourcesstable6.4zabbix-6.4.10.tar.gz"
   sha256 "dabad1af52ec5f3b65ca3d5001e5782cd731d104394a7183bd81dfae5d6abd25"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
-  head "https://github.com/zabbix/zabbix.git", branch: "master"
+  head "https:github.comzabbixzabbix.git", branch: "master"
 
   livecheck do
-    url "https://www.zabbix.com/download_sources"
-    regex(/href=.*?zabbix[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.zabbix.comdownload_sources"
+    regex(href=.*?zabbix[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -29,7 +29,7 @@ class Zabbix < Formula
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}
-      --sysconfdir=#{etc}/zabbix
+      --sysconfdir=#{etc}zabbix
       --enable-agent
       --with-libpcre2
       --with-openssl=#{Formula["openssl@3"].opt_prefix}
@@ -37,14 +37,14 @@ class Zabbix < Formula
 
     if OS.mac?
       sdk = MacOS::CLT.installed? ? "" : MacOS.sdk_path
-      args << "--with-iconv=#{sdk}/usr"
+      args << "--with-iconv=#{sdk}usr"
     end
 
-    system "./configure", *args
+    system ".configure", *args
     system "make", "install"
   end
 
   test do
-    system sbin/"zabbix_agentd", "--print"
+    system sbin"zabbix_agentd", "--print"
   end
 end

@@ -1,14 +1,14 @@
 class CheckPostgres < Formula
   desc "Monitor Postgres databases"
-  homepage "https://bucardo.org/wiki/Check_postgres"
-  url "https://bucardo.org/downloads/check_postgres-2.26.0.tar.gz"
+  homepage "https:bucardo.orgwikiCheck_postgres"
+  url "https:bucardo.orgdownloadscheck_postgres-2.26.0.tar.gz"
   sha256 "a3b135c1a205179410ee7b694e528704ebc12358781c98d3763d835872366995"
   license "BSD-2-Clause"
-  head "https://github.com/bucardo/check_postgres.git", branch: "master"
+  head "https:github.combucardocheck_postgres.git", branch: "master"
 
   livecheck do
-    url "https://bucardo.org/check_postgres/"
-    regex(/latest version.*?v?(\d+(?:\.\d+)+)/i)
+    url "https:bucardo.orgcheck_postgres"
+    regex(latest version.*?v?(\d+(?:\.\d+)+)i)
   end
 
   bottle do
@@ -30,20 +30,20 @@ class CheckPostgres < Formula
     system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}", "INSTALLSITEMAN1DIR=#{man1}"
     system "make", "install"
 
-    mkdir_p libexec/"bin"
-    mv bin/"check_postgres.pl", libexec/"bin/check_postgres.pl"
-    inreplace [libexec/"bin/check_postgres.pl", man1/"check_postgres.1p"], "check_postgres.pl", "check_postgres"
+    mkdir_p libexec"bin"
+    mv bin"check_postgres.pl", libexec"bincheck_postgres.pl"
+    inreplace [libexec"bincheck_postgres.pl", man1"check_postgres.1p"], "check_postgres.pl", "check_postgres"
 
-    (bin/"check_postgres").write_env_script libexec/"bin/check_postgres.pl", PATH: "#{Formula["libpq"].opt_bin}:$PATH"
+    (bin"check_postgres").write_env_script libexec"bincheck_postgres.pl", PATH: "#{Formula["libpq"].opt_bin}:$PATH"
 
-    rm_rf prefix/"Library"
-    rm_rf prefix/"lib"
+    rm_rf prefix"Library"
+    rm_rf prefix"lib"
   end
 
   test do
     # This test verifies that check_postgres fails correctly, assuming
     # that no server is running at that port.
-    output = shell_output("#{bin}/check_postgres --action=connection --port=65432", 2)
+    output = shell_output("#{bin}check_postgres --action=connection --port=65432", 2)
     assert_match "POSTGRES_CONNECTION CRITICAL", output
   end
 end

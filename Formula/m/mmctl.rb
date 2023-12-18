@@ -1,15 +1,15 @@
 class Mmctl < Formula
   desc "Remote CLI tool for Mattermost server"
-  homepage "https://github.com/mattermost/mmctl"
-  url "https://github.com/mattermost/mmctl.git",
+  homepage "https:github.commattermostmmctl"
+  url "https:github.commattermostmmctl.git",
       tag:      "v7.10.5",
       revision: "ce61514f470b82795eb25d927bbf073b3bd037c6"
   license "Apache-2.0"
-  head "https://github.com/mattermost/mmctl.git", branch: "master"
+  head "https:github.commattermostmmctl.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -27,17 +27,17 @@ class Mmctl < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/mattermost/mmctl/commands.BuildHash=#{Utils.git_head}"
+    ldflags = "-s -w -X github.commattermostmmctlcommands.BuildHash=#{Utils.git_head}"
     system "go", "build", *std_go_args(ldflags: ldflags), "-mod=vendor"
 
     # Install shell completions
-    generate_completions_from_executable(bin/"mmctl", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"mmctl", "completion", shells: [:bash, :zsh])
   end
 
   test do
-    output = pipe_output("#{bin}/mmctl help 2>&1")
-    refute_match(/.*No such file or directory.*/, output)
-    refute_match(/.*command not found.*/, output)
-    assert_match(/.*mmctl \[command\].*/, output)
+    output = pipe_output("#{bin}mmctl help 2>&1")
+    refute_match(.*No such file or directory.*, output)
+    refute_match(.*command not found.*, output)
+    assert_match(.*mmctl \[command\].*, output)
   end
 end

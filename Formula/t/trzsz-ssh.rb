@@ -1,7 +1,7 @@
 class TrzszSsh < Formula
-  desc "Simple ssh client with trzsz ( trz / tsz ) support"
-  homepage "https://trzsz.github.io/ssh"
-  url "https://ghproxy.com/https://github.com/trzsz/trzsz-ssh/archive/refs/tags/v0.1.15.tar.gz"
+  desc "Simple ssh client with trzsz ( trz  tsz ) support"
+  homepage "https:trzsz.github.iossh"
+  url "https:github.comtrzsztrzsz-ssharchiverefstagsv0.1.15.tar.gz"
   sha256 "2b9fb3b0a8be72fa785da5c9f6af7c2ab8f7d9b821ebb464d764c8f395d61308"
   license "MIT"
 
@@ -18,15 +18,15 @@ class TrzszSsh < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"tssh"), "./cmd/tssh"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tssh"), ".cmdtssh"
   end
 
   test do
-    assert_match "trzsz ssh #{version}", shell_output("#{bin}/tssh -V")
-    assert_match "trzsz ssh #{version}", shell_output("#{bin}/tssh --version")
+    assert_match "trzsz ssh #{version}", shell_output("#{bin}tssh -V")
+    assert_match "trzsz ssh #{version}", shell_output("#{bin}tssh --version")
 
-    assert_match "invalid option", shell_output("#{bin}/tssh -o abc", 255)
-    assert_match "invalid bind specification", shell_output("#{bin}/tssh -D xyz", 255)
-    assert_match "invalid forward specification", shell_output("#{bin}/tssh -L 123", 255)
+    assert_match "invalid option", shell_output("#{bin}tssh -o abc", 255)
+    assert_match "invalid bind specification", shell_output("#{bin}tssh -D xyz", 255)
+    assert_match "invalid forward specification", shell_output("#{bin}tssh -L 123", 255)
   end
 end

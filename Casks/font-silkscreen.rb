@@ -2,13 +2,13 @@ cask "font-silkscreen" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts.git",
-      verified:  "github.com/google/fonts",
+  url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "ofl/silkscreen"
+      only_path: "oflsilkscreen"
   name "Silkscreen"
   desc "Typeface for your web graphics"
-  homepage "https://fonts.google.com/specimen/Silkscreen"
+  homepage "https:fonts.google.comspecimenSilkscreen"
 
   font "Silkscreen-Bold.ttf"
   font "Silkscreen-Regular.ttf"

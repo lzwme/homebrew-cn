@@ -1,15 +1,15 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
-  homepage "https://taskwarrior.org/"
-  url "https://ghproxy.com/https://github.com/GothenburgBitFactory/taskwarrior/releases/download/v2.6.2/task-2.6.2.tar.gz"
+  homepage "https:taskwarrior.org"
+  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv2.6.2task-2.6.2.tar.gz"
   sha256 "b1d3a7f000cd0fd60640670064e0e001613c9e1cb2242b9b3a9066c78862cfec"
   license "MIT"
   revision 1
-  head "https://github.com/GothenburgBitFactory/taskwarrior.git", branch: "develop"
+  head "https:github.comGothenburgBitFactorytaskwarrior.git", branch: "develop"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
   bottle do
     rebuild 1
@@ -40,14 +40,14 @@ class Task < Formula
   def install
     system "cmake", ".", *std_cmake_args
     system "make", "install"
-    bash_completion.install "scripts/bash/task.sh"
-    zsh_completion.install "scripts/zsh/_task"
-    fish_completion.install "scripts/fish/task.fish"
+    bash_completion.install "scriptsbashtask.sh"
+    zsh_completion.install "scriptszsh_task"
+    fish_completion.install "scriptsfishtask.fish"
   end
 
   test do
-    touch testpath/".taskrc"
-    system "#{bin}/task", "add", "Write", "a", "test"
-    assert_match "Write a test", shell_output("#{bin}/task list")
+    touch testpath".taskrc"
+    system "#{bin}task", "add", "Write", "a", "test"
+    assert_match "Write a test", shell_output("#{bin}task list")
   end
 end

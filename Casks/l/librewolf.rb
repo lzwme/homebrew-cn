@@ -10,15 +10,15 @@ cask "librewolf" do
     sha256 "bfda8fb26d041ba5272a30c17efa21075565f968cb6e0dcb5c0b90f18050c6a8"
   end
 
-  url "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/#{version.csv.first}-#{version.csv.second}/librewolf-#{version.csv.first}-#{version.csv.second}-macos-#{arch}-package.dmg",
-      verified: "gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/"
+  url "https:gitlab.comapiv4projects44042130packagesgenericlibrewolf#{version.csv.first}-#{version.csv.second}librewolf-#{version.csv.first}-#{version.csv.second}-macos-#{arch}-package.dmg",
+      verified: "gitlab.comapiv4projects44042130packagesgenericlibrewolf"
   name "LibreWolf"
   desc "Web browser"
-  homepage "https://librewolf.net/"
+  homepage "https:librewolf.net"
 
   livecheck do
-    url "https://gitlab.com/api/v4/projects/44042130/releases"
-    regex(/librewolf[._-]v?(\d+(?:\.\d+)+)[._-](\d+)[._-]macos[._-]#{arch}[._-]package\.dmg/i)
+    url "https:gitlab.comapiv4projects44042130releases"
+    regex(librewolf[._-]v?(\d+(?:\.\d+)+)[._-](\d+)[._-]macos[._-]#{arch}[._-]package\.dmgi)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
         "#{match[0]},#{match[1]}"
@@ -27,23 +27,23 @@ cask "librewolf" do
   end
 
   app "LibreWolf.app"
-  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
-  shimscript = "#{staged_path}/librewolf.wrapper.sh"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}librewolf.wrapper.sh"
   binary shimscript, target: "librewolf"
 
   preflight do
     File.write shimscript, <<~EOS
-      #!/bin/sh
-      exec '#{appdir}/LibreWolf.app/Contents/MacOS/librewolf' "$@"
+      #!binsh
+      exec '#{appdir}LibreWolf.appContentsMacOSlibrewolf' "$@"
     EOS
   end
 
   zap trash: [
-    "~/.librewolf",
-    "~/Library/Application Support/LibreWolf",
-    "~/Library/Caches/LibreWolf",
-    "~/Library/Caches/LibreWolf Community",
-    "~/Library/Preferences/io.gitlab.librewolf-community.librewolf.plist",
-    "~/Library/Saved Application State/io.gitlab.librewolf-community.librewolf.savedState",
+    "~.librewolf",
+    "~LibraryApplication SupportLibreWolf",
+    "~LibraryCachesLibreWolf",
+    "~LibraryCachesLibreWolf Community",
+    "~LibraryPreferencesio.gitlab.librewolf-community.librewolf.plist",
+    "~LibrarySaved Application Stateio.gitlab.librewolf-community.librewolf.savedState",
   ]
 end

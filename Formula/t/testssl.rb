@@ -1,10 +1,10 @@
 class Testssl < Formula
-  desc "Tool which checks for the support of TLS/SSL ciphers and flaws"
-  homepage "https://testssl.sh/"
-  url "https://ghproxy.com/https://github.com/drwetter/testssl.sh/archive/refs/tags/v3.0.8.tar.gz"
+  desc "Tool which checks for the support of TLSSSL ciphers and flaws"
+  homepage "https:testssl.sh"
+  url "https:github.comdrwettertestssl.sharchiverefstagsv3.0.8.tar.gz"
   sha256 "22c5dc6dfc7500db94b6f8a48775f72b5149d0a372b8552ed7666016ee79edf0"
   license "GPL-2.0-only"
-  head "https://github.com/drwetter/testssl.sh.git", branch: "3.1dev"
+  head "https:github.comdrwettertestssl.sh.git", branch: "3.1dev"
 
   bottle do
     rebuild 1
@@ -20,16 +20,16 @@ class Testssl < Formula
 
   def install
     bin.install "testssl.sh"
-    man1.install "doc/testssl.1"
+    man1.install "doctestssl.1"
     prefix.install "etc"
     env = {
       PATH:                "#{Formula["openssl@3"].opt_bin}:$PATH",
       TESTSSL_INSTALL_DIR: prefix,
     }
-    bin.env_script_all_files(libexec/"bin", env)
+    bin.env_script_all_files(libexec"bin", env)
   end
 
   test do
-    system "#{bin}/testssl.sh", "--local", "--warnings", "off"
+    system "#{bin}testssl.sh", "--local", "--warnings", "off"
   end
 end

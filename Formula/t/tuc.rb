@@ -1,10 +1,10 @@
 class Tuc < Formula
   desc "Text manipulation and cutting tool"
-  homepage "https://github.com/riquito/tuc"
-  url "https://ghproxy.com/https://github.com/riquito/tuc/archive/refs/tags/v1.1.0.tar.gz"
+  homepage "https:github.comriquitotuc"
+  url "https:github.comriquitotucarchiverefstagsv1.1.0.tar.gz"
   sha256 "d5dc8f9a7739450707e3f630038fa83d97c080c7397e7afbcec44682646c497e"
   license "GPL-3.0-or-later"
-  head "https://github.com/riquito/tuc.git", branch: "master"
+  head "https:github.comriquitotuc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "199b4499932453f78a9815b2dec30d27c87bd969ed8a1252781466ca4edb8497"
@@ -23,7 +23,7 @@ class Tuc < Formula
   end
 
   test do
-    output = pipe_output("#{bin}/tuc -e '[, ]+' -f 1,3", "a,b, c")
+    output = pipe_output("#{bin}tuc -e '[, ]+' -f 1,3", "a,b, c")
     assert_equal "ac\n", output
   end
 end

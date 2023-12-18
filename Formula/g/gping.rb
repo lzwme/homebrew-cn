@@ -1,18 +1,18 @@
 class Gping < Formula
   desc "Ping, but with a graph"
-  homepage "https://github.com/orf/gping"
-  url "https://ghproxy.com/https://github.com/orf/gping/archive/refs/tags/gping-v1.16.0.tar.gz"
+  homepage "https:github.comorfgping"
+  url "https:github.comorfgpingarchiverefstagsgping-v1.16.0.tar.gz"
   sha256 "2e9642dbcb2ba69c4cfe0a1cd9218fbffca741c776c7dc864c0d6dc5550330ab"
   license "MIT"
-  head "https://github.com/orf/gping.git", branch: "master"
+  head "https:github.comorfgping.git", branch: "master"
 
   # The GitHub repository has a "latest" release but it can sometimes point to
   # a release like `v1.2.3-post`, `v1.2.3-post2`, etc. We're checking the Git
   # tags because the author of `gping` requested that we omit `post` releases:
-  # https://github.com/Homebrew/homebrew-core/pull/66366#discussion_r537339032
+  # https:github.comHomebrewhomebrew-corepull66366#discussion_r537339032
   livecheck do
     url :stable
-    regex(/^gping[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(^gping[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -40,9 +40,9 @@ class Gping < Formula
 
   test do
     require "pty"
-    require "io/console"
+    require "ioconsole"
 
-    r, w, = PTY.spawn("#{bin}/gping google.com")
+    r, w, = PTY.spawn("#{bin}gping google.com")
     r.winsize = [80, 130]
     sleep 1
     w.write "q"
@@ -54,19 +54,19 @@ class Gping < Formula
         invalid: :replace,
         undef:   :replace,
         replace: "")
-      screenlog.gsub!(/\e\[([;\d]+)?m/, "")
+      screenlog.gsub!(\e\[([;\d]+)?m, "")
 
       assert_match "google.com (", screenlog
     rescue Errno::EIO
-      # GNU/Linux raises EIO when read is done on closed pty
+      # GNULinux raises EIO when read is done on closed pty
     end
 
     return unless OS.mac?
 
-    linkage_with_libgit2 = (bin/"gping").dynamically_linked_libraries.any? do |dll|
+    linkage_with_libgit2 = (bin"gping").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end

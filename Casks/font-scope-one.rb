@@ -2,10 +2,10 @@ cask "font-scope-one" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/scopeone/ScopeOne-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflscopeoneScopeOne-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Scope One"
-  homepage "https://fonts.google.com/specimen/Scope+One"
+  homepage "https:fonts.google.comspecimenScope+One"
 
   font "ScopeOne-Regular.ttf"
 

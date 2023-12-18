@@ -1,10 +1,10 @@
 class Melange < Formula
   desc "Build APKs from source code"
-  homepage "https://github.com/chainguard-dev/melange"
-  url "https://ghproxy.com/https://github.com/chainguard-dev/melange/archive/refs/tags/v0.5.4.tar.gz"
+  homepage "https:github.comchainguard-devmelange"
+  url "https:github.comchainguard-devmelangearchiverefstagsv0.5.4.tar.gz"
   sha256 "2a102223eb46bcd2b267c3fafaa49fd0af43b891b4a47733a9295b7a9609cfdb"
   license "Apache-2.0"
-  head "https://github.com/chainguard-dev/melange.git", branch: "main"
+  head "https:github.comchainguard-devmelange.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9952fcac426528bf0befe1e07fab1e1da38e470627bf80a377b23fe30cceb06"
@@ -21,18 +21,18 @@ class Melange < Formula
   def install
     ldflags = %W[
       -s -w
-      -X sigs.k8s.io/release-utils/version.gitVersion=#{version}
-      -X sigs.k8s.io/release-utils/version.gitCommit=brew
-      -X sigs.k8s.io/release-utils/version.gitTreeState=clean
-      -X sigs.k8s.io/release-utils/version.buildDate=#{time.iso8601}
+      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
+      -X sigs.k8s.iorelease-utilsversion.gitCommit=brew
+      -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
+      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags: ldflags)
 
-    generate_completions_from_executable(bin/"melange", "completion")
+    generate_completions_from_executable(bin"melange", "completion")
   end
 
   test do
-    (testpath/"test.yml").write <<~EOS
+    (testpath"test.yml").write <<~EOS
       package:
         name: hello
         version: 2.12
@@ -52,7 +52,7 @@ class Melange < Formula
       environment:
         contents:
           repositories:
-            - https://dl-cdn.alpinelinux.org/alpine/edge/main
+            - https:dl-cdn.alpinelinux.orgalpineedgemain
           packages:
             - alpine-baselayout-data
             - busybox
@@ -64,19 +64,19 @@ class Melange < Formula
       pipeline:
         - uses: fetch
           with:
-            uri: https://ftp.gnu.org/gnu/hello/hello-${{package.version}}.tar.gz
+            uri: https:ftp.gnu.orggnuhellohello-${{package.version}}.tar.gz
             expected-sha256: cf04af86dc085268c5f4470fbae49b18afbc221b78096aab842d934a76bad0ab
-        - uses: autoconf/configure
-        - uses: autoconf/make
-        - uses: autoconf/make-install
+        - uses: autoconfconfigure
+        - uses: autoconfmake
+        - uses: autoconfmake-install
         - uses: strip
     EOS
 
-    assert_equal "hello-2.12-r0", shell_output("#{bin}/melange package-version #{testpath}/test.yml")
+    assert_equal "hello-2.12-r0", shell_output("#{bin}melange package-version #{testpath}test.yml")
 
-    system bin/"melange", "keygen"
-    assert_predicate testpath/"melange.rsa", :exist?
+    system bin"melange", "keygen"
+    assert_predicate testpath"melange.rsa", :exist?
 
-    assert_match version.to_s, shell_output(bin/"melange version 2>&1")
+    assert_match version.to_s, shell_output(bin"melange version 2>&1")
   end
 end

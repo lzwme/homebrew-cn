@@ -1,11 +1,11 @@
 class Libzen < Formula
   desc "Shared library for libmediainfo"
-  homepage "https://github.com/MediaArea/ZenLib"
-  url "https://mediaarea.net/download/source/libzen/0.4.41/libzen_0.4.41.tar.bz2"
+  homepage "https:github.comMediaAreaZenLib"
+  url "https:mediaarea.netdownloadsourcelibzen0.4.41libzen_0.4.41.tar.bz2"
   sha256 "eb237d7d3dca6dc6ba068719420a27de0934a783ccaeb2867562b35af3901e2d"
   license "Zlib"
   revision 1
-  head "https://github.com/MediaArea/ZenLib.git", branch: "master"
+  head "https:github.comMediaAreaZenLib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "c12e982c8e86f4c1fd8b5aeb9e2f29a5f9d4f83c106b0ba68383e43e67fdec5f"
@@ -23,19 +23,19 @@ class Libzen < Formula
   depends_on "pkg-config" => :build
 
   # These files used to be distributed as part of the media-info formula
-  link_overwrite "include/ZenLib/*"
-  link_overwrite "lib/pkgconfig/libzen.pc"
-  link_overwrite "lib/libzen.*"
+  link_overwrite "includeZenLib*"
+  link_overwrite "libpkgconfiglibzen.pc"
+  link_overwrite "liblibzen.*"
 
   def install
-    system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "-S", "ProjectCMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
-      #include <ZenLib/Ztring.h>
+    (testpath"test.cc").write <<~EOS
+      #include <ZenLibZtring.h>
       #include <iostream>
       int main() {
         ZenLib::Ztring myString = ZenLib::Ztring().From_UTF8("Hello, ZenLib!");
@@ -44,6 +44,6 @@ class Libzen < Formula
       }
     EOS
     system ENV.cxx, "-std=c++17", "test.cc", "-I#{include}", "-L#{lib}", "-lzen", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

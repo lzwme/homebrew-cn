@@ -1,10 +1,10 @@
 class Lemmeknow < Formula
   desc "Fastest way to identify anything!"
-  homepage "https://github.com/swanandx/lemmeknow"
-  url "https://ghproxy.com/https://github.com/swanandx/lemmeknow/archive/refs/tags/v0.8.0.tar.gz"
+  homepage "https:github.comswanandxlemmeknow"
+  url "https:github.comswanandxlemmeknowarchiverefstagsv0.8.0.tar.gz"
   sha256 "46f42e80cf2c142641fc52826bcf73e00e26dbb93f20397a282e04b786a7cfe8"
   license "MIT"
-  head "https://github.com/swanandx/lemmeknow.git", branch: "main"
+  head "https:github.comswanandxlemmeknow.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c283216680e3331f7630e128ae29070f4710ee6175b237f8449cde10482a9d0b"
@@ -25,6 +25,6 @@ class Lemmeknow < Formula
   end
 
   test do
-    assert_match "Internet Protocol (IP)", shell_output("#{bin}/lemmeknow 127.0.0.1").strip
+    assert_match "Internet Protocol (IP)", shell_output("#{bin}lemmeknow 127.0.0.1").strip
   end
 end

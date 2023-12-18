@@ -2,10 +2,10 @@ cask "font-noto-sans-manichaean" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/notosansmanichaean/NotoSansManichaean-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflnotosansmanichaeanNotoSansManichaean-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Sans Manichaean"
-  homepage "https://fonts.google.com/specimen/Noto+Sans+Manichaean"
+  homepage "https:fonts.google.comspecimenNoto+Sans+Manichaean"
 
   font "NotoSansManichaean-Regular.ttf"
 

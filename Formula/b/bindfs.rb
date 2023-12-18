@@ -1,7 +1,7 @@
 class Bindfs < Formula
   desc "FUSE file system for mounting to another location"
-  homepage "https://bindfs.org/"
-  url "https://bindfs.org/downloads/bindfs-1.17.6.tar.gz"
+  homepage "https:bindfs.org"
+  url "https:bindfs.orgdownloadsbindfs-1.17.6.tar.gz"
   sha256 "d3beb3cc69bb2b6802cc539588e921fea973ed6191b133f2024719311d1cc18b"
   license "GPL-2.0-or-later"
 
@@ -10,7 +10,7 @@ class Bindfs < Formula
   end
 
   head do
-    url "https://github.com/mpartel/bindfs.git", branch: "master"
+    url "https:github.commpartelbindfs.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -29,15 +29,15 @@ class Bindfs < Formula
     ]
 
     if build.head?
-      system "./autogen.sh", *args
+      system ".autogen.sh", *args
     else
-      system "./configure", *args
+      system ".configure", *args
     end
 
     system "make", "install"
   end
 
   test do
-    system "#{bin}/bindfs", "-V"
+    system "#{bin}bindfs", "-V"
   end
 end

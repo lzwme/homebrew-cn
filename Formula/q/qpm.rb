@@ -1,7 +1,7 @@
 class Qpm < Formula
   desc "Package manager for Qt applications"
-  homepage "https://www.qpm.io"
-  url "https://github.com/Cutehacks/qpm.git",
+  homepage "https:www.qpm.io"
+  url "https:github.comCutehacksqpm.git",
       tag:      "v0.11.0",
       revision: "fc340f20ddcfe7e09f046fd22d2af582ff0cd4ef"
   license "Artistic-2.0"
@@ -25,14 +25,14 @@ class Qpm < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    (buildpath/"src").mkpath
-    ln_s buildpath, "src/qpm.io"
-    system "go", "build", "-o", "bin/qpm", "qpm.io/qpm"
-    bin.install "bin/qpm"
+    (buildpath"src").mkpath
+    ln_s buildpath, "srcqpm.io"
+    system "go", "build", "-o", "binqpm", "qpm.ioqpm"
+    bin.install "binqpm"
   end
 
   test do
-    system bin/"qpm", "install", "io.qpm.example"
-    assert_predicate testpath/"qpm.json", :exist?
+    system bin"qpm", "install", "io.qpm.example"
+    assert_predicate testpath"qpm.json", :exist?
   end
 end

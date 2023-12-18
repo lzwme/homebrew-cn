@@ -1,15 +1,15 @@
 class Itk < Formula
   desc "Insight Toolkit is a toolkit for performing registration and segmentation"
-  homepage "https://itk.org"
-  url "https://ghproxy.com/https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.3.0/InsightToolkit-5.3.0.tar.gz"
+  homepage "https:itk.org"
+  url "https:github.comInsightSoftwareConsortiumITKreleasesdownloadv5.3.0InsightToolkit-5.3.0.tar.gz"
   sha256 "57a4471133dc8f76bde3d6eb45285c440bd40d113428884a1487472b7b71e383"
   license "Apache-2.0"
   revision 2
-  head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "master"
+  head "https:github.comInsightSoftwareConsortiumITK.git", branch: "master"
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
@@ -43,7 +43,7 @@ class Itk < Formula
 
   def install
     # Avoid CMake trying to find GoogleTest even though tests are disabled
-    (buildpath/"Modules/ThirdParty/GoogleTest").rmtree
+    (buildpath"ModulesThirdPartyGoogleTest").rmtree
 
     args = %W[
       -DBUILD_SHARED_LIBS=ON
@@ -69,18 +69,18 @@ class Itk < Formula
       -DModule_SCIFIO=ON
     ]
     # Cannot compile on macOS with this arg
-    # Upstream issue: https://github.com/InsightSoftwareConsortium/ITK/issues/3821
+    # Upstream issue: https:github.comInsightSoftwareConsortiumITKissues3821
     # args << "-DITK_USE_GPU=ON" if OS.mac?
 
     # Avoid references to the Homebrew shims directory
-    inreplace "Modules/Core/Common/src/CMakeLists.txt" do |s|
-      s.gsub!(/MAKE_MAP_ENTRY\(\s*\\"CMAKE_C_COMPILER\\",
-              \s*\\"\${CMAKE_C_COMPILER}\\".*\);/x,
+    inreplace "ModulesCoreCommonsrcCMakeLists.txt" do |s|
+      s.gsub!(MAKE_MAP_ENTRY\(\s*\\"CMAKE_C_COMPILER\\",
+              \s*\\"\${CMAKE_C_COMPILER}\\".*\);x,
               "MAKE_MAP_ENTRY(\\\"CMAKE_C_COMPILER\\\", " \
               "\\\"#{ENV.cc}\\\", \\\"The C compiler.\\\");")
 
-      s.gsub!(/MAKE_MAP_ENTRY\(\s*\\"CMAKE_CXX_COMPILER\\",
-              \s*\\"\${CMAKE_CXX_COMPILER}\\".*\);/x,
+      s.gsub!(MAKE_MAP_ENTRY\(\s*\\"CMAKE_CXX_COMPILER\\",
+              \s*\\"\${CMAKE_CXX_COMPILER}\\".*\);x,
               "MAKE_MAP_ENTRY(\\\"CMAKE_CXX_COMPILER\\\", " \
               "\\\"#{ENV.cxx}\\\", \\\"The CXX compiler.\\\");")
     end
@@ -90,11 +90,11 @@ class Itk < Formula
     system "cmake", "--install", "build"
 
     # Remove the bundled JRE installed by SCIFIO ImageIO plugin
-    (lib/"jre").rmtree if OS.linux? || Hardware::CPU.intel?
+    (lib"jre").rmtree if OS.linux? || Hardware::CPU.intel?
   end
 
   test do
-    (testpath/"test.cxx").write <<-EOS
+    (testpath"test.cxx").write <<-EOS
       #include "itkImage.h"
       int main(int argc, char* argv[])
       {
@@ -107,13 +107,13 @@ class Itk < Formula
 
     v = version.major_minor
     # Build step
-    system ENV.cxx, "-std=c++14", "-isystem", "#{include}/ITK-#{v}", "-o", "test.cxx.o", "-c", "test.cxx"
+    system ENV.cxx, "-std=c++14", "-isystem", "#{include}ITK-#{v}", "-o", "test.cxx.o", "-c", "test.cxx"
     # Linking step
     system ENV.cxx, "-std=c++14", "test.cxx.o", "-o", "test",
-                    lib/shared_library("libITKCommon-#{v}", 1),
-                    lib/shared_library("libITKVNLInstantiation-#{v}", 1),
-                    lib/shared_library("libitkvnl_algo-#{v}", 1),
-                    lib/shared_library("libitkvnl-#{v}", 1)
-    system "./test"
+                    libshared_library("libITKCommon-#{v}", 1),
+                    libshared_library("libITKVNLInstantiation-#{v}", 1),
+                    libshared_library("libitkvnl_algo-#{v}", 1),
+                    libshared_library("libitkvnl-#{v}", 1)
+    system ".test"
   end
 end

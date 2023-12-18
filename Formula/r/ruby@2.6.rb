@@ -1,7 +1,7 @@
 class RubyAT26 < Formula
   desc "Powerful, clean, object-oriented scripting language"
-  homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.10.tar.xz"
+  homepage "https:www.ruby-lang.org"
+  url "https:cache.ruby-lang.orgpubruby2.6ruby-2.6.10.tar.xz"
   sha256 "5fd8ded51321b88fdc9c1b4b0eb1b951d2eddbc293865da0151612c2e814c1f2"
   license "Ruby"
 
@@ -30,7 +30,7 @@ class RubyAT26 < Formula
   end
 
   def rubygems_bindir
-    HOMEBREW_PREFIX/"lib/ruby/gems/#{api_version}/bin"
+    HOMEBREW_PREFIX"librubygems#{api_version}bin"
   end
 
   def install
@@ -42,17 +42,17 @@ class RubyAT26 < Formula
       --prefix=#{prefix}
       --enable-shared
       --disable-silent-rules
-      --with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby
-      --with-vendordir=#{HOMEBREW_PREFIX}/lib/ruby/vendor_ruby
+      --with-sitedir=#{HOMEBREW_PREFIX}librubysite_ruby
+      --with-vendordir=#{HOMEBREW_PREFIX}librubyvendor_ruby
       --with-opt-dir=#{paths.join(":")}
       --without-gmp
     ]
     args << "--disable-dtrace" if OS.mac? && !MacOS::CLT.installed?
 
     # Correct MJIT_CC to not use superenv shim
-    args << "MJIT_CC=/usr/bin/#{DevelopmentTools.default_compiler}"
+    args << "MJIT_CC=usrbin#{DevelopmentTools.default_compiler}"
 
-    system "./configure", *args
+    system ".configure", *args
 
     # Ruby has been configured to look in the HOMEBREW_PREFIX for the
     # sitedir and vendordir directories; however we don't actually want to create
@@ -60,7 +60,7 @@ class RubyAT26 < Formula
     #
     # These directories are empty on install; sitedir is used for non-rubygems
     # third party libraries, and vendordir is used for packager-provided libraries.
-    inreplace "tool/rbinstall.rb" do |s|
+    inreplace "toolrbinstall.rb" do |s|
       s.gsub! 'prepare "extension scripts", sitelibdir', ""
       s.gsub! 'prepare "extension scripts", vendorlibdir', ""
       s.gsub! 'prepare "extension objects", sitearchlibdir', ""
@@ -71,19 +71,19 @@ class RubyAT26 < Formula
     system "make", "install"
 
     # A newer version of ruby-mode.el is shipped with Emacs
-    elisp.install Dir["misc/*.el"].reject { |f| f == "misc/ruby-mode.el" }
+    elisp.install Dir["misc*.el"].reject { |f| f == "miscruby-mode.el" }
   end
 
   def post_install
-    # Customize rubygems to look/install in the global gem directory
+    # Customize rubygems to lookinstall in the global gem directory
     # instead of in the Cellar, making gems last across reinstalls
-    config_file = lib/"ruby/#{api_version}/rubygems/defaults/operating_system.rb"
+    config_file = lib"ruby#{api_version}rubygemsdefaultsoperating_system.rb"
     config_file.unlink if config_file.exist?
     config_file.write rubygems_config(api_version)
 
     # Create the sitedir and vendordir that were skipped during install
     %w[sitearchdir vendorarchdir].each do |dir|
-      mkdir_p `#{bin}/ruby -rrbconfig -e 'print RbConfig::CONFIG["#{dir}"]'`
+      mkdir_p `#{bin}ruby -rrbconfig -e 'print RbConfig::CONFIG["#{dir}"]'`
     end
   end
 
@@ -147,10 +147,10 @@ class RubyAT26 < Formula
         end
 
         def self.ruby
-          "#{opt_bin}/ruby"
+          "#{opt_bin}ruby"
         end
 
-        # https://github.com/Homebrew/homebrew-core/issues/40872#issuecomment-542092547
+        # https:github.comHomebrewhomebrew-coreissues40872#issuecomment-542092547
         class BasicSpecification
           def self.default_specifications_dir
             File.join(Gem.old_default_dir, "specifications", "default")
@@ -170,16 +170,16 @@ class RubyAT26 < Formula
   end
 
   test do
-    hello_text = shell_output("#{bin}/ruby -e 'puts :hello'")
+    hello_text = shell_output("#{bin}ruby -e 'puts :hello'")
     assert_equal "hello\n", hello_text
     ENV["GEM_HOME"] = testpath
-    system "#{bin}/gem", "install", "json"
+    system "#{bin}gem", "install", "json"
 
-    (testpath/"Gemfile").write <<~EOS
-      source 'https://rubygems.org'
+    (testpath"Gemfile").write <<~EOS
+      source 'https:rubygems.org'
       gem 'gemoji'
     EOS
-    system bin/"bundle", "install", "--binstubs=#{testpath}/bin"
-    assert_predicate testpath/"bin/gemoji", :exist?, "gemoji is not installed in #{testpath}/bin"
+    system bin"bundle", "install", "--binstubs=#{testpath}bin"
+    assert_predicate testpath"bingemoji", :exist?, "gemoji is not installed in #{testpath}bin"
   end
 end

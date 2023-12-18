@@ -2,10 +2,10 @@ cask "font-rubik-vinyl" do
   version :latest
   sha256 :no_check
 
-  url "https://github.com/google/fonts/raw/main/ofl/rubikvinyl/RubikVinyl-Regular.ttf",
-      verified: "github.com/google/fonts/"
+  url "https:github.comgooglefontsrawmainoflrubikvinylRubikVinyl-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Rubik Vinyl"
-  homepage "https://fonts.google.com/specimen/Rubik+Vinyl"
+  homepage "https:fonts.google.comspecimenRubik+Vinyl"
 
   font "RubikVinyl-Regular.ttf"
 
