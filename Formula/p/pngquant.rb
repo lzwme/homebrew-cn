@@ -1,8 +1,8 @@
 class Pngquant < Formula
   desc "PNG image optimizing utility"
   homepage "https:pngquant.org"
-  url "https:static.crates.iocratespngquantpngquant-3.0.2.crate"
-  sha256 "33f8501d8b81f34cb6f028a5d06772b9d7940e0bc2b15a5d0bce138cb74233cb"
+  url "https:static.crates.iocratespngquantpngquant-3.0.3.crate"
+  sha256 "68a12bdd8825f9989f4ee9a6ab0b42727dae57728b939ef63453366697a07232"
   license :cannot_represent
   head "https:github.comkornelskipngquant.git", branch: "main"
 
@@ -20,13 +20,13 @@ class Pngquant < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dcb677c4bffb533a7a5c70e52977b0923bdce6bebc232bb3880cf113b823bf17"
-    sha256 cellar: :any,                 arm64_ventura:  "ec8a1fb6c4e95afd713c5fbde9fc67513eb9f1525afa82fa250ac0c1219273f8"
-    sha256 cellar: :any,                 arm64_monterey: "0123b2f1143791189367c1714f1d20d89bbb385f0fb5497b857fc0bf65701ec7"
-    sha256 cellar: :any,                 sonoma:         "37928ca3e06ec9a90747b3a9cb139381a0dab1648c31b364ecda5fd820a46e14"
-    sha256 cellar: :any,                 ventura:        "60970346fd1f5cdc306045c4740824a58c47f2dbea18e2ff4411cade6e857679"
-    sha256 cellar: :any,                 monterey:       "c82b3ec91aa752a17bcebda7bc36e40006e53f84ea5a024193a96d10ab3db435"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ea8f69b63a235f33a839e3095dbc8b03080c2f3ab75bee6c55b741aa7c27cb1"
+    sha256 cellar: :any,                 arm64_sonoma:   "d3e16afa75e8c67f0bd33265a5b41bc386b3556c03f005665dfea57a8ce5be00"
+    sha256 cellar: :any,                 arm64_ventura:  "8a1da7e0f02ac09b8d76e4d61303d68a00c06de630878d39a440652b441c087d"
+    sha256 cellar: :any,                 arm64_monterey: "132f62c08f87aadc9243de4d6ac887050b61231ed175cabe9d753186be1b7151"
+    sha256 cellar: :any,                 sonoma:         "6e973dbeded39f7b02bcf90cd3e6a271a8a4323cc35a0e0670a162b8037d9166"
+    sha256 cellar: :any,                 ventura:        "c290edbea7b632f3cae66a0b9f1c5f67942d398290a2b439d2518d4a86a1b568"
+    sha256 cellar: :any,                 monterey:       "c691267cf2d7a281d2bf23ddb745bfbba974cc0e8133e4b023e244d937c8ee41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5044118575aca60f3b593f1bce3a975976ba4bddf2b2f7105c1d6a7e8dd0514"
   end
 
   depends_on "pkg-config" => :build

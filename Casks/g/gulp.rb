@@ -6,11 +6,9 @@ cask "gulp" do
   name "gulp-app"
   homepage "https:github.comsindresorhusgulp-app"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "gulp.app"
 
   # No zap stanza required
-
-  caveats do
-    discontinued
-  end
 end

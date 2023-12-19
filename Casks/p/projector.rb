@@ -12,6 +12,8 @@ cask "projector" do
   desc "Common and client-related code for running Swing applications remotely"
   homepage "https:lp.jetbrains.comprojector"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   depends_on macos: ">= :high_sierra"
 
   app "projector#{archapp}.app"
@@ -21,8 +23,4 @@ cask "projector" do
     "~LibraryPreferencescom.electron.projector.plist",
     "~LibrarySaved Application Statecom.electron.projector.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

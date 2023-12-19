@@ -8,6 +8,8 @@ cask "webcamoid" do
   desc "Webcam suite"
   homepage "https:webcamoid.github.io"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Webcamoid.app"
 
   uninstall quit:      "com.webcamoidprj.webcamoid",
@@ -25,8 +27,4 @@ cask "webcamoid" do
     "~LibraryPreferencesorg.webcamoid.cmio.AkVCam.Assistant.plist",
     "~LibrarySaved Application Statecom.webcamoidprj.webcamoid.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

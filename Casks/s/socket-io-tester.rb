@@ -6,9 +6,7 @@ cask "socket-io-tester" do
   name "socket-io-tester.app"
   homepage "https:github.comAppSaloonsocket.io-tester"
 
-  app "socket-io-tester-darwin-x64socket-io-tester.app"
+  deprecate! date: "2023-12-17", because: :discontinued
 
-  caveats do
-    discontinued
-  end
+  app "socket-io-tester-darwin-x64socket-io-tester.app"
 end

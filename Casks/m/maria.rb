@@ -7,9 +7,7 @@ cask "maria" do
   desc "Appwidget for aria2 download tool"
   homepage "https:github.comshincurryMaria"
 
-  app "Maria.app"
+  deprecate! date: "2023-12-17", because: :discontinued
 
-  caveats do
-    discontinued
-  end
+  app "Maria.app"
 end

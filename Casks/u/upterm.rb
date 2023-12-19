@@ -7,6 +7,8 @@ cask "upterm" do
   desc "Terminal emulator for the 21st century"
   homepage "https:github.comrailswareupterm"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Upterm.app"
 
   zap trash: [
@@ -17,8 +19,4 @@ cask "upterm" do
     "~LibrarySaved Application Statecom.github.railsware.upterm.savedState",
     "~.upterm",
   ]
-
-  caveats do
-    discontinued
-  end
 end

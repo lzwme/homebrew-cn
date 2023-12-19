@@ -8,14 +8,12 @@ cask "pulse" do
   desc "Logger and network inspector"
   homepage "https:kean.blogpulsehome"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Pulse.app"
 
   zap trash: [
     "~LibraryApplication Scriptscom.github.kean.pulse",
     "~LibraryContainerscom.github.kean.pulse",
   ]
-
-  caveats do
-    discontinued
-  end
 end

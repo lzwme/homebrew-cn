@@ -1,6 +1,6 @@
 cask "wine-staging" do
-  version "8.21"
-  sha256 "767eb8c099998de452a4ff2f8bbe8a48d418d1ff3df9c10dd36c6fc2b431ad84"
+  version "9.0-rc2"
+  sha256 "47c6e6c5d1a258207cd9208ab077bef50928a13fb94b4e70ce460f553f2ddf6a"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -13,15 +13,8 @@ cask "wine-staging" do
 
   livecheck do
     url :url
-    regex(^wine-staging[._-]v?(\d+(?:\.\d+)+).*?\.ti)
-    strategy :github_latest do |json, regex|
-      json["assets"]&.map do |asset|
-        match = asset["name"]&.match(regex)
-        next if match.blank?
-
-        match[1]
-      end
-    end
+    strategy :github_latest
+    regex(^v?((?:\d+(?:\.\d+)+)(?:-RC\d)?)$i)
   end
 
   conflicts_with cask: [
@@ -29,16 +22,18 @@ cask "wine-staging" do
     "wine-devel",
   ]
   depends_on cask: "gstreamer-runtime"
+  depends_on macos: ">= :catalina"
 
   app "Wine Staging.app"
   binary "#{appdir}Wine Staging.appContentsResourcesstartbinappdb"
   binary "#{appdir}Wine Staging.appContentsResourcesstartbinwinehelp"
+  binary "#{appdir}Wine Staging.appContentsResourceswinebinmsidb"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinmsiexec"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinnotepad"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinregedit"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinregsvr32"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwine"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinwine64"
+  binary "#{appdir}Wine Staging.appContentsResourceswinebinwine64-preloader"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinwineboot"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinwinecfg"
   binary "#{appdir}Wine Staging.appContentsResourceswinebinwineconsole"

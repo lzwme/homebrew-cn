@@ -8,6 +8,8 @@ cask "atom-beta" do
   desc "Cross-platform text editor"
   homepage "https:atom.iobeta"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
 
   app "Atom Beta.app"
@@ -28,8 +30,4 @@ cask "atom-beta" do
     "~LibraryPreferencescom.github.atom.plist",
     "~LibrarySaved Application Statecom.github.atom.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

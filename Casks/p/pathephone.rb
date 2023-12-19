@@ -8,6 +8,8 @@ cask "pathephone" do
   desc "Distributed audio player"
   homepage "https:pathephone.github.io"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
 
   app "Pathephone.app"
@@ -19,8 +21,4 @@ cask "pathephone" do
     "~LibraryPreferencesspace.metabin.pathephone.plist",
     "~LibrarySaved Application Statespace.metabin.pathephone.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

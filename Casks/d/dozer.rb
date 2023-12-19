@@ -7,6 +7,9 @@ cask "dozer" do
   desc "Tool to hide status bar icons"
   homepage "https:github.comMortennnDozer"
 
+  # upstream discussion, https:github.comMortennnDozerissues178
+  deprecate! date: "2023-11-26", because: :discontinued
+
   auto_updates true
   depends_on macos: ">= :high_sierra"
 
@@ -16,9 +19,4 @@ cask "dozer" do
     "~LibraryApplication Supportcom.mortennn.Dozer",
     "~LibraryPreferencescom.mortennn.Dozer.plist",
   ]
-
-  # upstream discussion, https:github.comMortennnDozerissues178
-  caveats do
-    discontinued
-  end
 end

@@ -1,9 +1,10 @@
 cask "font-urbanist" do
-  version "1.321"
-  sha256 "43b9c601884e3d348016444d34c5d55ac3381d18fdbe9644432be50305fa54c3"
+  version "1.330"
+  sha256 "4b808f025f020d8801bb55a7c3ea855e934527be70bf451ab4205e62bfb8fb60"
 
-  url "https:github.comcoreyhuUrbanistreleasesdownloadv#{version}Urbanist-fonts.zip"
+  url "https:github.comcoreyhuUrbanistreleasesdownload#{version}Urbanist-fonts.zip"
   name "Urbanist"
+  desc "Geometric sans-serif font"
   homepage "https:github.comcoreyhuUrbanist"
 
   font "Urbanist-fontsfontsotfUrbanist-Black.otf"
@@ -24,27 +25,7 @@ cask "font-urbanist" do
   font "Urbanist-fontsfontsotfUrbanist-SemiBoldItalic.otf"
   font "Urbanist-fontsfontsotfUrbanist-Thin.otf"
   font "Urbanist-fontsfontsotfUrbanist-ThinItalic.otf"
-  font "Urbanist-fontsfontsttfUrbanist-Black.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-BlackItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-Bold.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-BoldItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-ExtraBold.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-ExtraBoldItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-ExtraLight.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-ExtraLightItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-Italic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-Light.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-LightItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-Medium.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-MediumItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-Regular.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-SemiBold.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-SemiBoldItalic.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-Thin.ttf"
-  font "Urbanist-fontsfontsttfUrbanist-ThinItalic.ttf"
-  font "Urbanist-fontsfontsvariableUrbanist-Italic[wght].ttf"
   font "Urbanist-fontsfontsvariableUrbanist[ital,wght].ttf"
-  font "Urbanist-fontsfontsvariableUrbanist[wght].ttf"
 
   # No zap stanza required
 end

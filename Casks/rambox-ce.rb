@@ -8,6 +8,8 @@ cask "rambox-ce" do
   desc "Free and Open Source messaging and emailing app"
   homepage "https:rambox.pro"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   conflicts_with cask: "rambox"
 
   app "Rambox.app"
@@ -29,8 +31,4 @@ cask "rambox-ce" do
     "~LibrarySaved Application Statecom.saenzramiro.rambox.savedState",
     "~LibraryWebKitcom.saenzramiro.rambox",
   ]
-
-  caveats do
-    discontinued
-  end
 end

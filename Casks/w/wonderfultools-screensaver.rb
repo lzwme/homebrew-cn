@@ -7,11 +7,9 @@ cask "wonderfultools-screensaver" do
   desc "Screensaver based on opening video from Apple's September 2019 event"
   homepage "https:github.comaidev1065Wonderful-Tools-Screensaver"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   screen_saver "WonderfulTools.saver"
 
   zap trash: "~LibraryCachesWonderfulTools"
-
-  caveats do
-    discontinued
-  end
 end

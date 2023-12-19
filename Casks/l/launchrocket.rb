@@ -7,11 +7,9 @@ cask "launchrocket" do
   desc "Preference pane to manage Homebrew-installed services"
   homepage "https:github.comjimbojsblaunchrocket"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   prefpane "LaunchRocket.prefPane"
 
   zap trash: "~LibraryPreferencescom.joshbutts.launchrocket.plist"
-
-  caveats do
-    discontinued
-  end
 end

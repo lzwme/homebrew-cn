@@ -6,13 +6,11 @@ cask "mutespotifyads" do
   name "MuteSpotifyAds"
   homepage "https:github.comsimonmeuselMuteSpotifyAds"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   depends_on macos: ">= :sierra"
 
   app "MuteSpotifyAds.app"
 
   zap trash: "~LibrarySyncedPreferencesde.simonmeusel.MuteSpotifyAds.plist"
-
-  caveats do
-    discontinued
-  end
 end

@@ -7,6 +7,8 @@ cask "fog" do
   desc "Unofficial overcast.fm podcast app"
   homepage "https:github.comvitorgalvaofog"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Fog.app"
 
   uninstall quit: "com.vitorgalvao.fog"
@@ -19,8 +21,4 @@ cask "fog" do
     "~LibraryPreferencescom.vitorgalvao.fog.plist",
     "~LibrarySaved Application Statecom.vitorgalvao.fog.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

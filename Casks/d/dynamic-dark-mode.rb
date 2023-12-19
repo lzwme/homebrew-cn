@@ -7,14 +7,12 @@ cask "dynamic-dark-mode" do
   desc "Automatic Dark Mode toggle"
   homepage "https:github.comApolloZhuDynamic-Dark-Mode"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
   depends_on macos: ">= :mojave"
 
   app "Dynamic Dark Mode.app"
 
   zap trash: "~LibraryApplication Scriptsio.github.apollozhu.Dynamic.Launcher"
-
-  caveats do
-    discontinued
-  end
 end

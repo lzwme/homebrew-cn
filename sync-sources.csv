@@ -7391,6 +7391,7 @@ Homebrew-homebrew-cask/Casks/b/blobsaver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blockbench.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blockblock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blockstack.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/blockstream-green.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blocs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bloodhound.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bloomrpc.rb, Homebrew/homebrew-cask, 1
@@ -8220,11 +8221,11 @@ Homebrew-homebrew-cask/Casks/f/fluid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fluor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flutter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flux.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/fly-key.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flycast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flycut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flying-carpet.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/flykey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fmail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fmail2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fman.rb, Homebrew/homebrew-cask, 0

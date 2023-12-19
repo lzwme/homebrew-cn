@@ -7,11 +7,9 @@ cask "imagemin" do
   desc "Desktop image minifier"
   homepage "https:github.comimageminimagemin-app"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   # Renamed for clarity: app name is inconsistent with its branding.
   # Original discussion: https:github.comHomebrewhomebrew-caskpull4701
   app "imagemin-app-v#{version}-darwinAtom.app", target: "imagemin.app"
-
-  caveats do
-    discontinued
-  end
 end

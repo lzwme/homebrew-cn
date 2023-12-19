@@ -7,14 +7,12 @@ cask "jenkins-menu" do
   desc "Menu item which shows the status of a Jenkins CI server"
   homepage "https:github.comqvacuajenkins-menu"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Jenkins Menu.app"
 
   zap trash: [
     "~LibraryCachescom.qvacua.Jenkins-Menu",
     "~LibraryPreferencescom.qvacua.Jenkins-Menu.plist",
   ]
-
-  caveats do
-    discontinued
-  end
 end

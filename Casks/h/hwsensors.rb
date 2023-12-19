@@ -7,6 +7,8 @@ cask "hwsensors" do
   desc "Tool to access information from available hardware sensors"
   homepage "https:github.comkozlekekHWSensors"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   pkg "HWSensors.#{version}.pkg"
 
   uninstall login_item: "HWMonitor",
@@ -17,8 +19,4 @@ cask "hwsensors" do
     "~LibraryApplication SupportHWMonitor",
     "~LibraryPreferencesorg.hwsensors.HWMonitor.plist",
   ]
-
-  caveats do
-    discontinued
-  end
 end

@@ -1,6 +1,6 @@
 cask "wine-devel" do
-  version "9.0-rc1"
-  sha256 "cfe7d521163a64dbe856d812681e02bd449151380484285c820f4025e76a8c43"
+  version "9.0-rc2"
+  sha256 "7955cdf366b1b8696ea32b6a463cd79980f626d6ada1930abc1167c43e377b9f"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -22,16 +22,18 @@ cask "wine-devel" do
     "wine-staging",
   ]
   depends_on cask: "gstreamer-runtime"
+  depends_on macos: ">= :catalina"
 
   app "Wine Devel.app"
   binary "#{appdir}Wine Devel.appContentsResourcesstartbinappdb"
   binary "#{appdir}Wine Devel.appContentsResourcesstartbinwinehelp"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinmsidb"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinmsiexec"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinnotepad"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinregedit"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinregsvr32"
-  binary "#{appdir}Wine Devel.appContentsResourceswinebinwine"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinwine64"
+  binary "#{appdir}Wine Devel.appContentsResourceswinebinwine64-preloader"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinwineboot"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinwinecfg"
   binary "#{appdir}Wine Devel.appContentsResourceswinebinwineconsole"

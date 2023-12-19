@@ -7,6 +7,8 @@ cask "aria2gui" do
   desc "Graphical user interface for Aria2"
   homepage "https:github.comyangshun1029aria2gui"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Aria2GUI.app"
 
   zap trash: [
@@ -14,8 +16,4 @@ cask "aria2gui" do
     "~LibraryPreferencescom.Aria2GUI.plist",
     "~LibrarySaved Application Statecom.Aria2GUI.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

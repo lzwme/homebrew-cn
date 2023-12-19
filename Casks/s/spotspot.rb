@@ -8,9 +8,7 @@ cask "spotspot" do
   desc "Spotify mini-player"
   homepage "https:will-stone.github.ioSpotSpot"
 
-  app "SpotSpot.app"
+  deprecate! date: "2023-12-17", because: :discontinued
 
-  caveats do
-    discontinued
-  end
+  app "SpotSpot.app"
 end

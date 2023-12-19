@@ -7,9 +7,7 @@ cask "mojibar" do
   desc "Emoji searcher as a menu bar app"
   homepage "https:github.commuanmojibar"
 
-  app "Mojibar-darwin-x64Mojibar.app"
+  deprecate! date: "2023-12-17", because: :discontinued
 
-  caveats do
-    discontinued
-  end
+  app "Mojibar-darwin-x64Mojibar.app"
 end

@@ -14,6 +14,7 @@ class Promtail < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdaf0b2daead2ac71c5b66281197309befe39474099fed166b387490d01543c3"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff561cbedc5d9a0bf08b389328e899c460cf22ab7095ea06576cf0cd7f60f949"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "6ca199a842e16768f32c1ba76d07e32d439c48e5842dd5d6482c3fd34694774b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "77897d26808d4ea485f852feab2d7e9361f79edb00a0df5e1ab265240ff2653e"
     sha256 cellar: :any_skip_relocation, ventura:        "fecea2cd85a59f97e04f4582f87bb3261f3f3f113bb39031e0edbf6247e1bf47"
     sha256 cellar: :any_skip_relocation, monterey:       "e240143f1d8022571474ec2446207a4116e4e247a7684283204dbdbd534edbcf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b00beac14673abe9528a0e3cb54e507485622947d2f7b8132d2256526fec19a"

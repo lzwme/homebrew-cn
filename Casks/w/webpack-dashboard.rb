@@ -7,6 +7,8 @@ cask "webpack-dashboard" do
   desc "Electron Desktop GUI for Webpack Dashboard"
   homepage "https:github.comFormidableLabselectron-webpack-dashboard"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Webpack Dashboard.app"
 
   zap trash: [
@@ -15,8 +17,4 @@ cask "webpack-dashboard" do
     "~LibraryPreferencesorg.formidable.WebpackDashboard.plist",
     "~LibrarySaved Application Stateorg.formidable.WebpackDashboard.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

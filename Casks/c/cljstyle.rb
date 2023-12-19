@@ -7,5 +7,12 @@ cask "cljstyle" do
   desc "Tool for formatting Clojure code"
   homepage "https:github.comgreglookcljstyle"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   binary "cljstyle"
+
+  # No zap stanza required
 end

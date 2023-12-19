@@ -7,9 +7,7 @@ cask "qdesktop" do
   desc "App to set a website as the desktop background"
   homepage "https:github.comqvacuaqdesktop"
 
-  app "Qdesktop.app"
+  deprecate! date: "2023-12-17", because: :discontinued
 
-  caveats do
-    discontinued
-  end
+  app "Qdesktop.app"
 end

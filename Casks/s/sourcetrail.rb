@@ -8,14 +8,12 @@ cask "sourcetrail" do
   desc "Code source explorer"
   homepage "https:www.sourcetrail.com"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "Sourcetrail.app"
 
   zap trash: [
     "~LibraryApplication SupportSourcetrail",
     "~LibrarySaved Application Statecom.sourcetrail.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

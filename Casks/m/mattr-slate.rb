@@ -6,6 +6,8 @@ cask "mattr-slate" do
   name "Slate"
   homepage "https:github.commattr-slate"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
   conflicts_with cask: "slate"
 
@@ -16,8 +18,4 @@ cask "mattr-slate" do
     "~.slate.js",
     "~LibraryApplication Supportcom.slate.Slate",
   ]
-
-  caveats do
-    discontinued
-  end
 end

@@ -7,6 +7,8 @@ cask "apple-events" do
   desc "Unofficial Apple Events app"
   homepage "https:github.cominsideguiAppleEvents"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
 
   app "Apple Events.app"
@@ -16,8 +18,4 @@ cask "apple-events" do
     "~LibraryCachesbr.com.guilhermerambo.Apple-Events",
     "~LibraryPreferencesbr.com.guilhermerambo.Apple-Events.plist",
   ]
-
-  caveats do
-    discontinued
-  end
 end

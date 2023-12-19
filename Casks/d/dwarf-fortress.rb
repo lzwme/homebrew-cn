@@ -9,6 +9,8 @@ cask "dwarf-fortress" do
 
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)
   shimscript = "#{staged_path}df_osxdf.wrapper.sh"
+  deprecate! date: "2023-12-17", because: :discontinued
+
   binary shimscript, target: "dwarf-fortress"
 
   preflight do
@@ -25,8 +27,6 @@ cask "dwarf-fortress" do
   end
 
   caveats do
-    discontinued
-
     <<~EOS
       During uninstall, your save data will be copied to tmpdwarf-fortress-save
     EOS

@@ -7,6 +7,8 @@ cask "svgcleaner" do
   desc "Tool to clean up SVG files by removing unnecessary data"
   homepage "https:github.comRazrFalconsvgcleaner-gui"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   conflicts_with formula: "svgcleaner"
 
   app "SVGCleaner.app"
@@ -16,8 +18,4 @@ cask "svgcleaner" do
     "~LibraryPreferencescom.svgcleaner.svgcleaner.plist",
     "~LibrarySaved Application Statecom.yourcompany.SVGCleaner.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

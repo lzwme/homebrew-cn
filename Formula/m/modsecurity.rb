@@ -1,19 +1,18 @@
 class Modsecurity < Formula
   desc "Libmodsecurity is one component of the ModSecurity v3 project"
   homepage "https:github.comSpiderLabsModSecurity"
-  url "https:github.comSpiderLabsModSecurityreleasesdownloadv3.0.10modsecurity-v3.0.10.tar.gz"
-  sha256 "d5d459f7c2e57a69a405f3222d8e285de419a594b0ea8829058709962227ead0"
+  url "https:github.comSpiderLabsModSecurityreleasesdownloadv3.0.11modsecurity-v3.0.11.tar.gz"
+  sha256 "070f46c779d30785b95eb1316b46e2e4e6f90fd94a96aaca4bd54cd94738b692"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "71154816630314ecc628277efa6ca6610a56350090de4234afc77cec5640b86f"
-    sha256 cellar: :any,                 arm64_ventura:  "dbf704acb2a892b25d57b1c135b98d5a3197af17c423b483f32176ef1df835c7"
-    sha256 cellar: :any,                 arm64_monterey: "4b84d1cd638486de1ed6337f5256f08a256bb186630265c893e2caa2aa7f693e"
-    sha256 cellar: :any,                 sonoma:         "95cc99b3cdda19c76142da1cb782880ff586afb5b29694a782a0c2f17684b414"
-    sha256 cellar: :any,                 ventura:        "1e8f0dc7db3d1692ad6df0bb8d429da7be0a2d2825b30370cd73f40369bbe309"
-    sha256 cellar: :any,                 monterey:       "0b99dec932e2fe5d3531e65b8c935888ab2d5487f2f6bf8535b7c5127d710a0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4389a2c8634f393b9a02a2948dd14811ee26f83215f6afed6858fe5e6683de9c"
+    sha256 cellar: :any,                 arm64_sonoma:   "e266b488284dd9b9d8aab365b810c17606a23fbf5f86b6701b69385a13437894"
+    sha256 cellar: :any,                 arm64_ventura:  "b8bde9a47b7654a849392967f8ec11725f35b639084c72a026abbb83e1cc6637"
+    sha256 cellar: :any,                 arm64_monterey: "17ef83d3a930642bcfc0e879a1a58397dfa8018dc76deb41e92f541f13358f82"
+    sha256 cellar: :any,                 sonoma:         "d4fd30d5fa2d6d405e30e512cb08d0f6c361bf5b2ac05b11d3adbdca80ef5e07"
+    sha256 cellar: :any,                 ventura:        "c3a5263cc77cf9ebd0222f46dbd7276e210412d7e3a18b6ac71b29562cc74ec1"
+    sha256 cellar: :any,                 monterey:       "bb033e230355f7167d8d2399c779612dd7b0eabd9c4f2a54278d24e68196f15e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5d93203ccd8dc1006de010d2a8bc6a4c41485041377828f354ec0b137d4f0e6"
   end
 
   depends_on "autoconf" => :build

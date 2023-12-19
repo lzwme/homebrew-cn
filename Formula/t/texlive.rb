@@ -7,7 +7,7 @@ class Texlive < Formula
   url "https:ftp.math.utah.edupubtexhistoricsystemstexlive2023texlive-20230313-source.tar.xz"
   mirror "https:ftp.tu-chemnitz.depubtughistoricsystemstexlive2023texlive-20230313-source.tar.xz"
   sha256 "3878aa0e1ed0301c053b0e2ee4e9ad999c441345f4882e79bdd1c8f4ce9e79b9"
-  license :public_domain
+  license :cannot_represent
   revision 2
   head "https:github.comTeX-Livetexlive-source.git", branch: "trunk"
 

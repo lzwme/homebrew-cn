@@ -7,6 +7,8 @@ cask "cakebrew" do
   desc "GUI app for Homebrew"
   homepage "https:github.combrunophilipeCakebrew"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   auto_updates true
 
   app "Cakebrew.app"
@@ -16,8 +18,4 @@ cask "cakebrew" do
     "~LibraryPreferencescom.brunophilipe.Cakebrew.plist",
     "~LibrarySaved Application Statecom.brunophilipe.Cakebrew.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

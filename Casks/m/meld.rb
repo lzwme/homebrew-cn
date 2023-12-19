@@ -8,6 +8,8 @@ cask "meld" do
   desc "Visual diff and merge tool"
   homepage "https:yousseb.github.iomeld"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   depends_on macos: ">= :high_sierra"
 
   app "Meld.app"
@@ -27,8 +29,4 @@ cask "meld" do
     "~LibraryPreferencesorg.gnome.meld.plist",
     "~LibrarySaved Application Stateorg.gnome.meld.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

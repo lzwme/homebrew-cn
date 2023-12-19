@@ -8,6 +8,8 @@ cask "termhere" do
   desc "Finder extension for opening a terminal from the current directory"
   homepage "https:hbang.wsappstermhere"
 
+  deprecate! date: "2023-12-17", because: :discontinued
+
   app "TermHere.app"
 
   zap trash: [
@@ -20,8 +22,4 @@ cask "termhere" do
     "~LibraryLogsDiagnosticReportsTermHere Finder Extension*",
     "~LibraryPreferencesws.hbang.TermHere.plist",
   ]
-
-  caveats do
-    discontinued
-  end
 end
