@@ -1,10 +1,22 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https:linphone.org"
-  url "https:gitlab.linphone.orgBCpublicortp-archive5.2.112ortp-5.2.112.tar.bz2"
-  sha256 "710a28c361a863132a2b8dc1577213132524d71df0acab7768d974ba0e9ab2e3"
   license "GPL-3.0-or-later"
-  head "https:gitlab.linphone.orgBCpublicortp.git", branch: "master"
+
+  stable do
+    url "https:gitlab.linphone.orgBCpublicortp-archive5.2.112ortp-5.2.112.tar.bz2"
+    sha256 "710a28c361a863132a2b8dc1577213132524d71df0acab7768d974ba0e9ab2e3"
+
+    depends_on "mbedtls@2"
+
+    # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
+    # https:github.comBelledonneCommunicationsbctoolbox
+    resource "bctoolbox" do
+      # Don't forget to change both instances of the version in the URL.
+      url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.2.112bctoolbox-5.2.112.tar.bz2"
+      sha256 "458a7eef09951d97f35946b640ab25d6345ebe215413d5d76ef276b8e23a9a7e"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "93e4a6e384e893e3070f50d6d2adb6f7f74a16e3cb12266c35d32cddcd732b72"
@@ -16,21 +28,23 @@ class Ortp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "303382f2205a9957e6166fc89250769044597cc0ff22f0db8f3fa5b6b3d2ae3b"
   end
 
+  head do
+    url "https:gitlab.linphone.orgBCpublicortp.git", branch: "master"
+
+    depends_on "mbedtls"
+
+    resource "bctoolbox" do
+      url "https:gitlab.linphone.orgBCpublicbctoolbox.git", branch: "master"
+    end
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "mbedtls@2"
-
-  # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
-  # https:github.comBelledonneCommunicationsbctoolbox
-  resource "bctoolbox" do
-    # Don't forget to change both instances of the version in the URL.
-    url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.2.112bctoolbox-5.2.112.tar.bz2"
-    sha256 "458a7eef09951d97f35946b640ab25d6345ebe215413d5d76ef276b8e23a9a7e"
-  end
 
   def install
     resource("bctoolbox").stage do
       args = ["-DENABLE_TESTS_COMPONENT=OFF"]
+      args << "-DBUILD_SHARED_LIBS=ON" if build.head?
       args << "-DCMAKE_C_FLAGS=-Wno-error=unused-parameter" if OS.linux?
       system "cmake", "-S", ".", "-B", "build",
                       *args,
@@ -51,6 +65,7 @@ class Ortp < Formula
       -DENABLE_DOC=NO
       -DENABLE_UNIT_TESTS=NO
     ]
+    args << "-DBUILD_SHARED_LIBS=ON" if build.head?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

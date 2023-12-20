@@ -1,20 +1,18 @@
 class Kondo < Formula
   desc "Save disk space by cleaning non-essential files from software projects"
   homepage "https:github.comtbillingtonkondo"
-  url "https:github.comtbillingtonkondoarchiverefstagsv0.7.tar.gz"
-  sha256 "b7535807ba98bde86adfb920ec439e98b7c652361feb6a224e55c88cda569ff2"
+  url "https:github.comtbillingtonkondoarchiverefstagsv0.8.tar.gz"
+  sha256 "4054c90e679a379a735b3166df4633fb86a33725175ebe23d7b659dcb7155b26"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d41a495ad286d1ca4f1eb1fdb609b450cada828fcafd8623f9f01de24b5047d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9439938c1cb77f935fc6a3b5d7d3051b82ec38fc2737704ccf47e51000af7686"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78352c3fb16ad778bdb068de56e8b387ae257f10c0bfe6358b0dc6ec34e60698"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3db02b272e0f8b3ba8f751b78ac1285436f0d7d522f376fb2e72c2935ad1b5e8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "42dfcb123cf399552021685dfaf47d7ea137fc9c4850312e984f2f5d2e65dde8"
-    sha256 cellar: :any_skip_relocation, ventura:        "47db94484a736b9152cebcb4e1e1da160e0870e5bc74ab1527ff5017ee7d75b0"
-    sha256 cellar: :any_skip_relocation, monterey:       "87a591bd0f7fe7bba6892bbb61d02062ebff165a4a95e43ae7a16c790a2c8870"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e225f24a1593efa6ce3b705511e110f2bd0f603b44032d3d082490657ec7dc6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea1ef61bcedfd85543049016f4a582923b91c7c192a27efe55029f78c660dd45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d193e9552a2f573b09eaf4d01a5156e2c51743301e1167e2cb94198065308902"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c437e2001ec06e983777a5d1a726fa826475068a64faa58fb33c22dde2ba4561"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9747f6e3a6be8560fb90620b53a3f4c2b317a4b1d60b2901c21ff2d4e587dcf6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc5db45fc7fe4211dcedbdf3932dab94e2a36498c8c7c45311da8385bad4ebb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f379b8636e86b1c7642f462d553bf838628eb1d77801dcb178b867dee20db53"
+    sha256 cellar: :any_skip_relocation, monterey:       "0057841619926663972886da4c68941b6e34f70ad6423a37ceb51ede52abb7f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04abab847cf7122c2671cc58ee1fed28c2ec51531584304e97e9e996ef786e23"
   end
 
   depends_on "rust" => :build

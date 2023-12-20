@@ -1,19 +1,19 @@
 class Gickup < Formula
   desc "Backup all your repositories with Ease"
   homepage "https:cooperspencer.github.iogickup-documentation"
-  url "https:github.comcooperspencergickuparchiverefstagsv0.10.23.tar.gz"
-  sha256 "819c43ea8d9b796d81f80ad76644fcf2127494435a4917bb4021448b81fc1bfc"
+  url "https:github.comcooperspencergickuparchiverefstagsv0.10.24.tar.gz"
+  sha256 "b5023394d13bafda728552b412498ae8e7b5462acf2cc5d4b316af5edd7baec9"
   license "Apache-2.0"
   head "https:github.comcooperspencergickup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "404dcab1c5989074a411ce32d6cafbf159269a6a1c95b413ecb28640fbc0ccac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b849535adb2db4c6f6b482e626b2f709877236c07e038c55fe2382387929a26a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f78221ee5b321eeb1c175bc330746dc1f1868e89fe173915deaac056a9ba15ed"
-    sha256 cellar: :any_skip_relocation, sonoma:         "624d50c3c98767fa9f7b01878d4f0d3e6ba5b89e1531750d31a9142f037ea59d"
-    sha256 cellar: :any_skip_relocation, ventura:        "a8cd808766662364c6819642c27c1898a74c0cf8f8b69b7d514a86f16e528b6b"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcd9faabba552212aea210cdc6c614a2d1788ccf1933dcf978909b6a7883dc4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0dff97c7250f42ae677d1953037b742f5bf90fc7d8e0f84834b71bebf1f200d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63ee815f14cf757ba01c5bafeaa4d26135b1491c9687941a43133efe36220727"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97b0a88550b54d88e395f2e614a18f8e1d358d8b1d250c88e0d9d0940ad2b187"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "48536a9a2f21c9116563f7163e79966a0979e0ff3a12d7a9dab5624ce5e4ce34"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a7fb773624a3a41dc3af0755f206e9d56877d8adc951db4b05b4cf622cb14dd4"
+    sha256 cellar: :any_skip_relocation, ventura:        "4b14755ff66eea5fdd535bfc9dbec1e43ae15c37c1e0526ae112a710b4c16a16"
+    sha256 cellar: :any_skip_relocation, monterey:       "440bed386358ff41451641c7d6f9aac5b256a10ad464c0aa9ec4b4857ca6f72e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "234c71502320d31cf8d36296b413becafc312c801e814ac76eb6fdd2ced0e74a"
   end
 
   depends_on "go" => :build

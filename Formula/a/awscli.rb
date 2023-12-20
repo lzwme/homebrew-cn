@@ -26,7 +26,7 @@ class Awscli < Formula
   depends_on "docutils"
   depends_on "openssl@3"
   depends_on "pycparser"
-  depends_on "python@3.11"
+  depends_on "python@3.11" # Python 3.12 issue: https:github.comawsaws-cliissues8342
   depends_on "six"
 
   uses_from_macos "mandoc"

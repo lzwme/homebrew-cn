@@ -11,8 +11,10 @@ class Dnsdist < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "aa41a28651a0cee860df1acc4f2ebe778ba084052c9fe02d33597abdd62e6a36"
     sha256 cellar: :any,                 arm64_ventura:  "57c6a0fdeff23df634af6766fc3bc37fe1689ec7eb208dcb0a812895bbe2f501"
     sha256 cellar: :any,                 arm64_monterey: "b6483d3f9c1448c5d2936e07bde3e76fefc84985485614c5df07873832041a0e"
+    sha256 cellar: :any,                 sonoma:         "b5ab32087dc3245c5d1a237b47c7f22e6351dd7d6c688231380e77bf811a6bf1"
     sha256 cellar: :any,                 ventura:        "1ccb79ba86b452bc98706f76360911157a2ea885cbaac1190edda3192e28bca5"
     sha256 cellar: :any,                 monterey:       "c916bc3c76cd05e6f78b6ad49cc4be5bf0d53d772a3726bbb313ccd5cbbe9563"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "67185319d89776c900401b4e7687451338863d7b7e1ccd11d6411ea32c4cee75"

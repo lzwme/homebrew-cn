@@ -1,19 +1,18 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https:i2pd.website"
-  url "https:github.comPurpleI2Pi2pdarchiverefstags2.49.0.tar.gz"
-  sha256 "d8e07f78cc9f1ba65e8460db27c649dd0cfdd3ba334725f8d6f9ee815cb40e68"
+  url "https:github.comPurpleI2Pi2pdarchiverefstags2.50.0.tar.gz"
+  sha256 "67c8ba5ea03b09fe2a85820f6d5b3025ad6c4301cbca3fa44c0accfbe5c7def7"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3c5f91b45bd3ae82d543d1c5343312c27aabfa7b8df415a1d7df8483fdf8cc28"
-    sha256 cellar: :any,                 arm64_ventura:  "ff7af6fe06ee01e7010eef65bed7ee3e9cb1724424973d2b530a57d4c6c1554a"
-    sha256 cellar: :any,                 arm64_monterey: "86da15510b20431a56053e0a8d61ae2d2098af1833c2e6488a07cbb48e5686d9"
-    sha256 cellar: :any,                 sonoma:         "fa99d75dc9f3d165347c7adf8cd79198be295420f5527a860c7e9a1c2c462d1c"
-    sha256 cellar: :any,                 ventura:        "984568f33af0e93d5c8adbcacc2211ef9c6e34946370ac7c4e19ecd633d13a05"
-    sha256 cellar: :any,                 monterey:       "1f7ba02391ee429c059489673ede9d4f5354220e43d83b55dfa313edcd2c6791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bd15e8f62ec4b7c090fae10801fa2d3d7511f58074e7d6bf80dbc1a20a3ccb5"
+    sha256 cellar: :any,                 arm64_sonoma:   "fedd0924f94ddbf0c6d4a9d7ca2900659e1d2e36c94b77cd1f54d8185d14f2dd"
+    sha256 cellar: :any,                 arm64_ventura:  "84c3df66b2aeb60c94de7e540be807fe235eae9c804484e7b8f19517257f77d6"
+    sha256 cellar: :any,                 arm64_monterey: "2282e2b9739cfc8e3d3742e17d0c5dedaeb6fa1df1beced0bb1e36c3714de6da"
+    sha256 cellar: :any,                 sonoma:         "8055884f603d421bfca1727bcb22d8cfe4c1368601bc1406c53c9b64db77c6c5"
+    sha256 cellar: :any,                 ventura:        "abca710eb2397a77e994146861c51ed8385f695244fa77c2bc0af28250527f2f"
+    sha256 cellar: :any,                 monterey:       "d71b6903aa2249bbf271ff5559a1c0a827911f289d0f5f7c01095d98f48dfe9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74bb1cf6a137be2aa8ba49fbfd0ab0858ab4e7cbe77bd0ec4aea40e41fe5fd20"
   end
 
   depends_on "boost"

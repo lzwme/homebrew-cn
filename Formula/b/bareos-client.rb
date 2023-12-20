@@ -11,13 +11,14 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "67a97a926bf3dc80d3f865394bbfa8b1dda02c2e757982744daa9ad1767a2e1a"
-    sha256 arm64_ventura:  "cd0ea4ea5bc7832b023f991febe2b0441e3be401b802bb47a3e28c0c1efb6cf7"
-    sha256 arm64_monterey: "e9f27d70e50b34e3ffce8c90e350a49e7046c8ccaf86d169278908047af592bf"
-    sha256 sonoma:         "34ec8d8d7344d3e1307ddfba28a382a961459e36103da5aad3cc133f80dc8d14"
-    sha256 ventura:        "66889f9f5350750f8127b6991f44aca5509378e51b4b6ea8bfab69c5a567d3bf"
-    sha256 monterey:       "b4744d44b8c7a229e6bae7a57bf39b823b65dfe0dced9bcb7c9e76190fef184a"
-    sha256 x86_64_linux:   "451cdf9dac8e6d3a1d392244b340c1a69b377d122ba3fd4f8b12080beab94f96"
+    rebuild 1
+    sha256 arm64_sonoma:   "ef5f2a3d25b571296c1e138756c42662f97d447e3e1d60dcd12681b5b6b78a0c"
+    sha256 arm64_ventura:  "b8aa57ddef35e0e9c2edea1652014b71b2d6da07f4468418ae3967e5933d3341"
+    sha256 arm64_monterey: "85bb03c17350869e586b8ce6515e8ce7569a53c91667837dee04b34213af13fa"
+    sha256 sonoma:         "bb84187fcca7fb6830456d6c088a019f16ea2108c02bb0e78e1229e08ccc5f4f"
+    sha256 ventura:        "3b89a7f79abd81d62cedf03ca2385291f6d60cb21d8683914d18fd6d94c267aa"
+    sha256 monterey:       "a736bf49d969b6ef1d6db2222a21033b0513c76c267721ef3ca23e50c55d19d7"
+    sha256 x86_64_linux:   "09c26125753007bd80a9e2957416392a8914d79bf912986ed2b47048a484b232"
   end
 
   depends_on "cmake" => :build
@@ -53,6 +54,16 @@ class BareosClient < Formula
       ENV.append_to_cflags "-Wno-unused-but-set-variable"
       ENV.append_to_cflags "-Wno-unused-parameter"
     end
+
+    # Work around hardcoded paths forced static linkage on macOS
+    inreplace "corecmakeBareosFindAllLibraries.cmake" do |s|
+      s.gsub! "set(OPENSSL_USE_STATIC_LIBS 1)", ""
+      s.gsub! "${HOMEBREW_PREFIX}optlzolibliblzo2.a", Formula["lzo"].opt_libshared_library("liblzo2")
+    end
+
+    inreplace "corecmakeFindReadline.cmake",
+              "${HOMEBREW_PREFIX}optreadlineliblibreadline.a",
+              Formula["readline"].opt_libshared_library("libreadline")
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DENABLE_PYTHON=OFF",

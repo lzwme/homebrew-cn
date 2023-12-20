@@ -3,19 +3,19 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https:www.mentat.ai"
-  url "https:files.pythonhosted.orgpackages35a58d619a16e97384407b781b40c91b67c1fec520e767bc6214c06f69b13d09mentat-1.0.6.tar.gz"
-  sha256 "7a36ea2b0600afb06eced3e578afcf3677cc9418efba95d2e99e4439e071966a"
+  url "https:files.pythonhosted.orgpackages638bca24b73aa9be9aaa853f46221c920ddf978d108fb9b0cc636ef1417bdc3bmentat-1.0.7.tar.gz"
+  sha256 "c762904e539fb81fd1cfe6fdf6ba6b0a2c4e63d89c953b6615ca6ef600c9ec43"
   license "Apache-2.0"
   head "https:github.comAbanteAImentat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "472b40795eed61eb33767e9aeef565cced6693daed9f7b1ac4343425b0dcc93f"
-    sha256 cellar: :any,                 arm64_ventura:  "7c0c21fe8f350578a4cbb213ce9cce9d08cfac034ccaa8bad295df67252e0464"
-    sha256 cellar: :any,                 arm64_monterey: "dea53afb0150f846e225facc786020745691358d83a8f249140882aac971ccdf"
-    sha256 cellar: :any,                 sonoma:         "8c823af96f62283820625354ab01254920e6137fbcbcea90267d758ac22430e5"
-    sha256 cellar: :any,                 ventura:        "25706e3984fe526b458813bef366ab9f6d0f8665e6da458d144482c20e6eea91"
-    sha256 cellar: :any,                 monterey:       "e8ee9011c3549e57b46f4acf574089d9c1d63f828bc2b50e6edfdf98b67c6fad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fdd6beae44efad0b876172c51567916f776c5597b98ce5b5c9c077574b7be39"
+    sha256 cellar: :any,                 arm64_sonoma:   "25a3c02474d09b56fd2c526ff0db730a07af981534555a1b4eb854ccc83b5964"
+    sha256 cellar: :any,                 arm64_ventura:  "784d28c70e1f6feb59064d168ab06883ad36471465e4cf3800970c2f07e3feef"
+    sha256 cellar: :any,                 arm64_monterey: "7244fdaa65d9fcf51aee2afb0096386e42cef9ad9f373e16db959b4d5076f397"
+    sha256 cellar: :any,                 sonoma:         "80ac966edc7bda727cc7fdc8adb1ddbb00935715d4cf990a3cb90827ef03f262"
+    sha256 cellar: :any,                 ventura:        "a5b9586d1b4a1f03a0d18ba6deb40103373ac308cfc5c767592b21bec3ca954b"
+    sha256 cellar: :any,                 monterey:       "8f626cde332d043217de4a2b0a8aad7f797a9040fc6b02ca5d4a51948312bdd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c82071f81ff60e9bf0907c14a706bd129d0bd129ce78f80285bd14a410baad1b"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -84,8 +84,8 @@ class Mentat < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages9518618159fb2efbe3fb2cd32b16c40278954cde94744957734ef0482286a052jsonschema-4.19.2.tar.gz"
-    sha256 "c9ff4d7447eed9592c23a12ccee508baf0dd0d59650615e847feb6cdca74f392"
+    url "https:files.pythonhosted.orgpackagesa87477bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03affjsonschema-4.20.0.tar.gz"
+    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
   end
 
   resource "jsonschema-specifications" do
@@ -164,8 +164,8 @@ class Mentat < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages480bf42f99419c5150c2741fe28bf97674d928d46ee17f46f2bc5be031cce0bcrpds_py-0.13.2.tar.gz"
-    sha256 "f8eae66a1304de7368932b42d801c67969fd090ddb1a7a24f27b435ed4bed68f"
+    url "https:files.pythonhosted.orgpackagesa92792d18887228969196cd80943e3fb94520925462aa660fb491e4e2da93e56rpds_py-0.15.2.tar.gz"
+    sha256 "373b76eeb79e8c14f6d82cb1d4d5293f9e4059baec6c1b16dca7ad13b6131b39"
   end
 
   resource "selenium" do
@@ -214,8 +214,8 @@ class Mentat < Formula
   end
 
   resource "trio" do
-    url "https:files.pythonhosted.orgpackages815df14b7dd618408613a4c0a6b4e88902fe97bc07ff136921d6c935859036detrio-0.23.1.tar.gz"
-    sha256 "16f89f7dcc8f7b9dcdec1fcd863e0c039af6d0f9a22f8dfd56f75d75ec73fd48"
+    url "https:files.pythonhosted.orgpackagesc79a39e0a59d762f4c72cec458f263ee2265e29f883421062f64fd8e01f69013trio-0.23.2.tar.gz"
+    sha256 "da1d35b9a2b17eb32cae2e763b16551f9aa6703634735024e32f325c9285069e"
   end
 
   resource "trio-websocket" do
