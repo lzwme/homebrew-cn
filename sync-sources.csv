@@ -1195,7 +1195,7 @@ Homebrew-homebrew-core/Formula/d/dashing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasht.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datafusion.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/datalad.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/datalad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datamash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/datasette.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/datatype99.rb, Homebrew/homebrew-core, 1
@@ -3815,7 +3815,7 @@ Homebrew-homebrew-core/Formula/m/manticoresearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcrafter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapnik.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mapproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
@@ -5913,7 +5913,7 @@ Homebrew-homebrew-core/Formula/s/sshportal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshtrix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshuttle.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/ssldump.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/ssldump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sslh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssllabs-scan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sslmate.rb, Homebrew/homebrew-core, 0
@@ -6303,7 +6303,7 @@ Homebrew-homebrew-core/Formula/t/tre-command.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tre.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/trec_eval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tree-sitter.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tree.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/treecc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/treefmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/treefrog.rb, Homebrew/homebrew-core, 1

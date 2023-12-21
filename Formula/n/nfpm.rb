@@ -1,19 +1,19 @@
 class Nfpm < Formula
   desc "Simple deb and rpm packager"
   homepage "https:nfpm.goreleaser.com"
-  url "https:github.comgoreleasernfpmarchiverefstagsv2.34.0.tar.gz"
-  sha256 "0ab290538866352d8b13a18f211dfabe6af1bf02addec87b234ee580ace70e65"
+  url "https:github.comgoreleasernfpmarchiverefstagsv2.35.0.tar.gz"
+  sha256 "cd7b53f34e3b18bbe653a8441dfb72f4ca8764cceb3f4aad0c632fcccb027aba"
   license "MIT"
   head "https:github.comgoreleasernfpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb3994f57fb0f710b404dbe85e18cd8432a7c853cc8004f5d009ebeef6287812"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f787f2709f341646f369c505b2a2e48f60a26dd9a3dc0b8660c26121ee9c27b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d614b910d1a2d0dc2ab23cce967fce8decb1c2c70009f4090c893b3e6a212801"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bbdb9d4c99a9c34429b5c34c2b1df7064c22b3fcb086bf66142483ff29e04cae"
-    sha256 cellar: :any_skip_relocation, ventura:        "7aad7ebe8f5c72f374fc03dc6fe5b0488a6c6986ddfa2a225d389d7b96f77458"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe2fce66116bb7fac5704ca39742ed2f9c0ccab592ba13d340916af5001f32eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a19a17bcc59aa98dc14a4b129308f83f7a0f200f4eff9af3e095a9c1733a2035"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d08df0ffd7721709359b12731d6b364f356a03e924e8ca0b976e55e7ee79e57f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a283211f00d1ba6b70792983c0e3b11c7ecbb5e5fd3b97b9a0815d6159ab209"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb90228c2185175dbd5a105317d3b9704a19d803b6f20dd602ee6799bac4f9f0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1a8da905f52f30d205f952cd0c174486ae7a9dec55b11bdb879cadfaec5c3669"
+    sha256 cellar: :any_skip_relocation, ventura:        "a5aac77811006bb6409f12ebb195c7b3c25960bda0353486bc42001bbc2936e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "24a797bd9c0b5a939a3c096862ba21dc239d2af483363b2e874c084edfc7d52a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7e4ac60e80c422c1d3a3685168f2df379f6cf1f8f1905ab9ef8f6c157316831"
   end
 
   depends_on "go" => :build

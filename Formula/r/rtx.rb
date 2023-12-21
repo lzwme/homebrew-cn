@@ -1,8 +1,8 @@
 class Rtx < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https:github.comjdxrtx"
-  url "https:github.comjdxrtxarchiverefstagsv2023.12.30.tar.gz"
-  sha256 "c4e07cf0762cf91a547fccf7c39e4f939a96675a8d926e10029ec9026197c72d"
+  url "https:github.comjdxrtxarchiverefstagsv2023.12.31.tar.gz"
+  sha256 "d0b226f16fbfab251ada59fa747b6e18571baa0c21a4edafce85eb66beff7b3f"
   license "MIT"
   head "https:github.comjdxrtx.git", branch: "main"
 
@@ -12,13 +12,14 @@ class Rtx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9937d153adf33e840f303c5ec9869ee58bd8084dd118284054e852afd13956aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "631110cd15c196a137db2981a418d8e770183dbadf179e39b71a6586cbae5d5f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8baed7c501efe928f03ce7e47f0ab75f146b628b61e80bcbb31924703ca266c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c87f247af96559bb1d4f24618561f2725f5cbd7b6c8626258891fcd7bf8cf58e"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b44310d28587d30da335bfc2427ecc8d2de98b4916c703d0d579d56b3ec1c19"
-    sha256 cellar: :any_skip_relocation, monterey:       "df7b4689b249a4ed743bdd0cfe7499edca439f53856fbf19cf2e14f5b25532d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6caa8d0fe64481ad59e3455c6e39b29d8ed5001f4d2e0fb4226ecc2085b64de"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49a9dd627247e6de74b906a1014bca61bc759f460ce39d011d68a934beca294c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ff9393d72a78eb08cafd969bf74129753eee7031b257866a5dbd472821e5018"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b02035d56ea7b103c3d71b45ce604c45c1bc11103ad3cf6380e7e51408b85c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5f727bb5ecd9114938b19d9c159b308dae3d9249aa1e32146f15dd021b5c31c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "9308a4cd81450a70287f91d6f09b015331fa444602974dc3c2abfe7df4652e21"
+    sha256 cellar: :any_skip_relocation, monterey:       "dce30cdc9c88226d04abb2c20926bdbc63574233939247d2a7a11be14a9020ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "419518c384dbbc9185f163f10a05dc13833cda514466156360582dabc65d5b1c"
   end
 
   depends_on "rust" => :build
@@ -36,8 +37,14 @@ class Rtx < Formula
     touch lib".disable-self-update"
     (share"fish""vendor_conf.d""rtx-activate.fish").write <<~EOS
       if [ "$RTX_FISH_AUTO_ACTIVATE" != "0" ]
-        #{bin}rtx activate fish | source
+        #{opt_bin}rtx activate fish | source
       end
+    EOS
+  end
+
+  def caveats
+    <<~EOS
+      If you are using fish shell, rtx will be activated for you automatically.
     EOS
   end
 

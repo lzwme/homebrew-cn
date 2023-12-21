@@ -1,8 +1,8 @@
 class Libmpdclient < Formula
   desc "Library for MPD in the C, C++, and Objective-C languages"
   homepage "https:www.musicpd.orglibslibmpdclient"
-  url "https:www.musicpd.orgdownloadlibmpdclient2libmpdclient-2.20.tar.xz"
-  sha256 "18793f68e939c3301e34d8fcadea1f7daa24143941263cecadb80126194e277d"
+  url "https:www.musicpd.orgdownloadlibmpdclient2libmpdclient-2.21.tar.xz"
+  sha256 "286247c2cd5e99dba96ff3d207c3a723347a59be8321116cd30b685e2388d2be"
   license "BSD-3-Clause"
   head "https:github.comMusicPlayerDaemonlibmpdclient.git", branch: "master"
 
@@ -12,16 +12,13 @@ class Libmpdclient < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3f1abda33c5841b8f0ec6a8cd98761bdf5127a22c08a52a16d08585e9b898c63"
-    sha256 cellar: :any,                 arm64_ventura:  "375a77d9a5e35735bf4075b1d00f2a8e58e2c42db81ea84628376450290e5d03"
-    sha256 cellar: :any,                 arm64_monterey: "cf069d8465152e64482a30cdd9be6d9db373eb6e033e20b36f5ed0c6ff787a81"
-    sha256 cellar: :any,                 arm64_big_sur:  "5b121fcd7d0df82dd8b3f9ee14f2084441e3cf4ad116d7b9deb556ed06fe2244"
-    sha256 cellar: :any,                 sonoma:         "443234b833b52d289bd8261e3506b6a14bd5bd3e2ab118f6110c0d1ac5ce39fa"
-    sha256 cellar: :any,                 ventura:        "cf82a221e32a91e34931b38104bb0d307e5983dd8aa0e0e24188796fc3b8e6bf"
-    sha256 cellar: :any,                 monterey:       "c929f3eba925610a9482592c5f541686258facc2ae2a366ef85cddcb42827135"
-    sha256 cellar: :any,                 big_sur:        "118c8e3f7e28a00346eda41e6f7c50a355c250ae797d828cc0a944f87e67767a"
-    sha256 cellar: :any,                 catalina:       "5bc8f8811db3bb6ac41f013c216fde9241674df6c6c8b37543fb1930d907cf28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "798eacacec842e16efa4e6025c3199132ecb8c5980f82315440ece2748cab7f1"
+    sha256 cellar: :any,                 arm64_sonoma:   "f2224e406a3a6036c44a5a86b106adcf21986fd38ef6d8931449ae01652191de"
+    sha256 cellar: :any,                 arm64_ventura:  "ee67efaddcee17ee4e5edd242b003d91fd5fdbbbb028343e42143c189c257e92"
+    sha256 cellar: :any,                 arm64_monterey: "fe3034f298d1e967bac9e8c34788bf4f91a3b4142fc66de7e51943fa19346a2f"
+    sha256 cellar: :any,                 sonoma:         "f935c4b437ece8482f5602a776fe4c187b7686cfe21bc7c292e6588b0fdbea3e"
+    sha256 cellar: :any,                 ventura:        "845d9652dd9ddd348df4a9487f706303bacf60bb0ef481cc3d120400cd449c35"
+    sha256 cellar: :any,                 monterey:       "1e0748370792f6e49b5970822c2ab01fbdcde80411017461984466c8eaa2c9e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9211e42d202349e1bc074a391f132cbc3cef8d0cf93a2e5a406f070176e73b3b"
   end
 
   depends_on "doxygen" => :build

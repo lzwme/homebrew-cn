@@ -1,21 +1,19 @@
 class Cloudfox < Formula
   desc "Automating situational awareness for cloud penetration tests"
   homepage "https:github.comBishopFoxcloudfox"
-  url "https:github.comBishopFoxcloudfoxarchiverefstagsv1.12.2.tar.gz"
-  sha256 "e6f2d5597140b812bda78b3934b17d279a36c33fb4011d6a34880806ff2ef65a"
+  url "https:github.comBishopFoxcloudfoxarchiverefstagsv1.12.3.tar.gz"
+  sha256 "e082972b5368c90308ea97bc06a8732b0fc45053a78472022626392580fbe0b1"
   license "MIT"
   head "https:github.comBishopFoxcloudfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "778c3b2df7380aeba7407aed30cce5e26667cd89b20d0f45463014c3e1863318"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d16e055e2b30fed522d46e6b98ede3cd401a6124c33fc28bb0cf581c5692a832"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20e207507d8e06d4bdc257bd4cc82368ad1b28f2c3c138791965e2cb487edff6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04c8b3e66578e7bbef93fc1d683d0cae6062e8e4f8a69596b21e227d433df3d7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62a43a2288a1ae159b2dbb47f3d2f7be777da9ab85128b03e016502ea9526398"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1afef9d81470bc6c906d5590ec09196dff1a15b3355f48fef900df894648b9c"
-    sha256 cellar: :any_skip_relocation, monterey:       "faa5d819604ab9add8a8518f533abcf6d9b45b67538cfa01e4cc899b220cbae5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cebc69ca62fd774b6e2c2b24dd329a760f86d49f7a47847c1a15daf9a4a05d3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee8d9b2e9e66aefcf76da2a8b589f4e0148f6fc92f799ecd2847531694121d76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59c92823e841dcbaf48b46a74db99c2015fd6dd33cf52b4ee5330dfac93038e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "306c56cbdb4522afe0126af13589f8b128f086eb2d4ef93a3dbd57297eb3d8ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "818a10cafb3425c88594293d8771f7e8d1f3d347989a6378e0d49372c6ef5b78"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a4416f0530a052926a558e8d4802389bc505796775123854f9b67f22a21b01c3"
+    sha256 cellar: :any_skip_relocation, ventura:        "5622de88b27f639d9963042cf93254ddaa408c73ec37c722739853d4f4374cf9"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ba124bd7ad77330a83c6e4da24860b8b40a93ac16cb8961dcf50fa92a78eaf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "451428735ae8d760f99b992b52635132f0574c94552b55fa374462e2650305e3"
   end
 
   depends_on "go" => :build
