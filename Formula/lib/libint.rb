@@ -1,18 +1,18 @@
 class Libint < Formula
   desc "Library for computing electron repulsion integrals efficiently"
   homepage "https:github.comevaleevlibint"
-  url "https:github.comevaleevlibintarchiverefstagsv2.8.0.tar.gz"
-  sha256 "f7525937a12ea65937ccbb74280a2571cc79a8ae6ef04b900bd0baad49d50c73"
+  url "https:github.comevaleevlibintarchiverefstagsv2.8.1.tar.gz"
+  sha256 "54ae9c55f03f1989ee4792ab1ec24eda8ac88126f9c11f3723ed76a3275b3e24"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "12a6d64becba1a32d90a56f74458d152c2f53f8467509467c6e227fc57762da2"
-    sha256 cellar: :any,                 arm64_ventura:  "5b32428db5a39ea48ff2db5f4f2eea740b23d383e42086cbfa2e6d57d9c0e59f"
-    sha256 cellar: :any,                 arm64_monterey: "69c717591419efbdd2c68bd55593aca05191a3de47cdafdbca5fd0327c044250"
-    sha256 cellar: :any,                 sonoma:         "e34e062870b467974b263b628303c904da8353557220482f4310fce283881f63"
-    sha256 cellar: :any,                 ventura:        "d452b472e51f6cdbe2f527a297c90b53fefd19021a311cc0c59f6cefafb09b42"
-    sha256 cellar: :any,                 monterey:       "80a76a71b789ba203fcb4a89056e42e737903641f9a42bdb9788fe1a6cdd07d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7e16cccb8d69159f600f1db5d90a120156646459a56729463eb03094a25f2c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "b4a4fd1ff492246109a73fed6aa8ce49c8e74aaa670586064d8ef7c8af58142b"
+    sha256 cellar: :any,                 arm64_ventura:  "33753446e48218f652678b8f6696becd949c6d5e2f56de11a3f246cdba4d826b"
+    sha256 cellar: :any,                 arm64_monterey: "3a76c0d6b3a856436f193409a81998affb8a9de85e8f48c618e8d58651175100"
+    sha256 cellar: :any,                 sonoma:         "6792ca91d70a9f5d5b9f3c84245df31dd8f11c5ad148daabbcd890d0b34d27bc"
+    sha256 cellar: :any,                 ventura:        "97a3bce087c922704566112b48924dc9e06afaf0403a490292747fe17ee447f5"
+    sha256 cellar: :any,                 monterey:       "bf48d6080463ef5b2baa9ec376cd96e4a31dfc1f5ecf68565bf0a44adcb845c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "789c6ebcf1a234d04b73ced32dc9e380dff5f9e48ecd6ff5b7f593f0816786b9"
   end
 
   depends_on "autoconf" => :build

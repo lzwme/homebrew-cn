@@ -3,19 +3,18 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https:v6d.io"
-  url "https:github.comv6d-iov6dreleasesdownloadv0.19.1v6d-0.19.1.tar.gz"
-  sha256 "8da78864003cc559825cde30aa1de41ecf5c653ccc23a699c15a5b02796e86ca"
+  url "https:github.comv6d-iov6dreleasesdownloadv0.19.2v6d-0.19.2.tar.gz"
+  sha256 "4cd1841c8715043e744bb45f22a236cada29581d60b8d7e8977bff2db8d32f70"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "5ddf8bf57a1d4497b73f4570dcb5572b03ab28bfa18b6ee2e2fd782e53f65bf6"
-    sha256                               arm64_ventura:  "8bdf724373cd9540d734b0b9e4e944cd928e934491926fde20bbd357f55ed059"
-    sha256                               arm64_monterey: "c8c70e1f082c232701bae3331a1e8c50502135d8abd49be3ae296152e44c5ad7"
-    sha256                               sonoma:         "0bf37b6833d26e382aa3bef4d5faa4a5ad64f362ca54f7b875d3fdaaf77d6ab9"
-    sha256                               ventura:        "0d8e6e76995bf80823b9de6bd7ae99de77385fc6501db65957f553e056d9acca"
-    sha256                               monterey:       "c891db7625e7d5f8acc663c6c87774b7ff2ded0c68fdd6133663c04eb16b175f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e0384dba1e9ae2bdb2d45804738362b047c2529bbbc93efba707ac9987d8b50"
+    sha256                               arm64_sonoma:   "30f04b9e1c812d7c39a9ebc91617890b0bfc46b808595e624458efbd66a14cde"
+    sha256                               arm64_ventura:  "6510ad485b88c204c16a6f734c24c406e3c41c253b6bbdd99873fdffc508b65d"
+    sha256                               arm64_monterey: "e6efb43c42fc986eccc5e36f7fee6abb3442c1495cbfeb8d320268ca5aacd05d"
+    sha256                               sonoma:         "df5b4efa9a717c5fd586bac20564f627719f52ab1b8830de6f5b028df630dc2d"
+    sha256                               ventura:        "3e21974e396b9e97ee29abd49d6686a12296fb1d8651b4953a85cab9ca5de82a"
+    sha256                               monterey:       "638006a019bed5ed02d7ace1901c28b0b33676d677b7c15418dbaed8b6e3fabf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e569dd12bf91fa3737b18aa1af9621379ef1201db2698b9b8295d3af22a1ccfa"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -37,9 +36,6 @@ class Vineyard < Formula
   depends_on "redis"
 
   fails_with gcc: "5"
-
-  # upstream issue report, https:github.comv6d-iov6dissues1652
-  patch :DATA
 
   def install
     python = "python3.12"
@@ -127,22 +123,3 @@ class Vineyard < Formula
     Process.kill("HUP", vineyardd_pid)
   end
 end
-
-__END__
-diff --git amodulesgraphCMakeLists.txt bmodulesgraphCMakeLists.txt
-index 2e9e69f..781b11c 100644
---- amodulesgraphCMakeLists.txt
-+++ bmodulesgraphCMakeLists.txt
-@@ -63,8 +63,10 @@ file(GLOB_RECURSE GRAPH_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}" "fragment*.cc"
-
- add_library(vineyard_graph ${GRAPH_SRC_FILES} ${powturbo-target-objects})
- target_add_debuginfo(vineyard_graph)
--target_compile_options(vineyard_graph PUBLIC "-fopenmp")
--target_link_options(vineyard_graph PUBLIC "-fopenmp")
-+if(NOT APPLE)
-+    target_compile_options(vineyard_graph PUBLIC "-fopenmp")
-+    target_link_options(vineyard_graph PUBLIC "-fopenmp")
-+endif()
- target_include_directories(vineyard_graph PUBLIC ${MPI_CXX_INCLUDE_PATH})
-
- find_package(Boost COMPONENTS leaf)

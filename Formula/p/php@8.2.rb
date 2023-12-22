@@ -2,9 +2,9 @@ class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.2.13.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.13.tar.xz"
-  sha256 "2629bba10117bf78912068a230c68a8fd09b7740267bd8ebd3cfce91515d454b"
+  url "https:www.php.netdistributionsphp-8.2.14.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.14.tar.xz"
+  sha256 "763ecd39fcf51c3815af6ef6e43fa9aa0d0bd8e5a615009e5f4780c92705f583"
   license "PHP-3.01"
 
   livecheck do
@@ -13,14 +13,13 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "38cde1a3e6fe99478f36ca32bba603306472f1a7c7a8ed9641a9d220479db5df"
-    sha256 arm64_ventura:  "c61bb223f59c2a5da51dd7887fc670afebd0c79c5de6b858cab6a1e673422d0f"
-    sha256 arm64_monterey: "8ac736dd232c50bf54101e9250df77dad29509ac19cc0e840ccdb4767fcf4ebc"
-    sha256 sonoma:         "2a050271da5bd294522e3f4842b5b31eabb26c642e8e5f52a7f5c0f3a1c00b9a"
-    sha256 ventura:        "d190f1cf86e5a8c5a42079aadc6e68722d93bf4e0707dbcd7804b98036e4927a"
-    sha256 monterey:       "466567c8bd219f3760fe8e4042f0d31ee2af3071998eff1795bb5e18d38640cb"
-    sha256 x86_64_linux:   "551d6121bf00505e673d4bf659e89be508aaa456c3e96b06a22ec56040f24fb4"
+    sha256 arm64_sonoma:   "0ded8006d6564922c7b25ad9c293249abc6fe3b6004348397de859a153dd6a2d"
+    sha256 arm64_ventura:  "00f7b34fff178c727141b352c585046387a7e0f40e6dcd7e3a955b8de93374dd"
+    sha256 arm64_monterey: "66e39a41f7a23ec5b670faa3b4902aa84b55beceb2d925e294b6e78b17280868"
+    sha256 sonoma:         "22fcde21539a8d43bff48bfbbb3f9f2d7848e1e370eca2bdc6886a6254039c3d"
+    sha256 ventura:        "eb55e90f443df2e01aaf2a451b6c984747e01b3ba0e84bd40659f19923d55441"
+    sha256 monterey:       "cd2cd90f192b1301c597490cbea24f0845809b533403cc074926edfce61ff13a"
+    sha256 x86_64_linux:   "1b917d399c912f94233cbcce635c55cbcb92d41548752652b29e40722f4f1b93"
   end
 
   keg_only :versioned_formula
@@ -66,13 +65,6 @@ class PhpAT82 < Formula
     # PHP build system incorrectly links system libraries
     # see https:github.comphpphp-srcissues10680
     patch :DATA
-  end
-
-  # Fix build failure with libxml >= 2.12
-  # To be removed when PHP 8.2.14 is released.
-  patch do
-    url "https:github.comphpphp-srccommit8a95e616b91ac0eeedba90a61e36e652919763f2.patch?full_index=1"
-    sha256 "b71de4d0d08d5bb2308d7866d82e46444a52e107bd6937c3f2927dbd35ebde30"
   end
 
   def install

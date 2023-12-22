@@ -1,8 +1,8 @@
 class Qrcp < Formula
   desc "Transfer files to and from your computer by scanning a QR code"
   homepage "https:claudiodangelis.comqrcp"
-  url "https:github.comclaudiodangelisqrcparchiverefstags0.11.0.tar.gz"
-  sha256 "5e3949d99b19934dd485da2bad54ba63efeb0448aeb9616b2046398b02d57931"
+  url "https:github.comclaudiodangelisqrcparchiverefstags0.11.1.tar.gz"
+  sha256 "7c074d05c891a45550be3fb3d9d085c900668f93231d58f5976b6c7081b8f7d2"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Qrcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d3bcb37e7c0ab1d899f4c7716d10d1badb63c74c66ba7d863e5745f3350021a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66407c0486311e25900a7b1d8fbb552e92b8feb8865eaf0966c5bd1b1ebe49d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba86e5ac0a47039551f2d5c8f32ea8596d138316e32cce07a2c5e42994cf5407"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ca6748b92fbf4f89bd76a499802250fbad82536fc559796f6a385fbcf1675ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc6f3db0705aed20f0174fb16d5027655e840104c8aed0874317f381f9f9372b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fe0b9afdc569d7a9ab08c9e3b532ac9eb6d7c70cdcd4c440db8d9d29e953ad8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6692f70e1d864847f364fb420eac14dab75bd0cd146abf882a67720b6055e023"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "896d186a7a2f2fbe95f6fd77395250e8e4be65791c4a956d93bc547b3108d87d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5377350ed669ca082826f4826eeaa7ec63a8820d87d17bb28d081412a5f8bf3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "df90710a40d080165b7cce5621ac6bd9152229c1f33f71c6c9ecb7e283087e63"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8635c19ed69fff38411689b984d9227d38820dfb3d8d6badeaa3fc44b9d5f4bd"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe58ad43bad518fac17fad69f321eb2f30db0df7260ea6842822ae1dc4e6d4eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "f62ac8c3aa728cf4db6237125f7ac279f275413102fa327523c96029fc8c40c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "752e00903dc59480811cb2bca07dce09f7a0246580fc6cdc1ad30cdc7d2d5cfc"
   end
 
   depends_on "go" => :build

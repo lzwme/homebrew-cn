@@ -3,18 +3,18 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/17/dc/58fccf4af11a0289249f7fd23db757aa6bdea71cc56c8a593edd9e1f3fef/ocrmypdf-16.0.0.tar.gz"
-  sha256 "7f893d9a79498119ba5ee80f983e1cdfb786de9bbc91dadbaee3b8e081413ef1"
+  url "https://files.pythonhosted.org/packages/03/65/fea55ebfdad6f94e65415a32fd1c836510ce1da8de036a3b5875292d9038/ocrmypdf-16.0.1.post1.tar.gz"
+  sha256 "c05a364c2bda4d11df1e0e0c11e7b554e1199caa51ed0a61268c3074b2ef50e4"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1946379934244e7f70c4e4bb6c611440d582689535beddaa9cee91d30c1e641"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e17e06b7638cc8ae9dfc42e5cb172c8fe7cbc93069ec5ac6f0e274e76190b151"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "684f069af1f2a3004ca057eaf8e98bf54bd409b755348f44801b938858c33226"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2d46f7e19ac17170dce393e618941dd6a122a9ebc6bc88e977dd96afc12afb1d"
-    sha256 cellar: :any_skip_relocation, ventura:        "8971c0e53f4bff4a5805dd7513aa423f3e99cd9882368b5bfcdcf4611cd4782b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0cf1f651ab72f52230cd856281f221d176d0d11c9ecdf0890feb9bbec3f32ef8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c538b33b948bcfc52b7baac3081369272f7e1776a3148c4f7267af9fdc0ee3bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0f7406ef6817b87b3a67671ea4c709e83c15f5636c473fa824f2b86e5e69125"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89a71ec1b665f4819c57f4c67809646efe3260c1631869c3383da3f4fa9f4969"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3d3205ce4df2dc478a729981020f0bbe8434336010b8018885a36303fe25e43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2dadb5b351e2b7ce40e8b21132f9c381f47b48de0efdc1272932bc022995b2d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "cbe1e828ebdbc161567b8098d9399463b114d7e82c3500ea9ead2a37a29dbc64"
+    sha256 cellar: :any_skip_relocation, monterey:       "cbc06dc480d753b7a521c5703997fd67aa0b6d721bd8f43f2a7e91bff16c7746"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c650540d13ee5cdf9118af46af6a2911bab1b65505106df71a2615aaa74913d"
   end
 
   depends_on "cffi"

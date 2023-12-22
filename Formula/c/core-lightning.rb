@@ -33,12 +33,11 @@ class CoreLightning < Formula
   depends_on "bitcoin"
   depends_on "gmp"
   depends_on "libsodium"
-  depends_on "python@3.11"
+  uses_from_macos "python"
   uses_from_macos "sqlite"
 
   def install
     (buildpath"externallowdown").rmtree
-    system "poetry", "env", "use", "3.11"
     system "poetry", "install", "--only=main"
     system ".configure", "--prefix=#{prefix}"
     system "poetry", "run", "make", "install"

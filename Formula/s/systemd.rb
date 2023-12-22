@@ -29,14 +29,13 @@ class Systemd < Formula
   depends_on "expat"
   depends_on "glib"
   depends_on "libcap"
+  depends_on "libxcrypt"
   depends_on :linux
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "util-linux" # for libmount
   depends_on "xz"
   depends_on "zstd"
-
-  uses_from_macos "libxcrypt"
 
   resource "docbook" do
     url "https:downloads.sourceforge.netdocbookdocbook-xsl1.79.1docbook-xsl-1.79.1.tar.bz2"

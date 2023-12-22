@@ -14,6 +14,8 @@ class Apt < Formula
     sha256 x86_64_linux: "39d0e98d2bb8b59bda5ba6220f42f250898c321025e3b435ce3bb4ea14ea4549"
   end
 
+  keg_only "not linked to prevent conflicts with system apt"
+
   depends_on "cmake" => :build
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
@@ -34,10 +36,6 @@ class Apt < Formula
   depends_on "perl"
   depends_on "xxhash"
   depends_on "zlib"
-
-  on_linux do
-    keg_only "not linked to prevent conflicts with system apt"
-  end
 
   fails_with gcc: "5"
 

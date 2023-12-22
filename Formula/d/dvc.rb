@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages5cb622a45a2ecc721432739c4e58b5f77e81dc8f1e9c7d78488d99cbfccbdbb0dvc-3.34.0.tar.gz"
-  sha256 "264020cacd2ebf3234fdc3c1af327d81426aca41ac06d7eb0cc9d99a81127ea0"
+  url "https:files.pythonhosted.orgpackages4e2a90e7d20553caf25b3fa03612b97b21f9cc217b3dc039b7e1361b03066debdvc-3.35.0.tar.gz"
+  sha256 "d3745f01dfded6f89dbb7a8a12d1fd5afb1252fb8755c2b512c29b934f62c866"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "322833e04c07d15b97c4a6c3730ebab730043a84379145370b390f0c30345a02"
-    sha256 cellar: :any,                 arm64_ventura:  "31cfff383528ee68d260f08036f30a5c8bdda711769f8d9f8dd02fad3763c1e5"
-    sha256 cellar: :any,                 arm64_monterey: "279e0fcc654a3342ed391d99a90c5d54f5aefef68515b310f68cab583c71a904"
-    sha256 cellar: :any,                 sonoma:         "596484c88d373cae43ff492785ceb2e1f26eaa4828eebbd02ae52b3d997e1469"
-    sha256 cellar: :any,                 ventura:        "041e0fa989b07d3a4440418336a0e69ec67ec29e369d36da1258894f2e03f085"
-    sha256 cellar: :any,                 monterey:       "e4141ca6af6483e4655840d03543f3fc8f6d8086ab41454d2e1f02202d5e6a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86bf46addc923d2bff2f9ba3718c50f3a8ef8435af00afdaa6888153ebb8fe02"
+    sha256 cellar: :any,                 arm64_sonoma:   "eb1f91dab2193fa2cb70fb957878ae35319df9be553cd4859f12eb14e56c6130"
+    sha256 cellar: :any,                 arm64_ventura:  "3ba506901d580d55aa30001f8640c7313daaca77bf47d653cb3473f8fd1034ae"
+    sha256 cellar: :any,                 arm64_monterey: "64fa3594d568dfe5deb385626adcce2f85bca1597ddf15dd0b645edf7bb5bb2b"
+    sha256 cellar: :any,                 sonoma:         "83e070d4d003891eea6a79983918b29b457dd593f5bcf7184daa64ac9f1a6a4c"
+    sha256 cellar: :any,                 ventura:        "67d5587ba2037939edf9b083fb27660aba480a877e70a3748e92d2796ce7a1a0"
+    sha256 cellar: :any,                 monterey:       "083c44092446ef2520f198785138c7aa4fea7ce5e8d7ca0bc32b48bb41b54848"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7d913e495c3c2d9141a0f5b3b9e45b35e9da28fb8a296066943d67643bd45ca"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https:files.pythonhosted.orgpackagesfaecd2eef5a096a3127fab3df489e1e906e998b52f970591373eea36980519f0dvc-data-3.0.1.tar.gz"
-    sha256 "4ec9f7a254ab0c89dafddf1a27de2f45d7eb65467235a67543b9556eb6de0fee"
+    url "https:files.pythonhosted.orgpackagese219fb47366790300e06caf4c9820e01cf168e717a59b65994455a5f93f97806dvc-data-3.1.0.tar.gz"
+    sha256 "14ff2d78946ee9caa57b8910eba32f7abec746b4f8d8791548759b16d4607682"
   end
 
   resource "dvc-gdrive" do
@@ -443,8 +443,8 @@ class Dvc < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages8c23911d93a022979d3ea295f659fbe7edb07b3f4561a477e83b3a6d0e0c914ehttpx-0.25.2.tar.gz"
-    sha256 "8b8fcaa0c8ea7b05edd69a094e63a2094c4efcb48129fb757361bc423c0ad9e8"
+    url "https:files.pythonhosted.orgpackagesbd262dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06httpx-0.26.0.tar.gz"
+    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
   end
 
   resource "hydra-core" do

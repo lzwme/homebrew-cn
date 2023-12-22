@@ -2,7 +2,7 @@ class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
   homepage "https:www.runatlantis.io"
   url "https:github.comrunatlantisatlantisarchiverefstagsv0.27.0.tar.gz"
-  sha256 "fc0b9cfe189d66a20c6061af98cc32bd60414d6d64a6e015c528fe62a45b2e8d"
+  sha256 "5f25e528710dc16f49d6596e2c37229caaa32bdefbc9795742dd12a800f4dd2d"
   license "Apache-2.0"
   head "https:github.comrunatlantisatlantis.git", branch: "main"
 
@@ -12,13 +12,14 @@ class Atlantis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ddecb12ba5cb2dc825d3f174731aaf21ed4c9a37d59ffb46fcf0d795362bb74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c78e69ae68ced5fc8db2e32aa429c530e7c3699412958cb6f8629b86baec7b70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "934608b155cbfa0e3a4ff07ee9311261f6c8b79c6f8855be5e340d7905b8e160"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d8bc372b315be91809ccd97444b5207f8cb221577d902736e2ea1c3aa4bee0eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "96d666713dc0a4dcd6366af1979064da7b77258b5bc18a0c3839fca832faeba3"
-    sha256 cellar: :any_skip_relocation, monterey:       "0721807e188b9ea6c384a6ab2ebdf90b06cd1c73ad7f4e1cb6c8ce47a165271f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cce0fb42647cb4fd94a4269b721d3d311ca788c5b252b9a97e90d730617afa4c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0eab1e02bb2b711d5ebd5c729791c7b634a8cbcab59f4a6594d5cd4d8defa9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32f0920a8c503b83044d7a6c874ebceb14fcf53bd131e2a293dbe4f84cc6d28f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c624b5cf9914beeb14a964cf033e411dc344157d87fdea86c07687f869ba1dce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3aa19781edc71972a6273568aa59f35d4be587ff2aa53efddb7bcba8edc604d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "36faefd896505606021163d340e57e5be3c2f48a9e9ff91c6380c3375e44ef74"
+    sha256 cellar: :any_skip_relocation, monterey:       "e88125dc0aaebd97d4872ae6b2541a8118d0f73d2761406b0e92b3dea1c611e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c55348126547a82ae3d0a7fa4eb7acb506dac684926fdb6308529caf66245836"
   end
 
   depends_on "go" => :build

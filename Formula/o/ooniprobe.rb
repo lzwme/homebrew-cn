@@ -1,9 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https:ooni.org"
-  # TODO: check if we can build with go1.21
-  url "https:github.comooniprobe-cliarchiverefstagsv3.20.0.tar.gz"
-  sha256 "701bdcbd42ef34fc04b581b278b3cda914c5a78b39bbba9d7ffa74095472bdb2"
+  url "https:github.comooniprobe-cliarchiverefstagsv3.20.1.tar.gz"
+  sha256 "a62242eddd014c347935b3bbface9a0343458a2f8424fa29b1ad927135c732dd"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -12,15 +11,14 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c97369f89a7267bdf34f502d11eef85f0a1de984ef1662e5542e66b6189e647"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "702b91d47b750ad60c87eae19ea99351ebcc1604ebd136c1e585ac3320f92464"
-    sha256 cellar: :any_skip_relocation, ventura:        "23edc2887ad9dee99476091abdbb0af7d2786aca7dba8c806e279a3f511ffe0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ae2619b7e50e18df603176b9ffeb3d8af6d7a418774d466c9b67cea6581750c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a8a563b82592d101032ca1135362bacf1a090db1160c9a5086a95f3a39ffc1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "627a72558f5e273bc3860a9bd51360c8eba90b349fb22dd585f5593d61c9e4fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65d462ea847c0edea7667daf425f7e55352f0d540c07f72e05bf041a1bc75719"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e8a2a548ea7155695aeb2854c72e9f4a3c83d77708e4640f5131c60f46d02d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c9ad268c7fc38abf83e99cf2a9c439d03b980d69c8cb56e2d257cc12c0eaac4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31affd229a7f14a637c0975e7528e3230574d3f84b19e2a3006b69fc80695bbb"
   end
 
-  # go1.21 build issue report, https:github.comooniprobeissues2548
-  depends_on "go@1.20" => :build
+  depends_on "go" => :build
   depends_on "tor"
 
   def install

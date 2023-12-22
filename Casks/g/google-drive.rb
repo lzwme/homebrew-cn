@@ -1,5 +1,5 @@
 cask "google-drive" do
-  version "85.0.26"
+  version "85.0.30"
   sha256 :no_check
 
   # "5-percent" is included in the url to ensure that `brew upgrade` does not update to an older version as the
@@ -23,11 +23,12 @@ cask "google-drive" do
   # See: https:github.comHomebrewhomebrew-caskpull92704#issuecomment-727163169
   # launchctl: com.google.keystone.daemon, com.google.keystone.system.agent, com.google.keystone.system.xpcservice
   # pkgutil: com.google.pkg.Keystone
-  uninstall login_item: "Google Drive",
+  uninstall launchctl:  "com.google.GoogleUpdater.wake.system",
             quit:       [
               "com.google.drivefs",
               "com.google.drivefs.finderhelper.findersync",
             ],
+            login_item: "Google Drive",
             pkgutil:    [
               "com.google.drivefs.arm64",
               "com.google.drivefs.filesystems.dfsfuse.arm64",
@@ -36,29 +37,22 @@ cask "google-drive" do
               "com.google.drivefs.x86_64",
             ]
 
-  zap trash:     [
-        "~LibraryApplication Scriptscom.google.drivefs.finderhelper.findersync",
-        "~LibraryApplication Scriptscom.google.drivefs.finderhelper",
-        "~LibraryApplication Scriptscom.google.drivefs.fpext",
-        "~LibraryApplication SupportFileProvidercom.google.drivefs.fpext",
-        "~LibraryApplication SupportGoogleDriveFS",
-        "~LibraryCachescom.google.drivefs",
-        "~LibraryContainerscom.google.drivefs.finderhelper.findersync",
-        "~LibraryContainerscom.google.drivefs.finderhelper",
-        "~LibraryContainerscom.google.drivefs.fpext",
-        "~LibraryGroup ContainersEQHXZ8M8AV.group.com.google.drivefs",
-        "~LibraryGroup Containersgroup.com.google.drivefs",
-        "~LibraryPreferencescom.google.drivefs.helper.renderer.plist",
-        "~LibraryPreferencescom.google.drivefs.plist",
-        "~LibraryPreferencescom.google.drivefs.settings.plist",
-        "~LibraryPreferencesGoogle Drive File Stream Helper.plist",
-      ],
-      launchctl: [
+  zap launchctl: [
         "com.google.keystone.agent",
         "com.google.keystone.daemon",
         "com.google.keystone.system.agent",
         "com.google.keystone.system.xpcservice",
         "com.google.keystone.xpcservice",
       ],
-      pkgutil:   "com.google.pkg.Keystone"
+      pkgutil:   "com.google.pkg.Keystone",
+      trash:     [
+        "~LibraryApplication Scriptscom.google.drivefs*.finderhelper.findersync",
+        "~LibraryApplication SupportFileProvidercom.google.drivefs.fpext",
+        "~LibraryApplication SupportGoogleDriveFS",
+        "~LibraryCachescom.google.drivefs",
+        "~LibraryContainerscom.google.drivefs*",
+        "~LibraryGroup Containers*group.com.google.drivefs",
+        "~LibraryPreferencescom.google.drivefs*.plist",
+        "~LibraryPreferencesGoogle Drive File Stream Helper.plist",
+      ]
 end
