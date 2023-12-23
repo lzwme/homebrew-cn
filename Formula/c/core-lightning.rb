@@ -1,8 +1,8 @@
 class CoreLightning < Formula
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https:github.comElementsProjectlightning"
-  url "https:github.comElementsProjectlightningreleasesdownloadv23.11.1clightning-v23.11.1.zip"
-  sha256 "3c7e6f35a41650ff6588a3a235726760f5a7e8b3c1c3af977d3e0abdc5dbe0a9"
+  url "https:github.comElementsProjectlightningreleasesdownloadv23.11.2clightning-v23.11.2.zip"
+  sha256 "9f5fbd438f7737f379b2beec569ce139bb5b2a911e8ec35452185b60fba4bde8"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5d25393ff7d4d3ec6b1342ef8d29a9d989bca9629cd2f07da6ce07cc55184c1d"
-    sha256 cellar: :any,                 arm64_ventura:  "2f7bce3f3c4f0b7e7f4e3dfc512816aafff28d48bb5d425b0d17238f384753ee"
-    sha256 cellar: :any,                 arm64_monterey: "ca810c663d7d9bd38d183b76b3deede49e132866e4cdc867293a656ffe3e617c"
-    sha256 cellar: :any,                 sonoma:         "96732e7e5007ad6bb09eeb503140d2e2d814b85e0b2e8fbc89dcbe5c93e61c5b"
-    sha256 cellar: :any,                 ventura:        "1ec9f93fda5d18cea2df612946495ebc9dea2168bcd997ba4e77f0617502cbc1"
-    sha256 cellar: :any,                 monterey:       "0a05e6a1617149160bb82e02077074b32b38a7b5a78f2916398a10fb5f59d355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12d786c701c793625c603e4da87e676914e173fee4a6ec4b36ed715617a43059"
+    sha256 cellar: :any,                 arm64_sonoma:   "edf147abb323c194ef466687a2ba97755a9c0fba6282e85fd760d722750063e2"
+    sha256 cellar: :any,                 arm64_ventura:  "2a9d5bb813da3ae55991b01abcc5454eaacd4cb3d75278193fada5be2088f5f8"
+    sha256 cellar: :any,                 arm64_monterey: "ca252203b50e9f10fb09b4d78a5cc156868d600adeb30349ddf0d60dc7bc8522"
+    sha256 cellar: :any,                 sonoma:         "9d3d23087eeca37e2bfab25ba9db9f301cdbf9b6c5cefa9e58499d6bb4e72891"
+    sha256 cellar: :any,                 ventura:        "6ec88da258f2758ea4bb587fcc44d92efbdb79b3abd72aa4cb7cadb35ad2dc6e"
+    sha256 cellar: :any,                 monterey:       "6cec654fa0d74a009480f73a56790ccb73dee4b93a7669827134f92ac1e8f5d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cda16201c173190f635a4aaea36a0f9f9fdd4b55bfb77eec45a153959686dcc9"
   end
 
   depends_on "autoconf" => :build

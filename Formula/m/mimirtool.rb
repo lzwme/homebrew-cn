@@ -7,9 +7,13 @@ class Mimirtool < Formula
   license "AGPL-3.0-only"
   head "https:github.comgrafanamimir.git", branch: "main"
 
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released (and some tagged versions don't end up as a release), so it's
+  # necessary to check release versions instead of tags.
   livecheck do
     url :stable
-    regex(^mimir-(\d+\.\d+\.\d+)$i)
+    regex(^mimir[._-]v?(\d+(?:\.\d+)+)$i)
+    strategy :github_latest
   end
 
   bottle do

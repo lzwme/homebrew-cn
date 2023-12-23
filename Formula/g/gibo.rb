@@ -1,18 +1,18 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https:github.comsimonwhitakergibo"
-  url "https:github.comsimonwhitakergiboarchiverefstagsv3.0.8.tar.gz"
-  sha256 "6402e74267edf595b222a5a0bdd431fe734df8fde0c7909e7c0f042c37712dd5"
+  url "https:github.comsimonwhitakergiboarchiverefstagsv3.0.9.tar.gz"
+  sha256 "b79aff39e1f741b56ca430b50dbcdca9999d5dafac64dcca6f42afa05d3cc785"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "837eb02cf6d38ed6ac035c87469c908d98b4ef3b1d3082020339c94d22cc9278"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66fcbcecb80a0cc49ec953138634a6ab043189536a0fe1f8f613cd0822d28102"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04b5bc27a88d9c96fbdd6486a4aab3b80ab38b5b975712304e9358a5a4fd6473"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2f56ce01fbdf94890a9f4eb5fbe2ad579d34e8ef985cf0b230f1d9b7d01828ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "73bca56e297aa24ca2f4e6e7a7bd0c7b3c582fcdab852db022fcc1febd3df7bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "427eae7b50aff8ea4f4e6c9c2d9a7b58e5f6da8dcb009aaebc4ce76b6bbca56c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cddc7fe175e6daea6632828046b77b67fa81b103d998d43b38f3fe1a8d6bdd8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b593adbdee7a67832340feed72d82d16477145022477a2d54f49ad82d74e31f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc4c97bc66bbabec2db29ffcf8135a2a66af20181eb4dd01ffc722b08c8c2f82"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fae8d9ec87eacbcd014d1aa5cabf31140f8ed6b020c53cff7c40b93024277522"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f63e07f0b1d565106c35e13895224f6b8b697b159f8adcc2f157f45f2e6694cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c7f67ac25bfc508d140fd1b869b4a0a96e60f588690858eeb320cb1e2a7cac7"
+    sha256 cellar: :any_skip_relocation, monterey:       "81426867cf2e71f692e6f6379e5a2573483a5620d5c40291493b2279a411d2eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcaa848d743db01d18ed813f88b5754e7084ab3a8dcb5b1af349a2dba68d2e18"
   end
 
   depends_on "go" => :build

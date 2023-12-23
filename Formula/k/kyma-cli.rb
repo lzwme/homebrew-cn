@@ -2,18 +2,27 @@ class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https:kyma-project.io"
   url "https:github.comkyma-projectcliarchiverefstags2.20.1.tar.gz"
-  sha256 "5648038946088c0ed0901bd0ff04bfadb25cbbf33230e760e580671fd59ef8c1"
+  sha256 "f9ed216465b3b3124efb299c9a0f444a6294eed65243a08d5c0765048a05d0f0"
   license "Apache-2.0"
+  revision 1
   head "https:github.comkyma-projectcli.git", branch: "main"
 
+  # Upstream appears to use GitHub releases to indicate that a version is
+  # released and they sometimes re-tag versions before that point, so it's
+  # necessary to check release versions instead of tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0918ccc8e9a45f76e838edfb13bc159450eb4fc6cb6bcd16213df16b13500b22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f39181a658a083e651f60e92fd84b7e65d0cd6b3aaf8e64fad2aca04668fda44"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ffc8b44fdd235f0f5c1aec12e23444d92b5dd7b77695c4367fd2feff74a69a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68404112b471b6d1e2f1879092338bb1561ebb28d819f6d0e5244f8d139a44c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "97a3720ff5f7d6fec1362506320c6bc60ad3ee02bcf24dcea8be92e253618aeb"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ebb842b0d2266545ed22cc2e63fd9d015fda4f7b0d15be9921b3205759a4633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74af6a05f1eb43b4c891e85b9f55c9c7950b5dca6093de9d8363ffa4e03019e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "164e3106f527508298d3f8b9e1e61593752bb8c53d0d4eb513b0db8069e08333"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf76df40c3ec1a891527d73fcff5368c31fce2dfabdf8d3056e3d305448d6af0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f5caaffad48fd69848b2c5479f42bcf10e314412f767e6ab6ae4e5a13b5dad0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "27205f4d2c9eaf90c5c4c5cb6403629b9b3c6625c43da064e6a970d79ed4327d"
+    sha256 cellar: :any_skip_relocation, ventura:        "763aa28e48a43c22bf03dfa6bc216ffd7f955bee58f166bf1c2a51517e98fc5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "93d1c66643aa781e70244c89fc72116fd7a9b24ca6f239877d8e313ba7af5e53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7fc307b6fedf51d116f99d9d060efafc77258ec12903ec9a00ab5e28fcb5a09"
   end
 
   depends_on "go" => :build
