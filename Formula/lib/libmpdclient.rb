@@ -1,8 +1,8 @@
 class Libmpdclient < Formula
   desc "Library for MPD in the C, C++, and Objective-C languages"
   homepage "https:www.musicpd.orglibslibmpdclient"
-  url "https:www.musicpd.orgdownloadlibmpdclient2libmpdclient-2.21.tar.xz"
-  sha256 "286247c2cd5e99dba96ff3d207c3a723347a59be8321116cd30b685e2388d2be"
+  url "https:www.musicpd.orgdownloadlibmpdclient2libmpdclient-2.22.tar.xz"
+  sha256 "eac15b82b5ba5ed0648af580221eb74657394f7fe768e966d9e9ebb27435429f"
   license "BSD-3-Clause"
   head "https:github.comMusicPlayerDaemonlibmpdclient.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Libmpdclient < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f2224e406a3a6036c44a5a86b106adcf21986fd38ef6d8931449ae01652191de"
-    sha256 cellar: :any,                 arm64_ventura:  "ee67efaddcee17ee4e5edd242b003d91fd5fdbbbb028343e42143c189c257e92"
-    sha256 cellar: :any,                 arm64_monterey: "fe3034f298d1e967bac9e8c34788bf4f91a3b4142fc66de7e51943fa19346a2f"
-    sha256 cellar: :any,                 sonoma:         "f935c4b437ece8482f5602a776fe4c187b7686cfe21bc7c292e6588b0fdbea3e"
-    sha256 cellar: :any,                 ventura:        "845d9652dd9ddd348df4a9487f706303bacf60bb0ef481cc3d120400cd449c35"
-    sha256 cellar: :any,                 monterey:       "1e0748370792f6e49b5970822c2ab01fbdcde80411017461984466c8eaa2c9e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9211e42d202349e1bc074a391f132cbc3cef8d0cf93a2e5a406f070176e73b3b"
+    sha256 cellar: :any,                 arm64_sonoma:   "3920adaed9ddbc3361b4f47aa15bd3f3fca316238b22b52ba22df4402f1482f9"
+    sha256 cellar: :any,                 arm64_ventura:  "23c5829dd8a2703925dbb711266cc62892d436bdc05fa2cbbf1dc280fd3e73f5"
+    sha256 cellar: :any,                 arm64_monterey: "076cb8bf82d2ff6a0ed354a09a649526d02fe7c43bab9febb3ec1ad20b6a5281"
+    sha256 cellar: :any,                 sonoma:         "f659f9cc27081184571adaec90ab1ec3e58c6e2f3007ef2df205f4a0d58603c5"
+    sha256 cellar: :any,                 ventura:        "a6888a6f14f59dcfbcd73cf9c9ee915d68480fa03bc8c296896ea03e3214bb53"
+    sha256 cellar: :any,                 monterey:       "d634d83c7d8e29e6d68ee52000160d86bbd83dec4b59084844dd838e77ae9139"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3e56f369d58e7d23eafe3d6d8dcfa0f5eca8daa9c732582f4938ff99abad183"
   end
 
   depends_on "doxygen" => :build

@@ -1,19 +1,19 @@
 class Presenterm < Formula
   desc "Terminal slideshow tool"
   homepage "https:github.commfontaninipresenterm"
-  url "https:github.commfontaninipresentermarchiverefstagsv0.4.0.tar.gz"
-  sha256 "5f82d523d41e4259dc69cdd74ca37bcd93e329980e289f7aed06214bc6f2fb0f"
+  url "https:github.commfontaninipresentermarchiverefstagsv0.4.1.tar.gz"
+  sha256 "7514566a58715967617c681a9222d3d84ba03c15b002adab2ac8775d34ddc575"
   license "BSD-2-Clause"
   head "https:github.commfontaninipresenterm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f341aa8252c5519e91b149e90ffbd423d03f923b1a149b04345313fb02fae511"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4128aa258b716a1b0adca1414dad37519b5fd52c41ae8d5976bc66b92c393143"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fa02e2714242400a89c69ed13a96f34dd418af735cb11c3d52861871b778e71"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c0fc590df2496365a07b0c50347443c68e64ec2065ce072fb073fbbd5c237456"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d8debaab2e62b7d969ec5d21d9a5b879816c8c6581758e3f5668ee5ae99e7f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ecaca0426470f830c80e7b2a7fc0779fd7ed264e520c1165b36902b349810e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "516df8f929316d69c95be022b09f543063d1d2dbe07cdf2242f583b52f2971f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "699d6b4c9a807e0e39c5a95c5595bed0cd0db11ffeb4762d2dd6e986d485a143"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfe672d3974b166097a7c3de9aa1f05b57b35321d2a93cb4923937ea36f33736"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea869ee5dad8a352827a49322b48877705f71e6a28d401451cc205331d29f6bc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6111b37a97c4d42e3e00ccda98ec220b87a32e3b3ac46533bef6d52a0a0e9bb9"
+    sha256 cellar: :any_skip_relocation, ventura:        "82b09f03c2f420cda9cd0452d14e23eea371f5817da065cc9dccf10811448073"
+    sha256 cellar: :any_skip_relocation, monterey:       "19ca66da58f7bcd6545e7396599e80605e0584cc388b329ba2469174951b17de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "482d0a8058626e3a407dd2d02d7b810ad952b06a8774a9d6a426bfadf9bbe706"
   end
 
   depends_on "rust" => :build

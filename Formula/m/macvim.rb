@@ -2,11 +2,20 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https:github.commacvim-devmacvim"
-  url "https:github.commacvim-devmacvimarchiverefstagsrelease-178.tar.gz"
-  version "9.0.1897"
-  sha256 "ec614f8609aa61948e01c8ea57f133e29c9a3f67375dde65747ba537d8a713e6"
   license "Vim"
   head "https:github.commacvim-devmacvim.git", branch: "master"
+
+  stable do
+    url "https:github.commacvim-devmacvimarchiverefstagsrelease-178.tar.gz"
+    version "9.0.1897"
+    sha256 "ec614f8609aa61948e01c8ea57f133e29c9a3f67375dde65747ba537d8a713e6"
+
+    # Backport Python 3.12 fix. Remove in the next release.
+    patch do
+      url "https:github.comvimvimcommitfa145f200966e47e11c403520374d6d37cfd1de7.patch?full_index=1"
+      sha256 "b449dbcb51e6725b5365a12f987ebe1265bdaf1665bbe3bce4566478957d796d"
+    end
+  end
 
   # The stable Git tags use a `release-123` format and it's necessary to check
   # the GitHub release description to identify the Vim version from the
@@ -23,14 +32,13 @@ class Macvim < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "5fe2f1421519b418162f9c80a28043324b00db7f8e4f6be1183f98609500c976"
-    sha256 cellar: :any, arm64_ventura:  "39198d211ef17ef7427dbd3cf5eb17355c74410c0dc3c1f5bebcfd490e4ea899"
-    sha256 cellar: :any, arm64_monterey: "77b14d1113a7cd0623d94688269dbe32a3f9db1b307cfe5d8a5464b4e7233236"
-    sha256 cellar: :any, arm64_big_sur:  "b5d51585a49add837e26d5edb4a635b2272aaa7741d6b052cf8b7299be04f58d"
-    sha256 cellar: :any, sonoma:         "b0081c21d415a56f1ba165ee3f647c3e4776936fe5d7f3ee14d42177b43b126a"
-    sha256 cellar: :any, ventura:        "7bc997af23083f89dc87f4e19fc3fa14cb39b702a5d21ce44cd892c949ad8698"
-    sha256 cellar: :any, monterey:       "6334b9b0857174284f17ab0e59ae4d5c474a7148659bc344233e27273062ae8d"
-    sha256 cellar: :any, big_sur:        "06c134ecd9e882386167e7e2e0f852df420cac357e9f6c25d45668234fc3788b"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "a6fb07ec4d91f956f9d2f63b4dfee6b43e5445471bbd045974ceb727c016ff1e"
+    sha256 cellar: :any, arm64_ventura:  "d81e839c80d4e276efd3c793c60f993da4909e51bd24066a5cc10f382393b366"
+    sha256 cellar: :any, arm64_monterey: "38b9f74342d05c8ac0bdfdeb6a5f0a58cd8bc253cbc162c66d55a3983514e6d4"
+    sha256 cellar: :any, sonoma:         "9642048a7c2efa353e444e82a02d8a9c44a8e5b46dead137c70821d256acd2ba"
+    sha256 cellar: :any, ventura:        "3a4c3713f26d68821c91cb78662797727e58735eef03ed63a6b2d7503bacddb4"
+    sha256 cellar: :any, monterey:       "fa373200374d70dfc84ce37872baaa4a31476ba582691fbe28f17cea9cfc003a"
   end
 
   depends_on "gettext" => :build
@@ -39,7 +47,7 @@ class Macvim < Formula
   depends_on "cscope"
   depends_on "lua"
   depends_on :macos
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "ruby"
 
   conflicts_with "vim", because: "vim and macvim both install vi* binaries"
@@ -92,7 +100,7 @@ class Macvim < Formula
     assert_match "+sodium", output
 
     # Simple test to check if MacVim was linked to Homebrew's Python 3
-    py3_exec_prefix = shell_output(Formula["python@3.11"].opt_libexec"binpython-config --exec-prefix")
+    py3_exec_prefix = shell_output(Formula["python@3.12"].opt_libexec"binpython-config --exec-prefix")
     assert_match py3_exec_prefix.chomp, output
     (testpath"commands.vim").write <<~EOS
       :python3 import vim; vim.current.buffer[0] = 'hello python3'

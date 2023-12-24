@@ -6,15 +6,16 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.19.2v6d-0.19.2.tar.gz"
   sha256 "4cd1841c8715043e744bb45f22a236cada29581d60b8d7e8977bff2db8d32f70"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "30f04b9e1c812d7c39a9ebc91617890b0bfc46b808595e624458efbd66a14cde"
-    sha256                               arm64_ventura:  "6510ad485b88c204c16a6f734c24c406e3c41c253b6bbdd99873fdffc508b65d"
-    sha256                               arm64_monterey: "e6efb43c42fc986eccc5e36f7fee6abb3442c1495cbfeb8d320268ca5aacd05d"
-    sha256                               sonoma:         "df5b4efa9a717c5fd586bac20564f627719f52ab1b8830de6f5b028df630dc2d"
-    sha256                               ventura:        "3e21974e396b9e97ee29abd49d6686a12296fb1d8651b4953a85cab9ca5de82a"
-    sha256                               monterey:       "638006a019bed5ed02d7ace1901c28b0b33676d677b7c15418dbaed8b6e3fabf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e569dd12bf91fa3737b18aa1af9621379ef1201db2698b9b8295d3af22a1ccfa"
+    sha256                               arm64_sonoma:   "b7a6dd9a306b213ceb63b1f853d04af74be9f67d1fd472a1df18b908a66e6608"
+    sha256                               arm64_ventura:  "991fe7e9dc42cf6319886d4c801a9c0103fff8ec4190a1f51c1d00e842c362e0"
+    sha256                               arm64_monterey: "0ea5f363cd307174efbfe02a8a9e41cc73850a5e79b01addb9e08348b7d8c76e"
+    sha256                               sonoma:         "61032519be968d448f6fb401165e1445f1aabb48d55c0cddd4a2c1dbcffba428"
+    sha256                               ventura:        "d1322b8ba91af68bfaf101a31f64e397c75f993f0dd1abb9a056959801360e24"
+    sha256                               monterey:       "376becbaf109be24269102aff53a36501a2889233731bb226050abc57e4a5bdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fc84bc29e58c63002892c94a269b6b22aa8230d04cc5de03e3f6fc0331ba9c3"
   end
 
   depends_on "cmake" => [:build, :test]

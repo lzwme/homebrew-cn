@@ -1,6 +1,6 @@
 cask "vimr" do
-  version "0.45.3,20231219.174252"
-  sha256 "c86a40ddb5838c80e73d54b79ccf535a079ffad5f1a3cd2445c365fc2eec5ea0"
+  version "0.45.5,20231223.144003"
+  sha256 "aa37047d7cd7c427494a026a2bee5a7b887c66fc49995945fb3065a1869e6ba9"
 
   url "https:github.comqvacuavimrreleasesdownloadv#{version.csv.first}-#{version.csv.second}VimR-v#{version.csv.first}.tar.bz2",
       verified: "github.comqvacuavimr"

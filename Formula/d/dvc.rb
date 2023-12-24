@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages05843ec4f20a9c473c632812dabff0636a5fba76796a0e61a3a9cce5abfe4880dvc-3.36.0.tar.gz"
-  sha256 "c32a9cf7b149baf1c2aa0db81d0896d4ae46feb27477d4cf1ab36be393f1626f"
+  url "https:files.pythonhosted.orgpackagesd72c6810082eb751ea50303346aa611ec74f22423e78dc4a62761538014c05dbdvc-3.36.1.tar.gz"
+  sha256 "920bb66da21a8a0eccc805a984c4083beb5f156878f5276492de64e0c9c75b40"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "720b9b52e19511d575aca4b0cbac7fb730a7966015fa36f8f8f7bad643b81c91"
-    sha256 cellar: :any,                 arm64_ventura:  "ce59b9cbe2b8c98bb2f100aed6e9cb6775af1a05a04cdf5799b9e062ba856c90"
-    sha256 cellar: :any,                 arm64_monterey: "df8677353cacd9b3cf8af6823f43b82eedfe9ffc29e802885b71f9adcccfec55"
-    sha256 cellar: :any,                 sonoma:         "0fc9f7c88e374cc87e631f4f48317f123e0d54c7128111ed91436a4d9f242628"
-    sha256 cellar: :any,                 ventura:        "ab14c0939e5e2d204eab6c308e35d61d7f2d5e539290c302971d271e83fde494"
-    sha256 cellar: :any,                 monterey:       "176cf2581ead931d65f1b5ff45fcf2e5517df047104a146837e0e3614171c1ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df665f4a31db57e33932eea750d5fb5eee3237e754b1897dbb5ac86320d69d11"
+    sha256 cellar: :any,                 arm64_sonoma:   "703263e72b45bd1ab8b31c42e5154f1e305e3f996da1fd6c1f204abc7f3ddf25"
+    sha256 cellar: :any,                 arm64_ventura:  "3b7f97d49edb6030537d6365f31d074462a0c1928ca1180e20bd9f088c96dc2e"
+    sha256 cellar: :any,                 arm64_monterey: "70be2f674d14f4adc60691ad30a273c14b6012c0ebed5c2e502e66b9ad61da41"
+    sha256 cellar: :any,                 sonoma:         "a2515ae1dc8b32ae611626f33b8189dd9dd4be67ac565fdcde3e8c1c36809554"
+    sha256 cellar: :any,                 ventura:        "0483d6475a6f8dab121366e779dbb0a186e4046ae996df3031a55b5bec90c5ef"
+    sha256 cellar: :any,                 monterey:       "cfe019a423f62a51f12921901d16c9963f725d1ea6c4d5045873cf0b1bb9d00e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "906dae01c8139d1efbc210343912a93a9ea087b0632ebbb6d66b0fe984a35858"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -43,8 +43,8 @@ class Dvc < Formula
   # correctly reflects the following extra packages in setup.py:
   # gs, s3, azure, oss, ssh, gdrive, webdav (hdfs is provided by apache-arrow)
   resource "adlfs" do
-    url "https:files.pythonhosted.orgpackages2fa204c55c9c64bf37287a6a9c772f5128441337da8918d87ebe2bb9f4f5532cadlfs-2023.10.0.tar.gz"
-    sha256 "f5cf06c5b0074d17d43838d4c434791a98420d9e768b36a1a02c7b3930686543"
+    url "https:files.pythonhosted.orgpackages565091e53e992040026ddd747698564669865718c1ab21b7bfce4791c0fb7b12adlfs-2023.12.0.tar.gz"
+    sha256 "a590694ed9f5a45741e82bff8bcf88c30a790da949310817330b5e7992b8a9e9"
   end
 
   resource "aiobotocore" do
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https:files.pythonhosted.orgpackages46d80c18e252c2f5fe58bd82b5a842d1640fe99ae3c030deda3fdcad7f4a48b3dvc-data-3.2.0.tar.gz"
-    sha256 "de38f3bbf913fd143dbe5b203d4ae9e18ad7c9399dd96187758f8a918c67fc32"
+    url "https:files.pythonhosted.orgpackagescbcbac0b1467270f1f7700adb7f23ef71e6cb78ebe73e4b3c793e37bdb5ca028dvc-data-3.3.0.tar.gz"
+    sha256 "c0c747fbdf238b9ffeebb66f48dd1cd43ab282201599f25642519018f9a2aa86"
   end
 
   resource "dvc-gdrive" do
@@ -578,13 +578,13 @@ class Dvc < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesb7413c8108f79fb7da2d2b17f35744232af4ffcd9e764ebe1e3fd4b26669b325pydantic-2.5.2.tar.gz"
-    sha256 "ff177ba64c6faf73d7afa2e8cad38fd456c0dbe01c9954e71038001cd15a6edd"
+    url "https:files.pythonhosted.orgpackagesaa3f56142232152145ecbee663d70a19a45d078180633321efb3847d2562b490pydantic-2.5.3.tar.gz"
+    sha256 "b3ef57c62535b0941697cce638c08900d87fcb67e29cfa99e8a68f747f393f7a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages6426cffb93fe9c6b5a91c497f37fae14a4b073ecbc47fc36a9979c7aa888b245pydantic_core-2.14.5.tar.gz"
-    sha256 "6d30226dfc816dd0fdf120cae611dd2215117e4f9b124af8c60ab9093b6e8e71"
+    url "https:files.pythonhosted.orgpackagesb27d8304d8471cfe4288f95a3065ebda56f9790d087edc356ad5bd83c89e2d79pydantic_core-2.14.6.tar.gz"
+    sha256 "1fd0c1d395372843fba13a51c28e3bb9d59bd7aebfeb17358ffaaa1e4dbbe948"
   end
 
   resource "pydot" do

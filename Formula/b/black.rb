@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https:black.readthedocs.ioenstable"
-  url "https:files.pythonhosted.orgpackages5a73618bcfd4a4868d52c02ff7136ec60e9d63bc83911d3d8b4998e42acf9557black-23.12.0.tar.gz"
-  sha256 "330a327b422aca0634ecd115985c1c7fd7bdb5b5a2ef8aa9888a82e2ebe9437a"
+  url "https:files.pythonhosted.orgpackagesfdf4a57cde4b60da0e249073009f4a9087e9e0a955deae78d3c2a493208d0c5cblack-23.12.1.tar.gz"
+  sha256 "4ce3ef14ebe8d9509188014d96af1c456a910d5b5cbf434a09fef7e024b3d0d5"
   license "MIT"
   head "https:github.compsfblack.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b1a782502004ad6bd5dbc0f1991148896978811dab7f0bdc6067e4c2c8b620e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a446d3801a02b904dfe0c3d343c2ac7c47ca2bf94fa808226084abd99f7dac3d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af322cc507f7248adcbb024f8415d00f0705753023db60ddfa32de8504b6fbc9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f0e03d3514a22ffde65b4552d4948e7680e7f423a19ddc1af71773fd6e9aea1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "299a02f89c492fa794c710da512256851831ae80aca6f7e0f16959b8cd711a81"
-    sha256 cellar: :any_skip_relocation, monterey:       "a72013e10ef95748570af020d7738778fdbed69e6df0b2a874336c3a29a6cbb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59f03494eb933fedd7878409c7b36ddb4d54dd94fecf0f5fda7122eec96dcec3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4797383f306f6b78ac7e30b848de5a2106ecfa6c86389c6c9e811f934d6356d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9702e9953e169efb40d2ee69703f1393e7612fb646e1b562f53fcaba6949c92b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6551ed4096ef64dbb23c4a93ddfa058515141a71ab4ec3a9df71c7202e6039fb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "af50066ad4cecaea2da3001e64bb7b1cd657fce1118f5c3b73a59ce21d22befd"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b260e6edea7c54ec9891a97f2b9913a8df458bcb71a3559e7592fc3973244fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "53a2d2b6c9db81cd7b6572be6f2d0688ea7ead2d7ea3d826b2774ac006114853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f04499a205d74e6b2190794602326aa3dbd8f95fa45fd24b5948f77e23ccf606"
   end
 
   depends_on "python-attrs"
@@ -42,8 +42,8 @@ class Black < Formula
   end
 
   resource "frozenlist" do
-    url "https:files.pythonhosted.orgpackages8c1f49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22frozenlist-1.4.0.tar.gz"
-    sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
+    url "https:files.pythonhosted.orgpackagescf3d2102257e7acad73efc4a0c306ad3953f68c504c16982bbdfee3ad75d8085frozenlist-1.4.1.tar.gz"
+    sha256 "c037a86e8513059a2613aaba4d817bb90b9d9b6b69aace3ce9c877e8c8ed402b"
   end
 
   resource "multidict" do
