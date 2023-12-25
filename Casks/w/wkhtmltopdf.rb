@@ -12,7 +12,11 @@ cask "wkhtmltopdf" do
 
   pkg "wkhtmltox-#{version}.macos-cocoa.pkg"
 
-  uninstall pkgutil: "org.wkhtmltopdf.wkhtmltox",
+  uninstall script:  {
+              executable: "usrlocalbinuninstall-wkhtmltox",
+              sudo:       true,
+            },
+            pkgutil: "org.wkhtmltopdf.wkhtmltox",
             delete:  [
               "usrlocalbinwkhtmltoimage",
               "usrlocalbinwkhtmltopdf",
@@ -21,11 +25,7 @@ cask "wkhtmltopdf" do
               "usrlocalliblibwkhtmltox.#{version.major}.dylib",
               "usrlocalliblibwkhtmltox.#{version.sub(-.*$, "")}.dylib",
               "usrlocalliblibwkhtmltox.dylib",
-            ],
-            script:  {
-              executable: "usrlocalbinuninstall-wkhtmltox",
-              sudo:       true,
-            }
+            ]
 
   # No zap stanza required
 

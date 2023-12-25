@@ -10,9 +10,9 @@ cask "mu-editor" do
 
   app "Mu Editor.app"
 
-  zap rmdir: "~mu_code",
-      trash: [
+  zap trash: [
         "~LibraryApplication Supportmu",
         "~LibraryLogsmu",
-      ]
+      ],
+      rmdir: "~mu_code"
 end

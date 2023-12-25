@@ -20,12 +20,12 @@ cask "qutebrowser" do
     EOS
   end
 
-  zap rmdir: "~.qutebrowser",
-      trash: [
+  zap trash: [
         "~LibraryApplication Supportqutebrowser",
         "~LibraryCachesqutebrowser",
         "~LibraryPreferencesqutebrowser",
-      ]
+      ],
+      rmdir: "~.qutebrowser"
 
   caveats do
     requires_rosetta

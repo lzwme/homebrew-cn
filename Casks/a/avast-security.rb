@@ -16,16 +16,16 @@ cask "avast-security" do
   # pkg cannot be installed automatically
   installer manual: "Install Avast Security.pkg"
 
-  uninstall script:    {
-              executable:   "ApplicationsAvast.appContentsBackendhubuninstall.sh",
-              must_succeed: false, # A non-0 exit code may be given even if the uninstall succeeds (https:github.comHomebrewhomebrew-caskissues21740#issuecomment-224094946).
-              sudo:         true,
-            },
-            launchctl: [
+  uninstall launchctl: [
               "com.avast.hub",
               "com.avast.hub.schedule",
               "com.avast.hub.xpc",
             ],
+            script:    {
+              executable:   "ApplicationsAvast.appContentsBackendhubuninstall.sh",
+              must_succeed: false, # A non-0 exit code may be given even if the uninstall succeeds (https:github.comHomebrewhomebrew-caskissues21740#issuecomment-224094946).
+              sudo:         true,
+            },
             pkgutil:   [
               "com.avast.AAFM",
               "com.avast.pkg.hub",

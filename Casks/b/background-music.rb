@@ -25,14 +25,14 @@ cask "background-music" do
                    must_succeed: true
   end
 
-  uninstall delete:    [
+  uninstall launchctl: "com.bearisdriving.BGM.XPCHelper",
+            quit:      "com.bearisdriving.BGM.App",
+            pkgutil:   "com.bearisdriving.BGM",
+            delete:    [
               "LibraryApplication SupportBackground Music",
               "LibraryAudioPlug-InsHALBackground Music Device.driver",
               "usrlocallibexecBGMXPCHelper.xpc",
-            ],
-            pkgutil:   "com.bearisdriving.BGM",
-            quit:      "com.bearisdriving.BGM.App",
-            launchctl: "com.bearisdriving.BGM.XPCHelper"
+            ]
 
   zap trash: [
     "LibraryLaunchDaemonscom.bearisdriving.BGM.XPCHelper.plist",

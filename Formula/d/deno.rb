@@ -20,10 +20,10 @@ class Deno < Formula
   depends_on "llvm" => :build
   depends_on "ninja" => :build
   depends_on "protobuf" => :build
-  depends_on "python@3.11" => :build
   depends_on "rust" => :build
   depends_on "sqlite" # needs `sqlite3_unlock_notify`
 
+  uses_from_macos "python" => :build, since: :catalina
   uses_from_macos "libffi"
   uses_from_macos "xz"
   uses_from_macos "zlib"
@@ -101,10 +101,9 @@ class Deno < Formula
       ENV["FORCE_MAC_SDK_MIN"] = MacOS.version
     end
 
-    python3 = "python3.11"
+    python3 = which("python3")
     # env args for building a release build with our python3, ninja and gn
-    ENV.prepend_path "PATH", Formula["python@3.11"].libexec"bin"
-    ENV["PYTHON"] = Formula["python@3.11"].opt_binpython3
+    ENV["PYTHON"] = python3
     ENV["GN"] = buildpath"gnoutgn"
     ENV["NINJA"] = Formula["ninja"].opt_bin"ninja"
     # build rusty_v8 from source

@@ -32,8 +32,8 @@ cask "tunnelblick" do
               "net.tunnelblick.tunnelblick.LaunchAtLogin",
               "net.tunnelblick.tunnelblick.tunnelblickd",
             ],
-            delete:    "LibraryApplication SupportTunnelblick",
-            quit:      "net.tunnelblick.tunnelblick"
+            quit:      "net.tunnelblick.tunnelblick",
+            delete:    "LibraryApplication SupportTunnelblick"
 
   zap trash: [
     "~LibraryApplication SupportTunnelblick",

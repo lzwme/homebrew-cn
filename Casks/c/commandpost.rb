@@ -32,8 +32,8 @@ cask "commandpost" do
   app "CommandPost.app"
   binary "#{appdir}CommandPost.appContentsFrameworkshscmdpost"
 
-  uninstall login_item: "CommandPost",
-            quit:       "org.latenitefilms.CommandPost"
+  uninstall quit:       "org.latenitefilms.CommandPost",
+            login_item: "CommandPost"
 
   zap trash: [
     "~LibraryApplication SupportCommandPost",

@@ -21,13 +21,13 @@ cask "rancher" do
 
   app "Rancher Desktop.app"
 
-  uninstall delete: [
+  uninstall quit:   "io.rancherdesktop.app",
+            delete: [
               "optrancher-desktop",
               "privateetcsudoers.dzzzzz-rancher-desktop-lima", # zzzzz is not a typo
               "privatevarrundocker.sock",
               "privatevarrunrancher-desktop-*",
-            ],
-            quit:   "io.rancherdesktop.app"
+            ]
 
   zap trash: [
     "~.kuberlr",

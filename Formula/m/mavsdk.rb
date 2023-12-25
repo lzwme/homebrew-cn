@@ -24,7 +24,9 @@ class Mavsdk < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  # `future` issue ref: https:github.comPythonCharmerspython-futureissues625
+  # `pymavlink` PR ref to remove `future`: https:github.comArduPilotpymavlinkpull830
+  depends_on "python@3.11" => :build # Python 3.12 blocked by imp usage in `future` used by pymavlink
   depends_on "six" => :build
   depends_on "abseil"
   depends_on "c-ares"

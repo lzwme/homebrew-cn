@@ -9,17 +9,17 @@ cask "opensc" do
 
   pkg "OpenSC #{version}.pkg"
 
-  uninstall script:    {
+  uninstall launchctl: [
+              "org.opensc-project.mac.opensc-notify",
+              "org.opensc-project.mac.pkcs11-register",
+            ],
+            script:    {
               executable: "usrlocalbinopensc-uninstall",
               sudo:       true,
             },
             pkgutil:   [
               "org.opensc-project.mac.opensctoken",
               "org.opensc-project.startup",
-            ],
-            launchctl: [
-              "org.opensc-project.mac.opensc-notify",
-              "org.opensc-project.mac.pkcs11-register",
             ]
 
   zap trash: "~LibrarySaved Application Stateorg.opensc-project.mac.opensctoken.OpenSCTokenApp.savedState"

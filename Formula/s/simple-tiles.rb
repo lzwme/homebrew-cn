@@ -18,7 +18,7 @@ class SimpleTiles < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.11" => :build
+  depends_on "python@3.11" => :build # Python 3.12 PR: https:github.compropublicasimple-tilespull23
   depends_on "cairo"
   depends_on "gdal"
   depends_on "pango"

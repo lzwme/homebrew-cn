@@ -20,13 +20,13 @@ cask "linkliar" do
 
   app "LinkLiar.app"
 
-  uninstall delete:    [
-              "LibraryApplication Supportio.github.halo.linkdaemon",
-              "LibraryApplication SupportLinkLiar",
-            ],
-            launchctl: [
+  uninstall launchctl: [
               "io.github.halo.linkdaemon",
               "io.github.halo.linkhelper",
             ],
-            quit:      "io.github.halo.LinkLiar"
+            quit:      "io.github.halo.LinkLiar",
+            delete:    [
+              "LibraryApplication Supportio.github.halo.linkdaemon",
+              "LibraryApplication SupportLinkLiar",
+            ]
 end

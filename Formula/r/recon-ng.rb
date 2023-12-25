@@ -22,7 +22,7 @@ class ReconNg < Formula
   depends_on "python-certifi"
   depends_on "python-lxml"
   depends_on "python-pytz"
-  depends_on "python@3.11"
+  depends_on "python@3.11" # Python 3.12 issue: https:github.comlanmaster53recon-ngissues193
   depends_on "pyyaml"
   depends_on "six"
 

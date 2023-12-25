@@ -16,8 +16,8 @@ cask "music-manager" do
   # Original discussion: https:github.comHomebrewhomebrew-caskpull4282
   app "MusicManager.app", target: "Music Manager.app"
 
-  uninstall delete: "~LibraryPreferencePanesMusicManager.prefPane",
-            quit:   "com.google.musicmanager"
+  uninstall quit:   "com.google.musicmanager",
+            delete: "~LibraryPreferencePanesMusicManager.prefPane"
 
   zap trash: [
     "~LibraryApplication SupportGoogleMusicManager",
