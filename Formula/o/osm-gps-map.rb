@@ -8,6 +8,8 @@ class OsmGpsMap < Formula
     url "https:github.comnzjrsosm-gps-mapreleasesdownload1.2.0osm-gps-map-1.2.0.tar.gz"
     sha256 "ddec11449f37b5dffb4bca134d024623897c6140af1f9981a8acc512dbf6a7a5"
 
+    depends_on "libsoup@2"
+
     patch do
       url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
@@ -31,6 +33,7 @@ class OsmGpsMap < Formula
     depends_on "automake" => :build
     depends_on "gtk-doc" => :build
     depends_on "libtool" => :build
+    depends_on "libsoup"
   end
 
   depends_on "gobject-introspection" => :build
@@ -38,7 +41,6 @@ class OsmGpsMap < Formula
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "libsoup@2" # libsoup 3 issue: https:github.comnzjrsosm-gps-mapissues96
 
   def install
     configure = build.head? ? ".autogen.sh" : ".configure"

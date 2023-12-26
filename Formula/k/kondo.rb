@@ -6,13 +6,14 @@ class Kondo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d193e9552a2f573b09eaf4d01a5156e2c51743301e1167e2cb94198065308902"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c437e2001ec06e983777a5d1a726fa826475068a64faa58fb33c22dde2ba4561"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9747f6e3a6be8560fb90620b53a3f4c2b317a4b1d60b2901c21ff2d4e587dcf6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc5db45fc7fe4211dcedbdf3932dab94e2a36498c8c7c45311da8385bad4ebb3"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f379b8636e86b1c7642f462d553bf838628eb1d77801dcb178b867dee20db53"
-    sha256 cellar: :any_skip_relocation, monterey:       "0057841619926663972886da4c68941b6e34f70ad6423a37ceb51ede52abb7f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04abab847cf7122c2671cc58ee1fed28c2ec51531584304e97e9e996ef786e23"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef1a8de9ec5ee7d8099bee48808e2472f8f7c328771b356961d1e3d901e247ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bbcb5abe74d2fb632d317a608adde42f9bbf59bec13eb3895f19811d6169ff3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b919fa810c7d632db59ab6b58757794eefae749feb39707fe7051d6bd95922ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b0410e25e8402df9f2eb72277ac60caa2c9ae253b78f24cfb2a4e95ef977c259"
+    sha256 cellar: :any_skip_relocation, ventura:        "805778bce56c10cd81b39677875a74313f518f88afe139a809113ec63f761f58"
+    sha256 cellar: :any_skip_relocation, monterey:       "d62701b1f0dc9b3fcf5c7b54fedf7d2a42fab755c26370ebc3be1426e7abb616"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4127563df7eadb5c588ca4a1d32795acf107ebc693fe225cd5d7f201caba636"
   end
 
   depends_on "rust" => :build
@@ -22,6 +23,7 @@ class Kondo < Formula
     cd "kondo" do
       system "cargo", "install", *std_cargo_args
     end
+    generate_completions_from_executable(bin"kondo", "--completions")
   end
 
   test do
