@@ -1,19 +1,19 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https:github.comdanobiprr"
-  url "https:github.comdanobiprrarchiverefstagsv0.12.0.tar.gz"
-  sha256 "7a7ad312422e696d830ca217048ba106a7964690d5b25d06420afd85116b6c28"
+  url "https:github.comdanobiprrarchiverefstagsv0.13.0.tar.gz"
+  sha256 "e4c2c4c5bbbeefc21b41c7da9b3db67c365569da557cd85dd6cce29038021104"
   license "GPL-2.0-only"
   head "https:github.comdanobiprr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5313f1596a48c4183c058eea0892bb355a3a29acf6e3e510ceb7db5fa838c2c9"
-    sha256 cellar: :any,                 arm64_ventura:  "69b31dba52170a3d15e0d9d97e0569e8c9141fdc9ecc531b9cb37ea7dc4522ef"
-    sha256 cellar: :any,                 arm64_monterey: "6ffc3e81ba63fdd9d66f1f98ed2c66fd0099dede3327ef2145e95211ef61efce"
-    sha256 cellar: :any,                 sonoma:         "57fe1a2f7fbba5c1a7f0fac35f11904af4091108abe0ab75d250f1b650cc7e5c"
-    sha256 cellar: :any,                 ventura:        "f18faa4e2798eb884e7404c2eea2ec777e4228cb1f414717337645690d94661c"
-    sha256 cellar: :any,                 monterey:       "7a0dfecbec41475d941973f90141ebb8388b1f725200f3572c8a85e10c45e72c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f266830a3283a16285d233fff4661e64db28be8565957a5e1e4386de6b1e282"
+    sha256 cellar: :any,                 arm64_sonoma:   "7a3b320707ab8f123995c729413df14bd6bd6803aa2e8a29d5d2d1d5b67408f6"
+    sha256 cellar: :any,                 arm64_ventura:  "bcb185709a0eee28385be357c1113d9ad3049ae032e40f5bae6476af007ed191"
+    sha256 cellar: :any,                 arm64_monterey: "ff80a2c1c57e1a78989fac745527b8480b35bdf7f3f953443b43deac4a717d53"
+    sha256 cellar: :any,                 sonoma:         "ca4fd2cbb70c59746042afedcec12f81f42c98e58a4b4b653fb5a1d21e77b17e"
+    sha256 cellar: :any,                 ventura:        "64b8a6b8ec7ba547087cccdc0981aed5b47a7568893a90c42a6e147ae7794f6c"
+    sha256 cellar: :any,                 monterey:       "9cfed40e0b2871a94de1b5b0cdd1cc40dc9cb526be55b9de334da641ddefc4dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c054a089c9da05393c1ad5ee7dc3b6d8b56d62553dfc5e499b78bae65d6f0388"
   end
 
   depends_on "pkg-config" => :build

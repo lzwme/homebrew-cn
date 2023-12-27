@@ -3,18 +3,18 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/74/a4/364724cf4bde0915d038d6505b64d43e6fd92277503969b554baaf8670b9/hatch-1.9.0.tar.gz"
-  sha256 "e1e6a511e152ec7cd4dbabc4f4f6a1874870bd49c97d17d390b9232dda685ce3"
+  url "https://files.pythonhosted.org/packages/79/fb/b0d0d7d3b0674f73e9b0b3b935600b11ebab70e62e50874e85c7a986b79c/hatch-1.9.1.tar.gz"
+  sha256 "77462d9f1fd3c161ebaa7afc51f62b3f1392375e1d3a0cd23dba4cd996bd1cec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11c56da83afea99eedb3fa12c9c9cd1da35304f214bde6f947f8a6fe92f91ab6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc98a4b1d60f7494b86acc6008b69cc4fff0539674f3a7287d9a9ff42a6c3084"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4293cceaa5022f92acec4dd93da8170c881ef30f812f60ce397d6ab2bb8ceda"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8cddb5348c46c105853902182e0c8f66997bfbb8f84fc10b536de2659fc32362"
-    sha256 cellar: :any_skip_relocation, ventura:        "970faa98698f93b6287d56f1b9a1d7d5143c6722f06578de12c600bddee35383"
-    sha256 cellar: :any_skip_relocation, monterey:       "e37e3d97eb0ed26c8d8f563bfbb1b84aaede1858d83a6eaf5af14dbeb86a3336"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b214383ba05aa3d4796bff95af17ef51c136cba99309fa63857964468a1f38c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ed49a199c7e3c49533dfb7dc01282c933b65029e940e0bde2e90f0e59a6930a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f32f92bafb71d320757091b3e9f07d579a6babfc8a124e55cd2431e18c29e432"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bf052f8d54f2bd0d4d47bde0fcd0e67e7154d8878493739a643968787c99fe8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e691322ca8cc2720e12aa98edb2b986fe048526bd25373a368189fdb1fc47e4f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1a486ba746c69bdae246fc8cb70615a0683138691133cd0f5f49cede3c645043"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac6a6da1353d14419b75e93e3a8f568f930acb60f4fbf7db7f84cb096a2f0516"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c406c9db4b0ddb1f1f488219140c8acb63bfe33e15571fbdd3397bb7567ae7ab"
   end
 
   depends_on "keyring"
@@ -47,8 +47,8 @@ class Hatch < Formula
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/8c/23/911d93a022979d3ea295f659fbe7edb07b3f4561a477e83b3a6d0e0c914e/httpx-0.25.2.tar.gz"
-    sha256 "8b8fcaa0c8ea7b05edd69a094e63a2094c4efcb48129fb757361bc423c0ad9e8"
+    url "https://files.pythonhosted.org/packages/bd/26/2dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06/httpx-0.26.0.tar.gz"
+    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
   end
 
   resource "hyperlink" do

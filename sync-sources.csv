@@ -3736,7 +3736,7 @@ Homebrew-homebrew-core/Formula/lib/libxls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxlsxwriter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxmi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml++.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libxml++3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libxml++@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml++@4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml++@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml2.rb, Homebrew/homebrew-core, 1
@@ -6161,6 +6161,7 @@ Homebrew-homebrew-core/Formula/t/testssl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tetra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texapp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texi2html.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/texi2mdoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texinfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texlab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texlive.rb, Homebrew/homebrew-core, 1
@@ -9569,6 +9570,7 @@ Homebrew-homebrew-cask/Casks/o/oka-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/okta-advanced-server-access.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/old-school-runescape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/olive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/ollama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/omegat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omnidazzle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omnidb.rb, Homebrew/homebrew-cask, 1
@@ -10596,6 +10598,7 @@ Homebrew-homebrew-cask/Casks/s/storyboarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/strawberry-wallpaper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/streammusic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stremio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stretchly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stringsfile.rb, Homebrew/homebrew-cask, 0

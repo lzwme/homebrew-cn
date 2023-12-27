@@ -8,13 +8,14 @@ class Dvc < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "703263e72b45bd1ab8b31c42e5154f1e305e3f996da1fd6c1f204abc7f3ddf25"
-    sha256 cellar: :any,                 arm64_ventura:  "3b7f97d49edb6030537d6365f31d074462a0c1928ca1180e20bd9f088c96dc2e"
-    sha256 cellar: :any,                 arm64_monterey: "70be2f674d14f4adc60691ad30a273c14b6012c0ebed5c2e502e66b9ad61da41"
-    sha256 cellar: :any,                 sonoma:         "a2515ae1dc8b32ae611626f33b8189dd9dd4be67ac565fdcde3e8c1c36809554"
-    sha256 cellar: :any,                 ventura:        "0483d6475a6f8dab121366e779dbb0a186e4046ae996df3031a55b5bec90c5ef"
-    sha256 cellar: :any,                 monterey:       "cfe019a423f62a51f12921901d16c9963f725d1ea6c4d5045873cf0b1bb9d00e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "906dae01c8139d1efbc210343912a93a9ea087b0632ebbb6d66b0fe984a35858"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "37637b1c4a1cccea8353f99d92cb61ac7eb267d0334aeb103ec0faa647f2e92b"
+    sha256 cellar: :any,                 arm64_ventura:  "b3d464b14a8bf09bef07af4c5ac0220354efd29df22a1bbc6201a17224e5c8b2"
+    sha256 cellar: :any,                 arm64_monterey: "eba5e4da60db2f939ca227e422643fad999f34e765fad7f50d9475fe15aa986b"
+    sha256 cellar: :any,                 sonoma:         "182a870acdab1e4e19090f736be59854af5d091595cc6fa5abdcd64f47a47a09"
+    sha256 cellar: :any,                 ventura:        "b90ca0b220ca326f53dfd5f51c63142c21a3ebffe4a9dba8b3231d47d25b6d77"
+    sha256 cellar: :any,                 monterey:       "98d4c24b0a57a8320a81699177e93b63001b543c09a6e2c1bc7fc292c3ece82c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4985d4e732c65d6028eaedd9652418dd609f70f7c21fb0813d046cb6201ffd47"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -35,7 +36,7 @@ class Dvc < Formula
   depends_on "python-pyparsing"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

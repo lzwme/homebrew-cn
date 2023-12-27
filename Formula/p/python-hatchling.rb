@@ -1,18 +1,18 @@
 class PythonHatchling < Formula
   desc "Modern, extensible Python build backend"
   homepage "https:github.compypahatchtreemasterbackend"
-  url "https:files.pythonhosted.orgpackages0dee2afbbb1e8e17a792e83e894e35e4a151dff121aa841ebdbe92f4b51779fehatchling-1.20.0.tar.gz"
-  sha256 "0e0893cbe3d5f9275fc0e5b629087fc23b17abd7065e4db0a310e0a0237bc945"
+  url "https:files.pythonhosted.orgpackagesfd4a8196e79c0d6e5eb10436dd2fcccc889a76af6ecf9bc35f87408159497d4dhatchling-1.21.0.tar.gz"
+  sha256 "5c086772357a50723b825fd5da5278ac7e3697cdf7797d07541a6c90b6ff754c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f330053f9362172a357e7b994386aec6f84d9b8dd1c601d73996f7f6a34a85d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8aabd077cc71d421107b0a480f0d2a7f7fe7796e20fc0600a91a5fc37bd0294"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f71fa4909b206ec93e8b7fcdedeb9289bf54c664cc9c39ec7cf9e3fa822ec50e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "48f3fc48116d3b42aabc4e091a073490a7275d60dff1626154f0c2bdb7d9fa59"
-    sha256 cellar: :any_skip_relocation, ventura:        "1fd09251532c35008b324ca4437f67ba62cf8fd9f4b34da989bca28640c53f7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "e86a766a0e2c1193f50916d1fa333e3151eb175eb1ed82316072fe7b5ac37f5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d1f711b14a20ad32a4195506871fc0a073c0d6f313e0ec3f532186664386d0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e79f1a78b3d9f6d7814edbe5140fcb53bb9076bdc7b15cd89d4131e8b16d4183"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36f35fa8ed3ea9075ff3d195f07a5a44d985bc4eb57e34d76c5ea1599d4a887e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44de9ab53cb29aef26197c2d61d6b845813e25869d1f0c3534bb409820ee2d8d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "652b620d635b8aa3c5280b112c60ec4d47f578a4e09215c48f9238a1d6b4e09a"
+    sha256 cellar: :any_skip_relocation, ventura:        "06ac5463be01f286c47969dc69bbfe481291e8eb085e7dc206dac8410dd46b00"
+    sha256 cellar: :any_skip_relocation, monterey:       "1750d678b19280556b2a5c0b24728c8a891f41bbfeafbbef8ade3869853f9a6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9110811d88d09b7534a15e6a0e937f43b3ed36a5823aa2f8c54ba7082409790"
   end
 
   depends_on "python-flit-core" => :build

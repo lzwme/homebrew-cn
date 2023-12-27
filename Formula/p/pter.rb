@@ -3,18 +3,18 @@ class Pter < Formula
 
   desc "Your console and graphical UI to manage your todo.txt file(s)"
   homepage "https://vonshednob.cc/pter/"
-  url "https://files.pythonhosted.org/packages/c7/bd/d5b3ad7de8a35931fe7eb3ccd171d6e8704b127dbf0e826c49754400772c/pter-3.11.4.tar.gz"
-  sha256 "4a417ee4ed52392ce5bd743d5c6e0233ebbac06af617b6eb9fb49b1ef290450f"
+  url "https://files.pythonhosted.org/packages/50/b5/316afd6d72266535f854b5e9de3d62e8e14d1989259a7003520b2cf341ed/pter-3.12.0.tar.gz"
+  sha256 "933550d5e4cff8b63509fcbd7e9499c607ebdb9571a0a1d9a5805356bdb7b7fc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db85fa8152dc67dc6d292461151a9a9496a8b394f5ccd30def58c749fc9e51c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac67b82975ec5226d2974f7ae782b20b1419d3245caa871f9c0a1c1e7c5cc6bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26b442ee9577d7fa42868ecb4ef2eaef52cae0961c53042e4d9669ae4616468d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "584145bae1e2196b11d191203e83df92b0eb75d56788490b765a93de0910fb08"
-    sha256 cellar: :any_skip_relocation, ventura:        "58ff793cb6100cba5e3ade71197bead2c921f85b20961ed92e2a80c4c9257236"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6410a0cec4e7dd36cde0c5be98a83997c6f808855c5b948037932fd2a7acf7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3813f3ed8972283a95d4e86e40fe110162bd3a2c006d727f5f47facab83f1273"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43abe511cdec6f5e91e82ec2005a91ccf9e0e2be3c9fad622bd288aa76c32bec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7a76138493bed1fed390c612644c2bb3b5f46144626a70a9f81643fb01b62d1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0bb60401a6083a099057cc99cd2cf66a490aaf626003f768b24bd26153735b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6cdb8afc583d113a479ee7518d7d34f91ff80c50311ff1829f534d77c8807315"
+    sha256 cellar: :any_skip_relocation, ventura:        "f6cc90d3a759924a87279653e3af71fb78af1f2bac720846e7a8b49bf3f7585a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f14f7c1b0f170a3974f5bb375152d525953bdda591e8c83c1e435679e4fdb0cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ff2a517c16367d798a10da7fb0e5953599c9e491e62ec01a9a88a1291f86dd9"
   end
 
   depends_on "python@3.12"

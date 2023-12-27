@@ -3,11 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https:pytorch.org"
-  url "https:github.compytorchpytorch.git",
-      tag:      "v2.1.0",
-      revision: "7bcf7da3a268b435777fe87c7794c382f444e86d"
+  url "https:github.compytorchpytorchreleasesdownloadv2.1.2pytorch-v2.1.2.tar.gz"
+  sha256 "85effbcce037bffa290aea775c9a4bad5f769cb229583450c40055501ee1acd7"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -15,14 +13,13 @@ class Pytorch < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "1e04904eefe2362abf5bb2a7b268bc918c7e15644fc44e484f52dab5e9bc7265"
-    sha256 cellar: :any,                 arm64_ventura:  "596151cc5e64e57b03fe2a25305a302bf421e9b128fce82e45731a637c2c54d3"
-    sha256 cellar: :any,                 arm64_monterey: "91650359defe1da8775fc260b3e481214a46b3b7ec79efab32f97a314ea95e91"
-    sha256 cellar: :any,                 sonoma:         "4db1789590deeb347ffb1bcea8bb36e0d9049437b0fb48fffc28855724cbe0c1"
-    sha256 cellar: :any,                 ventura:        "6175ae382a2dad45844a60081670cb2569d8ec7f26dfba57062ce3e084e2d1d3"
-    sha256 cellar: :any,                 monterey:       "3b8654206fcf0872831f73e84911e22f8b297a8be12ea59b5ca7586ac5828ee0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16355062ead50b480b29ec1db4d4cccce737beb7a0ec807c2e44d497e740ef19"
+    sha256 cellar: :any,                 arm64_sonoma:   "3b79d89656fc777cfa460fbd40b09a2ddfe21b640e4303a94b1b24827cd83e59"
+    sha256 cellar: :any,                 arm64_ventura:  "3129d0ce0efd548db5ab330c2a1289d8e0f7cd4fd271b43601a487e283775ded"
+    sha256 cellar: :any,                 arm64_monterey: "954d33258bc02d4c2372aa4c870ed3de605e3040ebaa3fbd86079ca0548f4811"
+    sha256 cellar: :any,                 sonoma:         "b3ce62639d92a479e0ad7f19d3624a049dfafb292a58bdee7122ba65ae4d871a"
+    sha256 cellar: :any,                 ventura:        "7c54cdba347cdb15dcee5abada6b68065160f6a8c19a8f23052957dc1619222e"
+    sha256 cellar: :any,                 monterey:       "7bb1edf65c33f0642855e26a017d0d98e7c71655b92eccc79838536f12d9ed1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8812cf061f0ec26410ae3ddf592734e0a0672fbc324d0748e65025559c6a9630"
   end
 
   depends_on "cmake" => :build
@@ -42,6 +39,7 @@ class Pytorch < Formula
   depends_on "python-sympy"
   depends_on "python-typing-extensions"
   depends_on "pyyaml"
+  depends_on "sleef"
 
   on_macos do
     depends_on "libomp"
@@ -55,45 +53,37 @@ class Pytorch < Formula
   end
 
   def install
-    python_exe = Formula["python@3.11"].opt_libexec"binpython"
-    args = %W[
-      -GNinja
-      -DBLAS=OpenBLAS
-      -DBUILD_CUSTOM_PROTOBUF=OFF
-      -DBUILD_PYTHON=ON
-      -DCMAKE_CXX_COMPILER=#{ENV.cxx}
-      -DCMAKE_C_COMPILER=#{ENV.cc}
-      -DPYTHON_EXECUTABLE=#{python_exe}
-      -DUSE_CUDA=OFF
-      -DUSE_DISTRIBUTED=ON
-      -DUSE_METAL=OFF
-      -DUSE_MKLDNN=OFF
-      -DUSE_NNPACK=OFF
-      -DUSE_OPENMP=ON
-      -DUSE_SYSTEM_EIGEN_INSTALL=ON
-      -DUSE_SYSTEM_PYBIND11=ON
-    ]
-    args << "-DUSE_MPS=ON" if OS.mac?
+    python3 = "python3.11"
 
-    ENV["LDFLAGS"] = "-L#{buildpath}buildlib"
-
-    # Update references to shared libraries
-    inreplace "torch__init__.py" do |s|
-      s.sub!(here = os.path.abspath\(__file__\), "here = \"#{lib}\"")
-      s.sub!("get_file_path('torch', 'bin', 'torch_shm_manager')", "\"#{bin}torch_shm_manager\"")
-    end
-
-    inreplace "torchutilscpp_extension.py", "_TORCH_PATH = os.path.dirname(os.path.dirname(_HERE))",
-                                              "_TORCH_PATH = \"#{opt_prefix}\""
-
-    system "cmake", "-B", "build", "-S", ".", *std_cmake_args, *args
+    ENV["ATEN_NO_TEST"] = "ON"
+    ENV["BLAS"] = "OpenBLAS"
+    ENV["BUILD_CUSTOM_PROTOBUF"] = "OFF"
+    ENV["BUILD_PYTHON"] = "ON"
+    ENV["BUILD_TEST"] = "OFF"
+    ENV["PYTHON_EXECUTABLE"] = which(python3)
+    ENV["USE_CUDA"] = "OFF"
+    ENV["USE_DISTRIBUTED"] = "ON"
+    ENV["USE_METAL"] = "OFF"
+    ENV["USE_MKLDNN"] = "OFF"
+    ENV["USE_NNPACK"] = "OFF"
+    ENV["USE_OPENMP"] = "ON"
+    ENV["USE_SYSTEM_EIGEN_INSTALL"] = "ON"
+    ENV["USE_SYSTEM_PYBIND11"] = "ON"
+    ENV["USE_SYSTEM_SLEEF"] = "ON"
+    ENV["USE_MPS"] = "ON" if OS.mac?
 
     # Avoid references to Homebrew shims
-    inreplace "buildcaffe2coremacros.h", Superenv.shims_pathENV.cxx, ENV.cxx
+    inreplace "caffe2coremacros.h.in", "${CMAKE_CXX_COMPILER}", ENV.cxx
 
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install_and_link(buildpath, build_isolation: false)
+
+    # Expose C++ API
+    torch = libexecLanguage::Python.site_packages(python3)"torch"
+    include.install_symlink (torch"include").children
+    lib.install_symlink (torch"lib").children
+    (share"cmake").install_symlink (torch"sharecmake").children
   end
 
   test do

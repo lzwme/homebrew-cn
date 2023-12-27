@@ -1,10 +1,9 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.7.1.tar.gz"
-  sha256 "7e3811e6024db0698bfbc321bb324572446b8853d01b4073f09865957b0cab98"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.8.tar.gz"
+  sha256 "1d7dc4d0f2bbcc2a871bb954ff4a5df63048dea9c16f5f1e9bc8260fa41a1004"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -13,14 +12,13 @@ class Vice < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "39c8dc172e0dfc304fb76849778079cee5f4389857388d1a5585cb9d9622d110"
-    sha256 arm64_ventura:  "d2ccbb52caaaeaf1d09809fe69bfa78486b5b197fd5aaf3f95b43822880e9436"
-    sha256 arm64_monterey: "7a6ecdee0102c7804a5a936a4a6576039dfb966499c44a3e73be7d142b79a515"
-    sha256 sonoma:         "4180e55847f87f0b2e7d4fd9b5ff6d97b2a7e117f817e3edbf7b2f8f7d70f376"
-    sha256 ventura:        "f1fa4037f0688150acba2a8e6f546817d530dfab0f24fb16744f2b8181ed22c5"
-    sha256 monterey:       "0cbd22236550ec4d35246a355bd1c88d06d43abaa14c39c554172d08ea80c55a"
-    sha256 x86_64_linux:   "745e3282856808e1fc623dafd4a324e797661d7af6940081994e56cd22afd3d4"
+    sha256 arm64_sonoma:   "163a28f5f228bda4494e240c888a18f33d9fc92a45999d65431c91d196bb4279"
+    sha256 arm64_ventura:  "649950d292263d4acd2003e830bcc8d5f53d570f71ae9b9c1d15b0ee17e95ed1"
+    sha256 arm64_monterey: "f1ae86341d60851431b2500e01047610456dee0d4f5173ad0e44b921dd143859"
+    sha256 sonoma:         "1399cd7f168537868340913dc9daf51dc45f9f936ed17b19e7552ef05c165e6e"
+    sha256 ventura:        "11775c1d4596bde29837c632e6bcb6f0746d93461bedded7d25f81f2e52aadfa"
+    sha256 monterey:       "7e31e99728c4aa15570848d3da0839f8b3af34c654dc2bbb24a864fb49a0a0c3"
+    sha256 x86_64_linux:   "56cbe974416e6d4e257df439151d9fa8a4594e3a305df4aff2a42c10239472ef"
   end
 
   depends_on "autoconf" => :build
@@ -45,6 +43,7 @@ class Vice < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "curl"
 
   on_linux do
     depends_on "alsa-lib"
