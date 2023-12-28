@@ -1,28 +1,36 @@
 class TelegramDownloader < Formula
   desc "Telegram Messenger downloadertools written in Golang"
-  homepage "https:github.comiyeartdl"
-  url "https:github.comiyeartdlarchiverefstagsv0.13.3.tar.gz"
-  sha256 "f92356bbc29a98bdcbd5bf2ae9c71280cf9d3a577ef0ca3f490a4cbc22739078"
+  homepage "https:docs.iyear.metdl"
+  url "https:github.comiyeartdlarchiverefstagsv0.14.0.tar.gz"
+  sha256 "80d58805d8c138280a40fbaaa3b3c5e07503c33b67da61fc4bd1523416d6dd2f"
   license "AGPL-3.0-only"
+  head "https:github.comiyeartdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "124d737f12b58c4756de599b304d12320fc03dd7738c8282c4f747034b674c78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cdb258291ec324e6cf0d2478b62b794bf7e8785c8408b32ff33aa745bcb7673"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24706030227e9e9de6bbea2802cace1f40878a9e466d3fe6660b65a6b7e15daf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7eea9c37909b139848191f1a62be0fe611fb114b8887c0bc7908e1d88865fe43"
-    sha256 cellar: :any_skip_relocation, ventura:        "e75981ad46043b0d3f152f4d06f3ac4bca5df29a0235de674d66a76ce3062b7c"
-    sha256 cellar: :any_skip_relocation, monterey:       "cce939b3b124015b0b9d86da0da26477fb2f7e78e76b48b4d18bb5facf0bcf95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7598f5b5398b8094f6ceaa5d460a2b17c87049d36b4d12f4afacfd9d59ec2ae3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c461ef91081d47e53ce80159bede206d4d576ae895fef668313aa68087a3554"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dddbf523dd803c84a2370a0b596acbcb841aef46a44f8b52af1a602944f988f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c43dc03d5b8952c8827035ad1c6a3a50f8c729b9146e7ca506326872cd25c949"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dcdc5c9b2e608e1408f0b27567ea35d45182ccee5813470318260c6335bb6d32"
+    sha256 cellar: :any_skip_relocation, ventura:        "962603c407c97a8b493d59a10d0bb2b58128a3090c863f9e8ed3ac2e370bd063"
+    sha256 cellar: :any_skip_relocation, monterey:       "560817f2ddc2f7b19f8496768d66dd36e2f1863faabcf839939d5b7d61ad62f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe2bebf45604feb5e77db2ce2996edcd0977ae756e105bb2781f42f664323eae"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tdl")
+    ldflags = %W[
+      -s -w
+      -X github.comiyeartdlpkgconsts.Version=#{version}
+      -X github.comiyeartdlpkgconsts.Commit=#{tap.user}
+      -X github.comiyeartdlpkgconsts.CommitDate=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"tdl")
   end
 
   test do
-    assert_match "# ID of dialog", shell_output("#{bin}tdl chat ls -f -")
+    assert_match version.to_s, shell_output("#{bin}tdl version")
+
     assert_match "not authorized. please login first", shell_output("#{bin}tdl chat ls -n _test", 1)
   end
 end

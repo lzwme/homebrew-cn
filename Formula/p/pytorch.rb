@@ -45,8 +45,6 @@ class Pytorch < Formula
     depends_on "libomp"
   end
 
-  conflicts_with "fmt", because: "both install `includefmtargs.h` headers"
-
   resource "opt-einsum" do
     url "https:files.pythonhosted.orgpackages7dbf9257e53a0e7715bc1127e15063e831f076723c6cd60985333a1c18878fb8opt_einsum-3.3.0.tar.gz"
     sha256 "59f6475f77bbc37dcf7cd748519c0ec60722e91e63ca114e68821c0c54a46549"

@@ -20,7 +20,7 @@ class Hyperscan < Formula
   # Only supports x86 instructions and will fail to build on ARM.
   # See https:github.comintelhyperscanissues197
   depends_on arch: :x86_64
-  depends_on "pcre"
+  depends_on "pcre" # PCRE2 issue: https:github.comintelhyperscanissues397
 
   uses_from_macos "python" => :build
 

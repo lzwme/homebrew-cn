@@ -2381,7 +2381,7 @@ Homebrew-homebrew-core/Formula/g/gsar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsasl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsettings-desktop-schemas.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gsmartcontrol.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gsmartcontrol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gsoap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gspell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gssdp.rb, Homebrew/homebrew-core, 0
@@ -8346,6 +8346,7 @@ Homebrew-homebrew-cask/Casks/g/geany.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gearboy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gearsystem.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/geburtstagschecker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/geekbench-ml.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geekbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geektool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gemini.rb, Homebrew/homebrew-cask, 0
@@ -9869,7 +9870,6 @@ Homebrew-homebrew-cask/Casks/p/polypane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/polyphone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomatez.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pomello.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pomodone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomotodo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomotroid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pongsaver.rb, Homebrew/homebrew-cask, 0
@@ -10214,6 +10214,7 @@ Homebrew-homebrew-cask/Casks/r/roonbridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rosaimagewriter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rotato.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rotki.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/roundpie.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/routeconverter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/routine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rowanj-gitx.rb, Homebrew/homebrew-cask, 1

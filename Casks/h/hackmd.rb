@@ -4,6 +4,7 @@ cask "hackmd" do
 
   url "https:github.comhackmdiohackmd-desktopreleasesdownloadv#{version}HackMD-#{version}.dmg"
   name "HackMD"
+  desc "Desktop Software for HackMD Note-Taking and Collaboration"
   homepage "https:github.comhackmdiohackmd-desktop"
 
   app "HackMD.app"

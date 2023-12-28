@@ -25,7 +25,7 @@ class Fastfec < Formula
     # Use Homebrew PCRE on Linux when upstream resolves
     #   https:github.comziglangzigissues14111
     # Don't forget to update the `install` method.
-    depends_on "pcre"
+    depends_on "pcre" # PCRE2 issue: https:github.comwashingtonpostFastFECissues57
   end
 
   resource "homebrew-13360" do
