@@ -15,6 +15,12 @@ class Macvim < Formula
       url "https:github.comvimvimcommitfa145f200966e47e11c403520374d6d37cfd1de7.patch?full_index=1"
       sha256 "b449dbcb51e6725b5365a12f987ebe1265bdaf1665bbe3bce4566478957d796d"
     end
+
+    # Backport Sonoma tabs fix. Remove in the next release.
+    patch do
+      url "https:github.commacvim-devmacvimcommite9167c29dbf3dd5bb80b48c6425c7b20301a8d44.patch?full_index=1"
+      sha256 "cdeff4ea17bd3f67022f17b78d6ccf9bc8a90b4b1a18b721bd3f65103bfef04e"
+    end
   end
 
   # The stable Git tags use a `release-123` format and it's necessary to check
@@ -32,13 +38,13 @@ class Macvim < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "a6fb07ec4d91f956f9d2f63b4dfee6b43e5445471bbd045974ceb727c016ff1e"
-    sha256 cellar: :any, arm64_ventura:  "d81e839c80d4e276efd3c793c60f993da4909e51bd24066a5cc10f382393b366"
-    sha256 cellar: :any, arm64_monterey: "38b9f74342d05c8ac0bdfdeb6a5f0a58cd8bc253cbc162c66d55a3983514e6d4"
-    sha256 cellar: :any, sonoma:         "9642048a7c2efa353e444e82a02d8a9c44a8e5b46dead137c70821d256acd2ba"
-    sha256 cellar: :any, ventura:        "3a4c3713f26d68821c91cb78662797727e58735eef03ed63a6b2d7503bacddb4"
-    sha256 cellar: :any, monterey:       "fa373200374d70dfc84ce37872baaa4a31476ba582691fbe28f17cea9cfc003a"
+    rebuild 2
+    sha256 cellar: :any, arm64_sonoma:   "fda1a97a800cb89b911022b87b90b3fe6380f69f8b2b1b12d0baa9a2abe9a814"
+    sha256 cellar: :any, arm64_ventura:  "0f6d8a14b823222f1b03a433bb909c661089ca395731102e6ce3ae9018b57a72"
+    sha256 cellar: :any, arm64_monterey: "a6ef419c1ce029e7b6ab1de1d32ebcd4051631770ab828a059539955edd21ddc"
+    sha256 cellar: :any, sonoma:         "b4e67cdcf670acb517aadfeefd58ead3c7d0d0e35593d19439320eed7ca217eb"
+    sha256 cellar: :any, ventura:        "e1d5098b6cf716b96232ef23846da9d0685e5600a19a664dcff63c0cca90b6b2"
+    sha256 cellar: :any, monterey:       "b2b5d66fb9821b41d978faba09af9f663c19182c074a627dfd6165117cd8c96a"
   end
 
   depends_on "gettext" => :build

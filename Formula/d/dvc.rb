@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackagesd72c6810082eb751ea50303346aa611ec74f22423e78dc4a62761538014c05dbdvc-3.36.1.tar.gz"
-  sha256 "920bb66da21a8a0eccc805a984c4083beb5f156878f5276492de64e0c9c75b40"
+  url "https:files.pythonhosted.orgpackagesc4227534eaaba68f3529d2aa6bf4c6d38aa37c7a6ea9f8c53b245f4bad9ba99cdvc-3.37.0.tar.gz"
+  sha256 "080bc9acf7f49f571cd4e9c739055a15d1042ca8573fd9c79577012dddebdd46"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "37637b1c4a1cccea8353f99d92cb61ac7eb267d0334aeb103ec0faa647f2e92b"
-    sha256 cellar: :any,                 arm64_ventura:  "b3d464b14a8bf09bef07af4c5ac0220354efd29df22a1bbc6201a17224e5c8b2"
-    sha256 cellar: :any,                 arm64_monterey: "eba5e4da60db2f939ca227e422643fad999f34e765fad7f50d9475fe15aa986b"
-    sha256 cellar: :any,                 sonoma:         "182a870acdab1e4e19090f736be59854af5d091595cc6fa5abdcd64f47a47a09"
-    sha256 cellar: :any,                 ventura:        "b90ca0b220ca326f53dfd5f51c63142c21a3ebffe4a9dba8b3231d47d25b6d77"
-    sha256 cellar: :any,                 monterey:       "98d4c24b0a57a8320a81699177e93b63001b543c09a6e2c1bc7fc292c3ece82c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4985d4e732c65d6028eaedd9652418dd609f70f7c21fb0813d046cb6201ffd47"
+    sha256 cellar: :any,                 arm64_sonoma:   "f4e036e19873429084b8fe35d99767dd2a1bdf5f975bbbf6586d3ac0900b2bef"
+    sha256 cellar: :any,                 arm64_ventura:  "f99a1916fc4081a595041c253828473f5372d7df02310088005b3332da6be934"
+    sha256 cellar: :any,                 arm64_monterey: "5193fb10bd6ccdf0d59e89d0ebd233bea95a4e0e0f4046b349ed6ed113820ce7"
+    sha256 cellar: :any,                 sonoma:         "54476465b143f722226b2d32cea0faebf44daaf7ca37a37f91e26294f3ce2233"
+    sha256 cellar: :any,                 ventura:        "5c684275983db1a77dfa2fe3e60ff59ffeb5a59eba206a7bea412a94aac7328b"
+    sha256 cellar: :any,                 monterey:       "22725be236070b59cf82a20f2e6f2487bfdf925f5736408d0134cd2aa4494d82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8ef4a47ae5d5f90b6ce75472ebc0aaa6cc1a548eeec0ac8ad295c561174ac1b"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -229,8 +228,8 @@ class Dvc < Formula
   end
 
   resource "distro" do
-    url "https:files.pythonhosted.orgpackages4b89eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398distro-1.8.0.tar.gz"
-    sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
+    url "https:files.pythonhosted.orgpackagesfcf898eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "dpath" do
@@ -249,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dvc-data" do
-    url "https:files.pythonhosted.orgpackagescbcbac0b1467270f1f7700adb7f23ef71e6cb78ebe73e4b3c793e37bdb5ca028dvc-data-3.3.0.tar.gz"
-    sha256 "c0c747fbdf238b9ffeebb66f48dd1cd43ab282201599f25642519018f9a2aa86"
+    url "https:files.pythonhosted.orgpackages3b3602b4134d9404d5205ac8ce972fee66f14995a0e7dd32670ef4c878a81626dvc-data-3.5.0.tar.gz"
+    sha256 "0a3c7da7a16f0d0964785f3dc1700e7cec2bfb4d067fb5b14042470a7ae3ed4c"
   end
 
   resource "dvc-gdrive" do
@@ -314,8 +313,8 @@ class Dvc < Formula
   end
 
   resource "dvc-webhdfs" do
-    url "https:files.pythonhosted.orgpackages177d707b095c5fb58e06f417191a0bf6e66f1ed8df2bd9342e0cb947bf753de3dvc-webhdfs-3.0.0.tar.gz"
-    sha256 "a9541b6438c441e943c712231e944efebde6a823e1315ce75a477414f677ccc9"
+    url "https:files.pythonhosted.orgpackages36f5249f881b2e035d6c7362733986b5545fa8c88fed451972be5d0fedae5fabdvc-webhdfs-3.1.0.tar.gz"
+    sha256 "6e894843d15ce766a05c616deda9d9bc361248e93bf9ea338b996e6e51ea0fea"
   end
 
   resource "entrypoints" do
@@ -574,8 +573,8 @@ class Dvc < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages1a72acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025bpycryptodome-3.19.0.tar.gz"
-    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
+    url "https:files.pythonhosted.orgpackagesb13842a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151pycryptodome-3.19.1.tar.gz"
+    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
   end
 
   resource "pydantic" do

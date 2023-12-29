@@ -1,13 +1,13 @@
 class Classads < Formula
   desc "Classified Advertisements (used by HTCondor Central Manager)"
-  homepage "https://research.cs.wisc.edu/htcondor/classad/"
-  url "https://ftp.cs.wisc.edu/condor/classad/c++/classads-1.0.10.tar.gz"
+  homepage "https:research.cs.wisc.eduhtcondorclassad"
+  url "https:ftp.cs.wisc.educondorclassadc++classads-1.0.10.tar.gz"
   sha256 "cde2fe23962abb6bc99d8fc5a5cbf88f87e449b63c6bca991d783afb4691efb3"
   license "Apache-2.0"
 
   livecheck do
     url :homepage
-    regex(/href=.*?classads[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?classads[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -24,7 +24,8 @@ class Classads < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "21874caebbec12fa4ee41c6f4830146dc725dfec2658b8c08eb02dc7d2585583"
   end
 
-  depends_on "pcre"
+  # PCRE2 commit ref: https:github.comhtcondorhtcondorcommitb7d84f79384dec9c500611afed87d71d77148176
+  depends_on "pcre" # PCRE2 needs new release. Upstream fix in HTCondor requires new CMake build system.
 
   on_macos do
     depends_on "autoconf" => :build
@@ -33,22 +34,22 @@ class Classads < Formula
   end
 
   # Allow compilation on ARM, where finite() is not available.
-  # Reported by email on 2022-11-10
+  # Different fix upstream: https:github.comhtcondorhtcondorcommitae841558fcffa4cad12f019975292ad27b917f47
   patch :DATA
 
   def install
     # Run autoreconf on macOS to rebuild configure script so that it doesn't try
     # to build with a flat namespace.
     system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
-    system "./configure", "--enable-namespace", "--prefix=#{prefix}"
+    system ".configure", "--enable-namespace", "--prefix=#{prefix}"
     system "make", "install"
   end
 end
 
 __END__
-diff -pur classads-1.0.10/util.cpp classads-1.0.10-new/util.cpp
---- classads-1.0.10/util.cpp	2011-04-09 01:36:36
-+++ classads-1.0.10-new/util.cpp	2022-11-10 11:16:47
+diff -pur classads-1.0.10util.cpp classads-1.0.10-newutil.cpp
+--- classads-1.0.10util.cpp	2011-04-09 01:36:36
++++ classads-1.0.10-newutil.cpp	2022-11-10 11:16:47
 @@ -430,7 +430,7 @@ int classad_isinf(double x) 
  #endif
  int classad_isinf(double x) 

@@ -867,7 +867,7 @@ Homebrew-homebrew-core/Formula/c/clang-format@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clash.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/claws-mail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clazy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clblas.rb, Homebrew/homebrew-core, 1
@@ -9600,6 +9600,7 @@ Homebrew-homebrew-cask/Casks/o/openbb-terminal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openbci.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openconnect-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencore-patcher.rb, Homebrew/homebrew-cask, 1

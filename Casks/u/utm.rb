@@ -6,7 +6,7 @@ cask "utm" do
       verified: "github.comutmappUTM"
   name "UTM"
   desc "Virtual machines UI using QEMU"
-  homepage "https:getutm.app"
+  homepage "https:mac.getutm.app"
 
   livecheck do
     url :url

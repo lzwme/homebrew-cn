@@ -18,6 +18,9 @@ cask "godot-mono" do
   depends_on macos: ">= :sierra"
 
   app "Godot_mono.app"
+  binary "#{appdir}Godot_mono.appContentsMacOSGodot", target: "godot-mono"
+
+  uninstall quit: "org.godotengine.godot"
 
   zap trash: [
     "~LibraryApplication SupportGodot",
