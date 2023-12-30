@@ -22,17 +22,10 @@ class Tfproviderlint < Formula
     ldflags = %W[
       -s -w
       -X github.combfladtfproviderlintversion.Version=#{version}
+      -X github.combfladtfproviderlintversion.VersionPrerelease=#{build.head? ? "dev" : ""}
     ]
 
-    ldflags << if build.head?
-      "-X github.combfladtfproviderlintversion.VersionPrerelease=dev"
-    else
-      "-X github.combfladtfproviderlintversion.VersionPrerelease="
-    end
-
-    output = libexec"bintfproviderlint"
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "), output: output), ".cmdtfproviderlint"
-    (bin"tfproviderlint").write_env_script(output, PATH: "$PATH:#{Formula["go@1.17"].opt_bin}")
+    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtfproviderlint"
   end
 
   test do

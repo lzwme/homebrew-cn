@@ -675,6 +675,7 @@ Homebrew-homebrew-core/Formula/c/cargo-docset.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-edit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-generate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-instruments.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-llvm-cov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-llvm-lines.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-nextest.rb, Homebrew/homebrew-core, 1
@@ -4817,6 +4818,7 @@ Homebrew-homebrew-core/Formula/p/pipgrip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pipx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pius.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pivit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixiewps.rb, Homebrew/homebrew-core, 1
@@ -6353,7 +6355,7 @@ Homebrew-homebrew-core/Formula/t/tvnamer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/twarc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tweak.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twemcache.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/twine-pypi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/twine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/twm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/two-lame.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/twoping.rb, Homebrew/homebrew-core, 1
@@ -6622,6 +6624,7 @@ Homebrew-homebrew-core/Formula/w/wasm-micro-runtime.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/w/wasm-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasm3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wasmedge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watch-sim.rb, Homebrew/homebrew-core, 1
@@ -8927,7 +8930,6 @@ Homebrew-homebrew-cask/Casks/l/lbry.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/league-displays.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/league-of-legends.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leanote.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/l/leap-motion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lectrote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/ledger-live.rb, Homebrew/homebrew-cask, 0
@@ -8955,6 +8957,7 @@ Homebrew-homebrew-cask/Casks/l/licensed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/liclipse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lidarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lifesize.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lightburn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lightform.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightgallery.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lighting.rb, Homebrew/homebrew-cask, 1

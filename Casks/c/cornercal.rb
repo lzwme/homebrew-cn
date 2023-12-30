@@ -4,6 +4,7 @@ cask "cornercal" do
 
   url "https:github.comekreutzCornerCalblobv#{version}buildsCornerCal.zip?raw=true"
   name "CornerCal"
+  desc "Clock app"
   homepage "https:github.comekreutzCornerCal"
 
   depends_on macos: ">= :sierra"

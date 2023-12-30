@@ -1,18 +1,18 @@
 class Apprise < Formula
   desc "Send notifications from the command-line to popular notification services"
   homepage "https://pypi.org/project/apprise/"
-  url "https://files.pythonhosted.org/packages/9c/24/24356d021be60b63c96248a2202153932bfa6c6dee6c29a36e86e9cd7c78/apprise-1.7.0.tar.gz"
-  sha256 "d8d5710d3c952586c2cfadf7ce9ea0fe60b80eca93946497e3ef18f3cc0eec19"
+  url "https://files.pythonhosted.org/packages/25/0c/519f0c8ca5d236c0a863fa9427937e013a0f9d534f8163ea1b69e9774b15/apprise-1.7.1.tar.gz"
+  sha256 "8d439d08550470524425dedee4bc8a72766c216c218f3772c37404eb2fd86e5a"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "542aedba4a2b821a3858dac045509dd78b57e84f3424b6ff8debdab1c70803ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50a9bb5a400e75c7dd95684615430dd12e88f91ef71ece40023dc42a40bda9e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38f522daba2d292610f52a3667dd2344c1e5ace1dda5b451a5ece2b5644bed44"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80d81e4fd4efd5cb1e25c4168a082ddac33181dec477bb0d19808b86601057dc"
-    sha256 cellar: :any_skip_relocation, ventura:        "490254a63a25fb1c7f0b8f5c269a1e671e8ab06972c0481d1dc70d1cb061a0a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "cdcdb26064bf85e7f0ed64964de3adcaa51e8d339cb30f62c2d5392608d58cdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "068b3cf33308da33238c0324bb5b488566065f7e83e35c55f8946b9b1e15d6d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69274bcb4fafe866025cf0b8e446f8ed4ef23f67157870e1c0dbfaf0e4b5734a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c12a7afaff520c1304d4a93f88fa3bce81643734f91030f8002c446d1afcf80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f45ad5011e78e997ff7482746156adf4f8efb81465de336a5449bfebc30b9b96"
+    sha256 cellar: :any_skip_relocation, sonoma:         "021286181d537fc2eb4c3ae3bec67edbe6cdfa21186159cdf990cbbc8fd8b132"
+    sha256 cellar: :any_skip_relocation, ventura:        "582d989ee8ddd9cd231e8da735c0cad7840d2de5501b07a5acf1b87ececb74c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4ed5e2b0e7ff0ed2ed9485cb79e996234f1a36b6e54898a804b4ac7ced7cdb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c5d00522d9fe5b52a45e44ab5fa76cdfc4eca1b1a093b8b0c29fff55a9f6b65"
   end
 
   depends_on "python-setuptools" => :build

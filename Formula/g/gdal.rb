@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https:github.comOSGeogdalreleasesdownloadv3.8.2gdal-3.8.2.tar.gz"
   sha256 "e914690d2694671d75bab15b451a42c2f115d7267a5b600eb361e94b58a089d6"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -11,13 +12,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "dab684f2b6ae1eb7d96983985f6da54b2f166fa0e91ddc1f7ef9b96fa53eefb7"
-    sha256 arm64_ventura:  "5c2fade1d50277541f5aaea9f21d2feebb129ee703eaa34992cae56fd4d98d72"
-    sha256 arm64_monterey: "8caa2eadcc51320edd06ff35e1444015d198b316e16acf9f692ca3e2a2da7ced"
-    sha256 sonoma:         "034e0557eb82e9e90adcbadb925d918f41e90c44d5bc39d9481a7f770fc8dab4"
-    sha256 ventura:        "198e171dc5aff5b8802cdcdf6432dea87a8165d8c24af3ec6ab0c37370b7acea"
-    sha256 monterey:       "4d5b586bf6c60454eea9fd52d433aa614d27abe25ae20ed5fe82b9c3447855ed"
-    sha256 x86_64_linux:   "6faa74e48f7b84ac009ca3eaf619edfcf4425f9d703d712d3521d45f77235a2c"
+    sha256 arm64_sonoma:   "e2dc8fd062eff839c879fd205acfb27568eb13d0cc8804110028f6cfa83e7a82"
+    sha256 arm64_ventura:  "1dc579fe8bd03d20758c22f54a5ae0c9c10efc4cfd53c699925d027bead43c3f"
+    sha256 arm64_monterey: "94e0319c94a09a533617f1555adfd9ee8ad76795d956638e98df7a012c43696a"
+    sha256 sonoma:         "f67a73432471149e88121cb7bf8cb9bf75014720b346023002d64d2eb501734e"
+    sha256 ventura:        "7298e241cf8476a7a6d15f5c58b37a17b40448c88ed699744d84801566384cbf"
+    sha256 monterey:       "49ec5ad62d89e26ed88d9413d8f54864f40ae91712a070ffb238506a5109c763"
+    sha256 x86_64_linux:   "ea590003df5a20d85d02635b54e262ce57b34bc3ae3c4e07c19c2d9bc5a1f329"
   end
 
   head do
@@ -28,6 +29,7 @@ class Gdal < Formula
   depends_on "boost" => :build # for `libkml`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "apache-arrow"
   depends_on "cfitsio"

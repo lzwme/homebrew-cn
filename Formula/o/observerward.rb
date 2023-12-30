@@ -1,18 +1,18 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
   homepage "https:0x727.github.ioObserverWard"
-  url "https:github.com0x727ObserverWardarchiverefstagsv2023.12.28.tar.gz"
-  sha256 "0f18ba047f6d560c82933aa4a2590a9768c784df4fd7f3203679407d9b4fb225"
+  url "https:github.com0x727ObserverWardarchiverefstagsv2023.12.29.tar.gz"
+  sha256 "93424f86535c0f08e301f5ea273cb512b5dcc8d17dfb4958a8d95bd48d086ac3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8089c9048e0053586bfa4dc0e3135cb1e1a335eaff8ad5009f138a22dd9ccd46"
-    sha256 cellar: :any,                 arm64_ventura:  "2a4f844f38a393d672ccc5af9be3966828fd23ad521d4ac5fb10aba8971c463a"
-    sha256 cellar: :any,                 arm64_monterey: "642b708ebadeafd1839648a2ca699a87dbec48fc50996b5552c43d46bbdf5a52"
-    sha256 cellar: :any,                 sonoma:         "a3b2e97effb238c9deab2d28a1994ccbc42bea008f2b96c282eefb2342825ca4"
-    sha256 cellar: :any,                 ventura:        "e31b51c2aa3aba5eff1bc4f2fa97182faf085da1025ca7f123b4a5489131e8f5"
-    sha256 cellar: :any,                 monterey:       "95ac38667003299d1c8f0d5516655d188d91fd58a75e1f343a776dff882cb349"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fa3784d4c2e92f6052d1312a03fb43b65a5bb2a44ff96e654a38366428e29c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "0792f237f58013bbbe1d701a775952dc15db5a5608f1e4db8ae795ba4e3a5f88"
+    sha256 cellar: :any,                 arm64_ventura:  "02def2b06d63005c8e0d3d2ddb7f8bccbe4e83953e99efccb7e5bfeeaca6a4df"
+    sha256 cellar: :any,                 arm64_monterey: "263a4a59f7a06388ecd85d2e0188ee34a797e2743a99ef1863fa4bc4908ee811"
+    sha256 cellar: :any,                 sonoma:         "13900b8ada8800d08df85263b8b69f9c1270c9cdec362bc583a5deb08eb24795"
+    sha256 cellar: :any,                 ventura:        "604720470ccae835f412ae2484530ae3c2663d4c981694e905877a7cd48e8054"
+    sha256 cellar: :any,                 monterey:       "fe9eb3552dbeb72ec36b66173f75e524cb2632239c07307a69f7f22232e30cf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6e06ce094716d2af99892e306df0e517e586de875e63cf498580c9e9e6dcc0a"
   end
 
   depends_on "rust" => :build

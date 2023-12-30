@@ -5,6 +5,7 @@ cask "docker-toolbox" do
   url "https:github.comdockertoolboxreleasesdownloadv#{version}DockerToolbox-#{version}.pkg",
       verified: "github.comdockertoolbox"
   name "Docker Toolbox"
+  desc "Install Docker, Docker Machine, Docker Compose, and Kitematic"
   homepage "https:www.docker.comproductsdocker-toolbox"
 
   deprecate! date: "2023-12-17", because: :discontinued

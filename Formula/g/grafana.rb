@@ -17,7 +17,7 @@ class Grafana < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node@18" => :build # TODO: Update node once https:github.comgrafanagrafanapull76097 is in release
+  depends_on "node" => :build
   depends_on "yarn" => :build
 
   uses_from_macos "zlib"

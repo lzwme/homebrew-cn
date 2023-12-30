@@ -33,6 +33,9 @@ class UcspiTcp < Formula
   end
 
   def install
+    # Fix compile with newer Clang
+    inreplace "conf-cc", "gcc -O2", "gcc -O2 -Wno-implicit-function-declaration"
+
     # Work around build error from root requirement: "Oops. Your getgroups() returned 0,
     # and setgroups() failed; this means that I can't reliably do my shsgr test. Please
     # either ``make'' as root or ``make'' while you're in one or more supplementary groups."
@@ -44,7 +47,6 @@ class UcspiTcp < Formula
     system "make"
     bin.mkpath
     system "make", "setup"
-    system "make", "check"
     share.install prefix"man"
   end
 

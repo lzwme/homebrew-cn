@@ -4,6 +4,7 @@ cask "epoch-flip-clock" do
 
   url "https:github.comchrstphrknwtnepoch-flip-clock-screensaverreleasesdownload#{version}Epoch.Flip.Clock.#{version}.saver.zip"
   name "Epoch Flip Clock Screensaver"
+  desc "Flip clock screensaver"
   homepage "https:github.comchrstphrknwtnepoch-flip-clock-screensaver"
 
   screen_saver "Epoch Flip Clock.saver"
