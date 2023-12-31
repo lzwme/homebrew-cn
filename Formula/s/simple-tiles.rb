@@ -18,15 +18,24 @@ class SimpleTiles < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
-  depends_on "python@3.11" => :build # Python 3.12 PR: https:github.compropublicasimple-tilespull23
   depends_on "cairo"
   depends_on "gdal"
   depends_on "pango"
+  uses_from_macos "python" => :build
+
+  # Update waf for python 3.12
+  # Use resource instead of patch since applying corrupts waf
+  # https:github.compropublicasimple-tilespull23
+  resource "waf" do
+    url "https:raw.githubusercontent.compropublicasimple-tilese402d6463f6afefd96a2e2d5ce630d909ba96af1waf"
+    sha256 "dcec3e179f9c33a66544f1b3d7d91f20f6373530510fa6a858cddb6bfdcde14b"
+  end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@3.11"].libexec"bin"
-    system ".waf", "configure", "--prefix=#{prefix}"
-    system "make", "install"
+    python3 = "python3"
+    buildpath.install resource("waf")
+    system python3, ".waf", "configure", "--prefix=#{prefix}"
+    system python3, ".waf", "install"
   end
 
   test do

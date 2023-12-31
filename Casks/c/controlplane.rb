@@ -5,12 +5,11 @@ cask "controlplane" do
   url "https:github.comdustinrueControlPlanereleasesdownload#{version}ControlPlane-#{version}.dmg",
       verified: "github.comdustinrueControlPlane"
   name "ControlPlane"
+  desc "Context-sensitive application launcher"
   homepage "https:www.controlplaneapp.com"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
+  # app crash and homepage is gone
+  deprecate! date: "2023-12-29", because: :discontinued
 
   app "ControlPlane.app"
 

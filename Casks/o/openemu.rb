@@ -8,8 +8,8 @@ cask "openemu" do
     end
   end
   on_mojave :or_newer do
-    version "2.3.3"
-    sha256 "a732c538287c99774ce939f840952d6713ac204e2a81baa760b1d4ef9cca1a73"
+    version "2.4.1"
+    sha256 "521ca1305c012d38f6f907f50399fefbf4e45a9bb8d9d4063157ffca78b217d4"
   end
 
   url "https:github.comOpenEmuOpenEmureleasesdownloadv#{version}OpenEmu_#{version}.zip",

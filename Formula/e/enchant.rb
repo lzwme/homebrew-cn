@@ -19,11 +19,12 @@ class Enchant < Formula
   depends_on "aspell"
   depends_on "glib"
 
-  on_system :linux, macos: :ventura_or_newer do
-    depends_on "groff" => :build
-  end
+  uses_from_macos "mandoc" => :build
 
   def install
+    # mandoc is only available since Ventura, but groff is available for older macOS
+    inreplace "srcMakefile.in", "groff ", "mandoc " if !OS.mac? || MacOS.version >= :ventura
+
     system ".configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-relocatable"
