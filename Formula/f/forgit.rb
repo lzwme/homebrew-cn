@@ -1,12 +1,12 @@
 class Forgit < Formula
   desc "Interactive git commands in the terminal"
   homepage "https:github.comwfxrforgit"
-  url "https:github.comwfxrforgitreleasesdownload23.09.0forgit-23.09.0.tar.gz"
-  sha256 "258c3211542933c11f7b7f521d4a2ab79dda35580627ef7083195d3bbce0a4b2"
+  url "https:github.comwfxrforgitreleasesdownload24.01.0forgit-24.01.0.tar.gz"
+  sha256 "29acc9133ba4b418f4addbabefbd451ad0b5c87e8136b90bba00d82eb35967fa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3ff2f5456050d6a95d28c71fb93247d71553620fdfe3dec197777f119cb91d82"
+    sha256 cellar: :any_skip_relocation, all: "100b7822325507a6fdd604ce49ed15f2631f1447bcbc526a4f5cc92ad4d33ea7"
   end
 
   depends_on "fzf"

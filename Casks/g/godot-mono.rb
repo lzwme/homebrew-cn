@@ -18,7 +18,16 @@ cask "godot-mono" do
   depends_on macos: ">= :sierra"
 
   app "Godot_mono.app"
-  binary "#{appdir}Godot_mono.appContentsMacOSGodot", target: "godot-mono"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}godot-mono.wrapper.sh"
+  binary shimscript, target: "godot-mono"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!binbash
+      '#{appdir}Godot_mono.appContentsMacOSGodot' "$@"
+    EOS
+  end
 
   uninstall quit: "org.godotengine.godot"
 

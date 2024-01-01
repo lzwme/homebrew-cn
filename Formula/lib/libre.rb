@@ -1,18 +1,18 @@
 class Libre < Formula
   desc "Toolkit library for asynchronous network IO with protocol stacks"
   homepage "https:github.combaresipre"
-  url "https:github.combaresiprearchiverefstagsv3.7.0.tar.gz"
-  sha256 "fc92c60d2f624d56abe440ac8dc234958ab0ca04216608da7e07a66c73ea51d5"
+  url "https:github.combaresiprearchiverefstagsv3.8.0.tar.gz"
+  sha256 "93bcfc71abed724e1d185a24d37fa88f6f8c6597ad11e72d1d251a00ce0abe85"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b25ccdef25fb5aa71f9ed1082943a5e5dc482436901d42b81ce100fedee66f74"
-    sha256 cellar: :any,                 arm64_ventura:  "2b9e5e47bef8b77df678bbc1ab31dc579788b415de04f045249f92214dc1103d"
-    sha256 cellar: :any,                 arm64_monterey: "65e5fdc9875bc390ac63688d95ad2ca6db2cbedf10fa1cf563a2767d08ff5ac8"
-    sha256 cellar: :any,                 sonoma:         "5fc2d7f086c1191d4a75fbfe3446c145952b707c8f988a08f05a8964a81058cb"
-    sha256 cellar: :any,                 ventura:        "671d7a1e7aceac92a80a7a514463c958a0d8c25101410a43f14d3e06dd50b06c"
-    sha256 cellar: :any,                 monterey:       "783fb581226dd99fe88fa2e5e79373a516840ed8920e9ebffc3a777321887a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a5c3e2a9fc4e795e9c2d7018122f95a290aaf87e53c0e7f6901e0768bdac1bb"
+    sha256 cellar: :any,                 arm64_sonoma:   "4b538146761999554efe1308aac5c3f124df86c4c6134623f6be338c6111264f"
+    sha256 cellar: :any,                 arm64_ventura:  "4415d2704cb63d4bb41b8fd05300ec453bdba0305d0a7e12cbf457c8895ed277"
+    sha256 cellar: :any,                 arm64_monterey: "e6924c8643442e25b359fd2223699d185252782487f41110b4aba3157a37b86c"
+    sha256 cellar: :any,                 sonoma:         "fa67b69e9a9954f9e9a92d564bc2a0e5a437fddc1ca62a20c7587610944fbc61"
+    sha256 cellar: :any,                 ventura:        "f1802c1638a3a9dfcf29b374d51a49cf749fe2f1aacc35b5253a2dc87e916fbd"
+    sha256 cellar: :any,                 monterey:       "d28c6a48c088d919d7d8d4a91263bd2ef1633b9a4b1af53d5c973466c48a22a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35e902cfdea9cc72de7e513c0646958502196c649850f523d3bd7a6cbaf3bd81"
   end
 
   depends_on "cmake" => :build

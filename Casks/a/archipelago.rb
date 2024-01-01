@@ -7,7 +7,7 @@ cask "archipelago" do
   desc "Terminal emulator built on web technology"
   homepage "https:github.comnpezza93archipelago"
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :sonoma"
 
   app "Archipelago.app"
 

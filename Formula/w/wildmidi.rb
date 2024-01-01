@@ -1,6 +1,6 @@
 class Wildmidi < Formula
   desc "Simple software midi player"
-  homepage "https:www.mindwerks.netprojectswildmidi"
+  homepage "https:github.comMindwerkswildmidi"
   url "https:github.comMindwerkswildmidiarchiverefstagswildmidi-0.4.5.tar.gz"
   sha256 "116c0f31d349eaa74a630ed5a9a17b6a351204877a4ed9fb9aacd9dbd7f6c874"
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
