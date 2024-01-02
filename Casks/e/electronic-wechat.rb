@@ -4,9 +4,11 @@ cask "electronic-wechat" do
 
   url "https:github.comgeeeeeeeeekelectronic-wechatreleasesdownloadV#{version}mac-osx.tar.gz"
   name "Electronic WeChat"
+  desc "WeChat Client"
   homepage "https:github.comgeeeeeeeeekelectronic-wechat"
 
-  deprecate! date: "2023-12-17", because: :discontinued
+  # https:github.comgeeeeeeeeekelectronic-wechatissues693
+  disable! date: "2024-01-01", because: :discontinued
 
   app "Electronic WeChat-darwin-x64Electronic WeChat.app"
 

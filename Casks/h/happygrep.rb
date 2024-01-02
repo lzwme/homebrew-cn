@@ -4,7 +4,13 @@ cask "happygrep" do
 
   url "https:github.comhappypeterhappygrepreleasesdownloadv#{version}happygrep.zip"
   name "happygrep"
+  desc "Command-line search"
   homepage "https:github.comhappypeterhappygrep"
 
+  # no releases in the past 10 years, it also reference libncursesw.5
+  disable! date: "2024-01-01", because: :unmaintained
+
   binary "happygrep"
+
+  # No zap stanza required
 end

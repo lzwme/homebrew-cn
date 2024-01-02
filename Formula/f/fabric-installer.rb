@@ -9,7 +9,13 @@ class FabricInstaller < Formula
   # to create download links, so we check the related JSON data for versions.
   livecheck do
     url "https://meta.fabricmc.net/v2/versions/installer"
-    regex(/["']url["']:\s*["'][^"']*?fabric-installer[._-]v?(\d+(?:\.\d+)+)\.jar/i)
+    strategy :json do |json|
+      json.map do |release|
+        next if release["stable"] != true
+
+        release["version"]
+      end
+    end
   end
 
   bottle do

@@ -4,7 +4,7 @@ class Pypy < Formula
   url "https:downloads.python.orgpypypypy2.7-v7.3.14-src.tar.bz2"
   sha256 "e096fe67ce2d8d4d5e7dceb84fe1ca854498f00766d31b27d32c8d8833131373"
   license "MIT"
-  head "https:foss.heptapod.netpypypypy", using: :hg
+  head "https:github.compypypypy.git", branch: "main"
 
   livecheck do
     url "https:downloads.python.orgpypy"

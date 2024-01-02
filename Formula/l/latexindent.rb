@@ -1,18 +1,18 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https:latexindentpl.readthedocs.io"
-  url "https:github.comcmhugheslatexindent.plarchiverefstagsV3.23.4.tar.gz"
-  sha256 "da12f343b4be311eb3eee5b844a661c561e278c2c862ce7bc168d03b6b1541b1"
+  url "https:github.comcmhugheslatexindent.plarchiverefstagsV3.23.5.tar.gz"
+  sha256 "2e4b113aadee25e40c4672e1458294a7f3111e1593e3483681409ce5bbb947e5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e984e3fa7afe6cb3d2e10007fa3f84cceed5e7b57fe150f43ce533840ba1b9e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d05abe499abb296eb2893887df00edab83c1aba7b70ed89155f03fcd923ec531"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f46554c8725b2d6baf3513e9cb9ea7f46f4c4166f7e42383036e7bd49514633c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "736b94832986939489c6ca9c6685362156aad328ae0aa65565b0d44795667fb8"
-    sha256 cellar: :any_skip_relocation, ventura:        "4d4164330993d19b4cb167ac2e4cd9181ed99a2d0d3d27c4f11d0389b42d5815"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa67e4cc2b939a2a8aae83a1b4793b963e053bc589973988fb08f33a87317b24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a58812428826cb3ef178db245d546cb197d03fa8bf130430a52675cfd0d7c00e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25aeb3f49ac06caf768ae1ecfab59eac0beeb89a182127fb3652f7728ad58e89"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ef9f1ffa9e0301978ecfe4fde0f2774869ce03c48b69d70517e294e7252fbb8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29fd4648fb447efbd80361c520eaf6299db8db2178064a2f8df4241c54dd5edc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f0b9ea45173fc47082363a8ffa6d237667e7f5ecd6f8e2593d7bdb714297819f"
+    sha256 cellar: :any_skip_relocation, ventura:        "51feca7295c280c8a419f5e9bada0411b323063723402a8bbc834ff71d526009"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a1d3c3cfc95029a50908ac73f0b893d2086ceda34f7d31a5dcde4c5a9a896ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0211ce3a1de9d35ea46794659728668a3274832cba015265073b75ce22f81551"
   end
 
   depends_on "perl"

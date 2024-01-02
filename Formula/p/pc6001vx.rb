@@ -36,6 +36,9 @@ class Pc6001vx < Formula
   end
 
   test do
+    # locales aren't set correctly within the testing environment
+    ENV["LC_ALL"] = "en_US.UTF-8"
+    ENV["LANG"] = "en_US.UTF-8"
     user_config_dir = testpath".pc6001vx4"
     user_config_dir.mkpath
     pid = fork do

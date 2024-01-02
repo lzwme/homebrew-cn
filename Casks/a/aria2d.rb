@@ -1,19 +1,16 @@
 cask "aria2d" do
-  version "1.3.8"
-  sha256 "f541b792ed813fa38ec72a87f42e8283383c781d0c9deac421bbc1cdababbb65"
+  version "1.3.9,433"
+  sha256 "efa4be7b0c0d47c814e8d8f8d392d760dd5a02ba46829136f8a6404dffc2bf6f"
 
-  url "https:raw.githubusercontent.comxjbetaAppUpdaterAppcastsmasterAria2DAria2D%20#{version}.dmg",
-      verified: "githubusercontent.comxjbeta"
+  url "https:github.comxjbetaAria2Dreleasesdownload#{version.csv.first}%28#{version.csv.second}%29Aria2D.#{version.csv.first}.dmg"
   name "Aria2D"
   desc "Aria2 GUI"
   homepage "https:github.comxjbetaAria2D"
 
-  # Older items in the Sparkle feed may have a newer pubDate, so it's necessary
-  # to work with all of the items in the feed (not just the newest one).
   livecheck do
     url "https:raw.githubusercontent.comxjbetaAppUpdaterAppcastsmasterAria2DAppcast.xml"
     strategy :sparkle do |items|
-      items.map(&:short_version)
+      items.map(&:nice_version)
     end
   end
 

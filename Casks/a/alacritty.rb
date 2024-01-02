@@ -25,7 +25,9 @@ cask "alacritty" do
   binary "Alacritty.appContentsResources61alacritty-direct",
          target: "#{ENV.fetch("TERMINFO", "~.terminfo")}61alacritty-direct"
   manpage "Alacritty.appContentsResourcesalacritty.1.gz"
+  manpage "Alacritty.appContentsResourcesalacritty.5.gz"
   manpage "Alacritty.appContentsResourcesalacritty-msg.1.gz"
+  manpage "Alacritty.appContentsResourcesalacritty-bindings.5.gz"
 
   zap trash: [
     "~LibraryPreferencesio.alacritty.plist",

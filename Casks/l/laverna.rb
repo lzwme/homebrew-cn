@@ -5,7 +5,11 @@ cask "laverna" do
   url "https:github.comLavernalavernareleasesdownload#{version}laverna-#{version}-darwin-x64.zip",
       verified: "github.comLavernalaverna"
   name "Laverna"
+  desc "Encryption-focused open source note taking application"
   homepage "https:laverna.cc"
+
+  # laverna is unmaintained, see https:github.comLavernalavernaissues998
+  deprecate! date: "2024-01-01", because: :unmaintained
 
   app "laverna.app"
 end

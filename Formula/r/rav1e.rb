@@ -5,13 +5,13 @@ class Rav1e < Formula
   head "https:github.comxiphrav1e.git", branch: "master"
 
   stable do
-    url "https:github.comxiphrav1earchiverefstagsv0.6.6.tar.gz"
-    sha256 "723696e93acbe03666213fbc559044f3cae5b8b888b2ddae667402403cff51e5"
+    url "https:github.comxiphrav1earchiverefstagsv0.7.0.tar.gz"
+    sha256 "dd6c4b771d985f547787383f5d77bc124ac406d574a308a897da9642410c1855"
 
     # keep the version in sync
     resource "Cargo.lock" do
-      url "https:github.comxiphrav1ereleasesdownloadv0.6.6Cargo.lock"
-      sha256 "2014f7d76e7d0d7eaa63158ef5a1a1cea15a095fd5fb79b20b1052015a7fcd0c"
+      url "https:github.comxiphrav1ereleasesdownloadv0.7.0Cargo.lock"
+      sha256 "2c5b50b978cc1e8cddd898c226276100419953ff9e0bafc5b02fbdb67a9dd346"
     end
   end
 
@@ -21,15 +21,13 @@ class Rav1e < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dfe3ff3ca91287de6b3763196855e56535399c88d5939b82602c5ea8043ac65a"
-    sha256 cellar: :any,                 arm64_ventura:  "3a0e10c10070252c551cdb863000fdfd08b3f39f73f6834f8ba468245bfd7407"
-    sha256 cellar: :any,                 arm64_monterey: "68d4cfaeb084772d0a204f9ea0349d13a08045e0c9bc8a3b1d863c4013e67b17"
-    sha256 cellar: :any,                 arm64_big_sur:  "53745f5c67bf84dfa288eeb3f1e4fdd55a513c797cd6571c01470c32197482b6"
-    sha256 cellar: :any,                 sonoma:         "5379729bb8ddad65b0a8f9deb6980bda29ed6a48647a26a99bfcb20cf73f9e41"
-    sha256 cellar: :any,                 ventura:        "67a6ce79473a844710bb6b3992cb3298da921c9689c3e09be2ad09177c5100db"
-    sha256 cellar: :any,                 monterey:       "671e5164de0012dcf4e365a21fff14445116fe6832a78235bc7da0763fda94a6"
-    sha256 cellar: :any,                 big_sur:        "726efa39a001b22ba36d9edf08e6251d19b4741bb24d6bd10e73f40688b96cd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8858d8c96535e94dfa75f15e858b24855034d714950df482d00760cc7fb8edad"
+    sha256 cellar: :any,                 arm64_sonoma:   "89a6defda3ed9f7d8da30ba2eece54650748b01cca5b0de4c7a77b069db370c5"
+    sha256 cellar: :any,                 arm64_ventura:  "545dc6b769dc3af92c6315b9661c9fdcb11e8df23827847595c798f2a48096a1"
+    sha256 cellar: :any,                 arm64_monterey: "f16c710d862b9714ab2ae847ec5f84518ee531cc8a24866264c2bbdb0d62a71e"
+    sha256 cellar: :any,                 sonoma:         "2a7d52de12804cbd463e97cf15885806cde8036f9431e6a7f2da453c73afb8b6"
+    sha256 cellar: :any,                 ventura:        "9d04d1b7123391c874dacc8b7b64e1a9a9562eea72dfe78ddd773aca6d05601d"
+    sha256 cellar: :any,                 monterey:       "d6f211aeb4864d3d1635add895731099cfb2a775e165213bd5d6e94cfb9b250b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3fbf882781283b1cd9e6eb9b5875e8ab9623db041dd1b9bf08bd2e39799288b"
   end
 
   depends_on "cargo-c" => :build

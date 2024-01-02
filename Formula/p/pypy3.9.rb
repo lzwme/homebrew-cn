@@ -4,7 +4,7 @@ class Pypy39 < Formula
   url "https:downloads.python.orgpypypypy3.9-v7.3.14-src.tar.bz2"
   sha256 "560fe6161e159557e1fe612aaadf9b293eefded1da372e70b8e3b23bba598366"
   license "MIT"
-  head "https:foss.heptapod.netpypypypy", using: :hg, branch: "py3.9"
+  head "https:github.compypypypy.git", branch: "main"
 
   livecheck do
     url "https:downloads.python.orgpypy"
@@ -52,7 +52,7 @@ class Pypy39 < Formula
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  # Upstream issue ref: https:foss.heptapod.netpypypypy-issues3538
+  # Upstream issue ref: https:github.compypypypyissues3538
   patch :DATA
 
   def abi_version

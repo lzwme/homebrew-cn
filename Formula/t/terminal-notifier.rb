@@ -30,6 +30,7 @@ class TerminalNotifier < Formula
                "-target", "terminal-notifier",
                "SYMROOT=build",
                "-verbose",
+               "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}",
                "CODE_SIGN_IDENTITY="
     prefix.install "buildReleaseterminal-notifier.app"
     bin.write_exec_script prefix"terminal-notifier.appContentsMacOSterminal-notifier"

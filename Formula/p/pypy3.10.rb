@@ -4,7 +4,7 @@ class Pypy310 < Formula
   url "https:downloads.python.orgpypypypy3.10-v7.3.14-src.tar.bz2"
   sha256 "a3481af466103fa13740db4e27780e0423dcf8626b3340f60d3d3c28fbc11ae0"
   license "MIT"
-  head "https:foss.heptapod.netpypypypy", using: :hg, branch: "py3.10"
+  head "https:github.compypypypy.git", branch: "main"
 
   livecheck do
     url "https:downloads.python.orgpypy"
@@ -52,7 +52,7 @@ class Pypy310 < Formula
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  # Upstream issue ref: https:foss.heptapod.netpypypypy-issues3538
+  # Upstream issue ref: https:github.compypypypyissues3538
   patch :DATA
 
   def abi_version

@@ -5,7 +5,8 @@ cask "jitsi" do
   url "https:github.comjitsijitsireleasesdownloadJitsi-#{version.major_minor}jitsi-#{version}.dmg",
       verified: "github.comjitsijitsi"
   name "Jitsi"
-  homepage "https:jitsi.org"
+  desc "Open-source video calls and chat"
+  homepage "https:desktop.jitsi.org"
 
   livecheck do
     url "https:download.jitsi.orgjitsimacosxsparkleupdates.xml"
@@ -15,4 +16,11 @@ cask "jitsi" do
   end
 
   app "Jitsi.app"
+
+  zap trash: [
+    "~LibraryApplication SupportJitsi",
+    "~LibraryCachesJitsi",
+    "~LibraryLogsJitsi",
+    "~LibraryPreferencesorg.jitsi.jitsi.plist",
+  ]
 end
