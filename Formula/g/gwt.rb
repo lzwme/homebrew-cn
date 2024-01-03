@@ -6,8 +6,8 @@ class Gwt < Formula
   license "Apache-2.0"
 
   livecheck do
-    url "https:github.comgwtprojectgwt.git"
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do

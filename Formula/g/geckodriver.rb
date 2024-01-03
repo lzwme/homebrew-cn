@@ -30,7 +30,7 @@ class Geckodriver < Formula
   end
 
   livecheck do
-    url "https:github.commozillageckodriver.git"
+    url :homepage
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 

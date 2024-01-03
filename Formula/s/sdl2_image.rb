@@ -1,10 +1,9 @@
 class Sdl2Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https:github.comlibsdl-orgSDL_image"
-  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.1SDL2_image-2.8.1.tar.gz"
-  sha256 "e4cab9a58c347a490c46723c17553b4e12233cd821d3b993a8475a50497f5a3e"
+  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.2SDL2_image-2.8.2.tar.gz"
+  sha256 "8f486bbfbcf8464dd58c9e5d93394ab0255ce68b51c5a966a918244820a76ddc"
   license "Zlib"
-  revision 1
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -15,13 +14,13 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fe0ffbcd382f059efedf51c666c458300d2b17104dd8bd9a0987d5d25bcd4154"
-    sha256 cellar: :any,                 arm64_ventura:  "a9a00c6f16ef925bb1f0bf4df6692263a2504ed927fad897c1edeb88224efd0d"
-    sha256 cellar: :any,                 arm64_monterey: "42fd043f4dfcd7f32a3ce80a70dda7c31b114d7c8b6afe6a63061293b8adab01"
-    sha256 cellar: :any,                 sonoma:         "f7c9b181733ca467b3333ddca9af670addaaad2c770d0d00a7520073b08b93d0"
-    sha256 cellar: :any,                 ventura:        "c17fd1c9fbd15bb223dcdee1d2e2f32466d61c7cef4b42de162db16f5ac32534"
-    sha256 cellar: :any,                 monterey:       "97ed56bc16fc0eb9d5110815dc23d6a78c89c4e71f859d733f10b367767c67a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8963ecaedfa220550cd9a7e4ccbca99d3a248f9c2d39299bb06af9824e2c7739"
+    sha256 cellar: :any,                 arm64_sonoma:   "0242f47a58a78fddf9e66d71358fc2d75a0f1534d718e4b0f143e9ee9c1eead7"
+    sha256 cellar: :any,                 arm64_ventura:  "56a75184dc09538f969ea4c574164a4ef0fc314961617a3702889fdd9cf4daa0"
+    sha256 cellar: :any,                 arm64_monterey: "7a9834325984299278a0cf3896918e2179016c54408241be993aca2205f509c9"
+    sha256 cellar: :any,                 sonoma:         "2ce178b543afe108c05798e2285caca2ddcaec28cf39d8ffec7a746d19a93ab8"
+    sha256 cellar: :any,                 ventura:        "6b33e098392a868de4eab755aad6d16d0ac063afec4482467d53ba2e33939673"
+    sha256 cellar: :any,                 monterey:       "328ff45a1b01e5ced1868315b2dd20db0130d7adeba401fdef07f34f86cc92a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebe72a4e425543c606b9b6c30857748081f4d5fc4ff7966511e40e089e2bfd22"
   end
 
   head do

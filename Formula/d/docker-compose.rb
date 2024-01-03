@@ -6,6 +6,14 @@ class DockerCompose < Formula
   license "Apache-2.0"
   head "https:github.comdockercompose.git", branch: "main"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c18c382593eb2cd4281ea9d0c2efe4b4d6b6f489575c206cca9b8f1b89ba044"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea898680e221604aa0e169ddb6567f72d592ac7d704f268c70941c76f5318ac8"

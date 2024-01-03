@@ -1,10 +1,9 @@
 class PythonAT311 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.11.6Python-3.11.6.tgz"
-  sha256 "c049bf317e877cbf9fce8c3af902436774ecef5249a29d10984ca3a37f7f4736"
+  url "https:www.python.orgftppython3.11.7Python-3.11.7.tgz"
+  sha256 "068c05f82262e57641bd93458dfa883128858f5f4997aad7a36fd25b13b29209"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https:www.python.orgftppython"
@@ -12,13 +11,13 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "bd293c85ad28d5dbab53fabb9c0c5e6d6e5b5ef1b4371858bd89bb0040f0c55a"
-    sha256 arm64_ventura:  "016f01b91864f3cb1d49c4c29a00be97b0a63e20137d3dd9f58c153543698f36"
-    sha256 arm64_monterey: "f5f096f3ffbb8c75873a8b172e5cfa9e412c6374f0f5124a3bad6557b96c24ec"
-    sha256 sonoma:         "da1954c946eabed4050570600888f0771383ccf46cdfea36c1e67f0b318302c6"
-    sha256 ventura:        "27074dfc3825be115f650430a005de63dbb239c284dd1bc85751f9b57d436ee1"
-    sha256 monterey:       "c7407b1789917854565df3df7319af7e24425485d190ec97bc634215f96a453d"
-    sha256 x86_64_linux:   "a64185695607db888898e2041aec2a20be10e4d04c47e02438f2167256693d00"
+    sha256 arm64_sonoma:   "a9ee8c1970c06cae9b50038e3f42c12c2375983ff1c75e2f23115c7cbf5f5d98"
+    sha256 arm64_ventura:  "0f3fd622cbd5b89afc7b12b529b3e290334c9f00efb4e4a689da4c918b0e24c3"
+    sha256 arm64_monterey: "bc84a1902f89ed9ec55678c30a7f60dc6932e59ee961da3035ad8c6a7441e029"
+    sha256 sonoma:         "5b6cb89819792a42d816cc32098db01ee0a225777de4100e898245b9933b2d95"
+    sha256 ventura:        "671d1c5ecf54228f91a3a281bfeb21539312f0693705fee08a66cfd66a2e5a25"
+    sha256 monterey:       "891987a20b3f05dadfe175e0317007dcba0c3e08193c34c5a87caf982d47d791"
+    sha256 x86_64_linux:   "22feecbc791e5f6aaf56342bb799bd40720b15c5b200ce714165fa13a6e38889"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -72,19 +71,19 @@ class PythonAT311 < Formula
     sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesefcc93f7213b2ab5ed383f98ce8020e632ef256b406b8569606c3f160ed8e1c9setuptools-68.2.2.tar.gz"
-    sha256 "4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87"
-  end
-
   resource "pip" do
     url "https:files.pythonhosted.orgpackages1f7f4da15e07ccd11c84c1ccc8f6e24288d5e76c99441bf80e315b33542db951pip-23.3.1.tar.gz"
     sha256 "1fcaa041308d01f14575f6d0d2ea4b75a3e2871fe4f9c694976f908768e14174"
   end
 
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackages4bd9d0cf66484b7e28a9c42db7e3929caed46f8b80478cd8c9bd38b7be059150setuptools-69.0.2.tar.gz"
+    sha256 "735896e78a4742605974de002ac60562d286fa8051a7e2299445e8e8fbb01aa6"
+  end
+
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesfbd00b4c18a0b85c20233b0c3bc33f792aefd7f12a5832b4da77419949ff6fd9wheel-0.41.3.tar.gz"
-    sha256 "4d4987ce51a49370ea65c0bfd2234e8ce80a12780820d9dc462597a6e60d0841"
+    url "https:files.pythonhosted.orgpackagesb0b4bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97bwheel-0.42.0.tar.gz"
+    sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
   end
 
   # Modify default sysconfig to match the brew install layout.
@@ -100,12 +99,6 @@ class PythonAT311 < Formula
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patchesa1618a5005d0b01d63b720321806820a03432f1apython3.10-distutils-scheme.diff"
     sha256 "d1a29b3c9ecf8aecd65e1e54efc42fb1422b2f5d05cba0c747178f4ef8a69683"
-  end
-
-  # Fix build with newer editline
-  patch do
-    url "https:github.comBo98cpythoncommit96d015e375135e5ebc387a55ed838d00d963dc8a.patch?full_index=1"
-    sha256 "2164a7ba4fd7b934514e87681908bb3e36cfd28ba53511ea631c6e24aa356a21"
   end
 
   def lib_cellar

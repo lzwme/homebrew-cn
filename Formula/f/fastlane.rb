@@ -1,8 +1,8 @@
 class Fastlane < Formula
   desc "Easiest way to build and release mobile apps"
   homepage "https:fastlane.tools"
-  url "https:github.comfastlanefastlanearchiverefstags2.217.0.tar.gz"
-  sha256 "e66a2c45b9a44c352ec20dc9e1846345110fd20d30407cecd5739651824c8c15"
+  url "https:github.comfastlanefastlanearchiverefstags2.218.0.tar.gz"
+  sha256 "aed7d5d81db45ec41ff5aad978f490c64747c18ce250259a0b1e8f4d984b86f1"
   license "MIT"
   head "https:github.comfastlanefastlane.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Fastlane < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "91af5f1200f28c3373e0c42829179cefe1996f454c635f30ca2cbff451915f6a"
-    sha256 cellar: :any,                 arm64_ventura:  "7fa76937d5e469bcbcdd938547a290523a442650453bc45d1c6e5d96ee5d2687"
-    sha256 cellar: :any,                 arm64_monterey: "b4c88dd9c23442eb89f9e793fced96a0d7aa37fcfbea4165c5fcc216d310d875"
-    sha256 cellar: :any,                 ventura:        "3c60d7d5471d5b4bc25aa940c62b5b8fa082556cf6faea3ff018e9771d1977f5"
-    sha256 cellar: :any,                 monterey:       "7bd2b50d0320ae8c8ae226fc96803469411065629caa8e9aef99d14b4f01bfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "669a63bf74a8000322f6191d49d6349a144d45122718ce0062dbcd7af58cb115"
+    sha256 cellar: :any,                 arm64_sonoma:   "5b24952b36eeed280a7250515308c6b9ac0edb26956e5904c09d9dea78436563"
+    sha256 cellar: :any,                 arm64_ventura:  "7fb86e16264f21b3229dbd009ebdb80961951d5fc86563efd54fd605c4873663"
+    sha256 cellar: :any,                 arm64_monterey: "ac464477b285b13c74a2d9890286f1fccb37e17f5cdcc14e2c1d418ff03f9f59"
+    sha256 cellar: :any,                 sonoma:         "c2e10e9c0693c4d0858bad8ad742202d43933e80688207de030e053e786fc188"
+    sha256 cellar: :any,                 ventura:        "450c1ff9f9f3e920cb76cc7f7144fdf4e6a6e6324e1c636ba2635452fe22df79"
+    sha256 cellar: :any,                 monterey:       "6a6c1d6bd33b3b650f58aa553d532510a861de8a1dcc16c4a5ca97309437d500"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e23f16f77c108c058bf437d84818fa0b36270e2ede3dc6ede0d7bd26a4f140ad"
   end
 
   depends_on "ruby"

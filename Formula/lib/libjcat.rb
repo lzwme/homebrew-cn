@@ -3,21 +3,19 @@ class Libjcat < Formula
 
   desc "Library for reading Jcat files"
   homepage "https:github.comhughsielibjcat"
-  url "https:github.comhughsielibjcatreleasesdownload0.1.14libjcat-0.1.14.tar.xz"
-  sha256 "702706d75ff0c7253d0f5697bdd482e8c2cfe9909749fc7d68ddb364730b7383"
+  url "https:github.comhughsielibjcatreleasesdownload0.2.0libjcat-0.2.0.tar.xz"
+  sha256 "14dcfa678fe9fe7561ab8b795999dde2c02eb57d4bcc7da3153e1ea1a569a9ad"
   license "LGPL-2.1-or-later"
   head "https:github.comhughsielibjcat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "3a1f1f359ca98cf824a3f1bb2978b682c32f89ce6af90c37ae80789befa7e91b"
-    sha256               arm64_ventura:  "6ce68adbf8ed422ec4d4c5730ada89b8285e01bba3dec806d17dedb40693b24a"
-    sha256               arm64_monterey: "4a777ea12597452d289a3d5e2a17b945a7c9a069cb9d9fdf45672db964019413"
-    sha256               arm64_big_sur:  "32ff83dd712742229017bdb51163c74deddec287c5895a9b2e3b7713b01bd3bf"
-    sha256 cellar: :any, sonoma:         "d5d7259f1ffbb638687986f843d52a89f888a585192979700ca5425dfa6e8a37"
-    sha256               ventura:        "8f86b8df2fd1ca134e4ceb8ca6e6d0f67aa92c6d87df90aa93a0f62734ccbd67"
-    sha256               monterey:       "b8cc417cc373341dd094d625bb22ba3d87cc51188830048bbd90941b25030b9a"
-    sha256               big_sur:        "64309b257ef602aa4e503c03d576f2ce8556f3ed80e80791802ccb0557926a06"
-    sha256               x86_64_linux:   "0ede5fb5124e7f477212e4adb489ca567cef30ea40f94cbf3a59437c3513d239"
+    sha256 cellar: :any, arm64_sonoma:   "cd0ed9eed1fc1aa75a296e3638cc5e59bee98777cad1309d4297a5773c3c7598"
+    sha256 cellar: :any, arm64_ventura:  "10bd003b763c2e743de8803f17b9b99466ca5a5eb8cb9718684ce45349f9d617"
+    sha256 cellar: :any, arm64_monterey: "e5a595a947cefae1a57ca2e0ba4d2ae8673463969065e3ee71e988064502dba9"
+    sha256 cellar: :any, sonoma:         "2d2b2fa88a30160b1a0b108d350f0adcdbfcc54f483115e94f5c0d2895e1661d"
+    sha256 cellar: :any, ventura:        "d7bd17ba192f7d09be204251538987c386edeab0a6964c7d0fce441e1e2c6667"
+    sha256 cellar: :any, monterey:       "a45d509a62cc478cd4702fa61039bbfd2e1d3b07feb28b49fe5a5d9709acbb46"
+    sha256               x86_64_linux:   "da3ef9fdd19104673fdf7c66da8968c6f924ee9c4facd2719ad528f004cfb07f"
   end
 
   depends_on "gi-docgen" => :build

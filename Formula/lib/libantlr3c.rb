@@ -6,7 +6,7 @@ class Libantlr3c < Formula
   license "BSD-3-Clause"
 
   livecheck do
-    url "https:github.comantlrantlr3.git"
+    url :stable
     regex(^(?:(?:antlr|release)[._-])?v?(\d+(?:\.\d+)+)$i)
   end
 

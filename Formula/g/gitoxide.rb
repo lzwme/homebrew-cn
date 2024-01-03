@@ -12,13 +12,14 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4997e716e9625b77d790197fb59f379fd93a0caba33be7fe698371fe5bfe551"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46eb62cb4619e061ad3523d8272b7a3d6198e32dbb36e4e3b349b7e25c2c0c58"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb805809b3db7cd626e3bc2e69770a541c5644db6594e3ec334c6f4eee86b211"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5a72b5cba190b3b9602c8cb103f27218a08c2244a4172e638595891bc5f2960c"
-    sha256 cellar: :any_skip_relocation, ventura:        "e1e3160d65c2f907d87a983608829b40cb062f217cb81b58b6067a2df907ffee"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6169e9629243c7b97068b4d5765cab929320bbfc861b9ffc3627a6be32a95a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e53c5fcc3648cb45cf51748f95c48afd01bc7bad551a9954663db2ff5d12fabb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de55b76cde5237b1898852311820e6c65aeab19b4ed32a9c4f922b58505eabfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a293a668d6ab1a28eb85eeeed795b03fe1d68e5b0b4822a1577e3661dd69c33"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0dd1bd0756abc947743f98b7f16875ece3365372c07ceb3f7e0ee84f014840e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87f81a35906e9662377d4500136987711eb8cb5a02bfb7cfde0daaaa5d6b78bd"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b2d18393513595d59f00a8a47b958ee63b2a8a98353cf61c99a0f51d943d5ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "2964ac975258a5df0e74cf561f49d41d7adc6e474820f9a029d783ad3766f79d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72fbb4ae279cb89733a5807bd50d34f337bc3a5f9bc0c6f7164ba2d11859a06b"
   end
 
   depends_on "pkg-config" => :build
@@ -32,6 +33,7 @@ class Gitoxide < Formula
     # See: https:github.comByrongitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
     features = %w[max-control gix-featureszlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
+    generate_completions_from_executable(bin"gix", "completions", "-s")
   end
 
   test do

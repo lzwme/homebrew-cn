@@ -1,19 +1,19 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https:ordinals.com"
-  url "https:github.comordinalsordarchiverefstags0.13.1.tar.gz"
-  sha256 "9115bb49204b43f966e4d678425371c297171f27fe648bf1a06d9119abd53e4d"
+  url "https:github.comordinalsordarchiverefstags0.14.0.tar.gz"
+  sha256 "91039bf2d4ff204e85333afde98a4ca43d694698fa01e82315b3a3cf2571834b"
   license "CC0-1.0"
   head "https:github.comordinalsord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "13f10ea2c5628396aef0a0a092bed1fc6c3524ee55daacc8e45c7daa9adc0a1b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3d17cf50fe880d462b29a3e18b4bd0cb56f764e9eb95cbaccade7b74cdb9efa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "361ed658ccc8e2449b60959cc3ef984433e857e58703ffcab8153b605946688c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be67f80a102c56ba27ff90084a56bbda7e27cd885077a5b2cfb987d7ea0712b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "52316e32859337b6d74c770f46bec713356ee39ff30c89d611031a679f69132b"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5d17dac01370429793dca968ef374044b016a1b482a2d4de9f8bd877f02bf8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54a41a740996cdddcb6c613f1d51beadd1dbf224aafd766f8b6790cce9816a0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2c76b53295c491d04c310373cb3a2605d96d4b11a38c6c13e628e2b6ea3bdf5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcae32cb5d837a9c2dbf8fdce4a49fafa35894a7abb78cd0c6419e3d07d11b42"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "74e5e021b439c3eebfddd9776bd35279a6681ca36b99b7d4c27d423e4833e587"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9f886b5fdcf77ff45cd55762d6a5c3be0b35463a58a9dd8620797099413b39a3"
+    sha256 cellar: :any_skip_relocation, ventura:        "3bb25501543c740fdbcfa04e04afe4bc688c8565386f24e79958893e7c9072b7"
+    sha256 cellar: :any_skip_relocation, monterey:       "219b92a9f625978fb0dd4d6c48b6398db53ac08a264b88fdaa19c7c60f7a1461"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32482be8efc76448a5b0bb7857987f7b874d6bb98be96c519be0efb50c4a21a1"
   end
 
   depends_on "rust" => :build

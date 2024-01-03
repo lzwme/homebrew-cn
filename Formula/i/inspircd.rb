@@ -6,7 +6,7 @@ class Inspircd < Formula
   license "GPL-2.0-only"
 
   livecheck do
-    url "https:github.cominspircdinspircd.git"
+    url :stable
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 

@@ -2292,7 +2292,6 @@ Homebrew-homebrew-core/Formula/g/gotop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gotpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gource.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govc.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/govendor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/govulncheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gowsdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gox.rb, Homebrew/homebrew-core, 1
@@ -2832,6 +2831,7 @@ Homebrew-homebrew-core/Formula/j/joplin-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/joshua.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/joshuto.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jp2a.rb, Homebrew/homebrew-core, 1
@@ -3691,7 +3691,6 @@ Homebrew-homebrew-core/Formula/lib/libvisual-plugins.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/lib/libvisual-projectm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libvisual.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libvmaf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libvnc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libvncserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libvo-aacenc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libvoikko.rb, Homebrew/homebrew-core, 0
@@ -3985,6 +3984,7 @@ Homebrew-homebrew-core/Formula/m/minizip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minuit2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/miruo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mist-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mit-scheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mitie.rb, Homebrew/homebrew-core, 1
@@ -5433,7 +5433,6 @@ Homebrew-homebrew-core/Formula/r/rtmpdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtorrent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtptools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rttr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rtx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rubberband.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruby-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 1
@@ -6496,6 +6495,7 @@ Homebrew-homebrew-core/Formula/v/veclibfort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vectorscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vecx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vegeta.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/veilid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/velero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vera++.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/verapdf.rb, Homebrew/homebrew-core, 1
@@ -8732,6 +8732,7 @@ Homebrew-homebrew-cask/Casks/j/jandi-statusbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jandi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jasp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jasper.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jaspersoft-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jazz2-resurrection.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jazzup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jbrowse.rb, Homebrew/homebrew-cask, 1
@@ -9797,6 +9798,7 @@ Homebrew-homebrew-cask/Casks/p/pieces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/piezo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pika.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pikopixel.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pile.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pineapple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pinegrow.rb, Homebrew/homebrew-cask, 0
@@ -10785,7 +10787,6 @@ Homebrew-homebrew-cask/Casks/t/thunderbird.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thyme.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/ti-connect-ce.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ti-smartview-ce-for-the-ti-84-plus-family.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tibco-jaspersoft-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tic80.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tickeys.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/ticktick.rb, Homebrew/homebrew-cask, 0

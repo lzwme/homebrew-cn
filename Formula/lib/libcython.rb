@@ -1,8 +1,8 @@
 class Libcython < Formula
   desc "Compiler for writing C extensions for the Python language"
   homepage "https://cython.org/"
-  url "https://files.pythonhosted.org/packages/d3/20/02f4961b4315b95989abfe4b7cedff263cc89693834222d210a7a62a6214/Cython-3.0.6.tar.gz"
-  sha256 "399d185672c667b26eabbdca420c98564583798af3bc47670a8a09e9f19dd660"
+  url "https://files.pythonhosted.org/packages/23/e9/ef8607abfbbbaeb93cb1381c8538a22d38d64524df39759dc2787d4909b0/Cython-3.0.7.tar.gz"
+  sha256 "fb299acf3a578573c190c858d49e0cf9d75f4bc49c3f24c5a63804997ef09213"
   license "Apache-2.0"
 
   livecheck do
@@ -10,14 +10,13 @@ class Libcython < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb0c6a454c730b4624d93976a5befaa0bb86a53b280b5c90a878739dd3d93d6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a632f42973c57bc05a0b20e18d46c1fb7e83dccd51d64be2ee10c1799dabf3a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e6573adc2f1cad0e497eaa33cbafc62c6331d40e4008e26b501adbc430a4b3e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1fce1688407547e7ee8e103e456f5617dd9630365528637a88b8073c7d12271f"
-    sha256 cellar: :any_skip_relocation, ventura:        "8f5a2e8d65680f4bb2d9d9651a4ef852633008f790177b217af096c7d1d452de"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff926b459082b369e96c0cbff2d63d7a2623dfa7171d20df7eea327ab4787622"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "944dde97f5c82b743a13e214405fa921151ebbf996e58d92f7f540fd897ad7d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e3358e0b4266d16b48bd1ee18c927ca7aed935f4f6fd5ea3d670ce55d7bc2f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbfd3aaaa855f5332f1f5f9cf94be365560bb17e22c8a961dc5ec4026edf707e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ade01df593112edbfb7d27f8ef8ef618596aca279d14a88c9a3c86d105c1a137"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ed9467a17fdcd5ba21649ee1d93e30159d9c970a451b4b6bdd22cf223c7f746e"
+    sha256 cellar: :any_skip_relocation, ventura:        "742b41a1d3fd39ca0de881f732a38a095c33e844ea7824bbc93493af393ac599"
+    sha256 cellar: :any_skip_relocation, monterey:       "cdf0d9692a407fff5cd3426218cb6b6cc8dc0b199b2d2b99ad0f36b5c58c7a09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e53a6d15ef52dfda8f1d8f407a7c9bd2b96cae66cef90d161e546bd747acc65"
   end
 
   keg_only <<~EOS

@@ -2,8 +2,8 @@ class ArduinoCli < Formula
   desc "Arduino command-line interface"
   homepage "https:github.comarduinoarduino-cli"
   url "https:github.comarduinoarduino-cli.git",
-      tag:      "0.34.2",
-      revision: "963c1a76c9d2a6ea37956a100c0cd8070260208f"
+      tag:      "v0.35.0",
+      revision: "ebab482d737e9d5cd17e019272073e9477e2e4d4"
   license "GPL-3.0-only"
   head "https:github.comarduinoarduino-cli.git", branch: "master"
 
@@ -13,15 +13,13 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e3ce81c97aa99cfc21e67445b9dbb21ebf58d55c5f07a06bd4842465f4558952"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5bb782ba1730a94a1955918ffd1eccb73b0fb8289eb4c1738f78b8d2b81675f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f5f0cdbc4aa0e12d662c58bf86d19a629e602d7e515da9e8f55d2c7907d0b75"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9aa795f129f9e16c34826f1ea10d279987a9ced905c459f2fc5e4b6711863d46"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7ec1675c71d6a1a88ab5863271c39965b10269511644c57a32a754e849b5e71b"
-    sha256 cellar: :any_skip_relocation, ventura:        "858edd6bb2966bf4be02d60100f8410f6b389713aafca7a9252417d2e3f2bc35"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a25b9470fe4225400272cb31cdc036ce9c051200b806d84254a4bfb466f0553"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9b4f95824251cc8e3c1425ddc4f611823ac92be906d57f309a06ba13d54127e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16212597a16450c46cd31d56092b152185b9f903f8d2e28ecb9525b47c157669"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f2814b8f5506a189c64e7053ea0b3877436c312bed9508f9397fb1985c0f8fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5064f05e32e3f5a6b90aec76ef787e67b5e82162d546f51fe89cee9d3650a01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb7eb6d1d384e6ba02860a26cdeec9f8017615698ab00537854f6e0a793f17fd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c519a628aaa2d52b8543d176f31b6ded4a82bca5ed572b1ae19feb58fbaf4a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d306e57c696bf8e36beb30742f685e8df1b443979b079cb5b947b7dd7157453"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca053465b1fe176f12ea1e87eb91fb638b2837b6a4f7658133fbbc18ea85cd11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8611f2a3d8fc208025536601e87e8667ae7d2546b4616b7df132f8784da8c6e9"
   end
 
   depends_on "go" => :build

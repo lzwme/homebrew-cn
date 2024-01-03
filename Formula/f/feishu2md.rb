@@ -4,6 +4,15 @@ class Feishu2md < Formula
   url "https:github.comWsinefeishu2mdarchiverefstagsv2.0.0.tar.gz"
   sha256 "75f7af31916f5594c0cab11b83c27d3d76a2793c7a8c3f8b161946b515b626d6"
   license "MIT"
+  head "https:github.comWsinefeishu2md.git", branch: "main"
+
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a4add21954328e5c8649ad16c7b522deef792ddb587757bcb595ea44cde1af0"

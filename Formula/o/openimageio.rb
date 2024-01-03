@@ -1,8 +1,8 @@
 class Openimageio < Formula
   desc "Library for reading, processing and writing images"
-  homepage "https:openimageio.org"
-  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv2.5.6.0.tar.gz"
-  sha256 "bcfced40a25ef8576383b44d8bbe3732aa2b8efc7b8614482783d6f90378d307"
+  homepage "https:openimageio.readthedocs.ioenstable"
+  url "https:github.comAcademySoftwareFoundationOpenImageIOarchiverefstagsv2.5.7.0.tar.gz"
+  sha256 "801d57a2923912825cfd7780ab3ae4284f7a83c788fac9ea627f51c0185695fd"
   license "Apache-2.0"
   head "https:github.comAcademySoftwareFoundationOpenImageIO.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8680390374a02ce1840f19d178412aa08bf65d6201abe39b1cc43f8e8b23582d"
-    sha256 cellar: :any,                 arm64_ventura:  "3f0698008d1ecbadf124e1cfa57d191e3d7388fbaa749cfe9d3d3e61aedb37d7"
-    sha256 cellar: :any,                 arm64_monterey: "6fb39a17b5b2baa9fd04b1126ccc4b0e23346681b98cf1e4aacaa992b97759da"
-    sha256 cellar: :any,                 sonoma:         "c8b3491dbda572944e9cb4c8f1e4e6507f54d3e5579e80f74441c7d04e17158a"
-    sha256 cellar: :any,                 ventura:        "1402ca03d66dd66021e7b8fb18cc7edfc211e49f282621927e8e103e2ea4bde0"
-    sha256 cellar: :any,                 monterey:       "a8b11e11078f2e842ccc3ec050ce7c1babff6b2ff60dc2d109c3aa1476ecc85e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b20369fa3c005d8d8493846a60261cbe1e7dff3d99cb84cef6598927580f87f"
+    sha256 cellar: :any,                 arm64_sonoma:   "cd9344f0d32350e1c9acdf801188b3c40f3568d7b6b10234920078e0ce873087"
+    sha256 cellar: :any,                 arm64_ventura:  "1c3c4ff1b56beded50ea93066dd55506cac5802cfed37487cc81708d73916ee7"
+    sha256 cellar: :any,                 arm64_monterey: "e60eea38263b2c7a2deea8a0053c08e71e6a46189da1bd8f84d8274dae19f539"
+    sha256 cellar: :any,                 sonoma:         "711e000a1c3eecadea6a0b269aeccd94bc4c1f6db69e089ca6337cf6a47ec21c"
+    sha256 cellar: :any,                 ventura:        "3d6be847fd69360463bf432c6056f247576c209b261a16e088c4576799f107ce"
+    sha256 cellar: :any,                 monterey:       "8be4da65ecff896cca5dc5e8522838366f91daaad772d482360192908cc81b25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2df2ce1eafe5c779e96d482e71e6c1236032998f725a7fc3ef7fe54ef82c2f9d"
   end
 
   depends_on "cmake" => :build

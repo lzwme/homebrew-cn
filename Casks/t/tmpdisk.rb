@@ -7,6 +7,8 @@ cask "tmpdisk" do
   desc "Ram disk management"
   homepage "https:github.comimotheetmpdisk"
 
+  depends_on macos: ">= :mojave"
+
   app "TmpDisk.app"
 
   zap trash: "~LibraryPreferencescom.imothee.TmpDisk.plist"

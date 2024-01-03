@@ -6,7 +6,7 @@ class Traildb < Formula
   license "MIT"
 
   livecheck do
-    url "https:github.comtraildbtraildb.git"
+    url :stable
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
