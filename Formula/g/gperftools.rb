@@ -1,8 +1,8 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
   homepage "https:github.comgperftoolsgperftools"
-  url "https:github.comgperftoolsgperftoolsreleasesdownloadgperftools-2.13gperftools-2.13.tar.gz"
-  sha256 "4882c5ece69f8691e51ffd6486df7d79dbf43b0c909d84d3c0883e30d27323e7"
+  url "https:github.comgperftoolsgperftoolsreleasesdownloadgperftools-2.14gperftools-2.14.tar.gz"
+  sha256 "6b561baf304b53d0a25311bd2e29bc993bed76b7c562380949e7cb5e3846b299"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,11 @@ class Gperftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "732e4d9aab72c1e28c50304fd726e9b41b2847b87fde57965ab76b947968719d"
-    sha256 cellar: :any,                 arm64_monterey: "38be747816f190d6159f2b70201f6204103bc4a61b07343eec0fbe7554591d27"
-    sha256 cellar: :any,                 arm64_big_sur:  "65d89f828d675f4dc6ee4fdaf976ee70369d13d34025cc2b30e7d6d4b5eb5b5a"
-    sha256 cellar: :any,                 ventura:        "93a8cc2a328a8a5a3705afd6c6b6072b29e414312a9f165cc0bb3a5dccc55e7b"
-    sha256 cellar: :any,                 monterey:       "56e939770b774daf8016ae1151af8f412f5492d84e526a841d0fc317603e41a6"
-    sha256 cellar: :any,                 big_sur:        "5ac2fab24732f5a0577f78d7070241ad0c5ace97914a3099a6834560744ea343"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b39cc229b25a9d759be53d21a6f9a0fdc12e028ec9054b3671795b6998f0b7ed"
+    sha256 cellar: :any,                 arm64_ventura:  "6847fd8d9d941ff6a66519983d937f70a4b4cd5067afa8f2ed3bd441ea5181a4"
+    sha256 cellar: :any,                 arm64_monterey: "379b58c0d89e71b802ec94ec3eb3dedb5e798a010c14479d1e902ecea5fa9ee7"
+    sha256 cellar: :any,                 ventura:        "cc6c791a9e610d581528ec4fdf72a4d8ea45fdd30177bc2b04519fb7ef5a3422"
+    sha256 cellar: :any,                 monterey:       "b8bc9958709893ca6598944f94f142c964fd684468abb2b54044f9b35f42da58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20ecddcacd32575b8306e066c64f6abe75ee95869d996d9ad1f9699b8750eb59"
   end
 
   head do

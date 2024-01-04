@@ -2,8 +2,8 @@ class K9s < Formula
   desc "Kubernetes CLI To Manage Your Clusters In Style!"
   homepage "https:k9scli.io"
   url "https:github.comderailedk9s.git",
-      tag:      "v0.30.6",
-      revision: "6a43167f1a30db50ed2acd4e3ffcfad25f657679"
+      tag:      "v0.30.8",
+      revision: "d0f874e01a747d8851f0751e2fd7677266733f7f"
   license "Apache-2.0"
   head "https:github.comderailedk9s.git", branch: "master"
 
@@ -13,13 +13,13 @@ class K9s < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc76d773a64138733434520aa57efa3783b94cb48377c747902baec47801875d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64a25b560f16f3a344882862338232bbc52d33d4e89747755e85acf419817e14"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e1600b41820dcd5040b6f954e2bb1aee98b775362e4cecd0b4e3fa1153a0989"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c9e1ba63eb86af3a46ebc8cf28482a5a6871d08ab1252af72c9f8a58d1f7cdf"
-    sha256 cellar: :any_skip_relocation, ventura:        "12d1c098d7ddb302c164108938f1c1d1d0bc0ad96971d73007a5143537a12d0a"
-    sha256 cellar: :any_skip_relocation, monterey:       "2762cf760a3aa0fcaf98eda14ddfa7a6269fa98b0ba3c9c4af0a35fa090303d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45b54b78fd0cadee6888c6f59dd0011b599b827af4543abd0b61ea7a3c6cf5e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b52ec069ae7b3c1f6674a2d263c17e7eb14ab0834d3ba958a53e80e0ea5c062"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f6d996fd19ae895a31e48f00ca070d4e9ac82cfbb876e5184ac83c788f45fa6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7dd5dc97f2a61c7dc20bdd032ceede245c23ffb48294a21043e8863f5aac9a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5182f4bfe82190004a0298bec7715e5c71ba92c5fb94cef76719c184ae7adebe"
+    sha256 cellar: :any_skip_relocation, ventura:        "984af1214cbac147b78fb9276069bca20fcf018c00cdf73da79578bcde2090ce"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc740d34fc21b4fe3598b627cb731f3f166d52e24b54c8df48d1e76a82d6f1f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bffa6b02764cd5aca331667235e4720ffb278777c2f7c54d622f4547b47d306"
   end
 
   depends_on "go" => :build

@@ -1,6 +1,7 @@
 class Licensefinder < Formula
   desc "Find licenses for your project's dependencies"
   homepage "https:github.compivotalLicenseFinder"
+  # pull from git tag as gemspec uses `git ls-files`
   url "https:github.compivotalLicenseFinder.git",
       tag:      "v7.1.0",
       revision: "81092404aeaf1cb39dbf2551f50f007ed049c26c"
@@ -29,23 +30,15 @@ class Licensefinder < Formula
   end
 
   test do
-    gem_home = testpath"gem_home"
-    ENV["GEM_HOME"] = gem_home
-    # GEM_PATH is empty on linux, so set it to find the installed gems
-    ENV["GEM_PATH"] = libexec if OS.linux?
-    system "gem", "install", "bundler"
+    ENV["GEM_PATH"] = ENV["GEM_HOME"] = testpath
+    ENV.prepend_path "PATH", Formula["ruby"].opt_bin
 
-    mkdir "test"
-    (testpath"testGemfile").write <<~EOS
+    (testpath"Gemfile").write <<~EOS
       source 'https:rubygems.org'
       gem 'license_finder', '#{version}'
     EOS
-    cd "test" do
-      ENV.prepend_path "PATH", gem_home"bin"
-      system "bundle", "install"
-      ENV.prepend_path "GEM_PATH", gem_home
-      assert_match "license_finder, #{version}, MIT",
-                   shell_output(bin"license_finder", 1)
-    end
+    system "bundle", "install"
+    assert_match "license_finder, #{version}, #{license}",
+                  shell_output(bin"license_finder", 1)
   end
 end

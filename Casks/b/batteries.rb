@@ -8,7 +8,7 @@ cask "batteries" do
   desc "Track all your devices' batteries"
   homepage "https:www.fadel.iobatteries"
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :catalina"
 
   app "Batteries.app"
 

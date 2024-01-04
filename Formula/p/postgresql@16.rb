@@ -12,13 +12,14 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b24e22631e608efac49bf142e9900fc1a685819643d91f9eec7773fee9e31975"
-    sha256 arm64_ventura:  "319503bbad7013074c96f71169c0d566b341efecd33d108dd047534fc2ac5020"
-    sha256 arm64_monterey: "dbaf443e97905d99774ae1edd713ba6d487f824dbdabc16f0ad71a26aecd5843"
-    sha256 sonoma:         "658852e21bf9ae980f92aea8703bf3f81b289ae9a489a528f624cfc878585677"
-    sha256 ventura:        "3a307dbdb3119e6f4b10005a9d3b1c71614ab19c3b0da44f09570a4a6d26f907"
-    sha256 monterey:       "e797ed505dcb30a08d47b34075c5f7c368f228d439633f371aa71f02bd5828af"
-    sha256 x86_64_linux:   "d533452b6449de6e2a2a40ca8eeac8243c25db6dd45bfcefc29104d0b7342624"
+    rebuild 1
+    sha256 arm64_sonoma:   "0d0232baecc6d937e4b70c33ea1047da1b3a6aaeeb438422ee6b3f088ca4fdfe"
+    sha256 arm64_ventura:  "5da5d5aa5687307faf5347dd982de73b1f945909fab3fe31157d87816d1d36d7"
+    sha256 arm64_monterey: "be4f99e49fe017e01a803fcbd07b977ce54b8f5ee326b441df51c4d0e76df7e2"
+    sha256 sonoma:         "b0fce288cfef6961a4728ed37c953615c1180e2e011c1fe2e4622fa84537e5d5"
+    sha256 ventura:        "9ce1f0d41cabf44535ddf83f474636dded2789ee43293289bd3666a6ccf3546c"
+    sha256 monterey:       "a27c4e4b2f1ae68581bf9f0ea09362857ee8d958b99b1ae0088d05314beb4297"
+    sha256 x86_64_linux:   "5cf57a59b73454e187f16000a015de67603f63e81ff6bc76317c26c08642da1f"
   end
 
   keg_only :versioned_formula
@@ -37,6 +38,7 @@ class PostgresqlAT16 < Formula
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "readline"
+  depends_on "zstd"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -76,6 +78,7 @@ class PostgresqlAT16 < Formula
       --with-libxml
       --with-libxslt
       --with-lz4
+      --with-zstd
       --with-openssl
       --with-pam
       --with-perl

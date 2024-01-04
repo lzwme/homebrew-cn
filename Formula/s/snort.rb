@@ -5,6 +5,7 @@ class Snort < Formula
   mirror "https:fossies.orglinuxmiscsnort3-3.1.77.0.tar.gz"
   sha256 "cb98c0d15caa7c84da24995e8521f42f4e86a860b9748418154d8649b6a0db2d"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.comsnort3snort3.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,11 +17,11 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5dc881625cd83e2ddb7d7692c641ec347571ba38d0154f98b4bac9462f6a3731"
-    sha256 cellar: :any,                 arm64_monterey: "32c08e8eb99def263e245d8f4a99586de5dc835f9a2543b4128d199623baf9a3"
-    sha256 cellar: :any,                 ventura:        "6b7bc6506597f40e3445fc6f73e98756da04ebb708b703f40bc7d7d3da0c71a6"
-    sha256 cellar: :any,                 monterey:       "fd0eafd41788d9f74570f7353129adf12eced702f37f9cd9095b48aebaf83742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbc389fb619640d66c23b89d7da5ec311ddb21b7d0ee602a00bbe3eb9601aa87"
+    sha256 cellar: :any,                 arm64_ventura:  "8ee62163a6bbfac6ccc2edda38a4f7bcc94665f2a18f42c630b01f139bc319f4"
+    sha256 cellar: :any,                 arm64_monterey: "7cf51f990bf27a29e8316a38246b475d36bb3f4126c995d7aaa1623a0e011d97"
+    sha256 cellar: :any,                 ventura:        "24f7f045a33b6ee32801733fd66ae874b063cf2e496d7d16ddf57d18fd618e3a"
+    sha256 cellar: :any,                 monterey:       "10f0ba3e1479bbc61a2dd33dc18120233e0466bf603e77cf34ab5ae3830cd142"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da053adcd3d55361cb6f41a79b09e907b79743259e6056bdcd3497716b50fde6"
   end
 
   depends_on "cmake" => :build

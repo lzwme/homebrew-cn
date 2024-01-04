@@ -1,20 +1,23 @@
 class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https:github.compoac-devpoac"
-  url "https:github.compoac-devpoacarchiverefstags0.7.0.tar.gz"
-  sha256 "8ed0189e3fbb4b1326cb2678f80db1652a77399f5b944c57895ce2e00f2d031e"
+  url "https:github.compoac-devpoacarchiverefstags0.8.0.tar.gz"
+  sha256 "ebade39fcbfea45407c724e5193d2f280da0386a96fdba79b0de241bc702b44d"
   license "Apache-2.0"
   head "https:github.compoac-devpoac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49ee867cb80509d2c32016ba661b885bdee69d7c82c9c18b048b6f38b5ad1870"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4744423cd3e1f5b5886a021f4d522800be16a1b228618cace3a39118d75e81cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1570bb3585d5992a5b80e7e39729137339a91ca332aa52ddd245d5727e61a9a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "11188f417a6298fbeb39599a6d93c670360bd2e87b0a5dea9026e3d49ca5f8e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "63e3d0e082baa978f1fdea0b605e168ce57cea1fd1dbc4c46bfa22af7ebad766"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ac4f686e4dc3cf92e4c80ad9a52186f57ab03272323b8e78a9b0b433276f95c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "902689bc9c40c5d9ac2c51fa4006f45ad7703a8c3f1cec033d2f0fd4d9c6012b"
+    sha256 cellar: :any,                 arm64_sonoma:   "75d7aa618df9d09791e2dd79cdc67d4ebfbad7420b9a373226991bfd46e26ae4"
+    sha256 cellar: :any,                 arm64_ventura:  "fb8a3b3bea7ff113781b86779cacc3b6fc4a182d7778974a704da29714bdb407"
+    sha256 cellar: :any,                 arm64_monterey: "b8201556635fa975d1f3af2b70b57ed99301d7d5ffa48b26829a3a7c41aaa060"
+    sha256 cellar: :any,                 sonoma:         "c991f1888b65918a553f7ab5a0ff72adfc97dcb5f6dde726261df11d31fca4ff"
+    sha256 cellar: :any,                 ventura:        "f3a77a7f585ca6e77f1386e8d98710eaaf18847868c9ce0d0583cb2f20ec492b"
+    sha256 cellar: :any,                 monterey:       "37b93bf852ae7c27c78db0e625c02eaea05911a4fb005bf8a4c763af9f0ba9e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8cfc413b04351257442c6e7833c54bc58026c801aa5952954ec01a55cc9ad54"
   end
+
+  depends_on "libgit2"
+  depends_on "pkg-config"
 
   on_macos do
     depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1200
@@ -29,8 +32,7 @@ class Poac < Formula
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
-    system "make", "RELEASE=1"
-    bin.install "build-outpoac"
+    system "make", "RELEASE=1", "PREFIX=#{prefix}", "install"
   end
 
   test do

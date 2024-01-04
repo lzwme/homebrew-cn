@@ -3,18 +3,18 @@ require "languagenode"
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
   homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server#readme"
-  url "https:registry.npmjs.org@tailwindcsslanguage-server-language-server-0.0.14.tgz"
-  sha256 "2e6f29b4d9acab4de233a6d56ae2e0cbcef8036a399e688b799c95604eadb877"
+  url "https:registry.npmjs.org@tailwindcsslanguage-server-language-server-0.0.15.tgz"
+  sha256 "11bb9bdf55be35e90da5f96f957a42965aa956bc22087eb9e33b67c42df01d7c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06469ca761774da256b3c0ec95146fde4e8077f201a71b3c7953cf80f2bf7d20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06469ca761774da256b3c0ec95146fde4e8077f201a71b3c7953cf80f2bf7d20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "06469ca761774da256b3c0ec95146fde4e8077f201a71b3c7953cf80f2bf7d20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b8884eac1f3cc960403219c5dd496f67df0659dce8ab3b8f30f30e1e9c2f1a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b8884eac1f3cc960403219c5dd496f67df0659dce8ab3b8f30f30e1e9c2f1a6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b8884eac1f3cc960403219c5dd496f67df0659dce8ab3b8f30f30e1e9c2f1a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d3b03d738cf5193813da95bb74f0258581032bc3375a2218c90e8d2437aebc5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bb89fffab31c622733017e0932440f4840e47d498acb9a19988019aa4745c82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bb89fffab31c622733017e0932440f4840e47d498acb9a19988019aa4745c82"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bb89fffab31c622733017e0932440f4840e47d498acb9a19988019aa4745c82"
+    sha256 cellar: :any_skip_relocation, sonoma:         "043a48e115659143ced899e5729086267f8d0659902ea21fcd60834dd08d79f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "043a48e115659143ced899e5729086267f8d0659902ea21fcd60834dd08d79f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "043a48e115659143ced899e5729086267f8d0659902ea21fcd60834dd08d79f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cea4a1af27f8dfa874c5bd6018d74b7b96bec5d57211e87fce355b89aa0c9901"
   end
 
   depends_on "node"

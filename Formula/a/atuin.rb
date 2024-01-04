@@ -1,18 +1,18 @@
 class Atuin < Formula
   desc "Improved shell history for zsh, bash, fish and nushell"
   homepage "https:github.comatuinshatuin"
-  url "https:github.comatuinshatuinarchiverefstagsv17.1.0.tar.gz"
-  sha256 "6a0b1542e7061e6a5bcdf3c284d3ad386e3504e040fcfa1500f530a5125b37b8"
+  url "https:github.comatuinshatuinarchiverefstagsv17.2.1.tar.gz"
+  sha256 "5bad59af24317adfa1d56fce39e231c85836fb91ac3d468830f9bb0884b320ca"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d62f71e30e13567c5ed6a3db149487d5edd92ab99e82d5dafe62a45f44274c84"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3732fe398acb59319f3bb7be159224c3f7a6b1e3eebc8fbc6a3c135c9de94849"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aaf9728ddb5f734142d49206bcaf9ae147f3e7a0f98a4f8d70e141d08020295e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a75c96a139205ea77ab2ad14c87087b74bf825f765e7fb8d85c40b80ea6a2e07"
-    sha256 cellar: :any_skip_relocation, ventura:        "6d99deb98741a7858d186f3caa307b7752933d2dbbad75c615e1c8cd8cbe088a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1d61666845f1667e17426f42f057275c357a96f4a68d04a0c2af921fdc3ef86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73899566dd32eb72256264080ccb06a5939fa9b9ed787d9e573006f404eb6ad5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c543ecb375d03c396636bd7a9a20e29ece8455590777c33fc963d10dc3301d39"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a861b3a5d374279e4dbda969a381a2af4ae3e529fd44edeec3c261adee630217"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7472ea2eae84b5c5972c28398b80c9a0f5fb0815686b7c324ac872a1fcc5843d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0fa661a65595fb2343e38a77a8a8692b03bee1c531a60245e8dcdaefc668b835"
+    sha256 cellar: :any_skip_relocation, ventura:        "66dba7ffefac9ebddbe42ad3059ebc7bf3fb35999fbc9ef97a2bcea78797ddbb"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e5486c3c72f756b6fb01aa07005e259918fc55013a22d833d96b7b0071fc56c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09861fd29021ab41d847f4a1002188e89d4147111b7a235673deaa207399934f"
   end
 
   depends_on "rust" => :build
