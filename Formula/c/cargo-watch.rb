@@ -1,21 +1,24 @@
 class CargoWatch < Formula
   desc "Watches over your Cargo project's source"
   homepage "https:watchexec.github.io#cargo-watch"
-  url "https:github.comwatchexeccargo-watcharchiverefstagsv8.4.1.tar.gz"
-  sha256 "af1b649de787630144ccbb510b854d2e2a21b91df6cc7e0f420fd14518978572"
+  url "https:github.comwatchexeccargo-watcharchiverefstagsv8.5.1.tar.gz"
+  sha256 "029c2103e83e5981e5d161f49db212686ac72c5a731f472d12be46e7ba5073fc"
   license "CC0-1.0"
   head "https:github.comwatchexeccargo-watch.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc25a60737c3df7314140c666340c8001e34accafdd1180b07e0d0c5dbe24d09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68731e71cd0a425c94927e77db4c4db0b7ecb277657f4e628f4f76bfb9934a20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f527865af1bafdfa3fe513ee67a2d8a17ed5265ab38b01252aad706a9375b961"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8215440196c9fb03ceba5855a5aa5e11e34d4143c51ba6a257ef171bbeb0125"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a36dd6bff99d2d420e00497d324c8c51901a0091378c8d041f3375d17ddf161"
-    sha256 cellar: :any_skip_relocation, ventura:        "ee77327792a8df29211b7aa76852f92da76d00dda669d595e2b54c311aa6beb5"
-    sha256 cellar: :any_skip_relocation, monterey:       "36dcd5778de148e8a6059143390583bf15d5e74a50833c21527f844c94b8a205"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c1f46ca93af6f011804a06e70835f923c8c138804ca95155eb799dafd247a50d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6774ed87cdf323a41020585d3cd20c6410327dc0d05858c1751333029149e900"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16f413123002352d2ea9ce30e8c21c74b2c58e3f44b5883f09985987ee595e1e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c58395331cae06d64c50ad2515a9dec4240e6b23fe7d12a6bd2c46ce9a621c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6eef7499f9524044647275f6135694dd543b4cfbcf78438330c774765a2d677"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d1096abba1e5b7365cecd2b80e41676a5d36acb3dcd41bd2374d3fab83221d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "64cf9c0980484fb3092d262926fd212270fb3852142b708576b3d746583e5a83"
+    sha256 cellar: :any_skip_relocation, monterey:       "de189a377a4394ec28feea9d0b9e049e74923715fe7e4b809e5492d67e6dbce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99911ce715d423cb416f2bb81d2e31f06134bfc27f0998d9ad612673b6c45d5f"
   end
 
   depends_on "rust" => :build

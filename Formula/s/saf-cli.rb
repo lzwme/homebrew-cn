@@ -3,18 +3,18 @@ require "language/node"
 class SafCli < Formula
   desc "CLI for the MITRE Security Automation Framework (SAF)"
   homepage "https://saf-cli.mitre.org"
-  url "https://registry.npmjs.org/@mitre/saf/-/saf-1.3.0.tgz"
-  sha256 "78e26e2ad96d2b52beb6e9f1419be6e2d9fb1ebfa57a6f6b685f1c49a81c248d"
+  url "https://registry.npmjs.org/@mitre/saf/-/saf-1.3.1.tgz"
+  sha256 "0a0c62e80c2b7f8c4dee74a3e377d8b55133c20473705d3b9c962f5364c3d090"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68f75a4d797721a1fdb0f1eabf5a57e20adec5542f542f308bf1ed192de6028b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68f75a4d797721a1fdb0f1eabf5a57e20adec5542f542f308bf1ed192de6028b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68f75a4d797721a1fdb0f1eabf5a57e20adec5542f542f308bf1ed192de6028b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "adf9075aaa0e9e0a168e45a5ae5dce726c67f779761576e2afd9de9aaaf7b731"
-    sha256 cellar: :any_skip_relocation, ventura:        "adf9075aaa0e9e0a168e45a5ae5dce726c67f779761576e2afd9de9aaaf7b731"
-    sha256 cellar: :any_skip_relocation, monterey:       "adf9075aaa0e9e0a168e45a5ae5dce726c67f779761576e2afd9de9aaaf7b731"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24c0e5701b849a4fddf31fd0f4d3a91ba6ac8ab053978fc119c2a3fdb1a6cb32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3756feebec505212234ffe0f45f20aab872526c18cb63521c8f715bb5d8e011"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3756feebec505212234ffe0f45f20aab872526c18cb63521c8f715bb5d8e011"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3756feebec505212234ffe0f45f20aab872526c18cb63521c8f715bb5d8e011"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e9e41ccb9f4dcf3990083c6a15230308fb363821a33c3103fb159974246b5bae"
+    sha256 cellar: :any_skip_relocation, ventura:        "e9e41ccb9f4dcf3990083c6a15230308fb363821a33c3103fb159974246b5bae"
+    sha256 cellar: :any_skip_relocation, monterey:       "e9e41ccb9f4dcf3990083c6a15230308fb363821a33c3103fb159974246b5bae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e74bc22d9dbb42f212ac9f77e9e3e177ac4fc76234fea3202091f240627ffcc9"
   end
 
   depends_on "node"

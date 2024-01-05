@@ -6,5 +6,12 @@ cask "hancock" do
   name "Hancock"
   homepage "https:github.comJeremyAgostHancock"
 
+  # it has been four years since the last release
+  # users have reported it stopped working for m1 as well as osx
+  # https:github.comJeremyAgostHancockissues8
+  # https:github.comJeremyAgostHancockissues7
+  # https:github.comJeremyAgostHancockissues6
+  disable! date: "2024-01-01", because: :unmaintained
+
   app "Hancock.app"
 end

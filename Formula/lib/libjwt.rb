@@ -1,18 +1,23 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
   homepage "https:github.combenmcollinslibjwt"
-  url "https:github.combenmcollinslibjwtreleasesdownloadv1.16.0libjwt-1.16.0.tar.bz2"
-  sha256 "ea9d0bff35b8b8f8f4df9d9920123f366ea4e6bb1c90ebe16143d840f146f2ed"
+  url "https:github.combenmcollinslibjwtreleasesdownloadv1.15.3libjwt-1.15.3.tar.gz"
+  sha256 "6775095bcd417d375faddc1f17cdd7706ad8aa9b9b02404990c4b0ee218ee379"
   license "MPL-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5737b68c54b8487d34bbc9a465338f7e605bd65a1f26f1a836999378b3689dc0"
-    sha256 cellar: :any,                 arm64_monterey: "98cc184a63e3f1409805d1ab10a7a89436a73fbf92650f81798723a9e5d8941f"
-    sha256 cellar: :any,                 arm64_big_sur:  "5a0d0e6714354f1837fee3ebd6b42c1bf6ac0b177c0272585e15bdcca714d8df"
-    sha256 cellar: :any,                 ventura:        "128d4107b1b66d010fbcacbab88547bb9834ce2ac82e416d4f7e0a2137540b37"
-    sha256 cellar: :any,                 monterey:       "b92b870b2f5f991240472b123c05dbec589eebfe562b246876fba2efb14ceb76"
-    sha256 cellar: :any,                 big_sur:        "2fde3558321bf1c5bebfb24c192bdc7c72f3f3b4e256239eb6b94c38b38097e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29cbe60a9957194f57afc2cf23a44a5442623819f2e704034147b8060034c097"
+    sha256 cellar: :any,                 arm64_ventura:  "f0dab7b04493c0e5153fc17a0b672dd323321c9bdb49ec9daaa512c4bb432e98"
+    sha256 cellar: :any,                 arm64_monterey: "42d06ded1180f824db3a490a5c343941a2703931361bec1bf49b5d2a35d8bbb8"
+    sha256 cellar: :any,                 arm64_big_sur:  "4cfaf8c62ff186564b62a8498d3c39866ad17f0710e9ea4a97002fedea1a2c93"
+    sha256 cellar: :any,                 ventura:        "3f2d008733adee0ef2a972b8bc0ed4871826eb53c3c43074f7e31a9451bf48d7"
+    sha256 cellar: :any,                 monterey:       "e7eb0838d2020ec1ad60092c67396054ce2b9db5fba1eb6ea1b15c255dd41fd8"
+    sha256 cellar: :any,                 big_sur:        "97357f9ffb6e1e8c16eb2cec37e9657d70a67a014be3ce727533a65607d54227"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d71ab6776202034f9e1e9323e520762af18d901c572105d231665a3df34a837"
   end
 
   head do

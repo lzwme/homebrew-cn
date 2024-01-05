@@ -1378,6 +1378,7 @@ Homebrew-homebrew-core/Formula/d/doggo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doitlive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dolphie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dolt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/doltgres.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dooit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dopewars.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/doppler.rb, Homebrew/homebrew-core, 1
@@ -6434,6 +6435,7 @@ Homebrew-homebrew-core/Formula/u/urdfdom_headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/urh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uriparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/urlfinder.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/urlscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/urlview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/urlwatch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uru.rb, Homebrew/homebrew-core, 0
@@ -6588,6 +6590,7 @@ Homebrew-homebrew-core/Formula/v/vulkan-loader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-utility-libraries.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-validationlayers.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vulkan-volk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulsio-gost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vultr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulture.rb, Homebrew/homebrew-core, 1
@@ -11102,6 +11105,7 @@ Homebrew-homebrew-cask/Casks/v/vysor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wacom-inkspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wacom-tablet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/wakatime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wallpaper-wizard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waltr-heic-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waltr-pro.rb, Homebrew/homebrew-cask, 0

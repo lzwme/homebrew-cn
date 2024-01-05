@@ -7,13 +7,14 @@ class Caddy < Formula
   head "https:github.comcaddyservercaddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7967c0bbedbc95f1735bc230669702120f18c73bf5de79cc16c6764cd8a9e902"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7967c0bbedbc95f1735bc230669702120f18c73bf5de79cc16c6764cd8a9e902"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7967c0bbedbc95f1735bc230669702120f18c73bf5de79cc16c6764cd8a9e902"
-    sha256 cellar: :any_skip_relocation, sonoma:         "665e5ae5d0fc92fae832390f81e2e42e7513b02c6212523d9a1471544da47996"
-    sha256 cellar: :any_skip_relocation, ventura:        "665e5ae5d0fc92fae832390f81e2e42e7513b02c6212523d9a1471544da47996"
-    sha256 cellar: :any_skip_relocation, monterey:       "665e5ae5d0fc92fae832390f81e2e42e7513b02c6212523d9a1471544da47996"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25d4aa1d7bb743e60cff81a9e4ed100432657984d2f459729800459b2aed6832"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44451e4f00410a97da192ab349ab94481c7f9ae86113515535f0a792b45092d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44451e4f00410a97da192ab349ab94481c7f9ae86113515535f0a792b45092d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "44451e4f00410a97da192ab349ab94481c7f9ae86113515535f0a792b45092d0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b8ed9ad1a954ecd9b0725640513c531df9587071594414276159da6462a12d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b8ed9ad1a954ecd9b0725640513c531df9587071594414276159da6462a12d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b8ed9ad1a954ecd9b0725640513c531df9587071594414276159da6462a12d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d338d76fc8ebefae48a22e703035082db304871c8d78c97eab6513d83fb6621f"
   end
 
   depends_on "go" => :build
@@ -31,6 +32,10 @@ class Caddy < Formula
     end
 
     generate_completions_from_executable("go", "run", "cmdcaddymain.go", "completion")
+
+    system bin"caddy", "manpage", "--directory", buildpath"man"
+
+    man8.install Dir[buildpath"man*.8"]
   end
 
   service do

@@ -1,19 +1,19 @@
 class Fmt < Formula
   desc "Open-source formatting library for C++"
   homepage "https:fmt.dev"
-  url "https:github.comfmtlibfmtarchiverefstags10.2.0.tar.gz"
-  sha256 "3ca91733a7313a8ad41c0885929415f8ec0a2a31d4dc7e27e9331412f4ca26ac"
+  url "https:github.comfmtlibfmtarchiverefstags10.2.1.tar.gz"
+  sha256 "1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811"
   license "MIT"
   head "https:github.comfmtlibfmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "66982226cb5352d15e01d17247b0b5da9682a0989fad58f17b2eb49de0fe29ca"
-    sha256 cellar: :any,                 arm64_ventura:  "14e5307768db3df98e5ae73b169a678d3bf2edbf8c60faa7738dc27fdc611e61"
-    sha256 cellar: :any,                 arm64_monterey: "52909c5356df6bf05e3e0c5481327466119048652ea2721a36d953b6246906e1"
-    sha256 cellar: :any,                 sonoma:         "3894f5fa4cfe1d5197e3cf3cb598a7bed0ef4401d0245e9a244849eb8c47082b"
-    sha256 cellar: :any,                 ventura:        "18c0f5d79990478ec65da28d60389c293ab50241a000876356aa36b480e14e47"
-    sha256 cellar: :any,                 monterey:       "46fcb7a99298fb2c32b2882d46c1c5d662fc1121f4ff6afee8cadfc8a9b4f813"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1d8ab6b8362b9d6174492009c7b86c7ac917d42c5d6fe14cf35084b0f4982ad"
+    sha256 cellar: :any,                 arm64_sonoma:   "f9dc0c31723eb4f22e1378e8321df1ed4b39911eb5a37a0a76e87e21cc7b89a5"
+    sha256 cellar: :any,                 arm64_ventura:  "17fd077bd2b1fa4f79f8282deedd4c3c8f14ac6304682073e4f787f344872783"
+    sha256 cellar: :any,                 arm64_monterey: "ef1392d686e361babaaa2df5a812025b85cd2a4f7b4c5229f819adff5abc0ebf"
+    sha256 cellar: :any,                 sonoma:         "906df9a1334c0f62d83c0b4ee0ad13296ee6664a01194b58be730707bb7bd260"
+    sha256 cellar: :any,                 ventura:        "3def3ba737bc6fc0cbf33c5439af128706e185b51cbd3d8a5699c7bf539210c4"
+    sha256 cellar: :any,                 monterey:       "4b890aa33f79f61a0da985049bfae4a776a56c897a07ead872009d8eb96ba96b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3cbe457bbcd435144be1769cd638ba03bd776f26d9b3fe4f8d492c9bc5cb6ff"
   end
 
   depends_on "cmake" => :build

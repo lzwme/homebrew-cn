@@ -1,6 +1,7 @@
 class Driftctl < Formula
   desc "Detect, track and alert on infrastructure drift"
-  homepage "https:driftctl.com"
+  # website bug report, https:github.comsnykdriftctlissues1700
+  homepage "https:github.comsnykdriftctl"
   url "https:github.comsnykdriftctlarchiverefstagsv0.40.0.tar.gz"
   sha256 "30781d35092dd1dd1b34f22e63e3130a062cf4a3f511f61be013a0ff2a0c7767"
   license "Apache-2.0"
