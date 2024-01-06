@@ -2903,6 +2903,7 @@ Homebrew-homebrew-core/Formula/k/k2tf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k3d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k3sup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k6.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/k8sgpt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k9s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kafka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kahip.rb, Homebrew/homebrew-core, 1
@@ -9057,7 +9058,6 @@ Homebrew-homebrew-cask/Casks/m/macfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macgamestore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macgdbp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macgesture.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/macgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/machacha.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/machg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/machoexplorer.rb, Homebrew/homebrew-cask, 1

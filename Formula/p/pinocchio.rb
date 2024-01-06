@@ -4,6 +4,7 @@ class Pinocchio < Formula
   url "https:github.comstack-of-taskspinocchioreleasesdownloadv2.6.21pinocchio-2.6.21.tar.gz"
   sha256 "11131e2a694388f7364f9d8d91615507ad2e13faf58a27a898b930f36f5e3db3"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstack-of-taskspinocchio.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "db36ebd2e1cb8a09d6900d7f8f61df4becccb70c3721666c3abdf4adbb6dcf42"
-    sha256 cellar: :any,                 arm64_ventura:  "63bf8c4619ac9491d40a4163380e22e2c4ae4a0c5df6792bbe482361485ef850"
-    sha256 cellar: :any,                 arm64_monterey: "37b8b47c91537fab72d83833f45d1c1fbf873a011f97b138bbf30b5ee4a3333c"
-    sha256 cellar: :any,                 sonoma:         "6c9b3b7a464a4a8798c44254603b40e1c65db9753aa0872432da473cd5c21a73"
-    sha256 cellar: :any,                 ventura:        "5747f3cecd810341ddde894dc2790e0f50262e4af54d3fb41eea9b7deaee4220"
-    sha256 cellar: :any,                 monterey:       "cf148e237db796daeecbf59eb62f435ad67468aa3ee74cbb453685d1f47a8360"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c095eade94bcb933943e72fe150e0d03f3edd268407f290a94f70a3caa5a2b"
+    sha256 cellar: :any,                 arm64_sonoma:   "f3b06543bfadd2a060604db52a21ce94c96a9b464d5fe58d57da9cf3584e5338"
+    sha256 cellar: :any,                 arm64_ventura:  "fee5f3c00578f3fe6a3086c8bdfb70535852b1229940a744f62f2fd269ebe265"
+    sha256 cellar: :any,                 arm64_monterey: "0eebe94411dc66cd5f8c1cbd319b8830f188ee9f202f5ca069d85c39293258f3"
+    sha256 cellar: :any,                 sonoma:         "0b76886db6bd7d793689a6c1d84b2027625e436e6973eba2af8239ad84f97420"
+    sha256 cellar: :any,                 ventura:        "556e5666d444e2caaebe886d8158b98fc78de7d67e402f600d4695aad5594dc0"
+    sha256 cellar: :any,                 monterey:       "ed434a168aef54a133ef3aed765f10399d740d9d3a2fde1cbc619cc13ab61d10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "761aeeb8512baf9bdeba70adf661865d6980a680d209eaaa52f3f6116855fb02"
   end
 
   depends_on "cmake" => :build

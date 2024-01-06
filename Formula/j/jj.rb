@@ -1,37 +1,55 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https:github.commartinvonzjj"
-  url "https:github.commartinvonzjjarchiverefstagsv0.12.0.tar.gz"
-  sha256 "da90259cd1003d9f87af277c8b20625f3b07c3fe785fb490fe17659f2082852f"
+  url "https:github.commartinvonzjjarchiverefstagsv0.13.0.tar.gz"
+  sha256 "f4e2be834cf9ea966ac58451298c8f1eed145c190fbca62b5b5a6bd145ac997e"
   license "Apache-2.0"
   head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c66dfd7cab6c8757ffada9710fcf174157098750567144b03045a5dcba551401"
-    sha256 cellar: :any,                 arm64_ventura:  "de20e3e80363427b2170dd2443499a11e0aa9e9e18d1e559270733c2613d4067"
-    sha256 cellar: :any,                 arm64_monterey: "849c709f767c03b2e39aa9111928a7649ed5cc47d93600cfae192e54adc42413"
-    sha256 cellar: :any,                 sonoma:         "4bce025a82375732240bd62f563d7bc0949b42b16c434f2e886f5f795c8b846c"
-    sha256 cellar: :any,                 ventura:        "0e40ca5051a0f8ef7c82f8af67b86f2b69ff518cc8c2c981091a0aa89476b104"
-    sha256 cellar: :any,                 monterey:       "ae286fe0f6d1b6a8b4ef8fa073fa98dbe7aaefef0e666ec43b5e62e7043d6204"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2586971247b5580729ae4003c22c95882b808425dcfbb4d84a3f93c2f85f9f1"
+    sha256 cellar: :any,                 arm64_sonoma:   "8f1b3018f5851dbc0484c47145a653ef0acf12b29bbede36bc56e0ecbafa0cce"
+    sha256 cellar: :any,                 arm64_ventura:  "6a5df7e031cf127c6c1bb22174e01f263eaf194e13bf15472887ef77813b1061"
+    sha256 cellar: :any,                 arm64_monterey: "e88f57256e00fefc7c2e2ad00c7fd6b103631bdc92a2e3a394f581bef63efafd"
+    sha256 cellar: :any,                 sonoma:         "2ee76b3afcad94a449e99f1483fdeaf059ea76e48841f4f027ea881f5873a514"
+    sha256 cellar: :any,                 ventura:        "b5b7a675cf30af3ea4109bc2b260cd98b28552569b935671bb42680290edb793"
+    sha256 cellar: :any,                 monterey:       "43eef7d525ad445b60ece4a0ab8ca9b220f8d86835efe612f56d0bd79c7445dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "852b18fb5d98684a0196a79553daf2fc01db6b32df574ad457550de4a806dc96"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "libgit2"
   depends_on "openssl@3"
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
-
   def install
+    ENV["LIBGIT2_NO_VENDOR"] = "1"
+
     system "cargo", "install", "--no-default-features", "--bin", "jj", *std_cargo_args(path: "cli")
+
     generate_completions_from_executable(bin"jj", "util", "completion", shell_parameter_format: :flag)
     (man1"jj.1").write Utils.safe_popen_read(bin"jj", "util", "mangen")
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
     system bin"jj", "init", "--git"
     assert_predicate testpath".jj", :exist?
+
+    [
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["openssl@3"].opt_libshared_library("libcrypto"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+    ].each do |library|
+      assert check_binary_linkage(bin"jj", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
+    end
   end
 end

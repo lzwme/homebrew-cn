@@ -1,20 +1,18 @@
 class Rdb < Formula
   desc "Redis RDB parser"
   homepage "https:github.comHDT3213rdb"
-  url "https:github.comHDT3213rdbarchiverefstagsv1.0.13.tar.gz"
-  sha256 "fcef9fb20ac8a81f3e104b4db6b631e8100977aad63f2a4583da70c9f64580db"
+  url "https:github.comHDT3213rdbarchiverefstagsv1.0.14.tar.gz"
+  sha256 "651ca79e423bf0171dc2cbd3ba2baadb7c9529c41d5b6e3a028262026e253137"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "069676a214fe28ce44a97519795f458680e26d05189827ffa2990aa6efa19d45"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56767aae07a006f142d25743f2457eaf7b0f9c1cb02129aa0f9fd6b1ea4460c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "158a9405607e16c3c33831cbf54d34ca38af42fe14a3a12a86678b264779a20e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "07558d082313d32168785b6df6641a4195383867a83e75fd9cbda6369e6416ca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e47cf7cba77941284663f4c3cdc02b7ffc828c236aa7976d7d9948b686e43e79"
-    sha256 cellar: :any_skip_relocation, ventura:        "14af467e44c9422f651094e4e23ec394cf1994ae4c57427788dfddeff2bf4385"
-    sha256 cellar: :any_skip_relocation, monterey:       "e7ee9756755da62058987c095ae6caa4d280814f81b30521fe3981f93ce94fe7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "53248950ee6af26731fd0fe4acf10b8c817c608acbf2220a3f77084bdb5f5caf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05648ccaf20c40be69cfbb03283fd40d7182a28a9bac608f525660b82eb1592f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44ed4670869bd4c28bcead45d8ae7ba4a2ece6bab6a775cdb5f0781b411b0914"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e63b0cb3c84d3018d9686ce715d07b10d495a1c67091a605fa3c2b3aab64846"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f409bacd57424f87c41119b0533df063368afe5e8aa3e043ca4b9c19170a1b40"
+    sha256 cellar: :any_skip_relocation, sonoma:         "06de912654db6c5c121c1743227f52cd5b9aa3e52f2900739f7a64c5dca17df6"
+    sha256 cellar: :any_skip_relocation, ventura:        "8dd764a1135c1551989035e8c6c72138a2b49a1bb42bf3b3acf4b42873b8f36c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a57246a6cb7c9dd3821acb0b7381a073ace7966bbbc36eea1a9962489fcb0b24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78985ce0201fe3a3218122d694c3edccb4a2dc0bbe14294c29141503570d3210"
   end
 
   depends_on "go" => :build

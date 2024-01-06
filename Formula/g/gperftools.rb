@@ -1,8 +1,8 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
   homepage "https:github.comgperftoolsgperftools"
-  url "https:github.comgperftoolsgperftoolsreleasesdownloadgperftools-2.14gperftools-2.14.tar.gz"
-  sha256 "6b561baf304b53d0a25311bd2e29bc993bed76b7c562380949e7cb5e3846b299"
+  url "https:github.comgperftoolsgperftoolsreleasesdownloadgperftools-2.15gperftools-2.15.tar.gz"
+  sha256 "c69fef855628c81ef56f12e3c58f2b7ce1f326c0a1fe783e5cae0b88cbbe9a80"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,11 +12,13 @@ class Gperftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6847fd8d9d941ff6a66519983d937f70a4b4cd5067afa8f2ed3bd441ea5181a4"
-    sha256 cellar: :any,                 arm64_monterey: "379b58c0d89e71b802ec94ec3eb3dedb5e798a010c14479d1e902ecea5fa9ee7"
-    sha256 cellar: :any,                 ventura:        "cc6c791a9e610d581528ec4fdf72a4d8ea45fdd30177bc2b04519fb7ef5a3422"
-    sha256 cellar: :any,                 monterey:       "b8bc9958709893ca6598944f94f142c964fd684468abb2b54044f9b35f42da58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20ecddcacd32575b8306e066c64f6abe75ee95869d996d9ad1f9699b8750eb59"
+    sha256 cellar: :any,                 arm64_sonoma:   "4028997c3d12b6e4885482ae58966354cc2fe80190c2a7ed135eb45e6b6276e0"
+    sha256 cellar: :any,                 arm64_ventura:  "5e9f9b9c64f019690d06db1ffa1cef5de487afb374598685362c001a201a6ff0"
+    sha256 cellar: :any,                 arm64_monterey: "d6c3548e117705df73fb52c00e11a365945b5ea8098f17525f53705b95309e8d"
+    sha256 cellar: :any,                 sonoma:         "3deabed6495f3ae795e6d5be1b355bb18905708143286da8f14ca30f6a6cc1a7"
+    sha256 cellar: :any,                 ventura:        "b01da38a247526e8165566ac8fafc6c2f752b1b3c528487f05fc1e66892060c9"
+    sha256 cellar: :any,                 monterey:       "085fbccd71f4c121f530fcf4cf0e76602233b55c8f3b1f99a8ccc5be0a9b59d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25f20549f67205b20848e267614e039f03db0acc872ab78d2de1d76fd4b715d5"
   end
 
   head do
@@ -36,8 +38,6 @@ class Gperftools < Formula
   end
 
   def install
-    ENV.append_to_cflags "-D_XOPEN_SOURCE" if OS.mac?
-
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     args = [

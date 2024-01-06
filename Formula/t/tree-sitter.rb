@@ -9,40 +9,23 @@ class TreeSitter < Formula
   head "https:github.comtree-sittertree-sitter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9c5ff6c727c1e2276f3cfbe64373bd57d8699425b533796b2413ed4e8bc1e3a1"
-    sha256 cellar: :any,                 arm64_ventura:  "80f5d110450dfa623f0ff043bfb9279a03e760aafa8b67a8f919f8371a8a4282"
-    sha256 cellar: :any,                 arm64_monterey: "d65d3a05944e834d25950b9fa1d3d79a306af2c28b209aaac043e546c0577965"
-    sha256 cellar: :any,                 arm64_big_sur:  "20c1f77800a47d9fd3f055a9b33e06f1782e5b897541b6935262efb831d29c45"
-    sha256 cellar: :any,                 sonoma:         "0415c0fdf2750387f23f713c5081dad3c928149bac6be85b4d0826f08075b4e7"
-    sha256 cellar: :any,                 ventura:        "0b96dc12579c8693392a737e0939c5956f88d9d7beddb18ee045e127d359096b"
-    sha256 cellar: :any,                 monterey:       "84af6fb8f8980273ecc06099ad359dc100a13e0535c2f5ffe5380e7e4a50baed"
-    sha256 cellar: :any,                 big_sur:        "b025e1d6e7ed804c5cf099b4a6bea0dbbf09752aef4582916678dd88f2cd0ab0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d413c47e7b8641aae812d19b39c3f927088e450eabde992f3d7cc32de7d29aa9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b07074890f8a9620df7fb0c252f5d213af4ef5b58222fe5cde17400c99e25b66"
+    sha256 cellar: :any,                 arm64_ventura:  "6e4708d36f22c77e6684ded811a78a1922e6c2bef68f63cdf5804fd224ead544"
+    sha256 cellar: :any,                 arm64_monterey: "fe5a46ba39768f48b6563774da3a7a5b32f42d589f55c2fc44cfe1e16428e3ef"
+    sha256 cellar: :any,                 sonoma:         "e3466ba768c5e8e4f4678c144ac95c72f142b05e13cd9c8175b3a4e2dac5d257"
+    sha256 cellar: :any,                 ventura:        "c557635510c62acf4ad1a12e10ceb309f2988fd988723d0fa3711841263823e7"
+    sha256 cellar: :any,                 monterey:       "e0b89995ed669a6ffae020bf2c1501b48604e632981ef455dedcc09f7cb4a252"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2aa74e3b160bd5578648205a8744bfd3f9c926d044b15041c4ffe0cc995e39dc"
   end
 
-  depends_on "emscripten" => [:build, :test]
-  depends_on "node" => [:build, :test]
   depends_on "rust" => :build
+  depends_on "node" => :test
 
   def install
     system "make", "AMALGAMATED=1"
     system "make", "install", "PREFIX=#{prefix}"
-
-    # NOTE: This step needs to be done *before* `cargo install`
-    cd "libbinding_web" do
-      system "npm", "install", *Language::Node.local_npm_install_args
-    end
-    system "scriptbuild-wasm"
-
-    cd "cli" do
-      system "cargo", "install", *std_cargo_args
-    end
-
-    # Install the wasm module into the prefix.
-    # NOTE: This step needs to be done *after* `cargo install`.
-    %w[tree-sitter.js tree-sitter-web.d.ts tree-sitter.wasm package.json].each do |file|
-      (lib"binding_web").install "libbinding_web#{file}"
-    end
+    system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do
@@ -106,9 +89,5 @@ class TreeSitter < Formula
     EOS
     system ENV.cc, "test_program.c", "-L#{lib}", "-ltree-sitter", "-o", "test_program"
     assert_equal "tree creation failed", shell_output(".test_program")
-
-    # test `tree-sitter build-wasm`
-    ENV.delete "CPATH"
-    system bin"tree-sitter", "build-wasm"
   end
 end

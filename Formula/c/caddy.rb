@@ -7,14 +7,14 @@ class Caddy < Formula
   head "https:github.comcaddyservercaddy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "44451e4f00410a97da192ab349ab94481c7f9ae86113515535f0a792b45092d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44451e4f00410a97da192ab349ab94481c7f9ae86113515535f0a792b45092d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "44451e4f00410a97da192ab349ab94481c7f9ae86113515535f0a792b45092d0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3b8ed9ad1a954ecd9b0725640513c531df9587071594414276159da6462a12d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b8ed9ad1a954ecd9b0725640513c531df9587071594414276159da6462a12d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b8ed9ad1a954ecd9b0725640513c531df9587071594414276159da6462a12d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d338d76fc8ebefae48a22e703035082db304871c8d78c97eab6513d83fb6621f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80d0683f58a41ead917ffd0d3c83471d3cb5e6bfa6699fb248a29b958569520a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80d0683f58a41ead917ffd0d3c83471d3cb5e6bfa6699fb248a29b958569520a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80d0683f58a41ead917ffd0d3c83471d3cb5e6bfa6699fb248a29b958569520a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a72f5f77bcbc300ca82ab60a868cbf8dbcbaf3a0eb4e7d22a4d7190f773245ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "a72f5f77bcbc300ca82ab60a868cbf8dbcbaf3a0eb4e7d22a4d7190f773245ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "a72f5f77bcbc300ca82ab60a868cbf8dbcbaf3a0eb4e7d22a4d7190f773245ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a7af2c32ee507d80ce4a70a0e4ef8281a2601ed2da8e42c0dc1838e491d163e"
   end
 
   depends_on "go" => :build
@@ -38,11 +38,20 @@ class Caddy < Formula
     man8.install Dir[buildpath"man*.8"]
   end
 
+  def caveats
+    <<~EOS
+      When running the provided service, caddy's data dir will be set as
+        `#{HOMEBREW_PREFIX}varlib`
+        instead of the default location found at https:caddyserver.comdocsconventions#data-directory
+    EOS
+  end
+
   service do
     run [opt_bin"caddy", "run", "--config", etc"Caddyfile"]
     keep_alive true
     error_log_path var"logcaddy.log"
     log_path var"logcaddy.log"
+    environment_variables XDG_DATA_HOME: "#{HOMEBREW_PREFIX}varlib"
   end
 
   test do

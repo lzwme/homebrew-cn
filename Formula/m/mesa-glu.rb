@@ -4,6 +4,7 @@ class MesaGlu < Formula
   url "ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.3.tar.xz"
   sha256 "bd43fe12f374b1192eb15fe20e45ff456b9bc26ab57f0eee919f96ca0f8a330f"
   license any_of: ["GPL-3.0-or-later", "GPL-2.0-or-later", "MIT", "SGI-B-2.0"]
+  head "https://gitlab.freedesktop.org/mesa/glu.git", branch: "master"
 
   livecheck do
     url :head
@@ -18,10 +19,6 @@ class MesaGlu < Formula
     sha256 cellar: :any,                 ventura:        "b4736c1784135e82aeb5295997651aeac7305709b345166ba3fd24a901339fcd"
     sha256 cellar: :any,                 monterey:       "807e0114c95152e4a4b4a4b72f0270415aa83eb0211a43488d88c65da65e85fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23e93794ed9518e89338dcfad821b7dbd184c3d46a843b52c05548ffe5bd5f00"
-  end
-
-  head do
-    url "https://gitlab.freedesktop.org/mesa/glu.git"
   end
 
   depends_on "meson" => :build

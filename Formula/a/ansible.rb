@@ -9,13 +9,14 @@ class Ansible < Formula
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "46654b53b8fccb466a02c692b72b17869650c789845f588ee497ac2a9d4240fa"
-    sha256 cellar: :any,                 arm64_ventura:  "d305627c7c2c8610557388f54d16710e4e183a471347f42531a987ff4c53c220"
-    sha256 cellar: :any,                 arm64_monterey: "0f690a8eb3d4beaa804a7c2eb7241a74cf6da9741720a2e9b43df1e84ab06883"
-    sha256 cellar: :any,                 sonoma:         "43a8fd2c563fad55533e6ba2054740e076e3ba798ba84f92f98e16c2f5d40e04"
-    sha256 cellar: :any,                 ventura:        "5155ddd3a8982891426ca1de433894fc1e97ff0177879bb08c00806566e81918"
-    sha256 cellar: :any,                 monterey:       "c439bcf602e09e0d48644759f323066455a8cc0988ba940105a5f97ac6513503"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e0e96f37d90c790d5a47c3d88b21e2e32ee7d15810c88719297bab9948162bb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "17267459f8bc9a9b5578818aaaf28b17f813f5229e4b7a2312178beebb9da987"
+    sha256 cellar: :any,                 arm64_ventura:  "0198d621e983cc17086d7c7cbb2fa5a22d42c441640e05d11a8a92764e8acf10"
+    sha256 cellar: :any,                 arm64_monterey: "94f172b361ade2430a77712580030b543bad250babbbe91579454ed77032fc1e"
+    sha256 cellar: :any,                 sonoma:         "fc8b4c93ffc9a6fd3dced7f811e3c102198b9c681bb7aff4a1566e214462f12f"
+    sha256 cellar: :any,                 ventura:        "1c1673127cbc8acc162be759ccd8fdd86dbc29bae60bb7bfd9485bf8cf98d1e1"
+    sha256 cellar: :any,                 monterey:       "fe3f8c0792df076396a4b2ab3cdb0c2ce7524429a576ad1b6efdc29616f609a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5bb3958b7639c47b1a9c2540e2f895ae19b7ef38744737524e675dfa75b87de"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -47,8 +48,8 @@ class Ansible < Formula
   end
 
   resource "ansible-core" do
-    url "https:files.pythonhosted.orgpackages6f3f1dc35ba302137a4b00d17a42a47859c9e133ea2af56a285418e6c22be05dansible-core-2.16.1.tar.gz"
-    sha256 "4fd1b3c86237507c67113f6770d2470f87477cd88244938d100a2d0fc37bf986"
+    url "https:files.pythonhosted.orgpackages665f3098fac361ca16fc42ac30a2da09939286afd9af289f156ac9fbe87595e9ansible-core-2.16.2.tar.gz"
+    sha256 "e4ab559e7e525b1c6f99084fca873bb014775d5ecbe845b7c07b8e9d6c9c048b"
   end
 
   resource "apache-libcloud" do
