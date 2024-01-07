@@ -25,7 +25,7 @@ cask "pulsar" do
     "~.pulsar",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsdev.pulsar-edit.pulsar.sfl*",
     "~LibraryApplication SupportPulsar",
-    "~LibraryPreferencesdiv.pulsar-edit.pulsar.plist",
+    "~LibraryPreferencesdev.pulsar-edit.pulsar.plist",
     "~LibrarySaved Application Statedev.pulsar-edit.pulsar.savedState",
   ]
 end

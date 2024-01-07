@@ -6,18 +6,20 @@ class PreCommit < Formula
   url "https:files.pythonhosted.orgpackages88e84330d06f2b00ad3a9c66e07a68fe23f70233a4e7e1aaba5a738a93d2cb5dpre_commit-3.6.0.tar.gz"
   sha256 "d30bad9abf165f7785c15a21a1f46da7d0677cb00ee7ff4c579fd38922efe15d"
   license "MIT"
+  revision 1
   head "https:github.compre-commitpre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bc88b06e4238db4b55e1af64cb7fef785ccec3b88bc8dd2c5814ebc8f55b0a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc76862c28b49b83d7a15b484a5186cd6d20a03d60d3b0f9d3afba5d863526a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb7abe34c1d15f3a96b258fbedcdbde6c24e89927e1b35610358db9e70204a44"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2e285ca1bbf5f86e53240c97041e1133d286e05256c5ca9658bb86ed5087b789"
-    sha256 cellar: :any_skip_relocation, ventura:        "07dd83234a749a5307c506a5442ff2f818084aea2d1436e11797fb493447f0ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b23e12b4fc2226d97830982b103f1b5be54707c1ebd638616cf0d614b9a2dd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1984c2637a432088c3d98ad10e9219afa6612387718a16cb076927ee39dc0ea5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6161f704e6ca2e2a7c1acbb83cac70098859da72c4a15006aa8733bd7e07ecd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c6ced4a6600e687dc72d355cc5ef94be288fb547a55b70acfc5efb486664109"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a0285edf6b382de81964ac89928aa0e802f890f82fc275e5b892d613db6954f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6cdf80ea29797cd1a7e737eee1cb532da851e87be208b37c536a1c4e0ae3ed60"
+    sha256 cellar: :any_skip_relocation, ventura:        "282e026682a1ceaf2b797b30c20e3cf4eaa7a9742458f653897bba18002b87a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "75527b653175ea474f154cb44d6640b6c4445fac901d082492dc1f4f562a1bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2a0f913cd2eb408d43ae82d0bf8346918e8aa86730024018eb17bf997523bfa"
   end
 
+  depends_on "python-setuptools" # remove with nodeenv>1.8.0
   depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "virtualenv"

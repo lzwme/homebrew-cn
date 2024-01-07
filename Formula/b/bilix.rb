@@ -6,15 +6,16 @@ class Bilix < Formula
   url "https:files.pythonhosted.orgpackagesdeb5ee8a2f701d4b4499111772ea368164d3a73a2ccdbb8e688b293d9dd12decbilix-0.18.5.tar.gz"
   sha256 "b5921c141c79ba58f3cd1119a81ac7cce17a0b852f266759de1004707a02a8ba"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9e9fe62be42a5a4893de210e549a14335628bca014b667e22afee90348e57c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b61f8904ac6f31d917eafb449f6a53d72ee2e2c9861bce003e71f833b3b2307"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b538949b35e1237457280d83c67fc214ad0c72c258c6aaf86e621e228cc4a69a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a2c1ddc38eaf1b7229187a33a1ec5d48af20cfbc66155fe0c128863317da172"
-    sha256 cellar: :any_skip_relocation, ventura:        "22be86a7376bb52d43ed7a57e7d8508dd66beb404b90429bb0832adb04c0b795"
-    sha256 cellar: :any_skip_relocation, monterey:       "5949f5137e95012a5f2d09a07254589e1a0bd1ed852c709abf598a302a07cd2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f4d31ea259313ca7ce34970763bdcfdb578085c6ea9016eaea3b8dd84cb8d76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f19cd78257e15afe1dbe97f411378222ddfb1b52d2d4cc8878d539c7554ffcf1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e550f1ff8243cf203a19c6a983ee01eb2ab6262a83345efc7e51f06bec1ace92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04d685381f125b8a0710ae625a4a0eac5c77649dc13f1e6d8548506b86143b83"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b76755947ae12833297e85609cb7f6effacfd7461132705d37e6347cf19078f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "888dd55b8fcda7aa4892db34d4439ea7998468826767e37966c6c87ed9a17ebe"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ae83107891645d92ec9fc3549d6ec37afad0c1e203893129f60410a4fe5fbd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "743ad18779e54d728d7f15de3ce6135c0bbcf1a9e4eb785a29bdaae21fad8f68"
   end
 
   depends_on "pygments"
@@ -97,19 +98,14 @@ class Bilix < Formula
     sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
-  resource "jeepney" do
-    url "https:files.pythonhosted.orgpackagesd6f4154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdfjeepney-0.8.0.tar.gz"
-    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
-  end
-
   resource "json5" do
     url "https:files.pythonhosted.orgpackagesf94089e0ecbf8180e112f22046553b50a99fdbb9e8b7c49d547cda2bfa81097bjson5-0.9.14.tar.gz"
     sha256 "9ed66c3a6ca3510a976a9ef9b8c0787de24802724ab1860bc0153c7fdd589b02"
   end
 
   resource "lz4" do
-    url "https:files.pythonhosted.orgpackages9f5432b2d68d25b80ae4037cd1c68b8a6a28c6753cba3632cbf6d64bebd2b200lz4-4.3.2.tar.gz"
-    sha256 "e1431d84a9cfb23e6773e72078ce8e65cad6745816d4cbf9ae67da5ea419acda"
+    url "https:files.pythonhosted.orgpackagesa431ec1259ca8ad11568abaf090a7da719616ca96b60d097ccc5799cd0ff599clz4-4.3.3.tar.gz"
+    sha256 "01fe674ef2889dbb9899d8a67361e0c4a2c833af5aeb37dd505727cf5d2a131e"
   end
 
   resource "m3u8" do
@@ -133,13 +129,13 @@ class Bilix < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages1a72acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025bpycryptodome-3.19.0.tar.gz"
-    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
+    url "https:files.pythonhosted.orgpackagesb13842a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151pycryptodome-3.19.1.tar.gz"
+    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
   end
 
   resource "pycryptodomex" do
-    url "https:files.pythonhosted.orgpackages14c909d5df04c9f29ae1b49d0e34c9934646b53bb2131a55e8ed2a0d447c7c53pycryptodomex-3.19.0.tar.gz"
-    sha256 "af83a554b3f077564229865c45af0791be008ac6469ef0098152139e6bd4b5b6"
+    url "https:files.pythonhosted.orgpackages3f1384f2aea851d75e12e7f32ccc11a00f1defc3d285b4ed710e5d049f31c5a6pycryptodomex-3.19.1.tar.gz"
+    sha256 "0b7154aff2272962355f8941fd514104a88cb29db2d8f43a29af900d6398eb1c"
   end
 
   resource "pydantic" do

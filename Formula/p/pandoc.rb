@@ -1,19 +1,19 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https:pandoc.org"
-  url "https:github.comjgmpandocarchiverefstags3.1.11.tar.gz"
-  sha256 "41d58aca9db2d0e3e27958f596a4cba23776ae38b0b29df5500e2bbd7fb833a9"
+  url "https:github.comjgmpandocarchiverefstags3.1.11.1.tar.gz"
+  sha256 "3677b92797dd596b2f05d80ad7517ac9a07c1d419748d91fc491c457f3873fb9"
   license "GPL-2.0-or-later"
   head "https:github.comjgmpandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7cb0e06452ef6b1b4055b562253d9193ca19cdaa8427373c41423ff6fea9813"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "068f7bbab56a583e18fbf131d25fb8e5e852393f75f59b372dee804226925bbf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4eec917bc84a9b6a2d2359996b841750022e3984ff370fa4da9676a19c4c5545"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4ac2c34aa9c5ff2e3f67704113146303702e7eb44b1256a7bbd95d8e04392b24"
-    sha256 cellar: :any_skip_relocation, ventura:        "709626f8446da8334086ffd3a7f9c89d2123da47d5ebbc5a64a1c6ad75a46522"
-    sha256 cellar: :any_skip_relocation, monterey:       "eec62355fe71b32e3c45d57405a39685d3e5bb0c53fb899692ce8c8da55548a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "352bc0503bd788c9af1519db15dd00eeb8bb2dd2d0953139b8b7fee8023ba1d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05aa3fe48d9a44db97cdb007f0aaa5a257cf843f0377fbaf5943135390339d9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b80165b7bfc9e8107d9970c0356d6473f943622e79f57b35d900047cc714fa2f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13915800eb635f6ed3c1666a6d4986c048cf047968695ee4772b1d3eaade5ba9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dec7b8c7fc8b95d5106d3414c2e65f01412dcb65f48b56e0bc837e7cebd295f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "72b0151a5a02884087080955a24053658a85f571abc95fe49a1b5dd9afc73717"
+    sha256 cellar: :any_skip_relocation, monterey:       "c054f92bb75c9ef21b316f465416c42801547722dbe2791741c07f206048da79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13b42e314adef0c285a47a7feb993c8bc1438328e5de7e27491ea676a8b66873"
   end
 
   depends_on "cabal-install" => :build

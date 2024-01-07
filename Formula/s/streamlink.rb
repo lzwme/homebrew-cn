@@ -6,16 +6,17 @@ class Streamlink < Formula
   url "https:files.pythonhosted.orgpackagesc7ebbd99f3ce5d9cf720d267d6f7219e12042ab95ed89abd093d97073a3f190estreamlink-6.5.0.tar.gz"
   sha256 "8f4d61593bcce10f8d5e84ca956aac4fa639c0a349e7df379834373a883966ed"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "25e8924ff45ffb08dfb40cde4610c7abf630ea92531f8b637e165380c37494a9"
-    sha256 cellar: :any,                 arm64_ventura:  "11b92da3435f16ef3e9a53be197fc244a2e60fb049ed7933f6a5b26dc03e9073"
-    sha256 cellar: :any,                 arm64_monterey: "4761ffa7ec52048c595ad2391c6d631549c1faccfd92dd65770cac21f6d9cd3c"
-    sha256 cellar: :any,                 sonoma:         "3e5706fc44494da4cf3af910f1c822f48451d8d61edf0c1726aae28e5cc5a58d"
-    sha256 cellar: :any,                 ventura:        "5b61b71f298f8244034a668a794ba2a7d02ef5df72f0c2e6d3a0ecec67dba771"
-    sha256 cellar: :any,                 monterey:       "11aabcfadebf5885a228e06061762e0dcc2c66c19be2d3d4ffb3b28eea787671"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c03b1a60c5054ff00271f85346deeb5b12e51f2a9bf375720a384a0aecfa0d9d"
+    sha256 cellar: :any,                 arm64_sonoma:   "1607acc2add613a99b2b6d4cd024b6e7963944f7e3cc00b8877b9856bb2863e5"
+    sha256 cellar: :any,                 arm64_ventura:  "15d9e2264a04e5fabd9708a39b5bac23c6dc93d32a03d7e2d68e37ead4f64208"
+    sha256 cellar: :any,                 arm64_monterey: "5a2e0790ab70defe50ec0e7ff4d0a29aa4904a5f8b9b8d8e3e004ed70e434d5c"
+    sha256 cellar: :any,                 sonoma:         "8a89f92be6ef02ffcaeb99d2d122c3b9f3ff277354f15cc50605cbf560e7bb1a"
+    sha256 cellar: :any,                 ventura:        "ce57270108a76117c6f8c54af6a2aed02dcea2dae0fa2324ff5397617a1fabe2"
+    sha256 cellar: :any,                 monterey:       "61c5b2843c94fcf0de633d7799eded70ca1cc62d0f99826d220a5b4631c5b493"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b43d926980ea619a9d46202e9296c0c15b256e46108dc4ede05d1725ed21a8a8"
   end
 
   depends_on "libxml2" # https:github.comHomebrewhomebrew-coreissues98468
@@ -32,8 +33,8 @@ class Streamlink < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "charset-normalizer" do
@@ -57,8 +58,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages30397305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
+    url "https:files.pythonhosted.orgpackages83181d0c7cf3df839cc2827a0deee2e4b42f4048bc4c1c15612271e2db3928e5lxml-5.0.1.tar.gz"
+    sha256 "4432a1d89a9b340bc6bd1201aef3ba03112f151d3f340d9218247dc0c85028ab"
   end
 
   resource "outcome" do
@@ -72,8 +73,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages1a72acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025bpycryptodome-3.19.0.tar.gz"
-    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
+    url "https:files.pythonhosted.orgpackagesb13842a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151pycryptodome-3.19.1.tar.gz"
+    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
   end
 
   resource "pysocks" do

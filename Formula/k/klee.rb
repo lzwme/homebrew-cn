@@ -10,8 +10,10 @@ class Klee < Formula
   head "https:github.comkleeklee.git", branch: "master"
 
   bottle do
+    sha256 arm64_sonoma:   "2f0160e824e921a2f59c39f450108b2a25280dec0ae73f4a37ee3b3863c29de2"
     sha256 arm64_ventura:  "54392eec13bf7ad524b666e85cd7508b1b5bd6724ebe97c0198a59595bf8cb95"
     sha256 arm64_monterey: "bca91eb14c31dea50cea4d25e780850ee669958caaf57ba0af6d21e964543a02"
+    sha256 sonoma:         "e46ca6fe6b4f7d272272a9c684dd975bff9bac2349da945ac5b80f1eaa3f9ed4"
     sha256 ventura:        "d73b78177f25091c3b29883d2293dec21763af3cad89db2c0d31cbcae6a20542"
     sha256 monterey:       "3b56b5008a309cacd428de8cadd4ceb85a0ad1ecc5b7cf7961ac997379361e2b"
     sha256 x86_64_linux:   "ddd9e505d793ed86614d73edd0316485f259d100b0ac8cbc0b59dad7a815ed58"

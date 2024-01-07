@@ -6,18 +6,18 @@ class Volatility < Formula
   url "https:files.pythonhosted.orgpackages83f6be2fb46e5656f322eeb807a1b0d8a767561cec26824f275f8a3e29e4280cvolatility3-2.5.0.tar.gz"
   sha256 "278ec521c9213967a01321361e4d007c71e681a0c577a75710f482bfa15d0506"
   license :cannot_represent
+  revision 1
   version_scheme 1
   head "https:github.comvolatilityfoundationvolatility3.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "68be854d7a0a8356c6bbe3ac3b98da0ea2d436fe81c910a906024073449e13e5"
-    sha256 cellar: :any,                 arm64_ventura:  "e2ec057e80491748229bf269ab6bb09efea684042cb7276a22d94b104174899f"
-    sha256 cellar: :any,                 arm64_monterey: "9faf00ce000d93b596e896f8c78a2ea8063b64a7d865c81f2deae3374b998a1b"
-    sha256 cellar: :any,                 sonoma:         "d1350c6e9bdcbaeeffc91896f006c75368baebfd4175c910680ab0ce6c7a3498"
-    sha256 cellar: :any,                 ventura:        "a37f994ffd3ca83f09f7820be3dc7921db86d4a8fff22195e40db8c02ba9f109"
-    sha256 cellar: :any,                 monterey:       "675e4ffcc142b39673d9d5b77cb437d1a2b7accd26719e848a3d8c9b93ab4627"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cadc760b920b5f16ae399eeb794df72890a4967a53d8b537c2211bde2ffb4a76"
+    sha256 cellar: :any,                 arm64_sonoma:   "34ca02a6d0506021c1e54eb639436493e29cd6e7d2d498ca7eb4e50cc99628f9"
+    sha256 cellar: :any,                 arm64_ventura:  "5009e530a9fd882e007cb87d9b99b91d1c209242c699441706ae6c9a645480bc"
+    sha256 cellar: :any,                 arm64_monterey: "6cdcf08126d23419af6e0b774cbc4e3dfcbff93406ed3210540f96724519d071"
+    sha256 cellar: :any,                 sonoma:         "294c2c90a5b75ebdf70861c56a5e44ca867f70f47745601dde893d68550f99ab"
+    sha256 cellar: :any,                 ventura:        "bb952b75ac94871a7233ae60340be3a6d302ff04a50036eea38c460e6df53dc1"
+    sha256 cellar: :any,                 monterey:       "01038a65424ee7626e388d07f917415f42b8bb4f9b424792052817ef496cb76e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5925d6c47de8804ac7b56fa708fcb94b42c60a092fd006232ab065a0e2a057c2"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -27,8 +27,8 @@ class Volatility < Formula
 
   # Extra resources are from `requirements.txt`: https:github.comvolatilityfoundationvolatility3#requirements
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "capstone" do
@@ -37,13 +37,13 @@ class Volatility < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackagese443087b24516db11722c8687e0caf0f66c7785c0b1c51b0ab951dfde924e3f5jsonschema-4.19.1.tar.gz"
-    sha256 "ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"
+    url "https:files.pythonhosted.orgpackagesa87477bf12d3dd32b764692a71d4200f03429c41eee2e8a9225d344d91c03affjsonschema-4.20.0.tar.gz"
+    sha256 "4f614fd46d8d61258610998997743ec5492a648b33cf478c1ddc23ed4598a5fa"
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackages12ceeb5396b34c28cbac19a6a8632f0e03d309135d77285536258b82120198d8jsonschema_specifications-2023.7.1.tar.gz"
-    sha256 "c91a50404e88a1f6ba40636778e2ee08f6e24c5613fe4c53ac24578a5a7f72bb"
+    url "https:files.pythonhosted.orgpackagesf8b9cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4bjsonschema_specifications-2023.12.1.tar.gz"
+    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
   end
 
   resource "pefile" do
@@ -52,18 +52,18 @@ class Volatility < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages1a72acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025bpycryptodome-3.19.0.tar.gz"
-    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
+    url "https:files.pythonhosted.orgpackagesb13842a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151pycryptodome-3.19.1.tar.gz"
+    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackagese143d3f6cf3e1ec9003520c5fb31dc363ee488c517f09402abd2a1c90df63bbbreferencing-0.30.2.tar.gz"
-    sha256 "794ad8003c65938edcdbc027f1933215e0d0ccc0291e3ce20a4d87432b59efc0"
+    url "https:files.pythonhosted.orgpackages81ce910573eca7b1a1c6358b0dc0774ce1eeb81f4c98d4ee371f1c85f22040a1referencing-0.32.1.tar.gz"
+    sha256 "3c57da0513e9563eb7e203ebe9bb3a1b509b042016433bd1e45a2853466c3dd3"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages52fa31c7210f4430317c890ed0c8713093843442a98d8a9cafd0333c0040dda4rpds_py-0.10.3.tar.gz"
-    sha256 "fcc1ebb7561a3e24a6588f7c6ded15d80aec22c66a070c757559b57b17ffd1cb"
+    url "https:files.pythonhosted.orgpackagesc26394a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1rpds_py-0.16.2.tar.gz"
+    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
   end
 
   resource "yara-python" do

@@ -8,8 +8,10 @@ class Brpc < Formula
   head "https:github.comapachebrpc.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any,                 arm64_sonoma:   "f4bce25aba8fa6a143a9aa46f0bad75eb9a603f08f70f7b434961520c88a6991"
     sha256 cellar: :any,                 arm64_ventura:  "307d0b8c7ad1db29dd8a1a52540c039848f386b8acbbc087140e6e96ff6d49cf"
     sha256 cellar: :any,                 arm64_monterey: "637cbab632fb6d603910b8bb043ebb45cf9926cee44bc1939ec1f31b1ad7ad2d"
+    sha256 cellar: :any,                 sonoma:         "26e244e4e57e55f60099945af92a73564dfa88b9b72c0ac567a2e5b7d8f9dc2d"
     sha256 cellar: :any,                 ventura:        "fe48323b0ae2afd87bd232f967e86caf6037d0fee594882f0dfa4f0868ac0176"
     sha256 cellar: :any,                 monterey:       "0daded2c313247e5fcafc36857bc7fc712fe6726373e517e36c7fb6580b4eefa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1333e52457be795ac541ff21e8671a586fbb4664a7ab98fc59934befcfebd19f"

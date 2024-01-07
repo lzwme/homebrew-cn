@@ -8,6 +8,7 @@ class Dscanner < Formula
   head "https:github.comdlang-communityD-Scanner.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbd1f17d0cb48e71509362ee0705181a2f1b4afff17a52ae4390f04af43c4419"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "135c33db9a535d0c6b1c4ad21899663d2cf20d15279421273d7ba81b548babcb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f7df8505b212231cd76276d1e11b9f9bd9794527cefb81ef077ac4d6e870b504"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11e1b62ebf7c2955101c1d7d0aa933d594709eaada2dc9de080238f617a3cb73"

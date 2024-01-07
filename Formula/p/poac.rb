@@ -1,22 +1,24 @@
 class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https:github.compoac-devpoac"
-  url "https:github.compoac-devpoacarchiverefstags0.8.0.tar.gz"
-  sha256 "ebade39fcbfea45407c724e5193d2f280da0386a96fdba79b0de241bc702b44d"
+  url "https:github.compoac-devpoacarchiverefstags0.9.1.tar.gz"
+  sha256 "f2e14d1e13b4a036081d7d33c283a6ffc2a8382a541ba0e9553232ccc31f507b"
   license "Apache-2.0"
   head "https:github.compoac-devpoac.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "75d7aa618df9d09791e2dd79cdc67d4ebfbad7420b9a373226991bfd46e26ae4"
-    sha256 cellar: :any,                 arm64_ventura:  "fb8a3b3bea7ff113781b86779cacc3b6fc4a182d7778974a704da29714bdb407"
-    sha256 cellar: :any,                 arm64_monterey: "b8201556635fa975d1f3af2b70b57ed99301d7d5ffa48b26829a3a7c41aaa060"
-    sha256 cellar: :any,                 sonoma:         "c991f1888b65918a553f7ab5a0ff72adfc97dcb5f6dde726261df11d31fca4ff"
-    sha256 cellar: :any,                 ventura:        "f3a77a7f585ca6e77f1386e8d98710eaaf18847868c9ce0d0583cb2f20ec492b"
-    sha256 cellar: :any,                 monterey:       "37b93bf852ae7c27c78db0e625c02eaea05911a4fb005bf8a4c763af9f0ba9e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8cfc413b04351257442c6e7833c54bc58026c801aa5952954ec01a55cc9ad54"
+    sha256 cellar: :any,                 arm64_sonoma:   "b689977515bb674531c1db85bec8250198a097626510d425ae92ff680d2206cc"
+    sha256 cellar: :any,                 arm64_ventura:  "42a410e5c74a18ed0a1acffa2c85ac581fccd487d3053d55f6db0548cfddbe7e"
+    sha256 cellar: :any,                 arm64_monterey: "4ccb6de017801934f2b4cbf83efae3a1a62c137a51643b1b72546db6258b19db"
+    sha256 cellar: :any,                 sonoma:         "b1348056c4bd03c116e2e880b8945195ceb02e4b0dff2dc7e3090eaa23ee5108"
+    sha256 cellar: :any,                 ventura:        "29b7e054f21d29d5bfbc7322ececedd21807696d3834ee51651e6a0472d45cce"
+    sha256 cellar: :any,                 monterey:       "82195f0d6566a157658361749138033a12a6c31e51bb7992c16265342adbdf64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce6af92f7d4a24512b94b87c37738f3ec0b22fdf0c75ac78a3856a9dfd5ad2b2"
   end
 
+  depends_on "curl"
   depends_on "libgit2"
+  depends_on "nlohmann-json"
   depends_on "pkg-config"
 
   on_macos do
@@ -39,7 +41,7 @@ class Poac < Formula
     ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
     system bin"poac", "new", "hello_world"
     cd "hello_world" do
-      assert_match "Hello, world!", shell_output("#{bin}poac run")
+      assert_equal "Hello, world!", shell_output("#{bin}poac run").split("\n").last
     end
   end
 end

@@ -6,6 +6,7 @@ class Binwalk < Formula
   url "https:github.comReFirmLabsbinwalkarchiverefstagsv2.3.4.tar.gz"
   sha256 "60416bfec2390cec76742ce942737df3e6585c933c2467932f59c21e002ba7a9"
   license "MIT"
+  revision 1
   head "https:github.comReFirmLabsbinwalk.git", branch: "master"
 
   livecheck do
@@ -14,14 +15,13 @@ class Binwalk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "aba55d1d9857149f60db5e976b54571a1e77a6bed589e286fb703700283f96d8"
-    sha256 cellar: :any,                 arm64_ventura:  "d4d418ba303811db090a5aed12d82c696c88476f69600338aaacdcbec888a321"
-    sha256 cellar: :any,                 arm64_monterey: "76c0a9c8bf1e3c480dd3bb3e3bfe20af3dc432fe65598e47df5c40a513747565"
-    sha256 cellar: :any,                 sonoma:         "80f791198442d659000941676ed6192195f20ecba6f5ffcc38dac42e40f5fc35"
-    sha256 cellar: :any,                 ventura:        "53c36bc90dbbf038f7687f142e49388b98d526dc47079b100397c40e1c65fb61"
-    sha256 cellar: :any,                 monterey:       "992e87b0d998e8092716e17fc72fd044442c1d2bef7a0158efab6bb41d0352b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "108cabc9ef40c01d49e866e7619a6b6ad6207abb11ccb3360861653d15f20a10"
+    sha256 cellar: :any,                 arm64_sonoma:   "46b1b92e433f1eccc60ffd7827709216295d89fe432f4306d3504f76bee9d7cb"
+    sha256 cellar: :any,                 arm64_ventura:  "fb3ae65b71ec3712d069066db3e295d266767da3ccc55a100fa7a115b42252fd"
+    sha256 cellar: :any,                 arm64_monterey: "77ce813cbdcb4be28efc6e88c1f6110313c14ad5cb86ecb79f8d5e70a9b6b7ca"
+    sha256 cellar: :any,                 sonoma:         "897918a5bc55d11807274a23d0347a6744ba07c4062a4a4b80df5cac8b2f05fb"
+    sha256 cellar: :any,                 ventura:        "02d98de992b3b565be46950793f4b92bf97eca061a9c9e9d8d370fc07106b104"
+    sha256 cellar: :any,                 monterey:       "baadf957ef0ef1c5e11acb9844d98ca912bf52d363dd1bfc1d3f3897fcd374ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0984e5e3f5c0b31708758457d94811e20801a042dc8e3b36c20279d75b1cbc54"
   end
 
   depends_on "meson" => :build # for contourpy
@@ -60,8 +60,8 @@ class Binwalk < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackagesc49f9c3c66017e2be1aa04d9ae54936c932b1e3ad09f70987a9b8a9a2c71ccaafonttools-4.44.3.tar.gz"
-    sha256 "f77b6c0add23a3f1ec8eda40015bcb8e92796f7d06a074de102a31c7d007c05b"
+    url "https:files.pythonhosted.orgpackagesdde59adc30ebca9009d5ad36c7e74462ee5fc51985ca9a845fd26f9f5c99b3dffonttools-4.47.0.tar.gz"
+    sha256 "ec13a10715eef0e031858c1c23bfaee6cba02b97558e4a7bfa089dba4a8c2ebf"
   end
 
   resource "gnupg" do
@@ -75,13 +75,13 @@ class Binwalk < Formula
   end
 
   resource "matplotlib" do
-    url "https:files.pythonhosted.orgpackagesb41b1b80fcc6b7f33a4c7fa025e944416f8b63fa8d278fad32470c82a2edf319matplotlib-3.8.1.tar.gz"
-    sha256 "044df81c1f6f3a8e52d70c4cfcb44e77ea9632a10929932870dfaa90de94365d"
+    url "https:files.pythonhosted.orgpackagesfbab38a0e94cb01dacb50f06957c2bed1c83b8f9dac6618988a37b2487862944matplotlib-3.8.2.tar.gz"
+    sha256 "01a978b871b881ee76017152f1f1a0cbf6bd5f7b8ff8c96df0df1bd57d8755a1"
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages1a72acc37a491b95849b51a2cced64df62aaff6a5c82d26aca10bc99dbda025bpycryptodome-3.19.0.tar.gz"
-    sha256 "bc35d463222cdb4dbebd35e0784155c81e161b9284e567e7e933d722e533331e"
+    url "https:files.pythonhosted.orgpackagesb13842a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151pycryptodome-3.19.1.tar.gz"
+    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
   end
 
   resource "python-dateutil" do

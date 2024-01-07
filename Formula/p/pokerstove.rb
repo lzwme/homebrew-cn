@@ -20,7 +20,7 @@ class Pokerstove < Formula
 
   # failing to build in https:github.comHomebrewhomebrew-corepull128510,
   # no response upstream since ~2021
-  deprecate! date: "2023-05-10", because: :does_not_build
+  disable! date: "2024-01-06", because: :does_not_build
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build

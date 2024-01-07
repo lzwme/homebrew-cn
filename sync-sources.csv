@@ -369,7 +369,7 @@ Homebrew-homebrew-core/Formula/b/bacula-fd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/badkeys.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bagit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/baidupcs-go.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/balena-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/balena-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/ballerburg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/ballerina.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bam.rb, Homebrew/homebrew-core, 1
@@ -2952,6 +2952,7 @@ Homebrew-homebrew-core/Formula/k/killswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kim-api.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kimwitu++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kind.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kiota.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitchen-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitchen-sync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitex.rb, Homebrew/homebrew-core, 1
@@ -6063,7 +6064,7 @@ Homebrew-homebrew-core/Formula/t/talloc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tanka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taplo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarantool.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tarlz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tarlz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tarsnap-gui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarsnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarsnapper.rb, Homebrew/homebrew-core, 1
