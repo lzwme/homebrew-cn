@@ -1,18 +1,18 @@
 class Folderify < Formula
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https:github.comlgarronfolderify"
-  url "https:github.comlgarronfolderifyarchiverefstagsv3.0.13.tar.gz"
-  sha256 "9b72cac5aafb3bf39583b0427fd8bb3346a5a891def6500b5118c7227431dcc0"
+  url "https:github.comlgarronfolderifyarchiverefstagsv3.2.0.tar.gz"
+  sha256 "a720edf253dd3179c124a50cb3fc28ed2f264152dd888427f9cc5832fec1b812"
   license "MIT"
   head "https:github.comlgarronfolderify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "006734a8e92be9a5f973e32a9ff3d635d487cdeb576ca926bad8e5f0ca4ece40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79c7504ded509e8704562609e37ed3cae171d68ae2d817d6582cb80c2a16313c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cf6a3acaa3b6b5775448664684068c508666ff616b3a56e235807acffe991cf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "33245e0ac70b0c38c672c10233e63a7884fd2cffa8768a4bc008fd97201c2705"
-    sha256 cellar: :any_skip_relocation, ventura:        "00e476f39e0e0ff3116dc94980a11e6f0443fd7914238f5d6f584212e3590fc3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c72db1ccf5fdaa63ef5b18d47db46e3aacdb943d91a9428754d92463dd070532"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "001ffa98583ad58be5bb7b30ac1b6d1f874a30fe65dc9043b8c5a95661efadf7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f3d37bd489ec60fab46d83e9d5dcfa347ce91b8f82efd472ff866984a5cfb1d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94a9db29a8eae190fb75a709526f1e6d6c8503f51fcaf5fed0847e127f4a08a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d81fa8acaa33ce3f9bcf88dbd161a602887b0e4bfed308a152165e8424c6e0d"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a254c2a8e9816561b7a686694d843c9dd9cd033f4a55125f464799609a648d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "db46ad2a2080b1c573a853d74c92c5a1c8260bbe626c54b7357ec7a746d4b130"
   end
 
   depends_on "rust" => :build

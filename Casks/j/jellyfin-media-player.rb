@@ -4,7 +4,7 @@ cask "jellyfin-media-player" do
 
   url "https:github.comjellyfinjellyfin-media-playerreleasesdownloadv#{version}JellyfinMediaPlayer-#{version}-macos-notarized.dmg",
       verified: "github.comjellyfinjellyfin-media-player"
-  name "jellyfin-media-player"
+  name "Jellyfin Media Player"
   desc "Jellyfin desktop client"
   homepage "https:jellyfin.org"
 

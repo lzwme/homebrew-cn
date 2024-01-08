@@ -77,9 +77,12 @@ cask "coteditor" do
   app "CotEditor.app"
   binary "#{appdir}CotEditor.appContentsSharedSupportbincot"
 
+  uninstall quit: "com.coteditor.CotEditor"
+
   zap trash: [
     "~LibraryApplication Scriptscom.coteditor.CotEditor",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.coteditor.coteditor.sfl*",
+    "~LibraryCachescom.apple.helpdGeneratedcom.coteditor.CotEditor.help*",
     "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFilecom.coteditor.CotEditor.help*",
     "~LibraryCachescom.apple.helpdSDMHelpDataOtherJapaneseHelpSDMIndexFilecom.coteditor.CotEditor.help*",
     "~LibraryContainerscom.coteditor.CotEditor",

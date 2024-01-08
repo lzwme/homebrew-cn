@@ -1116,6 +1116,7 @@ Homebrew-homebrew-core/Formula/c/csshx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cstore_fdw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/csview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/csvkit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/csvlens.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/csvprintf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/csvq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/csvtk.rb, Homebrew/homebrew-core, 1
@@ -8053,6 +8054,7 @@ Homebrew-homebrew-cask/Casks/e/emacs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/emacsclient.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emailchemy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/emby-server.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/emby.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emclient.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eme.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emmetapp.rb, Homebrew/homebrew-cask, 0
@@ -8580,6 +8582,7 @@ Homebrew-homebrew-cask/Casks/h/hyperbackupexplorer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hypercal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/i1profiler.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/ia-presenter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibabel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackup-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackup.rb, Homebrew/homebrew-cask, 0
@@ -8793,6 +8796,7 @@ Homebrew-homebrew-cask/Casks/j/jumpshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jupyter-notebook-ql.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jupyter-notebook-viewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jupyterlab.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jyutping.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kactus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kakapo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kaku.rb, Homebrew/homebrew-cask, 1
@@ -9910,6 +9914,7 @@ Homebrew-homebrew-cask/Casks/p/preform.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prefs-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prepros.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/presentation.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/prettyclean.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pretzel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prezi-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prezi-next.rb, Homebrew/homebrew-cask, 0

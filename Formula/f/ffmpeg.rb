@@ -15,13 +15,14 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "dd413014b8aea43b1387efa82174f5a6ac4846ff58ef9c5ae4b163ed7a3ae2bb"
-    sha256 arm64_ventura:  "5a4f03d4fc783d1fc6d3ab80075b677c72fb9b3b6edaf643db4dab9d090e7017"
-    sha256 arm64_monterey: "61559972856452f9adcc53120038da536f4d55da7a6c358a49f55fd040b2036a"
-    sha256 sonoma:         "9421ae4f3c55a7730209cf4a2a5acd5328c83fe72e976cbcd0443457c9f45802"
-    sha256 ventura:        "2fec9a5c15081fcee7d858f882d1b73fd5701472435f21e495c6a1a9d1ca6c7f"
-    sha256 monterey:       "0a0e96c862211e5617b1e4a2abd2174283595da324ab5833d4586b025a600d1f"
-    sha256 x86_64_linux:   "732574f9e961218dfb0d6d0e239891b7c23940510a1332c336068c8065be4cb0"
+    rebuild 1
+    sha256 arm64_sonoma:   "2c48104abe3cd1a93a70b3f348436b4ad13f049a627e42d600a3bcd45d36f029"
+    sha256 arm64_ventura:  "814115d25949722c9700c8c1d523b4c58ca0b0dde9e1c0ae6bc5c4e561bd4ce3"
+    sha256 arm64_monterey: "c4079a9865e580840dfad955a4325d2ab21e29de4b1deef37645b050ecf309c4"
+    sha256 sonoma:         "e23c18765ae9c6673ca26dc83341e78ececa83fc2ca5da72f895b2baf6c96037"
+    sha256 ventura:        "35c3a1b8d312725a0e054f138f5a1486ea41a002c9fd15edf013ab57c57d2f73"
+    sha256 monterey:       "4141e7c430de3a02692961f4a3f45b9be0b5c97304d0db6dd543f7b2d1f55112"
+    sha256 x86_64_linux:   "56e53486dfc7036351897830f61cc15cc17135231330a51208c7761e21e7c40b"
   end
 
   depends_on "pkg-config" => :build
@@ -39,6 +40,7 @@ class Ffmpeg < Formula
   depends_on "libbluray"
   depends_on "librist"
   depends_on "libsoxr"
+  depends_on "libssh"
   depends_on "libvidstab"
   depends_on "libvmaf"
   depends_on "libvorbis"
@@ -113,6 +115,7 @@ class Ffmpeg < Formula
       --enable-librubberband
       --enable-libsnappy
       --enable-libsrt
+      --enable-libssh
       --enable-libsvtav1
       --enable-libtesseract
       --enable-libtheora

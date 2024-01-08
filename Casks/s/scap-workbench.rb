@@ -4,7 +4,7 @@ cask "scap-workbench" do
 
   url "https:github.comOpenSCAPscap-workbenchreleasesdownload#{version.sub(-.+, "")}scap-workbench-#{version}.dmg",
       verified: "github.comOpenSCAPscap-workbench"
-  name "scap-workbench"
+  name "SCAP Workbench"
   desc "SCAP Scanner And Tailoring Graphical User Interface"
   homepage "https:www.open-scap.orgtoolsscap-workbench"
 

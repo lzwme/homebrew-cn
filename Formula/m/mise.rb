@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https:github.comjdxmise"
-  url "https:github.comjdxmisearchiverefstagsv2024.1.7.tar.gz"
-  sha256 "9e10bedbf9af5177772322dbfbed2d382f25a1e0536937b053d5836beaa0376c"
+  url "https:github.comjdxmisearchiverefstagsv2024.1.12.tar.gz"
+  sha256 "19e0df02706b1f00118d3405e621643155dc702e84645634a87ddcb964b33a1a"
   license "MIT"
   head "https:github.comjdxmise.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e654f78f67c6dc9bff31162009ba43309c755fa798a259874077c71ce983ffd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29a11b7407b34ce1082f49cf9f1c16fb11d52cba1fe8f94dea3502e03f0ae3d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d662a2a53a76bdddef7f7932cbf31844cf1558186b3b745447cc0f18fca1dd7d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "71d2997a1483659be330d43a23838906c62657f9fe1aed15a10a744bbd70d1cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "945a65b9c809f0b570f428a0bf4ef1811ee87270ad14e9786d54cedae295152c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c3110541e1faba655e6ca96e510dbd0e7298a7ac6a74a569b6ce19adc27099d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c30019c41dfde42d8de7d1f93b218c4591aa81e5b992349eaf448366623a7324"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cb573e465fa1cc365acb55611cbfac13692efe6aa33b4425567a536f4525b3a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32b272b868bcd3656eac4a8275a0403ba7d3cdae4f7d21c2ae1e295378c0022d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a5f68de026cb59e7ebc1126f784a66d81e26d352ba9387120fb04b8a86d156c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "45db118d5ea942bdda0f3da77e8a3cb425050bc2942ba91a76ec90e5320a0ecf"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ce6e4c1b4a83304c40cebd533d6239048cfd168da13ed0da8e91a37928b569d"
+    sha256 cellar: :any_skip_relocation, monterey:       "97b06e5042dfaad14537ca8a9fc0ee8b1e1394a4f61e8a7d6f3197526e273528"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf17593a2178b8eaa12ab73f5b282e408c1b6147c098843fd163440c81650dd"
   end
 
   depends_on "rust" => :build

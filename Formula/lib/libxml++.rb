@@ -31,12 +31,9 @@ class Libxmlxx < Formula
   uses_from_macos "libxml2"
 
   def install
-    ENV.cxx11
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
