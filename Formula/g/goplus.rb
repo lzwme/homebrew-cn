@@ -6,6 +6,11 @@ class Goplus < Formula
   license "Apache-2.0"
   head "https:github.comgoplusgop.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "6cc87471a11edd69c1c099cbf359786fd4b04a38719c1b6b13f053c1d03f2211"
     sha256 arm64_ventura:  "d50e693afc85ed97189a240c4006e11122d7127b91c8a79d14c232e451f7805a"

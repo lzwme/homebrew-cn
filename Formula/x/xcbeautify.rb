@@ -2,19 +2,19 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https:github.comtuistxcbeautify"
   url "https:github.comtuistxcbeautify.git",
-      tag:      "1.3.0",
-      revision: "eec382da2350ea33e7d0f172d53ab7f130b04f18"
+      tag:      "1.3.1",
+      revision: "b8abfc46b38a77f0d1768ac041c5130fec331541"
   license "MIT"
   head "https:github.comtuistxcbeautify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ee80e34c96c32b361a47b5aa46588a5e1acebd7934a824c6c25c4e8912ad6a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd1017dc96572a4df2340fdd52a70b43af4aec2fd6c0ea0005986d421e44fa20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35b120a96bd8738c10e42158cc3e03152c3c39a18be196a15c564905f0cbe72f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "08f46691bf5e1b8c0471a36a38d09b9f524ccfc05b74cc117ac0eb71c59d0513"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff0ff2be73a17d35844e3e0b56125daf233c114ebdb67ccfa979e8e80da5f055"
-    sha256 cellar: :any_skip_relocation, monterey:       "45418d59b7a45ffd9f4d532d35dcce5a5fe69df1b7e1b79cdfabc9261473339e"
-    sha256                               x86_64_linux:   "5d7a777694dc15389faaccafacc17a35293cf33cd9fdeae7d4710daf817df406"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7c1cfb62a937d7fdb3926605e83818df5f96e394b97d40528b8901891280c12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a53f555296aa04d6968db2432683e2f2f7730b1683fc63b98d5f4cbea7e15531"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6b4ee7ca8fac8a3a87cf96ac756d174c821785954c53310c289f523155ded59"
+    sha256 cellar: :any_skip_relocation, sonoma:         "20ba46b8790050da0804266c816583f59d8c9d62b01e74ecef9b2c928909ea57"
+    sha256 cellar: :any_skip_relocation, ventura:        "c7d5f95b9d33f9b64dda94fa6f449a91ba6c32ec6348589c99767a40974479b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "e5a2ce6d8328a0548766aceacf6974a3f7460c18c33aadfdc304b7972fd3e66f"
+    sha256                               x86_64_linux:   "2fcf1007ad7a64c839d44964e0dedcb8f1af6f59126c0cd62d74cf439c9ba8c9"
   end
 
   # needs Swift tools version 5.7.0

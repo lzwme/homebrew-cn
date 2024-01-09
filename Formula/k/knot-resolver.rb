@@ -40,14 +40,12 @@ class KnotResolver < Formula
   end
 
   def install
-    args = std_meson_args + ["--default-library=static"]
+    args = ["--default-library=static"]
     args << "-Dsystemd_files=enabled" if OS.linux?
 
-    mkdir "build" do
-      system "meson", *args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install

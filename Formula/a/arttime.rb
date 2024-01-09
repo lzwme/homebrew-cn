@@ -2,18 +2,19 @@ class Arttime < Formula
   desc "Clock, timer, time manager and ASCII+ text-art viewer for the terminal"
   homepage "https:github.compoetamanarttime"
   url "https:github.compoetamanarttimearchiverefstagsv2.1.3.tar.gz"
-  sha256 "672ff70cdac1a9359ce71c0cfbfc2d94b4ea91ce894d3da999ecdd8d80aa71ae"
+  sha256 "eb5ffaea82e39e47f0017b690ba8337a43a36437a5b2cf86f0fb0e795f01d4d4"
   license "GPL-3.0-only"
   head "https:github.compoetamanarttime.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ce4701467f25a4360da345e7f9706f9491e065a6d568567d0dc37f3ff0aedfd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ce4701467f25a4360da345e7f9706f9491e065a6d568567d0dc37f3ff0aedfd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ce4701467f25a4360da345e7f9706f9491e065a6d568567d0dc37f3ff0aedfd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "430f746cb4a8eb12c3e5022a9713061ab000ce7153a14aa71b65c0617408099e"
-    sha256 cellar: :any_skip_relocation, ventura:        "430f746cb4a8eb12c3e5022a9713061ab000ce7153a14aa71b65c0617408099e"
-    sha256 cellar: :any_skip_relocation, monterey:       "430f746cb4a8eb12c3e5022a9713061ab000ce7153a14aa71b65c0617408099e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ce4701467f25a4360da345e7f9706f9491e065a6d568567d0dc37f3ff0aedfd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27707e1bb7b754c18ea9c2bdec16b6f726e287d4bf7621fdeae2ff3c22d54450"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27707e1bb7b754c18ea9c2bdec16b6f726e287d4bf7621fdeae2ff3c22d54450"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27707e1bb7b754c18ea9c2bdec16b6f726e287d4bf7621fdeae2ff3c22d54450"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4dcb8459212b1327444cef269034c8b12a2721d8cfd4b7b172a2e29c892f0255"
+    sha256 cellar: :any_skip_relocation, ventura:        "4dcb8459212b1327444cef269034c8b12a2721d8cfd4b7b172a2e29c892f0255"
+    sha256 cellar: :any_skip_relocation, monterey:       "4dcb8459212b1327444cef269034c8b12a2721d8cfd4b7b172a2e29c892f0255"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27707e1bb7b754c18ea9c2bdec16b6f726e287d4bf7621fdeae2ff3c22d54450"
   end
 
   depends_on "fzf"

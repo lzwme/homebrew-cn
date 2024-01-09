@@ -3,19 +3,19 @@ class Mentat < Formula
 
   desc "Coding assistant that leverages GPT-4 to write code"
   homepage "https:www.mentat.ai"
-  url "https:files.pythonhosted.orgpackages638bca24b73aa9be9aaa853f46221c920ddf978d108fb9b0cc636ef1417bdc3bmentat-1.0.7.tar.gz"
-  sha256 "c762904e539fb81fd1cfe6fdf6ba6b0a2c4e63d89c953b6615ca6ef600c9ec43"
+  url "https:files.pythonhosted.orgpackagese08ba808d6663065e3b446d3be521d7836f774f3b39bdd30f786d093aca383b6mentat-1.0.8.tar.gz"
+  sha256 "81679055448a495c3e7e55eeb8b59373dc0658cea6b2549d0ae48d26937494ba"
   license "Apache-2.0"
   head "https:github.comAbanteAImentat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "25a3c02474d09b56fd2c526ff0db730a07af981534555a1b4eb854ccc83b5964"
-    sha256 cellar: :any,                 arm64_ventura:  "784d28c70e1f6feb59064d168ab06883ad36471465e4cf3800970c2f07e3feef"
-    sha256 cellar: :any,                 arm64_monterey: "7244fdaa65d9fcf51aee2afb0096386e42cef9ad9f373e16db959b4d5076f397"
-    sha256 cellar: :any,                 sonoma:         "80ac966edc7bda727cc7fdc8adb1ddbb00935715d4cf990a3cb90827ef03f262"
-    sha256 cellar: :any,                 ventura:        "a5b9586d1b4a1f03a0d18ba6deb40103373ac308cfc5c767592b21bec3ca954b"
-    sha256 cellar: :any,                 monterey:       "8f626cde332d043217de4a2b0a8aad7f797a9040fc6b02ca5d4a51948312bdd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c82071f81ff60e9bf0907c14a706bd129d0bd129ce78f80285bd14a410baad1b"
+    sha256 cellar: :any,                 arm64_sonoma:   "540bbce66d04ade4a5418471cc30683e5e69acd88eddda55467474dfffc0bbbf"
+    sha256 cellar: :any,                 arm64_ventura:  "47d4cd3e8af1babd5c7315bbfba545192cfe017bc2bccc6b375a81d57ad231c1"
+    sha256 cellar: :any,                 arm64_monterey: "07755f6e4d09b98db112b0f6514107752ff43edd10bf8bba6569754439ff304e"
+    sha256 cellar: :any,                 sonoma:         "37fe62dae3f94f6fde696545a0d957826962abeef4d346d22441f9cf014747a8"
+    sha256 cellar: :any,                 ventura:        "33ec600376c4c6bdc87ef73979cfd5d0f905e466bb34cd1e19abceae0a8212b9"
+    sha256 cellar: :any,                 monterey:       "7bdb507995f86e7ab6f12b63bf6e1266fdf7500711876660ebd90abbfb35108e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e9f73e98f3945c796382d16c06d5e48fd08d411cc4ffec4cd234440d8fac8d0"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -54,13 +54,23 @@ class Mentat < Formula
   end
 
   resource "distro" do
-    url "https:files.pythonhosted.orgpackages4b89eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398distro-1.8.0.tar.gz"
-    sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
+    url "https:files.pythonhosted.orgpackagesfcf898eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "fire" do
     url "https:files.pythonhosted.orgpackages94ed3b9a10605163f48517931083aee8364d4d6d3bb1aa9b75eb0a4a5e9fbfc1fire-0.5.0.tar.gz"
     sha256 "a6b0d49e98c8963910021f92bba66f65ab440da2982b78eb1bbf95a0a34aacc6"
+  end
+
+  resource "gitdb" do
+    url "https:files.pythonhosted.orgpackages190dbbb5b5ee188dec84647a4664f3e11b06ade2bde568dbd489d9d64adef8edgitdb-4.0.11.tar.gz"
+    sha256 "bf5421126136d6d0af55bc1e7c1af1c397a34f5b7bd79e776cd3e89785c2b04b"
+  end
+
+  resource "gitpython" do
+    url "https:files.pythonhosted.orgpackagesc6335e633d3a8b3dbec3696415960ed30f6718ed04ef423ce0fbc6512a92fa9aGitPython-3.1.37.tar.gz"
+    sha256 "f9b9ddc0761c125d5780eab2d64be4873fc6817c2899cbcb34b02344bdc7bc54"
   end
 
   resource "h11" do
@@ -74,8 +84,8 @@ class Mentat < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages8c23911d93a022979d3ea295f659fbe7edb07b3f4561a477e83b3a6d0e0c914ehttpx-0.25.2.tar.gz"
-    sha256 "8b8fcaa0c8ea7b05edd69a094e63a2094c4efcb48129fb757361bc423c0ad9e8"
+    url "https:files.pythonhosted.orgpackagesbd262dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06httpx-0.26.0.tar.gz"
+    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
   end
 
   resource "iniconfig" do
@@ -89,8 +99,8 @@ class Mentat < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https:files.pythonhosted.orgpackages8cce1eb873a0ba153cf327464c752412b42d11b9c889d208beca7ef75540d128jsonschema_specifications-2023.11.2.tar.gz"
-    sha256 "9472fc4fea474cd74bea4a2b190daeccb5a9e4db2ea80efcf7a1b582fc9a81b8"
+    url "https:files.pythonhosted.orgpackagesf8b9cc0cc592e7c195fb8a650c1d5990b10175cf13b4c97465c72ec841de9e4bjsonschema_specifications-2023.12.1.tar.gz"
+    sha256 "48a76787b3e70f5ed53f1160d2b81f586e4ca6d1548c5de7085d1682674764cc"
   end
 
   resource "openai" do
@@ -114,13 +124,13 @@ class Mentat < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesb7413c8108f79fb7da2d2b17f35744232af4ffcd9e764ebe1e3fd4b26669b325pydantic-2.5.2.tar.gz"
-    sha256 "ff177ba64c6faf73d7afa2e8cad38fd456c0dbe01c9954e71038001cd15a6edd"
+    url "https:files.pythonhosted.orgpackagesaa3f56142232152145ecbee663d70a19a45d078180633321efb3847d2562b490pydantic-2.5.3.tar.gz"
+    sha256 "b3ef57c62535b0941697cce638c08900d87fcb67e29cfa99e8a68f747f393f7a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages6426cffb93fe9c6b5a91c497f37fae14a4b073ecbc47fc36a9979c7aa888b245pydantic_core-2.14.5.tar.gz"
-    sha256 "6d30226dfc816dd0fdf120cae611dd2215117e4f9b124af8c60ab9093b6e8e71"
+    url "https:files.pythonhosted.orgpackagesb27d8304d8471cfe4288f95a3065ebda56f9790d087edc356ad5bd83c89e2d79pydantic_core-2.14.6.tar.gz"
+    sha256 "1fd0c1d395372843fba13a51c28e3bb9d59bd7aebfeb17358ffaaa1e4dbbe948"
   end
 
   resource "pysocks" do
@@ -154,18 +164,18 @@ class Mentat < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages96710aabc36753b7f4ad18cbc3c97dea9d6a4f204cbba7b8e9804313366e1c8freferencing-0.32.0.tar.gz"
-    sha256 "689e64fe121843dcfd57b71933318ef1f91188ffb45367332700a86ac8fd6161"
+    url "https:files.pythonhosted.orgpackages81ce910573eca7b1a1c6358b0dc0774ce1eeb81f4c98d4ee371f1c85f22040a1referencing-0.32.1.tar.gz"
+    sha256 "3c57da0513e9563eb7e203ebe9bb3a1b509b042016433bd1e45a2853466c3dd3"
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackages6b3849d968981b5ec35dbc0f742f8219acab179fc1567d9c22444152f950cf0dregex-2023.10.3.tar.gz"
-    sha256 "3fef4f844d2290ee0ba57addcec17eec9e3df73f10a2748485dfd6a3a188cc0f"
+    url "https:files.pythonhosted.orgpackagesb53931626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853regex-2023.12.25.tar.gz"
+    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackagesa92792d18887228969196cd80943e3fb94520925462aa660fb491e4e2da93e56rpds_py-0.15.2.tar.gz"
-    sha256 "373b76eeb79e8c14f6d82cb1d4d5293f9e4059baec6c1b16dca7ad13b6131b39"
+    url "https:files.pythonhosted.orgpackagesc26394a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1rpds_py-0.16.2.tar.gz"
+    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
   end
 
   resource "selenium" do
@@ -176,6 +186,11 @@ class Mentat < Formula
   resource "sentry-sdk" do
     url "https:files.pythonhosted.orgpackages00e5cf944fd98a68dcde5567949061322577200222d4a897a471e8eaafdbaed4sentry-sdk-1.34.0.tar.gz"
     sha256 "e5d0d2b25931d88fa10986da59d941ac6037f742ab6ff2fce4143a27981d60c3"
+  end
+
+  resource "smmap" do
+    url "https:files.pythonhosted.orgpackages8804b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baasmmap-5.0.1.tar.gz"
+    sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
   end
 
   resource "sniffio" do
@@ -224,8 +239,8 @@ class Mentat < Formula
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackagesd71263deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24wcwidth-0.2.12.tar.gz"
-    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
+    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   resource "webdriver-manager" do

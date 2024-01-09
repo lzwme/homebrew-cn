@@ -2,8 +2,8 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https:docs.camunda.iodocsapis-clientscli-clientindex"
   url "https:github.comcamundazeebe.git",
-      tag:      "8.3.4",
-      revision: "1dd666fb236c086131c264a10c522fe946631784"
+      tag:      "8.4.0",
+      revision: "c59d24240d3c44a083f35ab315583f7f9724a337"
   license "Apache-2.0"
   head "https:github.comcamundazeebe.git", branch: "develop"
 
@@ -16,13 +16,13 @@ class Zbctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4f58dd812d9cc74cc9bcf63defe280c43321356b8bbeec87d7ff921fd58dabe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4f58dd812d9cc74cc9bcf63defe280c43321356b8bbeec87d7ff921fd58dabe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4f58dd812d9cc74cc9bcf63defe280c43321356b8bbeec87d7ff921fd58dabe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d724f4b635e22b4ae47dab880cf2c408d22a8c37e257c946b0f991e1cb0ed54"
-    sha256 cellar: :any_skip_relocation, ventura:        "3d724f4b635e22b4ae47dab880cf2c408d22a8c37e257c946b0f991e1cb0ed54"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d724f4b635e22b4ae47dab880cf2c408d22a8c37e257c946b0f991e1cb0ed54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b24959b4be76313132c126e3389524d4f42a5d753c1a5d366595a3f5911f50b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b69c090ebb0620887259fd0d5317dd72c1bd4084f95de4858f3e669e1822c7cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b69c090ebb0620887259fd0d5317dd72c1bd4084f95de4858f3e669e1822c7cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b69c090ebb0620887259fd0d5317dd72c1bd4084f95de4858f3e669e1822c7cb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "72bbdf3f566981cadd364f52bb94edf5fd47a533f5599bb68a373e12931a89ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "72bbdf3f566981cadd364f52bb94edf5fd47a533f5599bb68a373e12931a89ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "72bbdf3f566981cadd364f52bb94edf5fd47a533f5599bb68a373e12931a89ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9558906f9fa095c53313cea13d27112375324d2f21a6c326ddccc572bf4e8cd7"
   end
 
   depends_on "go" => :build

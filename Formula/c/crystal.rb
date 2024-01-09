@@ -2,15 +2,14 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.10.1.tar.gz"
-    sha256 "f6449ffff519c86383f5e845455f3e6f6b10d6090effab09568f4c7414a8a51b"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.11.0.tar.gz"
+    sha256 "3c4eeb1191478770172a6fa7c4afb074526db9ecf0a80d434d1f4a6441414ae6"
 
     resource "shards" do
-      url "https:github.comcrystal-langshardsarchiverefstagsv0.17.3.tar.gz"
-      sha256 "6512ff51bd69057f4da4783eb6b14c29d9a88b97d35985356d1dc644a08424c7"
+      url "https:github.comcrystal-langshardsarchiverefstagsv0.17.4.tar.gz"
+      sha256 "3576c7418fa9fe09636f985a0043037bb84345f88e03ddb3da78dbe96683232d"
     end
   end
 
@@ -20,13 +19,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "957e953d1b0928aa1f2c7f27f49abff08854f23ed4b9424d6602bf33ac9a67a2"
-    sha256 cellar: :any,                 arm64_ventura:  "9d05895702b12e75cef2419a7272e236ad046d3b91f37a1585c01b8826171746"
-    sha256 cellar: :any,                 arm64_monterey: "a017f472076f634d7223bce01ed06ce0a5a8bbc181cc9cd9547a736771057d1c"
-    sha256 cellar: :any,                 sonoma:         "43716436fff8c53ddc30aed5cf44f9b5b69013fa4382ae812073582d2c1ff9b6"
-    sha256 cellar: :any,                 ventura:        "718df9a8955e684c25780e609c0ce37d7e809bdb0220ddc0aa3bb2ec74b42a26"
-    sha256 cellar: :any,                 monterey:       "176834c934ce39d9044f4b93734f6929e414734524791c2a537c1c87c6839586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06ade603e34ffae9f9714dd5d108a2d790f31f5be554eb18564a167b8f14224d"
+    sha256 cellar: :any,                 arm64_sonoma:   "02a731b574983076b0bdbd26f0729fd28ecc341f50e7b0c3c9065119061e25c0"
+    sha256 cellar: :any,                 arm64_ventura:  "dcbaec0cc94739712da750eb05479c458ee6faeedf3c1a9b73c12006c90c366a"
+    sha256 cellar: :any,                 arm64_monterey: "d596a7b779971f49cf99f37e72d4b9180e64715032f80489e85d641bc1dcdf2a"
+    sha256 cellar: :any,                 sonoma:         "e4c012448c78ffdfdd29668e1a1f4fc40cfdd14b43009045b80131948efc7ecd"
+    sha256 cellar: :any,                 ventura:        "80183e288e606146b920f51ed4c5391bc941a992786a392dfff70db135b6748a"
+    sha256 cellar: :any,                 monterey:       "94c673910507ca32a0c868d469c834e4e2fd4810acbbb430c3ebdbeb71e9afad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfb66f18c0fd4b648db1dbdfbfbd542498786d1a27430c3eb37fd2d864d6877e"
   end
 
   head do
@@ -58,20 +57,20 @@ class Crystal < Formula
   #
   # See: https:github.comHomebrewhomebrew-corepull81318
   resource "boot" do
-    boot_version = Version.new("1.5.1-1")
+    boot_version = Version.new("1.10.1-1")
     version boot_version
 
     on_macos do
       url "https:github.comcrystal-langcrystalreleasesdownload#{boot_version.major_minor_patch}crystal-#{boot_version}-darwin-universal.tar.gz"
       # version boot_version
-      sha256 "432c2fc992247f666db7e55fb15509441510831a72beba34affa2d76b6f2e092"
+      sha256 "e6490e6d09745483bacea43c4d8974273632526c1f98f13db5aae0a5fc2c7924"
     end
 
     on_linux do
       on_intel do
         url "https:github.comcrystal-langcrystalreleasesdownload#{boot_version.major_minor_patch}crystal-#{boot_version}-linux-x86_64.tar.gz"
         # version boot_version
-        sha256 "a475c3d99dbe0f2d5a72d471fa25e03c124b599e47336eed746973b4b4d787bc"
+        sha256 "1742e3755d3653d1ba07c0291f10a517fa392af87130dba4497ed9d82c12348b"
       end
     end
   end

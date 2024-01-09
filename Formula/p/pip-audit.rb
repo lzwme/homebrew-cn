@@ -3,19 +3,19 @@ class PipAudit < Formula
 
   desc "Audits Python environments and dependency trees for known vulnerabilities"
   homepage "https://pypi.org/project/pip-audit/"
-  url "https://files.pythonhosted.org/packages/cc/f4/90de50daed96a82e1bd46f3e173479d282270e8c8bba26389dae44be61c4/pip_audit-2.6.2.tar.gz"
-  sha256 "0bbd023a199a104b29f949f063a872d41113b5a9048285666820fa35a76a7794"
+  url "https://files.pythonhosted.org/packages/ff/bb/8cb2f6721d2cc2f1213b0522748046be9d40ed767e5169189fed1d08765b/pip_audit-2.6.3.tar.gz"
+  sha256 "bd796066f69684b2f4fc2c2b6d222589e23190db0bbde069cea5c2b0be2cc57d"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbe3e42993d82875a4db4d22173201d525cc11a9483241f20e62df7b527079fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a04ef679342199e49d13aac4e79464659756323c4738f6926a963b9acb7bcffd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "af72ec8ec64d5bee170098b94fcd8cb319ca85849fde6fc8a26c45846d7ead3a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c240e29599f1492716dd2a9a56e083cd7bc7fd82f9fea02c559104850692fe4e"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a9edae5b0b909868e3ae07da375191440bc919ff5508c02ca3a0b44e06884be"
-    sha256 cellar: :any_skip_relocation, monterey:       "1a1956a71523d72db0161a53d26e91ed0c99fb5d204b3157b7c03058421eb55c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "137885f1e80eb9ff4d45a3cbdb99d66688e4f24b4ec594b2702c30f27af46ef2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec80a4c620717fb1ad90941d59df722be212f77204392a38c4bbce1504697a0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ff18c3c1548b6c1a8e817a5e1cefb5ffdb23ba8a8be42155b40064607018b3b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4826074ae013c62a93174cb6002da6e3a3f0bcc99b8c84944606c0b1f1b4a36c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1719d972f4b233eb3ba91387d3c74f6a5900aad5403addcc8c8176bbc952a5a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "80ba470f3954674cfd65078e21a540bdc714a99a5b1ed51f088573acff18e81b"
+    sha256 cellar: :any_skip_relocation, monterey:       "eb462a43504dde2136e081742322dfed00790a907cfcdc9ca8a2dd90cbe5233b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2283bbbe20614e1e22fd07ceb418ddc1fd098ea20ec9bb948816d0315b9f67e1"
   end
 
   depends_on "pygments"
@@ -42,8 +42,8 @@ class PipAudit < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https://files.pythonhosted.org/packages/ed/9e/5198201845fa810ad0645401ae3e25f1ce15ebc2c0c40df003c320e5e189/cyclonedx_python_lib-5.2.0.tar.gz"
-    sha256 "b9ebf2c0520721d2f8ee16aadc2bbb9d4e015862c84ab1691a49b177f3014d99"
+    url "https://files.pythonhosted.org/packages/e7/8c/4a3db7f66dcca7a9fc2086375e45f34bd98a11bd8089a8e264015b1f74e8/cyclonedx_python_lib-6.3.0.tar.gz"
+    sha256 "82f2489de3c0cadad5af1ad7fa6b6a185f985746370245d38769699c734533c6"
   end
 
   resource "defusedxml" do
@@ -87,8 +87,8 @@ class PipAudit < Formula
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/e5/9d/9ef479ff1378b70adea861c2d1548033763ebf3f703d4d7b913eaae73e01/packageurl-python-0.13.1.tar.gz"
-    sha256 "84f8053f4b85294b98b3b78715475847fb48f4525ec302d06dc35b26a9b3078a"
+    url "https://files.pythonhosted.org/packages/b5/64/56122e785f91009ff4df4bdc068b7026b46d627636b4a6312ec6f323fc6d/packageurl-python-0.13.3.tar.gz"
+    sha256 "63514d3b72f22a9c092913b3fa7b4670e479998dff3d93597863c413735e2ec7"
   end
 
   resource "pip-api" do
@@ -102,8 +102,8 @@ class PipAudit < Formula
   end
 
   resource "py-serializable" do
-    url "https://files.pythonhosted.org/packages/66/bb/477b7d60381d97a4ba45ae1bcedd6eeb1f689bea82034f80bbdc9634d639/py-serializable-0.15.0.tar.gz"
-    sha256 "8fc41457d8ee5f5c5a12f41fd87bf1a4f2ecf9da39fee92059b728e78f320771"
+    url "https://files.pythonhosted.org/packages/01/74/fdfbb3c4af7c14477099809ad32be0964b8fefac9969c5932bb71dbd07e3/py-serializable-0.17.1.tar.gz"
+    sha256 "875bb9c01df77f563dfcd1e75bb4244b5596083d3aad4ccd3fb63e1f5a9d3e5f"
   end
 
   resource "requests" do

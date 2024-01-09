@@ -1,19 +1,19 @@
 class Trunk < Formula
   desc "Build, bundle & ship your Rust WASM application to the web"
   homepage "https:trunkrs.dev"
-  url "https:github.comtrunk-rstrunkarchiverefstagsv0.18.3.tar.gz"
-  sha256 "195835fc7ad03109fcdb3a182797b3c318cb3dc1778da37a3ea7445994ac9b07"
+  url "https:github.comtrunk-rstrunkarchiverefstagsv0.18.4.tar.gz"
+  sha256 "024a0ac8beadd5f010c38c986ce430cf98adba15f069183b9902f6e27a7d3efa"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comtrunk-rstrunk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe753746c6a4712ca329a0d394e86a2a1d72d41a6df0d17a8f35ef6745d21585"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcc47b73ca0eedf640e9d2a5341275e9324d7ab64d2cf7a832926869f0216614"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01ce58ce41ff4dafec065af6dcc1095f62f843683fa57a0597e318636a6c644b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c2d74907880cef15849edd0d75275fb0f0257bd9283dfd0a24e1a0960f38de4a"
-    sha256 cellar: :any_skip_relocation, ventura:        "eef4f0354b7f62ec70cff2f352fde07018d30e05b0ac90aab11eef0c02cd88cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "3871b06f126dd7b2d61a79943b10e125179d56bd9ebd95dae962f896a35566cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab5018cd4eaeb8d74f7c83d8aad035cac9a5145418d39863ca9854371a7af202"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4475d8f33e0c64f961f9ed208ba75c6fc85c79dac382fb497fb05d05ec1a72c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1586cdd9c7b54192eaf737f88ff989fb71762f4a9743ef589b2304bd2998dc9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe3681830cce527871379dc1ac374167b486a4df74e30b0a589f531c5fcb0516"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dcfe3561ddc7e81fcf1e21f2109df3766d665ae50d83d3a25eec79e4be1efe0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ced8d55319aee36ff0c49e08c00584f4a427454c60dc98f6a632c5cb236386e9"
+    sha256 cellar: :any_skip_relocation, monterey:       "0bcf0ef510bb55b9e1d89e368f5cdd590c4269b91b2b17b840b8bb0046fcd027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e494374dc0c6730ba661f2fc53c8ff05dc2d67eda174fd92d735a0480b32b582"
   end
 
   depends_on "pkg-config" => :build

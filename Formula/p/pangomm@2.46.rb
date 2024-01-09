@@ -25,19 +25,15 @@ class PangommAT246 < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "cairomm@1.14"
   depends_on "glibmm@2.66"
   depends_on "pango"
 
   def install
-    ENV.cxx11
-
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
   test do
     (testpath/"test.cpp").write <<~EOS
@@ -48,57 +44,9 @@ class PangommAT246 < Formula
         return 0;
       }
     EOS
-    cairo = Formula["cairo"]
-    cairomm = Formula["cairomm@1.14"]
-    fontconfig = Formula["fontconfig"]
-    freetype = Formula["freetype"]
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    glibmm = Formula["glibmm@2.66"]
-    harfbuzz = Formula["harfbuzz"]
-    libpng = Formula["libpng"]
-    libsigcxx = Formula["libsigc++@2"]
-    pango = Formula["pango"]
-    pixman = Formula["pixman"]
-    flags = %W[
-      -I#{cairo.opt_include}/cairo
-      -I#{cairomm.opt_include}/cairomm-1.0
-      -I#{cairomm.opt_lib}/cairomm-1.0/include
-      -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}/freetype2
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{glibmm.opt_include}/glibmm-2.4
-      -I#{glibmm.opt_lib}/glibmm-2.4/include
-      -I#{harfbuzz.opt_include}/harfbuzz
-      -I#{include}/pangomm-1.4
-      -I#{libpng.opt_include}/libpng16
-      -I#{libsigcxx.opt_include}/sigc++-2.0
-      -I#{libsigcxx.opt_lib}/sigc++-2.0/include
-      -I#{lib}/pangomm-1.4/include
-      -I#{pango.opt_include}/pango-1.0
-      -I#{pixman.opt_include}/pixman-1
-      -L#{cairo.opt_lib}
-      -L#{cairomm.opt_lib}
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{glibmm.opt_lib}
-      -L#{libsigcxx.opt_lib}
-      -L#{lib}
-      -L#{pango.opt_lib}
-      -lcairo
-      -lcairomm-1.0
-      -lglib-2.0
-      -lglibmm-2.4
-      -lgobject-2.0
-      -lpango-1.0
-      -lpangocairo-1.0
-      -lpangomm-1.4
-      -lsigc-2.0
-    ]
-    flags << "-lintl" if OS.mac?
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
+
+    pkg_config_cflags = shell_output("pkg-config --cflags --libs pangomm-1.4").chomp.split
+    system ENV.cxx, "-std=c++11", "test.cpp", *pkg_config_cflags, "-o", "test"
     system "./test"
   end
 end

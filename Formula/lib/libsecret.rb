@@ -28,7 +28,7 @@ class Libsecret < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
   depends_on "glib"
   depends_on "libgcrypt"
@@ -37,13 +37,11 @@ class Libsecret < Formula
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
-    mkdir "build" do
-      system "meson", "..", "-Dbashcompdir=#{bash_completion}",
-                            "-Dgtk_doc=false",
-                            *std_meson_args
-      system "ninja", "--verbose"
-      system "ninja", "install", "--verbose"
-    end
+    system "meson", "setup", "build", "-Dbashcompdir=#{bash_completion}",
+                                      "-Dgtk_doc=false",
+                                      *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -74,13 +72,8 @@ class Libsecret < Formula
       }
     EOS
 
-    flags = [
-      "-I#{include}/libsecret-1",
-      "-I#{HOMEBREW_PREFIX}/include/glib-2.0",
-      "-I#{HOMEBREW_PREFIX}/lib/glib-2.0/include",
-    ]
-
-    system ENV.cc, "test.c", "-o", "test", *flags
+    pkg_config_cflags = shell_output("pkg-config --cflags --libs libsecret-1").chomp.split
+    system ENV.cc, "test.c", *pkg_config_cflags, "-o", "test"
     system "./test"
   end
 end

@@ -8053,8 +8053,8 @@ Homebrew-homebrew-cask/Casks/e/elpass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/emacs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/emacsclient.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emailchemy.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/e/emby-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emby.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/embyserver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emclient.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eme.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/emmetapp.rb, Homebrew/homebrew-cask, 0
@@ -10110,7 +10110,7 @@ Homebrew-homebrew-cask/Casks/r/react-proto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/react-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reactotron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/readdle-spark.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/r/reader.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/reader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/readmoreading.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readwise-ibooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readyapi.rb, Homebrew/homebrew-cask, 0
@@ -10286,7 +10286,7 @@ Homebrew-homebrew-cask/Casks/s/screenfocus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screens-assist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/screens-connect.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/screens.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/scribus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/scribus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/script-debugger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scriptql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scrivener.rb, Homebrew/homebrew-cask, 0

@@ -21,11 +21,10 @@ class Iputils < Formula
       -DUSE_CAP=false
       -DSKIP_TESTS=true
     ]
-    mkdir "build" do
-      system "meson", *std_meson_args, *args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

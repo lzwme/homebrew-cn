@@ -1,18 +1,18 @@
 class PythonLxml < Formula
   desc "Pythonic binding for the libxml2 and libxslt libraries"
   homepage "https:github.comlxmllxml"
-  url "https:files.pythonhosted.orgpackages83181d0c7cf3df839cc2827a0deee2e4b42f4048bc4c1c15612271e2db3928e5lxml-5.0.1.tar.gz"
-  sha256 "4432a1d89a9b340bc6bd1201aef3ba03112f151d3f340d9218247dc0c85028ab"
+  url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
+  sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f11914ad18c6d0325fc94b969f28c47f25be5daae09add83cdd015755fa40aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5ecaa88135b57e035c32b2c6ba09dd9a5e96ee810778506f37e56b3aa06a8a1"
-    sha256 cellar: :any,                 arm64_monterey: "841ac4966b3e3d7bda362c190d56018b73488d9ad3b4e13c94899e85d4c6552e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "40f6a7499a60d8ecc3c757d43d13a5a92e87ba689ae7c609684a0fe066e3a6a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "995322d8ddf590cc47f81e8c2809772f958f277571fa18b9a6957d4182cfc174"
-    sha256 cellar: :any,                 monterey:       "3cdda375643985282932cc1f0155855b50c09138ef2c0cf16c88767fdf25ed0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8f724b0ce729e67aba1724ca9c7e14a1110ce6417251a032ea81999702db43b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "447e87be72933607cf593e5aea08d068eddebdd0d792933521ddc2fa80ac97c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b3eb68b9df4a047205d38c0bd0952554a8924237a35752f8b5aab044d377a07"
+    sha256 cellar: :any,                 arm64_monterey: "055c1a45b71101ef1ce2a1672d8fdf6368b413e092ca057e9a6890577e3d31e0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c62f871719fbf39547401c6ea6857afb3160aa23d31c2633445fc6dcc411ee47"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c28366685e1dd6834730fa43c6ee1239e726c5a3a03a4d349b8ca11306a50c8"
+    sha256 cellar: :any,                 monterey:       "332bda2757cc293bca09c67e244c1e2f5f6f2010db8e09077bd435dfd40c98e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8396aea90abea66b593cb94e7ba0b54e1a1c91e2cba9f1a0e3a709bf5df9899"
   end
 
   depends_on "python-setuptools" => :build
