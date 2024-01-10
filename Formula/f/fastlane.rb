@@ -4,6 +4,7 @@ class Fastlane < Formula
   url "https:github.comfastlanefastlanearchiverefstags2.219.0.tar.gz"
   sha256 "100458a3bc60c23fbc374748b7eab3f4666aa50fb84ffe94daa9e074d5dbf059"
   license "MIT"
+  revision 2
   head "https:github.comfastlanefastlane.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Fastlane < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "397caeb13a5bead9215f885df5d6aea7b8a26bc3ec210ea6ac75dae8c0d6779f"
-    sha256 cellar: :any,                 arm64_ventura:  "cb915232b6657002178e4db3cc6d6b71227fe2bcc69ac0490e7946ec733ec905"
-    sha256 cellar: :any,                 arm64_monterey: "0f7ec9e5855c0a8f9018c82132802fa7858524f8cc38cf4b2bb0b0844f648279"
-    sha256 cellar: :any,                 sonoma:         "0aa6a12d03a67e17da1581eccee4185df6a868b6141f9efd3c54fe36e44b6f47"
-    sha256 cellar: :any,                 ventura:        "bcd08fdb7202bc4bba640010155b1a59be548e89fa72e2d420bfa5fcfcca7d6b"
-    sha256 cellar: :any,                 monterey:       "755e44135e6c81a37fe7f7a35d9d6e0b577a6eacc8f733d187450a63feed5132"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33f43c7d3371961a0f928275ba75c6c1ed9ac235483d03ed76c574b7772bfb53"
+    sha256 cellar: :any,                 arm64_sonoma:   "8c5022a9976ba8df487627ad71a8b31f89cbb2e600e85596aa3f34cb2cfefb4e"
+    sha256 cellar: :any,                 arm64_ventura:  "8f913dc152de63df86c8360b8ec9dfc940cbcd43c0b4c6c2acabae545a57f836"
+    sha256 cellar: :any,                 arm64_monterey: "a4c708aff31dc26df462628e011fe56906f97ed018ecd98cdf5b112e7b0303b1"
+    sha256 cellar: :any,                 sonoma:         "3039fc1313f1d5f6b4ee995db17e0c61bf2fee1a53bcb823a4898f0b60a5f9bc"
+    sha256 cellar: :any,                 ventura:        "099e7108d21bc4f62ce25d4df3d5a115a4a6af0278a1127dd3f8cfa603a02fbb"
+    sha256 cellar: :any,                 monterey:       "68c09c344ed1005c51d9234c2ce4833aae206daabc76fa3aa45b95bb9abecc2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c24e2cb0e786cdd719f364fb73d5e674829b402b6df272f3b0da2b54ef97741"
   end
 
   depends_on "ruby"
@@ -35,7 +36,7 @@ class Fastlane < Formula
     system "gem", "install", "fastlane-#{version}.gem", "--no-document"
 
     (bin"fastlane").write_env_script libexec"binfastlane",
-      PATH:                            "#{Formula["ruby@3.1"].opt_bin}:#{libexec}bin:$PATH",
+      PATH:                            "#{Formula["ruby"].opt_bin}:#{libexec}bin:$PATH",
       FASTLANE_INSTALLED_VIA_HOMEBREW: "true",
       GEM_HOME:                        libexec.to_s,
       GEM_PATH:                        libexec.to_s

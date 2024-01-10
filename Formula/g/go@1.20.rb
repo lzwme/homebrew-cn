@@ -1,9 +1,9 @@
 class GoAT120 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.20.12.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.20.12.src.tar.gz"
-  sha256 "c5bf934751d31c315c1d0bb5fb02296545fa6d08923566f7a5afec81f2ed27d6"
+  url "https://go.dev/dl/go1.20.13.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.20.13.src.tar.gz"
+  sha256 "0fe745c530f2f1d67193af3c5ea25246be077989ec5178df266e975f3532449e"
   license "BSD-3-Clause"
 
   livecheck do
@@ -20,13 +20,13 @@ class GoAT120 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c142abdda3f381d8520334669a15864062b82a0382f32ed383cf146f2c71c3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c142abdda3f381d8520334669a15864062b82a0382f32ed383cf146f2c71c3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c142abdda3f381d8520334669a15864062b82a0382f32ed383cf146f2c71c3c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ee717bb9626a2dc25c3b58cbe7a66578ba63eb467857e2c8320b227902edb74"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ee717bb9626a2dc25c3b58cbe7a66578ba63eb467857e2c8320b227902edb74"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ee717bb9626a2dc25c3b58cbe7a66578ba63eb467857e2c8320b227902edb74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "754cee017d086502832a11785aba47e4f703b09f43e0c489b1cae9bb09175024"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e0b883eebe85612544d06bb87d0e375716801288eae245bca1ca8e3cf8eab4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e0b883eebe85612544d06bb87d0e375716801288eae245bca1ca8e3cf8eab4a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e0b883eebe85612544d06bb87d0e375716801288eae245bca1ca8e3cf8eab4a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "32f4da4cf665a4e2121aea852ddc0e8a86d8c974f85fc4d0fdb1c4699569f851"
+    sha256 cellar: :any_skip_relocation, ventura:        "32f4da4cf665a4e2121aea852ddc0e8a86d8c974f85fc4d0fdb1c4699569f851"
+    sha256 cellar: :any_skip_relocation, monterey:       "32f4da4cf665a4e2121aea852ddc0e8a86d8c974f85fc4d0fdb1c4699569f851"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd2da4e7d3a529d3fb57bcebb732cb4eb733f5b3ac0b801d40d2764367a31122"
   end
 
   keg_only :versioned_formula

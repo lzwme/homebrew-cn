@@ -5,6 +5,7 @@ class Vim < Formula
   url "https:github.comvimvimarchiverefstagsv9.1.0.tar.gz"
   sha256 "ddb435f6e386c53799a3025bdc5a3533beac735a0ee596cb27ada97366a1c725"
   license "Vim"
+  revision 1
   head "https:github.comvimvim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
@@ -17,13 +18,13 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ab0dd65931cc8626a5ed089fe601de83180579c087b294cb47f162c66ed85d57"
-    sha256 arm64_ventura:  "ca4a9eefa8c3701595f9d154fad524466f83ad10a5dde76fc2bf50113c9fa400"
-    sha256 arm64_monterey: "69f1acd3bfd08464676fc2bad9db81097922c5856f6ffc06117b3a01dfcfabe2"
-    sha256 sonoma:         "ee91ce7b7107e3ed62dc487157ed2ddde0388603fe85f42f4481521526cec7f7"
-    sha256 ventura:        "46247d11f59d8aed92118bbb94204f060ac9a5e27e1fd99728ada802e04b9bcb"
-    sha256 monterey:       "d3d0a8c8c3757e25e74918c753f75480094f99ff630851a98b83c6e093c45ba2"
-    sha256 x86_64_linux:   "6958e315386faad0cfa5d65c2d4b2912ed987c9601685c43a1f32b4a27967af2"
+    sha256 arm64_sonoma:   "0506b6a7de4b97804085e2205a30ebcdc685700fb7666efa5ff2485302ce4bc5"
+    sha256 arm64_ventura:  "458aa35d0e85c63e375b73d0073b998b65bc593f444b323154e89a923b6bb6ac"
+    sha256 arm64_monterey: "64b2880b609d84cfec5d163193cfeb8708bad4165a6d7d5f7bd0141a10f32d9e"
+    sha256 sonoma:         "adea12021e4a5c53bdaf12b6dcc0150a106c8534d500fc6e1b2bd86dcf803da1"
+    sha256 ventura:        "146a360b2dcb37d1dd6a965d5d8e0506369827a424ca00500497d1298f525253"
+    sha256 monterey:       "976a199b796554dc806c69a974cc977ef406c8f78e72980860b18005428e2b36"
+    sha256 x86_64_linux:   "07930aeb9c79f6dc5fa03b3dc3d8a9161425ef7b3667c2f96127cb5eb0693041"
   end
 
   depends_on "gettext"

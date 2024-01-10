@@ -4207,6 +4207,7 @@ Homebrew-homebrew-core/Formula/n/ncc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncdc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/ncdu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncftp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/ncmdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncmpc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/ncmpcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ncnn.rb, Homebrew/homebrew-core, 1
@@ -5446,6 +5447,7 @@ Homebrew-homebrew-core/Formula/r/ruby@2.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@2.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.1.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ruby@3.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rubyfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruff-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruff.rb, Homebrew/homebrew-core, 1

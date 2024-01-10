@@ -1,10 +1,9 @@
 class Cp2k < Formula
   desc "Quantum chemistry and solid state physics software package"
   homepage "https:www.cp2k.org"
-  url "https:github.comcp2kcp2kreleasesdownloadv2023.2cp2k-2023.2.tar.bz2"
-  sha256 "adbcc903c1a78cba98f49fe6905a62b49f12e3dfd7cedea00616d1a5f50550db"
+  url "https:github.comcp2kcp2kreleasesdownloadv2024.1cp2k-2024.1.tar.bz2"
+  sha256 "a7abf149a278dfd5283dc592a2c4ae803b37d040df25d62a5e35af5c4557668f"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,16 +11,16 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "16d19e131dfe40d6774fb25680078077948ea0e8e7a71dac89df5e0a46d7c5a4"
-    sha256 cellar: :any, arm64_ventura:  "a08b0a98ecac0d0625c0044b316a94f8667c6ce8afe7c9f7ff2697f4265de898"
-    sha256 cellar: :any, arm64_monterey: "d69dec225c6ceb45a5b59c3c6876130bbb20730a5f7312a9c11b24578ce914bf"
-    sha256 cellar: :any, sonoma:         "67803409aa250cab9fa820b5f70851a3a07661a96e92268c9471e07cc0ae5db6"
-    sha256 cellar: :any, ventura:        "2b56dd29a9e449f86d245b0a49d3388636c4b0b0cec159f430f2f58b0b00676e"
-    sha256 cellar: :any, monterey:       "71f02038d2e4fbb22e26f859935bc4c5b808df91e61de0f67e75ddb3145cfc87"
-    sha256               x86_64_linux:   "e7c09a2661f7e5b61fcdc7683fd5c52904510c35a2644630c5ba896e25987f7f"
+    sha256 cellar: :any, arm64_sonoma:   "afa1c6cdff4809dacea068dac134b2e8e861382d477f110e9bbdd4cc99513acb"
+    sha256 cellar: :any, arm64_ventura:  "7bdd89ca6bb7254483dd6bdc185ca3fb524fbd544d61f8d183509b82f41fab80"
+    sha256 cellar: :any, arm64_monterey: "cdbcdef206ab2a266eee36142264696fa1ce6e0ecd97a600522d2a54713bbfb9"
+    sha256 cellar: :any, sonoma:         "72dcb6262d54fbde7d84104581388ddb54f164c7328479bea63aa085b9f98a18"
+    sha256 cellar: :any, ventura:        "4d47f258b198986b4fda6643e1291ee146ea7ad57a3804f6be7853e7cabbed95"
+    sha256 cellar: :any, monterey:       "06535d5670667a3254e14b3c1b2865f12d57d1962a19e84db4216c0d53a4800d"
+    sha256               x86_64_linux:   "16055b3ba5722c5c73e2404970afb806bf4b72ae932f4e113320211a499ad0c2"
   end
 
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
   depends_on "fftw"
   depends_on "gcc" # for gfortran
   depends_on "libxc"
@@ -51,13 +50,9 @@ class Cp2k < Formula
     if OS.mac?
       arch = "Darwin-gfortran"
 
-      # libint needs `-lstdc++` (https:github.comcp2kcp2kblobmasterINSTALL.md)
-      # Can remove if added upstream to Darwin-gfortran.psmp and Darwin-gfortran.ssmp
-      # PR submitted: https:github.comcp2kcp2kpull2966
       libs = %W[
         -L#{Formula["fftw"].opt_lib}
         -lfftw3
-        -lstdc++
       ]
 
       ENV["LIBXC_INCLUDE_DIR"] = Formula["libxc"].opt_include
@@ -113,6 +108,7 @@ class Cp2k < Formula
         --with-spla=no
         --with-cosma=no
         --with-libvori=no
+        --with-libgrpp=no
       ]
       args << "--target-cpu=generic" if build.bottle?
 

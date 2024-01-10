@@ -3,18 +3,18 @@ require "language/node"
 class Neonctl < Formula
   desc "Neon CLI tool"
   homepage "https://neon.tech/docs/reference/neon-cli"
-  url "https://registry.npmjs.org/neonctl/-/neonctl-1.25.2.tgz"
-  sha256 "bc2c1ff170c84a3ba9ea0e03116bb191336c12b512116d94e609679dbe88494c"
+  url "https://registry.npmjs.org/neonctl/-/neonctl-1.25.3.tgz"
+  sha256 "47de7ed1a01e038b06dc832455f83860032a70bfedf6048381430c50f5b35a02"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "284faf44ab2c2647122b75f6f56c751b05fa7b5646082651d558ab603032d24d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "284faf44ab2c2647122b75f6f56c751b05fa7b5646082651d558ab603032d24d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "284faf44ab2c2647122b75f6f56c751b05fa7b5646082651d558ab603032d24d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d26a10e13ad6113ebdd7824b518e790a1700680e8e0c83a18326c5552fe418ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "d26a10e13ad6113ebdd7824b518e790a1700680e8e0c83a18326c5552fe418ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "d26a10e13ad6113ebdd7824b518e790a1700680e8e0c83a18326c5552fe418ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "284faf44ab2c2647122b75f6f56c751b05fa7b5646082651d558ab603032d24d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41b32e8c32661ae95d48f0a456b1da3d1b9c281a37c89860e8c5e4d7f579fea6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41b32e8c32661ae95d48f0a456b1da3d1b9c281a37c89860e8c5e4d7f579fea6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41b32e8c32661ae95d48f0a456b1da3d1b9c281a37c89860e8c5e4d7f579fea6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4e4a8b3fdf5855e6008ba27337c05f1bbf2f6f913ae04d5ec4e054ff1d4a372c"
+    sha256 cellar: :any_skip_relocation, ventura:        "4e4a8b3fdf5855e6008ba27337c05f1bbf2f6f913ae04d5ec4e054ff1d4a372c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e4a8b3fdf5855e6008ba27337c05f1bbf2f6f913ae04d5ec4e054ff1d4a372c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41b32e8c32661ae95d48f0a456b1da3d1b9c281a37c89860e8c5e4d7f579fea6"
   end
 
   depends_on "node"

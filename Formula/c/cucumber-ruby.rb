@@ -4,6 +4,7 @@ class CucumberRuby < Formula
   url "https:github.comcucumbercucumber-rubyarchiverefstagsv9.1.1.tar.gz"
   sha256 "0ed71e206463b0deef9b50bfcbf611ec3efd2075aca93505559ed16670b39b79"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "abb7b4282873196bed3e4c7309aa4be6664bae5803208a4034e972f0c01c1705"
-    sha256 cellar: :any,                 arm64_ventura:  "c85a8f1534ffef700b1022a6069a2c8b554cddfdd4203acb10acb70646edef99"
-    sha256 cellar: :any,                 arm64_monterey: "42c8f17928c6d220ed0d1b05c2f16150ab9ac38f3b0aff8b3c4f4f8bd57421b5"
-    sha256 cellar: :any,                 sonoma:         "1f235847b45c3a8ede02261b76b8e5b7f3d2651f89dc8fdcb9a1b4e8060cf89e"
-    sha256 cellar: :any,                 ventura:        "581c6aec1cde3857970775ce20bb5c4a1a064ab39351edb3f39063c9b1a6a23d"
-    sha256 cellar: :any,                 monterey:       "42123d3ea576353fb483b8668acf56c335ac3e6ceb0d5132be6def0babd20e9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dc0953b45fa658c5edc1ad94b0ca4d2eb9d6d267f5e7257a2d7a5e5cd10f457"
+    sha256 cellar: :any,                 arm64_sonoma:   "d362c1a29280c26292edbad4faddab87b8b3168d31ebb8a5737ab2661d94bf95"
+    sha256 cellar: :any,                 arm64_ventura:  "ba0d5177f806fccc78550354bf1aabf7547c67bf928c24061cb14d732d05162a"
+    sha256 cellar: :any,                 arm64_monterey: "d45bcb96da474809e10a53849d520e2098535a4209ef712bb017e2e5dcf44946"
+    sha256 cellar: :any,                 sonoma:         "f41668fdb90f4eaf5de521871093b54aa351e006a9a2864d14a57f3c6d054671"
+    sha256 cellar: :any,                 ventura:        "df7a97035d8e9ab3cb7f3b3665dc0637d18aefd8c42912f5f6b2ea6334550d4d"
+    sha256 cellar: :any,                 monterey:       "95d87c9223a909c05e9050461b3f1081843fff00a14e6b6e31337a7e1889a8f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bac667fa09dd406d744c4d6e418be9f56291d571833f09c0cc513be369365af"
   end
 
   depends_on "pkg-config" => :build

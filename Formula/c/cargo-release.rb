@@ -1,21 +1,19 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https:github.comcrate-cicargo-release"
-  # TODO: check if we can use unversioned `libgit2` at version bump.
-  # See comments below for details.
-  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.1.tar.gz"
-  sha256 "acb4b54cb60097459ec74f4b7f74d2623f45cc4172b16ef0fdd9a7fc4b4625a2"
+  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.2.tar.gz"
+  sha256 "77756509d7e94d721056b2a35f99bec97665ce24323bfd25d76a39aa04b61dbb"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comcrate-cicargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7eb5f1c1491b3125e3eb3a3e7e87ddefa0b67b4a6fb8555736512e2a822b975d"
-    sha256 cellar: :any,                 arm64_ventura:  "88ee3599561d71740b74d2abfe8136b9305b47df49ee9f6e042c3738bf63fd8d"
-    sha256 cellar: :any,                 arm64_monterey: "7c50d0b9b804273b2fbc1b40b1f49b8765b8c010508cd29834a179bea49f2152"
-    sha256 cellar: :any,                 sonoma:         "006a6677b113164ca2b3a9fd35270525bc62271129110ee32942827c0f2e2376"
-    sha256 cellar: :any,                 ventura:        "d931db16d036f65525efa3f7e3a7fa317beb4dcd8eabfece4cc5bff4d43b228b"
-    sha256 cellar: :any,                 monterey:       "3020f72b031cc7f7364be026b04ba5a052205254038dd0ea385322a61b2a6e6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eba2b046095f377ebf655178865235c3574a91949095d211fcab7ccdc65f09c2"
+    sha256 cellar: :any,                 arm64_sonoma:   "4ee66e5f9757bf9a8462a6c437f48ae3234a1a2cffae8b493b7b40e175eb2f82"
+    sha256 cellar: :any,                 arm64_ventura:  "7a1545daf05e447421e99382adfd45dbddedd8ae30a29fd2aee20f90855ea923"
+    sha256 cellar: :any,                 arm64_monterey: "2e580c962d0eb0dbb6ca6d3493a3246143578fb435c18e5fbc28f4dae0d22103"
+    sha256 cellar: :any,                 sonoma:         "4e452761363e05ca5709d2e361df6fa11b34dab3f513ec1fae7be150565a3e5d"
+    sha256 cellar: :any,                 ventura:        "d0fb42e44634acb79d03a06f5d6dfad28d24fd24d7efaa38fd4c878d7d58fd21"
+    sha256 cellar: :any,                 monterey:       "f74c2da756bf7fee5030639b3a5c793c91d9bc800b64e2e75a4e86f982f687ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e477773d10769f0c79c0543f0a042b46c9a2e985b62d60ac6ae77a766058626"
   end
 
   depends_on "pkg-config" => :build

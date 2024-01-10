@@ -4,16 +4,17 @@ class Passenger < Formula
   url "https:github.comphusionpassengerreleasesdownloadrelease-6.0.19passenger-6.0.19.tar.gz"
   sha256 "70eee7fecb8a6197517db3b6d134a839768a5388d5d08343e9e020910769b392"
   license "MIT"
+  revision 1
   head "https:github.comphusionpassenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "03125e165a0af99cec78cd0520c415f6b23cc4460fe2fb0901e2cb56d9b8bcf4"
-    sha256 cellar: :any,                 arm64_ventura:  "885ca2062ee5914c645698bfc443cc4030b570c8cba22def080dfc735afc2bbc"
-    sha256 cellar: :any,                 arm64_monterey: "50164ab07aca0d32df73eec2db0235b4b8c47fb7b5a8c6e4e865fd1caf3d88b8"
-    sha256 cellar: :any,                 sonoma:         "488bf5199ef5a25d8f4429af922502e6060bd7ca4dd86b284916626dcaf87e5d"
-    sha256 cellar: :any,                 ventura:        "77bd9ba672e8aa640c85705e2fc284677f7176b142af36f50101e943f0d71ddb"
-    sha256 cellar: :any,                 monterey:       "4d9723821b5cae53b1bbb24d8b866f077faedf224dd405b21c5cecc2aee89475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ff8fddabdb93c26e3f1b3f980e6941477607c0e1f80be06f167095a7bd2ce04"
+    sha256 cellar: :any,                 arm64_sonoma:   "2163ce80b7e52d4f5f4c88fa0995864b0126b4ff24a927a3b06c1aeaa2b20d45"
+    sha256 cellar: :any,                 arm64_ventura:  "7b1e89e8f9b6e08f53ad30b21f7b7ba7b3c0484cafacd0f921112b2a82425084"
+    sha256 cellar: :any,                 arm64_monterey: "b879ac845c49a4f852d4f0a5945940f74ee642f136fcdebc0ff8915b8b3dd8ff"
+    sha256 cellar: :any,                 sonoma:         "ef99b9bf970ece116c72d0c4f40d1c5bc907406e3831721dec3b456435081120"
+    sha256 cellar: :any,                 ventura:        "e8f96e29bd4afcf34dbbaa553ab508d64e0fe4647295ed4da4f7f2cb2dc7f29e"
+    sha256 cellar: :any,                 monterey:       "14994201dd210e972582fd1b5c207c574124137402763f376d337af1035eaba8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "496aa6d03be61ecf2844faaf2237996949cdd819aab6bd3462609e8e9e39fd9b"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

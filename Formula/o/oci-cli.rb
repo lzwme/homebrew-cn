@@ -3,19 +3,19 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https:docs.cloud.oracle.comiaasContentAPIConceptscliconcepts.htm"
-  url "https:files.pythonhosted.orgpackages699e3d1df7e75456fa789e8e0de3a1b660d18e2652835b2e817dc4c5d6998f74oci-cli-3.37.1.tar.gz"
-  sha256 "8551488cd2d27c2d104ffecb633c8be644f492645f3ec8e5c69b3c8114fe1e47"
+  url "https:files.pythonhosted.orgpackages1a9d4245eef1e3d70273f5edde262f03bfe4373001711d405335f398d0e27c8foci-cli-3.37.2.tar.gz"
+  sha256 "a7d5ba33c0036b405db23093e25e93e6f11a300e99298f94b9a8dfca2e21bfe2"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https:github.comoracleoci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b749de4c2d370d9f827348d75650d20946b01256c84b83dcf7340af8c6775f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0703cbf6898deb2462b6525afed443f01017dcbbb3be86f9baa915d70671f9db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18f7a610a74b2ec7e27e7393969defd3c7bfeca10065d125a75c35c8fef63535"
-    sha256 cellar: :any_skip_relocation, sonoma:         "205c2e6344b2da476ad8e2d0c103811cc14a23f70778762dd82a388a1ba96cc1"
-    sha256 cellar: :any_skip_relocation, ventura:        "80c91cf61638eb5849ac2ab80c786a6f462e39f149480dcf595c3e4befd4afdd"
-    sha256 cellar: :any_skip_relocation, monterey:       "7911e2350451cca842b514acfcea33828f8b43382f501cdc62b7889736c36dd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2317565c413077c5da0ad3603e3b744665f62fc24e97e60b31cb2ad70805b852"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf2a78113f78aa9a94df56f8b816a7d36ac5d88e3438905cff6153b985eebebb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e4b7dda09e0228b58f74fabb4fff1dc35f1622ad88d5306a10ee8ba7dd2a4a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f748fafcab32b4f973898b0ee1aaa52a7510e48ec32751f30ac40fb525fa9a6c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7b4f6decd4554a006b2012071dc54ec26189931562e1f8c80785bf91e9f8fa79"
+    sha256 cellar: :any_skip_relocation, ventura:        "b09a8dd6bbd84dd55b372a2112ebb7760de606a2f5beb78406913768638b28ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0e1d785f05cb26a8e7306c86dc947f743934dc37b1871634e1da30b408bb3a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba95ab27f228852edad9205d120bb35084d59af23034a03c3cd0f784ca2f2943"
   end
 
   depends_on "cffi"
@@ -32,6 +32,16 @@ class OciCli < Formula
     sha256 "d4540617648cb5f895730f1ad8c82a65f2dad0166f57b75f3ca54759c4d67a85"
   end
 
+  resource "asn1crypto" do
+    url "https:files.pythonhosted.orgpackagesdecfd547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6eeasn1crypto-1.5.1.tar.gz"
+    sha256 "13ae38502be632115abf8a24cbe5f4da52e3b5231990aff31123c805306ccb9c"
+  end
+
+  resource "cached-property" do
+    url "https:files.pythonhosted.orgpackages612cd21c1c23c2895c091fa7a91a54b6872098fea913526932d21902088a7c41cached-property-1.5.2.tar.gz"
+    sha256 "9fa5755838eecbb2d234c3aa390bd80fbd3ac6b6869109bfc1b499f7bd89a130"
+  end
+
   resource "circuitbreaker" do
     url "https:files.pythonhosted.orgpackages92ec7f1dd19e3878f5391afb508e6a2fd8d9e5b176ca2992b90b55926c7341d8circuitbreaker-1.4.0.tar.gz"
     sha256 "80b7bda803d9a20e568453eb26f3530cd9bf602d6414f6ff6a74c611603396d2"
@@ -43,8 +53,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https:files.pythonhosted.orgpackages81a2083a3f5e7de71a9f67ad164c212feb3047ede2164a867d23103f5f4736aboci-2.118.0.tar.gz"
-    sha256 "1004726c4dad6c02f967b7bc4e733ff552451a2914cb542c380756c7d46bb938"
+    url "https:files.pythonhosted.orgpackagesa6808d7319c7caaaecf12009b3788e4c59cf1fad3d0d9b7ed7e4432735eb3f19oci-2.118.1.tar.gz"
+    sha256 "ab77b235a397b720411b796f1377db6a572467f3f2a1fe696665de1234c6ad9b"
   end
 
   resource "prompt-toolkit" do
@@ -62,19 +72,24 @@ class OciCli < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
+  resource "python-pkcs11" do
+    url "https:files.pythonhosted.orgpackages3e249d55a78b3501201d2dfeb035ce1b139f8846505b3ddb9cadb4c2254259d0python-pkcs11-0.7.0.tar.gz"
+    sha256 "9737e0c24cabb8bc9d48bf8c57c3df2a70f8cdd96b70c50290803286f9e46bf7"
+  end
+
   resource "terminaltables" do
     url "https:files.pythonhosted.orgpackages9bc44a21174f32f8a7e1104798c445dacdc1d4df86f2f26722767034e4de4bffterminaltables-3.1.0.tar.gz"
     sha256 "f3eb0eb92e3833972ac36796293ca0906e998dc3be91fbe1f8615b331b853b81"
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackages1b2df189e5c03c22700c4ce5aece4b51bb73fa8adcfd7848629de0fb78af5f6ftypes-python-dateutil-2.8.19.14.tar.gz"
-    sha256 "1f4f10ac98bb8b16ade9dbee3518d9ace017821d94b057a425b069f834737f4b"
+    url "https:files.pythonhosted.orgpackages9b472a9e51ae8cf48cea0089ff6d9d13fff60701f8c9bf72adaee0c4e5dc88f9types-python-dateutil-2.8.19.20240106.tar.gz"
+    sha256 "1f8db221c3b98e6ca02ea83a58371b22c374f42ae5bbdf186db9c9a76581459f"
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackagesd71263deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24wcwidth-0.2.12.tar.gz"
-    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
+    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install

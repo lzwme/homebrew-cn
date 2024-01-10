@@ -5,16 +5,17 @@ class Podman < Formula
       tag:      "v4.8.3",
       revision: "85dc30df56566a654700722a4dd190e1b9680ee7"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  revision 1
   head "https:github.comcontainerspodman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c59bff378d77320aeeb0ad84b2a1ce4f59f7ea7fc1d6606dbee4af98a8595b16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8229b5ae9cad69fedf3c8e1ea7be40067ebccc6da9dea25b87f61fc28d230411"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "757e4b8ad9ec5a80b8d96aff0e08174b9108dce2425171cb60b44f5a4f65b10e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "99f33c98d5bbdeef57b0504d62c87ecb814a612c25910682e3e7807a51259f3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "efe04e45161b6e0076de731d4aa9402eda7d44684aafd255508e8910a94b1448"
-    sha256 cellar: :any_skip_relocation, monterey:       "b62416deb68337acc386249e2070bc0012679d9b03538a9c1a056f5393bee49d"
-    sha256                               x86_64_linux:   "0c01c20d89cf6f81d42b165caa27b3a47c4c6ecfb61345e5010eb2511a80ce45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a67c98e2547d8c51442080f3512dc9f60812fd7568eadbffd43b0b48e91e49d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6b400d9346fa1c5618f49f1b84596375fba70f34387fb17e8234c907d13a4e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cea80226ddda734c5d1280c07479579fabd858dd82569394b5b271778b9f59f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ab31cf27bae3c73533f9bc6564bd76860dbf5ead263e9248ce56fece3a98edca"
+    sha256 cellar: :any_skip_relocation, ventura:        "87295162ba4f7363940a74d445792b79f72ecb3738f4ee18854eed71f15676d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "662045c6c29eadf23b25be4e436b90c5f8865ba906799de14dea031181d5ef45"
+    sha256                               x86_64_linux:   "0897c304b04fa54b422f0da105dc3ad4c1683a45afb10327467f8f6fd3cc90e3"
   end
 
   depends_on "go" => :build
@@ -46,6 +47,13 @@ class Podman < Formula
     on_macos do
       url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.7.1.tar.gz"
       sha256 "cbc97a44b6ca8f6c427ac58e193aa39c28674e4f1d2af09b5a9e35d1d3bb7fd3"
+    end
+  end
+
+  resource "vfkit" do
+    on_macos do
+      url "https:github.comcrc-orgvfkitarchiverefstagsv0.5.0.tar.gz"
+      sha256 "abfc3ca8010aca5bd7cc658680ffaae0a80ba1a180a2b37f9a7c4fce14b8957f"
     end
   end
 
@@ -84,6 +92,15 @@ class Podman < Formula
       resource("gvproxy").stage do
         system "gmake", "gvproxy"
         (libexec"podman").install "bingvproxy"
+      end
+
+      resource("vfkit").stage do
+        ENV["CGO_ENABLED"] = "1"
+        ENV["CGO_CFLAGS"] = "-mmacosx-version-min=11.0"
+        ENV["GOOS"]="darwin"
+        arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
+        system "gmake", "outvfkit-#{arch}"
+        (libexec"podman").install "outvfkit-#{arch}" => "vfkit"
       end
 
       system "gmake", "podman-remote-darwin-docs"

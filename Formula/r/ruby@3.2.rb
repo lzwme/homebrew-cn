@@ -1,34 +1,36 @@
-class RubyAT31 < Formula
+class RubyAT32 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https:www.ruby-lang.org"
-  url "https:cache.ruby-lang.orgpubruby3.1ruby-3.1.4.tar.gz"
-  sha256 "a3d55879a0dfab1d7141fdf10d22a07dbf8e5cdc4415da1bde06127d5cc3c7b6"
+  url "https:cache.ruby-lang.orgpubruby3.2ruby-3.2.2.tar.gz"
+  sha256 "96c57558871a6748de5bc9f274e93f4b5aad06cd8f37befa0e8d94e7b8a423bc"
   license "Ruby"
 
   livecheck do
     url "https:www.ruby-lang.orgendownloads"
-    regex(href=.*?ruby[._-]v?(3\.1(?:\.\d+)+)\.ti)
+    regex(href=.*?ruby[._-]v?(3\.2(?:\.\d+)+)\.ti)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "183db7a989d3f4e89b1f9c6100353decf2845659b3d86084162b09c0d4db6a36"
-    sha256 arm64_ventura:  "c35d7d1f6307180afcf8cf95ffca3849353ed8b9aebe7da7b90d1df616f5ad75"
-    sha256 arm64_monterey: "22efcfab9ccb16f4787f62b1fa71ca2326b180d74ba6a2ecec95664c81a2478a"
-    sha256 arm64_big_sur:  "e5f4f7d69136dc0eb5e61bca1e0864ce824484af648a533277ac26e69162881f"
-    sha256 sonoma:         "0500d9838d5e7fd2d3c7f0e0dcc10e6cb3d4094257b4662298df4e0af880e7aa"
-    sha256 ventura:        "4e6bc850a4fcb9effb8ac61512f1c584937fc1016c60aa97414496843b3f88a0"
-    sha256 monterey:       "67342bc95cd818602a704d2a90a8a79a4c100107128dc08a4ff3af4376ad6c11"
-    sha256 big_sur:        "0c46bd1ac4b698213d8b513d19bcd54fd5715586a88741646209851f4dd6e290"
-    sha256 x86_64_linux:   "a3fd5b417468420714a664f9a7bf0cd3d0f2111aa9e2792c532160abcccd0366"
+    sha256 arm64_sonoma:   "91b5c2d9207e9f58ad261b5f5840c34dc72f1a5eb6de01c3cedaf89e432ddfe3"
+    sha256 arm64_ventura:  "0b65c4ba013503e416a4884712402cc2ed5c6b9f4c4560f86039fb2b71628e83"
+    sha256 arm64_monterey: "2df167357dc100a1b762b41c0b1458bf28abc360ac0b83e4fc273c57c8b3a3f1"
+    sha256 sonoma:         "8dfc8b566f6eef066982c219a54349745fe357b2ff25a1540ebb670ebb832993"
+    sha256 ventura:        "95143e5b58e724722afaab652fa03a8d44dad295c7eeeca312f752459e79ddd3"
+    sha256 monterey:       "cdab46842594d1697969df3dfaabe26447805c68dd64bdd437358f907595d428"
+    sha256 x86_64_linux:   "69149c1e6132fe612f4b54f0e6e684632b24ec186b9aef6aa55cd23836423b26"
   end
 
   keg_only :versioned_formula
 
+  depends_on "autoconf" => :build
+  depends_on "bison" => :build
   depends_on "pkg-config" => :build
+  depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"
 
+  uses_from_macos "gperf"
   uses_from_macos "libffi"
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
@@ -42,7 +44,7 @@ class RubyAT31 < Formula
   end
 
   def api_version
-    "3.1.0"
+    "3.2.0"
   end
 
   def rubygems_bindir

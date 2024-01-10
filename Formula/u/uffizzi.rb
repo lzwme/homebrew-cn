@@ -4,6 +4,7 @@ class Uffizzi < Formula
   url "https:github.comUffizziClouduffizzi_cliarchiverefstagsv2.3.4.tar.gz"
   sha256 "170849b4054e45b6a4c0fd8343f05e55817c8f10b6190d7f0d3edf1ae994629e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Uffizzi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "beaa44595b887aa5a198a6bc4373b78863015278df99b809b4850bf577296a8e"
-    sha256 cellar: :any,                 arm64_ventura:  "a438d45c0f1300242c00034b46b8f12a3c7f68a441a20c6cdf0d3c51ba277727"
-    sha256 cellar: :any,                 arm64_monterey: "be610445936160783388b4bc95d0e149360e88450e39c3d5c6616710e2560f9e"
-    sha256 cellar: :any,                 sonoma:         "4aca3e986d4b8b7daa9aac01f11a96b4cd8d17d20c07a74f61342d0f479a5227"
-    sha256 cellar: :any,                 ventura:        "9c09196d7ebc9cc1bbefc3d6df535eec6dcb3ad15ac702dd3427730084ff280a"
-    sha256 cellar: :any,                 monterey:       "602264d64708895a722daf1b0b8001932faf5d4b3b26b02101c6fbccc3354581"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19b054ecc1d290036513e41d6592cddfab2bcd4d102c343f604b9c1c28f2513b"
+    sha256 cellar: :any,                 arm64_sonoma:   "c10fcd3fb70e12858f4c3fedce685330aaeadc9ff0bb70de566b7df6639111ba"
+    sha256 cellar: :any,                 arm64_ventura:  "235401c933d0332b42c7bb76c3f19a216e86fc075e4805087d82ba479db95e2e"
+    sha256 cellar: :any,                 arm64_monterey: "d0e6c235de27bb58f16117611f5a97a178978fe5da18c9c8dd53a9208567111c"
+    sha256 cellar: :any,                 sonoma:         "48d6c5e84ba1a7ea03984f8e41b9bfedc411926493f2b312bb01d39615081218"
+    sha256 cellar: :any,                 ventura:        "944ccd0b1af4887db195137e30b4134600c697a44b28de35befdde19f0905c04"
+    sha256 cellar: :any,                 monterey:       "ae31719367901295bdf355e9220e315984a172d76b6791efad1a3250909b6510"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc4b3ef93981b36e90d3dfa19f67b4b165f46f6a6672c9db77713991882aed04"
   end
 
   depends_on "ruby"
