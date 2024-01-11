@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https:pixi.sh"
-  url "https:github.comprefix-devpixiarchiverefstagsv0.11.0.tar.gz"
-  sha256 "6af563f1a699de7d2bf099f860ae0a3d4964c6901785c5e0c5c155bf65000b9e"
+  url "https:github.comprefix-devpixiarchiverefstagsv0.11.1.tar.gz"
+  sha256 "7dbb2382f4b0e4a61a08334855fbf5f41567c732978e27fc1e23a47e4205506b"
   license "BSD-3-Clause"
   head "https:github.comprefix-devpixi.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "836c1cb6a240dfd08eacb8b5eba65f994530b48d3726fc5a2e052a5c46deff1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9fb9c430e011943a8b4f828faf5cd4f74bbbc72821396fe34bddb3e21c81246"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34d379087513bc23dc6592cf1a67984d80853407207b875938c967fdfb15800d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2037df2d1de71704b428f448557c092a84d6db3f906155e0c79377d922d33203"
-    sha256 cellar: :any_skip_relocation, ventura:        "0212523cf1382455ae9586bb20cbeb5b108f7dc760703b6f8c3dc0a417cfaede"
-    sha256 cellar: :any_skip_relocation, monterey:       "71c2f6413497639e9fb03d4a184a8dbe5e9bbac5f98942ed8d374b4aeb0ed674"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52c22d3ef78dbefbb937bfac406defacf6e2a47128b8e77ea026aeb058558d54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be80a545e5ca6bad78950ab1d337fa13b43107f16c79d2b56a0c1d07ed43f58b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a31b2a856f746a5268de3b69ca02aa5ec6c8483f1b6199f0c3985cb95e6681f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ab54ad6370c80c737b3c9237c2a2234fdebd15d0ced9200a7994b759d5cf6e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce6ca7d97a5d0adca2e7a89a75b854e4701fc3765155b8ab5cbf8982200a32e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a5f94ec60eb44ec4d39cf6d51fe8c6511dae7e80a45a43c2ecab415fd6f590e7"
+    sha256 cellar: :any_skip_relocation, monterey:       "149404680f14bd250353cc99baa5a3f1c1707000c61a81e6b15758888919387d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d15dcb33f84db11d376decf4c9aae60c6d1c237aaf20ea98751f0c76c2dd92e"
   end
 
   depends_on "cmake" => :build

@@ -29,6 +29,8 @@ class Libtextcat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2104f4e2ec57f7f63de0e6f68d7b2dae82c6912146c17908f4fc1625a17bc7c5"
   end
 
+  deprecate! date: "2024-01-01", because: :repo_removed
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

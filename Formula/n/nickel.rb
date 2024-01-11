@@ -1,19 +1,19 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https:github.comtweagnickel"
-  url "https:github.comtweagnickelarchiverefstags1.3.0.tar.gz"
-  sha256 "cd6919eb945992721bd164291ebee11dbb62f06004061c0cfc5fa73e98197224"
+  url "https:github.comtweagnickelarchiverefstags1.4.0.tar.gz"
+  sha256 "e5a96d962ab4948b480cd53dbfb5c1e15fd35673216f0920d99ac2e5002e2eb4"
   license "MIT"
   head "https:github.comtweagnickel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f1c678b1835a86dc1d2d741fa7e44eecdb913e3ac7efb0b3425c7fd3ae3d788"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fcd36f5919d5a0089d0add8decfc8871653ea967027dbf80a2690a8d780cd5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5a68ecd226cbbae9fa3a07087a94130b77fcf41fd462bb69e3cb7974e675faba"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2a25033dc8797538cccf23dfad96f539b339cc563c85b5b19f1384fe29cee726"
-    sha256 cellar: :any_skip_relocation, ventura:        "76abdc406612ac2b6240dbde4c0f7e5bdfec74566aac9dba167f9014094c5070"
-    sha256 cellar: :any_skip_relocation, monterey:       "2d05f6d869fc3f0b32176d4ab5866dd79e03cca309a6df6b196b775679230688"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da068d306c394bab58c3488bfeb1d25129d53bcf23dd7beba6e919c66aa5fe1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51c26d1e1bcf1520c6a8f3ae1d7a1496ec7ea83c74278d28b5da37233d80d768"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eda7e60cfb704799f6259ad400a12db18743b61f5b1c5ef35cbbe22617c79be3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ed1bf7663212eff65d88daeb0e1bf4982c08dbd107a4c9fd903d3ba33dd1f17"
+    sha256 cellar: :any_skip_relocation, sonoma:         "55e7fa536ad12823313457e5af3e3d462ba43181371ee40afc2e35a4665f37ab"
+    sha256 cellar: :any_skip_relocation, ventura:        "171035f4032b4427934c28f74d3ea7d4a9cd01b6fba923bf0a4a1fcd36be70aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd0094deec787ce15b108aaccccc36e4ef63d3d494fa44e80f3c3797015e6981"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6352e4ca2da0705fe9b1730846a33adff20892390409490436497331206be86c"
   end
 
   depends_on "rust" => :build

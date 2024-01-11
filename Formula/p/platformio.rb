@@ -3,20 +3,19 @@ class Platformio < Formula
 
   desc "Your Gateway to Embedded Software Development Excellence"
   homepage "https:platformio.org"
-  url "https:files.pythonhosted.orgpackages859b37452c9b7e99638c9d761c7864a463e4721ce7206fb526174813ffe6a949platformio-6.1.11.tar.gz"
-  sha256 "1977201887cd11487adf1babf17a28f45f6dbbec8cbc5e3cc144cb43b320a0d0"
+  url "https:files.pythonhosted.orgpackages5611843e9088f60049f32d438baffae4cdad334b25e59f46031e2b0673e7414fplatformio-6.1.12.tar.gz"
+  sha256 "9ec61e65a0eea96e625e783b516f6eb2c534ecb43136b13a2d2b4ed527743808"
   license "Apache-2.0"
-  revision 3
   head "https:github.complatformioplatformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a554233014e2c5161ec3578c60411e4b8a60ed9edb7530c09d5fe011f081f65b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aefb1e36ab188a71be586374b7522e857adf1040da3f9bcb0242d4a069d5f389"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8b03298518271ac24ff19cd0faa153f4ae2d7e8591e99892c79f5c1c55b886c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "014c6d1bc38e1d954ea13e5371a1107129c7310fa17e194815d90f01caf783f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb52be700a428304a6c96dcc088507a8e501346b150f191ca3a4ba41b95bef89"
-    sha256 cellar: :any_skip_relocation, monterey:       "218a03ac5b5dbdb9b3c56d727bb88b14e54e76bdfc938102b0fb82884012fb17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a461d391078f9c6a2738eb0939d714a3138b28bf88e5a13138dfaab7ea360a60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6f912ee43f2a55362619e20d8c6760676409976b4069b0211ba458214109cd0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e125b6004c09423824a3bef9c04ef4e1226faa8bd019bc207c987464b3534459"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "feff1f9d0e6ae4c82e7df63eaacbdb08405caa494ac05341a0012a9889df27a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9006e806035b2c23ef01b69ce86fc144e1a07ba049b99ab4916ce31025e558aa"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1796b9cc3d60220bd04f9a1ab152e6c09b22940067c1588c3788c1917250cc3"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bfd743c05bac26f88ba9d699bdc3a98dc9f9fcdddc4833fc6d0dffe9978900f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b9ac37022a18e6e63f917c30ec44e0f26c76021331f9e97a1b82fd7321b1883"
   end
 
   depends_on "python-certifi"
@@ -31,14 +30,19 @@ class Platformio < Formula
     sha256 "791bac18f0bf0dee109194644f151cf8b7ff529c4b8d6239ac48104a3251a19f"
   end
 
+  resource "anyio" do
+    url "https:files.pythonhosted.orgpackages2db87333d87d5f03247215d86a86362fd3e324111788c6cdd8d2e6196a6ba833anyio-4.2.0.tar.gz"
+    sha256 "e1875bb4b4e2de1669f4bc7869b6d3f54231cdced71605e6e64c9be77e3be50f"
+  end
+
   resource "bottle" do
     url "https:files.pythonhosted.orgpackagesfd041c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215bottle-0.12.25.tar.gz"
     sha256 "e1a9c94970ae6d710b3fb4526294dfeb86f2cb4a81eff3a4b98dc40fb0e5e021"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagescface89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "colorama" do
@@ -46,14 +50,19 @@ class Platformio < Formula
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
+  resource "idna" do
+    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+  end
+
   resource "marshmallow" do
-    url "https:files.pythonhosted.orgpackagese4e03e49c0f91f3e8954806c1076f4eae2c95a9d3ed2546f267c683b877d327bmarshmallow-3.20.1.tar.gz"
-    sha256 "5d2371bbe42000f2b3fb5eaa065224df7d8f8597bc19a1bbfa5bfe7fba8da889"
+    url "https:files.pythonhosted.orgpackages0381763717b3448e5d3a3906f27ab2ffedc9a495e8077946f54b8033967d29fdmarshmallow-3.20.2.tar.gz"
+    sha256 "4c1daff273513dc5eb24b219a8035559dc573c8f322558ef85f5438ddd1236dd"
   end
 
   resource "pyelftools" do
-    url "https:files.pythonhosted.orgpackages0e35e76da824595452a5ad07f289ea1737ca0971fc6cc7b6ee9464279be06b5epyelftools-0.29.tar.gz"
-    sha256 "ec761596aafa16e282a31de188737e5485552469ac63b60cfcccf22263fd24ff"
+    url "https:files.pythonhosted.orgpackages8405fd41cd647de044d1ffec90ce5aaae935126ac217f8ecb302186655284fc8pyelftools-0.30.tar.gz"
+    sha256 "2fc92b0d534f8b081f58c7c370967379123d8e00984deb53c209364efd575b40"
   end
 
   resource "pyserial" do
@@ -71,14 +80,19 @@ class Platformio < Formula
     sha256 "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c"
   end
 
+  resource "sniffio" do
+    url "https:files.pythonhosted.orgpackagescd50d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0acsniffio-1.3.0.tar.gz"
+    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+  end
+
   resource "starlette" do
-    url "https:files.pythonhosted.orgpackagese14bfcd426d9477554d31dacb0c8069828466841b69ad26c8cfab9c5321830ecstarlette-0.31.1.tar.gz"
-    sha256 "a4dc2a3448fb059000868d7eb774dd71229261b6d49b6851e7849bec69c0a011"
+    url "https:files.pythonhosted.orgpackages4f36168ba6d56a28382f3b081b23b0cc431de35786e120b94c1f372708ed3059starlette-0.34.0.tar.gz"
+    sha256 "ed050aaf3896945bfaae93bdf337e53ef3f29115a9d9c153e402985115cd9c8e"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaf47b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3curllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https:files.pythonhosted.orgpackages36dda6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6urllib3-2.1.0.tar.gz"
+    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
   end
 
   resource "wsproto" do

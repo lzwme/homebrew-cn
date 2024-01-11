@@ -1,19 +1,19 @@
 class Pdfrip < Formula
   desc "Multi-threaded PDF password cracking utility"
   homepage "https:github.commufeedvhpdfrip"
-  url "https:github.commufeedvhpdfriparchiverefstagsv2.0.0.tar.gz"
-  sha256 "b00c01f23f02a067d3fec48ee42d0ed42796fc6f3383537147c7f9dd74257b40"
+  url "https:github.commufeedvhpdfriparchiverefstagsv2.0.1.tar.gz"
+  sha256 "60f284d79bac98c97e6eaa1a2f29d66055de5b3c8a129eb14b24057a7cb31cd3"
   license "MIT"
   head "https:github.commufeedvhpdfrip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "15f5ee4fb57ccf399df62da8cd7561fb2855166748bcf80832b79fcf3c77a841"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f09675f6038d497b4e8057a38ef51568dded07498f511dfa0f535a03a075c90f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "24b1300860e448174597b7124fef3e34fcabd0eed157cfc8205f8a7744c4d97f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c0f55e2b7d85b5bf53718b34633755230c8934812070d920b7bf7212dbe5e59"
-    sha256 cellar: :any_skip_relocation, ventura:        "8567db61e3ac6b3255196a08ff55eb73bc11153bb9d092916661f944823b5df8"
-    sha256 cellar: :any_skip_relocation, monterey:       "a57580e41624f889ebe46769a4a36baaa7e1a125f69f773ab9be90443582d240"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f5a311aac1e21dc73a89c5cb3d8ed07b54de72f5337b30f92b5efb33ed9ca29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "92eafcb03fc927dbe7a94aa8b5657038621d342f1405c2a09d6766a94ee04231"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6c3dfc1b88440a91d4cdcdf76699599cf6955b8c31d1376bbff00b13751ead1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d5def9d0760ae745a23e26a0b37afb953a340ea6de90940a3f218b0dc369ebc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a1d72c6cfcec8a572e0e8c3e07acea03120fb692c321c8c88993dac530a127e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "83cd8a56b4a4238f6ccf0dca5519393686ec2c4e144d035841c71228637a7933"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf71e60e04dc370096a46ba62694e46749dbeaf9e5fbdd9050bd355f0d8be40b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "311c5aacf5d23a6e692524c39f632bac0bc0a4984b0a5de34ff452f6490d9a28"
   end
 
   depends_on "cmake" => :build

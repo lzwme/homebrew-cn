@@ -12,13 +12,14 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b0aa311237860c2306a80b141c4e67d4e2e9d2fd2132d76ffe766dfe132a1658"
-    sha256 cellar: :any,                 arm64_ventura:  "0cc4f701be585e97f35d548ca300022d58ae48393fc5137b38d94fb7032b6a74"
-    sha256 cellar: :any,                 arm64_monterey: "9e3c3415670de1a974c2d8b190f440338db9c0de8cc5ab020e493a1b76f8686b"
-    sha256 cellar: :any,                 sonoma:         "fa77326d729799cc6d6009667f465592b206c6a264e07c81db55df7cba28d8ae"
-    sha256 cellar: :any,                 ventura:        "2eaec52cf147bea4557d9f46e104981b8961c2f5f03e475c6a6b75aea020b15a"
-    sha256 cellar: :any,                 monterey:       "62cbbe1162b3f2f46f651861abb6cc75bf7a81095a836330e0d17b3f2ae7f8c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c884c3960706b19b627b762636dc6020067b16e8ce48c82442f4c8f7d6eb2a6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "dbaa768c272a0934254ebbf863e6c63ade5141d3717727f4b88bc3a915a57b99"
+    sha256 cellar: :any,                 arm64_ventura:  "d48c2a20108f28f33a9d765aa2ce3cb8ee5312228976ea0233892f3d6c8ff4e5"
+    sha256 cellar: :any,                 arm64_monterey: "a324bc3e99dd85d1830a8fc8fb3c47af65bf1674de11bb796ee9490cd739f097"
+    sha256 cellar: :any,                 sonoma:         "309ebf4e8e62eaa304694e02f36b002588638265d7cdf80549f26f3378f632f5"
+    sha256 cellar: :any,                 ventura:        "f133c8b1fa3a50d8aa478e7151eb5f76b47b83e6b627a328c461e620f1b47273"
+    sha256 cellar: :any,                 monterey:       "20d832372096a92bc8aec5ee6264d94f20f3d81815b77357b8b5f7e67cabe12d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ae02ea2f43ca2744e0396777ec7c43a0656dd4e0e5301feae422d7c98b97797"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -27,7 +28,8 @@ class Openvino < Formula
   depends_on "pkg-config" => [:build, :test]
   depends_on "protobuf@21" => :build
   depends_on "pybind11" => :build
-  depends_on "python@3.11" => [:build, :test]
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => [:build, :test]
   depends_on "numpy"
   depends_on "pugixml"
   depends_on "snappy"
@@ -79,7 +81,14 @@ class Openvino < Formula
   end
 
   def python3
-    "python3.11"
+    "python3.12"
+  end
+
+  # Fix linux build with our OpenCL
+  # https:github.comopenvinotoolkitopenvinopull22051
+  patch do
+    url "https:github.comopenvinotoolkitopenvinocommit0d455544f599ca5b2bb8993f209a01e7b61a336e.patch?full_index=1"
+    sha256 "67a1ba9296d3f23eeb5a3cf95dfe24171657d21e6cc6eef372a7e308f57a3092"
   end
 
   def install
@@ -130,16 +139,14 @@ class Openvino < Formula
     system "cmake", "--install", openvino_binary_dir
 
     # build & install python bindings
-    cd "srcbindingspythonwheel" do
-      ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
-      ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
-      ENV["WHEEL_VERSION"] = version
-      ENV["SKIP_RPATH"] = "1"
-      ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
-      ENV["CPACK_GENERATOR"] = "BREW"
+    ENV["OPENVINO_BINARY_DIR"] = openvino_binary_dir
+    ENV["PY_PACKAGES_DIR"] = Language::Python.site_packages(python3)
+    ENV["WHEEL_VERSION"] = version
+    ENV["SKIP_RPATH"] = "1"
+    ENV["PYTHON_EXTENSIONS_ONLY"] = "1"
+    ENV["CPACK_GENERATOR"] = "BREW"
 
-      system python3, *Language::Python.setup_install_args(prefix, python3)
-    end
+    system python3, "-m", "pip", "install", *std_pip_args, ".srcbindingspythonwheel"
   end
 
   test do

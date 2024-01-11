@@ -21,9 +21,15 @@ class Luajit < Formula
 
   livecheck do
     url "https:github.comLuaJITLuaJITcommitsv2.1"
-    regex(<relative-time[^>]+?datetime=["']?(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)["' >]im)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "2.1.#{DateTime.parse(match[0]).strftime("%s")}" }
+    strategy :json do |json|
+      json.dig("payload", "commitGroups")&.map do |group|
+        group["commits"]&.map do |commit|
+          date = commit["committedDate"]
+          next if date.blank?
+
+          "2.1.#{DateTime.parse(date).strftime("%s")}"
+        end
+      end&.flatten
     end
   end
 

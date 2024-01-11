@@ -1,8 +1,8 @@
 class Azcopy < Formula
   desc "Azure Storage data transfer utility"
   homepage "https:github.comAzureazure-storage-azcopy"
-  url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.22.1.tar.gz"
-  sha256 "fc7314f534845353252a743928845bfc0b1a9e56752e9cf01e4e4c12eb0f1bf6"
+  url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.22.2.tar.gz"
+  sha256 "6d563f45bdd60d988fa69acea69cabece3080e0016a9903d2f74e95e7345e82e"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Azcopy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "680e4416077a14b061423250853ad1ce78db6eed006c6625795c8384282dae71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19bc5bf031f9ec110220d2851818479911fdd50f18afdfa10ff03ac32a5c0843"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "42c4bceec2575ca6ee00f226af3404fc9f6efa5a9829926d036a68d4ceeca24c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ce0a0ef0a598cca824d8e9847239fb965b8d93eb731cdbd1e8317f9902a3d30"
-    sha256 cellar: :any_skip_relocation, ventura:        "b72dd9cf961e7e25e6a0833280f44dacb1d5ff70a65c023fcbc76c8718125927"
-    sha256 cellar: :any_skip_relocation, monterey:       "9fa2f07946631708455106f6bcb2fc78081b184518aa1648cc9bbc337b495471"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9db084c365831e431bcce8264c39666838c40108f57b68fd8639b8f8e037115f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b876cb260d485149316cde0917771ce8005bd8f2486c7db8f3de589ecbdb38b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d58cd4c5392200adfba048ed4269d82d1871f1d44755ed66a2b1e6b47badaa6f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9a78aa612b68afba61d8b676547173d9bf8e46f75c7c8131d13258a7d5805265"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6adcd2436d671bd848c68554f9534a68308b6221ed1498341c61a8d1196fb68f"
+    sha256 cellar: :any_skip_relocation, ventura:        "08b8e5658c04058f7a6c6279644d8fac5c87ce4880de7602f635f325d1297fe5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c9d4445bc933f122f0c87506ef53088f9c7df0458de89d0e2b62cd747e56171c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "804d7f83d9ee00259e4467879604ee945755ea3d9ca3a71912b36d8518bceea2"
   end
 
   depends_on "go" => :build

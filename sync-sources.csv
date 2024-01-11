@@ -1390,7 +1390,7 @@ Homebrew-homebrew-core/Formula/d/dosbox-x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dosbox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dosfstools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotbot.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotenv-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@6.rb, Homebrew/homebrew-core, 1
@@ -7191,6 +7191,7 @@ Homebrew-homebrew-cask/Casks/a/aptakube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aptanastudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aptible.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aqua-data-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/aqua.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aquamacs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aquaskk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aquaterm.rb, Homebrew/homebrew-cask, 0
@@ -9139,6 +9140,7 @@ Homebrew-homebrew-cask/Casks/m/mark-text.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markdown-service-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/markdownmdimporter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marked.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/markedit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/markright.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mars.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marsedit.rb, Homebrew/homebrew-cask, 0
@@ -13580,6 +13582,7 @@ Homebrew-homebrew-cask-versions/Casks/hyper-canary.rb, Homebrew/homebrew-cask-ve
 Homebrew-homebrew-cask-versions/Casks/inso-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/insomnia-alpha.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/intellij-idea-ce19.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/intellij-idea-eap.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/intellij-idea19.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/istat-menus5.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/iterm2-beta.rb, Homebrew/homebrew-cask-versions, 0

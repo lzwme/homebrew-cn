@@ -43,8 +43,6 @@ class SuiteSparse < Formula
     depends_on "openblas"
   end
 
-  conflicts_with "mongoose", because: "suite-sparse vendors libmongoose.dylib"
-
   def install
     # Avoid references to Homebrew shims
     if OS.mac?

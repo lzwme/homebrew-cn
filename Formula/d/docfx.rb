@@ -9,6 +9,7 @@ class Docfx < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57cf514074f7df6958bd672e8b90dc3956c8c3dfcef357bb9efaf0ffbe7b9402"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fba2895d1802dbca980bda887a91405b15c1f2350710ae1ac036d474e537e7f5"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f90413b7c603f3ca4028e217efc606d814d7af2675a51a195c8290a499aca1cf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "db14d6add2ce0b4861cf1b89ace4befcf78e00115f68d81f1346c2c61239f4ac"
     sha256 cellar: :any_skip_relocation, ventura:        "d48302c96f06d61aa8eb0b44748f26a24d6e50327054260326bbedefc196abc9"
     sha256 cellar: :any_skip_relocation, monterey:       "0a8c3f54bdc31afa2df900893cfdea08431748afe09866956eb99118645ee2b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a08d7921aecd13b024576eb0e8a59e38ce81b68ff92816a464d3a2b07e318c75"

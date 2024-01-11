@@ -1,38 +1,37 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
   homepage "https:github.comankanedexter"
-  url "https:github.comankanedexterarchiverefstagsv0.5.1.tar.gz"
-  sha256 "280403858ea209b41910f487f737fd602b41c60cc6cd3e5cf54ed5db9330b321"
+  url "https:github.comankanedexterarchiverefstagsv0.5.2.tar.gz"
+  sha256 "78773d4d75fdba34843c89a49d4d91f8f3496752308005d965153586a091f64e"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "be94f7b338b28ed362c82b4b8d731ebfb3f6fd175fc98e8c7514d08583528406"
-    sha256 cellar: :any,                 arm64_ventura:  "0719f4b0bb7bec319be9f86e7d22e2b0cdadbdb5473c9f76c4bd83e52bcf4897"
-    sha256 cellar: :any,                 arm64_monterey: "21a8e91c98e3415a386c4c41b16289c77bd4233d1c2b5d4185754a5822fa8296"
-    sha256 cellar: :any,                 sonoma:         "f4613aeaae43ac94f982465e783219f6c8329010c1821de3c8ac13c8c5557c36"
-    sha256 cellar: :any,                 ventura:        "996d8f071db725f9634f0fc9282cc1dde56e4c251e9f5ac20b0859f184fbec43"
-    sha256 cellar: :any,                 monterey:       "6f68fb77b162801b0dd5b6ff872207db7145994bb1cc4fa57acaf558ce740518"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81868f9315ef4a076f205b3876385b98175a728b67985142a9dc6f5ee4b43026"
+    sha256 cellar: :any,                 arm64_sonoma:   "b55d0944aa8da78137b097693aaaea3f29922170c3da4799336757ca0fe3e938"
+    sha256 cellar: :any,                 arm64_ventura:  "d7f7611fb52ec96e542330f3d1aa3d42411e20fcc2712ca9a517b33e6e48b98a"
+    sha256 cellar: :any,                 arm64_monterey: "239f1f376e72308cdb66f9bf08b1978c0797593c1d778b195fd38ad98748c0fb"
+    sha256 cellar: :any,                 sonoma:         "bccc57883ac12bc125ab81556c55f8c34b6ef448bf8240f7ffa415117bc58717"
+    sha256 cellar: :any,                 ventura:        "2840160ab8765e516538b3d4a1580317eaa267a40d4e267cbbc3cc54dd16ce00"
+    sha256 cellar: :any,                 monterey:       "6db24b45a034ce3fa6c29df0254f1d7aec55f29f7af531a196122343fc5cae9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84bd353c1fdba99ecf9b7c6bcf7819b46da8ea128942760732f9028fc16f4668"
   end
 
-  depends_on "postgresql@15" => :test
+  depends_on "postgresql@16" => :test
   depends_on "libpq"
   depends_on "ruby"
 
   resource "google-protobuf" do
-    url "https:rubygems.orggemsgoogle-protobuf-3.23.2.gem"
-    sha256 "499ac76d22e86a050e3743a4ca332c84eb5a501a29079849f15c6dfecdbcd00f"
+    url "https:rubygems.orggemsgoogle-protobuf-3.25.2.gem"
+    sha256 "9c2e6121d768f812f50b78cb6f26056f2af6bab92af793d376b772126e26500b"
   end
 
   resource "pg" do
-    url "https:rubygems.orggemspg-1.5.3.gem"
-    sha256 "6b9ee5e2d5aee975588232c41f8203e766157cf71dba54ee85b343a45ced9bfd"
+    url "https:rubygems.orggemspg-1.5.4.gem"
+    sha256 "04f7b247151c639a0b955d8e5a9a41541343f4640aa3c2bdf749a872c339d25d"
   end
 
   resource "pg_query" do
-    url "https:rubygems.orggemspg_query-4.2.1.gem"
-    sha256 "b04820a9d1c0c1608e3240b7d84baabbee1b95a7302f29fdd0f00e901c604833"
+    url "https:rubygems.orggemspg_query-4.2.3.gem"
+    sha256 "1cc9955c7bce8e51e1abc11f1952e3d9d0f1cd4c16c58c56ec75d5aaf1cfd697"
   end
 
   resource "slop" do
@@ -60,7 +59,7 @@ class Dexter < Formula
   test do
     ENV["LC_ALL"] = "C"
 
-    postgresql = Formula["postgresql@15"]
+    postgresql = Formula["postgresql@16"]
     pg_ctl = postgresql.opt_bin"pg_ctl"
     port = free_port
 

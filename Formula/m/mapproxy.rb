@@ -3,18 +3,18 @@ class Mapproxy < Formula
 
   desc "Accelerating web map proxy"
   homepage "https://mapproxy.org/"
-  url "https://files.pythonhosted.org/packages/ce/ec/885e8dc0111ba546d738c04fa067bf095a9f120f581ef3ec8fe416b9b6ef/MapProxy-2.0.1.tar.gz"
-  sha256 "c8e2475185410a8d0e0f4eaccbe074356f95e280bfe6c357f917b2cbbba1e061"
+  url "https://files.pythonhosted.org/packages/ba/09/6ca59563371cf5a0839a1bca32f277f00dc737a213b1bfa72e5ec0dfeca6/MapProxy-2.0.2.tar.gz"
+  sha256 "1f03b982faec5bda40af3e112edc4d7c29a216a6bce40022eb004923e17d184f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "70fea27cd22be1b66e35c586d9778ff2a5fc81b1bd644722db3597d2a54f75ba"
-    sha256 cellar: :any,                 arm64_ventura:  "56c20ff98618986d41f2968c842a67fefb42808f9d812e646cfe70ae904df041"
-    sha256 cellar: :any,                 arm64_monterey: "25a5340c36967d607035d0e49bc49db1047258863afedf2117658a0b7caf7c6d"
-    sha256 cellar: :any,                 sonoma:         "a0a4ce04b27a3588723954bbc1a3495d9a0af2b3bbb1382a81df43d0f5d9049e"
-    sha256 cellar: :any,                 ventura:        "afe0da85b97ab8c6c90c2433aa49fab7b16774338a076def09e7cdb548fb11d3"
-    sha256 cellar: :any,                 monterey:       "974aba7f8abc40d9d46d7341299da34d524c93bf88ff57967dfb7266d060d9c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed77ce29b65a61eeab5aec1fb625397df7293481ac23dc261d73e38d021060be"
+    sha256 cellar: :any,                 arm64_sonoma:   "e9c4d7a85b9af38a4dc88a45dd540fd56412c050207425d0fa110a1e5050ebe3"
+    sha256 cellar: :any,                 arm64_ventura:  "f344f9662a784b3715de987f3125a17ae327b4bc4da486bb697c2c48de32f6f9"
+    sha256 cellar: :any,                 arm64_monterey: "59ed1560ce6d242cef0b754403ba61b9623fce3594f3027f4bb41113a0778a7c"
+    sha256 cellar: :any,                 sonoma:         "5e724a7d20cc8ff487c8903e2b1c91ed6eb26499f4ee8afb5b5a044abdec8fb8"
+    sha256 cellar: :any,                 ventura:        "32e533f8114e6f49006b56800b2226f88928d62d9d1afb0808c02e372e2d5641"
+    sha256 cellar: :any,                 monterey:       "e3f98bbf2dd12cbebe6372fc5b260b529e16f811b497ffec4f3355b1dcef6fb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26c4cd35b0765e40821998c324b0c31c438e90bf9e4defc915f771c1ad44d29f"
   end
 
   depends_on "pillow"
