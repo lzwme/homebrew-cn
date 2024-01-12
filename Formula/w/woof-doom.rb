@@ -4,6 +4,7 @@ class WoofDoom < Formula
   url "https:github.comfabiangreffrathwoofarchiverefstagswoof_12.0.2.tar.gz"
   sha256 "b7babd807225cafcf114cad8aff4bcbe8fda773dde1842b1b19ab32a164b82e9"
   license "GPL-2.0-only"
+  head "https:github.comfabiangreffrathwoof.git", branch: "master"
 
   bottle do
     sha256 arm64_sonoma:   "14c05a04400517c9398fa76948b7716a0c8157c62da690fc09bf45874661ddc3"
@@ -30,7 +31,12 @@ class WoofDoom < Formula
   end
 
   test do
-    expected_output = "Woof #{version.major_minor_patch}"
-    assert_match expected_output, shell_output("#{bin}woof -iwad -nogui invalid_wad 2>&1", 255)
+    testdata = <<~EOS
+      Invalid IWAD file
+    EOS
+    (testpath"test_invalid.wad").write testdata
+
+    expected_output = "CheckIWAD: IWAD tag not present test_invalid.wad"
+    assert_match expected_output, shell_output("#{bin}woof -nogui -iwad test_invalid.wad 2>&1", 255)
   end
 end

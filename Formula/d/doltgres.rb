@@ -6,14 +6,14 @@ class Doltgres < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "642a7b60f23e9db380c175e4f372d37c7a6b14ed98e09487b31289b6ac17e66f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1290530e02f78ff86eeb501717c0380328847b45ea36accb5a069decfe2c0734"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17588e3c6fb1248a1f6e9b8a2d1ed51c8650078938b37daeaeb671365cf8e549"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4e2ea85e907ef8621f6db7aac80afb41497e9945f6a433776c8cb3f6458abd49"
-    sha256 cellar: :any_skip_relocation, ventura:        "463e188f2d323a8da3ba3b4c53441a3013207fe2513df65dd5f2ad272d231c72"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e4e1b87be34f167fb67b34fbb61e9a86521e6dbfdbf0e45451c6c2b13b5d84e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a1d5a3c5b62d6e80bda010dc9aa870772ee8d236a0b98ed56288d3c8f9ffefe"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21a1f239ffca8e97573e10471ec56088f727859af8f9c6e015453ceeec9bbe92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd62afedc1f76949bdf60c45872432b5e3d5dad0f153d21ff63788a8d2196e7d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26af47e0356a650f4f245e8605cac543b488bb03b73536e963d6e0ebd75ab968"
+    sha256 cellar: :any_skip_relocation, sonoma:         "44785896f19aa0d55779eabfdf57448fe3d8aa1149ce278e5b2ca223ec20b3d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f002f7cc15b936a476c45f82466b2fc6e72792766ac8103a6d8e9fc5a41cf3a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "c217188deb9c48da5132bf19de220a5d7168851078e9ee2d76de2bb330a00edb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8117b800b306aed6c5a870c3e5ca17aa038aabd4aa39f742192ddcde84450e8"
   end
 
   depends_on "go" => :build
@@ -29,7 +29,7 @@ class Doltgres < Formula
       exec bin"doltgres"
     end
     sleep 5
-    psql = "#{Formula["postgresql@16"].opt_bin}psql -h 127.0.0.1 -U doltgres -c 'SELECT DATABASE()'"
+    psql = "#{Formula["postgresql@16"].opt_libexec}binpsql -h 127.0.0.1 -U doltgres -c 'SELECT DATABASE()'"
     assert_match "doltgres", shell_output(psql)
   end
 end

@@ -1,9 +1,9 @@
 class Mpg123 < Formula
   desc "MP3 player for Linux and UNIX"
   homepage "https://www.mpg123.de/"
-  url "https://www.mpg123.de/download/mpg123-1.32.3.tar.bz2"
-  mirror "https://downloads.sourceforge.net/project/mpg123/mpg123/1.32.3/mpg123-1.32.3.tar.bz2"
-  sha256 "2d9913a57d4ee8f497a182c6e82582602409782a4fb481e989feebf4435867b4"
+  url "https://www.mpg123.de/download/mpg123-1.32.4.tar.bz2"
+  mirror "https://downloads.sourceforge.net/project/mpg123/mpg123/1.32.4/mpg123-1.32.4.tar.bz2"
+  sha256 "5a99664338fb2f751b662f40ee25804d0c9db6b575dcb5ce741c6dc64224a08a"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -12,13 +12,13 @@ class Mpg123 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6324a30c5b49b4c62882ad10adcce474a3649c466a9557def3ca9dcda10439e6"
-    sha256 arm64_ventura:  "f0ec99c74eea1c53a1f567b5c7ddef33b9c606b5af49d9913e49e52e468f859b"
-    sha256 arm64_monterey: "fd9b2d9479afcac36e5bf8fc994c84f3dcf5706586a44e9db95bce9a6a45d043"
-    sha256 sonoma:         "d5b83bc1af027fde3daedac23dcdb0e16e200938297017b80a07ec7c73ce6674"
-    sha256 ventura:        "9058810279d84c616d1ee14a38538712cf25c2ce57d56ebf7dc542c8ae988000"
-    sha256 monterey:       "84a62db870ec01c79069eee3d1c77b7fcec72e84d78e79a32ab3c79201ec55d0"
-    sha256 x86_64_linux:   "d32e43d1bf8b202c853b0c5d532e475f53e6979c2bf61ad1d214068e88d96f79"
+    sha256 arm64_sonoma:   "83a4a74bafbcafd98194c3a8ff082f8bbf84cee437cb94415d2b5a4939b1e0c2"
+    sha256 arm64_ventura:  "18b753aee482064a32ee44afa93a2357a01e6885c62f48768d7c0b0a20bf5400"
+    sha256 arm64_monterey: "9cfcc26737a2402242c00c2883120f4a59e834624f109fc176bb2aa677a0c4af"
+    sha256 sonoma:         "37930347f77ab308bce0928294c1cc8f06c4cdccf8191b9e8590c07ea519c272"
+    sha256 ventura:        "91aac3ae9782e7637371e427c5339892e8b557992885133d336c27eec758f006"
+    sha256 monterey:       "5b61078163f6fe41de47e89fef05288640cb0323c0ea82ffb68fd52f1ab93328"
+    sha256 x86_64_linux:   "b5f84640d70da48e419031fdc9cd760c97e51cf73e536751ce56a17e70176c1e"
   end
 
   def install

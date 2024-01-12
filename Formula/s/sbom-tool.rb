@@ -10,6 +10,7 @@ class SbomTool < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79d54bf454dee111a6c12aa3f067c98e61b25a917e985b06f86fc74c9b507754"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b950b45daad39f0ad154e2dda513691181263a92eff263218a61ef82a6c71888"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5c3cd18df46acb5d3e62c0095492cc2acdd2197933cee62e77a8faa32a04505c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2df2c0118f0dd4fdf42e3e44667b37121285d0c1cb90cc4eab6a54fffa55c814"
     sha256 cellar: :any_skip_relocation, ventura:        "855a2efae43fa405bd377cfa592567e0f1604b286595729a100ccc91bf20a0a0"
     sha256 cellar: :any_skip_relocation, monterey:       "5ba33bdfcf5ab4448b1f1086bbef5fcaf9c9f3cb5b7c7ca09a5f4df818d34b29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d9a5796b91e73007dabeacecadee881d0111bc15d82ab294041bf9cdeb2e867"

@@ -3,6 +3,7 @@ class Analog < Formula
   homepage "https:www.c-amie.co.uksoftwareanalog"
   url "https:github.comc-amieanalog-cearchiverefstags6.0.17.tar.gz"
   sha256 "0e5794c2eaa5826dc014916e413e90eb2714a646ff8d6ec026437182d789b117"
+  license "GPL-2.0-only"
   head "https:github.comc-amieanalog-ce.git", branch: "master"
 
   bottle do

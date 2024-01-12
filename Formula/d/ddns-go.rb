@@ -1,19 +1,19 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
   homepage "https:github.comjeessy2ddns-go"
-  url "https:github.comjeessy2ddns-goarchiverefstagsv5.7.1.tar.gz"
-  sha256 "6f59151f36fbba207d156a905c8de80e26c7b54be9da5d0821d3417204d0eca8"
+  url "https:github.comjeessy2ddns-goarchiverefstagsv6.0.0.tar.gz"
+  sha256 "db7da87e1691f11ebc5b49dffb1e7ab3df243d3713e7e139372de30dcf6de15f"
   license "MIT"
   head "https:github.comjeessy2ddns-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d8215bdcc0444f71c57c636a6176ec27ea542df9390de66bdac4827e4c73b276"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e0f6e36260535e25ee3b76b0c52a640040c6ececf366d359d4293be3c07a4c3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e98d343442b8e432294930035f6cc56aca6d23dc5b8e48dfb979760b545afa40"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6a6fc40d9c3f0fd2c8e7689ebe5d5d6b633ce66e06904b6120bdf7f6ff622069"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc2ac00307d6f3b0c8f4e0737a4a11e490d34243e06abce17bbadac03107a092"
-    sha256 cellar: :any_skip_relocation, monterey:       "bee48900f8fa7294582308aef768d9bc17f41433effa4d8d3b4650a17b3ee88c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b96da6ebb8c0b74bfef486518f3ea71c08cf55d1b9a50582295e4637783898c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "658e1fe47e1de81eecb07575081050ac984f26d177ad14ce9682526d8327a413"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b47ae3ac80406a10689212e498da8b3366b09e865139d1c98b716e30bc59d889"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8806e4f0edbb747b85c039e2ffa7f1ec14eea9069e7dd46eeebee9f6371175c8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "51625bd5108d24aa32ed4a23ff76a9854438aa9bc1839c61bac0feae8fe5c81d"
+    sha256 cellar: :any_skip_relocation, ventura:        "1985123ddfe4204cd78892ff21476089b24e67ce0e669260de9c19bcd0d876a5"
+    sha256 cellar: :any_skip_relocation, monterey:       "77f3d3aafc9cb88be1335b74dec30865589291c846190e03d0cc56930fbfc48b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b95c5222e85bd083d3b0d2b627435609f7dabac586bb7b74c6ce513373c15b39"
   end
 
   depends_on "go" => :build

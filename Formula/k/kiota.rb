@@ -10,6 +10,7 @@ class Kiota < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfba2581e838120c91a260c160c925e764d946b6470a9c772a028a73620f0416"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee1a446c0e676d8d1ba6f1c992893f294788ea3b5ee51c1ffff19f2c3295bd8c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8e4ed78e43d1894a5a1f481c33e58b2c61b4ca0925c57ca9c3bbea6e9dcea7a3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d21a17a72c9b9a620a1ef5bdd6b9bf1fc1baabfd4bfd4b977c8d4651b7fbaf1c"
     sha256 cellar: :any_skip_relocation, ventura:        "0b0890a53151401103d37fabf712be7c065b30f25232dd2b75f320610ffe5e79"
     sha256 cellar: :any_skip_relocation, monterey:       "4981d261456f3b167035f021189518fef5b077575ca97ec4a4ffe82a4c6a2cad"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c48e0ece483c97515eb3824000bfe46eb404b3da98291e653e59bf798619757a"

@@ -4,7 +4,7 @@ class PostgresqlAT16 < Formula
   url "https:ftp.postgresql.orgpubsourcev16.1postgresql-16.1.tar.bz2"
   sha256 "ce3c4d85d19b0121fe0d3f8ef1fa601f71989e86f8a66f7dc3ad546dd5564fec"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   livecheck do
     url "https:ftp.postgresql.orgpubsource"
@@ -12,23 +12,20 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "0d0232baecc6d937e4b70c33ea1047da1b3a6aaeeb438422ee6b3f088ca4fdfe"
-    sha256 arm64_ventura:  "5da5d5aa5687307faf5347dd982de73b1f945909fab3fe31157d87816d1d36d7"
-    sha256 arm64_monterey: "be4f99e49fe017e01a803fcbd07b977ce54b8f5ee326b441df51c4d0e76df7e2"
-    sha256 sonoma:         "b0fce288cfef6961a4728ed37c953615c1180e2e011c1fe2e4622fa84537e5d5"
-    sha256 ventura:        "9ce1f0d41cabf44535ddf83f474636dded2789ee43293289bd3666a6ccf3546c"
-    sha256 monterey:       "a27c4e4b2f1ae68581bf9f0ea09362857ee8d958b99b1ae0088d05314beb4297"
-    sha256 x86_64_linux:   "5cf57a59b73454e187f16000a015de67603f63e81ff6bc76317c26c08642da1f"
+    sha256 arm64_sonoma:   "e75f0e6e19b50079d882ae40d5e8d54c5c8337d8d2a94347e5e0faeca4a29c89"
+    sha256 arm64_ventura:  "852fe6f22ae64fe9e01d74635209659963bc38c4e8dee4f56c9c423d57316389"
+    sha256 arm64_monterey: "d6d9f8d5c527311f0915815d6175c97911eb24446cbe7afa2c54d04d99bac685"
+    sha256 sonoma:         "8aa3a39358b44698f57992152c9a78f95e29aa8792a60e9f50bd2473bed0df2c"
+    sha256 ventura:        "07628394cce4ee17d5ebbfcb6597f56c873028e573983d4c7821f7d2a475087f"
+    sha256 monterey:       "c044fabb4c0f19980106d2e5f71c3699809e2f9591c23e76f066dcf106bb34e7"
+    sha256 x86_64_linux:   "1c016edd6dbf44d756efecf98073dfc61827a731a1a4314766ae83ff5582b9c9"
   end
-
-  keg_only :versioned_formula
 
   # https:www.postgresql.orgsupportversioning
   deprecate! date: "2028-11-09", because: :unsupported
 
+  depends_on "gettext" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "icu4c"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
@@ -45,6 +42,10 @@ class PostgresqlAT16 < Formula
   uses_from_macos "openldap"
   uses_from_macos "perl"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   on_linux do
     depends_on "linux-pam"
     depends_on "util-linux"
@@ -60,16 +61,20 @@ class PostgresqlAT16 < Formula
     ENV.prepend "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib} -L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
 
-    # Fix 'libintl.h' file not found for extensions
-    ENV.prepend "LDFLAGS", "-L#{Formula["gettext"].opt_lib}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["gettext"].opt_include}"
+    if OS.mac?
+      # Fix 'libintl.h' file not found for extensions
+      ENV.prepend "LDFLAGS", "-L#{Formula["gettext"].opt_lib}"
+      ENV.prepend "CPPFLAGS", "-I#{Formula["gettext"].opt_include}"
+    end
 
     args = std_configure_args + %W[
-      --datadir=#{opt_pkgshare}
-      --libdir=#{opt_lib}
-      --includedir=#{opt_include}
+      --bindir=#{libexec}bin
+      --datadir=#{HOMEBREW_PREFIX}share#{name}
+      --libdir=#{HOMEBREW_PREFIX}lib#{name}
+      --includedir=#{HOMEBREW_PREFIX}include#{name}
       --sysconfdir=#{etc}
       --docdir=#{doc}
+      --mandir=#{libexec}man
       --enable-nls
       --enable-thread-safety
       --with-gssapi
@@ -97,21 +102,21 @@ class PostgresqlAT16 < Formula
     args << "PG_SYSROOT=#{MacOS.sdk_path}" if OS.mac? && MacOS.sdk_root_needed?
 
     system ".configure", *args
-
-    # Work around busted path magic in Makefile.global.in. This can't be specified
-    # in .configure, but needs to be set here otherwise install prefixes containing
-    # the string "postgres" will get an incorrect pkglibdir.
-    # See https:github.comHomebrewhomebrew-coreissues62930#issuecomment-709411789
-    system "make", "pkglibdir=#{opt_lib}postgresql",
-                   "pkgincludedir=#{opt_include}postgresql",
-                   "includedir_server=#{opt_include}postgresqlserver"
+    system "make"
     system "make", "install-world", "datadir=#{pkgshare}",
-                                    "libdir=#{lib}",
-                                    "pkglibdir=#{lib}postgresql",
-                                    "includedir=#{include}",
-                                    "pkgincludedir=#{include}postgresql",
-                                    "includedir_server=#{include}postgresqlserver",
-                                    "includedir_internal=#{include}postgresqlinternal"
+                                    "libdir=#{lib}#{name}",
+                                    "pkglibdir=#{lib}#{name}",
+                                    "includedir=#{include}#{name}",
+                                    "pkgincludedir=#{include}#{name}",
+                                    "includedir_server=#{include}#{name}server",
+                                    "includedir_internal=#{include}#{name}internal"
+
+    (libexec"bin").each_child do |f|
+      versioned_f = "#{f.basename}-#{version.major}"
+      bin.install_symlink f => versioned_f
+      manpage = libexec"manman1#{f.basename}.1"
+      man1.install_symlink manpage => "#{versioned_f}.1" if manpage.exist?
+    end
   end
 
   def post_install
@@ -121,7 +126,7 @@ class PostgresqlAT16 < Formula
     # Don't initialize database, it clashes when testing other PostgreSQL versions.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    system "#{bin}initdb", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
+    system "#{bin}initdb-#{version.major}", "--locale=C", "-E", "UTF-8", postgresql_datadir unless pg_version_exists?
   end
 
   def postgresql_datadir
@@ -139,14 +144,18 @@ class PostgresqlAT16 < Formula
   def caveats
     <<~EOS
       This formula has created a default database cluster with:
-        initdb --locale=C -E UTF-8 #{postgresql_datadir}
+        initdb-#{version.major} --locale=C -E UTF-8 #{postgresql_datadir}
       For more details, read:
         https:www.postgresql.orgdocs#{version.major}app-initdb.html
+
+      Commands have been installed with the suffix "-#{version.major}".
+      To use these commands with their normal names, you can modify your PATH:
+        PATH="#{opt_libexec}bin:$PATH"
     EOS
   end
 
   service do
-    run [opt_bin"postgres", "-D", f.postgresql_datadir]
+    run [opt_libexec"binpostgres", "-D", f.postgresql_datadir]
     environment_variables LC_ALL: "C"
     keep_alive true
     log_path f.postgresql_log_path
@@ -155,13 +164,14 @@ class PostgresqlAT16 < Formula
   end
 
   test do
-    system "#{bin}initdb", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
-    assert_equal opt_pkgshare.to_s, shell_output("#{bin}pg_config --sharedir").chomp
-    assert_equal opt_lib.to_s, shell_output("#{bin}pg_config --libdir").chomp
-    assert_equal (opt_lib"postgresql").to_s, shell_output("#{bin}pg_config --pkglibdir").chomp
-    assert_equal (opt_include"postgresql").to_s, shell_output("#{bin}pg_config --pkgincludedir").chomp
-    assert_equal (opt_include"postgresqlserver").to_s, shell_output("#{bin}pg_config --includedir-server").chomp
-    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{bin}pg_config --cppflags")
+    system "#{bin}initdb-#{version.major}", testpath"test" unless ENV["HOMEBREW_GITHUB_ACTIONS"]
+    pg_config = "#{bin}pg_config-#{version.major}"
+    assert_equal "#{HOMEBREW_PREFIX}share#{name}", shell_output("#{pg_config} --sharedir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{pg_config} --libdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}lib#{name}", shell_output("#{pg_config} --pkglibdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}include#{name}", shell_output("#{pg_config} --pkgincludedir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}include#{name}server", shell_output("#{pg_config} --includedir-server").chomp
+    assert_match "-I#{Formula["gettext"].opt_include}", shell_output("#{pg_config} --cppflags") if OS.mac?
   end
 end
 

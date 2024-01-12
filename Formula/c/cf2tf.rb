@@ -6,16 +6,17 @@ class Cf2tf < Formula
   url "https:files.pythonhosted.orgpackagesea3fc1861f5f8f6c8430c34b3cac46aa7c8723a403a5bffec448a8acf1cfd23ccf2tf-0.6.2.tar.gz"
   sha256 "7b2ec09154279d247a3dada67b82c571143805ff7e9bb6d7ebada8fa6908a773"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comDontShaveTheYakcf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "485a292c9938eb28c66c552741fcb01f575ba339cde4d44942bda36a1d2f3237"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e70a76d012d33a65faae36f52ec4592609683aff6b7e2889cb3fa8be85204401"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b92e050b565de94b54aea2b272b0e44418656b00344b3e2c32605a4a2a5400ac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8e49af997ad84659ae3a83bade8c852197408dd83eceb8553a59eeeba9e04e8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "354fe666056ba7fab167e5efa348b2b822f261f645b28a842ddc3c166db5b5e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "6029e836472aab2fa2aae40967515709f8bd51b9b44259de714ccb6682670687"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "382d075821c8b8fb282a68269868606337ff0fc32d14aaba699907cd067c3a04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1110aaec54e0f607c615fb3efdc03407b40e968038454c15b261736cdf2c93ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1d5e2b1b4089b61b2931d537404b9e27a41666e78121dedb77828559a8d44c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "440ef00648677632d30ed0070f899985a6e12ea3bd86df21341cf209d903d499"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f9efa146e76217fe1fe51dcf3816b630a7aaeac2e256c658880603ea0571b7ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "7536a702d64378a2c441727ef496de824de8a9395a70582c13e01fdf6b4bf8a8"
+    sha256 cellar: :any_skip_relocation, monterey:       "33fdb703a0b0d1aee85c476b7413155b20a01560ec31c2247403c6a553046d36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf5fe51a79c1cd58c8c5d429e9edc3d092f3223e5819be3fac43220564409278"
   end
 
   depends_on "cmake" => :build
@@ -46,8 +47,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https:files.pythonhosted.orgpackages0db237265877ae607a2cbf9a471f4581dbf5ed13a501b90cb4c773f9ccfff3eaGitPython-3.1.40.tar.gz"
-    sha256 "22b126e9ffb671fdd0c129796343a02bf67bf2994b35449ffc9321aa755e18a4"
+    url "https:files.pythonhosted.orgpackagese5c26e3a26945a7ff7cf2854b8825026cf3f22ac8e18285bc11b6b1ceeb8dc3fGitPython-3.1.41.tar.gz"
+    sha256 "ed66e624884f76df22c8e16066d567aaa5a37d5b5fa19db2c6df6f7156db9048"
   end
 
   resource "idna" do
@@ -66,8 +67,8 @@ class Cf2tf < Formula
   end
 
   resource "pytest" do
-    url "https:files.pythonhosted.orgpackages38d4174f020da50c5afe9f5963ad0fc5b56a4287e3586e3de5b3c8bce9c547b4pytest-7.4.3.tar.gz"
-    sha256 "d989d136982de4e3b29dabcc838ad581c64e8ed52c11fbe86ddebd9da0818cd5"
+    url "https:files.pythonhosted.orgpackages801f9d8e98e4133ffb16c90f3b405c43e38d3abb715bb5d7a63a5a684f7e46a3pytest-7.4.4.tar.gz"
+    sha256 "2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280"
   end
 
   resource "pyyaml" do
@@ -76,8 +77,8 @@ class Cf2tf < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackages8bf3bf5e82eca3b88853a5fe596bf8c94fb6f2775dc1b55b7bfee9de21afab03rapidfuzz-3.5.2.tar.gz"
-    sha256 "9e9b395743e12c36a3167a3a9fd1b4e11d92fb0aa21ec98017ee6df639ed385e"
+    url "https:files.pythonhosted.orgpackagesd4f4039e35e99c967100d73616ec08d4c02325f67e0d5c32a6d5a49a7f620942rapidfuzz-3.6.1.tar.gz"
+    sha256 "35660bee3ce1204872574fa041c7ad7ec5175b3053a4cb6e181463fc07013de7"
   end
 
   resource "requests" do

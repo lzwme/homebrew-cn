@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.55.2",
-      revision: "3e347d7ad724bdf91f054c0261f55423fda49cb3"
+      tag:      "v1.56.0",
+      revision: "4aafafb00fda1a5590f67115e788b369c199d713"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "6f4f6cb34d1d7d1ca390ee3ff4829e0b4179013295e5611f7edc609fbfcfd1b4"
-    sha256 cellar: :any, arm64_ventura:  "b5aaaf4b1777392667e5e1b2ca8dd0286e652dd99072bfaf0768bd7653333692"
-    sha256 cellar: :any, arm64_monterey: "c2684e8255a7212bf97c19d720de24c0caaf8381d33abf5930d5d722129ec66d"
-    sha256 cellar: :any, sonoma:         "b5b2f1a2faf2768fbd801a8910c26644a9a27d541dc8324f214892778641cce5"
-    sha256 cellar: :any, ventura:        "18066972493a77af86daa6377bcd6b07b2a22b466e9a2ddf9046aeda95d10eac"
-    sha256 cellar: :any, monterey:       "15ba05fbf19877d48aa5bd101b87216f4b0f045146c294fcedebb042f5c112bd"
-    sha256               x86_64_linux:   "e4a5158efe014be13586f1454129c50a35ef2807e023e36bda86005cfcda03ef"
+    sha256 cellar: :any, arm64_sonoma:   "0aa266f8257b3050a436ec5b53302e09a15d59da49a1e003a0d356d4360424c7"
+    sha256 cellar: :any, arm64_ventura:  "bf8a44a21fc4e903c6a26ad541143bb80c1eeaa7aab042d40eee0fae241c1490"
+    sha256 cellar: :any, arm64_monterey: "bfbd3117f59f9d2beb604ece18ed7510554307d02f6d029ef57153ab4e94f6de"
+    sha256 cellar: :any, sonoma:         "cefb12c4f1f5f0fcd29880b80f19e1f22667a55fa3af66601837b1d6883802fd"
+    sha256 cellar: :any, ventura:        "ddb78d1bb2450207b279f317081e5688207ec6c6c850c9f347594f414d1c6b51"
+    sha256 cellar: :any, monterey:       "12ff8f17ca63570cab54ae5ff34bdc94a0ea0059d3a2a3efd5d06c8fb60661fa"
+    sha256               x86_64_linux:   "6676c0c4b8776fbc87a5e4aa6685cfd63969435b2241311a63a63289dbf5aa6d"
   end
 
   depends_on "autoconf" => :build

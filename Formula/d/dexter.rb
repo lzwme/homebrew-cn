@@ -6,13 +6,14 @@ class Dexter < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b55d0944aa8da78137b097693aaaea3f29922170c3da4799336757ca0fe3e938"
-    sha256 cellar: :any,                 arm64_ventura:  "d7f7611fb52ec96e542330f3d1aa3d42411e20fcc2712ca9a517b33e6e48b98a"
-    sha256 cellar: :any,                 arm64_monterey: "239f1f376e72308cdb66f9bf08b1978c0797593c1d778b195fd38ad98748c0fb"
-    sha256 cellar: :any,                 sonoma:         "bccc57883ac12bc125ab81556c55f8c34b6ef448bf8240f7ffa415117bc58717"
-    sha256 cellar: :any,                 ventura:        "2840160ab8765e516538b3d4a1580317eaa267a40d4e267cbbc3cc54dd16ce00"
-    sha256 cellar: :any,                 monterey:       "6db24b45a034ce3fa6c29df0254f1d7aec55f29f7af531a196122343fc5cae9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84bd353c1fdba99ecf9b7c6bcf7819b46da8ea128942760732f9028fc16f4668"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d05b0835f1ea35d41e1e9e71137bdaefab4c5e9ba27efe364ff7db8f21682ce5"
+    sha256 cellar: :any,                 arm64_ventura:  "3c89ad78d7b1d8fed33f2c6db363118bf095aee765f5feed1413bfb7bbc5116e"
+    sha256 cellar: :any,                 arm64_monterey: "c0b91f8616fb308ffb510102ce93b9fc884aef6f6d0fe95db1fcc691a989adfa"
+    sha256 cellar: :any,                 sonoma:         "70ce71bbae22816ba6795dadba6d9047df7d6b0fa9728f1ab21abcb2dc572cf9"
+    sha256 cellar: :any,                 ventura:        "91d93539ee2b2b7fc5f3d00ad7478b0aba0c8832d3f7096b0613c1ee5099affd"
+    sha256 cellar: :any,                 monterey:       "99a92796eadb4ae34fc5cd1fc3d553bea4d41f9f66af6e29fb80c675f72c0d4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30b8e8c150b578bbfca9e85ca3f0f6e620cb8563bdd16e988e0bf895ee6d871f"
   end
 
   depends_on "postgresql@16" => :test
@@ -60,7 +61,7 @@ class Dexter < Formula
     ENV["LC_ALL"] = "C"
 
     postgresql = Formula["postgresql@16"]
-    pg_ctl = postgresql.opt_bin"pg_ctl"
+    pg_ctl = postgresql.opt_libexec"binpg_ctl"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath"test"

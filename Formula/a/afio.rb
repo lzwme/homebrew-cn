@@ -3,6 +3,8 @@ class Afio < Formula
   homepage "https:github.comkholtmanafio"
   url "https:github.comkholtmanafioarchiverefstagsv2.5.2.tar.gz"
   sha256 "c64ca14109df547e25702c9f3a9ca877881cd4bf38dcbe90fbd09c8d294f42b9"
+  # See afio_license_issues_v5.txt
+  license :cannot_represent
   head "https:github.comkholtmanafio.git", branch: "master"
 
   bottle do

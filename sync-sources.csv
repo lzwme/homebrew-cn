@@ -571,7 +571,6 @@ Homebrew-homebrew-core/Formula/b/brogue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/broot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brotli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/browser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdiff.rb, Homebrew/homebrew-core, 0
@@ -598,7 +597,6 @@ Homebrew-homebrew-core/Formula/b/bundler-completion.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/b/bundletool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bupstash.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/burl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/burp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/burst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/busted.rb, Homebrew/homebrew-core, 1
@@ -5249,6 +5247,7 @@ Homebrew-homebrew-core/Formula/r/rargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rarian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratfor.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rathole.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 1

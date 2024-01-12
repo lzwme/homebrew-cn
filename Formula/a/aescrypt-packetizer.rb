@@ -3,6 +3,7 @@ class AescryptPacketizer < Formula
   homepage "https:www.aescrypt.com"
   url "https:www.aescrypt.comdownloadv3linuxaescrypt-3.16.tgz"
   sha256 "e2e192d0b45eab9748efe59e97b656cc55f1faeb595a2f77ab84d44b0ec084d2"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https:www.aescrypt.comdownload"

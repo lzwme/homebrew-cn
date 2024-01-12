@@ -6,34 +6,36 @@ class PgCron < Formula
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c294a3d8a7585bd4b916e024310be13810a8e86715c137e7814af8ed581aa5e1"
-    sha256 cellar: :any,                 arm64_ventura:  "06b8a09d3fb974d116b35938d614af4c97f97694175ad0eed667664bccbc5052"
-    sha256 cellar: :any,                 arm64_monterey: "5b2f6cfd5e2a576df15f7e77f35e7a1bded4b13cbaaaea617a191569e658b2c2"
-    sha256 cellar: :any,                 sonoma:         "43837a961f837549b75a9f6fdda29d09ec27aa884fd9e70c97fa5314678bbfcb"
-    sha256 cellar: :any,                 ventura:        "2c2ea81a120feffc0e6bea3d9c0f0b9a988ace65c337cdbb0b270edc6d459bc6"
-    sha256 cellar: :any,                 monterey:       "6d3f19894fcd2dc173740b0c3ab089aea7c35c4a0e9f8c269a7df4e55acc12e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0718344de02cc3e52d659bc55464f804cafab8a07fd2cccc0a62f0a9fd88c51"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "46319669501a68f85486f03718757c445232a2cda06fe4052c72f06305952a93"
+    sha256 cellar: :any,                 arm64_ventura:  "a4b25202758f71ad9ccb2b79959cc9b7c360c8a397063c823b76b65214a22387"
+    sha256 cellar: :any,                 arm64_monterey: "24ccd07d3b6fa08211e39698f2cc8e964fd8b3785df6ff8eb491947055d40d78"
+    sha256 cellar: :any,                 sonoma:         "a0bc2b517f51094f790ae767c91aa673f54d9a47637ae52c845a1783a695b4fc"
+    sha256 cellar: :any,                 ventura:        "08d8db4d45809be10db49e8cddfec6ed2d09b3a3f0158f86f4c02f3df070210e"
+    sha256 cellar: :any,                 monterey:       "517cbf786d644a14d59dbc8ea8db6021a442ae2d3735592c3cb3a9ef28a899c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce8abe1eb67c86d1380d0c44dd7ff20c4498226ef6e43ab95d4b15ab06a5309f"
   end
 
-  # upstream issue for running with pg@15, https:github.comcitusdatapg_cronissues237
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
+    # Work around for ld: Undefined symbols: _libintl_ngettext
+    # Issue ref: https:github.comcitusdatapg_cronissues269
+    ENV["PG_LDFLAGS"] = "-lintl" if OS.mac?
 
-    system "make"
-    (libpostgresql.name).install "pg_cron.so"
-    (sharepostgresql.name"extension").install Dir["pg_cron--*.sql"]
-    (sharepostgresql.name"extension").install "pg_cron.control"
+    system "make", "install", "PG_CONFIG=#{postgresql.opt_libexec}binpg_config",
+                              "pkglibdir=#{libpostgresql.name}",
+                              "datadir=#{sharepostgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin"pg_ctl"
-    psql = postgresql.opt_bin"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec"binpg_ctl"
+    psql = postgresql.opt_libexec"binpsql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath"test"

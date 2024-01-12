@@ -1,8 +1,8 @@
 class Dnscontrol < Formula
   desc "Synchronize your DNS to multiple providers from a simple DSL"
   homepage "https:dnscontrol.org"
-  url "https:github.comStackExchangednscontrolarchiverefstagsv4.7.3.tar.gz"
-  sha256 "4d60ffb84b62005156b8b28d4c212a675946eb7bee557856517822e5bf2c1539"
+  url "https:github.comStackExchangednscontrolarchiverefstagsv4.8.1.tar.gz"
+  sha256 "4191cb4aa609aff6c24c7cdafab3283a6cd3f45ba460e33992ea3bcd405f5598"
   license "MIT"
   version_scheme 1
 
@@ -15,26 +15,19 @@ class Dnscontrol < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f41c25392a050a62cc2d0af19a2c8d7c90966ccdf605358ccd3be53b95010f05"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80546bcef8bc13be64bc73b3f9197945f2a1712dc7046e82b7f658dffce2b7e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "639928c687cb93e1fd0d45d66b001ef044099f52496dc46e72a4fce4694289ef"
-    sha256 cellar: :any_skip_relocation, sonoma:         "652f38207eb14ab1287aa01e78fde52681bca8c46c2890708f9ea3e0b601bef5"
-    sha256 cellar: :any_skip_relocation, ventura:        "518e58c5020311038291905f68c30c00254386bed898a28d57afcf8d0642f095"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c9e442bd767a870599f531b3afa6018df476308b40bbce0d54847f7d6f12d39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "229976458a0240634e4bce06850b85d02c524ea56fd65344da421da97e0e3aed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cbbf2f5939b324be91bc187a108f81891d27d41f80b10280c6a9280dddc43341"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfd48d3584f033ece3050e6169905b5cf962818cab139cd4d0bb70bfc7ad5251"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d06c68bc2f44ca2397e63b574e308f8d9421b95e2237cbec7e357fb43fcd1569"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f118cc0b7fba5a84b8f9b0aabe3c321baf7bd9d16683dc11eeb9445c095a37ce"
+    sha256 cellar: :any_skip_relocation, ventura:        "2850f93be6550883339d84b5b9056119f367d049a2cac79e704089a348bb042f"
+    sha256 cellar: :any_skip_relocation, monterey:       "67237f966ffe21fef77c796bf98e24872861d3d48a449afab7b29189568aa4c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "faf8f6b801ba69cec807d3b5acbde0e22e5e390f691f52d2d60ac520daebad53"
   end
 
   depends_on "go" => :build
 
   def install
-    go_ldflags = %W[
-      -s -w
-      -X main.SHA=#{tap.user}
-      -X main.Version=#{version}
-      -X main.BuildTime=#{time.iso8601}
-    ]
-    system "go", "build", *std_go_args(ldflags: go_ldflags)
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
 
     generate_completions_from_executable(bin"dnscontrol", "shell-completion", shells: [:bash, :zsh])
   end
@@ -46,7 +39,6 @@ class Dnscontrol < Formula
   test do
     version_output = shell_output("#{bin}dnscontrol version")
     assert_match version.to_s, version_output
-    assert_match tap.user, version_output
 
     (testpath"dnsconfig.js").write <<~EOS
       var namecom = NewRegistrar("name.com", "NAMEDOTCOM");

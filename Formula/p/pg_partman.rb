@@ -1,39 +1,40 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https:github.compgpartmanpg_partman"
-  url "https:github.compgpartmanpg_partmanarchiverefstagsv5.0.0.tar.gz"
-  sha256 "222e7175c9afc417aa6e03e826de4a5eb2a88fd8d1e3d06321aa8dac2471c005"
+  url "https:github.compgpartmanpg_partmanarchiverefstagsv5.0.1.tar.gz"
+  sha256 "75b541733a9659a6c90dbd40fccb904a630a32880a6e3044d0c4c5f4c8a65525"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "350aa7f059bfbda180a1caadae4108706a5337f4067f93a8e85d50fe203d4e57"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1761cb66d3b4e4a78858d225eab346cbb3572c16231ea382a7617cbfb4b5b6c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "260e9e596d8e09f13f12fd5dd5f89b39062e8f3005b0a9660ccb5fbc0ef6893d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f7b923f121dfda40451b2ba3f6db7fc3b27803faa8e4055a8f1c948b27c8f06e"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2703df6ff6667b1e25e83cbd2922edce3bb17f4986e8abdd91f091ba59daec8"
-    sha256 cellar: :any_skip_relocation, monterey:       "a07314ff83b1459022031658d0fdc501a94decb869c815380c96e974db6e2ec7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3167d017909a68ebb1a94f01e943dea86964b8d4976051c8f888a678ebfe33cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2d729a6cf7ad10cf391030757a9a0dd05347792830826319d51b680bf94a3b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcbf1e27f798752c6e5955d1e822341e1c9593e7fce2e97ca2e84e8b13b320b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6896bc779c8a394aeaa9157db815288627d651c71c1712aca78859013e774461"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cb09ddcf56bc40a73ba71065a836a7b851bb2b1c7d9d809ca1ae98f5f429a057"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7f03498b38c41f540028a9cb703a7eb8eadc31a50e32e6594a0bc313eb379cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed17fb0c97c4a1bf3ed43298f1aaf2df779dc020a26066f8d42682170840cca0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56f22aa2166c3662412f4e04b41abe48f3d6a9272c786e689493989676cc9a4a"
   end
 
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_libexec"binpg_config"
 
     system "make"
-    (libpostgresql.name).install "srcpg_partman_bgw.so"
-    (sharepostgresql.name"extension").install "pg_partman.control"
-    (sharepostgresql.name"extension").install Dir["sqlpg_partman--*.sql"]
-    (sharepostgresql.name"extension").install Dir["updatespg_partman--*.sql"]
+    system "make", "install", "bindir=#{bin}",
+                              "docdir=#{doc}",
+                              "datadir=#{sharepostgresql.name}",
+                              "pkglibdir=#{libpostgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin"pg_ctl"
-    psql = postgresql.opt_bin"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec"binpg_ctl"
+    psql = postgresql.opt_libexec"binpsql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath"test"

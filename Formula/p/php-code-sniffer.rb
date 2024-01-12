@@ -1,19 +1,19 @@
 class PhpCodeSniffer < Formula
   desc "Check coding standards in PHP, JavaScript and CSS"
   homepage "https:github.comPHPCSStandardsPHP_CodeSniffer"
-  url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.8.0phpcs.phar"
-  sha256 "83af937af9a3c858494b77fe8dac4118bdf6c24c1e6d0b950b026db67579c869"
+  url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.8.1phpcs.phar"
+  sha256 "e4cb7886c9556ec30c826b99a2a114073b3e17701cb25d1631fda3608ef5be40"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "38d06372f754ea6dd879ef03e0a6b9e156d52ed77f0b7b06fd7bc96d4113a441"
+    sha256 cellar: :any_skip_relocation, all: "b3d448439431fa979f579492d5ea423030aff2ed8649bbe07c05318ba2dcb1ca"
   end
 
   depends_on "php"
 
   resource "phpcbf.phar" do
-    url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.8.0phpcbf.phar"
-    sha256 "c6239e290983081fe81d946e9daa7d99df0646c211417f82ccb95578237852ef"
+    url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.8.1phpcbf.phar"
+    sha256 "6a127bcc4d35c8eb04f7657f6df708c38e2469c2f00cf4649b0d07fda1153e9e"
   end
 
   def install

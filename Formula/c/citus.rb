@@ -1,58 +1,58 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https:www.citusdata.com"
-  url "https:github.comcitusdatacitusarchiverefstagsv12.0.0.tar.gz"
-  sha256 "9a6adaecc28e80e03a0523d07ee14c4b848f86f48ed37f84aa8cb98f3489f632"
   license "AGPL-3.0-only"
   head "https:github.comcitusdatacitus.git", branch: "main"
 
+  stable do
+    url "https:github.comcitusdatacitusarchiverefstagsv12.1.0.tar.gz"
+    sha256 "cc25122ecd5717ac0b14d8cba981265d15d71cd955210971ce6f174eb0036f9a"
+
+    # Backport fix for macOS dylib suffix.
+    patch do
+      url "https:github.comcitusdatacituscommit0f28a69f12418d211ffba5f7ddd222fd0c47daeb.patch?full_index=1"
+      sha256 "b8a350538d75523ecc171ea8f10fc1d0a2f97bd7ac6116169d773b0b5714215e"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bb1523040c2714dd707e78ae1d50a43d6527c9c1347699b860ea744a7d07b302"
-    sha256 cellar: :any,                 arm64_ventura:  "f4bf486699a5729f4d0c2006001f4449f60d343256550be6017d9ba2c34ff374"
-    sha256 cellar: :any,                 arm64_monterey: "eeb9601a50b0eef99e8bf5b5e7e8e8ad5dd9a2ff205e6e39a7d7a056cf9f7f89"
-    sha256 cellar: :any,                 arm64_big_sur:  "e1d3d86a47cbdb1d3899f78cdfa58b11932ebdeecf77e7243ce5f87c8073b99f"
-    sha256 cellar: :any,                 sonoma:         "12c5d78d573922cb565183cde30d8365543710debea30d52036d76845fc2434b"
-    sha256 cellar: :any,                 ventura:        "47b61e4cc15726dac930df244271c94c96c000b8855ac360e51cbf3df0d00938"
-    sha256 cellar: :any,                 monterey:       "55aedab8c64a790da451bba0e878aa04de3213b89a2399ddef69bb94cfe3e824"
-    sha256 cellar: :any,                 big_sur:        "2f117d6aa7e6daaa46239f2654c3f477fa64cae2e2be6fabba91e4741210eb21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a80582e490c8d146843864627ac75b85f2fa917e671da46bd2aef9ae1676f84"
+    sha256 cellar: :any,                 arm64_sonoma:   "3feaa17bbc05d3902404413582f22f70b526f55797c357c775654f8c4e55c9b4"
+    sha256 cellar: :any,                 arm64_ventura:  "6d9282cc121e512b2cbe73e20f5047af310c9c7c8d2350026acceedced653dd2"
+    sha256 cellar: :any,                 arm64_monterey: "6098668e13f985faff1ca249be2999b13f60434a44250c3f5704994384140698"
+    sha256 cellar: :any,                 sonoma:         "002a5bd41e70330a8a7efe7c23ec7c320d7bcb1730324fb848a19e075d0a5b98"
+    sha256 cellar: :any,                 ventura:        "dff6698a79f2681322cd2dac6d7d190f45123e9a7db3addb985bd9aa61f52f02"
+    sha256 cellar: :any,                 monterey:       "50a2bf23c39566f1c65069d816b3dd23ff4c95477e9edb973c08a794db1a15eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab0339a42b57a9bbd0ef4c243ffcc78868f5f7d6c7c72e6b4fd62dc9d576e107"
   end
 
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "postgresql@14"
+  depends_on "postgresql@16"
   depends_on "readline"
   depends_on "zstd"
 
   uses_from_macos "curl"
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@16"]
   end
 
   def install
-    ENV["PG_CONFIG"] = postgresql.opt_bin"pg_config"
+    ENV["PG_CONFIG"] = postgresql.opt_libexec"binpg_config"
 
-    system ".configure"
-    # workaround for https:github.comHomebrewlegacy-homebrewissues49948
-    system "make", "libpq=-L#{postgresql.opt_lib} -lpq"
-
-    # Use stage directory to prevent installing to pg_config-defined dirs,
-    # which would not be within this package's Cellar.
-    mkdir "stage"
-    system "make", "install", "DESTDIR=#{buildpath}stage"
-
-    stage_path = File.join("stage", HOMEBREW_PREFIX)
-    lib.install (buildpathstage_path"lib").children
-    include.install (buildpathstage_path"include").children
-    share.install (buildpathstage_path"share").children
-
-    bin.install (buildpathFile.join("stage", postgresql.bin.realpath)).children
+    system ".configure", *std_configure_args
+    system "make"
+    # Override the hardcoded install paths set by the PGXS makefiles.
+    system "make", "install", "bindir=#{bin}",
+                              "datadir=#{sharepostgresql.name}",
+                              "pkglibdir=#{libpostgresql.name}",
+                              "pkgincludedir=#{includepostgresql.name}"
   end
 
   test do
-    pg_ctl = postgresql.opt_bin"pg_ctl"
-    psql = postgresql.opt_bin"psql"
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_libexec"binpg_ctl"
+    psql = postgresql.opt_libexec"binpsql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath"test"

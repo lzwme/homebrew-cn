@@ -1,19 +1,19 @@
 class Trivy < Formula
   desc "Vulnerability scanner for container images, file systems, and Git repos"
   homepage "https:aquasecurity.github.iotrivy"
-  url "https:github.comaquasecuritytrivyarchiverefstagsv0.48.2.tar.gz"
-  sha256 "1ddb610d9c2bcd10cc5b22988196b470cc6b43198efa1bd5a13bb3ed20c202de"
+  url "https:github.comaquasecuritytrivyarchiverefstagsv0.48.3.tar.gz"
+  sha256 "ff41f676762ba6fb52604705b4305541c0a695f167f036cfdb71ca1efeff229e"
   license "Apache-2.0"
   head "https:github.comaquasecuritytrivy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9610edf9668380938e41c9975db6a0d0a9cee5891c2496cb265e56ca2316e2b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3e454af57f90c41f08f09294c48ff5d8c32cfca6da2491e7256b6607d819a7a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "93150b0e90676cb1ac4f74a6a2e8c03818674437b6f19d791f1b305169d63008"
-    sha256 cellar: :any_skip_relocation, sonoma:         "04707c644117a9571957e82fbc990b8919b1c7aa3809877914dc4e8878d34e37"
-    sha256 cellar: :any_skip_relocation, ventura:        "d67ad626288a69056be0f928db28015e770b00b933a68449a864c2b8b5bfcad5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8f1c6a4425e9c8d560502860a5c918c2e242c08d213dff9c2f13ffe80896291"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c554b22221e80746af688360a6f6484b0d6e17a16d4bbd015418b39c7d10d333"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6afc7dc1a184d8314f6bc43102f934bb44e7281bee2010a122664b66d10de00a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5f1e455530261f210adb323f8ff7925ca0b42fd622560812de4d7a40407f654"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42f839a3a2388abaeb153470d5d63d8e677dbc97f82caa31ca5a652c06be06b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c0ff4394eed3874695562adebbed9f57d1dd4febaf72f8e5de07d886e3bf0a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "32924f04a6b0ad980c806abf0b7d55e1e32e53a18153e7ca845684d0d2b4a20d"
+    sha256 cellar: :any_skip_relocation, monterey:       "56e14d5b6b14fc13456f4b62ffcf9c9b9197713b2c1ec99c7b4f1181fdfcb282"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea55c476f32ed5f46fa09d3f943b62b2c1519b323216e0a1c9b9483edc382cd7"
   end
 
   depends_on "go" => :build
