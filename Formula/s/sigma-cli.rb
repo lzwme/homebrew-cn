@@ -6,16 +6,17 @@ class SigmaCli < Formula
   url "https:files.pythonhosted.orgpackages23c1cab449bf8cd1541ad32617061accd4f4150ef2e906f0fe7cac9054dd91cdsigma_cli-0.7.11.tar.gz"
   sha256 "9337ec46b46cfdbea262a439e90df58a83319df33f4339c965cb6b7b318cd5b8"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https:github.comSigmaHQsigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "daf5af77ca9f3e26d93c3ff6b5c534ea82850a8aefb007faf65e128dad2308b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53cbc6c88e6eb69447b52d7b35c33b95589ce6bf6967024051707c8c0fe4df60"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07c6756c784d29732cd15f9f12c055907f29b021d44731d23d1c4017e940b5b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0d8c098836ece117cc354b577cc9a964bd46fdc8d80ba33ad80acf47cb91bd16"
-    sha256 cellar: :any_skip_relocation, ventura:        "57090c2680c4d7c1aeed5df9b3e8e5f25ce0727f31c8661bbd531cb467e11997"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c38ba70a1e2f27bccb6c4bda0efe1d77f73f738188a22285006a5d7a6bdad20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95c50d1d1d3a64cfef8c7d8da4387c11ef313436f0d2a9c14e9cd1230f32eeaf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41cc3d99f8503a86d129c22817455c7f97f44fa5518d2ae9e1fc7d715d9008ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2efa2269ddeaef759b7a3db84567c8229710f4b5416cccb8aed3f83da061ca6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b483deb23c5565f5c7c85f68868931b1e9143cb24ff7e7663321b42d09dc66aa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "391faaab181d9d372a0c72a0636d46b6725cbbc330fd4ca819fb2a078d3cd5e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d185cf83c4480f75bb719a8f22b907f55542644ef94b512e106f3a9e834071f"
+    sha256 cellar: :any_skip_relocation, monterey:       "d20bbe142ff5ad823cd2d6fcc41d91a055e6d4829dbf321ab97b8e34bbc6bc4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "023d9b386aba513305980a66c800980e070617d65961d2156283260c6f177fd9"
   end
 
   depends_on "python-certifi"
@@ -41,8 +42,8 @@ class SigmaCli < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackages7aff75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cceJinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
   resource "packaging" do
@@ -56,13 +57,13 @@ class SigmaCli < Formula
   end
 
   resource "pysigma" do
-    url "https:files.pythonhosted.orgpackages1706db5dba338b198b8932f0aff42fe76d1fb989b68be8fc1e39eb5b38ac2568pysigma-0.10.9.tar.gz"
-    sha256 "aa498c9b6daafcfd0001e6f7b78e6f9c04302b8bc18e8c486eb54197982b248d"
+    url "https:files.pythonhosted.orgpackagesae94967c1bba7f905ae2e9e3a530ad5c27e5382d7cc6329fac2d42044b709d1bpysigma-0.10.10.tar.gz"
+    sha256 "4b26d21472ea11b5f036d7e544c66b1567f0736e935e75c98483dbe545370b33"
   end
 
   resource "pysigma-backend-sqlite" do
-    url "https:files.pythonhosted.orgpackagesb613144274ca0f2d721e79360e309b062a3a765cecdc87c03d2a893430e00454pysigma_backend_sqlite-0.1.0.tar.gz"
-    sha256 "0ff6f8029a5e4de7d31e30916f073f23422091da5e204653ac7272483f513521"
+    url "https:files.pythonhosted.orgpackages8d792b8c9061a4a140894d20d49ae6dbf32b2155041a950f41b0b5d6842e9f0bpysigma_backend_sqlite-0.1.1.tar.gz"
+    sha256 "a96067e215077a7cb39ebb46a09db1abf7824ed7a624a3ee6d9d1e493d2d7f12"
   end
 
   resource "requests" do
@@ -76,8 +77,8 @@ class SigmaCli < Formula
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackagesd71263deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24wcwidth-0.2.12.tar.gz"
-    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
+    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install

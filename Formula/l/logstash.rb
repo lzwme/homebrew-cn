@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https:www.elastic.coproductslogstash"
-  url "https:github.comelasticlogstasharchiverefstagsv8.11.3.tar.gz"
-  sha256 "bf8167f25f5e8ae1cb42286932bb144e6af42d87eb3ef0a8d68964cb0589ad7e"
+  url "https:github.comelasticlogstasharchiverefstagsv8.11.4.tar.gz"
+  sha256 "a077dfc5d01d6faf0a94c64da2bb80bbfc7f51ba003b47cf174f2f7456694a6b"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comelasticlogstash.git", branch: "main"
@@ -13,13 +13,13 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1b2c2039e62f1b0c60929cd04e0f6fcc881436bab5569c8984c9db52976b66f0"
-    sha256 cellar: :any,                 arm64_ventura:  "02215dd1c2b476fc76965e2084bb2e05e84b2c70734169781b44b431fb61989e"
-    sha256 cellar: :any,                 arm64_monterey: "67dff86d4a353a683ef2a841c4e0d7245a9feecaf30f9fca0c30e81945fd1068"
-    sha256 cellar: :any,                 sonoma:         "e6be9d35117dad645d80a2429f678392b9a8f817affd61dc0f229af61f61795e"
-    sha256 cellar: :any,                 ventura:        "180c4554664c3cfded55d4a317bdf35c4f06e00d66249a0d07ef12c99d81fd05"
-    sha256 cellar: :any,                 monterey:       "dfb0ef4ffb9a7b5cc9ee58f89c61de5b5c68df0a3586bba2adf88fc3130fff78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "899c8f761d75adb9e89f37a3e1644a7e1fe52c4be9c0bcfa1467c87583e0a524"
+    sha256 cellar: :any,                 arm64_sonoma:   "20e1d4824f013090d06df7cccef55aa28e7bf1b27f6b6d0e448f3d6f6bf9aa65"
+    sha256 cellar: :any,                 arm64_ventura:  "47dc5dd4d5dfe1c1ab1c2c23fe097e18b2b3ba5e4725b065616c0a88ec286642"
+    sha256 cellar: :any,                 arm64_monterey: "9ba891aee9fb02b590b0308f809c2cd6cb018e2f99e4758170f499316ad52c79"
+    sha256 cellar: :any,                 sonoma:         "0bdb99dc0e8636cc1a4c3e4df58fae4a45b588139ddc04fa4902663a1c566096"
+    sha256 cellar: :any,                 ventura:        "0541ffa30bb71d764e4f1da23a42ca744fb89e7c02b2d4be5e3afad116c5de35"
+    sha256 cellar: :any,                 monterey:       "408979d2dc908c981cdc46c75774eea64b0998902102c2ed0866ba7a5456f6a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94bddaa5fb4d425a85537711513348b63430c690aca861714620944b12d35ad7"
   end
 
   depends_on "openjdk@17"
@@ -67,7 +67,6 @@ class Logstash < Formula
     # remove non-native architecture pre-built libraries
     paths = [
       libexec"vendorjrubylibrubystdliblibfixposixbinary",
-      libexec"vendorbundlejruby3.1.0gemsffi-binary-libfixposix-0.5.1.1-javaliblibfixposixbinary",
     ]
     paths.each do |path|
       path.each_child { |dir| dir.rmtree unless dir.to_s.include? Hardware::CPU.arch.to_s }

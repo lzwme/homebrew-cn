@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages82e9365e05fc9c0b59f33b35c24e4d98a1231df58b125250415f8f192ab43788dvc-3.38.1.tar.gz"
-  sha256 "3124b5155e15edb6f09e99c63b4e7eb0b5ec3d3680a6d70469c714b5b9daa077"
+  url "https:files.pythonhosted.orgpackagesfe6e2b9d344557d97c31a34e5bdd02f450ed451f380bce09fb8f9fd3cc304e72dvc-3.39.0.tar.gz"
+  sha256 "878d3c89f1ece1d0f90d41d6e9b092d1d26a2416f7ab0acdf88db731c76df046"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ef4522ee9e3659857f322237a94ca5f12d611ff070da9adb0f203962999cdb81"
-    sha256 cellar: :any,                 arm64_ventura:  "40ffb35a08566a38dad937b02363d4b7bd994890fbddbc7d354c462e61423b04"
-    sha256 cellar: :any,                 arm64_monterey: "520cffc5bc040ffaa9748f7671d3837eb7fc71fb0bf1c03d00f7dee925b12540"
-    sha256 cellar: :any,                 sonoma:         "0bbfe6cdfbc750812f19b397440f75824a6826650924c72ca81ce6c0fc6e85e8"
-    sha256 cellar: :any,                 ventura:        "e0e3203238ea622ebb2810e12da4cbd50a678b816a6c3d2a4fe6683b4eea7cda"
-    sha256 cellar: :any,                 monterey:       "4f30ae3516a5a7162e5fd672672966d7d90ef350fba141267be0f7e1a07eaf36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7434a6183a0e4c7a2aa653472d1a9d3805ea45549cb2fec00a750b163a71fbda"
+    sha256 cellar: :any,                 arm64_sonoma:   "24ceb19a1521f1352e2a6054250a9337523666436288ea1ab8466ce04bb0b5b2"
+    sha256 cellar: :any,                 arm64_ventura:  "fd968ee7460fcaf97fdaaed98c5a1547094fc4f42e6c614db54058824b38a052"
+    sha256 cellar: :any,                 arm64_monterey: "626ec0c04edba1bd3e28d9e033e870a22a498e714353542a838a1e88f33fcd37"
+    sha256 cellar: :any,                 sonoma:         "220aceb37dca286cf0402dcb395fa1dbb49903724b30da4a0f2487281805108a"
+    sha256 cellar: :any,                 ventura:        "35cfedaf5934dadf7183de5fc607fe55393cce3517bcfea2382d9f1c0941b3b3"
+    sha256 cellar: :any,                 monterey:       "75f2d0a4b950a6b1c618c62a606214bf9dfbe7477254bee597ffc79fd11734b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a563c52234bd4eec7f9ff4070569ad3d678d3ea687ab41dd5db2dc6d73a515a9"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -659,8 +658,8 @@ class Dvc < Formula
   end
 
   resource "scmrepo" do
-    url "https:files.pythonhosted.orgpackages3ea4aa08ce0f092b9b1a4d59540f767a70b9c567ec31484af89ed719765659b7scmrepo-2.0.2.tar.gz"
-    sha256 "17e75b6b8d730d84e0e0479f4b4e15fce7f191c54ee9604164004041cf0f07de"
+    url "https:files.pythonhosted.orgpackagesdd3671d5606b3e1cd8b84b21b0d3d031be2344922ed157e298338137050240a2scmrepo-2.0.3.tar.gz"
+    sha256 "981fa5af7f73cb97490b0ceb56d9b4166cfd318f77ad5b9cf590687aea6ec1cb"
   end
 
   resource "semver" do

@@ -792,7 +792,7 @@ Homebrew-homebrew-core/Formula/c/charge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charm-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charm.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chars.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chart-testing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chatblade.rb, Homebrew/homebrew-core, 1
@@ -4742,7 +4742,7 @@ Homebrew-homebrew-core/Formula/p/pg_partman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_top.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgbadger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgbouncer.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pgcli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pgcli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgdbf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pget.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgformatter.rb, Homebrew/homebrew-core, 1
@@ -5249,6 +5249,7 @@ Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratfor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rathole.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rattler-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rawgl.rb, Homebrew/homebrew-core, 1
@@ -5938,6 +5939,7 @@ Homebrew-homebrew-core/Formula/s/staticcheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/statik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/statix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stdman.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/steamguard-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/steampipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stella.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stellar-core.rb, Homebrew/homebrew-core, 1
@@ -6939,6 +6941,7 @@ Homebrew-homebrew-core/Formula/z/zimg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zip.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zipkin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zita-convolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zk.rb, Homebrew/homebrew-core, 1
@@ -7293,7 +7296,7 @@ Homebrew-homebrew-cask/Casks/b/balance-lock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/balenaetcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/ballast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/balsamiq-wireframes.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/bambu-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bambu-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/banana-cake-pop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bandage.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bankid.rb, Homebrew/homebrew-cask, 0
@@ -10702,6 +10705,7 @@ Homebrew-homebrew-cask/Casks/t/tableflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tableplus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tabtopus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tabula.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/taccy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tachidesk-sorayomi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tag.rb, Homebrew/homebrew-cask, 0

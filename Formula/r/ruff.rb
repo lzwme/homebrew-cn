@@ -1,19 +1,19 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https:docs.astral.shruff"
-  url "https:github.comastral-shruffarchiverefstagsv0.1.11.tar.gz"
-  sha256 "47cf8357c7036829ea859184cce125cd256b9f74afc2f5288c697facbb6f6677"
+  url "https:github.comastral-shruffarchiverefstagsv0.1.13.tar.gz"
+  sha256 "36a32001c821b844d19fc3d95d6d9265b9ef03b08c5e0950dfa94191454b5a93"
   license "MIT"
   head "https:github.comastral-shruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "705458546000203221bc457a3eaa76d0bc827c79d0bd7768988419083348499c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0e55c52bff2570a9bc2f23c5f569b10933ee13923601ebe03aaf273b473befc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "336f675a4c5c80ea1c9473a8999863f5358bc5fb1dcf2d26f4a31e6a6c176446"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9252e3b064c3f0680eb990aa68f55740deaa5428134eb4df3f2b278a1130a471"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd1e4e17baffb9600225530b89e52560cf7dc57b2967686caedd7fb9af64f62b"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fe7c2a0914a0e3411da268a7eefce7bd4cc89b49bb1c2756acc4381ea7f17d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "377e70e436a4d30c9231e8c48596ecba8e3998e1128c6ffab6979fb0778da71a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca575f9c5b199a8fb0c2df5512ebbb714e608330ca9a589db03b95cc6e763b67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2904279d061beac877c66951809b7a36760de5fff6a427ddad321c9d2a513a90"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b2b166c8f88d8e029781ede72669d87a1f7c59b05b7189832f03816d7f153b4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec4259fa4510db795ba8bed6706acb3c9e238e65e29e0fe51c32836176ff340b"
+    sha256 cellar: :any_skip_relocation, ventura:        "de427053a0b4819bb5c359c3242b77e9ea1bfa6098e4a7b5094e0b5fe3b165b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "03c7264f00f4f03e025d4bf7d75d0ee37f97dff8084e23f8ea0357211a40892a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f5db8380935a26913c87e0369f3235a141da11d50aad16213e0d713cd75ffc3"
   end
 
   depends_on "rust" => :build

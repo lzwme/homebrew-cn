@@ -6,7 +6,7 @@ class Thrax < Formula
   url "https://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-1.3.8.tar.gz"
   sha256 "e21c449798854f7270bb5ac723f6a8d292e149fc6bbe24fd9f345c85aabc7cd4"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.openfst.org/twiki/bin/view/GRM/ThraxDownload"
@@ -14,16 +14,13 @@ class Thrax < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "304fb68ade90a1a8a35d8a87f4d5279fc2f19ab65af56b53a01b738f1ad18e7e"
-    sha256 cellar: :any,                 arm64_ventura:  "cc88937f398db52f848b3658c3415073a3cc3a349448f95168ba30b22d0f1689"
-    sha256 cellar: :any,                 arm64_monterey: "da67cbb76545ecb423feca1b6a3a6e3dab7251177842ad37e22c5a3f3dbfafa2"
-    sha256 cellar: :any,                 arm64_big_sur:  "c5290fa4de107eb9d7c7a283ca01d3e646dc3d14e5add34c4e6187d418af8222"
-    sha256 cellar: :any,                 sonoma:         "7497b8ac4c49614542fa0461dee6101083b48b63d1ebe0c277848b1c90600a60"
-    sha256 cellar: :any,                 ventura:        "b3c508dac05720ff2b03cf39da71257fe16bd5b863791cb8580fff4788492ab0"
-    sha256 cellar: :any,                 monterey:       "510a3aa7dfc3782dfe81735407191ab6ecbc851710dc8d6cd402629dfaef5f53"
-    sha256 cellar: :any,                 big_sur:        "1b5fcd1dcc4ff93508ddfcef21e4b280225cb9238766bc40f0551261dd1ea158"
-    sha256 cellar: :any,                 catalina:       "da9d875ee86c08a3263d6a7a7b1e2f9465c5811da56893293f387a879a2d5530"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7710590e03ff85fbf3a348d90651ca6161f7add1a2b2d986111f7b06c6a96536"
+    sha256 cellar: :any,                 arm64_sonoma:   "ec7dd463df2729df4f5cfd548f3ce0289ccec3e730f2f976f5bafbb730a7bd9d"
+    sha256 cellar: :any,                 arm64_ventura:  "08dbd282a789ff727b9643c363934fb733dc5ede7517b12bb2ed43c18f7e095a"
+    sha256 cellar: :any,                 arm64_monterey: "7321678718722cdaf250061cebd73206d42d44a0f146fc64a14384d8a72a4d2f"
+    sha256 cellar: :any,                 sonoma:         "404c34a7acf68f3a49e09c0215f2db38571f4b6365923b50b8320ea0e034565f"
+    sha256 cellar: :any,                 ventura:        "6d63772162ee9e16adfa82404d940d3ea2ab49876b94edbf5977e93eb9ce30e4"
+    sha256 cellar: :any,                 monterey:       "d98400a66fb2af93af2dfd7daeabd6f8db3dd12dcb9fc9367cd648fe83af0cf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdd4783fc9a85f50dbee1a41789aa1c5c1c0d44a0d5b75fffda134f82b28563d"
   end
 
   # Regenerate `configure` to avoid `-flat_namespace` bug.

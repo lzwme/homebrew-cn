@@ -31,6 +31,6 @@ class Veilid < Formula
     require "yaml"
     server_config = YAML.load(shell_output(bin/"veilid-server --dump-config"))
     assert_match "server.crt", server_config["core"]["network"]["tls"]["certificate_path"]
-    assert_match "Invalid server addres", shell_output(bin/"veilid-cli --address FOO 2>&1", 1)
+    assert_match "Invalid server address", shell_output(bin/"veilid-cli --address FOO 2>&1", 1)
   end
 end

@@ -6,16 +6,17 @@ class Ford < Formula
   url "https:files.pythonhosted.orgpackagesaf446c9f14e5560a95fd5b77009770be7437fad4bc142e39cc34ada49e4c758aFORD-7.0.5.tar.gz"
   sha256 "9c6f07acc8f01534f2b14d1b08265a4f36f93d44dd872eb60adfe5c83de36307"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comFortran-FOSS-Programmersford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b42d49b04c9172c401ebdb443fa723993ae2cfa896df75bf6b02e5ba8acc218"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54c6b63cbd87b23ab17a9f4558509e78b3a649e9682e62dad62340ac2485f8ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6af574bea7f272f29b90d5bc08a1740b6ed2ddfc7b7ffd6b00ea236d6273968"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ec67f9ede737f430ad5d2b251cc6bd4de53c4c2bf6229585f747ebc199c409e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "9bf95d1a58156a30b8f128ae012f6ec0ecfa2a4b75ed694450a74c43a9277dfb"
-    sha256 cellar: :any_skip_relocation, monterey:       "235680ac06d6071a35715a993238b91de9031c80847f8297a997aa06b3245d0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1b7b461b957a354e483062085dace88fc7cef2b533d5f00d657f4314d2124c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d19b6fb9084f62ad7fcf1f9190c64cd14f80126292723a514c1cf2284c553aed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f83368d23f711b3397f973ae08080e92601109b60d3da08de78ed77c04578999"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "312c4c4bcf858f0bfb74e65c2675e60a34363f8803be4920f01819c1b4540e2b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce51a6f1a686329f051867bda3c854658e3d22cbc686d11111eb6576c19a57d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "afca2591842b472216ad900209a9a6f8a855331aef71dffc2cd1555e51db22b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "8aef75e936cd1df557d4d5d4adec1b44e0bab9e26ba1264b164f8b0e95bc699d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0669a2ce27b2875c4c169e2d09e2cf2431e4fd527c88815fb2db15a52850449"
   end
 
   depends_on "graphviz"
@@ -35,8 +36,8 @@ class Ford < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackages7aff75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cceJinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
   resource "markdown-include" do

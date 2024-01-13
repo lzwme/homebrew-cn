@@ -6,15 +6,16 @@ class Locust < Formula
   url "https://files.pythonhosted.org/packages/19/02/9da6f88be47a0d0296821b4cca2d6e94439b000473795ffb1f4e5751aca6/locust-2.20.1.tar.gz"
   sha256 "9ba4c8658a158aed55774ac3650ac0139fcc1dfa65fea0dabb00ea35b0d56a4e"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "75936ecc529b038193694a3531e785b7eadefeb2e09232a29ab46a67b9573d43"
-    sha256 cellar: :any,                 arm64_ventura:  "8374948e234dfbef034521821a60ea91c39061c87791fb179b763e134564f29c"
-    sha256 cellar: :any,                 arm64_monterey: "086f04f078f022789f1cf2d26574be3c2798cdd757db145241cc1699af3be02f"
-    sha256 cellar: :any,                 sonoma:         "b7e9da958df7b452f94d8a638133117ebe7c5faf4390b49bd90e6fda7c62e7b2"
-    sha256 cellar: :any,                 ventura:        "ac4328782c6214b1362dd38f85059241a5b7cdde658a87b749da5d49619c431a"
-    sha256 cellar: :any,                 monterey:       "eda69d2dc3712fd4692f3f12303f71b4ddf09e97e0df898adda03441acbe25f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1317a3c65e0760c087ffa62f0e6ae2c6fbfd2e28abd02bdb06546e607a769c7f"
+    sha256 cellar: :any,                 arm64_sonoma:   "750a7d2a01e09a3f1ba7b6b42417a2723fbab529b3a0a95c75e80e565cf11cfe"
+    sha256 cellar: :any,                 arm64_ventura:  "2f4bb66d7a39c4bd40432fcc7bfa16bd676af453f5207319992144e0ad12d1ef"
+    sha256 cellar: :any,                 arm64_monterey: "7981f516c924ba0f6a133cc421bcedc575ca81348ee0cbcf76fc40dc0728c125"
+    sha256 cellar: :any,                 sonoma:         "95d3e2d0696ce61103d8b749ccd4e80acf5d780c686148cdbf0bb6082f73b58f"
+    sha256 cellar: :any,                 ventura:        "8f7728cb974993a28e4584b04c473d9dc07b473c9c467ce02087fec2d22d1daf"
+    sha256 cellar: :any,                 monterey:       "e3be859c7da6afe6643be7bfdf7ba29e0c5519ab1946ab5bed00353073f0cf42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fb824f11bfeccaae8b407f80ba96d7d606051bb7cf34f04b9381669f3d76b34"
   end
 
   depends_on "python-brotli"
@@ -83,8 +84,8 @@ class Locust < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
   resource "msgpack" do
@@ -105,6 +106,11 @@ class Locust < Formula
   resource "roundrobin" do
     url "https://files.pythonhosted.org/packages/38/97/6508c09e3af7eaee96e7b66a7dc7bbdbe8e6b85b8d2bbbb89612cf621bad/roundrobin-0.0.4.tar.gz"
     sha256 "7e9d19a5bd6123d99993fb935fa86d25c88bb2096e493885f61737ed0f5e9abd"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   resource "urllib3" do

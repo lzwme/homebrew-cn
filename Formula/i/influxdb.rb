@@ -4,14 +4,11 @@ class Influxdb < Formula
   # When bumping to 3.x, remove from `permitted_formula_license_mismatches.json`
   # and update license stanza to `license any_of: ["Apache-2.0", "MIT"]`
   # Ref: https:github.cominfluxdatainfluxdbblobmainCargo.toml#L124
+  url "https:github.cominfluxdatainfluxdb.git",
+      tag:      "v2.7.5",
+      revision: "09a9607fd9fe017cae589610364017b1939ae9a2"
   license "MIT"
   head "https:github.cominfluxdatainfluxdb.git", branch: "main-2.x"
-
-  stable do
-    url "https:github.cominfluxdatainfluxdb.git",
-        tag:      "v2.7.5",
-        revision: "09a9607fd9fe017cae589610364017b1939ae9a2"
-  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git

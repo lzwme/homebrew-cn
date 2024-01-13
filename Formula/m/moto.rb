@@ -6,15 +6,16 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/f8/3a/1d4e51bbd57da9a0cb70d9c73997cb012aec25ce8b52fcf18e3c5ad60d1e/moto-4.2.13.tar.gz"
   sha256 "01aef6a489a725c8d725bd3dc6f70ff1bedaee3e2641752e4b471ff0ede4b4d7"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccc69cef384e100c67b2d24df4b538e4738d17dd0e58ced707ee6cae047f6a0d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cebadb026f87616f19cab5d2cb579cce7f59620dfceae6ac6ed38038bef7dd76"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad968c02fdfb1c16a022f7bba61c5bdfe08f48152ab77c44bfbed4e9341b747d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9218f5400f3152db607dd1102512d929bea74bf8ae95671dfbe8af0a2f586860"
-    sha256 cellar: :any_skip_relocation, ventura:        "e8e68596fea947ac6371d53979a3f185b9da7eebaebee8f580119d066bf0f423"
-    sha256 cellar: :any_skip_relocation, monterey:       "7fbebd62f180cb8af44ec2552ed426d70b1b071884c67eef71fcc962411a714d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c295b31cfbc43513598fd5a24ce60fc1c30c4a8d854ecf96e2476d2cc32c9ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f5a2a4b73436a25b093cfc48883b98a55a6a3769068bd6a666245068404c2f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5209d144b39108fe7eaf454fe343009640bd6080bfdf407cb1fb53c0f5f92160"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "85e66a2b7fa067be0570aec98a7453102b89b596fa873d08ae758ef580f02c7a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f626c5b32bdff7fb71860c80c13c670cfecbbdad42a6ceb9f8bea6e0faf2b36b"
+    sha256 cellar: :any_skip_relocation, ventura:        "645b8448821cdb3d12031bbbf23d160fc730526eef91764341896e6bdfe6db43"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ba2051786fa3bc91918f408169aa818af924a06c1e42573c58d90f031bf997d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1599885b4c22cdb07d211b646fd438f5399b2cea1422a116d0195c652d6893f3"
   end
 
   depends_on "cffi"
@@ -82,8 +83,8 @@ class Moto < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
   resource "jsondiff" do
@@ -154,6 +155,11 @@ class Moto < Formula
   resource "rsa" do
     url "https://files.pythonhosted.org/packages/aa/65/7d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52/rsa-4.9.tar.gz"
     sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   resource "sshpubkeys" do

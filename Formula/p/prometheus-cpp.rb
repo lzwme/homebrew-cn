@@ -2,19 +2,19 @@ class PrometheusCpp < Formula
   desc "Prometheus Client Library for Modern C++"
   homepage "https:github.comjupp0rprometheus-cpp"
   url "https:github.comjupp0rprometheus-cpp.git",
-      tag:      "v1.2.0",
-      revision: "23162a6b77fbe9cf01214e06ec20dacb3a8f09f0"
+      tag:      "v1.2.1",
+      revision: "f25f74b71cc3347bcbd80008478676fa2b1b9a70"
   license "MIT"
   head "https:github.comjupp0rprometheus-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97dfe69cc35fb508987a6dc8588db5b102e5611b173b1c9f8f49872eb6462147"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4762b857239f535eda6ed90ef7e2285dc47034220b20b65b5fa37b7071d13f88"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "938ee640303fe3b9e26222c8ab4492a8bcb9ae9adc5facb30d638a797666bcb9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "97c2237eacf50f24269e3b8741599bfaf5362267384e9f13b024a51c465b56e9"
-    sha256 cellar: :any_skip_relocation, ventura:        "a9c2f983b44079d6eb805a1487d14399786968dfa8b67259e28010c28d5cad0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "285f475e55819f74e8b44bc698013ddaa53a77ceda80074cd29fd6c331e96bb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db0374241e4c838f23a783c442e51cd7f943283da812d662833e21bf8d7ff566"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d15cfda2ab2021a48349562cf80c38791cf0f00bbe3307c5f9fb0376777e6743"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f30fd0dfcdce66b3e16a96aca355a2cfccdf163e2d5bd86a8163092a340c8e74"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f41eab01b174de60066a69737a62eeccf0032e069e6bfa73f0d7a3ecd171f49"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4ba47b1dd934c0733998c98243674a9f181e8b71f78e6a84436e85faadc926bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "8472d971fe145ab80badbaa82d3f779583893c4ecc956efaa224e96eb5eaf719"
+    sha256 cellar: :any_skip_relocation, monterey:       "07c4a71fbd219a5b0f2a4b8b977936a1ed0a3189591ddd8476ef1daf6f456549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4f90b8cf08ccc68ae1786d31cc815dcac867f15fa87b24c4cd9f865413cf4f7"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,18 @@
 cask "bambu-studio" do
-  version "01.08.02.56,3cb3425770"
-  sha256 "eb8d3a9ecd3c347acbb2d2a5524a4d1310c721aeeabd940ee6cb0823f4324970"
+  version "01.08.03.89,20240109202633"
+  sha256 "72f8a9242160aae4fc0e51eadc8e1ec341975fe7504fe6da90783e02a4dc1598"
 
-  url "https://public-cdn.bambulab.com/upgrade/studio/software/#{version.csv.first}/#{version.csv.second}/Bambu_Studio_mac-v#{version.csv.first}.dmg"
+  url "https:github.combambulabBambuStudioreleasesdownloadv#{version.csv.first}Bambu_Studio_mac-v#{version.csv.first}-#{version.csv.second}.dmg",
+      verified: "github.combambulabBambuStudio"
   name "Bambu Studio"
   desc "3D model slicing software for 3D printers, maintained by Bambu Lab"
-  homepage "https://bambulab.com/en/download/studio"
+  homepage "https:bambulab.comendownloadstudio"
 
   livecheck do
     url :homepage
-    regex(%r{/(\w+)/Bambu[._-]Studio[._-]mac[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
+    regex(href=.*Bambu[._-]Studio[._-]mac[._-]v?(\d+(?:\.\d+)+)[._-](\d+)\.dmgi)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match.second},#{match.first}" }
+      page.scan(regex).map { |match| "#{match.first},#{match.second}" }
     end
   end
 
@@ -20,12 +21,12 @@ cask "bambu-studio" do
   app "BambuStudio.app"
 
   zap trash: [
-    "/Library/Logs/DiagnosticsReports/BambuStudio*",
-    "~/Library/Application Support/BambuStudio",
-    "~/Library/Caches/com.bambulab.bambu-studio",
-    "~/Library/HTTPStorages/com.bambulab.bambu-studio.binarycookies",
-    "~/Library/Preferences/com.bambulab.bambu-studio.plist",
-    "~/Library/Saved Application State/com.bambulab.bambu-studio.savedState",
-    "~/Library/WebKit/com.bambulab.bambu-studio",
+    "LibraryLogsDiagnosticsReportsBambuStudio*",
+    "~LibraryApplication SupportBambuStudio",
+    "~LibraryCachescom.bambulab.bambu-studio",
+    "~LibraryHTTPStoragescom.bambulab.bambu-studio.binarycookies",
+    "~LibraryPreferencescom.bambulab.bambu-studio.plist",
+    "~LibrarySaved Application Statecom.bambulab.bambu-studio.savedState",
+    "~LibraryWebKitcom.bambulab.bambu-studio",
   ]
 end

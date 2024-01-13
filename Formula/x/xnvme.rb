@@ -21,7 +21,7 @@ class Xnvme < Formula
 
   def install
     # We do not have SPDK nor libvfn on macOS, thus disabling these
-    # The examples and tests are also a bit superflous, so disable those as well
+    # The examples and tests are also a bit superfluous, so disable those as well
     system "meson", "setup", "build",
            *std_meson_args,
            "-Dwith-spdk=false",

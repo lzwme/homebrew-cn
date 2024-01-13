@@ -1,5 +1,5 @@
 class Cherrybomb < Formula
-  desc "Tool designed to valide your spec"
+  desc "Tool designed to validate your spec"
   homepage "https:blstsecurity.com"
   url "https:github.comblst-securitycherrybombarchiverefstagsv1.0.1.tar.gz"
   sha256 "1cbea9046f2a6fb7264d82e1695661e93a759d1d536c6d1e742032e4689efe9f"

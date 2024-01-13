@@ -15,13 +15,14 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fb654841723476c33987595f6e6c3c0bd8dcdbfdae8a5e5b48cc5ebf52dfd1e3"
-    sha256 cellar: :any,                 arm64_ventura:  "4d093cb4bbb93f693b559f3322fe04d0bee3dd17a4500f3347d8fbe3cb0bb498"
-    sha256 cellar: :any,                 arm64_monterey: "f7f2c0d2ce431c4bab1b27cc560974dbe7d0000bda79730bae5a2805fd8ee8bc"
-    sha256 cellar: :any,                 sonoma:         "b0d402335613f17aff67b2c3436ab548c762271015850921cc3ad1229481c74b"
-    sha256 cellar: :any,                 ventura:        "48c52f05ba1229d3331954f28dd4e45a2f2087f117a623fa98343c554ceeee8f"
-    sha256 cellar: :any,                 monterey:       "6ddcae931988924796dd2a55574700e4363c24ad21f0ef2f5ab137984c878c3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a86fae6fce135731f7e14162db75c876b3e7d6071c0a39ffa1a887fdfca37cba"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ac57e6dac73a6b151866e63447949734964305bdcb3400356c8878a3773e9a34"
+    sha256 cellar: :any,                 arm64_ventura:  "cdd596a9b439974545125a07450c4c37a59bca11821598329b0c44c869c12e10"
+    sha256 cellar: :any,                 arm64_monterey: "b62d5da3527e291cb7aaf402c64897afaaf7e1580f6704abf9ff2d04ca7c0109"
+    sha256 cellar: :any,                 sonoma:         "716926ec85af64ed6e2deec047ffcf1d55d0fc0bd6c2c4d3c57b0d5cfd92b9f7"
+    sha256 cellar: :any,                 ventura:        "6b47bea3c2f9b66cc2580267a34f2e906dc775eeb460314a2be15e7b9bdd23ac"
+    sha256 cellar: :any,                 monterey:       "d9dbce7c5af17de953424cdcdffac4271eb3128bd86b015382405a08c3d84f87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5cbec69e5921c174dae2ad362536f1f76f6abdaebf499d054f469bac093a688"
   end
 
   depends_on "cmake" => :build
@@ -31,7 +32,7 @@ class Rdkit < Formula
   depends_on "eigen"
   depends_on "freetype"
   depends_on "numpy"
-  depends_on "postgresql@15"
+  depends_on "postgresql@16"
   depends_on "py3cairo"
   depends_on "python@3.12"
 
@@ -46,7 +47,7 @@ class Rdkit < Formula
   end
 
   def postgresql
-    Formula["postgresql@15"]
+    Formula["postgresql@16"]
   end
 
   def install
@@ -64,9 +65,12 @@ class Rdkit < Formula
     site_packages = Language::Python.site_packages(python_executable)
     numpy_include = Formula["numpy"].opt_prefixsite_packages"numpycoreinclude"
 
-    pg_config = postgresql.opt_bin"pg_config"
-    postgresql_lib = Utils.safe_popen_read(pg_config, "--pkglibdir").chomp
-    postgresql_include = Utils.safe_popen_read(pg_config, "--includedir-server").chomp
+    # Prevent trying to install into pg_config-defined dirs
+    inreplace "CodePgSQLrdkitCMakeLists.txt" do |s|
+      s.gsub! "set(PG_PKGLIBDIR \"${PG_PKGLIBDIR}", "set(PG_PKGLIBDIR \"#{libpostgresql.name}"
+      s.gsub! "set(PG_EXTENSIONDIR \"${PG_SHAREDIR}", "set(PG_EXTENSIONDIR \"#{sharepostgresql.name}"
+    end
+    ENV["DESTDIR"] = "" # to force creation of non-standard PostgreSQL directories
 
     # set -DMAEPARSER and COORDGEN_FORCE_BUILD=ON to avoid conflicts with some formulae i.e. open-babel
     args = %W[
@@ -88,8 +92,7 @@ class Rdkit < Formula
       -DPYTHON_INCLUDE_DIR=#{py3include}
       -DPYTHON_EXECUTABLE=#{python_executable}
       -DPYTHON_NUMPY_INCLUDE_PATH=#{numpy_include}
-      -DPostgreSQL_LIBRARY=#{postgresql_lib}
-      -DPostgreSQL_INCLUDE_DIR=#{postgresql_include}
+      -DPostgreSQL_CONFIG=#{postgresql.opt_libexec}binpg_config
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

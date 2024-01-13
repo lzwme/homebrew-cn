@@ -1,19 +1,19 @@
 class Gosu < Formula
   desc "Pragmatic language for the JVM"
   homepage "https:gosu-lang.github.io"
-  url "https:github.comgosu-langgosu-langarchiverefstagsv1.17.6.tar.gz"
-  sha256 "7211ac8ca01b50d5900e8f30b52fb218d9b6cae4936efc3711f295ffb30157b1"
+  url "https:github.comgosu-langgosu-langarchiverefstagsv1.17.7.tar.gz"
+  sha256 "949ecc45587531a0bf13208e53dfbf6d363190c6a27d19acaefe7e70b3434bca"
   license "Apache-2.0"
   head "https:github.comgosu-langgosu-lang.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf22d3a04f1a09e144cf09e3febd9b8d327d2f1c2d80505a97a41fde8f65b82f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fe16e31502a4e0ccecb6f8d6ed5d0d64db068ce66eddd580ce35be1d49c51b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f1545678d511cb9d6be1c4e6809bd245e745b8038efb73e47de02dd6cb9c119"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5061bcc3951f19a8a2449f65ec4fb7cd549b2b3c37162de391eb9f5cf08a1f67"
-    sha256 cellar: :any_skip_relocation, ventura:        "06a148d96456a5b892738762953eb2d4b9772dac04899519ef37f60a3a563370"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bcfd55c5df56d3931ae8c6fe8c7fd3df838b6d5326ce02e00cd2c9bbf089307"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a5bc04850751c0399f21d0e5f74c38fd597882c7d2eaf520e0cb08e70517dd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67e5aa19eedb58b7e7eedc73b61bba06db526b1e3a92d505b6b9e207d5c2ef5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "255ec6f5d8925ce62019216c63458347424ec8c84a73de0a15f772d01a1d0189"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ca94fadae9603dbdc43eb07640b1e8f34784d1e4744f344498b8f797ab4f3ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "242a7a279d27b351fb60236be33f7cc74e4884e7fb7af27b9f31883cb5603f8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "b29ae8f66f213243600aeb722c6656e04917f7105cfdb39e6bf9b7243437296e"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf0df76ba00b5e48197c971d4927651ee516d644bb4547adb07cca157dec9665"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39d3f25158a2ed007445524f93f828352cad56188d4ec2881022f865f9941b6b"
   end
 
   depends_on "maven" => :build
