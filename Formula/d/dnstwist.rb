@@ -6,17 +6,16 @@ class Dnstwist < Formula
   url "https:files.pythonhosted.orgpackagesef84a1474ae1ec3ef3af0bbe6ee3bf6253570265835be8b3969301e07606481cdnstwist-20230918.tar.gz"
   sha256 "ce065ab14abf0aa58f9a9fa0960feed494e64f2b524c573f0d5c2d5993731ac3"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "8f25f1968f02bf9ba817d57edf9dee0ba1eaa8dea19762d34091c4337c72bf92"
-    sha256 cellar: :any,                 arm64_ventura:  "e3b4d2584e9adbc3b096667e61a93c2e6be92eb3ef1d9f54fc13453c03233c59"
-    sha256 cellar: :any,                 arm64_monterey: "54ae96d12e851b265da475cc3da2d6dbda229d65f4765740bcba4a4cf6200a57"
-    sha256 cellar: :any,                 sonoma:         "1737a636c987c078f771e9f36becf52f3c49a0e0ff61117db3ea6afca82514d6"
-    sha256 cellar: :any,                 ventura:        "3f317d9166d7b214915659f41f25bf9414319fcb97a598a1550892b08803afca"
-    sha256 cellar: :any,                 monterey:       "98747f25ab52c5c6b564e78857436212fb5972f68f0a623511d2ec954336dd14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "673e8b6641548953b815f2bb74c0b6949ccaa60b07d8e1b28c7cc5067ff11468"
+    sha256 cellar: :any,                 arm64_sonoma:   "6322f07588cc2b35f145650de1ad2c2c2e515b17a4b52ffd8e87f110cef611e1"
+    sha256 cellar: :any,                 arm64_ventura:  "97301b68746c5a1a729a92b4a7f9b115a3c1772f08eac64e7f577510da97359d"
+    sha256 cellar: :any,                 arm64_monterey: "12742213585616bae57094e4b29e9a2c65f68c0082478e011c8267c4eede4819"
+    sha256 cellar: :any,                 sonoma:         "5f6ccaebe0a9756ae83c1582f36a40262d4e5d6b2d81c9fece22b2f96b483e2b"
+    sha256 cellar: :any,                 ventura:        "2df6885d994eaf0e4ebe9c6afef97b46d2ac1e3cbb9964238031cc91285bdac3"
+    sha256 cellar: :any,                 monterey:       "eb75c5af8b4f07d082231a82421c13e8a93402dbd482ab7dc86e72d8adccb8ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19317ae69aea1d8b29c23b8ff6cfba2ceaecd615b4ac0baaf97708bfdf3837c5"
   end
 
   depends_on "libmaxminddb"
@@ -31,8 +30,8 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages718068f3bd93240efd92e9397947301efb76461db48c5ac80be2423ffa9c20a3aiohttp-3.9.0.tar.gz"
-    sha256 "09f23292d29135025e19e8ff4f0a68df078fe4ee013bca0105b2e803989de92d"
+    url "https:files.pythonhosted.orgpackages54079467d3f8dae29b14f423b414d9e67512a76743c5bb7686fb05fe10c9cc3eaiohttp-3.9.1.tar.gz"
+    sha256 "8fc49a87ac269d4529da45871e2ffb6874e87779c3d0e2ccd813c0899221239d"
   end
 
   resource "aiosignal" do
@@ -41,8 +40,8 @@ class Dnstwist < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "charset-normalizer" do
@@ -56,23 +55,23 @@ class Dnstwist < Formula
   end
 
   resource "frozenlist" do
-    url "https:files.pythonhosted.orgpackages8c1f49c96ccc87127682ba900b092863ef7c20302a2144b3185412a08480ca22frozenlist-1.4.0.tar.gz"
-    sha256 "09163bdf0b2907454042edb19f887c6d33806adc71fbd54afc14908bfdc22251"
+    url "https:files.pythonhosted.orgpackagescf3d2102257e7acad73efc4a0c306ad3953f68c504c16982bbdfee3ad75d8085frozenlist-1.4.1.tar.gz"
+    sha256 "c037a86e8513059a2613aaba4d817bb90b9d9b6b69aace3ce9c877e8c8ed402b"
   end
 
   resource "geoip2" do
-    url "https:files.pythonhosted.orgpackages9bcc4d544e59233664aca348053d2343ffdc878a5f851a7f6896fc2b7d5a63f6geoip2-4.7.0.tar.gz"
-    sha256 "3bdde4994f6bc917eafab5b51e772d737b2ae00037a5b85001fb06dc68f779df"
+    url "https:files.pythonhosted.orgpackagesa7ae892642e21881f95bdcb058580e74aaa3de0ee5ee4f76ccec02745f2a3abegeoip2-4.8.0.tar.gz"
+    sha256 "dd9cc180b7d41724240ea481d5d539149e65b234f64282b231b9170794a9ac35"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages8be143beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "maxminddb" do
-    url "https:files.pythonhosted.orgpackagesa0fef3a6fbd7a7146f733c1c39062fe8e6aeb3a833c07f1798c06ab8ff7b788fmaxminddb-2.5.1.tar.gz"
-    sha256 "4807d374e645bd68334e4f487ba85a27189dbc1267a98e644aa686a7927e0559"
+    url "https:files.pythonhosted.orgpackages0f07278a738306a26f5d43ad91e12ad16d9cdef6d1179f03f29df0cbae74be8bmaxminddb-2.5.2.tar.gz"
+    sha256 "b3c33e4fc7821ee6c9f40837116e16ab6175863d4a64eee024c5bec686690a87"
   end
 
   resource "multidict" do
@@ -95,6 +94,11 @@ class Dnstwist < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesfcc9b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
+  end
+
   resource "tld" do
     url "https:files.pythonhosted.orgpackages192b678082222bc1d2823ea8384c6806085b85226ff73885c703fe0c7143ef64tld-0.13.tar.gz"
     sha256 "93dde5e1c04bdf1844976eae440706379d21f4ab235b73c05d7483e074fb5629"
@@ -106,8 +110,8 @@ class Dnstwist < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages5f3f04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09yarl-1.9.2.tar.gz"
-    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
+    url "https:files.pythonhosted.orgpackagese0adbedcdccbcbf91363fd425a948994f3340924145c2bc8ccb296f4a1e52c28yarl-1.9.4.tar.gz"
+    sha256 "566db86717cf8080b99b58b083b773a908ae40f06681e87e589a976faf8246bf"
   end
 
   def install

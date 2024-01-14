@@ -4,17 +4,16 @@ class Fastnetmon < Formula
   url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "2d2214949fe24ea5767a14b31cb2eafc93eecb19b5aebd65951ba79c2dc4dc64"
-    sha256 cellar: :any,                 arm64_ventura:  "d597c3ff6d2e60a280bacbf62c89c2a8a5b5504141cc08654fab17fd3b06b51e"
-    sha256 cellar: :any,                 arm64_monterey: "d431f1f1599fec9912a29bef2044948b3c0da9bc6abede00bdf145d30ee8c692"
-    sha256 cellar: :any,                 sonoma:         "bb7675b63a8f2d0b4b1612fca91805c902dc96cd1faca9531999a875789756b6"
-    sha256 cellar: :any,                 ventura:        "81dabe8672d713d2df1e46b41b42a7dca37cf195f62492379ea30bb1baa4e7a9"
-    sha256 cellar: :any,                 monterey:       "3c207c4073dd76d3fca6b271d6f0b995b91be12ade3d0858741b27714fa744c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2b6024e13e638da2df2dcd1489f4090b6f7fa4b9c0dbfc61996f7f1d9757b37"
+    sha256 cellar: :any,                 arm64_sonoma:   "6ca6be472d08fb9ab074267fc186290af55b02d34445326dfe0a05d134059d35"
+    sha256 cellar: :any,                 arm64_ventura:  "79dcebe28174a2374856195130f6220c6bc5254d2099e2fc9feb9bd5c255f588"
+    sha256 cellar: :any,                 arm64_monterey: "e86fc1fc33f1a6c630c9033093a80622b8f7aaa83dc5be27ca228b57c8d4c704"
+    sha256 cellar: :any,                 sonoma:         "dd23bf0f494b6ae737426de049bc0d55c3d9f327a9583ba0b5282e6ee3c80ef3"
+    sha256 cellar: :any,                 ventura:        "a2b29ff51b58f80c887bb1f6156c4ccc3372dd4acb0722eea8e91d226d6cdd6c"
+    sha256 cellar: :any,                 monterey:       "ee6f36db165197a98d0499a96835d078f179e52684115b3dcd539b1494c73aaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b146b149d41a1fc7cfa7ac2bc9ed0c416226da4fa4801ed1e7783c693f5b9980"
   end
 
   depends_on "cmake" => :build

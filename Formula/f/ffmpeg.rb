@@ -15,14 +15,14 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "2c48104abe3cd1a93a70b3f348436b4ad13f049a627e42d600a3bcd45d36f029"
-    sha256 arm64_ventura:  "814115d25949722c9700c8c1d523b4c58ca0b0dde9e1c0ae6bc5c4e561bd4ce3"
-    sha256 arm64_monterey: "c4079a9865e580840dfad955a4325d2ab21e29de4b1deef37645b050ecf309c4"
-    sha256 sonoma:         "e23c18765ae9c6673ca26dc83341e78ececa83fc2ca5da72f895b2baf6c96037"
-    sha256 ventura:        "35c3a1b8d312725a0e054f138f5a1486ea41a002c9fd15edf013ab57c57d2f73"
-    sha256 monterey:       "4141e7c430de3a02692961f4a3f45b9be0b5c97304d0db6dd543f7b2d1f55112"
-    sha256 x86_64_linux:   "56e53486dfc7036351897830f61cc15cc17135231330a51208c7761e21e7c40b"
+    rebuild 2
+    sha256 arm64_sonoma:   "9b2ed5cfe70f7e8a6683707f3615e03ab78c790b810ae1b2bf9c861f972723aa"
+    sha256 arm64_ventura:  "763ec8e904340532dca2ed92290f3b3bf17a8f55a6ba7a21d2a1df166ffaf541"
+    sha256 arm64_monterey: "4a2c9c925afd07fa8a805cc56a8682be5d9649f06b8df776023d2a8bf5e249f6"
+    sha256 sonoma:         "db99aa48bee0c54b1a2b2c73a84d184fb61b52b18ef9c10de828d0cd048602d8"
+    sha256 ventura:        "17e81ea55a4e7e8e173e19c584e18d3e807e91ce328cdf726478c3774fd9fa57"
+    sha256 monterey:       "163ab0df047857850f2de14e6ac11029d942db5d13aaff8378fd1c43e2a97085"
+    sha256 x86_64_linux:   "92173e0810e72442ff289d36460273e7995c8030985fe9aa308983e5d8a57a05"
   end
 
   depends_on "pkg-config" => :build
@@ -47,6 +47,7 @@ class Ffmpeg < Formula
   depends_on "libvpx"
   depends_on "opencore-amr"
   depends_on "openjpeg"
+  depends_on "openvino"
   depends_on "opus"
   depends_on "rav1e"
   depends_on "rubberband"
@@ -136,6 +137,7 @@ class Ffmpeg < Formula
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
       --enable-libopenjpeg
+      --enable-libopenvino
       --enable-libspeex
       --enable-libsoxr
       --enable-libzmq

@@ -5,19 +5,20 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https:github.comdlangdmdarchiverefstagsv2.106.0.tar.gz"
-    sha256 "1079649c41a9b8e0d3e81c573c82d84cd6873b3afc95b37d6f5206842cedc7c9"
+    url "https:github.comdlangdmdarchiverefstagsv2.106.1.tar.gz"
+    sha256 "298e2933a4cf87933f73e8ced52c34f4be97e884a4cb6f95e31754e62ba10fcb"
 
     resource "phobos" do
-      url "https:github.comdlangphobosarchiverefstagsv2.106.0.tar.gz"
-      sha256 "3f926ee26905c2f6fe457e7ad2fe4feac8cad83c571a70adea30b6cd4a4366b6"
+      url "https:github.comdlangphobosarchiverefstagsv2.106.1.tar.gz"
+      sha256 "acf2a27bb37f18aff300b5f38875c2af1dbb7203deddca7f870b3d69a791f333"
     end
   end
 
   bottle do
-    sha256 ventura:      "ea35d2668abe2e6a9ad7869324b17397200a942647251724696bbf130c443104"
-    sha256 monterey:     "c9248af57534a70999145c0ec8bed4dd35c0a1e8af2f7df7a683d8927cec48d7"
-    sha256 x86_64_linux: "53bf66112cc646481e06eb2cd090a38c8cad1e2fe1cb28efa013fdbdb529c122"
+    sha256 sonoma:       "79bcc4e16a2b8178a6ec3e65026b5abebf3627dc0f1305e6d18825f74b37fa3c"
+    sha256 ventura:      "75de6c1b2335fb1b74fea324ef5c087424166ae92629f9fbbe2cfcc541d770b1"
+    sha256 monterey:     "58d95b96cc93d4b1c8107a07a06680b116df01078aea17842c5dc4b5e814e775"
+    sha256 x86_64_linux: "ee8274cd9ab39504f0aed85df9fc40319d3e598981b40419c86d66e6b9313e5b"
   end
 
   head do
@@ -65,9 +66,19 @@ class Dmd < Formula
     cp_r ["phobosstd", "phobosetc"], include"dlangdmd"
     lib.install Dir["druntime**libdruntime.*", "phobos**libphobos2.*"]
 
+    dflags = "-I#{opt_include}dlangdmd -L-L#{opt_lib}"
+    # We include the -ld_classic linker argument in dmd.conf because it seems to need
+    # changes upstream to support the newer linker:
+    # https:forum.dlang.orgthreadjwmpdecwyazcrxphttoy@forum.dlang.org?page=1
+    # https:github.comldc-developersldcissues4501
+    #
+    # Also, macOS can't run CLTXcode new enough to need this flag, so restrict to Ventura
+    # and above.
+    dflags << " -L-ld_classic" if OS.mac? && DevelopmentTools.clang_build_version >= 1500
+
     (buildpath"dmd.conf").write <<~EOS
       [Environment]
-      DFLAGS=-I#{opt_include}dlangdmd -L-L#{opt_lib}
+      DFLAGS=#{dflags}
     EOS
     etc.install "dmd.conf"
   end

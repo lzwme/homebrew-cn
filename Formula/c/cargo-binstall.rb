@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https:github.comcargo-binscargo-binstall"
-  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.5.0.tar.gz"
-  sha256 "9fb26af3195f9bcf0fab30c55405d6c097390a9ffac377406650078c04af6b34"
+  url "https:github.comcargo-binscargo-binstallarchiverefstagsv1.6.0.tar.gz"
+  sha256 "325e5de273f7f6f9e0885495611a46cf07fbb1d5396a373e418e4c623a417c2d"
   license "GPL-3.0-only"
   head "https:github.comcargo-binscargo-binstall.git", branch: "main"
 
@@ -12,13 +12,13 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "022cc09566377f80fe5b86b7f6f3c2fc24d55b46773d1b8bf013cd4cf251c3a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "270bca78b71f18227cd15aaad3a8ae9f2814e11b8c9ee72a9fc8cc56655cc60c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ff332622c162045aaa8ff948f35c19667589a45e026e0340cb292718ad0b0b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a1f63a2bcbe9dac886bbe99af48adb4a06e77725378a09cdc60a905402370c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "55af330374684a9133baad94bfc7f11f66cca1750131776e5618d61a1508f620"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3cfd4d276cdf2e18acbcc2b2b3f87130aac0ee9bc40f90d46eaf57773c0cde4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85a85ceb8f5d680b800dd84ee48fbbeff29429712c8a979e5f48b81c4ee44fb3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02eff083e6af3117ff268dca32ca07c7551243ed0062919e802c8d4fb75f8cfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1bd2918c5ea4604dac63b846edfde375659d713ee682337dc2ca2e7e5e23b4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0675c7a544a3507a2be1725962ae2bca9170bb5d740c3b5506013e50f7dc5aac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7161a3dd3ce748938af19ed770309c22563d9c419da9adba464cd3c04eb5afe0"
+    sha256 cellar: :any_skip_relocation, ventura:        "496d4470366d9ee4e77ed43b8e13da7ec24f96146797c7fa654334047c518e65"
+    sha256 cellar: :any_skip_relocation, monterey:       "107ea89d5ea100b8919679022a02070f5992056acce158b9dde7e35effe141bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3f73a7ebbd6f652a4c48cd3f3c10b402e628907da562cfb134f517a71ef2c50"
   end
 
   depends_on "rust" => :build

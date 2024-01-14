@@ -7,6 +7,8 @@ cask "notch-simulator" do
   desc "Simulate the notch on the MacBook Pro"
   homepage "https:github.commegabitsenmzqNotch-Simulator"
 
+  deprecate! date: "2024-01-12", because: :discontinued
+
   app "Notch Simulator.app"
 
   zap trash: "~LibraryContainerscom.JinyuMeng.Notch-Simulator"

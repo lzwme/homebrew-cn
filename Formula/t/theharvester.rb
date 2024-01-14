@@ -6,16 +6,17 @@ class Theharvester < Formula
   url "https:github.comlaramiestheHarvesterarchiverefstags4.5.0.tar.gz"
   sha256 "f23bbee49f281148555510f556c8ff17207334a9d532a24d6730266d7f2b0af8"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.comlaramiestheHarvester.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2c922e293741939d3a8f6d0a6631be926643219fc5a172d54e55c06821217b4e"
-    sha256 cellar: :any,                 arm64_ventura:  "5b2c77ef3f64aee26081e4bd932929b5d17f8c0f4edfef1adfa98dede92623a5"
-    sha256 cellar: :any,                 arm64_monterey: "87d0e53da2ee662cdae856a0124577c76e91968cfdb8670df75f335fb0a52281"
-    sha256 cellar: :any,                 sonoma:         "d359af12169ad67e58f17d65a7503fbc82ee69683a1ac58dfbfe8336b86b2fe5"
-    sha256 cellar: :any,                 ventura:        "95d20c7213163bda0ef8b3effebdc952b3cb8afbf6dc364b6560f039ad447aca"
-    sha256 cellar: :any,                 monterey:       "b2b6b0e7e2e7b175da460df57da73a9ae4cba40d6ed8f588600858bd1e70279d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ee719185c25b590fa270c11c18f90a76b886f8395bbbcee4a3fc44aa6210cac"
+    sha256 cellar: :any,                 arm64_sonoma:   "5c07452bea5b2fa381430a57ea61159dc7e9706b8c3075bbd56897a8a6ca29c9"
+    sha256 cellar: :any,                 arm64_ventura:  "fd0a0ef31ccd70e7de423f5d736add5b463473a40a894a10167f2e870afe5a7f"
+    sha256 cellar: :any,                 arm64_monterey: "d1d9e0602f2efd5bab8808f11f430e7049398feacb774cf4b0420ff5ee2ab5b4"
+    sha256 cellar: :any,                 sonoma:         "d3912ac59f3f53fd9c2a935786668ef7cf35e7e32cebc9b2d9049c17c55cdcb4"
+    sha256 cellar: :any,                 ventura:        "ea20f3448a207c667bf1a1a5296852c127138d9d0f763f872b3bd494fdc41575"
+    sha256 cellar: :any,                 monterey:       "fb582097e425352b66d71331f987d6cfc4c883f16b3d1ba65612d4ef01b22d93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a799b1ee33e1012b68f6dc2dbba74bf9dd95ca5156239b3414d62d965552c3f"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -79,8 +80,8 @@ class Theharvester < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "backoff" do
@@ -139,8 +140,8 @@ class Theharvester < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackagesdb5a392426ddb5edfebfcb232ab7a47e4a827aa1d5b5267a5c20c448615feaa9importlib_metadata-7.0.0.tar.gz"
-    sha256 "7fc841f8b8332803464e5dc1c63a2e59121f46ca186c0e2e182e80bf8c1319f7"
+    url "https:files.pythonhosted.orgpackages90b4206081fca69171b4dc1939e77b378a7b87021b0f43ce07439d49d8ac5c84importlib_metadata-7.0.1.tar.gz"
+    sha256 "f238736bb06590ae52ac1fab06a3a9ef1d8dce2b7a35b5ab329371d6c8f5d2cc"
   end
 
   resource "importlib-resources" do
@@ -179,13 +180,13 @@ class Theharvester < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesb7413c8108f79fb7da2d2b17f35744232af4ffcd9e764ebe1e3fd4b26669b325pydantic-2.5.2.tar.gz"
-    sha256 "ff177ba64c6faf73d7afa2e8cad38fd456c0dbe01c9954e71038001cd15a6edd"
+    url "https:files.pythonhosted.orgpackagesaa3f56142232152145ecbee663d70a19a45d078180633321efb3847d2562b490pydantic-2.5.3.tar.gz"
+    sha256 "b3ef57c62535b0941697cce638c08900d87fcb67e29cfa99e8a68f747f393f7a"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages6426cffb93fe9c6b5a91c497f37fae14a4b073ecbc47fc36a9979c7aa888b245pydantic_core-2.14.5.tar.gz"
-    sha256 "6d30226dfc816dd0fdf120cae611dd2215117e4f9b124af8c60ab9093b6e8e71"
+    url "https:files.pythonhosted.orgpackagesb27d8304d8471cfe4288f95a3065ebda56f9790d087edc356ad5bd83c89e2d79pydantic_core-2.14.6.tar.gz"
+    sha256 "1fd0c1d395372843fba13a51c28e3bb9d59bd7aebfeb17358ffaaa1e4dbbe948"
   end
 
   resource "pyee" do
@@ -216,6 +217,11 @@ class Theharvester < Formula
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesa7ec4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9drich-13.7.0.tar.gz"
     sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+  end
+
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackages4bd9d0cf66484b7e28a9c42db7e3929caed46f8b80478cd8c9bd38b7be059150setuptools-69.0.2.tar.gz"
+    sha256 "735896e78a4742605974de002ac60562d286fa8051a7e2299445e8e8fbb01aa6"
   end
 
   resource "shodan" do

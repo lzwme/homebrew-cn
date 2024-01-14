@@ -9,7 +9,7 @@ class Sshfs < Formula
     sha256 x86_64_linux: "a98d273e64706971684935a3ae87da16b1dda98f7289eb79e82f4cdfb7f12bb8"
   end
 
-  deprecate! date: "2023-01-01", because: :repo_archived
+  disable! date: "2024-01-12", because: :repo_archived
 
   depends_on "meson" => :build
   depends_on "ninja" => :build

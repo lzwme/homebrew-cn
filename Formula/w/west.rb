@@ -6,17 +6,17 @@ class West < Formula
   url "https:files.pythonhosted.orgpackagesee7a4c69c6a1054b319421d5acf028564bb1303ea9da42032a2000021d6495eewest-1.2.0.tar.gz"
   sha256 "b41e51ac90393944f9c01f7be27000d4b329615b7ed074fb0ef693b464681297"
   license "Apache-2.0"
+  revision 1
   head "https:github.comzephyrproject-rtoswest.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2bb870bcf5e5040b99e408305cf691efc0f386d46ca6d85d857ad25232583e53"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16b56dc1ae2605b70b85c80dee664bda576a0becc9d31ed54b5eaf1a8396541d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a86c4f1654c564b51d6980c8dfa071cd5a90564741722b01511a5522ee4b107"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b963549faf1b5450da940d8ca35cf62114b9fddc79023f92a745a00354012642"
-    sha256 cellar: :any_skip_relocation, ventura:        "50aab5b051ae5a8ce493138b6cd09bf03f8a8cedf628d1426bba396e16030895"
-    sha256 cellar: :any_skip_relocation, monterey:       "6003cede937db2cad7b51e8fbc31613771d66214091c14808880a280feb70c63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7c13b6ef898a83b0a4434bc8b396e4f0621cb8794b0e807f952d811bef7d8a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b61bde71bb21906f6d3328813a8c9d0f3bc565c8cf6ce7c792dee17d04ca6c80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4333795dc37fdc911c215732ef62710949b36bf7e65c3cabfd5361670f08398b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9fc5471f7e443b570bd1211f77a7a0ebfe87968977a09328c789f54b3d3092fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ae8f5c3a53f2e076eb9fbc5ff7170a143a26337285f81fcc5ae8bbc0c1c9933"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd7af72c72e47577b110f5838be4d58ea651b166c3bb293d49798244fadc1ea1"
+    sha256 cellar: :any_skip_relocation, monterey:       "419a129e6a4b1e9bf023df07aa60bb6518d6e662eb677db9a1e96a86b706d555"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "464ab05b84d61e6d129f37b2618278483b35cd3f30c15beb96b40e0157f94a22"
   end
 
   depends_on "python-dateutil"
@@ -37,13 +37,18 @@ class West < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https:files.pythonhosted.orgpackagesde7d4f70a93fb0bdc3fb2e1cbd859702d70021ab6962b7d07bd854ac3313cb54ruamel.yaml-0.17.35.tar.gz"
-    sha256 "801046a9caacb1b43acc118969b49b96b65e8847f29029563b29ac61d02db61b"
+    url "https:files.pythonhosted.orgpackages8243fa976e03a4a9ae406904489119cd7dd4509752ca692b2e0a19491ca1782cruamel.yaml-0.18.5.tar.gz"
+    sha256 "61917e3a35a569c1133a8f772e1226961bf5a1198bea7e23f06a0841dea1ab0e"
   end
 
   resource "ruamel-yaml-clib" do
     url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
     sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
+  end
+
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesfcc9b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   def install

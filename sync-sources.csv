@@ -1557,7 +1557,7 @@ Homebrew-homebrew-core/Formula/e/enex2notion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enigma.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enkits.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enpass-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/enscript.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/enscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ensmallen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/entityx.rb, Homebrew/homebrew-core, 1
@@ -2485,6 +2485,7 @@ Homebrew-homebrew-core/Formula/h/helib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helidon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hello.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/helm-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmify.rb, Homebrew/homebrew-core, 1
@@ -3997,7 +3998,7 @@ Homebrew-homebrew-core/Formula/m/mk-configure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkcert.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkclean.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkcue.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mkdocs.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mkdocs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkfontscale.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkhexgrid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkp224o.rb, Homebrew/homebrew-core, 1
