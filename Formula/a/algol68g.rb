@@ -1,8 +1,8 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
   homepage "https://jmvdveer.home.xs4all.nl/algol.html"
-  url "https://jmvdveer.home.xs4all.nl/algol68g-3.4.5.tar.gz"
-  sha256 "1ad3f67c995d186e1d3e8ab143c200e60385b25fea9827433ebcca4b81c325f3"
+  url "https://jmvdveer.home.xs4all.nl/algol68g-3.4.6.tar.gz"
+  sha256 "f1e9e8d5aa2f970b1be93fbf6977aaaefc25782bfb1e3daed796df60311c5eb5"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Algol68g < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "22e2fe6f307911ce8fb2dd25cf60a1a4fc99ac7875c6cd881aa10804b48f54c0"
-    sha256 arm64_ventura:  "c7186f3d0592de070160cce967f729204afeb6ef3e9987f61e5a85613fd13114"
-    sha256 arm64_monterey: "8969f68d2cf6bd0938244c87280daf0d8c7a69de1d309e7261647953779c90ae"
-    sha256 sonoma:         "3aa7d8db8c2ff1b077d8201bf0666970b15ccb20077946cf666c4b45f5236006"
-    sha256 ventura:        "4468215a0c5e1b15dae58b30f1483bbd2ff65fbd6937a49e9c854d43062c082f"
-    sha256 monterey:       "b4b5a9c8c0004ad1558ecc10e90f63c79864a18ec79a988cc82738fccf39dcf4"
-    sha256 x86_64_linux:   "7d9e85626c35bd6abbffcb16e3b0498cd18d5677f35a6605fc25953d7611ea0c"
+    sha256 arm64_sonoma:   "8dd220221489bf1d2a02293f701adb72ad4a40b9a7259be523e1a9d2958a18ba"
+    sha256 arm64_ventura:  "fb7108350dfdc253d460c99ac29b28395d85c74e3cfd5bfc69eca3d4b5fd536f"
+    sha256 arm64_monterey: "c7b2257391a63dedb63e531552f3656e6b3cf86153978d83c1436648fb1983d0"
+    sha256 sonoma:         "7617a978956b939714347b36da2e47c439840cdc0fbaba4550440e568cc771cf"
+    sha256 ventura:        "352bfce269e161a86b2018daeefc7de50980bacaff100b315398474dc9664492"
+    sha256 monterey:       "1616bd587e56fd98105c8ec2191229e8f51f02fd199f33596386707a1c42ff3b"
+    sha256 x86_64_linux:   "86a3932294239c88e8e303ebf23ea0b5d71bac7d6405c29228039557a172eced"
   end
 
   on_linux do

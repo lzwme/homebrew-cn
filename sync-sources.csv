@@ -620,6 +620,7 @@ Homebrew-homebrew-core/Formula/c/c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c10t.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c2048.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c2rust.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/c3c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c7n.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ca-certificates.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cabal-install.rb, Homebrew/homebrew-core, 1
@@ -3364,7 +3365,7 @@ Homebrew-homebrew-core/Formula/lib/libelf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libemf2svg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libepoxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libestr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libetonyek.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libetonyek.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libetpan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libevent.rb, Homebrew/homebrew-core, 1
@@ -6936,6 +6937,7 @@ Homebrew-homebrew-core/Formula/z/zeromq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zig.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zigmod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zimg.rb, Homebrew/homebrew-core, 1
@@ -11335,6 +11337,7 @@ Homebrew-homebrew-cask/Casks/z/zesarux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zettelkasten.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zettlr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zight.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/z/znote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zoc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoho-docs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoho-mail.rb, Homebrew/homebrew-cask, 0
@@ -12866,6 +12869,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-vithkuqi.rb, Homebrew/homebre
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-yezidi.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-traditional-nushu.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-noto-znamenny-musical-notation.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-nova-cut.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-nova-flat.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-nova-mono.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13010,6 +13014,10 @@ Homebrew-homebrew-cask-fonts/Casks/font-profontx.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-proggy-clean-tt-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-prompt.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-prosto-one.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-protest-guerrilla.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-protest-revolution.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-protest-riot.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-protest-strike.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-proza-libre.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-pt-mono.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-pt-sans-caption.rb, Homebrew/homebrew-cask-fonts, 1

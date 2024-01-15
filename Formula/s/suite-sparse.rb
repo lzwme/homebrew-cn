@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https:people.engr.tamu.edudavissuitesparse.html"
-  url "https:github.comDrTimothyAldenDavisSuiteSparsearchiverefstagsv7.5.0.tar.gz"
-  sha256 "9090ead43f462737369f1b6f8f269decc7f98adbb3276db299a2d4f18d481328"
+  url "https:github.comDrTimothyAldenDavisSuiteSparsearchiverefstagsv7.5.1.tar.gz"
+  sha256 "dccfb5f75aa83fe2edb4eb2462fc984a086c82bad8433f63c31048d84b565d74"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
@@ -18,13 +18,13 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "696f7166f02d1eaac01ed59221afb974b11208ba766e935f9293b320ebb1082b"
-    sha256 cellar: :any,                 arm64_ventura:  "44767209c7093a9db39618cd12236e918d33cf51d0783f1172128adf8315f42c"
-    sha256 cellar: :any,                 arm64_monterey: "f4a0c89cb73f99085cff773f407b05f3d88845b5dff36cf6acb16f3a50cfef32"
-    sha256 cellar: :any,                 sonoma:         "84cedbedc5c5b7bd72820c07cb23f574fa431511b43efd9933909c94b1dfb4ba"
-    sha256 cellar: :any,                 ventura:        "76d25bb0aa2e9eb6cc1ebb4438bf47249b1184b746d68f7b771c2e11234466ac"
-    sha256 cellar: :any,                 monterey:       "da2f146aa17d426c1d997f33c87074ad171866746c823c3963d4185e0de55daa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ecd4abb83f26260c1517175251dabc41301a09a80845aab8796368783b49131"
+    sha256 cellar: :any,                 arm64_sonoma:   "7a9e6567ae3266465272c949b33b9d4b4575970a2e0535f372c431b9c1b7d9f2"
+    sha256 cellar: :any,                 arm64_ventura:  "8f4ab7e068195c0648e858cedd4b33031fe06c80f79b2d16f97b1a3137c9d764"
+    sha256 cellar: :any,                 arm64_monterey: "ab49a068a3c9483c6adb612d11d8176170410511a3a16cb7095cb93f1e3826f3"
+    sha256 cellar: :any,                 sonoma:         "d0ce081c195eabf1a07be8695284995e5b225215de063ddd47cb2e6628ef44bf"
+    sha256 cellar: :any,                 ventura:        "16c101e9ba4ab64f1f64ef9a7d38ea15392fc9fe395b9fe691fa5413f7bae484"
+    sha256 cellar: :any,                 monterey:       "46bf4562838037a6205e9d8e0fe6b6617bbf7d5b5177c4afcbe416ee4576128d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d78c8b2b464cd38d7bd3c692aef5daa9e6f3087303127fa6537f69ca3a19d662"
   end
 
   depends_on "cmake" => :build

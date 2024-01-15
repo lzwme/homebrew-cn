@@ -1,18 +1,18 @@
 class PythonBotocore < Formula
   desc "Low-level, data-driven core of boto 3"
   homepage "https://botocore.amazonaws.com/v1/documentation/api/latest/index.html"
-  url "https://files.pythonhosted.org/packages/de/54/f244644bded1ef26ab7e8170416fa0a4149a509c56b36121e9137d1b9d2c/botocore-1.34.13.tar.gz"
-  sha256 "1680b0e0633a546b8d54d1bbd5154e30bb1044d0496e0df7cfd24a383e10b0d3"
+  url "https://files.pythonhosted.org/packages/bc/d8/a31a6f55f2e438e6e3f19fc302a540ecf2c545684be5b7f5b875aca54892/botocore-1.34.19.tar.gz"
+  sha256 "64352b2f05de5c6ab025c1d5232880c22775356dcc5a53d798a6f65db847e826"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "063790ab1c5329984407af3e6a2d9889fee3cbedae63ba209c693870ab456112"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "433f103d351af36c7aeaec2b3518e173313b271a636f6049e3587551611b634b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "677d4a99303e534abe7062295aced983bfd48799f267af5e0c37d7407dd98ed3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7dfacecc19324106cd9a02d02b60f55c35fe88e118fd8110e903e0bb7b50a383"
-    sha256 cellar: :any_skip_relocation, ventura:        "cfb09736642c9f68a21d864d5ac243e275a79e5c78236e048152e56b019e8ca2"
-    sha256 cellar: :any_skip_relocation, monterey:       "953bba686693098af9b67f334898aae871c293825272f91660a4a635a8f2ecce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95e93ef43f15424d3903f4e4fbef8f49107e4bbc43e32fd9cd317905808f911b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f37cf7c1ff399e990a3206f0e1c36bd276bf23d333871f534320bbf7e13f8d33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d61448214669177794e54d0e57daa5d3d0907d8c42a35852bd45fcf38806800"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "18792c992aff3d0ad16bd3c2accfe5e79b19dcf14af71f1f035f12304ca49bfb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1fc51ddf4d6fe1d678866fe9fd3f8704a8c14bb4182d6a786cec4faf15aae2f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "261f03107db4010a79aadaa37c71e852a7366a73e1279d6adcb73f609ceb541a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e80cae228e30953c8f1d958892f6e308a621d0a0da6419968cc0869442072f53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f39f4d9da49cf1a05a519d10fa9fe3f4bec8b67fc631b782a8f6b8673816ae1"
   end
 
   depends_on "python-setuptools" => :build

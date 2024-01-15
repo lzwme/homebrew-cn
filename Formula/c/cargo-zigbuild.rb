@@ -1,19 +1,19 @@
 class CargoZigbuild < Formula
   desc "Compile Cargo project with zig as linker"
   homepage "https:github.comrust-crosscargo-zigbuild"
-  url "https:github.comrust-crosscargo-zigbuildarchiverefstagsv0.18.1.tar.gz"
-  sha256 "2fbd69ebfc30925ccf5e7003900ad14b21fc0469b9e084827851a506900cc056"
+  url "https:github.comrust-crosscargo-zigbuildarchiverefstagsv0.18.2.tar.gz"
+  sha256 "a43eab1ec15496e4fddf01fcf348e86402d6a85cf4a378f9f316344d8159df3c"
   license "MIT"
   head "https:github.comrust-crosscargo-zigbuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70cfee1c577db79bf1aec06a30591936323d6192d48e768d8517bd4bd51884d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c1c4bbfc6a912b0b63e99902b31d71e9bc163f8d2e7f234ebe48b70dae01acb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d314a5b4c2b5409fd6684a560db8a3be2420df6ccf4eba00dc227a91d8c82729"
-    sha256 cellar: :any_skip_relocation, sonoma:         "88233b62762cd6a02ca6f8f6646157d6ca71bfcd0047cb0ae318714606678c69"
-    sha256 cellar: :any_skip_relocation, ventura:        "2075bf9e52a1ba5a90e5e2c9752f9234a5572e68d8829328c9177e28bebe5cd4"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcfc100217d80f6901f79d60d10c4be162d457b0ebc68ac4d8cd977b505533b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3d54eabc9395e94784ae776a314c8670ac92fb8aa5905505b86ba60974167bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6f08f29f2617bdb5f5db13b50d5f73891f59bc2702d7012628db8a367da3018"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6366cd6660577f6961c22d579683bb9eddb7478fa34eb048744eb63e56781e7a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "288bd46e5aa8c9b71ff6a423f43a7e8003c39aaae163dacb8a0e691ef1abd2eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be155893ded27b8406ac4450187c15ab560c8feff0a63975866a5a7f7b9b9dcf"
+    sha256 cellar: :any_skip_relocation, ventura:        "749af1d56c843966e5c536fd2e5a1d2c5660d554f7597d7e94efe2ef9951fd20"
+    sha256 cellar: :any_skip_relocation, monterey:       "65a1d11c5acc85890ecc0c729d5cf0631b8da5dcb9327ce153d155da9b349d92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9142b6a210ef72d7fb5ed5fe1d575df5848485c1f5d097c13dd3045bb579ce06"
   end
 
   depends_on "rust" => :build

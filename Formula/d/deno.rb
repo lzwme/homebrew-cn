@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.land"
-  url "https:github.comdenolanddenoreleasesdownloadv1.39.3deno_src.tar.gz"
-  sha256 "b57855b1468ffc2991470888429633e7c9dd84c014158b973d5bba2fd327a6c2"
+  url "https:github.comdenolanddenoreleasesdownloadv1.39.4deno_src.tar.gz"
+  sha256 "87e37e3322a7d6b849395091c24e2d5be7208d3627c7cc9d96534cef3a334de4"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8cca8c6a13e1023e028d7ed91f671c918d0db702e16cec95ef513efd0ab4c2c"
-    sha256 cellar: :any,                 arm64_ventura:  "8ce64e5f70b203eca396f58c1b42dbbce4565e26a578068bf1d50d1340356b93"
-    sha256 cellar: :any,                 arm64_monterey: "78044df1584cf4f25943e0bbde87aaf25c73b0eec577d42977cfca5ae62b9eaa"
-    sha256 cellar: :any,                 sonoma:         "7c3f65daecb9a7b3ae92d29d6d594ab5def3f8858b3f4e5a482b722ffc7fb417"
-    sha256 cellar: :any,                 ventura:        "2b2ce1cf03926f3a5d71913d8e4d3e1374c89fd525ec3a08274829bb8d72301e"
-    sha256 cellar: :any,                 monterey:       "d215e29d344a89a1acee483de4a671c5f2e9dd6298d5e93defc9611f8f277653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0d634a422b1fcaf8a03f002f38b07d4d48929e4fcca70f0c2fdfb139c72298e"
+    sha256 cellar: :any,                 arm64_sonoma:   "42f99d1b5dc2199db7ce738943253f6735ad0e4448acf0901d0640dacc363a66"
+    sha256 cellar: :any,                 arm64_ventura:  "3dc3e291bdab02461d47857bc355a875e6970c9b654ca7644c6fb0500ebfba1d"
+    sha256 cellar: :any,                 arm64_monterey: "4d6accc2fb427b360d7dffcd711fdbf3df299d529b1a7342e43d3cd94572fdc5"
+    sha256 cellar: :any,                 sonoma:         "6c0a13718887c555ba173991a94a252eb743f1f53bed57b1b1a78917a166b5c4"
+    sha256 cellar: :any,                 ventura:        "e5e69556cbf349a191180a639cc0d09c4a77536d8647ae33272ab050774ac049"
+    sha256 cellar: :any,                 monterey:       "f261a1b84cf3de7c151c5100614fbc1db37553eb85ebb49d4c92c761a2a64b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3b851e59e6ef4b711c7e7f4e28aa780faa0cc604b0a8abbcd8f333958c73e4f"
   end
 
   depends_on "cmake" => :build

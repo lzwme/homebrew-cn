@@ -1,19 +1,19 @@
 class K8sgpt < Formula
   desc "Scanning your k8s clusters, diagnosing, and triaging issues in simple English"
   homepage "https:k8sgpt.ai"
-  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.3.25.tar.gz"
-  sha256 "db8304df35089fb69eb16b8720f902dee508f1cbbec2ed4015a8d343d8701868"
+  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.3.26.tar.gz"
+  sha256 "9de7d3afffe3302ad5b96adbc7da11c7060f3e35f28046c10c308d4ab50b9d2f"
   license "Apache-2.0"
   head "https:github.comk8sgpt-aik8sgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b125fc1c59cbe3c2f40e308a1b59335e24d01d40de9e8c8c532ff0806c58772e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b9f47f34876cd66dc26d3fdc0004b3a303be304e5457f8689fc11eeecec5473"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "738027837ec9cf1455e94b993f7567a8b34737400c58acf1f0254a66f475bc34"
-    sha256 cellar: :any_skip_relocation, sonoma:         "660db34585ab85e243488615e8d3c3f31b0b445498237949e6a00516158cbce6"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f2091334f8d8db39fe70d22453a52158391c57a792aac0ac06484a9c0653a50"
-    sha256 cellar: :any_skip_relocation, monterey:       "1d387656bc6884d5f4632a9af5d7a4024e2260b96e93a218751da7bff0ea069c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24bc6361c233364ebc19e20113f952e656705ae8172d4d1833775528c36efc64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "641f5ade20c8a7cba3cd7d9fd545d713a754aa434065929ea3ab3f3273c92e89"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "673b190e010d0dcb8344ffbc128f523da2e66f4132c3fc9d86b56c24a2a0a18a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b32e23165f8145d4437a7886e4ff31ee634b7905de83ff1c90ed99161207bd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4085c7e7c16dc403fcbd9ee884977c935fb7de50290362460b00a151db30aebf"
+    sha256 cellar: :any_skip_relocation, ventura:        "89325d73d330b0ef5b161b52d62fc9680e03ed98a91d95d6fd1917e03dd29bad"
+    sha256 cellar: :any_skip_relocation, monterey:       "88a0ccc0577971389c6d198b7d392b39663eeddcd85af36ceab43d34d9e364bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad827e559996090bdaedd81d4b4a573215b5120d100e7843f29f357c8dd7fba2"
   end
 
   depends_on "go" => :build

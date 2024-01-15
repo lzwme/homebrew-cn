@@ -6,6 +6,14 @@ class Cppcheck < Formula
   license "GPL-3.0-or-later"
   head "https:github.comdanmarcppcheck.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sonoma:   "2a555aa437686f0449cb1ff2c84a9fff93c98e453ada241841ab70f111f7d9f1"
     sha256 arm64_ventura:  "c08f0e6190f4860275ae8f8d411507689fbc18eb321fd26ed853ecf37e1bd6ab"
