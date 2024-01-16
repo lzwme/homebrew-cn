@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https:solana.com"
-  url "https:github.comsolana-labssolanaarchiverefstagsv1.16.27.tar.gz"
-  sha256 "afbd484e91933aae1d4997f2f828f798e12ccbb1cf7b2b3e507cf68e006059b7"
+  url "https:github.comsolana-labssolanaarchiverefstagsv1.17.16.tar.gz"
+  sha256 "1d44ebc853345c5153602d9a88511e795ed53ec5e89fb09038a3f8c76e2c6f93"
   license "Apache-2.0"
   version_scheme 1
 
@@ -26,13 +26,13 @@ class Solana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fcfb1256c7f00c73a686e259e53e682da430995faee340a7ae7645d54492680"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac1ed72b64d98dcf0ba45d74917631909e3e24f7912832d01d7f1d3c7e3520ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "112f1f82339bd04cdfe0aaf46c46296fd5da02b485385ae749ab4e15a244fb4c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d66d53f7a12ba792052cf6757c4f2a95d443e029b6a4f44a2b290e7c1e2b1567"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d4f2ccf124e829a99ac452ba068471b2d8b23526626ebd20e9a52065edced7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a03cc116feea7324e0ea0bb7d16ba6a1fa599b547b3e51deebf9fabf9df92df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "635ca7a98c27a98d8bde7235f0b7328e0c46e09068561ec64cc6e1cfe5c80202"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "009359e3f72049c550360e0a42b7b89a727362fc549e32636d62a82312eb0783"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "770af69b774dac2374f51f7ee04689b0c7798f3f7e6e203280af84d0e3646535"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f86011fb6f34b192518da7653a63d1c183e44d2a67ddb6e5d375d2f20c3e4bb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bbea0c77923f9e25ee38e0762cafc4b0103fbd502b8d4afaf8dc7d80357a71d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "61817c9d45d531598c0aa5a177dc7c993715d001375753a45f56a2a08a2c05be"
+    sha256 cellar: :any_skip_relocation, monterey:       "0abf5131f7164f20787e261d8c2ab1de1b21cbda876b8c856de2b8c7520cc578"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54cb95e11e896d7f4f1c95f377037d90cd8b4f686a4f718ca7b55faa7bb57a6a"
   end
 
   depends_on "protobuf" => :build
@@ -44,10 +44,6 @@ class Solana < Formula
     depends_on "pkg-config" => :build
     depends_on "systemd"
   end
-
-  # Backport part of upstream commit to build with newer Rust.
-  # Ref: https:github.comsolana-labssolanacommit9e703f85de4184f577f22a1c72a0d33612f2feb1
-  patch :DATA
 
   def install
     %w[
@@ -71,17 +67,3 @@ class Solana < Formula
     assert_match version.to_s, shell_output("#{bin}solana-keygen --version")
   end
 end
-
-__END__
-diff --git asdkprogramsrcaccount_info.rs bsdkprogramsrcaccount_info.rs
-index 372370d0e15a0f2877b02ad29586e5b352438b24..3db3e9839b6535786e60be5602c03d0c909bf937 100644
---- asdkprogramsrcaccount_info.rs
-+++ bsdkprogramsrcaccount_info.rs
-@@ -182,6 +182,7 @@ impl<'a> AccountInfo<'a> {
-         Ok(())
-     }
- 
-+    #[rustversion::attr(since(1.72), allow(invalid_reference_casting))]
-     pub fn assign(&self, new_owner: &Pubkey) {
-          Set the non-mut owner field
-         unsafe {

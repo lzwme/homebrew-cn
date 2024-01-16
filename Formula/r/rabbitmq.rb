@@ -1,5 +1,5 @@
 class Rabbitmq < Formula
-  desc "Messaging broker"
+  desc "Messaging and streaming broker"
   homepage "https:www.rabbitmq.com"
   url "https:github.comrabbitmqrabbitmq-serverreleasesdownloadv3.12.11rabbitmq-server-generic-unix-3.12.11.tar.xz"
   sha256 "e85c503fd0e0a2785f07f3005937e93941d9b0e0fb33f3df1ba6781f289457a1"
@@ -58,7 +58,8 @@ class Rabbitmq < Formula
 
   def caveats
     <<~EOS
-      Management Plugin enabled by default at http:localhost:15672
+      Management UI: http:localhost:15672
+      Homebrew-specific docs: https:rabbitmq.cominstall-homebrew.html
     EOS
   end
 

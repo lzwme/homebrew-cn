@@ -21,13 +21,11 @@ class OpensslAT30 < Formula
     sha256 x86_64_linux:   "410ac96c03f299a2a69e798a4548ba9eb6d17f86eb6178ded1708b2ee116f005"
   end
 
-  keg_only :shadowed_by_macos, "macOS provides LibreSSL"
+  keg_only :versioned_formula
 
   depends_on "ca-certificates"
 
   on_linux do
-    keg_only "it conflicts with the `openssl@1.1` formula"
-
     resource "Test::Harness" do
       url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.44.tar.gz"
       mirror "http://cpan.metacpan.org/authors/id/L/LE/LEONT/Test-Harness-3.44.tar.gz"

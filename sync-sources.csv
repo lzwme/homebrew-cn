@@ -9568,7 +9568,7 @@ Homebrew-homebrew-cask/Casks/o/obs-ndi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-virtualcam.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs-websocket.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/obsbot-webcam.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/obsbot-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/obsidian.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ocenaudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oclint.rb, Homebrew/homebrew-cask, 1
@@ -10350,6 +10350,7 @@ Homebrew-homebrew-cask/Casks/s/sf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sfdx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sfm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shades.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/shadow-bot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shadow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shadowsocksx-ng-r.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shadowsocksx-ng.rb, Homebrew/homebrew-cask, 1

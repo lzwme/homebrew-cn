@@ -1,22 +1,18 @@
 class Md4c < Formula
   desc "C Markdown parser. Fast. SAX-like interface"
   homepage "https:github.commitymd4c"
-  url "https:github.commitymd4carchiverefstagsrelease-0.4.8.tar.gz"
-  sha256 "4a457df853425b6bb6e3457aa1d1a13bccec587a04c38c622b1013a0da41439f"
+  url "https:github.commitymd4carchiverefstagsrelease-0.5.0.tar.gz"
+  sha256 "79548a689bb931d099dc8242a6824e13160553fa843ae3d8a9eded571d89168e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d152e010ab8d186f5e3fcb8da04c59cf8b7f8c4e2424cf884f30c31a93bd4e0e"
-    sha256 cellar: :any,                 arm64_ventura:  "8057cee0cc192a2db1c29a4a49a3c9b175891b9c2aff8b0481a64c8da807d4b3"
-    sha256 cellar: :any,                 arm64_monterey: "154f5f1eb77492727a5475922c642db680724a1b5abbd221b6ac65cb0d4c7c52"
-    sha256 cellar: :any,                 arm64_big_sur:  "1873e516760235dba2670bb63a612b99b51714baf657b99c2c411da40c3162ec"
-    sha256 cellar: :any,                 sonoma:         "b0d13d8f52b0e3f59d5e7a5301ec403341b7e72742ebfc63c2c30af9123d8761"
-    sha256 cellar: :any,                 ventura:        "4ab00b6654d56bdf2805cfcec8b4bec4ff1704a0cf499fafc5fd451b86c9fe78"
-    sha256 cellar: :any,                 monterey:       "29d7e311c2821193496c531b4f8bec1d3857d5bd949da3578ee1abc6e9d2d20c"
-    sha256 cellar: :any,                 big_sur:        "8b4ae9a5232e84db3d0ab6793a8dd5bd56071fb32832fd94d16fa8162ec08a16"
-    sha256 cellar: :any,                 catalina:       "8368b905e33301b5019e8520f7d010e3a57f74855ebd5cbbbf87aa1d8ded50a7"
-    sha256 cellar: :any,                 mojave:         "ad888318dd048fc87594ff6a67321b9f9711bafb835f121f46f8f3e31de1931a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53d6b4590104e353ecbc591400815db823603d960894dc5a5fb1a84306290580"
+    sha256 cellar: :any,                 arm64_sonoma:   "8142cb4d9f56c31c57e021bb2b32688889110df24c5290291d50647f785b0c11"
+    sha256 cellar: :any,                 arm64_ventura:  "fd54f77b56f74071a87345e26e0c3071914692761f4850fc4b6c96211e1a04c2"
+    sha256 cellar: :any,                 arm64_monterey: "2859477205981a24441039d49583778885987f9b22f0155d9f8df872761b1163"
+    sha256 cellar: :any,                 sonoma:         "dc465385d7887e97091f33c2e7e613ee0603d038c0420bfe8d71d7aae650e00f"
+    sha256 cellar: :any,                 ventura:        "d2df8c08bf2d003bd0ec1dbb3b5ba9027101d357ba6c42a485ac904e31623f9a"
+    sha256 cellar: :any,                 monterey:       "a8a62db3d4514cba8dd123dd4db39a823ac203cca944a5184c7d59e633e51a27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04ab09ac36513ddf6abcd97de88bd9b67a1efa2cfe031e73ce437abcce07806f"
   end
 
   depends_on "cmake" => :build

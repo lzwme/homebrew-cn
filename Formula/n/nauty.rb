@@ -15,15 +15,19 @@ class Nauty < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fed27805a663a09efa433ef5357e248ffec3c616dc647bb1e34039d888013c6d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56e1b40c66a5aaef7e82d32e902254f73db4fd48a3e2cf2e845822c188386139"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "01b1b4ef4dafbdd33262d1d85b7d2170c0fc43b292a71fdd16cc500397717d6b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de41633db5ca8ea97031b485790b2839bd66f9da9e6965e4b2f7133ecd4dd5e1"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef39df7ed559a8aa15eec5e7be9df22d1b0ebd989e1c79b4a413c4364dae34eb"
-    sha256 cellar: :any_skip_relocation, monterey:       "10cd676f9d46b633a1dc17aa099e33422e5a21cd4aaffc493e35729729e1424d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a439879b6cf21d24797ac4420500a0ecf519a5afa59eb3a7c00fe3900eb4400"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2998663bc5f33dc6ec3aafc7484c3dcecba0ff1d4276408b384179b82cef2433"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5ac9c4a7c6bc9c2092b24aa1f08122a5ee54c72869a1a2dc6fed71348f8b3f3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a4688fe963d913e35b14ad3078c1cf2d1dd054976b432acbc32e4badac51448"
+    sha256 cellar: :any_skip_relocation, sonoma:         "46690024133ff0fab6226a4d1473d9f7f987475fa65f6835272600e718f1a4d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6722de8d71b05629eb75ea96c79aa1e169bc2d0f6dac8a93b37219b41dfd682d"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa21ab2f8e0df03513b17a7e0ecc1961ea1efc8a36fc44a050e462fed8d8e1d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee528b994774bc9a28632f211973cd65078b06aee0d63726fb356867587c6d31"
   end
+
+  # patch to correct the location of nauty*.pc files
+  # upstream informed and responded that it will be worked on
+  patch :DATA
 
   def install
     system "./configure", "--includedir=#{include}/nauty", *std_configure_args
@@ -61,3 +65,18 @@ class Nauty < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/makefile.in b/makefile.in
+index 422ff69..572448f 100644
+--- a/makefile.in
++++ b/makefile.in
+@@ -17,7 +17,7 @@ exec_prefix=@exec_prefix@
+ bindir=@bindir@
+ libdir=@libdir@
+ includedir=@includedir@
+-pkgconfigexecdir=${prefix}/libdata/pkgconfig
++pkgconfigexecdir=${libdir}/pkgconfig
+
+ INSTALL=@INSTALL@
+ INSTALL_DATA=@INSTALL_DATA@

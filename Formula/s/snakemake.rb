@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagese57d38d93dcab9eb4c4b1b96fde09a81916f9ad2161cc5182d78614e9c05d2f9snakemake-8.1.1.tar.gz"
-  sha256 "767e165b9803a3eb91d50e5f7d4410f537f3f1db102c99fcc97a9b40371cd46a"
+  url "https:files.pythonhosted.orgpackagesbd4301610851f71670d81e757434a728ed20c454643c7e1666865416f10be142snakemake-8.1.2.tar.gz"
+  sha256 "594b73269a3b1903929f07f055609c42f166abc3a6bd1f0b06403bd83e7ff9c8"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "81891809d4c302825cae8e2e9f11abc5e29ce0fd8abdb1431e264d3a11134d13"
-    sha256 cellar: :any,                 arm64_ventura:  "93a5a961e5821bf1ab9b11d7cfc23c05148a955a92354b431f2edcbbc84a17a5"
-    sha256 cellar: :any,                 arm64_monterey: "35c11bf05625e76fd962046b70366ec03cd7884c745b3d519d931052fa359504"
-    sha256 cellar: :any,                 sonoma:         "6b0cffe2983168b7e475e411b82908593d6516fc4dee3fd9d4128ff5398d68f1"
-    sha256 cellar: :any,                 ventura:        "af6a15da7cb735b19cc7c24fd748b40bb3d693f7b48da07b02b2456a9009913b"
-    sha256 cellar: :any,                 monterey:       "92e599e1ef580050834f24d94e751ae7256014ccd1509608fba1ec34b1156d04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1608f3156420800039abd76dcbaa7c90acca7127ce6c901f511f6ed1b7cc5cc3"
+    sha256 cellar: :any,                 arm64_sonoma:   "8e5ed5db188d431ddaf2c359ea7961b5cd400bf45a88d985d8cf17cef3bdf074"
+    sha256 cellar: :any,                 arm64_ventura:  "9ac972243746e961b69fd9a3f89cd90eb2b860498858c4d97b7b9575f82635b3"
+    sha256 cellar: :any,                 arm64_monterey: "cb694189b7973418362cd88f6d51495e2ec5743e0a417021877d9a39d326b196"
+    sha256 cellar: :any,                 sonoma:         "5ee3be2d83e5bde8760aa8f9013d16004b8fd54061fd22c9071ae878b4678cc1"
+    sha256 cellar: :any,                 ventura:        "3af9a9ee414ce792d80b8741dad9f78919cb5f5ee02c0acafb8350ce95fb5dad"
+    sha256 cellar: :any,                 monterey:       "31deeecafe17cc55adfae8347889777d1a91cc67805ba16c242ef4e793ffe3bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2a5bb16eb76e0accec96ee84e5cf26c58b93aae101d751a1056fbfb86bd6e7e"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -141,8 +141,8 @@ class Snakemake < Formula
   end
 
   resource "pulp" do
-    url "https:files.pythonhosted.orgpackages594144d617a67407ea5db026500025b8aa7cad0b2b52621c04991b248c3b383dPuLP-2.7.0.tar.gz"
-    sha256 "e73ee6b32d639c9b8cf4b4aded334ba158be5f8313544e056f796ace0a10ae63"
+    url "https:files.pythonhosted.orgpackages2ce0683a36567b0a396961192dc9ec477ba1f88be56d968ca26688bd6e02f23bPuLP-2.8.0.tar.gz"
+    sha256 "4903bf96110bbab8ed2c68533f90565ebb76aa367d9e4df38e51bf727927c125"
   end
 
   resource "referencing" do
@@ -161,8 +161,8 @@ class Snakemake < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackagesc26394a1e9406b34888bdf8506e91d654f1cd84365a5edafa5f8ff0c97d4d9e1rpds_py-0.16.2.tar.gz"
-    sha256 "781ef8bfc091b19960fc0142a23aedadafa826bc32b433fdfe6fd7f964d7ef44"
+    url "https:files.pythonhosted.orgpackagesb70ae3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161ferpds_py-0.17.1.tar.gz"
+    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
   end
 
   resource "smart-open" do
@@ -225,8 +225,17 @@ class Snakemake < Formula
     sha256 "d2d77e53eafca74f58234fcd3fea28cc0a719e4f3784911511e35e86594bc880"
   end
 
+  def python3
+    "python3.12"
+  end
+
   def install
     virtualenv_install_with_resources
+
+    # cleanup `pulpsolverdircbc`
+    site_packages_path = Language::Python.site_packages(python3)
+    pulp_solverdir_path = libexecsite_packages_path"pulpsolverdircbc"
+    pulp_solverdir_path.rmtree
   end
 
   test do
