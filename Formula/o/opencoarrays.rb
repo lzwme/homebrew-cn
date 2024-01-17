@@ -1,20 +1,19 @@
 class Opencoarrays < Formula
   desc "Open-source coarray Fortran ABI, API, and compiler wrapper"
   homepage "http:www.opencoarrays.org"
-  url "https:github.comsourceryinstituteOpenCoarraysreleasesdownload2.10.1OpenCoarrays-2.10.1.tar.gz"
-  sha256 "b04b8fa724e7e4e5addbab68d81d701414e713ab915bafdf1597ec5dd9590cd4"
+  url "https:github.comsourceryinstituteOpenCoarraysreleasesdownload2.10.2OpenCoarrays-2.10.2.tar.gz"
+  sha256 "e13f0dc54b966b0113deed7f407514d131990982ad0fe4dea6b986911d26890c"
   license "BSD-3-Clause"
-  revision 5
   head "https:github.comsourceryinstituteopencoarrays.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "50b0aa18dae7c0a861896370b53e9f74057c8390717224bc95293de31a3ad797"
-    sha256 cellar: :any,                 arm64_ventura:  "33fd74fb80bd13d0107d49f4e4daa39892f88426fe114ff47d81e0efd6f5f7cb"
-    sha256 cellar: :any,                 arm64_monterey: "0dd1070bc400a07c8719663795fbf284e37a70914c8f98a484d943e9b2ac27c9"
-    sha256 cellar: :any,                 sonoma:         "fbac2a13b31651cea83ac1d245093fdf99cc64b284e1e25315405431da89ca13"
-    sha256 cellar: :any,                 ventura:        "b51e97d0aca458d1dc0ed461e1cb8a872754f1459895a09f63b8ed50277f83f2"
-    sha256 cellar: :any,                 monterey:       "61918bffe69b86ec47cd24828c68a18e8408319180ac86aa5c2c2eff58a72cdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f3c68e7fd4a890bdc319edb796b1270837bc63845362cf1ad77123e7f6783d1"
+    sha256 cellar: :any,                 arm64_sonoma:   "dba684a4e77865917fc7c6c807012e2447fa8fe7fa45c9e60c91b47c5f4458f8"
+    sha256 cellar: :any,                 arm64_ventura:  "a53da41941d47466668c858268044e104134f653701cc16ca881c19ab5f912df"
+    sha256 cellar: :any,                 arm64_monterey: "664f1edb5fd95de835b5b3666474b1d338dd8deb209d9dd0d571302448a2d37c"
+    sha256 cellar: :any,                 sonoma:         "f7c91bd8f62929dc873f962067afe86ac3873ad6aca43fc913159f944f1353a9"
+    sha256 cellar: :any,                 ventura:        "16853aeb0cf2f8bc3f44ea4a6af93a6729aa0ddf83a4e2e7f19f0529539b699d"
+    sha256 cellar: :any,                 monterey:       "090295d7492927e9582280cd41b571431bdd2f249c1711742d4852907cc53bb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42f9508fc3fd9b240a49175b105cd5adadd57b41ba9c2b82a928719241c13a87"
   end
 
   depends_on "cmake" => :build

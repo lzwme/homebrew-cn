@@ -3,19 +3,19 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https:www.uvicorn.org"
-  url "https:files.pythonhosted.orgpackagesec540eb4441bf38c70f6ed1886dddb2e29d1650026041d19e49fc373e332fa60uvicorn-0.25.0.tar.gz"
-  sha256 "6dddbad1d7ee0f5140aba5ec138ddc9612c5109399903828b4874c9937f009c2"
+  url "https:files.pythonhosted.orgpackages22fbf85e32b605ead5a186d4279b3981ef498fa914423289000332eab4fe0385uvicorn-0.26.0.tar.gz"
+  sha256 "48bfd350fce3c5c57af5fb4995fded8fb50da3b4feb543eb18ad7e0d54589602"
   license "BSD-3-Clause"
   head "https:github.comencodeuvicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f904687dadb36bf567080123d757d5ef1892bdbf94ed17ddbeb0e703a7ea19d1"
-    sha256 cellar: :any,                 arm64_ventura:  "6ad2258a0a52a80655ce24c855d92d2158d76161c0e81cadb8662e9090a8b33f"
-    sha256 cellar: :any,                 arm64_monterey: "264647542cbda9a5e7308bfab27c91a949241c6f47e2cb6fcc6c21eed79c9972"
-    sha256 cellar: :any,                 sonoma:         "5724331c17d3bd340aa89ac1a76c7178c28471f6fdc350186a99f7745d4e15cb"
-    sha256 cellar: :any,                 ventura:        "9bbeab6c8fc6a2388a65f740d32ffd07cc82f1c8c68985f813acd85ddfccf589"
-    sha256 cellar: :any,                 monterey:       "c2618f958f4d8eb5e738674c5598cbaddb87a353c1f8dae774f354b259b613df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6a4f66a55709d8907e4f41fa0f1d7a8d92270c490baa96f4fd0abc8bc8b6070"
+    sha256 cellar: :any,                 arm64_sonoma:   "758b8a77111d94f0efb234dd7403f001715ab37c54944c680a0aebccb47dbbc3"
+    sha256 cellar: :any,                 arm64_ventura:  "f8c71fd51887f88eaea88a558942109391487e83ccbc684c86ca1fe811a84ccd"
+    sha256 cellar: :any,                 arm64_monterey: "f8b44c3a2f89c8a2ac410d13fd07add9e6e74b6997748779c4f369d6f8371207"
+    sha256 cellar: :any,                 sonoma:         "d2b2e341e334ebadeec7635607bbc61fa12e7904613ccbfb1defd705a1db0bd9"
+    sha256 cellar: :any,                 ventura:        "c64333a2df64c132b0918e56cc1110ba2613b84ef754267a7ea581536b1b9cfd"
+    sha256 cellar: :any,                 monterey:       "908caca0ee98df9322fc4e51cdad5ce6ee5db66bf6bd836b9551782a6af6483f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87d005d801423ac1744791c1bafefaa0860db92411c5852ac27a9dd6e7a83531"
   end
 
   depends_on "rust" => :build

@@ -64,7 +64,7 @@ class Openclonk < Formula
     end
   end
 
-  deprecate! date: "2023-01-05", because: "does not build since 2018"
+  disable! date: "2024-01-16", because: "does not build since 2018"
 
   depends_on "cmake" => :build
   depends_on "freealut"

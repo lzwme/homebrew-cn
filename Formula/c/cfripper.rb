@@ -3,18 +3,18 @@ class Cfripper < Formula
 
   desc "Library and CLI tool to analyse CloudFormation templates for security issues"
   homepage "https://cfripper.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/46/09/854392044c304f5cf3fae08b809e10f44e50068f241fcbeb594aa990e2b7/cfripper-1.15.2.tar.gz"
-  sha256 "948f5e2d7f69a620c4472471cb2b43d3aff19d38bae0f13cf532efa08b47a498"
+  url "https://files.pythonhosted.org/packages/8c/3e/5370821e6551771cb974950c22feb329fcb09205151f9f12822d2f9e696e/cfripper-1.15.3.tar.gz"
+  sha256 "cbf0c0d42dfbb91eba292a79543ddc9ded7cf65f2beadcc845737b31304fb7c3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1531e3bdf0ae734ba4a35a5bd47c5a30d1e82134812e9f2b0518d926e4dfccd1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "622c27c54ddb278cf7ed969468c2cd8eccd7f7cfdec28b7814944fad368c6362"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "00ba5c731f245db8406f081aa8a40036d5fb712997c89d5b5519434938a3c1a7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10a993f6fd6158e8ea6b3f36c943b7a42164ffdc1440f712d9be7d0a6797bb3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "59efb7a2e9e759a9f39780b01d90d048e4c44fb67b6834a7de8d2a154e422c9a"
-    sha256 cellar: :any_skip_relocation, monterey:       "7021c22a2d604d3bd31256d5f9716ff956dfc63cecd246e311d2d223084ba87e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c8eb9bd87d85db0b9a88b5eae19f3384ff19afd7fd436527292f20374c67665"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03a964032e42370cd1929d66cf14490b2140cb68dc0560e995698988904b5ba7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "803f9f1c7ece274822ebaa909ecdade8b85f5b4d109d2951127009276684ddda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e11a62db16379fc07a4829284909b25a29c4511e38a4f466f44433361cd37172"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be0a0b0c49a3c5f5c86783ef39d2445eb5eb1aa6c38c9d2a2e7ddec540abee78"
+    sha256 cellar: :any_skip_relocation, ventura:        "d866f57658e71663cc162ee22e10620bfeb12424aac8e312c8d450afd4745d96"
+    sha256 cellar: :any_skip_relocation, monterey:       "54f8b4f2b0001aa9e6d6c7b893a7d832d8ef47b13112f257fbee24085da4f58c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44919b7bf64cf5f4eed40e953c930d83b13fab090d946a5d51e77b2cb6120bf3"
   end
 
   depends_on "python-click"
@@ -24,13 +24,13 @@ class Cfripper < Formula
   depends_on "six"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/99/1e/0dfade9ee87863d2cf363d086fab6885491d3111a45ca976d2e1f785bc5b/boto3-1.33.7.tar.gz"
-    sha256 "eed0f7df91066b6ac63a53d16459ac082458d57061bedf766135d9e1c2b75a6b"
+    url "https://files.pythonhosted.org/packages/4f/2e/ef7530d7e5d0576ca252fbdd99001ebbd94f3d7ffb8b4a496915d07fdddf/boto3-1.34.19.tar.gz"
+    sha256 "95d2c2bde86a0934d4c461020c50fc1344b444f167654e215f1de549bc77fc0f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/77/82/ccd0b8fae17f05d9db896981bc084f2e913b672e99f16aea631c8ff9d008/botocore-1.33.7.tar.gz"
-    sha256 "b2299bc13bb8c0928edc98bf4594deb14cba2357536120f63772027a16ce7374"
+    url "https://files.pythonhosted.org/packages/bc/d8/a31a6f55f2e438e6e3f19fc302a540ecf2c545684be5b7f5b875aca54892/botocore-1.34.19.tar.gz"
+    sha256 "64352b2f05de5c6ab025c1d5232880c22775356dcc5a53d798a6f65db847e826"
   end
 
   resource "cfn-flip" do
@@ -49,8 +49,8 @@ class Cfripper < Formula
   end
 
   resource "pycfmodel" do
-    url "https://files.pythonhosted.org/packages/ef/b0/0844b357c0d47ed9e83748107cd1dbccfc49d52396be48f52132893c30d7/pycfmodel-0.21.1.tar.gz"
-    sha256 "4429f8d623c35324dd1b04dfbc36607ade1743f020a02fac6d387096ef2c828f"
+    url "https://files.pythonhosted.org/packages/70/ad/ed2cada00e9403fd4eb5ffd199071caa825712cf609798ca9088b61d52c7/pycfmodel-0.21.2.tar.gz"
+    sha256 "bb2ac910fde368cc470133fa3568a6aad55a87ac93ec9da9efa2cd4cff27262e"
   end
 
   resource "pydantic" do
@@ -69,8 +69,8 @@ class Cfripper < Formula
   end
 
   resource "s3transfer" do
-    url "https://files.pythonhosted.org/packages/5f/cc/7e3b8305e22d7dcb383d4e1a30126cfac3d54aea2bbd2dfd147e2eff4988/s3transfer-0.8.2.tar.gz"
-    sha256 "368ac6876a9e9ed91f6bc86581e319be08188dc60d50e0d56308ed5765446283"
+    url "https://files.pythonhosted.org/packages/a0/b5/4c570b08cb85fdcc65037b5229e00412583bb38d974efecb7ec3495f40ba/s3transfer-0.10.0.tar.gz"
+    sha256 "d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b"
   end
 
   resource "urllib3" do

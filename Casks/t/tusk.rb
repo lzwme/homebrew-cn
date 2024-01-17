@@ -2,11 +2,13 @@ cask "tusk" do
   version "0.23.0"
   sha256 "859bf10e072e2446adeac86e4699e64b8f869f7b6738d07f5f54a1e112245238"
 
-  url "https:github.comklaussinanituskreleasesdownloadv#{version}Tusk-#{version}.dmg",
-      verified: "github.comklaussinanitusk"
+  url "https:github.comklaussinanituskreleasesdownloadv#{version}Tusk-#{version}.dmg"
   name "Tusk"
   desc "Refined Evernote desktop app"
-  homepage "https:klaussinani.github.iotusk"
+  homepage "https:github.comklaudiosinanitusk"
+
+  # https:github.comklaudiosinanituskissues381
+  deprecate! date: "2023-01-15", because: :unmaintained
 
   app "Tusk.app"
 

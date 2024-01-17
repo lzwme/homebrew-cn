@@ -3,20 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackagesc7ebbd99f3ce5d9cf720d267d6f7219e12042ab95ed89abd093d97073a3f190estreamlink-6.5.0.tar.gz"
-  sha256 "8f4d61593bcce10f8d5e84ca956aac4fa639c0a349e7df379834373a883966ed"
+  url "https:files.pythonhosted.orgpackages6a9dc2813174d64802b04888cb9ff844c9922a3f1c4c729202a6d1e6b50185efstreamlink-6.5.1.tar.gz"
+  sha256 "207fb4ce99c35bfeb1b8f7c76b96cfcb4076ad6881c61eaea553c2ec13d97c57"
   license "BSD-2-Clause"
-  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1607acc2add613a99b2b6d4cd024b6e7963944f7e3cc00b8877b9856bb2863e5"
-    sha256 cellar: :any,                 arm64_ventura:  "15d9e2264a04e5fabd9708a39b5bac23c6dc93d32a03d7e2d68e37ead4f64208"
-    sha256 cellar: :any,                 arm64_monterey: "5a2e0790ab70defe50ec0e7ff4d0a29aa4904a5f8b9b8d8e3e004ed70e434d5c"
-    sha256 cellar: :any,                 sonoma:         "8a89f92be6ef02ffcaeb99d2d122c3b9f3ff277354f15cc50605cbf560e7bb1a"
-    sha256 cellar: :any,                 ventura:        "ce57270108a76117c6f8c54af6a2aed02dcea2dae0fa2324ff5397617a1fabe2"
-    sha256 cellar: :any,                 monterey:       "61c5b2843c94fcf0de633d7799eded70ca1cc62d0f99826d220a5b4631c5b493"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b43d926980ea619a9d46202e9296c0c15b256e46108dc4ede05d1725ed21a8a8"
+    sha256 cellar: :any,                 arm64_sonoma:   "76efc93fdb38c35a0abae8c66bd1299c370933a567af30ca60d5dfa35db61bd1"
+    sha256 cellar: :any,                 arm64_ventura:  "6ef83f2424ae2ce2ef88b6c85fc4373d3ab0e1ec301a8fb8445cd8cc6df56d29"
+    sha256 cellar: :any,                 arm64_monterey: "b97e6136f9f71d4bf1372f6266edd777eacae6c8b54470de5281ec186139f7a7"
+    sha256 cellar: :any,                 sonoma:         "8d243973654206ef7e1e6ae183a454f33bc462a7ca189755c9966d9c7c164240"
+    sha256 cellar: :any,                 ventura:        "1f2ed2d97ac9844871ff1cb1b6022cce06b57d1ac0953d4e6bc8c92436b85675"
+    sha256 cellar: :any,                 monterey:       "ceb9a3e113cdbed7153f1252904cc4b57945b24d8de32ebee1f69c7cecc0ac42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b006e1c6e2d4394d71faaaa7e97e50f8ca266fcb33f5a47d8dc347273ddd727e"
   end
 
   depends_on "libxml2" # https:github.comHomebrewhomebrew-coreissues98468
@@ -58,8 +57,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages83181d0c7cf3df839cc2827a0deee2e4b42f4048bc4c1c15612271e2db3928e5lxml-5.0.1.tar.gz"
-    sha256 "4432a1d89a9b340bc6bd1201aef3ba03112f151d3f340d9218247dc0c85028ab"
+    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
+    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
   end
 
   resource "outcome" do
@@ -73,8 +72,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackagesb13842a8855ff1bf568c61ca6557e2203f318fb7afeadaf2eb8ecfdbde107151pycryptodome-3.19.1.tar.gz"
-    sha256 "8ae0dd1bcfada451c35f9e29a3e5db385caabc190f98e4a80ad02a61098fb776"
+    url "https:files.pythonhosted.orgpackagesb9ed19223a0a0186b8a91ebbdd2852865839237a21c74f1fbc4b8d5b62965239pycryptodome-3.20.0.tar.gz"
+    sha256 "09609209ed7de61c2b560cc5c8c4fbf892f8b15b1faf7e4cbffac97db1fffda7"
   end
 
   resource "pysocks" do
@@ -98,8 +97,8 @@ class Streamlink < Formula
   end
 
   resource "trio" do
-    url "https:files.pythonhosted.orgpackagesc79a39e0a59d762f4c72cec458f263ee2265e29f883421062f64fd8e01f69013trio-0.23.2.tar.gz"
-    sha256 "da1d35b9a2b17eb32cae2e763b16551f9aa6703634735024e32f325c9285069e"
+    url "https:files.pythonhosted.orgpackages8af307c152213222c615fe2391b8e1fea0f5af83599219050a549c20fcbd9ba2trio-0.24.0.tar.gz"
+    sha256 "ffa09a74a6bf81b84f8613909fb0beaee84757450183a7a2e0b47b455c0cac5d"
   end
 
   resource "trio-websocket" do

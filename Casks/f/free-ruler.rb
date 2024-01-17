@@ -6,7 +6,7 @@ cask "free-ruler" do
       verified: "github.compascalppFreeRuler"
   name "Free Ruler"
   desc "Horizontal and vertical rulers"
-  homepage "https:www.pascal.comsoftwarefreeruler"
+  homepage "https:www.pascal.comfreeruler"
 
   app "Free Ruler.app"
 

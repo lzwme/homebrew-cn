@@ -3,19 +3,18 @@ class Copier < Formula
 
   desc "Utility for rendering projects templates"
   homepage "https:copier.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages626f399c09b6d1dcb30fc341402d81cc1eaa4f7aaa3ee65b5f58e68aff4635e7copier-9.1.0.tar.gz"
-  sha256 "0810134f0bf3ce72b402480d1420ab7e773c1c9ce719a923e1584cb69f97dacb"
+  url "https:files.pythonhosted.orgpackages05657091b60bcf67f9dc28883301b380682c7942d6a037e0308865d40c26d458copier-9.1.1.tar.gz"
+  sha256 "1127771e33d00453bdc716ab314b06c11bd0925815ab1e1010c03278d7934ebd"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cac8aa874e103a0cbfcfa3fb05e037dd2b92b53cf7ccb6ceffaad4c85896bca2"
-    sha256 cellar: :any,                 arm64_ventura:  "6294a32fcc7fa67850dae82c5e1413d2bfe19ad90584a964bdde02174bac5ee7"
-    sha256 cellar: :any,                 arm64_monterey: "1fcb96dddb23f1de2fcf6319fea2f8cb767e9705697454bca50e35f2856d93d4"
-    sha256 cellar: :any,                 sonoma:         "04837c082ab40dd3d475e6f53b2cf1f3436a93039cee219f8a4cab2dbccaecd1"
-    sha256 cellar: :any,                 ventura:        "08e113ccbfbd3e8403f74b30b0b330c611c6a5ab68479fe19f45162aca8991c2"
-    sha256 cellar: :any,                 monterey:       "409193b22c2cad7b2b2ab3995f059392617d59dbae7f338cf878e29ad7299941"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89f844425cdf7a7955221304346486f8679cd402991b9539520f409139e13e33"
+    sha256 cellar: :any,                 arm64_sonoma:   "8b80d5daef67247121d549a5d805ff28fe86ad05cec508b547fc4461365cfcf6"
+    sha256 cellar: :any,                 arm64_ventura:  "47f60f34e70e7e1b1088e425939022013118008c5db782bb110ba2ea1c863e09"
+    sha256 cellar: :any,                 arm64_monterey: "3a083cb9eb816eb2f0ccba25718c5316fe774a0caab6da89a3c486d5ee091222"
+    sha256 cellar: :any,                 sonoma:         "a3a17de828b81ba0584d6301cb6cdf24884ba7ce4384f0116e288f8213a50ff5"
+    sha256 cellar: :any,                 ventura:        "6678c474961f6540f225c1d5241f03eec7c167dc096a34a7f4d8590cd4425536"
+    sha256 cellar: :any,                 monterey:       "8c2f8589d6550f95b917f3df59fc0b17bccd3537fdbe67fe859c3dee7dd42bde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21b1544193934296458ebc7e25fb4a9eb51b3e24c6ef2d93a79fab22ccb25694"
   end
 
   depends_on "rust" => :build
