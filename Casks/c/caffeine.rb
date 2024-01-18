@@ -10,10 +10,16 @@ cask "caffeine" do
 
   app "Caffeine.app"
 
+  uninstall quit: "com.intelliscapesolutions.caffeine"
+
   zap trash: [
     "~LibraryApplication Supportcom.intelliscapesolutions.caffeine",
     "~LibraryPreferencescom.intelliscapesolutions.caffeine.plist",
     "~LibraryCachescom.intelliscapesolutions.caffeine",
     "~LibraryHTTPStoragescom.intelliscapesolutions.caffeine.binarycookies",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

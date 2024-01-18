@@ -2,6 +2,7 @@ class Nauty < Formula
   desc "Automorphism groups of graphs and digraphs"
   homepage "https://pallini.di.uniroma1.it/"
   url "https://pallini.di.uniroma1.it/nauty2_8_8.tar.gz"
+  mirror "https://users.cecs.anu.edu.au/~bdm/nauty/nauty2_8_8.tar.gz"
   sha256 "159d2156810a6bb240410cd61eb641add85088d9f15c888cdaa37b8681f929ce"
   license "Apache-2.0"
   version_scheme 1

@@ -1,6 +1,6 @@
 class Jnethack < Formula
   desc "Japanese localization of NetHack"
-  homepage "https:jnethack.osdn.jp"
+  homepage "https:github.comjnethackjnethack-release"
   # We use a git checkout to avoid patching the upstream NetHack tarball.
   url "https:github.comjnethackjnethack-release.git",
       tag:      "v3.6.7-0.1",

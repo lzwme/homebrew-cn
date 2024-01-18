@@ -1,8 +1,8 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.23.7-source.tar.gz"
-  sha256 "35a54933f400e89667a089a425f1c65cd69d462394fed9c0679e7c52efbaa568"
+  url "https://mupdf.com/downloads/archive/mupdf-1.23.9-source.tar.gz"
+  sha256 "d4a5d66801d85f97d76da978b155f66a5659d1131070c0400f076883f604e297"
   license "AGPL-3.0-or-later"
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "07f155b5a21bef94ce9fa968e8015bfecf73164b780e81c0729df70c984fc42c"
-    sha256 cellar: :any,                 arm64_ventura:  "f2e051ec60ca6a50da6f1486cf8fb00f661bdbcd667b8eef1608e5a59d36fcb7"
-    sha256 cellar: :any,                 arm64_monterey: "923a472e15f2b623cbec750adadca1d6b162ee282462405ddf0a4aa6da190c18"
-    sha256 cellar: :any,                 sonoma:         "4f712eb93ab173de3c6c5f13a09efa84c5c0681ee2533dd9dad68fa4e477d78d"
-    sha256 cellar: :any,                 ventura:        "ce8e7c7349998d5634e61447eff9c6aa84eb4c3ee5617a50a6dea7fe6d6fd6f4"
-    sha256 cellar: :any,                 monterey:       "8da2e2c0a0a2905d89d54ba270e22ce08dd7e38c810af7c8b5bf58c275b5bfde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8995084b11bae6a361a97d0a400f3a7653038a9b52be04c116e1f0e9c2d56dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "130aa77682668b879e43a80fd0f0fec853196670df8f846b76f1d2550fbb54e7"
+    sha256 cellar: :any,                 arm64_ventura:  "5809ac73816ad25243bfcf91ba93f7e73cf4449c98bfa3cc0a2dd0d2c9eb55ca"
+    sha256 cellar: :any,                 arm64_monterey: "ccde35d78ac32a4b3cc9ba9f431f58a8fb4d37c9b1a2eeaaaa6a926d8ad009b2"
+    sha256 cellar: :any,                 sonoma:         "70b619b46eda11a7a8970a5031df0c59aa5f9c574eda26db90fd954984e61f69"
+    sha256 cellar: :any,                 ventura:        "da3dd1d09e09f85c9413963346fd9eed9f06df933db586dddd7d9aba3f40620b"
+    sha256 cellar: :any,                 monterey:       "bd32f87995d357808f63ee3efebac4a2292f21eab82ad758aa890501d02e8847"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d14a779c77b1929dd050322d812da41314741074cb1e5f7a8242ee1408e0f58"
   end
 
   depends_on "pkg-config" => :build

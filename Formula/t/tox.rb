@@ -3,18 +3,18 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/18/fc/01680767b408a51031fa9d9f19a87baefab172f60daf9597aea1d13d7fef/tox-4.12.0.tar.gz"
-  sha256 "76adc53a3baff7bde80d6ad7f63235735cfc5bc42e8cb6fccfbf62cb5ffd4d92"
+  url "https://files.pythonhosted.org/packages/0e/7c/6b4efc5a23ae3be645017edba2c9e83a65244f9ecf8775c99ed5b4d82acd/tox-4.12.1.tar.gz"
+  sha256 "61aafbeff1bd8a5af84e54ef6e8402f53c6a6066d0782336171ddfbf5362122e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6435ea7de1c9a9d8265fdfe0886987113429baedc47122708a4293357375d99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ca83e0635f4fb20322cf4484f741a48c8ed90077341fb3fc969cbc65c7b3fd0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c25f76c5f9684ea83d4e063200ee987700878173369d2f80d5b9b9b5494a2740"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bef67c6ddf3434e1b67fe15743c685f11ecbe937a272dbf0348e616a54f635ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "59924678b88a180fd039bc6ba3baa3901cfcaecf1f807539dce6600638e0f661"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ee9af770263d3729d1c181e45fc08c658d62de676710c3b77dbae1a54b39e48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06afba920a8e85daad3f24fe3defa1679992571b9a6065ba111f035ee818af60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42d87783e3146d626484cb8874e0961d39b8c985bf5261fbf644ab3d7758bc39"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "971df1973c8afa2adf0d13a7a34abb4326274428b83642621840bc0334ba55d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2c02ad915e3d3f0c8d8c1ed5dc1f63a8d4a8857aea36ff75a5f15c8d85bc74e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8825e68cda57ce4fffc6fe152d006e6534920f2b3cd0cf67d4917634ecee2469"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac441cb00b0888a41c9eabf7de36aeb740f96c2576b44292f7e717d30b3e9e87"
+    sha256 cellar: :any_skip_relocation, monterey:       "242ef306ce1c3118712222998a0dae0cdfc7f6ef9ee26e04d40bb847e2bbb5e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73c9981278b16b90adecd39f2f08e6448700171fd538bc94d9e43beb486e3826"
   end
 
   depends_on "python-packaging"

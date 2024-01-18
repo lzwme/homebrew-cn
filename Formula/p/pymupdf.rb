@@ -1,19 +1,18 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
-  homepage "https:github.compymupdfPyMuPDF"
-  url "https:files.pythonhosted.orgpackages3a75743a7b990a56eaf4a870f0c6eb7ccd80a9ece040d56c89b851caba49cce0PyMuPDF-1.23.6.tar.gz"
-  sha256 "618b8e884190ac1cca9df1c637f87669d2d532d421d4ee7e4763c848dc4f3a1e"
+  homepage "https:pymupdf.readthedocs.ioenlatest"
+  url "https:files.pythonhosted.orgpackages6fb12ab072c90cb0778728e7b93480b89380fcc8777888db8cff500bd4593985PyMuPDF-1.23.15.tar.gz"
+  sha256 "54fe0c0e6879922875a8d43ec8f66cc346cbc7ee71fc47d34fe101653cb0661d"
   license "AGPL-3.0-only"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f3ba9c8d34158989ac87dd4c91b20e1009f5d09b51fa8db8a684752fbd91c417"
-    sha256 cellar: :any,                 arm64_ventura:  "5d0f82da8e4a5afa6cae4aad60fd860c1a95a73edab3e472cedebe23d831dc40"
-    sha256 cellar: :any,                 arm64_monterey: "2e8e1cb6b6519dcbde640b79dd382116d721c7367f4d15cdf8e5f709815e6bcc"
-    sha256 cellar: :any,                 sonoma:         "5453aa9f43ac5b7ec19f77de560b81d0d51fcd345c236a4a8c2e4ef519eb60cd"
-    sha256 cellar: :any,                 ventura:        "b1e6b4eaf73cfdd96546efe321c4053d396e63eaf9739f84cb37a56b17e76a62"
-    sha256 cellar: :any,                 monterey:       "44e22e2d935e3e01b4610d1c4ba51c76b0624353eae8adac282765b1b6b376c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "400a60a386dd5cc3b90898a6e48745b6ea57746dbbcdf838101a12170dd9c2d2"
+    sha256 cellar: :any,                 arm64_sonoma:   "64111787b4ee2e096040351a4e130e9cd5db9cfb0187565691cac41c8c91ee57"
+    sha256 cellar: :any,                 arm64_ventura:  "aec521ee1faee230d2842977bd2e6169022396707c4253646de73b17d3a6c68a"
+    sha256 cellar: :any,                 arm64_monterey: "671ad4ea29884356d313175b95d38f8771eacaf6390d22e19cee7d39b0f66306"
+    sha256 cellar: :any,                 sonoma:         "c0f8980bd5a8b1746f088173f569d435999d005c42b88c1700173dd68608d3ee"
+    sha256 cellar: :any,                 ventura:        "b42d9ddc0e8fb0e9c01184cef0dd9dbf070223df40ddfa0c0048023e3f7fcac8"
+    sha256 cellar: :any,                 monterey:       "a62d1228e12fdebb03b8566b92e42053dbab53d4de5db19d54f6dd84525a7d60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "893fafe5fb40da561e86e6d86444de2030201dc190ab2024ff0111d7dedf48ec"
   end
 
   depends_on "freetype" => :build
@@ -53,7 +52,8 @@ class Pymupdf < Formula
       import sys
       from pathlib import Path
 
-      import fitz
+      # per 1.23.9 release, `fitz` module got renamed to `fitz_old`
+      import fitz_old as fitz
 
       in_pdf = sys.argv[1]
       out_png = sys.argv[2]

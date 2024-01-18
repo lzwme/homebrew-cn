@@ -2,8 +2,8 @@ class Devspace < Formula
   desc "CLI helps developdeploydebug apps with Docker and k8s"
   homepage "https:devspace.sh"
   url "https:github.comloft-shdevspace.git",
-      tag:      "v6.3.8",
-      revision: "8976e57bc4dea237ce3c83637e757b33661ed4eb"
+      tag:      "v6.3.9",
+      revision: "b21c769305d619de6eca42ec58e08c2e757cdc78"
   license "Apache-2.0"
   head "https:github.comloft-shdevspace.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Devspace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e8ddc14e6941cc73ec07e519b05905e7a76e63426225d4d6a388c17d7bda9449"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41e47c2b01e2205d3e5c45152d6d132b7ab21b27e7c2e15ff824b7516b786fe7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1a2bc9e27c405a97d4cef974db9b75a9148767f7e47e9f6d70438c3bcf64aa0c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d8cf772b335e91bc8dd29ca76161c651d7f94a5cd97569a4365adf971f7cd371"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ca79cf5246991abfa33df96a086871e1e95f9f7cdfaaa0be7639179ed3083fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "700241631f679bb572b7b0d356e62015ce6d93e407b186496c33fd38bf0cab06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65655963bab5cfd1d35f00a36ba254103ca3d9926e6ea7c1f6e396f2b44dcf3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34b9edf90778dcbf5333c5a204973d31a46f86da91ea0c615c7f7209b439aa45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c6ff1816037028d07a22d839ff350ca498acb31667817e1bb3499f4de09b149"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4973b1f8226b5912e4416e55150133941b7b0d4bbd4c2f679a9972c36e5b0dd1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7704a6ff747aafcd9ef752d51e09815685d81e3de45b4fa5715483c99709e343"
+    sha256 cellar: :any_skip_relocation, ventura:        "87a96e1b7b9392d7ef9f3bfb8e2c1cab2e8d108d615b455197a38389a8aaa7ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "42b1e86c2e079d89f9c6a3c23048a469c4b2fe1eb15e8483af6439663ba43e4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fd32935455e9e2c815a27fc731a3b69f1c9840a954784cbb1e285c660d7e2d5"
   end
 
   depends_on "go" => :build

@@ -1,12 +1,12 @@
 class Numactl < Formula
   desc "NUMA support for Linux"
   homepage "https:github.comnumactlnumactl"
-  url "https:github.comnumactlnumactlreleasesdownloadv2.0.16numactl-2.0.16.tar.gz"
-  sha256 "1b242f893af977a1d31af6ce9d6b8dafdd2d8ec3dc9207f7c2dc0d3446e7c7c8"
+  url "https:github.comnumactlnumactlreleasesdownloadv2.0.17numactl-2.0.17.tar.gz"
+  sha256 "8824ddd529a6f935dc2670bba6f52fb0f605f9f48e1176f69d6b7e48aad8cb27"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", :public_domain, :cannot_represent]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "809a693e16e891c8ee072c0e403769daedbaf3cbaa52291cc0bb0c008fc8065b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d591e21a9468f545f4b59b68b6e53d5d1a2379ebd3dd38afd6c5d519070edce"
   end
 
   depends_on :linux

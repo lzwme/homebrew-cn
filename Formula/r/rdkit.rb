@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https:rdkit.org"
-  url "https:github.comrdkitrdkitarchiverefstagsRelease_2023_09_2.tar.gz"
-  sha256 "d6ed9e0cdf231550fa850070be7ea53154d46ec6cf32a9b5fd5fec2d34a60c6b"
+  url "https:github.comrdkitrdkitarchiverefstagsRelease_2023_09_4.tar.gz"
+  sha256 "abacae431bbc5882b87cc8629b7ddc02757204e854aa45b6157ec2bf45d623ef"
   license "BSD-3-Clause"
   head "https:github.comrdkitrdkit.git", branch: "master"
 
@@ -15,17 +15,17 @@ class Rdkit < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "ac57e6dac73a6b151866e63447949734964305bdcb3400356c8878a3773e9a34"
-    sha256 cellar: :any,                 arm64_ventura:  "cdd596a9b439974545125a07450c4c37a59bca11821598329b0c44c869c12e10"
-    sha256 cellar: :any,                 arm64_monterey: "b62d5da3527e291cb7aaf402c64897afaaf7e1580f6704abf9ff2d04ca7c0109"
-    sha256 cellar: :any,                 sonoma:         "716926ec85af64ed6e2deec047ffcf1d55d0fc0bd6c2c4d3c57b0d5cfd92b9f7"
-    sha256 cellar: :any,                 ventura:        "6b47bea3c2f9b66cc2580267a34f2e906dc775eeb460314a2be15e7b9bdd23ac"
-    sha256 cellar: :any,                 monterey:       "d9dbce7c5af17de953424cdcdffac4271eb3128bd86b015382405a08c3d84f87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5cbec69e5921c174dae2ad362536f1f76f6abdaebf499d054f469bac093a688"
+    sha256 cellar: :any,                 arm64_sonoma:   "535bb6868e735a0147e4f3a77acd3802daad3a7bc8d0e86a634e5b371ded1c69"
+    sha256 cellar: :any,                 arm64_ventura:  "15f070d4838f682844ee462dad9feae5768264f767292d2ee5e1c976597ac053"
+    sha256 cellar: :any,                 arm64_monterey: "2d8d7e4adfad6636e82f90fc8b94eb5b46b14eb6b6856d937ee3afdc02daa699"
+    sha256 cellar: :any,                 sonoma:         "2f4365b7693d080e19fce99a06ce0a29ec1c57b82ae2d6580ce2c333d5c6a4b2"
+    sha256 cellar: :any,                 ventura:        "36fbed556bc6c3447793399a5e1451433b70a2f1549e90dcdcdfc4d01bddfd55"
+    sha256 cellar: :any,                 monterey:       "9a8afdad3517684776d7d5d150fbe640500a26d6230e876480f748a206d01d3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb507f66b1affa0bb07eb995683013d00961f62c8da7fd29c12fcf7ec1baa58e"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "swig" => :build
   depends_on "boost"
   depends_on "boost-python3"
@@ -92,7 +92,7 @@ class Rdkit < Formula
       -DPYTHON_INCLUDE_DIR=#{py3include}
       -DPYTHON_EXECUTABLE=#{python_executable}
       -DPYTHON_NUMPY_INCLUDE_PATH=#{numpy_include}
-      -DPostgreSQL_CONFIG=#{postgresql.opt_libexec}binpg_config
+      -DPostgreSQL_CONFIG=#{postgresql.bin}pg_config
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

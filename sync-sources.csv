@@ -2060,6 +2060,7 @@ Homebrew-homebrew-core/Formula/g/git-fresh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-ftp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-game.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-gerrit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-grab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-gui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-hooks-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-hound.rb, Homebrew/homebrew-core, 1
@@ -5430,6 +5431,7 @@ Homebrew-homebrew-core/Formula/r/rst-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rswift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsync-time-backup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsync.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rsyncy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsyslog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rtags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtaudio.rb, Homebrew/homebrew-core, 1
@@ -5593,6 +5595,7 @@ Homebrew-homebrew-core/Formula/s/selenium-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semtag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sendemail.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
@@ -6156,6 +6159,7 @@ Homebrew-homebrew-core/Formula/t/terragrunt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrahelp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrahub.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terramate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/terrapin-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terrascan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tesseract.rb, Homebrew/homebrew-core, 1
@@ -6269,6 +6273,7 @@ Homebrew-homebrew-core/Formula/t/tomee-plus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomee-webprofile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/toml-test.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toml11.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tomlplusplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/topgrade.rb, Homebrew/homebrew-core, 1
@@ -6550,7 +6555,7 @@ Homebrew-homebrew-core/Formula/v/virustotal-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/visionmedia-watch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/visitors.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/visp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/visp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vite.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vitess.rb, Homebrew/homebrew-core, 1

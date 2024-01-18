@@ -1,18 +1,18 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
   homepage "https:github.comtarantooltt"
-  url "https:github.comtarantoolttreleasesdownloadv2.1.0tt-2.1.0-complete.tar.gz"
-  sha256 "ede0cdcb19cd17b1094530b4b6d639aa2898621ec470fc15e7eb771c7547f5b2"
+  url "https:github.comtarantoolttreleasesdownloadv2.1.1tt-2.1.1-complete.tar.gz"
+  sha256 "42bcb848c66a1cc7f523a6531de84955ff90035beb8fee172d6ba4149aed665c"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "af38470566d13f9c480809fa3a4d30be290e11326ecfeebf77df1e31d9bbfa79"
-    sha256 cellar: :any,                 arm64_ventura:  "52c866b6c1764cd5d39655ca62704ce2e55a951159830f9d193976c96bc9d751"
-    sha256 cellar: :any,                 arm64_monterey: "46e4e57ad43deac9b2539386cde94e249d18f0d4f83b1a68b27889a3cdd5cf71"
-    sha256                               sonoma:         "5f887f3ab2e80ab1a41e163a875fa04e2dbf327b2ac505e9e62f63b2fdb518ee"
-    sha256                               ventura:        "0378bcf994de806589bf05598e410b08121759aacdb8ac8ea73b39d87ae73f2d"
-    sha256                               monterey:       "fd9eadd141199f13ca15e7b6a0e893755e9fd12f154faaf84391928ee35e68c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd87b2b2c2f735ed631740ef5c4b06dff22591e7d469ee764d00c957b202a5e2"
+    sha256 cellar: :any,                 arm64_sonoma:   "1820472ea0bac7f3b79306a79bbaeba23e2b65bdba98de02f5e5e24be52875b1"
+    sha256 cellar: :any,                 arm64_ventura:  "ad9b1b34d21ebad6b833c027ceb0bdf727afb3dea39326d9ef7fd1badf4a1a94"
+    sha256 cellar: :any,                 arm64_monterey: "565dadac3983f6c64e9f30d1b724cf64713f487c6de7413dabad57a8ba4d081d"
+    sha256                               sonoma:         "3832dad2fbc93d031b48c3c91686f9f47366cfb9023439c4a0f8bdcbe9f9e935"
+    sha256                               ventura:        "425e2cccb391aa1c80aa4ee56254a00f91766a90c6abb02d6f4e7c18a29a15be"
+    sha256                               monterey:       "01c429d6720df6e67e6deb87090269e2e2c70b7b62f7b85583f2d38d3b60df0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65a9ab7d5fb987f2425fcb931a4676c8b82f1d4a277d08bb3363fcee029bba12"
   end
 
   depends_on "go" => :build
