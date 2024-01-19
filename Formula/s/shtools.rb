@@ -1,19 +1,19 @@
 class Shtools < Formula
   desc "Spherical Harmonic Tools"
   homepage "https:shtools.github.ioSHTOOLS"
-  url "https:github.comSHTOOLSSHTOOLSarchiverefstagsv4.11.7.tar.gz"
-  sha256 "855348aab0f807414187ac29c79faf6333ff3422f4c8912f1962d83538329251"
+  url "https:github.comSHTOOLSSHTOOLSarchiverefstagsv4.11.10.tar.gz"
+  sha256 "986574486df61fba749ad1b55f4f30a3032989ae096e44f1f63deb850ca005f3"
   license "BSD-3-Clause"
   head "https:github.comSHTOOLSSHTOOLS.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9e8d031b5b4bc3918be379362c621d4e1add6531f24375aeb9f4c5dcf117609e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfd69532f700ba0d38ef0fdbb959a423d93a39928927dbab548c07a89739422e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b9a0d13f99b713d9972d965b8b9be12220d56e87c4c6fe900dad413e4821f799"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b2be2e9677b103b7c96c2606c636fd6e845a244deffdf9da4014985df2d0077"
-    sha256 cellar: :any_skip_relocation, ventura:        "5485a693386f957bae597821c560daeb6a102224f56ffe3a64bf096eb21ac1cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "da0fd386ca278bd142ef150486739a24b9521fbfe8dbe10fce9642e902a1b16b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "400bb6e5b876242579bf49f2b1e1d372bd34fe080fe6e63760e5c83fc55d53b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "426a2b8a4ed608f76f9c5bc438c53a498549e04f3a1d8c8f3fa357d5787ea88b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8e47113dbb8208b7e348a11b27659490a3524f229c516a02adeb4e6011fc220"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad9126e93757f33ae5cad1612a9a09539ccaeb705e8fac9f6bceb18b10a47a48"
+    sha256 cellar: :any_skip_relocation, sonoma:         "17393fb9829fd2c8ce7517c41a8e94faa97cd572610abb8d0d1223bf416211b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "06659c9e2bd5b2c66c4a1675b392cd5403e04ccbf75b264b66f69697eb06d21c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8fe64cd2c915ebe42cdddd933f4a59d4e51e3c7caf953cda5bc0667d5487c04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13a462c4536a970655f5df3189c00e786e220f399c73762c723838ef7adf69d1"
   end
 
   depends_on "fftw"

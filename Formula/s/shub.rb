@@ -3,24 +3,25 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https:shub.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackagesc2e91c4e174e304fbb419b99589d7c567e0d3379cfc07757624b147f56023e5cshub-2.15.1.tar.gz"
-  sha256 "e336711cd3aa5d7ef1c010f9d2265b32f10627f7b09ff0367fb8f0d5e934dd45"
+  url "https:files.pythonhosted.orgpackages4b48df85a1fdbd6c3928f70c6384ab9bd9197abaad8dbe302e19fba58ce6b7ffshub-2.15.2.tar.gz"
+  sha256 "bf529b3d1777b6d9dbb65cd1afe55791af1a66bacdfa857079a9255462c4df1a"
   license "BSD-3-Clause"
   head "https:github.comscrapinghubshub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9253251ae079627baa086695097fd28bac1007932934bc825a2ef24b24f6df1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "538d6cde4e5bf33779843fa12fd56646741f5005825a105a2b75df0a5bd0ce38"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "217c9778e208879de55c595ce7ed5ea5da9c05799bb1987e8170216a07a325dc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0bca31215255406332464fa4d3a259232cae8488dac824b4549c5fe39c76d3fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "18f9ffab6ab87cdba223cd0582547f4c89bf048785910a272b86935dc281c23d"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2f4cc629a5d745721448c1a691898e0415934b590ff869aaa7ec5dd769996c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc3f0aecb42f0d88dc2ab772989ef5a7a353f00ab7bda9c5ea7bc591a209306f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d4431c039fe678954020edc8b842ad9def5df34360df2b5d59925493d8b2744"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a042b0aa2b2daaf72cf97b4d96f380a149d5814a2cb5b1d09f26c19da72a3591"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "96f721e92e85e7ef3b5738329bf2258183e835dadff69db489f8887f2654fea3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "090ef07d9507fd0095b89c39249ec17700c34113704d06c32e38fbe5556533e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "22b88704045ca54fcde3918f19c06bf20b0821ac5ba8d90c8e90021bb04f9972"
+    sha256 cellar: :any_skip_relocation, monterey:       "7882a7c2f6e1f6fd1bdb220f2803a380e505b39a8de349a1449411aafdec231c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03e6700f99b1daceeaa6a2eae10587325afca78bb494497e9b13f119eaeee1d6"
   end
 
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python@3.11"
+  depends_on "python-setuptools"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 

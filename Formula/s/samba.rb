@@ -25,8 +25,6 @@ class Samba < Formula
 
   depends_on "cmocka" => :build
   depends_on "pkg-config" => :build
-  # configure requires python3 binary to be present, even when --disable-python is set.
-  depends_on "python@3.11" => :build
   depends_on "gnutls"
   # icu4c can get linked if detected by pkg-config and there isn't a way to force disable
   # without disabling spotlight support. So we just enable the feature for all systems.
@@ -40,6 +38,7 @@ class Samba < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "perl" => :build
+  uses_from_macos "python" => :build # configure requires python3 binary
   uses_from_macos "libxcrypt"
   uses_from_macos "zlib"
 

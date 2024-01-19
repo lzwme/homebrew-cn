@@ -1,8 +1,8 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
   homepage "https:github.comKhronosGroupSPIRV-Tools"
-  url "https:github.comKhronosGroupSPIRV-Toolsarchiverefstagsvulkan-sdk-1.3.268.0.tar.gz"
-  sha256 "4c19fdcffb5fe8ef8dc93d7a65ae78b64edc7a5688893ee381c57f70be77deaf"
+  url "https:github.comKhronosGroupSPIRV-Toolsarchiverefstagsvulkan-sdk-1.3.275.0.tar.gz"
+  sha256 "f6fe32edc00b73400e9d5474d87d474478bf8bc0fb73d2767fecd847c05a4b1d"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comKhronosGroupSPIRV-Tools.git", branch: "main"
@@ -13,13 +13,13 @@ class SpirvTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2968e5bc5bd90543f1962463b6e46748f67fe7f49b3c4a2046ad78ec105cfa48"
-    sha256 cellar: :any,                 arm64_ventura:  "1651497b9ad79da1085b704a6d2e1c41bd6bceb0ed44ab3f9271792c895e5ea8"
-    sha256 cellar: :any,                 arm64_monterey: "c3c21545f79289d7eb8a3477df3a0c2cc21190d812b88ff1d8220f59e3d1d269"
-    sha256 cellar: :any,                 sonoma:         "d46e22452173ceae93d49872aad75d53e0781b78e75274ff978baf2e4913728c"
-    sha256 cellar: :any,                 ventura:        "5eaf67999825d921b97c8c4d6ca1dd787977f4447c8902c80586b85291807645"
-    sha256 cellar: :any,                 monterey:       "5dea94eeabad98f09a7d092287ca33ac748fedbcaaedc510f45b95977e525978"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74849d410bda0d51cf83e4f0432bb906a853f3b84d1f12d2d46bf6c411505fce"
+    sha256 cellar: :any,                 arm64_sonoma:   "27fcc54cc007463d12c3957b64f57a1c14c199189097861d4788428023380cbf"
+    sha256 cellar: :any,                 arm64_ventura:  "41c5c5415fda1d4aceec886e4c4ecd044049cb876d150813d8438dca9bc1861e"
+    sha256 cellar: :any,                 arm64_monterey: "cce9e877cdc84176a89ab020b4519c44a4000b61c4581e0e5e5ba23a63bc6e97"
+    sha256 cellar: :any,                 sonoma:         "87daacd3a26a2383dcc8777a390bb1daf116fedbaca7216f140223ffc67caf22"
+    sha256 cellar: :any,                 ventura:        "2aa0200a51cd33a79fab787ab9e430370c612807a84335acb893a5c541360794"
+    sha256 cellar: :any,                 monterey:       "bfac75b67ec2370e310aff5ac47d849313e983c1631582e06aa7e4721a7ce0b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "118ed04219a40b5711f6e9f6b0046d5d1919f762ce82df39bf3f6c5e2ed20897"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +27,7 @@ class SpirvTools < Formula
   uses_from_macos "python" => :build, since: :catalina
 
   resource "spirv-headers" do
-    # revision number could be found in .DEPS
+    # revision number could be found as `spirv_headers_revision` in `.DEPS`
     url "https:github.comKhronosGroupSPIRV-Headers.git",
         revision: "1c6bb2743599e6eb6f37b2969acc0aef812e32e3"
   end

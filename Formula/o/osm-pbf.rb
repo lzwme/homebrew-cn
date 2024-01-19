@@ -4,17 +4,16 @@ class OsmPbf < Formula
   url "https:github.comopenstreetmapOSM-binaryarchiverefstagsv1.5.0.tar.gz"
   sha256 "2abf3126729793732c3380763999cc365e51bffda369a008213879a3cd90476c"
   license "LGPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "69f34c69bcd270ae89cfa9a37e3dc63cc576f25832de71f1d85e09a91c47b74b"
-    sha256 cellar: :any,                 arm64_ventura:  "99b03549fff7d28e0a35a1151dc96eebd60860a510fff1cb5a9c2c9889b633f2"
-    sha256 cellar: :any,                 arm64_monterey: "f5926acb0bcc766a4429b2025fa9b06e9f733c4692b4c1156cfaab0216daf0a0"
-    sha256 cellar: :any,                 sonoma:         "d6b873eb49d8b84c702ebf0df89799d7e6d245bc94ac31fd3f5921fcfdb325a7"
-    sha256 cellar: :any,                 ventura:        "0289b857240b19a3830b43cd21f32b8cd884d79cd9ea29f7e53ec11a638e0b8a"
-    sha256 cellar: :any,                 monterey:       "34e920db76c1400c893e3ff63e045e42d60165be93fd936a5b031ca4e62d31c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5641ca48a5aab011da6a3a676c5137cc3471e33fa1aabb5ef27b569f8701e5b2"
+    sha256 cellar: :any,                 arm64_sonoma:   "a2c8f54a76f4cb766c99f7453a457f5e31a7a7441cf754ebfee76481b436773b"
+    sha256 cellar: :any,                 arm64_ventura:  "5d667fd775b91bc97926227f1a910a520321ddb3938a2cdc14818dfc55aab68e"
+    sha256 cellar: :any,                 arm64_monterey: "7684205a6b63789fd06d842b39bd1512be2df200238cf0a193265a627c66c7cc"
+    sha256 cellar: :any,                 sonoma:         "38a8b1c6a1d145fa72c5218557d2bc1ad93ea7e01e80fc1d707ec40f38d74764"
+    sha256 cellar: :any,                 ventura:        "7c5a738094dcfa6ae7fcc1607fb4f23990e971b8f86c8efe7cb2c6ba713cfa5c"
+    sha256 cellar: :any,                 monterey:       "974d6019b963caaddbbe6cec0e7df8191e4683efa85eaae9d3eef4bb5eb84261"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bc2b196a7104bfa17d78f5b0355b56ac944756b92714e4bc25cc2066568dccb"
   end
 
   depends_on "cmake" => :build

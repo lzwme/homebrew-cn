@@ -4,7 +4,7 @@ class Biosig < Formula
   url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.2.src.tar.xz"
   sha256 "3c87fa4ae6d69e1a75477f85451b6f16480418a0018d59e1586a2e3e8954ec47"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -12,11 +12,11 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3563a68a4ab81df2e3bf406f1ea07165bd97d5f250f9329eaafc5d75d4142b77"
-    sha256 cellar: :any,                 arm64_monterey: "177a67a16d08aa6a2b8b22b0dcc8151f31413d155e4b3847032ff74476193b5a"
-    sha256 cellar: :any,                 ventura:        "8c9176d1daea2120afc5f0af93df47a0a736f6f310fb2b45e4a996dcbbec90db"
-    sha256 cellar: :any,                 monterey:       "984b14283113635f806cf6738518a577ce7c9356f1bc70d2074c5cf68791d576"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a57b3148d7f626270537bae6d17a623919bdf1bdf80845b812c142e07ef9af23"
+    sha256 cellar: :any,                 arm64_ventura:  "f364c8f2cdc0d246b91d7cc877b13affc7f245c9020274ff20bb84e73e39042a"
+    sha256 cellar: :any,                 arm64_monterey: "368a74a9ba1c4ab21c0ed1f746870455699db9947a5374e7ccc965f074ac334e"
+    sha256 cellar: :any,                 ventura:        "c2c52095cbc6c4226cd2563a0b542142de466c74e9b70f2dbb7487c9f49ca3e0"
+    sha256 cellar: :any,                 monterey:       "c11d4e20d8e8d83263bd870f0f4e6298c17b45e2cf12d1e07b6c92e37b1a49fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f99d6e20f70fcf51740998fcbe0709bd1b010990aa28ccdd964e712a9149fb56"
   end
 
   depends_on "gawk" => :build

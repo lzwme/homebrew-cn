@@ -19,6 +19,9 @@ class Bfgminer < Formula
     sha256 x86_64_linux:   "9f81c9ed9c2d32a0296fb74aa46b592b02e60fc08224d103c9c6ba73bedff86b"
   end
 
+  # Upstream website is gone, cannot build from GitHub source, last release 6+ years ago
+  deprecate! date: "2024-01-17", because: :unmaintained
+
   depends_on "hidapi" => :build
   depends_on "libgcrypt" => :build
   depends_on "libscrypt" => :build

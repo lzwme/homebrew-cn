@@ -1,18 +1,18 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https:github.comcontainersskopeo"
-  url "https:github.comcontainersskopeoarchiverefstagsv1.14.0.tar.gz"
-  sha256 "062ca24dcc106c3758e90a4af207b67166437ab71128bd33749b0414e0a42f79"
+  url "https:github.comcontainersskopeoarchiverefstagsv1.14.1.tar.gz"
+  sha256 "b174ada87751ecd7f8e0e292d163c9b0c4a2172a6ba32e1725ae272c24f7f841"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "1e38059439e585d3fca999b3bf1031590e6151fb0e4ec341a4d28aa1ad5d0c5f"
-    sha256 arm64_ventura:  "d15e5c5d55c9900d9c4e3a8411611cd7dfaccc1c63d1067bec791d6db889a7b3"
-    sha256 arm64_monterey: "75c5f3d70149e4fb002c16fddc37b28e97a1a2760634339c0b4d30ef089ba926"
-    sha256 sonoma:         "6b8876891a5dff56bd80d5269d09a268dddec5a5a845c0c801a4a2ed2d7a1833"
-    sha256 ventura:        "0686bf155b94815dc9f8fef1abfd322c3f80c398fb94567f975198ba83e24b55"
-    sha256 monterey:       "42c0a37751cc5a6826c0ef7a59c46d8f2428047462ed965fba7d33c89c664680"
-    sha256 x86_64_linux:   "09336203f9c537159af65395fe26286f91cd00d805f638617209aee49fe57809"
+    sha256 arm64_sonoma:   "b173baf058fd70275ed1ce7e79b3a26a927e7cfc28752505f28e4855b7be67c0"
+    sha256 arm64_ventura:  "57b49bb39c47552b3d91ef8815616956418cfecffbd58951a1869c08f373ab41"
+    sha256 arm64_monterey: "38d81452ecf8047376e210ad5bea745f123857393b13392a97ff03cee9fd3c21"
+    sha256 sonoma:         "28066fb5c2a735821432687b6b87cef6d15e20dff6b8ee0a86d15a8d9e6bdc31"
+    sha256 ventura:        "aa90cef46498259d4a941b95649dea19bf487e3a499627895b59ba3e6a6f7f82"
+    sha256 monterey:       "17db70c21d73c6e674a6d92568798f1b254bad359fa8e2be8835ae62403f024c"
+    sha256 x86_64_linux:   "7fb345bc188d441ad6e3fda0b24a1eb064acf5a4c35511abfd1c3b9dafbcd85e"
   end
 
   depends_on "go" => :build

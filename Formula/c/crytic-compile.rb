@@ -3,20 +3,19 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https:github.comcryticcrytic-compile"
-  url "https:files.pythonhosted.orgpackages3a9ce100d2dbc90471010716e56766ef6608717c44d7278eea3dacb5bb48276acrytic-compile-0.3.5.tar.gz"
-  sha256 "f9b2bf3dc8c99fbc58c4ae6f82b3e8e378f56e107e37fd8786a36567dd68fa6e"
+  url "https:files.pythonhosted.orgpackages7607b629a6bf2c56f63bb6cd1b2000e58395642dcd72ebae746282a58c0feb3fcrytic-compile-0.3.6.tar.gz"
+  sha256 "9a53c8913daadfd0f67e288acbe9e74130fe52cc344849925e6e969abc1b8340"
   license "AGPL-3.0-only"
-  revision 1
   head "https:github.comcryticcrytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bbc9a7933f163dc36195299a9b6cbba265f7f3a30e8fb04774550abe921b07d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ddea1230595d14484cc120b51099d904d46ac2439531b3da655dd4dd613abfb9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef090f529d4ebfbd9196dd3cbcafaea07468b3b572be67f4aa4b6c9ecbec43f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5a18f19780b9da39b1a2a81bc06fa2d4822e2072ab8d192e50de947bf5107ddb"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2f2fc9d8bc6c5eaa1c2428ea334ed2f68b603633d755c8785d3d3b6bbd88bec"
-    sha256 cellar: :any_skip_relocation, monterey:       "a61e6190a45a619f4e9293854061c83c93ac1c8bc888b2014fb633c6616cb7f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1e554ce1235c086e6f15fc183885f765e6c7a1766caabfcf0f12e216873ea78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc3cf0ba655eb1f0521d62286417f3d814c90fd02ca03f5f1b5ac68eee3c7a0f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82e82b993a3611d312efbd1b3a065ad17ba9bb670a7fd7508c408224bc9ac399"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "14951768c72ea041f9be3a3ef75692dad71d532a3ab22390adbda71803535a69"
+    sha256 cellar: :any_skip_relocation, sonoma:         "60e53e28ee701c6c76ee520671290b5a4b1bbaa77b70b54b0e6ac0c36a867dd6"
+    sha256 cellar: :any_skip_relocation, ventura:        "75fe965fab693af754eaed095f04b20136faa76f5f39bfb7b62731f5d19a9d11"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e66bf16fb65fd13a58a928bbe0f8bd0f5d257c8745b4ae7406a25ec551f323e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "110c0b2d3ea9ab8f3c44b953cd1cfeb588e9a6ccab6dd6d9a98a0f7979bb9e1c"
   end
 
   depends_on "python-setuptools"
@@ -25,8 +24,8 @@ class CryticCompile < Formula
   depends_on "solc-select"
 
   resource "cbor2" do
-    url "https:files.pythonhosted.orgpackagesd969de486293f5211d2e8fe1a19854e69f2811a18448162c52b48c67f8fbcac3cbor2-5.4.6.tar.gz"
-    sha256 "b893500db0fe033e570c3adc956af6eefc57e280026bd2d86fd53da9f1e594d7"
+    url "https:files.pythonhosted.orgpackagesbb66b09bf8421645852616044d3de9e632e1131c059f928a53bf46b1bc08e3eccbor2-5.6.0.tar.gz"
+    sha256 "9d94e2226f8f5792fdba5ab20e07b9bfe02e76c10c3ca126418cd4310439d002"
   end
 
   def install

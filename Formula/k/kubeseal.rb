@@ -2,8 +2,8 @@ class Kubeseal < Formula
   desc "Kubernetes controller and tool for one-way encrypted Secrets"
   homepage "https:github.combitnami-labssealed-secrets"
   url "https:github.combitnami-labssealed-secrets.git",
-      tag:      "v0.24.5",
-      revision: "64693897d3f03934d1c0063c0dec4175d93c9680"
+      tag:      "v0.25.0",
+      revision: "f5f06da26041f9e6974c4af5c73a0c54598a7706"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Kubeseal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5427a08839da4fad1d5782747b3c48a39d86f064ed94b2484620204a526b050"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "915edfdab2afb9b550e4ba80583994eff1464abd923df50e69740a568c497fd2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "915a2e0013e9660247c2d58d0169991467493b6069f90d118d74a230ed08b80c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ca1add43f677257b974ec04f926e6eb5c06e14fd77d7d87ce92eb047ddfcdc5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "97e5444843eeb06c8c4cf4361ebf03664193b027776c901b02ef385d1cd0d9b8"
-    sha256 cellar: :any_skip_relocation, monterey:       "f104566c43f7530c9029f11ccc10a057dc19701cee5ac8d29a3e1683e5c2113c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb7fb2cb5113444606704aae1e5a9ddb5c168651ee90fb7915215dc19c2876a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28b5ca129159d7deffbb181e14dc78722cb68a8594e17483441501ad8109606f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "647687e68063b64119905ddb05f07b891369296d5d58aa15231d2ecb7a55a26f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb37f5df02d04b8bc14fe1510b7fdcae4b37b2e2c066cb34c8d2a19e6e395881"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8717d5a4ffa15531a099bb518c17b6cefcffd6d5607a072a9e7c0887e401c4b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc05613a5eeea039634b79b1c7fe22bc29490fef6cf6722daa06cdfd40bbca13"
+    sha256 cellar: :any_skip_relocation, monterey:       "dba4c64b4e24e7befcaa1b87151f0b48cbea439d7b44f25cc249c051b5d0fcd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6d2565b64ab044d3ac97d089ee6fcb7bb86f5e21f9a4fe17985b60833281c3e"
   end
 
   depends_on "go" => :build

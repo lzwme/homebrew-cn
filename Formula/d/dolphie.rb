@@ -3,19 +3,18 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https:github.comcharles-001dolphie"
-  url "https:files.pythonhosted.orgpackages0ac12a5e77affec2692b159274ff836f1f385beb6f9d00c961536599f6ae4bffdolphie-3.2.0.tar.gz"
-  sha256 "d9b6c309183c69a67a5526207002492644d3e01bc282a1a3ecda6cb5c5b875dc"
+  url "https:files.pythonhosted.orgpackagesdde27a61b7c1a6d25e97e3512474332d26782601c06071d0259ea92061125620dolphie-3.3.1.tar.gz"
+  sha256 "0ba7b50764a751f501095a3b87e33ed4271ef24e1255f786ee91bc13c908a02a"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42a9ee149e564fbf6fe2c3060153826d18793e549d62dcbef46bc849964d1ba6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdc0a9bc8e7dfd2b7b17cd3f451b2a8d2181bc03edd0c3d9261b36aa3b826f04"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e386634507ba08666a98c6f9a98f7c755b68d1cad5ed308f4a84d630b7a1c12a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fad846b21c544865608372b9603fe0fb447486ed287232e81ab180d2ca648856"
-    sha256 cellar: :any_skip_relocation, ventura:        "78b040e0ec288c42df8a2e2efbae0c420ed256232d7c69eccb274aeefecc0ffa"
-    sha256 cellar: :any_skip_relocation, monterey:       "836545725bae7b3f8c30f02205153f8c26849f329deae905a48fb9ed6ae4d908"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2464c7e734b90d97acfa3420c7f2e31ebf95445ab25bc847d12685c919098fc7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "029c68586ee231cdd5af4998840ed012de214e914c30695a557d91573c4fc35e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81cba858788aa4406cf966ccfe2b9e7328cc5c6654816b3f60b1c5593070c23d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d62bb5902822f7a170749b2fbd45f4af14d5d774c8c132f017f39fcca0e66c5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8e6489ebb443cd9f5d296e6fc5b687c5937ac9cb16060e44eb2b539fdb51fb9d"
+    sha256 cellar: :any_skip_relocation, ventura:        "389206dc118305aba39ae10854e4b54c6b649bc77713659b6086aa7aa4895d78"
+    sha256 cellar: :any_skip_relocation, monterey:       "4a0f2628873c96bec287dd00030abda4d19c6969e7d30310e227cddbca2039c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67ee09f7099f7d257a27409e9840f53e2dccce98d1e8250b7a98ee0b3127a0d9"
   end
 
   depends_on "cffi"
@@ -28,11 +27,6 @@ class Dolphie < Formula
   depends_on "python-typing-extensions"
   depends_on "python@3.12"
   depends_on "sqlparse"
-
-  resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackages3344ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
 
   resource "linkify-it-py" do
     url "https:files.pythonhosted.orgpackages8dfd73bb30ec2b3cd952fe139a79a40ce5f5fd0280dd2cc1de94c93ea6a714d2linkify-it-py-2.0.2.tar.gz"
@@ -75,8 +69,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages04db47913d93759a5e64802ecc7c61e1dddca1496a2c7edbf6c7b73f2f253f52textual-0.41.0.tar.gz"
-    sha256 "73fb675a90ddded17d59ebd864dedaf82a3e7377e68ba1601581281dfd47ea86"
+    url "https:files.pythonhosted.orgpackages245157eb835afc9569d32b5979ecbf3bf73f8ece8700ebffab3bac7ff29f92e4textual-0.47.1.tar.gz"
+    sha256 "4b82e317884bb1092f693f474c319ceb068b5a0b128b121f1aa53a2d48b4b80c"
   end
 
   resource "textual-autocomplete" do
@@ -89,11 +83,6 @@ class Dolphie < Formula
     sha256 "30ae2ac9c49f39ac6dce743bd187fcd2b574b16ca095fa74cd9396795c954c54"
   end
 
-  resource "zipp" do
-    url "https:files.pythonhosted.orgpackages5803dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6zipp-3.17.0.tar.gz"
-    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
-  end
-
   def install
     virtualenv_install_with_resources
   end
@@ -103,8 +92,8 @@ class Dolphie < Formula
     # See https:github.comHomebrewhomebrew-corepull152912#issuecomment-1787257320
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    output = shell_output("#{bin}dolphie mysql:dolphie:test@localhost:3306 2>&1")
-    assert_match "Failed to connect to database host", output
+    output = shell_output("#{bin}dolphie mysql:user:password@host:port 2>&1")
+    assert_match "Invalid URI: Port could not be cast to integer value as 'port'", output
 
     assert_match version.to_s, shell_output("#{bin}dolphie --version")
   end

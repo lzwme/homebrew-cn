@@ -1,19 +1,19 @@
 class Zinit < Formula
   desc "Flexible and fast Zsh plugin manager"
   homepage "https:zdharma-continuum.github.iozinitwiki"
-  url "https:github.comzdharma-continuumzinitarchiverefstagsv3.12.1.tar.gz"
-  sha256 "984a437aa8840158293bced470823855219e56620e05ffcfbc4831bba68e252e"
+  url "https:github.comzdharma-continuumzinitarchiverefstagsv3.13.0.tar.gz"
+  sha256 "3180db2379cffcabdecaeac7b504e662ace87655449d752d14d748e431b0d1bc"
   license "MIT"
   head "https:github.comzdharma-continuumzinit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3eabf2f9418ae0b0ed6764d4abb6a0ee7d98e8329fd2b9726ee99562e75216f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3eabf2f9418ae0b0ed6764d4abb6a0ee7d98e8329fd2b9726ee99562e75216f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "3eabf2f9418ae0b0ed6764d4abb6a0ee7d98e8329fd2b9726ee99562e75216f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3555b20575dea025af44e4d0f0b528e65d1d0d7a70fe864c8c14ade6c413446d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4897f8cd80c8724603a0c6f1b85110fbf581fdbfee07c7d0db2c55872878772e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4897f8cd80c8724603a0c6f1b85110fbf581fdbfee07c7d0db2c55872878772e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4897f8cd80c8724603a0c6f1b85110fbf581fdbfee07c7d0db2c55872878772e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "158b24497c21a5ce9d1c7a21ebc623269b68162821a3b41636a49e4aeba3ddf1"
+    sha256 cellar: :any_skip_relocation, ventura:        "158b24497c21a5ce9d1c7a21ebc623269b68162821a3b41636a49e4aeba3ddf1"
+    sha256 cellar: :any_skip_relocation, monterey:       "158b24497c21a5ce9d1c7a21ebc623269b68162821a3b41636a49e4aeba3ddf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4897f8cd80c8724603a0c6f1b85110fbf581fdbfee07c7d0db2c55872878772e"
   end
 
   uses_from_macos "zsh"

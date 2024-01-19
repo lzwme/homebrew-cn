@@ -11,17 +11,19 @@ class Mpdecimal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e13217b5255c026d0a0c7bbe911e3a5d380dba2c7301e50d3cff3eca4cb74e17"
-    sha256 cellar: :any,                 arm64_ventura:  "34862cb6ffa2cbbed6a744f44418ef840346534fdfff1b74072444e73675d6ec"
-    sha256 cellar: :any,                 arm64_monterey: "a674eb065c75a2278ded69d32ed5bf668dc16b9358d55f5cfce3d9cf0c62dddd"
-    sha256 cellar: :any,                 sonoma:         "af88117fc62324b387772ad7afb1d201532a3c4df73e07748efc3bb36d1a7926"
-    sha256 cellar: :any,                 ventura:        "4f12155286292dd219784ca5e353f5593636c3b4a27c1e6d0063e779c0a7eb59"
-    sha256 cellar: :any,                 monterey:       "d221a65ac14939540c67765b31b60b8b2fea7adee53aec2fd9b09d1aec430e2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5479e581f8ee8ef36877be191952527ec959b548250e2ebee684118959046e6c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "2965eec8a30f462b3bd6a8cc2756c1645e75f4399471594e434e36e886239e2e"
+    sha256 cellar: :any,                 arm64_ventura:  "1fd72d5f4b35a3d4735efd7d934154ec8b3666267571f96d64244ad35b3ee814"
+    sha256 cellar: :any,                 arm64_monterey: "57311ecd036fae8d74c541ab5a30944a5a5cfea7abaa6b8c936b7376821edafd"
+    sha256 cellar: :any,                 sonoma:         "377dc5e30dd1292ac1666dd43a447b861ad283024f70a3e914c7e11572ae869e"
+    sha256 cellar: :any,                 ventura:        "bb1729bd410275aab1bd276f99fb22678b6ad53de2c9c474fdda854ed0ebaebd"
+    sha256 cellar: :any,                 monterey:       "266a3f517227bb9f3806b18313c3b8a33688f9659e5001751e15f1f38538dacc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca79318fa094531bd57b3f07d5b8574cd9986bac4c876043336ea4176e8c294f"
   end
 
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
+    ENV.append "LDXXFLAGS", "-Wl,-rpath,#{rpath}"
     system "./configure", *std_configure_args
     system "make"
     system "make", "install"

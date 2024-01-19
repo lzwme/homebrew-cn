@@ -6,6 +6,7 @@ class Torchvision < Formula
   url "https:github.compytorchvisionarchiverefstagsv0.16.2.tar.gz"
   sha256 "8c1f2951e98d8ada6e5a468f179af4be9f56d2ebc3ab057af873da61669806d7"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1e240407b3ae5af0441b830577a760fe095fe8e73437b14e0ad4ab8181fe4153"
-    sha256 cellar: :any,                 arm64_ventura:  "7f5c9379595203b619601689848b51704a516ae851c6377cf46d941901fd1ac8"
-    sha256 cellar: :any,                 arm64_monterey: "73fe45f6e3cb41dea8c25a8996517c932feedc0d87944827d9862607f5d24f2e"
-    sha256 cellar: :any,                 sonoma:         "7ffd47bddfdb84f99fea247e8054987ef03766955a4966dc853c3b80710755c2"
-    sha256 cellar: :any,                 ventura:        "2a962449139b58ea6626dde69bbf9d7f2bc608758b57a762cf7662c3dc378e5b"
-    sha256 cellar: :any,                 monterey:       "97dc4bfa2fe8eeab1aff2503953ae90bcde0cb8150b1ff9067053c4c47986d5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1620502dd695ae6a66f5ca87df5306368d91400339ba311afae4b5975d6207b"
+    sha256 cellar: :any,                 arm64_sonoma:   "ec5e254bf4cee138e635a61043e0ab00128303e84473b9b74c5b7d03dbc71a8f"
+    sha256 cellar: :any,                 arm64_ventura:  "debfc3d92cec83ceee44d65ea8ce1e54664dbc9e674b53e3ae75d925298e9c9b"
+    sha256 cellar: :any,                 arm64_monterey: "59b06014bea0172ace78c034bbd8c79ee561b20769a7b5b19e7f64c50e79ae4f"
+    sha256 cellar: :any,                 sonoma:         "0ba32b6c874c44929622bc1df3f4f0994d099f29845e7abee275cb6ef92f6d34"
+    sha256 cellar: :any,                 ventura:        "f1b5c6407bdc7a71fe9e44ac0cf8bec6dbc234e715e6df22dc2824b2b823492f"
+    sha256 cellar: :any,                 monterey:       "51a9af45d99dae2d990b6c4de4a8b456fdfe0c3c70d03dc0c2dd498ebc3d35ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49f9cfb721fa65442539b2dbdb23b441d0622285a953ba8fbecbec4b72b99d1f"
   end
 
   depends_on "cmake" => :build

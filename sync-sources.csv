@@ -369,7 +369,7 @@ Homebrew-homebrew-core/Formula/b/bacula-fd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/badkeys.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bagit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/baidupcs-go.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/balena-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/balena-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/ballerburg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/ballerina.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bam.rb, Homebrew/homebrew-core, 1
@@ -650,7 +650,6 @@ Homebrew-homebrew-core/Formula/c/camellia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/camlp-streams.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camlp5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/canfigger.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cap-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/capnp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/capstone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caracal.rb, Homebrew/homebrew-core, 1
@@ -3526,6 +3525,7 @@ Homebrew-homebrew-core/Formula/lib/libnl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libnotify.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnova.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnsbmp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libnsgif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnsl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libntlm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libnxml.rb, Homebrew/homebrew-core, 1
@@ -7557,7 +7557,6 @@ Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/chatmate-for-facebook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatterino.rb, Homebrew/homebrew-cask, 0
@@ -7755,7 +7754,6 @@ Homebrew-homebrew-cask/Casks/c/creepy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/crescendo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/criptext.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cro-mag-rally.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/cron.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cronnix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crossover.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/crosspack-avr.rb, Homebrew/homebrew-cask, 0
@@ -7929,6 +7927,7 @@ Homebrew-homebrew-cask/Casks/d/dockx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dogecoin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/doll.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dolphin.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/domzilla-caffeine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doomsday-engine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doppler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dosbox-x.rb, Homebrew/homebrew-cask, 1
@@ -9535,6 +9534,7 @@ Homebrew-homebrew-cask/Casks/n/notedup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesnook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/noti.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/notion-calendar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion-enhanced.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noto.rb, Homebrew/homebrew-cask, 0
@@ -10791,6 +10791,7 @@ Homebrew-homebrew-cask/Casks/t/the-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/the-unofficial-homestuck-collection.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thebrain.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thedesk.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/theiaide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/themeengine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/there.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/therm.rb, Homebrew/homebrew-cask, 1

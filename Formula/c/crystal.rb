@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.11.1.tar.gz"
-    sha256 "d947b0cc5f1aa5d8003f18b75cc49e94365a528218ff9bc6305c63d903918b24"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.11.2.tar.gz"
+    sha256 "9740f0f52745d399449b11a64b060216c8599ef73712615fe8956a1e8f7c5d9c"
 
     resource "shards" do
       url "https:github.comcrystal-langshardsarchiverefstagsv0.17.4.tar.gz"
@@ -19,13 +19,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b00640d0b2c52a1f86e179d3779b0866e91c8d35466a85fc82c925c7fe00bfb0"
-    sha256 cellar: :any,                 arm64_ventura:  "ba4bdf07ad4d1bc4d9446c5ac8a0d611e8f873f901598480d316fcdff2b04f4e"
-    sha256 cellar: :any,                 arm64_monterey: "3857a5f07cd01105de31b3f5a352ff8f2d17e46fea7c4ae8dc45e87ad602b0ce"
-    sha256 cellar: :any,                 sonoma:         "0ea64e1821820d84ce0b25d05d425c0d830906b938901eb985255c627c5e95b6"
-    sha256 cellar: :any,                 ventura:        "3f4f815880a8380f69f8f4a8466dcf2a93e064d03a3915cacde4975964a4f55d"
-    sha256 cellar: :any,                 monterey:       "c6e124a1ff1574ee4a8923998ffa3dc04c2ed4825e6e6e564f4ef698a515d927"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39a388a59437bf9c8ce9e0f642874a8343f35f2bc3d1e673f6b96bf328db6231"
+    sha256 cellar: :any,                 arm64_sonoma:   "0a32574a37a4d799b102517c9b5d9f7b6a1be526d474bb5e023d25edccdba96a"
+    sha256 cellar: :any,                 arm64_ventura:  "478c12cc7e999c6c9819e577beffa68dec3bd51684344166848fdbb0c34abef4"
+    sha256 cellar: :any,                 arm64_monterey: "95b4c4fda21f08e864e25a62c1bceffd7f8c146418026d85465d5680b57c7387"
+    sha256 cellar: :any,                 sonoma:         "f604ad601933fde22706611eae5c17d2a8e8ae8bcb4c6c83604e135f46b89867"
+    sha256 cellar: :any,                 ventura:        "68f635a76678075088eea4531fbddf0dd83d380d6b9e66c8ffdd159b1650db55"
+    sha256 cellar: :any,                 monterey:       "201e352a2ee477a256d71f820150025d12586d39219a24723f739833578d94c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8298f939a39e46fef1b713844dbddf3434dbf2cd28f1991d4476089f3b3711c2"
   end
 
   head do

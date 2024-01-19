@@ -13,13 +13,14 @@ class Xrootd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "362263343208ee99430e6d49acb60429f692441c00b9fbf67fc728b3a4cf41c8"
-    sha256 cellar: :any,                 arm64_ventura:  "b61472dff2404d0e35b9a3a9f6ab19615e7daad30ec82e73ea951ed6d3cabf73"
-    sha256 cellar: :any,                 arm64_monterey: "4ce54a19a63963d027965fe46492067b18499a9c2786affa6d5726634c4f032f"
-    sha256 cellar: :any,                 sonoma:         "61ba9394cb2b31edf158dfebb9877537430cbc6eabcc9eb08472868685ef5d19"
-    sha256 cellar: :any,                 ventura:        "581d41e8a3347fb85019459361bac14a2c950404804599eab59b560dec273969"
-    sha256 cellar: :any,                 monterey:       "f53cc97eaeefbc3dcf473f2d010976224eb277705c0ce7987ace45c039f6308b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f65c161093352e60a28d560430ac781833dc8c4ef8fcc6a84813fede5b798db1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "e15e06bac391f7b43855f145aa22abc357a9a66171b5e84a572f651dc8331784"
+    sha256 cellar: :any,                 arm64_ventura:  "1136c7eef69dd2e2387d6125822ee8ab7f12342997c16ea63313dad2874142ea"
+    sha256 cellar: :any,                 arm64_monterey: "10f4bac8a6520578976c0ebd71a5d740a35acea9eef77dc18bffc1cd3fe4ab90"
+    sha256 cellar: :any,                 sonoma:         "b7f56a6c24e11f0c03fe256083c448a9feba4ad846547627b7015915325e620e"
+    sha256 cellar: :any,                 ventura:        "0c63e9cc616cb78c13adfe1504f5e2735ec91b5a09c39d72ddcf3a98ee304190"
+    sha256 cellar: :any,                 monterey:       "00b744d84750b7154d7231463609489e5ab98eb70cc1f57e46669376d824720d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ac6b09cb019a4aaed127161c54aa0cca32161c1986133baeaecfbf28d0de6f4"
   end
 
   depends_on "cmake" => :build
@@ -30,11 +31,14 @@ class Xrootd < Formula
   depends_on "krb5"
   depends_on "openssl@3"
   depends_on "readline"
-  depends_on "util-linux" # for libuuid
 
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "util-linux" # for libuuid
+  end
 
   def install
     args = std_cmake_args + %W[

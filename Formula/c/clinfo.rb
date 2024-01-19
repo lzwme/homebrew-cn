@@ -32,6 +32,11 @@ class Clinfo < Formula
   end
 
   test do
-    assert_match(Device Type +[CG]PU, shell_output(bin"clinfo"))
+    # OpenCL does not work on ephemeral ARM CI.
+    if Hardware::CPU.arm? && OS.mac? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
+      assert_match "number of devices : error -30", shell_output(bin"clinfo 2>&1", 1)
+    else
+      assert_match(Device Type +[CG]PU, shell_output(bin"clinfo"))
+    end
   end
 end
