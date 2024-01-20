@@ -59,7 +59,7 @@ class Rust < Formula
     on_linux do
       on_arm do
         url "https:static.rust-lang.orgdist2023-11-16cargo-1.74.0-aarch64-unknown-linux-gnu.tar.xz"
-        sha256 "c5ad01692bc08ce6f4db2ac815be63498b45013380c71f22b3d33bf3be767270"
+        sha256 "a18dc9132cf76ccba90bcbb53b56a4d37ebfb34845f61e79f7b5d4710a269647"
       end
       on_intel do
         url "https:static.rust-lang.orgdist2023-11-16cargo-1.74.0-x86_64-unknown-linux-gnu.tar.xz"

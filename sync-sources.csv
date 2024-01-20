@@ -3637,6 +3637,7 @@ Homebrew-homebrew-core/Formula/lib/libsoxr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libspatialite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libspectre.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libspectrum.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libspiro.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libspnav.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libspng.rb, Homebrew/homebrew-core, 1
@@ -10923,6 +10924,7 @@ Homebrew-homebrew-cask/Casks/t/truhu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trunk-io.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tsh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ttscoff-mmd-quicklook.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/ttu-base-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tunein.rb, Homebrew/homebrew-cask, 0

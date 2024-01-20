@@ -25,8 +25,6 @@ cask "codeedit" do
 
   app "CodeEdit.app"
 
-  uninstall quit: "app.codeedit.CodeEdit"
-
   zap trash: [
     "~LibraryApplication Scripts*.CodeEdit.OpenWithCodeEdit",
     "~LibraryApplication SupportCodeEdit",

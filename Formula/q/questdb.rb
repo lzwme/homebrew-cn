@@ -4,6 +4,7 @@ class Questdb < Formula
   url "https:github.comquestdbquestdbreleasesdownload7.3.9questdb-7.3.9-no-jre-bin.tar.gz"
   sha256 "91ba4b78538bcd53e7a0d9671403e63e17ee36610492bac4e102cddc65cc6753"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,15 @@ class Questdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a81951f218ed09a0030471e65636c2db18819e7451d2872cc73c45fe0e604d1e"
+    sha256 cellar: :any_skip_relocation, all: "c8c84340ad1d1704aeed9580581a807b28dd7b0c1f8f8ec06f90a79496a40438"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   def install
     rm_rf "questdb.exe"
     libexec.install Dir["*"]
-    (bin"questdb").write_env_script libexec"questdb.sh", Language::Java.overridable_java_home_env("17")
+    (bin"questdb").write_env_script libexec"questdb.sh", Language::Java.overridable_java_home_env
     inreplace libexec"questdb.sh", "usrlocalvarquestdb", var"questdb"
   end
 

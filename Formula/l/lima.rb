@@ -1,19 +1,19 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https:github.comlima-vmlima"
-  url "https:github.comlima-vmlimaarchiverefstagsv0.19.1.tar.gz"
-  sha256 "54918ad12f6c69ac3d8a5f1e500ddeeeb9488bd9821bc6d8cf8fc49759be96d8"
+  url "https:github.comlima-vmlimaarchiverefstagsv0.20.0.tar.gz"
+  sha256 "935cb2816973c6b7bb8c19169d6f731a4a839cf636e53d78a1db09458784a6d7"
   license "Apache-2.0"
   head "https:github.comlima-vmlima.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f3aada75e46c5829d34e29a40435db44a5a98e8a1d6306b8c298fddd61e74f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ec11c70617993f11f690506c1d07c7fd34cc5cbffec345386ae1c1dd8fd993a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "147a3a536f0aa2301b22fc71cd680cb1ad00e1b7b48352b245f8adfe759d89e8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ff73277d3f7458b2fe906857137a0cb1a2084551522e52fa7e0ef6abf1acddc"
-    sha256 cellar: :any_skip_relocation, ventura:        "d57e33c62b55de8a0d21dbec1b0815053a216e97fdc1d3c97f667002b6c01b9c"
-    sha256 cellar: :any_skip_relocation, monterey:       "18137e9a86657c9719dcd3757e60d3188f607997104a3af5eb88c147c901c7f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b630c58014561f993980d3bb3c03f53b30d0c1f64d2110061b222dd58b6d12c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd850d005724dd767bc9dbfe4079f1b313d86795c3ad4c6b6db39ede0210fc1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a487868f8d4e647947bd663734579b5278222926882bf6a21ec989bb067c6221"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a16ff5399ed5a278d09935d9b066ccdb3ff328c7c8f1a51012149f71fb50b1b2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "616317913d5b34b6cfd9716dc3102ef42c3335297d35aba9bf5777a2bfd08e12"
+    sha256 cellar: :any_skip_relocation, ventura:        "0632da7796a2cfdc16a1752c9c41da86e34e564069e9e0e8aa072a4cd7efb91f"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6ac4cf7197a433496b82992a0900f52795512afdc8f065766c39b8415b7d14c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f483a5502f91c5d472a73984eae85dd8c39de4b65ce3de445d2fa0fbee3942d0"
   end
 
   depends_on "go" => :build

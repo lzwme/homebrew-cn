@@ -2,9 +2,9 @@ class PhpDebug < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.3.1.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.3.1.tar.xz"
-  sha256 "56445b1771b2ba5b7573453f9e8a9451e2d810b1741a352fa05259733b1e9758"
+  url "https:www.php.netdistributionsphp-8.3.2.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.3.2.tar.xz"
+  sha256 "4ffa3e44afc9c590e28dc0d2d31fc61f0139f8b335f11880a121b9f9b9f0634e"
   license "PHP-3.01"
 
   livecheck do
@@ -14,12 +14,12 @@ class PhpDebug < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "37e323d4b0244e8e53f1e6e7fa1dde5cb1b847e9e0ac64f5ce1e121aaafe246a"
-    sha256 arm64_ventura:  "1533d9b49fa4762f30e9eeb62daa5388284ac6cf09ecfab09fb2f95eb4c90ba1"
-    sha256 arm64_monterey: "4892e753a4bc9bdf3d2bd2b42038b67b56bba3c182bec78a2e569dbdcb7048a3"
-    sha256 ventura:        "55513979641651ffa039ac48b29b3f46ae91e502c462ab6566444228e10e7194"
-    sha256 monterey:       "f62dbc34d696b36b3fb76ee95d074eb6d9c8d1d8ec7b637e47ccc98478d6ed3d"
-    sha256 x86_64_linux:   "9fe11f8c36f50ee60d9fe5b359665ef0db0c9f4ed72b62dbbcf0c584c93a47dd"
+    sha256 arm64_sonoma:   "f39e275ffc681428bff2124395a49758c38649fe8564e591247c5f5fa4fc717a"
+    sha256 arm64_ventura:  "02e00b6dfc21306447fd8d640b0e765db4fca343433eb0a41f2c304abbb2a9de"
+    sha256 arm64_monterey: "ab3272c20d45e12e83b59de210933e698cb02c1f0ceef04d0fb72bda3e39f44e"
+    sha256 ventura:        "94d1d840a6406f8d4fbaa96eaa7a19cbb432fb3e8249e4e94a14ab9a856897bf"
+    sha256 monterey:       "38fa05dbdb95b6a8c6125b31d6c55f8a1ceee5580a2cf49ea39a9971f828ae96"
+    sha256 x86_64_linux:   "bfd57772edb94ab432b2eb16b45b2cd3985a5d3fc460518f175d908888c7c523"
   end
 
   head do

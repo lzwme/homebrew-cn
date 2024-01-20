@@ -1,19 +1,19 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https:developers.cloudflare.comcloudflare-oneconnectionsconnect-appsinstall-and-setuptunnel-guide"
-  url "https:github.comcloudflarecloudflaredarchiverefstags2024.1.3.tar.gz"
-  sha256 "5a7b986493baf54f4d07508d4537c165d990dfda93fa453afe1792096bd4c285"
+  url "https:github.comcloudflarecloudflaredarchiverefstags2024.1.4.tar.gz"
+  sha256 "a78af7d12b96bba691c420bc0ea42087cda73463868a3ba7c6890a9f962218e9"
   license "Apache-2.0"
   head "https:github.comcloudflarecloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "956ab830836bed6246fd3c4834f7ba24a596a14241e25aa7c74b0e3aa4dab4c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c22b56efdc2d644946b5d39a2f97999f49aee3c3eae0d856f62171084a35e061"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6650b0b6098aea9d2c7b1035450d31b5d79e5a2e1d98b859fd3a81b5d0d1492"
-    sha256 cellar: :any_skip_relocation, sonoma:         "deeb3771a015534043f99e5dafefa5c910febbfdc25f04562caf5a73baf52198"
-    sha256 cellar: :any_skip_relocation, ventura:        "73726795b5e8fa21a6f64c036b736ed338d1f754870860873e1c11f40c3fac54"
-    sha256 cellar: :any_skip_relocation, monterey:       "b64d4c2f23110f2814123e4a8a58783b133c87d553c3a7a8370c1a06de7e1829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "441fdbfa2f04de62eee1478036976b0bb1bb074bf328caf453c47104e05f5574"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d004a7e5f1d6b2f51323913239a898b01352b4db13472286cf677da01880702d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16292770f1d56f0221ca695be6d4bcf5ac5ef39360c0ee09c6a18cefda5afd99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "727395c25a1f4c3f1c0028ceea1c8d7e006c19f941d446e6bf87c220c3b91e08"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1b79b1689333902542ee43bea513450442956706bc9706ed274809425ac90d5c"
+    sha256 cellar: :any_skip_relocation, ventura:        "904b3f1d1ebea1ddf5181a23a8fcf43bdbd42b7a521f8d5fb6ac48d08e452950"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a019ed2bc0c19f8184cf67ae9cafb5c79da5a9051cf8e089930028e42702ce4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e95f2df93bfe7fbbc0518fc0b36ccff370f60e75068e52730d0b669e19e068b3"
   end
 
   depends_on "go" => :build
