@@ -11,8 +11,8 @@ cask "timche-gmail-desktop" do
 
   zap trash: [
     "~LibraryApplication SupportGmail Desktop",
-    "~LibraryCachesio.cheung.gmail-desktop.ShipIt",
     "~LibraryCachesio.cheung.gmail-desktop",
+    "~LibraryCachesio.cheung.gmail-desktop.ShipIt",
     "~LibraryLogsGmail Desktop",
     "~LibraryPreferencesio.cheung.gmail-desktop.plist",
     "~LibrarySaved Application Stateio.cheung.gmail-desktop.savedState",

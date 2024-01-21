@@ -13,10 +13,10 @@ cask "opencore-patcher" do
   uninstall delete: "LibraryLaunchAgentscom.dortania.opencore-legacy-patcher.auto-patch.plist"
 
   zap trash: [
+    "UsersShared.com.dortania.opencore-legacy-patcher.plist",
     "~LibraryApplication SupportCrashReporterOpenCore-Patcher*",
     "~LibraryPreferencescom.dortania.opencore-legacy-patcher-wxpython.plist",
     "~LibrarySaved Application Statecom.dortania.opencore-legacy-patcher-wxpython.savedState",
     "~LibrarySaved Application Statecom.dortania.opencore-legacy-patcher.savedState",
-    "UsersShared.com.dortania.opencore-legacy-patcher.plist",
   ]
 end

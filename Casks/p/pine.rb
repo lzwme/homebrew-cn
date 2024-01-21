@@ -12,8 +12,8 @@ cask "pine" do
   app "Pine.app"
 
   zap trash: [
-    "~LibraryApplication SupportPine",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsio.github.lukakerr.pine.sfl2",
+    "~LibraryApplication SupportPine",
     "~LibraryCachesio.github.lukakerr.Pine",
     "~LibraryPreferencesio.github.lukakerr.Pine.plist",
     "~LibrarySaved Application Stateio.github.lukakerr.Pine.savedState",

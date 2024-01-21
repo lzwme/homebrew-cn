@@ -1,21 +1,19 @@
 class Golines < Formula
   desc "Golang formatter that fixes long lines"
   homepage "https:github.comsegmentiogolines"
-  url "https:github.comsegmentiogolinesarchiverefstagsv0.11.0.tar.gz"
-  sha256 "d7336fbddb045bd2448629c4b8ef5ab2dc6136e71a795b6fdd596066bc00adc0"
+  url "https:github.comsegmentiogolinesarchiverefstagsv0.12.1.tar.gz"
+  sha256 "7d5a6959385c64e6edb30188f05908ed7df09b9c2ff641f49fcccf98c1dc8037"
   license "MIT"
   head "https:github.comsegmentiogolines.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b6dc43c965d0054ba38469480c298e81f9563609b0f8ce0d3c34013711840ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51f84f0bd25513108f8a8160eaf66abb0c6b74a393dc2edde4af90409096d85a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51f84f0bd25513108f8a8160eaf66abb0c6b74a393dc2edde4af90409096d85a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51f84f0bd25513108f8a8160eaf66abb0c6b74a393dc2edde4af90409096d85a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1bbb1164f31bada1a2f8a40a83862a59505e6a79a261446eafff26dc8f8587a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "c02d8f38f78fe5916beae3e9bafcfd89c4741300821f795ca1e9edd3d90a67e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c02d8f38f78fe5916beae3e9bafcfd89c4741300821f795ca1e9edd3d90a67e4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c02d8f38f78fe5916beae3e9bafcfd89c4741300821f795ca1e9edd3d90a67e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f12a858a458f6b72ec2a6ee0d92de48e258b39dcca9736966af6629e68baa93"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec036b8ab6ed8f1f39cee60b0fa012df9b3416acb1499e5e104d3fefd5fdd82d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7534b2ba6c487a8a9b722ed26c1b6f943653f20d73325aaac840ba5d4e15086"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27ede416e063116454cf62070a5ed8c0d72751543511e45645125ec5e31f2cf7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cd4610d13bb6c2f681b8ee0b95bb3d2f5b960cbc1a998f7e885f9c96743ce23c"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d57a962365623068f6786643d98c11e8dd29d3000c74b93aa4449b1c1cef889"
+    sha256 cellar: :any_skip_relocation, monterey:       "489ccaf9f5c24bdde5d64da0f625d3e01f829fd9dac5471642958d0a5f6e8899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b63594f70df0edb01073a18af99ef045b5442d7fc5289e5541afb5b8e9d1f38"
   end
 
   depends_on "go" => :build

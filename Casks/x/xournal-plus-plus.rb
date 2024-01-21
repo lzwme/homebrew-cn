@@ -12,7 +12,7 @@ cask "xournal-plus-plus" do
   app "Xournal++.app"
 
   zap trash: [
-    "~LibrarySaved Application Statecom.github.xournalpp.savedState",
     "~.xournalpp",
+    "~LibrarySaved Application Statecom.github.xournalpp.savedState",
   ]
 end

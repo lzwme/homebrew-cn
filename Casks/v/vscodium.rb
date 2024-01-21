@@ -18,8 +18,8 @@ cask "vscodium" do
 
   zap trash: [
     "~.vscode-oss",
-    "~LibraryApplication SupportVSCodium",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.vscodium.sfl*",
+    "~LibraryApplication SupportVSCodium",
     "~LibraryCachescom.vscodium",
     "~LibraryCachescom.vscodium.ShipIt",
     "~LibraryHTTPStoragescom.vscodium",

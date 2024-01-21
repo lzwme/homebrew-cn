@@ -1,18 +1,18 @@
 class Coder < Formula
   desc "Tool for provisioning self-hosted development environments with Terraform"
   homepage "https:coder.com"
-  url "https:github.comcodercoderarchiverefstagsv2.6.0.tar.gz"
-  sha256 "595a52dc28bc6fa2892708c700584a26e2a3c08d46f0de8d1b35fbfa4f1292d5"
+  url "https:github.comcodercoderarchiverefstagsv2.7.0.tar.gz"
+  sha256 "33afd4359d778af41fc3f04af402227c6409011862679fec10bc8c84e0bebdf8"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "92d859acae9c893348a16d154c633647bd066416bc1f4632e4dfa7fc03efed3a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e701b019ac3fc647d5ce7cf641ae305d863e3db80643c8a07a3fb46a1eb47c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4b8606484ea16cea03ee02e3fe2fc5bdbc4b6bdd0da7b64e0003a7743583f81"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de056bc14ef8aaaabc7d23548d08c9108071393d6018caec35cb83c5a7221bd2"
-    sha256 cellar: :any_skip_relocation, ventura:        "29dab67c444ee74340496095c489701cbe5688dc2432e62f4662c757117d6ec4"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b130d06aa50892fbeaba2ec0bfbd7c88bfb4dd5376c21bf46b4a3c41b31bc17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da8ad941d9d9cb88a5c5b277d7e917678b289cbd43de4e810a44f274e2e9ac6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6159008022303e0f5c5dff4979b5de70ee2e2c66ac9466a40266589a49e1a11"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c2d5ea2704fe046c27714b0e8371c17909120927359553daa73dca3c528196d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b4b7d867bb0a11e5e24052f3e9b937e0e2c8da313b1500634fa5463902e585a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "891dd8fee352a3805ceef8cbe254f0296dacddeaf5de100775a2fb789a69cf68"
+    sha256 cellar: :any_skip_relocation, ventura:        "35be154e88506e28fa3edf2711d5a1b73bc467f80fec7aafb1a215cfaa8e042d"
+    sha256 cellar: :any_skip_relocation, monterey:       "634aa891ee3d3dd7f610138dc1cb91d0e4b5cff3fc22fca3975145cecef7d760"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bec99d615b9f6be021ce01e9ad25cf9dc62153ee918955465d0af78cabfcda6"
   end
 
   depends_on "go" => :build

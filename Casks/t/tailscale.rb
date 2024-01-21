@@ -32,14 +32,14 @@ cask "tailscale" do
             login_item: "Tailscale"
 
   zap trash: [
-    "~LibraryTailscale",
     "~LibraryApplication Scripts*.io.tailscale.ipn.macsys",
-    "~LibraryApplication Scriptsio.tailscale.ipn.macsys.share-extension",
     "~LibraryApplication Scriptsio.tailscale.ipn.macsys",
+    "~LibraryApplication Scriptsio.tailscale.ipn.macsys.share-extension",
     "~LibraryContainersio.tailscale.ipn.macos.network-extension",
-    "~LibraryContainersio.tailscale.ipn.macsys.share-extension",
     "~LibraryContainersio.tailscale.ipn.macsys",
+    "~LibraryContainersio.tailscale.ipn.macsys.share-extension",
     "~LibraryContainersTailscale",
     "~LibraryGroup Containers*.io.tailscale.ipn.macsys",
+    "~LibraryTailscale",
   ]
 end

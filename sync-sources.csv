@@ -5320,7 +5320,7 @@ Homebrew-homebrew-core/Formula/r/regclient.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/regex-opt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/regina-rexx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/regipy.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/regldg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/regldg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/regula.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rekor-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/release-it.rb, Homebrew/homebrew-core, 1
@@ -5542,6 +5542,7 @@ Homebrew-homebrew-core/Formula/s/scip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scipy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scm-manager.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scmpuff.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/scnlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scons.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scorecard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scotch.rb, Homebrew/homebrew-core, 0

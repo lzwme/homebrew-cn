@@ -15,8 +15,8 @@ cask "tusk" do
   zap trash: [
     "~.tusk.json",
     "~LibraryApplication SupportTusk",
-    "~LibraryPreferencescom.electron.tusk.plist",
     "~LibraryPreferencescom.electron.tusk.helper.plist",
+    "~LibraryPreferencescom.electron.tusk.plist",
     "~LibrarySaved Application Statecom.electron.tusk.savedState",
   ]
 end

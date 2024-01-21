@@ -13,16 +13,15 @@ cask "squirrel" do
   pkg "Squirrel.pkg"
 
   uninstall pkgutil: [
-              "im.rime.inputmethod.Squirrel",
               "com.googlecode.rimeime.Squirrel.pkg", # Package name of older versions (< 0.10.0)
+              "im.rime.inputmethod.Squirrel",
             ],
             delete:  "LibraryInput MethodsSquirrel.app"
 
   zap trash: [
-    "~LibraryCachesim.rime.inputmethod.Squirrel",
-    "~LibraryPreferencesim.rime.inputmethod.Squirrel.plist",
-    # Data for older versions (< 0.10.0)
     "~LibraryCachescom.googlecode.rimeime.inputmethod.Squirrel",
+    "~LibraryCachesim.rime.inputmethod.Squirrel",
     "~LibraryPreferencescom.googlecode.rimeime.inputmethod.Squirrel.plist",
+    "~LibraryPreferencesim.rime.inputmethod.Squirrel.plist",
   ]
 end

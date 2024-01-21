@@ -20,8 +20,8 @@ cask "tropy" do
 
   zap trash: [
     "~LibraryApplication SupportTropy",
-    "~LibraryCachesorg.tropy.tropy.ShipIt",
     "~LibraryCachesorg.tropy.tropy",
+    "~LibraryCachesorg.tropy.tropy.ShipIt",
     "~LibraryCachesTropy",
     "~LibraryLogsTropy",
     "~LibraryPreferencesorg.tropy.tropy.plist",

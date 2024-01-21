@@ -1,18 +1,18 @@
 class Dssim < Formula
   desc "RGBA Structural Similarity Rust implementation"
   homepage "https:github.comkornelskidssim"
-  url "https:github.comkornelskidssimarchiverefstags3.3.0.tar.gz"
-  sha256 "2423413fc24295928c1fc04625d24c54362a5473276effbc560a3e3d9ad349ff"
+  url "https:github.comkornelskidssimarchiverefstags3.3.1.tar.gz"
+  sha256 "2bb8204f87eea2966e7d1455d174e5b7e3f47514aee13ad73045d4399d0f3edc"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8fbef156045e436a749750b6cec330fdaa2829b3e2f13c01bf4fbc0930f671d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da5130c05b493861a3a3a46e5ac942b8a5f63ab7ba57b073103cfafa96c6d4a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da16685b6140f67c5bc2c47f96481dbb180529f307f29d9eba6747d8626d20d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e39edf5f84279bcd99324547f647ff8b60e47a61aaf34364a1e09d34324e0b07"
-    sha256 cellar: :any_skip_relocation, ventura:        "f082e73edf609bf5154907ee3bbac4a0e3b06cefde3f8116b27497de70cf300b"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e4e634f9450a6150abbd00bf1a6c81408adae8e3ab2812b65f6ff5d9edb5533"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20b40ff449e832a644b3f1a64e3785bb5cbaa93dde81910c046e908ae1995a4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0dfd2b5a1c056ff3884f49982d7ac8d6960a7bf0e908cf0d5d926a84dd99eec4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cd17c98c89c6d8e62ae6c95f4c642c99c57ffa52744347bfd15e75cae9abfb9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20c10ef5485635eab7e246dad306a17147d46e27939ea1780eed38b328497f01"
+    sha256 cellar: :any_skip_relocation, sonoma:         "62bb524a94bf5c90463d244690a32591a7c3166bdddf8aa1a97f2fd0cd779e2f"
+    sha256 cellar: :any_skip_relocation, ventura:        "7222cc33dad5c0f39a9496b1df83adfe2b83c8fa8eb112e6c7fd38f26e774893"
+    sha256 cellar: :any_skip_relocation, monterey:       "8501f2023519307e078531d1d8bacd9cea878ef4b32e8a572536a3af54efc57d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1fca55387957980c34d82360e44f11d9f8e413bb40e7387f6d19fff1246de63"
   end
 
   depends_on "nasm" => :build

@@ -5,6 +5,14 @@ class Sdl2Ttf < Formula
   sha256 "9dc71ed93487521b107a2c4a9ca6bf43fb62f6bddd5c26b055e6b91418a22053"
   license "Zlib"
 
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "eb64334ebf36c5a6a5b0668ff672b3e8001cbb7c11c90dc72a0757639faed8c7"
     sha256 cellar: :any,                 arm64_ventura:  "5f983f0da784459c3a66961a6fd04e0effc138f97348e1c56ae7cfd212fc8e71"

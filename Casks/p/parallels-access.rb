@@ -51,7 +51,7 @@ cask "parallels-access" do
     "~LibraryCookiescom.parallels.mobile.prl_deskctl_agent.binarycookies",
     "~LibraryGroup Containers4C6364ACXT.com.parallels.Access",
     "~LibraryPreferencescom.parallels.mobile.plist",
-    "~LibraryPreferencescom.parallels.Parallels Access.plist.sdb",
     "~LibraryPreferencescom.parallels.Parallels Access.plist",
+    "~LibraryPreferencescom.parallels.Parallels Access.plist.sdb",
   ]
 end

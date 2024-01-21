@@ -1,14 +1,10 @@
 class Regldg < Formula
   desc "Regular expression grammar language dictionary generator"
-  homepage "https://regldg.com/"
-  url "https://regldg.com/regldg-1.0.1.tar.gz"
+  # raised an site issue, https:github.comPatrickCroninregldgissues6
+  homepage "https:github.comPatrickCroninregldg"
+  url "https:github.comPatrickCroninregldgreleasesdownloadv1.0.1regldg-1.0.1.tar.gz"
   sha256 "f5f401c645a94d4c737cefa2bbcb62f23407d25868327902b9c93b501335dc99"
   license "MIT"
-
-  livecheck do
-    url "https://regldg.com/download.html"
-    regex(/href=.*?regldg[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91af1452780b526334c5393e27c0a833d91175120733a19db43ce1c37b05544d"
@@ -32,6 +28,6 @@ class Regldg < Formula
   end
 
   test do
-    system "#{bin}/regldg", "test"
+    system "#{bin}regldg", "test"
   end
 end

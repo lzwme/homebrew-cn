@@ -15,8 +15,7 @@ cask "webviewscreensaver" do
   screen_saver "WebViewScreenSaver.saver"
 
   zap trash: [
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferences" \
-    "ByHostWebViewScreenSaver.*",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferencesByHostWebViewScreenSaver.*",
     "~LibraryPreferencesByHostWebViewScreenSaver.*",
     "~LibraryScreen SaversWebViewScreenSaver.saver",
   ]

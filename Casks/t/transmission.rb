@@ -19,10 +19,10 @@ cask "transmission" do
   app "Transmission.app"
 
   zap trash: [
-    "~LibraryApplication SupportTransmission",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.m0k.transmission.sfl*",
-    "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFileTransmission Help*",
+    "~LibraryApplication SupportTransmission",
     "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFileorg.m0k.transmission.help",
+    "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFileTransmission Help*",
     "~LibraryCachesorg.m0k.transmission",
     "~LibraryCookiesorg.m0k.transmission.binarycookies",
     "~LibraryPreferencesorg.m0k.transmission.LSSharedFileList.plist",

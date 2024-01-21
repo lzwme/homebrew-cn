@@ -3,8 +3,8 @@ class Trino < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https:trino.io"
-  url "https:search.maven.orgremotecontent?filepath=iotrinotrino-server435trino-server-435.tar.gz", using: :nounzip
-  sha256 "96e6f6462960b9c564d551b62a1eadcc28069da7da2524784f0118a34d3f5c2c"
+  url "https:search.maven.orgremotecontent?filepath=iotrinotrino-server436trino-server-436.tar.gz", using: :nounzip
+  sha256 "0e949112f98c2e94a95bd8be5d2fe618af48d80b0ef8ce3ff1a7288b1adba5aa"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Trino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8167904a50a168b709d160c83ff98b2f067638547a12d2ff18a92b576b201e8a"
+    sha256 cellar: :any_skip_relocation, all: "8224ea6bc7676f6730be5f466413b7a11b2a149ef8f584421b0233cc725776c0"
   end
 
   depends_on "gnu-tar" => :build
@@ -21,13 +21,13 @@ class Trino < Formula
   depends_on "python@3.12"
 
   resource "trino-src" do
-    url "https:github.comtrinodbtrinoarchiverefstags435.tar.gz", using: :nounzip
-    sha256 "2c2a27cae3bbfbc9d6015323023aa16f9291f81ed21ba0db0010844064145f84"
+    url "https:github.comtrinodbtrinoarchiverefstags436.tar.gz", using: :nounzip
+    sha256 "79e8b935c274353dfeb765f18369bd9c9be92c4e7777d9840c127ccedbd79207"
   end
 
   resource "trino-cli" do
-    url "https:search.maven.orgremotecontent?filepath=iotrinotrino-cli435trino-cli-435-executable.jar"
-    sha256 "5fe1bbe4ab6542eb3d998706b40326ecc0e8eeb78dd994e556f84687312ee56e"
+    url "https:search.maven.orgremotecontent?filepath=iotrinotrino-cli436trino-cli-436-executable.jar"
+    sha256 "99f3e0ffda07ad168b2d46c643180b8c3e65964254dfa239567b2f5ad1f1f9e3"
   end
 
   def install

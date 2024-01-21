@@ -13,9 +13,9 @@ cask "notable" do
   app "Notable.app"
 
   zap trash: [
-    "~LibrarySaved Application Statecom.fabiospampinato.notable.savedState",
-    "~LibraryPreferencescom.fabiospampinato.notable.plist",
-    "~LibraryApplication SupportNotable",
     "~.notable.json",
+    "~LibraryApplication SupportNotable",
+    "~LibraryPreferencescom.fabiospampinato.notable.plist",
+    "~LibrarySaved Application Statecom.fabiospampinato.notable.savedState",
   ]
 end

@@ -27,9 +27,9 @@ cask "switchhosts" do
   app "SwitchHosts.app"
 
   zap trash: [
+    "~.SwitchHosts",
     "~LibraryApplication SupportSwitchHosts",
     "~LibraryPreferencesSwitchHosts.plist",
     "~LibrarySaved Application StateSwitchHosts.savedState",
-    "~.SwitchHosts",
   ]
 end

@@ -12,9 +12,9 @@ cask "openbazaar" do
 
   zap trash: [
     "~LibraryApplication SupportOpenBazaar#{version.major_minor}",
+    "~LibraryCachescom.electron.openbazaar",
     "~LibraryCachescom.electron.openbazaar#{version.major}",
     "~LibraryCachescom.electron.openbazaar#{version.major}.ShipIt",
-    "~LibraryCachescom.electron.openbazaar",
     "~LibraryPreferencescom.electron.openbazaar#{version.major}.helper.plist",
     "~LibraryPreferencescom.electron.openbazaar.plist",
   ]

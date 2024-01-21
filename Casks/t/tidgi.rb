@@ -19,8 +19,8 @@ cask "tidgi" do
 
   zap trash: [
     "~LibraryApplication SupportTidGi",
-    "~LibraryCachescom.tidgi.app.ShipIt",
     "~LibraryCachescom.tidgi.app",
+    "~LibraryCachescom.tidgi.app.ShipIt",
     "~LibraryPreferencescom.tidgi.app.plist",
     "~LibraryPreferencescom.tidgi.plist",
     "~LibrarySaved Application Statecom.microsoft.VSCode.savedState",

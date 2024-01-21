@@ -15,7 +15,7 @@ cask "rclone-browser" do
   app "rclone-browser-#{version.csv.first}-#{version.csv.second}-macOSRclone Browser.app"
 
   zap trash: [
-    "~LibraryPreferencesRclone Browser.plist",
     "~LibraryPreferencescom.rclone-browser.rclone-browser.plist",
+    "~LibraryPreferencesRclone Browser.plist",
   ]
 end

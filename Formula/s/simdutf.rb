@@ -4,6 +4,7 @@ class Simdutf < Formula
   url "https:github.comsimdutfsimdutfarchiverefstagsv4.0.8.tar.gz"
   sha256 "bbc1b5fdfec7d0f83c6a9d24bf90d10c2a462f30aa1ced30bed72288006a2194"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https:github.comsimdutfsimdutf.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "eb3ae258c5e6f44f656ef24b0efae1a7bf75b348804e7b0da1e10f57d83028c7"
-    sha256 cellar: :any, arm64_ventura:  "1bd856598d32e0301ef2e42e81e3e54f2e8d16d37b793e6f8800cf9f6c343e13"
-    sha256 cellar: :any, arm64_monterey: "4ab981a23d29ff754df6fc34c3dfc9be81e3dda0d9554c989646a6e6e9c2231e"
-    sha256 cellar: :any, sonoma:         "dc5a473ac2fac2ac52b725f68291359f1557a39e7e309b032f807b32552f050c"
-    sha256 cellar: :any, ventura:        "a1400e87f8e301308cd74e466ee77576c184432f54d2c38b50e9395b8e958caf"
-    sha256 cellar: :any, monterey:       "3e65eba6f985c2ceb0a7b7fbaf91ba693f7958cdae856a2104b3671a0da6a526"
+    sha256 cellar: :any, arm64_sonoma:   "0ba2e926974fb2f8c777ac539864405f5be3c1314b67edda7a6fa80e170161d9"
+    sha256 cellar: :any, arm64_ventura:  "37ad8ecf08a0f54d7747bed875173fa62d5663b67784c1874d55f8df0da0a9e7"
+    sha256 cellar: :any, arm64_monterey: "6284e4708b5bfae89b91bd92baf22e247f4c7bdf58a9353de81945f457be9937"
+    sha256 cellar: :any, sonoma:         "bea00c9259369edeab19b03f2b6abc83299cf14590909fd869cabfe43a8fe437"
+    sha256 cellar: :any, ventura:        "0fdb9c9bc2b24fe916fbbd863e118c28992e2dd2e5ce33a9be856dc0bf4e76a9"
+    sha256 cellar: :any, monterey:       "690d3a176378c3de805a98cf017fdc335969c37219ff3f78b483e9c7d6cecce6"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +29,9 @@ class Simdutf < Formula
 
   def install
     args = %W[
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
       -DPython3_EXECUTABLE=#{which("python3")}
       -DSIMDUTF_BENCHMARKS=ON
     ]

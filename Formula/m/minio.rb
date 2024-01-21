@@ -2,9 +2,9 @@ class Minio < Formula
   desc "High Performance, Kubernetes Native Object Storage"
   homepage "https:min.io"
   url "https:github.comminiominio.git",
-      tag:      "RELEASE.2024-01-16T16-07-38Z",
-      revision: "ca258c04cb1dea33c31fed86250eaa3d1f020ff8"
-  version "20240116160738"
+      tag:      "RELEASE.2024-01-18T22-51-28Z",
+      revision: "19387cafab76133c2e7642de4aac8c81b9f4f8c7"
+  version "20240118225128"
   license "AGPL-3.0-or-later"
   head "https:github.comminiominio.git", branch: "master"
 
@@ -17,13 +17,13 @@ class Minio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f21248d4dbb8c610836a89683a72e0829c8087eb1df6df47fa8c21e9d0ea149c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "421e676d38f48d933ec20b8f8b39ecc9480fd2d8ba585ab59465b3de9290fbd6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aba493925f4f119051aadb092a3d109c2d577a4863932e96a8e38b4d36dac6f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6915dcd4193765f33d7cb02770814cb1435699205673a3b44359a3203eb70d5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b3ffbd493ab5ff8c5c9497ae78a0c86c47c460b869ba349df7eb14af005e294"
-    sha256 cellar: :any_skip_relocation, monterey:       "2736da97d2df014dbea80a5c82e18f9e419853793be86bf450bb10c9d5b19287"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac15155b0ddba7fbc962ea5b5065c93aa8a5b55c56dc58f9c3bfbbbfc05c46d2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9823c6d4b633c7b472190ae96f7a35c9830e78ab212ba9d1397fce0dcce6185d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc9c2e5cab1cf53025b9dc4310e5211947cd79badafb4d273a7e6e7e15d9b0e0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a6ac9a9bf9191d28dfeee7baceaf97f7fb3dad922af73fa374228c847a099a8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a50a669c220d3cbdb7f29da8ea6452d8c0c4b0c52f7a2f742b3c43041789334d"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf3a5b6758fe61473cc2c303f42818893df7cbbfea5a7cf8525232c1628090fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd33883ab2c023312fc65f1b4c28cf5640bc34922dc17baf52bf38d3cfaf4cde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbbf01698030d56deea220115afeafa06e405fe2cbfa9aab935217b67a9c2882"
   end
 
   depends_on "go" => :build

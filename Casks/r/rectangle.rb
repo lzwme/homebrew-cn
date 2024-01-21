@@ -24,8 +24,8 @@ cask "rectangle" do
     "~LibraryApplication Scriptscom.knollsoft.RectangleLauncher",
     "~LibraryApplication SupportRectangle",
     "~LibraryCachescom.knollsoft.Rectangle",
-    "~LibraryHTTPStoragescom.knollsoft.Rectangle",
     "~LibraryContainerscom.knollsoft.RectangleLauncher",
+    "~LibraryHTTPStoragescom.knollsoft.Rectangle",
     "~LibraryPreferencescom.knollsoft.Rectangle.plist",
   ]
 end

@@ -11,8 +11,8 @@ cask "packet-peeper" do
   app "Packet Peeper.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.packetpeeper.sfl*",
     "~LibraryPreferencesorg.PacketPeeper.plist",
     "~LibrarySaved Application Stateorg.PacketPeeper.savedState",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.packetpeeper.sfl*",
   ]
 end

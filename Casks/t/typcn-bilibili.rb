@@ -12,8 +12,8 @@ cask "typcn-bilibili" do
   app "Bilibili.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.typcn.bilibili",
     "~LibraryApplication Supportcom.crashlyticscom.typcn.bilibili",
+    "~LibraryApplication Supportcom.typcn.bilibili",
     "~LibraryWebKitcom.typcn.bilibili",
   ]
 end

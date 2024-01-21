@@ -12,11 +12,11 @@ cask "upterm" do
   app "Upterm.app"
 
   zap trash: [
+    "~.upterm",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.github.railsware.upterm.sfl*",
     "~LibraryApplication SupportUpterm",
     "~LibraryPreferencescom.github.railsware.upterm.helper.plist",
     "~LibraryPreferencescom.github.railsware.upterm.plist",
     "~LibrarySaved Application Statecom.github.railsware.upterm.savedState",
-    "~.upterm",
   ]
 end

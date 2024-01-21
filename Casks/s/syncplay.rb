@@ -19,11 +19,11 @@ cask "syncplay" do
 
   zap trash: [
     "~.syncplay",
-    "~LibrarySaved Application Statepl.syncplay.Syncplay.savedState",
-    "~LibraryPreferencescom.syncplay.MoreSettings.plist",
     "~LibraryPreferencescom.syncplay.Interface.plist",
     "~LibraryPreferencescom.syncplay.MainWindow.plist",
-    "~LibraryPreferencespl.syncplay.Syncplay.plist",
+    "~LibraryPreferencescom.syncplay.MoreSettings.plist",
     "~LibraryPreferencescom.syncplay.PlayerList.plist",
+    "~LibraryPreferencespl.syncplay.Syncplay.plist",
+    "~LibrarySaved Application Statepl.syncplay.Syncplay.savedState",
   ]
 end

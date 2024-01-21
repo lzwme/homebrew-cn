@@ -24,10 +24,10 @@ cask "solar2d" do
   suite "Corona-#{version.minor}"
 
   zap trash: [
-    "~LibraryApplication SupportCorona",
     "~LibraryApplication SupportCorona Simulator",
-    "~LibraryPreferencescom.coronalabs.CoronaConsole.plist",
+    "~LibraryApplication SupportCorona",
     "~LibraryPreferencescom.coronalabs.Corona_Simulator.plist",
+    "~LibraryPreferencescom.coronalabs.CoronaConsole.plist",
     "~LibrarySaved Application Statecom.coronalabs.Corona_Simulator.savedState",
   ]
 end

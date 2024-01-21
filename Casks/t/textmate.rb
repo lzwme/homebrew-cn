@@ -22,8 +22,8 @@ cask "textmate" do
   uninstall quit: "com.macromates.TextMate"
 
   zap trash: [
-    "~LibraryApplication SupportTextMate",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.macromates.textmate.sfl2",
+    "~LibraryApplication SupportTextMate",
     "~LibraryCachescom.apple.helpdGeneratedTextMate #{version.major} Help*",
     "~LibraryCachescom.macromates.TextMate",
     "~LibraryPreferencescom.macromates.TextMate.plist",

@@ -22,11 +22,11 @@ cask "pb" do
             ]
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsde.sidneys.pb-for-desktop.sfl*",
+    "~LibraryApplication Supportde.sidneys.pb-for-desktop.ShipIt",
     "~LibraryApplication SupportPB for Desktop",
     "~LibraryApplication SupportShipIt_stderr.log",
     "~LibraryApplication SupportShipIt_stdout.log",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsde.sidneys.pb-for-desktop.sfl*",
-    "~LibraryApplication Supportde.sidneys.pb-for-desktop.ShipIt",
     "~LibraryCachesde.sidneys.pb-for-desktop",
     "~LibraryCachesde.sidneys.pb-for-desktop.ShipIt",
     "~LibraryLogsPB for Desktop",

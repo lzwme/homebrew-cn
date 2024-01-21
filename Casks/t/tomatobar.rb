@@ -10,7 +10,7 @@ cask "tomatobar" do
   app "TomatoBar.app"
 
   zap trash: [
-    "~LibraryContainerscom.github.ivoronin.TomatoBar",
     "~LibraryApplication Scriptscom.github.ivoronin.TomatoBar",
+    "~LibraryContainerscom.github.ivoronin.TomatoBar",
   ]
 end
