@@ -19,11 +19,11 @@ cask "vscodium-insiders" do
 
   zap trash: [
     "~.vscodium-insiders",
-    "~LibraryApplication SupportVSCodium - Insiders",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.microsoft.vscodiuminsiders.sfl*",
-    "~LibraryCachesVSCodium - Insiders",
-    "~LibraryCachescom.microsoft.VSCodiumInsiders.ShipIt",
+    "~LibraryApplication SupportVSCodium - Insiders",
     "~LibraryCachescom.microsoft.VSCodiumInsiders",
+    "~LibraryCachescom.microsoft.VSCodiumInsiders.ShipIt",
+    "~LibraryCachesVSCodium - Insiders",
     "~LibraryPreferencescom.microsoft.VSCodiumInsiders.helper.plist",
     "~LibraryPreferencescom.microsoft.VSCodiumInsiders.plist",
     "~LibrarySaved Application Statecom.microsoft.VSCodiumInsiders.savedState",

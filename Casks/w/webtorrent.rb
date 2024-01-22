@@ -17,6 +17,8 @@ cask "webtorrent" do
     "~LibraryCachesio.webtorrent.webtorrent.ShipIt",
     "~LibraryCachesWebTorrent",
     "~LibraryCookiesio.webtorrent.webtorrent.binarycookies",
+    "~LibraryHTTPStoragesio.webtorrent.webtorrent",
+    "~LibraryLogsWebTorrent",
     "~LibraryPreferencesByHostio.webtorrent.webtorrent.ShipIt.*.plist",
     "~LibraryPreferencesio.webtorrent.webtorrent-helper.plist",
     "~LibraryPreferencesio.webtorrent.webtorrent.plist",

@@ -12,13 +12,14 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "cb398cae36b384effbc32efe912feb999d78f8032fbaabe5d047d887a07659ee"
-    sha256 arm64_ventura:  "19e12150b88f964de8b147bc3d6abfe687a253463ee8c4e5c45f971d6abef07e"
-    sha256 arm64_monterey: "4f2aa9a9ba0b5c74b82527cf01d49c41123c8b7c458e5e3e8cc43aab53084dba"
-    sha256 sonoma:         "7898eb51beaa992dd0cf2c73f09f596e415fcc2dd76acd2e42b262a3b058c073"
-    sha256 ventura:        "b24194594e33b73e467d8d698159ff2c5f837fd89627cc5559d42910a508c33a"
-    sha256 monterey:       "2dbe6a18ec41059651f02e0eeb6ac007995e6475f328c624747d6b0f1ed052db"
-    sha256 x86_64_linux:   "c29cad945ec22b6470a28254f1181e75ceac2f2a55e8192cedbf7272d36c0dcf"
+    rebuild 1
+    sha256 arm64_sonoma:   "f12e9bbe791fd1a2fa24b6231c7ab6c943281f12bdd275a2bd9c8355ad37fe77"
+    sha256 arm64_ventura:  "c458c1ee3e7e2c1ae86e86cc64c6dd9058bcc52b1bac4d5bb9f50a5ed52846b8"
+    sha256 arm64_monterey: "f038110a202fa0cbf7bdccd0d96b0560d1dd779165317952e248ff8953a59943"
+    sha256 sonoma:         "288bd245741f2d8e8aeb45238cd56067945409e519dc13d375500b2b04f7e28e"
+    sha256 ventura:        "20491000824618ebd2d4dd075ba2133935a3a267e68f5eecc215aceae9d9cc69"
+    sha256 monterey:       "dfd6d5fe05ddbe5ccc93a43629c280e3dc14b27173da02a19108dea91f0aab7a"
+    sha256 x86_64_linux:   "fb9b65fc5fd23ca53af2d36bb9401c9fb4810bc771f3793f4938aa3a529166be"
   end
 
   depends_on "cmake" => :build
@@ -50,6 +51,12 @@ class Opencv < Formula
   resource "contrib" do
     url "https:github.comopencvopencv_contribarchiverefstags4.9.0.tar.gz"
     sha256 "8952c45a73b75676c522dd574229f563e43c271ae1d5bbbd26f8e2b6bc1a4dae"
+
+    # TODO: remove with next OpenCV release. Fix https:github.comopencvopencv_contribpull3624
+    patch do
+      url "https:github.comopencvopencv_contribcommit46fb893f9a632012990713c4003d7d3cab4f2f25.patch?full_index=1"
+      sha256 "8f89f3db9fd022ffbb30dd1992df6d20603980fadfe090384e12c57731a9e062"
+    end
   end
 
   def python3

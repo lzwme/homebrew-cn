@@ -21,13 +21,11 @@ cask "aerial-beta" do
   zap trash: [
     "~LibraryApplication SupportAerial",
     "~LibraryCachesAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibrary" \
-    "Application SupportAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibraryCachesAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryApplication SupportAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryCachesAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferences" \
-    "ByHostcom.JohnCoates.Aerial*.plist",
+    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryApplication SupportAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryApplication SupportAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryCachesAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryCachesAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryPreferencesByHostcom.JohnCoates.Aerial*.plist",
     "~LibraryPreferencesByHostcom.JohnCoates.Aerial*",
     "~LibraryScreen SaversAerial.saver",
   ]

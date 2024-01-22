@@ -35,6 +35,7 @@ cask "vlc" do
     "~LibraryApplication Supportorg.videolan.vlc",
     "~LibraryApplication SupportVLC",
     "~LibraryCachesorg.videolan.vlc",
+    "~LibraryHTTPStoragesorg.videolan.vlc",
     "~LibraryPreferencesorg.videolan.vlc",
     "~LibraryPreferencesorg.videolan.vlc.plist",
     "~LibrarySaved Application Stateorg.videolan.vlc.savedState",

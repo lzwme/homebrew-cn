@@ -1,18 +1,18 @@
 class Md4c < Formula
   desc "C Markdown parser. Fast. SAX-like interface"
   homepage "https:github.commitymd4c"
-  url "https:github.commitymd4carchiverefstagsrelease-0.5.0.tar.gz"
-  sha256 "79548a689bb931d099dc8242a6824e13160553fa843ae3d8a9eded571d89168e"
+  url "https:github.commitymd4carchiverefstagsrelease-0.5.1.tar.gz"
+  sha256 "2dca17c6175a7f11182943079c2a4f9adb5071433e3d3d05ba801ff794993f34"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8142cb4d9f56c31c57e021bb2b32688889110df24c5290291d50647f785b0c11"
-    sha256 cellar: :any,                 arm64_ventura:  "fd54f77b56f74071a87345e26e0c3071914692761f4850fc4b6c96211e1a04c2"
-    sha256 cellar: :any,                 arm64_monterey: "2859477205981a24441039d49583778885987f9b22f0155d9f8df872761b1163"
-    sha256 cellar: :any,                 sonoma:         "dc465385d7887e97091f33c2e7e613ee0603d038c0420bfe8d71d7aae650e00f"
-    sha256 cellar: :any,                 ventura:        "d2df8c08bf2d003bd0ec1dbb3b5ba9027101d357ba6c42a485ac904e31623f9a"
-    sha256 cellar: :any,                 monterey:       "a8a62db3d4514cba8dd123dd4db39a823ac203cca944a5184c7d59e633e51a27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04ab09ac36513ddf6abcd97de88bd9b67a1efa2cfe031e73ce437abcce07806f"
+    sha256 cellar: :any,                 arm64_sonoma:   "32dcf01cd5de8cef22747e7295db6e7a274d68063ae416cf9c3a56af696bb0e6"
+    sha256 cellar: :any,                 arm64_ventura:  "195b234c21b23c92912a1fcd42a5603e6357fc4cbcd0c32e292bad8045eab5cb"
+    sha256 cellar: :any,                 arm64_monterey: "a7eddff218c17adf1d46cc0a5678104cfec0a013aa45487ba56eb8c88ccbdde9"
+    sha256 cellar: :any,                 sonoma:         "c28496cda30281d2de8d162be41d8a660602d0e6aa01355a2fd7b2e68cb03974"
+    sha256 cellar: :any,                 ventura:        "d497dfc84c299e521cd05e18b6245bc1610b079578202ad7fbd28a1223472338"
+    sha256 cellar: :any,                 monterey:       "6cac15c44d8e6c5abca1149fe211a9d0ec541bbfa19530b7c741f16760464798"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcdc9b09011de141187ce914e6ddd2675556e2086b254bef8714b164540502be"
   end
 
   depends_on "cmake" => :build

@@ -25,8 +25,8 @@ cask "mono-mdk-for-visual-studio" do
             ],
             pkgutil: "com.xamarin.mono-*",
             rmdir:   [
-              "LibraryFrameworksMono.frameworkVersions",
               "LibraryFrameworksMono.framework",
+              "LibraryFrameworksMono.frameworkVersions",
             ]
 
   zap trash:  [

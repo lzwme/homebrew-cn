@@ -1,19 +1,19 @@
 class Tflint < Formula
   desc "Linter for Terraform files"
   homepage "https:github.comterraform-linterstflint"
-  url "https:github.comterraform-linterstflintarchiverefstagsv0.50.1.tar.gz"
-  sha256 "ef019d3602cb6eae33443c619230b28eb47368126337f6d496a2060b7ab3f950"
+  url "https:github.comterraform-linterstflintarchiverefstagsv0.50.2.tar.gz"
+  sha256 "dffc6ec7e212e48c9a778e1f3255ce133d20b66bf30295aa9cbfcc1095ee7daf"
   license "MPL-2.0"
   head "https:github.comterraform-linterstflint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e9a206b7df1e658e26f6486f0dcfdb8018f3797bedf8a9f330e4dad349c2bfa4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1c59c61106e9c105a67cc58ce60884339d440dea1fefb7b13be12d695c7560d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a61e5a8717c3b7ad85facd54e7b8626b24a25036aec960518f5dbe582d81b80a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0240c1f62abb27b8e9be48c414dfb922d3c46bc67540655c139ba62b9e55cb9f"
-    sha256 cellar: :any_skip_relocation, ventura:        "6afb6c4d396f8757f13f0c05517a2eeee631a27e6436e4c6c9af40ffc35d691a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e151b550d8f3899d010289d8bfa1b9699ecd3e8d5aabfcb83933aad537fb38b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89ffb6b01fcd8d72a5c9cce0c652a81599aead4e2416385a214178e01b972c99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76d14b5bf9a378fe7f037aa2955f1e412e0ce7271a3a5ac12f121a6160193ef3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f96f35299b86535bd77ab7c9609449194ab3c48c0cb00d96f4b3d2252ac65bc3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e679a10646b2951f1c1723879bfc2fdd9c72d1040aaeb2bdec9dfbf286dc966f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f8dc437789e1fcc5c270c963434c4449621ffbfaf98a5762f897645bb4432d0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "acce8dbcba87446e791dc72a853d6bea545fb0753d3b4f90096e45f2be3c158a"
+    sha256 cellar: :any_skip_relocation, monterey:       "59950d33166213ceafffed93ad90f2d33d5d52b2369e2188abec35d6c84b22b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "732939a231d2f46f55c61fbe4425f1a0acc1074e91de34efbbf358db9834a1c6"
   end
 
   depends_on "go" => :build

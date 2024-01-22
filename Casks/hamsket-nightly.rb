@@ -16,6 +16,7 @@ cask "hamsket-nightly" do
   zap trash: [
     "~LibraryApplication SupportCrashReporterRambox Helper_*.plist",
     "~LibraryApplication SupportCrashReporterRambox_*.plist",
+    "~LibraryApplication SupportHamsket",
     "~LibraryApplication SupportRambox",
     "~LibraryCachescom.grupovrs.ramboxce",
     "~LibraryCachescom.grupovrs.ramboxce.ShipIt",
@@ -28,8 +29,7 @@ cask "hamsket-nightly" do
     "~LibraryPreferencescom.saenzramiro.rambox.plist",
     "~LibrarySaved Application Statecom.grupovrs.ramboxce.savedState",
     "~LibrarySaved Application Statecom.saenzramiro.rambox.savedState",
-    "~LibraryWebKitcom.saenzramiro.rambox",
-    "~LibraryApplication SupportHamsket",
     "~LibrarySaved Application Statecom.thegoddessinari.hamsket.savedState",
+    "~LibraryWebKitcom.saenzramiro.rambox",
   ]
 end

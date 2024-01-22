@@ -17,8 +17,8 @@ cask "smcfancontrol-beta" do
   app "smcFanControl.app"
 
   zap trash: [
-    "~LibraryApplication SupportsmcFanControl",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.eidac.smcfancontrol#{version.major}.sfl*",
+    "~LibraryApplication SupportsmcFanControl",
     "~LibraryCachescom.eidac.smcFanControl#{version.major}",
   ]
 end

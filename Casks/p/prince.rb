@@ -9,7 +9,7 @@ cask "prince" do
 
   livecheck do
     url "https:www.princexml.comdownload"
-    regex(%r{href=.*?prince-(\d+(?:\.\d+)*)-macos\.zip}i)
+    regex(>Prince v?(\d+(?:\.\d+)+)i)
   end
 
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)

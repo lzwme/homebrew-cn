@@ -3,18 +3,18 @@ require "languagenode"
 class Dicebear < Formula
   desc "CLI for DiceBear - An avatar library for designers and developers"
   homepage "https:github.comdicebeardicebear"
-  url "https:registry.npmjs.orgdicebear-dicebear-7.0.2.tgz"
-  sha256 "ff134eb3157fb796b45bf31ee4ac4da416730b8474dccee0af9b5a61e3271006"
+  url "https:registry.npmjs.orgdicebear-dicebear-7.0.3.tgz"
+  sha256 "da505506f7aafd2a851a4a23456bd0e3a562ecc6856b59f3e50de42cb2523516"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sonoma:   "065dd5b58009a12faf4dffa0151c61d55325f783f2ee26f737966a932e0b966d"
-    sha256                               arm64_ventura:  "518d14f8c36bda0320bf14c0ce759ec7e1461fa5683b772b28eff1f7a166109e"
-    sha256                               arm64_monterey: "270d228255d8b3667537a3202d0c6d4ed72e86ccb91ab9c14d9c47dcd4fe791c"
-    sha256                               sonoma:         "e393d80cdb20dd4879e351be15ec8c0141c3f94c0b1e155bcb319b47a08a7cf9"
-    sha256                               ventura:        "5f4ea3399de7479aa418f338dfa0cfe929e08a91803135503e715df26b3079d8"
-    sha256                               monterey:       "e658b5e4375b923e4c3b2b398607d5f3c3886acaffb4d50057306f09b1be7cf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d7faf48c46d80df4f113b7501ab42694b845949a1e14158e0c2d1ccd1f1329c"
+    sha256                               arm64_sonoma:   "2db4717f73fcdfc23592edd4326237c0465c031f1326a34fd9abd72191afbc11"
+    sha256                               arm64_ventura:  "00216e490e473bb850c44a3880f6539ebbdf636430119712b02ae1adb330be71"
+    sha256                               arm64_monterey: "6c07db86a32965434e72bb10431ad1dc544bf0a20694ecf0012f5b65fe4abb7c"
+    sha256                               sonoma:         "d319c2921de4f9ad67a9f07d8d0bed8dadd53a021f59d055fed1fe403bf3cc54"
+    sha256                               ventura:        "049e99cf4664051ae1b89e5d319a52619dbece00e6f8f5892c1cf1d707eb8484"
+    sha256                               monterey:       "66563142be4f3cb7a7487f46938840abff3c65fbbeadf374c49fc83793d938d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "166e4f078fe5f365d8ac1ea1be45bc4d487eead0e496977d169dbf78c9478465"
   end
 
   depends_on "node"
