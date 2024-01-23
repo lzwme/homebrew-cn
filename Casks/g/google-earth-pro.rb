@@ -32,7 +32,7 @@ cask "google-earth-pro" do
         "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.google.googleearthpro.sfl*",
         "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.google.googleearthupdatehelper.sfl*",
         "~LibraryApplication SupportGoogle Earth",
-        "~LibraryCachesGoogle Earth",
         "~LibraryCachescom.Google.GoogleEarthPro",
+        "~LibraryCachesGoogle Earth",
       ]
 end

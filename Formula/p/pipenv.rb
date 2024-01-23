@@ -3,19 +3,18 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https:github.compypapipenv"
-  url "https:files.pythonhosted.orgpackages081ed8e3b937de28491a887683600d6496b05c10a5e0693ec703f3c89638ea66pipenv-2023.11.15.tar.gz"
-  sha256 "f587ffff47e8aa76f17803d571f64cf5a24b2bdfb9334435e6528b22ad5e304f"
+  url "https:files.pythonhosted.orgpackages7dce68f8b53ebd58fb895062384f1fa7820de24a6aaa4e6a701cdaca6acdfb11pipenv-2023.11.17.tar.gz"
+  sha256 "408f2f1219e9bfe28f26a3511817e2a792eeafddc621f12a856fbd5ceca7bdf1"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77fce9c9831b9c85d2aebc71780dbf02bf23c2e35b8f3f33cae496e8625d09f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "821f8bdbc29d3349dbd96a1d6754009bd408a91ef3c896276c141a5743bc1299"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9899bab182da48bdec9d48940f5092ee1b05494b7a5ba149ef5aba79c7db69e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9350f910cbf792ac3652a91b4206f56451155857383bb907f9821022f7ccc467"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ba365bcee71916edc4d4af1eb234176cb08a0b64c67657c979f756f7af6e7cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a3a340866f56b07604bef81ae96ad4a8082194ccc756900eed4b2fcb6ac657f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6841de3f89402d20799752e099b906d126862d7950ea619c56ef80ef1593df27"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c6e70cc23f65a16be8ab8784ecd8758b4964463d26be4fbe18e00c95f727a265"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d47fdee4f700fb56f4c1814290846729aad893ed1cc0db9ff4493b47d5b67c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6a258cdbcbd6a6ad8e23e2225a31d6fe14ac0e15e970b645101a52dc9c1b378"
+    sha256 cellar: :any_skip_relocation, sonoma:         "59efdfcd185f0768bd260b06234f19c5872bcea6bfc3b2b1480a8dec772b982b"
+    sha256 cellar: :any_skip_relocation, ventura:        "fe716d98bec39e00ad407186ffc1c3e612199638c1b225fc5d7746d71bc028fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "01703b441ff8cbfe5b4baad8667fc2b18b46bcc011df67d1ea094d513f2829ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "531afd85d90adbd37551927ca7e7e494886ab1bbeb8ee840c9ba5f564153fea9"
   end
 
   depends_on "python-certifi"
@@ -77,9 +76,9 @@ class Pipenv < Formula
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
     assert_match "Commands", shell_output("#{bin}pipenv")
-    system "#{bin}pipenv", "--python", which(python3)
-    system "#{bin}pipenv", "install", "requests"
-    system "#{bin}pipenv", "install", "boto3"
+    system bin"pipenv", "--python", which(python3)
+    system bin"pipenv", "install", "requests"
+    system bin"pipenv", "install", "boto3"
     assert_predicate testpath"Pipfile", :exist?
     assert_predicate testpath"Pipfile.lock", :exist?
     assert_match "requests", (testpath"Pipfile").read

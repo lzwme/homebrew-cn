@@ -27,8 +27,8 @@ cask "gittyup" do
 
   zap trash: [
     "~LibraryApplication SupportGittyup",
-    "~LibraryPreferencescom.Murmele.Gittyup.plist",
     "~LibraryPreferencescom.github.gittyup.Gittyup.plist",
+    "~LibraryPreferencescom.Murmele.Gittyup.plist",
     "~LibrarySaved Application Statecom.Murmele.Gittyup.savedState",
   ]
 end

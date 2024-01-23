@@ -13,9 +13,9 @@ cask "mjolnir" do
   app "Mjolnir.app"
 
   zap trash: [
+    "~.mjolnir",
     "~LibraryCachesorg.degutis.Mjolnir",
     "~LibraryPreferencesorg.degutis.Mjolnir.plist",
     "~LibrarySaved Application Stateorg.degutis.Mjolnir.savedState",
-    "~.mjolnir",
   ]
 end

@@ -1,6 +1,6 @@
 cask "aerial" do
-  version "3.3.6"
-  sha256 "6f920dd293c67c416abf4a1ec893d5df731eb582f3d6dea7f3c270b169be16f0"
+  version "3.3.7"
+  sha256 "9445903df76aeb9c50937a32af3981acd65e079f83f403af558df83a940a8352"
 
   url "https:github.comJohnCoatesAerialreleasesdownloadv#{version}Aerial.saver.zip",
       verified: "github.comJohnCoatesAerial"
@@ -16,13 +16,11 @@ cask "aerial" do
   zap trash: [
     "~LibraryApplication SupportAerial",
     "~LibraryCachesAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibrary" \
-    "Application SupportAerial",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibraryApplication SupportAerial",
     "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaver.x86-64DataLibraryCachesAerial",
     "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryApplication SupportAerial",
     "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryCachesAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferences" \
-    "ByHostcom.JohnCoates.Aerial*.plist",
+    "~LibraryContainerscom.apple.ScreenSaver.Engine.legacyScreenSaverDataLibraryPreferencesByHostcom.JohnCoates.Aerial*.plist",
     "~LibraryPreferencesByHostcom.JohnCoates.Aerial*",
     "~LibraryScreen SaversAerial.saver",
   ]

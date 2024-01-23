@@ -10,8 +10,8 @@ cask "multi" do
   app "Multi.app"
 
   zap trash: [
-    "~LibraryCachesllc.gumbs.multi.*",
     "~LibraryCachesllc.gumbs.multi",
+    "~LibraryCachesllc.gumbs.multi.*",
     "~LibraryPreferencesllc.gumbs.multi.*.plist",
     "~LibrarySaved Application Statellc.gumbs.multi.savedState",
   ]

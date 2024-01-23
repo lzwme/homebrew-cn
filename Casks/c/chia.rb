@@ -21,9 +21,9 @@ cask "chia" do
   app "Chia.app"
 
   zap trash: [
+    "~.chia",
     "~LibraryApplication SupportChia Blockchain",
     "~LibraryPreferencesnet.chia.blockchain.plist",
     "~LibrarySaved Application Statenet.chia.blockchain.savedState",
-    "~.chia",
   ]
 end

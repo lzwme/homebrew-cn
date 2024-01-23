@@ -11,10 +11,10 @@ cask "hacker-menu" do
   app "Hacker Menu.app"
 
   zap trash: [
-    "~LibraryApplication SupportHacker Menu",
     "~LibraryApplication Supportcom.electron.hacker_menu.ShipIt",
-    "~LibraryCachesHacker Menu",
+    "~LibraryApplication SupportHacker Menu",
     "~LibraryCachescom.electron.hacker_menu",
+    "~LibraryCachesHacker Menu",
     "~LibraryPreferencescom.electron.hacker_menu.plist",
     "~LibrarySaved Application Statecom.electron.hacker_menu.savedState",
   ]

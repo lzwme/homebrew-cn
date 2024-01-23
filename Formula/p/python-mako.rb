@@ -1,18 +1,18 @@
 class PythonMako < Formula
   desc "Fast templating language for Python"
   homepage "https://www.makotemplates.org/"
-  url "https://files.pythonhosted.org/packages/a9/6e/6b41e654bbdcef90c6b9e7f280bf7cbd756dc2560ce76214f5cdbc4ddab5/Mako-1.3.0.tar.gz"
-  sha256 "e3a9d388fd00e87043edbe8792f45880ac0114e9c4adc69f6e9bfb2c55e3b11b"
+  url "https://files.pythonhosted.org/packages/9c/cf/947dfd8475332b603dc8cb46170a7c333415f6ff1b161896ee76b4358435/Mako-1.3.1.tar.gz"
+  sha256 "baee30b9c61718e093130298e678abed0dbfa1b411fcc4c1ab4df87cd631a0f2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a2f1c743d786f19d2c51b23bf40bbdbbac4398e0899c84d68d4772edf373ac8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "317af2f3882956e46fdfc696ed559e07acf7ca36f41fe785326b345245d862c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "262c2817219fa03b34e5456a364df57d84a41ab6c3f80639471e95890dd15402"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1d22249c705c5395c0beedb3d2e15c0cf5f4a76e975fec09083fb172fec1aa86"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d9a22535cddd472794bdd2601a7db8ea76245dff7cdce1c833bf0371384c416"
-    sha256 cellar: :any_skip_relocation, monterey:       "f4d0c1526cc5a56342786f119497ec25ff229f8a95bf836f567530e908ebcc85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7d5e7b60a46f37742fb488ca5a902f835a389e551c8818799760d6028b6b0b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ea40271cbbbc129e4dd4aa3c53bd20451ef819f51b34346d6de96b0cb6d3851"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5683bfbb8fa8cebe8f8284c0cbef6dcc3ff85ee87568a4dcaec27da4c294bb0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e084b5fc2c45931ac31c63c40044b317363ec782611e85a68cd6b4a70cf23831"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0a5efd66e129d805e341550e1bbf48261155c67b91c6252556fb54a3f2a93d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "8978b3e38cb87e26b46a70440666436c0423b8a9673580922a5652da53071b7c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a17d14be18196a2187b0b1367a608cd54eea29e4477e1cf20ffe04e0c4fb9274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a765af59ae3cb78ae8d6bb1f87ea85620a316977c6df33db0407d5f74ddb7b7"
   end
 
   depends_on "python-setuptools" => :build

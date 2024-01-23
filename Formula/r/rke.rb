@@ -1,8 +1,8 @@
 class Rke < Formula
   desc "Rancher Kubernetes Engine, a Kubernetes installer that works everywhere"
   homepage "https:rke.docs.rancher.com"
-  url "https:github.comrancherrkearchiverefstagsv1.5.2.tar.gz"
-  sha256 "72b87b4c66c92319cc6bf4c33e114b8bc8b8efa8de347e74bbd569a8c664e888"
+  url "https:github.comrancherrkearchiverefstagsv1.5.3.tar.gz"
+  sha256 "7afe775227219fdfa8a8fe3dad73c1dcd30b18563ce2fa04e5bcd8d7d9f503f2"
   license "Apache-2.0"
 
   # It's necessary to check releases instead of tags here (to avoid upstream
@@ -16,13 +16,13 @@ class Rke < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e31a3dc5033e13c75cb1fe87922719662d9a3a589de4714eee45f592c7a8ae70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df6073bc43e01ad4e5390974ed883bd1926383883471467cdabe1bea6633f950"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "265b1febacbfd2e1899646a841567332e37e1d9965a0741791cb9f2742f098a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5dfea7aebec8e39d0c030c423b0bef8bc7e7f955edc1fb2e85ee4796a6be5642"
-    sha256 cellar: :any_skip_relocation, ventura:        "9919d5699708e46a8d944e6c8860bce4a03397a42da8c6b2c1803fb74643492c"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b8ef8ccacfc914e59c3d6fbfdb70c73d25489f90777665d1000131f0da02b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7dc9f4c411dd35cac36384a50ad48e1e6b79a070787d14619b04b0944c09bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8082fbb5e464c3fccad2ab0ac779dd4432f9f2ead4e5c3774818a5fb6660001"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47cd87372fb3ab36e88916e3f40bc9a93aa640891282d1193b3c510c02d96ce8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ab33cdc69c27b38d716e2b649c6b21a09eb9d721c90cee62622b660822e07c6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "708399e7e1b8bda397486125e96f73deb429e3ee034c8dad3d0ddd2e80a2c515"
+    sha256 cellar: :any_skip_relocation, ventura:        "854b9a8568975b23a1c31bac2a6521d60015ec13088dc3a6d1e7cf8b334df56e"
+    sha256 cellar: :any_skip_relocation, monterey:       "d04f80e299d67709512128ef9cb068b5eb76753ad9dcdcb31c170a718280e011"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b2e0a28f1037f4a745569fe03c2aed613dfd527010782554d1bb32eab469aaf"
   end
 
   depends_on "go" => :build

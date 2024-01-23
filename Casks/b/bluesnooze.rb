@@ -14,9 +14,9 @@ cask "bluesnooze" do
   zap trash: [
     "~LibraryApplication Scriptscom.oliverpeate.Bluesnooze",
     "~LibraryApplication Scriptscom.oliverpeate.Bluesnooze-LaunchAtLoginHelper",
+    "~LibraryApplication SupportBluesnooze",
     "~LibraryContainerscom.oliverpeate.Bluesnooze",
     "~LibraryContainerscom.oliverpeate.Bluesnooze-LaunchAtLoginHelper",
-    "~LibraryApplication SupportBluesnooze",
     "~LibraryPreferencescom.oliverpeate.Bluesnooze.plist",
   ]
 end

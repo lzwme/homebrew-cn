@@ -19,12 +19,12 @@ cask "marshallofsound-google-play-music-player" do
     "~LibraryApplication SupportGoogle Play Music Desktop Player",
     "~LibraryApplication Supportgoogle-play-music-desktop-player.ShipIt",
     "~LibraryCachesGoogle Play Music Desktop Player",
-    "~LibraryCachesgoogle-play-music-desktop-player.ShipIt",
     "~LibraryCachesgoogle-play-music-desktop-player",
+    "~LibraryCachesgoogle-play-music-desktop-player.ShipIt",
     "~LibraryCookiesgoogle-play-music-desktop-player.binarycookies",
+    "~LibraryLogsGoogle Play Music Desktop Player",
     "~LibraryPreferencesgoogle-play-music-desktop-player.helper.plist",
     "~LibraryPreferencesgoogle-play-music-desktop-player.plist",
     "~LibrarySaved Application Stategoogle-play-music-desktop-player.savedState",
-    "~LibraryLogsGoogle Play Music Desktop Player",
   ]
 end

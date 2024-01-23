@@ -23,12 +23,12 @@ cask "hyper" do
   binary "#{appdir}Hyper.appContentsResourcesbinhyper"
 
   zap trash: [
-    "~.hyper_plugins",
     "~.hyper.js",
+    "~.hyper_plugins",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.zeit.hyper.sfl*",
     "~LibraryApplication SupportHyper",
-    "~LibraryCachesco.zeit.hyper.ShipIt",
     "~LibraryCachesco.zeit.hyper",
+    "~LibraryCachesco.zeit.hyper.ShipIt",
     "~LibraryCookiesco.zeit.hyper.binarycookies",
     "~LibraryLogsHyper",
     "~LibraryPreferencesByHostco.zeit.hyper.ShipIt.*.plist",

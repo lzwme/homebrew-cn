@@ -25,8 +25,8 @@ cask "macdown" do
   binary "#{appdir}MacDown.appContentsSharedSupportbinmacdown"
 
   zap trash: [
-    "~LibraryApplication SupportMacDown",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.uranusjr.macdown.sfl*",
+    "~LibraryApplication SupportMacDown",
     "~LibraryCachescom.uranusjr.macdown",
     "~LibraryCookiescom.uranusjr.macdown.binarycookies",
     "~LibraryPreferencescom.uranusjr.macdown.plist",

@@ -14,7 +14,7 @@ cask "ethereum-wallet" do
 
   zap trash: [
     "~LibraryApplication SupportEthereum Wallet",
-    "~LibraryPreferencescom.ethereum.wallet.plist",
     "~LibraryPreferencescom.ethereum.wallet.helper.plist",
+    "~LibraryPreferencescom.ethereum.wallet.plist",
   ]
 end

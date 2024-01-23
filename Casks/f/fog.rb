@@ -14,8 +14,8 @@ cask "fog" do
   uninstall quit: "com.vitorgalvao.fog"
 
   zap trash: [
-    "~LibraryApplication SupportFog",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.vitorgalvao.fog.sfl*",
+    "~LibraryApplication SupportFog",
     "~LibraryCachesFog",
     "~LibraryPreferencescom.vitorgalvao.fog.helper.plist",
     "~LibraryPreferencescom.vitorgalvao.fog.plist",

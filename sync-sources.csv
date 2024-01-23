@@ -891,7 +891,7 @@ Homebrew-homebrew-core/Formula/c/clipsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clisp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clitest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clive.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cln.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cln.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clockywock.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clog.rb, Homebrew/homebrew-core, 1
@@ -3126,6 +3126,7 @@ Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/limesuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lincity-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/link-grammar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linkerd.rb, Homebrew/homebrew-core, 1
@@ -9058,6 +9059,7 @@ Homebrew-homebrew-cask/Casks/l/lynkeos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lynx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lynxlet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lyrics-master.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lyricsfinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lyricsx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/m3unify.rb, Homebrew/homebrew-cask, 0

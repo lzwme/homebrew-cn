@@ -14,10 +14,10 @@ cask "gcs" do
   app "GCS.app"
 
   zap trash: [
+    "~GCS",
     "~LibraryLogsgcs.log",
     "~LibraryPreferencescom.trollworks.gcs.plist",
     "~LibraryPreferencesgcs.json",
     "~LibrarySaved Application Statecom.trollworks.gcs.savedState",
-    "~GCS",
   ]
 end

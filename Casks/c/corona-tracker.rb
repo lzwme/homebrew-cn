@@ -13,7 +13,7 @@ cask "corona-tracker" do
   app "Corona Tracker.app"
 
   zap trash: [
-    "~LibraryContainersmaccatalyst.com.samabox.corona",
     "~LibraryApplication Scriptsmaccatalyst.com.samabox.corona",
+    "~LibraryContainersmaccatalyst.com.samabox.corona",
   ]
 end

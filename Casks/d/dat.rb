@@ -13,13 +13,13 @@ cask "dat" do
   app "Dat Desktop.app"
 
   zap trash: [
+    "~.dat",
+    "~.dat-desktop",
     "~LibraryApplication SupportDat",
     "~LibraryCachescom.datproject.dat",
     "~LibraryCachescom.datproject.dat.ShipIt",
     "~LibraryPreferencescom.datproject.dat.helper.plist",
     "~LibraryPreferencescom.datproject.dat.plist",
     "~LibrarySaved Application Statecom.datproject.dat.savedState",
-    "~.dat",
-    "~.dat-desktop",
   ]
 end

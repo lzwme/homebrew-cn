@@ -1,5 +1,5 @@
 cask "idrive" do
-  version "3.5.10.65"
+  version "3.5.10.66"
   sha256 :no_check
 
   url "https://www.idrive.com/downloads/IDrive.dmg"
@@ -15,9 +15,9 @@ cask "idrive" do
   pkg "IDrive.pkg"
 
   uninstall launchctl: [
+              "IDriveDaemon",
               "IDSyncDaemon",
               "IDWifiManager",
-              "IDriveDaemon",
             ],
             quit:      [
               "com.prosfotnet.IDWifiManager",

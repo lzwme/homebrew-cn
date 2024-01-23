@@ -19,10 +19,10 @@ cask "mousepose" do
   app "Mousepose.app", target: "Mousepose\314\201.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.boinx.mousepose.sfl*",
     "~LibraryApplication Supportcom.boinx.Mousepose",
     "~LibraryCachescom.boinx.Mousepose",
     "~LibraryCookiescom.boinx.Mousepose.binarycookies",
     "~LibraryPreferencescom.boinx.Mousepose.plist",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.boinx.mousepose.sfl*",
   ]
 end

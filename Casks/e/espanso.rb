@@ -24,8 +24,8 @@ cask "espanso" do
     "~LibraryCachesespanso",
     "~LibraryLaunchAgentscom.federicoterzi.espanso.plist",
     "~LibraryPreferencescom.federicoterzi.espanso.plist",
-    "~LibraryPreferencesespanso.plist",
     "~LibraryPreferencesespanso",
+    "~LibraryPreferencesespanso.plist",
     "~LibrarySaved Application Statecom.federicoterzi.espanso.savedState",
   ]
 

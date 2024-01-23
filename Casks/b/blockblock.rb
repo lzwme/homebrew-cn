@@ -45,7 +45,7 @@ cask "blockblock" do
   zap trash: [
     "~LibraryCachescom.objective-see.blockblock.helper",
     "~LibraryHTTPStoragescom.objective-see.blockblock.helper",
-    "~LibraryPreferencescom.objectiveSee.BlockBlock.plist",
     "~LibraryPreferencescom.objective-see.blockblock.helper.plist",
+    "~LibraryPreferencescom.objectiveSee.BlockBlock.plist",
   ]
 end

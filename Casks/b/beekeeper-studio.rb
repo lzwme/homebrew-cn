@@ -23,8 +23,8 @@ cask "beekeeper-studio" do
   zap trash: [
     "~LibraryApplication Supportbeekeeper-studio",
     "~LibraryApplication SupportCachesbeekeeper-studio-updater",
-    "~LibraryCachesio.beekeeperstudio.desktop.ShipIt",
     "~LibraryCachesio.beekeeperstudio.desktop",
+    "~LibraryCachesio.beekeeperstudio.desktop.ShipIt",
     "~LibraryPreferencesByHostio.beekeeperstudio.desktop.ShipIt.*.plist",
     "~LibraryPreferencesio.beekeeperstudio.desktop.plist",
     "~LibrarySaved Application Stateio.beekeeperstudio.desktop.savedState",

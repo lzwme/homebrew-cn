@@ -41,8 +41,8 @@ cask "librewolf" do
   zap trash: [
     "~.librewolf",
     "~LibraryApplication SupportLibreWolf",
-    "~LibraryCachesLibreWolf",
     "~LibraryCachesLibreWolf Community",
+    "~LibraryCachesLibreWolf",
     "~LibraryPreferencesio.gitlab.librewolf-community.librewolf.plist",
     "~LibrarySaved Application Stateio.gitlab.librewolf-community.librewolf.savedState",
   ]

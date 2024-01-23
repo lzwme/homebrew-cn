@@ -9,8 +9,8 @@ cask "material-colors" do
   app "Material Colors.app"
 
   zap trash: [
-    "~LibraryApplication Supportnet.nurik.roman.materialcolors.ShipIt",
     "~LibraryApplication SupportMaterial Colors",
+    "~LibraryApplication Supportnet.nurik.roman.materialcolors.ShipIt",
     "~LibraryCachesMaterial Colors",
     "~LibraryCachesnet.nurik.roman.materialcolors",
     "~LibraryPreferencesnet.nurik.roman.materialcolors.plist",

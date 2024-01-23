@@ -16,9 +16,9 @@ cask "caffeine" do
 
   zap trash: [
     "~LibraryApplication Supportcom.intelliscapesolutions.caffeine",
-    "~LibraryPreferencescom.intelliscapesolutions.caffeine.plist",
     "~LibraryCachescom.intelliscapesolutions.caffeine",
     "~LibraryHTTPStoragescom.intelliscapesolutions.caffeine.binarycookies",
+    "~LibraryPreferencescom.intelliscapesolutions.caffeine.plist",
   ]
 
   caveats do

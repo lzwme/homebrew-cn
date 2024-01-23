@@ -1,18 +1,18 @@
 class Samtools < Formula
   desc "Tools for manipulating next-generation sequencing data"
   homepage "https:www.htslib.org"
-  url "https:github.comsamtoolssamtoolsreleasesdownload1.19samtools-1.19.tar.bz2"
-  sha256 "fa6b3b18e20851b6f3cb55afaf3205d02fcb79dae3b849fcf52e8fc10ff08b83"
+  url "https:github.comsamtoolssamtoolsreleasesdownload1.19.1samtools-1.19.1.tar.bz2"
+  sha256 "1f94915cc32dcb6095049ed57560d99b409ba9297f4316bab551d05bb57ff355"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f7a8cd5057113b89787bb68f6dd37b6ac88cd78934c18e4fd7bff0b2ad20a355"
-    sha256 cellar: :any,                 arm64_ventura:  "0dd08e9d8a6c5bf4642c4c1994c9bfa69bee83117535664e187628c153c0151d"
-    sha256 cellar: :any,                 arm64_monterey: "9fecc118e11dee133ebe90ddf1ae9ae4cb006d9120e929e5ffcc2e9d65a2bdec"
-    sha256 cellar: :any,                 sonoma:         "9a7fb4fae73287db5c95628528e18a0b0aff72bbb796a506371034eda3210aee"
-    sha256 cellar: :any,                 ventura:        "313d820f6566c5a3eb64bc1ff45281b600216c23e736aba7f3a14ff4d399d145"
-    sha256 cellar: :any,                 monterey:       "3ef96fd41bbc4084bea6217fd674a8ca41bedd81b3ae1cbf28e8e01c81f0ed4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2653d4f163422ddece0dbd2097e8374925b27a011a06cfbebeef1237441bc334"
+    sha256 cellar: :any,                 arm64_sonoma:   "44ee5b611ba15ea77174c0b4ee1896fcacddecc6de0a32b46b1cf317cfd56bfa"
+    sha256 cellar: :any,                 arm64_ventura:  "688ca144703bf35e2bed5795e09ed9f51e31c873264f501f76ae3c31757060b3"
+    sha256 cellar: :any,                 arm64_monterey: "25a6e61157c1b167be7f8d47f6fb3e565fe6f9022b1d5cd72b3e180008443d25"
+    sha256 cellar: :any,                 sonoma:         "bdd98118c755ba68a7002ab29957bffabc63d30888e1d5be2d7448395e7dab7a"
+    sha256 cellar: :any,                 ventura:        "0ef748e1bc21658f25a6a81d1f1c2835c980b0fbdb228f291b32ba609205aa73"
+    sha256 cellar: :any,                 monterey:       "289571443a3f5d3d57555ef870c88893ed9dde465fecdad7991530831c74aac5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "094bfcac7b0dd2e957cc65a539e8f669615300b827608c90d2cbc91741b03de0"
   end
 
   depends_on "htslib"

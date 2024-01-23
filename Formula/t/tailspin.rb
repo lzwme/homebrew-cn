@@ -1,19 +1,19 @@
 class Tailspin < Formula
   desc "Log file highlighter"
   homepage "https:github.combensadehtailspin"
-  url "https:github.combensadehtailspinarchiverefstags2.4.0.tar.gz"
-  sha256 "ce86f2fd96543c62446f016ce332cd381d63d89c7094263459093ef2133a70a3"
+  url "https:github.combensadehtailspinarchiverefstags3.0.0.tar.gz"
+  sha256 "abfa5621b5750c892cc1429322b1ee664e1be9808eb451c84c113fceba2d0d92"
   license "MIT"
   head "https:github.combensadehtailspin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e88e8d8f3dd14f433684a191b34177aded5e5d865b8a4b0622df48f7ab39ceb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a4314dffcaed75c8c13e0a1472d078f338086f71c8d519a3d799897a4f727fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d013520f4678ac8b91bc08e0f819db65a20729fc0786c4d2095e94a5666ac3d4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "152f8d5f3806d496b26d00f02cdf70c8646b7c3860971529040d6e5b55770f24"
-    sha256 cellar: :any_skip_relocation, ventura:        "453241c915fa815ae0bac8adff7c07e492e0cefc40dd0ecba2164a6adf914aef"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf5f698b44426b69a0891dc6594e33f8b240a773052a5007a3f24ad0b5a8b64e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8c32028c9f118169fd99d488568ed1d199b70083857bc28bd0f56e607e3b198"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db6155b4f802d35feb456ab02bda67c1a248aef38e58b6ec4d389d8b6b09de5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34e9424288b4782b9c3ece9e12ee4ce681286f30da8213572d3d88e830d79d93"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ef75fbc9df01004c30b32f382de6dc2e722dd9eb8ce5345a10edc4847c076d0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "31deb327cdd044a66ace52c2fd7215a2f14a48db04cb7b75ff01162db3f6e859"
+    sha256 cellar: :any_skip_relocation, ventura:        "33e6041a1ef2b94c06380c7d93a8008f13136ebc6ec594d6a21e3c4ad384b937"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e142b79f947ffe786ed33eee79fa7ba5b22a8d2465b74e4efa8ca5313b114c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6c8a8fcac754d573217cdbaec7fdd162a3a1000f02b8738ddd4913ff8ab9edc"
   end
 
   depends_on "rust" => :build

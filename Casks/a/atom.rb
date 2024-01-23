@@ -19,10 +19,10 @@ cask "atom" do
   zap trash: [
     "~.atom",
     "~LibraryApplication SupportAtom",
-    "~LibraryApplication SupportShipIt_stderr.log",
-    "~LibraryApplication SupportShipIt_stdout.log",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.github.atom.sfl*",
     "~LibraryApplication Supportcom.github.atom.ShipIt",
+    "~LibraryApplication SupportShipIt_stderr.log",
+    "~LibraryApplication SupportShipIt_stdout.log",
     "~LibraryCachescom.github.atom",
     "~LibraryCachescom.github.atom.ShipIt",
     "~LibraryLogsAtom",

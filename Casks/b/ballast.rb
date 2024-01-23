@@ -16,10 +16,10 @@ cask "ballast" do
             quit:      "nz.jamsinclair.ballast"
 
   zap trash: [
-    "~LibraryPreferencesnz.jamsinclair.ballast.plist",
     "~LibraryApplication Scriptsnz.jamsinclair.ballast",
     "~LibraryApplication Scriptsnz.jamsinclair.ballast-LaunchAtLoginHelper",
     "~LibraryContainersnz.jamsinclair.ballast",
     "~LibraryContainersnz.jamsinclair.ballast-LaunchAtLoginHelper",
+    "~LibraryPreferencesnz.jamsinclair.ballast.plist",
   ]
 end

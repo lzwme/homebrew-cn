@@ -16,7 +16,7 @@ cask "fiscript" do
     "~LibraryContainerscom.Mortennn.FiScript",
     "~LibraryContainerscom.Mortennn.FiScript.Finder-Extension",
     "~LibraryGroup Containersgroup.Mortennn.FiScript",
-    "~LibraryGroup ContainerssharedContainerID.container",
     "~LibraryGroup Containersgroup.Mortennn.FiScript",
+    "~LibraryGroup ContainerssharedContainerID.container",
   ]
 end

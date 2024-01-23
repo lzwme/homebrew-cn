@@ -19,13 +19,13 @@ cask "copytranslator" do
   app "copytranslator.app"
 
   zap trash: [
-        "~LibraryApplication Supportcopytranslator",
-        "~LibraryPreferencescom.copytranslator.copytranslator.plist",
-        "~LibrarySaved Application Statecom.copytranslator.copytranslator.savedState",
         "~copytranslatorcopytranslator.json",
         "~copytranslatorlocalShortcuts.json",
         "~copytranslatorshortcuts.json",
         "~copytranslatorstyles.css",
+        "~LibraryApplication Supportcopytranslator",
+        "~LibraryPreferencescom.copytranslator.copytranslator.plist",
+        "~LibrarySaved Application Statecom.copytranslator.copytranslator.savedState",
       ],
       rmdir: "~copytranslatorlocales"
 end

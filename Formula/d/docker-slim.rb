@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https:slimtoolkit.org"
-  url "https:github.comslimtoolkitslimarchiverefstags1.40.9.tar.gz"
-  sha256 "568103eac3c20be02c3dfb8d26723f9cf284f6a03fbbae52fe775765a7886c96"
+  url "https:github.comslimtoolkitslimarchiverefstags1.40.10.tar.gz"
+  sha256 "56b80f166986be703b8c2bd680e63def30bd793236ae5b6d78a3aeae3ce26735"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class DockerSlim < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5aa10841c5a89a3e85b1f491a89e12e558fcbe05bf9f4a99d07bc4015c100820"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a006476cb56d430906f49442ad229099e02dccba26fc0d9643ceaf981cf592b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95a44df6e057eb093dff99b262891873a49f4bc8292989c2e0ca4ed9c2e451f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "094d55fdd922f713e9f6b3436bd142bfaabfb9c7fe6d6d7a84e1e0846d21295f"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ab93179894b3b6926acf81ebec46963b6edfcf21bab58e5c880694b3cadc001"
-    sha256 cellar: :any_skip_relocation, monterey:       "5abca7da0685967b9904e13ccd327b6d855c1d725d74b116564b2f407cda4d07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2660b945e66b49c8f38feb0d3957eb279bc9adc7ec865b931d28537a89a5b6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32a7a90bb444252841afd7f515bfb2ea3cc9ab250c8973978aa89373536c7898"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3c4a62e822658444ea5f49db5fae8e08f7edd8ee1e0a66d47eabce9a9884c59"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e21957389775def9d2ea022429f0f79f75d3fb9e39b0b75609b5b821c82f3ca7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b17e266163c8da48afe35e0a63f399e90ce9e148c76f050c3f478df35289f4d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "23c9b8a1c2e89b83a35d5473bcb6af674dee347e7db10062e1dc5f1d38df7e40"
+    sha256 cellar: :any_skip_relocation, monterey:       "91e597b186b0dacb979e9038fef45fe88a13904a195b6c82e7e28f97ef4deb52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e43f4a008a91102a12f3af12a2a1a6bbb275ce0a94ae2cef3641c4a147e5d5c"
   end
 
   depends_on "go" => :build
