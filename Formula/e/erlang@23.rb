@@ -21,7 +21,7 @@ class ErlangAT23 < Formula
   keg_only :versioned_formula
 
   # EOL with OTP-26 release. Also does not support OpenSSL 3.
-  deprecate! date: "2023-07-01", because: :unsupported
+  disable! date: "2023-01-23", because: :unsupported
 
   depends_on "openssl@1.1"
   depends_on "unixodbc"

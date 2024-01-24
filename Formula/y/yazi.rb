@@ -6,6 +6,14 @@ class Yazi < Formula
   license "MIT"
   head "https:github.comsxyaziyazi.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff93144810bb1d13ddfbbf3c5ad2776ea31670e1800ff59b92f2e8e08364f064"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "81e394de104170fc5f009c5c2d84f4a629ed8496be939ac748aa8a0c84c9b43f"

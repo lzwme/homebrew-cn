@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.57.0",
-      revision: "057f6c15b70446466c7f15fb958fda14c7066574"
+      tag:      "v1.58.0",
+      revision: "43b5d39f7c965bbe75ab83d474d3d76fc26b52ff"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "b3ebfcde409d8a0653049be3eb36feaeed189e4eb12bb7b25eb49e8189775fcc"
-    sha256 cellar: :any, arm64_ventura:  "867350e3e1c674c8e9546462dac8ca30150e994e924ac0c115e6c860365f7a91"
-    sha256 cellar: :any, arm64_monterey: "221f0f93a6206548833a29958ac5dbd9c560722d365ea10f446b7acf3b52414e"
-    sha256 cellar: :any, sonoma:         "2e6d90b129309139450a090e270873a24c717a648e0dd99030db6d983978ad79"
-    sha256 cellar: :any, ventura:        "b6f8f6038f516ab587e1a4ce7332beff90182ee47bdf2a8e4d21e38ba397a655"
-    sha256 cellar: :any, monterey:       "b37c560c038472b908d3845670a0f2507ae75ef7ca06f4ad088185241bcc2c8b"
-    sha256               x86_64_linux:   "aba2e8942659568f77ebd444ce6391e0fd9fbda6783a11e9fea55c78d3c288a5"
+    sha256 cellar: :any, arm64_sonoma:   "c42d7205d9799436681996364a6ba5815e4b79da911452c465da288db3bde1aa"
+    sha256 cellar: :any, arm64_ventura:  "8662ec04229c234b7841596e3712b5757ee71e8a5b149e3a37e9ebab8ffb89d5"
+    sha256 cellar: :any, arm64_monterey: "3c2a90b42b90c88f1988bc52ee51c78da7d277c960836e610d63491ad8d7d044"
+    sha256 cellar: :any, sonoma:         "c9710192fe69677bbcd6a7661c8b9de4ee7282b4f3df50ef0149706d3584d43a"
+    sha256 cellar: :any, ventura:        "32829ec4af6303a0534e402881fd9d670bcb5a82792921a8422eba492dcce3ba"
+    sha256 cellar: :any, monterey:       "330adb109f01e5e0a8cae0ce0c9c10199c66de56c547ebd89ac8ddeb3f42828e"
+    sha256               x86_64_linux:   "f52431978dca0d6e9d270aad16e30364ee322f23726017c79bfc2a45ac9eb2fd"
   end
 
   depends_on "autoconf" => :build
@@ -104,8 +104,8 @@ class Semgrep < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages44cd1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279adjsonschema-4.21.0.tar.gz"
-    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
+    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
+    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
   end
 
   resource "jsonschema-specifications" do

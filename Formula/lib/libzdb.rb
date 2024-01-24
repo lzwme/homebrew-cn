@@ -4,7 +4,7 @@ class Libzdb < Formula
   url "https://tildeslash.com/libzdb/dist/libzdb-3.2.3.tar.gz"
   sha256 "a1957826fab7725484fc5b74780a6a7d0d8b7f5e2e54d26e106b399e0a86beb0"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
 
   livecheck do
     url :homepage
@@ -12,20 +12,18 @@ class Libzdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b0d57307dd87f832f3ba52b9ad3fc1770838a2f17869a97cfbe3e8436e9b8a88"
-    sha256 cellar: :any,                 arm64_ventura:  "12fe0b3df09370d167061c89cb3f15ea961cb737a1c6b74c2e7c98e1a90acf82"
-    sha256 cellar: :any,                 arm64_monterey: "fd60240b639004dbf24257d3f37f970195b4951bc21d8bba638842e6b76904d6"
-    sha256 cellar: :any,                 arm64_big_sur:  "23fbc9b3adfc813e6a81dfce88c87447a40c379a9a49a6121a81900a9771e393"
-    sha256 cellar: :any,                 sonoma:         "9d44181fb51ed1a82469ee513d4bb12368f3fe87df5f45797c9adbf1d71f6ff4"
-    sha256 cellar: :any,                 ventura:        "f9ad30dc720c4a4566b1635b02801010ff87c32733e5caf3ca05f778fbcaca50"
-    sha256 cellar: :any,                 monterey:       "b391e61607acc179a3b3fc3614723a50431926ac6734106ed2fcd4493bd0e7f8"
-    sha256 cellar: :any,                 big_sur:        "bad55246807663ca1a3597184b74a98a7cbdeab7975792b7160f2ea96e76ebc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd0f4bf52d4605117e51f27fa1ecdedcbbcd23c85a446ebec54f282dad8fc137"
+    sha256 cellar: :any,                 arm64_sonoma:   "0d2f9140f3ba6002dc6ec5a8c899eb2877a0fe9f65f45d57e976a6cd0f6b0c71"
+    sha256 cellar: :any,                 arm64_ventura:  "9f003c71502ff19bfdc03e97fe2b103a1c844dc84d62c3e7b6b07e3f8d099e98"
+    sha256 cellar: :any,                 arm64_monterey: "9396c5be6a8ab6cf674304b8fb52ac1e80ffda0d24545934298e3f5857fde3ba"
+    sha256 cellar: :any,                 sonoma:         "e545205ec152e5073731c12b0186a0e2599a0d6c58c95a78ba1b991362b6520d"
+    sha256 cellar: :any,                 ventura:        "d34a74e8b616e7ad01cf71971db1460c2e4af1d167be3313eb4ced10d99e58dc"
+    sha256 cellar: :any,                 monterey:       "92a90cec84456001c0f717ec676c312df92e12b5be379465050099a14644cd45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24024e26a0d37d273d0f05f79f34b7b74cef30da63b29b97c943d8a0f78bb16b"
   end
 
   depends_on "libpq"
   depends_on macos: :high_sierra # C++ 17 is required
-  depends_on "mysql-client"
+  depends_on "mysql-client@8.0" # Does not build with > 8.3: https://bitbucket.org/tildeslash/libzdb/issues/67/build-error-with-mysql-83
   depends_on "openssl@3"
   depends_on "sqlite"
 

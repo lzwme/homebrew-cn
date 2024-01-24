@@ -15,37 +15,20 @@ class Cryfs < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "python@3.12" => :build
   depends_on "boost"
   depends_on "curl"
   depends_on "fmt"
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "python@3.12"
   depends_on "range-v3"
   depends_on "spdlog"
 
   fails_with gcc: "5"
 
-  resource "versioneer" do
-    url "https:files.pythonhosted.orgpackages32d7854e45d2b03e1a8ee2aa6429dd396d002ce71e5d88b77551b2fb249cb382versioneer-0.29.tar.gz"
-    sha256 "5ab283b9857211d61b53318b7c792cf68e798e765ee17c27ade9f6c924235731"
-  end
-
   def install
-    python = "python3.12"
-    venv_root = buildpath"venv"
-
-    venv = virtualenv_create(venv_root, python)
-    venv.pip_install resource("versioneer")
-
-    ENV.prepend_path "PYTHONPATH", venv_rootLanguage::Python.site_packages(python)
-    ENV.prepend_path "PATH", venv_root"bin"
-
-    configure_args = [
-      "-DBUILD_TESTING=off",
-    ]
-
-    system "cmake", "-B", "build", "-S", ".", *configure_args, *std_cmake_args,
+    system "cmake", "-B", "build", "-S", ".", *std_cmake_args,
+                    "-DBUILD_TESTING=off",
                     "-DCRYFS_UPDATE_CHECKS=OFF",
                     "-DDEPENDENCY_CONFIG=cmake-utilsDependenciesFromLocalSystem.cmake"
     system "cmake", "--build", "build"
@@ -57,6 +40,7 @@ class Cryfs < Formula
 
     # Test showing help page
     assert_match "CryFS", shell_output("#{bin}cryfs 2>&1", 10)
+    assert_match version.to_s, shell_output("#{bin}cryfs --version")
 
     # Test mounting a filesystem. This command will ultimately fail because homebrew tests
     # don't have the required permissions to mount fuse filesystems, but before that

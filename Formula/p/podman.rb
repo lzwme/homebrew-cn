@@ -2,20 +2,19 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https:podman.io"
   url "https:github.comcontainerspodman.git",
-      tag:      "v4.8.3",
-      revision: "85dc30df56566a654700722a4dd190e1b9680ee7"
+      tag:      "v4.9.0",
+      revision: "f7c7b0a7e437b6d4849a9fb48e0e779c3100e337"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
-  revision 1
   head "https:github.comcontainerspodman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a67c98e2547d8c51442080f3512dc9f60812fd7568eadbffd43b0b48e91e49d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6b400d9346fa1c5618f49f1b84596375fba70f34387fb17e8234c907d13a4e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cea80226ddda734c5d1280c07479579fabd858dd82569394b5b271778b9f59f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ab31cf27bae3c73533f9bc6564bd76860dbf5ead263e9248ce56fece3a98edca"
-    sha256 cellar: :any_skip_relocation, ventura:        "87295162ba4f7363940a74d445792b79f72ecb3738f4ee18854eed71f15676d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "662045c6c29eadf23b25be4e436b90c5f8865ba906799de14dea031181d5ef45"
-    sha256                               x86_64_linux:   "0897c304b04fa54b422f0da105dc3ad4c1683a45afb10327467f8f6fd3cc90e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfdaa790af7f3e37d632827e1cb2ae08927704739dc33de8b7701c2191b853f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67a0ba829d7497c02cf9f09c1ae11d79b3690c6eda7a611ec33722d2d5a37559"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "348ee06001fe80a18d5097be2149c35233c0c27980999a021f4a09cc59304891"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7202029c6db9c804dcceffa0564e16b7aff1a23c7fb4a351dd7b317cfe28772f"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb0362c934465311a2a12c0b431a85cf1e338daf049f4295f62aa724867ab316"
+    sha256 cellar: :any_skip_relocation, monterey:       "b5424dd35ab7dc5d34cfe7699e1b07f0fc4b62bce41afeeb7a8d14d84eaab3f8"
+    sha256                               x86_64_linux:   "78a3dfbd3b20653b2ca3ecd7f89542122982b8071af6f33405eb379ed776d73e"
   end
 
   depends_on "go" => :build
@@ -45,15 +44,15 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.7.1.tar.gz"
-      sha256 "cbc97a44b6ca8f6c427ac58e193aa39c28674e4f1d2af09b5a9e35d1d3bb7fd3"
+      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.7.2.tar.gz"
+      sha256 "2163287ba1df33d9aba905888f271dc997d04fd3027f1c1f0c354d6045e07425"
     end
   end
 
   resource "vfkit" do
     on_macos do
-      url "https:github.comcrc-orgvfkitarchiverefstagsv0.5.0.tar.gz"
-      sha256 "abfc3ca8010aca5bd7cc658680ffaae0a80ba1a180a2b37f9a7c4fce14b8957f"
+      url "https:github.comcrc-orgvfkitarchiverefstagsv0.5.1.tar.gz"
+      sha256 "0825d5efabc5ec8817d2ed89f18717b2b4fa5be804b0f2ccc891b4a23b64d771"
     end
   end
 

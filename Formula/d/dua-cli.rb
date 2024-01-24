@@ -1,18 +1,18 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https:lib.rscratesdua-cli"
-  url "https:github.comByrondua-cliarchiverefstagsv2.27.2.tar.gz"
-  sha256 "327ddececb404e42fd0524caa0f2808eff08888ac53086957c1a41160d3a6f20"
+  url "https:github.comByrondua-cliarchiverefstagsv2.28.0.tar.gz"
+  sha256 "a44691d0dae8e567951cbe4f0b187edc60d306f78e95ceed9e96b9310e6ce350"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81b1260458bb72418b7cabb53b0e06810b76ccab7923a871fea37a9f9728a54c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70fce5ab83e40ab7fe521c8bbcd9605e8b10bc28940d669155c848c6a31c08b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "491d37ef40421229fa09703f8a732b6056fae03a0e55884ae739d2359b66503c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17f7ca936b36827ae225e48a3b858d2df0bcc47a31740831fe53feb10d43bcaf"
-    sha256 cellar: :any_skip_relocation, ventura:        "df33f1eb34109e4a19f9f6debc74f907980c36758fc0a8d2961433908b1407e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "a18d57be6091c406b50f5607be3523f3e3fe83ef0fe3d9799786b045628abb94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cce287a47b4155693d183eeaf7f7f302cdfd77493e68d3ca42edd06789145311"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "092e8c2087d8fb38821723147bf574c254e50729179ee5301b285137710587a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8602008d8ade174046473c34e369ccdf866d93d5deaa1b6e76b757abc205cc2a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "57d229f7d2590ed117dfd5cda87d1c392a9bb3f6115daa6797a895dfe4852045"
+    sha256 cellar: :any_skip_relocation, sonoma:         "575b936f7c82cd2f5ed54737866cf0e15681b5b1131b6746bf6fde7cf596889a"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6f938b1f1940741c0060199f30ff954c87acf17cc10331672c52c31315cf29b"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b75145c33d81f6dfbfea3130e9c88bb821ffc78f89db288ef5d2bee1319b765"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c217823ca055b6c4db30d70379bbdfe8ce9c58993bfb6584d39381815eb27f3"
   end
 
   depends_on "rust" => :build

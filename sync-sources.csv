@@ -4334,6 +4334,7 @@ Homebrew-homebrew-core/Formula/n/notify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notmuch-mutt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notmuch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/noweb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nowplaying-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/npth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/npush.rb, Homebrew/homebrew-core, 0
@@ -7386,6 +7387,7 @@ Homebrew-homebrew-cask/Casks/b/bisq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bit-fiddle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bit-slicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitbar.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bitbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitcoin-core.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bitmessage.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bitrix24.rb, Homebrew/homebrew-cask, 0
@@ -7485,6 +7487,7 @@ Homebrew-homebrew-cask/Casks/b/btp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bubo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/buckets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bugdom.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bugdom2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/buildsettingextractor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bunch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bunqcommunity-bunq.rb, Homebrew/homebrew-cask, 1
@@ -9502,6 +9505,7 @@ Homebrew-homebrew-cask/Casks/n/nifty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/niftyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nightfall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nightingale.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nightshade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nimble-commander.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nimblenote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nimbus.rb, Homebrew/homebrew-cask, 1
