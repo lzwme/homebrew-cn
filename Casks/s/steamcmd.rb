@@ -37,7 +37,7 @@ cask "steamcmd" do
 
   zap trash: "~LibraryApplication SupportSteamlogsstderr.txt",
       rmdir: [
-        "~LibraryApplication SupportSteamlogs",
         "~LibraryApplication SupportSteam",
+        "~LibraryApplication SupportSteamlogs",
       ]
 end

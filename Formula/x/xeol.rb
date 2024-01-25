@@ -1,18 +1,18 @@
 class Xeol < Formula
   desc "Xcanner for end-of-life software in container images, filesystems, and SBOMs"
   homepage "https:github.comxeol-ioxeol"
-  url "https:github.comxeol-ioxeolarchiverefstagsv0.9.12.tar.gz"
-  sha256 "f253c0ffff46968319c2fd05ec2dc08a81de6684c63aa946278b199e97ee4d01"
+  url "https:github.comxeol-ioxeolarchiverefstagsv0.9.13.tar.gz"
+  sha256 "59f28ae66816596afebe04ef22883a01003a81bf167dd2fefbd30d2615e4cf15"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71192233e7b53e4671b10b3f55d5d8e9a8cd9ff9acfe787dad7be2f1d7e2fb6d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "caea692cdc31500995c93bdca081e9d7497d7871aa6ded4568c294d30fdeeb7f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6bc7fcd06f0a960ed64bd839f4cc5fc295b554aaa46dddd8d6a45dc9a3484dc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8c1638997e46442c88f1077c16532b0c1684f9485b428aa4090adc43de4b8c51"
-    sha256 cellar: :any_skip_relocation, ventura:        "33e5bf3c0a6b2e8556670cf6793b04bc8aed4c83a5ee4f1930f03ff2ba1dd82e"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7e5f74311330ef74c4ab244ff28382061e650ba7cab251c2b9931c9155cdda9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf158f85da256bccfafb2c124d635b8002fa816f29c98c3822d1720b61c5b3ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f996f4cac18aac70cac4170840d46da7c7c2dc62fda690be1f2249bd799dc01"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c309b820fd1e86c0ef039ed90708c5d410ed66a2feffd5cbb8f9c5f5662a6421"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a92a7ea64379cb9fee370689e7a0d6d401f442e156ebe33522a6732842fee752"
+    sha256 cellar: :any_skip_relocation, sonoma:         "da8681c48375e9adb7655a4cfb65680f5dc82544d8fb827038281efbcaae5650"
+    sha256 cellar: :any_skip_relocation, ventura:        "23b7344832444e9a7eb14ad8d9449f4331af173499a8f2f095aebe59265e1388"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff7aa231bcb413c9088d755ddecb9e56e24d79b38c42fe6ea02cc56381ddb5d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c98a681cbb4401a21ef3dbca75bf9bcf4e559ae9730cc26a0e35baeeab753be9"
   end
 
   depends_on "go" => :build

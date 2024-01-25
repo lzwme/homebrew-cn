@@ -8,7 +8,7 @@ cask "deviceinfo" do
   homepage "https:github.comCoreNionDeviceInfo"
 
   livecheck do
-    url :stable
+    url :url
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 

@@ -12,20 +12,20 @@ cask "vscodium-insiders" do
   desc "Code editor"
   homepage "https:vscodium.com"
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "VSCodium - Insiders.app"
   binary "#{appdir}VSCodium - Insiders.appContentsResourcesappbincodium-insiders", target: "codium-insiders"
 
   zap trash: [
     "~.vscodium-insiders",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.microsoft.vscodiuminsiders.sfl*",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.vscodium.vscodiuminsiders.sfl*",
     "~LibraryApplication SupportVSCodium - Insiders",
-    "~LibraryCachescom.microsoft.VSCodiumInsiders",
-    "~LibraryCachescom.microsoft.VSCodiumInsiders.ShipIt",
+    "~LibraryCachescom.vscodium.VSCodiumInsiders",
+    "~LibraryCachescom.vscodium.VSCodiumInsiders.ShipIt",
     "~LibraryCachesVSCodium - Insiders",
-    "~LibraryPreferencescom.microsoft.VSCodiumInsiders.helper.plist",
-    "~LibraryPreferencescom.microsoft.VSCodiumInsiders.plist",
-    "~LibrarySaved Application Statecom.microsoft.VSCodiumInsiders.savedState",
+    "~LibraryHTTPStoragescom.vscodium.VSCodiumInsiders",
+    "~LibraryPreferencescom.vscodium.VSCodiumInsiders*.plist",
+    "~LibrarySaved Application Statecom.vscodium.VSCodiumInsiders.savedState",
   ]
 end

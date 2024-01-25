@@ -1,6 +1,6 @@
 cask "wave" do
-  version "0.5.3"
-  sha256 "523248aa145e56f83fbe5c4f74de036b7d78c00573c878602d955d762d4af7ae"
+  version "0.6.0"
+  sha256 "d976574ec528feef63ae17819dca02ccaa2c3064e89efa593a5e52a37ba8a54c"
 
   url "https://dl.waveterm.dev/builds/waveterm-macos-universal-v#{version}.dmg"
   name "Wave Terminal"

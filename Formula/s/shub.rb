@@ -3,19 +3,19 @@ class Shub < Formula
 
   desc "Scrapinghub command-line client"
   homepage "https:shub.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages4b48df85a1fdbd6c3928f70c6384ab9bd9197abaad8dbe302e19fba58ce6b7ffshub-2.15.2.tar.gz"
-  sha256 "bf529b3d1777b6d9dbb65cd1afe55791af1a66bacdfa857079a9255462c4df1a"
+  url "https:files.pythonhosted.orgpackages4ba327c88f9316fa079297719ba889ce24da7501856abe1077d5eae5b9b1cbaeshub-2.15.3.tar.gz"
+  sha256 "4198819e636835e73f9e606a42d09e06821eb798bff6fdd13ec8a9776afa663a"
   license "BSD-3-Clause"
   head "https:github.comscrapinghubshub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d4431c039fe678954020edc8b842ad9def5df34360df2b5d59925493d8b2744"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a042b0aa2b2daaf72cf97b4d96f380a149d5814a2cb5b1d09f26c19da72a3591"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "96f721e92e85e7ef3b5738329bf2258183e835dadff69db489f8887f2654fea3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "090ef07d9507fd0095b89c39249ec17700c34113704d06c32e38fbe5556533e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "22b88704045ca54fcde3918f19c06bf20b0821ac5ba8d90c8e90021bb04f9972"
-    sha256 cellar: :any_skip_relocation, monterey:       "7882a7c2f6e1f6fd1bdb220f2803a380e505b39a8de349a1449411aafdec231c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03e6700f99b1daceeaa6a2eae10587325afca78bb494497e9b13f119eaeee1d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9643ac6a35d1a2bfe54e30d2669b8c7f7ac31b9de657b8a16722fb6d8d55208f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db5b05e733d1559957c62a5a3945d75cf90871e2d5e50b2ea37078c7af3440b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b6b4e324e48b2887c3e7ce279b7c75149c07f62fc9262436233d21bfe509e0a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "518bec1764986014ec70e06a8cee77fb4722da1f41a3d0a42e78ba53d7d39dad"
+    sha256 cellar: :any_skip_relocation, ventura:        "610fc9d8ea17c2ad4f66bf1055c1dec6697aa5f466c100cd35bedaabbb791e1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "1bc06483d34f86e8df38f0c07ac230e40765f0494fb2dd67cba7f3413c1f5fac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94644ec70b12f8fbce2701b134a1ca9acb8dc82874da3376b1c19776c7138bb1"
   end
 
   depends_on "python-certifi"
@@ -58,6 +58,11 @@ class Shub < Formula
   resource "scrapinghub" do
     url "https:files.pythonhosted.orgpackagesa45e83f599af82e467a804da77824e2301ff253c6251c31ac56d0f70bac9e9cescrapinghub-2.4.0.tar.gz"
     sha256 "58b90ba44ee01b80576ecce45645e19ca4e6f1176f4da26fcfcbb71bf26f6814"
+  end
+
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesfcc9b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   resource "toml" do

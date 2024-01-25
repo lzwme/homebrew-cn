@@ -1,18 +1,18 @@
 class Samtools < Formula
   desc "Tools for manipulating next-generation sequencing data"
   homepage "https:www.htslib.org"
-  url "https:github.comsamtoolssamtoolsreleasesdownload1.19.1samtools-1.19.1.tar.bz2"
-  sha256 "1f94915cc32dcb6095049ed57560d99b409ba9297f4316bab551d05bb57ff355"
+  url "https:github.comsamtoolssamtoolsreleasesdownload1.19.2samtools-1.19.2.tar.bz2"
+  sha256 "71f60499668e4c08e7d745fbff24c15cc8a0977abab1acd5d2bb419bdb065e96"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "44ee5b611ba15ea77174c0b4ee1896fcacddecc6de0a32b46b1cf317cfd56bfa"
-    sha256 cellar: :any,                 arm64_ventura:  "688ca144703bf35e2bed5795e09ed9f51e31c873264f501f76ae3c31757060b3"
-    sha256 cellar: :any,                 arm64_monterey: "25a6e61157c1b167be7f8d47f6fb3e565fe6f9022b1d5cd72b3e180008443d25"
-    sha256 cellar: :any,                 sonoma:         "bdd98118c755ba68a7002ab29957bffabc63d30888e1d5be2d7448395e7dab7a"
-    sha256 cellar: :any,                 ventura:        "0ef748e1bc21658f25a6a81d1f1c2835c980b0fbdb228f291b32ba609205aa73"
-    sha256 cellar: :any,                 monterey:       "289571443a3f5d3d57555ef870c88893ed9dde465fecdad7991530831c74aac5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "094bfcac7b0dd2e957cc65a539e8f669615300b827608c90d2cbc91741b03de0"
+    sha256 cellar: :any,                 arm64_sonoma:   "96d8291bf5b218bcbc87e61885c90d6298f1882075e090f8e34cb94a115cdd68"
+    sha256 cellar: :any,                 arm64_ventura:  "a4e4d64adf90122ddd31cae855e59ec285788ea8996ae9855270f7f9e60b4512"
+    sha256 cellar: :any,                 arm64_monterey: "d81893a1352ea09353ac3ae0330df7e3b23cb75fa649ce68ebe2f791d7444c20"
+    sha256 cellar: :any,                 sonoma:         "141687bd1b2d1379411f26e9054f3122ea04a95101e854fa44f818bba137dc24"
+    sha256 cellar: :any,                 ventura:        "f4b0a0160042f68be3861e16cd1d057b821eb4f13f3d37e1754274503d54e08a"
+    sha256 cellar: :any,                 monterey:       "80cd66bb44c7db3d91f3719effdd67f4968296f6358095b82b5cbca64c78b9f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf0ca5b2caf6e9abd2a718478e5cb0a1d5243e4f322db5b392544d90f0cf6f4"
   end
 
   depends_on "htslib"

@@ -255,8 +255,8 @@ cask "firefox" do
       ],
       rmdir: [
         "~LibraryApplication SupportMozilla", #  May also contain non-Firefox data
-        "~LibraryCachesMozillaupdatesApplications",
-        "~LibraryCachesMozillaupdates",
         "~LibraryCachesMozilla",
+        "~LibraryCachesMozillaupdates",
+        "~LibraryCachesMozillaupdatesApplications",
       ]
 end

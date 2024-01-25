@@ -26,8 +26,8 @@ cask "outset" do
             delete:    "usrlocaloutset"
 
   zap trash: [
-    "LibraryLaunchAgentsio.macadmins.outset.login.plist",
     "LibraryLaunchAgentsio.macadmins.outset.login-window.plist",
+    "LibraryLaunchAgentsio.macadmins.outset.login.plist",
     "LibraryLaunchAgentsio.macadmins.outset.on-demand.plist",
     "LibraryLaunchDaemonsio.macadmins.outset.boot.plist",
     "LibraryLaunchDaemonsio.macadmins.outset.cleanup.plist",

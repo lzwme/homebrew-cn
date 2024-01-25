@@ -1,19 +1,19 @@
 class Proxsuite < Formula
   desc "Advanced Proximal Optimization Toolbox"
   homepage "https:github.comSimple-Roboticsproxsuite"
-  url "https:github.comSimple-Roboticsproxsuitereleasesdownloadv0.6.2proxsuite-0.6.2.tar.gz"
-  sha256 "0b65faa436f44cf99e94b52c1b0308253872dbc8b53d496034284b0edab8f08f"
+  url "https:github.comSimple-Roboticsproxsuitereleasesdownloadv0.6.3proxsuite-0.6.3.tar.gz"
+  sha256 "378d1e8a52ffb8a213ec62c01f8ef1c56bc7e7deb0b7588b91e554504d9e63fb"
   license "BSD-2-Clause"
   head "https:github.comSimple-Roboticsproxsuite.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1006943edbd1bba151c958b273aee7f703ae23de29cca46d0bc9e40c21f3d765"
-    sha256 cellar: :any,                 arm64_ventura:  "0d1f4f7d8d7bf70552360e94037bfa9f0f1f81262922e10fa638446c2d47ae0b"
-    sha256 cellar: :any,                 arm64_monterey: "5d82dba34703d35c92c42dc2986b562d0b41348b61c19d96ceca6e0fba1a2c0a"
-    sha256 cellar: :any,                 sonoma:         "90498d5b7c4d2b6d54bb336b6d2bc9bf0df5fab3c987f981f0d094adfe289da7"
-    sha256 cellar: :any,                 ventura:        "408cee8b9bec44601a2b695191a9f2fc510bf05bb7003f16af65f803adea9ac1"
-    sha256 cellar: :any,                 monterey:       "addd15e4043c7f80898bd4d08c651384c6bfc0cc04b3fe10f06e3cc52ab08ec3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "705dd62c1701dc0c78fc2a570a8ed9bc10d73ab2f12c139f4c4c9eec7e009548"
+    sha256 cellar: :any,                 arm64_sonoma:   "9d53b4d4f668a96ad3a886c330bac414f9a441bd3bb21635c3f91bb3ea3023ea"
+    sha256 cellar: :any,                 arm64_ventura:  "4724a2e8b02581ce1ac6424e370731f2c4118638e3e5c176b112c2700cc3fba1"
+    sha256 cellar: :any,                 arm64_monterey: "4265993681c27284384179d300c215332abda1b6edf514ce97601525db10a05c"
+    sha256 cellar: :any,                 sonoma:         "6a253d84acb53edacfb859b78d71a5e1ce4ec2e8d606d6e2e25d53658c5ad097"
+    sha256 cellar: :any,                 ventura:        "60cd2445d78f1184db55a523c4a0a62588b5de77e77f207f366acae1ddd6d353"
+    sha256 cellar: :any,                 monterey:       "707d07d242f274aa5e0f0e775d082151be9e220c7890fb093d2ff134c7cd3184"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db4b850d22efeb42c00764cac26b8dd0c38dff204df5dffeff0ae14d9e5480cc"
   end
 
   depends_on "cmake" => :build
