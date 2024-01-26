@@ -4,15 +4,16 @@ class Votca < Formula
   url "https:github.comvotcavotcaarchiverefstagsv2023.tar.gz"
   sha256 "ac78d2eb5a6694b76878d2ab1ec86bb161765143a447cc23905cdcb2bb6743be"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "786d030d23ad69cb3f00ba8850cc2100ee40011751e17e8a88a3d4111f25f659"
-    sha256 cellar: :any,                 arm64_ventura:  "0edbdfe8a1455a72a05122a74bd754945863a72ea28769f3b4736486b626bc72"
-    sha256 cellar: :any,                 arm64_monterey: "5197590475a1f38071f216099c2d7bcdaff8080a3553dbb51a2233dca8cd787f"
-    sha256 cellar: :any,                 sonoma:         "0a0e8b708dd50693ce9966fbcac1b0cf2def32d4f1f68e4edf357df0db784326"
-    sha256 cellar: :any,                 ventura:        "6a50eb224d56e2996c11f7c9c2e5b110791e2867cfa093427960307a4128c730"
-    sha256 cellar: :any,                 monterey:       "17cc9392804d260c2d8954c210c52073ef701de7e52f288b6e1717ad93d5d9c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a9ffb0e61cb4979592dcc61db2215633b48ad9b8d020222579f932b4981d93d"
+    sha256 cellar: :any,                 arm64_sonoma:   "1514b7dbb172def8b8b4f2a8d33da4f0063ea4ca7b56be0a73aa1e137f66179e"
+    sha256 cellar: :any,                 arm64_ventura:  "7167d39d002e10d547cd5773c14185961fe7e7ce8ced06ec6cf28d227fa26a20"
+    sha256 cellar: :any,                 arm64_monterey: "300dd0a80c49a7f93a3a853397a5ae8a16e0e84886699216823956eb296a9ab6"
+    sha256 cellar: :any,                 sonoma:         "912246de3be6a8bdbf987ca228d084cecabb74af5774fd2f44374bbb059012c2"
+    sha256 cellar: :any,                 ventura:        "39ca48d5c50b6957ae3c0fe73753c56caf994c84c69a541571ed52457c6a88bf"
+    sha256 cellar: :any,                 monterey:       "4bd530f0e2150118a45d10023115d0766beee69dea307b9cfb6e14ee156bbd8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "492af596e4b89036184d82b426b4034d71895421adc23f1c1f235161a430eff4"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +23,8 @@ class Votca < Formula
   depends_on "fftw"
   depends_on "gcc" # for OpenMP
   # add gromacs dep back once it was built with clang
-  depends_on "hdf5"
+  # Use hdf5@1.10: Unable to determine HDF5 CXX flags from HDF5 wrapper.
+  depends_on "hdf5@1.10"
   depends_on "libecpint"
   depends_on "libint"
   depends_on "libxc"

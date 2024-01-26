@@ -4,16 +4,17 @@ class Folly < Formula
   url "https:github.comfacebookfollyarchiverefstagsv2024.01.22.00.tar.gz"
   sha256 "ba8d9c84403ab71ced8d34e9fd241d0df97ef3391aaffde96f89da8b91703fa4"
   license "Apache-2.0"
+  revision 1
   head "https:github.comfacebookfolly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d887699d3e0ae2f4774ea80c74e05d8201f00d996a592ba7dc2777470dbf41af"
-    sha256 cellar: :any,                 arm64_ventura:  "a370c2e1ec2ceab669f11095097d5bd3b8eedc216a08027dc90a3eaedaec443f"
-    sha256 cellar: :any,                 arm64_monterey: "560637db5caaf8bd9558fd6ff7b9ae511576331fc0ea8a69035086f90ff51bda"
-    sha256 cellar: :any,                 sonoma:         "6f992775fc770af3053d7724678b8edeb6eae6d6c7864758d9b1ab5eba23c3ca"
-    sha256 cellar: :any,                 ventura:        "ddb54cb1ce7752121bad4e7f38cc61726855bfd064575da4a22be10834b259b1"
-    sha256 cellar: :any,                 monterey:       "613242fbcff34cde0406bee585de913d45ac05c294f473fede87b4257dbf7025"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49676067ea9feced3dea332aa130de8683b925cb225124da740793ff63cbc825"
+    sha256 cellar: :any,                 arm64_sonoma:   "a18fb9216ba7b341bd7d6aebc2ea9983b1eb3f7f663fbc48c0f2f93d7f168b4f"
+    sha256 cellar: :any,                 arm64_ventura:  "8334d3ae69283e86a1821031283a9132ac4133ffdf93c5c76b35966f8185a235"
+    sha256 cellar: :any,                 arm64_monterey: "980e51f371f5d68cccab4620ea294e0767cfcd3ad02b96e2926cb1c50c4c73ab"
+    sha256 cellar: :any,                 sonoma:         "9d4657a96b19a6976cbad98cdf2392529fd7606b433c6bedec203323449d7c5f"
+    sha256 cellar: :any,                 ventura:        "59fc0252a1cf0424e80d0d16d9945a33554d4ff3ae3cc26d0738b52ae8f82158"
+    sha256 cellar: :any,                 monterey:       "4383976a192421a4239da8577abea4b62cc3309f8413ce50b33551be3a52f2c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ffb4dc93d046b27cd36e2b4f378b9998fc0ce8d827ac9f2f7a1c0eb6ddf6ded"
   end
 
   depends_on "cmake" => :build

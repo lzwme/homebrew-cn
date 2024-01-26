@@ -4,16 +4,17 @@ class Fbthrift < Formula
   url "https:github.comfacebookfbthriftarchiverefstagsv2024.01.22.00.tar.gz"
   sha256 "928cbabaa25b70b7998a452269e5d53cd003b5d5fe0fb104cc5c30af4054c883"
   license "Apache-2.0"
+  revision 1
   head "https:github.comfacebookfbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9c648e3985494137bec7d5d52ca6ac729fa8b1d148c62c04f49dc93620c98286"
-    sha256 cellar: :any,                 arm64_ventura:  "0a20f5bb3a43bb1e2cfd9b70059f9680339ac6787eb3e3be264f9ba19a033012"
-    sha256 cellar: :any,                 arm64_monterey: "d088c2884c58e651af286828e27f95061fd7b884cc028f729c942bfdc3e86a69"
-    sha256 cellar: :any,                 sonoma:         "1676e4c60e52036694d403ba3b35fb46b4da579dda88d89c8ae134991991dd45"
-    sha256 cellar: :any,                 ventura:        "ce4b820b89b4b6320e2f159d28558a5bf69afaac0bc4d20b5b37b094aa7b49ae"
-    sha256 cellar: :any,                 monterey:       "3c271057b6025cd5c950089d57985fa161fea816a5e8c8590bc3514308216ab3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffb88ece3c3c966692fea0deb967e03a57e5f69d39ce28f2243565a4254a82b7"
+    sha256 cellar: :any,                 arm64_sonoma:   "3bb05cc2f46998ca9e0d5ba7803d008d0ed06752d72c7cb7ad82328b88847fee"
+    sha256 cellar: :any,                 arm64_ventura:  "4c7caa7c9010e886c62f8ef070f8510cb1d70192e2dcabdfd5a924b7c1cd6d64"
+    sha256 cellar: :any,                 arm64_monterey: "3244de2aa0f845b2ca3a624d1fc909f913e0a5843223d1e7b669069c6b57e9cd"
+    sha256 cellar: :any,                 sonoma:         "8f93805bf228b4ec1f4e54b79e05ed8ab54b829cf5296c9b5053ae8a61c800ce"
+    sha256 cellar: :any,                 ventura:        "338bde75404ec6d851063c0f272d1fa6743691e0be4acf0fff73d7fde7917cd5"
+    sha256 cellar: :any,                 monterey:       "69117f656994b0047ff907917889804e353b3225a5ec9b89c9d1460f5acb56b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e2ebfded24a27aeeb2ac7a64244fb65de2b1e531c2b3de6a84b1ac684cb9fda"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+

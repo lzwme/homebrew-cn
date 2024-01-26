@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https:github.comcycodehqcycode-cli"
-  url "https:files.pythonhosted.orgpackages1ba0ef9e91b51a8e6414b75500bd6594de2fded301843e5a2d18155c126a767ecycode-1.7.1.tar.gz"
-  sha256 "0d9364ac0852e2c2620486a15c88b33eb59b0701e7949c65c85cf830cebb3814"
+  url "https:files.pythonhosted.orgpackages9ba38f7613d7bfd756b0efc91cfabc15c25c70dc42a43e0dbf1f02928f282ea2cycode-1.8.1.tar.gz"
+  sha256 "ed6582e6e6fec6c45a40916721f2be794413bf90178dc94f9a1a06bf8946b9fd"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d60b695d53e3c669f9f117f2c15f830e017388687239676ffa0833754156a55a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b36d0922cbcc613dd53a88c132f092fe06f2a3bd20bcfe1da097448a280e528"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "333fcb349ac26ca499cba87177c45746fc09fa597329a327e2749297332512cd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b16139ec798062542072f76e0e92b7f1c1a9ee1a821d6f298d7c5c32ceda7d9d"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb1df8487b65db06d1574894f0496a2c380b973629a6361e6cd990c7337f749b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c77367f08b8b4e0c4c042a9135291283740261ccf5e342d33aba89844014ac3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9c95f5541bcdb3f73096e3cc55afd2a57ea62ea3dd80a061fbbcfc2154e4ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "92043f020a1dae530699e2d0ca4b2e76b3053dbf81637a5b148afdb5ddce03f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdbbe36dad1d6146b52463ebb077f336773a27ad85bb93bedbd613c16240d1aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2f7207ffe7b465f1dee1c271421188a1104620134f75534143efd4ea7c4642f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dad60bc08b055f4fde94c55800a8e660db09179c234f21b3edddf14abbdbda3f"
+    sha256 cellar: :any_skip_relocation, ventura:        "0627885c70c20198c4ad48da9d2d9572fb6d4705cd20a521bcf6d50fb893a6ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "93290011f7c29d5f29c4557c4d9d805222b0eddf5a6b2e9ca1b1a67dd06b63d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1633f6628ea31ffb320a66eb5ad233fdae29cfced3df37627148f7f5d2a204a0"
   end
 
   depends_on "python-certifi"

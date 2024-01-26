@@ -3,19 +3,19 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/b1/42/d47a0f4e1b1213ba7319b046a2e543b5d7f79964852cae262f35ca30a50c/sip-6.8.1.tar.gz"
-  sha256 "3002df415e168ac3ffe393942dbc7131cb82ade50000e1526f46a88ade26f598"
+  url "https://files.pythonhosted.org/packages/b1/29/06e5036c035f17e0e874d71d4f5968d70aa879b155335d46f645757ff649/sip-6.8.2.tar.gz"
+  sha256 "2e65a423037422ccfde095c257703a8ff45cc1c89bdaa294d7819bc836c87639"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
   head "https://www.riverbankcomputing.com/hg/sip", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f14d24030406bc957a956ab56ea6a1729d0164a78ca17cee84b386cdf8f5f84"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "596e836c25f6a44c9abe30b92734baf0f3ebffdac0e933db0666cf8cba9b10d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbef16f6a5066b616cb44956fa664d81f0c6d2019d5d24935e5d39e5c1734df1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b7f0601e829369b6c716807e3a661db410ac9c0ad6f1f19b2c94ae3e0141ca0"
-    sha256 cellar: :any_skip_relocation, ventura:        "3db6ec3214ffee9299c6deac4e4351547c7f046e856535f4f45419f9a54506a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f23948049fb077c867e06249832a70ca7cc1307a5fdd7db7c99fb62a0bd88564"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92a2007dbea1afe34cfd7afb2d076e6ff27bc7ca69a2f4253f19406573485e00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd7af2171fcb4ca71524ee632746404bbe297f37ed406043c23dc6a7d878455a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f67d12f087a3f7ea9ec6d90bdbf616774d15202e7687129c9970ec52f4f11050"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13d82e1e0fc16aa384f8951ea1ebced744eb6ec4de4da638566127ea0136da9b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d6ad885aba351d9e094b6dfdd07c47e61b17a2e897411df6e6aedfd26c84b378"
+    sha256 cellar: :any_skip_relocation, ventura:        "83a66a89d782c6f7890c8387d940b71055b3ad24987fa577cf1ff3c1a9778ac1"
+    sha256 cellar: :any_skip_relocation, monterey:       "fd0e462966fcf0e827ad45d65545221bc4b00584f2f920c8e6588991b7b768c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55e09b90648563625f3ab1576a4a8277e0b5f386f291b30523777e60fd8ea973"
   end
 
   depends_on "python@3.11" => [:build, :test]
@@ -28,6 +28,11 @@ class Sip < Formula
     deps.map(&:to_formula)
         .select { |f| f.name.start_with?("python@") }
         .sort_by(&:version)
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
+    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
   end
 
   def install

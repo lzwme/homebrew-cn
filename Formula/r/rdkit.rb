@@ -4,6 +4,7 @@ class Rdkit < Formula
   url "https:github.comrdkitrdkitarchiverefstagsRelease_2023_09_4.tar.gz"
   sha256 "abacae431bbc5882b87cc8629b7ddc02757204e854aa45b6157ec2bf45d623ef"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "535bb6868e735a0147e4f3a77acd3802daad3a7bc8d0e86a634e5b371ded1c69"
-    sha256 cellar: :any,                 arm64_ventura:  "15f070d4838f682844ee462dad9feae5768264f767292d2ee5e1c976597ac053"
-    sha256 cellar: :any,                 arm64_monterey: "2d8d7e4adfad6636e82f90fc8b94eb5b46b14eb6b6856d937ee3afdc02daa699"
-    sha256 cellar: :any,                 sonoma:         "2f4365b7693d080e19fce99a06ce0a29ec1c57b82ae2d6580ce2c333d5c6a4b2"
-    sha256 cellar: :any,                 ventura:        "36fbed556bc6c3447793399a5e1451433b70a2f1549e90dcdcdfc4d01bddfd55"
-    sha256 cellar: :any,                 monterey:       "9a8afdad3517684776d7d5d150fbe640500a26d6230e876480f748a206d01d3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb507f66b1affa0bb07eb995683013d00961f62c8da7fd29c12fcf7ec1baa58e"
+    sha256 cellar: :any,                 arm64_sonoma:   "a236b4e91a68c7a539e44e83fed41dd3123634f0272573af1bdb96f3900a732e"
+    sha256 cellar: :any,                 arm64_ventura:  "4e8920fc8abf1de88a94a93db5eeadec066a01004ea21e6cb7cc94723685313d"
+    sha256 cellar: :any,                 arm64_monterey: "a2db343185ce586c9ee70b311cebc862f44965d6c0f5f915e02d3fb63dcdda66"
+    sha256 cellar: :any,                 sonoma:         "f42bf38ce775f2628ecb793937a6e1a5f977c79513e53a2b953029558f364fec"
+    sha256 cellar: :any,                 ventura:        "8397aeee00513fbb3bed7bb23cfe02a1b8a8b8279f1cc461ff1cfc9312dcb04b"
+    sha256 cellar: :any,                 monterey:       "da50b8cdc17cac150d3030b5d20b2c8811bfc40199714fe9e29ef099efd1ca01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2709c4ad1e560d150bab442c3f5cce91dcef1304f900ee6e97d8d7717c4fcbe5"
   end
 
   depends_on "cmake" => :build

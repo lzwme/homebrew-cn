@@ -4,16 +4,17 @@ class Watchman < Formula
   url "https:github.comfacebookwatchmanarchiverefstagsv2024.01.22.00.tar.gz"
   sha256 "04b789729c37bd7a8b69f632d8c9e2daf1ba0ba2a28169f208a8a2ec3125cd4a"
   license "MIT"
+  revision 1
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2b888ccda8fd1d80401d871aa8703773df57f159f2dd03d82dafb2688191f9eb"
-    sha256 cellar: :any,                 arm64_ventura:  "153024ce6a619a1e025fb4202a9381a6b2778c07d9e46d87104290188b3aba9c"
-    sha256 cellar: :any,                 arm64_monterey: "20cc1eb88eacdcafed1b1bf052360f8b929260574b7493d267f57a320573823d"
-    sha256 cellar: :any,                 sonoma:         "1478004b7fdb116e7a932e7361b6fb711e8cf662e72d80dc7d90d6072697738e"
-    sha256 cellar: :any,                 ventura:        "5c56cc84e7a43e448ce18123dc98ddf68530647932790df6f46a1912d7a21032"
-    sha256 cellar: :any,                 monterey:       "8d8f5665b41653ab92c394601d48c67d20265f5666ee81cb18ae84db002803df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8eec883fe86e999b7c8b63b5ef70b1290f5a8da5aa2d47fd65a0383046b6b0"
+    sha256 cellar: :any,                 arm64_sonoma:   "a4c5ab00e6de49e2cba8899a7f35d0c01e5683d831adec6acb924c33e03e3da3"
+    sha256 cellar: :any,                 arm64_ventura:  "1e2fde81e754605648ea62d936074ad6a9426eb83320f3001dc7bf211e87fade"
+    sha256 cellar: :any,                 arm64_monterey: "eb7bb01ba70a56318ad7f66c3dffafd9c77aebedb8c7af20e9313c5e1c7039f0"
+    sha256 cellar: :any,                 sonoma:         "aa8fe8037f6bba784860d1298bc2806b31440d91321b33f668bf7953f815d28a"
+    sha256 cellar: :any,                 ventura:        "03d50e35c03ff43d06cacd4cb5d738c2dd4852114829d7fdd140764ace99550f"
+    sha256 cellar: :any,                 monterey:       "d7dee7037540e33e03ce357026dac332d0e60c1587e34fc4b647ce8fb3033413"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a46ac6d6d2d9e832d952344eb72572ca18cf52ddf848ff532facb1e9fcc171a"
   end
 
   # https:github.comfacebookwatchmanissues963

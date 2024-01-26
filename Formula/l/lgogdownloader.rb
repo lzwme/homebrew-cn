@@ -4,6 +4,7 @@ class Lgogdownloader < Formula
   url "https:github.comSude-lgogdownloaderreleasesdownloadv3.12lgogdownloader-3.12.tar.gz"
   sha256 "bf3a16c1b2ff09152f9ac52ea9b52dfc0afae799ed1b370913149cec87154529"
   license "WTFPL"
+  revision 1
   head "https:github.comSude-lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "97023f97d4d5ed35f0539c7e744d54558befe7e7dfeb37e5a2161d6e77a99e9e"
-    sha256 cellar: :any,                 arm64_ventura:  "1e7dbdea45ebc15b3beeee679e36b011fcb783844168805f12c25f0ef6ecfc82"
-    sha256 cellar: :any,                 arm64_monterey: "992dca40e5cd78f3bd5b1305ee3cea3fcceae07b41f2a31636bba22051af6262"
-    sha256 cellar: :any,                 sonoma:         "5a5b6d8ba49defb1df309931cd8caf3e3564f709965beb4e62f24dd9bb0f877d"
-    sha256 cellar: :any,                 ventura:        "d97855706a9f0c9742630f645b091e561c8aa37305932cb1f95d49a73ae73184"
-    sha256 cellar: :any,                 monterey:       "3a0bee78906b6c6d6896290d4fc7c92f355b97bb22337a583ca81c525ee7ce08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1199cade4bb886e13e8f753f27ad2300621fc3eca162f35c7701c195f120656c"
+    sha256 cellar: :any,                 arm64_sonoma:   "7b04838f77fc60c707c35aff6cea7b4ba354675b9e5b2c144b33beef383295eb"
+    sha256 cellar: :any,                 arm64_ventura:  "84a3914e2d8e7b7d6a1553855c663e1d0a3ba8bfb9dffad419742f97ce5d3a79"
+    sha256 cellar: :any,                 arm64_monterey: "9f04cdaef27f2e84584481f48d72d550e7c21dec17ef369b3b0cbf66ee9d25a5"
+    sha256 cellar: :any,                 sonoma:         "fd77cdaa513f8bdc9c09bd00831d08c25449458e712a3a5d47de2719e3a4fd8f"
+    sha256 cellar: :any,                 ventura:        "6e00a43a93088d222da74664e110b5b2bc39cc3d2478db0a670303d532d03e52"
+    sha256 cellar: :any,                 monterey:       "484326ad4707a35e9a658438b95c8969b70d696abea33d592884b13bbdba14d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "697fce9fc55cd5a0e20ad104829fd40757036b263417136c0facf217712993cb"
   end
 
   depends_on "cmake" => :build

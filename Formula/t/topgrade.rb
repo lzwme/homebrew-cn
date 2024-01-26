@@ -1,8 +1,8 @@
 class Topgrade < Formula
   desc "Upgrade all the things"
   homepage "https:github.comtopgrade-rstopgrade"
-  url "https:github.comtopgrade-rstopgradearchiverefstagsv14.0.0.tar.gz"
-  sha256 "5635080f7b8d092c107b2b49a18b707a275bd07c6f121778d49b9d147eef9891"
+  url "https:github.comtopgrade-rstopgradearchiverefstagsv14.0.1.tar.gz"
+  sha256 "e4262fae2c89efe889b5a3533dc25d35dd3fbaf373091170f20bcc852017e8be"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,22 +11,16 @@ class Topgrade < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "910072b01621d488ef2f653a30f686e48cd82abbf60b88e0e7c27982e9885211"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8603ccdab72c718e8afc1b8f06dd99a841e5f867bde11de22b15b8a96f0947b8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1267c19a3831794f660289ad0e6695d8bf87c4ad90ae8b351781193db174b08a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4d29bcf7bb6070a04f12b4727a46009ba57932c5f64cf770feee38a75ad39fd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "6d8b58b8c6b70c05e962765dfad4b8026d7758f02d1d9ed1e72fa15afcd66509"
-    sha256 cellar: :any_skip_relocation, monterey:       "01691b9bbc9c6134221445a7d427a0b799be3ba381dfb9623ed0f7b256c7a986"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab977bafff695ba0bd15ca3a1db59ed91182d49cdae8197db99cb648eb1482dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc5f13cd0c72e9b8da5f2c54d44928f27a0b3fb723f9f7ea40d10de7fd1d5a9e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3465b89eaba5e0d58da089ad5a1269e155510fc39af4019879bb379a2701b936"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8843c568676924d9008c6db4ceca2065cc48d096418a3ef1b23e6f9f1c5b35e5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d61e568422b51faa98295850c2a492968d5983b56f380d6b0149aff66abda68"
+    sha256 cellar: :any_skip_relocation, ventura:        "82d399607a1c7b29c33ffc6ef02879de3ef68dfc1d30ac8618c4cc6d43ad992c"
+    sha256 cellar: :any_skip_relocation, monterey:       "6153f2c6170194fc39f9d168c895c712a9ccf954f8e7c211d8397432b8efab3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a08906aaa40e5b3be25e7d66687407e099e90f3e2c587c023b408fdd5da3e74f"
   end
 
   depends_on "rust" => :build
-
-  # patch for terminal notification, remove in next release
-  patch do
-    url "https:github.comtopgrade-rstopgradecommitf794329913db5571a71e9ac8a36a44959d3f6a33.patch?full_index=1"
-    sha256 "4b280f19c327e6eb9d86056c4f882234d4996b7429ad7f21c0b78d118f2d0a34"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
