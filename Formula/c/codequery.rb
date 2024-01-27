@@ -1,20 +1,18 @@
 class Codequery < Formula
   desc "Code-understanding, code-browsing or code-search tool"
   homepage "https:github.comruben2020codequery"
-  url "https:github.comruben2020codequeryarchiverefstagsv0.26.0.tar.gz"
-  sha256 "5972a5778159835e37f5c9114a90f1be4756f27487d9074d2fb3464625a0ced2"
+  url "https:github.comruben2020codequeryarchiverefstagsv0.27.0.tar.gz"
+  sha256 "c03b86f9f5a8f5373862efaef6bddd18a15e5786570a93f0310725ecc5d74ff3"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "35482626a0cb4b75d6e6c917c77535b5cc49159703898930534c32374c778c27"
-    sha256 cellar: :any,                 arm64_ventura:  "bb8601cb33c79b6fa462b4279138e60901a5bf4828441e6eb2c3ef0b7969bfcf"
-    sha256 cellar: :any,                 arm64_monterey: "6dfb4a9564a48f8e371194fee1cc66850804dbe05304fac055f1238c4c16af32"
-    sha256 cellar: :any,                 arm64_big_sur:  "8e61eb2e4bda1efe140f20516772ed6e192b6f932df86c3401c9de5e2f6dc39b"
-    sha256 cellar: :any,                 sonoma:         "cd165f5d82bc7857b17078a5bf9edff9fce005fec83c21f642943afdcc807e9e"
-    sha256 cellar: :any,                 ventura:        "b97d3a2af1846992e6594d2ad553c7c72ff218fed7fcc4c6a9457a36fb7538b5"
-    sha256 cellar: :any,                 monterey:       "8f07b88f92a60578753b89cd5202a41e908faf36b4ac73d5ff73fa2aab628589"
-    sha256 cellar: :any,                 big_sur:        "f2ddf6373596c5c563c4d0d120bb45b50c0a4f94865be50410f3a57b3b303338"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c42a8a16ffec8983454e4f8c5485efb10f936781a1afdc683ed899c8deab558b"
+    sha256 cellar: :any,                 arm64_sonoma:   "4a5e11e34f169ec046b0782e239797fc6dc7cb35a76bc9c38fd3c17bf0ee1a5e"
+    sha256 cellar: :any,                 arm64_ventura:  "931c4d911a4625bede72b3115ae1ad147e8ac18b0240aec2e94bb3a2bfeee08c"
+    sha256 cellar: :any,                 arm64_monterey: "e590fa7410e46d1c47288d4a9ef93e410d83cbbb04fc7360035f5f39c2710685"
+    sha256 cellar: :any,                 sonoma:         "9a88afb249e743ab0f8cb9521a05aa155fd7b6d73e5da8a45fd1f6faef60235e"
+    sha256 cellar: :any,                 ventura:        "1431ce53f49494ccae4d9f133c8d706d0f5579c4f65c0ba82df80d0098ca507b"
+    sha256 cellar: :any,                 monterey:       "a54c3da40028710b0b16aa09b9b2dd6a0c9b8d569dc7cb8f4b483731e2db4ce8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2d4afb2e96403a1dd4553877ada1d21cf749471a2d8c12a9ec2d6e278e9b83b"
   end
 
   depends_on "cmake" => :build

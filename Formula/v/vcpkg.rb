@@ -12,7 +12,12 @@ class Vcpkg < Formula
   livecheck do
     url :stable
     regex(v?(\d{4}(?:[._-]\d{2}){2})i)
-    strategy :github_latest
+    strategy :github_latest do |json, regex|
+      match = json["tag_name"]&.match(regex)
+      next if match.blank?
+
+      match[1].tr("-", ".")
+    end
   end
 
   bottle do

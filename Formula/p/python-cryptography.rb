@@ -1,19 +1,19 @@
 class PythonCryptography < Formula
   desc "Cryptographic recipes and primitives for Python"
   homepage "https:cryptography.ioenlatest"
-  url "https:files.pythonhosted.orgpackages1d95e81ad3a9caadfc6a4367de7432fd3b779a2e2af760ce9a9cb4f5704d57cacryptography-42.0.0.tar.gz"
-  sha256 "6cf9b76d6e93c62114bd19485e5cb003115c134cf9ce91f8ac924c44f8c8c3f4"
+  url "https:files.pythonhosted.orgpackages3feda233522ab5201b988a482cbb19ae3b63bef8ad2ad3e11fc5216b7053b2e4cryptography-42.0.1.tar.gz"
+  sha256 "fd33f53809bb363cf126bebe7a99d97735988d9b0131a2be59fbf83e1259a5b7"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
   head "https:github.compycacryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "104282e76fdfc7a28a81496eee122668afb81b4ae8ca46c6356ab8adaacfa188"
-    sha256 cellar: :any,                 arm64_ventura:  "466d8e3e5d92eb12fbc05cbb70e076678359e4ac0d2e6dc1424d032eda444847"
-    sha256 cellar: :any,                 arm64_monterey: "a58acb49f975167842a2a2883fb7fd3818c0aa2dce0fc86ccec0e3c04ce27ac9"
-    sha256 cellar: :any,                 sonoma:         "b55e3bfaed61536885565fc2e4fbc8f423bf3639cccf10a9f0bb55fbef5a8e42"
-    sha256 cellar: :any,                 ventura:        "24f52ee6651bfd37bd268680d5836abf77bfae7d0f4763e49aaa679c56a0f1f2"
-    sha256 cellar: :any,                 monterey:       "62d01f50ab958a2b7f7662be4920631ad19ce54f59a7b5583d1892e8afcd635b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71702aa71c0868930388315528aacf93a8de86b503b151210ee1e6f15c984a1c"
+    sha256 cellar: :any,                 arm64_sonoma:   "2328005942affbd2848d0e07b7f5bc94f285137449259ddc38a68e0a08907dd9"
+    sha256 cellar: :any,                 arm64_ventura:  "f97c14f672dc250ab7af90df97e35737c0398f58d79ab596129f02b0a424e03d"
+    sha256 cellar: :any,                 arm64_monterey: "649b0beca9658858ab71b331ca11abfc412b1f42cd366d8d9db2937ce35ad930"
+    sha256 cellar: :any,                 sonoma:         "78ff02d50e30ffb81a60b53e78061bf5335b663d4ad9f76503788f5647283ca9"
+    sha256 cellar: :any,                 ventura:        "ace2327ce77399f4d5add0d928ce147552e0ee455d7dc1bc772a28fd0165049f"
+    sha256 cellar: :any,                 monterey:       "3712e485d59c9830da11e5cc7dd785b6197705d391c827f64a8fbc5686c228ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de5094d4fce591010b8adb118922dd5b960837f1a99cd4aebcee5924e01e585a"
   end
 
   depends_on "pkg-config" => :build

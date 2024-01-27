@@ -13,13 +13,14 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "290e4ab1903f4e3466045596b6ab8d9dfbe84adb51b4687c71c00b512e0d9d64"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c208dd3854727ce0293b0cbe198b7abe9d0dc467773cb2b713a27acd6806989a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0455e81c89550b0e797d8ff0c28db5b1f0943c6c907aae3c2f6af45d2bcd91b5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b10eddba0c993f790f86d6e4f0621d386ff02a41712c9bec1b6fc3753b3b5530"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed31a6a0cda2d19efe0d3a3fa348f3edb76f11ef690cc23eb130338ba0e5fef2"
-    sha256 cellar: :any_skip_relocation, monterey:       "aee2a542c743c507c06a91c35ef198f62004ddbe108c54566235f5f3a718fb16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7d2d33de8fb76d68a0cf319bda0362ae95286f9a0922b2dc82153552e4b5d94"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb9e225d9ad3dcd206d6d6d7af6618afc08c220feb926837261329f4b8f98d94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a32145b428401fde3986934be018c158558e4ff61b7f3f276a3e4166308d7687"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "48ed7ca26c56c72c257b1226106e5330f2f2b52706771b2c10a305ad46206d75"
+    sha256 cellar: :any_skip_relocation, sonoma:         "192146537bbc7547b0eb6c79b1201f9511e1afa2fd4123f6e28ac03da8738af4"
+    sha256 cellar: :any_skip_relocation, ventura:        "11b4e7bd8b2b816a3fd7d65fc199bfe66b25a0e43a8682d89a12edbd7c007450"
+    sha256 cellar: :any_skip_relocation, monterey:       "02b2c82095732130c5c8f9e984d6cf8ff47f3da255784d6f45d8b0512dc8e397"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e651ba0f849457f2492b82fdee3ab09a5e6c0bbb5088e3374d27caf3cc9d59ed"
   end
 
   depends_on "cffi"
@@ -184,8 +185,8 @@ class Snapcraft < Formula
   end
 
   resource "lazr-restfulclient" do
-    url "https:files.pythonhosted.orgpackages88e26b8b83d69aa06ae515a969320a8b8e371afa42b4226c03159641fc773c55lazr.restfulclient-0.14.5.tar.gz"
-    sha256 "0751717c7e74db1987e9a77335707d4d7d97cf04b1ad0898b822f12333d6887c"
+    url "https:files.pythonhosted.orgpackageseaa345d80620a048c6f5d1acecbc244f00e65989914bca370a9179e3612aeec8lazr.restfulclient-0.14.6.tar.gz"
+    sha256 "43f12a1d3948463b1462038c47b429dcb5e42e0ba7f2e16511b02ba5d2adffdb"
   end
 
   resource "lazr-uri" do

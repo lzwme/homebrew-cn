@@ -12,13 +12,14 @@ class Glslang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6160791f3bd4058b2f3885f81f82532aa1c0e364dc18760b4b706393c47a50e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2c95236b71f9a90a791bb3c387dd15328b05bd3aa467ad617d0e052dcf7f8a8d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d28f7e7b2a7ea148db9b37fb9d5f72bf742dbb286d668671b0a9e98afe459346"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe5ddc93e77c0f0a07d160da018514069bb5df7a11b838a5abcdff353092ad25"
-    sha256 cellar: :any_skip_relocation, ventura:        "f233ac2cbf0eab3299dbe6e21c475f4ab68a1481a972121f6b6b7e72b1822130"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb3539885cdf728ed4a7aa583d0f024e0274ea2a180b74e0fa5ddced63d7a8ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59668a27552e7d7f939a4a9b2bb66fd328cf96ebcbef140c7e0fdc832cf50981"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "051f7043d6606c138972e09c68fa8efd95d3332eacd4fd793701c96cc08fcead"
+    sha256 cellar: :any,                 arm64_ventura:  "fb6611b902aa69837928be3dc2bcc2582eeff0a8a415995cce25fde81a147294"
+    sha256 cellar: :any,                 arm64_monterey: "b88d25a412d011649c177e089e10edab6a07ebba07a20061f4147637a880db92"
+    sha256 cellar: :any,                 sonoma:         "318a47afbfefb181d1b02c0abadf7798101ec32c8baacf295a3163185a9eb355"
+    sha256 cellar: :any,                 ventura:        "05ef399606934d09a71a9ce403b3697e1c21a500683afbfe361c19ad77215586"
+    sha256 cellar: :any,                 monterey:       "d4b11296f4a357bcbdf3d6bac400c1fd96c64fc8b2d7ffdd18748a5f360bdf7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58bc9386a239713fad7caaeb8d5fac411fe7282d9b0fae16c1424c03954db3bc"
   end
 
   depends_on "cmake" => :build
@@ -27,8 +28,10 @@ class Glslang < Formula
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXTERNAL=OFF",
+                    "-DBUILD_SHARED_LIBS=ON",
                     "-DENABLE_CTEST=OFF",
                     "-DENABLE_OPT=OFF",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
