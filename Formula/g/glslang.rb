@@ -12,25 +12,27 @@ class Glslang < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "051f7043d6606c138972e09c68fa8efd95d3332eacd4fd793701c96cc08fcead"
-    sha256 cellar: :any,                 arm64_ventura:  "fb6611b902aa69837928be3dc2bcc2582eeff0a8a415995cce25fde81a147294"
-    sha256 cellar: :any,                 arm64_monterey: "b88d25a412d011649c177e089e10edab6a07ebba07a20061f4147637a880db92"
-    sha256 cellar: :any,                 sonoma:         "318a47afbfefb181d1b02c0abadf7798101ec32c8baacf295a3163185a9eb355"
-    sha256 cellar: :any,                 ventura:        "05ef399606934d09a71a9ce403b3697e1c21a500683afbfe361c19ad77215586"
-    sha256 cellar: :any,                 monterey:       "d4b11296f4a357bcbdf3d6bac400c1fd96c64fc8b2d7ffdd18748a5f360bdf7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58bc9386a239713fad7caaeb8d5fac411fe7282d9b0fae16c1424c03954db3bc"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "5fb3995691d8cee2e16f98245e847ba1cd555308d51e9daeda58ef960cb9382f"
+    sha256 cellar: :any,                 arm64_ventura:  "58641a7b577f1d7490541750e0ab7215106b167bce2255132c85d9cdf94cbb2c"
+    sha256 cellar: :any,                 arm64_monterey: "c755b3ac6b39d6bfd87575aaf963b6e215e7f7f75406df1fe9a2e344f67a3cc3"
+    sha256 cellar: :any,                 sonoma:         "f95636647d6f1df77c5cbe334e280e7b72d85d1f2f06a9f4d376a3729170d2d9"
+    sha256 cellar: :any,                 ventura:        "8ab644161f250ee72042178b78f529cdfed3c34c3a47fb8282196a7f31b35ce7"
+    sha256 cellar: :any,                 monterey:       "2c97b0e775cf75e162318b8f4aa5c5a126006f0b5fe3836cc5fd43356967e971"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f784a0957abf375541dae829f11468d1631ce6fbbbab72ed5b70a743dd8de501"
   end
 
   depends_on "cmake" => :build
+  depends_on "spirv-tools"
   uses_from_macos "python" => :build
 
   def install
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_EXTERNAL=OFF",
+                    "-DALLOW_EXTERNAL_SPIRV_TOOLS=ON",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DENABLE_CTEST=OFF",
-                    "-DENABLE_OPT=OFF",
+                    "-DENABLE_OPT=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
     system "cmake", "--build", "build"

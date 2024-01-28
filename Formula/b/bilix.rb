@@ -3,18 +3,18 @@ class Bilix < Formula
 
   desc "Lightning-fast asynchronous download tool for bilibili and more"
   homepage "https:github.comHFrost0bilix"
-  url "https:files.pythonhosted.orgpackages64a4ffb7e9214fc09efa1d12d3078258b075bdf60567736397816633e6f75007bilix-0.18.6.tar.gz"
-  sha256 "ce46703ff1506ec86f3996e4512ca837376adee7283dd96961ac2abf0a24fa2b"
+  url "https:files.pythonhosted.orgpackages08def349e3a5571613b39f109247c07f9f9b493ad4fd5ae4c42301210574885abilix-0.18.7.tar.gz"
+  sha256 "d39543a2198c3e6218d674fb83fea0b62a5c98224609828abffbec018ea2cc20"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0fbe3920c7ac40b28777a160e05938204ecbcfe448cc00b2971f2cd2efbaa9f3"
-    sha256 cellar: :any,                 arm64_ventura:  "3169c1e19c95b48ec032f6a44e33bbd498628cdff90e4d15eaf96b95c6445dd5"
-    sha256 cellar: :any,                 arm64_monterey: "11403ebbeaedfc0175942f189007fcb52667de3f6ba5ff3fa76fb6b3fb215111"
-    sha256 cellar: :any,                 sonoma:         "367af61e7efeb3dd5b4e9e675156ca6be172388ba603f02b99f061484e9364b4"
-    sha256 cellar: :any,                 ventura:        "22ecc8343c46131f2528a8428d7549326144501fb70aa3c5918f8f4d3cc51648"
-    sha256 cellar: :any,                 monterey:       "f865fbe3fbc78d651c6510faaf1bf7d6b025d4cd2a4eb4a171be03224b498b35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cf938827dd23b01d1aa634e3e97728c91e5da957bbb7a9750266c63c8f29446"
+    sha256 cellar: :any,                 arm64_sonoma:   "c300d8ae7dddefa04f73c6c6cb32bf789ed8e551ba692cc6314444b0963b2a9c"
+    sha256 cellar: :any,                 arm64_ventura:  "fa28f98f0e72a2fbe20efab86b976cc5ebe5ab555152b3bc76b34455cddd828c"
+    sha256 cellar: :any,                 arm64_monterey: "ba4be15ac1e8b2892acd40c7410f00bca43d97be54bad4fd99828b18372bd568"
+    sha256 cellar: :any,                 sonoma:         "ca7b3879c4d8a73b1367ce8f539429c348c786b1173d30e5df1f0d0c3d8bb37b"
+    sha256 cellar: :any,                 ventura:        "5e479fdfe891ffcb37e07b2b670a3d50b0e45d4bd205f17055f26b58e9a94a31"
+    sha256 cellar: :any,                 monterey:       "00473efe4d34fe1235f965693efc40ba74b8404ab4f2d33a9d3d88f987f5983c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2868213d188c16ea871784413ed3e222b96fc674a108410ae45dc505e470561"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -176,12 +176,6 @@ class Bilix < Formula
   resource "soupsieve" do
     url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
     sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
-  end
-
-  # fix pydantic validation error, remove in next release
-  patch do
-    url "https:github.comHFrost0bilixcommitc4c2e6d9e8c9383acdb4c1f3f72a7c4d3e251664.patch?full_index=1"
-    sha256 "43beb93cfdfe6e0219d7eeb7ad208c3adc60178088950e69ee7698e2d5991a69"
   end
 
   def install

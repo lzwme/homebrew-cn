@@ -5,6 +5,11 @@ class OktaAwsCli < Formula
   sha256 "95d0d2ff4882c3e6a5dd03e63b985070566c4940b1d72036fdd83da6b07df9fd"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ffd21384b20ff2584c454cf40bf93273ad1b7e01f57cb2e8b017faa3967c87d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a049e9457c93a3d57b866dba7fe3e22f481680a59025bd631f23345b3692f4cf"

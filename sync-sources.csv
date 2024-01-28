@@ -2791,7 +2791,7 @@ Homebrew-homebrew-core/Formula/j/jello.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jellyfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jemalloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jena.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/j/jenkins-job-builder.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jenkins-job-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jenkins-lts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jenkins.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jenv.rb, Homebrew/homebrew-core, 1
@@ -11468,10 +11468,12 @@ Homebrew-homebrew-cask-fonts/Casks/font-anek-tamil.rb, Homebrew/homebrew-cask-fo
 Homebrew-homebrew-cask-fonts/Casks/font-anek-telugu.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-angkor.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-anka-coder.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-annapurna-sil.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-annie-use-your-telescope.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-anonymice-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-anonymice-powerline.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-anonymous-pro.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-anta.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-antic-didone.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-antic-slab.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-antic.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12243,6 +12245,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-italiana.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-italianno.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-itim.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jaapokki.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-jacquarda-bastarda-9.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jacques-francois-shadow.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jacques-francois.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jaldi.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12520,6 +12523,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-metropolis.rb, Homebrew/homebrew-cask-fo
 Homebrew-homebrew-cask-fonts/Casks/font-miama.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-miao-unicode.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-michroma.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-micro-5.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-migmix-1m.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-migmix-1p.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-migmix-2m.rb, Homebrew/homebrew-cask-fonts, 0
