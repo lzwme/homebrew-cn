@@ -7,20 +7,20 @@ class Sile < Formula
   # - Remove `cosmo` resource and corresponding references in install
   # - Switch `lua` dependency to `luajit` and clean up `lua` references
   stable do
-    url "https:github.comsile-typesettersilereleasesdownloadv0.14.14sile-0.14.14.tar.xz"
-    sha256 "c4671b0f8df27c9e91bbb994ed1f8dc5f2b56179c80f071832307efa070da988"
+    url "https:github.comsile-typesettersilereleasesdownloadv0.14.16sile-0.14.16.tar.xz"
+    sha256 "cf97585b7dcf77d99e328f6cdce71a4070324fe001f7876f730fa04c6c923857"
 
     depends_on "lua"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "baefbc54429de5bd81cbb63a13fe97ca0b8e2d34a2fbd90baf79197abb670ac7"
-    sha256 cellar: :any,                 arm64_ventura:  "143813294a5c61102b15d6dfd3908dee04a41a421a90ef6c8ad79fb201a8c5c9"
-    sha256 cellar: :any,                 arm64_monterey: "1670cdc3a38e73e7ff29b0e6da18cf35a77e2f67721dcfa974c1d90de756ed74"
-    sha256 cellar: :any,                 sonoma:         "46c5a31697a793eb70dbfcb831040badd3e6b7ad7999c82038372a5c306d51b6"
-    sha256 cellar: :any,                 ventura:        "31b4b1f9f04aadc546a7b752e1f8363b6761ebe64581f2f75a94619f5d7018e0"
-    sha256 cellar: :any,                 monterey:       "78003e1dc0af0ef27dc21909e420db95f587c16c9b5df3e25756333ea03b5e25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4a4014c2a0e1dfa55e156acb1bffd432e683b372cdbfc0ce12db590dddedd48"
+    sha256 cellar: :any,                 arm64_sonoma:   "c84ef4e670dee32acdc744fee20e3cc738761b7f25113ea18cff0060ee2f76c7"
+    sha256 cellar: :any,                 arm64_ventura:  "00926c1f03f78001bc788d8d5b5bffc43e5d94cb0dffb98fcb873e3bca7f099e"
+    sha256 cellar: :any,                 arm64_monterey: "7845e227f712457552a0c43524bea5e4447c442b3bd16baf92be83deb37f679e"
+    sha256 cellar: :any,                 sonoma:         "6abc465819c0910701312bd43910e7610312a9783884f5518918bc8b5e326e66"
+    sha256 cellar: :any,                 ventura:        "9190f36b3ed3493df3767e4554a03ff95c9ee16a8cb057296b952d1d2e101996"
+    sha256 cellar: :any,                 monterey:       "9498cdbf051f3f6ad7b7cb0b178f51a160648d9e8efd49dbc00eae4c6a4fcb90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82e6e9b998cd7a40b613ba58ef59757f1869c93d379eaf5163c82fd201bb9a75"
   end
 
   head do
@@ -74,8 +74,8 @@ class Sile < Formula
   end
 
   resource "lua_cliargs" do
-    url "https:luarocks.orgmanifestsamirehlua_cliargs-3.0-2.src.rock"
-    sha256 "3c79981292aab72dbfba9eb5c006bb37c5f42ee73d7062b15fdd840c00b70d63"
+    url "https:luarocks.orgmanifestslunarmoduleslua_cliargs-3.0.2-1.src.rock"
+    sha256 "a2dfbd3f0236eaf4b0421dbd06a631d92b550335eb263b7283e1161a6e90d92e"
   end
 
   resource "lua-zlib" do

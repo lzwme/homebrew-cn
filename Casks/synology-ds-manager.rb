@@ -1,12 +1,11 @@
 cask "synology-ds-manager" do
   version "1.4.2"
-  sha256 "bf851adbca4f1864cd914a52d3323f96ba3d9065cba29a39224d707736e97510"
+  sha256 "53cd78b6295e5405fb87ef27e199193392eecb55b67ae3e1facf8da1a7b20e72"
 
-  url "https:github.comnicerloopSynologyDSManagerreleasesdownload#{version}SynologyDSManager-#{version}.zip",
-      verified: "github.comnicerloopSynologyDSManager"
+  url "https:github.comskavansSynologyDSManagerreleasesdownloadv#{version}SynologyDSManager.zip"
   name "Synology DS Manager"
   desc "Synology Download Station application and Safari Extension"
-  homepage "https:web.archive.orgweb20220812025146https:swiftapps.skavans.rusynology-ds-manager-mac"
+  homepage "https:github.comskavansSynologyDSManager"
 
   app "SynologyDSManager.app"
 

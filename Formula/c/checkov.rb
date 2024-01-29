@@ -3,18 +3,18 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/3f/06/d7ad34845022a946a6f8690ac701ad0636b2ff29d0f45936d3c5aa852963/checkov-3.1.70.tar.gz"
-  sha256 "fe88c7010d0ee3856365564f47a4802d0719c5f65cde3a25c39b65cfe566ad9d"
+  url "https://files.pythonhosted.org/packages/21/44/88cd4e403207e276cd572bb26c8475072a808c1a6657f51df2c86271f07f/checkov-3.2.0.tar.gz"
+  sha256 "8e3aee686f76165f6d4bfcf6a8ee192ee84039a0f5f21315d8639b404a4bc06b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aa2d9644463e840b5e8edbec65861333e0dd61a757694f3df0ac74062fab7107"
-    sha256 cellar: :any,                 arm64_ventura:  "faec8f03160c8b6820b91fb397663102cec435dd9c7e6733ae1adf50fb8059c8"
-    sha256 cellar: :any,                 arm64_monterey: "3f0541e921907342015c6e627f8959b1b5fc8dd9443b011447d15662417baff0"
-    sha256 cellar: :any,                 sonoma:         "e7a0358e33443b2bdfd6349d747844d52fc56f7bc880c15f8fe8f451f7e4ee2a"
-    sha256 cellar: :any,                 ventura:        "2b0fc17af65676f443b222cb88fde1d076dab77aa8c5e15f1764dee36983abe0"
-    sha256 cellar: :any,                 monterey:       "026c2f7b467ba659d14040ec87f528fb4d471f7ac733bd15d9cd6bbb1112a3e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14619e4faba5fb0bfa50dc758888adbd179ad92f2a5816802cc49cd86608344a"
+    sha256 cellar: :any,                 arm64_sonoma:   "f251f8bbf23f3e55760eca1111467b9fe7fe9bd40ec802b788b6782c671ddd7e"
+    sha256 cellar: :any,                 arm64_ventura:  "09c664d1f4a8836c1638db746be9c05a1d97060e0a884ec28648e08ead1522d7"
+    sha256 cellar: :any,                 arm64_monterey: "64c95db9644ca8d8f566037d90c7c7cf15b0f7dd3271a6ac77da81a343360e84"
+    sha256 cellar: :any,                 sonoma:         "c4dd89b8f3f9529d6f85e2b392956d15494c00a4c4f6be2a08c649f37045d442"
+    sha256 cellar: :any,                 ventura:        "6efaf7b1a74b5b6252119c5655b137391141f04db1cd8cb856dc1d86a2c56ce1"
+    sha256 cellar: :any,                 monterey:       "78dc973533d1360ad10587d447864dc0f357848cdaad3987972c251d2fea6d0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55cb6eaba1119ff3bfbc5ba08d9ca7c20ea04e89eba0a8677b45301c0b6b0f07"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -84,8 +84,8 @@ class Checkov < Formula
   end
 
   resource "beartype" do
-    url "https://files.pythonhosted.org/packages/5b/3e/b230c6cb4b0391591f7949d8fd55bb43aa9128465caa5a930f9398b447ad/beartype-0.16.4.tar.gz"
-    sha256 "1ada89cf2d6eb30eb6e156eed2eb5493357782937910d74380918e53c2eae0bf"
+    url "https://files.pythonhosted.org/packages/79/cb/90bc2f441956fa6abe0ab6ec977e9a0b2f0d92ce6a40d11cccf444d99518/beartype-0.17.0.tar.gz"
+    sha256 "3226fbba8c53b4e698acdb47dcaf3c0640151c4d405618c281e6631f4112947d"
   end
 
   resource "beautifulsoup4" do
@@ -99,13 +99,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/31/2e/d10281b664f5ec77b6028aa19327f96dcd6b82659c71c863c798de7cb2a2/boto3-1.34.27.tar.gz"
-    sha256 "ebdd938019f3df2e7b50585353963d4553faf3fbb7b2085c440107fa6caa233b"
+    url "https://files.pythonhosted.org/packages/4a/69/48a33c7e4023ef8b1b5dea05768c8157aad721974129e3f5f1d13bc1f3ba/boto3-1.34.29.tar.gz"
+    sha256 "50776db195a73533f4f2c9d000c69f9d0e9fb9810f9f81584adc283e9516ad0d"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/53/b9/e817514fb37370325f1e1388e49f4231723c15dc4b305a7f13241992cd24/botocore-1.34.27.tar.gz"
-    sha256 "a0e68ba264275b358b8c1cca604161f4d9465cf7847d73e929543a9f30ff22d1"
+    url "https://files.pythonhosted.org/packages/96/d2/9c1b9d8550c7c5c891a867e43f70aa97b15834cfbd18381862da297e7cf4/botocore-1.34.29.tar.gz"
+    sha256 "34223fdb8ebd47d1fce5724bb1bcb164e81853ea9ca532b50639c749fc347458"
   end
 
   resource "cached-property" do
@@ -196,11 +196,6 @@ class Checkov < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
     sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
-  end
-
-  resource "igraph" do
-    url "https://files.pythonhosted.org/packages/01/f8/542bcfceddee678799baf858d5ee4788a59028eb555ac7b35315f6ffaad5/igraph-0.10.8.tar.gz"
-    sha256 "d3b7893573060d117917e4f2121e524ed849bbf9f9a63a082001e1a4c5225b46"
   end
 
   resource "importlib-metadata" do
@@ -371,11 +366,6 @@ class Checkov < Formula
   resource "termcolor" do
     url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
     sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
-  end
-
-  resource "texttable" do
-    url "https://files.pythonhosted.org/packages/1c/dc/0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2/texttable-1.7.0.tar.gz"
-    sha256 "2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638"
   end
 
   resource "tqdm" do

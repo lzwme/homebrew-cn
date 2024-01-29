@@ -19,21 +19,21 @@ cask "mono-mdk-for-visual-studio" do
 
   pkg "MonoFramework-MDK-#{version}.macos10.xamarin.universal.pkg"
 
-  uninstall delete:  [
+  uninstall pkgutil: "com.xamarin.mono-*",
+            delete:  [
               "LibraryFrameworksMono.frameworkVersions#{version.major_minor_patch}",
               "privateetcpaths.dmono-commands",
             ],
-            pkgutil: "com.xamarin.mono-*",
             rmdir:   [
               "LibraryFrameworksMono.framework",
               "LibraryFrameworksMono.frameworkVersions",
             ]
 
-  zap trash:  [
+  zap delete: "~LibraryPreferencesmono-sgen64.plist",
+      trash:  [
         "~.mono",
         "~LibraryCachescom.xamarin.fontconfig",
-      ],
-      delete: "~LibraryPreferencesmono-sgen64.plist"
+      ]
 
   caveats <<~EOS
     This is a version specific for Visual Studio users. This cask should follow the specific Visual Studio channelbranch maintained by mono developers.
