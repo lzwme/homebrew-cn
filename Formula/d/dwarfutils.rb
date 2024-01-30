@@ -22,7 +22,7 @@ class Dwarfutils < Formula
   end
 
   head do
-    url "https:github.comdavea42libdwarf-code.git", branch: "master"
+    url "https:github.comdavea42libdwarf-code.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

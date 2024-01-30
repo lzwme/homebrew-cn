@@ -6,15 +6,21 @@ class Forgit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "100b7822325507a6fdd604ce49ed15f2631f1447bcbc526a4f5cc92ad4d33ea7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "43bce62f9fa1359c94c1ef9c0d6604aa6d1c5e6df62bd06d131dd21288eafb98"
   end
 
   depends_on "fzf"
 
   def install
     bin.install "bingit-forgit"
-    bash_completion.install "completionsgit-forgit.bash"
+    bash_completion.install "completionsgit-forgit.bash" => "git-forgit"
+    zsh_completion.install "completionsgit-forgit.zsh" => "_git-forgit"
     inreplace "forgit.plugin.zsh", 'FORGIT="$INSTALL_DIR', "FORGIT=\"#{opt_prefix}"
+    inreplace "conf.dforgit.plugin.fish",
+              'set -x FORGIT "$FORGIT_INSTALL_DIRbingit-forgit"',
+              "set -x FORGIT \"#{opt_prefix}bingit-forgit\""
+    pkgshare.install "conf.dforgit.plugin.fish"
     pkgshare.install "forgit.plugin.zsh"
     pkgshare.install_symlink "forgit.plugin.zsh" => "forgit.plugin.sh"
   end
@@ -24,6 +30,7 @@ class Forgit < Formula
       A shell plugin has been installed to:
         #{opt_pkgshare}forgit.plugin.zsh
         #{opt_pkgshare}forgit.plugin.sh
+        #{opt_pkgshare}forgit.plugin.fish
     EOS
   end
 

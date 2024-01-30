@@ -2620,6 +2620,7 @@ Homebrew-homebrew-core/Formula/i/ice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icecast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icecream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icemon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/icloudpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icon-naming-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/icon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iconsur.rb, Homebrew/homebrew-core, 1
@@ -5196,7 +5197,7 @@ Homebrew-homebrew-core/Formula/q/qstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qt-libiodbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-mariadb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/q/qt-mysql.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qt-mysql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qt-percona-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-postgresql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-unixodbc.rb, Homebrew/homebrew-core, 0
@@ -7621,6 +7622,7 @@ Homebrew-homebrew-cask/Casks/c/cleaneronepro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanmymac-zh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanmymac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanshot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cleanupbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleartext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clementine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clibor.rb, Homebrew/homebrew-cask, 0
@@ -13507,6 +13509,8 @@ Homebrew-homebrew-cask-fonts/Casks/font-yusei-magic.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-zcool-kuaile.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zcool-qingke-huangyou.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zcool-xiaowei.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-zed-mono.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-zed-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zen-antique-soft.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zen-antique.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zen-dots.rb, Homebrew/homebrew-cask-fonts, 1

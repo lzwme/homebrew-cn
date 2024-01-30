@@ -1,18 +1,18 @@
 class Riff < Formula
   desc "Diff filter highlighting which line parts have changed"
   homepage "https:github.comwallesriff"
-  url "https:github.comwallesriffarchiverefstags2.28.0.tar.gz"
-  sha256 "4a4cec6432e61955a5c88808b11782191361e4c74b771ad4bc2b0d5d3201e40e"
+  url "https:github.comwallesriffarchiverefstags2.29.0.tar.gz"
+  sha256 "4c8bce997224a8afa2d5bb69733093fd12e160a6a633a748f89789d1c3d7ff7d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da42f58a195dc688403771356d37174787a40ce595c9802c5c79ccaded1e0266"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92499ba81e597fdea1a8ad9c01dbd6aedeb277525cacb4de82999be1d7c00119"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bfc0daa896bcfcb331880fd8dd8fa2f06a39d959d9214aba9619331e460b2f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "173925a9f97ba03bc8445a78909cb40e095a6992b4b46a6a8e9054c919fe8e57"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d272aab0dd506b89bb1a372307d5c438ff0b06dae0bcbb21d0d2515c9ed1b0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b96fa7679e8d576a2cfa2a847de821cbd9052382cecd184047d99c6cda00b76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfdf0bc215c9048ebfd964f93ea8296ee5834e8b470df53ffebfa050190a76f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d79c184e3474aac9902d673cd5cd3815b068adef8b60bd9ade681692427733b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b56db2f8f0547335fe2d3587c70331b319849c18a9036aefe864c0004ee90f9c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20f3a42f8aecea214c4facf3a5cbd97320ffbac5f05a9877cffafb93193f186a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "95b64568f87f6bdb39e5652481618f168e10196d34a367faab5f6dc282002ff2"
+    sha256 cellar: :any_skip_relocation, ventura:        "38f5ae6a350ff1214c6a04fa3e98c69d82a10a581fa1345dca0c3c64773d0dc6"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c5684f91c852f2ce17a92d274d59e8a7af79fa61812eec922e4f4ea1e49da3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e65c0701734cd0b6d24f8ea3d3c9f9710ef32cff072ddc0bd096d5bec7dc1676"
   end
 
   depends_on "rust" => :build
