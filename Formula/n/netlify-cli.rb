@@ -3,19 +3,19 @@ require "languagenode"
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https:www.netlify.comdocscli"
-  url "https:registry.npmjs.orgnetlify-cli-netlify-cli-17.15.4.tgz"
-  sha256 "b201bd413f70247923ed7fe9876110527beb18b4f9d23419d0d3a28c27227c2b"
+  url "https:registry.npmjs.orgnetlify-cli-netlify-cli-17.15.5.tgz"
+  sha256 "c5fcd255ee79fb9fe07746f00a62961aab6972d462d33ec9d4f81a5f3c9f7ebf"
   license "MIT"
   head "https:github.comnetlifycli.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sonoma:   "dd92a556271909ebda87f99c93e8799c4685a97b0dd9e53accb4d5cb87411206"
-    sha256                               arm64_ventura:  "05d2eb15f2ba42f2efa78527adacd2a46907c3e11a575e04a2ad9560d841809b"
-    sha256                               arm64_monterey: "a34cff1afa584ddae2fa3315f757449449458a5306f44a085a28947926d1a8b0"
-    sha256                               sonoma:         "616f20cd8123753e8449abde066d996b73c076e291d3085ee72bb4da70dd447c"
-    sha256                               ventura:        "1be11b1b59312ff202ff93f08321f043926c1da3b5ee21319c4f8de0f4340aa8"
-    sha256                               monterey:       "1680f2b2a0b0fa93cb2136ef89d9ce302f4b29523bc53b3b519fb21acb734704"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63f8bd720207a2679bc4dd112712b3a1419c9228adc5b7b9cb556993246a7696"
+    sha256                               arm64_sonoma:   "a23f8c60627936e97613b4d69e33214b30ad6943c78e75e12001b451d51b800d"
+    sha256                               arm64_ventura:  "c354042e18bb4135c8114be6fd1d5558535fdbd5b5a75db4b765a5f6a7845dec"
+    sha256                               arm64_monterey: "794f3931c85cf6b84060f078e61c5f6b45e505d3a2d10100f115c55b579f21b4"
+    sha256                               sonoma:         "1949527948e4b987151e994050ffcaade2e14d7be99ff12480b4468962504ed6"
+    sha256                               ventura:        "bb77d4e02eeac42be704cc5b7f8bd7be6ad75d3cdb266e0dbbd09a9e86e737a3"
+    sha256                               monterey:       "ca31b3f8cf1a715ab54f7b35170b0ac5093fbf5f59693282f67c955b14377e6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cdddd243b0cbb01893cab572bbcc6b7b057f682839e14e671bfbca410ac3beb"
   end
 
   depends_on "node"

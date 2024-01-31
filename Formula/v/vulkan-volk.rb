@@ -4,6 +4,7 @@ class VulkanVolk < Formula
   url "https:github.comzeuxvolkarchiverefstagsvulkan-sdk-1.3.275.0.tar.gz"
   sha256 "b68d24e139190e49e5eafd72894f6e85c80472b8745bddc6ef91d6bf339df813"
   license "MIT"
+  revision 1
   head "https:github.comzeuxvolk.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class VulkanVolk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "161ad19977eb49bac1f489db2c9b684340878964d2b547fdd7bbbf6f7cd4bb92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eec66cc2869627fd012877dc99c4d7d66866f6a4538efd3b604f0947649ac72a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9606929890dfd4f837b0291a66c59c00a63d89b6752e08235d0d4463396df326"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f20c4450ebd2831dc50a8868e3718bd2ada3df000121b223a33da1fbba0495d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d42ec3e1f6b66ac9650e5b88ba8bf0c1abd18a46935fafda792f11f89c87b095"
-    sha256 cellar: :any_skip_relocation, monterey:       "70b7770ed0f9576beb786b4215e0bf0b8e112a376e9e13520aed0dbb7e0e0a17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3d2af0bbff192c954b16e22ab8b711062c1aa3c1cc3ee37be941043c9bf1f31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04cf47cbcca20d9c58399f04fa0eae49d2a1e259fdb57fde6ac453a332f0b729"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2403f2ac2b2722ab8dc3338bd9dad0b3fa356fb065a13e96cfcfc0e22fb2357e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e244bad5e8cc1ee7c01fa922479827fda9a672b4ab37531e944d12e232e1e29"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9f13c21a5ee6909ca5f18bab55e4882ee171aeeac44357b74fd9d15bf31f3d13"
+    sha256 cellar: :any_skip_relocation, ventura:        "64abe9da2a2a5624ef9283b76c99d59af9308312678cd9c51198513d521e7bd1"
+    sha256 cellar: :any_skip_relocation, monterey:       "a32d75ca18ebd7776cdad95d73d5e9c66aca5b59f863af749c50b4f9121200b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a8338f72a48deac1879445ee2c7406686c1b9687fe63ed9bbf5d08f78f7a628"
   end
 
   depends_on "cmake" => :build

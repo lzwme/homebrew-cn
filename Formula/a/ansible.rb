@@ -6,17 +6,17 @@ class Ansible < Formula
   url "https:files.pythonhosted.orgpackagesebabe6993e1608fa911ee84dd0f29f494064f3b7f4a277f99608c9421a7a5ed4ansible-9.1.0.tar.gz"
   sha256 "5ad94991fb0e0e53a770a9ffcf1b68047f61b2282d948a7d2682ecd8fb8fa1bf"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "17267459f8bc9a9b5578818aaaf28b17f813f5229e4b7a2312178beebb9da987"
-    sha256 cellar: :any,                 arm64_ventura:  "0198d621e983cc17086d7c7cbb2fa5a22d42c441640e05d11a8a92764e8acf10"
-    sha256 cellar: :any,                 arm64_monterey: "94f172b361ade2430a77712580030b543bad250babbbe91579454ed77032fc1e"
-    sha256 cellar: :any,                 sonoma:         "fc8b4c93ffc9a6fd3dced7f811e3c102198b9c681bb7aff4a1566e214462f12f"
-    sha256 cellar: :any,                 ventura:        "1c1673127cbc8acc162be759ccd8fdd86dbc29bae60bb7bfd9485bf8cf98d1e1"
-    sha256 cellar: :any,                 monterey:       "fe3f8c0792df076396a4b2ab3cdb0c2ce7524429a576ad1b6efdc29616f609a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5bb3958b7639c47b1a9c2540e2f895ae19b7ef38744737524e675dfa75b87de"
+    sha256 cellar: :any,                 arm64_sonoma:   "19187d4ffbb7fdf1aa8e5fd91e623c11d03af07d29e1ecb012cbced61d799b23"
+    sha256 cellar: :any,                 arm64_ventura:  "2a6c50286cd0293a91fd90e7440dfc9675a0be5b85ea29b67847680628cecebf"
+    sha256 cellar: :any,                 arm64_monterey: "feb550c3b1c10ecb3c2e369fe58423efc78a643eff04fdc30f5fac32335319a1"
+    sha256 cellar: :any,                 sonoma:         "975b2e4bae7c35705201fa087af8aee2b65851ea22e73759f551a0df2eb42997"
+    sha256 cellar: :any,                 ventura:        "a8257062dcfb7b24a295e64bc44e489a8b0009c9d37e6467c7440c115b4fdac5"
+    sha256 cellar: :any,                 monterey:       "4644e2e8cabaa93a8fbd111673fa642771c78f91ea35a33798ab7a1ecb52f83a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a41be1f9662fc2e1255d4482fabdb27c0c1b5eba0a38cc5463918a04f55edee"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -24,6 +24,7 @@ class Ansible < Formula
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "pycparser"
+  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python-dateutil"

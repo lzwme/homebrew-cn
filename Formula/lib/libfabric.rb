@@ -6,6 +6,11 @@ class Libfabric < Formula
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
   head "https:github.comofiwglibfabric.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "710f5b05643c3deadee21a01a8c89cd2f427c8c66a041384a7c0310f1035117e"
     sha256 cellar: :any,                 arm64_ventura:  "2a869633a5678b2b0a51be36326ae9bfe84462fd530665dfce1ebc63d1084b37"

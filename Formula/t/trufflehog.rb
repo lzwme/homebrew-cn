@@ -1,20 +1,20 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https:trufflesecurity.com"
-  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.66.1.tar.gz"
-  sha256 "a25836d27e87e9ce421d4cce4514e982b28ae201fe9105b1719b9cee9f7fe6ab"
+  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.66.2.tar.gz"
+  sha256 "aab4909a32ba2df14924dccd1ff35d6f29c6314b559f140b0053dbb0811f3d17"
   # upstream license ask, https:github.comtrufflesecuritytrufflehogissues1446
   license "AGPL-3.0-only"
   head "https:github.comtrufflesecuritytrufflehog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c68a8d180ea7ae3ae675c90384f98616b12e4eaad39455163823cdcab5809f7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ff3b52515c88d58ff270d4e697ffd2c942a7896f3761d5c1422a4524133a781"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e74cd4169c4839738a09317e0958a44f4e74a9ddbcfc37b546c2586809f82343"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3fdcd4d9103e9fb85973d6234bce50b8b1697dd8732081b34c5f2258e36a80ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "82770c103f92828fa80a1998f270aae85f75ebc6eb6dc990236c12e36f92badd"
-    sha256 cellar: :any_skip_relocation, monterey:       "af7499c7f011085c40183df3012f4be01caa04596abda90c427eb1280d37f5e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "280a58ef9fa01d8653b9eff217be3b50d824128383b8733815715fa17245f8ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f536db3d777bf7ec0a9e664f30b607a8809cf3207d44a4ba2f31f84486c5dd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7efd18e0c8dc20f4e7d2999f8829cbd0eb43c671e8161f95c0237f6b3e5f065f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b260d326f75ef682b0cbf859136f95d6a358f937534a2bdd665f734b64bff5a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "caecc8dbba51b127415c677db40361bfc402a358f74a0025fd3cac391710ee87"
+    sha256 cellar: :any_skip_relocation, ventura:        "3302b84af895b247f653b52a6dba38a58a362f2c9f6ae853bec091e2dfa043d3"
+    sha256 cellar: :any_skip_relocation, monterey:       "86c7585a76958a214b5cde80eb7fca7fbf2c6d105603c881817d82feecb27c0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "177ebd1e7b24442a6fc6e5f0f460512f5f83729e3ffc81149819b33676838622"
   end
 
   depends_on "go" => :build
