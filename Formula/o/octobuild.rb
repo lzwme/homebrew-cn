@@ -1,19 +1,19 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https:github.comoctobuildoctobuild"
-  url "https:github.comoctobuildoctobuildarchiverefstags1.0.0.tar.gz"
-  sha256 "5d159ffd1e2f24cca8f521f489687de4ce529ada58f0107a54d14e34f0321b7b"
+  url "https:github.comoctobuildoctobuildarchiverefstags1.1.0.tar.gz"
+  sha256 "9ee39d6777823d20de779ef12db4f2ac98dfd68539b6f9e58849760d38cfbf10"
   license "MIT"
   head "https:github.comoctobuildoctobuild.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47c87fc955b68ff1d8fea670a87953ffa150d186ec63366d60cab48a1c3796a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98370d3d6e55f5a9b9f9558ae724ddb3196114c65f0d8102d536f49ccd1693a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c79b23a251212910e01110626dee38b61fb4edd15885a00694475f8def99a6fe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fbee071d7c276b6066fb2abd2d3e17885df346c43a9444146604815678b1dd6b"
-    sha256 cellar: :any_skip_relocation, ventura:        "e683dc462437297b06eb5e91130d34224d2c2a59ba15ab8dbe84504cb86d818b"
-    sha256 cellar: :any_skip_relocation, monterey:       "14dbcd805e70663d1987f761d4bb66dae18c89b3dcfc91431896155812ff2f21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4906a42b59706dafced976c8d681ffc86e7572f5bc7db8e805585a13d9bf71c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f051d3d82edc5640212390addaf2086e1a44db4b8bdb8081d6861a963526e17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8b81d4004302c6384bad8aea18f44c6d0956f4cc7c654cff6203b5e2c6466da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "872bec6015b902b9f5764487c2a5ecf1bb9b4a3091cd85524bbf8577f999faf4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "074d8296a193fee3fcc107860cd3b213f06b2e3255d6a1d3f5abb2cbe563dca9"
+    sha256 cellar: :any_skip_relocation, ventura:        "494cf807c5476b04e7b03a741b4aa8265efc43f81343f5b155533717011cea3b"
+    sha256 cellar: :any_skip_relocation, monterey:       "575d81213cdcc95a4d11b955df1835479069f36af8b0a94bbc095b4f9bf1c4a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c8f007d6fb2ba70d40a702a9cb46d31c7b38ab0bff3704e67c19514769931f6"
   end
 
   depends_on "rust" => :build

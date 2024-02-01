@@ -1,7 +1,7 @@
 cask "sf" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.25.7"
+  version "2.26.10"
   sha256 :no_check
 
   url "https:developer.salesforce.commediasalesforce-clisfchannelsstablesf-#{arch}.pkg"

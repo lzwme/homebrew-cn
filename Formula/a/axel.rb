@@ -1,22 +1,18 @@
 class Axel < Formula
   desc "Light UNIX download accelerator"
   homepage "https:github.comaxel-download-acceleratoraxel"
-  url "https:github.comaxel-download-acceleratoraxelreleasesdownloadv2.17.11axel-2.17.11.tar.xz"
-  sha256 "580b2c18692482fd7f1e2b2819159484311ffc50f6d18924dceb80fd41d4ccf9"
+  url "https:github.comaxel-download-acceleratoraxelreleasesdownloadv2.17.12axel-2.17.12.tar.xz"
+  sha256 "fb4e70535ebf732211af253bfe24f9ada57d80fd465ac02c721406c7d4e1d496"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "506a03df5c2b55501f4dc0170a89f84f4ad194dac1beee5f2d95e92a5e129174"
-    sha256 cellar: :any, arm64_ventura:  "3f196f17b1043e0a5531749fa1e21a87d350fa70e3cf846efb6d7115c979be33"
-    sha256 cellar: :any, arm64_monterey: "fc825bed920a30d02258383bdf1f14badc453adbf9cce3c8e628e221efbf7db5"
-    sha256 cellar: :any, arm64_big_sur:  "a1815f9d311241ce68c81b0f21daad17ab08f3c0fad600b9116f457a3ae5262f"
-    sha256 cellar: :any, sonoma:         "25c6412c87e4a3640fd84a36292f25b9e13b648cd1bc7f7c6ee9e02f2c36e84b"
-    sha256 cellar: :any, ventura:        "bb1aa80792b4fa114433ca1f3f92163ed16e8e467e352c32c502193d7a70e2a7"
-    sha256 cellar: :any, monterey:       "348ee3ec9805d19c50eb3fe8ffae5ddef7c3f123bdd75612dcd9c05c5311ec0a"
-    sha256 cellar: :any, big_sur:        "42d32e7d0d52b145d2965bb88b158f82c232688413d4bd34498e3f25b25b8da7"
-    sha256 cellar: :any, catalina:       "4e9cdfa03a735c0e169f482ab16af3296cbcbd7585eb7134b2de93aa335b7328"
-    sha256               x86_64_linux:   "9cb9766adfe1f050725b01426fd2b499f7a970e7a15406b7fc02e5e4b7b030d2"
+    sha256 cellar: :any, arm64_sonoma:   "5bf7a7d82a5e86b58951c2a3745bb5f15db0e115de2680d9fc6971bf80140ba8"
+    sha256 cellar: :any, arm64_ventura:  "2f943e836a58412f0f678e41825d840c13302ab2db4ef0b3af04d024fa7e8c32"
+    sha256 cellar: :any, arm64_monterey: "ab5580dc62ed8db9162cceeb96039b5220d91461825e78027ee93e8abdbe75ed"
+    sha256 cellar: :any, sonoma:         "66870d8d4574bcde0f024da202fdd244eb93633061021b13f97016e78a09d569"
+    sha256 cellar: :any, ventura:        "a0697ef3c0afa7e15e0674036631ac54dba8b131762e75ff7b88f746f9a125cd"
+    sha256 cellar: :any, monterey:       "458367a0ab218da49d24578844893b3479b8b14ab528331176c4723627445c8d"
+    sha256               x86_64_linux:   "60d7cc575b65f9b4117b4fc79234a62a1a06a5922e2a374ee2c923226693d716"
   end
 
   head do
@@ -36,6 +32,12 @@ class Axel < Formula
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "openssl@3"
+
+  # upstream patch PR, https:github.comaxel-download-acceleratoraxelpull425
+  patch do
+    url "https:github.comaxel-download-acceleratoraxelcommitfb8bb09257e3c5ce4da46d83fbb252c7fa74c933.patch?full_index=1"
+    sha256 "8f71c3ac32a22a327662b29d61c87aa7aae6e77d20818ed758f9d42616f40da7"
+  end
 
   def install
     if build.head?

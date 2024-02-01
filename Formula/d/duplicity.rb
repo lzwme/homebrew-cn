@@ -3,18 +3,18 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https:gitlab.comduplicityduplicity"
-  url "https:files.pythonhosted.orgpackages48987c5ba07fdd930079bc20ea73b53428acf99cd9e2a60d5eb885b0fe47bfbaduplicity-2.1.5.tar.gz"
-  sha256 "676c14e1b0029396954a054ddc2e9f12c939dfcfa95a4fb79b27ec396d6c15d1"
+  url "https:files.pythonhosted.orgpackages8494f80eb99de1ff0aacfd35fcec58b0636f4532e7a9bd37365bfd46f340f6caduplicity-2.2.1.tar.gz"
+  sha256 "ac5d211e5c81cd9535fafdb815b96582b8e6f4c386818a27ba6646dc2799c52a"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3df97bfcdd765a3fb12ea287790921c48efe66072d6dd9f95ff0edec863d555c"
-    sha256 cellar: :any,                 arm64_ventura:  "c6bd9cd7f5560529cb27f28e1d24dfa0ee735f6b984d89033e336cadfd153722"
-    sha256 cellar: :any,                 arm64_monterey: "4878cb0973673aae69082d5968692a615291bde19686db8af4a5dd44ff1d7664"
-    sha256 cellar: :any,                 sonoma:         "bfb279a859c3c08a4b1a79858470d5d6a69cc884174a1be40836b89dcf634981"
-    sha256 cellar: :any,                 ventura:        "45874d4f0ad08260ce89aa4fb4d88d7f5468c3197cdcb152ad54fa79bd4219d0"
-    sha256 cellar: :any,                 monterey:       "30645a4fc70e7e8dc5d40aae576bdfa7b7cb77c1789c9b3e48edcf123ea17b5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "038e1bf4168cea7aaa9641a30426722325a1f9724249756b8f26bae0484ad1fe"
+    sha256 cellar: :any,                 arm64_sonoma:   "58726e4a367c23656cb9959e4f596bef6f0c6bd4b029574dd4620bd5be12af70"
+    sha256 cellar: :any,                 arm64_ventura:  "b41077e5454e939f8cb15fad45ca66fe70e37b523f610fced77e58ff775e7af8"
+    sha256 cellar: :any,                 arm64_monterey: "9a1fcaa15c2b568ef71bc5be8cf5518d0956232b7780fbf752be7c9f47613650"
+    sha256 cellar: :any,                 sonoma:         "93796fb3a0de2888455d2cab7ff5b48100e7a301c79d69161b30c869337bb32b"
+    sha256 cellar: :any,                 ventura:        "580188b1a5ae838a807ee026a9879e2e8b75e128aafd21abd2633ee835a8ed68"
+    sha256 cellar: :any,                 monterey:       "c32b7336a7df704ceb809581c88d89897041d73ed6aadc80c0a57138f6bcc5bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8483402c7078cf76827a4efa0806f9b6397ea311a7cbf253ca4e93ac19dc0ece"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -33,8 +33,7 @@ class Duplicity < Formula
   depends_on "python-pyparsing"
   depends_on "python-pytz"
   depends_on "python-typing-extensions"
-  # upstream as of 2.1.5 requires a Python no higher than 3.11
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "pyyaml"
   depends_on "six"
 
@@ -44,8 +43,8 @@ class Duplicity < Formula
   end
 
   resource "atom" do
-    url "https:files.pythonhosted.orgpackagesff3a47fa91bfb49ea12307a0470fce4c48281c63ad0f86b9bbf83398efe4dd17atom-0.10.3.tar.gz"
-    sha256 "4378d8d6db6399ce75a039b08e3b4a9561e22f62ef84db358c40726805c295e5"
+    url "https:files.pythonhosted.orgpackages0087d27d5c6c348db24df2403d4a7fc0f23e82b842fbfca0064f6ec063394f3fatom-0.10.4.tar.gz"
+    sha256 "7e493fbcf7b58e7e991d5bdabb4b8d5ed5be2c2a36a21ca892dee8db3086a155"
   end
 
   resource "attrs" do
@@ -54,8 +53,8 @@ class Duplicity < Formula
   end
 
   resource "azure-core" do
-    url "https:files.pythonhosted.orgpackagesad78a1aeb8f80306101112810263e74ec81a99cdd50ecca1f03819716c1aedb3azure-core-1.29.6.tar.gz"
-    sha256 "13b485252ecd9384ae624894fe51cfa6220966207264c360beada239f88b738a"
+    url "https:files.pythonhosted.orgpackagesccc3b60ac8b63a6f8982cbdab64cb1bd3d9ab036bff5756f4ea74199d80a186cazure-core-1.29.7.tar.gz"
+    sha256 "2944faf1a7ff1558b1f457cabf60f279869cabaeef86b353bed8eb032c7d8c5e"
   end
 
   resource "azure-storage-blob" do
@@ -64,8 +63,8 @@ class Duplicity < Formula
   end
 
   resource "b2sdk" do
-    url "https:files.pythonhosted.orgpackagesa7c63f2cfe70f4fb1ccc00fdd1e73417a9e6aff2e5bc390ba005705563deaf48b2sdk-1.29.0.tar.gz"
-    sha256 "87fa572c6a50dbe10dc56a886fdcad7aba1ab9db12f07cfeb2b68e37eeb94ccc"
+    url "https:files.pythonhosted.orgpackages0d4c69a49dcc578cbc30bedb78e985de45c2106e7b4e55cadcb0fe9c6bb2514ab2sdk-1.29.1.tar.gz"
+    sha256 "4da970d4fd099cf754f9d0e00bc2764c948e57f2ec86043205b3d812accaa5f0"
   end
 
   resource "bcrypt" do
@@ -74,13 +73,13 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesa94cb9b0786dd9a13e6f05ce8ba83ce54da163d3c963f9c3ba3c8312a2423058boto3-1.34.12.tar.gz"
-    sha256 "67b763669f9eff10a55fe199875d6e66fda8051647af49f8b9b8fced674d75d7"
+    url "https:files.pythonhosted.orgpackages0aa3e41f6e612a4b48abc828c37b0658ad6792bc83d48ba21e5545247dff127bboto3-1.34.31.tar.gz"
+    sha256 "c4dec7ea9bc9210ec783d39b56d332f5a266b0d1e31a96c5092f6bd5252361ba"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesbf49cdd991d1cf0306f4a98df37848eb40ce628e6e430b4805d14b73dc4f4cf3botocore-1.34.12.tar.gz"
-    sha256 "53dfc19d63f2b70821e9804b7ecfc5e50fc84d9bd6818359b27db629ef43ec59"
+    url "https:files.pythonhosted.orgpackages810635f0126d507964b4431e2fbe65907dccd7f5dc91c43f4d0f246845ba090fbotocore-1.34.31.tar.gz"
+    sha256 "d5a2153dbe9687f510f179e03913bc9b4e266c865cabebe440c4d05ab923faa7"
   end
 
   resource "boxsdk" do
@@ -134,18 +133,18 @@ class Duplicity < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackages2ce456b14d35057a23cab9067dd8fb841407d05d32b5d6c7a3c66c1360e8a7c0google-api-core-2.15.0.tar.gz"
-    sha256 "abc978a72658f14a2df1e5e12532effe40f94f868f6e23d95133bd6abcca35ca"
+    url "https:files.pythonhosted.orgpackages9d16794f780141400c5ce65b7d5631a255b192167be70d822b620235a987a70dgoogle-api-core-2.16.1.tar.gz"
+    sha256 "7f668ffa3d5b9f3c6930407e5f5d691c05a376050a5a5fd772b9dc32e70a0c30"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackages040e5f8e84ec422e5037eb38c6ee3cc3b8c5a4f74ab5b7b099ebb7d00762f73dgoogle-api-python-client-2.111.0.tar.gz"
-    sha256 "3a45a53c031478d1c82c7162dd25c9a965247bca6bd438af0838a9d9b8219405"
+    url "https:files.pythonhosted.orgpackages847fcc87798090179a13c1c0c65521e9d9477f16b64a2510c128d63604543be0google-api-python-client-2.116.0.tar.gz"
+    sha256 "f9f32361e16114d62929638fe07f77be30216b079ad316dc2ced859d9f72e5ad"
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackagesc69fe10d974ebbf4df841ed56cdb7f9fde341cf27c3ef52c0f951ea7cc793fe9google-auth-2.26.0.tar.gz"
-    sha256 "5d8bf0a5143baa45368c3d08bf157babda468db1c5dd987cd2c824b788524196"
+    url "https:files.pythonhosted.orgpackages71108a86f8c81350bff52399b9e1125bc72963812c179567e5e6e93dd74c0bbbgoogle-auth-2.27.0.tar.gz"
+    sha256 "e863a56ccc2d8efa83df7a80272601e43487fa9a728a376205c86c26aaefa821"
   end
 
   resource "google-auth-httplib2" do
@@ -199,8 +198,8 @@ class Duplicity < Formula
   end
 
   resource "keystoneauth1" do
-    url "https:files.pythonhosted.orgpackages7a280b760f26f0c33c48aec42003c8a9ea96b0bc409d7fb892593ee30f272a9fkeystoneauth1-5.4.0.tar.gz"
-    sha256 "1ac134151ceb02e50b68ad78dec9821bf89fe53bd36fc8658501c47b07cbdf53"
+    url "https:files.pythonhosted.orgpackages1e846e64fe61d8dd7efffe81f0e43524e4f198b46420b114f7e4b5a7af4bfad1keystoneauth1-5.5.0.tar.gz"
+    sha256 "82722ca35946b2e102f89b42ae3fee8500314081e83477c2564096c167606457"
   end
 
   resource "logfury" do
@@ -244,8 +243,8 @@ class Duplicity < Formula
   end
 
   resource "oslo-config" do
-    url "https:files.pythonhosted.orgpackages86df3806c478e29866001cd0e04f22a9688851928a2da830aceb5a026d125a40oslo.config-9.2.0.tar.gz"
-    sha256 "ffeb01ca65a603d5525905f1a88a3319be09ce2c6ac376c4312aaec283095878"
+    url "https:files.pythonhosted.orgpackages147e9cde8c7efbf82e29289e512409fadf3081a7ff99033f1b16ebed34082a36oslo.config-9.3.0.tar.gz"
+    sha256 "a4b1e526135d67c0e9b14d3ed299c6ec8a3887f92afcb26f4f3ea918504a3554"
   end
 
   resource "oslo-i18n" do
@@ -254,13 +253,13 @@ class Duplicity < Formula
   end
 
   resource "oslo-serialization" do
-    url "https:files.pythonhosted.orgpackages1d75dff75372e7af48468da06f52c6a9abca63b7a4000165ce49e161011a4a10oslo.serialization-5.2.0.tar.gz"
-    sha256 "9cf030d61a6cce1f47a62d4050f5e83e1bd1a1018ac671bb193aee07d15bdbc2"
+    url "https:files.pythonhosted.orgpackages081329681b1a7841eca09c4f8a3d40c38e0e8e2cefb5a7a639fe59d68926be3boslo.serialization-5.3.0.tar.gz"
+    sha256 "228898f4f33b7deabc74289b32bbd302a659c39cf6dda9048510f930fc4f76ed"
   end
 
   resource "oslo-utils" do
-    url "https:files.pythonhosted.orgpackagesdd64453052c33d834e4b187e5459e7a3f8ae67134d321de96aa0bd3e918c9bf2oslo.utils-6.3.0.tar.gz"
-    sha256 "758d945b2bad5bea81abed80ad33ffea1d1d793348ac5eb5b3866ba745b11d55"
+    url "https:files.pythonhosted.orgpackages0528e610cf99a3d2fd56b13a8fc56dec7ff3c9c7c1244698374ae12945ba2034oslo.utils-7.0.0.tar.gz"
+    sha256 "5263c00980cfab74f6635ef61d0fc91e6bd4a8dd0e78a77897ed6e447c8c6731"
   end
 
   resource "paramiko" do
@@ -309,13 +308,13 @@ class Duplicity < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackagesbfa0e667c3c43b65a188cc3041fa00c50655315b93be45182b2c94d185a2610epyOpenSSL-23.3.0.tar.gz"
-    sha256 "6b2cba5cc46e822750ec3e5a81ee12819850b11303630d575e98108a079c2b12"
+    url "https:files.pythonhosted.orgpackageseb81022190e5d21344f6110064f6f52bf0c3b9da86e9e5a64fc4a884856a577dpyOpenSSL-24.0.0.tar.gz"
+    sha256 "6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf"
   end
 
   resource "python-keystoneclient" do
-    url "https:files.pythonhosted.orgpackages13c3456c3d3125a189adf7d23e7ca7759226d717fdce20c6c590686d03886897python-keystoneclient-5.2.0.tar.gz"
-    sha256 "72a42c3869e2128bb0c626ac856c3dbf3e38ef16d7e85dd35567b82cd24539a9"
+    url "https:files.pythonhosted.orgpackagesb17c8eeff2659a281a9eaf66bf1c754268cdea71510ef4d2a757fcf5ce312a11python-keystoneclient-5.3.0.tar.gz"
+    sha256 "bc5e7719f4156425dec77d75c3a79918e3d0b519378a16d8d7efa8849e4c2a79"
   end
 
   resource "python-swiftclient" do
@@ -351,11 +350,6 @@ class Duplicity < Formula
   resource "s3transfer" do
     url "https:files.pythonhosted.orgpackagesa0b54c570b08cb85fdcc65037b5229e00412583bb38d974efecb7ec3495f40bas3transfer-0.10.0.tar.gz"
     sha256 "d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b"
-  end
-
-  resource "setuptools-scm" do
-    url "https:files.pythonhosted.orgpackagesebb10248705f10f6de5eefe7ff93e399f7192257b23df4d431d2f5680bb2778fsetuptools-scm-8.0.4.tar.gz"
-    sha256 "b5f43ff6800669595193fd09891564ee9d1d7dcb196cab4b2506d53a2e1c95c7"
   end
 
   resource "stevedore" do
@@ -401,11 +395,11 @@ class Duplicity < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
+    venv = virtualenv_create(libexec, "python3.12")
     venv.pip_install resources
     venv.pip_install_and_link(buildpath, link_manpages: true)
 
-    site_packages = Language::Python.site_packages("python3.11")
+    site_packages = Language::Python.site_packages("python3.12")
     paths = %w[keyring].map { |p| Formula[p].opt_libexecsite_packages }
     (libexecsite_packages"homebrew-deps.pth").write paths.join("\n")
   end

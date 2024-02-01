@@ -22,7 +22,7 @@ class Sugarjar < Formula
 
   def install
     ENV["GEM_HOME"] = libexec
-    system "gem", "install", "bundler"
+    system "bundle", "config", "set", "without", "development", "test"
     system "bundle", "install"
     system "gem", "build", "sugarjar.gemspec"
     system "gem", "install", "--ignore-dependencies", "sugarjar-#{version}.gem"

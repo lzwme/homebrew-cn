@@ -1227,6 +1227,7 @@ Homebrew-homebrew-core/Formula/d/ddgr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddns-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ddrescue.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/deadfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deark.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/debianutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/debugbreak.rb, Homebrew/homebrew-core, 1
@@ -2260,7 +2261,6 @@ Homebrew-homebrew-core/Formula/g/google-benchmark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-java-format.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-sparsehash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/google-sql-tool.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/googler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/googletest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goolabs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goose.rb, Homebrew/homebrew-core, 1
@@ -2450,7 +2450,6 @@ Homebrew-homebrew-core/Formula/h/hapi-fhir-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/harbour.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/harfbuzz.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/haruhi-dl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/has.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hashcash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hashcat.rb, Homebrew/homebrew-core, 1
@@ -4132,6 +4131,7 @@ Homebrew-homebrew-core/Formula/m/mspdebug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mstch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mt32emu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mtbl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mtm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mtoc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mtr.rb, Homebrew/homebrew-core, 1
@@ -5861,7 +5861,7 @@ Homebrew-homebrew-core/Formula/s/spirv-cross.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spirv-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spirv-llvm-translator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spirv-tools.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/splint.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/splint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sponge.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spoof-mac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spot.rb, Homebrew/homebrew-core, 0
@@ -9418,6 +9418,7 @@ Homebrew-homebrew-cask/Casks/m/multiviewer-for-f1.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mumble.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mumu-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mumu.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mumuplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/munki.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/munkiadmin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mural.rb, Homebrew/homebrew-cask, 0
@@ -9558,6 +9559,7 @@ Homebrew-homebrew-cask/Casks/n/novabench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/now-tv-player.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noxappplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nozbe.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nrfutil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nrlquaker-winbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nslogger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nsregextester.rb, Homebrew/homebrew-cask, 1

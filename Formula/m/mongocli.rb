@@ -1,8 +1,8 @@
 class Mongocli < Formula
   desc "MongoDB CLI enables you to manage your MongoDB in the Cloud"
   homepage "https:github.commongodbmongodb-atlas-cli"
-  url "https:github.commongodbmongodb-atlas-cliarchiverefstagsmongocliv1.31.0.tar.gz"
-  sha256 "2967a73d489b015172df44873ac327f844a63eb7db87ac1d7e82c78a181957c1"
+  url "https:github.commongodbmongodb-atlas-cliarchiverefstagsmongocliv1.31.1.tar.gz"
+  sha256 "e267b7805f59240b1e5aba12ea4df4d6cb2298f7495674b2028b922db027e90f"
   license "Apache-2.0"
   head "https:github.commongodbmongodb-atlas-cli.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Mongocli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7274892a9a850675ecb0266f3476dbc83a8a0a33333d5e5c2bdf3cc77b3724d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ced0a347c86d1d591eb111adaa5da5f0e26010808fed8bd475c7172db0a4a473"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "edd7c3e60f52a2b9589a7f7fabdcb4fa62509e60b4ebf064c9584ccdbf4cd903"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b01bde58a3c4781c8197b04f401b5acd39fbb27b4a2b849bbfc24691f9f7fc74"
-    sha256 cellar: :any_skip_relocation, sonoma:         "039b41a5fd9c9a34a7e29eaf56a8dc1ed5b8606f1fbcdfcbf98f691c65d1c8f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3cadf320ace428df292dc1693866f52510c311663f914a406b39b53ec0c169ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "eedadd4915120c905220340f45829c7a9d258db6780af6e015ec08152b64f0cc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7e79547b6542ea438a35759c42ed27e98cf4e45a7bf2ad6e97b65f19d121ff75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5c26a12a1a52f6caf061b5a9e48ea52412ae73a7eb7197addac32fc55857821"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "decb346d84912e9103424d28b2d538ae040daaf6130d893e344a07b7151a20b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4bc02f317b826eabbc3fe70fa800a6073e4163f1ee89a0270e953fd51b07ddf3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bedcc1cd4c5c7bef52cbdb369dcb5c0789fed31ef831065d722fa6cc1129ac28"
+    sha256 cellar: :any_skip_relocation, sonoma:         "08d51169b440e245cacd6451c37ffbf0dfbad917c0c36db1243b628e2b8b90a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "55be962e534461f234d50823875809729612a546325f9974eab8d368e0326e83"
+    sha256 cellar: :any_skip_relocation, monterey:       "12382e1f9f5506c75cf3ed399e97660ad98537162f0da54c0af48f2e81b1cd46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e04573372440a7cf6b74cf336d359787c193c4864e2ef39b961280ca374591"
   end
 
   depends_on "go" => :build

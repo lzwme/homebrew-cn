@@ -1,10 +1,18 @@
 class Splint < Formula
   desc "Secure Programming Lint"
-  homepage "https://sourceforge.net/projects/splint/"
-  url "https://mirrorservice.org/sites/distfiles.macports.org/splint/splint-3.1.2.src.tgz"
-  mirror "https://src.fedoraproject.org/repo/pkgs/splint/splint-3.1.2.src.tgz/25f47d70bd9c8bdddf6b03de5949c4fd/splint-3.1.2.src.tgz"
+  homepage "https:github.comsplintcheckersplint"
+  url "https:mirrorservice.orgsitesdistfiles.macports.orgsplintsplint-3.1.2.src.tgz"
+  mirror "https:src.fedoraproject.orgrepopkgssplintsplint-3.1.2.src.tgz25f47d70bd9c8bdddf6b03de5949c4fdsplint-3.1.2.src.tgz"
   sha256 "c78db643df663313e3fa9d565118391825dd937617819c6efc7966cdf444fb0a"
   license "GPL-2.0-or-later"
+
+  livecheck do
+    url :homepage
+    regex(^(?:splint[._-])?v?(\d+(?:[._]\d+)+)$i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
 
   bottle do
     rebuild 1
@@ -35,15 +43,15 @@ class Splint < Formula
             "--infodir=#{info}",
             "--mandir=#{man}"]
 
-    args << "LEXLIB=#{Formula["flex"].opt_lib}/libfl.so" if OS.linux?
+    args << "LEXLIB=#{Formula["flex"].opt_lib}libfl.so" if OS.linux?
 
-    system "./configure", *args
+    system ".configure", *args
     system "make"
     system "make", "install"
   end
 
   test do
-    path = testpath/"test.c"
+    path = testpath"test.c"
     path.write <<~EOS
       #include <stdio.h>
       int main()
@@ -54,17 +62,17 @@ class Splint < Formula
       }
     EOS
 
-    output = shell_output("#{bin}/splint #{path} 2>&1", 1)
-    assert_match(/5:18:\s+Variable c used before definition/, output)
+    output = shell_output("#{bin}splint #{path} 2>&1", 1)
+    assert_match(5:18:\s+Variable c used before definition, output)
   end
 end
 
 
 __END__
-diff --git a/src/osd.c b/src/osd.c
+diff --git asrcosd.c bsrcosd.c
 index ebe214a..4ba81d5 100644
---- a/src/osd.c
-+++ b/src/osd.c
+--- asrcosd.c
++++ bsrcosd.c
 @@ -516,7 +516,7 @@ osd_getPid ()
  # if defined (WIN32) || defined (OS2) && defined (__IBMC__)
    int pid = _getpid ();
