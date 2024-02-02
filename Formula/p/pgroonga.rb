@@ -4,6 +4,7 @@ class Pgroonga < Formula
   url "https://packages.groonga.org/source/pgroonga/pgroonga-3.1.6.tar.gz"
   sha256 "5df1e92acb6074143a3a8d1c0e93a985424d4eef4a81f06ec406bc45a76f8f20"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https://pgroonga.github.io/install/source.html"
@@ -11,25 +12,24 @@ class Pgroonga < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "da1d2e4b28667bb1ce4d65e36da22e758c3708a57c30e2240c038c339745d0cd"
-    sha256 cellar: :any,                 arm64_ventura:  "1032f4f6c1866e14ab8703267651a088e9d54962e5b64a5b735974a7ec1888b4"
-    sha256 cellar: :any,                 arm64_monterey: "5d04adc3271ba005592e9653355c79c17ea92d6f67a879c45e266fc2d442aa75"
-    sha256 cellar: :any,                 sonoma:         "c7afe3c651f623c951386a88e8d315192ef57b7b8ac42c2cc58591a26a39f5ba"
-    sha256 cellar: :any,                 ventura:        "ba122c0a74ad65bf726fc98ab7820c35b00bbc98e4d6029ebe8fce273dff7cc9"
-    sha256 cellar: :any,                 monterey:       "27ac7c0c6f308aa464979ef010767f23c1273030ca1dc7bcb6d4da91f5e62928"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99bfc2b18b5b6d1227e68422c976576513e3a2e005c49d253a16ba0f29b7b3e7"
+    sha256 cellar: :any,                 arm64_sonoma:   "4d64cddc5866536b2b92de4ae959171fe480cd79dd865e6f1dea302ea10b36af"
+    sha256 cellar: :any,                 arm64_ventura:  "69318442e847942e565a8dbb45a6e942fb0630a3a799f312d29df10f1fce6e03"
+    sha256 cellar: :any,                 arm64_monterey: "9f0a95c5ac7edb83333bef05bbe33e330520d27ef8d8255a16cc66ec1d5abe77"
+    sha256 cellar: :any,                 sonoma:         "695f717f70e9a93a1992e28b5b86cbb490102f47a53848464a4885f678d6f9e5"
+    sha256 cellar: :any,                 ventura:        "695a9fa5001d5a4f02a33eb3c178f0d96d3dbbe472ead126e21b1c5cb1091f0f"
+    sha256 cellar: :any,                 monterey:       "38e4896381190478ae7ff3004c36f029ff2081bd58cc937798ee12cf59b92696"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa846b787e72ccb0cb3aa2d1c40bbb5e3d4e29055d8437bb55be9d8fc8c6bd66"
   end
 
   depends_on "pkg-config" => :build
   depends_on "groonga"
-  depends_on "postgresql@16"
+  depends_on "postgresql@14"
 
   def postgresql
-    Formula["postgresql@16"]
+    Formula["postgresql@14"]
   end
 
   def install
-    ENV.prepend_path "PATH", postgresql.opt_libexec/"bin"
     system "make"
     system "make", "install", "datadir=#{share/postgresql.name}",
                               "pkglibdir=#{lib/postgresql.name}",
@@ -38,8 +38,8 @@ class Pgroonga < Formula
 
   test do
     ENV["LC_ALL"] = "C"
-    pg_ctl = postgresql.opt_libexec/"bin/pg_ctl"
-    psql = postgresql.opt_libexec/"bin/psql"
+    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    psql = postgresql.opt_bin/"psql"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test"

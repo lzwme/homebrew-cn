@@ -1,19 +1,10 @@
 class SwiProlog < Formula
   desc "ISOEdinburgh-style Prolog interpreter"
   homepage "https:www.swi-prolog.org"
+  url "https:www.swi-prolog.orgdownloadstablesrcswipl-9.2.0.tar.gz"
+  sha256 "10d90b15734d14d0d7972dc11a3584defd300d65a9f0b1185821af8c3896da5e"
   license "BSD-2-Clause"
   head "https:github.comSWI-Prologswipl-devel.git", branch: "master"
-
-  stable do
-    url "https:www.swi-prolog.orgdownloadstablesrcswipl-9.0.4.tar.gz"
-    sha256 "feb2815a51d34fa81cb34e8149830405935a7e1d1c1950461239750baa8b49f0"
-
-    # Backport fix to build on Sonoma
-    patch do
-      url "https:github.comSWI-Prologswipl-develcommit1e51805f04ea9cb13cf01e5b7a483c03d253b24c.patch?full_index=1"
-      sha256 "628b65b3e4a49c8dda4b97824ad05359c48bd27e7e4ddbf914e3da57ef7c87ee"
-    end
-  end
 
   livecheck do
     url "https:www.swi-prolog.orgdownloadstablesrc"
@@ -21,14 +12,13 @@ class SwiProlog < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sonoma:   "c586362f4fe7bacc7de100e46c8a16831ad565d383443fba6b415967f6caade9"
-    sha256 arm64_ventura:  "3fc7572f82e10db175c038325dc3b46b490574967df55061715699162d5901b9"
-    sha256 arm64_monterey: "57d49f4c57aba588338fa17522a5f6abc6f7ac6cc784750ab4aa2890bb97facc"
-    sha256 sonoma:         "ab1f7f6233e16dd476ffb50ef5d6340a51a4d03549a5b01663fc0696d717fca7"
-    sha256 ventura:        "33447d4e07c9c03bd3d804e33e29cc608532e6541a21bca93c10c2e0f1f4e215"
-    sha256 monterey:       "fbb3c93fe141f5b54e7d2dd9a743330b14ad51ba154485767cf5c8848971ad56"
-    sha256 x86_64_linux:   "9b22644cc92919fb6c704410fd944191d2af73b9f2afbc028ed18b72a708fb3d"
+    sha256 arm64_sonoma:   "1ab357e02d7694ca56d6e2376ab22e4eba50bad0de2a516d1f65e5e11c7a85f1"
+    sha256 arm64_ventura:  "e49a0df728a7162220e7ed110f63a97a6b6126f146697ec8f49844da19c670d0"
+    sha256 arm64_monterey: "f13fab1304502c0787a9484a22d21a337bd316896532801f0f7218354d742012"
+    sha256 sonoma:         "7333bdac65627215d11b1773e06f97c6ffc2a8f9abc15e9376b11e189f3f8ab0"
+    sha256 ventura:        "f53749156c058502abe3f56cb5e48f41bbf37e5ef6a427b53d44915d620590ec"
+    sha256 monterey:       "7ca5d82d3492882c3998c283a89d05e64bd4a8ef6a358dd76a8b77a68f14efe9"
+    sha256 x86_64_linux:   "a9c7eb7d096fa0fd5d56976ac99dbde2577423fb99ec2cb67db0ac5c49e6130c"
   end
 
   depends_on "cmake" => :build

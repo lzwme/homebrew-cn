@@ -13,14 +13,14 @@ class Cxxopts < Formula
   depends_on "cmake" => :build
 
   def install
-    ENV.cxx11
+    args = %w[
+      -DCXXOPTS_BUILD_EXAMPLES=OFF
+      -DCXXOPTS_BUILD_TESTS=OFF
+    ]
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args,
-                            "-DCXXOPTS_BUILD_EXAMPLES=OFF",
-                            "-DCXXOPTS_BUILD_TESTS=OFF"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -34,6 +34,7 @@ class Mgba < Formula
   uses_from_macos "sqlite"
 
   on_macos do
+    # https:github.commgba-emumgbaissues3129
     depends_on "libelf" => :build
   end
 

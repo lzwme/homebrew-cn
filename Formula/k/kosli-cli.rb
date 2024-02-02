@@ -1,19 +1,19 @@
 class KosliCli < Formula
   desc "CLI for managing Kosli"
   homepage "https:docs.kosli.comclient_reference"
-  url "https:github.comkosli-devcliarchiverefstagsv2.7.7.tar.gz"
-  sha256 "494b8286b5cde1b12e28893248c4464833a10dc5fc25c65c4d04bf538cfb4747"
+  url "https:github.comkosli-devcliarchiverefstagsv2.7.8.tar.gz"
+  sha256 "58a2b930aefa77d36171f7409d1b7f0dcf5e79e92aa0d427e36583892a13ff2c"
   license "MIT"
   head "https:github.comkosli-devcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "008b191b2119e81ce2a88e74902fc4c600df5d03c3a6b5fdd7c0a3500b02608a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f03835cc88dc8f13c1d2fe23fd63f26c8eb049cdede5400f51c135a26ee41e2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80e8cfe03a8562bdcb2d6e7d39ab863102da8b511e65f7918151b220ba678412"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2ab3ace7f82637015030c4f0246683462605b9a6b9ec7f0acf9ae06503be7ae9"
-    sha256 cellar: :any_skip_relocation, ventura:        "086ab50e593287e723cd74787dc379249d426871e59718bcb5f566d008ac520a"
-    sha256 cellar: :any_skip_relocation, monterey:       "ebce5c05bf7a02e60d43da71f8d312b95d634f1c9b4a0a16d1bdec1e5efb45e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d28220f1f81723732d21190d7f36062bd2e46992619a427c9f31d74966142c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cad16573775ba00d779dc779c28e53231d4a26a8ab365782625782490718553c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49c3bc3d7069c1500b6ed96718e8099da8377d144e3e988a72ff14345e6b978f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "18686f171c66f167d061b9d749db995b783a2338997ae0b5d0a5a18911eb2c6d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "980320954ab64ad282b394e1a06e66fdd5cc8e84c7ce737dfb4eb20e769e6113"
+    sha256 cellar: :any_skip_relocation, ventura:        "569c9e6230fec838591b9801cf3869b92e5fc58f194133ab87e2ecf74bdaadbf"
+    sha256 cellar: :any_skip_relocation, monterey:       "5b1b034225fcd3eaadcd454ea71d0bc78a7df23779b5a07a836900d1b5fc2d4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a19fab803a3f41adf795d5f0c8602e20c9d20a58f27a4093019347b8f48ae1f"
   end
 
   depends_on "go" => :build

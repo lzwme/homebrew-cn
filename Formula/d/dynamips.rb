@@ -26,6 +26,7 @@ class Dynamips < Formula
   uses_from_macos "libpcap"
 
   on_macos do
+    # https:github.comGNS3dynamipsissues142
     depends_on "libelf" => :build
   end
 

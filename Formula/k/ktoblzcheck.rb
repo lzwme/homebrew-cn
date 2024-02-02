@@ -12,21 +12,22 @@ class Ktoblzcheck < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "2918dd89e9ac1cffb57d875a30583650624268e6f7e192b65ea85733e63ae0ac"
-    sha256 arm64_ventura:  "8085c03ee7b21d4a949509374263b39fb130b94b7e890aaf80262a7d5d773215"
-    sha256 arm64_monterey: "83a69f2e2a4d5c7e9c96118037337f34e4ec28569d89532afc7ad7e41951e717"
-    sha256 arm64_big_sur:  "42680d8ba1e53d95f2ce71111b443f55806da778881ac2cc8cc06febd9c023f8"
-    sha256 sonoma:         "08805f31d7c225962873b2fb51b32ef7aa4a2262865af198e01cf9865ebd84c3"
-    sha256 ventura:        "d08a40ea385d6160d575466104d0869a282284d37dcad2b8cffaf5eb58dbc258"
-    sha256 monterey:       "72a3fce8f0c8f1dcfbed9779e04b74e3bb4df4db2b5610bc066e90906e507d0c"
-    sha256 big_sur:        "d9abaad3e06fa41e6864ba91fd2dcd9dec86a4a3e5150a330981f5d557ba7b1d"
-    sha256 catalina:       "e0400495c056dc0f0a0de0345b468bbdb19483f93cbd0d7b5e5c3f1446654937"
-    sha256 x86_64_linux:   "85fdd6479c9fe84018dc2b4a25e83737271a8bd0e85cdde03a71f45438af368e"
+    rebuild 2
+    sha256 arm64_sonoma:   "3a363b745e2bc924d9aeb8106bd76a25e6d6316cf9bfc2b5c7973c5b2e0dc9b7"
+    sha256 arm64_ventura:  "a1ea0492833ca7d4e223fbf94ff19574d559382389af519b503d61500b85f808"
+    sha256 arm64_monterey: "9a3b76b95a852e1141d40552a39ca8746f069e31fefe3d3477541f031bb37cd5"
+    sha256 sonoma:         "3b9da96c6831649627880831f4aac40ee80a3034666b34794b5d69b7fdd8dbe2"
+    sha256 ventura:        "8c5172ecb224bab53baae044dfdab817e7fbd7876a25939d2f6ac29f57aba39b"
+    sha256 monterey:       "944be5e0ff7713ee27ffeca810682fd2d8da35c15c2dcd005335dc95fc8659cd"
+    sha256 x86_64_linux:   "b921c327b7507267638b703643ab621322c56deebb4d6d3cba4ae7f3b22e7431"
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+
+  # Support python 3.12
+  # https://sourceforge.net/p/ktoblzcheck/code/ci/f5973ed2507f22f8d75dbfa81ca5d392683a1406/
+  patch :DATA
 
   def install
     # Work around to help Python bindings find shared library on macOS.
@@ -42,6 +43,17 @@ class Ktoblzcheck < Formula
   test do
     assert_match "Ok", shell_output("#{bin}/ktoblzcheck --outformat=oneline 10000000 123456789")
     assert_match "unknown", shell_output("#{bin}/ktoblzcheck --outformat=oneline 12345678 100000000", 3)
-    system "python3.11", "-c", "import ktoblzcheck"
+    system "python3.12", "-c", "import ktoblzcheck"
   end
 end
+
+__END__
+--- a/src/python/ktoblzcheck.py
++++ b/src/python/ktoblzcheck.py
+@@ -41,7 +41,7 @@
+
+ try:
+     kto = cdll.ktoblzcheck
+-except OSError:
++except (OSError, AttributeError):
+     kto = cdll['libktoblzcheck.so.1']

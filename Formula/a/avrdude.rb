@@ -28,6 +28,7 @@ class Avrdude < Formula
   uses_from_macos "flex" => :build
 
   on_macos do
+    # https:github.comavrdudesavrdudeissues1653
     depends_on "libelf" => :build
   end
 

@@ -3,19 +3,19 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https:github.comsnakemakesnakefmt"
-  url "https:files.pythonhosted.orgpackagese1caddd0028b2c65850f0e12ed91356a0677221e76ae914fa34382b7336b33a3snakefmt-0.9.0.tar.gz"
-  sha256 "54c78050edead20cea5f87a6c9674ee1b5e4e38faac2852b45d0650faf9cb319"
+  url "https:files.pythonhosted.orgpackages1fced2dee5da2cf76cdec5a5fb9dc7b99849b08ea28a5dc17830afc2baadaffcsnakefmt-0.10.0.tar.gz"
+  sha256 "53eae69fc81425e2192684eba76171bd648b05dcba93c9d5f45746d3fadb8617"
   license "MIT"
   head "https:github.comsnakemakesnakefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "563bdab3ca70041ef51ac0de484a7f1392902188b9c2f8469f452baefe3a8077"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9044ca40713671663a5e889e7a8901e7b789468a21f2e53c6e5116061369941b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0bc724b659825f8f07344e20b605f9be8c7f7e16d8870a213eecbbcad308842"
-    sha256 cellar: :any_skip_relocation, sonoma:         "360c63884a6e4ef6c08d425e34b7f7dda73ca5c3d45eb3e04652473cebf1aae2"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca32b14c389ca56dd34b8ac96e4268add3c859b98f68f72e4abf7ada08d45afb"
-    sha256 cellar: :any_skip_relocation, monterey:       "de6263cde6dfd9e90064d9c961482904dc55d1b682502168c24a1f0388fe7a87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5523781079ba03f5cf4e9bb790eaae2b61bae20c1a3efe6ace3dbcbd9bc94757"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c380f23bcefe6ae493c5e80fa63d11d4f8c91eabdc8f7193c2a5f9048956355"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cb73ba8b36c759effa2e4b2ef7c4fb6aab7c36cfc813cd342ed7397ace3c8ca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd85b4174fcaae8451eec7a2b8a53df6d42fe086c389bc87f3c0ec652e1aaa42"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a0a3a5feccf5a0fb29ff4335cc31372961f4e8401baad5c0f45fd8d3adbadd81"
+    sha256 cellar: :any_skip_relocation, ventura:        "de5275204de7ef868613ff572e8963227a8c75997a801fd297b5a6ceacca14c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "f373cd795202fea97e9218333948d2b2ccf74bac3ef267afe0d20c4bde801b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bddcb117afcf59fe1d937b5e63ad31af703779787a1c03f5514f277b7bcef36"
   end
 
   depends_on "black"
