@@ -1,22 +1,16 @@
 class Byobu < Formula
   desc "Text-based window manager and terminal multiplexer"
-  homepage "https:launchpad.netbyobu"
-  url "https:launchpad.netbyobutrunk5.133+downloadbyobu_5.133.orig.tar.gz"
-  sha256 "4d8ea48f8c059e56f7174df89b04a08c32286bae5a21562c5c6f61be6dab7563"
+  homepage "https:github.comdustinkirklandbyobu"
+  url "https:github.comdustinkirklandbyobuarchiverefstags6.10.tar.gz"
+  sha256 "55ad76dbe1bf5be183e4742cd3bdbf1b7cf5468339de35ceb9cfdd05709e8dba"
   license "GPL-3.0-only"
-  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "307888338bac3600b1805eda416940ee4c78089b70abc1dc21d49c69d8ad94fb"
+    sha256 cellar: :any_skip_relocation, all: "355c2e08500664375925c2e2e827d390793cacc76bd4995ad9d6b55096c91c17"
   end
 
-  head do
-    url "https:github.comdustinkirklandbyobu.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "gettext"
   depends_on "newt"
   depends_on "tmux"
@@ -28,10 +22,8 @@ class Byobu < Formula
   conflicts_with "ctail", because: "both install `ctail` binaries"
 
   def install
-    if build.head?
-      cp ".debianchangelog", ".ChangeLog"
-      system "autoreconf", "--force", "--install", "--verbose"
-    end
+    cp ".debianchangelog", ".ChangeLog"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", *std_configure_args
     system "make", "install"
 
