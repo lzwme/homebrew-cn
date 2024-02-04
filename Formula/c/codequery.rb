@@ -1,6 +1,6 @@
 class Codequery < Formula
   desc "Code-understanding, code-browsing or code-search tool"
-  homepage "https:github.comruben2020codequery"
+  homepage "https:ruben2020.github.iocodequery"
   url "https:github.comruben2020codequeryarchiverefstagsv0.27.0.tar.gz"
   sha256 "c03b86f9f5a8f5373862efaef6bddd18a15e5786570a93f0310725ecc5d74ff3"
   license "MPL-2.0"
@@ -16,28 +16,24 @@ class Codequery < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "qt@5"
 
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-    share.install "test"
-    mkdir "build" do
-      system "cmake", "..", "-G", "Ninja", *args
-      system "ninja"
-      system "ninja", "install"
-    end
+    pkgshare.install "test"
   end
 
   test do
     # Copy test files as `cqmakedb` gets confused if we just symlink them.
-    test_files = (share"test").children
+    test_files = (pkgshare"test").children
     cp test_files, testpath
 
-    system "#{bin}cqmakedb", "-s", ".codequery.db",
+    system bin"cqmakedb", "-s", ".codequery.db",
                               "-c", ".cscope.out",
                               "-t", ".tags",
                               "-p"

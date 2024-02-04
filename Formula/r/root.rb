@@ -1,10 +1,9 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https:root.cern.ch"
-  url "https:root.cern.chdownloadroot_v6.30.02.source.tar.gz"
-  sha256 "7965a456d1ad1ee0d5fe4769bf5a8fec291af684ed93db0f3080a9c362435183"
+  url "https:root.cern.chdownloadroot_v6.30.04.source.tar.gz"
+  sha256 "2b4180b698f39cc65d91084d833a884515b325bc5f673c8e39abe818b025d8cc"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https:github.comroot-projectroot.git", branch: "master"
 
   livecheck do
@@ -16,12 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3bc61294329fec1985bb3f4292b7152f0b8569a859b70f35fb147e4def2bad0a"
-    sha256 arm64_ventura:  "8246869c9c04d2700bc1572b3f0a3b198e101dbc195765b7fe0eb01fb877d6e1"
-    sha256 arm64_monterey: "f9c36bf0517c85d48cca36aa88103d6747c92b9111ff4307b34fd14af272a1f3"
-    sha256 sonoma:         "a43bb477504f99102f53e6435d585ffa4a8c19490a9d57eff56bceda2c7acd04"
-    sha256 ventura:        "4963c2619981d5e439086d143b3e90f885c8e07a3ad889630b24e7cdec4c0460"
-    sha256 monterey:       "e02e24dc8c0deba276bd44bcdf2d6d7bd6f988ce95f3c1380ed35d3ad8a4fd36"
+    sha256 arm64_sonoma:   "dacfe11fa048be0850bb3f8d6063b2eabd45179ca5e0db6d38a12b7a5723f942"
+    sha256 arm64_ventura:  "b3235f9c9d75696a6d257e934535382db6e951b91dde71f2b58421c8496f1398"
+    sha256 arm64_monterey: "2c3be78e473e1b9ef477403207ab51bac76bbce245c261aafb5ef7a6220614e2"
+    sha256 sonoma:         "3844e74c8b2a1654e2f5ad3dae992dca30c6e9fcf0f3a22c4484eff7ddc9bdf7"
+    sha256 ventura:        "a2e4a35baf6703261cec740f62aa6f6e49dc5a3f6b7bdd7144c56be4651c923d"
+    sha256 monterey:       "47d12445b293713b6b865bd1fcd8e020eef75e0cffae82a11110dae605d3888b"
   end
 
   depends_on "cmake" => :build
@@ -68,11 +67,6 @@ class Root < Formula
 
   def python3
     "python3.11"
-  end
-
-  patch do
-    url "https:github.comroot-projectrootcommitd6b6a7371725ad71a0574e7f3c3b4924b99353dd.patch?full_index=1"
-    sha256 "9482350c673c461058996af8c0945d3a2c1455af744c01ef655e3737eb9bc46a"
   end
 
   def install

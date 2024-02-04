@@ -3956,7 +3956,7 @@ Homebrew-homebrew-core/Formula/m/microsocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midgard2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midicsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/midnight-commander.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mikmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mikutter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mill.rb, Homebrew/homebrew-core, 1
@@ -5997,6 +5997,7 @@ Homebrew-homebrew-core/Formula/s/subliminal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subnetcalc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subversion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sugarjar.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/suil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/suite-sparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sundials.rb, Homebrew/homebrew-core, 1
@@ -9055,6 +9056,7 @@ Homebrew-homebrew-cask/Casks/l/luminance-hdr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunar-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunar.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lunarbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lunasea.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/luniistore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/luxmark.rb, Homebrew/homebrew-cask, 1
@@ -13784,7 +13786,6 @@ Homebrew-homebrew-cask-versions/Casks/zulu21.rb, Homebrew/homebrew-cask-versions
 Homebrew-homebrew-cask-versions/Casks/zulu7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu8.rb, Homebrew/homebrew-cask-versions, 0
 nicerloop-homebrew-nicerloop/Formula/arx.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/bison@1.875c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/diffoci.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0

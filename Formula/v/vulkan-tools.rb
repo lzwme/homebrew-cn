@@ -1,19 +1,19 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.3.276.tar.gz"
-  sha256 "24598dd9031cd7cce9b7d9446b466a18bae9fd009579da865330e2dc9d0a2bf9"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.3.277.tar.gz"
+  sha256 "487dd46f82a07ab445dc5338aa978bdacebf20f816ec0cede3d3a7e036d1a925"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b14d6d59dc310db0c422f96841bef980de9e164cbdc46007467e44127699e53d"
-    sha256 cellar: :any,                 arm64_ventura:  "dc2d19d57250887c197cb03e9d2a4d94576f66cb5295bfd11e3290b8fb51237f"
-    sha256 cellar: :any,                 arm64_monterey: "e236e01de7e759f756401adf81003c2a627b3d4c8c3ad6eb6b184eff72709a31"
-    sha256 cellar: :any,                 sonoma:         "5fa64693af38e087a3e55ca1acb3487dac5c8deac6373437f43e9f7657dc6deb"
-    sha256 cellar: :any,                 ventura:        "662e296300380e942b210e7ad68a959c9439dd83f8cfd0f2386b3282a0bfaf44"
-    sha256 cellar: :any,                 monterey:       "c8286238fcac66b016a916caa25e01c158192f15353ea8ebaa26cb4ef08955cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "973fe609d91af6d75ea380ab60978eb423a3571b05b2115da5c4568e0c579c1f"
+    sha256 cellar: :any,                 arm64_sonoma:   "3847b069033278d9caa7d1c7e800cc9b9c804d7e71051c81b7af9cc7c342743f"
+    sha256 cellar: :any,                 arm64_ventura:  "a978119673e60d513c6310f0188943fc3f728892e2e2a0c65dbd88150945a504"
+    sha256 cellar: :any,                 arm64_monterey: "f530074dbe7948859086e74832ec1ed7b15db7ffabc79f2f4dc30cc4a20419ef"
+    sha256 cellar: :any,                 sonoma:         "aa2d5640eaed3eff1bf0336291b75b805d256a9849df97bd644ef680c8949eb0"
+    sha256 cellar: :any,                 ventura:        "579110ad05bef089bc076d6b14d818bb9bb7fd30b25118a726d7ab000425c3ac"
+    sha256 cellar: :any,                 monterey:       "42328d836b63837156bb45b0f6f79b599484bfc163a0a1155f93cb104ea28b35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d7638307072c774b886caffe77e5f64613ad07fb7e2ba5f519524a38a354039"
   end
 
   depends_on "cmake" => :build

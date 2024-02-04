@@ -3,18 +3,18 @@ class Bilix < Formula
 
   desc "Lightning-fast asynchronous download tool for bilibili and more"
   homepage "https:github.comHFrost0bilix"
-  url "https:files.pythonhosted.orgpackages08def349e3a5571613b39f109247c07f9f9b493ad4fd5ae4c42301210574885abilix-0.18.7.tar.gz"
-  sha256 "d39543a2198c3e6218d674fb83fea0b62a5c98224609828abffbec018ea2cc20"
+  url "https:files.pythonhosted.orgpackages1af583c35a59e43453033deeecdc19893cedf9558fa601068890f68544e6235fbilix-0.18.8.tar.gz"
+  sha256 "582b4ff828cf7b7edb4bbcabe4a6384f1d2c94f3304afcba126297cc5a02c3fe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c300d8ae7dddefa04f73c6c6cb32bf789ed8e551ba692cc6314444b0963b2a9c"
-    sha256 cellar: :any,                 arm64_ventura:  "fa28f98f0e72a2fbe20efab86b976cc5ebe5ab555152b3bc76b34455cddd828c"
-    sha256 cellar: :any,                 arm64_monterey: "ba4be15ac1e8b2892acd40c7410f00bca43d97be54bad4fd99828b18372bd568"
-    sha256 cellar: :any,                 sonoma:         "ca7b3879c4d8a73b1367ce8f539429c348c786b1173d30e5df1f0d0c3d8bb37b"
-    sha256 cellar: :any,                 ventura:        "5e479fdfe891ffcb37e07b2b670a3d50b0e45d4bd205f17055f26b58e9a94a31"
-    sha256 cellar: :any,                 monterey:       "00473efe4d34fe1235f965693efc40ba74b8404ab4f2d33a9d3d88f987f5983c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2868213d188c16ea871784413ed3e222b96fc674a108410ae45dc505e470561"
+    sha256 cellar: :any,                 arm64_sonoma:   "b39de31576aac3d95bb056056e99616d32756cb7a086ac3b8c322c8a6d447e7b"
+    sha256 cellar: :any,                 arm64_ventura:  "5529af4056c2a770701c77b84b9d51ded4713c5e5e94f455b7e492278e49337c"
+    sha256 cellar: :any,                 arm64_monterey: "0bdb2ed8054489d1226b74ecb07ec5e98207d756b61218d8057eb3005a992e44"
+    sha256 cellar: :any,                 sonoma:         "2f2603a16ba8bdb8b7af4a9862370a972e4238ad8927ce72981e8c11a8f14c7c"
+    sha256 cellar: :any,                 ventura:        "677f19cad8be029f60f58d259227ab20f4791020f00bc3fe54f7346cce8b0021"
+    sha256 cellar: :any,                 monterey:       "c82ce8dc3dc5af2b2830b31cba19d317878816c448f2ecf06d164b8a395bbcb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "601a5f8a732bfe81d79293d6bd43e9bda85787b372d1fbdac68790e240ba37d5"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -149,13 +149,13 @@ class Bilix < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesaa3f56142232152145ecbee663d70a19a45d078180633321efb3847d2562b490pydantic-2.5.3.tar.gz"
-    sha256 "b3ef57c62535b0941697cce638c08900d87fcb67e29cfa99e8a68f747f393f7a"
+    url "https:files.pythonhosted.orgpackages786c87e7c6e46206e27b3037acdf637906c4be500a0b1dd7ccbb805a72b9f494pydantic-2.6.0.tar.gz"
+    sha256 "ae887bd94eb404b09d86e4d12f93893bdca79d766e738528c6fa1c849f3c6bcf"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagesb27d8304d8471cfe4288f95a3065ebda56f9790d087edc356ad5bd83c89e2d79pydantic_core-2.14.6.tar.gz"
-    sha256 "1fd0c1d395372843fba13a51c28e3bb9d59bd7aebfeb17358ffaaa1e4dbbe948"
+    url "https:files.pythonhosted.orgpackagesa0a761d013c73773bb03d02de9de8e4e5b2ed2c100dc98ae7046d54485ecf5d4pydantic_core-2.16.1.tar.gz"
+    sha256 "daff04257b49ab7f4b3f73f98283d3dbb1a65bf3500d55c7beac3c66c310fe34"
   end
 
   resource "pymp4" do

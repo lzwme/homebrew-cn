@@ -1,20 +1,19 @@
 class Mighttpd2 < Formula
   desc "HTTP server"
-  homepage "https://kazu-yamamoto.github.io/mighttpd2/"
-  url "https://hackage.haskell.org/package/mighttpd2-4.0.3/mighttpd2-4.0.3.tar.gz"
-  sha256 "1a43390e921ab1b1b473d5bf65b2dcf27d0a8466e3243c2dab5d0c3de32bf9e1"
+  # raised a homepage issue https:github.comkazu-yamamotomighttpd2issues28
+  homepage "https:github.comkazu-yamamotomighttpd2"
+  url "https:hackage.haskell.orgpackagemighttpd2-4.0.4mighttpd2-4.0.4.tar.gz"
+  sha256 "a21ac95098c6dca6902dbf6131614dd6296f819a96c82dee875ec48a0c2cefe2"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c35095899e88d3420c7e22f6e930eec3cec9997565227b92b19cdccc83c43287"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14ce8d8f29c64398617a7c0559f9a6e6918d462257656f4b5fe4eb2ac796dce7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f18f2da847b14b72375b9ab0a95af7baf2b839d382f37f07a1543721710a1d6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7fbe2af8cad585cf43584f39078f5b5ba00cddea477ee35813cda64961cac1a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "584c975be5d7089cd2e41ce5d270bd09315df1e3b2f12db19ebf9a8cade71c71"
-    sha256 cellar: :any_skip_relocation, ventura:        "9274fce540911647838ea0f26304a60f4e3dcf82480e9f06bb24c74e92399888"
-    sha256 cellar: :any_skip_relocation, monterey:       "fce6e11a2aa622fb038e83c5334257cad896246cde293b8ea4fcf10c8e6a8f0a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d4b833ec3f97ecc2c53f343df423521606ffbe44a813e891e0b94e1c4fca6179"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc8d692ca461d3f352302f9dfecebc2bac125dd7296db177c53f4bee5e92f895"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9e260284e27ed041fbf78223a97b8c7804989876dc4709ef2b742ae07d251ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a547703388b9a8620a99f3f8542beaa5b015a7c657b4f1860e9c583cd7e7ad0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "155940971008fb0dbf9f392c85fd3583a53f2809c995b6fadc8b294e8f3ea3d8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf3bb850495b707a2f4dfed398f62eb110e6ae452e664ce0ed1215b326641228"
+    sha256 cellar: :any_skip_relocation, ventura:        "49245485f7198ac3e9997c3204916fa8b781625d53e59574edd3a2bfbd9a8f7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "baecdfd2b85bc1b9c55386fa5723f040fa93d9e15d92b9da574e686a47451449"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bb3ab5e76139985f3cbd9995c2fc0b9cdc86ad6c2238e258e8523b8b88c2058"
   end
 
   depends_on "cabal-install" => :build
@@ -28,7 +27,7 @@ class Mighttpd2 < Formula
   end
 
   test do
-    system "#{bin}/mighty-mkindex"
-    assert (testpath/"index.html").file?
+    system "#{bin}mighty-mkindex"
+    assert (testpath"index.html").file?
   end
 end

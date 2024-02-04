@@ -9,7 +9,6 @@ class Ftnchek < Formula
     regex(/href=.*?ftnchek[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  depends_on "bison@1.875c" => :build # not truely necessary but maintains consistency
   depends_on "groff" => :build
 
   patch :Z do

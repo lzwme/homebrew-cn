@@ -17,13 +17,14 @@ class Minio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0aed8d2c11c8ba43e2cdfa0e47e8b943de7eef9df855fe14e96029f620552933"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9a976926d6945fe9b846926c3823ec2a3e396dfda54eb29461c8256b8eed5fdf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab6abeab00d3f0a2f028da87da5678d25b00110998f28b5ea51973bfaac2c2f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "89a40925a12ca5d60841a678e87fe19257de90abca6b8ef7cd828d00f9f98dbf"
-    sha256 cellar: :any_skip_relocation, ventura:        "c9c42c9e23e1bbc45626638869a14ef058cf503e106af5666c948ada0e7aea32"
-    sha256 cellar: :any_skip_relocation, monterey:       "b341c233e465a3fce9d88b6720901cb903fa7a3e7e3b1141e6eec8dc6271116a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5243b923c7937768d22f6e265ccfcc942d2350d02c35c1690cb055491d75e2ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b5f44f42d1507fc6d210981e07912480d8f999c6a7158753f6fc8eade781517"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff8b86892601bc2ef37304fef4c304fcb02b9e453baee078e7af4f4927bb6863"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "098018d2c960a4f25361b0b19468b7a8b7a412dd49dd5d5135106c6821ef4cba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "97ca353be7c5ec7750f4c997fc016fbe3beaf8910ab8ab437910ae9468d6d0ab"
+    sha256 cellar: :any_skip_relocation, ventura:        "b5ffbaf0f5748ededac652c4a3c31f919e1693e544b5bc520aa5a1cb4ee50f31"
+    sha256 cellar: :any_skip_relocation, monterey:       "352b4fcc3cd8073ab3e18900ec3e14f7de44a99d4821b8612390ea187a3b7249"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "135edc4c494f3f60b4ac8d8bcf960f9ece691a670c95caca77d3d9744aa87039"
   end
 
   depends_on "go" => :build
@@ -52,7 +53,7 @@ class Minio < Formula
   end
 
   service do
-    run [opt_bin"minio", "server", "--config-dir=#{etc}minio", "--address=:9000", var"minio"]
+    run [opt_bin"minio", "server", "--certs-dir=#{etc}miniocerts", "--address=:9000", var"minio"]
     keep_alive true
     working_dir HOMEBREW_PREFIX
     log_path var"logminio.log"
