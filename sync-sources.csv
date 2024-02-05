@@ -2485,6 +2485,7 @@ Homebrew-homebrew-core/Formula/h/helib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helidon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hello.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/helm-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helmfile.rb, Homebrew/homebrew-core, 1
@@ -12335,6 +12336,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-klee-one.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-knewave.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ko-pub-batang.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-kodchasan.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-kode-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-koh-santepheap.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-koho.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-kokoro.rb, Homebrew/homebrew-cask-fonts, 1

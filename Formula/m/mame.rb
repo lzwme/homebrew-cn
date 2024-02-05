@@ -31,7 +31,6 @@ class Mame < Formula
   depends_on "asio" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
   depends_on "rapidjson" => :build
   depends_on "sphinx-doc" => :build
   depends_on "flac"
@@ -45,6 +44,7 @@ class Mame < Formula
   depends_on "sqlite"
   depends_on "utf8proc"
 
+  uses_from_macos "python" => :build
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
@@ -63,7 +63,7 @@ class Mame < Formula
 
     # Use bundled lua instead of latest version.
     # https:github.commamedevmameissues5349
-    system "make", "PYTHON_EXECUTABLE=#{Formula["python@3.11"].opt_bin}python3.11",
+    system "make", "PYTHON_EXECUTABLE=#{which("python3")}",
                    "USE_LIBSDL=1",
                    "USE_SYSTEM_LIB_EXPAT=1",
                    "USE_SYSTEM_LIB_ZLIB=1",
@@ -92,6 +92,6 @@ class Mame < Formula
 
   test do
     assert shell_output("#{bin}mame -help").start_with? "MAME v#{version}"
-    system "#{bin}mame", "-validate"
+    system bin"mame", "-validate"
   end
 end

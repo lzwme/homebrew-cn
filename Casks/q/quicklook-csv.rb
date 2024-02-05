@@ -4,7 +4,7 @@ cask "quicklook-csv" do
 
   url "https:github.comp2quicklook-csvreleasesdownload#{version}QuickLookCSV-#{version}.dmg"
   name "QuickLookCSV"
-  desc "QuickLook plugin for CSV files"
+  desc "Quick Look plugin for CSV files"
   homepage "https:github.comp2quicklook-csv"
 
   qlplugin "QuickLookCSV.qlgenerator"

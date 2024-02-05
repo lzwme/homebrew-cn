@@ -4,7 +4,7 @@ cask "toland-qlmarkdown" do
 
   url "https:github.comtolandqlmarkdownreleasesdownloadv#{version}QLMarkdown.qlgenerator.zip"
   name "QLMarkdown"
-  desc "QuickLook generator for Markdown files"
+  desc "Quick Look generator for Markdown files"
   homepage "https:github.comtolandqlmarkdown"
 
   deprecate! date: "2023-12-17", because: :discontinued

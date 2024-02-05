@@ -4,7 +4,7 @@ cask "epubquicklook" do
 
   url "https:github.comjaketmpePub-quicklookreleasesdownloadv#{version}epub.qlgenerator.zip"
   name "EPUB QuickLook"
-  desc "QuickLook generator and Spotlight importer"
+  desc "Quick Look generator and Spotlight importer"
   homepage "https:github.comjaketmpePub-quicklook"
 
   depends_on macos: "<= :mojave"

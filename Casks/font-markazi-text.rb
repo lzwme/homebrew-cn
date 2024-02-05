@@ -2,13 +2,13 @@ cask "font-markazi-text" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflmarkazitextMarkaziText%5Bwght%5D.ttf",
+  url "https:github.comgooglefontsrawmainoflmarkazitextvfbetaMarkaziText-VF.ttf",
       verified: "github.comgooglefonts"
   name "Markazi Text"
   desc "Contemporary and highly readable typeface"
   homepage "https:fonts.google.comspecimenMarkazi+Text"
 
-  font "MarkaziText[wght].ttf"
+  font "MarkaziText-VF.ttf"
 
   # No zap stanza required
 end

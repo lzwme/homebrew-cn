@@ -4,7 +4,7 @@ cask "provisionql" do
 
   url "https:github.comealeksandrovProvisionQLreleasesdownload#{version}ProvisionQL.zip"
   name "ProvisionQL"
-  desc "QuickLook plugin for mobile apps and provisioning profiles"
+  desc "Quick Look plugin for mobile apps and provisioning profiles"
   homepage "https:github.comealeksandrovProvisionQL"
 
   qlplugin "ProvisionQL.qlgenerator"
@@ -12,7 +12,7 @@ cask "provisionql" do
   # No zap stanza required
 
   caveats <<~EOS
-    To prevent mobileprovision QuickLook override by Xcode:
+    To prevent mobileprovision Quick Look override by Xcode:
 
       https:github.comealeksandrovProvisionQLissues20
   EOS

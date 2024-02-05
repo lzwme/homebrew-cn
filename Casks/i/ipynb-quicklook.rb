@@ -4,7 +4,7 @@ cask "ipynb-quicklook" do
 
   url "https:github.comtuxuipynb-quicklookreleasesdownloadv#{version}ipynb-quicklook.qlgenerator.zip"
   name "ipynb-quicklook"
-  desc "QuickLook plugin for JupyterIPython notebooks"
+  desc "Quick Look plugin for JupyterIPython notebooks"
   homepage "https:github.comtuxuipynb-quicklook"
 
   livecheck do

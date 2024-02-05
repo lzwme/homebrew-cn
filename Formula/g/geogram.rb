@@ -1,8 +1,8 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
   homepage "https:brunolevy.github.iogeogram"
-  url "https:github.comBrunoLevygeogramreleasesdownloadv1.8.7geogram_1.8.7.tar.gz"
-  sha256 "98a58c5855f4ed0000a8054c755525ca4b8ed0bad88c4143ae3008ce75590ebb"
+  url "https:github.comBrunoLevygeogramreleasesdownloadv1.8.8geogram_1.8.8.tar.gz"
+  sha256 "698bc9ad9d58139fe9fdf3eab0596f5b418c4edd593eee960de98c0ab646d47e"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
   head "https:github.comBrunoLevygeogram.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Geogram < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c4a1aa62102c9fc825c1bde262ab65a664c0ad598cff6de0d5850808f237a4de"
-    sha256 cellar: :any,                 arm64_ventura:  "45d13f01959c09f3dd85e96cd20d5e710eb6f32d32a293ec7ff104efd2c09ab5"
-    sha256 cellar: :any,                 arm64_monterey: "75292d7d729f23bc0d3c1c6354b954ae2517909cf08f2d180a76279fd21390ec"
-    sha256 cellar: :any,                 sonoma:         "7f7d71a3707a56828d0687f603ab602aed9b7ba561cd01b6bfe245bf1bff546a"
-    sha256 cellar: :any,                 ventura:        "fcf92e47e04d13486f9e361e818bf09be694ab368dd4b10d97be50473a49b2a6"
-    sha256 cellar: :any,                 monterey:       "475b1096dcc539ab770994ea788da9a1f8d6a2b433c7a00df8f7065b1f2df98e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "666493a10750a7039f4ad4d636bac2e5100ab02ede33fdeabacc535aa1d075be"
+    sha256 cellar: :any,                 arm64_sonoma:   "dc8d8b12bedece396727ea7b89285ca6695e13e21204a2d23cda72e45aa78f70"
+    sha256 cellar: :any,                 arm64_ventura:  "941304240c9848ddc5687a53b2aebdf362e4f7631d86fab8aeda423b9316559a"
+    sha256 cellar: :any,                 arm64_monterey: "5d8a3d270497fd97f5299b3df0ea3d98ef14c72d0c27844b3645db140c90cabe"
+    sha256 cellar: :any,                 sonoma:         "b9124d8896e3e2488687bbc1dd526d66822d5ebb00afbdf4a4b59721ea2cd905"
+    sha256 cellar: :any,                 ventura:        "42fc31debff11c9e27ce9af444738702e6f00b7e3564a122c7ebff91a26a9844"
+    sha256 cellar: :any,                 monterey:       "0962f79e3daee5d68da1f9386d4bed0b801a3cdbfc3cb64cbdfe36b73693eb27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aae1a977dd567c516a8006cb94eb17b1b7def9ae8a77af82bf4072285fba3b8"
   end
 
   depends_on "cmake" => :build

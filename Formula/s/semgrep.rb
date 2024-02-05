@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.58.0",
-      revision: "43b5d39f7c965bbe75ab83d474d3d76fc26b52ff"
+      tag:      "v1.59.1",
+      revision: "16f6e92bb512558496b05c1b695e482245876fc0"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c42d7205d9799436681996364a6ba5815e4b79da911452c465da288db3bde1aa"
-    sha256 cellar: :any, arm64_ventura:  "8662ec04229c234b7841596e3712b5757ee71e8a5b149e3a37e9ebab8ffb89d5"
-    sha256 cellar: :any, arm64_monterey: "3c2a90b42b90c88f1988bc52ee51c78da7d277c960836e610d63491ad8d7d044"
-    sha256 cellar: :any, sonoma:         "c9710192fe69677bbcd6a7661c8b9de4ee7282b4f3df50ef0149706d3584d43a"
-    sha256 cellar: :any, ventura:        "32829ec4af6303a0534e402881fd9d670bcb5a82792921a8422eba492dcce3ba"
-    sha256 cellar: :any, monterey:       "330adb109f01e5e0a8cae0ce0c9c10199c66de56c547ebd89ac8ddeb3f42828e"
-    sha256               x86_64_linux:   "f52431978dca0d6e9d270aad16e30364ee322f23726017c79bfc2a45ac9eb2fd"
+    sha256 cellar: :any, arm64_sonoma:   "30768463d9d391bea33efff37012e6b62ad824144043ce85bf5048c2ef7c0ad4"
+    sha256 cellar: :any, arm64_ventura:  "535a98d50146bfe862bbd67fec5a3f0cca894a1bda307a63e03d1e9ec74ed902"
+    sha256 cellar: :any, arm64_monterey: "067083eb9a9c2911ab6fc04d5fa040b0649034742e05c548a67adb306e2c71db"
+    sha256 cellar: :any, sonoma:         "b42faa75988a5c2b8121980217dfc980a52166004d3ff36690d0b3efe334f712"
+    sha256 cellar: :any, ventura:        "4385eedb6c49c78ab71f887bf9a2d80a27960023467068eb42989b7cb52a68c9"
+    sha256 cellar: :any, monterey:       "355e8f83549cdbd95653fe78af9e930fe31697e3be3a5f4fb0170279db36041a"
+    sha256               x86_64_linux:   "b9bab244da3b6fe91058327dd9880b705146695b9de46aff7c009f4138a296e3"
   end
 
   depends_on "autoconf" => :build
@@ -129,8 +129,8 @@ class Semgrep < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages81ce910573eca7b1a1c6358b0dc0774ce1eeb81f4c98d4ee371f1c85f22040a1referencing-0.32.1.tar.gz"
-    sha256 "3c57da0513e9563eb7e203ebe9bb3a1b509b042016433bd1e45a2853466c3dd3"
+    url "https:files.pythonhosted.orgpackages21c5b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9areferencing-0.33.0.tar.gz"
+    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
   end
 
   resource "requests" do
@@ -164,8 +164,8 @@ class Semgrep < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages36dda6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+    url "https:files.pythonhosted.orgpackagese2ccabf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9urllib3-2.2.0.tar.gz"
+    sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
   end
 
   resource "wcmatch" do

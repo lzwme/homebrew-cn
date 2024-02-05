@@ -4,7 +4,7 @@ cask "quicklook-pfm" do
 
   url "https:github.comlnxbilquicklook-pfmreleasesdownload#{version}quicklook-pfm-#{version}.zip"
   name "quicklook-pfm"
-  desc "QuickLook plugin for PPM, PGM, PFM and PBM files"
+  desc "Quick Look plugin for PPM, PGM, PFM and PBM files"
   homepage "https:github.comlnxbilquicklook-pfm"
 
   livecheck do

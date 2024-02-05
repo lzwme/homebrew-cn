@@ -4,7 +4,7 @@ cask "inloop-qlplayground" do
 
   url "https:github.cominloopqlplaygroundreleasesdownloadv#{version}inloop-qlplayground.v#{version}.zip"
   name "INLOOPX QLPlayground"
-  desc "QuickLook generator for Xcode Playgrounds"
+  desc "Quick Look generator for Xcode Playgrounds"
   homepage "https:github.cominloopqlplayground"
 
   qlplugin "inloop-qlplayground.qlgenerator"

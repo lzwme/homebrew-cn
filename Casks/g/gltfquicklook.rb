@@ -4,7 +4,7 @@ cask "gltfquicklook" do
 
   url "https:github.commagicienGLTFQuickLookreleasesdownloadv#{version}GLTFQuickLook_v#{version}.zip"
   name "GLTFQuickLook"
-  desc "QuickLook plugin for glTF files"
+  desc "Quick Look plugin for glTF files"
   homepage "https:github.commagicienGLTFQuickLook"
 
   qlplugin "GLTFQuickLook.qlgenerator"

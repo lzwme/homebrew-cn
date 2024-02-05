@@ -46,7 +46,7 @@ class PhoronixTestSuite < Formula
     require "pty"
     output = ""
     PTY.spawn(bin"phoronix-test-suite", "version") do |r, _w, pid|
-      sleep 2
+      sleep 5
       Process.kill "TERM", pid
       begin
         r.each_line { |line| output += line }

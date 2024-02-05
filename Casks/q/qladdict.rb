@@ -4,7 +4,7 @@ cask "qladdict" do
 
   url "https:github.comtattaliQLAddictreleasesdownload#{version}QLAddict.qlgenerator.#{version}.zip"
   name "QLAddict"
-  desc "QuickLook plugin for subtitle (.srt) files"
+  desc "Quick Look plugin for subtitle (.srt) files"
   homepage "https:github.comtattaliQLAddict"
 
   qlplugin "QLAddict.qlgenerator"

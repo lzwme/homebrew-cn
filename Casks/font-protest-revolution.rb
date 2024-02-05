@@ -2,9 +2,10 @@ cask "font-protest-revolution" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflprotestrevolutionProtestRevolution-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflprotestrevolutionProtestRevolution-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Protest Revolution"
-  homepage "https:github.comoctaviopardoProtest"
+  homepage "https:fonts.google.comspecimenProtest+Revolution"
 
   font "ProtestRevolution-Regular.ttf"
 

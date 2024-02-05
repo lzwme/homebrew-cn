@@ -5,7 +5,7 @@ cask "webpquicklook" do
   url "https:raw.githubusercontent.comeminWebPQuickLookmasterWebpQuickLook.tar.gz",
       verified: "raw.githubusercontent.comeminWebPQuickLook"
   name "WebPQuickLook"
-  desc "QuickLook plugin for webp files"
+  desc "Quick Look plugin for webp files"
   homepage "https:github.comeminWebPQuickLook"
 
   livecheck do

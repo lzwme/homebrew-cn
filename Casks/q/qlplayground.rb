@@ -4,7 +4,7 @@ cask "qlplayground" do
 
   url "https:github.comnorio-nomuraqlplaygroundreleasesdownload#{version}qlplayground.qlgenerator-#{version}.zip"
   name "qlplayground"
-  desc "QuickLook plugin for Swift files"
+  desc "Quick Look plugin for Swift files"
   homepage "https:github.comnorio-nomuraqlplayground"
 
   qlplugin "qlplayground.qlgenerator"

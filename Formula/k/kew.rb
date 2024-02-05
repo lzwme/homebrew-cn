@@ -1,13 +1,13 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https:github.comravacholkew"
-  url "https:github.comravacholkewarchiverefstagsv2.2.tar.gz"
-  sha256 "7025b467c9b015244c78b82acd3d680aee8325706c76d20645e10b2e261768b6"
+  url "https:github.comravacholkewarchiverefstagsv2.2.1.tar.gz"
+  sha256 "9a64d790a9d88610464d515e09a1dc84ce263584c2421f1538d27ccf5f2ed46e"
   license "GPL-2.0-only"
   head "https:github.comravacholkew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d31c8e3f2f3678f1932aa037df1b11cdfe9b412c3b532b61565aced8a9d21d9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7eaec951596dbab092104e39cf29bd1aec4fc7e2a08cecb866f5891bb9a0207"
   end
 
   depends_on "pkg-config" => :build

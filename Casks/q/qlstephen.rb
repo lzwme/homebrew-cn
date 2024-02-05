@@ -5,7 +5,7 @@ cask "qlstephen" do
   url "https:github.comwhomwahqlstephenreleasesdownload#{version}QLStephen.qlgenerator.#{version}.zip",
       verified: "github.comwhomwahqlstephen"
   name "QLStephen"
-  desc "QuickLook plugin for plaintext files without an extension"
+  desc "Quick Look plugin for plaintext files without an extension"
   homepage "https:whomwah.github.ioqlstephen"
 
   qlplugin "QLStephen.qlgenerator"

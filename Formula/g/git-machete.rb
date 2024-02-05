@@ -1,18 +1,18 @@
 class GitMachete < Formula
   desc "Git repository organizer & rebase workflow automation tool"
   homepage "https:github.comVirtusLabgit-machete"
-  url "https:pypi.orgpackagessourceggit-machetegit-machete-3.22.0.tar.gz"
-  sha256 "6eb9c6a861267c0811e2c8c977c53a1ca16f7d6edf9133d472be68d48c25559c"
+  url "https:pypi.orgpackagessourceggit-machetegit-machete-3.23.0.tar.gz"
+  sha256 "7add05fb46913e263a0d68c98a9108c077108b8910364474d33f2dd8d432cbdb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a533cde09c359e40a5cf3723779cd427408fa7115dd8c2a37d3d75a55c9aef3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4991da2baae3d92b43c33c81adb2c4cb57e742a42ff359e3e7e28c8610c9fe50"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "521230b04355cc8dab646a534b2a763dc8ab6cbbff328ab97daa0dca84fad849"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eabf1bcb5238812e6989001867f6461204f4243fece6cd9f0f1d2143f3780dda"
-    sha256 cellar: :any_skip_relocation, ventura:        "0896e72a25167586f9f0c5515281dbf98b910921e8cc80a4583d12ad25bf8224"
-    sha256 cellar: :any_skip_relocation, monterey:       "049880c686b492d365852164963ca9a0d1e57788c58ce562ec42e3d37cce53c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f156fc3d67a401b846511c12f5d55d0bdfc02dc45eaaf48d7c4a5b9b0fbe0b5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c18305105c62d82bd8dafb6c9f69d325ddec992a826d346fe58e297c810869ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e07dcb9b33033186ea74fde1d10c412b1979b79fcbd70553faf897fee0a6c111"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3aed6f8c54e6eb3ab6f9b8f106e27a7e7a5eedc9e395fb6aed0ce6f011b3508a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f5ea1d36a7ff00c4939aa9a9d1b1b0e1952dbb7ae80035b403c86a3b100b1a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "a78c52d244bc2b07ab616ec3405bbf1794b8d14d366bb4e8a263f0c76286f9ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "86233095777a0dd609f0759c8241f32f250f295e89dc4ac4614af1183783d4dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6adaad5206fc74eb06ac17a6120e756655511349dc59d0be593a955806d35881"
   end
 
   depends_on "python-setuptools" => :build

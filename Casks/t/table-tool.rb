@@ -11,7 +11,7 @@ cask "table-tool" do
 
   zap trash: [
     "~LibraryApplication Scriptsat.eggerapps.tabletool",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsat.eggerapps.tabletool.sfl2",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsat.eggerapps.tabletool.sfl*",
     "~LibraryContainersat.eggerapps.tabletool",
   ]
 end

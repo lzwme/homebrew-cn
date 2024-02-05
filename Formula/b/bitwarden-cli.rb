@@ -8,13 +8,14 @@ class BitwardenCli < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "632183d1394369bda56f0ffbd17ac711c83c59f8b11a9eb967d1b9dff16f0fc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0b1bf8834f59fbcc1e3c966bd5efd0a128279ec2eca6c3430c30b6c509e65ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "624e6799ca3810598917b2a6fbe353ca26cd3aeee156b753b47a2bc5c5bfe2d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "15dea1d9862cd64c63166de5d8fde457c39c1d65c11232ea607787dfb8aff901"
-    sha256 cellar: :any_skip_relocation, ventura:        "b18cbe7f6c722403da16262068f6fa71391ed73ac505aa5e40488882cfafb728"
-    sha256 cellar: :any_skip_relocation, monterey:       "88ecc43634b6ae94d9e9280a62ad76c1713228154e252cacd9d49b4a22b42ae6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc34d399b34eeab88ae3d6dcfb096ec54c966d70463be2e2ca32d616ac558c08"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d1e4d72898a43d9492c4ca1f4fb6c23f94a85afae7ff0a649f1fd88ad6f33be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e88154fc05f0266ea7798821fb6d609f11bbf361aaa5820da2bfb6153957e841"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd9f661e229d0521e2b84a19c84c26b5d8750f2b125066a3293a68475351b9ff"
+    sha256 cellar: :any_skip_relocation, sonoma:         "87b729cdccf5c17e104b09aaa84ff1bb7e141a5057db6b9374ec65d58eed24ef"
+    sha256 cellar: :any_skip_relocation, ventura:        "46d8a2cfde6e9100b1dd9d2a30d2163e844cb7af83b05eb9b85b8d3a6cce46fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "82d0be8638adf477ec4ce784f36ccad2bcf29ea7eff423e9cdc7578bbe04bd40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "041a10ed22d81ef614ce9f134789881d2714bdd160dacfeb91d2ca2e99dff290"
   end
 
   depends_on "node"
@@ -23,7 +24,10 @@ class BitwardenCli < Formula
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir[libexec/"bin/*"]
 
-    generate_completions_from_executable(bin/"bw", "completion", shell_parameter_format: :arg, shells: [:zsh])
+    generate_completions_from_executable(
+      bin/"bw", "completion",
+      base_name: "bw", shell_parameter_format: :arg, shells: [:zsh]
+    )
   end
 
   test do

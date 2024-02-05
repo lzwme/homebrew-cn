@@ -17,7 +17,7 @@ cask "asset-catalog-tinkerer" do
   app "Asset Catalog Tinkerer.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsbr.com.guilhermerambo.asset-catalog-tinkerer.sfl2",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsbr.com.guilhermerambo.asset-catalog-tinkerer.sfl*",
     "~LibraryPreferencesbr.com.guilhermerambo.Asset-Catalog-Tinkerer.plist",
   ]
 end

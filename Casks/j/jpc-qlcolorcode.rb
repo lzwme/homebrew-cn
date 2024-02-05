@@ -4,7 +4,7 @@ cask "jpc-qlcolorcode" do
 
   url "https:github.comjpcQLColorCodereleasesdownloadrelease-#{version}QLColorCode-#{version}.zip"
   name "QLColorCode"
-  desc "QuickLook plug-in that renders source code with syntax highlighting"
+  desc "Quick Look plug-in that renders source code with syntax highlighting"
   homepage "https:github.comjpcQLColorCode"
 
   depends_on macos: ">= :mojave"

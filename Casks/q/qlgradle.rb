@@ -4,7 +4,7 @@ cask "qlgradle" do
 
   url "https:github.comUrucasQLGradlereleasesdownload#{version}QLGradle.qlgenerator.zip"
   name "qlgradle"
-  desc "QuickLook plugin for viewing gradle files"
+  desc "Quick Look plugin for viewing gradle files"
   homepage "https:github.comUrucasQLGradle"
 
   qlplugin "QLGradle.qlgenerator"

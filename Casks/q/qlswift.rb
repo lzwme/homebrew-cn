@@ -4,7 +4,7 @@ cask "qlswift" do
 
   url "https:github.comlexrusQLSwiftreleasesdownload#{version}QLSwift.qlgenerator.zip"
   name "QLSwift"
-  desc "QuickLook plugin for Swift files"
+  desc "Quick Look plugin for Swift files"
   homepage "https:github.comlexrusQLSwift"
 
   qlplugin "QLSwift.qlgenerator"

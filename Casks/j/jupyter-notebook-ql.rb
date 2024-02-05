@@ -4,7 +4,7 @@ cask "jupyter-notebook-ql" do
 
   url "https:github.comjendas1jupyter-notebook-quick-lookreleasesdownloadv#{version}jupyter-notebook-quick-look.qlgenerator.zip"
   name "Jupyter Notebook Quick Look"
-  desc "QuickLook plugin for Jupyter notebooks"
+  desc "Quick Look plugin for Jupyter notebooks"
   homepage "https:github.comjendas1jupyter-notebook-quick-look"
 
   qlplugin "jupyter-notebook-quick-look.qlgenerator"

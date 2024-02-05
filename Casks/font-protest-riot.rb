@@ -2,9 +2,10 @@ cask "font-protest-riot" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflprotestriotProtestRiot-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflprotestriotProtestRiot-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Protest Riot"
-  homepage "https:github.comoctaviopardoProtest"
+  homepage "https:fonts.google.comspecimenProtest+Riot"
 
   font "ProtestRiot-Regular.ttf"
 

@@ -1,19 +1,19 @@
 class GatewayGo < Formula
   desc "GateWay Client for OpenIoTHub"
   homepage "https:github.comOpenIoTHub"
-  url "https:github.comOpenIoTHubgateway-goarchiverefstagsv0.2.4.tar.gz"
-  sha256 "fc0cacaf0b64da767d3119ecf4ac4a7b7a5e05150306a1cdbf0222d4b6d20028"
+  url "https:github.comOpenIoTHubgateway-goarchiverefstagsv0.2.5.tar.gz"
+  sha256 "158ec834b4075ec692ac9a761f196f62df7ff2a7d6993eb91d532e89937c1f00"
   license "MIT"
   head "https:github.comOpenIoTHubgateway-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b00930a3fd95993c394719edf3417e1316524b98241b03c248566c8a515fcd70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0188d1c6a7bd66ce1e3ffe631c7806fcd7cf8caf23d22689ac0a49dd5c348b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d765efb4a8d176c3f2982e6911b97063b0661e50f930eaf4a007bb9e8d7a5c7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dbefe4a08af43df27c26cf234425e3554a3c21465c7214110f09f36bb8d843c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c91660516510681c9d5825633b6e4eb204f71b5b403a9e155fec727613c8ee6"
-    sha256 cellar: :any_skip_relocation, monterey:       "76e80151a68401a737e729883fd41c895b7fa782c21526d9bde29df2ddf4c314"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cd5ff76a98d8fc24809758cd56475482c2418f9e09c242e4e5e8ed4e64908f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22a44eb5a97053772ffbc66ad2635f480c671a8c647e6544456a4916d613e3f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "477ecbda042fed5fbd467155825740785d0524a5d49778f8daed3d58d311f166"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9aea14d16b8696c5388d97ff2fc68746397cc39ac5c0a221581dc1df758680c2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe9626d7bf272acca18f948668f7fb09226e5445d476526a1b1ca241ea7415c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "76643d57dd40eedad61baa58ca602bc23368f3d827a0b0d3b9ec8c0a4b203768"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ef885f803e39ea93f5114696429cdb7103abd4ae92f50787449cfc6d724b8ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c28aef6e68b72ab06ccadee031ecf2a7799c26c5ff753f583a2b3c3d7061b7a"
   end
 
   depends_on "go" => :build

@@ -4,7 +4,7 @@ cask "quickjson" do
 
   url "https:github.comjohanQuickJSONreleasesdownloadv#{version}QuickJSON.qlgenerator.zip"
   name "QuickJSON"
-  desc "QuickLook plugin to pretty-print JSON"
+  desc "Quick Look plugin to pretty-print JSON"
   homepage "https:github.comjohanQuickJSON"
 
   qlplugin "QuickJSON.qlgenerator"

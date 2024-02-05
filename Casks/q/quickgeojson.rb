@@ -4,7 +4,7 @@ cask "quickgeojson" do
 
   url "https:github.comireesquickgeojsonreleasesdownloadv#{version}quickgeojson.qlgenerator.zip"
   name "quickgeojson"
-  desc "QuickLook plugin for GeoJSON and TopoJSON"
+  desc "Quick Look plugin for GeoJSON and TopoJSON"
   homepage "https:github.comireesquickgeojson"
 
   qlplugin "quickgeojson.qlgenerator"

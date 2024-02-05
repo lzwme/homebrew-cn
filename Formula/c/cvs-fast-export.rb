@@ -1,8 +1,8 @@
 class CvsFastExport < Formula
   desc "Export an RCS or CVS history as a fast-import stream"
   homepage "http://www.catb.org/~esr/cvs-fast-export/"
-  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.63.tar.gz"
-  sha256 "61917641e6d66ef9ff37da4ba5c72e759b051f3a1c269ff73341b1f69edf4396"
+  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.64.tar.gz"
+  sha256 "c70ec229991d118412a1c243a3c8130c85367a294ffeb3136dff30bd88b685a5"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class CvsFastExport < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f18f636a3f1a142adb3f57a1c390dec9ef55b582bb72f136c44d307a5eaee79e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06eb09786d4a68ed650f3635c72cc14b5cca292878def1f217f654d90e6e3f5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dcd82128bc71f8e0fca49047d1be193722be7f4a28448dab7736b665af9bb6d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0fb5d208f4503898270d861b77f89f479abafc9256702d2e36b980dd84e0f5c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6bdfecdc68cc6bcc5e3460a3fe7e7b3c095bd750cf39c0d3b8ce5b930dd4faca"
-    sha256 cellar: :any_skip_relocation, monterey:       "7fc1af1e52ff399c6a40ad3788ae26631491f22c8408ed9961cad40aebe0e17b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "819b4c4e553d82e356af8da36d5951d69f1c96c804325d0f20bce8c698598728"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b5c0cfd5886c0aaaaf5767eab0a9c3711dc65078e04992f02f06ef84a57fc3c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6a45b13525f55c32d0836bff4412893aa675de7d60f17db068be8c9e0c1828e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cb503e7295bba683b4bdea6f2c2b16716e36c57b20bce90d7d229c742ee740d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "35fa0c88d45a315add0520107c76430a5b94db966f41648970cc6523494bd162"
+    sha256 cellar: :any_skip_relocation, ventura:        "c372e408f1a89aa0b5183969f3802e1baf2cb7b07065fb41ffd591a18d024a4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "3062b12d22818e5ca684ca10369a3ac7b6aae652b43a9e5ff4aac22450427a6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "752c4ea1d3ec85b3d6fc362be4c616a7c839b2016959ec27c5377afbd998d8bc"
   end
 
   head do
@@ -25,8 +25,7 @@ class CvsFastExport < Formula
     depends_on "bison" => :build
   end
 
-  depends_on "asciidoc" => :build
-  depends_on "docbook-xsl" => :build
+  depends_on "asciidoctor" => :build
   depends_on "cvs" => :test
 
   uses_from_macos "libxml2"

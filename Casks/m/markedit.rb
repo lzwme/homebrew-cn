@@ -19,7 +19,7 @@ cask "markedit" do
   zap trash: [
     "~LibraryApplication Scriptsapp.cyan.markedit",
     "~LibraryApplication Scriptsapp.cyan.markedit.preview-extension",
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsapp.cyan.markedit.sfl3",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsapp.cyan.markedit.sfl*",
     "~LibraryContainersapp.cyan.markedit",
     "~LibraryContainersapp.cyan.markedit.preview-extension",
     "~LibrarySaved Application Stateapp.cyan.markedit.savedState",
