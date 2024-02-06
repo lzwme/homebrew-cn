@@ -247,6 +247,7 @@ Homebrew-homebrew-core/Formula/a/asimov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asitop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ask-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/asmfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asn1c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asnmap.rb, Homebrew/homebrew-core, 1
@@ -1897,6 +1898,7 @@ Homebrew-homebrew-core/Formula/f/fx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fypp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/g-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g2o.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g3log.rb, Homebrew/homebrew-core, 1
@@ -2953,6 +2955,7 @@ Homebrew-homebrew-core/Formula/k/killport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/killswitch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kim-api.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kimwitu++.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kiota.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kitchen-completion.rb, Homebrew/homebrew-core, 1

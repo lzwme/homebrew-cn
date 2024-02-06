@@ -21,7 +21,6 @@ class LinodeCli < Formula
   depends_on "pygments"
   depends_on "python-certifi"
   depends_on "python-packaging"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "pyyaml"
 

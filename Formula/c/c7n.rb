@@ -24,7 +24,6 @@ class C7n < Formula
 
   depends_on "rust" => :build # for rpds-py
   depends_on "python-argcomplete"
-  depends_on "python-setuptools"
   depends_on "python-tabulate"
   depends_on "python@3.12"
   depends_on "pyyaml"
@@ -36,13 +35,13 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesb06b5a1aabd772b26537d7a347beec1318303f489fd75fbad57bf04057d64247boto3-1.34.22.tar.gz"
-    sha256 "a98c0b86f6044ff8314cc2361e1ef574d674318313ab5606ccb4a6651c7a3f8c"
+    url "https:files.pythonhosted.orgpackages50a0f332de5bc770ddbcbddc244a9ced5476ac2d105a14fbd867c62f702a73eeboto3-1.34.34.tar.gz"
+    sha256 "b2f321e20966f021ec800b7f2c01287a3dd04fc5965acdfbaa9c505a24ca45d1"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages0c9182c3c17bb22ebb6291d8dc5b07b88c55d5cc55eeaf2ddaf755aa802d8a85botocore-1.34.22.tar.gz"
-    sha256 "c47ba4286c576150d1b6ca6df69a87b5deff3d23bd84da8bcf8431ebac3c40ba"
+    url "https:files.pythonhosted.orgpackages1858b38387dda6dae1db663c716f7184a728941367d039830a073a30c3a28d3cbotocore-1.34.34.tar.gz"
+    sha256 "54093dc97372bb7683f5c61a279aa8240408abf3b2cc494ae82a9a90c1b784b5"
   end
 
   resource "docutils" do
@@ -61,8 +60,8 @@ class C7n < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages44cd1d325d358d856da96a7c6cfc2af486b70587dc4c70594aa2a9e6c2d279adjsonschema-4.21.0.tar.gz"
-    sha256 "3ba18e27f7491ea4a1b22edce00fb820eec968d397feb3f9cb61d5894bb38167"
+    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
+    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
   end
 
   resource "jsonschema-specifications" do

@@ -3,21 +3,21 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https:jupyter.org"
-  url "https:files.pythonhosted.orgpackages23b4cc3bdb1c0b4736e0081afdc1cda3444093d7a0b7f75b5ee64ae75225bac1jupyterlab-4.0.12.tar.gz"
-  sha256 "965d92efa82a538ed70ccb3968d9aabba788840da882e13d7b061780cdedc3b7"
+  url "https:files.pythonhosted.orgpackages31c6d60b787af86f8c4ed15b8f734153ecaceeef5dc137496d4e6c0ab889fc9djupyterlab-4.1.0.tar.gz"
+  sha256 "92cdfd86c53e163fb9e91e14497901153536c5a889c9225dade270f6107a077f"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a5ef61e66539986692ab1d4c40686195ef77b29c314eae76732a5075c597da61"
-    sha256 cellar: :any,                 arm64_ventura:  "791aa6f3904ddcf1bd6fc54ac5c7f0028509ea8db4c294e5be626a1ed4b658ff"
-    sha256 cellar: :any,                 arm64_monterey: "a1653e597e6847ea2538ab1487b9ec436c287d56d39e51519e8a50aa2cbd70cb"
-    sha256 cellar: :any,                 sonoma:         "313b5c9421a9c3ebf304434420c101118289c86e32e25629e03dacc4aed11791"
-    sha256 cellar: :any,                 ventura:        "3e49e6a8817cc26d97fa727b0fe661da738025b2fd01e7041743d3bc8e79a187"
-    sha256 cellar: :any,                 monterey:       "da4822b5729be16be0bf25b2cde23d46960d994c961115b98c3fbf95673fa27c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45682133a83d4149564bf1f1182278765118b197acc10f10de55e254897a508a"
+    sha256 cellar: :any,                 arm64_sonoma:   "32e0accb0b2f4fccb02c65155fb194f748bea56f22ec8fb93d5e967f2969ae1c"
+    sha256 cellar: :any,                 arm64_ventura:  "9afeeebb7b51c96fe3abf06e3fc317a752a4450de5c29419e5d7b6a3e0734758"
+    sha256 cellar: :any,                 arm64_monterey: "2f1e7692263b4c39fe663d972f10c140c8acde23252a0188a703a76627ad51d3"
+    sha256 cellar: :any,                 sonoma:         "742714be50ccd804de7d15b40e3caf3cae3668543c4de9e38c29aa294e7f83a5"
+    sha256 cellar: :any,                 ventura:        "38949fe67f5a73f9821ff08433f071ba882773a39a371b659165b297383279ef"
+    sha256 cellar: :any,                 monterey:       "0df45fbe5982cde1af284fd94dd1522e01a7ac406e3f2c86a8151c99d55de889"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4d363f89a63b8397afdcec6b0971c6d16c05d960f17f68cbfda7bee708770a"
   end
 
   depends_on "python-hatchling" => :build
@@ -120,6 +120,11 @@ class Jupyterlab < Formula
     sha256 "105ed3677e767fb5ca086a0c1f4bb66ebc3c100be518f0e0d755d9eae164d89f"
   end
 
+  resource "h11" do
+    url "https:files.pythonhosted.orgpackagesf5383af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03h11-0.14.0.tar.gz"
+    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+  end
+
   resource "hatch-jupyter-builder" do
     url "https:files.pythonhosted.orgpackagesb1b23c304707d4d3c30b2c87f1b8f8b2eb4a682662fea13bd5ab8f16c4c0eb0bhatch_jupyter_builder-0.8.3.tar.gz"
     sha256 "0dbd14a8aef6636764f88a8fd1fcc9a91921e5c50356e6aab251782f264ae960"
@@ -128,6 +133,16 @@ class Jupyterlab < Formula
   resource "hatch-nodejs-version" do
     url "https:files.pythonhosted.orgpackagesafb6c9406cfa9edf740c6b3de6173408a159228eac0cee80eead4a5b9cc88848hatch_nodejs_version-0.3.2.tar.gz"
     sha256 "8a7828d817b71e50bbbbb01c9bfc0b329657b7900c56846489b9c958de15b54c"
+  end
+
+  resource "httpcore" do
+    url "https:files.pythonhosted.orgpackages185678a38490b834fa0942cbe6d39bd8a7fd76316e8940319305a98d2b320366httpcore-1.0.2.tar.gz"
+    sha256 "9fc092e4799b26174648e54b74ed5f683132a464e95643b226e00c2ed2fa6535"
+  end
+
+  resource "httpx" do
+    url "https:files.pythonhosted.orgpackagesbd262dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06httpx-0.26.0.tar.gz"
+    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
   end
 
   resource "ipykernel" do

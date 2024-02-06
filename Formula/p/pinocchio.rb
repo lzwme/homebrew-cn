@@ -28,7 +28,6 @@ class Pinocchio < Formula
   depends_on "eigen"
   depends_on "eigenpy"
   depends_on "hpp-fcl"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
   depends_on "urdfdom"
 

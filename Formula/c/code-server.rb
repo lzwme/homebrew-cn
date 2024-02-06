@@ -3,18 +3,18 @@ require "languagenode"
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https:github.comcodercode-server"
-  url "https:registry.npmjs.orgcode-server-code-server-4.20.1.tgz"
-  sha256 "026c04ff810d67eeb622a7f61eef8d278267100ae3c3cf291430cd855f1f1169"
+  url "https:registry.npmjs.orgcode-server-code-server-4.21.0.tgz"
+  sha256 "9070d5e3f4cee9356f7376798de8c802549ec66d7638d27b78b4c26c23b278f2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6aaa2792e9b38f4efa31949dad0440f12fea49214ee70f34fcf30d8d134bd516"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "482be0f82e98e8c92d7f7cdcaba5a3da9265fae715a694a3473279412564275a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d358a8a38e7d52c9e0e10f9fb8fdd4d0d7982465655e72bed9ef85c3afa605f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "41322cad743378e5765a5f5ada6a3c776edf8cc9e140e4a761833a2ba982008b"
-    sha256 cellar: :any_skip_relocation, ventura:        "fca7028bb9207d5f3773861e77080496bd39ec0c1c5cec132bef6a9a51ba1114"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f1509e2ec325ebcc4a59f408fd843d4a18ed38d8ced38b55a8ad6d7f3e03534"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e01090b76821276a5e52e02cbe5d71ee184172eb9decc8c080148b3ecd4683b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11584bb9f1d9344c6f83bc88b224fe59afba91880da2690e7a9e184017e2cb0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33ad425b3a14aa6ddb359bb7bf62f2416d3751b88865fc3b9688806961b7860c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a6e3ee86710efe20ca7479089960e8c7b9317a3545e3cf5d5b071458c852bd5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "58d38829d44b340cb2938539dae2c8c06b5055412449bac70435dcdf7593a223"
+    sha256 cellar: :any_skip_relocation, ventura:        "c74cd490f72ea6de35a05f0af33be0e95d729df2224a86a580ff100c9fcd739d"
+    sha256 cellar: :any_skip_relocation, monterey:       "9beb7c81b150694ffb784ccb949e364d34032f887790e67f070d3d66b88c55c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af565bd851cb999db70562af4c13b980f2d3363030e547d56632f469920e7665"
   end
 
   depends_on "yarn" => :build
