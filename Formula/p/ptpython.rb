@@ -3,19 +3,19 @@ class Ptpython < Formula
 
   desc "Advanced Python REPL"
   homepage "https:github.comprompt-toolkitptpython"
-  url "https:files.pythonhosted.orgpackages6651a86ee34f068e71a12ba611b69f327545606b138042f5b2562d0992c2631dptpython-3.0.25.tar.gz"
-  sha256 "887f0a91a576bc26585a0dcec41cd03f004ac7c46a2c88576c87fc51d6c06cd7"
+  url "https:files.pythonhosted.orgpackages465656cdf93d1633cba2b16486aa27978893ab3791dae51b27068e09d08bd300ptpython-3.0.26.tar.gz"
+  sha256 "c8fb1406502dc349d99c57eaf06e7116f3b2deac94f02f342bae68708909f743"
   license "BSD-3-Clause"
   head "https:github.comprompt-toolkitptpython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04b14d3a1b599721dc41360f375c5029059d8a08242d16a3495249a03c8726fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfddce9f859b9b47ebbcd9d30326e64888a2f3a4b248c6a6cb834369edc81d6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f49614db1e7efe490e6fd8ffec1ca37f664ae56abf47094f77f3ca258f671431"
-    sha256 cellar: :any_skip_relocation, sonoma:         "679cff5d2226e7dfc593a3607ab9ba692308e4ddcc50fae06a6ed7dedc498a04"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4a06bef4a18845e85af099a63e976b3971b4c1ddb17a89535963d7de8c7607f"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d944463f583bd7752e5b62fd1da986a83eae3c74882fcdcba0b81432e30067c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fca01b24dbecbaa86d9402ca633bdca179d9e24af665fd034b0872186414d7fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb81ad8548341be8ff14332498535f3a34eab3e20bb07d401137f8fd958e81d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "103f3a8eb9598c75c46115d05c8bbd661918cb8ae86ac306353dacb7077d5be6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8124a8d57590310412efbb1feb709f8c4ea263f0a6d6965530509237e77bec4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ac6947d443a2e9098eadc39481a908ed1c62865f060e505a1e8a86ccda712ea"
+    sha256 cellar: :any_skip_relocation, ventura:        "f25b88be7855c8f6bed371c7a0cc909ce55fe22b9e0e966bdb5f18f5c1f3a866"
+    sha256 cellar: :any_skip_relocation, monterey:       "0c77cef9d5536f7f8d7b79b805bca4531274778fe3a91a6b2739514fd4f0c6d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3d170df21e2c087835c297b7ad04d90161a840918ae2c9f8dd2a4413a2ccef2"
   end
 
   depends_on "pygments"
@@ -42,8 +42,8 @@ class Ptpython < Formula
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackagesd71263deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24wcwidth-0.2.12.tar.gz"
-    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
+    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install

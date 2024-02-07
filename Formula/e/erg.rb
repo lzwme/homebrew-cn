@@ -1,18 +1,18 @@
 class Erg < Formula
   desc "Statically typed language that can deeply improve the Python ecosystem"
   homepage "https:github.comerg-langerg"
-  url "https:github.comerg-langergarchiverefstagsv0.6.29.tar.gz"
-  sha256 "3e974c332a089ab6202d04c4d9de1f3f796baf344c3cd5cf19410241a70d3e6d"
+  url "https:github.comerg-langergarchiverefstagsv0.6.30.tar.gz"
+  sha256 "13e103513eb15612855af89964bf6950e5644b0d9d576ea42cd9f2f64bb93e16"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20719f4808076d23b853a8706347e7dca42fb38ca9cdcc0df6d8a0123357bb55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40e9cf176cf7f97beb30c3ab13096c2c635fbecb362c1620e3c86a68405f413c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9947a2e1432d7c36d57b2facc61d855eba4c15531a631d16ac256c088266030f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a92df101e76d270c5dc61014066628825fc2ee67fbb1ffcd53b532a5dbbd648d"
-    sha256 cellar: :any_skip_relocation, ventura:        "33b4b2b2927ca8216fe965ece69d6cc43432b1fe73f50c47702b59be552329c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "79609c84d6613aa69e959e93ccf6a588e81851dc16e57da6e93c3f4699143505"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a7577e27ff9fd319d74ccc3618c2e656186fd68a46fd6cf44f1aac4e6a26256"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54ad338b40f1a74943f4e9428511563a9569917d2399e7f35b1b50530e43fb55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3dcf52e9dd65019d0ee233c5640d86d0578e9db34d512e6d85aa81dace0bea3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4e182ab4cc0b4717212a18ccbe9b95d5ea2cba181e212a465931540c4aaa526"
+    sha256 cellar: :any_skip_relocation, sonoma:         "16f786cbc8c1cdfb89c0df6b2b5afc351692e4cc69927f72a8af64b9fdedff7a"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c7596246154835e9da7b14f9dc27ecab786ea60fb94dcd4b5db425ce370306c"
+    sha256 cellar: :any_skip_relocation, monterey:       "3fd763180cc4341097f446bf899909807450c0afd9f39e709584924dd809e15d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6427e907f57bcccf1f3830aabaca2e36c3cc48359c2ee6a712baf1bbeb4dbbed"
   end
 
   depends_on "rust" => :build

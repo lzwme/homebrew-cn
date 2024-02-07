@@ -5,6 +5,15 @@ class HelmDocs < Formula
   sha256 "218ac8b089ab3966853bdbecd43e165ede3932865f0fb2f15c4197eb969c6540"
   license "GPL-3.0-or-later"
 
+  # This repository originally used a date-based version format like `19.0110`
+  # (from 2019-01-10) instead of the newer `v1.2.3` format. The regex below
+  # avoids tags using the older version format, as they will be treated as
+  # newer until version 20.x.
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d{1,3})(?:\.\d)*)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62b308b6476acd46baedd295954629f738926b9866256fad0ffc64594589f10a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3ab6a34cc3ba68caffaa8b60d55a7a5c630813ce38bab1d7a29b130005309d61"

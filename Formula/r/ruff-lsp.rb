@@ -3,18 +3,18 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https:github.comastral-shruff-lsp"
-  url "https:files.pythonhosted.orgpackagescee2eb9b7d3ab17b0192f606faf67a69826dfb755e9ab97697e7dcaf952a50dbruff_lsp-0.0.51.tar.gz"
-  sha256 "6411486a0c304d44153c09dca2636d84c692d206799ee61c4942981d2c503eb5"
+  url "https:files.pythonhosted.orgpackages8a8273fcdc5b374839ca50bb10e98f9f6b05f4a42ac398250825165b93c833eeruff_lsp-0.0.52.tar.gz"
+  sha256 "3861c8fb81db005d51c0c15939fae05a6488182847bad936e1cc95bad519d107"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c974f3f13c993587f21df2a2566ae4b1d47e0ee24c1d99896ed43a5ab2ea8a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c88a6ae916be2fe25d027ac4ff5c5ef3d811bee65e689b4818c7733f7c308d0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35c40381d0f85ba2a945d6e2f0864f466970b91d8bd8bd1a31ca3dc9a0865ab8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c647f9d974e4267fcef00da3cc4d8646e4e98b1734f35582a46ebe1bc232a110"
-    sha256 cellar: :any_skip_relocation, ventura:        "94b45d054cf38ec045ce148a9b2bb7e92a1acaba91941541e3481bbda3112d25"
-    sha256 cellar: :any_skip_relocation, monterey:       "acfe4810026ad3df10409a1d5171957deaabc53a88ae825b6478778c7394febe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dd02467f5b1bee86f8e71fff5c92941276459e387a0d11a70e9d27634db8164"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50fdb8dda0e9b518f71756d54341c506245747e668aad75bdb2987a4c0f7a86d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62c8a0ea78396d8b7a9e4eef8d74b010562a15c5e0085ba126d49ffbb09fb91a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8208f32992211f4dc0f70597d82649bc6623a5e02e8a022812aaa1f18ab257f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e99ac0774722b1b9d0ba95f4de10c0bb19d468278a2f8b3bca4933a367a13026"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc6b63185031b7877d6491e09c3198912619e9685283da7e0e94b8ce7059a693"
+    sha256 cellar: :any_skip_relocation, monterey:       "85152e6c9a07ae871c469de2ad7ccad868e9f6eeec6c7d8352300ffd56336117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2444309d1bad8bac62f529bc871d4d8c99a12284a91a393e32d5125e1479fafa"
   end
 
   depends_on "python-packaging"

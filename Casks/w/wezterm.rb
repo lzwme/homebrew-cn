@@ -19,7 +19,6 @@ cask "wezterm" do
   conflicts_with cask: "homebrewcask-versionswezterm-nightly"
 
   app "WezTerm.app"
-
   %w[
     wezterm
     wezterm-gui
@@ -28,6 +27,13 @@ cask "wezterm" do
   ].each do |tool|
     binary "#{appdir}WezTerm.appContentsMacOS#{tool}"
   end
+
+  binary "WezTerm.appContentsResourcesshell-completionzsh",
+         target: "#{HOMEBREW_PREFIX}sharezshsite-functions_wezterm"
+  binary "WezTerm.appContentsResourcesshell-completionbash",
+         target: "#{HOMEBREW_PREFIX}etcbash_completion.dwezterm"
+  binary "WezTerm.appContentsResourcesshell-completionfish",
+         target: "#{HOMEBREW_PREFIX}sharefishvendor_completions.dwezterm.fish"
 
   preflight do
     # Move "WezTerm-macos-#{version}WezTerm.app" out of the subfolder

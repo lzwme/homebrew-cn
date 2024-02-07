@@ -1,20 +1,19 @@
 class Yamllint < Formula
   desc "Linter for YAML files"
   homepage "https:github.comadrienvergeyamllint"
-  url "https:files.pythonhosted.orgpackagesfd98ec541c8dff395b9e441d46ab678c9a0f00f5ca479f070a6ced3b425cce79yamllint-1.33.0.tar.gz"
-  sha256 "2dceab9ef2d99518a2fcf4ffc964d44250ac4459be1ba3ca315118e4a1a81f7d"
+  url "https:files.pythonhosted.orgpackages911c9e9c7be901a58c82ab437e3e36f0dd0f5ed76687b1ddff9a9519d7c5875dyamllint-1.34.0.tar.gz"
+  sha256 "7f0a6a41e8aab3904878da4ae34b6248b6bc74634e0d3a90f0fb2d7e723a3d4f"
   license "GPL-3.0-or-later"
   head "https:github.comadrienvergeyamllint.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9620b829fbf98a7654d999de4ca8b03cec9449b06a9666fe51df0f1d2a5c24e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c02c3420ccc0cfbda0e0fb860d387dee3571e45e0f765414e72a68cc7af7eabd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5751e0a610ca6f2e70d9e44a2acbb2af5cc5f023990a2f8fddfd14ba91d5fed3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb72bf9791b3dc9f1c8e04530d71a56542fd8fade5b21c28d79b6b1dffc56ee7"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b93aae189674bb20b0e8a3cff2e55d1cd54e077e6e827493b3d791df10e0c5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcf55a5d187b656fb4f7809f19bf1b5e8c3afdd64b0aa779a6a34d5db4caa53f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0973a341664899738f453926ad4eb6013be85dc40f8cdbefa6b95650525ab2f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2c7af04cad22bf7774b178d359194640840e0120b085f1ff9357dbfeb869c52"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3fa38fc60cb71ac91560aea632134c104520e0f01a06abbd20364211ae1a989"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "accbbf0eb1134eeceb373cc9bb09052c3a1f28806aa89de212b95ab5c24e6ea9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6caee252f7d4768297704a7378f517d53608352aef512fa6da8b0dddd43d20a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "dbbe3c4287f505126715bbf5f36dc98b22d6a6136724fc95f9154fa1578c877a"
+    sha256 cellar: :any_skip_relocation, monterey:       "6416777b4fc9e8f1e1ebabc9284778918554ad8792f894b322d10ad57ca7acb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1fe6d3f1bf98b489c8d89000d0f69c091ee5d76c3ec46d09d375628368d1a00"
   end
 
   depends_on "python-setuptools" => :build
