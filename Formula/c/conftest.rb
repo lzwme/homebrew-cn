@@ -1,19 +1,19 @@
 class Conftest < Formula
   desc "Test your configuration files using Open Policy Agent"
   homepage "https:www.conftest.dev"
-  url "https:github.comopen-policy-agentconftestarchiverefstagsv0.49.0.tar.gz"
-  sha256 "de076ad500d4f78f7f5501b116bf225cd417e7b910f742cb9ca0c3c6e4ecf3bc"
+  url "https:github.comopen-policy-agentconftestarchiverefstagsv0.49.1.tar.gz"
+  sha256 "d032a60a1011bb76414c61bd1875017b5fa0fd1c625f171acc29b385fdaf92ea"
   license "Apache-2.0"
   head "https:github.comopen-policy-agentconftest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a3741edd2e132314f663912851e9eca592cb276770f241d57623c21758940fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28760520a3ef6736db2e745ebd94e58880045b6442b75527778abcc8976fd6b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dd1d8c59dd502791e5e8c000faebfb228c5ffc5798054e775b947d2977f7c74"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1fbd67fdeccc2ce54e5c2b4e7020e6bee0668c463c44db75a900492763a2ca8e"
-    sha256 cellar: :any_skip_relocation, ventura:        "779d58625adf3332b6712f07d5a6e708cbda454182d2ac5b243c849d6b9d840f"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7a80d7cbc92a440f16608a71c6da3c121302fdc6a3e07aa265869e7f4b8a25e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be6467c7e3962e02512b841e73c82c1fbcd034e945ec607516ef29961533bed0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2c03ffb8d912de7de1cb31fd5dd3165a0d8d6d349356347a27df9d6dc6fa57a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b08f2da2b7ce6601e54a8fb1558a0135eee4f6cf739b5a639988bc38f7270a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2759ad389dc831bc1f4cd23aaae763fb28ee1a8ca265fc3564fa7cf0bc715341"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1836c99f3b1699cde36a8c7bf292b13fbef70f8a284eab6f24bad4df2625c781"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ec5419859dc802a3fa9efc53d3d297a8d53664dc0ae9a6a45fee74fe06bf92a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e70e20161ba78c6153b0fbbcae59445b48675ce7ccfe4d588ebda94a5997a870"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ad3589f92387e36c2a057b9a16753e362632ef8bdb2b2b2c2a4db6af46a54a0"
   end
 
   depends_on "go" => :build

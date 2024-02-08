@@ -739,6 +739,7 @@ Homebrew-homebrew-core/Formula/c/cdrtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdsclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdxgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cedille.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cekit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/celero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/censys.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/center-im.rb, Homebrew/homebrew-core, 1
@@ -6097,7 +6098,6 @@ Homebrew-homebrew-core/Formula/t/tasksh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskwarrior-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tass64.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tbb.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tbb@2020.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tbls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tcc.rb, Homebrew/homebrew-core, 0
@@ -12526,6 +12526,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-merienda.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-merriweather-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-merriweather.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-mervale-script.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-meslo-for-powerlevel10k.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-meslo-for-powerline.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-meslo-lg-dz.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-meslo-lg-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1

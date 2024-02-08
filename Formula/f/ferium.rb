@@ -1,19 +1,19 @@
 class Ferium < Formula
   desc "Fast and multi-source CLI program for managing Minecraft mods and modpacks"
   homepage "https:github.comgorilla-devsferium"
-  url "https:github.comgorilla-devsferiumarchiverefstagsv4.5.0.tar.gz"
-  sha256 "c9b54673a494cecabfc62a48d03d504b6fea00af1b749c3ccb210021f8528bf0"
+  url "https:github.comgorilla-devsferiumarchiverefstagsv4.5.1.tar.gz"
+  sha256 "b337f0a5884f1e1f6786417914e052ca08fea7e946e6977ccb68abe4fbcf09ee"
   license "MPL-2.0"
   head "https:github.comgorilla-devsferium.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82e25ab023a5100d439ce6e744d28bea10f1d87a0a37428f77685dd93f187f27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fa5ed7e9eff088c02182dbec1c6a5168b7870a10f352ac01586eb550943dbd0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "728f20dca41ef1302d295dfc1838bf1cbd4591517e3e9eba225fd21e3b79da4e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c8ecc9751bacce526e50eef44ab0c5c715f40e23773025374cb32c8162a3bcd"
-    sha256 cellar: :any_skip_relocation, ventura:        "f0eebff80a3750bf9e4cdcb3a8f6b47102c5373e3cea132144edf5791ce88054"
-    sha256 cellar: :any_skip_relocation, monterey:       "9936706af64f2edd609af3872672eb1611d22e635e02c10d1ccb07de77867141"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c873cbcd04214961432292139efff05d7f229b877f14bec93f8cfaeb29b3b95b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33e0f53ab4851ef6fffbf59dcaa5c721f2f8f8453353f69515768d01a119eb3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f419bebfe6434c81dd32274d229474e2eaf9bf9bedaff1e01326275e0691d92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "592c2eefb4ee642b9e00f16ccf0475db506dd7b0782ee8655a568ab138b743b0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "049bb3346113eea921c8b04819745c3888770b011c483665b6976d28b234d4bd"
+    sha256 cellar: :any_skip_relocation, ventura:        "19e0d66bea43cf73c4c2824d7e38fc46b9fa5f951afec33e5f81f4386a7318ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ccd453608596a470015bf948bb604d34d5b7c4e751e7323b543915b69ace53e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36c901ed2ef41077a3d63de62da872d0aa5e76f422fb106e5fa6388c4441a6ba"
   end
 
   depends_on "rust" => :build

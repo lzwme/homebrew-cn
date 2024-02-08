@@ -3,19 +3,18 @@ require "language/node"
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https://bitwarden.com/"
-  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-2024.1.0.tgz"
-  sha256 "0a4f2fd2b8b583952a4a448d13a6e7afb7dcb163a5526e8c9a92fbd80c459b97"
+  url "https://registry.npmjs.org/@bitwarden/cli/-/cli-2024.2.0.tgz"
+  sha256 "5720d7a92b6c8642dbfdbc766cbf02f921249412efeb89e5790b6977a4e8448f"
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d1e4d72898a43d9492c4ca1f4fb6c23f94a85afae7ff0a649f1fd88ad6f33be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e88154fc05f0266ea7798821fb6d609f11bbf361aaa5820da2bfb6153957e841"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd9f661e229d0521e2b84a19c84c26b5d8750f2b125066a3293a68475351b9ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87b729cdccf5c17e104b09aaa84ff1bb7e141a5057db6b9374ec65d58eed24ef"
-    sha256 cellar: :any_skip_relocation, ventura:        "46d8a2cfde6e9100b1dd9d2a30d2163e844cb7af83b05eb9b85b8d3a6cce46fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "82d0be8638adf477ec4ce784f36ccad2bcf29ea7eff423e9cdc7578bbe04bd40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "041a10ed22d81ef614ce9f134789881d2714bdd160dacfeb91d2ca2e99dff290"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca889898632f816748d97eee49164b53c3d505591856ef5ab8596c811424d5e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00fa9d562a0043b9b018f2654f40f514f865d70104d0544857bff0a156078387"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "645542d699ed32af0ded88ed10318519a1f48fe171bd534756411da7f896bf80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "092b63e812971561789ee2e40c3b2c69819e9bfc1f1ba443636e84f4f5f61bd6"
+    sha256 cellar: :any_skip_relocation, ventura:        "fac1300450c4100e550bc63c5e49199cae201ac2af2c8d96f1d52c755bb49809"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cde4b01d92376dc4d612da24d7d12ddd554bd2e8349b3ebbca15d0f0fa3cfe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5f811d6cecded89fc4b03b0f0a49778fce05adfd911e7daef5d018ca7eb1011"
   end
 
   depends_on "node"

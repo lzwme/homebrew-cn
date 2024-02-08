@@ -23,6 +23,6 @@ class Lux < Formula
   end
 
   test do
-    system bin"lux", "-i", "https:github.githubassets.comimagesmodulessiteiconsfootergithub-logo.svg"
+    system bin"lux", "-i", "https:upload.wikimedia.orgwikipediacommonscc2GitHub_Invertocat_Logo.svg"
   end
 end

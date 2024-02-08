@@ -1,18 +1,18 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https:tavianator.comprojectsbfs.html"
-  url "https:github.comtavianatorbfsarchiverefstags3.0.4.tar.gz"
-  sha256 "7196f5a624871c91ad051752ea21043c198a875189e08c70ab3167567a72889d"
+  url "https:github.comtavianatorbfsarchiverefstags3.1.tar.gz"
+  sha256 "aa6a94231915d3d37e5dd62d194cb58a575a8f45270020f2bdd5ab41e31d1492"
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9213655cd67161b40fa5033414040718ca6fe3ac38cd83972e4718e98ddd121a"
-    sha256 cellar: :any,                 arm64_ventura:  "8605ec59b64d396ee9ea203a0ee91cc306158e8a4ccbcd63bf2306ec464e9f09"
-    sha256 cellar: :any,                 arm64_monterey: "26c5e478c43bfafd4c960d75e202682fd70af4d1ce0dd9be933bcfa30257edc2"
-    sha256 cellar: :any,                 sonoma:         "e7a6c10c7673a9a6a54758f0733654295ecb25882ed70b14a4fe72af2bdde5a3"
-    sha256 cellar: :any,                 ventura:        "f8f6a500978011019142ce9dc5d354074553359f6f69673fe0bd90c36458501c"
-    sha256 cellar: :any,                 monterey:       "003fe8e4e3b16d1a98d3e030b0d91588dc60b8dc1f63a5909cbb3877805ac65d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "343104f1672be06cc2e32cf15aad3924aad7becb52dfd40a817d14515b22c1b5"
+    sha256 cellar: :any,                 arm64_sonoma:   "1b929a4fb67b4b5c3d01d49ade4904d87ade523d0fb10894920046733c8ae510"
+    sha256 cellar: :any,                 arm64_ventura:  "86e34bcff48e8c0308a81cfbe654ccefe08142e86746168a11c2bfbe25dba250"
+    sha256 cellar: :any,                 arm64_monterey: "3be22c82737b2002b6e107a1c45b28d53bb16e43c9659b82576b58c037627985"
+    sha256 cellar: :any,                 sonoma:         "1f4cbe282c30fd26f6bc415a90f798a59e192dea912fbf2933d7f7dda0005607"
+    sha256 cellar: :any,                 ventura:        "10d15204451d16a61793401651b0bada84fe2cf960b874e508954504b349a490"
+    sha256 cellar: :any,                 monterey:       "edc57b7426f6dcef201233de363267001d99ab0b0765e0e8acb395bcfb03935c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42d6b684cc66f17538503f6689ffe3af0a5e48972d427bd1b98045b425ccaa5e"
   end
 
   depends_on "oniguruma"
@@ -24,6 +24,7 @@ class Bfs < Formula
   on_linux do
     depends_on "acl"
     depends_on "libcap"
+    depends_on "liburing"
   end
 
   def install
