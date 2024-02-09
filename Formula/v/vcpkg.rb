@@ -1,9 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https:github.commicrosoftvcpkg"
-  url "https:github.commicrosoftvcpkg-toolarchiverefstags2024-01-11.tar.gz"
-  version "2024.01.11"
-  sha256 "36590cb374eec56e3cc6ec49a3afdda0ece1afb81011a06c8c52da3fd017f8a1"
+  url "https:github.commicrosoftvcpkg-toolarchiverefstags2024-02-05.tar.gz"
+  version "2024.02.05"
+  sha256 "b816b7f49e8277ea7bb34ec836f7c24d6364e25cc9c1a128f84084d96d2760ad"
   license "MIT"
   head "https:github.commicrosoftvcpkg-tool.git", branch: "main"
 
@@ -21,13 +21,13 @@ class Vcpkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d55d01fc6c0e69943c370a40ca4b0c78bf678f48d429f096b1542e1ef9c370cb"
-    sha256 cellar: :any,                 arm64_ventura:  "11d305eeaedc7ddb7cbb59effc28dc6e11e2511cf923456558a82cf43da71b3f"
-    sha256 cellar: :any,                 arm64_monterey: "60dd5ccd1d05e00f07dadc1c3b7fb42a6680afcd7048e329766176b192b5fad5"
-    sha256 cellar: :any,                 sonoma:         "6e6fc3715374eb2930b11ad5b61c9a43c6e62b16e28e5dec1fb52cba94dba07a"
-    sha256 cellar: :any,                 ventura:        "53515204ad1f15e2b403d9db95b7370f7f95d0bb8cb5dcb65764e31a93449122"
-    sha256 cellar: :any,                 monterey:       "5f35d36104da612a7b83450f61fa2892403a9de8d2342d2db628752c5e3f36a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af104f763788a68bd369a5863b0c7c1e5197bf2d6f2a6d74ff8f127cdfedc4cf"
+    sha256 cellar: :any,                 arm64_sonoma:   "91cbc0344c97ac192305e670e5d69b14cc82be14db935acd6905335bf5ef0645"
+    sha256 cellar: :any,                 arm64_ventura:  "8b968675b463fdfd59f02ef6c5fd7ed8f29909a2a00837229f135e0d6581fbac"
+    sha256 cellar: :any,                 arm64_monterey: "8e24b7d56361bf8563511ff9c95dca7f8e10dff1658ff2b44f508bebb7441ae5"
+    sha256 cellar: :any,                 sonoma:         "e10a62e85acea64525763428b8f8c5b3e6f67156f49d5a4c34595c5d5da76b9b"
+    sha256 cellar: :any,                 ventura:        "0f6edfd374ee35a066482445f2e0417b4dbf3f841e0cb4439fdc4f4a4f52ede1"
+    sha256 cellar: :any,                 monterey:       "27ba82d8940a96a88c5289c58da37d955570e02e37acb931c9f9a5f8ef1846c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21471d7e952c827901256622c35c84997f8fb77d8ae34afda6b9c929cd88abdc"
   end
 
   depends_on "cmake" => :build
