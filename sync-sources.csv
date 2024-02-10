@@ -296,6 +296,7 @@ Homebrew-homebrew-core/Formula/a/austin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/authoscope.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/authz0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autobench.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/autobrr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autocannon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/autocode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/autoconf-archive.rb, Homebrew/homebrew-core, 0
@@ -2644,6 +2645,7 @@ Homebrew-homebrew-core/Formula/i/ifacemaker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ifstat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iftop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ifuse.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/ignite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/igraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/igv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ii.rb, Homebrew/homebrew-core, 0
@@ -3017,6 +3019,7 @@ Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubesess.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubespy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubetui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubevela.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubevious.rb, Homebrew/homebrew-core, 1
@@ -3796,6 +3799,7 @@ Homebrew-homebrew-core/Formula/m/madplay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mafft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magic-wormhole.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/magic-wormhole.rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magic_enum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mahout.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mailcatcher.rb, Homebrew/homebrew-core, 1
@@ -8930,7 +8934,7 @@ Homebrew-homebrew-cask/Casks/k/kubenav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubernetic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kugoumusic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kui.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/k/kvirc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kvirc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kyokan-bob.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laconvolver.rb, Homebrew/homebrew-cask, 0

@@ -1,18 +1,18 @@
 class Dockutil < Formula
   desc "Tool for managing dock items"
   homepage "https:github.comkcrawforddockutil"
-  url "https:github.comkcrawforddockutilarchiverefstags3.1.2.tar.gz"
-  sha256 "f21d30407473c7a9d6022225739c14faafa27a2a43c1a26643a7e5a4d508596a"
+  url "https:github.comkcrawforddockutilarchiverefstags3.1.3.tar.gz"
+  sha256 "622bbb5c97f09b3f46ebea9a612f7470dd7fb6a7daaed12b87dee5af7a0177f6"
   license "Apache-2.0"
   head "https:github.comkcrawforddockutil.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a572eeeac51a0783b173fa3f07690caaebeba10dc2679cb321f0eaf930cf436"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd3d9ceeeb1aa2359eacdae35a0a879901a179ba5239d800936154f1d60444af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3fb9f59780f364e8b404e0dc525dcfecfa984399355e557dfd83aa025841244"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f4af91374343616f77701928a40ff13438edc46699fee807a274da0f5600ecf"
-    sha256 cellar: :any_skip_relocation, ventura:        "d96ab41167de3511504cef917bcd1ac9a1713ba3313d491092601184662743ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "84967e21965760c3ded00a353796d3e7073e10fcc563cb730edec5ca94e9a86e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e0fb8383a52ed1459e9811a121cc5c4105afc61d11d757564e148f72d4b28ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d8d0e3e19454fc3e958b30f7c1f93bc57cc08f14caa28c2435bbc77504699fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ccc0b78a56bec0d79cd7aa9249b72cb72330a6065d311041ac9d8415289654c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e63bf1404297af85f7e5c20d31f23fee13071b66404bf323a19decdf4d898dbe"
+    sha256 cellar: :any_skip_relocation, ventura:        "99b5c036b9ad73b6116ad5656218f55ed97680c6ab5e07921587ba6a10cba74d"
+    sha256 cellar: :any_skip_relocation, monterey:       "0486c78b5e464029ce2669026de258e0bdc13ddbcece77db4e589e118b3e2fb4"
   end
 
   depends_on xcode: ["13.0", :build]
