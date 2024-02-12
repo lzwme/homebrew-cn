@@ -3,19 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/55/16/2e2ec50e14868739f320f5c74012c0bc52b40c45a66f3404d569c9479ed1/molecule-6.0.3.tar.gz"
-  sha256 "d2a881062fcc5ef1e08c1e5127c04354d2c95171955e270bd82b3fbfef72d3b0"
+  url "https://files.pythonhosted.org/packages/3f/eb/d5c4c50ec5c2e80fa38ae90b7c3c7c582cd8f594c17b34793137c381d204/molecule-24.2.0.tar.gz"
+  sha256 "47c982a7d05db7846da77fe7159deb946f26cafb2e388fc71812be0089a41776"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "07b208ed07181270c67688cb2fd9cf5247e537949b7ed7880a50b37a31f7e913"
-    sha256 cellar: :any,                 arm64_ventura:  "b00765c5ca782d86100a17cf3ab4685abfac6d7ced1800264d9d20e320b61e27"
-    sha256 cellar: :any,                 arm64_monterey: "c2e6d3e58e344abcbaa2a5b2bf195ecfe5eac4483e913489ee0a869123b2c7c7"
-    sha256 cellar: :any,                 sonoma:         "34e1ba1d7a73db14eb7aa81442adeb7921980d7459fe0e8e150cacbc3b9c320f"
-    sha256 cellar: :any,                 ventura:        "8bd7a0c8c9f60b2015a73d43bd8c42634afced225a3fbdef08002ace18f13f25"
-    sha256 cellar: :any,                 monterey:       "9580ef953c48b647a2ecd5b7aad248627b3cee4e6c463c152313ef3258da9b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d24be650537541ce37e41b12e26010d420f82f166f09fa3613fb1122f6f4040"
+    sha256 cellar: :any,                 arm64_sonoma:   "8d2b9667cfe2e97a6d6bf83d6386df485c82fc94a78d76d1aabc7c7f343f97c5"
+    sha256 cellar: :any,                 arm64_ventura:  "081a75ef5b2257c35064fef142c785ad4090ce8599020ac5368c6d084d75ff29"
+    sha256 cellar: :any,                 arm64_monterey: "a5c92e216fb008d134725ac41329fbb3d384b993f5cb8e75f0cc848b64187d8e"
+    sha256 cellar: :any,                 sonoma:         "9ff2657893c875aac410f7f188ad75787a6c95a46b89acfa611b7bf344c0bc16"
+    sha256 cellar: :any,                 ventura:        "2b83c729acf04f51382b8815ef7222af5ea25ba04dc4ca7dcfcf6fab1b56bd43"
+    sha256 cellar: :any,                 monterey:       "d861d5f6b2b128fad36e52abcd94ceb8bd00cc275bec18f69d4f92a5ce643a68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5c15b0ff5c6fcdbd106c24a15da103ae6f321dfb0f463efc8adad63f5b13c4c"
   end
 
   depends_on "rust" => :build # for rpds-py

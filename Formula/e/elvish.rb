@@ -1,21 +1,19 @@
 class Elvish < Formula
   desc "Friendly and expressive shell"
-  homepage "https:github.comelveselvish"
-  url "https:github.comelveselvisharchiverefstagsv0.19.2.tar.gz"
-  sha256 "ef8032507c74c84369d49b098afcf1da65701aa071be9ee762f8bc456576ac94"
+  homepage "https:elv.sh"
+  url "https:github.comelveselvisharchiverefstagsv0.20.0.tar.gz"
+  sha256 "f0b144757af75cd1cac197210f54d4063379bbe76de6c10832085ae051ca8212"
   license "BSD-2-Clause"
   head "https:github.comelveselvish.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1049168465392067fe98ef72f9981c21dcd682f5042bea092ac3cd2e2e77d758"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9dd4b68d9a4c944bd4f16540d281149f23052e9049cc1d56c98c0c10869ba45"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c8b6065d78d525706b0e7a36368a2d5f74f1af434f54c71108b9db816386381"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5cdcd6f5140d8926857ecf93b1a38968f58ebb74692cc3a2beb894da554b893"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0a88b539ea7882009677592fef0bb525c5810b27db508d27d58e155668cd99d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "52e99d52ff2ec57564b9534143c966692a156c8beb3efcd031e2f0342e1b9f98"
-    sha256 cellar: :any_skip_relocation, monterey:       "79dcb84093d07d2937e0667f0b089926299ad35d7453b23d27f9285db36f5b82"
-    sha256 cellar: :any_skip_relocation, big_sur:        "278eb08f2ea14fcf9f57ad5b75508bdfc01ab14729c4db34cb1cadd46044b1a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a65fd8f49f47fb279ffdb460db56a91ab9efa533bcf17e4a8edeae280cff3d25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c732f3c00348b1e2049f51b6447cf8ada3c36b78c4ae9db6224acf8b7d6ec1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e68b09a27dc9d8ce8d562faa20a854190934db63a7fdc57e0c411519b9733cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "01e6e37cd88482926e8da9c47ceb8f0951b04c4a482624a375fe2416fc2ca973"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2566d7d4eb3d40445fe6126f6aba5bf7542838f1816e2eb95382d6d1f7f8a2b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "2697321fafbfbfeea6be5c29a679aa231403299acaffd90ab8d1bacdbd080122"
+    sha256 cellar: :any_skip_relocation, monterey:       "89cbfda5ec9f497670ed5b0df9d5269215323d41c15442d8346c89c57cb4e87d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04d2e404ba0a4fa8f912e99229946fdad6721ab4b88d2d006a25bdcf83aab289"
   end
 
   depends_on "go" => :build

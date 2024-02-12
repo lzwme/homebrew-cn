@@ -1,19 +1,19 @@
 class Nb < Formula
   desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https:xwmx.github.ionb"
-  url "https:github.comxwmxnbarchiverefstags7.11.0.tar.gz"
-  sha256 "20582072c36da3c4f05a53634cea4470464266e6b764b06828b297ca16743800"
+  url "https:github.comxwmxnbarchiverefstags7.12.0.tar.gz"
+  sha256 "ef196ebc4db6d6d038faeea9dcaac66569df3b7270249310e3dcd19fe71d6adb"
   license "AGPL-3.0-or-later"
   head "https:github.comxwmxnb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb6ee968ad80f2f60723b972f9a556a96b2e2e506425ffc19c600ec8a0afcce4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb6ee968ad80f2f60723b972f9a556a96b2e2e506425ffc19c600ec8a0afcce4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb6ee968ad80f2f60723b972f9a556a96b2e2e506425ffc19c600ec8a0afcce4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fe6f69ad6c13ce17ce7b7cbd09478fc701e05f2c509326a3a7ee175c20cbab36"
-    sha256 cellar: :any_skip_relocation, ventura:        "fe6f69ad6c13ce17ce7b7cbd09478fc701e05f2c509326a3a7ee175c20cbab36"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe6f69ad6c13ce17ce7b7cbd09478fc701e05f2c509326a3a7ee175c20cbab36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb6ee968ad80f2f60723b972f9a556a96b2e2e506425ffc19c600ec8a0afcce4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80441c0cffea358253f6f84ee0ef3ecf4abffacd3d3cb983193dc62a4bd26b7d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80441c0cffea358253f6f84ee0ef3ecf4abffacd3d3cb983193dc62a4bd26b7d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80441c0cffea358253f6f84ee0ef3ecf4abffacd3d3cb983193dc62a4bd26b7d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ef3f218b8c422838ad0c0bc11c6c31a23713d0d94fa3af1d57e746fb5bd6c993"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef3f218b8c422838ad0c0bc11c6c31a23713d0d94fa3af1d57e746fb5bd6c993"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef3f218b8c422838ad0c0bc11c6c31a23713d0d94fa3af1d57e746fb5bd6c993"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80441c0cffea358253f6f84ee0ef3ecf4abffacd3d3cb983193dc62a4bd26b7d"
   end
 
   depends_on "bat"

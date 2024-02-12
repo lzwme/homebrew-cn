@@ -7628,6 +7628,7 @@ Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clean-me.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cleanapp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cleanclip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleaneronepro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanmymac-zh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanmymac.rb, Homebrew/homebrew-cask, 0
@@ -7641,7 +7642,6 @@ Homebrew-homebrew-cask/Casks/c/clicker-for-netflix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clicker-for-youtube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clickhouse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clickup.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/clinq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clip-studio-paint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clipgrab.rb, Homebrew/homebrew-cask, 0
@@ -8323,6 +8323,7 @@ Homebrew-homebrew-cask/Casks/f/freemind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freenettray.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeorion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeplane.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/freeshow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freesmug-chromium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freesurfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freetube.rb, Homebrew/homebrew-cask, 1
@@ -10452,6 +10453,7 @@ Homebrew-homebrew-cask/Casks/s/simsim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/singularity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sioyek.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sip.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sipgate-clinq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sipgate-softphone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sirimote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sitala.rb, Homebrew/homebrew-cask, 0
@@ -11035,6 +11037,7 @@ Homebrew-homebrew-cask/Casks/u/unraid-usb-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/unshaky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/updf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/upm.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/u/upscayl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/upterm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/usage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/usb-overdrive.rb, Homebrew/homebrew-cask, 0

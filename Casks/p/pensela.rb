@@ -7,6 +7,8 @@ cask "pensela" do
   desc "Screen Annotation Tool"
   homepage "https:github.comweiameiliPensela"
 
+  deprecate! date: "2024-02-11", because: :discontinued
+
   app "Pensela.app"
 
   zap trash: [

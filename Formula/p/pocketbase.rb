@@ -1,18 +1,18 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https:pocketbase.io"
-  url "https:github.compocketbasepocketbasearchiverefstagsv0.21.2.tar.gz"
-  sha256 "0db8409bf4fd220f2a3da7c44fa69908acc8919ad420b4aac71dbc7298538460"
+  url "https:github.compocketbasepocketbasearchiverefstagsv0.21.3.tar.gz"
+  sha256 "c9b1cd211a53097fe14ab2f08954391e0f59fc1ba430953868cf8e7cf6578de7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d5758551074cf6865d38f3b76f07c51bd47fb6c8b0b525760bbd80a64064da52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5758551074cf6865d38f3b76f07c51bd47fb6c8b0b525760bbd80a64064da52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5758551074cf6865d38f3b76f07c51bd47fb6c8b0b525760bbd80a64064da52"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bc797e3d4a658cfa1a6c215d5931d0df8c4b2d344860b20cf3df2c39d7facfe0"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc797e3d4a658cfa1a6c215d5931d0df8c4b2d344860b20cf3df2c39d7facfe0"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc797e3d4a658cfa1a6c215d5931d0df8c4b2d344860b20cf3df2c39d7facfe0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95762d63730cd69cc4d044c252dd31bafcf79f1645748ba9ac081c6b95d3b500"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d7b494be838357978891ee4e3455031d302b6b4de48f15f153f6c8a6b8fa7de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d7b494be838357978891ee4e3455031d302b6b4de48f15f153f6c8a6b8fa7de"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d7b494be838357978891ee4e3455031d302b6b4de48f15f153f6c8a6b8fa7de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e00e0411d923b74c10053ca61692a51dbf06b655fdc710bc417c54d8b428c105"
+    sha256 cellar: :any_skip_relocation, ventura:        "e00e0411d923b74c10053ca61692a51dbf06b655fdc710bc417c54d8b428c105"
+    sha256 cellar: :any_skip_relocation, monterey:       "e00e0411d923b74c10053ca61692a51dbf06b655fdc710bc417c54d8b428c105"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cd3a73d94466eb3d0e8cc9d122cf10639415da5c376c8956770a55a8cf18618"
   end
 
   depends_on "go" => :build
