@@ -11,7 +11,7 @@ class Runcocoa < Formula
 
   # Last commit on 2012-01-08 with no releasestags.
   # Also no license: https:github.commichaeltysonCommandline-Cocoaissues4
-  deprecate! date: "2023-02-14", because: :unmaintained
+  disable! date: "2024-02-12", because: :unmaintained
 
   def install
     bin.install "runcocoa.sh" => "runcocoa"

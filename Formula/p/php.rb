@@ -13,13 +13,14 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "9903844b39f8df7560967062e5e6bbaf011872e0fa873b3119d5b0a4f06f6df3"
-    sha256 arm64_ventura:  "931fb510f0dee4a2b9c9a1ee3ae075925077621e0e0e56573808e308a0ea0068"
-    sha256 arm64_monterey: "31a51aad37c13b7cf3dfbef597d6f61c3fa9ad09075d333cd127e625a39cc5cc"
-    sha256 sonoma:         "209abdc42dcac3110ef44dc35d775fc6f5111bc1338ac6fe4e9d77d65a5e8b99"
-    sha256 ventura:        "b7c61cc4e5dc081e5daddce37fcca4eef7559cf9f6a695f1e3799fda495a9146"
-    sha256 monterey:       "4e5f8dde58bb2c672fdef5b86303f139b09d7fab824c17bab86dcbc82b176748"
-    sha256 x86_64_linux:   "d863b2b79ba49beb9ab853e54c24875ac4ab971b0fdc4db79acd4fd9ec9537d6"
+    rebuild 1
+    sha256 arm64_sonoma:   "caa5f632c4085b4574d6b29a15628a115dcb2b79f9720c7b5895856cfa16047e"
+    sha256 arm64_ventura:  "abad3c85404aa635351048120dcff92835894b2740deb4b55c73bd7bffc8ab8c"
+    sha256 arm64_monterey: "02b94ada3290966cda58df443de94618faec13ae15bbcd6f73897a0ccf8518e7"
+    sha256 sonoma:         "c3e1351bc1138fe564a82f997bcbbd8397f1ce04f8b512c79264653e44f8780e"
+    sha256 ventura:        "94c96e486b9efc1432c776d9a370271664c9d8cddbf9f49ee191c1f0c790dce1"
+    sha256 monterey:       "e7689bac1a304ec78b5a303d243360f7dae389c984bf510847ff423c9ae5431e"
+    sha256 x86_64_linux:   "d66cdc04b7a25583ea2f18f1ec7cb1702679a147db69f92c3e3663567a5b560c"
   end
 
   head do
@@ -63,6 +64,8 @@ class Php < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "imap-uw"
+
     # PHP build system incorrectly links system libraries
     # see https:github.comphpphp-srcissues10680
     patch :DATA
@@ -188,6 +191,8 @@ class Php < Formula
 
     if OS.mac?
       args << "--enable-dtrace"
+      args << "--with-imap=#{Formula["imap-uw"].opt_prefix}"
+      args << "--with-imap-ssl=#{Formula["openssl@3"].opt_prefix}"
       args << "--with-ldap-sasl"
       args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else

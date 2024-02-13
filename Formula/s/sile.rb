@@ -7,20 +7,20 @@ class Sile < Formula
   # - Remove `cosmo` resource and corresponding references in install
   # - Switch `lua` dependency to `luajit` and clean up `lua` references
   stable do
-    url "https:github.comsile-typesettersilereleasesdownloadv0.14.16sile-0.14.16.tar.xz"
-    sha256 "cf97585b7dcf77d99e328f6cdce71a4070324fe001f7876f730fa04c6c923857"
+    url "https:github.comsile-typesettersilereleasesdownloadv0.14.17sile-0.14.17.tar.xz"
+    sha256 "7f89bedecedabb5168250ad9dd80c09ed289c8e88c3d0d756d2d1d92ee065e04"
 
     depends_on "lua"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c84ef4e670dee32acdc744fee20e3cc738761b7f25113ea18cff0060ee2f76c7"
-    sha256 cellar: :any,                 arm64_ventura:  "00926c1f03f78001bc788d8d5b5bffc43e5d94cb0dffb98fcb873e3bca7f099e"
-    sha256 cellar: :any,                 arm64_monterey: "7845e227f712457552a0c43524bea5e4447c442b3bd16baf92be83deb37f679e"
-    sha256 cellar: :any,                 sonoma:         "6abc465819c0910701312bd43910e7610312a9783884f5518918bc8b5e326e66"
-    sha256 cellar: :any,                 ventura:        "9190f36b3ed3493df3767e4554a03ff95c9ee16a8cb057296b952d1d2e101996"
-    sha256 cellar: :any,                 monterey:       "9498cdbf051f3f6ad7b7cb0b178f51a160648d9e8efd49dbc00eae4c6a4fcb90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82e6e9b998cd7a40b613ba58ef59757f1869c93d379eaf5163c82fd201bb9a75"
+    sha256 cellar: :any,                 arm64_sonoma:   "ef87d8f35cb9b17e14627f64a71f18550531a169d393084334e4b02cb3e23992"
+    sha256 cellar: :any,                 arm64_ventura:  "dafd11d14bc78bcfb153f7a088ccfc781d8fc2f8e66df054ec14d28dcbb94803"
+    sha256 cellar: :any,                 arm64_monterey: "04a1779112b669eb7650305470ebf0ed9fb3674f5123bdbeeeed817e5a7930f0"
+    sha256 cellar: :any,                 sonoma:         "d849a2ed94a4ade3d1c6369276c4e7a43e2c71f0d6e1f287f9d9d9bbba1d460f"
+    sha256 cellar: :any,                 ventura:        "eb8a399d0db98c2387f2cc539fcbe14c8ee808d66f56f8c09e33203da16046a4"
+    sha256 cellar: :any,                 monterey:       "443d523a097024b7b184971c3e2116ef02ba3a481793907624963d5ff4dc8752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ff6c031a2b66639e5b8bf5b7853d09115026457e8dc8caa8bdca5e4ae60d472"
   end
 
   head do

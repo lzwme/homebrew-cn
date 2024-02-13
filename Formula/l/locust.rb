@@ -3,18 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/4f/dc/8c9d2902dc61bb5d2e39122fa17a93714bd9c57f918e0e1f186879aa1af3/locust-2.23.0.tar.gz"
-  sha256 "f4857bc0a30578724274d7f1ef5c50c3953735718b31019993c40d5797dbddce"
+  url "https://files.pythonhosted.org/packages/24/b2/cf440ab75f33d1341bc0340ed26ba8bfc755f8cad11d1d3a0b3bc33a1cd3/locust-2.23.1.tar.gz"
+  sha256 "6cc729729e5ebf5852fc9d845302cfcf0ab0132f198e68b3eb0c88b438b6a863"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "068a6cd0a1e4bf2a623d22f8ac4ff639dc4802dd451c752084c1b09347d12505"
-    sha256 cellar: :any,                 arm64_ventura:  "4f75e2ef799a02796f5f439174dcdee40178cb7bfac45b0bf3892ae47f7445e0"
-    sha256 cellar: :any,                 arm64_monterey: "ba485cc3afd5b1cdd00228ed9b7e2d69c8013fd0dcabe0aa1c1a51b15e9d2c66"
-    sha256 cellar: :any,                 sonoma:         "21f287fb886f6014c3c6b2db218b2acf61ab3e0c283df2a35199ef3ca24e72d8"
-    sha256 cellar: :any,                 ventura:        "06050caa47c13a3bc9561a4037cc9062f4ac95e255348a2540d34bc161c2247e"
-    sha256 cellar: :any,                 monterey:       "6cee72627b2ba4f7d5d6b9e0ea2e1c92ae8e8855e33f3fcea7d8d86af03473c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e21dd480aff7ff3a34c39a6349dd9b02cb4a2ef474949b5c6870b6b8d99db207"
+    sha256 cellar: :any,                 arm64_sonoma:   "3ddb04efff89d1a7a0882c96bfc18130f17824b38e50c8db27a02e9f4d97a6aa"
+    sha256 cellar: :any,                 arm64_ventura:  "1398930d26d70395fa516cf312d34695a2155b2ff26b94b82429d22dfb25290b"
+    sha256 cellar: :any,                 arm64_monterey: "d1cf9ce48fd6203aa327c0bcba3c5b4cfaa4fe0f6a32f81efa084e0de516bdcc"
+    sha256 cellar: :any,                 sonoma:         "d4b47ad169f9ec92206b0b2f675c9a600a53a686715bc690ee67b2678a1f1473"
+    sha256 cellar: :any,                 ventura:        "a6bbf50627bcfe5aa376f211dc32af5a4c3a05ddcc9ed1e98e945531eb6f0a6a"
+    sha256 cellar: :any,                 monterey:       "f20ad3b2a93c390962f4142e2975a985fd0ebbc0f4dff2f5293ba6caddb739d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "331c968a8a92452d24d5841e1ff47c53d2fdf3f6963527e5c41cf2b498acb982"
   end
 
   depends_on "python-brotli"

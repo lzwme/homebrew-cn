@@ -3,10 +3,9 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https:black.readthedocs.ioenstable"
-  url "https:files.pythonhosted.orgpackages77eca429d15d2e7f996203bff98e2b2e84ad4cb3de318de147b0038dc93fbc71black-24.1.1.tar.gz"
-  sha256 "48b5760dcbfe5cf97fd4fba23946681f3a81514c6ab8a45b50da67ac8fbc6c7b"
+  url "https:files.pythonhosted.orgpackages2969f3ab49cdb938b3eecb048fa64f86bdadb1fac26e92c435d287181d543b0ablack-24.2.0.tar.gz"
+  sha256 "bce4f25c27c3435e4dace4815bcb2008b87e167e3bf4ee47ccdc5ce906eb4894"
   license "MIT"
-  revision 1
   head "https:github.compsfblack.git", branch: "main"
 
   livecheck do
@@ -15,13 +14,13 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e81e2887c58b51c7625b698a526c29451b0a0b4acdf3a32a88f31c990d67a360"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8cef5b27d831850e92e49c1165b04be33a97bc6227730c651515deed0ee1fd8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47c3e6b6c02733e8b509e3fa5307071de89eb1365b81b842a934e08b5c1d5483"
-    sha256 cellar: :any_skip_relocation, sonoma:         "57e1287bf67b7010d963dd6f1e2f315bbfd0c29b612e530d606beada14a8f105"
-    sha256 cellar: :any_skip_relocation, ventura:        "c4f0830f8190dcba2bbae8c0036be1079f9deba89bde5108df129c60eb553640"
-    sha256 cellar: :any_skip_relocation, monterey:       "96633b67b861b266708ee76620716aa455806d99b4c3b57952fe17c69f6ab1a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b5e255870253c43fad182d0a3293fa5cadc94e378989102155e030c6f2d867a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5504b38c625b296082d373ee080be8e1d950a0ba0fd1ff35dbcce4212ce8ea23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a280625ab739253b1290688a8acc86a7492cab1f9738866cae2d9f91217e8d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "285591f25052d1e04ba594ee47b4a018e05c6b60ccb8e7544e97352aaea7ad55"
+    sha256 cellar: :any_skip_relocation, sonoma:         "42fb1dd41513bfccae0e9c225f646aa0d0a40b58056a899e8bcb9a82fda1ad55"
+    sha256 cellar: :any_skip_relocation, ventura:        "d00bace045f166637edac431315065a25f9ab987dd226f54918d28924031ad37"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba282b7ac6d807a6955464f3a3ebcce1c5e726ce1097f0071a5f1671d252196e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cd91ecf5306d39bb047953288717bf01823e92a91db7e93cc10ae1930bdd4a0"
   end
 
   depends_on "python-attrs"
@@ -48,8 +47,8 @@ class Black < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages4a15bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0multidict-6.0.4.tar.gz"
-    sha256 "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
+    url "https:files.pythonhosted.orgpackagesf979722ca999a3a09a63b35aac12ec27dfa8e5bb3a38b0f857f7a1a209a88836multidict-6.0.5.tar.gz"
+    sha256 "f7e301075edaf50500f0b341543c41194d8df3ae5caf4702f2095f3ca73dd8da"
   end
 
   resource "mypy-extensions" do
