@@ -1,19 +1,18 @@
 class Sugarjar < Formula
   desc "Helper utility for a better GitGitHub experience"
   homepage "https:github.comjaymzhsugarjar"
-  url "https:github.comjaymzhsugarjararchiverefstagsv1.1.0.tar.gz"
-  sha256 "5a75fab10cfb1509ae9e7ee5cfced13afbfec19e44e5020acf4a219f9c04f79c"
+  url "https:github.comjaymzhsugarjararchiverefstagsv1.1.1.tar.gz"
+  sha256 "27dcadee28327585cf26d1285a0a4806352c3d118131d9efde3729d7956510bd"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5372e89ff6e0b73f450dd765c4271ec3df21ca9f177ecc4f415c919634ae6139"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5372e89ff6e0b73f450dd765c4271ec3df21ca9f177ecc4f415c919634ae6139"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5372e89ff6e0b73f450dd765c4271ec3df21ca9f177ecc4f415c919634ae6139"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1fd2408f8f41f9d77269d0030ff3f94dd8ff6ff6fc5153954bd4cbab5949e207"
-    sha256 cellar: :any_skip_relocation, ventura:        "1fd2408f8f41f9d77269d0030ff3f94dd8ff6ff6fc5153954bd4cbab5949e207"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fd2408f8f41f9d77269d0030ff3f94dd8ff6ff6fc5153954bd4cbab5949e207"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5372e89ff6e0b73f450dd765c4271ec3df21ca9f177ecc4f415c919634ae6139"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51ceb3601cac4b1a6ac1338c6f2e0cb024c3ddef5a657776a03f5de5b8563e3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51ceb3601cac4b1a6ac1338c6f2e0cb024c3ddef5a657776a03f5de5b8563e3b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "51ceb3601cac4b1a6ac1338c6f2e0cb024c3ddef5a657776a03f5de5b8563e3b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0920b193345a8e79ea4a6bb13da27be533bf32a9a8a025d1d611e1bfe0e8ce57"
+    sha256 cellar: :any_skip_relocation, ventura:        "0920b193345a8e79ea4a6bb13da27be533bf32a9a8a025d1d611e1bfe0e8ce57"
+    sha256 cellar: :any_skip_relocation, monterey:       "0920b193345a8e79ea4a6bb13da27be533bf32a9a8a025d1d611e1bfe0e8ce57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51ceb3601cac4b1a6ac1338c6f2e0cb024c3ddef5a657776a03f5de5b8563e3b"
   end
 
   depends_on "gh"
@@ -28,6 +27,7 @@ class Sugarjar < Formula
     system "gem", "install", "--ignore-dependencies", "sugarjar-#{version}.gem"
     bin.install libexec"binsj"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
+    bash_completion.install "extrassugarjar_completion.bash"
   end
 
   test do

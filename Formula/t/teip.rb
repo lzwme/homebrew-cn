@@ -1,19 +1,19 @@
 class Teip < Formula
   desc 'Masking tape to help commands "do one thing well"'
   homepage "https:github.comgreymdteip"
-  url "https:github.comgreymdteiparchiverefstagsv2.3.1.tar.gz"
-  sha256 "29147678f3828a3ed83c0462ec8b300307cbe8833ce94ed46016a5bfa3f9b3a5"
+  url "https:github.comgreymdteiparchiverefstagsv2.3.2.tar.gz"
+  sha256 "c9e45d9f5fb263a67c42907d05d8a20dd62b910175270a59decc475e66ea6031"
   license "MIT"
   head "https:github.comgreymdteip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "96ca6b04fc906c04cc05a0cc8a5beedc3a277a296403eb0d4d9f73a5bac30937"
-    sha256 cellar: :any,                 arm64_ventura:  "cb341c1fc5e81ed1ed1f1002d12317f3acc1d5758bcb357759842b25956a02e6"
-    sha256 cellar: :any,                 arm64_monterey: "4c76498ece6924e88c723d5c2977b9c0dcba7b297b49370983f4b0ca24d42037"
-    sha256 cellar: :any,                 sonoma:         "1a5b47217756090ea94f8b355d1f6df605c474c24ef5d039ea3768f37a065055"
-    sha256 cellar: :any,                 ventura:        "52b3135da21a531d14d1253fba9b877abc20a7c08dae9441c0b12950f61f3375"
-    sha256 cellar: :any,                 monterey:       "f2b205f63cbbc61b99ccc5807e26dd3c0c23c41b540468400b93db8687a540e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e2dae639a3ca2ac77b99afea4a2783ac4fd409a2a8cc95a7746cd7e69ef779a"
+    sha256 cellar: :any,                 arm64_sonoma:   "4df0b07d8bd0edaf62e6daac722039dc3dfb1f1e8340439e41c2631cb3eeec4c"
+    sha256 cellar: :any,                 arm64_ventura:  "939622ea9607368b299e1eb0a3c19c01320a0399f8c01fa8502d14794fc1e983"
+    sha256 cellar: :any,                 arm64_monterey: "924342e2ea29ddf0eaa9906e74c6cf03b1356d00091bf24b54788bf61136b7b4"
+    sha256 cellar: :any,                 sonoma:         "3f757977cbafda79df194a8e162bd144236fc7c4bbb7ec3c3adc389130470a3a"
+    sha256 cellar: :any,                 ventura:        "3c20de30934eb61457693d5c6747425220abcba516f541eaed678e5c21cf7278"
+    sha256 cellar: :any,                 monterey:       "700d30d9d917de84ae8f2e517a9d424a279cc3cbad82caaa360a2b78a1133047"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82477350d16f0ce242352d7d6046fb2a1a2024cd9ba064219012e5c451d9b582"
   end
 
   depends_on "pkg-config" => :build

@@ -1,7 +1,7 @@
 cask "defold" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "1.6.3"
+  version "1.6.4"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https:github.comdefolddefoldreleasesdownload#{version}Defold-#{arch}-macos.dmg",
@@ -21,8 +21,8 @@ cask "defold" do
 
   auto_updates true
   conflicts_with cask: [
-    "homebrewcask-versionsdefold-alpha",
-    "homebrewcask-versionsdefold-beta",
+    "defold-alpha",
+    "defold-beta",
   ]
 
   app "Defold.app"

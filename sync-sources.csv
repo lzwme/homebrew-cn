@@ -44,7 +44,6 @@ Homebrew-homebrew-core/Formula/a/adplug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adr-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adr-viewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/advancecomp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/advancemame.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/advancescan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adwaita-icon-theme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aerc.rb, Homebrew/homebrew-core, 0
@@ -3967,7 +3966,7 @@ Homebrew-homebrew-core/Formula/m/microsocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midgard2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midicsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/midnight-commander.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mikmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mikutter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mill.rb, Homebrew/homebrew-core, 1
@@ -4554,7 +4553,7 @@ Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentelemetry-cpp.rb, Homebrew/homebrew-core, 1
@@ -5602,6 +5601,7 @@ Homebrew-homebrew-core/Formula/s/sdl_ttf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdlpop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seal.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/seam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/search-that-hash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seaweedfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sec.rb, Homebrew/homebrew-core, 1

@@ -1,19 +1,19 @@
 class Openjph < Formula
   desc "Open-source implementation of JPEG2000 Part-15 (or JPH or HTJ2K)"
   homepage "https:github.comaous72OpenJPH"
-  url "https:github.comaous72OpenJPHarchiverefstags0.10.4.tar.gz"
-  sha256 "0f89f9b15c74281ba516f643527d19f3864c95b6646c158d16d4c73fe9eb5255"
+  url "https:github.comaous72OpenJPHarchiverefstags0.10.5.tar.gz"
+  sha256 "fc1e43fb1e8a097f883f5fe98794327eb96c4bdf2c53cb633537b061af4c99f3"
   license "BSD-2-Clause"
   head "https:github.comaous72OpenJPH.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3b6b268d3f97f3f77c8af8e7cc4f2358b75a491d56fd27447a7b33cbef72f7d5"
-    sha256 cellar: :any,                 arm64_ventura:  "4d9f2781c69a83050a15c99544cad393bf350155d459446c5752a951419d6435"
-    sha256 cellar: :any,                 arm64_monterey: "22db6854ec544a73911e3e3ede5134ddaec4d4306ce70e1a5b0185526ded6bab"
-    sha256 cellar: :any,                 sonoma:         "d75129d0651087ee744a4853ea7ed05438ea490c0161f08cdf14c9aa118cb7f5"
-    sha256 cellar: :any,                 ventura:        "f45fd831de50fea998813c66f421e63926b9f435ea9331403ea8cc2c20e142b5"
-    sha256 cellar: :any,                 monterey:       "f87f1185a068ce086625418ac8eb644c3272822991168a7b0fa5fb91e54e00b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cc8f58c7ed676fe66be990366641a166b49833b8619c4676f8ed7a3dcc4cf54"
+    sha256 cellar: :any,                 arm64_sonoma:   "fb79ae079a51db422be1a0275ecb7424b589086c5b3c7b1be634e9681d261fac"
+    sha256 cellar: :any,                 arm64_ventura:  "cff679464b6b5d5ad2bfcbef29749f27f96bd341909501739cc2a2454ce4d0c5"
+    sha256 cellar: :any,                 arm64_monterey: "05f0aad1b5080a55e9cdcf426a3a23f0cd27fac709387e69496843cbf4d59c5b"
+    sha256 cellar: :any,                 sonoma:         "6c192d50ea5ea8a2e3012522947b2e5265f6eb39bd78da1590863d55b210933b"
+    sha256 cellar: :any,                 ventura:        "7bcff268ca6a7768f6551ccf0bec0a929fc261151b45af0bfa47a07da93ac71f"
+    sha256 cellar: :any,                 monterey:       "bbbe72eb4e4b863bf4808a453500eaaa538c2b67d2d83baa5202f46bddf620d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0554239581dd1d618a2a1b7d7d680279dccad49edd643f7e03989a886682f48f"
   end
 
   depends_on "cmake" => :build

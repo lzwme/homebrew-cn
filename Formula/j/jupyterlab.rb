@@ -3,21 +3,21 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https:jupyter.org"
-  url "https:files.pythonhosted.orgpackages31c6d60b787af86f8c4ed15b8f734153ecaceeef5dc137496d4e6c0ab889fc9djupyterlab-4.1.0.tar.gz"
-  sha256 "92cdfd86c53e163fb9e91e14497901153536c5a889c9225dade270f6107a077f"
+  url "https:files.pythonhosted.orgpackagesd7e5d9fb2c3f0ad0e1f7f02807e8e802551785bca69132db54bd232a6e9d8af1jupyterlab-4.1.1.tar.gz"
+  sha256 "8acc9f561729d8f32c14c294c397917cddfeeb13a5d46f811979b71b4911a9fd"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "32e0accb0b2f4fccb02c65155fb194f748bea56f22ec8fb93d5e967f2969ae1c"
-    sha256 cellar: :any,                 arm64_ventura:  "9afeeebb7b51c96fe3abf06e3fc317a752a4450de5c29419e5d7b6a3e0734758"
-    sha256 cellar: :any,                 arm64_monterey: "2f1e7692263b4c39fe663d972f10c140c8acde23252a0188a703a76627ad51d3"
-    sha256 cellar: :any,                 sonoma:         "742714be50ccd804de7d15b40e3caf3cae3668543c4de9e38c29aa294e7f83a5"
-    sha256 cellar: :any,                 ventura:        "38949fe67f5a73f9821ff08433f071ba882773a39a371b659165b297383279ef"
-    sha256 cellar: :any,                 monterey:       "0df45fbe5982cde1af284fd94dd1522e01a7ac406e3f2c86a8151c99d55de889"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4d363f89a63b8397afdcec6b0971c6d16c05d960f17f68cbfda7bee708770a"
+    sha256 cellar: :any,                 arm64_sonoma:   "6d0f000d96315e64cf93b8b720563dcc196bba7826fecaf576df45e3d56699c0"
+    sha256 cellar: :any,                 arm64_ventura:  "f7d59cb35e44d5f48e73a45f23d61ef735f10f7297d754c50fd26021d806d073"
+    sha256 cellar: :any,                 arm64_monterey: "a80b5ff5bfba651c89687f775ea01247cc5fce1cbe8d59bdbc1e255fc22732d7"
+    sha256 cellar: :any,                 sonoma:         "6c208b7a1d7ad0deb47812a718819851aeb5f2f0c3c1da5a3a9a8c1f377b58ff"
+    sha256 cellar: :any,                 ventura:        "93e0bd45a47365ed50c015577db3745ba7b73a11c0ea5c3f227e2d1282d8689b"
+    sha256 cellar: :any,                 monterey:       "bf5a6e869565f2ea24539e66b2efd585f2238be95df021da4f6731b0d1767c33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82fa63ed634803e9eb12158cc02f0bf92b9e7dcc909dfd50c08cfbc8717aff38"
   end
 
   depends_on "python-hatchling" => :build
@@ -51,8 +51,8 @@ class Jupyterlab < Formula
   end
 
   resource "appnope" do
-    url "https:files.pythonhosted.orgpackages6acd355842c0db33192ac0fc822e2dcae835669ef317fe56c795fb55fcddb26fappnope-0.1.3.tar.gz"
-    sha256 "02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"
+    url "https:files.pythonhosted.orgpackages355d752690df9ef5b76e169e68d6a129fa6d08a7100ca7f754c89495db3c6019appnope-0.1.4.tar.gz"
+    sha256 "1de3860566df9caf38f01f86f65e0e13e379af54f9e4bee1e66b48f2efffd1ee"
   end
 
   resource "argon2-cffi" do
@@ -101,8 +101,8 @@ class Jupyterlab < Formula
   end
 
   resource "debugpy" do
-    url "https:files.pythonhosted.orgpackages61fe0486b90b9ac0d9afced236fdfe6e54c2f45b7ef09225210090f23dc6e48adebugpy-1.8.0.zip"
-    sha256 "12af2c55b419521e33d5fb21bd022df0b5eb267c3e178f1d374a63a2a6bdccd0"
+    url "https:files.pythonhosted.orgpackages5ec7a18e15ed2e53f86de2e1c4162a54ddf1c4f4cee5ca40270c14725ccdd8ffdebugpy-1.8.1.zip"
+    sha256 "f696d6be15be87aef621917585f9bb94b1dc9e8aced570db1b8a6fc14e8f9b42"
   end
 
   resource "defusedxml" do
@@ -146,8 +146,8 @@ class Jupyterlab < Formula
   end
 
   resource "ipykernel" do
-    url "https:files.pythonhosted.orgpackages0355644139aaa3237b0c6c8e3296462b2214cf3423d41c48e812db4555d42573ipykernel-6.29.0.tar.gz"
-    sha256 "b5dd3013cab7b330df712891c96cd1ab868c27a7159e606f762015e9bf8ceb3f"
+    url "https:files.pythonhosted.orgpackages87e46f1b4ab7d7fb9268d67a6c7c4520a7d76a5bbafd7abb716ed43b006153e0ipykernel-6.29.2.tar.gz"
+    sha256 "3bade28004e3ff624ed57974948116670604ac5f676d12339693f3142176d3f0"
   end
 
   resource "isoduration" do
@@ -231,8 +231,8 @@ class Jupyterlab < Formula
   end
 
   resource "nbconvert" do
-    url "https:files.pythonhosted.orgpackages8a5597826908be6005add50fe67b2809ede11c1e0f8342de23b2ce66a65591f2nbconvert-7.14.2.tar.gz"
-    sha256 "a7f8808fd4e082431673ac538400218dd45efd076fbeb07cc6e5aa5a3a4e949e"
+    url "https:files.pythonhosted.orgpackagesc90bbf0744e4da661e9db32c2ecbbe0f08b14e4e4344c602c2c609210c795bb6nbconvert-7.16.0.tar.gz"
+    sha256 "813e6553796362489ae572e39ba1bff978536192fb518e10826b0e8cadf03ec8"
   end
 
   resource "nbformat" do

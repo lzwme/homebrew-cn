@@ -1,18 +1,18 @@
 class Pymupdf < Formula
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https:pymupdf.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages659d3e9ef1ed83d9cb876d37a2b312803a26137cb619d38fca9ac296ce305834PyMuPDF-1.23.21.tar.gz"
-  sha256 "79539ff09c5b7f8091bea3a9d48cd2490c1a14a3733589f280a4f48c51582c4c"
+  url "https:files.pythonhosted.orgpackages0520a0d1221d8f379afcc12b4d1687a8f4adb69eef659e835d781c3fa331ff46PyMuPDF-1.23.22.tar.gz"
+  sha256 "c41cd91d83696cea67a4b6c65cc1951c2019ac0a561c5a3f543318ede30d3cd0"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5f694672276dc1a118fd2d7c58005ff99b7751f4cea572dce78fa4fee9bf644d"
-    sha256 cellar: :any,                 arm64_ventura:  "8ae197158164921f54484156364a15b4f8e196cbee91d9fc712e62a7b02ad72d"
-    sha256 cellar: :any,                 arm64_monterey: "23790fec0dc1bc8f766677af0f6398f81e2d1064b6d214fa7162241f452fcec5"
-    sha256 cellar: :any,                 sonoma:         "a6f3bbfea867adc00070ac9abdf94e41b1a71b5b06cb622eba73288abf059dec"
-    sha256 cellar: :any,                 ventura:        "805110b652d1c91c63800d9597994c0bac5cd16b553a252160447a84936918c3"
-    sha256 cellar: :any,                 monterey:       "14f5e2dc18d1796d0404be17a5db8b86e2cde7b6c74d0c57174cf8e3293f616d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20358f9f6461deaf1bbf90c545e93d323297ab529e42163ad5c858e01f6333eb"
+    sha256 cellar: :any,                 arm64_sonoma:   "28de1cbd13b92f8c5ebf6842e09290eb331555ddeadd0c70412c9ab230ed6db1"
+    sha256 cellar: :any,                 arm64_ventura:  "5eb4473a6cbfaaa77adb2a4718b92bea1428af2069c874a3923c916f69d45446"
+    sha256 cellar: :any,                 arm64_monterey: "6e4acab6b1522079a3b55224f0769b96de66ed9f795b705e01d452605f8a4b7c"
+    sha256 cellar: :any,                 sonoma:         "7c8930019cb344fd690e28869f0690d434224f5eb3b96d7aabe52b698d67c9a9"
+    sha256 cellar: :any,                 ventura:        "6941499b2bcc9090c552b4b6f63eacc23660ac62d701291d7dfd2dd66f9ee72e"
+    sha256 cellar: :any,                 monterey:       "61b206c75ea89146f5c5a1998b7c3239c39859d8fbfa73802b453122f8ff6c77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a18aa40d3202967d524359427c5d0fc48fd5907e481d8c5bdb86582c667aba8c"
   end
 
   depends_on "freetype" => :build

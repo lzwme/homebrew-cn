@@ -2,8 +2,8 @@ class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https:stackql.io"
   url "https:github.comstackqlstackql.git",
-      tag:      "v0.5.552",
-      revision: "c5f7a7e5ac66710192da23544e85951a32c406ce"
+      tag:      "v0.5.571",
+      revision: "10b7ca269eb702951d0edf9837849a27785314f4"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,13 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08cc994ca99beae7ad4876522b4c76a56a8c6c79f239fb5ca114cd3e4718b0de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9315c3592bf3d1d8bf74e1cff207870f42d1075e185d0686ff4662075260f83f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9885de2cc56e83c68a435ee482d1abd62cad616cfda17a330fc5c646f3ad4715"
-    sha256 cellar: :any_skip_relocation, sonoma:         "00e92faaf6a4a5b5f5dddc0d96fbe4289afad1f82672ba82c32bd31e5580c5ed"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc068214e7455a5e13551ec6c233250a3749ce13617b3cd26835809f4068b9ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ef8bf64a5edf32d7e2021bd30974024ac28557d93ceef23b310e3480a56121c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfac6eedbb504c5c5922313b98199fe6a201fbf4a517c493db3cdcf2ac0d405a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3a992bbc6605141d359f473af6d998151510543c6bae84b3b2084cbeef3cc20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9a774e512116cb49cf858bda189ffe13dafdcd8d3dbdd5af6c69860c820dbe1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c1d8f2eca0ab88dd2ce791c3ffb3bf7d5bde7b2456b84793cc87d1e0ee5efaa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a55531a3cf05552f54c222632756f6c291ccf9aa5d935203976497246c7d6213"
+    sha256 cellar: :any_skip_relocation, ventura:        "7b593c16f9aa692bd493afb5ca9eaae306366f303c7c7d9b7a6aaf2be0de40b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "93d4b41c6564484a2a0d652b8b6ade0bbee536dd67cc6929e115ec9dd0283c39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77a6441f5f2d3d6e024cd0388ae82079adf25d816c72c03961365b46da185d4c"
   end
 
   depends_on "go" => :build

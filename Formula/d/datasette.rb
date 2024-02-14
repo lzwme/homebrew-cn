@@ -5,17 +5,17 @@ class Datasette < Formula
   url "https:files.pythonhosted.orgpackagesc87d667e3bfceef9e428e38117b8d9704f502395fddc1effb7ef760b2dd0c4e6datasette-0.64.6.tar.gz"
   sha256 "85ca3aabca64fd9560052042aec27d3b32a1f85303853da3550434866d0fa539"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comsimonwdatasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "549bde599a5c10378ecccdc707bea2074d0424ea65f811343193f6c8b6d3a54b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51400d561d76bdafcb5ba337a1057b0d6d4d3c44149a5d91c10b8932073c358b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6565806e4c24c59b3fd612ba5fbfe29465d54ca21b3fb5f76713c4af6ef8f8bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae790d8a286837553c7e4ef7543f3f188b888e60c524ae3860fcdd3cf7f0dc89"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6651180b094cd749414cea257e285f43d304d39462a0ea69c75a0255a6d7bc8"
-    sha256 cellar: :any_skip_relocation, monterey:       "52a896b7c03ea47ca349c5035aae966bbdfe8ad89c2cbbdb4f6cf9ac78269acd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32617b474bb4f6a9b3fb9a7f3abdd089e52eef2a6e7297e119384690eb16cfb0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddab20ef7926ca48789bf6f0d60d34f1252c3a490d71ef74e89852b301962f8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca6c574239d7e93c01a72a0882dbe69ddbbef1778eb31e93abcc1e5b38529c58"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77792c5def667d4a6b605dc429a3ec9bd3f1d4f930cafb452f0b58c44dbbdb14"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cf62e1f2141efdc209c2e1d7b46a3f0d736adb274005708b3c2286a3cf4d9f32"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b3ff1bab4363136c77eb266438d130c50c7ad6db0babc1c601e90b758e86304"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f5b65626f0e1c37bf32c19e33c0d8623ca88f55e060a75191c3e5dd068bd21d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "979764037ffe315001139553968b50db7b897d0772cc8e58cd86e1b9e8cfa72a"
   end
 
   depends_on "python-certifi"
@@ -64,8 +64,8 @@ class Datasette < Formula
   end
 
   resource "hupper" do
-    url "https:files.pythonhosted.orgpackages423d70bef845298bb4746b94418efde81bcfe0fad479169c2e9649f95630bfa7hupper-1.12.tar.gz"
-    sha256 "18b1653d9832c9f8e7d3401986c7e7af2ae6783616be0bc406bfe0b14134a5c6"
+    url "https:files.pythonhosted.orgpackagesbde6bb064537288eee2be97f3e0fcad8e7242bc5bbe9664ae57c7d29b3fa18c2hupper-1.12.1.tar.gz"
+    sha256 "06bf54170ff4ecf4c84ad5f188dee3901173ab449c2608ad05b9bfd6b13e32eb"
   end
 
   resource "idna" do
@@ -99,18 +99,18 @@ class Datasette < Formula
   end
 
   resource "pluggy" do
-    url "https:files.pythonhosted.orgpackages365104defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40pluggy-1.3.0.tar.gz"
-    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
+    url "https:files.pythonhosted.orgpackages54c643f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59pluggy-1.4.0.tar.gz"
+    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
   end
 
   resource "python-multipart" do
-    url "https:files.pythonhosted.orgpackages2d23abcfad10c3348cb6358400f8adbc21b523bbc6c954494fd0974428068672python_multipart-0.0.6.tar.gz"
-    sha256 "e9925a80bb668529f1b67c7fdb0a5dacdd7cbfc6fb0bff3ea443fe22bdd62132"
+    url "https:files.pythonhosted.orgpackages5c0f9c55ac6c84c0336e22a26fa84ca6c51d58d7ac3a2d78b0dfa8748826c883python_multipart-0.0.9.tar.gz"
+    sha256 "03f54688c663f1b7977105f021043b0793151e4cb1c1a9d4a11fc13d622c4026"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesfcc9b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7setuptools-69.0.3.tar.gz"
-    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
+    url "https:files.pythonhosted.orgpackagesc93d74c56f1c9efd7353807f8f5fa22adccdba99dc72f34311c30a69627a0fadsetuptools-69.1.0.tar.gz"
+    sha256 "850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401"
   end
 
   resource "sniffio" do

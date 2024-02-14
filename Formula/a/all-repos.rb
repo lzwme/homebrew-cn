@@ -8,21 +8,26 @@ class AllRepos < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b6ec8dae833a83273149d93e816172afe534422110b32b1930d4e413675e9c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1955bdb52812a676344316e6036712d3b2635b30b15c2a6c9553c9f075494e52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "97faf13030d107338dcefbf7f802427ef5f1875cea3172b7eee3c27e319a1a31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e24fa2e9011f27177b5afbb3f1a0e25f629c1e62fec41094ce452cb1d75b1251"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ca812e7833dec7e82f0b6be3e5961bec7f29bd42d644ac15d02a51ff16843be"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5ad7a62acebf34ff28b05a770b418ea22f2e174f84f8f8ffef41917ba4f11f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf83b12937c8d65cd17b606b443d08e8878cd08f25a96975b55c5f83e3a9314a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2fa8c56988879e6fde4225ee508808727b0c0f7e7693478c26fea948ee64650"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09fc178a99cb173c83ef1de1eac435a6c99ac3bb5c13364212bcdce6b45219f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6479b239edd3c6fa0d4f1ee7e88fcba6e5f1433ff3a6cc6f20cb87eb73b9eb03"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a9297534b052c7ad5262f439df803efffae923493ed8db714d1d75123fd44960"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c84d2dda2b192bd3f2c2b46ee7696bf03a2aad1b3500e3fdf1f1a3dc55c51e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff58b3a8c9be8b05175e3ba556a38dc0a8d8dfd47ace84a86ceb9b3bbf283c1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eda91965585b8feabd8c909f3a92687e647befd80901d25e8597bb08dbba6820"
   end
 
-  depends_on "python-packaging"
   depends_on "python@3.12"
 
   resource "identify" do
-    url "https:files.pythonhosted.orgpackages61a092aba7e128faadab9db785c1f8cc442caf51cba5a55b575abb211b12526fidentify-2.5.33.tar.gz"
-    sha256 "161558f9fe4559e1557e1bff323e8631f6a0e4837f7497767c1782832f16b62d"
+    url "https:files.pythonhosted.orgpackages70406df30e7ec1934ad43736248bb2c2800782fba42bad2bfda91b514cf7bdeaidentify-2.5.34.tar.gz"
+    sha256 "ee17bc9d499899bc9eaec1ac7bf2dc9eedd480db9d88b96d123d3b64a9d34f5d"
+  end
+
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   def install

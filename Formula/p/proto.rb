@@ -12,13 +12,14 @@ class Proto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a871c686e9b9dde5bff4afcdb111a9fa0b0bd0597054a9f2813969c679d3a7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b81b308d7c15ee5bdbd387d7b76c9183e68a7b2bb8fec182f71f9bf8dd88dc14"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b6c7c5b934dcda40098152a4f0bbf3205018d62af9dc3695a669e01363aace7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0be3206500d4618f7cbf51db4529efd8a54ec19925b98ddea75cb666995bb482"
-    sha256 cellar: :any_skip_relocation, ventura:        "42b662d30e8d7c2e456eecee6adb745bdb68c13a87b090bd8cae7992fb6a6738"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0276404090d208693f5bb7a761d84a50b2654c331e19fb7bbd3bc03f8445925"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c19fa2c7de34e1cf0a349e8e66e8b613b6717e4a34912b4928779f2c31ce71e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ff9de367ee78ce1ddb03e7c0ae6d9db3731f6dc02df3f573f9273bbf7e56fda"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89f68a66e5fe549d9c9d2c3f12880a58e22760ff0e2fb2cbc05fb456adc1fcce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f74d7ca82eb84749599fbeca604ce23e99a575129dd71ad13e074c745cc714c9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f87967d15e4e1e5ca83e05469a5889fc1b24633239b41ce915a572eb70aed3c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "217b7f50c7d7b34490c0cb6a39e37e980598ff6abd97a1e36a5950adae95c770"
+    sha256 cellar: :any_skip_relocation, monterey:       "09139c5aed760d0aa0b2bf0a7f753501bf189ef4f6a7596f2317157269bc84be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "efc53763103d5d98759323c4721685d6b311d9c1b446207c5c64bad99895982b"
   end
 
   depends_on "pkg-config" => :build
@@ -34,6 +35,8 @@ class Proto < Formula
 
     bin.each_child do |f|
       basename = f.basename
+
+      next if basename.to_s == "proto-shim"
 
       (libexec"bin").install f
       (binbasename).write_env_script libexec"bin"basename, PROTO_INSTALL_DIR: opt_prefix"bin"
@@ -54,7 +57,7 @@ class Proto < Formula
 
     path = testpath"test.js"
     path.write "console.log('hello');"
-    output = shell_output("#{testpath}.protobinnode #{path}").strip
+    output = shell_output("#{testpath}.protoshimsnode #{path}").strip
     assert_equal "hello", output
   end
 end
