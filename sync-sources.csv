@@ -5713,7 +5713,7 @@ Homebrew-homebrew-core/Formula/s/since.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sing-box.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/singular.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/singularity.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/sip.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sipcalc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sipp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sipsak.rb, Homebrew/homebrew-core, 1
@@ -8417,6 +8417,7 @@ Homebrew-homebrew-cask/Casks/g/git-credential-manager.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/g/git-it.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitahead.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitblade.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gitbutler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitdock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gitee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gitfiend.rb, Homebrew/homebrew-cask, 1
@@ -10049,6 +10050,7 @@ Homebrew-homebrew-cask/Casks/q/qcad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qcma.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qctools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qdesktop.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/q/qdirstat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qdslrdashboard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qfinder-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qflipper.rb, Homebrew/homebrew-cask, 0

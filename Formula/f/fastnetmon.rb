@@ -4,16 +4,16 @@ class Fastnetmon < Formula
   url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e2224278e6a039eb8815b070dbec167059c97c45ce140d040e743933551f4aa6"
-    sha256 cellar: :any,                 arm64_ventura:  "867ad398c827b030e7a37c6ae7ec43424b5f39049712ad4e73ad9f34272af6d8"
-    sha256 cellar: :any,                 arm64_monterey: "289219de6117e93818efe215608ec63a581f65a844796296b8c8dcf7131e4282"
-    sha256 cellar: :any,                 sonoma:         "4e2b2eaae5b1208543fd6cba7d17319c61dca90694f353ae68271677da81b0a5"
-    sha256 cellar: :any,                 ventura:        "ca02b5e0eaf4c162a32529427ee82f9ce322dfd76f74da6da5f217ff3d0e733d"
-    sha256 cellar: :any,                 monterey:       "c69862f99e4e368ff2df5ffabdb74b04c415b8441f22ea7fdd2cb1bab24f1e57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e789634cedde18c8806a0d23a9469f72bc0f95da40f5e5556457f8a54425d9f"
+    sha256 cellar: :any,                 arm64_sonoma:   "e8b864480fc12d54a2fcc5294777a6bf9e72c8f55b36f3f35aceddfabcb62164"
+    sha256 cellar: :any,                 arm64_ventura:  "e78783d282c0cfb7d5651248bc4374b61eb04e7b867321cb572dce9d78ba3f72"
+    sha256 cellar: :any,                 arm64_monterey: "d5a6e493f93aeb40cbc8d52bb6319096f39f96047c31a72c89b10a1406070023"
+    sha256 cellar: :any,                 sonoma:         "bc3cee0cd731ee4cfe16697e8beae06cc0764874b6dee26bcdb8bda8827a6e02"
+    sha256 cellar: :any,                 ventura:        "d2c90bcd28a7d7aba5762a74d8351cba17c9a56fdc9cd3ee96220408aa784b45"
+    sha256 cellar: :any,                 monterey:       "b3b9b92b2edd94eebb33dd0e31f8c9d3c997f73018d8288c36e6638cd3f2c796"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0db774483ad93053c9f6f5d4b1241013adc30c8dba0fa1e3bc1b5c1e5837b3ce"
   end
 
   depends_on "cmake" => :build
@@ -46,8 +46,6 @@ class Fastnetmon < Formula
 
   def install
     system "cmake", "-S", "src", "-B", "build",
-                    "-DENABLE_CUSTOM_BOOST_BUILD=FALSE",
-                    "-DDO_NOT_USE_SYSTEM_LIBRARIES_FOR_BUILD=FALSE",
                     "-DLINK_WITH_ABSL=TRUE",
                     "-DSET_ABSOLUTE_INSTALL_PATH=OFF",
                     *std_cmake_args
@@ -80,8 +78,7 @@ class Fastnetmon < Formula
       exec opt_sbin"fastnetmon",
            "--configuration_file",
            testpath"fastnetmon.conf",
-           "--log_to_console",
-           "--disable_pid_logic"
+           "--log_to_console"
     end
 
     sleep 15

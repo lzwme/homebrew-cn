@@ -1,21 +1,20 @@
 class Sip < Formula
-  include Language::Python::Virtualenv
-
   desc "Tool to create Python bindings for C and C++ libraries"
-  homepage "https://www.riverbankcomputing.com/software/sip/intro"
-  url "https://files.pythonhosted.org/packages/b1/29/06e5036c035f17e0e874d71d4f5968d70aa879b155335d46f645757ff649/sip-6.8.2.tar.gz"
-  sha256 "2e65a423037422ccfde095c257703a8ff45cc1c89bdaa294d7819bc836c87639"
+  # upstream page 404 report, https:github.comPython-SIPsipissues7
+  homepage "https:python-sip.readthedocs.ioenlatest"
+  url "https:files.pythonhosted.orgpackages9985261c41cc709f65d5b87669f42e502d05cc544c24884121bc594ab0329d8esip-6.8.3.tar.gz"
+  sha256 "888547b018bb24c36aded519e93d3e513d4c6aa0ba55b7cc1affbd45cf10762c"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  head "https://www.riverbankcomputing.com/hg/sip", using: :hg
+  head "https:www.riverbankcomputing.comhgsip", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd7af2171fcb4ca71524ee632746404bbe297f37ed406043c23dc6a7d878455a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f67d12f087a3f7ea9ec6d90bdbf616774d15202e7687129c9970ec52f4f11050"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13d82e1e0fc16aa384f8951ea1ebced744eb6ec4de4da638566127ea0136da9b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d6ad885aba351d9e094b6dfdd07c47e61b17a2e897411df6e6aedfd26c84b378"
-    sha256 cellar: :any_skip_relocation, ventura:        "83a66a89d782c6f7890c8387d940b71055b3ad24987fa577cf1ff3c1a9778ac1"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd0e462966fcf0e827ad45d65545221bc4b00584f2f920c8e6588991b7b768c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55e09b90648563625f3ab1576a4a8277e0b5f386f291b30523777e60fd8ea973"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c72ef903a6273a299314786f62bb0dd7514c671e815e03f1986637e50b389fa3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1215a87c1cd9ebf7a19c58591a4947d7e01669ea188cf38169ec6f84d2563616"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "161ac2919ec3990d7462fffbabc623301b02db130ddcdbf11f44b6ff84f8b976"
+    sha256 cellar: :any_skip_relocation, sonoma:         "abedf2f58e97a6bd15b937cad168225e7f56b5998ed5898307d4021ba3a51638"
+    sha256 cellar: :any_skip_relocation, ventura:        "0b83c01077f716d62be770898c1d718e81285f2969e3998d9675e70061110e83"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c34630d0ec9a45a2a5270079d2aa6ce1a930bb4e0dd20a0e5b812f45d098e9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12eb797765c96258bc8e1bff5bb62689d9ee3fed08419ca8d4312a3c86d811e6"
   end
 
   depends_on "python@3.11" => [:build, :test]
@@ -30,21 +29,16 @@ class Sip < Formula
         .sort_by(&:version)
   end
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
-    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
-  end
-
   def install
     clis = %w[sip-build sip-distinfo sip-install sip-module sip-sdist sip-wheel]
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
 
       pyversion = Language::Python.major_minor_version(python_exe)
       clis.each do |cli|
-        bin.install bin/cli => "#{cli}-#{pyversion}"
+        bin.install bincli => "#{cli}-#{pyversion}"
       end
 
       next if python != pythons.max_by(&:version)
@@ -57,7 +51,7 @@ class Sip < Formula
   end
 
   test do
-    (testpath/"pyproject.toml").write <<~EOS
+    (testpath"pyproject.toml").write <<~EOS
       # Specify sip v6 as the build system for the package.
       [build-system]
       requires = ["sip >=6, <7"]
@@ -68,8 +62,8 @@ class Sip < Formula
       name = "fib"
     EOS
 
-    (testpath/"fib.sip").write <<~EOS
-      // Define the SIP wrapper to the (theoretical) fib library.
+    (testpath"fib.sip").write <<~EOS
+       Define the SIP wrapper to the (theoretical) fib library.
 
       %Module(name=fib, language="C")
 
@@ -96,10 +90,10 @@ class Sip < Formula
     EOS
 
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       pyversion = Language::Python.major_minor_version(python_exe)
 
-      system "#{bin}/sip-install-#{pyversion}", "--target-dir", "."
+      system "#{bin}sip-install-#{pyversion}", "--target-dir", "."
     end
   end
 end

@@ -47,6 +47,13 @@ class MinioMc < Formula
   end
 
   test do
+    assert_equal version.to_s,
+                 shell_output("#{bin}mc --version 2>&1")
+                   .match((?:RELEASE[._-]?)?([\dTZ-]+))
+                   .to_s
+                   .gsub([^\d], ""),
+                 "`version` is incorrect"
+
     system bin"mc", "mb", testpath"test"
     assert_predicate testpath"test", :exist?
   end

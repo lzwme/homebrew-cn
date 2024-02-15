@@ -1,19 +1,19 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https:github.comprefix-devrattler-build"
-  url "https:github.comprefix-devrattler-buildarchiverefstagsv0.9.0.tar.gz"
-  sha256 "10f364e2eeb402f27c76e16f7bf75e2aef8f869dcb02a70584e0bc558f3838b8"
+  url "https:github.comprefix-devrattler-buildarchiverefstagsv0.10.0.tar.gz"
+  sha256 "8787feedf18577124d420486f307b0a90cca70d774eb36bdab6770e32d1f6399"
   license "BSD-3-Clause"
   head "https:github.comprefix-devrattler-build.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fcec2484b94dc2ce536804cad3d0b6f4c06bd21d3415955426d174fbf967627d"
-    sha256 cellar: :any,                 arm64_ventura:  "8791190bfa7ecb9253ce4556a6179316f12293bae434953ad4061b43c9f4bf1c"
-    sha256 cellar: :any,                 arm64_monterey: "5074457d64f837151d150e994e212ac6d003d5b41c55ed6545bd6c02c0f19e51"
-    sha256 cellar: :any,                 sonoma:         "b842d6ba609ce7ea6332eafe4be310ed68496940b0c3f49cb7c2336e5b2ad554"
-    sha256 cellar: :any,                 ventura:        "48de4ebbb3fb3c153ea5ba98f1bc3b7a3473eb6226e407564012803a77219205"
-    sha256 cellar: :any,                 monterey:       "0bf2d3d6abd3dea9547f9856f31ce2ebb1dfe72f83848fc2c5a83c0a3f189f57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "175923f5f717fe3af4e61b38169e8bc823c54f94a71307a7638180edf232b881"
+    sha256 cellar: :any,                 arm64_sonoma:   "b42d6f271d38afaba644c5115188aa1d7796b053d4b5504369bfe60f82d9f3cb"
+    sha256 cellar: :any,                 arm64_ventura:  "fb04d4a63c470a43c5e25627c0c2012528fe4c72cb1e057d7e0edcca78a4ee21"
+    sha256 cellar: :any,                 arm64_monterey: "5a6f23d520025d2660f918898d2dc12f7286debda7d4c2394a8f7397c4ddfa52"
+    sha256 cellar: :any,                 sonoma:         "3ac38162662a2080b8d87303a5dd44e787af23c4aad133658cb73752d3ce2e56"
+    sha256 cellar: :any,                 ventura:        "ed8a07f24b74c37cd089d6f320d530d6afe66966deed38e8ef06f342c69c4a5f"
+    sha256 cellar: :any,                 monterey:       "c332c235d962e0a12ee39113e4d9ec42b44b9badc19f91a931641dc40169328a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8afee27474e3e8384d04a5ae65810462c5a747bfeb4887122ba3a78ef3d17935"
   end
 
   depends_on "pkg-config" => :build

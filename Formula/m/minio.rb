@@ -60,6 +60,13 @@ class Minio < Formula
   end
 
   test do
+    assert_equal version.to_s,
+                 shell_output("#{bin}minio --version 2>&1")
+                   .match((?:RELEASE[._-]?)?([\dTZ-]+))
+                   .to_s
+                   .gsub([^\d], ""),
+                 "`version` is incorrect"
+
     assert_match "minio server - start object storage server",
       shell_output("#{bin}minio server --help 2>&1")
   end
