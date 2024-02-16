@@ -8,7 +8,7 @@ cask "avogadro" do
   url "https:github.comOpenChemistryavogadrolibsreleasesdownload#{version}Avogadro2-#{version}-Darwin#{arch}.dmg",
       verified: "github.comOpenChemistryavogadrolibs"
   name "Avogadro"
-  desc "Molecule editor and visualizer"
+  desc "Molecule editor and visualiser"
   homepage "https:avogadro.cc"
 
   app "Avogadro2.app"

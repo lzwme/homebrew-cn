@@ -4,7 +4,7 @@ cask "codeexpander" do
 
   url "https:github.comonceworkcodeexpanderreleasesdownload#{version.major_minor}.xCodeExpander-#{version}.dmg"
   name "CodeExpander"
-  desc "Cloud synchronization development tool"
+  desc "Cloud synchronisation development tool"
   homepage "https:github.comonceworkcodeexpander"
 
   livecheck do

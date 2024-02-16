@@ -6,16 +6,17 @@ class GrafanaAgent < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c86ea0828f3a00f2142396947767dd7427028eb65f6cd84eea8c49289386a505"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "287ef2e16ded11fb44c6e8d625a9bfb3e3149c7f78f88cbdb56a086df0ba10fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34686e225647d9e123f0f9be89a9693ab8ea4fb1c74e2c929bc9e1d6efa83972"
-    sha256 cellar: :any_skip_relocation, sonoma:         "263afe9363fe568a21736d8fc0b286eff0ce813b5185e94d4453c3f1455d6fbd"
-    sha256 cellar: :any_skip_relocation, ventura:        "569e8abf8904d7292fcd413253ca9bb06bc38c7807108079f25f4dcc70bb9e22"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ce24977a92453ab7a76ea9375a05d2215bc30b2f5387b1754c14651ac50391e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e35c1ddd635a982b507cb0212a5f185b43f4f3624d0e0d230f1e8f6d719c686e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aaee0a6831b0f6fa8361234342d5debdbb944db67d6b354f2887a03eee295abe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e71693fa3ff5735da5ab62aa6718710fc0b197771a6504ae30da7d92ec1873c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "51267fd43a29f8a45148ea82ff1e0a35718dc196e7bdfcc0a098ea43494febb4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ce280ff6549a991260ebd2e1302c20dbd207072af87db2f84ca9d1f1693305a"
+    sha256 cellar: :any_skip_relocation, ventura:        "0589e1095288feebd70677ce346372332590e54a4fc6cfaf3954a9e46c4d55ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa0b7b7c948fab33e0b8bea06ee935a2dedd509ed8531a2ee324ec19f7a5e0ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc2e97302d803e547697e7449e015267968781a05e391eaadaf679ffa772d23f"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.21" => :build # use "go" again when https:github.comgrafanaagentpull6139 is released
   depends_on "node" => :build
   depends_on "yarn" => :build
 

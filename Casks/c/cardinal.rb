@@ -4,7 +4,7 @@ cask "cardinal" do
 
   url "https:github.comDISTRHOCardinalreleasesdownload#{version}Cardinal-macOS-universal-10.15-#{version}.pkg"
   name "Cardinal"
-  desc "Virtual modular synthesizer plugin"
+  desc "Virtual modular synthesiser plugin"
   homepage "https:github.comDISTRHOCardinal"
 
   pkg "Cardinal-macOS-universal-10.15-#{version}.pkg"

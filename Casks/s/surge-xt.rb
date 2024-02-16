@@ -5,7 +5,7 @@ cask "surge-xt" do
   url "https:github.comsurge-synthesizerreleases-xtreleasesdownload#{version}surge-xt-macOS-#{version}.dmg",
       verified: "github.comsurge-synthesizerreleases-xt"
   name "Surge XT"
-  desc "Hybrid synthesizer"
+  desc "Hybrid synthesiser"
   homepage "https:surge-synthesizer.github.io"
 
   pkg "surge-xt-macOS-#{version}.pkg"

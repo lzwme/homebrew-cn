@@ -9,21 +9,18 @@ class Iredis < Formula
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95806457e261a0bf0d0e0733f673e3f4bcb6d2a31685bff9012c2a4b2ca81b54"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b53b1ffc79ab111d1e4c03b94c210ea5b70f9a2b12c79830e954125279f1b3d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18afbf2e671f312b45c4701de9b790f9cec1d40da9eab5b75feacf0bf7c8596c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "13874777bc71f50e19085bee4d2d8ad1cd7638c53b309ddd26affa10b955b1d1"
-    sha256 cellar: :any_skip_relocation, ventura:        "ffb85fe6512412b1dfc851ef84be87550db0ac4c8d5b56a11042ef6ba63a1bba"
-    sha256 cellar: :any_skip_relocation, monterey:       "441411950c48bf5acd47576a3a0b9defcb5e50ecae00cd6f7442b4adcb9bc094"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4221795dc09e00f1218592ce357c677400174500eda35a1da441296ccbc812d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d4adcb980f5f33e53cae99805e6483b0b7620e0c1a223b783927968b7c39657"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56e342299ebaa116ec27d33fb29651c855e89226bf6643f7573206863fd6d444"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80bc79bcd38112397ca7886900beba0ac2a9c77c98d7123ebe4418d11aa7fd47"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c2880d15fd643763aa6d786267310124b194efe8673f03408484c4c3f18dc6b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "112ac36f18085a098b72b130c6e6760d21c4d223b17cfdd4c01e29f450bd14ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "c9fdd9bd53d739663797559c01fa7b2e41b033ce5d2d54522b5b40c7d608bb0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a2c4f1a253d019bb0fb4b077e76676db4df79534e03cc39fab4b2e094b7b349"
   end
 
-  depends_on "pygments"
-  depends_on "python-packaging"
-  depends_on "python-pyparsing"
-  depends_on "python-setuptools"
+  depends_on "python-setuptools" # for undeclared distutils
   depends_on "python@3.12"
-  depends_on "six"
 
   resource "click" do
     url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
@@ -40,14 +37,24 @@ class Iredis < Formula
     sha256 "fc7f93ded930c92394ef2cb6f04a8aabab4117a91449e72dcc8dfa646a508be8"
   end
 
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
   resource "pendulum" do
     url "https:files.pythonhosted.orgpackagesdb156e89ae7cde7907118769ed3d2481566d05b5fd362724025198bb95faf599pendulum-2.1.2.tar.gz"
     sha256 "b06a0ca1bfe41c990bbf0c029f0b6501a7f2ec4e38bfec730712015e8860f207"
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackages9a0276cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2baprompt_toolkit-3.0.39.tar.gz"
-    sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
+    url "https:files.pythonhosted.orgpackagesccc625b6a3d5cd295304de1e32c9edbcf319a52e965b339629d37d42bb7126caprompt_toolkit-3.0.43.tar.gz"
+    sha256 "3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"
+  end
+
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   end
 
   resource "python-dateutil" do
@@ -63,6 +70,11 @@ class Iredis < Formula
   resource "redis" do
     url "https:files.pythonhosted.orgpackages4a4c3c3b766f4ecbb3f0bec91ef342ee98d179e040c25b6ecc99e510c2570f2aredis-5.0.1.tar.gz"
     sha256 "0dab495cd5753069d3bc650a0dde8a8f9edde16fc5691b689a566eda58100d0f"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "wcwidth" do

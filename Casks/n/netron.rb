@@ -4,7 +4,7 @@ cask "netron" do
 
   url "https:github.comlutzroedernetronreleasesdownloadv#{version}Netron-#{version}-mac.zip"
   name "Netron"
-  desc "Visualizer for neural network, deep learning, and machine learning models"
+  desc "Visualiser for neural network, deep learning, and machine learning models"
   homepage "https:github.comlutzroedernetron"
 
   auto_updates true

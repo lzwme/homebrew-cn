@@ -5,7 +5,7 @@ cask "zeebe-modeler" do
   url "https:github.comzeebe-iozeebe-modelerreleasesdownloadv#{version}zeebe-modeler-#{version}-mac.zip",
       verified: "github.comzeebe-iozeebe-modeler"
   name "Zeebe Modeler"
-  desc "Desktop Application for modeling Zeebe Workflows with BPMN"
+  desc "Desktop Application for modelling Zeebe Workflows with BPMN"
   homepage "https:zeebe.io"
 
   deprecate! date: "2023-12-17", because: :discontinued

@@ -4,7 +4,7 @@ cask "crunch" do
 
   url "https:github.comchrissimpkinsCrunchreleasesdownloadv#{version}Crunch-Installer.dmg"
   name "Crunch"
-  desc "Insane(ly slow but wicked good) PNG image optimization"
+  desc "PNG image optimiser"
   homepage "https:github.comchrissimpkinsCrunch"
 
   app "Crunch.app"

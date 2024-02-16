@@ -3,18 +3,18 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/a7/ea/0554f0803a4b2fd57f644cabe3c649b6668b1bdcf5904b7310dfa5211852/dstack-0.15.0.tar.gz"
-  sha256 "2ef6f3ed7ee4b41fa5d227722602659be85ef2f7839cac0d0b9029831b526b65"
+  url "https://files.pythonhosted.org/packages/32/78/d776689c23d7c666c877362d515dda80394570a89aaadc4ac8466ed1035b/dstack-0.15.1.tar.gz"
+  sha256 "a6301a4507521a8dcb5fa8a94c5f3a010e64f25a57fe1850809c3a5a74ca66c8"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a0a73ac08c530e68b1689ca530f0dc5dd55b6c8b788ff53438c98c198d2838eb"
-    sha256 cellar: :any,                 arm64_ventura:  "0842cf285fdc71938575dee7f4cd4a9e2371e8d58d8857983badefcbc6bf6f55"
-    sha256 cellar: :any,                 arm64_monterey: "54adfdef6a18472326594a2099e345b87aa9ee9b0dc5acefd8280cfc4b453c62"
-    sha256 cellar: :any,                 sonoma:         "4e491b2901d12bb1aa98e46d7e3952153dee64fc8388f286263e98e3b122fa9c"
-    sha256 cellar: :any,                 ventura:        "a51fcf22ca8f484ea5bbbeb6b5c15b0d44040b3a4c98f5b28602973b8fed0d41"
-    sha256 cellar: :any,                 monterey:       "c0bf262840b65f19998517249eb2879ee6974513b94e450b9b2b688cf1e33856"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6c18485ce93bb6aa12b6f6ad0aa32108f9db8484c3f82874914cf4d0bd937d5"
+    sha256 cellar: :any,                 arm64_sonoma:   "70eff99bbf7294ebe8d5516cd0ddcf099812b2c59e01fb1f1e69fe51977d570f"
+    sha256 cellar: :any,                 arm64_ventura:  "3044f3241949383e222acac3f4a5ff07b51fc0314d6194f22fc259cea4a05c41"
+    sha256 cellar: :any,                 arm64_monterey: "f11ec24f5507116e9b6b3a508f656e72ffe1c3dabbf20406933e3beb6f801c9d"
+    sha256 cellar: :any,                 sonoma:         "43b5c25c960372daa04e835bbcaecd35e40381a9583d1b7849483f1d5072503a"
+    sha256 cellar: :any,                 ventura:        "36820a9e8e431c3dc6a5f891c402156050d94b91188a109f41b3d8773ab9127b"
+    sha256 cellar: :any,                 monterey:       "165d004d212b9e782a962cb0db312840d659b75d439e9c6fb89d576bd2ed44a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "807bae62215cb35a069e9761d80b71358e4fe14e6b5a60df307edd1fb79c46bf"
   end
 
   # `pkg-config` and `rust` are for bcrypt.
@@ -181,13 +181,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0d/4d/a098b0b06b28043078e34b07e12e958cbea288e19454b83b1c22efc68719/boto3-1.34.40.tar.gz"
-    sha256 "81d026ed8c8305b880c71f9f287f9b745b52bd358a91cfc133844c907db4d7ee"
+    url "https://files.pythonhosted.org/packages/4b/71/2d62af7b6258ed523bdf14ff48788decc499288fec685f1c0f4dc55c77cf/boto3-1.34.42.tar.gz"
+    sha256 "2ed136f9cf79e783e12424db23e970d1c50e65a8d7a9077efa71cbf8496fb7a3"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2b/7e/3ec86e69e49ce314f680280449189c05609c0801ad549bd53d2af612f6df/botocore-1.34.40.tar.gz"
-    sha256 "cb794bdb5b3d41845749a182ec93cb1453560e52b97ae0ab43ace81deb011f6d"
+    url "https://files.pythonhosted.org/packages/9f/ce/fd56ae7d57dffb8c7c798ee41c82aa9ff5d15dd70e311928994b84a38fe4/botocore-1.34.42.tar.gz"
+    sha256 "cf4fad50d09686f03e44418fcae9dd24369658daa556357cedc0790cfcd6fdac"
   end
 
   resource "cachetools" do
@@ -246,13 +246,13 @@ class Dstack < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/34/8b/33c66d89cdd061b070804018820a1fa5a179ecae43155ae1b62eea0cd11d/google-api-core-2.17.0.tar.gz"
-    sha256 "de7ef0450faec7c75e0aea313f29ac870fdc44cfaec9d6499a9a17305980ef66"
+    url "https://files.pythonhosted.org/packages/58/e2/c2ce7bf379a7200ecab7de2cbf17dcbb3fe2ab5085925dfe6797e263a475/google-api-core-2.17.1.tar.gz"
+    sha256 "9df18a1f87ee0df0bc4eea2770ebc4228392d8cc4066655b320e2cfccb15db95"
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/6d/f6/2b93d4729ccc25ee545cc394e21c6f9724537584a2607a51efd8881ac7d8/google-api-python-client-2.117.0.tar.gz"
-    sha256 "b38cd1477ee3c341a0d2f7427326499b416f36c44e9b20d1da229df8be0c596e"
+    url "https://files.pythonhosted.org/packages/e4/6c/6258d89feb950462d44a868b0aa58034f5cd00a10bd99fc1f379ef9494fb/google-api-python-client-2.118.0.tar.gz"
+    sha256 "ebf4927a3f5184096647be8f705d090e7f06d48ad82b0fa431a2fe80c2cbe182"
   end
 
   resource "google-auth" do
@@ -351,8 +351,8 @@ class Dstack < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/18/56/78a38490b834fa0942cbe6d39bd8a7fd76316e8940319305a98d2b320366/httpcore-1.0.2.tar.gz"
-    sha256 "9fc092e4799b26174648e54b74ed5f683132a464e95643b226e00c2ed2fa6535"
+    url "https://files.pythonhosted.org/packages/94/f1/47528a2f465b09c71caad95f5de1d7225e438cf3d1068d278362a4a6bc6a/httpcore-1.0.3.tar.gz"
+    sha256 "5c0f9546ad17dac4d0772b0808856eb616eb8b48ce94f49ed819fd6982a8a544"
   end
 
   resource "httplib2" do
@@ -511,8 +511,8 @@ class Dstack < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/b7/0a/e3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161fe/rpds_py-0.17.1.tar.gz"
-    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
+    url "https://files.pythonhosted.org/packages/55/ba/ce7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5e/rpds_py-0.18.0.tar.gz"
+    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
   end
 
   resource "rsa" do
@@ -546,8 +546,8 @@ class Dstack < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/e6/6b/c0a06092d1d33a704653bb824381e8a3117d2e55e4d67b82eaea0646106d/SQLAlchemy-2.0.26.tar.gz"
-    sha256 "e1bcd8fcb30305e27355d553608c2c229d3e589fb7ff406da7d7e5d50fa14d0d"
+    url "https://files.pythonhosted.org/packages/b9/fc/327f0072d1f5231d61c715ad52cb7819ec60f0ac80dc1e507bc338919caa/SQLAlchemy-2.0.27.tar.gz"
+    sha256 "86a6ed69a71fe6b88bf9331594fa390a2adda4a49b5c06f98e47bf0d392534f8"
   end
 
   resource "sqlalchemy-utils" do

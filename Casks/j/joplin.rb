@@ -8,7 +8,7 @@ cask "joplin" do
   url "https:github.comlaurent22joplinreleasesdownloadv#{version}Joplin-#{version}#{arch}.DMG",
       verified: "github.comlaurent22joplin"
   name "Joplin"
-  desc "Note taking and to-do application with synchronization capabilities"
+  desc "Note taking and to-do application with synchronisation capabilities"
   homepage "https:joplinapp.org"
 
   livecheck do

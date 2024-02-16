@@ -4,7 +4,7 @@ cask "profilecreator" do
 
   url "https:github.comerikberglundProfileCreatorreleasesdownloadv#{version.csv.first}ProfileCreator_v#{version.csv.first}-#{version.csv.second}.dmg"
   name "ProfileCreator"
-  desc "Create standard or customized configuration profiles"
+  desc "Create standard or customised configuration profiles"
   homepage "https:github.comerikberglundProfileCreator"
 
   deprecate! date: "2023-12-17", because: :discontinued

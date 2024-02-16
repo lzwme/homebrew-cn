@@ -5,7 +5,7 @@ cask "subsync" do
   url "https:github.comsc0tysubsyncreleasesdownload#{version.major_minor}subsync-#{version}-mac-x86_64.dmg",
       verified: "github.comsc0tysubsync"
   name "subsync"
-  desc "Subtitle speech synchronizer"
+  desc "Subtitle speech synchroniser"
   homepage "https:subsync.online"
 
   livecheck do

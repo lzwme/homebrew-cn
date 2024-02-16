@@ -9,24 +9,41 @@ class PipTools < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4052f4bc2689e59c10cace85bad396de0c085f91941dcab19b47319c0d2fcfde"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "736336df91c8be6e5b920bf3b1e458f5d46ea47533edf12e374fb5f7dedb45cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9bb03f6c7adf0ca8b72393b6961487b6313f1e0fcda01561b2efff000eef56a2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a285cdcbeb76a33db70469597a06f7fcee50750d3e0e509e571440e80d63c061"
-    sha256 cellar: :any_skip_relocation, ventura:        "baaec6000a5a3147c93458c500865cd27de9e4bbeaeb2b796c477a001c47fac6"
-    sha256 cellar: :any_skip_relocation, monterey:       "f50929354a6f87d1b878c83ac8218fa1bb06dda7e8806e391648496bae9a8e28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d244733cd96122231975a6ff9c73402c5f6de524dbd3d506bd55dd58b398cbd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "785fe8509498f43d1fdfaec473198c8ed0e286c99df42dde019a95085801e7f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf4003d5fdce924f99cab63dff30494d56d1ced13548a51fd600fc162cad2fc9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2eb55dac623a6bc8084c2e56335f21b36fa22c2ffe1895807b88b5f60979d0d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d712e87d98f33af720bc70c3a02592c39c3532303cf2b5efdbd9cc8c50d033f"
+    sha256 cellar: :any_skip_relocation, ventura:        "ebf3368975fcba359e47046d82953a50349b6372dc628261ac5c184037aeef9f"
+    sha256 cellar: :any_skip_relocation, monterey:       "394a5815103f74ffdb131ad6ac1f9f858be02d4186da98c5d3361bf6a7f9d6fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b41590d76f7328b8e02e23052faf2f9ec31bee96f800e7b3a2c1147eadb539da"
   end
 
-  depends_on "python-build"
-  depends_on "python-click"
-  depends_on "python-packaging"
-  depends_on "python-pyproject-hooks"
   depends_on "python@3.12"
 
+  resource "build" do
+    url "https://files.pythonhosted.org/packages/98/e3/83a89a9d338317f05a68c86a2bbc9af61235bc55a0c6a749d37598fb2af1/build-1.0.3.tar.gz"
+    sha256 "538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
+  resource "pyproject-hooks" do
+    url "https://files.pythonhosted.org/packages/25/c1/374304b8407d3818f7025457b7366c8e07768377ce12edfe2aa58aa0f64c/pyproject_hooks-1.0.0.tar.gz"
+    sha256 "f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5"
+  end
+
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
-    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
+    url "https://files.pythonhosted.org/packages/c9/3d/74c56f1c9efd7353807f8f5fa22adccdba99dc72f34311c30a69627a0fad/setuptools-69.1.0.tar.gz"
+    sha256 "850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401"
   end
 
   resource "wheel" do

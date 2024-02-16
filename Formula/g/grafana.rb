@@ -7,16 +7,17 @@ class Grafana < Formula
   head "https:github.comgrafanagrafana.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe5cb3024bdee3e0a504ec227bdda5011367c08042b9e42938f9fd4dda3e7d63"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecae116207dcf4ea65a10711679e450cd0ea385a0c457e46aad62b8c87de240e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c76d34b7a0a172d79f49684a5f2583b1789a196cad9c63799b66bd5272b12cb9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2004e88b187f30665accdaef2dc239fccbd7d8378152da899f5399acf8584825"
-    sha256 cellar: :any_skip_relocation, ventura:        "043b06e7407dd5fab39b234c63ec4b8e3365c394795ecc3408a392b10192a971"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a4fc13725327d178e5dd9cefdc358ab271a8347ceb81d4667d9f7efa42278fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c8d77a8b68c8cf139b3406afc79ea4ed1c7985370fbb15c537275fe9129af56"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a7f45a1fa3621695bebc6d82493e809ebd543a8b1469e90cce97feb55c674fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ed0b5c9a7f84e97f1f4986af8104c3fab17f5f22b4733df5dc20f604bb98544"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "786bac074cf3927861b8830022344101aca35721348bc578bd1c97d0efb1f738"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e2adaa53470db1d968180b7d318975a0729d55542e4d2261d5a92c47e9fda162"
+    sha256 cellar: :any_skip_relocation, ventura:        "ddc407e2565d86120e4870d7025e8a08f7d128cb7f84d728d72052b3e99223e8"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d08c267d90c25bd344423ae933a737acbca3038d52f9df26b5d68dd6e3e174f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fdf45c7457589cde263103cefe7da9216c585fd2ca4bf97c8d1c896c73fd14d"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.21" => :build # use "go" again when https:github.comgrafanagrafanapull82114 is released
   depends_on "node" => :build
   depends_on "yarn" => :build
 

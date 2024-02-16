@@ -12,16 +12,17 @@ class Juicefs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a4385a72cbb04b319637141e9a810bdea47c0c192c64c32b35a06a9f2010533"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a567df16a9c4843595b3aa65c6435eeaa671f68346e48e898e49eeb8302fd295"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80a3b33a6b455411e4492ff2cac06fdd16dcca92424a2a4bc84a9727a1b84b61"
-    sha256 cellar: :any_skip_relocation, sonoma:         "76e9ad3fef06a183506b8fe163070e44b07ab16c3e4566d89d77bcbf4fd0f361"
-    sha256 cellar: :any_skip_relocation, ventura:        "47c5a9469c61b6c0e580eb76fabc6205626adff2193432f35131f6e327d012f2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f34ca0d654680c02ef417bf293dab5ae7d98ca7cd6882e6dea5bb7ba5916d1be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d0f01c6689b8a3ee1565cf80752214efd2e6fcd6a2edb429171bdfc440c04f5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8e8da1a491e8fd381a12f74c3143a96fda4391a95421667e8a3bb9913bab4b82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec77d856d4d478dae1e829120fb414dce0fd321f38e270a0cdbb29896166a150"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8ea98552a01f0f611fe8ac76af2cabc6c4ba27c76d1accf5d4fb4d5a955be35"
+    sha256 cellar: :any_skip_relocation, sonoma:         "28fdd220a08b0b4585144b9a2043cad90165bf082a5669d200cd6e84e53de517"
+    sha256 cellar: :any_skip_relocation, ventura:        "e96637f9f1e1dc2d31119470b1b0ad014d781920d79f7143fafe73d95c1ef2c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "a68ce69717a2873b74766ff5129e3ae9b911ef348b4192f1e92c92bf384770a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eb55ea704a4f917c44db6eaabbac9edcf825ad9b753aa54842a5ee88c49c093"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.21" => :build # use "go" again when https:github.comjuicedatajuicefspull4340 is released
 
   def install
     system "make"

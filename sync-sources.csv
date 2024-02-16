@@ -2234,6 +2234,7 @@ Homebrew-homebrew-core/Formula/g/go@1.17.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.18.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.19.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go@1.20.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/go@1.21.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goaccess.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gobackup.rb, Homebrew/homebrew-core, 1
@@ -6805,6 +6806,7 @@ Homebrew-homebrew-core/Formula/x/xcenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcinfo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xclip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xclogparser.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xcode-build-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcode-kotlin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcodegen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xcodes.rb, Homebrew/homebrew-core, 1
@@ -8622,6 +8624,7 @@ Homebrew-homebrew-cask/Casks/h/hyperbackupexplorer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hypercal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/i1profiler.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/ia-markdown-dictionary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ia-presenter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibabel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackup-viewer.rb, Homebrew/homebrew-cask, 0

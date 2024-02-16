@@ -4,7 +4,7 @@ cask "virtualbox" do
 
   url "https:download.virtualbox.orgvirtualbox#{version.csv.first}VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
   name "Oracle VirtualBox"
-  desc "Virtualizer for x86 hardware"
+  desc "Virtualiser for x86 hardware"
   homepage "https:www.virtualbox.org"
 
   livecheck do

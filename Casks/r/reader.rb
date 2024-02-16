@@ -1,11 +1,11 @@
 cask "reader" do
-  version "0.1.181"
-  sha256 "5e89218c58208690eb77adec323624aacfbe4c9bf62a5a857bec2175c91c46cf"
+  version "0.1.184"
+  sha256 "bfc4ebccb60e7bd0787a1ff05fb205f4abca2f2da36fa3654cd9e6444dc8fa17"
 
   url "https:github.comreadwiseioreader-desktop-releasesreleasesdownloadreader-desktop-v#{version}Reader_#{version}_universal.dmg",
       verified: "github.comreadwiseioreader-desktop-releases"
   name "Readwise Reader"
-  desc "Save articles to read, highlight key content, and organize notes for review"
+  desc "Save articles to read, highlight key content, and organise notes for review"
   homepage "https:readwise.ioread"
 
   livecheck do

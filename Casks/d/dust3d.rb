@@ -5,7 +5,7 @@ cask "dust3d" do
   url "https:github.comhuxingyidust3dreleasesdownload#{version}dust3d-#{version}.dmg",
       verified: "github.comhuxingyidust3d"
   name "Dust3D"
-  desc "Open-source 3D modeling software"
+  desc "Open-source 3D modelling software"
   homepage "https:dust3d.org"
 
   # TODO: Update this regex to only match stable versions once 1.0.0 stabilizes:

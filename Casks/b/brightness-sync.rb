@@ -4,7 +4,7 @@ cask "brightness-sync" do
 
   url "https:github.comOCJvanDijkBrightness-Syncreleasesdownloadv#{version}Brightness.Sync.app.zip"
   name "Brightness Sync"
-  desc "Utility to synchronize the brightness of LG UltraFine display(s)"
+  desc "Utility to synchronise the brightness of LG UltraFine display(s)"
   homepage "https:github.comOCJvanDijkBrightness-Sync"
 
   depends_on macos: ">= :catalina"

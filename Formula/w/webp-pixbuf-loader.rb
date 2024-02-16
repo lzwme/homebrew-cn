@@ -1,19 +1,19 @@
 class WebpPixbufLoader < Formula
   desc "WebP Image format GdkPixbuf loader"
   homepage "https:github.comaruizwebp-pixbuf-loader"
-  url "https:github.comaruizwebp-pixbuf-loaderarchiverefstags0.2.6.tar.gz"
-  sha256 "8d6db7f8a95df7649dccb9cfff1b922793427c0d59bc4d07723e3ba4c9e9832d"
+  url "https:github.comaruizwebp-pixbuf-loaderarchiverefstags0.2.7.tar.gz"
+  sha256 "61ce5e8e036043f9d0e78c1596a621788e879c52aedf72ab5e78a8c44849411a"
   license "LGPL-2.0-or-later"
   head "https:github.comaruizwebp-pixbuf-loader.git", branch: "mainline"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "7920eb4fe5c4438a41c28caa9658f36976e80abf4c1f45e62b7fd351e4279494"
-    sha256 cellar: :any, arm64_ventura:  "e748879b57e281b041e832b36a7cf52001af3e8ad0f8de883ff5be1d2322139a"
-    sha256 cellar: :any, arm64_monterey: "fe260164250e19d8a541cf4055bf5ad3e4fb1bf42e3cc0c63c4333699c002f34"
-    sha256 cellar: :any, sonoma:         "ce7ac111df81088b252b19dcd840e0fabea5a9fc3e4038b04a1ecef91c751828"
-    sha256 cellar: :any, ventura:        "360bfc878928087f778e2a4d8c54a667856bd6e5d31694bc7835bdfa247c7946"
-    sha256 cellar: :any, monterey:       "3e6730f5c688937a539db6abb9b1e4d0f07455cfe6371d96639dc26d64c56d9f"
-    sha256               x86_64_linux:   "8d794ff65a6fb176e9f5ed624dfa6ab71de19e0627e3d6721ec41d3e6984bd15"
+    sha256 cellar: :any, arm64_sonoma:   "dfdb762a8de403d1f746042b9cd3fd5bfdff4af69c2d9d3667e9926846bc2948"
+    sha256 cellar: :any, arm64_ventura:  "21bcb300a9b98ea69b084a507c0bbc369ae53c56c6ac5baa0e010ea9593d1043"
+    sha256 cellar: :any, arm64_monterey: "9840b14ad81937500f2f3b2e19efc9b057ad5f9cd436277d45bc62df486030ec"
+    sha256 cellar: :any, sonoma:         "df8f65df18ad082ca581be57c2e19d8cac9085582d3de656513b9ae755d78e0f"
+    sha256 cellar: :any, ventura:        "d62be70d360f190c3e4ddd4273db4144f630eab0b13ec1186ca8a9b2e9c4f2f6"
+    sha256 cellar: :any, monterey:       "f1721835505ef98940a6f0c4159adcf4ce7d48385a784b76f94bb74fc67214c0"
+    sha256               x86_64_linux:   "f3e5e25b6df4513520cdd9e082220426cd6d0f2fe6f6b775f9ed126514a82b12"
   end
 
   depends_on "meson" => :build

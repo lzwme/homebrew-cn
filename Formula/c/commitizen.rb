@@ -9,21 +9,22 @@ class Commitizen < Formula
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "951dcb371572af45e264b971557c979607c6c5417858e5bcaa03c7835e34b752"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "21f0665f7c7a68544f9706bf9163112f70b23eb9806e870ab5a713280c17bcc9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0510ce9e4e97b24791adce1ba8ab775bb6dd02ca4db398d38f0c691b829329cc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ecc50584c29421b73cb95ebdf73e0c725c40bcb626d1e15085424e67c7a063e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "155b7f39b9238d46241479562c0a1f44e3bed1794efcc56c5099f84ac228fb43"
-    sha256 cellar: :any_skip_relocation, monterey:       "1270f1b8a2211c969ca608ffe16545c6c0a55c34c603fcdbc53d433e4b7fff56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79edddf66a66d34c9dc396cd044db02ec184d230231f81cf915f25cfee95a1d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ab83dc9eece551f52d02acef6c7e11a26d8d4dc56ba15370ee3363cc8370e8b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a549567903a7e7b3ea04d82eb236b8a6422b7be938a02448db3f1a9036ed9990"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2ad5f8d5921170a5f1f64317e2f4fd7ccb47c2a1916f41d458fc52e022e9a39"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a428b3e745568a50e86480c524ec4f07c1ba7d92b459592132217db1ad87e295"
+    sha256 cellar: :any_skip_relocation, ventura:        "268bf2ef37472f1fe3971c206e1084672a4d309ec60de7b865675808ded1f856"
+    sha256 cellar: :any_skip_relocation, monterey:       "a14293e309007b05f7fb354463ff27e44f73c4ab8070bcc326cea3d8d71577f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eb8773575401fc6a5ab6adff8b3c342eb109aed27c785f07986ed62362a562a"
   end
 
-  depends_on "python-argcomplete"
-  depends_on "python-markupsafe"
-  depends_on "python-packaging"
-  depends_on "python-typing-extensions"
   depends_on "python@3.12"
-  depends_on "pyyaml"
+
+  resource "argcomplete" do
+    url "https:files.pythonhosted.orgpackagesf0a2ce706abe166457d5ef68fac3ffa6cf0f93580755b7d5f883c456e94fab7bargcomplete-3.2.2.tar.gz"
+    sha256 "f3e49e8ea59b4026ee29548e24488af46e30c9de57d48638e24f54a1ea1000a2"
+  end
 
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
@@ -50,9 +51,24 @@ class Commitizen < Formula
     sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
+  resource "markupsafe" do
+    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
+    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+  end
+
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
   resource "prompt-toolkit" do
     url "https:files.pythonhosted.orgpackagesfb93180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9prompt_toolkit-3.0.36.tar.gz"
     sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+  end
+
+  resource "pyyaml" do
+    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "questionary" do
@@ -83,10 +99,8 @@ class Commitizen < Formula
   def install
     virtualenv_install_with_resources
 
-    python_exe = Formula["python@3.12"].opt_libexec"binpython"
-    register_argcomplete = Formula["python-argcomplete"].opt_bin"register-python-argcomplete"
     generate_completions_from_executable(
-      python_exe, register_argcomplete, "cz",
+      libexec"binregister-python-argcomplete", "cz",
       base_name:              "cz",
       shell_parameter_format: :arg
     )

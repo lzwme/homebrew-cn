@@ -5,17 +5,26 @@ class Coder < Formula
   sha256 "4900f2fd5bcac42192fb213cf19f67622b9d1180a319e5d2ac0d2ea1470c79eb"
   license "AGPL-3.0-only"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "437ab4a9a4d34fae22070756b6243cceeb25cc59c2ff57a7469f646cb68265de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a5ceb527892516a44523f2cb487391a66dcfe4c0e44768bb98914d2f64e1482"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dc723d38d5f5b6f1970165eb7a5e221d04daac827a9eb5d5771df72e15626f6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "38c944050a3def45220cdd977ab668c33afedb40dde787de2a4880b1fe2c2994"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e1762e1b6c34b516cd5d6bc923384393345ab444a354f14dabc43aba6417475"
-    sha256 cellar: :any_skip_relocation, monterey:       "0392c161fae37b46481f2685776078e1c3420212f40a73430380ec3c29c79d75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69338571ea5bc8a0891ffa3ffe6eee65453ea35263954dd2062f49b851ae25aa"
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
 
-  depends_on "go" => :build
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fee3e0d0b8d37ea33867c996dc7db874ee2b6f8984c9ba484f5d14f7ff14b3fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e921b030063e49dabb375c3fa6d26f0e18604fd72ab05a016a1c46824ac8482d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "133a2392db43b782eb78e878d31fdaa1709c0c547e0aa411cc44e09dddb76205"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fffe5c318a8ad13bd188c865324aada728fb75eb60471584fa4e8474f41a5068"
+    sha256 cellar: :any_skip_relocation, ventura:        "408c732061eb99f3786d02031dad710d4d8ea5e50e3c23bc183fa3e7170861b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "a4f957c1b75e4fa472dcc3557d620b6e11d5f5b6ed95b97611f00b680433429f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e598d33e244917aa016dd622c298e32b2d7faa4cccff9968537178d314e14191"
+  end
+
+  depends_on "go@1.21" => :build # see https:github.comcodercoderissues11342
 
   def install
     ldflags = %W[

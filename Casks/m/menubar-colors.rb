@@ -4,7 +4,7 @@ cask "menubar-colors" do
 
   url "https:github.comnvzqzmenubar-colorsreleasesdownloadv#{version}Menubar-Colors.zip"
   name "Menubar Colors"
-  desc "Menu bar app for convenient access to the system color panel"
+  desc "Menu bar app for convenient access to the system colour panel"
   homepage "https:github.comnvzqzMenubar-Colors"
 
   app "Menubar Colors.app"

@@ -24,7 +24,7 @@ cask "visit" do
   end
 
   name "VisIt"
-  desc "Visualization and data analysis for mesh-based scientific data"
+  desc "Visualisation and data analysis for mesh-based scientific data"
   homepage "https:wci.llnl.govsimulationcomputer-codesvisit"
 
   depends_on macos: ">= :high_sierra"

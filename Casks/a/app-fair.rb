@@ -5,7 +5,7 @@ cask "app-fair" do
   url "https:github.comApp-FairAppreleasesdownload#{version}App-Fair-macOS.zip",
       verified: "github.comApp-FairApp"
   name "App Fair"
-  desc "Catalog of free and commercial native desktop applications"
+  desc "Catalogue of free and commercial native desktop applications"
   homepage "https:appfair.app"
 
   livecheck do

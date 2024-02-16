@@ -6,9 +6,15 @@ class Taplo < Formula
   license "MIT"
   head "https:github.comtamasfetaplo.git", branch: "master"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check releases instead of the Git
+  # tags. Upstream maintains multiple products in this repo and the "latest"
+  # release may be for another product, so we have to check multiple releases
+  # to identify the correct version.
   livecheck do
     url :stable
     regex(^release-taplo-cli[._-]v?(\d+(?:\.\d+)+)$i)
+    strategy :github_releases
   end
 
   bottle do

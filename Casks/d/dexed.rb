@@ -5,7 +5,7 @@ cask "dexed" do
   url "https:github.comasb2m10dexedreleasesdownloadv#{version}dexed-#{version}-macos.zip",
       verified: "github.comasb2m10dexed"
   name "Dexed"
-  desc "DX7 FM synthesizer"
+  desc "DX7 FM synthesiser"
   homepage "https:asb2m10.github.iodexed"
 
   pkg "dexed-#{version}.mpkg"

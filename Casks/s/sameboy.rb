@@ -5,7 +5,7 @@ cask "sameboy" do
   url "https:github.comLIJI32SameBoyreleasesdownloadv#{version}sameboy_cocoa_v#{version}.zip",
       verified: "github.comLIJI32SameBoy"
   name "SameBoy"
-  desc "Game Boy and Game Boy Color emulator written in C"
+  desc "Game Boy and Game Boy Color emulator"
   homepage "https:sameboy.github.io"
 
   livecheck do

@@ -4,7 +4,7 @@ cask "camera-live" do
 
   url "https:github.comv002v002-Camera-Livereleasesdownload#{version}Camera.Live.zip"
   name "Camera Live"
-  desc "Live Syphon Camera"
+  desc "Syphon server for connected Canon DSLR cameras"
   homepage "https:github.comv002v002-Camera-Live"
 
   livecheck do

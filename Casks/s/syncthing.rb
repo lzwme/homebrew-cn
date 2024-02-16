@@ -5,7 +5,7 @@ cask "syncthing" do
   url "https:github.comsyncthingsyncthing-macosreleasesdownloadv#{version}Syncthing-#{version}.dmg",
       verified: "github.comsyncthingsyncthing-macos"
   name "Syncthing"
-  desc "Real time file synchronization software"
+  desc "Real time file synchronisation software"
   homepage "https:syncthing.net"
 
   auto_updates true

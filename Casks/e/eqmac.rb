@@ -5,7 +5,7 @@ cask "eqmac" do
   url "https:github.combitgappeqMacreleasesdownloadv#{version}eqMac.dmg",
       verified: "github.combitgappeqMac"
   name "eqMac"
-  desc "System-wide audio equalizer"
+  desc "System-wide audio equaliser"
   homepage "https:eqmac.app"
 
   livecheck do

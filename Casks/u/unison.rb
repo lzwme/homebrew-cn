@@ -5,7 +5,7 @@ cask "unison" do
   url "https:github.combcpierce00unisonreleasesdownloadv#{version}Unison-#{version}-macos.app.tar.gz",
       verified: "github.combcpierce00unison"
   name "Unison"
-  desc "File synchronizer"
+  desc "File synchroniser"
   homepage "https:www.cis.upenn.edu~bcpierceunison"
 
   livecheck do
