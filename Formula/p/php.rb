@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.3.2.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.3.2.tar.xz"
-  sha256 "4ffa3e44afc9c590e28dc0d2d31fc61f0139f8b335f11880a121b9f9b9f0634e"
+  url "https:www.php.netdistributionsphp-8.3.3.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.3.3.tar.xz"
+  sha256 "b0a996276fe21fe9ca8f993314c8bc02750f464c7b0343f056fb0894a8dfa9d1"
   license "PHP-3.01"
 
   livecheck do
@@ -13,14 +13,13 @@ class Php < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "caa5f632c4085b4574d6b29a15628a115dcb2b79f9720c7b5895856cfa16047e"
-    sha256 arm64_ventura:  "abad3c85404aa635351048120dcff92835894b2740deb4b55c73bd7bffc8ab8c"
-    sha256 arm64_monterey: "02b94ada3290966cda58df443de94618faec13ae15bbcd6f73897a0ccf8518e7"
-    sha256 sonoma:         "c3e1351bc1138fe564a82f997bcbbd8397f1ce04f8b512c79264653e44f8780e"
-    sha256 ventura:        "94c96e486b9efc1432c776d9a370271664c9d8cddbf9f49ee191c1f0c790dce1"
-    sha256 monterey:       "e7689bac1a304ec78b5a303d243360f7dae389c984bf510847ff423c9ae5431e"
-    sha256 x86_64_linux:   "d66cdc04b7a25583ea2f18f1ec7cb1702679a147db69f92c3e3663567a5b560c"
+    sha256 arm64_sonoma:   "094768582d23fa2fb3ceb6a5d02e6c13c48dcce43ea8357c20bbe6cc3e730eeb"
+    sha256 arm64_ventura:  "c52db0c220bab743335117aa1a01a22381209f385feb07cd1e05f95162a44110"
+    sha256 arm64_monterey: "4734d4fbec3ec9f2b0689c162006710f9319f2bb254d91144fc19baba0feef66"
+    sha256 sonoma:         "fe6cfc782bad378c881664b80e28d76cf556a5d9973452873785fe34e8d33927"
+    sha256 ventura:        "61ab7b7ed0ff8836df369c3ae4c5e61b0c388dcccd507a3fcf47e25b79248d8c"
+    sha256 monterey:       "a0bf86bbf16bf60b4fb4cab4a37a25fc3e53d7a417820dab3fb5b6db36a44b44"
+    sha256 x86_64_linux:   "2274c570fe3f6d6e50beea1854e5a30e8ee3c063d5695830b3aecdf8a8051b22"
   end
 
   head do

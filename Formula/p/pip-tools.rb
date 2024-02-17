@@ -3,20 +3,18 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/fd/01/f0055058a86a888f32ac794fa68d5a25c2d2f7a3e8181474b711faaa2145/pip-tools-7.3.0.tar.gz"
-  sha256 "8e9c99127fe024c025b46a0b2d15c7bd47f18f33226cf7330d35493663fc1d1d"
+  url "https://files.pythonhosted.org/packages/08/40/8c1b0384f1cc7df50b7af97620038f3bf6ccaf0973db6cd5d965b5b2a97e/pip-tools-7.4.0.tar.gz"
+  sha256 "a92a6ddfa86ff389fe6ace381d463bc436e2c705bd71d52117c25af5ce867bb7"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "785fe8509498f43d1fdfaec473198c8ed0e286c99df42dde019a95085801e7f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf4003d5fdce924f99cab63dff30494d56d1ced13548a51fd600fc162cad2fc9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2eb55dac623a6bc8084c2e56335f21b36fa22c2ffe1895807b88b5f60979d0d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d712e87d98f33af720bc70c3a02592c39c3532303cf2b5efdbd9cc8c50d033f"
-    sha256 cellar: :any_skip_relocation, ventura:        "ebf3368975fcba359e47046d82953a50349b6372dc628261ac5c184037aeef9f"
-    sha256 cellar: :any_skip_relocation, monterey:       "394a5815103f74ffdb131ad6ac1f9f858be02d4186da98c5d3361bf6a7f9d6fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b41590d76f7328b8e02e23052faf2f9ec31bee96f800e7b3a2c1147eadb539da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f39393f494c9a6529e2a97fadffe2ecca281d8741c9e1e2d7ef86d29fc3d1eb1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37f7212ae928eb238cd0b3951cfeb98adf13419355bf2a766142df4c8447c464"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dea58d1b2b6710d06da1656b3b308fd4fe8ecf0e8a55aae3191da7a891293975"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cf758395a955a5678460ca49855b9d29121e9210c6be663f2d5904f90f613a98"
+    sha256 cellar: :any_skip_relocation, ventura:        "e496a2fe51c3b67c84842aaef935c697afb7854380189f5f979dc06b70a2f1ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fc7fb1ad18b6bbf12eed76c4a7dada743317c9151d5b1e500574953393126b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b33af6e354030af45aeb9c5162ffd652a130fc04b1cedc0c61e430103857ee2"
   end
 
   depends_on "python@3.12"

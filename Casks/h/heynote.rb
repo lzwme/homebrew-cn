@@ -16,8 +16,10 @@ cask "heynote" do
   app "Heynote.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.heynote.app.sfl*",
     "~LibraryApplication SupportHeynote",
     "~LibraryLogsHeynote",
+    "~LibraryPreferencescom.heynote.app.plist",
     "~LibrarySaved Application Statecom.heynote.app.savedState",
   ]
 end

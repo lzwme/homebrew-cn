@@ -1,8 +1,8 @@
 class Ascii < Formula
   desc "List ASCII idiomatic names and octal/decimal code-point forms"
   homepage "http://www.catb.org/~esr/ascii/"
-  url "http://www.catb.org/~esr/ascii/ascii-3.19.tar.gz"
-  sha256 "f9da2efed82f245658f9561e5b756809e71eaf0e5a7735ac5beb924cdda9a560"
+  url "http://www.catb.org/~esr/ascii/ascii-3.20.tar.gz"
+  sha256 "9e6e57ea60d419a803a024ce6366254efb716266b84eedd58cd980dabcc11674"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Ascii < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "580f8956e42c68a63496b3a0cf84bef4054c84c35a2e8914771df61e511b18c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71e8fcc5906e4ee8222296ea7b1cc43ec12646890c086ab033179dc9af55db78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cc2bda5a534f431a87b48a2034c3870767802c9a4b5744f868105546f16b0a1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f906b6d394320f5d43ce006e270607507fa9c2a3bd8a07bc981611e6235b3bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "91687c1ff03f1316ff8781b34cbccfdebd11ee76b5075f7a0ae8d06fb1acda5d"
-    sha256 cellar: :any_skip_relocation, monterey:       "42182f24ca751492122dfcd070a185adaa46c6923cf686f6a91b78cc27097948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a4fa5df04b0d070e67b50c2e4bd4c5d6e8b051d17ad9e64d766cabbc29c9f91"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae5571c5a971f7719cbb1ac767b690e597f96942ba91e1faed105417c043e224"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40eb6da68a2138e86af8a89f747bd0ebf05684214501eebfc4278217fdba5cfd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e8c8e2a9e5c73b4e48e3097d9f93b25634b6d97585d6c2d3a048ce6e326c56e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c7b81b4b8e352bda1d9a12a8c6c4ffe0d938c3a4d4886cc72846e6c8d6ccf142"
+    sha256 cellar: :any_skip_relocation, ventura:        "cefb8f382d5a5b81729c894f8ce67b8462509d2d503a10ce4c6a2df788c29260"
+    sha256 cellar: :any_skip_relocation, monterey:       "f617984d052af1378c3d0730219d7d89d384aec6d09fe53b97a6f4b8dc4b12be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f384e1207c05128727a6b2d560d64b63f9f832cde4fe4c2a89e56fa0509b049"
   end
 
   head do

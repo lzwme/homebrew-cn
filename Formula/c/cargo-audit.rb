@@ -1,8 +1,8 @@
 class CargoAudit < Formula
   desc "Audit Cargo.lock files for crates with security vulnerabilities"
   homepage "https:rustsec.org"
-  url "https:github.comRustSecrustsecarchiverefstagscargo-auditv0.19.0.tar.gz"
-  sha256 "0fbf088247ab2aa0da9d42dcf8be4bd10d05296e6599a2ae91a94d25aba6d37b"
+  url "https:github.comRustSecrustsecarchiverefstagscargo-auditv0.20.0.tar.gz"
+  sha256 "695e8d0526bbc672d227a7f8b4592a5fd6641a9e819767146a8a4e3a32e57e5c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comRustSecrustsec.git", branch: "main"
 
@@ -12,13 +12,13 @@ class CargoAudit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43521354b4eeb0504d354f4eba1e15ed7cbb7614e2209c90fbfbcfc599eeadf9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "233141d0e90a9177e317fbfc05b6d1ec2ab8dbe7ca52769b495d6d2aacf3729c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc939d96d504ff43f4ebf2644090723a078122a843b18c6817a4ada22f222d03"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0fdefc4833b2f2d99dc6ace4b23f48ee6371f64857d0dc5a8136fb501c1be169"
-    sha256 cellar: :any_skip_relocation, ventura:        "7abc1e0fc341bf1b69ef24e61d15afb4be5512e8b26d1bc6a5241f9aa1c2bfe1"
-    sha256 cellar: :any_skip_relocation, monterey:       "817dad187598e5e3c70ccec09214dcea71f7eda24bb696d0aee4052637990788"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdb5c4dd6069ee71e8d43b8dfc2c0fb34519ad9887ba72e6dec350768ae76edc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1124eb92d944eb6d971e6269385754db411444f50e95f85d5ad12f53c8520477"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a98d087a97d3d66ca26ca0e44dd8ddb9fef6e015460b82a3a53d553e232eb2d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "962ca301dad1b250a79ad59ee1c468b9318507c91bde1755b1bfb87c9f9fa34f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "29fdb64dddf8db4ce4cdbaad7fee584729acd1c5d440063a4c40eb30afb76407"
+    sha256 cellar: :any_skip_relocation, ventura:        "9a813f39367920a092ec08bc15ea2bc7ad450d69f38f9ade8f9ea47173a43133"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d8f4575de5e3b4ccbd9b8ff130fcebb6fd9052e0a877c0bc2bb3803284c6f03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69fe721c469556d29af06370804dc626aa24144192e0fde013893c4a94ddb2ea"
   end
 
   depends_on "rust" => :build

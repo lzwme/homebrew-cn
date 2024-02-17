@@ -1,6 +1,6 @@
 cask "warp" do
-  version "0.2024.02.14.15.46.stable_00"
-  sha256 "760f601f06693a47cb926782a97410fe059df301ecfaccb918ccd02aae157678"
+  version "0.2024.02.13.08.02.stable_00"
+  sha256 "1c4d6bc23d1956fae36512c364839706d0ae467d30a96f251efec7e55c283073"
 
   url "https://app.warp.dev/download/brew?version=v#{version}"
   name "Warp"
@@ -8,8 +8,10 @@ cask "warp" do
   homepage "https://www.warp.dev/"
 
   livecheck do
-    url "https://storage.googleapis.com/warp-releases/channel_versions.json"
-    regex(/v(\d+(?:\.\d+)+\.stable_\d+)/i)
+    url "https://releases.warp.dev/channel_versions.json"
+    strategy :json do |json|
+      json["stable"]["version"][1..]
+    end
   end
 
   auto_updates true

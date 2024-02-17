@@ -4687,6 +4687,7 @@ Homebrew-homebrew-core/Formula/p/patat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patch-package.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patchelf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/patchutils.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pawk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pax-construct.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pax-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pax.rb, Homebrew/homebrew-core, 0
@@ -5273,6 +5274,7 @@ Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rattler-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rawdog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rawgl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raxml-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raylib.rb, Homebrew/homebrew-core, 1
@@ -6489,6 +6491,7 @@ Homebrew-homebrew-core/Formula/u/uudeview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uutils-coreutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uutils-findutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uuu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/uv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvg266.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uvicorn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uwsgi.rb, Homebrew/homebrew-core, 1
@@ -8777,6 +8780,7 @@ Homebrew-homebrew-cask/Casks/j/jameica.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/james.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jamf-migrator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jami.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/j/jamie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jamkazam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jamovi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jamulus.rb, Homebrew/homebrew-cask, 0

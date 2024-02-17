@@ -20,6 +20,9 @@ class YtDlp < Formula
   head do
     url "https:github.comyt-dlpyt-dlp.git", branch: "master"
     depends_on "pandoc" => :build
+    on_macos do
+      depends_on "make" => :build
+    end
   end
 
   depends_on "python-brotli"
@@ -58,7 +61,7 @@ class YtDlp < Formula
   end
 
   def install
-    system "make", "pypi-files" if build.head?
+    system "gmake", "pypi-files" if build.head?
     virtualenv_install_with_resources
     man1.install_symlink libexec"sharemanman1yt-dlp.1"
     bash_completion.install libexec"sharebash-completioncompletionsyt-dlp"

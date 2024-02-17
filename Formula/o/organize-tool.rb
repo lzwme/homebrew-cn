@@ -3,18 +3,18 @@ class OrganizeTool < Formula
 
   desc "File management automation tool"
   homepage "https:github.comtfeldmannorganize"
-  url "https:files.pythonhosted.orgpackagese900a42a78bad6809a048439f1b1f9f921d25b395e3a1e11449dd4b00072288eorganize_tool-3.1.1.tar.gz"
-  sha256 "7f234588102f896288f563fcff3dd34f82507058a40e3fae32564941ad1f8ab1"
+  url "https:files.pythonhosted.orgpackages461164cd44c8accd864c1f3e67a8185b60434834d50e0876a961554ceb9a64f7organize_tool-3.1.2.tar.gz"
+  sha256 "03ef0bc8a179a31a302b65f0b2a725cc949946075dd13cd1fb72c2307dda9fbe"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "44b9daaf955aaea52f2cdedb6016d2f61930ee7c3d763ffc46d9a1345a098f19"
-    sha256 cellar: :any,                 arm64_ventura:  "1c4d81dbe70c7c90c7e226bd9c40c41036f5a678f5efed68d6311f2d7614ac1c"
-    sha256 cellar: :any,                 arm64_monterey: "86754b8bd71307bb92a0509436abb1e6df32d00397dfb85dc25a2ed8632eb6e7"
-    sha256 cellar: :any,                 sonoma:         "93e4261c78d12a108b3d7e925db2827f2de43d21361ed85ddac9107e78c308bd"
-    sha256 cellar: :any,                 ventura:        "d5ad441a120ba122706cf655ebac9ac831b2652a7c54334f9bf4739989856dac"
-    sha256 cellar: :any,                 monterey:       "fcda5bc1840d4550f679bdb9cf8cc5129896145b058be5b6d892db06d7775c99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ed533c20019466d356673d295fa7ede9c8ce5ff902fdea3ec6f816c0b4460b9"
+    sha256 cellar: :any,                 arm64_sonoma:   "77c01e4ce2849f5033c66e82c283053ed077ac811de540fccc3e77906a2bec8e"
+    sha256 cellar: :any,                 arm64_ventura:  "b7cf2c4f209b8ebf1a1b658e9628391aeebbb68fb0ccfec7ec2e1dc160a14747"
+    sha256 cellar: :any,                 arm64_monterey: "44d26e78de6a5e78bfd41ecfd20e51cc6e0635e50160837ff8455972ff290d09"
+    sha256 cellar: :any,                 sonoma:         "c50c9acf49eec667f1c71c7a55fd4b1eba03313b310f1d183b26ed4961ade0c3"
+    sha256 cellar: :any,                 ventura:        "f0c0d9ae4888fc8643e5253c7816ad716a6de90b9015f30c835b2f0d9de317d7"
+    sha256 cellar: :any,                 monterey:       "79377f5e16c1f55361ab4b563a9f38f90bb5d838859f22d758bdb62b27e1b625"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c13e3ed0408a0760bd6732ede2c7df9c0a2059386c0fcbb78e425bf99c412578"
   end
 
   depends_on "cmake" => :build

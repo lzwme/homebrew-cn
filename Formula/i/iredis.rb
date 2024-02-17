@@ -3,20 +3,19 @@ class Iredis < Formula
 
   desc "Terminal Client for Redis with AutoCompletion and Syntax Highlighting"
   homepage "https:iredis.xbin.io"
-  url "https:files.pythonhosted.orgpackagese1f9c302b8bdfcc55159e32999a4d6d9eb252ed91333a7ca7b34bd9e61d240efiredis-1.14.0.tar.gz"
-  sha256 "821336ab54e4cea7169ac51bd94f3daa45a3b9843b1adee1bf2ea3dd3230f184"
+  url "https:files.pythonhosted.orgpackagesec3b4c21a41cabb02aca14281fab7bcdde3792b1a03043fe36b7b1ffbe0be55diredis-1.14.1.tar.gz"
+  sha256 "0814a748aa63ddb4fc3fa1defb0a1d4874bc7d05812226f5378f4ceb53b5fe50"
   license "BSD-3-Clause"
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d4adcb980f5f33e53cae99805e6483b0b7620e0c1a223b783927968b7c39657"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56e342299ebaa116ec27d33fb29651c855e89226bf6643f7573206863fd6d444"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80bc79bcd38112397ca7886900beba0ac2a9c77c98d7123ebe4418d11aa7fd47"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c2880d15fd643763aa6d786267310124b194efe8673f03408484c4c3f18dc6b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "112ac36f18085a098b72b130c6e6760d21c4d223b17cfdd4c01e29f450bd14ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "c9fdd9bd53d739663797559c01fa7b2e41b033ce5d2d54522b5b40c7d608bb0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a2c4f1a253d019bb0fb4b077e76676db4df79534e03cc39fab4b2e094b7b349"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea48fb62924644bfe7404526e8edacbd9b3d1851e479b257d609b16fe80e7a6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b108e72017a713cea39ddf5e2408209eb4d6e090641d298419125dbbcf69a6d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b703e1f307a259c3572e6ab9483ba1d4e5f287f9ed47465c20a39bc2eda27e3f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf4f2bbec8f0e69d8c841ca98a59239cd12e272d2b2d8e85b5de690785bfc341"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb9461940729887460147e3bfd278448855ed5015bb17b15ea2e0c1940aaa53e"
+    sha256 cellar: :any_skip_relocation, monterey:       "f667d7c428ce5e73ef5218d4aff0794e5208dfb955f25ff3329d747420ef98e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6359293ad12e0c2dc0698ac2fbc12b022b48caa50851ee04acce69dd08e2f659"
   end
 
   depends_on "python-setuptools" # for undeclared distutils
