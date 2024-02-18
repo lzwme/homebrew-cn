@@ -87,6 +87,6 @@ class SigmaCli < Formula
 
     # Only show compatible plugins
     output = shell_output("#{bin}sigma plugin list --compatible")
-    refute_match "SQLite and Zircolite backend", output
+    refute_match "Datadog Cloud SIEM backend", output
   end
 end

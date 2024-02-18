@@ -8,17 +8,18 @@ class Rawdog < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "688ce09e421119d8cd64661ce48437fea5e2c2bbf7cd4a48afb4a3a1a74d3a56"
-    sha256 cellar: :any,                 arm64_ventura:  "98e05bbc6d286fc278d95fdc175b6bdaf36edd0a266b4b996c609651aee6ec75"
-    sha256 cellar: :any,                 arm64_monterey: "7534900aa029c98483e2bdf51babf8b2e724dec38016c2dcf08112e6fb617282"
-    sha256 cellar: :any,                 sonoma:         "9264395b63bbd02c8a441ab164c3f51ddac0b07c91143fb0d0d7d95e1d72655f"
-    sha256 cellar: :any,                 ventura:        "9c835ddf02540503d864f9dba01b86d01aa529f5606d20c6824131692c2d4c8b"
-    sha256 cellar: :any,                 monterey:       "1cd02b8cbcfa2ef4f7709d42e04bf5d81a0e5e2e4be9ba9d643295db70233a99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd8e438f9b2794766766c3750f0d49e1a9765c9b01ed8efdefa995fe3bd9c154"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9fb60cbc141e17d2b33c19553a484c576773338896c5f999be087dd40c9b34cb"
+    sha256 cellar: :any,                 arm64_ventura:  "f65fc68183cb4f605e7524f40642c49f08d7b5a84e1b7a170bda9f4dcdb00bf7"
+    sha256 cellar: :any,                 arm64_monterey: "b8db304be521ca8aa173f9d56c5a581d00ffcec6395287fba4e6be06744fbfd3"
+    sha256 cellar: :any,                 sonoma:         "3134809a28139c23dd7fe701aa03ddee8b049bd50a7795e8a2c373f260f6cbef"
+    sha256 cellar: :any,                 ventura:        "667b73a961afbe9b98161ba4f23b09a8deaf5abfb1e81f01f48515f29f28be6c"
+    sha256 cellar: :any,                 monterey:       "de4e821107d559ce6f2c2045eb16fe25661ecb7a099cd160257ad58e0b979776"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b05cca910221a733e79b2fcffa31356c7c809faa6cbb7b793ef42b1b2bd4f0f"
   end
 
   depends_on "rust" => :build # for tiktoken
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "aiohttp" do
     url "https://files.pythonhosted.org/packages/18/93/1f005bbe044471a0444a82cdd7356f5120b9cf94fe2c50c0cdbf28f1258b/aiohttp-3.9.3.tar.gz"

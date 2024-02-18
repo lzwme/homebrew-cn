@@ -4,6 +4,7 @@ class Rdkit < Formula
   url "https:github.comrdkitrdkitarchiverefstagsRelease_2023_09_5.tar.gz"
   sha256 "0b1ddf2bf822879e0863caf8efb794154e0a424108f2c1333ac94381c01fd688"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c9280a09f3592761087ca9f1aa24da6eac5b7e12a1f63bc1165eaf5a9439b20e"
-    sha256 cellar: :any,                 arm64_ventura:  "657251b9b5eb9a678108c357dea88dd66628107df294fdecf75dfec72999218c"
-    sha256 cellar: :any,                 arm64_monterey: "7d3dd965c123bb2d7dabfad7cfa949bba3972457467c5dbe74ce8fada1f8331c"
-    sha256 cellar: :any,                 sonoma:         "7870ff2c626dd0a3c5c0be172c2889f83884a9cf1e470a161c05ab20696f65b5"
-    sha256 cellar: :any,                 ventura:        "a60323fced6b6118afbf65f78d6b2559847171363cfaa97e66531de877991caf"
-    sha256 cellar: :any,                 monterey:       "fd748b8e8a1cd138dda933eebbfc74636235592062110083c18dd1323b8b0de5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd1446e8789356a1ff132eed3a4837f0f12a8820c284f1845363c38a273004d9"
+    sha256 cellar: :any,                 arm64_sonoma:   "019f1533e0db26ab44e88f204afef1f57d3a50663989ffdbf90fc1773cb262f0"
+    sha256 cellar: :any,                 arm64_ventura:  "36f19182a29c05389a9b8b1bcad8994ca2f4fad75af42af3827e669f55ab25dd"
+    sha256 cellar: :any,                 arm64_monterey: "a922a326bd0b1a8d7136812d1aa3bcb31860504f4ac42424dac0e48d71979126"
+    sha256 cellar: :any,                 sonoma:         "ede3c538aa9d788a7fd29cdd8573cc896a08c434f15520e7dd3d7bb89f0704eb"
+    sha256 cellar: :any,                 ventura:        "47428647fa32437062850507d40cf164f3b136a6a933e293c39ed62ee8a06148"
+    sha256 cellar: :any,                 monterey:       "0452ffac33cf33901d13f0d2b9e9467209591edec9c70001534a4a82a1ee6345"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b65fac0c69e5f8b540600535422dfe110a5f767187b24f58ab2d8d80335042ef"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +33,7 @@ class Rdkit < Formula
   depends_on "eigen"
   depends_on "freetype"
   depends_on "numpy"
-  depends_on "postgresql@16"
+  depends_on "postgresql@14"
   depends_on "py3cairo"
   depends_on "python@3.12"
 
@@ -47,7 +48,8 @@ class Rdkit < Formula
   end
 
   def postgresql
-    Formula["postgresql@16"]
+    deps.map(&:to_formula)
+        .find { |f| f.name.start_with?("postgresql@") }
   end
 
   def install
@@ -111,10 +113,29 @@ class Rdkit < Formula
   end
 
   test do
+    # Test Python module
     system python_executable, "-c", "import rdkit"
     (testpath"test.py").write <<~EOS
       from rdkit import Chem ; print(Chem.MolToSmiles(Chem.MolFromSmiles('C1=CC=CN=C1')))
     EOS
     assert_match "c1ccncc1", shell_output("#{python_executable} test.py 2>&1")
+
+    # Test PostgreSQL extension
+    ENV["LC_ALL"] = "C"
+    pg_ctl = postgresql.opt_bin"pg_ctl"
+    psql = postgresql.opt_bin"psql"
+    port = free_port
+
+    system pg_ctl, "initdb", "-D", testpath"test"
+    (testpath"testpostgresql.conf").write <<~EOS, mode: "a+"
+
+      port = #{port}
+    EOS
+    system pg_ctl, "start", "-D", testpath"test", "-l", testpath"log"
+    begin
+      system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"rdkit\";", "postgres"
+    ensure
+      system pg_ctl, "stop", "-D", testpath"test"
+    end
   end
 end

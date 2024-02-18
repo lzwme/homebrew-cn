@@ -4,16 +4,16 @@ class Fastnetmon < Formula
   url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.6.tar.gz"
   sha256 "b6a7d1e9ba98c1c042d774bff82ea3e8bbf03085e0be43a2676e41d590f668cf"
   license "GPL-2.0-only"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e8b864480fc12d54a2fcc5294777a6bf9e72c8f55b36f3f35aceddfabcb62164"
-    sha256 cellar: :any,                 arm64_ventura:  "e78783d282c0cfb7d5651248bc4374b61eb04e7b867321cb572dce9d78ba3f72"
-    sha256 cellar: :any,                 arm64_monterey: "d5a6e493f93aeb40cbc8d52bb6319096f39f96047c31a72c89b10a1406070023"
-    sha256 cellar: :any,                 sonoma:         "bc3cee0cd731ee4cfe16697e8beae06cc0764874b6dee26bcdb8bda8827a6e02"
-    sha256 cellar: :any,                 ventura:        "d2c90bcd28a7d7aba5762a74d8351cba17c9a56fdc9cd3ee96220408aa784b45"
-    sha256 cellar: :any,                 monterey:       "b3b9b92b2edd94eebb33dd0e31f8c9d3c997f73018d8288c36e6638cd3f2c796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0db774483ad93053c9f6f5d4b1241013adc30c8dba0fa1e3bc1b5c1e5837b3ce"
+    sha256 cellar: :any,                 arm64_sonoma:   "051dda176f5ebf67a626b52c949baafbeff1b6f5ad0cea4fde5f3acf6115a250"
+    sha256 cellar: :any,                 arm64_ventura:  "fe0459a39f24be4c28ae3b8c43d8544cf929defdc8b4069fb851259a67e7a06b"
+    sha256 cellar: :any,                 arm64_monterey: "ddae54f1762d9d27b6d5c68648a5d9b0c024895646b58d7c8d222b839ae243d6"
+    sha256 cellar: :any,                 sonoma:         "8897cfa2dfd3ae632247c6d457c6d415cb8606cd8a9805e8c274d465ed7092f8"
+    sha256 cellar: :any,                 ventura:        "56216053ab47a69f657d209abe189d4cbcb4e241c1650c93b6a45f95c8c87dd4"
+    sha256 cellar: :any,                 monterey:       "e96e7b531f0635557b9462452598f0263e269ffd7266a5c0876d92d6ffc4f31a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b19bd8e816672e8826281dd08217efc303522360c16370586add82d69d5af559"
   end
 
   depends_on "cmake" => :build

@@ -2,9 +2,10 @@ cask "font-kode-mono" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflkodemonoKodeMono%5Bwght%5D.ttf"
+  url "https:github.comgooglefontsrawmainoflkodemonoKodeMono%5Bwght%5D.ttf",
+      verified: "github.comgooglefonts"
   name "Kode Mono"
-  homepage "https:github.comisaozlerkode-mono"
+  homepage "https:fonts.google.comspecimenKode+Mono"
 
   font "KodeMono[wght].ttf"
 

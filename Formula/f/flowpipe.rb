@@ -1,18 +1,18 @@
 class Flowpipe < Formula
   desc "Cloud scripting engine"
   homepage "https:flowpipe.io"
-  url "https:github.comturbotflowpipearchiverefstagsv0.2.2.tar.gz"
-  sha256 "5d84bfc816b38c38bbc88ee85fffe32a21b54ba9d17e0f7e0703ad48ad5b4229"
+  url "https:github.comturbotflowpipearchiverefstagsv0.2.3.tar.gz"
+  sha256 "e61bc0902f44e8369d9c89dfbe0287396714f8def857663833a0288805004d8b"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "43d0ceea6342b55c83c953946ebacfa23788903b9aaa460979b24ff6311a9655"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08e33c24dee3517075c28ae6e7edc006047971fb21d96947113f4ebf8e6380b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed15c7b7f7ad294f15c1308ea7f657d13408fd174659728dca0e155699adc211"
-    sha256 cellar: :any_skip_relocation, sonoma:         "30f08e9aca8d2fa09956cf80ad863e05cf51363c205ca4457f05aff4354d3091"
-    sha256 cellar: :any_skip_relocation, ventura:        "af55d0048b19cc4d1dd2e9bd791193ea2c8caef41bb3b2e386fe7733b620a409"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc6c877c9890ec17e9f5bbe23987639e6c06c45ba3c3b6c71540094c6196a011"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23a4523949e9b3eb5e25f4665aea54d317dcc6170b9b05a5cf658f212af11e02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "458560e1f99c0be4084c3b6ce86798670793d57d680fdb10f844956a75182838"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4931ff920f63af53b457df062501ec383276a3ca6e37112366e8af7f1d91b720"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b14c9917c80cdcd0772427846785b128e6f699ddf73967b8a62dd16ca3f41313"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1adeccb93e16506df17fc52eb30e51117466de92565b2603f8a524050c3a09d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "800f41a550b75520646988d66baa374e547943464249510fd4a666a5ef770599"
+    sha256 cellar: :any_skip_relocation, monterey:       "61450c867f949acf3754b9aa63cb4122a89ff653648a1732e5627e126437dbaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfde3fd68642f5f243a853c5fdbea3844db1fa7d55176c573b83b80b7c0641f3"
   end
 
   depends_on "go" => :build

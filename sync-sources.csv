@@ -2351,6 +2351,7 @@ Homebrew-homebrew-core/Formula/g/gravity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grayskull.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/greed.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/greenmask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grepcidr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grepip.rb, Homebrew/homebrew-core, 1
@@ -3476,7 +3477,7 @@ Homebrew-homebrew-core/Formula/lib/liblbfgs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblcf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblerc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblinear.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/liblo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/liblo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liblockfile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liblouis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblqr.rb, Homebrew/homebrew-core, 1
@@ -4339,6 +4340,7 @@ Homebrew-homebrew-core/Formula/n/nomino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nopoll.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/norm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/normalize.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/noseyparker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notation.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notcurses.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/noti.rb, Homebrew/homebrew-core, 1
@@ -5414,6 +5416,7 @@ Homebrew-homebrew-core/Formula/r/rnr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rnv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/roadrunner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roapi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/robin-map.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roblox-ts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robodoc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/robot-framework.rb, Homebrew/homebrew-core, 1
@@ -10579,6 +10582,7 @@ Homebrew-homebrew-cask/Casks/s/sparkle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sparkleshare.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sparkplate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sparrow.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/spatial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spatterlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spechtlite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spectacle-editor.rb, Homebrew/homebrew-cask, 1
@@ -12494,6 +12498,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-ma-shan-zheng.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask-fonts/Casks/font-macondo-swash-caps.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-macondo.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-mada.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-madimi-one.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-magra.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-maiden-orange.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-maitree.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12795,7 +12800,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-jp.rb, Homebrew/homeb
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-kr.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-sc.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono-cjk-tc.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-mro.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-multani.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-myanmar-ui.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12879,7 +12884,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-wancho.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-warang-citi.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-yi.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-sans-zanabazar-square.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-noto-sans.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-ahom.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-armenian.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-balinese.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12926,7 +12931,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-tibetan.rb, Homebrew/homebrew
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-toto.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-vithkuqi.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-serif-yezidi.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-noto-serif.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-noto-serif.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-traditional-nushu.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-noto-znamenny-musical-notation.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-nova-cut.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12949,6 +12954,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-office-code-pro.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-fonts/Casks/font-offside.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ofl-sorts-mill-goudy-tt.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-oi.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-ojuju.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-old-standard-tt.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-oldenburg.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ole.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13373,6 +13379,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-syncopate.rb, Homebrew/homebrew-cask-fon
 Homebrew-homebrew-cask-fonts/Casks/font-syne-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-syne-tactile.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-syne.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-tac-one.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-tai-heritage-pro.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-tajawal.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-takaoex.rb, Homebrew/homebrew-cask-fonts, 0
@@ -13522,6 +13529,10 @@ Homebrew-homebrew-cask-fonts/Casks/font-yaldevi-colombo.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-fonts/Casks/font-yaldevi.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-yanone-kaffeesatz.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-yantramanav.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-yarndings-12-charted.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-yarndings-12.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-yarndings-20-charted.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-yarndings-20.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-yatra-one.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-yellowtail.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-yeon-sung.rb, Homebrew/homebrew-cask-fonts, 1

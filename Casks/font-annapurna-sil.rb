@@ -3,11 +3,12 @@ cask "font-annapurna-sil" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflannapurnasil"
   name "Annapurna SIL"
   desc "Unicode-based font with support for systems that use the devanagari script"
-  homepage "https:github.comsilnrsifont-annapurna"
+  homepage "https:fonts.google.comspecimenAnnapurna+SIL"
 
   font "AnnapurnaSIL-Bold.ttf"
   font "AnnapurnaSIL-Regular.ttf"

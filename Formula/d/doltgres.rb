@@ -16,7 +16,7 @@ class Doltgres < Formula
   end
 
   depends_on "go" => :build
-  depends_on "postgresql@16" => :test
+  depends_on "libpq" => :test
 
   def install
     system ".postgresparserbuild.sh"
@@ -28,7 +28,7 @@ class Doltgres < Formula
       exec bin"doltgres"
     end
     sleep 5
-    psql = "#{Formula["postgresql@16"].opt_bin}psql -h 127.0.0.1 -U doltgres -c 'SELECT DATABASE()'"
+    psql = "#{Formula["libpq"].opt_bin}psql -h 127.0.0.1 -U doltgres -c 'SELECT DATABASE()'"
     assert_match "doltgres", shell_output(psql)
   end
 end
