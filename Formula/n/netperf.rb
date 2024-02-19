@@ -1,9 +1,33 @@
 class Netperf < Formula
   desc "Benchmarks performance of many different types of networking"
   homepage "https:hewlettpackard.github.ionetperf"
-  url "https:github.comHewlettPackardnetperfarchiverefstagsnetperf-2.7.0.tar.gz"
-  sha256 "4569bafa4cca3d548eb96a486755af40bd9ceb6ab7c6abd81cc6aa4875007c4e"
-  head "https:github.comHewlettPackardnetperf.git", branch: "master"
+
+  stable do
+    url "https:github.comHewlettPackardnetperfarchiverefstagsnetperf-2.7.0.tar.gz"
+    sha256 "4569bafa4cca3d548eb96a486755af40bd9ceb6ab7c6abd81cc6aa4875007c4e"
+
+    # only needed for AUTHORS changes of the following patch
+    patch do
+      url "https:github.comHewlettPackardnetperfcommit328fe3b56a8753f6f700aac2b2df84dda5ce93a3.patch?full_index=1"
+      sha256 "e9696cb3dfccb73a595127c281ab0dd820eb8b84a440c96ab2c393444654daed"
+    end
+
+    patch do
+      url "https:github.comHewlettPackardnetperfcommit0b0cbbef75021134c83be0c3dd21878467e11144.patch?full_index=1"
+      sha256 "7dc26cd94228135f4f623a761bfd30e0e37076bf79d9a2e896ca63a5b56969cc"
+    end
+
+    # only needed for AUTHORS changes of the following patch
+    patch do
+      url "https:github.comHewlettPackardnetperfcommitebc567aaad9b5d5808808c7d7aa78e80bb497e72.patch?full_index=1"
+      sha256 "c16c4760e9b558fa3dfba95eabccabae5ee7775c610b917ad8c4d1d799119029"
+    end
+
+    patch do
+      url "https:github.comHewlettPackardnetperfcommit40c8a0fb873ac07a95f0c0253b2bd66109aa4c51.patch?full_index=1"
+      sha256 "072b24f7747d9e789422f0249be1023ee437628a8b5f56c3e27a5359daf55a92"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -21,9 +45,25 @@ class Netperf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "00d6096bef2a2982df63f66cb5400c568b0b917efe598b60bc4df5b54aa24e59"
   end
 
+  head do
+    url "https:github.comHewlettPackardnetperf.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # (resolves "multiple definition of `...'" errors)
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    # https:github.comHewlettPackardnetperfpull67
+    inreplace "srcnetcpu_osx.c", "* #include <machmach_port.h> *", "#include <machmach_port.h>"
+    inreplace "srcnetcpu_osx.c", "mach_port_deallocate(lib_host_port)",
+      "mach_port_deallocate(mach_task_self(), lib_host_port)"
+
+    system ".autogen.sh" if build.head?
+    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"
   end
 

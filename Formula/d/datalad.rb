@@ -8,20 +8,20 @@ class Datalad < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0eb873725cf233126b8e22d15b83c195c2b45c277262a7457743751ad353f789"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be092294fd5effc2d32e7c1b3bc49f8168a06659e2e82a78a242bb1f90d4541a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dab48f692cbb99f8d2fd80950d99d48b64eb27293d179a7b6da21fee6e0f0b1e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "99795aa89c828e5ad13f923608d584e6e32f09d1049758b1165ae59b8f5fe455"
-    sha256 cellar: :any_skip_relocation, ventura:        "9e8e273b8afca158cc59153e5a8f082a049c39d809c1e2e404428e301badbe84"
-    sha256 cellar: :any_skip_relocation, monterey:       "136ec51729cb91baada0ad2592e62023f9c51b3a46870e3ae6195d2db4177779"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc25e89bb7ef7d112a99e56be08df9ea00a8ccec2c15ddfbe2eba61e442b91bf"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38a1cc59f441bb063dcac41e159d1e5096d25230c862925b14e6a675398afc57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42a8a62af4b2ce1dfaef7c722a243cad24583d7dba784501b6cbd8bb37506ad4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "51d57b384522b9d454bfd53ae0d44927a7c8a1996a30c9a4b727e0407e6c7c16"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e3ae184bb84115287c09610e621bc4fc1dd9040f24d26867b1ee10886403e703"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2357563b83e7425dab4f24ee826d6430120355a815d85aa6e0a0dd63e055242"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3fd524a654e38f01d054a61bdac118db49e33df8bfab2bf08fecd44c58c8c37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "285babb02e16ed1386a45a6911a1129ab38408d733d61f0a6c7841c282495d32"
   end
 
   depends_on "git-annex"
   depends_on "p7zip"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python-packaging"
   depends_on "python@3.11" # Python 3.12 blocked by `boto` usage: https:github.comdataladdataladissues5597
 
   resource "annexremote" do
@@ -107,6 +107,11 @@ class Datalad < Formula
   resource "msgpack" do
     url "https:files.pythonhosted.orgpackagesc2d55662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1msgpack-1.0.7.tar.gz"
     sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
+  end
+
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "patool" do

@@ -8,19 +8,23 @@ class Censys < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df8d3b86974b6d7adc9ae30a3bd4a155249e6e8f378814debffff35807f4f1a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae87fd17d37c5a8ad93ec29a7e5927ac64ea309404cb64c641ecfd221237ef29"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5490483389e3be71e0fa2370943738bc40b3cb6c419a6759f498935d1f885a12"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eab4929c58946a72746dee13d18343e562a1185dfd3d7d56a14ea5924c8c92de"
-    sha256 cellar: :any_skip_relocation, ventura:        "005fde131c87e5209bb82f68cd05e6bae0eaf6f3590f905af62b967b8a24a5fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "14d46d1f507715b28ab341b253c5a4fc051be492c44f0d6109cbca1e9d273fe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f1aa50a680d5f31b4fd5af52f3327de3396f08b29ace4224f41249986a31f16"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "951772b327d043644e641f9d1a3c3bb3dd286960e2ea970637992a858a43603c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acab2f851dab3bd1b361902811f8bf4a32a9ef5d1cbb2baedd3e7bc3418c046b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b766a19a76160c57684cfc9ef8eec520760eab6f1328fe86e1fc9a3fb8d3b1df"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ea1cb0de2c61940296d71f96c04635a02b9fc3f9ebaa960ac8a3030a8a81aa7"
+    sha256 cellar: :any_skip_relocation, ventura:        "113506ce4a29fb99dab9b99252c6fdf028df454b37e8fb370df566f65bdb107f"
+    sha256 cellar: :any_skip_relocation, monterey:       "0823e18ae2ef020698a59cc96b05a4f9d16d7310be97d16a2d4f3d15e1d03069"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b92a33ad7276f70154913d2407f80428e069c0e8f0a4851d4da1df607406fa6"
   end
 
-  depends_on "pygments"
-  depends_on "python-argcomplete"
   depends_on "python-certifi"
   depends_on "python@3.12"
+
+  resource "argcomplete" do
+    url "https:files.pythonhosted.orgpackages54c941c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4argcomplete-3.1.1.tar.gz"
+    sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
+  end
 
   resource "backoff" do
     url "https:files.pythonhosted.orgpackages47d75bbeb12c44d7c4f2fb5b56abce497eb5ed9f34d85701de869acedd602619backoff-2.2.1.tar.gz"
@@ -45,6 +49,11 @@ class Censys < Formula
   resource "mdurl" do
     url "https:files.pythonhosted.orgpackagesd654cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   end
 
   resource "requests" do

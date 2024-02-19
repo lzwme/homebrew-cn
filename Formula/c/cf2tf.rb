@@ -10,21 +10,19 @@ class Cf2tf < Formula
   head "https:github.comDontShaveTheYakcf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1110aaec54e0f607c615fb3efdc03407b40e968038454c15b261736cdf2c93ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1d5e2b1b4089b61b2931d537404b9e27a41666e78121dedb77828559a8d44c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "440ef00648677632d30ed0070f899985a6e12ea3bd86df21341cf209d903d499"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f9efa146e76217fe1fe51dcf3816b630a7aaeac2e256c658880603ea0571b7ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "7536a702d64378a2c441727ef496de824de8a9395a70582c13e01fdf6b4bf8a8"
-    sha256 cellar: :any_skip_relocation, monterey:       "33fdb703a0b0d1aee85c476b7413155b20a01560ec31c2247403c6a553046d36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf5fe51a79c1cd58c8c5d429e9edc3d092f3223e5819be3fac43220564409278"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71803f25bc1fe802f3029516fe8afba26366e5f257f1aebe50f4a953dbb9efbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b632280303616b36d504d41c2bd80a838b8b92076acc41e448c991a78994ab3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff36bd54b800cc257412c556f15a548111dcde54e62ad703aa904fd0b549cd53"
+    sha256 cellar: :any_skip_relocation, sonoma:         "00b8cafcba3333fd30d17d5e56602cd271aadaa311ca110ac724e63a6f2854ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "0aabdb4a6524f92bf404907879d1580413bbcf1ee09b5f5f9bbfb03c9f2ecdac"
+    sha256 cellar: :any_skip_relocation, monterey:       "cfa6476f10965395a3e37206dae2c084fd9b826662de86a6966da0cc9ffc182f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34eb2d9d93ab923f05ae5309352fc6e5b9a51eaf8826be0b4efbc6a66eeaaaf6"
   end
 
   depends_on "cmake" => :build
   depends_on "python-certifi"
-  depends_on "python-click"
-  depends_on "python-packaging"
   depends_on "python@3.12"
-  depends_on "six"
 
   resource "cfn-flip" do
     url "https:files.pythonhosted.orgpackagesca758eba0bb52a6c58e347bc4c839b249d9f42380de93ed12a14eba4355387b4cfn_flip-1.3.0.tar.gz"
@@ -34,6 +32,11 @@ class Cf2tf < Formula
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+  end
+
+  resource "click" do
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-log" do
@@ -47,8 +50,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https:files.pythonhosted.orgpackagese5c26e3a26945a7ff7cf2854b8825026cf3f22ac8e18285bc11b6b1ceeb8dc3fGitPython-3.1.41.tar.gz"
-    sha256 "ed66e624884f76df22c8e16066d567aaa5a37d5b5fa19db2c6df6f7156db9048"
+    url "https:files.pythonhosted.orgpackages8f1271a40ffce4aae431c69c45a191e5f03aca2304639264faf5666c2767acc4GitPython-3.1.42.tar.gz"
+    sha256 "2d99869e0fef71a73cbd242528105af1d6c1b108c60dfabd994bf292f76c3ceb"
   end
 
   resource "idna" do
@@ -61,9 +64,14 @@ class Cf2tf < Formula
     sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
   end
 
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
   resource "pluggy" do
-    url "https:files.pythonhosted.orgpackages365104defc761583568cae5fd533abda3d40164cbdcf22dee5b7126ffef68a40pluggy-1.3.0.tar.gz"
-    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
+    url "https:files.pythonhosted.orgpackages54c643f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59pluggy-1.4.0.tar.gz"
+    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
   end
 
   resource "pytest" do
@@ -86,6 +94,11 @@ class Cf2tf < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
   resource "smmap" do
     url "https:files.pythonhosted.orgpackages8804b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baasmmap-5.0.1.tar.gz"
     sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
@@ -97,8 +110,8 @@ class Cf2tf < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages36dda6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+    url "https:files.pythonhosted.orgpackagese2ccabf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9urllib3-2.2.0.tar.gz"
+    sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
   end
 
   def python

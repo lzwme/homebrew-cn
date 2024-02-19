@@ -5,6 +5,11 @@ class Erg < Formula
   sha256 "66e09c811849f99fe3957617f12db6411f905f88d3d0954c4a08d63fba8beff3"
   license any_of: ["Apache-2.0", "MIT"]
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2441710b619f2a758e6c560f0d51e90b292cbf6441b964d6d0ebd6e0e2d34aa"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "311ed525d1ca18430f59124be3d0eb016297936b2b23f7c33dadaec2329d6a42"

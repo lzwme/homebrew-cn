@@ -1,11 +1,11 @@
 class GameMusicEmu < Formula
   desc "Videogame music file emulator collection"
-  homepage "https://bitbucket.org/mpyne/game-music-emu"
-  url "https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-0.6.3.tar.xz"
-  sha256 "aba34e53ef0ec6a34b58b84e28bf8cfbccee6585cebca25333604c35db3e051d"
+  homepage "https:github.comlibgmegame-music-emu"
+  url "https:github.comlibgmegame-music-emuarchiverefstags0.6.3.tar.gz"
+  sha256 "4c5a7614acaea44e5cb1423817d2889deb82674ddbc4e3e1291614304b86fca0"
   license one_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 2
-  head "https://bitbucket.org/mpyne/game-music-emu.git", branch: "master"
+  head "https:github.comlibgmegame-music-emu.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "70bb1a2c61c5cfe9db5cea20d195b0a667584a462bd034eef4063b03948c883d"
@@ -27,13 +27,14 @@ class GameMusicEmu < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DENABLE_UBSAN=OFF"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DENABLE_UBSAN=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gme/gme.h>
+    (testpath"test.c").write <<~EOS
+      #include <gmegme.h>
       int main(void)
       {
         Music_Emu* emu;
@@ -50,12 +51,12 @@ class GameMusicEmu < Formula
     EOS
 
     if OS.mac?
-      ubsan_libdir = Dir["#{MacOS::CLT::PKG_PATH}/usr/lib/clang/*/lib/darwin"].first
+      ubsan_libdir = Dir["#{MacOS::CLT::PKG_PATH}usrlibclang*libdarwin"].first
       rpath = "-Wl,-rpath,#{ubsan_libdir}"
     end
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", *(rpath if OS.mac?),
                    "-lgme", "-o", "test", *ENV.cflags.to_s.split
-    system "./test"
+    system ".test"
   end
 end

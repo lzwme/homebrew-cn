@@ -3,18 +3,18 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/ee/04/5e9916f9d4306d3e1d372e1f216b1e3806836e4f7cc991b286cb4f05ed53/moto-5.0.1.tar.gz"
-  sha256 "62b9798aef9028432194cebb7a671f4064257bb3be662d9c1b83b94411b694bb"
+  url "https://files.pythonhosted.org/packages/b8/0e/4eefbe1d41a1584e48ebd61ebdafa119a053be1e04882be4d53b00660771/moto-5.0.2.tar.gz"
+  sha256 "7e27395e5c63ff9554ae14b5baa41bfe6d6b1be0e59eb02977c6ce28411246de"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "70032f6238e7cabd3590cbffc7439ee51f7fbe2e79a0b09329f0f12e9eafa95c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b85365ddf44b26a243227f158ed26a57fb1b099789a1b583082e489bbb86352"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce12ea6f6fa17694af905e27d5887162fa61af52ba6bf4057493dc421f90414a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0028e638423c5c8fa22b4c1cd6a8d02f724a0a394b7dd3540add4e579e98726e"
-    sha256 cellar: :any_skip_relocation, ventura:        "35e658fa44c480b86f197ef1cb1201be8b5737abfc6629e0cdf3e0b4a1a29bf0"
-    sha256 cellar: :any_skip_relocation, monterey:       "53f04b5104075cac89462ab1e4c4c8aa3f7a02957d74310302f6d1c7b7726033"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7531c706ba37263cde9b2b44f9dadf92e21ac48056cd106225dfa0c4afd89a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4aa2297805c6537188da3df78bc83e4c6d211b755dbbf8ab6940fb3975994095"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "972c0bda9a3d3bfadde21774ab29d3e4d1c75b1df285aa2c9005bd0e919657aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d446182cfbca69f765e9baa24955ff550cdbded99c8add1458c642253b078b58"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7de49f032ddd38534be2f296a46a3ef6550a60eff92afddef84f86c3020e18ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ae445c44f7818febf15232147a5b0f141b9da3e61c739b32a3724eb23868015"
+    sha256 cellar: :any_skip_relocation, monterey:       "da90e36b7eec3a4f559330700c9c507a2e9dd67b7f52a3480289212b8dd9e823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c87202711ca07d5ff27023afc5ca5b8daccd87be0c26d9203e2aa9000827bd35"
   end
 
   depends_on "cffi"
@@ -51,11 +51,6 @@ class Moto < Formula
     sha256 "323736fb92cd9418fc5e7133bc953e11a9da04f4483f828b527db553f1e7e5a3"
   end
 
-  resource "ecdsa" do
-    url "https://files.pythonhosted.org/packages/ff/7b/ba6547a76c468a0d22de93e89ae60d9561ec911f59532907e72b0d8bc0f1/ecdsa-0.18.0.tar.gz"
-    sha256 "190348041559e21b22a1d65cee485282ca11a6f81d503fddb84d5017e9ed1e49"
-  end
-
   resource "flask" do
     url "https://files.pythonhosted.org/packages/3f/e0/a89e8120faea1edbfca1a9b171cff7f2bf62ec860bbafcb2c2387c0317be/flask-3.0.2.tar.gz"
     sha256 "822c03f4b799204250a7ee84b1eddc40665395333973dfb9deebfe425fefcb7d"
@@ -84,6 +79,11 @@ class Moto < Formula
   resource "jinja2" do
     url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
     sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+  end
+
+  resource "joserfc" do
+    url "https://files.pythonhosted.org/packages/1e/c0/220477f18e91d518928d1f5844d23d663bd30df91258ea281f9564021b63/joserfc-0.9.0.tar.gz"
+    sha256 "eebca7f587b1761ce43a98ffd5327f2b600b9aa5bb0a77b947687f503ad43bc0"
   end
 
   resource "jsondiff" do
@@ -126,24 +126,14 @@ class Moto < Formula
     sha256 "aeac8f46529d8651bbae88a1a6c14dc3aa38ebc4bc6bd1eb975044c0564246c6"
   end
 
-  resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ce/dc/996e5446a94627fe8192735c20300ca51535397e31e7097a3cc80ccf78b7/pyasn1-0.5.1.tar.gz"
-    sha256 "6d391a96e59b23130a5cfa74d6fd7f388dbbe26cc8f1edf39fdddf08d9d6676c"
-  end
-
-  resource "python-jose" do
-    url "https://files.pythonhosted.org/packages/e4/19/b2c86504116dc5f0635d29f802da858404d77d930a25633d2e86a64a35b3/python-jose-3.3.0.tar.gz"
-    sha256 "55779b5e6ad599c6336191246e95eb2293a9ddebd555f796a65f838f07e5d78a"
-  end
-
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "responses" do
-    url "https://files.pythonhosted.org/packages/a0/c5/2f4f243e9b9ddb2fa70d696fb66daafd8fde20c9663a4a22c6a02d61bd97/responses-0.24.1.tar.gz"
-    sha256 "b127c6ca3f8df0eb9cc82fd93109a3007a86acb24871834c47b77765152ecf8c"
+    url "https://files.pythonhosted.org/packages/ea/d5/a7300764f8350420815b2c1abf30ebb78a7edd6eea586af784babdc2e9b0/responses-0.25.0.tar.gz"
+    sha256 "01ae6a02b4f34e39bffceb0fc6786b67a25eae919c6368d05eabc8d9576c2a66"
   end
 
   resource "rfc3339-validator" do
@@ -151,19 +141,9 @@ class Moto < Formula
     sha256 "138a2abdf93304ad60530167e51d2dfb9549521a836871b88d7f4695d0022f6b"
   end
 
-  resource "rsa" do
-    url "https://files.pythonhosted.org/packages/aa/65/7d973b89c4d2351d7fb232c2e452547ddfa243e93131e7cfa766da627b52/rsa-4.9.tar.gz"
-    sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
-  end
-
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/fc/c9/b146ca195403e0182a374e0ea4dbc69136bad3cd55bc293df496d625d0f7/setuptools-69.0.3.tar.gz"
-    sha256 "be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
-  end
-
-  resource "sshpubkeys" do
-    url "https://files.pythonhosted.org/packages/a3/b9/e5b76b4089007dcbe9a7e71b1976d3c0f27e7110a95a13daf9620856c220/sshpubkeys-3.3.1.tar.gz"
-    sha256 "3020ed4f8c846849299370fbe98ff4157b0ccc1accec105e07cfa9ae4bb55064"
+    url "https://files.pythonhosted.org/packages/c9/3d/74c56f1c9efd7353807f8f5fa22adccdba99dc72f34311c30a69627a0fad/setuptools-69.1.0.tar.gz"
+    sha256 "850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401"
   end
 
   resource "werkzeug" do

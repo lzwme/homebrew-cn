@@ -9,18 +9,17 @@ class Bandit < Formula
   head "https:github.comPyCQAbandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68886ace37600dc4e29cfc0cf8df3f5b9adcd88d31b9743a2f4371e7d208daff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58adb640effcfff23693b3fbed1c787132e2f3f6393c3fe23b01e494b73b7fc2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6cdb47fb96134839304eb5a8fea400ee49a12c2eb59ad3e89220be3bd1ff5cf2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d25433ae2f99a64f1ccbc1faee305b748fa13316d863601ad53e517caff6348"
-    sha256 cellar: :any_skip_relocation, ventura:        "29ed0f0774bb0940dcf4778858511fe5cc41711603803834b3bf5c52f8c2c89f"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c9adc844d2e52e0e7b6f8d27b300fd243d945974f0b995add8bf8392022cfa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23e0dbc801ed827590e967201582db1c00d18f2b5492d70493443a03c7cad47a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bed4caef90fdd2eee19df3bd93c70ecabea8ac927c29cce458850c5453e1536e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e4ff1807516e86a435fd252ed16bd93c86a9554980b71d7b6403b43c80726b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca5aa10cc3e02a4be271327a49cfd777c5e58888fd7b2a6149925c834ada4bc3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e59e0a882806c5bfbb242b75e194f2a650c01ce7ef34b92a38a2a3e5fb5ef310"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cade83f48aaf252631be55e06c71506f000d69cba0d8b096c0180833af28d52"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb13b18e8ef4d2a95be16755aeeed8421a9cd7b61aebeb94626585bd1289a83f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "958b3660e1d179341f41aa13417d2d53b05afe8be88c2292a15466ae7857e2d6"
   end
 
-  depends_on "pygments"
   depends_on "python@3.12"
-  depends_on "pyyaml"
 
   resource "markdown-it-py" do
     url "https:files.pythonhosted.orgpackages38713b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0markdown-it-py-3.0.0.tar.gz"
@@ -35,6 +34,16 @@ class Bandit < Formula
   resource "pbr" do
     url "https:files.pythonhosted.orgpackages8dc2ee43b3b11bf2b40e56536183fc9f22afbb04e882720332b6276ee2454c24pbr-6.0.0.tar.gz"
     sha256 "d1377122a5a00e2f940ee482999518efe16d745d423a670c27773dfbc3c9a7d9"
+  end
+
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+  end
+
+  resource "pyyaml" do
+    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "rich" do

@@ -1,8 +1,8 @@
 class Cfonts < Formula
   desc "Sexy ANSI fonts for the console"
   homepage "https:github.comdominikwilkowskicfonts"
-  url "https:github.comdominikwilkowskicfontsarchiverefstagsv1.1.3rust.tar.gz"
-  sha256 "e5b2be2d1ce4f4e5b345d755425bc9841a9c1e35c4025ec83dab4f6c38291d87"
+  url "https:github.comdominikwilkowskicfontsarchiverefstagsv1.1.4rust.tar.gz"
+  sha256 "49228dc3dd4529bd86d537f46c8aa9a47043f060ec7d050e5cb739a030222407"
   license "GPL-3.0-or-later"
   head "https:github.comdominikwilkowskicfonts.git", branch: "released"
 
@@ -12,13 +12,13 @@ class Cfonts < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7681a6a0d6edccf2c76341fb23ca236e6a8bfb367b547020efc19bb017775bff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7564bc938f4c813c9acf69b0b72a23ef286dcf16b54d8fc9cf2b87971c52eee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ecc9ce799ddaa0dcbfd77e04721d12641ac6a5ed0273ceaeb993a92d9ff6e68"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a2e107e298e535183cbc93da3a7f322b21ff2382b94dd6fb3b1aa7ea43263061"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6aa57f965ba72b449b015944825d9a621f4b2b2673192c222eb57dde6f57aa6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a41864e09573a908b9d683c73ed60389576de0a20f1ae8b7b2e3afeebf03f74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "068755e2bb56a662272a4469e26551a8ae65db3f9913bd1c347d0fd6e7677e92"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8f167627afafb77e3b656e62d8bce4f0c173be483a249970118c3a3b719047ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a8f56071aee17b3bf2b44d8d1a493c8c4f67ef792671e89370343b42ff28341"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0acfc33654009c79fff58d85cc722eef0f3f734406ae0e56077e2f4eb4cd8962"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4e7fb969e87889bb2c34ad4afffe4a08d420b32f7c3caf2309f080bd9bbfd1e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "11ba6209447f1eece3be7ca60015f103184bcf6e1d6f83c1770bf7a96e8d1ba5"
+    sha256 cellar: :any_skip_relocation, monterey:       "70ec7fc2c6d6633f910d05267e5e1b6798f3b284385053592e8913ea96bbacaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4e0005d9f0182e746081771d318c19783337ad1b09ccd76b411df7de8e67c0b"
   end
 
   depends_on "rust" => :build

@@ -8,17 +8,17 @@ class DockerSquash < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22f2ed6cf69770cf124f4b34ae6acab072980f20a64ddde0dd2bcefc160d8064"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2a1c315673a73ce47fbdaad1d2cad7cbc315bdaa13bdd97def6173d6f30987c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f1b45e5e2a61c4d05b1ca2de15cc104f4308f3f592a2fc762e053720d606f1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dcaf0e8241a2835a833aceaa6e51847fa6883b900cb507d3bf824737f4f4c0c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "7a7161ecc2b61741ef0a463cfe042adae1e7b73f10b7c0a6d69876dd4c14bb08"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a72386b0f310c257b4b6bcdcdaf8af33a0e8c648407d0da945d7ba2f53a8d47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e663b2866d6c5fb9f6a4ac4f907cf482ee457e7181b3e076d1aba479f476e9cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "702715dba292180f02428ccbf35380ec8b2d0811918e39acf5ae7deaac5aab5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67f06fcb8e4b6375d7b16f2998fdec18f6b68b6b756f0d80ab7e9a0a5d130674"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d40f4879e9575e708cc31d90396e1938bccbf292babb79eb93272fc598c082df"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1c9b69038e0948cd87b0bd3bf754dc75a1af01380657b15c430232965dbcd5da"
+    sha256 cellar: :any_skip_relocation, ventura:        "fc8c7a6f9fd3eb58603fa685b310f0585cfc040a28ead64044b317cee9bd4e2f"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc7f78bdea4758b2bb3ff1ccef1d04301721d756b338e9cf71d0505fa77b4a70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f01b0cfe45184c12709cac5ddec452e54b1901c8670db88b3fba8482952d4c41"
   end
 
   depends_on "python-certifi"
-  depends_on "python-packaging"
   depends_on "python@3.12"
 
   resource "charset-normalizer" do
@@ -34,6 +34,11 @@ class DockerSquash < Formula
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
     sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+  end
+
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
   end
 
   resource "requests" do

@@ -1,18 +1,18 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https:dotnet.github.iodocfx"
-  url "https:github.comdotnetdocfxarchiverefstagsv2.75.2.tar.gz"
-  sha256 "4ec0ea2198bf399f1cc6db807cc2aadf6e1cdc42ed2f2e3a77ec6d21b4f9efe0"
+  url "https:github.comdotnetdocfxarchiverefstagsv2.75.3.tar.gz"
+  sha256 "acdf37f58dcf9ea82554c641cd45914cb3813f6493504bedda1b5fb4e4390a3e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f2224fee59e01fbe37d0e0e78fae3ae7e82091266cd566ab21cb983763d8714"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f211cff6f1e975297e55a23ee671f3af34626faa28ae637f6e601be7a1f15259"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50eee8dcfdf3986dba32a5bfec115d12b7598f3107b67d3195b6ab3805a39a3f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49fe6899ef113b0e4982bfa8e84ac9e46e4460bc86cc4843bfac4803fd801ada"
-    sha256 cellar: :any_skip_relocation, ventura:        "928fe973fb355aa1adc6dfb9736b69fa08cf0519eae165692e2b5b7da8de7f5b"
-    sha256 cellar: :any_skip_relocation, monterey:       "50e97fa027500232ebcdf2235d52aaab261f5d5e455a6db70cff3c17c5167471"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f70bf4213580e7d2e60dc614eb4700d67646aac926c9fbb01409b709c56eca7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "008812a338e393dd04e61aad7471d0a5143dc7c675bbc2aa076e68683982f40c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41452127d5179917a1139a7dd5b63ce0e43180b16812fa77e69ab34654b624e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77fee16c78d260815b2b5629de6839b151ec5ec9679af949d624e7986541b8d5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be92896c4c84d470bf5fdf639dc4c471d5b7ea27bc5824e73c090288d983220f"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ba4023266f8b06ec030d5610753a53d34b758e1c08fe54ccbaba9d7953c9588"
+    sha256 cellar: :any_skip_relocation, monterey:       "c61346dddcf9c7a8cf0f9a42851eb67075949371ef599bdc71c0b7ec6a7723b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfbc799a014006d5710660df9c9d5c80ea81c667c20093542690dec19ec1f01e"
   end
 
   depends_on "dotnet"

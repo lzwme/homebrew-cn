@@ -1,4 +1,6 @@
 class ArxivLatexCleaner < Formula
+  include Language::Python::Virtualenv
+
   desc "Clean LaTeX code to submit to arXiv"
   homepage "https:github.comgoogle-researcharxiv-latex-cleaner"
   url "https:files.pythonhosted.orgpackages66878866fcffec4c6d39eaa7a08e3bb0b98ec98464aef55fcf0897196819a2f0arxiv_latex_cleaner-1.0.4.tar.gz"
@@ -7,29 +9,40 @@ class ArxivLatexCleaner < Formula
   head "https:github.comgoogle-researcharxiv-latex-cleaner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9926ba1519bb1933b5b3e55eee8da2ee792622f746f847c9b8580500082ac7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f10455191a84966aad3b801b79fbcfa2bf84b64a33df7c4dd94a769360c93e90"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80a7439b69ba7d7e17f7dae540ab787f87685b79441cb2415718ba71f9672c85"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7200ba3398e0583f2217e5d71b6baa45a12e136e0a54eda00a48ae5df911edee"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c7f73905c4cbb6ccce97b3bcbbad77d776e0e4a3e566742add8be40e7489e39"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1f6514d247699003db517b34a549334f581138ad4f7890024bac3d733f65ff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "848d878cb7be53a4cb28b29faf3d79af0d9698aa43d2073d1af1ba2fb83691ed"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9cf0ccfdb65b1ae64fc695c1a7439e7dbd9642e14429ecf31d229dfbef2e82bf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23c1059cd14f3a43c9a4541347ba1f73d42721c4a154995d313598cc58c8b8ca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c6164d3c4f41f55534027a30b94aa4d8e2829f1278323065daeb3c3f1f707d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4fe519a7a66b06236395b9cefb9833445fd50864b0835a0d4f979bdb7e5ed20c"
+    sha256 cellar: :any_skip_relocation, ventura:        "0dee55c2b0e72be5612caed9f456c5835fa978ba77031271f36f5d2aaec75f2a"
+    sha256 cellar: :any_skip_relocation, monterey:       "b41eef16972b9d343e1914436e3f424280fd90fe3cd05eb55158fb87419714ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7a50e20b87a04dc6ef4868c2f3470ac0c88550e6bbdffbc9667cc461a8fd0ca"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "pillow"
-  depends_on "python-abseil"
-  depends_on "python-regex"
   depends_on "python@3.12"
-  depends_on "pyyaml"
-  depends_on "six"
 
   def python3
     "python3.12"
   end
 
+  resource "absl-py" do
+    url "https:files.pythonhosted.orgpackages7a8ffc001b92ecc467cc32ab38398bd0bfb45df46e7523bf33c2ad22a505f06eabsl-py-2.1.0.tar.gz"
+    sha256 "7820790efbb316739cde8b4e19357243fc3608a152024288513dd968d7d959ff"
+  end
+
+  resource "pyyaml" do
+    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+  end
+
+  resource "regex" do
+    url "https:files.pythonhosted.orgpackagesb53931626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853regex-2023.12.25.tar.gz"
+    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
+  end
+
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    virtualenv_install_with_resources
   end
 
   test do

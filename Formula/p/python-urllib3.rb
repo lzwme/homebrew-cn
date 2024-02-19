@@ -1,18 +1,18 @@
 class PythonUrllib3 < Formula
   desc "HTTP library with thread-safe connection pooling, file post, and more"
   homepage "https://urllib3.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/e2/cc/abf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9/urllib3-2.2.0.tar.gz"
-  sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
+  url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
+  sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec3987e163c6de021d76c33de2f06ade719582b3f5a1313dbe871419756cc79e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d01996e8c654b4a4f07bcb36c2d8066476168c9830028ea9bea827322bd6f74d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb3a7eac74f167167b909b3d7032346cd79ae491d05611231eef95fdc0f7d190"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ef23d75d40e6095100ccda5cd9a27c4eb5c16503f61c53eb7ca10bcb2c24ffec"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b98de47e9cab903b705323c3b23f3dffc8eb3f9d2237d7cc5d53ecd3297005e"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba10e7fdeacd3be53f1d53887d96d379ff10439b09f763c5eacaabf2570ffde0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fd5341fb5357da6ca280c9222dd0a2d61faaf8c7fba15efec4cdfa26bbe28c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68346b40c64380528096a15eb4abb3a0d63a0777b12bcb38b02d053df0c49e3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d07ef1e04607dcf20ea254e5401db471e78804b8b834c7a10e7b7fcf503be4da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee2d5f78b7846dc93cd36fb30311d1cd6a927f981461a363be254526f0e3d3f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f3277c0094b71f66a39c0d620613c2910fce882433a775e55004f66aeb590b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "1f81b664c6227effdb59978bd34f0418aee777a12372a9c14f8aa947378c10e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d9940962f71c693e6377190c5f7da4cac1897c6d49d99ee057c9e7c05adfd4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a93d805dc32d35932eeb16e26b24bf513e53815cea88aada3d5da426bf91fa07"
   end
 
   depends_on "python-hatchling" => :build
