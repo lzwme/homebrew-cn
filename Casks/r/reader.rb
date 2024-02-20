@@ -1,6 +1,6 @@
 cask "reader" do
-  version "0.1.187"
-  sha256 "75ce22066345304519fd941aa8f1b570ddeaeba8bd627da9d230f384c5c8577d"
+  version "0.1.190"
+  sha256 "11fe9eb9b1881355b4c4c208dbcb9193dee934577c6551efe25e3a56bc12bd6f"
 
   url "https:github.comreadwiseioreader-desktop-releasesreleasesdownloadreader-desktop-v#{version}Reader_#{version}_universal.dmg",
       verified: "github.comreadwiseioreader-desktop-releases"

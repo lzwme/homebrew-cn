@@ -1569,6 +1569,7 @@ Homebrew-homebrew-core/Formula/e/entr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envchain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envconsul.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/envio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envoy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enzyme.rb, Homebrew/homebrew-core, 1
@@ -2143,6 +2144,7 @@ Homebrew-homebrew-core/Formula/g/glab.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glances.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glassfish.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/glasskube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gleam.rb, Homebrew/homebrew-core, 1
@@ -5901,6 +5903,7 @@ Homebrew-homebrew-core/Formula/s/sql-migrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sql-translator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlancer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlbench.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sqlboiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlcipher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlcmd.rb, Homebrew/homebrew-core, 1
@@ -7166,6 +7169,7 @@ Homebrew-homebrew-cask/Casks/a/amie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amitv87-pip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ammonite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/amneziavpn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amorphousdiskmark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ampps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/anaconda.rb, Homebrew/homebrew-cask, 0
@@ -8111,6 +8115,7 @@ Homebrew-homebrew-cask/Casks/e/empoche.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enclave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/encryptme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/encryptr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/endless-sky-high-dpi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/endless-sky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/endnote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/endurance.rb, Homebrew/homebrew-cask, 0
@@ -9242,7 +9247,7 @@ Homebrew-homebrew-cask/Casks/m/meetingbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mega.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megacmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/megasync.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mellel.rb, Homebrew/homebrew-cask, 0

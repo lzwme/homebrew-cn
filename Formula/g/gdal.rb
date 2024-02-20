@@ -1,19 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https:www.gdal.org"
+  url "https:github.comOSGeogdalreleasesdownloadv3.8.4gdal-3.8.4.tar.gz"
+  sha256 "c435a2ec08eca3d4c2bfe774081f8c433c00e56ee2f0f2f4f6494c2d078fcfb9"
   license "MIT"
-  revision 2
-
-  stable do
-    url "https:github.comOSGeogdalreleasesdownloadv3.8.3gdal-3.8.3.tar.gz"
-    sha256 "f7a30387a8239e9da26200f787a02136df2ee6473e86b36d05ad682761a049ea"
-
-    # remove with next release
-    patch do
-      url "https:github.comOSGeogdalcommitca2eb4130750b0e6365f738a5f8ff77081f5c5bb.patch?full_index=1"
-      sha256 "5d6ae9c555a8e01a25176a17e66602752ee5e9b158c76be82f14b937b179e433"
-    end
-  end
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -21,14 +11,13 @@ class Gdal < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "c98dfbefb77289cf75d2091b448a2de2810640bd7a663e85dc41c834e0ad282a"
-    sha256 arm64_ventura:  "e1efa8c18dafa24a1012700fefc3b7e7466d801fd826391399a1f220b2863630"
-    sha256 arm64_monterey: "2b01adbc04ee00c33bbf43a501993db159471c951590cc91c601c11c87deb310"
-    sha256 sonoma:         "234f8c0f6c8024b1d03e5a2cb9601131baad82225294b1e20e414ddcd0704e5e"
-    sha256 ventura:        "f927cf631d27668aa7ffa35cb7904cbbb2df5dd5a5afa51923f0028b638a62f2"
-    sha256 monterey:       "d12f2d441f2c8c6d997d5c87169975cacfa5e368e4d2c6e100c788fc3c93219c"
-    sha256 x86_64_linux:   "963ab123a7d5e9c3bd06b7f3c7c245ef650f485b9551a55cb1158e9bdfbdfce2"
+    sha256 arm64_sonoma:   "448373933d77569561fd8212ffc15d918691a760e0a346a88f6756f5c0f9b387"
+    sha256 arm64_ventura:  "c78ea1459a2133991a30da9776ee583a2114e5a7b1f3c4bc2b58ad24c3e37dc9"
+    sha256 arm64_monterey: "089e676e74f98643102972c7a5004137aa848e2d6af6f782d988534122fc7878"
+    sha256 sonoma:         "ee54027f25a8c0d07d36b180132271b75e44c9e3d060ac5a8cc5d4d2eaa1966e"
+    sha256 ventura:        "63814d6b31ac1e3ac661a7891a89eabed72fc32c924c147be87cf3e863821d74"
+    sha256 monterey:       "08f59e9bf664248b099dd2e56352f3ca34c867aff26f809a40e7d6440079357c"
+    sha256 x86_64_linux:   "3aa045e6629541f380996265b634a67ec7c378d658083e1dcd49faf91a3f6278"
   end
 
   head do

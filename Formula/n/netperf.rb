@@ -31,9 +31,11 @@ class Netperf < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dbb69e91e2bbb449c4b6ce47a4a3e624461262ed275327236afd7b83af588778"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "76bf2f77ea0a7e854b9de5b139b4c8d6010a658aeace9a8bbe4691f26f4537e2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "aa20dd669c5ea235a264c1684859a7c97e82bc3a5f210584ff17eb402ada2510"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fb2e8ee85592d6dff9445af33d752ea5e73abb92fe690a7844e556059ba9e9f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "375c669d8ef5b9bfe11746f5ae7f1b41387648c6c746b9f81a3f49ab0b566edb"
     sha256 cellar: :any_skip_relocation, ventura:        "251f856fc4ffa7c7f5c5e0c865b1b5fa41d4f4cd25c213704c0e19657dcf67fb"
     sha256 cellar: :any_skip_relocation, monterey:       "c3418def36e0e68537fd927007c717c1d88fc604db1134125f36f7173f670bb7"
     sha256 cellar: :any_skip_relocation, big_sur:        "de1b7e8643383ecc20cdd23742d2d7518dcb8bf49b77c98f32abed7dbca70f73"
