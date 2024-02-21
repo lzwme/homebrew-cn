@@ -7,13 +7,14 @@ class PhylumCli < Formula
   head "https:github.comphylum-devcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ff0d702322d5d9341c085e660c52a5dbb7f9b7441413bd760253edc149cf2e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab5603209a00a7266830871920ad37ad55560aef02fc497d92b79b491e7e07fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e12a5c27f8b07c955e135b83e8dff1cfcac2ae1a71606f27ecf94dc0486cdc3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "36345591c56be16831490b1f3b9ff3dbc147d2bfa5e501c5dd8d95cc767e171d"
-    sha256 cellar: :any_skip_relocation, ventura:        "422b1e929aed5e6324f05ffaf86dc53d0d6d6599ca80bd59ca21bdea215afe48"
-    sha256 cellar: :any_skip_relocation, monterey:       "bcba6c3a0fd6e4e962857d30a2565c4cfaed366e2314a7a5aaf161a690d42827"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f65809aac14ed703f635ef4461af8f68629a30c93b3035ae4e9f3d0d3a6c8961"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d2ee4fc0dc1a06a2f5758cce9b9d3e5c4693c8ab1b8ecea7848863c2eb9f54b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33f6bb5babe6904911d18763e7c6b3e1a7459904aac4fde3f2a12a56bc54f993"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ade074606deb958fb0cf7beedf928438c1adaf86c774068b20f86dda195e7a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8a12649f5ab73ba10993db6a4df4256832eae72b492d0a51cefd64e55d6c4661"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd96ce57194bc9770d608620ace17e16120b91d3009190b32495c4e44548de0a"
+    sha256 cellar: :any_skip_relocation, monterey:       "cd00a5c0f2212c0d4ae5f7a5646eea88dd7531167076880233564e38006899be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44f79bd5a3f1bbd10155555124cbf0db81b66b7157dc7a883f0bfee4dc4b76db"
   end
 
   depends_on "protobuf" => :build
@@ -22,11 +23,23 @@ class PhylumCli < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "cli")
+    system "cargo", "install", "--no-default-features", *std_cargo_args(path: "cli")
+
+    # Generate and install shell completions
+    system "cargo", "run", "--package", "xtask", "--no-default-features", "gencomp"
+    bash_completion.install "targetcompletionsphylum.bash" => "phylum"
+    zsh_completion.install "targetcompletions_phylum"
+    fish_completion.install "targetcompletionsphylum.fish"
+  end
+
+  def caveats
+    <<~EOS
+      No official extensions have been preinstalled.
+    EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}phylum version")
+    assert_match version.to_s, shell_output("#{bin}phylum --version")
 
     output = shell_output("#{bin}phylum extension")
     assert_match "No extensions are currently installed.", output

@@ -21,6 +21,7 @@ class Cf2tf < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "libyaml"
   depends_on "python-certifi"
   depends_on "python@3.12"
 
@@ -112,10 +113,6 @@ class Cf2tf < Formula
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagese2ccabf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9urllib3-2.2.0.tar.gz"
     sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
-  end
-
-  def python
-    which("python3.12")
   end
 
   def install

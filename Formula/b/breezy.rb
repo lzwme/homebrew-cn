@@ -21,8 +21,8 @@ class Breezy < Formula
 
   depends_on "gettext" => :build
   depends_on "rust" => :build
+  depends_on "libyaml"
   depends_on "python@3.12"
-  uses_from_macos "openssl"
 
   resource "configobj" do
     url "https://files.pythonhosted.org/packages/cb/87/17d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fb/configobj-5.0.8.tar.gz"

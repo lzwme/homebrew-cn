@@ -6,17 +6,17 @@ class YleDl < Formula
   url "https:files.pythonhosted.orgpackages5cbaae9008b208cfc78f8de4b32ea98d4107d6bf940e5062f8985f70dd18b086yle_dl-20240130.tar.gz"
   sha256 "fe871fe3d63c232183f52d234f3e54afa2cffa8aa697a94197d2d3947b19e37d"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comaajankiyle-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9832ebb0127d7374f948ff36669a0de2c468ac75dd4a7b55c54c6131908ebb89"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e71a4dd31b9700a88e45d862a01c126d11f52925fbc71e9fe59e5982f7adf98b"
-    sha256 cellar: :any,                 arm64_monterey: "bcc0752a97c35ec93a624646dd41cf73ad3070ded3969604e14e64d7eef3071a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "95e089a821ab2e5da88549ab91d19d1fbf1fbb553c8b7ecdbb5f8947d1406e17"
-    sha256 cellar: :any_skip_relocation, ventura:        "147ebb50ba21ee288fa6d61e1834c43c75b857ea54ca47727101275806bccb3f"
-    sha256 cellar: :any,                 monterey:       "a65f75958dba15bae35d9ac04987113b55dbd48278d4dfdd0d4f5ecb09692634"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39316e24539582c18bd7c5d09e7aa7b47802b8218919a3e5cd37118294590d0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "864a61a5f69ac7a9f0cfd62cb030a7908d02e6ce8bcb39114615086e092cd82a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c06ed313e19c7bea723d9ff0b5049c121f60639835a206cb3fa1eba979b52011"
+    sha256 cellar: :any,                 arm64_monterey: "60533d9bf8ef6b352f4b127a25fc330a4c533dc2ac42541815e69b8abc296a74"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e855c52dbfd2917b8a23c73901164c5c4e4bdcbfcad159a7368cfb16d0d31415"
+    sha256 cellar: :any_skip_relocation, ventura:        "22908d47a842162d385548de1bea0b9cee8d99f9b175e9c770c7d0e6a4654cf1"
+    sha256 cellar: :any,                 monterey:       "cbb53712c28e63c2867a2d56209e2dea2f2c755965845da2cb12c86b0b7c6404"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "161b524d9c653cadfc81816a538923e9cd79ad8d525a5b3a1f6f73e084c732cb"
   end
 
   depends_on "ffmpeg"

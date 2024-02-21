@@ -19,6 +19,7 @@ class Bandit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "958b3660e1d179341f41aa13417d2d53b05afe8be88c2292a15466ae7857e2d6"
   end
 
+  depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "markdown-it-py" do

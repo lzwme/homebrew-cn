@@ -18,6 +18,7 @@ class Commitizen < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc59e65d7868c88539f37be2a9505ad8431ad639559ee34042fb76f6eca3652d"
   end
 
+  depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "argcomplete" do

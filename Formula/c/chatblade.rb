@@ -19,6 +19,7 @@ class Chatblade < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "libyaml"
   depends_on "python-certifi"
   depends_on "python@3.12"
 

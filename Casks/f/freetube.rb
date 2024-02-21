@@ -12,11 +12,20 @@ cask "freetube" do
     regex(^v?(\d+(?:\.\d+)+)i)
   end
 
+  depends_on macos: ">= :high_sierra"
+
   app "FreeTube.app"
 
+  uninstall quit: "io.freetubeapp.freetube"
+
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsio.freetubeapp.freetube.sfl*",
     "~LibraryApplication SupportFreeTube",
     "~LibraryPreferencesio.freetubeapp.freetube.plist",
     "~LibrarySaved Application Stateio.freetubeapp.freetube.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

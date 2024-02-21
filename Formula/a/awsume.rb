@@ -19,6 +19,7 @@ class Awsume < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bb27cf240209177b175887757635ba70edf4e40fbf975382144f94cc360e8ab"
   end
 
+  depends_on "libyaml"
   depends_on "python@3.12"
 
   uses_from_macos "sqlite"

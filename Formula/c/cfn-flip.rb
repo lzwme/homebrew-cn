@@ -19,6 +19,7 @@ class CfnFlip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3566b78a8d8fed72d94476395c7f9534fd2d874c40f62fe4f75c33e85d8bd81d"
   end
 
+  depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "click" do
