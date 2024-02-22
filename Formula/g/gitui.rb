@@ -1,20 +1,18 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
   homepage "https:github.comextrawurstgitui"
-  url "https:github.comextrawurstgituiarchiverefstagsv0.24.3.tar.gz"
-  sha256 "a5fc6b52a4db0037c3351b9743af49c8bb9ccff4dda5bdb064bab9e59f68fde2"
+  url "https:github.comextrawurstgituiarchiverefstagsv0.25.0.tar.gz"
+  sha256 "711fc5e72fe02e6bc37dc71ec33c2fdf43771e680140a2cc718b2ae5a9fc3174"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aa71574beb27b9a1ddba3fc4ac495f991b09d35084aedec6ee744c599b14e37b"
-    sha256 cellar: :any,                 arm64_ventura:  "1c1d3e0f13419a058c3e5634fae152513ff5ef0b413037d4be38e579f9ad9bc3"
-    sha256 cellar: :any,                 arm64_monterey: "367eeda857726379cc53f0279ce04f9aaca2de6129bab1221d88f4d8c8240348"
-    sha256 cellar: :any,                 arm64_big_sur:  "a0c27c3c2e8a69bc1d9253e7498e37f9dd568a12c3958af5235cbd77542782e9"
-    sha256 cellar: :any,                 sonoma:         "c8b0e6739065bc706c626d93420fd3f123f5d45ee09b302f7cd6dee0189954bd"
-    sha256 cellar: :any,                 ventura:        "306d806daf9d1a1c229e7927c0453a45ecca4cec8fd280f26b45eadc518145f1"
-    sha256 cellar: :any,                 monterey:       "ed0cdd39146ae050f79f933cd2023f3415646bf8520920c2a6d9a301526f432e"
-    sha256 cellar: :any,                 big_sur:        "b44fc0ad42cdb69b323422f55a2c950cf66f7d2562163ca49df56e2c9809fbe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbabb6ee576993edf714abc9d2f7505a486ceaeec503dd927f43c2e08bf31a56"
+    sha256 cellar: :any,                 arm64_sonoma:   "50dd8f173baf370778e31f8ea23dc7967434a100d1f93d776a287d2bc0901009"
+    sha256 cellar: :any,                 arm64_ventura:  "0dd09ce20cb6cc0c9c69b1183a675cb0ed9ed9881838e552a20434d318f79285"
+    sha256 cellar: :any,                 arm64_monterey: "5c3fdd4e5792735cad970f9866d5e93a25b93cba1adfa690adae24a125ffaff6"
+    sha256 cellar: :any,                 sonoma:         "ec6ce83604fb2e2b126e1617085de8efc88837093a060d0ba10d90e9ec32929a"
+    sha256 cellar: :any,                 ventura:        "5664ebf38b3a5d4cb727345d8c9d78923ff16282b7656440702fcdacccebdf48"
+    sha256 cellar: :any,                 monterey:       "9d0c9e5256e70311211758aa5282478d078ddc2a5bb6dcec5777b17096e7efad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a83434578a558f4e355bee2bac9ee9dc42462a6cea19601e06e63b4fa77e5c86"
   end
 
   depends_on "rust" => :build

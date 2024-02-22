@@ -3,25 +3,26 @@ class OrganizeTool < Formula
 
   desc "File management automation tool"
   homepage "https:github.comtfeldmannorganize"
-  url "https:files.pythonhosted.orgpackages461164cd44c8accd864c1f3e67a8185b60434834d50e0876a961554ceb9a64f7organize_tool-3.1.2.tar.gz"
-  sha256 "03ef0bc8a179a31a302b65f0b2a725cc949946075dd13cd1fb72c2307dda9fbe"
+  url "https:files.pythonhosted.orgpackages3d2677406e216a995455367d0714dd0729a4c23b95801ea39143b4da4dbc178eorganize_tool-3.2.0.tar.gz"
+  sha256 "9323872b3df86e213749157868fd3549d817ce5e8cb0785b6ecef8d5bed8dc63"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "5d6b61e6e74bb835e8e560cfbd391ecf09345150d50e097c86edf022df4c986d"
-    sha256 cellar: :any,                 arm64_ventura:  "4fc085ebd1bdcfb9d78e079bc653694cbd0b52c150697506e532b1c0b67251e5"
-    sha256 cellar: :any,                 arm64_monterey: "dc9b93b5f2bba098c7121f7aafd5a87fe33dd5a58290db6a9063a581b1024012"
-    sha256 cellar: :any,                 sonoma:         "89a4dac1fa7902ef589eb5f395235448dabff6169fe755869617d3ef487edc5d"
-    sha256 cellar: :any,                 ventura:        "af738e6e0d65dd106ae035dbdc9f60bdd9ffe6800ae3db41c12ba52d3a0ed5f9"
-    sha256 cellar: :any,                 monterey:       "bb146d44bf39fb8bb52fbebc42bef3de9db14c9881a580004b8b323ff82a00b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bc0a9b18d1b5110b1a845c2d8ab68875f7d0172a920bb4e8314c149d2728121"
+    sha256 cellar: :any,                 arm64_sonoma:   "8b14f35ea8e0050c9418f262ee0eccf36df788ddb5441268caf06d3725811b3b"
+    sha256 cellar: :any,                 arm64_ventura:  "0feaa1a2c5072b30445d3089836f2701df7a0587ac5efef571ab9ec174104131"
+    sha256 cellar: :any,                 arm64_monterey: "f279503b0bafb2e8cd4a32078f61d4ef4c236b102f35c5317038ceca2e30e151"
+    sha256 cellar: :any,                 sonoma:         "58f51bf40b74a2f843a6fab3f8eb662242aadc3d18c3abdf369db80a09a69ef4"
+    sha256 cellar: :any,                 ventura:        "82530e74a7702a4200c159c55e6bec286893dd6a3a4a382a32ec8b4056337030"
+    sha256 cellar: :any,                 monterey:       "405b5ec7f507415ba734056aec714c7984bae3277fb36261f94fd2412d3d36fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cc19910e15b03c76b976a200adad410743df660f2ac721564b8747833aeb2eb"
   end
 
   depends_on "cmake" => :build
-  depends_on "rust" => :build # for pydantic_core
+  depends_on "rust" => :build
   depends_on "freetype"
+  depends_on "libyaml"
   depends_on "openjpeg"
+  depends_on "python-cryptography"
   depends_on "python@3.12"
 
   resource "annotated-types" do
@@ -39,9 +40,19 @@ class OrganizeTool < Formula
     sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
   end
 
+  resource "charset-normalizer" do
+    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+  end
+
   resource "docopt-ng" do
     url "https:files.pythonhosted.orgpackagese4508d6806cf13138127692ae6ff79ddeb4e25eb3b0bcc3c1bd033e7e04531a9docopt_ng-0.9.0.tar.gz"
     sha256 "91c6da10b5bb6f2e9e25345829fb8278c78af019f6fc40887ad49b060483b1d7"
+  end
+
+  resource "docx2txt" do
+    url "https:files.pythonhosted.orgpackages7d7d60ee3f2b16d9bfdfa72e8599470a2c1a5b759cb113c6fe1006be28359327docx2txt-0.8.tar.gz"
+    sha256 "2c06d98d7cfe2d3947e5760a57d924e3ff07745b379c8737723922e7009236e5"
   end
 
   resource "exifread" do
@@ -77,6 +88,11 @@ class OrganizeTool < Formula
   resource "mdurl" do
     url "https:files.pythonhosted.orgpackagesd654cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "pdfminer-six" do
+    url "https:files.pythonhosted.orgpackages31b1a43e3bd872ded4deea4f8efc7aff1703fca8c5455d0c06e20506a06a44ffpdfminer.six-20231228.tar.gz"
+    sha256 "6004da3ad1a7a4d45930cb950393df89b068e73be365a6ff64a838d37bcb08c4"
   end
 
   resource "platformdirs" do

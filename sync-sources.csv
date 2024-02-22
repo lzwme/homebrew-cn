@@ -750,7 +750,6 @@ Homebrew-homebrew-core/Formula/c/certigo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certstrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ceylon.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/cf-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf2tf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf4ocl.rb, Homebrew/homebrew-core, 1
@@ -1946,7 +1945,7 @@ Homebrew-homebrew-core/Formula/g/gcviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/gdbgui.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gdbgui.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdbm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdcm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdk-pixbuf.rb, Homebrew/homebrew-core, 0
@@ -4901,6 +4900,7 @@ Homebrew-homebrew-core/Formula/p/pocsuite3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pod2man.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/podiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/podman-compose.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/podman-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podofo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podsync.rb, Homebrew/homebrew-core, 1
@@ -5093,12 +5093,9 @@ Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-configobj.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-dicttoxml.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-distlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-distro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-docopt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-filelock.rb, Homebrew/homebrew-core, 1
@@ -5130,19 +5127,15 @@ Homebrew-homebrew-core/Formula/p/python-oauthlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pbr.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-platformdirs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pluggy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-prompt-toolkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-regex.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-requests-oauthlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-rich.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-sympy.rb, Homebrew/homebrew-core, 0
@@ -5155,7 +5148,6 @@ Homebrew-homebrew-core/Formula/p/python-toml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-trove-classifiers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-wcwidth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-websocket-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-xlsxwriter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
@@ -7060,6 +7052,7 @@ Homebrew-homebrew-cask/Casks/a/accordance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/accurics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ace-link.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/acorn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/acreom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/acronis-true-image.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/active-trader-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/activedock.rb, Homebrew/homebrew-cask, 0
@@ -8903,6 +8896,7 @@ Homebrew-homebrew-cask/Casks/k/kindle-comic-converter.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/k/kindle-comic-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kindle-previewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kindle.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitematic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kiwi-for-gmail.rb, Homebrew/homebrew-cask, 0

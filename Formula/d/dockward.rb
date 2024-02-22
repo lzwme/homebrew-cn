@@ -27,7 +27,7 @@ class Dockward < Formula
   end
 
   # https:github.comabiosoftdockwardissues3
-  deprecate! date: "2023-06-27", because: :unmaintained
+  disable! date: "2024-02-20", because: :unmaintained
 
   depends_on "go" => :build
 

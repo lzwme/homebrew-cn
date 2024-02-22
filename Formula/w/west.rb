@@ -10,16 +10,17 @@ class West < Formula
   head "https:github.comzephyrproject-rtoswest.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1a1c37b8204c2cb7f8b843672e692bfea29020a6df285265e3889b599511419"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf1bc4ef813eeb1be7ad04f7d0a7635eea4843611322f46c93faa1537c884d5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28133e9aa3c88cba658ec02145b7564e2e0d6f75194808c780c62623cc99838e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "036725939c5b80998ea6af74fb0c0965b9f6e6efbafe21d8d9bbaef12e0b0c82"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d0018226a52fc3e49736b0dfd845d479dabbbbf2640c9b39bc1ffa5a658a572"
-    sha256 cellar: :any_skip_relocation, monterey:       "60ca1dcced25de5a868fd052e5b66b0a9399902a6718971d1f58e240850f52fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "044e4c73db953335801e52a715b40415123979520744935385d347182a0d2d88"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "fa92015937cf4c691a49761f7d27162447b9b8612bf3385b157dfe23ef6b763b"
+    sha256 cellar: :any,                 arm64_ventura:  "708f9207edda6b9f0636db0a4d171fe1681aadb7d7d1b4871c07ed7563958bad"
+    sha256 cellar: :any,                 arm64_monterey: "3980af8f3bf2ba932e8cf97a4bf00e6b1960044d9aa05a11dd617607b7fbe58b"
+    sha256 cellar: :any,                 sonoma:         "b737f5a21b10dc033e239ccabeb66a622ccb54c17cd595f1c196be3424987760"
+    sha256 cellar: :any,                 ventura:        "3c62e7444637f0cee924af20fc39531389206ae17d1aed3ce0fdb360cd222556"
+    sha256 cellar: :any,                 monterey:       "8756abd891bb4409f746161b435cc5af0a69d0efc8b746abde220cab3cf57cc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de8cd0fb29a315f3c9f118e13b669d08f53880445870335f5f0bed16a73ecea5"
   end
 
+  depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "colorama" do

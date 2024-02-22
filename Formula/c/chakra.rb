@@ -46,6 +46,9 @@ class Chakra < Formula
   def install
     ENV.clang if OS.linux? # Currently fails to build with LLVM 16.
 
+    # Use ld_classic to work around 'ld: Assertion failed: (0 && "lto symbol should not be in layout")'
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+
     args = %W[
       --custom-icu=#{Formula["icu4c"].opt_include}
       --jobs=#{ENV.make_jobs}

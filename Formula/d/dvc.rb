@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages564c4733f18e16fb6f4785166ac440a3e0ff6e49e9cad271316cebe0dd4686f3dvc-3.46.0.tar.gz"
-  sha256 "44ad22eee52c11f52cab67ff5daf6a622daf322cdf342b1987522c8d2b12c890"
+  url "https:files.pythonhosted.orgpackages79720548f1aad2cc731ab481f23fcc52228e82fb5facad619e2d1989b9e010eedvc-3.47.0.tar.gz"
+  sha256 "892a005fe3ff81c26722f234a47c63d222a9686e611fa104aa962e0640e24b1d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7a43476517f2af07d9ce1794f9be22e66ec030fbc68577180791c5a8aaa831a0"
-    sha256 cellar: :any,                 arm64_ventura:  "4825cb756c7e5a55173410733ce4725be24b6807ae9afa0df11a6133a4487649"
-    sha256 cellar: :any,                 arm64_monterey: "4494b71d2a7282a81303cb8248c7d3b8436cfae7489356b529d8d47aab407c67"
-    sha256 cellar: :any,                 sonoma:         "64762e817751f2fa5b0e6679d444f7c1f4de7795a77f4db98fc24268357b5dfb"
-    sha256 cellar: :any,                 ventura:        "5603d54395c211af4ab324c1a6216d8d1f852dc0396c421103f4bab594865c05"
-    sha256 cellar: :any,                 monterey:       "d8a6b7ac1e68ed7a95c08a41c07e8818f12115b338063bca8615f6f7268d35f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3673dc2fa2e9637ebbcfa6951c3e6d9ad9ba875018f05515cd9bd05610c860ab"
+    sha256 cellar: :any,                 arm64_sonoma:   "07f8d725893c860fd353b10080c28bfa40f21e3a3a2416b29be443bfa24b43f2"
+    sha256 cellar: :any,                 arm64_ventura:  "b5dc730ce9d05afb32065576c063fbeb9f768c11d3b12f7bb24474d8f3ba6829"
+    sha256 cellar: :any,                 arm64_monterey: "59771188db739f696eea8399273eb9c7fc38e4a511f50c37b33b4c2f748302c6"
+    sha256 cellar: :any,                 sonoma:         "02640b6aacd752f4b6578ae278041a40385723e816ee532fe8e117a4d435388f"
+    sha256 cellar: :any,                 ventura:        "831845f7363e685bc7c3fe15110ccb16706736c961f78a92f5017d8c9db39a01"
+    sha256 cellar: :any,                 monterey:       "c46602094154ce5aaa1cfea784f2616073699d15f43ed00ff36714abbf259593"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f84ce3c976de2aea6ac6eeb3378116eda605e78c65f558b8799cddc02de4cecc"
   end
 
   depends_on "openjdk" => :build # for hydra-core

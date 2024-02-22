@@ -1,24 +1,22 @@
 class PythonCryptography < Formula
   desc "Cryptographic recipes and primitives for Python"
   homepage "https:cryptography.ioenlatest"
-  url "https:files.pythonhosted.orgpackagesb3cc988dee9e00be594cb1e20fd0eb83facda0c229fdef4cd7746742ecd44371cryptography-42.0.3.tar.gz"
-  sha256 "069d2ce9be5526a44093a0991c450fe9906cdf069e0e7cd67d9dee49a62b9ebe"
+  url "https:files.pythonhosted.orgpackages81d8214d25515bf6034dce99aba22eeb47443b14c82160114e3d3f33067c6d3bcryptography-42.0.4.tar.gz"
+  sha256 "831a4b37accef30cccd34fcb916a5d7b5be3cbbe27268a02832c3e450aea39cb"
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
   head "https:github.compycacryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6c1c06863d05e22b3940e36ae9e224c94296bc14cef43b74d3de6cb68a56123e"
-    sha256 cellar: :any,                 arm64_ventura:  "c9d97cd99e0073744e4fb6445f7a4f6a32e49fea109429379196e351208051df"
-    sha256 cellar: :any,                 arm64_monterey: "899b9f9aab8b4127661812d4f01c1b352000d64f483f8d0d770469ac6271d0e4"
-    sha256 cellar: :any,                 sonoma:         "1393b1525e1ad878c15cf5443e6fd86574ca5bd20398c48dd3aed72281df8464"
-    sha256 cellar: :any,                 ventura:        "98d7728a39972d016185514e329baf087ce620b992cf17461a77dfb602fb2920"
-    sha256 cellar: :any,                 monterey:       "c3d2898db37e9e78706eb7a5e73dbb54d62506e3f2fd64ecafee3fe160e91051"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f739df53aa75bbd183429f48ecdb73686a71593f15a0f379846d1d13fd0ac15b"
+    sha256 cellar: :any,                 arm64_sonoma:   "576b0694a2b21e6ee153f5eed192a5ac2f5d72b52e77e9e01841dec8d52dc789"
+    sha256 cellar: :any,                 arm64_ventura:  "499698e1edfd6efa0bfa41b4b3e09d8d6ee8cffefe8d97e870c5fc3438675f15"
+    sha256 cellar: :any,                 arm64_monterey: "9d65c61c6d86e9353c9640048959098da48b88a255051f2fb9e18cb98e980c36"
+    sha256 cellar: :any,                 sonoma:         "e5b3af6ad58b822c9fa33ac310c78b0ac19959cc58d20a8bb7a5d9753bb6fa3e"
+    sha256 cellar: :any,                 ventura:        "37c28e816bcecdc412bec84b35fc714fb7b37771ab508833814dc5faecd2750a"
+    sha256 cellar: :any,                 monterey:       "77d1f2408470b436226cd86bc622794bd811d525ea725189bc38b52532fb9562"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "494d64198448eca91cabb424189fa69a5aa31b8d4a87584071e31e2c9bb2831b"
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
-  depends_on "python-typing-extensions" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "rust" => :build

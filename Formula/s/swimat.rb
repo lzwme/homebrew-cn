@@ -21,7 +21,7 @@ class Swimat < Formula
   end
 
   # https:github.comJintinSwimatissues244
-  deprecate! date: "2023-05-09", because: :unmaintained
+  disable! date: "2024-02-21", because: :unmaintained
 
   depends_on xcode: ["10.2", :build]
   depends_on :macos

@@ -3,20 +3,19 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https:github.comcookiecuttercookiecutter"
-  url "https:files.pythonhosted.orgpackages1a5d9f6a7b748436597060654c8b5815dabedd78893e566bc9838c6dcbf05e04cookiecutter-2.5.0.tar.gz"
-  sha256 "e61e9034748e3f41b8bd2c11f00d030784b48711c4d5c42363c50989a65331ec"
+  url "https:files.pythonhosted.orgpackages52179f2cd228eb949a91915acd38d3eecdc9d8893dde353b603f0db7e9f6be55cookiecutter-2.6.0.tar.gz"
+  sha256 "db21f8169ea4f4fdc2408d48ca44859349de2647fbe494a9d6c3edfc0542c21c"
   license "BSD-3-Clause"
   head "https:github.comcookiecuttercookiecutter.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "d15b60ede5126d5614ebb9a16dbfaf43c1ae7b2bb57442b1abf1f652b95b57c0"
-    sha256 cellar: :any,                 arm64_ventura:  "9bff4b4da3b4d59a30cfbd3c37cbbef584dbe6ed456b7111abc9b61207c6552e"
-    sha256 cellar: :any,                 arm64_monterey: "8eaa996555db067ece59baab9d49ee2edcdcd9af04d74fa07fdcb923d9387533"
-    sha256 cellar: :any,                 sonoma:         "add5e51ab5191228bbf68af15f19ad9fdf2a5026258858558a88ac2fbc3c7929"
-    sha256 cellar: :any,                 ventura:        "33dee928f4a68e5b2f1403b609b15de04cee94ea73708ab2a3bc59a75d628319"
-    sha256 cellar: :any,                 monterey:       "9e2b4e5a389e2bd9ce9251a51539167b7d5ccd67bf7b64b06a19cf71df85f2fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aac8c26199086ac1687a81f35bc0ea004b713b805773cce5b4d01c1d676d4c37"
+    sha256 cellar: :any,                 arm64_sonoma:   "673cd812f28d0976932d4ebd83605551b05c5436d9b5119e184ade1c55e377ce"
+    sha256 cellar: :any,                 arm64_ventura:  "e9eb866768fcd72e060c73691e1d3cddb3290d4b2544f55d1aac8f5eb6433253"
+    sha256 cellar: :any,                 arm64_monterey: "1fe86670cbc5e90232b1215f5cd6166f9db9abcbffaecb257cbfb145818906dd"
+    sha256 cellar: :any,                 sonoma:         "dc0be409ab5c32ac0d9af6427b7caef62df2e74f140cf83a5e9fb3dc05217f93"
+    sha256 cellar: :any,                 ventura:        "d19b612cd52999c180899bf1cca6c17f9a522ee981b48016c4d31ae77f98fb39"
+    sha256 cellar: :any,                 monterey:       "9f2d15bd55f7f2e2e169daa9d63f337b0e342c80ab53a205c1e426cf0d6a79f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ced74e50497fbad89d9d258421a92cf7a554e9dfd7eade4806efd7d1dd18b06"
   end
 
   depends_on "libyaml"

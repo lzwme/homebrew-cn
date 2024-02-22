@@ -6,17 +6,16 @@ class Twarc < Formula
   url "https:files.pythonhosted.orgpackages8aedac80b24ece6ee552f6deb39be34f01491cff4018cca8c5602c901dc08ecftwarc-2.14.0.tar.gz"
   sha256 "fa8ee3052d8b9678231bea95d1bdcbabb3968d35c56a8d1fcedc8982e8c66a66"
   license "MIT"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a031b240f5e912d432d265836b712f285e00535bcbcfadd814dd92663f719d0f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e48d381ee67727dd3736f74a4390369c008d7132ea62482197e63e8f3902fe34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53f9e17b287ca446fca72d9cafe2968cd349e66991d27f6ae4eeb4ad896de211"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5403040cb66a720dcb56e4be886c62bdca0e33d2d237806caf5745dc51f0ce40"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3a4a30a5a84f009ea290aebace9be5c35c5f8849711c9b5c8d4c2280d55be10"
-    sha256 cellar: :any_skip_relocation, monterey:       "93c26c24f63f90e30a64f4b5bea82e4332f6b93fe60ae76b12bf68db3477cc8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a2d716cdee228e7c9041d5f82a8bcf420d01d8d35953e9023d62b23f2a23c52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e68eccbfd9ace95e3d966c74f430fdea5988a9967df84427c51c9c3b9746ec3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44706a28606138a8e74636316266284ccf6d888f5f32134975d80b0bfc72d612"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4386b01b357cecd7aca676befaebea899c6582094e436357735d69cc1d9ab01"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3453abaa636958c3c4dbdb384aead53220292aa0cbd0e5c125d66a98345acd0e"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0ee3aa09186170952a8ef7b91b2b61c3b751111ad10be0021b302deb60fafc8"
+    sha256 cellar: :any_skip_relocation, monterey:       "772963fe48368a6b8ab7120e4c53946b058d60c952f496df0beb8c67771d49f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc042aeb68b0de88555d95cd49e480e1d4c96ad1f8940534e2f79da134baf7aa"
   end
 
   depends_on "python-certifi"
