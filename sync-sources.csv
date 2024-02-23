@@ -125,7 +125,6 @@ Homebrew-homebrew-core/Formula/a/ansible-cmdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/ansible@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansifilter.rb, Homebrew/homebrew-core, 0
@@ -1271,6 +1270,7 @@ Homebrew-homebrew-core/Formula/d/dgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhall-bash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dhall-json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dhall-lsp-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dhall-toml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dhall-yaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dhall.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dhcpdump.rb, Homebrew/homebrew-core, 1
@@ -3131,7 +3131,7 @@ Homebrew-homebrew-core/Formula/l/lifelines.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lightgbm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lighthouse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lightning.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
@@ -3847,6 +3847,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/markdownlint-cli.rb, Homebrew/homebrew-core, 1
@@ -5086,7 +5087,6 @@ Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-attrs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 1
@@ -5107,7 +5107,6 @@ Homebrew-homebrew-core/Formula/p/python-hatch-vcs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-hatchling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-json5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
@@ -5123,7 +5122,6 @@ Homebrew-homebrew-core/Formula/p/python-mpmath.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-msgpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-oauthlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pbr.rb, Homebrew/homebrew-core, 0
@@ -5148,8 +5146,6 @@ Homebrew-homebrew-core/Formula/p/python-toml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-trove-classifiers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-websocket-client.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-xlsxwriter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
@@ -5195,7 +5191,7 @@ Homebrew-homebrew-core/Formula/q/qstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qt-libiodbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-mariadb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/q/qt-mysql.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qt-mysql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-percona-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-postgresql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qt-unixodbc.rb, Homebrew/homebrew-core, 0
@@ -5973,7 +5969,6 @@ Homebrew-homebrew-core/Formula/s/storj-uplink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/storm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stormlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stormssh-completion.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/stormssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strace.rb, Homebrew/homebrew-core, 1
@@ -8813,6 +8808,7 @@ Homebrew-homebrew-cask/Casks/j/joinme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/joker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jollysfastvnc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/joplin.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jordanbaird-ice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/joshjon-nocturnal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/josm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/journey.rb, Homebrew/homebrew-cask, 1
@@ -9738,6 +9734,7 @@ Homebrew-homebrew-cask/Casks/o/outset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overdrive-media-console.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/overflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/overkill.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/overlayed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/oversight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/overt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ovito-pro.rb, Homebrew/homebrew-cask, 0

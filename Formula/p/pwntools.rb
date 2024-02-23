@@ -3,20 +3,19 @@ class Pwntools < Formula
 
   desc "CTF framework used by Gallopsled in every CTF"
   homepage "https:github.comGallopsledpwntools"
-  url "https:files.pythonhosted.orgpackages3c8018fad749ce87aea82f37b81e5306b21c2f3493b9a3ee01a5b728f9fbfa74pwntools-4.11.1.tar.gz"
-  sha256 "ee19e35fbdb5b7463329c27be51fad11f508e84f5bc4c617504b48e7a18364fd"
+  url "https:files.pythonhosted.orgpackages09cb82243a56a8b92451d97ad1792e67cbe8dbc9f9dec2a869a58839993ccca4pwntools-4.12.0.tar.gz"
+  sha256 "320285bd9266152fdba3b81de3a31e61a25076645507a38d85f34e1b15998eb1"
   license "MIT"
-  revision 1
   head "https:github.comGallopsledpwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c9707f3e0fcfc8a3ad36de332d730df402a6b1ed1acf6df79f6fa32f598dd0f6"
-    sha256 cellar: :any,                 arm64_ventura:  "16ba572a1921b92ed576d0a27835a8d20c81546f75f24f83525fbce7f54b4493"
-    sha256 cellar: :any,                 arm64_monterey: "ba8d6f44d912d2050c8f4dec6c03635b95b9a6897afa7f54e4c8678cc8a2fc4a"
-    sha256 cellar: :any,                 sonoma:         "083dc32a9c1f25ca7edb25742a64102169cae45e3f32e6e1f451fc35a09c6708"
-    sha256 cellar: :any,                 ventura:        "4c70d753f39861907a4a4b6691dccd87ce3bf6cefe329278a011c4c1f82090f1"
-    sha256 cellar: :any,                 monterey:       "0769d7f922344bc54544ba33fc4761e41d0802817815f813a4c5036da4c46c48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a9598b02986b21789542f8072632c489e94afd99986002aa11fcf5648df7a04"
+    sha256 cellar: :any,                 arm64_sonoma:   "c0fe300107661624501208edf382745ba8d0a9477ed59403618b2285f8776b54"
+    sha256 cellar: :any,                 arm64_ventura:  "a2763f00317df93bcd571fa023c5340bdf6b7c959ed24312521aa1ecf3a9f3bc"
+    sha256 cellar: :any,                 arm64_monterey: "44ad4dd9062238d0ec2c8cfeac0d9f5b65489cc3c9e7464662a2b6b091cf85fe"
+    sha256 cellar: :any,                 sonoma:         "8e38bd8cd56b898e8a058668889150f82a28116094dbc5eff53fdf55bd7c35a3"
+    sha256 cellar: :any,                 ventura:        "fc9871b677eec6cd899777f3a7f1537a1e7d989531ac8ef8d132174471e85a21"
+    sha256 cellar: :any,                 monterey:       "e2c8068e035a5bc5366d66e5d16affd647305856cb942c1efdc79c497d27778e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45e4226c60b5bb85e50697599b00ba192ade8d5d12addb4b8db107e0d1e0ea7e"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -107,6 +106,16 @@ class Pwntools < Formula
   resource "unicorn" do
     url "https:files.pythonhosted.orgpackages64c71a571a06adda2a9802e21d84398c5547761cb28b22f59a2c5db62bf23887unicorn-2.0.1.post1.tar.gz"
     sha256 "7fc69523eb83b4c8abc7cb4410ca21875e066c34b7afe998f59481e830d28e56"
+  end
+
+  resource "unix-ar" do
+    url "https:files.pythonhosted.orgpackages3e3765cb206bd7110887248fe041e00e61124abdcd23de8f19418898a51363fcunix_ar-0.2.1.tar.gz"
+    sha256 "bf9328ec70fa3a82f94dc26dc125264dbf62a2d8ffb1a3c8c8a8230175e72c4e"
+  end
+
+  resource "zstandard" do
+    url "https:files.pythonhosted.orgpackages5d912162ab4239b3bd6743e8e407bc2442fca0d326e2d77b3f4a88d90ad5a1fazstandard-0.22.0.tar.gz"
+    sha256 "8226a33c542bcb54cd6bd0a366067b610b41713b64c9abec1bc4533d69f51e70"
   end
 
   def install

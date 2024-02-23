@@ -1,19 +1,19 @@
 class Glfw < Formula
   desc "Multi-platform library for OpenGL applications"
   homepage "https:www.glfw.org"
-  url "https:github.comglfwglfwarchiverefstags3.3.9.tar.gz"
-  sha256 "a7e7faef424fcb5f83d8faecf9d697a338da7f7a906fc1afbc0e1879ef31bd53"
+  url "https:github.comglfwglfwarchiverefstags3.3.10.tar.gz"
+  sha256 "4ff18a3377da465386374d8127e7b7349b685288cb8e17122f7e1179f73769d5"
   license "Zlib"
   head "https:github.comglfwglfw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a57c82ca524c088bfe769b0c82a117723b808d0c6f12ed58142623c7d49c885b"
-    sha256 cellar: :any,                 arm64_ventura:  "b8be90143734ec60dba41c54002de776d88cef22f9cbd6bbbb5ff62c2a157247"
-    sha256 cellar: :any,                 arm64_monterey: "0977c638c0f0e778e98ef26708100dd3615976090f6a24b7601ea0f8f5710d26"
-    sha256 cellar: :any,                 sonoma:         "3f7b8f7cb5504c67686430ace522917ffdcd23133bc507d5b626ab11cf7b06fb"
-    sha256 cellar: :any,                 ventura:        "df455405d14c30aa1f5db93eab3084e011bb113bd6a241a44f996d72e9570184"
-    sha256 cellar: :any,                 monterey:       "26ece97f71aa7e287e532307d4d54baf569f9a25704cb67cd18e9b5f5e07d3f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e95b38b2877d6f826767c69c3bd841187665af7cf9f8a5a225215db44669d72a"
+    sha256 cellar: :any,                 arm64_sonoma:   "6c1b3d59da4e9ccabb5cd56851ef3ece630a463b15bec93d19a097adc91d9565"
+    sha256 cellar: :any,                 arm64_ventura:  "ed942a348fe26ea86a07d62ee5e257a0d9cfa9abca854b785036c83ee9ebe74c"
+    sha256 cellar: :any,                 arm64_monterey: "44d41bfdc3d45687b7f9a5f60a187df384af22c61396eac56b0c5d895a8bb0a3"
+    sha256 cellar: :any,                 sonoma:         "9b8c0446780356282c3cae3c91081bf4a43765dfa0855cad5aa6dbbdff37aa80"
+    sha256 cellar: :any,                 ventura:        "1941743dec7e2e025c97fa654216b542ac1687aa252d6f881d14a2f1c6284289"
+    sha256 cellar: :any,                 monterey:       "5dd5cd2335f92401adf743820a59e21fe074062830d6eaeb218810a64d70ef23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d03089b82a7946ad01e029bbff47f34d32d1a080d719781d71392238a3cc3242"
   end
 
   depends_on "cmake" => :build

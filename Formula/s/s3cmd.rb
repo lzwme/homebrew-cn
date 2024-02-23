@@ -1,4 +1,6 @@
 class S3cmd < Formula
+  include Language::Python::Virtualenv
+
   desc "Command-line tool for the Amazon S3 service"
   homepage "https:s3tools.orgs3cmd"
   url "https:files.pythonhosted.orgpackagesb39cad4cd51328bd7a058bfda6739bc061c63ee3531ad2fbc6e672518a1eed01s3cmd-2.4.0.tar.gz"
@@ -7,27 +9,35 @@ class S3cmd < Formula
   head "https:github.coms3toolss3cmd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ba98097521dc3a454edba2847b2e49cab73954e17ef711698085b399ab855b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edd6fb636450b1f945071700ed8b57df1648930ce8e7f9647a2e7ea89233a87e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d81fcaafd0e92dcf2bd34dd0946751430f73d8033b91eb97889a21c8a61494c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0e3a127172f90bebda2e5f9fb4b1ee441c1e16a40f8bd4c0e19a772452fb4f32"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b2021a272fa4f350b5112f7f76767511a035077e4de4075201c5c25b19ff995"
-    sha256 cellar: :any_skip_relocation, monterey:       "d589604b97b005e6fb95d2ab17477e56a4b4326e74549ea1d95b4d7607ce74dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5a2c7e35db07eb0e7aa1444d793074183d2078d07c4b4feaea989c7091489c6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f50c604d84cc73c3c9e94aa5547a206fb7edae7a35e66dc0555d92908711366e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a229f62e50fc7d9fb539a01483042fb7a88648003334be457ac06624370cb14e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a22680b45454ec9c0e43d7abb26a42d574a5ea06d7840babdf79765b781056a1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "720658e76b053b6fd8df4409514bbb205d17efa207a228478b4960e87159b4c7"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d891ad94c9c4a2011f67cfc51d72853093a2dd9ef2ed54357621d50025bd82f"
+    sha256 cellar: :any_skip_relocation, monterey:       "386f6632fdc692e06d8112acdd22b0515a356be00b67c8f8cdf2b64cdbdb29f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff4f12dc89cd23c016da42400c079a6ed78597fa6314e6db3ae398e811b922bd"
   end
 
-  depends_on "python-setuptools" => :build
-  depends_on "python-dateutil"
-  depends_on "python-magic"
   depends_on "python@3.12"
-  depends_on "six"
 
-  def python3
-    "python3.12"
+  resource "python-dateutil" do
+    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
+  resource "python-magic" do
+    url "https:files.pythonhosted.orgpackagesdadb0b3e28ac047452d079d375ec6798bf76a036a08182dbb39ed38116a49130python-magic-0.4.27.tar.gz"
+    sha256 "c1ba14b08e4a5f5c31a302b7721239695b2f0f058d125bd5ce1ee36b9d9d3c3b"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    virtualenv_install_with_resources(link_manpages: true)
   end
 
   test do

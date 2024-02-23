@@ -3,19 +3,18 @@ class Rawdog < Formula
 
   desc "CLI tool to generate and run code with llms"
   homepage "https://mentat.ai"
-  url "https://files.pythonhosted.org/packages/b7/73/c1e10f0aee299314a67543872e8d1fcf76ec0352f8eb07b9058e0c144d95/rawdog_ai-0.1.5.tar.gz"
-  sha256 "99cdc8f2ee1baad93e2e36150384d3b65bb4cce72b6d1d0633a2a4678b5415b5"
+  url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
+  sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "2703888fe664fff2e6115f0f00cdf89019baffa05f8f78592fb72613521f2a17"
-    sha256 cellar: :any,                 arm64_ventura:  "6cbf850ff022cdc19b35d11d85394e46c41292bf186eeb78d2aba621118101c0"
-    sha256 cellar: :any,                 arm64_monterey: "0740ebbd8a40bc83909af026c805841793bfd6f46a57cc2df83a6b8f0b412aff"
-    sha256 cellar: :any,                 sonoma:         "20811317fe6d64ae11403a5615e5895a644a5832d2fe8e1be925d27614c9e4b0"
-    sha256 cellar: :any,                 ventura:        "e4a3fa85798af40e7c27b14abed1192155ef013c13ca86b07ed9f9aca7f325b4"
-    sha256 cellar: :any,                 monterey:       "b9e8866f9a4ad9380e85bfac32794579b2e9519625314263dc63fdc1db5ebeef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97db82a8fab857abe403b8ffa175da9e3be327d73271301b685999138cb2cf72"
+    sha256 cellar: :any,                 arm64_sonoma:   "917008711f48053e602f80d277d86f40b896bd88901025ef5c363341668ea906"
+    sha256 cellar: :any,                 arm64_ventura:  "dc621be534216a0927a138e78d23e6514ea6d31b984593990bdcd0991ffc8c57"
+    sha256 cellar: :any,                 arm64_monterey: "23120b2930aae97e5745cf08b7e39544d832d63f620d2462c131871cb0ecfc25"
+    sha256 cellar: :any,                 sonoma:         "78b875f749417ad6c16575c90fa61b19e5e55e8fd065ceead126753f342d84c6"
+    sha256 cellar: :any,                 ventura:        "3897b7b8d297f8b66d379b81ec0a39e1037dabdb009c40e61293af699d161340"
+    sha256 cellar: :any,                 monterey:       "6332698a77c2c5f62b891eddf61d91d408b78e221c0106e37bc7085032ac90eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5990c4df71dabca8f9ec98079c15d34e18d735adc382e423948c1e2533bf4634"
   end
 
   depends_on "rust" => :build
@@ -84,13 +83,13 @@ class Rawdog < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/94/f1/47528a2f465b09c71caad95f5de1d7225e438cf3d1068d278362a4a6bc6a/httpcore-1.0.3.tar.gz"
-    sha256 "5c0f9546ad17dac4d0772b0808856eb616eb8b48ce94f49ed819fd6982a8a544"
+    url "https://files.pythonhosted.org/packages/03/9d/2055e6b65592d3a485a1141761ba7047674bbe085cebac0988b30e93c9e6/httpcore-1.0.4.tar.gz"
+    sha256 "cb2839ccfcba0d2d3c1131d3c3e26dfc327326fbe7a5dc0dbfe9f6c9151bb022"
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/bd/26/2dc654950920f499bd062a211071925533f821ccdca04fa0c2fd914d5d06/httpx-0.26.0.tar.gz"
-    sha256 "451b55c30d5185ea6b23c2c793abf9bb237d2a7dfb901ced6ff69ad37ec1dfaf"
+    url "https://files.pythonhosted.org/packages/5c/2d/3da5bdf4408b8b2800061c339f240c1802f2e82d55e50bd39c5a881f47f0/httpx-0.27.0.tar.gz"
+    sha256 "a0cb88a46f32dc874e04ee956e4c2764aba2aa228f650b06788ba6bda2962ab5"
   end
 
   resource "huggingface-hub" do
@@ -114,8 +113,8 @@ class Rawdog < Formula
   end
 
   resource "litellm" do
-    url "https://files.pythonhosted.org/packages/00/d6/6d6fe7a3893736ca4b3f581dc397dc68d8fb24a2d06a91cc3cd61d7d1c4a/litellm-1.26.6.tar.gz"
-    sha256 "5d3af7d13e2b8e33c03168841b87d6fbb377157cc69ccde108ba0f43f7eabbdd"
+    url "https://files.pythonhosted.org/packages/33/65/8c381e6a09f0f47c959ac3354f2ebc809b649f95d70b779053781e9ba336/litellm-1.26.8.tar.gz"
+    sha256 "4b19605d22ea52966e703b66dda0d37a21f51b74bf7a7e5dce571322c7f852ac"
   end
 
   resource "markupsafe" do

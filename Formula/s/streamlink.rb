@@ -9,20 +9,19 @@ class Streamlink < Formula
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0be373a5817e0ccea3ccce145591820d87c648ca51ab3332ca829ac67c052196"
-    sha256 cellar: :any,                 arm64_ventura:  "6909dbc2a76cb89443c6853db838b3966f57cefb5b9510fa91506590e0b806dc"
-    sha256 cellar: :any,                 arm64_monterey: "91a1a9e5032ee89e46f4ec94f8956e9434d8870883ae70a559751ba06441ffa7"
-    sha256 cellar: :any,                 sonoma:         "f00defc9ba9e88c4408f2c50c25d1b04e00634e4eb1e06ee91418c9f0fafb2b1"
-    sha256 cellar: :any,                 ventura:        "926a962ff144949c0443ee3bbb14a17c482a05ed8ae4d3c836a4f9c0da7178a1"
-    sha256 cellar: :any,                 monterey:       "7de0261b163dbb8b3dfad69194e46e885125dafa22c0cebc762f37b4339745a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91cd74291d6d6bfe02f7c44d1e24c70f6f3d7492b146a9b6ddf3dfa265afa9dc"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "bcd6ad872635107ea2b8026ae016056fa5517ab6932f4cb41155ac7425148062"
+    sha256 cellar: :any,                 arm64_ventura:  "98bf1b056c87bfbeae659a28c0a3bc5bc1d3342b32c8c4a506b07f9e6658938f"
+    sha256 cellar: :any,                 arm64_monterey: "e940a96154af1ed58f1cb94b2c33dd5ff381134da9ab9a8194b9ef673dfa38d6"
+    sha256 cellar: :any,                 sonoma:         "9b10df6d676f529b8aff9ea26ae7a715fc528ef6b7bd9021385da686127959d3"
+    sha256 cellar: :any,                 ventura:        "031e8c3628017a4e227bf35e46f7d43fbfdf5dcd28e791d46246f054e7f09941"
+    sha256 cellar: :any,                 monterey:       "5bd18da190c2dfad236889593feda154d54db4076ff66a981818467e28b15a2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "764a00c27b9279bfea3580e9fb38b036fa2240631b56515bea884de53413314d"
   end
 
   depends_on "libxml2" # https:github.comHomebrewhomebrew-coreissues98468
   depends_on "python-certifi"
-  depends_on "python-typing-extensions"
   depends_on "python@3.12"
-  depends_on "six"
 
   uses_from_macos "libffi"
   uses_from_macos "libxslt"
@@ -86,6 +85,11 @@ class Streamlink < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
   resource "sniffio" do
     url "https:files.pythonhosted.orgpackagescd50d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0acsniffio-1.3.0.tar.gz"
     sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
@@ -104,6 +108,11 @@ class Streamlink < Formula
   resource "trio-websocket" do
     url "https:files.pythonhosted.orgpackagesdd36abad2385853077424a11b818d9fd8350d249d9e31d583cb9c11cd4c85edatrio-websocket-0.11.1.tar.gz"
     sha256 "18c11793647703c158b1f6e62de638acada927344d534e3c7628eedcb746839f"
+  end
+
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
+    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
   end
 
   resource "urllib3" do

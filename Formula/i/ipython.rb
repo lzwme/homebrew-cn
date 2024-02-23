@@ -3,19 +3,19 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackages83aa6b5bd15d4914394a4f6bd5a4d88dee2d5ddd1b346b8b60fd9e735223a8eaipython-8.21.0.tar.gz"
-  sha256 "48fbc236fbe0e138b88773fa0437751f14c3645fb483f1d4c5dee58b37e5ce73"
+  url "https:files.pythonhosted.orgpackages952c9ef08ee0cc836f95bc2750e7c3f18790a90dff596d372cee4bcd2561ae1cipython-8.22.1.tar.gz"
+  sha256 "39c6f9efc079fb19bfb0f17eee903978fe9a290b1b82d68196c641cecb76ea22"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c391b3fae1c02dede264c4f0fd2cb7ce3b8ff79c2911e74a172a480f17c6f8f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7846d2bc0fff3f38cb4115133d725391b60aea1a40ac76bc1cd456e9eacc130b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be812b8b57c5c34725fc081602624e5d9688b77614d249dd355294cf7f9fb072"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5c6e31455ec2ee9b9a8ec3ba8495ba09cad791e5907e70d82c8299d2fd1bc7ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "451e64dab6459dcbf115a3860713dfcab2c31fea50a60e51dd4536bb898eaa1b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d703af9a77bf024baf1e3c5ec723d9268b0e7ced56fc05bd7c0d679c92b9a0ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eaf4055ecb953907426616e055aa933dce180cd0b5c997cdfa10cb2f5aaaca7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97ce51fd1b9a915f9fc5a518fb8937798c47ecfe374a6b383e19507d80d34ac2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4212655eb88a6346f3a96ede0217404b9679c0b100739f38493af119d5704d6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be0a95e5b2a7b16e229b1f60c6ce9115b36be72de367b9e1b1c1f7c6ab99bbff"
+    sha256 cellar: :any_skip_relocation, sonoma:         "76fb29490f234441027c13f14e34acaf4da886b57ed1ff1bbd04e3b21b8c26cf"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d71a6df3e0556a830c549a7518fb355504f625f32d158d15a3d94f9f5f5a66a"
+    sha256 cellar: :any_skip_relocation, monterey:       "fcc22d66655f07be439b72f4656e52120009f4c746d8bcb69e8f74929d369a9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "503a1b164bb657f7f9a8e381f07e3aa07e173bcaa0276eb9aa2bf1527b2e2f72"
   end
 
   depends_on "pygments"

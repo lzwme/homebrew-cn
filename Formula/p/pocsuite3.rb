@@ -3,19 +3,19 @@ class Pocsuite3 < Formula
 
   desc "Open-sourced remote vulnerability testing framework"
   homepage "https:pocsuite.org"
-  url "https:files.pythonhosted.orgpackagesf18b967c0ed9561cbb63bf3551535e44cf83eed85fd548417e668df7d5c69ef6pocsuite3-2.0.7.tar.gz"
-  sha256 "bbd9a28c007a480daeaf6a877d25268ca04f05fc97ea14600ff2fb6ba33b0fc7"
+  url "https:files.pythonhosted.orgpackages0f05b17921332ab312c04ccc67b3d01a0d4318a4d45eb0315531f66d41a89639pocsuite3-2.0.8.tar.gz"
+  sha256 "9508ffec49519e5421f19472a582d747b44bf3db289357ed39227e9addfceec3"
   license "GPL-2.0-only"
   head "https:github.comknownsecpocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d64743dbf63bfd648d7b6c7d6e89bfd78e7c54cd6301e36ad6cb8e2f50c46ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c901c44b237ad944d78ace8c2c7b8f728dce910e437da1ec0bf4b9fcfb5745a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "48b4ba029f605482655441aae16b2dd227d77234259ad939310998992d8c7c8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34ce009ebb9d1138355ff1c278102303bafbd3c4cc78aae8e048bad06cdfadcd"
-    sha256 cellar: :any_skip_relocation, ventura:        "bd56c1019fec607fecd75bbc014fa631d790fbf99c2934db690b62a4bcb3b0cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "f79f57b8921fa7fd0a658194927286b20ed351807fc0c9a3828b826fc98ca958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6985a9bae1a4410a23ff06831a316e1116d2e51a8cfdb04a843d188f955d622f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c26a3e67eb1e842bee39a4fb12efc9b0b201a464eb1d16c2b83d590e434e431"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b19e1f0902b3111590a5e2045db7908af16c7b7f2128ea33f7f42a9b479acea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d64e346fdc2760080ce2ca10989c93a64d601e5f50e2774d40db02bfd6a9b6e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f73aafc4c1f6bf09f0adaf500ccbc21a5620ccf2f14b401063c0cd8efd1a6d7e"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b98e284bffa5684187ce3dee1a915e12161474e3c443b401119476ccedd4c6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "946a08684ff845aabb927a4228f7a7c3e9f55499fdbe1e3cb00a4de49c19b73b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e917d9185bd4f64fc945a705eb1c40582904391ee8498dcb1241dc7b3e16c11c"
   end
 
   depends_on "cffi"
@@ -39,8 +39,8 @@ class Pocsuite3 < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagescface89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
+    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
+    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   end
 
   resource "colorama" do
@@ -49,8 +49,8 @@ class Pocsuite3 < Formula
   end
 
   resource "colorlog" do
-    url "https:files.pythonhosted.orgpackages786b4e5481ddcdb9c255b2715f54c863629f1543e97bc8c309d1c5c131ad14f2colorlog-6.7.0.tar.gz"
-    sha256 "bd94bd21c1e13fac7bd3153f4bc3a7dc0eb0974b8bc2fdf1a989e474f6e582e5"
+    url "https:files.pythonhosted.orgpackagesdb382992ff192eaa7dd5a793f8b6570d6bbe887c4fbbf7e72702eb0a693a01c8colorlog-6.8.2.tar.gz"
+    sha256 "3e3e079a41feb5a1b64f978b5ea4f46040a94f11f0e8bbb8261e3dbbeca64d44"
   end
 
   resource "dacite" do
@@ -64,18 +64,13 @@ class Pocsuite3 < Formula
   end
 
   resource "faker" do
-    url "https:files.pythonhosted.orgpackages92f0723ced020051d06e6539a450577a4064127d1f30dc380d71f9a46dd40f95Faker-19.11.0.tar.gz"
-    sha256 "a62a3fd3bfa3122d4f57dfa26a1cc37d76751a76c8ddd63cf9d24078c57913a4"
+    url "https:files.pythonhosted.orgpackagese34ae6d8a070e5eb2528495df3fa88226afd5275dc6af67d81148f6172fe5577Faker-23.2.1.tar.gz"
+    sha256 "f07b64d27f67b62c7f0536a72f47813015b3b51cd4664918454011094321e464"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages8be143beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
-  resource "jq" do
-    url "https:files.pythonhosted.orgpackages2250ab53cc23eddad14a28920e95523b9f39849d9e3139836ec8fcbb7e8e3517jq-1.6.0.tar.gz"
-    sha256 "c7711f0c913a826a00990736efa6ffc285f8ef433414516bb14b7df971d6c1ea"
+    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
+    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
   resource "packaging" do
@@ -84,18 +79,13 @@ class Pocsuite3 < Formula
   end
 
   resource "prettytable" do
-    url "https:files.pythonhosted.orgpackagese1c05e9c4d2a643a00a6f67578ef35485173de273a4567279e4f0c200c01386bprettytable-3.9.0.tar.gz"
-    sha256 "f4ed94803c23073a90620b201965e5dc0bccf1760b7a7eaf3158cab8aaffdf34"
+    url "https:files.pythonhosted.orgpackages19d37cb826e085a254888d8afb4ae3f8d43859b13149ac8450b221120d4964c9prettytable-3.10.0.tar.gz"
+    sha256 "9665594d137fb08a1117518c25551e0ede1687197cf353a4fdc78d27e1073568"
   end
 
   resource "pycryptodomex" do
-    url "https:files.pythonhosted.orgpackages14c909d5df04c9f29ae1b49d0e34c9934646b53bb2131a55e8ed2a0d447c7c53pycryptodomex-3.19.0.tar.gz"
-    sha256 "af83a554b3f077564229865c45af0791be008ac6469ef0098152139e6bd4b5b6"
-  end
-
-  resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackagesbedf75a6525d8988a89aed2393347e9db27a56cb38a3e864314fac223e905aefpyOpenSSL-23.2.0.tar.gz"
-    sha256 "276f931f55a452e7dea69c7173e984eb2a4407ce413c918aa34b55f82f9b8bac"
+    url "https:files.pythonhosted.orgpackages31a4b03a16637574312c1b54c55aedeed8a4cb7d101d44058d46a0e5706c63e1pycryptodomex-3.20.0.tar.gz"
+    sha256 "7a710b79baddd65b806402e14766c721aee8fb83381769c27920f26476276c1e"
   end
 
   resource "pysocks" do
@@ -124,18 +114,18 @@ class Pocsuite3 < Formula
   end
 
   resource "termcolor" do
-    url "https:files.pythonhosted.orgpackagesb885147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444ctermcolor-2.3.0.tar.gz"
-    sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
+    url "https:files.pythonhosted.orgpackages1056d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764termcolor-2.4.0.tar.gz"
+    sha256 "aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaf47b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3curllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
+    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackagescbee20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04bawcwidth-0.2.8.tar.gz"
-    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
+    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install
