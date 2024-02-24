@@ -1,19 +1,19 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
   homepage "https:github.comEmbarkStudioscargo-deny"
-  url "https:github.comEmbarkStudioscargo-denyarchiverefstags0.14.11.tar.gz"
-  sha256 "c7393f6ac05ffe78668c54f74a99220efaa100fcd23cb569834d356a3f33e165"
+  url "https:github.comEmbarkStudioscargo-denyarchiverefstags0.14.12.tar.gz"
+  sha256 "681edd67143e3458529b5487f6bf3251b36d79b8f67d9974de331ea4ffc69a6c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comEmbarkStudioscargo-deny.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c95bdd87ce6138ef6ecf896adb05313f3dc6e8c12f6e8517765e0855afd7dffe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11c92b48603119b53ebf0bb3c79a1afb40b9d6a7483568c271763decaf4055ab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c57e99b26525b0085223e1072c1b495192a0233dac35878c30e49ec0c3ae9aef"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e72776e75398cb97c4e7ee1ecafbbe1ae213a9efee55fa024d93e8fde82ebae9"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac684b5fb4c4a57070bc7e99c635f275ab3bdbb1f8b9019952e460aea2b75d36"
-    sha256 cellar: :any_skip_relocation, monterey:       "f8a46e5535f19d5e9636d4159ff73c11cd06309ec1fe92034973db6010bbc12a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c979d30a2e8db87f0d8460ea69923270f07b4fd64573b6dffd0d7f02d4f7a2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "07db227ad6ff674fa9dffe5d46a3d5e258ed2c48425444014066ebfa7bb33462"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "351004ffc1f4b2c9cfd34f98b09a41545375d62adadacd00c0d7820e3fe15aea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "63907f8548ee8167fb5ee896ce5a8c20ec44168c7cb459084a15bab33ffd7dc3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ba8865f8de61de486068d024b660ed3288c3ce3e990d1323da0ca3e759843930"
+    sha256 cellar: :any_skip_relocation, ventura:        "c8b8d6827e5c8be0b0453d532264695d5311193ba7a46d82659e58b62bfb95e7"
+    sha256 cellar: :any_skip_relocation, monterey:       "08c23a80c17056b0d1665255581913c6e3e3cf94c9d703c344b7184e0ac0c288"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a011189bde60e66c7d93f362b28f811022c8afced0b85f1cd27060915c806d1"
   end
 
   depends_on "pkg-config" => :build

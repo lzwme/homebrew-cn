@@ -9,18 +9,17 @@ class Ipython < Formula
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97ce51fd1b9a915f9fc5a518fb8937798c47ecfe374a6b383e19507d80d34ac2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4212655eb88a6346f3a96ede0217404b9679c0b100739f38493af119d5704d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "be0a95e5b2a7b16e229b1f60c6ce9115b36be72de367b9e1b1c1f7c6ab99bbff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "76fb29490f234441027c13f14e34acaf4da886b57ed1ff1bbd04e3b21b8c26cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d71a6df3e0556a830c549a7518fb355504f625f32d158d15a3d94f9f5f5a66a"
-    sha256 cellar: :any_skip_relocation, monterey:       "fcc22d66655f07be439b72f4656e52120009f4c746d8bcb69e8f74929d369a9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "503a1b164bb657f7f9a8e381f07e3aa07e173bcaa0276eb9aa2bf1527b2e2f72"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20874b5e93b98520b50304aecd8312ef652a5a22f6ecd2335cc808374bcfd12a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b93a97b89ecaf696b5c0830a2c5c85362b5375d66b496e2a1a687c8c2509216"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a77d2c8e32db4092b562fc399ad58ace5f69efda5e95ffc178cc347ddd4b947e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "833e3cda9c169c1ef82109e78f6560c67afaec1d30953d6a04b4158aae1ce08e"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a0011f2037eaccf4f0bfaec40aa1311c693320142fca00ef49e3a8a1ead4f79"
+    sha256 cellar: :any_skip_relocation, monterey:       "ceb9cbcb90ada43e41cb0458fd5314ec783ce264914819ad5441773a540b9372"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f6be82ded3b45d3aa2b59defde60a4972861521b0b539f65f67f4a5d3b9ca3e"
   end
 
-  depends_on "pygments"
   depends_on "python@3.12"
-  depends_on "six"
 
   resource "asttokens" do
     url "https:files.pythonhosted.orgpackages451df03bcb60c4a3212e15f99a56085d93093a497718adf828d050b9d675da81asttokens-2.4.1.tar.gz"
@@ -72,6 +71,16 @@ class Ipython < Formula
     sha256 "2b45320af6dfaa1750f543d714b6d1c520a1688dec6fd24d339063ce0aaa9ac3"
   end
 
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
   resource "stack-data" do
     url "https:files.pythonhosted.orgpackages28e355dcc2cfbc3ca9c29519eb6884dd1415ecb53b0e934862d3559ddcb7e20bstack_data-0.6.3.tar.gz"
     sha256 "836a778de4fec4dcd1dcd89ed8abff8a221f58308462e1c4aa2a3cf30148f0b9"
@@ -90,7 +99,6 @@ class Ipython < Formula
   def install
     virtualenv_install_with_resources
 
-    # Install man page
     man1.install libexec"sharemanman1ipython.1"
   end
 

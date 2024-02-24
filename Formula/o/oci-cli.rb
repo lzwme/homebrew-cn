@@ -9,27 +9,24 @@ class OciCli < Formula
   head "https:github.comoracleoci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1276ef7f69071b0dad94ddffd4a74773caff4d41a3918f02070ec9e9ece55e71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c11377c538f03fa8b05491430179a3c3c96cdce5ffa18c7c15f8d7fb4f1ce41c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3b3503b6813befce0c303da8ec74c50ce5d8901bed7008714e658fb22e6ead8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e6b8171b342d218987eb745cdaa39854dc3e6adb600e116b4712427b41da1c57"
-    sha256 cellar: :any_skip_relocation, ventura:        "44486c129bfa26a8452522561433e4e02b1efa4347bac97c3adffb24754d24ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "41d12476ccec6ba2be4cbee1819a51c046c9161d04a4a51248a603e98864ee1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "460339269a080ddc465529711e010f4c7d1d216195b1d6c764e6f78db49912e7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "ba0d4187a26a0b0ed1f47ab50142a432e0669a798cc1a214ad08d437320e9651"
+    sha256 cellar: :any,                 arm64_ventura:  "83e43e126e942ec7c090f11e32bcab285f8ffbd63e0eac62d2fd3dc1b9c21348"
+    sha256 cellar: :any,                 arm64_monterey: "4a99b1f3c967d747028b0dad84be0ad5d076734e6afc054573526d28960bd85f"
+    sha256 cellar: :any,                 sonoma:         "89460d35211ce807b775158b647ca4b9d1737abd97ca5f2aab1a4f1fc6ab2dfa"
+    sha256 cellar: :any,                 ventura:        "37ead15ef2327667bb6cd158fbd2ecb741c5f255c2f37a2820f2fecef92656c0"
+    sha256 cellar: :any,                 monterey:       "912a0c9099e1a1700313075336c5b854ea53d3e83d862719cfd1d3f16d610ff2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c7a67161d0cae6d4844f08c59146341f4797ef717e4f8f979c830bffc5ddb78"
   end
 
   # "pkg-config", "cmake", "rust" are for terminaltables
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "cffi"
+  depends_on "libyaml"
   depends_on "python-certifi"
-  depends_on "python-click"
   depends_on "python-cryptography"
-  depends_on "python-pytz"
   depends_on "python@3.12"
-  depends_on "pyyaml"
-  depends_on "six"
 
   resource "arrow" do
     url "https:files.pythonhosted.orgpackages2e000f6e8fcdb23ea632c866620cc872729ff43ed91d284c866b515c6342b173arrow-1.3.0.tar.gz"
@@ -39,6 +36,11 @@ class OciCli < Formula
   resource "circuitbreaker" do
     url "https:files.pythonhosted.orgpackages92ec7f1dd19e3878f5391afb508e6a2fd8d9e5b176ca2992b90b55926c7341d8circuitbreaker-1.4.0.tar.gz"
     sha256 "80b7bda803d9a20e568453eb26f3530cd9bf602d6414f6ff6a74c611603396d2"
+  end
+
+  resource "click" do
+    url "https:files.pythonhosted.orgpackagesddcf706c1ad49ab26abed0b77a2f867984c1341ed7387b8030a6aa914e2942a0click-8.0.4.tar.gz"
+    sha256 "8458d7b1287c5fb128c90e23381cf99dcde74beaf6c7ff6384ce84d6fe090adb"
   end
 
   resource "jmespath" do
@@ -64,6 +66,21 @@ class OciCli < Formula
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
+  resource "pytz" do
+    url "https:files.pythonhosted.orgpackages90269f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738pytz-2024.1.tar.gz"
+    sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
+  end
+
+  resource "pyyaml" do
+    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "terminaltables" do

@@ -6,6 +6,11 @@ class VulkanExtensionlayer < Formula
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-ExtensionLayer.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebac9d8ba2a3d48b4cc25c9df6c7e15ec3f4d1e5cde319a8268898427e7501d7"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb676421feb5407f44ffcd0350984e36dff69fb7d59fa07d83050148a48ee871"

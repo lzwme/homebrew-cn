@@ -6,6 +6,11 @@ class VulkanTools < Formula
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "b0f8a0de3d2519975b095a97143332172183e415af94044774e1af2b0fbf2f0c"
     sha256 cellar: :any,                 arm64_ventura:  "ff1866028f4c25628ad24e44c4be1c4ea65e3dc7c22cba8c30f1b9453ec8563b"

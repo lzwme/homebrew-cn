@@ -6,6 +6,11 @@ class VulkanValidationlayers < Formula
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-ValidationLayers.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "561f90fdc362cdf8f7614b0d362c9af0250192c730fd5d5f4afa82ac4acc317c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "18feb4f3828b0cc40be85f14924a94deda5e967bdedfeb93eac1bc0450ebc2c7"

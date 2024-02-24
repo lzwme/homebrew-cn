@@ -4029,6 +4029,7 @@ Homebrew-homebrew-core/Formula/m/mlogger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mlton.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mlx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mm-common.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mmark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmctl.rb, Homebrew/homebrew-core, 1
@@ -4352,7 +4353,7 @@ Homebrew-homebrew-core/Formula/n/notmuch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/noweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nowplaying-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nox.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/npth.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/npth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/npush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nqp.rb, Homebrew/homebrew-core, 1
@@ -5918,6 +5919,7 @@ Homebrew-homebrew-core/Formula/s/ssh-vault.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssh3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshguard.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sshpass.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sshportal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshtrix.rb, Homebrew/homebrew-core, 1
@@ -6605,6 +6607,7 @@ Homebrew-homebrew-core/Formula/v/vue-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vulkan-extensionlayer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-loader.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vulkan-profiles.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-utility-libraries.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vulkan-validationlayers.rb, Homebrew/homebrew-core, 1
@@ -9562,6 +9565,7 @@ Homebrew-homebrew-cask/Casks/n/notebooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notedup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notes-better.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notesnook.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/notesollama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noti.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion-calendar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion-enhanced.rb, Homebrew/homebrew-cask, 1

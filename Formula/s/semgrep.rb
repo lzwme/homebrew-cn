@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a884f39d09e80e9f93b58eb8a1cd83104c1860b0b26064e31a344fef798c542d"
-    sha256 cellar: :any,                 arm64_ventura:  "ac3b8027c080cdcea71fb29a5cd2c019bc0d46352d9716b62e61932387342724"
-    sha256 cellar: :any,                 arm64_monterey: "393c130faef3b7225aaff9744a178434e37e76d4916ebd73e4661575cf73ddbe"
-    sha256 cellar: :any,                 sonoma:         "ba5ad4c982f7cc220e91c6cfd0c9fe9c539a960a4ec805f3e49f0670f7afbcba"
-    sha256 cellar: :any,                 ventura:        "6f8f9e44ecfd3fc4e455c70d22fab66cccf94124f0936009fa2fabec0d8beba0"
-    sha256 cellar: :any,                 monterey:       "a299ad33288f2dd76d0769878cc3f54cc7c9a5711d74c7a7f7c7b3ee30c5de81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffdb428c4785dc5aa7fdb2f29b4d38e9b2a83bcf932cad8c1c53a081117378df"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "982709f5b1190abb5fa725a76f0cded4471abdd4307e9f4cff6945b1d87e4ec2"
+    sha256 cellar: :any,                 arm64_ventura:  "d9a21838a265ff99bd779ea055fff76793ecf859dc1d3e5f13ee0713c95bc7cb"
+    sha256 cellar: :any,                 arm64_monterey: "35091e3234b0fd6df7318dcfdcd6a9193638889979c5417e426c9912c0baf150"
+    sha256 cellar: :any,                 sonoma:         "d93e8a2237648783c3221268d0c0b3cf1e78495e796bdff351fca416d721d9a2"
+    sha256 cellar: :any,                 ventura:        "aa2066cd6ef5c73443473aaab1c19a288be20ccf195fe2a307d57abe1d4b0c2f"
+    sha256 cellar: :any,                 monterey:       "d167681bc536c227de0116b1a8eb200066e04da0e461e7f8e2d4dfcc7d74effa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b95a03a7eff5eea8bec2e85c8e613cd5af6b1f81342d39efecd5ee36d1870355"
   end
 
   depends_on "autoconf" => :build
@@ -36,12 +37,9 @@ class Semgrep < Formula
   depends_on "gmp"
   depends_on "libev"
   depends_on "pcre"
-  depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python-click"
-  depends_on "python-packaging"
-  depends_on "python-typing-extensions"
   depends_on "python@3.11"
+  depends_on "sqlite"
   depends_on "tree-sitter"
 
   uses_from_macos "rsync" => :build
@@ -67,6 +65,11 @@ class Semgrep < Formula
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+  end
+
+  resource "click" do
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "click-option-group" do
@@ -124,9 +127,19 @@ class Semgrep < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
   resource "peewee" do
     url "https:files.pythonhosted.orgpackages8da589cdbc4a7f6d7a0624c120be102db770ee717aa371066581e3daf2beb96fpeewee-3.17.1.tar.gz"
     sha256 "e009ac4227c4fdc0058a56e822ad5987684f0a1fbb20fed577200785102581c3"
+  end
+
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   end
 
   resource "referencing" do
@@ -162,6 +175,11 @@ class Semgrep < Formula
   resource "tomli" do
     url "https:files.pythonhosted.orgpackagesc03fd7af728f075fb08564c5949a9c95e44352e23dee646869fa104a3b2060a3tomli-2.0.1.tar.gz"
     sha256 "de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
+  end
+
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
+    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
   end
 
   resource "urllib3" do

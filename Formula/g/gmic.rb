@@ -12,13 +12,14 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0dcbc567b4aafa81c7128b4b6f87f51d54b15a1b18913e3bf324825b2fc5e2cc"
-    sha256 cellar: :any,                 arm64_ventura:  "f0212582dc56724fbe833f27fe8856eef9ae8dad3337142df5f456388ddb281c"
-    sha256 cellar: :any,                 arm64_monterey: "9adecdc67a7f710bf660af95aa831a14b9db29941efc652fd2f9ef2d8b262d8f"
-    sha256 cellar: :any,                 sonoma:         "5055769329393e1d8102944622ba63a46573ffcd5952bad60614777975c7a0d2"
-    sha256 cellar: :any,                 ventura:        "b58baa1c6b4b3fe4ee43e3649e018a5948e00634d625d937d7eaa28f18b2bc00"
-    sha256 cellar: :any,                 monterey:       "ebcde07958242de82083a06851b635d78c56465474b4ce1833a27b2a605f2e25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cdbccaaf9c4a83fbc75bfd78fcc4f6e839f396dbe32c4ec55ffec7b6905444e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "423f97ef38164621dc904d4783dc327f65d5d3428ba4c911a928de54c77c7a42"
+    sha256 cellar: :any,                 arm64_ventura:  "bd1fd2a455bb56b62e2bab5ac8380826e6f0b6dd2dc710bb546aac6bc5d6c0e4"
+    sha256 cellar: :any,                 arm64_monterey: "77035a3113827bcb85d23fc417ce0da4180475545fa7baab9aa5c4fab5b3c2fc"
+    sha256 cellar: :any,                 sonoma:         "684226bd9b88de8dfb371bb1692f8091833ada283adae2357b722520a309bb15"
+    sha256 cellar: :any,                 ventura:        "f5352ddb96b2c1a6997c70f8637cd3180153db1e676768e78572d4fd4c2b59ed"
+    sha256 cellar: :any,                 monterey:       "048c584f771f173a29bdb41a0da31f1915d520769456fed9e2bb3d27ff93a649"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a65fcd384a17292da8fe3f60078b5ad037325a8661010a9fded0ad94d024327"
   end
 
   depends_on "pkg-config" => :build
@@ -61,6 +62,15 @@ class Gmic < Formula
     system "make", "lib", "cli_shared", *args
     system "make", "install", *args, "PREFIX=#{prefix}"
     lib.install "srclibgmic.a"
+
+    if OS.mac?
+      # The Makefile does not install the dylib and gmic.h, so we need to
+      # install them manually.
+      ln_s "libgmic.#{version}.dylib", "srclibgmic.dylib"
+      lib.install "srclibgmic.#{version}.dylib"
+      lib.install "srclibgmic.dylib"
+      include.install "srcgmic.h"
+    end
 
     # Need gmic binary to build completions
     ENV.prepend_path "PATH", bin

@@ -15,20 +15,18 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4658cb2cbd0dd8d1bc0c639b41759612cef41e2ba1eaef689c5f7ef9e72e42d7"
-    sha256 cellar: :any,                 arm64_ventura:  "d635b1f0e4b1f703e41a9bcfdc3c94f285ff770ae6596b89a13dd975e585464c"
-    sha256 cellar: :any,                 arm64_monterey: "3f89341e7532108b86e0c66fc0266a8062d74f2a5d459c0b0964a9f0474c957e"
-    sha256 cellar: :any,                 sonoma:         "f804341145db2b1271e9cbc28ed85df4e0cf82ae869682226800ed1f4c368419"
-    sha256 cellar: :any,                 ventura:        "598d1e149c97e651bc678246e7902f044f97ac385689a4a38eb08a63fab0c8fe"
-    sha256 cellar: :any,                 monterey:       "cbf3d3d8e068e67b9673f0c62ea27c43d314bfa76072b9b4486c4db218cb9341"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abf06caccb01c44f46c889c74ac1927b02d6b6131296cc67399cce285e7b855f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6ec681d8683288dd3b5dcc34e1697bb965a26f07808efcd5f5295de4c6fbc120"
+    sha256 cellar: :any,                 arm64_ventura:  "5d9cbc00bdba6a838a0aae3c975d2fe175b8febda4d305fdd9869c9a21d89c70"
+    sha256 cellar: :any,                 arm64_monterey: "9714b2e951b1f831d56b10ca2ec5d1aacec63b2418547dd39cc157e1a919cb94"
+    sha256 cellar: :any,                 sonoma:         "92d294cc9906b8dbc7151c614a6fbc8ee3a6e0d71c08fe743b68a4ac0dc2184a"
+    sha256 cellar: :any,                 ventura:        "64bb4a533fdd42e403e82975e6aef95c7f76348e27452e7ed24f025fa3b7cb79"
+    sha256 cellar: :any,                 monterey:       "2514232ad28635f6d0d91d661569d449b5e4e4bf04e330be549f34ea0f484f7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "557ffe7e9cd5e41e681bcad2f05078461574793cd0e6f40116b9dd4e6f8ee7e3"
   end
 
   depends_on "cmake" => :build
-  # `future` issue ref: https:github.comPythonCharmerspython-futureissues625
-  # `pymavlink` PR ref to remove `future`: https:github.comArduPilotpymavlinkpull830
-  depends_on "python@3.11" => :build # Python 3.12 blocked by imp usage in `future` used by pymavlink
-  depends_on "six" => :build
+  depends_on "python@3.12" => :build
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "curl"
@@ -59,18 +57,18 @@ class Mavsdk < Formula
   # These resources are needed to install protoc-gen-mavsdk, which we use to regenerate protobuf headers.
   # This is needed when brewed protobuf is newer than upstream's vendored protobuf.
   resource "future" do
-    url "https:files.pythonhosted.orgpackages8f2ecf6accf7415237d6faeeebdc7832023c90e0282aa16fd3263db0eb4715ecfuture-0.18.3.tar.gz"
-    sha256 "34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
+    url "https:files.pythonhosted.orgpackagesa7b24140c69c6a66432916b26158687e821ba631a4c9273c474343badf84d3bafuture-1.0.0.tar.gz"
+    sha256 "bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
   end
 
-  resource "Jinja2" do
-    url "https:files.pythonhosted.orgpackages7aff75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cceJinja2-3.1.2.tar.gz"
-    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
+  resource "jinja2" do
+    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
   end
 
-  resource "MarkupSafe" do
-    url "https:files.pythonhosted.orgpackages6d7c59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbfMarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+  resource "markupsafe" do
+    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
+    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
   def install
@@ -81,7 +79,7 @@ class Mavsdk < Formula
 
     # Install protoc-gen-mavsdk deps
     venv_dir = buildpath"bootstrap"
-    venv = virtualenv_create(venv_dir, "python3.11")
+    venv = virtualenv_create(venv_dir, "python3.12")
     venv.pip_install resources
 
     # Install protoc-gen-mavsdk

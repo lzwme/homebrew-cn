@@ -9,20 +9,20 @@ class Ldeep < Formula
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8784dac9d3f32a2c4e40ad1074b02fdd5b022ece82c1176672634f7dbcde8200"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25d703cf2b40ad80df32ca3540414269c3025dad817a71356f104209f29f5297"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac4dad3902a67ac88e2043c33f5a67436739b42a4cf94a09872cd494646efa5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "49c064da9b91bc32cc80d7aee7b226de5c88a5b36db49b83d366599f83a203a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "cd7458dd6eb5dac517fde4fc358aab7acfe391af939768038af9458829b8ae61"
-    sha256 cellar: :any_skip_relocation, monterey:       "d092bcfb491ef923e6f125539af865c65ca05a6be7deccbe4b879d39756ed1bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e158bd389bc80697ff26d1684b942fb0dfb305de6678aa556a3c8903f97a7ba8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "876c11ea6d09bdc8d1a58018cf6447a5ba725ef812807040a1b96155978877a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19d25b6266289fcb166a17e9a086c24cb87ba4d4abfe55b05e461899ccd49ac4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc7d65e5a8b590b9b539622b98789832a1bbb7c784b9fb706ff91c4eb03bd853"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2482f604eedf5b777dc37667e05ba412e103ad0fc40d97688c2d80237a80428a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac77db99b97060e99be0abecd8d1ee925b1e0063d98880655865ae4993ad2ac7"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3cc232ab4dbbc83f9dcb8c8884731c70a22ad3a0346b316caebb7596a5dfdf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fcdac09fce8eb533fee060d61276adc1206c1539783c3e33d9e8ae3f6c9afd"
   end
 
-  depends_on "cffi"
-  depends_on "pycparser"
   depends_on "python-cryptography"
   depends_on "python@3.12"
-  depends_on "six"
+
+  uses_from_macos "krb5"
 
   resource "asn1crypto" do
     url "https:files.pythonhosted.orgpackagesdecfd547feed25b5244fcb9392e288ff9fdc3280b10260362fc45d37a798a6eeasn1crypto-1.5.1.tar.gz"
@@ -72,6 +72,11 @@ class Ldeep < Formula
   resource "pycryptodomex" do
     url "https:files.pythonhosted.orgpackages31a4b03a16637574312c1b54c55aedeed8a4cb7d101d44058d46a0e5706c63e1pycryptodomex-3.20.0.tar.gz"
     sha256 "7a710b79baddd65b806402e14766c721aee8fb83381769c27920f26476276c1e"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "termcolor" do
