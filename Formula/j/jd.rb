@@ -1,20 +1,18 @@
 class Jd < Formula
   desc "JSON diff and patch"
   homepage "https:github.comjosephburnettjd"
-  url "https:github.comjosephburnettjdarchiverefstagsv1.7.1.tar.gz"
-  sha256 "3d0b693546891bab41ca5c3be859bc760631608c9add559aa561fb751cdd1c92"
+  url "https:github.comjosephburnettjdarchiverefstagsv1.8.0.tar.gz"
+  sha256 "f278d5638b78f11a019d24f8efdb94cfbf49713e2e59633882d8569e265c1c89"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14d6dfbca1579356643287d61893246324de038b95ebc0f2048af09fe54e6392"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a2b07ba96ff95b927175fcdf22386d458b43fd0fd318263d7dfcd851deaa920"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5459ba7e6a8b80bc8874dde1d866fda9b99f291ac41e462ec0de9c1eee45d2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e23b8fd52d1d4d56c8e402127d7fd5ec9f7d3939ebf0be57c0360265bdab09ab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf3b2bee714a9c01e9a96196f441776db1c6d37cf53fb6b0241fd5754bb5f5d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "17ae4f04c0016a933f923aacc09696a7ec54ac8ea76e5f2e7ba28903d84b2738"
-    sha256 cellar: :any_skip_relocation, monterey:       "9080e532d8e9c322d6322148d2c7a21bc8606fd9257683724d02f43f21cd4742"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f40bd8456140f8332ec1e13efef5a260f12e33908306a6b6429cea3446140408"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "112215528c11ec54910cdbd320d9c0ced6714d87f27a573fb86e40c26829b70b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db69ad7ce37d3f06a89b42cfb13825e4989ec52e197f0a8f34248d2ecbe5a37a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e57a48dc10527b6a9c001f2d6b6546944d16833b810d9d4086385f4d4bc271d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0f86b60834e596514dce39a21cc76f5124e59bcdf76c01d0fa460277fe73fcc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0770e5b6304a06bf24ea6a4f4e9fd7203e97cb61dd112a7377420cb674799704"
+    sha256 cellar: :any_skip_relocation, ventura:        "cc43d5e2493b74d2a91f326194102d6e8f9d42e6be528c053d7a0bb2a1c90cde"
+    sha256 cellar: :any_skip_relocation, monterey:       "40033816854c930c5ba1a1d03cd014fbf2a57b271793119656c54dc0d3b34f7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3b6cac5f8429f6843697a56a6e81b954c087acc87d2978c35c1e7769184258e"
   end
 
   depends_on "go" => :build

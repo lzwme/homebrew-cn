@@ -1355,7 +1355,7 @@ Homebrew-homebrew-core/Formula/d/docker-machine-driver-vmware.rb, Homebrew/homeb
 Homebrew-homebrew-core/Formula/d/docker-machine-driver-vultr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-machine-nfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-machine-parallels.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/docker-machine.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/docker-machine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/docker-slim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 1
@@ -1504,6 +1504,7 @@ Homebrew-homebrew-core/Formula/e/ecl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ecm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/ecoji.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ed.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/edbrowse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/edencommon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/editorconfig-checker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/editorconfig.rb, Homebrew/homebrew-core, 1
@@ -6143,7 +6144,6 @@ Homebrew-homebrew-core/Formula/t/terminalimageviewer.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/t/terminator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termrec.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/termshare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termshark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tern.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terracognita.rb, Homebrew/homebrew-core, 1
@@ -12276,6 +12276,9 @@ Homebrew-homebrew-cask-fonts/Casks/font-italiana.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-italianno.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-itim.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jaapokki.rb, Homebrew/homebrew-cask-fonts, 0
+Homebrew-homebrew-cask-fonts/Casks/font-jacquard-12-charted.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-jacquard-12.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-jacquarda-bastarda-9-charted.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jacquarda-bastarda-9.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jacques-francois-shadow.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jacques-francois.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13122,6 +13125,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-red-hat-text.rb, Homebrew/homebrew-cask-
 Homebrew-homebrew-cask-fonts/Casks/font-red-rose.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-redacted-script.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-redacted.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-reddit-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-reddit-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-redhat.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-redressed.rb, Homebrew/homebrew-cask-fonts, 1
