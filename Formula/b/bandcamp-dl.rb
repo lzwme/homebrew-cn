@@ -6,17 +6,17 @@ class BandcampDl < Formula
   url "https:files.pythonhosted.orgpackagese54dd463bcc20602f5385e0441cd7171b1fe6b67e2bb76240ae0f2684de6c022bandcamp-downloader-0.0.15.tar.gz"
   sha256 "2f7666c00e9cff39135d5c9fc0498bbc93d64684fcb13171cbd9584e31692ebb"
   license "Unlicense"
+  revision 1
   head "https:github.comiheanyibandcamp-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4d8a99d6b49f74919bf9d07c81de50202a5b32c594189a6ab077f850818e60a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fffaee57c98a39d62819963bc2ff8fe54b31f00eca17d22ae876295b5f3f2b3d"
-    sha256 cellar: :any,                 arm64_monterey: "ac0979d0fc4300a1f50027400edb394cf14685dbca9e2ff63bc8a11af726dc1e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f8bcd6a0bfd5de32bb1424a083f993f8b7af95038ea1a426df234f0c6023c87a"
-    sha256 cellar: :any_skip_relocation, ventura:        "e2daac8ac66bb686bbeefb8a6c401ae46be7f3715137ff1da25556fa79c68f57"
-    sha256 cellar: :any,                 monterey:       "4b4eb3b20486ae82ec4e8e497b665f17980cccefc5552a2c393ee40f6ae380a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92da2ff908b756fcbb28648183b6be23f0da826b1901d1c0b5afcde1a763ffde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c6d1cf24d4ee1f1c5106eba30dbb53380b7748861a5d9b41a6819ce1c5eb503"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "971162229362dd25a6f1fa06d51138be507d72b4fedfc956ef88d07b7d777ba8"
+    sha256 cellar: :any,                 arm64_monterey: "ff33514eb86e07ed9296e616c5a665ed9bbecb6dd1d3c068f3774c46af0c3092"
+    sha256 cellar: :any_skip_relocation, sonoma:         "371ff3df01cfadcd1ffb4501454cbc9af971854226cb36d51bf6129026ee3a95"
+    sha256 cellar: :any_skip_relocation, ventura:        "9184b0aa6ba5ee8b89c03a756e22a0a8029f37c8fa3421379c0dcc6a56334fb8"
+    sha256 cellar: :any,                 monterey:       "4f3001a6b9f7e9b557b9f3222995435dce2fda17a817210dff7fa34bfd442d42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5bf42d56da20b6a677d5ebf42d03696641dcff32f6a44085019931f6794814"
   end
 
   depends_on "python-certifi"

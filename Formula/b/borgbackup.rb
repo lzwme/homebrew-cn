@@ -6,16 +6,16 @@ class Borgbackup < Formula
   url "https://files.pythonhosted.org/packages/a6/19/f94be9fda92ea73cbf22b643a03a0b64559027ef5467765142d8242e712a/borgbackup-1.2.7.tar.gz"
   sha256 "f63f28a3383c041971cec87b061ca39a815b5fd445db24aa8172cac417d9411a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "14a678b837c610113fdd4016c28c3a8fc0d68270e024be61ce0aba4071ca10ff"
-    sha256 cellar: :any,                 arm64_ventura:  "fc334f0ae5286e6bfc94f82b4873f52f692f00670e9ed07c3be24b7b049e2488"
-    sha256 cellar: :any,                 arm64_monterey: "97d661573da79192fd6d487d0a2437484eaa9e508c3c4c0ea34b1852592ffec6"
-    sha256 cellar: :any,                 sonoma:         "87990713c58627a77691fa1339c104a068ed7142912c1898516fc4463a796a60"
-    sha256 cellar: :any,                 ventura:        "d64701f5d40b28082c2837af7c7fe02fb0bd13cabf536890b576ba6b4f72c490"
-    sha256 cellar: :any,                 monterey:       "bf19e7f2a71270ae581be1eebd1d1d2e50a5ea9dcfc44cddf5203bd90b71e75d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c7c2566edc313eadee52db6c19fec6c274d54b623be4a335f5f1ca3cc1e451d"
+    sha256 cellar: :any,                 arm64_sonoma:   "7100fa9d7fc8f028649ae0d87ac0f43261fd29bec22559c766f75fd8397bfc98"
+    sha256 cellar: :any,                 arm64_ventura:  "7eea2d82869e8aef5b24d5c916962fa5fdbef89f4792351bbbb01e8ac1e727b7"
+    sha256 cellar: :any,                 arm64_monterey: "f0ca05757191f1c0ec833c54cb03d27bb83151ccefb1befd37dcc1452b8a3987"
+    sha256 cellar: :any,                 sonoma:         "26b49cb0d0da9ebc32530289853f7d7a8cab0221f20b37334ad9c4b293122d98"
+    sha256 cellar: :any,                 ventura:        "e6656f7e859696ff3a0ce5c8e8cd7a4ab36ee7d1f3fac66ec36927facca27441"
+    sha256 cellar: :any,                 monterey:       "671e11f2a190941b2743f328f99763f2f22a39db1cf0b403f687c5c6941eb64f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52132ddbb9b99149a2c7868bb3a2ddb5485ddc35b82a1ed0cf12e0eba26732c4"
   end
 
   depends_on "pkg-config" => :build

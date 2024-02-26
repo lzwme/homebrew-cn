@@ -6,16 +6,16 @@ class Bashate < Formula
   url "https:files.pythonhosted.orgpackages4d0c35b92b742cc9da7788db16cfafda2f38505e19045ae1ee204ec238ece93fbashate-2.1.1.tar.gz"
   sha256 "4bab6e977f8305a720535f8f93f1fb42c521fcbc4a6c2b3d3d7671f42f221f4c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0355fb26042e05634af6076e5c9336cddaeec720ab572d61a0613347b4dc780b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb1b956ec838657fd1a7f6f4ef7be531bc97ee31177c1f7d9f437de44036b7dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3db73b2bc8747894c0de6c98c655c47257edd9223c4d6e031bc03096036a8b4b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "93bc6e827ae0cfe7e1a1489a800e4ce0335f894a5e172cbb250068903515d547"
-    sha256 cellar: :any_skip_relocation, ventura:        "4ec4c546080f4d5f2420ff5b43901e2aa5fe86effd609cc1028a995f32eb4fe2"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5fe7a2ff676ee4a6f1413da4a77fadbbcb03852e6b55b2af5891f0c02f16386"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2ef3f8efbb2448c1ce1f601b1852fddd4e4ee25e663a59444e09b15ddf031e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cef7fcf0ee622eac38ae68dab65871fefe0b97e31f5c814f8d158627c61ff497"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "81782b93d1a81a96621647b41c65a720c0cf26d995bdce0d5fea85572adc365f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77db33d9a146b930bee954a0ea2d42eff50fe0ffde1fa7c82d1c199d600750ab"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d6af41973ffa58f39fbdb94f146cde5ac30bb198688264ca9a58d711c3bc2b23"
+    sha256 cellar: :any_skip_relocation, ventura:        "6db4c350ffbccdf07cd35aa8bf82045ada101b44c77cac84666af30e560da92c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a100cd15d96ec8c367311de80f9561d2db4334a261d30ac8623f50a00311ba2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26d84e8ccddbbcefd2d6de2b2d45c44613f795e2f94c400730666dfec9fab539"
   end
 
   depends_on "python@3.12"

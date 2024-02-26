@@ -9,25 +9,24 @@ class Pocsuite3 < Formula
   head "https:github.comknownsecpocsuite3.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c26a3e67eb1e842bee39a4fb12efc9b0b201a464eb1d16c2b83d590e434e431"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b19e1f0902b3111590a5e2045db7908af16c7b7f2128ea33f7f42a9b479acea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d64e346fdc2760080ce2ca10989c93a64d601e5f50e2774d40db02bfd6a9b6e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f73aafc4c1f6bf09f0adaf500ccbc21a5620ccf2f14b401063c0cd8efd1a6d7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "9b98e284bffa5684187ce3dee1a915e12161474e3c443b401119476ccedd4c6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "946a08684ff845aabb927a4228f7a7c3e9f55499fdbe1e3cb00a4de49c19b73b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e917d9185bd4f64fc945a705eb1c40582904391ee8498dcb1241dc7b3e16c11c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "e57d2304e95dfd73e81689f277c15dc5e1b0a3e5ba82be63b0a1e73e11292cb9"
+    sha256 cellar: :any,                 arm64_ventura:  "292810d4b3cbf2bd9b3a8f0282f9cbc9e7c703f15fded3c0c763637f0d85c311"
+    sha256 cellar: :any,                 arm64_monterey: "9d2a39b318d0733c75f34bbcc1c62acbc3ab7a15fee6ac62b6a7357d8d573a83"
+    sha256 cellar: :any,                 sonoma:         "24a581de3b06e070708bf300b6242ccfb141124a87cf3ed2e706250f5ebc11df"
+    sha256 cellar: :any,                 ventura:        "85414de6bbd90aa81595f83608672720ce418aa32f0b835b8dd6a169e11572e6"
+    sha256 cellar: :any,                 monterey:       "451a727190abfddab624829b1aeadb111d2947baefbd90e34b8789047f40846e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a5c015b4b69ee7849396f19a63242a4d67862287c620dde616a16f56b2ada6f"
   end
 
-  depends_on "cffi"
-  depends_on "pycparser"
+  depends_on "libyaml"
   depends_on "python-certifi"
   depends_on "python-cryptography"
-  depends_on "python-lxml"
   depends_on "python@3.12"
-  depends_on "pyyaml"
-  depends_on "six"
 
   uses_from_macos "libffi"
+  uses_from_macos "libxml2", since: :ventura
+  uses_from_macos "libxslt"
 
   on_linux do
     depends_on "pkg-config" => :build
@@ -73,6 +72,21 @@ class Pocsuite3 < Formula
     sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
   end
 
+  resource "jq" do
+    url "https:files.pythonhosted.orgpackages2250ab53cc23eddad14a28920e95523b9f39849d9e3139836ec8fcbb7e8e3517jq-1.6.0.tar.gz"
+    sha256 "c7711f0c913a826a00990736efa6ffc285f8ef433414516bb14b7df971d6c1ea"
+  end
+
+  resource "lxml" do
+    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
+    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+  end
+
+  resource "mmh3" do
+    url "https:files.pythonhosted.orgpackages6396aa247e82878b123468f0079ce2ac77e948315bab91ce45d2934a62e0af95mmh3-4.1.0.tar.gz"
+    sha256 "a1cf25348b9acd229dda464a094d6170f47d2850a1fcb762a3b6172d2ce6ca4a"
+  end
+
   resource "packaging" do
     url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
     sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
@@ -88,6 +102,11 @@ class Pocsuite3 < Formula
     sha256 "7a710b79baddd65b806402e14766c721aee8fb83381769c27920f26476276c1e"
   end
 
+  resource "pyopenssl" do
+    url "https:files.pythonhosted.orgpackageseb81022190e5d21344f6110064f6f52bf0c3b9da86e9e5a64fc4a884856a577dpyOpenSSL-24.0.0.tar.gz"
+    sha256 "6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf"
+  end
+
   resource "pysocks" do
     url "https:files.pythonhosted.orgpackagesbd11293dd436aea955d45fc4e8a35b6ae7270f5b8e00b53cf6c024c83b657a11PySocks-1.7.1.tar.gz"
     sha256 "3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"
@@ -96,6 +115,11 @@ class Pocsuite3 < Formula
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
+  resource "pyyaml" do
+    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "requests" do
@@ -111,6 +135,11 @@ class Pocsuite3 < Formula
   resource "scapy" do
     url "https:files.pythonhosted.orgpackages67a12a60d5b6f0fed297dd0c0311c887d5e8a30ba1250506585b897e5a662f4cscapy-2.5.0.tar.gz"
     sha256 "5b260c2b754fd8d409ba83ee7aee294ecdbb2c235f9f78fe90bc11cb6e5debc2"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "termcolor" do

@@ -6,18 +6,17 @@ class West < Formula
   url "https:files.pythonhosted.orgpackagesee7a4c69c6a1054b319421d5acf028564bb1303ea9da42032a2000021d6495eewest-1.2.0.tar.gz"
   sha256 "b41e51ac90393944f9c01f7be27000d4b329615b7ed074fb0ef693b464681297"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comzephyrproject-rtoswest.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "fa92015937cf4c691a49761f7d27162447b9b8612bf3385b157dfe23ef6b763b"
-    sha256 cellar: :any,                 arm64_ventura:  "708f9207edda6b9f0636db0a4d171fe1681aadb7d7d1b4871c07ed7563958bad"
-    sha256 cellar: :any,                 arm64_monterey: "3980af8f3bf2ba932e8cf97a4bf00e6b1960044d9aa05a11dd617607b7fbe58b"
-    sha256 cellar: :any,                 sonoma:         "b737f5a21b10dc033e239ccabeb66a622ccb54c17cd595f1c196be3424987760"
-    sha256 cellar: :any,                 ventura:        "3c62e7444637f0cee924af20fc39531389206ae17d1aed3ce0fdb360cd222556"
-    sha256 cellar: :any,                 monterey:       "8756abd891bb4409f746161b435cc5af0a69d0efc8b746abde220cab3cf57cc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de8cd0fb29a315f3c9f118e13b669d08f53880445870335f5f0bed16a73ecea5"
+    sha256 cellar: :any,                 arm64_sonoma:   "26576af9f46307f4848f693b8735d4db5034db58937e82422e9ea716e49b0833"
+    sha256 cellar: :any,                 arm64_ventura:  "eaaf79d5b5ea31abcc74489f1624ee88a8deb35d819899a67457166a15ec0dd2"
+    sha256 cellar: :any,                 arm64_monterey: "8411289dc521b14e6444ab4e60ca9b44eaa62982e7c9652aa4d379b96cfa0ba9"
+    sha256 cellar: :any,                 sonoma:         "8e725d4997ab94daf01a382e332f14ebdb86ea3cabad292183b9ec24a35cc4db"
+    sha256 cellar: :any,                 ventura:        "a74d001bc69b95a6c877480d11ff48bb318819fad6b1f7ddc0197ccee8153052"
+    sha256 cellar: :any,                 monterey:       "d3b81aa7b72db48dc467ab2b2081b7c0a21058200dbc43ab07e3059bba1eb371"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0efc8af2f61986d8008c990bdc936fd8a03c3386f1b9b32df70ba371fafc3e4a"
   end
 
   depends_on "libyaml"

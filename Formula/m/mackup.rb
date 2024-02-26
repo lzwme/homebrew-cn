@@ -6,17 +6,17 @@ class Mackup < Formula
   url "https:files.pythonhosted.orgpackages479887dfab0ae5d1abad48a56825585dcd406cdc183dbce930e24ef8439769bamackup-0.8.40.tar.gz"
   sha256 "d267c38719679d4bd162d7f0d0743a51b4da98a5d454d3ec7bb2f3f22e6cadaf"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comlramackup.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e22ea66e97029c577384ba1b1bc6e1658fe1888073d94c48d69106134d81f868"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3dd122a9074c7cebe47c225d1403baac544ce5a8b15b7dad7b17024dd6d8261"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98b5d8843db7055612ff403c4d0b2d0b99bc91bd7d19886a4dbe7e52c80bc187"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fd566741bc14216b9290ff9b91d6a4532c0f3c198663bbddb76c9ea51c084b96"
-    sha256 cellar: :any_skip_relocation, ventura:        "21fcd593cb776efdc50b2194c61d0977102dba05a09a0ea95061074b32048372"
-    sha256 cellar: :any_skip_relocation, monterey:       "8df2bac26e01ef277c9a0cf8c4b2b970ecda3c01a5ab1a0b5ece8573b930c56d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14ca4c39200be37ff9284f29ba9d3cefa5a2385407fcb24818d456e9eae03080"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc14c837232b9c9dd70ade93c1b4e87a8c3b14894068b2c7ef069cbf85a3a285"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f85cb462956cb44fbcc163351cc337d4c604c248d3769359c6ba45446b1e4cf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e65aae58b535dec8f5fe474af3f5447140e4d63f780e782d7d1e84e6c293e614"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b08c9e2302a4aca64afbf33b785ca7eae1e8f661c386df4d834f6085ae9b46d8"
+    sha256 cellar: :any_skip_relocation, ventura:        "559b8c878159dd5dc347dd363b2cf0503a6f2c7565e76f7c0da437ca98cbf05a"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3078cd965e01f1985ad53131537efaf56980d3605ed332fd7a674a285dd16b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9086360c6fa35cfe3e9b03ecce6e96ccf8fbb0b0babd8e157cc108a091f9f974"
   end
 
   depends_on "python@3.12"

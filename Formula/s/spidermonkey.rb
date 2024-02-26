@@ -5,6 +5,7 @@ class Spidermonkey < Formula
   version "115.8.0"
   sha256 "af8086f23efc8492d286671f6035b1a915de6f4ed5c7897e40be0e1cb6b895ea"
   license "MPL-2.0"
+  revision 1
   head "https:hg.mozilla.orgmozilla-central", using: :hg
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -15,11 +16,11 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "f6869626a6f59fde8983dfd69afc22d369bc1a13a8cb2cae354a2946896eca68"
-    sha256 cellar: :any, arm64_ventura: "8ba30ec2edaac5a42b67d0205865ce41d29a04d69cd256eec55a54da5db47851"
-    sha256 cellar: :any, sonoma:        "b6611b7ee64fe983ad6949e29597d687837d0503b90876f62706256dec528db1"
-    sha256 cellar: :any, ventura:       "bae8d92fa2cadc035eb89b9d1ed1a24ced16b6381c21868bcbe4e43be92a0b1e"
-    sha256               x86_64_linux:  "6d79380eee461b58fb9f906dd8001bc2501c54629169fcc90f2ad14ee31c55af"
+    sha256 cellar: :any, arm64_sonoma:  "c8a244aed5005fa0de34956d781a96ceba4666df9fb9b15ef8d7d0344c57e4a9"
+    sha256 cellar: :any, arm64_ventura: "fe448b4c9b91e39fd449dcb9e607e86331577edf8cda7abe6cd3f9c182a6940f"
+    sha256 cellar: :any, sonoma:        "815b1ababfec575ffcfd41f571fedcb7e07d844a286008eb80a22a0747892a91"
+    sha256 cellar: :any, ventura:       "ea19b4c1de0345eaa053cf6fc04c6f2028106b8f1a840dd80c110987455fd962"
+    sha256               x86_64_linux:  "34dffb49fdd294539a7e2f50575bbac59d48951c54bc2d8003d634e5b09886cd"
   end
 
   depends_on "pkg-config" => :build

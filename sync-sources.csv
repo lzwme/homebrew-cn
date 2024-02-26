@@ -2031,6 +2031,7 @@ Homebrew-homebrew-core/Formula/g/gifsicle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gifski.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gimme-aws-creds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gimme.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gimmecert.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ginac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gismo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gist.rb, Homebrew/homebrew-core, 1
@@ -5098,14 +5099,10 @@ Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-distro.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-docopt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-filelock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-hatch-fancy-pypi-readme.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-hatch-vcs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-hatchling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
@@ -5115,18 +5112,14 @@ Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-magic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-markdown-it-py.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-mdurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-mpmath.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-msgpack.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-pbr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pluggy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
@@ -5134,7 +5127,6 @@ Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-regex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
@@ -6970,7 +6962,7 @@ Homebrew-homebrew-core/Formula/z/zls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmqpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/znapzend.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zola.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zookeeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zopfli.rb, Homebrew/homebrew-core, 1
@@ -7851,6 +7843,7 @@ Homebrew-homebrew-cask/Casks/d/deckset.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/decloner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deco.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/decrediton.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/deelay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deeper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepgit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepl.rb, Homebrew/homebrew-cask, 0
@@ -10360,6 +10353,7 @@ Homebrew-homebrew-cask/Casks/s/security-growler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/securityspy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/segger-embedded-studio-for-arm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/segger-jlink.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/segger-ozone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sejda-pdf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/selfcontrol.rb, Homebrew/homebrew-cask, 0
@@ -13821,7 +13815,6 @@ Homebrew-homebrew-cask-versions/Casks/zulu21.rb, Homebrew/homebrew-cask-versions
 Homebrew-homebrew-cask-versions/Casks/zulu7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu8.rb, Homebrew/homebrew-cask-versions, 0
 nicerloop-homebrew-nicerloop/Formula/arx.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/diffoci.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/get-scoop.rb, nicerloop/homebrew-nicerloop, 1
@@ -13831,7 +13824,6 @@ nicerloop-homebrew-nicerloop/Formula/git-credential-rbw.rb, nicerloop/homebrew-n
 nicerloop-homebrew-nicerloop/Formula/graph-easy.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/hfsprescue.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/icode.rb, nicerloop/homebrew-nicerloop, 1
-nicerloop-homebrew-nicerloop/Formula/imessage-exporter.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/improv-wifi-serial-client.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/jailer.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/jpdftweak.rb, nicerloop/homebrew-nicerloop, 0
@@ -13840,6 +13832,7 @@ nicerloop-homebrew-nicerloop/Formula/libf2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/macos-scripts.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/mas.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/moproxy.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/opc-diag.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/optic.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/orbicfg.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/pcap-proxy.rb, nicerloop/homebrew-nicerloop, 1

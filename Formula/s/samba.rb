@@ -7,6 +7,7 @@ class Samba < Formula
   url "https:download.samba.orgpubsambastablesamba-4.19.5.tar.gz"
   sha256 "0e2405b4cec29d0459621f4340a1a74af771ec7cffedff43250cad7f1f87605e"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https:www.samba.orgsambadownload"
@@ -14,13 +15,13 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e44698df4e5754c04301d6dc34d5d1b62f6a26eb1b3ba87ff62b5ce66de918c0"
-    sha256 arm64_ventura:  "066e1e1e02a4e751d37f311b029e68d4f95ee0bd8c90cf7d95e0155a11d55adf"
-    sha256 arm64_monterey: "26a5191cc8c210d1b3860dcdf34441cba85d29e5760afe43122bdc97ece02e80"
-    sha256 sonoma:         "4cc34de21df1700320875bec5d162e3c1b2bd204569c8fed877ccec9f2653542"
-    sha256 ventura:        "f8e47b4fd453090b75782b7b71627fce7b2c63da55cbf7ee21490adb81566229"
-    sha256 monterey:       "913b582e5d6d162193c1c88d24d21bc89a155d5197ed6334983051a8273fd97e"
-    sha256 x86_64_linux:   "cb7ab2968f9ea3d3cd5b9605d5bb40d3b9dbfd47785d8309628f5ca9c8a5b03b"
+    sha256 arm64_sonoma:   "21f41972a750d87b66cea6e46accd29f96d9149365707a80063f7de7cdb37431"
+    sha256 arm64_ventura:  "ad00adbd52bc052e9ca0a9e3ef6de476ad50311899f30747b083e843e9492a6e"
+    sha256 arm64_monterey: "4657e914d78764c69ea75bcca9c0356d876e8b22eb108f3fc846321109d50279"
+    sha256 sonoma:         "a91d08c0b82653d3bc111f359e877aec954ab84f5717f2a9cd7090f359e15116"
+    sha256 ventura:        "6a54d6c10a3df771c24c578fb0dc1cdc3cb6bea7e7bd902b5e8c4416bcc0ee69"
+    sha256 monterey:       "5dd5b3574a0eb4cd5bbcf3aac502fbb47ebd60b0b567dd4446a21681e85200df"
+    sha256 x86_64_linux:   "46392ec306d82242ae202cf9eb1df626b79bb8a8e7059ed9de83de36919d5d55"
   end
 
   depends_on "cmocka" => :build

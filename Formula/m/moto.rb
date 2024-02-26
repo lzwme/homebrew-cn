@@ -6,16 +6,16 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/b8/0e/4eefbe1d41a1584e48ebd61ebdafa119a053be1e04882be4d53b00660771/moto-5.0.2.tar.gz"
   sha256 "7e27395e5c63ff9554ae14b5baa41bfe6d6b1be0e59eb02977c6ce28411246de"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "73700e1d9416a24b80d85187ab49db7184a1b301e33e05e4c8d4d9aeb27d2592"
-    sha256 cellar: :any,                 arm64_ventura:  "d41c9eab75a5571e2b71730e05827c0859ef02e14f4d52733a98760ad824f72b"
-    sha256 cellar: :any,                 arm64_monterey: "455f472a972bd505e45c62279921893c1f0505f80e2d771547eb2c6fbef99035"
-    sha256 cellar: :any,                 sonoma:         "8e5beee14ac4d5a38eb4cec884ac5f70b11cce9cb3236f2018176359d69df6c7"
-    sha256 cellar: :any,                 ventura:        "d7d74dacdbe631751d3e27ad2bc51f392c0a1d45385f3fb1e84bdf32565372b4"
-    sha256 cellar: :any,                 monterey:       "81d5e0666325880cf83a5fa7a78766866f584bff54dd6530141a8cb28162cb1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac0cbd52893d57292efb19424c67133a6d28ce8b576cc776d3ec7222f1befe84"
+    sha256 cellar: :any,                 arm64_sonoma:   "fb90649c2d150b7c2a312cd559951c11e69b42751017136bd6be185d027848d7"
+    sha256 cellar: :any,                 arm64_ventura:  "e14457cc1b8f89c816292082e2529730fdc4bfea6458fe2f9635996963525cde"
+    sha256 cellar: :any,                 arm64_monterey: "adc5ba373e67bef59339870414212e622eb6c9bc02963c7a0201244cf7d939db"
+    sha256 cellar: :any,                 sonoma:         "b73c35926fceee054491d0bb3691e6ade09a597c0df0b1c324e8c5a6465b44b1"
+    sha256 cellar: :any,                 ventura:        "7d44feb2f80edbedb74b5ab7964a0b3cf1bf6116f0e8012f442d606556d8b911"
+    sha256 cellar: :any,                 monterey:       "4bf22c2515f91bb5226d089b3638e2cb136afecbc050c1c65c0ad3a84337d88b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fb18ed8790266d38cb0ae43240eac16575ab951efa878c6b8ae2aa09b5e8661"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -330,11 +330,6 @@ class Moto < Formula
 
   def install
     virtualenv_install_with_resources
-
-    # link dependent virtualenvs to this one
-    site_packages = Language::Python.site_packages(python3)
-    paths = %w[cfn-lint].map { |p| Formula[p].opt_libexec/site_packages }
-    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   service do

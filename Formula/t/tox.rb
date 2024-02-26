@@ -19,7 +19,6 @@ class Tox < Formula
   end
 
   depends_on "python@3.12"
-  depends_on "virtualenv"
 
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/10/21/1b6880557742c49d5b0c4dcf0cf544b441509246cdd71182e0847ac859d5/cachetools-5.3.2.tar.gz"
@@ -73,10 +72,6 @@ class Tox < Formula
 
   def install
     virtualenv_install_with_resources
-
-    site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[virtualenv].map { |p| Formula[p].opt_libexec/site_packages }
-    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   # Avoid relative paths

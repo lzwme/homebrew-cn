@@ -4,6 +4,7 @@ class Hfstospell < Formula
   url "https:github.comhfsthfst-ospellreleasesdownloadv0.5.4hfst-ospell-0.5.4.tar.bz2"
   sha256 "ab644c802f813a06a406656c3a873d31f6a999e13cafc9df68b03e76714eae0e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Hfstospell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "32721921f2e226e15fd8fa796da4ea075b16fcc7af042ae6ca37aa7e2f19219d"
-    sha256 cellar: :any,                 arm64_ventura:  "e9b8767edb7468e1b2bb2d1483f37613e4e491ed063e17e21d6315b7ae7507eb"
-    sha256 cellar: :any,                 arm64_monterey: "ef9a63c4ae13d7d125e258b54ae95f1c63415265461591f346c5bce2584b7cf9"
-    sha256 cellar: :any,                 sonoma:         "5b6261263768b7d11954b5e46836e34c43831ddd73be251297edebaae44af750"
-    sha256 cellar: :any,                 ventura:        "cb66b9edfc5e299bdf24957ebeb959964db8b511a6aa3a34c53e6fce39076c0e"
-    sha256 cellar: :any,                 monterey:       "dcf7f374aeced48efa67c0ba867db784a3938c83bcc692e24cd8771220a85336"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25484f3abd7f9424adf9063f495ab6c3b005dfe89b0a4bb7d7c35401a0e8eb27"
+    sha256 cellar: :any,                 arm64_sonoma:   "3ac3c8db816a221fb4d31304d7a3f911e5dbc26ea2a41c757bd23cbcfd095219"
+    sha256 cellar: :any,                 arm64_ventura:  "ca1e9a08dc2804c886e2501717896a1b3c6656d168a4a6dd7f0a7cdbc186bae8"
+    sha256 cellar: :any,                 arm64_monterey: "bce636afc077660217f0add724744471c59d3d23b6664737f8b576acccb789c1"
+    sha256 cellar: :any,                 sonoma:         "5f63b59ba5001fb6a180921ed1954f3f9e24246a9ec550005f073c2f2ebed844"
+    sha256 cellar: :any,                 ventura:        "1ad2317687be55cf5919f36fe0880d8b048c56b768222e345ef17840b43649b1"
+    sha256 cellar: :any,                 monterey:       "b74b4d89c1b3e3fc69260ef95bf038138a6ef5a0f7ebb18418eb2a71bdbdcd6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65a917c07469f364dbe04c80c768aa2862c8a92495fe82c9ebaa47b02186bae5"
   end
 
   depends_on "autoconf" => :build

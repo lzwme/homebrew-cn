@@ -4,6 +4,7 @@ class Manticoresearch < Formula
   url "https:github.commanticoresoftwaremanticoresearcharchiverefstags6.2.12.tar.gz"
   sha256 "272d9e3cc162b1fe08e98057c9cf6c2f90df0c3819037e0dafa200e5ff71cef9"
   license "GPL-2.0-only" # License changes in the next release and must be removed from formula_license_mismatches
+  revision 1
   version_scheme 1
   head "https:github.commanticoresoftwaremanticoresearch.git", branch: "master"
 
@@ -14,14 +15,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "0cc046b5cec86646a14c85aa5912465b1a5fea4cb5eded6599a0e5320d80884d"
-    sha256 arm64_ventura:  "8caa6cd9d7b1c85d188f9174746d47b308824e0a4face7acae24c14893065dee"
-    sha256 arm64_monterey: "056e5b48bdbf0c3891d9aa5c2e35924e1a7be5f313b1aaadf0c651f5d365a5c4"
-    sha256 sonoma:         "f018a01c3c6f9d2b11e92db1a2f63ad0444a1c4fca47b37289a804b949eb0392"
-    sha256 ventura:        "8fab6c51980f36da634f377c46858acb36b238b406bd9a45313d518c0a6d98d9"
-    sha256 monterey:       "07ad63c44efc781704cbec24f835d39c89460443d51373d407d9fe9636dca356"
-    sha256 x86_64_linux:   "8759daf1b29c712194d59ae6d18b1e1df8c633f625e57ab64472ecfd2ae55ddd"
+    sha256 arm64_sonoma:   "ebccbe26f5358d4cb0b2e6c077d1cd1676bacdb90704fd74dec1c996b165a0f3"
+    sha256 arm64_ventura:  "3ac03e8f29238d750840e583011a3ab5c8fc02814f989463a0baad97ff8b8607"
+    sha256 arm64_monterey: "b3ddbd82e0d38c88a2b94658311ec644bbcb293edf77b03ab0fcb3d60995d6f4"
+    sha256 sonoma:         "71b25bfabae553885eccb4b147eef6b3bf99e488ec9de422801fd9850d4adbe1"
+    sha256 ventura:        "48c8b6624b6bfde3e964eaf9fe4d08d9c778d120a4b78feafeea1f9d0e4815ac"
+    sha256 monterey:       "e096ac88ffe59c40e2e2751af85a21a14c49b89c68de4defbfb5bdb54843b5fb"
+    sha256 x86_64_linux:   "63f602892d1341f76aef3bd17a5f8f91e6198ae151993ce8b0a5e3297487e957"
   end
 
   depends_on "boost" => :build

@@ -7,6 +7,7 @@ class Swift < Formula
   url "https:github.comappleswiftarchiverefstagsswift-5.9.2-RELEASE.tar.gz"
   sha256 "5b93c737c24ba7d861e0777800740eaa9ccddfa2a6a4326bd47dbc5aa9ae8379"
   license "Apache-2.0"
+  revision 1
 
   # This uses the `GithubLatest` strategy because a `-RELEASE` tag is often
   # created several days before the version is officially released.
@@ -17,13 +18,12 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "323c4d0ce66fa558941a41aa233773fd0ffbb5a64e83ecbb651f4c1b89a96b5f"
-    sha256 cellar: :any,                 arm64_ventura:  "5dc9fcfc4fbea5548131615a47dbd6fc5e0c8ccece4b44d1a492602c6cd3916a"
-    sha256 cellar: :any,                 arm64_monterey: "92c46e35c501b6c7452e348d72f20cd9f07b8a87c44d3d4d5040af7fe02304f0"
-    sha256 cellar: :any,                 sonoma:         "d8e792df249a4cab6c363db50b59590d5640f0f1ada93934f1c735a70381a1a9"
-    sha256 cellar: :any,                 ventura:        "f682957f907edd64b3c71949e045448236fe576e11f5d2ad46b4e29d9a093e47"
-    sha256 cellar: :any,                 monterey:       "6d40e3001405c4494851e0b981ab5878f07ac1a94f7ec42a1bf5de9a10d99d76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4d1ed851dd2248a74db363f67f63c3e40b448a653f559bdfb1c826934ad3186"
+    sha256 cellar: :any, arm64_sonoma:   "556733ccfa5dfefe13e02e07031253921f2081483e17781c7b9dfe5d722f721b"
+    sha256 cellar: :any, arm64_ventura:  "5313a3f7fc1c887aa7c5a5bcfe34feb19ad61ceed26e90c7d55f23fb40d6cc64"
+    sha256 cellar: :any, arm64_monterey: "caf558e41ab28c00de216ae2580a35ed3d8c0d40574f781aba206e2b1c234264"
+    sha256 cellar: :any, sonoma:         "56e631b94fcdbbe2c631bc2749dafb9885a06eeae6857fb8b49319a623c91963"
+    sha256 cellar: :any, ventura:        "c541ac87f26d573a00290ee3e5703d09abf5fa44758d13591279c2eca8f05437"
+    sha256 cellar: :any, monterey:       "69b5a84f0da852b6c910936a16171e5278a06a013dd5b51ce4cc7bcd266f4e99"
   end
 
   keg_only :provided_by_macos

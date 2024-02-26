@@ -1,19 +1,19 @@
 class Znc < Formula
   desc "Advanced IRC bouncer"
-  homepage "https:wiki.znc.inZNC"
-  url "https:znc.inreleasesarchiveznc-1.9.0.tar.gz"
+  homepage "https://wiki.znc.in/ZNC"
+  url "https://znc.in/releases/archive/znc-1.9.0.tar.gz"
   sha256 "8b99c9dbb21c1309705073460be9bfacb6f7b0e83a15fe5d4b7140201b39d2a1"
   license "Apache-2.0"
-  head "https:github.comzncznc.git", branch: "master"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "dddb735c0994729e2fc6b5deda68bcc2bb06cdc3926ccfdd177ce127c7d31d22"
-    sha256 arm64_ventura:  "dd925bb118aad946bc8084496bc9bd7239c2e79f8b570d0a97935f8aab40c898"
-    sha256 arm64_monterey: "f3aef8b836efba54d66cfd66c0b05e881037bd5c35a86547ecc3a30cc16da395"
-    sha256 sonoma:         "103a97cfa35fed90a013b4c06110cc3b158d96cd58c614d30dee0d69e298ced2"
-    sha256 ventura:        "37087530395d80131f237ee2e38ab8d16a5a86a11d08a53eccf80f7b675148a4"
-    sha256 monterey:       "d9babb7b092c38406170cf5ce4010649886505b2b5edb35dee5aafafa14e5820"
-    sha256 x86_64_linux:   "b448547a7c46c1d0ae1b59e6f66608e226e8af796045b1d56c748cfee62fdcf1"
+    sha256 arm64_sonoma:   "152c9f40d2b5b6a0806da2e8dd9f03d90ab5a0c672fd9fb820d6e45900e0575f"
+    sha256 arm64_ventura:  "de305bd37409256dbf785aac9402c030748874ae0e4adbf7cd7ebb07605f823f"
+    sha256 arm64_monterey: "3f2c85f879c34eb86b044ed70f745cda8973a348e52b1b0e459b3464eea5cc1e"
+    sha256 sonoma:         "9072fa0a151e0eae9a78a77fea832d77a685bfc1a2fcace1dbc31e21c8aa2f31"
+    sha256 ventura:        "a8bb46b0a2c44b15569faee250c3ec0071f85791728cd9a1009f0feec0838fa6"
+    sha256 monterey:       "ff8d6542512169652c2e0b3adf6dd9ab24cefe69151aebf14b60dcd2fddc93db"
+    sha256 x86_64_linux:   "2ba9392d0183ab430915828c24953348649cbb2a10852e4be5c9ea11108517c7"
   end
 
   depends_on "cmake" => :build
@@ -39,20 +39,20 @@ class Znc < Formula
     system "cmake", "--install", "build"
 
     # Avoid references to Homebrew shims directory
-    inreplace lib"pkgconfigznc.pc", Superenv.shims_pathENV.cxx, ENV.cxx
+    inreplace lib/"pkgconfig/znc.pc", Superenv.shims_path/ENV.cxx, ENV.cxx
   end
 
   service do
-    run [opt_bin"znc", "--foreground"]
+    run [opt_bin/"znc", "--foreground"]
     run_type :interval
     interval 300
-    log_path var"logznc.log"
-    error_log_path var"logznc.log"
+    log_path var/"log/znc.log"
+    error_log_path var/"log/znc.log"
   end
 
   test do
     mkdir ".znc"
-    system bin"znc", "--makepem"
-    assert_predicate testpath".zncznc.pem", :exist?
+    system bin/"znc", "--makepem"
+    assert_predicate testpath/".znc/znc.pem", :exist?
   end
 end

@@ -6,17 +6,17 @@ class Fava < Formula
   url "https:files.pythonhosted.orgpackages6de77c1639d471f3f4c046285e16460c29bb6f345b00f3772521607ef3a56f39fava-1.27.2.tar.gz"
   sha256 "90b4005851c39b3b018d5326fd9527f93164339d96d21d23834c12a75b663d94"
   license "MIT"
+  revision 1
   head "https:github.combeancountfava.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "432c3ca128dc4d0689ef2451fad6dec8412ea2a3557af7930a62a96471b0fe41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6eff785b7fca81df5d799923eab356e2a44d6b5faf61dde4ef087704fb4b310b"
-    sha256 cellar: :any,                 arm64_monterey: "f141eab82bfa267d73a03433f52af697bc6155a7a1f0c65b64873d87b0e58eb1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b2a8908781246e79576b42ea73863bf30084d99053f8b2f858cfba6f49e9e46c"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c829fbaf5ae83d2a8b4cdb74382bd5349cdbb8b6ad85b491c418899c1c610b7"
-    sha256 cellar: :any,                 monterey:       "ad517720814045bdb4742080e3c017fdad9c2d6cefb354aad5a4188e4313fe0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0406de28088cbfaa056b9b260f19feed6da3f15c23e2f51e89fbfbc6c8864359"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4668b75dc3e00906a1618008b8ddc6af2e51f69c772b06a02e746cade0ccf5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91f5eec742f2771b5054e50c81c693612d992985b1770b13065bfaf35a0eb98a"
+    sha256 cellar: :any,                 arm64_monterey: "a4d7c36a8b5056b18f0c6556d27fe841748a05bef7e1112acfa2ac4969254426"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f3690c6eb7bb850c27f6a78c6f68ae9225c09f29f6c219b8da910d992940a7cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "79cae899a52ff003926b1f508028121b032841bf3c22d54eb13b4875336d62a4"
+    sha256 cellar: :any,                 monterey:       "246e4478916df6aba8a17341d591e9f27815cfb97f55fc5ffaa14a0e3608593e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09ac4d12eaccf42b5dba8a5cc207020907cd3d7761151aa7d55ab8bc1191cd7d"
   end
 
   depends_on "python-certifi"
