@@ -10,7 +10,7 @@ class Tmpwatch < Formula
     url :head
     regex(/^(?:r|tmpwatch|v)[._-]?(\d+(?:[._-]\d+)+)$/i)
     strategy :git do |tags|
-      tags.map { |tag| tag[regex, 1]&.gsub(/[_-]/, ".") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.gsub(/[_-]/, ".") }
     end
   end
 
@@ -41,7 +41,7 @@ class Tmpwatch < Formula
       ten_minutes_ago = Time.new - 600
       File.utime(ten_minutes_ago, ten_minutes_ago, "a")
       system "#{sbin}/tmpwatch", "2m", Pathname.pwd
-      assert_equal %w[b c], Dir["*"].sort
+      assert_equal %w[b c], Dir["*"]
     end
   end
 end

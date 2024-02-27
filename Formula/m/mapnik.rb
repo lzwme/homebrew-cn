@@ -2,7 +2,7 @@ class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https:mapnik.org"
   license "LGPL-2.1-or-later"
-  revision 25
+  revision 26
   head "https:github.commapnikmapnik.git", branch: "master"
 
   # TODO: Try switching to CMake build on next release as it works better with
@@ -32,13 +32,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4755b8be4d608b3e7f9f342dd18beeb0ede04dfea2268e567321c613472bab17"
-    sha256 cellar: :any,                 arm64_ventura:  "f2d26bc75e8f3c1fd276a44e894638efdadf9396d0f4a3ea57d7be0c806be2a8"
-    sha256 cellar: :any,                 arm64_monterey: "f19bcd6741538233b8dccb05c396af3fdb3ab6b725be4a3acfe4af547f8db71c"
-    sha256 cellar: :any,                 sonoma:         "51d3bb2039c4f51bfbe0d55dc12b7e48755ba6632b4661f2208b0ad4336702df"
-    sha256 cellar: :any,                 ventura:        "88f5754283c4466e00018e44369532173b4771a3a7785fa99a901faf7936f82e"
-    sha256 cellar: :any,                 monterey:       "d2e92fddbcafcafb9eff0b049416ad6dc40111b43d6f0db2dc40cca66ca33f59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7aa3e525b6d86990a726dc5e1c1ebee48446b253cbd1c16a1ac755254119342"
+    sha256 cellar: :any,                 arm64_sonoma:   "75386044ba3e3f74b03838526e5555abbf141cb9f0c3bcb07b3a1199e6e54682"
+    sha256 cellar: :any,                 arm64_ventura:  "2febdb09353a70739e39043685a4b7592e6c794da174ae5a3abf3dc3ccdbe397"
+    sha256 cellar: :any,                 arm64_monterey: "865827d45d37b3bf81ef7d1e8e39956e4f2f02083f86f226f4de79d6bd346ef4"
+    sha256 cellar: :any,                 sonoma:         "a380526896fe5fdd0e47c37d0cb2c211a6d4d1bce05bb4364fff969f051494ce"
+    sha256 cellar: :any,                 ventura:        "4705ba524ac9bf254918f541f7b740bc1005f678917d8ed482bddabd10510a47"
+    sha256 cellar: :any,                 monterey:       "11ca53d3874019058abf955067ad5e8ac234779f745e485eecd11b574dbf25a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "625cc8885cb3264a2af4090b5f5f88b32866083eaf8fca7a250844f36d2fce40"
   end
 
   depends_on "pkg-config" => :build

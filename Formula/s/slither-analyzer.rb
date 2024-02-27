@@ -10,14 +10,14 @@ class SlitherAnalyzer < Formula
   head "https:github.comcryticslither.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "37b1a2cc4a19741dc7c7747881dd287c7b0b828fdcf305bddbd290c62ef6c0f4"
-    sha256 cellar: :any,                 arm64_ventura:  "4be0ad28bebddc0035400ba05286ac581379fd99ff466e8d8316cea46f370542"
-    sha256 cellar: :any,                 arm64_monterey: "20a10ea3662ae3d554220e762cf135e91df13ae1b922d9606ad2e0d411294179"
-    sha256 cellar: :any,                 sonoma:         "c3c91a79ab81f0c121eb7bdb9631aeb67bae30e9d149c1152e01c634560afe5b"
-    sha256 cellar: :any,                 ventura:        "cf15e76f4856cfaea0a4ec09122368c9024f1776509769633315057fbfbe69a0"
-    sha256 cellar: :any,                 monterey:       "9b668d3f38cc0ee372fa6eb674e12b2ee9ec6b54925e5e8ff76ab996d25cb5e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa888c2539a7b7c83d06b60006e8867d1359bb75ec12fe4a93cf760d0c52ca49"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sonoma:   "4a40bfadee987fda667e61c724010ba06a25906654d7ff76fc7fec54dc25a7a7"
+    sha256 cellar: :any,                 arm64_ventura:  "7bc5767ec3fd0b93d4c17840240bfee43a5b3fcda3bcca854ab78249c485b0ba"
+    sha256 cellar: :any,                 arm64_monterey: "6d98c04adf19b63278b67ba9a02dc1211b7f01c85a95e18178137f3df2b080ff"
+    sha256 cellar: :any,                 sonoma:         "f0513d5ff105395eda0ddfc153922d19bde7f65a124afbdba8bfdd53c10bc434"
+    sha256 cellar: :any,                 ventura:        "d2ee209e6b0685b7c978d43a33efe18e4da1228ab4a5469844a6f3bb98472a5b"
+    sha256 cellar: :any,                 monterey:       "34949a1107d18da0d150031d847df282ae3acc5d2abebe34805aa60c7ba1c3d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f905fb61efe5abae0e8b5f73a37afe88c4bd6263367ab1204e158c0f331e30f0"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -242,12 +242,7 @@ class SlitherAnalyzer < Formula
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
-
-    site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[crytic-compile solc-select].map { |p| Formula[p].opt_libexecsite_packages }
-    (libexecsite_packages"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do

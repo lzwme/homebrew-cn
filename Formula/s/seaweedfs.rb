@@ -1,29 +1,20 @@
 class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https:github.comseaweedfsseaweedfs"
+  url "https:github.comseaweedfsseaweedfs.git",
+      tag:      "3.63",
+      revision: "54d7748a4a54d94a31ce04d05db801faeff4f690"
   license "Apache-2.0"
   head "https:github.comseaweedfsseaweedfs.git", branch: "master"
 
-  stable do
-    url "https:github.comseaweedfsseaweedfs.git",
-        tag:      "3.62",
-        revision: "59b8af99b0aca1b9e88fec7b5f27c7d15e5e8604"
-
-    # patch for http assign logic
-    patch do
-      url "https:github.comseaweedfsseaweedfscommit3002087541f2d4447cbccd67c48554b7b86772b1.patch?full_index=1"
-      sha256 "4c40a870e51887ef5c9135809c88c00e3b0297a6f40e20cdff42fc57a0980512"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40fcbad9005c0b2caa281bc375f1c8f94c87ad698640c4dd548ce802eac3de91"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3be52cf562a9aa5da5834b701decc95782b4d0b8c2d408c6f0ac0210be535f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75ec8254fcd0fecf6160748b00edc228ca728ee7bb21c4ca7f0d0a611985cf9e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "79e1d6c7864c61aadef97daf46766121ffdea884dc24980bb03e19e10f83becc"
-    sha256 cellar: :any_skip_relocation, ventura:        "070ed55f7b0d5123d9669c1cba6df29140b7608c5abda425f67bbe1801e7375c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce9c9590541b25dbcf9286bdbce526196b7bf40cfd87cfcd6f88b381a001dda9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ae8626e946251bd57704de64ba9f790fba111f9fffe92da18c7eeced19fd65e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39938ec6cd749243c5b35c58c055d6b9e0817222a21e31cb3ff18a03918af255"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83345ad168277df4705e64e2c0fb3508627dad399c341725f93f7127e75f33e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "660da565de672e490ab0988c6a6a4473035427cc399e2f323e6303e43d11a238"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad4125a03bd8c6c2d2de31d6aae89827d880cb860aaaf54804ac03dee25eceac"
+    sha256 cellar: :any_skip_relocation, ventura:        "6aa71c06cd4eb035262f278c3145645f73afabc21314baf3564e0459cd726551"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f986f806d7a3d58385dd4bbcb247169aa90500e1db27eea5c21d89924a3ae12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b27cdcd60eb711ce07a3cc42d09b6837f45f1e577502a8065ad5bd0b9d62c3e"
   end
 
   depends_on "go" => :build

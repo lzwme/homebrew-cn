@@ -3,19 +3,18 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/32/78/d776689c23d7c666c877362d515dda80394570a89aaadc4ac8466ed1035b/dstack-0.15.1.tar.gz"
-  sha256 "a6301a4507521a8dcb5fa8a94c5f3a010e64f25a57fe1850809c3a5a74ca66c8"
+  url "https://files.pythonhosted.org/packages/4d/d8/ca8cf388657f314bd904b58a6b093f3f43cf1a644d9b240735de33530aa7/dstack-0.16.0.tar.gz"
+  sha256 "6c116083c8da522d5d5566f079050728cf37e641de8b9588f29e85ad0103cf58"
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "392692055a44358e4d5e0fe103f0f210a8ebb7a4867af0b7af4c25a660b5625c"
-    sha256 cellar: :any,                 arm64_ventura:  "7f65c22f923af2526a2b7863b9e4e7da9a79f1236eca939ab3514ef4269ce38e"
-    sha256 cellar: :any,                 arm64_monterey: "d18089b959239dd8cd14e4bc41b3a805da338f11f5b046f99fc9b12f7a36e3a5"
-    sha256 cellar: :any,                 sonoma:         "8c4f92b9a0da67a4fe0fe51f564976c3317940f056c54bf35b3aa22f1cdda6b0"
-    sha256 cellar: :any,                 ventura:        "c92b607b75686466144f7855b06f862c6a04e0daa27eb94efde3ff67e2d08369"
-    sha256 cellar: :any,                 monterey:       "b7c9ea975920212d09020468e5702cc2abcab40ca7b487d52ad02355725e4823"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf76f78dea0183b5e2bfce92f7ffc56ea60729f62dd8e03dda4d7c815ebf912b"
+    sha256 cellar: :any,                 arm64_sonoma:   "d2e1885eeae43a306c247f9e8ebccf1b127b14e1ccf63ac81d327c586c6fcd88"
+    sha256 cellar: :any,                 arm64_ventura:  "822f1aa9d6c9687258c3c92da28c96ac37c097cf826ff292e721d20ec2f8ccf0"
+    sha256 cellar: :any,                 arm64_monterey: "c153fbc473edd0d24bed0b3d4d43c69f24d232f89f25d184dd6328bc3b330611"
+    sha256 cellar: :any,                 sonoma:         "0f3720b6aba5166256881ea03af09c4abfab01ac7722e316db4b2368050966ea"
+    sha256 cellar: :any,                 ventura:        "f06c529b4139d0fb6f2be95161e795c0e4d203cd29a26e3ecc5ad66ba5aac902"
+    sha256 cellar: :any,                 monterey:       "f55d2db1724da5e75ff959ad33dc415c6a9700321177e89b672dbf65f239e0ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88513b057fd53fcf1b49c26fcce0824c336a7bdaadc9e6ba0ddb8673b66679b5"
   end
 
   # `pkg-config` and `rust` are for bcrypt.
@@ -203,8 +202,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/01/d5/33a8992fe0e811211cd1cbc219cefa4732f9fb0555921346a59d1fec0040/fastapi-0.109.2.tar.gz"
-    sha256 "f3817eac96fe4f65a2ebb4baa000f394e55f5fccdaf7f75250804bc58f354f73"
+    url "https://files.pythonhosted.org/packages/61/53/326977db62bf34bbdfc64acb9414e1881af7ea14e8a062fd1c11a8697616/fastapi-0.110.0.tar.gz"
+    sha256 "266775f0dcc95af9d3ef39bad55cff525329a931d5fd51930aadd4f428bf7ff3"
   end
 
   resource "filelock" do
@@ -568,8 +567,8 @@ class Dstack < Formula
   end
 
   resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/cd/50/d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0ac/sniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "sqlalchemy" do
@@ -593,8 +592,8 @@ class Dstack < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/0c/1d/eb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96/typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https://files.pythonhosted.org/packages/16/3a/0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44/typing_extensions-4.10.0.tar.gz"
+    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
   end
 
   resource "tzlocal" do

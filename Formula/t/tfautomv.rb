@@ -1,19 +1,19 @@
 class Tfautomv < Formula
   desc "Generate Terraform moved blocks automatically for painless refactoring"
   homepage "https:tfautomv.dev"
-  url "https:github.combussertfautomvarchiverefstagsv0.6.0.tar.gz"
-  sha256 "e45cc34160e6ea89e41f07126174fcb5e01ec28263651dad1bf703343e9988f9"
+  url "https:github.combussertfautomvarchiverefstagsv0.6.2.tar.gz"
+  sha256 "d89e19c03c7cd1ea1714d091cea751289936b2d52e790fae3a26b23bc445313d"
   license "Apache-2.0"
   head "https:github.combussertfautomv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4915e73c7e998c470165924f66f0225454e170fefad11e4b6abf92b65419fbee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4d1cd5219eb4d9ad4f1a835d513190d262ea1acfdc93f1d47b38f9298a5f00f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0955c21c3dcc781fb8d54723a2676d79f8a0a94eddf424b9f10e6cb62e5fd74e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9639c99c9393ec05b7b76894dfb667084c73f82c5a4b7b4a61cf4e0b03040508"
-    sha256 cellar: :any_skip_relocation, ventura:        "bb51406a75e4ddd8e1756c4846cb85927b892679ac7b12d79b95a6b524b04c77"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba46845e2a03b8ee43fa048d7e2f01b100592570f3f54c2597bed0091e8caf3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9d8d396746564db9bda44b79a675890efe22b03b5b5c95efc99200a4fedb2e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2008e44b8a87c112dedaaaf588ae85d7924c6ae516b990930e3aaa496561681"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7a44d21ae1093c71a98213fd7bc9ee7d3580ef3a892dd6ef4dab6661063c598"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "916ac0746672c339e18cce67240025c827502721985de1370e8b92210b6d8bf2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3c05cf7c115225365f5581be0ea2b83ac903d178b371f2b5bf3c5e905f5b2afa"
+    sha256 cellar: :any_skip_relocation, ventura:        "5dc891bcc1497098c3682f6bc4ecb40c872bb70eafb048118161feed0fa3846d"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc9001cde510f52eefd365d491f494f525b589680c3cc2a6b2fcd396cb6683b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2413e0780e7e9601a1b62263d3fff816f1a10b2b0df145b5fdbb85c0641fa1a"
   end
 
   depends_on "go" => :build

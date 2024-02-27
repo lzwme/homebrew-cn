@@ -38,7 +38,7 @@ class Semgrep < Formula
   depends_on "libev"
   depends_on "pcre"
   depends_on "python-certifi"
-  depends_on "python@3.11"
+  depends_on "python@3.11" # Python 3.12 blocked by imp usage in glom < 23.4.0
   depends_on "sqlite"
   depends_on "tree-sitter"
 

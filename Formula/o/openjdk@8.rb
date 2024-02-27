@@ -10,7 +10,7 @@ class OpenjdkAT8 < Formula
     url :stable
     regex(^jdk(8u\d+)-ga$i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub("8u", "1.8.0+") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.gsub("8u", "1.8.0+") }
     end
   end
 

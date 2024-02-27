@@ -1,5 +1,6 @@
 class FbClient < Formula
   include Language::Python::Shebang
+  include Language::Python::Virtualenv
 
   desc "Shell-script client for https://paste.xinu.at"
   homepage "https://paste.xinu.at"
@@ -15,22 +16,25 @@ class FbClient < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef2a25298e96da7827cf583bb109e200d2a1938c87aff6d96b23fc7319fea7cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27f6ece51837928385e929a0ca73481cdef71e46f55fd9e506bf600bc800bfe5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c959e6058773a5bd27a9e398fa7ce82991d7af7d3d4791c4fb64cb50833a0816"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ac0ee7d92a3549d72f0c4d368beea040c1fbb084811fa1f2c0ba8ff24b31544"
-    sha256 cellar: :any_skip_relocation, ventura:        "865fc29ae1000e103b25c1107cceb2b1a4e2dfbb492eb22616cfd4660c7113f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "8694ad0ea4c4b708c92a0ca47c5ce322d085696017a9ae8b244987e5b2707916"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "648d9e52376f1d0bceebf52a373fa82d90fa0abab0b191b56007596a73019f6e"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "7814e58c7c35286591e3b10cbaeab8fea21e654ae6b14e6f05c60125e10defce"
+    sha256 cellar: :any,                 arm64_ventura:  "88df59a1ebd394d2445e19fa9f218b752c6f9d325700d77b1a2b838ffd520689"
+    sha256 cellar: :any,                 arm64_monterey: "e92cc482d4fb699989e35b141a4a2851963cda5b98cf6ffef6f309f7ac6155b4"
+    sha256 cellar: :any,                 sonoma:         "8e988cc9b581da5231a3ac32a56f49e224b80d67f6c671088190e63895537871"
+    sha256 cellar: :any,                 ventura:        "9900708185c7fd39bc957367d20e6b08c1f321f778abfef9649c6dae0e16b489"
+    sha256 cellar: :any,                 monterey:       "d640af9211e77b5e213f1b4892a1bd5879e375b4d03759b9692a09947f7d4ba1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6db476788ff1f3382c33618fc87f75f8c04c31d55c6fffcdcc6cfb2f53a1575"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
-  depends_on "python-pycurl"
+  depends_on "curl"
   depends_on "python@3.12"
 
   conflicts_with "spotbugs", because: "both install a `fb` binary"
+
+  resource "pycurl" do
+    url "https://files.pythonhosted.org/packages/c9/5a/e68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72/pycurl-7.45.3.tar.gz"
+    sha256 "8c2471af9079ad798e1645ec0b0d3d4223db687379d17dd36a70637449f81d6b"
+  end
 
   resource "pyxdg" do
     url "https://files.pythonhosted.org/packages/b0/25/7998cd2dec731acbd438fbf91bc619603fc5188de0a9a17699a781840452/pyxdg-0.28.tar.gz"
@@ -38,18 +42,13 @@ class FbClient < Formula
   end
 
   def install
-    python3 = "python3.12"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor"/Language::Python.site_packages(python3)
-    resources.each do |r|
-      r.stage do
-        system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec/"vendor"), "."
-      end
-    end
+    venv = virtualenv_create(libexec, "python3.12")
+    venv.pip_install resources
 
-    rewrite_shebang detected_python_shebang, "fb"
+    rw_info = python_shebang_rewrite_info(libexec/"bin/python")
+    rewrite_shebang rw_info, "fb"
 
     system "make", "PREFIX=#{prefix}", "install"
-    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do

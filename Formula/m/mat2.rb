@@ -1,4 +1,6 @@
 class Mat2 < Formula
+  include Language::Python::Virtualenv
+
   desc "Metadata anonymization toolkit"
   homepage "https://0xacab.org/jvoisin/mat2"
   url "https://files.pythonhosted.org/packages/d5/e4/f02d057fe6cf32b68e402c5f86276244105da40161e84ef785b2ae0bf809/mat2-0.13.4.tar.gz"
@@ -6,14 +8,14 @@ class Mat2 < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d029eaa7463e795b24ca8fbbc958aa296acd2e0c229f0f272d7bfc3c689173d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c3f81cda2ad80e7fff2ad6057910983821953d35f3a00e55ff166444803219f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f6f8b108b3c77a2bb9a17a6f4f179e465a307a5ecb827456214ce92a2394e1a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c163a7c500b2caa50a6b4e0dd1f9ab57eaea59acf5a349cafdf575d72b0aec5"
-    sha256 cellar: :any_skip_relocation, ventura:        "6edf65d88a4493625f0b5893778b76fea9bb8e0b502e7ae11684fca21a37f850"
-    sha256 cellar: :any_skip_relocation, monterey:       "78069965b1edffc23c317d6fd38884c641e51ca6db02aa47a6180b8562b63c8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d024a4da451994028b3f3611cfaf1b2202a5fd58473903920ffce173b4031c2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3e360e4c603f6ed59196ec87eb03275d94c27be4bb6b1a4eb52a29b01475873"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa27b885eab427ed223e721cb2417a7a4e9b20d71611f7120a2f92bf9e19eca1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b34c0d2c0bb8d9d03f5b93567833d2af18f355da378cd96c1847fa2b53fbaa4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d7023c75aa32391edeb2b3e5549b87f79380a4c219765cc6626ee08c5e138b9e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6987d4030e5b3894a7f1b5c4d4299e7e0422499b3fb498cd4c35be56d3a2c2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "bfe8a66952bba7ecadd2a28e826094a095bbe6df6cfd094245a33e58507da3ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ac3d34df70eb86cd3145b47d8886c0bebf8b28cfb8e6897110c320090a6e359"
   end
 
   depends_on "exiftool"
@@ -23,8 +25,12 @@ class Mat2 < Formula
   depends_on "poppler"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python-mutagen"
   depends_on "python@3.12"
+
+  resource "mutagen" do
+    url "https://files.pythonhosted.org/packages/81/e6/64bc71b74eef4b68e61eb921dcf72dabd9e4ec4af1e11891bbd312ccbb77/mutagen-1.47.0.tar.gz"
+    sha256 "719fadef0a978c31b4cf3c956261b3c58b6948b32023078a2117b1de09f0fc99"
+  end
 
   # patch man1 file layout, remove in next release
   # https://0xacab.org/jvoisin/mat2/-/merge_requests/111
@@ -33,12 +39,8 @@ class Mat2 < Formula
     sha256 "4c1c57ca8fe1eabea41d66f3ef9bd4eb2bac8ac181fceeefece4b92b5be9658d"
   end
 
-  def python3
-    which("python3.12")
-  end
-
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    virtualenv_install_with_resources
   end
 
   test do

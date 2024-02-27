@@ -13,7 +13,7 @@ class JsonSpirit < Formula
     regex(^json_spirit[._-]v?(\d+(?:\.\d+)+)$i)
     strategy :git do |tags, regex|
       # Convert versions like `4.0.8` to `4.08`
-      tags.map { |tag| tag[regex, 1]&.gsub((\d+)\.(\d+)\.(\d+), '\1.\2\3') }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.gsub((\d+)\.(\d+)\.(\d+), '\1.\2\3') }
     end
   end
 

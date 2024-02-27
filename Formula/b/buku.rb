@@ -10,27 +10,19 @@ class Buku < Formula
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "037f17e7dcc7dded30a95fa369818c1e36989caba338f992ae4177f012b32ff0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8501d6283d2411da8daced39212530523096284bf7b76df6af8b394ae6756bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68dbbad055d9c60edbbe6da48925e794a84704ac5d126a3434aa1d469bc5ab5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "571d030e2dfc682d8d6b3baf8d6e17b5678fce3ffb738cf5a340ca990ad82456"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f1fb3f88246ed3365cd1d11501dd377e903559f3c2c20de25c25cb164701799"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b88ae604d9346cbf223d8fe9bc97aabf80d32ac4ef4b489d55b1f6f16713e78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f6951e795286f784f70eabee16ba12742c71c24dddeec2189c3b64c046aacf1"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54bc3f98c2debe496743aaab4e5c37921d9b008dad17bbc4ab47a0c8981eafcb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f69719f052db25dc67d89df7724e1e0e64c21a5c58cfbbaab6caca374148909"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e17e61ac2ceba71d5919ddc88ba60f918546961f1fa6517d5467b57ade9dff2d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34edd631b154a0107f137810228aa3f16a51c8219b9ddf16701a7f9d561d1e73"
+    sha256 cellar: :any_skip_relocation, ventura:        "3058fd288d2f7f2455616abb4668587cdd870f6b87345b3152b527868cd04248"
+    sha256 cellar: :any_skip_relocation, monterey:       "5d6dba6e3e67b70f6a9f341f42c52939e1e1e45b2119b0a9602cf3897525355d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "867652b95594c2ea2ee4897f67ff754d5393584aa87cf5bac2fab2b2787a0e24"
   end
 
-  depends_on "cffi"
-  depends_on "pycparser"
   depends_on "python-certifi"
-  depends_on "python-click"
   depends_on "python-cryptography"
-  depends_on "python-dateutil"
-  depends_on "python-jinja"
-  depends_on "python-markupsafe"
-  depends_on "python-urllib3"
   depends_on "python@3.12"
-  depends_on "six"
 
   uses_from_macos "expect" => :test
   uses_from_macos "libffi"
@@ -43,6 +35,16 @@ class Buku < Formula
   resource "beautifulsoup4" do
     url "https:files.pythonhosted.orgpackagesaf0b44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094beautifulsoup4-4.12.2.tar.gz"
     sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
+  end
+
+  resource "cffi" do
+    url "https:files.pythonhosted.orgpackages68ce95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91dcffi-1.16.0.tar.gz"
+    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
+  end
+
+  resource "click" do
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "dominate" do
@@ -90,6 +92,31 @@ class Buku < Formula
     sha256 "5dbbc68b317e5e42f327f9021763545dc3fc3bfe22e6deb96aaf1fc38874156a"
   end
 
+  resource "jinja2" do
+    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+  end
+
+  resource "markupsafe" do
+    url "https:files.pythonhosted.orgpackages6d7c59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbfMarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+  end
+
+  resource "pycparser" do
+    url "https:files.pythonhosted.orgpackages5e0b95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46depycparser-2.21.tar.gz"
+    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+  end
+
+  resource "python-dateutil" do
+    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
   resource "soupsieve" do
     url "https:files.pythonhosted.orgpackages479e780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91soupsieve-2.4.1.tar.gz"
     sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
@@ -98,6 +125,11 @@ class Buku < Formula
   resource "visitor" do
     url "https:files.pythonhosted.orgpackagesd758785fcd6de4210049da5fafe62301b197f044f3835393594be368547142b0visitor-0.1.3.tar.gz"
     sha256 "2c737903b2b6864ebc6167eef7cf3b997126f1aa94bdf590f90f1436d23e480a"
+  end
+
+  resource "urllib3" do
+    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
+    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
   resource "webencodings" do

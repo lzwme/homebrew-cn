@@ -8,20 +8,25 @@ class Texttest < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "356098cb25f79a7e9af7bf4b6a2b8480f6affa1ff13e8c863c24313f2060fe0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a6a3c22805677216e4abdd709461ef81ff8ef2d2ee792630ee9b150f32de780"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f77d2351320d6bb33e59ef67b772b37d1bd589cfcfb928e7f38944af2671690"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7f6bd92d9241fadc56fbd829e37927c7b5a12b1e15b2c276366425c300e3d2bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "836a0421a967bf3464adce4d8be9faee8d175a9e62cca8a6f1336d07070b3173"
-    sha256 cellar: :any_skip_relocation, monterey:       "2eae1663be9f971f0d729ff0ee91ed9e0c5e6d7b4b85900f90192de5f7216e07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32fd474b7f1c1090b9d06a302ac520c82c0f78f5431606ac4eca3f9920956e5c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae3a79098c5ee58b1cb655e7b2295edd208201c21683ccbbe5f759ede6feb19e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf446711e2a3519c3e8d80c044a65e569e656f81db55454f5add3f9808c2c764"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71fdef508725b2daec109bf60c342dc4f4d2d5f5dbab07da0f18ed5c4f9da580"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8a7b0e5bb949d8d82148d5b6488bcfc5d936ef5c184d6b298aa97cb7cad94df4"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e4c642521fd8bcb1a1f9bfd6443db1e34f76a6a14c2fabc2ba8d911a00343e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1826bcdea50ad49534c149df8f516874a2aee2d8441e10478413521e2e95165"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65185cb0ea5cc2599c779abec776178b829b78a80d83baaffc8d60ccda25ab67"
   end
 
   depends_on "adwaita-icon-theme"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python-psutil"
   depends_on "python@3.12"
+
+  resource "psutil" do
+    url "https://files.pythonhosted.org/packages/90/c7/6dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2/psutil-5.9.8.tar.gz"
+    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+  end
 
   def install
     virtualenv_install_with_resources

@@ -9,30 +9,40 @@ class CryticCompile < Formula
   head "https:github.comcryticcrytic-compile.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f31dd07198c48b231a9683b77eea0aa302bf12536e64f69648c2410f7df63123"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4570d438dd8aab04d1cf5d9e5cc4be4b662f56a5c1f900adaf78efbf0059659c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d599a53062a80c06271494807b0fc722ba7f7b2028b8bb64f7046a9db358706"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f794ef816da61ca63e3f06bc461f224cb7bf9eaf5305ef9ba4c3ebcd31f41c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "af7f6945c341779d24bce57f102cdbf2e08db514926c07d0f3943b2b391669dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "92c45bd8bcdd102a1edaebd7591e746ca5927b91259f33401e811bc00ecdd836"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0503a4c574aaa345a77b00df4a9dab319e262ef88aec086f406aba6018e3725"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be612b0daababddbff1ed5f046f1be997d47fe55765f9bcd1e37bbabd2ab775c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af421a8964d42cdaac43ee1b9da5f3337236a7fe8406b5e0a3c26d3bcdc6faf9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20b8a552b98d3aede71ce49ed442d3e3fa3ff8f09235a7c0412eac5a62d10712"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0ea40c94787dbf1ae62ed313031b6ebe034894edb3b93b2f2cb04daa0ae24bcd"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f2e53bcf27c14cd1ec5870e3573b678cf0fe68377c3a172332b03e1d4d4a5bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "e41ccdab19068087bffbafeb723084d925fb440286d00dd5a663c0a51c8a55e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6b16c484a0edd03f6ab939dccf46479b8b38b78a6858788f210bdb171172b5f"
   end
 
-  depends_on "python-toml"
   depends_on "python@3.12"
-  depends_on "solc-select"
 
   resource "cbor2" do
-    url "https:files.pythonhosted.orgpackagesbb66b09bf8421645852616044d3de9e632e1131c059f928a53bf46b1bc08e3eccbor2-5.6.0.tar.gz"
-    sha256 "9d94e2226f8f5792fdba5ab20e07b9bfe02e76c10c3ca126418cd4310439d002"
+    url "https:files.pythonhosted.orgpackagesca390d0a29671be102bd0c717c60f9c805b46042ff98d4a63282cfaff3704b45cbor2-5.6.2.tar.gz"
+    sha256 "b7513c2dea8868991fad7ef8899890ebcf8b199b9b4461c3c11d7ad3aef4820d"
+  end
+
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
+  resource "pycryptodome" do
+    url "https:files.pythonhosted.orgpackagesb9ed19223a0a0186b8a91ebbdd2852865839237a21c74f1fbc4b8d5b62965239pycryptodome-3.20.0.tar.gz"
+    sha256 "09609209ed7de61c2b560cc5c8c4fbf892f8b15b1faf7e4cbffac97db1fffda7"
+  end
+
+  resource "solc-select" do
+    url "https:files.pythonhosted.orgpackages60a02a2bfbbab1d9bd4e1a24e3604c30b5d6f84219238f3c98f06191faf5d019solc-select-1.0.4.tar.gz"
+    sha256 "db7b9de009af6de3a5416b80bbe5b6d636bf314703c016319b8c1231e248a6c7"
   end
 
   def install
     virtualenv_install_with_resources
-    site_packages = Language::Python.site_packages("python3.12")
-    solc_select = Formula["solc-select"].opt_libexec
-    (libexecsite_packages"homebrew-solc-select.pth").write solc_selectsite_packages
   end
 
   test do

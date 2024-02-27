@@ -10,7 +10,7 @@ class Icu4c < Formula
     url :stable
     regex(^release[._-]v?(\d+(?:[.-]\d+)+)$i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.tr("-", ".") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
     end
   end
 

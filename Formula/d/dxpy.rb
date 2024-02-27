@@ -3,19 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https:github.comdnanexusdx-toolkit"
-  url "https:files.pythonhosted.orgpackagese1ac5d27b7f1ce923b9a96d254092b2ba3de8c14933133556b8d4f0c26951660dxpy-0.369.1.tar.gz"
-  sha256 "6e83d6c0756ff2b6691c9b789298ef5fdbe3f3df67b8fd90beb8420782219d41"
+  url "https:files.pythonhosted.orgpackages724832516ba7d922e7e7b92b2527cb29f1c948743c193874fb48426caddd6ffddxpy-0.370.2.tar.gz"
+  sha256 "7cb494300e8ae195ff0551708838a2fdaf5f5f68e4575e9014e9749e7186fbc6"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2618381b8fd642b5102ff484c0e16267f39aa14c99c4f2fc2ceb88964227794"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e631144ece5ff0e116e8a6de094e9c24a405625779218f45036d8c5b7cc9dbd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "796e5490e206df08c2a854e29acda8bfc37f4794a6837cbddd12ae1fc71303f8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d8c4e58152f24fa6d5a23f61702047d238bf65750a76db3929ba9b69fd8de8e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf94d1497c066739b422ab430d86bdacefde198541dafb1b0c507f65d525e482"
-    sha256 cellar: :any_skip_relocation, monterey:       "c33fc748615f018504a94944800057752d18d93affd4e72377423b10663120ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d9d13c8a1acf06115d63158aa96daec2fa97dd32690ff7a5ba73ef1eb410f6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83b7c3a6f83f8269dd08b1d07a52afd94bb7a6e7dd6a6084ebcfda9663b6082b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e83d1156b37edd0ec410c3075e32543e6a888e6de92c4a8ac0a653fcd2406690"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "912d2586822c2c6e39e835c354ce13ab51bc14a5e396be8b93c840e3a6caf7ec"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ab66e4a499cd72ee36d7ef7f9985f31e98c0305b13bc9731edb27c763d07758a"
+    sha256 cellar: :any_skip_relocation, ventura:        "53338cb359f29a3eb1e9666a1d65fcdbc296dcd873cb2da70ca1d8a5bd205409"
+    sha256 cellar: :any_skip_relocation, monterey:       "722bb5cbf95bd32331daf00a89203a89d00c2485b675411ff7443e64764e64d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c68a9d1bce87e75c8ccc884f30498c2541f4b06fbde81c719d49298c5fe08b6"
   end
 
   depends_on "python-certifi"

@@ -153,9 +153,9 @@ class GlibcAT213 < Formula
     mkdir_p lib"locale"
 
     # Get all extra installed locales from the system, except C locales
-    locales = ENV.map do |k, v|
+    locales = ENV.filter_map do |k, v|
       v if k[^LANG$|^LC_] && v != "C" && !v.start_with?("C.")
-    end.compact
+    end
 
     # en_US.UTF-8 is required by gawk make check
     locales = (locales + ["en_US.UTF-8"]).sort.uniq

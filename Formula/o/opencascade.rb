@@ -16,7 +16,7 @@ class Opencascade < Formula
     url "https:git.dev.opencascade.orgreposocct.git"
     regex(^v?(\d+(?:[._]\d+)+(?:p\d+)?)$i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
     end
   end
 

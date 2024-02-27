@@ -4,19 +4,18 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/3a/d2/f7a361dfa7f77d5b3d902d75f52acc45cc2a6771d5b9ac490b96f72dca2d/meta_package_manager-5.14.2.tar.gz"
-  sha256 "29f89d1fe1420967096a6c4433cef3985ca3a7fae98a3c449392fb0c81ae3e16"
+  url "https://files.pythonhosted.org/packages/ea/32/a264dab7e8104720b9284c9e881eb47cd2d2ebbf8911bc08c3ec09cb49f2/meta_package_manager-5.15.0.tar.gz"
+  sha256 "ab2bf53f4e2e798a14197ba8f40d81daea638644cb11911f189b3fd07a58f821"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "e1360ae8a019d0095e3d6b5173c1f63a6fe49438d4315fd114dbd1413e4737ad"
-    sha256 cellar: :any,                 arm64_ventura:  "9795f2e3fdef741205dad60b8b9c00179a1aed2eeba7424a5d50ddfaf5abd7e0"
-    sha256 cellar: :any,                 arm64_monterey: "a6c107f99c48f2bd313e533fc684c38756c52de2d1d3a74119a890e0a8c489d1"
-    sha256 cellar: :any,                 sonoma:         "d6ab4379f4ca7f547227ab35e4debc871dd8a443e55c314c1320c05232149602"
-    sha256 cellar: :any,                 ventura:        "3555c82c6713a13c4ad0f09722d70912f1fda3edc07e419b5ba2d72879423bf8"
-    sha256 cellar: :any,                 monterey:       "4673a4f65a463aff217444454c5076b0c365724e089e6dda63cd8c019e6206c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb323e136cde24f98b51e2f47fe5263021a7353657e36a1b4f0e2dd231f5d186"
+    sha256 cellar: :any,                 arm64_sonoma:   "1c2b1cc525c6b9156da27190ae5ee8a19691b93b2fcb87604d3811ed0ede1d51"
+    sha256 cellar: :any,                 arm64_ventura:  "f9d1821367fcd0b729538b53ae967e78dc7fd5e1d0df9e3ac7293c82a2bb45a5"
+    sha256 cellar: :any,                 arm64_monterey: "3f869d0c37f974592009f56a23f2b89f8cf90edb77d9c8292045010c85f96ab4"
+    sha256 cellar: :any,                 sonoma:         "90f84963ac530dab2fe7fdaef5a1696558e46c15026a92296d0518eb48ab3bc4"
+    sha256 cellar: :any,                 ventura:        "dc2183a5190f5682c3a5a3edf87a355f2c142bbedb233ffc911bb552cecbf4c0"
+    sha256 cellar: :any,                 monterey:       "3bd654e09674355c87640179117fb3b20d86421ab4a0d114f6b16189bb819bac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f13319a7bbbf72acbbeef8f4a1a419685626d4617439c448917efd2eaec8c2c"
   end
 
   depends_on "libyaml"
@@ -54,8 +53,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/29/02/dd79eefde09f55b68a943f65ee33522bbc1906a6e2ec83e4369b2b40eed2/click_extra-4.7.3.tar.gz"
-    sha256 "ce4bff859283fb7dc5c8da023bf286e3171ece3555dcb94809843f870d50085c"
+    url "https://files.pythonhosted.org/packages/34/11/238818a752d941fb4999d324ae462448108c8dd2bf2183ede0a2eeeb55c5/click_extra-4.7.4.tar.gz"
+    sha256 "7244e8ad8861c25472cda7d5563cd14d97306272f2335dbe335e567d50ba10fb"
   end
 
   resource "cloup" do

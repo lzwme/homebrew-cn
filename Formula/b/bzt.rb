@@ -3,20 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https:gettaurus.org"
-  url "https:files.pythonhosted.orgpackages9f3480029e0f5d0c9dc598fb805891f1740620bd6125b9ee2aae70c1612e3558bzt-1.16.27.tar.gz"
-  sha256 "e37a5534417de651817c2c7f6701a133d486e4d660026e88729e35bac757a9c8"
+  url "https:files.pythonhosted.orgpackages92a60aba1c89418050fb8bd5e1217897ef533321e874bd4d87ed414a2355f218bzt-1.16.29.tar.gz"
+  sha256 "b1666800901a70327c9788ae4b20c43fce90ca31aa182577a5bbee71d37d3d7c"
   license "Apache-2.0"
-  revision 1
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93a0dc5ef663e3a3488dc31829f3e1b1664b91f0de17ba8489725909e586fa70"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0695f7c4bf3cab24d401bc0b705e3dbca4a1f1972591759dc079094efbad69c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf62b8dbd716049b3249c1eb761393ac525f4204bf68e936bba66cf0745d3b96"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ec8d894cdd97f5f8e6db7d4b3f5a38ec95d075bd339795b6220f77395bc7a00e"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc6e8f3a3c4d941145ba8f67ea881ddd5cd6a530f20b32a0681e6fafd0381b82"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb90cbdb377ee902a5bc0c61de15ef7523576d356c766a5c2ee3db86cc54987d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f4ad56378ed37ec8e0313ffcec8afa8805e91108204a1b26452388ac5277107"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc1fc3d4dec6bbf2a7e7b6f7ec222566048eb5acce1c2ef3233b5b9d234546c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c40f3b641b5904997fcbc63149ac4df78f34a715678259482c1dcb6996d27bbb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55be8a8a06f273da38d25205d581b02b76689c0e83f7f7043b0f2cfa22b919de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7a028bb78569ba20155e3a1d576f525758ce284c1e61a690223ac5f84e6c3547"
+    sha256 cellar: :any_skip_relocation, ventura:        "5abb532856b1c0ebefbe45866120f7435baf4432942bc27c1ef40bc541e058e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "782ca12cb0ba2e346ad90b8ff3ee27ddc98b5379af3c3c9c837aa98ceb735cd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a39c8d4c0018b8db2e5a3fd9c2194e2237d7b81e849fdcc6deffe80da5a1cf7b"
   end
 
   depends_on "cmake" => :build
@@ -60,8 +59,8 @@ class Bzt < Formula
   end
 
   resource "bidict" do
-    url "https:files.pythonhosted.orgpackagesf2beb31e6ea9c94096a323e7a0e2c61480db01f07610bb7e7ea72a06fd1a23a8bidict-0.22.1.tar.gz"
-    sha256 "1e0f7f74e4860e6d0943a05d4134c63a2fad86f3d4732fb265bd79e4e856d81d"
+    url "https:files.pythonhosted.orgpackages9a6e026678aa5a830e07cd9498a05d3e7e650a4f56a42f267a53d22bcda1bdc9bidict-0.23.1.tar.gz"
+    sha256 "03069d763bc387bbd20e7d49914e75fc4132a41937fa3405417e1a5a2d006d71"
   end
 
   resource "charset-normalizer" do
@@ -130,8 +129,8 @@ class Bzt < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages4a15bd620f7a6eb9aa5112c4ef93e7031bcd071e0611763d8e17706ef8ba65e0multidict-6.0.4.tar.gz"
-    sha256 "3666906492efb76453c0e7b97f2cf459b0682e7402c0489a95484965dbc1da49"
+    url "https:files.pythonhosted.orgpackagesf979722ca999a3a09a63b35aac12ec27dfa8e5bb3a38b0f857f7a1a209a88836multidict-6.0.5.tar.gz"
+    sha256 "f7e301075edaf50500f0b341543c41194d8df3ae5caf4702f2095f3ca73dd8da"
   end
 
   resource "multiprocess" do
@@ -155,13 +154,13 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https:files.pythonhosted.orgpackagese2244a69dd119d10e31c4439f910a2a0f71b540b9f835ab60efa1f0f7bcae0c7python-engineio-4.8.2.tar.gz"
-    sha256 "f8609e3afdda318fdc336b4ba2de8dd397bb8f9b8a1b43e56c27330e32c2e34c"
+    url "https:files.pythonhosted.orgpackagesbe1b13caab8337dc0cec96c65226a0fbaa2d1c6ec4ad0fb4faf02b1f2fdc150apython-engineio-4.9.0.tar.gz"
+    sha256 "e87459c15638e567711fd156e6f9c4a402668871bed79523f0ecfec744729ec7"
   end
 
   resource "python-socketio" do
-    url "https:files.pythonhosted.orgpackages7ae12817819a5635a099fda9fc758c51dc2f07996d6928d744639afcf5c5ddbbpython-socketio-5.11.0.tar.gz"
-    sha256 "b03186e04b942088781f6286c13604a853e5e35ed59158c51ff7af22fa032e6f"
+    url "https:files.pythonhosted.orgpackages89d9ceffa05f1cd72717c1677707debcb04654ad99844d87375ed14301536f27python-socketio-5.11.1.tar.gz"
+    sha256 "bbcbd758ed8c183775cb2853ba001361e2fa018babf5cbe11a5b77e91c2ec2a2"
   end
 
   resource "pyvirtualdisplay" do
@@ -190,8 +189,8 @@ class Bzt < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagese27d539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3urllib3-1.26.16.tar.gz"
-    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
+    url "https:files.pythonhosted.orgpackagesdd199e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511urllib3-1.26.17.tar.gz"
+    sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
   end
 
   resource "urwid" do

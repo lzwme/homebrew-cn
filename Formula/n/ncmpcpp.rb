@@ -4,7 +4,7 @@ class Ncmpcpp < Formula
   url "https:rybczak.netncmpcppstablencmpcpp-0.9.2.tar.bz2"
   sha256 "faabf6157c8cb1b24a059af276e162fa9f9a3b9cd3810c43b9128860c9383a1b"
   license "GPL-2.0-or-later"
-  revision 14
+  revision 15
 
   livecheck do
     url "https:rybczak.netncmpcppinstallation"
@@ -12,13 +12,13 @@ class Ncmpcpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ea3916369852777ebcf702726d96c2680aebe785ec4ce7194e0189bf37d63110"
-    sha256 cellar: :any,                 arm64_ventura:  "d7a6d1c099af8e2b2ca77cdd6989b776ca0ed94286da01c4b8e0f328981f8e88"
-    sha256 cellar: :any,                 arm64_monterey: "9b6508ed32d49f365f741d9d9bbc7d54dd1c8cdad2acee15b7f9ce7826517a74"
-    sha256 cellar: :any,                 sonoma:         "f356219b0a86ac55ee3c6706aac0a9383b430f6de98af7e1fe55d24e8bf04e69"
-    sha256 cellar: :any,                 ventura:        "bea0118bf1b94b69696e2b4d068b922a1485e9995a14a168ee18043267989b4e"
-    sha256 cellar: :any,                 monterey:       "19ce924d62932e60bbd9d10b8d3d2ad8620802742fdf5a178b99e3b6e4a32d1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c81e1846564d12174b2a9d428d8cc58ce88ef910050e88f20ae859d851dc70e"
+    sha256 cellar: :any,                 arm64_sonoma:   "c34594758c5354c3262c9abb962b52798ddb5f29120576dba999dfd52ccd9e8f"
+    sha256 cellar: :any,                 arm64_ventura:  "24e22e342621454e72791e81cd98b37bf16a0400c57a6f8fca4d4165624762e0"
+    sha256 cellar: :any,                 arm64_monterey: "e54d5b84632d9ce12deafd47b50a5c2a1faec790082e094b26f45a9844b73d81"
+    sha256 cellar: :any,                 sonoma:         "71dbad3f7d95622b1a5125730db8976b09bedb3939b36a352437837443256df9"
+    sha256 cellar: :any,                 ventura:        "e678e10694dfafed2be4c4904925918e4b2c9f68121d8777e9b6653a01ae61d6"
+    sha256 cellar: :any,                 monterey:       "302668e97b84cb0c9181bd8bd7e1df38e8bb27d8dd675d992a09b8f8f36925b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78257ff21b49cea4d90a6c3f965bc15426571430328e76415cccbc9b35f27d9f"
   end
 
   head do

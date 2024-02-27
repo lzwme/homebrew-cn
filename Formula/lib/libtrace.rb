@@ -10,7 +10,7 @@ class Libtrace < Formula
     url :stable
     regex(^v?(\d+(?:[.-]\d+)+)$i)
     strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub(-1$, "") }.compact
+      tags.filter_map { |tag| tag[regex, 1]&.gsub(-1$, "") }
     end
   end
 

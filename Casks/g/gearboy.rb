@@ -6,5 +6,10 @@ cask "gearboy" do
   name "Gearboy"
   homepage "https:github.comdrheliusGearboy"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   app "Gearboy-#{version}-macOSGearboy.app"
 end
