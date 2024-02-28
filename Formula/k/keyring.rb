@@ -8,17 +8,16 @@ class Keyring < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "036f54c565a93f9f0b909b69cd45ff1f72dfe81cc2876960d6a3fd905982d1f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4613f7464bdbb9f507d0ad52d856ac09867053f54db651b82a6e3f60e83376df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b59e21e3fc9edce1dc5aec35ccdef53d84e9afba9a5d02e76eade3aac190878c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "179dbca134482ef6704d5659448e5a94cf020b5b5524b2bcd49c6b953889bfdd"
-    sha256 cellar: :any_skip_relocation, ventura:        "8744251e993d35ad520223cb0ef42c1c17e08c05c2f9eb478064dac88d8b3be3"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e4abd8454ae73eb8589945406fa20ae7ef6fae82d683a440f018b154c29f13f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8a1500909e30e1a614a4a4127a53ea0503482d534a2bf28e0370803d6618192"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d08b487a5a1172b44b65495bf9a99e1e56d89f29755dfdb0a912ea38fefba5ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a47b6d3942a8df2bd420f63a2f6c9c3977ff8eb17a25082dc765dc698a8280f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46a7321e4041d80a087470009c21b37e5a637ce0c899366de395f6d09328c451"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2a9a23bbf942cd409f3b059820e20b205a9fe671f84fdb625414d28a5df69a8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "9f389493905aef2527302f04b3ceb84204ba36856994d542c99e740288e1330d"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa654c84b3afb735b167b7e136c9280880edb73e0a89b8a93ed32ae143fccaa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1810591f26ae54391a5f7d117b6764b6d2fc393f5f503280c07bcb7c6789551b"
   end
 
-  depends_on "cffi"
-  depends_on "pycparser"
   depends_on "python@3.12"
 
   on_linux do
@@ -35,29 +34,19 @@ class Keyring < Formula
     end
   end
 
-  resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackages3344ae06b446b8d8263d712a211e959212083a5eda2bf36d57ca7415e03f6f36importlib_metadata-6.8.0.tar.gz"
-    sha256 "dbace7892d8c0c4ac1ad096662232f831d4e64f4c4545bd53016a3e9d4654743"
-  end
-
   resource "jaraco-classes" do
-    url "https:files.pythonhosted.orgpackages8bded0a466824ce8b53c474bb29344e6d6113023eb2c3793d1c58c0908588bfajaraco.classes-3.3.0.tar.gz"
-    sha256 "c063dd08e89217cee02c8d5e5ec560f2c8ce6cdc2fcdc2e68f7b2e5547ed3621"
+    url "https:files.pythonhosted.orgpackagesa58aed955184b2ef9c1eef3aa800557051c7354e5f40a9efc9a46e38c3e6d237jaraco.classes-3.3.1.tar.gz"
+    sha256 "cb28a5ebda8bc47d8c8015307d93163464f9f2b91ab4006e09ff0ce07e8bfb30"
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackages2d733557e45746fcaded71125c0a1c0f87616e8258c78391f0c365bf97bbfc99more-itertools-10.1.0.tar.gz"
-    sha256 "626c369fa0eb37bac0291bce8259b332fd59ac792fa5497b59837309cd5b114a"
+    url "https:files.pythonhosted.orgpackagesdfad7905a7fd46ffb61d976133a4f47799388209e73cbc8c1253593335da88b4more-itertools-10.2.0.tar.gz"
+    sha256 "8fccb480c43d3e99a00087634c06dd02b0d50fbf088b380de5a41a015ec239e1"
   end
 
   resource "shtab" do
-    url "https:files.pythonhosted.orgpackages725c6614a030e5308c244f3fb7ada978d3860720d8dc69522c651d3052c50e8cshtab-1.6.4.tar.gz"
-    sha256 "aba9e049bed54ffdb650cb2e02657282d8c0148024b0f500277052df124d47de"
-  end
-
-  resource "zipp" do
-    url "https:files.pythonhosted.orgpackages5803dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6zipp-3.17.0.tar.gz"
-    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
+    url "https:files.pythonhosted.orgpackages18955691f59ef352d45017863bb6082d3c046a7cee2672458b4aa1850a12904ashtab-1.7.0.tar.gz"
+    sha256 "6661c2835d0214e259ab74d09bdb9a863752e898bcf2e75ad8cf7ebd7c35bc7e"
   end
 
   def install

@@ -1,12 +1,12 @@
 class Vcsh < Formula
   desc "Config manager based on git"
   homepage "https:github.comRichiHvcsh"
-  url "https:github.comRichiHvcshreleasesdownloadv2.0.7vcsh-2.0.7.tar.xz"
-  sha256 "471e720420d1a8537284fd0f7e8a36ba99fbb78621e61c5380d2a632d698ff4f"
+  url "https:github.comRichiHvcshreleasesdownloadv2.0.8vcsh-2.0.8.tar.xz"
+  sha256 "560440defe4f20ac22ce65e873c7ff60ca0c08318524afe6dae86adc4b13d714"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "08f63397ce83b0a89835a45a941af3eb6d7932e6297e86d67dff31d178be4ff2"
+    sha256 cellar: :any_skip_relocation, all: "d7917b8660f585cc6bf699f74d25d920d855390e2ea526fa27fb76ab26159e53"
   end
 
   def install

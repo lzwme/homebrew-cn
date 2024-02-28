@@ -1,22 +1,19 @@
 class Microsocks < Formula
   desc "Tiny, portable SOCKS5 server with very moderate resource usage"
   homepage "https:github.comrofl0rmicrosocks"
-  url "https:github.comrofl0rmicrosocksarchiverefstagsv1.0.3.tar.gz"
-  sha256 "6801559b6f8e17240ed8eef17a36eea8643412b5a7476980fd4e24b02a021b82"
+  url "https:github.comrofl0rmicrosocksarchiverefstagsv1.0.4.tar.gz"
+  sha256 "130127a87f55870f18fbe47a64d9b9533020e2900802d36a0f6fd2b074313deb"
   license "MIT"
   head "https:github.comrofl0rmicrosocks.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54e0b8dd4c6bdf6131af712c4c9158f735405508d5056553eb8d6b93ff89ba1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "291f03d019abfd665fa4b4fe413f4e85bd9b77b1d1f2b1c9dc3d179378b54401"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7b5b8fa1a3ab00cb45bb1de97e67d53ac12bc04a5c9366b287eec91ab290400"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c609eb83c72039c8c826ba7377758738a5889d82951da4c61c4598245e7e280"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c9164258df5668cb037661fa2a698b0a83bb5a43d44a4310357da211c48a93d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "46a56ad581517235d64822fb680616aaa500cd6c206d31cd09ddaedc23cef702"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba6beacd676cf505ea4e865f0c6f664f4d2cdce2fd5ed338c34077b9c92522ba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4b9ad2d9aaca92f430fe651b86a7a83323624f812c083264a7479ddcd29241b7"
-    sha256 cellar: :any_skip_relocation, catalina:       "aa5872429094462b4147aa020e0c0d79ad93e7a58c347b4c20af967f937f2e32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8477f5acb8120732c5bda2642a694a40ac93bdc7aa0b744b600e2d1761fcd6c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f810e991f89efe41251e4b279c3acc7ad9162b277626ef583da651a3efa2415"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d93dbf5c70af611d6a8cd913fe2d10c45a8b71d0a77c91eb5a2e4fc960caebb5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c52e86caf306cdc0a23441f96c38559b69c0f8b1e1104990a3f87051d860f6e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6cdb6bbb1ebca5b3e12df5df334ca8ce23cc272bfb81afc1ecfe69bcbbf84041"
+    sha256 cellar: :any_skip_relocation, ventura:        "4132e8ff871b994ccffc35fd5c2534af6793bbe4cc2b6a2163a9df54bd75a0da"
+    sha256 cellar: :any_skip_relocation, monterey:       "690acb24c9ec24c0c646ba60e5ae95164735240d48e473e33ae3ef1ca38d6ade"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "379340265a1a559df23609b12a525d32d1d71dad8722c1f03c6cc9223390adef"
   end
 
   def install

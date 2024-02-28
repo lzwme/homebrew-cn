@@ -6,15 +6,21 @@ class Wiiuse < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "ec4211428d8a023e0943cdbf200bf44664ba76db66d50289b8d7992af7452dea"
-    sha256 cellar: :any, arm64_ventura:  "43ee0b074e08947d548203b93f4d7c34458bdbdea86827ebc64489000937b715"
-    sha256 cellar: :any, arm64_monterey: "80b2f906e3e35ad7597eb227fb93a3fc51c3ad219d774e3670c7d796317487d5"
-    sha256 cellar: :any, sonoma:         "a35dd06aeca333b8b9be31cccddf6c53ce6ff5cafb93fefc14fb4454dc860d4a"
-    sha256 cellar: :any, ventura:        "72b23904cd146f1a6a3a82da8a169c8c44c32028d264a5604e43f66cc746b91d"
-    sha256 cellar: :any, monterey:       "332cfd221b67fef580e29d75d5f28ba362ed314c6c5d229321acead3a8dcfbe6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "064957c4b98791d37e374c115eda18ab973c3fb28121e2c21948249b28101def"
+    sha256 cellar: :any,                 arm64_ventura:  "d28f310e6c24c3e2edc8f21831ccedf4a0db4b3460a0efb62ad0824edce82dc0"
+    sha256 cellar: :any,                 arm64_monterey: "0f4fb0dc5bb825e093e2122ec79b3bfcc581977139084a76342fd84313e945f6"
+    sha256 cellar: :any,                 sonoma:         "e8690ae4966a02202b43a7286d566b38ce4b0cc8f41e9be2741035514606f6fe"
+    sha256 cellar: :any,                 ventura:        "76a3830992fa1357910d51d27a55cb0d80380da12d66940260bb33c4580b816a"
+    sha256 cellar: :any,                 monterey:       "1456cece746747961b930550f319b1a2985d15afeadb4be526ae4d4b9260614a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c4b00c264565984ad37ebc29999601cc7780303f7015ee7575c21d03e5ba7c5"
   end
 
   depends_on "cmake" => :build
+
+  on_linux do
+    depends_on "bluez"
+  end
 
   def install
     args = %w[

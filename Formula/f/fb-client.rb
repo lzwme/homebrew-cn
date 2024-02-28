@@ -7,7 +7,7 @@ class FbClient < Formula
   url "https://paste.xinu.at/data/client/fb-2.3.0.tar.gz"
   sha256 "1164eca06eeacb4210d462c4baf1c4004272a6197d873d61166e7793539d1983"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https://git.server-speed.net/users/flo/fb", using: :git, branch: "master"
 
   livecheck do
@@ -16,14 +16,13 @@ class FbClient < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "7814e58c7c35286591e3b10cbaeab8fea21e654ae6b14e6f05c60125e10defce"
-    sha256 cellar: :any,                 arm64_ventura:  "88df59a1ebd394d2445e19fa9f218b752c6f9d325700d77b1a2b838ffd520689"
-    sha256 cellar: :any,                 arm64_monterey: "e92cc482d4fb699989e35b141a4a2851963cda5b98cf6ffef6f309f7ac6155b4"
-    sha256 cellar: :any,                 sonoma:         "8e988cc9b581da5231a3ac32a56f49e224b80d67f6c671088190e63895537871"
-    sha256 cellar: :any,                 ventura:        "9900708185c7fd39bc957367d20e6b08c1f321f778abfef9649c6dae0e16b489"
-    sha256 cellar: :any,                 monterey:       "d640af9211e77b5e213f1b4892a1bd5879e375b4d03759b9692a09947f7d4ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6db476788ff1f3382c33618fc87f75f8c04c31d55c6fffcdcc6cfb2f53a1575"
+    sha256 cellar: :any,                 arm64_sonoma:   "7ca84db50325eb47477dfcaa32aa9ded3d935e2de1d36e95049f9f76936a1f3c"
+    sha256 cellar: :any,                 arm64_ventura:  "afe0f6ffe32e0e5bc872fb7c6038fc4087f8130fdbb67b9ace184f0e55eb42a9"
+    sha256 cellar: :any,                 arm64_monterey: "866f9e06cb09122309446292c006dc945c6fe38a0be8083de7a0f50bbe642194"
+    sha256 cellar: :any,                 sonoma:         "7d196e29d73b69e9a391d8372613238f5e44cd846ed9fc56dd57c0cfb29bd2f5"
+    sha256 cellar: :any,                 ventura:        "6b11d92dfb320d58be7ce9583b3146182b729837906f226368c82638144a5a6c"
+    sha256 cellar: :any,                 monterey:       "71e82fb32bfa647c809cf3c9fde453abcfc6dc42e01806409202b915dba08013"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9841ad1fd59741555e6209c7259e152e9ec354cbc4514e41377460008baf0c6b"
   end
 
   depends_on "curl"

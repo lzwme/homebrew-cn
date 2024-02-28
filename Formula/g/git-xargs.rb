@@ -1,8 +1,8 @@
 class GitXargs < Formula
   desc "CLI for making updates across multiple Github repositories with a single command"
   homepage "https:github.comgruntwork-iogit-xargs"
-  url "https:github.comgruntwork-iogit-xargsarchiverefstagsv0.1.10.tar.gz"
-  sha256 "316021d2c2e676acea7a44dac1ddc1964add5b576b1830bc2116fd8be2a38dda"
+  url "https:github.comgruntwork-iogit-xargsarchiverefstagsv0.1.11.tar.gz"
+  sha256 "163947cc9647b267f4ad52be04b27835d332b81e97d2fafc7ff583ab17932aba"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class GitXargs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f44c6ea45fb6adb06b9cb326afa38154eb3b48cc0f961e63778fa2b2a36c550e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4b2a545083fc33f7230ad54752503cbebe75f1b8a144cb0327a7644e538d4ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4b2a545083fc33f7230ad54752503cbebe75f1b8a144cb0327a7644e538d4ee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4b2a545083fc33f7230ad54752503cbebe75f1b8a144cb0327a7644e538d4ee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d7ad994e74ae4f0d06e09858a3dc5069d6a0b06b88660d2f98e6c272ad8d934f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b228796b609314540bcda802d77a0c58ed2ade54ddb460bec389e1769273f68a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b228796b609314540bcda802d77a0c58ed2ade54ddb460bec389e1769273f68a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b228796b609314540bcda802d77a0c58ed2ade54ddb460bec389e1769273f68a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "199d72651a5ec57bacfc8dffd387205bb4d83d94f9767f07706a0a4d8dd70a96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5744688092b131063e03cff3e5b4296454034a676969ce876f2a60c20098ffc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c5f8b0819584d6ab7fc754c00fba6378e2c516b6a16892e2b61b6c0d6b94cbd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce1925921de92cfe8c090ed7ef3feadb73d4e35096206522c35f072f73db0dd2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "04a14bf2456b204fb19af32f48b82fc516beb70c4b363f6d529f135463cf2910"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b666cf6d66317160e4c2d17b11305fe42bbd1d5ad906153f276ec74eb4d0a35"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf5f928741816c3d2a24216a30b3cc9dccc3c21a3beddd2887e5e63e69af1877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05a2bcdc53dc8f8a42ff0b5d9bcab9041c736a8b9638c3da96fbbf55d354e2e1"
   end
 
   depends_on "go" => :build

@@ -512,6 +512,7 @@ Homebrew-homebrew-core/Formula/b/bltool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluepill.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluetoothconnector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blueutil.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bluez.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bmake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bmon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bnd.rb, Homebrew/homebrew-core, 0
@@ -1696,7 +1697,7 @@ Homebrew-homebrew-core/Formula/f/fdclone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fdk-aac-encoder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fdk-aac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fdroidcl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fdroidserver.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fdroidserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fdupes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/feedgnuplot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/feh.rb, Homebrew/homebrew-core, 0
@@ -3222,6 +3223,7 @@ Homebrew-homebrew-core/Formula/l/lsd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsdvd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lsix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsof.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lsusb-laniksj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsusb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lsyncd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ltc-tools.rb, Homebrew/homebrew-core, 1
@@ -4683,6 +4685,7 @@ Homebrew-homebrew-core/Formula/p/parquet-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parrot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/partio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass-git-helper.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pass-import.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass-otp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passenger.rb, Homebrew/homebrew-core, 1
@@ -5110,7 +5113,6 @@ Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-magic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
@@ -5123,7 +5125,6 @@ Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pluggy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-pycurl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
@@ -7174,6 +7175,7 @@ Homebrew-homebrew-cask/Casks/a/anytype.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ao.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/apache-couchdb.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apache-directory-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/apidog-europe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apidog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apifox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/apipost.rb, Homebrew/homebrew-cask, 0
@@ -9388,6 +9390,7 @@ Homebrew-homebrew-cask/Casks/m/morpheus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mos.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mosaic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/moscow-ml.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/motion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/motrix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/motu-m-series.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mountain-duck.rb, Homebrew/homebrew-cask, 0
@@ -10956,7 +10959,6 @@ Homebrew-homebrew-cask/Casks/t/truhu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trunk-io.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tsh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ttscoff-mmd-quicklook.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/ttu-base-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuist.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tunein.rb, Homebrew/homebrew-cask, 0
@@ -11344,6 +11346,7 @@ Homebrew-homebrew-cask/Casks/y/yojimbo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youdaodict.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youdaonote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youku.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/youlean-loudness-meter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youll-never-take-me-alive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yousician.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/youtrack-workflow.rb, Homebrew/homebrew-cask, 0

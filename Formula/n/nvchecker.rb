@@ -6,16 +6,16 @@ class Nvchecker < Formula
   url "https:files.pythonhosted.orgpackages0be21d749d02d1625529571cc01aad4e3e23d834fbe58bfca1a2bf3bb86a8b65nvchecker-2.13.1.tar.gz"
   sha256 "50594215ebf23f12795886f424b963b3e6fab26407a4f9afc111df4498304ee3"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "15676607faa65895cf4e1c47d606d506f60211e35df2361210debd9ba0227f81"
-    sha256 cellar: :any,                 arm64_ventura:  "d19bca13d7b1f3fe0d122f9e26c6002bba2fad7a03227b8c3886e8b1a25aaf63"
-    sha256 cellar: :any,                 arm64_monterey: "8d4e1467f98657bd8a3237c36da8f7c19d418f2febbae052f133f41521833a37"
-    sha256 cellar: :any,                 sonoma:         "ccc85f1647cfc6d288496e9cc22f90909f3660017435fadc925b0f400da0ec85"
-    sha256 cellar: :any,                 ventura:        "91e6c93314be29f47dee7d7093aa92c1d630455d89c48b35ba2f239e6a2d628f"
-    sha256 cellar: :any,                 monterey:       "9232612732d9a8be1f5fa6a3e22d232f5624f5032a0ea95425f4a7b4db92a51d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e51c6de1a0e2d00255788056ef5679294aa41a532b38fb6c0da3109457bc05dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "720518e3f156801f589c5407090e8fd4547fe91e62c0e161b5c0c3912b570733"
+    sha256 cellar: :any,                 arm64_ventura:  "2f348aa830221292afe8fdbebf00f19dce9e52d486ee8d75412afcb14be8a374"
+    sha256 cellar: :any,                 arm64_monterey: "663ccc015b0c025732c9da9b89e0d4b408a898156bc6ba9430188f9c78285390"
+    sha256 cellar: :any,                 sonoma:         "5a926d76c15d4f707431d505ec32bbe7d33d7885786a9b9d421fae552fbfdb53"
+    sha256 cellar: :any,                 ventura:        "d2bc59bf752e88b7de2bfd2c649a812c35aeb1d560db5650fbdd021d05b0cf42"
+    sha256 cellar: :any,                 monterey:       "ed5e9d0d47e9820bc4f7910ad4ef69b608065a9689118a6cd2a74acf7a494fc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5c21e5484536036f2659e9fc84190eabe28156a3abd8ec5f29f794315b778c9"
   end
 
   depends_on "jq" => :test

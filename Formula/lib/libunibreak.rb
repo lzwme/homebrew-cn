@@ -1,8 +1,8 @@
 class Libunibreak < Formula
   desc "Implementation of the Unicode line- and word-breaking algorithms"
   homepage "https:github.comadah1972libunibreak"
-  url "https:github.comadah1972libunibreakreleasesdownloadlibunibreak_5_1libunibreak-5.1.tar.gz"
-  sha256 "dd1a92d4c5646aa0e457ff41d89812ec5243863be6c20bbcb5ee380f3dd78377"
+  url "https:github.comadah1972libunibreakreleasesdownloadlibunibreak_6_0libunibreak-6.0.tar.gz"
+  sha256 "f189daa18ead6312c5db6ed3d0c76799135910ed6c06637c7eea20a7e5e7cc7f"
   license "Zlib"
 
   livecheck do
@@ -14,15 +14,13 @@ class Libunibreak < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3e2150380d94e0adf1aba9eaa99db4684a02894f285b639b1480803f494d9277"
-    sha256 cellar: :any,                 arm64_ventura:  "7dfc308bb0fdaf546e5d27a9c0c871778231e8f8624e5cf375da8e634b9e21f4"
-    sha256 cellar: :any,                 arm64_monterey: "83a5da767d81cc13dbd79a926769487ad9e27b312a064d6d103116045ca00e69"
-    sha256 cellar: :any,                 arm64_big_sur:  "8d491d6d388f52ec3eb2f8966e5cb996ccf1453d11da714d6eff56c66af0af78"
-    sha256 cellar: :any,                 sonoma:         "e785da6b43150cf0459775758b3a0ad841fce35184dc23ca99e7a25f12f9bde9"
-    sha256 cellar: :any,                 ventura:        "5dd562fc1618a99274e48e1d1401134bf64af893b2659bbb61167885e340b55f"
-    sha256 cellar: :any,                 monterey:       "6a12dc2fefb6fa8d558194d964410f0f4858415749898a9107902a2762a9a177"
-    sha256 cellar: :any,                 big_sur:        "b030a2efa4e9ef197a28a6db5b174a0682a757920ddb93d569aea159d88545d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2603a6cda73dad46b8929b3a155aa5326fa74c1ed927b812b4fc404e547dbba"
+    sha256 cellar: :any,                 arm64_sonoma:   "95340a8ce8dbed734050241695e3a2d0f3ea65f9e925e996ba17dc1975e98530"
+    sha256 cellar: :any,                 arm64_ventura:  "e768ed6928fe22d39cf7b14080bc2ff103d04712aa2b0125b09d4a0a93bb185e"
+    sha256 cellar: :any,                 arm64_monterey: "e2b5ed031a0a55518b11d6650ba1677be0b90fc8b2df8999e2b77d6aa7193099"
+    sha256 cellar: :any,                 sonoma:         "148c48b957bb99c3c201db782ec6b4bfaa718eeef3e20b99ed7702504258f999"
+    sha256 cellar: :any,                 ventura:        "a5f4cf2c14e3052df8c5d8ab8ce7e370d4390b16b9b82515e1bdde4606ad24ba"
+    sha256 cellar: :any,                 monterey:       "a4975936199847a98806912b15546e86403b6c792a66fb5ca9fdb454ab861d80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8e6b4bf0cf7bf07030458920bc48274b8fef96a67f022f2a03947e6276f162"
   end
 
   def install

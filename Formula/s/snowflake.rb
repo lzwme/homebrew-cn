@@ -1,19 +1,19 @@
 class Snowflake < Formula
   desc "Pluggable Transport using WebRTC, inspired by Flashproxy"
   homepage "https://www.torproject.org"
-  url "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.9.0/snowflake-v2.9.0.tar.gz"
-  sha256 "7a58e8006e6716249741917e0d58a70d07e15a8b3d7f10737c8bb4a1134b5e8c"
+  url "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.9.1/snowflake-v2.9.1.tar.gz"
+  sha256 "b3d35ed3c271e3c569c5b136fb1cea2ff9702b09f8adc3ae1efbe4236316eeb1"
   license "BSD-3-Clause"
   head "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bff48f83868d6a4d5933abc99805d566c4ebc9207802a56284c1157726bf38b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85005b08500abab9f0df44f3647c8df6dede6ab45af5fb0edc9b0e5064f649f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "136611d07fd7337ab4aa65b8e99d35485b6ac3ff27f4252e8985956c5e2caa26"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5cc87cb9b690091c64d384557c0b1b97257af89917536da820624de8df050a66"
-    sha256 cellar: :any_skip_relocation, ventura:        "870df28980252130de470fbfc7287bc6764024e4f3eff85388472eb5a9c002ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "d0cbb18f70206a4dd00f4581e4d44fe2545a3cf11683aaa2a54cba3596dcb1f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbd9fa03d0092ce94f0c93fc585f66de28e397cb88ab5201d0cf114c16fb8e40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0402d2a97799ffb633c08610f9e32387b666aa2395f9512527c7c5d64039339"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2e477c7473801fb8c04c07b7c329860b159fee39e220de90e19827d2362f72a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "56515cf7a2db6560703a09ab7196e917c8ef87468418a99e2c488de139c1aed0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6a52eddbfc53cb3ad2c31f037bbb9e6f8125da610a0839ab9114cf7c21ee606d"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c34a4d3673dd56a05257f5a59e4b38e59eabbc0bfab2cc75a5fb2a1151df397"
+    sha256 cellar: :any_skip_relocation, monterey:       "e622fa31088b078ddbaae868309f326aa8c79b8e70b3df9a3ec2c13f25f80314"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fd1e4b05e4a7aa1bb65e303634ff1dd91c6d0242c026ba39b82449cda462f14"
   end
 
   depends_on "go" => :build

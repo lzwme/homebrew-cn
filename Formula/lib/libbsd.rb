@@ -1,8 +1,8 @@
 class Libbsd < Formula
   desc "Utility functions from BSD systems"
   homepage "https://libbsd.freedesktop.org/"
-  url "https://libbsd.freedesktop.org/releases/libbsd-0.11.8.tar.xz"
-  sha256 "55fdfa2696fb4d55a592fa9ad14a9df897c7b0008ddb3b30c419914841f85f33"
+  url "https://libbsd.freedesktop.org/releases/libbsd-0.12.0.tar.xz"
+  sha256 "f741a3bc75162ba19f2f6666076a7961cd75dc93c234e9be4594da1e6f848cfb"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,7 +11,7 @@ class Libbsd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c5b54c2fe0275d2fd97145ca6f5f772c4a46da02cc9b212835a6c7d8a528e009"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aaf6688e821cb7bd671ccf9c5a7dcdd1b20d9e26e7d746ea9214af6ba7060156"
   end
 
   depends_on "libmd"

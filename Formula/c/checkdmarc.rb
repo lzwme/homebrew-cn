@@ -9,17 +9,16 @@ class Checkdmarc < Formula
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d22f2a531ff18bbf1fef11ae7da3bd47de84323c18570ab0605dce1025ab137"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67ef16c3fee807d9bdf5cdc172f7ab80d650bb07c80afb1522f83f48d8f35cc2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b799a2b32be404eea62f364342f8b31210482f5fbc31dc9fb0166150e3b9b636"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c0d0aba92d9a90ea4c9eda1424b5085bfc8b50ad4d4c00a6e84a0b70cb4d1c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "112d26c09b2f4e370202e231f5efe5b98fe5b829b87e1ce9d095f644d824ecd4"
-    sha256 cellar: :any_skip_relocation, monterey:       "98f5b01abc3226081df3a912298075c0716ee9dad14f0423c729b01b42697804"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48c6901b59644db432ff9bd1066b49179b4cfdfc9586f78316483f83e58fee21"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e879dc5e0eb5e96fa1b51aa35748d5777e56b6db3e314862fe4c3c14a4d7d811"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d89cb1eca4f85275435a40929235b1f118266db215e7133c57ad4955a3dbc3b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ace84c6362acb046f17d41a1c45ad653c099b0424b486ee07157964799964e07"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5a794d3fbef096e700eb41af80ec5bc2a1c5a902df2890b732b51760e958ed09"
+    sha256 cellar: :any_skip_relocation, ventura:        "b83b7ffc0e31c3c64fdc018e09b6ca36bb807724b056a830a1da88b8f81b8e6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "87056d4ef13932674a2f4b65a4993ccfd71cd5f1743d7c26464c930a002c6ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edd4eb656db150fb1c31164af9cc5622e14c7cc51a9d85e7ca9e19971ece9d88"
   end
 
-  depends_on "cffi"
-  depends_on "pycparser"
   depends_on "python-certifi"
   depends_on "python-cryptography"
   depends_on "python@3.12"
@@ -30,8 +29,8 @@ class Checkdmarc < Formula
   end
 
   resource "dnspython" do
-    url "https:files.pythonhosted.orgpackages652d372a20e52a87b2ba0160997575809806111a72e18aa92738daccceb8d2b9dnspython-2.4.2.tar.gz"
-    sha256 "8dcfae8c7460a2f84b4072e26f1c9f4101ca20c071649cb7c34e8b6a93d58984"
+    url "https:files.pythonhosted.orgpackages377dc871f55054e403fdfd6b8f65fd6d1c4e147ed100d3e9f9ba1fe695403939dnspython-2.6.1.tar.gz"
+    sha256 "e8f0f9c23a7b7cb99ded64e6c3a6f3e701d78f50c55e002b839dea7225cff7cc"
   end
 
   resource "expiringdict" do
@@ -45,8 +44,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackages466fadedac651a859749f87620b80a2a3671374580153a0577bafeabd48996c0publicsuffixlist-0.10.0.20240108.tar.gz"
-    sha256 "2d15301cbef4b5ecc9bfa47b38959af73350915748d44b2f91db2a8fc3b98d24"
+    url "https:files.pythonhosted.orgpackages76f796907e9620a5d44dae7d8a22c412853dcb10ea764ef4116d452d0644c950publicsuffixlist-0.10.0.20240214.tar.gz"
+    sha256 "45a206c5f9c1eccf138481280cfb0a67c2ccafc782ef89c7fd6dc6c4356230fe"
   end
 
   resource "pyleri" do
@@ -65,8 +64,8 @@ class Checkdmarc < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages36dda6b232f449e1bc71802a5b7950dc3675d32c6dbc2a1bd6d71f065551adb6urllib3-2.1.0.tar.gz"
-    sha256 "df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
+    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Gitea < Formula
   desc "Painless self-hosted all-in-one software development service"
   homepage "https:about.gitea.com"
-  url "https:dl.gitea.comgitea1.21.6gitea-src-1.21.6.tar.gz"
-  sha256 "b62c568a98951ee81a713cc1bab7607e22e72b25430dca823e5cac8f60e85a38"
+  url "https:dl.gitea.comgitea1.21.7gitea-src-1.21.7.tar.gz"
+  sha256 "77fdc13ce49ecfb3365e1db1f47d8ab03219ebd3c78a71c8cd0e9e92dff259ab"
   license "MIT"
   head "https:github.comgo-giteagitea.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Gitea < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72c7c219bb56af90de6173af1f907405fcf74469c7add695ba44808f66d8d731"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94237ab2bcd25a4bb0a165895f7110527e514201444268b370f3c9f95bf6333e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13cc18c4ba99f4b3947d1a2d2891b64e616686c5dec983d5750438221e26c96b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "012a3e08233cdd2073ec513df147b25d510bf10aafa483e337b6d7e3c352e74e"
-    sha256 cellar: :any_skip_relocation, ventura:        "86d873a161a9038baa3e4c9302ff4b596e2f896277626681e6ee9941e8f95597"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c44440547844a1ec0c2ad6299147d76e5dbe6a3f71d4e259a00195e079743b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f409637dbe59713a94ab455124aedc18075cfc3737260e533d8c6e22b1d88d9d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0407b7ea182d337257e0f79caf5261db3e1949099d1e3ede25c2de24155223c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b10624e83653f5c6e132fe12ea4329bbb54246d10f4bd4b5e426d7e884d0b0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03fc9b52d3fb91fb7eb0ec9d0020cc9a32556633d17dc907e434ab6288e2b934"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0396333d42721709ec013ddcd1ea7175379681f2fffa60f3e78e245c045ccbcc"
+    sha256 cellar: :any_skip_relocation, ventura:        "ace819fec9139db35d5e0231300db95f9cc37b4d87c71e6ee249711b74b241d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "f33f68f8b88edcf8db5494ebcce1be313599b55037c1c97c8d5864f14fec2f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb7eb0df6a2842161d94191e189adb6c89654eafcbfad420b5d2f496d2931974"
   end
 
   depends_on "go" => :build

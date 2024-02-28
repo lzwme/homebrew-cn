@@ -4,17 +4,16 @@ class Libass < Formula
   url "https:github.comlibasslibassreleasesdownload0.17.1libass-0.17.1.tar.xz"
   sha256 "f0da0bbfba476c16ae3e1cfd862256d30915911f7abaa1b16ce62ee653192784"
   license "ISC"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c320bdf176cb7198e3e045c5a845cf1da09b2bee09d82b6ee8a4421e28bf31aa"
-    sha256 cellar: :any,                 arm64_ventura:  "0f5b7f92f0a546fdc3132dc9aba43cfa6a0c9817fea4ae5757c300eff84848e2"
-    sha256 cellar: :any,                 arm64_monterey: "7d035facb52ae4af37f85aced182fa1500acc7b62a7ad1f0d0340215a7142f87"
-    sha256 cellar: :any,                 arm64_big_sur:  "0ba42a7412c531c983e6485f1dc6f2751b29442189ac35398ebbfb556193b5e2"
-    sha256 cellar: :any,                 sonoma:         "c948495c4b40c68abc93918130911c868fe2209a0b6421cc5cc1d8dc1b38b1c5"
-    sha256 cellar: :any,                 ventura:        "690c44517e17fb4a72d442aa0b66942b4f5956a629dfbb5bb4a481917fb4083c"
-    sha256 cellar: :any,                 monterey:       "f21c63595e10a2b146cb82dbc07fe2adb1bbcfefc4751c0ec33bb0cbc7994cbc"
-    sha256 cellar: :any,                 big_sur:        "07e931e619def22ebab6739a7532479c837fae15222d99beb59aacbd4e308590"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "980cf8c0847512a6ff3df227516c85d6b42fd9775a7b26dc40226be5b202fefd"
+    sha256 cellar: :any,                 arm64_sonoma:   "6316d110d55eade88304bb723fd2c7bc24e814e7b976daf1ddd5d7b48bf99c47"
+    sha256 cellar: :any,                 arm64_ventura:  "24f870fbdb8d65e224467e4c4b590618c4a3c5404767240f8c74ab31bd57288f"
+    sha256 cellar: :any,                 arm64_monterey: "7a7ea07e614eb28673572af37c5b2d4022964cf1f4e38cb7bdcb960caac7154f"
+    sha256 cellar: :any,                 sonoma:         "5c3afdb76ec87f33eaea1bb92dd0bfcac08676f280cc2abb554336e01b839b41"
+    sha256 cellar: :any,                 ventura:        "2bb745a9cf3044cc4008e427299d1d5e32d02947fdb7d07d44894cac732fe5d4"
+    sha256 cellar: :any,                 monterey:       "8e338c76dd27cab9c9c0439dc9580c4f0094906a1d46eaf542360db4cc06ec9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f63d3a08e07e8b5e29a67b200ac2ec45cb11f7e19399b95240178c7ccab3b6ae"
   end
 
   head do

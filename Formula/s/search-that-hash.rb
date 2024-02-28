@@ -10,14 +10,14 @@ class SearchThatHash < Formula
   head "https:github.comHashPalsSearch-That-Hash.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68d86f1b540de2905a2531679a3c346ff2191776317aa3f83e9800a3deddc912"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c131eeae0e633f7b85f2a43a4dae19de0b253687cf3108158d4b8c902c6d738"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2f25f78874c72b1003cb823c37b4f7d1e76acb92afe1d44bdb54d4db76cb89c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4fc05f677d3887dd53b8fe0af12e230a31bdcfe17f1746a6e247f96bd95a9b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "4080fa34883645ccc710d83fa7f360c603456ac15172f74f9b59698ff59ac90b"
-    sha256 cellar: :any_skip_relocation, monterey:       "c185baffffb6ecc805f3c1822d91d6f5ba029df0b2cb07c30be12e4214d962cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0811bae91285195e836d45b6eba34a606aa860cedc389040c7613ea851894f79"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17654735e1baf8b042d8c7a92a00e17cd3a433efcdfe0ce56c30a42c2da3959f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7d51e7d193f54d08a081687027a664177d71932fc881139fcadd36c1edf5fa5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a01765e1dc9dfac4f70c21f47731e1105e989a9a27d3e1f89412f302ba5eb587"
+    sha256 cellar: :any_skip_relocation, sonoma:         "684477d36b05479cff5582e39842cb6d48783e8fc952c6cd798466549d17cbe8"
+    sha256 cellar: :any_skip_relocation, ventura:        "eeabb7c5facfdca4d0c043423cf0764a4466970e553b52b2112cf6df0f4c88db"
+    sha256 cellar: :any_skip_relocation, monterey:       "42cafebad9031752587e30fb669bcd69b8a119ec2ebd6cafe0917731fcab0e22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec8c7ccca37beba0d9bd61823a97a32d65348ec99823e1d6243f2d736e9a1c63"
   end
 
   depends_on "python-certifi"
@@ -118,10 +118,6 @@ class SearchThatHash < Formula
     sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
-  def python3
-    "python3.12"
-  end
-
   def install
     # Switch build-system to poetry-core to avoid rust dependency on Linux.
     # Remove when mergedreleased: https:github.comHashPalsSearch-That-Hashpull184
@@ -129,10 +125,6 @@ class SearchThatHash < Formula
     inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
 
     virtualenv_install_with_resources
-
-    site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{libexecsite_packages}')\n"
-    (prefixsite_packages"homebrew-search_that_hash.pth").write pth_contents
   end
 
   test do
@@ -140,7 +132,5 @@ class SearchThatHash < Formula
     output = shell_output("#{bin}sth --text #{hash}")
     assert_match "#{hash}\n", output
     assert_match "Text : password\nType : MD5\n", output
-
-    system python3, "-c", "from search_that_hash import api"
   end
 end

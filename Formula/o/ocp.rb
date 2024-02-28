@@ -1,11 +1,19 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https:stian.cubic.orgproject-ocp.php"
-  url "https:stian.cubic.orgocpocp-0.2.106.tar.xz"
-  sha256 "bf11d96d4a58bbf9c344eb53cf815fc2097c63a3c2c713f7ffb134073bd84721"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.commywave82opencubicplayer.git", branch: "master"
+
+  stable do
+    url "https:stian.cubic.orgocpocp-0.2.107.tar.xz"
+    sha256 "7627e4fe3acf7ffd7108ac2a6bf53e8a28de7a220c054338c8642c4e37d94626"
+
+    # Backport fix for label in front of variable. Remove in the next release.
+    patch do
+      url "https:github.commywave82opencubicplayercommit93ec77fa19226a42972d599a2037e2b0cbd2ac00.patch?full_index=1"
+      sha256 "fef3fde17c923a732aa831825ba84efa9d3b6652b40964dfad5a07ad33b511ce"
+    end
+  end
 
   livecheck do
     url :homepage
@@ -13,15 +21,13 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "7fc465e28f1d399f3dc1dc1614e234eccceade82063730d9eda5a722407d0b4c"
-    sha256 arm64_ventura:  "98b920bce3a8dd1664102804316a636f1f36a1750d54be98a27d2c208585078f"
-    sha256 arm64_monterey: "98bee92ef9e920e5d4e5a16af9efba47eb26bca3bab25bc3b8de8fd57124a526"
-    sha256 arm64_big_sur:  "7dfbcf78f996adff1dc4c1dab3f908912b9109e068503361c10546adc397cdb4"
-    sha256 sonoma:         "62e8995e94e330bba95d89a4cf0bfda90eb782199ae0a3b5e7aa4aea6abbc956"
-    sha256 ventura:        "43069ef46c4e17de75490c55aa93393420660c2fafbb21dd6af13408601d3d56"
-    sha256 monterey:       "bdf0c54732d8169c6f0f2b10ac74eb388234bf41f9a8c7edbceae18e18b0b712"
-    sha256 big_sur:        "303b794f8055a4657ecfd8982930b1e7f96cb3f73111d6c5da78dfc9cf6218d8"
-    sha256 x86_64_linux:   "7f832d99afc957045e5e577d0d176e3ed4d4af7da5374774cd948df4d5c7345a"
+    sha256 arm64_sonoma:   "9c40cfcc02399a27905449ba2b8a4420cbd6b6836eb9496a5ea8208ea91efdb9"
+    sha256 arm64_ventura:  "4b507936cb44e1f1eeef0555dce047d4115812c45ef6a80eec7127080017514b"
+    sha256 arm64_monterey: "6fc04ea0e775c8ad0eaec3e886aad49876e507453e505cdea34ca85466473c55"
+    sha256 sonoma:         "db1c374f4d234dfce8b34e4ca5fcda181e6cfe7b0f79451db12bd7813210d008"
+    sha256 ventura:        "86fd71c9434c9254c4b91fae6a246e8e7595390fca2627a6ee28d6117a1c4db2"
+    sha256 monterey:       "a408931b6cb7341bf1198afa2aff10e2bf4753cd6731af7068433ed072d8a23e"
+    sha256 x86_64_linux:   "595c0efa0a0e7574138cceb2170925db092aec5d853e22c69b474d7c25383bc3"
   end
 
   depends_on "pkg-config" => :build

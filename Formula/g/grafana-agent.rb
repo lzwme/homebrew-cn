@@ -1,19 +1,18 @@
 class GrafanaAgent < Formula
   desc "Exporter for Prometheus Metrics, Loki Logs, and Tempo Traces"
   homepage "https:grafana.comdocsagent"
-  url "https:github.comgrafanaagentarchiverefstagsv0.39.2.tar.gz"
-  sha256 "54105d08cd2db3e0116677dcf651593136a92093bfe7453a7ee7a678a64adab9"
+  url "https:github.comgrafanaagentarchiverefstagsv0.40.0.tar.gz"
+  sha256 "9b62645f0c1cbc62e1e0c4802f283fd201bb9a1f8c6da2cf9c244fe662a3c651"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aaee0a6831b0f6fa8361234342d5debdbb944db67d6b354f2887a03eee295abe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e71693fa3ff5735da5ab62aa6718710fc0b197771a6504ae30da7d92ec1873c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51267fd43a29f8a45148ea82ff1e0a35718dc196e7bdfcc0a098ea43494febb4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ce280ff6549a991260ebd2e1302c20dbd207072af87db2f84ca9d1f1693305a"
-    sha256 cellar: :any_skip_relocation, ventura:        "0589e1095288feebd70677ce346372332590e54a4fc6cfaf3954a9e46c4d55ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa0b7b7c948fab33e0b8bea06ee935a2dedd509ed8531a2ee324ec19f7a5e0ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc2e97302d803e547697e7449e015267968781a05e391eaadaf679ffa772d23f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a0a238646b971a32eaa2e026571d454c99c94b3fcc49f5b14638e0d3ae5bc83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3231b67d02c20014c7605188719b0937c93d39a6b651668a943b54077a064313"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36c5c92728518d6eca195a0f3753bfc00d8baf7b9105215c48ae5196b3d0581d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1382e4c743595d4f94e75e6b53a0902e520c25ae04032f34d0100fc80737752d"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed017071bff81e208defd680febaf0726d31a33f03a454dfaf81df840d5fbfbc"
+    sha256 cellar: :any_skip_relocation, monterey:       "b1e1c2b616772e58ed1578eb5b0d0ba3e6c6fa3ae84e91b96a84e21d18b1dfb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfe88f8a384d2aba2530e1e4762d8920f850261ffd6fc83e52b8d52487f55358"
   end
 
   depends_on "go@1.21" => :build # use "go" again when https:github.comgrafanaagentpull6139 is released

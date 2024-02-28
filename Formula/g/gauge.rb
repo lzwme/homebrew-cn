@@ -1,19 +1,19 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https:gauge.org"
-  url "https:github.comgetgaugegaugearchiverefstagsv1.6.2.tar.gz"
-  sha256 "0182d53d6e5894c534dbce6d897a300329268c6137c8bdd7ac6f9e6a0ec60e7b"
+  url "https:github.comgetgaugegaugearchiverefstagsv1.6.3.tar.gz"
+  sha256 "a35680397682eec03de8d638639cae7a8cb47a6c2cfdbfe79673e0f8bcbe96b4"
   license "Apache-2.0"
   head "https:github.comgetgaugegauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "60fc63199bd1ea9ad4c353e242549a64a1d9f83852202bc5245ba46a5138a03e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0bbe4082133fdcbd845fab5d7038fd279163b4fc6992d5d32e4f045515cd6dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39536cbdb44db86956f3363a2d7720239c904e227eb1d2f41ae5c1a695922d8d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d58523e01729a6d4833f6d0b0b9e55f171d18a8dbe5a8516d6a741a88b2f3c11"
-    sha256 cellar: :any_skip_relocation, ventura:        "242e71f1714f99d30e4f6bcd80bc227908fdc2f47f9c86b89e6519c5fd9db9b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "77b79d3cb5453d42b12fdf7cc1617d36756b8b8fa8af06f28d670362a8a95d9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b2dbb8f55d27d7856d760a3784071010cc739dcd62d484a66c7866a5e5feaa5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2d19d3b0b08e4020336f90f819ee034e6e41fd6ec75e1c4d103f662ac094427"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "661f2ad14f46253beed272a45c80e305b6fa18b88b07f3773b664b3b188980f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb0ca26e03ee921e4ef3ca849dfbd33449c169fba51985b3fcc1cbd8c675edd9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34d6718b63945b133c0eee69a8cb561b7cd0eac37dfa5d5b3a16db89794b3fdd"
+    sha256 cellar: :any_skip_relocation, ventura:        "88c335624471fe007d4dcebcd6415cb15a94df8e61d7d42fa22eeddf4a331837"
+    sha256 cellar: :any_skip_relocation, monterey:       "b76fbf78528077432c4101f6a78df2e6abfa9a6f56f896343e41f626796893ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93ab3376e98110f04831b21e778c5199ffe45d04fbe549e78e8447cdeedf027c"
   end
 
   depends_on "go" => :build

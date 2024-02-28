@@ -6,20 +6,14 @@ class Ssdeep < Formula
   license "GPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6a98fc3dd03c9cd4c0ea8a02825cdb1af35ab6a8e093820271caf663573a668b"
-    sha256 cellar: :any,                 arm64_ventura:  "f8b44b58f8a6e76ee1061e7bd8d4a6e9ac3a23cca665b88295fdf30c72ce1b66"
-    sha256 cellar: :any,                 arm64_monterey: "07961c7cdb77e1bca622785da334e2d80ea789c5619ade29e02f08e5f91249e0"
-    sha256 cellar: :any,                 arm64_big_sur:  "ee64c7c583f39962316b19684461489bf1c23ec97d910987430905f8c0b3e26c"
-    sha256 cellar: :any,                 sonoma:         "ac82578f2336477e8596f7ade649367862bb59525b8dfb12c236b939dbe570d4"
-    sha256 cellar: :any,                 ventura:        "880e4fef3feaeb5236d52a45e34b1e2af00977400fe7105e41b3b93d74472ccc"
-    sha256 cellar: :any,                 monterey:       "9b57f034329281415c96bebc40f2d30f397ea635a04840044028f8e0bf6bfea2"
-    sha256 cellar: :any,                 big_sur:        "07e5950c12637cccbba297963ea3cb11ee93e9e71185ae13d3a3e5a61d3ed2a3"
-    sha256 cellar: :any,                 catalina:       "f497e16679d8c9a4e04bc3e2458b5d02f5d2899b1be522df2cfcac88fbd5a672"
-    sha256 cellar: :any,                 mojave:         "89e84b13c5e104f7b03a2cf3e9d679a3af57c6432f3c9daa313f9b1caa4cdfb0"
-    sha256 cellar: :any,                 high_sierra:    "1c8a9a487676961755daf5688ec478a5925f3a0dfe36faeb7027878600ef2384"
-    sha256 cellar: :any,                 sierra:         "84677545f87098d9c5d74719044c56616a8788f1320c9258794807dac2343328"
-    sha256 cellar: :any,                 el_capitan:     "c07f5558ed32f7de17f349cbc62e56cf277d3d30c83fa7844bdf41000729dcba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "debece05c49ee73f650afa080d3f0953ac64449c79169525001e871d0888edef"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b3e4cc557c4481853959fe15a61314d395df95e655e6809c89dae20db8eb8429"
+    sha256 cellar: :any,                 arm64_ventura:  "4c852376c9936badb32f51835c1c71622b5ef3c6c9ca9206ae43dd99a23e7d73"
+    sha256 cellar: :any,                 arm64_monterey: "90d04d23cbaa964e22b512fc048d6b7c07c268ea1560ec8e9a9e62f7e8f32182"
+    sha256 cellar: :any,                 sonoma:         "0b284332d1db2589577a0714f875ff8149146ada15d3cb443190977024145e46"
+    sha256 cellar: :any,                 ventura:        "1fd2896aaeb79fde178e73b814ff02d91f92f0c6a80331adf4c7970c7fce40ac"
+    sha256 cellar: :any,                 monterey:       "2addd0f558292956dd191891a0187dffdb979e8cbe387280fd2920dc1429be06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62ce2005fd901e4a363b3f6592dee0388e9114d323a058499d16e8dba9c4d38"
   end
 
   def install

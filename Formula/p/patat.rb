@@ -1,19 +1,19 @@
 class Patat < Formula
   desc "Terminal-based presentations using Pandoc"
   homepage "https:github.comjaspervdjpatat"
-  url "https:hackage.haskell.orgpackagepatat-0.11.0.0patat-0.11.0.0.tar.gz"
-  sha256 "34f1f5ca565be76e0a75920290b7c8552132822f1d4a7ab85d445bc13c7c6ec6"
+  url "https:hackage.haskell.orgpackagepatat-0.12.0.0patat-0.12.0.0.tar.gz"
+  sha256 "5b93df3ee9f730655a7b93abf5148aaf576d10fd8409e76e5443054f861b2029"
   license "GPL-2.0-or-later"
   head "https:github.comjaspervdjpatat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a86c86cbd28b7741233b5cb22a981ad34d3e29c882be84c2986d7f1401867f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bcb4bb432e226fa141159e07ab90b6c7901832654551af6916b40e4d0c87504"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "986afaf1b32a36f10820571d17f3a7013060638e9769abc0e31551672374b54f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5a6c1735507166c51bf5cd5669e379beca3252cb2a68d5e03ab5b0c94dc165d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "f17abaf21b7295d8086f06ccf13e06773987bf810b6f4f4a3c652ffb258bdaa8"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f54242789cf3a582781408a5f77d0a7e0d4beee9cf3955b3b452806dc19f101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b2ad5d98169a20186e7a4a5393055c916d741241c4369b789fc493688e97263"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d70af90d558c895c512cb672797a730cef1243d84c4e9bc5c00d5e3e41309dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8321387e99f956f1519463b135fd07994e8d062357e8c03475e85bb6e555191d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f966c64de45ee6b9fe64546b3e13953c2333aa015b7495facd8d6c34fb489493"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2746e29750e1cf33e4b4a42761a20892137c0bd33475bea6ce9bb30326cabbd5"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f9de7b6c0df90b8295a3c122afc4e7288e5a5cd8bb32e9a4df6a4d8ad3d657f"
+    sha256 cellar: :any_skip_relocation, monterey:       "733ce8ec1321be118513223dd3851b2de9a1feeae4c88725ee1f6e0b58510d0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62f2b0f018eaf92e75b5eafa130ff43d7cb833105a92f6fbaa308f09213e4393"
   end
 
   depends_on "cabal-install" => :build

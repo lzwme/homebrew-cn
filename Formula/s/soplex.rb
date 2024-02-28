@@ -1,8 +1,8 @@
 class Soplex < Formula
   desc "Optimization package for solving linear programming problems (LPs)"
   homepage "https://soplex.zib.de/"
-  url "https://soplex.zib.de/download/release/soplex-6.0.4.tgz"
-  sha256 "ecc0654bc4ef660006a3a59d9ca99e80bce5b2bd2d72dea6ae183abb81e1fb95"
+  url "https://soplex.zib.de/download/release/soplex-7.0.0.0.tgz"
+  sha256 "0fc007ef4f9a4686d119d0d2ea5f6df13903f65cb3afb22e5b5ec16054037df8"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Soplex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8d6ba23c424987fcfd62242836e6dfa6c4180745c33581dce128cf77b7ce4e3a"
-    sha256 cellar: :any,                 arm64_ventura:  "ad3c7c86b3917a49700b67367fdff49afec3f94c304070279a89e8137fe4fad7"
-    sha256 cellar: :any,                 arm64_monterey: "d31df9bed595196c8ac336e069b804ce9a37641a7ef0c068b0e0d82b92857324"
-    sha256 cellar: :any,                 arm64_big_sur:  "40dcc65bf2cdffc354dcf5b9e5e53e13f61209a006de9dce985f4be979d033f8"
-    sha256 cellar: :any,                 sonoma:         "9eef881e85d657db4e9c95de989e8b67470cd12648751390db412fba136de12e"
-    sha256 cellar: :any,                 ventura:        "7f1567a37a86cb117f6612555affb3171dc0c05249e22b96927e5592aa320660"
-    sha256 cellar: :any,                 monterey:       "12208ff4d64b164d1593e4604a15f2924add88a337e9ae2e20f686cb27bb1781"
-    sha256 cellar: :any,                 big_sur:        "a7fc02385e5d80861c073923b4c0b62efc133606478f3b998cae478462c7cdd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18e228b4c992e3228ff3bb6a20df26f0dad8ae298ee52f2787cb629ccc12483c"
+    sha256 cellar: :any,                 arm64_sonoma:   "2824d050a8a49639fe9da5e252390883b91b98399e0d4c17dd3223e97e9a36cb"
+    sha256 cellar: :any,                 arm64_ventura:  "9239b621c59f38a88df0a2147e49a0bc603ca2161ff0c7332e051f89579f69a1"
+    sha256 cellar: :any,                 arm64_monterey: "c8bf17667f01645b301a348019e5c7a0f2bc3087c48115116013f26edfdf3e67"
+    sha256 cellar: :any,                 sonoma:         "07e01170bb7e0293d71f797b038a44bd6afb76fb4aa8ca20ab3ccd4e447c0765"
+    sha256 cellar: :any,                 ventura:        "5dbf43a7aa679a983fe1244522fbbe13e15f60dc02d40b1a10a441809d330825"
+    sha256 cellar: :any,                 monterey:       "bcaf336ea2f6c1480d061509a8a19aff9cff08a61997c8ab6a73c8ff10bbc2d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "797695041908e965a62c6e764f1cf9be5767614fa0becb7f63ea5fb2595a9ae7"
   end
 
   depends_on "cmake" => :build

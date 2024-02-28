@@ -9,14 +9,14 @@ class Woob < Formula
   revision 3
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "e0ce50accc80dff9559a1e7b0e2cc77302dceb7ade5826776762693e38cf7bb0"
-    sha256 cellar: :any,                 arm64_ventura:  "51ef3c0187a1aa601374b656431f3f4929b53b3ee9c16aa5d5a071e20586cc1d"
-    sha256 cellar: :any,                 arm64_monterey: "62cdf6b0ef942eecbd0f935f4c5554ca85f3ee710dd8aff90a5311ebcc5a67b0"
-    sha256 cellar: :any,                 sonoma:         "7ef5a72228c783dad5493be99482a9b2f1b003b4eb58fb70f4c63e6e7ab1c6fc"
-    sha256 cellar: :any,                 ventura:        "a30cdb477888f88a005dd8e4ccb86ad767208f0fe6a56fbbb3f0fa11cb4a9d40"
-    sha256 cellar: :any,                 monterey:       "0f24de030e6518e352135249a9592554867e7d0d9e49826763b97e72cc4c14a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a38dd0059a0a52d423684910c0f99c67777274d52f05b5ac7fe7a509e244b2"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sonoma:   "cbc164e604fd202448a53377aed61544d8574c6140bf0315ac2abd5cf0c2b0e2"
+    sha256 cellar: :any,                 arm64_ventura:  "b284a8f0a74069a48aec8eb7c048373a2c5bc941e82afa1067e4cf35eb25b4db"
+    sha256 cellar: :any,                 arm64_monterey: "05a3cb2c4b0217cbbbae718adcf12cecb78c3480c9ef08a28e26d2c5ee8d88c0"
+    sha256 cellar: :any,                 sonoma:         "54849d7fe58bf34ca3b7576fc4df33533dda3665203bebfaf5a68ca5dae47ec8"
+    sha256 cellar: :any,                 ventura:        "90bea165be29b94f35fa1fbab6d7f14b319c5d66e03a98fa2c303aa46ec969b7"
+    sha256 cellar: :any,                 monterey:       "f1a92064e8ad8bb6c627e3bb907e6ebda5d394d3e9ffc7796cbc47fc3ca7c8de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1df388f3a8034b3d8f0398296d9c32104f453f8b3b5d8887ade875f720db83cb"
   end
 
   depends_on "gnupg"
@@ -118,20 +118,11 @@ class Woob < Formula
     sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
-  def python3
-    "python3.12"
-  end
-
   def install
     virtualenv_install_with_resources
-
-    site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-    (prefix/site_packages/"homebrew-woob.pth").write pth_contents
   end
 
   test do
     system bin/"woob", "config", "modules"
-    system python3, "-c", "import woob"
   end
 end
