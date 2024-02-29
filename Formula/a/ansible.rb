@@ -3,20 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https:www.ansible.com"
-  url "https:files.pythonhosted.orgpackagesc58d701590703e9bb6359a335ee88a9223442fe6abfae056928876d8318e8c07ansible-9.2.0.tar.gz"
-  sha256 "a207a4a00a45e5cd178a7f94ca42afe26f23c9d27be49901ea8c45d18a07b7c6"
+  url "https:files.pythonhosted.orgpackages8adea0a57da24b922bcc2340acbe6c9300e35a6fe132e3e6945333810732cc9cansible-9.3.0.tar.gz"
+  sha256 "7f4ea0e4d065538879b3e11e81e85eed4d802d1940f6564ad950e9d11a31b03c"
   license "GPL-3.0-or-later"
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "dc68ea010e9bef0c7e7d95aec8ae7f44e032a4af13d8357947e0beb8648370ca"
-    sha256 cellar: :any,                 arm64_ventura:  "4aa408a53355080fadebb25ea27a1dc341d8b30782f37396f58e819cf96054bd"
-    sha256 cellar: :any,                 arm64_monterey: "3d26611d0fcb630cdf9a7293b8e49c23ab79ab21d7e368def0772aeb61f2a33c"
-    sha256 cellar: :any,                 sonoma:         "6a8266ecb921ffd9dbb9637f6eff76ad79b7aaa2ca2d199fc12dcb692d3ee668"
-    sha256 cellar: :any,                 ventura:        "a3819677b52ee84a483dde1bb9f4a21326b8b9e2794a692d1172a83cb59b2281"
-    sha256 cellar: :any,                 monterey:       "b1d8954d6e784a71cd573478a943bfa48be794b78e198a03c459e5e4bf990cdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80d2e40161f2234091bc294a08abcea8ffffc7fd91d1955550420d7354386033"
+    sha256 cellar: :any,                 arm64_sonoma:   "409efe9b072d0ea8a6748dd61fe90851f70238bb0208a9022fb7fafeca48b388"
+    sha256 cellar: :any,                 arm64_ventura:  "a74894a34ef07b3c2a414ad0ad63567ce09e8a382fa43e82a382a5aefa9baead"
+    sha256 cellar: :any,                 arm64_monterey: "256b586ac8a8624a447f9530e484859cb0f7abac208adf841c578432a2608122"
+    sha256 cellar: :any,                 sonoma:         "977c0e7ddf507501ec77f41c0b0d886c30431fe0cf7d049ea5fbace127e16443"
+    sha256 cellar: :any,                 ventura:        "5cd3962982332f6854d2f2892af9e918da29061a27696760cc951ac8e5ff99ba"
+    sha256 cellar: :any,                 monterey:       "f632c09343ea833f078bc50a89cba0c244b213a4393d6f1f2b2f2ad77b29ac55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9500170fd5ee9b2ec3d493085629527da4053acdf0391756b02178c9579c234"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -40,8 +39,8 @@ class Ansible < Formula
   end
 
   resource "ansible-core" do
-    url "https:files.pythonhosted.orgpackages00b97d2229459038cdfe84b6e4db76f97acae35cb46917a0d9a7e61d3e300637ansible-core-2.16.3.tar.gz"
-    sha256 "76a8765a8586064ef073a299562e308fa2c180a75b5f7569bbd0f61d4171cdb3"
+    url "https:files.pythonhosted.orgpackagesaf9c12755b9ec6b696701fc7a33e8eab7a78f2b769dc0c966079c9005fffc7bfansible-core-2.16.4.tar.gz"
+    sha256 "2cd208b0915948c88bffad331e5d07097b6edca1872cb53375e51b6719e6a060"
   end
 
   resource "apache-libcloud" do
@@ -65,18 +64,18 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesbdc77cb38895bfcc0bff613d9c5360bbffa1b25525eba286e134c0e04321e81eboto3-1.34.49.tar.gz"
-    sha256 "96b9dc85ce8d52619b56ca7b1ac1423eaf0af5ce132904bcc8aa81396eec2abf"
+    url "https:files.pythonhosted.orgpackagesdcd123a7ed157ca950a344b2ef814db01c175f970320c4bf1be364ca0c1afdd2boto3-1.34.50.tar.gz"
+    sha256 "290952be7899560039cb0042e8a2354f61a7dead0d0ca8bea6ba901930df0468"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages35af13cc893ac1a97a2068bcfe68cc8b59ed6dabdaec5c1af29dba14099c4d8fbotocore-1.34.49.tar.gz"
-    sha256 "d89410bc60673eaff1699f3f1fdcb0e3a5e1f7a6a048c0d88c3ce5c3549433ec"
+    url "https:files.pythonhosted.orgpackages48afd038bd03233fe5c009fd67e8e1bfa6536c3b2ab91737cc629acbff464aa3botocore-1.34.50.tar.gz"
+    sha256 "33ab82cb96c4bb684f0dbafb071808e4817d83debc88b223e7d988256370c6d7"
   end
 
   resource "cachetools" do
-    url "https:files.pythonhosted.orgpackages10211b6880557742c49d5b0c4dcf0cf544b441509246cdd71182e0847ac859d5cachetools-5.3.2.tar.gz"
-    sha256 "086ee420196f7b2ab9ca2db2520aca326318b68fe5ba8bc4d49cca91add450f2"
+    url "https:files.pythonhosted.orgpackagesb34d27a3e6dd09011649ad5210bdf963765bc8fa81a0827a4fc01bafd2705c5bcachetools-5.3.3.tar.gz"
+    sha256 "ba29e2dfa0b8b556606f097407ed1aa62080ee108ab0dc5ec9d6a723a007d105"
   end
 
   resource "charset-normalizer" do

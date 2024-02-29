@@ -9,13 +9,14 @@ class Bzt < Formula
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc1fc3d4dec6bbf2a7e7b6f7ec222566048eb5acce1c2ef3233b5b9d234546c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c40f3b641b5904997fcbc63149ac4df78f34a715678259482c1dcb6996d27bbb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55be8a8a06f273da38d25205d581b02b76689c0e83f7f7043b0f2cfa22b919de"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7a028bb78569ba20155e3a1d576f525758ce284c1e61a690223ac5f84e6c3547"
-    sha256 cellar: :any_skip_relocation, ventura:        "5abb532856b1c0ebefbe45866120f7435baf4432942bc27c1ef40bc541e058e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "782ca12cb0ba2e346ad90b8ff3ee27ddc98b5379af3c3c9c837aa98ceb735cd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a39c8d4c0018b8db2e5a3fd9c2194e2237d7b81e849fdcc6deffe80da5a1cf7b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9f89e1123b951590cd9033ce0ffc68230ec75d0d90e2533c60f4d7cfa3f53472"
+    sha256 cellar: :any,                 arm64_ventura:  "52cd6e7e6b10ba548dde1294eda36e751247a229ab8492dedb903fc5543c8ad3"
+    sha256 cellar: :any,                 arm64_monterey: "8f1dd0863406e1995b242e9bb063ca7c9b1a6f311e3468d9e97c44cc63831eba"
+    sha256 cellar: :any,                 sonoma:         "65efece6633a1712abbab9fe14c41a1ad7dcc22272096c9ce6f790e9e11e356c"
+    sha256 cellar: :any,                 ventura:        "a519d4125d2863ccb448abfe1bb92ee9f749b0fa33363b781515ea8921937b48"
+    sha256 cellar: :any,                 monterey:       "fefddb1d9b5b78095ab468e3c0d80c8ad17dfb3283586f3a0367de4dffcf8550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34f5e2aa5a34c224a45c6c2c091ea42f4576e5c8ae06bb36eb510bda0b685fd2"
   end
 
   depends_on "cmake" => :build
@@ -23,15 +24,12 @@ class Bzt < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libcython"
+  depends_on "libyaml"
   depends_on "numpy"
   depends_on "python-certifi"
-  depends_on "python-lxml"
-  depends_on "python-psutil"
-  depends_on "python-pytz"
-  depends_on "python-setuptools"
   depends_on "python@3.12"
-  depends_on "pyyaml"
-  depends_on "six"
+  uses_from_macos "libxml2", since: :ventura
+  uses_from_macos "libxslt"
 
   resource "aiodogstatsd" do
     url "https:files.pythonhosted.orgpackages8dead2d79661f213f09df0e9f56d25dbae41501880822e5c85a0a6d6857baa55aiodogstatsd-0.16.0.post0.tar.gz"
@@ -118,6 +116,11 @@ class Bzt < Formula
     sha256 "46f85e7b04ee4b3dee894672be6a295c94709003a7ddea8820deec2ac4d8b27a"
   end
 
+  resource "lxml" do
+    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
+    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+  end
+
   resource "molotov" do
     url "https:files.pythonhosted.orgpackages54225820c7cad221514a04d9cdada884476e35c5972d7b84f88755094beab4fcmolotov-2.6.tar.gz"
     sha256 "0f52d260b4566709882a12710eff9b5863604f88c9bc03749cab4f9de462771a"
@@ -148,6 +151,11 @@ class Bzt < Formula
     sha256 "3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"
   end
 
+  resource "psutil" do
+    url "https:files.pythonhosted.orgpackages90c76dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2psutil-5.9.8.tar.gz"
+    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+  end
+
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
@@ -163,9 +171,19 @@ class Bzt < Formula
     sha256 "bbcbd758ed8c183775cb2853ba001361e2fa018babf5cbe11a5b77e91c2ec2a2"
   end
 
+  resource "pytz" do
+    url "https:files.pythonhosted.orgpackages90269f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738pytz-2024.1.tar.gz"
+    sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
+  end
+
   resource "pyvirtualdisplay" do
     url "https:files.pythonhosted.orgpackages869f23e5a82987c26d225139948a224a93318d7a7c8b166d4dbe4de7426dc4e4PyVirtualDisplay-3.0.tar.gz"
     sha256 "09755bc3ceb6eb725fb07eca5425f43f2358d3bf08e00d2a9b792a1aedd16159"
+  end
+
+  resource "pyyaml" do
+    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "rapidfuzz" do
@@ -178,9 +196,19 @@ class Bzt < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
+    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+  end
+
   resource "simple-websocket" do
     url "https:files.pythonhosted.orgpackagesd3823cf87d317911864a2f2a8daf1779fc7f82d5d55e6a8aaa0315f8209047a7simple-websocket-1.0.0.tar.gz"
     sha256 "17d2c72f4a2bd85174a97e3e4c88b01c40c3f81b7b648b0cc3ce1305968928c8"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "terminaltables" do

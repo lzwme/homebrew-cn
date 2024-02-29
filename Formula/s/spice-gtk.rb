@@ -14,13 +14,14 @@ class SpiceGtk < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "28edb8eeba475ba93e003ea2ede9ef411affd2b53f4f1bced5c3a8e1af89bc2a"
-    sha256 arm64_ventura:  "687e471fad66366749dec484bc78b303f3c1342cdd243d00c5531162cf8ab302"
-    sha256 arm64_monterey: "ac7b0ca573571fa68e097a04946d7260be273b54f42a5f65c77073bc97802d44"
-    sha256 sonoma:         "9da208c5711330e4c63f578964f05a7c8ac824755082b5bf5586413576bd2d6f"
-    sha256 ventura:        "19a4853969d7face88489b9a91f909edfa4177b42757c63e923f8fcbf20bec01"
-    sha256 monterey:       "7de8e38e66e71f3f975b66a2d9b910a524bb9e53da59cb87c3dbe22c5985ffd9"
-    sha256 x86_64_linux:   "c34c17c85ad42b032e658f43fb57d6efcd2b1aeef34d5f562a09fed4592c1156"
+    rebuild 1
+    sha256 arm64_sonoma:   "9882ec3f69fc197c1ac475ad3422950df499d9b80a7c9bc624817d95506a0fe2"
+    sha256 arm64_ventura:  "42600de9d33cc9d1c2e32eccf80cfa14f771457c3c39080d97ff3b611899dff8"
+    sha256 arm64_monterey: "82ab9fac4205428b48ea403708e85e19a9a42fd6c64a114a949e773e94367bf2"
+    sha256 sonoma:         "5899efc0635b8e80ed5d8500bbfb654aaaf241a457d7a817d51c066f991d73ed"
+    sha256 ventura:        "25c6fdcf7449f65c449d4ef7379d80b607c6d6aabc2a5823b4bd0241394e73cf"
+    sha256 monterey:       "a553e9a2c8c13b84545376374a8a1418c35bb9aa10baeeb6c536c09c106b7a5b"
+    sha256 x86_64_linux:   "7ffdfb8565e07edaa4aaaed8ec4926679bfbe5242b32343e9c97dfe6ff02f69a"
   end
 
   depends_on "gobject-introspection" => :build
@@ -28,7 +29,7 @@ class SpiceGtk < Formula
   depends_on "libtool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "python@3.12" => :build
   depends_on "six" => :build
   depends_on "vala" => :build
@@ -47,6 +48,7 @@ class SpiceGtk < Formula
   depends_on "openssl@3"
   depends_on "opus"
   depends_on "pango"
+  depends_on "phodav"
   depends_on "pixman"
   depends_on "python-pyparsing"
   depends_on "spice-protocol"
@@ -75,21 +77,9 @@ class SpiceGtk < Formula
         return spice_session_new() ? 0 : 1;
       }
     EOS
+    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["icu4c"].lib}/pkgconfig"
     system ENV.cc, "test.cpp",
-                   "-I#{Formula["at-spi2-core"].include}/atk-1.0",
-                   "-I#{Formula["cairo"].include}/cairo",
-                   "-I#{Formula["gdk-pixbuf"].include}/gdk-pixbuf-2.0",
-                   "-I#{Formula["glib"].include}/glib-2.0",
-                   "-I#{Formula["glib"].lib}/glib-2.0/include",
-                   "-I#{Formula["gtk+3"].include}/gtk-3.0",
-                   "-I#{Formula["harfbuzz"].opt_include}/harfbuzz",
-                   "-I#{Formula["pango"].include}/pango-1.0",
-                   "-I#{Formula["spice-protocol"].include}/spice-1",
-                   "-I#{include}/spice-client-glib-2.0",
-                   "-I#{include}/spice-client-gtk-3.0",
-                   "-L#{lib}",
-                   "-lspice-client-glib-2.0",
-                   "-lspice-client-gtk-3.0",
+                   *shell_output("pkg-config --cflags --libs spice-client-gtk-3.0 ").chomp.split,
                    "-o", "test"
     system "./test"
   end

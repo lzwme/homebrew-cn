@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https:lighthouse.sigmaprime.io"
-  url "https:github.comsigplighthousearchiverefstagsv4.6.0.tar.gz"
-  sha256 "de3186df8f41077968aa5ce358837858e1142a3c91877ca2b32066e4002dd9c3"
+  url "https:github.comsigplighthousearchiverefstagsv5.0.0.tar.gz"
+  sha256 "3f279a5539bc56765f4e29a4be63f07f1d31dc8ec871770fde35dadfbbd8383a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b0843cb883891171ee539ef2cc5dbb73b31718fbd2c8ebef9db040987d0b638"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30f03a4a9c59e76ea6b21a114ceee6c245fccf6a9f29ebb21577877ca001ab40"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "117bdcab8d422e28b8dc1623b14d7e8c3cb0d90ebb9e469d586019df759f2de5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74c8e875c5336da60d8b622357f4b59b519ef5fbdc41d0e306434357cf59dd14"
-    sha256 cellar: :any_skip_relocation, ventura:        "33ccc647574aef9729f5e988467d5645b2cc9e50139b5682ba6f790a30de4926"
-    sha256 cellar: :any_skip_relocation, monterey:       "d182887820f6a09f1086cff31024cfd688030ac5eb183a0db5378d55b4eccba7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1328080c6b18bc7af0eb02d9ff3219b5d5f3f7166726c9a2bcc064ffa7f8f3c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b13bbc4acc4dbd8577a2253e8869be4aeac3105a35247ed7a326901f3ca0982"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89d6a61ab56744adc4e692338aecef6aa5973730f55db2752df57ec8696e5f28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5373829da179d1fd75ee6030166c478c35a1a5454bca8a6ed2b8cdaf4294cfe6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f25215623aace8b7c19cdec00032fb3f0182137fb13597308052cbedf53bb3d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "7de02348e2fe57afd9465c85ec437ca40520c5d2465551873330415182233378"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa2b1935636c63cb4344407ef9b3be8228b9cb0ea84cfbc781c5eeb83bc16b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ad0e0889c93a07aa5b76d2fae2dd1b17cfbb36b1324403d4fe4120926dcd21c"
   end
 
   depends_on "cmake" => :build
@@ -46,9 +46,10 @@ class Lighthouse < Formula
 
     http_port = free_port
     fork do
-      exec bin"lighthouse", "beacon_node", "--http", "--http-port=#{http_port}", "--port=#{free_port}"
+      exec bin"lighthouse", "beacon_node",
+           "--http", "--http-port=#{http_port}", "--port=#{free_port}", "--allow-insecure-genesis-sync"
     end
-    sleep 10
+    sleep 18
 
     output = shell_output("curl -sS -XGET http:127.0.0.1:#{http_port}ethv1nodesyncing")
     assert_match "is_syncing", output

@@ -4,18 +4,18 @@ class Px < Formula
   desc "Ps and top for human beings (px  ptop)"
   homepage "https:github.comwallespx"
   url "https:github.comwallespx.git",
-      tag:      "3.5.2",
-      revision: "584f919429f1da41661d87b59305347680fb0a2c"
+      tag:      "3.5.6",
+      revision: "b1aca3e6556119afe816c4750c921c8dbfdde1a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfbce983a56a6cced3dbe043966be5d7a03db965e9010792e35323a4109c2cea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e191c21a2a3ae3cb26ca838fb38e098fa356f7bc7d6f4b6ccccf2a6f6ab6c36"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "672be80ea811076afd74fc132178f6d2875ea080021e0d1a80847b08fe052935"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a84e585d140a31deb4a74348db6ef72954c024b126715e075127a5547cfd0f77"
-    sha256 cellar: :any_skip_relocation, ventura:        "8cf0c8a2f23acb0849333491b2a5b0507427933f317213b38bb196b9ce79c283"
-    sha256 cellar: :any_skip_relocation, monterey:       "46eb85ce299da203e5c689234b91dbc20d53483e1c2a35042360ec9f33402062"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4179aff98025129416df49507dc78b09b133248e85265f7f7d074487d9192208"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6bdeed53bae7d9306ec3d399640c21f9f46ddc0e231716c100ead74b9549b6a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "020a97f569c8f250a8e3710d277b4bb04633a881969a0530111a672fce979eec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81209f84ce78e366e5adbcc9d97fc700c4dbe149ea1c3e56c993119414a54ec8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "69e6f9a47d84ab4f07f6381e289a41de486f08970aaf51543a925385401b35d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "72040536ef990aa99491c3eec0c44db58f9366b3cb83f4991d5f318bec3b3069"
+    sha256 cellar: :any_skip_relocation, monterey:       "c76add2c718ae1d42f8b31f21602b67834f507b05bc692f9572a5ce46fcef9df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "176278099f84d934a4a8e4aa9fb53a57ec2e387e8766c2ff8500accc396b6754"
   end
 
   depends_on "python@3.12"

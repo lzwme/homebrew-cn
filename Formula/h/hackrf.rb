@@ -1,8 +1,8 @@
 class Hackrf < Formula
   desc "Low cost software radio platform"
   homepage "https:github.comgreatscottgadgetshackrf"
-  url "https:github.comgreatscottgadgetshackrfreleasesdownloadv2023.01.1hackrf-2023.01.1.tar.xz"
-  sha256 "32a03f943a30be4ba478e94bf69f14a5b7d55be6761007f4a4f5453418206a11"
+  url "https:github.comgreatscottgadgetshackrfreleasesdownloadv2024.02.1hackrf-2024.02.1.tar.xz"
+  sha256 "d9ced67e6b801cd02c18d0c4654ed18a4bcb36c24a64330c347dfccbd859ad16"
   license "GPL-2.0-or-later"
   head "https:github.comgreatscottgadgetshackrf.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Hackrf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6e05c52ffa095bd8620bf577aca4832033392e57e2a1f9851fb47532c9cf6c7f"
-    sha256 cellar: :any,                 arm64_ventura:  "5e3a08883caa11b3efc07014bb53cac7f5de322b2eb2a6e3e27bade295b1e6f7"
-    sha256 cellar: :any,                 arm64_monterey: "ec83b7be635e119651ee1715f6efa57c72d4d98f560e27fbfd4456598ab805e7"
-    sha256 cellar: :any,                 arm64_big_sur:  "60831932de8d4499a1f1c54f1810d001ab3b7e3af0732735dd5e3df5a93ab935"
-    sha256 cellar: :any,                 sonoma:         "2a982122633f0009fde2b971a9cbd71e04c155defda81a83248405f295fa2e72"
-    sha256 cellar: :any,                 ventura:        "99bd5f158dbb6d6ceeafa5eb0c53b7bf91cdad7ace7bdd2c3102022b130c6cd5"
-    sha256 cellar: :any,                 monterey:       "b21f730ddf1a1a8b117585bbf9beb271c73767fe3c69d0a7bd84812cb0256bfd"
-    sha256 cellar: :any,                 big_sur:        "0c8b55d2e955787afeccdbee0ce02e168d35c3d72be0b7c627f9e9dc693c0f4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb0ddaecf5f1a3b3422c029113568f8fc5f04a5a3b72a0dae20b47da8e210a2b"
+    sha256 cellar: :any,                 arm64_sonoma:   "5bcb0c337a5f17808365a9472d8537f4bc91a7e16d0147656020a9e2c7fb8735"
+    sha256 cellar: :any,                 arm64_ventura:  "785f40b5807a55615798acdb3c2f3084da4f619199ce4680dbdb03a33800e656"
+    sha256 cellar: :any,                 arm64_monterey: "34c1393265906dce624d9ce369a051d119523f5c645f0ce651ac2fd3127101b8"
+    sha256 cellar: :any,                 sonoma:         "0f6aad32f2fcec8733d6f1c6e2cd5454973a52c33f7797032a90bc9a730285ff"
+    sha256 cellar: :any,                 ventura:        "d5620a9f49dd68c91a36ffb55c2b60c4a28baa5b98440e3425f2d0c35ce299b6"
+    sha256 cellar: :any,                 monterey:       "b8fc89adc569dc32b152eafcea69a98d5fbe47264938992c5450048c392abcf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5305ace77af21dc264b7c83e17e95a89d05ef7f23e8af8cc29315728b340fbe"
   end
 
   depends_on "cmake" => :build

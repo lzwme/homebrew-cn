@@ -1,22 +1,18 @@
 class Libzzip < Formula
   desc "Library providing read access on ZIP-archives"
   homepage "https:github.comgdraheimzziplib"
-  url "https:github.comgdraheimzziplibarchiverefstagsv0.13.72.tar.gz"
-  sha256 "93ef44bf1f1ea24fc66080426a469df82fa631d13ca3b2e4abaeab89538518dc"
+  url "https:github.comgdraheimzziplibarchiverefstagsv0.13.73.tar.gz"
+  sha256 "2aa9d317f70060101064863e4e8fe698c32301e2d293d2b4964608cf2d5b2d8b"
   license any_of: ["LGPL-2.0-or-later", "MPL-1.1"]
-  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "6e4b8f01f66f4c21a3b6467e1dfebad5e5a204db29b4dc13b448adc0e754419d"
-    sha256 cellar: :any,                 arm64_ventura:  "ee5a0f4f19686b63534c718d9c61d75a2a3b1f2ef3b4bcd6be5615536cc84c5d"
-    sha256 cellar: :any,                 arm64_monterey: "ac7b8f35398634a9092daddca8a30508bfdb1925407f8c8f6fcdd6e69e43f9ef"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2594d07e6b05062c3c28341225052a5ca2f4bd3dc900fc20f3e94190273d548"
-    sha256 cellar: :any,                 sonoma:         "29059d07df1a98967e48d507db2693c936b0b348d9bfdbf832cd66f96c4bb0f8"
-    sha256 cellar: :any,                 ventura:        "5feaf45ca387319476e60f2e6bfd8ff2c9dda497df6c809186166e5af098bd22"
-    sha256 cellar: :any,                 monterey:       "7b2db8ae12f457c61a4191acf807936608aa4cb8b036560e534d83b50602fd67"
-    sha256 cellar: :any,                 big_sur:        "d7a969de7fb5d84796d73f5bda8c53fe044c2808caece9a5f6e20e40201c3860"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1faea53bbda32778a2056db47a71ea16c02c476382770fa2c928663fc869734a"
+    sha256 cellar: :any,                 arm64_sonoma:   "fd912a466e218965d423f2126a2f8c68916f100c24082ac83af5f3896158053f"
+    sha256 cellar: :any,                 arm64_ventura:  "1f312cfe8ef90996eb31d6e8006fe4fb8f947329bfd26430a74ed4071cfd7f38"
+    sha256 cellar: :any,                 arm64_monterey: "8c5ccd360d91fd071220cbaf30c63ab928bad069df93deb917ccaad8fe02265e"
+    sha256 cellar: :any,                 sonoma:         "186a76379b3042088892430c55a589e8a4b6da7ca0d023c64f1a1b2f590acc80"
+    sha256 cellar: :any,                 ventura:        "7852ef2b43191149da1eee392217facd933e0a154e740afb0ce049ff97590485"
+    sha256 cellar: :any,                 monterey:       "fa1e2134630a6d997ba558a4e04de1ec9af22cb4337f9cda1b33a9d297ab97bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c60b18752ac8c2ea5d49f89157711e95992265dc4fcb321f49d2ad53622393d1"
   end
 
   depends_on "cmake" => :build

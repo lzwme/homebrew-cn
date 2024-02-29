@@ -3,18 +3,18 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/98/44/8b51296f5d19b07b7c2ac614e908df13f8c3173396b4fc2b676d4b32a81a/huggingface_hub-0.21.1.tar.gz"
-  sha256 "c458ae6b3e8e197472c4ef01d8cc5f8b3ddb70e9288afcd494753d832dac3a70"
+  url "https://files.pythonhosted.org/packages/08/49/6ecb1d8872ade3ebae62fb62bbb9de2b9adb6f13e7b13d44b940b728031c/huggingface_hub-0.21.2.tar.gz"
+  sha256 "839f2fc69fc51797b76dcffa7edbf7fb1150176f74cb1dc2d87ca00e5e0b5611"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f638f26b092cd57872fea84fdba69601b931ea8ed05c6bd285858e593ecb09ec"
-    sha256 cellar: :any,                 arm64_ventura:  "090e10cc433fe96ab1353ecd2ef30c1fce864fdbf362a46b2b514bc0f132bc6c"
-    sha256 cellar: :any,                 arm64_monterey: "75196702ba4f38ce262b0aef7e72a6deba93fa1eb24af90c21247aa44961729e"
-    sha256 cellar: :any,                 sonoma:         "efed130737b5e5f4ab44aa004a548e26f259aa7a4790d9931f3107a3d01679b4"
-    sha256 cellar: :any,                 ventura:        "262944d0ecd7c2b1e074446f608f4137fc0bbd06f9d3fc72f2b9f919304abf70"
-    sha256 cellar: :any,                 monterey:       "d930ec917d1e46def7be1493ecbcb6ebfe26aa28f2ef2a592f11f353e08d0b86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "311a4d615c6ab7dc090c5842ea40f289977f2a76dfc61af19662e08ac101c242"
+    sha256 cellar: :any,                 arm64_sonoma:   "68fe8532aac6ca367cda9daa0c9ec04c91404a69d5cdcb90fbfaefae53e1def1"
+    sha256 cellar: :any,                 arm64_ventura:  "7289fa57e84ebd249f667ab2304ad30319faeddef44124ecaf2e6ce97e9a40ad"
+    sha256 cellar: :any,                 arm64_monterey: "bb76e3ce027b05c3d6da8a56e1d3c18faa4090ec482767b7a0036159b22d7b46"
+    sha256 cellar: :any,                 sonoma:         "6a7e9d94bf5e9bc6b9fc77b3f01a24024bca9e9618d83670f438f2ab1c9c8a14"
+    sha256 cellar: :any,                 ventura:        "4c16106edbe536bf4fec3050c251e4dfa3ba36e1b97b30324145831c6f20010f"
+    sha256 cellar: :any,                 monterey:       "2f262bc1fa349773851f70b7d6736f9d90e881f53057dbfff604eeac7c12e990"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f42251e9b94fffafba531c11a844263e082c529680dade4c5f8fd76ac805c27"
   end
 
   depends_on "git-lfs"

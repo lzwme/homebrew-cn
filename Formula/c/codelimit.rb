@@ -8,22 +8,19 @@ class Codelimit < Formula
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ab77b5a465b4ffedd49df2b33287cb17da6b934642f58564b4088f777e5fdc62"
-    sha256 cellar: :any,                 arm64_ventura:  "7c9f12bfd6e889fb1d1e2c32fb24874a9ae7b353272371a77e67cc6629d9308c"
-    sha256 cellar: :any,                 arm64_monterey: "9dacfcfd4ce84ad19210a5302020986271a64b75d336cbdd1047f0cac16f7739"
-    sha256 cellar: :any,                 sonoma:         "05bf1c74c4015e09eae96d7428d2d251057b43024374a5049c28d1cd82cd7465"
-    sha256 cellar: :any,                 ventura:        "bb92157bea5e2c4774b70ba2d69d6aeb423749269b43f0eb98d4a0efb2427221"
-    sha256 cellar: :any,                 monterey:       "95d7a08ffae9fc5fb5bf8491f88cecbe4e0de4375c56fe13a859a4d3f23d6232"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33ff12df6e14556960d574273d7e57851d60a15fb0852ca8d9914b122da5b873"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "936360999c6f3c5e67f9533512496ae288d3af5e9a4325ba635ae014ccb58225"
+    sha256 cellar: :any,                 arm64_ventura:  "68875449c22f2fd61de57b5bf501db548a26b12fd3fe4a60618de8682768195a"
+    sha256 cellar: :any,                 arm64_monterey: "c9df60c494afdd1af381780e907d76a8fe27edd102f4a1a6c76f3766f97ad3b2"
+    sha256 cellar: :any,                 sonoma:         "74e6b1f2edf550545c38cb4b1856303a525b9b7a7f3bc35e1f47cdcff12da5fc"
+    sha256 cellar: :any,                 ventura:        "5503d5c210f35962277b9c21d926d173b4f753ec6e85de32a4b8b66897a73b89"
+    sha256 cellar: :any,                 monterey:       "f777288b4681d7f3b69ae86f3b584650ab12ebab84de5773366809283d9890f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98c93048ecd3f0f478e41f3ef5381fc843da7af54542f05f2f6d734672994f44"
   end
 
   depends_on "libyaml"
-  depends_on "pygments"
   depends_on "python-certifi"
-  depends_on "python-click"
-  depends_on "python-typing-extensions"
   depends_on "python@3.12"
-  depends_on "six"
 
   resource "aiohttp" do
     url "https:files.pythonhosted.orgpackages18931f005bbe044471a0444a82cdd7356f5120b9cf94fe2c50c0cdbf28f1258baiohttp-3.9.3.tar.gz"
@@ -43,6 +40,11 @@ class Codelimit < Formula
   resource "charset-normalizer" do
     url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+  end
+
+  resource "click" do
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -105,6 +107,11 @@ class Codelimit < Formula
     sha256 "319a287baabeb8576a711995f973a2eba631c887aa6b0f33ab016f12c50ffebe"
   end
 
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+  end
+
   resource "pyyaml" do
     url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
     sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
@@ -118,6 +125,11 @@ class Codelimit < Formula
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesa7ec4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9drich-13.7.0.tar.gz"
     sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "spinners" do
@@ -138,6 +150,11 @@ class Codelimit < Formula
   resource "typer" do
     url "https:files.pythonhosted.orgpackages5b4939f10d0f75886439ab3dac889f14f8ad511982a754e382c9b6ca895b29e9typer-0.9.0.tar.gz"
     sha256 "50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"
+  end
+
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
+    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
   end
 
   resource "uc-micro-py" do

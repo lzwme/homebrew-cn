@@ -4,8 +4,8 @@ class Qcachegrind < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.kde.org/stable/release-service/23.08.5/src/kcachegrind-23.08.5.tar.xz"
-    sha256 "056687b7adb0049db0503738cf95a7051f3b889b3313fa8b78dc7d03c3dbb7b6"
+    url "https://download.kde.org/stable/release-service/24.02.0/src/kcachegrind-24.02.0.tar.xz"
+    sha256 "e11d5161650a54db22444b193d521e7bd8c970b8b082e158831983746e0165f5"
     depends_on "qt@5"
   end
 
@@ -17,13 +17,13 @@ class Qcachegrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4fcd3344983b8443033029d2d41dd7f39fc33bc2632ce735888f7edcd37491d3"
-    sha256 cellar: :any,                 arm64_ventura:  "4fcd3344983b8443033029d2d41dd7f39fc33bc2632ce735888f7edcd37491d3"
-    sha256 cellar: :any,                 arm64_monterey: "c1ef8643fa248ed0aa3e20ebb80404008fb962ce1f63fddb8fb95360dca42634"
-    sha256 cellar: :any,                 sonoma:         "47e92eeb71e1d95b2fc01f0e1c8de132651d0dcf8a85082261acf120d6839352"
-    sha256 cellar: :any,                 ventura:        "47e92eeb71e1d95b2fc01f0e1c8de132651d0dcf8a85082261acf120d6839352"
-    sha256 cellar: :any,                 monterey:       "8a861becb57d02347cf0b052afce9b45b9d57dd2f7fb52d467d6a61a6f0732c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d22fce2f95e1b5f55ca80d9e4627265c8d5067ba5fed4ecb6ecbb977f0098965"
+    sha256 cellar: :any,                 arm64_sonoma:   "080613ecd3eb5f6f7057e71b27d998b11bb2b77b195e4f2a77392cd7041eba69"
+    sha256 cellar: :any,                 arm64_ventura:  "080613ecd3eb5f6f7057e71b27d998b11bb2b77b195e4f2a77392cd7041eba69"
+    sha256 cellar: :any,                 arm64_monterey: "0848fb96885b07660cb52e8dff650b7ae927012a9540155c0d9ac8c6dddee071"
+    sha256 cellar: :any,                 sonoma:         "abb85b519480fe185fd24d38de324309daab37601b617a555714df329b585722"
+    sha256 cellar: :any,                 ventura:        "abb85b519480fe185fd24d38de324309daab37601b617a555714df329b585722"
+    sha256 cellar: :any,                 monterey:       "99c1f38da79dfd7b2827112a2e61c7bec2b033d6f2dd043536d22cfef5f3ae1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7a3dd4ae5be833f996b409c8db1908baff72e5f053a118bb7b8f496dc829b5a"
   end
 
   head do

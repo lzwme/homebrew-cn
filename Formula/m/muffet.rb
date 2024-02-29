@@ -1,19 +1,19 @@
 class Muffet < Formula
   desc "Fast website link checker in Go"
   homepage "https:github.comraviqqemuffet"
-  url "https:github.comraviqqemuffetarchiverefstagsv2.9.3.tar.gz"
-  sha256 "497f1fb536f62aa5f4b0a9ba924734adf5321c076c98f2fd73200c4095c887a7"
+  url "https:github.comraviqqemuffetarchiverefstagsv2.10.0.tar.gz"
+  sha256 "95f1cbd3ada8807a9da23d0d4270a37510a7713488664cd60a8e841f55d9ebb4"
   license "MIT"
   head "https:github.comraviqqemuffet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b58f226e3122349a675dd5873eed8e01e4c11886668728f65d2a62e41473c1c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88d4af23073093dc11d87042475128ec5322b3f7c0c3e328fded34f8b446e360"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a6eab6900683e7e195ac863004def2b6a3c3e8a670169fe2e9fd9b956fe3cd9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad9d2e7d235f14137260e57dea0b66e355e49cb0f7427e0f63010b9069b188a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "78330cae0efb6bd53ff5f04c0a239046e73082d28a9cccf5360c88291346c1e7"
-    sha256 cellar: :any_skip_relocation, monterey:       "40957a1d641e270ffa14ef1c9814e80cdd92d2219e27b9453a1ee5abceea468b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2076e785c7c45552e994dc5d56837978f2964668c07e2d1e91c19273a7ceeb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54b048524e6471a8b510301771dbb09cfbafe5fb19500f2244fe4502ca3fb1b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8b7c7c9f2bca07873721be3639b42770dc0708af4d16c4b9d56f923ed1e0710"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e36d42094b3129207e2944a85aadf4a54b695937c5892c0d1e1d51b2ca005c4f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ae7ecaceced9fadf76839ad0e41689dddfc8d4b3519d794c9c69e8796bf0c4f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1ee5dec04216de77883b707dab537fbc98cb0908eea2ab14d19bb6fad9fa3af"
+    sha256 cellar: :any_skip_relocation, monterey:       "708a8c71633a14cff36d74fd2d06cb10390e99c25626fe02a1e449907799efa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4df1ac78a031e2af87945f038a5631993992ab70e90f93f3e90319f7643f5ae"
   end
 
   depends_on "go" => :build

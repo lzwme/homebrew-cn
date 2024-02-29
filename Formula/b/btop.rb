@@ -18,16 +18,16 @@ class Btop < Formula
   on_macos do
     depends_on "coreutils" => :build
     depends_on "gcc" if DevelopmentTools.clang_build_version <= 1403
+
+    on_arm do
+      depends_on "gcc"
+      depends_on macos: :ventura
+      fails_with :clang
+    end
   end
 
   on_ventura do
     depends_on "gcc"
-    fails_with :clang
-  end
-
-  on_arm do
-    depends_on "gcc"
-    depends_on macos: :ventura
     fails_with :clang
   end
 

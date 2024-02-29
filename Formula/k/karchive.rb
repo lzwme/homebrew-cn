@@ -1,18 +1,15 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
+  url "https://download.kde.org/stable/frameworks/6.0/karchive-6.0.0.tar.xz"
+  sha256 "75a591d9648026eb86826974e6f3882e7f620592ecef8fabeb19206e63b04e50"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
     "LGPL-2.0-or-later",
     any_of: ["LGPL-2.0-only", "LGPL-3.0-only"],
   ]
-
-  stable do
-    url "https://download.kde.org/stable/frameworks/5.115/karchive-5.115.0.tar.xz"
-    sha256 "e89951c58beca1f9802b9a3a8b8b2beff9b534d2de433ad7947258dd27d6b475"
-    depends_on "qt@5"
-  end
+  head "https://invent.kde.org/frameworks/karchive.git", branch: "master"
 
   livecheck do
     url "https://download.kde.org/stable/frameworks/"
@@ -20,25 +17,20 @@ class Karchive < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "06ff3d8ab813b89a23d09ac19cf2ec0c4b28926312ae16517dcc913b12491ff8"
-    sha256 cellar: :any,                 arm64_ventura:  "61ed11fee5d6f3c182316c86d92b09dca40990d8c57d09697a16130a437ba0ad"
-    sha256 cellar: :any,                 arm64_monterey: "ef90a556aed83c4c12180bb8c181fa003effdb6370a7f10d5014e75a15d07b6c"
-    sha256 cellar: :any,                 sonoma:         "8c920762159f58083550387e9a5a6d2f6937da929abfb34b7c8d2f93799ea23d"
-    sha256 cellar: :any,                 ventura:        "582d372caed1fcc6e7ed1eadbcf834428b0392168a068edc93aaf56b58ba7b0e"
-    sha256 cellar: :any,                 monterey:       "1bf15111ec97b3f04d18e056371a2207f1d04755a11f20bcb413dcdcff6b2a9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85386f99944fb030743db5b0e2042dc1aa4b62d57f6ff2122022af1134f9c755"
-  end
-
-  head do
-    url "https://invent.kde.org/frameworks/karchive.git", branch: "master"
-    depends_on "qt"
+    sha256 cellar: :any,                 arm64_sonoma:   "92f06d2e0eca0029ff322620ed385e83f6091c4ba0e5ca2e4f5b470b4de3f06d"
+    sha256 cellar: :any,                 arm64_ventura:  "0493614849c62acff76da55d8d498d2942bdf66178da612a4fc74336452f73fb"
+    sha256 cellar: :any,                 arm64_monterey: "5838d0d84de36e069abb410008c146cf5008299ffd20fee2655b667a10ec99ff"
+    sha256 cellar: :any,                 sonoma:         "1341eac9a53a73d69aed262e1817cc66187e07886f8cbaf0ed7de8a24e8acbca"
+    sha256 cellar: :any,                 ventura:        "895d6a133515aa58d5aafb7e29287c6bd427475ede0eb0148936d43692d1cae1"
+    sha256 cellar: :any,                 monterey:       "7d043dd9436be82a39a2a53274f1e464223df5c9f1095c00039069bec8a3f5fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3027ed536eebbd565269ea916280c3712f11dcd42ff29972049631c77b363cb"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "extra-cmake-modules" => [:build, :test]
   depends_on "pkg-config" => :build
-
+  depends_on "qt"
   depends_on "xz"
   depends_on "zstd"
 
@@ -56,23 +48,26 @@ class Karchive < Formula
   end
 
   test do
-    ENV.delete "CPATH"
-    args = std_cmake_args + %W[
-      -DQt5Core_DIR=#{Formula["qt@5"].opt_lib}/cmake/Qt5Core
-      -DQT_MAJOR_VERSION=5
-    ]
-    args << "-DCMAKE_BUILD_RPATH=#{lib}" if OS.linux?
+    cp_r (pkgshare/"examples").children, testpath
 
-    %w[bzip2gzip
-       helloworld
-       tarlocalfiles
-       unzipper].each do |test_name|
-      mkdir test_name.to_s do
-        system "cmake", (pkgshare/"examples/#{test_name}"), *args
-        system "cmake", "--build", "."
-      end
+    examples = %w[
+      bzip2gzip
+      helloworld
+      tarlocalfiles
+      unzipper
+    ]
+
+    examples.each do |example|
+      inreplace testpath/example/"CMakeLists.txt", /^project\(/, <<~EOS
+        cmake_minimum_required(VERSION #{Formula["cmake"].version})
+        \\0
+      EOS
+
+      system "cmake", "-S", example, "-B", example, *std_cmake_args
+      system "cmake", "--build", example
     end
 
+    ENV["LC_ALL"] = "en_US.UTF-8"
     assert_match "The whole world inside a hello.", shell_output("helloworld/helloworld 2>&1")
     assert_predicate testpath/"hello.zip", :exist?
 
