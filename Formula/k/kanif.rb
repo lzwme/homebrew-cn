@@ -1,6 +1,6 @@
 class Kanif < Formula
   desc "Cluster management and administration tool"
-  homepage "https://web.archive.org/web/20200523045112/https://taktuk.gforge.inria.fr/kanif/"
+  homepage "https://packages.debian.org/stable/net/kanif"
   url "https://deb.debian.org/debian/pool/main/k/kanif/kanif_1.2.2.orig.tar.gz"
   sha256 "3f0c549428dfe88457c1db293cfac2a22b203f872904c3abf372651ac12e5879"
   license "GPL-2.0-or-later"

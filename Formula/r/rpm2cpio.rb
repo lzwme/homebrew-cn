@@ -12,24 +12,20 @@ class Rpm2cpio < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e5bef9c5fde93319786a6082987ace54ad0ff52448861e2f1f2936c50d4096e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e95d0ee3055e63c6df341cdf6ab8d1c9b30001bf0c959bf765fa934ebc38fc3f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d2bd622fc1b3cc2972511bbd789a6fb3663db803fdc3873357e060d593a5f49"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "86cbd26b2d25b70227c772d458ccd327ed236e065623adf840046caf71234a35"
-    sha256 cellar: :any_skip_relocation, sonoma:         "56180c339efdef6e8b39111beb0830ded2875998650fc637696954594fcdd702"
-    sha256 cellar: :any_skip_relocation, ventura:        "ccc67d1062ebaefefb76a57cca84f018503010fa7ef775e2a7cc51eded30e4cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "bf51b9307a69adeba4b3dc3379eb948a45c9b0f93fbfac42d6277bf5c5962de1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c469533235ec43ab54f3c26f610d637f65ab2fee070116c58882b2f9996acd11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59182d4cbea8af7773a1315e6c707ddece3d511b5ca7ec6866f893b1d172b9ae"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cfb382b55ce5155b2313bade20f110e59d9617e0d3ecedacb8d32e587800595d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25a31e16c6737137ab53e8c0768be89309f77d78e8ebb2a4ecf2a3bc9e1ee8fb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bec9fc7497aea14f5ed7e57d4d56e0899b9fee2fc8d0773f6df1186e6b07327"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc05b2691766343ce66af5f1b1ab8e439c0370d4b8bb7d00ad7111a102f89659"
+    sha256 cellar: :any_skip_relocation, ventura:        "0b59b750cefaa5e3e10b411be76ce61e6842ac5a33ae8fe2f9d5882748350db9"
+    sha256 cellar: :any_skip_relocation, monterey:       "01c30bbc719f13559f1d351beeeca74b6e74a874ec79fdc2e461feec12bd199d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a6ed93e8d9f082a0fda4538dcb4d94a75423e73d21ec86d5f1e0040a3e1b3c7"
   end
 
   depends_on "libarchive"
   depends_on "xz"
 
-  on_linux do
-    conflicts_with "rpm", because: "both install `rpm2cpio` binaries"
-  end
+  conflicts_with "rpm", because: "both install `rpm2cpio` binaries"
 
   def install
     tar = OS.mac? ? "tar" : "bsdtar"

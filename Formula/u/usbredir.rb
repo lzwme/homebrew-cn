@@ -1,8 +1,8 @@
 class Usbredir < Formula
   desc "USB traffic redirection library"
   homepage "https://www.spice-space.org"
-  url "https://www.spice-space.org/download/usbredir/usbredir-0.13.0.tar.xz"
-  sha256 "4ba6faa02c0ae6deeb4c53883d66ab54b3a5899bead42ce4ded9568b9a7dc46e"
+  url "https://www.spice-space.org/download/usbredir/usbredir-0.14.0.tar.xz"
+  sha256 "924dfb5c78328fae45a4c93a01bc83bb72c1310abeed119109255627a8baa332"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
 
   livecheck do
@@ -11,16 +11,13 @@ class Usbredir < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "239380f46d5306618ef7d3d0d38830df282cbf4dd20c688404a72807c27ca852"
-    sha256 cellar: :any, arm64_ventura:  "922c8ef4d850cc2f3f1a004c2d5859d950cb3dbb7e507e709068f50ef1a4ee65"
-    sha256 cellar: :any, arm64_monterey: "766114e04f8dc5d0c3914d481ce916996421fd1bf346ef2e0a72505c5ed318a3"
-    sha256 cellar: :any, arm64_big_sur:  "ecba2c1e3a49f6e4deafb9cfaf53fe147cf93fc758ae160167488bf387d00341"
-    sha256 cellar: :any, sonoma:         "ea4c49cb377ac5780b3fcd222cb0c3047dbf722e8e23bec6b677f559192b3a11"
-    sha256 cellar: :any, ventura:        "80b97dc409ad5daaf07aef1bcd4b3455d6d98b7ddbc8094c4d71d5ceb49be3ec"
-    sha256 cellar: :any, monterey:       "13ec692e76a7fe69488761de6fc3c3beea20dc14a8afe5175be44098e6e49712"
-    sha256 cellar: :any, big_sur:        "1a5750dad9ec230adf8c51f5bffa902923e18622efc900712453977d12fcbd08"
-    sha256 cellar: :any, catalina:       "ffe0226c57d557ff516255a2df0e73adde8f533acabf57094219dfe5a763513c"
-    sha256               x86_64_linux:   "03790301c51f8239b4dc6d43e2c060ad2e6a85133daa915415aba4cd098d0a4a"
+    sha256 cellar: :any, arm64_sonoma:   "630fbbf88672a673a284c1abc36a9a0dc1d0e12272423c39ebf0a1820f581756"
+    sha256 cellar: :any, arm64_ventura:  "c38d15165e427c870dcb1a831cc703bee4abecc5975fa36987efe63a3c070a14"
+    sha256 cellar: :any, arm64_monterey: "d1a04df082293fbe993458d742001dfd17dba76b7e13ea2df7867e75617750f0"
+    sha256 cellar: :any, sonoma:         "4d34512af58a5a33de67df9e0d7944bd228dfcfa6942d4da3d5169fc4e550739"
+    sha256 cellar: :any, ventura:        "19ab01bfbd50bce5bd72f7f8bdaa497847eee0351a00402d7dbbfca3daae5b80"
+    sha256 cellar: :any, monterey:       "f6999448357d06ce4e2a655f594a6440612c1bb63e3e0a2db771b092f6b98f79"
+    sha256               x86_64_linux:   "63aadf6d6e85a7e6474124aa780e42df47b3759e8aca7c5dc02f642fe7e64b6c"
   end
 
   depends_on "meson" => :build

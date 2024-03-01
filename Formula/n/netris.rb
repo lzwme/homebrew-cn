@@ -1,6 +1,6 @@
 class Netris < Formula
   desc "Networked variant of tetris"
-  homepage "https://web.archive.org/web/20071223041235/www.netris.be/"
+  homepage "https://packages.debian.org/sid/netris"
   url "https://deb.debian.org/debian/pool/main/n/netris/netris_0.52.orig.tar.gz"
   sha256 "8bc770ebb2c3ead1611ca7a1a2f3d833e169536c78d53b3fcf49381164ee9706"
   license "GPL-2.0-or-later"

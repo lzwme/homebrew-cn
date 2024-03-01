@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/33/b9/9cb1dfb8248a120d15cd63b3bd91c7d998b0296d315ed75bd3a89f2a60d8/schemathesis-3.25.4.tar.gz"
-  sha256 "8c0fdd700b856feb2d9743a29d319ed3cb9123b79f2ad203e9b6b1e05fe83f9e"
+  url "https://files.pythonhosted.org/packages/64/05/e4b6633089f377215dfd15c85b8ceda5e43d13b43bcf701ea17ec2c63085/schemathesis-3.25.5.tar.gz"
+  sha256 "dc9e19129736c05d9a75bf8b3db2224fe50c81edc0ca3a14a5f0deb80f07c4ec"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0b13f18260be94768ee0f39be59e5c127a9c0bc66564ae7a70e9643e4d8f3c0d"
-    sha256 cellar: :any,                 arm64_ventura:  "85efe86b4e3173dd34ec9d1b7cd28e7c3dafd71442bd2ff99c9b2a5b6796d5de"
-    sha256 cellar: :any,                 arm64_monterey: "a1506f6eab4068f626614a71a28e2013869b148f0af4158f44e179882a6a30e9"
-    sha256 cellar: :any,                 sonoma:         "e8122576cb4765433dbe02ab0357311b6d1843e50f9f90deffba68f940f5e569"
-    sha256 cellar: :any,                 ventura:        "d5b793c36d3eecbda5762e481561d1c0f4acf6308db20f5c82eda6fa0733e482"
-    sha256 cellar: :any,                 monterey:       "cd591fd93e31bd28f68804c4786b3b560c9ee80613c8197b8a5779e58b479197"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "832858a86492abc0fa708016c7507d2ccf7ff522eb2f6dd0d3058a5be5ba9ec6"
+    sha256 cellar: :any,                 arm64_sonoma:   "efc9b855f065c4c631633707c2ee0862ba3e5caa1bc2333f69dc2317f11e3e73"
+    sha256 cellar: :any,                 arm64_ventura:  "f9a3f77f968f3050d46b8f7ced705e9b7b3ddb39a38d59d7ea83fa9f2271b69a"
+    sha256 cellar: :any,                 arm64_monterey: "f5b93973b58ad3bb602c921ab09870054d8f124cd3363cece39b6912ae354149"
+    sha256 cellar: :any,                 sonoma:         "74f23674f54773f0f951bbace0f9e215b58c97b60cd8ea55afd954530380e96d"
+    sha256 cellar: :any,                 ventura:        "d3da47a7390220a6be6e2fac2bcb9012a402d4c8564fdd92055209b6dd1320f3"
+    sha256 cellar: :any,                 monterey:       "85ec7b89e4f738b1d96c929305fe5e3a2a065177a323aa020a712748cc89c399"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "416e9746bd432cf7ecaa5d069f264dbbdeaafcd2f9cd51e4372bba878441a145"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -73,8 +73,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/d0/11/75411b21cf76a2ec5a96fcc6521faa714a04aef8bd5e930670edd82427ee/hypothesis-6.98.12.tar.gz"
-    sha256 "584ef03a847464b0d14a63e53fcc3335a75b1f1eb3bcc770a03ff950ee4e279e"
+    url "https://files.pythonhosted.org/packages/c5/df/141615940fa9ffee1ef61bd698e39962777cdbfa55265a83ab561f11211e/hypothesis-6.98.15.tar.gz"
+    sha256 "1e31210951511b24ce8b3b6e04d791c466385a30ac3af571bf2223954b025d77"
   end
 
   resource "hypothesis-graphql" do
@@ -83,8 +83,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis-jsonschema" do
-    url "https://files.pythonhosted.org/packages/d0/63/c52f4e5f224a1321da2777ab5a75685495ba72f4e303c1f8d4badce96f65/hypothesis-jsonschema-0.23.0.tar.gz"
-    sha256 "c3cc5ecddd78efcb5c10cc3fbcf06aa4d32d8300d0babb8c6f89485f7a503aef"
+    url "https://files.pythonhosted.org/packages/4f/ad/2073dd29d8463a92c243d0c298370e50e0d4082bc67f156dc613634d0ec4/hypothesis-jsonschema-0.23.1.tar.gz"
+    sha256 "f4ac032024342a4149a10253984f5a5736b82b3fe2afb0888f3834a31153f215"
   end
 
   resource "idna" do
@@ -173,8 +173,8 @@ class Schemathesis < Formula
   end
 
   resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/cd/50/d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0ac/sniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "sortedcontainers" do

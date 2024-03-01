@@ -20,6 +20,8 @@ class Whatmask < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bb2ab87b646751414698bd1bae28cbea1eecf7c147ae6a38fd02e9f3857a1c9"
   end
 
+  deprecate! date: "2024-02-29", because: :repo_removed
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 

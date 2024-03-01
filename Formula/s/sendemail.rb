@@ -1,7 +1,6 @@
 class Sendemail < Formula
   desc "Email program for sending SMTP mail"
-  # Alternate: https:freshmeat.sourceforge.ioprojectssendemail
-  homepage "https:web.archive.orgweb20191013154932caspian.dotconf.netmenuSoftwareSendEmail"
+  homepage "http:caspian.dotconf.netmenuSoftwareSendEmail"
   url "http:caspian.dotconf.netmenuSoftwareSendEmailsendEmail-v1.56.tar.gz"
   sha256 "6dd7ef60338e3a26a5e5246f45aa001054e8fc984e48202e4b0698e571451ac0"
   license "GPL-2.0-or-later"

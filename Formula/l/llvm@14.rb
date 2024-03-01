@@ -12,14 +12,14 @@ class LlvmAT14 < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "eea86f75668139a272c9958746c0a6b1d2aecfaa7996fdd4877f6453d0fa968e"
-    sha256 cellar: :any,                 arm64_ventura:  "f70f13e1540dd3d2c795ef397f1a6e312749551b2f820f7494dc404f6c85131b"
-    sha256 cellar: :any,                 arm64_monterey: "5f59db938440ea52723b6caf5570f6bc4b77e746679422436fe86186e97a84ee"
-    sha256 cellar: :any,                 sonoma:         "f3cc78a972312531f05700707cf01bbb1d1691539b438a5531b6de68b7f6c9f2"
-    sha256 cellar: :any,                 ventura:        "906b811474b53b231198ae6f5034ac6e2d2a92b305d66bf5813c96d3fc8bf2f1"
-    sha256 cellar: :any,                 monterey:       "737b2f91fdadf542f5809b40ee31c0a62c56fb3eaad0f5b97b2d2e921932fa3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31829cd779b95799811be9dc6ec4e13fbb5e3eb9511d7ae76d0124534fa9f18c"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sonoma:   "1b081d8bd775b69b5c95e98df2689844a3c44a77509bfd9adc1f169e9502c6a7"
+    sha256 cellar: :any,                 arm64_ventura:  "89591ec1b0a6bcafe0e2bba53852eef97ad8d99c4135a96442e85892b02356b4"
+    sha256 cellar: :any,                 arm64_monterey: "f384ea62cf9c9a18add6ab68a96ada4a4639a0b52d906304cb961d5a1c96df1b"
+    sha256 cellar: :any,                 sonoma:         "88ef0c0f3a9876fe2831f1b7f38aee95b43fadd816b6622b76583461d685bbae"
+    sha256 cellar: :any,                 ventura:        "e66da1e873688670be544c1bd796edaabfb1bd75704bf0726ec0eeb4001c9a20"
+    sha256 cellar: :any,                 monterey:       "a17201d682ba0390cf148afa82e0796cfb95c8d0bd0029abd4553a4a16cd041b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "584cd6ac9de19540bce25bfb1e35af872d34f0ad5723dbb5a63c7561dfd1091d"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -31,7 +31,7 @@ class LlvmAT14 < Formula
   # We intentionally use Make instead of Ninja.
   # See: Homebrewhomebrew-coreissues35513
   depends_on "cmake" => :build
-  depends_on "python@3.11" => :build
+  depends_on "python@3.12" => :build
 
   uses_from_macos "python" => :test
   uses_from_macos "libedit"
@@ -41,6 +41,7 @@ class LlvmAT14 < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
+    depends_on "python-setuptools" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
   end
@@ -54,7 +55,7 @@ class LlvmAT14 < Formula
   patch :DATA
 
   def install
-    python3 = "python3.11"
+    python3 = "python3.12"
 
     # The clang bindings need a little help finding our libclang.
     inreplace "clangbindingspythonclangcindex.py",

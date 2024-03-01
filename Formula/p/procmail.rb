@@ -1,7 +1,7 @@
 class Procmail < Formula
   desc "Autonomous mail processor"
-  homepage "https:web.archive.orgweb20151013184044procmail.org"
   # NOTE: Use the patched version from Apple
+  homepage "https:github.comapple-oss-distributionsprocmail"
   url "https:github.comapple-oss-distributionsprocmailarchiverefstagsprocmail-14.tar.gz"
   sha256 "835e95c34bf93e603ecdc98113ce41bb8fa610d7dd0efe56977a66b131c5335d"
   license any_of: ["GPL-2.0-or-later", "Artistic-1.0-Perl"]

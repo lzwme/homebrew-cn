@@ -1,20 +1,19 @@
 class PythonBuild < Formula
   desc "Simple, correct PEP 517 build frontend"
   homepage "https:github.compypabuild"
-  url "https:files.pythonhosted.orgpackages98e383a89a9d338317f05a68c86a2bbc9af61235bc55a0c6a749d37598fb2af1build-1.0.3.tar.gz"
-  sha256 "538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b"
+  url "https:files.pythonhosted.orgpackages9cf88e713caf591c7e7d40890493546c5b76d6fc9824ea6907a89168b68ba903build-1.1.0.tar.gz"
+  sha256 "f8da3eebb19668bb338b6eb256b1896ef4e87a5398bbdda97ee29ec474569f16"
   license "MIT"
-  revision 1
   head "https:github.compypabuild.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e124971150ba80ab9d16393fc8459e5467cc2a830109c50aa1ea6469481a88cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c05da3dd3bf27fa9a255aacf3c6cd1199d109db6df7b142ccff8ab7fbd47a39d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d5471e851dadcb1ff0043857d09e19a88fad5c71a06f0256e4e5b778a6bdb20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d7e5485ce65492e9166911f2d41b2beb0787bb7c586fdde44ac81798b02cfe2b"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b13178342239b805c683627ff128882f6808badce620c229219e1de3c63c5b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c375bdcfa72510f1f7d144dbcfc6a5333d74939ea06c780bd18057bec26c228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23f7c8f74062691b7e6012d20aa4d596a27ebf74c90aba9dd9c753df4e1cbfd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "593d155dec63e6b2099621d2799061ce88c20500822ef5aa22ca0a80e5bc4277"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d44b43a4fea53525cc8a93183673bf305082988401624e516aea997a3e01203"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cff421557f64e0809767f36cf0af30c27c6ca43df14b2589e10d4cd1d345ca8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3b570be0ba4c01c5735a52a9b1ed5f5f9901a4088233f9a16bb7884bd4e1080a"
+    sha256 cellar: :any_skip_relocation, ventura:        "8745954ecbb237671e99351c3c4cbdb4c789cd433ac091a602480c02b4373e2d"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef185c7aabd0c07ae6a5dc70b8d3a0130e6d7566b19d2dc2d6f93a7466160258"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fa48f44b106dee990474210eaf900ce50c13920ef1e9cfec4a3c05bcea5c7fb"
   end
 
   depends_on "python-flit-core" => :build

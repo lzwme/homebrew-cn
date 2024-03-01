@@ -11,13 +11,14 @@ class Fdroidserver < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "50169ed8e049058dc47139ae99b32fa3ca3c121661734e9d9f600373bfa98d33"
-    sha256 cellar: :any,                 arm64_ventura:  "384964098de42b6339b35fbc749537e35df5bc911732bd6970fc08377fedfe20"
-    sha256 cellar: :any,                 arm64_monterey: "aa5e1e82eca13b23f35a4ea990d0ef424dd431adb134d26ce0cd29106ccf691a"
-    sha256 cellar: :any,                 sonoma:         "6a51973c22f227719bb6649afdfac97907d94b94d860417a5eeb77e344a4c780"
-    sha256 cellar: :any,                 ventura:        "adb53bd04c2e29622038bd8ef0a03ed61563fd132e98820af28be3bc7cc71abb"
-    sha256 cellar: :any,                 monterey:       "0842bf677af90fd22a1f4b46b7b20c7f76d5f50d40b181b19476cc52a1a2dcb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0274030d0ef5fe3bc8356e7280d1d3ac0f48fae31487eb59c2d524b76dc84b92"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "5d884dde33ae6d957186b10bb96ad7ff295484d8f2453a94e722f7c34e5c36b3"
+    sha256 cellar: :any,                 arm64_ventura:  "66784343b17ef85e0c661dde721b86f8d831c0ac79c69f4e5a2185c8144d0812"
+    sha256 cellar: :any,                 arm64_monterey: "f8ea4a78e63a9bf9b09ab134dab73354fad932782ee5883414c2b811bb9c4a96"
+    sha256 cellar: :any,                 sonoma:         "67e1c429865250e513bb3c6d1ae0d87990f515bc71a5b0a4f791423390cb069d"
+    sha256 cellar: :any,                 ventura:        "61afd4369b2eebed44a0de3bc2cb1d646dfd4d4337f06bcc52fc21c8cc5b342b"
+    sha256 cellar: :any,                 monterey:       "c0185a92699ffa88e4eab5b867d849f6a58efae835712b8813753c62cb7f1f9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "559fe4267097da704500c93fa583d24f588a08bb8152940b565bbbd522055b2b"
   end
 
   depends_on "ninja" => :build
@@ -284,6 +285,11 @@ class Fdroidserver < Formula
   resource "ruamel-yaml-clib" do
     url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
     sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
+  end
+
+  resource "sdkmanager" do
+    url "https:files.pythonhosted.orgpackagesc77f896d48e75f68f685c0a4fae0f5104d5cdee3c2d376ff4cfa5e78a8b5809esdkmanager-0.6.6.tar.gz"
+    sha256 "639d91085c921665cdcbb104c24fe41ad7227590cdb1ffc2b0bd4e23b6d31b37"
   end
 
   resource "six" do

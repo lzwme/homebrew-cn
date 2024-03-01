@@ -1,19 +1,19 @@
 class Typstfmt < Formula
   desc "Formatter for typst"
   homepage "https:github.comastrale-sharptypstfmt"
-  url "https:github.comastrale-sharptypstfmtarchiverefstags0.2.8.tar.gz"
-  sha256 "0c884ea06a8f1d04fa12ea582f11b3520e09c337fb42855b3b49175f1e4b8a57"
+  url "https:github.comastrale-sharptypstfmtarchiverefstags0.2.9.tar.gz"
+  sha256 "fa24ee1705ff5fec4db45e301d38439d0bd3d6d4ee04b280ba997b2f94ba16d9"
   license one_of: ["MIT", "Apache-2.0"]
   head "https:github.comastrale-sharptypstfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c619778606e38d324e61afc769d554abec2f5dd066d15050076b704f6b481e6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b10bd3de1303cdcbe9d532a89fcb6c0d337a2bfc05822e351ad48711b29fa929"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6e676dd48c4695687b86412b5e14b03631f71918b5aec40155afbaf2e469467"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f1be979d0bbd78dad8702fe7de39256376b52fc2caa68b3023c5c0cdd742de77"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b4c0038acc7590024ad55af1c1ef26bec59c1924c97a18749b752cfc21846d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "de25a5e37032bae1f4e88e384c6eac9e7fd6d165b59720211d95493e407b2df7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e828efb433a5f1701d728b52a850d958e1aadef8b4cd39b1f8cc8b2dd267d130"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "90a1443ca38d6ed8b1a6cc21102622ad5b830d82948ec590d0435b010c147b80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2385acb81ddf04da547278e4beb2bcd6c8b75d6798e29cded3d1ed7300d2940"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5b960ec044c1a222f614e9fbfce9b5b844e7f5a040d1c93c583b0b74ebe2c4f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "13b69d0ba9cf2046a896e2a2aa49aafbe640ca594d05ff2ab221288eb7c76e7a"
+    sha256 cellar: :any_skip_relocation, ventura:        "52c9b488a0f712675ba7a36b68f383e991fda985d6bed8e2062de3e46369f8cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1b2b049e67eb424c44c33ae4e2321d7ed018eb5c8b373640224df3ba8e1719a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f2282db238b16329daff514c79902b36c8d0c0035f1bc45a0749641568889de"
   end
 
   depends_on "rust" => :build
@@ -26,7 +26,6 @@ class Typstfmt < Formula
     (testpath"Hello.typ").write("Hello World!")
     system bin"typstfmt", "Hello.typ"
 
-    # https:github.comastrale-sharptypstfmtissues155
-    # assert_match version.to_s, shell_output("#{bin}typstfmt --version")
+    assert_match version.to_s, shell_output("#{bin}typstfmt --version")
   end
 end

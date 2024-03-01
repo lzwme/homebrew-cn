@@ -1480,7 +1480,7 @@ Homebrew-homebrew-core/Formula/d/dyld-headers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dylibbundler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dynaconf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dynamips.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dynare.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dynare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dynein.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dynet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dynomite.rb, Homebrew/homebrew-core, 1
@@ -2324,6 +2324,7 @@ Homebrew-homebrew-core/Formula/g/gpsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpsim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gptfdisk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gptline.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gptscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gptsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gputils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gpx.rb, Homebrew/homebrew-core, 1
@@ -3024,6 +3025,7 @@ Homebrew-homebrew-core/Formula/k/kubernetes-service-catalog-client.rb, Homebrew/
 Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubesess.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubeshark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubespy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubetui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeval.rb, Homebrew/homebrew-core, 1
@@ -3904,6 +3906,7 @@ Homebrew-homebrew-core/Formula/m/mdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mdless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mdsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdxmini.rb, Homebrew/homebrew-core, 1
@@ -4868,6 +4871,7 @@ Homebrew-homebrew-core/Formula/p/pkg-config.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkger.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pkl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pktanon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/planck.rb, Homebrew/homebrew-core, 1
@@ -10978,7 +10982,7 @@ Homebrew-homebrew-cask/Casks/t/turbo-boost-switcher.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turtl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tusk.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/tutanota.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tuta-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuxera-ntfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuxguitar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tv-browser.rb, Homebrew/homebrew-cask, 0

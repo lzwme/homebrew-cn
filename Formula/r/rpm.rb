@@ -1,8 +1,8 @@
 class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https:rpm.org"
-  url "https:ftp.osuosl.orgpubrpmreleasesrpm-4.19.xrpm-4.19.1.tar.bz2"
-  sha256 "4de4dcd82f2a46cf48a83810fe94ebda3d4719b45d547ed908b43752a7581df1"
+  url "https:ftp.osuosl.orgpubrpmreleasesrpm-4.19.xrpm-4.19.1.1.tar.bz2"
+  sha256 "874091b80efe66f9de8e3242ae2337162e2d7131e3aa4ac99ac22155e9c521e5"
   license "GPL-2.0-only"
   version_scheme 1
   head "https:github.comrpm-software-managementrpm.git", branch: "master"
@@ -15,38 +15,48 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "84a6f8905a17d3797cd84a3d38874b951c7c00418fba684a6763022dc0119b8e"
+    sha256 arm64_sonoma:  "293ed8ed214f5f4bb6be87e38d7402d16a9ad5a197a310864a926bd443d247ce"
+    sha256 arm64_ventura: "f89c2a59eba2d3ba9c49ed5f789922a3ea434a1b463368ccb2ec232ce2c10ec8"
+    sha256 sonoma:        "512ac33fae3b71ed269e1824e84589a935b875720679d14794891354fbb62b84"
+    sha256 ventura:       "f15f6180f92ee0f5da9f430d1dd9d9c94d8d1edc3361958a7d971c92dabfea82"
+    sha256 x86_64_linux:  "0e48055f9f4476e08991b874320681dca27610ac55e8e7ca8a770769ec92aeb6"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "gawk" => :build
   depends_on "python@3.12" => [:build, :test]
-  depends_on "acl"
-  depends_on "bzip2"
-  depends_on "dbus"
-  depends_on "elfutils"
+
   depends_on "gettext"
   depends_on "libarchive"
-  depends_on "libcap"
   depends_on "libmagic"
-  depends_on :linux
   depends_on "lua"
+  # See https:github.comrpm-software-managementrpmissues2222 for details.
+  depends_on macos: :ventura
   depends_on "openssl@3"
   depends_on "pkg-config"
   depends_on "popt"
+  depends_on "readline"
   depends_on "sqlite"
   depends_on "xz"
-  depends_on "zlib"
+  depends_on "zstd"
 
-  on_linux do
-    conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
   end
+
+  conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
 
   def python3
     "python3.12"
   end
 
   def install
+    ENV.append "LDFLAGS", "-lomp" if OS.mac?
+
     # only rpm should go into HOMEBREW_CELLAR, not rpms built
     inreplace ["macros.in", "platform.in"], "@prefix@", HOMEBREW_PREFIX
 
@@ -59,6 +69,7 @@ class Rpm < Formula
 
     # WITH_INTERNAL_OPENPGP and WITH_OPENSSL are deprecated
     args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
       -DCMAKE_INSTALL_SHAREDSTATEDIR=#{var}lib
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
@@ -70,6 +81,8 @@ class Rpm < Formula
       -DWITH_SELINUX=OFF
       -DRPM_VENDOR=#{tap.user}
       -DENABLE_TESTSUITE=OFF
+      -DWITH_ACL=OFF
+      -DWITH_CAP=OFF
     ]
     system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
     system "cmake", "--build", "_build"

@@ -1,57 +1,33 @@
 class Dynare < Formula
   desc "Platform for economic models, particularly DSGE and OLG models"
-  homepage "https://www.dynare.org/"
+  homepage "https:www.dynare.org"
+  url "https:www.dynare.orgreleasesourcedynare-6.0.tar.xz"
+  sha256 "52460046d44776d936986f52649f9e48966b07e414a864d83531d43e568ab682"
   license "GPL-3.0-or-later"
-  revision 1
-
-  # Remove when patch is no longer needed.
-  stable do
-    url "https://www.dynare.org/release/source/dynare-5.5.tar.xz"
-    sha256 "11deae32997e79e500a9802c6408067749485ea7ef3c08bbf24141f2b0e00326"
-
-    on_arm do
-      # Needed since we patch a `Makefile.am` below.
-      depends_on "autoconf" => :build
-      depends_on "automake" => :build
-      depends_on "bison" => :build
-      depends_on "flex" => :build
-
-      # Fixes a build error on ARM.
-      # Remove the `Hardware::CPU.arm?` in the `autoreconf` call below when this is removed.
-      patch do
-        url "https://git.dynare.org/Dynare/preprocessor/-/commit/e0c3cb72b7337a5eecd32a77183af9f1609a86ef.diff"
-        sha256 "4fe156dce78fba9ec280bceff66f263c3a9dbcd230cc5bac96b5a59c14c7554f"
-        directory "preprocessor"
-      end
-    end
-  end
+  head "https:git.dynare.orgDynaredynare.git", branch: "master"
 
   livecheck do
-    url "https://www.dynare.org/download/"
-    regex(/href=.*?dynare[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.dynare.orgdownload"
+    regex(href=.*?dynare[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e9569f6f2da358dbc46a38c2b18162e53606250e346af5fc8e14314a5bf3be35"
-    sha256 cellar: :any,                 arm64_ventura:  "4f98c00ec565b4e2c9d6c3f3fe1ebc2317833e3723f6a2e9ae4cf454b1c28af4"
-    sha256 cellar: :any,                 arm64_monterey: "777a6cdbc7f5b33be2bb98b8eeead00b924e1400bbf67d4ec0e1edc0d3b948a3"
-    sha256 cellar: :any,                 sonoma:         "c84f5e5d7a3e8635fc058e90126e9489d04abcde16fd440223ed3d92fcfea7bc"
-    sha256 cellar: :any,                 ventura:        "1cd9f23919fd19bdbe41ac56b83bca967d02a752880d93acdb6089ab3eac6469"
-    sha256 cellar: :any,                 monterey:       "9cca9affc6588bdba92edc3976cf7b826d5f2af564f171da0c1acb27f2b8fa3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40ebc11d72ea9d2a100a5a75f0b5598700f1739c8f6087275aea64522b5396fc"
+    sha256 cellar: :any, arm64_sonoma:   "f724a920cc98d627f3f23c0d1fe1d37913a595c7c0608ea4b963ee54f2075cdf"
+    sha256 cellar: :any, arm64_ventura:  "7f87119fe0abed35d53cf070aec3a78e3b2dca8734f5747ca31730545abce2b7"
+    sha256 cellar: :any, arm64_monterey: "db33ee85a7d77a8803c39a3ee7e90e98baee746a01d3d662caf53d23138ddd7d"
+    sha256 cellar: :any, sonoma:         "70ff34ab986031fd4a562350ff0e78c01fa791f585f135cfc88b5ebe288171ea"
+    sha256 cellar: :any, ventura:        "e70e1029170eb209fc7442730092bf8acd658f597f39ca37eeb023c88cfad8a0"
+    sha256 cellar: :any, monterey:       "c07e217156bc23bcf0729782d6c165ae484f837077e8f16c16d96c0eb0eba60b"
+    sha256               x86_64_linux:   "36341c8122034995cd63b2c4565f037f802409d773f04a6d9553a4b20a556247"
   end
 
-  head do
-    url "https://git.dynare.org/Dynare/dynare.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "bison" => :build
-    depends_on "flex" => :build
-  end
-
+  depends_on "bison" => :build
   depends_on "boost" => :build
   depends_on "cweb" => :build
+  depends_on "flex" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
   depends_on "fftw"
   depends_on "gcc"
   depends_on "gsl"
@@ -62,83 +38,73 @@ class Dynare < Formula
   depends_on "openblas"
   depends_on "suite-sparse"
 
+  fails_with :clang do
+    cause <<~EOS
+      GCC is the only compiler supported by upstream
+      https:git.dynare.orgDynaredynare-blobmasterREADME.md#general-instructions
+    EOS
+  end
+
   resource "slicot" do
-    url "https://deb.debian.org/debian/pool/main/s/slicot/slicot_5.0+20101122.orig.tar.gz"
+    url "https:deb.debian.orgdebianpoolmainsslicotslicot_5.0+20101122.orig.tar.gz"
     sha256 "fa80f7c75dab6bfaca93c3b374c774fd87876f34fba969af9133eeaea5f39a3d"
-  end
-
-  resource "homebrew-io" do
-    url "https://octave.sourceforge.io/download.php?package=io-2.6.4.tar.gz", using: :nounzip
-    sha256 "a74a400bbd19227f6c07c585892de879cd7ae52d820da1f69f1a3e3e89452f5a"
-  end
-
-  resource "homebrew-statistics" do
-    url "https://octave.sourceforge.io/download.php?package=statistics-1.4.3.tar.gz", using: :nounzip
-    sha256 "9801b8b4feb26c58407c136a9379aba1e6a10713829701bb3959d9473a67fa05"
   end
 
   def install
     resource("slicot").stage do
-      system "make", "lib", "OPTS=-fPIC", "SLICOTLIB=../libslicot_pic.a",
+      system "make", "lib", "OPTS=-fPIC", "SLICOTLIB=..libslicot_pic.a",
              "FORTRAN=gfortran", "LOADER=gfortran"
       system "make", "clean"
       system "make", "lib", "OPTS=-fPIC -fdefault-integer-8",
              "FORTRAN=gfortran", "LOADER=gfortran",
-             "SLICOTLIB=../libslicot64_pic.a"
-      (buildpath/"slicot/lib").install "libslicot_pic.a", "libslicot64_pic.a"
+             "SLICOTLIB=..libslicot64_pic.a"
+      (buildpath"slicotlib").install "libslicot_pic.a", "libslicot64_pic.a"
     end
 
-    gcc = Formula["gcc"]
+    # Work around used in upstream builds which helps avoid runtime preprocessor error.
+    # https:git.dynare.orgDynaredynare-blobmastermacOShomebrew-native-arm64.ini
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    # GCC is the only compiler supported by upstream
-    # https://git.dynare.org/Dynare/dynare/-/blob/master/README.md#general-instructions
-    ENV.public_send(:"gcc-#{gcc.any_installed_version.major}") if OS.mac?
-    # Prevent superenv from adding `-stdlib=libc++` to compiler invocations.
-    ENV.remove "HOMEBREW_CCCFG", "g"
+    # Help meson find `suite-sparse` and `slicot`
+    ENV.append_path "LIBRARY_PATH", Formula["suite-sparse"].opt_lib
+    ENV.append_path "LIBRARY_PATH", buildpath"slicotlib"
 
-    # Remove `Hardware::CPU.arm?` when the patch is no longer needed.
-    system "autoreconf", "--force", "--install", "--verbose" if build.head? || Hardware::CPU.arm?
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--disable-doc",
-                          "--disable-matlab",
-                          "--with-boost=#{Formula["boost"].prefix}",
-                          "--with-gsl=#{Formula["gsl"].prefix}",
-                          "--with-matio=#{Formula["libmatio"].prefix}",
-                          "--with-slicot=#{buildpath}/slicot"
-
-    # Octave hardcodes its paths which causes problems on GCC minor version bumps
-    flibs = "-L#{gcc.opt_lib}/gcc/current -lgfortran -lquadmath -lm"
-    system "make", "install", "FLIBS=#{flibs}"
+    system "meson", "setup", "build", "-Dbuild_for=octave", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+    (pkgshare"examples").install "examplesbkk.mod"
   end
 
   def caveats
     <<~EOS
       To get started with Dynare, open Octave and type
-        addpath #{opt_lib}/dynare/matlab
+        addpath #{opt_lib}dynarematlab
     EOS
   end
 
   test do
+    resource "statistics" do
+      url "https:github.comgnu-octavestatisticsarchiverefstagsrelease-1.6.3.tar.gz", using: :nounzip
+      sha256 "71ea088e23274a3d24cb24a93f9e5d3dae4649951da5ff762caea626983ded95"
+    end
+
     ENV.cxx11
 
-    statistics = resource("homebrew-statistics")
-    io = resource("homebrew-io")
-    testpath.install statistics, io
+    statistics = resource("statistics")
+    testpath.install statistics
 
-    cp lib/"dynare/examples/bkk.mod", testpath
+    cp pkgshare"examplesbkk.mod", testpath
 
     # Replace `makeinfo` with dummy command `true` to prevent generating docs
     # that are not useful to the test.
-    (testpath/"dyn_test.m").write <<~EOS
+    (testpath"dyn_test.m").write <<~EOS
       makeinfo_program true
-      pkg prefix #{testpath}/octave
-      pkg install io-#{io.version}.tar.gz
-      pkg install statistics-#{statistics.version}.tar.gz
+      pkg prefix #{testpath}octave
+      pkg install statistics-release-#{statistics.version}.tar.gz
       dynare bkk.mod console
     EOS
 
-    system Formula["octave"].opt_bin/"octave", "--no-gui",
-           "-H", "--path", "#{lib}/dynare/matlab", "dyn_test.m"
+    system Formula["octave"].opt_bin"octave", "--no-gui",
+           "-H", "--path", "#{lib}dynarematlab", "dyn_test.m"
   end
 end

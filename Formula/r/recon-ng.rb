@@ -4,6 +4,9 @@ class ReconNg < Formula
 
   desc "Web Reconnaissance Framework"
   homepage "https:github.comlanmaster53recon-ng"
+  # See the REQUIREMENTS file in the archive for the top level of dependencies.
+  # Please check for changes that may have been made since the last update.
+  # Update pypi_formula_mappings.json if necessary and run `brew update-python-resources recon-ng`.
   url "https:github.comlanmaster53recon-ngarchiverefstagsv5.1.2.tar.gz"
   sha256 "18d05030b994c9b37f624628251d3376d590f3d1eec155f67aca88fa5f3490cc"
   license "GPL-3.0-only"
@@ -27,9 +30,6 @@ class ReconNg < Formula
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
-
-  # See the REQUIREMENTS file in the archive for the top level of dependencies.
-  # Please check for changes that may have been made since the last update.
 
   resource "aniso8601" do
     url "https:files.pythonhosted.orgpackagescb72be3db445b03944bfbb2b02b82d00cb2a2bcf96275c4543f14bf60fa79e12aniso8601-9.0.1.tar.gz"

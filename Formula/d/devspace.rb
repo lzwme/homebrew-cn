@@ -1,9 +1,8 @@
 class Devspace < Formula
   desc "CLI helps developdeploydebug apps with Docker and k8s"
   homepage "https:devspace.sh"
-  url "https:github.comloft-shdevspace.git",
-      tag:      "v6.3.11",
-      revision: "e6293eb64be9590f2947e4315e5c8c3a91c48a66"
+  url "https:github.comdevspace-shdevspacearchiverefstagsv6.3.12.tar.gz"
+  sha256 "b4ce4b4b673f26f30cdc06a53dca607656b576657151f07b75253778994220e5"
   license "Apache-2.0"
   head "https:github.comloft-shdevspace.git", branch: "master"
 
@@ -13,24 +12,20 @@ class Devspace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00158c2c2a36b1ba59543b8b962520c64e5dd5b5fb78af226a393232690a3a5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc4e0d931c8caa58c0da24ba94736abcd14fd0785591459c5aac6fecae04f6c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26a3c46eb16081338c31ad7c2ac0b4524978a439a601e6ff7267d13142f8ca84"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0c24cc51a9339c2771afc99b3fc4c0903a9ba5447451ca6f3b14b818eb02d938"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c013f6c7938c4ce1ddc407f5604bc36beac42b82da23460e453b94a13522ac1"
-    sha256 cellar: :any_skip_relocation, monterey:       "841657112e3096af2276088fb2d4dcae849c6c5c46f085012c0909bff46db794"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9797bba65ef73030cbe550df894a7c2240aaab9747f1c607396af90952aa55e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "732f060db96f89d1922fd6b9310b0d34f1d45fe63e8fbe4c0977976d116ccc6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ad3d125ee2e8473d03266de891dff609823aac5c02b3300a184fdb8db803e64"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cfd5a1a0a86961a1f4d701a2a3ecff6431e9f6c1d179a1adbce1e0910a0b301"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eb7c8f631fcb37cf83d3d4c25bc333d81baa3c32862c1ddcfcce50d345d717b2"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5a7338d5afe64f76a08b4b0f1624c11f15692c9644994663e66128549c9ba9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "afe8a3fb16464367845f2e0d785cf68cebfb988632c64d0b6240cae089c8c5b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c1d0f4ddc7df38dbe82b24c3b8741d922a1216aacce2c6d2410b0253cecfcef"
   end
 
   depends_on "go" => :build
   depends_on "kubernetes-cli"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.commitHash=#{Utils.git_head}
-      -X main.version=#{version}
-    ]
+    ldflags = "-s -w -X main.commitHash=#{tap.user} -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     generate_completions_from_executable(bin"devspace", "completion")
@@ -42,5 +37,7 @@ class Devspace < Formula
 
     init_help_output = "Initializes a new devspace project"
     assert_match init_help_output, shell_output("#{bin}devspace init --help")
+
+    assert_match version.to_s, shell_output("#{bin}devspace version")
   end
 end

@@ -1,19 +1,19 @@
 class Gotestwaf < Formula
   desc "Tool for API and OWASP attack simulation"
   homepage "https:lab.wallarm.comtest-your-waf-before-hackers"
-  url "https:github.comwallarmgotestwafarchiverefstagsv0.4.12.tar.gz"
-  sha256 "0d116512eab0b7d60dea6c16f92d12f2556940232f764ac28b50d4749b0cfa5d"
+  url "https:github.comwallarmgotestwafarchiverefstagsv0.4.13.tar.gz"
+  sha256 "c49f33952eb0dac740d42e2d5559f0cfa000bc5c6d142fcd12e5675fc4673beb"
   license "MIT"
   head "https:github.comwallarmgotestwaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "afca70641affa963f5b1211af36950c4313f068182ad9fcfe5dd9c1f87d89450"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5dc88f33d323339dc93dfc139ae1b50f3d720d41047b8de347143eaba637ddc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12282dd801abd3e033d26c069f33fd262153d09d5561e763672a4b4f7e15d16b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "06fc9f27bd66372b64b8bd0340a010b8855c2b33939eea62f274c6d1e723f0e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd7486f20ab2fb47a6a006528fec5efa7742864b90463a9c4fff9a68a70191ea"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2b108841bed6ad03fbf5a960d08277fc85ebf06267c9b32e3aafeeab12263b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1718e4bc83f7eaa98e0ce84858def17d9f3a249f635c050902710ca181a245d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "293976f31688ed045cf175cd9a1fca94115b8e9e42ce491b9fb73938acde168a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1433818ac1eec945cc55bcaeb4626eb37e8a0e9fd7e95b24163a4f2962530d3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "caf43d7db666bed2faaf66015367ca36da8ccb70484c5b4426957bb5855b1a02"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe47fae1effc09df5ccd50e6df052176cb29a37cf10d11053e48b0a903c65329"
+    sha256 cellar: :any_skip_relocation, ventura:        "bac4631721fbd7ceec0e6db7423324d3b3f45304e33f2cb19a652c865f9a211b"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6aeeba6661ffadc7be30d564a7e6f0ab74bd04252e67d52dc9a42bce4dff5a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d91ba59881210938e0261cc23edff21bb5742255e5d679d4c1a33af470a8a44"
   end
 
   depends_on "go" => :build
@@ -21,11 +21,13 @@ class Gotestwaf < Formula
   def install
     ldflags = "-s -w -X github.comwallarmgotestwafinternalversion.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), ".cmd"
+
     pkgetc.install "config.yaml"
   end
 
   test do
     cp pkgetc"config.yaml", testpath
+
     (testpath"testcasessql-injectiontest.yaml").write <<~EOS
       ---
       payload:
@@ -42,7 +44,8 @@ class Gotestwaf < Formula
         - JsonBody
         - Header
     EOS
-    output = shell_output("#{bin}gotestwaf --url https:example.com 2>&1", 1)
+
+    output = shell_output("#{bin}gotestwaf --noEmailReport --url https:example.com 2>&1", 1)
     assert_match "Try to identify WAF solution", output
     assert_match "error=\"WAF was not detected", output
 

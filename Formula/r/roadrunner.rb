@@ -1,19 +1,19 @@
 class Roadrunner < Formula
   desc "High-performance PHP application server, load-balancer and process manager"
   homepage "https:roadrunner.dev"
-  url "https:github.comroadrunner-serverroadrunnerarchiverefstagsv2023.3.11.tar.gz"
-  sha256 "18fd9aa11413390e4e1a854ec2ad4bec788572105a7d3aa1ff6201f9e461529d"
+  url "https:github.comroadrunner-serverroadrunnerarchiverefstagsv2023.3.12.tar.gz"
+  sha256 "608b30987a7c56c1089474782a7dee6c031f2529319b7952ab5f4074b5018fe0"
   license "MIT"
   head "https:github.comroadrunner-serverroadrunner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "015a241cf0005eafd1a418bfb45d05dbad5540338bed3f9f1de20f55e8a46fb9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1331a6d48ac1ca6d5ef7f489936e3f825eef9762cf2b1ab950fc021d8b0d0b92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f5f96b75befc0b369589dd2d4dce65719fd804feeb1d850909149086a94484c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "522c1e62cf79fb7d5f65188f2797abb702bbea4d0730f5c28f363c481b28fb92"
-    sha256 cellar: :any_skip_relocation, ventura:        "9446b5ddfac3bf206cfe04ac16fbb8c2449c8781653a9a9e76655ee55f0dead0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2556ee9117addf487b62b51d875cbc203195d9b16a63ffa139ecbb077b02a775"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea84ba5aaa9b42f0681be5bad1254109b40fdadbce1fc9f117558a5fe529b1ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d8eff5d9d59035454415df3f3242bd260f4904bcbdf02c8deee65acde9a1d0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab7749902908eb3338390523c908db1160810291c4834209fc3c6157f1b7c8a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2aa3b409253ff9c1a51403a1ba75ac0ef2c9f4d53e079450f2f20841adefcbe8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5bc06ba7bfa06fbc1ec269ef211356e25fd4b129af1ddca70e49bd9c99f19fe0"
+    sha256 cellar: :any_skip_relocation, ventura:        "f2eb0010833f9342803271882afab378eed969034bb9fb59a134a3fd4434ebbc"
+    sha256 cellar: :any_skip_relocation, monterey:       "d98c8ee66b095ae0764b418f74052f61cd83f6e3d01725e1539870214e7019e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09baff769899087850245f9c8ec57b8cb65da94e782733fd233d1340b7214f1a"
   end
 
   depends_on "go" => :build

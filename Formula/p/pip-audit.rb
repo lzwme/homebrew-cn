@@ -3,20 +3,19 @@ class PipAudit < Formula
 
   desc "Audits Python environments and dependency trees for known vulnerabilities"
   homepage "https://pypi.org/project/pip-audit/"
-  url "https://files.pythonhosted.org/packages/9d/54/050c1c8a90ba15bf10fddc0d080c10a2a70d087fd2acdeda34cb89d4f5bc/pip_audit-2.7.1.tar.gz"
-  sha256 "66001c73bc6e5ebc998ef31a32432f7b479dc3bfeb40f7101d0fe7eb564a2c2a"
+  url "https://files.pythonhosted.org/packages/17/54/efb284ade02d0a03b8a5f3426c8c6c637c4f2af23471f0eef261d4d0d4a9/pip_audit-2.7.2.tar.gz"
+  sha256 "a12905e42dd452f43a2dbf895606d59c35348deed27b8cbaff8516423576fdfb"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d88c310ab3da6ba82f8e76e3fe5de28ddf723c6fd4123af8629e11e37f08e07"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5820bafe663f28d741ec7fcb5cf91ecf032cfc9b6eefb0fa1888d574836672c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8522ea5be0cf42cc35aac1bdb2ce8f624730cdfd4f4b4c8e941911ebd1a44a07"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc0f292d6150e922005111c1d8a7735115a2ce8476dc1cadf34fa7b43b31d0f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "8bc0393a822c39f5b29878d062a1a3a60602ebdeeb0d73319c74443af866040e"
-    sha256 cellar: :any_skip_relocation, monterey:       "1eb4bfc54f62113f1a3d61b436941986a242c54b1606e4f32896f3900ff4cff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9e4b9de79bf4ec7311178f1c940cff490006bd47415b8e9c50ea29aa2eeb4d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7978255322766c5a5c5b6b01597bcdebb785eb89373784afb9169cf52695620c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7fea5e8636191414d71ab02639f717a2085be4334e70c539dbaaf50354383368"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b8649134ce8ce7ae0c8a36eabb4acd526f515b38cfe2aa79fe78d6a97835a4b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9da1a25a6c6fce4a1dea0c97ad76e5bfb0da57e11814644f2798d3fd079724cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d4eec8c23a5e98fb86b74e0430fa8d285807a3ebe31734f2bb89c3ada95ed84"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3a6acd6663e9637875905a55b1440b08ab36c2fabdefaab7d074fcb1dae8829"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffbd2e9f4540428a858ce5a6a88c4ef973d2b204304c8d81a69ac51d4f67ac49"
   end
 
   depends_on "python-certifi"
@@ -83,8 +82,8 @@ class PipAudit < Formula
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/8c/33/e50adf6a6cd4cde7ccd140e4538d898cea7a609f7aee5d6365e5cd44b6c8/packageurl-python-0.13.4.tar.gz"
-    sha256 "6eb5e995009cc73387095e0b507ab65df51357d25ddc5fce3d3545ad6dcbbee8"
+    url "https://files.pythonhosted.org/packages/69/24/d8542499ca412df95ce8f3722f8be504161ae0a3ad5fa0d159522356e6ed/packageurl-python-0.14.0.tar.gz"
+    sha256 "ff09147cddaae9e5c59ffcb12df8ec0e1b774b45099399f28c36b1a3dfdf52e2"
   end
 
   resource "packaging" do
@@ -123,8 +122,8 @@ class PipAudit < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
-    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+    url "https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
   resource "six" do

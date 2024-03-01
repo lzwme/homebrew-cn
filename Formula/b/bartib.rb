@@ -1,22 +1,18 @@
 class Bartib < Formula
   desc "Simple timetracker for the command-line"
   homepage "https:github.comnikolassvbartib"
-  url "https:github.comnikolassvbartibarchiverefstagsv1.0.1.tar.gz"
-  sha256 "51ee91f0ebcdba8a3e194d1f800aab942d99b1be1241d9d29f85615a89c87e6e"
+  url "https:github.comnikolassvbartibarchiverefstagsv1.1.0.tar.gz"
+  sha256 "29fcfb9fc2a64c11023d4be9904e2c70e49ec1f6c9f8ce4c6ee9d73825d2f6f4"
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f38a9a43cc5af35c029d5a930310fe09c6b9f68805c91e101d8a3ab747c411b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15996d83f968c926df74e66a89e377a37a14382edda4c1afa477e48b8b45372a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eef66c3c27b46728a1d67621d9346c9598bde8c8c55c03dd67f5bc10c50252c9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1141518c093053f6b5bbad3ca09abc2c38838e3d221db77057475f6cf39b0a07"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1ebf113e831bcc941606ca2684909c8a0e015bbd1e662aa8e7502e7ffa1701e7"
-    sha256 cellar: :any_skip_relocation, ventura:        "41d9f2157bc293eb594fa43ce44971e7928e8f1872b06e95f091717b14275d86"
-    sha256 cellar: :any_skip_relocation, monterey:       "f0c1cc58be69351e85e2a3f1dfcbd2432a2bf346c7aad5ff84fd3b50af8ca969"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f3581eeeebeebf1061930980b9230b8db484b70e83d6784922eb349a5c351504"
-    sha256 cellar: :any_skip_relocation, catalina:       "f5d156cbad858dbaff07cabab759b8ccdd83ccf846ae3cf470c913ed9c143713"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1eb8567563a520c2931305243a98d5851bfa15c9d3dd6342d33cdc0062a4a9b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42242e50705c778c366ba844a712b7ed298e59515f03bbfe990c59e43372438f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c62668a835b2f7063af07ea743d6ab4ed7935c69643c16d8f774dd1e74efbdf4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75f3c6550bcafdd59162ba969481e35b11829e1f9a7364b44134c3f5cf1f0f9e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "741cc1e4303b22c965b48b659745eb1fffc7189c09424e408ad92bd07bb8aa24"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0ae657c86becd8b322873503cf52457afc6ddf51e90b7937db03f1aec103f51"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f112d924d8a4d4ea2a92d5e8200364835b126b3110220f3ee20cdc1576bff3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67345dd0da6698d9c95b8ed43a394fa960574f29f3d45fd1d548561d559c34b6"
   end
 
   depends_on "rust" => :build
@@ -34,10 +30,10 @@ class Bartib < Formula
     sleep 2
     system bin"bartib", "stop"
     expected =<<~EOS.strip
-      \e[1mproject.......... 0s\e[0m
-          task BrewTest 0s
+      \e[1mproject.......... <1m\e[0m
+          task BrewTest <1m
 
-      \e[1mTotal............ 0s\e[0m
+      \e[1mTotal............ <1m\e[0m
     EOS
     assert_equal expected, shell_output(bin"bartib report").strip
   end

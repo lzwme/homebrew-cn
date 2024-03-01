@@ -6,6 +6,14 @@ class Massdriver < Formula
   license "Apache-2.0"
   head "https:github.commassdriver-cloudmass.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d82377d2f2384881fc3cc97fb21deb8f137757ce7532a87e52f5d05f4b26b999"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "80af317723482a2cd68e2ad240a9a3697212b669fe81ec82f050238eff1f93dc"

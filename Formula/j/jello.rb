@@ -1,4 +1,6 @@
 class Jello < Formula
+  include Language::Python::Virtualenv
+
   desc "Filter JSON and JSON Lines data with Python syntax"
   homepage "https:github.comkellyjonbraziljello"
   url "https:files.pythonhosted.orgpackages8a1d25e13e337f0c5c8076a4fc42db02b726529b611a69d816b71f8d591cf0f5jello-1.6.0.tar.gz"
@@ -6,26 +8,25 @@ class Jello < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4d6cc31b387c1fe93a7e266b93cbe7002a979be86fd77246ef327fc27ce62ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8687e61fec44b37cca8f894edf432a61bf676acb502925f7c405be9d2747187f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2257946436ffa8b8fab31fb61fb6ffbe4bfdadee11c32634a80d4731d578fc25"
-    sha256 cellar: :any_skip_relocation, sonoma:         "642c12413e765240b446eaae76901de1b8785d3f55b9e444f0ae9c42e9d01877"
-    sha256 cellar: :any_skip_relocation, ventura:        "4509857e6e5ade5fab8e3b23920b5a264dad794aa4737e8c3570b448f3c12b82"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ee736ddd04e020fb79357515cea3496c4e13fcce30dec38192ece2cb626c946"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a28d2350fe1395afc202db3a84b58282fb6f4ba97917cc8908ee4d387c91eb5a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c70f6bf5486c8c06653f3d28c44450ae67d9ade3ef710631f353da6101fe0be4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af6054810021f2d286da8369eb5b68d60e09a52cc2199825c891b568897a0ac6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "51b0db309fbb4deb81b77a8fb954af611643b26a2b75c8ea7f2c5658d2757e37"
+    sha256 cellar: :any_skip_relocation, sonoma:         "39d92acffbac11cc6753a341a6e5538895997ba2977fab82848729e123b54392"
+    sha256 cellar: :any_skip_relocation, ventura:        "e5e84745ddbde5e9a77979b4ecd44175865a84f683c7175d6b0eecf888733e56"
+    sha256 cellar: :any_skip_relocation, monterey:       "14bab84aba6920a3520fdc09b5679f7716ad73afc1e0da3ebe7231f725586be3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec5972dc34b0f729637a56f358c9a3e1f56906a54264c64cc625fdae5352935e"
   end
 
-  depends_on "python-setuptools" => :build
-  depends_on "pygments"
   depends_on "python@3.12"
 
-  def python3
-    which("python3.12")
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    virtualenv_install_with_resources
     man1.install "manjello.1"
   end
 

@@ -3,19 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackagesa7fce921e7f4bde2293dfa7b4339cf9f05e035b63c8da9fe7813658395e3c943codelimit-0.8.0.tar.gz"
-  sha256 "6e22114ead670096bea7d902789aad66f390adbab73a29ce2cc96f53eace2d09"
+  url "https:files.pythonhosted.orgpackagesa1ae0048c31a0185e78cd16504c119b6d3e009c0ffe8932bd9a6b7a449164db5codelimit-0.8.1.tar.gz"
+  sha256 "fbf565e061461ed8e78829b56db083b352b916010c1fbf7e7ca97f1857eaa788"
   license "ISC"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "936360999c6f3c5e67f9533512496ae288d3af5e9a4325ba635ae014ccb58225"
-    sha256 cellar: :any,                 arm64_ventura:  "68875449c22f2fd61de57b5bf501db548a26b12fd3fe4a60618de8682768195a"
-    sha256 cellar: :any,                 arm64_monterey: "c9df60c494afdd1af381780e907d76a8fe27edd102f4a1a6c76f3766f97ad3b2"
-    sha256 cellar: :any,                 sonoma:         "74e6b1f2edf550545c38cb4b1856303a525b9b7a7f3bc35e1f47cdcff12da5fc"
-    sha256 cellar: :any,                 ventura:        "5503d5c210f35962277b9c21d926d173b4f753ec6e85de32a4b8b66897a73b89"
-    sha256 cellar: :any,                 monterey:       "f777288b4681d7f3b69ae86f3b584650ab12ebab84de5773366809283d9890f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98c93048ecd3f0f478e41f3ef5381fc843da7af54542f05f2f6d734672994f44"
+    sha256 cellar: :any,                 arm64_sonoma:   "76d89256fdf039571b6221da922006e713a99e3ae4d21dd8efa04701253a83e3"
+    sha256 cellar: :any,                 arm64_ventura:  "fd80ffaba3a211499e069069c83f18bd7ba05fc4bc6d0a031c26d17d7014aa8e"
+    sha256 cellar: :any,                 arm64_monterey: "92ae99cd541858f4413f968d53d37d02d5005b5757cc3ee28219341b22e7b8cb"
+    sha256 cellar: :any,                 sonoma:         "e852b5ab8e77a8b5c929ad7b880a281d6dee11acf91eba363fa233bf26d4a4b7"
+    sha256 cellar: :any,                 ventura:        "e7ce4c56f0c07a9d398d3e204f486735c0670fbec4d1a028e1cb08161875886a"
+    sha256 cellar: :any,                 monterey:       "cebc3483b89385461c271f20df0077cc64387dc42d58523075a32ae8ddd6d829"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04086cde11d3e9e8c7e9ef4bc91bd3754d4877cfd13eb46273bc39d253549a4f"
   end
 
   depends_on "libyaml"
@@ -123,8 +122,8 @@ class Codelimit < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesa7ec4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9drich-13.7.0.tar.gz"
-    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
   resource "six" do
@@ -153,8 +152,8 @@ class Codelimit < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
+    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
   end
 
   resource "uc-micro-py" do
@@ -177,9 +176,6 @@ class Codelimit < Formula
     sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
-  # upstream py3.12 patch PR, https:github.comgetcodelimitcodelimitpull28
-  patch :DATA
-
   def install
     virtualenv_install_with_resources
   end
@@ -193,31 +189,3 @@ class Codelimit < Formula
     assert_includes shell_output("#{bin}codelimit check #{testpath}test.py"), "Refactoring not necessary"
   end
 end
-
-__END__
-diff --git aPKG-INFO bPKG-INFO
-index 46c660d..a76844c 100644
---- aPKG-INFO
-+++ bPKG-INFO
-@@ -4,7 +4,7 @@ Version: 0.8.0
- Summary: 
- Author: Rob van der Leek
- Author-email: robvanderleek@gmail.com
--Requires-Python: >=3.9,<=3.12
-+Requires-Python: >=3.9,<3.13
- Classifier: Programming Language :: Python :: 3
- Classifier: Programming Language :: Python :: 3.9
- Classifier: Programming Language :: Python :: 3.10
-diff --git apyproject.toml bpyproject.toml
-index 1d807a1..0cbf49e 100644
---- apyproject.toml
-+++ bpyproject.toml
-@@ -9,7 +9,7 @@ readme = "README.md"
- codelimit = "codelimit.__main__:cli"
- 
- [tool.poetry.dependencies]
--python = ">=3.9,<=3.12"
-+python = ">=3.9,<3.13"
- halo = "^0.0.31"
- plotext = "^5.2.8"
- pygments = "^2.13.0"

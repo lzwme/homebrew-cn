@@ -4,10 +4,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https:mavsdk.mavlink.io"
   url "https:github.commavlinkMAVSDK.git",
-      tag:      "v1.4.18",
-      revision: "b87a21d9044b9385e570fe0dd3389b74a3d52c2d"
+      tag:      "v2.3.0",
+      revision: "f5e6945956c021c1d166f3047b195dbb020da43d"
   license "BSD-3-Clause"
-  revision 5
 
   livecheck do
     url :stable
@@ -15,14 +14,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "6ec681d8683288dd3b5dcc34e1697bb965a26f07808efcd5f5295de4c6fbc120"
-    sha256 cellar: :any,                 arm64_ventura:  "5d9cbc00bdba6a838a0aae3c975d2fe175b8febda4d305fdd9869c9a21d89c70"
-    sha256 cellar: :any,                 arm64_monterey: "9714b2e951b1f831d56b10ca2ec5d1aacec63b2418547dd39cc157e1a919cb94"
-    sha256 cellar: :any,                 sonoma:         "92d294cc9906b8dbc7151c614a6fbc8ee3a6e0d71c08fe743b68a4ac0dc2184a"
-    sha256 cellar: :any,                 ventura:        "64bb4a533fdd42e403e82975e6aef95c7f76348e27452e7ed24f025fa3b7cb79"
-    sha256 cellar: :any,                 monterey:       "2514232ad28635f6d0d91d661569d449b5e4e4bf04e330be549f34ea0f484f7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "557ffe7e9cd5e41e681bcad2f05078461574793cd0e6f40116b9dd4e6f8ee7e3"
+    sha256 cellar: :any,                 arm64_sonoma:   "185d75adc9cbd9c91323a3c5499c1a36ea1b085c92cf80e3db35c7af60df5be3"
+    sha256 cellar: :any,                 arm64_ventura:  "0e0fed052c486a0dc32386c2ed8ddf2e57dcc2b9726132b473e1c78689e6ee2e"
+    sha256 cellar: :any,                 arm64_monterey: "3a3314f589f7e6f0df8544325ce79f52073500728339f118518eef11e8ea43f9"
+    sha256 cellar: :any,                 sonoma:         "f48a50a97eadf335ab41f055d3986085682743b5e38758350927aa2992aab756"
+    sha256 cellar: :any,                 ventura:        "be999b76151df4383e50177ed08bd8918dea42a349301b42bfd4d0200658892b"
+    sha256 cellar: :any,                 monterey:       "b9d21f83bce65fc0c7e20cfd20f1857b466c645359333f04035d4d71bd73396c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e243df62fdc8d913ed8d3767c2d9cc9a3e39e9344133d0a8ccfc9a2b2fa388ab"
   end
 
   depends_on "cmake" => :build
@@ -53,22 +51,10 @@ class Mavsdk < Formula
 
   fails_with gcc: "5"
 
-  # To update the resources, use homebrew-pypi-poet on the PyPI package `protoc-gen-mavsdk`.
-  # These resources are needed to install protoc-gen-mavsdk, which we use to regenerate protobuf headers.
-  # This is needed when brewed protobuf is newer than upstream's vendored protobuf.
-  resource "future" do
-    url "https:files.pythonhosted.orgpackagesa7b24140c69c6a66432916b26158687e821ba631a4c9273c474343badf84d3bafuture-1.0.0.tar.gz"
-    sha256 "bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05"
-  end
-
-  resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
-  end
-
-  resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+  # MAVLINK_GIT_HASH in https:github.commavlinkMAVSDKblobv#{version}third_partymavlinkCMakeLists.txt
+  resource "mavlink" do
+    url "https:github.commavlinkmavlink.git",
+        revision: "9840105a275db1f48f9711d0fb861e8bf77a2245"
   end
 
   def install
@@ -77,35 +63,27 @@ class Mavsdk < Formula
 
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
-    # Install protoc-gen-mavsdk deps
-    venv_dir = buildpath"bootstrap"
-    venv = virtualenv_create(venv_dir, "python3.12")
-    venv.pip_install resources
-
-    # Install protoc-gen-mavsdk
-    venv.pip_install "protopb_plugins"
-
-    # Run generator script in an emulated virtual env.
-    with_env(
-      VIRTUAL_ENV: venv_dir,
-      PATH:        "#{venv_dir}bin:#{ENV["PATH"]}",
-    ) do
-      system "toolsgenerate_from_protos.sh"
-
-      # Source build adapted from
-      # https:mavsdk.mavlink.iodevelopencontributingbuild.html
-      system "cmake", *std_cmake_args,
-                      "-Bbuilddefault",
-                      "-DSUPERBUILD=OFF",
-                      "-DBUILD_SHARED_LIBS=ON",
-                      "-DBUILD_MAVSDK_SERVER=ON",
-                      "-DBUILD_TESTS=OFF",
-                      "-DVERSION_STR=v#{version}-#{tap.user}",
-                      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                      "-H."
+    resource("mavlink").stage do
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DPython_EXECUTABLE=#{which("python3.12")}",
+                      *std_cmake_args(install_prefix: libexec)
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
     end
-    system "cmake", "--build", "builddefault"
-    system "cmake", "--build", "builddefault", "--target", "install"
+
+    # Source build adapted from
+    # https:mavsdk.mavlink.iodevelopencontributingbuild.html
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DSUPERBUILD=OFF",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DBUILD_MAVSDK_SERVER=ON",
+                    "-DBUILD_TESTS=OFF",
+                    "-DVERSION_STR=v#{version}-#{tap.user}",
+                    "-DCMAKE_PREFIX_PATH=#{libexec}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -115,8 +93,9 @@ class Mavsdk < Formula
     (testpath"test.cpp").write <<~EOS
       #include <iostream>
       #include <mavsdkmavsdk.h>
+      using namespace mavsdk;
       int main() {
-          mavsdk::Mavsdk mavsdk;
+          Mavsdk mavsdk{Mavsdk::Configuration{Mavsdk::ComponentType::GroundStation}};
           std::cout << mavsdk.version() << std::endl;
           return 0;
       }
