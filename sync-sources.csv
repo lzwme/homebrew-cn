@@ -552,6 +552,7 @@ Homebrew-homebrew-core/Formula/b/bowtie2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/box2d.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/boxes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bozohttpd.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bpftop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bpm-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bpython.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bpytop.rb, Homebrew/homebrew-core, 1
@@ -3425,7 +3426,7 @@ Homebrew-homebrew-core/Formula/lib/libgee.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgeotiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgetdata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgfshare.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libghthash.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libghthash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2.rb, Homebrew/homebrew-core, 1
@@ -3561,6 +3562,7 @@ Homebrew-homebrew-core/Formula/lib/libopennet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liboping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libopusenc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liboqs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/liborigin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libosinfo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libosip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libosmium.rb, Homebrew/homebrew-core, 1
@@ -4042,6 +4044,7 @@ Homebrew-homebrew-core/Formula/m/mlx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mm-common.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mmark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mmdbinspect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mmseqs2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmsrip.rb, Homebrew/homebrew-core, 0
@@ -4328,6 +4331,7 @@ Homebrew-homebrew-core/Formula/n/nkf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nload.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nlohmann-json.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nlopt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nmh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nmrpflash.rb, Homebrew/homebrew-core, 1
@@ -4362,6 +4366,7 @@ Homebrew-homebrew-core/Formula/n/notmuch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/noweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nowplaying-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nox.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/npm-check-updates.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/npth.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/npush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nq.rb, Homebrew/homebrew-core, 1
@@ -6090,6 +6095,7 @@ Homebrew-homebrew-core/Formula/t/task-spooler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/task.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskell.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/taskopen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tasksh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskwarrior-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tass64.rb, Homebrew/homebrew-core, 0
@@ -6761,7 +6767,7 @@ Homebrew-homebrew-core/Formula/w/wv2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wwwoffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wxlua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxmaxima.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wxpython.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wxpython.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxwidgets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxwidgets@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wy60.rb, Homebrew/homebrew-core, 0

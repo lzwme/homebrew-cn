@@ -9,22 +9,21 @@ class KeepkeyAgent < Formula
   revision 7
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52db6bb9fd11137695a981b86d1b3c5ac048c5686ed17a18c54032fcfc6ded8c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8bb2a5258cbdbff56c69d95b8e918c4302affb62711491bc3f434c6999bdc0f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c481751646bcca9d692ff6c06fc922e4b942fbcfe036094a51cd2f1951ce2dad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2f34153b051799fd38c96c3a9d686588476e2835ef83f537e25912d457a0b46f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1197f3babc713a21585a8b631552f4742e086e64da174e6367ee38d4a13582f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "46ebe1d4f3e6fe5c619d2608b17ce9fa073ca94fb8e802dfec64582875abc291"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfb3ada54aff7d45ae3715ab874239d0c890f73695a201ab265b27342884d546"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb3c9bb9f08585952b6a9c8db4e0653e13411f98cd73c7de80b8ceafafb8daf7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87402b689125c83bb164938c98301887d4eb1533dce9f52cebe0411047af6190"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b942fa21ce16564b91fed29afed10c204bc1bb4f85234ac8a9bfce4af5721e07"
+    sha256 cellar: :any_skip_relocation, sonoma:         "630b61d363d06cc6dd454b9f9c95eac18552b7368a95565914e53a4b678f33d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "7b26a33ea717fac2e9069756f8cdb11324c358462f09d1daa9141f8b3267423e"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc301b09dda47eb5fda78e13d5eaeebd70224a6bb785f45a77f05c2f74fff533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45e42e419b2b653c1ee723033e6a3650cb9e02a5b02cec4dafe0949a7cca4891"
   end
 
-  depends_on "cffi"
-  depends_on "docutils"
   depends_on "libusb"
   depends_on "python-cryptography"
   depends_on "python@3.12"
-  depends_on "six"
+
+  uses_from_macos "libffi"
 
   resource "backports-shutil-which" do
     url "https:files.pythonhosted.orgpackagesa02251b896a4539f1bff6a7ab8514eb031b9f43f12bff23f75a4c3f4e9a666e5backports.shutil_which-3.5.2.tar.gz"
@@ -36,9 +35,19 @@ class KeepkeyAgent < Formula
     sha256 "7d6db8214603bd7871fcfa6c0826ef68b85b0abd90fa21c285a9c5e21d2bd899"
   end
 
+  resource "cffi" do
+    url "https:files.pythonhosted.orgpackages68ce95b0bae7968c65473e1298efb042e10cafc7bafc14d9e4f154008241c91dcffi-1.16.0.tar.gz"
+    sha256 "bcb3ef43e58665bbda2fb198698fcae6776483e0c4a631aa5647806c25e02cc0"
+  end
+
   resource "configargparse" do
     url "https:files.pythonhosted.orgpackages708a73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783eConfigArgParse-1.7.tar.gz"
     sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+  end
+
+  resource "docutils" do
+    url "https:files.pythonhosted.orgpackages1f53a5da4f2c5739cf66290fac1431ee52aff6851c7c8ffd8264f13affd7bcdddocutils-0.20.1.tar.gz"
+    sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
   end
 
   resource "ecdsa" do
@@ -87,6 +96,11 @@ class KeepkeyAgent < Formula
     sha256 "2e3427429c9cffebf259491be0af70189607f365c2f41c7c3764af6f337105f2"
   end
 
+  resource "pycparser" do
+    url "https:files.pythonhosted.orgpackages5e0b95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46depycparser-2.21.tar.gz"
+    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+  end
+
   resource "pymsgbox" do
     url "https:files.pythonhosted.orgpackages7dff4c6f31a4f08979f12a663f2aeb6c8b765d3bd592e66eaaac445f547bb875PyMsgBox-1.0.9.tar.gz"
     sha256 "2194227de8bff7a3d6da541848705a155dcbb2a06ee120d9f280a1d7f51263ff"
@@ -105,6 +119,11 @@ class KeepkeyAgent < Formula
   resource "semver" do
     url "https:files.pythonhosted.orgpackages416ca536cc008f38fd83b3c1b98ce19ead13b746b5588c9a0cb9dd9f6ea434bcsemver-3.0.2.tar.gz"
     sha256 "6253adb39c70f6e51afed2fa7152bcd414c411286088fb4b9effb133885ab4cc"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "unidecode" do

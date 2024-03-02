@@ -5,7 +5,7 @@ class Opencascade < Formula
   version "7.7.2"
   sha256 "2fb23c8d67a7b72061b4f7a6875861e17d412d524527b2a96151ead1d9cfa2c1"
   license "LGPL-2.1-only"
-  revision 2
+  revision 3
 
   # The first-party download page (https:dev.opencascade.orgrelease)
   # references version 7.5.0 and hasn't been updated for later maintenance
@@ -21,13 +21,13 @@ class Opencascade < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ac86e06df1837313ad33bb5f1fb2c73b7d2b06c4324b08ff95063190661928d0"
-    sha256 cellar: :any,                 arm64_ventura:  "0a95f11bf578d999f71a1bf8351b07632e1af283cea89cceb42968128c9d6526"
-    sha256 cellar: :any,                 arm64_monterey: "be30e7b01c9f1e5ce839ae597c6a20e9eb9377f6a04e05544ceb5a88dbbb0205"
-    sha256 cellar: :any,                 sonoma:         "9a9bf3b8405b429272962e6666080fa1b03d99d15ffbedae83eaab4ecdb1d184"
-    sha256 cellar: :any,                 ventura:        "7eaad7875b081f3895d568ec64a16b5f7989a601cd4e9dca51e5123a8c99838f"
-    sha256 cellar: :any,                 monterey:       "4de3495e2cfd924df9358fc92e19fd9c5cf4e3ffd13245cd22daad96b074047b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d8edac229f1a0029c99754aa2fc8da51c6f16eefce04570622d50ba8e69a263"
+    sha256 cellar: :any,                 arm64_sonoma:   "eb9808875fec8e1ca5f80d97959e38cee9d224589a846eaa78f25ea7199363d7"
+    sha256 cellar: :any,                 arm64_ventura:  "c5d9ea960850f4d532ab06d98e53760fd2764348a2d5d3c26809571f5e23d6ad"
+    sha256 cellar: :any,                 arm64_monterey: "cb4e9713df84d22209ec461ebffccd362ddc50d94334c60c1216c1c513b4b22a"
+    sha256 cellar: :any,                 sonoma:         "e1cee0b2983fd140e7da2227b4ec43cd221b9ecbcddb4e9aa919e9b62e504334"
+    sha256 cellar: :any,                 ventura:        "49a241949374fa04f3c6937bb59f7abfd525481d2b4886ceed2dd54ed9a4177d"
+    sha256 cellar: :any,                 monterey:       "62cf8aed6468f9ba9820f13dad4d393326137a90a62f6bb8e069c9992bc776e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c867bb275811aa102d3da70c979abb1938c8db206ee9da339366efc95aa9118e"
   end
 
   depends_on "cmake" => [:build, :test]

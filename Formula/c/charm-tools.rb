@@ -3,6 +3,8 @@ class CharmTools < Formula
 
   desc "Tools for authoring and maintaining juju charms"
   homepage "https:github.comjujucharm-tools"
+  # TODO: Remove pip==22.3.1 from pypi_formula_mappings.json when charm-tools is
+  # compatible with latest pip. Currently, charm-tools requires pip < 23.0
   url "https:files.pythonhosted.orgpackagesa421cd7198ae853a335b6a27078a024104ad5ee34e17ad5f0517867e85c27cd3charm-tools-3.0.7.tar.gz"
   sha256 "31cbee3edc9d26678c41761f80a54b58bca59524588c480c1682ad0bb475935e"
   license "GPL-3.0-only"
@@ -137,7 +139,6 @@ class CharmTools < Formula
     sha256 "56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"
   end
 
-  # Requires pip < 23.0
   resource "pip" do
     url "https:files.pythonhosted.orgpackagesa350c4d2727b99052780aad92c7297465af5fe6eec2dbae490aa9763273ffdc1pip-22.3.1.tar.gz"
     sha256 "65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38"

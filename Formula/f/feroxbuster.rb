@@ -1,18 +1,18 @@
 class Feroxbuster < Formula
   desc "Fast, simple, recursive content discovery tool written in Rust"
   homepage "https:epi052.github.ioferoxbuster"
-  url "https:github.comepi052feroxbusterarchiverefstagsv2.10.1.tar.gz"
-  sha256 "d51dea67dcf33609aaa3e4e8e07f22c7c53866ff44fa4a68c02233cde95cead7"
+  url "https:github.comepi052feroxbusterarchiverefstagsv2.10.2.tar.gz"
+  sha256 "c73d26f21431c5dad77b6910471f768df5b27d5486b276f328f2d370d1c57003"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba5a1ea786951df8d846ac903f8fb21f00bb1e7d06032c4d0cb77776487ca036"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7202954b5205e5aa56fae63a76423135d77449a57770882d8bfe4c977dbbbd41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbf43994fd3880fb79b59bce740721c0cfeef84359d2f65f2af3e8a08441815d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6f60fc051fa7ee0a545ce4bc019424ac3d1a9016851abb3fca46caa7418f893a"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2f5f1c335df71b7c3ec072edadecaa3154aaad266a33f042467d4a9986722a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "717b5d857048ec0a74ed2d9000a098c661a02d81a59c02494aeb4332844df3b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10bf34271fd926aa88d528fec2141248c188bb818b7a4c48b714429cb1cb2d89"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6d1ef665eddbad1a89e9fbb8cf066694b410726f591bb11615ea456c1ff43a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c64eaec6765bc9413e7d1db2d5ef37c92ba9d91786bed337c5828d14430340b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdef706d68c0771251418d3c63e6701b53a03aec98eeb255b327402ab16b8509"
+    sha256 cellar: :any_skip_relocation, sonoma:         "35eb32ffb62b4f9c846871f52341dc1ccf3f43aa33f7297d76aaf5af5f58ff93"
+    sha256 cellar: :any_skip_relocation, ventura:        "16eb1bd6d427d9bac449ff3686b44b694097e978dac4cd66221fe18ce13e4e9b"
+    sha256 cellar: :any_skip_relocation, monterey:       "855c37a904eb953b4f2730619c16d0201451857e4be19de34ef5fd065e620821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "940658785b8c3a454e6b71ff0e2c555f733e7ce3bb5f8b6d84cfc62ef7b6f1a7"
   end
 
   depends_on "pkg-config" => :build

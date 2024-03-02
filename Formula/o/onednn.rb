@@ -1,8 +1,8 @@
 class Onednn < Formula
   desc "Basic building blocks for deep learning applications"
   homepage "https:www.oneapi.ioopen-source"
-  url "https:github.comoneapi-srconeDNNarchiverefstagsv3.3.5.tar.gz"
-  sha256 "b862805a80052db826a95a31c77bdad92807c061abec9152c7e6be5f3558c1d2"
+  url "https:github.comoneapi-srconeDNNarchiverefstagsv3.4.tar.gz"
+  sha256 "1044dc3655d18de921c98dfc61ad7f65799ba5e897063d4a56d291394e12dcf5"
   license "Apache-2.0"
   head "https:github.comoneapi-srconednn.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Onednn < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ad4df4aedd1b6c29fe8a94996cd1129f1290ec0c18e83a69230672198abec19d"
-    sha256 cellar: :any,                 arm64_ventura:  "4d1c2471cfa951545efaea4f4ec75176adeab8b0444c47191f0d560bbaef8dca"
-    sha256 cellar: :any,                 arm64_monterey: "4c859da6c042c8e421767d12a213457f888a3f4893c95eee9f8a6bfe65252f0f"
-    sha256 cellar: :any,                 sonoma:         "d13ae1d09d0df3ef5f6881115a7685d4c5e08bf6f7a3c2819772de8d432fde57"
-    sha256 cellar: :any,                 ventura:        "037d9f463d13f47d70f024aa8a5f2dc7f8a4cdd5ed5e3cdc611a3570a4a945f0"
-    sha256 cellar: :any,                 monterey:       "1c27de1ef94455e170c0edf8b81fbfe44d64fadddca1585cf242b125f7741702"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1342dd271937598265036ca8f4f2df15478f96b7504f470fd89031fbb56f2793"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c4b95254ce2dc2d9f8a117aca164b0c993149c6c36a283a3bc039a8b2756227"
+    sha256 cellar: :any,                 arm64_ventura:  "d8d129933dd541613dcdb02bbe99ab9ac035db200adbe9d62944cd99f4268f46"
+    sha256 cellar: :any,                 arm64_monterey: "36e678073c508e131aa4e52997e900c26e16ba5e066f17ab8dfc62e4271837e3"
+    sha256 cellar: :any,                 sonoma:         "98f0ab03b2a05f8daaac44e9a01e5bdc6381b50b6d349aedf754e35908af30d9"
+    sha256 cellar: :any,                 ventura:        "85bd67a42fd7e3ad8bc15bd3647bd5c8ed4d72e46a7f6a096e48195693deffc7"
+    sha256 cellar: :any,                 monterey:       "790ba44978a8b989d499a4815e290a7da9192cc325aa63859d4d393067dd9517"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f1e03a857dbc65b38e38db6c8f3ce978bbc446b17cdf4a6b37c2f14ebdd01d7"
   end
 
   depends_on "cmake" => :build

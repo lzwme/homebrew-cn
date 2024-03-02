@@ -1,19 +1,19 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https:github.comrui314mold"
-  url "https:github.comrui314moldarchiverefstagsv2.4.0.tar.gz"
-  sha256 "be65f3d785d32ece7b3204ecaa57810847fdd25c232cf704cbfff2dafb1ac107"
+  url "https:github.comrui314moldarchiverefstagsv2.4.1.tar.gz"
+  sha256 "c9853d007d6a1b4f3e36b7314346751f4cc91bc43c76e30db51709b53b44dd68"
   license "MIT"
   head "https:github.comrui314mold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2ae7f9e6c901a7ed68e2b3213cb4a8664b51211fb8bf1875c0e69347b0b7c866"
-    sha256 cellar: :any,                 arm64_ventura:  "36e0512454fa434fb2c0af395ccb87aa5006958616c778071b5c2fc3ed77a4b0"
-    sha256 cellar: :any,                 arm64_monterey: "a6c18c561effc0d76ff5f82e098b8ad99da5c3d3343d807de14353f27c2febad"
-    sha256 cellar: :any,                 sonoma:         "30883294bf026345800afe7756a77d3da45837b80549c126a1fe5cfb727a92fa"
-    sha256 cellar: :any,                 ventura:        "3bdd4c72dd9ca224dbeac2037dbb4b3936301ed296c8e96521081c991c95edd5"
-    sha256 cellar: :any,                 monterey:       "854fcd54196d0b4aae52fbbef614178e1724a597309e9e93ef16a71e79b8be5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "beb44d813b16e90bbfdc304828b4264ff60522ed3517ec4cc324b48574c0a537"
+    sha256 cellar: :any,                 arm64_sonoma:   "77ddcffc5ffe11fc781d1a582a4a97778113e06668aeee8523fc8c976abe7641"
+    sha256 cellar: :any,                 arm64_ventura:  "e057822890f96a03c1a76d3faca2194ed6ec46a651d22df1645be2d9b3d0d50b"
+    sha256 cellar: :any,                 arm64_monterey: "f2bffcb90d3f84b07dc14549e3b50418d60e9e87d06181318dd8ef6a45ac498c"
+    sha256 cellar: :any,                 sonoma:         "a89b1c3a64cf824272e250210b326d337f7d08ee07bc5ffa6e2bd540ed34ed2a"
+    sha256 cellar: :any,                 ventura:        "232fbcaf5b77b3f66294f95d117e717f8baa213f14ca93bebbf92c52837db41e"
+    sha256 cellar: :any,                 monterey:       "fe54b5458aee2311d9623867bc3f89bdebb199b1ba41f83327505912e8883326"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e51d461f687464568438074864a690af5ff60798d4e544cac0e96eb0193752c6"
   end
 
   depends_on "cmake" => :build

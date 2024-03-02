@@ -1,9 +1,9 @@
 class Libghthash < Formula
   desc "Generic hash table for C++"
-  homepage "https://web.archive.org/web/20170824230514/www.bth.se/people/ska/sim_home/libghthash.html"
-  url "https://web.archive.org/web/20170824230514/www.bth.se/people/ska/sim_home/filer/libghthash-0.6.2.tar.gz"
-  mirror "https://pkg.freebsd.org/ports-distfiles/libghthash-0.6.2.tar.gz"
-  sha256 "d1ccbb81f4c8afd7008f56ecb874f5cf497de480f49ee06929b4303d5852a7dd"
+  homepage "https:github.comSimonKagstromlibghthash"
+  url "https:github.comSimonKagstromlibghthasharchiverefstagsv0.6.2.tar.gz"
+  sha256 "e7e5f77df3e2a9152e0805f279ac048af9e572b83e60d29257cc754f8f9c22d6"
+  license "LGPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "5339394b36965f5152703a4bc84c1303c6966114c3bd053ed9dd265951ad5b6e"
@@ -28,13 +28,13 @@ class Libghthash < Formula
 
   def install
     system "autoreconf", "-ivf"
-    system "./configure", "--disable-dependency-tracking",
+    system ".configure", "--disable-dependency-tracking",
            "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath"test.c").write <<~EOS
       #include <string.h>
       #include <stdio.h>
       #include <stdlib.h>
@@ -71,6 +71,6 @@ class Libghthash < Formula
       }
     EOS
     system ENV.cc, "test.c", "-L#{lib}", "-lghthash", "-o", "test"
-    system "./test"
+    system ".test"
   end
 end

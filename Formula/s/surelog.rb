@@ -1,6 +1,4 @@
 class Surelog < Formula
-  include Language::Python::Virtualenv
-
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
   homepage "https:github.comchipsallianceSurelog"
   url "https:github.comchipsallianceSurelogarchiverefstagsv1.82.tar.gz"
@@ -24,46 +22,24 @@ class Surelog < Formula
   depends_on "nlohmann-json" => :build
   depends_on "openjdk" => :build
   depends_on "python@3.12" => :build
-  depends_on "six" => :build
-  depends_on "googletest" => :test
   depends_on "pkg-config" => :test
   depends_on "antlr4-cpp-runtime"
   depends_on "capnp"
   depends_on "uhdm"
 
-  resource "orderedmultidict" do
-    url "https:files.pythonhosted.orgpackages534e3823a27d764bb8388711f4cb6f24e58453e92d6928f4163fdb01e3a3789forderedmultidict-1.0.1.tar.gz"
-    sha256 "04070bbb5e87291cc9bfa51df413677faf2141c73c61d2a5f7b26bea3cd882ad"
-  end
-
-  def python3
-    which("python3.12")
-  end
-
   def install
-    venv = virtualenv_create(buildpath"venv", python3)
-    resources.each do |r|
-      venv.pip_install r
-    end
-
-    # Build shared library
-    system "cmake", "-S", ".", "-B", "build_shared",
-      "-DBUILD_SHARED_LIBS=ON",
-      "-DSURELOG_BUILD_TESTS=OFF",
-      "-DSURELOG_USE_HOST_GTEST=ON",
-      "-DSURELOG_USE_HOST_ANTLR=ON",
-      "-DSURELOG_USE_HOST_CAPNP=ON",
-      "-DSURELOG_USE_HOST_JSON=ON",
-      "-DSURELOG_USE_HOST_UHDM=ON",
-      "-DGTEST_LIBRARY=unused",
-      "-DGTEST_INCLUDE_DIR=unused",
-      "-DGTEST_MAIN_LIBRARY=unused",
-      "-DANTLR_JAR_LOCATION=#{Formula["antlr"].opt_prefix}antlr-#{Formula["antlr"].version}-complete.jar",
-      "-DSURELOG_WITH_ZLIB=ON",
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-      "-DPython3_EXECUTABLE=#{buildpath}venvbinpython", *std_cmake_args
-    system "cmake", "--build", "build_shared"
-    system "cmake", "--install", "build_shared"
+    antlr = Formula["antlr"]
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DANTLR_JAR_LOCATION=#{antlr.opt_prefix}antlr-#{antlr.version}-complete.jar",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DPython3_EXECUTABLE=#{which("python3.12")}",
+                    "-DSURELOG_BUILD_TESTS=OFF",
+                    "-DSURELOG_USE_HOST_ALL=ON",
+                    "-DSURELOG_WITH_ZLIB=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -127,8 +103,8 @@ class Surelog < Formula
 
     flags = shell_output("pkg-config --cflags --libs Surelog").chomp.split
     system ENV.cxx, testpath"test.cpp", "-o", "test",
-      "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}lib",
-      "-fPIC", "-std=c++17", *flags
+                    "-L#{Formula["antlr4-cpp-runtime"].opt_prefix}lib",
+                    "-fPIC", "-std=c++17", *flags
     system testpath"test"
   end
 end

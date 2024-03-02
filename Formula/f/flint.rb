@@ -1,9 +1,9 @@
 class Flint < Formula
   desc "C library for number theory"
   homepage "https:flintlib.org"
-  url "https:flintlib.orgflint-3.0.1.tar.gz"
-  sha256 "7b311a00503a863881eb8177dbeb84322f29399f3d7d72f3b1a4c9ba1d5794b4"
-  license "LGPL-2.1-or-later"
+  url "https:flintlib.orgflint-3.1.0.tar.gz"
+  sha256 "b30df05fa81de49c20d460edccf8c410279d1cf8410f2d425f707b48280a2be2"
+  license "LGPL-3.0-or-later"
   head "https:github.comwbhartflint2.git", branch: "trunk"
 
   livecheck do
@@ -12,18 +12,20 @@ class Flint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e75f2c0f162efd57be88f49d2d82e185fe1cb32a47bfcd396aa0aa13606bbaa1"
-    sha256 cellar: :any,                 arm64_ventura:  "de5db34546d9d7d45a28fad4d7e8b7209ad29910b779feadfeb8412e5ef628d9"
-    sha256 cellar: :any,                 arm64_monterey: "f6a985f0559d1fb8b641f5aefcb5d403b4a00f6687d74f6f34ae4a4fd6271b14"
-    sha256 cellar: :any,                 sonoma:         "acddb19a44d203bc6b2bba73e359995b8f83ccf015c89984668315f336029afd"
-    sha256 cellar: :any,                 ventura:        "f1355bdf3d0960e3318096e16fe4ae68b411d766a1bb689df9905d97e741f207"
-    sha256 cellar: :any,                 monterey:       "c03703bd499c38aca8db90594a56db1933654fda770564f96dd2450081c76fb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd8b74d4c9e922d246704eb30c6ba45462036e26933625a69880d2b9a5245f3e"
+    sha256 cellar: :any,                 arm64_sonoma:   "cd9081c8a59306634adce74fe130329c10da59dc5cde3d6d64a97b3db50b3aac"
+    sha256 cellar: :any,                 arm64_ventura:  "48298b28a7101f3e1d996b99466dddfe3ab223081704a824822d8b4f262c483c"
+    sha256 cellar: :any,                 arm64_monterey: "3402845f37dc68f76013519bb65aa7eb41271350d30af228344665f724af0802"
+    sha256 cellar: :any,                 sonoma:         "38b55243359af6245acad6bb3135eb23d3502ac5d4bf53249a0f383f2f1b9911"
+    sha256 cellar: :any,                 ventura:        "51e691ed458d7938cc5d43f4231ea7a79afd1b49a01f99b959bc7a729fbd832d"
+    sha256 cellar: :any,                 monterey:       "e2cc694938b6af748f2700a3274b5b634bd345c79b824435490ac1e24425cc16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "796f363a97eb42772140b94d31a9eaccfb2acf445175639aba7869250b293942"
   end
 
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "ntl"
+
+  uses_from_macos "m4" => :build
 
   def install
     ENV.cxx11
@@ -31,9 +33,13 @@ class Flint < Formula
       --with-gmp=#{Formula["gmp"].prefix}
       --with-mpfr=#{Formula["mpfr"].prefix}
       --with-ntl=#{Formula["ntl"].prefix}
-      --prefix=#{prefix}
     ]
-    system ".configure", *args
+    if build.bottle?
+      args << "ax_cv_check_cxxflags___march_native=no"
+      args << "ax_cv_check_cflags___march_native=no"
+    end
+
+    system ".configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

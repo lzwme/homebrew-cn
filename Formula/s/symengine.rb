@@ -4,15 +4,16 @@ class Symengine < Formula
   url "https:github.comsymenginesymenginereleasesdownloadv0.11.2symengine-0.11.2.tar.gz"
   sha256 "f6972acd6a65354f6414e69460d2e175729470632bdac05919bc2f7f32e48cbd"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e19eca46111227cab7806c4a7b408a07230a1148afc05004e761c4b564d806d7"
-    sha256 cellar: :any,                 arm64_ventura:  "490dcf93e8704e3126995834b16431892ff946dd6c164059b5cafd800fdd344a"
-    sha256 cellar: :any,                 arm64_monterey: "2fec206eec63cbe5cdb9e4e94ae23adf17e320aaeda1a7f65b3ad1e147e60b0e"
-    sha256 cellar: :any,                 sonoma:         "e3dc3e24c7c722fd8fada1a856134df934f55f12311c782759353c673cc797ea"
-    sha256 cellar: :any,                 ventura:        "bbf4516e06744a99504a9e1d5335c1d175d8bbe3828299618ee0c7eae8fb0da6"
-    sha256 cellar: :any,                 monterey:       "6d1b8080812a5c93ad6d2144afa86d2c863eb8e151ea4151338a321fc6241d61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6324f6ebd3228690258d256d9068ece631dd09283f976d64d911b639f504db3a"
+    sha256 cellar: :any,                 arm64_sonoma:   "6458bc2c2e3337c318d7fc2857c0034c013c29512ffee81def43db6c97f3c732"
+    sha256 cellar: :any,                 arm64_ventura:  "24c2d6c14123358e039800c9b674a7498e6c56717c7eeec4cf47b10b410f1755"
+    sha256 cellar: :any,                 arm64_monterey: "6db2af1d4df294e5bfde8c9778f03e93d11e828f64561c0ad43f6dfc89fc06c5"
+    sha256 cellar: :any,                 sonoma:         "4c852b02a1579c981b4f29c3a115f562846158d6f1fd8956170100455c929db1"
+    sha256 cellar: :any,                 ventura:        "4df7e9b3f04f1786c6e105c0839ea130a6dce4bc8cc406ac3b70cdcf40c2c95c"
+    sha256 cellar: :any,                 monterey:       "4ccf43a756805df78e3c9b7f4e9580dfa26fb4901a045e88b586f35d3669962e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8746a70d6068a6209161bd7780fb42e103a3277dffd08dd8d7f080e9738bea21"
   end
 
   depends_on "cereal" => :build

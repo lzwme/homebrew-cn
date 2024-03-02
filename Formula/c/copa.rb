@@ -1,19 +1,19 @@
 class Copa < Formula
   desc "Tool to directly patch container images given the vulnerability scanning results"
   homepage "https:github.comproject-copaceticcopacetic"
-  url "https:github.comproject-copaceticcopaceticarchiverefstagsv0.6.1.tar.gz"
-  sha256 "6d4d23b02ccf8d75e95109c37ad1e8901d351ea8294acdd6f5b2d9dc4d02f75c"
+  url "https:github.comproject-copaceticcopaceticarchiverefstagsv0.6.2.tar.gz"
+  sha256 "a2adaafbed9f6a05b69567b16f0c40d6047ce1e70f9d56c4f78918095e83076b"
   license "Apache-2.0"
   head "https:github.comproject-copaceticcopacetic.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d155a50fd86ddef2a7d9bea03a021379efab9d03144669120e37a18e8128e61"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c34d938975c4dccd925e009eb86f8b35cf73338339942fbd0263dbf3d3cae914"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e775f8714b46c768bb65de94a912b31a9259451354cb75ba8f82bcd1cadac41"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9b947b14b1abad15f23de3dfcb7830c5b0e1a5fb2e51cc55a53f888d0fb81e62"
-    sha256 cellar: :any_skip_relocation, ventura:        "717bb9a37be8f3728a78ea39ad9c739d16e14469f04083e231514bf80cd91733"
-    sha256 cellar: :any_skip_relocation, monterey:       "7cd23b54eac3dd955c93527e5b55bc5bdc49a8f415121e929bf0b61a370cd454"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b04d4086543eaebb425470cb3c5a14ba2119049858b6ea7b9ba3198029bff3bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab34a1e444d93aa9c7a8b99c5e49c42aaedef66b9f63fb38eca44b751e3fe929"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7126dda3d069e6c4476e7744cd6876ceb068ba52d1d2e8ff287e04c72d8f1da3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d33280b6238df2b7eadcde9918dc3cf3aa5696b9880ddd801af570716d299b20"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3273dbaad27453a41ea2c0789a16f2f12bf6f894f057ccb5694b43898cb524db"
+    sha256 cellar: :any_skip_relocation, ventura:        "1c3a7d4b63ff333e93ddc24d1b30652ad3b30c03c4281b05ef43435a165693e0"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef81b45bcb135ff776eab6245ff3d844e44f64fc536ca8f34bac8e4b5d1512f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34c4602a525f9f2d7d953dc8a37ce933f45ba932bc915ab256f3ae6e0a2c575b"
   end
 
   depends_on "go" => :build

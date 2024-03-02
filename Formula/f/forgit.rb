@@ -1,12 +1,12 @@
 class Forgit < Formula
   desc "Interactive git commands in the terminal"
   homepage "https:github.comwfxrforgit"
-  url "https:github.comwfxrforgitreleasesdownload24.02.0forgit-24.02.0.tar.gz"
-  sha256 "020e9cf1d015fee7bd19d64ca2076f22570816eb48e3ec9c860ee1bad3dee388"
+  url "https:github.comwfxrforgitreleasesdownload24.03.0forgit-24.03.0.tar.gz"
+  sha256 "0b7d1d6ed90477e9ca6342e57a00015d80ee75e44ac2f9cea5029613e9d09b28"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cc481658d635f7b71123685cecbcbd00bbefe6e1c6445bb35c7a196e57d68f81"
+    sha256 cellar: :any_skip_relocation, all: "920ba213f9c762993789086c637360c86be6298219ad88c44887b2a4dba9f35e"
   end
 
   depends_on "fzf"
@@ -14,8 +14,9 @@ class Forgit < Formula
   def install
     bin.install "bingit-forgit"
     bash_completion.install "completionsgit-forgit.bash" => "git-forgit"
-    zsh_completion.install "completionsgit-forgit.zsh" => "_git-forgit"
-    inreplace "forgit.plugin.zsh", 'FORGIT="$INSTALL_DIR', "FORGIT=\"#{opt_prefix}"
+    zsh_completion.install "completions_git-forgit" => "_git-forgit"
+    fish_completion.install "completionsgit-forgit.fish"
+    inreplace "forgit.plugin.zsh", 'FORGIT="$FORGIT_INSTALL_DIR', "FORGIT=\"#{opt_prefix}"
     inreplace "conf.dforgit.plugin.fish",
               'set -x FORGIT "$FORGIT_INSTALL_DIRbingit-forgit"',
               "set -x FORGIT \"#{opt_prefix}bingit-forgit\""

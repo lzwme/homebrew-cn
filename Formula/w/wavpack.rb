@@ -1,21 +1,18 @@
 class Wavpack < Formula
   desc "Hybrid lossless audio compression"
   homepage "https:www.wavpack.com"
-  url "https:www.wavpack.comwavpack-5.6.0.tar.bz2"
-  sha256 "8cbfa15927d29bcf953db35c0cfca7424344ff43ebe4083daf161577fb839cc1"
+  url "https:www.wavpack.comwavpack-5.7.0.tar.bz2"
+  sha256 "8944b237968a1b3976a1eb47cd556916e041a2aa8917495db65f82c3fcc2a225"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e8744d59e9df6da636599264012b163c867e943a9973ab87f574214fe8b42649"
-    sha256 cellar: :any,                 arm64_ventura:  "6b5d5e7de0c7e1d77a4594c8d2ee9ea57253926261875279cec5d57fe3d7f561"
-    sha256 cellar: :any,                 arm64_monterey: "7b6c68f56f22027dcd9b5355b5f0bb8036b97a24a767732cb921573ea5f0424b"
-    sha256 cellar: :any,                 arm64_big_sur:  "31f0462f8aa49dea696e2c3fd2de063f683e6dea931cecce0f6ee85a6affe031"
-    sha256 cellar: :any,                 sonoma:         "26ff9eff129b7cd5244bde94f6cf56d0f0f2cb9c7d37501db49b518e47ac2ccd"
-    sha256 cellar: :any,                 ventura:        "1c2d9b68703a6da68805c808f96e318e7a760e31f25d47d723c1dd8dfbc268c3"
-    sha256 cellar: :any,                 monterey:       "3c22e00ccb4c182fa6aef5a91d5a6f9914e657e00a567bb7709cd43d92598db2"
-    sha256 cellar: :any,                 big_sur:        "919c8c02f44926effa043cedf4252dd79c475f07b51cc6a7f656e8f7debc41b3"
-    sha256 cellar: :any,                 catalina:       "77d5572af643eaa5c4dfab561427887701af875b865bae2856ea361e5e67da58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac5f47e688c698f7bad7d92733f4dde6444dedc958f8535ff7b290df7391b5f7"
+    sha256 cellar: :any,                 arm64_sonoma:   "a52595d292c101c9976c2ef02756e0d90b985a10e58a7305d9a4a31279eecf57"
+    sha256 cellar: :any,                 arm64_ventura:  "18dc138bdded56a9eeb9b246b5a1c2b809ab27be62b55fbd19f3a04f96517dc5"
+    sha256 cellar: :any,                 arm64_monterey: "d920574d1f4493faf11e8d772ed39821159349c22c6de11be99f8058bfbea686"
+    sha256 cellar: :any,                 sonoma:         "8595bdb5181479ab687368280cf55758afde4017d67a15b93923a6dff487734c"
+    sha256 cellar: :any,                 ventura:        "139b76fb2ed0c471294576ea6ba387fbed526c3c228bee05a2bfced748f6788f"
+    sha256 cellar: :any,                 monterey:       "e0d0a48bca189c2a28edd80c406f3c09693d1f6d351ff21b6bf74b7210bc72e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb9564559131803d0e34f4d72c42ea6d20046197ea49b5fc58250cba812cfb66"
   end
 
   head do

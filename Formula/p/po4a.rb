@@ -5,19 +5,19 @@ class Po4a < Formula
 
   desc "Documentation translation maintenance tool"
   homepage "https:po4a.org"
-  url "https:github.commquinsonpo4aarchiverefstagsv0.70.tar.gz"
-  sha256 "e5001d0cb900bfb700d09abb7e994b823d5c05b72c0b221781bff88cbb537f3b"
+  url "https:github.commquinsonpo4aarchiverefstagsv0.71.tar.gz"
+  sha256 "7d087113321ff15e4ebf1cf80643cf6f1384bb12b02e2e1857120a1ab9573a55"
   license "GPL-2.0-or-later"
   head "https:github.commquinsonpo4a.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8f963cece13390048408484ca18986c8cb234c1d601f44bf2d280cd9fed64017"
-    sha256 cellar: :any,                 arm64_ventura:  "0076946c9fd74e0816d1799fd35ae8c5c35b4b8af11dd37381a8acbe1d334fcc"
-    sha256 cellar: :any,                 arm64_monterey: "5daafbb387e87cd496e11ce0d288348e3f6a30455aa14d20e275ce3b205602d9"
-    sha256 cellar: :any,                 sonoma:         "2d82f042370f0ad9e0944323808a3c276e0e574eae1f0df7c96cf627b208d9a0"
-    sha256 cellar: :any,                 ventura:        "1240628a93467fc5dc5581d3732ace25d4e9ca7578252d5106a24c4b07985d34"
-    sha256 cellar: :any,                 monterey:       "bba35fd3d85446190df2e62ef11164b191cf88697d11643245721b7668231021"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f957fc2a48be1955f619a329546dfdb05482b2dbe4793327bd9fa4598c36362a"
+    sha256 cellar: :any,                 arm64_sonoma:   "9e394c87e77af1dfe3fee2947a36241a3bf7159b708f4e65f3b51ba73c0bbd4b"
+    sha256 cellar: :any,                 arm64_ventura:  "a0bd254ddd4a7087ea4f5fa244a49b1c2870ce98d8ed9d6cccd0f653d742b9ac"
+    sha256 cellar: :any,                 arm64_monterey: "4a75dd56fa48519de7b468ffa68cce25f25a6fa63422fd2e10dfceef67f79f76"
+    sha256 cellar: :any,                 sonoma:         "b72d6f5716ed75f44b613cf893ec8e0b07405d220e73793aac754be9536a7d24"
+    sha256 cellar: :any,                 ventura:        "8856239974393eba4f62a9d8f010aa02d4c5078615d514fed9e9e9a41bb45418"
+    sha256 cellar: :any,                 monterey:       "e6ce32291134311e49361ab1766a2b9e21e9ecfdfacf50d15af800915bc5fa1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fec172f9e2a78d3e4471e52e6f0096d6a0804626087f8025569dbd0122f52bb7"
   end
 
   depends_on "docbook-xsl" => :build

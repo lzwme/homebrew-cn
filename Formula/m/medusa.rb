@@ -1,21 +1,19 @@
 class Medusa < Formula
   desc "Solidity smart contract fuzzer powered by go-ethereum"
   homepage "https:github.comcryticmedusa"
-  url "https:github.comcryticmedusaarchiverefstagsv0.1.2.tar.gz"
-  sha256 "17163cb9c5f73eac3d896d91622a6fbd24c5c0a516b4248d679b26b35df1849a"
+  url "https:github.comcryticmedusaarchiverefstagsv0.1.3.tar.gz"
+  sha256 "d4c6bc58f2ee51b93007cf678cc3ed07f15317a892faca3b4098c30afa4e537f"
   license "AGPL-3.0-only"
   head "https:github.comcryticmedusa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67cb8d46135477feda8dabc97a748d003ba9fc25ad6b74cdd265e7af98d6087a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "841d2dc6b4a5808a3a9583d4fd465c5e7f5a6ffa4e243ca9b16f4ca169d555cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b246c45262229a939028bb58de0b7e3394c7f3df929f41bc4409e1ea65af0249"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d8632555a00e4b6997b9a5a011709a7bca304f084458ad0131d179069332738"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10b75abd0088c64e876e2571099e7892e379cfb909c336deb0eba9de5839a42d"
-    sha256 cellar: :any_skip_relocation, ventura:        "f51d41d50a6564647451371885baf6182c03de1688ce75782d5813d8ca070339"
-    sha256 cellar: :any_skip_relocation, monterey:       "01b83d69c3587ac988d64ca76da2809cda605bf1237003545995a0f06c8948a4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c53df68bc21d836fae466d49f44066464f9f78eb1cdbcaf8f41bb80d1f90d845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "920f39756818dd331a6f90a616f7024c0624a9dd00763f39a22aa5201e7ca5ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ff9abc0279a369078908b052d84a9f9739b375553004759b2deeafe9b31cdcc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23637a87bef0cc653f8b92e4e91968ba27de2bee493723029513c83250af2df0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a61266bb31d5f8e9dc4b93f83a8e88b5cf7b66fbc12ce24e128e4ee809d4463f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "894d95c7dd1f762d09ff97b6406e0acdc8b4475b4c2a90387dc97067ef9817fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec0b7e14b74bc60ead0a23dd23ab35c5f63ea606243c457b03d584b991c8892f"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d9499953040770ed79f4b4da6689de62dfa484682b11b04ecf360cd63804f26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abacfafc77be6096ad9f2dd5ee2760676e8c3e0633b30c2f02f12004ce4d3543"
   end
 
   depends_on "go" => :build
@@ -44,7 +42,7 @@ class Medusa < Formula
       }
     EOS
 
-    fuzz_output = shell_output("#{bin}medusa fuzz --target #{testpath} --assertion-mode --test-limit 100")
+    fuzz_output = shell_output("#{bin}medusa fuzz --compilation-target #{testpath} --test-limit 100", 7)
     assert_match(PASSED.*assert_true, fuzz_output)
     assert_match(FAILED.*assert_false, fuzz_output)
   end

@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https:fmv.jku.atcadical"
-  url "https:github.comarminbierecadicalarchiverefstagsrel-1.9.4.tar.gz"
-  sha256 "39b16f6909adbecbe03ea1e170fc51c976135ce63d159e32706162e4eff7c4f8"
+  url "https:github.comarminbierecadicalarchiverefstagsrel-1.9.5.tar.gz"
+  sha256 "fb1850e08c578229c8a3a020673fd65ae271c54f0ce660386a0de952bfd7b2b0"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cadical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "531039129b71895c06d6c4cb9710ddec426a1b58c9d2bdde1fed8e58d3db8c93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47ce132cd04bf93473759d84712a390c3019332021d3fa786f39e02f6c5bbc84"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba96834d0685697f44054206bac328f4655cf59e062f0516484b0f93090f72f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5cc90d700f35537520f8974e572b206d80959af7c9bb25c6fdf873ec9b3005a1"
-    sha256 cellar: :any_skip_relocation, ventura:        "c03edc463190a12d60f730c35c73f1f1317f15dae116959b0548621b5c6ce526"
-    sha256 cellar: :any_skip_relocation, monterey:       "8156675a7ebfba7ee149cf10c1e111ec6738a34803295dc94b6368a29e570e20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da8e84424cb812c9e6b64c3998bfed60766e980c1e24aee0813d15cb558bcdb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9f3671043f8bfa9b9e0f3c5abf4dfcd22d5196fc98f443fe18da64a31b52c46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "85a248555403faaecc91e3a4e6b23df264a8f19b12c9ceb18b97c14f6bdee638"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9256af14f70ddd1a2aa0f82360ecd6588f64062db8b7612c44c946648dbe004"
+    sha256 cellar: :any_skip_relocation, sonoma:         "120c3268b72aa7e247f48a2d88ca6391cd1ddc9e8ba4e2fe325cea304927e651"
+    sha256 cellar: :any_skip_relocation, ventura:        "8a3c7f6bd26182a091090e0545e1eda666d9a832b27c5e9d5bf21e8eda61457f"
+    sha256 cellar: :any_skip_relocation, monterey:       "9547d6f7ff7949816dc6ad460133291666273edfaf9d50ff85ef52c21c6beaaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c98f89aa84b85ececcc7ec73e656bdcf06908c1e4e30ee8d3df76c27f7ba1c50"
   end
 
   def install

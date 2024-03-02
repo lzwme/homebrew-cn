@@ -1,8 +1,8 @@
 class Faiss < Formula
   desc "Efficient similarity search and clustering of dense vectors"
   homepage "https:github.comfacebookresearchfaiss"
-  url "https:github.comfacebookresearchfaissarchiverefstagsv1.7.4.tar.gz"
-  sha256 "d9a7b31bf7fd6eb32c10b7ea7ff918160eed5be04fe63bb7b4b4b5f2bbde01ad"
+  url "https:github.comfacebookresearchfaissarchiverefstagsv1.8.0.tar.gz"
+  sha256 "56ece0a419d62eaa11e39022fa27c8ed6d5a9b9eb7416cc5a0fdbeab07ec2f0c"
   license "MIT"
 
   livecheck do
@@ -11,16 +11,13 @@ class Faiss < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "9ee51131776348cac02bd190dae812d63896b8d8a374a20a72608eb18d670d01"
-    sha256 cellar: :any,                 arm64_ventura:  "fce50696b90d0357b420807c89f13b20851a187759c01a20cec3cd281c34fbd6"
-    sha256 cellar: :any,                 arm64_monterey: "d8e5da0af54d584559f730e823abfe76334638e86a6f58ffa8416efae1b58f8b"
-    sha256 cellar: :any,                 arm64_big_sur:  "3bad3d3ecc1fa8fd4d8e6421f4bd2d031143490785ac3f276a432df9dfbd0ac1"
-    sha256 cellar: :any,                 sonoma:         "5347a09cd113db4654eaeb277745edb5210277ab7e4203d2a72808a697769b07"
-    sha256 cellar: :any,                 ventura:        "b6d728b6141c74eae30ae89c2ed3faa44a198afd890da6482b407209c79325c5"
-    sha256 cellar: :any,                 monterey:       "8b88769ab126f91fd0269306e3bcc5102baaab9e61730095a24d71c5b3b79546"
-    sha256 cellar: :any,                 big_sur:        "efc062d04573dd6d5b1911cc7cb333f125ae67aae11a8964490852297d8cf941"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fa475e6a354bfa4456b3f53537a649c68e3b672f4abf87e879d9a25a4215452"
+    sha256 cellar: :any,                 arm64_sonoma:   "ef550d42c8097e4bea9ca7543b72d3ed40e597dd25c1ad2a6a501b4f63525df9"
+    sha256 cellar: :any,                 arm64_ventura:  "3a3d3fa6342d689f10f613925903be22e7facd9336c1a45727e52ab1cb45001f"
+    sha256 cellar: :any,                 arm64_monterey: "f4018c8f975b35daac3d18292d071951dfa44504ca7395b15e7459bb7857050f"
+    sha256 cellar: :any,                 sonoma:         "53379730b560a7f052a012ec2a0b737d07d82d75a07fe4bc4a15fe7f65c5d938"
+    sha256 cellar: :any,                 ventura:        "8a4df73b9d6753f5470cd82cafe9574b52bb6328017b12c6d17bd293c0a4cfca"
+    sha256 cellar: :any,                 monterey:       "8f3121a6d49431aacfc93bcc59a98573cbbd99cc6683196b412b267064b9775b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7039257213591de45492e514610f7f94b0463c8dde4705238d16bed04eecb536"
   end
 
   depends_on "cmake" => :build

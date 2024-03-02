@@ -6,6 +6,11 @@ class Tailscale < Formula
       revision: "2caffeeb460a7b69fc8e329821e5e2cbbc10af27"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1785b86d5ecc3323d20a18da12aeadb3201f43d6886095078190c9ac091c1b1f"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f89390571a2b8e39de1ca417ad456e0eaa173bfe377b637faa07ae6f0c72f753"

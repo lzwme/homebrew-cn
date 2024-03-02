@@ -1,6 +1,6 @@
 cask "wine-staging" do
-  version "9.2"
-  sha256 "5413c3e8c91362918364620533f41cf5f76fc45faf432078911155c595a7ceae"
+  version "9.3"
+  sha256 "a81a7d31e7ac3dd0aa31ae5afc707b889a4168e57403bd8719469a7ce99ff8cd"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -25,25 +25,30 @@ cask "wine-staging" do
   depends_on macos: ">= :catalina"
 
   app "Wine Staging.app"
-  binary "#{appdir}Wine Staging.appContentsResourcesstartbinappdb"
-  binary "#{appdir}Wine Staging.appContentsResourcesstartbinwinehelp"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinmsidb"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinmsiexec"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinnotepad"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinregedit"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinregsvr32"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwine"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwine-preloader"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwine64"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwine64-preloader"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwineboot"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwinecfg"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwineconsole"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwinedbg"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwinefile"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwinemine"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwinepath"
-  binary "#{appdir}Wine Staging.appContentsResourceswinebinwineserver"
+  dir_path = "#{appdir}Wine Staging.appContentsResources"
+  binary "#{dir_path}startbinappdb"
+  binary "#{dir_path}startbinwinehelp"
+  binary "#{dir_path}winebinmsidb"
+  binary "#{dir_path}winebinmsiexec"
+  binary "#{dir_path}winebinnotepad"
+  binary "#{dir_path}winebinregedit"
+  binary "#{dir_path}winebinregsvr32"
+  binary "#{dir_path}winebinwine64"
+  binary "#{dir_path}winebinwine64-preloader"
+  binary "#{dir_path}winebinwineboot"
+  binary "#{dir_path}winebinwinecfg"
+  binary "#{dir_path}winebinwineconsole"
+  binary "#{dir_path}winebinwinedbg"
+  binary "#{dir_path}winebinwinefile"
+  binary "#{dir_path}winebinwinemine"
+  binary "#{dir_path}winebinwinepath"
+  binary "#{dir_path}winebinwineserver"
+
+  # Symlink non-existant wine binaries to wine64
+  postflight do
+    File.symlink("#{dir_path}winebinwine64", "#{dir_path}winebinwine")
+    File.symlink("#{dir_path}winebinwine-preloader64", "#{dir_path}winebinwine-preloader")
+  end
 
   zap trash: [
         "~.localshareapplicationswine*",
