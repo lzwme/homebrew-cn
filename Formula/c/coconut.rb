@@ -3,19 +3,18 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "http://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/ba/5c/b6bc3583a01c11ccf205bfe3a10d46f20de0645e5cbd613881b320d00b80/coconut-3.0.4.tar.gz"
-  sha256 "106f092f91e6cf509415cc627bf52ecda71a065158614cbfe73fa73dceeed98a"
+  url "https://files.pythonhosted.org/packages/e6/58/87cda2b6f11f4037b68a649dfe56b53da5de126502f269d23ec16bf04833/coconut-3.1.0.tar.gz"
+  sha256 "e404e436e347d31e918d9bc870cc2e93a70b813739bd7b6c5d2353bdf3e6c777"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24bfe2cd7d55f4b559f40786a08586507ae0b7647a401ab4865b58732739c034"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bef926d9b3f851d35356ea62327a96e7526742c43a75c52f7e8dede545c1dc72"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a616344e7845c7f92c72e616728cb722acec304a3e15be5e09dcca96f7c8d311"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24fe9a78ee797061b64ff96b8f61dab130e7d5bd83cbc89615c9982d77439d4e"
-    sha256 cellar: :any_skip_relocation, ventura:        "4352de9210e7a6fa36d46c7a248696f6bc7665ccf7fb3b2bc9b502a4bd2dd2a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "9e10d50938b8813c2413e236873d8983ebe2ed5ec0ab3825fab07560efb9f3b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74a2c654f63132e71568e340d6be7747e16d538dede45953c6e98b4d105ffa37"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af37622c181189bd04b56a8f21ff6cf73a3158dadaf1ab671e3dc111a8957c94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d68cfc8624dc437101c1d5d3e28b65fa845c86c898e9615fea6b0a4c2445100f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b5a5195fc074f99e12f3cce889b9df6b3689223fac8ecbad14fe21c7e57e446"
+    sha256 cellar: :any_skip_relocation, sonoma:         "49295e3da6e830fa9c46803d6368ee85f2b0f28b19cd1040ae40aa23938f84f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9a5bb6cd1ceffdb71f23da4b7cae63e0ba60e299eceee4b4aa7fbdcacf9e965"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1498dea272205accad14d749863080231b3364bdce726f2df00337849edf1bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39fe0be65f72c021d1d28aa7be24528cb2cf8174007351bc832e80c08125368d"
   end
 
   depends_on "python@3.12"
@@ -61,13 +60,13 @@ class Coconut < Formula
   end
 
   resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/cd/50/d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0ac/sniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/0c/1d/eb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96/typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https://files.pythonhosted.org/packages/16/3a/0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44/typing_extensions-4.10.0.tar.gz"
+    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
   end
 
   resource "wcwidth" do

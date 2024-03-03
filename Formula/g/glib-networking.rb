@@ -1,20 +1,18 @@
 class GlibNetworking < Formula
   desc "Network related modules for glib"
   homepage "https://gitlab.gnome.org/GNOME/glib-networking"
-  url "https://download.gnome.org/sources/glib-networking/2.78/glib-networking-2.78.0.tar.xz"
-  sha256 "52fe4ce93f7dc51334b102894599858d23c8a65ac4a1110b30920565d68d3aba"
+  url "https://download.gnome.org/sources/glib-networking/2.78/glib-networking-2.78.1.tar.xz"
+  sha256 "e48f2ddbb049832cbb09230529c5e45daca9f0df0eda325f832f7379859bf09f"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256               arm64_sonoma:   "a3083f7530e810fdf56d5ba6e1f4b86e9b5982a30984e8c28aca1999ed3adb1b"
-    sha256               arm64_ventura:  "2a8bcf4a6c043f071fc979b7ddd324f484dadffeedef21a570b59d7200b2576f"
-    sha256               arm64_monterey: "c23398d9a8b19176bd8605b5687f40dd020761249ba731526c38a1fb7043e8ec"
-    sha256               arm64_big_sur:  "c2092ad9f0905d037464588813f8e833993e0a8c297fd24b6145b07c38d0b300"
-    sha256 cellar: :any, sonoma:         "a8154d33e0cc488e7378f76e4e7c68992b9ae37db2fa618bf29061046fa48359"
-    sha256 cellar: :any, ventura:        "8d45c1905c641b2cebaa6997bf5c194d481925e5313ef25534361b4fde198095"
-    sha256 cellar: :any, monterey:       "ea4fe701f3bc87f9f248e507e0c354c7601b31dc298a0c2972fe5b759e949d6b"
-    sha256 cellar: :any, big_sur:        "b90a3fd3f328c9decef3fd6e511f2fe64dded1d90b5432a54073cef5f902a68d"
-    sha256               x86_64_linux:   "8f138e69272a1138385c07d8bd9c3af09c8543ae7faeb5f1abd05c049f7c270d"
+    sha256               arm64_sonoma:   "b0113931d5c29854323aca05a1f17f6012d5f4d361b224b5d1e7cd88cd661af2"
+    sha256               arm64_ventura:  "4be43cfeeaf350920f488b244e2e58d93e693b6c9eb80dc98fe81ad5c238691c"
+    sha256               arm64_monterey: "875000000ae24f17c7af3ca719c810ed4a93f5c2ae5e59d0e55ff062adc2ab72"
+    sha256 cellar: :any, sonoma:         "f99904b22b903c739fd5eee735a3fbb305d2b21c911d91a17f4d65a0a33933af"
+    sha256 cellar: :any, ventura:        "d342c2811b5bc90512a0cb965d5828d9ae3fda4bc6debdf9cda8073e86c363aa"
+    sha256 cellar: :any, monterey:       "dda0936ad953403b2af18aba9c915e89d13d6e8ad3b91c66c1bb240b310fc78a"
+    sha256               x86_64_linux:   "d3908022c8c471921a69f9b74f81b05821d356647490e1b60212decb2ebd4af8"
   end
 
   depends_on "meson" => :build

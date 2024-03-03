@@ -1,21 +1,18 @@
 class Sniffer < Formula
   desc "Modern alternative network traffic sniffer"
   homepage "https:github.comchenjiandongxsniffer"
-  url "https:github.comchenjiandongxsnifferarchiverefstagsv0.6.1.tar.gz"
-  sha256 "130d588c2472939fc80e3c017a1cae4d515770f1bcab263d985e3be1498d2dbc"
+  url "https:github.comchenjiandongxsnifferarchiverefstagsv0.6.2.tar.gz"
+  sha256 "8da1a20155518da7c195fd370ab2811d02eddcfc11f423f75335f7b8024d42f0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1729c6d42b3625101967f67031ec0f73498008aa6b7b1c6f7227f13d60af793d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f77165b86670a4cddd7071e9c9e5efe462cd5ac96c6c8a79596b218476144c9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a446d1d26c6c1c3a7dead0950a3c2587aff620cb446c5db58871a1bf047b1f98"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d9683d3d59a70c73893741a91b2a7c7c92cdb2ce4f877c057d74ed5a0c58e16a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f9838d1d14b1bc5cea81dd99e84196d0acc97df59bddc4844f628b8ff388647e"
-    sha256 cellar: :any_skip_relocation, ventura:        "a5fa19865d18c4d3fc1de3f1159f568101d94670b77fe4708a46355c1507d0f6"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fabbd3468af11d5f43ffd04c3399c4e2f386470db7aad023629b0ed64a3b979"
-    sha256 cellar: :any_skip_relocation, big_sur:        "257cb8e41ce952e8bdd68dcce870d19c82ae2896b5fab09207e443efb5a5d1c6"
-    sha256 cellar: :any_skip_relocation, catalina:       "bcf4380d82a2f9e9e5381983201d7fd831afce2f6315e59e064e86d4c2760153"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1550c170928d31d83c7cffa56a52518dee17d4232603cc79a269451f110b935d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5aac7f08562aeaef83c298a129f8749a3c94f37ed31a771c0fb098fb9926c1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "426df2385cf9a2725bb85856e9e825177c7ebfba07baf662f7e15c03cb934d18"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "14357cfb10b5c6a0dfd256265b0a15381696714e841bb88bceb59b0c1d8f0ed8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0039e5ac0e23ec4990badeae4d3adc5d244de339060b7c92991716751b1d1239"
+    sha256 cellar: :any_skip_relocation, ventura:        "257d8ea96ca570d8040cb01613c103836f6620cd0e07759e93cf7df891a40f6f"
+    sha256 cellar: :any_skip_relocation, monterey:       "721dde5fd616c6255cafbf6fb65d27459579829b92dc7d59c3b2638e6e9394d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b01bfd9aa799259150ec8dd50050d4787b6410377ba2c62b93b0dc157c182f5b"
   end
 
   depends_on "go" => :build

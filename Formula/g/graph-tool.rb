@@ -14,13 +14,14 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "ff0c95605ed9a02c48b44ccf428faf8d3619a748b18572dc3b6a9fb9dcea68d6"
-    sha256                               arm64_ventura:  "a7219f22ef4158f40933f7912b8a0ad48ca533c3770c158df99b14b1fe1c8a06"
-    sha256                               arm64_monterey: "bdff17b1254a14480a828b09d2732643c3e12ae4e11abfebff6709d153917568"
-    sha256                               sonoma:         "bb266340fdc1fd0728adeb90aeff3241e0118e54907b0335c249bd4473d23cfc"
-    sha256                               ventura:        "17970cc956fd334c366335d4f532a8f54d1f0479ffc387a55ff3d5d6414ee376"
-    sha256                               monterey:       "294e8fa876ac401ba644d09a32b9bf80002a85a9c593e3c4907724350c8e97a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aa7a3df8ea24382ab5e04662b77be08fdb82ef9c75f53c04fa95ea2a8772dac"
+    rebuild 1
+    sha256                               arm64_sonoma:   "9133e6bfcf83da1e6e01dc7852e66015feff519d0c8c37049bdef94b07f0fd4d"
+    sha256                               arm64_ventura:  "13e04e5e92733eb29cefcec488ed50d0d364fac3988344d9f5c3bce2f9f8836e"
+    sha256                               arm64_monterey: "5a6383c3a6de34cad20d58090faaa92c096cecfabb383dcdc7147d95640179f7"
+    sha256                               sonoma:         "fc7a7ef28bee069a781ac012d5c55f72d9e358b57acd32858b34c83076807f6a"
+    sha256                               ventura:        "7811a58ab0817b8dda9ccae86caeb5c97c88859c49fd5838ccc941913ef19a4f"
+    sha256                               monterey:       "c8cf54a6348b9fd2b1c8ae2a73346d0bfbb519dea9644b874e5b1461b80f6f7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b1839300e7cf5ba5db4b235b4bb93d46918fa9980dd3114d656c4ccdf86c7db"
   end
 
   depends_on "autoconf" => :build
@@ -41,13 +42,25 @@ class GraphTool < Formula
   depends_on "py3cairo"
   depends_on "pygobject3"
   depends_on "python-matplotlib"
-  depends_on "python-packaging"
-  depends_on "python-pyparsing"
   depends_on "python@3.12"
   depends_on "scipy"
-  depends_on "six"
 
   uses_from_macos "expat" => :build
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
+  resource "pyparsing" do
+    url "https://files.pythonhosted.org/packages/37/fe/65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44b/pyparsing-3.1.1.tar.gz"
+    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
 
   resource "zstandard" do
     url "https://files.pythonhosted.org/packages/5d/91/2162ab4239b3bd6743e8e407bc2442fca0d326e2d77b3f4a88d90ad5a1fa/zstandard-0.22.0.tar.gz"

@@ -93,11 +93,7 @@ class Httpie < Formula
     # was used to install httpie.
     File.write("httpieinternal__build_channel__.py", "BUILD_CHANNEL = \"homebrew\"")
 
-    virtualenv_install_with_resources
-
-    man1.install_symlink libexec"sharemanman1http.1"
-    man1.install_symlink libexec"sharemanman1https.1"
-    man1.install_symlink libexec"sharemanman1httpie.1"
+    virtualenv_install_with_resources(link_manpages: true)
 
     bash_completion.install "extrashttpie-completion.bash" => "httpie"
     fish_completion.install "extrashttpie-completion.fish" => "httpie.fish"

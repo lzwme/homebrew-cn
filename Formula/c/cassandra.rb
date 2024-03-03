@@ -10,17 +10,16 @@ class Cassandra < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "29af2078d991d0f5d848f1d638ee3473acbaa7295c96a89491c16eefb7cbc665"
-    sha256 cellar: :any,                 arm64_ventura:  "535d0a0754e658719d67c87e8ef21fbdddc259787cf27d9ca8e9eb9b746c0f49"
-    sha256 cellar: :any,                 arm64_monterey: "f6fa83e35803e23a362696e403189d771d34a570debcbbed6dfc5e5043ba581f"
-    sha256 cellar: :any,                 sonoma:         "82d59bccdeb6ffa0a5258acd5911e1af72779ff28331d39bf7a53ad1eac763de"
-    sha256 cellar: :any,                 ventura:        "e621b3670a20073cbad0e0541506c10fca4ad77ca90e1a2a97d513323044eb49"
-    sha256 cellar: :any,                 monterey:       "981632b998c1ab811f113452f2658e36c06a0a45b334bc4be958c5dc98c063d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b900589f94e0dda18ad83859e18926db52a755d10de2f22a76b32144f738916"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "c762c38816e0390045b7dacd748540fe5d5d6b2f3eb899345feae7d43a855f43"
+    sha256 cellar: :any,                 arm64_ventura:  "b9c1354a4c899523ee897d54cdc93bd7e0569bd59a00b1239f5893cc753f905b"
+    sha256 cellar: :any,                 arm64_monterey: "8c6bdf5ffeddbe5f901ffd5ae663dddf442ce2cc18146a5bf2d3cc74b2258295"
+    sha256 cellar: :any,                 sonoma:         "dce5b3c5d2b03a1e49b20dbfdff5ac25cee90f4613e3147eb7ca01147109eab4"
+    sha256 cellar: :any,                 ventura:        "03503111a62e38a4e68559cd4f4ee9751011e77f325fb20576055af161438778"
+    sha256 cellar: :any,                 monterey:       "93251f588e156d585a6645effb9370aad0fee90234db341d011f1838309384a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e2a2458bb471147d3181b50c419e8020c8cf32171a243dd02442c8ff22ccaa"
   end
 
-  depends_on "libcython" => :build
-  depends_on "python-setuptools" => :build
   depends_on "libev"
   depends_on "openjdk@11"
   depends_on "python@3.12"
@@ -36,8 +35,13 @@ class Cassandra < Formula
   end
 
   resource "geomet" do
-    url "https:files.pythonhosted.orgpackages2a8cdde022aa6747b114f6b14a7392871275dea8867e2bd26cddb80cc6d66620geomet-1.1.0.tar.gz"
-    sha256 "51e92231a0ef6aaa63ac20c443377ba78a303fd2ecd179dc3567de79f3c11605"
+    url "https:files.pythonhosted.orgpackagescf2158251b3de99e0b5ba649ff511f7f9e8399c3059dd52a643774106e929afageomet-0.2.1.post1.tar.gz"
+    sha256 "91d754f7c298cbfcabd3befdb69c641c27fe75e808b27aa55028605761d17e95"
+  end
+
+  resource "six" do
+    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   def install

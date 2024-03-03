@@ -1,18 +1,18 @@
 class PythonDateutil < Formula
   desc "Useful extensions to the standard Python datetime features"
   homepage "https:github.comdateutildateutil"
-  url "https:files.pythonhosted.orgpackagesd977bd458a2e387e98f71de86dcc2ca2cab64489736004c80bc12b70da8b5488python-dateutil-2.9.0.tar.gz"
-  sha256 "78e73e19c63f5b20ffa567001531680d939dc042bf7850431877645523c66709"
+  url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+  sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2003c87754e04db1a9fa72148fd3ae10e8c01167472b8c1721d5b029b289c39"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64a5fee86a47d791af5f0a2c3e38f79f7362476c4f678864048a0ebcaee6c00c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b04f10a11573c1014097b7b174aa87069de9b87be768d1523efc01a9496df7ac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b306c1b0c709f9a06eb9915ccd98e8d9be3cc766e101c4142ac74725b54a201c"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a6281f3ad3fd1ec74314ea121261578c963145e422c05ca17dfd80aeb578e04"
-    sha256 cellar: :any_skip_relocation, monterey:       "f60075b312beaf9d4e5c23a7f8a6689f8ec1df7f03d97c6e3aff867905ac8103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5b4a5c21bd430e847dfd3def8edac1581b75e82c103019a54f1d9678a1d9f95"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aab852ba6ce0806a009276222a8d463109a2a2c948a4f1f37ec2203aa8ceecfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcdceba5d9561c721de861a8a8e85f66c376c11d2e717e2d826eae3980a9b435"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "893582b90d3ddf03e827bdea23e64aa52e9a68e452787e36f14f4c78723999ce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "eaf7877611a68e4c499a6e7a00b0740088d427120264f96e2d77d032c39724f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "40022516d6c9ae6c71e1bba5cd0554f63d7d930a025ccac6185076d9c51046c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "efa3bb4af762bbcde52ec8d76b7159001ba1431637ef30a56f5cdea7016f2a3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d84889a7dba322bd761da70dc1adcb1af03350e64b816fad72a68ae2d20ded9c"
   end
 
   depends_on "python-setuptools" => :build

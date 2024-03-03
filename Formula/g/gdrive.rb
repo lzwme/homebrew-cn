@@ -2,18 +2,19 @@ class Gdrive < Formula
   desc "Google Drive CLI Client"
   homepage "https:github.comglotlabsgdrive"
   url "https:github.comglotlabsgdrivearchiverefstags3.9.1.tar.gz"
-  sha256 "a46ab3c3c8ca1c0d050288e909717ffb5a6bc9b20635bc90574f7eb29e020f74"
+  sha256 "9aadb1b9a23d83f5aaa785960973bef1c63b85346de6be01a36e0630f2ddec1c"
   license "MIT"
   head "https:github.comglotlabsgdrive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f1b8c22a7032181ca4b78e0f35ac41e259019018fe8561bd66dacf0fb4ecf99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3dca5f854b655f18cce42690a82f4cebf683dd46b2f0b1324ffeb30af97f2b99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "289402bbd8a3c5a5499225e21db3f264d2d692767ba159b3cf2b342dde68bdd5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "111a8c2aededae870cffaf71d43b27be5a8bb998c13e04b91a1295cb06610aed"
-    sha256 cellar: :any_skip_relocation, ventura:        "2625b240540b94d9fa3804f16a70fcac09512810b2eb0728920304533ff04822"
-    sha256 cellar: :any_skip_relocation, monterey:       "00b3557669514a1148e5d28802b1a7d4fadfecec28ae371eadd63446795c3e47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae4d01861608fe3086c1daa15361ea45d6abe57c14845ae2c411eeb2f0d3a3d1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f46421761f47656b69c91d12f132a512c90a622f032e22979eaeaeb492158c80"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d43198708aa0d16925a7183cc028ea7356a42c2c6f25366dda2372e6310c227d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9fcffe4b624640c73631bbbe0872e14e60f8e4d26bcb38bc15d4d01e6236ec6f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2389051617cde44c9144ddf5c0696dea4a7cd16f8c940c6b50366bc762d10ae6"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e67b9d2936b20f5460fe4a2117b56d34fc49fa0c5b25edb8b2db2159deb7036"
+    sha256 cellar: :any_skip_relocation, monterey:       "36ff90fdf725f1615e6546897b9c4c3d78d47d4ceffc98f4d5e13af00b6ba303"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "048b5454b4d9390a1258ca0c9c731aa8a8e5ba871ccb20e7691b1f9486862bab"
   end
 
   depends_on "rust" => :build

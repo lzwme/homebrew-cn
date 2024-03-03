@@ -17,9 +17,7 @@ class Zurl < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "libcython" => :test
-  depends_on "python-packaging" => :test
-  depends_on "python-setuptools" => :test
+  depends_on "cython" => :test # use brew cython as building it in test can cause time out
   depends_on "python@3.12" => :test
   depends_on "qt"
   depends_on "zeromq"
@@ -32,9 +30,19 @@ class Zurl < Formula
 
   fails_with gcc: "5"
 
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
+    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
   resource "pyzmq" do
-    url "https:files.pythonhosted.orgpackages3f7c69d31a75a3fe9bbab349de7935badac61396f22baf4ab53179a8d940d58epyzmq-25.1.1.tar.gz"
-    sha256 "259c22485b71abacdfa8bf79720cd7bcf4b9d128b30ea554f01ae71fdbfdaa23"
+    url "https:files.pythonhosted.orgpackages3a331a3683fc9a4bd64d8ccc0290da75c8f042184a1a49c146d28398414d3341pyzmq-25.1.2.tar.gz"
+    sha256 "93f1aa311e8bb912e34f004cf186407a4e90eec4f0ecc0efd26056bf7eda0226"
+  end
+
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
+    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
   end
 
   def install
@@ -53,20 +61,20 @@ class Zurl < Formula
     ipcfile = testpath"zurl-req"
     runfile = testpath"test.py"
 
-    ENV.append_path "PYTHONPATH", Formula["libcython"].opt_libexecLanguage::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", Formula["cython"].opt_libexecLanguage::Python.site_packages(python3)
     venv = virtualenv_create(testpath"vendor", python3)
+    venv.pip_install resources.reject { |r| r.name == "pyzmq" }
     venv.pip_install(resource("pyzmq"), build_isolation: false)
 
-    conffile.write(<<~EOS,
+    conffile.write <<~EOS
       [General]
       in_req_spec=ipc:#{ipcfile}
       defpolicy=allow
       timeout=10
     EOS
-                  )
 
     port = free_port
-    runfile.write(<<~EOS,
+    runfile.write <<~EOS
       import json
       import threading
       from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -105,7 +113,6 @@ class Zurl < Formula
       assert('type' not in resp)
       assert(resp['body'] == 'test response\\n')
     EOS
-                 )
 
     pid = fork do
       exec "#{bin}zurl", "--config=#{conffile}"

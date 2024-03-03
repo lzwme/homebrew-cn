@@ -23,7 +23,6 @@ class Xrootd < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "libcython" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "davix"
@@ -40,16 +39,15 @@ class Xrootd < Formula
   end
 
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DFORCE_ENABLED=ON
-      -DENABLE_CRYPTO=ON
       -DENABLE_FUSE=OFF
       -DENABLE_HTTP=ON
       -DENABLE_KRB5=ON
       -DENABLE_MACAROONS=OFF
       -DENABLE_PYTHON=ON
-      -DPYTHON_EXECUTABLE=#{which("python3.12")}
+      -DPython_EXECUTABLE=#{which("python3.12")}
       -DENABLE_READLINE=ON
       -DENABLE_SCITOKENS=OFF
       -DENABLE_TESTS=OFF
@@ -61,7 +59,7 @@ class Xrootd < Formula
       -DXRDCL_ONLY=OFF
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

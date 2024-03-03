@@ -4,18 +4,18 @@ class VapoursynthImwri < Formula
   url "https:github.comvapoursynthvs-imwriarchiverefstagsR2.tar.gz"
   sha256 "f4d2965d32877005d0709bd8339828f951885a0cb51e0c006d123ede0b74307b"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
   version_scheme 1
   head "https:github.comvapoursynthvs-imwri.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c4084f311c842c5f446e6ae6607b8dc376846059214170ce2b71eea14ec594aa"
-    sha256 cellar: :any, arm64_ventura:  "6455b43165b08648bf8fe0ed4b3ad768e40064229b453ea6ee20ba2a6c2c4062"
-    sha256 cellar: :any, arm64_monterey: "980ce869ee1e94b7070352ed72f5156afac59eea2a35426f7316a584f58a7a93"
-    sha256 cellar: :any, sonoma:         "d342a83a4f966b388e17429302530c94269e6d51f597a22c85405047078bda2d"
-    sha256 cellar: :any, ventura:        "30191e100adb12d68249787bbbc4cb5471a5f6a45879641599c72aaf75d923a3"
-    sha256 cellar: :any, monterey:       "2bcafef5efb598bf38a30ebb84b6343fbb10aa56e659fdc16f09a5a102a5ee67"
-    sha256               x86_64_linux:   "ba39999734846bede76c7e49e48dff0dc1b4f8555d178fa747cfbbe412fc4ef8"
+    sha256 cellar: :any, arm64_sonoma:   "0f9ad6460cb2b4176e9f938e9b6bc187b46a341eb13072e6df668c987e198035"
+    sha256 cellar: :any, arm64_ventura:  "65bf37034b9c0b98dc82cfb26a227293d44e961c353a5699c47a879b86fa3e77"
+    sha256 cellar: :any, arm64_monterey: "4a2a21d3632b637d78718a2990b27583ee6b29d4884eb85660ef75696212c5e0"
+    sha256 cellar: :any, sonoma:         "b2a4bbfbaae66cc512e94e448470c1e37da854c54fe486239ab38fe0ae22d44f"
+    sha256 cellar: :any, ventura:        "3d4761b4242cc2bdec54d8dd2d54e830083faa4939217a67c5ee693cb4ee60d6"
+    sha256 cellar: :any, monterey:       "90cf83a8209771ffe476d9a4950693ec190edaa3cf6d7d0af02b70d770fcdd98"
+    sha256               x86_64_linux:   "ddcbf221b69cd9a1dd5bae38d04f951bd1096897a9af4192b90a72ffad84a468"
   end
 
   depends_on "meson" => :build

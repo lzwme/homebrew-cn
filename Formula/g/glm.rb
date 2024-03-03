@@ -1,8 +1,8 @@
 class Glm < Formula
   desc "C++ mathematics library for graphics software"
   homepage "https:glm.g-truc.net"
-  url "https:github.comg-trucglmarchiverefstags1.0.0.tar.gz"
-  sha256 "e51f6c89ff33b7cfb19daafb215f293d106cd900f8d681b9b1295312ccadbd23"
+  url "https:github.comg-trucglmarchiverefstags1.0.1.tar.gz"
+  sha256 "9f3174561fd26904b23f0db5e560971cbf9b3cbda0b280f04d5c379d03bf234c"
   # GLM is licensed under The Happy Bunny License or MIT License
   license "MIT"
   head "https:github.comg-trucglm.git", branch: "master"
@@ -13,13 +13,13 @@ class Glm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8d177748719b95658993ecd43fa12655701a17c90265b21f276cca23692d370e"
-    sha256 cellar: :any,                 arm64_ventura:  "2c98bea16ad38d1bfe8aa6c5e53c80902ab810a64ae3fc07737f7fbd68307031"
-    sha256 cellar: :any,                 arm64_monterey: "0b88a03a507fc6a844fd031fec6a01ac1564b9dda9e32165c923ff74374f931d"
-    sha256 cellar: :any,                 sonoma:         "5bf46f03e749fc17cb2db89b6e8d00e021246806ebafcdd4ed4fc677b533bc3a"
-    sha256 cellar: :any,                 ventura:        "ac194c8b7d6d568639ee2a7611c06127003ac1315ac2e9a86fb53ce2ddc5536d"
-    sha256 cellar: :any,                 monterey:       "324b50967d56d320c4d47f4f23ac205a8f813b1b7ec16e0278df6f78d77f378c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2aa9340b302c688c807ce9d93aa1b6303e8f018e0bce74d4cd678185caa2559"
+    sha256 cellar: :any,                 arm64_sonoma:   "6ca85b0488bb2907b912c68c5720934164d86afe6b038cd9467a78f06122f75d"
+    sha256 cellar: :any,                 arm64_ventura:  "ccf69c567c8790a7c1efb53aa3b940f27f0bfcef50c31b486208c85eb77e37ad"
+    sha256 cellar: :any,                 arm64_monterey: "7aea1476f18c285480341c410a24955a05cceee4f664a720bc3457d2dfac2f0b"
+    sha256 cellar: :any,                 sonoma:         "f5d0210c66b9780f30ce6429c1f05bd29f60c6ccf93e16ad12aca20ac9af1079"
+    sha256 cellar: :any,                 ventura:        "17c95c99013f142a9e48e3c557705c74d19e9de27b730c9f49a295183fe9d3cd"
+    sha256 cellar: :any,                 monterey:       "27404b50e8c5ea47840a934e470a170e9846d4e20a60906e3545eb026c144345"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4bb112c557b415df7d766a89422d73e6f6d10071c7e5750a54f5152f1603074"
   end
 
   depends_on "cmake" => :build

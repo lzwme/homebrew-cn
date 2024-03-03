@@ -1,6 +1,6 @@
 cask "wine-staging" do
   version "9.3"
-  sha256 "a81a7d31e7ac3dd0aa31ae5afc707b889a4168e57403bd8719469a7ce99ff8cd"
+  sha256 "dec108a36eee10a3970e07e38ee87d34c214562064f83bf367084f67421320ae"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -33,6 +33,8 @@ cask "wine-staging" do
   binary "#{dir_path}winebinnotepad"
   binary "#{dir_path}winebinregedit"
   binary "#{dir_path}winebinregsvr32"
+  binary "#{dir_path}winebinwine"
+  binary "#{dir_path}winebinwine-preloader"
   binary "#{dir_path}winebinwine64"
   binary "#{dir_path}winebinwine64-preloader"
   binary "#{dir_path}winebinwineboot"
@@ -43,12 +45,6 @@ cask "wine-staging" do
   binary "#{dir_path}winebinwinemine"
   binary "#{dir_path}winebinwinepath"
   binary "#{dir_path}winebinwineserver"
-
-  # Symlink non-existant wine binaries to wine64
-  postflight do
-    File.symlink("#{dir_path}winebinwine64", "#{dir_path}winebinwine")
-    File.symlink("#{dir_path}winebinwine-preloader64", "#{dir_path}winebinwine-preloader")
-  end
 
   zap trash: [
         "~.localshareapplicationswine*",
