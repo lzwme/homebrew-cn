@@ -1,19 +1,19 @@
 class Libmicrohttpd < Formula
   desc "Light HTTP/1.1 server library"
   homepage "https://www.gnu.org/software/libmicrohttpd/"
-  url "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-1.0.0.tar.gz"
-  sha256 "a02792d3cd1520e2ecfed9df642079d44a36ed87167442b28d7ed19e906e3e96"
+  url "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-1.0.1.tar.gz"
+  sha256 "a89e09fc9b4de34dde19f4fcb4faaa1ce10299b9908db1132bbfa1de47882b94"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a4186c771da28f3c8fa959acc200388609c07e7b8a78cf52f809355a11b0874"
-    sha256 cellar: :any,                 arm64_ventura:  "118a6807bfa78955b68d205daafee58b4ee0c84d234eadff9902c8a4f6b31cef"
-    sha256 cellar: :any,                 arm64_monterey: "ee43b56c13e1036a2db4d2529237261d9d8ba97c5d241d4cc6c6d76999dc8f86"
-    sha256 cellar: :any,                 sonoma:         "7f5d33cdd8b5851741ed4d45fa14f5d0c95f66b7d97870302ff9c791a8f84551"
-    sha256 cellar: :any,                 ventura:        "71a7d3c0c76acbb4d2cf644bcf153fc82779bc3c894ba59dd2288b7ae69f4cd6"
-    sha256 cellar: :any,                 monterey:       "697a2985bb9e763fa70a2f34d0e031fb8111185c608c6c7c2be355aa96a64958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc78a8e64a4b97b1a469f147dddedcdfa2cf163509280cc3bc5758c0f5a83b6b"
+    sha256 cellar: :any,                 arm64_sonoma:   "a78702c9353f012d0a5a90d5f2d547f3a9e86a8ce14958d73d195d207065e285"
+    sha256 cellar: :any,                 arm64_ventura:  "a99ea7af39d9da744e0cbbea017044f1c2c902776e391cafa567030ecdc11526"
+    sha256 cellar: :any,                 arm64_monterey: "c1be769ed563cebdb5d757aea93effa91d5ad0925dabcbad0adde31a82edbce0"
+    sha256 cellar: :any,                 sonoma:         "3fda597aeaf2624c37ac9786286acf2eefdb9e4178986da41cea3f6ee039f083"
+    sha256 cellar: :any,                 ventura:        "ef0dceb639806d7098eb56adc2b6dce9025686ba9a1873dae74288761fabafda"
+    sha256 cellar: :any,                 monterey:       "70acab5386e2689227706740afee9a6afe4ec50ec4267b9386d974177e97b423"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a3501d408795303c34902781102f7665197d97b1c1f33ed1c4da2a87c42b8fd"
   end
 
   depends_on "gnutls"

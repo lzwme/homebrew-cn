@@ -1,8 +1,8 @@
 class Moreutils < Formula
   desc "Collection of tools that nobody wrote when UNIX was young"
   homepage "https://joeyh.name/code/moreutils/"
-  url "https://git.joeyh.name/index.cgi/moreutils.git/snapshot/moreutils-0.68.tar.gz"
-  sha256 "5eb14bc7bc1407743478ebdbd83772bf3b927fd949136a2fbbde96fa6000b6e7"
+  url "https://git.joeyh.name/index.cgi/moreutils.git/snapshot/moreutils-0.69.tar.gz"
+  sha256 "0f795d25356ca61544966646fb707d5be0b9864116be0269df5433f62d4e05d1"
   license all_of: [
     "GPL-2.0-or-later",
     { any_of: ["GPL-2.0-only", "Artistic-2.0"] },
@@ -15,13 +15,13 @@ class Moreutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7906d5c61df0f103ce58bc56c3ea187e4fedb7c3dd8e2cadea39f474dbf4972b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68552a226793171ccdf363e124310009b4326f73261883f9960b7baa1e76a288"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e06a52a51ba1becf71fcf028fae19cba7c16b1fb7996f9f8b95aa4c6d77b66ea"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ce98324a0faa7ece95d8375d34e9c3ad0feaedc50f3a1e28eafcb3de5d64aab1"
-    sha256 cellar: :any_skip_relocation, ventura:        "ac599b305b01691344ecc270d481d2db2755d372708defe3883a3fe98865efb1"
-    sha256 cellar: :any_skip_relocation, monterey:       "82bad00c3dc665b51aa413ed881c017eef667ed11886b912174a157f2b1c8a65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be6a9cf5f24e92ed5cd78ce4bce60192733c8e10965ecc53747a66539b7e2f21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d670db1141e2452a4384a659743e919965b1f4bb15df8bf249a4e2de219a1fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37630eb130415e996c7cf3c4333d788d3a6cb7eead141b06dc2b8ab48812c674"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "572eac728e9dfb5791dc1d7e5ec4c54d7afad32320ab71dff2c32038e41487ed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "081eb804ba4b73fe2025b5da85b0d84692a5e1f185e13f57ffa672a013069dbc"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd9bd5a1c203fe83a9bbf171b8db8fa2326f2c31e6ca0ec862346981db7420fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "154af5f7e744eeda14286f122af89b6444cf00300fabbd4a3ee4f4c80523b07c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e309aded89d7c99d8310fab2123e256f2d37de5e2b574a859cda5c06082f867e"
   end
 
   depends_on "docbook-xsl" => :build

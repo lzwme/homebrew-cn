@@ -1,38 +1,34 @@
 cask "reqable" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2.7.1"
-  sha256 arm:   "6af1cc49d9f8e9923d872e0928204818b972821a7fc9d208d1e14c24709c9f51",
-         intel: "e649688d1c7e63fac5050d9fe225df78c0ef978a1e716cbdaacfae580f3b9cc8"
+  version "2.8.0"
+  sha256 arm:   "357eb85000d3efb2b084c4a3cdacedbffb4ae86f90b1a2a3d7622525cc4a09bc",
+         intel: "a2ddaeba19ea3baad41d686560132063db53e678ef7744196a8aacaaddd95653"
 
-  url "https://api.reqable.com/download?platform=macos&arch=#{arch}"
+  url "https:github.comreqablereqable-appreleasesdownload#{version}reqable-app-macos-#{arch}.dmg",
+      verified: "github.comreqablereqable-app"
   name "Reqable"
   desc "Advanced API Debugging Proxy"
-  homepage "https://reqable.com/"
-
-  livecheck do
-    url "https://api.reqable.com/version/appcast?platform=macos&arch=#{arch}&locale=en-US"
-    strategy :sparkle, &:short_version
-  end
+  homepage "https:reqable.com"
 
   auto_updates true
 
   app "Reqable.app"
 
   uninstall_postflight do
-    stdout, * = system_command "/usr/bin/security",
+    stdout, * = system_command "usrbinsecurity",
                                args: ["find-certificate", "-a", "-c", "Reqable Proxy", "-Z"],
                                sudo: true
-    hashes = stdout.lines.grep(/^SHA-256 hash:/) { |l| l.split(":").second.strip }
+    hashes = stdout.lines.grep(^SHA-256 hash:) { |l| l.split(":").second.strip }
     hashes.each do |h|
-      system_command "/usr/bin/security",
+      system_command "usrbinsecurity",
                      args: ["delete-certificate", "-Z", h],
                      sudo: true
     end
   end
 
   zap trash: [
-    "~/Library/Caches/Reqable",
-    "~/Library/Preferences/com.reqable.macosx.plist",
+    "~LibraryCachesReqable",
+    "~LibraryPreferencescom.reqable.macosx.plist",
   ]
 end

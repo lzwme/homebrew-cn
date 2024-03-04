@@ -3,19 +3,18 @@ class Sickchill < Formula
 
   desc "Automatic Video Library Manager for TV Shows"
   homepage "https:sickchill.github.io"
-  url "https:files.pythonhosted.orgpackages73afeb904911511036c7d5c1238a450893b5d7d6442d716e4037c28bd8b3ab41sickchill-2024.2.20.204434.tar.gz"
-  sha256 "83f02fbc0bc936395d73f15c36bb9413dc2d3daa74ea3c74737e06861c4395ff"
+  url "https:files.pythonhosted.orgpackages31fc337b2989dc67bbb505cea34a05c029cbba3056311177586835f704ddc13asickchill-2024.3.1.tar.gz"
+  sha256 "e7079bb77b415eb6697a63d9018db1ad317d06ad285d0d77893747cbf000aa17"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d09aedaf661ffc5027723c7f05dcb52cf62c14c3cc878a98922d558d595d8a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94ba11078b1361f083c749d53c0273840767c061fe044aa278157a128bc0055c"
-    sha256 cellar: :any,                 arm64_monterey: "51bbbe2f33764a962752613ea7cdd759572b93ae6e6e8f84ea96b53896ca125d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e23efd3f1111028a4b2c042aa4cd29727de52d210ca0bd2ebf4d4a85f7e1ebc9"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ed3fcd1f670f531872c29b19dc4ee8e56f3f18ee710ae0893ee247afa5146c8"
-    sha256 cellar: :any,                 monterey:       "6df49cd8ddf1f54516874736ebe028f60b6785175203448c7726e13e7902645d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5931922ae5e28f137aad8ae626e132fe3eb8286a571b028b50adec09c85b08cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2166c7af8db9e100863064210a48c6e3c75c4e7a7fa48d9a178a2d5c2fdcf42d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e697fcd45ddbda231915bcfa276c3896ca105c8fd49675078ba12bbeb26c79f9"
+    sha256 cellar: :any,                 arm64_monterey: "2e8e564ebeb651c90671644c491050815a28c32f799c2e45d15531f2c4fe4f6c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "67bcc0cbd4448ea3b1c44f65ed8e64511f5b58920d37af0e3aa61a6a61649792"
+    sha256 cellar: :any_skip_relocation, ventura:        "048ca54cef8b86546d69306c06ecf4f6402b9b362ba7783f7ccb671570cca806"
+    sha256 cellar: :any,                 monterey:       "9c9c36235d86700cd43f9810108240a29fe5ccd82e8ea80ed677fd7e8e3f7703"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2289f697ffcc643da6c2d19987e36a8286e9d38b532f8da7072b1a8b51c11b8"
   end
 
   depends_on "python-certifi"
@@ -161,8 +160,8 @@ class Sickchill < Formula
   end
 
   resource "markdown2" do
-    url "https:files.pythonhosted.orgpackages3ce487a454674ac303e2ca6c25713845d2ae1b59c1a88576054cbec25aaebad1markdown2-2.4.12.tar.gz"
-    sha256 "1bc8692696954d597778e0e25713c14ca56d87992070dedd95c17eddaf709204"
+    url "https:files.pythonhosted.orgpackages7489a6bb59171d0bd5a3b19deb834ec29378a7c8e05bcb0a4dd4e5cb418ea03bmarkdown2-2.4.13.tar.gz"
+    sha256 "18ceb56590da77f2c22382e55be48c15b3c8f0c71d6398def387275e6c347a9f"
   end
 
   resource "markupsafe" do
@@ -171,8 +170,8 @@ class Sickchill < Formula
   end
 
   resource "msgpack" do
-    url "https:files.pythonhosted.orgpackagesc2d55662032db1571110b5b51647aed4b56dfbd01bfae789fa566a2be1f385d1msgpack-1.0.7.tar.gz"
-    sha256 "572efc93db7a4d27e404501975ca6d2d9775705c2d922390d878fcf768d92c87"
+    url "https:files.pythonhosted.orgpackages084c17adf86a8fbb02c144c7569dc4919483c01a2ac270307e2d59e1ce394087msgpack-1.0.8.tar.gz"
+    sha256 "95c02b0e27e706e48d0e5426d1710ca78e0f0628d6e89d5b5a5b91a5f12274f3"
   end
 
   resource "new-rtorrent-python" do
@@ -221,8 +220,8 @@ class Sickchill < Formula
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "python-slugify" do
@@ -246,8 +245,8 @@ class Sickchill < Formula
   end
 
   resource "qbittorrent-api" do
-    url "https:files.pythonhosted.orgpackages79def1e129f4b4fb959c5f6ef3760f8675a41bcc93db54945250cfd702208ebaqbittorrent-api-2024.1.58.tar.gz"
-    sha256 "e89c94f66af4c5f44b07b00939c9cf73e3e91741168bf47f5b2de508a6a70260"
+    url "https:files.pythonhosted.orgpackages015fc5f6e791ffbf0eb7ac8fde3d16b383a58aa97aa15355e86bed2847ba8baaqbittorrent-api-2024.2.59.tar.gz"
+    sha256 "db6eef9ce26661cadb61df0c8d31bc73cdac7f76b034e17f6f101bcb426549f0"
   end
 
   resource "rarfile" do
@@ -332,8 +331,8 @@ class Sickchill < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
+    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
   end
 
   resource "unidecode" do

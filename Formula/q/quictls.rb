@@ -1,9 +1,9 @@
 class Quictls < Formula
   desc "TLSSSL and crypto library with QUIC APIs"
   homepage "https:github.comquictlsopenssl"
-  url "https:github.comquictlsopensslarchiverefstagsopenssl-3.1.4-quic1.tar.gz"
-  version "3.1.4-quic1"
-  sha256 "4bf990243d6aa39b8befa0c399834415842912ef67f88bef98e74dc619469618"
+  url "https:github.comquictlsopensslarchiverefstagsopenssl-3.1.5-quic1.tar.gz"
+  version "3.1.5-quic1"
+  sha256 "928a0c484fca5a5b9ae484e7b14e6691e946220d77d86ac4031cbb408655b644"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Quictls < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "b935d3c20432ee4c30287c619ef15e7eb04c53375cfd910a0094c20edf0aa5e9"
-    sha256 arm64_ventura:  "f06a54674f3eeff0a011313c8cbf778315a2d555c1aaa9799801dcba4bab5b75"
-    sha256 arm64_monterey: "8072b1e4965fe8b271539f927a03d550758268e8841842f6a4b6298da5505140"
-    sha256 sonoma:         "28b6d5895cb7fbe3a9d09ec1908526f71b91a50754d825108d8b9a61b43ec2e2"
-    sha256 ventura:        "80fd4424f7bee7218208a8153218e2fc4493db774ec79bd2496dabd8d598bfda"
-    sha256 monterey:       "3b8c85997c5cfe55f90facef8aff805465e23c2c661b294fac88b74df6c344fe"
-    sha256 x86_64_linux:   "63edb370864adcb173929b83dc3e2a6d56386ada55f56f0657d41b611b4e3270"
+    sha256 arm64_sonoma:   "08beb28e31675db80511b2b696cf68449b213ac987563ee3375ab1aad920e48d"
+    sha256 arm64_ventura:  "b33b84c2685bcffc0e842ee5c759d7d0bbde83609d8f85ea3f7c96d2ef39c66a"
+    sha256 arm64_monterey: "15fef5e6c9c440c9d247845902723cce3ab285bf977441e2762b4f972611f66f"
+    sha256 sonoma:         "37515eb8535ec78718c285f85b4e00d48200169e06a47989510d2ca4d4a2f3b2"
+    sha256 ventura:        "c44036f24d7f2b57f823b484b0c31d7686f9f213b3acab040b231097f72bb8ef"
+    sha256 monterey:       "22ae5e6a9455b9a4ec03566f8bcf74d8b62f35d87ca00a94b5696defb902056a"
+    sha256 x86_64_linux:   "163a9a537be0d3df35db03097596b0761184852ed0b3cd1f2810d1edaf1746e2"
   end
 
   keg_only "it conflicts with OpenSSL"
@@ -27,20 +27,17 @@ class Quictls < Formula
 
   on_linux do
     resource "Test::Harness" do
-      url "https:cpan.metacpan.orgauthorsidLLELEONTTest-Harness-3.44.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidLLELEONTTest-Harness-3.44.tar.gz"
-      sha256 "7eb591ea6b499ece6745ff3e80e60cee669f0037f9ccbc4e4511425f593e5297"
+      url "https:cpan.metacpan.orgauthorsidLLELEONTTest-Harness-3.48.tar.gz"
+      sha256 "e73ff89c81c1a53f6baeef6816841b89d3384403ad97422a7da9d1eeb20ef9c5"
     end
 
     resource "Test::More" do
-      url "https:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302195.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302195.tar.gz"
-      sha256 "b390bb23592e0b946c95adbb3c30b11bc634a286b2847be611ad929c57e39a6c"
+      url "https:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302198.tar.gz"
+      sha256 "1dc07bcffd23e49983433c948de3e3f377e6e849ad7fe3432c717fa782024faa"
     end
 
     resource "ExtUtils::MakeMaker" do
       url "https:cpan.metacpan.orgauthorsidBBIBINGOSExtUtils-MakeMaker-7.70.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidBBIBINGOSExtUtils-MakeMaker-7.70.tar.gz"
       sha256 "f108bd46420d2f00d242825f865b0f68851084924924f92261d684c49e3e7a74"
     end
   end

@@ -1,9 +1,9 @@
 class Testdisk < Formula
   desc "Powerful free data recovery utility"
   homepage "https://www.cgsecurity.org/wiki/TestDisk"
-  url "https://www.cgsecurity.org/testdisk-7.1.tar.bz2"
-  sha256 "1413c47569e48c5b22653b943d48136cb228abcbd6f03da109c4df63382190fe"
-  license "GPL-2.0"
+  url "https://www.cgsecurity.org/testdisk-7.2.tar.bz2"
+  sha256 "f8343be20cb4001c5d91a2e3bcd918398f00ae6d8310894a5a9f2feb813c283f"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url "https://www.cgsecurity.org/wiki/TestDisk_Download"
@@ -11,18 +11,13 @@ class Testdisk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d62d692e2c62899c87c05239cc8bf4797ec958c773afa6f7da10b1ce5ff73dd3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c9177b918d95f4c07dba4f487fea6702c0625bcc7dcd9f0b160ff9629ed900f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40b8a4f36f57b849119b447259f492466b2d297d9f178643875dc709a2abe419"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02338490d4e16fa0a61e422ec36ce72e97ad1d24406cda45f4d61396ba4cab36"
-    sha256 cellar: :any_skip_relocation, sonoma:         "658f3f244cac15ea456a5f806427344499397841b4da29c0aa9f64f20b263001"
-    sha256 cellar: :any_skip_relocation, ventura:        "a7b64ba8b86976141a53ec77522fbcb58be4ac475bc70056b2bec1565c8ead64"
-    sha256 cellar: :any_skip_relocation, monterey:       "bc5bf54d38d9f237ac6de913cdf9f841e77876b63f69c5f0b380f9f095242d2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "325a572e2238e551d8415f58a463d80619850a9026b614d0c23da46838f2e9ea"
-    sha256 cellar: :any_skip_relocation, catalina:       "b0035f42c03dbbe94000ae373b1a8c5f9bbb6f9534ea3d64b5754475ee8fbc7b"
-    sha256 cellar: :any_skip_relocation, mojave:         "7431beee8948638cadaf5b7f439e32f798955caf403fdcfda5c9948afa5af3cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d22006b793a33a7cde952b4323410fea06ab20d49126159eccc6d187c7d0061"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76fe31d9656985c415243cdb7ab5a1f65696f8bcebebd2f2a1308517e870f205"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "843c14d99607b293dcbe021687205437023bc8a5a57813bac8214d2abe578179"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b599705f681955d6fcd094b44777dc29fa6b45886b3d47bef910579dbfd837de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8db633d609f8cd60846d7f0f580a752f2c4959a89c2cf5c2150fbec8c1db1500"
+    sha256 cellar: :any_skip_relocation, ventura:        "3acf40e8f1a8649610455147ad0c1e3d9400882b9df1e5ba247b4ac19fdd87ec"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0c1d8dc41bac15b27c7dddaa1cc375e0205cba23e002a5dde0db8bd4251f291"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0624bb8d366a5835a037928e92fcbdd998e0df181a7a1b41458f10d5c0f84231"
   end
 
   uses_from_macos "ncurses"
@@ -32,10 +27,7 @@ class Testdisk < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["disable-debug"] }
     system "make", "install"
   end
 

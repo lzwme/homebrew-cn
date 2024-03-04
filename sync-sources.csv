@@ -2842,7 +2842,7 @@ Homebrew-homebrew-core/Formula/j/john.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/johnnydep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/joker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jolie.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/j/joplin-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/joplin-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/joshua.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/joshuto.rb, Homebrew/homebrew-core, 1
@@ -5527,6 +5527,7 @@ Homebrew-homebrew-core/Formula/s/sc68.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scala.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scala@2.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scala@2.13.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/scala@3.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scalaenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scalapack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scalariform.rb, Homebrew/homebrew-core, 1
@@ -10225,7 +10226,7 @@ Homebrew-homebrew-cask/Casks/r/repetier-host.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replacicon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/repoz.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/reqable.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/reqable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rescuetime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/resilio-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/resolume-arena.rb, Homebrew/homebrew-cask, 0

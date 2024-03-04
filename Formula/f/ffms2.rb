@@ -23,6 +23,11 @@ class Ffms2 < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "23ba655946a51d846bf8384c103f74558f18e416a3a400c963ed8008d775005c"
     sha256 cellar: :any,                 arm64_ventura:  "023582cd7706fb178e3673a44f19202e96cb7b743883cd3cf2a622bdc28a910f"
@@ -43,19 +48,19 @@ class Ffms2 < Formula
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
-  resource "videosample" do
-    url "https:samples.mplayerhq.huV-codecslm20.avi"
-    sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
-  end
-
   def install
-    system ".autogen.sh", *std_configure_args, "--enable-avresample"
+    system ".autogen.sh", "--enable-avresample", *std_configure_args
     system "make", "install"
   end
 
   test do
+    resource "homebrew-videosample" do
+      url "https:samples.mplayerhq.huV-codecslm20.avi"
+      sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
+    end
+
     # download small sample and check that the index was created
-    resource("videosample").stage do
+    resource("homebrew-videosample").stage do
       system bin"ffmsindex", "lm20.avi"
       assert_predicate Pathname.pwd"lm20.avi.ffindex", :exist?
     end

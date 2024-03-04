@@ -3,20 +3,19 @@ class Regipy < Formula
 
   desc "Offline registry hive parsing tool"
   homepage "https:github.commkorman90regipy"
-  url "https:files.pythonhosted.orgpackagese0f261846ba036f840b3cfe9b412dca3ef629bdc7506faafbd56b2c8de987950regipy-3.1.6.tar.gz"
-  sha256 "edc9fd8501f3374afd49020550bf361235e569959712825fbd2f444d2aeca8d9"
+  url "https:files.pythonhosted.orgpackagesac0a958a8a5e6a29f350b175217a685d609c145d33d051861001a5967cfdf00fregipy-4.0.0.tar.gz"
+  sha256 "d0cdbc1bdf0356c1911a2a568248ed8729ff3a4a21fa143a72c4b9c9b5c8afa5"
   license "MIT"
   head "https:github.commkorman90regipy.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0f5b70e7210ce898c375f096df2ee9e77d2b3b325f9937fed77dd5b471f233d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32472339585d076ea7dfff5a9435b7b5d27339a76cec8c0e7f2899d978554fce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03301b4d9141850ae7a6dee1b9a532983a5798864da4029ee160161b6d00d5af"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2214a8184bc23860d55158d2be50ed0daaf57f70b49e99fedff521bcd1a07934"
-    sha256 cellar: :any_skip_relocation, ventura:        "22f26ff2cb32cc1628eb37880922e10c5f03dea4389cc512392b7f8b9c5386dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "13f4c0708d20973339bf87e9ca92954e4de4747a11442283e158e7ba90597cf8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f87410a4cec277cbd048971d97842ad6eb42019ef60a62d72ca0f48594177fff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3b4609a7ef36a920d09605e36e861e7d53fdfe6d0350a86db0bbc183b721dcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d0b23aa55e47c8d251bb2c3796f093cac3909b2302fcabdb03b5f9a39d3d854"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a964d29dad16d24685bd259baee4e424dfe3fa3f2358c4b0e7a2d3c1e64fa1f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "838f870b4868c8034115ae68a85ee158fc013da6225db4f4c84158c314182d39"
+    sha256 cellar: :any_skip_relocation, ventura:        "5e6855d7a59cb87fb0d2bf8097ddac8c73ea62628175005c85453cce69d90dff"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e78224ff144854ce8122d9c647bd05a45425849b681fe7bfb866f7a69a53525"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "772a0d74be8e115f14e63a12ae62e050af625c56585da1468641f6b282514354"
   end
 
   depends_on "python@3.12"
@@ -61,11 +60,11 @@ class Regipy < Formula
       sha256 "b1582ab413f089e746da0528c2394f077d6f53dd4e68b877ffb2667bd027b0b0"
     end
 
-    resource("homebrew-test_hive").stage do
-      system bin"registry-plugins-run", "-p", "computer_name", "-o", "out.json", "SYSTEM"
-      h = JSON.parse(File.read("out.json"))
-      assert_equal h["computer_name"][0]["name"], "WKS-WIN732BITA"
-      assert_equal h["computer_name"][1]["name"], "WIN-V5T3CSP8U4H"
-    end
+    testpath.install resource("homebrew-test_hive")
+
+    system bin"regipy-plugins-run", "-p", "computer_name", "-o", "out.json", "SYSTEM"
+    h = JSON.parse(File.read("out.json"))
+    assert_equal h["computer_name"][0]["name"], "WKS-WIN732BITA"
+    assert_equal h["computer_name"][1]["name"], "WIN-V5T3CSP8U4H"
   end
 end

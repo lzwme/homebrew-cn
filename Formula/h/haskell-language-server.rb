@@ -1,8 +1,8 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https:github.comhaskellhaskell-language-server"
-  url "https:github.comhaskellhaskell-language-serverarchiverefstags2.6.0.0.tar.gz"
-  sha256 "b23a165121553b59dde8f7e8f9ce24b8eee39d6b6ed5fae20d0882ec16f9da44"
+  url "https:github.comhaskellhaskell-language-serverarchiverefstags2.7.0.0.tar.gz"
+  sha256 "f84394954ed29ff5f99a3710e4581809d0a0641ba726a41bf031e7bc7e9d3455"
   license "Apache-2.0"
   head "https:github.comhaskellhaskell-language-server.git", branch: "master"
 
@@ -14,13 +14,13 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea27664baf76eb5e7250bcd44905117e8c4b9567f533d4f37b71c55da11d1de8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43fddca0b320eafa662f8d41b912f0a3c10bf8626a252db53dd53e9f2a4fd0d2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cf6f01f0a21207b780f654ab02209050e9e2e44d253a8b56db8e229847aad6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24e63d769dc44c93183d007b93fdcb2147f03ab3ff9accb562f5bc5a3e2471e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c2903045040556f2df2fb5948ee364d5afbdd0ac17761a4e31113eff8112509"
-    sha256 cellar: :any_skip_relocation, monterey:       "d6a56784a7cf216ba30769634ad551e9c98156875dc688ed72108768014dcf63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46bc2e7ba3e90bd9024ee8aeda745d4f25040e954eab2118c3fd96599a5069e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71be80dde9873b435968527063c8b26d836bf9e25b8c00cb9217328803b5bd1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62c8fc0ebe628433433e64176be242cd8453c898ef359480a4cc8e62a45f26c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f80249dc475059ba769c6b731af820849d924a3a463debeb1effc0af128b840d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "204d45443fb901de7904647e46a4d35cb92220b149fddf48cf618842a1e535e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd056dc1ec1567ffb371bac41c06e2edbaf6395d576e12965fe8a9eefc147e0b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7e400696ce651ec615a56f547db8014110aa3989b8b1927df4ed0c1d54be3b62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d93d0c6b2540feeb68a2143a660d2b2d1b3ead71e16e6015ed247c02e447f885"
   end
 
   depends_on "cabal-install" => [:build, :test]

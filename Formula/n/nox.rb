@@ -3,20 +3,18 @@ class Nox < Formula
 
   desc "Flexible test automation for Python"
   homepage "https://nox.thea.codes/"
-  url "https://files.pythonhosted.org/packages/e7/3b/529fa8920b18b92085ed5923caee4aee112c65a7af99b34bd5a868b82e3e/nox-2023.4.22.tar.gz"
-  sha256 "46c0560b0dc609d7d967dc99e22cb463d3c4caf54a5fda735d6c11b5177e3a9f"
+  url "https://files.pythonhosted.org/packages/8a/6b/2c02879d29704b74586a89900c48d9744780a5aad771f1d182c7394cfd57/nox-2024.3.2.tar.gz"
+  sha256 "f521ae08a15adbf5e11f16cb34e8d0e6ea521e0b92868f684e91677deb974553"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af5256ed96b81b39db5e0016b5d8720415aab9f661d386cd4c93f5941bef254b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef931e33db9232556f8fc5be98746d44c2f211958e57fb0a79dc517aaf38512b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b57abc2ed1c672dabd3fdab827db873dd12979456038e4ee381541b31e642ad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8c71ff5a1e01aa0461616771e2bfcb9d3148825834975a29ba01101ea3a45e31"
-    sha256 cellar: :any_skip_relocation, ventura:        "d0d82cb6bf3ad2a5a22df115b57886278572b5c46392449eb582e34d9bf9bd87"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f0866ed098309fcfd127579e963610b6b31139f500d520fcb44109a808c701d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1886bed6286ca52f5c9de0f8c2486faf6c7a6424905b593148f0945b54c43ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "88961ab237cf511cb413e146bbbe7220f79d90f8325be0c49308fbe958c728c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cfeb433ef42d8b93ec9fe427ed39ba858b8ced6be2aec4d663fe30567d18eaa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47d94eee7b1c13c35ed754dabcfdedb96d5f5448cc533c483aa28a23ebb41eb3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8b3c34ae72a60dea4527d6d92ac0d505d55443c59bdc2d5b00f08173a4986e51"
+    sha256 cellar: :any_skip_relocation, ventura:        "9afe1e82d1a3cf406e6e79c4de4faa44a2b097c417574130ce56922a88a68b7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "f2567887296dfe92fa4608ccbc02a0d2f5077861794a4cdc808ef781c4cc7d1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b667f8ab9fa65b1b2b92fd75848846e65a1addf8ba2758216106ad18395b5a4c"
   end
 
   depends_on "python@3.12"
@@ -52,8 +50,8 @@ class Nox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/94/d7/adb787076e65dc99ef057e0118e25becf80dd05233ef4c86f07aa35f6492/virtualenv-20.25.0.tar.gz"
-    sha256 "bf51c0d9c7dd63ea8e44086fa1e4fb1093a31e963b86959257378aef020e1f1b"
+    url "https://files.pythonhosted.org/packages/93/4f/a7737e177ab67c454d7e60d48a5927f16cd05623e9dd888f78183545d250/virtualenv-20.25.1.tar.gz"
+    sha256 "e08e13ecdca7a0bd53798f356d5831434afa5b07b93f0abdf0797b7a06ffe197"
   end
 
   def install

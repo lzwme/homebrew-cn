@@ -18,13 +18,14 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "14a16808d054c86efefd38f399e33241a17bb361fdd8f466e3d69d57ea3c5cfc"
-    sha256 cellar: :any,                 arm64_ventura:  "3f5e6edccf9d4307782764b1f2e7facef5cb15f473fb9f9627da263b089e984c"
-    sha256 cellar: :any,                 arm64_monterey: "f61d10b0f198aeed16cf0113e9303defa23322fd6be085997a565d8722c54edb"
-    sha256 cellar: :any,                 sonoma:         "f7d54f6fcf42b7e95271444728e5993d496ea7248ac4a9a80f69c14cf38f841e"
-    sha256 cellar: :any,                 ventura:        "0dabb5d53b314602e43c4116e609f3146da80d4b6ff5d5dea177180cef00d7c3"
-    sha256 cellar: :any,                 monterey:       "be35970e1f29948e2fbf53a7939342028e6545cc4d858e4bba86325f770843e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41a1380fcbc646676057f51efc4225ca5ca56e6d4e88b8600dd3bb9bf08c4e46"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d9ab0cb60d3c09d7c7e1e7fe1c9cc49837acaa30e890230920abb0c9bd2f1550"
+    sha256 cellar: :any,                 arm64_ventura:  "3173bf33dd55534dc69bd85184749e0d86545002d9da464b5e48b3cdbe3d2a70"
+    sha256 cellar: :any,                 arm64_monterey: "cca1db82774db6ab2327b2627bc6fdedce893ef103713fc639eaf2cf88d5a96c"
+    sha256 cellar: :any,                 sonoma:         "be16cf4e7cf32f9b2bcf8c7e83ecf1e01eb083b52078563a250c64e7b47e8715"
+    sha256 cellar: :any,                 ventura:        "cbb7ebcbd55fb01969e4f93dab21475481ab614acf0dcf11fc43a90335b57e86"
+    sha256 cellar: :any,                 monterey:       "b8bb7b2cbdc97726f55c7328f39593403157f7871a116009c789d3a9de9e86c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c1d786b52f156ff7f5bc0d838822a2147cb1106054abc779205e5a051272e9b"
   end
 
   depends_on "cmake" => :build
@@ -57,7 +58,7 @@ class Emscripten < Formula
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
     url "https:github.comWebAssemblybinaryen.git",
-        revision: "feb8f24128c0c3bd53862b2f39acc5116f8ae87e"
+        revision: "2ca9638354e4a5f260ced04d186808fc8b498986"
   end
 
   # emscripten does not support using the stable version of LLVM.
@@ -65,8 +66,8 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https:github.comllvmllvm-projectarchivee769fb8699e3fa8e40623764f7713bfc783b0330.tar.gz"
-    sha256 "3b58a16f3ec7eb9cb510d4d941465ed1ac11b9893435f3c5a3c4a476dc3b94f8"
+    url "https:github.comllvmllvm-projectarchive6c7805d5d186a6d1263f90b8033ad85e2d2633d7.tar.gz"
+    sha256 "ca16158a37923eba027cc6354539caee53fd980530c844ab531e7aceb3da98e6"
   end
 
   def install
