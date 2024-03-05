@@ -1,11 +1,10 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-14.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.1.tar.xz"
-  sha256 "d66df51276143451fcbff464cc8723d68f1e9df45a6a2d5635a54e71643edb80"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-14.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.2.tar.xz"
+  sha256 "2d4dd8061d8ded12b6c63f55e45344881e8226105f4d2a9b234040efa5ce7772"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "df4e779ee6107bc8643ad6df92c7f4573fe5b186b89b364404c43c260f74ed9c"
-    sha256 arm64_ventura:  "5cc6e55cabd06936805e085be2311a9717d80cda95cb981434833f6b0ede66f7"
-    sha256 arm64_monterey: "3b5955a2356aebc797acac5bfd4764b8d8caab869933a78e69170444bf52799f"
-    sha256 sonoma:         "2f6e00a0ee61bfe4e7efd9f335cc3754740d593459577d26f004dabf46942c70"
-    sha256 ventura:        "24876c95a6ba28dc6c597a883ae986adc860cd8ad69815532c9aafb17f97cd42"
-    sha256 monterey:       "d4c3a0c287c3e745e6a5fadb73a42feaf3cb892d1dce39acd6447052b85e1ad3"
-    sha256 x86_64_linux:   "1cdcd7ee4055d0fe50b91164c408de41e8958c68c894b5eab221b38625c5d476"
+    sha256 arm64_sonoma:   "e0fe06ddf01e98f9f3b1bacbacdfeb8e94c69fed9ed296adb3237014dc5d388d"
+    sha256 arm64_ventura:  "3e8a6f8721ae7f70b4d7c9bc24f75674604bc3985e829fa90f4d8f89493b9eee"
+    sha256 arm64_monterey: "be4fb136fe3c6be6096cdb2712da166fb9d9217ff5b294859acbaa362840ed88"
+    sha256 sonoma:         "5e56fc21982e0c9b493e51847f55e268693e1a381dbfb1ae761fd3cd1dbef26f"
+    sha256 ventura:        "8f151a4fbf9185320e6d8ce79e0fba4e856b2286364c3ece369f766549f2750e"
+    sha256 monterey:       "299757fa86eee8576b7bda5c0822836dfbaa4e9049e98fa96df58c20e99b751a"
+    sha256 x86_64_linux:   "afe17d09b65783e472a0c8410a0204f40467b762c0f6156b680a4bf659228334"
   end
 
   depends_on "pkg-config" => :build

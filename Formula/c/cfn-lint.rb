@@ -3,18 +3,18 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackages8a88b1595540abedcc676ca882681546b2c9585a475d9ed4cd555db986ce4374cfn-lint-0.85.3.tar.gz"
-  sha256 "efed015205051664285f0aedac106209c80f8b251b231fce93d0911db0e07cec"
+  url "https:files.pythonhosted.orgpackages20d737f4a30ffe0b11a7a516b0d0092cd675c0fb5da92b70d4c5916fab91b302cfn-lint-0.86.0.tar.gz"
+  sha256 "7216e9c10dd27af73821d0ae79b17406cd89f5dfbc25feb5d2ba756eb6e9a651"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "461847c635c13b4ee18e710362a7556d78b9aeee7551a47928aea5893f8f2f60"
-    sha256 cellar: :any,                 arm64_ventura:  "0464954b6c5c6b4e0ef09ba86a0d826a26adfba95b970adbe517f0a183da64b5"
-    sha256 cellar: :any,                 arm64_monterey: "5e49f9c64cc0e158fa618253dd845a04dadd657e854957d424a7583577c762b2"
-    sha256 cellar: :any,                 sonoma:         "2393eeac7f02cfa696b610bddd10eb8ac65fc1bd59d22bc71fb4c71c68105d39"
-    sha256 cellar: :any,                 ventura:        "d9bb7d1800b1a22b3541ddce232c84411da1ef039bdf8a3951c9933f5bbeca59"
-    sha256 cellar: :any,                 monterey:       "2e6668b6fb6e6113fedcf1160813423ae74e27913d0443860d1db395539e23fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "843af4b52090ebc4a6052ad9078c49e1d6fc28881d3b9cbe1be1aae828e57eac"
+    sha256 cellar: :any,                 arm64_sonoma:   "20cbe0938fd69db7b11906f78fb7438d49c91a5061e94a1abb5d9d91cc7f4006"
+    sha256 cellar: :any,                 arm64_ventura:  "face5c58dfa11ad95fd2e076dce1d6a8e4a4040a824aa99b703b42c5cb85037b"
+    sha256 cellar: :any,                 arm64_monterey: "28322d54ab5aa7d072880b1b3f7ba35a1e99bbb150a56d64478bd7a957e9825e"
+    sha256 cellar: :any,                 sonoma:         "175a56e970613563db5bdd07ecadb79f67048a0fef1abad4ba7118a0299732bf"
+    sha256 cellar: :any,                 ventura:        "94be13edae33ddce1e412ec9472f2bf69412fb7580dc45bf20463ab5349d0366"
+    sha256 cellar: :any,                 monterey:       "c4f655f1d0930596be9022271bc44c02253c98d0e6003abd5f4bb7541d9b71f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f944355c819cb766274953c6873895012deb84464c3171e0815ef237ca05dc7c"
   end
 
   depends_on "rust" => :build
@@ -37,13 +37,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesdcd123a7ed157ca950a344b2ef814db01c175f970320c4bf1be364ca0c1afdd2boto3-1.34.50.tar.gz"
-    sha256 "290952be7899560039cb0042e8a2354f61a7dead0d0ca8bea6ba901930df0468"
+    url "https:files.pythonhosted.orgpackages973fa32a699fef1dd2d9995c4d00120fa38a17b162266d6ee52315aae29928beboto3-1.34.55.tar.gz"
+    sha256 "9a6d59e035fac4366dbdaf909c4f66fc817dfbec044fa71564dcf036ad46bb19"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages48afd038bd03233fe5c009fd67e8e1bfa6536c3b2ab91737cc629acbff464aa3botocore-1.34.50.tar.gz"
-    sha256 "33ab82cb96c4bb684f0dbafb071808e4817d83debc88b223e7d988256370c6d7"
+    url "https:files.pythonhosted.orgpackagesfc54ed71b69fb2ea30ebdfa122cd81d14faf79aa3346edfed2912c5105205c18botocore-1.34.55.tar.gz"
+    sha256 "bb333e3845bfe65600f36bf92d09668306e224fa9f4e4f87b77f6957192ae59f"
   end
 
   resource "jmespath" do
@@ -102,8 +102,8 @@ class CfnLint < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesa72d6308c04382ebdf15f1add7f0ec5e518ab23a0958363a8b3399f09c314fc0pydantic-2.6.2.tar.gz"
-    sha256 "a09be1c3d28f3abe37f8a78af58284b236a92ce520105ddc91a6d29ea1176ba7"
+    url "https:files.pythonhosted.orgpackages3c6c5d3b1c9615726a69a9a1f992e63f8fd0a2d19ae726c15eb9154fdce48217pydantic-2.6.3.tar.gz"
+    sha256 "e07805c4c7f5c6826e33a1d4c9d47950d7eaf34868e2690f8594d2e30241f11f"
   end
 
   resource "pydantic-core" do
@@ -112,8 +112,8 @@ class CfnLint < Formula
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pyyaml" do

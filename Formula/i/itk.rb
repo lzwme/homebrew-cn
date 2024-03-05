@@ -4,7 +4,7 @@ class Itk < Formula
   url "https:github.comInsightSoftwareConsortiumITKreleasesdownloadv5.3.0InsightToolkit-5.3.0.tar.gz"
   sha256 "57a4471133dc8f76bde3d6eb45285c440bd40d113428884a1487472b7b71e383"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https:github.comInsightSoftwareConsortiumITK.git", branch: "master"
 
   livecheck do
@@ -13,15 +13,13 @@ class Itk < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a8387a47b0e098b19cd12065e010454cd9eb29545a57fbc854f994e92f48f630"
-    sha256 arm64_ventura:  "02b932d424a0083d120a2852283fb66840b4dcbbb143e41465e10b3d77c255ab"
-    sha256 arm64_monterey: "146bae11cdc51191bf0949a162ca8672433a224b5ae065d21f4b03ce67387542"
-    sha256 arm64_big_sur:  "b59c138f5343b634c38722facd48fd91cc14982a4450eabfe94be12fc4a78de2"
-    sha256 sonoma:         "d88325ebb8d7e3ad6bc8d84908d1a17b2f9b622e315900c7b4435264ae669e82"
-    sha256 ventura:        "65203140977767fdf00618053dba2f580772eefe1ca8079420fdc1bf9d2e0fa0"
-    sha256 monterey:       "a7035bdae6fc5ef6137ed257bf894f8abaa85f41968ce1c14b156edca3b1717a"
-    sha256 big_sur:        "53eedaa35f58d2de6ff603274001ca7cd039f2c5f47febaecbf500ef22de8c36"
-    sha256 x86_64_linux:   "a45410c1cfe60f0a5c250c85d5fc06fed800235a9d43d0ed6ec88ed87ef3d6c0"
+    sha256                               arm64_sonoma:   "d5f95ad376eb26081d40eca0efdba2fb7b6a15df074cfab5bbf3f06965727919"
+    sha256                               arm64_ventura:  "ada973d67e4b9dc0dc9a82092f5ec755eae037cd1e70812ea8e8a4dace07554e"
+    sha256                               arm64_monterey: "4ea639bad2e0d5bf87110ac50e13e3fff20f69bf464d3788a77dee1a2d0ded6a"
+    sha256                               sonoma:         "4a8187ea203c233ff05606538d7a6dd38982aca6097d996de3cbbbbdd213c0a9"
+    sha256                               ventura:        "ed8c3bd3abe75f831ddb49f6cd23bfee252849b76ff233677edcb42965700bf6"
+    sha256                               monterey:       "8a50879df1c4307ce4f3aa3ccffdd2996ed417f7a2beaad13190f7894ca2e629"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c676b97afc20d8e34a8b47de1d67522989ef21312c602afe008ee9091ad0ae28"
   end
 
   depends_on "cmake" => :build

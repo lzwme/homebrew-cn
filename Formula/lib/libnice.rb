@@ -1,8 +1,8 @@
 class Libnice < Formula
   desc "GLib ICE implementation"
   homepage "https:wiki.freedesktop.orgnice"
-  url "https:libnice.freedesktop.orgreleaseslibnice-0.1.21.tar.gz"
-  sha256 "72e73a2acf20f59093e21d5601606e405873503eb35f346fa621de23e99b3b39"
+  url "https:libnice.freedesktop.orgreleaseslibnice-0.1.22.tar.gz"
+  sha256 "a5f724cf09eae50c41a7517141d89da4a61ec9eaca32da4a0073faed5417ad7e"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
 
   livecheck do
@@ -11,15 +11,13 @@ class Libnice < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "4a6049ae42da06310f332e1793384a20c5e8b73c6da057bb21ef76fd4afafe5c"
-    sha256 cellar: :any, arm64_ventura:  "d03740d14e2009f6020c2aa22f0c54e91ab541e9ddce13b170b7e6a653a233f3"
-    sha256 cellar: :any, arm64_monterey: "43a9ca6f5f47660e216a8944e0632cfa2bb37d8a6d7ef0c6172be7ee21a67c14"
-    sha256 cellar: :any, arm64_big_sur:  "89ac0d78a723256971b3a55a94cf1df6837efb7984bce54e27a38b7ef6e5a1a7"
-    sha256 cellar: :any, sonoma:         "0ad7576a3a4faf2e46bdef9f7f3f9f3398e072a2364ae494541713048614678e"
-    sha256 cellar: :any, ventura:        "dbb917600a8a1ca8e182bda8e04e257d33516aab50560200f3919daf451dd5fd"
-    sha256 cellar: :any, monterey:       "131822c8212f7e84014a6cfc395d0714fd34c57508cc6c8f8759cf42f9f25db9"
-    sha256 cellar: :any, big_sur:        "b14dc9baa15c60604d3927bb71116b8dd61c0d8490a710a6b9a986d4948dc55b"
-    sha256               x86_64_linux:   "a1276510091d4feb7ab30df7dd2da106be0d61b26c2f441eec3d7e623b83d51d"
+    sha256 cellar: :any, arm64_sonoma:   "561998831e0aa0fd61bd6ba913249959b5990a527f3b201151acebb9ba36e166"
+    sha256 cellar: :any, arm64_ventura:  "864676854f73e9d95de61dfd004f4e49e161fcca41a58b2aab7e6d2f03e1715d"
+    sha256 cellar: :any, arm64_monterey: "c0b2d5e710b9748cb14804ccfc32b8f08949f4212313c0c3eed8b74fb0b2e3a9"
+    sha256 cellar: :any, sonoma:         "e05d0d12b548e049380c972439f152ebc10a58312eb1a2d3666df570e174a6b7"
+    sha256 cellar: :any, ventura:        "9848b98bcee8122cc9d4867332d4dc372faba88cfecf4a58e54ef6cbdb803f76"
+    sha256 cellar: :any, monterey:       "73566f6bbd1496154268a114ef5bc53f1b03330fd8f7b62a15d87de7dde35793"
+    sha256               x86_64_linux:   "392d7eb8bea2d013695a4d57d7a5849d702d018f9d1e2009accd01edbc979784"
   end
 
   depends_on "meson" => :build

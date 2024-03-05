@@ -24,16 +24,22 @@ class Libplacebo < Formula
       url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
       sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
     end
+
+    resource "markupsafe" do
+      url "https:files.pythonhosted.orgpackages6d7c59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbfMarkupSafe-2.1.3.tar.gz"
+      sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+    end
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "7839601c57d0ceae5967ae877e8910cc6f2ceca9442878180f62c549e76fdd07"
-    sha256 cellar: :any, arm64_ventura:  "990a5225915a2069b94c2a34b98de62ea85e2ba424ad7d89301db9b294b37cab"
-    sha256 cellar: :any, arm64_monterey: "80a00f7310cc09d2baeba680dcef81f348704c876430324467c1339088b8417b"
-    sha256 cellar: :any, sonoma:         "3035517d9bc264dd0757523fbe76d6a85fb5a2294ac5d7522335c4c5622ed9ff"
-    sha256 cellar: :any, ventura:        "7482dab3cc6a3d6303e8db7fde241e73b489d6b41c940c0b312409764be2b436"
-    sha256 cellar: :any, monterey:       "feb5e92bf7fbae0950b4b216bd744c47ed544cc04e1cb0db5587f9179eb83c96"
-    sha256               x86_64_linux:   "507aa688bf4a70eb4b5c33f35e10efe8a3f79acd22ba705ea7cb77381e0de7f2"
+    rebuild 1
+    sha256 cellar: :any, arm64_sonoma:   "736ebf400cf64ccb3b911b8bce2aae416138ee0ad5aebe5ac8d9612c7667d514"
+    sha256 cellar: :any, arm64_ventura:  "cf5ed87e4b1a4d627b70f08bb736649c6bf8315888dc0691880b0ff07a48b231"
+    sha256 cellar: :any, arm64_monterey: "698a6371c4d7cb241086f1c11752f7aa89971b65be2c4cd7cc92d8706c3acaf8"
+    sha256 cellar: :any, sonoma:         "0e482f5fee32e6457a98a7087b31633416d019dea39cc4e6c8faffe19d1f5d89"
+    sha256 cellar: :any, ventura:        "b6bc76ba1a84e0490d60fd68516cd9f23b31e2b4400846532c2b93dd70bed75b"
+    sha256 cellar: :any, monterey:       "3e35416fda4cc537ecc2e6e79e61e3a27d522108a23d95e12ada28c9ca065ade"
+    sha256               x86_64_linux:   "b8764ef84438c4c71e88e80da835593a5112b94a0a57091401b0843609a641da"
   end
 
   depends_on "meson" => :build
@@ -44,7 +50,6 @@ class Libplacebo < Formula
   depends_on "vulkan-headers" => :build
 
   depends_on "little-cms2"
-  depends_on "python-markupsafe"
   depends_on "shaderc"
   depends_on "vulkan-loader"
 

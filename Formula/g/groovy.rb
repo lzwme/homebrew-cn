@@ -1,8 +1,9 @@
 class Groovy < Formula
   desc "Java-based scripting language"
+  # TODO: remove `groovy-raw-#{version}-raw.jar` workaround when bump
   homepage "https:www.groovy-lang.org"
-  url "https:groovy.jfrog.ioartifactorydist-release-localgroovy-zipsapache-groovy-binary-4.0.18.zip"
-  sha256 "4b03aa472ec7848d272893348a656be05d1b3502b30770ea57efa158e61154a6"
+  url "https:groovy.jfrog.ioartifactorydist-release-localgroovy-zipsapache-groovy-binary-4.0.19.zip"
+  sha256 "41b5ac00bd86e5beff108002cf328724ce533f0dfcb7d8f8073071385378fd22"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +12,13 @@ class Groovy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a664d71ffeb7a709b0ae5a6b8854c3e3c64dd49c2c8395bbba84aef975ec115"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "425d2b8199adde7025c44c113fb22e2ad8ddf64fa1798009c4e43acb5556a76e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c4effd4134fcf088ff790367513fee216b5f8288dab9ac31fc887e57fa2ae94"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f4cff8792196c61e7bb1b2b19257059a2b1e4b06966e94553a3e3a80c340aee"
-    sha256 cellar: :any_skip_relocation, ventura:        "265e2b67d0249e507c87d3aa504ecd7cb9250517805b18951c0bd287ae125ead"
-    sha256 cellar: :any_skip_relocation, monterey:       "698760f88a9747713d37f94961146a8000818a0ef42cd881416e05ed74dfe451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f40dbeb077361bd87335c00b497e7fcaa0445801010d7b11227e6ab8118d2ee1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b42f20531f9990ea8ddfaec175546843b46aa0532624b1a9695e585d2392513"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ea5f71ca65c901358ac0d4d8a6275848d94927bb2e81dbe5dd02c3f524e770b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bbdb92f9cb088ba38859bacc1bab4e627e73c38032b73c457dc7505c025e800"
+    sha256 cellar: :any_skip_relocation, sonoma:         "931a2639f05148d1bf861333821576406d3425bcdab392c271ddac456076f795"
+    sha256 cellar: :any_skip_relocation, ventura:        "f23d35eb976aaf132d1c4f152f66a7c0b263cb8fe6ccf569b5388bc9a9634f39"
+    sha256 cellar: :any_skip_relocation, monterey:       "85c284bf25c06da4d2b6b797c334380aa1f829231a7413ab87026494186a178f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c005bc32632c6c2963ed142efe3aa17f0bf5e741b7f1f436d2617aef0e69e5d0"
   end
 
   depends_on "openjdk"
@@ -57,6 +58,9 @@ class Groovy < Formula
                       "META-INFnativeosx64libjansi.jnilib"
       end
     end
+
+    # workaround to fix startup issue, see discussions in https:issues.apache.orgjirabrowseGROOVY-11328
+    rm_f "libgroovy-raw-#{version}-raw.jar"
 
     # Don't need Windows files.
     rm_f Dir["bin*.bat"]

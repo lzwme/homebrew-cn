@@ -1,18 +1,18 @@
 class SpotifyPlayer < Formula
   desc "Command driven spotify player"
   homepage "https:github.comaome510spotify-player"
-  url "https:github.comaome510spotify-playerarchiverefstagsv0.16.3.tar.gz"
-  sha256 "a36d042be08465344edc0268de9f46d269d30d79c420d04eb26d2d4ce56bf3aa"
+  url "https:github.comaome510spotify-playerarchiverefstagsv0.17.0.tar.gz"
+  sha256 "6e7bb43cf14fcec502d71ab1497425d9e9aaa951d5fe405d545408aa65fec372"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c09131de5684ea4e297c598c6d909ffe275c98af09a8b59153fe0f8f908db7d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83f12fecf4a0bb55c5afb03df765901f910a4be7673a3bb8c446458070068cc8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "29782f268c605cb9006a05af7bf14d5eb05163d17aacde52d4db114a18ca81e8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "12d5995873ce8ba2acac611424c15ce4f998aa6c723cfdee462c8e6e8d03f777"
-    sha256 cellar: :any_skip_relocation, ventura:        "cef637d7204ed8dcf1f6289226fd4e6d38851df888d6b18ac00f20feac551c43"
-    sha256 cellar: :any_skip_relocation, monterey:       "94ed00c10285c8aa1f362b5f8f302625bf21727cee1df09b5c28ab8652005932"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9acbf735e43a0c6e7347bf710b9b5da3ef3f583ee114617310c32dd017fac2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d02afd188f15d24a83b179971c2f02f43f8daffa393aeed90c171244a6b52dca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f387a47b51004a6f4e1dba1d6c038d08a40b94686f50d2d1c1da5ee39310411"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ac160f6d09d7258687b5336afa83ccda226024bdbc223923f9d11c7c62f5859"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5f334a3978ec1e17a6a14ef8c16857498a91e3a414b2b2f746962c3e6b5c0c08"
+    sha256 cellar: :any_skip_relocation, ventura:        "da596f306ceedf9233c75e51876b4c6d609d542c8f7691e52108b4da4fd543b2"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4a0b17634261a17f7ee2beaa9869d4d43dddb45c0e46bef88b42eb30b6433f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eac8daef87b5b4828fa16ff8674c047ad2e20ede430e5bc7ad9cceabb10422a5"
   end
 
   depends_on "rust" => :build

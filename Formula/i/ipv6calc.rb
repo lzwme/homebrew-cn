@@ -5,8 +5,8 @@ class Ipv6calc < Formula
 
   desc "Small utility for manipulating IPv6 addresses"
   homepage "https:www.deepspace6.netprojectsipv6calc.html"
-  url "https:github.compbieringipv6calcarchiverefstags4.1.0.tar.gz"
-  sha256 "9c42edd9998f13465d275a3124cfdf72c93fd793d38f6d732124ac3f4b84e36e"
+  url "https:github.compbieringipv6calcarchiverefstags4.2.0.tar.gz"
+  sha256 "767dbd3d21d04e21aa9764275e2aae726f04daf66bca21fc65f0a652bdc8b50e"
   license "GPL-2.0-only"
 
   # Upstream creates stable version tags (e.g., `v1.2.3`) before a release but
@@ -18,13 +18,13 @@ class Ipv6calc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b1256d562feac17f3f75aae3b399da486e984d1f48573f3ba5a1ee0ae3ea2c0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cd836a08b9cecbfd2965a2331c250100637fb1e4ecefc312c981efec5a47084"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b570877ebdb34864ecaeadf070cc3add102426491770eaafa403ec5b921ea6a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7b19e20c2e3586d67181f6d4de482acffdd3d5ccb6e702fc5d3e2322792c566f"
-    sha256 cellar: :any_skip_relocation, ventura:        "0837cd065508e4e134642b663139273f518e477c15554350ed6845a463ace2cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b2536f666ab422df8f0e5785d66cf10564e7ef3080ece29557a6da7e171bac4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94a16bd651568b6f38ed924dd32deafcc9e6f0432aeee4bcc0ef7974cf109f30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "449741fc376d45ad6ad5eaf55a3b0486fb5613e3e255ca718e709f5feea182af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe7aa11b4cbdfc83cfe29620e330d08c2905d3d437e48ac071c1c95429f10765"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30a1095481a93e153ff99927ad4ac31a252404624e187624b7b304b17bf455c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b4db2ff2d576e5c667257eafbab162300486e254a9afb81f043c5b67d1a557fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "79fcdae0bf897739a0284ac19a7021fa6bfb9e7bf7c455332b116b33c410bf24"
+    sha256 cellar: :any_skip_relocation, monterey:       "bddbf775f72a8ba060450946f2a982a99425ecdfc17ae856f88d196e6e2873f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16ac88b7281e67599a381e82df9d7b70d4276dcb17d416c90ad0cfacfe394b7d"
   end
 
   uses_from_macos "perl"
@@ -68,7 +68,7 @@ class Ipv6calc < Formula
     end
 
     # This needs --mandir, otherwise it tries to install to sharemanman8.
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}", "--datadir=#{pkgshare}"
     system "make"
     system "make", "install"
   end

@@ -1,20 +1,18 @@
 class Osslsigncode < Formula
   desc "OpenSSL based Authenticode signing for PEMSIJava CAB files"
   homepage "https:github.commtrojnarosslsigncode"
-  url "https:github.commtrojnarosslsigncodearchiverefstags2.7.tar.gz"
-  sha256 "00fc2b43395d89a2d07ebbd4981e7a9dbc676c7115d122a1385441c0294239b8"
+  url "https:github.commtrojnarosslsigncodearchiverefstags2.8.tar.gz"
+  sha256 "d275d86bf0a8094e2c2ea451065299f965238be3cfaf3af6aff276302d759354"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ee253906f690082fb0f95925c7ca20973748f3c7f622b181c284b1bf2221756d"
-    sha256 cellar: :any,                 arm64_ventura:  "1f6ab0d22e1025c6b5d66c8978e338fe3f85f5b924709b28d7625d3861951e32"
-    sha256 cellar: :any,                 arm64_monterey: "d3fb5dfb502c3c3fd7a1a8a55a0105852c5eb68b995da2fce81009827f953042"
-    sha256 cellar: :any,                 arm64_big_sur:  "46b8c4c787717d1847fee881670449f95a2c5a34701506b7cfe8c59d858050ad"
-    sha256 cellar: :any,                 sonoma:         "7f49058612fcc742b1e456e5452a56d4dd097d6a675b6fa8ec4cdcc569b2b351"
-    sha256 cellar: :any,                 ventura:        "5011f0d203e816aab853cabc73d16e5dab6f4c1e1673f79c5fbaae83a7c7fe7a"
-    sha256 cellar: :any,                 monterey:       "b4ebe200ae4b762b5824a4855d95e2a23ac13c93d3a92cd973de6759e6df9bb3"
-    sha256 cellar: :any,                 big_sur:        "778fdb11adce389448e9d034fd9b5b0062671eb71ae40e5f297297bf6c11c7b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba9e75264cb30857cbb73ab8f0863a5a039c9005a9b296732d78b4ab09a7ff7e"
+    sha256 cellar: :any,                 arm64_sonoma:   "c8d5b69f29bac418152975bb0b288fa077823e7f2caaaea15a330f417276ef51"
+    sha256 cellar: :any,                 arm64_ventura:  "e0f1712a32fd4eac4439b5f37aa0c828918d31865513e02d59e311d63462472d"
+    sha256 cellar: :any,                 arm64_monterey: "11cf3fcd97f3a19d2eacdf3df2f91c435a4db55ef583b24aad028ba9ca58a4f6"
+    sha256 cellar: :any,                 sonoma:         "b81dd3731b0f8c4518485c3cbaac40f83ec1e1612763699650366bf118325b94"
+    sha256 cellar: :any,                 ventura:        "3a56ebcfdbdd9c1197991cd50b7828a337937daf12003131699b8fa06cc7a687"
+    sha256 cellar: :any,                 monterey:       "141066fcb3a7f1337fa8acfb9c547ef1b4ce19078f996d664f52e71d84f1da3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90b5b5279052424a356d3578dd592dfb4dcbb69e3b9be03a00740b6609c93ec1"
   end
 
   depends_on "cmake" => :build

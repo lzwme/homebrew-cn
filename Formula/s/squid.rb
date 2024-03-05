@@ -1,8 +1,8 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
   homepage "http://www.squid-cache.org/"
-  url "http://www.squid-cache.org/Versions/v6/squid-6.7.tar.xz"
-  sha256 "0f701e1369bffab9ca348075fbb96eeba2f0e778382b0331e5c8f6541db6a42d"
+  url "http://www.squid-cache.org/Versions/v6/squid-6.8.tar.xz"
+  sha256 "11cc5650b51809d99483ccfae24744a2e51cd16199f5ff0c917e84fce695870f"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Squid < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "62de06cd26955c809fd5c2e3f4ff8c6aa7cdcd662d3b995ef78c37aecd3d3fef"
-    sha256 arm64_ventura:  "b186a43474d5872f756ccce9016751e1edf9ad3aad564c8e550edc7a403ed7cf"
-    sha256 arm64_monterey: "efa7e71770750238d930f213593183bfcf3e1929d3147e49e4704ef7daadb8a3"
-    sha256 sonoma:         "97d8d389005c770495ecd90ece22b3e3146add13dc24e73cca26e2c30476bb64"
-    sha256 ventura:        "93b30487f942f1bd88c2ba6a28788023c8d28c91642f391392e2119ac372b134"
-    sha256 monterey:       "b6ad3f3970de49ba0c3c5bd65cd62830fdf5ba93afbd9ca14ee86c83d80c91aa"
-    sha256 x86_64_linux:   "081f87399d0060e54cb3b73b517bc7677fa64101d42b8169e29bb7a8dbeb9329"
+    sha256 arm64_sonoma:   "5fd7eac7fbf10dd91c7161eb57b35f71a2511b53d05f9f5380bc485883e55150"
+    sha256 arm64_ventura:  "d567ed02192b994105d7d1c1cbeaefee19b95ff7a23d75d69cabc4a935505ae4"
+    sha256 arm64_monterey: "cf4b27495b3d5d589e5cfba44f6fa1009fc8fb6c06cac84871f24819036465ab"
+    sha256 sonoma:         "7d90b87e4263093e099bfe39d5979a0040ef6db3795bea299ce7e71911de769f"
+    sha256 ventura:        "d5cd21426193381d90b1c3f6cd6ead284dc8d1798082f4a1ac3633494b31db60"
+    sha256 monterey:       "34844c6cb2061d90f96cec9a1b756a9289ff2376673c95159e61db1813e0e4d8"
+    sha256 x86_64_linux:   "1c16535a90df2c9ad674a4de890c6a87cff31e4c35af58dfe99153d17f2da7f3"
   end
 
   head do

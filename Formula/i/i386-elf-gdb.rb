@@ -1,9 +1,9 @@
 class I386ElfGdb < Formula
   desc "GNU debugger for i386-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-14.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.1.tar.xz"
-  sha256 "d66df51276143451fcbff464cc8723d68f1e9df45a6a2d5635a54e71643edb80"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-14.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-14.2.tar.xz"
+  sha256 "2d4dd8061d8ded12b6c63f55e45344881e8226105f4d2a9b234040efa5ce7772"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,13 +12,13 @@ class I386ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a507ca4585ea75e4a5bb40c23ad4d94fe01357e134038b6568bccb5f8d237af4"
-    sha256 arm64_ventura:  "494134c5ffbba504bb6ec0d14bf286686fc2aa78212bbb559c22c49e0a3bff71"
-    sha256 arm64_monterey: "c653d91a6d669787c5435c94f662f6ca09092fd0fd9dabefbcc808cb810dbbaa"
-    sha256 sonoma:         "696ddf4bb8f04054a8583d6c64b6f88662b20167d3f3bf24ced945371dfea06f"
-    sha256 ventura:        "656b3c38d75d82222e3ef4044a41b3a9a63e727d1c3284226044529ddb15dd28"
-    sha256 monterey:       "a935c82c03ad1aa4877d0e2ee89bfad09d616a31f5e27a90c2051cb259b13000"
-    sha256 x86_64_linux:   "c68350e893c7e0af961784e1648b43061d69129ee48b3429b2a9a9da0869e2d3"
+    sha256 arm64_sonoma:   "3ada87a84bb52d584881f785be85a27d62e61bdeb205ffb0636a015aa8ffd0ef"
+    sha256 arm64_ventura:  "2823a909bcb2690ceb44f86a578028e1056b954a755f3f7d3ca831c0416caad7"
+    sha256 arm64_monterey: "faed2b54ed55aceff38af30599985589dbba414cb5139bfb6878a91fc3685935"
+    sha256 sonoma:         "b478c9a08378b542c5febada80bc13be5d26755cf1640a37a0eefeb1c8edc60b"
+    sha256 ventura:        "37766cbf0f336352a604124e4658d835184fec4c67b248587380f5440b5c34b3"
+    sha256 monterey:       "caf010b58f2d7fe989f8098b928b94335abae251b02ca959786bee5008ef169d"
+    sha256 x86_64_linux:   "c30326ac88489c32ae487569b81b36c10483929008c62cd862b67091a6ff1e76"
   end
 
   depends_on "i686-elf-gcc" => :test
@@ -37,13 +37,10 @@ class I386ElfGdb < Formula
     target = "i386-elf"
     args = %W[
       --target=#{target}
-      --prefix=#{prefix}
       --datarootdir=#{share}/#{target}
       --includedir=#{include}/#{target}
       --infodir=#{info}/#{target}
       --mandir=#{man}
-      --disable-debug
-      --disable-dependency-tracking
       --with-lzma
       --with-python=#{which("python3.12")}
       --with-system-zlib
@@ -51,7 +48,7 @@ class I386ElfGdb < Formula
     ]
 
     mkdir "build" do
-      system "../configure", *args
+      system "../configure", *args, *std_configure_args
       ENV.deparallelize # Error: common/version.c-stamp.tmp: No such file or directory
       system "make"
 

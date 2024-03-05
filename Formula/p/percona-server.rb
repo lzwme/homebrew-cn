@@ -2,10 +2,9 @@ class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https:www.percona.com"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.35-27sourcetarballpercona-server-8.0.35-27.tar.gz"
-  sha256 "631ad9063f1235ee793a35b602e712476628b7b0cc7135dd54856dbb58b41d45"
+  url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.36-28sourcetarballpercona-server-8.0.36-28.tar.gz"
+  sha256 "8a4b44bd9cf79a38e6275e8f5f9d4e8d2c308854b71fd5bf5d1728fff43a6844"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url "https:docs.percona.compercona-serverlatest"
@@ -20,13 +19,13 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ec59297cf7d37f88ac3d758a078373f1fa22df63aec0c8164562903b50f4f9d5"
-    sha256 arm64_ventura:  "4ca36aab3da46c8f19c0d2de0bfc2391eaf139e7a75dcfbca05a5ddedfe67073"
-    sha256 arm64_monterey: "938db173ae59b6c3775ac3bb436d4e579f7bd8784a9b9916beca9fca24851447"
-    sha256 sonoma:         "e574175ae95082ebbc56b39a2ca0fa78d5b47c6c02ce9a3154a5e09b54047ff2"
-    sha256 ventura:        "57e4086330da88d313045d5fde37c5f122c5ff17964b86b2831e40537a7560a4"
-    sha256 monterey:       "4d853a972fd830ad7e68af8eb2c4adf5f7db7ade50e8dcfcc27ab79ac143a4c0"
-    sha256 x86_64_linux:   "9b8252c05414dcc611d1ceb8340c7ae6c73b4d4fcd50725393a7c86aabef2e85"
+    sha256 arm64_sonoma:   "e8ddfcd137263345d70bdb98a10ce465e3afa3742e0340176ced344d7a76af09"
+    sha256 arm64_ventura:  "fece2bd93b32cc7798eae60ec05ffccb6ca8f1a2514f17413e5f60ac449851e0"
+    sha256 arm64_monterey: "792e8dc5522ae83089e3ad379d390a0b6830d386e9904945db9bdfb52e48a29a"
+    sha256 sonoma:         "343a4d8124a980e1c90e96978c4a648a1f14f8e0b2539cfd21584119729f76f7"
+    sha256 ventura:        "828ed28d3a9642ced256561c2d71c717ea95b85590e4aed2f2400e8af0a30bf7"
+    sha256 monterey:       "55b1d398b262723c6ca7db6bb4d9e11fbae6246d0294f7e63983b0ff5cb5bae4"
+    sha256 x86_64_linux:   "8220675cd32b2106a4d4d03f12189e17c4184e55f3662287108d559e9d1f979d"
   end
 
   depends_on "bison" => :build

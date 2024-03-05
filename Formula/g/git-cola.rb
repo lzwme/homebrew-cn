@@ -3,20 +3,19 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https:git-cola.github.io"
-  url "https:files.pythonhosted.orgpackagesff9d535817104a93cea22d4b7bc9fafd342a5370ec4c0ea3e10a0870d8bb817agit-cola-4.5.0.tar.gz"
-  sha256 "2fb8db5c2cd5558dafa966fad54678301b7c2dbb1c47eb7b1a548de7da6ce2ec"
+  url "https:files.pythonhosted.orgpackages211324757dd737e347c4a528ee467568ad32b7afbca704e6e55945d2f7b9ddd6git-cola-4.6.1.tar.gz"
+  sha256 "b9dd4b7026a21c79918a4f6b07c19ac11717379f43f218f65d928e89a906cbf4"
   license "GPL-2.0-or-later"
   head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "916692f1dfd8c0053f240183af0a0b46525c4408ae0ce2ca76f030d5b6a764e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14d326628b3948f4ef0b7fbae75c9440359d44e5f7aa21459348eb71186450a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4909fa235b3ef2d555ed22171fbb43b472c74fe7680d8d08b95cc8f685ab365f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "90f90d2728dd4fb086dc606d222c57eefd02fe7eed5143ae8c7fef7130ec07a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a9351cb74f320384a8ef7a8053989d23be0e147179b53e2ff58c16f3b5dafb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ebf6999bbacc7c9e7486abc44d45557777fbf31828edd1e0888565900bbbba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "824e0809937a561ce95413e3f06cb5a9104219e1ef1c9cc29cc71cfb2eaa6e60"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a06d8758a0051d98d10a7c3cfd26f162a0530a92ea19d5eb7da8f376ca8097f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08616ba14ecb3d20487f3b13803555c506d720c0027b561dc4beb0f283df2048"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "472c4e61a9b2a51b54c6b2f81f724d8467558e86e985dfcf524132656f11f60c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1ac92b479884c285d65f22904f358ef2311f0e61fe3046be5f5280545b71de5d"
+    sha256 cellar: :any_skip_relocation, ventura:        "71114eb7bb8d6ad2399e004a481e9ddda961e90b6ce5baea353ce2be79c1c81e"
+    sha256 cellar: :any_skip_relocation, monterey:       "05817ed297c9c77c7ff0635fcb84af370b04d40f186793a3e3f18137d48a6315"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0ce21a6058923e7b47b82f24f96441437f4309fb5ce34469ae55232dc833ab7"
   end
 
   depends_on "pyqt"
@@ -25,6 +24,11 @@ class GitCola < Formula
   resource "packaging" do
     url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
     sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  end
+
+  resource "polib" do
+    url "https:files.pythonhosted.orgpackages109a79b1067d27e38ddf84fe7da6ec516f1743f31f752c6122193e7bce38bdbfpolib-1.2.0.tar.gz"
+    sha256 "f3ef94aefed6e183e342a8a269ae1fc4742ba193186ad76f175938621dbfc26b"
   end
 
   resource "qtpy" do

@@ -1,20 +1,18 @@
 class TemplateGlib < Formula
   desc "GNOME templating library for GLib"
   homepage "https://gitlab.gnome.org/GNOME/template-glib"
-  url "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.1.tar.xz"
-  sha256 "3b167a17385ad745afbe20fadf8106c66d30c5bd746d5aa1d9bdb7e803f6a503"
+  url "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.2.tar.xz"
+  sha256 "0020f3a401888ce763b3a17508c2f58e91972a483a0c547afdb7ccbe25619948"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "048a87a35d11eb4bd9dc5773beecbfb17de14aa77c7dbc9eda33c9a297067a52"
-    sha256 cellar: :any, arm64_ventura:  "774bc15db0c2b5e299f8e4d76ae83fc37204259beae21a5c8801c646f2b50c33"
-    sha256 cellar: :any, arm64_monterey: "df91f7944d110734160bcddd075cacb63080a9840204dc0a5b1878d0cdfca8c7"
-    sha256 cellar: :any, arm64_big_sur:  "323d025d1978534f458a7f877c9e4d8ea482b3fe50a00d36686b6ebb65922fd7"
-    sha256 cellar: :any, sonoma:         "ed289b1c0d3f5c714ee610db5d7d85530bbf5e21484af81adb4a04605cad1857"
-    sha256 cellar: :any, ventura:        "c07351a7b8832768973284fff89386299773e20fd07eb8def24d887005bf0b7d"
-    sha256 cellar: :any, monterey:       "c54b5045304c7098837709210ebd74a584a9c1565c9a654fa4fc6771e7912e6f"
-    sha256 cellar: :any, big_sur:        "4dead442226961da575f6d5c1a9745822baab6e874217375b29cabbf579ca33d"
-    sha256               x86_64_linux:   "20c6c8571b256ebcd3e6d76f1ea10241a87d60bb6f9ddf0e91dae900e7d7b7f9"
+    sha256 cellar: :any, arm64_sonoma:   "2daee9e38dd1b1ef69dffd166f01fced59f2b995503bfa0b535217b75b0d9978"
+    sha256 cellar: :any, arm64_ventura:  "7fd444eaf0477d2faddb96a278f30c2c3d2073ab4e6b3bb8860262e1e4652812"
+    sha256 cellar: :any, arm64_monterey: "d1ad92f56762b7dc87a65ebcbeb0cbac29235c0a6234a07b07dcaf8e6efa9840"
+    sha256 cellar: :any, sonoma:         "384136ebb3f6198eb39a87a900f0b9a588160f01272d926aaf556dc00fee74c5"
+    sha256 cellar: :any, ventura:        "79aa07a322b002473fbd829d79dff1c6a2147d74e3186e843fb8b0572e3a9381"
+    sha256 cellar: :any, monterey:       "d23a2768d603f656bbd31439504dae0ad391ecd3329a1db66ca107f78b68663b"
+    sha256               x86_64_linux:   "d38c3fb436805bed97da9b3d88798a2b094b6eb51fc4ddc00cf43301ecde486d"
   end
 
   depends_on "bison" => :build # does not appear to work with system bison

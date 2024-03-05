@@ -3,18 +3,18 @@ require "languagenode"
 class Devcontainer < Formula
   desc "Reference implementation for the Development Containers specification"
   homepage "https:containers.dev"
-  url "https:registry.npmjs.org@devcontainerscli-cli-0.56.2.tgz"
-  sha256 "6f169c57fc7b9b9a5291938983d3a4a2ff2d0cf03302cf1b03986806097a1416"
+  url "https:registry.npmjs.org@devcontainerscli-cli-0.57.0.tgz"
+  sha256 "b5965365bffbb95e812928359ee1778bfe376047b7d43dcc862b5ad528ac41e3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "561699f27b10a8c5b4e78d13d16673ec97a93f9eb2b8bd7f925bf529edf4aa02"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "561699f27b10a8c5b4e78d13d16673ec97a93f9eb2b8bd7f925bf529edf4aa02"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "561699f27b10a8c5b4e78d13d16673ec97a93f9eb2b8bd7f925bf529edf4aa02"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4c385c470f6f1acd95ca9017d93109a34e31e10261270f37c36fb971d904cb9e"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c385c470f6f1acd95ca9017d93109a34e31e10261270f37c36fb971d904cb9e"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c385c470f6f1acd95ca9017d93109a34e31e10261270f37c36fb971d904cb9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "561699f27b10a8c5b4e78d13d16673ec97a93f9eb2b8bd7f925bf529edf4aa02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd62dd4838ebcd2db280a83429fe10f6905cffc101dc577c2d45329f7f5b36da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd62dd4838ebcd2db280a83429fe10f6905cffc101dc577c2d45329f7f5b36da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd62dd4838ebcd2db280a83429fe10f6905cffc101dc577c2d45329f7f5b36da"
+    sha256 cellar: :any_skip_relocation, sonoma:         "686cd66345299343191fc4c6326cc9989fc0108a8b06af56b440f7f1918f91ae"
+    sha256 cellar: :any_skip_relocation, ventura:        "686cd66345299343191fc4c6326cc9989fc0108a8b06af56b440f7f1918f91ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "686cd66345299343191fc4c6326cc9989fc0108a8b06af56b440f7f1918f91ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd62dd4838ebcd2db280a83429fe10f6905cffc101dc577c2d45329f7f5b36da"
   end
 
   depends_on "node"

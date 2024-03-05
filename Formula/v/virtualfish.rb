@@ -65,10 +65,6 @@ class Virtualfish < Formula
 
   def install
     virtualenv_install_with_resources
-
-    site_packages = Language::Python.site_packages("python3.12")
-    paths = %w[virtualenv].map { |p| Formula[p].opt_libexecsite_packages }
-    (libexecsite_packages"homebrew-deps.pth").write paths.join("\n")
   end
 
   def caveats

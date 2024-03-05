@@ -1,21 +1,18 @@
 class Mkfontscale < Formula
   desc "Create an index of scalable font files for X"
   homepage "https://www.x.org/"
-  url "https://www.x.org/releases/individual/app/mkfontscale-1.2.2.tar.xz"
-  sha256 "8ae3fb5b1fe7436e1f565060acaa3e2918fe745b0e4979b5593968914fe2d5c4"
+  url "https://www.x.org/releases/individual/app/mkfontscale-1.2.3.tar.xz"
+  sha256 "2921cdc344f1acee04bcd6ea1e29565c1308263006e134a9ee38cf9c9d6fe75e"
   license "X11"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3a4c3bc38e6a605cc35748850c2214f3d33423a7e186a29f0b1c1a9ccf45c502"
-    sha256 cellar: :any,                 arm64_ventura:  "676425b193518872233d76a1e8ba76390d81207d8c67d7b76cd3de25b8f6dc6a"
-    sha256 cellar: :any,                 arm64_monterey: "51ea1294320fca4ff637100bcccfa7f288b0bd6ba1e06515e40a8189486cb191"
-    sha256 cellar: :any,                 arm64_big_sur:  "22414e6c76bc214188dfbae32374613e4b26a8834d1ab9a2017aa3e77861e5cc"
-    sha256 cellar: :any,                 sonoma:         "e8a8bc59abaf36d85df79b936b04965153ab1666e23ba836616d7a068659945d"
-    sha256 cellar: :any,                 ventura:        "4858c0f0d9cbbd0ff360ad2be7622dff84b9275fa738699af243211ef604003c"
-    sha256 cellar: :any,                 monterey:       "52d2ac9c81ff9fdd9bdf3485fc99604280fa61db1f1056e82778fd0a70df909b"
-    sha256 cellar: :any,                 big_sur:        "5f75b30ba350f02b41aaca41a8de3a8435665674efc6e2dd61e495b55481e1b5"
-    sha256 cellar: :any,                 catalina:       "ca3eaaf699b21debca368afb2351f35e2c69bba294dcf68756ef7b60e627b444"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3c8d69f29f369b1164a7a148fc5a41fbb83cdb88427efc06c307a76c3570cf"
+    sha256 cellar: :any,                 arm64_sonoma:   "6795c9f6167e00f72f72aa22ebf557a440ba85e9c4242ffba2a774dad5c8b859"
+    sha256 cellar: :any,                 arm64_ventura:  "c88d40044de4b6556a64c1d679cfa377d32f0af07c7d6b344b91046910db8371"
+    sha256 cellar: :any,                 arm64_monterey: "01eacad2f18ee8f35bc292d7c6dece30a4ad5a040fdbb12fd4541f843b8c438f"
+    sha256 cellar: :any,                 sonoma:         "0fde03defbc5ab14a784923257a034eeb58d55e9ddd2094ce5157f84cb255b0a"
+    sha256 cellar: :any,                 ventura:        "369bd2a993bc78b059ec76adc510eb212c9b3c7f0604a99d9374403d6b930202"
+    sha256 cellar: :any,                 monterey:       "bf2d558740739a6f00635279dde933488d381bea05457e8fbfa92495c7820a15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ea938e8ad6c373bad7f07d10cce369fa35345c4ae07629d46e8173357404708"
   end
 
   depends_on "pkg-config" => :build

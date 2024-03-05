@@ -1,19 +1,19 @@
 class LdFindCodeRefs < Formula
   desc "Build tool for sending feature flag code references to LaunchDarkly"
   homepage "https:github.comlaunchdarklyld-find-code-refs"
-  url "https:github.comlaunchdarklyld-find-code-refsarchiverefstagsv2.11.8.tar.gz"
-  sha256 "7d1c3bbd4789e3e9719ac609b7c7391982999fac63f4e3fb461238c544558dbe"
+  url "https:github.comlaunchdarklyld-find-code-refsarchiverefstagsv2.11.9.tar.gz"
+  sha256 "4a0b2999ff29980269cde0b460188b1652a0f855474c7729df88a2e599b581d4"
   license "Apache-2.0"
   head "https:github.comlaunchdarklyld-find-code-refs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03a1c81635088320afaa1aa2146349d8da10b4af71a0e7d5177a652e6eb3b669"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef62325891d7cb33d50bdc065e420638d1320211d9cba8495703261e2dd26ed9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1807fb8ed16591d242e0cbac484dce64da619883159f90ffc9942e349c49843"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9fe2e723ffdf88bcbacea40326fdba1657c5f41821a95a38a038da9b9899017e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b5e68d23544da211091e71da182d39ce7e5997333569463b3fe2619953c19803"
-    sha256 cellar: :any_skip_relocation, monterey:       "f1be47e19090c50babefde9b09cebf35a1dfda51107d17affae62a9ec6cb44e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aafeeba4c88af09233f8becf460168454673f8fffc45c7809b66834f7aa47997"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1267a670d947d78428ccfb6a310626b8e18ca2e9ad858909fd7fede38c359b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9cceed66f1f27d66f9897a8aed57913aa6f6cadf7151a9f42085a06c4581caa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af4b15e99e9a0fefde43376d0d046b56e96c01c334c20c4a8c1b9ea14be28d13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "edb31cfa29850d81774f13387a8de20881b822f7d4ac98bd7ff7a0340f653874"
+    sha256 cellar: :any_skip_relocation, ventura:        "e099e7909b85f54340ef9a2363b0f077094ac56d57eefdff59a06e37e5bc3ed3"
+    sha256 cellar: :any_skip_relocation, monterey:       "f99b0c9b5db112c8e4a0334f7be9fc8a027b03101af0ed02740e2c27acbb44ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf5a2ec1dc101e36c250bd2874bd7dc19ae43741e46ba58633c574122151c2a4"
   end
 
   depends_on "go" => :build

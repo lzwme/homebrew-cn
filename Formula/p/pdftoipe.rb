@@ -4,16 +4,16 @@ class Pdftoipe < Formula
   url "https:github.comotfriedipe-toolsarchiverefstagsv7.2.24.1.tar.gz"
   sha256 "561b18fc2a7ae45c37c5d0390443b37f4585549f09cd7765d856456be24e5dbc"
   license "GPL-2.0-or-later"
-  revision 18
+  revision 19
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b1ba8c8b3d670015b0bd005e31a7d01f37e5079ec6599e395530c2a97996b69d"
-    sha256 cellar: :any,                 arm64_ventura:  "5576c9beaf8dd3de47764d3aa4b4d869a3c0df3469c8134470d91a07d5e82454"
-    sha256 cellar: :any,                 arm64_monterey: "6e8a613b19b07c2cf67c5acd0a8a7cac02b700a28a8b9ac0c3cefe115f0e7b4f"
-    sha256 cellar: :any,                 sonoma:         "7a30e10d06602784f65e17c52804e568d07e56ee42b1b64dbda0578c16023b36"
-    sha256 cellar: :any,                 ventura:        "7225ffeed54dbada75850dc3b00402738a2fac5865496addbeb660091ecd7b9c"
-    sha256 cellar: :any,                 monterey:       "1762a3ac395beafc50baa391a1f9dfead8f47dccf17a9396bc06925adf6d708d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4575f48b470bf7fcff3e2be0f68351f0f75c6db809498f9528d97ba5012d0df8"
+    sha256 cellar: :any,                 arm64_sonoma:   "b88ac0a1188d2370b2207d515836d79aae19dd7694edd9f5ab5b5cb82433f926"
+    sha256 cellar: :any,                 arm64_ventura:  "dfecfa55237fb05bfaec55c8927513bac89c974bf0686a09823055b2a9d50035"
+    sha256 cellar: :any,                 arm64_monterey: "9f23632de98c265639a7be060d846f5d9d3e58db43b6ad880041ece4bfcc916b"
+    sha256 cellar: :any,                 sonoma:         "f7b33e16b80840ae730a4e03a9a9ee4ae6a714a6ecc7db78896488530da27035"
+    sha256 cellar: :any,                 ventura:        "be84c146ae7093b96a8c34587c9d8e7a0b15dadda6be2253256788dab3e379ed"
+    sha256 cellar: :any,                 monterey:       "285180cb8c024bbb56187e932928667b1aa55e364cb5cd5f775a4b43ea5f3550"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "142e1254b96d49d21bfab29d06b9b83b5543e71e3b9aad78111f4fb196fe381d"
   end
 
   depends_on "pkg-config" => :build

@@ -1,19 +1,19 @@
 class Dnsx < Formula
   desc "DNS query and resolution tool"
   homepage "https:github.comprojectdiscoverydnsx"
-  url "https:github.comprojectdiscoverydnsxarchiverefstagsv1.1.6.tar.gz"
-  sha256 "5fc857feceac3438ab1a3d9a577412ad153be5206887d4396247f87939be8e9c"
+  url "https:github.comprojectdiscoverydnsxarchiverefstagsv1.2.1.tar.gz"
+  sha256 "08a806e1f87e11e1a4953bf84a35c77afdd84a946b8e7c9b602443007eeb1fe3"
   license "MIT"
   head "https:github.comprojectdiscoverydnsx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48bbeace45b889a2291bacaa84ac74c69b2303a27a6a1a6a10e8f47e5d4395b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "743179ccfd331b2e55dee72e0a408d7fe7a62df852ad45e428ab4a4dfa9755f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa1e3551a0e345f9230611c8cf213f18180b7e2ff177d65cf3a5dd6add9f4a94"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a6a77ac14961cce7b0b7a2576e3cd09adb2b030a5350272d1bb6938f7e3142f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "f35fe51016343673c6a43d9e0e86b5ac2d2bb481b2d2bf779fe2bc1efe498916"
-    sha256 cellar: :any_skip_relocation, monterey:       "d282fdea75c2eea93841c7d26e90c29b0a43dd34fb0ec880ca48668b9d68b9a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dc2fd2e568a6b208a2c24b03abff9cf6b3e99505d27bd7872631cee1ccf8e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff96cf444560152e2c5a90a0d580889ec1c1256954a1fd6a03ad9ca818208d81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9d4b23a37b41cfb94e5616d87fbb878b2be8754bf1e9bed04aa77c612ed65d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "77084cc2b5c27891b05b568e12258703e13209a9553a02062ff0e69247a76755"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6b4697c0f265b13e36ed026d5c31184c15b8c4f54bd17ca175857028dd9e0f60"
+    sha256 cellar: :any_skip_relocation, ventura:        "b8fdc8af81be5c33da1ebd5a297fea16613529b6f75cf150a0ae8266d438f631"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa2632ba306d81e1aacc0656f85cb6a1906f721f937ddca49a3619eb9d37272d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af305493b55bce0144191768c62b9b47ff453ecc3661759de363947cc372b23"
   end
 
   depends_on "go" => :build
@@ -24,8 +24,8 @@ class Dnsx < Formula
 
   test do
     (testpath"domains.txt").write "docs.brew.sh"
-    expected_output = "docs.brew.sh [homebrew.github.io]"
+    expected_output = "docs.brew.sh [CNAME] [homebrew.github.io]"
     assert_equal expected_output,
-      shell_output("#{bin}dnsx -silent -l #{testpath}domains.txt -cname -resp").strip
+      shell_output("#{bin}dnsx -no-color -silent -l #{testpath}domains.txt -cname -resp").strip
   end
 end

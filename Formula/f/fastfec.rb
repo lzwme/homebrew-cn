@@ -2,18 +2,18 @@ class Fastfec < Formula
   desc "Extremely fast FEC filing parser written in C"
   homepage "https:www.washingtonpost.comfastfec"
   # Check whether PCRE linking issue is fixed in Zig at version bump.
-  url "https:github.comwashingtonpostFastFECarchiverefstags0.1.9.tar.gz"
-  sha256 "1f6611b76c54005580d937cbac75b57783a33aa18eb32e4906ae919f6a1f0c0e"
+  url "https:github.comwashingtonpostFastFECarchiverefstags0.2.0.tar.gz"
+  sha256 "d983cf9e7272700fc24642118759d6ab4185fca74b193851fa6a21e3c73964ab"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8cd93c3ee8341f51200494f88ea7988b80f9572f31ff3ce887613aca2eeb7666"
-    sha256 cellar: :any,                 arm64_monterey: "e4a418b3cc7102643171d183f760d8472e346bfd867b0f9b1c9efcf77ef989e3"
-    sha256 cellar: :any,                 arm64_big_sur:  "cf8a31a76e96182523864464e836c933da99eb1166dca8c9ea3565c279f4e5f5"
-    sha256 cellar: :any,                 ventura:        "f8b6f48029a6b92236f23a25fac991956522d2ea3b406367dad94a718c581179"
-    sha256 cellar: :any,                 monterey:       "03535ac3132d60e752fa89765d510550586906ab23831997b64298957f3b6326"
-    sha256 cellar: :any,                 big_sur:        "2eae2434276d7188f96c8897118f4573a9beab27feabb38215b7d317c8067ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7566d57296f3b7928138acda003a04e9b64dcffa8d2c0d843a1610cffcf31853"
+    sha256 cellar: :any,                 arm64_sonoma:   "03c0f738cdb3df4339b9b2d3b23cc26f7822be6c13db12f2a514bc46d55b3892"
+    sha256 cellar: :any,                 arm64_ventura:  "c4d87cb24608f3fd1b0f31264e2161f77aa238fca88653fed5047fb813ebcdc5"
+    sha256 cellar: :any,                 arm64_monterey: "bdadc2b206dc4ea94adbf30b6ce1dc41b6491af2b98781222056bc1fe0931aac"
+    sha256 cellar: :any,                 sonoma:         "89c081d16fcb8be8b1c39ddef7dfeac4ce7b226db72579ab59bc87f11326839c"
+    sha256 cellar: :any,                 ventura:        "3ccdf0685ecc6553e6c1c01356b82e9713b4dd0dc6634e7862afddd088a840c4"
+    sha256 cellar: :any,                 monterey:       "ab1b085557839ed4b19cc49d839b025ce2bb4fd9a474140121b153b0ca63aff1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf228d820220f1c3499eced326d33d6492bcb86745db6aaaef29e41e8405f01f"
   end
 
   depends_on "pkg-config" => :build
@@ -28,18 +28,6 @@ class Fastfec < Formula
     depends_on "pcre" # PCRE2 issue: https:github.comwashingtonpostFastFECissues57
   end
 
-  resource "homebrew-13360" do
-    url "https:docquery.fec.govdcdevposted13360.fec"
-    sha256 "b7e86309f26af66e21b28aec7bd0f7844d798b621eefa0f7601805681334e04c"
-  end
-
-  # Fix install_name rewriting for bottling.
-  # https:github.comwashingtonpostFastFECpull56
-  patch do
-    url "https:github.comwashingtonpostFastFECcommit36cf7e84083ac2c6dbd1694107e2c0a3fdc800ae.patch?full_index=1"
-    sha256 "d00cc61ea7bd1ab24496265fb8cf203de7451ef6b77a69822becada3f0e14047"
-  end
-
   def install
     # Set `vendored-pcre` to `false` unconditionally when `pcre` linkage is fixed upstream.
     system "zig", "build", "-Dvendored-pcre=#{OS.linux?}"
@@ -48,6 +36,11 @@ class Fastfec < Formula
   end
 
   test do
+    resource "homebrew-13360" do
+      url "https:docquery.fec.govdcdevposted13360.fec"
+      sha256 "b7e86309f26af66e21b28aec7bd0f7844d798b621eefa0f7601805681334e04c"
+    end
+
     testpath.install resource("homebrew-13360")
     system bin"fastfec", "--no-stdin", "13360.fec"
     %w[F3XA header SA11A1 SA17 SB23 SB29].each do |name|

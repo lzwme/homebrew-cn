@@ -1,23 +1,25 @@
 class Mediamtx < Formula
   desc "Zero-dependency real-time media server and media proxy"
   homepage "https:github.combluenvironmediamtx"
-  url "https:github.combluenvironmediamtxarchiverefstagsv1.5.1.tar.gz"
-  sha256 "01367a6cf96f4bcb959f0cba82e9e88b4560be8caf3f4019a6416e7d2f7dac4a"
+  url "https:github.combluenvironmediamtxarchiverefstagsv1.6.0.tar.gz"
+  sha256 "7eb2f94e6246bde435f19cfb56ac69926b7d700206c8491e0dd9c69e4324fe92"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d6f486fef28897283000189b671815f35225365125b4207fb33b27a65d944cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a68e148514ed0f9158dbe3b451e690eaba5a6b031685e7e85a4542a38d33b132"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6bc3665dd0cdc197a6c6743f98ae75724052caca9773c6d18932d06d15720ca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14cc65e20cb0f57977da8b48f4718f054d63f6e1426c068a5766823579c7b464"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea640fc3a6ac9210dc7fe23af816e50e65370d7c50c3b87f500d30b1870d06fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "876b5fffe95ba343faacba0d0cbf9c574f6472bc012a3862d96668cd9096ae7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2db54830006b1ad750f0c6f8e3f38d215c1c6b376375a3df28a3ed7439cc8a36"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b62141e0731acab47e338c1e4c79c6dad92cbdfd76b9409ecbecf3c74835dd0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0f6516b6d75cbeefa07f7aaf0b63a1be1452454380c8e0ac60e7922870390d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3ad21a144b56e21eedb3e8588a77c6a03df2e43c3fbbea8ccce252d60868d1a1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ddd831cba4b0fec9d43b44ec41d7a3843d7fc0738041e059be64e91f1ec88830"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3a373939c7c2fa27d1332334e70604566684eda01053c6371c880537cf28a31"
+    sha256 cellar: :any_skip_relocation, monterey:       "547586e8d7a87727842369c26520f94c153dea3e2b796a7b54ae099b6552f7c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25a99c1eaa0fb695973a25fb2a6bd266e283009ab6590c5e9ebddbb2b707d4be"
   end
 
   depends_on "go" => :build
 
   def install
+    system "go", "generate", "...."
+
     ldflags = "-s -w -X github.combluenvironmediamtxinternalcore.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 

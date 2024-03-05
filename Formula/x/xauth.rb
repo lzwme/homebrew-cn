@@ -1,21 +1,18 @@
 class Xauth < Formula
   desc "X.Org Applications: xauth"
   homepage "https://www.x.org/"
-  url "https://www.x.org/pub/individual/app/xauth-1.1.2.tar.xz"
-  sha256 "78ba6afd19536ced1dddb3276cba6e9555a211b468a06f95f6a97c62ff8ee200"
+  url "https://www.x.org/pub/individual/app/xauth-1.1.3.tar.xz"
+  sha256 "e7075498bae332f917f01d660f9b940c0752b2556a8da61ccb62a44d0ffe9d33"
   license "MIT-open-group"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9a21d2dcd578fcda5c23a8e2509f597dcec11bed8621b6b8b577b1757b273384"
-    sha256 cellar: :any,                 arm64_ventura:  "464e6597dd8e6efdc95daf5643db03b5debf0224fbdb6ef6bfc137499a175d13"
-    sha256 cellar: :any,                 arm64_monterey: "887aa5b806204265a7b1492a6a14c550bfb6e182f60e08e22fd333f3f984938d"
-    sha256 cellar: :any,                 arm64_big_sur:  "ab2e13c48d988abfea7724b4e41b4fbb14db314ae802f1d720ee58068af10772"
-    sha256 cellar: :any,                 sonoma:         "d70a47542b53f4a2214b9a207f372c1da2610dc7b17567e9423ce8525c248ff7"
-    sha256 cellar: :any,                 ventura:        "73df460b519c7ba59a758e0d7cec9a6dc4fb0ace447aab58a8a0b39968b517e0"
-    sha256 cellar: :any,                 monterey:       "ef65c645298705f261fd277ade0693902141a979c95fcdd80c9ef1e2e52f403f"
-    sha256 cellar: :any,                 big_sur:        "7e8d65d24dfb49d88d01433c7d62e20e0cf392cdf76acdeb905eda0e72369439"
-    sha256 cellar: :any,                 catalina:       "82fda3853f90ede7a88e637b544cd9e36b59f29ba8a53d6fa52f293483657c80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba603e95a0e62e22545fb3d3f985d5f698289c6dfb66e19f039c33988dac0b97"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a7b83983740064b18141730a40ffd71feb3d08388a091370f6a82eebbbb78b2"
+    sha256 cellar: :any,                 arm64_ventura:  "57ccb291fc8506937db119ac70270ba101733e50425a719a0857ed31abbf3f72"
+    sha256 cellar: :any,                 arm64_monterey: "b6f3debf7f9b937e5096c7f8c6996daccfea756ef5186ff90c0c811d37a916f3"
+    sha256 cellar: :any,                 sonoma:         "d8b232b84fd17bd7be5ffd8bec34dc8ece296c2b3d83a7ce57baaaa5717d5fb7"
+    sha256 cellar: :any,                 ventura:        "d539b3fc84b80a1ffe86cca5f4c3d4244ffdf786a05928ffa8dbc74887f6aa6e"
+    sha256 cellar: :any,                 monterey:       "f01f0204c18abd135ab9d1ace74fe55c56988945f68900444439e31d47f63a50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79c33da732dc8f9d89082193869d83fcd79d695ea8cc8f26f1f5e2c743da6633"
   end
 
   depends_on "pkg-config" => :build

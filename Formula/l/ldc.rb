@@ -1,10 +1,9 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https:wiki.dlang.orgLDC"
-  url "https:github.comldc-developersldcreleasesdownloadv1.36.0ldc-1.36.0-src.tar.gz"
-  sha256 "a00c79073123a887c17f446c7782a49556a3512a3d35ab676b7d53ae1bb8d6ef"
+  url "https:github.comldc-developersldcreleasesdownloadv1.37.0ldc-1.37.0-src.tar.gz"
+  sha256 "50e80ae3c436c90637c2c3d40f392dc28b721f7aab3a1e3ca3bf4f9c28dba064"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comldc-developersldc.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "a702c014b40a7ae93e5aa3d40d53fe48a7967c04ca0039fbdb935d259790153f"
-    sha256                               arm64_ventura:  "ad0c37af554a276e470c09b626b00b2a716406f27a3e6b9979d3ef4348c36b9d"
-    sha256                               arm64_monterey: "34c09ba60abe8ef72796c710cbd2e6205fe42e5540c7ff213264f86a1fe3ca65"
-    sha256                               sonoma:         "a28a1d85609f977f1cf4c579f50c819034c027b63c202773130dd79f829d5876"
-    sha256                               ventura:        "e2cea208a0e283ac522b81cb82e8871c207928f08b9d943c43560b6e6c8ce187"
-    sha256                               monterey:       "32631d3cbc2403b2f00a0ed1821baf90db46785992ec891591ead9ce8df02c3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d60cc5db0c1b94d4d7c758ff01b2202566060e3c5388ddc086188bccc18c4774"
+    sha256                               arm64_sonoma:   "a6608742b2a6463f7e3679d007c6767178ae37545a5c6b45808afaf168bacaad"
+    sha256                               arm64_ventura:  "a45760c5605c942fa57c120a5e4872340768dbf03231e8ab60e0aff048de199e"
+    sha256                               arm64_monterey: "b4211bd6f90b1e79e56b0c079dcd6df4c9fee40f855893d58135159624ef2749"
+    sha256                               sonoma:         "0c32c34dd6547a57cc9b7e5314a7dd67329a2acce72efcbe11a0a408026a217e"
+    sha256                               ventura:        "1b349064dc40cd433413262044ffd1b6d037a4c790bdf6dad294dc13d041bd7c"
+    sha256                               monterey:       "ae0dd916281e3ce60fa7b4d11f77b38290afb4a8609bb427adac5fc81c3c86a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c001131cb1b1b7bfc8fe09d00d20e384ab9e636828aa75caaf053b10e59d4c82"
   end
 
   depends_on "cmake" => :build
@@ -32,22 +31,22 @@ class Ldc < Formula
   resource "ldc-bootstrap" do
     on_macos do
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.36.0ldc2-1.36.0-osx-arm64.tar.xz"
-        sha256 "ba8440e2b235b3584bc129de136563996db91cd0a35e10bcccf316bee3f23a98"
+        url "https:github.comldc-developersldcreleasesdownloadv1.37.0ldc2-1.37.0-osx-arm64.tar.xz"
+        sha256 "e8e715e185a4086c0771299b418956a5cfb5759679514eaee55a0c59a84571c7"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.36.0ldc2-1.36.0-osx-x86_64.tar.xz"
-        sha256 "7740fefcb32c19c23bf5ce4dea6e5412329f27ffa511c4101dd96b1f44999429"
+        url "https:github.comldc-developersldcreleasesdownloadv1.37.0ldc2-1.37.0-osx-x86_64.tar.xz"
+        sha256 "6cc65f7edc8e753b059062d1652d7eb299a122235bde1cce4878ae1cfae09ae2"
       end
     end
     on_linux do
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.36.0ldc2-1.36.0-linux-aarch64.tar.xz"
-        sha256 "11cb6c554b351a00525089659c97a0e6fc568b1814e69407600315997d1852eb"
+        url "https:github.comldc-developersldcreleasesdownloadv1.37.0ldc2-1.37.0-linux-aarch64.tar.xz"
+        sha256 "6b1b740002bea1be67f758f9e40c1c629d08903062c6bf83b93af3b13b962c9f"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.36.0ldc2-1.36.0-linux-x86_64.tar.xz"
-        sha256 "2d418462d1c3909f5889298d97de061d023850a371ea9d418fc3fd2d4b7e8b19"
+        url "https:github.comldc-developersldcreleasesdownloadv1.37.0ldc2-1.37.0-linux-x86_64.tar.xz"
+        sha256 "55524bf320fcc7ed453c29a07e9a98a1716f278dbab7ba4c156dc2719b4671df"
       end
     end
   end

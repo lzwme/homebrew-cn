@@ -4,6 +4,7 @@ class F3d < Formula
   url "https:github.comf3d-appf3darchiverefstagsv2.3.0.tar.gz"
   sha256 "9c2906b62f3066f075effbabd6501964391e8a8ffad6ed773c33db12580cc466"
   license "BSD-3-Clause"
+  revision 1
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -14,14 +15,13 @@ class F3d < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "7b2eeebb01c15b98ed13682042a46950d9eb8385bbff2ba720e61f06fff02c2d"
-    sha256 cellar: :any,                 arm64_ventura:  "d356349c3937bffd2c501d1c28155a237edcccfda0f9a276e0405bac46ca5c95"
-    sha256 cellar: :any,                 arm64_monterey: "315ff33416549cd2cabdc340026564a794205d8fbfa6311bcac2760b269eed0c"
-    sha256 cellar: :any,                 sonoma:         "1b37af2f09f7b22a3ef2c2f57b636af067c339919bf88cb6157a61b41f4c1ac4"
-    sha256 cellar: :any,                 ventura:        "46791bc57275ac6c7533318310d1a8ac03b3f14c923120f94945351369f6b99f"
-    sha256 cellar: :any,                 monterey:       "41f7ca6226bd7cf16518d19e341d2c043c1887964cdd90d65ef8438c51e701bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9dbc585d3fcbb441733aa4c09e647cc4284f51fe2dac00adf41687ae226abe3"
+    sha256 cellar: :any,                 arm64_sonoma:   "bcad7d34043370b81a4cdf53644e13f376f4dbe7d6c069c7f670802b7271a298"
+    sha256 cellar: :any,                 arm64_ventura:  "1a3016b4fa3720db4107415e74d8fcb84844c438499262b9a6a7e85bcd68c313"
+    sha256 cellar: :any,                 arm64_monterey: "0971955926faf47a8b75d91c7e0318ae0a4f381f12aee9004fdb67d7b4c65421"
+    sha256 cellar: :any,                 sonoma:         "d97c18e472b1d4feca5b6b56cb87e91d420ce19fd5eb13374f9d3d820d4cb66e"
+    sha256 cellar: :any,                 ventura:        "117b6f726dbfd5f030c41eb1e04e4c2f0c064cacbe69c47b1a8989124ecface8"
+    sha256 cellar: :any,                 monterey:       "2edb856024a3b602b58f06ff0b9c2dfffd4fe11b8c0e1a9cbf6affcc4bf19b08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cc33156b2695e74b4fdc75fe8a20a49b01d47f15921c12c5f854d979337425f"
   end
 
   depends_on "cmake" => :build
@@ -29,6 +29,12 @@ class F3d < Formula
   depends_on "assimp"
   depends_on "opencascade"
   depends_on "vtk"
+
+  # Upstream fix for https:github.comf3d-appf3dissues1087
+  patch do
+    url "https:github.comf3d-appf3dcommita5ecb6bd.patch?full_index=1"
+    sha256 "62856957da64bdf56243c11573b79a624979d9952f64c613c7fe8d5f0ab484dc"
+  end
 
   def install
     args = %W[
