@@ -1,19 +1,19 @@
 class Vapor < Formula
   desc "Command-line tool for Vapor (Server-side Swift web framework)"
   homepage "https:vapor.codes"
-  url "https:github.comvaportoolboxarchiverefstags18.7.4.tar.gz"
-  sha256 "59096131260d5713c31b6beedb780ac22ecdeae9e2bd7a11dd731e30a7ac261b"
+  url "https:github.comvaportoolboxarchiverefstags18.7.5.tar.gz"
+  sha256 "0322fee24872b713e1e495070e6b7b1fca468bed19f48bcf7a1397ffdf701e9a"
   license "MIT"
   head "https:github.comvaportoolbox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4dcd9e75d62519c9cddd13cd61552fcccbac11f4468e6dc76dd34f9c6614f56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "750f0daf1a45df5513c1a819df0ef56179876bda6f0116379391e8a899077d29"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d65d9c2cba964435c5529882a27d3101b1ea368d84eef6517538c4cbcb0fbecf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e5c811b1c6939b08629111ca2f4b84f7e51393634054b64a2ddc3d41305881a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "1291256a8f8e67132d350ab839c8c724a57089773002b3e50f5414a08a618691"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a7f7a6f06504678bf019db5d01d3d5853066071fb1881960616c37b2441f664"
-    sha256                               x86_64_linux:   "5b069c59805953c0c6c3b75725b0dae8ab2fb19de966ad4e454d078628c0ed01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5d0e1fa0fe4b21022520634975d94938e6cbb98938d3a0491b28303455c26119"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16d95898c8fe2ef2354f3dcb09121378b9960fede73a3ddb6e3c44d32a235bd1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "729bf1f69c66f2514b731679a62128f3ab3a4304434abb6b736ef8f17469fad7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f26a2c257e662740907c1e492724e47ec789292c602230d27f0e35aefa1187a"
+    sha256 cellar: :any_skip_relocation, ventura:        "100e8c3e9fd7c55f2e053445e538a16dc50be4bbf11953888414dd5fe31cd1ae"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ca5c14a0b6e0ebc2cd2959159d860e8204afd6781f1096e02fe15de60a6e848"
+    sha256                               x86_64_linux:   "5fa1012bd4dfc0b19e96a3337f5fa61139e960321fc95e1a79df4476c221a8e7"
   end
 
   # vapor requires Swift 5.6.0

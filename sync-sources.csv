@@ -5131,7 +5131,6 @@ Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-mpmath.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-mutagen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 1
@@ -8788,6 +8787,7 @@ Homebrew-homebrew-cask/Casks/j/jamie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jamkazam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jamovi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jamulus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/j/jan.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jandi-statusbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jandi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jasp.rb, Homebrew/homebrew-cask, 0

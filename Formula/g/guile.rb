@@ -5,18 +5,16 @@ class Guile < Formula
   mirror "https://ftpmirror.gnu.org/guile/guile-3.0.9.tar.xz"
   sha256 "1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d"
   license "LGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "079db54f4920bed821e063a1b0dfe05ddc038f220f7b33ec7c8cc64288abc0e8"
-    sha256 arm64_ventura:  "802b09beab5de8794ee71ee9556e78347f0d70b76c34fa8bde2799cbe0bdd64c"
-    sha256 arm64_monterey: "5bd0d6a721847e049d42e53a5aab7f062ecfd816d5dcf79047fc9cf6e39767cf"
-    sha256 arm64_big_sur:  "815898ea4478f76b02c7cf6b87570abb68da29fd07de2a233ee0f7ae95a9bf31"
-    sha256 sonoma:         "3c3927f2cfc8dcb57c53753551d9afb6a480cfa4f45a8db116a1a26073a5950d"
-    sha256 ventura:        "6d6a9327705cc6d1910b20e6e0d5cf8e9264340302276e2e1be1cbbe32b00fbd"
-    sha256 monterey:       "9c0a36654c77db52102d4344be4bd468b5a96482383f65a6a0ab5c6c0ecce29b"
-    sha256 big_sur:        "07cfc8d1991c784e5d3a25dd939b6027c7d603e03bdc62c1bb8cb4a2ecb97803"
-    sha256 x86_64_linux:   "000f48044f48d7008a21691cf321bb77764dd7ee85e48c8a5088c66514bd9ed1"
+    sha256 arm64_sonoma:   "4cfcd9e34a96fe072bece6b1fbde207bca7a199abb301bf7a905d59b0a0beb45"
+    sha256 arm64_ventura:  "b279b06347094774fb46580d7041dc1e5017561c15b87b970b759807b1ea8492"
+    sha256 arm64_monterey: "25b50c7a95da0ec243e171db63b26ca1237ac9a28e36a34ab94cd464b6487fef"
+    sha256 sonoma:         "0f96a1041a637d901cad5ba39c755353b9de2f776b231248b8645e32714ad7d9"
+    sha256 ventura:        "6b84ab0f14f06a81ac232b8c97abea33db4884644586ee5a96d94cc840041a6d"
+    sha256 monterey:       "a20e7b2489f6c37c1afa2b55d160f4dba10e99c5286ef2182d1d04f757bef36c"
+    sha256 x86_64_linux:   "01bd0704d493a88f8fe2210d7f75d3ade620f8ff6704c2cc342d72663611b611"
   end
 
   head do
@@ -45,6 +43,9 @@ class Guile < Formula
   uses_from_macos "libxcrypt"
 
   def install
+    # So we can find libraries with (dlopen).
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{HOMEBREW_PREFIX}/lib"
+
     # Avoid superenv shim
     inreplace "meta/guile-config.in", "@PKG_CONFIG@", Formula["pkg-config"].opt_bin/"pkg-config"
 

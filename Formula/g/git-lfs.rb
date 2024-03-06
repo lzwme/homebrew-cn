@@ -5,6 +5,13 @@ class GitLfs < Formula
   sha256 "89acbe51799c5d7bdf6d8e6704fcd1a07735ee7d1ed67a0bc646a5d9a9d1099f"
   license "MIT"
 
+  # Upstream creates releases that are sometimes not the latest stable version,
+  # so we use the `github_latest` strategy to fetch the release tagged as "latest".
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63461c3fbf6ddab9d90c8c6dcb51748a68c4446f222709b970dd688dd78a77f6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef15a9960b5d1c3b733abdd1b5d96627a2e283f4692c72d715f847077384113d"

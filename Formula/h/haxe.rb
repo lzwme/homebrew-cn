@@ -2,8 +2,8 @@ class Haxe < Formula
   desc "Multi-platform programming language"
   homepage "https:haxe.org"
   url "https:github.comHaxeFoundationhaxe.git",
-      tag:      "4.3.3",
-      revision: "de2888959192e92ad5849b2b66c2782ba775adcc"
+      tag:      "4.3.4",
+      revision: "dc1a43dc52f98b9c480f68264885c6155e570f3e"
   license all_of: ["GPL-2.0-or-later", "MIT"]
   head "https:github.comHaxeFoundationhaxe.git", branch: "development"
 
@@ -13,13 +13,13 @@ class Haxe < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4868b7152dda157816912d7a254c21061aafd674c2b18d84e7707989e7445f20"
-    sha256 cellar: :any,                 arm64_ventura:  "9657a44ee0ba183f3bbe994f6a0db0a881f6a51bc711d0971ea11fc20e3e69c8"
-    sha256 cellar: :any,                 arm64_monterey: "b317f48bc9e93ceff3b63c7fac815c5b81768c06854e8494737c0110769f9c83"
-    sha256 cellar: :any,                 sonoma:         "fc1aa4d01cc93947431c7bc0717e64afa29e0060ec3779dbef925dfed7c64db4"
-    sha256 cellar: :any,                 ventura:        "06730c05476dab57e787114c08411a1dac4dfe4ccbedbef034b48e828cd88d4e"
-    sha256 cellar: :any,                 monterey:       "c4f2f48763d27c3ce411e0639dcfa1d89aaabe951157e3121752a05485e28efe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "297bb2908f22b1bbf233ec1035f825bdca20f81b3003646cb7f7701ec58aa2be"
+    sha256 cellar: :any,                 arm64_sonoma:   "f9140f08adc58e7030fa8ea1075bafdd1bd05c09bb7e57603d02bd72b51114bb"
+    sha256 cellar: :any,                 arm64_ventura:  "04e1bb1eea4b08df50a8a0330b712d1849caabc5a1966551e1e408ff15a9277f"
+    sha256 cellar: :any,                 arm64_monterey: "2303db002a051595108fbea9f9d9979f0520f7e4921f72304182fc141c96d897"
+    sha256 cellar: :any,                 sonoma:         "10918b5c843f9791844373b3ed88fb5e3559481ac5ddda32d29bf76ed5a37bf5"
+    sha256 cellar: :any,                 ventura:        "bfcff7fe36be9c1b45fadeff1079761e0ba1970ad4691862931045c393d02d47"
+    sha256 cellar: :any,                 monterey:       "e3ad219e0c53d2e31ac4dfb994b060f2c48bf17d109109f0ada836adc9436bc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1363cbbb3683279eeb69c09dffcd69853e08486810423dc640be0079d206bfc2"
   end
 
   depends_on "cmake" => :build

@@ -3,18 +3,18 @@ require "languagenode"
 class LeappCli < Formula
   desc "Cloud credentials manager cli"
   homepage "https:github.comnoovolarileapp"
-  url "https:registry.npmjs.org@noovolarileapp-cli-leapp-cli-0.1.62.tgz"
-  sha256 "2d0282269cda0f6d9b2ad7c149063a4b92c334275b179e8874440200ef8cc773"
+  url "https:registry.npmjs.org@noovolarileapp-cli-leapp-cli-0.1.63.tgz"
+  sha256 "ab2f51613f53430bd6e87d693dedd5dc301811ddba9d90567033411afdf7f090"
   license "MPL-2.0"
 
   bottle do
-    sha256                               arm64_sonoma:   "deffa9adf0d47396301b9ad4bb30d109785916439f1ee4a79c7d4557098b0c60"
-    sha256                               arm64_ventura:  "8d285cc6727a5f07bdfad177dd08e7790c18aa4b291b755c481c9c78557bb924"
-    sha256                               arm64_monterey: "76600d7e5e37cd72d2b9b7ca743499abdecfbefaf9d5b95963f41dcf91ae70fc"
-    sha256                               sonoma:         "16d6befb120ffe1c2352052381acc6317daa1d00e0c6b35914be81e437a64ab4"
-    sha256                               ventura:        "d72e62db93d5eb39d0594c0b0e38944b914d98a2c2d16bbdae2fb5754b68768b"
-    sha256                               monterey:       "6cf9671f51297254cb7f829fc5e28e7c4d5971ffb0855f3f7862fb7792436bc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f21031d62da1ca0659d724ff4e59a06ce3f702373d5bb845829e51050996d99"
+    sha256                               arm64_sonoma:   "dd36cac55f5c2f50efa745d5d621ec15bb47f42056262740f8f46ce2bbd90a98"
+    sha256                               arm64_ventura:  "bf4508e2929bc44918d7894374fd42c2471cefd6714886226bc9a990cec65f65"
+    sha256                               arm64_monterey: "a4ad568d2f9e81ae3c22bc2a22011b8afc25a22220fd2383e0e652bbbe0d1f15"
+    sha256                               sonoma:         "d0904ecb705bca85f01f088784468e0745fb1aa3e1b9b88f5f99ca564b2d0a72"
+    sha256                               ventura:        "e66b33f6c4eda11f9b9330a2947738bb3a02c94156ebbdc2fc991cceecdd8751"
+    sha256                               monterey:       "a5afc069228107d9903c6934724be4f2f4020d3ccc9f7f0d42bda6345a2e3959"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7b9b49e7b569de34d6aa83a490d8f19632711d60fb67bb1d31dddd6604a537e"
   end
 
   depends_on "pkg-config" => :build

@@ -1,8 +1,8 @@
 class Expat < Formula
   desc "XML 1.0 parser"
   homepage "https:libexpat.github.io"
-  url "https:github.comlibexpatlibexpatreleasesdownloadR_2_6_0expat-2.6.0.tar.lz"
-  sha256 "138438bab8658b049e6eba74aac11dd71c7bdd6bb80b3bc4c18bfa5a65f08249"
+  url "https:github.comlibexpatlibexpatreleasesdownloadR_2_6_1expat-2.6.1.tar.lz"
+  sha256 "7a68938d9397345e407e9d29547d25bddb58679f6df90decfe6e6ecca0c58795"
   license "MIT"
 
   livecheck do
@@ -14,13 +14,13 @@ class Expat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "06d6553da209b37643ade607a230e958fa1262ff46ead6a109843c0abecc5232"
-    sha256 cellar: :any,                 arm64_ventura:  "610f48ccf2bc3f2fb5329e94c5ade89ed26f2ba106a025b83abeb2ac486b45ee"
-    sha256 cellar: :any,                 arm64_monterey: "a8e07b13f145c4d1e06f998cbad90bb10072c9c636da6e03aece544ccb9783e9"
-    sha256 cellar: :any,                 sonoma:         "62d8e5a77dc470b21ca267a7a8b5155caf9f3d21febfdec1869b3142c06edc22"
-    sha256 cellar: :any,                 ventura:        "7c39b78a1376ce30df5465260a5e8771e324c46528416a8f28c9c23febbb2651"
-    sha256 cellar: :any,                 monterey:       "909fce95b9e019e68d8af1a35c06645e3f15b28909160a2979dcf822eac12ccf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6f1e5edc36af9ece97877b7f8174d2df69ea2619c047d64e6fdf2458926ba25"
+    sha256 cellar: :any,                 arm64_sonoma:   "b8420489dcc4ab81dffe9cc85c68bd972091a15c337c6e4eef497207466dca2a"
+    sha256 cellar: :any,                 arm64_ventura:  "c2ec439414e151b4f2dbf803148c445e27877fea10596af7cdc4e3ef92e82115"
+    sha256 cellar: :any,                 arm64_monterey: "6800ac7e9889cbaa8f6f889eb6707fd19ec9b13f9c7bb0dfad6081d68c0a28af"
+    sha256 cellar: :any,                 sonoma:         "65d7e44090e2f5e45b707de7fd9092ae21edd48d32f3ce5dcc25d869cb18acd9"
+    sha256 cellar: :any,                 ventura:        "87422561e9e7e4ef75a63c680388be83b5529403451013f1c1281caf7b3edaa5"
+    sha256 cellar: :any,                 monterey:       "b40b8c732f54fc057da3528b33df3245f1dc9ccfb3f2deb6b0380abc3d8c8a89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "423613f5bd79c5ca785813dde2b8c031610d20ea3c9b730dc86b67597f946105"
   end
 
   head do

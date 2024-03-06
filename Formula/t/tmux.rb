@@ -12,13 +12,14 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a08171578c7d4d7b119762def24287f8a3f9b233c0967e837e0d98e7ad25d9c3"
-    sha256 cellar: :any,                 arm64_ventura:  "a1c3e1f58e9ad9a5f1f811c8b71a78acbbcdf96ffb6b04141ed0b343b6ca8844"
-    sha256 cellar: :any,                 arm64_monterey: "9e3a38bbdf781413bfbb092ca0c54ee5b4d5602cbdfe76194ecaedd30f9747f4"
-    sha256 cellar: :any,                 sonoma:         "4f25fb0148c79d3710a7c1366ad05de469f6a2695ef3b3c0ea64a8ffe7228f9e"
-    sha256 cellar: :any,                 ventura:        "258a4e1d8c6398f126abfd9e01725be4518233280c6f93b9b77bba75963426ca"
-    sha256 cellar: :any,                 monterey:       "277f1642992f9cf1923bf47fbefdd50ea39bf2bb0f7171b9429d84fe77a7a296"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3842883605afca7b6470f042f6c81a6e5c27cc5dff6b95806cad91ee30dbe32e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "101becaca4102767715cd2f1c9086b03d80d9b4b7fc59e75d0d1220413772c58"
+    sha256 cellar: :any,                 arm64_ventura:  "15ca059bf5dcfd3e2ec4103660372c230efb8aa33948c3f6a0dda94f1f1c67f6"
+    sha256 cellar: :any,                 arm64_monterey: "a89966c15c5556d181a2f06f2695ac15ec51e0c337a4b91e923012caeb892806"
+    sha256 cellar: :any,                 sonoma:         "fe5272c8b1d1b6fb10a39eff3b11a5579c63827965118bfcae0f0b61d83bb795"
+    sha256 cellar: :any,                 ventura:        "d96cb8a4ec0ec26a412c38b6604e8c3671b7d0117f3d582134ec048cce121807"
+    sha256 cellar: :any,                 monterey:       "0a70001ad83e765b542a79b2e6accb4bff8194e063eeb35088c9b105c8e46d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0f6fef8c59fa79ba76890c5eb0c9dd95d988fe13160aac22b5c23de248161f2"
   end
 
   head do
@@ -50,8 +51,7 @@ class Tmux < Formula
     system "sh", "autogen.sh" if build.head?
 
     args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+      --enable-sixel
       --sysconfdir=#{etc}
     ]
 
@@ -67,7 +67,7 @@ class Tmux < Formula
     end
 
     ENV.append "LDFLAGS", "-lresolv"
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
 
     system "make", "install"
 

@@ -1,12 +1,12 @@
 class DvdxrwTools < Formula
   desc "DVD+-RW/R tools"
-  homepage "http://fy.chalmers.se/~appro/linux/DVD+RW/"
-  url "http://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-7.1.tar.gz"
+  homepage "https://fy.chalmers.se/~appro/linux/DVD+RW/"
+  url "https://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-7.1.tar.gz"
   sha256 "f8d60f822e914128bcbc5f64fbe3ed131cbff9045dca7e12c5b77b26edde72ca"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
 
   livecheck do
-    url "http://fy.chalmers.se/~appro/linux/DVD+RW/tools/"
+    url "https://fy.chalmers.se/~appro/linux/DVD+RW/tools/"
     regex(/href=.*?dvd\+rw-tools[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
   end
 

@@ -2,18 +2,18 @@ class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https:julialang.org"
   # Use the `-full` tarball to avoid having to download during the build.
-  url "https:github.comJuliaLangjuliareleasesdownloadv1.10.1julia-1.10.1-full.tar.gz"
-  sha256 "6ba58b55fc56e7d7cb854d5f3c7b8cfb6a209850d82ef74cdf76878d841612a4"
+  url "https:github.comJuliaLangjuliareleasesdownloadv1.10.2julia-1.10.2-full.tar.gz"
+  sha256 "62468720afbc410eb4f262ed2433a92132627872c9f690b704dc045ccb155401"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https:github.comJuliaLangjulia.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "f3d93a7e08c9b8e572a5cd350e35faf550d72f58206598a9b83bdca1cd5b77a5"
-    sha256 cellar: :any, arm64_ventura:  "de2a12f5c141941496ba175900adbca27eaed811f77b5b9a1ab5a6caad37eaf4"
-    sha256 cellar: :any, arm64_monterey: "cf8205a1acee4b6bddfbd89b992c9d37266ca99a86a30fb5c0da4afd910d4f00"
-    sha256 cellar: :any, sonoma:         "daa1b5805cde124798ff99267c539337904ce82703db411995e301030657263c"
-    sha256 cellar: :any, ventura:        "0a13a8505b52ad56f1388fc808801a3d26978cbc7f097f91ee5131a840102652"
-    sha256 cellar: :any, monterey:       "6ddae8162d7ffb3249af628194ef63e0b702ae5cf5fa0c48ac861f3165b05a7c"
+    sha256 cellar: :any, arm64_sonoma:   "cb7f41e52e1911d4b0ee243c3af6509b5d3e1b46ffdaca161f6c83f685a05992"
+    sha256 cellar: :any, arm64_ventura:  "be5b5dd885000b6ad1f101dc66337d63b5737a72375f7819e87168a08978a0c4"
+    sha256 cellar: :any, arm64_monterey: "c4fc3cd2d82e5336bbded03e3b46043882e7c87fd5cf88f5457a6593bb3b7b5f"
+    sha256 cellar: :any, sonoma:         "623e917c342754cb53d986188f7134d0af13e5f3e0c59925bea775f4d6c1992b"
+    sha256 cellar: :any, ventura:        "d0e309c3cb5c010ca0a9b37b3554466d14b73b8d7e93eb3b9018119a549e536c"
+    sha256 cellar: :any, monterey:       "d1d5a09463e211c3341ba1590a9b37866b81e0a4429924e5a3116e5c83f076b1"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -91,24 +91,25 @@ class Julia < Formula
     args << "MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.
-    # Values adapted from https:github.comJuliaCIjulia-buildbotblobmastermasterinventory.py,
+    # Values adapted from https:github.comJuliaCIjulia-buildkiteblobmainutilitiesbuild_envs.sh,
     # then extended.
     args << "MARCH=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
 
     cpu_targets = %w[generic]
     if Hardware::CPU.arm?
-      # Cortex A57, Thunder-X2, Nvidia Carmel,
-      # Neoverse V1V2, Cortex A510A710A715X2X3
+      # Cortex A57, Thunder-X2, Nvidia Carmel, Neoverse V1V2,
+      # Cortex A510A710A715X2X3
       if OS.linux?
-        cpu_targets += %w[cortex-a57,base(0) thunderx2t99,base(0) armv8.2-a,crypto,fullfp16,lse,rdm,base(1)
-                          neoverse-512tvb,base(3) armv8.5-a,sve2,sve2-bitperm,i8mm,bf16,base(4)]
+        cpu_targets += %w[cortex-a57 thunderx2t99 carmel,clone_all neoverse-512tvb,base(3)
+                          armv8.5-a,sve2,sve2-bitperm,i8mm,bf16,base(3)]
       end
       cpu_targets += %w[apple-m1,clone_all]
     end
     if Hardware::CPU.intel?
-      cpu_targets += ["#{Hardware.oldest_cpu},clone_all"]
-      cpu_targets += %w[sandybridge,-xsaveopt,base(1) haswell,-rdrnd,base(1) skylake,base(1)]
-      cpu_targets += %w[alderlake,base(4) sapphirerapids,base(4) znver4,base(4)] if OS.linux?
+      cpu_targets += ["#{Hardware.oldest_cpu},aes,clone_all"]
+      cpu_targets += %w[sandybridge,-xsaveopt,base(1) haswell,-rdrnd,base(1)
+                        skylake,-rdrnd,clone_all]
+      cpu_targets += %w[x86-64-v4,-rdrnd,base(4)] if OS.linux?
     end
     args << "JULIA_CPU_TARGET=#{cpu_targets.join(";")}"
     user = begin
