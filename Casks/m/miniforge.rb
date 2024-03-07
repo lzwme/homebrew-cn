@@ -25,6 +25,7 @@ cask "miniforge" do
     args:       ["-b", "-p", "#{caskroom_path}base"],
   }
   binary "#{caskroom_path}basecondabinconda"
+  binary "#{caskroom_path}basecondabinmamba"
 
   uninstall delete: "#{caskroom_path}base"
 
