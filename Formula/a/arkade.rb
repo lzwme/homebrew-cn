@@ -29,7 +29,7 @@ class Arkade < Formula
       -X github.comalexellisarkadepkg.Version=#{version}
       -X github.comalexellisarkadepkg.GitCommit=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     bin.install_symlink "arkade" => "ark"
 

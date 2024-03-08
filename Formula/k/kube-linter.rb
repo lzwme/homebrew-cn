@@ -21,7 +21,7 @@ class KubeLinter < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X golang.stackrox.iokube-linterinternalversion.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdkube-linter"
+    system "go", "build", *std_go_args(ldflags:), ".cmdkube-linter"
 
     generate_completions_from_executable(bin"kube-linter", "completion")
   end

@@ -29,7 +29,7 @@ class Flagd < Formula
     ]
 
     system "make", "workspace-init"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".flagdmain.go"
+    system "go", "build", *std_go_args(ldflags:), ".flagdmain.go"
     generate_completions_from_executable(bin"flagd", "completion")
   end
 

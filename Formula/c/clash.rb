@@ -28,7 +28,7 @@ class Clash < Formula
       -X "github.comDreamacroclashconstant.Version=#{version}"
       -X "github.comDreamacroclashconstant.BuildTime=#{time.iso8601}"
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   service do

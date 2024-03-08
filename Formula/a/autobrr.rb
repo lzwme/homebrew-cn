@@ -24,8 +24,8 @@ class Autobrr < Formula
 
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
 
-    system "go", "build", *std_go_args(output: bin"autobrr", ldflags: ldflags), ".cmdautobrr"
-    system "go", "build", *std_go_args(output: bin"autobrrctl", ldflags: ldflags), ".cmdautobrrctl"
+    system "go", "build", *std_go_args(output: bin"autobrr", ldflags:), ".cmdautobrr"
+    system "go", "build", *std_go_args(output: bin"autobrrctl", ldflags:), ".cmdautobrrctl"
   end
 
   def post_install

@@ -25,7 +25,7 @@ class GoTask < Formula
       -s -w
       -X github.comgo-tasktaskv3internalversion.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"task"), ".cmdtask"
+    system "go", "build", *std_go_args(ldflags:, output: bin"task"), ".cmdtask"
     bash_completion.install "completionbashtask.bash" => "task"
     zsh_completion.install "completionzsh_task" => "_task"
     fish_completion.install "completionfishtask.fish"

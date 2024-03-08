@@ -26,7 +26,7 @@ class Notation < Formula
       -X #{project}internalversion.GitCommit=
       -X #{project}internalversion.BuildMetadata=Homebrew
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdnotation"
+    system "go", "build", *std_go_args(ldflags:), ".cmdnotation"
 
     generate_completions_from_executable(bin"notation", "completion")
   end

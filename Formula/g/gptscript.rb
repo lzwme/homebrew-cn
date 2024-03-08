@@ -23,7 +23,7 @@ class Gptscript < Formula
       -s -w
       -X github.comgptscript-aigptscriptpkgversion.Tag=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     pkgshare.install "examples"
   end

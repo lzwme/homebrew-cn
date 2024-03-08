@@ -34,7 +34,7 @@ class Apko < Formula
       -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
       -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"apko", "completion")
   end

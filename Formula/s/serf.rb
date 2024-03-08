@@ -31,7 +31,7 @@ class Serf < Formula
       -X github.comhashicorpserfversion.VersionPrerelease=
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdserf"
+    system "go", "build", *std_go_args(ldflags:), ".cmdserf"
   end
 
   test do

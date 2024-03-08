@@ -28,7 +28,7 @@ class Virtctl < Formula
 
   def install
     ldflags = "-X 'kubevirt.ioclient-goversion.gitVersion=#{version}'"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdvirtctl"
+    system "go", "build", *std_go_args(ldflags:), ".cmdvirtctl"
 
     generate_completions_from_executable(bin"virtctl", "completion")
   end

@@ -28,7 +28,7 @@ class Mage < Formula
       -X github.commagefilemagemage.commitHash=#{Utils.git_short_head}
       -X github.commagefilemagemage.gitTag=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do

@@ -26,7 +26,7 @@ class Glasskube < Formula
       -X github.comglasskubeglasskubeinternalconfig.Date=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdglasskube"
+    system "go", "build", *std_go_args(ldflags:), ".cmdglasskube"
 
     generate_completions_from_executable(bin"glasskube", "completion")
   end

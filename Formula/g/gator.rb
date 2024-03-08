@@ -23,7 +23,7 @@ class Gator < Formula
       -s -w
       -X github.comopen-policy-agentgatekeeperv3pkgversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgator"
+    system "go", "build", *std_go_args(ldflags:), ".cmdgator"
 
     generate_completions_from_executable(bin"gator", "completion")
   end

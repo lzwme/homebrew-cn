@@ -20,7 +20,7 @@ class WoodpeckerCli < Formula
 
   def install
     ldflags = "-s -w -X go.woodpecker-ci.orgwoodpeckerv#{version.major}version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcli"
+    system "go", "build", *std_go_args(ldflags:), ".cmdcli"
   end
 
   test do

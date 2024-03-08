@@ -29,7 +29,7 @@ class AwsIamAuthenticator < Formula
                "-X sigs.k8s.ioaws-iam-authenticatorpkg.Version=#{version}",
                "-X sigs.k8s.ioaws-iam-authenticatorpkg.CommitID=#{Utils.git_head}",
                "-buildid=''"]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdaws-iam-authenticator"
+    system "go", "build", *std_go_args(ldflags:), ".cmdaws-iam-authenticator"
     prefix.install_metafiles
   end
 

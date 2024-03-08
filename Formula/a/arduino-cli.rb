@@ -31,7 +31,7 @@ class ArduinoCli < Formula
       -X github.comarduinoarduino-cliversion.commit=#{Utils.git_head(length: 8)}
       -X github.comarduinoarduino-cliversion.date=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"arduino-cli", "completion")
   end

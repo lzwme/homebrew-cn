@@ -30,7 +30,7 @@ class ChartTesting < Formula
       -X github.comhelmchart-testingv#{version.major}ctcmd.GitCommit=#{Utils.git_head}
       -X github.comhelmchart-testingv#{version.major}ctcmd.BuildDate=#{time.strftime("%F")}
     ]
-    system "go", "build", *std_go_args(output: bin"ct", ldflags: ldflags), ".ctmain.go"
+    system "go", "build", *std_go_args(output: bin"ct", ldflags:), ".ctmain.go"
     etc.install "etc" => "ct"
   end
 

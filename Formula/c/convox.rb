@@ -29,7 +29,7 @@ class Convox < Formula
       -X main.version=#{version}
     ]
 
-    system "go", "build", "-mod=readonly", *std_go_args(ldflags: ldflags), ".cmdconvox"
+    system "go", "build", "-mod=readonly", *std_go_args(ldflags:), ".cmdconvox"
   end
 
   test do

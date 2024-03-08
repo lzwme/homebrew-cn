@@ -29,7 +29,7 @@ class Vcluster < Formula
       -X main.version=#{version}
     ]
     system "go", "generate", "...."
-    system "go", "build", "-mod", "vendor", *std_go_args(ldflags: ldflags), ".cmdvclusterctlmain.go"
+    system "go", "build", "-mod", "vendor", *std_go_args(ldflags:), ".cmdvclusterctlmain.go"
     generate_completions_from_executable(bin"vcluster", "completion")
   end
 

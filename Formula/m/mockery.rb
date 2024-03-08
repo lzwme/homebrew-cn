@@ -25,7 +25,7 @@ class Mockery < Formula
 
   def install
     ldflags = "-s -w -X github.comvektramockeryv2pkglogging.SemVer=v#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"mockery", "completion")
   end

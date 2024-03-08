@@ -22,7 +22,7 @@ class LicenseEye < Formula
 
   def install
     ldflags = "-s -w -X github.comapacheskywalking-eyescommands.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdlicense-eye"
+    system "go", "build", *std_go_args(ldflags:), ".cmdlicense-eye"
 
     generate_completions_from_executable(bin"license-eye", "completion")
   end

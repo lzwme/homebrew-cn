@@ -28,7 +28,7 @@ class Clair < Formula
       -X main.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdclair"
+    system "go", "build", *std_go_args(ldflags:), ".cmdclair"
     (etc"clair").install "config.yaml.sample"
   end
 

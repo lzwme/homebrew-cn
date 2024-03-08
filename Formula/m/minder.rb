@@ -23,7 +23,7 @@ class Minder < Formula
       -s -w
       -X github.comstacklokminderinternalconstants.CLIVersion=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcli"
+    system "go", "build", *std_go_args(ldflags:), ".cmdcli"
 
     generate_completions_from_executable(bin"minder", "completion")
   end

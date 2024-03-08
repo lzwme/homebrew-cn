@@ -750,6 +750,7 @@ Homebrew-homebrew-core/Formula/c/ceres-solver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cern-ndiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certbot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certgraph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/certifi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certigo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certstrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 1
@@ -928,6 +929,7 @@ Homebrew-homebrew-core/Formula/c/clutter-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clutter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cmake-docs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cmake-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmark-gfm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmark.rb, Homebrew/homebrew-core, 1
@@ -3945,7 +3947,6 @@ Homebrew-homebrew-core/Formula/m/mercurial.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mercury.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mergelog.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mergepbx.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mermaid-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mesa-glu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesalib-glw.rb, Homebrew/homebrew-core, 0
@@ -5111,7 +5112,6 @@ Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-certifi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0

@@ -24,7 +24,7 @@ class Noti < Formula
       -s -w
       -X github.comvariadiconotiinternalcommand.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "cmdnotimain.go"
+    system "go", "build", *std_go_args(ldflags:), "cmdnotimain.go"
     man1.install "docsmandistnoti.1"
     man5.install "docsmandistnoti.yaml.5"
   end

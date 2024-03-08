@@ -34,7 +34,7 @@ class Driftctl < Formula
       -X github.comsnykdriftctlpkgversion.version=v#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"driftctl", "completion")
   end

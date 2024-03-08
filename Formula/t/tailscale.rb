@@ -31,8 +31,8 @@ class Tailscale < Formula
       -X tailscale.comversion.shortStamp=#{vars.match(VERSION_SHORT="(.*)")[1]}
       -X tailscale.comversion.gitCommitStamp=#{vars.match(VERSION_GIT_HASH="(.*)")[1]}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtailscale"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"tailscaled"), ".cmdtailscaled"
+    system "go", "build", *std_go_args(ldflags:), ".cmdtailscale"
+    system "go", "build", *std_go_args(ldflags:, output: bin"tailscaled"), ".cmdtailscaled"
   end
 
   service do

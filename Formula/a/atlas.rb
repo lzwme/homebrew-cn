@@ -26,7 +26,7 @@ class Atlas < Formula
       -X ariga.ioatlascmdatlasinternalcmdapi.version=v#{version}
     ]
     cd ".cmdatlas" do
-      system "go", "build", *std_go_args(ldflags: ldflags)
+      system "go", "build", *std_go_args(ldflags:)
     end
 
     generate_completions_from_executable(bin"atlas", "completion")

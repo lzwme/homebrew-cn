@@ -36,7 +36,7 @@ class Buildkit < Formula
       -X github.commobybuildkitversion.Package=github.commobybuildkit
     ]
 
-    system "go", "build", "-mod=vendor", *std_go_args(ldflags: ldflags, output: bin"buildctl"), ".cmdbuildctl"
+    system "go", "build", "-mod=vendor", *std_go_args(ldflags:, output: bin"buildctl"), ".cmdbuildctl"
 
     doc.install Dir["docs*.md"]
   end

@@ -32,7 +32,7 @@ class Istioctl < Formula
       -X istio.ioistiopkgversion.buildTag=#{version}
       -X istio.ioistiopkgversion.buildHub=docker.ioistio
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".istioctlcmdistioctl"
+    system "go", "build", *std_go_args(ldflags:), ".istioctlcmdistioctl"
 
     generate_completions_from_executable(bin"istioctl", "completion")
     system bin"istioctl", "collateral", "--man"

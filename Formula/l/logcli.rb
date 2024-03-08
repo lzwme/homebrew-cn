@@ -37,7 +37,7 @@ class Logcli < Formula
       -X github.comgrafanalokipkgutilbuild.BuildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdlogcli"
+    system "go", "build", *std_go_args(ldflags:), ".cmdlogcli"
   end
 
   test do

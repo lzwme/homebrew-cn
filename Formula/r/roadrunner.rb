@@ -24,7 +24,7 @@ class Roadrunner < Formula
       -X github.comroadrunner-serverroadrunnerv2023internalmeta.version=#{version}
       -X github.comroadrunner-serverroadrunnerv2023internalmeta.buildTime=#{time.iso8601}
     ]
-    system "go", "build", "-tags", "aws", *std_go_args(output: bin"rr", ldflags: ldflags), ".cmdrr"
+    system "go", "build", "-tags", "aws", *std_go_args(output: bin"rr", ldflags:), ".cmdrr"
 
     generate_completions_from_executable(bin"rr", "completion")
   end

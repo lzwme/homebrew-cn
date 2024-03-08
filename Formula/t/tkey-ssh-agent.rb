@@ -42,7 +42,7 @@ class TkeySshAgent < Formula
   def install
     resource("signerapp").stage(".cmdtkey-ssh-agentapp.bin")
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtkey-ssh-agent"
+    system "go", "build", *std_go_args(ldflags:), ".cmdtkey-ssh-agent"
     man1.install "systemtkey-ssh-agent.1"
   end
 

@@ -29,7 +29,7 @@ class Cosign < Formula
       -X #{pkg}.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcosign"
+    system "go", "build", *std_go_args(ldflags:), ".cmdcosign"
 
     generate_completions_from_executable(bin"cosign", "completion")
   end

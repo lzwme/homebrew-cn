@@ -28,7 +28,7 @@ class Circleci < Formula
       -X github.comCircleCI-Publiccircleci-cliversion.Commit=#{Utils.git_short_head}
       -X github.comCircleCI-Publiccircleci-clitelemetry.SegmentEndpoint=https:api.segment.io
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"circleci", "--skip-update-check", "completion",
                                         shells: [:bash, :zsh])

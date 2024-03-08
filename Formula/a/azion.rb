@@ -25,7 +25,7 @@ class Azion < Formula
       -X github.comaziontechazion-clipkgconstants.AuthURL=https:sso.azion.comapi
       -X github.comaziontechazion-clipkgconstants.ApiURL=https:api.azionapi.net
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdazion"
+    system "go", "build", *std_go_args(ldflags:), ".cmdazion"
 
     generate_completions_from_executable(bin"azion", "completion")
   end

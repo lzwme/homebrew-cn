@@ -33,7 +33,7 @@ class Kyverno < Formula
       -X #{project}pkgversion.BuildHash=
       -X #{project}pkgversion.BuildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdclikubectl-kyverno"
+    system "go", "build", *std_go_args(ldflags:), ".cmdclikubectl-kyverno"
 
     generate_completions_from_executable(bin"kyverno", "completion")
   end

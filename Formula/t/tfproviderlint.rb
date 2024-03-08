@@ -27,7 +27,7 @@ class Tfproviderlint < Formula
       -X github.combfladtfproviderlintversion.VersionPrerelease=#{build.head? ? "dev" : ""}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtfproviderlint"
+    system "go", "build", *std_go_args(ldflags:), ".cmdtfproviderlint"
   end
 
   test do

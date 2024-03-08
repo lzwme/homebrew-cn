@@ -26,7 +26,7 @@ class Shfmt < Formula
       -extldflags=-static
       -X main.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdshfmt"
+    system "go", "build", *std_go_args(ldflags:), ".cmdshfmt"
     man1.mkpath
     system "scdoc < .cmdshfmtshfmt.1.scd > #{man1}shfmt.1"
   end

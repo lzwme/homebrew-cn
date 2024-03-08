@@ -22,7 +22,7 @@ class Berglas < Formula
       -s -w
       -X github.comGoogleCloudPlatformberglasinternalversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"berglas", "completion", shells: [:bash, :zsh])
   end

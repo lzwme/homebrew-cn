@@ -30,7 +30,7 @@ class K3sup < Formula
       -X github.comalexellisk3supcmd.Version=#{version}
       -X github.comalexellisk3supcmd.GitCommit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"k3sup", "completion")
   end

@@ -23,7 +23,7 @@ class Greenmask < Formula
       -s -w
       -X github.comgreenmaskiogreenmaskcmdgreenmaskcmd.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgreenmask"
+    system "go", "build", *std_go_args(ldflags:), ".cmdgreenmask"
 
     generate_completions_from_executable(bin"greenmask", "completion")
   end

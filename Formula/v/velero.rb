@@ -22,7 +22,7 @@ class Velero < Formula
       -s -w
       -X github.comvmware-tanzuveleropkgbuildinfo.Version=v#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "-installsuffix", "static", ".cmdvelero"
+    system "go", "build", *std_go_args(ldflags:), "-installsuffix", "static", ".cmdvelero"
 
     generate_completions_from_executable(bin"velero", "completion")
   end

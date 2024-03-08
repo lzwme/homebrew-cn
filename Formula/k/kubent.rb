@@ -30,7 +30,7 @@ class Kubent < Formula
       -X main.version=#{version}
       -X main.gitSha=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdkubent"
+    system "go", "build", *std_go_args(ldflags:), ".cmdkubent"
   end
 
   test do

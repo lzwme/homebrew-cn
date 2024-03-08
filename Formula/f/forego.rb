@@ -31,7 +31,7 @@ class Forego < Formula
     (buildpath"srcgithub.comddollarforego").install buildpath.children
     cd "srcgithub.comddollarforego" do
       ldflags = "-X main.Version=#{version} -X main.allowUpdate=false"
-      system "go", "build", *std_go_args(ldflags: ldflags)
+      system "go", "build", *std_go_args(ldflags:)
     end
   end
 

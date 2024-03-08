@@ -35,7 +35,7 @@ class Stackql < Formula
       "-X github.comstackqlstackqlinternalstackqlcmd.BuildShortCommitSHA=#{Utils.git_short_head}",
       "-X stackqlinternalstackqlplanbuilder.PlanCacheEnabled=true",
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "--tags", "json1 sqleanall", ".stackql"
+    system "go", "build", *std_go_args(ldflags:), "--tags", "json1 sqleanall", ".stackql"
   end
 
   test do

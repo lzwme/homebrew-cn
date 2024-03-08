@@ -30,7 +30,7 @@ class Kumactl < Formula
       -X github.comkumahqkumapkgversion.buildDate=#{time.strftime("%F")}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".appkumactl"
+    system "go", "build", *std_go_args(ldflags:), ".appkumactl"
 
     generate_completions_from_executable(bin"kumactl", "completion")
   end

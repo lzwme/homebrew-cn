@@ -23,7 +23,7 @@ class Cidr < Formula
       -s -w
       -X github.combschaatsbergencidrcmd.version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do

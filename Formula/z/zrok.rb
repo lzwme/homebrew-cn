@@ -28,7 +28,7 @@ class Zrok < Formula
     end
     ldflags = ["-X github.comopenzitizrokbuild.Version=#{version}",
                "-X github.comopenzitizrokbuild.Hash=brew"]
-    system "go", "build", *std_go_args(ldflags: ldflags), "github.comopenzitizrokcmdzrok"
+    system "go", "build", *std_go_args(ldflags:), "github.comopenzitizrokcmdzrok"
   end
 
   test do

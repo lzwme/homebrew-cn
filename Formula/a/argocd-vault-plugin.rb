@@ -28,7 +28,7 @@ class ArgocdVaultPlugin < Formula
       -X github.comargoproj-labsargocd-vault-pluginversion.CommitSHA=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"argocd-vault-plugin", "completion")
   end

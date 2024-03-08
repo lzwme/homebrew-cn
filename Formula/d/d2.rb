@@ -20,7 +20,7 @@ class D2 < Formula
 
   def install
     ldflags = "-s -w -X oss.terrastruct.comd2libversion.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
     man1.install "cireleasetemplatemand2.1"
   end
 

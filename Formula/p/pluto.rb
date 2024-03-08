@@ -20,7 +20,7 @@ class Pluto < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "cmdplutomain.go"
+    system "go", "build", *std_go_args(ldflags:), "cmdplutomain.go"
     generate_completions_from_executable(bin"pluto", "completion")
   end
 

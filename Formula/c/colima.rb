@@ -32,7 +32,7 @@ class Colima < Formula
       -X #{project}config.appVersion=#{version}
       -X #{project}config.revision=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcolima"
+    system "go", "build", *std_go_args(ldflags:), ".cmdcolima"
 
     generate_completions_from_executable(bin"colima", "completion")
   end

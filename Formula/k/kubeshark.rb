@@ -24,7 +24,7 @@ class Kubeshark < Formula
       -X "github.comkubesharkkubesharkmisc.BuildTimestamp=#{time}"
       -X "github.comkubesharkkubesharkmisc.Ver=v#{version}"
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do

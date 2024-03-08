@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.63.0",
-      revision: "d7aaf569f8d01a4f87e290f3b95dbed37bf847fa"
+      tag:      "v1.64.0",
+      revision: "3702b748b9e4b1790ebed977aa06b06b21ad8dda"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d0c0214a3a468f3e4eac7a310e803cb8c33126b062a5eed4987d37a0ad29e9ad"
-    sha256 cellar: :any,                 arm64_ventura:  "73c26c2bc028eaaaa49a25f145283c410accd4cdac542ac37ccb0c3018f92eb3"
-    sha256 cellar: :any,                 arm64_monterey: "6dbfe14116909bff1a4465c3636de6e5d8a6e79ee26b2a979c16644c4371f5f1"
-    sha256 cellar: :any,                 sonoma:         "70f37337220b816022fac82efcba1082e324e41f66dba2e0228ea502d9c83af4"
-    sha256 cellar: :any,                 ventura:        "dbf03bc2610f82359a87940b4ca368085e4f0eb02092b0a3c919fc1630b87461"
-    sha256 cellar: :any,                 monterey:       "db32495423ef812fb4c167faeb0f8a71ed581e42262f1efc27771c3134873389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67c59b11bb95b595ce95a68f06568c0f4b22191127ed2e030e76a1651da20c85"
+    sha256 cellar: :any,                 arm64_sonoma:   "3b675a8d070290ca6fb622f00d0206380bc984d62b0dcad47d78fb59c96a2cef"
+    sha256 cellar: :any,                 arm64_ventura:  "874fcb1dc3ade73e12aafbac5e444144858a938b9c5608f434035ac4e1b51d0b"
+    sha256 cellar: :any,                 arm64_monterey: "15ffb530c74c4e5a3d13443d7bc47e578188698ab223ac38580f0adf4ac7e85d"
+    sha256 cellar: :any,                 sonoma:         "13996a5d89a33beb52a1135b55e0923c44c53ab12eb1e28f7be0b9a3608b7777"
+    sha256 cellar: :any,                 ventura:        "7b41bf2e3f321b52c9581c1c943cf9e5083c658de2c33594702808a061a7fbe5"
+    sha256 cellar: :any,                 monterey:       "67edb7f05dcea097d606c321049e4604b754f861f5c9f59d56dc5c97b832e8e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e896aac051f6f4f2ab6e873c0c6420903f78c4aa7d941474d1f2a641486ec45"
   end
 
   depends_on "autoconf" => :build
@@ -33,10 +33,10 @@ class Semgrep < Formula
   depends_on "pipenv" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "certifi"
   depends_on "gmp"
   depends_on "libev"
   depends_on "pcre"
-  depends_on "python-certifi"
   depends_on "python@3.11" # Python 3.12 blocked by imp usage in glom < 23.4.0
   depends_on "sqlite"
   depends_on "tree-sitter"
@@ -152,8 +152,8 @@ class Semgrep < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesa7ec4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9drich-13.7.0.tar.gz"
-    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
   resource "rpds-py" do

@@ -26,7 +26,7 @@ class Karmadactl < Formula
       -X github.comkarmada-iokarmadapkgversion.gitTreeState=clean
       -X github.comkarmada-iokarmadapkgversion.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdkarmadactl"
+    system "go", "build", *std_go_args(ldflags:), ".cmdkarmadactl"
 
     generate_completions_from_executable(bin"karmadactl", "completion")
   end

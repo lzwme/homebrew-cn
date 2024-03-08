@@ -23,7 +23,7 @@ class GitTown < Formula
       -X github.comgit-towngit-townv#{version.major}srccmd.version=v#{version}
       -X github.comgit-towngit-townv#{version.major}srccmd.buildDate=#{time.strftime("%Y%m%d")}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     # Install shell completions
     generate_completions_from_executable(bin"git-town", "completions")

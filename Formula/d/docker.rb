@@ -41,7 +41,7 @@ class Docker < Formula
       -X "github.comdockerclicliversion.PlatformName=Docker Engine - Community"
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "github.comdockerclicmddocker"
+    system "go", "build", *std_go_args(ldflags:), "github.comdockerclicmddocker"
 
     Pathname.glob("man*.[1-8].md") do |md|
       section = md.to_s[\.(\d+)\.md\Z, 1]

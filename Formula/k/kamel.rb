@@ -25,7 +25,7 @@ class Kamel < Formula
 
   def install
     ldflags = "-s -w -X github.comapachecamel-kv2pkgutildefaults.GitCommit=#{tap.user}-#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdkamel"
+    system "go", "build", *std_go_args(ldflags:), ".cmdkamel"
 
     generate_completions_from_executable(bin"kamel", "completion", shells: [:bash, :zsh])
   end

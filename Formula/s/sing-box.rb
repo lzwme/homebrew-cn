@@ -21,7 +21,7 @@ class SingBox < Formula
   def install
     ldflags = "-s -w -X github.comsagernetsing-boxconstant.Version=#{version} -buildid="
     tags = "with_gvisor,with_quic,with_wireguard,with_utls,with_reality_server,with_clash_api"
-    system "go", "build", "-tags", tags, *std_go_args(ldflags: ldflags), ".cmdsing-box"
+    system "go", "build", "-tags", tags, *std_go_args(ldflags:), ".cmdsing-box"
     generate_completions_from_executable(bin"sing-box", "completion")
   end
 

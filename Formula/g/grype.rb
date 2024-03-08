@@ -26,7 +26,7 @@ class Grype < Formula
       -X main.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgrype"
+    system "go", "build", *std_go_args(ldflags:), ".cmdgrype"
 
     generate_completions_from_executable(bin"grype", "completion")
   end

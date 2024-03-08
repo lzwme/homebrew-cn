@@ -22,7 +22,7 @@ class DroneCli < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(output: bin"drone", ldflags: ldflags), "dronemain.go"
+    system "go", "build", *std_go_args(output: bin"drone", ldflags:), "dronemain.go"
   end
 
   test do

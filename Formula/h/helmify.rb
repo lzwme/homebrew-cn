@@ -25,7 +25,7 @@ class Helmify < Formula
       -X main.date=#{time.iso8601}
       -X main.commit=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdhelmify"
+    system "go", "build", *std_go_args(ldflags:), ".cmdhelmify"
   end
 
   test do

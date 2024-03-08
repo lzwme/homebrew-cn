@@ -20,7 +20,7 @@ class Bounceback < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdbounceback"
+    system "go", "build", *std_go_args(ldflags:), ".cmdbounceback"
 
     pkgshare.install "data"
     # update relative data path to homebrew pkg path

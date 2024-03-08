@@ -28,7 +28,7 @@ class Access < Formula
       -X main.GitVersion=#{Utils.git_head}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdaccess"
+    system "go", "build", *std_go_args(ldflags:), ".cmdaccess"
 
     # Install shell completions
     generate_completions_from_executable(bin"access", "completion")

@@ -23,7 +23,7 @@ class Portal < Formula
 
   def install
     ldflags = "-s -X main.version=v#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdportal"
+    system "go", "build", *std_go_args(ldflags:), ".cmdportal"
   end
 
   test do

@@ -25,7 +25,7 @@ class Gojq < Formula
       -s -w
       -X github.comitchynygojqcli.revision=#{revision}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdgojq"
+    system "go", "build", *std_go_args(ldflags:), ".cmdgojq"
     zsh_completion.install "_gojq"
   end
 

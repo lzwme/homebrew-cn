@@ -28,7 +28,7 @@ class Gdu < Formula
       -X "github.comdundeegduv#{major}build.User=#{user}"
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags, output: "#{bin}gdu-go"), ".cmdgdu"
+    system "go", "build", *std_go_args(ldflags:, output: "#{bin}gdu-go"), ".cmdgdu"
   end
 
   def caveats

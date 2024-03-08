@@ -26,7 +26,7 @@ class Cliam < Formula
       -X github.comsecuriseccliamcliversion.GitBranch=
       -X github.comsecuriseccliamcliversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cli"
+    system "go", "build", *std_go_args(ldflags:), ".cli"
 
     generate_completions_from_executable(bin"cliam", "completion")
   end

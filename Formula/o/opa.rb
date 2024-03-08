@@ -23,7 +23,7 @@ class Opa < Formula
       -s -w
       -X github.comopen-policy-agentopaversion.Version=#{version}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
     system ".buildgen-man.sh", "man1"
     man.install "man1"
 

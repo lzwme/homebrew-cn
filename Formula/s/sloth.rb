@@ -20,7 +20,7 @@ class Sloth < Formula
 
   def install
     ldflags = "-s -w -X github.comslokslothinternalinfo.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdsloth"
+    system "go", "build", *std_go_args(ldflags:), ".cmdsloth"
 
     pkgshare.install "examples"
   end

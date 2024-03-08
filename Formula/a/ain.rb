@@ -28,7 +28,7 @@ class Ain < Formula
 
   def install
     ldflags = "-s -w -X main.gitSha=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdain"
+    system "go", "build", *std_go_args(ldflags:), ".cmdain"
   end
 
   test do

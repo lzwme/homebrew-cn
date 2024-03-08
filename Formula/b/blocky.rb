@@ -24,7 +24,7 @@ class Blocky < Formula
       -X github.com0xERR0Rblockyutil.Version=#{version}
       -X github.com0xERR0Rblockyutil.BuildTime=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: sbin"blocky")
+    system "go", "build", *std_go_args(ldflags:, output: sbin"blocky")
 
     pkgetc.install "docsconfig.yml"
   end

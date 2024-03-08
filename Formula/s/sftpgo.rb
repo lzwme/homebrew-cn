@@ -25,7 +25,7 @@ class Sftpgo < Formula
       -X github.comdrakkansftpgov2internalversion.commit=#{git_sha}
       -X github.comdrakkansftpgov2internalversion.date=#{time.iso8601}
     ].join(" ")
-    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "nopgxregisterdefaulttypes"
+    system "go", "build", *std_go_args(ldflags:), "-tags", "nopgxregisterdefaulttypes"
     system bin"sftpgo", "gen", "man", "-d", man1
 
     generate_completions_from_executable(bin"sftpgo", "gen", "completion")

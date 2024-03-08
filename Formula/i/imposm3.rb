@@ -28,7 +28,7 @@ class Imposm3 < Formula
     ENV["CGO_CFLAGS"] = "-I#{Formula["geos"].opt_include} -I#{Formula["leveldb"].opt_include}"
 
     ldflags = "-X github.comomniscaleimposm3.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"imposm"), "cmdimposmmain.go"
+    system "go", "build", *std_go_args(ldflags:, output: bin"imposm"), "cmdimposmmain.go"
   end
 
   test do

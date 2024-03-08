@@ -29,7 +29,7 @@ class Calicoctl < Formula
     ldflags = "-X #{commands}.VERSION=#{version} " \
               "-X #{commands}.GIT_REVISION=#{Utils.git_short_head} " \
               "-s -w"
-    system "go", "build", *std_go_args(ldflags: ldflags), "calicoctlcalicoctlcalicoctl.go"
+    system "go", "build", *std_go_args(ldflags:), "calicoctlcalicoctlcalicoctl.go"
   end
 
   test do

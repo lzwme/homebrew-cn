@@ -25,7 +25,7 @@ class Oras < Formula
       -X oras.landorasinternalversion.Version=#{version}
       -X oras.landorasinternalversion.BuildMetadata=Homebrew
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdoras"
+    system "go", "build", *std_go_args(ldflags:), ".cmdoras"
 
     generate_completions_from_executable(bin"oras", "completion")
   end

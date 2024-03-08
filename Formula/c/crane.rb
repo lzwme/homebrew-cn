@@ -23,7 +23,7 @@ class Crane < Formula
       -X github.comgooglego-containerregistrycmdcranecmd.Version=#{version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdcrane"
+    system "go", "build", *std_go_args(ldflags:), ".cmdcrane"
 
     generate_completions_from_executable(bin"crane", "completion")
   end

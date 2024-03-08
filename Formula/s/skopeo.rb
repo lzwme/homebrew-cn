@@ -45,7 +45,7 @@ class Skopeo < Formula
       -X #{ldflag_prefix}pkgsysregistriesv2.systemRegistriesConfPath=#{etc}containersregistries.conf
     ]
 
-    system "go", "build", "-tags", buildtags, *std_go_args(ldflags: ldflags), ".cmdskopeo"
+    system "go", "build", "-tags", buildtags, *std_go_args(ldflags:), ".cmdskopeo"
     system "make", "PREFIX=#{prefix}", "GOMD2MAN=go-md2man", "install-docs"
 
     (etc"containers").install "default-policy.json" => "policy.json"

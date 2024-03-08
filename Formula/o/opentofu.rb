@@ -32,7 +32,7 @@ class Opentofu < Formula
 
   def install
     ldflags = "-s -w -X github.comopentofuopentofuversion.dev=no"
-    system "go", "build", *std_go_args(output: bin"tofu", ldflags: ldflags), ".cmdtofu"
+    system "go", "build", *std_go_args(output: bin"tofu", ldflags:), ".cmdtofu"
   end
 
   test do

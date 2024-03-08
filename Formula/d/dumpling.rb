@@ -34,7 +34,7 @@ class Dumpling < Formula
       -X #{project}cli.GoVersion=go#{Formula["go"].version}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), ".dumplingcmddumpling"
+    system "go", "build", *std_go_args(ldflags:), ".dumplingcmddumpling"
   end
 
   test do

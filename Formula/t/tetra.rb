@@ -24,7 +24,7 @@ class Tetra < Formula
 
   def install
     ldflags = "-s -w -X github.comciliumtetragonpkgversion.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin"tetra"), ".cmdtetra"
+    system "go", "build", *std_go_args(ldflags:, output: bin"tetra"), ".cmdtetra"
 
     generate_completions_from_executable(bin"tetra", "completion")
   end

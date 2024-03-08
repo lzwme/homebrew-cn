@@ -31,7 +31,7 @@ class H2spec < Formula
       -X main.VERSION=#{version}
       -X main.COMMIT=#{commit}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdh2spec"
+    system "go", "build", *std_go_args(ldflags:), ".cmdh2spec"
   end
 
   test do

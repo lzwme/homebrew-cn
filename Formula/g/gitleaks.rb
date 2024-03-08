@@ -19,7 +19,7 @@ class Gitleaks < Formula
 
   def install
     ldflags = "-X github.comzricethezavgitleaksv#{version.major}cmd.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"gitleaks", "completion")
   end

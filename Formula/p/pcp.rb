@@ -25,7 +25,7 @@ class Pcp < Formula
 
   def install
     ldflags = "-X main.RawVersion=#{version} -X main.ShortCommit=#{Utils.git_short_head(length: 7)}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "cmdpcppcp.go"
+    system "go", "build", *std_go_args(ldflags:), "cmdpcppcp.go"
   end
 
   test do

@@ -20,7 +20,7 @@ class Actionlint < Formula
 
   def install
     ldflags = "-s -w -X github.comrhysdactionlint.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdactionlint"
+    system "go", "build", *std_go_args(ldflags:), ".cmdactionlint"
     system "ronn", "manactionlint.1.ronn"
     man1.install "manactionlint.1"
   end

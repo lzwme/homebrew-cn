@@ -20,7 +20,7 @@ class Sops < Formula
 
   def install
     ldflags = "-s -w -X github.comgetsopssopsv3version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdsops"
+    system "go", "build", *std_go_args(ldflags:), ".cmdsops"
     pkgshare.install "example.yaml"
   end
 

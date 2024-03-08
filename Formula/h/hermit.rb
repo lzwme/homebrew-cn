@@ -23,7 +23,7 @@ class Hermit < Formula
       -X main.version=#{version}
       -X main.channel=stable
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdhermit"
+    system "go", "build", *std_go_args(ldflags:), ".cmdhermit"
   end
 
   def caveats

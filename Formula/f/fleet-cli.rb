@@ -29,7 +29,7 @@ class FleetCli < Formula
       -X github.comrancherfleetpkgversion.Version=#{version}
       -X github.comrancherfleetpkgversion.GitCommit=#{Utils.git_short_head}
     ]
-    system "go", "build", *std_go_args(output: bin"fleet", ldflags: ldflags), ".cmdfleetcli"
+    system "go", "build", *std_go_args(output: bin"fleet", ldflags:), ".cmdfleetcli"
 
     generate_completions_from_executable(bin"fleet", "completion", base_name: "fleet")
   end

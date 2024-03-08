@@ -25,7 +25,7 @@ class Xeol < Formula
       -X main.buildDate=#{time.iso8601}
       -X main.gitDescription=#{tap.user}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdxeol"
+    system "go", "build", *std_go_args(ldflags:), ".cmdxeol"
 
     generate_completions_from_executable(bin"xeol", "completion")
   end

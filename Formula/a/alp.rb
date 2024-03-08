@@ -20,7 +20,7 @@ class Alp < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdalp"
+    system "go", "build", *std_go_args(ldflags:), ".cmdalp"
 
     generate_completions_from_executable(bin"alp", "completion")
   end

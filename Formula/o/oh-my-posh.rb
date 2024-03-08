@@ -25,7 +25,7 @@ class OhMyPosh < Formula
       -X github.comjandedobbeleeroh-my-poshsrcbuild.Date=#{time.iso8601}
     ]
     cd "src" do
-      system "go", "build", *std_go_args(ldflags: ldflags)
+      system "go", "build", *std_go_args(ldflags:)
     end
 
     prefix.install "themes"

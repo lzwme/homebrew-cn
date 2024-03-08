@@ -22,8 +22,8 @@ class Cfssl < Formula
   def install
     ldflags = "-s -w -X github.comcloudflarecfsslcliversion.version=#{version}"
 
-    system "go", "build", *std_go_args(output: bin"cfssl", ldflags: ldflags), "cmdcfsslcfssl.go"
-    system "go", "build", *std_go_args(output: bin"cfssljson", ldflags: ldflags), "cmdcfssljsoncfssljson.go"
+    system "go", "build", *std_go_args(output: bin"cfssl", ldflags:), "cmdcfsslcfssl.go"
+    system "go", "build", *std_go_args(output: bin"cfssljson", ldflags:), "cmdcfssljsoncfssljson.go"
     system "go", "build", "-o", "#{bin}cfsslmkbundle", "cmdmkbundlemkbundle.go"
   end
 

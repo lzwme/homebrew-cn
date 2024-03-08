@@ -15,7 +15,7 @@ class Nerdctl < Formula
 
   def install
     ldflags = "-s -w -X github.comcontainerdnerdctlpkgversion.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdnerdctl"
+    system "go", "build", *std_go_args(ldflags:), ".cmdnerdctl"
 
     generate_completions_from_executable(bin"nerdctl", "completion")
   end

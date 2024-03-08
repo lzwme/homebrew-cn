@@ -24,7 +24,7 @@ class Traefik < Formula
       -X github.comtraefiktraefikv#{version.major}pkgversion.Version=#{version}
     ].join(" ")
     system "go", "generate"
-    system "go", "build", *std_go_args(ldflags: ldflags), ".cmdtraefik"
+    system "go", "build", *std_go_args(ldflags:), ".cmdtraefik"
   end
 
   service do
