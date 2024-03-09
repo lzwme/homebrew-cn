@@ -4167,6 +4167,7 @@ Homebrew-homebrew-core/Formula/m/mtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mtr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mu-repo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mubeng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/muffet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mujs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/multi-git-status.rb, Homebrew/homebrew-core, 1
@@ -5114,7 +5115,6 @@ Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-click.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-cryptography.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
@@ -5123,7 +5123,6 @@ Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-hatchling.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-jinja.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
@@ -5132,7 +5131,6 @@ Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-mpmath.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pathspec.rb, Homebrew/homebrew-core, 1
@@ -5145,13 +5143,11 @@ Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-sympy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-toml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-trove-classifiers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 0
