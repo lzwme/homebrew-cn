@@ -1,8 +1,8 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
   homepage "https:www.khronos.orgopenglessdktoolsReference-Compiler"
-  url "https:github.comKhronosGroupglslangarchiverefstags14.0.0.tar.gz"
-  sha256 "80bbb916a23e94ea9cbfb1acb5d1a44a7e0c9613bcf5b5947c03f2273bdc92b0"
+  url "https:github.comKhronosGroupglslangarchiverefstags14.1.0.tar.gz"
+  sha256 "b5e4c36d60eda7613f36cfee3489c6f507156829c707e1ecd7f48ca45b435322"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
   head "https:github.comKhronosGroupglslang.git", branch: "main"
 
@@ -12,26 +12,18 @@ class Glslang < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sonoma:   "448f7720033efdeb5d3df3cae267f99d285a6e7844a8f30720d7dc0253efdf0b"
-    sha256 cellar: :any,                 arm64_ventura:  "2fafee214cfe9ca418df4a63ef2cabedd4049586ee41de1e916657eab771ad89"
-    sha256 cellar: :any,                 arm64_monterey: "795b3f198841eb5f32de4e08a6ee7249a8b53cce451f01e853d6a4b0cc8e7d65"
-    sha256 cellar: :any,                 sonoma:         "5d485915830ec9d82e7a4322d3579e125be19fb05ebef4349f58fef73a0823cb"
-    sha256 cellar: :any,                 ventura:        "c9bad75c8653f2b8dfeca8df5dc547c227c32d8dd2fd4b974ba021a219eb08b3"
-    sha256 cellar: :any,                 monterey:       "31b4d99ac39ca57ae73a395acd1bf7ad4d3bd601720a2cb94d51e4ae60b45cda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65a0ed00688349d7845d4867c596cf9efc55b2d38152a034cffe64dffb9d853d"
+    sha256 cellar: :any,                 arm64_sonoma:   "81fbdb7f4e7edcca47adc9337c31ebc7f1d6d7f3c9b67867b872312929212ae8"
+    sha256 cellar: :any,                 arm64_ventura:  "349076703938e47853112c7aaf29dccac29afe2ce6e5a6134887a2e7a46f9d8b"
+    sha256 cellar: :any,                 arm64_monterey: "33ea41abdedb8461aaf9cf4f29be8db9095b33cbbd8cc23b62aed9f337bacfaa"
+    sha256 cellar: :any,                 sonoma:         "dafc35c34e646d0174c8520d5e536508a106e7c898188187b281c2bee5df2d79"
+    sha256 cellar: :any,                 ventura:        "fb7d821023a42b9650d4a0a84f59943d7cb15f9436bd08b232b6d181de8b084b"
+    sha256 cellar: :any,                 monterey:       "b80d3475b5ca869c8868bfbbbe55d9471d403ff896bb0be13a3e34b60bfa6c46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5675952d5fb1d20301e68599ade2515e625aadb545e280fc6c5d04a8a7f04116"
   end
 
   depends_on "cmake" => :build
   depends_on "spirv-tools"
   uses_from_macos "python" => :build
-
-  # Fix SPIRV-Tools-opt dependency which breaks cmake files used by other projects
-  # Remove when released: https:github.comKhronosGroupglslangpull3487
-  patch do
-    url "https:github.comKhronosGroupglslangcommitf72a347e88737aee4977df709af322302decce20.patch?full_index=1"
-    sha256 "7bb8e737792a534fbc65485688132318e4d29a507ec37667c5254b7afb7d2146"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

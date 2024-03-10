@@ -3979,7 +3979,6 @@ Homebrew-homebrew-core/Formula/m/micronaut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/microplane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/micropython.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/microsocks.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/midgard2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midicsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/midnight-commander.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 0
@@ -11239,6 +11238,7 @@ Homebrew-homebrew-cask/Casks/w/whoozle-android-file-transfer.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/w/widelands.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wifi-explorer-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wifi-explorer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wifiman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wifispoof.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/winclone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windows95.rb, Homebrew/homebrew-cask, 1
