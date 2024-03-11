@@ -1,4 +1,4 @@
-class PythonCryptography < Formula
+class Cryptography < Formula
   desc "Cryptographic recipes and primitives for Python"
   homepage "https:cryptography.ioenlatest"
   url "https:files.pythonhosted.orgpackages139ea55763a32d340d7b06d045753c186b690e7d88780cafce5f88cb931536becryptography-42.0.5.tar.gz"
@@ -7,14 +7,13 @@ class PythonCryptography < Formula
   head "https:github.compycacryptography.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "4bd50de2decd4ab4f22a69b838f812001c5324d594be7cdb6ff23cfc1d3f1324"
-    sha256 cellar: :any,                 arm64_ventura:  "9cba82f9be59b012638d02809c3ef112a5dee59f15751f12fe5a63d0bc81671f"
-    sha256 cellar: :any,                 arm64_monterey: "3b64694286905e5551e3800781a409d79576e6371f07860f86164ef2e0611990"
-    sha256 cellar: :any,                 sonoma:         "cbb45e8d5cb65648c51c65a2fb10a532c229afe279d35f47d0a43f32382aa105"
-    sha256 cellar: :any,                 ventura:        "06cc04a9db9b3e07a0f8c7a9b498a3c7bb85684dc8e01968d05a8e8c37271325"
-    sha256 cellar: :any,                 monterey:       "062eec66a4fe1d849319b1abcbf751968cc106bd54f99815523b00483c9e7682"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aefc74aa834a30624604b5654427a4388c69c8aa60c22081064162d1812534de"
+    sha256 cellar: :any,                 arm64_sonoma:   "76d4ab23b93fe1b1009ca511b5027d61c546cd5d1bd8f396cef2d4f97d51dc75"
+    sha256 cellar: :any,                 arm64_ventura:  "cf74a091df7f50095fa60fec91c0a672eb914c304bcbc7266c030414437a33b9"
+    sha256 cellar: :any,                 arm64_monterey: "fce46f5b31c66cda0296d05dfdfeca75b9361efd441954fdb0ce6a89545e82ca"
+    sha256 cellar: :any,                 sonoma:         "162259b7bc20011aeb5fbdff3f802168adaa0606590349db0060b6629efafd8f"
+    sha256 cellar: :any,                 ventura:        "8d208effe9f9c00d4742aa5f7c60f9793a69b6396c5df05e0a8c0c776035d060"
+    sha256 cellar: :any,                 monterey:       "b6f337090afce69d557ee4902feb70776f935d229a65329fbf7a7b46f3126629"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed4a9a18cc0fab2d4197d3f915d37d5c63f4f73ce855640eb32936afc77bb512"
   end
 
   depends_on "pkg-config" => :build

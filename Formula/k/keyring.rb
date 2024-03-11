@@ -20,7 +20,7 @@ class Keyring < Formula
   depends_on "python@3.12"
 
   on_linux do
-    depends_on "python-cryptography"
+    depends_on "cryptography"
 
     resource "jeepney" do
       url "https:files.pythonhosted.orgpackagesd6f4154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdfjeepney-0.8.0.tar.gz"
