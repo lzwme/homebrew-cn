@@ -1,4 +1,6 @@
 class Fonttools < Formula
+  include Language::Python::Virtualenv
+
   desc "Library for manipulating fonts"
   homepage "https:github.comfonttoolsfonttools"
   url "https:files.pythonhosted.orgpackages52c0b117fe560be1c7bf889e341d1437c207dace4380b10c14f9c7a047df945bfonttools-4.49.0.tar.gz"
@@ -7,25 +9,30 @@ class Fonttools < Formula
   head "https:github.comfonttoolsfonttools.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0d7acf84069d3ab2aa6532d31cc833410665548ce7e79edfb18131c6f54215c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f69c6d9f9264e264d67d0d100f8dd5582d2faa29de9e471b72f95cc0ac6e436"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed25a1d390ce5748d60b1a560ef88ac7b1e509c92880ca6f8f02a240b6c10567"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0ed44a354e185cb91e1dffc3c9d2a26869a381dbe0320186f04dd805afd2712"
-    sha256 cellar: :any_skip_relocation, ventura:        "e32de1c89a26aa2b3ede649699a9246ec5b4745d2d96fcb7845af6c47fbd10f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "b0e712b4280797f55fc9eb312c90c0069b7eae9f389ca10aed569667c9f0114b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "302703d910a5705be423e7a6f1ed13e0679cbafe05753ff881252276ecff6ca2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4bb54e41b3370e2cabd6011aa7b77e11d28affe71b222b5ce22d1ebe0c5febfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4306f09e3c310a140a769827274be95ecc09e2184e03b5a5141a1e7819cb2edc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "833859026a9603c1a9c1db9c3ba260b2851d73ae9172579238ea3c645d059925"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5dc2a4e35044067c3f42d66c60ccad155fbb678c33e4ef7e0511c29c648b7155"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab26d3fe519388634a1d3e9fb266ae02d35ab8f0840b49e633bc4d5e3b5fdac9"
+    sha256 cellar: :any_skip_relocation, monterey:       "9330d1fa382ea7e51d6e140adf988778088dd3172e464429927aa5a55276f898"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e17061481ba51ea7b07a0af35ce327cddcab511a1bcfd25b5cf6e79f68dd86ea"
   end
 
-  depends_on "python-setuptools" => :build
-  depends_on "python-brotli"
   depends_on "python@3.12"
 
-  def python3
-    which("python3.12")
+  resource "brotli" do
+    url "https:files.pythonhosted.orgpackages2fc2f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787bBrotli-1.1.0.tar.gz"
+    sha256 "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+  end
+
+  resource "zopfli" do
+    url "https:files.pythonhosted.orgpackages92d871230eb25ede499401a9a39ddf66fab4e4dab149bf75ed2ecea51a662d9ezopfli-0.2.3.zip"
+    sha256 "dbc9841bedd736041eb5e6982cd92da93bee145745f5422f3795f6f258cdc6ef"
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    virtualenv_install_with_resources
   end
 
   test do

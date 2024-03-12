@@ -4392,7 +4392,6 @@ Homebrew-homebrew-core/Formula/n/ntfy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ntl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ntopng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ntp.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/nu-smv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuclei.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nudoku.rb, Homebrew/homebrew-core, 1
@@ -5910,6 +5909,7 @@ Homebrew-homebrew-core/Formula/s/sratom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sratoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/src.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/srecord.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/srgn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/srt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/srtp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssdb.rb, Homebrew/homebrew-core, 1

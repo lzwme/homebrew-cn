@@ -1,8 +1,8 @@
 class Src < Formula
   desc "Simple revision control: RCS reloaded with a modern UI"
   homepage "http://www.catb.org/~esr/src/"
-  url "http://www.catb.org/~esr/src/src-1.37.tar.gz"
-  sha256 "1a5ff9e562f1191673523b65873017447fbde7935007668d422c6c2d01096067"
+  url "http://www.catb.org/~esr/src/src-1.38.tar.gz"
+  sha256 "229ef5ff0949fd502ca57d3f275eafd96979581c44632321604d2fa6536a35bd"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,7 +11,7 @@ class Src < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8db86ce3b4fb3beedfc734bd988a5ecaef543d8a786815e3466819f4ccedf07e"
+    sha256 cellar: :any_skip_relocation, all: "dacdbdab1465ba0a988f3211f27e05dcb2c361f3cc8ccfcb6c0c10407367c605"
   end
 
   head do

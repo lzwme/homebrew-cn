@@ -1,8 +1,8 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
   homepage "https:risor.io"
-  url "https:github.comrisor-iorisorarchiverefstagsv1.4.0.tar.gz"
-  sha256 "de9c86b03128ddb25c1d34095823a29551f5e808d4df9f3938ea7ed64f2d8068"
+  url "https:github.comrisor-iorisorarchiverefstagsv1.5.0.tar.gz"
+  sha256 "559800bc2d1b763fa8ff33443b6b6afed748b5203bb6ac7e5d6e3ced08804ec7"
   license "Apache-2.0"
   head "https:github.comrisor-iorisor.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Risor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acfe7fb1927be2779e0615f997fb7e9c31df42e2777a972793c7978f282e5634"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "802a47ac082061945e07ff77a9e61dd18e3edc7bbba3a92158e0bef67c70d76d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "41116109488af555059348d397d66e79a06bd9a436afd78e6c15f10d10d97b2c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "66d408fb06a6f31e2e6b429db0bce9cfedccc574dfe9f330d7f2968e80c835d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "a7256b48c5ce1ab2309b2a75e22e7a5ae805d229c6c04e9589aedab0750c2cb8"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ef3e4595dae81efcbdafd98a1df71e69311f220b0e8baabf21f2a631bec5e02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c44197e23be0cb5de830835f9a5f62a8b02dcf4e596c45ee3e3cf9eb349faae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2c10d0c28949a4a5f869b29e079d4fbe86af54de0615038b01836a16196bc8f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cca2bf625620d76c05fe938b6dee6848cb18a6c536239efc8a29009c2f75f7e3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "56ee5e1a662aadfb35cbca8204660e8313898eeb8fed1c8621bf2ad4f30629f1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "96f35a357fddd3c33963c7c3ae9a4248eee92298f41e6cf4259d31ad28911518"
+    sha256 cellar: :any_skip_relocation, ventura:        "249e2824dde87811bbbf401dfe5d5c0db4617dfad2c9f68a0c0eedd437c1f28a"
+    sha256 cellar: :any_skip_relocation, monterey:       "20ec38eb23c52fc353ebf5731576477a1e388782d807477faaea48795374348f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9909bd6f2a3d59f494736e7d7ef6ffff689e90320151f231f2a395a876dd48c5"
   end
 
   depends_on "go" => :build
@@ -26,7 +26,7 @@ class Risor < Formula
   def install
     chdir "cmdrisor" do
       ldflags = "-s -w -X 'main.version=#{version}' -X 'main.date=#{time.iso8601}'"
-      system "go", "build", "-tags", "aws", *std_go_args(ldflags:), "."
+      system "go", "build", "-tags", "aws,k8s,vault", *std_go_args(ldflags:), "."
       generate_completions_from_executable(bin"risor", "completion")
     end
   end
@@ -36,5 +36,7 @@ class Risor < Formula
     assert_match(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}, output)
     assert_match version.to_s, shell_output("#{bin}risor version")
     assert_match "module(aws)", shell_output("#{bin}risor -c aws")
+    assert_match "module(k8s)", shell_output("#{bin}risor -c k8s")
+    assert_match "module(vault)", shell_output("#{bin}risor -c vault")
   end
 end
