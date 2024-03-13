@@ -4,8 +4,8 @@ class Svgasm < Formula
   license "Apache-2.0"
   head "https:github.comtomkwoksvgasm.git"
 
-  depends_on "nicerloopnicerloopsvgcleaner"
   depends_on "graphicsmagick"
+  depends_on "nicerloopnicerloopsvgcleaner"
   depends_on "potrace"
 
   def install

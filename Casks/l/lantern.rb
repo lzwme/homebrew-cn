@@ -24,6 +24,8 @@ cask "lantern" do
             quit:      "com.getlantern.lantern"
 
   zap trash: [
+    "~LibraryApplication Supportbyteexeclantern",
+    "~LibraryApplication Supportbyteexecsysproxy-cmd",
     "~LibraryApplication SupportLantern",
     "~LibraryLogsLantern",
   ]

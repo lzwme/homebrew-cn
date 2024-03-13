@@ -3,19 +3,19 @@ require "languagenode"
 class Commitlint < Formula
   desc "Lint commit messages according to a commit convention"
   homepage "https:commitlint.js.org#"
-  url "https:registry.npmjs.orgcommitlint-commitlint-19.0.3.tgz"
-  sha256 "857d1cbe8116af57a9f0fe964e8ea0419bd7f76f2d02363eeb81b7005ebc795a"
+  url "https:registry.npmjs.orgcommitlint-commitlint-19.1.0.tgz"
+  sha256 "31488ca805d13b23e50bc611d4dd268f88473699bd4e5c5bd59873d2d2f69175"
   license "MIT"
   head "https:github.comconventional-changelogcommitlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "71c84f8f621bc0b26de53dbcf0d5efd6e4d06c38b446a14039c6ca486216bbaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71c84f8f621bc0b26de53dbcf0d5efd6e4d06c38b446a14039c6ca486216bbaf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71c84f8f621bc0b26de53dbcf0d5efd6e4d06c38b446a14039c6ca486216bbaf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "86badaf4d66dc5c2958cec1f4b99926d2ddb4793a04c8a5aae522564a06f831b"
-    sha256 cellar: :any_skip_relocation, ventura:        "86badaf4d66dc5c2958cec1f4b99926d2ddb4793a04c8a5aae522564a06f831b"
-    sha256 cellar: :any_skip_relocation, monterey:       "86badaf4d66dc5c2958cec1f4b99926d2ddb4793a04c8a5aae522564a06f831b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71c84f8f621bc0b26de53dbcf0d5efd6e4d06c38b446a14039c6ca486216bbaf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee0b7847f86f09df48461ead6ac72d29861c8a5acadf032bd5b807cf4e0dfd94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee0b7847f86f09df48461ead6ac72d29861c8a5acadf032bd5b807cf4e0dfd94"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee0b7847f86f09df48461ead6ac72d29861c8a5acadf032bd5b807cf4e0dfd94"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91dfe41b5009fd1b6b2dc2588e339d228765b8e71a5e2bfb64f9586e9f3d865d"
+    sha256 cellar: :any_skip_relocation, ventura:        "91dfe41b5009fd1b6b2dc2588e339d228765b8e71a5e2bfb64f9586e9f3d865d"
+    sha256 cellar: :any_skip_relocation, monterey:       "91dfe41b5009fd1b6b2dc2588e339d228765b8e71a5e2bfb64f9586e9f3d865d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee0b7847f86f09df48461ead6ac72d29861c8a5acadf032bd5b807cf4e0dfd94"
   end
 
   depends_on "node"

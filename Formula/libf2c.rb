@@ -8,7 +8,7 @@ class Libf2c < Formula
   livecheck do
     url "https://salsa.debian.org/debian/libf2c2.git"
     strategy :git do |tags|
-      tags.map { |tag| tag.split("/", 2)[1].split("-", 2)[0] }.compact
+      tags.filter_map { |tag| tag.split("/", 2)[1].split("-", 2)[0] }
     end
   end
 

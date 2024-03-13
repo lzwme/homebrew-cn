@@ -3,19 +3,19 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https:docs.cloud.oracle.comiaasContentAPIConceptscliconcepts.htm"
-  url "https:files.pythonhosted.orgpackagesa57fd2c07fd8de66a556d98336d6a03efcc6847b7f6450f0f4980effd84b48e6oci-cli-3.37.12.tar.gz"
-  sha256 "b57f1add04ce914e0b04e7180f3c7093df4123bf7d9b6ee9dee65a994e3b3ce1"
+  url "https:files.pythonhosted.orgpackages9006396583d7deec2d1f20db05a42557dbf3430de79000554ad9b2ae812e8adcoci-cli-3.37.13.tar.gz"
+  sha256 "2065a03864e3fce0f4b7e7502d53e5152aaed5dc30a802732b21a1156fb23e61"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https:github.comoracleoci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f4f210bced39c2cdc9859a68e44efae166a99f635c15ffa5735d8c3d37509edb"
-    sha256 cellar: :any,                 arm64_ventura:  "b21304835a8d781efcb55b0350b56fc963e176b39c6653b737f9a5dc87750f7a"
-    sha256 cellar: :any,                 arm64_monterey: "886d79f7fa667ed0652aa02977e0b1fca90b1c4bd111ce1382fa788bbca7b9e3"
-    sha256 cellar: :any,                 sonoma:         "e8447f27a3ca72ae68962108e5efcb7dc25067d824fc3b189c9dedc5fffd9099"
-    sha256 cellar: :any,                 ventura:        "87208f4fdfb9195634e474b9617df2844849c99bd863d39e347dd779164e9a38"
-    sha256 cellar: :any,                 monterey:       "9ef02aa044d097b0248713f5c231e2fb28bf30b1177ddbd21ba9da474b514e7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "371772d223a41c96e141bc229fba2c8234bd69377ec2d28a4d0628f8a6e6b219"
+    sha256 cellar: :any,                 arm64_sonoma:   "774639b60ef08c93ccab203d30a13618e86846aded034c47b2155dddf505e654"
+    sha256 cellar: :any,                 arm64_ventura:  "d1de51191610ca742b5fa5e4834060697d3dad6697c8dbb9c4c356660290ba18"
+    sha256 cellar: :any,                 arm64_monterey: "83ee96ea794b16414ea035b125ca209ca571e9f359b6ce7d250c3cb1c3d20b2a"
+    sha256 cellar: :any,                 sonoma:         "259984d5487739dd5907bac5f7643cc23ef77ce62d713ecf4706531ca4cac434"
+    sha256 cellar: :any,                 ventura:        "4b00ba04da8be8967a6c58994c10f9e3f29577b36684ceb2f5ed25a236aa9390"
+    sha256 cellar: :any,                 monterey:       "0dcd2c964f43ff3935e85afc46ea4b1215f20e176a256dbae9301662df45e1b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d13331b588b240b053dae10422f7a26d4890c40090cc2bf1a3e4f1cacbfc5a53"
   end
 
   # "pkg-config", "cmake", "rust" are for terminaltables
@@ -48,8 +48,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https:files.pythonhosted.orgpackages3073ce07ae91155a47fe7975e4c223d8479f64fb6cbfbf79bc21dac0bb32944boci-2.124.0.tar.gz"
-    sha256 "4af009929976235003b86fa2ec8f66e9d3aabc2084722278bd22c9900a79ec29"
+    url "https:files.pythonhosted.orgpackages8ff85fdd6c8dbe5867f6b2fde576495c19f840abdeeedd2482c1fd1e5f908b64oci-2.124.1.tar.gz"
+    sha256 "06566d341e837e65986f3db9ee6fb5e855c9a278d8ba9508a6558776138581e1"
   end
 
   resource "prompt-toolkit" do
@@ -58,8 +58,8 @@ class OciCli < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackageseb81022190e5d21344f6110064f6f52bf0c3b9da86e9e5a64fc4a884856a577dpyOpenSSL-24.0.0.tar.gz"
-    sha256 "6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf"
+    url "https:files.pythonhosted.orgpackages91a8cbeec652549e30103b9e6147ad433405fdd18807ac2d54e6dbb73184d8a1pyOpenSSL-24.1.0.tar.gz"
+    sha256 "cabed4bfaa5df9f1a16c0ef64a0cb65318b5cd077a7eda7d6970131ca2f41a6f"
   end
 
   resource "python-dateutil" do
@@ -88,8 +88,8 @@ class OciCli < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackages9b472a9e51ae8cf48cea0089ff6d9d13fff60701f8c9bf72adaee0c4e5dc88f9types-python-dateutil-2.8.19.20240106.tar.gz"
-    sha256 "1f8db221c3b98e6ca02ea83a58371b22c374f42ae5bbdf186db9c9a76581459f"
+    url "https:files.pythonhosted.orgpackagesfb90e37d402a07f5a93791fc2837ee14b6947989aed6dc7895c420eb93354aeatypes-python-dateutil-2.8.19.20240311.tar.gz"
+    sha256 "51178227bbd4cbec35dc9adffbf59d832f20e09842d7dcb8c73b169b8780b7cb"
   end
 
   resource "wcwidth" do

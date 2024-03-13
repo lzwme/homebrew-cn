@@ -1598,6 +1598,7 @@ Homebrew-homebrew-core/Formula/e/erlang@21.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@22.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/erlang_ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erofs-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/esbuild.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/eslint.rb, Homebrew/homebrew-core, 0
@@ -2192,6 +2193,7 @@ Homebrew-homebrew-core/Formula/g/gmsh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gmssl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnirehtet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gnmic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-autoar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-common.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-latex.rb, Homebrew/homebrew-core, 0
@@ -2704,6 +2706,7 @@ Homebrew-homebrew-core/Formula/i/inih.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iniparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inja.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inko.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/inlyne.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/innoextract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/innotop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inotify-tools.rb, Homebrew/homebrew-core, 1
@@ -8635,6 +8638,7 @@ Homebrew-homebrew-cask/Casks/i/ibackup-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibackupbot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibettercharge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/ibkr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibm-aspera-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ibm-cloud-cli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ibored.rb, Homebrew/homebrew-cask, 0
@@ -8705,6 +8709,7 @@ Homebrew-homebrew-cask/Casks/i/insomnium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inssider.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/insta360-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/install-disk-creator.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/instantview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/instatus-out.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/insync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/integrity.rb, Homebrew/homebrew-cask, 0
@@ -11355,6 +11360,7 @@ Homebrew-homebrew-cask/Casks/y/yealink-meeting.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yemuzip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yep.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/yes24-ebook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yesplaymusic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yggdrasil.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yinxiangbiji.rb, Homebrew/homebrew-cask, 0
@@ -13622,6 +13628,7 @@ Homebrew-homebrew-cask-versions/Casks/arq5.rb, Homebrew/homebrew-cask-versions, 
 Homebrew-homebrew-cask-versions/Casks/atom-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/atom-nightly.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/azure-data-studio-insiders.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/bbedit14.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/beyond-compare-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/blender-lts.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/brave-browser-beta.rb, Homebrew/homebrew-cask-versions, 0

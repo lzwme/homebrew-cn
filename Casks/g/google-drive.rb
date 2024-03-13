@@ -46,7 +46,8 @@ cask "google-drive" do
       ],
       pkgutil:   "com.google.pkg.Keystone",
       trash:     [
-        "~LibraryApplication Scriptscom.google.drivefs*.finderhelper.findersync",
+        "~LibraryApplication Scriptscom.google.drivefs*",
+        "~LibraryApplication ScriptsEQHXZ8M8AV.group.com.google.drivefs",
         "~LibraryApplication SupportFileProvidercom.google.drivefs.fpext",
         "~LibraryApplication SupportGoogleDriveFS",
         "~LibraryCachescom.google.drivefs",
