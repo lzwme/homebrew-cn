@@ -8,14 +8,16 @@ cask "openemu-nonmetal" do
   desc "Retro video game emulation"
   homepage "https:openemu.org"
 
+  deprecate! date: "2019-10-26", because: :discontinued
+
   auto_updates true
   conflicts_with cask: ["openemu-experimental", "openemu"]
 
   app "OpenEmu.app"
 
   zap trash: [
-    "~LibraryApplication SupportOpenEmu",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsorg.openemu.openemu.sfl*",
+    "~LibraryApplication SupportOpenEmu",
     "~LibraryApplication Supportorg.openemu.OEXPCCAgent.Agents",
     "~LibraryCachesOpenEmu",
     "~LibraryCachesorg.openemu.OpenEmu",
@@ -30,6 +32,7 @@ cask "openemu-nonmetal" do
     "~LibraryPreferencesorg.openemu.GenesisPlus.plist",
     "~LibraryPreferencesorg.openemu.Higan.plist",
     "~LibraryPreferencesorg.openemu.Mednafen.plist",
+    "~LibraryPreferencesorg.openemu.mGBA.plist",
     "~LibraryPreferencesorg.openemu.Mupen64Plus.plist",
     "~LibraryPreferencesorg.openemu.NeoPop.plist",
     "~LibraryPreferencesorg.openemu.Nestopia.plist",
@@ -43,11 +46,6 @@ cask "openemu-nonmetal" do
     "~LibraryPreferencesorg.openemu.TwoMbit.plist",
     "~LibraryPreferencesorg.openemu.VecXGL.plist",
     "~LibraryPreferencesorg.openemu.VisualBoyAdvance.plist",
-    "~LibraryPreferencesorg.openemu.mGBA.plist",
     "~LibrarySaved Application Stateorg.openemu.OpenEmu.savedState",
   ]
-
-  caveats do
-    discontinued
-  end
 end

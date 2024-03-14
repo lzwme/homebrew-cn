@@ -8,6 +8,10 @@ class OpcDiag < Formula
   sha256 "90fa3f0fdef1ef7c26d2ba15521b49a0c6a3e0322f508edd74db4fb1a0276cd2"
   license "MIT"
 
+  livecheck do
+    skip "untagged repository"
+  end
+
   depends_on "python"
   depends_on "python-lxml"
 

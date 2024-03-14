@@ -3,7 +3,7 @@ class Svgcleaner < Formula
   homepage "https:github.comRazrFalconsvgcleaner"
   url "https:github.comRazrFalconsvgcleanerarchiverefstagsv0.9.5.tar.gz"
   sha256 "dcf8dbc8939699e2e82141cb86688b6cd09da8cae5e18232ef14085c2366290c"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.comRazrFalconsvgcleaner.git", branch: "master"
 
   depends_on "rust" => :build

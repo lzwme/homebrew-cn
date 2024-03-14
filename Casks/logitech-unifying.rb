@@ -14,17 +14,17 @@ cask "logitech-unifying" do
 
   pkg "Unifying Installer.app/Contents/Resources/Logitech Unifying Signed.mpkg"
 
-  uninstall pkgutil: [
+  uninstall quit:    "com.logitech.unifying.assistant",
+            pkgutil: [
               "com.Logitech.Unifying Software.pkg",
               "com.Logitech.Updater.pkg",
             ],
-            delete:  "/Applications/Utilities/Logitech Unifying Software.app",
-            quit:    "com.logitech.unifying.assistant"
+            delete:  "/Applications/Utilities/Logitech Unifying Software.app"
 
   zap trash: [
     "/Library/Application Support/Logitech.localized",
     "~/Library/Caches/com.Logitech.Updater",
-    "~/Library/Preferences/com.Logitech.Updater.plist",
     "~/Library/Preferences/com.logitech.unifying.assistant.plist",
+    "~/Library/Preferences/com.Logitech.Updater.plist",
   ]
 end

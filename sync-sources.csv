@@ -5128,9 +5128,7 @@ Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-markupsafe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-networkx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
@@ -7527,6 +7525,7 @@ Homebrew-homebrew-cask/Casks/c/cabal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cacher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cad-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/caffeine.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/cahier.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cakebrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cakebrewjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/calcservice.rb, Homebrew/homebrew-cask, 0
@@ -10550,7 +10549,7 @@ Homebrew-homebrew-cask/Casks/s/sol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solar2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solvespace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sonarr-menu.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/sonarr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sonarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/songkong.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sonic-lineup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sonic-pi.rb, Homebrew/homebrew-cask, 0
@@ -10893,6 +10892,7 @@ Homebrew-homebrew-cask/Casks/t/time-to-leave.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/time-tracker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timecamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timelane.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/timelapze.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timemachineeditor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timemachinestatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timemator.rb, Homebrew/homebrew-cask, 0
@@ -13866,6 +13866,7 @@ nicerloop-homebrew-nicerloop/Formula/improv-wifi-serial-client.rb, nicerloop/hom
 nicerloop-homebrew-nicerloop/Formula/jailer.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/jpdftweak.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/kindletool.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/libcmis.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/libf2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/macos-scripts.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/mas.rb, nicerloop/homebrew-nicerloop, 1

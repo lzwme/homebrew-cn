@@ -1,8 +1,8 @@
 class Phpunit < Formula
   desc "Programmer-oriented testing framework for PHP"
   homepage "https://phpunit.de"
-  url "https://phar.phpunit.de/phpunit-11.0.5.phar"
-  sha256 "ccec2174d59ee09d8fa1b7dff533db844aac2192053ab29e27ab68ea1e94c2b5"
+  url "https://phar.phpunit.de/phpunit-11.0.6.phar"
+  sha256 "4a89389bfc30bdb9c0e88461cdf9e9cf5843b04f4f46f020ed6ce5f635ba9b04"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,7 +12,7 @@ class Phpunit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "77d2ddb904c5201448659986d61c5d94195e39db46911199f6a767cb897763e1"
+    sha256 cellar: :any_skip_relocation, all: "17d5dc5affa00b6552a6fa7dd25f8d1c416a78c67ad7a04e663ba95209542d0a"
   end
 
   depends_on "php" => :test

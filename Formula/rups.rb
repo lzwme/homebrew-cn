@@ -5,7 +5,7 @@ class Rups < Formula
   sha256 "509e81cbe629b331a80e9344a11fe573e6e4e065c4319c1532ac175da9af5dec"
 
   livecheck do
-    strategy :git
+    strategy :github_latest
     url "https:github.comitexti7j-rups.git"
   end
 

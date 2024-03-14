@@ -1,7 +1,7 @@
 class PdfjamExtras < Formula
   desc "Wrapper scripts for pdfjam"
   homepage "https:github.comrrthomaspdfjam-extras"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.comrrthomaspdfjam-extras.git", branch: "master"
 
   livecheck do

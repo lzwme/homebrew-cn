@@ -3,20 +3,18 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/c2/4d/62bbe63bfaff220af7a23fbc165763aefe4d62e818b26f5fd52f44cc4a43/sqlfluff-2.3.5.tar.gz"
-  sha256 "fd77ef5a41ebfa798235a5b28bcfa71f7521e9336159a08b40b545953e84c3c3"
+  url "https://files.pythonhosted.org/packages/49/ba/27a69a5050579f6273fa35cec75d72a0eed4f50599d14e721fdced57489c/sqlfluff-3.0.0.tar.gz"
+  sha256 "bd91d52bf915b66a3bef4b35b7496a968e11ea35c2095f957fdf8cf4a7a3ee5f"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "0120fd0fd848a399d4c9668458e9712205fce2b42462c4fc9496ee8ea3143f20"
-    sha256 cellar: :any,                 arm64_ventura:  "219c5d093fdec28e3c5d54fea952db92ea9f9df453f95538ae1dee82e5314bdd"
-    sha256 cellar: :any,                 arm64_monterey: "789064a4b7502f7b17934f387a4b9d29be67e32774516977ed5acffd99cbef8c"
-    sha256 cellar: :any,                 sonoma:         "e7fcbafc6dc97868a8aee466d1a7799c7c6d00e11f4936373e3a90b2530bb17c"
-    sha256 cellar: :any,                 ventura:        "3b05a1c433b000636f7f1c7dc3a9e174a35ed5e95df94e7c70c322455ed51281"
-    sha256 cellar: :any,                 monterey:       "ea1c178f138f0bcecab0cd8ce4cfd567291843c76d68eff562035e972aa3f7d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b5daa2504f3a985bbda2b5d50f3b80a06c4bffbfa9e8420a08e0b966b8889d0"
+    sha256 cellar: :any,                 arm64_sonoma:   "c0f0e200005d46b3b5d591f835881fb5704bd927c14e3ee65b5f8c5133080768"
+    sha256 cellar: :any,                 arm64_ventura:  "13ae73b9dbb5c43ea87d2e2c4549c973b3e70cb70f57d1ee321a45e7bc7f5b22"
+    sha256 cellar: :any,                 arm64_monterey: "06b8015b5c47cfdf65e0207075b9fbea176c150f8e42a796fa1c8ca9856916ba"
+    sha256 cellar: :any,                 sonoma:         "589acc07486e6946f188332fdd85b48c35f35ff22501f189077e1d2401402e2c"
+    sha256 cellar: :any,                 ventura:        "fa3b6ba7d30cce40697d677ba56f3c7e1edfc315f466528dc6d5e6bb00cab94a"
+    sha256 cellar: :any,                 monterey:       "2988c50021e46cf82073345a01a89095867a85368586a998546c2843d432da57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "121e97a6b36e466796074fc76519d2e9a3ebe19cf89f6680be961e0a1c9c8eb0"
   end
 
   depends_on "libyaml"
@@ -63,8 +61,8 @@ class Sqlfluff < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
+    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
   end
 
   resource "pathspec" do
@@ -83,8 +81,8 @@ class Sqlfluff < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/57/93/429cffe6e4b45ef6ef392a30a090a7a431088417fb75f9bc142f4c24f23b/pytest-8.0.1.tar.gz"
-    sha256 "267f6563751877d772019b13aacbe4e860d73fe8f651f28112e9ac37de7513ae"
+    url "https://files.pythonhosted.org/packages/30/b7/7d44bbc04c531dcc753056920e0988032e5871ac674b5a84cb979de6e7af/pytest-8.1.1.tar.gz"
+    sha256 "ac978141a75948948817d360297b7aae0fcb9d6ff6bc9ec6d514b85d5a65c044"
   end
 
   resource "pyyaml" do
@@ -108,8 +106,8 @@ class Sqlfluff < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/0c/1d/eb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96/typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https://files.pythonhosted.org/packages/16/3a/0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44/typing_extensions-4.10.0.tar.gz"
+    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
   end
 
   def install

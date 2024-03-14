@@ -1,7 +1,7 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https:github.comamacneildbmate"
-  url "https:github.comamacneildbmatearchiverefstags2.13.0.tar.gz"
+  url "https:github.comamacneildbmatearchiverefstagsv2.13.0.tar.gz"
   sha256 "626dcd6c90c4be51944462379a8e4b118050f8579b5f60433adcfa13974651f2"
   license "MIT"
   head "https:github.comamacneildbmate.git", branch: "main"

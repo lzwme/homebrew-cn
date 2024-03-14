@@ -4,6 +4,10 @@ class Svgasm < Formula
   license "Apache-2.0"
   head "https:github.comtomkwoksvgasm.git"
 
+  livecheck do
+    skip "head-only formula"
+  end
+
   depends_on "graphicsmagick"
   depends_on "nicerloopnicerloopsvgcleaner"
   depends_on "potrace"

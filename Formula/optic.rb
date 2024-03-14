@@ -1,9 +1,9 @@
 class Optic < Formula
   desc "OpenAPI linting, diffing and testing"
   homepage "https:github.comopticdevoptic"
-  url "https:github.comopticdevopticreleasesdownloadv0.54.6optic-darwin-amd64.tar.gz"
-  version "0.54.6"
-  sha256 "0cca118148b7ceeaa23e477ac83f4de478748eb3904c2a1e40e86c754a986975"
+  url "https:github.comopticdevopticreleasesdownloadv0.54.10optic-darwin-amd64.tar.gz"
+  version "0.54.10"
+  sha256 "f16cd06759d65c293fa41beafb9ed0eff0983d7a0b706f7b1af152b32562b268"
   license "MIT"
 
   livecheck do

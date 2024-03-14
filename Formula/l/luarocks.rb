@@ -1,8 +1,8 @@
 class Luarocks < Formula
   desc "Package manager for the Lua programming language"
   homepage "https:luarocks.org"
-  url "https:luarocks.orgreleasesluarocks-3.10.0.tar.gz"
-  sha256 "e9bf06d5ec6b8ecc6dbd1530d2d77bdb3377d814a197c46388e9f148548c1c89"
+  url "https:luarocks.orgreleasesluarocks-3.11.0.tar.gz"
+  sha256 "25f56b3c7272fb35b869049371d649a1bbe668a56d24df0a66e3712e35dd44a6"
   license "MIT"
   head "https:github.comluarocksluarocks.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Luarocks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2cd1ff716492ea6a5b1b28076a7becc4414ae3500d26974827df353ee5b661e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2cd1ff716492ea6a5b1b28076a7becc4414ae3500d26974827df353ee5b661e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2cd1ff716492ea6a5b1b28076a7becc4414ae3500d26974827df353ee5b661e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c548631f8022163cce9d55f5b24bb222ff32f9456d33f42133772db2d5d40391"
-    sha256 cellar: :any_skip_relocation, ventura:        "c548631f8022163cce9d55f5b24bb222ff32f9456d33f42133772db2d5d40391"
-    sha256 cellar: :any_skip_relocation, monterey:       "c548631f8022163cce9d55f5b24bb222ff32f9456d33f42133772db2d5d40391"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2cd1ff716492ea6a5b1b28076a7becc4414ae3500d26974827df353ee5b661e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e48c1771b1c34f2e034398185e2d974ee41b4b0c6a91ce0ad56494918b7d5d13"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e48c1771b1c34f2e034398185e2d974ee41b4b0c6a91ce0ad56494918b7d5d13"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e48c1771b1c34f2e034398185e2d974ee41b4b0c6a91ce0ad56494918b7d5d13"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de52191efb44bad1affa133ae0ab53c5f4fdbfaf9ac46686f6d5eb44af6bc071"
+    sha256 cellar: :any_skip_relocation, ventura:        "de52191efb44bad1affa133ae0ab53c5f4fdbfaf9ac46686f6d5eb44af6bc071"
+    sha256 cellar: :any_skip_relocation, monterey:       "de52191efb44bad1affa133ae0ab53c5f4fdbfaf9ac46686f6d5eb44af6bc071"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e48c1771b1c34f2e034398185e2d974ee41b4b0c6a91ce0ad56494918b7d5d13"
   end
 
   depends_on "luajit" => :test

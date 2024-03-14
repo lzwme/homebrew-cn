@@ -11,7 +11,5 @@ cask "nomad-login-ad" do
 
   pkg "NoMAD-Login-AD.pkg"
 
-  uninstall pkgutil: [
-    "menu.nomad.login.ad",
-  ]
+  uninstall pkgutil: "menu.nomad.login.ad"
 end

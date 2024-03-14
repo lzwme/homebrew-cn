@@ -8,7 +8,6 @@ class VideoTranscoding < Formula
   depends_on "handbrake"
   depends_on "mkvtoolnix"
   depends_on "mp4v2"
-  depends_on "ruby" if OS.mac?.version <= :sierra || OS.linux
 
   def install
     ENV["GEM_HOME"] = libexec

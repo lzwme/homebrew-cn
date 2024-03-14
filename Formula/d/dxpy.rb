@@ -3,18 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https:github.comdnanexusdx-toolkit"
-  url "https:files.pythonhosted.orgpackages724832516ba7d922e7e7b92b2527cb29f1c948743c193874fb48426caddd6ffddxpy-0.370.2.tar.gz"
-  sha256 "7cb494300e8ae195ff0551708838a2fdaf5f5f68e4575e9014e9749e7186fbc6"
+  url "https:files.pythonhosted.orgpackagesc734bf1b1876d7ba5a95abd56fced3f84ed2c5e9f36694897bfa347cfddf752edxpy-0.371.0.tar.gz"
+  sha256 "d264d06c9101877e5d185c9b3165a19c0d8c5af4bdaf1c42530ad316c53188ae"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83b7c3a6f83f8269dd08b1d07a52afd94bb7a6e7dd6a6084ebcfda9663b6082b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e83d1156b37edd0ec410c3075e32543e6a888e6de92c4a8ac0a653fcd2406690"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "912d2586822c2c6e39e835c354ce13ab51bc14a5e396be8b93c840e3a6caf7ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ab66e4a499cd72ee36d7ef7f9985f31e98c0305b13bc9731edb27c763d07758a"
-    sha256 cellar: :any_skip_relocation, ventura:        "53338cb359f29a3eb1e9666a1d65fcdbc296dcd873cb2da70ca1d8a5bd205409"
-    sha256 cellar: :any_skip_relocation, monterey:       "722bb5cbf95bd32331daf00a89203a89d00c2485b675411ff7443e64764e64d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c68a9d1bce87e75c8ccc884f30498c2541f4b06fbde81c719d49298c5fe08b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87c6a4858aabefdbab7b3a6d81d5c21042e46926e35883cc0a8343c9eccf41d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b654241e98ecfbd4e808838af5eaddcd9e8d4176a8343f054fb498102615b96b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b20b1e899dbe7bf734733c5751f753525dfc8c7bbc1420c2b14d8a89d18a0536"
+    sha256 cellar: :any_skip_relocation, sonoma:         "88797a2c66c00e4ac8d5a740a1128a2309b35eb799546f2927696619f44a70c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "168bc68ceba526b1578be8424967e47e685cc4b86e93d33278a15273f345d16a"
+    sha256 cellar: :any_skip_relocation, monterey:       "d989f45b061ff7d42c208015969258226460bcbddda589b8d8e40b1ec15a9d31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c03dd9025cad4d67464f3b7b1969d9b80a67ae32a9b61382720e84ed63c2b1f"
   end
 
   depends_on "certifi"
@@ -28,8 +28,8 @@ class Dxpy < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackagesf0a2ce706abe166457d5ef68fac3ffa6cf0f93580755b7d5f883c456e94fab7bargcomplete-3.2.2.tar.gz"
-    sha256 "f3e49e8ea59b4026ee29548e24488af46e30c9de57d48638e24f54a1ea1000a2"
+    url "https:files.pythonhosted.orgpackages3cc0031c507227ce3b715274c1cd1f3f9baf7a0f7cec075e22c7c8b5d4e468a9argcomplete-3.2.3.tar.gz"
+    sha256 "bf7900329262e481be5a15f56f19736b376df6f82ed27576fa893652c5de6c23"
   end
 
   resource "psutil" do
@@ -38,8 +38,8 @@ class Dxpy < Formula
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "six" do
