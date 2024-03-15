@@ -3,19 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https:commitizen-tools.github.iocommitizen"
-  url "https:files.pythonhosted.orgpackagesa6e6a9a890fc64f712ace191c230545f7121507071754e9728d4a91bdb385bf9commitizen-3.18.3.tar.gz"
-  sha256 "980eb09abfb27d0d16960a6ca9e40c78b8608205987d8b012e3c09347bc4d35d"
+  url "https:files.pythonhosted.orgpackagesdf39b429d7287d92ace5020e7fef4278e0b4eb2000ef885205d49fc18fe86312commitizen-3.18.4.tar.gz"
+  sha256 "57b3051d4170e23a5317f348d1bc61b98e57ac01b04f66e0f9a25fef75e6f679"
   license "MIT"
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0272d2825aacf1fd99978772ba638685e7c18f95a73597775af54b117119afe4"
-    sha256 cellar: :any,                 arm64_ventura:  "212177defa5318dd7b6780bac1422b87bca7656b7a7e6fe51fd529849bb487b8"
-    sha256 cellar: :any,                 arm64_monterey: "c0131f3fd49cff83dd4cfa012d0ca6d92a46c606c838c5266510ee7cc36302e5"
-    sha256 cellar: :any,                 sonoma:         "53d785acdb10d79d5890bff85669977acdd17f95f3c6222199871fa22f6de430"
-    sha256 cellar: :any,                 ventura:        "54b34feaf8f2f471a1aa43a13137a00b1e755f9cc64f8b2c7760904653f87fcc"
-    sha256 cellar: :any,                 monterey:       "60e2df65e598947d4e914e9193ff59a9b342a2b580fc22ab3192b891b3cea7ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b36a04750f595c02b25967d05a86cd62900038de2f211e06759c5a278ab7a5d"
+    sha256 cellar: :any,                 arm64_sonoma:   "9e34a2a5a5472e074b3102984997a682d8bb4c4134e6ce011c083c2f0b2de0f9"
+    sha256 cellar: :any,                 arm64_ventura:  "12153c9f71849ac3a8d7c8d16852c5c61a9dfb869076eab8d8ba2652b8f758ce"
+    sha256 cellar: :any,                 arm64_monterey: "9e2d74cf5b5545c10a67cfc3baf6e1bf9ee449d878264884dd7813b083131946"
+    sha256 cellar: :any,                 sonoma:         "683f0443beb06a50019e1bbbe317c8d8bd6ebd770804b8da5e3ce6ceb846903e"
+    sha256 cellar: :any,                 ventura:        "34a52133bcd2e834a9d7590bb215b0980aeaed9de71ec3b8c6e9c3ed526ad480"
+    sha256 cellar: :any,                 monterey:       "1e481c6f2be1bddf6b9523d1f24eb51c1fde81ad31a49d8182c8ea550255c573"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe7063e1458def6644178cd991e20848ba3f82c6bd01093c9b6507ad50e98555"
   end
 
   depends_on "libyaml"
@@ -92,8 +92,8 @@ class Commitizen < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages5803dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6zipp-3.17.0.tar.gz"
-    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
+    url "https:files.pythonhosted.orgpackages584acaf3ac13aeada77b78ade7b74ec9cd9367e93eadcdefd8a1b4e8c4d05aedzipp-3.18.0.tar.gz"
+    sha256 "df8d042b02765029a09b157efd8e820451045890acc30f8e37dd2f94a060221f"
   end
 
   def install

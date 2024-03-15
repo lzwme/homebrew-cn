@@ -1,7 +1,7 @@
 class PythonCharsetNormalizer < Formula
   desc "Real First Universal Charset Detector, maintained alternative to Chardet"
-  homepage "https://charset-normalizer.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
+  homepage "https:charset-normalizer.readthedocs.ioenlatest"
+  url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
   sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
   license "MIT"
 
@@ -15,7 +15,8 @@ class PythonCharsetNormalizer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c94c6c9984fe7b9e2c079e855886199ba04896fc608f43949bbeda964097949"
   end
 
-  depends_on "python-setuptools" => :build
+  deprecate! date: "2024-03-14", because: "does not meet homebrewcore's requirements for Python library formulae"
+
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 
@@ -25,14 +26,23 @@ class PythonCharsetNormalizer < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec"binpython"
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
+  end
+
+  def caveats
+    <<~EOS
+      Additional details on upcoming formula removal are available at:
+      * https:github.comHomebrewhomebrew-coreissues157500
+      * https:docs.brew.shPython-for-Formula-Authors#libraries
+      * https:docs.brew.shHomebrew-and-Python#pep-668-python312-and-virtual-environments
+    EOS
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import charset_normalizer"
     end
   end

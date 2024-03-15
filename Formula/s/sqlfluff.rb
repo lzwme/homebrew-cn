@@ -3,18 +3,18 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/49/ba/27a69a5050579f6273fa35cec75d72a0eed4f50599d14e721fdced57489c/sqlfluff-3.0.0.tar.gz"
-  sha256 "bd91d52bf915b66a3bef4b35b7496a968e11ea35c2095f957fdf8cf4a7a3ee5f"
+  url "https://files.pythonhosted.org/packages/8c/87/aa4a37afaf3296bfcd834c04906c85fd5e74706366734f551d991234d659/sqlfluff-3.0.1.tar.gz"
+  sha256 "22306af028dc8513e2cc3b1b8d3fd460b5f5385d341685a31233ddc4d77a6093"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c0f0e200005d46b3b5d591f835881fb5704bd927c14e3ee65b5f8c5133080768"
-    sha256 cellar: :any,                 arm64_ventura:  "13ae73b9dbb5c43ea87d2e2c4549c973b3e70cb70f57d1ee321a45e7bc7f5b22"
-    sha256 cellar: :any,                 arm64_monterey: "06b8015b5c47cfdf65e0207075b9fbea176c150f8e42a796fa1c8ca9856916ba"
-    sha256 cellar: :any,                 sonoma:         "589acc07486e6946f188332fdd85b48c35f35ff22501f189077e1d2401402e2c"
-    sha256 cellar: :any,                 ventura:        "fa3b6ba7d30cce40697d677ba56f3c7e1edfc315f466528dc6d5e6bb00cab94a"
-    sha256 cellar: :any,                 monterey:       "2988c50021e46cf82073345a01a89095867a85368586a998546c2843d432da57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "121e97a6b36e466796074fc76519d2e9a3ebe19cf89f6680be961e0a1c9c8eb0"
+    sha256 cellar: :any,                 arm64_sonoma:   "49809cc92d5d848931ad6f8d3bda5ce7f46667a9ba806d788d6c69aba5d71609"
+    sha256 cellar: :any,                 arm64_ventura:  "081c82b985613edbc59f7dc15b6cfc8893fdafd9991c8f5f68c5c85b6d47820c"
+    sha256 cellar: :any,                 arm64_monterey: "99572dde30adcee1f63bca945439d9e667a76cc22efb8ea334169b2f20afd1c9"
+    sha256 cellar: :any,                 sonoma:         "32b1e6f1df48e641ae5afc072029aa07658343894b744afdd76187ab428a2bf5"
+    sha256 cellar: :any,                 ventura:        "a6c9c7191ddbf00c91aee0b8c32820dbf0bf8af27d44fd22b87b66523f15cb7b"
+    sha256 cellar: :any,                 monterey:       "464db14e0218b6f8f635066ed4d96cdd617e129f4c017c521a2be6c38ff58ab0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52b5f293ef503178c56e31919d9d038a66e9c3f14c000916488831db8611c50f"
   end
 
   depends_on "libyaml"

@@ -3,14 +3,14 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.6.0.tar.gz"
-  sha256 "8d85a8c36895c9ed9e122eeea0f49cb538e1b6c3e01336b76c8fdcd7db1b10bc"
+  url "https:github.comml-exploremlxarchiverefstagsv0.7.0.tar.gz"
+  sha256 "42e616f2e84e9f7bd43353b5ec346debf07b5219043c46b26bb89ee1d151d446"
   license "MIT"
   head "https:github.comml-exploremlx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "1bc08139b75f0b23f765fdfeaaff2dabb0096371abf6ef0072a5014beb92795a"
-    sha256 cellar: :any, arm64_ventura: "2d64e6ced212d95dad2f583c961916cc982fe30ac1090f7c1c554ed60bb3dddb"
+    sha256 cellar: :any, arm64_sonoma:  "a635458b40c5265240cf3c8387b40c8a908e870030b79e052c7dbf9ab1af7054"
+    sha256 cellar: :any, arm64_ventura: "83d9ed0a843918daa62e80ee3e165e5c2ab22bdc1d14d838a2901a9e1d489869"
   end
 
   depends_on "cmake" => :build

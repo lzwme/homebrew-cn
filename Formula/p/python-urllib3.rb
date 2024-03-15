@@ -1,7 +1,7 @@
 class PythonUrllib3 < Formula
   desc "HTTP library with thread-safe connection pooling, file post, and more"
-  homepage "https://urllib3.readthedocs.io/en/stable/"
-  url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
+  homepage "https:urllib3.readthedocs.ioenstable"
+  url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
   sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   license "MIT"
 
@@ -15,7 +15,8 @@ class PythonUrllib3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a93d805dc32d35932eeb16e26b24bf513e53815cea88aada3d5da426bf91fa07"
   end
 
-  depends_on "python-hatchling" => :build
+  deprecate! date: "2024-03-14", because: "does not meet homebrewcore's requirements for Python library formulae"
+
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 
@@ -25,14 +26,23 @@ class PythonUrllib3 < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec"binpython"
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
+  end
+
+  def caveats
+    <<~EOS
+      Additional details on upcoming formula removal are available at:
+      * https:github.comHomebrewhomebrew-coreissues157500
+      * https:docs.brew.shPython-for-Formula-Authors#libraries
+      * https:docs.brew.shHomebrew-and-Python#pep-668-python312-and-virtual-environments
+    EOS
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import urllib3"
     end
   end

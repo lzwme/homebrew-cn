@@ -8,19 +8,19 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "204bbb6959f44ed6647feb880cb0de1e14b9c1ef92ceb9077b802d8ba7180fa5"
-    sha256 cellar: :any,                 arm64_ventura:  "fefeef7a66acd9dec4f8d4161dcda690319ad6b6a6ecf8302b359ddd92970f94"
-    sha256 cellar: :any,                 arm64_monterey: "b92199bd68cbd92966b3065cda89b8ff87f254aeb3b4cd83646d13daa30ce494"
-    sha256 cellar: :any,                 sonoma:         "7618f00b53a3c7ef1905bf77e0d6511297d7a6ada1d61f85dc6fe4e3e8d7bffb"
-    sha256 cellar: :any,                 ventura:        "4efbd5a4ee352aeabd0dfd61d3a3e663e03ac2dc70c1bb8891aaccf251d32a98"
-    sha256 cellar: :any,                 monterey:       "951bb2c6cd7f35a6ee89593d163286fbd84dc48137a42e29326db5e7c0f6ca3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d248b96bfc2360ee1093a83d6b3f24b33592f311a8c27fd8bf245a9fe816cca0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "356eef03eee2ebda30af01aff7805b9b89ad7774a529809b8a1303961d324f80"
+    sha256 cellar: :any,                 arm64_ventura:  "5bf9f5b5882d2cecef3d16377b4688644605dc13f219562c7118dc54e65b2168"
+    sha256 cellar: :any,                 arm64_monterey: "a4a1ba2547e55ed82ee18544effe79db6ca0ba5ba87875a59eaeca9d012aea27"
+    sha256 cellar: :any,                 sonoma:         "c8782ce36d8e15044614b2ca8ffcd3fb7fd3ee75db6589c0003048345a4d0b06"
+    sha256 cellar: :any,                 ventura:        "d8d5053309d446f6bbafc88b4d2d714b34480d261f95e53acbe53da317e1442a"
+    sha256 cellar: :any,                 monterey:       "5327890a154eaad10340379158fee788442d9df74a72a0d419e3b4d4c80466fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45bdaf28ee97935d6fe4b481283308a99f555d04eb363b8808ae0b1c90b12033"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
-  depends_on "protobuf"
   depends_on "python@3.12"
 
   uses_from_macos "libffi"
@@ -46,8 +46,8 @@ class Esphome < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackagesf0a2ce706abe166457d5ef68fac3ffa6cf0f93580755b7d5f883c456e94fab7bargcomplete-3.2.2.tar.gz"
-    sha256 "f3e49e8ea59b4026ee29548e24488af46e30c9de57d48638e24f54a1ea1000a2"
+    url "https:files.pythonhosted.orgpackages3cc0031c507227ce3b715274c1cd1f3f9baf7a0f7cec075e22c7c8b5d4e468a9argcomplete-3.2.3.tar.gz"
+    sha256 "bf7900329262e481be5a15f56f19736b376df6f82ed27576fa893652c5de6c23"
   end
 
   resource "bitarray" do
@@ -68,6 +68,11 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackages18c4011bf30a7b82df544c9f1b1703bfe249b76f2309b2ca7d65e3359152fb2cchacha20poly1305_reuseable-0.12.1.tar.gz"
     sha256 "c1ca3de2c78eb87ac006d975729e0b9032ff31597e3c112e78268f4cd431fd6a"
+  end
+
+  resource "chardet" do
+    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -141,8 +146,8 @@ class Esphome < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
+    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
   end
 
   resource "paho-mqtt" do
@@ -155,14 +160,19 @@ class Esphome < Formula
     sha256 "ed7c6397f0ced579bc8137c8253465c0cfab6c0cc38d4f63da4502e995bdb5ce"
   end
 
+  resource "protobuf" do
+    url "https:files.pythonhosted.orgpackageseaabae590cd71f5a50cd9e0979593e217529b532a001e46c2dd0811c8697f4adprotobuf-5.26.0.tar.gz"
+    sha256 "82f5870d74c99addfe4152777bdf8168244b9cf0ac65f8eccf045ddfa9d80d9b"
+  end
+
   resource "pyelftools" do
     url "https:files.pythonhosted.orgpackages8405fd41cd647de044d1ffec90ce5aaae935126ac217f8ecb302186655284fc8pyelftools-0.30.tar.gz"
     sha256 "2fc92b0d534f8b081f58c7c370967379123d8e00984deb53c209364efd575b40"
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages37fe65c989f70bd630b589adfbbcd6ed238af22319e90f059946c26b4835e44bpyparsing-3.1.1.tar.gz"
-    sha256 "ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db"
+    url "https:files.pythonhosted.orgpackages463a31fd28064d016a2182584d579e033ec95b809d8e220e74c4af6f0f2e8842pyparsing-3.1.2.tar.gz"
+    sha256 "a1bac0ce561155ecc3ed78ca94d3c9378656ad4c94c1270de543f621420f94ad"
   end
 
   resource "pyserial" do

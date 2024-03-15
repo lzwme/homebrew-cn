@@ -1,9 +1,9 @@
 class Sshtrix < Formula
   desc "SSH login cracker"
   homepage "https:nullsecurity.nettoolscracker.html"
-  url "https:github.comnullsecuritynettoolsrawmastercrackersshtrixreleasesshtrix-0.0.3.tar.gz"
+  url "https:github.comnullsecuritynettoolsrawmaincrackersshtrixreleasesshtrix-0.0.3.tar.gz"
   sha256 "30d1d69c1cac92836e74b8f7d0dc9d839665b4994201306c72e9929bee32e2e0"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :homepage

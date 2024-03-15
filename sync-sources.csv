@@ -1030,6 +1030,7 @@ Homebrew-homebrew-core/Formula/c/corrosion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corsixth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cortex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cosign.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cotp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coturn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/couchbase-shell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/couchdb-lucene.rb, Homebrew/homebrew-core, 1
@@ -2101,6 +2102,7 @@ Homebrew-homebrew-core/Formula/g/git-secret.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-secrets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-series.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-sizer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-split-diffs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-ssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-standup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-subrepo.rb, Homebrew/homebrew-core, 1
@@ -5116,7 +5118,7 @@ Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
@@ -5139,7 +5141,7 @@ Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pyproject-hooks.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
@@ -5149,7 +5151,7 @@ Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-trove-classifiers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-typing-extensions.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-urllib3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python@3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python@3.11.rb, Homebrew/homebrew-core, 1
@@ -9595,6 +9597,7 @@ Homebrew-homebrew-cask/Casks/n/novabench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/now-tv-player.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noxappplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nozbe.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nperf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nrfutil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nrlquaker-winbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nslogger.rb, Homebrew/homebrew-cask, 1
@@ -13604,8 +13607,11 @@ Homebrew-homebrew-cask-versions/Casks/1password-nightly.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-versions/Casks/1password6.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/1password7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/ableton-live-intro10.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/ableton-live-intro11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/ableton-live-lite10.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/ableton-live-lite11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/ableton-live-standard10.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/ableton-live-standard11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/ableton-live-suite10.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/ableton-live-suite11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/ableton-live-suite9.rb, Homebrew/homebrew-cask-versions, 0
@@ -13851,6 +13857,7 @@ Homebrew-homebrew-cask-versions/Casks/zulu17.rb, Homebrew/homebrew-cask-versions
 Homebrew-homebrew-cask-versions/Casks/zulu21.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu7.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/zulu8.rb, Homebrew/homebrew-cask-versions, 0
+nicerloop-homebrew-nicerloop/Formula/acloudguru-sandbox.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/arx.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0

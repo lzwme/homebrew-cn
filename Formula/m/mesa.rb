@@ -3,19 +3,18 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-24.0.2.tar.xz"
-  sha256 "94e28a8edad06d8ed2b83eb53f253b9eb5aa62c3080f939702e1b3039b56c9e8"
+  url "https://mesa.freedesktop.org/archive/mesa-24.0.3.tar.xz"
+  sha256 "77aec9a2a37b7d3596ea1640b3cc53d0b5d9b3b52abed89de07e3717e91bfdbe"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "0bf5db9289765969433bb2acea7f2fa632b8f079948ada59f982bc6869bb04ef"
-    sha256 arm64_ventura:  "63121e6f3044b7ddd17ae0670c3588eb149edee683e5d0bd44107de8cd49f134"
-    sha256 arm64_monterey: "413c1c86d39ab48ba0ebfd8e6873bd860134c964b11e9ae59984fbeebb0e86a6"
-    sha256 sonoma:         "c8470e4105198b5775fad8eda0afd566f233fb1ad688ecde7884f349899c891c"
-    sha256 ventura:        "1897191e98be02f98cca6cc72f0e75368bd23a3ae5def511323323aaa95b0e68"
-    sha256 monterey:       "455d91f25eb9279e7972c7cb0e0f35b702e76e9e2f00db042796a6d177dc492b"
-    sha256 x86_64_linux:   "30c58b70cf135a0a7ba8b5bc2b9fa996dfeb1c36e7f62a139cff2799c2ac9d37"
+    sha256 arm64_sonoma:   "a267a7fad192daaeacd5504c21559d0dfdb285475fb4b0d6cefb61e0a508e111"
+    sha256 arm64_ventura:  "a9003a675890dfae1281590688dae49a2fc3b88424fadeadd9208a23a4027229"
+    sha256 arm64_monterey: "656f8b28de0edc1ccb7c80399e952c1bb2d914a2a0851f93553e88797c2f87cf"
+    sha256 sonoma:         "944fec93ebd95c97ce9fe502fb5abf1b1d81952f1656fd4bb11885db7e016aea"
+    sha256 ventura:        "2aa707cd17bf14baab394ae79ec3b4cd2ce6fab9b843e7ecbe0102249ed87867"
+    sha256 monterey:       "3276e9be772f36b809922177d31bb9336299c7cce4fae4f9a733d52f084abc1a"
+    sha256 x86_64_linux:   "1e46a1611ab618fa0b814074245ea167b6b71c7be5bfa334b965b90ab7e9ec6a"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
@@ -78,13 +77,13 @@ class Mesa < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
-    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
+    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
+    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
+    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
   end
 
   resource "pygments" do
