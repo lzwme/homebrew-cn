@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages618ceceb56d822aa7de935a704e184329a24297a0b852334ebb54ba291ba6eb6snakemake-8.7.0.tar.gz"
-  sha256 "fbeb91045c984fad4e6e57b329ebc731bf9ec98eef29a772b79d440a51705078"
+  url "https:files.pythonhosted.orgpackagesf03e3386739ee49f841cc84f08989fb924917414aa0438c4559d48674a8c920bsnakemake-8.8.0.tar.gz"
+  sha256 "d676ea965a2bef00f7b3b5e1707482f2728e52abc5c85c2600e614e3a405bb1a"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "109c1a066f8867d966a4812b6c3e71315fc268719eeeb4ba15f73229291d2009"
-    sha256 cellar: :any,                 arm64_ventura:  "7738554c48de68e08e3f34f76144f4d4ed08f216d78f054ee454cd70125304fa"
-    sha256 cellar: :any,                 arm64_monterey: "ca1979f6faf45f913a0b7283119c5891b65a162605fcfd9ccc05f25f397d4fe7"
-    sha256 cellar: :any,                 sonoma:         "538a2065ef52f112d1bbe1f193a107b3abb1cffc8e6c3dd21ccc783991011d72"
-    sha256 cellar: :any,                 ventura:        "f90e0e35ee4fb8e3b4aa78e74f9cec3a987c8a4f86c0d0b260278e56a346772e"
-    sha256 cellar: :any,                 monterey:       "c93efa41782e2d6d5672eff2cbaa48d0b4a4d919e4d89e95f2ca7f6647be99ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "258afc70347ff8c494f465123d98a296a14024a3021af3f2e96cfc4ecde44bd4"
+    sha256 cellar: :any,                 arm64_sonoma:   "04ae7f166dfd500916f975404e4e584eea1e83cf09c064c53983d1c06cb9a5a4"
+    sha256 cellar: :any,                 arm64_ventura:  "4c914865e2550148462dcb0768bce2c5bb67b127ecfb69a2247913384a7d51b0"
+    sha256 cellar: :any,                 arm64_monterey: "96907a9c1700741c8c1c5abfdfd8a1f32bbc960a66ac9fe820fe80cfcb4b606c"
+    sha256 cellar: :any,                 sonoma:         "26f0800dcaf25a79e68ebfc35fe8366c8e2aedaafd2ee231266ef22e01c12f31"
+    sha256 cellar: :any,                 ventura:        "bc83e0ff584af164946efc1c3e01ace0d520e2df2aaaa1769f88a3616576aa35"
+    sha256 cellar: :any,                 monterey:       "8eabe859f37db259f3ae1db6284dbf68d76aa4a891819c329b066e4b5b994587"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe53a08f69f35cfb2c02c4c871050df8ae5bed9225f640d3909e5266efa44b35"
   end
 
   depends_on "rust" => :build
@@ -130,8 +130,8 @@ class Snakemake < Formula
   end
 
   resource "nbformat" do
-    url "https:files.pythonhosted.orgpackages9e73bcd3a88b322e813443758295701e0814c72a79f95905e1040b7db8f473benbformat-5.10.2.tar.gz"
-    sha256 "c535b20a0d4310167bf4d12ad31eccfb0dc61e6392d6f8c570ab5b45a06a49a3"
+    url "https:files.pythonhosted.orgpackagesadc1adfa72efcf08421a0bd6e3f9a14d6e0e2e52bf9ad7bd881d664f221708benbformat-5.10.3.tar.gz"
+    sha256 "60ed5e910ef7c6264b87d644f276b1b49e24011930deef54605188ddeb211685"
   end
 
   resource "packaging" do
@@ -190,8 +190,8 @@ class Snakemake < Formula
   end
 
   resource "smart-open" do
-    url "https:files.pythonhosted.orgpackagesac69bf2e8a00fbf9bf9f27734c4f3f2030fb422c4d8b1594bb9fc763561a4ec2smart_open-6.4.0.tar.gz"
-    sha256 "be3c92c246fbe80ebce8fbacb180494a481a77fcdcb7c1aadb2ea5b9c2bee8b9"
+    url "https:files.pythonhosted.orgpackages0393e3c7d120ffbecefcd55efb3d1c331d4ef3ac2236e30ab8bb62a7411a8aa2smart_open-7.0.1.tar.gz"
+    sha256 "c03d00e49483d8e5375720d4d6c1402107f23584bf96505db0b4e17f92339e56"
   end
 
   resource "smmap" do
