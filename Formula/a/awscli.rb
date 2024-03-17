@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.15.28.tar.gz"
-  sha256 "7aff52e4db9ef2ad4f74faddb8bdac30e39234497173216c22177e479cd9b41c"
+  url "https:github.comawsaws-cliarchiverefstags2.15.30.tar.gz"
+  sha256 "5e768c91e21c180911e129d0f716cb8ed5fcf30e184ef2fb3fcc238d6e0a3a2b"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b78d6627a1ac0220ce7e04678da6e9df80ce349f5505fc52ab5bf3aa1637b423"
-    sha256 cellar: :any,                 arm64_ventura:  "6ba054beb4b5db38220c6fe1558671a0a19771d62757b65858da6891fdb36e40"
-    sha256 cellar: :any,                 arm64_monterey: "fc70e6630ab0c661b3412c191a5e963950971992989e1371c1845881644afb62"
-    sha256 cellar: :any,                 sonoma:         "b031b73cbcf0a82530622ad3349e5e907b7d4f5f296d778d5f54907b9bcdaff9"
-    sha256 cellar: :any,                 ventura:        "9a7593a18212a4f0fff90ee7ae5dbc70093c6acb08fc876b033a901a424e0f5c"
-    sha256 cellar: :any,                 monterey:       "342d823424f0cea407f4392ef852122b07779353abadebbb94082af4380fcd2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae2ace57cc685dc28b732d90660758056c91110f086d9704a1e2890aabf64819"
+    sha256 cellar: :any,                 arm64_sonoma:   "441f854e5f8fb4a54ed5f66bb1b046922b95aeeb3e91a5c71c5060cb90213689"
+    sha256 cellar: :any,                 arm64_ventura:  "090c8d4b59c3c087b47d0088d9b2ead1cd6d514d79ae10ca3315607216861504"
+    sha256 cellar: :any,                 arm64_monterey: "58da8ca18cd932316caed1f6fb8184c1ebb60faca45fd12a1440af5a5352e8cd"
+    sha256 cellar: :any,                 sonoma:         "0c0390375d520eb9de99336fa1e7f57ed4190873791c47a6bcc7da9b7d8354d6"
+    sha256 cellar: :any,                 ventura:        "73361d27d8039065f757b0155486841977326109aca4d77e4cc9672dfa7efc80"
+    sha256 cellar: :any,                 monterey:       "4d55feb595a5b2c29654f539ca1cc5773bfbe7946137f38a6ee9be068036e313"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4b2845265dfabde18aacfa69c9407ac02e69be450eaa8fb41fa4cca5934b3a5"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -88,8 +88,8 @@ class Awscli < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages0320630783571e76e5fa5f3e9f29398ca3ace377207b8196b54e0ffdf09f12c1setuptools-67.8.0.tar.gz"
-    sha256 "62642358adc77ffa87233bc4d2354c4b2682d214048f500964dbe760ccedf102"
+    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
+    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
   end
 
   resource "six" do
@@ -108,8 +108,8 @@ class Awscli < Formula
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackages7ab029c0c8c6f8cebeb0de4c17bc44365cba0b35cb4246e4a27a7e12ecf92d73wheel-0.38.1.tar.gz"
-    sha256 "ea041edf63f4ccba53ad6e035427997b3bb10ee88a4cd014ae82aeb9eea77bb9"
+    url "https:files.pythonhosted.orgpackagesb8d6ac9cd92ea2ad502ff7c1ab683806a9deb34711a1e2bd8a59814e8fc27e69wheel-0.43.0.tar.gz"
+    sha256 "465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85"
   end
 
   def python3
@@ -131,6 +131,10 @@ class Awscli < Formula
       ENV.prepend "CFLAGS", "-I.buildtemp.linux-x86_64-#{python_version}depsinstallinclude"
       ENV.prepend "LDFLAGS", "-L.buildtemp.linux-x86_64-#{python_version}depsinstalllib"
     end
+
+    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
+    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     # The `awscrt` resource requires `setuptools` & `wheel`, so they must be installed first
     venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)

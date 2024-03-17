@@ -1,19 +1,19 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https:lima-vm.io"
-  url "https:github.comlima-vmlimaarchiverefstagsv0.20.2.tar.gz"
-  sha256 "3c36734cdf13a2751ad69c1364a49359a34db31f1544cc4ee9b81ec2d481ccb6"
+  url "https:github.comlima-vmlimaarchiverefstagsv0.21.0.tar.gz"
+  sha256 "86ecdc2758b6afd55faa06918b7a506108e95fbdfd93aa18a0ef5e7b59b4e7b4"
   license "Apache-2.0"
   head "https:github.comlima-vmlima.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "774070ee72a873d644f81e10f10093f1a7d6c0b7870f05c0714f3bffa2e3a82c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "995170b11604128a7e3c8e5c0cf968130a07b70274606cb35df96e25755d5aa5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8577fb915ec790efb9f7f7f3ef8d768853864f606a781c951a47f23892f0c0cd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dca2bc69111b7c93ad93e0ba7bcbdc317753476077fc68721d9ed9e2adec3849"
-    sha256 cellar: :any_skip_relocation, ventura:        "ee67de6e2684e07e863978b9434ba2f3ab2ba538812877a54c8b70740fc8d5dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c4ecaf9040fc885152e0ede928f26e73bf5568c1b08f1fca57ba76304e1208f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59c57b46eb9704c162318971d387cbd99b91eb6d82375d32878f62d1abf5a1c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1f62d01a2012a493cdde3039567bedae4060a3734c563a5c5efc0551e7d14b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a72ed11b8f0f2ae4abd81d9dae701791f9b55d6fd1f743aefac8aff4aa786ae8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bea3b91b8373c70d6baa115f8f49f543424019362c2f6724cf3c0f8117d6d77"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f9748a8dcc19bddeebd008542083260c074689aa530f811b7681899bb569917f"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e622cc16d4b946331a75571479ab15604e3dade49a6e67a2d6a8370acb71b7a"
+    sha256 cellar: :any_skip_relocation, monterey:       "64335ae23a01ad1ef3d4701f39206586d287cd4c958bdaadb119fa635ee93fa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3754561f003249b8706ffe4d7b585c9356b7ca297ab5c3c6a24cea2ef68c850d"
   end
 
   depends_on "go" => :build

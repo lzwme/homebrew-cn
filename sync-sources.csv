@@ -2725,7 +2725,7 @@ Homebrew-homebrew-core/Formula/i/interface99.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/internetarchive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/intltool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/invoice.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/inxi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/inxi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/io.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iocextract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ioctl.rb, Homebrew/homebrew-core, 1
@@ -5115,7 +5115,6 @@ Homebrew-homebrew-core/Formula/p/pyside@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyspelling.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pystring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-brotli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 1
