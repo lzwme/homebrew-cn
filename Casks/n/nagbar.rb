@@ -13,8 +13,8 @@ cask "nagbar" do
   app "NagBar.app"
 
   zap trash: [
-    "~Application Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.volendavidov.nagbar.sfl*",
-    "~Cachescom.volendavidov.NagBar",
-    "~Preferencescom.volendavidov.NagBar.plist",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.volendavidov.nagbar.sfl*",
+    "~LibraryCachescom.volendavidov.NagBar",
+    "~LibraryPreferencescom.volendavidov.NagBar.plist",
   ]
 end

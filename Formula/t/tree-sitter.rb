@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https:tree-sitter.github.io"
-  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.22.1.tar.gz"
-  sha256 "b21065e78da33e529893c954e712ad15d9ad44a594b74567321d4a3a007d6090"
+  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.22.2.tar.gz"
+  sha256 "0c829523b876d4a37e1bd46a655c133a93669c0fe98fcd84972b168849c27afc"
   license "MIT"
   head "https:github.comtree-sittertree-sitter.git", branch: "master"
 
@@ -12,25 +12,17 @@ class TreeSitter < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "8372628b9a7ed4290b61ec9bf32deb696d1cdcc0e359b10104f60e4c1ce043b8"
-    sha256 cellar: :any,                 arm64_ventura:  "6c1b5522caf843e5380a57897c8a0e6ecee0803ac0615b4fc266fdc299018cd6"
-    sha256 cellar: :any,                 arm64_monterey: "723197da6498c8f90d53001f0672808a202b29219301866662130cc1c22321fa"
-    sha256 cellar: :any,                 sonoma:         "6f92b83165eeaa97c52ddfae7d1319759a0ca43b4b7c0229d56ce6646e8e576b"
-    sha256 cellar: :any,                 ventura:        "c7db892c6da0e13db9a3b1678fb300b3fc59e226862365519e216d11e6da866d"
-    sha256 cellar: :any,                 monterey:       "6de75cd81aaf3f32aa6eeacbb6a495e408b65aa61e44010f93695b6eda392547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1661898fd95f0faf8aa8b65fee585a85cc85425daf32e48778faed7b2b0a04d"
+    sha256 cellar: :any,                 arm64_sonoma:   "864d65c35270a1150028cb1767d71f4549a4b64b9f4abd029f97641484c12971"
+    sha256 cellar: :any,                 arm64_ventura:  "632264bbf86e5838f1175aa75c3fe4540a617ff66aad617af46e78ad3c6d1303"
+    sha256 cellar: :any,                 arm64_monterey: "2f496671caec440c0a11858dc79caa81e32a4743acee7871def02fd32305ecf9"
+    sha256 cellar: :any,                 sonoma:         "a5005dda76bca989d76c0c14dee5faa4e0ccfbff6685f0a24c1b3a477a973348"
+    sha256 cellar: :any,                 ventura:        "f34ec18b64a8d010078b4cf52289481709e365333df027a30de2caedcd6e4512"
+    sha256 cellar: :any,                 monterey:       "68c5c14bc68ca86f1e2768d0f07171eb5238282e87a130f0021b32cf904b6c4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ca7b72329bbbf4fd0f1a1539a4ed1adbbd243a22599b998c1a26e7fcb189f3c"
   end
 
   depends_on "rust" => :build
   depends_on "node" => :test
-
-  # Fix Makefile for BSD `install`
-  # https:github.comtree-sittertree-sitterissues3157
-  patch :p0 do
-    url "https:raw.githubusercontent.commacportsmacports-ports76faa188751724c04931ebb3dfb4d18152424cfcdeveltree-sitterfilespatch-makefile-install.diff"
-    sha256 "fdce92d9ebcad0c25f0b7cd4e0eae810e2670ece47631740b002f2a3ea99f7cf"
-  end
 
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"

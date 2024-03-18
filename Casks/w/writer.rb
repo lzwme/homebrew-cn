@@ -10,7 +10,7 @@ cask "writer" do
   app "Writer.app"
 
   zap trash: [
-    "~Application SupportWriter",
+    "~LibraryApplication SupportWriter",
     "~LibraryPreferencesde.HendrikNoeller.Writer.plist",
   ]
 end

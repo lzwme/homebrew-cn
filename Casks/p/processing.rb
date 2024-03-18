@@ -30,9 +30,9 @@ cask "processing" do
   uninstall quit: "org.processing.app"
 
   zap trash: [
+    "~LibraryPreferencesorg.processing.app.plist",
+    "~LibraryPreferencesorg.processing.four.plist",
+    "~LibraryPreferencesprocessing.app.tools.plist",
     "~LibraryProcessing",
-    "~Preferencesorg.processing.app.plist",
-    "~Preferencesorg.processing.four.plist",
-    "~Preferencesprocessing.app.tools.plist",
   ]
 end
