@@ -15,23 +15,15 @@ cask "proxy-audio-device" do
                   user:  "root",
                   group: "wheel"
 
-    system_command "binlaunchctl",
-                   args:         [
-                     "kickstart",
-                     "-k",
-                     "systemcom.apple.audio.coreaudiod",
-                   ],
+    system_command "usrbinkillall",
+                   args:         ["coreaudiod"],
                    sudo:         true,
                    must_succeed: true
   end
 
   uninstall_postflight do
-    system_command "binlaunchctl",
-                   args:         [
-                     "kickstart",
-                     "-k",
-                     "systemcom.apple.audio.coreaudiod",
-                   ],
+    system_command "usrbinkillall",
+                   args:         ["coreaudiod"],
                    sudo:         true,
                    must_succeed: true
   end
