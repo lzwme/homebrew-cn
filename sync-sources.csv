@@ -6086,6 +6086,7 @@ Homebrew-homebrew-core/Formula/t/tarsnap-gui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarsnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarsnapper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tart.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tartufo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/task-spooler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/task.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taskd.rb, Homebrew/homebrew-core, 1
@@ -8590,7 +8591,7 @@ Homebrew-homebrew-cask/Casks/h/hides.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hidock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hightop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/historyhound.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/h/hma-pro-vpn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hma-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/holavpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/home-assistant.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/home-inventory.rb, Homebrew/homebrew-cask, 0
@@ -10667,6 +10668,7 @@ Homebrew-homebrew-cask/Casks/s/steamcmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/steelseries-engine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/steelseries-gg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/steermouse.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/steinberg-activation-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stella.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stellarium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stepmania.rb, Homebrew/homebrew-cask, 1

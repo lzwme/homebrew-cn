@@ -1,7 +1,7 @@
 class YtDlp < Formula
   include Language::Python::Virtualenv
 
-  desc "Fork of youtube-dl with additional features and fixes"
+  desc "Feature-rich command-line audiovideo downloader"
   homepage "https:github.comyt-dlpyt-dlp"
   url "https:files.pythonhosted.orgpackages701df9617f151c124a15981cf79c47b6a53ac875942211b40010f0381296c51dyt_dlp-2024.3.10.tar.gz"
   version "2024.03.10"
