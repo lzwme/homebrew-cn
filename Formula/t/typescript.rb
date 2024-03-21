@@ -3,13 +3,13 @@ require "languagenode"
 class Typescript < Formula
   desc "Language for application scale JavaScript development"
   homepage "https:www.typescriptlang.org"
-  url "https:registry.npmjs.orgtypescript-typescript-5.4.2.tgz"
-  sha256 "b4b5b42332259a8eae3e8262ab60e4b8f441b761cdd8f3c61c5bc6c1926bd08b"
+  url "https:registry.npmjs.orgtypescript-typescript-5.4.3.tgz"
+  sha256 "c1fe425dd986563370ea040a173022216ac93dc4d5e977e6f6d47539302f1090"
   license "Apache-2.0"
   head "https:github.comMicrosoftTypeScript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "35947bad45d085b878bc4401db26e98a62156a5ba5d451d43321b73d7cd09dd5"
+    sha256 cellar: :any_skip_relocation, all: "9f5ead46a922ca5179312c5e3dd9a36b2a0b0f4229e5d5811ea10f5a200637f3"
   end
 
   depends_on "node"

@@ -2352,7 +2352,7 @@ Homebrew-homebrew-core/Formula/g/grails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grammarly-languageserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grantlee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grap.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/graph-tool.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/graph-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphicsmagick.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graphite2.rb, Homebrew/homebrew-core, 1
@@ -9243,7 +9243,7 @@ Homebrew-homebrew-cask/Casks/m/meetingbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mega.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/megacmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/megasync.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/megazeux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/meld-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meld.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mellel.rb, Homebrew/homebrew-cask, 0
@@ -13657,6 +13657,7 @@ Homebrew-homebrew-cask-versions/Casks/chromedriver-beta.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-versions/Casks/cleanmymac3.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/corretto11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/corretto17.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/corretto21.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/corretto8.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/daedalus-flight.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/dash2.rb, Homebrew/homebrew-cask-versions, 0
@@ -13701,6 +13702,7 @@ Homebrew-homebrew-cask-versions/Casks/google-chrome-dev.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask-versions/Casks/google-japanese-ime-dev.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/gpg-suite-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/graalvm-jdk17.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/graalvm-jdk21.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/hamsket-nightly.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/hancom-word-2014.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/hyper-canary.rb, Homebrew/homebrew-cask-versions, 1

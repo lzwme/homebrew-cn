@@ -3,18 +3,18 @@ class Certsync < Formula
 
   desc "Dump NTDS with golden certificates and UnPAC the hash"
   homepage "https:github.comzblurxcertsync"
-  url "https:files.pythonhosted.orgpackagesbd3dcdacde9d464c4b059336af2e531a9c15660b92125f345a165da754d0ec9fcertsync-0.1.5.tar.gz"
-  sha256 "699a4f8b15045883011c25f461c83e81b53093ae31588fdff41f7ef505b969c7"
+  url "https:files.pythonhosted.orgpackagesc8753928920bdbfb0af317446236fad17b47a1d6aad507f1ae2eed6bbf7e7ad9certsync-0.1.6.tar.gz"
+  sha256 "bbfffd10f36edcb8c4d2d5033f2a2e1e7d641e41d6c5bd11069e7b0827fa1c8d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0758c5dad707e41e6a7cb0f371bc8918f5e66c1f549053bd0bd2499e6481737c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8002dd776838d49fd3afd0d79207ef5025f6eb60921a9cff07bb882e7981d9b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcd3dbb423223f8c97cd1446fc4f0fbac8582c4397e889a67f7855a9fbc98bbe"
-    sha256 cellar: :any_skip_relocation, sonoma:         "28c050486b062282b8263693861a622b823f88d3f9b37dffee2861d8b860d42f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f4e50e3b450b82a335f8ca1eed54aa686d645d13922fc4dc298a41215894f758"
-    sha256 cellar: :any_skip_relocation, monterey:       "19b2814c62ee53cf7ac13d29dbfbc78d41b7fb39c16357943755e7bb657370c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4eebaec0cbda60251e7bbb8781e355892824812f29322c36dd1382a631fd87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e449efd7db905192d0a274208f6ddade4bba7a7acae1a1388cadff2c6a566de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1ddab0214b4c8a0220d8d2f722adfb5974b80379ef3d4eb1fa15b775556822d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "03d38805f2fa130a042f0c14b851d3ed06bf01a14923e4a81ba8f5905454819d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7cb0244a9ef349d1c5454665d68a6232eecf44ac3d063f4b603bcbce2758f937"
+    sha256 cellar: :any_skip_relocation, ventura:        "00fe133ea21da00732ed1b218eb74f166d06e5c81b8c7d272b78e0b72f3cec04"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c3cc43afe15ca37eceb2541942edb90beaea31f21995d1ba357110c607c1cb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ce4336c0aec59d223b984eaa1174c1214d192b2c0c4861dea578e8bba76e3fe"
   end
 
   depends_on "certifi"
@@ -117,8 +117,8 @@ class Certsync < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackageseb81022190e5d21344f6110064f6f52bf0c3b9da86e9e5a64fc4a884856a577dpyOpenSSL-24.0.0.tar.gz"
-    sha256 "6aa33039a93fffa4563e655b61d11364d01264be8ccb49906101e02a334530bf"
+    url "https:files.pythonhosted.orgpackages91a8cbeec652549e30103b9e6147ad433405fdd18807ac2d54e6dbb73184d8a1pyOpenSSL-24.1.0.tar.gz"
+    sha256 "cabed4bfaa5df9f1a16c0ef64a0cb65318b5cd077a7eda7d6970131ca2f41a6f"
   end
 
   resource "pyspnego" do
