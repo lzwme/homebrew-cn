@@ -8,25 +8,23 @@ class OnlykeyAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_sonoma:   "d7156da46ac46ee3304c5fb890f60ae0bc69932370c53c5d9ff1505bc572841c"
-    sha256 cellar: :any,                 arm64_ventura:  "b7d47312f32b43114117757274454b736cdc705bf01067bdd7d1fcccc3da7b5d"
-    sha256 cellar: :any,                 arm64_monterey: "a2d0f18fcfa9255b630db09e88c0460154deee0d047c2b796080d5b06520ca37"
-    sha256 cellar: :any,                 sonoma:         "ddc5f87245caa30a1aba51d6ec5a6fd37990cc9187a3532595ace500cb968208"
-    sha256 cellar: :any,                 ventura:        "f27025df5012b9cbb6f1d9f2b50fa33c48e50e009728ac3039ff8cf4214eb99c"
-    sha256 cellar: :any,                 monterey:       "e4f43138a7a177389fbc6616decf5560de592d6fa7a2f8a6e821fc0ef71d6ffb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57f928159591276e2bc7a01263290307d4046df036ab0e4302221ed434ee6f9e"
+    rebuild 6
+    sha256 cellar: :any,                 arm64_sonoma:   "a0fad59933c5f81b799011dff4bbb38c8e38aa8b116a42a99c4c736a84506523"
+    sha256 cellar: :any,                 arm64_ventura:  "039d8bfceea5b8a26294f5b5d63da731dae37d00647e8a82e888dccc372099a1"
+    sha256 cellar: :any,                 arm64_monterey: "f1d8c865af3b02cc65dee45bdffa0e6f8b9bd1a8a700fffde59d93d648ad8791"
+    sha256 cellar: :any,                 sonoma:         "60c760c2b900efd3ff552594111ebea1d10feef6e0df6b45bd77f8fd39b7fa4d"
+    sha256 cellar: :any,                 ventura:        "7292365b40021bf96d36843ceac7d558b195ccba82a8d36025c58e68804b2c23"
+    sha256 cellar: :any,                 monterey:       "cc99c15cf8af6ce4df81be0b559cb51964ca17586895d67f53fa5a9d7f17393b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "925664187321b92eecb691f8406cac2e1d1f14a798711bd94a505c628c21c663"
   end
 
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "cython"
   depends_on "gnupg"
   depends_on "hidapi"
-  depends_on "libcython"
   depends_on "libusb"
   depends_on "python@3.12"
-
-  uses_from_macos "libffi"
 
   resource "aenum" do
     url "https:files.pythonhosted.orgpackagesd0f833e75863394f42e429bb553e05fda7c59763f0fd6848de847a25b3fbccf6aenum-3.1.15.tar.gz"
@@ -165,8 +163,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
+    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
   end
 
   resource "six" do
@@ -190,40 +188,30 @@ class OnlykeyAgent < Formula
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb0b4bc2baae3970c282fae6c2cb8e0f179923dceb7eaffb0e76170628f9af97bwheel-0.42.0.tar.gz"
-    sha256 "c45be39f7882c9d34243236f2d63cbd58039e360f85d0913425fbd7ceea617a8"
-  end
-
-  def python3
-    "python3.12"
+    url "https:files.pythonhosted.orgpackagesb8d6ac9cd92ea2ad502ff7c1ab683806a9deb34711a1e2bd8a59814e8fc27e69wheel-0.43.0.tar.gz"
+    sha256 "465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85"
   end
 
   def install
-    # prevent "fatal error: libusb.h: No such file or directory" when building hidapi on linux
-    ENV.append_to_cflags "-I#{Formula["libusb"].include}libusb-1.0"
-    # replacement for virtualenv_install_with_resources per https:docs.brew.shPython-for-Formula-Authors
+    python3 = "python3.12"
     venv = virtualenv_create(libexec, python3)
-    # build hidapi
+
+    # Use brewed hidadpi: https:github.comtrezorcython-hidapiissues54
+    # TODO: For hidapi>0.14, replace with ENV["HIDAPI_SYSTEM_HIDAPI"] = ENV["HIDAPI_WITH_LIBUSB"] = "1"
     resource("hidapi").stage do
-      # monkey patch hidapi's include paths to be the homebrew-installed path instead
-      # TODO: Fix this with an upstream patch to support `--with-system-hidapi=foobarhidapi`
-      #       per https:github.comHomebrewhomebrew-corepull104096#discussion_r919469723
       inreplace "setup.py" do |s|
-        s.gsub! "usrincludelibusb-1.0", "#{Formula["libusb"].opt_include}libusb-1.0"
+        s.gsub! "system_hidapi = 0", "system_hidapi = 1"
         s.gsub! "usrincludehidapi", "#{Formula["hidapi"].opt_include}hidapi"
       end
-      system python3, *Language::Python.setup_install_args(libexec, python3), "--with-system-hidapi"
+      venv.pip_install Pathname.pwd
     end
-    # now have pip build other resources except hidapi:
+
     venv.pip_install resources.reject { |r| r.name == "hidapi" }
     venv.pip_install_and_link buildpath
 
     # add path configuration file to find cython
     site_packages = Language::Python.site_packages(python3)
-    pth_contents = <<~EOS
-      import site; site.addsitedir('#{Formula["libcython"].opt_libexecsite_packages}')
-    EOS
-    (libexecsite_packages"homebrew-onlykey-agent.pth").write pth_contents
+    (libexecsite_packages"homebrew-onlykey-agent.pth").write Formula["cython"].opt_libexecsite_packages
   end
 
   test do

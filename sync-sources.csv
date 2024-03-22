@@ -2704,6 +2704,7 @@ Homebrew-homebrew-core/Formula/i/influxdb@1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inform6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/infracost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inframap.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/ingress2gateway.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inih.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iniparser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inja.rb, Homebrew/homebrew-core, 1
@@ -5433,6 +5434,7 @@ Homebrew-homebrew-core/Formula/r/rsync-time-backup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsync.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rsyncy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rsyslog.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rtabmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rtf2latex2e.rb, Homebrew/homebrew-core, 0

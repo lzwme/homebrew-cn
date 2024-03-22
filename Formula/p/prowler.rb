@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/c1/16/4f5b1aa5fb65d0da7fe7706a0e262eba5a3288d8705ce4dc775d71fede75/prowler-3.15.1.tar.gz"
-  sha256 "cf66aac163559d6141fdf11ed08267bbb889361572e0e07f35f2bc3ab9c54a2f"
+  url "https://files.pythonhosted.org/packages/4e/e8/413e4ab57df35ca9a586873a7a683c0c105f3f103fdac64ff9c7ee1b066f/prowler-3.15.2.tar.gz"
+  sha256 "ac7825aa56f8bc3884063c0c434bae0f40408434696bbb156fc614662d69d4ac"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "78d6de834dd5d947e312093552ea44c2b29b515af2426142489290dd4f0c8bec"
-    sha256 cellar: :any,                 arm64_ventura:  "aa6cf963bf7db7d8831b5492ff6f141c7638f2e4d77bf918a3d6c82b6775ab25"
-    sha256 cellar: :any,                 arm64_monterey: "2bcbfe53549fce63d26af325554b3526a12b8e5fbc6bbfecf33a1d446529adf8"
-    sha256 cellar: :any,                 sonoma:         "ab07f6e435c5c46610e202af07b7a4a2f7f8642801265f1f5fe7504857bb7292"
-    sha256 cellar: :any,                 ventura:        "602826b350a5136d2b0ba169d1f0e8cb21ffdb8dd7f3830177d489583c703f83"
-    sha256 cellar: :any,                 monterey:       "42c7bcf4b489b7cdafe30f61bd45c7ab3c3ef49e7f96f525016d364336e575aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bf3ab770250cc37714646690aa7279be38043d663cf50572541e99aedb8f66d"
+    sha256 cellar: :any,                 arm64_sonoma:   "287f392430d9539d402294fdcbc99f6e9166d059e48387e4e5ba830d2afb960a"
+    sha256 cellar: :any,                 arm64_ventura:  "606876ba436aa49bfb61f8f3ebd8b7fdc4b214f5647ac7c61c28dfa0d88b6343"
+    sha256 cellar: :any,                 arm64_monterey: "d2e99d06048ee29cf1abf89f77f752e68551b6b3f8f793bfe0a57bab027f60da"
+    sha256 cellar: :any,                 sonoma:         "728e94383bf4ada653327933ab74c2f17d1695985cd5df787c396eeb809ef287"
+    sha256 cellar: :any,                 ventura:        "cc8f78a0965fbb6e118df0ad56a28838a4bfdea9dcf4f1e243f230c064d9a5ee"
+    sha256 cellar: :any,                 monterey:       "99233d30d62107ac42bf2a61ac797d11e4dd35094d39a02d60ef42970156def0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d023d55c801cbf2a9c949d8ddc6bb6289c98d07f4000007b19e25489efaa7d5b"
   end
 
   depends_on "rust" => :build
