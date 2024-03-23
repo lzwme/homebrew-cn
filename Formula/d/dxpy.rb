@@ -3,18 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https:github.comdnanexusdx-toolkit"
-  url "https:files.pythonhosted.orgpackagesc734bf1b1876d7ba5a95abd56fced3f84ed2c5e9f36694897bfa347cfddf752edxpy-0.371.0.tar.gz"
-  sha256 "d264d06c9101877e5d185c9b3165a19c0d8c5af4bdaf1c42530ad316c53188ae"
+  url "https:files.pythonhosted.orgpackages9ff3022fe2252a7e894a0478307d0d1cd0ab5912bfd592a6ae8b41b227f2d638dxpy-0.372.0.tar.gz"
+  sha256 "6be5cf0ecd03977c2ad09d863a7de17b6b866cc280ca85dc192612b4fb87da7b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "87c6a4858aabefdbab7b3a6d81d5c21042e46926e35883cc0a8343c9eccf41d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b654241e98ecfbd4e808838af5eaddcd9e8d4176a8343f054fb498102615b96b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b20b1e899dbe7bf734733c5751f753525dfc8c7bbc1420c2b14d8a89d18a0536"
-    sha256 cellar: :any_skip_relocation, sonoma:         "88797a2c66c00e4ac8d5a740a1128a2309b35eb799546f2927696619f44a70c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "168bc68ceba526b1578be8424967e47e685cc4b86e93d33278a15273f345d16a"
-    sha256 cellar: :any_skip_relocation, monterey:       "d989f45b061ff7d42c208015969258226460bcbddda589b8d8e40b1ec15a9d31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c03dd9025cad4d67464f3b7b1969d9b80a67ae32a9b61382720e84ed63c2b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b51d5abcdc0f48afd71089c6ed82333c06675ba9b0eecef8f0da190e4b7134aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c607fb3998b9b994eedf31a651e5b85fd5108bfc56f343fab9787f771fa759e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f1a424eca4e9d98c579f11c4976cb7a30e36e5bdd761784d91c0bcd6fd53c90"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a25d0bbc0cab61132d8bfd582903e6eed23985da119162a23cf43edbd9cc794"
+    sha256 cellar: :any_skip_relocation, ventura:        "cddbdad556272dc540feffa2ea76350aab39b0cd8248e5376e9c8b2d3fe3c708"
+    sha256 cellar: :any_skip_relocation, monterey:       "01b13c8591f163df5bcdb36905ca46a8b34a35231c52c2a3818543594db6e182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f829dc11c897e25f78e7dee0004d5773b856b3a0ec3f88fb617812f415cfeb0"
   end
 
   depends_on "certifi"

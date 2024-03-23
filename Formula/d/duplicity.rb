@@ -3,19 +3,18 @@ class Duplicity < Formula
 
   desc "Bandwidth-efficient encrypted backup"
   homepage "https:gitlab.comduplicityduplicity"
-  url "https:files.pythonhosted.orgpackagesf333da4f4edb3332f47051017f876709b47633873904aeb7c9ccf9dcaf3d7433duplicity-2.2.2.tar.gz"
-  sha256 "833ef5fa922d559be1c4f6a0f61315e8cb26da409f2024bcf310ba3fb9486d27"
+  url "https:files.pythonhosted.orgpackagesa6496647fc22bd816946fb195d0192cee3a3f679a272f6b83488166fc5d1ca7bduplicity-2.2.3.tar.gz"
+  sha256 "4ad43f93601b1a41fb5f642bdda1706a1fb75f8ef1d6d482dd7f23107eaee87d"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "c84c8067eef8dbb96b7b842f9cffc14e64ff2a411727e480c0e4df05f93447bc"
-    sha256 cellar: :any,                 arm64_ventura:  "ecf653e5fc202aea4b5a2c89666c71ba49cde2a911af5fa061c784927ca1ee8b"
-    sha256 cellar: :any,                 arm64_monterey: "cd257636008df0a1d575035e823b4862b4b7da50e0721ed91a5178c9231dfd6a"
-    sha256 cellar: :any,                 sonoma:         "593769cefbefda5865d373329d8eb12909e5bcbb821001162f4bb52c841ee00e"
-    sha256 cellar: :any,                 ventura:        "554057c2eae14257de03dc9e407607dd4f70c1d08625dcbce06a714bb36cb037"
-    sha256 cellar: :any,                 monterey:       "5be3a27d11f790f34cc3370f660ad6456d1d95ec81a556bbcd6a0db6e68cdcaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83d5c9e6a93b7a7838dce9402ba5e1978e1050ec25ac9dce6a635535fc05079f"
+    sha256 cellar: :any,                 arm64_sonoma:   "c39839401766d62c703ca67e661920998f6ec54309b5a979c714e8286bd8f28c"
+    sha256 cellar: :any,                 arm64_ventura:  "20b6e79731c18ade7ab2d749eaa2b758f254e7386f51913f406a2a766365221d"
+    sha256 cellar: :any,                 arm64_monterey: "d5056895b30f105ec56f58987a87b1e0da6a90001a5ea9ff629c6fd4411e06cf"
+    sha256 cellar: :any,                 sonoma:         "cf6d2556ffbf03f42a64999e095d43bf80214cd12d1a4c1a715bbf8c000fa3a2"
+    sha256 cellar: :any,                 ventura:        "ef0e0832bbc578ae1ea044ea590c391e24b0fedf00fa1d5be41d49551fe3f828"
+    sha256 cellar: :any,                 monterey:       "31b5ab09696f97fae0221e519a9de6a3fa425b4b0806694d2eb58de53e3298fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69cc98c1433974be79010e777db2862ae8863d37575ada1b56262fc97ee9b12c"
   end
 
   depends_on "gettext" => :build # for msgfmt
@@ -66,13 +65,13 @@ class Duplicity < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages566abe50db7805679f79de57f3b4228e762f8028c2d3a9789ce65c2260ed85c3boto3-1.34.64.tar.gz"
-    sha256 "e5d681f443645e6953ed0727bf756bf16d85efefcb69cf051d04a070ce65e545"
+    url "https:files.pythonhosted.orgpackages7627fd0b2f0218413aaf346959384ad756350c114c95715e505984cf8b4d1c95boto3-1.34.69.tar.gz"
+    sha256 "898a5fed26b1351352703421d1a8b886ef2a74be6c97d5ecc92432ae01fda203"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages356e9c59955f5e73e69729216f7ae76eb6843ce78da65d184d161eeb0f481a3abotocore-1.34.64.tar.gz"
-    sha256 "084f8c45216d62dc1add2350e236a2d5283526aacd0681e9818b37a6a5e5438b"
+    url "https:files.pythonhosted.orgpackagesf738493fd3057469208f350f82423da8dcf0fd2698fa4563169dd209b6952567botocore-1.34.69.tar.gz"
+    sha256 "d1ab2bff3c2fd51719c2021d9fa2f30fbb9ed0a308f69e9a774ac92c8091380a"
   end
 
   resource "boxsdk" do
@@ -126,18 +125,18 @@ class Duplicity < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackages58e2c2ce7bf379a7200ecab7de2cbf17dcbb3fe2ab5085925dfe6797e263a475google-api-core-2.17.1.tar.gz"
-    sha256 "9df18a1f87ee0df0bc4eea2770ebc4228392d8cc4066655b320e2cfccb15db95"
+    url "https:files.pythonhosted.orgpackagesb28fecd68579bd2bf5e9321df60dcdee6e575adf77fedacb1d8378760b2b16b6google-api-core-2.18.0.tar.gz"
+    sha256 "62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesb7c12418c084eac8126fa3b5f52eb70de04564023040dea23a9e9cb856327785google-api-python-client-2.122.0.tar.gz"
-    sha256 "77447bf2d6b6ea9e686fd66fc2f12ee7a63e3889b7427676429ebf09fcb5dcf9"
+    url "https:files.pythonhosted.orgpackagesb05657a9ba463f24c8b6955e85c3b1163997e33bf26ab17216502f74c9f03c73google-api-python-client-2.123.0.tar.gz"
+    sha256 "a17226b02f71de581afe045437b441844110a9cd91580b73549d41108cf1b9f0"
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackages7a10b3a860c103832a6a3353b47f9ebcf49ebe7f0c8ccf5cd39e89cffe67d98egoogle-auth-2.28.2.tar.gz"
-    sha256 "80b8b4969aa9ed5938c7828308f20f035bc79f9d8fb8120bf9dc8db20b41ba30"
+    url "https:files.pythonhosted.orgpackages18b2f14129111cfd61793609643a07ecb03651a71dd65c6974f63b0310ff4b45google-auth-2.29.0.tar.gz"
+    sha256 "672dff332d073227550ffc7457868ac4218d6c500b155fe6cc17d2b13602c360"
   end
 
   resource "google-auth-httplib2" do
@@ -300,6 +299,11 @@ class Duplicity < Formula
     sha256 "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3"
   end
 
+  resource "proto-plus" do
+    url "https:files.pythonhosted.orgpackages912d8c7fa3011928b024b10b80878160bf4e374eccb822a5d090f3ebcf175f6aproto-plus-1.23.0.tar.gz"
+    sha256 "89075171ef11988b3fa157f5dbd8b9cf09d65fffee97e29ce403cd8defba19d2"
+  end
+
   resource "protobuf" do
     url "https:files.pythonhosted.orgpackages5ed865adb47d921ce828ba319d6587aa8758da022de509c3862a70177a958844protobuf-4.25.3.tar.gz"
     sha256 "25b5d0b42fd000320bd7830b349e3b696435f3b329810427a6bcce6a5492cc5c"
@@ -371,8 +375,8 @@ class Duplicity < Formula
   end
 
   resource "requests-oauthlib" do
-    url "https:files.pythonhosted.orgpackagesd55dfd68baf0876774835068b557717932c44c6be42ee847bcc210bf389d4189requests-oauthlib-1.4.0.tar.gz"
-    sha256 "acee623221e4a39abcbb919312c8ff04bd44e7e417087fb4bd5e2a2f53d5e79a"
+    url "https:files.pythonhosted.orgpackages42f205f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85requests-oauthlib-2.0.0.tar.gz"
+    sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
   end
 
   resource "requests-toolbelt" do

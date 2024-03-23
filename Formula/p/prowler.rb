@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/4e/e8/413e4ab57df35ca9a586873a7a683c0c105f3f103fdac64ff9c7ee1b066f/prowler-3.15.2.tar.gz"
-  sha256 "ac7825aa56f8bc3884063c0c434bae0f40408434696bbb156fc614662d69d4ac"
+  url "https://files.pythonhosted.org/packages/c0/cd/dbdf388247189f395ba29fcdad1c91280634f7cf89c1a15312eed6efab04/prowler-3.15.3.tar.gz"
+  sha256 "4452d8bbe2a4c34fe103bd913c6745eb4553f5d5f794bbe177a07f18b235c8d9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "287f392430d9539d402294fdcbc99f6e9166d059e48387e4e5ba830d2afb960a"
-    sha256 cellar: :any,                 arm64_ventura:  "606876ba436aa49bfb61f8f3ebd8b7fdc4b214f5647ac7c61c28dfa0d88b6343"
-    sha256 cellar: :any,                 arm64_monterey: "d2e99d06048ee29cf1abf89f77f752e68551b6b3f8f793bfe0a57bab027f60da"
-    sha256 cellar: :any,                 sonoma:         "728e94383bf4ada653327933ab74c2f17d1695985cd5df787c396eeb809ef287"
-    sha256 cellar: :any,                 ventura:        "cc8f78a0965fbb6e118df0ad56a28838a4bfdea9dcf4f1e243f230c064d9a5ee"
-    sha256 cellar: :any,                 monterey:       "99233d30d62107ac42bf2a61ac797d11e4dd35094d39a02d60ef42970156def0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d023d55c801cbf2a9c949d8ddc6bb6289c98d07f4000007b19e25489efaa7d5b"
+    sha256 cellar: :any,                 arm64_sonoma:   "57d76f0befec9bd404ce5a3ccd8024404d3046ef68b3e764e1c9679eaf8d4f40"
+    sha256 cellar: :any,                 arm64_ventura:  "5308872a9c6d2365a178d770882ace662ebb93dd81d419c1d6a3dc22ac7bbd29"
+    sha256 cellar: :any,                 arm64_monterey: "9bcced2e647cd0d82d1567a166510868ac7193b509134a21da9ab71d87e7bac3"
+    sha256 cellar: :any,                 sonoma:         "de8f802af7087714bb20b0f3438afeedfc1d3b0ba9c45ff92fd61e225dccb612"
+    sha256 cellar: :any,                 ventura:        "ab2abe51165e277a6e3fd95b99202b9c7fceca8ed4caaf9858cd5bd930447ff3"
+    sha256 cellar: :any,                 monterey:       "55bed195c06097bc7692f9e8a1f4d28a714c935c496ee81b4f924e91cb01fb28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62130fba938cfa9d83ee7342aafb1a8d95b844716c3b156f968a92f1cf05db48"
   end
 
   depends_on "rust" => :build
@@ -229,8 +229,8 @@ class Prowler < Formula
   end
 
   resource "google-api-core" do
-    url "https://files.pythonhosted.org/packages/58/e2/c2ce7bf379a7200ecab7de2cbf17dcbb3fe2ab5085925dfe6797e263a475/google-api-core-2.17.1.tar.gz"
-    sha256 "9df18a1f87ee0df0bc4eea2770ebc4228392d8cc4066655b320e2cfccb15db95"
+    url "https://files.pythonhosted.org/packages/b2/8f/ecd68579bd2bf5e9321df60dcdee6e575adf77fedacb1d8378760b2b16b6/google-api-core-2.18.0.tar.gz"
+    sha256 "62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"
   end
 
   resource "google-api-python-client" do
@@ -426,6 +426,11 @@ class Prowler < Formula
   resource "portalocker" do
     url "https://files.pythonhosted.org/packages/35/00/0f230921ba852226275762ea3974b87eeca36e941a13cd691ed296d279e5/portalocker-2.8.2.tar.gz"
     sha256 "2b035aa7828e46c58e9b31390ee1f169b98e1066ab10b9a6a861fe7e25ee4f33"
+  end
+
+  resource "proto-plus" do
+    url "https://files.pythonhosted.org/packages/91/2d/8c7fa3011928b024b10b80878160bf4e374eccb822a5d090f3ebcf175f6a/proto-plus-1.23.0.tar.gz"
+    sha256 "89075171ef11988b3fa157f5dbd8b9cf09d65fffee97e29ce403cd8defba19d2"
   end
 
   resource "protobuf" do

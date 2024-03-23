@@ -1,17 +1,17 @@
 class Gjs < Formula
   desc "JavaScript Bindings for GNOME"
   homepage "https://gitlab.gnome.org/GNOME/gjs/wikis/Home"
-  url "https://download.gnome.org/sources/gjs/1.78/gjs-1.78.4.tar.xz"
-  sha256 "9aec7ab872c2050404907ae94f0ae7abec8a54bd9c894ddb5c2d0f51e932b9a1"
+  url "https://download.gnome.org/sources/gjs/1.80/gjs-1.80.1.tar.xz"
+  sha256 "acfe810ccb1e8e5b43b567ef28575340362eb9c04d140e2605633d74da1d9946"
   license all_of: ["LGPL-2.0-or-later", "MIT"]
   head "https://gitlab.gnome.org/GNOME/gjs.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:  "d88350bddb9aaef1bcf23ab0d4a5fd11c13b288bf73995c6a4003e77ad54b099"
-    sha256 arm64_ventura: "32b5fca08042983e588453ad345605b115f1d14e18df036c142e2be85dabc933"
-    sha256 sonoma:        "1261efe742c5b8ce009258801afe02070e98a0d9206c8a29349330d542468372"
-    sha256 ventura:       "d4ed1e823844542318ea23757d4d6274027dd23b57425fc08727d0b003ae8f49"
-    sha256 x86_64_linux:  "8ac3b5db9e0133953f2b0f80e89835bf5247dec6a81f95f421076d5e376debba"
+    sha256 arm64_sonoma:  "9fbd2b15e1b98c7590dd370deb21db644d2676a831bae75df410092e16450414"
+    sha256 arm64_ventura: "dbf074036561f646a5bc0344d5df9186c273529678fff3ab7d1b68caaf16da12"
+    sha256 sonoma:        "4e9412dc31df82b06d88bc7cb54d1d6d9ffcc6d5dd5c129265786b3fd28feda8"
+    sha256 ventura:       "d29305210a5ed228544d029b667253c7df7364a155dd495845d2882f66d4b6e9"
+    sha256 x86_64_linux:  "0b645baee03ad6e32164fe91105216082dc85fe952becd90f7b578a03c18324e"
   end
 
   depends_on "meson" => :build
