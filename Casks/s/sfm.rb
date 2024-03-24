@@ -1,6 +1,6 @@
 cask "sfm" do
-  version "1.8.9"
-  sha256 "4e883b278f31495168995f654d770d1951505b436b22f1dfda233a3383d120ce"
+  version "1.8.10"
+  sha256 "f05f1fc1bb0a233af22a0027bc94fccde23fbd2d7a90abe38f4ab8e23992b7c7"
 
   url "https:github.comSagerNetsing-boxreleasesdownloadv#{version}SFM-#{version}-universal.zip",
       verified: "github.comSagerNetsing-box"
