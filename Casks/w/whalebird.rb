@@ -1,6 +1,6 @@
 cask "whalebird" do
-  version "6.0.5"
-  sha256 "417548e29b40c4e626cef0c96fd2236017bc60d36534bb374865fc09b4f3555f"
+  version "6.1.0"
+  sha256 "5c835e971b9ac97646e4678ae5de7c9bfe0c01e0380de679a00b628ee4f5466c"
 
   url "https:github.comh3potetowhalebird-desktopreleasesdownloadv#{version}Whalebird-#{version}-mac-universal.dmg",
       verified: "github.comh3potetowhalebird-desktop"

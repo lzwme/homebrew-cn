@@ -617,6 +617,7 @@ Homebrew-homebrew-core/Formula/b/bzip3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bzt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c-ares.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c-blosc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/c-blosc2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c-kermit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c10t.rb, Homebrew/homebrew-core, 1
@@ -5021,6 +5022,7 @@ Homebrew-homebrew-core/Formula/p/protoc-gen-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-gogo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-gogofaster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-web.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prototool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prover9.rb, Homebrew/homebrew-core, 0
@@ -8368,6 +8370,7 @@ Homebrew-homebrew-cask/Casks/f/fx-cast-bridge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fxfactory.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/g-desktop-suite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gactions.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/galaxybudsclient.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gama-jdk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gamemaker.rb, Homebrew/homebrew-cask, 0
@@ -8744,6 +8747,7 @@ Homebrew-homebrew-cask/Casks/i/ipynb-quicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iqmol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/irccloud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ireadfast.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/ireal-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iridium.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iris.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iriunwebcam.rb, Homebrew/homebrew-cask, 0
@@ -11866,6 +11870,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-daddy-time-mono-nerd-font.rb, Homebrew/h
 Homebrew-homebrew-cask-fonts/Casks/font-dai-banna-sil.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-damion.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-dancing-script.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-danfo.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-dangrek.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-darker-grotesque.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-darumadrop-one.rb, Homebrew/homebrew-cask-fonts, 1
@@ -11931,10 +11936,14 @@ Homebrew-homebrew-cask-fonts/Casks/font-economica.rb, Homebrew/homebrew-cask-fon
 Homebrew-homebrew-cask-fonts/Casks/font-eczar.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edlo.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-foundation.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-qld-beginner.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-edu-qld-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-beginner.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-tas-beginner.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-vic-wa-nt-beginner.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-edu-vic-wa-nt-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edwin.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-el-messiri.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-electrolize.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12322,7 +12331,6 @@ Homebrew-homebrew-cask-fonts/Casks/font-jersey-15-charted.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-15.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-20-charted.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-20.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-jersey-25-charted.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-25.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jetbrains-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jetbrains-mono.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13502,6 +13510,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono-derivative-powerline.rb, Hom
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-uchen.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-udev-gothic-nf.rb, Homebrew/homebrew-cask-fonts, 1

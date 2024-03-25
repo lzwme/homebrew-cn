@@ -340,6 +340,10 @@ class Fdroidserver < Formula
   end
 
   def install
+    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
+    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     # `matplotlib` needs extra inputs to use system libraries.
     # Ref: https:github.commatplotlibmatplotlibblobv3.8.3docusersinstallingdependencies.rst#use-system-libraries
     # TODO: Update build to use `--config-settings=setup-args=...` when `matplotlib` switches to `meson-python`.
