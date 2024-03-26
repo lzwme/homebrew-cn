@@ -1,8 +1,8 @@
 cask "font-geist-mono" do
-  version "1.1.0"
-  sha256 "b32e99aa5b5e7828457ce8808e8551a859089aa48d745f1b99b5a43d90dee940"
+  version "1.3.0"
+  sha256 "d6d19b0fc600110cb1595152c803a1f08e258f76637d1509baf76e2e0b9708d5"
 
-  url "https:github.comvercelgeist-fontreleasesdownload#{version}Geist.Mono.zip",
+  url "https:github.comvercelgeist-fontreleasesdownload#{version}GeistMono-#{version}.zip",
       verified: "github.comvercelgeist-font"
   name "Geist Mono"
   desc "Monospaced typeface designed to be used where code is represented"
@@ -13,16 +13,16 @@ cask "font-geist-mono" do
     strategy :github_latest
   end
 
-  font "Geist.MonoGeistMono-Black.otf"
-  font "Geist.MonoGeistMono-Bold.otf"
-  font "Geist.MonoGeistMono-Light.otf"
-  font "Geist.MonoGeistMono-Medium.otf"
-  font "Geist.MonoGeistMono-Regular.otf"
-  font "Geist.MonoGeistMono-SemiBold.otf"
-  font "Geist.MonoGeistMono-Thin.otf"
-  font "Geist.MonoGeistMono-UltraBlack.otf"
-  font "Geist.MonoGeistMono-UltraLight.otf"
-  font "Geist.MonoGeistMonoVariableVF.ttf"
+  font "GeistMono-#{version}statics-otfGeistMono-Black.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-Bold.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-Light.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-Medium.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-Regular.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-SemiBold.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-Thin.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-UltraBlack.otf"
+  font "GeistMono-#{version}statics-otfGeistMono-UltraLight.otf"
+  font "GeistMono-#{version}variable-ttfGeistMonoVF.ttf"
 
   # No zap stanza required
 end
