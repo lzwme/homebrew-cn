@@ -2,7 +2,7 @@ require_relative "..libb2_download_strategy" unless defined?(B2DownloadStrategy)
 
 cask "font-yorkten" do
   version "1.0"
-  sha256 "81f982760c588afb871ff2c340eac4f812aed056aa93a38882efb5fe0aad83a5"
+  sha256 :no_check
 
   url "b2:backblazeb2.combreweryfontsyorkten.zip",
       verified: "backblazeb2.combrewery"

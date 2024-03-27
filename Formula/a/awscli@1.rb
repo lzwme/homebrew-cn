@@ -11,6 +11,7 @@ class AwscliAT1 < Formula
   livecheck do
     url "https:github.comawsaws-cli.git"
     regex(^v?(1(?:\.\d+)+)$i)
+    throttle 10
   end
 
   bottle do

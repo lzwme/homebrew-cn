@@ -2845,6 +2845,7 @@ Homebrew-homebrew-core/Formula/j/jmxterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jmxtrans.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jnethack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jnettop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jnv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jobber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/joe.rb, Homebrew/homebrew-core, 0
@@ -8464,6 +8465,7 @@ Homebrew-homebrew-cask/Casks/g/go2shell.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/go64.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/godot-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/godot.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/godspeed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gog-galaxy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gogs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/goland.rb, Homebrew/homebrew-cask, 0
@@ -11329,6 +11331,7 @@ Homebrew-homebrew-cask/Casks/x/xbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xca.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xcodeclangformat.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/x/xcodepilot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xcodes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xctu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xdm.rb, Homebrew/homebrew-cask, 1
@@ -13949,7 +13952,6 @@ nicerloop-homebrew-nicerloop/Casks/webarchiveextractor.rb, nicerloop/homebrew-ni
 nicerloop-homebrew-nicerloop/Casks/xntfs-pro.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/zulufx8.rb, nicerloop/homebrew-nicerloop, 0
 codello-homebrew-brewery/Formula/extractpdfmark.rb, codello/homebrew-brewery, 1
-codello-homebrew-brewery/Formula/moul.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Formula/srtlab.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/bw-control.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/font-cambria.rb, codello/homebrew-brewery, 0
@@ -13981,7 +13983,6 @@ codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-deluxe.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-manager.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/yamaha-steinberg-usb-driver.rb, codello/homebrew-brewery, 0
-codello-homebrew-brewery/lib/auth.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/lib/b2_download_strategy.rb, codello/homebrew-brewery, 0
 shivammathur-homebrew-php/Formula/php-debug-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php-debug.rb, shivammathur/homebrew-php, 1
