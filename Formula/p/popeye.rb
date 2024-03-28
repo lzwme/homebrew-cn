@@ -1,18 +1,18 @@
 class Popeye < Formula
   desc "Kubernetes cluster resource sanitizer"
   homepage "https:popeyecli.io"
-  url "https:github.comderailedpopeyearchiverefstagsv0.21.1.tar.gz"
-  sha256 "1b4bd3e4fe5cb8922cdd1090fb186ec733e27b53c2d3d89abaed0c029bc62a11"
+  url "https:github.comderailedpopeyearchiverefstagsv0.21.3.tar.gz"
+  sha256 "9f8f5b46a942ec7fcaf777ec7f16e6d64317cfdc7080e3d637018d778656ee94"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f2f8ef4802aeca92d9c9be3885f214bda0ee532423d84841207420ac9eeb209"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c198fe4076c13f1e3a80c12da9345bd7f8b4763589f60796f4a122d5c7e6ddb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e34dcfe809282d84ab8cdf59083660c990bf6e3bb5ed54b999851100a43f522a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9a7b8850a68f8fa3f1e025dd615336e5cd7f964f10c2d7b7a94947e0b85d9cfd"
-    sha256 cellar: :any_skip_relocation, ventura:        "bbaa946606ff2e5d48e2088493a0c1a28df7d695bb7f150527428c955aff7d12"
-    sha256 cellar: :any_skip_relocation, monterey:       "404ecf8f034419e5f2913844b5ca4807db11b35bb0b926516653c42acfddc516"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cb6856e27992163e7e20313029bf4ed5da401704d5e998b8fa110f5d5747758"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc9b26b43fc91067ebf4a5c39e0326fa77637ec4f0b3d6cd44e543bb7f2e94fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2240a4317ad953f08642deed1e4155aceb921bf2b2b8a6d3adb58b2602b7240c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73efd455efcb25766afadee9ea50286fe0598cd53adec7b31eacf7e5b4d35d30"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1915c4db3a9e5a51ab8cfad694f5bb93a1b21c5ad4816734edbde9fa5f0d618c"
+    sha256 cellar: :any_skip_relocation, ventura:        "612214672ece1851568821efbabd314cb96cc293c686c9723578dcf333e915fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "45d5ea2df07c4706c6d3cbe1826a58014e6be8384e6c3d155f997276f2ddc05d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "766e4649aabbed1589d86a72a8f9f53bcdf5139195f71aac9ea871f4a573ce78"
   end
 
   depends_on "go" => :build

@@ -9084,6 +9084,7 @@ Homebrew-homebrew-cask/Casks/l/loom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loopback.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/losslesscut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lotus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/loungy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/loupedeck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/love.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/low-profile.rb, Homebrew/homebrew-cask, 1
@@ -10030,7 +10031,7 @@ Homebrew-homebrew-cask/Casks/p/protoio-overflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protokol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-mail.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/p/protonmail-bridge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/protonmail-bridge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/protonmail-import-export.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonvpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protopie.rb, Homebrew/homebrew-cask, 0
@@ -11007,7 +11008,7 @@ Homebrew-homebrew-cask/Casks/t/turbo-boost-switcher.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turtl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tusk.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/tuta-mail.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tuta-mail.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tuxera-ntfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuxguitar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tv-browser.rb, Homebrew/homebrew-cask, 0
