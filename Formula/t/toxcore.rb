@@ -3,20 +3,19 @@ class Toxcore < Formula
   homepage "https:tox.chat"
   # This repo is a fork, but it is the source used by Debian, Fedora, and Arch,
   # and is the repo linked in the homepage.
-  url "https:github.comTokTokc-toxcorereleasesdownloadv0.2.18c-toxcore-0.2.18.tar.gz"
-  sha256 "f2940537998863593e28bc6a6b5f56f09675f6cd8a28326b7bc31b4836c08942"
+  url "https:github.comTokTokc-toxcorereleasesdownloadv0.2.19c-toxcore-0.2.19.tar.gz"
+  sha256 "8b418f6470db085cf59a9915685613556556df2bf427148f1814b7b118628594"
   license "GPL-3.0-or-later"
-  revision 2
   head "https:github.comTokTokc-toxcore.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e970ecd155d6e65fdc327afb6f35048c53f8e78a896e268bc97e1c53365430ce"
-    sha256 cellar: :any,                 arm64_ventura:  "83142dfc025243981093b3fc6bee44be73b9c3050b9d1f5a40ef3b7920fb5775"
-    sha256 cellar: :any,                 arm64_monterey: "38c3e60372ce9ce1b4d4cbaf1dba6bcd83237fcae2de5fc333830dbfd3555cc7"
-    sha256 cellar: :any,                 sonoma:         "fdf422e77dbba5bad498a305dbcae5b8a2917c525e4fbd8a52406a3519cdfc0b"
-    sha256 cellar: :any,                 ventura:        "4386814e7f8fcd090c58e1e329d63383407fb8b5389917bf4413af9cf5b7ffb7"
-    sha256 cellar: :any,                 monterey:       "3fa8b26eb52818e128cf62441cf6fbe025034472bc0953d5e70fa138f3995216"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd442a9f9a372103190e5d6490cf84de89632e0fb656c8bbd38fe1d38042ccdb"
+    sha256 cellar: :any,                 arm64_sonoma:   "30300b815fc78338acd0212162d90350e4df76fd1316e3949d5ee4a70f118f0f"
+    sha256 cellar: :any,                 arm64_ventura:  "11b04f785c0d8b0a37aa08c3552135550fd14c49162ad00fa4062c7548a6a36a"
+    sha256 cellar: :any,                 arm64_monterey: "dd944ecb1a42d3b983bb829599ce4a313ca2960f9e8d11e5e415d9ff09ff0b4c"
+    sha256 cellar: :any,                 sonoma:         "afd20cc220e1f69c5ad5774d5e26705398ad07ff26a21920041300aced468a30"
+    sha256 cellar: :any,                 ventura:        "4e55959905584119032dd94df6c00a50dce07917d38043767f34693b0a41fab4"
+    sha256 cellar: :any,                 monterey:       "178acfc2f014001508a1cba3040a7ed8fa0d2f49c078fe031027e2110aa62b99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2435483d57733f5aaf0d3222f8709013dc98bb778c89be1c6c0477954b8b686c"
   end
 
   depends_on "cmake" => :build

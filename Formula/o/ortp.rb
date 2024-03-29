@@ -2,6 +2,7 @@ class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https:linphone.org"
   license "GPL-3.0-or-later"
+  revision 1
 
   stable do
     url "https:gitlab.linphone.orgBCpublicortp-archive5.3.37ortp-5.3.37.tar.bz2"
@@ -17,13 +18,13 @@ class Ortp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ecb5847597db294ba548278e3d67daa25ffd5c0a0532b3e1f6e1d0d1d2ecd62f"
-    sha256 cellar: :any,                 arm64_ventura:  "bf9782982c090eae8a2c7bf082690cbd0b48a6c1fa4870e9e0fa2bbb5687779c"
-    sha256 cellar: :any,                 arm64_monterey: "14c07ce50dddb8bf0d15787270225fa64a94140fd8669f70008c3e0705d4a487"
-    sha256 cellar: :any,                 sonoma:         "9c5e1d2f66e1b605391ec5f2c56a32f5449e32aa9c84a9937ef8293b37064b83"
-    sha256 cellar: :any,                 ventura:        "d8e5f1f5e6bb5e50daa91ee0e7ff506b9b62c8a9b4bef0f18823c2e13dcdba35"
-    sha256 cellar: :any,                 monterey:       "58b64c4f612de61d43143ff697f53982b7afe65ba450c5b8ff8066681227a697"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15446d2702eba2c6e1416820c555f1635bfcff107bf08beed59678e66e3f1aea"
+    sha256 cellar: :any,                 arm64_sonoma:   "db6e4d66f4219d9f2807ad837ded6c5790af69779933815aec4ac75cc1f1793b"
+    sha256 cellar: :any,                 arm64_ventura:  "ea59493da780263182559c7b77808ca938c8e039251d7d0f88692e61866b84e3"
+    sha256 cellar: :any,                 arm64_monterey: "cca66e6d7481668fc66ac63ce9b46fec6360c20e9bc2a9efb5ef3368828cb9eb"
+    sha256 cellar: :any,                 sonoma:         "d7a46f90f47b9e479fa4a936f36fb3acb5f5f701710e5e685e3a3ad7c6b384ea"
+    sha256 cellar: :any,                 ventura:        "688700cc8b4a575cc7437305cd78ba783d6548282672fe86576b664061821664"
+    sha256 cellar: :any,                 monterey:       "06b917d4430b47775f85572e39606da267d0588a1d3b2eefd40a35c733f19fa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81b6c241ba758796487a96cabde3d09ce8876b427124c8e0900d42e7732116e7"
   end
 
   head do

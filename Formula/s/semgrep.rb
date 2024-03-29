@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.66.2",
-      revision: "b4ff22a91dc40b8b29abd3474019abc296a693e4"
+      tag:      "v1.67.0",
+      revision: "31a42ecc4cdb40b44b20295433b19f9dc2035d76"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1eb07fd86c6889a8a4e831830442a2723ed1dfb8bbf3b4ab9c5014f936df0b4d"
-    sha256 cellar: :any,                 arm64_ventura:  "076af5a2953404d074195abbc95b1f7ec4a926a5c3fb829bc78bc474f0b97f24"
-    sha256 cellar: :any,                 arm64_monterey: "3108a83afb1f60d92c3714af48f14f58b141dc2e3af7be1c11a7dd15e94c468d"
-    sha256 cellar: :any,                 sonoma:         "f1718cf32d21503394a03a25c700e5f47656d3dbbd006b5d1a4fef646c99d7e1"
-    sha256 cellar: :any,                 ventura:        "7182ddeeaa86bfe3cc3ab6ad61df3d97c82b999ba9cff0712dc2119be32bb481"
-    sha256 cellar: :any,                 monterey:       "1a72e5d34f19dbffd559d838d6b80956c4f29e2d4a06ef918b86204d23b7bfa4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31bc6e17d9483e91c35851709bed22eb9607dc21b2dd30506dbefe1cbe8b5667"
+    sha256 cellar: :any,                 arm64_sonoma:   "f692620c7eb003e2f60a35a0e6bb16e7ceda5a249c82c98d1df3a21f5be31164"
+    sha256 cellar: :any,                 arm64_ventura:  "9a01747fe270b871fe3f3c7e3c9cbeb3e18a7eb5ff1721da830883c84ce05027"
+    sha256 cellar: :any,                 arm64_monterey: "9d675e56b01d4f3e44a4426577457833de93a2e5547f692e620bf5392d5f1110"
+    sha256 cellar: :any,                 sonoma:         "ddea21baf1cb7ad2e56380170000c4f28576d9ba30ca2b5a507544906e90d0d9"
+    sha256 cellar: :any,                 ventura:        "28cc2e2c79a531edcf5295a129974d24c842ba77c648a3d61b80e91748afb493"
+    sha256 cellar: :any,                 monterey:       "c40937c58b75286e16ed3a1c12b68e662085b16f19c8b42aac2c313fb33e6054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06005de8e2efa51a96d51af23c5506ffb3ba60747a28187a45bf1d0b5cad45aa"
   end
 
   depends_on "autoconf" => :build

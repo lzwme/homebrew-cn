@@ -4,6 +4,7 @@ class Gauche < Formula
   url "https:github.comshirokGauchereleasesdownloadrelease0_9_14Gauche-0.9.14.tgz"
   sha256 "02928f8535cf83f23ed6097f1b07b1fdb487a5ad2cb81d8a34d5124d02db3d48"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,13 +15,13 @@ class Gauche < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "fe92c5b0de6d21d096fa0456cdba79b34528c1e8405cf20dbe9d8c600e3200e4"
-    sha256 arm64_ventura:  "406542d6e05748b2521e0c39b953b0ac5dce067f9f44a4ba9a1b24dc9df592a9"
-    sha256 arm64_monterey: "99caf80d561bca4d7064a689fc029636764fa3241e3d32c5a903ebb7b91c5e9b"
-    sha256 sonoma:         "83343e62257a97eade0c710332b5127fbb346794fa0ea04a901bf9b0f92c3fbd"
-    sha256 ventura:        "4626fcb7cf265ad415ccfeecc4487628140adef8838e5101d3b553023c37ce2d"
-    sha256 monterey:       "d391026d354b14c2f58f2719818d326e1277953924db00602a42ce8b89d1b2ca"
-    sha256 x86_64_linux:   "1e0872e05354767fd1caec475859f42ba1fa2fe4196256b2f9fb637de07a9a99"
+    sha256 arm64_sonoma:   "04592dfe5ce34a900e98cab2a165ea019c9d040c9dedf8381a67f86cb0e68e01"
+    sha256 arm64_ventura:  "d4616d3eeb47eb9f0d14717aea03274dd0226946fa171acbee00445d45631c70"
+    sha256 arm64_monterey: "46a69bae57af115c22ab25be694abf182f6751685cc3641ea600d21b3b075be3"
+    sha256 sonoma:         "e1dad85e4e8422d54f8b984df724361d51c37b430a5863c9490e42ceacb9be72"
+    sha256 ventura:        "eedceba1454dd4ab3439cd8a8cd00a99ee14be22c74cddfce6f18bf8f0edfc24"
+    sha256 monterey:       "623c7186d3e6eaba14abe03d171ac9b42afbd186ff35cf20f3770b1f7e092e9b"
+    sha256 x86_64_linux:   "a89d37c1913c8f068a1fc3e0489401b461480eac6c898b01cdcccf57cc23338a"
   end
 
   depends_on "ca-certificates"

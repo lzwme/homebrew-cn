@@ -3,20 +3,19 @@ class PythonBuild < Formula
 
   desc "Simple, correct PEP 517 build frontend"
   homepage "https:github.compypabuild"
-  url "https:files.pythonhosted.orgpackages55f77bd626bc41b59152248087c1b56dd9f5d09c3f817b96075dc3cbda539dc7build-1.1.1.tar.gz"
-  sha256 "8eea65bb45b1aac2e734ba2cc8dad3a6d97d97901a395bd0ed3e7b46953d2a31"
+  url "https:files.pythonhosted.orgpackagesce9e2d725d2f7729c6e79ca62aeb926492abbc06e25910dd30139d60a68bcb19build-1.2.1.tar.gz"
+  sha256 "526263f4870c26f26c433545579475377b2b7588b6f1eac76a001e873ae3e19d"
   license "MIT"
   head "https:github.compypabuild.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a7cf2f0431b83814aac5d459f04fe5fae420fb990933bf695c6c29f478a1e002"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7cf2f0431b83814aac5d459f04fe5fae420fb990933bf695c6c29f478a1e002"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7cf2f0431b83814aac5d459f04fe5fae420fb990933bf695c6c29f478a1e002"
-    sha256 cellar: :any_skip_relocation, sonoma:         "12f4cb17cda361497cffbd7dcdf81e497a56aef12359f83570b2fbe29ef2cfce"
-    sha256 cellar: :any_skip_relocation, ventura:        "12f4cb17cda361497cffbd7dcdf81e497a56aef12359f83570b2fbe29ef2cfce"
-    sha256 cellar: :any_skip_relocation, monterey:       "12f4cb17cda361497cffbd7dcdf81e497a56aef12359f83570b2fbe29ef2cfce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c20c6e2a28bf1e786ad3b488afd089d7a54d6859182181cd2746ce08d535e6d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a02b06273633d165aeb7f3a6f9c799c688e95a3e0e6a99dff4447c0d174b49c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a02b06273633d165aeb7f3a6f9c799c688e95a3e0e6a99dff4447c0d174b49c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a02b06273633d165aeb7f3a6f9c799c688e95a3e0e6a99dff4447c0d174b49c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "40ca53f82b413997243774f2adf79eb0baa6900d9ed6db87c4269fa8d43f1908"
+    sha256 cellar: :any_skip_relocation, ventura:        "40ca53f82b413997243774f2adf79eb0baa6900d9ed6db87c4269fa8d43f1908"
+    sha256 cellar: :any_skip_relocation, monterey:       "40ca53f82b413997243774f2adf79eb0baa6900d9ed6db87c4269fa8d43f1908"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f685d6de8ad4b0d9779ea800b6c3b4a5f7af3caa5d4b8ea8064dff279fb6906"
   end
 
   depends_on "python@3.12"

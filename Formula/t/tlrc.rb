@@ -1,19 +1,19 @@
 class Tlrc < Formula
   desc "Official tldr client written in Rust"
   homepage "https:github.comtldr-pagestlrc"
-  url "https:github.comtldr-pagestlrcarchiverefstagsv1.9.0.tar.gz"
-  sha256 "d58977a3239538ddaf8b02a54de867a8ac670c2e5770c85f867d54a2c35b016e"
+  url "https:github.comtldr-pagestlrcarchiverefstagsv1.9.1.tar.gz"
+  sha256 "73c8e48f2c2e2689c47b1ef32406267e0557561996517773ad1d99a3b05435f3"
   license "MIT"
   head "https:github.comtldr-pagestlrc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "38212e187ee13fa71c5b632fbf3e28739cea778cf9a2913675be2e4f6413dff0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb9419d545f1c305f9127b09e4dddd9a70b4b82dca9c9d5e4abc9e6825d1f0b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2afb6df9144132962df3b8ffd2db3e156242d9c8b8a17b85e7a39a04565cdbd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8d8ccb40013ec620c75881838951a7ac69f2103767c83e4ed4bd90e7c692bc7f"
-    sha256 cellar: :any_skip_relocation, ventura:        "c58664e48165acace7d4e636a1f925805a9a859b7c15fa83f95a2d47bab28e86"
-    sha256 cellar: :any_skip_relocation, monterey:       "55c8a7279a52f1b8978a3c2f381a84d91f3ccb2ddd879e8bfd5cd9774b0d2202"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e4487720f752310fd90ff1a1cb6da1ac18b83554fbcb234ab59d934e28123ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb557d91774f7b0384bdcc7f354eafa5b8b5371f0234e4a90c466ddea01dd6f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3d31387750b87d73c0f79ad5c97014ced01efef1ffedb55e84a751e15425321"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3fce31d2900e4eb2d522dae7925fd517fb80452bda38af9ba51ba05cada3b91"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02047ff55ab1579734f60e035ef95bca13f92da9950edc7b894401dab81cc0fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "7206b200f5d6151cf6710443d37dc726711fe2132b881429caa0cf0e39c743fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc8473550cca6553595f3b689c394f1c1c35e95f1a7267bcde1ec756fae0ff79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a0bbb84f2871477f94b6e6157ac7f9cf719f807b82e561989be14744b3fc733"
   end
 
   depends_on "rust" => :build

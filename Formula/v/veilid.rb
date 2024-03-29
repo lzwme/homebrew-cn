@@ -1,19 +1,19 @@
 class Veilid < Formula
   desc "Peer-to-peer network for easily sharing various kinds of data"
   homepage "https://veilid.com/"
-  url "https://gitlab.com/veilid/veilid/-/archive/v0.2.5/veilid-v0.2.5.tar.gz"
-  sha256 "167c9a140aadc69d02a292d79edf949027d70a02985a860f0068adef914341df"
+  url "https://gitlab.com/veilid/veilid/-/archive/v0.3.0/veilid-v0.3.0.tar.gz"
+  sha256 "9b9f888d57ba5e371fe931361ac0c4afe1e7b6a3ce4fe7c0f744f2dec5421cdb"
   license "MPL-2.0"
   head "https://gitlab.com/veilid/veilid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4af59cf1c45d697760a57fd067a2481c054e9cc3308dd897710394e58429f37e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f82fb89e37207ca4e33848df1ac88aa2310e913c268d972469a27ab65a15ac3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d90a504c2891dee26c2a774bad92b7d1bc9ba26b187292156a2b039c79bf1812"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6aa96311b4cff90ce917451abb0a0f018fa8f3ad2f5beca78f240734ecbdc153"
-    sha256 cellar: :any_skip_relocation, ventura:        "d5b6a3a46bc3b81553b6194660c68d4bd20b9f09beaf794953facecacf7f9df4"
-    sha256 cellar: :any_skip_relocation, monterey:       "03e842aaad66d915437efc8828437f5c92ab62e1834e832c70d02c9ec7097b0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3eabb1ad8a40ec4de9935563d716367fbb42ad7ed8e0c78ea44bc8b05bb075f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbabf7a7a25e71201c63833657ce97ad4adf56222440b9cf0e7efe229fa62a1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca7c896225086c0deaaccfdb5a5fc225d3c95cbcf443419e40f3220afa194b19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "635b9f52fd491f24789e14b153253bf4f9fd98412751f93890b4649e70741530"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91e95db22e2c2ead8322c63db98795c59fe036b11748e2f8ea8cf740ab2adade"
+    sha256 cellar: :any_skip_relocation, ventura:        "af2f63f143f0e780aab3c1548eb79dcc3ee3a108e480e9033cdad5bcf96c091c"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4e4372922adf7955a03506f4b160187a9ab10261ed8dc8cf1f435103ce8cde6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6c2ae1ca0b9a5d2afd2d7cf726a954cea96ad19f03f59d1c623faedcb36523d"
   end
 
   # TODO: Remove `capnp` dependency once version >v0.2.5

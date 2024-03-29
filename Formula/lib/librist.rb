@@ -4,6 +4,7 @@ class Librist < Formula
   url "https://code.videolan.org/rist/librist/-/archive/v0.2.10/librist-v0.2.10.tar.gz"
   sha256 "797e486961cd09bc220c5f6561ca5a08e7747b313ec84029704d39cbd73c598c"
   license "BSD-2-Clause"
+  revision 1
   head "https://code.videolan.org/rist/librist.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Librist < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a137368d63a4112828b2f8536e8ac419e5cc1fea7d829160366c0be7fee4d269"
-    sha256 cellar: :any,                 arm64_ventura:  "0fbf53eef9ff1e01ef086ef822f50e76502371f60c1aef285dc9f044ef58e491"
-    sha256 cellar: :any,                 arm64_monterey: "625d0cf67b82ec6e975ed740ba1d44b6545858b80518da9fc6949ff51cc063b2"
-    sha256 cellar: :any,                 sonoma:         "7a14f013c77cc1e7ee5374d1f3356e2b0e667f2cbe23d62cb04cbd2355f62714"
-    sha256 cellar: :any,                 ventura:        "210c5820e8ae2d4af924419051c03f1acbacb9ff1046cc0cf1be86547b22fc2e"
-    sha256 cellar: :any,                 monterey:       "b209c7a34ec23eff152b023d9d8408c17452c8189f794556b994942538b6c337"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "012694034be33f28319212b1bcc51a6f6eb55b9b64b742a6d577f10281acb8f8"
+    sha256 cellar: :any,                 arm64_sonoma:   "a008dc6bced0ba4ac31a79da417afa539d4ab0d25b9d22769ea396a17b355c8c"
+    sha256 cellar: :any,                 arm64_ventura:  "0033aff814342a0a4900ea6914411e7a9b506c938038017aa49f197c33283bd2"
+    sha256 cellar: :any,                 arm64_monterey: "2604a28b6b7cec24badaf0ea472cae1b3524fcf1a082098394279867e5ad30ee"
+    sha256 cellar: :any,                 sonoma:         "323c1b0e5a44a85657052208a0ed481a0a7aba20ab8e2d06c7e3fb5593c4cc4e"
+    sha256 cellar: :any,                 ventura:        "cb36444b6c786bcfbbe40af9579f68a88e153e5d8192b8f55a8a8d6f0d5b4c4f"
+    sha256 cellar: :any,                 monterey:       "c89029f1a47bae2ef37f7488942a86da57e2d49048f385df1442ee666f90a24e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d94498117f55c482ad621f50696c9592e8d7226ed92ef8d3028faf0afd3a69fc"
   end
 
   depends_on "meson" => :build

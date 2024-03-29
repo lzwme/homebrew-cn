@@ -1,21 +1,19 @@
 class Coreutils < Formula
   desc "GNU File, Shell, and Text utilities"
   homepage "https:www.gnu.orgsoftwarecoreutils"
-  url "https:ftp.gnu.orggnucoreutilscoreutils-9.4.tar.xz"
-  mirror "https:ftpmirror.gnu.orgcoreutilscoreutils-9.4.tar.xz"
-  sha256 "ea613a4cf44612326e917201bbbcdfbd301de21ffc3b59b6e5c07e040b275e52"
+  url "https:ftp.gnu.orggnucoreutilscoreutils-9.5.tar.xz"
+  mirror "https:ftpmirror.gnu.orgcoreutilscoreutils-9.5.tar.xz"
+  sha256 "cd328edeac92f6a665de9f323c93b712af1858bc2e0d88f3f7100469470a1b8a"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "a37cf7152382ee80a7e4f6cb318929c4dd213d8367607e0b6dbf56762883ec29"
-    sha256 arm64_ventura:  "3707a17440f54975e547469c1309b2f260ef4bfc5c2c53ddc22998ae3a7fbe19"
-    sha256 arm64_monterey: "e4e7b23c4426f5e7902cabb6a2eae635e78460ebb16a8473a25f519955302c5a"
-    sha256 arm64_big_sur:  "37fc8c6586e633c1a8277bc0ecb9893b7d170709f0fc1e7e36bbb00abd14fcc7"
-    sha256 sonoma:         "c1be62140384a011c75ba6395c6bae84f07d655624014f415354375e1dd0173a"
-    sha256 ventura:        "5f03b30eff5c9cd0bc74bb429059f9b9d7af4edb8e6b80b52228b0bf35d53197"
-    sha256 monterey:       "ec46f14061242a7439e7fbb1e328b3e1dccfec465425aaf25aa4b4fe5363f95b"
-    sha256 big_sur:        "6504082e9752f7a37fd9d02b5f31a5fe68342526f31a774ce7cda90dc189c97f"
-    sha256 x86_64_linux:   "362b7fcf429b62749f37056d1c8de07dfd6a7a5445eb6eec8f1f64a07a87c1d5"
+    sha256 arm64_sonoma:   "b2c643420d7d9de89385d86e0c3f5e9f9ae2404ce378db574dabbfce3ca37a91"
+    sha256 arm64_ventura:  "0f889fb75ebc8e96aa1f38aff6ed1bc7e87c45b70f7644c7e1492f1f9480f352"
+    sha256 arm64_monterey: "43bb62929309c51bb600e0d156b107ef147094445b29ada1387c222d9a2465c4"
+    sha256 sonoma:         "19eccdcccfcacd67000acf89e3261174dfe30b0a764d10ccc39be82a4b37c0a5"
+    sha256 ventura:        "7c8c3c6eab6032c379bb7266bf78e25b3b3d38d167c4eee92a7c023b131b86e0"
+    sha256 monterey:       "44ce33f1d4d73b54bf312f48c9d93bd7a186f4ce1adc004c9f3168da004eee6c"
+    sha256 x86_64_linux:   "e48884f502b3236e747b1280d5373d058b4bb47f872c99533d90ba2e730f3266"
   end
 
   head do

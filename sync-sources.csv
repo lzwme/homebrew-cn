@@ -1314,6 +1314,7 @@ Homebrew-homebrew-core/Formula/d/diskonaut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/disktype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diskus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dislocker.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dissent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distcc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distribution.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distrobox.rb, Homebrew/homebrew-core, 1
@@ -9078,6 +9079,7 @@ Homebrew-homebrew-cask/Casks/l/logmein-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logmein-hamachi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logos.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/logseq.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/lookaway.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lookin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lookingglassstudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/loom.rb, Homebrew/homebrew-cask, 0
@@ -13980,6 +13982,7 @@ codello-homebrew-brewery/Casks/lilypond-font-ross.rb, codello/homebrew-brewery, 
 codello-homebrew-brewery/Casks/lilypond-font-scorlatti.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/lilypond-font-sebastiano.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ovftool.rb, codello/homebrew-brewery, 0
+codello-homebrew-brewery/Casks/seadrive@3.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-deluxe.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-manager.rb, codello/homebrew-brewery, 1

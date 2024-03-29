@@ -3,19 +3,19 @@ class Pdfalyzer < Formula
 
   desc "PDF analysis toolkit"
   homepage "https:github.commichelcrypt4d4muspdfalyzer"
-  url "https:files.pythonhosted.orgpackagese85ff899a7ada8e2f7a86434df93e76d2c683490af7ca021c1604b8bdace3835pdfalyzer-1.14.8.tar.gz"
-  sha256 "7e1fc41d38e301ec4d86e4ad820ffaed32800bcb3bcac131329869e4084eb199"
+  url "https:files.pythonhosted.orgpackages3247d3a9c54a82c38fe33ca13a9e0264024986028773990028eea7a774481703pdfalyzer-1.14.10.tar.gz"
+  sha256 "49b641438dc5d3731d66ca478f4b781e5dcbf98569c25613453c92531aeeb08a"
   license "GPL-3.0-or-later"
   head "https:github.commichelcrypt4d4muspdfalyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bc802804ca9ecd1622d9bce046abf352bdb2dba2e38ea46f6b40f8bf694f3ca2"
-    sha256 cellar: :any,                 arm64_ventura:  "1523cf9a931b6f317f10eef844458f6f51e4ab7d04fa15b7efe1f84c0e31a415"
-    sha256 cellar: :any,                 arm64_monterey: "fa15ceb4d2856ccb2cebbb5965afddc56ee5710071365545e7a717291d8dedc4"
-    sha256 cellar: :any,                 sonoma:         "00563988d97b95348570b8e3bbaa471bdf2a3396a5349aafbad3dc8092c1523c"
-    sha256 cellar: :any,                 ventura:        "cab9cb4dc3fce05d03e16d147bffed12de204ffe2ba4042b85de96079477bfec"
-    sha256 cellar: :any,                 monterey:       "47479969403d05e31fba170a27f0b3267334057c4577ddd3bd3e7661e3124821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9015dfc8cf91ec33766d28923a72a053145f7b1f3a4a1bf4cb0b36e873cda248"
+    sha256 cellar: :any,                 arm64_sonoma:   "5be32900ac5dc375d046b0269d280ec5f81efe95f0e2c6569590b8af2dcd1869"
+    sha256 cellar: :any,                 arm64_ventura:  "ab9f85d274eb9bc915aa99095c6377e8c0dcf27d437ced9440a6647444049fa6"
+    sha256 cellar: :any,                 arm64_monterey: "31b83f8119631af150adb171eaa0edf14d9ccb6a2a8813344f5e6a00e9b0f680"
+    sha256 cellar: :any,                 sonoma:         "b688140e012d49f1b17196dec0ca874eaba9b0ffa10d1186050d565610ce8663"
+    sha256 cellar: :any,                 ventura:        "48eaf3e9220ac8e166c73851513b71bf384f70a0c8260a51282c6708987131a4"
+    sha256 cellar: :any,                 monterey:       "3f672ec4efdf5ce1b0553be6f2082afc2ca71f42dc01b82cad97d17543615e9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe4260009dc7e902f8d0fb56722e100b7600dc50a56fd97bfc4ee8d30a6963b3"
   end
 
   depends_on "python@3.12"

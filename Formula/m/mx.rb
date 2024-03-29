@@ -1,8 +1,8 @@
 class Mx < Formula
   desc "Command-line tool used for the development of Graal projects"
   homepage "https:github.comgraalvmmx"
-  url "https:github.comgraalvmmxarchiverefstags7.9.2.tar.gz"
-  sha256 "5cf58821b073f52fac539687aea6c0c8229e01c8096a8a7f4047b4bf222d0eed"
+  url "https:github.comgraalvmmxarchiverefstags7.16.3.tar.gz"
+  sha256 "b485230429f0a460653ee94236d5b1d09298f004064e819a53abfb4d67035a96"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,7 +11,7 @@ class Mx < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5d13acd2080b142ea49dc2166d1aceeccbf5f9990eb07bcfcbbb91afa8ddcf16"
+    sha256 cellar: :any_skip_relocation, all: "5fadf0cd7da5cabb242fa6212e12ba9dc3719a068e925ae16ada10ed14740af9"
   end
 
   depends_on "openjdk" => :test
@@ -26,7 +26,9 @@ class Mx < Formula
   def post_install
     # Run a simple `mx` command to create required empty directories inside libexec
     Dir.mktmpdir do |tmpdir|
-      system bin"mx", "--user-home", tmpdir, "version"
+      with_env(HOME: tmpdir) do
+        system bin"mx", "--user-home", tmpdir, "version"
+      end
     end
   end
 
