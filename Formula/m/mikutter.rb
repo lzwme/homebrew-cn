@@ -1,8 +1,8 @@
 class Mikutter < Formula
   desc "Extensible Twitter client"
   homepage "https://mikutter.hachune.net/"
-  url "https://mikutter.hachune.net/bin/mikutter-5.0.6.tar.gz", using: :homebrew_curl
-  sha256 "078944d3790679d8d91c4f4fd006ec66aa71adff2686c969c20b87faff82de08"
+  url "https://mikutter.hachune.net/bin/mikutter-5.0.7.tar.gz", using: :homebrew_curl
+  sha256 "34dcabb98572c5c3b5707ebdee41019bf277fa3e20f7e061088b5b1d1aaea39a"
   license "MIT"
   head "git://mikutter.hachune.net/mikutter.git", branch: "develop"
 
@@ -12,13 +12,13 @@ class Mikutter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c1b732ce1d7dedc6c57fe9a25406987dccefa25e081710c2683a5a2e1be1f0a5"
-    sha256 cellar: :any,                 arm64_ventura:  "a8fa0a861d63e27f8ae2d31044d33aca0f2a9c0fb8d6697e6b3c0bc863ee41ea"
-    sha256 cellar: :any,                 arm64_monterey: "9d8d9287e20580c0a18d5734ded6ec4d12a6d61c2c8d4d90f06f9c681703d3d2"
-    sha256 cellar: :any,                 sonoma:         "4b94d2cd22ca6df472e12b3cd2777e4d4e6d0abaeecd74f7cafaa7852ae0fba4"
-    sha256 cellar: :any,                 ventura:        "c6b2bf7bdc6727689f0b2eafef7b8cabcf195c1bc7e38a685ee9ada254893675"
-    sha256 cellar: :any,                 monterey:       "db28c9928c925451b84f7c5f6fd147ae0bdd619df903b677c2841a833b40fd64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e87ded60e6d201e5ff577c2a7eec7330e1ab2f5a358f0010a0b2352d5e2a2c22"
+    sha256 cellar: :any,                 arm64_sonoma:   "874e909394bbcd628880b9ecb1c24bbdcd742f4e9bf70b0124ffc9406a03a530"
+    sha256 cellar: :any,                 arm64_ventura:  "3fc62fdf24d802bed6844898757ea6c3ad41199bce35d7695cfcfc18dff2129f"
+    sha256 cellar: :any,                 arm64_monterey: "4699f159d4c7e93dd620bbf19cbd3a24d3a98be7aeffa1931463c3ec61cbd980"
+    sha256 cellar: :any,                 sonoma:         "175463dd78b4438c99e02707a6ffc2b51cd99133975057274c00a8db3d73a7cf"
+    sha256 cellar: :any,                 ventura:        "1ad8bc7f0a40476f9818fc27546d17fa6ce1238b29b8450c7755e653af7d48aa"
+    sha256 cellar: :any,                 monterey:       "9b996455b9139e9a05a5e192a6bc3afd60163657f8dad6547b8d26ea678e2965"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fb63d053caabda978ef73ca377addc05ae0d51b8eccb4c9b8ac1daef02d8e8a"
   end
 
   depends_on "gobject-introspection"
@@ -195,8 +195,8 @@ class Mikutter < Formula
 
   # needed by atk
   resource "rake" do
-    url "https://rubygems.org/downloads/rake-13.0.6.gem"
-    sha256 "5ce4bf5037b4196c24ac62834d8db1ce175470391026bd9e557d669beeb19097"
+    url "https://rubygems.org/downloads/rake-13.1.0.gem"
+    sha256 "be6a3e1aa7f66e6c65fa57555234eb75ce4cf4ada077658449207205474199c6"
   end
 
   resource "red-colors" do

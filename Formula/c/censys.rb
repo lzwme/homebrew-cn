@@ -3,27 +3,26 @@ class Censys < Formula
 
   desc "Command-line interface for the Censys APIs (censys.io)"
   homepage "https:github.comcensyscensys-python"
-  url "https:files.pythonhosted.orgpackages64e260e8e2922e64ba38de3948c1ab04cdca6698920bc98d13637f77a259ea08censys-2.2.11.tar.gz"
-  sha256 "d4e161e3085800c0f9b6ff6cc035a7727ff525135cdde62ff01e32eb371c5773"
+  url "https:files.pythonhosted.orgpackagesd1219797900ebbed0fa2c961b2432a1c9cf9e41bbd6e8902debcf22ad9473d31censys-2.2.12.tar.gz"
+  sha256 "da75c2e37f064b9ffd579650217cb8d3f129048949f997acee31a0cb34b6e0dd"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "951772b327d043644e641f9d1a3c3bb3dd286960e2ea970637992a858a43603c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acab2f851dab3bd1b361902811f8bf4a32a9ef5d1cbb2baedd3e7bc3418c046b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b766a19a76160c57684cfc9ef8eec520760eab6f1328fe86e1fc9a3fb8d3b1df"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6ea1cb0de2c61940296d71f96c04635a02b9fc3f9ebaa960ac8a3030a8a81aa7"
-    sha256 cellar: :any_skip_relocation, ventura:        "113506ce4a29fb99dab9b99252c6fdf028df454b37e8fb370df566f65bdb107f"
-    sha256 cellar: :any_skip_relocation, monterey:       "0823e18ae2ef020698a59cc96b05a4f9d16d7310be97d16a2d4f3d15e1d03069"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b92a33ad7276f70154913d2407f80428e069c0e8f0a4851d4da1df607406fa6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb1e857695d256001aac44fd5b1b1f0439d92550532c07d3c93f824611cc4dfa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb1e857695d256001aac44fd5b1b1f0439d92550532c07d3c93f824611cc4dfa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb1e857695d256001aac44fd5b1b1f0439d92550532c07d3c93f824611cc4dfa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "74f7daa7a8c611143e3c0ea41ae2d9f5ff936ecd0f18568fe3935b5b660366f9"
+    sha256 cellar: :any_skip_relocation, ventura:        "74f7daa7a8c611143e3c0ea41ae2d9f5ff936ecd0f18568fe3935b5b660366f9"
+    sha256 cellar: :any_skip_relocation, monterey:       "74f7daa7a8c611143e3c0ea41ae2d9f5ff936ecd0f18568fe3935b5b660366f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c32dbbf0f926020bd7cd1b3fbdfd49fc44977bd1215d6817c26b1c1618f2c87"
   end
 
   depends_on "certifi"
   depends_on "python@3.12"
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages54c941c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4argcomplete-3.1.1.tar.gz"
-    sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
+    url "https:files.pythonhosted.orgpackages3cc0031c507227ce3b715274c1cd1f3f9baf7a0f7cec075e22c7c8b5d4e468a9argcomplete-3.2.3.tar.gz"
+    sha256 "bf7900329262e481be5a15f56f19736b376df6f82ed27576fa893652c5de6c23"
   end
 
   resource "backoff" do
@@ -62,13 +61,13 @@ class Censys < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesa7ec4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9drich-13.7.0.tar.gz"
-    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagese2ccabf6746cc90bc52df4ba730f301b89b3b844d6dc133cb89a01cfe2511eb9urllib3-2.2.0.tar.gz"
-    sha256 "051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"
+    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
+    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
   def install

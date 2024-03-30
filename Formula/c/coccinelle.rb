@@ -1,39 +1,11 @@
 class Coccinelle < Formula
   desc "Program matching and transformation engine for C code"
   homepage "https:coccinelle.gitlabpages.inria.frwebsite"
+  url "https:github.comcoccinellecoccinelle.git",
+      tag:      "1.2",
+      revision: "969cb12e9e9b7d4f42c2ff15296fd927f1ba63af"
   license "GPL-2.0-only"
-  revision 1
   head "https:github.comcoccinellecoccinelle.git", branch: "master"
-
-  stable do
-    url "https:github.comcoccinellecoccinelle.git",
-        tag:      "1.1.1",
-        revision: "5444e14106ff17404e63d7824b9eba3c0e7139ba"
-
-    # Backport compatibility with OCaml 5. Remove in the next release.
-    patch do
-      url "https:github.comcoccinellecoccinellecommitf13b03aa20a08e5187ce36bfd5e606f18acd2888.patch?full_index=1"
-      sha256 "84f06551652d9fcee63451fe8d3bce3845c01fe054087cde50bb3b8308014445"
-    end
-    patch do
-      url "https:github.comcoccinellecoccinellecommit1d0733a27006b06eef712f541000a8bf10246804.patch?full_index=1"
-      sha256 "391ee079fc18ac4727af089fdf686cd41d4b2ba7847c4bcf2b3b04caf5b6d457"
-    end
-
-    # Backport usage of non-bundled packages to allow versions installed by opam
-    patch do
-      url "https:github.comcoccinellecoccinellecommit3f54340c8ac907e528dbe1475a4a7141e77b9cdd.patch?full_index=1"
-      sha256 "94b23b53c023270368601bc5debefc918a99f87b7489e25acddf9c967ddb4486"
-    end
-    patch do
-      url "https:github.comcoccinellecoccinellecommit2afa9f669b565badf17104176cc4850a2dff67f6.patch?full_index=1"
-      sha256 "882fe080f7fbce4b0f08b8854a5b02212c17efbc2a62c145eae562842d8e2337"
-    end
-    patch do
-      url "https:github.comcoccinellecoccinellecommitd9ce82a556e313684af74912cf204bb902e04436.patch?full_index=1"
-      sha256 "4b27d81d27363efb1a83064abba1df1c09a1f1f064c81cc621ca61b79f58d83e"
-    end
-  end
 
   livecheck do
     url :stable
@@ -41,14 +13,13 @@ class Coccinelle < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "ca6145d84ac088d6a9af56409383ee95fcdfc019d565f57a16ab6571b468df10"
-    sha256 arm64_ventura:  "cb7b2f3f20840b99f22efba6538fd4e7a6fa3868aa9f934c5722e26a968dc753"
-    sha256 arm64_monterey: "368b32215f0409f8686364f2d5f9fa6d6ef3896ae1baddba37ad34abc2021a8a"
-    sha256 sonoma:         "6e9fcb9482970a2459a8e6bc4b319cd06d555dbfcd6501ad5cae9d9fc8dad61b"
-    sha256 ventura:        "60b09a4b123954c6a206cfa471c8653622f9567f786eb183241b1cd55f412128"
-    sha256 monterey:       "108f9640319df581d2feb12d6f52540d7f30876d24f48547e2a901ddda474aed"
-    sha256 x86_64_linux:   "1d24df746aee06ce03219fb78ff208b30b7b14c666195e30623c9012c9f825ea"
+    sha256 arm64_sonoma:   "a36c5cfcdf9bf41142f9475fcc6ceb194241befb2e52649a4c71e53fb2602961"
+    sha256 arm64_ventura:  "1393cf374ce5f991413ab0df0463ba44d40c2d82a4799e859d8b09fbab8ed42f"
+    sha256 arm64_monterey: "ef00df9ef65948e04513d222ffdcad06bfc5b3a7637d4bd0db36de3d08f93678"
+    sha256 sonoma:         "3bc8077e579e1115de4e84adea5d2a41a16ad39852e4dde6f275baea83490353"
+    sha256 ventura:        "52d5a623ec3b372e8701375a04422eada24786d089dbeac052cae7a764cc8298"
+    sha256 monterey:       "0a7f4a693f30a6369413d9a4cb80bde37a5c5216cffbe2b7db75681c425b2987"
+    sha256 x86_64_linux:   "8a3a18a838b16ed3fd2adf8dae3cbecc2ae02018f661a0cb89c6db318ddec137"
   end
 
   depends_on "autoconf" => :build

@@ -5,11 +5,6 @@ class GradleAT6 < Formula
   sha256 "84b50e7b380e9dc9bbc81e30a8eb45371527010cf670199596c86875f774b8b0"
   license "Apache-2.0"
 
-  livecheck do
-    url "https://gradle.org/releases/"
-    regex(/href=.*?gradle[._-]v?(6(?:\.\d+)+)-all\.(?:zip|t)/i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, all: "066c2045f65cf39c5ce936080f99fd180b4d3fdc0b8ceb33984923336df98e90"
   end

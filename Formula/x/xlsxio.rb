@@ -1,21 +1,19 @@
 class Xlsxio < Formula
   desc "C library for reading values from and writing values to .xlsx files"
   homepage "https:github.combrechtsandersxlsxio"
-  url "https:github.combrechtsandersxlsxioarchiverefstags0.2.34.tar.gz"
-  sha256 "726e3bc3cf571ac20e5c39b1f192f3793d24ebfdeaadcd210de74aa1ec100bb6"
+  url "https:github.combrechtsandersxlsxioarchiverefstags0.2.35.tar.gz"
+  sha256 "03a4d1b1613953d46c8fc2ea048cd32007fbddcd376ab6d4156f72da2815adfa"
   license "MIT"
   head "https:github.combrechtsandersxlsxio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4a4ae609f94e1caba2512020665977c99a6c5cac293527a28fcff4a445353988"
-    sha256 cellar: :any,                 arm64_ventura:  "56c7fa7ec1da583535d5effabb7226d828f497501ce54104bb7154584b47de19"
-    sha256 cellar: :any,                 arm64_monterey: "684dd876731be71b25aedf3dcf35e1f56041444b70f91619d04bca5ef2f83bdc"
-    sha256 cellar: :any,                 arm64_big_sur:  "3f5990bbf6820eeed17c52b458d90aaa46662673f57467e5d42ac6795000fad3"
-    sha256 cellar: :any,                 sonoma:         "2e40c04a1471ba95b7c18591ef3b177737f3b9b0e235f8a0b60413a300f5206c"
-    sha256 cellar: :any,                 ventura:        "8b7adb558e5a28b157c01ff2560b0fcf7fbd0d087ceb0ee225a0036b25c33a40"
-    sha256 cellar: :any,                 monterey:       "6fdc5c9d184f6fd6af07aea182d295e4ac81072b95e625bfbd25c38829fc134e"
-    sha256 cellar: :any,                 big_sur:        "0a3920eb3bcc417d80d78948ae01b746ec74e7213cd33a6066a9990a1c079f07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0f66d061d5d7b64aac85eeea619e224ef9412302f80225dd6ab11f183904327"
+    sha256 cellar: :any,                 arm64_sonoma:   "7795c447df632aa02bd9962ab025abf10904555e565763d75f811104dcf30421"
+    sha256 cellar: :any,                 arm64_ventura:  "15613fb0399f4c22dc5e47013ee3aec14f1c7971d31d7ce24e4113185dd697ae"
+    sha256 cellar: :any,                 arm64_monterey: "62b72c1295c012e73f78ca57ae3bef61294e4f4b38cbfe1e97ae24fbaa291075"
+    sha256 cellar: :any,                 sonoma:         "99c91608660f9ebc234b5c5c28a6d41e9b6aa832de812fa68e3ec243e5fbca20"
+    sha256 cellar: :any,                 ventura:        "bd385c70fb296b74c0cb39017994f297a469c02d093c127d0ce7ef56bd961856"
+    sha256 cellar: :any,                 monterey:       "6925d07058e4a7407049cab76bd1658a026a219ce9e4faf9b6d42b13c70e9410"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9438d1de48e33e92f6734366f4164281ce6aac33da36b330dd1898f98c14048"
   end
 
   depends_on "libzip"

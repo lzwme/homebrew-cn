@@ -1,8 +1,8 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https:rdkit.org"
-  url "https:github.comrdkitrdkitarchiverefstagsRelease_2023_09_6.tar.gz"
-  sha256 "e8f580db8fe14070d009adafb1f0e5b15c12ebe6c1cf4e99085c0615be3996fc"
+  url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_03_1.tar.gz"
+  sha256 "5afe78c3d3358fec83f891eb822c0ad07a40ce3709da58071892bce1ea56585b"
   license "BSD-3-Clause"
   head "https:github.comrdkitrdkit.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2d137bbb2f33d17f43eda6dd1c104279b70f870210c92c681f0aa4718fbd7f70"
-    sha256 cellar: :any,                 arm64_ventura:  "ba4865c539cb6af26bfe0dc89860f55619d901f2f912980411290f63c6dcbcab"
-    sha256 cellar: :any,                 arm64_monterey: "d4c6b8253ec120e7bc497a4a19f9b3ab6f55e81e957ea11e7b726d8fbb9041b9"
-    sha256 cellar: :any,                 sonoma:         "3b28ac2b72ddc2858b4dda70648285ab0bcb1ae2b8db00435239a732e3136e6f"
-    sha256 cellar: :any,                 ventura:        "381ea092c4e77f0ed6f40bfad322747818b3d55c9c41a84ff80a83549e379a06"
-    sha256 cellar: :any,                 monterey:       "a0366f058cb294c55f5d09177f5db5e25f38a93990c3089bf4e71acd189ec460"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc9be00ba50be9fdf691a8488a101651efb1bbc4cdb6cde1372e1e040e388009"
+    sha256 cellar: :any,                 arm64_sonoma:   "878f0bbf6c40231481cbb998e1f50f89e452267835a8af8fbcb522863fbad47f"
+    sha256 cellar: :any,                 arm64_ventura:  "d53daec4a39c072e9a39e85ccdf1ed48bb6c3a90607cda602ebac66ab2ce7556"
+    sha256 cellar: :any,                 arm64_monterey: "b540186f7ee64d5528f72d7fdf0c57d7b891d3e068c8c9871dc12653e70e4f02"
+    sha256 cellar: :any,                 sonoma:         "b2d422db00cc1f3de7e87a6c96996694014c7b3512dccfb1d620369fd024c8b3"
+    sha256 cellar: :any,                 ventura:        "54963e256614f2a194badeca790df47f79ea3bc8872553e5349fa1f140c27858"
+    sha256 cellar: :any,                 monterey:       "4634d98cb5a13f7fe40ba7b22ed8f5385e328ad4f929a26a9e8be4f627856330"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "791a40fb24a7d1cd6c83146ed7fab93a67e36d4f8bf4694adfc4b5691a2458c8"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,19 @@
 class Sdb < Formula
   desc "Ondiskmemory hashtable based on CDB"
   homepage "https:github.comradareorgsdb"
-  url "https:github.comradareorgsdbarchiverefstags1.9.8.tar.gz"
-  sha256 "c519f10a56a0ab6a151b4e0f2f097b6c2af4709c5259463de50a94e8b7eea6a1"
+  url "https:github.comradareorgsdbarchiverefstags2.0.0.tar.gz"
+  sha256 "f575f222a3481a12f7bea36e658f699057625adf11ccae7e4a3e35697fa21582"
   license "MIT"
   head "https:github.comradareorgsdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "46b13d892361f3f266dcc879f3b1356b80411d22e255be8d8be8b25dc110da2c"
-    sha256 cellar: :any,                 arm64_ventura:  "d26fdbe65f6fb61bae60ceeec8702602cfac3cb80551e2409eaad63a1baf5c40"
-    sha256 cellar: :any,                 arm64_monterey: "d9cc13db6eb2ed5ed2bb1c0e15fdc16c073ab7d3035e627159d5b848845116bf"
-    sha256 cellar: :any,                 sonoma:         "6cc22ba3df57f2b7370402324898032c9fa6055fe21947bb6c3beaa570ca5afd"
-    sha256 cellar: :any,                 ventura:        "b163afa2f7945d652f0a4ae77fb4c1cfaa46bfad8b71e9f27b7f1718d19c7dd0"
-    sha256 cellar: :any,                 monterey:       "d072e4bc318c08ee307a1740db311273e9ccc468076bd5217c91ada01c7a0fca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f55490faa3255e320eefbcdbe11a9000db050dd2ccc26a42c35117a6e085045"
+    sha256 cellar: :any,                 arm64_sonoma:   "9981868bb8ede1a71b097e13b88494fb6fe14ddb7af40bbb04f216da63df2923"
+    sha256 cellar: :any,                 arm64_ventura:  "6b02d56107712ce468480887ca94355163f3f007586c92417a712a9753db4e5e"
+    sha256 cellar: :any,                 arm64_monterey: "c35442d6bc9940df3987d63ba1626284dc2feed679e8ca6c2a751d9c4295c143"
+    sha256 cellar: :any,                 sonoma:         "5d1203c293a030d3508cfd64f20070a9d08ef62b70f19b0c2b386b3fe037837e"
+    sha256 cellar: :any,                 ventura:        "90262454004703887c66ed062c9a6328e52f856ae2cd15ccf6991c30d4a152c1"
+    sha256 cellar: :any,                 monterey:       "42aaa7e89eec926146c2f5f52f5b8db37396a12cb439ab3f790cf019c0370ae4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0157301844d22baceb7f3b8f6508f8dd3c9f9f72d9fa7c2c4a5255aa5c126bdb"
   end
 
   depends_on "meson" => :build

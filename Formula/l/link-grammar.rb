@@ -1,20 +1,19 @@
 class LinkGrammar < Formula
   desc "Carnegie Mellon University's link grammar parser"
   homepage "https:github.comopencoglink-grammar"
-  url "https:github.comopencoglink-grammararchiverefstagslink-grammar-5.12.3.tar.gz"
-  sha256 "e0cd1b94cc9af20e5bd9a04604a714e11efe21ae5e453b639cdac050b6ac4150"
+  url "https:github.comopencoglink-grammararchiverefstagslink-grammar-5.12.4.tar.gz"
+  sha256 "dd24e4d64177c389bb023c5acb0fd3d73fb000ecce4938ebe872e3f0011d56e3"
   license "LGPL-2.1-or-later"
   head "https:github.comopencoglink-grammar.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "984690d6c9df434555f86e810edd3648e09241fc3745d54e2853d524ac1111c5"
-    sha256 arm64_ventura:  "092fe1345bb4946aac0738abba267ba5b95e359119bbb920e122376f0c19980b"
-    sha256 arm64_monterey: "b4c6e1bcc929eda6c2f942928c991ec51814c8e3b09d4c8e7e06f6f16983c467"
-    sha256 sonoma:         "58a7f8eaeb7fbdfce2794c9cb6e3315c1907aae0e651a53ec986c7cddd9cda0e"
-    sha256 ventura:        "82dd35020c0673860a013bd652cd77bcfc7818b59e4ae31dc62acb8a4bcb7328"
-    sha256 monterey:       "632cc70a9a47502c3f71e757fae753698df4165b774eef2a0a0c89b27c8baa83"
-    sha256 x86_64_linux:   "56716e1742272dbb0503f12007b3eef50c3db003be55fb4b28ca78fe2a54bb93"
+    sha256 arm64_sonoma:   "6cc52f687c0a93359825c08a4fe83f49cb27ebb22541b13d039978c23b7d48e3"
+    sha256 arm64_ventura:  "8bb6e06edb02ad11b3470d651b65027c5b17a4b012f4cfa514bf6730ff8e9ec4"
+    sha256 arm64_monterey: "aaec34dc6053090e7bb933092bba47ac78b3f8d37cb9be4094d17121c75ba9c7"
+    sha256 sonoma:         "1a915f34021f8e846e9c377e48604a8d2ccb3576dc6fecc5b10a50651a8bc563"
+    sha256 ventura:        "acd8919a2587bf8be2877a1002f41e9eb4c16ae71821cacf24b644a4ef30cb6f"
+    sha256 monterey:       "33a1909bf0510c2e91a2c616e40761d14cf8776732e10bfb8fc436219bffe4d6"
+    sha256 x86_64_linux:   "46dde091e41033b3093291d6dce60e6e5ecf8e59d47180997c9d4864b27ebeb8"
   end
 
   depends_on "ant" => :build
@@ -29,12 +28,6 @@ class LinkGrammar < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "libedit"
   uses_from_macos "sqlite"
-
-  # upstream build patch ref, https:github.comopencoglink-grammarpull1473
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches6de1efelink-grammar5.12.3.patch"
-    sha256 "20d2c503ee2b50198d09ce5b69e39b4b88d9e8df849621e7b9f493f45c78ed1d"
-  end
 
   def install
     # Fix compile with newer Clang

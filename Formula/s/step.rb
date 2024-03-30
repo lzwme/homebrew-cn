@@ -1,28 +1,30 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https:smallstep.com"
-  url "https:github.comsmallstepclireleasesdownloadv0.25.2step_0.25.2.tar.gz"
-  sha256 "325b34188476530a9bf14dabfe9545bc618674e4017bb888f2f7bec325b00f1b"
+  url "https:github.comsmallstepclireleasesdownloadv0.26.0step_0.26.0.tar.gz"
+  sha256 "128cebf24a3043ef1616be47d07c95f8a0d3432b626ff060c69eb1c806e98614"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd9e7970f966323ea140153dc32428ba80b032804e3f284bae1b7c85778d7615"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52c3ddc7455675cbaa810e8577923753f77fb493b993c4cd60150bc7b0de06c3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cbbde9f2a5ee874768bd8f006704736c7db266feba0c3cd26a51f5fd102b0fd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db967b4a6df39631fabe334ec06a71d9a8bae49fb48555c4c0af5f3ba1160365"
-    sha256 cellar: :any_skip_relocation, ventura:        "5eac5a0771d52b4197e2cc0a8b5fad8c33f9a795b953db6382c05f92eeaf487f"
-    sha256 cellar: :any_skip_relocation, monterey:       "73900a65407f27396889a6f6891c25f63eaf50c5e0330fee0e922d80baf65ef8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b915c69ebc000e544e6f817b706fb3f031ba0d01cc3f0b16a779bcd6b2306674"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ff61d321557000003f4afc6ed4296ee3d90cfd57817c5d2da6d5ffd3e742c15"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9480994b2cca4c85ada87db10bc1bac173675a09a67dc28414f43b3d293bf885"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75baf0dc1138e43dae7adb32c630f1757149fb88a925e814be90243fc04bd1f4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c9402289c2be7d22816b486c36bafcb331ed14a4930dc783a1fde98d1f78243"
+    sha256 cellar: :any_skip_relocation, ventura:        "3014fe7f179163474bc4a2bfec445dfbaa784330fdec4a94dc9e3645f3298950"
+    sha256 cellar: :any_skip_relocation, monterey:       "84fe05ba915be878926507f0cda022f124aeea440bf071690c12521390024c2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c8e14d8f13cb8a224101e748081d685b80419c9b3335ec8356931ccec65bd80"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https:github.comsmallstepcertificatesreleasesdownloadv0.25.2step-ca_0.25.2.tar.gz"
-    sha256 "c80ad05d959897592c3a5a014adf25cbfecdcb63abf67110436b04dd6789fdd3"
+    url "https:github.comsmallstepcertificatesreleasesdownloadv0.26.0step-ca_0.26.0.tar.gz"
+    sha256 "c49148c66b757a25002dfbf9bfa8b2346ded7973ec443dcdc31feb8d3bce582b"
   end
 
   def install
+    odie "certificates resource needs to be updated" if version != resource("certificates").version
+
     ENV["VERSION"] = version.to_s
     ENV["CGO_OVERRIDE"] = "CGO_ENABLED=1"
     system "make", "build"
