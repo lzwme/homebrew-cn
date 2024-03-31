@@ -2,19 +2,19 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https:github.comkubernetes-sigskubebuilder"
   url "https:github.comkubernetes-sigskubebuilder.git",
-      tag:      "v3.14.0",
-      revision: "11053630918ac421cb6eb6f0a3225e2a2ad49535"
+      tag:      "v3.14.1",
+      revision: "cc338d729c2a578ae491860e3eb71e63864b1390"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigskubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "168a9dc40ec48b37f101b2816f591cedfed87b8c89a89edc743a31fcd1090755"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d803646014bab2958dfa8db954bf0acd50fb3dcae1462247d07009dd48f89cc5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8fe3acaf6e8227ce2a71cf52aa50da3f0540e7406cb7e834d4083320f7bc9673"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e2dc00af9eb27a19329778ce34e97dd6d0bd33fb873b0650ba2b76bcc6f33a82"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea6fb03192306098f7a60b6b5fe8e6808d6708f83a9a35ae0a98033605179c9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad28fcf1d3d37f425458135dee7f06fd96a5841fabaaa988da6bef7f221210f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55e401f56c613da42292140eda4794347ba26969a9e4750b5cc8de4bc1f67b45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b72b5306d145aa698176f6e5ded3a45bb48e102e96ad2294a4882a066a19b9e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "102422ae2c6127dc4119d7d319cad138af65c81d032dc50926847e20b0b68212"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1385f8169a5c6726c212c6462e7ee570c8877b6ff7711bb00920e657d27575b8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c667788b88ffd34a80d092e48490f3051d3938435dcdc5bb0d7bacf9c055d954"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e300d21e54fefb78f739768da4acfb43c11b3e3e8b1eeb479bce9e0f7756aef"
+    sha256 cellar: :any_skip_relocation, monterey:       "6774c35beed9c997b39e93ff3df5039c312b593ef2cad0a2e99ae649f70a6c7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6277805b813539430ea0946be8c93c3da7f5cf32b031f6ce3cfc701055d83e1a"
   end
 
   depends_on "go"

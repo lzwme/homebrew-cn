@@ -41,7 +41,7 @@ class OpenMpi < Formula
       ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
       # Work around asm incompatibility with new linker (FB13194320)
-      # https:github.comopen-mpiompiissues11935
+      # https:github.comopen-mpiompiissues12427
       ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
     end
 

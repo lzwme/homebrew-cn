@@ -4,6 +4,7 @@ class Petsc < Formula
   url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/petsc-3.20.5.tar.gz"
   sha256 "fb4e637758737af910b05f30a785245633916cd0a929b7b6447ad1028da4ea5a"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url "https://web.cels.anl.gov/projects/petsc/download/release-snapshots/"
@@ -11,19 +12,18 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "0b7a3567bc4354325e46493bfdd0ef72459d80ebdc564d02b39a24862db1eb0e"
-    sha256 arm64_ventura:  "cf1807b7fe6cf822bcef5c27f37cfbcfdaf9a69b661f4a85148e215fc9f77284"
-    sha256 arm64_monterey: "26414dab362946e7659549fb33673bfd7775047b05e46befa0c6ec02d211542f"
-    sha256 sonoma:         "42ed10d08b07c4b5e2efac30fe8b0b865e426f8fa9ba5fe374a2109870a6cb56"
-    sha256 ventura:        "0bf76905ca9e9d0103edd11b7db578e4eae83e1a579b8ed509c74c69c9a1bbd0"
-    sha256 monterey:       "c6f13bdb33ca84a5e8f3098f062cf07e9118e3bf55db72e3ccdae412cc018fb4"
-    sha256 x86_64_linux:   "ee8ff9905d77adbedc5c0550b9488b013858d1b919726130046d4676a8106db4"
+    sha256 arm64_sonoma:   "33b3610ffa8ca40d324b665bf9ff748d0762ed2aee01c38b77fc7d1fe05b8416"
+    sha256 arm64_ventura:  "0d72cc3eb181c373abf599715dfcf7433eafaef7862cab3033472ac9d745f027"
+    sha256 arm64_monterey: "b1faad1c3141e19250a99d8dcbf4bcdb3f07cb1277316616b306ec27e5ccaed8"
+    sha256 sonoma:         "f27edfcc6e25481c8b5928604ec9db74b4c4264e44de70c7e536a0c0c72b7990"
+    sha256 ventura:        "576d7e38b28c627903e6e169fb0e1e1c7dceb55f2064f59bef10cb4e3c9af904"
+    sha256 monterey:       "c63224a3a46d07e415edd57ddce2c8c74de814107ef72f77608c91ee036e7ca7"
+    sha256 x86_64_linux:   "ebd469a224a95f843485aacd07983cd2605f1c9f61762ec07313a901f03731c9"
   end
 
-  depends_on "hdf5"
+  depends_on "hdf5-mpi"
   depends_on "hwloc"
   depends_on "metis"
-  depends_on "netcdf"
   depends_on "open-mpi"
   depends_on "openblas"
   depends_on "scalapack"

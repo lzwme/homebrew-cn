@@ -1,10 +1,10 @@
 class Mairix < Formula
   desc "Email index and search tool"
-  homepage "http:www.rpcurnow.force9.co.ukmairix"
-  url "https:downloads.sourceforge.netprojectmairixmairix0.24mairix-0.24.tar.gz"
+  homepage "https:github.comvandrymairix"
+  url "https:github.comvandrymairixreleasesdownload0.24mairix-0.24.tar.gz"
   sha256 "a0702e079c768b6fbe25687ebcbabe7965eb493d269a105998c7c1c2caef4a57"
   license "GPL-2.0"
-  head "https:github.comrc0mairix.git", branch: "master"
+  head "https:github.comvandrymairix.git", branch: "master"
 
   livecheck do
     url :stable

@@ -2,17 +2,18 @@ class Sha3sum < Formula
   desc "Keccak, SHA-3, SHAKE, and RawSHAKE checksum utilities"
   homepage "https://codeberg.org/maandree/sha3sum"
   url "https://codeberg.org/maandree/sha3sum/archive/1.2.3.1.tar.gz"
-  sha256 "0271f3b6ac5566b73b18d12ef61e3662b98d25abed7c5da5f0eea12961f260dd"
+  sha256 "82c0808b11f4ba039531b22877dd68e4d870f53cae0c23b7c5d22d40312129f7"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e4dbe2302deb987ebcd26bddf14d1af291e1d9fbe148d91ad712d46415d0edef"
-    sha256 cellar: :any,                 arm64_ventura:  "d3831179596af0f1204aa7705ff943bc7244ea400d7bc1b31d2ecaa1628198c4"
-    sha256 cellar: :any,                 arm64_monterey: "f4ec5850831c39ab0e385fcec01c35bce4594f0993ba93a4fa70c3b490ca5cf9"
-    sha256 cellar: :any,                 sonoma:         "49e18e7f3e6ec476b8eabb2c938f4e3b7975e552952532238542e8a27631b7e3"
-    sha256 cellar: :any,                 ventura:        "9ec92a81602647b0ee6a48f3c1a64d8e33ab8e8365edbab919067f9def58facd"
-    sha256 cellar: :any,                 monterey:       "2ea5eadc0bd1ff2ab10c7fc30787082271a9620d1e05993aea05cad7e6c8dd85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddcb3ee8b45d13748d000f36cfe5ead89a45cecf098c7adc43a1a7917f94d75f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "8d980021fa368d031ffecc790b2651fe9a8e12514527a88e5c53d58dda8d25ff"
+    sha256 cellar: :any,                 arm64_ventura:  "23e518f210d7ef6d97b36328e3014fbf9c10f06b455c9f606793230ad4ce50ca"
+    sha256 cellar: :any,                 arm64_monterey: "c46d9a5c481fccbfe4b5320de6819cab08f8e645c7ce12e38297cfb62d89591c"
+    sha256 cellar: :any,                 sonoma:         "ffb035e4498574c19d6532dc55150177ed9b2392d1b02f1da845dfea33f81090"
+    sha256 cellar: :any,                 ventura:        "5ced828831e4a51f393fb43405c0ea20545c60499454263e1ad44daa0ccea1c9"
+    sha256 cellar: :any,                 monterey:       "8c723139a1467bde4d19a713fbf48ac04b92578acc4f10a61598f3c8b1676d1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b39669c216c9754961a9c54d0ffc1e96c425948823bc159da40a700a277e1404"
   end
 
   depends_on "libkeccak"

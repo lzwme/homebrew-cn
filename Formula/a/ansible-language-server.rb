@@ -19,6 +19,8 @@ class AnsibleLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6abc09d916281ceb0ee5ffed77be92564ba8c3dd992231af50027a9d29a12063"
   end
 
+  deprecate! date: "2024-03-15", because: :repo_archived
+
   depends_on "node"
 
   def install

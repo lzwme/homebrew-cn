@@ -24,6 +24,9 @@ class Syck < Formula
     sha256 cellar: :any_skip_relocation, el_capitan:     "a2270f693ce6e8f0542f7d57dc6c8fcb731a268aee3c75a314523446c68602d6"
   end
 
+  # https:github.comindeyetssyckissues21
+  disable! date: "2024-03-24", because: :does_not_build
+
   def install
     ENV.deparallelize # Not parallel safe.
     system ".configure", "--disable-dependency-tracking",

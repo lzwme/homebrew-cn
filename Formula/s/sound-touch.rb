@@ -1,21 +1,18 @@
 class SoundTouch < Formula
   desc "Audio processing library"
   homepage "https://www.surina.net/soundtouch/"
-  url "https://codeberg.org/soundtouch/soundtouch/archive/2.3.2.tar.gz"
-  sha256 "ed714f84a3e748de87b24f385ec69d3bdc51ca47b7f4710d2048b84b2761e7ff"
+  url "https://codeberg.org/soundtouch/soundtouch/archive/2.3.3.tar.gz"
+  sha256 "43b23dfac2f64a3aff55d64be096ffc7b73842c3f5665caff44975633a975a99"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "047d64b0303e81e78ad485b389a816a6aeffbde861c2887c61b4c3db2aba7a65"
-    sha256 cellar: :any,                 arm64_ventura:  "3b8ab96643afdd0e29cb1c3ca87081de1e24a9fa71cf523f54d59700cfd89568"
-    sha256 cellar: :any,                 arm64_monterey: "33ab05d5f4717eae082846a06976e7b01e9f29ce9a9b8281211d05ba63ee0d8f"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0470a1734cd05a4d9a944d35395af68dbcea9887292f2c27898b961537ab9e8"
-    sha256 cellar: :any,                 sonoma:         "4e3196ad688bff9c246e1278485e1253b76235c87fdd27a6b9da71643d1afad7"
-    sha256 cellar: :any,                 ventura:        "81f327c5f8c915b65b7f301c25b75eeaddea4b902db42244082fbeef6c3371df"
-    sha256 cellar: :any,                 monterey:       "bc814a3a96c7410dc2a07fb3abed06539fa8d124a7e2c5bb0d66ab8db14decce"
-    sha256 cellar: :any,                 big_sur:        "774514a15a2e3426d4aec5c4c6e423ac6fa86589967fcd224103aca3ffd30c33"
-    sha256 cellar: :any,                 catalina:       "af6a0cc123d0d5aa72770a890c3d5bebe60109670e99098d1950af5dd4591c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f734328dd552d6aaa65193e5c33a2e46fca6189780325fa77dd7d0b4c888f902"
+    sha256 cellar: :any,                 arm64_sonoma:   "1fe2f2065c864e1da3bac986c5222e9a55b131fadc53275de39f5361c6fd00fe"
+    sha256 cellar: :any,                 arm64_ventura:  "8165de105d4da09709ace4e9bbe43767e9f7151f4cb69455cac3ccd6379cf480"
+    sha256 cellar: :any,                 arm64_monterey: "5736ffb517df2c516cc9d46120888664e3707a797618e20e614bdff935866cc6"
+    sha256 cellar: :any,                 sonoma:         "8c25300640bb261c7b370b5f285d3f296f57c76a71bc04bc4d055f0eae982124"
+    sha256 cellar: :any,                 ventura:        "7c5bdb94f9c5321743ac2db0f520ba0c8c97389729ae96ffbf428cd4fc1f69ad"
+    sha256 cellar: :any,                 monterey:       "c2f6ca0d546e6c96f0eb39cda31822667930c26f06df1eac5ad03119a188ed1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3162dd6ee8f3c0f99ec51c370328e92c4920b3ed4f1d4502d4c79d7733593ed8"
   end
 
   depends_on "autoconf" => :build
@@ -23,6 +20,8 @@ class SoundTouch < Formula
   depends_on "libtool" => :build
 
   def install
+    ENV.append "CXXFLAGS", "-std=c++14"
+
     system "/bin/sh", "bootstrap"
     args = %W[
       --disable-dependency-tracking

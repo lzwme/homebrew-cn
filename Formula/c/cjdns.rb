@@ -19,17 +19,12 @@ class Cjdns < Formula
   end
 
   depends_on "node" => :build
-  depends_on "python@3.12" => :build
   depends_on "rust" => :build
-  depends_on "six" => :build
 
   def install
     # Work-around for build issue with Xcode 15.3
     # upstream PR patch, https:github.comcjdelislecjdnspull1263
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
-
-    # Libuv build fails on macOS with: env: python: No such file or directory
-    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin" if OS.mac?
 
     # Avoid using -march=native
     inreplace "node_buildmake.js",
@@ -37,7 +32,7 @@ class Cjdns < Formula
               "var NO_MARCH_FLAG = ['x64', 'arm', 'arm64', 'ppc', 'ppc64'];"
 
     system ".do"
-    bin.install("cjdroute")
+    bin.install "cjdroute"
 
     man1.install "docmancjdroute.1"
     man5.install "docmancjdroute.conf.5"

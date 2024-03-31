@@ -1,14 +1,18 @@
 class Pycparser < Formula
   desc "C parser in Python"
   homepage "https:github.comelibenpycparser"
-  url "https:files.pythonhosted.orgpackages5e0b95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46depycparser-2.21.tar.gz"
-  sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+  url "https:files.pythonhosted.orgpackages1db231537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52cpycparser-2.22.tar.gz"
+  sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "9de5a8333f6bd80fbabc628432c7cf04ef5642d4e03f42fc542483537af50476"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
+    sha256 cellar: :any_skip_relocation, sonoma:         "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
+    sha256 cellar: :any_skip_relocation, ventura:        "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
+    sha256 cellar: :any_skip_relocation, monterey:       "493634a14bdd3491626f9b76d04161cdaa045165fb8efffa9bf780efd823d844"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f591e2eca1cf20abf29c606294f0f8b1b2efde60a4cade17da0ea7440cfff7e"
   end
 
   depends_on "python@3.11" => [:build, :test]

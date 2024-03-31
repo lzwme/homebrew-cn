@@ -1,18 +1,18 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
   homepage "https:github.comorhungit-cliff"
-  url "https:github.comorhungit-cliffarchiverefstagsv2.1.2.tar.gz"
-  sha256 "1c321b180b071ccfa8986931576fc02ca4dbc75dff035e4c663c2cfb8ecd4683"
+  url "https:github.comorhungit-cliffarchiverefstagsv2.2.0.tar.gz"
+  sha256 "d89af1c654e63ce2f6c09cd63d691bf531f0ccd76b670316cc71529f1d4eaccb"
   license all_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "61ac163767c260e569433e87a1e30b6230df93e41f0bde2cca46f6a59ffb522c"
-    sha256 cellar: :any,                 arm64_ventura:  "c65a52cbbdd2dfdb4862796a2e30a26139732d27c5c690a2692b55e5997bdebc"
-    sha256 cellar: :any,                 arm64_monterey: "43c61feb45cff2f3079a4ca6b16dd405dfd32bb5dbbd965898c03ab92d0cb4c3"
-    sha256 cellar: :any,                 sonoma:         "37ccac8bfc63dd7de1611e62ff31e24d9e256fc8d97f2abbbe58937187807454"
-    sha256 cellar: :any,                 ventura:        "0e809293b5e935c67f4fbb633f4a389963121a669af8ff3e591ed38ec1e7d46b"
-    sha256 cellar: :any,                 monterey:       "ef43913de1b458bfbb8951390858b95a633149ee2320a48267a4a2795abc1719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e07083289c3625e9343f121b4626c5d16e1454a426e2f19026f04fabaee16e2"
+    sha256 cellar: :any,                 arm64_sonoma:   "2dcc75711cdc28bb0c9326109208142ecc5c39612c6580e2c1792f977e73f3b9"
+    sha256 cellar: :any,                 arm64_ventura:  "91e9975b14039f9778d344285bfadd474173bddb2a01e303dcf68a2d4d622107"
+    sha256 cellar: :any,                 arm64_monterey: "2725c6993ded1de61f96a366563f840c7c055c97ccf381cbe69229694d09cf32"
+    sha256 cellar: :any,                 sonoma:         "94c7aa93cc822887f91e77a87a04ae386f259f501b6b8abdf0ca9c1ae576e89e"
+    sha256 cellar: :any,                 ventura:        "649012478797523b4e8a1ae23e9580b1ef7dc6c59913f6d2fe67be0e2bea431a"
+    sha256 cellar: :any,                 monterey:       "4efbae04ba2c0dd7b52cf0d319c02d5888753fe9106bae21b174b81c6365f010"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec3b680def6375a1204d826522c7668c24fa57269788626efa768049929cabcd"
   end
 
   depends_on "pkg-config" => :build

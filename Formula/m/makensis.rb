@@ -1,20 +1,18 @@
 class Makensis < Formula
   desc "System to create Windows installers"
   homepage "https:nsis.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectnsisNSIS%2033.09nsis-3.09-src.tar.bz2"
-  sha256 "0cd846c6e9c59068020a87bfca556d4c630f2c5d554c1098024425242ddc56e2"
+  url "https:downloads.sourceforge.netprojectnsisNSIS%2033.10nsis-3.10-src.tar.bz2"
+  sha256 "11b54a6307ab46fef505b2700aaf6f62847c25aa6eebaf2ae0aab2f17f0cb297"
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393940668c9f95c7762f7ded5ce4494f6455d3cf06e0d46ef0af337f9f8d85db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e5ff651a001ea3c3afebae523d1f30b914d3054220bc9266a6101c7c134da2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f09cd2796953aab5c3198adcde8e9ba8d284ce46891417bedc949b95dea67a7f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "12c2c787c4fe84e6c72c410e7123040924ab731ab5d4659ed624a31e7a169180"
-    sha256 cellar: :any_skip_relocation, sonoma:         "83e9b1c77f465f98e234759b65798d389f69fcf123bb7d10da9f53c6403a2a06"
-    sha256 cellar: :any_skip_relocation, ventura:        "a45fa4bb934cbbca70e30765ebcfb3ca4e5315f960b7a4b5ba2d4ebb6f2ff177"
-    sha256 cellar: :any_skip_relocation, monterey:       "9fa2f365fd3229de093b66a3695ce4558c4822cdc61b26d8ad7a06d4fd7f79c5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b0dcee39ebe9e01f9cc0e2119978273fc46cb0ce34dc9b4272bf3b4184531b08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "920f67e5ec564bcfbe843661c6b12badf23fb7dcf8783719055c0fc9ed363158"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c74338c424627cfab6d21fa5d3ce53bc39d641f10b0a3150322943e32c422b35"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe5df7005bbb4cf75e23485a9810b3c8e5139441db9442dc2022216a0b019d4f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ccbda3098670472ecc0c5fa2d1e364b49ce361fb642d3ec13b88f31a23ee8740"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc8db0474581a68a3393de4494c79f738cfcf7fdbd293e7be373196139b21656"
+    sha256 cellar: :any_skip_relocation, ventura:        "241bfaef69832fed9d6200be45bb05608750180702697c261a1eea6db3606a7f"
+    sha256 cellar: :any_skip_relocation, monterey:       "087967b7c39a1e0c6ddb70c197bc9ccc0bcce13fa52190e0f7ec87ca8511dafd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fd35ae601106c7530eb53aaf72dcb3bf3553ec52b19e33e2f6944aec8481b3f"
   end
 
   depends_on "mingw-w64" => :build

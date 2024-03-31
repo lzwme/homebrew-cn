@@ -1,21 +1,18 @@
 class Tig < Formula
   desc "Text interface for Git repositories"
   homepage "https:jonas.github.iotig"
-  url "https:github.comjonastigreleasesdownloadtig-2.5.8tig-2.5.8.tar.gz"
-  sha256 "b70e0a42aed74a4a3990ccfe35262305917175e3164330c0889bd70580406391"
+  url "https:github.comjonastigreleasesdownloadtig-2.5.9tig-2.5.9.tar.gz"
+  sha256 "0cb4d9e3de00dc92aaa7996e1517845bd9b9a0d4368f3206f618d813e8db8b39"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a881b5cd6ffaebb01e5a17dad105291d22e79fe01cd50e1e5fdcee1a440f88f7"
-    sha256 cellar: :any,                 arm64_ventura:  "a433db97a4470854452df7310d11758fea48ffd75a4e1e8a9f3b3ddae789dc44"
-    sha256 cellar: :any,                 arm64_monterey: "f6fde5e50a8665094751838fafa4ffab2548ffc46e6676b10ce39074429d2cb7"
-    sha256 cellar: :any,                 arm64_big_sur:  "6fdce8500cbc679b4ef77d545135ffe93be67a55858966a3775c06ce1d6e35ec"
-    sha256 cellar: :any,                 sonoma:         "e898adb4a0c056284e73c5aeafdf43bc5ada7ee6d6d2511c9d91f2675d8c00d1"
-    sha256 cellar: :any,                 ventura:        "e1bd241e23b1dc78017372f04959356801e23a2750b51d84e564e4ed124185e9"
-    sha256 cellar: :any,                 monterey:       "768e3c0d3d8c4842bce7de7d63e7bcf9d092c8872b7a67d2c737efaf0aa81d6f"
-    sha256 cellar: :any,                 big_sur:        "1637bc2253879491360476a653b798a9736e585ee543e3ef0f54f571bdbee7c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "962b5b01903e102b59a90b6a321b1d23d1bbda68b19d715f890a4b4a62c0421f"
+    sha256 cellar: :any,                 arm64_sonoma:   "eb710508b4937b3af5be0014a91fbb1a05ba7da6388dcc2af17150deb6814c9b"
+    sha256 cellar: :any,                 arm64_ventura:  "aa0ec3fe86d13d31572c09e7331d072679cfc0e52c531bf7734e6eefe62644a9"
+    sha256 cellar: :any,                 arm64_monterey: "5b2c5a6fef39e71285c7dedc47c5ab0a60cad37a1f7e5f80efb740dfaffcc9da"
+    sha256 cellar: :any,                 sonoma:         "ee62286ad4688cbf402e28d48f7e8c137d87e5db934da8becc0afe6a2750e298"
+    sha256 cellar: :any,                 ventura:        "215caf8b17fc9834c61b8d3f6ba9fb13558cd9863972da48fa5b7961efd28571"
+    sha256 cellar: :any,                 monterey:       "a83118a41754e188baa0041125cecb71dfb71a9b493a226a7dd65d7533c9a639"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "328850e5f06c75881e4c4a1fac4e0261c81568ae91700c03a1b82e1931020922"
   end
 
   head do

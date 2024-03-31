@@ -21,6 +21,8 @@ class Fasttext < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a90d77cb50372ab1172b354ee29e813f26543067beac35dd24b3da882352718"
   end
 
+  deprecate! date: "2024-03-19", because: :repo_archived
+
   depends_on "cmake" => :build
 
   def install

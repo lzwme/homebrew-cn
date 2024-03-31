@@ -2,8 +2,9 @@ class Xz < Formula
   desc "General-purpose data compression with high compression ratio"
   homepage "https:xz.tukaani.orgxz-utils"
   # The archive.org mirror below needs to be manually created at `archive.org`.
-  url "https:github.comtukaani-projectxzreleasesdownloadv5.4.6xz-5.4.6.tar.gz"
-  mirror "https:downloads.sourceforge.netprojectlzmautilsxz-5.4.6.tar.gz"
+  # GitHub repository has been disabled, so we need to use the mirror.
+  # url "https:github.comtukaani-projectxzreleasesdownloadv5.4.6xz-5.4.6.tar.gz"
+  url "https:downloads.sourceforge.netprojectlzmautilsxz-5.4.6.tar.gz"
   mirror "https:archive.orgdownloadxz-5.4.6xz-5.4.6.tar.gz"
   mirror "http:archive.orgdownloadxz-5.4.6xz-5.4.6.tar.gz"
   sha256 "aeba3e03bf8140ddedf62a0a367158340520f6b384f75ca6045ccc6c0d43fd5c"
