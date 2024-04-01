@@ -1,10 +1,9 @@
 class Pnetcdf < Formula
   desc "Parallel netCDF library for scientific data using the OpenMPI library"
   homepage "https:parallel-netcdf.github.ioindex.html"
-  url "https:parallel-netcdf.github.ioReleasepnetcdf-1.12.3.tar.gz"
-  sha256 "439e359d09bb93d0e58a6e3f928f39c2eae965b6c97f64e67cd42220d6034f77"
+  url "https:parallel-netcdf.github.ioReleasepnetcdf-1.13.0.tar.gz"
+  sha256 "aba0f1c77a51990ba359d0f6388569ff77e530ee574e40592a1e206ed9b2c491"
   license "NetCDF"
-  revision 1
 
   livecheck do
     url "https:parallel-netcdf.github.iowikiDownload.html"
@@ -12,16 +11,13 @@ class Pnetcdf < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3160f8422a4123ab25f4983adcbbc73d25da87f0e67964a41ce317029bd31871"
-    sha256 arm64_ventura:  "3cc09465237f96557310cbb640b65b64361ec6b5bc953260b95d54a122006b5a"
-    sha256 arm64_monterey: "1543e607fd7d317f0d235655c746f6e23e9b1f2646d366c4503008cab3b2ee1d"
-    sha256 arm64_big_sur:  "3835889299b0058c33d17b94b2f1c57b21d10a00694d9a43c19ea95079035200"
-    sha256 sonoma:         "73ad6f1c332533a6c5e0e6c921858ac41244cf4db80ce635cce9f500301e3d55"
-    sha256 ventura:        "b854eb65a2c00049c3dc4fc5dc73894b6c611b22aa5b641099e6d138a1b3d9bf"
-    sha256 monterey:       "026bca86c31dc0ce029f790e93db11616877121173a780aa4a3954864ebd347a"
-    sha256 big_sur:        "2708f28a2cc2b81cb4ef5338219fdc644e23a666001ab0c622f3cfe97c731479"
-    sha256 catalina:       "1d5b9405435f5c0621fd1214e2678e8a52c84b27da7f7540a3a6e7a4ccac7c50"
-    sha256 x86_64_linux:   "315a952a703528f06ded6287166bfd92373ae53a8de6774ac32a638d322431a8"
+    sha256 arm64_sonoma:   "e52824c134f9eb96f275957299545a72e92963705e05dfa59698951375d75a38"
+    sha256 arm64_ventura:  "04676a0d86731dbaca40fd17affa92edba088ea67a0bad5a32ad12d286a20b18"
+    sha256 arm64_monterey: "d6403f0fed304282c8aebedc23201ed53bc423e82e5a530a01261b9787187bc4"
+    sha256 sonoma:         "55004aad90dc107723bca3f7e42c5baad286e5f90fb52eec7c80894df1d67e91"
+    sha256 ventura:        "10a21cf8322f50f42d3005ddf7d8d6db95121a4f8aa5aeda90f4fcd6a99f9d76"
+    sha256 monterey:       "bf4f1b0d560aace1914df880d4cf76de30f10dbb30e9be68e08262bd8a8ec102"
+    sha256 x86_64_linux:   "af9119a49000afd8cdcd1e6c7bcc4becb886cbc3c37180c72f268fd842e90aff"
   end
 
   depends_on "gcc"
@@ -36,16 +32,13 @@ class Pnetcdf < Formula
   end
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--enable-shared"
+    # Work around asm incompatibility with new linker (FB13194320)
+    # https:github.comParallel-NetCDFPnetCDFissues139
+    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    cd "srcutils" do
-      # Avoid references to Homebrew shims
-      inreplace ["pnetcdf-config", "pnetcdf_versionMakefile"], Superenv.shims_path, "usrbin"
-    end
+    system ".configure", *std_configure_args,
+                          "--disable-silent-rules",
+                          "--enable-shared"
 
     system "make", "install"
   end

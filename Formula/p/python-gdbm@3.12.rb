@@ -22,21 +22,11 @@ class PythonGdbmAT312 < Formula
   depends_on "gdbm"
   depends_on "python@3.12"
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4b/d9/d0cf66484b7e28a9c42db7e3929caed46f8b80478cd8c9bd38b7be059150/setuptools-69.0.2.tar.gz"
-    sha256 "735896e78a4742605974de002ac60562d286fa8051a7e2299445e8e8fbb01aa6"
-  end
-
   def python3
     "python3.12"
   end
 
   def install
-    ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python3)
-    resource("setuptools").stage do
-      system python3, "-m", "pip", "install", *std_pip_args(prefix: buildpath), "."
-    end
-
     cd "Modules" do
       (Pathname.pwd/"setup.py").write <<~EOS
         from setuptools import setup, Extension
@@ -52,9 +42,9 @@ class PythonGdbmAT312 < Formula
               ]
         )
       EOS
-      system python3, *Language::Python.setup_install_args(libexec, python3),
-                      "--install-lib=#{libexec}"
-      rm_r libexec.glob("*.egg-info")
+      system python3, "-m", "pip", "install", *std_pip_args(prefix: false, build_isolation: true),
+                                              "--target=#{libexec}", "."
+      rm_r libexec.glob("*.dist-info")
     end
   end
 

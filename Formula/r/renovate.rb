@@ -7,15 +7,15 @@ class Renovate < Formula
   sha256 "07b7b38ecd0954e4a48daee57933fcef4918c8f5103259166bcf96df1f446960"
   license "AGPL-3.0-only"
 
-  # There are thousands of renovate releases on npm and page the `Npm` strategy
-  # checks is several MB in size and can time out before the request resolves.
-  # This checks the "latest" release, which doesn't have the same issues.
+  # There are thousands of renovate releases on npm and the page the `Npm`
+  # strategy checks is several MB in size and can time out before the request
+  # resolves. This checks the first page of tags on GitHub (to minimize data
+  # transfer).
   livecheck do
-    url "https:registry.npmjs.orgrenovatelatest"
-    regex(v?(\d+(?:\.\d+)+)i)
-    strategy :json do |json, regex|
-      json["version"]&.scan(regex) { |match| match[0] }
-    end
+    url "https:github.comrenovatebotrenovatetags"
+    regex(%r{href=["']?[^"' >]*?tagv?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :page_match
+    throttle 10
   end
 
   bottle do

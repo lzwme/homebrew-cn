@@ -1,21 +1,19 @@
 class NestopiaUe < Formula
   desc "NES emulator"
   homepage "http:0ldsk00l.canestopia"
-  url "https:github.com0ldsk00lnestopiaarchiverefstags1.52.0.tar.gz"
-  sha256 "eae1d2f536ae8585edb8d723caf905f4ae65349edee4ffbee45f9f52b5e3b06c"
+  url "https:github.com0ldsk00lnestopiaarchiverefstags1.52.1.tar.gz"
+  sha256 "c9c0bce673eb3b625b538b462e49c00ed1ee1ded1e0bad09be780076880968b5"
   license "GPL-2.0-or-later"
   head "https:github.com0ldsk00lnestopia.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "921c56334048e73daac86b4af93dd1e6986bc5fa243d4c10a74215bb67417c40"
-    sha256 arm64_ventura:  "4ce6ef1bf01bff15104f1e53ba5ec042e3a461e75b194eda957f876bdbf6549e"
-    sha256 arm64_monterey: "ba6b9aac85e420c98c2100f74a91252681de9d87434b8e6ab4d95fe759ec9f21"
-    sha256 arm64_big_sur:  "dcb04201bec25835b346096661f9a64bd8d69aa3935b878b298c5b5e7d6eca11"
-    sha256 sonoma:         "0a109ee9dd67ac88b0988ef2dd6a2518d53273a5d8090b4c93cf5ec3f734b61f"
-    sha256 ventura:        "9c01e56c7cd81c3493ee4f77cf5f37f9bfe70e7b3fc820d9056b63fe7e03eabe"
-    sha256 monterey:       "7c768b5fd6adbe764f3ce6ce57d2f58fa43838223d60e8ba4ad7b2a0cd760aa6"
-    sha256 big_sur:        "0f819600c7711eb7602ccf9d1305e25d25f6ae0e6759414b7bf95e7aaf4684d8"
-    sha256 x86_64_linux:   "d4d4cbc4d8ec82be9811d0ac13203506c478c7a191300af5da1e86e55e8f6f4a"
+    sha256 arm64_sonoma:   "bba218b8268f6062f2882471629ad25a240b9d0d9dd24efbafdf2cf7818b5638"
+    sha256 arm64_ventura:  "d633b03ad8d1774d29f6cd3f8a433e92074cddfffc75a9d1c4fdd3a1addb2ef0"
+    sha256 arm64_monterey: "115682347106093089ff1f3b045a8c5e7691bcb2b514b8792e64c4dff704ade6"
+    sha256 sonoma:         "d0d8b9beb96c6ac06a66dc9dae3fce6a5106aee96141c0e17ce92d5298d5bc05"
+    sha256 ventura:        "dc19708fed0ce2cd8dfcc3d8deb2b256408b7b453ffa23aba585486cbfcdf43e"
+    sha256 monterey:       "0579323fdd9048d6170abd75af16065cd958bcfcf45bfeb59c6e6318af8b706f"
+    sha256 x86_64_linux:   "baa896c57a6cc6a9c5d528bab2c67c828715115e4cfb83f71dda491e312fb3ec"
   end
 
   depends_on "autoconf" => :build

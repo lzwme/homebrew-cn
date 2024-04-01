@@ -1,20 +1,18 @@
 class Lf < Formula
   desc "Terminal file manager"
   homepage "https:godoc.orggithub.comgokcehanlf"
-  url "https:github.comgokcehanlfarchiverefstagsr31.tar.gz"
-  sha256 "ed47fc22c58cf4f4e4116a58c500bdb9f9ccc0b89f87be09f321e8d1431226ab"
+  url "https:github.comgokcehanlfarchiverefstagsr32.tar.gz"
+  sha256 "01531e7a78d8bfbe14739072e93446d003f0e4ce12032a26671fa326b73bc911"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "968de8be39eaafaef7e51a2965f030e53dd6eca837b153845ebfa1c09787ddaa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44b417555760e39467a5f936529ad18f37d141bc2a32c7584262b833878252ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7acab79bef9282e03fcd5bd1c35a0f8d65c9c6c7b2f454294f0ae6aa0e721d2b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cfd9990611815ea11e9770c70511ec6ced4e01c120d2d826f01efed1f42497d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14fa673efb46dd363383e54810abddb914871e964b9c86ac583c10f1d8d29102"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8c447b5f36fc58b75f6bb7dbd6193bfe43dc5883c160d400a29490d062eff8c"
-    sha256 cellar: :any_skip_relocation, monterey:       "023881834960674e6769e865767dabaaf5c6e66f69b429ba20ed996cc9f37224"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7d7684867950aea4e5894a261d6e36339e27f703ad26a78a00c61f69a096299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad09e5718421ca4d2dde687fc364bf9c954c42a17084a4c99b1ead10140a3f14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e322a8696a35d40b3fa538d21f21c02b3095cd64c5050b3f48bdc1ecad9b0c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d11f97b9b0f5394410b3a7323edfa62e149cb82d9dfe51648335e3c8a0cfe59"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c699f29df62cf585355f81d4b0bd44c4922e71f571bc4165b03a5dfdb9e1b592"
+    sha256 cellar: :any_skip_relocation, sonoma:         "986abd93ab80942ac7beaefd4ee77e75ffd3e4e61beef0bc20b462e1d7ae0a7e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4e329915694e9ae94f89bd069d4273c6cf7fa83d1c42f1f8930adb4d8f47fd4"
+    sha256 cellar: :any_skip_relocation, monterey:       "67af5e41af9b30509cd4a32b8612b7af7ba4e8bc2de73e68caa00d5dd8c17f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b74e1e028f3c6b0d1fa3fd6da1ac750fecf0295a9997533e959e4e46a50108c"
   end
 
   depends_on "go" => :build

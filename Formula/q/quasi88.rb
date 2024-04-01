@@ -1,8 +1,8 @@
 class Quasi88 < Formula
   desc "PC-8801 emulator"
   homepage "https://www.eonet.ne.jp/~showtime/quasi88/"
-  url "https://www.eonet.ne.jp/~showtime/quasi88/release/quasi88-0.7.0.tgz"
-  sha256 "62bc2aa09dd19ec1d15386d96bd71148c2cdf2a0bd012529643a568a77faa714"
+  url "https://www.eonet.ne.jp/~showtime/quasi88/release/quasi88-0.7.1.tgz"
+  sha256 "a9e7097e26cee6605ca3a467f6167b624dca4d11e3d99fd5c9886894b42cc05e"
 
   livecheck do
     url "https://www.eonet.ne.jp/~showtime/quasi88/download.html"
@@ -10,18 +10,20 @@ class Quasi88 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fd5024b5cd310b12254e64c0e4b31ce1bdbf788a434a0632b62ff52f912245af"
-    sha256 cellar: :any,                 arm64_ventura:  "1a7c8d32d6d7b0f0c409b9dffbdad9fde33957cd20c39f60dbc41c9319c0624b"
-    sha256 cellar: :any,                 arm64_monterey: "e96d666621124f3633778e28ec26b98bde39f7510ed3e7e61cf3692ffe5d205d"
-    sha256 cellar: :any,                 sonoma:         "042695a723221c23cdbacb5eec6b2b41e9180b38f47a66b88f9f75b4a03e8d9f"
-    sha256 cellar: :any,                 ventura:        "a7b82ee65ce372cadad0ef2be7dd8f9dc7e87947260204640323c5b8bbe55c72"
-    sha256 cellar: :any,                 monterey:       "dfdd7a24162a85fc484fc629863a52c16fd57ae3e81c76900da6c39f2bc1c081"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bce3d0326c16726bf494c20359c43e9cc226e3842ab367c9958af7eb5423a927"
+    sha256 cellar: :any,                 arm64_sonoma:   "5f6e0024ba90b4ea8d6db6615f01245ebb26ad6e914d5cd5720751b5b5d22399"
+    sha256 cellar: :any,                 arm64_ventura:  "c5a10d08e47dfd4e46bb9248aa8ebdb6b85ceaaf26223d2190d01d28167c27d3"
+    sha256 cellar: :any,                 arm64_monterey: "52ae75a5b84dab5523b36ea0b827d783a79f419a605cc059fd453ea3e74562a3"
+    sha256 cellar: :any,                 sonoma:         "42b152e68b2c5b4773be2fa8e54380f3059d3864fa82e6591e6ef7c72e0fa920"
+    sha256 cellar: :any,                 ventura:        "b5ccd2b099ca8067fdf747d4a97380f58a11d069ddd725e7c7174c0dceb2a88a"
+    sha256 cellar: :any,                 monterey:       "58db5d7edd11c2a23a92a679d954bd1e4b0be0db0fd52d0ef2adb0425f1d5668"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bece28e3cc116e801cbcb9da47c2e3768d0a0e15b24d05bdb2ff0f51e06496b"
   end
 
   depends_on "sdl12-compat"
 
   def install
+    ENV.deparallelize
+
     args = %W[
       X11_VERSION=
       SDL_VERSION=1

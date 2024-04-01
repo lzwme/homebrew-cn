@@ -1,19 +1,19 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
   homepage "https:trippy.cli.rs"
-  url "https:github.comfujiapple852trippyarchiverefstags0.9.0.tar.gz"
-  sha256 "bebd130c74ceacf4bc6b6f3aa92fa639e1904eb904c5135f53c45510370289ed"
+  url "https:github.comfujiapple852trippyarchiverefstags0.10.0.tar.gz"
+  sha256 "3dd15f6219b9b18da773c7af48e8bf35dec581975742ada5b3d930a1642a73d8"
   license "Apache-2.0"
   head "https:github.comfujiapple852trippy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb73a1170eb0df6ad758e22ddbab988660b051d11981458a9f0d635186e1dad2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91361032e0686bd067dab5a091f79eba270508d8d9da114a20c07c77a7006e87"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "906d4750087f17b06fe4e60eba1647f5f09231520561d37f0f64118b25f38178"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3bcb3fd0dbe583d6b444921353e2039c8ee45d56c0f95b605466e61e022c1bd5"
-    sha256 cellar: :any_skip_relocation, ventura:        "a608dc82289e638defa28cd6bd8d6be081e453cec02fea2fb45cb07269aa4640"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e5f71ce5c70cfc52569c0aae1cbd6796813661cfa5e2388f3c3b077d76ad81c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a02ccc325a2bcbceee089a91ab909ec30c4a25820e7d854c2f53fd544e4f8a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94d0e4337ad2b2789c27706bd7d794946c66bc3d9107b711439d183cdf3889bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9b1375a41aadd51727978890690e8148f731663a1d60ced7ad04293f6f91df7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5ec6faf9c22e407da85a2e1e74cc7b47c5b0f15be6cd7bb8e12472d51ba1339"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8360b6300af514aba82a09d5b346132711bd1bd6605d861eff24286fa8fe5581"
+    sha256 cellar: :any_skip_relocation, ventura:        "91dd4c75e182e9421efa9fc49f63da8c160c82f71b7073b581212eba11b82315"
+    sha256 cellar: :any_skip_relocation, monterey:       "d4dc112315b997a9c1b83ad02fda511f0aa636f356ff93bdca096b85dbd32435"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4061342b19b5ca0cfff66bac80187303e6d207abadd3f085c448d395d710d2b5"
   end
 
   depends_on "rust" => :build

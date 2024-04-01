@@ -1,18 +1,18 @@
 class Sh4d0wup < Formula
   desc "Signing-key abuse and update exploitation framework"
   homepage "https:github.comkpcyrdsh4d0wup"
-  url "https:github.comkpcyrdsh4d0wuparchiverefstagsv0.9.2.tar.gz"
-  sha256 "0c801c4c0a45453e6df62c96645220f4e1aff64ceb9ec82e5683dafb79e931ba"
+  url "https:github.comkpcyrdsh4d0wuparchiverefstagsv0.9.3.tar.gz"
+  sha256 "7a1258a5dfc48c54cea1092adddb6bcfb1fcf19c7272c0a6a9e1d2d7daee6e12"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "97ae8bdba1fc71899f95e363f62bec053cd64b17a02371a2529a903d0978e4fd"
-    sha256 cellar: :any,                 arm64_ventura:  "228da4ab9cbbabb964e6fd977eee679521b7ed2d6971e22449b07fe06f3ee4d4"
-    sha256 cellar: :any,                 arm64_monterey: "c9851dd0cd2ccc4ee5272607720b7e860928cec7c30c28d26c5139f7a8cde4e5"
-    sha256 cellar: :any,                 sonoma:         "a00239bc0475a01aa2b6c15b603decd2259c0161f4eb642a2de8c9014699bb08"
-    sha256 cellar: :any,                 ventura:        "0cace6504a3b12478609ee678ae37e1dc0ed677b71bce062418dfff3e78557ce"
-    sha256 cellar: :any,                 monterey:       "48d707d918132f2f2dd5147db89b2726abf304a273d4d6fac4025017d0c6eaf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ab461329d17ad36fe0c727e88ef3afd13e83fd2532669dbcd49843c68e0bb84"
+    sha256 cellar: :any,                 arm64_sonoma:   "6400ac5b11c6bd5e7a057940a73a05824cbe3546ca57f7760f66862975d4dffe"
+    sha256 cellar: :any,                 arm64_ventura:  "9b734ee54116c4288b832c79d3e722c057570e39129ba54163242a74bc0a089d"
+    sha256 cellar: :any,                 arm64_monterey: "3ab07c4272e04dd6625f1c5071f903e3f98334e0055adbb32170df5ae307c565"
+    sha256 cellar: :any,                 sonoma:         "cbb5c0144089d7ade097def6c84e0787a4df4ab567fa9fb4e63ace6e98d6af4d"
+    sha256 cellar: :any,                 ventura:        "6d5f820f18c6fd2c8aace97b28279b6ee73c2a972d62b1a9457beff582b52acb"
+    sha256 cellar: :any,                 monterey:       "0d0abae2ec6ca3d4db3920e3d6b9263100a3092abaea545daefca656d1ef29c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35560cb4308848c78775629660947cb2a49dc473fc605797ea0132458ec058ee"
   end
 
   depends_on "llvm" => :build

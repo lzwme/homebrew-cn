@@ -1,8 +1,8 @@
 class VrcGet < Formula
   desc "Open Source alternative of Command-line client of VRChat Package Manager"
   homepage "https:github.comanatawa12vrc-get"
-  url "https:github.comanatawa12vrc-getarchiverefstagsv1.7.1.tar.gz"
-  sha256 "6698ba5e50367b6e966699210fdeb6af543c6e82d08eb9ba9040837e745dc404"
+  url "https:github.comanatawa12vrc-getarchiverefstagsv1.8.0.tar.gz"
+  sha256 "8ad73183ce957abc63006c97efa63314c34e1f0f6f2ec0a55a48f5a8147c199f"
   license "MIT"
   head "https:github.comanatawa12vrc-get.git", branch: "master"
 
@@ -12,13 +12,13 @@ class VrcGet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4edcb4ba28ef382591813d82566272039dd15151454d99a819a7317da44185e8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e92f33992df9ce46002df03ab425ec9341243375b3fd9bfd9950fc8c749995f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2643dac9c19f9bc0af267b3314fed78397749195a9edf2122099ae4cb257d9f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "08823b5ca40f1bfc4a87d37e862d69892bc0975d0370fbf645f56ee5711edae3"
-    sha256 cellar: :any_skip_relocation, ventura:        "02f26021f31a2e781129899b2fb59caf629cd51b6fc1a26ff0e7ca45da3866d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "77f5b1e093a3a5d9fdf46937b05d78397c87318682f1d49ff2c9759b29cfd515"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94d98048b64752fe39e724e22c3bf2b0cec8e939c594f0efd7d59ae7aa9ac16a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9995159222e42c59776ac5266bdae9dfa090789974c79ae02e18f37693c4956a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6996622a570ba9d9ab3dcb432682f3c7a4a6d8cb574fa60d9f31cb5dce775b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6dc6347526f1d62066a1b481d91d833c3b8030cb1f13f1f300e20888cda0ef9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3c0694a71e1c9cb8a88216f0ba1d604fd142d62e8a69da80fc4d7f53dcedf953"
+    sha256 cellar: :any_skip_relocation, ventura:        "384e0f46ad5f4e3eeb1b79566eb4c24f44376f3786f8971f092c0a98ce2c2314"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0b2a14fe2d2f5f0b3539682eb2ef7078cd473c5c49478abda6a5fef77e9e5be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18c849e7b87d7b66693e34fd0a8a2199ba37c2eac76fc26119d3780a2f1bb5f1"
   end
 
   depends_on "rust" => :build

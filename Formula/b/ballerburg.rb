@@ -1,10 +1,9 @@
 class Ballerburg < Formula
   desc "Castle combat game"
   homepage "https://baller.tuxfamily.org/"
-  url "https://download.tuxfamily.org/baller/ballerburg-1.2.1.tar.gz"
-  sha256 "3f4ad9465f01c256dd1b37cc62c9fd8cbca372599753dbb21726629f042a6e62"
+  url "https://download.tuxfamily.org/baller/ballerburg-1.2.2.tar.gz"
+  sha256 "8e001efa44b70a9a51041a6ce39a2b01d9d3135d2ec54ca54196fc34f164914e"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://git.tuxfamily.org/baller/baller.git", branch: "master"
 
   livecheck do
@@ -13,16 +12,13 @@ class Ballerburg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a9a31e0b8dc75bcefa0ba2456cf8d438340ec0860395045ce9b4634ffbcabd0d"
-    sha256 cellar: :any,                 arm64_ventura:  "fdd4855a7c3dc5acf1a3f63f684ef23f55886df256002bd92284608269b6e4c3"
-    sha256 cellar: :any,                 arm64_monterey: "41d2f33620f8f0c8b418d7362f40d618785db53d624fb5eec3be48ee0361c8f9"
-    sha256 cellar: :any,                 arm64_big_sur:  "e0917508a2b1eb6721bf4694ca269349dc523a210cf8fdcc1395d266742e1f70"
-    sha256 cellar: :any,                 sonoma:         "011f1d84b3a0f51b634c66d3e676230e95e64515435e42f0b415143f2ea1c393"
-    sha256 cellar: :any,                 ventura:        "a569610cfc27ecc87a0c4455b2693e564c5d0cf08d8c36d6ab4ecb5e419ba018"
-    sha256 cellar: :any,                 monterey:       "8c7f3a3a864e9095ba740202e528b73b2e19d604f1e8179b4c09db4aa71be8de"
-    sha256 cellar: :any,                 big_sur:        "e8d832e1d5400c66663f8090893073c6c3748b9fb6461b960c227c19f4583649"
-    sha256 cellar: :any,                 catalina:       "862a6435cf14376e0c5dd7a12337bd03dc1d5b1d1917dbaaa3a0e704d025929e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44e030751c6003c0267390c81b07a892d9a131f3167f77be138885ad0069bbb5"
+    sha256 cellar: :any,                 arm64_sonoma:   "6e60dfeb0525cbff53762cb9e529a15d87c4e48988e84c6884ed8b582944d5c6"
+    sha256 cellar: :any,                 arm64_ventura:  "01fbf1c2eddb7cd5b18b44dbfdd5faaf0f5a774dbb41600af52066decedccd99"
+    sha256 cellar: :any,                 arm64_monterey: "b752e6592084f8d57b5c23c616305ef53486884c35f2c18da3d81a18a1e3b6d6"
+    sha256 cellar: :any,                 sonoma:         "527b34086caa339bc5e3bfa3f911aacedf0cd420a64522c77d09b75cd5d19465"
+    sha256 cellar: :any,                 ventura:        "7e840cfda17d76b404136e80cda808e8049fb9d710c013d17290d85fe8270b48"
+    sha256 cellar: :any,                 monterey:       "0ab3dfc0ea9f8f0e116794c913b9dbd393d0018a598d0ea2ba180d18dd5e25e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52a20fccf1c95f7d72148a613968943963d16e341e344431ff155a42bc65d05a"
   end
 
   depends_on "cmake" => :build

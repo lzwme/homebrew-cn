@@ -11708,6 +11708,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-braah-one.rb, Homebrew/homebrew-cask-fon
 Homebrew-homebrew-cask-fonts/Casks/font-brawler.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-bree-serif.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-bricolage-grotesque.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-briem-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-brill.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-bruno-ace-sc.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-bruno-ace.rb, Homebrew/homebrew-cask-fonts, 1
@@ -11948,6 +11949,8 @@ Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-hand.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask-fonts/Casks/font-edu-qld-beginner.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-qld-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-beginner.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-dotted-guide.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-hand-cursive.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-tas-beginner.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-vic-wa-nt-beginner.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12330,6 +12333,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-jacquarda-bastarda-9.rb, Homebrew/homebr
 Homebrew-homebrew-cask-fonts/Casks/font-jacques-francois-shadow.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jacques-francois.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jaldi.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-jaro.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jeju-gothic.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jeju-hallasan.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jeju-myeongjo.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13442,6 +13446,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-tapestry.rb, Homebrew/homebrew-cask-font
 Homebrew-homebrew-cask-fonts/Casks/font-taprom.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-tauri.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-taviraj.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-teachers.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-teko.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-tektur.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-telex.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13518,6 +13523,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono-derivative-powerline.rb, Hom
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-sans-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-uchen.rb, Homebrew/homebrew-cask-fonts, 1

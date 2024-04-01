@@ -6,13 +6,6 @@ class Simh < Formula
   sha256 "bd8b01c24e62d9ba930f41a7ae7c87bf0c1e5794e27ff689c1b058ed75ebc3e8"
   license "MIT"
 
-  # At the time this check was added, the "latest" release on GitHub was several
-  # versions behind the actual latest version, so we check the Git tags instead.
-  livecheck do
-    url :stable
-    regex(^v?(\d+(?:\.\d+)+(?:-\d+)?)$i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "6a2f006ba70c8319a1eb4d8ece33be4a0a24e0f064d655bdf6f3d39209b586b8"
     sha256 cellar: :any,                 arm64_ventura:  "cc698568672a1c839e4bc5fe3005ab92d9369de3cf25f81be62c90084b2093a7"

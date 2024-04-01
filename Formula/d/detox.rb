@@ -1,33 +1,27 @@
 class Detox < Formula
   desc "Utility to replace problematic characters in filenames"
   homepage "https:detox.sourceforge.net"
-  url "https:github.comdharpledetoxarchiverefstagsv1.4.5.tar.gz"
-  sha256 "5d8b1eb53035589882f48316a88f50341bf98c284e8cd29dea74f680559e27cc"
+  url "https:github.comdharpledetoxarchiverefstagsv2.0.0.tar.gz"
+  sha256 "46e646855cfeae5aa51d00c834f7eeeb5967188aaa17f8882a14f98343d82924"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_sonoma:   "81360ca5af8d123ebc91ac69f91ab4117e43bf2947e5012a5e8accecd2d023db"
-    sha256 arm64_ventura:  "4f66c9eef85d621b163b242087c3706aa322a8bc8965f37aba056c2161f8490b"
-    sha256 arm64_monterey: "5636ac88e873246ab060735d242fe4059703c6bed30bea931c63757851739dab"
-    sha256 arm64_big_sur:  "4e440bf09a205498b109d633d30216632df0657d0956ce85eb0c49224b3916e2"
-    sha256 sonoma:         "fa2c54fc362c04aef09d222561387b43c0dfd28b082010c418f125561779d59f"
-    sha256 ventura:        "f57bd4079f8d360a4ad5da2e87f37cb2c0f8334aced2e6cdfd9271e61c75326a"
-    sha256 monterey:       "6dd49020e0f4d3deeb230e098df0b231da26aa6d2e65f58ae4fcf3d5e3f26340"
-    sha256 big_sur:        "6e3621ec9c99de5bd834aeb7f1547282630355be71f74e973fe2918dba2ada85"
-    sha256 catalina:       "622b6efed1e93de18b858e6c6c4d49dac0d6f568dcad9df35ea6a7ee61356b39"
-    sha256 mojave:         "6201f2a5eb286f6f42f01d817f0eaa12c357049f6c97851984ba622aafd1641c"
-    sha256 x86_64_linux:   "8fffea4f4d51f410ae7671e659c63b35aab854cb785dd71c0c26c58586145616"
+    sha256 arm64_sonoma:   "8faa1e95922d876ff01d233893f0cb83d07bcf2e916c231d15e94765d16efa21"
+    sha256 arm64_ventura:  "79122f4f58434d19c69c182bc1709630b052dd7141e6810691b1f1e91175083f"
+    sha256 arm64_monterey: "b105a28c660493298adf8cac087529dbafe41196b4f97b5e7d28a8543236b208"
+    sha256 sonoma:         "cb3ba28c5bd713d4b8cbc3bd908270ff645481fa62b0d7d8c83e55c4e9ee984e"
+    sha256 ventura:        "4e6159694a04362b11cec132dcacb70b1d84567c688614f7f887e8b7a1f43293"
+    sha256 monterey:       "e39e5f5112ebedf0e3b44aab8d8af72c966698e9f4230797df96fffe24c82686"
+    sha256 x86_64_linux:   "cb4ab816445009b488e415ec13b576903e89a89e367bcf31313896b589163448"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "pkg-config" => :build
 
   def install
-    system "autoreconf", "-fiv"
-    system ".configure", "--mandir=#{man}", "--prefix=#{prefix}"
-    system "make"
-    (prefix"etc").mkpath
-    pkgshare.mkpath
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

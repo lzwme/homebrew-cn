@@ -1,11 +1,11 @@
 cask "archi" do
   arch arm: "-Silicon", intel: ""
 
-  version "5.2.0"
-  sha256 arm:   "061fb60c5d0984c68e45b8313f6f48130e30cdce5fed757635cc7345bf650cdf",
-         intel: "188f5a200630bbad117633746373bde2c54ccc9475fa75f8b7155cbea9f5af9f"
+  version "5.3.0"
+  sha256 arm:   "89ccc8526d4b0808d828ec875db14281bfb3a14c7101348e56407c2dd93ba714",
+         intel: "74bd5cec8adb0cc63f59b8a3421d5d0a60ab4504218f87e318dfba9b5f4e8ced"
 
-  url "https:www.archimatetool.comdownloadsarchi-5.php?#{version}Archi-Mac-#{version}#{arch}.dmg"
+  url "https:www.archimatetool.comdownloadsarchi#{version}Archi-Mac-#{version}#{arch}.dmg"
   name "archi"
   desc "ArchiMate Modelling Tool"
   homepage "https:www.archimatetool.com"

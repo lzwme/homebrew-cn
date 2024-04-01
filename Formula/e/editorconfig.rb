@@ -1,21 +1,19 @@
 class Editorconfig < Formula
   desc "Maintain consistent coding style between multiple editors"
   homepage "https:editorconfig.org"
-  url "https:github.comeditorconfigeditorconfig-core-carchiverefstagsv0.12.6.tar.gz"
-  sha256 "36052a5371731d915b53d9c7a24a11c4032585ccacb392ec9d58656eef4c0edf"
+  url "https:github.comeditorconfigeditorconfig-core-carchiverefstagsv0.12.7.tar.gz"
+  sha256 "f89d2e144fd67bdf0d7acfb2ac7618c6f087e1b3f2c3a707656b4180df422195"
   license "BSD-2-Clause"
   head "https:github.comeditorconfigeditorconfig-core-c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c71bfb3c64a8a6b68985b889ad84d9625f4ce3e49c17635aab17e4cc57855605"
-    sha256 cellar: :any,                 arm64_ventura:  "bbeed6b68bc52b794f58f8b44de2f0d09375a74aa77a56699517e618b4895a20"
-    sha256 cellar: :any,                 arm64_monterey: "445a27596e9129b5436ec906a7de8b216359837e162d4a2c452c01d32c0cebee"
-    sha256 cellar: :any,                 arm64_big_sur:  "cc1242db975617d3813647af68678d948d154570038f44d8ef231bd41590d0ff"
-    sha256 cellar: :any,                 sonoma:         "2a7c3ce9537078f2d323b4ee995bb14892bb0e2b89dfc74f282675c8ce8cb7ba"
-    sha256 cellar: :any,                 ventura:        "8ad4ac64856b3b4b3622a9f835c192d34d95aeee846297309dd232537debf43a"
-    sha256 cellar: :any,                 monterey:       "53371ea6d475c96c68443062893d0e9ec100549da7f57c62abdf40e43e943e88"
-    sha256 cellar: :any,                 big_sur:        "a51958424b3961a68857092a80dce49a04f18b0584b952af68e0bc8e5e7183ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a8791e9513abccd5ff2ef61315fa2391966e520526065e5de5832c23ed9d828"
+    sha256 cellar: :any,                 arm64_sonoma:   "87e98021bc4ca6716bca5b718aec48e06b9d8f368750e4c405cc93b7c7ac867a"
+    sha256 cellar: :any,                 arm64_ventura:  "8b9bda4f3cbee981a74cbca64331ec8f890a0eb543175e80793e7e576602833f"
+    sha256 cellar: :any,                 arm64_monterey: "bbd3db4eed09b17e854f6f5084be4863333a90b992506876f91cdf10859558ae"
+    sha256 cellar: :any,                 sonoma:         "8d055717b9ae6a5670a09bbab889f72527146186bcb94b2c602d494e6e57e022"
+    sha256 cellar: :any,                 ventura:        "a0115a90471b78d8e388be35c7c31afea16b95aaf829bd1e603923eefbaf1e66"
+    sha256 cellar: :any,                 monterey:       "a853135c8a181016179ae4b456701c335847e922e83eb762f09946b502f7bc03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ac77d6f5822633b872ea55d26d4376f807e3469a6471e0c32ba4f4037b8fa5a"
   end
 
   depends_on "cmake" => :build
