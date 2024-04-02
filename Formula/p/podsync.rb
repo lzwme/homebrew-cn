@@ -1,20 +1,19 @@
 class Podsync < Formula
   desc "Turn YouTube or Vimeo channels, users, or playlists into podcast feeds"
   homepage "https:github.commxpvpodsync"
-  url "https:github.commxpvpodsyncarchiverefstagsv2.6.1.tar.gz"
-  sha256 "e9d1653c4b8424b8f02dc1812c2848cfc930f400e996979464228cad0e16ec9b"
+  url "https:github.commxpvpodsyncarchiverefstagsv2.7.0.tar.gz"
+  sha256 "9852b5ef187f31f281c7968c644202770fb8f6f1b8bf5c91d811d486cac54a34"
   license "MIT"
   head "https:github.commxpvpodsync.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c652dd561e4e4f06ad16976a5ef80240ff9a8421d3e8fc7545c4611795d56e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45265fe7a6f2afb29ba72bfdfbc5bc8bb9232f224b5f6fae36dadd2491188d05"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f8a32141e3799be613ef73ada6723efa2e092a2656f61c92084a0a0021c2eb4f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db3a764badcaa09e98fde8d8eef16877bfa6a226fd4e5f8b6568730370b0eafa"
-    sha256 cellar: :any_skip_relocation, ventura:        "bcd513a3e5b67bd3d0b3aee3938c328af6aa486ea89e1b500a6fc778340d5649"
-    sha256 cellar: :any_skip_relocation, monterey:       "da08f2252e6462694fba0ab87e4f50097cd9f478d7849decd6e67e6ee7dfd74d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ad6e258c694031312fcafa59840ed7fad01d869f44dd33dd2d41571ede6951b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e01a9ac695520eec8a398618bc9b5eab8577e3bcbeee146e9c3f8f5ffdaaebe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1eda2a20fd3c5697c4cce16248960e105b36603e6e5d838156bd5f9b47e3784"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d61e7e03d5b60ea673f3065870229d9359eb2b6ac0ed5e4ea98a6da86ed0547"
+    sha256 cellar: :any_skip_relocation, sonoma:         "602bba68f7ecc9dcfa776a522c80a64bf63df21efbf2a794f377789887d1efbe"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a0792de081350d678e627f2a6557e0c82bfd4d1a02588ea9d88c8dc062159f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b68c090c3038e2b6497030fa3f9412aad1aaa22deee3fed78d1d0c5af1b7a7db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21dd15567642059e94a37909abcb9492bb2e7c524e00f33f6f4a1a5b7acb1279"
   end
 
   depends_on "go" => :build

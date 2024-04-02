@@ -5,6 +5,11 @@ class Texi2mdoc < Formula
   sha256 "7a45fd87c27cc8970a18db9ddddb2f09f18b8dd5152bf0ca377c3a5e7d304bfe"
   license "ISC"
 
+  livecheck do
+    url "https://mandoc.bsd.lv/texi2mdoc/snapshots/"
+    regex(/href=.*?texi2mdoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10e2d836d65a262b58228fd05b6b09a9d069d2b889905b36a81239fd646aec7d"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6c15b6cfa57413d994f850c8e1175bbb2023859cbdfd8730b07795c543a40f3"

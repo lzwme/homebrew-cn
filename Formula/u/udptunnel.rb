@@ -3,7 +3,7 @@ class Udptunnel < Formula
   # The original webpage (and download) is still available at the original
   # site, but currently www.cs.columbia.edu returns a 404 error if you
   # try to fetch them over https instead of http
-  homepage "https://web.archive.org/web/20161224191851/www.cs.columbia.edu/~lennox/udptunnel/"
+  homepage "http://www1.cs.columbia.edu/~lennox/udptunnel/"
   url "https://pkg.freebsd.org/ports-distfiles/udptunnel-1.1.tar.gz"
   mirror "https://sources.voidlinux.org/udptunnel-1.1/udptunnel-1.1.tar.gz"
   sha256 "45c0e12045735bc55734076ebbdc7622c746d1fe4e6f7267fa122e2421754670"
@@ -26,6 +26,10 @@ class Udptunnel < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+
+  on_linux do
+    depends_on "libnsl"
+  end
 
   def install
     # Fix compile with newer Clang

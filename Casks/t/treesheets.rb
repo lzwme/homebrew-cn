@@ -1,16 +1,26 @@
 cask "treesheets" do
-  version "2022.08.02,20220802020630"
-  sha256 :no_check
+  version "8504377142"
+  sha256 "163fa4b9e36605b838b7b611062433b7ed6f16ae609e258e2ca94244b62606cb"
 
-  url "https://strlen.com/treesheets/treesheets_osx.zip"
+  url "https:github.comaardappeltreesheetsreleasesdownload#{version}mac_treesheets.zip",
+      verified: "github.comaardappeltreesheets"
   name "TreeSheets"
   desc "Hierarchical spreadsheet and outline application"
-  homepage "https://strlen.com/treesheets/"
+  homepage "https:strlen.comtreesheets"
 
   livecheck do
     url :url
-    strategy :extract_plist
+    regex(^(\d+)$)
+    strategy :github_latest
   end
 
-  app "TreeSheets.app"
+  app "buildBuildProductsReleaseTreeSheets.app"
+
+  uninstall quit: "dot3labs.TreeSheets"
+
+  zap trash: [
+    "~LibraryPreferencesdot3labs.TreeSheets.plist",
+    "~LibraryPreferencesTreeSheets Preferences",
+    "~LibrarySaved Application Statedot3labs.TreeSheets.savedState",
+  ]
 end

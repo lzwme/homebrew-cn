@@ -3,18 +3,18 @@ class Dotnet < Formula
   homepage "https:dotnet.microsoft.com"
   # Source-build tag announced at https:github.comdotnetsource-builddiscussions
   url "https:github.comdotnetdotnet.git",
-      tag:      "v8.0.1",
-      revision: "b27976e5a6850466ee5b4ce24f91ee93bef645f7"
+      tag:      "v8.0.3",
+      revision: "49a39629323839c28481dd42545ce44d11c75c5a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fe16d3dc3e1072ec371128be7dcaf483a9b02be472cb87e1da3b43fb842bf82f"
-    sha256 cellar: :any,                 arm64_ventura:  "49d43810256813aa3375cd9c3269bb065d6e3f8fa059c553ab71685a3809fd91"
-    sha256 cellar: :any,                 arm64_monterey: "a1f2ee204269a54c96db79418119b954508e5117e85e06855496cee045de0d9b"
-    sha256 cellar: :any,                 sonoma:         "5e0b209c5a8aef590fa7805aa047c8308064953f24bdfcbf5c82c48d3aff7762"
-    sha256 cellar: :any,                 ventura:        "c4a7d97f40ff6165c38bc6f106567ff08d6afd0fa0bc564de7aa109605c853e8"
-    sha256 cellar: :any,                 monterey:       "90a53fa755e4946734eb0e3db1fb11b0a0bd511cbfd1882159e46a3b1c6a075e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40880305c33d01db2bfdbb6c1f3a970c408d0a05f8e8bc0db2c5cc2c3bb4f7f3"
+    sha256 cellar: :any,                 arm64_sonoma:   "0a39429e6aedea2ee05900f02b86caa61bbecf3645e27785674bcdf0e022ba88"
+    sha256 cellar: :any,                 arm64_ventura:  "f7b01d022a5e9fa25698a2aef1435f7c0ed5c21a51b7f73cf55b517be4974ef5"
+    sha256 cellar: :any,                 arm64_monterey: "b72d82c475f47201c4318413f5053f617a48b742ce701541336d21b20711c0e6"
+    sha256 cellar: :any,                 sonoma:         "63c8e11132a0f13bbc45677dc3c46aed4781644c7132ed767a6a4b7994cfd58f"
+    sha256 cellar: :any,                 ventura:        "8134ee401bffaa5cb8094ce2e26a7bc7adf2ba257aa2f5a934884a2bdc4f5ed6"
+    sha256 cellar: :any,                 monterey:       "e9e5f26beddeff93544dcdb323ee5a9862abe36eff9ad76399a1f2e3a282c817"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a4bb5103f5a5fd7cd80d8fc61091a541b9ff37c0a3b0945d6af6f6e31dc34e1"
   end
 
   depends_on "cmake" => :build

@@ -1,5 +1,3 @@
-require "languagego"
-
 class Sift < Formula
   desc "Fast and powerful open source alternative to grep"
   homepage "https:sift-tool.org"
@@ -23,17 +21,17 @@ class Sift < Formula
 
   depends_on "go" => :build
 
-  go_resource "github.comsventgo-flags" do
+  resource "github.comsventgo-flags" do
     url "https:github.comsventgo-flags.git",
         revision: "4bcbad344f0318adaf7aabc16929701459009aa3"
   end
 
-  go_resource "github.comsventgo-nbreader" do
+  resource "github.comsventgo-nbreader" do
     url "https:github.comsventgo-nbreader.git",
         revision: "7cef48da76dca6a496faa7fe63e39ed665cbd219"
   end
 
-  go_resource "golang.orgxcrypto" do
+  resource "golang.orgxcrypto" do
     url "https:go.googlesource.comcrypto.git",
         revision: "3c0d69f1777220f1a1d2ec373cb94a282f03eb42"
   end
@@ -43,7 +41,7 @@ class Sift < Formula
     ENV["GO111MODULE"] = "auto"
 
     (buildpath"srcgithub.comsventsift").install buildpath.children
-    Language::Go.stage_deps resources, buildpath"src"
+    resources.each { |r| (buildpath"src"r.name).install r }
     cd "srcgithub.comsventsift" do
       system "go", "build", "-o", bin"sift"
       prefix.install_metafiles

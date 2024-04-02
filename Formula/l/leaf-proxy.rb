@@ -1,28 +1,19 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
   homepage "https:github.comeycorsicanleaf"
+  url "https:github.comeycorsicanleafarchiverefstagsv0.10.10.tar.gz"
+  sha256 "9d46c18e092090c3f73d42d6b61095ef862b4e5daee2a360d1708b7954157998"
   license "Apache-2.0"
   head "https:github.comeycorsicanleaf.git", branch: "master"
 
-  stable do
-    url "https:github.comeycorsicanleafarchiverefstagsv0.10.9.tar.gz"
-    sha256 "71f6e41f8673f33d8558403a85695dbd14b36663ea44f1a29ca8ba39de4db100"
-
-    # protobuf 3.3.0 patch
-    patch do
-      url "https:github.comeycorsicanleafcommitae3e64c365df4982bc55e79de9f2b37cdb4a74c5.patch?full_index=1"
-      sha256 "e2cf3b92758e6acd17275bf105d0ad527433d2a9bcbac2b86a773819e926f6a4"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9e7642d6e9145f573870a921d6bfb34bdc53dc49e958912a74081ae940bc6ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a60fbbe01b74eb1f2bc03eb81f5c74cfd1988f5011b8d8c5dfec774f37290da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ae858e348b0e6e2351db0efc19494c0072d8c0a99ba86a07135773b6e685649"
-    sha256 cellar: :any_skip_relocation, sonoma:         "360327f635c1a8551f86c5475c8013ff87933b54dd7001390acd75fcecd592d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "c6d193927481cf8aaaddcbd0dfc2ef4b711a6df694119726ac72413d9e17527c"
-    sha256 cellar: :any_skip_relocation, monterey:       "b608921f9bc1645521372e47936b3d9dfce03ab38fb7c2eaa06af40ee8f2e52b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ace73643d9f65ccff49d88a82b4caaf95881d8847c0f97625a54df9e5e8f58b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1299f9860bc8dd17852d5d1500773ed13810460af7370b26b8a98046c114cfd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84d804b44982b6b568adab64f2310e6438accec8758701916c45caae5b944b85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fc81f74b64a2c96945047f281ceddaeaf9ec112cb310f61ea7a8aa3770069e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "967bb3397634e2c3c533c755a30ba1abb4df07eeb5c4be2782c814f1799972d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d5ac683ebaff3cfd69baa1831b977a07c9dd7b75c5f9edfb0f51f829ee86174"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff7f69ac391a773cc3e403cff549bfd6c33f2ce98c16788ecc1dbc2f1defdfc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45940acec0378329bb743aa9816dd2f01f019d11a0d3bb74c060721b0170e462"
   end
 
   depends_on "rust" => :build

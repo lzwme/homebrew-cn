@@ -1,8 +1,8 @@
 class ScmManager < Formula
   desc "Manage Git, Mercurial, and Subversion repos over HTTP"
   homepage "https://www.scm-manager.org"
-  url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/2.48.3/unix-2.48.3.tar.gz"
-  sha256 "5c3e4784409f45518ccef1509806017e1ea75cae569c17dc1f43b5cebc5cfc2d"
+  url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/3.0.4/unix-3.0.4.tar.gz"
+  sha256 "2b3ea72bdc60617404a2df2562ad86e0af8829725c3704a2b787fd87a0e850af"
   license all_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,7 +11,7 @@ class ScmManager < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0cc4d42fa600a9bba375271add305aadf41663cc54daf57895a7abd15351d531"
+    sha256 cellar: :any_skip_relocation, all: "63e04972c1d6264f118fe45b9425aa9ebee5c4f73e8a59ead535f751cf6d9cf1"
   end
 
   depends_on "jsvc"
@@ -35,14 +35,15 @@ class ScmManager < Formula
 
   test do
     port = free_port
-    cp_r (libexec/"conf").children, testpath
-    inreplace testpath/"server-config.xml" do |s|
-      s.gsub! %r{<SystemProperty .*/>/work}, testpath/"work"
-      s.gsub! "default=\"8080\"", "default=\"#{port}\""
+
+    cp libexec/"conf/config.yml", testpath
+    inreplace testpath/"config.yml" do |s|
+      s.gsub! "./work", testpath/"work"
+      s.gsub! "port: 8080", "port: #{port}"
     end
     ENV["JETTY_BASE"] = testpath
     pid = fork { exec bin/"scm-server" }
-    sleep 30
+    sleep 15
     assert_match "<title>SCM-Manager</title>", shell_output("curl http://localhost:#{port}/scm/")
   ensure
     Process.kill "TERM", pid

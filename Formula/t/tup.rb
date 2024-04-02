@@ -1,13 +1,13 @@
 class Tup < Formula
   desc "File-based build system"
   homepage "https:gittup.orgtup"
-  url "https:github.comgittuptuparchiverefstagsv0.7.11.tar.gz"
-  sha256 "be24dff5f1f32cc85c73398487a756b4a393adab5e4d8500fd5164909d3e85b9"
+  url "https:github.comgittuptuparchiverefstagsv0.8.tar.gz"
+  sha256 "45ca35c4c1d140f3faaab7fabf9d68fd9c21074af2af9a720cff4b27cab47d07"
   license "GPL-2.0-only"
   head "https:github.comgittuptup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe803cdb793a0521d4b711bbbdb150d404916e997dfba17146390219910f3383"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "677b1e4dbb495cf13c2b30dd7267cff734c22226cb3720f154c6c7e552036033"
   end
 
   depends_on "pkg-config" => :build

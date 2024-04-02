@@ -1,8 +1,8 @@
 class Radare2 < Formula
   desc "Reverse engineering framework"
   homepage "https:radare.org"
-  url "https:github.comradareorgradare2archiverefstags5.8.8.tar.gz"
-  sha256 "4f88c33e4391f492c7d0073df9bffcc666cc1e2ca0a95d6e1035decdaa227b26"
+  url "https:github.comradareorgradare2archiverefstags5.9.0.tar.gz"
+  sha256 "f3280abd5ec70d58f9fd3853071670cfbb1e155d58e884aa43231f6ae10e0b59"
   license "LGPL-3.0-only"
   head "https:github.comradareorgradare2.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Radare2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "cc461fb2eb731b50d14c43d48a04d37ba2a6157121c8d525ccd2a6c2ba7b5a23"
-    sha256 arm64_ventura:  "0582c617fbe468060ad6a15132d7323a55914325345b8daaf2e81d92e8b6e75b"
-    sha256 arm64_monterey: "96b42e7055216f1c293ea00150287679cd021b8723d72244d75e6a369d5204c5"
-    sha256 arm64_big_sur:  "1660c7cd456b8ce50547bfd0eacf8b447d69267c024bc62deeeb081e57b378e5"
-    sha256 sonoma:         "76edfcaba498af270afa9a4cb1df7f110a4df931846c78d30fc46e2750b25e91"
-    sha256 ventura:        "e64b3ad74eb8a43b7876bc978d442305651f9ba6507df679c1f73966c9ad833d"
-    sha256 monterey:       "2bdc2d8f249c6c025b36863264fa2209e9e81485bf0430a061e23d9c0a061fbf"
-    sha256 big_sur:        "c0e1a1f9a27d4976ca94f0c8b4ce4c092147fa5911b29a0f3329b5f63280b632"
-    sha256 x86_64_linux:   "fa088a689dea44b3b5506db2eaabc0d43844ceae56eff81a4e28e84717c53d6f"
+    sha256 arm64_sonoma:   "f19ee8e2ee6513abe52a0e78fa121f5756e164c922ca04f494ca66aeb0e8337a"
+    sha256 arm64_ventura:  "4e03fc09b70cf7ccfb60607dec6dafc96214c82c423713294b182c0fe7c81c3c"
+    sha256 arm64_monterey: "f09b034fb19c393e0f097420ecf6ebf4ea7ab0a32a4c135250b0da805be939ca"
+    sha256 sonoma:         "2551e974eb0a2316007f699d54d7c00868d274615eb07f125ec57954c2d85a6f"
+    sha256 ventura:        "98c169cfaae28288fca7aad974c3463f9823d37cf6588d18ac6220c8972e6e7c"
+    sha256 monterey:       "21f4aa4951d28c728da9c9bfddbf0716c6ecd69f5b6aa67cfd17535510d75625"
+    sha256 x86_64_linux:   "56613297e8e3e173110f00c549215072a020698d468bcdabc9921ad8cc1ac34a"
   end
 
   def install

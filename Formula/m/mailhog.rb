@@ -1,115 +1,10 @@
-require "languagego"
-
 class Mailhog < Formula
   desc "Web and API based SMTP testing tool"
   homepage "https:github.commailhogMailHog"
+  url "https:github.commailhogMailHogarchiverefstagsv1.0.1.tar.gz"
+  sha256 "6227b566f3f7acbfee0011643c46721e20389eba4c8c2d795c0d2f4d2905f282"
   license "MIT"
   head "https:github.commailhogMailHog.git", branch: "master"
-
-  stable do
-    url "https:github.commailhogMailHogarchiverefstagsv1.0.1.tar.gz"
-    sha256 "6227b566f3f7acbfee0011643c46721e20389eba4c8c2d795c0d2f4d2905f282"
-
-    go_resource "github.comgorillacontext" do
-      url "https:github.comgorillacontext.git",
-          revision: "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
-    end
-
-    go_resource "github.comgorillamux" do
-      url "https:github.comgorillamux.git",
-          revision: "599cba5e7b6137d46ddf58fb1765f5d928e69604"
-    end
-
-    go_resource "github.comgorillapat" do
-      url "https:github.comgorillapat.git",
-          revision: "cf955c3d1f2c27ee96f93e9738085c762ff5f49d"
-    end
-
-    go_resource "github.comgorillawebsocket" do
-      url "https:github.comgorillawebsocket.git",
-          revision: "a91eba7f97777409bc2c443f5534d41dd20c5720"
-    end
-
-    go_resource "github.comian-kentenvconf" do
-      url "https:github.comian-kentenvconf.git",
-          revision: "c19809918c02ab33dc8635d68c77649313185275"
-    end
-
-    go_resource "github.comian-kentgo-log" do
-      url "https:github.comian-kentgo-log.git",
-          revision: "5731446c36ab9f716106ce0731f484c50fdf1ad1"
-    end
-
-    go_resource "github.comian-kentgoose" do
-      url "https:github.comian-kentgoose.git",
-          revision: "c3541ea826ad9e0f8a4a8c15ca831e8b0adde58c"
-    end
-
-    go_resource "github.comian-kentlinkio" do
-      url "https:github.comian-kentlinkio.git",
-          revision: "77fb4b01842cb4b019137c0227df9a8f9779d0bd"
-    end
-
-    go_resource "github.commailhogMailHog-Server" do
-      url "https:github.commailhogMailHog-Server.git",
-          revision: "50f74a1aa2991b96313144d1ac718ce4d6739dfd"
-    end
-
-    go_resource "github.commailhogMailHog-UI" do
-      url "https:github.commailhogMailHog-UI.git",
-          revision: "24b31a47cc5b65d23576bb9884c941d2b88381f7"
-    end
-
-    go_resource "github.commailhogdata" do
-      url "https:github.commailhogdata.git",
-          revision: "024d554958b5bea5db220bfd84922a584d878ded"
-    end
-
-    go_resource "github.commailhoghttp" do
-      url "https:github.commailhoghttp.git",
-          revision: "2e653938bf190d0e2fbe4825ce74e5bc149a62f2"
-    end
-
-    go_resource "github.commailhogmhsendmail" do
-      url "https:github.commailhogmhsendmail.git",
-          revision: "9e70164f299c9e06af61402e636f5bbdf03e7dbb"
-    end
-
-    go_resource "github.commailhogsmtp" do
-      url "https:github.commailhogsmtp.git",
-          revision: "0c4e9b7e0625fec61d0c30d7b2f6c62852be6c54"
-    end
-
-    go_resource "github.commailhogstorage" do
-      url "https:github.commailhogstorage.git",
-          revision: "6d871fb23ecd873cb10cdfc3a8dec5f50d2af8fa"
-    end
-
-    go_resource "github.comphilhoferfwd" do
-      url "https:github.comphilhoferfwd.git",
-          revision: "98c11a7a6ec829d672b03833c3d69a7fae1ca972"
-    end
-
-    go_resource "github.comt-kfluent-logger-golang" do
-      url "https:github.comt-kfluent-logger-golang.git",
-          revision: "0f8ec08f2057a61574b6943e75045fffbeae894e"
-    end
-
-    go_resource "github.comtinylibmsgp" do
-      url "https:github.comtinylibmsgp.git",
-          revision: "362bfb3384d53ae4d5dd745983a4d70b6d23628c"
-    end
-
-    go_resource "golang.orgxcrypto" do
-      url "https:go.googlesource.comcrypto.git",
-          revision: "cbc3d0884eac986df6e78a039b8792e869bff863"
-    end
-
-    go_resource "gopkg.inmgo.v2" do
-      url "https:gopkg.inmgo.v2.git",
-          revision: "3f83fa5005286a7fe593b055f0d7771a7dce4655"
-    end
-  end
 
   bottle do
     rebuild 2
@@ -132,19 +27,12 @@ class Mailhog < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GOBIN"] = bin
     ENV["GO111MODULE"] = "auto"
 
     path = buildpath"srcgithub.commailhogMailHog"
     path.install buildpath.children
 
-    # restore use of vendor directory for > 1.0.0
-    Language::Go.stage_deps resources, buildpath"src" if build.stable?
-
-    cd path do
-      system "go", "install", "-v", "...MailHog"
-      prefix.install_metafiles
-    end
+    system "go", "build", *std_go_args(output: bin"MailHog", ldflags: "-s -w"), path
   end
 
   service do

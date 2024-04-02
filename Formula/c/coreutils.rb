@@ -57,7 +57,7 @@ class Coreutils < Formula
     args = %W[
       --prefix=#{prefix}
       --program-prefix=g
-      --with-gmp
+      --with-libgmp
       --without-selinux
     ]
 

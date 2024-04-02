@@ -1,8 +1,8 @@
 class Cdk < Formula
   desc "Curses development kit provides predefined curses widget for apps"
   homepage "https://invisible-island.net/cdk/"
-  url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20230201.tgz"
-  sha256 "a3127b59fe505f5e898daa3dd15b0cf724a1274ce68165b779be2f29d4c4f2f6"
+  url "https://invisible-mirror.net/archives/cdk/cdk-5.0-20240331.tgz"
+  sha256 "8c5d7c6138ae3d76cf149027e1b10a6727c52fd0a7177fca934436890bb0f2de"
   license "BSD-4-Clause-UC"
 
   livecheck do
@@ -11,15 +11,13 @@ class Cdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ba05c5fc5035e5a29c0f5167e25016fdb8d18b5711d01a85cfb6860999802e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cc70b64fcb3d8613eb188bf3dc6f76f0892c504587119d2b547ebce6ad38fc3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf97e2665a17f08a929caeab09c5975394155d0f76032bf4ed23509fd26f712d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc23d665da3e3820ad5d9ec045e1139cfb137a4439e383b5e61f838f5ec7c21b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b61602751b2c137abcc72d825a0eb18a3267121a3f321237e525a6a6fdb5795b"
-    sha256 cellar: :any_skip_relocation, ventura:        "27973d203ddaf933c0b6493e08f2496d63ca59cb279db31f3d39380f209f9243"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ba1559246e72fa3c8f1fbc1562235c31029db9ccfb0af928db98dfa440ec4f2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "18c339245ce5f5fd91800677a2e8a518336b4ddafc81c101dc656b3d6e88f759"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d42905caef717c108acbdb69a3de34cac6329f1635ad77cffaa3db67dbc27815"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03908f895b719b35db718c2cee9ea5c434d99909ff52044dc2c8ebc261fbb069"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "218f46ab1c0cfc19496eff513c0970bb983fd06ce66b97582591239aceb80b54"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d96b596cd5d533a300d70167fc0002a46f3648b5fabbe375e5e56e58bd10e415"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a7c323e5ff0a34fa3be8d0de48de361a087d3a1f63552ef765b009a03f7d672e"
+    sha256 cellar: :any_skip_relocation, ventura:        "12bb1e4e4528bbb90e5c7a1b2beb09b442ebe5c568005162e4879dffb45d122b"
+    sha256 cellar: :any_skip_relocation, monterey:       "549a16f365eb7bfd13bd9adfc79e95a7c2ac09be7c9824ceb5d47c36f76a305d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19c490689dbaea2d75ceb73895743bd0d995c3bca28f501dcadcb7e292330246"
   end
 
   uses_from_macos "ncurses"

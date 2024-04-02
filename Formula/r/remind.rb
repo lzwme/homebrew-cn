@@ -1,8 +1,8 @@
 class Remind < Formula
   desc "Sophisticated calendar and alarm"
   homepage "https://dianne.skoll.ca/projects/remind/"
-  url "https://dianne.skoll.ca/projects/remind/download/remind-04.03.04.tar.gz"
-  sha256 "5e417fb22941c03950b7d4f6c2650c3e1ecc884f7207ebd7ad2426127044a42f"
+  url "https://dianne.skoll.ca/projects/remind/download/remind-04.03.05.tar.gz"
+  sha256 "fbd0e7a5ebb039ec29096f28253c9dfaa8448743e30ca1201b75860c3667c996"
   license "GPL-2.0-only"
   head "https://git.skoll.ca/Skollsoft-Public/Remind.git", branch: "master"
 
@@ -12,16 +12,19 @@ class Remind < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1cecf2834d174c2f59288cff1cacbf1dd51f01ae6f52397bf6e06944a1ef3b0a"
-    sha256 arm64_ventura:  "0dc01fc202d30d697058664f098a138b3e3b9aebab8c6a8995e7e0e5a049c70a"
-    sha256 arm64_monterey: "b05acc5b5afeb2ccd599c54f11747183af2b5bdf45cf09a57764b0caacfeb150"
-    sha256 sonoma:         "296b0e45d112d38a67f86727d080334b73c5e490253d80af0871ef977b59bcbf"
-    sha256 ventura:        "aeb6b7551e17a0b2f2e055fc0054f6852e0d2d05dc7711d94defc9925c3a8d8b"
-    sha256 monterey:       "d6346f704603a9b8d632a532948e3b7f7cdcf6f1a0a95909912717342d645042"
-    sha256 x86_64_linux:   "ac33f0dd21e03ceec2d00c43d6658ff2e940d770fef858890f3502d27c3c2a12"
+    sha256 arm64_sonoma:   "2d40503f85229b8ae6ca63a26ca21cdd3f43c11961319d5c6cb9f4267677b46b"
+    sha256 arm64_ventura:  "8d0264906f733c89a2bca33d740cb23da65503dcc9e08c447d2789254037ea2e"
+    sha256 arm64_monterey: "315d8dfe60c0dd8af1dc96756d22e571d5c318fc755cf7225e0c34d3fa772a79"
+    sha256 sonoma:         "43c49ba928f233ef82db653ca5f65c1fcec3984522e0570f2b62dae43a9352cd"
+    sha256 ventura:        "39d3940f3e069fc991af4543286ce02933efbbf3e86f8d240300386e8af33f83"
+    sha256 monterey:       "f23f0df888956e81870b62131bee575868af1e74e8e1eee214458c3fc922c6ad"
+    sha256 x86_64_linux:   "5922b050ec27dfb0e8843711b1afd36141bfe62d912d5bab3c7b87114969fe81"
   end
 
   conflicts_with "rem", because: "both install `rem` binaries"
+
+  # emailed upstream about the patch
+  patch :DATA
 
   def install
     system "./configure", "--prefix=#{prefix}"
@@ -34,3 +37,20 @@ class Remind < Formula
       shell_output("#{bin}/remind reminders 2015-01-01")
   end
 end
+
+__END__
+diff --git a/src/queue.c b/src/queue.c
+index 86fae8d..81fe80c 100644
+--- a/src/queue.c
++++ b/src/queue.c
+@@ -637,8 +637,10 @@ static void CheckInitialFile(void)
+     /* If date has rolled around, or file has changed, spawn a new version. */
+     time_t tim = FileModTime;
+     int y, m, d;
++#ifdef USE_INOTIFY
+     char buf[sizeof(struct inotify_event) + NAME_MAX + 1];
+     int n;
++#endif
+
+ #ifdef USE_INOTIFY
+     /* If there are any inotify events, reread */

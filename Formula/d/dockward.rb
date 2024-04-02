@@ -1,5 +1,3 @@
-require "languagego"
-
 class Dockward < Formula
   desc "Port forwarding tool for Docker containers"
   homepage "https:github.comabiosoftdockward"
@@ -31,32 +29,32 @@ class Dockward < Formula
 
   depends_on "go" => :build
 
-  go_resource "github.comSirupsenlogrus" do
+  resource "github.comSirupsenlogrus" do
     url "https:github.comSirupsenlogrus.git",
         revision: "61e43dc76f7ee59a82bdf3d71033dc12bea4c77d"
   end
 
-  go_resource "github.comdockerdistribution" do
+  resource "github.comdockerdistribution" do
     url "https:github.comdockerdistribution.git",
         revision: "7a0972304e201e2a5336a69d00e112c27823f554"
   end
 
-  go_resource "github.comdockerengine-api" do
+  resource "github.comdockerengine-api" do
     url "https:github.comdockerengine-api.git",
         revision: "4290f40c056686fcaa5c9caf02eac1dde9315adf"
   end
 
-  go_resource "github.comdockergo-connections" do
+  resource "github.comdockergo-connections" do
     url "https:github.comdockergo-connections.git",
         revision: "eb315e36415380e7c2fdee175262560ff42359da"
   end
 
-  go_resource "github.comdockergo-units" do
+  resource "github.comdockergo-units" do
     url "https:github.comdockergo-units.git",
         revision: "e30f1e79f3cd72542f2026ceec18d3bd67ab859c"
   end
 
-  go_resource "golang.orgxnet" do
+  resource "golang.orgxnet" do
     url "https:go.googlesource.comnet.git",
         revision: "f2499483f923065a842d38eb4c7f1927e6fc6e6d"
   end
@@ -67,7 +65,7 @@ class Dockward < Formula
     ENV["GO111MODULE"] = "auto"
     (buildpath"srcgithub.comabiosoft").mkpath
     ln_s buildpath, buildpath"srcgithub.comabiosoftdockward"
-    Language::Go.stage_deps resources, buildpath"src"
+    resources.each { |r| (buildpath"src"r.name).install r }
     system "go", "install", "github.comabiosoftdockward"
   end
 

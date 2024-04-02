@@ -26,6 +26,10 @@ class Pdnsd < Formula
     sha256 x86_64_linux:   "4402ca761308936338a2c45fd5642eb8d19c80ec6700b1bcb79203f4396d76c4"
   end
 
+  # The upstream urls have been dead since at least 2021.
+  # Last release on 2012-03-17
+  deprecate! date: "2024-03-31", because: :unmaintained
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
