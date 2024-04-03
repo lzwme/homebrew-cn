@@ -1,19 +1,19 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https:github.comastral-shuv"
-  url "https:github.comastral-shuvarchiverefstags0.1.26.tar.gz"
-  sha256 "a9d9e8f21120bae782afb3197ef4307c9f18207f6714e881b40494c2af5de9c5"
+  url "https:github.comastral-shuvarchiverefstags0.1.28.tar.gz"
+  sha256 "231e1b1cf524d10b52473934c7951f4309c0b8d6643d823cc6c52bb745be8458"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comastral-shuv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7f821fb97ea6aaaf2adfdf8707d57a6167808fa0b34db07b6d6355bd2b838001"
-    sha256 cellar: :any,                 arm64_ventura:  "cce195a2ef3c3e60f7b9d51a75a88839aa655a7a29417894fb161dcb1f39075a"
-    sha256 cellar: :any,                 arm64_monterey: "30d92fd8a54a407465277fad3e426701ed35dcaabf88f809293f3c9b6f9264ef"
-    sha256 cellar: :any,                 sonoma:         "cd52150aa471e11d5581356abcb8d3593253f8755e715c191782106590225b2b"
-    sha256 cellar: :any,                 ventura:        "65776360dbc4d732cf29adbf0ead85bd18d3ee5b4161a43cdbc41ff555b876b0"
-    sha256 cellar: :any,                 monterey:       "3a4d8c16e302c0414871d738129adc69647304790fe1dd9bef5aed20d4bff3ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02049a06ea653a9b5cc5b0ab4358b5e6706892521ee63956f8feb1c0acc2cb1b"
+    sha256 cellar: :any,                 arm64_sonoma:   "944aa72200b879cb8eca9eb9e47a636dad4943f1ae07ed90fb448255a621e4cb"
+    sha256 cellar: :any,                 arm64_ventura:  "069cfb8de81731c9543607c61107ffbf39a82a8034868b98dd627efa78814fc6"
+    sha256 cellar: :any,                 arm64_monterey: "9354212652d1bbccca88eae12f32feed1c73953276785e6c0bbd2ab6b502dd80"
+    sha256 cellar: :any,                 sonoma:         "6de06ff46b48e67dc018670a71579b45ed1429186194d9912ac7b53309b51a4b"
+    sha256 cellar: :any,                 ventura:        "9afd30938cc241a29e8a5c09d6f3a7ee77bd71ed74744a28ddca70118079a619"
+    sha256 cellar: :any,                 monterey:       "80d6a9ad5675885d48c5a1f13fcb6eed6015e6f4053d870ceb97925d871f8954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c15736e5ec3260bea26eef4fc7a3570a2acc5dbbe1dcaee7d4de4ad8a8932538"
   end
 
   depends_on "pkg-config" => :build

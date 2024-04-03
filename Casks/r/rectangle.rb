@@ -27,5 +27,6 @@ cask "rectangle" do
     "~LibraryContainerscom.knollsoft.RectangleLauncher",
     "~LibraryHTTPStoragescom.knollsoft.Rectangle",
     "~LibraryPreferencescom.knollsoft.Rectangle.plist",
+    "~LibraryWebKitcom.knollsoft.Rectangle",
   ]
 end

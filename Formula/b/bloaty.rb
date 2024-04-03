@@ -4,16 +4,16 @@ class Bloaty < Formula
   url "https:github.comgooglebloatyreleasesdownloadv1.1bloaty-1.1.tar.bz2"
   sha256 "a308d8369d5812aba45982e55e7c3db2ea4780b7496a5455792fb3dcba9abd6f"
   license "Apache-2.0"
-  revision 23
+  revision 24
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "abb1e5c8f50a7a9347904af952f061032b1bcf8d3a5ac4d9011cec4c558a8913"
-    sha256 cellar: :any,                 arm64_ventura:  "f476a680b2eab934aef1c47d9fa935c59654f8f837a6a15ade86b38fa634c977"
-    sha256 cellar: :any,                 arm64_monterey: "5f2b387eb82e5bd7f985dffbad41b445ea5ba97fdb6311bc55e4cec97ee52718"
-    sha256 cellar: :any,                 sonoma:         "74217843640f05ef7e7d1d233ddbfa1814883502e7b0998dd87af0d5568b920c"
-    sha256 cellar: :any,                 ventura:        "87b9528a41d3a4dfcff5977a0a40707739817296812d4729a18fccae20a64e7f"
-    sha256 cellar: :any,                 monterey:       "cc88f22f645eca7938e29a3d1917d7a0d40f0cdb525bc64759e1183b0b137f99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e835ff4c2ccdcf3ab53ae08d1eeef8d584cbd6aa6ac8ab3ae787432fc5f5878a"
+    sha256 cellar: :any,                 arm64_sonoma:   "e497f7f3b14631af61cc19b6db85c1657adcdddaff36d65e1e09ad602680b51b"
+    sha256 cellar: :any,                 arm64_ventura:  "beca55c2ed09f756294e16356e9de98567965c61560387bdc56c1ccc2abd8486"
+    sha256 cellar: :any,                 arm64_monterey: "3917c61cc29c6791825f62926bbc9b306b13f3ee2f472d1bc9985a855f51315b"
+    sha256 cellar: :any,                 sonoma:         "782c24dda4a0e5c549c72300476208eaeb1650a4a2ca4eef067e445177048f65"
+    sha256 cellar: :any,                 ventura:        "42d735f79f81c0cc479fe0cf7848ba6c2580e83493126551d52e92e640dd96fe"
+    sha256 cellar: :any,                 monterey:       "6039477a5fbd8a4bdc5326542cd3681129232827b1ad8a6775eb6d51ce1660cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e2671ed2fd9402f9d6d39a14bba7b9c3ad4b35abe230e4a6da4307b8eb2f1fb"
   end
 
   depends_on "cmake" => :build

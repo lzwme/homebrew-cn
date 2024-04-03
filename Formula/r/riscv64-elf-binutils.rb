@@ -1,24 +1,23 @@
 class Riscv64ElfBinutils < Formula
   desc "GNU Binutils for riscv64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
-  sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
+  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     formula "binutils"
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3202dea99c33e7819903e607aa6121375966030d5a86db8a6f5dc9b7024c4302"
-    sha256 arm64_ventura:  "ecb9b680bf4303d25f717443d807f3b03e82e46bb99dbd9cba8496a4343426a3"
-    sha256 arm64_monterey: "09b479bcc3959438c476b60ec6df8f7287b0eaa868d251ef90418b11ba3eb00b"
-    sha256 sonoma:         "95bdfe7ed2536be364581503a208a396eca32b2a7b88d376bfc2d1924ef16b78"
-    sha256 ventura:        "875f7f662cd4f5e4a372e1bb17753f9a1e45ab5db5749d32e453a31df834cd1d"
-    sha256 monterey:       "deed0c9650efc0b95eee929909358fdd0bfc402c7411d2b5d2b1ff0f0781a0eb"
-    sha256 x86_64_linux:   "f626a9b181609369eab79fcd4711c6b3c40eca3ed9760f1248a08a6d354ad5dd"
+    sha256 arm64_sonoma:   "09a3369af25004d0008a0ec7390f2ae1ba0ba3a7ad132ca018ee919e961f8df8"
+    sha256 arm64_ventura:  "e867436303e7352f3bd543a1300dae09237544bf4f8b1698c68f7d63ea2e3644"
+    sha256 arm64_monterey: "36f5c8b2032ac730408734462c70939001ee516c134140b8fe5ddce437d317f4"
+    sha256 sonoma:         "e3d07fffc1ece4c8f50ce5218210e5a46a493ead0955811708a46d74a12b88bc"
+    sha256 ventura:        "8f7f40be28d714274e65f8181cf07c159713db80654b207dcfa9e4b07426cd28"
+    sha256 monterey:       "77de440e53b00249fcd787dfee0b093dbb7f2fadfa727b0d6d1939feb04a5e62"
+    sha256 x86_64_linux:   "6491d27ff8c7c5c959db2d388aeb6a996536d01fbe5a79c7bd631a462ab08be1"
   end
 
   depends_on "pkg-config" => :build

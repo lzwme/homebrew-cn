@@ -6,16 +6,16 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.21.5v6d-0.21.5.tar.gz"
   sha256 "c434f61e71fb5e414add093b302375f27084dc03800e026019199db984183036"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256                               arm64_sonoma:   "d2eb18bd877308b20832e9522eeb7ac5cfaa58a868e1c48172ee146e75fc4c56"
-    sha256                               arm64_ventura:  "9c574acc69719bafb8a3443c1cdd413644c67e241addf8196bd0087198a11e0c"
-    sha256                               arm64_monterey: "aaa03442a75dbc85795896836a31cedb82fe5fd9a65a7701750dd58071b76dee"
-    sha256                               sonoma:         "eaba0b2adc8f317f9e913319eaa020d7182bbe63551b730859a986252a967f86"
-    sha256                               ventura:        "27c7e40b494d6ea16119f27935f167f8a478fbc542a89287bdcd0545f777c021"
-    sha256                               monterey:       "b2dd35f487cb2d6be362a996e705ea839ac68de08aaecc77432e926947c32b16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c32f186ff283c322aa52645a4218bbb948f1b2eec62d07a4fd9e2dfb7ea85b07"
+    sha256                               arm64_sonoma:   "13ca677806fa9073f7207f7e5efe9ea33315ff270fdf7559cd3d2bf311db5309"
+    sha256                               arm64_ventura:  "f00c78861c0da0cbabec1e0fcf6a0236067cc23f0410a59c77368528b5addcc6"
+    sha256                               arm64_monterey: "b3ca850db4e8945339563277aaa0942080804ff3c415436506ebb2c85ec21c71"
+    sha256                               sonoma:         "2887df252b3703b18c69038f1db7d4ff119c9cbd21378a3635fc74ddd848ac18"
+    sha256                               ventura:        "cab9a0c4b38a226310c790caeca308d4806957cabef44fd3c60e70d1a05e9b87"
+    sha256                               monterey:       "5f85919fdddcdeac46221d4e63d997e88d821ae9b8b739363d2ffb857b6997a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff64d97910a0ee232f178caf6c0166fc7f7026f2856a70f6e17e6d52a323a880"
   end
 
   depends_on "cmake" => [:build, :test]

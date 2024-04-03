@@ -1,24 +1,21 @@
 class Pan < Formula
   desc "Usenet newsreader that's good at both text and binaries"
-  homepage "https://pan.rebelbase.com"
-  url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.155/pan-v0.155.tar.bz2"
-  sha256 "3624ac3171fa8089825ce55b62b053db4f86d592f717c4d874c48ce0e885dff2"
+  homepage "https://gitlab.gnome.org/GNOME/pan"
+  url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.157/pan-v0.157.tar.bz2"
+  sha256 "1ab5f59a9e1e9cb9bfe978be55fda812d5b46936c1c14d9dae30a555c665eb51"
   license "GPL-2.0-only"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "c08c401b97e32d8934db82f16c2b0e074227dd24925a4f39d6a51998e80be842"
-    sha256 arm64_ventura:  "1e14649519c4a583699826739cb764a2aa2fb01f9ae4d7ecd8986785aebecb0a"
-    sha256 arm64_monterey: "041774d3ef7be7739b5eff98d9e983e2fc9f18d432166957617d45f105ebd046"
-    sha256 sonoma:         "1efce928f716ef06e07190d7131fb35fed49fd9a6127daff0e5d1799d4c96ff6"
-    sha256 ventura:        "f4c9efe084a27257401588d8f7349de86098c8e9c8ccf08ee943d80180c09673"
-    sha256 monterey:       "7b9d202162e62d67ecaef4fe1b1b6d1416e883c999ce21cc16ed649f45003736"
-    sha256 x86_64_linux:   "9b26beb9076367133889cbe9b8204c503e10c087bc9f15159fbd074a5f062392"
+    sha256 arm64_sonoma:   "f0f8d01a20e693fff3e196754238a7cb488d35424b864c9668fbba1e46eaf06d"
+    sha256 arm64_ventura:  "9a27968f0cf3aa20f7a22387dcc51a062f3987db002265b77731038bcb3ae4ce"
+    sha256 arm64_monterey: "afeae9b7e194af60be2d2da2db359ff559e595fcbc041b9c71f0f310cd027018"
+    sha256 sonoma:         "47bb4ec160c0148d0ef3750ae7a62edac08e5c3eba51fc361956435d3cb555a4"
+    sha256 ventura:        "4087aef297472f7c8f42df6b7261083770d5bb08b72189b4a9cf2b385e680fbc"
+    sha256 monterey:       "4b196dfa4e2e9ddc311ae0c5d6a2f3d26f3485cb33ae459b555315e899a8cd94"
+    sha256 x86_64_linux:   "f6b0cc5dee1673657fdad6f75befb3fa9bd9dc6ace1dfd3e38dcb6ed47903cf0"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "itstool" => :build
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
   depends_on "cairo"
@@ -34,17 +31,9 @@ class Pan < Formula
   depends_on "pango"
 
   def install
-    # use brew name for gtk3 version of tool update-icon-cache
-    inreplace "pan/icons/Makefile.am", "gtk-update-icon-cache", "gtk3-update-icon-cache"
-
-    ENV.append "CXXFLAGS", "-std=c++11"
-
-    system "NOCONFIGURE=1 ./autogen.sh"
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--with-gnutls"
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -4,16 +4,16 @@ class ProtobufC < Formula
   url "https:github.comprotobuf-cprotobuf-creleasesdownloadv1.5.0protobuf-c-1.5.0.tar.gz"
   sha256 "7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98"
   license "BSD-2-Clause"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "98050b0cd294095a03a6bee072af444febe085042f7ab6c898613b9918c45e11"
-    sha256 cellar: :any,                 arm64_ventura:  "172486be04e173c86bbff62db1427b4031c449b6d060c14ba702fc866257138a"
-    sha256 cellar: :any,                 arm64_monterey: "c0b11ff5d79ef93823ce07f054a628eda8ca690500fb7384bf0d2bc292f9d21a"
-    sha256 cellar: :any,                 sonoma:         "7cd89b5f3118cc69c668e4111bac42081cdc55e4da2eebe46cf3161527898800"
-    sha256 cellar: :any,                 ventura:        "4b9302d5d81ad842cbf0bac78559764bece5234e3c582e3f7411f94cda12eaf9"
-    sha256 cellar: :any,                 monterey:       "ff699d5d7e31d24d8a4c729043ed05bd85341910cca98bd52617871fcc3c8c4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13c9b460499e4d272981ee9e2c7cbc74ed0eb0ef6506d1db30c8b950092c9fe3"
+    sha256 cellar: :any,                 arm64_sonoma:   "46202d08682f502230220a3fa472d79168dc701354841e99379723b9cd600d2c"
+    sha256 cellar: :any,                 arm64_ventura:  "1c1ec792cc547a8b0c498f94b0ffc72d37252bccbd065602519913efe1b89a32"
+    sha256 cellar: :any,                 arm64_monterey: "5084fac390c5530ef7687675af3d70a1e3701562673b357c94a59ed6b6fb2c59"
+    sha256 cellar: :any,                 sonoma:         "f763b9c45a524c3a8ffd7425476c334cd7dbdbd689b135e802155aae11027f02"
+    sha256 cellar: :any,                 ventura:        "b36607c4ec9e3100454f0f113e01933a44e385a2cc023c9020cc8822b3c3b32d"
+    sha256 cellar: :any,                 monterey:       "023d835446a4a5343d9454ac4bd832cb66aaf73d7f991cad28fcc41ec2c7f12a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50cf4c92da67b310f341fcd6db33c5c88a168a0004354ad313e2cd05aea08a5a"
   end
 
   head do
@@ -26,6 +26,21 @@ class ProtobufC < Formula
 
   depends_on "pkg-config" => :build
   depends_on "protobuf"
+
+  # Apply commits from open PR to support Protobuf 26.
+  # PR ref: https:github.comprotobuf-cprotobuf-cpull711
+  patch do
+    url "https:github.comprotobuf-cprotobuf-ccommite3acc96ca2a00ef715fa2caa659f677cad8a9fa0.patch?full_index=1"
+    sha256 "3b564a971023d127bb7b666e5669f792c94766836ccaed5acfae3e23b8152d43"
+  end
+  patch do
+    url "https:github.comprotobuf-cprotobuf-ccommit1b4b205d87b1bc6f575db1fd1cbbb334a694abe8.patch?full_index=1"
+    sha256 "6d02812445a229963add1b41c07bebddc3437fecb2a03844708512326fd70914"
+  end
+  patch do
+    url "https:github.comprotobuf-cprotobuf-ccommitd95aced22df60a2f0049fc03af48c8b02ce4d474.patch?full_index=1"
+    sha256 "7aa44807367a4547bd15b3aa9a5275d5fe4739348bf2741ca773fa47015fb01a"
+  end
 
   def install
     # https:github.comprotocolbuffersprotobufissues9947

@@ -6,14 +6,14 @@ class Kapacitor < Formula
 
   stable do
     url "https:github.cominfluxdatakapacitor.git",
-        tag:      "v1.6.6",
-        revision: "79897085a4802304bb2fb052035bac4d16913302"
+        tag:      "v1.7.3",
+        revision: "43be9330273f227c6b5495a97019483577c542a7"
 
-    # build patch to upgrade flux so that it can be built with rust 1.66.0
-    # upstream bug report, https:github.cominfluxdatakapacitorissues2769
+    # build patch to upgrade flux so that it can be built with rust 1.72.0+
+    # upstream PR ref, https:github.cominfluxdatakapacitorpull2811
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches38549b7kapacitor1.6.6.patch"
-      sha256 "32bba2e397d25afb7fed8128f5f924e0fd3368371b959b7ef2a68260f32110e4"
+      url "https:github.cominfluxdatakapacitorcommit1bc086f38b5164813c0f5b0989045bd21d543377.patch?full_index=1"
+      sha256 "38ab4f97dfed87cde492c0f1de372dc6563bcdda10741cace7a99f8d3ab777b6"
     end
   end
 
@@ -23,13 +23,13 @@ class Kapacitor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82a7eae9df12d924844d669cd098e4d2c627b6ddbe88b46a4fbb4a95f773ca05"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "753eb96876f6b4ee37822cf96328b4bd52dd97300230384f145947ce92317b96"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51d79f3c8df3812c2a2afa242d9b5d5e58463bd13845e4c6dca8bc1b8dc77213"
-    sha256 cellar: :any_skip_relocation, ventura:        "62acbd5f2cd1f6178338868d5d1a2ff93c7a2a46f9bc569f4b5d3b9380f74426"
-    sha256 cellar: :any_skip_relocation, monterey:       "8abe8b6727275b75d12fc5a014847ac2e882d2b2730f8fea6989197a68f46edd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7778f76687401b5b649c3cd490b9b19aa97dbb6a72fe714084acec78680b38b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9c728517d5c4fd80f8e9dbe70813fa657ecc4314334cc452890967cfecb3efd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad8297a4ea43e8828f469d2f6b7ce51e3cdd400c433bb0704d956f785c8edf60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "342e715c78a0d7e7d561f1f007b1e0c5953059d1c1a0217348a3a6509c8b410c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98cb7ab8d8b7d46f1bf4be85a0777ce062b1c3172ae1b0b643654908c08972d2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "695d66d7615886b75bb3ffdfe6793c606a6d1536f8bcc9fca8367bcec8f3ef76"
+    sha256 cellar: :any_skip_relocation, ventura:        "bbb3b1795df03094af6882ff6bc626c69f7d45f7ddcc2e74302d85cc2b9a8d7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "42eceee9e2fd334fd15d3ea2d07f6e45c5e9d7e04e1913a8fe2e3d4cff53373b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4531514860c13fcd4ff0b047d867e3730d14554de778b951a0aad875bcd8d1f2"
   end
 
   depends_on "go" => :build

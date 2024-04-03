@@ -24,6 +24,7 @@ cask "alt-tab" do
     "~LibraryApplication Supportcom.lwouis.alt-tab-macos",
     "~LibraryCachescom.lwouis.alt-tab-macos",
     "~LibraryCookiescom.lwouis.alt-tab-macos.binarycookies",
+    "~LibraryHTTPStoragescom.lwouis.alt-tab-macos",
     "~LibraryLaunchAgentscom.lwouis.alt-tab-macos.plist",
     "~LibraryPreferencescom.lwouis.alt-tab-macos.plist",
   ]

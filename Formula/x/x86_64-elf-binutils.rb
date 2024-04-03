@@ -1,24 +1,23 @@
 class X8664ElfBinutils < Formula
   desc "GNU Binutils for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
-  sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
+  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     formula "binutils"
   end
 
   bottle do
-    sha256 arm64_sonoma:   "cf8c0e3ae45ac7cf79dd98607d5e782d129d9ac4bc46a4aeecb96eaa4d8cf4b2"
-    sha256 arm64_ventura:  "730603cd47d8652f91f2e2496525057e22cb9db673b492260003ce8dd3239d0d"
-    sha256 arm64_monterey: "dda1077b1462f69230b6f87613bcb48edd139b116a911973bfa587e75a807cd0"
-    sha256 sonoma:         "1ed94d2ac0a812327a7955dafeeb98ae86dad7ffebbcbcb9c7f868bf2ecbe1e6"
-    sha256 ventura:        "04298966651f9a912db27019f23b5dac9e8ace157f7bc54cd45d6fb8ac929f44"
-    sha256 monterey:       "cb79fc69d9f52670c90f7ec9ee0e31088576d7766764ec1174531155b1c97119"
-    sha256 x86_64_linux:   "0f39facf2333ff7b057ce2953567a067fe5425122fae9b4ebed30e5224b30fa8"
+    sha256 arm64_sonoma:   "408df853afe97f881f09a6863c9496255e154926fbca7bd7a26a5da99bd9d780"
+    sha256 arm64_ventura:  "769d0166a2d363a9c453b2f0cb5f41045d82b489a1065fd1ec36f070adb466ea"
+    sha256 arm64_monterey: "09970acd117822df6b2f9a252e7408db0b7fffe0374b9f5d2d63ce0a16ce35fd"
+    sha256 sonoma:         "29a61d605995edf6b47b30e8975e9c713a5125bd9dfab6e0ffeb2ed2ece93789"
+    sha256 ventura:        "3a7528efc85034f001b441e7620fee0b9af9e4077c831cd0ec419870c9ba35a4"
+    sha256 monterey:       "4a16dff918cc61b37d8ca956986bab7ff8f75e3b951d579de0e3dbc4d6e72676"
+    sha256 x86_64_linux:   "402b99039776f2d90825e678749c5a0bf2f04386a8457886beafaa2c9c12ce8e"
   end
 
   depends_on "pkg-config" => :build

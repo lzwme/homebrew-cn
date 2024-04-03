@@ -4,17 +4,17 @@ class OpentelemetryCpp < Formula
   url "https:github.comopen-telemetryopentelemetry-cpparchiverefstagsv1.14.2.tar.gz"
   sha256 "c7e7801c9f6228751cdb9dd4724d0f04777ed53f524c8828e73bf4c9f894e0bd"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comopen-telemetryopentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f17f396c457183f4c38e176ecff12a37e6657f2d6312def2b1cc7d84a274eaa1"
-    sha256 cellar: :any,                 arm64_ventura:  "67801ead9edaa5ab272b812fb2c656bcbc503d145872ddd1aae5819c987a1d96"
-    sha256 cellar: :any,                 arm64_monterey: "e054e995d9dd12e8d9750ffb660023a24b743c9b57bbe5c338669392c004fa8a"
-    sha256 cellar: :any,                 sonoma:         "5cc730d3b3aa40817c5f379ed903d81eddb87f9229c29617cf8b0bd16b6ff43c"
-    sha256 cellar: :any,                 ventura:        "4da55d2b80e9b9d397207ea377ceb209027b19b5ad921c6f6f0163716b0e1aa1"
-    sha256 cellar: :any,                 monterey:       "d15bf977e0d739055377139bb7b6421be4e640971f7ac848da74ee7757999912"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2a76921bf15a1459449bcba8b71c41cdfac4347c5d1376278fcfa7bfff3a6ae"
+    sha256 cellar: :any,                 arm64_sonoma:   "f1b9715bd6200cb7233ea046a4843ab38d459a4f38b64648bfb775c6f6009a6f"
+    sha256 cellar: :any,                 arm64_ventura:  "43dc1d8601cc05d003f45d7b6db74f149264518388830947cd8d33d9a4d050e4"
+    sha256 cellar: :any,                 arm64_monterey: "ca3d87aa79d6194e3e5fd5f7eb8ed83486033dd76df578d189e491606222827a"
+    sha256 cellar: :any,                 sonoma:         "b3f6fa16a749dc3580c76cee0752c4b9216798c16d93f24ec607facafae28ae2"
+    sha256 cellar: :any,                 ventura:        "ff6947079c388b4dddbb909fdea394d34019f4d6520a97966baad41e7389ac9c"
+    sha256 cellar: :any,                 monterey:       "c64ad9310b5a868745c6c082314c8fa184a9bc80057e992936e8467a0d560bb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7c185dc5eb5a13ca3efa39bbbc550e92cf6c2da05e950183dcdf874db4ad503"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class RekorCli < Formula
   desc "CLI for interacting with Rekor"
   homepage "https:docs.sigstore.devloggingoverview"
-  url "https:github.comsigstorerekorarchiverefstagsv1.3.5.tar.gz"
-  sha256 "bc82064bc32a83bd4d4d7f4fccb8579d3ebb9f64073ff000da99b01af508b40f"
+  url "https:github.comsigstorerekorarchiverefstagsv1.3.6.tar.gz"
+  sha256 "15180c244ea11373f268985828ee2b2f40020d09a6886bbc591a4acee97ad53a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe6c3f867db6417705d5a386778268604682b76032bb4703d457a44a683e42a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fefc7c95d40b0ba98d46f8588d4a7edf46f464a453005c7c3c2235e201542e1a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fecd4cdaa0d07fd459af6007d18a45eb3aa7b2cb9fa38bbc1717032b9c38cd2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d554091097e2c15b4315d57203fe55a26e897a3047ddca2fe8c2d8ad2c847f28"
-    sha256 cellar: :any_skip_relocation, ventura:        "fbb569071ee37192cfc01d0d04ae83a8c848b34b2e58189e05bb1db3cb392e27"
-    sha256 cellar: :any_skip_relocation, monterey:       "9874583405a26039b970616027fbc0619d3ea87a1e56d7fbf118765e34f0d6b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f373cc2e2b69eb72afdaa3a1cc1b13c37bd05b19f222ac261a5dca28583391bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d3fc84c9e35f1246820c00ab49f8fd040be490378d7bee0e501c4e38049be54b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "777537292bfb1e135878ee833fd25905af9dc24a24c04dde42286d8c2908dc55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1233f61dca15831546ac17a78a767fb78998d7c114dd224a050ae159d175ba04"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91a3742f97715cc34a20f2c23b97d7d8403885fb263b12825cf46eaa0d1a4fe1"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2eb978ba461eaf36344b44329d6383697d57a6466634b41291cbb69d7937f25"
+    sha256 cellar: :any_skip_relocation, monterey:       "cdfbf78cf0c8acb8cc9e0f2ec8f87c85295748e72f2ebeae37dff716cbbb69ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4280fe7989c2e8b4c7548c9e521e3945b14b44f4c2b15bdc5f5b438543d0d79"
   end
 
   depends_on "go" => :build

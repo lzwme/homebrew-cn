@@ -1,20 +1,19 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https:www.scipy.org"
-  url "https:files.pythonhosted.orgpackages3085cdbf2c3c460fe5aae812917866392068a88d02f07de0fe31ce738734c477scipy-1.12.0.tar.gz"
-  sha256 "4bf5abab8a36d20193c698b0f1fc282c1d083c94723902c447e5d2f1780936a3"
+  url "https:files.pythonhosted.orgpackagesfba3328965862f41ba67d27ddd26205962007ec87d99eec6d364a29bf00ac093scipy-1.13.0.tar.gz"
+  sha256 "58569af537ea29d3f78e5abd18398459f195546bb3be23d16677fb26616cc11e"
   license "BSD-3-Clause"
   head "https:github.comscipyscipy.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "14309cef056fb3a80ee4008a4cee601ba400245d74c9bae56122a1c489d01804"
-    sha256 cellar: :any,                 arm64_ventura:  "ee9573ade0845e6a45020febc9546af6aed2b0806c7adcbc0a7e6b2508e19da3"
-    sha256 cellar: :any,                 arm64_monterey: "87e8bf8a997ed4e1645153ed962b0bb3085453029e4e01affb868bdd0ad9dbc2"
-    sha256 cellar: :any,                 sonoma:         "1d61ae6e455049b29bb0c32c6be938ae882a15f26b6ab6a0758752b1f314dffb"
-    sha256 cellar: :any,                 ventura:        "3eb8407e1c1e57b52a74b96f8b82ab92a4b30a52b7d713eef45f586586bb1a39"
-    sha256 cellar: :any,                 monterey:       "88e8b4c895c25639b0ca0a7ee5a45cdb41a1e1ae2c1eb2fdfcbfebadca2c1504"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3fee4a603c611e8ad336bc3fe9f6d8c354670b371cbe4cc29c2f4b1ae586c96"
+    sha256 cellar: :any,                 arm64_sonoma:   "1c5fe71be79054618e7a879de18dfd19fd03d2dc0b9d775fbf970046cd14b9a8"
+    sha256 cellar: :any,                 arm64_ventura:  "3df91dbc81c3dafe569ddd89daf87aaa0a7944a5f29f747b9df4cc2ac830cbb8"
+    sha256 cellar: :any,                 arm64_monterey: "e5e9a34d96505b866b3ef1f94f82ba2712473b582fdd6cd8614fd6b9fa629a6a"
+    sha256 cellar: :any,                 sonoma:         "5b258b4ff10784dfe38254926af91819cc4ec104d3f958b4a92bb4e2c2339376"
+    sha256 cellar: :any,                 ventura:        "7faa15e34598f920813b1f4709c1fc84f7601375c2741aa93b5a7d203807c22e"
+    sha256 cellar: :any,                 monterey:       "e3e7176018871c3ae0a98a27ccb1d845311d4566159af2f2327b9c6e2d39793b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c0cfa35bee18f7989372edb3ff82926f59e9dd6c2b35f99c9c821da989aea2d"
   end
 
   depends_on "meson" => :build

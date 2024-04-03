@@ -8,8 +8,8 @@ class Taskd < Formula
   head "https:github.comGothenburgBitFactorytaskserver.git", branch: "1.2.0"
 
   livecheck do
-    url "https:taskwarrior.orgdownload"
-    regex(href=.*?taskd[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url :stable
+    strategy :github_latest
   end
 
   bottle do

@@ -1,18 +1,18 @@
 class Gitsign < Formula
   desc "Keyless Git signing using Sigstore"
   homepage "https:github.comsigstoregitsign"
-  url "https:github.comsigstoregitsignarchiverefstagsv0.9.0.tar.gz"
-  sha256 "4bb66ace71ec560a50ead6157db69950c3e9e9960c54f8f10037530de9d4e93b"
+  url "https:github.comsigstoregitsignarchiverefstagsv0.10.1.tar.gz"
+  sha256 "e08d3ff93fdd551683b40028bc05a9bc34e077c44bfb88099db9b1027a27131e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b46251801c782169d49b7069725ce6458ff48d64883ec5084f99e48e1bbcc34"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eafa8d19b9b6e8c5f886473e15243251873c9179dcce5eca890c5250bf121ab3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da410fd18e38d986e29d75e34df74a5986991b7851d15ac9ef52d06ca89895b3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fd75cf3cb9b424584330d8cab3731b7e04f618bb4da584b3064393560b00c12c"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ba17f9ec928b0e8b4699c71fe31db3d09c37e2a920da2a5b761d82b5d40659c"
-    sha256 cellar: :any_skip_relocation, monterey:       "54240b227bc9ad27dd6065b70e8757d6bbb480fc348afbe9839ac5c8c91d68c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03e12bf2c12edce5b181a24b01e544f05b7b898703c04e1c328634922fff4839"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d67dacc2ed04be9ac1651fa7d5ad2939c73c22313c8cffec1ef591c595921260"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9571b37627fd1af443bcddcb60bba2d71d15156c5cbd7caa0e506f5431f162e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6e771cf8b14f9be086fcd16f647562a73c4c1b1549a1658914fff0823caf061"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0eb7f9483a8e4b7429d79d962ccb96e0e7e56bd3fec3f00065c99c1ec0b3bb31"
+    sha256 cellar: :any_skip_relocation, ventura:        "f1e6093eda77e94b84896522078394fdaa4322b3981b0e4b3d8bd108b9749d75"
+    sha256 cellar: :any_skip_relocation, monterey:       "8004f3594c4405ff167d5f78d7da6ccc2188bdd929db63b28c67713ab930d549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2f08d85a7b5616679898311ddd8c5be8b6b7c3fd55366f2195aa72289cb70c8"
   end
 
   depends_on "go" => :build

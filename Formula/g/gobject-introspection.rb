@@ -4,18 +4,18 @@ class GobjectIntrospection < Formula
 
   desc "Generate introspection data for GObject libraries"
   homepage "https:gi.readthedocs.ioenlatest"
-  url "https:download.gnome.orgsourcesgobject-introspection1.80gobject-introspection-1.80.0.tar.xz"
-  sha256 "54a90b4a3cb82fd6a3e8b8a7775178ebc954af3c2bc726ed5961e6503ce62636"
+  url "https:download.gnome.orgsourcesgobject-introspection1.80gobject-introspection-1.80.1.tar.xz"
+  sha256 "a1df7c424e15bda1ab639c00e9051b9adf5cea1a9e512f8a603b53cd199bc6d8"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
   bottle do
-    sha256 arm64_sonoma:   "1d83e7a0161a925efbf078e59945ea15464a851a58ed9e338cfbb75045182040"
-    sha256 arm64_ventura:  "a3d8880b2a9743befeaef6a9f664cc082b8aaf82ee094c1b2584baa94664caf1"
-    sha256 arm64_monterey: "04c549ee90a4c74430735ebf26c721103e9eb275fd50b5e79368bd62b802eb30"
-    sha256 sonoma:         "70cba482d9c2e316ca6ff7c878c1ddfbfb6d8be9c59b899a9373f85c0ee8073b"
-    sha256 ventura:        "0ffd57156ef0bd2a6c36c1a3fda526cfec5c198606df6001f54ae7de570f6383"
-    sha256 monterey:       "2481191ca8f417769c05ebfa7a6eaad67a8e546461d50fa7ee391814e4414aef"
-    sha256 x86_64_linux:   "1c96da5a9385af9b4cf647cdc106d85ad6742bd46f2d63eb07a55ee70d6b692f"
+    sha256 arm64_sonoma:   "c1c697721fa887da0a7ecf1da74166307dda223b8cd922480d35ee7528455a79"
+    sha256 arm64_ventura:  "0c84786d152faae9223090e6fdd185bf233c556a4ead8d14fc0854d276d7fa88"
+    sha256 arm64_monterey: "af672a045ca17ed75abf4599981ca482df1dd2a28eb28962ac55ed129e906805"
+    sha256 sonoma:         "46ed11128af5bdb834a7f216fa222854fd274cab9314105b2ff73359254df56d"
+    sha256 ventura:        "03e5c450af9264cfe141056ccd91a5866eab01f3a15f22269092a0482a335eae"
+    sha256 monterey:       "965341cb99b3ce445576e7e74ec23e974a3366b8e1b5a6ae708810e10e550e4f"
+    sha256 x86_64_linux:   "57923660703711398295e51f51d1f4d976ce0220b2d116bba14c240ece504925"
   end
 
   depends_on "bison" => :build
@@ -37,8 +37,8 @@ class GobjectIntrospection < Formula
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages1128c5441a6642681d92de56063fa7984df56f783d3f1eba518dc3e7a253b606Markdown-3.5.2.tar.gz"
-    sha256 "e1ac7b3dc550ee80e602e71c1d168002f062e49f1b11e26a36264dafd4df2ef8"
+    url "https:files.pythonhosted.orgpackages22024785861427848cc11e452cc62bb541006a1087cf04a1de83aedd5530b948Markdown-3.6.tar.gz"
+    sha256 "ed4f41f6daecbeeb96e576ce414c41d2d876daa9a16cb35fa8ed8c2ddfad0224"
   end
 
   resource "markupsafe" do

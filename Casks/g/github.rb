@@ -33,10 +33,12 @@ cask "github" do
         "~LibraryApplication SupportShipIt_stdout.log",
         "~LibraryCachescom.github.GitHubClient",
         "~LibraryCachescom.github.GitHubClient.ShipIt",
+        "~LibraryHTTPStoragescom.github.GitHubClient",
         "~LibraryLogsGitHub Desktop",
         "~LibraryPreferencesByHostcom.github.GitHubClient.ShipIt.*.plist",
         "~LibraryPreferencescom.github.GitHubClient.helper.plist",
         "~LibraryPreferencescom.github.GitHubClient.plist",
+        "~LibrarySaved Application Statecom.github.GitHubClient.savedState",
       ],
       rmdir: "~.configgit"
 end

@@ -1,8 +1,8 @@
 class Rsyslog < Formula
   desc "Enhanced, multi-threaded syslogd"
   homepage "https://www.rsyslog.com/"
-  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2402.0.tar.gz"
-  sha256 "acbdd8579489df36b4a383dc6909a61b7623807f0aff54c062115f2de7ea85ba"
+  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2404.0.tar.gz"
+  sha256 "30528d140ec1b1f079224081fa37df6e06587ff42b02e3e61f2daa0526c54d33"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Rsyslog < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "196ed6954bda8be483d4003a02a73f7a3f23f7ab7fae7a92a862b1cbed148ac7"
-    sha256 arm64_ventura:  "cdc3f7386313663a95c106e3fa8b746d776cd2888a581cc2c6cbf1c432c91293"
-    sha256 arm64_monterey: "a528e1ca20a46dc99cfa05dc581567ab00b66331066c0a3f6bd80a06505c9126"
-    sha256 sonoma:         "fe3a648f7fe0069483813b42acf80f4fc71a077d4f52c443a77cdd2a99a12e9d"
-    sha256 ventura:        "b6a398627abeaf67865dbf7b151658f3220b0d6042ec861554cab478972dbe61"
-    sha256 monterey:       "a259eb0b72b9eb01b265a2facc42a71d4da9ae0d75bd2dc44d19f43573b24bdb"
-    sha256 x86_64_linux:   "c0fa01823786a057d0ae0ca52f4b897bc9b8010a31e83c93a15743f4dd8f704e"
+    sha256 arm64_sonoma:   "c3e064c67c3a288bac7aa41cde33b9000ded7c04a356a5a266a945419f698d49"
+    sha256 arm64_ventura:  "593ae1ef6bc65f966c45eb82c01d543910c1e858a3462a5e9acb5cf1b4f222cd"
+    sha256 arm64_monterey: "537dca1f8b53e4974c8fdeccf993f04b0e1bdf1440ba979cb4f3a3e8b7a63582"
+    sha256 sonoma:         "9128ee95bb26a7e226cdf3a3f1176883b7a6853b8d168fc6fa626233e790cfb3"
+    sha256 ventura:        "3c23718a275e1a8463bcb4d838f784c178b4acb1491678448bea6f5743785c8c"
+    sha256 monterey:       "76f513d5bb7deb2549725c17b8806a5379e28ad940b72da9e3fc5437ce68b6de"
+    sha256 x86_64_linux:   "db855ff4500f04fbe6fe7fadbfed0bc6f2667b3f56ad2aa99389d1100b8d3f60"
   end
 
   depends_on "pkg-config" => :build

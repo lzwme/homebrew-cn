@@ -1,24 +1,23 @@
 class ArmNoneEabiBinutils < Formula
   desc "GNU Binutils for arm-none-eabi cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
-  sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
+  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     formula "binutils"
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a5ca2ee90a23fcc0e5ca0be2556a7dd24f18708db36fe1bd88c4b6a03e12964d"
-    sha256 arm64_ventura:  "08a81e4145ffb484c64eba406e46cce4ef7a9af239950dc9d7af8e620743ed34"
-    sha256 arm64_monterey: "eb81cd47a50665b14188ede745dac4b1473fc0d3dac3465e5f679ae3704b6f8a"
-    sha256 sonoma:         "88e43bd750b5378c2fb29c5c4d0e18897617d6a3a33932f0a0f9c6975718eb8d"
-    sha256 ventura:        "d2582d466f0d3a87dbc07b98d4ac25c1f0bdf84330c92dca0069d636a1ecdd76"
-    sha256 monterey:       "d2e7f96d10ac013e7eade322be3240d816786596ea820cc58c08679b0836ad5a"
-    sha256 x86_64_linux:   "1b26208378337642d8a87e763d4861371e4d537cd4f5f0d12822b0a162e96d23"
+    sha256 arm64_sonoma:   "b82ed5a5507bbe523bc55a4d473aeeaca74570ee1c94cc7dd8188d8020d7b665"
+    sha256 arm64_ventura:  "b33b0cd2e7c42a2bdfcf919350ed995ffc003da961abb87bbb3bf36559e56bbe"
+    sha256 arm64_monterey: "79f5e3fc8ffce47b285e216fedc19d66728dc51c3434b1fe2de882d2fe327880"
+    sha256 sonoma:         "0885e00faffffd3dbb00d168a5c5aa539c88c3f1c1c8d873276a9635f109acc8"
+    sha256 ventura:        "757738e5aff243abdb5043fd7ed7ebcdee4eeafc19348fa3ac6539edcf522b5f"
+    sha256 monterey:       "0da93a8ec33abb7f200fb9f6361b12910648010e1fb340a4f4d81fedf9e1e2c5"
+    sha256 x86_64_linux:   "6f87c18fbd3c298bddb27d7031e1e1292fc574bae017424d01dfd095ff89cae9"
   end
 
   depends_on "pkg-config" => :build

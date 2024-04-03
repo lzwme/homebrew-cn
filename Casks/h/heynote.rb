@@ -18,7 +18,12 @@ cask "heynote" do
   zap trash: [
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.heynote.app.sfl*",
     "~LibraryApplication SupportHeynote",
+    "~LibraryCachescom.heynote.app",
+    "~LibraryCachescom.heynote.app.ShipIt",
+    "~LibraryCachesheynote-updater",
+    "~LibraryHTTPStoragescom.heynote.app",
     "~LibraryLogsHeynote",
+    "~LibraryPreferencesByHostcom.heynote.app.ShipIt.*.plist",
     "~LibraryPreferencescom.heynote.app.plist",
     "~LibrarySaved Application Statecom.heynote.app.savedState",
   ]

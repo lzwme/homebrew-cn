@@ -1,18 +1,18 @@
 class Igraph < Formula
   desc "Network analysis package"
   homepage "https:igraph.org"
-  url "https:github.comigraphigraphreleasesdownload0.10.10igraph-0.10.10.tar.gz"
-  sha256 "6148f2e72a183ef5cd08324cccc73fa9eb8e54bb5a96c7f8f3c0465432ec2404"
+  url "https:github.comigraphigraphreleasesdownload0.10.11igraph-0.10.11.tar.gz"
+  sha256 "f7aa3c7addce69538892c185055d59719ee1587f58ce0ae4fec8ddd072946d63"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "87783cdfe464e19d22a2df1fa03cfcadd270e69b243e2b02ac120bf5a1e29bc8"
-    sha256 cellar: :any,                 arm64_ventura:  "229f046b0c95a6c93b1e1e4bcfb36accfb88bd1f7601a327d8736b54c2dabbe0"
-    sha256 cellar: :any,                 arm64_monterey: "f7d277f51ca65c6d5ef40c41c8340db176ee01e63190516ede5aae3b34e953ea"
-    sha256 cellar: :any,                 sonoma:         "d567436b831b15bf468da55551adb861eeb8be3d948e9ba31e72f70d92ebd61f"
-    sha256 cellar: :any,                 ventura:        "0751f60dfa16b52137d37358379dd9322aacc36d376d0d5440a320caab665d7b"
-    sha256 cellar: :any,                 monterey:       "cfb479057b1363823bbf5fbe97602c96ba5c237fe50c2344fb744779bce95f8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cde5ed247dc45961d45f505c8760d5472c9615c38925c2be4551e0c1210367a5"
+    sha256 cellar: :any,                 arm64_sonoma:   "1e567ab97ae33aaf25ff5ab3d171d2c0541526ef4df6c8e0f4843a501bfa916e"
+    sha256 cellar: :any,                 arm64_ventura:  "04ce45ca6db20512296671e2c40d39db807ada410aaf4898f7f7d1707f440881"
+    sha256 cellar: :any,                 arm64_monterey: "ba8c63ca3c6a62498c7e62cd8e4e37e2457c51a575c1352e851e701e09c6fabf"
+    sha256 cellar: :any,                 sonoma:         "842c44fd5a30e9e6e945b81d66c2282e4ecc73e3f09a96488d39bb51d9ec40ae"
+    sha256 cellar: :any,                 ventura:        "a9c3a7066410e7a3d109976fd70248ea5b93c5a67cba90c7125d7dc46cfbe0d1"
+    sha256 cellar: :any,                 monterey:       "ebd574d7e0c4f9df89dee5541100027a8ac7b336739e6098772250203c44203b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70045e285382a8f4ab9844934f430b62844b44e569ca7b6b17c00adede395d68"
   end
 
   depends_on "cmake" => :build

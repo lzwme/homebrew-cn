@@ -1,8 +1,8 @@
 class Nut < Formula
   desc "Network UPS Tools: Support for various power devices"
   homepage "https:networkupstools.org"
-  url "https:github.comnetworkupstoolsnutreleasesdownloadv2.8.1nut-2.8.1.tar.gz"
-  sha256 "7da48ee23b1f0d8d72560bb0af84f5c5ae4dbe35452b84cb49840132e47f099c"
+  url "https:github.comnetworkupstoolsnutreleasesdownloadv2.8.2nut-2.8.2.tar.gz"
+  sha256 "e4b4b0cbe7dd39ba9097be7f7d787bb2fffbe35df64dff53b5fe393d659c597d"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Nut < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "e89241f392bb9fbbde389696485240a7113654b052272531ee06e5c5b05fc363"
-    sha256 arm64_ventura:  "97fbfd94c5ffd011a35964ec70fa6be53fbbf77b47a2e279581bc4f65654b0c4"
-    sha256 arm64_monterey: "d4bf0f41e9dac6c86f6ad87cd3478a7ccb7fbf09a3ede3ad9cff2561d05bc621"
-    sha256 sonoma:         "5ae77de59c94f3c8f95ca59d56de5c709baf773d87c0ab2d30319f8a0e8a2b6a"
-    sha256 ventura:        "39a83d05ae4ea2f34e03776749455f65c7daa845f04f8351a48bdae36d652c24"
-    sha256 monterey:       "33acde657d811e6f9ca36ffe2041f814fe763f61e1723fe339b30b4229302223"
-    sha256 x86_64_linux:   "bd17e0ea918ab4b2454c31d3a133fe116430530ce7dc55f4bb9dc98ef4e3cba8"
+    sha256 arm64_sonoma:   "43c9c0fc601204d370924ebdfe1a51a68ceec7be66b9cbde21fa748ca705c05f"
+    sha256 arm64_ventura:  "5c56ac1e0389d0991c2c94ed36e3cabb5dbedd8b695fa4a9747add1b3eca5c8f"
+    sha256 arm64_monterey: "1858aeb052a2b605a7d2ba9f231db1f0d997b9ddeb2da4cabae29520978e57b1"
+    sha256 sonoma:         "98df930592937b8cc3c9ed6137c4e3fc6e920d4b3b0122dbb5cd4ceb0c557f0e"
+    sha256 ventura:        "80b5f09bfb88e4a7ffa611a3b698385fa4c14a3474ae2f3d270a593276dcf106"
+    sha256 monterey:       "17722e1bb6e5e707dc81da194caa13848b035ebf81673261e716d188ef9693c2"
+    sha256 x86_64_linux:   "61047b843accc5c9a8b9de7fb525759445b7e30c07f0a682e06eb32724e96ce1"
   end
 
   head do

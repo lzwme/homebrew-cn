@@ -1,8 +1,8 @@
 class Msgpack < Formula
   desc "Library for a binary-based efficient data interchange format"
   homepage "https:msgpack.org"
-  url "https:github.commsgpackmsgpack-creleasesdownloadc-6.0.0msgpack-c-6.0.0.tar.gz"
-  sha256 "3654f5e2c652dc52e0a993e270bb57d5702b262703f03771c152bba51602aeba"
+  url "https:github.commsgpackmsgpack-creleasesdownloadc-6.0.1msgpack-c-6.0.1.tar.gz"
+  sha256 "a349cd9af28add2334c7009e331335af4a5b97d8558b2e9804d05f3b33d97925"
   license "BSL-1.0"
   head "https:github.commsgpackmsgpack-c.git", branch: "c_master"
 
@@ -12,15 +12,13 @@ class Msgpack < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fdb7af2f6aadfd3bd0ddad1ffa04f916aa5b4503380eb929922565a3a5c28e94"
-    sha256 cellar: :any,                 arm64_ventura:  "e41b85a88da3012d8a7819799333410558cca1ef59663fda84718be0856002e6"
-    sha256 cellar: :any,                 arm64_monterey: "1d14abff9537f4d85dee74c10ce6f73fafa8e8719c5be05bfda9a836cbe732ad"
-    sha256 cellar: :any,                 arm64_big_sur:  "f3842a4dd94cf91e0259f5cf95e325314c664fe5b68b0a15d1a45739096b62e9"
-    sha256 cellar: :any,                 sonoma:         "993bc7864b3c7053285bf5aa62b5d29269c2e9c1fdf0846831787557025a126b"
-    sha256 cellar: :any,                 ventura:        "7abad795d8f0b89d7927db89147ba2a5273e04cdfdcda30d9bc402fef4352ce6"
-    sha256 cellar: :any,                 monterey:       "7b02d0690b3ca73cacf020eb6de303370b7d6def89b9769f0bd18222722e4903"
-    sha256 cellar: :any,                 big_sur:        "e422e0f9f84e2fa558e75e5145abcba59ef61c72dacdf757eb185694a58c08a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3dfeade8b72c260d4745892f254ceb72535502293f6ddd04d04f19cb7affa35"
+    sha256 cellar: :any,                 arm64_sonoma:   "b7e5117cdadb73ce58b278a96b99d11fe2380280b8a0f79c06cf89a6c82f6a25"
+    sha256 cellar: :any,                 arm64_ventura:  "9666b5d9ac86ec85fdfc9195aa1064bf8604d9c283a44c217a74762f4bc0cd0c"
+    sha256 cellar: :any,                 arm64_monterey: "92fdc6ce888b36f23e1a8768e562c03caeb523bda509a9ba8794548fc6d54f39"
+    sha256 cellar: :any,                 sonoma:         "6281f5d270814c2bfc4a68430f546737160cd10434819b0c117774c51b46a509"
+    sha256 cellar: :any,                 ventura:        "844bf1facb3017cd8e1f19801c3d1f4750e72887f0b2de175b75bda6eb45c8a0"
+    sha256 cellar: :any,                 monterey:       "3d8dee34a712fd1f29731060d65f0a927c91370f4b24759a935144aadc5a2b6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcd2a3799c88a200f8326838ef2ff2014a951b5e493a23a403426c43b59e6754"
   end
 
   depends_on "cmake" => :build

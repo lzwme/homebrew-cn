@@ -3,20 +3,20 @@ class GoogleJavaFormat < Formula
 
   desc "Reformats Java source code to comply with Google Java Style"
   homepage "https:github.comgooglegoogle-java-format"
-  url "https:github.comgooglegoogle-java-formatreleasesdownloadv1.21.0google-java-format-1.21.0-all-deps.jar"
-  sha256 "1e69f8b63c39a5124a8efb7bad213eb9ac03944339eb9580ae210b0c60565d9b"
+  url "https:github.comgooglegoogle-java-formatreleasesdownloadv1.22.0google-java-format-1.22.0-all-deps.jar"
+  sha256 "16b2a1ee938686c8b1d88abf19eb83dfd0d623cee9de6fc6d09980214f816d3f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6b3ddd43b31e167a3ff116091889c5df1682e7ae2f3fa81d1e0acce8c5bd6b95"
+    sha256 cellar: :any_skip_relocation, all: "56ca8b8d305c56efcf9cc5951bc15010fb7b29d44a6bc8f43cc33d41ec5d5573"
   end
 
   depends_on "openjdk"
   depends_on "python@3.12"
 
   resource "google-java-format-diff" do
-    url "https:raw.githubusercontent.comgooglegoogle-java-formatv1.21.0scriptsgoogle-java-format-diff.py"
-    sha256 "aa9621c0f0859e1112231a7d44ce8d21854f6915ca643a0d53a119f4d1aa8488"
+    url "https:raw.githubusercontent.comgooglegoogle-java-formatv1.22.0scriptsgoogle-java-format-diff.py"
+    sha256 "c1f2c6e8af0fc34a04adfcb01b35e522a359df5da1f5db5102ca9e0ca1f670fd"
   end
 
   def install

@@ -1,19 +1,19 @@
 class Gotestwaf < Formula
   desc "Tool for API and OWASP attack simulation"
   homepage "https:lab.wallarm.comtest-your-waf-before-hackers"
-  url "https:github.comwallarmgotestwafarchiverefstagsv0.4.17.tar.gz"
-  sha256 "bc4c1b8a7fc8b6db2df82ca56942b8d333bd17d75e0e93b4e110663370cef717"
+  url "https:github.comwallarmgotestwafarchiverefstagsv0.4.18.tar.gz"
+  sha256 "97f0c0f3eeaf1811757d2c0d7e1732d1255b6c2ad4565f9eb5d5ead3c723c037"
   license "MIT"
   head "https:github.comwallarmgotestwaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98bfd4fd884f4f976a7484587e487b0b0bc9c7a90c978a5a86946597f05839f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5b3d73850596159cc58bf9ff10cbd28e918737149b6de92dc869b8640690888"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4374453bac37d3d278e09d65059fb22d95ab5372726950b993f8707d2da9efe9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a69456e96d25bb1a791f61ea8440654e7021312e0485f31b11bc5c71d17da85b"
-    sha256 cellar: :any_skip_relocation, ventura:        "95e0a16ea72104ef3d6228d7b408ccb9a25e2877424f95dabe09191f51ce37bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "48ab320563dd1978660da1a9ccd5c6181cc800b2722fb7fc6fa988377862323a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5365087b5eb1ff7998348e4f621740b80f78c706ca94e57815b598fd285d375f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0a53650b3b38b74f6a48443f8d87c9b3a87efaa8c63036738415ba160db9e8c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88509f7e38931d3e18f02427df68dcc4e919e4c30646b6bfc9846694b758b417"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4deda16e9ee60bc3f9eac767e3d6dae564a7925cbb23fff0f508ae419a0187b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "af786a3f5fee28a72d9f95a4b382b7096b0ade7fa2cfd8bd6ee64fd0657160d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "01d1757277bee268dc0260a5513eb49074ac6ddd9cf8f19cc7ff5cbfb4ac5fe6"
+    sha256 cellar: :any_skip_relocation, monterey:       "a9e157298a86fcc1bbc9cb241538b6ce0a48f22d6c54315d0725e31c24bcdb04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d964375f35aa6c55c010e679c15fdd2a7c2237db672d7c4333af4b559cfeeeb"
   end
 
   depends_on "go" => :build

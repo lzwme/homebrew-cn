@@ -4,16 +4,16 @@ class EtcdCppApiv3 < Formula
   url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3archiverefstagsv0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3161667b6956c52f791de30188d4a246383d9bd7782f54cc91f9ce864514f0a9"
-    sha256 cellar: :any,                 arm64_ventura:  "e353097a404439daf97b2d39cdf5ed88cb58b255ee6cf3c8704f4bcbdf1da7a0"
-    sha256 cellar: :any,                 arm64_monterey: "5b32f575d37ff5e13c6c841d5fb8ec5f57e971d5efe4634a64c3e6da243d1634"
-    sha256 cellar: :any,                 sonoma:         "60cf5e59498e455af86b93f6d81b5680b46a012e9c40c47a6011381066ab6d4f"
-    sha256 cellar: :any,                 ventura:        "6b0561467e8a9f4165c611bdbebf4cfe57f893e073a27a928c2893e11a1ef7d8"
-    sha256 cellar: :any,                 monterey:       "e0e91efe712e0c9468d7d57361b76b05081a32ea703c7e4cbe919e4028c320b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bcac26e4cc9dd8747c03b2c86a8de2675943027d747f0148058dd9358b10059"
+    sha256 cellar: :any,                 arm64_sonoma:   "a8c4eeaa7336bb1891f535402d6066e9aa50d64df4a5791232e92f7305c37562"
+    sha256 cellar: :any,                 arm64_ventura:  "c15fe98c1ee8424f895622da927268c1075c633966c0170a847f59ee3dbf8813"
+    sha256 cellar: :any,                 arm64_monterey: "4303c948a3a1a1e4d85103236a3249a10332e44e63fbd40d8908dfcc795ffd7d"
+    sha256 cellar: :any,                 sonoma:         "a79145ece811eff98f7835b1dc2e309115278307cbe7cba0935129117bddbe48"
+    sha256 cellar: :any,                 ventura:        "65b7057f20d25fe286231d0110bac45101538fa032845a7ea9c1c28c8dd6a55c"
+    sha256 cellar: :any,                 monterey:       "e90ee70548881679f99c789fdd7e678802c7a9db093a6305baed2e6e5d41fcd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6cbd3426ba1d1376d02e041af6b3debd94d80fbd66e4f03d60cc328ed9bb2b9"
   end
 
   depends_on "cmake" => :build

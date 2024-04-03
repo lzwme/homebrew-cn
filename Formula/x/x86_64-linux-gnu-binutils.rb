@@ -1,27 +1,27 @@
 class X8664LinuxGnuBinutils < Formula
   desc "GNU Binutils for x86_64-linux-gnu cross development"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
-  sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
+  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     formula "binutils"
   end
 
   bottle do
-    sha256 arm64_sonoma:   "3cd0c7a5f5fb6e96baf72fec05459d7d9a82356ef525919e9d9d8ade86dcf439"
-    sha256 arm64_ventura:  "83a24a3694f214f14c4eb14aadec6dc5474ae223250aae017d1ab700dd85dec9"
-    sha256 arm64_monterey: "76e3f03e0e8aa2e5870e50bb44db5ae421eb4b06a613c7089854f2c809f111a8"
-    sha256 sonoma:         "3fb1044820d8c040369fd00af874c596e0ce998c663644b62a89c2901df785a4"
-    sha256 ventura:        "6f1ced88939c73d3efac3c54d62c909ea6815f2cd4535bdf795f972111260a89"
-    sha256 monterey:       "5137c06f3a8aa83c028d452d168c67870a1c615d5be0b61b5d9275d8cc219019"
-    sha256 x86_64_linux:   "f75b96e6fae1c757c2d5d2f819677ea9c8af3e1e40cc844bdb9f1f98505bf870"
+    sha256 arm64_sonoma:  "fa80a2ab5e34288aff6b158346fba3f6cf4f69fa5b1216b88d316d015c35ebf1"
+    sha256 arm64_ventura: "9a6b3c44d4508df299347cbe271ffa51ca4282d207ad9401ef8efa51fc394b55"
+    sha256 sonoma:        "e4537973ade8a0ecbca8f635c21a990644db79476eb5a63e0d8ecbc838e62356"
+    sha256 ventura:       "b9f47ddfa3606e0cebb4d22278595b739dac8e815494197e998d1934de5c18ed"
+    sha256 x86_64_linux:  "0149367619cc17ea2da3f7a58ee7d180b6798579c49e9769fd5921d277a1f7c5"
   end
 
   depends_on "pkg-config" => :build
+  # Requires the <uchar.h> header
+  # https://sourceware.org/bugzilla/show_bug.cgi?id=31320
+  depends_on macos: :ventura
   depends_on "zstd"
 
   uses_from_macos "zlib"

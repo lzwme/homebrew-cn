@@ -1,8 +1,8 @@
-cask "paragon-extfs" do
-  version "12.1.19"
+cask "paragon-extfs11" do
+  version "11.8.605"
   sha256 :no_check
 
-  url "https://dl.paragon-software.com/demo/trial_extfs#{version.major}.dmg"
+  url "https://dl.paragon-software.com/demo/trial_extfs.dmg"
   name "extFS for Mac by Paragon Software"
   desc "Read/write support for ext2/3/4 formatted volumes"
   homepage "https://www.paragon-software.com/home/extfs-mac/"
@@ -14,7 +14,7 @@ cask "paragon-extfs" do
     end
   end
 
-  conflicts_with cask: "paragon-extfs11"
+  conflicts_with cask: "paragon-extfs"
   depends_on macos: ">= :sierra"
 
   installer manual: "FSInstaller.app"

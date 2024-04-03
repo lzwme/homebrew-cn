@@ -1,24 +1,23 @@
 class Aarch64ElfBinutils < Formula
   desc "GNU Binutils for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.bz2"
-  sha256 "a4c4bec052f7b8370024e60389e194377f3f48b56618418ea51067f67aaab30b"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.bz2"
+  sha256 "aa54850ebda5064c72cd4ec2d9b056c294252991486350d9a97ab2a6dfdfaf12"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     formula "binutils"
   end
 
   bottle do
-    sha256 arm64_sonoma:   "4f3f3c2d79ef87cf5a38af1417ddd66d80d8df4ead19e1bcf66b81a5b169228a"
-    sha256 arm64_ventura:  "bca2b0a9229c30435a5275559c2ddc323311f4423e4e73e7bf2e1924bb087f25"
-    sha256 arm64_monterey: "ac6fff6622a52b2de718c279e5cdba37d53ae440d230546ef3602f30f144ae5b"
-    sha256 sonoma:         "225f3236297b34ba5c66ab0c782e6a86005b23013535cd33ae81193474503367"
-    sha256 ventura:        "21bccf5541e89a06490634df099ace243cf25d775d166af499755a23cc583d12"
-    sha256 monterey:       "db1189c824be7ae6fbfd64027bc974ef92761c9bb775a677370c47cccef8cb2c"
-    sha256 x86_64_linux:   "926d81ed3cc4cd9948e45d06279f278f6c6ae16128cd90d2d5e9ef253378879f"
+    sha256 arm64_sonoma:   "6163b3a3bbd5982e1014f3574ed346328021db1cbb17ad153e9637e3c119f4cc"
+    sha256 arm64_ventura:  "00a9f5682c616800d01ee003e238c475c89049accdf91b59b758137a9042d192"
+    sha256 arm64_monterey: "f6eeabd899b27317df2f8133b64f5b4c707524191f55dc55c42e5c7b212b8907"
+    sha256 sonoma:         "9b541b078ca1c68964a415c7f48fb2aa0c66b4c593956df21c6b8d2ae71f9d70"
+    sha256 ventura:        "7891227c9827f9a5ae10c89a9ea5ca92cb6e8aa49a4690cad063d9919dc47970"
+    sha256 monterey:       "5b526e708d3e4c353f01eac594b26d99f57cb0485831abcc4114de5034901874"
+    sha256 x86_64_linux:   "fd34d303cfc6c8c4135653aff5b8ffbe16d76c0e5036b7c3d29adf865b6acf6b"
   end
 
   depends_on "pkg-config" => :build
