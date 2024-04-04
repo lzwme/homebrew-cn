@@ -3,18 +3,18 @@ class Trafilatura < Formula
 
   desc "Discovery, extraction and processing for Web text"
   homepage "https://trafilatura.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/61/7a/559522339003dbb49e495ac840bcc6906960230654bf4ae0f0c59ffc76c7/trafilatura-1.8.0.tar.gz"
-  sha256 "ea54875ed24f3eafaf199b8a0f89b5835c7cf343733c32efbc4af9d3057a8f72"
+  url "https://files.pythonhosted.org/packages/9d/2f/89e53764a5ac7da412b0ca09646c3cfd1e1be5631bd8ca4810b92b571227/trafilatura-1.8.1.tar.gz"
+  sha256 "6b878dfdbd5c5dfb55d0f8307f2b7dc15ac3458054f74861ff98a172f5e38720"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "212ac2412b33ff7c795cc58c43fb31a2965b1768cb1757f29bec578d42dea566"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1bdfa313f0c2b6e594b477cbaf8eb12110540ea9c64240c863fd30f9e730d142"
-    sha256 cellar: :any,                 arm64_monterey: "9f18fe2dcdec27cdc35861f0ec0cb01966599ff6595ffc8d5b6ac81280132308"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6a7e1288cbe52e9979af024f33288650cdc3a57c005aacf7adbbd9187602b295"
-    sha256 cellar: :any_skip_relocation, ventura:        "d8764df01752794454cb20a5d672551d249c0efa27289b22dfb9b835a5e5d919"
-    sha256 cellar: :any,                 monterey:       "ef695bccb2b23daa43c61237152dd8e9a613ee3df2947094990501099cb38ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a00be7e3dbf7efde1c7a04797b44103b76996ff1cc4287c9e9755448fdde44d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddbdac108f9f7741b82d013217aeb7b6c0fc53df6596c93010adaf6b82f20cd6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b9f7980e837f6dad549cf78d373517d815b7ce579152835ef67a2d5354ee5c9"
+    sha256 cellar: :any,                 arm64_monterey: "007419638e014bcb8be0631e9820691d9c80e20ad9aecf645e709622b70e2aa4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ac5b9ed571505f9b4476f8380dd5976629a1b375c5ac9880b7c79805abd84f31"
+    sha256 cellar: :any_skip_relocation, ventura:        "2915682b614ca7e816354dad5d6e3673fb9a04968674fda5d77348996f7e869e"
+    sha256 cellar: :any,                 monterey:       "9e8a7b35d7b1ad72b9a009169bf17545a1df2db1906dc2b65a25f4a393e7b1d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66de37a0fae8757a977ff499660a42e87667be0fd1ed7cbefd8e4554adc57e7c"
   end
 
   depends_on "certifi"
@@ -54,8 +54,8 @@ class Trafilatura < Formula
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/2b/b4/bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845/lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https://files.pythonhosted.org/packages/73/a6/0730ff6cbb87e42e1329a486fe4ccbd3f8f728cb629c2671b0d093a85918/lxml-5.1.1.tar.gz"
+    sha256 "42a8aa957e98bd8b884a8142175ec24ce4ef0a57760e8879f193bfe64b757ca9"
   end
 
   resource "python-dateutil" do

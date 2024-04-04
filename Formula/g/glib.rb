@@ -42,6 +42,11 @@ class Glib < Formula
   # These used to live in the now defunct `glib-utils`.
   link_overwrite "bingdbus-codegen", "binglib-genmarshal", "binglib-mkenums", "bingtester-report"
   link_overwrite "shareglib-2.0codegen", "shareglib-2.0gdb"
+  # These used to live in `gobject-introspection`
+  link_overwrite "libgirepository-1.0GLib-2.0.typelib", "libgirepository-1.0GModule-2.0.typelib",
+                 "libgirepository-1.0GObject-2.0.typelib", "libgirepository-1.0Gio-2.0.typelib"
+  link_overwrite "sharegir-1.0GLib-2.0.gir", "sharegir-1.0GModule-2.0.gir",
+                 "sharegir-1.0GObject-2.0.gir", "sharegir-1.0Gio-2.0.gir"
 
   resource "gobject-introspection" do
     url "https:download.gnome.orgsourcesgobject-introspection1.80gobject-introspection-1.80.0.tar.xz"

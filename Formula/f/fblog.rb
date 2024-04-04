@@ -1,19 +1,19 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https:github.combrocodefblog"
-  url "https:github.combrocodefblogarchiverefstagsv4.8.0.tar.gz"
-  sha256 "5d024cc4145da69964b35972e211dab49f59107a3564824921da674df1ab8aa9"
+  url "https:github.combrocodefblogarchiverefstagsv4.9.0.tar.gz"
+  sha256 "74f6a51ddff9b2dbaa86eb03e4cc1c4958cdbad45561fa89a92fcf2a99e50e3d"
   license "WTFPL"
   head "https:github.combrocodefblog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "217887f4b004cb2ced0f1acd39b9655539e9abc6311509ee2dd34444f30e857a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32adc72848331b660def53e7080e58da6f81b6cf7a213c2de48c7d25b6b00210"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8dce7ff87886371a2863b56ec6ccd504e77c113bf26105c60c47f0f761e520a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b9a72a7ef6e1712cdd8985f6811664502d97fc32bbf72e28eb574be5c1717721"
-    sha256 cellar: :any_skip_relocation, ventura:        "755c0f94f7fd1a884a0dd03f957d0005e63b52c03e19b713073445e1b6904a45"
-    sha256 cellar: :any_skip_relocation, monterey:       "97af63022dcd3853ad3b42385681600900420435310706bb588daeb442e7959d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "730e239c455b50002a01de74c59a56798768d483664d9c93a6f3275422e2c749"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc3da3d58dd7c60ea4e7e2ac8128636dc8a431d64770408b6c97e9e299c6763b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be8c886dd0d26ef59b5c74af4609e72edc6214ed36b89b10f393753cf70ec087"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1167773c7a1153d1334a0150bce47088f49f343b14a452d9d737562015689a5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b1af52bad3f1a5e08237ad78e57f740c780fc5e3396c0a2312d201bb3aeb4960"
+    sha256 cellar: :any_skip_relocation, ventura:        "00470719d822e6aa3c6117d256a1f6bbf95029d29f01fc179edb2966234b54ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f0889db155239a6f17886902b9676f21137a18888966b04b1f75a2fb5fcc3d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f36f6618767aa70bae7f396f661d4993c606464d72fd32e73a2716ac94011dc4"
   end
 
   depends_on "rust" => :build

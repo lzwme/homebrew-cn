@@ -1,19 +1,19 @@
 class Trafficserver < Formula
-  desc "HTTP1.1 compliant caching proxy server"
+  desc "HTTP1.1 and HTTP2 compliant caching proxy server"
   homepage "https:trafficserver.apache.org"
-  url "https:downloads.apache.orgtrafficservertrafficserver-9.2.3.tar.bz2"
-  mirror "https:archive.apache.orgdisttrafficservertrafficserver-9.2.3.tar.bz2"
-  sha256 "49686bf788f48f24f9db3454125856564a847cdc4520cde43dcdd5fed105fbf4"
+  url "https:downloads.apache.orgtrafficservertrafficserver-9.2.4.tar.bz2"
+  mirror "https:archive.apache.orgdisttrafficservertrafficserver-9.2.4.tar.bz2"
+  sha256 "fd4601677817de55d841376bb2deecf731f1adf317387148cf9a02f11375b7e4"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sonoma:   "2e07c59461fe5eab8499d209dd9bafce7c0820d4d34de416cc0704dc9bade81d"
-    sha256 arm64_ventura:  "0f7d16861f8df411de0ebafdebe40b08d8913c36aea679aa8d9748c42046c553"
-    sha256 arm64_monterey: "e612b006d7e6f33b43268c11b09f06180bd96b5e3460d293b9bfa467b285119d"
-    sha256 sonoma:         "e45d25f0c65506398365acebfd416ec0838e4aa0a8dbfa22b437e7b371d5ed09"
-    sha256 ventura:        "173be953d453943f1551f3a4318534ff64a38ca4b75afbe07babf804e1e8705d"
-    sha256 monterey:       "0e5329615db9b88b19ae7b8c3a0b9891226facfdb0ca5227c4bc1fa0b5c3795e"
-    sha256 x86_64_linux:   "ffdaff4b79923b4c4898730e31cbba3ed24244dde6e43b7125195f3f68ce5be8"
+    sha256 arm64_sonoma:   "889b463f5351a258143c9dd91e8638905b3c692caeebaad87353e96fca4eb561"
+    sha256 arm64_ventura:  "0849e5f0de249825fc0ade51ada327e0bdadf14494f972431a13359c67f35b43"
+    sha256 arm64_monterey: "02c34df568a4ab98fb5cdcd103172c8273741f787d52bb4e55395a4b855d46df"
+    sha256 sonoma:         "df7d9a477b4a542f5bb657888d3ed5081d7e9136071009f4b9c836069b02f865"
+    sha256 ventura:        "75474b792cdf48c366b45788a931e27ec4c5a45be217016f8cecc5d02a765e61"
+    sha256 monterey:       "f8b4f04cb576903c4d02aee151f3c2e4406e5f6cba1eec53679f830d54039ad6"
+    sha256 x86_64_linux:   "073f02365070dc2dc419c955f833dc19db468e1947a8a143511758cdc9ccab73"
   end
 
   head do

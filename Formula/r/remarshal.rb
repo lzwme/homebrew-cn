@@ -3,20 +3,19 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https:github.comdbohdanremarshal"
-  url "https:files.pythonhosted.orgpackages5539d638b7d8012468fe13c072bfb283cd917b12dbcb8e7a10b414d5109b0852remarshal-0.17.1.tar.gz"
-  sha256 "826a41d3e3ed9d45422811488d7b28cc146a8d5b2583b18db36302f87091a86d"
+  url "https:files.pythonhosted.orgpackagesaee798e22a9d62ee2c086da94f6aafeee5e7c3a68197d761cc22c90e7e949afbremarshal-0.18.0.tar.gz"
+  sha256 "8fd29ba9d5931f5ee2c54f902b11b26cd3bbca0ad8b3d6f39ca48255284f71dd"
   license "MIT"
   head "https:github.comdbohdanremarshal.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "03597df9a743a7b57d3538131397a5298c4a0373f0141320968af5e1e6237f7e"
-    sha256 cellar: :any,                 arm64_ventura:  "afeec08e7e94d61f582bf6d58a131ee3266117bbd1ccda59ff50825049a359a0"
-    sha256 cellar: :any,                 arm64_monterey: "287f72bb3f851b4e3f31a67a9ee2829d084fae1b5e42986977d8cfb63dfc7a7b"
-    sha256 cellar: :any,                 sonoma:         "73f5076b51cd42711f5fb4a5f02112244a64a236375d1cee86383b031cd99e72"
-    sha256 cellar: :any,                 ventura:        "75ea6b3611ededd7e0749acce767b9d0fa90b8d8692288729d486a3a386d9ec8"
-    sha256 cellar: :any,                 monterey:       "c648307e0b41ac4d6aa05c0e7c3e0c31cd2d953260eb42bc940fb9faffc48e39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65d5827d54aed098a7f90486d4f79204490307854c3a44f49d114deb88222600"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af300c5d2b86f9e76229391e05a6f01f333cf0395c7e9cc1b320fb1a7dd4214a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9aeb55805a5b89c669d3a25a37ebee48102e7047ab4ac14252a95222cda4fb7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a21e31c47836f2caa2fcf6633f7bc3282e16ee5d1e668309568f0a1cfafb9d88"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ea31762175be7227b537cc4292d96b0c094cf5faf9eaef869ca4515bc5417b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "f902f738e9ce8d2aee070f28ecfdfba70cd3aaa651af8f02b5299f6dd3c6a9fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "25ff35a23aa5f42608d28d2f6998ab0851a48d6bf2f72d5b489b9027a93f67c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e7130beb623155ecbb6bcb9fa7ad5bc799e44f85956f5ba30053a0e1e629c07"
   end
 
   depends_on "libyaml"
@@ -29,44 +28,49 @@ class Remarshal < Formula
     sha256 "b7513c2dea8868991fad7ef8899890ebcf8b199b9b4461c3c11d7ad3aef4820d"
   end
 
-  resource "iniconfig" do
-    url "https:files.pythonhosted.orgpackagesd74bcbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913iniconfig-2.0.0.tar.gz"
-    sha256 "2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"
+  resource "colorama" do
+    url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
+    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
   end
 
-  resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+  resource "markdown-it-py" do
+    url "https:files.pythonhosted.orgpackages38713b932df36c1a044d397a1f92d1cf91ee0a503d91e470cbd670aa66b07ed0markdown-it-py-3.0.0.tar.gz"
+    sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
-  resource "pluggy" do
-    url "https:files.pythonhosted.orgpackages54c643f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+  resource "mdurl" do
+    url "https:files.pythonhosted.orgpackagesd654cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
-  resource "pytest" do
-    url "https:files.pythonhosted.orgpackages801f9d8e98e4133ffb16c90f3b405c43e38d3abb715bb5d7a63a5a684f7e46a3pytest-7.4.4.tar.gz"
-    sha256 "2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280"
+  resource "pygments" do
+    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
+    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
   end
 
-  resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+  resource "rich" do
+    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
-  resource "pyyaml" do
-    url "https:files.pythonhosted.orgpackagescde5af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0PyYAML-6.0.1.tar.gz"
-    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
+  resource "rich-argparse" do
+    url "https:files.pythonhosted.orgpackages7b044b0b9b06662a4559041a88c2d31e93ecbc8aca1c45fee10a0c1a000b7274rich_argparse-1.4.0.tar.gz"
+    sha256 "c275f34ea3afe36aec6342c2a2298893104b5650528941fb53c21067276dba19"
   end
 
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  resource "ruamel-yaml" do
+    url "https:files.pythonhosted.orgpackages29814dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9ruamel.yaml-0.18.6.tar.gz"
+    sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
+    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackagesdffc1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400tomlkit-0.12.3.tar.gz"
-    sha256 "75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"
+    url "https:files.pythonhosted.orgpackages7d494c0764898ee67618996148bdba4534a422c5e698b4dbf4001f7c6f930797tomlkit-0.12.4.tar.gz"
+    sha256 "7ca1cfc12232806517a8515047ba66a19369e71edf2439d0f5824f91032b6cc3"
   end
 
   resource "u-msgpack-python" do
@@ -75,6 +79,10 @@ class Remarshal < Formula
   end
 
   def install
+    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
+    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     virtualenv_install_with_resources
   end
 

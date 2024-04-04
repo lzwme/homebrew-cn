@@ -1,4 +1,6 @@
 class Lasso < Formula
+  include Language::Python::Virtualenv
+
   desc "Library for Liberty Alliance and SAML protocols"
   homepage "https://lasso.entrouvert.org/"
   url "https://dev.entrouvert.org/releases/lasso/lasso-2.8.2.tar.gz"
@@ -29,16 +31,29 @@ class Lasso < Formula
 
   uses_from_macos "python" => :build
 
-  on_linux do
-    depends_on "six" => :build # macOS Python has `six` installed.
+  resource "six" do
+    on_linux do
+      url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+      sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    end
   end
 
   # patch from upstream issue: https://dev.entrouvert.org/issues/85339
   # Remove when https://git.entrouvert.org/entrouvert/lasso/pulls/10/ is merged
+  #
+  # Backport https://git.entrouvert.org/entrouvert/lasso/commit/cbe2c45455d93ed793dc4be59e3d2d26f1bd1111
+  # Remove on the next release (starting from "diff --git a/lasso/lasso.c b/lasso/lasso.c")
   patch :DATA
 
   def install
-    ENV["PYTHON"] = "python3"
+    ENV["PYTHON"] = if OS.linux?
+      venv = virtualenv_create(buildpath/"venv", "python3")
+      venv.pip_install resources
+      venv.root/"bin/python"
+    else
+      DevelopmentTools.locate("python3") || DevelopmentTools.locate("python")
+    end
+
     system "./configure", "--disable-silent-rules",
                           "--disable-java",
                           "--disable-perl",
@@ -140,3 +155,41 @@ index 0d5c6e31..09cc3037 100644
  	/* generate a symetric key */
  	switch (encryption_sym_key_type) {
  		case LASSO_ENCRYPTION_SYM_KEY_TYPE_AES_256:
+diff --git a/lasso/lasso.c b/lasso/lasso.c
+index 42b7d6bb..bc75f5e6 100644
+--- a/lasso/lasso.c
++++ b/lasso/lasso.c
+@@ -138,7 +138,13 @@ DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+ #include "types.c"
+ 
+ static void
+-lasso_xml_structured_error_func(G_GNUC_UNUSED void *user_data, xmlErrorPtr error)
++lasso_xml_structured_error_func(G_GNUC_UNUSED void *user_data,
++#if LIBXML_VERSION >= 21200
++                                        const xmlError *error
++#else
++                                        xmlErrorPtr error
++#endif
++				)
+ {
+ 	g_log("libxml2", G_LOG_LEVEL_DEBUG, "libxml2: %s", error->message);
+ }
+diff --git a/lasso/xml/tools.c b/lasso/xml/tools.c
+index bbc87d9f..4d5fa78a 100644
+--- a/lasso/xml/tools.c
++++ b/lasso/xml/tools.c
+@@ -1450,7 +1450,14 @@ lasso_concat_url_query(const char *url, const char *query)
+ 	}
+ }
+ 
+-static void structuredErrorFunc (void *userData, xmlErrorPtr error) {
++static void structuredErrorFunc (void *userData,
++#if LIBXML_VERSION >= 21200
++                                        const xmlError *error
++#else
++                                        xmlErrorPtr error
++#endif
++				 )
++{
+ 		*(int*)userData = error->code;
+ }

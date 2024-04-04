@@ -1,18 +1,18 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
   homepage "https:github.comankanedexter"
-  url "https:github.comankanedexterarchiverefstagsv0.5.3.tar.gz"
-  sha256 "d17a738e0535c5796565b2a6abb20756d9db2f0eb0b6e29db75f7299e5d78852"
+  url "https:github.comankanedexterarchiverefstagsv0.5.4.tar.gz"
+  sha256 "4c77f60f136d0523d08957486227558d041d5a2a9ca4f51fcd5e427e9aa39581"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1c00f4069c2de269367c645c3a1c5695307162419ea7cbaff7f95eff42fe2d41"
-    sha256 cellar: :any,                 arm64_ventura:  "21b8fc9de026808a4d22997f60dda83a5903d06959b96740d778a8dbb75a99bd"
-    sha256 cellar: :any,                 arm64_monterey: "da1d2e82b7b2f3d0af88d5adf8983724b35a26669ac050bfbf3198b201d6126e"
-    sha256 cellar: :any,                 sonoma:         "06d10028b32925cde0f7f28ab3fb90e660899e21e8da22f52a33cb3202809fd5"
-    sha256 cellar: :any,                 ventura:        "b1811b2b4ea0ff2d99f83f8258f4739b0df625b2e0290cf48856126d6c972dfd"
-    sha256 cellar: :any,                 monterey:       "d38d1ecf27ca221a027615379e748b0d7db4558e2ad3cc3f79f2ecb7534fa37f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3344c6864de89d055b9baa5b014ed85c9e1abe3ee95a1e94149067690313f4bb"
+    sha256 cellar: :any,                 arm64_sonoma:   "2e57a40896c238f17fab38fab34c7b6f410d60e8b69ddbea18e5608dbfe7f7cd"
+    sha256 cellar: :any,                 arm64_ventura:  "6f08f8ee24290f706852c9590081b4a485271086910def2879f527c5e16be85c"
+    sha256 cellar: :any,                 arm64_monterey: "28c220582e858e84fbbfddaaa669c23fb055d4131b02db0194280f459423ebc7"
+    sha256 cellar: :any,                 sonoma:         "8f7dcc3572da9e65550c636ab9022db03a283dd4b216e8d8a1b0d87477e69d70"
+    sha256 cellar: :any,                 ventura:        "e0ddeea2c9733f2abe0f3e85e1b7baf7175c53743e13689836ac591d7b00f335"
+    sha256 cellar: :any,                 monterey:       "afaa61bd8f7a8b6c389190c3b0d9fa2a851122f3f58a732a0d1ea348b44307c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84fe0f031b932361f58f5f44dd12cba5ce1bee211d46eae3a11543d07771db43"
   end
 
   depends_on "postgresql@16" => :test

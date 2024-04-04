@@ -1,19 +1,19 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https:cuelang.org"
-  url "https:github.comcue-langcuearchiverefstagsv0.8.0.tar.gz"
-  sha256 "8892dd72df94bfafc34641a8548d1fbab6f2d3efa063f9f6a5363a1be4514016"
+  url "https:github.comcue-langcuearchiverefstagsv0.8.1.tar.gz"
+  sha256 "353277b82998482141f727effba8900fa4ccee81e20bfbe50a27563f6dee57ec"
   license "Apache-2.0"
   head "https:github.comcue-langcue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4ab92fe21c5f41cca8826d859475615588ff5123cf726596c463b80a9672d93f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75d72b671a7a50deed0ae37b0b1d3a20abca6d2b1503e5d3084fff7dfd9bf4a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fe324a56680de6fe05c425439065c367eb85427174e53fc5290de0b4e4b3dd7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f440dc832ae1cf5edd429de7352a5b31e0d5e4d11c540bcc165a3871c2af9c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f66d0c66366a443617f89c57719d0fe1d4037ef98444cf4f69dea04b32c03ec"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7f0076a87ee1ba9ba986f833baa1ff30a1865d35ee9e4719385aed08b0830df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca961c5d8285bcb24351ffa5dd59bd0f48f29991674a85874ccf16a8ebda6fdd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73ad28b75242e7cc9ce96144ec67622e3a7f93e71124573108bad9a92a91981b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0995653e745fe2546e141888720dde0a47dfa35ba38411702d40ab6b37b36807"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a9ce338249f0cb6f362a40b34ce96268c9d985fafcf98a9761555abb33ed2e8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "79c041934aea60ec22df011e731bfcc1d9c165b7aaca299b74f408dabda602ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "db0ec8dd546e14fab0318cdb1db16f96e81a5a30ce47fba3081a84d6250928fc"
+    sha256 cellar: :any_skip_relocation, monterey:       "aae349febbd2f80f5a5412de1408978be75ae67cedd19f70874c2c45b9eee208"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa21e54d3cdc4e50570f9ea616840b48e76c4197bc179a02b3ce0b699dcb0e55"
   end
 
   depends_on "go" => :build

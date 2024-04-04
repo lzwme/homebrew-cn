@@ -1,19 +1,19 @@
 class Yaegi < Formula
   desc "Yet another elegant Go interpreter"
   homepage "https:github.comtraefikyaegi"
-  url "https:github.comtraefikyaegiarchiverefstagsv0.16.0.tar.gz"
-  sha256 "77f5e17b53796fe89dad92f016dee6599d95a2b985508263a711a772c4c9b9b2"
+  url "https:github.comtraefikyaegiarchiverefstagsv0.16.1.tar.gz"
+  sha256 "872ceac063a8abfa71ecdeb56b1b960ca02abd5e9b6c926ae1bd3eb097cad44b"
   license "Apache-2.0"
   head "https:github.comtraefikyaegi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d57101d28414b81ef994d0642b4910804174a7b346179ff4345add58470fc28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4079400ee37d691ceaaecbac440d5d5b5b188b181b818583078aad7efb89dd76"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35935341ca2bc46e5134bdc552751a437f706dbe1c7cc98eeacfccca3cc2473c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "95ef4d3c09e3be12d26a381610dd4978c8a6a6f4b10c988bbdaac55d6c715939"
-    sha256 cellar: :any_skip_relocation, ventura:        "bf77b3a35251286d59d5f029b3ddfae1954f21e1a373ddab0e392f823614df8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "f6db1fabd03f00b13ca284466fdc91892da672ac986f0a57f709e61edca6d64b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c978af552f0e951fad995b78651d9de3f5cd1b8a5e970ffef992c59a16eb568"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89e8681d4dc369e762c31e42208290ede00c1d8972589b341bcfcb9efd006d5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee7a0dc7902daca4935063a8e4bb0ea6199bf55e9e189dd84ba7d57a98d926a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc2e80bb7ff631f962888c45a903a258c2f6301339e6c13a3cdb350163b8e4b5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ccd53e38ce8ebfc4739287ccbc67f02757eb1f0bf0fc7945b3d2d5daa512872"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fa9ed0e7f81673bb63a6863511741a6280f5531e5ca2faead31aa501ea8ab8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "e8fb11c381549bc6c5aa6036443f15ff6e07ec9fe613021a00d550abfd313e1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61ace260eae8744151743b8e6f3d0601f4b31e4d7f0eabe5446c332c7014f5d1"
   end
 
   depends_on "go" => :build

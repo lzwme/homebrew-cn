@@ -6,25 +6,28 @@ class Libxc < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "869c370bc016aea18087cbe71c8535a12fcfa68501258eeec743c3c3becc352a"
-    sha256 cellar: :any,                 arm64_ventura:  "6bf3929d9889b0078afb09ffc285b66c268aa0d665ec21ab56e1f51ddba78a26"
-    sha256 cellar: :any,                 arm64_monterey: "241a0cb7e33d79615fc390d19ea846df49893e57f08fa0561ae881c8b395d89a"
-    sha256 cellar: :any,                 arm64_big_sur:  "258ac8b1c6b73472797552674aa2b51d9d145fe3a34a94e0c872ecb1e1ef1821"
-    sha256 cellar: :any,                 sonoma:         "c25fe7f56bf53e01539aa84a3f6703afbbbc4c9b7d3b2891364ca600f711536a"
-    sha256 cellar: :any,                 ventura:        "2eeace080d0402fa565815e822a9a4807c47e523d6fd703ea006533b6cb85ba1"
-    sha256 cellar: :any,                 monterey:       "1140249e839f5f232ba9efc1692418c12ad8ba9848370068cef81cfba2a4b3ce"
-    sha256 cellar: :any,                 big_sur:        "886bef2546e6eff2896c094fdfd4ed12173b1a660fdbfe73247adbfdf47f7067"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d1a5c224164b165e6fabfdacc56bea1c3839374b130da801e1af8faf2223455"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "d3b7a181e48fbe340461e747e09de5b03463a42640ea7e3d17e70344e68a13fb"
+    sha256 cellar: :any,                 arm64_ventura:  "76e117d24f61975699724c178dc4ca067b3ac7894fe44b2ccbecbac4896531e4"
+    sha256 cellar: :any,                 arm64_monterey: "a17707ff2b6046f4b20246a3f4516d5c8dd025b42f1332b079d61c597e0d2acb"
+    sha256 cellar: :any,                 sonoma:         "4c172504c169ec73171e917fac317d4893d812e60f720fef5a475f5d543bbd8a"
+    sha256 cellar: :any,                 ventura:        "c549634c09e5a9f0688cf56a53923f257f465926fee68ff57486bab631d1b249"
+    sha256 cellar: :any,                 monterey:       "cd6a9789100cbb16589d41114a37b58f70deb902bdbb5cdd4294d057fb75f76b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab8fde994c4cfb4c5bfb6095d4845c11f6a9947800d52b642198575050ae6fa3"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "gcc" # for gfortran
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DENABLE_FORTRAN=ON",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    *std_cmake_args
+    args = %w[
+      -DENABLE_FORTRAN=ON
+      -DDISABLE_KXC=OFF
+      -DDISABLE_LXC=OFF
+      -DBUILD_SHARED_LIBS=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

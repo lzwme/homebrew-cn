@@ -8,11 +8,6 @@ class Couchdb < Formula
   license "Apache-2.0"
   revision 1
 
-  livecheck do
-    url :homepage
-    regex(href=.*?apache-couchdb[._-]v?(\d+(?:\.\d+)+)\.ti)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d58fc777fa9ff9f6de43919dfa9c024d5ce850b71f2ca085b6168375ffbfdd80"
     sha256 cellar: :any,                 arm64_ventura:  "82fd98b83ab7a1e703036c448d49b79b0d39e52656905b909e4ba75f043cb452"

@@ -3852,6 +3852,7 @@ Homebrew-homebrew-core/Formula/m/man2html.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mandoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mandown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manifest-tool.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/manim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manticoresearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mantra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mapcidr.rb, Homebrew/homebrew-core, 1
@@ -7654,6 +7655,7 @@ Homebrew-homebrew-cask/Casks/c/cleanmymac.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanshot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleanupbuddy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cleartext.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/clearvpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clementine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clibor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clickcharts.rb, Homebrew/homebrew-cask, 0
@@ -8366,6 +8368,7 @@ Homebrew-homebrew-cask/Casks/f/fspy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fstream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/ftdi-vcp-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fugu.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fujifilm-x-raw-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fujitsu-scansnap-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/functionflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/funter.rb, Homebrew/homebrew-cask, 0

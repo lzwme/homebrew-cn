@@ -3,18 +3,18 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-33.6.2.tgz"
-  sha256 "66cf9a4bd3f8d0ac76be5843c03427f643e7e88e17a9af96b0bb2c6e064ea58e"
+  url "https://registry.npmjs.org/vercel/-/vercel-33.6.3.tgz"
+  sha256 "50f72fdbf27e210e48c3304e0dcb3c50d59bf817c69d58258fec353107bab01e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "119787853e7be8c47f7b5be06349b394e573cd6405d2d665c618f8684fb28049"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "119787853e7be8c47f7b5be06349b394e573cd6405d2d665c618f8684fb28049"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "119787853e7be8c47f7b5be06349b394e573cd6405d2d665c618f8684fb28049"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98d1b640837ae2778caa9bd5e9735becd4cd874c80c31fb21f192133abe036ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "98d1b640837ae2778caa9bd5e9735becd4cd874c80c31fb21f192133abe036ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "98d1b640837ae2778caa9bd5e9735becd4cd874c80c31fb21f192133abe036ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "076a7d9cd21342a128a95a9f97138a80fbbc5ab0ef02566ae749d0917ad483b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "512f12f62aa48bb46c7ba5cfcc7da4268e2fc9fa2d340fc8dd034363c9fd5f34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "512f12f62aa48bb46c7ba5cfcc7da4268e2fc9fa2d340fc8dd034363c9fd5f34"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "512f12f62aa48bb46c7ba5cfcc7da4268e2fc9fa2d340fc8dd034363c9fd5f34"
+    sha256 cellar: :any_skip_relocation, sonoma:         "83b0030258fd0ddcbf1ace679b8861d5c528b5c22fae066ee2aa4227d43530cf"
+    sha256 cellar: :any_skip_relocation, ventura:        "83b0030258fd0ddcbf1ace679b8861d5c528b5c22fae066ee2aa4227d43530cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "83b0030258fd0ddcbf1ace679b8861d5c528b5c22fae066ee2aa4227d43530cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "467e9183e541e09cb4aface73ed47cb3b87700164991f9540ee4f3bb61730cc0"
   end
 
   depends_on "node"

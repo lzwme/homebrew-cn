@@ -61,6 +61,10 @@ class Khard < Formula
   end
 
   def install
+    # Work around ruamel.yaml.clib not building on Xcode 15.3, remove after a new release
+    # has resolved: https:sourceforge.netpruamel-yaml-clibtickets32
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     virtualenv_install_with_resources
     (etc"khard").install "docsourceexampleskhard.conf.example"
     zsh_completion.install "misczsh_khard"

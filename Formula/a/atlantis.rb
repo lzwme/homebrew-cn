@@ -4,6 +4,7 @@ class Atlantis < Formula
   url "https:github.comrunatlantisatlantisarchiverefstagsv0.27.2.tar.gz"
   sha256 "e44a53d4fa43cdaa88a2e7734da2854a97b1b555a425ab26ac5787ef9f3d3076"
   license "Apache-2.0"
+  revision 1
   head "https:github.comrunatlantisatlantis.git", branch: "main"
 
   livecheck do
@@ -12,20 +13,34 @@ class Atlantis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03f18543ffa7f1ccfeed76a38b13c8bc3218f4177c7c3935487d482e9c122981"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4e856d2ef8ca41e50d0b6f845e684eb6b26399076555017038364ededeb5e3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f8672e9052c6021666946e881b588f6380c43b6d5c76eabe9edf3e649b283f8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "baa26ea2d94fd9155b7c51ec482e069a988c654cf64a5884450ad97eb0c415f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "f3d432b4802a41c67e17bb19bbfb1112f422d831ce1bfb3f1f3173ccb5b150c3"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e80390542278cb9ba1976f944dd4dd2fb05c6d3a2ccd1d6bc3ac878078a01d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da6dccb69d6516c14fe3e0b73b3cd2901203e3f482f226dc6e30bb5b0cbb3f6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8845a4c5c5fec862421b6ac27d9ff8b9e31e396efa1c40057fc7db430690e93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1d52f85b02755ff8bbe196a77712a4688df129bf02dba756f1e6ac0a2b9d260"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07809a2647989121d6a929ab5a8f7344a2f13bcc6e029f1a0219dca6ab9d200e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a028543e426c3f8ae015deabcf7f8f1103e7c4cb9e02efce93d569593b9f2179"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd6ee28da1ffbda533aa0154ada6c6a4d5d9684998ab351ebed6181e979eeae6"
+    sha256 cellar: :any_skip_relocation, monterey:       "a7b370e28a832dad0377cec8624ebe9f76c9dac817dcd9fa1c665ef3a035b4f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a12a6068bf37a14576b2b45311dddc82006a308765aea858322835e397d06648"
   end
 
   depends_on "go" => :build
-  depends_on "terraform"
+
+  resource "terraform" do
+    # https:www.hashicorp.combloghashicorp-adopts-business-source-license
+    # Do not update terraform, it switched to the BUSL license
+    # Waiting for https:github.comrunatlantisatlantisissues3741
+    url "https:github.comhashicorpterraformarchiverefstagsv1.5.7.tar.gz"
+    sha256 "6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5"
+  end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    resource("terraform").stage do
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: libexec"binterraform")
+    end
+
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: libexec"binatlantis")
+
+    env = { PATH: libexec"bin" }
+    (bin"atlantis").write_env_script libexec"binatlantis", env
   end
 
   test do

@@ -1,18 +1,18 @@
 class Mighttpd2 < Formula
   desc "HTTP server"
   homepage "https://kazu-yamamoto.github.io/mighttpd2/"
-  url "https://hackage.haskell.org/package/mighttpd2-4.0.5/mighttpd2-4.0.5.tar.gz"
-  sha256 "3b8db69586cea76adfd6b17d2988c99153d184e2eec05afdae0686e19468237e"
+  url "https://hackage.haskell.org/package/mighttpd2-4.0.6/mighttpd2-4.0.6.tar.gz"
+  sha256 "13187245ed081893f4a2bf921cb0e00e401ca0ad29223f33929a6bcab3993eee"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d248a47bb1fa4501987a58f7f689979e58cde43e4893d0007ebfe29e007c4aa0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4f0716eac79532a66266f5eacb9489065dbfd1f387c066903b51b7f89efa25cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0adfdaa1f5131840a89d04967613978981d44e0829ce0932cebe6e31b72f3c48"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e51eeae602afd0466c761fe96c1966eecb45da4d689f87b9184d67fe2c24742f"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0468a31654b0799032a97fd8168c57aa9d66ae60c89d1365d3507dcd050a202"
-    sha256 cellar: :any_skip_relocation, monterey:       "dcf3e6a27d07f21ea80c639effc7cd81f3adf54df755ad16940d7a41b7f427bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f1994ac8ce022160c0c3282714bf15e2e4d16d02adcb61cac962604f66e00b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a43404c9e2edc17c9fd889f8be1d2c5a194a950a9ecd60f99ccc8816bd691e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "283297cf61c3d38f84f040214bbd9487b7e3814bc44a974be9b9d7ddd954c64a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46d398fcb0200b423e2fa911bcf476987bbd548f74b00bff9bb9406fac7690ae"
+    sha256 cellar: :any_skip_relocation, sonoma:         "94d508753efeccb2038baa0d25fb76ed5e53a444515e938f4785a53102254f97"
+    sha256 cellar: :any_skip_relocation, ventura:        "929f91494396fef98d36ac237efe6339a991c04c28b966d393b0a52b59f3dba3"
+    sha256 cellar: :any_skip_relocation, monterey:       "dce8bcd4761ef8516fba0bcbe7a9f8312f8ef7db8c4f713e2503fa776dc83385"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "867b6bad2f444d7acbea35af31bff0d7f2b958d5aed2bfcead263d146ece759d"
   end
 
   depends_on "cabal-install" => :build

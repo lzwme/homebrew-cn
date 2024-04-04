@@ -15,6 +15,7 @@ cask "utm" do
   end
 
   conflicts_with cask: "homebrewcask-versionsutm-beta"
+  depends_on macos: ">= :big_sur"
 
   app "UTM.app"
   binary "#{appdir}UTM.appContentsMacOSutmctl"

@@ -4,13 +4,13 @@ class Gstreamer < Formula
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
 
   stable do
-    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.22.10gstreamer-1.22.10.tar.gz"
-    sha256 "bba3a87f82d509802d96a5caf2c47982234063928870623b222f60702f1f50eb"
+    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.22.11gstreamer-1.22.11.tar.gz"
+    sha256 "cde3601f517b24aaaf0c91f1e2f24700d12482f840c6aa778ccf0b1451ea2a41"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.22.10gst-plugins-rs-gstreamer-1.22.10.tar.gz"
-      sha256 "ea866cdac87a57e08cf4529be5ba2870054e764b83dbfca733cd6fea1b9a3e11"
+      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.22.11gst-plugins-rs-gstreamer-1.22.11.tar.gz"
+      sha256 "f809314b5cf285d3c093a08554f0c70dca9b21a5db2c0bccd15691733f16b6e6"
     end
   end
 
@@ -20,13 +20,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "6cfb3e0483210434b70d6c4b2172ef14b82f40394ff677b4eef38f6424133da4"
-    sha256 arm64_ventura:  "8eb910caf6c77ffd10791638cb4d3418896de843c9d9780288225d614d824124"
-    sha256 arm64_monterey: "0ce824e9228434616a66246b04df01368dbccdc783a9b97ee379c0650af58248"
-    sha256 sonoma:         "337edca6ea2af6095de30fd4d383ee5ae10d308efe6069c10b18c84e5a27334d"
-    sha256 ventura:        "df774bf74c8c6cb2bca77f306bf82828b5a1eb2f042a011dbf020c19a8dc8904"
-    sha256 monterey:       "40cdcc128eabaf28a417adecd17c6578f702c6347323538497603597f419bbe7"
-    sha256 x86_64_linux:   "dd294b52fec65d387f0ad695ddc59d3d9047ad3d9c5dff5f82b2a42cc055c4ed"
+    sha256 arm64_sonoma:   "7899d440a59c3bd4f3fb84c866ee671bcf32d1c93ee6d68c2036ace5862d2dca"
+    sha256 arm64_ventura:  "abb8259c1bd43bf0536a9af0c6111386de4aa5dcfd4eaac7f4917e813158cf2e"
+    sha256 arm64_monterey: "c511f55ec8c9e7ea17cb3a685b7c329ddbd8a450cb88ddc2554c7132ea3cc462"
+    sha256 sonoma:         "007e16a51871638715024b2f2f9a3ef363bf4fd901ebb6e5c03655c83a11e3dd"
+    sha256 ventura:        "fc8f4069d5e9822f860adb8dddae1abf9f10cc9bb0b3b18c65221b708e81da14"
+    sha256 monterey:       "a7bf62d041af614179b656c8a78d2529d16db000fe25357a21ad65be0b6e729d"
+    sha256 x86_64_linux:   "e37704bc3e498f024ac03a02f47efe2066a9c1f52eb63458eaea0f8a7ce91deb"
   end
 
   head do
@@ -229,6 +229,7 @@ class Gstreamer < Formula
     system bin"gst-inspect-1.0", "--plugin", "x264"
     system bin"gst-inspect-1.0", "--plugin", "rtspclientsink"
     system bin"gst-inspect-1.0", "--plugin", "rsfile"
+    system bin"gst-inspect-1.0", "hlsdemux2"
 
     system python3, "-c", <<~EOS
       import gi

@@ -1,18 +1,18 @@
 class Jose < Formula
   desc "C-language implementation of Javascript Object Signing and Encryption"
   homepage "https:github.comlatchsetjose"
-  url "https:github.comlatchsetjosereleasesdownloadv12jose-12.tar.xz"
-  sha256 "0ba189b483f27899867fdd886eda42dd9d17b807ffdc7819822665cb45d7e784"
+  url "https:github.comlatchsetjosereleasesdownloadv13jose-13.tar.xz"
+  sha256 "995a72678acb71a700907a2e6a2280e88a04dc14709094fe4ce828bc10aec3ed"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "5ab1d6d35f6489c7ee29f67ae59cff675657024b9456e9c0437b82d63def577a"
-    sha256 cellar: :any, arm64_ventura:  "6ed6cda62ae66cd159c81ea7fd1cf465755d3ab7494701f0aac6ace4fc3991bb"
-    sha256 cellar: :any, arm64_monterey: "139a737ba296a4d24e680decdf3daf9a1276836b22aec2493a7c9625234602a0"
-    sha256 cellar: :any, sonoma:         "c51afd0ee639305c12bc69b03b8583ff9c6e4289fb0050ecae55e6e18f57944f"
-    sha256 cellar: :any, ventura:        "88e802405401cbd382a56bd6c7b17d4d604bf76351d07bb46dea75ee11cdaf4a"
-    sha256 cellar: :any, monterey:       "cdeb4abd78ee95d1663ec47da5a54801edab0dd6f618749d7af02dfcec4cd9d3"
-    sha256               x86_64_linux:   "3b7cbdea2a9554c0f2ff87359ceb73e73ab35f2455147d98cdf7cfcbe2b7fc29"
+    sha256 cellar: :any, arm64_sonoma:   "8e0caec9dc2ea5d9d4619e6e0582f25cfe980d52317ad924bb7364983c4613b4"
+    sha256 cellar: :any, arm64_ventura:  "e3d8eac6cbd436d72e86e3fab6ac6dbb697db1d6f2c53b969f79e01b72fd4af2"
+    sha256 cellar: :any, arm64_monterey: "81ffce589a26b57b4d85c07c473506c8731c4b078450d9a0ae2c6b0f5211e9f0"
+    sha256 cellar: :any, sonoma:         "95f3e40e0f6fe1a1b4c43681c3295f7d79141e78e9adac809cdcdadf27d4d66b"
+    sha256 cellar: :any, ventura:        "751410cc5b6db3f32798b4388c9af2199a9b2d4dc85e7a1e09ceb9a616671083"
+    sha256 cellar: :any, monterey:       "b846d7b234825ac94314a338c0d61b1d0d326fa6dceac02e1d74a2b1a7ea493c"
+    sha256               x86_64_linux:   "ad952749f663ba18bcca3d8e6b30a953725000bd57b10b13337403aaeb3071b8"
   end
 
   depends_on "meson" => :build

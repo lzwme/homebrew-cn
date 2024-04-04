@@ -2,6 +2,7 @@ class Miniupnpc < Formula
   desc "UPnP IGD client library and daemon"
   homepage "https://miniupnp.tuxfamily.org"
   url "https://miniupnp.tuxfamily.org/files/download.php?file=miniupnpc-2.2.6.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/m/miniupnpc/miniupnpc_2.2.6.orig.tar.gz"
   sha256 "37fcd91953508c3e62d6964bb8ffbc5d47f3e13481fa54e6214fcc68704c66f1"
   license "BSD-3-Clause"
 
