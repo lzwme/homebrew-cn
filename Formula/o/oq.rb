@@ -1,21 +1,18 @@
 class Oq < Formula
   desc "Performant, and portable jq wrapper to support formats other than JSON"
   homepage "https:blacksmoke16.github.iooq"
-  url "https:github.comBlacksmoke16oqarchiverefstagsv1.3.4.tar.gz"
-  sha256 "9e99c9ba292c466ca39fb7f6d0053f9fe13c2768a7493d1ef88ea2ca2e0d0ca0"
+  url "https:github.comBlacksmoke16oqarchiverefstagsv1.3.5.tar.gz"
+  sha256 "66b2d879b6e2061121c50b8e584ce82f95fe79348bf3696ca38e5910a6c42495"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8df162607ce2ab7494fccf24efcf87af4033e7fc7e66a5086f86d195dd86ba26"
-    sha256 cellar: :any,                 arm64_ventura:  "75a8cc4cfa2586b342b64c65e4a6aac0d03a4fcaf9aeb3e3f5455d07282788e0"
-    sha256 cellar: :any,                 arm64_monterey: "8e50955137a1196431e6323923a223bca628e6e25bc15de29a40f714e117fc9e"
-    sha256 cellar: :any,                 arm64_big_sur:  "6593873b7bf1f52b6ef49efcf24a82116f67ec418180407c146cac2a7fdc3732"
-    sha256 cellar: :any,                 sonoma:         "0cc3d947b2456c729b5c4203eee37761ebe33ee4cece898640d4444f6a4ec813"
-    sha256 cellar: :any,                 ventura:        "74bf344804ef1017576514cabde8ca1dc51c73535cd3fca0e0c3820b0adca9f6"
-    sha256 cellar: :any,                 monterey:       "fcb33b4ec3d23973937252c430bdf01c9047020d374c31e9f15f9f63e04a82c1"
-    sha256 cellar: :any,                 big_sur:        "ed634cea33ba5fd7418eb32f24fd551c46bcd1b45dc1c8d3495b1136f2e7f57f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01c0353f5948a11b8f17fb28ab4fa33f9b164435916b80675e15270e811d8821"
+    sha256 cellar: :any,                 arm64_sonoma:   "99fc2a852c9fcd9346ab49b10a2fffca37b96c874311073bde9875b1317dcaa3"
+    sha256 cellar: :any,                 arm64_ventura:  "79c06b62ee8b7a819e2c752656a17e24192206454206a8f13f23f69764b35b72"
+    sha256 cellar: :any,                 arm64_monterey: "86d0284e415fa4dcf91a75c6c5dab04e73044c161777fb52449c62a62c4b3c4b"
+    sha256 cellar: :any,                 sonoma:         "d7b699f030dc0c632c034b5ffefb4db85a34976919ee4853e1814cd9caf93a5d"
+    sha256 cellar: :any,                 ventura:        "d55554139463e1d576a3c240c55fb868a7520f87073383baa74a9dc2a0769fb0"
+    sha256 cellar: :any,                 monterey:       "1ab1903afd02e46a04c19996dab38cfb49051d023a0138bb079b725d29df5c56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6875c56c9a0b5c7f0bb103c94bc6e4a0b770f48ec90e46dc58f72e54bc71811e"
   end
 
   depends_on "crystal" => :build

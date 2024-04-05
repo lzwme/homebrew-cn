@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https:fortio.org"
   url "https:github.comfortiofortio.git",
-      tag:      "v1.63.6",
-      revision: "a184337d9e32e639f88c57f89de4dddbb9c5bc07"
+      tag:      "v1.63.7",
+      revision: "4383a362899cc03b885944d326c204bdf857a186"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -15,13 +15,13 @@ class Fortio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08f28d88a81569a8f26db2ff1812e04cb4aac5621b90b27f8dffe9bbb64bfb15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d1a5310a4f54dcffe8dcd5eb4d083d97edb436ac486db87f56d35d5610db199"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cceeb1b061ee45e7ddf88eac12e27b365b438e5795f325b2163fb65d0e912f04"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fac59505e79779f7f85e84b5ee19f87e9885d0034e3abeb4e5f2720822ead5db"
-    sha256 cellar: :any_skip_relocation, ventura:        "64b5029b15e2f0f81f719753658112094247afaa1c146b52bfb8f3c56ad3cd29"
-    sha256 cellar: :any_skip_relocation, monterey:       "0dcf8a3b1b91ddda5b0eb28e5f00e8d0176dc42ac51bb1e470f477861f84030a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9da2ec825ae2b8507daca7e5142cd42e42734b3bca7b81249f8900c6bf17293b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "618217e84dbf0f19266de2c1557ab492e3b9ea3558824bd1d4c4296c1b5eeaed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "467edb8495fa381f702b4a202407a4327453c2381f8628f48d76c73a0122a34b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d27c1351c64275576416d0157c73981a2674b7402d82ce0730a18e98dcdc4c1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "adf1324375fe113300efe280c93b42450534849e55530477b147f338ac26aa34"
+    sha256 cellar: :any_skip_relocation, ventura:        "0b1c4b2da7eefab15d8bc67cb6f567acd967f952c3a92585704a328765c1830d"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fc87a2be1b189a4c05e2617b3cf4b73c40cb26ff78be28dfe467589ba895140"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a2ac7fa3bdf192e2fbe9fd8c8ab7900d5e34a39a27ef14aa4e895ef7a52c848"
   end
 
   depends_on "go" => :build

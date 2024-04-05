@@ -4,21 +4,19 @@ class Klee < Formula
 
   desc "Symbolic Execution Engine"
   homepage "https:klee-se.org"
-  url "https:github.comkleekleearchiverefstagsv3.0.tar.gz"
-  sha256 "204ebf0cb739886f574b1190b04fa9ed9088770c0634984782e9633d1aa4bdc9"
+  url "https:github.comkleekleearchiverefstagsv3.1.tar.gz"
+  sha256 "ae3d97209fa480ce6498ffaa7eaa7ecbbe22748c739cb7b2389391d0d9c940f7"
   license "NCSA"
-  revision 2
   head "https:github.comkleeklee.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "20a94127e1cd812fe8d1fdafa544d16fc1d4f8e3dc4309c3a798616603b27421"
-    sha256 arm64_ventura:  "aff91c5cde3b1560b734d0a4053c0f4e9a0db404f5cce46de2b8af58a13bda3a"
-    sha256 arm64_monterey: "520358584e40a77f6578d0d788f05e4c7028c40b2d416e3fafad21f348dd3612"
-    sha256 sonoma:         "c29106dec09329ae47ba9b8c0852380b92fca1294722d55af62a1aac7dc4fafa"
-    sha256 ventura:        "d2b6d81c8a13b81e572f9867421a16474d1dfeb10f26ee23cc19733cc8383c3b"
-    sha256 monterey:       "fb47d3def09cd573cb36e09e05924a04867b5662822ae768365640429b3dc89a"
-    sha256 x86_64_linux:   "c9eb15b2ae11c897e88fef23d0ed05243dbe162b6679ea18c32ae03fc499975a"
+    sha256 arm64_sonoma:   "b5756462cae8a0f2d594473e82ec2fdfa528db74ed7f3a509182852405e72363"
+    sha256 arm64_ventura:  "476aa60279692229c9cd827a90b45479973b4c0e9985cc117f27ff9e3bf352e2"
+    sha256 arm64_monterey: "5f646d9b7808565c1c1df32d9bd83c5f55be1a4c75a28ec415c82ab60c516843"
+    sha256 sonoma:         "6433d829176c08f0ae475405d9f5d961b9742fc562f4ed811ae99eea77f1b841"
+    sha256 ventura:        "aacb242866c289e7b6b8dacd3148a11d2ddaa89845102a3ae31181711aa75691"
+    sha256 monterey:       "f1d178b5dde0ebc46c32b8498ce2359cd2c734489903b990733f40d3a1fa6678"
+    sha256 x86_64_linux:   "361085fba6d8c7e120fa8962b32c97238227a3f3a7cfc35d4094244c6cec372e"
   end
 
   depends_on "cmake" => :build
@@ -94,7 +92,9 @@ class Klee < Formula
     args = %W[
       -DKLEE_RUNTIME_BUILD_TYPE=Release
       -DKLEE_LIBCXX_DIR=#{libcxx_install_dir}
-      -DKLEE_LIBCXX_INCLUDE_DIR=#{libcxx_install_dir}includec++v1
+      -DKLEE_LIBCXX_BC_PATH=#{libcxx_install_dir}lib
+      -DKLEE_LIBCXX_INCLUDE_DIR=#{libcxx_install_dir}include
+      -DKLEE_LIBCXX_INCLUDE_PATH=#{libcxx_install_dir}includec++v1
       -DKLEE_LIBCXXABI_SRC_DIR=#{libcxx_src_dir}libcxxabi
       -DLLVM_CONFIG_BINARY=#{llvm.opt_bin}llvm-config
       -DM32_SUPPORTED=OFF

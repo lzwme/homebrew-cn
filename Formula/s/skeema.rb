@@ -1,19 +1,19 @@
 class Skeema < Formula
   desc "Declarative pure-SQL schema management for MySQL and MariaDB"
   homepage "https:www.skeema.io"
-  url "https:github.comskeemaskeemaarchiverefstagsv1.11.1.tar.gz"
-  sha256 "3da0888c67f90875e8c086f4f965965055d5990fb152359a4c898837cd7d0c51"
+  url "https:github.comskeemaskeemaarchiverefstagsv1.11.2.tar.gz"
+  sha256 "44fd48b35848440dc6d8deb8f812e8492e55dfa987e6ee3d697b3e8bbbac63c9"
   license "Apache-2.0"
   head "https:github.comskeemaskeema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c8d149fa3bbdea602c3a4821aba1dc222a78bf66f52f4dbf11a995e9c7c7866"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25f9567f154ece2572105febc487bccb731061837262c2ed3a3412459897c411"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73d16e14822dfa2d1cc1609438da9e6b726fde73fd3a73abf935aeff6cd1d2b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4079c995723bc64e9e323f44ab429e4cf16c8b205bddbb50b230fe7571396b11"
-    sha256 cellar: :any_skip_relocation, ventura:        "c910909cfb638a2b7ddf2a5fc73c1ee40cbb2a05770df7cb6002b2a7a00baf7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7fe7077a5edc43df38a0fe3f2dd061fc1050352b78685ce6de7102f8dc6c7bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0514a6ec7a8a8babb8ecba59ba03cd9276f126487c80a62cbc83bbd8e2e72748"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04a792515581d4dca243771c591d1c08e465730c3b8defafd19f5530cea3ade4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ffa781318a9cda0301b6fc55edca3d4095f615915d11a8274cdbff63fda7bf5e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34c99b470c869a7bacf2876c4dc75c5b9a6e6dbf33a32a44809bbdcae29f8d76"
+    sha256 cellar: :any_skip_relocation, sonoma:         "710e18e5fd2ba7b9b55a6e438fa711fed1492fae0b6d613b89e1c34f78aaef8a"
+    sha256 cellar: :any_skip_relocation, ventura:        "8576f64d0ec0e4a4b90f960995621880fa58ad99889d615b2ad59bf2a9c895a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "234a47d60d3b75dda812c514418557da7d080a8f07eb8a7d3c6a582c04f1285d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaefcfcd76a18972b81adc5de2766181dfdbdb39b3fbe6f0259779bec8518976"
   end
 
   depends_on "go" => :build

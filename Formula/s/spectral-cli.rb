@@ -3,43 +3,38 @@ require "languagenode"
 class SpectralCli < Formula
   desc "JSONYAML linter and support OpenAPI v3.1v3.0v2.0, and AsyncAPI v2.x"
   homepage "https:stoplight.ioopen-sourcespectral"
-  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.11.0.tgz"
-  sha256 "57400e36f33236df82ea06b7513244b99276201d35195c8f9c781d479afe64a9"
+  url "https:registry.npmjs.org@stoplightspectral-cli-spectral-cli-6.11.1.tgz"
+  sha256 "def3583f144cb7ba6d03d6814167ab3d6a8a27fff7f575b2c2ec72f0b133cc0e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6aeacf5b951ccb06f453238d28cfe2d1d1da156e548822d1d7826dba74265cd9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ef33221a2c02526be1e6d8c9e6b07cc18dc23b55f82dc73d8eb4c234720d128"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ef33221a2c02526be1e6d8c9e6b07cc18dc23b55f82dc73d8eb4c234720d128"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ef33221a2c02526be1e6d8c9e6b07cc18dc23b55f82dc73d8eb4c234720d128"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e660bc784f8669841e3ded67bdf33045420738dd107b10f607743360c9e5cc7b"
-    sha256 cellar: :any_skip_relocation, ventura:        "df52506dd10de2bead141fca23ac1f69f0e996cd2532663f7c5bd17cd1e5f736"
-    sha256 cellar: :any_skip_relocation, monterey:       "df52506dd10de2bead141fca23ac1f69f0e996cd2532663f7c5bd17cd1e5f736"
-    sha256 cellar: :any_skip_relocation, big_sur:        "df52506dd10de2bead141fca23ac1f69f0e996cd2532663f7c5bd17cd1e5f736"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e9efa1cfedc0e266e00441e4e525fe8e94df60a698b4df182633d20acfd956e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "143cec713103b5cf1b550eb8764f063c0e936706080a984388346c4d2a2c2492"
+    sha256 cellar: :any_skip_relocation, ventura:        "143cec713103b5cf1b550eb8764f063c0e936706080a984388346c4d2a2c2492"
+    sha256 cellar: :any_skip_relocation, monterey:       "143cec713103b5cf1b550eb8764f063c0e936706080a984388346c4d2a2c2492"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e08c2b1224176536f59c282b2cf22437bdd90fc3658074939509c2b16129c47f"
   end
 
   depends_on "node"
 
-  resource "homebrew-petstore.yaml" do
-    url "https:raw.githubusercontent.comOAIOpenAPI-Specificationb12acf0cexamplesv3.0petstore.yaml"
-    sha256 "7dc119919441597e2b24335d8c8f6d01f1f0b895637f79b35e3863a3c2df9ddf"
-  end
-
-  resource "homebrew-streetlights-mqtt.yml" do
-    url "https:raw.githubusercontent.comasyncapispec1824379bexamplesstreetlights-mqtt.yml"
-    sha256 "7e17c9b465437a5a12decd93be49e37ca7ecfc48ff6f10e830d8290e9865d3af"
-  end
-
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}bin*"]
-
-    # Replace universal binaries with their native slices
-    deuniversalize_machos libexec"libnode_modules@stoplightspectral-clinode_modulesfseventsfsevents.node"
   end
 
   test do
+    resource "homebrew-petstore.yaml" do
+      url "https:raw.githubusercontent.comOAIOpenAPI-Specificationb12acf0cexamplesv3.0petstore.yaml"
+      sha256 "7dc119919441597e2b24335d8c8f6d01f1f0b895637f79b35e3863a3c2df9ddf"
+    end
+
+    resource "homebrew-streetlights-mqtt.yml" do
+      url "https:raw.githubusercontent.comasyncapispec1824379bexamplesstreetlights-mqtt.yml"
+      sha256 "7e17c9b465437a5a12decd93be49e37ca7ecfc48ff6f10e830d8290e9865d3af"
+    end
+
     test_config = testpath".spectral.yaml"
     test_config.write "extends: [\"spectral:oas\", \"spectral:asyncapi\"]"
 

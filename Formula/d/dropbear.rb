@@ -1,8 +1,8 @@
 class Dropbear < Formula
   desc "Small SSH serverclient for POSIX-based system"
   homepage "https:matt.ucc.asn.audropbeardropbear.html"
-  url "https:matt.ucc.asn.audropbearreleasesdropbear-2022.83.tar.bz2"
-  sha256 "bc5a121ffbc94b5171ad5ebe01be42746d50aa797c9549a4639894a16749443b"
+  url "https:matt.ucc.asn.audropbearreleasesdropbear-2024.84.tar.bz2"
+  sha256 "16e22b66b333d6b7e504c43679d04ed6ca30f2838db40a21f935c850dfc01009"
   license "MIT"
 
   livecheck do
@@ -11,16 +11,13 @@ class Dropbear < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e937a1a0b0d7d6be61e9694457c2d3a9a644bfea6911e3c63c0c223820e2dbb6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcec1a39e5a5e4690a070e3398328890065cdd2d62b879fe0c1998f33a8a2f51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2453eaa6d3db311eb4c1fbfbbc015b9092d41d480fb202de62db2a9b629304e4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b8bb3270365893e046581536ca68247bc076db996792d6e12276076043dc353b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0afbe7c1a3352133deff2c4e442b18163f3a26e6bce1c490a2cba74abae50d11"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ccd7deee49ca74c101c186ba01eb2bfbcfc0584b73beabb937bf1b95fd367d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2fb94f5c26f62ba93143a24ede11996f1c6ed95b471012284f8c03feb764a45"
-    sha256 cellar: :any_skip_relocation, big_sur:        "156af560dbd95b6265fc5eea98d8f8c543c3273033ee92f99bff4d0128cb01d4"
-    sha256 cellar: :any_skip_relocation, catalina:       "7aab9e4151373680365e78a39474493b6a381bc8a24ad55a6c232018fe4644f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "936ac3ad8df5dae23a2ad663ceceeaa67c9b68862dab3d92d8d13235bf0d080a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52d5fdddb3d48948c30ac5ac07fce0aebd0c646f73aa25f9ada33f0135c980c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de14b9b8ee2fe0748967c8abfab65d2130bf073fc1d9b6df336a0b57d462e5ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b6a236425fffe2f0e11b8915f520a2993202569fd2a24956009b1fc15a38910"
+    sha256 cellar: :any_skip_relocation, sonoma:         "495fa9bea3f83194bffa157f977ba5f4240b71e381b4e7680c406f75c0ca4b98"
+    sha256 cellar: :any_skip_relocation, ventura:        "6633c00f0960b56bd242188101ccfc90a257b4d86f64e711fe60e58a3dd2ce05"
+    sha256 cellar: :any_skip_relocation, monterey:       "52111d59988e02fc002009ce5b98c59c167a75960d17d03073084a1d14348b89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a10a9d4c06373f813601e4a7cfb9ca33378adcf5f36e66d541d4f934ccddf44"
   end
 
   head do

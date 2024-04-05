@@ -1,18 +1,18 @@
 class GitCodereview < Formula
   desc "Tool for working with Gerrit code reviews"
   homepage "https:pkg.go.devgolang.orgxreviewgit-codereview"
-  url "https:github.comgolangreviewarchiverefstagsv1.10.0.tar.gz"
-  sha256 "15e4cdbf6fe07c2f1c46748e6aba48d1d1f5203c1ca10950ea6877defb39fa19"
+  url "https:github.comgolangreviewarchiverefstagsv1.11.0.tar.gz"
+  sha256 "e16271040935c55d04ac3e2432a5b1613b08c524110729c27fb7735e767cdff9"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f432d46492d763a5a1d72a5461b1062172d89ab5a661c4eccc486f7def7cd59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28d7afbd5d05a2c1eeab4d3ac768c720cd238b4fae2fa982e929fb103eb131a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b18cc30d154ad2cf58cd0a9d8be2af636916027e39f04353d096ff814be824b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "659a29cab581c68a089fcc16912f44efb797879a39aa2b1f9e2811977a4b40a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b2995bb68539cd08525b5872b1d7d4b6bc3f08a688cd880757c24ae61bb01c13"
-    sha256 cellar: :any_skip_relocation, monterey:       "d9dc9b4f5b4ea91c8cd3a12fbc33b46327338867860b0e70f605d8ae95ae617f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1cb2a7f761a54a67df8147c9d45008f8363442867d6c7b999ffd6529c0429ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "837b85ef2989afe8dc3c80fc768236eec50152f01ca46900009de40d8b4527b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b065f80ab783f95e2d528b65eeb05c00cd12d70f1d95f96366fa9484b71f771"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5baed4184fde0e28de6f138ac503bed51b8c2360447f3a111ee3d7a50fe5cc88"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a34f6808553d0d40c5ff28178eb03e309c55fd1c31468b6d58ff61db27ac16c"
+    sha256 cellar: :any_skip_relocation, ventura:        "3c2a0eb7e59838e558d902f73f3dde7117c1faff89e9dcd911b5a045d60844dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "ebdcdd0e38e348ff9ba0dce5af0f8466e787d7416d500a9e9761db4c94ba731d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "157f476e5aec6e0e776a06725a1f99bce2344d7bd116751ae20e8d6527f7e1bd"
   end
 
   depends_on "go" => :build

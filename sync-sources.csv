@@ -5034,7 +5034,7 @@ Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prototool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prover9.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxsuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxychains-ng.rb, Homebrew/homebrew-core, 1
@@ -5139,7 +5139,7 @@ Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
@@ -7244,6 +7244,7 @@ Homebrew-homebrew-cask/Casks/a/archaeology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archipelago.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/archiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/archy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/arctic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arctype.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arduino-ide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arduino.rb, Homebrew/homebrew-cask, 0
@@ -9872,6 +9873,7 @@ Homebrew-homebrew-cask/Casks/p/pgadmin4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phantomjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phd2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/philips-hue-sync.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/phoenix-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix-slides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/photoninja.rb, Homebrew/homebrew-cask, 0
@@ -10675,6 +10677,7 @@ Homebrew-homebrew-cask/Casks/s/stand.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/standard-notes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/starcraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/starnet-plus-plus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/starnet2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/starsector.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/start.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/startupizer.rb, Homebrew/homebrew-cask, 0
@@ -13189,6 +13192,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-rationale.rb, Homebrew/homebrew-cask-fon
 Homebrew-homebrew-cask-fonts/Casks/font-ravi-prakash.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-readex-pro.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-recursive-code.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-recursive-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-recursive.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-red-hat-display.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-red-hat-mono.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13534,6 +13538,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono-nerd-font.rb, Homebrew/homeb
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-sans-mono.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-sans-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ubuntu.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-uchen.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13626,6 +13631,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-yusei-magic.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-zcool-kuaile.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zcool-qingke-huangyou.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zcool-xiaowei.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-zed-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zed-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zed-sans.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-zen-antique-soft.rb, Homebrew/homebrew-cask-fonts, 1

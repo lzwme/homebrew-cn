@@ -11,13 +11,14 @@ class I2p < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "06d55ee23440f5fce841cb0ece2a041bba3858bdfa62a8944c007d097274d52c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d7b0aec492f18eec2de4b26a235e0906df0dd0075e06e09e6e1c9607dcc7caa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3df8db0f7b82b3a4493d2f8ce4312777644404b0728718a3a90d170abb8f5e8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d3ccdf5be45e4295d4d01e1b597e2f4d07a26a67f46546b5300793527f583654"
-    sha256 cellar: :any_skip_relocation, ventura:        "33252491ae19ea4661abccb98080213ffa914c04e7ebecc0c598fea3e9028cc3"
-    sha256 cellar: :any_skip_relocation, monterey:       "155bde3cc2ec71aa7d9a1716f17766e1054de821cee2acbf761b53f22cbb252e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "731b92c3400edc19ddcb971f82bac8305309dddc6d0481e4f63de48ab0b7986f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45fdcb057904524c6a036a817498126b1db5ebe426a0f08657acf6ecd547f141"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38f8df990e1aa4dfb4fc749e193b3525e1152d2eab7156104975ea3e7d14ed3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2da5f989c798cbc559d0037c33f520e3dad93e6bdd61f1be1da051e172fbbbfb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6c29dc3fc393d0947d40fda159986f766a921b14ca946cd197a74653c67bf3d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "57339b9ef1afaad2cce76ca7c2fdc18da6c0018a98272220241b986f9cbcc2d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "22ab24f06fcc5cc2fb44283c7fdbcf9e6d224e7a12cf8b122276456a7f86f304"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a61c4e7a412b6b88094606850a2dcecfeb6fb3d40f228d579407015176847614"
   end
 
   depends_on "ant" => :build
@@ -56,6 +57,10 @@ class I2p < Formula
     end
 
     inreplace libexec/"wrapper.config", "$INSTALL_PATH", libexec
+
+    inreplace libexec/"i2prouter", "%USER_HOME", "$HOME"
+    inreplace libexec/"i2prouter", "%SYSTEM_java_io_tmpdir", "$TMPDIR"
+    inreplace libexec/"runplain.sh", "%SYSTEM_java_io_tmpdir", "$TMPDIR"
 
     # Wrap eepget and i2prouter in env scripts so they can find OpenJDK
     (bin/"eepget").write_env_script libexec/"eepget", JAVA_HOME: Formula["openjdk"].opt_prefix

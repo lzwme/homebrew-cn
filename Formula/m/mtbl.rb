@@ -1,18 +1,18 @@
 class Mtbl < Formula
   desc "Immutable sorted string table library"
   homepage "https:github.comfarsightsecmtbl"
-  url "https:dl.farsightsecurity.comdistmtblmtbl-1.6.0.tar.gz"
-  sha256 "6563ddf1c7d9973efa7c58033fd339e68e19be69a234fa5a25448871704942df"
+  url "https:dl.farsightsecurity.comdistmtblmtbl-1.6.1.tar.gz"
+  sha256 "bf2711aa81a996cddf99f270cc7cb1c32dbed7f1bfc95e23ec6227e4bd08365d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "03f3ca58c119cc88d591e8d11587ab12bc3dbcbb23f9d8082c3adef37d475358"
-    sha256 cellar: :any,                 arm64_ventura:  "c4dde6b7eab863ffe58466fdba3aadc7106d16a08e125ce87458dd2ff2661e40"
-    sha256 cellar: :any,                 arm64_monterey: "70f42be92172d7bf4738fec0cea2e573c4773d80a4073f4770f55dbcf49e7eea"
-    sha256 cellar: :any,                 sonoma:         "b2ecae34cc1ed730dac39d4f12bfee6a86975f60d684d19cf11b1f398a596199"
-    sha256 cellar: :any,                 ventura:        "8ccf01e6e6f489583c5fe4dd889f2464d001814c6d4b1bdc96287e7802ed6977"
-    sha256 cellar: :any,                 monterey:       "1e6081e3b7eb166038c66a1100a0bb9885d7ecc649b90514afe394517984b49b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad29fcbf4278dc3d0463b9b41f5d3a83cd2648cfd76f837f7cd90ae52f0631f7"
+    sha256 cellar: :any,                 arm64_sonoma:   "8abec69768a50d89975e04072e3e546453ecd2f1c3271f645769ab4b23a9aa58"
+    sha256 cellar: :any,                 arm64_ventura:  "3e16710be45c82ca1ca31d823f426e5b07959b2f9e0c186a6f696100fead851b"
+    sha256 cellar: :any,                 arm64_monterey: "3f35f8a96d4ebb6473f3961c040815b881a47bc6c62404147dbc2a39c601f362"
+    sha256 cellar: :any,                 sonoma:         "5db2ff6ea378e07fdbd774dd921d4ac381520594d41be21b1582dbbc4b836ace"
+    sha256 cellar: :any,                 ventura:        "b3dcf394a52c3c61b44d0d64f222cb6b97ea84bb60b3360b011b38293d782a17"
+    sha256 cellar: :any,                 monterey:       "b1dc6d9dd474ba23598bd51a5e2144f0ceae07d3eb79ece4c2e310bb02866602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "532d7f6bddb7a756fa3413224c56c6e20094df7f16bcd1700cd34ba959996f9a"
   end
 
   head do

@@ -1,29 +1,21 @@
 class Mlx < Formula
-  include Language::Python::Virtualenv
-
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.7.0.tar.gz"
-  sha256 "42e616f2e84e9f7bd43353b5ec346debf07b5219043c46b26bb89ee1d151d446"
+  url "https:github.comml-exploremlxarchiverefstagsv0.9.1.tar.gz"
+  sha256 "2efdf30f7f5b45530920f833285588cdc174a7146e6a9dfd56a21b150514e288"
   license "MIT"
   head "https:github.comml-exploremlx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "a635458b40c5265240cf3c8387b40c8a908e870030b79e052c7dbf9ab1af7054"
-    sha256 cellar: :any, arm64_ventura: "83d9ed0a843918daa62e80ee3e165e5c2ab22bdc1d14d838a2901a9e1d489869"
+    sha256 cellar: :any, arm64_sonoma:  "f1c53caa530c9d18a221adbf20ff08c1615379220ff14b8ec286fd4dc62034bf"
+    sha256 cellar: :any, arm64_ventura: "6717fb4440cf645e18bae8a9d42740512099a97027596f1a512c145c6f2b603c"
   end
 
   depends_on "cmake" => :build
-  depends_on "pybind11" => :build
   depends_on xcode: ["14.3", :build]
   depends_on arch: :arm64
   depends_on :macos
   depends_on "python@3.12"
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
-  end
 
   def python3
     "python3.12"
@@ -42,16 +34,11 @@ class Mlx < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    venv_root = buildpath"venv"
-    site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_create_path "PYTHONPATH", venv_rootsite_packages
-    venv = virtualenv_create(venv_root, python3)
-    venv.pip_install resource("setuptools")
-
     env = { PYPI_RELEASE: version.to_s }
     env["DEV_RELEASE"] = "1" if build.head?
+    env["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.#{MacOS.version.minor.to_i}" if OS.mac?
     with_env(env) do
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
   end
 

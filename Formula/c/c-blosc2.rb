@@ -1,19 +1,19 @@
 class CBlosc2 < Formula
   desc "Fast, compressed, persistent binary data store library for C"
   homepage "https:www.blosc.org"
-  url "https:github.comBloscc-blosc2archiverefstagsv2.14.0.tar.gz"
-  sha256 "e604f23ed5b6010810ae30413426622e2cf2ee81912c2f997e3a14993a4b7ec4"
+  url "https:github.comBloscc-blosc2archiverefstagsv2.14.1.tar.gz"
+  sha256 "c33eab88b0d858de551f775089a984ee25acd337fb38a3e3b79417c3da95869f"
   license "BSD-3-Clause"
   head "https:github.comBloscc-blosc2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0704eb91b776f6f852c85c2e1c69fd59bf130b83c3b61fd5097c518ec79782ec"
-    sha256 cellar: :any,                 arm64_ventura:  "7ba70666de379505a705bfeef6ab06e59e0af2c8cc24d349751d152c776474bd"
-    sha256 cellar: :any,                 arm64_monterey: "35bfa2d8816749ec38bca6cd0d6026a0f765745e7ea38116fa1fdce3878d4efb"
-    sha256 cellar: :any,                 sonoma:         "882b9246f55ba4cc64970f183513a3f4026ca281c19a828e679259ce4f03f6a6"
-    sha256 cellar: :any,                 ventura:        "b1c8cf336a72afb333bad63217616a0bef38150e1c08ce9172fdcad84fc2177b"
-    sha256 cellar: :any,                 monterey:       "007c4605e33c29856c8c095edc2c581c1bfc7d73e98c381c367b0c65ddd81dc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f78bb4031a627af2601eaf2976a77c60d4236b2d3de3d0cd4b8afc40c0601e32"
+    sha256 cellar: :any,                 arm64_sonoma:   "30de92d37eae898e566ba18d43d085b822303906e4e2e7007f1a414821a12504"
+    sha256 cellar: :any,                 arm64_ventura:  "ac185f10981d57007ba6c5bc06fb17e9365075f594fda5fd248110a450094ec0"
+    sha256 cellar: :any,                 arm64_monterey: "061069983f1a4b3af349f92e8c2b959f8067499414081ffb99d4e91cfeac7302"
+    sha256 cellar: :any,                 sonoma:         "043f0378ff692843f1afd915145146ab7f815145827f030172f1fde36ef3b521"
+    sha256 cellar: :any,                 ventura:        "577a4d6e2333c983dc164dd185f40ae6ac32865a4dce626a03e9bdcc085b1c6e"
+    sha256 cellar: :any,                 monterey:       "d27cba9deba8573db765cfd9ebf6114d5cb366f6d8b82f747d0e37e4b7ef83d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50ca5edfadb49eca8058516dd1a14f25670466bb580428f55f1c7ae0ba233c16"
   end
 
   depends_on "cmake" => :build

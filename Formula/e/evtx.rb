@@ -1,21 +1,19 @@
 class Evtx < Formula
   desc "Windows XML Event Log parser"
   homepage "https:github.comomerbenamramevtx"
-  url "https:github.comomerbenamramevtxarchiverefstagsv0.8.1.tar.gz"
-  sha256 "a42133deecbe47ade28e14ed55e4e87a2c9b5d9400867eacec8b32070a2cd95e"
+  url "https:github.comomerbenamramevtxarchiverefstagsv0.8.2.tar.gz"
+  sha256 "5330f3d811fb3aae468260d01f95103385c1ad7caca37ee282814c9e37956cd2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comomerbenamramevtx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e503806bd4e9ed800b4362f6e9bb4a4ede7e370195b1584d17ee872cc5b9403d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c89cce02eb42c8ffeff871f32f50bce01ca94d822dab012aa27cf138579665e1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e750b8532e6e8c3b08ee0b20f373b1f5baeef338ecead535efd37f59e8a29b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be9205c5372de648dd450bf3c8a8517900a4f1a92cfaeaa1f83bdc126e4244f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0ac4228a9fb0fd6d3eb096461114fb464255e57f19ec7c2f95cd8f79a8392496"
-    sha256 cellar: :any_skip_relocation, ventura:        "ddac9599c1e47f77ee5ae33494d613a2fdc2a96ac64afc29990c0429c640107d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e624562b6931b531fb1911296f3d404376b1cf14a61b7bb7e768a6c5698d98d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aae2a058428541d793bc5cbdd31b9c01b30d7add7f19e12532ae5158dbfe4366"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14305e3adbec154630f7de1e926f3a27b36d7fa091b0ca9b11cf1a0d2e772a7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9a08326a9f0040402c643c74981ca3751d7c9756b9345b7fe1d1136b1b64d9e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9befc7de4842db5c3b744c7e89b0f12cd71e628701d68aa1f6fab62279928f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "85952b2482cb1295648bc41ad7d2590b5cd29eaa4f54ec94c1daba23aefad54d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "06e95d033e243eb16affbeb792ec4c3e3f45f50f4405ce02086db3c2f45d8c1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "2aa03c55d82c917765c0c090c4c8234b18a28a0dfbd80899fe82e57316765bea"
+    sha256 cellar: :any_skip_relocation, monterey:       "5cf96ccbf1e4c88cef69a4ecb90c45c087b3dae8558facc129d28078500de570"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "60b07c39ea85e0220645fab752a97577460a1e4f2645cf482fe2c4ee9df0cbd3"
   end
 
   depends_on "rust" => :build
