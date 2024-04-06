@@ -3,19 +3,19 @@ class Libxmlb < Formula
 
   desc "Library for querying compressed XML metadata"
   homepage "https:github.comhughsielibxmlb"
-  url "https:github.comhughsielibxmlbreleasesdownload0.3.16libxmlb-0.3.16.tar.xz"
-  sha256 "8007d39eefaa047d23e323523ae3c4da5fca77543b0fc4e188f7a3cd28872ff4"
+  url "https:github.comhughsielibxmlbreleasesdownload0.3.17libxmlb-0.3.17.tar.xz"
+  sha256 "bdaf38779646e436cba73caf2bdc1ea07226e6ce418a01800595cd4702cc3caa"
   license "LGPL-2.1-or-later"
   head "https:github.comhughsielibxmlb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c81b7bd8e6bde45efb8e5a1115c58c116229ada80e294282ee7d702967b25909"
-    sha256 cellar: :any, arm64_ventura:  "8b4d8210f6ede89c63cc1d1487a694b147cfe7d9209684fc0d8e009cc0d5cf83"
-    sha256 cellar: :any, arm64_monterey: "6b1e967c7e10f5e64dad0052873529b5d0c041541462fbde67b1c2ec75759c3e"
-    sha256 cellar: :any, sonoma:         "06a8b65c7b19e56c44a5a734a08b1de506a819ff5487c3192db4258d9e6e014b"
-    sha256 cellar: :any, ventura:        "cd1e2cc4d74f3729f334565c74736b34bfcfe2882ef657ed2d0e80d5d9644d13"
-    sha256 cellar: :any, monterey:       "65b1ab244b4b3d2e58641910acf00f506e155d6dc708746cecc17b3cc86d57c1"
-    sha256               x86_64_linux:   "c856e9e833e05f0d10b8c52d0dc8b0976c74362dac451bdc5650139a9a1124c6"
+    sha256 cellar: :any, arm64_sonoma:   "f2a6fb1acdb32991d8da49df859ddf0f71f8436910c8d553a7ea1007d9015f4e"
+    sha256 cellar: :any, arm64_ventura:  "c79b03ac4b4fee6b18469d37ee9122c63b3bc09aafb25ad9e83da8912defd989"
+    sha256 cellar: :any, arm64_monterey: "1e1a2f59343952ce5a11e843413f0bae53e31f0f27856b102b2fc98cb382ce51"
+    sha256 cellar: :any, sonoma:         "c1498faf586ae6cb64b8f86dc540d75b991b033aafecb158f60b892fa8822cb1"
+    sha256 cellar: :any, ventura:        "ed04cc0c723cfce977d03882153971e3f1a8b432d8960e43a8013bee75df9c4c"
+    sha256 cellar: :any, monterey:       "04e84745e17ac99fd91cb3b82149330c2b73650319e2aaf03c82530dacc1a455"
+    sha256               x86_64_linux:   "10e3d2a7432d329e5bdcb87b863b37e26180f9a77200ff0db454bd629779f46d"
   end
 
   depends_on "gi-docgen" => :build

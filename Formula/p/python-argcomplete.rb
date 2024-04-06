@@ -15,8 +15,6 @@ class PythonArgcomplete < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "09d6d2676b7d1d6eba28ce17ce0fa3bd48d0c2c01d9d5d1b4181b09fd02ddca9"
   end
 
-  depends_on "python-setuptools" => :build
-  depends_on "python-setuptools-scm" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 
@@ -27,7 +25,7 @@ class PythonArgcomplete < Formula
   def install
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
 
     # Bash completions are not compatible with Bash 3 so don't use v1 directory.

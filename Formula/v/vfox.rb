@@ -7,19 +7,23 @@ class Vfox < Formula
   head "https:github.comversion-foxvfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe01038811a8ef65a3e2437f51f6fff764e8c730ba83c1a26de313404fe877c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1286848444548ae83cb079fc8bcbb5060de3864e8facbaec34ded9973a58b5e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec0b36a19db641a755ae1cfb7291c5e0269f995671493c6bd5deacf570b23b5d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4246ccb932ebb9a2ae2e0e01c77963f2bf7996f12121a5641376cfaf1870311"
-    sha256 cellar: :any_skip_relocation, ventura:        "899ee52b9b44d9853dd31f2fcfe2cf1a78577687c009c53e0be97e96d482f632"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c7a4971da76574110566393fb30fb5dc2d828a9c5e649ef515ccf35984b419a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15dc76cb87ad94cddcaeb41a8de64e73ad655ee5f3ff31d36ae63ab6f6419cfd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9bbfcb5003d4d6992701caab65da3c99d25f5eeeb9fe3fb48c4365f5685acc5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2b4aed13309d4a862d8410665aebfd50b618470ec5938a4795f0fe09fdeb5f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb07929cf42d07055eddf14343721d5f3d6a461ca29567958b00d8a31c13c167"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ec7ab599914dd15f0a39f37ae3b89b82d6ca2f6ec7b7a5845bd5f70f9f729ac7"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a1165547cb7e708b491fdf21f9c5dcb47037b78e0192923262f2ddc75c6b819"
+    sha256 cellar: :any_skip_relocation, monterey:       "285afeef7d8176ee24cb8aefa2e4408195eeb432408cde8565fb002f18814425"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5605c29fb2d04e3af5e38ed2d887f3a627909126d8b0edfeb17c91b094c14375"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    bash_completion.install "completionsbash_autocomplete" => "vfox"
+    zsh_completion.install "completionszsh_autocomplete" => "_vfox"
   end
 
   test do

@@ -52,22 +52,22 @@ class Buku < Formula
     sha256 "b15791ebea432218543a1702d76ae45d2ff95ff994e52014b8686a69dad772fd"
   end
 
-  resource "Flask" do
+  resource "flask" do
     url "https:files.pythonhosted.orgpackages5f76a4d2c4436dda4b0a12c71e075c508ea7988a1066b06a575f6afe4fecc023Flask-2.2.5.tar.gz"
     sha256 "edee9b0a7ff26621bd5a8c10ff484ae28737a2410d99b0bb9a6850c7fb977aa0"
   end
 
-  resource "Flask-Admin" do
+  resource "flask-admin" do
     url "https:files.pythonhosted.orgpackagesbe4d7cad383a93e3e1dd9378f1fcf05ddc532c6d921fb30c19ce8f8583630f24Flask-Admin-1.6.1.tar.gz"
     sha256 "24cae2af832b6a611a01d7dc35f42d266c1d6c75a426b869d8cb241b78233369"
   end
 
-  resource "Flask-API" do
+  resource "flask-api" do
     url "https:files.pythonhosted.orgpackagesdd4f49bd943d2ceeb2e5872a182b1547f7eadc53121e1ceea0f8718f1a97c4ccFlask-API-3.1.tar.gz"
     sha256 "cb079845f5573eac55c6800a9a142bd7b54fd1227019a21cb2f75dfe5311d44f"
   end
 
-  resource "Flask-Bootstrap" do
+  resource "flask-bootstrap" do
     url "https:files.pythonhosted.orgpackages8853958ce7c2aa26280b7fd7f3eecbf13053f1302ee2acb1db58ef32e1c23c2aFlask-Bootstrap-3.3.7.1.tar.gz"
     sha256 "cb08ed940183f6343a64e465e83b3a3f13c53e1baabb8d72b5da4545ef123ac8"
   end
@@ -77,7 +77,7 @@ class Buku < Formula
     sha256 "a32996ec07ca004c45b768b0d50829728ab8f3986c0650ef538e42852c7aeba2"
   end
 
-  resource "Flask-WTF" do
+  resource "flask-wtf" do
     url "https:files.pythonhosted.orgpackages80555114035eb8f6200fbe838a4b9828409ac831408c4591bf7875aed299d5f8Flask-WTF-1.1.1.tar.gz"
     sha256 "41c4244e9ae626d63bed42ae4785b90667b885b1535d5a4095e1f63060d12aa9"
   end
@@ -137,12 +137,12 @@ class Buku < Formula
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
   end
 
-  resource "Werkzeug" do
+  resource "werkzeug" do
     url "https:files.pythonhosted.orgpackagesd17ec35cea5749237d40effc50ed1a1c7518d9f2e768fcf30b4e9ea119e74975Werkzeug-2.3.6.tar.gz"
     sha256 "98c774df2f91b05550078891dee5f0eb0cb797a522c757a2452b9cee5b202330"
   end
 
-  resource "WTForms" do
+  resource "wtforms" do
     url "https:files.pythonhosted.orgpackages9a7dd4aa68f5bfcb91dd61a7faf0e862512ae7b3d531c41f24c217910aec0559WTForms-3.0.1.tar.gz"
     sha256 "6b351bbb12dd58af57ffef05bc78425d08d1914e0fd68ee14143b7ade023c5bc"
   end

@@ -3965,7 +3965,6 @@ Homebrew-homebrew-core/Formula/m/mesa-glu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesalib-glw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mesheryctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/meson-python.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/meson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/meta-package-manager.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/metabase.rb, Homebrew/homebrew-core, 1
@@ -4246,6 +4245,7 @@ Homebrew-homebrew-core/Formula/n/naturaldocs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nauty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nave.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/navi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/navidrome.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nbdime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nbimg.rb, Homebrew/homebrew-core, 1
@@ -4654,6 +4654,7 @@ Homebrew-homebrew-core/Formula/o/otf2bdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ots.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ott.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ouch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/overarch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overmind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overtls.rb, Homebrew/homebrew-core, 1
@@ -5128,25 +5129,22 @@ Homebrew-homebrew-core/Formula/p/python-argcomplete.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-cycler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-kiwisolver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lxml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-setuptools-scm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
@@ -5312,6 +5310,7 @@ Homebrew-homebrew-core/Formula/r/recoverpy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/red-tldr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redex.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/redict.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redir.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis-leveldb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redis.rb, Homebrew/homebrew-core, 1
@@ -6506,6 +6505,7 @@ Homebrew-homebrew-core/Formula/v/valabind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/valgrind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/valijson.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/valkey.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vamp-plugin-sdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-imwri.rb, Homebrew/homebrew-core, 1

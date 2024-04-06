@@ -1,10 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
-  homepage "https:github.comhirosystemsclarinet"
-  # pull from git tag to get submodules
-  url "https:github.comhirosystemsclarinet.git",
-      tag:      "v2.4.1",
-      revision: "175103ecfbeb9d592640650d25947eeb3a7e3196"
+  homepage "https:www.hiro.soclarinet"
+  url "https:github.comhirosystemsclarinetarchiverefstagsv2.4.1.tar.gz"
+  sha256 "8ecb6526b2f1df1946d8fad2ba109fb1f8d85eac6fda8d224f1a13b28f2badfa"
   license "GPL-3.0-only"
   head "https:github.comhirosystemsclarinet.git", branch: "main"
 
@@ -26,7 +24,7 @@ class Clarinet < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "clarinet-install", "--root", prefix.to_s
+    system "cargo", "install", *std_cargo_args(path: "componentsclarinet-cli")
   end
 
   test do

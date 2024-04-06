@@ -1,7 +1,7 @@
 class PythonPytz < Formula
   desc "Python library for cross platform timezone"
-  homepage "https://pythonhosted.org/pytz/"
-  url "https://files.pythonhosted.org/packages/90/26/9f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738/pytz-2024.1.tar.gz"
+  homepage "https:pythonhosted.orgpytz"
+  url "https:files.pythonhosted.orgpackages90269f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738pytz-2024.1.tar.gz"
   sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
   license "MIT"
 
@@ -15,7 +15,8 @@ class PythonPytz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e90e84f24431767d4dd3691b486ca2ffdb3f32a10cd6f89802a0eea587f7533e"
   end
 
-  depends_on "python-setuptools" => :build
+  disable! date: "2024-07-04", because: "does not meet homebrewcore's requirements for Python library formulae"
+
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
 
@@ -25,14 +26,23 @@ class PythonPytz < Formula
 
   def install
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", *std_pip_args, "."
+      python_exe = python.opt_libexec"binpython"
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
+  end
+
+  def caveats
+    <<~EOS
+      Additional details on upcoming formula removal are available at:
+      * https:github.comHomebrewhomebrew-coreissues157500
+      * https:docs.brew.shPython-for-Formula-Authors#libraries
+      * https:docs.brew.shHomebrew-and-Python#pep-668-python312-and-virtual-environments
+    EOS
   end
 
   test do
     pythons.each do |python|
-      python_exe = python.opt_libexec/"bin/python"
+      python_exe = python.opt_libexec"binpython"
       system python_exe, "-c", "import pytz; print(pytz.timezone('UTC'))"
     end
   end

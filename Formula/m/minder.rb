@@ -1,19 +1,19 @@
 class Minder < Formula
   desc "CLI for interacting with Stacklok's Minder platform"
   homepage "https:minder-docs.stacklok.dev"
-  url "https:github.comstacklokminderarchiverefstagsv0.0.39.tar.gz"
-  sha256 "d7b9c48d5247c1733706e1418e5bf6d41d81cf0d3460ddd3098804e09417980d"
+  url "https:github.comstacklokminderarchiverefstagsv0.0.40.tar.gz"
+  sha256 "1d32c98cd55c3d48ed1dc24373d5a31f41914d70d671a117840cdc5907f3bf29"
   license "Apache-2.0"
   head "https:github.comstacklokminder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "506ae01dd242f022da4b601d72b753b4df9cdee9857b599457a63ccb881136a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b9ba5d317288aed61d7108a89436838ce4be9ce6f5f7edf3aafe87b232d20f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10761b304eee631d946d1f6697acb17f169677673e47dee9f52747489cf7fa29"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ebdada31f41730a380bec8882baaf46b91ab287e60d58f04c0d50bc49e04ab0"
-    sha256 cellar: :any_skip_relocation, ventura:        "9066f392c5db72c6a0878ad76ccda20a484ecf1d9fb5bf08c47b6a628da4143b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b315af6e397d69682b265d3aa201b3905c65f6f820b439d4eb67404cc8244f48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f8ee30afedf3790929ca6e67602f2284925559753f3ebd2b9157bb7590c98a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a22557db56c9aa9e8a341ee24a2e7c55830e3f8b542cd9105e829eded1a62387"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "449f3a6883962691e57d833b5903e17d67e26ecdb725bcac035f86705904fa3d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d4da747140c138e0ea5ec232b937a95425566320ebf9e3a4bfd0b66756966bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7f7ce5a73d8963c3a2e00e2ebe9751d0d4b41c90a6ad237c16f887c784b41ac9"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e15d0475749e196a9bc185bc0b5f823a47aa14ae9577369087976d051d81a6d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3c9a7a9c16fcdb62cf48974c231d7fc124b045d2fbe617eefd9fddd3420e37b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e037e5fd97d4bea98187d6a01fc07e678a0da6cbcecbbcb2ddedc6cd1c95174b"
   end
 
   depends_on "go" => :build
