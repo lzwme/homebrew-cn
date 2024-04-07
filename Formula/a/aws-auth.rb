@@ -3,18 +3,18 @@ require "languagenode"
 class AwsAuth < Formula
   desc "Allows you to programmatically authenticate into AWS accounts through IAM roles"
   homepage "https:github.comiamarkadytaws-auth#readme"
-  url "https:registry.npmjs.org@iamarkadytaws-auth-aws-auth-2.1.5.tgz"
-  sha256 "525f3245cfdd011e0e2e863f602d565e8744d2e04a858f0e875e82cb048ccd2b"
+  url "https:registry.npmjs.org@iamarkadytaws-auth-aws-auth-2.2.3.tgz"
+  sha256 "4320fb53239e40b45d05b023f253cfedf70e283a957eb561c40c349850b3daa7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e75be4bc68be2b2252563a8a45acf27b275b19d759622f3b4e30f82a1a6dbfd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e75be4bc68be2b2252563a8a45acf27b275b19d759622f3b4e30f82a1a6dbfd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e75be4bc68be2b2252563a8a45acf27b275b19d759622f3b4e30f82a1a6dbfd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cd2b8c8e547b91e74fb410f970363523e672cf385c0c51f657ca77d5b436eae6"
-    sha256 cellar: :any_skip_relocation, ventura:        "cd2b8c8e547b91e74fb410f970363523e672cf385c0c51f657ca77d5b436eae6"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd2b8c8e547b91e74fb410f970363523e672cf385c0c51f657ca77d5b436eae6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e75be4bc68be2b2252563a8a45acf27b275b19d759622f3b4e30f82a1a6dbfd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e186285126b6fef08184d0c49395e9f0b8b3b9ea994e934b69ccac324582b4a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e186285126b6fef08184d0c49395e9f0b8b3b9ea994e934b69ccac324582b4a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e186285126b6fef08184d0c49395e9f0b8b3b9ea994e934b69ccac324582b4a2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4cf79486f247bfab3c3c0b2abc61c1f007053c7d00d7741a07d11cc80a10a68f"
+    sha256 cellar: :any_skip_relocation, ventura:        "4cf79486f247bfab3c3c0b2abc61c1f007053c7d00d7741a07d11cc80a10a68f"
+    sha256 cellar: :any_skip_relocation, monterey:       "4cf79486f247bfab3c3c0b2abc61c1f007053c7d00d7741a07d11cc80a10a68f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e186285126b6fef08184d0c49395e9f0b8b3b9ea994e934b69ccac324582b4a2"
   end
 
   depends_on "node"
@@ -25,27 +25,9 @@ class AwsAuth < Formula
   end
 
   test do
-    require "pty"
-    require "ioconsole"
+    output = pipe_output("#{bin}aws-auth login 2>&1", "fake123")
+    assert_match "Enter new passphrase", output
 
-    PTY.spawn("#{bin}aws-auth login 2>&1") do |r, w, _pid|
-      r.winsize = [80, 43]
-      r.gets
-      sleep 1
-      # switch to insert mode and add data
-      w.write "Password12345678!\n"
-      sleep 1
-      r.gets
-      w.write "Password12345678!\n"
-      sleep 1
-      r.gets
-      output = begin
-        r.gets
-      rescue Errno::EIO
-        nil
-        # GNULinux raises EIO when read is done on closed pty
-      end
-      assert_match "CLI configuration has no saved profiles", output
-    end
+    assert_match version.to_s, shell_output("#{bin}aws-auth version")
   end
 end

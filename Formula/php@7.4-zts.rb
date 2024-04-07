@@ -1,20 +1,21 @@
 class PhpAT74Zts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comshivammathurphp-src-backportsarchive5f5f0c7929137acd2cb483a4b288b41fb0cb0fbb.tar.gz"
+  url "https:github.comshivammathurphp-src-backportsarchive7c8355c7b92c5f353fd111cc3084bbbdc2a09adf.tar.gz"
   version "7.4.33"
-  sha256 "7c9de3f869a5ccae677b6a83582d5e5d0c825af22096c4e924c10abe118315f4"
+  sha256 "9d0fbd9a49a6b1f29bc2c6b6421dcdc7d683c1f2a3665eb3c99d538ccecb31f0"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "470c55ea9b84154e27f26005490d20ef556de0b30e0dbb6098ba1058e65263a6"
-    sha256 arm64_ventura:  "bf34dda21687ae6f4af7217eaecdc1522707ace838093eb156407c099702e3c6"
-    sha256 arm64_monterey: "22f3f7c1d13b22485bf775a914f358126fc5cbd6fdd46bb71ea53dc4caddf19a"
-    sha256 ventura:        "46b7183ba5898e324ef8dc0dfb92f3704289e1cedbb6ccfacd495eb94d52f297"
-    sha256 monterey:       "05a6411030b83aca1680b87a8c193da2461b6551e33db3735b90148bfef37ff9"
-    sha256 x86_64_linux:   "a5c7003fe80e69d1615cff4e40328cb9fc933a43c2353d1a1827f86c44996cd5"
+    rebuild 1
+    sha256 arm64_sonoma:   "ffa4e79ae1856fa1fa582f84727c009ba390e05a880d2f3e739de74c185da88c"
+    sha256 arm64_ventura:  "27d725f717a31b5ac499626716317ef062ae559c574ad5f3c6bc26d4ae4c51a4"
+    sha256 arm64_monterey: "202d87b8863b7b92c34d4fa73b202ff6dd0041359e69b9d84cce370db72ebc47"
+    sha256 ventura:        "33ee3edcba5a746554aecad2028068e8e5aeca019bfc5e0080b29b7399ecba1c"
+    sha256 monterey:       "efd892e9bbf04cdaec1c2195286947596e1315d8b8a3b6c93757bc5c5ec7c9f7"
+    sha256 x86_64_linux:   "9962cec55496c9be824bcd4b194b4907cd96b5a36f716ae9f5876254d672eb75"
   end
 
   keg_only :versioned_formula
@@ -67,6 +68,12 @@ class PhpAT74Zts < Formula
   end
 
   def install
+    # Work around for building with Xcode 15.3
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+      ENV.append "LDFLAGS", "-lresolv"
+    end
+
     # buildconf required due to system library linking bug patch
     system ".buildconf", "--force"
 

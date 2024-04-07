@@ -1,34 +1,30 @@
 class PhpAT80DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.0.30.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.0.30.tar.xz"
-  sha256 "216ab305737a5d392107112d618a755dc5df42058226f1670e9db90e77d777d9"
+  url "https:github.comshivammathurphp-src-backportsarchive1c9dd35b4ab8c7b42297c7950f9041c3ffd4d172.tar.gz"
+  version "8.0.30"
+  sha256 "c5c64d46f1d150d91bbcf8d36dfc5002c192f1984c42332a81fe10d0fcc52b90"
   license "PHP-3.01"
-  revision 1
-
-  livecheck do
-    url "https:www.php.netdownloads"
-    regex(href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.ti)
-  end
+  revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "bd6b50d42e74f4019212f9dc99411a62d5c8f5e37566696f7b49080a711d97b8"
-    sha256 arm64_ventura:  "e3541a33eb112c2a617c2cac8e417a12ac801ba1d75d5f6140fa403eca5d363d"
-    sha256 arm64_monterey: "040d790d3e1d7ecb0a6aac363dce4e68c11c67d4a5e94502609152fc8e7fb345"
-    sha256 ventura:        "2bc968a068bd0ec9f901f7491cf7a0597acc505de43a447a8b33dfd0ad119e72"
-    sha256 monterey:       "3cbf1a1df0f976004f5479e6cad90b260553bdd9be782c54b57d4d5cd39bd6d0"
-    sha256 x86_64_linux:   "b8fdc067c105dfd4ab037bd08fc78b88a88b4c7f12a5b2e4411539039f88ceb3"
+    sha256 arm64_sonoma:   "61425efdcab46905c0701e48d953e561ad30377ec2f6ea3a9a7ad71b29cbfd77"
+    sha256 arm64_ventura:  "8cb078e3325411402e125da3ed4abf3babd8f46080b73917bd09199eee4f3bce"
+    sha256 arm64_monterey: "7bb60e4cc63af58ce8a5800b7d15bdc89022127f3f21c79f54d83b362d517e18"
+    sha256 ventura:        "0ea182c42d23efd0f129c8120f5cf6e6459f34d620406ab22ede0c43f8f8c94b"
+    sha256 monterey:       "4a1802fd13aa5cae681d818a4117f96158b1968101113d3d731e5d4dae526c0c"
+    sha256 x86_64_linux:   "4d14adefd2901bc8869d7df960ae412923a88a6b13a05c6891d8ddfc379dfbde"
   end
 
   keg_only :versioned_formula
 
   deprecate! date: "2023-11-26", because: :versioned_formula
 
+  depends_on "bison" => :build
   depends_on "httpd" => [:build, :test]
   depends_on "pkg-config" => :build
+  depends_on "re2c" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "argon2"
@@ -65,17 +61,13 @@ class PhpAT80DebugZts < Formula
     patch :DATA
   end
 
-  patch do
-    url "https:raw.githubusercontent.comshivammathurphp-src-backports2bcb0bpatches0002-Add-minimal-OpenSSL-3.0-patch-PHP8.0.patch"
-    sha256 "8c359c0b0cc63dc6779a4fb1b2ba5ca555eb60e962013123dcb1239aef5cee9a"
-  end
-
-  patch do
-    url "https:raw.githubusercontent.comshivammathurphp-src-backports2bcb0bpatches0003-Fix-bug-79589-ssl3_read_n-unexpected-eof-while-reading-PHP8.0.patch"
-    sha256 "3383d1881379827e02b42842367666725f4f54f4364d937c6acb0ee67bce84a2"
-  end
-
   def install
+    # Work around for building with Xcode 15.3
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+      ENV.append "LDFLAGS", "-lresolv"
+    end
+
     # buildconf required due to system library linking bug patch
     system ".buildconf", "--force"
 

@@ -5130,7 +5130,6 @@ Homebrew-homebrew-core/Formula/p/python-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-chardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-charset-normalizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-dateutil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-flit-core.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-gdbm@3.12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-idna.rb, Homebrew/homebrew-core, 1
@@ -5142,7 +5141,6 @@ Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-ply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-psutil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-pyparsing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-pytz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-requests.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
@@ -8564,6 +8562,7 @@ Homebrew-homebrew-cask/Casks/h/hackintool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hackmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hackolade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hakuneko.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/halloy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hammerspoon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hancock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hancom-docs.rb, Homebrew/homebrew-cask, 0
@@ -10257,6 +10256,7 @@ Homebrew-homebrew-cask/Casks/r/replacicon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/repoz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/reqable.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/requestly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rescuetime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/resilio-sync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/resolume-arena.rb, Homebrew/homebrew-cask, 0

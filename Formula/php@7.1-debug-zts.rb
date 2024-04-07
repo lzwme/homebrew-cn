@@ -1,20 +1,21 @@
 class PhpAT71DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comshivammathurphp-src-backportsarchive184152acf9810b92f4b0042c291a9701183ba412.tar.gz"
+  url "https:github.comshivammathurphp-src-backportsarchived91d880e29357a238394a912121bc48a6225bd7b.tar.gz"
   version "7.1.33"
-  sha256 "38b1bf128e03da65f3b61266d3e674ab941d4d4fb215a5ecc7cf114eea478900"
+  sha256 "cdf3ec0af871a5930a9248d8ae28a444262d64a4674e7d8ab9b714eab82f48fb"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "4724c16cad13f5359f41410d631e1f4a38e60a5be34f7345100693f19cbd8b9e"
-    sha256 arm64_ventura:  "b56b03b0b04e594381b41128b50885a8667e205888479d8c187972d6bd277529"
-    sha256 arm64_monterey: "c2e29bdf8ac1558db2691b6056d394f986e10c6acea6f0e2a95d7d0182f1e9bf"
-    sha256 ventura:        "817f787540a2f435d22afd9f59c206d95999f44bc0ee51b6631823cffa4add56"
-    sha256 monterey:       "a464539c8015d5fcc3e08f0c1f3838c1d1db02d4c634a3ddef247cfb42ba0d05"
-    sha256 x86_64_linux:   "1185e508afb023e1fa5c1e2e275176f122d7763af6e9bcdb234e45a9dc1e51d9"
+    rebuild 1
+    sha256 arm64_sonoma:   "fb107b65577fc76849787285b25687ffaa656f3c66a50a3bed534a37193c9b34"
+    sha256 arm64_ventura:  "147495076032075c65747db9d27159295b28e01770b1458de6f075ba65d381fe"
+    sha256 arm64_monterey: "8452d520aa78876e34e6cc7bc738ffb7507cfd3c666c4803a55e7c1826e7e1e8"
+    sha256 ventura:        "2c8f2809883f37f45497bb0e45d32e7b3910279166f47590ac42b994e0752e5c"
+    sha256 monterey:       "ee2c850afda2ff32046a1a0d652c0ad754db80d031fd19c4f09966f522da333c"
+    sha256 x86_64_linux:   "0c59b12fdfa712591a304e160b4788479190a33f6d72f6ee650409dc41a8aba3"
   end
 
   keg_only :versioned_formula
@@ -66,6 +67,13 @@ class PhpAT71DebugZts < Formula
     # Work around configure issues with Xcode 12
     # See https:bugs.php.netbug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Work around for building with Xcode 15.3
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+      ENV.append "LDFLAGS", "-lresolv"
+      inreplace "mainreentrancy.c", "readdir_r(dirp, entry)", "readdir_r(dirp, entry, result)"
+    end
 
     # Workaround for https:bugs.php.net80310
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
@@ -441,6 +449,24 @@ class PhpAT71DebugZts < Formula
 end
 
 __END__
+diff --git aconfigure.in bconfigure.in
+index cd8b8794f0..b72464f020 100644
+--- aconfigure.in
++++ bconfigure.in
+@@ -60,7 +60,13 @@ AH_BOTTOM([
+ #endif
+
+ #if ZEND_BROKEN_SPRINTF
++#ifdef __cplusplus
++extern "C" {
++#endif
+ int zend_sprintf(char *buffer, const char *format, ...);
++#ifdef __cplusplus
++}
++#endif
+ #else
+ # define zend_sprintf sprintf
+ #endif
 diff --git aacinclude.m4 bacinclude.m4
 index 168c465f8d..6c087d152f 100644
 --- aacinclude.m4

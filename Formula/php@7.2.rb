@@ -1,20 +1,21 @@
 class PhpAT72 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comshivammathurphp-src-backportsarchived6c57bbc42a5b41fb67f63efc5944d217049e5f9.tar.gz"
+  url "https:github.comshivammathurphp-src-backportsarchive0a6a8d7769f08bca8ae9095649b96f20b18210e5.tar.gz"
   version "7.2.34"
-  sha256 "97cdc321dfda41800a0082e48b66780cef2515c366066b1a1bc7493e09d2b43f"
+  sha256 "9e90d23097e1d5c462636c37aa887b405b3ca80d8cf7da10ff56b6ac2b13c5e3"
   license "PHP-3.01"
   revision 11
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "587a9dfa92cc760bb95074b5a8133b67738236a949001ff47512331f2ce62c8e"
-    sha256 arm64_ventura:  "f0eeda71c406f6a19c7de986d3d3b85f7a386003b852b22cf2695cd06a1f476a"
-    sha256 arm64_monterey: "8c8a376392bca1648f1be1c376c650b66a98416c755899d5d1f42101827274b2"
-    sha256 ventura:        "95703d1b9350ee3e6d7fb1437fa684d503b56556662ecfb363ffee60dd47d97d"
-    sha256 monterey:       "f003414083e87ac7e55a900fdc91996dc1526dde8613bb7e0e74a269a31b47fe"
-    sha256 x86_64_linux:   "d4f920208738fe95dd5cd386f4f7198a83d656f7e3c2991b69d7e7704581a58e"
+    rebuild 1
+    sha256 arm64_sonoma:   "5493f2fa9db77d49f4eda5eb816f30f48e2998133af5f1906527b6072b7f46e7"
+    sha256 arm64_ventura:  "b7f9b9db9a302023fa6635e5e739838cf66b26211cfe08e444f6824bdb724a37"
+    sha256 arm64_monterey: "2b7c04372545335954d3e7db5877fb8d50c30ce067aff2d9dd3f7f6d3de399a1"
+    sha256 ventura:        "b72b4cb2c8e668ad81c1135a996ebc00fe26c2a96c8f6e2cec23df9a834a90ed"
+    sha256 monterey:       "86dd190d901804b4a0b6fa82e9a63cb9edbafa41cd25e3fc63ad7c25d9fe3236"
+    sha256 x86_64_linux:   "2cc13b5180a11c9c7fc7e7063f0e0fbca7062fda1e3e370d03aad3ced83b9a83"
   end
 
   keg_only :versioned_formula
@@ -67,6 +68,13 @@ class PhpAT72 < Formula
     # Work around configure issues with Xcode 12
     # See https:bugs.php.netbug.php?id=80171
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
+    # Work around for building with Xcode 15.3
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append "CFLAGS", "-Wno-incompatible-function-pointer-types"
+      ENV.append "LDFLAGS", "-lresolv"
+      inreplace "mainreentrancy.c", "readdir_r(dirp, entry)", "readdir_r(dirp, entry, result)"
+    end
 
     # Workaround for https:bugs.php.net80310
     ENV.append "CFLAGS", "-DU_DEFINE_FALSE_AND_TRUE=1"
