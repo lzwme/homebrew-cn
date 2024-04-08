@@ -1,17 +1,17 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https:github.comJackettJackett"
-  url "https:github.comJackettJackettarchiverefstagsv0.21.2296.tar.gz"
-  sha256 "74e2a911e7b3cf3ed8685fba91ee808ca3c68f25a25456633118061c44d815a3"
+  url "https:github.comJackettJackettarchiverefstagsv0.21.2313.tar.gz"
+  sha256 "af55011257805c7c75ac4b9dac40447193257a1dace90d321f4c35f1151abbf4"
   license "GPL-2.0-only"
   head "https:github.comJackettJackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5781045b7a8670a5b7250cc63e106f7b803194c81baf88e8553e37b7eb7776d1"
-    sha256 cellar: :any,                 arm64_monterey: "853e8ddfe98cb6bf4207796f2fee7e46e3fa1d464f322966ee71294e2b6478dd"
-    sha256 cellar: :any,                 ventura:        "f2605f9d8030b9f07fc4100d40bbd5f14f3b3d7405511eedbfd7f12e58526a55"
-    sha256 cellar: :any,                 monterey:       "645fbc21e2c2dd78f2e7b050d3c34b555b0caf5b46cf8cf5e52f1982f64fe547"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3296805e67e2a7b2ad6e89bb5129ae1bfe596ee06b8c92fb54e52f59df2f05ad"
+    sha256 cellar: :any,                 arm64_ventura:  "e5e6e34e1db78a88d87bc937a5079fae9e197d52aa9f1199190fe0943085dce1"
+    sha256 cellar: :any,                 arm64_monterey: "706e8fb426a47937d6d2fb1916d3fee2e769bc4a6eee795b69d4fa640b486a0f"
+    sha256 cellar: :any,                 ventura:        "328f294795bd54b83b58538b72cf3d947a24fc5a7e290e26cc81be02a15ed062"
+    sha256 cellar: :any,                 monterey:       "4af878c55e483cce874d4838dc56afece58b63b5d8442c5f7e23c01139ce814c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df09cc2e5aa267c23f47124fe818801c8d1283cd034e8760e8c2ec2f76fa5500"
   end
 
   depends_on "dotnet@6"
@@ -61,7 +61,7 @@ class Jackett < Formula
     end
 
     begin
-      sleep 10
+      sleep 15
       assert_match "<title>Jackett<title>", shell_output("curl -b cookiefile -c cookiefile -L --silent http:localhost:#{port}")
     ensure
       Process.kill "TERM", pid

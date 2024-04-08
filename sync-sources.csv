@@ -4166,6 +4166,7 @@ Homebrew-homebrew-core/Formula/m/msgpack-cxx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msgpack-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msgpack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msgpuck.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/msieve.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/msitools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/msktutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/msmtp.rb, Homebrew/homebrew-core, 0
@@ -5233,6 +5234,7 @@ Homebrew-homebrew-core/Formula/r/rabbitmq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/radamsa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/radare2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ragel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rails-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/railway.rb, Homebrew/homebrew-core, 1
@@ -11136,6 +11138,7 @@ Homebrew-homebrew-cask/Casks/v/vertcoin-core.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vesta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veusz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/via.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/viable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viber.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vidcutter.rb, Homebrew/homebrew-cask, 1
