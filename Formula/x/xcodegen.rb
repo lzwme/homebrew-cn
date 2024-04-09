@@ -1,18 +1,18 @@
 class Xcodegen < Formula
   desc "Generate your Xcode project from a spec file and your folder structure"
   homepage "https:github.comyonaskolbXcodeGen"
-  url "https:github.comyonaskolbXcodeGenarchiverefstags2.39.1.tar.gz"
-  sha256 "6ac9208d9bc777790f917d67ea8019631f67204179478a81eb21e9847a650dc6"
+  url "https:github.comyonaskolbXcodeGenarchiverefstags2.40.0.tar.gz"
+  sha256 "de10a46932e1d18fd01f012e9b441f997ca4b6115bfcf5c0d82259c4f0c2cdbe"
   license "MIT"
   head "https:github.comyonaskolbXcodeGen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "920fa6538d8abdc1baf1e831e5f3577f14c4a23e64a8da79e64afc931b6447cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aeb51bd068d90ccd72734af6c5e3a800429a8d0966d49cb898e82e4684191c72"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc0ed0999561d9508394c438ceb2edc74be21a5ea0197902cda59f203459216a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "98f8ec64249e75a66ea273db761bdbdf964f65af060d580a6e31f51afa2a733b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7af86b796621f18ff648ac259ba1412b884cf5ab6827369946bc5e70163cac4"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e7365278fd9dbc2fe942c50fc704268c8152b9771d05d691d952f448883633f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45b21e4752c6dd2209fc61e4ae68715f563b5472e8febb0b6b333cdf2d45b03c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d50792a39a414bcdefacd54110490bf191feb9e79decedb2b7fc45f93c2ffa6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "054a6a2c0cad4b3d91746aac21307fa23e6ebd4472e374a620d37c1d52aa51a2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6659ab6ec4c24362dbcbca883fbb7e3597eafa3a6d2b8bef4aee55dcff7803fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "e53afd0a57edad23ab596eee0208885677e6271b4bfa2d3acc781eba86c24070"
+    sha256 cellar: :any_skip_relocation, monterey:       "38cd7f162ed91a65978d1e003f3bf7eba255b56352163587cdb414e3a4ab4964"
   end
 
   depends_on xcode: ["14.0", :build]

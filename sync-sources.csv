@@ -4589,7 +4589,7 @@ Homebrew-homebrew-core/Formula/o/openslide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
@@ -9453,7 +9453,6 @@ Homebrew-homebrew-cask/Casks/m/mplabx-ide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mplayer-osx-extended.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mplayerx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mps.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mpv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqtt-explorer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mqttfx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqttx.rb, Homebrew/homebrew-cask, 1
@@ -9772,6 +9771,7 @@ Homebrew-homebrew-cask/Casks/o/osu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osxfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otx.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/outfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outguess.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/outline-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outline.rb, Homebrew/homebrew-cask, 0
@@ -10701,6 +10701,7 @@ Homebrew-homebrew-cask/Casks/s/stella.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stellarium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stepmania.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/steveschow-gfxcardstatus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/stolendata-mpv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stoplight-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/storyboarder.rb, Homebrew/homebrew-cask, 1

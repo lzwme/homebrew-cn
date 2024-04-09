@@ -1,18 +1,18 @@
 class Pygobject3 < Formula
   desc "GNOME Python bindings (based on GObject Introspection)"
   homepage "https://wiki.gnome.org/Projects/PyGObject"
-  url "https://download.gnome.org/sources/pygobject/3.48/pygobject-3.48.1.tar.xz"
-  sha256 "3a0a2c0c0f25931b5840649c54834b9e58a63148d37fa9f6308887b7027e15c2"
+  url "https://download.gnome.org/sources/pygobject/3.48/pygobject-3.48.2.tar.xz"
+  sha256 "0794aeb4a9be31a092ac20621b5f54ec280f9185943d328b105cdae6298ad1a7"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "92678e401e4fbae287fed9a2140187ba8773d839cfb3d1028f9257d7c86bb19a"
-    sha256 cellar: :any, arm64_ventura:  "b67c553fd0a26ada44536fb7c1d8ff9d8dc5047bc4ca0525a01c33a7d8d40476"
-    sha256 cellar: :any, arm64_monterey: "9025e185ca09e9aad8b1e47248b049920c045db4e2ed0511492bcde2b7462f70"
-    sha256 cellar: :any, sonoma:         "a62905ab0de96286b2772668ac97f364441d9441552ac0220f045fe9abd147be"
-    sha256 cellar: :any, ventura:        "60695f35a2be78b9ea472963de2bb7a803e1fd765eead878d9c50485a8617332"
-    sha256 cellar: :any, monterey:       "f5ad614dbab8682eb7505323df49d829aa7305b08fdea3745b1d0a936c5b521c"
-    sha256               x86_64_linux:   "bbc37eddc4009446caf9bf3be6b0b4a7ce3bef5a49cd0c26365812e3df9d22b5"
+    sha256 cellar: :any, arm64_sonoma:   "03a66429468af32cc5ca8458dbff8307cf77a6ccb66ce366be318abb71e6dcb7"
+    sha256 cellar: :any, arm64_ventura:  "91bddd1d00d2c8c7e50190714c21f35e98c37d5945f23d1bbe9e49035cad8fe5"
+    sha256 cellar: :any, arm64_monterey: "6aa5972afb3ac83c880a53bc48d582df92af536f9a616fe40648b3ecd66d2ad7"
+    sha256 cellar: :any, sonoma:         "8db6ac23e2664e8a55aa4ef0d360a2150ff7165e6a209fd39eca0898298fdd4c"
+    sha256 cellar: :any, ventura:        "7be31857d1eb553331fa404029bf6f510c0ea48b83395b268909a67b3eae20c7"
+    sha256 cellar: :any, monterey:       "73c9c2554d086c379912a18614f3870dcf9fbb120e3e63a0ee67736d59eb1eeb"
+    sha256               x86_64_linux:   "e619d0cec5375d3427d05b6cac359b993546ead0f78a3b2205f950d012645d7c"
   end
 
   depends_on "meson" => :build
@@ -23,17 +23,6 @@ class Pygobject3 < Formula
   depends_on "python@3.12" => [:build, :test]
   depends_on "gobject-introspection"
   depends_on "py3cairo"
-
-  # Fix support for fundamental types using commits from open MR.
-  # Ref: https://gitlab.gnome.org/GNOME/pygobject/-/merge_requests/304
-  patch do
-    url "https://gitlab.gnome.org/GNOME/pygobject/-/commit/d6d937e3da5791420f17b83cf4caaceab1c0e1b9.diff"
-    sha256 "3a907e7d390bc56bc72aad553164cb8515a22d670a08f344531eedf395a8fddc"
-  end
-  patch do
-    url "https://gitlab.gnome.org/GNOME/pygobject/-/commit/27d34e4c1d24d8f8f15035b18630a00d7c5d2e26.diff"
-    sha256 "60b10f6661cd45f6467f97375eb3b503c08450e43588701cc04166358dca77a4"
-  end
 
   def pythons
     deps.map(&:to_formula)

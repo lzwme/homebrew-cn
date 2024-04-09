@@ -2,20 +2,20 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2024-03",
-      revision: "4c35633e0147b481dd7b2352d6bdb603f78c6dc7"
-  version "2024-03"
+      tag:      "dev-2024-04",
+      revision: "a00d96c0de2c0b6e4df76e58c1c394373e173751"
+  version "2024-04"
   license "BSD-3-Clause"
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "39e21813001289c546e3055253ccf66352c53a5dbd089a800368839e0ca71859"
-    sha256 cellar: :any,                 arm64_ventura:  "aa3733f543934d46814091074eaa240eb735604192af36fc37cc0c685b08a18e"
-    sha256 cellar: :any,                 arm64_monterey: "c5b57d28fad2ca1aad3bd8153a6a06e14c2a263440d3c5af4cdd768ab32c65c0"
-    sha256 cellar: :any,                 sonoma:         "1d4459d327e0c6eee86e617aab3994100c8838bb72a49f28c892b2fe7d975ae6"
-    sha256 cellar: :any,                 ventura:        "04c941aa3d03de41e7d663804128b18b169505f114436785397d0cff0660b7a2"
-    sha256 cellar: :any,                 monterey:       "102cfa0a5b142fbeae1475b15081d78fc812e896e2426667b952ea2d5067171b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce0bc19f9216b1fe8194fa31a880937ef198b572b9963c4240744d9e88af308e"
+    sha256 cellar: :any,                 arm64_sonoma:   "69772c18d8ea2aae20930d3e5d5f255df3cb94ac176d4757b94c90ad7bfaaa7d"
+    sha256 cellar: :any,                 arm64_ventura:  "3f6e36d15ebb7fe1b77826cea3c6b0138129e5cc773cd9177ecccf1d79502b47"
+    sha256 cellar: :any,                 arm64_monterey: "9f7d1000787cd6ad62a66268a9886685391b0747c000b8892855e5099b6346d4"
+    sha256 cellar: :any,                 sonoma:         "00df23c0aa654dc6ce628b0b9d51e5729b75b22fc60715ac3060c2b5c5b60f19"
+    sha256 cellar: :any,                 ventura:        "514fd450fc39bf728dc202a3eb078b7c935d803c564752ba91d2e969f9645497"
+    sha256 cellar: :any,                 monterey:       "534aedb871b2385b1cceaae0c1a56656d5605c92135b82586191c2acecc0dd0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17e5a93cc254580f70b8e720fd180fca456da984427c060b9e2aa43aa2acf118"
   end
 
   depends_on "glfw"
@@ -49,6 +49,10 @@ class Odin < Formula
     end
 
     cd buildpath"vendorstbsrc" do
+      system "make", "unix"
+    end
+
+    cd buildpath"vendorcgltfsrc" do
       system "make", "unix"
     end
 
