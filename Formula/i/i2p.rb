@@ -1,8 +1,8 @@
 class I2p < Formula
   desc "Anonymous overlay network - a network within a network"
   homepage "https://geti2p.net"
-  url "https://files.i2p-projekt.de/2.4.0/i2psource_2.4.0.tar.bz2"
-  sha256 "30ef8afcad0fffafd94d30ac307f86b5a6b318e2c1f44a023005841a1fcd077c"
+  url "https://files.i2p-projekt.de/2.5.0/i2psource_2.5.0.tar.bz2"
+  sha256 "6bda9aff7daa468cbf6ddf141c670140de4d1db145329645a90c22c1e5c7bc01"
   license :cannot_represent
 
   livecheck do
@@ -11,14 +11,13 @@ class I2p < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45fdcb057904524c6a036a817498126b1db5ebe426a0f08657acf6ecd547f141"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38f8df990e1aa4dfb4fc749e193b3525e1152d2eab7156104975ea3e7d14ed3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2da5f989c798cbc559d0037c33f520e3dad93e6bdd61f1be1da051e172fbbbfb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c29dc3fc393d0947d40fda159986f766a921b14ca946cd197a74653c67bf3d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "57339b9ef1afaad2cce76ca7c2fdc18da6c0018a98272220241b986f9cbcc2d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "22ab24f06fcc5cc2fb44283c7fdbcf9e6d224e7a12cf8b122276456a7f86f304"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a61c4e7a412b6b88094606850a2dcecfeb6fb3d40f228d579407015176847614"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "92e2a95a93560b33b54be90b72628e43af5e6028b632cb6d27eca3bbea081443"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97fe4c77d3c5f1f296a5b5ba9be6e1d77a2b7b3298cd344378377e4ab4d3357c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b7f1592c6822643183f0fcf11e2cd9c4a1df2d5798a3d359cb188f565245e33"
+    sha256 cellar: :any_skip_relocation, sonoma:         "520e003923231e52ddf248131efd899b28d16c4d865202ffa3d542d6f436fb37"
+    sha256 cellar: :any_skip_relocation, ventura:        "93fe54dd172423498af75efa9711582af2e3fb90f70163ca33ada738654668c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c13f92f7652b31bc7b288a847da9979d3fe9d5a1da66512e39783de645920159"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55935127c4911fc8a9acdfb29ecb65bdd4b3347c78a100c51b3a2659d402c0d1"
   end
 
   depends_on "ant" => :build

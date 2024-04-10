@@ -6,16 +6,16 @@ class OnlykeyAgent < Formula
   url "https:files.pythonhosted.orgpackages6880e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7conlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
+  revision 1
 
   bottle do
-    rebuild 6
-    sha256 cellar: :any,                 arm64_sonoma:   "a0fad59933c5f81b799011dff4bbb38c8e38aa8b116a42a99c4c736a84506523"
-    sha256 cellar: :any,                 arm64_ventura:  "039d8bfceea5b8a26294f5b5d63da731dae37d00647e8a82e888dccc372099a1"
-    sha256 cellar: :any,                 arm64_monterey: "f1d8c865af3b02cc65dee45bdffa0e6f8b9bd1a8a700fffde59d93d648ad8791"
-    sha256 cellar: :any,                 sonoma:         "60c760c2b900efd3ff552594111ebea1d10feef6e0df6b45bd77f8fd39b7fa4d"
-    sha256 cellar: :any,                 ventura:        "7292365b40021bf96d36843ceac7d558b195ccba82a8d36025c58e68804b2c23"
-    sha256 cellar: :any,                 monterey:       "cc99c15cf8af6ce4df81be0b559cb51964ca17586895d67f53fa5a9d7f17393b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "925664187321b92eecb691f8406cac2e1d1f14a798711bd94a505c628c21c663"
+    sha256 cellar: :any,                 arm64_sonoma:   "32442c6ffc49c4075e1b142d0d2401090b8c22161fc09f8addb886c05df9aef8"
+    sha256 cellar: :any,                 arm64_ventura:  "6f12a08462fad7eee1578667eff263b4bb9929ed3b312481060556dfb96e88f3"
+    sha256 cellar: :any,                 arm64_monterey: "465eff43f7d5311820d3e5a65bdab465d30a79a28c22a82b9b0227d0fd519350"
+    sha256 cellar: :any,                 sonoma:         "583d8b2f47dc8ca82964a1262c6a0b90e071d8055d586a0759f1a182bc818e01"
+    sha256 cellar: :any,                 ventura:        "2b513a17bba288e82682eb77cd504cbc4bb1e9c4df93d51a1a15d35cc5abe1db"
+    sha256 cellar: :any,                 monterey:       "66a8c24510c7048ab1bee51fc664c14d1688b03b32c5fa020c40e0b28f40f289"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dd8c93c7b1cd9b5b683455c8644ae960ad9ad2e9333fb9e89de1b06f96d0f39"
   end
 
   depends_on "certifi"
@@ -62,8 +62,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "ecdsa" do
-    url "https:files.pythonhosted.orgpackagesff7bba6547a76c468a0d22de93e89ae60d9561ec911f59532907e72b0d8bc0f1ecdsa-0.18.0.tar.gz"
-    sha256 "190348041559e21b22a1d65cee485282ca11a6f81d503fddb84d5017e9ed1e49"
+    url "https:files.pythonhosted.orgpackages5ed0ec8ac1de7accdcf18cfe468653ef00afd2f609faf67c423efbd02491051becdsa-0.19.0.tar.gz"
+    sha256 "60eaad1199659900dd0af521ed462b793bbdf867432b3948e87416ae4caf6bf8"
   end
 
   resource "fido2" do

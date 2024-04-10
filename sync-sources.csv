@@ -3496,6 +3496,7 @@ Homebrew-homebrew-core/Formula/lib/libkeccak.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libksba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liblbfgs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/liblc3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblcf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblerc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/liblinear.rb, Homebrew/homebrew-core, 1
@@ -4590,7 +4591,7 @@ Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opentelemetry-cpp.rb, Homebrew/homebrew-core, 1
@@ -5478,6 +5479,7 @@ Homebrew-homebrew-core/Formula/r/rush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rust-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustc-completion.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup-init.rb, Homebrew/homebrew-core, 1
@@ -8134,6 +8136,7 @@ Homebrew-homebrew-cask/Casks/e/engine-prime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enigma.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/enjoyable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enpass.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/ente-auth.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/ente.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/entry.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/envkey.rb, Homebrew/homebrew-cask, 1
@@ -10957,6 +10960,7 @@ Homebrew-homebrew-cask/Casks/t/toinane-colorpicker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/toland-qlmarkdown.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tomatobar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tomighty.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/toneprint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tongbu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/toolreleases.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/toontown-rewritten.rb, Homebrew/homebrew-cask, 1
@@ -13812,6 +13816,7 @@ Homebrew-homebrew-cask-versions/Casks/opera-beta.rb, Homebrew/homebrew-cask-vers
 Homebrew-homebrew-cask-versions/Casks/opera-crypto-developer.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/opera-developer.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/oracle-jdk17.rb, Homebrew/homebrew-cask-versions, 0
+Homebrew-homebrew-cask-versions/Casks/oracle-jdk21.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/papers3.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/paragon-extfs11.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/parallels12.rb, Homebrew/homebrew-cask-versions, 0

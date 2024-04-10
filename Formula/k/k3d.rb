@@ -2,8 +2,8 @@ class K3d < Formula
   desc "Little helper to run CNCF's k3s in Docker"
   homepage "https:k3d.io"
   url "https:github.comk3d-iok3d.git",
-    tag:      "v5.6.0",
-    revision: "9748b1e158f3a03e807c6a989edc0fee856ff5a2"
+    tag:      "v5.6.2",
+    revision: "b2c790b51fa038e9804395fcf914df7d00128605"
   license "MIT"
 
   livecheck do
@@ -12,15 +12,13 @@ class K3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39af305ddee228c60eb25f53a1a80c546d3c98d2c611aa11f47d8eaed2cd1532"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73d02a1a5976a2762fc3c25bcc7db1f11006229bf717bd37e0570346a36beff0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10ea7c24365ec9fd476d65914ba3a12202f576398377f4142be927266ec5c454"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c9330e5348f29ed3c771725b88b238fb0170665c272c1124bf2c92fda10fab5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa17e51e63aceecfe1f1949bb3af4b62d4e5fa154545ea3706caba896bd44125"
-    sha256 cellar: :any_skip_relocation, ventura:        "5dc8f630f6359f16ecf22db39afaaee3a4b6932a367b33fdbc4cb63c61ccddea"
-    sha256 cellar: :any_skip_relocation, monterey:       "f272bd80a863b995103aff56705abeec411c98d53ef90d215c046ffd41957d6d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e888baaac7cbc22cdc927cd78beab0380f841316cb7314e323e07ac2ab88f522"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a08089f31c6f1411f3d6aa63723e900abbd6a73da89b774c685abc2bbe88e32d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d05197446de6993804a786572d86109aca8c49a93b3bc6b3e5567ded2bfc67bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "def6b2fb67e8570c371b1c895fac178c0f171862dc3636998a53c7025da6a38a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81558169668784163691b436569203d7593b6de95041872a3e4de1942e05d6ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "13ce6d4f71a8902175ed9fe65e981441d02208c759903f91a7c81e13503c242c"
+    sha256 cellar: :any_skip_relocation, ventura:        "bcd6110bc388633efdb327d247c849633799f1b7949606c3e83059ecfa01071e"
+    sha256 cellar: :any_skip_relocation, monterey:       "2a17b744ca3d82acb6cb29299a176cb780832acd8d445e5f488bebde14cc959c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9e7047ce3dd4a5634e2d7818d6ca58599db6238fde5a4fbc22ed2850405a303"
   end
 
   depends_on "go" => :build

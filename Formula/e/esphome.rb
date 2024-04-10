@@ -6,15 +6,16 @@ class Esphome < Formula
   url "https:files.pythonhosted.orgpackages9be5c09237cf6f2da94181102324fc255dff654414bc3c18e54145bb60d28697esphome-2024.3.2.tar.gz"
   sha256 "75f7bd3b963deedfe1341694d15caedac2a95ad39bab8bad366c7c82f254ce7a"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b8bd7b54ee08c408a52b2f5ae8075eb3baa1a861d7c952a11cf5acfc81f0be49"
-    sha256 cellar: :any,                 arm64_ventura:  "4bae1db40b9863d8244a86a2a7409fdb70d5c52eb2dfb5f95d819dd338c82c8a"
-    sha256 cellar: :any,                 arm64_monterey: "c04421418c00796a6646dbf3f3fe895b6f148245886d7d93585f779b0f28022e"
-    sha256 cellar: :any,                 sonoma:         "dcd93d82dfca7bbb99240a28a95081e31d19a1aa31767567be578a18110b6283"
-    sha256 cellar: :any,                 ventura:        "5487cc7f866a61d11170c3723fe738649f370eb25f96687cb2b3cdaf9598f274"
-    sha256 cellar: :any,                 monterey:       "f27f4635c8e235cf7416d3c9b3c08e7cfae3f27279ada93e08f7a8afcccc6cf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfbf756026b13720c688492c0746b38575c1727027fe98745f7d8fc5ba13d56b"
+    sha256 cellar: :any,                 arm64_sonoma:   "b70dbc08f3efdafff6d5fded7e53af17eef3edd8e4d0aeada59e6d47b010bcb1"
+    sha256 cellar: :any,                 arm64_ventura:  "887a1df052006cd8765bc6761b7021588a29181dbf18a289aed8a95c9ec3cbe4"
+    sha256 cellar: :any,                 arm64_monterey: "d8bcbc474c6efc97c5275a3651b229211876d3992aa09e07b1400b175b615628"
+    sha256 cellar: :any,                 sonoma:         "a8317a27a7162ade23de9d528638df398d95bd404c5ffd6c1275375d1f734fd9"
+    sha256 cellar: :any,                 ventura:        "0e730c2e08501ae1c5b78f1083b1674bbe6a740acf6db7225849c93b9a0cd501"
+    sha256 cellar: :any,                 monterey:       "864852d7849deda8c8d6fcb1a4caa017d7f4c07504ffc0e4f907d32975b31e35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e100e9d8ee58d54fb8f6e712ba45b56fd5bc54a8b1587d7b96a321ef447b0c8"
   end
 
   depends_on "certifi"
@@ -90,8 +91,8 @@ class Esphome < Formula
   end
 
   resource "ecdsa" do
-    url "https:files.pythonhosted.orgpackagesff7bba6547a76c468a0d22de93e89ae60d9561ec911f59532907e72b0d8bc0f1ecdsa-0.18.0.tar.gz"
-    sha256 "190348041559e21b22a1d65cee485282ca11a6f81d503fddb84d5017e9ed1e49"
+    url "https:files.pythonhosted.orgpackages5ed0ec8ac1de7accdcf18cfe468653ef00afd2f609faf67c423efbd02491051becdsa-0.19.0.tar.gz"
+    sha256 "60eaad1199659900dd0af521ed462b793bbdf867432b3948e87416ae4caf6bf8"
   end
 
   resource "esphome-dashboard" do

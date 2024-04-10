@@ -5,6 +5,11 @@ class Spotbugs < Formula
   sha256 "11629b13aad39c453c23f8a8a43096b003afb55924a17424a9e1bc722190576b"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url "https:repo.maven.apache.orgmaven2comgithubspotbugsspotbugs"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "104ac1973ecefcf2661f575021187f2eec6baf28529b82554a2409e0fba309bc"
   end

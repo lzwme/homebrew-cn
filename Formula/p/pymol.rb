@@ -2,20 +2,19 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "Molecular visualization system"
   homepage "https:pymol.org"
-  url "https:github.comschrodingerpymol-open-sourcearchiverefstagsv2.5.0.tar.gz"
-  sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
+  url "https:github.comschrodingerpymol-open-sourcearchiverefstagsv3.0.0.tar.gz"
+  sha256 "45e800a02680cec62dff7a0f92283f4be7978c13a02934a43ac6bb01f67622cf"
   license :cannot_represent
   head "https:github.comschrodingerpymol-open-source.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "1b3edf37eaeb5b3c38e5fdf9f6a72f4eafecb1f4ea0bb7a9208b0a4e41202a1f"
-    sha256 cellar: :any,                 arm64_ventura:  "33fb5ec69774436e99803273fe04c69ec04d4af245361b3ef916141e867c0b08"
-    sha256 cellar: :any,                 arm64_monterey: "e2c6c18ea8a6643a96692e427d31b33cf21003c30ec74fadc8aa019b20e881d0"
-    sha256 cellar: :any,                 sonoma:         "0d8fa8d46524c5c87123860a1fa0641a1ed0390ab6b2230301f055ad95e8a6a7"
-    sha256 cellar: :any,                 ventura:        "2172933239097915902897e01cbef8bf505aa80ec88cc9c1a8028c48de982aed"
-    sha256 cellar: :any,                 monterey:       "e9580cbfe839e0ed7cc37d13982ac6928684ff8baf426fc9b23bd2a1ec668290"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ecb4cb75a88e52dcdbced60b2bd41dddf14bb5c3671e23737b5b20e6ae4a1a2"
+    sha256 cellar: :any,                 arm64_sonoma:   "7e18ee8f5f5310556143fd5b093b80538b37b337c560396daf0ccc682f064cf8"
+    sha256 cellar: :any,                 arm64_ventura:  "fba9d3492af06c5ec91d4f2aa778425aed56659310ea14615bcd3053eb002cbc"
+    sha256 cellar: :any,                 arm64_monterey: "b76f0d1ac201b7363fd2560c1191f79331d318692884fd51b338fc936108d859"
+    sha256 cellar: :any,                 sonoma:         "7296fcbf89c9504725d3f5198b3d067d2451a4630f1f49cf12a92f1431d1c6fc"
+    sha256 cellar: :any,                 ventura:        "9c30477040def3bdcdd10b7debcdd4f163242562d6afcb00de78783c88e84cfb"
+    sha256 cellar: :any,                 monterey:       "7348bb8c03502268d926401aa61f32a217bbe2910dc890ecc5c682ef743c2670"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ffbb1a42540070463982069ebf3516f109ca9c22a850939dd7abd7d01dd82ee"
   end
 
   depends_on "cmake" => :build
@@ -37,21 +36,21 @@ class Pymol < Formula
   end
 
   resource "mmtf-cpp" do
-    url "https:github.comrcsbmmtf-cpparchiverefstagsv1.0.0.tar.gz"
-    sha256 "881f69c4bb56605fa63fd5ca50842facc4947f686cbf678ad04930674d714f40"
+    url "https:github.comrcsbmmtf-cpparchiverefstagsv1.1.0.tar.gz"
+    sha256 "021173bdc1814b1d0541c4426277d39df2b629af53151999b137e015418f76c0"
   end
 
   resource "msgpack" do
-    url "https:files.pythonhosted.orgpackages613c2206f39880d38ca7ad8ac1b28d2d5ca81632d163b2d68ef90e46409ca057msgpack-1.0.3.tar.gz"
-    sha256 "51fdc7fb93615286428ee7758cecc2f374d5ff363bdd884c7ea622a7a327a81e"
+    url "https:files.pythonhosted.orgpackages084c17adf86a8fbb02c144c7569dc4919483c01a2ac270307e2d59e1ce394087msgpack-1.0.8.tar.gz"
+    sha256 "95c02b0e27e706e48d0e5426d1710ca78e0f0628d6e89d5b5a5b91a5f12274f3"
   end
 
   resource "mmtf-python" do
-    url "https:files.pythonhosted.orgpackages13eac6a302ccdfdcc1ab200bd2b7561e574329055d2974b1fb7939a7aa374da3mmtf-python-1.1.2.tar.gz"
-    sha256 "a5caa7fcd2c1eaa16638b5b1da2d3276cbd3ed3513f0c2322957912003b6a8df"
+    url "https:files.pythonhosted.orgpackagesd80ff3c132dc9aac9a3f32a0eba7a80f07d14e7624e96f9245eeac5fe48f42cdmmtf-python-1.1.3.tar.gz"
+    sha256 "12a02fe1b7131f0a2b8ce45b46f1e0cdd28b9818fe4499554c26884987ea0c32"
   end
 
-  resource "Pmw" do
+  resource "pmw" do
     url "https:github.comschrodingerpmw-patchedarchive8bedfc8747e7757c1048bc5e11899d1163717a43.tar.gz"
     sha256 "3a59e6d33857733d0a8ff0c968140b8728f8e27aaa51306160ae6ab13cea26d3"
   end

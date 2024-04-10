@@ -28,6 +28,7 @@ cask "xquartz" do
         "~LibraryApplication SupportXQuartz",
         "~LibraryCachesorg.xquartz.X11",
         "~LibraryCookiesorg.xquartz.X11.binarycookies",
+        "~LibraryHTTPStoragesorg.xquartz.X11",
         "~LibraryLogsX11org.xquartz.log",
         "~LibraryLogsX11org.xquartz.log.old",
         "~LibraryPreferencesorg.xquartz.X11.plist",

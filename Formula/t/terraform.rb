@@ -9,11 +9,6 @@ class Terraform < Formula
   license "MPL-2.0"
   head "https:github.comhashicorpterraform.git", branch: "main"
 
-  # TODO: Remove this ifwhen the formula is deprecated.
-  livecheck do
-    skip "Formula will not be updated due to BUSL license change"
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f43afa7c6970e1bc768f739829ee589e88fd2b9275f867c5d0be60369ce0772e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c6612f5b1c9921da6fa968698a1d657edaff64fbf62d53ae06850cc6897d8d0"

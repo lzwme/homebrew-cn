@@ -3,19 +3,19 @@ class Manim < Formula
 
   desc "Animation engine for explanatory math videos"
   homepage "https:www.manim.community"
-  url "https:files.pythonhosted.orgpackages06627802597b93048a8ab543d835338739ce8f4e96e0410b63e29c86deb7ccebmanim-0.18.0.tar.gz"
-  sha256 "56788066bc1aec2471a988c91e337194fd38d1035ed1b4d10838bfe64bd26af8"
+  url "https:files.pythonhosted.orgpackagesd383b504dbacb67c665e5b81f5aaa1b23fe058b8dac06c966b5c25949959a2a3manim-0.18.0.post0.tar.gz"
+  sha256 "93d36a7a26cd8083969d22ebbc1c174a80cd193562d116a6dbf35622439e0035"
   license "MIT"
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1e0cac5e4bf67290570a8f0760ff70b89a808dd622c75cea2d31523ee0d59a3c"
-    sha256 cellar: :any,                 arm64_ventura:  "1fcc28bbb9b0c3d6cac0f677c2a15e76dc355c0ab3337da9848dc9c5932da139"
-    sha256 cellar: :any,                 arm64_monterey: "cc929f7cfdc73fdf62053dcab0093d5653fa7c6d80d26f06f170f8bf22b1de19"
-    sha256 cellar: :any,                 sonoma:         "85409c2e54e3db7b382eed9281b270143a7a7767de03abc607cdd7987042eb03"
-    sha256 cellar: :any,                 ventura:        "a84953341094ec1f7b4d2f551850de641c1429569211ead3bdff1a6ac1bb08db"
-    sha256 cellar: :any,                 monterey:       "d1d83781ab2edfd8ca2919a246d8603f803d7017aaebb17d8b092e6a7acefe06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dd8a6ee91131b1ece954cbaf30edef0427d0f26e0add53ab7b954cb398c038d"
+    sha256 cellar: :any,                 arm64_sonoma:   "5451643762e3ec5c4a8e9e153b8b64574ba2c5ad22e95561e2fd30bce2920c5f"
+    sha256 cellar: :any,                 arm64_ventura:  "40aae2eb30a02b047ff1347768b43a81c2d880a0ee881d31494bdf669e0c9cc6"
+    sha256 cellar: :any,                 arm64_monterey: "edce65b02231d4b70a48690a20576993c45092b8e8bf7ec6722f219ff15fcbef"
+    sha256 cellar: :any,                 sonoma:         "6b457cf4c8fc21f9be40eb3038839889c5fe4a8593b91e8449dd34fee3ce8a46"
+    sha256 cellar: :any,                 ventura:        "1558dc5d850391c86c5033d176cd88917914f8aca328c696191cc0cc2a76ac81"
+    sha256 cellar: :any,                 monterey:       "bcbd0bf98566cfc5a7d0a67e3e44aa327c8024d58316d367544598b08ecc2b3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b98bd81d9d3a11c4732d772d632ed907baee100d55351d90311aef0ea3e470dc"
   end
 
   depends_on "cython" => :build
@@ -64,8 +64,8 @@ class Manim < Formula
   end
 
   resource "cython" do
-    url "https:files.pythonhosted.orgpackages0e17c5b026cea7a634ee3b8950a7be16aaa49deeb3b9824ba5e81c13ac26f3c4Cython-3.0.9.tar.gz"
-    sha256 "a2d354f059d1f055d34cfaa62c5b68bc78ac2ceab6407148d47fb508cf3ba4f3"
+    url "https:files.pythonhosted.orgpackagesd5f72fdd9205a2eedee7d9b0abbf15944a1151eb943001dbdc5233b1d1cfc34eCython-3.0.10.tar.gz"
+    sha256 "dcc96739331fb854dcf503f94607576cfe8488066c61ca50dfd55836f132de99"
   end
 
   resource "decorator" do
@@ -144,8 +144,8 @@ class Manim < Formula
   end
 
   resource "pyglet" do
-    url "https:files.pythonhosted.orgpackagesf5fa9b701ace19219b38dca47926a500dafa9f37cf33c7935e699c9218b35062pyglet-2.0.14.tar.gz"
-    sha256 "9b3bef1532395d88600db115b2eea8c345d2851be48ad8ac64b152b16f089777"
+    url "https:files.pythonhosted.orgpackages7e21a514b8358e5f3c49e54edd055637ecb8e6f52af2d9c25bd0d9435c9fa6e0pyglet-2.1.dev1.tar.gz"
+    sha256 "a94867222e656a097f26a713195a05bf471112e09bf46c4d9030555fc6a56fc4"
   end
 
   resource "pygments" do
@@ -179,8 +179,8 @@ class Manim < Formula
   end
 
   resource "scipy" do
-    url "https:files.pythonhosted.orgpackages3085cdbf2c3c460fe5aae812917866392068a88d02f07de0fe31ce738734c477scipy-1.12.0.tar.gz"
-    sha256 "4bf5abab8a36d20193c698b0f1fc282c1d083c94723902c447e5d2f1780936a3"
+    url "https:files.pythonhosted.orgpackagesfba3328965862f41ba67d27ddd26205962007ec87d99eec6d364a29bf00ac093scipy-1.13.0.tar.gz"
+    sha256 "58569af537ea29d3f78e5abd18398459f195546bb3be23d16677fb26616cc11e"
   end
 
   resource "screeninfo" do
@@ -209,8 +209,8 @@ class Manim < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
-    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
+    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
+    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
   resource "urllib3" do

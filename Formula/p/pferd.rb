@@ -3,20 +3,18 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https:github.comGarmelonPFERD"
-  url "https:files.pythonhosted.orgpackages6550fae763bf94e3d9a25716f1a8b36481b1196bb64b5ac226286f3ad588dc81pferd-3.5.0.tar.gz"
-  sha256 "90170cb5b7b5421193ba8b73d66899fc2027f3a8f595c10ac97fc6de756df7cf"
+  url "https:files.pythonhosted.orgpackages463ec59874ab484c5e19fed106c8b37aa29bbe64921bd8f5b88e9b718c3c264bpferd-3.5.1.tar.gz"
+  sha256 "adad46fbfad08fbe9a479bb8989393598dc26ec30851d162a97e958509cbf809"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c30b587c3559451b854052946e70262b7550c9ad3667dcefb3b9a1a1f2721d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7712ca7e8da94334a6204fbf25e7d4dd860d40008ce6a159d41b7688fe926eb8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "112b2f0537c1e11a6b37a82166c9c639d84d14564a5090312fed42d21ae1d752"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3d3aee05868b8e53e574bff9f513dd5ae086d7fa6e5b02110bc1e57ebaa7f45a"
-    sha256 cellar: :any_skip_relocation, ventura:        "dbfa17b4656d740f88fb2ac28eb8cbc6105dc8495a1c1976828716bac1276cdb"
-    sha256 cellar: :any_skip_relocation, monterey:       "4952500185c097ca748b3e2201985292de65efb3a4666e082f5bc6775a96679d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f937165cb0ff4877f9d94ec3a12eebf5f88ce2112c2d43be9fb483d7ffea1117"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebe724619ee93c55c4f0d366b82ebb664c5cdfcccda6447d62b49c8aebfade5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da7964b556b8aef167abd011f4e9c427ee3f3d717815b31b243189e134c1c128"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "316e6c1a47b67c5f120c229afd2e48c519d73fdf48138f01d58727dddea82ea9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6f7a6625be83501e1f4ed8e4bbc6a095f319c500a6dbed90444ead0ebd4cee1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "09bde84073df0272b6277b1da2f4943e2e37fed80143e950eab612313152793c"
+    sha256 cellar: :any_skip_relocation, monterey:       "68f75340b4e0d9bacfce87d5cfae4b0abc62fc8266e697da28dda249444ec671"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54d5f929843dff998ca82a8eb566aa47867898ad1e3191f78cf4a0de25d41c90"
   end
 
   depends_on "certifi"
@@ -53,13 +51,23 @@ class Pferd < Formula
   end
 
   resource "jaraco-classes" do
-    url "https:files.pythonhosted.orgpackagesa58aed955184b2ef9c1eef3aa800557051c7354e5f40a9efc9a46e38c3e6d237jaraco.classes-3.3.1.tar.gz"
-    sha256 "cb28a5ebda8bc47d8c8015307d93163464f9f2b91ab4006e09ff0ce07e8bfb30"
+    url "https:files.pythonhosted.orgpackages06c0ed4a27bc5571b99e3cff68f8a9fa5b56ff7df1c2251cc715a652ddd26402jaraco.classes-3.4.0.tar.gz"
+    sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
+  end
+
+  resource "jaraco-context" do
+    url "https:files.pythonhosted.orgpackagesc960e83781b07f9a66d1d102a0459e5028f3a7816fdd0894cba90bee2bbbda14jaraco.context-5.3.0.tar.gz"
+    sha256 "c2f67165ce1f9be20f32f650f25d8edfc1646a8aeee48ae06fb35f90763576d2"
+  end
+
+  resource "jaraco-functools" do
+    url "https:files.pythonhosted.orgpackages577cfe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afcejaraco.functools-4.0.0.tar.gz"
+    sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackages69cd889c6569a7e5e9524bc1e423fd2badd967c4a5dcd670c04c2eff92a9d397keyring-24.3.0.tar.gz"
-    sha256 "e730ecffd309658a08ee82535a3b5ec4b4c8669a9be11efb66249d8e0aeb9a25"
+    url "https:files.pythonhosted.orgpackages18eccc0afdcd7538d4942a6b78f858139120a8c7999e554004080ed312e43886keyring-25.1.0.tar.gz"
+    sha256 "7230ea690525133f6ad536a9b5def74a4bd52642abe594761028fc044d7c7893"
   end
 
   resource "markdown-it-py" do
@@ -88,8 +96,8 @@ class Pferd < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesa7ec4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9drich-13.7.0.tar.gz"
-    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+    url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
   resource "soupsieve" do

@@ -3,19 +3,18 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/3f/eb/d5c4c50ec5c2e80fa38ae90b7c3c7c582cd8f594c17b34793137c381d204/molecule-24.2.0.tar.gz"
-  sha256 "47c982a7d05db7846da77fe7159deb946f26cafb2e388fc71812be0089a41776"
+  url "https://files.pythonhosted.org/packages/dd/a3/032f56c1bec7550bea1650dc5eeb4a2d027e416f93a7a854a35cff29cbfd/molecule-24.2.1.tar.gz"
+  sha256 "83522baa9b91560ea986273cab149c39156976e9d61245717226320935ad56e4"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "3324d5879f6ede91c429f2b23c3e01d268a3d1d1231bfee7d0e13ff8eb457d46"
-    sha256 cellar: :any,                 arm64_ventura:  "2c3051b0069cd2c7745584ee6fa51de3be60b7e0de41ad250d75e8b1279f267d"
-    sha256 cellar: :any,                 arm64_monterey: "4ff5b3bda9ff39cf2f88172ccf18c9c698d3a4f7377f17fd63fff459e9052202"
-    sha256 cellar: :any,                 sonoma:         "3cea06a411baf133982adec07a51340153361be8781c6fdc7a36ba6280b630e1"
-    sha256 cellar: :any,                 ventura:        "e3af779d7811698cd7953c3c74ec32e3e1f99aadb21b2527da35516d0a978a59"
-    sha256 cellar: :any,                 monterey:       "5dcf79d52b014c82eddeeb8929d455a79766913021212d7d783a22c9223a9dd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a7642a4fc2b6265a5f06a5332e9efa18dcf4c1911a39c50f3d7c4994ecfad9d"
+    sha256 cellar: :any,                 arm64_sonoma:   "d6f0bcf879c8d39b5edc704acdbc9dc83eb3b7c8d607bf83e1ca708cd26f2be7"
+    sha256 cellar: :any,                 arm64_ventura:  "92c9472238cb791b8da503afff0f7ba26bfef3a9e32d6f44cf14d6cd33aea833"
+    sha256 cellar: :any,                 arm64_monterey: "f49ebac236577adff30925a1e111022fbe528fa9d25d4ddcc2b181ab639c65c5"
+    sha256 cellar: :any,                 sonoma:         "f0c9e0beb775e5a207a352626f12d68544764792f2b0b6482b3aa6483cbce4b0"
+    sha256 cellar: :any,                 ventura:        "4ba32ab7cbf544b1a9516fee7923057f65867edec5c8cd0629c036c24b9d5fe3"
+    sha256 cellar: :any,                 monterey:       "64333110a8ef6941d6fef385b709e4c5dbce5f0b33986268635a399a4321f40a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d574b54daa3e178dec2ca799b991f25edf0b67ca28b8bf27134dc2b6a0198242"
   end
 
   depends_on "rust" => :build
@@ -37,8 +36,8 @@ class Molecule < Formula
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/00/b9/7d2229459038cdfe84b6e4db76f97acae35cb46917a0d9a7e61d3e300637/ansible-core-2.16.3.tar.gz"
-    sha256 "76a8765a8586064ef073a299562e308fa2c180a75b5f7569bbd0f61d4171cdb3"
+    url "https://files.pythonhosted.org/packages/d0/49/ef4490d316d74a4f38dde04d9f29d1a3f7c67ba33f53a96612d8e7e56051/ansible-core-2.16.5.tar.gz"
+    sha256 "cdd29b0ec3f20c35657355a2f6a9c1d0cf1131da99cc9a4a3401801b0ab36d6d"
   end
 
   resource "attrs" do
@@ -127,8 +126,8 @@ class Molecule < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/fb/2b/9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7b/packaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
+    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
   end
 
   resource "pluggy" do
@@ -152,8 +151,8 @@ class Molecule < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/21/c5/b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9a/referencing-0.33.0.tar.gz"
-    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
+    url "https://files.pythonhosted.org/packages/59/d7/48b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37/referencing-0.34.0.tar.gz"
+    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
   end
 
   resource "requests" do
@@ -167,8 +166,8 @@ class Molecule < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/a7/ec/4a7d80728bd429f7c0d4d51245287158a1516315cadbb146012439403a9d/rich-13.7.0.tar.gz"
-    sha256 "5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"
+    url "https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz"
+    sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
   resource "rpds-py" do

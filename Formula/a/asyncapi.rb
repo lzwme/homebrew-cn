@@ -3,18 +3,18 @@ require "languagenode"
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https:github.comasyncapicli"
-  url "https:registry.npmjs.org@asyncapicli-cli-1.7.3.tgz"
-  sha256 "29b70e40e4f9f64fd40d22e5a4bfd48d7a8031cddb3fc716911a04124c4bf989"
+  url "https:registry.npmjs.org@asyncapicli-cli-1.8.2.tgz"
+  sha256 "8fde6e0bc034c26068e873d05fa57fbdb987355c6d791cad766ed0e8d481d940"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2c675da9048f5e29de74e21b8ac6879214e84489c25cd3a00f7c7d86690e36ec"
-    sha256 cellar: :any,                 arm64_ventura:  "2c675da9048f5e29de74e21b8ac6879214e84489c25cd3a00f7c7d86690e36ec"
-    sha256 cellar: :any,                 arm64_monterey: "2c675da9048f5e29de74e21b8ac6879214e84489c25cd3a00f7c7d86690e36ec"
-    sha256 cellar: :any,                 sonoma:         "667b9351010a013c0a672ccbd6eab71d091a87ea82be0f82c172cb75462c4c25"
-    sha256 cellar: :any,                 ventura:        "667b9351010a013c0a672ccbd6eab71d091a87ea82be0f82c172cb75462c4c25"
-    sha256 cellar: :any,                 monterey:       "667b9351010a013c0a672ccbd6eab71d091a87ea82be0f82c172cb75462c4c25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ac14fb2dc00aed267fba4f084816ea04176143a26884c140420621240acb34e"
+    sha256 cellar: :any,                 arm64_sonoma:   "fc69687157c304e60262c72d0fca79af8793f2ce72df789cb1a83635259481a3"
+    sha256 cellar: :any,                 arm64_ventura:  "fc69687157c304e60262c72d0fca79af8793f2ce72df789cb1a83635259481a3"
+    sha256 cellar: :any,                 arm64_monterey: "fc69687157c304e60262c72d0fca79af8793f2ce72df789cb1a83635259481a3"
+    sha256 cellar: :any,                 sonoma:         "6feb909728af1069e471dfb7ac1a2c81cc1cae53e16c557991085949c13bb0fd"
+    sha256 cellar: :any,                 ventura:        "6feb909728af1069e471dfb7ac1a2c81cc1cae53e16c557991085949c13bb0fd"
+    sha256 cellar: :any,                 monterey:       "6feb909728af1069e471dfb7ac1a2c81cc1cae53e16c557991085949c13bb0fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "260e39cf669bc6f23f87e0c4c1a511f7880a09f23fdfe38e94f3b6f55a95f9c9"
   end
 
   depends_on "node"
