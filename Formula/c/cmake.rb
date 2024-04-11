@@ -17,13 +17,14 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d9b7d484d371d2bb66452ebadd31034708c553ddcadab8097ed9911e2bbae31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cd076060f01246d42bbc507192d466d05b6cc430a0680eb6308b1c4c4cfb88e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "262ae87f45fbf8f007e6220f64969dbab76f982a484c9d412ddcf3bc0917ffa4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "04631ef4e4292c1315e12ad2dfb1ebb022e3677b908778278480e56a8e0140ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "ba061351890b139f712d48e916515b4a1baf16b1efb2feb8e5a63b63e22f6d47"
-    sha256 cellar: :any_skip_relocation, monterey:       "042ac0a646359b5c6cafdacd066fa59cc5b99cac3130586836a44063450a857d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f253af3f526668a48602648b8461613e07c8388f1366211186c036602ca60df"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8d5c71bce53c78741564dce4fec1292039cd5a19d13ffba16c352c9a9f0ef28"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df8417a1066147c7a728602b86fbd746b87ddaf1995d2c3c15706c8f7e1ce14e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d385e28294244b9df95178e020fb3e8d2633d95175ec4fafece2c0f63275644d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "447617ae169adea3b9092e466cdb383df7e6dac0beef66036a44f0989b37d400"
+    sha256 cellar: :any_skip_relocation, ventura:        "8524a278943b3a44b11e70cf82facb11d32f32483627de2dac94cebeb4f00748"
+    sha256 cellar: :any_skip_relocation, monterey:       "07166530d9015f13113bbe8da953f011e18df414914d87e7a7299f8b2f0a88de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1723aa66a1ad9cc8c6d711ccc90c6efcf7cd7a09d4ca2f9bc03f96619550b422"
   end
 
   uses_from_macos "ncurses"
@@ -37,6 +38,10 @@ class Cmake < Formula
   # The `with-qt` GUI option was removed due to circular dependencies if
   # CMake is built with Qt support and Qt is built with MySQL support as MySQL uses CMake.
   # For the GUI application please instead use `brew install --cask cmake`.
+
+  # Upstream patch to fix regression in LLVM build. Remove in next version.
+  # https:gitlab.kitware.comcmakecmake-issues25883
+  patch :DATA
 
   def install
     args = %W[
@@ -79,3 +84,39 @@ class Cmake < Formula
     refute_path_exists man
   end
 end
+__END__
+diff --git aSourcecmGlobalGenerator.cxx bSourcecmGlobalGenerator.cxx
+index 185bff985fde40fe8e1bd08573b84e76c24f4a1a..1606eec57bb612c5db30fa284777b52ac948e9be 100644
+--- aSourcecmGlobalGenerator.cxx
++++ bSourcecmGlobalGenerator.cxx
+@@ -28,6 +28,7 @@
+ #include "cm_codecvt_Encoding.hxx"
+ 
+ #include "cmAlgorithms.h"
++#include "cmCMakePath.h"
+ #include "cmCPackPropertiesGenerator.h"
+ #include "cmComputeTargetDepends.h"
+ #include "cmCryptoHash.h"
+@@ -270,17 +271,14 @@ void cmGlobalGenerator::ResolveLanguageCompiler(const std::string& lang,
+ 
+   std::string changeVars;
+   if (cname && !optional) {
+-    std::string cnameString;
++    cmCMakePath cachedPath;
+     if (!cmSystemTools::FileIsFullPath(*cname)) {
+-      cnameString = cmSystemTools::FindProgram(*cname);
++      cachedPath = cmSystemTools::FindProgram(*cname);
+     } else {
+-      cnameString = *cname;
++      cachedPath = *cname;
+     }
+-    std::string pathString = path;
+-     get rid of potentially multiple slashes:
+-    cmSystemTools::ConvertToUnixSlashes(cnameString);
+-    cmSystemTools::ConvertToUnixSlashes(pathString);
+-    if (cnameString != pathString) {
++    cmCMakePath foundPath = path;
++    if (foundPath.Normal() != cachedPath.Normal()) {
+       cmValue cvars = this->GetCMakeInstance()->GetState()->GetGlobalProperty(
+         "__CMAKE_DELETE_CACHE_CHANGE_VARS_");
+       if (cvars) {

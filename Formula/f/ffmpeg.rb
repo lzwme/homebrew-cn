@@ -1,12 +1,11 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-6.1.1.tar.xz"
-  sha256 "8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968"
+  url "https:ffmpeg.orgreleasesffmpeg-7.0.tar.xz"
+  sha256 "4426a94dd2c814945456600c8adfc402bee65ec14a70e8c531ec9a2cd651da7b"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
-  revision 7
   head "https:github.comFFmpegFFmpeg.git", branch: "master"
 
   livecheck do
@@ -15,13 +14,13 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "973e435d6fc2e2b45da23221e656edd544eaf50be45140aa260a495f87b97e40"
-    sha256 arm64_ventura:  "f0565860b29b18ce59068a726bb48d240f85ca80d9c38026e1d636394a5cb36a"
-    sha256 arm64_monterey: "4a93890954c0a9ca2e23e0af60fb71a0b9407a459b99f9ac21708f1a8305e0d6"
-    sha256 sonoma:         "39344b91b4730ad5a4660bc48f647a7148bc83bd14912550b1501e4a97b2cc45"
-    sha256 ventura:        "38824d1b0703ba9969b4357c83cb6585248394807aef5615cb12993144dc95c8"
-    sha256 monterey:       "f03f5ceb30bcaf74fa045988ab237867855705eab01cc8d4a11ba48268398424"
-    sha256 x86_64_linux:   "509cfdd22223985f59fc5ac441535e3dc1b0a759c116b9abf51e79d1429b4421"
+    sha256 arm64_sonoma:   "fb8289ef012377cd191d7d5b093a7d39ff64f274b65a8d617fb9236c67ac4606"
+    sha256 arm64_ventura:  "e2728e9022b69e157f23c0a3c6c0503f331804cc850c8a0fddc854aa73c2a8be"
+    sha256 arm64_monterey: "10f0f355d1bf951ed02a2f4c859d03990782e5fc8a67bbbf9b088a96358927d7"
+    sha256 sonoma:         "a7adc0436abd89ef26f4b3e3d7458b10763f790ee1c23d51990afe29c7a5779c"
+    sha256 ventura:        "d94ec203296299452498848f2a98b914b50ae0d6f3b016368eb7ee87b2432c4e"
+    sha256 monterey:       "3498bb74528c67e426e5c701ff08bd1673ae26b4eb661682ce32226c8bf43b23"
+    sha256 x86_64_linux:   "11b251995e8bfd853bc4dfea66bdef57e5dbb85cd2b6c9cdcb762c3e73c0d041"
   end
 
   depends_on "pkg-config" => :build
@@ -154,10 +153,8 @@ class Ffmpeg < Formula
 
     # Build and install additional FFmpeg tools
     system "make", "alltools"
-    bin.install Dir["tools*"].select { |f| File.executable? f }
-
-    # Fix for Non-executables that were installed to bin
-    mv bin"python", pkgshare"python", force: true
+    bin.install (buildpath"tools").children.select { |f| f.file? && f.executable? }
+    pkgshare.install buildpath"toolspython"
   end
 
   test do

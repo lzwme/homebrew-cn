@@ -1,20 +1,19 @@
 class Vfox < Formula
   desc "Version manager with support for Java, Node.js, Flutter, .NET & more"
   homepage "https:vfox.lhan.me"
-  url "https:github.comversion-foxvfoxarchiverefstagsv0.3.1.tar.gz"
-  sha256 "789cae4218a46ff1aeadf22b94c0b8ecd394088f0d3440e7c58293d4e53219b9"
+  url "https:github.comversion-foxvfoxarchiverefstagsv0.3.2.tar.gz"
+  sha256 "509f07f2c2ee3bdc18f9745bc05856b06f4f7b5a0200c3c0758f2a86a6ab1745"
   license "Apache-2.0"
   head "https:github.comversion-foxvfox.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a9bbfcb5003d4d6992701caab65da3c99d25f5eeeb9fe3fb48c4365f5685acc5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2b4aed13309d4a862d8410665aebfd50b618470ec5938a4795f0fe09fdeb5f1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb07929cf42d07055eddf14343721d5f3d6a461ca29567958b00d8a31c13c167"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ec7ab599914dd15f0a39f37ae3b89b82d6ca2f6ec7b7a5845bd5f70f9f729ac7"
-    sha256 cellar: :any_skip_relocation, ventura:        "5a1165547cb7e708b491fdf21f9c5dcb47037b78e0192923262f2ddc75c6b819"
-    sha256 cellar: :any_skip_relocation, monterey:       "285afeef7d8176ee24cb8aefa2e4408195eeb432408cde8565fb002f18814425"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5605c29fb2d04e3af5e38ed2d887f3a627909126d8b0edfeb17c91b094c14375"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c116aa014c96b1a4e448a97570b9a17d7ef951d7406246b757c67844bd35595e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eed90b382975f02a8f0b2847f1b6a16b4017116c779e7d57c5b5e2ad01c862ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0822989fa5e2df3eb3fd12f022f595a664ecf1a3d86b703e3ef0e342d541408"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d8e46985c900b1bc59c38c23726e00ba1d8b9ef992e6ee54cd3a3029121685d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "caf77ef0dcc435452a5800ca392a9b923192239cc62e4540be595a8fe3ab138a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f76d55747a75a252a5a2cbf94813a52b985ca5d166561932da46ff2f153b08fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae67afd9ac2166d7d3996aae0819d20bf9dd06f6445fcab6fcebf8d74e154bf"
   end
 
   depends_on "go" => :build
