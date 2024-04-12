@@ -3221,6 +3221,7 @@ Homebrew-homebrew-core/Formula/l/log4cxx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/log4shib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/logcheck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/logcli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/logdy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/logrotate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/logstalgia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/logstash.rb, Homebrew/homebrew-core, 1
@@ -4714,6 +4715,7 @@ Homebrew-homebrew-core/Formula/p/pari.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/parliament.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parquet-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parrot.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/parsedmarc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/partio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass-git-helper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass-import.rb, Homebrew/homebrew-core, 1
@@ -11394,6 +11396,7 @@ Homebrew-homebrew-cask/Casks/y/yam-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-cloud-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-disk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-music-unofficial.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/y/yandex-music.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yattee.rb, Homebrew/homebrew-cask, 1

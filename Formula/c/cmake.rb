@@ -1,10 +1,10 @@
 class Cmake < Formula
   desc "Cross-platform make"
   homepage "https:www.cmake.org"
-  url "https:github.comKitwareCMakereleasesdownloadv3.29.1cmake-3.29.1.tar.gz"
-  mirror "http:fresh-center.netlinuxmisccmake-3.29.1.tar.gz"
-  mirror "http:fresh-center.netlinuxmisclegacycmake-3.29.1.tar.gz"
-  sha256 "7fb02e8f57b62b39aa6b4cf71e820148ba1a23724888494735021e32ab0eefcc"
+  url "https:github.comKitwareCMakereleasesdownloadv3.29.2cmake-3.29.2.tar.gz"
+  mirror "http:fresh-center.netlinuxmisccmake-3.29.2.tar.gz"
+  mirror "http:fresh-center.netlinuxmisclegacycmake-3.29.2.tar.gz"
+  sha256 "36db4b6926aab741ba6e4b2ea2d99c9193222132308b4dc824d4123cb730352e"
   license "BSD-3-Clause"
   head "https:gitlab.kitware.comcmakecmake.git", branch: "master"
 
@@ -17,14 +17,13 @@ class Cmake < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8d5c71bce53c78741564dce4fec1292039cd5a19d13ffba16c352c9a9f0ef28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df8417a1066147c7a728602b86fbd746b87ddaf1995d2c3c15706c8f7e1ce14e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d385e28294244b9df95178e020fb3e8d2633d95175ec4fafece2c0f63275644d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "447617ae169adea3b9092e466cdb383df7e6dac0beef66036a44f0989b37d400"
-    sha256 cellar: :any_skip_relocation, ventura:        "8524a278943b3a44b11e70cf82facb11d32f32483627de2dac94cebeb4f00748"
-    sha256 cellar: :any_skip_relocation, monterey:       "07166530d9015f13113bbe8da953f011e18df414914d87e7a7299f8b2f0a88de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1723aa66a1ad9cc8c6d711ccc90c6efcf7cd7a09d4ca2f9bc03f96619550b422"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af3a67e244d5d201d0fcca342ac274bd518bf5101056a4a18897e46770bc7979"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "149abab22ca4f0473717fa6e019c816b26377be1974c55ab96b9b7db68789105"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c4a6eca08be0bebaa8a54c272ed8ec406d7e27adf7371e899a8032c860d3edc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4489c01846145cadb0547f8c75b7dfdbe83ea8a6d528c07df2a1650c9a1b8897"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3e0af8039fbea6af3c029a60c04f24ddb67d56fc9cd38ed6c4b84eabc4db197"
+    sha256 cellar: :any_skip_relocation, monterey:       "634661b000aa8e9a788742e09eb63b6a61bc9a973c1cd2704e8497c616377a54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c93280d3833fd1817459ae3f746ce7650bb0874ea21dcf412a82b40380d15917"
   end
 
   uses_from_macos "ncurses"
@@ -38,10 +37,6 @@ class Cmake < Formula
   # The `with-qt` GUI option was removed due to circular dependencies if
   # CMake is built with Qt support and Qt is built with MySQL support as MySQL uses CMake.
   # For the GUI application please instead use `brew install --cask cmake`.
-
-  # Upstream patch to fix regression in LLVM build. Remove in next version.
-  # https:gitlab.kitware.comcmakecmake-issues25883
-  patch :DATA
 
   def install
     args = %W[
@@ -84,39 +79,3 @@ class Cmake < Formula
     refute_path_exists man
   end
 end
-__END__
-diff --git aSourcecmGlobalGenerator.cxx bSourcecmGlobalGenerator.cxx
-index 185bff985fde40fe8e1bd08573b84e76c24f4a1a..1606eec57bb612c5db30fa284777b52ac948e9be 100644
---- aSourcecmGlobalGenerator.cxx
-+++ bSourcecmGlobalGenerator.cxx
-@@ -28,6 +28,7 @@
- #include "cm_codecvt_Encoding.hxx"
- 
- #include "cmAlgorithms.h"
-+#include "cmCMakePath.h"
- #include "cmCPackPropertiesGenerator.h"
- #include "cmComputeTargetDepends.h"
- #include "cmCryptoHash.h"
-@@ -270,17 +271,14 @@ void cmGlobalGenerator::ResolveLanguageCompiler(const std::string& lang,
- 
-   std::string changeVars;
-   if (cname && !optional) {
--    std::string cnameString;
-+    cmCMakePath cachedPath;
-     if (!cmSystemTools::FileIsFullPath(*cname)) {
--      cnameString = cmSystemTools::FindProgram(*cname);
-+      cachedPath = cmSystemTools::FindProgram(*cname);
-     } else {
--      cnameString = *cname;
-+      cachedPath = *cname;
-     }
--    std::string pathString = path;
--     get rid of potentially multiple slashes:
--    cmSystemTools::ConvertToUnixSlashes(cnameString);
--    cmSystemTools::ConvertToUnixSlashes(pathString);
--    if (cnameString != pathString) {
-+    cmCMakePath foundPath = path;
-+    if (foundPath.Normal() != cachedPath.Normal()) {
-       cmValue cvars = this->GetCMakeInstance()->GetState()->GetGlobalProperty(
-         "__CMAKE_DELETE_CACHE_CHANGE_VARS_");
-       if (cvars) {

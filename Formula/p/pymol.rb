@@ -1,5 +1,6 @@
 class Pymol < Formula
   include Language::Python::Virtualenv
+
   desc "Molecular visualization system"
   homepage "https:pymol.org"
   url "https:github.comschrodingerpymol-open-sourcearchiverefstagsv3.0.0.tar.gz"
@@ -8,13 +9,14 @@ class Pymol < Formula
   head "https:github.comschrodingerpymol-open-source.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7e18ee8f5f5310556143fd5b093b80538b37b337c560396daf0ccc682f064cf8"
-    sha256 cellar: :any,                 arm64_ventura:  "fba9d3492af06c5ec91d4f2aa778425aed56659310ea14615bcd3053eb002cbc"
-    sha256 cellar: :any,                 arm64_monterey: "b76f0d1ac201b7363fd2560c1191f79331d318692884fd51b338fc936108d859"
-    sha256 cellar: :any,                 sonoma:         "7296fcbf89c9504725d3f5198b3d067d2451a4630f1f49cf12a92f1431d1c6fc"
-    sha256 cellar: :any,                 ventura:        "9c30477040def3bdcdd10b7debcdd4f163242562d6afcb00de78783c88e84cfb"
-    sha256 cellar: :any,                 monterey:       "7348bb8c03502268d926401aa61f32a217bbe2910dc890ecc5c682ef743c2670"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ffbb1a42540070463982069ebf3516f109ca9c22a850939dd7abd7d01dd82ee"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "a7d5ce7aa4499503bc07f0289fdd81cb324d700cafd4eb0e7e9cd0c772e38346"
+    sha256 cellar: :any,                 arm64_ventura:  "06f74d35634668cfc8b10d9e9fb523ba24694280405ff08a52b8121c8e53015c"
+    sha256 cellar: :any,                 arm64_monterey: "7b464dd70573ed1ac38c45784ad7813ac78c0ad83d48c10178725fe7d94f7110"
+    sha256 cellar: :any,                 sonoma:         "f0e26bd61afef9e876b6e49a4096348e25865712d7a1a633f78c3bb3688aa11c"
+    sha256 cellar: :any,                 ventura:        "67dc5f053f3cc16ede22371629fe7bae3a91651497f525f00439480ca1eaee40"
+    sha256 cellar: :any,                 monterey:       "7a294c4309570b5b4be11df9ed830478867ab3964eedae04fe21e858c6a62918"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23b1b25827544632d7ec105e2e901b8ed9bd0a99e7b679691f292ceaa1980a51"
   end
 
   depends_on "cmake" => :build
@@ -60,44 +62,26 @@ class Pymol < Formula
   end
 
   def install
-    site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefixsite_packages
-
     resource("mmtf-cpp").stage do
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath"mmtf")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
-    # install other resources
-    resources.each do |r|
-      next if r.name == "mmtf-cpp"
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resources.reject { |r| r.name == "mmtf-cpp" }
 
-      r.stage do
-        system python3, *Language::Python.setup_install_args(libexec, python3)
-      end
-    end
+    site_packages = Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefixsite_packages
+    ENV.append_path "PREFIX_PATH", buildpath"mmtf"
+    ENV.append_path "PREFIX_PATH", Formula["freetype"].opt_prefix
+    ENV.append_path "PREFIX_PATH", Formula["libxml2"].opt_prefix if OS.linux?
+    ENV["PIP_CONFIG_SETTINGS"] = "--build-option=--glut --use-msgpackc=c++11"
+    # setup.py incorrectly handles --install-lib='' set by bdist_wheel
+    inreplace "setup.py", "self.install_libbase", "'#{venv.site_packages}'"
+    venv.pip_install_and_link buildpath
 
-    if OS.linux?
-      # Fixes "libxmlxmlwriter.h not found" on Linux
-      ENV.append "LDFLAGS", "-L#{Formula["libxml2"].opt_lib}"
-      ENV.append "CPPFLAGS", "-I#{Formula["libxml2"].opt_include}libxml2"
-    end
-    # CPPFLAGS freetype2 required.
-    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}freetype2"
-    # Point to vendored mmtf headers.
-    ENV.append "CPPFLAGS", "-I#{buildpath}mmtfinclude"
-
-    args = %W[
-      --install-scripts=#{libexec}bin
-      --install-lib=#{libexecsite_packages}
-      --glut
-      --use-msgpackc=c++11
-    ]
-
-    system python3, "setup.py", "install", *args
-    (prefixsite_packages"homebrew-pymol.pth").write libexecsite_packages
-    bin.install libexec"binpymol"
+    (prefixsite_packages"homebrew-pymol.pth").write venv.site_packages
   end
 
   def caveats

@@ -1,18 +1,18 @@
 class Libsoundio < Formula
   desc "Cross-platform audio input and output"
   homepage "http:libsound.io"
-  url "https:github.comandrewrklibsoundioarchiverefstags2.0.1-5.tar.gz"
-  sha256 "6454dcdabfea428443cf88402ca0c8b37187d710b12c2758ae55b2f2a416081e"
+  url "https:github.comandrewrklibsoundioarchiverefstags2.0.1-7.tar.gz"
+  sha256 "941f1347dabab02c88ef57e225b04587c3f69824e550e1045e4a9119cd657a4e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b478f5ab4ffbc5fa9abdbc31e76cc588728d73a645a4dbca7eda90d296d79537"
-    sha256 cellar: :any,                 arm64_ventura:  "25ebcbaca3974335cd9530056a1cd1c2305d1ffbe618295844399cb82c34f852"
-    sha256 cellar: :any,                 arm64_monterey: "ddedc1df3c487a6a73dfff4142c8f82f56c15929bbebf94df92577acf7ad08f9"
-    sha256 cellar: :any,                 sonoma:         "b2e0388dc3a26ccfc94a2c682e23f39d0c7b800c81754f49d97da4255027acbd"
-    sha256 cellar: :any,                 ventura:        "581aba45d3632432e4b4aa4db7becbc3abec37b32f3e0bca7e86e6ab8cba74eb"
-    sha256 cellar: :any,                 monterey:       "3588ff7ac7a12f0c0fd1c7cf77727102261520b6fb2517b1ef4a53f4852d3327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93f53af40fe36e4584d615a325739a5b48406f2f0778f5ff056cc6374818daa8"
+    sha256 cellar: :any,                 arm64_sonoma:   "74d5dc6d43cb2ef587a861a8b784ec6134c86f73149645c653b5542c3a0941b6"
+    sha256 cellar: :any,                 arm64_ventura:  "700fd8255a363e2e28aa5b801c4e3218bab3a78f0c37f16dfa60f0e2337146a1"
+    sha256 cellar: :any,                 arm64_monterey: "9726d67b4c9b83077d508a64067df3eb96f87dd731a3cb08395a68dbb2234d88"
+    sha256 cellar: :any,                 sonoma:         "fd982bcdc2ab3d9ec3e0a714295a41d1568a51a6f050d01314bbb9822505549a"
+    sha256 cellar: :any,                 ventura:        "d7edd4161e6b2ce4eb239cacd3264a23aa8c9a6cd89683f0a6bd96b757120672"
+    sha256 cellar: :any,                 monterey:       "997f4179c3fbde9beb699106367d0c944d3ddbb9fbd5c4744cb31e6f7f1ba72b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e1b9e90eb51ce8918bf817febf0bf785da0941cb793a430e8299492bdaafa4d"
   end
 
   depends_on "cmake" => :build
