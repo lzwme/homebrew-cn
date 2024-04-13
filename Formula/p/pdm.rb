@@ -3,19 +3,19 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https:pdm.fming.dev"
-  url "https:files.pythonhosted.orgpackagesab6ca487b58ee76d2139dabe2832db1ce3eebba728808dae1b6dcff5b2669b34pdm-2.13.3.tar.gz"
-  sha256 "92716a25ec2663b867efc9aa00010ace91a201d21548651f35c03cc419b266dd"
+  url "https:files.pythonhosted.orgpackages18df3c775881f4c0195986581a7af29b5d5dda3e830438b542c6d556d80899f9pdm-2.14.0.tar.gz"
+  sha256 "7ae6c4b5518085a703e0824ab10cbc3b7246b599ef07b8c4dcb2af1e42859190"
   license "MIT"
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cafcb378f560dfe1ec9f7ed35b79b35b5305f75f1196a3fb92af81b8871c0d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f9e212886391f2374caeab676b2f492e04997b93f812c16b1c0e54063b9d192"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da523883e2fae93263c9e0fc22aa39d51212590a8f2d5eee6cace1f2e8a4ff72"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c1b81fe97193016df17a8b9370f6fa9fe72e2fc106eb3fa7a4a40ada74835a20"
-    sha256 cellar: :any_skip_relocation, ventura:        "bdbb5bb0566b74517176fd9fec70d56b522e5e43d23d6be503be7e39af8dafbe"
-    sha256 cellar: :any_skip_relocation, monterey:       "4da1c9a8a113f50c0367b82895cab16810529270dfb022da275c3f4bc9356480"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fc02eb75998338d43565d58407b83eeecbb186bc6b456a88214d27d4ceb2125"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bbbd0f6794516b70a5f5515bf22a9df2e4ea98f45d70539863f56fbad12b4815"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a4e27a100ff1033ffdcb7fe410059d206a234489c1b2032cc331bb1c8f5e7ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3501757801de3536b40e46d46e906e617c52e4d2f83267d86e4d28cc2173ff3e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2068353f8d9692fd2e0b34f6be45c42ff1e6ec8f9356148554a75e328257bdd3"
+    sha256 cellar: :any_skip_relocation, ventura:        "36dff7759df0e59db78838ccf9f1897b36bc75084c6b21ce3e85a2dd9b482fd6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c2e8e17d34f0baddf47aeb89f656bd012c786bfa5527aaff3f6baebc03b2639"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1358bf589886f64af96c48ecf41fb36739682579aed92655e8dace8aadf4cc56"
   end
 
   depends_on "certifi"
@@ -42,8 +42,8 @@ class Pdm < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackagesdb973f028f216da17ab0500550a6bb0f26bf39b07848348f63cce44b89829af9filelock-3.13.3.tar.gz"
-    sha256 "a79895a25bbefdf55d1a2a0a80968f7dbb28edcd6d4234a0afb3f37ecde4b546"
+    url "https:files.pythonhosted.orgpackages38ff877f1dbe369a2b9920e2ada3c9ab81cf6fe8fa2dce45f40cad510ef2df62filelock-3.13.4.tar.gz"
+    sha256 "d13f466618bfde72bd2c18255e269f72542c6e70e7bac83a0232d6b1cc5c8cf4"
   end
 
   resource "findpython" do
@@ -72,8 +72,8 @@ class Pdm < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "installer" do

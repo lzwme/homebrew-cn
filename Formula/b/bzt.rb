@@ -6,23 +6,20 @@ class Bzt < Formula
   url "https:files.pythonhosted.orgpackages92a60aba1c89418050fb8bd5e1217897ef533321e874bd4d87ed414a2355f218bzt-1.16.29.tar.gz"
   sha256 "b1666800901a70327c9788ae4b20c43fce90ca31aa182577a5bbee71d37d3d7c"
   license "Apache-2.0"
+  revision 1
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "bb7eefa3544a3015f7e8d647be60cb6a44a46a22c465fbf298db21232ea3b5f1"
-    sha256 cellar: :any,                 arm64_ventura:  "83922a32533be605f2c0cfda73b9dcae20297ed4f8a77a35b61ee7ca4e43fb99"
-    sha256 cellar: :any,                 arm64_monterey: "82de9c0251abc111a1b2a3e6d0e67c9e5febdd1300d637a65a1ae9b3ed2d8570"
-    sha256 cellar: :any,                 sonoma:         "1aeac5c5218d99db495b63728bfc65e81299202c27cc4749f70bfe4108b65209"
-    sha256 cellar: :any,                 ventura:        "c48c33f60899a990dbd15558d83636894669d43a4e3c354cebf402756be78165"
-    sha256 cellar: :any,                 monterey:       "33326706a219636463094d5e2dea904cecfe415720d20a83c8fb8065da89db35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ba44eee1e7c14a429956d519cfbeb67c56d4117871278fa833cc302e97179df"
+    sha256 cellar: :any,                 arm64_sonoma:   "ac14708af9fc549c75f64b907d824873f91756b59b2481d275516a7dbaa3c2d2"
+    sha256 cellar: :any,                 arm64_ventura:  "09b1d85d076c8369376fc0d83d35d66096d859493877c22c0fc43a0a08b25396"
+    sha256 cellar: :any,                 arm64_monterey: "979e4aef40d87c0054157237043312b9ca814cf52a8ad4d85d3a728889846ead"
+    sha256 cellar: :any,                 sonoma:         "3c4e793440977fe73932257d10e3c214040404de9e7ca968205eae6fd19e2bbb"
+    sha256 cellar: :any,                 ventura:        "f3f24049d44ac1c18df68bbf91d58ec34e78727853dd843e705c993f9f0605f4"
+    sha256 cellar: :any,                 monterey:       "51802134240459d546dd46f198b79eea2251b2c30269f7c77b63b1b41a13b725"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2a19313afc627ae9f9d20cb1f0d36323d100856e8e012cefe1cc2184f59c7ee"
   end
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "numpy"
@@ -37,8 +34,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages18931f005bbe044471a0444a82cdd7356f5120b9cf94fe2c50c0cdbf28f1258baiohttp-3.9.3.tar.gz"
-    sha256 "90842933e5d1ff760fae6caca4b2b3edba53ba8f4b71e95dacf2818a2aca06f7"
+    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
+    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
   end
 
   resource "aiosignal" do
@@ -77,8 +74,8 @@ class Bzt < Formula
   end
 
   resource "cython" do
-    url "https:files.pythonhosted.orgpackages0e17c5b026cea7a634ee3b8950a7be16aaa49deeb3b9824ba5e81c13ac26f3c4Cython-3.0.9.tar.gz"
-    sha256 "a2d354f059d1f055d34cfaa62c5b68bc78ac2ceab6407148d47fb508cf3ba4f3"
+    url "https:files.pythonhosted.orgpackagesd5f72fdd9205a2eedee7d9b0abbf15944a1151eb943001dbdc5233b1d1cfc34eCython-3.0.10.tar.gz"
+    sha256 "dcc96739331fb854dcf503f94607576cfe8488066c61ca50dfd55836f132de99"
   end
 
   resource "dill" do
@@ -112,8 +109,8 @@ class Bzt < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "influxdb" do
@@ -122,8 +119,8 @@ class Bzt < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
+    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
   end
 
   resource "molotov" do
@@ -172,8 +169,8 @@ class Bzt < Formula
   end
 
   resource "python-socketio" do
-    url "https:files.pythonhosted.orgpackages89d9ceffa05f1cd72717c1677707debcb04654ad99844d87375ed14301536f27python-socketio-5.11.1.tar.gz"
-    sha256 "bbcbd758ed8c183775cb2853ba001361e2fa018babf5cbe11a5b77e91c2ec2a2"
+    url "https:files.pythonhosted.orgpackagesa855f24a0e5e29c9e344eb04a5d2483d756196b04ab1de3988a1242b9a13d1b6python-socketio-5.11.2.tar.gz"
+    sha256 "ae6a1de5c5209ca859dc574dccc8931c4be17ee003e74ce3b8d1306162bb4a37"
   end
 
   resource "pytz" do
@@ -192,8 +189,8 @@ class Bzt < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackages117c36511ff0e2e5f6cce4e854dfc1974a1519929214a38a165322f38dd01a19rapidfuzz-3.6.2.tar.gz"
-    sha256 "cf911e792ab0c431694c9bf2648afabfd92099103f2e31492893e078ddca5e1a"
+    url "https:files.pythonhosted.orgpackages2a8bc5b482bd99c7b4b8e6db31b707333d85f33f0c7eebb72724a1e932f3b6b1rapidfuzz-3.8.1.tar.gz"
+    sha256 "a357aae6791118011ad3ab4f2a4aa7bd7a487e5f9981b390e9f3c2c5137ecadf"
   end
 
   resource "requests" do
@@ -257,7 +254,18 @@ class Bzt < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.12")
+
+    # Switch build-system to poetry-core to avoid rust dependency on Linux.
+    # Remove when released: https:github.commatthewdeanmartinterminaltablespull1
+    resource("terminaltables").stage do
+      inreplace "pyproject.toml", 'requires = ["poetry>=0.12"]', 'requires = ["poetry-core>=1.0"]'
+      inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
+      venv.pip_install_and_link Pathname.pwd
+    end
+
+    venv.pip_install resources.reject { |r| r.name == "terminaltables" }
+    venv.pip_install_and_link buildpath
   end
 
   test do

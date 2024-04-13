@@ -3156,7 +3156,7 @@ Homebrew-homebrew-core/Formula/l/lifelines.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lightgbm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lighthouse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lightning.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
@@ -4483,6 +4483,7 @@ Homebrew-homebrew-core/Formula/o/oha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohcount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohdear-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oil.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/oj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oksh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/okta-aws-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/okta-awscli.rb, Homebrew/homebrew-core, 1
@@ -6068,6 +6069,7 @@ Homebrew-homebrew-core/Formula/s/synergy-core.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/synfig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/synscan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/syntaxerl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sysaidmin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sysbench.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sysdig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/syslog-ng.rb, Homebrew/homebrew-core, 1
@@ -6442,6 +6444,7 @@ Homebrew-homebrew-core/Formula/u/unbound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uncover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uncrustify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ungit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/uni-algo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni2ascii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unibilium.rb, Homebrew/homebrew-core, 1

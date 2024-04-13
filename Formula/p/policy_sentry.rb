@@ -6,16 +6,17 @@ class PolicySentry < Formula
   url "https:files.pythonhosted.orgpackages7e7a7fbb394f21a3c43edcb7d04382b6d93567900b4c8ea4b224b284656115edpolicy_sentry-0.12.11.tar.gz"
   sha256 "8db1ea570e835d87c57ef51bf6f2372a8b78d463549a5f9c65cb5f8103cd1ed8"
   license "MIT"
+  revision 1
   head "https:github.comsalesforcepolicy_sentry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "21f631042aab62186f61cada3313a6674ccba735f7db27030ab42f0bf445a8bd"
-    sha256 cellar: :any,                 arm64_ventura:  "70f3b1d669958f68611b7c95834d596e807cdfe215aafe6b3189f57bcb3be5b9"
-    sha256 cellar: :any,                 arm64_monterey: "bbde5aa9f1a69bfa44b225f9a79aeb2354325e193e8160f297481d59c3645f2a"
-    sha256 cellar: :any,                 sonoma:         "36622d4dae7c82de5a7c3c43780a3434811ff485e6142508ef8c53810f4c2f22"
-    sha256 cellar: :any,                 ventura:        "7abf24ceffe0ce81f2626324e8fb3bf9d7514b7bcee59b8e199756bde58d8b1c"
-    sha256 cellar: :any,                 monterey:       "9f8921afed39abac34ee45b96e588af75755c8b0518b209d4df6aa043dff6046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68a54428d5cffcb2600c6e126c6271c5a9e98f93f6a0fb63fdad2cb20c717eb7"
+    sha256 cellar: :any,                 arm64_sonoma:   "63b3e5358610756c06f41898f22dbeea61e4010b8eedb249e1aa6e92f212b2cb"
+    sha256 cellar: :any,                 arm64_ventura:  "80d0d17a7737da77109e11675afb757586f1610f967607451677cc046c9d7103"
+    sha256 cellar: :any,                 arm64_monterey: "8bc17943d6d99ab3cda87b2001585ca398797a61d4bfcdee8491a30842d9102e"
+    sha256 cellar: :any,                 sonoma:         "f0829a6b97a6015c47579379d152ed0dbb71bf20d2862b1d097ef6f901d290bc"
+    sha256 cellar: :any,                 ventura:        "4e5e515e192395b5ab65f6e56f1a4827b590d1aabc7843357aca10c5ab526449"
+    sha256 cellar: :any,                 monterey:       "6e6c81d59fa0e2e5a0d8e9bf5944773b18e94e05124624808fe12f25bc2185f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cd87f5830e2f9fc973330d6c4b571a9701f89ab94faebaa3c680dfc8c58f249"
   end
 
   depends_on "certifi"
@@ -43,8 +44,8 @@ class PolicySentry < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "pyyaml" do

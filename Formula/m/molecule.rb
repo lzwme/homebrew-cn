@@ -6,15 +6,16 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/dd/a3/032f56c1bec7550bea1650dc5eeb4a2d027e416f93a7a854a35cff29cbfd/molecule-24.2.1.tar.gz"
   sha256 "83522baa9b91560ea986273cab149c39156976e9d61245717226320935ad56e4"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d6f0bcf879c8d39b5edc704acdbc9dc83eb3b7c8d607bf83e1ca708cd26f2be7"
-    sha256 cellar: :any,                 arm64_ventura:  "92c9472238cb791b8da503afff0f7ba26bfef3a9e32d6f44cf14d6cd33aea833"
-    sha256 cellar: :any,                 arm64_monterey: "f49ebac236577adff30925a1e111022fbe528fa9d25d4ddcc2b181ab639c65c5"
-    sha256 cellar: :any,                 sonoma:         "f0c9e0beb775e5a207a352626f12d68544764792f2b0b6482b3aa6483cbce4b0"
-    sha256 cellar: :any,                 ventura:        "4ba32ab7cbf544b1a9516fee7923057f65867edec5c8cd0629c036c24b9d5fe3"
-    sha256 cellar: :any,                 monterey:       "64333110a8ef6941d6fef385b709e4c5dbce5f0b33986268635a399a4321f40a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d574b54daa3e178dec2ca799b991f25edf0b67ca28b8bf27134dc2b6a0198242"
+    sha256 cellar: :any,                 arm64_sonoma:   "918f05f37f7e446e1902aa2415cd2e54253f4e71a3569fd64020531ddcdc8925"
+    sha256 cellar: :any,                 arm64_ventura:  "293c2084b569392330e0a02307684f6316392b072711050d3e2fa2437a58be27"
+    sha256 cellar: :any,                 arm64_monterey: "d5a9feabe2ab75a1da636bbb2231e493a513b4cf31028adc3af16d2341e2c36c"
+    sha256 cellar: :any,                 sonoma:         "27d42bff56ce3ed82e937e520ba2af99e9ebfce04cb426a444f449caa5176549"
+    sha256 cellar: :any,                 ventura:        "59165c3e64c7295a60e008adb34875f5dc2b01d06ad7ac9c6d0c935871b17100"
+    sha256 cellar: :any,                 monterey:       "68938fdaa53742d5a383987947788dffee837135a897b5a6a7ee9a9b357d876e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df471615210f810950843e90d2e2ae14a4b48f809bff05d82fbc6b929abb1bac"
   end
 
   depends_on "rust" => :build
@@ -86,8 +87,8 @@ class Molecule < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "jinja2" do

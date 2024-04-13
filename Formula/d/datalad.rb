@@ -6,15 +6,16 @@ class Datalad < Formula
   url "https:files.pythonhosted.orgpackagesee5143be9521b4942bf5db7e218e8802e747b4aa7fd8a7c7be80580a8e63232bdatalad-1.0.0.tar.gz"
   sha256 "34113a9fdd2f8fa2aa6124a89a2853e83a3604f6b31eeaf5f9161def0da692e7"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08efa3bc9ef069652336c2908dc8cc4fed4cd3a5f9d86f68777f3dc8af200170"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7b6418ae1cb4b9b4cf20a156359a12b489d6005233bc6ddefa5e31af10efe81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1377276049fcf9ea05b01960f0bb3e5d9d31fda4371830758bfbeb2e45815302"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c13bbc3d846aac89abfafdc6ba3160c6cb04cc6d978fa4e202db5c324983424f"
-    sha256 cellar: :any_skip_relocation, ventura:        "123cd634198461008af0f9ebea3a07d3686e59a1ab1e3c37d8922f7f5a014c26"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e7cc19f50fc5104fdcf999257b693977464195a9046711c5028fbf3a7b5e3e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58a0b96c36d17eeb453b71eaba4bcbed90be92fa36fea99c09dfb865c295c87e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "27fad2dc1d9684e75572968a34665f9f6b2961f3fa4f062ce31d7f219e63acc0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c439f2fbf25957b8dbac2b177b11607e3556fbb62233d3c7a1c5b2c30737c7ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5f450676050718875b2ddbc3c2fcdaebf184b3c2b4abce2df02b3eb6827214a1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ea35f60827921e0885dc69bdb12411995d21eaed45ec83506d50f95d9bec711d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f8d1cb5b0a2a3cf1cca56a88b037c07f0562ced2c945fdd2c3b33008dbb07362"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d054cf5bd220f8c63623e9e6aa1a87fe93a56d901e8e1ee6f629ed4785c8d49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4d401bfa08fc504247c680936aeff55ac7d2890c0b68c25fceeafba92ee606d"
   end
 
   depends_on "certifi"
@@ -64,8 +65,8 @@ class Datalad < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "importlib-metadata" do
@@ -91,11 +92,6 @@ class Datalad < Formula
   resource "jaraco-functools" do
     url "https:files.pythonhosted.orgpackages577cfe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afcejaraco.functools-4.0.0.tar.gz"
     sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
-  end
-
-  resource "jeepney" do
-    url "https:files.pythonhosted.orgpackagesd6f4154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdfjeepney-0.8.0.tar.gz"
-    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
   end
 
   resource "keyring" do
@@ -151,11 +147,6 @@ class Datalad < Formula
   resource "requests-toolbelt" do
     url "https:files.pythonhosted.orgpackagesf361d7545dafb7ac2230c70d38d31cbfe4cc64f7144dc41f6e4e4b78ecd9f5bbrequests-toolbelt-1.0.0.tar.gz"
     sha256 "7681a0a3d047012b5bdc0ee37d7f8f07ebe76ab08caeccfc3921ce23c88d5bc6"
-  end
-
-  resource "secretstorage" do
-    url "https:files.pythonhosted.orgpackages53a4f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691SecretStorage-3.3.3.tar.gz"
-    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "tqdm" do

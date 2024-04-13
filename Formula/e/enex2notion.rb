@@ -6,17 +6,16 @@ class Enex2notion < Formula
   url "https:files.pythonhosted.orgpackagesde5cc0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858eenex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "73284a6e52fd4c0cff240708f1a028010462967b2d9a416f360a8f0ccd6c6300"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a93633e279074ac241df98c8d31f7a74fd3bfe053394e23b7353842029475eac"
-    sha256 cellar: :any,                 arm64_monterey: "3e3c796d68af8f761c2d45b524b514dcdd7b04d4fd7f786d4ca9b42c929dc11b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "85c1f41a5b90e831033f32f800ef40d4c324ae182d544e5072326dd234fb89cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "2a4eda0458c44e4d5c0b8e7311ebcc42abac002884a086d40336b33f74c8fd0d"
-    sha256 cellar: :any,                 monterey:       "368e6d6202c328f9d1ab6a4188f3e29bcfc03655cf72f4e1bd4d561b69116228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74d5b37e44becd480b08a7f75da0ad1c71e6dcbcede527f2acf9b3bd1190a7cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f70a8320750c59b92b7164a9917ff716057724d0c74edc2bae26bd3c80d44470"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec20b37539b991a0093c4199bb12dca48e38514aeb361fae5b4e858d4d28570d"
+    sha256 cellar: :any,                 arm64_monterey: "d053cfb15e37bd95811cc9f34d8cd6b72149d09d8f1554b9c76a4c4dfed86125"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c763e0456d2426e8c95273a22d1d66fc4a481ca67b7eb9e1dd936bfbd5512023"
+    sha256 cellar: :any_skip_relocation, ventura:        "f207e46a68a169dc6ea75b4fff24ad9c93cdb23279de48be2fe3c9164c292027"
+    sha256 cellar: :any,                 monterey:       "576972d5f637cb23344ca09c86be4d1c162da6b4ada42341ef2d6406f51427ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29cd100ab830b46608b5c683bb88dacf2afda1f6eb30379c9b82d5e790a0208d"
   end
 
   depends_on "certifi"
@@ -57,8 +56,8 @@ class Enex2notion < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "lxml" do

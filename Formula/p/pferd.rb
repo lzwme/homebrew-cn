@@ -6,23 +6,24 @@ class Pferd < Formula
   url "https:files.pythonhosted.orgpackages463ec59874ab484c5e19fed106c8b37aa29bbe64921bd8f5b88e9b718c3c264bpferd-3.5.1.tar.gz"
   sha256 "adad46fbfad08fbe9a479bb8989393598dc26ec30851d162a97e958509cbf809"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebe724619ee93c55c4f0d366b82ebb664c5cdfcccda6447d62b49c8aebfade5a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da7964b556b8aef167abd011f4e9c427ee3f3d717815b31b243189e134c1c128"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "316e6c1a47b67c5f120c229afd2e48c519d73fdf48138f01d58727dddea82ea9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6f7a6625be83501e1f4ed8e4bbc6a095f319c500a6dbed90444ead0ebd4cee1f"
-    sha256 cellar: :any_skip_relocation, ventura:        "09bde84073df0272b6277b1da2f4943e2e37fed80143e950eab612313152793c"
-    sha256 cellar: :any_skip_relocation, monterey:       "68f75340b4e0d9bacfce87d5cfae4b0abc62fc8266e697da28dda249444ec671"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54d5f929843dff998ca82a8eb566aa47867898ad1e3191f78cf4a0de25d41c90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19dc49b64e11d8bc3a87a11b9e2676ed3f804449c7a6de132e2c95248086eead"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "469117a1bd2d8267dcf17e8d5efaf08af8404fa24b0cdabfc6786b398db64a47"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f406afebe991bd0c197fa20b6fb58d17bf372dbd830590c861caeaaa81f5f82"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2f35332402d9c56a71baab3b53feba48c5a4a28de994ae80d5f689a57fc31b67"
+    sha256 cellar: :any_skip_relocation, ventura:        "cc5b8858f544e63b2cb792535bb6cf19af64444569024271a9a2f1b2d61fd6dd"
+    sha256 cellar: :any_skip_relocation, monterey:       "92c1e7b2d9db2766bc382b63f2c00a904ede2e0cd10a89575188b55c2041c060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "049828f5b882487f8477466b56c76ad627162d4a8133cfb2a6182b7539345c04"
   end
 
   depends_on "certifi"
   depends_on "python@3.12"
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages18931f005bbe044471a0444a82cdd7356f5120b9cf94fe2c50c0cdbf28f1258baiohttp-3.9.3.tar.gz"
-    sha256 "90842933e5d1ff760fae6caca4b2b3edba53ba8f4b71e95dacf2818a2aca06f7"
+    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
+    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
   end
 
   resource "aiosignal" do
@@ -46,8 +47,8 @@ class Pferd < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "jaraco-classes" do

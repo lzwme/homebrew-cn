@@ -18,10 +18,6 @@ class OciCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "256cbd760472ac19d412e786db23b54799216ee9e5455de209af03651b037a84"
   end
 
-  # "pkg-config", "cmake", "rust" are for terminaltables
-  depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libyaml"
@@ -98,7 +94,18 @@ class OciCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.12")
+
+    # Switch build-system to poetry-core to avoid rust dependency on Linux.
+    # Remove when released: https:github.commatthewdeanmartinterminaltablespull1
+    resource("terminaltables").stage do
+      inreplace "pyproject.toml", 'requires = ["poetry>=0.12"]', 'requires = ["poetry-core>=1.0"]'
+      inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
+      venv.pip_install_and_link Pathname.pwd
+    end
+
+    venv.pip_install resources.reject { |r| r.name == "terminaltables" }
+    venv.pip_install_and_link buildpath
   end
 
   test do

@@ -6,15 +6,16 @@ class Dolphie < Formula
   url "https:files.pythonhosted.orgpackages6cf9e89e789917d7c4273c66dc5765179b1c707f7e39c181c54f45e3f9429ef2dolphie-4.3.5.tar.gz"
   sha256 "f711d6b2d3768d0ded3c53bd771caa0551087e25cb721f4e678f34232bad03ce"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e0e559df57bb330a5faf7318f5790f575e6f995fc7b3fd8ba1c69be24c8f9d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e0e559df57bb330a5faf7318f5790f575e6f995fc7b3fd8ba1c69be24c8f9d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e0e559df57bb330a5faf7318f5790f575e6f995fc7b3fd8ba1c69be24c8f9d1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6e0e559df57bb330a5faf7318f5790f575e6f995fc7b3fd8ba1c69be24c8f9d1"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e0e559df57bb330a5faf7318f5790f575e6f995fc7b3fd8ba1c69be24c8f9d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e0e559df57bb330a5faf7318f5790f575e6f995fc7b3fd8ba1c69be24c8f9d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a5614694187f0d047be0391f8afc3adc8aa7c7c4130dcd3bd52a746ab7e6c62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55def1d802456f90f02d86dff66ca719aa1d5347ce017f9a439b6d43b4671258"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55def1d802456f90f02d86dff66ca719aa1d5347ce017f9a439b6d43b4671258"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55def1d802456f90f02d86dff66ca719aa1d5347ce017f9a439b6d43b4671258"
+    sha256 cellar: :any_skip_relocation, sonoma:         "55def1d802456f90f02d86dff66ca719aa1d5347ce017f9a439b6d43b4671258"
+    sha256 cellar: :any_skip_relocation, ventura:        "55def1d802456f90f02d86dff66ca719aa1d5347ce017f9a439b6d43b4671258"
+    sha256 cellar: :any_skip_relocation, monterey:       "55def1d802456f90f02d86dff66ca719aa1d5347ce017f9a439b6d43b4671258"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "793f2396c664dae9b1216efd85eef9c486b5b86b584be638bb1c25d1664a9b06"
   end
 
   depends_on "certifi"
@@ -27,8 +28,8 @@ class Dolphie < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "linkify-it-py" do
@@ -92,8 +93,8 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages4765942a31cfb57d7dd7e29fa0dca959c6c8ee8f9f2a9b3c076adc64d49fc2b9textual-0.56.2.tar.gz"
-    sha256 "5d3efe7266aafc7b5a52ad622a155963fd22ec6043c769ecd7142490a3d9e17e"
+    url "https:files.pythonhosted.orgpackages35302f51da751405bc0fbce8c8dfaf8ee7e9c4941ea28c5c868c2aebfc2748batextual-0.56.4.tar.gz"
+    sha256 "6f86ae5b4fd750bc48881c941e1a86f7a188c24a862122002e3ac38cd288ef47"
   end
 
   resource "textual-autocomplete" do

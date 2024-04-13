@@ -6,15 +6,16 @@ class B2Tools < Formula
   url "https:files.pythonhosted.orgpackages94ee80c20ed1fe24692967e04c097ba066a0eddd2ed4a7145c59d89405a6d3b9b2-3.18.0.tar.gz"
   sha256 "6d9b9223d103553fe348e8c69611e6d5c9ac741bf5dd367438716df3dc5580e5"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "305a4c2fb692637deb290aef5507a00238ff791f521ffdc7cb65d154a09802fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "305a4c2fb692637deb290aef5507a00238ff791f521ffdc7cb65d154a09802fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "305a4c2fb692637deb290aef5507a00238ff791f521ffdc7cb65d154a09802fb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ef2d26ff6f614d9aa65352cb0384c91fe59d6b6ecc3e7590687b6456a4a4b63a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef2d26ff6f614d9aa65352cb0384c91fe59d6b6ecc3e7590687b6456a4a4b63a"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef2d26ff6f614d9aa65352cb0384c91fe59d6b6ecc3e7590687b6456a4a4b63a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea2c2c2b1ef1495b9dac5b9c3dd48eb0e6ffd0a5fa72d78a19bd94e318779687"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11028cbc3c3fea5f8827ec98ad3b46fd946225ff2034b321564d6d58faba036b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11028cbc3c3fea5f8827ec98ad3b46fd946225ff2034b321564d6d58faba036b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "11028cbc3c3fea5f8827ec98ad3b46fd946225ff2034b321564d6d58faba036b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c73453d48f7b4e5780f3e759bac3f0d3bacf042e10ae7e577acc779501351ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c73453d48f7b4e5780f3e759bac3f0d3bacf042e10ae7e577acc779501351ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c73453d48f7b4e5780f3e759bac3f0d3bacf042e10ae7e577acc779501351ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c5616a55a37e00e3077010abaa21a8febe7b2edf9e2c865ef37bf118864a08f"
   end
 
   depends_on "certifi"
@@ -43,13 +44,13 @@ class B2Tools < Formula
   end
 
   resource "docutils" do
-    url "https:files.pythonhosted.orgpackages1f53a5da4f2c5739cf66290fac1431ee52aff6851c7c8ffd8264f13affd7bcdddocutils-0.20.1.tar.gz"
-    sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
+    url "https:files.pythonhosted.orgpackages21ffc495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844cdocutils-0.21.1.tar.gz"
+    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "logfury" do

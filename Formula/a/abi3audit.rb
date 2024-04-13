@@ -6,15 +6,16 @@ class Abi3audit < Formula
   url "https:files.pythonhosted.orgpackages988c987d0c3fbc7e7ce2e1baa336d7cd68c6b0ffbf0237442c4e33175824eefaabi3audit-0.0.10.tar.gz"
   sha256 "a68af492ec3b373bd9329ed05b7bacdecd727a97b1d75921634c35d0e5f48de5"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aa71845ddc7c20c407ee8a741736f06d8f858bf1daba8f27b8041e496c19ce66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa71845ddc7c20c407ee8a741736f06d8f858bf1daba8f27b8041e496c19ce66"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa71845ddc7c20c407ee8a741736f06d8f858bf1daba8f27b8041e496c19ce66"
-    sha256 cellar: :any_skip_relocation, sonoma:         "99b7bf50f5f0ecd1555b00eb6042106e7578dba25243e279cdcc915dccb2c0e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "99b7bf50f5f0ecd1555b00eb6042106e7578dba25243e279cdcc915dccb2c0e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "99b7bf50f5f0ecd1555b00eb6042106e7578dba25243e279cdcc915dccb2c0e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c92668be92fed2c7a665ebb1489844463aaaff3cc6695c977792e793efef457c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9315642a19eaf8e85bad5074e460f5e1c3712be81ee4cc82a258fe7519e8fd9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9315642a19eaf8e85bad5074e460f5e1c3712be81ee4cc82a258fe7519e8fd9f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9315642a19eaf8e85bad5074e460f5e1c3712be81ee4cc82a258fe7519e8fd9f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0e9e9157e8cb9f1ba7ce50fe38121db48ab459611729b7aa28c7a6226db63789"
+    sha256 cellar: :any_skip_relocation, ventura:        "0e9e9157e8cb9f1ba7ce50fe38121db48ab459611729b7aa28c7a6226db63789"
+    sha256 cellar: :any_skip_relocation, monterey:       "0e9e9157e8cb9f1ba7ce50fe38121db48ab459611729b7aa28c7a6226db63789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "579fa37d98dc14e3c41de5349e665ef665d894654c78bb02bb21ffa2f419f429"
   end
 
   depends_on "cmake" => :build
@@ -26,8 +27,8 @@ class Abi3audit < Formula
   end
 
   resource "abi3info" do
-    url "https:files.pythonhosted.orgpackages058afdbc086c8fda87125f08adb36853e14f6231071d1306f90cbf5cd1a38abbabi3info-2024.3.26.tar.gz"
-    sha256 "6088d6d7920104309ab55877d2b2bfc8ace18c78cc89f9dedd9e92933308551d"
+    url "https:files.pythonhosted.orgpackages82f8303cd7d59d739a8af265a5e6bc4ae7ad8afee80355c858f6ba5bdc6a62c6abi3info-2024.4.10.tar.gz"
+    sha256 "1548775e18952c6434cb050e9ade4a8eb266ab500101982efa376bd14518cc5e"
   end
 
   resource "attrs" do
@@ -51,8 +52,8 @@ class Abi3audit < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "kaitaistruct" do

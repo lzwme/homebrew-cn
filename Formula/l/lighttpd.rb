@@ -1,23 +1,23 @@
 class Lighttpd < Formula
   desc "Small memory footprint, flexible web-server"
-  homepage "https:www.lighttpd.net"
-  url "https:download.lighttpd.netlighttpdreleases-1.4.xlighttpd-1.4.75.tar.xz"
-  sha256 "8b721ca939d312afaa6ef31dcbd6afb5161ed385ac828e6fccd4c5b76be189d6"
+  homepage "https://www.lighttpd.net/"
+  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.76.tar.xz"
+  sha256 "8cbf4296e373cfd0cedfe9d978760b5b05c58fdc4048b4e2bcaf0a61ac8f5011"
   license "BSD-3-Clause"
 
   livecheck do
     url :homepage
-    regex(href=.*?lighttpd[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?lighttpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "faef6711a71611b1b4d329806f562918c01c4aba12937c1cd72f6d0cf6994b63"
-    sha256 arm64_ventura:  "3965819a87645eb03a7e7d63e0559be82176466fa2aecc844f97e97ea230b9d2"
-    sha256 arm64_monterey: "316e88e19ec2fb0429e37b3bba934b24dff6b0e8d9e6ad88729bc11462507584"
-    sha256 sonoma:         "d2f21e5bf0d4b221480188069407c6939727cbfbeb7fb8a607ccf92cf3b507ff"
-    sha256 ventura:        "6bd82f22ff0d37770625844ab2cc10c4e817f76fff443d47506aa9772ad4583e"
-    sha256 monterey:       "e95e5cfeb4729ba1dbc662afc9baf222719f123eeefaa6b73ca752e74e9b4849"
-    sha256 x86_64_linux:   "4588e2ff293427c1c6cf2af07fcd99006957eb09a0bbb89cc311b8176ada25d2"
+    sha256 arm64_sonoma:   "091059b0ac1e2356912caf2fe85f5bb0d88ebde56c43579d28c9a68b5eac1075"
+    sha256 arm64_ventura:  "00fb719b4328a1b7593452f8f6bae234a595ca089492f192bc309bdab055502f"
+    sha256 arm64_monterey: "aa6d7a5fe4662bdbbae1389091aec850c99d47f851dca621a55f9fcf7e5e7844"
+    sha256 sonoma:         "f5604bd4748f47f72e87a7e1192efc40748e1f1d7d271eb555e1bd6444776c75"
+    sha256 ventura:        "685d709d0d522aace4a102e2b28c3c04f2e6a6079de349d6148f999796571a8e"
+    sha256 monterey:       "596921b5fcabab2c21e6b75b54589016755e990cd86728810839b233cb4a830e"
+    sha256 x86_64_linux:   "8aa1c17b796dfc07c3e4d7543abc43af33469b5236aada5531baf3f98f8a66e2"
   end
 
   depends_on "autoconf" => :build
@@ -33,16 +33,7 @@ class Lighttpd < Formula
   # default max. file descriptors; this option will be ignored if the server is not started as root
   MAX_FDS = 512
 
-  # notified upstream in the related commit, lighttpdlighttpd1.4@4e0af6d
-  resource "queue.h" do
-    url "https:raw.githubusercontent.comlighttpdlighttpd1.44e0af6d8eba32fd1526a38e2b3db5fe76dab9912srccompatsysqueue.h"
-    sha256 "8b284031772b1ba2035d9b05b24f2cb9b23e7bd324bcccb5e3fcc57d34aafa48"
-  end
-
   def install
-    # patch to add the missing queue.h file
-    resource("queue.h").stage buildpath"srccompatsys"
-
     args = %W[
       --disable-dependency-tracking
       --disable-silent-rules
@@ -58,55 +49,55 @@ class Lighttpd < Formula
 
     # autogen must be run, otherwise prebuilt configure may complain
     # about a version mismatch between included automake and Homebrew's
-    system ".autogen.sh"
-    system ".configure", *args
+    system "./autogen.sh"
+    system "./configure", *args
     system "make", "install"
 
-    unless File.exist? etc"lighttpd"
-      (etc"lighttpd").install "docconfiglighttpd.conf", "docconfigmodules.conf"
-      (etc"lighttpdconf.d").install Dir["docconfigconf.d*.conf"]
-      inreplace etc + "lighttpdlighttpd.conf" do |s|
-        s.sub!(^var\.log_root\s*=\s*".+"$, "var.log_root    = \"#{var}loglighttpd\"")
-        s.sub!(^var\.server_root\s*=\s*".+"$, "var.server_root = \"#{var}www\"")
-        s.sub!(^var\.state_dir\s*=\s*".+"$, "var.state_dir   = \"#{var}lighttpd\"")
-        s.sub!(^var\.home_dir\s*=\s*".+"$, "var.home_dir    = \"#{var}lighttpd\"")
-        s.sub!(^var\.conf_dir\s*=\s*".+"$, "var.conf_dir    = \"#{etc}lighttpd\"")
-        s.sub!(^server\.port\s*=\s*80$, "server.port = 8080")
-        s.sub!(%r{^server\.document-root\s*=\s*server_root \+ "htdocs"$}, "server.document-root = server_root")
+    unless File.exist? etc/"lighttpd"
+      (etc/"lighttpd").install "doc/config/lighttpd.conf", "doc/config/modules.conf"
+      (etc/"lighttpd/conf.d/").install Dir["doc/config/conf.d/*.conf"]
+      inreplace etc + "lighttpd/lighttpd.conf" do |s|
+        s.sub!(/^var\.log_root\s*=\s*".+"$/, "var.log_root    = \"#{var}/log/lighttpd\"")
+        s.sub!(/^var\.server_root\s*=\s*".+"$/, "var.server_root = \"#{var}/www\"")
+        s.sub!(/^var\.state_dir\s*=\s*".+"$/, "var.state_dir   = \"#{var}/lighttpd\"")
+        s.sub!(/^var\.home_dir\s*=\s*".+"$/, "var.home_dir    = \"#{var}/lighttpd\"")
+        s.sub!(/^var\.conf_dir\s*=\s*".+"$/, "var.conf_dir    = \"#{etc}/lighttpd\"")
+        s.sub!(/^server\.port\s*=\s*80$/, "server.port = 8080")
+        s.sub!(%r{^server\.document-root\s*=\s*server_root \+ "/htdocs"$}, "server.document-root = server_root")
 
-        s.sub!(^server\.username\s*=\s*".+"$, 'server.username  = "_www"')
-        s.sub!(^server\.groupname\s*=\s*".+"$, 'server.groupname = "_www"')
-        s.sub!(^#server\.network-backend\s*=\s*"sendfile"$, 'server.network-backend = "writev"')
+        s.sub!(/^server\.username\s*=\s*".+"$/, 'server.username  = "_www"')
+        s.sub!(/^server\.groupname\s*=\s*".+"$/, 'server.groupname = "_www"')
+        s.sub!(/^#server\.network-backend\s*=\s*"sendfile"$/, 'server.network-backend = "writev"')
 
-        # "max-connections == max-fds2",
-        # https:redmine.lighttpd.netprojects1wikiServer_max-connectionsDetails
-        s.sub!(^#server\.max-connections = .+$, "server.max-connections = " + (MAX_FDS  2).to_s)
+        # "max-connections == max-fds/2",
+        # https://redmine.lighttpd.net/projects/1/wiki/Server_max-connectionsDetails
+        s.sub!(/^#server\.max-connections = .+$/, "server.max-connections = " + (MAX_FDS / 2).to_s)
       end
     end
 
-    (var"loglighttpd").mkpath
-    (var"wwwhtdocs").mkpath
-    (var"lighttpd").mkpath
+    (var/"log/lighttpd").mkpath
+    (var/"www/htdocs").mkpath
+    (var/"lighttpd").mkpath
   end
 
   def caveats
     <<~EOS
-      Docroot is: #{var}www
+      Docroot is: #{var}/www
 
-      The default port has been set in #{etc}lighttpdlighttpd.conf to 8080 so that
+      The default port has been set in #{etc}/lighttpd/lighttpd.conf to 8080 so that
       lighttpd can run without sudo.
     EOS
   end
 
   service do
-    run [opt_bin"lighttpd", "-D", "-f", etc"lighttpdlighttpd.conf"]
+    run [opt_bin/"lighttpd", "-D", "-f", etc/"lighttpd/lighttpd.conf"]
     keep_alive false
-    error_log_path var"loglighttpdoutput.log"
-    log_path var"loglighttpdoutput.log"
+    error_log_path var/"log/lighttpd/output.log"
+    log_path var/"log/lighttpd/output.log"
     working_dir HOMEBREW_PREFIX
   end
 
   test do
-    system "#{bin}lighttpd", "-t", "-f", etc"lighttpdlighttpd.conf"
+    system "#{bin}/lighttpd", "-t", "-f", etc/"lighttpd/lighttpd.conf"
   end
 end

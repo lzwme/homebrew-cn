@@ -6,16 +6,17 @@ class Certbot < Formula
   url "https:files.pythonhosted.orgpackagesd77e5155b8a7837fb433acee0bfd87e950bab96ab7e02ece21cc9c7d3d5effc4certbot-2.10.0.tar.gz"
   sha256 "892aa57d4db74af174aec5e4bb7f7537b200de2545a066c049d03a53215f0e4e"
   license "Apache-2.0"
+  revision 1
   head "https:github.comcertbotcertbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d430c89162df05824d82e13984e6e060803715af56c24146d22cc3e72cc571b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d430c89162df05824d82e13984e6e060803715af56c24146d22cc3e72cc571b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d430c89162df05824d82e13984e6e060803715af56c24146d22cc3e72cc571b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5735b89bbe2b17b03eff9c6ae997f217f9d2c16fc7c4c47108891676859b4bf5"
-    sha256 cellar: :any_skip_relocation, ventura:        "5735b89bbe2b17b03eff9c6ae997f217f9d2c16fc7c4c47108891676859b4bf5"
-    sha256 cellar: :any_skip_relocation, monterey:       "5735b89bbe2b17b03eff9c6ae997f217f9d2c16fc7c4c47108891676859b4bf5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b5a40578fa95d4064280e51f09e6a8f966964e47be355e36d3b6eff32895f5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e567441173a622a11704ec3afc0e63039dc9f8c5ad3e1455f5656c9b3095333f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e567441173a622a11704ec3afc0e63039dc9f8c5ad3e1455f5656c9b3095333f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e567441173a622a11704ec3afc0e63039dc9f8c5ad3e1455f5656c9b3095333f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b5bce25566dd52ede60b99d258973989aa78950736b2c5061f338acbb1297073"
+    sha256 cellar: :any_skip_relocation, ventura:        "b5bce25566dd52ede60b99d258973989aa78950736b2c5061f338acbb1297073"
+    sha256 cellar: :any_skip_relocation, monterey:       "b5bce25566dd52ede60b99d258973989aa78950736b2c5061f338acbb1297073"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ba70c042dd0b3b79a9add8db10699528aa6b851e23e013cc23967ff1252df3d"
   end
 
   depends_on "python-setuptools" => :build
@@ -63,8 +64,8 @@ class Certbot < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "josepy" do

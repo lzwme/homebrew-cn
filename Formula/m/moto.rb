@@ -6,15 +6,16 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/5b/4d/388c76475f81d9d588292b5eaada0fa1cdebebae2024d6bb8fdb9a03d08e/moto-5.0.5.tar.gz"
   sha256 "2eaca2df7758f6868df420bf0725cd0b93d98709606f1fb8b2343b5bdc822d91"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "551c2baad2ae16612b4c6ae9d1095ed7408e917e8d7b96a4ffce9caf440fbd2b"
-    sha256 cellar: :any,                 arm64_ventura:  "fc184dbfd7033bf750cda2c7f02492a7b85111d362fc187a5fad5000456319f4"
-    sha256 cellar: :any,                 arm64_monterey: "d80887487aae68e2a4a1e27692db7f786d920d1d4074d9aea731fc112e483ef5"
-    sha256 cellar: :any,                 sonoma:         "be1b5b358559add0a358f929785d4be7f8808f88533623fc1f34847e0b5d0f11"
-    sha256 cellar: :any,                 ventura:        "d04833b76eed8caf416be825b2d01a10ca4c5f5cc22d16fbfbbbd5351b19710d"
-    sha256 cellar: :any,                 monterey:       "4fce1ff9e9057a50b56a3248b6d34a279ac01bbd81a215ba4690e99e8fb8d8da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10378d232a4a6646d58588771a6d2fc333111dc0333c327e686048ec84115e88"
+    sha256 cellar: :any,                 arm64_sonoma:   "d220bb38fc06dfbe51cdbde035a04158e47db4015069f4106ff521eb8454ab8f"
+    sha256 cellar: :any,                 arm64_ventura:  "199a332978c392f3f5493fb445afe44c711ef05ea9189e311b860f7841cfd20b"
+    sha256 cellar: :any,                 arm64_monterey: "edec3effd3ef5431d3a90c6cc30e459c8fbcd7445547a55cdd448b68fdf6dcb8"
+    sha256 cellar: :any,                 sonoma:         "6f954b5a9f67e105f4b96324b51cc5d466b34d09cefbc9b0d033089dd4ef0e81"
+    sha256 cellar: :any,                 ventura:        "f9027dfdfe129d7d04c26df20c3403faab28b98e4b36fe04ae1fe30e0e8b9478"
+    sha256 cellar: :any,                 monterey:       "c280a442d117697b32421000d066f5b9c09154f50cbcd1e466141d99cf90a710"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6de48f9c80714ffde5f4528d7958eeee1edd033aa8caa77f34c92ffada3c2870"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -54,13 +55,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c7/97/49f0ca451239b9177eb5bfa0b226920a06e11ed564a81ddf642b8725182a/boto3-1.34.79.tar.gz"
-    sha256 "139dd2d94eaa0e3213ff37ba7cf4cb2e3823269178fe8f3e33c965f680a9ddde"
+    url "https://files.pythonhosted.org/packages/44/a9/c191f26fb925076ea142e7efcdc59c36285b0ffde420b2ff0835b48b9c80/boto3-1.34.84.tar.gz"
+    sha256 "91e6343474173e9b82f603076856e1d5b7b68f44247bdd556250857a3f16b37b"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/8b/bb/9470ce1ae56f31326150f79c10c03718f416d5596de95a5c88c23fed7d58/botocore-1.34.79.tar.gz"
-    sha256 "6b59b0f7de219d383a2a633f6718c2600642ebcb707749dc6c67a6a436474b7a"
+    url "https://files.pythonhosted.org/packages/f7/b8/6f17f3051a81402894567b1b35518aa6d8b49359b5246e95cfabd3cee558/botocore-1.34.84.tar.gz"
+    sha256 "a2b309bf5594f0eb6f63f355ade79ba575ce8bf672e52e91da1a7933caa245e6"
   end
 
   resource "cfn-lint" do
@@ -84,8 +85,8 @@ class Moto < Formula
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/3f/e0/a89e8120faea1edbfca1a9b171cff7f2bf62ec860bbafcb2c2387c0317be/flask-3.0.2.tar.gz"
-    sha256 "822c03f4b799204250a7ee84b1eddc40665395333973dfb9deebfe425fefcb7d"
+    url "https://files.pythonhosted.org/packages/41/e1/d104c83026f8d35dfd2c261df7d64738341067526406b40190bc063e829a/flask-3.0.3.tar.gz"
+    sha256 "ceb27b0af3823ea2737928a4d99d125a06175b8512c445cbd9a9ce200ef76842"
   end
 
   resource "flask-cors" do
@@ -99,8 +100,8 @@ class Moto < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "itsdangerous" do
@@ -144,8 +145,8 @@ class Moto < Formula
   end
 
   resource "jsonpickle" do
-    url "https://files.pythonhosted.org/packages/05/68/38c6c809fd3203e507c0c95ebede5e682bdc84f2e81fc6f818d7926c6a41/jsonpickle-3.0.3.tar.gz"
-    sha256 "5691f44495327858ab3a95b9c440a79b41e35421be1a6e09a47b6c9b9421fd06"
+    url "https://files.pythonhosted.org/packages/72/4b/8c2df97303521f99a0a2cc9be7373ee175dbc01d4befb653ff7b8d32b442/jsonpickle-3.0.4.tar.gz"
+    sha256 "a1b14c8d6221cd8f394f2a97e735ea1d7edc927fbd135b26f2f8700657c8c62b"
   end
 
   resource "jsonpointer" do
@@ -234,13 +235,13 @@ class Moto < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/4b/de/38b517edac45dd022e5d139aef06f9be4762ec2e16e2b14e1634ba28886b/pydantic-2.6.4.tar.gz"
-    sha256 "b1704e0847db01817624a6b86766967f552dd9dbf3afba4004409f908dcc84e6"
+    url "https://files.pythonhosted.org/packages/cd/fc/70fe71ff78f680d584eba9c55a30092f6ef0b9cf0c75a74bd35a24151a83/pydantic-2.7.0.tar.gz"
+    sha256 "b5ecdd42262ca2462e2624793551e80911a1e989f462910bb81aef974b4bb383"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/77/3f/65dbe5231946fe02b4e6ea92bc303d2462f45d299890fd5e8bfe4d1c3d66/pydantic_core-2.16.3.tar.gz"
-    sha256 "1cac689f80a3abab2d3c0048b29eea5751114054f032a941a32de4c852c59cad"
+    url "https://files.pythonhosted.org/packages/3d/28/d693aab237fca82da327990a88a983b2b84b890032076ee4a87e18038dbb/pydantic_core-2.18.1.tar.gz"
+    sha256 "de9d3e8717560eb05e28739d1b35e4eac2e458553a52a301e51352a7ffc86a35"
   end
 
   resource "pyparsing" do
@@ -299,8 +300,8 @@ class Moto < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https://files.pythonhosted.org/packages/7a/12/dc02a2401dac87cb2d3ea8d3b23eab30db4cd2948d5b048bf912b9fe959a/setuptools-69.4.tar.gz"
+    sha256 "659e902e587e77fab8212358f5b03977b5f0d18d4724310d4a093929fee4ca1a"
   end
 
   resource "six" do

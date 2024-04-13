@@ -42,7 +42,7 @@ class Qcli < Formula
   test do
     # Create an example mp4 file
     mp4out = testpath"video.mp4"
-    system "#{Formula["ffmpeg"].bin}ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
+    system "#{Formula["ffmpeg@6"].bin}ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
     # Create a qcli report from the mp4
     qcliout = testpath"video.mp4.qctools.xml.gz"
     system bin"qcli", "-i", mp4out, "-o", qcliout

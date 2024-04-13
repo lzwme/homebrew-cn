@@ -11,13 +11,14 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05addcda41d0251eec22521f1157eb10c23b2d2c167f5709185b36755d16140f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f9a3dcec90e9f2312614249a301547f2450ec1b0b61f40e8526f8e7af0aa9d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7bf2ab08260b526efbdff38c6d4096119d6c164d393c8c05434ea6ae96201a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "179c7ee9448c31f9ad02c0b806a61d3eaa9859528c49107bb695759d55f3815d"
-    sha256 cellar: :any_skip_relocation, ventura:        "16f7c45d9faa162fb361e38687489fd41c86a2073fea9fe33b134ea7bf203c6c"
-    sha256 cellar: :any_skip_relocation, monterey:       "de223c7d4c21b5d2b80ef8092c9495eafa9ed723fd3ee816665ab4d296ac32f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70d93f9a44c9b34388261ea118d50cc9754dfa56cee4ae4c976b4aba004f70f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad177bb94a5117e31868f0809393fe6eb6994d360779f16ca4f118d7fa0150a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5c63f3e73dacbf9f2eb2836f4cbd55357e1d1c9893bac06e70fddd40af77fb3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3aeaf4b0b945d915d679c4c4db2f5420991f768b1a7df29259a061db2c44c9d0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8ab29d93e84402271a65dba9cbf2e0e909a90e74217475acb28970be5a146f32"
+    sha256 cellar: :any_skip_relocation, ventura:        "6399f57baa23544327f660c9b22b85f6c8aaafd400258893f5ee77c99039c05d"
+    sha256 cellar: :any_skip_relocation, monterey:       "68202661a841c2b073f33c8cb90f565e67a44a941d13e5583e5a92f6357e9b24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e6b2e71363846aceb7071cdae821795770338d414dcf8b1097d6df9eed9503a"
   end
 
   depends_on "go" => :build
@@ -33,6 +34,11 @@ class Logcli < Formula
     ]
 
     system "go", "build", *std_go_args(ldflags:), ".cmdlogcli"
+
+    generate_completions_from_executable(
+      bin"logcli",
+      shell_parameter_format: "--completion-script-", shells: [:bash, :zsh],
+    )
   end
 
   test do

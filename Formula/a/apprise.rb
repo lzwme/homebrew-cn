@@ -6,15 +6,16 @@ class Apprise < Formula
   url "https://files.pythonhosted.org/packages/c1/d7/5eb1bd8fe2883fc8e15e8f19760a4ca12a28f7f19a0d636b8e03656489a1/apprise-1.7.5.tar.gz"
   sha256 "0ac34b27009d5c625e87d33ec85fa577062b57f3bced6d7223e17c5afbb40e68"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d39c077d5614c71333877f0870d1fb2dbf510ea47889798847c62df4cf0bcfd1"
-    sha256 cellar: :any,                 arm64_ventura:  "60c37ed7200cabd8d980cbe6e5ca0ed6ae310240266dd1e266ee92133e377858"
-    sha256 cellar: :any,                 arm64_monterey: "3fc61d21ab459896861a130a409f9903fdbee62c96bc11392d2a513f585c3374"
-    sha256 cellar: :any,                 sonoma:         "3da35ea21c6896a9bdf468a0c7115e4217cf68fcc96b402156bd335a76c723e2"
-    sha256 cellar: :any,                 ventura:        "c8a02090b72edb8277e282b36b57adb9de17ee286054152a641e2f374c6386c8"
-    sha256 cellar: :any,                 monterey:       "d342336960ad488da91df1d8c2b865865d04b1a197ab0590a0ea17ec943332dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a0ec747be1c7691f56fa816aa825b38bbdc657975349b7dd2ef9bfa4274afdd"
+    sha256 cellar: :any,                 arm64_sonoma:   "10297ea4917b3a51d995bbd6d033bc998e0e99fcc3656a4f91488f904d4995d0"
+    sha256 cellar: :any,                 arm64_ventura:  "1e5a3cdf39e691f99c459e1211bd488d67fc2e51c0687f8aec8d4cba37893cce"
+    sha256 cellar: :any,                 arm64_monterey: "4ab4ce1737b6ed31f979e28918aec580119194da848f193377656a2ce677b569"
+    sha256 cellar: :any,                 sonoma:         "4c5c8443f608e23664a2241d7cd8381acfd585609d5142f2ac86c6796fcc3d1d"
+    sha256 cellar: :any,                 ventura:        "58471e06f3b9dab3d8f40d657da72d2f646827819706510a2f45797c47bdbb87"
+    sha256 cellar: :any,                 monterey:       "5e5b2ac9ed57073c24b61cca4482455231028f22df489d25e6bda0656b78379f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea81f13f38193e7a1e386b7c235d95f2a0830ff600111e5478e9d113e72ce87e"
   end
 
   depends_on "certifi"
@@ -32,8 +33,8 @@ class Apprise < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "markdown" do
