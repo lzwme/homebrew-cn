@@ -1,6 +1,6 @@
 cask "rescribe" do
-  version "1.2.0"
-  sha256 "cf4f2dae0349637b4e7fba24fcab3895af7407e94e9a881fbe4a2c87aba69cdf"
+  version "1.3.0"
+  sha256 "d22a4e9baf82c7b03e31b7c211d97299d294fdf2714889622c35d8a49c6f2382"
 
   url "https:rescribe.xyzrescribe#{version}darwinrescribe.zip"
   name "rescribe"

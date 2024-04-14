@@ -2,7 +2,7 @@ class Mpv < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https:mpv.io"
   license :cannot_represent
-  revision 2
+  revision 3
   head "https:github.commpv-playermpv.git", branch: "master"
 
   stable do
@@ -20,17 +20,28 @@ class Mpv < Formula
       url "https:github.commpv-playermpvcommit78447c4b91634aa91dcace1cc6a9805fb93b9252.patch?full_index=1"
       sha256 "69e4ead829e36b3a175e40ed3c58cc4291a5b6634da70d02b0a5191b9e6d03f6"
     end
+
+    # Fix MKV audio playing.
+    # Remove when included in a release.
+    # https:github.commpv-playermpvpull13665
+    patch do
+      url "https:github.commpv-playermpvcommit1a40b2f9281dba1d7e75ce03fec1fe4bb2902a17.patch?full_index=1"
+      sha256 "0f06294d7a2c0fecae88937887a3aa98c706398ba35a0a27b2908612585db98f"
+    end
+    patch do
+      url "https:github.commpv-playermpvcommitb5599872c768ed0df79d6b50755e4568fb06e3ab.patch?full_index=1"
+      sha256 "7c82044c44ec0851f3a82527e1699b7636099ebddaa0ab3732f62aa1fbce5beb"
+    end
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "503033133d2409d22408524c92939ff27a0119a0a8fbed7fc07526edacefb19c"
-    sha256 arm64_ventura:  "e8603f24501346996474c0a3e098a46abbdc06a0b3a0ae9e63fcdadc4a9ecb22"
-    sha256 arm64_monterey: "75b3a089692824260780773758e597003f6c803e632c2f1f9bf5f9588e081007"
-    sha256 sonoma:         "80a7d43dade2df41a4ff05fe3e9846eadb77066fe30de4003d3ec4845e4047cc"
-    sha256 ventura:        "e04e62d0a360f559eb5904f4e1ab161dcb9e6dd8609b8464240db5f7fe4b88e2"
-    sha256 monterey:       "98584844157bb365f6b902d61e3bca9513ab326fb2a3fbbe8f85aab23b02ca4f"
-    sha256 x86_64_linux:   "67dfb85317fa2ccd0a99ef9e064868c4392977a5759d840c078fce9298d53929"
+    sha256 arm64_sonoma:   "0285f66c079b42365e67e60f52a861d129e0f2f04f02fc1d1fcc2632e143ded4"
+    sha256 arm64_ventura:  "ffd7bea5632b2a5e7a1081cf16436d1b9c01f8e56a0bc24531d715049e230eeb"
+    sha256 arm64_monterey: "fb1a5c00231edf01026c878fad9ce288a480f4eec32a23f2c0a8ec29cba695d7"
+    sha256 sonoma:         "c5fdb82788fe1b286540d7cabdfc806dfd6f88a05d9d6232a9be315aa8463633"
+    sha256 ventura:        "d479b319c26fd8490079480c7c6f9204f38a764561583cd17af833539697cf91"
+    sha256 monterey:       "de3b0e62b11154e1b4ce58d9d0f8b60d9d75ab58cdaa485d76d7cfe4d1cb3108"
+    sha256 x86_64_linux:   "f098d552c279a75f35b980e8ebc7ce172617b03805249caa5e2466c6ac3bdd2c"
   end
 
   depends_on "docutils" => :build

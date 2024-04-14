@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https:wiki.debian.orgApt"
-  url "https:deb.debian.orgdebianpoolmainaaptapt_2.7.14.tar.xz"
-  sha256 "7a01783f05b7d90f36aea7871cc06757499ae8ade933497aaeb6c508274e7358"
+  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.0.tar.xz"
+  sha256 "18e4d1e40a1f66ed5b661f4ac6713e8aa54c33bb0137f425e85d91d95481c2e6"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "a763ab96ea981b63b61377354f8b48023b25fd270ae635777ac4e28db18703ae"
+    sha256 x86_64_linux: "745eea9a9760aef5ed225b970a8ff74e89d6b83d3dced4e7c8e60de0f9f748fd"
   end
 
   keg_only "not linked to prevent conflicts with system apt"
@@ -86,8 +86,8 @@ class Apt < Formula
   end
 
   resource "ExtUtils::CChecker" do
-    url "https:cpan.metacpan.orgauthorsidPPEPEVANSExtUtils-CChecker-0.11.tar.gz"
-    sha256 "117736677e37fc611f5b76374d7f952e1970eb80e1f6ad5150d516e7ae531bf5"
+    url "https:cpan.metacpan.orgauthorsidPPEPEVANSExtUtils-CChecker-0.12.tar.gz"
+    sha256 "8b87d145337dec1ee754d30871d0b105c180ad4c92c7dc0c7fadd76cec8c57d3"
   end
 
   resource "XS::Parse::Keyword::Builder" do

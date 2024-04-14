@@ -6,6 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/61/1c/b433aaa96e2e2fd27eccae69b4f000949a4ef2a67ea996fc21bde86e8efc/checkov-3.2.60.tar.gz"
   sha256 "dd796c8d261d112641926a9a3548116e5f65cf6d3be14adb64e5880d5f93c227"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -17,13 +18,13 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a5e88a4f9686f688e32ff5fb554febb912156032b3176170ca29e9a37ef3200d"
-    sha256 cellar: :any,                 arm64_ventura:  "a9f7947140dd2559482a9f93262411cbbe4cf5948bb6cec4d8836d64012aded1"
-    sha256 cellar: :any,                 arm64_monterey: "97cf6dc683fb004d035b7adbaef1dbabe32810ea63cc77c4b6fd63339bc2ac79"
-    sha256 cellar: :any,                 sonoma:         "e66685ec8666613afa869534766a8028c3190265b6b0091c58b7fafbbfbce247"
-    sha256 cellar: :any,                 ventura:        "7bdbd5a9fcdc17960a1c7f7c6e8c18d6bae7fc1047fa297c5df0543e52170d38"
-    sha256 cellar: :any,                 monterey:       "8456593c6b61ba8e359d323b818f5329a08d08f6849f85fd8dee7a7a3676c05d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9229724122974af2b80f2b129c2e7d17f25f900be0700ecf159a712024ca1ff9"
+    sha256 cellar: :any,                 arm64_sonoma:   "f9b54aa173e69debe857bcf4d929f438a103ef3576cf692ece9bc00adb0ddd10"
+    sha256 cellar: :any,                 arm64_ventura:  "6ab4a42e212dbb5fca52e6b972cb8af18dcdfd3eefff3717f437ad04af664e19"
+    sha256 cellar: :any,                 arm64_monterey: "aebeca501382287146df7d5eae436936ecf287af6d1ebf7e0f21f62301639a9f"
+    sha256 cellar: :any,                 sonoma:         "d28a2affa4ac0075586abccb26bc000759d38ee7c5fc2ed4e166336e77f2368e"
+    sha256 cellar: :any,                 ventura:        "91e0dce54efac2eb72342429e689a4d881caa2e330e8a704924bd2859d8e66aa"
+    sha256 cellar: :any,                 monterey:       "e57ec704b35a51a80ef4cbc5d0296995536d4b55864c08a234be76529a8efc73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aef9300db794e9adae6ccaf35bc99b1a93366dae3c0ec360f92cdd60fdf22a2"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -41,8 +42,8 @@ class Checkov < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/18/93/1f005bbe044471a0444a82cdd7356f5120b9cf94fe2c50c0cdbf28f1258b/aiohttp-3.9.3.tar.gz"
-    sha256 "90842933e5d1ff760fae6caca4b2b3edba53ba8f4b71e95dacf2818a2aca06f7"
+    url "https://files.pythonhosted.org/packages/7e/0b/4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256ef/aiohttp-3.9.4.tar.gz"
+    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
   end
 
   resource "aiomultiprocess" do
@@ -206,8 +207,8 @@ class Checkov < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "importlib-metadata" do
@@ -326,13 +327,13 @@ class Checkov < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/4b/de/38b517edac45dd022e5d139aef06f9be4762ec2e16e2b14e1634ba28886b/pydantic-2.6.4.tar.gz"
-    sha256 "b1704e0847db01817624a6b86766967f552dd9dbf3afba4004409f908dcc84e6"
+    url "https://files.pythonhosted.org/packages/cd/fc/70fe71ff78f680d584eba9c55a30092f6ef0b9cf0c75a74bd35a24151a83/pydantic-2.7.0.tar.gz"
+    sha256 "b5ecdd42262ca2462e2624793551e80911a1e989f462910bb81aef974b4bb383"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/77/3f/65dbe5231946fe02b4e6ea92bc303d2462f45d299890fd5e8bfe4d1c3d66/pydantic_core-2.16.3.tar.gz"
-    sha256 "1cac689f80a3abab2d3c0048b29eea5751114054f032a941a32de4c852c59cad"
+    url "https://files.pythonhosted.org/packages/3d/28/d693aab237fca82da327990a88a983b2b84b890032076ee4a87e18038dbb/pydantic_core-2.18.1.tar.gz"
+    sha256 "de9d3e8717560eb05e28739d1b35e4eac2e458553a52a301e51352a7ffc86a35"
   end
 
   resource "pyparsing" do

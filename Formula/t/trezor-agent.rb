@@ -6,16 +6,16 @@ class TrezorAgent < Formula
   url "https:files.pythonhosted.orgpackages11bcaa2bdee9cd81af9ecde0a9e8b5c6c6594a4a0ee7ade950b51a39d54f9e63trezor_agent-0.12.0.tar.gz"
   sha256 "e08ca5a54bd7658017164c8518d6cdf623d3b077dfdccfd12f612af5fef05855"
   license "LGPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7a8788bdb9d004899538b8eed4450f246b03b749bd04a0f512fb12c483f0ddfd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46d60b520bc818c015547a0691fb074325365393ceeabebdb7a4c7ff38570e73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "891d83f5ecf7c08c1fdd9a2f953da9e09f0d238f8293429860196e30a55364cd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "83cbc217ecaa3e9d51fe9c79a70c51366463de321e9320d0f8286135ef56255e"
-    sha256 cellar: :any_skip_relocation, ventura:        "84ba226b0a89ba4316c6e6c22823a8fd07c6e7bf279fab497838fcdc2f186c95"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c16476d55f3368b6ff2c4b6992c59e17d60883924d2a470d79ad34edbac1e37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e8f75013213c20d8111fb560f9f177c7872a4200291be0b58c8c80b8e62e712"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae680ff6a597f0d7acd46432de9df0a639d3f647868ca55399a1309893bcc3f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d6e55fbeb5a6758d4d3d8649478dfb160ed1b31f3712c05cd1fafa434abf019"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ab074e965ee61e084dbea4136efcbeb6ed807b1bb41989ea0e0ca1d1d0b4406"
+    sha256 cellar: :any_skip_relocation, sonoma:         "715d996001eb138ce78332125bb8594a9a1d261f8a9b6ddc7b2f3914bdb25939"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a55df827391608a83d4031bbac4559124fa254af5e0757dc66d8d3a37368c0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c9993603a59558d1750d09b1d69d3361ba593114c24dc92ad0314ade5391e9a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9666b9a29886581f666afd5ef88bab966e99a7cee7f3e28b430818524fca733a"
   end
 
   depends_on "certifi"
@@ -65,8 +65,8 @@ class TrezorAgent < Formula
   end
 
   resource "docutils" do
-    url "https:files.pythonhosted.orgpackages1f53a5da4f2c5739cf66290fac1431ee52aff6851c7c8ffd8264f13affd7bcdddocutils-0.20.1.tar.gz"
-    sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
+    url "https:files.pythonhosted.orgpackages21ffc495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844cdocutils-0.21.1.tar.gz"
+    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
   end
 
   resource "ecdsa" do
@@ -96,8 +96,8 @@ class TrezorAgent < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "keepkey" do

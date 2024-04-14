@@ -6,16 +6,17 @@ class Streamlink < Formula
   url "https:files.pythonhosted.orgpackages6631326decb04078c7ba4fe917f4dbc7dcbd9ac0aa7be1a5e8cac69fa3d76adestreamlink-6.7.2.tar.gz"
   sha256 "7a74700129f5c29c006260df53976384300981c9aff9d3d5c2eb7e91d3dca359"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f2001075efe2dc4d52c8d2618f979f33a3fbc3d1b8c502641a607a01663442f1"
-    sha256 cellar: :any,                 arm64_ventura:  "1709c7198a7c5d2738358d84af429f0d3833a322d517e75b85e96aeed816fe10"
-    sha256 cellar: :any,                 arm64_monterey: "3efe29c1e06400c66c76da246d4faf8f122db9ee06469aa32c14c4b725882d21"
-    sha256 cellar: :any,                 sonoma:         "af4cf4a00d2d2a528442c2610798598e27314377efa6414c7daeac983328ec6c"
-    sha256 cellar: :any,                 ventura:        "ed0b2288cbb97072b1ab0692dc1734d432015359a1ee0d673cdc895935401b22"
-    sha256 cellar: :any,                 monterey:       "1527f303e425e14e027b9e7d1ef8f41403cc03c900540552b074e5e8db6978e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0cbd248f5b7371d5933282d54f56e4049e5e72084f82574ee754f51247ba786"
+    sha256 cellar: :any,                 arm64_sonoma:   "c7f9ac98e57704fafad95e591b79eeed293105a12b91129d8be18f682fcac17f"
+    sha256 cellar: :any,                 arm64_ventura:  "2b0ffb55a7aae6a4667714115fbe30b8d1b1d786cd8a7b9ccdec1b25495d276b"
+    sha256 cellar: :any,                 arm64_monterey: "35c5a1d3fced5fc783f24ae4ef8e7864f721f8741e5f000974fa9b0fe55efa8d"
+    sha256 cellar: :any,                 sonoma:         "2de65b19483e71c7f282c7687faef6930799f7906ba61be2a7fe3858b751c450"
+    sha256 cellar: :any,                 ventura:        "6ff2865b5d384f79c8268357f864c12c87facd90f1ae110fda0885311d1b2346"
+    sha256 cellar: :any,                 monterey:       "b8e3823a28e1a688154d6d24a9c1a27705dc86c3695ad66a00367e373600fe75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac839552b5342a96c564d7ff6a63e3d9ab9b301b99e219b1af82b6033ec5915e"
   end
 
   depends_on "certifi"
@@ -50,8 +51,8 @@ class Streamlink < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "isodate" do
@@ -60,8 +61,8 @@ class Streamlink < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
+    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
   end
 
   resource "outcome" do
@@ -115,8 +116,8 @@ class Streamlink < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
-    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
+    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
+    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
   resource "urllib3" do

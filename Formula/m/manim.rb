@@ -6,16 +6,17 @@ class Manim < Formula
   url "https:files.pythonhosted.orgpackagesd383b504dbacb67c665e5b81f5aaa1b23fe058b8dac06c966b5c25949959a2a3manim-0.18.0.post0.tar.gz"
   sha256 "93d36a7a26cd8083969d22ebbc1c174a80cd193562d116a6dbf35622439e0035"
   license "MIT"
+  revision 1
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5451643762e3ec5c4a8e9e153b8b64574ba2c5ad22e95561e2fd30bce2920c5f"
-    sha256 cellar: :any,                 arm64_ventura:  "40aae2eb30a02b047ff1347768b43a81c2d880a0ee881d31494bdf669e0c9cc6"
-    sha256 cellar: :any,                 arm64_monterey: "edce65b02231d4b70a48690a20576993c45092b8e8bf7ec6722f219ff15fcbef"
-    sha256 cellar: :any,                 sonoma:         "6b457cf4c8fc21f9be40eb3038839889c5fe4a8593b91e8449dd34fee3ce8a46"
-    sha256 cellar: :any,                 ventura:        "1558dc5d850391c86c5033d176cd88917914f8aca328c696191cc0cc2a76ac81"
-    sha256 cellar: :any,                 monterey:       "bcbd0bf98566cfc5a7d0a67e3e44aa327c8024d58316d367544598b08ecc2b3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b98bd81d9d3a11c4732d772d632ed907baee100d55351d90311aef0ea3e470dc"
+    sha256 cellar: :any,                 arm64_sonoma:   "7031070b960134606c1ee293f515ad3e475a59dbf644879ed78d24c58dd927f1"
+    sha256 cellar: :any,                 arm64_ventura:  "347c9aaf873a2badcff0931464ce6cb2026774e51847d1e09da73af558d0b6d9"
+    sha256 cellar: :any,                 arm64_monterey: "e7c1bc7eb6223af7768d186aed19fe52d36cf11659d7c80722798d56ac983260"
+    sha256 cellar: :any,                 sonoma:         "c66cef188362b40a51efcf7322e89953b305bd4b8b7c7cc8d1a407e8d13545da"
+    sha256 cellar: :any,                 ventura:        "5a51028f6795228bc474be14e58b60b873c261ecdcc12c2f539eb95c7476c624"
+    sha256 cellar: :any,                 monterey:       "c0b9b1561348702bdb3206a1d5b2b377fea6eb76aa53187f32d20573a9ad3fe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9991ed32829ae9a4c3937cdc31eb09e75b8b06cb6b44c02cc2282e86d6ee8030"
   end
 
   depends_on "cython" => :build
@@ -79,8 +80,8 @@ class Manim < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "isosurfaces" do

@@ -3,19 +3,18 @@ class Arjun < Formula
 
   desc "HTTP parameter discovery suite"
   homepage "https:github.coms0md3vArjun"
-  url "https:files.pythonhosted.orgpackages40684d1066a053d699640de07e0041a48d62d7933ccf74639a255c8f63583abdarjun-2.2.5.tar.gz"
-  sha256 "17cc2b0e90cfb63225168bc43d70b316f7847d1d9e60fc5631d56f6ccf8a6939"
+  url "https:files.pythonhosted.orgpackagesbb97ed0189286d98aaf92322a06e23b10fc6c298e0ee9a43cd69ab614a1f76cfarjun-2.2.6.tar.gz"
+  sha256 "15dbc0abf5efcbbe4ba1892ad8edb08fa5efc41bb2ebaadd0be01e47e70240fc"
   license "AGPL-3.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdc1db4487a8ada5194b9aad1bc7e627e992f37ffed57852b4c7488deca50113"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdc1db4487a8ada5194b9aad1bc7e627e992f37ffed57852b4c7488deca50113"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdc1db4487a8ada5194b9aad1bc7e627e992f37ffed57852b4c7488deca50113"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bdc1db4487a8ada5194b9aad1bc7e627e992f37ffed57852b4c7488deca50113"
-    sha256 cellar: :any_skip_relocation, ventura:        "bdc1db4487a8ada5194b9aad1bc7e627e992f37ffed57852b4c7488deca50113"
-    sha256 cellar: :any_skip_relocation, monterey:       "bdc1db4487a8ada5194b9aad1bc7e627e992f37ffed57852b4c7488deca50113"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6afe93b8bfc4e8a3a049478b957357ccd78a8435445894c107d4c12ab82ff759"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
+    sha256 cellar: :any_skip_relocation, ventura:        "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06db40102875f5c9747b2092a5b1e8d42a4afc39fe6a0ee75a842b6afe1aadb1"
   end
 
   depends_on "certifi"

@@ -10,6 +10,8 @@ cask "font-ia-writer-quattro" do
   font "iA-Fonts-masteriA Writer QuattroStaticiAWriterQuattroS-BoldItalic.ttf"
   font "iA-Fonts-masteriA Writer QuattroStaticiAWriterQuattroS-Italic.ttf"
   font "iA-Fonts-masteriA Writer QuattroStaticiAWriterQuattroS-Regular.ttf"
+  font "iA-Fonts-masteriA Writer QuattroVariableiAWriterQuattroV-Italic.ttf"
+  font "iA-Fonts-masteriA Writer QuattroVariableiAWriterQuattroV.ttf"
 
   # No zap stanza required
 end

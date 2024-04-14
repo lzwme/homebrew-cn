@@ -3,19 +3,18 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https:github.comblacklanternsecuritybbot"
-  url "https:files.pythonhosted.orgpackages459d792ce23297690f988c3b3988791123b2865be96c65ecd58d9a722dae88f3bbot-1.1.6.tar.gz"
-  sha256 "68a6e43746f1ce9ab16b4e122113524a7a516bbd2da33398c29168e9e05100f4"
+  url "https:files.pythonhosted.orgpackagesb144d4280e1f817b92c7d9be6f7a9dc05a61998bb782c73ff4dc7636400d5454bbot-1.1.6.1.tar.gz"
+  sha256 "58aa92ce506a76b998badfed9a895c551c38ba3845284325ec15b4bd2a45a352"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8f0a9df954aa50a67f981534aa6fb0d9194e96e191e190b2216701d220e31c56"
-    sha256 cellar: :any,                 arm64_ventura:  "79affea67be274eafccc5c8f96fec0e1642961af72a5e54a4ccc06aefdbcde9a"
-    sha256 cellar: :any,                 arm64_monterey: "d4d6420094791e2c6ee8c5900f4a357b8cdfaa57944af92ef2900ea37590f58e"
-    sha256 cellar: :any,                 sonoma:         "3f916fa7e3466d331aad9edb40a75d5ad05b9afba1a65cfd83734d5b384d8cd9"
-    sha256 cellar: :any,                 ventura:        "e12aa4ac52dcaef584aa3d8b3dc1d8a8b439655fbf4222a2bd6ac1a6c9229d8d"
-    sha256 cellar: :any,                 monterey:       "6e4c7385d3721f4329fb1fa7ae888e2da75fd52f6867dbceda485e47a739c169"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aab795fdbd6d24c46258689e85068156ab7958a2b8f9013636a9ff3acb5381c4"
+    sha256 cellar: :any,                 arm64_sonoma:   "ebd83dc20936bd6f4eb503d1d83f4619f8dfa8e9533aa1239e07e5fb1de1b37a"
+    sha256 cellar: :any,                 arm64_ventura:  "2396506e18eeb7edd3f0461e01c7f7dce4044a895e75fc31bf25cb57eb560b7d"
+    sha256 cellar: :any,                 arm64_monterey: "f0474a013bdea51c82b08b9062c213f291e101b8b0a54a58d714fbc85571c2fb"
+    sha256 cellar: :any,                 sonoma:         "a8d49efed4d21cc91a5e10451464f6485eeac2540ba2f7ba55194a63bfecb4aa"
+    sha256 cellar: :any,                 ventura:        "11bdbb384f74c66aec04667b510c966321f1fd2f95dff54fae30ca4193dddd23"
+    sha256 cellar: :any,                 monterey:       "7c49d63b22028098454bd398c0540c5096fd532b2f00b0698cc27f54866f9065"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5fedc44ce0d310eae875b33f6881ad226d5ee7dfbf326764822cb4360ac763c"
   end
 
   depends_on "openjdk" => :build
@@ -94,13 +93,13 @@ class Bbot < Formula
   end
 
   resource "docutils" do
-    url "https:files.pythonhosted.orgpackages1f53a5da4f2c5739cf66290fac1431ee52aff6851c7c8ffd8264f13affd7bcdddocutils-0.20.1.tar.gz"
-    sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
+    url "https:files.pythonhosted.orgpackages679aff2ff8e922f3b97c4b4864ca6c78d76ca5969bd730560001167b7054ac48docutils-0.21.post1.tar.gz"
+    sha256 "518e29081124e7d8159550958e6de240622562aa824f945f501ec3d3c5b67d19"
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackagesdb973f028f216da17ab0500550a6bb0f26bf39b07848348f63cce44b89829af9filelock-3.13.3.tar.gz"
-    sha256 "a79895a25bbefdf55d1a2a0a80968f7dbb28edcd6d4234a0afb3f37ecde4b546"
+    url "https:files.pythonhosted.orgpackages38ff877f1dbe369a2b9920e2ada3c9ab81cf6fe8fa2dce45f40cad510ef2df62filelock-3.13.4.tar.gz"
+    sha256 "d13f466618bfde72bd2c18255e269f72542c6e70e7bac83a0232d6b1cc5c8cf4"
   end
 
   resource "h11" do
@@ -109,8 +108,8 @@ class Bbot < Formula
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages039d2055e6b65592d3a485a1141761ba7047674bbe085cebac0988b30e93c9e6httpcore-1.0.4.tar.gz"
-    sha256 "cb2839ccfcba0d2d3c1131d3c3e26dfc327326fbe7a5dc0dbfe9f6c9151bb022"
+    url "https:files.pythonhosted.orgpackages17b05e8b8674f8d203335a62fdfcfa0d11ebe09e23613c3391033cbba35f7926httpcore-1.0.5.tar.gz"
+    sha256 "34a38e2f9291467ee3b44e89dd52615370e152954ba21721378a87b2960f7a61"
   end
 
   resource "httpx" do
@@ -254,8 +253,8 @@ class Bbot < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
-    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
+    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
+    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
   resource "urllib3" do
@@ -283,6 +282,10 @@ class Bbot < Formula
     sha256 "10719660409bd1825507e04d2fa4848c10591a092613bcd66651c7e0774f5405"
   end
 
+  # avoid runtime version check, see discussion in https:github.commtkennerlydunamaiissues80
+  # upstream bug report, https:github.comblacklanternsecuritybbotissues1257
+  patch :DATA
+
   def install
     virtualenv_install_with_resources
   end
@@ -294,3 +297,17 @@ class Bbot < Formula
     assert_predicate testpath".configbbotsecrets.yml", :exist?
   end
 end
+
+__END__
+diff --git apyproject.toml bpyproject.toml
+index 4fc9831..7b8212f 100644
+--- apyproject.toml
++++ bpyproject.toml
+@@ -89,7 +89,7 @@ line-length = 119
+ extend-exclude = "(test_step_1test_manager_*)"
+
+ [tool.poetry-dynamic-versioning]
+-enable = true
++enable = false
+ metadata = false
+ format-jinja = 'v1.1.6.1{% if branch == "dev" %}.{{ distance }}rc{% endif %}'

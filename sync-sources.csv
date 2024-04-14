@@ -70,7 +70,6 @@ Homebrew-homebrew-core/Formula/a/ahcpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ahoy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aichat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aicommits.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/aida-header.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aircrack-ng.rb, Homebrew/homebrew-core, 1
@@ -3139,6 +3138,7 @@ Homebrew-homebrew-core/Formula/l/levant.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leveldb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lexbor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lexicon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lexido.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lfe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lft.rb, Homebrew/homebrew-core, 0
@@ -3926,6 +3926,7 @@ Homebrew-homebrew-core/Formula/m/mdbtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdds.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mdf2iso.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mdformat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mdless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdp.rb, Homebrew/homebrew-core, 1
@@ -5508,7 +5509,7 @@ Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safe-rm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safeint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sagittarius-scheme.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saldl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/salt-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/samba.rb, Homebrew/homebrew-core, 1
@@ -12254,7 +12255,6 @@ Homebrew-homebrew-cask-fonts/Casks/font-hurmit-nerd-font.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask-fonts/Casks/font-hurricane.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-hyppolit.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-ia-writer-duo.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-ia-writer-duospace.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ia-writer-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-ia-writer-quattro.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-iansui.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12380,6 +12380,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-jersey-15-charted.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-15.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-20-charted.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-20.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-jersey-25-charted.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jersey-25.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jetbrains-mono-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-jetbrains-mono.rb, Homebrew/homebrew-cask-fonts, 1
@@ -12421,6 +12422,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-kaisei-opti.rb, Homebrew/homebrew-cask-f
 Homebrew-homebrew-cask-fonts/Casks/font-kaisei-tokumin.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-kaiso.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-kalam.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-kalnia-glaze.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-kalnia.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-kameron.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-kanit.rb, Homebrew/homebrew-cask-fonts, 1

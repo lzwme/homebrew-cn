@@ -7,7 +7,7 @@ cask "font-sedan" do
       branch:    "main",
       only_path: "oflsedan"
   name "Sedan"
-  homepage "https:tipotype.comundergroundsedan"
+  homepage "https:fonts.google.comspecimenSedan"
 
   font "Sedan-Italic.ttf"
   font "Sedan-Regular.ttf"

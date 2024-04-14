@@ -3,19 +3,19 @@ class Toot < Formula
 
   desc "Mastodon CLI & TUI"
   homepage "https:toot.bezdomni.net"
-  url "https:files.pythonhosted.orgpackagesa64c49802eddecdad04fcf6434bee87814a8e1ac882abeedc1d4858787d7190ftoot-0.42.0.tar.gz"
-  sha256 "6f6c128f7111ff945de6f67386083d1426d086beda4f40b410b8f646409183ef"
+  url "https:files.pythonhosted.orgpackagese401dcfb2d4fd58a5c96d99d9ff98f7a48cf0813e4a615b5953da11e67374075toot-0.43.0.tar.gz"
+  sha256 "6aa84c4b8df6e2214a3e735142bf5bd57b3b10aa08e35579425c5dbe3bc25ae7"
   license "GPL-3.0-only"
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d958d737c3d2c078d78312e0ed8b87d618ced048955872a04dcd85b31fe8fb7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d958d737c3d2c078d78312e0ed8b87d618ced048955872a04dcd85b31fe8fb7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d958d737c3d2c078d78312e0ed8b87d618ced048955872a04dcd85b31fe8fb7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b402ed2a9760bda19d7f0d867d1c19790bbce48e810d15f7cc60c2cba9ab97d"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b402ed2a9760bda19d7f0d867d1c19790bbce48e810d15f7cc60c2cba9ab97d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b402ed2a9760bda19d7f0d867d1c19790bbce48e810d15f7cc60c2cba9ab97d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b99ae9389ea45da6bf605712acc9f12bc28bb407dceceade3cdc4d7c7f2dd62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
+    sha256 cellar: :any_skip_relocation, ventura:        "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
+    sha256 cellar: :any_skip_relocation, monterey:       "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3300d5560f39558fba380ffe5b90c2e6342583095083ba05d074f37b8c9f5022"
   end
 
   depends_on "certifi"
@@ -37,8 +37,8 @@ class Toot < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "requests" do
@@ -57,8 +57,8 @@ class Toot < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
-    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
+    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
+    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
   resource "urllib3" do
@@ -67,8 +67,8 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages8dc5cf2a6947260600be7503ade31bcf83b6a0388d97e358707260ddca8a4adaurwid-2.6.8.tar.gz"
-    sha256 "51267c7daf86f68b4112e2c9433aa4f19b901c2e78a13d8a1d994881d48f8eca"
+    url "https:files.pythonhosted.orgpackages8e748c2082f2b07a72ff5d2438447c13a70f0cbede73584e0a262c166a30785curwid-2.6.10.tar.gz"
+    sha256 "ae33355c414c13214e541d3634f3c8a0bfb373914e62ffbcf2fa863527706321"
   end
 
   resource "wcwidth" do

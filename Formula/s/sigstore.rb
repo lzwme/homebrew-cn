@@ -6,15 +6,16 @@ class Sigstore < Formula
   url "https:files.pythonhosted.orgpackagesa2919843dac576ebdfdcd7be64ffce5cff8c208814c29d739de4a134fa36de51sigstore-2.1.5.tar.gz"
   sha256 "7771153c5ac5a51d6556481f4680dfb602cb5c32c94fe56f87ff1801b8a8f243"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "df8cacaaff829f71230dc5140e629c7cc55944019319e8a73969cc81456e5bf2"
-    sha256 cellar: :any,                 arm64_ventura:  "a3daa1faddbdf5c458384dbccc7fb89e6f0168ad1b75deeb67c013dcc992e316"
-    sha256 cellar: :any,                 arm64_monterey: "ab97bd94fc4fc2351bd7f04b700f567a0b65d83d5812e0768ca4787bfe52a42e"
-    sha256 cellar: :any,                 sonoma:         "cc18369f0038611872dae0aeb6d84b9e62026d43d43e3ad61d1a3c5f94759f98"
-    sha256 cellar: :any,                 ventura:        "934c6ed0a90982be4a4d888368211d55a69ae12725dd6cf0130a7e9858f5124b"
-    sha256 cellar: :any,                 monterey:       "baa9aa3be5ad1a097ddab4c2ac5b41597e325f612478ec4c7d422298a65c5f65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98cfcff66878957192e3a3e49bdf51275d5b49e82e902557ad05a566aee76401"
+    sha256 cellar: :any,                 arm64_sonoma:   "72d78ea0674e04782b0601e8346c2bc069f5b422a779d3046af8bacd6ef94e54"
+    sha256 cellar: :any,                 arm64_ventura:  "0e1b198523a145aab03243fe2d7f94dfe309caac36843434b9efc92478f2e5b6"
+    sha256 cellar: :any,                 arm64_monterey: "1d4da0f6179aa9221360b16ccfb8f7ac6c6fbefd2343e50c65e8a2fdec1ae3ec"
+    sha256 cellar: :any,                 sonoma:         "8ca95dfc17255d1520bc3e93a84cfb9d6f55d49f4c1145635548151173c4fd99"
+    sha256 cellar: :any,                 ventura:        "4f9604d03b7403ea0853be8703d0a2137829990557cc02b0d8c9b8348d4f9f56"
+    sha256 cellar: :any,                 monterey:       "e90a9f559e887ec919ce97c1bd0d71b59b893268ff85e8203c36b068e9f488ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f56199f32cca2e13ae691953bcf9d38f2c3469c98a3682da2fafd4c5b136b783"
   end
 
   depends_on "rust" => :build
@@ -78,8 +79,8 @@ class Sigstore < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "markdown-it-py" do
@@ -98,13 +99,13 @@ class Sigstore < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages4bde38b517edac45dd022e5d139aef06f9be4762ec2e16e2b14e1634ba28886bpydantic-2.6.4.tar.gz"
-    sha256 "b1704e0847db01817624a6b86766967f552dd9dbf3afba4004409f908dcc84e6"
+    url "https:files.pythonhosted.orgpackagescdfc70fe71ff78f680d584eba9c55a30092f6ef0b9cf0c75a74bd35a24151a83pydantic-2.7.0.tar.gz"
+    sha256 "b5ecdd42262ca2462e2624793551e80911a1e989f462910bb81aef974b4bb383"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages773f65dbe5231946fe02b4e6ea92bc303d2462f45d299890fd5e8bfe4d1c3d66pydantic_core-2.16.3.tar.gz"
-    sha256 "1cac689f80a3abab2d3c0048b29eea5751114054f032a941a32de4c852c59cad"
+    url "https:files.pythonhosted.orgpackages3d28d693aab237fca82da327990a88a983b2b84b890032076ee4a87e18038dbbpydantic_core-2.18.1.tar.gz"
+    sha256 "de9d3e8717560eb05e28739d1b35e4eac2e458553a52a301e51352a7ffc86a35"
   end
 
   resource "pygments" do

@@ -1,20 +1,19 @@
 class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:www.php.netdistributionsphp-8.1.27.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.1.27.tar.xz"
-  sha256 "479e65c3f05714d4aace1370e617d78e49e996ec7a7579a5be47535be61f0658"
+  url "https:www.php.netdistributionsphp-8.1.28.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.1.28.tar.xz"
+  sha256 "95d0b2e9466108fd750dab5c30a09e5c67f5ad2cb3b1ffb3625a038a755ad080"
   license "PHP-3.01"
-  revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "d7ab40921e44295786f0acd71ea3c0e60843b887da8971780ad57174d709bfe0"
-    sha256 arm64_ventura:  "6518e9dcd727a35bf42fd38287a93cc4f2661a2da3ecc1a23bee79970ae5ad6d"
-    sha256 arm64_monterey: "d407428619553382121ffe5151a88cb216b0bcb9aa744d3c5b254be167bf471f"
-    sha256 ventura:        "f06bd7895a1acccab1d48fb99770a1e025cbf86181827321fa0154cb3650f6ee"
-    sha256 monterey:       "3ce3bbc9b848416309c3b889e9ec35e68bb487c2fbb555e7979ac0df6c6d56b4"
-    sha256 x86_64_linux:   "1e9c4a8495465af8af43d6fbc04e8d300192769b773cd70babec2118b3ff549e"
+    sha256 arm64_sonoma:   "5babad34b9b544bd310a6e661fbea7990bdeedbe0e68216852f1b1aa554285e9"
+    sha256 arm64_ventura:  "43e1d0f2b87510f314e3e13627012c086ef3c374dd6c582f08676d69732d06da"
+    sha256 arm64_monterey: "1651fb5f936098cd7785da166ef7dc38a1748b5fd4f1dd9a1fbd7854bc927e6e"
+    sha256 ventura:        "d61720d429c5ab10597691dc6c2dc56bbe32bab3bc28934633ef618a2199a89b"
+    sha256 monterey:       "3244f62291998cf12fc97baa6f7cafb1d145daa6dc96fa5d73de113d6e539872"
+    sha256 x86_64_linux:   "c6387981fc46803af8df64d83a4e570bb4252169b421e22536b170ceb55301ef"
   end
 
   keg_only :versioned_formula

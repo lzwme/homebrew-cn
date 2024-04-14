@@ -10,6 +10,8 @@ cask "font-ia-writer-mono" do
   font "iA-Fonts-masteriA Writer MonoStaticiAWriterMonoS-BoldItalic.ttf"
   font "iA-Fonts-masteriA Writer MonoStaticiAWriterMonoS-Italic.ttf"
   font "iA-Fonts-masteriA Writer MonoStaticiAWriterMonoS-Regular.ttf"
+  font "iA-Fonts-masteriA Writer MonoVariableiAWriterMonoV-Italic.ttf"
+  font "iA-Fonts-masteriA Writer MonoVariableiAWriterMonoV.ttf"
 
   # No zap stanza required
 end
