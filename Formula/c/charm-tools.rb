@@ -20,9 +20,6 @@ class CharmTools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5b88ac86048f3b3b479f441104638472801a0c072e187f44e6d038312aa7d34"
   end
 
-  # `pkg-config` and `rust` are for `rpds-py`
-  depends_on "pkg-config" => :build
-  depends_on "rust" => :build
   depends_on "certifi"
   depends_on "charm"
   depends_on "cryptography"

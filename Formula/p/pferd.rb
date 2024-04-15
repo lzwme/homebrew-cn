@@ -3,19 +3,18 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https:github.comGarmelonPFERD"
-  url "https:files.pythonhosted.orgpackages463ec59874ab484c5e19fed106c8b37aa29bbe64921bd8f5b88e9b718c3c264bpferd-3.5.1.tar.gz"
-  sha256 "adad46fbfad08fbe9a479bb8989393598dc26ec30851d162a97e958509cbf809"
+  url "https:files.pythonhosted.orgpackagesed530ee89a40c7a3156ac35262b7f9e897f367e1fb753fcd5bfae6d8660b1a0bpferd-3.5.2.tar.gz"
+  sha256 "4ab6ec9b55ba63e174353819ccb33abb0a9f1c2fea6177ded268eb1ad4bee23f"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19dc49b64e11d8bc3a87a11b9e2676ed3f804449c7a6de132e2c95248086eead"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "469117a1bd2d8267dcf17e8d5efaf08af8404fa24b0cdabfc6786b398db64a47"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f406afebe991bd0c197fa20b6fb58d17bf372dbd830590c861caeaaa81f5f82"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2f35332402d9c56a71baab3b53feba48c5a4a28de994ae80d5f689a57fc31b67"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc5b8858f544e63b2cb792535bb6cf19af64444569024271a9a2f1b2d61fd6dd"
-    sha256 cellar: :any_skip_relocation, monterey:       "92c1e7b2d9db2766bc382b63f2c00a904ede2e0cd10a89575188b55c2041c060"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "049828f5b882487f8477466b56c76ad627162d4a8133cfb2a6182b7539345c04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d4ae7246811edd99c75024f6ca892bb9467575ed10542403b758e63a4748ead"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7195cd6b53abeab863eabde15fbf26da74cc0dad05446c305b239a6c66630654"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b735613157595fdc588ca0ea0a3e06ff7a2698abd5e274beb3ffec4752f7806d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a51d8063cbede8901e35aac9b786eecee6ecda63263ab6cd9d6b29251f899ee"
+    sha256 cellar: :any_skip_relocation, ventura:        "714aa8d30339f72ef277dc34d0875b7ac3ec7692125338a590ac96d06b39bde7"
+    sha256 cellar: :any_skip_relocation, monterey:       "87666d024cd91eac9f2e88645f125a1de4d6bfb925df9f2aaac8fe47ed747877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77ab451eda5d4e250eb055f7f1d5f5426e0ed71b84fa13db56b202299364eff4"
   end
 
   depends_on "certifi"

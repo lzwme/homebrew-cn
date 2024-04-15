@@ -695,7 +695,6 @@ Homebrew-homebrew-core/Formula/c/cask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassandra-cpp-driver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassandra-reaper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassandra.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cassandra@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cassowary.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/castget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/castxml.rb, Homebrew/homebrew-core, 1
@@ -1450,7 +1449,7 @@ Homebrew-homebrew-core/Formula/d/duck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duckdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duckscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/duff.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/duff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dufs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duktape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dumb.rb, Homebrew/homebrew-core, 1
@@ -3029,6 +3028,7 @@ Homebrew-homebrew-core/Formula/k/kubeaudit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubebuilder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubecfg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubecm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubecolor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeconform.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubefirst.rb, Homebrew/homebrew-core, 1

@@ -7,6 +7,7 @@ class Semgrep < Formula
       tag:      "v1.68.0",
       revision: "0fff3301b808e8eb2661189040e97b04220d41a3"
   license "LGPL-2.1-only"
+  revision 1
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
   livecheck do
@@ -15,13 +16,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "57b0f0f6ba46eef2487e115b59964f1e2fef10a37177410670abb64599a06dbc"
-    sha256 cellar: :any,                 arm64_ventura:  "3cf06e5c25876fad1868c0726082ab58eb3492b7bccc3ee6221e2f0bbf53d1e4"
-    sha256 cellar: :any,                 arm64_monterey: "9fccf244bb3b7beb6ce5f820aff0a2418d0ee96a9effb630ee701c09daf66edb"
-    sha256 cellar: :any,                 sonoma:         "fc7d4f37bbba0be310589be71976b77172b6a6654bc3d4c6afbd2404d8b13d49"
-    sha256 cellar: :any,                 ventura:        "7bd561f77178de8afbb8b3229259e1938a368262a928892a7fa47d47083a10b0"
-    sha256 cellar: :any,                 monterey:       "9ae9ccf66b8d359686e85d403d190e7740d13505a07ec0e5319e7b3a202a147a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "962f7df2c01cbb45680217e07d5c0fb212148a5944b64e70ba66fcc403547b0e"
+    sha256 cellar: :any,                 arm64_sonoma:   "06c9de8ff4a0683e3d01a85f168db448dddc87cb72c3640b1bc8a09d858dd20d"
+    sha256 cellar: :any,                 arm64_ventura:  "cdc57b31bd38cb2d0d8006fb64e2c39f29754c638ed547458d3d6597800c2753"
+    sha256 cellar: :any,                 arm64_monterey: "6c4fcde2a426324e83e30759ef71708651eedced09b4691c4684eaacbd384c20"
+    sha256 cellar: :any,                 sonoma:         "a828ae349947d58970433335cc44cb889169734ec4ac44c2db2fd1975276ff0c"
+    sha256 cellar: :any,                 ventura:        "2a620b12002f97d39fe38bc2de476dcf83baab46c14cfe0b46b0ecb88996f433"
+    sha256 cellar: :any,                 monterey:       "da876c34cf3f375deaf80952f94b16a1583a06088f8dd5cc0f14509b2669fc91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe8c9924e1410295741871fc08eac49bc8def5f2cf9ac327ef27d790216b8019"
   end
 
   depends_on "autoconf" => :build
@@ -102,8 +103,8 @@ class Semgrep < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "jsonschema" do

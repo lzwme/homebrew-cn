@@ -3,20 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackages6631326decb04078c7ba4fe917f4dbc7dcbd9ac0aa7be1a5e8cac69fa3d76adestreamlink-6.7.2.tar.gz"
-  sha256 "7a74700129f5c29c006260df53976384300981c9aff9d3d5c2eb7e91d3dca359"
+  url "https:files.pythonhosted.orgpackages8da979ff1dcce96d2829125cc13b345daa52d74f7a7cf9ba7ec292d1d4434bd8streamlink-6.7.3.tar.gz"
+  sha256 "0daf89f8d3975be9f9e4bbda3d0c3a5e24612494383dce19d69db5a8cca6fd7c"
   license "BSD-2-Clause"
-  revision 1
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c7f9ac98e57704fafad95e591b79eeed293105a12b91129d8be18f682fcac17f"
-    sha256 cellar: :any,                 arm64_ventura:  "2b0ffb55a7aae6a4667714115fbe30b8d1b1d786cd8a7b9ccdec1b25495d276b"
-    sha256 cellar: :any,                 arm64_monterey: "35c5a1d3fced5fc783f24ae4ef8e7864f721f8741e5f000974fa9b0fe55efa8d"
-    sha256 cellar: :any,                 sonoma:         "2de65b19483e71c7f282c7687faef6930799f7906ba61be2a7fe3858b751c450"
-    sha256 cellar: :any,                 ventura:        "6ff2865b5d384f79c8268357f864c12c87facd90f1ae110fda0885311d1b2346"
-    sha256 cellar: :any,                 monterey:       "b8e3823a28e1a688154d6d24a9c1a27705dc86c3695ad66a00367e373600fe75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac839552b5342a96c564d7ff6a63e3d9ab9b301b99e219b1af82b6033ec5915e"
+    sha256 cellar: :any,                 arm64_sonoma:   "e8c4ecba6cee3f181fe429a9cbdc01538bcb52a3ecf8fb7379136402b531370a"
+    sha256 cellar: :any,                 arm64_ventura:  "bb265551d3a0f5ab0af474babffe8f3794d93d17de07e2c4ff38b69af310f0f2"
+    sha256 cellar: :any,                 arm64_monterey: "d5d69bdc8afad99b5092906bec3cc12dfca3404c81a7d13e5a9011127e483a1c"
+    sha256 cellar: :any,                 sonoma:         "81368a3af4bc880c2975b25731eb4ade09847bd656024c211fed9e7c32579e98"
+    sha256 cellar: :any,                 ventura:        "802822696bb186057e7d27ab71a0baa355d90da3a30881697c316c4a121536ea"
+    sha256 cellar: :any,                 monterey:       "df47bd8220bfe798dcbbae2a9cbfbff221d26949bf43a352df7c01aa901f2d53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cefb701dd1909134e27f48823f7bff18dd8ce330b3d6f69c2ae68cda743cb081"
   end
 
   depends_on "certifi"

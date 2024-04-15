@@ -1,19 +1,18 @@
 class Logdy < Formula
   desc "Web based real-time log viewer"
   homepage "https:logdy.dev"
-  # Switch to github source tarball on the next release
-  url "https:github.comlogdyhqlogdy-corereleasesdownloadv0.9.0logdy-core.tar.gz"
-  sha256 "bd55b3cd380117288112403a19f4e7deeffc667df8970425c5e1ce8b87848720"
+  url "https:github.comlogdyhqlogdy-corearchiverefstagsv0.10.0.tar.gz"
+  sha256 "e37f925e804b8429b1302150aeb99ceecf3ea2e4781d9aff40f75fd94d9de7db"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4cde6e80a7c7d933c27c9973ad061d24b75b70dc8c8cf2b85bcf701549aa37e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86d900c9a3f2f092b72471944a97805863e6ae81e063edf10bfa7ec1f3e6ec1a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e0f536e387573a90896ddb42f49a8594ea222dd42b139f78a1b799b7f8c3acb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5489a9cae84fe47a636788be1b938e459e3cd027551f2b4d3c8ae6b0bf6dab77"
-    sha256 cellar: :any_skip_relocation, ventura:        "14cb2c6563394afe5ba9a0bf02b3e45efe31d5ed888ac9db781c9c2328153ca9"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a53141732d63f8bf19d379b7b53d336f73b650f308a07c27754ec87a0d2f347"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cae36eea1b23315d8de971831d01b7da43cc4a0959e1f7768eab13d1c64d5fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f061c43b5e20f8d7b70b01d7ff2bf26fcdfe5192878cb320f7b8482b43520e82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d31c26ce57d90cd1454de1c5bdce9c119ccca9f04b6f2e7af46a3cff765d73c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3931ced818de4aaa31c12a6aff006d3e761bd3190b5c2e41b4771a1830d1d2e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0441a3d5ea357fedfc7df8529e169de6270eca64bd265c75a9b31190278c54e3"
+    sha256 cellar: :any_skip_relocation, ventura:        "111e08f8a90868f07b0af542914a190ce8afe3bcc7e4563af5120390c8cf5a79"
+    sha256 cellar: :any_skip_relocation, monterey:       "e660216f24dbc34cc488f8fd50925f921e0ec2d5b554cc83d149be276fbec54e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92e7164411eee4cda333c8801e2b5398890cf1ccdfe80546f438d9e7235ff676"
   end
 
   depends_on "go" => :build
