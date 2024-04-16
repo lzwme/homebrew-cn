@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https:www.djcbsoftware.nlcodemu"
-  url "https:github.comdjcbmureleasesdownloadv1.12.3mu-1.12.3.tar.xz"
-  sha256 "ce6edd5661ffe3de4c9e17a6c8cdaf233b3cd5e85c82ed876d87c064e6e7b7e0"
+  url "https:github.comdjcbmureleasesdownloadv1.12.4mu-1.12.4.tar.xz"
+  sha256 "bd41136c5177c1645b878b9d55f384bed629e02e790881fe965f8493725a44c9"
   license "GPL-3.0-or-later"
   head "https:github.comdjcbmu.git", branch: "master"
 
@@ -18,13 +18,13 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "4e2f8f1db0c88a6a83d16d6e1742426ab7b4132e3a3a6e77e4ad630fec7e2a07"
-    sha256 cellar: :any, arm64_ventura:  "4f0c4135ac69d9ede92749bdbdb5137e1609a3563c51b99b82c8f7e10e9eb334"
-    sha256 cellar: :any, arm64_monterey: "c9a742a395121cda6c42f48d42bca4a00c3ebbe030a62fdcda8c3a7a1974eb00"
-    sha256 cellar: :any, sonoma:         "f68b69277e8e5cf8eb58d74537bc724a6a3583556ff45d1871c96c939c8bd0b6"
-    sha256 cellar: :any, ventura:        "7f1d2bec30ad77e3cdb6bd50fa1f978689ec204888a87fc137b24529cd5443f6"
-    sha256 cellar: :any, monterey:       "5d0b5c974de44382d5e78b3ac52b57d6bb78afea04bc7895f8ba072afe299a4a"
-    sha256               x86_64_linux:   "88eb0dbbc5f2d44898e4ea309337aecf3d4a4ce56f28ad5695e0cbd0261041e0"
+    sha256 cellar: :any, arm64_sonoma:   "a324bb7cd770ad2a15063523bf86ffc85ae2fbc60ad32092d36d6b92f09a96b5"
+    sha256 cellar: :any, arm64_ventura:  "bb886b0d39c39c13ec14a35248087efa95d23bcf97bb6c7c167eeac9e508235d"
+    sha256 cellar: :any, arm64_monterey: "3e79c1618a5dfa23f591ee35114e5b572b434162e5e3a9be5bf0273b05006bb0"
+    sha256 cellar: :any, sonoma:         "d106c19d8ca0c3efa9172e8c963be90db229457790e39ec2fdab860ddb1f619a"
+    sha256 cellar: :any, ventura:        "874113f841f9acd8631fa073bfef6705b704b71aa040915d75dd79122feef1c4"
+    sha256 cellar: :any, monterey:       "3b726b2bd0c52ad7738a5f113f27c1a748a2f3ab72d8edba88f67b98f29f3454"
+    sha256               x86_64_linux:   "4d6ed2784a670bac3e3042bdebf1b77d1ffe13806a6b114b51e4172c51bb4aa2"
   end
 
   depends_on "emacs" => :build

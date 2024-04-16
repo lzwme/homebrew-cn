@@ -6,16 +6,17 @@ class Icloudpd < Formula
   url "https:github.comicloud-photos-downloadericloud_photos_downloaderarchiverefstagsv1.17.4.tar.gz"
   sha256 "a6c590dcc96415c56a60da134ed48a21b639c09de5fafcccd2faa837fe5fc4c5"
   license "MIT"
+  revision 1
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c48191309ee5ab2ff039fa1cdba31a94acdb1285ef328dc02afd3439fbd2c9b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c48191309ee5ab2ff039fa1cdba31a94acdb1285ef328dc02afd3439fbd2c9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c48191309ee5ab2ff039fa1cdba31a94acdb1285ef328dc02afd3439fbd2c9b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c4c1d55635571925a03c61d3ba9406ad7e17cacf32ca605500dde169897f1cd6"
-    sha256 cellar: :any_skip_relocation, ventura:        "c4c1d55635571925a03c61d3ba9406ad7e17cacf32ca605500dde169897f1cd6"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4c1d55635571925a03c61d3ba9406ad7e17cacf32ca605500dde169897f1cd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eb3d3b91c12ac444c68a44e94f85cfc117d835a1e59d744ee0a4249a3b9d83c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b35f297518858495bae82cff55171683531fb3ef14bd47ba401af811556790d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b35f297518858495bae82cff55171683531fb3ef14bd47ba401af811556790d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b35f297518858495bae82cff55171683531fb3ef14bd47ba401af811556790d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3e295ee3d00b7bddeec9901bd045c7929893d6d753a33733a3bc4fbcf8f1e35"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3e295ee3d00b7bddeec9901bd045c7929893d6d753a33733a3bc4fbcf8f1e35"
+    sha256 cellar: :any_skip_relocation, monterey:       "b3e295ee3d00b7bddeec9901bd045c7929893d6d753a33733a3bc4fbcf8f1e35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5459bf47deb56f5ab1808eb7baf1f450abd1a58a0ba036900dc7e68a6825376"
   end
 
   depends_on "python@3.12"
@@ -41,8 +42,8 @@ class Icloudpd < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "jaraco-classes" do

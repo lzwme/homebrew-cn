@@ -6,19 +6,21 @@ class Toot < Formula
   url "https:files.pythonhosted.orgpackagese401dcfb2d4fd58a5c96d99d9ff98f7a48cf0813e4a615b5953da11e67374075toot-0.43.0.tar.gz"
   sha256 "6aa84c4b8df6e2214a3e735142bf5bd57b3b10aa08e35579425c5dbe3bc25ae7"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
-    sha256 cellar: :any_skip_relocation, ventura:        "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
-    sha256 cellar: :any_skip_relocation, monterey:       "f25d1a17a13f614495d701891c5a9ea58f78649ea148da8684bcec7f9e834b09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3300d5560f39558fba380ffe5b90c2e6342583095083ba05d074f37b8c9f5022"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "894d51f95063a3249303e3ba26826049547e5ca31e576715658fb85d4b0c26ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "894d51f95063a3249303e3ba26826049547e5ca31e576715658fb85d4b0c26ee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "894d51f95063a3249303e3ba26826049547e5ca31e576715658fb85d4b0c26ee"
+    sha256 cellar: :any_skip_relocation, sonoma:         "894d51f95063a3249303e3ba26826049547e5ca31e576715658fb85d4b0c26ee"
+    sha256 cellar: :any_skip_relocation, ventura:        "894d51f95063a3249303e3ba26826049547e5ca31e576715658fb85d4b0c26ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "894d51f95063a3249303e3ba26826049547e5ca31e576715658fb85d4b0c26ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "190130cfa7183586b536bc38f93ee6c410ba2e114546abd521ed4347ca888373"
   end
 
   depends_on "certifi"
+  depends_on "pillow"
   depends_on "python@3.12"
 
   resource "beautifulsoup4" do
@@ -51,6 +53,11 @@ class Toot < Formula
     sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
   end
 
+  resource "term-image" do
+    url "https:files.pythonhosted.orgpackagesf259019a0ca982be3e6d686b9c58a72ae26333b69f8a312ea6edcbefef57279bterm-image-0.7.0.tar.gz"
+    sha256 "d62d85b62b58a90576b2dc22478aeee7eb71bfac169862a0abc94c9f494c8b0c"
+  end
+
   resource "tomlkit" do
     url "https:files.pythonhosted.orgpackages7d494c0764898ee67618996148bdba4534a422c5e698b4dbf4001f7c6f930797tomlkit-0.12.4.tar.gz"
     sha256 "7ca1cfc12232806517a8515047ba66a19369e71edf2439d0f5824f91032b6cc3"
@@ -69,6 +76,11 @@ class Toot < Formula
   resource "urwid" do
     url "https:files.pythonhosted.orgpackages8e748c2082f2b07a72ff5d2438447c13a70f0cbede73584e0a262c166a30785curwid-2.6.10.tar.gz"
     sha256 "ae33355c414c13214e541d3634f3c8a0bfb373914e62ffbcf2fa863527706321"
+  end
+
+  resource "urwidgets" do
+    url "https:files.pythonhosted.orgpackages161fcb6f188ddd62a52b3fa5694c2a541309d246dee54e6d4bc7a4079b2bbc59urwidgets-0.1.1.tar.gz"
+    sha256 "1e0dbceb875ace11067d93a585d8842a011db14ce78ec69ed485dc0df17f09e7"
   end
 
   resource "wcwidth" do

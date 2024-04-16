@@ -3,19 +3,18 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https:github.comjjjakeinternetarchive"
-  url "https:files.pythonhosted.orgpackagesabf0edfeb1a2add5577d831f5639dea1b886e04ca898a9abd2645345b4660fceinternetarchive-3.7.0.tar.gz"
-  sha256 "fca52e6b28fb76c84c47e61f32794653dc2d2ae4cc2de90911cb967be221d70c"
+  url "https:files.pythonhosted.orgpackages81dc4d0e4e099068774627b88472881ccd3cc7458b0f20e15b9decb8f327fcd0internetarchive-4.0.1.tar.gz"
+  sha256 "8e897ee1c054edff40744e65e16d697dbfae26b0645a5fc7762cbaf88aff87b7"
   license "AGPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45c8ab681304c193841242180f81949d46273f4e03f7151add0fefc99c899214"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45c8ab681304c193841242180f81949d46273f4e03f7151add0fefc99c899214"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45c8ab681304c193841242180f81949d46273f4e03f7151add0fefc99c899214"
-    sha256 cellar: :any_skip_relocation, sonoma:         "45c8ab681304c193841242180f81949d46273f4e03f7151add0fefc99c899214"
-    sha256 cellar: :any_skip_relocation, ventura:        "45c8ab681304c193841242180f81949d46273f4e03f7151add0fefc99c899214"
-    sha256 cellar: :any_skip_relocation, monterey:       "45c8ab681304c193841242180f81949d46273f4e03f7151add0fefc99c899214"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b525bd2a36bc62b68a40cd9ecb847a23ff1e05660cd7d933cccbb7686310a69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
+    sha256 cellar: :any_skip_relocation, ventura:        "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
+    sha256 cellar: :any_skip_relocation, monterey:       "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc67016b3be23c9954fd7a865e1ca4319f0d645d6d96721a9af7fa150fdb7673"
   end
 
   depends_on "certifi"

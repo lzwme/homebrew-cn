@@ -7,19 +7,26 @@ class Ratchet < Formula
   head "https:github.comsethvargoratchet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e39242b556f7dd32c0787cd4ac202b6efd7c9f79b2fb668256b9bc70180a71d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5ebe41bb45009ee06a96708f96c6839cdbce73d973464982327428f83839cef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f32af900b47f7211aca5839a5599fc6b809e820c8b2a41b908146baf5af9ddac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "971e55b30e310c7909a9a58ab8824a2e1da8c0ee3951bba514e86adba425d1f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "c57001f00986ffee5daa2f59845432a448dc89b68331716fd6ab735c80883951"
-    sha256 cellar: :any_skip_relocation, monterey:       "f9e36d5c657d3c467eb22a0cbe864ecbd42e9dcd30e91ce0abcb442a2f8dfc70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ca58e353ee0b84c70768fcfefd11b11e816fac59ac369dc243daec4b2133fa4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1cccac2d1277f930cbb1a0864a4bbed8d06eccda93b0ad097397248e05889255"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44531e78f2f4d6364d9fbf2cb0d5c7f365cbcaf33d223f471a3e6fe0d8dbc972"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca10450bc9b638951403ab1c0d02a658af4377339f0bce317f48f201e4a027d1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a2770c52767c913f7a762e4c10c19400563f8448ee0291d9e5bfef7da54b534f"
+    sha256 cellar: :any_skip_relocation, ventura:        "fdc70af633ea143ee3e2b0bccdd8a4c05d0e9bc9ad3a03eaa732fe41aa85718d"
+    sha256 cellar: :any_skip_relocation, monterey:       "72844ef394d8418a91a018b74209a08a089ab1c46a005461fe3207bd191a0974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d46d0be31aabe65fd97e19586c48f5d039aa825a8bf40893220d74121fb08acf"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = %W[
+      -s
+      -w
+      -X=github.comsethvargoratchetinternalversion.version=#{version}
+      -X=github.comsethvargoratchetinternalversion.commit=homebrew
+    ]
+    system "go", "build", *std_go_args(ldflags:)
 
     pkgshare.install "testdata"
   end
@@ -28,5 +35,8 @@ class Ratchet < Formula
     cp_r pkgshare"testdata", testpath
     output = shell_output(bin"ratchet check testdatagithub.yml 2>&1", 1)
     assert_match "found 4 unpinned refs", output
+
+    output = shell_output(bin"ratchet -v 2>&1")
+    assert_match "ratchet #{version} (homebrew", output
   end
 end

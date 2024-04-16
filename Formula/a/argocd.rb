@@ -2,8 +2,8 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https:argoproj.github.iocd"
   url "https:github.comargoprojargo-cd.git",
-      tag:      "v2.10.6",
-      revision: "d504d2b1d92f0cf831a124a5fd1a96ee29fa7679"
+      tag:      "v2.10.7",
+      revision: "b060053b099b4c81c1e635839a309c9c8c1863e9"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -18,13 +18,13 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb8d57b1937f081406f2dee0e813c6c30a568194e509d0de13cab9ff9b3e36dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4370ac8f9f5983a15e6980024a5cf5f4409485b7e5cb79801eb5cb9500a62920"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65ecf3152c9b3463789e15721920b31e8314ec3c2f5c2702bf0cb3f93d9b4fe2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c6dab56fe4a42b3127415dfe7e1a15741a4d3706c60702e0932e73608f320bd1"
-    sha256 cellar: :any_skip_relocation, ventura:        "5992447e29db9177fdf758a81633ceb432e8e116ef76b63e9df09abaa7a15cce"
-    sha256 cellar: :any_skip_relocation, monterey:       "574f01dae160499e519c2563cae60120d564e893b228adb94dfeb591a347eb84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2b286b6c024b6a9faa5d0d88bc9ea6b4a38046b6cf6e9e1f44aed701a6ec16d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72cb42f59a6349905730f88690851aa6a3e64503ba5b8ce952691c5226bde14f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e517272fe4092e0de1afbbb31e974b2427c781a65a1504857389a174d4df3bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e73677fac9c13f180454d1e65b77bb2c192852feb012f3df2938cfabb4267e58"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a0b6470264c1d6cd1c9a4575fca52a3aa47aacd08ba62e49e923e5e24f4320e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "52763ed3f8b91b8e840e21fd5373317e7c559ee70175ff5edf0c62b3c40f0938"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8c693276047a46d0f62398afa3c2ab18883a988afdbcc0b62e5e822a0bbbeb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d21f7b8c51576892b68c96f55e9973872ac9a58796db2392d3ffa5484632f1e4"
   end
 
   depends_on "go" => :build

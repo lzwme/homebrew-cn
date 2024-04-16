@@ -3,19 +3,19 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https:cyclonedx.org"
-  url "https:files.pythonhosted.orgpackages2569dac893508bdc10fdc22689d10a656f247198f4dbff8f53d49276c05770e6cyclonedx_bom-4.1.5.tar.gz"
-  sha256 "768421d12cfcc628fabe61eae322899a851b895854efe75c2a18afe8044690e1"
+  url "https:files.pythonhosted.orgpackages6d833fbf3b9cd50bb765889776fbbb869f49c4694e586cdd96d4fadb0023b8a7cyclonedx_bom-4.1.6.tar.gz"
+  sha256 "9581beff0e82a2532d001daf3eb31f5b1acbaaeddd531942e2aa79ae884e13dd"
   license "Apache-2.0"
   head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5576a9a90c71ae96acc2be1c02f7c3137169002895d4d6f3544c6f764e25fdf7"
-    sha256 cellar: :any,                 arm64_ventura:  "b4b900d973ac864f32609be52383970bd112be38846293c472ac76b24101fa19"
-    sha256 cellar: :any,                 arm64_monterey: "b384fa976247555491d892e51ac80b32d5565229cd075b296d6db96100215141"
-    sha256 cellar: :any,                 sonoma:         "d20da1640ec9a380196a9aa1b01e6a42eb58da193f9d93858c82304a3e44c6ff"
-    sha256 cellar: :any,                 ventura:        "14330387cfa2f9e0e17656ee967d79bf71c8aa0865940459f0938746f3d07822"
-    sha256 cellar: :any,                 monterey:       "b61fb68cb6dd1bd5fc591b010508848ed81d283fbe150d61bef7e643d1fcc431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae666196a33a197e86dd1d37f887f8e5c4369e7772af280eb1109387e790432a"
+    sha256 cellar: :any,                 arm64_sonoma:   "9982705a751ddedca197ef8e3ac03932d71793716a85d235078627d07684da84"
+    sha256 cellar: :any,                 arm64_ventura:  "c662576c2f322838d318d496836cd802bd294c868665aa6a1c771892eff1d65a"
+    sha256 cellar: :any,                 arm64_monterey: "d094ff66777f144518c060d055e0794b06d09bd8bb9af169471855f8b92847c8"
+    sha256 cellar: :any,                 sonoma:         "6cf169debfc1d48e1e31b89d18138c96746a0bc7b726af0f079434aec9ac28c4"
+    sha256 cellar: :any,                 ventura:        "3e8d96696dad5679ac8ed76e4da0cd056ee9b3d2be04319d2c393db4ff5fef1d"
+    sha256 cellar: :any,                 monterey:       "7e68737fa056539168e31c6876f15f6d51a91e75ff8e5364e057bd961f252e31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c47c19c4ec1de3d61045f4a25ea158dd39397658e388e9666c460c6b8f349d67"
   end
 
   depends_on "rust" => :build # for rpds-py

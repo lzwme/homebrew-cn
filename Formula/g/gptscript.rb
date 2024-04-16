@@ -1,19 +1,19 @@
 class Gptscript < Formula
   desc "Develop LLM Apps in Natural Language"
   homepage "https:gptscript.ai"
-  url "https:github.comgptscript-aigptscriptarchiverefstagsv0.4.2.tar.gz"
-  sha256 "db6dd34885a97b27967e61a5041846122d45fb333d9e565e4b326d4de8f4542a"
+  url "https:github.comgptscript-aigptscriptarchiverefstagsv0.5.0.tar.gz"
+  sha256 "277638f7474769e2467f0bba6b779bff44830737bf828de535c3958ef2d2b2e3"
   license "Apache-2.0"
   head "https:github.comgptscript-aigptscript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32293f804c06e39d583e5951426b76cb72ee2278d989ba18c8b60d0647051ae9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6fb4bb16184af571f0fe85a71fbe466134dfa7a0ce196c4fb2462ab40f75852e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa18ed36a0d8abcb015ed7edc29c97daec4e2023ef26e4572b967ad3d445957d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ddb8b16fe724e455e648f306281bdf2b9c44934a83dbae922400a8df0da2b88f"
-    sha256 cellar: :any_skip_relocation, ventura:        "e9ec70de9cf36d1b0d48abb10ccb3f5e76cd399a99d2c81d6ccccb6d1c1307e9"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d1d462b2de171182e91a01bd9b8b2d3e3a1b941936f03b8f8de047a6a2ae620"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f04c442f8296b89444e4cc6f825ed5c6efdc7cdd186f546f4c7f43512deb3d1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75e14b847143cbe565b0aaf49fa0bf07a9130dd2472f173bfd38d2b63b5ab868"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fd6252e01dac9a2c4b4d995c40f07415b728fff074a1cca38da52ae21b76077"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "713c5778445ddabebccc99f600f1c319bbca61fca35efb530e13278273b776de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1c6d6b755c47a53d2a17e1e48af77de889c43df229414a1c8a795ef70364d4e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "69581245aeec025f0b428ab14092a2c1b379a14fb962f0bd0ed122c429a782b3"
+    sha256 cellar: :any_skip_relocation, monterey:       "98f0569f374c3335596fc2edd65e97cf692d67d1cc14330d6bf9bf1becbc63fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fd1b0bb9b53921d8c61a683ddaa6f7a81a0808b007cbac8f9714626056ac256"
   end
 
   depends_on "go" => :build
