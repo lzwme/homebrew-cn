@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages8650f6fe1c79df253a476a9bf9a2865f5a160fb7552f19f1ce91456078048e6advc-3.49.0.tar.gz"
-  sha256 "ab3779ef9a422e0a6734765a98f05cadaab7290de8726db023e0c14ec079031f"
+  url "https:files.pythonhosted.orgpackages89cc427135561f60135df896521c58aa1bd6848d5405a0c07c1689a21af57f7advc-3.50.0.tar.gz"
+  sha256 "59106be452a74843e3618a92f80d9593f8e2b73892591f5ccafa6c6ac82cad1c"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0c90b793a8faa1635ea51ec6579573265117ee5dd155b7d3f308b1260251486c"
-    sha256 cellar: :any,                 arm64_ventura:  "e8e9eeb09958e3636b1e326c52839cff53a348ce67cf64478ed7837fabf00754"
-    sha256 cellar: :any,                 arm64_monterey: "672f21996143a4fe5a22b877902ae3f469ef071d9c8c09fe970af99602a6d257"
-    sha256 cellar: :any,                 sonoma:         "986fce1e9383aaa5024a43b773bc47c2223d0a65cbbba15d4a8e671ba77699ea"
-    sha256 cellar: :any,                 ventura:        "eef7aacefa082aa32b1f4ed580fd803fad7ba73e6cf2d56b28f4e7fb2b26a288"
-    sha256 cellar: :any,                 monterey:       "6e385de2cc62229e0a5959cedd3809327f64ba0add900c0b5599cfc041aa728b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a1c0791a2f83f3c2440d704975984ac011c583bc0575100b18388e0b947ee8c"
+    sha256 cellar: :any,                 arm64_sonoma:   "309d54dd38fdd40ef85dd7299b15c39d4a5ee1802ccff2cb752a06aedda9cbb5"
+    sha256 cellar: :any,                 arm64_ventura:  "90ad231b1dfd1be8f421a5120a853ee73fdfe7462c7f1de584b905e66b1dacd1"
+    sha256 cellar: :any,                 arm64_monterey: "361b2c90f195cd1b74d6c2c3515d4758dc6941401cebd27933fccc2ab7511e27"
+    sha256 cellar: :any,                 sonoma:         "5f97147bb4a99d21c590574bbe70a642bc81989248748c1aad0b6b7420e3de89"
+    sha256 cellar: :any,                 ventura:        "51d6bd34265a4817d5ed92610a10900705b3e1841425491cb6cbf5995e500042"
+    sha256 cellar: :any,                 monterey:       "d965bf5d26b25dbb5f6e40a99192c4b99fc0f602aeaf7faa380a3816350296c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56183a7f74b32ecb92b57b283b74826fb8ce955ee6fe85f38ec2926d1c10955f"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -35,8 +34,8 @@ class Dvc < Formula
   end
 
   resource "adlfs" do
-    url "https:files.pythonhosted.orgpackages8bd06b9e786f870dcdc5a5765f6ae46579913aef8d7aed72a190fab7a51164c6adlfs-2024.2.0.tar.gz"
-    sha256 "860f5ddbd7f3c2553d84a101717dc5736e823305e0d51e8c0058bc85a7fa304d"
+    url "https:files.pythonhosted.orgpackages98e06caa4d4848e81cd810f9ccc268b4fc9a71401f98a9b8feb536e3974daae7adlfs-2024.4.1.tar.gz"
+    sha256 "75530a45447f358ae53c5c39c298b8d966dae684be84db899f63b94cd96fc000"
   end
 
   resource "aiobotocore" do
@@ -45,8 +44,8 @@ class Dvc < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
-    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
+    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
+    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
   end
 
   resource "aiohttp-retry" do
@@ -70,8 +69,8 @@ class Dvc < Formula
   end
 
   resource "aliyun-python-sdk-core" do
-    url "https:files.pythonhosted.orgpackagescf0fc191007d4a0c068725009489d7f928614151da938598b875568a6323cff2aliyun-python-sdk-core-2.15.0.tar.gz"
-    sha256 "edc4555488d8a9f1c61bd419c7be27b23974b2a052971b4614fcd229eaeeb382"
+    url "https:files.pythonhosted.orgpackages3ae6f579e8a5e26ef1066f6fb11074cedc9f668cb5f722c85cf7adc0f7e2e23ealiyun-python-sdk-core-2.15.1.tar.gz"
+    sha256 "518550d07f537cd3afac3b6c93b5c997ce3440e4d0c054e3acbdaa8261e90adf"
   end
 
   resource "aliyun-python-sdk-kms" do
@@ -105,8 +104,8 @@ class Dvc < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages3cc0031c507227ce3b715274c1cd1f3f9baf7a0f7cec075e22c7c8b5d4e468a9argcomplete-3.2.3.tar.gz"
-    sha256 "bf7900329262e481be5a15f56f19736b376df6f82ed27576fa893652c5de6c23"
+    url "https:files.pythonhosted.orgpackages7951fd6e293a64ab6f8ce1243cf3273ded7c51cbc33ef552dce3582b6a15d587argcomplete-3.3.0.tar.gz"
+    sha256 "fd03ff4a5b9e6580569d34b273f741e85cd9e072f3feeeee3eba4891c70eda62"
   end
 
   resource "asyncssh" do
@@ -375,8 +374,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesac7a5b7b208a29c278128a9c27470338960a050da1fc74d18e10525a12fae4fcgoogle-api-python-client-2.125.0.tar.gz"
-    sha256 "51a0385cff65ec135106e8be60ee7112557396dde5f44113ae23912baddda143"
+    url "https:files.pythonhosted.orgpackagesf589cd79e7ad831c351f8085e07bf3196d1c36bcd2200ead46e68b244a3b0e68google-api-python-client-2.126.0.tar.gz"
+    sha256 "97c0410630e2bebd194d99e91bd620dab5bc6b6ec0bf033f9a9109b700b83acb"
   end
 
   resource "google-auth" do
@@ -530,8 +529,8 @@ class Dvc < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackages2cb110d5314003aeac7cb27824f502eedcf4f2705efc1b38f70db247e9ff99b5orjson-3.10.0.tar.gz"
-    sha256 "ba4d8cac5f2e2cff36bea6b6481cdb92b38c202bcec603d6f5ff91960595a1ed"
+    url "https:files.pythonhosted.orgpackagesf5af0daa12a907215a5af6d97db8adf301ef14a1b1c651f7e176ee04e0998433orjson-3.10.1.tar.gz"
+    sha256 "a883b28d73370df23ed995c466b4f6c708c1f7a9bdc400fe89165c96c7603204"
   end
 
   resource "oss2" do
@@ -715,8 +714,8 @@ class Dvc < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "shellingham" do

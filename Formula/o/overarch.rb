@@ -1,12 +1,12 @@
 class Overarch < Formula
   desc "Data driven description of software architecture"
   homepage "https:github.comsoulspace-orgoverarch"
-  url "https:github.comsoulspace-orgoverarchreleasesdownloadv0.14.0overarch.jar"
-  sha256 "7d573e0c044e63487cf9104142651e79beb849282916cf63dcb3a3256211bff0"
+  url "https:github.comsoulspace-orgoverarchreleasesdownloadv0.15.1overarch.jar"
+  sha256 "62cd8cc81ac542982afb3481345a3527a609685608efed1c909bcfac9a3493cd"
   license "EPL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bb81050adefd759c706a092a42444d4641b6117b9518d026dfe4b0e3545b1fb0"
+    sha256 cellar: :any_skip_relocation, all: "dbbb57004dd936ff238c56db71ef8a7d1128fcf724233356050e3e60ead5cc40"
   end
 
   head do
@@ -56,9 +56,15 @@ class Overarch < Formula
       Model Warnings:
       {:unresolved-refs-in-views (), :unresolved-refs-in-relations ()}
       Model Information:
-      {:nodes {:person 1, :system 1},
-       :relations {:rel 1},
-       :views {:container-view 1, :context-view 1}}
+      {:namespaces {nil 3},
+       :relations 1,
+       :views-types {:container-view 1, :context-view 1},
+       :external {:internal 3},
+       :nodes-types {:person 1, :system 1},
+       :nodes 2,
+       :synthetic {:normal 3},
+       :relations-types {:rel 1},
+       :views 2}
     EOS
     assert_equal expected, shell_output("#{bin}overarch --model-dir=#{testpath} --model-info").chomp
   end

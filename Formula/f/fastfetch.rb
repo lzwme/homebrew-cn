@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https:github.comfastfetch-clifastfetch"
-  url "https:github.comfastfetch-clifastfetcharchiverefstags2.9.1.tar.gz"
-  sha256 "f22bb197095ea80c4aa17e1d4b5e0dd6e79234f4a18f427691c7e6f93a812ac8"
+  url "https:github.comfastfetch-clifastfetcharchiverefstags2.9.2.tar.gz"
+  sha256 "3ca9e48ed30c49fc50d5f64a2ce327a9f00ce4497feac01865c50086cc43e5ce"
   license "MIT"
   head "https:github.comfastfetch-clifastfetch.git", branch: "dev"
 
@@ -12,13 +12,14 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "cfa60d00023573bbc1c5a9cc73baba9e1e428d0e538b7762c26865c5f0b08b0a"
-    sha256 arm64_ventura:  "84fb18bf889b4f5d1339504b223eb6bbcb65069b1b7a236e1970e3e40e36d3dd"
-    sha256 arm64_monterey: "91b856bf5d3928f7b02c4a3bf2d2307773fa502c6545f2bc563e9547509c8326"
-    sha256 sonoma:         "db86e3c273dfb2987db0718e0f70e69c204da53e40c64c427b3ff1fc92a90496"
-    sha256 ventura:        "8f68d2ec7f3ab2bb93b3d353e899426dadcffbd7773bddc409a3370c3e59d11e"
-    sha256 monterey:       "66f94e3c1aa9c58e22025548694db5d22afbf6a59561a9685c1086c3fdf0e627"
-    sha256 x86_64_linux:   "f808d3848a17a97c7fa1597f5493bf17dc8c211e9132edd406cfbedfbeb14bac"
+    rebuild 1
+    sha256 arm64_sonoma:   "9910d4ebebf63f90c89b2bbaba0a77d98f3ec780263fe62a8513c28f041a672b"
+    sha256 arm64_ventura:  "078fc194cdf85cf8db0270c10fb75bab35f9b1f8771c19bb3b61b482860ac9c1"
+    sha256 arm64_monterey: "abb1b906b802e33a9c313cd1ababb10d23d5010d2764e89f0cec46cf2ba829e8"
+    sha256 sonoma:         "7183c5064513ec66c199d5e06a4249832b829ab0de8de4c8adea2f928b1c1f16"
+    sha256 ventura:        "3fe72d4be8cecd3ad9a3bdb85bc878dfcc354a03f626055feb2a873b3e616af5"
+    sha256 monterey:       "db0f4ad8e02132eae382496f5ca69a7e048b2925bf750446c605ece67fb919e2"
+    sha256 x86_64_linux:   "1100af8c51d479b62ff060d1e05255d0718f53c17ce43f7ec0bca05123706167"
   end
 
   depends_on "chafa" => :build
@@ -39,6 +40,7 @@ class Fastfetch < Formula
     depends_on "libx11" => :build
     depends_on "libxcb" => :build
     depends_on "libxrandr" => :build
+    depends_on "linux-headers@5.15" => :build
     depends_on "mesa" => :build
     depends_on "opencl-icd-loader" => :build
     depends_on "pciutils" => :build

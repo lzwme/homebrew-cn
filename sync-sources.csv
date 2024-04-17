@@ -2002,7 +2002,6 @@ Homebrew-homebrew-core/Formula/g/gerrit-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/get-flash-videos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/get_iplayer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/getdns.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/getmail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/getmail6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gettext.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/getxbook.rb, Homebrew/homebrew-core, 0
@@ -7265,6 +7264,7 @@ Homebrew-homebrew-cask/Casks/a/aria2gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ariang.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/ark-desktop-wallet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arkiwi.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/arm-performance-libraries.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/armory.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/around.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arq-cloud-backup.rb, Homebrew/homebrew-cask, 0
