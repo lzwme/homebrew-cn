@@ -70,7 +70,7 @@ class Pyqt < Formula
     system "sip-install", *args
 
     resource("pyqt6-sip").stage do
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
 
     resources.each do |r|

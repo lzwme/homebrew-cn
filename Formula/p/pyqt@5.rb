@@ -17,7 +17,6 @@ class PyqtAT5 < Formula
   end
 
   depends_on "pyqt-builder" => :build
-  depends_on "python-setuptools" => :build
   depends_on "sip" => :build
   depends_on "python@3.12"
   depends_on "qt@5"
@@ -76,7 +75,7 @@ class PyqtAT5 < Formula
     system "sip-install", *args
 
     resource("pyqt5-sip").stage do
-      system python3, *Language::Python.setup_install_args(prefix, python3)
+      system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
     end
 
     resources.each do |r|

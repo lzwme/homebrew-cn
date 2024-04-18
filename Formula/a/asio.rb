@@ -1,8 +1,8 @@
 class Asio < Formula
   desc "Cross-platform C++ Library for asynchronous programming"
   homepage "https:think-async.comAsio"
-  url "https:downloads.sourceforge.netprojectasioasio1.28.1%20%28Stable%29asio-1.28.1.tar.bz2"
-  sha256 "3bcf0357e2e19a2ee5adc805e6cc209338a7461c406d3047d282ea1c4b566101"
+  url "https:downloads.sourceforge.netprojectasioasio1.30.2%20%28Stable%29asio-1.30.2.tar.bz2"
+  sha256 "9f12cef05c0477eace9c68ccabd19f9e3a04b875d4768c323714cbd3a5fa3c2b"
   license "BSL-1.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Asio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0b7dcbce082652d8b7b437b0b5e4994731eee122de8d4438a14bb73516b8cfe6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "afee43084abe550b59253d8b05bfe2f4e9735bc8e8245067edae9ca5367e4d20"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aadc88fbaac96e4886b9da1e2f5f3733c91d1c543430fdec047402c2a397665c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a729d67adbec19d0207de92fcbac2ab80264c6f50f3d57973bf585fdec5dff78"
-    sha256 cellar: :any,                 sonoma:         "a6964537058ff70e97cdbcbc443b93a927c5d52b99d6dde5219d746bfa882cee"
-    sha256 cellar: :any_skip_relocation, ventura:        "5bd3675a77ec2ad624ae08cd459d0d2008f27b4a150a30feaaf6c2fbd9bf1ea2"
-    sha256 cellar: :any_skip_relocation, monterey:       "4beb25487b7e5548fc86d538b9a5e51de37540604a6ac71c6eecdff76d1bc1dc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1c26d0ed67f36c26a9204496b6b437917e470eba0a7c3132090b86c848de51c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef48e68516761c4d94b643b82cb54a9c018734aa4bca02449bef44a4cbcbae10"
+    sha256 cellar: :any,                 arm64_sonoma:   "8904055a14a4247b64b0b0109092dc16ec9b041a80b5575d41b19f4f68fa948d"
+    sha256 cellar: :any,                 arm64_ventura:  "5f54e51a9617b78d98d5460432535ddbedd49c4f0a06b5674e9b4f4c4ccca2d5"
+    sha256 cellar: :any,                 arm64_monterey: "671a310b49125e7690a9d3a5c11b98497b38146c59cc4d102addbc854e766b51"
+    sha256 cellar: :any,                 sonoma:         "bf8e8eb31835f402abf69def9a391124c99f344117a0c6412d355e8a92681bb9"
+    sha256 cellar: :any,                 ventura:        "45e09606350054371499f004e2c103222ad54c0d5e424cdcc066944817d62c26"
+    sha256 cellar: :any,                 monterey:       "8e5c462f8c024efc16d037f57693465de5dd30523ef63f00309410d1dfe13d54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "327a7b1dadeaf5971516e58b9d7009e9004ffe198cd6621749d6836e604ff257"
   end
 
   head do
@@ -54,7 +52,7 @@ class Asio < Formula
     pid = fork do
       exec found.first, "127.0.0.1", port.to_s, "."
     end
-    sleep 1
+    sleep 5
     begin
       assert_match "404 Not Found", shell_output("curl http:127.0.0.1:#{port}")
     ensure

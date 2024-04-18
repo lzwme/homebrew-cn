@@ -1,15 +1,18 @@
 class Ckan < Formula
   desc "Comprehensive Kerbal Archive Network"
   homepage "https:github.comKSP-CKANCKAN"
-  url "https:github.comKSP-CKANCKANreleasesdownloadv1.34.2ckan.exe"
-  sha256 "31468a82d2c756cad4cb9e651de9656b66026e52c67678f4e77d2a0b995ad881"
+  url "https:github.comKSP-CKANCKANreleasesdownloadv1.34.4ckan.exe"
+  sha256 "4f7481cc6993c0566c1247779022bb6ae20d28fb05c76cc8611dbf66ab790133"
   license "MIT"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "129e7ef8d2e4c8e73b461f701291b3271b345f424cc2b447ce73735735a13558"
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
 
-  deprecate! date: "2023-10-24", because: "uses deprecated `mono`"
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "688c8e4800a892647c8c27e53c14e0f844723609c34934427f82db1c18b383fd"
+  end
 
   depends_on "mono"
 
@@ -28,6 +31,9 @@ class Ckan < Formula
   end
 
   test do
-    system bin"ckan", "version"
+    assert_match version.to_s, shell_output(bin"ckan version")
+
+    output = shell_output(bin"ckan update", 1)
+    assert_match "I don't know where a game instance is installed", output
   end
 end

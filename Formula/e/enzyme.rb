@@ -4,20 +4,21 @@ class Enzyme < Formula
   url "https:github.comEnzymeADEnzymearchiverefstagsv0.0.104.tar.gz", using: :homebrew_curl
   sha256 "82c2bbd95acecaa9c295bed6e6a82710515771834d57bd123c3c3e19e93f2238"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https:github.comEnzymeADEnzyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aca9c39b7a3a6c8c3b1417412a315dc8033e171ca9cad754aeed01a96bd01271"
-    sha256 cellar: :any,                 arm64_ventura:  "c840567aac841e6a892dd5b2529723704b5e160dd7a9d3baed041bfe8844d50e"
-    sha256 cellar: :any,                 arm64_monterey: "e0db84ef7986fff95cad8a614e025f38d950317be34e684602bee2632ca78e9d"
-    sha256 cellar: :any,                 sonoma:         "de6e164be003a7968f535d7cef1c0110f030d104df1c3b373b8399a5e3049cb9"
-    sha256 cellar: :any,                 ventura:        "8bafde70296ab7c66e8ac14bd79d2fabf1c4f2c10df1a3a295ac67a56080d049"
-    sha256 cellar: :any,                 monterey:       "e99436990c844f9695f7e6adec42a80d32e29a80d4f63088e56bb2febb28927c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bd19ba9590c6836ce81701d8107115da9241ce7cdbd0b0a45e6c001fd424812"
+    sha256 cellar: :any,                 arm64_sonoma:   "c9ec8f4bfff40c61f450de5559507f47d468f68478cbc3f7d05d5943202043d6"
+    sha256 cellar: :any,                 arm64_ventura:  "c7159c964dc8863cd6b80375238cfadf1cd21d815e1d9a47e361ef88fa40e9ed"
+    sha256 cellar: :any,                 arm64_monterey: "7f0fe4841ef4b57e0947975894714890325eac1c68787bd8f94f62ac0c3d1f75"
+    sha256 cellar: :any,                 sonoma:         "8be21906ae017184d8a7e090168e02f749d958bda9dcdfe0f2204a12ad0dd657"
+    sha256 cellar: :any,                 ventura:        "86a647cd3f170af5a1a855c18d529981604576b7bd76483f4ee9a9e2812e0178"
+    sha256 cellar: :any,                 monterey:       "533f5d8f05a76e5d33911c0f11f2993ad900c0212a7b8cad760f5b6462daf861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b366c8c8f218348ceec37c38e6230be37b64eb9b0ef74eaad92ec20776373935"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@17"
 
   fails_with gcc: "5"
 

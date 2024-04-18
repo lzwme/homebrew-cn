@@ -1,8 +1,8 @@
 class Nasm < Formula
   desc "Netwide Assembler (NASM) is an 80x86 assembler"
   homepage "https:www.nasm.us"
-  url "https:www.nasm.uspubnasmreleasebuilds2.16.02nasm-2.16.02.tar.xz"
-  sha256 "1e1b942ea88f22edae89659e15be26fa027eae0747f51413540f52d4eac4790d"
+  url "https:www.nasm.uspubnasmreleasebuilds2.16.03nasm-2.16.03.tar.xz"
+  sha256 "1412a1c760bbd05db026b6c0d1657affd6631cd0a63cddb6f73cc6d4aa616148"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Nasm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80447335b3dde2c4da228a5dda1cbbf53f7baa3d7904255c13d2896ad85937de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8e0252c54db6230964730882e72c13d968b01995908798834e38a64324240ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "82c5c64586350e02bad4d8d5508858eb49428bb81ac9294a3eef6c87cfdccef9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e83707a68e7e618cdfed0341970ef3414be2aff345c0ff1324daceba2456e791"
-    sha256 cellar: :any_skip_relocation, ventura:        "5023a1769bfaf3a73c86aea867e6ef1cdb2bef9fd5cc164dc6cb65b1d977fb8d"
-    sha256 cellar: :any_skip_relocation, monterey:       "ddf8a09b1a2f2021e142cdcdf0e8964c87b436ed8b0a308995c9bb83ad136192"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d291cabdb23d18109e5f338ba26f1e19d609367a0e88aa62ba178a456829829"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c04988e99839f591ced743c876289c18fb403b3a6826effaa3a0a9ba9385ddbc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "265e501fd778167b9c9122097acbf94c0d0577b8c5e2e94722d88cc89a07ba3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f354fd20ce32d149d1fe08b9cc5ba1c1facdd19d6c3ee16c88ecdeaef3d012e2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "81b2abb78f56dc299b3cd69a8626b04997f6fd06df71f3d56058331089a58a4e"
+    sha256 cellar: :any_skip_relocation, ventura:        "79b87e6bfcb38df38909219e8ae172e970324236074912a5a23704449e5e097b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d00b410fdb6d366f344057cb17fa58b5d65c6ee888394bd14c5e210122d0b8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "138876a9a24c01fda90cecba6aaba7b6e8e94e95768215338e709cc63b80821c"
   end
 
   head do

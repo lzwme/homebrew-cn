@@ -3,8 +3,8 @@ require "languagenode"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https:www.balena.iodocsreferencecli"
-  url "https:registry.npmjs.orgbalena-cli-balena-cli-18.1.10.tgz"
-  sha256 "1d4a98f1571e69eea8b60e5535576f72721f925aa883893e304926babfde6426"
+  url "https:registry.npmjs.orgbalena-cli-balena-cli-18.2.0.tgz"
+  sha256 "73cbbbcf531bab4712382acc2e0df17adc393c34aca2fd3d587d1e2b7e4d742e"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "838c4a9269226725ea4b799b380791c5ac14af0406ad53995061742118b980a7"
-    sha256                               arm64_ventura:  "029c223af3152d3116759ad66db7493dac0b227eb571d15a1f02abbb7ef84b1f"
-    sha256                               arm64_monterey: "3a10c0cdbfb91fd9afc43a71432fa1e06ad0f5708ce85e31be923a22a0da795d"
-    sha256                               sonoma:         "9e2c3292128d6d8580b9cca52f4107339566b390722e43496c6faa9eac9e5aa4"
-    sha256                               ventura:        "eddc4fd83317c77518be881db97cadcda018a1ab769f5479b3a6905112d2cb2f"
-    sha256                               monterey:       "bbfef012d0c3ca372cae7d2f97722396e62a1f27a8a23b05145e6e7033062e8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76f07176913ae8545d3e8846618d2e55cf162c83dd5e3135b0dd8acf19882e0b"
+    sha256                               arm64_sonoma:   "fda0482b865a5c6278a4f74324b4c0f6c38776bf91d1e9f52d65326265240665"
+    sha256                               arm64_ventura:  "991979fbd20859f0c85587e2ef2f185b746d3fd67cec32d1312011aaa02cef40"
+    sha256                               arm64_monterey: "3dc6062a9b8ada8ec6d333852e8d3623087a44637e94605c73c61af40c67d10d"
+    sha256                               sonoma:         "7f12a36dacd2b6d5fe5919e59058ceb2b77e6f422c952aa3c85f46dc758f9770"
+    sha256                               ventura:        "aab19284073624a3e8efe3b53e83dc0ff08412cd9cd2fd9ca5cff9ecf9b0a5b4"
+    sha256                               monterey:       "78cca5f858f97d24d2da201541591e75e6c168cd4b2ce2f411e0c208326ec37d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "902a1762afb5e6801f82a26d63b66bb5be71f97e9f09c1667cf3aa8a2c80b491"
   end
 
   # need node@20, and also align with upstream, https:github.combalena-iobalena-cliblobmaster.githubactionspublishaction.yml#L21

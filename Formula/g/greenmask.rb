@@ -1,19 +1,19 @@
 class Greenmask < Formula
   desc "PostgreSQL dump and obfuscation tool"
   homepage "https:greenmask.io"
-  url "https:github.comGreenmaskIOgreenmaskarchiverefstagsv0.1.9.tar.gz"
-  sha256 "a6dc6978620b6b19796ee8ad37f7ba8123c2b9ec4450e7e1ce69dbaea6b0e926"
+  url "https:github.comGreenmaskIOgreenmaskarchiverefstagsv0.1.10.tar.gz"
+  sha256 "3d5732cff5acb2db1dbf9ac56206500fbf022cedeed21c0b58de0c752f684d52"
   license "Apache-2.0"
   head "https:github.comGreenmaskIOgreenmask.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b6f8cfb46733206a15c94dc80de40dc7a98315d01cd85c88cae046cef4d4d1d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98d29170437db4f4d01e9e6435c2452fc24d0743bbb4e5fb489088fc77a59f9f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "29fe27dd2be7d413ec984d9df1f81f2d83cc25669c9064a649f908f80c169346"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68367ff529284a6a64a50d817f5c05f03cd57ddc11189f95ddab4fd265398c6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f0c6197d59e6f120e29502baad85a465f624a3662f8440fc43ee2e66976b92e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7e519a47aa91292607967f6cca7b515f01bba2abeb712f7025d09a14440cd392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "146c5110ddf5f4075d8ebc6decc88e04b22d215cd259a2e75db1e2b2e43fb5d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "faf4efee4ea9fe5b6e8225e9dcd734d927fcb46f72547c064b3218ad9b8c6207"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "acadac1732159bc8129eb3bbaa2c04ccdc06e431b1d0e6e2f18ca6314cee2cb4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "473d3794234eb942b5f90b52472d03f1e8bf8f06fce83e19fc3b52a0b739c7c8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c2430cc200de3279f03442815840df012d4012455540ede6c0454a8d234e8c79"
+    sha256 cellar: :any_skip_relocation, ventura:        "479931d088b31503925556a7909729e07a6d00862534167d98de2fe1a18dba42"
+    sha256 cellar: :any_skip_relocation, monterey:       "7eff534ab4ec99df60cc1af6d8acd0c839fa4b5beed2a4c2d475719ec998319a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26bd9fe1f35803cd6347b20b59e6c8684a1c94f77f6c4652a2489a7149c61ea0"
   end
 
   depends_on "go" => :build

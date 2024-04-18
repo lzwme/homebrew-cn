@@ -3,19 +3,18 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/73/8e/6e51da4b26665b4b92b1944ea18b2d9c825e753e19180cc5bdc818d0ed3b/sphinx-7.2.6.tar.gz"
-  sha256 "9a5160e1ea90688d5963ba09a2dcd8bdd526620edbb65c328728f1b2228d5ab5"
+  url "https://files.pythonhosted.org/packages/8a/67/f9c2a3eaeff31bbba398cbb757f1df114e5208a7cfbeb567de76ce6f6059/sphinx-7.3.6.tar.gz"
+  sha256 "fc9f3d13fed5c9a0e677d368090e209899ce5d0081eb552b657e2923e57517f0"
   license "BSD-2-Clause"
-  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7acf0ae4ac794ae13beac458d47665f251a2c6f8f36d22b5c95e993b561da75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b5b174dab42ec33193d9486aac3d5fba6c7523d892c31421eb3381e19b936f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee7566925a7f5037ff48ad7bc8660a3a2874ff07c1884b9e495517062d90d336"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dbff6a1aab0384228c61a3c01e8857750e96978826b675adc7294db79c485434"
-    sha256 cellar: :any_skip_relocation, ventura:        "d211db9bb741c3582e5c69bf6af84699d1220ea819a299ce84caab764ace80b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "510a83f91ab61fa5dbbf357f3b4ab3a405c0b43e2a4254602d433528c2e40908"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e955ca0fc01e0b4fdfb345382ea441836efc2ee6bc99fe34da5f1afd95dea66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e645d1ba29d42e5e5d292dd728f6536c6833f07e77f724ca6c76160d58952942"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd000689dc44775d7daa110450889bb970837a809f7fde057c1f9390927d17b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2dbd368c3de59c3ca7c51da395b48bfe6b23be50365f0df9f29fdc26d582ec9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f20074cfe2d2229b794cd50172b884470618b4ad1f705186c54bba0278a6a288"
+    sha256 cellar: :any_skip_relocation, ventura:        "82e3307eade26e5aa9c52d3a4bfe9109662eacd24c4ada2c9866b724f23a7039"
+    sha256 cellar: :any_skip_relocation, monterey:       "fc28b1d2618af54c8d645804d1b05bcc5c1661d3b98156643bdf7c5476f401a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f00b03020256a8f3c9a85c9d440a0d7c0820d4c07069c97dd066ad501d5b9bc"
   end
 
   keg_only <<~EOS
@@ -42,8 +41,8 @@ class SphinxDoc < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/1f/53/a5da4f2c5739cf66290fac1431ee52aff6851c7c8ffd8264f13affd7bcdd/docutils-0.20.1.tar.gz"
-    sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
+    url "https://files.pythonhosted.org/packages/21/ff/c495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844c/docutils-0.21.1.tar.gz"
+    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
   end
 
   resource "idna" do

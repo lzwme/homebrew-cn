@@ -1,9 +1,9 @@
 class OpenjdkAT8 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk8uarchiverefstagsjdk8u402-ga.tar.gz"
-  version "1.8.0-402"
-  sha256 "4e7495914ca02ef8e3d467d0026ff76672891b4ba026b4200aeb9a0666e22238"
+  url "https:github.comopenjdkjdk8uarchiverefstagsjdk8u412-ga.tar.gz"
+  version "1.8.0-412"
+  sha256 "f63bb60fbc6e798b0bbf5b6477765c66740a2b3cceab2d6713be879057f1c99b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -15,10 +15,10 @@ class OpenjdkAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "1e901572b4fce1133d8756af7a6c8d5c33e6b149e380c8522f0007bc0b1afe21"
-    sha256 cellar: :any,                 ventura:      "d2305fca54292a5152ca641221b39377b0a52ff86c74d9720eac6b5e930e8f8f"
-    sha256 cellar: :any,                 monterey:     "7fcaf5b6bf40ba8cb74efbc894894bf2e7f0dea1a0bef624dc854f00316ef3d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "237c6366e97df8e42427ff80f49bc7c2e02754f32baf609011397e9d79d625f3"
+    sha256 cellar: :any,                 sonoma:       "fedd84f8e92c2d2a99d04c127fa9b1d1f1ce4155a79c3d9d253c2d1b672397e0"
+    sha256 cellar: :any,                 ventura:      "c858f2fc6c5b283ac8f0b13320eed010876c6a04eb711359b993aae6262bcd8a"
+    sha256 cellar: :any,                 monterey:     "2a7ada2abda6b533ef44572342e51a0f8adcfe4a3ced4b5e872fc390a857495f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9eba0e19767a4ba2483ae12c89ce575f7ef639cdb0a0efd38361e00cba65d830"
   end
 
   keg_only :versioned_formula
@@ -138,7 +138,7 @@ class OpenjdkAT8 < Formula
           --with-extra-cxxflags=-F#{javavm_framework_path}
         ]
         ldflags << "-F#{javavm_framework_path}"
-        # Fix "'JavaNativeFoundationJavaNativeFoundation.h' file not found" issue on MacOS Sonoma.
+      # Fix "'JavaNativeFoundationJavaNativeFoundation.h' file not found" issue on MacOS Sonoma.
       elsif MacOS.version == :sonoma
         javavm_framework_path = "LibraryDeveloperCommandLineToolsSDKsMacOSX13.sdkSystemLibraryFrameworks"
         args += %W[
@@ -209,6 +209,23 @@ class OpenjdkAT8 < Formula
 end
 
 __END__
+--- jdksrcsharebinsplashscreen_stubs.c
++++ jdksrcsharebinsplashscreen_stubs.c
+@@ -61,11 +61,11 @@
+ #define INVOKEV(name) _INVOKE(name, ,;)
+
+ int     DoSplashLoadMemory(void* pdata, int size) {
+-    INVOKE(SplashLoadMemory, NULL)(pdata, size);
++    INVOKE(SplashLoadMemory, 0)(pdata, size);
+ }
+
+ int     DoSplashLoadFile(const char* filename) {
+-    INVOKE(SplashLoadFile, NULL)(filename);
++    INVOKE(SplashLoadFile, 0)(filename);
+ }
+
+ void    DoSplashInit(void) {
+
 --- jdksrcsharenativecomsunjavautiljarpackjni.cpp
 +++ jdksrcsharenativecomsunjavautiljarpackjni.cpp
 @@ -292,7 +292,7 @@

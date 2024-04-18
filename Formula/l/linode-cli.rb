@@ -3,20 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https:github.comlinodelinode-cli"
-  url "https:files.pythonhosted.orgpackagesdd4347c3d897dbac5f3c2c2823152cb9d062f1d343d21c281ac85ba84c0a1299linode-cli-5.48.3.tar.gz"
-  sha256 "582bace54279139b07fa0077d00cfb3fb005a1d8fca6af9b122e4d2db94e0622"
+  url "https:files.pythonhosted.orgpackages456c101a152405af17ebdd6417f1f63c97c4e5734463d011009c8eb214109f47linode_cli-5.48.4.tar.gz"
+  sha256 "58b8394efda3de0132a7df4374d56e035d0395b7093c2e7c58d200d56c7513e5"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comlinodelinode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "59564fc4d6dd8c549290e32a9fb9827960168ef52901c7ee701198af5289f09e"
-    sha256 cellar: :any,                 arm64_ventura:  "43f9e044126cfb50f013bde5f9f897e79bb1d5c8c25d1eb9cd52facfcd42070f"
-    sha256 cellar: :any,                 arm64_monterey: "c9698cbd1072ff9090aabf5160897b802e3f477f3035a77b61cf778b45737c48"
-    sha256 cellar: :any,                 sonoma:         "5b5c5a067bdbdaf5a3388f15250063323ac895fc7e1b4d39bbb018531ef8b6ec"
-    sha256 cellar: :any,                 ventura:        "2df6384f3807c76095a5f6645e007965ca89a88b417edec8eaf7b7adcad63692"
-    sha256 cellar: :any,                 monterey:       "accbc03b236cd2d36539f16f35040809322c66facbc4378f6dd8365bed9f9698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b4428c714cb0a9fbbd427413b94ca1764820bf9d8595dad0ba0ed69b91d1d2a"
+    sha256 cellar: :any,                 arm64_sonoma:   "638fe034c0580df28b2b93ad1f306390cf845dd212bee3b04e58e380f0d47e74"
+    sha256 cellar: :any,                 arm64_ventura:  "7a01615a0a1a719d1465011006fa019fb9f2a210e2e71eca177fa6be69a31f1b"
+    sha256 cellar: :any,                 arm64_monterey: "c6818aae145ac73bcc17c7159f229304bd40e094bcb5c1b6593c7c9a9986bc3d"
+    sha256 cellar: :any,                 sonoma:         "01b722e9d8c73f332023222611c1cc3ad7758c8bdfc9fa3c156a0acb9fcf6115"
+    sha256 cellar: :any,                 ventura:        "7cfd306476d6bccd50ce6200b23107fcf0e985b1ea138280f33465df180be0a2"
+    sha256 cellar: :any,                 monterey:       "c1670a8494739acd19e5101dcf64b26133d60e761385f6cffcd1646a35a1b67e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e76768335151f30d884156c7d4b8f34a628edd55de8963a46c92f069a5212d0f"
   end
 
   depends_on "certifi"

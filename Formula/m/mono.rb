@@ -1,8 +1,9 @@
 class Mono < Formula
   desc "Cross platform, open source .NET development framework"
   homepage "https:www.mono-project.com"
-  url "https:download.mono-project.comsourcesmonomono-6.12.0.199.tar.xz"
-  sha256 "c0850d545353a6ba2238d45f0914490c6a14a0017f151d3905b558f033478ef5"
+  url "https:github.commonomono.git",
+      tag:      "mono-6.12.0.206",
+      revision: "0cbf0e290c31adb476f9de0fa44b1d8829affa40"
   license "MIT"
 
   livecheck do
@@ -11,13 +12,13 @@ class Mono < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "fecd50c2c2290c51fc84addd9bac77dd74b3c7901b5a8329e95322bf099cd7d6"
-    sha256 arm64_ventura:  "a3682350a932ff3812b57b3cd5671971a3cda31ddae14ccbe0a263f666222507"
-    sha256 arm64_monterey: "07f9edfaf51fb758b0af90349d33ab6abc7cfc3d95596b2ad26a55fe9ebd62e8"
-    sha256 sonoma:         "fc2d7386cf53876efd5edd0eafa568a3c82b13322fb2c27cecbe96a3477287ff"
-    sha256 ventura:        "df4634d1564955ffa5b51e5e3c8efd78f5feaf82b71cfb3476e26d920a1b1b3a"
-    sha256 monterey:       "54f6aa2e1caa371de1ba5fc6f2b3e4e8423a2669249dca543d4995900693834e"
-    sha256 x86_64_linux:   "003fac1632e75740b9d6e105471e4c5212a22d0adbeead4e2e73c03f70573f84"
+    sha256 arm64_sonoma:   "d5692da681816af40c7edba43ef788fc8eefc0dfe5633335f988651194648f05"
+    sha256 arm64_ventura:  "dc0c5854517667749907915e3fb0bacbc1e01831e772fe22974f95249984c00f"
+    sha256 arm64_monterey: "703ae872a253c8aabbbe3df6712e6687d4a03a2d54f240f0e71f2338aef2f74f"
+    sha256 sonoma:         "ad71afa361e5dbafaf277e53a39d5408faaec3d43e2d5d2d1efc67dfb6a0167b"
+    sha256 ventura:        "048f0e67c2e3136f4577d801704e48456d3afad2a6d53e4853255e7beefbb939"
+    sha256 monterey:       "591a82669740d8ac27cbc8167a1bcee320ef12157b4533314b70680a8465bc2a"
+    sha256 x86_64_linux:   "303b7ccd6cfd91cecf7d28d8d6c5f95e1751d0c9343eb8ef6bb8642eb3b743ac"
   end
 
   depends_on "autoconf" => :build
@@ -59,9 +60,8 @@ class Mono < Formula
     # Remove use of -flat_namespace. Upstreamed at
     # https:github.commonomonopull21257
     inreplace "monoprofilerMakefile.am", "-Wl,suppress -Wl,-flat_namespace", "-Wl,dynamic_lookup"
-    system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", *std_configure_args,
+    system ".autogen.sh", *std_configure_args,
                           "--disable-silent-rules",
                           "--disable-nls"
     system "make"

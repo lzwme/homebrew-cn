@@ -3,19 +3,18 @@ class Nvchecker < Formula
 
   desc "New version checker for software releases"
   homepage "https:github.comlilydjwgnvchecker"
-  url "https:files.pythonhosted.orgpackages0be21d749d02d1625529571cc01aad4e3e23d834fbe58bfca1a2bf3bb86a8b65nvchecker-2.13.1.tar.gz"
-  sha256 "50594215ebf23f12795886f424b963b3e6fab26407a4f9afc111df4498304ee3"
+  url "https:files.pythonhosted.orgpackagesfb9972e1057e035f43dfd11d8b07fa19881c55bdfadbee31caab961b0e9a9fcenvchecker-2.14.tar.gz"
+  sha256 "268c01dafb5a111cf724dac005637b636e8366dd5bd37587a3128b503734ecb4"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "720518e3f156801f589c5407090e8fd4547fe91e62c0e161b5c0c3912b570733"
-    sha256 cellar: :any,                 arm64_ventura:  "2f348aa830221292afe8fdbebf00f19dce9e52d486ee8d75412afcb14be8a374"
-    sha256 cellar: :any,                 arm64_monterey: "663ccc015b0c025732c9da9b89e0d4b408a898156bc6ba9430188f9c78285390"
-    sha256 cellar: :any,                 sonoma:         "5a926d76c15d4f707431d505ec32bbe7d33d7885786a9b9d421fae552fbfdb53"
-    sha256 cellar: :any,                 ventura:        "d2bc59bf752e88b7de2bfd2c649a812c35aeb1d560db5650fbdd021d05b0cf42"
-    sha256 cellar: :any,                 monterey:       "ed5e9d0d47e9820bc4f7910ad4ef69b608065a9689118a6cd2a74acf7a494fc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5c21e5484536036f2659e9fc84190eabe28156a3abd8ec5f29f794315b778c9"
+    sha256 cellar: :any,                 arm64_sonoma:   "bbd05a02765888639f4fdbc190e48e726c832f0c5e9e73c6752f8868c404e727"
+    sha256 cellar: :any,                 arm64_ventura:  "f95b148a01a5c573a601852a4c8e77a47092165f3fc6e8f2ca289c883ddf5052"
+    sha256 cellar: :any,                 arm64_monterey: "1e213544d2d4ba4f301e109c894b48734056d0edd3a7f4f5faf7854719a70be9"
+    sha256 cellar: :any,                 sonoma:         "082370292731452be7a0ce94e68f12d63e1bdefebed28489daa6285078057a85"
+    sha256 cellar: :any,                 ventura:        "c56f167563da44f21e1fc4a21c268e78db1df04007a322913204aedb219da97b"
+    sha256 cellar: :any,                 monterey:       "dfdb0ee55df8fb25b1adde27fd6ace6118c35d7c4282149b8620edbad41ec8ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1446b0873dcb971f755e20a6f8c98c86efd58f0d5288fcdcf9bd516bd12b6c66"
   end
 
   depends_on "jq" => :test
@@ -23,8 +22,8 @@ class Nvchecker < Formula
   depends_on "python@3.12"
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesfb2b9b9c33ffed44ee921d0967086d653047286054117d584f1b1a7c22ceaf7bpackaging-23.2.tar.gz"
-    sha256 "048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"
+    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
+    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
   end
 
   resource "platformdirs" do

@@ -1,25 +1,24 @@
-class LlvmAT16 < Formula
+class LlvmAT17 < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https:llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-16.0.6llvm-project-16.0.6.src.tar.xz"
-  sha256 "ce5e71081d17ce9e86d7cbcfa28c4b04b9300f8fb7e78422b1feb6bc52c3028e"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-17.0.6llvm-project-17.0.6.src.tar.xz"
+  sha256 "58a8818c60e6627064f312dbf46c02d9949956558340938b71cf731ad8bc0813"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
-  revision 1
 
   livecheck do
     url :stable
-    regex(^llvmorg[._-]v?(16(?:\.\d+)+)$i)
+    regex(^llvmorg[._-]v?(17(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e799fe5056da9a07d79474f7a7290e0a465474eb004cfc614775f290197e10e5"
-    sha256 cellar: :any,                 arm64_ventura:  "1814e78f92d133918a597c4f7c30fef32f3665989951c1cefdda331eb4402ed1"
-    sha256 cellar: :any,                 arm64_monterey: "37035d480d967046905bc5e1cb71b96310a3096b4b066e7542c22cccc4abaf3f"
-    sha256 cellar: :any,                 sonoma:         "16844a4822d3afecf5783a368abf980636d8a3a110100ca4e8b06de383a44b56"
-    sha256 cellar: :any,                 ventura:        "eec48597281d704edb178eccb4180ffaba79418ff7e478b138097a1a9b3aaa62"
-    sha256 cellar: :any,                 monterey:       "332da3b9d1d8d75a82c77fc84802f72ba2e8f39db4728df3d4fa7c1dfb5bef08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dc1596bb9da879a127448ef1811b6c093348139f0408c2f9b80cd55cf26ce4b"
+    sha256 cellar: :any,                 arm64_sonoma:   "a86a41bd356df1fdbd8eef983fff672937a39cad37b00ef37ca94365fc636e1d"
+    sha256 cellar: :any,                 arm64_ventura:  "d39b580c5e17bb4f103937122a64f81f7961bbd5b25f9467226c04ff557a45c6"
+    sha256 cellar: :any,                 arm64_monterey: "0915b164989e297186d51766ba11451d6066a2a85a52629acc296d75cbb25159"
+    sha256 cellar: :any,                 sonoma:         "d98f672996f75861190b139397b1623af1f41b624d2a9515a22505592aeed2fa"
+    sha256 cellar: :any,                 ventura:        "e46fd200b88e080bf18cdddbb140b1052a168b8c91debc895f0ce66d1db7c4aa"
+    sha256 cellar: :any,                 monterey:       "77fa86ddbbdaa8abd9afa9e3e1b3471ebf3817ce6a8f018901d5d2889a2d8e0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "087832db6b7abee3997e2b13501e98025273ebfc64368ba97917a37739d65392"
   end
 
   # Clang cannot find system headers if Xcode CLT is not installed
@@ -30,8 +29,7 @@ class LlvmAT16 < Formula
   # https:llvm.orgdocsGettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "swig" => :build
-  depends_on "python@3.12"
+  depends_on "python@3.12" => [:build, :test]
   depends_on "zstd"
 
   uses_from_macos "libedit"
@@ -48,16 +46,11 @@ class LlvmAT16 < Formula
   # Fails at building LLDB
   fails_with gcc: "5"
 
-  # Fixes https:github.commesonbuildmesonissues11642
+  # Fix arm64 misoptimisation in some cases.
+  # https:github.comHomebrewhomebrew-coreissues158957
   patch do
-    url "https:github.comllvmllvm-projectcommitab8d4f5a122fde5740f8c084c8165f51a26c93c7.patch?full_index=1"
-    sha256 "9b01de9708e4eb5cef10c18f25dd42e126306ed8cbd9d9a26bb5fbb91ac7d7a3"
-  end
-
-  # Fix build failure on Sonoma.
-  patch do
-    url "https:github.comllvmllvm-projectcommit73e15b5edb4fa4a77e68c299a6e3b21e610d351f.patch?full_index=1"
-    sha256 "b540ef6e3728d7881d95775a163314fac6e2f9207f5d5e8b79c8c73c73ba4dc3"
+    url "https:raw.githubusercontent.comHomebrewformula-patches23704400c86976aaa4f421f56928484a270ac79cllvm17.x-arm64-opt.patch"
+    sha256 "0e312207fd9474bd26f4a283ee23d94b334d3ec8732086d30bce95f7c8dc2201"
   end
 
   def python3
@@ -74,7 +67,6 @@ class LlvmAT16 < Formula
       clang
       clang-tools-extra
       lld
-      lldb
       mlir
       polly
     ]
@@ -84,16 +76,10 @@ class LlvmAT16 < Formula
       libcxxabi
       libunwind
     ]
-    if OS.mac?
-      runtimes << "openmp"
-    else
-      projects << "openmp"
-    end
 
     python_versions = Formula.names
                              .select { |name| name.start_with? "python@" }
                              .map { |py| py.delete_prefix("python@") }
-    site_packages = Language::Python.site_packages(python3).delete_prefix("lib")
 
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
@@ -123,11 +109,6 @@ class LlvmAT16 < Formula
       -DLLVM_ENABLE_Z3_SOLVER=OFF
       -DLLVM_OPTIMIZED_TABLEGEN=ON
       -DLLVM_TARGETS_TO_BUILD=all
-      -DLLDB_USE_SYSTEM_DEBUGSERVER=ON
-      -DLLDB_ENABLE_PYTHON=ON
-      -DLLDB_ENABLE_LUA=OFF
-      -DLLDB_ENABLE_LZMA=ON
-      -DLLDB_PYTHON_RELATIVE_PATH=libexec#{site_packages}
       -DLIBOMP_INSTALL_ALIASES=OFF
       -DCLANG_PYTHON_BINDINGS_VERSIONS=#{python_versions.join(";")}
       -DLLVM_CREATE_XCODE_TOOLCHAIN=OFF
@@ -277,33 +258,6 @@ class LlvmAT16 < Formula
     assert_equal "-lLLVM-#{soversion}", shell_output("#{bin}llvm-config --libs").chomp
     assert_equal (libshared_library("libLLVM-#{soversion}")).to_s,
                  shell_output("#{bin}llvm-config --libfiles").chomp
-
-    (testpath"omptest.c").write <<~EOS
-      #include <stdlib.h>
-      #include <stdio.h>
-      #include <omp.h>
-      int main() {
-          #pragma omp parallel num_threads(4)
-          {
-            printf("Hello from thread %d, nthreads %d\\n", omp_get_thread_num(), omp_get_num_threads());
-          }
-          return EXIT_SUCCESS;
-      }
-    EOS
-
-    system "#{bin}clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
-                           "-I#{lib}clang#{llvm_version_major}include",
-                           "omptest.c", "-o", "omptest"
-    testresult = shell_output(".omptest")
-
-    sorted_testresult = testresult.split("\n").sort.join("\n")
-    expected_result = <<~EOS
-      Hello from thread 0, nthreads 4
-      Hello from thread 1, nthreads 4
-      Hello from thread 2, nthreads 4
-      Hello from thread 3, nthreads 4
-    EOS
-    assert_equal expected_result.strip, sorted_testresult.strip
 
     (testpath"test.c").write <<~EOS
       #include <stdio.h>
@@ -491,16 +445,6 @@ class LlvmAT16 < Formula
         cindex.Config().get_cindex_library()
       EOS
     end
-
-    # Check that lldb can use Python
-    lldb_script_interpreter_info = JSON.parse(shell_output("#{bin}lldb --print-script-interpreter-info"))
-    assert_equal "python", lldb_script_interpreter_info["language"]
-    python_test_cmd = "import pathlib, sys; print(pathlib.Path(sys.prefix).resolve())"
-    assert_match shell_output("#{python3} -c '#{python_test_cmd}'"),
-                 pipe_output("#{bin}lldb", <<~EOS)
-                   script
-                   #{python_test_cmd}
-                 EOS
 
     # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time
     # was known to output incorrect linker flags; e.g., `-llibxml2.tbd` instead of `-lxml2`.

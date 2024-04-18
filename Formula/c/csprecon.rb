@@ -1,18 +1,18 @@
 class Csprecon < Formula
   desc "Discover new target domains using Content Security Policy"
   homepage "https:github.comedoardotttcsprecon"
-  url "https:github.comedoardotttcspreconarchiverefstagsv0.0.9.tar.gz"
-  sha256 "75a8504b0c0e22c571b7caeb62740438aa121934a83b5bcb8eb554c3e8e696d4"
+  url "https:github.comedoardotttcspreconarchiverefstagsv0.1.0.tar.gz"
+  sha256 "7c2c4b427ef280a47cee54544c909c170295d38008871aa0cb6a9aabd7b84d8e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9866d9e878c791d3dc770739f942a9529c99c3f377cb30e1e326ebc3465d84bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40a2938a862f59323f78184471abc0402474562b280402f3c8da3d4dd9e0ac01"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae62e40458e3794d884a19b86e7ac2ac7880399681f0728ac703eed53083e4ca"
-    sha256 cellar: :any_skip_relocation, sonoma:         "adba9c1619e000b1ac6f8b293724be3fb2a08d6bea88076627bcc27b5e6d448d"
-    sha256 cellar: :any_skip_relocation, ventura:        "3713eb26183be2c5fc8438ceccab3abe455d12a9b73f39876d02a45386fa7f8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "516f2cb87c41ad7320d3c2f48b977a7616b957e66fd765d5083dcd01308c8b67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2235d85ba6ffcec84b25d1af1bb1a4111cc3654106b9c13ae4ee72346ae037ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96ef579f6aec998a7c0c66d7856600d15e09a9c0f51fc1b4bcd7f9795ecfd756"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7a8ad53a9eb399910e48a317dd4d36b194ead0182c627adace36963300a1340"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49dbba0b474be056c2e99ffed912d54506daf475815731fdc321957ed619a6c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a1d6d82c6be6b8f2ac350072ad287a60907241106d97f60eaab2d1ae777dddb"
+    sha256 cellar: :any_skip_relocation, ventura:        "1129520f7ee89ed69e0f1fb203de5ed4ac6a6fd816dfab06cebbadaaad854531"
+    sha256 cellar: :any_skip_relocation, monterey:       "5067d8d345006609a70832b6943dcbe5eab606bc43778ad2600c437a1472ddd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8f00c0bbc3200595f5100d1675cad4c61a3b9417ba3647690c32959b864ecfd"
   end
 
   depends_on "go" => :build
