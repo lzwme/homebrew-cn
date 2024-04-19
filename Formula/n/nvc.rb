@@ -4,15 +4,16 @@ class Nvc < Formula
   url "https:github.comnickgnvcreleasesdownloadr1.12.0nvc-1.12.0.tar.gz"
   sha256 "68d43db9cdfdfad3cf5a45fa08ed20900733c9f3799117f8f5e10744af79136f"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "af2b89cc01b4a3291bab11f99d83826e8790bc12e23e01cc2585caf5fab8d594"
-    sha256 arm64_ventura:  "facc28573de5f2f8572bb34d5e0ea0018cfb26284f344f4aa49a7406aee20865"
-    sha256 arm64_monterey: "faf7efa6a949725cbf1ada0368b47153a9105fbe82e11ee38fe19ed8f2fd3f9b"
-    sha256 sonoma:         "bdc8caced178728dd06732835664d2d9d5075c7e4145059be9fb84c124a624f7"
-    sha256 ventura:        "17ae3c79b5b67e9151a152b39e1fe51ab395e27cb02b65d513b543a135682cdc"
-    sha256 monterey:       "c40c0e38f68aa5fafddec7ab937260d3c3e6727d723eb0bd45dda26a7524b8fd"
-    sha256 x86_64_linux:   "baf0658e908d412a42fc349d431f2cbc326fb991ed67037f17bef3e507743255"
+    sha256 arm64_sonoma:   "b075f20648d94e176131d0b80ece517631b06151bbc923118a3355d8257c15c3"
+    sha256 arm64_ventura:  "5c119fea28c0af1b6085e28ccdd633010043a0219ea558a4a0fbda418d1f0fc6"
+    sha256 arm64_monterey: "2fd3b582a9b60a054c3dffdfff7555c4139e007f9e8c168a7e64aa80a2f7655b"
+    sha256 sonoma:         "2140633d44b4fe48f791d0c319d1a36a8c5a581202f366cd4e617354ed6dd8ad"
+    sha256 ventura:        "f27c42ba7de89e7b0626054808b7b329b4417ecd0e2888d942d62c4bc03ef68f"
+    sha256 monterey:       "d946186a51d11f629c1ffbed0f77736d71be33838da001b1d5e91e9781e211cb"
+    sha256 x86_64_linux:   "d47a62a1b1152da36591f2adc90901f2aba1843033b119040158f518727fd02d"
   end
 
   head do
@@ -24,7 +25,7 @@ class Nvc < Formula
 
   depends_on "check" => :build
   depends_on "pkg-config" => :build
-  depends_on "llvm"
+  depends_on "llvm@17"
 
   uses_from_macos "flex" => :build
 
@@ -43,7 +44,7 @@ class Nvc < Formula
 
     # In-tree builds are not supported.
     mkdir "build" do
-      system "..configure", "--with-llvm=#{Formula["llvm"].opt_bin}llvm-config",
+      system "..configure", "--with-llvm=#{Formula["llvm@17"].opt_bin}llvm-config",
                              "--prefix=#{prefix}",
                              "--with-system-cc=#{ENV.cc}",
                              "--disable-silent-rules"

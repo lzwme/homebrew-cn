@@ -2,7 +2,7 @@ class Mapnik < Formula
   desc "Toolkit for developing mapping applications"
   homepage "https:mapnik.org"
   license "LGPL-2.1-or-later"
-  revision 26
+  revision 27
   head "https:github.commapnikmapnik.git", branch: "master"
 
   # TODO: Try switching to CMake build on next release as it works better with
@@ -32,13 +32,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "75386044ba3e3f74b03838526e5555abbf141cb9f0c3bcb07b3a1199e6e54682"
-    sha256 cellar: :any,                 arm64_ventura:  "2febdb09353a70739e39043685a4b7592e6c794da174ae5a3abf3dc3ccdbe397"
-    sha256 cellar: :any,                 arm64_monterey: "865827d45d37b3bf81ef7d1e8e39956e4f2f02083f86f226f4de79d6bd346ef4"
-    sha256 cellar: :any,                 sonoma:         "a380526896fe5fdd0e47c37d0cb2c211a6d4d1bce05bb4364fff969f051494ce"
-    sha256 cellar: :any,                 ventura:        "4705ba524ac9bf254918f541f7b740bc1005f678917d8ed482bddabd10510a47"
-    sha256 cellar: :any,                 monterey:       "11ca53d3874019058abf955067ad5e8ac234779f745e485eecd11b574dbf25a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "625cc8885cb3264a2af4090b5f5f88b32866083eaf8fca7a250844f36d2fce40"
+    sha256 cellar: :any,                 arm64_sonoma:   "fcd09061b41029b36544e2899637441883be2d9663baf31155efe062616e971d"
+    sha256 cellar: :any,                 arm64_ventura:  "3574ce938dae0370685e6e47fc7804d7c9238075a0e43848292124fd163999ef"
+    sha256 cellar: :any,                 arm64_monterey: "424f108b9f1fc2aee0968bf1ea102e1c32a053c5f0c36bd88eb02db1243fddd7"
+    sha256 cellar: :any,                 sonoma:         "7c9884809e4273744ccf056e41f3b8d36c24f184eac6fea931cf0c233501543a"
+    sha256 cellar: :any,                 ventura:        "569139ecfe3050a65a20ba1265375e883233521ed650e1b5af3e58292c70be22"
+    sha256 cellar: :any,                 monterey:       "6c61177bf7f586856eb6b41df745daba53ebbf4268390d1836d6f54b05df2315"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7060c0f673abe99a8a438a6f9541ddb7d3ee778dc0232eb650d4cfda10cffac6"
   end
 
   depends_on "pkg-config" => :build
@@ -60,6 +60,15 @@ class Mapnik < Formula
   uses_from_macos "zlib"
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    if DevelopmentTools.clang_build_version >= 1500
+      recursive_dependencies
+        .select { |d| d.name.match?(^llvm(@\d+)?$) }
+        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
+        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
+    end
+
     boost = Formula["boost"]
     harfbuzz = Formula["harfbuzz"]
     icu = Formula["icu4c"]

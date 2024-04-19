@@ -1,6 +1,6 @@
 class Cog < Formula
   desc "Containers for machine learning"
-  homepage "https:github.comreplicatecog"
+  homepage "https:cog.run"
   url "https:github.comreplicatecogarchiverefstagsv0.9.5.tar.gz"
   sha256 "e8ed3242f17cfffc6d80841aa46f6b1cf2a0170a3a3488be80cf2a123a56f714"
   license "Apache-2.0"

@@ -4,6 +4,7 @@ class Ldc < Formula
   url "https:github.comldc-developersldcreleasesdownloadv1.37.0ldc-1.37.0-src.tar.gz"
   sha256 "50e80ae3c436c90637c2c3d40f392dc28b721f7aab3a1e3ca3bf4f9c28dba064"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comldc-developersldc.git", branch: "master"
 
   livecheck do
@@ -12,19 +13,19 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "a6608742b2a6463f7e3679d007c6767178ae37545a5c6b45808afaf168bacaad"
-    sha256                               arm64_ventura:  "a45760c5605c942fa57c120a5e4872340768dbf03231e8ab60e0aff048de199e"
-    sha256                               arm64_monterey: "b4211bd6f90b1e79e56b0c079dcd6df4c9fee40f855893d58135159624ef2749"
-    sha256                               sonoma:         "0c32c34dd6547a57cc9b7e5314a7dd67329a2acce72efcbe11a0a408026a217e"
-    sha256                               ventura:        "1b349064dc40cd433413262044ffd1b6d037a4c790bdf6dad294dc13d041bd7c"
-    sha256                               monterey:       "ae0dd916281e3ce60fa7b4d11f77b38290afb4a8609bb427adac5fc81c3c86a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c001131cb1b1b7bfc8fe09d00d20e384ab9e636828aa75caaf053b10e59d4c82"
+    sha256                               arm64_sonoma:   "51b4aee5496152d31820a0e0b987fa4cebc2c20e123a24f9502abb6b95def810"
+    sha256                               arm64_ventura:  "0efc0c05f698b21fb3c9fa833defb3d8e3662353245590ff7cd33d448c2dd952"
+    sha256                               arm64_monterey: "0650053126f508f56396f327edda6c45426029dbd0c682502676b3c2d38e04cb"
+    sha256                               sonoma:         "54da9a6c61d0a10a1fea8fcc0e0daef2a0d4e2a8313e22f647e1cd6587fc5a06"
+    sha256                               ventura:        "c2e51f753ad78a81e1c8e3eaa8f77500220bafcf4a2cbe72746721858640c6f5"
+    sha256                               monterey:       "238df916f382e60216b7535e01abcb608cb3c9e9cfa7051b4a4776b1af2698ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ec35e481c34e435cf98f4deffd6634c816b134f403a5c36bb15289830eefbb8"
   end
 
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkg-config" => :build
-  depends_on "llvm"
+  depends_on "llvm@17"
 
   uses_from_macos "libxml2" => :build
 

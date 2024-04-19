@@ -6,20 +6,21 @@ class Odin < Formula
       revision: "aab122ede8b04a9877e22c9013c0b020186bc9b4"
   version "2024-04a"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4c72adb334df03cfc13dbc44e856f275e3f2c79b52fded838d7183ebfc0bc641"
-    sha256 cellar: :any,                 arm64_ventura:  "b030289987283ccadd6a22971533ffe6df589a5ffd9b367c11b74ea54ef5f2f4"
-    sha256 cellar: :any,                 arm64_monterey: "90381dcddb9f980548919b52185e7c91633dc8e0a5ec14334f5876cc236417c3"
-    sha256 cellar: :any,                 sonoma:         "905c623014c85d2a1fb64c076cd50a00bff170129e8bb471addf8618e593270f"
-    sha256 cellar: :any,                 ventura:        "d2bb15733c16e3c717cafa1421a70e15c563f13483141a5da76d108c67f5c3be"
-    sha256 cellar: :any,                 monterey:       "09eb8b912ea05660dfcf7a378e0259572f6a8ea869e525b3d07a37e804546131"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4e039b6b6832473aaba910d497f7bb6c7429df6f857fa7d48ae5baf876c69b6"
+    sha256 cellar: :any,                 arm64_sonoma:   "e9a092170226b0be6aeffd0efb1a5a8c180fe61f2a628f7c35a7568f58c8676f"
+    sha256 cellar: :any,                 arm64_ventura:  "715f4f6515ea63c984be300ecb94728c39cb024fc2c4a9aabd4eaa99ead2e1be"
+    sha256 cellar: :any,                 arm64_monterey: "b8156f43e9ebcd28952d12f99388ff0c4a89c68d0ef352400769fd29da668ef0"
+    sha256 cellar: :any,                 sonoma:         "28708679fab80769d2bf70dd85b3af96adc0526f0ead10a4f0a7a8a26ed50e3b"
+    sha256 cellar: :any,                 ventura:        "7c1d4950780996b05cfad031db79689327dce03912821a80c3f398043df1030c"
+    sha256 cellar: :any,                 monterey:       "626a80c1cbbf2d8f82085b825f762d6750e4819fc23307b400bcca4e9f25d94b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecfb693f82990b48732307880d050f5a5a5353c833edbf15421fd82bf2a39667"
   end
 
   depends_on "glfw"
-  depends_on "llvm"
+  depends_on "llvm@17"
   depends_on "raylib"
 
   fails_with gcc: "5" # LLVM is built with GCC

@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https:github.comOSGeogdalreleasesdownloadv3.8.5gdal-3.8.5.tar.gz"
   sha256 "0c865c7931c7e9bb4832f50fb53aec8676cbbaccd6e55945011b737fb89a49c2"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -11,13 +12,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "99ed51dbd20e95e89f3e57afddfa7198a09b45960663234b3fde8c76d07d2878"
-    sha256 arm64_ventura:  "9d9663a4cac003597a551901cc8c70da243062abb45b00c87d75043b7b84b940"
-    sha256 arm64_monterey: "a7c0c6572d5c6f891c371422ed3043e0509bcb7808197afacbf9c75dfd62b488"
-    sha256 sonoma:         "b480666a5240edd499bd0f6f3b12fc1d08c46d3f02cd0a3ecb7a5ede7dde486c"
-    sha256 ventura:        "2411e687120354926f57d4452c44d1526c9d453f0ee36d244c6940ba26ced92b"
-    sha256 monterey:       "a92bb3e20d3863236fdb8b1d66f6da54cbb35bbf5623d3bc1748958dacc5399b"
-    sha256 x86_64_linux:   "f892081d45ab36f437aec7336fb1c9c85b16b2fdefdccecdaac2675b49964334"
+    sha256 arm64_sonoma:   "580b3a43c1f7ad99636d71752010837f18ee01d682f7ced35baf3a54dd4981dc"
+    sha256 arm64_ventura:  "7e45b47166f47b0f73988b827add67287d8be7a36427ea72752807cd1c63dfa6"
+    sha256 arm64_monterey: "0b8529ad9a4e4518600c22db5ddf2bd44836f897eb7bb1928b4516a13b56106c"
+    sha256 sonoma:         "66bed34ff624697893cf8f529f08ea1576ab33454f2cac505559931fef42fc78"
+    sha256 ventura:        "cbdf3729393db59d73909be21eb236eeb82bd7cca0d13bcbe7951f670533b6a6"
+    sha256 monterey:       "d05b9e31b0f6c031b7ace80a761aa67011aaa43a7fc0281e30cb5a07707ebf25"
+    sha256 x86_64_linux:   "ae386034848df266cdedc17f7760e0226be95cb165bd02b65e15296a1ca206e4"
   end
 
   head do
@@ -84,6 +85,15 @@ class Gdal < Formula
   end
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    if DevelopmentTools.clang_build_version >= 1500
+      recursive_dependencies
+        .select { |d| d.name.match?(^llvm(@\d+)?$) }
+        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
+        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
+    end
+
     site_packages = prefixLanguage::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIXlib since Python 3.10.

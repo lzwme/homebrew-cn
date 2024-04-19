@@ -5,7 +5,7 @@ class GemCompletion < Formula
   sha256 "ee8b84d7ac7444a7388e58a406af56dc0b690a57faa7bcfa4c10671deb788991"
   license "MIT"
   version_scheme 1
-  head "https:github.commernencompletion-ruby.git", branch: "master"
+  head "https:github.commernencompletion-ruby.git", branch: "main"
 
   livecheck do
     formula "ruby-completion"

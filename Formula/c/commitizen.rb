@@ -3,27 +3,27 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https:commitizen-tools.github.iocommitizen"
-  url "https:files.pythonhosted.orgpackages9556b7c6174b6c7d31b3cb52a6ab76f7e99141be5b22b718250de7279e6f5bd1commitizen-3.22.0.tar.gz"
-  sha256 "806141c59ed9151acd468e6579c76df83a1536dae27a5f7be7b2ffb1847b79d5"
+  url "https:files.pythonhosted.orgpackages0cf627b408b625c01339accb5914c8d604012e49d0bb1900484ec759254214b5commitizen-3.24.0.tar.gz"
+  sha256 "088e01ae8265f1d6fa5a4d11a05e4fd7092d958c881837c35f6c65aad27331a9"
   license "MIT"
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "649543752df66a44ed7aab40ca323aafd7e881301a5bc5f348545024b365f0b4"
-    sha256 cellar: :any,                 arm64_ventura:  "1bf8e319c966284d0192d4e94d110bd5fc7ff0113cff5630b603c52708a1b8ad"
-    sha256 cellar: :any,                 arm64_monterey: "907b6d59722f7d34cf0c3eb593ab7e903f49f879bb3f752c757d96bf82ec69dd"
-    sha256 cellar: :any,                 sonoma:         "3be77400a1fdbeb26fe56bc7c05c777b468e003e4368a803b25880c719d19d03"
-    sha256 cellar: :any,                 ventura:        "0301ef766a9b32a5bf3692e89936eab943bc2a7014c91198be1b6d4628720d71"
-    sha256 cellar: :any,                 monterey:       "4c4f49328459bc39d96063e0a2bb23d4340f1d1bafb3caaf3bbfa6b340648334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bac138ee2792ba812968bc59279ecd61d4d0babf650442a9c037e5321f8b31e1"
+    sha256 cellar: :any,                 arm64_sonoma:   "e4bcaadc5ce0b1509bad184adf3113a3efba8b1b1bad5a2ad8f4d302137a2eb7"
+    sha256 cellar: :any,                 arm64_ventura:  "847890554bf59f8314f6e0a039068bec8203201088972d888575b440208c3290"
+    sha256 cellar: :any,                 arm64_monterey: "0b7f178caf19a67dfc91691fec4733cea0ef44c1a5f8b4d79ec791dabeb0dc59"
+    sha256 cellar: :any,                 sonoma:         "5e62dedc7fd99638776feecb4db0fb61b24572e5a050a8f7fd3cf5005717b6f9"
+    sha256 cellar: :any,                 ventura:        "3d5300f710e14e958938a83e0c8045683bc1421d3166ec0a16bfd43b60bcda66"
+    sha256 cellar: :any,                 monterey:       "4174b8661d37ecc20ecaf7e9f9fe05da6bcf9146cec947c73018a169583c1e1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fdcb34edd08565a8de12a44b876da3e3293f3f64bd464682576f7beb025749f"
   end
 
   depends_on "libyaml"
   depends_on "python@3.12"
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages3cc0031c507227ce3b715274c1cd1f3f9baf7a0f7cec075e22c7c8b5d4e468a9argcomplete-3.2.3.tar.gz"
-    sha256 "bf7900329262e481be5a15f56f19736b376df6f82ed27576fa893652c5de6c23"
+    url "https:files.pythonhosted.orgpackages7951fd6e293a64ab6f8ce1243cf3273ded7c51cbc33ef552dce3582b6a15d587argcomplete-3.3.0.tar.gz"
+    sha256 "fd03ff4a5b9e6580569d34b273f741e85cd9e072f3feeeee3eba4891c70eda62"
   end
 
   resource "charset-normalizer" do

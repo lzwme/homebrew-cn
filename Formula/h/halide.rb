@@ -4,6 +4,7 @@ class Halide < Formula
   url "https:github.comhalideHalidearchiverefstagsv17.0.1.tar.gz"
   sha256 "beb18331d9e4b6f69943bcc75fb9d923a250ae689f09f6940a01636243289727"
   license "MIT"
+  revision 1
   head "https:github.comhalideHalide.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class Halide < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fabb3fb758e0da8961127fd87d60521a8188ecb5d0c324a87e16b6421a2ee8ba"
-    sha256 cellar: :any,                 arm64_ventura:  "556f60f7f86267903ade80791a9b308aa3645692c1b37990cdc4f8c99129568d"
-    sha256 cellar: :any,                 arm64_monterey: "e50fda2ef326f399bc16694dc444657f6fa2c3c3062d7fc2c3ae7250f6d1098f"
-    sha256 cellar: :any,                 sonoma:         "13409066855f0e41f5f01a1527697ccd35b691b52c0790463049a4248cadbec8"
-    sha256 cellar: :any,                 ventura:        "f82ea6355cdfb1833c20383a90c22493dc35e5bdb526ed954bfed6be20d54923"
-    sha256 cellar: :any,                 monterey:       "89a9af672d492aa15934bfb0bddf04a92ae914d0de6df3d3dc9beea2bd58023b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e78fdb7bbee95088361735d04a15205c448a8cd1f24278f6f4d0870c2e1eaec9"
+    sha256 cellar: :any,                 arm64_sonoma:   "acfb233ba9a4fe0dbf9cc356ce05089e4898e2a704bd042eb63adc834d06ee7f"
+    sha256 cellar: :any,                 arm64_ventura:  "255b0a6cee8ff2e5da7911bc7e2d5bd3c4f9ee1b40341b9bafc0babc005bf02c"
+    sha256 cellar: :any,                 arm64_monterey: "911f16993b0b0dd7e6663afb595b7f37a8260330ebda522a302931b7ae7b0772"
+    sha256 cellar: :any,                 sonoma:         "20ba24f50c8e9ac478b9f8c95a2eea9f14ab969a5705908aa2a926c499a8897f"
+    sha256 cellar: :any,                 ventura:        "52ca13bb0b1db321ef034e694197024ba66feffe89c78bb1ba0aa742d6df1825"
+    sha256 cellar: :any,                 monterey:       "98510b52e0ca95f63ca49860d123d6b8ecf8ecb51d294bb7505968795bcc80a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd4cc8f18056d83d9ac55a7a3616cfd66ca9495e034a56af7074eceb70a09d5a"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +27,7 @@ class Halide < Formula
   depends_on "flatbuffers"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "llvm"
+  depends_on "llvm@17"
   depends_on "python@3.12"
 
   fails_with :gcc do
@@ -50,7 +51,7 @@ class Halide < Formula
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib if DevelopmentTools.clang_build_version >= 1500
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@17"].opt_lib if DevelopmentTools.clang_build_version >= 1500
 
     builddir = buildpath"build"
     (builddir"_depswabt-src").install resource("wabt")

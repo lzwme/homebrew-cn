@@ -4,6 +4,7 @@ class Pdal < Formula
   url "https:github.comPDALPDALreleasesdownload2.7.1PDAL-2.7.1-src.tar.bz2"
   sha256 "7769aaacfc26daeb559b511c73c241a5e9a2f31e26ef3a736204b83e791c5453"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comPDALPDAL.git", branch: "master"
 
   # The upstream GitHub repository sometimes creates tags that only include a
@@ -17,13 +18,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d369065f506a098721bd7e00c2a8f0ebf6e01a7d6facaf49a14e8be246ba4a87"
-    sha256 cellar: :any,                 arm64_ventura:  "2de77facd3be98899c86ece118ee9f0cf2d936085f6456e84ee489f3c9cf057d"
-    sha256 cellar: :any,                 arm64_monterey: "a9df30529d426d47885e8aa24dab47282f4f9c83c69c79ef0a0a4e600ca4226a"
-    sha256 cellar: :any,                 sonoma:         "96e66792a4d2d0418759506854fde73ce0ab1a8ed890f317280adabc0dbd9fe1"
-    sha256 cellar: :any,                 ventura:        "c6d596fb8ecf669ef626c0ffedc50da150f18c957e4f43c184a6381be89c9a79"
-    sha256 cellar: :any,                 monterey:       "2f3c716e0946cc886a16fc7e68afbeefbbaae39c37aa9c7a3567246c4222d529"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a12d179a8ddf24135ccf4edd54929d6fa591a0e4a26d0daa7209f67f1c042ee3"
+    sha256 cellar: :any,                 arm64_sonoma:   "fc02eeb18ed45aa01bba3d7e3790e5366fad46411ec5567a403776f073278b61"
+    sha256 cellar: :any,                 arm64_ventura:  "17a0eabf12aa1273f7dd6c57241625c1d0bd71ec7999aa2dbb3194d928efbd63"
+    sha256 cellar: :any,                 arm64_monterey: "2f1d3589fc26a09f11462ae563794c4389c086b02390dc4902a1f8cfbc6ee4d5"
+    sha256 cellar: :any,                 sonoma:         "24e0d4e078d82544ad90dec4c614e095867a545200ae186dff6cb89295715185"
+    sha256 cellar: :any,                 ventura:        "5437a20f313b43183dbfe8f4303f596b286ace6bc4dfb8749d0355147b508e23"
+    sha256 cellar: :any,                 monterey:       "c5b967deec6e8850d8799538ccd95aca17bb959fb0b6b40f008c4c59493f07b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e852b34a7ea83c966887b9b461c7ec4af931650f02e2ec25e3962f3f4e1eac"
   end
 
   depends_on "cmake" => :build
@@ -35,22 +36,42 @@ class Pdal < Formula
   depends_on "numpy"
   depends_on "openssl@3"
 
+  on_linux do
+    depends_on "libunwind"
+  end
+
   fails_with gcc: "5" # gdal is compiled with GCC
 
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib if DevelopmentTools.clang_build_version >= 1500
+    if DevelopmentTools.clang_build_version >= 1500
+      recursive_dependencies
+        .select { |d| d.name.match?(^llvm(@\d+)?$) }
+        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
+        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
+    end
 
-    system "cmake", ".", *std_cmake_args,
-                         "-DWITH_LASZIP=TRUE",
-                         "-DBUILD_PLUGIN_GREYHOUND=ON",
-                         "-DBUILD_PLUGIN_ICEBRIDGE=ON",
-                         "-DBUILD_PLUGIN_PGPOINTCLOUD=ON",
-                         "-DBUILD_PLUGIN_PYTHON=ON",
-                         "-DBUILD_PLUGIN_SQLITE=ON"
+    args = %w[
+      -DWITH_LASZIP=TRUE
+      -DBUILD_PLUGIN_GREYHOUND=ON
+      -DBUILD_PLUGIN_ICEBRIDGE=ON
+      -DBUILD_PLUGIN_PGPOINTCLOUD=ON
+      -DBUILD_PLUGIN_PYTHON=ON
+      -DBUILD_PLUGIN_SQLITE=ON
+    ]
+    if OS.linux?
+      libunwind = Formula["libunwind"]
+      ENV.append_to_cflags "-I#{libunwind.opt_include}"
+      args += %W[
+        -DLIBUNWIND_INCLUDE_DIR=#{libunwind.opt_include}
+        -DLIBUNWIND_LIBRARY=#{libunwind.opt_libshared_library("libunwind")}
+      ]
+    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-    system "make", "install"
     rm_rf "testunit"
     doc.install "examples", "test"
   end

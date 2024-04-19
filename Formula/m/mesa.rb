@@ -7,14 +7,16 @@ class Mesa < Formula
   sha256 "90febd30a098cbcd97ff62ecc3dcf5c93d76f7fa314de944cfce81951ba745f0"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
+
   bottle do
-    sha256 arm64_sonoma:   "ae2d04b132bbcf41d540a855092f64327f502d09ab4cee4fbfe70fa9c2efebc4"
-    sha256 arm64_ventura:  "f1e4c3f4a7f876aeba6588018abfc80c301fd217d1ac990fe94a42d0248d5da3"
-    sha256 arm64_monterey: "633267ffbcde01c11dc478c0b20cad2bbbe1110ed97853e1041601876c501eec"
-    sha256 sonoma:         "edb87cb52fc6ff9e44c0b368c71b3c52ad228a44519ede4bb6e878e07662bc5e"
-    sha256 ventura:        "5da17175598feb34e51f62c5cc9eef08538bf53cdd02bd7e943de6e66c891791"
-    sha256 monterey:       "77f4ad2b7919f114019732fef9f0f5562ef852b2bbb94d68c28a4e3c9786385b"
-    sha256 x86_64_linux:   "1eea2d09e80c854f171bfff502c84d31d6874eaf9dbfe20a6066c8b78a8af336"
+    rebuild 1
+    sha256 arm64_sonoma:   "a309705309f92b2168eb9b043308b63f2f606a1ec66b87247989d6afd0d0ec5f"
+    sha256 arm64_ventura:  "34582cb5d10baaa3a1873cfe627b41d7fce8d810de8b53f76fa0bf1538f60f76"
+    sha256 arm64_monterey: "acd3700cff75bc6bd1cc594989305f37e4e6c0e51c5660005097a54beef04617"
+    sha256 sonoma:         "2138b51f8a062566c7977ce88448cc16d63d20ab54014ff9a91985c4052637dc"
+    sha256 ventura:        "fa65ec49615c6197a136600c9f88492824f09b2ed9b58b8873b8d687f1ff85e3"
+    sha256 monterey:       "0d6473f751c904deedfc517b8312279915fc936130c11bc0f66d9af7061b4485"
+    sha256 x86_64_linux:   "d69f095aeed47a48518c042d681c4abc5625f4e24d60bade46c624c8a840de28"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
@@ -72,8 +74,8 @@ class Mesa < Formula
   end
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/d4/1b/71434d9fa9be1ac1bc6fb5f54b9d41233be2969f16be759766208f49f072/Mako-1.3.2.tar.gz"
-    sha256 "2a0c8ad7f6274271b3bb7467dd37cf9cc6dab4bc19cb69a4ef10669402de698e"
+    url "https://files.pythonhosted.org/packages/0a/dc/48e8853daf4b32748d062ce9cd47a744755fb60691ebc211ca689b849c1c/Mako-1.3.3.tar.gz"
+    sha256 "e16c01d9ab9c11f7290eef1cfefc093fb5a45ee4a3da09e2fec2e4d1bae54e73"
   end
 
   resource "markupsafe" do

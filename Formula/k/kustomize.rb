@@ -1,9 +1,8 @@
 class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https:github.comkubernetes-sigskustomize"
-  url "https:github.comkubernetes-sigskustomize.git",
-      tag:      "kustomizev5.4.1",
-      revision: "536c1c0a8b66484af18c99b4d371665565f44d19"
+  url "https:github.comkubernetes-sigskustomizearchiverefstagskustomizev5.4.1.tar.gz"
+  sha256 "dfdab5d0a22cfb5825ecfeee8ca96816d55a2989f015354b970ada743956a023"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigskustomize.git", branch: "master"
 
@@ -25,15 +24,13 @@ class Kustomize < Formula
   depends_on "go" => :build
 
   def install
-    cd "kustomize" do
-      ldflags = %W[
-        -s -w
-        -X sigs.k8s.iokustomizeapiprovenance.version=#{name}v#{version}
-        -X sigs.k8s.iokustomizeapiprovenance.buildDate=#{time.iso8601}
-      ]
+    ldflags = %W[
+      -s -w
+      -X sigs.k8s.iokustomizeapiprovenance.version=#{name}v#{version}
+      -X sigs.k8s.iokustomizeapiprovenance.buildDate=#{time.iso8601}
+    ]
 
-      system "go", "build", *std_go_args(ldflags:)
-    end
+    system "go", "build", *std_go_args(ldflags:), ".kustomize"
 
     generate_completions_from_executable(bin"kustomize", "completion")
   end

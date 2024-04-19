@@ -32,6 +32,8 @@ class Tcptrace < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7516135879ddee3a7a4271980b8485ac12c3b1826cb99ba23e9f6f849fda4ceb"
   end
 
+  deprecate! date: "2024-04-18", because: :unmaintained
+
   uses_from_macos "libpcap"
 
   patch do

@@ -5,17 +5,17 @@ class ApacheArrow < Formula
   mirror "https:archive.apache.orgdistarrowarrow-15.0.2apache-arrow-15.0.2.tar.gz"
   sha256 "abbf97176db6a9e8186fe005e93320dac27c64562755c77de50a882eb6179ac6"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comapachearrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "9c49a17003ea2d729e79b59757d134e90dff4082519912a1c5ac57510234ff61"
-    sha256 cellar: :any, arm64_ventura:  "7bc5890caee2490173f433c4cbceff16f265bdcf8ec871ea17fbb2ebaca14bcb"
-    sha256 cellar: :any, arm64_monterey: "37b3260f0dc24ce3ccdf6de8258f71dcec27db9e21b508298fa0af736e53fb47"
-    sha256 cellar: :any, sonoma:         "1e7548a9076296e3a569551a910f015a6906853d0535702de3e4ea50b01c7a37"
-    sha256 cellar: :any, ventura:        "c6829a738a314ac87fb0bf91945e64f33475ce8cb249f9cdc4bd777ad348eb66"
-    sha256 cellar: :any, monterey:       "511e0aff3de8267b37070d7f0329faa7f4d47865b930c3e62329f7974b21f847"
-    sha256               x86_64_linux:   "31df81a5807657b4b66c7d3609aeaf7c1526b3def94a53f25076563beea0cb97"
+    sha256 cellar: :any, arm64_sonoma:   "6af487e2c04f55015dd3275cdc89b57fe843afd2721bf0735272fef91e85c6f1"
+    sha256 cellar: :any, arm64_ventura:  "eb183e1a97988fe4f095ae8dabd6bb8a657249e36ab6b9478255bbd7a95567b8"
+    sha256 cellar: :any, arm64_monterey: "4d9108c2c3d2ad54ef9fb12acab525f0bae7674b09b2c4cfc360e093e8ef329e"
+    sha256 cellar: :any, sonoma:         "e1254f7fb473eecbf67b8ef8fb6197725f6ed6dfb9e7ced08030db0d5c8cac2e"
+    sha256 cellar: :any, ventura:        "311c9b58c7416517f5a7f2a05b418a71e6e1566d4c5d1d6690dbc875e364fa92"
+    sha256 cellar: :any, monterey:       "83cd9dd8d9e19ec13e50973e68cbaca9ed6e34b4ba39a55b5f4c1eb7ee70c030"
+    sha256               x86_64_linux:   "e2b4742219a35a41cd51c270c6036f2e6c89f80a6ec230e4a621444544a7f930"
   end
 
   depends_on "boost" => :build
@@ -26,7 +26,7 @@ class ApacheArrow < Formula
   depends_on "bzip2"
   depends_on "glog"
   depends_on "grpc"
-  depends_on "llvm"
+  depends_on "llvm@17"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf"
@@ -43,7 +43,7 @@ class ApacheArrow < Formula
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
-    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib if DevelopmentTools.clang_build_version >= 1500
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm@17"].opt_lib if DevelopmentTools.clang_build_version >= 1500
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

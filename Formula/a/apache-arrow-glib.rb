@@ -5,6 +5,7 @@ class ApacheArrowGlib < Formula
   mirror "https:archive.apache.orgdistarrowarrow-15.0.2apache-arrow-15.0.2.tar.gz"
   sha256 "abbf97176db6a9e8186fe005e93320dac27c64562755c77de50a882eb6179ac6"
   license "Apache-2.0"
+  revision 1
   head "https:github.comapachearrow.git", branch: "main"
 
   livecheck do
@@ -12,13 +13,13 @@ class ApacheArrowGlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "4bf3d1ffdce1d372b7f795810a2ab95d2b136d2a598dcf37ac40088d24efe9e1"
-    sha256 cellar: :any, arm64_ventura:  "6ef71c10b00a50bb7e91c35fd86f6f579b91e42d317d9338fcc9f382fbb6e99b"
-    sha256 cellar: :any, arm64_monterey: "a080df8783c0789ed9986a610ea6d57bdf55b6f701d3f5a3bb0ee60a3fa20de1"
-    sha256 cellar: :any, sonoma:         "d84e83daec0e31e1d4f0d6ce141b5e6cd36dcc24c3fdd3381cafb9e43dee94f2"
-    sha256 cellar: :any, ventura:        "d8f5835365903ca5b86e63c9875d8587852042fa2bf526c7ba15712eac2008a7"
-    sha256 cellar: :any, monterey:       "7e8a6b462f471ca3ee006cdad40f961e81028dda2b812c6b30953fb3cd2f091a"
-    sha256               x86_64_linux:   "4a0b1b92c11c7c7e7065648194b2c0cc791e7b61dcbde07601f3857b453bc7bf"
+    sha256 cellar: :any, arm64_sonoma:   "aceea3cb74002930da21bcbf98a152210c72c82b1a1da138b3e2c7e0ce699179"
+    sha256 cellar: :any, arm64_ventura:  "063d17a1f0c2a7be6fac2b3299b8af173d0caaf879f7ed1701f3e9a3b00b3cd4"
+    sha256 cellar: :any, arm64_monterey: "067b2f4acf575be4f846cb0849f14de5dfb82e31da320e07c11090acb392868b"
+    sha256 cellar: :any, sonoma:         "bc5daf491af0050492960b8da28f7beab7653db05ee9b5d312ebc271d78c1b86"
+    sha256 cellar: :any, ventura:        "036a8dcccba034c88f21a72425c2cf5e01892f73f153b1a980774bd8f98448ae"
+    sha256 cellar: :any, monterey:       "72e40b6ae3d7fc96150a04d51b6df948255b9f682710bd0ca39cbc5052ff9956"
+    sha256               x86_64_linux:   "75ddec98ee485c71033211408a3b18d9a7068e5b0dcba3fa07f38b4472357071"
   end
 
   depends_on "gobject-introspection" => :build
@@ -31,6 +32,15 @@ class ApacheArrowGlib < Formula
   fails_with gcc: "5"
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    if DevelopmentTools.clang_build_version >= 1500
+      recursive_dependencies
+        .select { |d| d.name.match?(^llvm(@\d+)?$) }
+        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
+        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
+    end
+
     system "meson", "setup", "build", "c_glib", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

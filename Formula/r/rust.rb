@@ -2,8 +2,10 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https:www.rust-lang.org"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
+    # TODO: On 1.78.0 release, switch to `llvm` 18.
     url "https:static.rust-lang.orgdistrustc-1.77.2-src.tar.gz"
     sha256 "c61457ef8f596638fddbc7716778b2f6b99ff12513a3b0f13994c3bc521638c3"
 
@@ -15,13 +17,13 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3720b820093a5e4c7f71510c02ad62a1e93eacd7352c885b5d70c8621d761646"
-    sha256 cellar: :any,                 arm64_ventura:  "7a5cb09a5860dd09d6a5aa2a447c6c37b9737b8619513a60b080ecc06d423275"
-    sha256 cellar: :any,                 arm64_monterey: "4be8de99bdb192877d563de4ac2d2e19ccf92adb24b9d82dc00b928477f66a91"
-    sha256 cellar: :any,                 sonoma:         "c3d3c807a488695de5d7a0922f3eaaadd46ef448debeaebce6e72133cf281917"
-    sha256 cellar: :any,                 ventura:        "bcaaded3ee2eb1cdc536e283f48284c31f2f91a6c2ed8165d0bf9f425b7134aa"
-    sha256 cellar: :any,                 monterey:       "b2b4f358f42e57ee2c0d56ac0b3f7b6cb9776f8486b5b993fced2e77724d0e95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7805c4daa1cf4b4495f4c68637e8286fd78e653dd4a60d70c8e4a2b55c138a8"
+    sha256 cellar: :any,                 arm64_sonoma:   "9a4e56bd545f326e4874d4c56e3c964b49c0b9baeca1f28eac35c1660983291c"
+    sha256 cellar: :any,                 arm64_ventura:  "fc47b1c54ecfef8fd2557c3af5cb7431fdb8b85088156e7a70b2c0662fb113fd"
+    sha256 cellar: :any,                 arm64_monterey: "5ea95ebfa3b58cdc1f2e4d67a7235a6dda07d42deb4ff708cc9b040073061a16"
+    sha256 cellar: :any,                 sonoma:         "b6bca9c71a13b195d64f7349d6c48fa6a6a013e4d7662f0c9a1df180f7733d2c"
+    sha256 cellar: :any,                 ventura:        "d3b56b1500b8bc38d5e4d494549522bc2bff4acd5374f401d8ee89dec0f23589"
+    sha256 cellar: :any,                 monterey:       "4e3bae10e6e7ea3c3bca94b97347bf3c449ffd5028f3a1ac211158564395454c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af09fa54543d88f00167db297543aa6a0b5bca3ddd82f32bcd1b3bae19a6e98c"
   end
 
   head do
@@ -34,7 +36,7 @@ class Rust < Formula
 
   depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "llvm"
+  depends_on "llvm@17"
   depends_on macos: :sierra
   depends_on "openssl@3"
   depends_on "pkg-config"
@@ -112,7 +114,7 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{Formula["llvm"].opt_prefix}
+      --llvm-root=#{Formula["llvm@17"].opt_prefix}
       --enable-llvm-link-shared
       --enable-vendor
       --disable-cargo-native-static

@@ -6,13 +6,14 @@ class Tbb < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1413cb9b7515eb9399c94b5530c998b27fb5ba70b1f183d8168175178827ee8c"
-    sha256 cellar: :any,                 arm64_ventura:  "2501fbee6f73642893338977ae5e9911fd7bd6e793ed1388a7826aefc0c70e11"
-    sha256 cellar: :any,                 arm64_monterey: "aeca6be1f720719fd6f0dde64a85d060cfed6081d590d918128b92fc5b0254e9"
-    sha256 cellar: :any,                 sonoma:         "afb040279f6198282c0348cf215d99e27dbc778c6629dc738c46b67336ed3167"
-    sha256 cellar: :any,                 ventura:        "9da62541c8ccedf71ee94ecfd94eff95264d231841147534dae72347027a8dae"
-    sha256 cellar: :any,                 monterey:       "b4e71f9855e51baf2309ec0bb9f0f6d721b8db67a0452bb195182fc2f9e261ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89c7a9008491b2d1b4780c4fa5f15d46bee5354de2ea96ad34d5d38b2366ee42"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "20a09dfac1334404a7da5796d116f60d21497ba80f6ab12d9f05095f72b3e5a7"
+    sha256 cellar: :any,                 arm64_ventura:  "b9ab6fce05f88018e2b039ff19e379d97a6fef37157d8fdecfafbd0f0b73f19b"
+    sha256 cellar: :any,                 arm64_monterey: "56f34d804f1e16c62ca755cea7f7a28fc7bf8e992ac444ad83ecc86f01d3337e"
+    sha256 cellar: :any,                 sonoma:         "d4f7a8f799ab9a0ec0a493e36136d0a2f0b7b7dc2a9ad3d84098a6e705289d1a"
+    sha256 cellar: :any,                 ventura:        "39d9df67e1c146705107082bff0a90584c31162574349acbceaa4a232568abe1"
+    sha256 cellar: :any,                 monterey:       "c938dc2ebf9d161a4e5d9795153e1a684e869552277cb0b4e2118fc9849ddb71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22b14889248f932bf5983079a1ba9ee2602e84f9fc7655921b1d9dbda71e3163"
   end
 
   depends_on "cmake" => :build
@@ -27,10 +28,12 @@ class Tbb < Formula
   end
 
   def install
-    # Prevent `setup.py` from installing tbb4py directly into HOMEBREW_PREFIX.
+    # Prevent `setup.py` from installing tbb4py as a deprecated egg directly into HOMEBREW_PREFIX.
     # We need this due to our Python patch.
     site_packages = Language::Python.site_packages(python3)
-    inreplace "pythonCMakeLists.txt", "install --prefix build -f", "\\0 --install-lib build#{site_packages}"
+    inreplace "pythonCMakeLists.txt",
+              "install --prefix build -f",
+              "\\0 --install-lib build#{site_packages} --single-version-externally-managed --record=RECORD"
 
     tbb_site_packages = prefixsite_packages"tbb"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath},-rpath,#{rpath(source: tbb_site_packages)}"
@@ -54,10 +57,6 @@ class Tbb < Formula
                     *args, *std_cmake_args
     system "cmake", "--build", "buildstatic"
     lib.install buildpath.glob("buildstatic*libtbb*.a")
-
-    ENV.append_path "CMAKE_PREFIX_PATH", prefix.to_s
-    ENV["TBBROOT"] = prefix
-    system python3, "-m", "pip", "install", *std_pip_args, ".python"
   end
 
   test do

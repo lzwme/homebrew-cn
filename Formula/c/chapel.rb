@@ -4,23 +4,23 @@ class Chapel < Formula
   url "https:github.comchapel-langchapelreleasesdownload2.0.0chapel-2.0.0.tar.gz"
   sha256 "b5387e9d37b214328f422961e2249f2687453c2702b2633b7d6a678e544b9a02"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comchapel-langchapel.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "ec1f28ac19706339cfe68d8d19e3d7688a7c9eaf667bba2dc244be6d11e86839"
-    sha256 arm64_ventura:  "e978dfceb8fbcec0f91c8e72bc8ff625c194c1439c9e966301becd8dbe0fef7b"
-    sha256 arm64_monterey: "39e59768ce541ace13ab1d4c76e757d3ccd70d48607f440bff4ec3491fc6e754"
-    sha256 sonoma:         "8f9626f77073baa1d5c8b16588093d721aecf0c2898ae50e5b5bd64dffcc3507"
-    sha256 ventura:        "ef24c5a5f424bd5689ea5027caad805ddaabbc60e734bc0bcb09049d2a4941c2"
-    sha256 monterey:       "1ebdab2f1045a7c34e26a15974a54f47ab6a46cc1f558b4f7cb090e3f281110b"
-    sha256 x86_64_linux:   "a8ee6968f4b9576b79a5d6b487fccfcf90b5f1dd2e0ebe00b3dcebe33ced404f"
+    sha256 arm64_sonoma:   "b3a17460d5c4004ae428cdcbaa9e6e0ee5f046e8756da0fcdf7c9bed1be0db4f"
+    sha256 arm64_ventura:  "f3540dffae9ecb858c67680ef1f17644688222963316f75a5af456595e19c828"
+    sha256 arm64_monterey: "af1f15e5f7999846b0c93e3693b8ce3865508d2699b74314271c26eddfa5de2e"
+    sha256 sonoma:         "db2e6509a5f9d458b9095dc5712887af288ee71548e81b354bf2b83b31c00264"
+    sha256 ventura:        "cdc448f656cb37803345a93feec67e3534dccf1163e1c41bf437c7b31cad5142"
+    sha256 monterey:       "71a342127d688105a005d30a1536f97392b5539167cf2186e288268ac871a46b"
+    sha256 x86_64_linux:   "892b0b0cb94f7119cfcb01403bd1266b33e944ae50af65aeebff732c91438686"
   end
 
   depends_on "cmake"
   depends_on "gmp"
-  depends_on "llvm"
-  depends_on "python@3.11"
+  depends_on "llvm@17"
+  depends_on "python@3.12"
 
   # LLVM is built with gcc11 and we will fail on linux with gcc version 5.xx
   fails_with gcc: "5"
@@ -29,10 +29,14 @@ class Chapel < Formula
     deps.map(&:to_formula).find { |f| f.name.match? "^llvm" }
   end
 
+  # Fixes: SyntaxWarning: invalid escape sequence '\d'
+  # Remove when merged: https:github.comchapel-langchapelpull24643
+  patch :DATA
+
   def install
     # Always detect Python used as dependency rather than needing aliased Python formula
-    python = "python3.11"
-    # It should be noted that this will expand to: 'for cmd in python3.11 python3 python python2; do'
+    python = "python3.12"
+    # It should be noted that this will expand to: 'for cmd in python3.12 python3 python python2; do'
     # in our find-python.sh script.
     inreplace "utilconfigfind-python.sh", ^(for cmd in )(python3 ), "\\1#{python} \\2"
 
@@ -122,3 +126,18 @@ class Chapel < Formula
     system bin"mason", "--version"
   end
 end
+
+__END__
+diff --git autilchplenvcompiler_utils.py butilchplenvcompiler_utils.py
+index c4d683830f4c..1d1be1d55521 100644
+--- autilchplenvcompiler_utils.py
++++ butilchplenvcompiler_utils.py
+@@ -32,7 +32,7 @@ def CompVersion(version_string):
+     are not specified, 0 will be used for their value(s)
+     """
+     CompVersionT = namedtuple('CompVersion', ['major', 'minor', 'revision', 'build'])
+-    match = re.search(u'(\d+)(\.(\d+))?(\.(\d+))?(\.(\d+))?', version_string)
++    match = re.search(u"(\\d+)(\\.(\\d+))?(\\.(\\d+))?(\\.(\\d+))?", version_string)
+     if match:
+         major    = int(match.group(1))
+         minor    = int(match.group(3) or 0)

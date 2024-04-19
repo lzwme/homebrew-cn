@@ -1,18 +1,18 @@
 class Bob < Formula
   desc "Version manager for neovim"
   homepage "https:github.comMordechaiHadadbob"
-  url "https:github.comMordechaiHadadbobarchiverefstagsv2.9.0.tar.gz"
-  sha256 "ae5e00900e2813e795cbbcf5e39c76beb55c1ac5fda86f057550e90552a004c0"
+  url "https:github.comMordechaiHadadbobarchiverefstagsv2.9.1.tar.gz"
+  sha256 "06b5a7e416b9b10d85fa6d04ecdd743138cf7e81c1180d2b25c301bc0bd1561a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01a9e88a7091b3fbb47f8fb869f043587dc08f81b4666006fd4e97ace425b296"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "629b411c3335b3a9039d53d5bf1be0ff8ca05ee13bb227dd056b132c38f70c1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "63ee4be94d09c700a89961ffcf8ef5039a504d77b69a89ebc53d3a1ebbbda0fb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "696df427087a9709f54425b0bc203f15cc3e95cd23ae0b1eb675378e79639f25"
-    sha256 cellar: :any_skip_relocation, ventura:        "de2e51b1ce5cf18fb49afc5c0c0948203bfeff0356fc07c3fd704fe70c9bf17b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2db203ee198773a09b5960e4eff3a36f5dab3f7741825b628afac8d151a12891"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e3fa510962656f0092a1127fc9b3c1ffb662cc54d595517a0e669d2317565e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be0e3c881599e69fade8b75849036026bbb4b349e1e6751b54a816501a9a7cac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fd30f4f2af2c3f54bdca2acfe0c65931d1725c9045d0258eb5e5371178f0314"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "568467fe9c244bd85b612f0978b1c143de19bd0118d16c606160b13b11576e59"
+    sha256 cellar: :any_skip_relocation, sonoma:         "efa6fc0250f377259070f495d5ce2a485693020f719ce7256e3c14f625879c33"
+    sha256 cellar: :any_skip_relocation, ventura:        "d98e54be7326c027dd9159e0be4ab5689be3b2d08e1d37e2076304c97edd2fac"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ba9fa5d67e9345605e9105eeef37756788f38d41a4b9a0308270c2b2ac4030c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3d3abcb64757274a23a0a1883663aa96bd5722875796e23522625a522840fa4"
   end
 
   depends_on "rust" => :build

@@ -4,6 +4,7 @@ class Ispc < Formula
   url "https:github.comispcispcarchiverefstagsv1.23.0.tar.gz"
   sha256 "9dd5e24ecc5496d74022cf74b38cacad079c2a5432e9ae9f5bf8a655b85b5744"
   license "BSD-3-Clause"
+  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -14,20 +15,20 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fcdd916d114a15d52b070592d0788b29f0a6e210ea635358a8ccceb17adee024"
-    sha256 cellar: :any,                 arm64_ventura:  "172a46160c01488bfb1332a7f0d33b727370d3bd2ba0e00efbff4149b216a094"
-    sha256 cellar: :any,                 arm64_monterey: "47f1d7e71ebeda29e95c9bd8670b46b93645db272f3ffa72ca1927008e9cfb57"
-    sha256 cellar: :any,                 sonoma:         "a992e97f1d0ccdb90b8f8e85c0801b1d966fac67cbd657c196a5e677b90791a7"
-    sha256 cellar: :any,                 ventura:        "ed4c920f931d8782aa149130e57f77cbd924924dab55859ad4bc6314ce587170"
-    sha256 cellar: :any,                 monterey:       "9ef3ab28ccd18533b7fbd99659d25b0d44ea47e821b91c78072a33eb4583b5b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04af9f6c3c56320c930a8d4ef479138e128a230320c1603ab7b2d1c31dd1b2d9"
+    sha256 cellar: :any,                 arm64_sonoma:   "02096f85514fe752019c25cc629034cbcdcdb2781cfc0f9562c68a71adff3f34"
+    sha256 cellar: :any,                 arm64_ventura:  "2a66362d6805150987b4b6e75c2706ea9612b1bc8447739734ba5c51c3d932bf"
+    sha256 cellar: :any,                 arm64_monterey: "f95ee8ae13f42680d38e54343bab6963f64516667cb6f22947541b07252e0a57"
+    sha256 cellar: :any,                 sonoma:         "0a58420454db31eb1f00409150499f6c716a0c3d8812c9cd81702193762b1640"
+    sha256 cellar: :any,                 ventura:        "8738b6681389f725776966aa8d9b5ab2beb0cf750ba5e5df002aa6641dc5a4b1"
+    sha256 cellar: :any,                 monterey:       "20e1084f6f7b89e3afa0f4d51875e00c6ecd5a13226b38882a89c00aa29cd166"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35f5d7b0d3ede5bea405d31f6d1183365018f9de9bd0028ea8993af179d69d61"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "python@3.12" => :build
-  depends_on "llvm"
+  depends_on "llvm@17"
 
   on_linux do
     depends_on "tbb"

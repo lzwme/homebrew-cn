@@ -8,7 +8,7 @@ class Cweb < Formula
 
   livecheck do
     url :stable
-    regex(^cweb[._-]v?(\d+(?:\.\d+)+[a-z]*?)$i)
+    regex(^cweb[._-]v?(\d+(?:\.\d+)+[a-z]?)$i)
   end
 
   bottle do

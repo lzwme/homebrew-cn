@@ -4,6 +4,7 @@ class Ospray < Formula
   url "https:github.comosprayosprayarchiverefstagsv3.1.0.tar.gz"
   sha256 "0b9d7df900fe0474b12e5a2641bb9c3f5a1561217b2789834ebf994a15288a82"
   license "Apache-2.0"
+  revision 1
   head "https:github.comosprayospray.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Ospray < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4e6b528ff98519227a2c29a3ef9d3ccd101ab54cf90cb9dd3e191b0fded2f5cc"
-    sha256 cellar: :any,                 arm64_ventura:  "4d73f569d4d84fd0b49d3bc518837441cdaf395a6d88c2967f86c7fcdbe38c0c"
-    sha256 cellar: :any,                 arm64_monterey: "fc9f7cf3c1d9ddf7993ade253ab98de07603cfbb1eeedd264354d28bbb3df3f0"
-    sha256 cellar: :any,                 sonoma:         "c70571c9a32a24f68128fd62039f0e1510889b137c8ad9fe334a64dbb3f76c54"
-    sha256 cellar: :any,                 ventura:        "aba734d9bbf8edb7079814520ba8cff1959048a0aa2d2bec4e1d955fe88b2911"
-    sha256 cellar: :any,                 monterey:       "82f9d9de8cc78e6db8b14216a8f9203ef559a9655bca7595abc21bbe6f436c66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ede52a6c1a8662804500b9569e72c0b2ad8fcac56462ee82a87ff8965c60e8a3"
+    sha256 cellar: :any,                 arm64_sonoma:   "5579d8382f75e7326ad0a8937f6562ff167c1ae1d4650a092610fedab1b4f486"
+    sha256 cellar: :any,                 arm64_ventura:  "daed769741e22bd69913fe1d0a726413fcb674616abf57f59700bdf6f8bfeedd"
+    sha256 cellar: :any,                 arm64_monterey: "9251be35bf7ca53c4611112bfe41fd2fa714084f7d9dc649d4967c3621a5f057"
+    sha256 cellar: :any,                 sonoma:         "d7a76240bab1306d4379cdb7cd38b6d2fd37a96795d182868b2e90d8d91f5417"
+    sha256 cellar: :any,                 ventura:        "e1eef957f20f5c977fa7ee8a6f348eb715019f8423cdf9618ecfb5161af151b1"
+    sha256 cellar: :any,                 monterey:       "77198703201d64fb1681d9475f7107c7908ed9a87ae7eebe7546483aae6b32e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77698d5997a11ec80305915acbca696811ca3c9305320c5b7986d9de1ce6c02e"
   end
 
   depends_on "cmake" => :build
@@ -37,6 +38,13 @@ class Ospray < Formula
   end
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.remove "HOMEBREW_LIBRARY_PATHS",
+                 Formula["ispc"].deps.map(&:to_formula).find { |f| f.name.match? "^llvm" }.opt_lib
+    end
+
     resources.each do |r|
       r.stage do
         args = %W[

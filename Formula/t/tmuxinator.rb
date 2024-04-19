@@ -1,19 +1,19 @@
 class Tmuxinator < Formula
   desc "Manage complex tmux sessions easily"
   homepage "https:github.comtmuxinatortmuxinator"
-  url "https:github.comtmuxinatortmuxinatorarchiverefstagsv3.1.2.tar.gz"
-  sha256 "f173d3481f01ad6321e639fa07473715c5f2210dad4b073bd0d1d87087f80785"
+  url "https:github.comtmuxinatortmuxinatorarchiverefstagsv3.2.0.tar.gz"
+  sha256 "d1f65fd7c27bdc35de73eee7454eb5b00b4685c8e6c6e7c163d767ab0e8920c3"
   license "MIT"
   head "https:github.comtmuxinatortmuxinator.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c9712fe213b31d38a7f6e0ff3065004a9b8841b4ad0560357a62ecef0540669f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9712fe213b31d38a7f6e0ff3065004a9b8841b4ad0560357a62ecef0540669f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9712fe213b31d38a7f6e0ff3065004a9b8841b4ad0560357a62ecef0540669f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e18a834507459d648abcedaa12a0301be4e0054d0d1e7d67872210f313355fa1"
-    sha256 cellar: :any_skip_relocation, ventura:        "e18a834507459d648abcedaa12a0301be4e0054d0d1e7d67872210f313355fa1"
-    sha256 cellar: :any_skip_relocation, monterey:       "e18a834507459d648abcedaa12a0301be4e0054d0d1e7d67872210f313355fa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9712fe213b31d38a7f6e0ff3065004a9b8841b4ad0560357a62ecef0540669f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c3f00a9b3d124690b7b34f26c6d43bd91903f83382fd3a29c0e5070a1469feb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c3f00a9b3d124690b7b34f26c6d43bd91903f83382fd3a29c0e5070a1469feb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c3f00a9b3d124690b7b34f26c6d43bd91903f83382fd3a29c0e5070a1469feb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a3c106948825abd2c9fcd79e5ba929ee50e2b4709cb553b41d55c129eb06f377"
+    sha256 cellar: :any_skip_relocation, ventura:        "a3c106948825abd2c9fcd79e5ba929ee50e2b4709cb553b41d55c129eb06f377"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3c106948825abd2c9fcd79e5ba929ee50e2b4709cb553b41d55c129eb06f377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c3f00a9b3d124690b7b34f26c6d43bd91903f83382fd3a29c0e5070a1469feb"
   end
 
   depends_on "ruby"
@@ -21,19 +21,19 @@ class Tmuxinator < Formula
 
   conflicts_with "tmuxinator-completion", because: "the tmuxinator formula includes completion"
 
-  resource "erubis" do
-    url "https:rubygems.orgdownloadserubis-2.7.0.gem"
-    sha256 "63653f5174a7997f6f1d6f465fbe1494dcc4bdab1fb8e635f6216989fb1148ba"
-  end
-
-  resource "thor" do
-    url "https:rubygems.orgdownloadsthor-1.3.0.gem"
-    sha256 "1adc7f9e5b3655a68c71393fee8bd0ad088d14ee8e83a0b73726f23cbb3ca7c3"
-  end
-
   resource "xdg" do
     url "https:rubygems.orgdownloadsxdg-2.2.5.gem"
     sha256 "f3a5f799363852695e457bb7379ac6c4e3e8cb3a51ce6b449ab47fbb1523b913"
+  end
+
+  resource "thor" do
+    url "https:rubygems.orgdownloadsthor-1.3.1.gem"
+    sha256 "fa7e3471d4f6a27138e3d9c9b0d4daac9c3d7383927667ae83e9ab42ae7401ef"
+  end
+
+  resource "erubi" do
+    url "https:rubygems.orgdownloadserubi-1.12.0.gem"
+    sha256 "27bedb74dfb1e04ff60674975e182d8ca787f2224f2e8143268c7696f42e4723"
   end
 
   def install

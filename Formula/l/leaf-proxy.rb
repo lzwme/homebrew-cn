@@ -1,19 +1,19 @@
 class LeafProxy < Formula
   desc "Lightweight and fast proxy utility"
   homepage "https:github.comeycorsicanleaf"
-  url "https:github.comeycorsicanleafarchiverefstagsv0.10.10.tar.gz"
-  sha256 "9d46c18e092090c3f73d42d6b61095ef862b4e5daee2a360d1708b7954157998"
+  url "https:github.comeycorsicanleafarchiverefstagsv0.10.12.tar.gz"
+  sha256 "5c351b19fcce9262f99ecde37a18b5eb36acb6105f922f096834e6a5bdcfb382"
   license "Apache-2.0"
   head "https:github.comeycorsicanleaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1299f9860bc8dd17852d5d1500773ed13810460af7370b26b8a98046c114cfd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84d804b44982b6b568adab64f2310e6438accec8758701916c45caae5b944b85"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fc81f74b64a2c96945047f281ceddaeaf9ec112cb310f61ea7a8aa3770069e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "967bb3397634e2c3c533c755a30ba1abb4df07eeb5c4be2782c814f1799972d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d5ac683ebaff3cfd69baa1831b977a07c9dd7b75c5f9edfb0f51f829ee86174"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff7f69ac391a773cc3e403cff549bfd6c33f2ce98c16788ecc1dbc2f1defdfc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45940acec0378329bb743aa9816dd2f01f019d11a0d3bb74c060721b0170e462"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c4e79e7b4917b497e62e680fc60e650ed437f41761b9d1fb54ceecfb937cec5a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0e0ad0469bf055289335cfa72fcd7221048ce9a7f51d4e06fcca4031a62609f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "827f0f56426f5d9191cd74fb6749592056cbed54f1e2dfd0066f634c2a020ae3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0457b29d36b81c3d45a22b22cfd2227564f58d169e0009a0d6de75b9e09ca157"
+    sha256 cellar: :any_skip_relocation, ventura:        "0f52e99247893a83f0bd1cda9c05c94a47a45905fc3492de78351b90caff189e"
+    sha256 cellar: :any_skip_relocation, monterey:       "470db8da56590d269ae348f3480904770882f76f45ab2966dd7b28a9c63f2d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad86cc7b712d96dfb9660827bf345f5b7306218caddcaf314356cac0530132f4"
   end
 
   depends_on "rust" => :build
@@ -21,7 +21,7 @@ class LeafProxy < Formula
   conflicts_with "leaf", because: "both install a `leaf` binary"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "leaf-bin")
+    system "cargo", "install", *std_cargo_args(path: "leaf-cli")
   end
 
   test do

@@ -3,20 +3,19 @@ class TrashCli < Formula
 
   desc "Command-line interface to the freedesktop.org trashcan"
   homepage "https:github.comandreafranciatrash-cli"
-  url "https:files.pythonhosted.orgpackages1e2b267cd091c656738fd7fb2f60d86898698c5431c0565f87917f8eb6abb753trash-cli-0.23.11.10.tar.gz"
-  sha256 "606ca808cd2e285820874bb8b4287212485de6b01959e448f92ebad3eaa4cef8"
+  url "https:files.pythonhosted.orgpackages6b2c40b5a7f7623986d784272290eedf6add4c266798ab92d0ab11b1e24aedc2trash_cli-0.24.4.17.tar.gz"
+  sha256 "8a540b16856cf316dab5d9507b6bb2cb46f7bbdbffafa63795c5242630ce3046"
   license "GPL-2.0-or-later"
   head "https:github.comandreafranciatrash-cli.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "861959d5bbeba99e1280e20e69895f4cd45a185f3caa5f74e58a94614cf1a1c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93c43b5fc636242a344d958ca6a448d28b53ef9eeea541b1d51339424f4ca927"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac6e82fbfd39d929b3770ad713806b9be14568ecd8d1764d9100e8f6b5e3973d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b5999c3042b9832054d21b0ccd1a1576e8668651c811ca9d07215643c11f90e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "34909b21a3029bfbb7c4ed74368856cf2db6cc2566d4fcad8bd520414bd3fe50"
-    sha256 cellar: :any_skip_relocation, monterey:       "c03f3a2966658b1f5e02db27a39799b079855ee41c425436dde041a47f4f3131"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82fa2f28a74fb3adfeb129ca5f838581dc06035788eaa8616e63fd89a193b1df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d50fc028c19088243cd2b36e286de1d953385995bd4fee7b75bca9f8be4434ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c694c0cc0a34b681de2a10c11007ce8753d1eb268ae36a06e17a8c825f070f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8b8fc1c919a0db399d9d0f775d229d7fa6ca938b70df067504042d1ae869283"
+    sha256 cellar: :any_skip_relocation, sonoma:         "62add985bde949b19d8160b80333e0833db61d1ded787bb6675200dc4d9f1fa1"
+    sha256 cellar: :any_skip_relocation, ventura:        "a8c1d959d128fd5f4261e1189a1714d07161c4e46118bafbc73397891d9e537e"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1255ba303582b11f0220edfb40e38ab430b53044a35842fb76050da37ee8509"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "027a7f561eac59bc35d4f0b577887eb6b4325fa44ce223e54d74204d4aac9cda"
   end
 
   depends_on "python@3.12"

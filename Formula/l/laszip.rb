@@ -1,36 +1,32 @@
 class Laszip < Formula
   desc "Lossless LiDAR compression"
   homepage "https:laszip.org"
-  url "https:github.comLASzipLASzipreleasesdownload3.4.3laszip-src-3.4.3.tar.gz"
-  sha256 "53f546a7f06fc969b38d1d71cceb1862b4fc2c4a0965191a0eee81a57c7b373d"
-  license "LGPL-2.1-or-later"
+  url "https:github.comLASzipLASziparchiverefstags3.4.4.tar.gz"
+  sha256 "6d034bf3a400f81317a5dbad59d1b7ce82d971e887ca22d15813b914f0a5c281"
+  license "Apache-2.0"
   head "https:github.comLASzipLASzip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cdbd480df927df36242b3b564b5607b18287aaed5f17c4a9cb9f7f120b3481ed"
-    sha256 cellar: :any,                 arm64_ventura:  "5d2325d42a6958fad99c62e6330f6081fcf0bb95568345a321eb301cff46549d"
-    sha256 cellar: :any,                 arm64_monterey: "5064bc999925063dab10850a16565f0e6146565496fe53357b138dffbe5ade18"
-    sha256                               arm64_big_sur:  "6849693f9166120961fcada7af8d222c1e7580bc191d75a3fdef7ca685f22566"
-    sha256 cellar: :any,                 sonoma:         "03517965fbeea1e96298af56188b4f6f75eb3bf03bc856fe6e04c04daa2880de"
-    sha256 cellar: :any,                 ventura:        "f2928df3b4e05788c49e8f6b8b4180e5c5c74c8e29939adede4186ddde872a64"
-    sha256 cellar: :any,                 monterey:       "eca7c603a0e7a894cc63acdfbf2a77536f82b35ad26106f32e2ed03ec6fa5b90"
-    sha256                               big_sur:        "3b8bf75cb5a0c7f2ac6b02c59726b9b2d126ac754dc24a45ffff3adb18bc1a15"
-    sha256                               catalina:       "df73f3c2c8be13bc0fab13f28cbb22262a24c283f4da85cf6b21c55531516e7f"
-    sha256                               mojave:         "3a9bc6d5931145800cb5792740a3cae118d27c4879144f3c74a44c2aee75ce64"
-    sha256                               high_sierra:    "a32459a4896bdc365fae55b70744bb7ae2a05b552e3bb0b0097345e0ea423014"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ead7c79d5802c0c0c60e8d07cd70d62d634efe3447ff0bc69b576e29f05c82e9"
+    sha256 cellar: :any,                 arm64_sonoma:   "d24b59e358170d493bd3d48a8ed99a0253195542510c155f5fd7e9bf329bd733"
+    sha256 cellar: :any,                 arm64_ventura:  "0a0374c802376297013a20f8af6c2d0f5fc82ff0b7818fea82da2fcc22d02155"
+    sha256 cellar: :any,                 arm64_monterey: "402a088a63bc2da1186342b6a88d71b6a86c744b18ee7b35de3ac95fa8b881a8"
+    sha256 cellar: :any,                 sonoma:         "1eeb4c8027b05035f4fb2bb3b0fdbb3acd4b6c9844f879dc4395ab5ca0020860"
+    sha256 cellar: :any,                 ventura:        "48dca372c53c8af440ff82b56fd5d71b5ab290bddfda5741764a8ba53eac016b"
+    sha256 cellar: :any,                 monterey:       "e92cdbac9a9e25e57e27387fda8a8c97da3a7b1c23b725bb3beeaad383fc559a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3fc1dd011f2793d3971409a52eeba03e7353141112a441a60fa317c70175856"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "example"
   end
 
   test do
-    system ENV.cxx, pkgshare"examplelaszipdllexample.cpp", "-L#{lib}",
+    system ENV.cxx, pkgshare"examplelaszipdllexample.cpp", "-L#{lib}", "-I#{include}laszip",
                     "-llaszip", "-llaszip_api", "-Wno-format", "-ldl", "-o", "test"
     assert_match "LASzip DLL", shell_output(".test -h 2>&1", 1)
   end

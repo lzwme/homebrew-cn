@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https:github.comlovasoadezoomify-rs"
-  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.11.2.tar.gz"
-  sha256 "19bcd079d8a370456080ba65b2f51fa4aa2eee00207a18aa9782dd7faef9acb9"
+  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.12.1.tar.gz"
+  sha256 "fa46f7417b373dfe60e452f0c4532e3a046913fbd4e3fa20766308911b9d30b6"
   license "GPL-3.0-only"
   head "https:github.comlovasoadezoomify-rs.git", branch: "master"
 
@@ -15,13 +15,13 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c8ee8cbf3a5d1131cbfed81cba85e5e9ba08d3dd4dc55cd1f19fa10baf4348b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e6a9fc41bbb3c0097249716df70783dc0fa81fcb5b5205a36a94bd46a66cebd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a30fecc2477cbaf77e58fdee531da5f9654924fa640fb89b501122afb503fa12"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c52169589437e1d5dd043330a954b3b68d0d5ce0bc012bb53eeb53ad8b89e978"
-    sha256 cellar: :any_skip_relocation, ventura:        "fab012b5a9cee64cbcb8964c3e0e84f542b94cf4ca26333f838b1eaedf3e56e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "69f85c169aabda49f35e7ffc0666ceeddb96df31105bd3e216ae7708900979c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ac410c0b20e59d8434e9e3a2143f5c81b20bcb5b80296120e01659e40f6d5c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0b98b7f8deac220076335e31ca4102d20d2d5caff8c59066ed69b5b15fa2a972"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e72e876b0f6aabc81f7e35a3ecb3c12d08a328b7ca2d6da0adebf5bfa5201740"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd9f898757cbe944d1bf92595f4dd21510d8111b08c795124a5047b6764002eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "867474ccfa0372602e2e94bcdd77b8935fb72c95831b9bb13850b015e8743b9c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f68d0f11b53560aa3c432e9b0ae82f7662fa7e7306e74921408ebf112bcf6c5e"
+    sha256 cellar: :any_skip_relocation, monterey:       "bfaa029870bf039ec9868dc2962acb37899fee427753d061d3bca18a9924e347"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee848d3a1fd96bb1196d3bf710c733fd7b5969e1e3a2b99a3ef1a63655067268"
   end
 
   depends_on "rust" => :build
