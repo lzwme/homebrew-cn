@@ -1,8 +1,8 @@
 class BundlerCompletion < Formula
   desc "Bash completion for Bundler"
   homepage "https:github.commernencompletion-ruby"
-  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.0.tar.gz"
-  sha256 "ee8b84d7ac7444a7388e58a406af56dc0b690a57faa7bcfa4c10671deb788991"
+  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.2.tar.gz"
+  sha256 "70b9ae9154076b561f0d7b2b74893258dc00168ded3e8686f14e349f4a324914"
   license "MIT"
   version_scheme 1
   head "https:github.commernencompletion-ruby.git", branch: "main"
@@ -12,7 +12,7 @@ class BundlerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2686357c15eac317662a36f48c906a2f7af86bfaf092f28a4b36f1815b16fcea"
+    sha256 cellar: :any_skip_relocation, all: "f08e58b28795cd4563c8c7c868db8760b1a7fd0bb23fbfb75f31c999288df683"
   end
 
   def install

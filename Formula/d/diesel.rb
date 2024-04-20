@@ -1,19 +1,19 @@
 class Diesel < Formula
   desc "Command-line tool for Rust ORM Diesel"
   homepage "https:diesel.rs"
-  url "https:github.comdiesel-rsdieselarchiverefstagsv2.1.5.tar.gz"
-  sha256 "a415084747a0c5dc5c1042fe9c581287d04ebeb44f35a99e3214ed246d5124b6"
+  url "https:github.comdiesel-rsdieselarchiverefstagsv2.1.6.tar.gz"
+  sha256 "60775915f615d41b65f31861ed01e467961677b7e430c6cc58d22c0b9bc17baf"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comdiesel-rsdiesel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b9ea6fddb980f6c42a929ff6572b672aafa0dfcdd6461fc0eea96441f98331bf"
-    sha256 cellar: :any,                 arm64_ventura:  "573472b2e95eabbe3576276df28a8c481c7bb8756350d5893a3bc56ef7b5630b"
-    sha256 cellar: :any,                 arm64_monterey: "fc5d6298ca72ffba6781b354e4789808c0754bbf025e0f1459d31a2154b4b5b6"
-    sha256 cellar: :any,                 sonoma:         "8950ed52e76e597e7b36663bf7e934588955e0c38ed831d791253c5730526a41"
-    sha256 cellar: :any,                 ventura:        "82789c59492d03bc75c382cf97829cef5975a3f280bab5cd514c513d73d8b37c"
-    sha256 cellar: :any,                 monterey:       "d50c8e2825480776ef291437dfdbec430606dbbbd56114b82cbd216bf77bf38a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c397c227673d3201992b59ff51a5a8176dbb11d5b636bdee645bdaa2deb4a38"
+    sha256 cellar: :any,                 arm64_sonoma:   "efe80bdd1ea73bc18a3f910e8c62ff2f04332aec1d8c45c1f7c7a49957199708"
+    sha256 cellar: :any,                 arm64_ventura:  "6496942505481116a5be81a5225d0039ea91cdaa8c794eef4177133b5571f1df"
+    sha256 cellar: :any,                 arm64_monterey: "2ec7545e0e73b5907dac1cb3b4a07e8afa5cfcc9085885db3b3d38ce810503cf"
+    sha256 cellar: :any,                 sonoma:         "6026762db5d82ff4a24748115b81ac93bb8852dad5fd8b8fafeaf6874bcdbd5e"
+    sha256 cellar: :any,                 ventura:        "8e2aa465ddefee98e147a5fc6f78681c4a31ff3b9ae9010a2d3aaaad1750387c"
+    sha256 cellar: :any,                 monterey:       "e600b47c31902eb67d70ffbf211952f9ca9211350233780a9bc3852339ce08f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebb91ee005288c425def9da870ff6c51de494e1417d0ad52d486e2297a44c5c1"
   end
 
   depends_on "rust" => [:build, :test]

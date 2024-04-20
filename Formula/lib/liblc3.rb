@@ -1,18 +1,18 @@
 class Liblc3 < Formula
   desc "Low Complexity Communication Codec library and tools"
   homepage "https:github.comgoogleliblc3"
-  url "https:github.comgoogleliblc3archiverefstagsv1.1.0.tar.gz"
-  sha256 "958725e277685f9506d30ea341c38a03b245c3b33852cd074da6c8857525e808"
+  url "https:github.comgoogleliblc3archiverefstagsv1.1.1.tar.gz"
+  sha256 "b65e38943708529efd04a87dd1a9f16a9856ed6199d082b18e7d42fb5c59486e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6d45a4d76d487a56ba784b7ff8f0180cb001186bee0c404bb2fb7b46f120275c"
-    sha256 cellar: :any,                 arm64_ventura:  "a2198a75a7568fee969e52f53a166a874cde30d15f556e5d1fcd1a2a7b6e7827"
-    sha256 cellar: :any,                 arm64_monterey: "6d74073bb134615ed49e44c1652ca64af21260ff13dd34c5cf6c688e502eeb35"
-    sha256 cellar: :any,                 sonoma:         "ed537cda08e81cb4d852e04f3793d32d240e66b1b9439ed4f2a0a7535bdf6343"
-    sha256 cellar: :any,                 ventura:        "49f51813477d4ee1bac7b04b3139279cc666baef5f053e143e7c6245d57ae324"
-    sha256 cellar: :any,                 monterey:       "07c8767c1298cf3827fa2fe9757a1d77fd06fc21dd587801afb8b2200ab85657"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a0a63d27a506e4fbae64b4d52f232a8fc2646634a0f79c3dc0ae2f0f683e650"
+    sha256 cellar: :any,                 arm64_sonoma:   "31cc6967823fa5b4165ce896967f32ac5bbc02472d3ed7e72ee86abe33753aea"
+    sha256 cellar: :any,                 arm64_ventura:  "5b63ef2dd2e95e3427998c35795e0ca23b017642f7e8a3d62959e385fff7bcfe"
+    sha256 cellar: :any,                 arm64_monterey: "01744ca56d9e0598e2d9a63dbfb5f962d74160e33cd801c8fde4d2ade0d9262d"
+    sha256 cellar: :any,                 sonoma:         "ddf86429985f1d4c8babba0e04842feb024c8685e7fa310efc29f3d145ddbc75"
+    sha256 cellar: :any,                 ventura:        "f8c16dc68ccc1bdbd34ca7d7102c4e8b16c87c94561b3bb976bd3cc8c49d8078"
+    sha256 cellar: :any,                 monterey:       "2867ca66ecc693c85fd192db53e4954fd4251a93acb844f8d4dbe5784ac4273d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7fb12461311309877014ab7c777c513917051b340c57accce47f4ef830aeedb"
   end
 
   depends_on "meson" => :build

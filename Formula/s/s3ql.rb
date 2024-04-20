@@ -4,9 +4,9 @@ class S3ql < Formula
   desc "POSIX-compliant FUSE filesystem using object store as block storage"
   homepage "https:github.coms3qls3ql"
   # TODO: Try to remove `cython` and corresponding build_cython in the next release.
-  # Ref: https:github.coms3qls3qlissues335
-  url "https:github.coms3qls3qlreleasesdownloads3ql-5.1.3s3ql-5.1.3.tar.gz"
-  sha256 "9511f7c230f3b9ea16908a806649ed9bf90ee71ed6838ceb19db9cf4eb28ed5c"
+  # check if `python3 setup.py build_cython` is still needed in https:github.coms3qls3qlblobmaster.githubworkflowspr-ci.yml#L27
+  url "https:github.coms3qls3qlreleasesdownloads3ql-5.2.0s3ql-5.2.0.tar.gz"
+  sha256 "150e5f67071af334c98afd123bd95f101d4ba293cf353ae71b34c8e7f90a6155"
   license "GPL-3.0-only"
 
   livecheck do
@@ -15,8 +15,7 @@ class S3ql < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5dba67563cfc911a83ace0d2edb967ef7f65c6edc9e798836aa2befe0117ae3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "26f9d814bbbd7350ec8c8c5e395be911ed5ad95f72f3e38e8c5ff9e25095c741"
   end
 
   depends_on "cython" => :build
@@ -27,13 +26,12 @@ class S3ql < Formula
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "openssl@3"
-  depends_on "python-packaging"
   depends_on "python@3.12"
   depends_on "six"
 
   resource "apsw" do
-    url "https:files.pythonhosted.orgpackagese0e39987fe0294b4812efa460e7b4cc31690e7f095e195de2a2c1674fd821812apsw-3.43.2.0.tar.gz"
-    sha256 "84f1916c2601631306979160019b217a9d29b876c18f9a36e5b8e1d15431ec66"
+    url "https:files.pythonhosted.orgpackagesc3e12773d8d993eb39d5cbe92f376b5d2454c66e458ebf5e6a110c094d2aa749apsw-3.45.3.0.tar.gz"
+    sha256 "e538e439b1bd0f4e8347db623d50c83f66c662432827a1113bfbad298764fbc5"
   end
 
   resource "async-generator" do
@@ -42,8 +40,8 @@ class S3ql < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages979081f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbbattrs-23.1.0.tar.gz"
-    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+    url "https:files.pythonhosted.orgpackagese3fcf800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650dattrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
   end
 
   resource "defusedxml" do
@@ -57,18 +55,18 @@ class S3ql < Formula
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackages45710f19d6f51b6ea291fc8f179d152d675f49acf88cb44f743b37bf51ef2ec1google-auth-2.23.3.tar.gz"
-    sha256 "6864247895eea5d13b9c57c9e03abb49cb94ce2dc7c58e91cba3248c7477c9e3"
+    url "https:files.pythonhosted.orgpackages18b2f14129111cfd61793609643a07ecb03651a71dd65c6974f63b0310ff4b45google-auth-2.29.0.tar.gz"
+    sha256 "672dff332d073227550ffc7457868ac4218d6c500b155fe6cc17d2b13602c360"
   end
 
   resource "google-auth-oauthlib" do
-    url "https:files.pythonhosted.orgpackages6a34c584323ea98fb596e71ade06c06d514de898c60498efc72311e18ebe2825google-auth-oauthlib-1.1.0.tar.gz"
-    sha256 "83ea8c3b0881e453790baff4448e8a6112ac8778d1de9da0b68010b843937afb"
+    url "https:files.pythonhosted.orgpackages44777433818d44cadd1964473b1d9ab5ecea36e6f951cf2b5188e08f7ebd5dabgoogle-auth-oauthlib-1.2.0.tar.gz"
+    sha256 "292d2d3783349f2b0734a0a0207b1e1e322ac193c2c09d8f7c613fb7cc501ea8"
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages8be143beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "outcome" do
@@ -87,18 +85,18 @@ class S3ql < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "trio" do
-    url "https:files.pythonhosted.orgpackages04b05ec370ef69832f3d6d79069af7097dcec0a8c68fa898822e49ad621c4af0trio-0.22.2.tar.gz"
-    sha256 "3887cf18c8bcc894433420305468388dac76932e9668afa1c49aa3806b6accb3"
+    url "https:files.pythonhosted.orgpackagesb4514f5ae37ec58768b9c30e5bc5b89431a7baf3fa9d0dda98983af6ef55eb47trio-0.25.0.tar.gz"
+    sha256 "9b41f5993ad2c0e5f62d0acca320ec657fdb6b2a2c22b8c7aed6caf154475c4e"
   end
 
   resource "sniffio" do
-    url "https:files.pythonhosted.orgpackagescd50d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0acsniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+    url "https:files.pythonhosted.orgpackagesa287a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbdsniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "sortedcontainers" do

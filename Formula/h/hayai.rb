@@ -22,6 +22,8 @@ class Hayai < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "568a29e0dee5f8da2adcce268ca50150ab1f4f06e3badecf5aa2adf6fd1cb940"
   end
 
+  deprecate! date: "2024-04-18", because: :repo_archived
+
   depends_on "cmake" => :build
 
   def install

@@ -1,10 +1,9 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
   homepage "https:taskwarrior.org"
-  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv2.6.2task-2.6.2.tar.gz"
-  sha256 "b1d3a7f000cd0fd60640670064e0e001613c9e1cb2242b9b3a9066c78862cfec"
+  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv3.0.0task-3.0.0.tar.gz"
+  sha256 "30f397081044f5dc2e5a0ba51609223011a23281cd9947ea718df98d149fcc83"
   license "MIT"
-  revision 1
   head "https:github.comGothenburgBitFactorytaskwarrior.git", branch: "develop"
 
   livecheck do
@@ -13,19 +12,18 @@ class Task < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sonoma:   "50c3572e274b41419876401235d67710754821708fe334d871d2b9cd116a8b35"
-    sha256                               arm64_ventura:  "11ca4562ebc4ea8273f0cab7ef18ec41980c83a373f4b6369b898ee19bea15eb"
-    sha256                               arm64_monterey: "2c1d0eb0f0522bbf4cdd0dea43c394afaceec873d58c609b211f6450cd09421d"
-    sha256                               arm64_big_sur:  "c2342e1543ea07eba65ab7bef36e25a0e463e6baeab6e562bbcb4a572faa89e7"
-    sha256                               sonoma:         "317a2c205a7d616e4773cc130bb3ecdf1b851f3b6e4311627cd558ae41a7517d"
-    sha256                               ventura:        "ffde36684ca7b6ed1e01327fd2aeaadb588aeb06125065cd8781d4b5ea630374"
-    sha256                               monterey:       "72cc6c37f541104645ff0d7f952abc7e3acf80cf2e91dd32eceecb80502baf53"
-    sha256                               big_sur:        "7671bf2e4b715cffd7895b97ff049295bea6faee8f4028c7c8c78be2f4ab8c66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53cb397182b40cbad438aefbe4fb38e505f0eac4b2999dd38ffbb8aad3d12f86"
+    sha256                               arm64_sonoma:   "6668c7c712c4866eaea4d847dc6ac83d6a4bd27119bb84650112f4a1573ea64c"
+    sha256                               arm64_ventura:  "3d1ba07e32cea8ac22d10309a35cda8f7f4a5ea45ce80a9b424911340e3af774"
+    sha256                               arm64_monterey: "a0e2a979cfa6e5a36c8efdaef9a2a5c9674949979e315a67b902a85b3860bff4"
+    sha256                               sonoma:         "0bc2b60ba53ce471c20131d5be4d0baf4e2cb7215e503a7eaff73eed351b8d01"
+    sha256                               ventura:        "e1b4e8cb041e8a21f7146b30d16d16467c308fddda4cb0da2a903520dd847a6b"
+    sha256                               monterey:       "b80d0e7b014aa23afecbd7f72a7dcc88691c86a79912b2a9222cfd910ba5fb2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f79851192203b44262e6a75607a9dfda0dad521beb1ef2bac5a73b09731fdcd"
   end
 
   depends_on "cmake" => :build
+  depends_on "rust" => :build
+  depends_on "corrosion"
   depends_on "gnutls"
 
   on_linux do
@@ -37,6 +35,13 @@ class Task < Formula
   conflicts_with "go-task", because: "both install `task` binaries"
 
   fails_with gcc: "5"
+
+  # upstream bug report, https:github.comGothenburgBitFactorytaskwarriorissues3294
+  # and PR comment for the workaround, https:github.comGothenburgBitFactorytaskwarriorpull3302
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patches080b833258961c922d85984871a96ca55bbf519btasktask-3.0.0.patch"
+    sha256 "362834215f7308f5c2af1b6591d98907d2f77fddc4a341915e0f47eb153724ac"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

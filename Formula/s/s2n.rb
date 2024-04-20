@@ -24,6 +24,8 @@ class S2n < Formula
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
+  conflicts_with "aws-sdk-cpp", because: "both install s2nunstablecrl.h"
+
   def install
     system "cmake", "-S", ".", "-B", "buildstatic", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
     system "cmake", "--build", "buildstatic"

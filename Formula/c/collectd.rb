@@ -5,7 +5,7 @@ class Collectd < Formula
   revision 7
 
   stable do
-    url "https:collectd.orgfilescollectd-5.12.0.tar.bz2"
+    url "https:storage.googleapis.comcollectd-tarballscollectd-5.12.0.tar.bz2"
     sha256 "5bae043042c19c31f77eb8464e56a01a5454e0b39fa07cf7ad0f1bfc9c3a09d6"
 
     # Fix -flat_namespace being used on Big Sur and later.
@@ -41,6 +41,7 @@ class Collectd < Formula
   depends_on "libgcrypt"
   depends_on "libtool"
   depends_on "net-snmp"
+  depends_on "protobuf-c"
   depends_on "riemann-client"
 
   uses_from_macos "bison" => :build
@@ -48,6 +49,12 @@ class Collectd < Formula
   uses_from_macos "perl"
 
   def install
+    # Workaround for: Built-in generator --c_out specifies a maximum edition
+    # PROTO3 which is not the protoc maximum 2023.
+    # Remove when fixed in `protobuf-c`:
+    # https:github.comprotobuf-cprotobuf-cpull711
+    ENV["PROTOC_C"] = Formula["protobuf"].opt_bin"protoc"
+
     args = std_configure_args + %W[
       --localstatedir=#{var}
       --disable-java

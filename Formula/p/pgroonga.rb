@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.1.9.tar.gz"
-  sha256 "d18eca2df804c0448a8c60dc3db4b9f81ab2cbd3aede4d4c48e172009463feb9"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.2.0.tar.gz"
+  sha256 "ce75cdb74935f9db499293997ed962f44146b741bc7f2131af69677ba653c6be"
   license "PostgreSQL"
 
   livecheck do
@@ -11,13 +11,13 @@ class Pgroonga < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d670d12b9efd7f2f75469132f6e06788635ca71684b75b6f5d1da5029b806cd2"
-    sha256 cellar: :any,                 arm64_ventura:  "c552a37d2edd3668c3f016eed3f48998d4fa21f0679c1d62ebb82785e2324e3c"
-    sha256 cellar: :any,                 arm64_monterey: "5eaa589af7d652994493971b5b6dd74699b14d32a9391c9273efe7c52197d037"
-    sha256 cellar: :any,                 sonoma:         "4ddb72d3656db5ad64754f3184b31a63530fd9da171e4a9fad594c94a21f10b7"
-    sha256 cellar: :any,                 ventura:        "aecf45827e08aa5383bc9844736f14248f8b25c38d469097e962deaa2ba2d23c"
-    sha256 cellar: :any,                 monterey:       "9c1f41258688849d30f7b95bca6bc7dd7165d04e3bcddcf97e6e96f178511f05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e18e042c3a3f59d0f794db4c8ec360da6bb042db230a34ba08a3152465cbab1f"
+    sha256 cellar: :any,                 arm64_sonoma:   "06881d0894743c07205f196f2a100961bdf8294cc9b016261f8b3d6f09544d5a"
+    sha256 cellar: :any,                 arm64_ventura:  "8ba31ecb015f23e24245fc39d5ba3f100092467c12b8e477a941da968bac649d"
+    sha256 cellar: :any,                 arm64_monterey: "dd944fd2e07bc6d4e7fff8fdd99bcc4eb775dac86cb8a1c539c2c01d7f828448"
+    sha256 cellar: :any,                 sonoma:         "67737282226a6fe5ca90c26885d62469a1b94514c00f97fa33edcef2eaea63d0"
+    sha256 cellar: :any,                 ventura:        "6a8040812cf7050887e22a822c270c64f161e8add462fa5527333fbb45081953"
+    sha256 cellar: :any,                 monterey:       "c9ce8a45f2a8f3a57c922f1e4685420d992fa0b0b9883425e04326b90ae41f22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "131714759dc573632659c4e9417de2874f283a8cd83b8bcda29076bfd672a6b3"
   end
 
   depends_on "pkg-config" => :build

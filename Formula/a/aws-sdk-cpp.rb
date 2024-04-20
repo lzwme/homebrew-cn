@@ -24,6 +24,8 @@ class AwsSdkCpp < Formula
   depends_on "cmake" => :build
   uses_from_macos "curl"
 
+  conflicts_with "s2n", because: "both install s2nunstablecrl.h"
+
   fails_with gcc: "5"
 
   def install

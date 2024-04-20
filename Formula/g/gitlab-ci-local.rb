@@ -3,26 +3,35 @@ require "languagenode"
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https:github.comfirecowgitlab-ci-local"
-  url "https:registry.npmjs.orggitlab-ci-local-gitlab-ci-local-4.47.0.tgz"
-  sha256 "54979ce76f9539651bcb2597007861be7ee7578e2b19f7e6f91a1cd34b5cb730"
+  url "https:registry.npmjs.orggitlab-ci-local-gitlab-ci-local-4.48.1.tgz"
+  sha256 "1176deb0cc5e0a17a504e0260ae874c4e3681384361359000b61fe3fe595ef37"
   license "MIT"
   head "https:github.comfirecowgitlab-ci-local.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "36ff1417be6a5ce205649240938cc7f90126133f5140d3e4d77fc9816dbb23de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36ff1417be6a5ce205649240938cc7f90126133f5140d3e4d77fc9816dbb23de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36ff1417be6a5ce205649240938cc7f90126133f5140d3e4d77fc9816dbb23de"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46d5e2045bdbc988bb39cc0a3f37aaeb6d2d4f3bf81078f35ea79c9db6c05834"
-    sha256 cellar: :any_skip_relocation, ventura:        "46d5e2045bdbc988bb39cc0a3f37aaeb6d2d4f3bf81078f35ea79c9db6c05834"
-    sha256 cellar: :any_skip_relocation, monterey:       "46d5e2045bdbc988bb39cc0a3f37aaeb6d2d4f3bf81078f35ea79c9db6c05834"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36ff1417be6a5ce205649240938cc7f90126133f5140d3e4d77fc9816dbb23de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc8ab40b8946b920377d36672bf4f185d7fe799b320aaa17cfad4500e6019dfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc8ab40b8946b920377d36672bf4f185d7fe799b320aaa17cfad4500e6019dfc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc8ab40b8946b920377d36672bf4f185d7fe799b320aaa17cfad4500e6019dfc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8d144db52f116a8ac9ae6785e300683843b841b9ba849161169d588c39ccb087"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d144db52f116a8ac9ae6785e300683843b841b9ba849161169d588c39ccb087"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d144db52f116a8ac9ae6785e300683843b841b9ba849161169d588c39ccb087"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc8ab40b8946b920377d36672bf4f185d7fe799b320aaa17cfad4500e6019dfc"
   end
 
   depends_on "node"
 
+  # add missing schema.json file
+  # upstream bug report, https:github.comfirecowgitlab-ci-localissues1190
+  resource "schema.json" do
+    url "https:raw.githubusercontent.comfirecowgitlab-ci-localmastersrcschemaschema.json"
+    sha256 "81578fbb5a57ed922c66135c3bd5ddc0791ba3478c7bd64142997f6d3c5bd53c"
+  end
+
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}bin*"]
+
+    (libexec"libnode_modulesgitlab-ci-localsrcschema").install resource("schema.json")
   end
 
   test do

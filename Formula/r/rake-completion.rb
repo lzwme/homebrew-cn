@@ -1,22 +1,25 @@
 class RakeCompletion < Formula
   desc "Bash completion for Rake"
-  homepage "https:github.comJoeNylandrake-completion"
-  url "https:github.comJoeNylandrake-completionarchiverefstagsv1.0.1.tar.gz"
-  sha256 "085801e62cb240311d77885778a603f649b3fd5d85ee279691d1d00bc060bba6"
+  homepage "https:github.commernencompletion-ruby"
+  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.2.tar.gz"
+  sha256 "70b9ae9154076b561f0d7b2b74893258dc00168ded3e8686f14e349f4a324914"
   license "MIT"
+  head "https:github.commernencompletion-ruby.git", branch: "main"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, all: "6d5a9f29cceb2470b61d563fc7d9d762e0a8b73f8e052d99103fad25e6301f62"
+  livecheck do
+    formula "ruby-completion"
   end
 
-  disable! date: "2024-01-16", because: :repo_archived
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "3ab3230b051ec32510036be28e4d2bb89fb6cee106e74ec9a14f11b859d88adc"
+  end
 
   def install
-    bash_completion.install "rake.sh" => "rake"
+    bash_completion.install "completion-rake" => "rake"
   end
 
   test do
-    assert_match "-F _rakecomplete",
+    assert_match "-F __rake",
       shell_output("bash -c 'source #{bash_completion}rake && complete -p rake'")
   end
 end

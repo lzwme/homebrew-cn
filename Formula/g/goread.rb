@@ -1,19 +1,19 @@
 class Goread < Formula
   desc "RSSAtom feeds in the terminal"
   homepage "https:github.comTypicalAMgoread"
-  url "https:github.comTypicalAMgoreadarchiverefstagsv1.6.4.tar.gz"
-  sha256 "a7a6315e31d11edb9b4e50aacf96648c6e9b69e87d2f7ed9132d1a9b13eace7f"
+  url "https:github.comTypicalAMgoreadarchiverefstagsv1.6.5.tar.gz"
+  sha256 "f60714b88de775ddf4198f86cd80da88c72acb36f59ff9b6484fe0a7680ebdad"
   license "GPL-3.0-or-later"
   head "https:github.comTypicalAMgoread.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8beff34809f0f36d138e70a4f27f1de377c4c5f50a316113063763ccdc2e78a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4f853cc93968f52207509e674a15e834993c7c759d05a87edb486495a55a624"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e52c07ea3d8d8298053de330c2eb4be46b3c2cc4b9d0fe9879d4a9435daf29d4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "555d7133b4444a8e229d90a34d6b686e44d2f7cb4ef1a6ba47655619ffaa98eb"
-    sha256 cellar: :any_skip_relocation, ventura:        "0864fafc97151aa134138f2061cbba3b0fb8d368e4df7620c4c4f3e67cd3b5a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a109de75b4cb2145df82741da39e91aa6edda595847feadc6023fe3c3103e5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b1958e6f5439960640edc214bc74144d0454649631b75ed9966df61b73aadc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d3a8c15cc058d98320680bbaf5e58dc779873a8fd526729704f43958e9fa33f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3d40cdc7664bd7790309556a17976cbbd77484431eae9303e118638af2be1c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a84726926b5116f9bf7c2e0dc7230dcaf787d56284254b8fbbc2792f6bee2742"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be525b39206cfe8fccb5f97a4839e2436d5bbaf92059e2979b1a6c4cc3a6ab32"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ee5b6843d8e83fad5fca0da7d0cdd228f3247d347aa65864de74b6df25ffbf7"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b151438526bcc964172ccacd02322c636876577a7972e3ac1e2c3a6b0902e49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f301ef674a9296b6e916bba05b7dae5dac3165db6065a20e3384ddc379bdeefd"
   end
 
   depends_on "go" => :build
