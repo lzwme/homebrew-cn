@@ -1,9 +1,9 @@
 cask "pile" do
-  arch arm: "-arm64", intel: ""
+  arch arm: "-arm64"
 
-  version "0.9.3"
-  sha256 arm:   "00655673917f2029587e0bb1930bf2fc145f2717a271ae2b8456c0521633191f",
-         intel: "415a74a725c1a696f3a869d0fe9f09ee548b63d36a43369afe0bd193d0e8b5f9"
+  version "0.9.4"
+  sha256 arm:   "2d833b226b92664c9a2b6a3fccb5fa0b70eb75233d78c67fab66cd7381afacc1",
+         intel: "dadfc78b98bac2bff83d567384d5b0d19518bc7e6c8457a406bc700c164fd34c"
 
   url "https:github.comUdaraJayPilereleasesdownloadv#{version}Pile-#{version}#{arch}.dmg",
       verified: "github.comUdaraJayPile"
@@ -11,12 +11,16 @@ cask "pile" do
   desc "Digital journaling app"
   homepage "https:udara.iopile"
 
-  # auto-updates are coming with 1.0.0
-  # https:github.comUdaraJayPileissues40#issuecomment-1873501788
-  # auto_updates true
+  auto_updates true
   depends_on macos: ">= :high_sierra"
 
   app "Pile.app"
 
-  zap trash: "~LibraryPreferencespile.un.ms.plist"
+  zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentspile.un.ms.sfl*",
+    "~LibraryApplication Supportpile",
+    "~LibraryPreferencespile.un.ms.plist",
+    "~LibrarySaved Application Statepile.un.ms.savedState",
+    "~Piles",
+  ]
 end

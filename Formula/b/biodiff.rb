@@ -1,22 +1,26 @@
 class Biodiff < Formula
   desc "Hex diff viewer using alignment algorithms from biology"
   homepage "https:github.com8051Enthusiastbiodiff"
-  url "https:github.com8051Enthusiastbiodiffarchiverefstagsv1.1.0.tar.gz"
-  sha256 "f7960914ccf9b5fbdf3188b187d0cd3bca00f211487aa01d7b6f580da1c32312"
+  url "https:github.com8051Enthusiastbiodiff.git",
+      tag:      "v1.2.0",
+      revision: "36ff3e726bbb73946e744e34c954fa153be3870b"
   license "MIT"
   head "https:github.com8051Enthusiastbiodiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6c53d1d3d51623b51f60500e848722328ff6f4fb70fa87bb150d128a437735b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "195c79d4de3265849c382634d59331f8315b4afbb206ab47a9b12fe1fe07523e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2b7d5ec8bf5ab72b8dd796c5fb121df2d8df76cb6d381bb363146aa43c07dad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b3d8b9fae54b1f9d0baa13d3fd417e3a70901060dde6a6b69bf29ba82b41e11c"
-    sha256 cellar: :any_skip_relocation, ventura:        "90b3895d3bb79f6584b6abd85d814fd108945306cf90b6b7cf185f3996b91f0d"
-    sha256 cellar: :any_skip_relocation, monterey:       "987c0e84e8a6ff69d153310ed985b3d498e26cc39a0954bfb8a463a36c4ccf0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28b668c882b37f9edc86bbe6eb95ec691ad2e9963dd2e68537b5f9d98aec495f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec4047633c531dbccc3b1c976e74125bf24f2ada736f4fe3bbcbf271fa293d81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0ebee830c841ca69838ae18ca17ddc48861ac3ffd0be46a1e9d8201751c6b51"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b68de01574795be9461d612617a80436fc4357760d0f44bdccf2cf559e8e709"
+    sha256 cellar: :any_skip_relocation, sonoma:         "aca2b43d6be9590cab49175e11ef662c3b1792659e4d380512ac0c22a8e7eb34"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a9ae6e70838753e8ec056fb43fa264ff57ae8c3a98e2344bc2a5a79cd752057"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa2ba44a2968383e4f301223b9bb00f1a0abe69622946052499be19bb797a84d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7692cfd54720297a8f1ff48eb03e6f2b2f1d2cf5963457ccce5c2e22354e5017"
   end
 
+  depends_on "cmake" => :build # for biodiff-wfa2-sys
   depends_on "rust" => :build
+
+  uses_from_macos "llvm" # for libclang
 
   def install
     system "cargo", "install", *std_cargo_args

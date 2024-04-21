@@ -10,18 +10,14 @@ class Udptunnel < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d90e8491c09fa77d47d0dc1eae46ec206382a3dff72a4cb6473d88fc155d8a9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d00e56cd2e956452a8529f53ffdec24393bedbd3b0ecec22d24051fc12ca80a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f926b82af867d217a020a55be4f21de045b846aa5e3ca584a09629d4529a5c8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1cd9168b47649ced46a6bc58b90d8bb9cf6031fe3f839101743ca5b6dda3efbf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "52153a3000c3b2ac9aee259a0196d46aa72d3421da89a1b4d43c6bc608b21722"
-    sha256 cellar: :any_skip_relocation, ventura:        "21017d293a334d6248140bf92afa95465c36c2db8cab3098d8e0021c4e25e837"
-    sha256 cellar: :any_skip_relocation, monterey:       "25b3c9254ca0a49a807e1bbf4547191c796e55a0cf9c8575653660611ca4189d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bfb564a4529a508338776cc02b0b4fcd63ceead924db45ef73f4c41c79f96908"
-    sha256 cellar: :any_skip_relocation, catalina:       "de4e78f6f0ff861478dae683d1a6c09ae38e9a9e7ec8780a90a9b849df422089"
-    sha256 cellar: :any_skip_relocation, mojave:         "46dca7ebedab0825acffeafa11b6090676993a5b7b4a53591db51cc7b856e048"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8011c8ad2ef6699b3b100f259cd8e6db4ae8a799721635b06ae2a259c084c9b5"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "68d39772c6215367e95610b65557e2055741cc6f1647f0c203ecb1e2bef0a617"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41ccbefe035c6cb8d7cb3a1aaec9421819c18d02f909b296c8751ee541aa585d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbb91d06c314bf6dea17191505ba382300f7a5b8551c973d79f516ba769153a6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f6d79761a7e95026828863a9ac3b4446603008c36610b651d2ad2b2a73e3110b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8f92018d640442578d0d26e06ea3893666da7847cb88acf76ef3dd6530f55397"
+    sha256 cellar: :any_skip_relocation, monterey:       "b81e584e4ed1d6e579829e55488fe8ff398862d36f0619867b94ec4fbf6d1f61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4f9f7bf957a343e94d7dfeb746dd2a6bcf80e9f6689fcb083d281494f75ac7"
   end
 
   depends_on "autoconf" => :build
@@ -34,6 +30,8 @@ class Udptunnel < Formula
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+
+    ENV["LIBS"] = "-L#{Formula["libnsl"].opt_lib}" if OS.linux?
 
     system "autoreconf", "--verbose", "--install", "--force"
     system "./configure", "--disable-debug",

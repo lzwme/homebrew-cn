@@ -9,13 +9,14 @@ class Iredis < Formula
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "202198f2b992839fbeeff865504fe9399495867d4191d2e1c41945e47c823326"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "202198f2b992839fbeeff865504fe9399495867d4191d2e1c41945e47c823326"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "202198f2b992839fbeeff865504fe9399495867d4191d2e1c41945e47c823326"
-    sha256 cellar: :any_skip_relocation, sonoma:         "95b9921cbe9ec9d8bd0d3bbb66e584413deb20dda1a69bc37d77ccf5bcab0a6f"
-    sha256 cellar: :any_skip_relocation, ventura:        "95b9921cbe9ec9d8bd0d3bbb66e584413deb20dda1a69bc37d77ccf5bcab0a6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "95b9921cbe9ec9d8bd0d3bbb66e584413deb20dda1a69bc37d77ccf5bcab0a6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6df3eda00748f5311b1fe24e6fd7cb37af9826eb531503342ca408d6dbcc3c3e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
+    sha256 cellar: :any_skip_relocation, ventura:        "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
+    sha256 cellar: :any_skip_relocation, monterey:       "d30f9e8ea40f326932c1e37082366a595dc8ef317af746260987477ee01af756"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f3d0c7ef651d8a7197611927049062a54c0c39b44f71402cdd1c2f12c6d6d92"
   end
 
   depends_on "python@3.12"
@@ -60,11 +61,6 @@ class Iredis < Formula
     sha256 "4973bae7444c0fbed64a06b87446f79361cb7e4ec1538c022d696ed7a5015580"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
   resource "six" do
     url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
@@ -76,10 +72,7 @@ class Iredis < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resource("setuptools")
-    venv.pip_install resources.reject { |r| r.name == "setuptools" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do

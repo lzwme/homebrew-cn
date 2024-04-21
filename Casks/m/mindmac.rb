@@ -21,7 +21,13 @@ cask "mindmac" do
     "~LibraryApplication Supportapp.mindmac.macos",
     "~LibraryApplication SupportMindMac",
     "~LibraryCachesapp.mindmac.macos",
+    "~LibraryCachescom.crashlytics.dataapp.mindmac.macos",
+    "~LibraryCachescom.plausiblelabs.crashreporter.dataapp.mindmac.macos",
+    "~LibraryContainersorg.sparkle-project.DownloaderDataLibraryCachesapp.mindmac.macos",
+    "~LibraryHTTPStoragesapp.mindmac.macos",
+    "~LibraryHTTPStoragesapp.mindmac.macos.binarycookies",
     "~LibraryPreferencesapp.mindmac.macos.plist",
     "~LibrarySaved Application Stateapp.mindmac.macos.savedState",
+    "~LibraryWebKitapp.mindmac.macos",
   ]
 end

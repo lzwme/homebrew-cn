@@ -3,20 +3,19 @@ class Mvt < Formula
 
   desc "Mobile device forensic toolkit"
   homepage "https:docs.mvt.reenlatest"
-  url "https:files.pythonhosted.orgpackages897d334c9003479209df74f6bdc0ea67edc1180af168cd2d99ef707555278623mvt-2.5.0.tar.gz"
-  sha256 "d0d89eb75834a675a555f96ee1fb6f2341921df215fb0f506bf59586997cd94e"
+  url "https:files.pythonhosted.orgpackages0ba7e12932647247b7cd253698e6aa0d5f831700d3dd7688c366af85eb255b62mvt-2.5.3.tar.gz"
+  sha256 "5727877815b3d5a2a98e21a6be9da51c3629eb548e424457e9e78ae183344264"
   license :cannot_represent # Adaptation of MPL-2.0
-  revision 1
   head "https:github.commvt-projectmvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "78d28281c4fc3993ba89779ef6024a8bc8c9bc8c596d2f2819dd3cb70765ce8b"
-    sha256 cellar: :any,                 arm64_ventura:  "e9fdb3124e47b6a779400102ad187026e0d2ef08d3c3684452eb1031300ea607"
-    sha256 cellar: :any,                 arm64_monterey: "89dd7ce444a6e11bc88f53c5db68f6ade1163115370557408786371a6fa6f726"
-    sha256 cellar: :any,                 sonoma:         "521477dfed40166b95ab91a398a9465a028d6ba42bd57e02faf6a90b536a9a0b"
-    sha256 cellar: :any,                 ventura:        "0880ba2388f846d9f2fdcfa9224f7fb972a707b252ddeb38a15ea9e11813bdf8"
-    sha256 cellar: :any,                 monterey:       "75a298fa1789fb4d0a1a3d976e159a0907d4e8a3f8a0780b20fa80c66dbc5f19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f7af8e5dccae89f1e014c1de602fdbcfcfb3853d2ba0cf1354c1a196fd58bba"
+    sha256 cellar: :any,                 arm64_sonoma:   "bb6112b3fdab872902bae9299ea016dcba55ae7d8bfad0638c83ca7d9cae2e6d"
+    sha256 cellar: :any,                 arm64_ventura:  "9e72428eecf447a69aee4f74c51c8e3122fc1de1b10ea845ff0891266e347ffd"
+    sha256 cellar: :any,                 arm64_monterey: "e77e732d2cd130fdc5fa8974c143d9dfe46cd182b8a379205ba483328df6f0cb"
+    sha256 cellar: :any,                 sonoma:         "f2bed1b23a51aa4036daf61f32310852b0baee68f1caf40f592be7886112d00b"
+    sha256 cellar: :any,                 ventura:        "c3d7b45622b2c8bb3d0dff41578a04c976a4e293a683ca461d7a5ec3252ceac3"
+    sha256 cellar: :any,                 monterey:       "3e53745e417e7ad9ca3f95e28d9ac3e5f82fca73c71d322f39dfa2a08520102b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0538ad91630242f39bc57e2b58fa219b23e6d4db6a40b4b788f4a2a8e3a099ef"
   end
 
   depends_on "certifi"
@@ -119,11 +118,6 @@ class Mvt < Formula
     sha256 "e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
   resource "simplejson" do
     url "https:files.pythonhosted.orgpackages79793ccb95bb4154952532f280f7a41979fbfb0fbbaee4d609810ecb01650afasimplejson-3.19.2.tar.gz"
     sha256 "9eb442a2442ce417801c912df68e1f6ccfcd41577ae7274953ab3ad24ef7d82c"
@@ -140,14 +134,15 @@ class Mvt < Formula
   end
 
   def install
-    # The `iosbackup` resource requires `nskeyedunarchiver` & `pycryptodome`, so they must be installed
-    # prior to `iosbackup`. `setuptools` must also be preinstalled, otherwise pip will auto-install
-    # it, and attempt to import the same NSKeyedUnarchiver resource but via a wheel.
     venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resource("setuptools")
-    skipped_resources = %w[setuptools iosbackup]
-    venv.pip_install resources.reject { |r| skipped_resources.include?(r.name) }
-    venv.pip_install resource("iosbackup")
+    venv.pip_install resources.reject { |r| r.name == "iosbackup" }
+
+    # iosbackup is incompatible with build isolation: https:github.comavibraziliOSbackuppull32
+    resource("iosbackup").stage do
+      inreplace "setup.py", "from iOSbackup import __version__", "__version__ = '#{resource("iosbackup").version}'"
+      venv.pip_install Pathname.pwd
+    end
+
     venv.pip_install_and_link buildpath
 
     %w[mvt-android mvt-ios].each do |script|

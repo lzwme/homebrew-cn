@@ -5,20 +5,19 @@ class Lcov < Formula
 
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https:github.comlinux-test-projectlcov"
-  url "https:github.comlinux-test-projectlcovreleasesdownloadv2.0lcov-2.0.tar.gz"
-  sha256 "1857bb18e27abe8bcec701a907d5c47e01db4d4c512fc098d1a6acd29267bf46"
+  url "https:github.comlinux-test-projectlcovreleasesdownloadv2.1lcov-2.1.tar.gz"
+  sha256 "4d01d9f551a3f0e868ce84742fb60aac4407e3fc1622635a07e29d70e38f1faf"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.comlinux-test-projectlcov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "172a009c87b7d785c2cc04715eeec8d772061831822d5265b320aa4146462268"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a6231f3e17455b364d6b6346078ee9badd5b331109518ab065441e0103dc934"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9232e041188c3cf09448887ba86e8b97b4146d93bd6197b222f47ea713410720"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7509e9a9969b883a14e8f0943ed197fcddae79a095f78a6a74167f9397642587"
-    sha256 cellar: :any_skip_relocation, ventura:        "d776c877cdced681a8b98e9314df0f8092d296e962105a9c2c5475b13d9e26d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "90e58aab20d436920de381218a194dbd3d4e02007af05a56c6bc79ba31a57438"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "429363eb9cd5538a6e1e5e29071d5c279d58a1fbe1b1d7995edfb63d9ebb1055"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5227fd780afbeb63d61e7646e43473c15157d84840f71e397240f38adba9ca0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fea977607a4b92fa0edd2075ddc3ec1b76ea2278f18d377fe815cd15f59e3a4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "91761101ce9137775227f043e3872a44679bd2146a5afdba847d2aeafb8b1f86"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2fcbef5018279b40b1dc3439b46591123184230a7d50803ff1a6031c13849213"
+    sha256 cellar: :any_skip_relocation, ventura:        "037f9b16970269251708dc5d82567199f9c4f9ee5981ed7087252d10d7f4ed57"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ff5a2c4f189e4aa8f67af85f9d95e6c2cab9f4aab493bbdb93e9b25d2e0224f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1300ff4721e5dc4659694fc040ae89069098c14c2ba2a2a1c2dba7e4946e0a63"
   end
 
   uses_from_macos "perl"
@@ -41,18 +40,18 @@ class Lcov < Formula
     end
 
     resource "DateTime" do
-      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDateTime-1.59.tar.gz"
-      sha256 "de3e9a63ce15470b4db4adad4ba6ac8ec297d88c0c6c6b354b081883b0a67695"
+      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDateTime-1.65.tar.gz"
+      sha256 "0bfda7ff0253fb3d88cf4bdb5a14afb8cea24d147975d5bdf3c88b40e7ab140e"
     end
 
     resource "DateTime::Locale" do
-      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDateTime-Locale-1.38.tar.gz"
-      sha256 "dd7f6d358279d1df0ea7d78b9127690435246cdf46867500e9888016f9d4c867"
+      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDateTime-Locale-1.42.tar.gz"
+      sha256 "7d8a138fa32faf24af30a1dbdee4dd11988ddb6a129138004d220b6cc4053cb0"
     end
 
     resource "DateTime::TimeZone" do
-      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDateTime-TimeZone-2.60.tar.gz"
-      sha256 "f0460d379323905b579bed44e141237a337dc25dd26b6ab0c60ac2b80629323d"
+      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDateTime-TimeZone-2.62.tar.gz"
+      sha256 "6214f9c9c8dfa2000bae912ef2b8ebc5b163a83a0b5b2a82705162dad63466fa"
     end
 
     resource "namespace::autoclean" do
@@ -66,8 +65,8 @@ class Lcov < Formula
     end
 
     resource "B::Hooks::EndOfScope" do
-      url "https:cpan.metacpan.orgauthorsidEETETHERB-Hooks-EndOfScope-0.26.tar.gz"
-      sha256 "39df2f8c007a754672075f95b90797baebe97ada6d944b197a6352709cb30671"
+      url "https:cpan.metacpan.orgauthorsidEETETHERB-Hooks-EndOfScope-0.28.tar.gz"
+      sha256 "edac77a17fc36620c8324cc194ce1fad2f02e9fcbe72d08ad0b2c47f0c7fd8ef"
     end
 
     resource "Module::Implementation" do
@@ -86,8 +85,8 @@ class Lcov < Formula
     end
 
     resource "Variable::Magic" do
-      url "https:cpan.metacpan.orgauthorsidVVPVPITVariable-Magic-0.63.tar.gz"
-      sha256 "ba4083b2c31ff2694f2371333d554c826aaf24b4d98d03e48b5b4a43a2a0e679"
+      url "https:cpan.metacpan.orgauthorsidVVPVPITVariable-Magic-0.64.tar.gz"
+      sha256 "9f7853249c9ea3b4df92fb6b790c03a60680fc029f44c8bf9894dccf019516bd"
     end
 
     resource "Sub::Exporter::Progressive" do
@@ -136,8 +135,8 @@ class Lcov < Formula
     end
 
     resource "Devel::StackTrace" do
-      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDevel-StackTrace-2.04.tar.gz"
-      sha256 "cd3c03ed547d3d42c61fa5814c98296139392e7971c092e09a431f2c9f5d6855"
+      url "https:cpan.metacpan.orgauthorsidDDRDROLSKYDevel-StackTrace-2.05.tar.gz"
+      sha256 "63cb6196e986a7e578c4d28b3c780e7194835bfc78b68eeb8f00599d4444888c"
     end
 
     resource "Params::ValidationCompiler" do

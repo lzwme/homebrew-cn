@@ -1,19 +1,19 @@
 class Overtls < Formula
   desc "Simple proxy tunnel for bypassing the GFW"
   homepage "https:github.comShadowsocksR-Liveovertls"
-  url "https:github.comShadowsocksR-Liveovertlsarchiverefstagsv0.2.21.tar.gz"
-  sha256 "e19edfdb601f4c6455b7c23809a54de2b6c18544cd868f6bc486ccde8285c14c"
+  url "https:github.comShadowsocksR-Liveovertlsarchiverefstagsv0.2.22.tar.gz"
+  sha256 "b27b0d13e5584eef29ecd5c91f4d13fad6338b1975672326dcea61f1760fc569"
   license "MIT"
   head "https:github.comShadowsocksR-Liveovertls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0f6090ec7f0497b5585f211936bb74f140213c273a5fc4864a2cae25be000c2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6e8e6fb333a58b5f26a400cc3e6de4c252d31dbe2a4c16e52dbb2db196e1eb7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "46e663a986039e5071055297e823767202e4394754eb4b73e29368ff8c33c908"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7c9f0c90175ff75ace48cbf4a6ae023ca7006019018d7474054ce10518efcfae"
-    sha256 cellar: :any_skip_relocation, ventura:        "edb2de67cac9584449583a2711dd53847410096388f10d812ff2f0b3a3c0973e"
-    sha256 cellar: :any_skip_relocation, monterey:       "e83f4e2b6f6a59af1b9bd795a34ade00ab88db9609c361ca6ecaa16b77f3599a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc1feed97684b3137703eb1e1dc41516b73401e24c8d6b18aaa3157eeeea8894"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "397a69fc098799502b38bb70106daaaf3434cb8a5b56dea941582291a5da5c87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9e5631f54ee410776a8305e789029e752c93febe8126c870f12e3316ea445a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d39077ec1c6df3c30b755dc27b6619d98f0baed8cb0562906785c89a19e5ca37"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e0e62557bd7486ac223ed20bb2ba879013461ef89759c5a91e47ea15607d1bea"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd02627db39c2acc6f9088789c79211ef58772b73e3387cbf4052f6b67c0da04"
+    sha256 cellar: :any_skip_relocation, monterey:       "5b1e822cdee1fb1445ffea297b0bbfbbd62c329a4de9d2709d2e9ca75f0dab84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b14849e00bb85cac8c62cd9eb47c665b6a669b426bddb96b7a7e1ad2de55422"
   end
 
   depends_on "rust" => :build

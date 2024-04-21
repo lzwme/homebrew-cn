@@ -9,14 +9,14 @@ class Pocsuite3 < Formula
   head "https:github.comknownsecpocsuite3.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "c1b2768db9229bc541b148c61d9ef2c60e76f28ea1a4d6de9f13f98d78fdbde9"
-    sha256 cellar: :any,                 arm64_ventura:  "b18dfc723b256ca4172c0af4754a11f2a333f21125723c4af263a88ab7d84e3c"
-    sha256 cellar: :any,                 arm64_monterey: "70321dbdcae4d86eb856e3594c98c9c5ffd28b0d762cb606cc20610360dab510"
-    sha256 cellar: :any,                 sonoma:         "1d286c8ec35bb7d68bee2eb859b603c019949b468ddb3cbbeb7c3cf3a52e96a9"
-    sha256 cellar: :any,                 ventura:        "651aaded70b264481421e8c49ca87d2874e9e85be8dc6850ce5981d890a43111"
-    sha256 cellar: :any,                 monterey:       "01e3c7d79a4bab49c95f01a4c0e798e5d356a2b1d94fd8b92fb9cf149247a367"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc8ba846dd907250e6324bf0c59c8caea94e3ee9e9231a4691176d87ec7b45fe"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "0097bbfa0460a7eec73479e08c33c94ba268aafb4f0e43c9459098e00f2e95b2"
+    sha256 cellar: :any,                 arm64_ventura:  "5e25bb42134c7486f2c934098233519e30350477e3c7cb694f7639def9a514c2"
+    sha256 cellar: :any,                 arm64_monterey: "1949f056cc986cdb183e963d16e1e3da9fa66563921eaf5bfe4f5d9ee32504ea"
+    sha256 cellar: :any,                 sonoma:         "3c331ff7f40c0f30e6ac6d5289d5b249119bad59947e1dd82f77b9b0ae527ad8"
+    sha256 cellar: :any,                 ventura:        "67fc63c747f39b6de26ce91035550b16890facfcf6680cac63e24985d47bc31b"
+    sha256 cellar: :any,                 monterey:       "a86db8287d28584b755d16f53bd64c27119c2713bc5d56078cc51b007e71df44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50787f97c315d308e1b3deafeb19d318269aaf689b73fc2428c5844b17be6c88"
   end
 
   depends_on "certifi"
@@ -142,11 +142,6 @@ class Pocsuite3 < Formula
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
-  end
-
   resource "termcolor" do
     url "https:files.pythonhosted.orgpackages1056d7d66a84f96d804155f6ff2873d065368b25a07222a6fd51c4f24ef6d764termcolor-2.4.0.tar.gz"
     sha256 "aab9e56047c8ac41ed798fa36d892a37aca6b3e9159f3e0c24bc64a9b3ac7b7a"
@@ -162,12 +157,20 @@ class Pocsuite3 < Formula
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
+  # Drop setuptools dep: https:github.comknownsecpocsuite3pull420
+  patch do
+    url "https:github.comknownsecpocsuite3commitcddfbdb6b7df51f985abe8db7ecd24d5d3b5a92a.patch?full_index=1"
+    sha256 "b1aff714f6002b46c2687354ce51ce0f917d5d13beb20fb175f3927f673f9163"
+  end
+
+  # Fix SyntaxWarning's: https:github.comknownsecpocsuite3pull420
+  patch do
+    url "https:github.comknownsecpocsuite3commit2505bc8b1501866b9193398575c5653614e131f4.patch?full_index=1"
+    sha256 "656929162b5ddd99ae7d98a4580e9dab8914bf0c66f23ab1d7aacb0c2b13a84c"
+  end
+
   def install
-    # Multiple resources require `setuptools`, so it must be installed first
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resource("setuptools")
-    venv.pip_install resources.reject { |r| r.name == "setuptools" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do

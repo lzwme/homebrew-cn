@@ -1,18 +1,18 @@
 class Libucl < Formula
   desc "Universal configuration library parser"
   homepage "https:github.comvstakhovlibucl"
-  url "https:github.comvstakhovlibuclarchiverefstags0.9.1.tar.gz"
-  sha256 "e3efc73db5dfbfd4866bbff46f73efbecdb6b8f851e604d3a22ea65d5ede7b98"
+  url "https:github.comvstakhovlibuclarchiverefstags0.9.2.tar.gz"
+  sha256 "f63ddee1d7f5217cac4f9cdf72b9c5e8fe43cfe5725db13f1414b0d8a369bbe0"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d10edbf3de74217cc43b407dee41a3e86b97b0471fafc865718d457a6639c656"
-    sha256 cellar: :any,                 arm64_ventura:  "e26c5ce20cf0303dff5d20603695218f31db041ddeaba1d04426540d7ee6a800"
-    sha256 cellar: :any,                 arm64_monterey: "5f8ce4e046c5d829a782064241c2755935094c838efc806512a693ee03dab0f5"
-    sha256 cellar: :any,                 sonoma:         "40b5d7c8b3835c2a79f157b900cefcb414e39036d4f40fb4fde686fd6eb3c8c6"
-    sha256 cellar: :any,                 ventura:        "0a5303428c25c621aeaca336db4657af4dbe1d550451e7c6d5d6ccff8edcccce"
-    sha256 cellar: :any,                 monterey:       "7af8bebd350d6e89072ea95a6d99d12ea08df619367d05fc7264150dd4c6f040"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "975f5d76cbdf5078b43be098cd5f806b3cc91851f27eb78d23fd6ed9ab1a6c2a"
+    sha256 cellar: :any,                 arm64_sonoma:   "00ca25427fee2390ea39e75173ae8c844b816a21bad5b205d76d7961dc81614e"
+    sha256 cellar: :any,                 arm64_ventura:  "04ee73714b6d52de15235224a1a4fd72ca07d7e39fc5324e6fcc630a27ecc84f"
+    sha256 cellar: :any,                 arm64_monterey: "64174ea202ba8d56e10a61a2835800ad180ae649613184b7e55b801b0a3f260d"
+    sha256 cellar: :any,                 sonoma:         "404849ecb35a31bc40df771fca0bfe75da4d1b552e1073526d645ad25094f8b6"
+    sha256 cellar: :any,                 ventura:        "28caf0f7502a50965881748e9d6f66fa0481be2ca8d3bcf75a296621aebfe805"
+    sha256 cellar: :any,                 monterey:       "b349883d0fdfccac70c706f8a9cf439bb528f59c9f2dbc89a2d3c80d2dfcdcaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c28950d57c3275bddb3df7ee14c7ca99f94e49e0baa58be832a17b9928d0ed0d"
   end
 
   depends_on "autoconf" => :build

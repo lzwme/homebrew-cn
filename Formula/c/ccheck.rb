@@ -3,7 +3,7 @@ class Ccheck < Formula
   homepage "https:github.comnerdlemccheck"
   url "https:github.comnerdlemccheckarchiverefstagsv1.0.1.tar.gz"
   sha256 "2325ea8476cce5111b8f848ca696409092b1d1d9c41bd46de7e3145374ed32cf"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ab4d218b0474e6c6d7ad9c11f89b17a7d98e846d5305972722edc87e5b0205"
@@ -23,8 +23,7 @@ class Ccheck < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin"ccheck", "main.go"
-    prefix.install_metafiles
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

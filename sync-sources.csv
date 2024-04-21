@@ -424,6 +424,7 @@ Homebrew-homebrew-core/Formula/b/bde.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bdftopcf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bdw-gc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beagle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/beancount-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beancount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beanstalkd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bear.rb, Homebrew/homebrew-core, 1
@@ -1250,6 +1251,7 @@ Homebrew-homebrew-core/Formula/d/deployer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/depqbf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/der-ascii.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/derby.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/descope.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/desk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/desktop-file-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/detach.rb, Homebrew/homebrew-core, 0
@@ -1879,7 +1881,6 @@ Homebrew-homebrew-core/Formula/f/fs-uae.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fselect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fsevent_watch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fsevents-tools.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fsql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fstrm.rb, Homebrew/homebrew-core, 1
@@ -4039,7 +4040,7 @@ Homebrew-homebrew-core/Formula/m/mk-configure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkcert.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mkclean.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkcue.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mkdocs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mkdocs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkfontscale.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkhexgrid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mkp224o.rb, Homebrew/homebrew-core, 1
@@ -4378,7 +4379,7 @@ Homebrew-homebrew-core/Formula/n/noseyparker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notation.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notcurses.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/noti.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/notifiers.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/notifiers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notmuch-mutt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notmuch.rb, Homebrew/homebrew-core, 0
@@ -5121,7 +5122,7 @@ Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyqt-builder.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/pyqt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pyqt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyqt@5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pyright.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyside.rb, Homebrew/homebrew-core, 0
@@ -5665,7 +5666,6 @@ Homebrew-homebrew-core/Formula/s/shelltestrunner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shellz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shibboleth-sp.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/ship.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shivavg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shmcat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shml.rb, Homebrew/homebrew-core, 1

@@ -3,19 +3,19 @@ class CmakeLanguageServer < Formula
 
   desc "Language Server for CMake"
   homepage "https:github.comregen100cmake-language-server"
-  url "https:files.pythonhosted.orgpackages65d0caf71019da3fe2eba801c620cd2ee9a122ede9e048101bf3ee024a5065fccmake_language_server-0.1.9.tar.gz"
-  sha256 "6b4768d89788c582b61d4503f6a3b0e594318af9d67be6d5453cded6dec0d7a8"
+  url "https:files.pythonhosted.orgpackagesccce4b14dcaac4359fc9bdcb823763c7984b72e16ff2bf1c709bbc963cc0e0bccmake_language_server-0.1.10.tar.gz"
+  sha256 "dbc627dc1e549fc7414f459bdb340812acd84a0c8727b92e73c4bd348e6311bf"
   license "MIT"
   head "https:github.comregen100cmake-language-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca40ee7fd121d594ae2fe6f7ad35fb857c3881040d587eaba1612b666eac190c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a0053ce5354dd69188749ff933ec1bff46ebfb3ed1334ca6d215edda9784ad7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ee6c9fa4d6fe748f725105583e97c8a61d84400dcee7d20ab5dc6f10461000e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c228307af2c504b2e38b7c3ce83985c2f41978d69bd61ec6cdb72e21f8cdb83f"
-    sha256 cellar: :any_skip_relocation, ventura:        "a909f7776e1014441fb1d70badba3174f14e82fcbcd29a3f6915af98dc9f98e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "5839242de21d0ffbc482b9c5bfd72d4a806ac9d267ad053937f0ffdcbf1e70e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c26ce2f5a04b2601dffcc9c5e70aabb7bb29f60870c8385131f928f5e81a78af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
+    sha256 cellar: :any_skip_relocation, ventura:        "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
+    sha256 cellar: :any_skip_relocation, monterey:       "522357a6dc704e876a07ae04542aca9cb3308282c9d0a45f15464448d9a08fa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "121fcd6bee7edc1b8477636bad12a0094415aa17ef73be3d853bfae0bdfc93f5"
   end
 
   depends_on "python@3.12"
@@ -36,8 +36,8 @@ class CmakeLanguageServer < Formula
   end
 
   resource "pygls" do
-    url "https:files.pythonhosted.orgpackagese98d31b50ac0879464049d744a1ddf00dc6474433eb55d40fa0c8e8510591ad2pygls-1.3.0.tar.gz"
-    sha256 "1b44ace89c9382437a717534f490eadc6fda7c0c6c16ac1eaaf5568e345e4fb8"
+    url "https:files.pythonhosted.orgpackages86b941d173dad9eaa9db9c785a85671fc3d68961f08d67706dc2e79011e10b5cpygls-1.3.1.tar.gz"
+    sha256 "140edceefa0da0e9b3c533547c892a42a7d2fd9217ae848c330c53d266a55018"
   end
 
   def install

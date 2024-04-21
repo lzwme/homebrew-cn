@@ -3,18 +3,18 @@ class Datalad < Formula
 
   desc "Data distribution geared toward scientific datasets"
   homepage "https:www.datalad.org"
-  url "https:files.pythonhosted.orgpackages9d3443641154f4086995c62928f36b7142c733618682e34fb6cb74a79aeafc7bdatalad-1.0.1.tar.gz"
-  sha256 "dd61e98fe30c0d8fef461b237da83c35befe4e46e9fc41ec856a5de8f609e660"
+  url "https:files.pythonhosted.orgpackages5196a8f9c2a63a296de66a999a40eb5dcd013fbd74327a7588c2d48d1f335ed9datalad-1.0.2.tar.gz"
+  sha256 "d3ac76aebadfcb09442f6c6b0bc43ce059476ecc99cd3a569b3c9fccba6b4550"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01e786dc65126fa2e75972f3a8a8d6e7a5bdf41b936a077cd87ae9b592d03be0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed238e9d889f26358da80180a0e35834df74158ced845d38a014c801ffc59bac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2eefd7e8d04e4e23f1b0f9531dea53feef09c2bedbe1da1653545036c9d312c2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "58b8422b21d1b1df7568fc99591bd90ee0a3587d600dbb45fc64398f56c08578"
-    sha256 cellar: :any_skip_relocation, ventura:        "d11846fdb708110f4588510a0ec02699aade405eb1bec57747c30c5847f95612"
-    sha256 cellar: :any_skip_relocation, monterey:       "64610fbaf36fdf4c6d2c71ad4f5ba64a96b8c027b1ff9c7a6313e40016fa5824"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d51479f1ad31460b0889bfacfaf79ffff3016dd06ddb645dd78a01d42a3e5030"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "98618c3c7648f301d1f1f9aa2b1c600f2502d6942fd3e1c01027b147dddf558d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "020f69bbff20f4d4ce6094b0638c49ba9078e61a517ebf642126d29a6dca4fc8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c004ac90f796298fc775e5153c67af39905e9bc3fbc460562278c1e889a9d327"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4bc10444681aacda5cb39898782239fa1d344f91646ee41036c31cdf5f870aef"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e568540705ec180112f9713cb79192db2d245189aabcd79ab8614beff498f12"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8f9860cc3880ef19c6f0d16d2bb9e5535d52792436b9610924ab803d66aac3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20813e82720fdcb333998ced923fadcc65bb47c9998625bc87209bbe081c1239"
   end
 
   depends_on "certifi"
@@ -89,8 +89,8 @@ class Datalad < Formula
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackages577cfe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afcejaraco.functools-4.0.0.tar.gz"
-    sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
+    url "https:files.pythonhosted.orgpackagesbc66746091bed45b3683d1026cb13b8b7719e11ccc9857b18d29177a18838dc9jaraco_functools-4.0.1.tar.gz"
+    sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
   end
 
   resource "jeepney" do

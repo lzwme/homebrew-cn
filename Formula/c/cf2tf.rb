@@ -3,19 +3,19 @@ class Cf2tf < Formula
 
   desc "Cloudformation templates to Terraform HCL converter"
   homepage "https:github.comDontShaveTheYakcf2tf"
-  url "https:files.pythonhosted.orgpackages369487ce5c09fe600564e7c01baa9a66beecd8a7934b6eab81188494c2d5db10cf2tf-0.6.3.tar.gz"
-  sha256 "ea6ea854524e0ce36387a65203447c54b08cccf0ab1cf58647c93c13233cbf5d"
+  url "https:files.pythonhosted.orgpackagesce74d2472164eb07869fb403a31113781c71e3f2928d818374b6869cbafd37d9cf2tf-0.7.1.tar.gz"
+  sha256 "902b9f4570de4077c0fe148446ded193c505adcebd619cb1f908ef013125c7a1"
   license "GPL-3.0-only"
   head "https:github.comDontShaveTheYakcf2tf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f5126e95411f2c70d0183c737c4619496c7e9d6b0fc147e29ffd4c12c1f55c3f"
-    sha256 cellar: :any,                 arm64_ventura:  "f6bfb3dd81c1955f730917c02e3b664e2449c3ff0257215e5793f4ac5c55d93d"
-    sha256 cellar: :any,                 arm64_monterey: "c1451bf408f767272824ff12851920e4f7a934579c7d83c570f1065919b11d49"
-    sha256 cellar: :any,                 sonoma:         "96ac7c39d9b692e628ff92ba659ae26a17c53d9f3a9fdff931d762771fffc653"
-    sha256 cellar: :any,                 ventura:        "5406669639504b00b4d3c4bb553e67b9673d839411eed14fb4d492f7bc332503"
-    sha256 cellar: :any,                 monterey:       "fa4669fea2859ed8bdb4300409775dce9c6094d3f505ba20c93edb9ff3359453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9131b2c29939e57b7bc8447396e61b64b9c9416d185ad72a874c2d716f1b41a9"
+    sha256 cellar: :any,                 arm64_sonoma:   "4b7ef8fcbe7ac6cdd1b6d4297f240341145442ad5a8dabb20ef52689ae356647"
+    sha256 cellar: :any,                 arm64_ventura:  "feee470e363faf255247d14b9427fdb0df22555ac34147d4910ee236cc4468dd"
+    sha256 cellar: :any,                 arm64_monterey: "3477487d0d22f2cef75f393cf459158a502d34f7ef8501217e8ded987db4c07c"
+    sha256 cellar: :any,                 sonoma:         "6c891712041db3e6d18ccf3cb09659278f21b2f999309de2f1dab6ac16aa071d"
+    sha256 cellar: :any,                 ventura:        "816318e13c97bd0b0aae9c86c2f567d7f7ea8cc4fad8722e06511105d7d371db"
+    sha256 cellar: :any,                 monterey:       "be1c25c62c9d58d173569af4164391b38f32dcf559a188affee2f9013628169b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0beec29522d33e7d8e640289f9608aa3a3be2b935d50c5982ff703710d653c5b"
   end
 
   depends_on "cmake" => :build

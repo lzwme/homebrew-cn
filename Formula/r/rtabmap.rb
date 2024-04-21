@@ -8,12 +8,13 @@ class Rtabmap < Formula
   head "https:github.comintrolabrtabmap.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "204479c6db2eef6b7567e153c3f966a326abeb5c059f4bfa2c79af3faf155611"
-    sha256 arm64_ventura:  "1c9b33f634cce573b7d5ac8179bc5c62b57d76d6b573c5bd6a7cf66b96e69d1f"
-    sha256 arm64_monterey: "177c8f36ccaffea42be206c6721d460998604322344307890d86032bcf249173"
-    sha256 sonoma:         "ceb86498af8998e3cc77505128ed316f5dc0ab5c05d4eca6e4bfd3ac52ab9fdb"
-    sha256 ventura:        "225a66065f4b20d9df08c143adc04fd4d46d9ed9c2f804e77b2d3be451d9734b"
-    sha256 monterey:       "b3f6c0c01deb299c3b7e38bc2d3023e6cdd646c591ec2f57ade181c94040f60f"
+    sha256                               arm64_sonoma:   "204479c6db2eef6b7567e153c3f966a326abeb5c059f4bfa2c79af3faf155611"
+    sha256                               arm64_ventura:  "1c9b33f634cce573b7d5ac8179bc5c62b57d76d6b573c5bd6a7cf66b96e69d1f"
+    sha256                               arm64_monterey: "177c8f36ccaffea42be206c6721d460998604322344307890d86032bcf249173"
+    sha256                               sonoma:         "ceb86498af8998e3cc77505128ed316f5dc0ab5c05d4eca6e4bfd3ac52ab9fdb"
+    sha256                               ventura:        "225a66065f4b20d9df08c143adc04fd4d46d9ed9c2f804e77b2d3be451d9734b"
+    sha256                               monterey:       "b3f6c0c01deb299c3b7e38bc2d3023e6cdd646c591ec2f57ade181c94040f60f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "113a8b8dfa2e7ddc0fe9df44fc2f91e3328e2b00ccd5136e369c48b6452ba866"
   end
 
   depends_on "cmake" => [:build, :test]
