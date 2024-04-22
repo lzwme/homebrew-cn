@@ -3,19 +3,19 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https:badkeys.info"
-  url "https:files.pythonhosted.orgpackagesf2293e87b8c7fc9779bf216349ffcaed9a748928a015b77d71ab2e0dd1b4e073badkeys-0.0.6.tar.gz"
-  sha256 "ead74de1a60844bbd8019710aa8314ecde82ac077eee72d68a6f185e7ab5ee48"
+  url "https:files.pythonhosted.orgpackages1a75598b292a0ccc7585a8b7e2a93403e2f6f00bb21bfb20a364db39fbf0f1d6badkeys-0.0.7.tar.gz"
+  sha256 "49d6c417adc1c9c76784a0d3b1b29c79999243c8027f72e7bf33032596e8d0e7"
   license "MIT"
   head "https:github.combadkeysbadkeys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a4650c9a7766c7bb41ddcc1dff83ee46f3c61dbcc59372c81dee306038e1de21"
-    sha256 cellar: :any,                 arm64_ventura:  "48c1bfa3d51f2a137d406c0d37e1d669b482dbcc72e881b7d44fb3c9a466f698"
-    sha256 cellar: :any,                 arm64_monterey: "7f98a06d22880f47f54f33f11ce7711b5319315b57dfdcadc066c4459b9b4fa8"
-    sha256 cellar: :any,                 sonoma:         "eebacd8833af7dec4587017bad38f53e1a400931a66cd88148146624607a7339"
-    sha256 cellar: :any,                 ventura:        "5466bbcd795e901352daa14964d8d80fbf0f08e129516be98c23eca170337599"
-    sha256 cellar: :any,                 monterey:       "1da07989afba7bf157f145d4d9b11d49f8e5ad24fcdca817dcb9666b81ef25b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53fa9501f5bc882d53d5d0b205371046d4a9051fc634c6bcb53c89bd06c1d45c"
+    sha256 cellar: :any,                 arm64_sonoma:   "7ea280366fba3f17ae800e82f5575d4339371ec2d4672a7a5f906a8d1222aad7"
+    sha256 cellar: :any,                 arm64_ventura:  "176e0e9b94dfa6b9f5500630156a0f7c63aaec544e19800228df18d9dc8c1a29"
+    sha256 cellar: :any,                 arm64_monterey: "6919401a19c5483b7dece7e41cdf7c1681c36e46bc215e443f4fbaecdcb3ed6f"
+    sha256 cellar: :any,                 sonoma:         "a63af4ad844369a9d9a83ed91cb733e531a6542a18c46fe83a119b328122f8df"
+    sha256 cellar: :any,                 ventura:        "63a978d2b0cddfe1b98f593c9220cf78fe633dafe3e1078a418e8fec97a732fa"
+    sha256 cellar: :any,                 monterey:       "485593241594904e2959a90cddf7177bdba83a02d58366e06863f3f5403e93ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d1cabfae78a7a12e0f1d300283c836c9df90f61712185659ebf7766c7199eaa"
   end
 
   depends_on "cryptography"
@@ -25,8 +25,14 @@ class Badkeys < Formula
   depends_on "python@3.12"
 
   resource "gmpy2" do
-    url "https:files.pythonhosted.orgpackagesa7d1249a57c014c3a73ffc842d5a33a1ce3d4198f3e6ea0ee84c237d24b5a556gmpy2-2.2.0a1.tar.gz"
-    sha256 "3b8acc939a40411a8ad5541ed178ff866dd1759e667ee26fe34c9291b6b350c3"
+    url "https:files.pythonhosted.orgpackagesd92e2848cb5ab5240cb34b967602990450d0fd715f013806929b2f82821cef7fgmpy2-2.1.5.tar.gz"
+    sha256 "bc297f1fd8c377ae67a4f493fc0f926e5d1b157e5c342e30a4d84dc7b9f95d96"
+
+    # upstream bug report, https:github.comaleaxitgmpyissues446
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patchesd77631527c866bbd168f7add6814e3388033cf2fbadkeysgmpy2-2.1.5-py3.12.patch"
+      sha256 "6b0994285919e373d2e91b3e0662c7775f03a194a116b5170fdc41837dd3551e"
+    end
   end
 
   def install

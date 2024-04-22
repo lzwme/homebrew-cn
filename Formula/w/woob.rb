@@ -9,13 +9,14 @@ class Woob < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c43043df7d442f72f2cdb706250c95dca3e16cb95cbebc18f0c95d71a0562672"
-    sha256 cellar: :any,                 arm64_ventura:  "aeea546482c2786bf35bee9f4a7047aeba80c205c8692b97da28a9b6ec5751cb"
-    sha256 cellar: :any,                 arm64_monterey: "09830e92e99b65f997392a308b74afb3512c2c679181aee53cee49d4a855240a"
-    sha256 cellar: :any,                 sonoma:         "d2f04165e27494a4cd3a126091fe6b93e18cd6559e96c7a96a428e844aae58a2"
-    sha256 cellar: :any,                 ventura:        "8c1c4166248d4936f964082c8331a628fd79297ab1205bbe93d240d24adc7677"
-    sha256 cellar: :any,                 monterey:       "7d209625e7186e6316b46ee3303bff2a4477047fb8f003cdb7945e9a089642c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "376cd9ff0d4be0805c096681d4e8d63e7d5d3ec194567758ee9b848b8c9518d3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "3fc07a6f451cdb0978a9eb5a65d6dec6e78ec5db69040785adc28b0cfa48de1d"
+    sha256 cellar: :any,                 arm64_ventura:  "ad95660bf82592ec6c9ee18b0a31686c930b2dfc262ee0eb4649768ecf26a754"
+    sha256 cellar: :any,                 arm64_monterey: "35d3d82a0c447a0eacb6bc315d13f3d039d3bea1b5b368843ccf1ee77e10cda7"
+    sha256 cellar: :any,                 sonoma:         "527486cd2602eb33e21c268dfdbc433999ce9cbd563335364156cc0d57ed6747"
+    sha256 cellar: :any,                 ventura:        "49507a9806f382e0702c610747e59be3444beb3bf486711d8d1cd3190709d363"
+    sha256 cellar: :any,                 monterey:       "755e2f538619cf7cbd1e078aa8c07f1df5fcaae37a2b199fcf0ec7c6b4bbd8ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54240e2265147d66dfa3fdbdef264890a0498e1549849976a3b90e6d88646cd2"
   end
 
   depends_on "certifi"
@@ -97,11 +98,6 @@ class Woob < Formula
     sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
   end
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
-  end
-
   resource "six" do
     url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
     sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
@@ -115,6 +111,12 @@ class Woob < Formula
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/7a/50/7fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79/urllib3-2.2.1.tar.gz"
     sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
+  end
+
+  # Drop setuptools dep: https://gitlab.com/woob/woob/-/merge_requests/876
+  patch do
+    url "https://gitlab.com/woob/woob/-/commit/3283c4c1a935cc71acea98b2d8c88bc4bf28f643.diff"
+    sha256 "3625eecd756b6d246a23b2ce70f62deab5413605bd607c1b94e9502b4a1d6a1b"
   end
 
   def install

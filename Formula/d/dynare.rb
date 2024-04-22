@@ -4,7 +4,7 @@ class Dynare < Formula
   url "https:www.dynare.orgreleasesourcedynare-6.0.tar.xz"
   sha256 "52460046d44776d936986f52649f9e48966b07e414a864d83531d43e568ab682"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:git.dynare.orgDynaredynare.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,13 @@ class Dynare < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "735082a3de132613ae2e5f7f9542fa975cb803c76bd4a9b68f9ccb751f5704ba"
-    sha256 cellar: :any, arm64_ventura:  "fb562b6f3876ca77cbd36dd54726ff38611a790ef6a78688ed5b30af11877440"
-    sha256 cellar: :any, arm64_monterey: "b81c27f5924f1c290e8d8cc5313eda11a0896d80b816188ae14f1f5b7de0a6e8"
-    sha256 cellar: :any, sonoma:         "f8bc049be241b5383e8656dc2bcf34026ad340ab448db335d4279407343d90cc"
-    sha256 cellar: :any, ventura:        "48db2ccf885cb0af1504ebab996c89f901f7a2dabbbf03238e401df44e9ef60b"
-    sha256 cellar: :any, monterey:       "0e2108b2f154027e78bb246d64b48cea7225a770dc8dc3d6167ff8e905062a7f"
-    sha256               x86_64_linux:   "c19a7ece62c121e7b91637b553dd5661e7594cb25dfdd07395890c0fc907f1c2"
+    sha256 cellar: :any, arm64_sonoma:   "925ae566e635a2d6f7d23b80cd471e9b5e9ca048ee2fdb02199253e59f481b20"
+    sha256 cellar: :any, arm64_ventura:  "2fb9918e664559ee65e84433cd18fba9812af199ad13ad9fcb060225d5dcb270"
+    sha256 cellar: :any, arm64_monterey: "1a3e3af55248bec04fd6d7ee61e9db4f5556b4d787afff4ce5eba00020549e4b"
+    sha256 cellar: :any, sonoma:         "4641c78b63e50a6f1420474df2748b5e24b8ec5c06b51835d5009c929cc799ec"
+    sha256 cellar: :any, ventura:        "aa14952447b5ccfada69d2c49451bcfaaa06c4dc41305ae3d15f043611a5fef4"
+    sha256 cellar: :any, monterey:       "fb3d6fe7de5358c2179def2b1f7d1f79c6f5f2d42e6b5f538fb8bd70b9ad5d9d"
+    sha256               x86_64_linux:   "3865dccaeaee495408d0be878f6e2e097cb2bea77710538db7deb1877d35d341"
   end
 
   depends_on "bison" => :build

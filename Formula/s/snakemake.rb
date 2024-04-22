@@ -9,13 +9,14 @@ class Snakemake < Formula
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a76372ae8c9a1b860d025db91c032daa10ced7121b07f72295448b5566f2b0d3"
-    sha256 cellar: :any,                 arm64_ventura:  "d50bcc6cff927a19ed3163650bb7e0bc5e2b4d155764c2cc1c40f9743125e78e"
-    sha256 cellar: :any,                 arm64_monterey: "f1b9d75bdfc32adb4a95ce009c70533a72b9c5dd78c807bf2a163795b1a099d3"
-    sha256 cellar: :any,                 sonoma:         "d07c3d36d16d891388a44f2e06ce172fbce44980c45a23dba4abb45cc15a4532"
-    sha256 cellar: :any,                 ventura:        "641b4ba2f2410ccb503e24a0167403499f2675dc574f1907d0e3127159b9944a"
-    sha256 cellar: :any,                 monterey:       "22ce4a6524bc8e76b0fd4d8247dc499737995f1e9bf6141b40f4b9b33128e42b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd105219821415c3a595e63bb3235d197bb0107f4e9202ec5c7c9f1bd6ae01a6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "18eb22d0cf13b5b5a61f01c6945ada2721e8d5e3d907f27ff5fd532dc2ec300a"
+    sha256 cellar: :any,                 arm64_ventura:  "ea36de77aabdf6b09d6af73c0da68810f39850adfbf8504bb3b04b6b7bc13feb"
+    sha256 cellar: :any,                 arm64_monterey: "94a989c2efb945fed2a6240764da1b108c62b04629a1b1978121a93789fae113"
+    sha256 cellar: :any,                 sonoma:         "0160b765bf494420c2dcfaff91affc18b84dd2829c209b7ec8c264f423da4157"
+    sha256 cellar: :any,                 ventura:        "291c93fb43cf203b91c807a571588d36a62d0cc61bffed8b5d71f2244e1d650d"
+    sha256 cellar: :any,                 monterey:       "c66d8e73da8b5a683785a4e1a56c98efe08a446852e7bfdce6e6b45440b88fc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74e1701aa7e6ae3471892a32b45e8a13fac43c7068c0ae00d81150aed1becdf3"
   end
 
   depends_on "rust" => :build
@@ -184,11 +185,6 @@ class Snakemake < Formula
     sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
   resource "smart-open" do
     url "https:files.pythonhosted.orgpackages0684c6e6276a72a78996f11118b8bc1d9e9b619aa78201f408210f4a584bd377smart_open-7.0.4.tar.gz"
     sha256 "62b65852bdd1d1d516839fcb1f6bc50cd0f16e05b4ec44b52f43d38bcb838524"
@@ -222,6 +218,12 @@ class Snakemake < Formula
   resource "stopit" do
     url "https:files.pythonhosted.orgpackages3558e8bb0b0fb05baf07bbac1450c447d753da65f9701f551dca79823ce15d50stopit-1.1.2.tar.gz"
     sha256 "f7f39c583fd92027bd9d06127b259aee7a5b7945c1f1fa56263811e1e766996d"
+
+    # Drop setuptools dep: https:github.comglenfantstopitpull30
+    patch do
+      url "https:github.comglenfantstopitcommit9a559afdba924c444cc02fd258548029aacedd3c.patch?full_index=1"
+      sha256 "a6a7d140bbb0dbcc1dd31e2d0ce317f6bac04c2368bc15dd1f139cd7e538f5a8"
+    end
   end
 
   resource "tabulate" do
@@ -240,8 +242,8 @@ class Snakemake < Formula
   end
 
   resource "traitlets" do
-    url "https:files.pythonhosted.orgpackages4f97d957b3a5f6da825cbbb6a02e584bcab769ea2c2a9ad67a9cc25b4bbafb30traitlets-5.14.2.tar.gz"
-    sha256 "8cdd83c040dab7d1dee822678e5f5d100b514f7b72b01615b26fc5718916fdf9"
+    url "https:files.pythonhosted.orgpackageseb7972064e6a701c2183016abbbfedaba506d81e30e232a68c9f0d6f6fcd1574traitlets-5.14.3.tar.gz"
+    sha256 "9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7"
   end
 
   resource "urllib3" do
@@ -261,6 +263,12 @@ class Snakemake < Formula
 
   def python3
     "python3.12"
+  end
+
+  # Drop setuptools dep: https:github.comsnakemakesnakemakepull2831
+  patch do
+    url "https:github.comsnakemakesnakemakecommit2239c05a967918d1ba58a079222ee1881c8f0f26.patch?full_index=1"
+    sha256 "5455a8f15fb158e7e6add0691e092f6f0f7ee47ce88f35f0446a315877b193e4"
   end
 
   def install

@@ -1,21 +1,18 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
   homepage "https:github.comrustscanrustscan"
-  url "https:github.comRustScanRustScanarchiverefstags2.1.1.tar.gz"
-  sha256 "51244a5bde278b25de030bd91e4ebe1d4b87269b2d0f7f601565caef4fb5749a"
+  url "https:github.comRustScanRustScanarchiverefstags2.2.2.tar.gz"
+  sha256 "bae70efb414b8d809571773b8ba0240c5d06fe1199ffb187510cfabff936ac75"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2830c0db64daf37f4d3f404f447423e79ea4f104fee51be05d0c3e221234ac94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ffa89393900fa09821ce302ca8100e3b2faa144633248641898f10f1835f8ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f5e8433e240eebc01325acac2ed8605aeeb8f20d0e8b6ddaccdf850ef1c7176"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5953c9a05726eb6c2e4296ebb6be4e1f440fcba58d874838f5cab3233f663955"
-    sha256 cellar: :any_skip_relocation, sonoma:         "290a8dc27fe1ad15d81949e0ca083a50d6c75b1f2667db12bd88193c5b37687d"
-    sha256 cellar: :any_skip_relocation, ventura:        "3dfcff3280f6fe5268ea39a88095acc38183eefff94fad38104fb9a7b84f5cdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "a1ff86e5c734de2d5ca9b8daff9b3cf6ac3a5f23c57586db4fa3aab59e0a845a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "406658263b1be14a072f5a2f3df599b4f4c9095c6890ac9785566b4d62015b67"
-    sha256 cellar: :any_skip_relocation, catalina:       "aca14693bff909556d8ef512f239e1d373aa750d96275c75616c9b6f868b48a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dde072367d2ed2cc481eb26f495cf2f8f0931e37cb73b21c853293d6d0162f6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "897cb7a5a57bbd15635a457fd9eef062be359f3d368fe4a56fb3e54c829c6852"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca34c76fa745276dcd37ef7f050a4b270b31f102bc00b1c08bd70138de6d07ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc8653d3c17f2a2420dcd195850842ebf9eef47d95fb6d52258756fa89a9cd6a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "14b70459393eb0dbe5cf4af396edd841319568ed40a7e8c4431aa7097b054c3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "5006b76c6fbd2b71935866d0bc9eb5048c310e0fa0d7f4f42f21463b220fe25d"
+    sha256 cellar: :any_skip_relocation, monterey:       "ceb8aa30004479988b449d62c92480ca8b9248e0d38b75b4586b5790b7a7a55c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fee42af959aa18a053077ef08ed3b69c985567067655ed7ff5853cf99fbebf7"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
   homepage "https:www.openttd.org"
-  url "https:cdn.openttd.orgopenttd-releases13.4openttd-13.4-source.tar.xz"
-  sha256 "2a1deba01bfe58e2188879f450c3fa4f3819271ab49bf348dd66545f040d146f"
+  url "https:cdn.openttd.orgopenttd-releases14.0openttd-14.0-source.tar.xz"
+  sha256 "96f76ab858816a5e30038ade0692e6ebf350b9f70bf19c7b48dda845c88418b1"
   license "GPL-2.0-only"
   head "https:github.comOpenTTDOpenTTD.git", branch: "master"
 
@@ -18,21 +18,19 @@ class Openttd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bd4184dc82bbf2dd4cfa53c082557d5c04ab2e76a2693c8060ae7e15e5ac4e52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32f2e7021a484af00d0d5884864d35d83d0f8a67831ca2ba02966b0970bf43c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "48610f296bb2633b043e2a623e8503ed59b67867469c502a4a0c3d5b34561c79"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea285a23cd2736976db458c96132be25391bef4c563285e5653371674c002e54"
-    sha256 cellar: :any,                 sonoma:         "b564120c6877236bd47a9b5fcba68670b839ee60889b1861d40a32b7021d271f"
-    sha256 cellar: :any_skip_relocation, ventura:        "35830f4068b0bd0b789162ca0c85c16d67b17605ed6a7d714f6b11a1a4deefe2"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a45055d7982167909e1e97e1e1858330b16c06489a02b825e6a525227ed76e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4f23a6a378b56e2c4116ffc0246ce322a5bbe45c254451a67566e5b8f034cac9"
-    sha256                               x86_64_linux:   "ebd05557f82edd927eb5820578036e1299c731dc8eadedbbe03e6d11a5a6cac3"
+    sha256 cellar: :any, arm64_sonoma:   "afce71532d6b345243bdd9dcd4d2f1dc3dc7426ab930da748e3feb38113e0a69"
+    sha256 cellar: :any, arm64_ventura:  "a5510037d38de6a4192a95b4d58c2ce38dfb636d10676dc099fc439b844d5ba3"
+    sha256 cellar: :any, arm64_monterey: "ed843fdfa0932af3849f3bbe387c298b93c0ddc1ac150204b25cb5252253998f"
+    sha256 cellar: :any, sonoma:         "12a88c75c1163fc8dbce1c50ab41393548164d930e83c4c83adf0f91bdbb4262"
+    sha256 cellar: :any, ventura:        "29bcabf767d0c400e13a40b1121a57fa228e0a881b1572a6a6e66d2d830678e0"
+    sha256 cellar: :any, monterey:       "fd06f19dedc38210230e783bdfd889ffa0077e5f4a42c12a16825302219871b1"
+    sha256               x86_64_linux:   "b3f9d5ec7cb06b531713841eea437e3df5a986c0311096a096987ae221472079"
   end
 
   depends_on "cmake" => :build
   depends_on "libpng"
   depends_on "lzo"
-  depends_on macos: :high_sierra # needs C++17
+  depends_on macos: :catalina # needs C++20
   depends_on "xz"
 
   uses_from_macos "zlib"
@@ -100,8 +98,10 @@ class Openttd < Formula
   def install
     # Disable CMake fixup_bundle to prevent copying dylibs
     inreplace "cmakePackageBundle.cmake", "fixup_bundle(", "# \\0"
+    # Have CMake use our FIND_FRAMEWORK setting
+    inreplace "CMakeLists.txt", "set(CMAKE_FIND_FRAMEWORK LAST)", ""
 
-    args = std_cmake_args
+    args = std_cmake_args(find_framework: "FIRST")
     unless OS.mac?
       args << "-DCMAKE_INSTALL_BINDIR=bin"
       args << "-DCMAKE_INSTALL_DATADIR=#{share}"

@@ -1,10 +1,9 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https:sourceforge.netprojectscppcheck"
-  url "https:github.comdanmarcppcheckarchiverefstags2.13.0.tar.gz"
-  sha256 "8229afe1dddc3ed893248b8a723b428dc221ea014fbc76e6289840857c03d450"
+  url "https:github.comdanmarcppcheckarchiverefstags2.14.0.tar.gz"
+  sha256 "2d2ead75db10c5993d77c8dfe854dc42b00fac65953611bb6c83e25fc74b9d50"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.comdanmarcppcheck.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,13 +15,13 @@ class Cppcheck < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "546af1811773a8fff9d2c6924a13dd5f811c9fc29a59600cb4f9a37868e34f02"
-    sha256 arm64_ventura:  "c2ed4f3da4ddaec157ffe10e7977617907d4eb6f3ee7586a942bfbe1f75b7967"
-    sha256 arm64_monterey: "41fbdd46ab3c1daf79bdf8e55c313627eebed6ff95f3df49885f4228cb78f66d"
-    sha256 sonoma:         "e252a363c340c134f77e2046feb9f9cc732bc2823197cec6df63b0dc65e04c32"
-    sha256 ventura:        "883ef86745ce6b79b4b7348f93b515514d203048793847bcfe616f1035ff4b60"
-    sha256 monterey:       "07987e0d730c2648a17bbd3b78fa2837e062f1c446e85c4365f22f4aaa61f4c0"
-    sha256 x86_64_linux:   "a4bfe8614b12b02158264b4550f8a644473637075a31bb1ab1e89573e1eb428b"
+    sha256 arm64_sonoma:   "0d4b726983f05eb990f30e4aa285cc3b4d9444c327798553d0b7cf02267c2e89"
+    sha256 arm64_ventura:  "08eae5aa56c75c38df768d30fb8fac4f5e494d743669636cb15a2d243f5c9c4d"
+    sha256 arm64_monterey: "bacbb33f05357e865db8a74255c3ce153c7e1c16e511f25e938e6ddc6751e073"
+    sha256 sonoma:         "481931f500be52b62f6937cb38a3bdd0b1c62ab94851e62a661a817dbea46256"
+    sha256 ventura:        "01e105caf9dc56d1bc77ff6bd2be6ca6460e044a319d6ad5f0206a830e3648f9"
+    sha256 monterey:       "9a7a31fbb278e840cec674853d880d8ec54fcd43dfbd518d842c6aee12f151d6"
+    sha256 x86_64_linux:   "2b0c930521c61e2d91524e2b7c1b74afb1ede77159eff6f0dfe386cd345d9095"
   end
 
   depends_on "cmake" => :build
@@ -39,7 +38,6 @@ class Cppcheck < Formula
   def install
     args = std_cmake_args + %W[
       -DHAVE_RULES=ON
-      -DUSE_MATCHCOMPILER=ON
       -DUSE_BUNDLED_TINYXML2=OFF
       -DENABLE_OSS_FUZZ=OFF
       -DPYTHON_EXECUTABLE=#{python3}

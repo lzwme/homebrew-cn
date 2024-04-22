@@ -1,19 +1,19 @@
 class Libmxml < Formula
   desc "Mini-XML library"
   homepage "https:michaelrsweet.github.iomxml"
-  url "https:github.commichaelrsweetmxmlreleasesdownloadv4.0.2mxml-4.0.2.tar.gz"
-  sha256 "34ae4854c02f14007886d0fb0c50c09edbd3cc3f9a9267d6540823e4d617c8da"
+  url "https:github.commichaelrsweetmxmlreleasesdownloadv4.0.3mxml-4.0.3.tar.gz"
+  sha256 "3717da5b3829d6b37ef70db00ac1ec431bdb60faed8fde6538c11dc4aec13a7a"
   license "Apache-2.0"
   head "https:github.commichaelrsweetmxml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "51c423d17f639b8119139c182edadae6f03b6396e42bace9438174cfdbcd633b"
-    sha256 cellar: :any,                 arm64_ventura:  "a51f3165f2490f0e9ea5a1b9138f19b4ee7b02b0d2f11da063c6f6ebd20bc20d"
-    sha256 cellar: :any,                 arm64_monterey: "9b653c62ac38d583b6f30cb7e5c4e3c4a03201505f1dbd7fc1cde60c7f750341"
-    sha256 cellar: :any,                 sonoma:         "bf422b6e058db039e42e98905e4289f1612e6d6c9e93bcd4a6516e3d712d9cfe"
-    sha256 cellar: :any,                 ventura:        "e967cf791f84ec6477d449134cee53e839839e9d4c8d637fb0ff82d760d0c166"
-    sha256 cellar: :any,                 monterey:       "98e1e1b8b65b2cabd74cd88dc9c6bc7c20b702729047bc80bb90a692ae8d4357"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b6a24684cff8e5c918895618ac73c3b80346312cc607d73e420fac281061f15"
+    sha256 cellar: :any,                 arm64_sonoma:   "20677433e3db005bc0e9bf9e7ea446a3158c8f6f0b86f707e133079cfe694b4e"
+    sha256 cellar: :any,                 arm64_ventura:  "5ad6a10df96c847aad61c2c4fbd10d33b38a88b5861c6547f4aab796cf472c6b"
+    sha256 cellar: :any,                 arm64_monterey: "f517bd3382d55b87d2ab9e20be36965d5291eacca9f0ee438fd60e42f34c086c"
+    sha256 cellar: :any,                 sonoma:         "8036ceede48c460aa34f0f93dcf5d6410e304536cfa7e8829ea60f43d2d1ddf2"
+    sha256 cellar: :any,                 ventura:        "fa29627b63ddfa60acddf91486e8ac23fdb148f5d694b179995c51b95945178d"
+    sha256 cellar: :any,                 monterey:       "a573b42f65de7fa9e5f1d57f9548849895b6c28dcc0412b20a81fdf258eb1c7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c46e4fd4d9fd79ebeff1183abe4fca41d7d92698f418a9f01c1705c6b78b368f"
   end
 
   depends_on xcode: :build # for docsetutil

@@ -1,8 +1,8 @@
 class Grokj2k < Formula
   desc "JPEG 2000 Library"
   homepage "https:github.comGrokImageCompressiongrok"
-  url "https:github.comGrokImageCompressiongrokarchiverefstagsv12.0.0.tar.gz"
-  sha256 "19172a5c09f11cc2485d132dd985fd74bae4ce6773dd7d1c09cb023ec1cbd002"
+  url "https:github.comGrokImageCompressiongrokarchiverefstagsv12.0.1.tar.gz"
+  sha256 "4769ce29894c5d0cc73f46eeba314f0ec0b62e9f35bebb6090c98ed030137476"
   license "AGPL-3.0-or-later"
   head "https:github.comGrokImageCompressiongrok.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b59c659a2331216689e2fa6e827a747dce0ba52319e00b4c6ec7f4194c70c82f"
-    sha256 cellar: :any,                 arm64_ventura:  "c98f4ff249eefaec4cbba7476853d587fc81ebee4e55bceb960b6034f0ba8cd8"
-    sha256 cellar: :any,                 arm64_monterey: "ca37a6214b6785e3a6bf999f63d9b494d4493b1a47261732500d3f4d770f5eb2"
-    sha256 cellar: :any,                 sonoma:         "c6f0a8b1789d819b38bce205a892cfa919b53ccc7f0ea30cc60f9ad613d152d7"
-    sha256 cellar: :any,                 ventura:        "3df68bfa2acbfe3ce3f16bff465de566b73388e45c48b2063b92473f025f4dac"
-    sha256 cellar: :any,                 monterey:       "77b19e35dde8294e01dd5b5dfc5226ce56bebe9a5cee2a25cdccdf07017bb512"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29ac1fedbe03b954f1dabcccf642dd4e02a6a5703fdf5f4d79cf7a1fc3617301"
+    sha256 cellar: :any,                 arm64_sonoma:   "fb0a3dce784773fe1b106ea442dd1a34a8c63d60f658bf514c26da0be4951e8e"
+    sha256 cellar: :any,                 arm64_ventura:  "658f9f0a29a85bb0ba31fee83335fb7f6a401dddb1dfcc0d27be9aa4c4f11b86"
+    sha256 cellar: :any,                 arm64_monterey: "f544295b0aa3a19e7113b604dc4eca7490ce38b90847525890c5c60ab11c971c"
+    sha256 cellar: :any,                 sonoma:         "793d43b9f275530beea96779526bda1e3623be3cd4a61a0d80a1f39c23359a54"
+    sha256 cellar: :any,                 ventura:        "764522a8c9eba7470239c35e4ebf179b3dfaa8ca3d1f21b28e87d8785614c467"
+    sha256 cellar: :any,                 monterey:       "917aca2ea8d7600b47f35ef2a022675a112644dbadaeda32d257b6c089091f58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9da33dca2296002c5b6f1625071eb8ea2c80791e1b9be021c01f0c7403d37077"
   end
 
   depends_on "cmake" => :build

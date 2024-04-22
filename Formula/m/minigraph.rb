@@ -1,8 +1,8 @@
 class Minigraph < Formula
   desc "Proof-of-concept seq-to-graph mapper and graph generator"
   homepage "https:lh3.github.iominigraph"
-  url "https:github.comlh3minigrapharchiverefstagsv0.20.tar.gz"
-  sha256 "ef695e69d57bbc34478d7d3007e4153422ee2e3534e4f3fcbb8930cfaa5e1dc0"
+  url "https:github.comlh3minigrapharchiverefstagsv0.21.tar.gz"
+  sha256 "4272447393f0ae1e656376abe144de96cbafc777414d4c496f735dd4a6d3c06a"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class Minigraph < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ebd1016a69380b569acad159caa2809a827527b8257051269cbca508daaf01c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee16f2ce2ad02da0fc713ab8729719e5bd2bc96b375ea1e3e3723f99f1873495"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e54c9d30b5a37fdbeab942ca198c4184a0ce43060b14ed99b606aab902551dcd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7bea2c11396264d7898bd6cf9f306efc4869a76f5299b00689c28fbf67889c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "71de4013d4456a953a792f63b15ec4d6429773fbaba061d0a23c2c94dc80988e"
-    sha256 cellar: :any_skip_relocation, ventura:        "58d39d6a61dfffa94f3b6e2724135778dc9670cfaf815e098d66f5b55177d124"
-    sha256 cellar: :any_skip_relocation, monterey:       "7756134609a6075c3141796d125e57b481d538abbcb7c2fef094fb8c11de2ec6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aec032083d7519d278f0571fa7d36f2fd14dcb87bd1841bf78181f6d3e5abb14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa5e56be94932f6956d48c6bebe7ac86020b386ea162eeb86d9f954e75f0a453"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5c97ede2ba9819f38713bba63399fa4386a5f9ad7b1d69da1ec59c93e041b676"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c732ab52d288ebc25d387a00ec4df300a29c3e0d47215a39e8f08a2aba06ff99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "671d905a9d3bc672efedf7169d79a577c0df8bb0fc1fd8d6ff0f71b8014ba1de"
+    sha256 cellar: :any_skip_relocation, sonoma:         "41b0c146e36c565da5aa7b60f21b4ddd2ff463b20ad1f14b155b3f6b66b980ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bb664d3a2608ad6213e5d60cec28a144f9ce230991ba8c4d9ccb50c57503d84"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec305e269ea8fc05307c59757a55b73f8afd8c4b91ff878b91015fe432863c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66fe3ea02850e9c7c043cf189d474d2e866b8c2f3540bf4338864c070a6be913"
   end
 
   uses_from_macos "zlib"

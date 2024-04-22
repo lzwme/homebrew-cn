@@ -10,14 +10,14 @@ class Vint < Formula
   head "https:github.comVimjasvint.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sonoma:   "8b27c505ce438219954cea4c8804c8caf0a3055769853871a6405b4b9892f35b"
-    sha256 cellar: :any,                 arm64_ventura:  "07f73da0912788b7e2a244329de02a4a8b48f4788c966628cdf402e56608ca25"
-    sha256 cellar: :any,                 arm64_monterey: "fb1ef2807d71a58efe9d8fdd29b6b2477bbc9fbda37398b67dcbaad925b58de7"
-    sha256 cellar: :any,                 sonoma:         "2799f7304f4643ddbbfe2633ddd35af7dc8a765087a6b9564b693ccaf3bfaa76"
-    sha256 cellar: :any,                 ventura:        "2ceb0176ec62ed830d033f5b3a7bd5fd161b01509bab9c8f32ddd003e5ce619b"
-    sha256 cellar: :any,                 monterey:       "53ad7b22ab20a7431b58f77f13aa580fea9e2a8c50d1e77c3e32f87d21d29c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ebb92e73bde3fd79edbb7ef68a8d91b7430c323d71039e9e7b0ec11b3507f9c"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sonoma:   "e2b4843f23ddcae97ec2eec6912274d2863faffb3e6f33f262f3f4814fec94fb"
+    sha256 cellar: :any,                 arm64_ventura:  "f0cd321fba48f328e3c13dab7aecf72ad8c7461b52cf007220d3b24fbf986edb"
+    sha256 cellar: :any,                 arm64_monterey: "81fbb3743b862c733415a7487a2c94d94efd047adbcac284c71e1f151b04cd95"
+    sha256 cellar: :any,                 sonoma:         "96a23e4d02eabbfc64e0085e078a1249095c675ab9129e6f8f913c874649e8d1"
+    sha256 cellar: :any,                 ventura:        "0dd3fe045ce35748872c0d023d58cff039f7637485a68a4500d419b90b298637"
+    sha256 cellar: :any,                 monterey:       "6f214063ba0784a2adb96138a19003def055f2a9b99cad00c6f5947a847238f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "933837ebcda670e4b4a7ca57e3352212f75d5152565e482cd4e37577e8eb4013"
   end
 
   depends_on "libyaml"
@@ -38,10 +38,10 @@ class Vint < Formula
     sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc93d74c56f1c9efd7353807f8f5fa22adccdba99dc72f34311c30a69627a0fadsetuptools-69.1.0.tar.gz"
-    sha256 "850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401"
-  end
+  # Drop setuptools dep. Next release will switch to setuptools_scm,
+  # this patch uses importlib for a smaller self-contained diff
+  # https:github.comVimjasvintcommit997677ae688fbaf47da426500cc56aae7305d243
+  patch :DATA
 
   def install
     virtualenv_install_with_resources
@@ -63,3 +63,33 @@ class Vint < Formula
     assert_equal "", shell_output("#{bin}vint good.vim")
   end
 end
+
+__END__
+diff --git avintlintingcli.py bvintlintingcli.py
+index 55db52e..c347f23 100644
+--- avintlintingcli.py
++++ bvintlintingcli.py
+@@ -1,7 +1,6 @@
+ import sys
+ from argparse import ArgumentParser
+ from pathlib import PosixPath
+-import pkg_resources
+ import logging
+
+ from vint.linting.linter import Linter
+@@ -150,11 +149,11 @@ class CLI(object):
+
+
+     def _get_version(self):
+-        # In unit tests, pkg_resources cannot find vim-vint.
+-        # So, I decided to return dummy version
++        from importlib import metadata
++
+         try:
+-            version = pkg_resources.require('vim-vint')[0].version
+-        except pkg_resources.DistributionNotFound:
++            version = metadata.version('vim-vint')
++        except metadata.PackageNotFoundError:
+             version = 'test_mode'
+
+         return version

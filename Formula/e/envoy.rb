@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edgemiddleservice proxy"
   homepage "https:www.envoyproxy.ioindex.html"
-  url "https:github.comenvoyproxyenvoyarchiverefstagsv1.29.3.tar.gz"
-  sha256 "892ca7702b6b751665e35fbe9c8d2be0bcf52c4aa2aa4714581f5c5544c248b3"
+  url "https:github.comenvoyproxyenvoyarchiverefstagsv1.30.1.tar.gz"
+  sha256 "8f0f34d4a2b2f07ffcd898d62773dd644a5944859e0ed2cdf20cd381d6ea7f9d"
   license "Apache-2.0"
   head "https:github.comenvoyproxyenvoy.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c06837a0b47ea4fd85ac7fa4fde39462f98d1bec82de7d026c43f1f999215323"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc39628c56c6164a9aeefb8d5e02c6ffc3d4a9549348c3dba100f76bc7edd2cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45167231e1cfe439f09162bc1147fbfe2a1ec9e424f93f93a6758273c9a36d42"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ac5456b6af8879647ad3547498a586b91f05cb1383b490e8f28756da72a83359"
-    sha256 cellar: :any_skip_relocation, ventura:        "b75d24518794fa93f20132e9e2549828beb1d5369d10818d994e40318506bff5"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe35f2271abe83285fb551d7de9bd560f2d3ed7996a894df541a8fdfa799159f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6df5a45db48f3c997c7669fe8a0216145005fd3f93718d5192f6a399f766eb07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ae57ea855d6e5a7a2fdb35d882bd829788c5e46eb04d9814bba0791d6da2b10"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ad1ffe06849069c56ac2c764156144c0b2a0c4e86ea8bcac14ca413122b1e5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "461fe8d0ceac27a326c1d13a459fee8a987db8a422e6b3d767936b37737c0d40"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4100f3a74a081767a7919a63de0cd2c69e7c298eaf2b2205d4816b5c9f13ba0e"
+    sha256 cellar: :any_skip_relocation, ventura:        "0539e51a7582f8361d23383385bbfba02056139905e0532927ef3f8903e85cb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "055602c93dc9c90d480516f929eef303bc4769c8c8a572322862c5696dbd00ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9bddbb9b0adc226b58fc707b9b87d27691acdc001213d2614dc5a55b14b8951"
   end
 
   depends_on "automake" => :build
@@ -43,10 +43,6 @@ class Envoy < Formula
   fails_with :gcc
 
   def install
-    # Per https:luajit.orginstall.html: If MACOSX_DEPLOYMENT_TARGET
-    # is not set then it's forced to 10.4, which breaks compile on Mojave.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
-
     env_path = "#{HOMEBREW_PREFIX}bin:usrbin:bin"
     args = %W[
       --compilation_mode=opt
@@ -56,31 +52,13 @@ class Envoy < Formula
       --host_action_env=PATH=#{env_path}
     ]
 
-    if OS.linux?
-      # Build fails with GCC 10+ at externalcom_google_abslabslcontainerinternalinlined_vector.h:448:5:
-      # error: '<anonymous>.absl::inlined_vector_internal::Storage<char, 128, std::allocator<char> >::data_'
-      # is used uninitialized in this function [-Werror=uninitialized]
-      # Try to remove in a release that uses a newer abseil
-      args << "--cxxopt=-Wno-uninitialized"
-      args << "--host_cxxopt=-Wno-uninitialized"
+    # Work around build issue with Xcode 15.3  LLVM 16+
+    # https:github.comenvoyproxyenvoyissues33225
+    # https:gitlab.freedesktop.orgpkg-configpkg-config-issues81
+    args << "--host_action_env=CFLAGS=-Wno-int-conversion"
 
-      # Work around build failure using clang with libstdc++: https:github.comenvoyproxyenvoyissues31856
-      args << "--cxxopt=-fsized-deallocation"
-      args << "--config=clang"
-    else
-      # The clang available on macOS catalina has a warning that isn't clean on v8 code.
-      # The warning doesn't show up with more recent clangs, so disable it for now.
-      args << "--cxxopt=-Wno-range-loop-analysis"
-      args << "--host_cxxopt=-Wno-range-loop-analysis"
-
-      # To suppress warning on deprecated declaration on v8 code. For example:
-      # externalv8srcbaseplatformplatform-darwin.cc:56:22: 'getsectdatafromheader_64'
-      # is deprecated: first deprecated in macOS 13.0.
-      # https:bugs.chromium.orgpv8issuesdetail?id=13428.
-      # Reference: https:github.comenvoyproxyenvoypull23707.
-      args << "--cxxopt=-Wno-deprecated-declarations"
-      args << "--host_cxxopt=-Wno-deprecated-declarations"
-    end
+    # GCCld.gold had some issues while building envoy so use clanglld instead
+    args << "--config=clang" if OS.linux?
 
     # Write the current version SOURCE_VERSION.
     system "python3", "toolsgithubwrite_current_source_version.py", "--skip_error_in_git"

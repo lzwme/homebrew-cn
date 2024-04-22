@@ -1,21 +1,21 @@
 class PhpAT84Debug < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchive719237954b12e496ebf3e44cb1840a8766694fa3.tar.gz?commit=719237954b12e496ebf3e44cb1840a8766694fa3"
+  url "https:github.comphpphp-srcarchive0e7ef95a0a666aa7aa7031c3e2ea444d5524effb.tar.gz?commit=0e7ef95a0a666aa7aa7031c3e2ea444d5524effb"
   version "8.4.0"
-  sha256 "760479dde35fe38db205b950d54cc7116948f03c4d05c1ea26a8032490834cca"
+  sha256 "de3658e0a715909509552a0f49a47222cf5246d41aaae3ca2722aa3ff6503ff4"
   license "PHP-3.01"
   revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 30
-    sha256 arm64_sonoma:   "45f8fef46ad020137f4fb5025f888649336c4d2ee1a97e9e4b1161ede95bb7d1"
-    sha256 arm64_ventura:  "5443f50317b6fc7a15726136c70d67dfff5d09f961018f23a93f27d0a6c2813c"
-    sha256 arm64_monterey: "070076c3b05bdb7e2307c5163b7105d2249ac963db71803395732f09a33a335a"
-    sha256 ventura:        "bfa00b3dbb57dbcc1456e90724f650db201c824b4ff5daa96795c6d9f45acaef"
-    sha256 monterey:       "9b11adb88bbe61a95bda87489904189c9f0e97baccc47fd8a933215a7c6fea15"
-    sha256 x86_64_linux:   "c6b9e5c424ece79710932f25f2200b72aaa3335516760f0a875f0e0be7f6912c"
+    rebuild 32
+    sha256 arm64_sonoma:   "abec9db2da3661195da2a1c238b8c6132e5093ee50876a786917288d23b52de7"
+    sha256 arm64_ventura:  "b0bbf1dd315f8cf96ddea9dba9d3f8f274fabf64ea84f12b971ea96c4455edc3"
+    sha256 arm64_monterey: "fae8b769b66aa1122f114bf54c795867320406a44c8d0de562eb67082743e2d4"
+    sha256 ventura:        "d658fb8b4a152ba0f0d0a3853d3816bdba0577f538e2d748c338237d46e7eaca"
+    sha256 monterey:       "21564f6d89459757bce675324926666b75bd565a8a8f90a085adb385d866e71a"
+    sha256 x86_64_linux:   "d8fe1492f56999645454f99225049a493ccffc204f207c83839621306facda8a"
   end
 
   keg_only :versioned_formula
@@ -433,6 +433,19 @@ class PhpAT84Debug < Formula
 end
 
 __END__
+diff --git ascriptsphp-config.in bscriptsphp-config.in
+index 87c20089bb..879299f9cf 100644
+--- ascriptsphp-config.in
++++ bscriptsphp-config.in
+@@ -11,7 +11,7 @@ lib_dir="@orig_libdir@"
+ includes="-I$include_dir -I$include_dirmain -I$include_dirTSRM -I$include_dirZend -I$include_dirext -I$include_dirextdatelib"
+ ldflags="@PHP_LDFLAGS@"
+ libs="@EXTRA_LIBS@"
+-extension_dir="@EXTENSION_DIR@"
++extension_dir='@EXTENSION_DIR@'
+ man_dir=`eval echo @mandir@`
+ program_prefix="@program_prefix@"
+ program_suffix="@program_suffix@"
 diff --git abuildphp.m4 bbuildphp.m4
 index 3624a33a8e..d17a635c2c 100644
 --- abuildphp.m4
