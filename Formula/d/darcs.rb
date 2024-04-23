@@ -1,24 +1,22 @@
 class Darcs < Formula
   desc "Distributed version control system that tracks changes, via Haskell"
   homepage "https://darcs.net/"
-  url "https://hackage.haskell.org/package/darcs-2.16.5/darcs-2.16.5.tar.gz"
-  sha256 "d63c6cd236e31e812e8ad84433d27059387606269fbd953f4c349c3cb3aa242b"
+  url "https://hackage.haskell.org/package/darcs-2.18.2/darcs-2.18.2.tar.gz"
+  sha256 "e665518a0a62eccb9e071243005e4b3f7e365186a1aa49d60779f6d35da13386"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d03a37a9b8cb29eb9cd4ff21b169c63db57c681edb4761ea3004bdc15fa17f8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ad19b2f85d71c0fdfb32ee9e5d758a7491877dd99e854ec7759acdaf59f90ebe"
-    sha256 cellar: :any_skip_relocation, ventura:        "b605a25d9cba3a70288663d8849a6c47e2ae6a8f841df9c0597531992c5ecf47"
-    sha256 cellar: :any_skip_relocation, monterey:       "160b91bf58a6d87b60e85e62ad2f6124c0d952f921389d82f04114788bd6c0aa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bedb352218c8ae7e6c209f3297dfd25df8bfbbbf2e99559c964133e81989209c"
-    sha256 cellar: :any_skip_relocation, catalina:       "2db034fcb43671e797cf5d6ea83359fabce3de8fd3653c6dfaef6d356b27ea1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3f9ad7d74ba60c4f75fea414168304c2bd7d3dbe9c6ee0ca249a7d10703740"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e75f8af136a584f27bbf6e5b75c1097af89f4eb7a00c13ad492cdd141eeb5402"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e53c322d2661c0df69da06e67daa583af32d2e716dc5eaf90e0fd398c769e36b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbad85284672a6fbb6b8db9a01b1e02b39621cf8e7e7f85e0cc102e4747f4809"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7729042c6498914cadaddd5551470312a41d7c2318fe5c15b06aba165f5426d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb68f03394f84b7ad4a94368795bfcf52473265406793b0db8a08297fb78ecc1"
+    sha256 cellar: :any_skip_relocation, monterey:       "adcc78dfa613a71c937a581219f31471b9b45a3f63321b4b5b14a2ebe189bdbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1560f58104a953cb055873bafc035ff828f32a7803286f439bc61e52267ddeb2"
   end
 
-  deprecate! date: "2023-11-16", because: "depends on GHC 8.10 to build"
-
   depends_on "cabal-install" => :build
-  depends_on "ghc@8.10" => :build # GHC 9.2 open patch: http://bugs.darcs.net/patch2244
+  depends_on "ghc" => :build
   depends_on "gmp"
 
   uses_from_macos "ncurses"

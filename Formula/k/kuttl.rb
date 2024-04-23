@@ -1,22 +1,19 @@
 class Kuttl < Formula
   desc "KUbernetes Test TooL"
   homepage "https:kuttl.dev"
-  url "https:github.comkudobuilderkuttl.git",
-      tag:      "v0.15.0",
-      revision: "f6d64c915c8dd9e2da354562c3d5c6fcf88aec2b"
+  url "https:github.comkudobuilderkuttlarchiverefstagsv0.16.0.tar.gz"
+  sha256 "25d1c39852397f81f7e5098e692e37ff5f76444b447973c031e012cb8af3df92"
   license "Apache-2.0"
   head "https:github.comkudobuilderkuttl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c83d25ccc616968d62104bb09eb61c066b31af8b5c7a327ab0ccd7eed5b5f3c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c4fc3fe0666e60cf54ad6519f0a009c1566abd9c4bd564bed43f03449134a8a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88a99dffaf3b1700ea052cc4d05ade69217155ade4017f7051206eab9802442a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d243c5230366bb5df0bff7ac5727e1ca304f4afa5adab9663e0570dc32376cbd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b7d101464269259be36fbe92e1098f188cc31c823cb7ad70a4e965968e31d74"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b7dd1d7937b53bc383162f1f3c41b1e7d52e1b0293c0be410dcb06d24eb6b4a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6c9a6a13f298b8c1c7be62d77db1c50d3d025bdfd6560c6d30611fa241f3735"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7e57ff14aea3c2f7e76302fe30c70c27970389173227b19be78dd2ddee03887"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5df65c29150f83e33447e0966532292be84bfe15a6d23ffd4ac2dde42236cc3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "850bc491d8e6b4249b72094b67863dad38b5fe35093266a03ade73e58b1a4db6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75a4e1321e1f987d1517d981f62820c67aa71669043e0bf3d5e5aa2581a88eb0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "edd6dabcd60f8be00f22cbd4b3937e49becd7767d5c0ec45046c5d37bff71e31"
+    sha256 cellar: :any_skip_relocation, sonoma:         "93cd1aa1100a63a12ecfde013d0026d639a22809b72e7947d54e22c29cc44031"
+    sha256 cellar: :any_skip_relocation, ventura:        "fd7d1eab4dc04bbef3f98d3309d5ee265cd1cb8aa8e740c50f46d6cc52d20f41"
+    sha256 cellar: :any_skip_relocation, monterey:       "01ed67a7debfe7e233cfa8a510e924871250b0b95076033118f9d22be3c6f8d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3c5049d6497ea2171c41a7dcb350beb5ad5d611b3c280b0fc485753ae65f57e"
   end
 
   depends_on "go" => :build
@@ -27,7 +24,7 @@ class Kuttl < Formula
     ldflags = %W[
       -s -w
       -X #{project}pkgversion.gitVersion=v#{version}
-      -X #{project}pkgversion.gitCommit=#{Utils.git_head}
+      -X #{project}pkgversion.gitCommit=#{tap.user}
       -X #{project}pkgversion.buildDate=#{time.iso8601}
     ]
 

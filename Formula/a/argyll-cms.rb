@@ -2,7 +2,7 @@ class ArgyllCms < Formula
   desc "ICC compatible color management system"
   homepage "https:www.argyllcms.com"
   url "https:www.argyllcms.comArgyll_V3.2.0_src.zip"
-  sha256 "ea554c48a1d36f8a089ac860cc5b4d00536b7511948aa2c4c4314e07be8b7bb8"
+  sha256 "4861ab87b41618fb6706843099aad2cc649115634dee1e60738792387b371176"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,13 +11,14 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8d5e4052a0f7158298a4af6fd524fce4059a7eb1cf0f19f5a4adaed944855999"
-    sha256 cellar: :any,                 arm64_ventura:  "e0df2b999ec169b86890f74452ef3c3c2d1059808841b731d5189dbce52e7291"
-    sha256 cellar: :any,                 arm64_monterey: "245b61b490d5fc436b63a2177838a85dc7937b5f4746af93c01ef9da3632c214"
-    sha256 cellar: :any,                 sonoma:         "1c2725105fbdb8a7e02bfb6c7976fe4b3ce95065659b821288082593592a7a0c"
-    sha256 cellar: :any,                 ventura:        "b4731bd37dcb1d1f5c3a8480ce3b405e7ab25f80b4c482e20b1b099bf22a3aec"
-    sha256 cellar: :any,                 monterey:       "3e41eac2deb602c82bc1ff85b52b418591dd467b7fda6f89fee527d43e296fbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "337a6f0583b0d6d19862bf432ba63cfa7f7551ae61e5dcdf026960b25edeea0e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9416d935216f5054e63c9baa53364c28d96d678c70abaf4d697c41bcc9bed185"
+    sha256 cellar: :any,                 arm64_ventura:  "6954dce83aba27dfa337eca3141fe1506bfcd72ffcc79d63040ba329d236a658"
+    sha256 cellar: :any,                 arm64_monterey: "9862c45da43e3cca13c78e82081c1dcaa5806dac6583c00f8eba95fe6ac298ed"
+    sha256 cellar: :any,                 sonoma:         "4577cd47871d566e045db7872a94946b7a4fab52d38e52e39ce6b353aa6082fd"
+    sha256 cellar: :any,                 ventura:        "2f13881ab15bd8d8b0aba4bf9ef4b9a40217c4b36b847190cc1f47e577f9bce3"
+    sha256 cellar: :any,                 monterey:       "3259f5cd7063614fa2e2434b7be2ccd19971226d2d5bb1a7561c942b8c4625ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "746d1e088f61bdfbca13e17f5351cc81a22ccba3acc3ea8e0f7ebe38c4bd82c2"
   end
 
   depends_on "jpeg-turbo"
@@ -61,9 +62,6 @@ class ArgyllCms < Formula
       sha256 "1850cf53c4db0e05978d52b90763b519c00fa4f2fbd6fc2753200e49943821ec"
     end
   end
-
-  # notified author about the patch
-  patch :DATA
 
   def install
     resource("jam").stage do
@@ -122,17 +120,3 @@ class ArgyllCms < Formula
     assert_match "Calibrate a Display", shell_output("#{bin}dispcal 2>&1", 1)
   end
 end
-
-__END__
-diff --git agamutGenRMGam.c bgamutGenRMGam.c
-index 05e6bef..bac04ca 100644
---- agamutGenRMGam.c
-+++ bgamutGenRMGam.c
-@@ -12,6 +12,7 @@
- #include "aconfig.h"
- #include "numlib.h"
- #include "icc.h"
-+#include "xicc.h"
- #include "cgats.h"
- #include "xcam.h"
- #include "gamut.h"

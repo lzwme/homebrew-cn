@@ -3,19 +3,16 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https:github.comfwupdfwupd"
-  url "https:github.comfwupdfwupdreleasesdownload1.9.16fwupd-1.9.16.tar.xz"
-  sha256 "adcafc8697bbf6ccc742fa3ce62457d3ed76b5807c068d5ea688f1ab698927f7"
+  url "https:github.comfwupdfwupdreleasesdownload1.9.17fwupd-1.9.17.tar.xz"
+  sha256 "330f69dffb3cd9f94464b58bab35f28135b24fd2742431b9d5c475c65f780437"
   license "LGPL-2.1-or-later"
   head "https:github.comfwupdfwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "9436b664d0350755bfdf5b17ba73b4444887affe8022a656b0b1c2e0cd525cad"
-    sha256 arm64_ventura:  "f311aa0fef69bb84d281bba00b75c40c805a0c0de8a8b4085c552353dd6cf4ae"
-    sha256 arm64_monterey: "12e32f213634259c9399e5ad85fba093f2cb3fe559e639424e0374cd80978f13"
-    sha256 sonoma:         "3fd0b137d34e0d15e2b7fbf3eaad34295576ad0c445bcb7821aaa943e72753fe"
-    sha256 ventura:        "4948dce2f29254008f4e55f37ddd200cb0bde49fa6c633a5d008d20d62759369"
-    sha256 monterey:       "8cab6cbd81a603670fb4cb0bafffc223eaede54761fe6ad481efde64628dc5a2"
-    sha256 x86_64_linux:   "407676e83bbe22534dcf328b38262de3ef47519782c4d7f69f5018aceccccf06"
+    sha256 arm64_sonoma:   "71ef385e731bd4cd3fb852511ff1a72419fb9b5e5d2dab4d4ce9937e7497fff3"
+    sha256 arm64_ventura:  "44d156eb4ff14dbb87e91106b9118413b8748c7a15d21ad9d7151c9353fc4a61"
+    sha256 arm64_monterey: "7274ec260bfbda615fdc8669bd2e5d0119fc2bf6f564cb1026c80423d757e1b9"
+    sha256 x86_64_linux:   "ac04b049f21abbde8bc04e28b4f8afb4860678afa6ec1f5195a1bca088c69d44"
   end
 
   depends_on "gi-docgen" => :build

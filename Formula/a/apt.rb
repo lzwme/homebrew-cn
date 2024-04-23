@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https:wiki.debian.orgApt"
-  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.1.tar.xz"
-  sha256 "fd726ed4bc975217dd61af6675aa688c1010a998efa34be4f80f194e7917bf71"
+  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.2.tar.xz"
+  sha256 "80aa74466b132e50ed8d0159f10e64a448b6a6c64723d62c42b83a5199ca03a7"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "5517d6fd936a2d643897035c72a9fd58f559a2906b76423e98878ef1badd109c"
+    sha256 x86_64_linux: "2826c71ef02a6398c61282ffb803059bf89bbc7c4ffa93d841906777df4f427d"
   end
 
   keg_only "not linked to prevent conflicts with system apt"
@@ -98,12 +98,6 @@ class Apt < Formula
   resource "Syntax::Keyword::Try" do
     url "https:cpan.metacpan.orgauthorsidPPEPEVANSSyntax-Keyword-Try-0.29.tar.gz"
     sha256 "cc320719d3608daa9514743a43dac2be99cb8ccd989b1fefa285290cb1d59d8f"
-  end
-
-  # upstream bug report, https:github.commquinsonpo4aissues475
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches07275a9af84b536ac737c364d66fc2eb4daf729aaptpo4a-0.70.patch"
-    sha256 "35f0ac1416af3116e17275a4b233a7abc34767655734bf07dda83ff307266e15"
   end
 
   def install

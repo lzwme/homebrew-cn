@@ -6017,6 +6017,7 @@ Homebrew-homebrew-core/Formula/s/sui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/suil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/suite-sparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sundials.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/superfile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superlu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/supertux.rb, Homebrew/homebrew-core, 1
@@ -9056,6 +9057,7 @@ Homebrew-homebrew-cask/Casks/l/lightkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lightproxy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lighttable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lightworks.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/limitless.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/line-bot-designer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linear-linear.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linear.rb, Homebrew/homebrew-cask, 1
@@ -11475,6 +11477,7 @@ Homebrew-homebrew-cask/Casks/z/zwift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zxpinstaller.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zy-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask-fonts/Casks/font-0xproto-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-0xproto.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-3270-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-3270.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-437-plus.rb, Homebrew/homebrew-cask-fonts, 0
@@ -12086,6 +12089,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-fredoka.rb, Homebrew/homebrew-cask-fonts
 Homebrew-homebrew-cask-fonts/Casks/font-free-mono-tengwar.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-freefont.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-freehand.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-freeman.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-fresca.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-frijole.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-fruktur.rb, Homebrew/homebrew-cask-fonts, 1
@@ -13199,6 +13203,7 @@ Homebrew-homebrew-cask-fonts/Casks/font-quintessential.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask-fonts/Casks/font-qwigley.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-qwitcher-grypen.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-racing-sans-one.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-radio-canada-big.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-radio-canada.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-radley.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-rajdhani.rb, Homebrew/homebrew-cask-fonts, 1

@@ -1,8 +1,8 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https:include-what-you-use.org"
-  url "https:include-what-you-use.orgdownloadsinclude-what-you-use-0.21.src.tar.gz"
-  sha256 "6a351919ff89bda7c95c895472601868db3daab96a958b38e0362890d58760b6"
+  url "https:include-what-you-use.orgdownloadsinclude-what-you-use-0.22.src.tar.gz"
+  sha256 "859074b461ea4b8325a73418c207ca33b5e6566b08e6b587eb9164416569a6dd"
   license "NCSA"
   head "https:github.cominclude-what-you-useinclude-what-you-use.git", branch: "master"
 
@@ -16,13 +16,13 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d73713688df68b04e19cbb9c0e4317f7524d74258d35b516aeb8e016870bc491"
-    sha256 cellar: :any,                 arm64_ventura:  "c18fc64dead650d5e5b34606188f6fcd98ed57661cb8c774b2ae3468ae0e0dac"
-    sha256 cellar: :any,                 arm64_monterey: "66ead0c020efe55e4330871f5b0ee60a375df1d4edfa7f0ad8ecc04ae0ac584e"
-    sha256 cellar: :any,                 sonoma:         "272aaff9519d7010989ba3e41d5dd0aabe73fe83d1466f30c545fd2fe1a796c9"
-    sha256 cellar: :any,                 ventura:        "ccff25bc7fbd08fab7f333b2ad385515abfc35b70019e62f3a3b408738da38bb"
-    sha256 cellar: :any,                 monterey:       "3927a880a129bb8767a416f964b811fc051fc0f76c373e40e1e62742de721827"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "097776120d33c8f1eb54bc676e874dd1736528422561c40bdcb7947b35868a7e"
+    sha256 cellar: :any,                 arm64_sonoma:   "93ba651f774544e0224b878b6de5afe956ce54f5dc54aa2c3d6e31e03f6b840b"
+    sha256 cellar: :any,                 arm64_ventura:  "6331a210a2b7e4a7e44835ffe2d53f34efc6b32ac08eb4795a1b465a951ecfb2"
+    sha256 cellar: :any,                 arm64_monterey: "2cc192ed26e63db781901d83cc33bb7aa4ef36ebe209b54761f1aae7c5f87ff2"
+    sha256 cellar: :any,                 sonoma:         "272438e21d63b31b571feaf3751d63ae1d3db2caac84bb5c48d111fade0ff433"
+    sha256 cellar: :any,                 ventura:        "bcb25f4816f40bce3c3f3a9c214ca7a36248f4d2ac7886aac0ceddfa351dfecd"
+    sha256 cellar: :any,                 monterey:       "acfac454bf31ba77ef0b45579b0fa82f9b0a246c029a6c6a37c9e02c726c44b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51f9b21421453b7189f229e0ce41782da2d239b7a15d5f8f0f44a94d73bafd71"
   end
 
   depends_on "cmake" => :build

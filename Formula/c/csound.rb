@@ -1,12 +1,27 @@
 class Csound < Formula
   desc "Sound and music computing system"
   homepage "https:csound.com"
-  url "https:github.comcsoundcsound.git",
-      tag:      "6.18.1",
-      revision: "a1580f9cdf331c35dceb486f4231871ce0b00266"
   license "LGPL-2.1-or-later"
-  revision 6
+  revision 7
   head "https:github.comcsoundcsound.git", branch: "master"
+
+  # Remove `stable` block when patches are no longer needed
+  stable do
+    url "https:github.comcsoundcsound.git",
+        tag:      "6.18.1",
+        revision: "a1580f9cdf331c35dceb486f4231871ce0b00266"
+
+    # Fix build failure due to mismatched pointer types on macOS 14+
+    patch do
+      url "https:github.comcsoundcsoundcommit596667daba1ed99eda048e491ff8f36200f09429.patch?full_index=1"
+      sha256 "ab6d09d1a2cede584e151b514fc4cff56b88f79008e725c3a76df64b59caf866"
+    end
+
+    patch do
+      url "https:github.comcsoundcsoundcommit2a071ae8ca89bc21b5c80037f8c95a01bb670ac9.patch?full_index=1"
+      sha256 "c7026330b5c89ab399e74aff17019067705011b7e35b9c75f9ed1a5878f53b4b"
+    end
+  end
 
   livecheck do
     url :stable
@@ -14,13 +29,10 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d1f88292fe0dd20cc95853951e4d27ac5adc9a98862d17acb35d73b6914cd2d4"
-    sha256 arm64_ventura:  "eedb8b6d2d423962e72ee82441553308ab4dd9411dca551f00020a86e34edcde"
-    sha256 arm64_monterey: "0678817eca926f66a991fdc052389e0654508906a3e9adfddab3a33c470d7eba"
-    sha256 sonoma:         "61d7120a629b1944136f5c08e9d9ba662ed3882b721c05cb10bb50b0952c3489"
-    sha256 ventura:        "ba33e66857dea3dc9755b340f5932d5a66cdea930dd2790773b53d848a71c1b6"
-    sha256 monterey:       "d03d0052525a882c6d697ecad22345352b675a588d187c70e499a1c0b083760b"
-    sha256 x86_64_linux:   "4e7afc503eb1c7b60df58129e16113b221ebf63f4239933fb64c69b60ad8424f"
+    sha256 sonoma:       "e43a7e6d8abed4d388204667862e860f8508ace2a206d9c2ac2f5dd7a5e62761"
+    sha256 ventura:      "3a67c32094f2d43519691d7871afac01ecc0c7a3fb533bd4085f27780e8dee3d"
+    sha256 monterey:     "e860aa6ea7a4e976c301971b824f59fb050af04b4478509ff687185237e283bb"
+    sha256 x86_64_linux: "e2b0abfba14461c6886b8f76a7e1afe6ae3bffa9693bc0e53cb56659ed3c3a31"
   end
 
   depends_on "asio" => :build

@@ -4,6 +4,7 @@ class Castxml < Formula
   url "https:github.comCastXMLCastXMLarchiverefstagsv0.6.5.tar.gz"
   sha256 "fea4754bdb1fb4496fec12352e2bd07854843aa757e85d0553f224ff0111c482"
   license "Apache-2.0"
+  revision 1
   head "https:github.comCastXMLcastxml.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0cdfed2465c4776d1e7c4ce528aedc9c95dc4ff6b04ad83ec6bd113263e346fa"
-    sha256 cellar: :any,                 arm64_ventura:  "28bf7285cffa3b1d27e57ac850e44eb7063133d496669986a6915741540395ad"
-    sha256 cellar: :any,                 arm64_monterey: "7198f0a805671f22a82c3270830df3e94f43f7964259f25a0c8c0f8efb0abcf5"
-    sha256 cellar: :any,                 sonoma:         "1a669f350a913c7746f8a4368c22725a9a06cbd14f6b81bbb4e675994b73771e"
-    sha256 cellar: :any,                 ventura:        "4fd7cd8a2efe96316ab5087992bc92ac2f615d21a4b372cf756daae3e8b117d5"
-    sha256 cellar: :any,                 monterey:       "b014a9057d25d860743c59f39bd19731bb1392e4a2fbb362f8c2ff7932b0d9d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "168808e3048e84f642d0d04a2fd33d704cb17cc763b5b9b1403930370971d826"
+    sha256 cellar: :any,                 arm64_sonoma:   "bcd607459da2d680ee7df51f317e6db561915753b4076df5a0d6979f6c5bbd97"
+    sha256 cellar: :any,                 arm64_ventura:  "dfd71273c8bcb3894d5d7673eee32e7adf8513df5b8f277ae5ce3bb45141bdda"
+    sha256 cellar: :any,                 arm64_monterey: "0506d2ecd98a1b9f36fda32026a22dd9c373433b884c7bae19245d743caec157"
+    sha256 cellar: :any,                 sonoma:         "820ae2d36800d1825fd08eb31b0b54b42cfd6276b16314b83fd1a4b2ac3b8bd3"
+    sha256 cellar: :any,                 ventura:        "4812b477bd80827d5aef15a97075caddd6b995efd154b12aeda98efbe9e80759"
+    sha256 cellar: :any,                 monterey:       "717394c6574f58af2edab4e971578348e1a02dc6b75837d45c5514b8a3c1778f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "067e97b005c9fb5a85003b676d4c71b9f16a585a52d124f019607d0996a727c5"
   end
 
   depends_on "cmake" => :build

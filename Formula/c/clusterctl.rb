@@ -30,9 +30,6 @@ class Clusterctl < Formula
   depends_on "go" => :build
 
   def install
-    # Don't dirty the git tree
-    rm_rf ".brew_home"
-
     system "make", "clusterctl"
     prefix.install "bin"
 

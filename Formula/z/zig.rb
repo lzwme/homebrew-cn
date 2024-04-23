@@ -5,6 +5,7 @@ class Zig < Formula
   url "https:ziglang.orgdownload0.11.0zig-0.11.0.tar.xz"
   sha256 "72014e700e50c0d3528cef3adf80b76b26ab27730133e8202716a187a799e951"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:ziglang.orgdownload"
@@ -12,15 +13,13 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2045088ae2dc8f88dcb6e10a508d677a622e01c0082e9eb4def0e4629d968028"
-    sha256 cellar: :any,                 arm64_ventura:  "c86f263129502db9b998b279c79ba373a6d9e88e2e47e4492ed696a004d21980"
-    sha256 cellar: :any,                 arm64_monterey: "fbc4211c5beacb7cc1c7c36ba1db931492fb3289bbcbc2b085f0e5af6ab40659"
-    sha256 cellar: :any,                 arm64_big_sur:  "472a2c08984811317234c134d7347266ce8e30c24ef75076f397d8b50b474e3b"
-    sha256 cellar: :any,                 sonoma:         "81b7a46ac4198743b53d92e02f20215a6505feb33c753ee6618528d3fbfc3ed6"
-    sha256 cellar: :any,                 ventura:        "9adbe95444f3b648d1cd2ae2f8dc07891f7527cb1da369fd3f5db6c75ace1079"
-    sha256 cellar: :any,                 monterey:       "172f93925e39207a580e1d5a71b211415364e8756e0a02386c9e5f6be99b1ea5"
-    sha256 cellar: :any,                 big_sur:        "00002da55679b70ef280b06f67154a449876c5ab08b13cbdaa261bacca07fa74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a108d8abb0c31301daab3230db5537136281309291fcba3df62817fbbb32c13"
+    sha256 cellar: :any,                 arm64_sonoma:   "799a1caa052368deb7947441ffe504d8db28fa7b40a8a579d5f2f127fab8216f"
+    sha256 cellar: :any,                 arm64_ventura:  "6f6299f3f2c1f62dd1111678a58ad9f9abd790f14c1d02959da823f00d616183"
+    sha256 cellar: :any,                 arm64_monterey: "cf459782bb991b79c8f30424d63f7d7352d8659756c53c3c0881c7fd20f83198"
+    sha256 cellar: :any,                 sonoma:         "3cd6b970924d7cae4ef2ceb73a3e8572d63ccc96bc8ae8d4b1b6144adcfd9781"
+    sha256 cellar: :any,                 ventura:        "b2ee0ec4088368929a0f36bf40e11a0f5194373abc2c7b763b4f5a75ac9f59cf"
+    sha256 cellar: :any,                 monterey:       "77d35330e2f4699df927993d1d65be6cc3e5d8d89149da1246c14909cca1e2f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88b639b67b1112dff3e10e3e34057ea946d5e72ed246ca74a526d0aeaf786040"
   end
 
   depends_on "cmake" => :build

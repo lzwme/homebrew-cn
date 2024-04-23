@@ -1,23 +1,21 @@
 class Innotop < Formula
   desc "Top clone for MySQL"
   homepage "https:github.cominnotopinnotop"
-  # Check if mysql-client@8.0 can be update to latest with next version
-  # if DBD::mysql > 5.003 - https:github.comperl5-dbiDBD-mysqlissues375
   url "https:github.cominnotopinnotoparchiverefstagsv1.13.0.tar.gz"
   sha256 "6ec91568e32bda3126661523d9917c7fbbd4b9f85db79224c01b2a740727a65c"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 7
+  revision 8
   head "https:github.cominnotopinnotop.git"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "814f824e2b94f33a9f95ede0d2860025546d0469b9d8f3873930562255320a41"
-    sha256 cellar: :any,                 arm64_monterey: "5081f056aa6067f5e17d2eeab7c5e4717c8cb98965959b053f6c407e082bfd5c"
-    sha256 cellar: :any,                 ventura:        "512d63347d335f738c9e630385c36137c6b60067ccbaf442ce98f60378bc6cce"
-    sha256 cellar: :any,                 monterey:       "f200fa923567dcad52cccff4154412d13fd93dfc1efa635393f20b8fbee82dac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8457950e00284c337b9a9dcceef6e4a980748668b6819b0824b85ac272e8e95"
+    sha256 cellar: :any,                 arm64_ventura:  "19a5d996ec45c87b8639c2641121742dbf9383d47b61aeac79d0bcf64b5390b6"
+    sha256 cellar: :any,                 arm64_monterey: "a1bde73682665ff3331799993f7bee539efca85e79ade7804d1a37ad8696d407"
+    sha256 cellar: :any,                 ventura:        "d3c191fd2250b1d1e07610c8d4a3ebc2dba3328ca815fb47718eaa345cb31d0a"
+    sha256 cellar: :any,                 monterey:       "c883c153c280fff10b19abcb897ae12abff6bee5c150fe338ff4ed66f8b461bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41891fbf349f6e699ecdd8e18139303f9f80918df350f0d27c4fb9ea90972e95"
   end
 
-  depends_on "mysql-client@8.0"
+  depends_on "mysql-client"
   depends_on "openssl@3"
 
   uses_from_macos "perl"
@@ -33,8 +31,8 @@ class Innotop < Formula
   end
 
   resource "DBD::mysql" do
-    url "https:cpan.metacpan.orgauthorsidDDVDVEEDENDBD-mysql-5.002.tar.gz"
-    sha256 "8dbf87c2b5b8eaf79cd16507cc07597caaf4af49bc521ec51c0ea275e8332e25"
+    url "https:cpan.metacpan.orgauthorsidDDVDVEEDENDBD-mysql-5.004.tar.gz"
+    sha256 "33a6bf1b685cc50c46eb1187a3eb259ae240917bc189d26b81418790aa6da5df"
   end
 
   resource "TermReadKey" do

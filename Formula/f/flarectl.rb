@@ -1,6 +1,7 @@
 class Flarectl < Formula
   desc "CLI application for interacting with a Cloudflare account"
   homepage "https:github.comcloudflarecloudflare-gotreemastercmdflarectl"
+  # Pin to 0.93.0 as cloudflare-go v2 does not produce flarectl
   url "https:github.comcloudflarecloudflare-goarchiverefstagsv0.93.0.tar.gz"
   sha256 "406f6e1a8fc5b2a15c9e47d88c1d864a2073011162dc29c82e3e39201d1f5211"
   license "BSD-3-Clause"

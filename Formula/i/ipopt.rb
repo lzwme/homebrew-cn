@@ -1,19 +1,19 @@
 class Ipopt < Formula
   desc "Interior point optimizer"
   homepage "https:coin-or.github.ioIpopt"
-  url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.15.tar.gz"
-  sha256 "98c9bf2a7eb3c82f2a68d59dbe5cd87370539ade144b0553370730ccd98cf143"
+  url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.16.tar.gz"
+  sha256 "cc8c217991240db7eb14189eee0dff88f20a89bac11958b48625fa512fe8d104"
   license "EPL-2.0"
   head "https:github.comcoin-orIpopt.git", branch: "stable3.14"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7bcaf3bddedad88d8ea1b08541006626197ad9d9e58da7bb0947d79dd9712c0d"
-    sha256 cellar: :any,                 arm64_ventura:  "f09e8de3c2fc540b271812c79a0224b790eb1d5f702dce1224ff3c4d5e74a2fd"
-    sha256 cellar: :any,                 arm64_monterey: "06d9c2b1fbfb0020fee81dc8df8bdc9db07177b7509140d38f5caadc5b20990c"
-    sha256 cellar: :any,                 sonoma:         "03f583292471d22e6816f9daa646e8cab46f77a4d43fbc1a00fbb42d100ebbf2"
-    sha256 cellar: :any,                 ventura:        "f03aa251c8f99a539ea086db10e086ba7a5d2a400e2380e0a01bc55ccd8008ec"
-    sha256 cellar: :any,                 monterey:       "45fa6ae0fcff324d369102c40df0e6d059f2f433100d3905294eeb7cb18b5443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf500e3876b86dbdc97fded9a23a01216fe02772e008f9010530d0ddbe88cbcf"
+    sha256 cellar: :any,                 arm64_sonoma:   "7ab15709c6d8d0911bac33f38b65f047766108a3b291b8f00a6ce765e9db0fc3"
+    sha256 cellar: :any,                 arm64_ventura:  "f7ee0132a291e546eb7e0cf1be44b4a453896a96af88ce091e9e622b9def7914"
+    sha256 cellar: :any,                 arm64_monterey: "2b8567b6ed6a773a7c5e1506d6dd0c7928d985a1f105907eceabe00dc43f4fe1"
+    sha256 cellar: :any,                 sonoma:         "16cd7b2d2c01d59f4882ba61649da6c9c1f90ce08e3fae3cc3b26eae9016afc6"
+    sha256 cellar: :any,                 ventura:        "9d25a0a32684759aed13bb1dd854437d9f4a21b02531652aa7af202bc2eec8c7"
+    sha256 cellar: :any,                 monterey:       "a6523b45e35985d5e080eed53398ad47ef7c7a3d4bb0b0cc78c2c5620fdade11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3807673210056f3d94d69ca81ec6321b80376c48de6015b93b29692ab5d409"
   end
 
   depends_on "openjdk" => :build
@@ -43,8 +43,8 @@ class Ipopt < Formula
   end
 
   resource "test" do
-    url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.15.tar.gz"
-    sha256 "98c9bf2a7eb3c82f2a68d59dbe5cd87370539ade144b0553370730ccd98cf143"
+    url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.16.tar.gz"
+    sha256 "cc8c217991240db7eb14189eee0dff88f20a89bac11958b48625fa512fe8d104"
   end
 
   def install

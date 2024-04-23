@@ -2,6 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https:github.comcrystal-langcrystalarchiverefstags1.12.1.tar.gz"
@@ -19,13 +20,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0a55befb76eb4015ee821994f57b3f7b13ac12ddae3ed4d0f4bfdee9e8e33920"
-    sha256 cellar: :any,                 arm64_ventura:  "9a64335a9d4682ba2f277481e4a0157fcd05def044e7a000bd01abebcdadcd9e"
-    sha256 cellar: :any,                 arm64_monterey: "ef255a0af4a8b3bcb0cccba67774bbe39f8a25d2e592f01a35ea7558521e8d95"
-    sha256 cellar: :any,                 sonoma:         "4ad46ef067f71ecc0b89020e191d127b8d31a0da2e30ae89c9a5ef9c34829d91"
-    sha256 cellar: :any,                 ventura:        "4570e816f19e7a84c947cf51a0739336f5905faa22757082792eff84fba85634"
-    sha256 cellar: :any,                 monterey:       "fc29b7a64b8f1f438d15fb2cc882aa19bd4a36af28abeb09b962a7e63393e4ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb589f56ffc5c26c2c287b8440ea3348b224710db7dea778f3e26a49cc2478b2"
+    sha256 cellar: :any,                 arm64_sonoma:   "67ea3ae2a1eeca4f53514546ddbdf18df29a4f7bdbe5d5385abb45cc6df05e94"
+    sha256 cellar: :any,                 arm64_ventura:  "f53cff2d16ce5809d8af7f8a154670b0d6d0442f475eb8d0e7aef62bbfd10d9b"
+    sha256 cellar: :any,                 arm64_monterey: "c904f73df91c6d808c53ea2ed1e7e54e2039c2ff5b4020ed47f1ad47f436bddb"
+    sha256 cellar: :any,                 sonoma:         "1e2f90fe873c27a6c6d11c404b94fce18d28fbcde4a04a935686634001287707"
+    sha256 cellar: :any,                 ventura:        "0c0a47889489518f3252f644e86e72fb4a4c9a6148ca191a55780ba940527be6"
+    sha256 cellar: :any,                 monterey:       "17c5399f4b47b9b60a2b6af53924b7e5bf0e99de3bca3a1c0032d037ca9e14a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d4b0f5f22cab0f0951083a4aae972c81e0818f278b4f7363518b07dd363c4f7"
   end
 
   head do

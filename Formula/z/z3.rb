@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https:github.comZ3Proverz3"
-  url "https:github.comZ3Proverz3archiverefstagsz3-4.12.6.tar.gz"
-  sha256 "9e46a1260ea26c441a1ad6faf378bf911ee9ffd110868867b4b2f2e3c7d2200e"
+  url "https:github.comZ3Proverz3archiverefstagsz3-4.13.0.tar.gz"
+  sha256 "01bcc61c8362e37bb89fd2430f7e3385e86df7915019bd2ce45de9d9bd934502"
   license "MIT"
   head "https:github.comZ3Proverz3.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4278e29cc8b0fe218593ecc2f704ec5b2770b0fa01dfdd6b4ba374b02c2f8b1a"
-    sha256 cellar: :any,                 arm64_ventura:  "f424edf3d0d1119260edd64a35ae684146e3e3078e5a043674956e5ab6a83dc5"
-    sha256 cellar: :any,                 arm64_monterey: "c2f60aed2d189398660d6c50dad323dd8b7bb293a5d0fb73c69c890a63c141de"
-    sha256 cellar: :any,                 sonoma:         "634ae5a5014e139d68bc21c8a4b0c13778c959746080140c94a6d90632252389"
-    sha256 cellar: :any,                 ventura:        "ce5b9801ddaaf010a6b7f775f5887761c7fa74df6f2eaefad091d0198900b4d4"
-    sha256 cellar: :any,                 monterey:       "7cabdf66088d2dbfb487d6f324891f71f724637d0868dc5c7b6472f1530480cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bb0403161bbb9ea37b6bb397bc26c523b8b2c77ed1add94d536a321fded39eb"
+    sha256 cellar: :any,                 arm64_sonoma:   "d7a6ead5ea667caa7a45e1a623ecd386b09748ed5679b5001dda43365c961e01"
+    sha256 cellar: :any,                 arm64_ventura:  "507fedcd8807ff385894fda0116da2b80f85ea538f226e67d052603312db559f"
+    sha256 cellar: :any,                 arm64_monterey: "9154e1b9ca129bff2844cb26e10b9c23fb9737d7e67a61f97cd79fe868d3840b"
+    sha256 cellar: :any,                 sonoma:         "9aada4bc0021e6f8801ea7a23362f19f4514588fdb8e3b7f8550d29ae7960520"
+    sha256 cellar: :any,                 ventura:        "7123a10b91659d8f84357d37c037587617fcfbc03888c5bd3693ea4516780f10"
+    sha256 cellar: :any,                 monterey:       "c6e139509b1ca4abdebf498a3373546dd14a645c4c56c5ad37092616c6ae2874"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4d079d6f6808a6dd198b84c7de5c7f21d0b0d0c90ed8ccaad4e64199e4e4a41"
   end
 
   depends_on "cmake" => :build

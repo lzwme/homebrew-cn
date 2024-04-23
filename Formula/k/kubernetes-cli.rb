@@ -29,9 +29,6 @@ class KubernetesCli < Formula
   uses_from_macos "rsync" => :build
 
   def install
-    # Don't dirty the git tree
-    rm_rf ".brew_home"
-
     ENV.prepend_path "PATH", Formula["coreutils"].libexec"gnubin" # needs GNU date
     system "make", "WHAT=cmdkubectl"
     bin.install "_outputbinkubectl"

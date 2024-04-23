@@ -4,6 +4,7 @@ class C3c < Formula
   url "https:github.comc3langc3carchiverefstagsv0.5.5.tar.gz"
   sha256 "ddd58fd47e8dd93e26876ddfcee68452bf316705c8a8f7e9888f189276a97ad6"
   license "LGPL-3.0-only"
+  revision 1
   head "https:github.comc3langc3c.git", branch: "master"
 
   livecheck do
@@ -12,17 +13,18 @@ class C3c < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cc7ac9842351b48dba5af46ec51ebf381960d9750aeb5be0d549b39e47ab5d9c"
-    sha256 cellar: :any,                 arm64_ventura:  "723d1d8786972923fa4d348a0c85b9b55c2142da5e06c28941cca5f64bc8e085"
-    sha256 cellar: :any,                 arm64_monterey: "6b6fae6212f860cf9b7f596dc0f1192640621e45e777a1ecb4bbe2fab20907a9"
-    sha256 cellar: :any,                 sonoma:         "237c81935e6444d9d3e7f4c53a3230961d44dadadff52cda68df99a4a2c142c9"
-    sha256 cellar: :any,                 ventura:        "945d10303b489b629b63089fc3cf951dde0ffe22760e87c901586aa80916afeb"
-    sha256 cellar: :any,                 monterey:       "2dad700ad2d6cd8310fc4231deb351bb672d63bf8412e5e24b6cb71fcf01e03f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "881de2f405355ef66f91b7aa0314c65a665e3b23948266a60ee95b81fdffa68e"
+    sha256 cellar: :any,                 arm64_sonoma:   "a77004e70884a4349b254f93f4e1d62540c324db2529f8c963c397d04fc2a277"
+    sha256 cellar: :any,                 arm64_ventura:  "1c6e08be1094c3cd7ce49d9843c29ce7385dfa1ffd89233af79ff37ced053012"
+    sha256 cellar: :any,                 arm64_monterey: "f1eba6d851f89a8c95e9aec69add604da9e0689f3784fc37b81c798bb78e0423"
+    sha256 cellar: :any,                 sonoma:         "e1ccb43aae344db294cb8b246688ee0c7d0831c7c9e8a17f41516793dcc554f0"
+    sha256 cellar: :any,                 ventura:        "b3de2bf58e3af77f89aa0f2e6c7ea9f53d9d318d3f3471d0ef856acc2e3c186d"
+    sha256 cellar: :any,                 monterey:       "412bfde4a57752a14456717b13f59256161ddfbd1fa6c37e9aa5b31963de0173"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90b971c5f5fecbf62dc3c26b1ecb0d1356648971b4c0379d4df88358ee379ac9"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm"
+  depends_on "z3"
   depends_on "zstd"
 
   uses_from_macos "curl"

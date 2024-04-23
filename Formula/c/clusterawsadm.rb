@@ -25,9 +25,6 @@ class Clusterawsadm < Formula
   depends_on "go" => :build
 
   def install
-    # Don't dirty the git tree
-    rm_rf ".brew_home"
-
     system "make", "clusterawsadm"
     bin.install Dir["bin*"]
 
