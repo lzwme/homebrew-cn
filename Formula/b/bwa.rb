@@ -1,26 +1,19 @@
 class Bwa < Formula
   desc "Burrow-Wheeler Aligner for pairwise alignment of DNA"
   homepage "https:github.comlh3bwa"
-  url "https:github.comlh3bwareleasesdownloadv0.7.17bwa-0.7.17.tar.bz2"
-  sha256 "de1b4d4e745c0b7fc3e107b5155a51ac063011d33a5d82696331ecf4bed8d0fd"
-  license "GPL-3.0"
+  url "https:github.comlh3bwaarchiverefstagsv0.7.18.tar.gz"
+  sha256 "194788087f7b9a77c0114aa481b2ef21439f6abab72488c83917302e8d0e7870"
+  license all_of: ["GPL-3.0-or-later", "MIT"]
   head "https:github.comlh3bwa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8a3ccdfdc0f75dbe5efff72c4d12d933a22659e5973431cc4186f655615eb173"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16f68f7c570fdc002ad5a75ddb23a7b4cf6c7993ff09b3e7aa39683e3f32b5b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c21d941893a927b1f362fb0f44d809cc81b5d4ec59f4073b5f39d081902f321b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4340d5a65a5c146033ea20710f9489ef2fe2a3b2c85937f3e71da141c44d4658"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc42f96cf406cb2f0c4535688c11aff1eb7d5d2c7099fc67b7fba1947a5c695f"
-    sha256 cellar: :any_skip_relocation, ventura:        "70436d404c59f546c96157cfd4329980d51413346f2383ce96d9dcb5dbc6885b"
-    sha256 cellar: :any_skip_relocation, monterey:       "815da042557c670364ad899e1257f51c893979436beb1c016c8fdb6ad9ef734a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d67267aeea4145fef5e65fe1c8d9f9b34121c0339badf703811027db2570967a"
-    sha256 cellar: :any_skip_relocation, catalina:       "59b821b80f729fef923c3edb048478836c72d6aea34b245d1b292b2c3f893432"
-    sha256 cellar: :any_skip_relocation, mojave:         "6b07cef5ea1955d8a83e7b59ef8458a7604998f735f0eab85889fa3aedc7e953"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "02da3eecd6569c193a55436f705c8d351d052e44b79a43d6afc50f7308603a73"
-    sha256 cellar: :any_skip_relocation, sierra:         "4db97125930b495fc34b6d161bea57171ac4bf2a5bf48ca1088a69a594874710"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "bee09d138e9d8f45c12d6c99b48a3e6891b6e4d3f5c6a6847bfeaa28afc2f362"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d875f0b64143cfb58e44681e47102158b46e0004c408d8fc5f10dc976383a94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0f6b87e89a46108e9c8f92ea8ceaf747ba0e8b759c685c0a0f9379e3f9733768"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ab4ac87cfd87c58980d86cd85ddbb254e8b3e283148f3589efe7e9f4fa58ac7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a187c420db866dc844ea6f712656b4e4c86bc3640289ac63e71c3b2cbb90a4e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "55d0c3fa4de82095c0421c6962a0720c5830fa9402c257342837a0e473c395ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "2c4ee46e300f7fb8b39728c4569697319641f90cfd87391cafc14a65c7dcbeb6"
+    sha256 cellar: :any_skip_relocation, monterey:       "b035ce4068ab880f243402289cb17cf5b165b7d3eb209385bf32c31d6e1d815d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9307f2d732feb2083c8a8347a972d4c335b6815fd4c4b7813e1e913f9724049c"
   end
 
   uses_from_macos "zlib"
@@ -30,9 +23,6 @@ class Bwa < Formula
   end
 
   def install
-    # PR ref: https:github.comlh3bwapull344
-    inreplace "ksw.c", "<emmintrin.h>", "<sse2neon.h>" if Hardware::CPU.arm?
-
     system "make"
 
     # "make install" requested 26 Dec 2017 https:github.comlh3bwaissues172

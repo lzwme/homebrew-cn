@@ -5,16 +5,17 @@ class Rtl433 < Formula
       tag:      "23.11",
       revision: "59133f44a297eb2288e803e2e56587da4e586ffc"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.commerbananrtl_433.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e55a0e0e62f174e25cc3f3d892a8e4dc9ef0b0adb6709cbc793b139b664e3a80"
-    sha256 cellar: :any,                 arm64_ventura:  "d3f17a8874d3e02d2c1b0ba9b1a7ad230d1e78e087fd687eefdca3eced8e4fbd"
-    sha256 cellar: :any,                 arm64_monterey: "4c809261d3dce9109ab94c05494e3412bde50eb0ba80c466365b72e8b6ead82a"
-    sha256 cellar: :any,                 sonoma:         "0a6dd47bd2e165af9603fcdb175392969e73ee68893aa3dbc6f9fae6286c465b"
-    sha256 cellar: :any,                 ventura:        "c803a214a219b58b1b3d00753177b81162da3dcbb26bcf20e02e9dfdb8874ff9"
-    sha256 cellar: :any,                 monterey:       "72724b2b1486bb5253075d7af35b61f909d37630f0ab0c4362d6d12a50218a95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2810378fa47bce1e015317722a6716f834558b98d963e3b92e07eb0ba5c9e161"
+    sha256 cellar: :any,                 arm64_sonoma:   "71a64b3bc46e45f9544e4b2c764c2cf329f4965b59701e897521aa3b53a117f8"
+    sha256 cellar: :any,                 arm64_ventura:  "12c177662b3019a2f15bacd8819eb3ca3b52c4540824c48536d947ecc0d8ab3b"
+    sha256 cellar: :any,                 arm64_monterey: "f7ea74abe442aef36c1edcb15cd7d4d3ea13b4da8c7cbc48afbb1c997273f430"
+    sha256 cellar: :any,                 sonoma:         "143e9c0e0dcbbb4a7bc71cc40f6e512abc5da84d64e42a5f2fc7fb47c398af05"
+    sha256 cellar: :any,                 ventura:        "a9064756df95ef0d25eb9f568c5f581e35692300aa9c1356af3fd18a5e491863"
+    sha256 cellar: :any,                 monterey:       "c12dacc2821a946d1418483cd3c01c2818535111077357ae7668e9f5ce5c7ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86592dfc6a02ae7867d13268f978d45ee86a762eeb4673a21dcf4c60fe466929"
   end
 
   depends_on "cmake" => :build

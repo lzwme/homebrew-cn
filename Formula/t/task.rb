@@ -1,8 +1,8 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
   homepage "https:taskwarrior.org"
-  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv3.0.1task-3.0.1.tar.gz"
-  sha256 "e36653304c4850e7808bd417309c1e8ef6ce7c44ae8d7e553a076e36c0871655"
+  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv3.0.2task-3.0.2.tar.gz"
+  sha256 "633b76637b0c74e4845ffa28249f01a16ed2c84000ece58d4358e72bf88d5f10"
   license "MIT"
   head "https:github.comGothenburgBitFactorytaskwarrior.git", branch: "develop"
 
@@ -12,13 +12,13 @@ class Task < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "0fc656c2efe41175806e749c3bca717d18abb6fa0f7db829d556abeafcbb7f53"
-    sha256                               arm64_ventura:  "b08b3e933a4b179d2b6348349fa0c3b23d7f4a3780c82e47b45966e8fa4032b9"
-    sha256                               arm64_monterey: "3f20cb00fc44621770598fe07d603afb74b14170e8b0f9a49bb303e0194d2a06"
-    sha256                               sonoma:         "d1a5c71ff8b18d60168fc8f8cb01562394f1a866f2d845d782809e1a9bde49f0"
-    sha256                               ventura:        "8eea38909c65727b9c3c371a5556352c83cb57f69615212f6cd945174a783f57"
-    sha256                               monterey:       "a6718185479d6a62ea9876ba1ba4986622384f086339445687b5880c1d7f840a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d515ba03922af5e580ecf0b45129a48f4f98f5d4a0940b161d2020a8597c69ce"
+    sha256                               arm64_sonoma:   "c7bb516aab20211303506c26330beafd2116950d13d495cf138ae4b7fd8c68e8"
+    sha256                               arm64_ventura:  "0affb9d430ca4f4fe33ff62b9a762e8ffb91b0d3464ebd3207de18c585f24fb1"
+    sha256                               arm64_monterey: "c8bff30788e8d7a03605b4282624cb0544cb7cbea0a8091d107c7365347bfb03"
+    sha256                               sonoma:         "544fd8c8ec8e4c0e8a64547bcc8ecd330c1273147b2f3b4c006c4082d8ea6077"
+    sha256                               ventura:        "7780622b9e8391f6be90daa5445bb35275c90a7739968b088711e8264eca7e54"
+    sha256                               monterey:       "05d8e2f0ae30a4dfd54ffaf39b574240dc074b1151255cdb6def06741c1dcc19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cc796bcfe91d1f25ef91dcf19e3ae4491f9f8eb065265c8c438e2a1afb3e9f3"
   end
 
   depends_on "cmake" => :build

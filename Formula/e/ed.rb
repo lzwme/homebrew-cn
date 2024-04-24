@@ -1,19 +1,19 @@
 class Ed < Formula
   desc "Classic UNIX line editor"
   homepage "https://www.gnu.org/software/ed/ed.html"
-  url "https://ftp.gnu.org/gnu/ed/ed-1.20.1.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ed/ed-1.20.1.tar.lz"
-  sha256 "b1a463b297a141f9876c4b1fcd01477f645cded92168090e9a35db2af4babbca"
+  url "https://ftp.gnu.org/gnu/ed/ed-1.20.2.tar.lz"
+  mirror "https://ftpmirror.gnu.org/ed/ed-1.20.2.tar.lz"
+  sha256 "65fec7318f48c2ca17f334ac0f4703defe62037bb13cc23920de077b5fa24523"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45c331f78a3aefad442b6934a68474bb955a2e29404282429eb22cd196603fed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68e083d77f4e2e853e62634f6b56c23e0b5874dbc60b9817afa16167526a0947"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02ad1d8d11449d9a3402bfeeade360e82aa26bb9f3b21db598ae16a7e96002b4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80fd9be91e7efa09106389bb0ad4ec5da75658733cd80bad57d8c77174e613a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "6aa6e587ee8c30ba97aca150a0ded127bf11ac6ed615c56394fb6362658e3bbd"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b424b0d4cabe42aa8bc81d53081607ff7333919ba410e501a61ad130e5946c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "926e1785422f3a7012cb5c399ae7062f64822476fccc47514225168a38239530"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "256f07971d6c3531a7e4ff53181ed97c2a3eba36695728b690540a7da40aee2a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d79fa7654496b56001cc2375966611fb2acff57b9503ea9c093a2ad12ee67d66"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94bbb07a78c169c2052ba0a347efd1456331acf885ac4d0d969445540baa25e9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "307e41c5a31b7df5274e91390e7b69f4ef679aac9e946cad02cb4c73023cc4c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "44a39cd99e7284851a607084242703e0bf0836fb515845c20a9531222ed2a190"
+    sha256 cellar: :any_skip_relocation, monterey:       "e9cfc5a1ab23700ec4c7230335571d58e4de10fedb4a0938c04b9841f55480c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cec09d44599940964ce0b1cd8936746a001df44cf76fac1b65dce2e8e875e378"
   end
 
   keg_only :provided_by_macos

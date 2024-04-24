@@ -1,18 +1,18 @@
 class Cloudprober < Formula
   desc "Active monitoring software to detect failures before your customers do"
   homepage "https:cloudprober.org"
-  url "https:github.comcloudprobercloudproberarchiverefstagsv0.13.3.tar.gz"
-  sha256 "a666be1c5a2904df57464088114e44411cb4e0670c9f0f154e0bfbb5535457c8"
+  url "https:github.comcloudprobercloudproberarchiverefstagsv0.13.4.tar.gz"
+  sha256 "6bbcc560c8e0010cd045afa6558daaf186ae78cea2614ebec1d9afe94a30b9b5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95c7bc767a7c28e3a6f8bea2022886f371c2b209f9558e57bea1050bfbab77ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5ca5ec41f5e5fb0d2f1deba004dedf23ec7cf2af3d361e04cbe603d0650fe49"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "699334c5d403a95e459be42a54e6f5457ea37e3de14c66788adf0d5641012ae5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a7da12608d06440487834ab1609295e728ba18bcf9f3e00bcf454fdde3cc72d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc80b22ba0e88f883bc84902f52514691db7578c54c312b4ef6581fa5cb93f9a"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c6e6485bab26d1fadbb4f29db0ebc0202e83ef1654fefcba0c53dab4cb9454b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d94184cac2833f0c60ca99271cdcf0a8caab6567de9995d548a0bac4a14fc87d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3138121c169a8a2af79d08bd41294ffff67f567e20a0cb5acfab4e320cd4e6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1301b4d52b79e83b5804371c302d0c5dee22ca14673356390885e1432a95518a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ff9290599aa22fe6af8598a0f5d166fb87702394948213fbdf65b11f205759e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2ab9cebea827959c8d60062a13052f7d92aefb155de801253391ac1c7c98e84d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9fe072630d4b910e88420d71241a7e893b3fe67a3aa94876fd4fd33f4e5b368e"
+    sha256 cellar: :any_skip_relocation, monterey:       "78200b7cdfb61d088400c3d89c307d0ff68abbc4053bfbc975243a16ec6046ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50802c1fa306182a54399595e136a8cf9b41587e78c710c73b110c8f199c3689"
   end
 
   depends_on "go" => :build

@@ -2,19 +2,19 @@ class Gossip < Formula
   desc "Desktop client for Nostr written in Rust"
   homepage "https:github.commikedilgergossip"
   url "https:github.commikedilgergossip.git",
-      tag:      "v0.10.0",
-      revision: "a6b529ab59ab9c0f323efc495f441051a5d5ba03"
+      tag:      "v0.10.1",
+      revision: "622ff8c0ddaefe40830199571f5f76229ba7be5a"
   license "MIT"
   head "https:github.commikedilgergossip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd2f466b51baa4ebeb646e4b19042754195925c61c7fe3efcbda420779bd4836"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08c460e5c29f40b5ff5da8bccf20b684953b2aae945cbc5449df47d10c1e4cce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cadfea0111ef941865c8f0e72c88fe556a3bb5c74a1049d7708885885d5bc831"
-    sha256 cellar: :any_skip_relocation, sonoma:         "df0934785fcf791f54caea4078f4aa9d303b1494f552c9aff9906ca76191049a"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c7dfb73f1cf1a924c66e75eb73e3c3e70cd59ba7786f7cac3f4def1aee4b52a"
-    sha256 cellar: :any_skip_relocation, monterey:       "64c5f5393e852d6b02b47956ed1d144150817b0fc2768b2b030fc5bfb9169dc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c78fc5f19190d2e7efbe1d394fae236a7ffae39f096746147a66cf72825feb79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03efddd1f62122fec07ba65707fd541c415472d2e5e472422fa42691eaf14db8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4848a064459571acbb84c4fc4191f79832dc8f346e720585d3c39721e00173e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e90ae3a95a863df7377dbfb7446f7d05fc8f44e3910be60f9ec45234a510f83"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f493a55f877324339385b97602efa23f57651b371dba14aa15a76946303307e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a0537fed33a059b68fac3487478645c0534e7476cc144e9e6c18d28ae9d9e80"
+    sha256 cellar: :any_skip_relocation, monterey:       "151eef7d61a43b8587f4af5cd4a35edda842909e553e068d89189e65f917abff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "466c776144591aebcb68617bb655f25624d1431f2b44459a30d3ab712ca4e4ca"
   end
 
   depends_on "rust" => :build

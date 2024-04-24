@@ -5,16 +5,16 @@ class Dump1090Mutability < Formula
   version "1.15_20180310-4a16df3-dfsg"
   sha256 "778f389508eccbce6c90d7f56cd01568fad2aaa5618cb5e7c41640a2473905a6"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c863983e0887b80d3fe870bf1057a4c89b757b0e075ca0e16aa8e6888092b166"
-    sha256 cellar: :any,                 arm64_ventura:  "9dbc8cdd6f70fefd16bbe1bc7c3f59782be72f7ce4a6bda9c4b84c3ab8b43f85"
-    sha256 cellar: :any,                 arm64_monterey: "b841e0643b0d5375504aee7804708a086be5e2bfd70440748a480075ca2a3d0f"
-    sha256 cellar: :any,                 sonoma:         "dfa939d83d0805b8a8e879e7729bf7c4b4aee822900a0d8ba85c1e9beaa29f84"
-    sha256 cellar: :any,                 ventura:        "1963d24c7a8f25f75b5f6e1b5df758ee45788741dc06133f3955f25384a73853"
-    sha256 cellar: :any,                 monterey:       "f9fc1c4262df129059dc9a85a7896b860ab89ff78da432a46308d2b7853f421f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1c63b7264770ce7014b898bb909777a4bae80a1615c2f119b66d945ff846204"
+    sha256 cellar: :any,                 arm64_sonoma:   "e58f730410669a3d0cebde197feec0c661b6b868518f6bd503f8474fd507c180"
+    sha256 cellar: :any,                 arm64_ventura:  "578b30fb22f49021afbf7828f9a470f2a51872afe33c20f66f4529c300420484"
+    sha256 cellar: :any,                 arm64_monterey: "d7dd9f68dbcc3c0f08e1cb87d09ea24a2f16172196c8d9f82bf57416319333b8"
+    sha256 cellar: :any,                 sonoma:         "8d910c212fa188391204d5e4c7d5cb9c41fba1712164f13e05538636734c2676"
+    sha256 cellar: :any,                 ventura:        "137e2d13e0e5aab68484b897699777c56be1c4c9f5093c057c7d0856ba70a342"
+    sha256 cellar: :any,                 monterey:       "8a474349c0344e7eb93212ca5e0f4a60059d1e1ec9f782171213af120a3e7ee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e554a1e935e5eb47e04660041e611ef0a947ab2c8241bc3a25346363ee06ce8"
   end
 
   depends_on "pkg-config" => :build

@@ -1409,6 +1409,7 @@ Homebrew-homebrew-core/Formula/d/dovecot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dovi_tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doxygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doxymacs.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dpcmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dpkg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dprint.rb, Homebrew/homebrew-core, 1
@@ -5021,6 +5022,7 @@ Homebrew-homebrew-core/Formula/p/proj@7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/projectm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prometheus-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prometheus.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/promptfoo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/promtail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proof-general.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proper.rb, Homebrew/homebrew-core, 1
@@ -9318,9 +9320,11 @@ Homebrew-homebrew-cask/Casks/m/meta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metabase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metaimage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metamer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/metarename.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metashape.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metashapepro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metasploit.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/metavideo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/metaz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/meteorologist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mfiles.rb, Homebrew/homebrew-cask, 0

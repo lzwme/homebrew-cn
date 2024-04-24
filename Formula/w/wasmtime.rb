@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https:wasmtime.dev"
   url "https:github.combytecodealliancewasmtime.git",
-      tag:      "v19.0.2",
-      revision: "040ec9209e096bb348077e364ed83cf1a54293fe"
+      tag:      "v20.0.0",
+      revision: "9e1084ffac08b1bf9c82de40c0efc1baff14b9ad"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.combytecodealliancewasmtime.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "784a6d488027ba07213e4d2117dbe4202ab154c4107ba45d7bf59816534d83f1"
-    sha256 cellar: :any,                 arm64_ventura:  "5497fb02b39db06a04a63be6400501c0960b0fa1881329cdb7860195f3e0c118"
-    sha256 cellar: :any,                 arm64_monterey: "b3e7e05842913a2ce0ba2d4938ffba0bcfe80b799518fa4b4a7d6d6c3eefbde0"
-    sha256 cellar: :any,                 sonoma:         "983f44470a7e82f667b61e40627b5935a77b6a980463193c0844cff201dae850"
-    sha256 cellar: :any,                 ventura:        "36ed7212817eb338a23fd95c5164be60724fb6e1a9c2f9b3cceb412bdf15e9e8"
-    sha256 cellar: :any,                 monterey:       "315ef2b443527edff80ffad23a15cbff668e100d27c2750ac756f02279614b00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef29fbcd2b2e72f7bd8a2ca553823b30c4951292e8d69b270ee5868a13722674"
+    sha256 cellar: :any,                 arm64_sonoma:   "079035060f3e64573dd3c70e26466f36923a1ea837807948236c98bb73a360cd"
+    sha256 cellar: :any,                 arm64_ventura:  "486fc759dc252b7b3e7f6ae7e703737d34e9004b63acdc44420791fa59b04a30"
+    sha256 cellar: :any,                 arm64_monterey: "b0cfe6b695ccc9f270ef58fcb7377bdce8af3e0996b69d4e441bf99f648b239f"
+    sha256 cellar: :any,                 sonoma:         "dfaa660a5da76df0383bdf904471cf2f632443b60f5fec5a062bd0a36e00b66e"
+    sha256 cellar: :any,                 ventura:        "7cbd5517a6454af531ec5ebe42b833ee6ff180490cae220c8a79d0395d633056"
+    sha256 cellar: :any,                 monterey:       "0fff8d62f8e94e631368d3a8309765b95cab201fafa7f8c1e68d596e7e086e4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a46defcb38b4dc5eb484f820d210c8018bdf96e52a8eb8af1dbfcd0cb6387ba0"
   end
 
   depends_on "rust" => :build
@@ -27,9 +27,7 @@ class Wasmtime < Formula
   def install
     system "cargo", "install", *std_cargo_args
     system "cargo", "build", "--locked", "--lib", "-p", "wasmtime-c-api", "--release"
-    cp "cratesc-apiwasm-c-apiincludewasm.h", "cratesc-apiinclude"
     lib.install shared_library("targetreleaselibwasmtime")
-    include.install "cratesc-apiwasm-c-apiincludewasm.h"
     include.install Dir["cratesc-apiinclude*"]
   end
 

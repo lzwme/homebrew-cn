@@ -17,11 +17,6 @@ class SpiceProtocol < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
 
-  on_linux do
-    # Test fails on gcc-5: spice/macros.h:68:32: error: expected '}' before '__attribute__'
-    depends_on "gcc" => :test
-  end
-
   def install
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
@@ -36,13 +31,7 @@ class SpiceProtocol < Formula
       }
     EOS
 
-    cc = if OS.mac?
-      ENV.cc
-    else
-      Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].any_installed_version.major}"
-    end
-
-    system cc, "test.cpp", "-I#{include}/spice-1", "-o", "test"
+    system ENV.cc, "test.cpp", "-I#{include}/spice-1", "-o", "test"
     system "./test"
   end
 end

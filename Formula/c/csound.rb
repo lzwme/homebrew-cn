@@ -2,7 +2,7 @@ class Csound < Formula
   desc "Sound and music computing system"
   homepage "https:csound.com"
   license "LGPL-2.1-or-later"
-  revision 7
+  revision 8
   head "https:github.comcsoundcsound.git", branch: "master"
 
   # Remove `stable` block when patches are no longer needed
@@ -29,10 +29,13 @@ class Csound < Formula
   end
 
   bottle do
-    sha256 sonoma:       "e43a7e6d8abed4d388204667862e860f8508ace2a206d9c2ac2f5dd7a5e62761"
-    sha256 ventura:      "3a67c32094f2d43519691d7871afac01ecc0c7a3fb533bd4085f27780e8dee3d"
-    sha256 monterey:     "e860aa6ea7a4e976c301971b824f59fb050af04b4478509ff687185237e283bb"
-    sha256 x86_64_linux: "e2b0abfba14461c6886b8f76a7e1afe6ae3bffa9693bc0e53cb56659ed3c3a31"
+    sha256 arm64_sonoma:   "35d9b09ebe9bb72399d10faff833d2b6e2d07d61916890aeac3d9b650e426bd6"
+    sha256 arm64_ventura:  "beabe27ce94e15a94f4df63dc9c98b8d95f2b0104f756e33aa135c3b1e39ca76"
+    sha256 arm64_monterey: "f70769471f3c5ea0b0cabaeb809720b6098c1e14d50cb30196518c54cb464e27"
+    sha256 sonoma:         "33122f505bd391b6e55c6e90e812a24219e6e211cfdebbaa8d12e97acf3a7a63"
+    sha256 ventura:        "44e1c701e1a37f6a43119a96b507f4124b98f7af9ccfdda34af9b270dd9d77f1"
+    sha256 monterey:       "c59dc0df0dae84409ea08cd5f2a151f3f54f07938b41f8285b04882c4c80bb64"
+    sha256 x86_64_linux:   "14b97dadcdc37012242268e1d96233fdc5cd5594d90a62ee6868f9ce3423a241"
   end
 
   depends_on "asio" => :build
@@ -58,15 +61,12 @@ class Csound < Formula
   depends_on "portmidi"
   depends_on "python@3.12"
   depends_on "stk"
+  depends_on "wiiuse"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "wiiuse"
-  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -148,6 +148,7 @@ class Csound < Formula
         -DBUILD_PYTHON_OPCODES=ON
         -DBUILD_STK_OPCODES=ON
         -DBUILD_WEBSOCKET_OPCODE=ON
+        -DBUILD_WIIMOTE_OPCODES=ON
         -DGMM_INCLUDE_DIR=#{buildpath}
         -DPython3_EXECUTABLE=#{python3}
         -DUSE_FLTK=ON
@@ -155,7 +156,6 @@ class Csound < Formula
       args += if OS.mac?
         %W[
           -DBUILD_P5GLOVE_OPCODES=ON
-          -DBUILD_WIIMOTE_OPCODES=ON
           -DCSOUND_FRAMEWORK=#{frameworks}CsoundLib64.framework
           -DCSOUND_INCLUDE_DIR=#{frameworks}CsoundLib64.frameworkHeaders
           -DPLUGIN_INSTALL_DIR=#{frameworks}CsoundLib64.frameworkResourcesOpcodes64
@@ -163,7 +163,6 @@ class Csound < Formula
       else
         %w[
           -DBUILD_P5GLOVE_OPCODES=OFF
-          -DBUILD_WIIMOTE_OPCODES=OFF
         ]
       end
 
@@ -246,6 +245,7 @@ class Csound < Formula
       JackoInfo
       instr 1
           i_ websocket 8888, 0
+          i_ wiiconnect 1, 1
       endin
     EOS
     system bin"csound", "--orc", "--syntax-check-only", "opcode-existence.orc"
@@ -254,7 +254,6 @@ class Csound < Formula
       (testpath"mac-opcode-existence.orc").write <<~EOS
         instr 1
             p5gconnect
-            i_ wiiconnect 1, 1
         endin
       EOS
       system bin"csound", "--orc", "--syntax-check-only", "mac-opcode-existence.orc"

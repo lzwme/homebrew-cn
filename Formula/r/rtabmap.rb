@@ -4,17 +4,17 @@ class Rtabmap < Formula
   url "https:github.comintrolabrtabmaparchiverefstags0.21.4.tar.gz"
   sha256 "242f8da7c5d20f86a0399d6cfdd1a755e64e9117a9fa250ed591c12f38209157"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https:github.comintrolabrtabmap.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sonoma:   "204479c6db2eef6b7567e153c3f966a326abeb5c059f4bfa2c79af3faf155611"
-    sha256                               arm64_ventura:  "1c9b33f634cce573b7d5ac8179bc5c62b57d76d6b573c5bd6a7cf66b96e69d1f"
-    sha256                               arm64_monterey: "177c8f36ccaffea42be206c6721d460998604322344307890d86032bcf249173"
-    sha256                               sonoma:         "ceb86498af8998e3cc77505128ed316f5dc0ab5c05d4eca6e4bfd3ac52ab9fdb"
-    sha256                               ventura:        "225a66065f4b20d9df08c143adc04fd4d46d9ed9c2f804e77b2d3be451d9734b"
-    sha256                               monterey:       "b3f6c0c01deb299c3b7e38bc2d3023e6cdd646c591ec2f57ade181c94040f60f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "113a8b8dfa2e7ddc0fe9df44fc2f91e3328e2b00ccd5136e369c48b6452ba866"
+    sha256                               arm64_sonoma:   "7ded9e75cd1ec90eff980ea4e6c0521b36589017bf0acb62217333e13587b6c1"
+    sha256                               arm64_ventura:  "7a754f0c9a97663b06b2e6d4d1981466d9be5d53e05944907d45566374c501ef"
+    sha256                               arm64_monterey: "90b2c03985689419a44adf25624956659fdbcb0a24fd270ec8d860ee6e270ec6"
+    sha256                               sonoma:         "be3dd2bdc5e8f370e6ff645d79c388fc94297e79b8cedf7371efa85a56d0a989"
+    sha256                               ventura:        "6ad77bc214708a2f7f75bf98196bf88f44ef4933a130a3d1604d91ec36e5e910"
+    sha256                               monterey:       "35a17b327683a640aeda1b244500e24e97f06b0fd4670f2a8876c08d5cfc9bc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f78d18274347eb17d660b304b9a5be507bf7c3b33f8388bdb9c08ad06c02bd91"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https:pupnp.sourceforge.io"
-  url "https:github.compupnppupnpreleasesdownloadrelease-1.14.18libupnp-1.14.18.tar.bz2"
-  sha256 "16a7cee93ce2868ae63ab1a8164dc7de43577c59983b9f61293a310d6888dceb"
+  url "https:github.compupnppupnpreleasesdownloadrelease-1.14.19libupnp-1.14.19.tar.bz2"
+  sha256 "b6423c573b758d09539f5e6c4712c1a9fd35dccf835f81d99473d50a50ad49b0"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,15 +11,13 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "26a5a966d505117672e64ba89cb694373febc9e25753c9ad4e94aad4a3f36c9c"
-    sha256 cellar: :any,                 arm64_ventura:  "3ead88b1f594f71ef15f68e019dbec93b7175f3af98ca448bfa9c2b5080a5388"
-    sha256 cellar: :any,                 arm64_monterey: "e31564f5a608faa7e7dd487f139d1dcf7ef659b7cd2740808a804bc34a07d8ea"
-    sha256 cellar: :any,                 arm64_big_sur:  "09b1dedb2e530eeabe741eff79f030bbb267a9c01fc6a3d100e95edb4ff8a67c"
-    sha256 cellar: :any,                 sonoma:         "e51420a5a61dad3f6e7e1cbdeccd20de058fefa68e07fd75a49d5e4d3bf67eb4"
-    sha256 cellar: :any,                 ventura:        "336cd47cb806b78cdae13a672dd763f163758e03be355a7598468069ccd2be31"
-    sha256 cellar: :any,                 monterey:       "cf5074234cd7285d767ca0edef639f592cedbcb2efb0b2f065d5114c7bd986bb"
-    sha256 cellar: :any,                 big_sur:        "485b3dab9fbf366fc3fcd944a9f2bafdf92d97b0d2cd0f0d339c2156c330d13c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01347124ad1761e82777487db178b1655928bf6e7b8319c95da7a184628522cf"
+    sha256 cellar: :any,                 arm64_sonoma:   "3a069dc51847c08e45f0825690c3bb69071793480a2c80b03383800e9bbadf95"
+    sha256 cellar: :any,                 arm64_ventura:  "d030fdfb72893d7ec2907a0b818c451d53fb5f56338fabac5103494bf47db81c"
+    sha256 cellar: :any,                 arm64_monterey: "1e911c107c095edfb09d6a232ea98d7213e9274ef27c80bb5564af6b9fda824c"
+    sha256 cellar: :any,                 sonoma:         "d8beb0fd061ff2ad26f725ec52e9682b2546db40f9cbe5e7875638a04a30980c"
+    sha256 cellar: :any,                 ventura:        "22cd63291fff84a6aff14af36f2ede512db46c7fe9a85b95f6124b57d9cdc630"
+    sha256 cellar: :any,                 monterey:       "07d61a52e633a7b249f51af157f6ed2740033661cdce75fe2f8547c80847c3d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d78e9580d8c1a1997674d9943604b7a7b604959bb6b78f95ed5657b0b1b9a3c"
   end
 
   def install

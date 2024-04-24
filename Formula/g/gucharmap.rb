@@ -9,6 +9,9 @@ class Gucharmap < Formula
     sha256 arm64_sonoma:   "429f1a90413aed4023917ddba7234d9e58f5a44884a467c4e9384b68af91b4d1"
     sha256 arm64_ventura:  "7ec4f04354ad5af4c6676a2d8cfb798c61f557c7f6728f2accc137af67a577f1"
     sha256 arm64_monterey: "642ef8dfcf4d6d8af82bd87e4d8a17b2ae1cfd4472fd9f5da62ccdae05e0d2c9"
+    sha256 sonoma:         "0d3c46122c2ebd6d842999e1bfb7c9adaaace89d6bc814411e5e9756dcb62e26"
+    sha256 ventura:        "d3f196b9c90ab48bad085eebac8f4ba06e0e050db2de0513b65cb215c2b57b65"
+    sha256 monterey:       "dd81bffcf297e2443b2c86275d563047c6198df13cb6171e01207587228de5e9"
     sha256 x86_64_linux:   "bdf5f9a6612c4248a875314a1667d2022ea829f092de34b64bc703f6c3bca782"
   end
 

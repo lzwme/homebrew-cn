@@ -10,13 +10,14 @@ class GalleryDl < Formula
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "37cce433a4b5c0649cc1725be13ee162c65f1f805856e7c0bcf8351cb779ce3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37cce433a4b5c0649cc1725be13ee162c65f1f805856e7c0bcf8351cb779ce3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37cce433a4b5c0649cc1725be13ee162c65f1f805856e7c0bcf8351cb779ce3c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "37cce433a4b5c0649cc1725be13ee162c65f1f805856e7c0bcf8351cb779ce3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "37cce433a4b5c0649cc1725be13ee162c65f1f805856e7c0bcf8351cb779ce3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "37cce433a4b5c0649cc1725be13ee162c65f1f805856e7c0bcf8351cb779ce3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1efc2197f71646dcf2fe3964d75a3cf383a035b6d8812bf5ac485e73a857f739"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3501bb45a8f8140b9faff7fb5ae39fea345c6366e4f2e3bc1438909644f291c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3501bb45a8f8140b9faff7fb5ae39fea345c6366e4f2e3bc1438909644f291c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3501bb45a8f8140b9faff7fb5ae39fea345c6366e4f2e3bc1438909644f291c0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3501bb45a8f8140b9faff7fb5ae39fea345c6366e4f2e3bc1438909644f291c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "3501bb45a8f8140b9faff7fb5ae39fea345c6366e4f2e3bc1438909644f291c0"
+    sha256 cellar: :any_skip_relocation, monterey:       "3501bb45a8f8140b9faff7fb5ae39fea345c6366e4f2e3bc1438909644f291c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b3acf956e22ef351155b486a686ba26a9be7ba7aa1a12021f6910bbe41fe690"
   end
 
   depends_on "certifi"
@@ -43,7 +44,13 @@ class GalleryDl < Formula
   end
 
   def install
+    system "make" if build.head?
     virtualenv_install_with_resources
+    man1.install_symlink libexec"sharemanman1gallery-dl.1"
+    man5.install_symlink libexec"sharemanman5gallery-dl.conf.5"
+    bash_completion.install libexec"sharebash-completioncompletionsgallery-dl"
+    zsh_completion.install libexec"sharezshsite-functions_gallery-dl"
+    fish_completion.install libexec"sharefishvendor_completions.dgallery-dl.fish"
   end
 
   test do

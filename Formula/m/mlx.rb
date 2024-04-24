@@ -1,45 +1,53 @@
 class Mlx < Formula
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.10.0.tar.gz"
-  sha256 "09e9859e364ee8d19bf656730b7d6a471c8da2d397325efd1c73b836819f6e56"
+  url "https:github.comml-exploremlxarchiverefstagsv0.11.1.tar.gz"
+  sha256 "20ffd4fee274b084661708407d0680eb9d1e9f16bb856b71546fd0beccbd1fad"
   license "MIT"
   head "https:github.comml-exploremlx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "bb89e00e44d1388766dd65f5a68442a8852b32baa5a7ce3d8fba51576b61ee68"
-    sha256 cellar: :any, arm64_ventura: "41cd9939c0ea44b8ef299cbe88ac5b56ee4ee0acb417518e924e69b69cb1f361"
+    sha256 cellar: :any, arm64_sonoma:  "0e185609327d3f593e7d98217d5aae908549a196be5bb95078a34c78e5a00f8b"
+    sha256 cellar: :any, arm64_ventura: "80338f07f7f6fd1d0f5a261607f1a08dcc1908e0c604e0af08625f2c7f09ba42"
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on xcode: ["14.3", :build]
   depends_on arch: :arm64
   depends_on :macos
   depends_on "python@3.12"
+
+  # Update to GIT_TAG at https:github.comml-exploremlxblobv#{version}mlxioCMakeLists.txt#L21
+  resource "gguflib" do
+    url "https:github.comantirezgguf-toolsarchiveaf7d88d808a7608a33723fba067036202910acb3.tar.gz"
+    sha256 "1ee2dde74a3f9506af9ad61d7638a5e87b5e891b5e36a5dd3d5f412a8ce8dd03"
+  end
 
   def python3
     "python3.12"
   end
 
   def install
-    args = %w[
+    ENV.append_to_cflags "-I#{Formula["nlohmann-json"].opt_include}nlohmann"
+    (buildpath"gguflib").install resource("gguflib")
+    args = %W[
       -DBUILD_SHARED_LIBS=ON
+      -DFETCHCONTENT_SOURCE_DIR_GGUFLIB=#{buildpath}gguflib
       -DMLX_BUILD_BENCHMARKS=OFF
       -DMLX_BUILD_EXAMPLES=OFF
       -DMLX_BUILD_METAL=OFF
       -DMLX_BUILD_PYTHON_BINDINGS=OFF
       -DMLX_BUILD_TESTS=OFF
     ]
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    env = { PYPI_RELEASE: version.to_s }
-    env["DEV_RELEASE"] = "1" if build.head?
-    env["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.#{MacOS.version.minor.to_i}" if OS.mac?
-    with_env(env) do
-      system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
-    end
+    ENV[build.head? ? "DEV_RELEASE" : "PYPI_RELEASE"] = "1"
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = "#{MacOS.version.major}.#{MacOS.version.minor.to_i}" if OS.mac?
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
   end
 
   test do

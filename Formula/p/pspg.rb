@@ -1,19 +1,19 @@
 class Pspg < Formula
   desc "Unix pager optimized for psql"
   homepage "https:github.comokbobpspg"
-  url "https:github.comokbobpspgarchiverefstags5.8.4.tar.gz"
-  sha256 "64e25d5ae42a84d6e19985002b2006cc553e9d1a3a083edd8ab77be6c657a1ea"
+  url "https:github.comokbobpspgarchiverefstags5.8.5.tar.gz"
+  sha256 "c3ea7ed13bea1742b3619bce2e9bfd076e600c4db6b3d9bdb4e7469027766812"
   license "BSD-2-Clause"
   head "https:github.comokbobpspg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "685c70b9d747b7c18618613d462ad69135c61469ffbd63fedb0e88997cb5d286"
-    sha256 cellar: :any,                 arm64_ventura:  "833e1932221a58cf99e1cb5d5eb38a67e0f11ce34bb6e134ab5b68b2f4c855e1"
-    sha256 cellar: :any,                 arm64_monterey: "6891aa83048d0cc3b30567258394148ddab33eeed571d72e8c08c9d5659dccf3"
-    sha256 cellar: :any,                 sonoma:         "ac99399ef2cf800911e7397bd501e96876782db28653f7f50b10284161ff805c"
-    sha256 cellar: :any,                 ventura:        "e7721faa3d99fa05eda796483fe7f95dcf78b14557f7946d1b9fcf4f2fa405e3"
-    sha256 cellar: :any,                 monterey:       "4cf847052819acb53ee839cf520162717348f8c8edc5c06edad26ec08ede1055"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23dc67f7251847bc5f273310df45cae3229721781514746289689f9ba86ebc44"
+    sha256 cellar: :any,                 arm64_sonoma:   "6c97bf3b7c0584f387ed28cba374caafad154544b0453360f377849a801acc33"
+    sha256 cellar: :any,                 arm64_ventura:  "e032c7f04d7afd76454471959d1030dd07e98c687e4a6c4b0a1849cfd21f0d60"
+    sha256 cellar: :any,                 arm64_monterey: "fa96560920b99448a0c9977444261419c1114c23394afb08903c258748a6f9e6"
+    sha256 cellar: :any,                 sonoma:         "e9420df0dd1441a33f114f27c06cff3d957aee2e1fa23eddb9ddbe91bfeaec31"
+    sha256 cellar: :any,                 ventura:        "a63b5a3cba3bef3e24e8948f64c8f14b947f8237d51f86350039d7d25474177c"
+    sha256 cellar: :any,                 monterey:       "bff94d603fa73e74b7d25dea597278d8d647e7aaf49e6054d5b9c9a4ce5b4ff6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a44a85e01453bfd1eae61b3d678babe31b1ae5e281f8f91db0b46f64a8e1c25"
   end
 
   depends_on "libpq"

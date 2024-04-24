@@ -4,17 +4,17 @@ class Soapyrtlsdr < Formula
   url "https:github.compothoswareSoapyRTLSDRarchiverefstagssoapy-rtl-sdr-0.3.3.tar.gz"
   sha256 "757c3c3bd17c5a12c7168db2f2f0fd274457e65f35e23c5ec9aec34e3ef54ece"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.compothoswareSoapyRTLSDR.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "67a24a0b9ea8b7e000cb5b29b9a84048268c31e621a2c406b8d4bcaff94d08d5"
-    sha256 cellar: :any,                 arm64_ventura:  "8b8e0295ac33eed6289a6a14127c7db8adf2c982bb12fa39cf13e527137bb144"
-    sha256 cellar: :any,                 arm64_monterey: "c1da93795e2bbf36a23cef4c88894aaf13c110b35f76644090d9d6d1b112f82f"
-    sha256 cellar: :any,                 sonoma:         "9ad8d51a7017676bd4a86b01de233c3e1543e0e63e92bd49a317f249a2d33734"
-    sha256 cellar: :any,                 ventura:        "53587da93c3612d82b40ac515592fd444ec488db1aa29807352afdf9bcc67909"
-    sha256 cellar: :any,                 monterey:       "0fc3c58bdaef48cf10e4853faa145ed4e3ddb7d9cdff82b27398ad26d7ffd521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac50a89b70e5d89d11d48ba05f19ba435df4a9d3c90fad9ab4d31e08efe6eb2f"
+    sha256 cellar: :any,                 arm64_sonoma:   "3b758a501acd8918eddee8cd29669fdbfecb4bfb1c0a1363290ff2534dce9ffe"
+    sha256 cellar: :any,                 arm64_ventura:  "a2deb76bc7882fd8cdc38c11408c0228a99ae91e8e2165ccd27c4fc1aaa908ff"
+    sha256 cellar: :any,                 arm64_monterey: "2968a2967fc49780b5c5a7f0278bb38f7f13f424413389e05a42e807682e27db"
+    sha256 cellar: :any,                 sonoma:         "984fedf5e1b8712bacc86a3e2fcb225233dbd751955e17f61896cdd8cb811cb5"
+    sha256 cellar: :any,                 ventura:        "24c80a7bae5a8ff939c51914fd86ec146b9f8f03f274cf5c4d428ff6273d4f18"
+    sha256 cellar: :any,                 monterey:       "3ab1e0c54d417347e2439daf45f6859f2669fcfbd8fa061cc18741614fc7cb2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4169428867a8b2d9fa11b6f601c735b8c2d5ffa0f46d3289cd1d1f58dfea6dc"
   end
 
   depends_on "cmake" => :build

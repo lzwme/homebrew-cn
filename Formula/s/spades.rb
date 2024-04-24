@@ -3,10 +3,24 @@ class Spades < Formula
 
   desc "De novo genome sequence assembly"
   homepage "https:github.comablabspades"
-  url "https:github.comablabspadesreleasesdownloadv3.15.5SPAdes-3.15.5.tar.gz"
-  sha256 "155c3640d571f2e7b19a05031d1fd0d19bd82df785d38870fb93bd241b12bbfa"
   license "GPL-2.0-only"
-  head "https:github.comablabspades.git", branch: "spades_#{version}"
+
+  # TODO: Remove stable dependencies and fails_with in the next release.
+  # Instead, the head dependencies should be used everywhere.
+  stable do
+    url "https:github.comablabspadesreleasesdownloadv3.15.5SPAdes-3.15.5.tar.gz"
+    sha256 "155c3640d571f2e7b19a05031d1fd0d19bd82df785d38870fb93bd241b12bbfa"
+
+    depends_on "python-setuptools"
+
+    on_macos do
+      depends_on "gcc"
+    end
+
+    fails_with :clang do
+      cause "fails to link with recent `libomp`"
+    end
+  end
 
   livecheck do
     url :stable
@@ -21,25 +35,24 @@ class Spades < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3889b1e2c9a0a3f08f9e478cf370e078524fd2155150af7431866f4fca7c0557"
   end
 
+  head do
+    url "https:github.comablabspades.git", branch: "next"
+
+    on_macos do
+      depends_on "libomp"
+    end
+  end
+
   depends_on "cmake" => :build
-  depends_on "python-setuptools"
   depends_on "python@3.12"
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "gcc"
-  end
-
   on_linux do
     depends_on "jemalloc"
     depends_on "readline"
-  end
-
-  fails_with :clang do
-    cause "fails to link with recent `libomp`"
   end
 
   def install

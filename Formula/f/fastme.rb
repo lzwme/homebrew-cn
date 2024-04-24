@@ -11,29 +11,26 @@ class Fastme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f6cf6778bd27fcd83e6564b82d665ee0167ca0f2f6124ff9bb856bed919f186f"
-    sha256 cellar: :any,                 arm64_ventura:  "2fd457f0c0d96cca6a317824fb8feb6beb3ff7f0af1592f957e405e69ef54014"
-    sha256 cellar: :any,                 arm64_monterey: "e7530d4c95fba744512d6855a3c7fe472530274842a0e32b36fef471b5e36905"
-    sha256 cellar: :any,                 arm64_big_sur:  "52c11335206aa05d8be9dc67fb4b13bd2fffa40d0bf6cefcb68ac11e29a42864"
-    sha256 cellar: :any,                 sonoma:         "c99750609993658ced26d9af23cc4bae1cee0fb02d8a76003a997a33d1ca9735"
-    sha256 cellar: :any,                 ventura:        "60b489e83afeca87e9977df7d857d0f89fa229a042726a8c45c8711a9f295f95"
-    sha256 cellar: :any,                 monterey:       "fb8ceaba186e055830afb68ecab9a13d1da3e067a6d3043fcddcd193c4a72026"
-    sha256 cellar: :any,                 big_sur:        "6e2d00da0651530516a3e2ed929325f70af957e4d54ca522ca6601df256170bd"
-    sha256 cellar: :any,                 catalina:       "7554de7489c8f3c360b8ab09641f48e66638d1b8472dddbede8c017a1552cb25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b4189a84d30c562933f974b932eccadd0d18115bdafa12241f0207ddd5c2d7d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6a48e0909778d1439c1e582406533caf6be960f927ab8dc1fd932ca8f266c5b6"
+    sha256 cellar: :any,                 arm64_ventura:  "cdc10bc105778a517f7072abccc2b5f7e743230f944c2ef7ec80cf949dbdf208"
+    sha256 cellar: :any,                 arm64_monterey: "897103ed06501dc198084a1a2f9ddab6a6cf65f2662f2c76060cc328c6738a75"
+    sha256 cellar: :any,                 sonoma:         "c39feda27c7e0280a7ad83c8426d6417ef33d9c3cc2a322a5a2c234f754ae5b8"
+    sha256 cellar: :any,                 ventura:        "819551b354f63fbf7ed7c93e427352457f966a67abdf67d78bba11ac6a6e8991"
+    sha256 cellar: :any,                 monterey:       "561643936ba17bc31cf1a62f250edc50b4d438c1628a90c3938fe36ed428dd6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dca5ecc7fec2a963b3ee5239a65e4efc836500378eaad4d65fe48f07168095e1"
   end
 
   on_macos do
-    depends_on "gcc"
+    depends_on "libomp"
   end
 
-  fails_with :clang # no OpenMP support
-
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    if OS.mac?
+      ENV["OPENMP_CFLAGS"] = "-Xpreprocessor -fopenmp"
+      ENV["OPENMP_LDFLAG"] = "-lomp"
+    end
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

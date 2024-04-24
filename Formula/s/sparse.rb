@@ -25,10 +25,14 @@ class Sparse < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c282a77e53c828abe22a69af0b1dd9cb124b333344f9be1b0f0f3d0a55a3fb0"
   end
 
-  depends_on "gcc" if DevelopmentTools.clang_build_version < 1100
+  on_macos do
+    depends_on "gcc" if DevelopmentTools.clang_build_version < 1100
+  end
 
-  # error: use of unknown builtin '__builtin_clrsb'
-  fails_with :clang if DevelopmentTools.clang_build_version < 1100
+  fails_with :clang do
+    build 1099
+    cause "error: use of unknown builtin '__builtin_clrsb'"
+  end
 
   def install
     # BSD "install" does not understand the GNU -D flag.
