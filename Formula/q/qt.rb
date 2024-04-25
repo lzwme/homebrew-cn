@@ -14,6 +14,7 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
+  revision 1
   head "https:code.qt.ioqtqt5.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -24,13 +25,13 @@ class Qt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c87b80d1ef2b6349ada22959c14eae9f5e0bcf0ee3385f888dd1bbe6ecb7d70f"
-    sha256 cellar: :any,                 arm64_ventura:  "38e319f624625d108938ca0ba145bb6f85d8f83855779298d538018ab054ac6c"
-    sha256 cellar: :any,                 arm64_monterey: "6c213a3f53b3489c0e2b5119f33eea3553a76fae1ea561e023a84d565bea067c"
-    sha256 cellar: :any,                 sonoma:         "8537e891808bccd4ea1b273018a29464a9285ed907458498368d93828c097c62"
-    sha256 cellar: :any,                 ventura:        "aa035263156e9fd347ce65c16b5a415928ecefcaebeca9895626a814d4befa31"
-    sha256 cellar: :any,                 monterey:       "51aae7b8dddd0859dd1b26b080ba847713b3d21bd452e127a347995919c1640c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d31639aa9b07a3475673d051e0b847d4a79c90b9858d90a1073b21202579c863"
+    sha256 cellar: :any,                 arm64_sonoma:   "cf3871fc01cfdde43ad7352803291a5b680d05b2f8c2653ab5f79c498a15f1b5"
+    sha256 cellar: :any,                 arm64_ventura:  "d7fa2aac662c9f25e8770b3ab2d5c72802304c46cdd5a8fce8ad93bffa9388b3"
+    sha256 cellar: :any,                 arm64_monterey: "fe6ab103f6afb70dff45c8eccdcf4a47fd1ec95530ea7a2b338990451975578d"
+    sha256 cellar: :any,                 sonoma:         "717760d77542ffaf69199d69ef15de96c711ab088a4528ce51c94d541d233495"
+    sha256 cellar: :any,                 ventura:        "fbe23a62ef1968615988cee985e7aa1e075295132869ebc90efd3e8a5f418863"
+    sha256 cellar: :any,                 monterey:       "bc9a8c39a4dd5c1fd36523ee6109c63881db9b6d438b2eb85949582506ed2af8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "705216c67f0f0c4d712311bfb1ce4dc2cec95aa1094fc6d42596c22f966faa55"
   end
 
   depends_on "cmake" => [:build, :test]

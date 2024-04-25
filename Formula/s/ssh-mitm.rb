@@ -3,6 +3,7 @@ class SshMitm < Formula
 
   desc "SSH server for security audits and malware analysis"
   homepage "https:docs.ssh-mitm.at"
+  # TODO: Remove `setuptools` from pypi_formula_mappings.json in the next release.
   url "https:files.pythonhosted.orgpackagesdc15b3b4189bcd5ba6a86e65d72689a980eb66a67a4a6bccdc1639b9251cd29assh_mitm-4.1.1.tar.gz"
   sha256 "db61c3d33e4515bde82118e9f62dd3d25dbf35718005af16b30316dfa0be7b4f"
   license "GPL-3.0-only"
@@ -115,11 +116,7 @@ class SshMitm < Formula
   end
 
   def install
-    # Multiple resources require `setuptools`, so it must be installed first
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resource("setuptools")
-    venv.pip_install resources.reject { |r| r.name == "setuptools" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do

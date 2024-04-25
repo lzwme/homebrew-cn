@@ -1,18 +1,18 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https:github.comaziontechazion"
-  url "https:github.comaziontechazionarchiverefstags1.19.1.tar.gz"
-  sha256 "0a6c84ba421b16ce4c98521d17b6b63689d3d16cd2d6e379574a10cf01e0f9dd"
+  url "https:github.comaziontechazionarchiverefstags1.20.0.tar.gz"
+  sha256 "b95db9ef531d4def43b1f3cf862fb0fd69d2fe881ed78366f4a3a7fbd1944af3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cbd8e1a42324d7c943e9b2d8c2d20899da574917bbbab5f2b5919808698d5205"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2b74cb283218887d69725f017de7472c849061f1e5db10abcb992138ff39e21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "204836fdc659eea7a3a54e18d3a70600ae9a3bc9d4d3933682d696880acb05b4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eb78a4c9c6d22dc071ccd1cc3fb696b23f62aa18fe487734161068419bc420f7"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb167a37945190a5e7fe1f23668232887fa0390759fa82f33fab127ac727ec29"
-    sha256 cellar: :any_skip_relocation, monterey:       "7bae52f7151032de518f1f1a1edf2ed1863e293ef37a00a471e3759511d231ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "364406eb185a071c9f5f7a0ad6c9bb64a64f9a3acf66f01109c5d7c6b0920480"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b6e01e223ba8d5639c1929d6a0fe733da1c2d7692e829852de6c3e416681b2b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ca17dbf677f8f5d17dfe5f637c3dec90da164dd0130501b0b6fd6094a6a58f1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b7ed6e9ce375226c0893b1c3856a15cc4efda49c3fde5e41289298e00f15fb1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8cd42ecd342755b2b9e2e2f51b995d59ae6c4e8c32e398d0025af51be292ee95"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e7d3a12fe4ea85291b86be6f104672b5b612a5ad2569fc10c63d274b087e5fb"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab42ba8042ed7a5aca6622c2321d3ce79412d42acb91d8a816dec3e913ada01f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "606e1471e4fb848e917301bf38f98c0a35f378ffe2a4aaff88eaa1f003b867e8"
   end
 
   depends_on "go" => :build

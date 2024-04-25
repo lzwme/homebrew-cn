@@ -1,20 +1,19 @@
 class GitExtras < Formula
   desc "Small git utilities"
   homepage "https:github.comtjgit-extras"
-  url "https:github.comtjgit-extrasarchiverefstags7.1.0.tar.gz"
-  sha256 "e5c855361d2f1ec1be6ee601247153d9c8c04a221949b6ec3903b32fa736f542"
+  url "https:github.comtjgit-extrasarchiverefstags7.2.0.tar.gz"
+  sha256 "f570f19b9e3407e909cb98d0536c6e0b54987404a0a053903a54b81680c347f1"
   license "MIT"
   head "https:github.comtjgit-extras.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "056792c05a926101be794b3bba82fe69e29fc4425b90b9d35e626f661905aa34"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "056792c05a926101be794b3bba82fe69e29fc4425b90b9d35e626f661905aa34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "056792c05a926101be794b3bba82fe69e29fc4425b90b9d35e626f661905aa34"
-    sha256 cellar: :any_skip_relocation, sonoma:         "056792c05a926101be794b3bba82fe69e29fc4425b90b9d35e626f661905aa34"
-    sha256 cellar: :any_skip_relocation, ventura:        "056792c05a926101be794b3bba82fe69e29fc4425b90b9d35e626f661905aa34"
-    sha256 cellar: :any_skip_relocation, monterey:       "056792c05a926101be794b3bba82fe69e29fc4425b90b9d35e626f661905aa34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d2fe250aa7a848dc82c8fb443db5767c70abbc9ec45de4c0c0e938c620c5319"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce35fce3ffa8640beebbbc77f338d91e4f90c7111e3f4cd529eeba2969f9e29b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce35fce3ffa8640beebbbc77f338d91e4f90c7111e3f4cd529eeba2969f9e29b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce35fce3ffa8640beebbbc77f338d91e4f90c7111e3f4cd529eeba2969f9e29b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ce35fce3ffa8640beebbbc77f338d91e4f90c7111e3f4cd529eeba2969f9e29b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ce35fce3ffa8640beebbbc77f338d91e4f90c7111e3f4cd529eeba2969f9e29b"
+    sha256 cellar: :any_skip_relocation, monterey:       "ce35fce3ffa8640beebbbc77f338d91e4f90c7111e3f4cd529eeba2969f9e29b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7167b10ce60d43bcde34c76cd8f1aec92d5d98d05f93e95b98fc140bee0d7b86"
   end
 
   on_linux do

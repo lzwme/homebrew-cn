@@ -1,22 +1,19 @@
 class Cassowary < Formula
   desc "Modern cross-platform HTTP load-testing tool written in Go"
   homepage "https:github.comrogerwelincassowary"
-  url "https:github.comrogerwelincassowaryarchiverefstagsv0.16.0.tar.gz"
-  sha256 "672981232e2ae859f831de5d3e5a9f0c749739bcc41c0b17d511ca186ff56b93"
+  url "https:github.comrogerwelincassowaryarchiverefstagsv0.17.0.tar.gz"
+  sha256 "c94af9c52dd4eb5014da7f12168fcaaa11289443ef13b97a23b2cbdb470b713e"
   license "MIT"
   head "https:github.comrogerwelincassowary.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "95cc38116cb5d9c779544089e3379fda9951172643174b9e70d189a41793d185"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a7fa7dd4130946381ec6fae85f04e7584ddc52563ad2ff61670613909f1f53b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36b12418eaf761da0ed6592e46a0ad78ed781fbc46fa3abec1123b36d3ec0985"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60941c6169e96da32bd6de8db7a4071da6dd3beb7feeb484595d365a313ef387"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b4eea4096b612ff8bc417df516c963c50ec54a4b67488292780e0fea637b4a93"
-    sha256 cellar: :any_skip_relocation, ventura:        "86be507a0d8efe77533d1bfd9d1fb6011b42f2de3d63ee48183bc265f7a2b582"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3e41c09597e682425d016c56a1599cb8c60426bf5d13ee33636b94c3eea38e4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5d6d2762f20c5872189c16444b9d7933a7d6c90e9fc667fa6f79fd1047652d78"
-    sha256 cellar: :any_skip_relocation, catalina:       "170d7c5338973244e7cb0fb14643855282999d85000b7eefbd1b91d876103035"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29d378796b909ede67c6aedac411fc4bc533c57a72a292b84d9f863b8259f43c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da17173ae9736a4460e2fa1286ec5f93e83cc565f149095ac8b5675cd73ea44b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63022a7afe20a421a3db5cd6f8fbb26f07334ee09528cb54e06015a34dd3c717"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "037d14633d3862baa5512ad48f32077fbdfeb9e7d758899560d2a545b9ab47eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "857154391f4800d9d72612b2055425165ba1c2649f75d6838075e70270529f97"
+    sha256 cellar: :any_skip_relocation, ventura:        "82128a2992ba84b03f089df815af6c99cc447a7e0d7e923f7d8a961deba3e8c2"
+    sha256 cellar: :any_skip_relocation, monterey:       "88eee18c92b74b891c779f69408bd8f452e77f38e28c346f5c6714e78dbc582b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6076fd6bd9e1ff5d04a07205b03f1d6d7d3e5bafef6aedec91e776b180c5c564"
   end
 
   depends_on "go" => :build

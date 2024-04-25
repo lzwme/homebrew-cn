@@ -1,19 +1,19 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https:github.comastral-shuv"
-  url "https:github.comastral-shuvarchiverefstags0.1.37.tar.gz"
-  sha256 "e6e68d7453b16877954f29ffcd9fcd09c8c56b98bfba0312afa75c4137c70503"
+  url "https:github.comastral-shuvarchiverefstags0.1.38.tar.gz"
+  sha256 "4dc144df5ee64c2c02a55d4115af09815ee1ef5d364662694fae7f9f085e94fa"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comastral-shuv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3355f45f128a4462b21911ceac5f5f9614b83a064c3fb2420a8fb554f57c380a"
-    sha256 cellar: :any,                 arm64_ventura:  "8a3b48730f94f97fead7d705634f0175109d83d6a0bc7ee867d336dd03091ea5"
-    sha256 cellar: :any,                 arm64_monterey: "943a5a978b4ecb8144c5d5e02bf9efc043916ad2546e08a99b0e6a4d1ca8aee0"
-    sha256 cellar: :any,                 sonoma:         "17653b97db88dd1e9a695b17d70774196c627b7bce066d0d85baca4bdf0b03f6"
-    sha256 cellar: :any,                 ventura:        "a2828eec5ed752a7643c1b50664b7078c695c49e7bb28903fbfa634471aa2502"
-    sha256 cellar: :any,                 monterey:       "3c6a65852513337894d165546c268bb2e4f2d6e32cd3e9f914e3636f47cdbca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dc25173137b2f3b03e5f91a30f7f4882d4eabb3819ac6a16f34a1a3150f14f0"
+    sha256 cellar: :any,                 arm64_sonoma:   "a4458c848c3626656fa9d8ff25ffc13733e759f57a8703b35a8d65654959c0ee"
+    sha256 cellar: :any,                 arm64_ventura:  "33985309235fa216916be43968a3f27dfb79cccc96a5aeec1b972e4b5b2c6031"
+    sha256 cellar: :any,                 arm64_monterey: "588fa09a6817b6d3e5a3e14af978162806ab7d39dde76a8c81f1745d114f4371"
+    sha256 cellar: :any,                 sonoma:         "139d4d52af9a30fcf7ea12d4301fe92316ed66bcec9c6e6622a1da2d01ba97a4"
+    sha256 cellar: :any,                 ventura:        "360fe08efae8cbac4a014d0ec76ba066bbc730bdb45038d906302ed10eca4f91"
+    sha256 cellar: :any,                 monterey:       "8f0a31ac0ececba051b02dd9994f3c467104a7d826e971246ae86079fc314abc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7ee5956cf60d5800519b6fde18f46a8c4850937de622fbb026416be6417694e"
   end
 
   depends_on "pkg-config" => :build
@@ -22,6 +22,12 @@ class Uv < Formula
   depends_on "openssl@3"
 
   uses_from_macos "python" => :test
+
+  on_linux do
+    # On macOS, bzip2-sys will use the bundled lib as it cannot find the system or brew lib.
+    # We only ship bzip2.pc on Linux which bzip2-sys needs to find library.
+    depends_on "bzip2"
+  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

@@ -4,6 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v11.0.1.tar.bz2"
   sha256 "3f66bce069ee8bed7439a1a13da7cb91a5e67ea6170f21317ac7f5794625ee10"
   license "ZPL-2.1"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,15 +12,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c45756cb14bc20bdab5da3d0b3d2905f78515fad7b3e177bee3f01f7aecd6644"
-    sha256 arm64_ventura:  "ebe4ec33ed811413153bcd56381440261abcc4edcbeb2ff08a15ee357da0f1ce"
-    sha256 arm64_monterey: "681fe92f7519de5c736b4810f22c1d16c196ac787c7de951365aea73c974b40a"
-    sha256 arm64_big_sur:  "79bfe5da00414bd0959a273492a059f21f4c3ffc04bc15a26a925866a016638e"
-    sha256 sonoma:         "7e72789298e04f227e5d76c356874774a1d712475cfa850ba00c5750fed11751"
-    sha256 ventura:        "43c897a1bcb227a373f6caf50036245dc7dbe1888f6f2b6919d758f56a4d9a96"
-    sha256 monterey:       "fe84e18ccf9867602823df481a7e13acfbeb1907bc2f7982bb1055b04f133631"
-    sha256 big_sur:        "a08fef246cd50141454068976ad8cd91d6ba87f7944221ca3fa875aff6978fd8"
-    sha256 x86_64_linux:   "ed0e3ad639d4c7754beb5943b5b5dc0e806005a14c2aee5230cd5d114dc4f9a8"
+    sha256 arm64_sonoma:   "23bc143dd67813633809b4c3e4dc55e3df8ac5caf0a46c907e5ee4144d8ba795"
+    sha256 arm64_ventura:  "8f7d64046159f3beec798e3391c51e67920ebc99ee2b1a8252df8682d84c8fe6"
+    sha256 arm64_monterey: "17600993b50aa78822a26f89d2114ed66af8a971283eac647f71fbfa733df115"
+    sha256 sonoma:         "e8479418baa407eacb531d7ef5d68cc84b232e83763a0d67f60fc5d51de8d5c5"
+    sha256 ventura:        "74e70a471992847885d038bd9d3676f6b46578feee50ec5c4cfbc1a536e76aca"
+    sha256 monterey:       "443b5cf4c95ea974e4f856c0e0f550adf5cf7c3232728fe79fe45614a43416f1"
+    sha256 x86_64_linux:   "09a7471db743ad24d96de7cd826df1c0b126e5519ff0119db92edb5ddd1c3ede"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -40,6 +39,18 @@ class MingwW64 < Formula
     url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
     mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
     sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
+
+    # Backport fix for ctype build errors with Xcode 15.3
+    patch do
+      url "https://gcc.gnu.org/git/?p=gcc.git;a=patch;h=9970b576b7e4ae337af1268395ff221348c4b34a"
+      sha256 "968bfcb58f75d889470f2f815787f6aa254fb43f1e5516e04f577dad22259905"
+    end
+
+    # Backport fix for libcc1 std::vector build errors with Xcode 15.3
+    patch do
+      url "https://gcc.gnu.org/git/?p=gcc.git;a=patch;h=5213047b1d50af63dfabb5e5649821a6cb157e33"
+      sha256 "0d36d0d5556aefa59dbedf821f5c9dcda940a9c6f92cb3509423f524fd93351a"
+    end
   end
 
   def target_archs

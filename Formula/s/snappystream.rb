@@ -4,20 +4,17 @@ class Snappystream < Formula
   url "https:github.comhoxnoxsnappystreamarchiverefstags1.0.0.tar.gz"
   sha256 "a50a1765eac1999bf42d0afd46d8704e8c4040b6e6c05dcfdffae6dcd5c6c6b8"
   license "Apache-2.0"
+  revision 1
   head "https:github.comhoxnoxsnappystream.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c1c594c5ebf0ae7e7341f7fb3cf380546b397dcc3755bf784e5b6061341646a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f548979a18dc5f812f008e189bcc86ce1db4d12297eed756f70f2cebb0ad8db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f0621fed569c3f1f467fb5b89a1727d02dd9f069eac22dd662750764a34ad40"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4723ca8cfbd115326740f631b84db163cba902c1233c98e0b413a4250c228692"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9f50710b7ea9951c7c3e4a7c17ad090a4219e7527148997c96fa126eb70933e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "95271f76e12095cab04b34d0fc977a63ebae368837061cd034be543d1eed6733"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c5ef41496ec66bddc4e850801c848886a096637917b178b5486f7b04e246fe3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0259933ab01a0edf8162f901820728e9f36e0244e6dc34aa8de64caf95247bcb"
-    sha256 cellar: :any_skip_relocation, catalina:       "083a4297326a9171920d68c6f0d93891d1cef8971546efd0293360b8dfc4e564"
-    sha256 cellar: :any_skip_relocation, mojave:         "f768ccd06fd8d1cceb9905d71d7be38b55c3d2797df8d58a4f5528f22144db6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4647e986c27d16e41d5636d0d14b096f09a69e446e6cebf2715e2de88c579527"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3e452bf6ee2fb64d89388ac99d1786218bad625c6fc71f0cb4284f57bf150c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c92c2f15283870584d9fe49062734d66b6c1db1f10bf018249c3a7cd0f9110f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e0352aaa68c6373355d22f3aa92fb056077439b26869bd317076176aea7bcab"
+    sha256 cellar: :any_skip_relocation, ventura:        "87329a4191cefc04c19ae16543101a5d94336812ede1047c34e52db7ff2a4006"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d58d7dd0573099e572969f5d38c821317171db8de851d0c5d7eb56d46ac54ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5689e64e2ccf991d92a2adff2eef8b2ac32490467ce64bc09e93cee407b60d8a"
   end
 
   depends_on "cmake" => :build
@@ -51,8 +48,8 @@ class Snappystream < Formula
       }
     EOS
     system ENV.cxx, "test.cxx", "-o", "test",
-                    "-L#{Formula["snappy"].opt_lib}", "-lsnappy",
-                    "-L#{lib}", "-lsnappystream"
+                    "-L#{lib}", "-lsnappystream",
+                    "-L#{Formula["snappy"].opt_lib}", "-lsnappy"
     system ".test < #{__FILE__} > out.dat && diff #{__FILE__} out.dat"
   end
 end

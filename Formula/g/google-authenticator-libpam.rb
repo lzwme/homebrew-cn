@@ -1,21 +1,18 @@
 class GoogleAuthenticatorLibpam < Formula
   desc "PAM module for two-factor authentication"
   homepage "https:github.comgooglegoogle-authenticator-libpam"
-  url "https:github.comgooglegoogle-authenticator-libpamarchiverefstags1.09.tar.gz"
-  sha256 "ab1d7983413dc2f11de2efa903e5c326af8cb9ea37765dacb39949417f7cd037"
+  url "https:github.comgooglegoogle-authenticator-libpamarchiverefstags1.10.tar.gz"
+  sha256 "6fe08e7a73ed8f176569c3ad6ad95a5677873e59300d463a2d962c92685a8596"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "9fca52360d304b8eedefb9ea55203072539036ba7bbf876b487a226200c29b2a"
-    sha256 cellar: :any,                 arm64_ventura:  "e481b47a941b3e2035b16ff10190b28de5aaeeb9d7f76ba03bbb778d31352cd6"
-    sha256 cellar: :any,                 arm64_monterey: "c813753b6fa666210c3e03746dc85ba8f96b4f086b32e565eab286919c9bcdb2"
-    sha256 cellar: :any,                 arm64_big_sur:  "5fcc93296963e8ddabb631618dabdb3a09ca296a49c6f86165dbb76199007759"
-    sha256 cellar: :any,                 sonoma:         "49d403a52389854edcd50d883bf343d15fa57d34999af4ad982ac618494a5d05"
-    sha256 cellar: :any,                 ventura:        "d2a5423387b0cf36704fa1428a07e7e2be88ae542ff80e3c12e391fff0da05e7"
-    sha256 cellar: :any,                 monterey:       "a8da4f8e9aa2b2126e3248f103b95734ea640d9c398d23b2ece251cac88c8eef"
-    sha256 cellar: :any,                 big_sur:        "8ce2c19632d8f25e92f0b161fc5f07527f1e6fca35cb1ec97516903d8b254887"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08220804780bdf668e9753dae17442d1c344d6d4f7637e441a9b38f913426f95"
+    sha256 cellar: :any,                 arm64_sonoma:   "c130f29a24800a76d13547a22463c9ad4ee38214760ab53e9f3962b00d4493a1"
+    sha256 cellar: :any,                 arm64_ventura:  "c37f8bf7b51cc2be2491a9d8fceabcbdbf9bea26e401bc36bae438327f3f947e"
+    sha256 cellar: :any,                 arm64_monterey: "7050f1ebe26b7ca31601eef8cab6231b9b0e8856e59d9c47c4d2bce99803e8c8"
+    sha256 cellar: :any,                 sonoma:         "2043b4d7e700e9716e2e20c7289794e3f744db11e33f8ff97531d884f9a78ace"
+    sha256 cellar: :any,                 ventura:        "a08e6a718f468c1ccc218258ad304b57dec57a14a7dd4384c00edcf6ae45548a"
+    sha256 cellar: :any,                 monterey:       "e59df1d930b00b2caf4f03e9b2e9c0a6f0502706e98bb1f2c0873d96ce9f7a32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9a5c7680d94e3ff83b8c38eec4450c933e15d9135b7e270508f500b0ebe920"
   end
 
   depends_on "autoconf" => :build

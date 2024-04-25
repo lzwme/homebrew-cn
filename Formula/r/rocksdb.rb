@@ -4,16 +4,17 @@ class Rocksdb < Formula
   url "https:github.comfacebookrocksdbarchiverefstagsv9.1.1.tar.gz"
   sha256 "54ca90dd782a988cd3ebc3e0e9ba9b4efd563d7eb78c5e690c2403f1b7d4a87a"
   license any_of: ["GPL-2.0-only", "Apache-2.0"]
+  revision 1
   head "https:github.comfacebookrocksdb.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0e351224f85d7395607446df6ab6090980cc361876fef0bebc8616d7bb58fde0"
-    sha256 cellar: :any,                 arm64_ventura:  "928e66cada899a01081204ae43863c9a692a5ddccb15c80cb9012dfa2178b7f4"
-    sha256 cellar: :any,                 arm64_monterey: "4ba6eb79ee4a5143ff0f188bfaa59e821789b725033f0bf5d0575293de4a4fff"
-    sha256 cellar: :any,                 sonoma:         "1f0cb75a9246dda6ae0885708044a1229ef4b2631aca3da2af4d9dd9eeca321b"
-    sha256 cellar: :any,                 ventura:        "291b196a6c27620c5a50205db8b1e951b8ee5c5d0a8f378dc6a7eeec159075c7"
-    sha256 cellar: :any,                 monterey:       "70677c48cc4bf6dfe1803ca172a5ac41998839a5346d3de7dd127ea6a029206f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "216e160255944c553d98fb04a373d35c5e4d73c57900cb43d30a2631b0a9cecb"
+    sha256 cellar: :any,                 arm64_sonoma:   "9cf792c71d5c89990ecc04b853d36a4fb78856ef08d1fb5a205796f6ce1d2daa"
+    sha256 cellar: :any,                 arm64_ventura:  "414e895ec0455abb37149355a425224193202b74d63d3ce2758d92eb69f27986"
+    sha256 cellar: :any,                 arm64_monterey: "4e1093c9ff3e892aad8fda3bcdda81bba2195b851a0b6188a1f9caaf555d4aeb"
+    sha256 cellar: :any,                 sonoma:         "0f7f4a51dae7797df6a23e3cfef9bae27d4767dbeed16a5a8bc1ff45bd8587e3"
+    sha256 cellar: :any,                 ventura:        "aa96dd77b80b8ee7e2d70da1580d951893dae3ec52383c5772359167aadb809b"
+    sha256 cellar: :any,                 monterey:       "d4b042f5e323a9671f2b0364bdfb5a51596458d44551b888243db238b90a179e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ab6e0636dc5e7beaec5d5f93d078a9bdf7abcca9a619e777a911caf03eec4cc"
   end
 
   depends_on "cmake" => :build

@@ -12,13 +12,14 @@ class Mono < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d5692da681816af40c7edba43ef788fc8eefc0dfe5633335f988651194648f05"
-    sha256 arm64_ventura:  "dc0c5854517667749907915e3fb0bacbc1e01831e772fe22974f95249984c00f"
-    sha256 arm64_monterey: "703ae872a253c8aabbbe3df6712e6687d4a03a2d54f240f0e71f2338aef2f74f"
-    sha256 sonoma:         "ad71afa361e5dbafaf277e53a39d5408faaec3d43e2d5d2d1efc67dfb6a0167b"
-    sha256 ventura:        "048f0e67c2e3136f4577d801704e48456d3afad2a6d53e4853255e7beefbb939"
-    sha256 monterey:       "591a82669740d8ac27cbc8167a1bcee320ef12157b4533314b70680a8465bc2a"
-    sha256 x86_64_linux:   "303b7ccd6cfd91cecf7d28d8d6c5f95e1751d0c9343eb8ef6bb8642eb3b743ac"
+    rebuild 1
+    sha256 arm64_sonoma:   "9fee41ae69ff582e63f5f7aadbcafd151e904739f9402d12f9b774a5fae87eb0"
+    sha256 arm64_ventura:  "ee4c4db59ad92b5414af6ddb44e21f46b32be19245dba35c184f15adef6d589a"
+    sha256 arm64_monterey: "788b47ba1b9b6f5ed463913fe0aebedf944004c114a7d29a3b7f779de366998a"
+    sha256 sonoma:         "c245b5d70a6e0b5176c6dc35058797ca1945900a1c9b791dadb01a6df1020744"
+    sha256 ventura:        "1b11efe11ce0f4d943f58dfe23a966941c46639520d0f07257c2f1142098846d"
+    sha256 monterey:       "bd04c2a52a00ad941de846f0f30e979a374460e0c850c63f7585cfb8c89d1657"
+    sha256 x86_64_linux:   "d5a14ba095473a74d4105976fbe1bca5054cc4ae3e1324b879e63f05ab4dcd99"
   end
 
   depends_on "autoconf" => :build
@@ -32,6 +33,10 @@ class Mono < Formula
   uses_from_macos "unzip" => :build
   uses_from_macos "krb5"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "ca-certificates"
+  end
 
   conflicts_with "xsd", because: "both install `xsd` binaries"
   conflicts_with cask: "mono-mdk"
@@ -61,14 +66,18 @@ class Mono < Formula
     # https:github.commonomonopull21257
     inreplace "monoprofilerMakefile.am", "-Wl,suppress -Wl,-flat_namespace", "-Wl,dynamic_lookup"
 
-    system ".autogen.sh", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--disable-nls"
+    system ".autogen.sh", "--disable-nls",
+                           "--disable-silent-rules",
+                           *std_configure_args
     system "make"
     system "make", "install"
     # mono-gdb.py and mono-sgen-gdb.py are meant to be loaded by gdb, not to be
     # run directly, so we move them out of bin
     libexec.install bin"mono-gdb.py", bin"mono-sgen-gdb.py"
+  end
+
+  def post_install
+    system bin"cert-sync", Formula["ca-certificates"].pkgetc"cert.pem" if OS.linux?
   end
 
   def caveats

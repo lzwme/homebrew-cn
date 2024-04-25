@@ -5,13 +5,14 @@ class ApachePulsar < Formula
   mirror "https:archive.apache.orgdistpulsarpulsar-3.1.2apache-pulsar-3.1.2-src.tar.gz"
   sha256 "82270fa4c224af7979d6d4689d7a77742eb3a32a32630e052dc93739a35624e2"
   license "Apache-2.0"
+  revision 1
   head "https:github.comapachepulsar.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "1422e2ca66e52531d8d6757307e1d051a5a613424380b8f2cc5c2cbc8112d90f"
-    sha256 cellar: :any_skip_relocation, ventura:      "db3d30e2d84ccb55eddfdd8989dee651e37bbde90d18491e68d5ca2f7e98ea3a"
-    sha256 cellar: :any_skip_relocation, monterey:     "358819b26436b5b5d949a93c5a48644bf90483d6b53e56ab410ea6bba35ebd67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1c9adade12d3e3364db1b3f7c1823766845e59ee84f98aa2b78214870c8d4c1c"
+    sha256 cellar: :any_skip_relocation, sonoma:       "84d3eaf420f61cf8d8c1f51dbdc1ad6fcacb1b1631dd22b241ced620b2fa4f91"
+    sha256 cellar: :any_skip_relocation, ventura:      "eaca256d0c8f8152e8696142aae0d0aed390adb7ecb7349e2d61c228c38f4f07"
+    sha256 cellar: :any_skip_relocation, monterey:     "b01912fe86d28f7c4be6d79134b80d93829ac0e172e9743f4c96ad1d3ddc4028"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d0a75a7e0c5167a2407a0a20b090eb6859e44374a95ec4c41a468e6627b2a70"
   end
 
   depends_on "autoconf" => :build

@@ -1,26 +1,19 @@
 class Envchain < Formula
   desc "Secure your credentials in environment variables"
   homepage "https:github.comsorahenvchain"
-  url "https:github.comsorahenvchainarchiverefstagsv1.0.1.tar.gz"
-  sha256 "09af1fe1cfba3719418f90d59c29c081e1f22b38249f0110305b657bd306e9ae"
+  url "https:github.comsorahenvchainarchiverefstagsv1.1.0.tar.gz"
+  sha256 "832bcf58037db6187f7327282e347e45627ea617c2e09a9e6d18629e7310fff9"
   license "MIT"
   head "https:github.comsorahenvchain.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9371a7fc0a488a320ce7f2edb8216d73231356e5b62485ba51c793d24a5b47fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10fa45ed19263ad83664ee645c1903d2f4ccd90ff4eb6bcd119785f238457090"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b0a5fa3a01e3e241b4ae293e706dd4017dc6a11be8c0ca441858e8c97e94e50"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a280127849e99bf3313f5d43b7bf1bf38cbffde964ca1c4e3968728b8a52cc8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "beebea36a629154daaf36e71899459b4267eb9744bbd61e1963c9167b2e5dfa1"
-    sha256 cellar: :any_skip_relocation, ventura:        "747395bd5b5f304844923251c84df54fb23e5160aa5b98d40b6aecfb43dc821e"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c39890c7202c7368102ba3eddcbdcf72c479b428d05e72777e9d839a9cb9983"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0e3091b7e3202f68b9bca03aef6df8002048be8e7e6e77be736787e0c7393d7f"
-    sha256 cellar: :any_skip_relocation, catalina:       "a8658954176e96b463565ea6b5c891b3635622c550ca32efb8ee2e3baec30062"
-    sha256 cellar: :any_skip_relocation, mojave:         "3859bb68db413ee3f421351798082c456fbbb82896ef4ca2cdf439cc9d12fdbe"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "0d615620e4b69e41aef92971fc1aa9a586be4f75be7813ef73ace103dd182684"
-    sha256 cellar: :any_skip_relocation, sierra:         "42419c23d7dd363b9232918f69fa4ea01270b6eb4dc9c4b1c4d5170ff920fda3"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "4e34971c35ec6a716995a5e8d491970809bb5ce6c5651676f70d757b4044c834"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "819f762517ccd7edfac02c7fceef30a3554b12de32188219d0a7bb7b32fdb0f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08f5b3cde3d1896f4fca18a13095967ea1d127173e5ee23e780fcc12fd6baf9f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24af1fb8d859658e4cfbc05b3e9fa27dda8e2279c0ea837c690bdd12923687b7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8cc5dc5ec2f1fac17348730ba22508f9ee2bce670312987c2637257f7e852412"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b9ac4877ddba27b20d986e8ade239c4fc12e9b85968d2f07106cbd3f1504a8ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "a3f83b8b0b6ea0236e3474a1e1a2a7d5c931be0bcd95d8f29f5d3b15ffd4e387"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e9696dfc24f702c88cdb3f02fa4d462524d8b3e95cf4eaafd8c315122da9179"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a8253f12f7d1ec624b755a99a0906b501b6dfb4d299ddb552c8a35a397293cc"
   end
 
   on_linux do

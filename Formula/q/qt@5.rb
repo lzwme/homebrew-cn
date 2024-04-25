@@ -9,6 +9,7 @@ class QtAT5 < Formula
   mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.13singleqt-everywhere-opensource-src-5.15.13.tar.xz"
   sha256 "9550ec8fc758d3d8d9090e261329700ddcd712e2dda97e5fcfeabfac22bea2ca"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   livecheck do
     url "https:download.qt.ioofficial_releasesqt5.15"
@@ -16,13 +17,13 @@ class QtAT5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5a9a0a25576ddda303c27173435ba2a14f71d41947e76ebdfa2c66c5f521559e"
-    sha256 cellar: :any,                 arm64_ventura:  "d52a4992e4cbaec9d9790a63f61dd7b4c923caafa96ed459da2de02a5b393a7c"
-    sha256 cellar: :any,                 arm64_monterey: "92870d85d9cc9a38ccbaeab633bcb93be3c024d9fd82cd27c5c6dc773140a6c4"
-    sha256 cellar: :any,                 sonoma:         "7772f5285c915925b26948e735cb6bd9846e4650a1b1b5859212f9dd8e4dcec3"
-    sha256 cellar: :any,                 ventura:        "95f218168a8a4dc142062fd8fad3106e136be0b24600992015b3599884bc2ae5"
-    sha256 cellar: :any,                 monterey:       "1ef9909c4a419c658470b4b77108182f26f3b45c3ea932718cb33ab0cc980cb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f0728d509b474786a20873b9cdc73843c811b8ea8581190e4b5e8fbef211581"
+    sha256 cellar: :any,                 arm64_sonoma:   "3a497f2b6e427f72c52e52e979f655cea54e0d6eddffd1fbf3c4a25bb5eae101"
+    sha256 cellar: :any,                 arm64_ventura:  "a5098835cade678eb6d9193d393c3f7d0cbec5aa4f1833184fba56c13161a097"
+    sha256 cellar: :any,                 arm64_monterey: "02fff8012c9cba1d9a6e79bc500289c79fa1d64b345533b6e5ea5855d322875a"
+    sha256 cellar: :any,                 sonoma:         "5ab138b788d6fa1aeb7f5b1b3c041161efaeb6298771312628a4357fce0dc86f"
+    sha256 cellar: :any,                 ventura:        "2057642d6105bcf0d34c08dc1393be18e41ee36feb5aa48746f7a2d8c7920c28"
+    sha256 cellar: :any,                 monterey:       "f185f54474461f6d408f75a85afb25411b9a06409f2a29b97e3d2e069b7891c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "792f32f138188fca968478186b361ca74b95770afd8066ee19275616d65a6e00"
   end
 
   keg_only :versioned_formula
@@ -322,6 +323,15 @@ class QtAT5 < Formula
       inreplace "qtwebenginesrc3rdpartychromiumbuildconfigcompilerBUILD.gn",
                 "fatal_linker_warnings = true",
                 "fatal_linker_warnings = false"
+    end
+
+    # Work around Clang failure in bundled Boost and V8:
+    # error: integer value -1 is outside the valid range of values [0, 3] for this enumeration type
+    if DevelopmentTools.clang_build_version >= 1500
+      args << "QMAKE_CXXFLAGS+=-Wno-enum-constexpr-conversion"
+      inreplace "qtwebenginesrc3rdpartychromiumbuildconfigcompilerBUILD.gn",
+                ^\s*"-Wno-thread-safety-attributes",$,
+                "\\0 \"-Wno-enum-constexpr-conversion\","
     end
 
     ENV.prepend_path "PATH", Formula["python@3.11"].libexec"bin"

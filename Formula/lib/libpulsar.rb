@@ -5,15 +5,16 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.5.1/apache-pulsar-client-cpp-3.5.1.tar.gz"
   sha256 "d24990757319dfa9c9e5d3263f60105dd9e12ddeaf1396d6b397f87dab2fd7d1"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a08b3483b74be83bc5ccecb061825df782d4f034e39c9fb4cb7c57a6d9a6a1c9"
-    sha256 cellar: :any,                 arm64_ventura:  "21515bff2543c94ae83043cbc4aa8ad0a81adf27cd5a48a0dfb89e42c0e4f94b"
-    sha256 cellar: :any,                 arm64_monterey: "f683513f15b32eddcabc1f7189f996d2e1b529eba88b9d852f765c323754ae6a"
-    sha256 cellar: :any,                 sonoma:         "9de9907d629344d85aea0db2dc90eed47bab34fe7562a4e6e60d8b760db88b20"
-    sha256 cellar: :any,                 ventura:        "2dfbdae8e6b3130179a2306025006d37bab8899906544abbb0da1522cc1a65d1"
-    sha256 cellar: :any,                 monterey:       "dd274f1f6042234cbbe75b40c2f6dded59d38ffdc8e8737a38c26bf93cf1f07d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3447063797b661017795f2a6bc02af991e687614234a0ad864870b5808f83ddc"
+    sha256 cellar: :any,                 arm64_sonoma:   "3fff111a7b587706434cab7912abad51ce873fa2ea2dda118f5935b244cd4963"
+    sha256 cellar: :any,                 arm64_ventura:  "d269e47fe644c6610b7f889dbc0349a52eae2a4539498dac248b73050bc73195"
+    sha256 cellar: :any,                 arm64_monterey: "b17867e7525e48fc192dd2405daa135d35c70fec6e13e50953fb77355cd2cdc5"
+    sha256 cellar: :any,                 sonoma:         "ae47fbc2f5e85f1fcfc53d9f7334663230b8e5188b144b480e83c7dbed8a0d92"
+    sha256 cellar: :any,                 ventura:        "d159bf901ff1d4855d7bda034b744462751543d138f1da83feb0e1fdeef04223"
+    sha256 cellar: :any,                 monterey:       "e0337b7fc58357c45f72843a2767c5e96f60704614545d71dfc77f8c3102b7bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bf3f1bd4618b31ed18a970964638271218d00f302d87dd9d8ededff297af0d0"
   end
 
   depends_on "cmake" => :build
@@ -27,11 +28,10 @@ class Libpulsar < Formula
   uses_from_macos "curl"
 
   def install
-    args = %w[
+    args = %W[
       -DBUILD_TESTS=OFF
-      -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON # protocolbuffers/protobuf#12292
-      -Dprotobuf_MODULE_COMPATIBLE=ON # protocolbuffers/protobuf#1931
       -DCMAKE_CXX_STANDARD=17
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
     ]
 
     system "cmake", "-S", ".", "build", *args, *std_cmake_args

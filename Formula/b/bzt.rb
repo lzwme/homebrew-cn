@@ -253,18 +253,15 @@ class Bzt < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
+    venv = virtualenv_install_with_resources without: "terminaltables"
 
     # Switch build-system to poetry-core to avoid rust dependency on Linux.
     # Remove when released: https:github.commatthewdeanmartinterminaltablespull1
     resource("terminaltables").stage do
       inreplace "pyproject.toml", 'requires = ["poetry>=0.12"]', 'requires = ["poetry-core>=1.0"]'
       inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
-      venv.pip_install_and_link Pathname.pwd
+      venv.pip_install Pathname.pwd
     end
-
-    venv.pip_install resources.reject { |r| r.name == "terminaltables" }
-    venv.pip_install_and_link buildpath
   end
 
   test do

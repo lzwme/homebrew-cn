@@ -4,19 +4,16 @@ class Leveldb < Formula
   url "https:github.comgoogleleveldbarchiverefstags1.23.tar.gz"
   sha256 "9a37f8a6174f09bd622bc723b55881dc541cd50747cbd08831c2a82d620f6d76"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8d18b1cabb2b8e9bcf79655774037cce9f9ea523d8d4c2dcc271bcfb40d06904"
-    sha256 cellar: :any,                 arm64_ventura:  "1d80f7684ef784f83b4f9312434a694c74e58351fd4eaab2641f6ef28bcda5ea"
-    sha256 cellar: :any,                 arm64_monterey: "41f1ceea1e85dafe0552acf94a4903ef45fd54fc63e38c277b7d101c836e5801"
-    sha256 cellar: :any,                 arm64_big_sur:  "377ac4b779d9ac24295b99c5f859dc8f78f473e62a90849f09eeec7a72d872d2"
-    sha256 cellar: :any,                 sonoma:         "7805a087ee6ab40f24e0d8c0c29b6ced89d85ec2b6e0297d0ea93600b9b38471"
-    sha256 cellar: :any,                 ventura:        "4e5b8daba28db15b42a1a6d7c9f1bdc301906ca87889518522e7eb4ba0eb65f5"
-    sha256 cellar: :any,                 monterey:       "3b4ce296ae8732cdec0b9fdc3623a5c12f8739b61c39cdb96be423e8004834be"
-    sha256 cellar: :any,                 big_sur:        "bb5f8bc871e315e4ae36f011052f2b92e35040cc03ef8d448093e7be1bdfe6ac"
-    sha256 cellar: :any,                 catalina:       "299f9004aa344b2ac164fdeee5a077c3e45335f3527cb8f2e67b46acf88b185a"
-    sha256 cellar: :any,                 mojave:         "b4d54e51eef8d5d538830f555561fa4cc5f1b275b45588eae364d79de6b1d716"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c056f3b6a5e2b25d90b57255138ce65796615d0e66d7156821b13ebbe8f836cd"
+    sha256 cellar: :any,                 arm64_sonoma:   "8d31999d036ab81506c70b2e446a4fc62457307a610e9af51538cea0e592fd4b"
+    sha256 cellar: :any,                 arm64_ventura:  "b7ca49e08f08c52f9a2c7f67dbcbd1214ca97023d1173f943d8df0a4dda66c55"
+    sha256 cellar: :any,                 arm64_monterey: "666c5e8c3f01854847176459ee4fc06d3248dfda68e8249b2186777c09cab373"
+    sha256 cellar: :any,                 sonoma:         "98aa66f907f2e279295bb6691302388264f6fc141128703ce4bfd315531815d2"
+    sha256 cellar: :any,                 ventura:        "48d595e1d25c23f2376ba436b3a89913f9babbd0d715f4029d9eff7174923215"
+    sha256 cellar: :any,                 monterey:       "327dd3eac9c6a481c5f7e578f815d6b3f3d912c33e47c4e15dd5ccce85a2bd16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "240f267390c10b75634da1be1bf04e0878819ef79d6d79fb52a4507adb47908b"
   end
 
   depends_on "cmake" => :build

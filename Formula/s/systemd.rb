@@ -1,4 +1,6 @@
 class Systemd < Formula
+  include Language::Python::Virtualenv
+
   desc "System and service manager"
   homepage "https:wiki.freedesktop.orgwwwSoftwaresystemd"
   url "https:github.comsystemdsystemd-stablearchiverefstagsv255.4.tar.gz"
@@ -15,15 +17,14 @@ class Systemd < Formula
   depends_on "gettext" => :build
   depends_on "gperf" => :build
   depends_on "intltool" => :build
-  depends_on "jinja2-cli" => :build
   depends_on "libgpg-error" => :build
   depends_on "libtool" => :build
+  depends_on "libxml2" => :build
   depends_on "libxslt" => :build
   depends_on "m4" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python-lxml" => :build
   depends_on "python@3.12" => :build
   depends_on "rsync" => :build
   depends_on "expat"
@@ -36,6 +37,21 @@ class Systemd < Formula
   depends_on "util-linux" # for libmount
   depends_on "xz"
   depends_on "zstd"
+
+  resource "jinja2" do
+    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
+    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+  end
+
+  resource "lxml" do
+    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
+    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+  end
+
+  resource "markupsafe" do
+    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
+    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+  end
 
   resource "docbook" do
     url "https:downloads.sourceforge.netdocbookdocbook-xsl1.79.1docbook-xsl-1.79.1.tar.bz2"
@@ -53,7 +69,9 @@ class Systemd < Formula
   end
 
   def install
-    ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexecLanguage::Python.site_packages("python3.12")
+    venv = virtualenv_create(buildpath"venv", "python3.12")
+    venv.pip_install resources.select { |r| r.url.start_with?("https:files.pythonhosted.org") }
+    ENV.prepend_path "PATH", venv.root"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}systemd"
 
     args = %W[

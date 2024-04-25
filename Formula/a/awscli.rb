@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.15.40.tar.gz"
-  sha256 "6056cc7ecefff16d3150785854b83813e0cb8db542b8c79d49d26a8a32da8959"
+  url "https:github.comawsaws-cliarchiverefstags2.15.41.tar.gz"
+  sha256 "d99e3176b4986d4d8a7b5930a8a276384ad49535f463f66a73c9fb68b1eab658"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1df94f78c591f51c83e82c975ff4aa78deac8097f1f473581123339bda38dceb"
-    sha256 cellar: :any,                 arm64_ventura:  "5a4b58d63e268ca18283b23a5eccab4b4c3bba0b1e678ec0ca029f3164963595"
-    sha256 cellar: :any,                 arm64_monterey: "33dd8730269dee24fed9107aa2718e926fc89565f9be2e94b2ec36ba51c5526d"
-    sha256 cellar: :any,                 sonoma:         "5e55e254328272c66304e769d554c126f925a0c845efd5030b226fe5da8a6825"
-    sha256 cellar: :any,                 ventura:        "5584f3e82451a08feae500dd8832ec0f1a3df73affa40e7ae64fa15105a4bb74"
-    sha256 cellar: :any,                 monterey:       "ae7e74cdb438dacecb13861875c61abde710c68b3015bd2a4f1b309a5327ee52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64ec47278568347d5e13223afe896bcbfe1b0f95acff907cb2680a9c60e1ace4"
+    sha256 cellar: :any,                 arm64_sonoma:   "b2fcfa92117f14c3a2a7a091100f6c5f969c3368fb47be3e976d3b4d159beaf6"
+    sha256 cellar: :any,                 arm64_ventura:  "f840a216f4aa43ac881d373d07a0408a5735c0e99e4210bafff840141aa7b1a8"
+    sha256 cellar: :any,                 arm64_monterey: "dde42858f3552d388a30e36c3bfa9b11882fe6724e6758ebf2ff698742355656"
+    sha256 cellar: :any,                 sonoma:         "d94c3458d3a85fe3ce3d5560eeeab4c801843911c50a216ea04e8915ca6b529f"
+    sha256 cellar: :any,                 ventura:        "fc6a46bb56435b9177e94664622066068b563f5c483d3437cd4d2659fa9c536f"
+    sha256 cellar: :any,                 monterey:       "ea44d6b571cdfbd92d01e79dddaf5b84a25cd73cfe349a9d10ffedd021c26a30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "472bc32689ce7df413c61896030cb801fa4352d271f4b0ede171b60098c767e8"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
@@ -137,10 +137,7 @@ class Awscli < Formula
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     # The `awscrt` resource requires `setuptools` & `wheel`, so they must be installed first
-    venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
-    venv.pip_install resources.reject { |r| r.name == "awscrt" }
-    venv.pip_install resource("awscrt")
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources(system_site_packages: false, end_with: "awscrt")
 
     pkgshare.install "awscliexamples"
 

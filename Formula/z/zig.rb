@@ -2,10 +2,9 @@ class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https:ziglang.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https:ziglang.orgdownload0.11.0zig-0.11.0.tar.xz"
-  sha256 "72014e700e50c0d3528cef3adf80b76b26ab27730133e8202716a187a799e951"
+  url "https:ziglang.orgdownload0.12.0zig-0.12.0.tar.xz"
+  sha256 "a6744ef84b6716f976dad923075b2f54dc4f785f200ae6c8ea07997bd9d9bd9a"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https:ziglang.orgdownload"
@@ -13,44 +12,42 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "799a1caa052368deb7947441ffe504d8db28fa7b40a8a579d5f2f127fab8216f"
-    sha256 cellar: :any,                 arm64_ventura:  "6f6299f3f2c1f62dd1111678a58ad9f9abd790f14c1d02959da823f00d616183"
-    sha256 cellar: :any,                 arm64_monterey: "cf459782bb991b79c8f30424d63f7d7352d8659756c53c3c0881c7fd20f83198"
-    sha256 cellar: :any,                 sonoma:         "3cd6b970924d7cae4ef2ceb73a3e8572d63ccc96bc8ae8d4b1b6144adcfd9781"
-    sha256 cellar: :any,                 ventura:        "b2ee0ec4088368929a0f36bf40e11a0f5194373abc2c7b763b4f5a75ac9f59cf"
-    sha256 cellar: :any,                 monterey:       "77d35330e2f4699df927993d1d65be6cc3e5d8d89149da1246c14909cca1e2f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88b639b67b1112dff3e10e3e34057ea946d5e72ed246ca74a526d0aeaf786040"
+    sha256 cellar: :any,                 arm64_sonoma:   "b29fd206a2901a98bc54965e635ceeda49b888eb19d232102bd9325e44ea7f56"
+    sha256 cellar: :any,                 arm64_ventura:  "d62fd01d62ff70335248de047a393e02198a64538cc571eb22b732eba1ddcce5"
+    sha256 cellar: :any,                 arm64_monterey: "b236a97dd7e99560f0163bf125d4de32dba12e8128d8721c9e885a4fd396dc9d"
+    sha256 cellar: :any,                 sonoma:         "280268416169c9380803c9a4f09946c19effd120eaf9789432a66a437a41a7fc"
+    sha256 cellar: :any,                 ventura:        "8cb59f37d582014e5d44bed5bfc6bd01bdd26e29266bc5aff202cb4264fd8da7"
+    sha256 cellar: :any,                 monterey:       "6130fb2b4b92efc04f3fc306be13ac72054f51ac0805020a9e54dc01f9a26220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33292b8bb48bc913b72630876cdc1b7e9839a0e99f750a1b2c2f4c8835a64b9a"
   end
 
   depends_on "cmake" => :build
   # Check: https:github.comziglangzigblob#{version}CMakeLists.txt
   # for supported LLVM version.
-  # When switching to `llvm`, remove the `on_linux` block below.
-  depends_on "llvm@16" => :build
+  depends_on "llvm@17" => :build
   depends_on macos: :big_sur # https:github.comziglangzigissues13313
   depends_on "z3"
   depends_on "zstd"
+
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  # `llvm` is not actually used, but we need it because `brew`'s compiler
-  # selector does not currently support using Clang from a versioned LLVM.
-  on_linux do
-    depends_on "llvm" => :build
-  end
-
-  fails_with :gcc
-
   def install
-    # Make sure `llvm@16` is used.
-    ENV.prepend_path "PATH", Formula["llvm@16"].opt_bin
-    ENV["CC"] = Formula["llvm@16"].opt_bin"clang"
-    ENV["CXX"] = Formula["llvm@16"].opt_bin"clang++"
+    # `brew`'s compiler selector does not currently support using Clang from a
+    # versioned LLVM so we need to manually bypass the shims.
+    llvm = Formula["llvm@17"]
+    ENV.prepend_path "PATH", llvm.opt_bin
+    ENV["CC"] = llvm.opt_bin"clang"
+    ENV["CXX"] = llvm.opt_bin"clang++"
 
-    # Work around duplicate symbols with Xcode 15 linker.
-    # Remove on next release.
-    # https:github.comziglangzigissues17050
-    ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
+    # build patch for libunwind linkage issue
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm.opt_lib
+
+    # Work around failure with older Xcode's libc++:
+    # Undefined symbols for architecture x86_64:
+    # "std::__1::__libcpp_verbose_abort(char const*, ...)", referenced from:
+    #     std::__1::__throw_out_of_range[abi:un170006](char const*) in libzigcpp.a(zig_clang_driver.cpp.o)
+    ENV.append "LDFLAGS", "-L#{llvm.opt_lib}c++" if OS.mac? && DevelopmentTools.clang_build_version <= 1400
 
     # Workaround for https:github.comHomebrewhomebrew-corepull141453#discussion_r1320821081.
     # This will likely be fixed upstream by https:github.comziglangzigpull16062.

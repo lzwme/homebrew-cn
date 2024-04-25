@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pubsub messages"
   homepage "https:mcap.dev"
-  url "https:github.comfoxglovemcaparchiverefstagsreleasesmcap-cliv0.0.43.tar.gz"
-  sha256 "dd2f07f1c03af2501afef7a8e85183e98e316041ba33f451898eb04d4f832f53"
+  url "https:github.comfoxglovemcaparchiverefstagsreleasesmcap-cliv0.0.44.tar.gz"
+  sha256 "bb866e9c38656244831f4e569bd31c572a144e4cab9dbc247f19fff6f10a8b73"
   license "MIT"
   head "https:github.comfoxglovemcap.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Mcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "658f02a6448d4a198b02ac575d27988287d8a7c0a477a3ea0afd4bd3b1f94c7b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc235d08b3dc61654f6ca87db0bff1b74e7c04d5d2eee7e26abaa22b147b06d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "07694128ed7e9d469f83d70c56086f23d95e93d9cee9e944956e033e3fda2645"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55bb622c5f5469a843fbc4092ee855594a71cfbb1e91325a7bc5bff3e652b627"
-    sha256 cellar: :any_skip_relocation, ventura:        "609da88424de31291239ac5c40a455c7bfc2d3981718daf51dbcaf014d1b067a"
-    sha256 cellar: :any_skip_relocation, monterey:       "199a6bee05563090df3701dacc3d9a3c95cbceab18ea4971700095d58397da45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8192f4ffc7bf6fad6f5800fe67420263f9c2a74f59a2528cecc2cb8a8c118dc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "90542d3f966b55908a31b70aa85469300e2e733311c2a766606ff7d312ed8945"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd831d471e355763f97484ba754ee9358c7c67bbc88f1c7ee26ce2830641ec5e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9117457868fcdf67d6a0f951a690007875c81d4e34f0fa02b71d5d9710849abc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fa73788e6808a5b7abce0b2d84762ac5ba50ea922e9aace723ccfb4eddf5c3fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "841a0cf4b8e91d08d66db788582fc20f88fd34c9ed97b531458b99ccc9db04e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "df0a98a6be93ada04c0d414cd911dd2d192a540672da6f044d4f089928994843"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3478e1f798fe8bd6d24b7308f414a1928c7ae9e725db79419fcf24d7a9a5080d"
   end
 
   depends_on "go" => :build

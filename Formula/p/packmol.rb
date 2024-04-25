@@ -1,19 +1,19 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
   homepage "https:www.ime.unicamp.br~martinezpackmol"
-  url "https:github.comm3gpackmolarchiverefstagsv20.14.3.tar.gz"
-  sha256 "c70d8dff6f983adb854cf816df3d4a389b5cc724e70a2430b54793051eaaa4e9"
+  url "https:github.comm3gpackmolarchiverefstagsv20.14.4.tar.gz"
+  sha256 "45ec33798d5f10c0aac6046675531a0e98567890c1a76f753450c5fc6b1aaa2f"
   license "MIT"
   head "https:github.comm3gpackmol.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "139b70312b6d049cdcd10f4fb2e3061c670e61b79ac742f8e604f16e2ffe238c"
-    sha256 cellar: :any,                 arm64_ventura:  "bf2434dd3dfeae8f3fc886779f2e89adb5b9a0d19b4b91ad20619a3ed4446ec8"
-    sha256 cellar: :any,                 arm64_monterey: "79688abb1c5de90e70843360881bf6fd37c493e56794e13ac95480d58e9887f2"
-    sha256                               sonoma:         "f952369d3969d66f3866c03fe02d0097bb02d1f812895c932ebe8407b0f439ba"
-    sha256                               ventura:        "cc2b60a0241838aaa459e8686c9d7d619f9c37b8d286f8cd55251ac5417d3d21"
-    sha256                               monterey:       "8688d27d805a9219a1b55f1900517b38540c22b906782466664956a9091f5403"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4c43605cd92c451af726f9fcb0bc58ea32f42de8acc87bbc55baf38b72fa1b4"
+    sha256 cellar: :any,                 arm64_sonoma:   "d3b16a432f027c075f1fd7078db57b6feb1eada927947473146af4876094b9b2"
+    sha256 cellar: :any,                 arm64_ventura:  "c1c3e091d3d7667c3983cfff7cde909e2099832bb4343fb0fbd5fb0a7a4baca6"
+    sha256 cellar: :any,                 arm64_monterey: "c48c02e992d18b5ef28d6a1d4260c2c1664988f9292ee742511f338bb227fe16"
+    sha256                               sonoma:         "fe83dca542e6972cd3e6ca69964f311a55a21b799e46ec1a9a840d1a4788fbfe"
+    sha256                               ventura:        "388131107a818f2bf37273696aa423cec6d2bc899d812611b7912cbea74ec7ff"
+    sha256                               monterey:       "19bc18bc68954cd1b02b2ba6e43e5f89689c7d5dd241423f2eb45db51c20fe0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4d15ae2efa286fcc0c4769a9360423f99329610bd69b456bf089b1957dbdee2"
   end
 
   depends_on "gcc" # for gfortran

@@ -1,29 +1,23 @@
 class RubyAT30 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https:www.ruby-lang.org"
-  url "https:cache.ruby-lang.orgpubruby3.0ruby-3.0.6.tar.xz"
-  sha256 "b5cbee93e62d85cfb2a408c49fa30a74231ae8409c2b3858e5f5ea254d7ddbd1"
+  url "https:cache.ruby-lang.orgpubruby3.0ruby-3.0.7.tar.xz"
+  sha256 "1748338373c4fad80129921080d904aca326e41bd9589b498aa5ee09fd575bab"
   license "Ruby"
-  revision 1
-
-  livecheck do
-    url "https:www.ruby-lang.orgendownloads"
-    regex(href=.*?ruby[._-]v?(3\.0(?:\.\d+)+)\.ti)
-  end
 
   bottle do
-    sha256 arm64_sonoma:   "51e73f05d0971654c1cb062c5d6eec3f26977ade877970ef4f5ff98b031c4eaf"
-    sha256 arm64_ventura:  "52953d12f76fe563c57615b4e84b236fe7a27ec1fcfd52981dd26dd8d5235c42"
-    sha256 arm64_monterey: "4926d6df56a8426bf6fac8eb35c08797c499e3c31ee74105e3ace0db2e323ca0"
-    sha256 arm64_big_sur:  "cfb4c748ea9d6d8d93e7dba7c579648388925076e55cb2f2682af992cfdf247e"
-    sha256 sonoma:         "95f6919252aa8ef15ba4b376d96a192421fa9d42f54481083cabe66256087293"
-    sha256 ventura:        "dd9ea7b06117f1833d32b713f1d6e910a4faffa901defa9dde9caca4f8f6100f"
-    sha256 monterey:       "d65fe8a1b8f789524510c3de2063e3cad8e406bde945f1ab976ee04de551f391"
-    sha256 big_sur:        "35a8757d94631d28ed89d2ba9e5d2e072d6abcd707dd275585e08cb145a189ed"
-    sha256 x86_64_linux:   "d04b41e0aeb4155e22d69dc8fabc8d6fbf09703476b552b3de2de88322ec0654"
+    sha256 arm64_sonoma:   "03932ac38f421642c799c8370938a5f146b9d186eaed1b93bade9dbe7b6e367c"
+    sha256 arm64_ventura:  "c1364f85ba9f04e12b83c616231cdaa3074fbab02a068291554cd8890ab92f20"
+    sha256 arm64_monterey: "a873955806e5382935e19869ce6932ea346df51d510e5f0d89d954df8d8dc2bf"
+    sha256 sonoma:         "2f067da15c7461fcd89c5844f1d71923fa0fc1a9833be169e86facbe326f5b8f"
+    sha256 ventura:        "6a1dfafc2795a11ec7daccc315cb4b726487b93277f7004568d192aa2da4c758"
+    sha256 monterey:       "b796fe7095b946b1f446e791c5090bb1c7ab2d6d744e45e7c7a51f015a009ff3"
+    sha256 x86_64_linux:   "80af587b8fc9bbaa6af798f114ce75406d460beae0d602c0ea119f3a42f372ce"
   end
 
   keg_only :versioned_formula
+
+  disable! date: "2025-04-23", because: :unmaintained
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"
@@ -37,14 +31,14 @@ class RubyAT30 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https:rubygems.orgrubygemsrubygems-3.4.10.tgz"
-    sha256 "55f1c67fa2ae96c9751b81afad5c0f2b3792c5b19cbba6d54d8df9fd821460d3"
+    url "https:rubygems.orgrubygemsrubygems-3.5.9.tgz"
+    sha256 "2b203642191e6bb9ece19075f62275a88526319b124684c46667415dca4363f1"
   end
 
   # Update the bundled openssl gem for compatibility with OpenSSL 3.
   resource "openssl" do
-    url "https:github.comrubyopensslarchiverefstagsv3.1.0.tar.gz"
-    sha256 "3f099acd0b3bea791cbdde520f2d332a709bbd9144abcbe22189a20bac12c6de"
+    url "https:github.comrubyopensslarchiverefstagsv3.2.0.tar.gz"
+    sha256 "993534b105f5405c2db482ca26bb424d9e47f0ffe7e4b3259a15d95739ff92f9"
   end
 
   def api_version
@@ -60,8 +54,6 @@ class RubyAT30 < Formula
     ENV.delete("SDKROOT")
 
     resource("openssl").stage do
-      odie "Check if `openssl` resource is still needed!" if version > "3.0.6"
-
       %w[extopenssl testopenssl].map { |path| (buildpathpath).rmtree }
       (buildpath"ext").install "extopenssl"
       (buildpath"extopenssl").install "lib", "History.md", "openssl.gemspec"

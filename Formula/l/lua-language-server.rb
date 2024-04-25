@@ -9,13 +9,14 @@ class LuaLanguageServer < Formula
   head "https:github.comLuaLSlua-language-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29947d3ea0e82b77964cff6c63435a2b428c11d838d82e9170acddc6ccbd0e69"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "081dfbedb139566f1f48e37ad7052de48f5c95a67484356a7ac93418ecf82136"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "138e56f1febfbe3b01bf204f63d82f84a14eeb947f4d94134caaf205473facd0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24ecbe9d663edcb810d54a2128e7676aafe33c1fa5ba327af08a5a0b7073d3cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef00f4d284f2b62596531c7cdbca25cd6358e5f8715a33d3ddfc1b17c4a9f649"
-    sha256 cellar: :any_skip_relocation, monterey:       "8625da9607224aa23ec7dbeb943e903e45dd28e8312eff4f9a6a4f445c01049d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b04878b5b56c74a5c33e88c615594bff85e00fdb09a60d2119d5e9f08f453c4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3a7bf03022ff209381538d58d1ac3c722551ed7f7f25ae351bdb8805edae2e4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bda2abb3ef0626a1dd97348b63f5130ac3e95b999ba315d06a7fb0dc7cf5789"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ddb70f6d8dfcdcdcd2b36cf44eb1498a7605f63f76f75991dbd01d3a8317771"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a6af2bd4a5c3ae770645a43f79848ab0c64660b04dca1f67a7c59a7a9a56b85"
+    sha256 cellar: :any_skip_relocation, ventura:        "e667adb77db6e1fd5afa9b33e81c5577a037145b76b1ca167e855a6fb1926cf5"
+    sha256 cellar: :any_skip_relocation, monterey:       "b77331ead78d84ae1e3dc9cf23d7b923ebf17b997d94a56b2aff050ac4752dac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f439899b5d17f29e1b0dec5fdafee8b89b1e0bf48e1642bfe6637535e18eda7"
   end
 
   depends_on "ninja" => :build
@@ -37,15 +38,22 @@ class LuaLanguageServer < Formula
 
     (libexec"bin").install "binlua-language-server", "binmain.lua"
     libexec.install "main.lua", "debugger.lua", "locale", "meta", "script"
-    bin.write_exec_script libexec"binlua-language-server"
-    (libexec"log").mkpath
+
+    # Make sure `lua-language-server` does not need to write into the Cellar.
+    (bin"lua-language-server").write <<~BASH
+      #!binbash
+      exec -a lua-language-server #{libexec}binlua-language-server \
+        --logpath="${XDG_CACHE_HOME:-${HOME}.cache}lua-language-serverlog" \
+        --metapath="${XDG_CACHE_HOME:-${HOME}.cache}lua-language-servermeta" \
+        "$@"
+    BASH
   end
 
   test do
     require "pty"
     output = ^Content-Length: \d+\s*$
 
-    stdout, stdin, lua_ls = PTY.spawn bin"lua-language-server", "--logpath=#{testpath}log"
+    stdout, stdin, lua_ls = PTY.spawn bin"lua-language-server"
     sleep 5
     stdin.write "\n"
     sleep 25

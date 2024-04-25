@@ -3,18 +3,18 @@ require "languagenode"
 class Graphqurl < Formula
   desc "Curl for GraphQL with autocomplete, subscriptions and GraphiQL"
   homepage "https:github.comhasuragraphqurl"
-  url "https:registry.npmjs.orggraphqurl-graphqurl-1.0.2.tgz"
-  sha256 "1bdac1bb89df5fcfe9950337ec1615ffdaad13fbf01325ffcf2b87d505d67669"
+  url "https:registry.npmjs.orggraphqurl-graphqurl-1.0.3.tgz"
+  sha256 "77b38dc7f34b7e4f4d3550896a2c4a78ef31a76f202de03b9efaabfc5060ee82"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d99d4588ddd340362252448746da5c6cc547edbb7cc9570d5afeeec420e1a0b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d99d4588ddd340362252448746da5c6cc547edbb7cc9570d5afeeec420e1a0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d99d4588ddd340362252448746da5c6cc547edbb7cc9570d5afeeec420e1a0b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55b186c4453138065555bb6c4a4b663eb698d373e9c3ccff16a739b7ff273d82"
-    sha256 cellar: :any_skip_relocation, ventura:        "55b186c4453138065555bb6c4a4b663eb698d373e9c3ccff16a739b7ff273d82"
-    sha256 cellar: :any_skip_relocation, monterey:       "55b186c4453138065555bb6c4a4b663eb698d373e9c3ccff16a739b7ff273d82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d99d4588ddd340362252448746da5c6cc547edbb7cc9570d5afeeec420e1a0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4064bcc041ef4ac42c73311786e16ac5db1d223dc7548e5e29d256ba9dbbe23f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4064bcc041ef4ac42c73311786e16ac5db1d223dc7548e5e29d256ba9dbbe23f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4064bcc041ef4ac42c73311786e16ac5db1d223dc7548e5e29d256ba9dbbe23f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4bcd953f3b05d9f84d62ab7f2d90e992cc292608a6c4ce5364a7dcad8a196c97"
+    sha256 cellar: :any_skip_relocation, ventura:        "4bcd953f3b05d9f84d62ab7f2d90e992cc292608a6c4ce5364a7dcad8a196c97"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bcd953f3b05d9f84d62ab7f2d90e992cc292608a6c4ce5364a7dcad8a196c97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4064bcc041ef4ac42c73311786e16ac5db1d223dc7548e5e29d256ba9dbbe23f"
   end
 
   depends_on "node"

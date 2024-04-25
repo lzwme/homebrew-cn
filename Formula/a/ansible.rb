@@ -3,20 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https:www.ansible.com"
-  url "https:files.pythonhosted.orgpackages03eac1e9206d237237daf1fe48f3931641d87f510a3971a8015e5711b220237cansible-9.4.0.tar.gz"
-  sha256 "dd431c63380e18c3faca3288ebde8ce2f4f992363ab558a3c11c8f2032d90867"
+  url "https:files.pythonhosted.orgpackagesddd6728e1423af98ee08f05a341792abb053b73c30a5a978fc3e0777a87037a4ansible-9.5.1.tar.gz"
+  sha256 "3c278bc9642b97fc953b2ba05b99cd80801e75bf3567dfaa1cb5131fe0ec1ecd"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f08a0a73663df3fa3f87f6fa8b3c21d83ddddbb2886cd6d66b4d2a5437d5cc6d"
-    sha256 cellar: :any,                 arm64_ventura:  "8653d85aba0965705d7f27359eb520bed0fea83fed748d44fa774b049b50f908"
-    sha256 cellar: :any,                 arm64_monterey: "8c763a2de426a281030e14e248a01631d077e84b0019dc1dc36ebbe40445af29"
-    sha256 cellar: :any,                 sonoma:         "9adcf18d3c59d1601fbfe4c2a8230c8872ca16f7db0a7d02b9a657caf72b3855"
-    sha256 cellar: :any,                 ventura:        "8129250f664a547253b567a0144aee3250e988f89194888cfbd4b8620b9506c5"
-    sha256 cellar: :any,                 monterey:       "1e7fc141ff7580a20384498e0f94763ccb779a3360f20129e9204f99031a6a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49308ec0c47771c652faa2720c26d30a1c039f027f6b04b7341a62fbc1342f4b"
+    sha256 cellar: :any,                 arm64_sonoma:   "fed4ca84cabc81a5ed2caa4924775172e8804ef9a0104abedefe909a7728d7ab"
+    sha256 cellar: :any,                 arm64_ventura:  "a841072c85e863b41c32d5c2a05a8a3ae2178a0e2f211cbeefcde392016526e9"
+    sha256 cellar: :any,                 arm64_monterey: "0d7fc7355ce6c81bf78ae9c8c0c095c8521787f000a3b94cd316f7c2a68e9cf0"
+    sha256 cellar: :any,                 sonoma:         "f0d0ec6461eb45c7d6e1fdbe5b39036dca0dbe85221c71eb810ba4aa929ee75f"
+    sha256 cellar: :any,                 ventura:        "aca871ea525e5b2c361f3a609e1f9ce60e33c94c1cac2bcf0257e149a2925414"
+    sha256 cellar: :any,                 monterey:       "6ec210e6b2d9db24abdc07d98c6c2c5e829efa362f53359abb4f6a059e32c9d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72ee119a92c546530beb60f66c416b74c8ad7217548609f7cd1d88a2a1f3ca9"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -40,8 +39,8 @@ class Ansible < Formula
   end
 
   resource "ansible-core" do
-    url "https:files.pythonhosted.orgpackagesd049ef4490d316d74a4f38dde04d9f29d1a3f7c67ba33f53a96612d8e7e56051ansible-core-2.16.5.tar.gz"
-    sha256 "cdd29b0ec3f20c35657355a2f6a9c1d0cf1131da99cc9a4a3401801b0ab36d6d"
+    url "https:files.pythonhosted.orgpackages0c65d28ed46f5daeb2ed37f9b55631cac7070d7a39f72b6d25cb99a5d8068827ansible_core-2.16.6.tar.gz"
+    sha256 "111e55d358c2297ec0ce03ba98e6c5ce95947fdf50d878215eb8c183d0c275e4"
   end
 
   resource "apache-libcloud" do
@@ -65,13 +64,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages466d8f361c95d4f948dae469a3072cf998f62300ca3bc1a311c1c029a2793313boto3-1.34.83.tar.gz"
-    sha256 "9733ce811bd82feab506ad9309e375a79cabe8c6149061971c17754ce8997551"
+    url "https:files.pythonhosted.orgpackages910902e5049fedf5b1dafb56318480a35a679e104f1275b990eec90f0fafdb04boto3-1.34.90.tar.gz"
+    sha256 "2824e3dd18743ca50e5b10439d20e74647b1416e8a94509cb30beac92d27a18d"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages0cb86d1ec4802de76d21851784ca2b1d26575f193c31ebd194a196d08dac0d0dbotocore-1.34.83.tar.gz"
-    sha256 "0f302aa76283d4df62b4fbb6d3d20115c1a8957fc02171257fc93904d69d5636"
+    url "https:files.pythonhosted.orgpackages8693ba848528f20dcb51d499f9a81ba3fd91fb74f11a303f7783f243115c32a8botocore-1.34.90.tar.gz"
+    sha256 "113cd4c0cb63e13163ccbc2bb13d551be314ba7f8ba5bfab1c51a19ca01aa133"
   end
 
   resource "cachetools" do
@@ -230,8 +229,8 @@ class Ansible < Formula
   end
 
   resource "openstacksdk" do
-    url "https:files.pythonhosted.orgpackages2e5ee5410863ea1fd45107ce23c169acebab54b5e7f6f61af9a7afee49bfec22openstacksdk-3.0.0.tar.gz"
-    sha256 "b0c7f9a025d5da92ad4c762941e6acc4cb53930a07ff739a9aebcc5e5a724ae6"
+    url "https:files.pythonhosted.orgpackages82c65cd4b199e39a2b9bad1162d925a362b46d5164de7cd34a2a7f1dd8094cedopenstacksdk-3.1.0.tar.gz"
+    sha256 "707f15d7ec074ab2434b9a5e1984facab00f822d272f4c2a5de0d22a09eb79cd"
   end
 
   resource "os-client-config" do
@@ -305,8 +304,8 @@ class Ansible < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackages96dcc1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https:files.pythonhosted.orgpackagesb2e42856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937platformdirs-4.2.1.tar.gz"
+    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
   end
 
   resource "prettytable" do
@@ -450,8 +449,8 @@ class Ansible < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "shade" do
@@ -500,8 +499,8 @@ class Ansible < Formula
   end
 
   resource "websocket-client" do
-    url "https:files.pythonhosted.orgpackages20072a94288afc0f6c9434d6709c5320ee21eaedb2f463ede25ed9cf6feff330websocket-client-1.7.0.tar.gz"
-    sha256 "10e511ea3a8c744631d3bd77e61eb17ed09304c413ad42cf6ddfa4c7787e8fe6"
+    url "https:files.pythonhosted.orgpackagese630fba0d96b4b5fbf5948ed3f4681f7da2f9f64512e1d303f94b4cc174c24a5websocket_client-1.8.0.tar.gz"
+    sha256 "3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da"
   end
 
   resource "wrapt" do

@@ -8,7 +8,7 @@ class Davmail < Formula
 
   livecheck do
     url "https://sourceforge.net/projects/davmail/rss?path=/davmail"
-    regex(%r{url=.*?/davmail[._-]v?(\d+(?:[.-]\d+)+)\.(?:t|zip)}i)
+    regex(%r{url=.*?/davmail[._-]v?(\d+(?:\.\d+)+)(?:-\d+)?\.(?:t|zip)}i)
   end
 
   bottle do

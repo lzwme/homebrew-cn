@@ -66,6 +66,6 @@ class GitlabGem < Formula
     ENV["GITLAB_API_ENDPOINT"] = "https:example.com"
     ENV["GITLAB_API_PRIVATE_TOKEN"] = "token"
     output = shell_output("#{bin}gitlab user 2>&1", 1)
-    assert_match "Server responded with code 404", output
+    assert_match "404 - Not Found", output
   end
 end

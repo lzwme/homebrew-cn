@@ -1,19 +1,18 @@
 class Gifski < Formula
   desc "Highest-quality GIF encoder based on pngquant"
   homepage "https:gif.ski"
-  url "https:github.comImageOptimgifskiarchiverefstags1.14.4.tar.gz"
-  sha256 "7d6b1400833c31f6a24aac3a1b5d44c466e07f98af6d6c17487a7c8c6f4aa519"
+  url "https:github.comImageOptimgifskiarchiverefstags1.32.0.tar.gz"
+  sha256 "9a9145c31936f6e6e3b30e7feb8a741bcc02e8bcec6fd480d03c25ffa55f372c"
   license "AGPL-3.0-only"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "33386a67249fbbff0c640beee7acd1c9ffe3778d1cdd59c50e68e9c058faf477"
-    sha256 cellar: :any,                 arm64_ventura:  "433365d8811a26048c1034616d1f6497674f095019b23ce4b7363937f1dfd3b7"
-    sha256 cellar: :any,                 arm64_monterey: "5bd97a8e3795ec2f82cd0339d6011f4dd8b47fc26e3ad4dd3c1d156eaa0e061c"
-    sha256 cellar: :any,                 sonoma:         "045ef48c53efdd0d2acbf3907b87fb29c94fbbc1ca58e14a566ce2529695e6d3"
-    sha256 cellar: :any,                 ventura:        "c9da57fcca75648dcecef8f1c09d74d2a9c3a6a8f8afb181c977d41adf5d9b12"
-    sha256 cellar: :any,                 monterey:       "82c0c350f48464e8af0fc0dba896372d59f92c6797af8634ba58f038484623ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01aae113b0bc2090e6c7d3004cc5f5afb1aaddb4917cf512a36abb34f297b8fb"
+    sha256 cellar: :any,                 arm64_sonoma:   "7eed39c25338fafdfb6547e305a02f137c10e6624852be3c60dfa36527be35de"
+    sha256 cellar: :any,                 arm64_ventura:  "482fba0d44f69d1e5b137051022f2ab2fd83ed61ecee0f34d9e6909a422c9dac"
+    sha256 cellar: :any,                 arm64_monterey: "c0e54ca91ce8e920d50461c7bef2432881f9ddc347648f23617c871b1448611a"
+    sha256 cellar: :any,                 sonoma:         "106b8f0b03fc6e059aec0d3274f92da8ae33cc0919980d60a36e0b8917046755"
+    sha256 cellar: :any,                 ventura:        "e4320c33cbe202bdcab24640377483950c90ee27c47192791300c109f190a8df"
+    sha256 cellar: :any,                 monterey:       "f68b1f53e4ee3b59a627f93752461a68f94711e7c8cc68f4fa3e7c0883cf75f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b5acc7e25a1311ea15611f213bbe144de06db490c002321bda776eeb0722b22"
   end
 
   depends_on "pkg-config" => :build

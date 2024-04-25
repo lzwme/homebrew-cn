@@ -4,24 +4,17 @@ class RedisLeveldb < Formula
   url "https:github.comKDr2redis-leveldbarchiverefstagsv1.4.tar.gz"
   sha256 "b34365ca5b788c47b116ea8f86a7a409b765440361b6c21a46161a66f631797c"
   license "MIT"
-  revision 3
+  revision 4
   head "https:github.comKDr2redis-leveldb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "acb624fe50e7f3fc7267f44173ac66ef7f7fed3557d20cb1cfdfd8fe6383ed4e"
-    sha256 cellar: :any,                 arm64_ventura:  "14e20960b64bbccf61906791c432997c805a853eee48593f9d7881490e71d403"
-    sha256 cellar: :any,                 arm64_monterey: "3924d88c6a1080614983fcd3840adeccb78b9cbc0392c62d543edd966c4e9e43"
-    sha256 cellar: :any,                 arm64_big_sur:  "5e41ff1939788e1fa297df8345b1c515b4bdaf046fa7c0d54e853aa1f0030dc1"
-    sha256 cellar: :any,                 sonoma:         "0c5716298ff04f4f79856101aef22240cc7a655eb2ce04c1f8b79b2645e1bb37"
-    sha256 cellar: :any,                 ventura:        "71c8f543584e25088c9d42c8cf0a872fb941ecfba54e0627f0e4eaca7ff9b6e9"
-    sha256 cellar: :any,                 monterey:       "eaf9d161468a86bc6d97e60bec55862eaee573b526c290de859e48cf1dbe5248"
-    sha256 cellar: :any,                 big_sur:        "ca866ff83813a3d7a06626608016aba38a40bd1e813f04079dd2221f5740336b"
-    sha256 cellar: :any,                 catalina:       "d1c4da1f1f3e3afec9ec5d345743f9d49e85615fa3ffde619bad13e479ce670a"
-    sha256 cellar: :any,                 mojave:         "f2345f0e55d37343c3c7e2fb4c43e517d429db2bb284430d3db1222675b8b520"
-    sha256 cellar: :any,                 high_sierra:    "9efe9023206565f3d5557202465fa99440262aef2298894c1f738dba0a39ad10"
-    sha256 cellar: :any,                 sierra:         "c8cdcf2f80de6eda4f86e9a7c6726ef1a2e046378a28b72b52deb180a15d1916"
-    sha256 cellar: :any,                 el_capitan:     "5373414613caf193828f782883f835858a8c999943a542e9ec3ff735a918bb63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1723583af723d8a9d13f45b476071b70bac6c509f96e9ffba3d975f45ca4e521"
+    sha256 cellar: :any,                 arm64_sonoma:   "2c4f724a8e484fe6949b3733a7c1d4201370dabbbbd3b5e4a7e4b4312a06bba7"
+    sha256 cellar: :any,                 arm64_ventura:  "8ed6a3bbc7dcfb695d7d133bb5f87eb564288e0f1ab221099449b1dd4f8bbabe"
+    sha256 cellar: :any,                 arm64_monterey: "6ae884a362ca96df3f67994461b0732d305e7dba323598dba029338a11d10cf3"
+    sha256 cellar: :any,                 sonoma:         "edac4282df53a53882efe10586ee1d39c06b3f03f150d128f6acfa115c039cf8"
+    sha256 cellar: :any,                 ventura:        "8eec3d30dde80b6f32de4c1167cad93bc2c6b95e9c7c65b017320e487b19975d"
+    sha256 cellar: :any,                 monterey:       "385b411fac0e4374c3b61f952e09f0266a9a13a23bb12c91cb1209ff99547012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6323dd8c468b9cc40d9310fdeb776de380e1c32c622e682713dd98a9cf42e659"
   end
 
   depends_on "gmp"
