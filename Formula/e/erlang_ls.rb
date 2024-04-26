@@ -1,18 +1,18 @@
 class ErlangLs < Formula
   desc "Erlang Language Server"
   homepage "https:erlang-ls.github.io"
-  url "https:github.comerlang-lserlang_lsarchiverefstags0.51.0.tar.gz"
-  sha256 "1eb8748755b2990d02e8ba8387f6f9ef04c398ad2975fa606387f3b9bdbafd1c"
+  url "https:github.comerlang-lserlang_lsarchiverefstags0.52.0.tar.gz"
+  sha256 "8c9028cc65985746abc8736703381c04f0922116ef8cc7711bee09953432d968"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fe166328193ee1566c5fda0f839aa716889eb98b11e71f04623fc4182b6d4fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1f16fa8f981d2e7e527c955cc11c427f100e828567d22b0f81006c0d617a2b4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f416fc6cd0c31c38e56fed9a4aea418ac41f2c186e2973b214ef0508176db31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ea70c28ef7916cfc16420d0ec39fa833d6cb1cf5d86bd9724f11fb6aed0dd03c"
-    sha256 cellar: :any_skip_relocation, ventura:        "c14d2edebf016e7568cb662622e5d1759209e39d33b2a3431be938c037d2b435"
-    sha256 cellar: :any_skip_relocation, monterey:       "a1f0bf9de64ffeccb0b5b4a076c646b8eb097565f8e6936fc74d7c7ad7c0b9ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0a01d50fce81eb0230f5ffff9c87b2b6340644e0ffe1aea768537e230000f6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfe87d824cde6cf16b8f5cbf1a42231bcc6e372857e5b4c76633da319f42a0b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "26c849a25c59140975a92ecf66c93b1ef4c992e4c28b24f543cdd8a67fc70d0a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c6bf7e219d2257764f730c449740df177e3199a81905bc90db041b0c16137ad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0bb7dd3df411c3c1c0caa939799f3f478e1713298377bf3ddc14242b271d4c2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "3afd0511e67087ca326caddc9201f3601ac421064f7996963ee2908729caeb42"
+    sha256 cellar: :any_skip_relocation, monterey:       "96555d73088bc734d656a4c5f8688ea27d2b19a48f19176952aba028cf36257a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "221ac9e5a40d613351cbfe50493670f09750d609368ddff6dcec09cc50c2cf70"
   end
 
   depends_on "erlang"

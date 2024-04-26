@@ -1,10 +1,9 @@
 class Atlantis < Formula
   desc "Terraform Pull Request Automation tool"
   homepage "https:www.runatlantis.io"
-  url "https:github.comrunatlantisatlantisarchiverefstagsv0.27.2.tar.gz"
-  sha256 "e44a53d4fa43cdaa88a2e7734da2854a97b1b555a425ab26ac5787ef9f3d3076"
+  url "https:github.comrunatlantisatlantisarchiverefstagsv0.27.3.tar.gz"
+  sha256 "ce17717ab9bb93f5cac5178f9f3dd956f3cd51e09142b25282d9ceb063f275c7"
   license "Apache-2.0"
-  revision 1
   head "https:github.comrunatlantisatlantis.git", branch: "main"
 
   livecheck do
@@ -13,14 +12,13 @@ class Atlantis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35b840627fec1733d802157914dcf8b3b4a229d2dabefe483d83c1080098f26a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdb4008b963978d8800188fbec3448fa00040fd52e8c450543bb760c2567f3b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ccfccd60aef7b41012e5a8fbafcdf62ca54bf0c5b0c3a783d67784a4ff0d999"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f4a10883b102dff7471c6eb4cf4d5c9167495077f883f9d7e58019d16f0865ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "7ad13d476479fc9500f9121b8b8ea4a4ba8ae82fbe5d3422da4584c81327037f"
-    sha256 cellar: :any_skip_relocation, monterey:       "e3f5d433a08a17f44cf66d004c66a2855a8d61db1dc613f383fd5996004c4426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cb0f0a22b31f42a7d079d7dce8c4ba809d1872902081c2a248cf497a2b574ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20753966215af949f2523748721ee3f7039a4c7f86bdfff27b64a29b12302730"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "535e1ec00e6bef807dfac247593d8714e72cc174aa1e6b643cea0f1f0a61492f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0098af5fb36d924ce42761b95ff10e128038d4b2d99920b500e66fbc4e9f400e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6031eb994f207b910f70aafbf0ae874569b2892d712c57de02bde94be1e48619"
+    sha256 cellar: :any_skip_relocation, ventura:        "07bd3127d75cd4c2b886094e7fc9af55e7d4339650f8369cf59407f6af173cdf"
+    sha256 cellar: :any_skip_relocation, monterey:       "a8cd2cafffaa562faad4225a4908154a1e8d58dbb8b4cbe5b4f056eb1d0e6249"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18d0b82e498752728b06fe776502bd5be8a0a4336d1bb033a7c4a558321aa747"
   end
 
   depends_on "go" => :build

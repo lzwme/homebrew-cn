@@ -1,15 +1,13 @@
 class Securefs < Formula
   desc "Filesystem with transparent authenticated encryption"
   homepage "https:github.comnetheril96securefs"
-  url "https:github.comnetheril96securefs.git",
-      tag:      "0.14.3",
-      revision: "8345530d700a6ff73ef59c5074403dede9f9ce96"
+  url "https:github.comnetheril96securefsarchiverefstagsv1.0.0.tar.gz"
+  sha256 "de888359734a05ca0db56d006b4c9774f18fd9e6f9253466a86739b5f6ac3753"
   license "MIT"
-  revision 2
   head "https:github.comnetheril96securefs.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4210df5259c83c830bb133d34b921e48004fc37585370382b5a750f354f317f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48177ab631bf028e1609f536d80eb5ffbd3065a8553dd96defa8a2636fd2e89f"
   end
 
   depends_on "cmake" => :build
@@ -18,9 +16,13 @@ class Securefs < Formula
   depends_on "abseil"
   depends_on "argon2"
   depends_on "cryptopp"
+  depends_on "fruit"
   depends_on "jsoncpp"
   depends_on "libfuse@2"
   depends_on :linux # on macOS, requires closed-source macFUSE
+  depends_on "protobuf"
+  depends_on "sqlite"
+  depends_on "uni-algo"
   depends_on "utf8proc"
 
   def install

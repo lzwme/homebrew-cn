@@ -3,20 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagesd56af74bec8e81b2608b5454a9f6dd07e3b82bb3cadf77549008e426acedf4f8snakemake-8.10.8.tar.gz"
-  sha256 "75711faa668324f9e6c44a860f2f9645be358763a97ee411bb32f7a8f6dca6b7"
+  url "https:files.pythonhosted.orgpackagescf30a499aacba2e7c8ceeda46135a0099afb7142e071fe802c7ee1bff85a0a42snakemake-8.11.0.tar.gz"
+  sha256 "1f49ac4fe87886b0c3db45aa2d4b257afa81bea862ac48ab2667b693cad274f0"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "18eb22d0cf13b5b5a61f01c6945ada2721e8d5e3d907f27ff5fd532dc2ec300a"
-    sha256 cellar: :any,                 arm64_ventura:  "ea36de77aabdf6b09d6af73c0da68810f39850adfbf8504bb3b04b6b7bc13feb"
-    sha256 cellar: :any,                 arm64_monterey: "94a989c2efb945fed2a6240764da1b108c62b04629a1b1978121a93789fae113"
-    sha256 cellar: :any,                 sonoma:         "0160b765bf494420c2dcfaff91affc18b84dd2829c209b7ec8c264f423da4157"
-    sha256 cellar: :any,                 ventura:        "291c93fb43cf203b91c807a571588d36a62d0cc61bffed8b5d71f2244e1d650d"
-    sha256 cellar: :any,                 monterey:       "c66d8e73da8b5a683785a4e1a56c98efe08a446852e7bfdce6e6b45440b88fc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74e1701aa7e6ae3471892a32b45e8a13fac43c7068c0ae00d81150aed1becdf3"
+    sha256 cellar: :any,                 arm64_sonoma:   "588d62f74f3207c5435f2514bf4764b85cfd11b3d9a9fdb9d0848e95ba4181d0"
+    sha256 cellar: :any,                 arm64_ventura:  "17b31957621284d852ac6940952170428dc07b686672f2d12139850fcf14dde8"
+    sha256 cellar: :any,                 arm64_monterey: "79532efbac95a904507f07f733c585b824261606a1bff140be3fd19ce527d9b4"
+    sha256 cellar: :any,                 sonoma:         "b5e55b16feac04355407ff6e8471c008a7d0e780f9c2421eb2a9dca6081652b0"
+    sha256 cellar: :any,                 ventura:        "5678016eb616f261ebb2536529bebd80d220f0a9751b0e78f03572f2aa210b14"
+    sha256 cellar: :any,                 monterey:       "02229295795273a5a7092b1afc91bcc05e52e5f7592be17fb2c5e82e77cb0d4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3e940c64a2a8b2a370f9c2e456448d1dd8ca10ccd244501bad3bc8daa0d92f6"
   end
 
   depends_on "rust" => :build
@@ -66,8 +65,8 @@ class Snakemake < Formula
   end
 
   resource "docutils" do
-    url "https:files.pythonhosted.orgpackages21ffc495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844cdocutils-0.21.1.tar.gz"
-    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
+    url "https:files.pythonhosted.orgpackagesaeedaefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9docutils-0.21.2.tar.gz"
+    sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
   end
 
   resource "dpath" do
@@ -146,8 +145,8 @@ class Snakemake < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackages96dcc1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https:files.pythonhosted.orgpackagesb2e42856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937platformdirs-4.2.1.tar.gz"
+    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
   end
 
   resource "psutil" do
@@ -166,8 +165,8 @@ class Snakemake < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages59d748b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37referencing-0.34.0.tar.gz"
-    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
+    url "https:files.pythonhosted.orgpackages6a1fc74e341a7a2a6fb2ab77d3a7311bd57a31e766e5d006a25053484cccbfebreferencing-0.35.0.tar.gz"
+    sha256 "191e936b0c696d0af17ad7430a3dc68e88bc11be6514f4757dc890f04ab05889"
   end
 
   resource "requests" do

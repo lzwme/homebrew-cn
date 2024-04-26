@@ -3,25 +3,26 @@ class Libgusb < Formula
 
   desc "GObject wrappers for libusb1"
   homepage "https:github.comhughsielibgusb"
-  url "https:github.comhughsielibgusbarchiverefstags0.4.8.tar.gz"
-  sha256 "9a1fb0d46e4b1ca7ee777ed8177b344e50a849594cd98b51a38a512bef4b3342"
-  license "LGPL-2.1-only"
+  url "https:github.comhughsielibgusbarchiverefstags0.4.9.tar.gz"
+  sha256 "aa1242a308183d4ca6c2e8c9e3f2e345370b94308ef2d4b6e9c10d5ff6d7763e"
+  license "LGPL-2.1-or-later"
   head "https:github.comhughsielibgusb.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "4280fb61e3df7cd1d003db6037c999c73f11284929a4984535a9538b1f257fa4"
-    sha256 arm64_ventura:  "163f59b3ed0fd596467c633908f6445a535d9f96634b19e4e5e24238e1626f56"
-    sha256 arm64_monterey: "1069e85229fa8350a8b98db356f016691167b6c667dc9cbdd74dafc07ecc3038"
-    sha256 sonoma:         "a06ad66c46e85bf3552274bf15b07806717fc786c3d24a9be4a9d846cd5be9e1"
-    sha256 ventura:        "30729a4fbe3276c0b5e5ec40e3528f887eeccdd8ac22c8dc6570f79709befaa0"
-    sha256 monterey:       "d768f94968b016d952fd06f2c0d007fd0c024b373162833688e10658d7e8f0d2"
-    sha256 x86_64_linux:   "0d939b43d5d3fb30c1e25e4028a217be8883f8f12b90f5929f3d7e8c020a8133"
+    sha256 arm64_sonoma:   "401ce02889b48889e8ffa427554d467bcc2c4f260d0fe721f1a4865db4d298e0"
+    sha256 arm64_ventura:  "2de62b7ae557da80daf922d27709992722d6f734f8cf401c569b97430d7fc3a4"
+    sha256 arm64_monterey: "3aeb25f911a21f48cfa09caac37d323539047ca327271c8f5645dda3dacbc656"
+    sha256 sonoma:         "eaac35d0881ff626c8234471fd951ec057e4b77a2c839bb81c017e973ae2e16b"
+    sha256 ventura:        "c899e74b0d5f458b26f603cca266a1f390933311866a61337da4f82be03a0be4"
+    sha256 monterey:       "330bd84a2ca5f069ac0861fe8521c559468d5f6ad0f55d24b7921108501d85e4"
+    sha256 x86_64_linux:   "061dd4996eb3dd60d2127c3fcb7228cecce89740fa9d919d6824e4383146e2ae"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "vala" => :build
   depends_on "glib"

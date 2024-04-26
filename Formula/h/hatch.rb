@@ -3,19 +3,18 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/17/98/63bf6c592b65f67201db292489053b86310cfb107eb095d345398e00cbd3/hatch-1.9.4.tar.gz"
-  sha256 "9bb7d1c4a7a51cc1f9e16394875c940b45fa84b698f0291529316b27d74e7f32"
+  url "https://files.pythonhosted.org/packages/0d/d2/cf2c772634c3ab65a0244ebcead8aeff671cbd29f1f72a1f4460698d9650/hatch-1.9.7.tar.gz"
+  sha256 "19a7b82179f94f2adddbad76aa7e65ab90cad55ab103d53827637935c9e6624c"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ebd217d0f61e9935ddb3c64ed2ecafbc1d6afbf8a67e4660b3a0237e3d62867"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53869c08703879e43117dc0fbf14ce89eedeb7b54d1a1c9ff3d2c9495c1106ce"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dd97d3b698ef2fe7a109017f5d3e09a0d0c7359767ffa01c9fabc5a3807f490"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1e46a12fba20a6a9febb8732c321ba38e69b28b7adfb662c54f9209e447602ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b8308f74c455eeddfc6b7c570a2d85e5298a0bf9dad16d99abff5936e22cbff"
-    sha256 cellar: :any_skip_relocation, monterey:       "f9b3e9e6447e5123d0076b9e781a345068f114bd3915675f23c64b2f344f3877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9546cbeed200eb4cd581fe212c0d0c19d26a61d52a79835160ecd2bb552099ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d8e62f7d34064f2faf5030a40d4faa1552becd617b2c67318b9ad4c84c03c93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "afa0371e777b8c4a97327a2dbbe16cbeeb30682f4d254b462f803d1422074d2c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b7e95d33ae5395873597bcb763ee24afc3614fdbc833c487acddf645400969e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b731e012bfdd39a521f03f5725f0cb86cd1104473e7a32320d613b78a25569da"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fe0ec038599cf0146d968c49555124ee54a51e0716fffe709a2d8e62f29ca41"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ae158d89f181ff906dff6c58f2b4780141652715702e18766b5391c44069528"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "688e159257d47a3da01dcbbb61cd0be6d147444d4f7ae332aa24e7c2678e3897"
   end
 
   depends_on "certifi"
@@ -93,8 +92,8 @@ class Hatch < Formula
   end
 
   resource "jaraco-functools" do
-    url "https://files.pythonhosted.org/packages/57/7c/fe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afce/jaraco.functools-4.0.0.tar.gz"
-    sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
+    url "https://files.pythonhosted.org/packages/bc/66/746091bed45b3683d1026cb13b8b7719e11ccc9857b18d29177a18838dc9/jaraco_functools-4.0.1.tar.gz"
+    sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
   end
 
   resource "keyring" do
@@ -133,13 +132,13 @@ class Hatch < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https://files.pythonhosted.org/packages/b2/e4/2856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937/platformdirs-4.2.1.tar.gz"
+    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/54/c6/43f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59/pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "ptyprocess" do
@@ -188,8 +187,8 @@ class Hatch < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/93/4f/a7737e177ab67c454d7e60d48a5927f16cd05623e9dd888f78183545d250/virtualenv-20.25.1.tar.gz"
-    sha256 "e08e13ecdca7a0bd53798f356d5831434afa5b07b93f0abdf0797b7a06ffe197"
+    url "https://files.pythonhosted.org/packages/42/28/846fb3eb75955d191f13bca658fb0082ddcef8e2d4b6fd0c76146556f0be/virtualenv-20.25.3.tar.gz"
+    sha256 "7bb554bbdfeaacc3349fa614ea5bff6ac300fc7c335e9facf3a3bcfc703f45be"
   end
 
   resource "zstandard" do

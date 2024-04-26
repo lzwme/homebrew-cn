@@ -6,20 +6,20 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.22.1v6d-0.22.1.tar.gz"
   sha256 "16aea4dc63830925c2d8cd89dc36580ff80dd7610793d56ae5d0d09972cf2fcc"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_sonoma:   "735777e66863fde84e3d493d7d514eb81207aff7414bb338ecb95a7bc330381f"
-    sha256                               arm64_ventura:  "112ca291c6de7c2a92b3f41fd431930d2d0a4b5b569644aa418c8124f59831ed"
-    sha256                               arm64_monterey: "3d4001555091698f10d57f2d100df41d0449a7f803fe48fe5ef132ff46a67e39"
-    sha256                               sonoma:         "720983a2beeea2aaf584c0be1685845b5573d7795a331e13c1291689a92241df"
-    sha256                               ventura:        "b6fb3149867768f4f61aba0cb2b566d70f117ea49a56a990b300187dbe6ff904"
-    sha256                               monterey:       "2e6999a381668f1ffab2b35704482195daa9181e4444e5d67403832a8e7244df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fef2b7a9c5e634c269a735e60a2ca7f224d1c81bbbdbe9954ebbde872ddb65f2"
+    sha256                               arm64_sonoma:   "6f92524f4f5d2e5b71a68a54314e20b0f23caac1ab578a73d5ee2cd5fe942030"
+    sha256                               arm64_ventura:  "1b1789c73b0e745d13a2d57a5620a348b622f4d8967f73b1dd2846c7d58d0bd1"
+    sha256                               arm64_monterey: "30a0aabb3277ea75a836db664cb7929fe2a24807f239ac0632434cbf10274cec"
+    sha256                               sonoma:         "94154dde18c24c431103d4db402bb260c99f15e79bb6c56fa0d6c0ee4f0ee435"
+    sha256                               ventura:        "f0dd8408d2fdd0b693ee4baeb0f28562275891f61a48ad615929305846e82de2"
+    sha256                               monterey:       "a597e092c45f61dfc0ad60971dcfe80223e7b4ce7913cd45608b31d66888bd10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e218fd701201885a89ee5da2d7ce4d7b08b06f8b93f6fc81399269b3a4e42bd"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => [:build, :test]
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "apache-arrow"
   depends_on "boost"
@@ -37,8 +37,21 @@ class Vineyard < Formula
 
   fails_with gcc: "5"
 
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+  end
+
+  # Backport fix for API changes in `apache-arrow` 16+.
+  patch do
+    url "https:github.comv6d-iov6dcommite8b8c828f54e16163c98a9b91068f3344608431a.patch?full_index=1"
+    sha256 "b105216ad518dc581a9b9eb45398d7f87f63ba9728b3e3690aaef172a33ff3d2"
+  end
+
   def install
     python = "python3.12"
+    venv = virtualenv_create(libexec, python)
+    venv.pip_install resources
     # LLVM is keg-only.
     ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefixLanguage::Python.site_packages(python)
 
@@ -49,7 +62,7 @@ class Vineyard < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
-                    "-DPYTHON_EXECUTABLE=#{which(python)}",
+                    "-DPYTHON_EXECUTABLE=#{venv.root}binpython",
                     "-DUSE_EXTERNAL_ETCD_LIBS=ON",
                     "-DUSE_EXTERNAL_REDIS_LIBS=ON",
                     "-DUSE_EXTERNAL_HIREDIS_LIBS=ON",

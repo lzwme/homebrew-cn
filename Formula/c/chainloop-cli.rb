@@ -1,19 +1,19 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https:docs.chainloop.dev"
-  url "https:github.comchainloop-devchainlooparchiverefstagsv0.83.0.tar.gz"
-  sha256 "5120ebdae31ad0ed7d47ec4680abb413d8669221a743e6094818cb01929fa193"
+  url "https:github.comchainloop-devchainlooparchiverefstagsv0.84.0.tar.gz"
+  sha256 "cb06866afce6e186ea4d2a65c096670dbcbdd21c406b71ee39bec681ff4ff267"
   license "Apache-2.0"
   head "https:github.comchainloop-devchainloop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49abbcc35686f533c56d9e7458867b14d44563b5d5d08cdca9ef01afc5b5e9a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e9623059eb9233a3743417a042759e3df2b4a674a0aacc5abff251411eb2198"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cabf45a692cee1028878173a880bd3abed386328c688407e9c7e4d26de3f37b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b5aa1aaa913fc05d7b4ea62891c1a5600af15d29c389714240f9c7fbae418d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "e53bcead81e6954110757277c1286c2bc355c7787b3beeade3eef465965c855e"
-    sha256 cellar: :any_skip_relocation, monterey:       "00ee058739385190945cb0fb1e797f4fcf3992015e10ed7722e66309813ba732"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cd4e0a7e7aba6fd26f261b6d54624fc2a7456bbb27297668c899fb1bb9cbf45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a55dc4d6cc1e8229088ffe7b9bab8e654fdbfdf34a06dccd732261b00a6a756a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "555253d9b946efeaad00d4a7cc882caa2aee86202085d92d252ac7c3ec5e4d3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f13bd6cd2aeb5e012713155ffd35d1efdcd6b8d87ced44bbf24a806fbec9b8f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e76b90d651f4b10f13a6c06eff1aefcbb6bba120f2d1f66c2df19eef94ce5b5f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1cf54b2d2a2a8cb7de0afea516f5f69751ca60b77dc3f4ac17ff5167e1f1afec"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ef399d6d441e7db2af592b2089b390d395598259715cce059678c8cfb2b0d05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81a62b57b9fff2bc853c56acbdde13ef69bf8a8e66e1be75b16bf303fc866e63"
   end
 
   depends_on "go" => :build

@@ -12,13 +12,14 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "23bc143dd67813633809b4c3e4dc55e3df8ac5caf0a46c907e5ee4144d8ba795"
-    sha256 arm64_ventura:  "8f7d64046159f3beec798e3391c51e67920ebc99ee2b1a8252df8682d84c8fe6"
-    sha256 arm64_monterey: "17600993b50aa78822a26f89d2114ed66af8a971283eac647f71fbfa733df115"
-    sha256 sonoma:         "e8479418baa407eacb531d7ef5d68cc84b232e83763a0d67f60fc5d51de8d5c5"
-    sha256 ventura:        "74e70a471992847885d038bd9d3676f6b46578feee50ec5c4cfbc1a536e76aca"
-    sha256 monterey:       "443b5cf4c95ea974e4f856c0e0f550adf5cf7c3232728fe79fe45614a43416f1"
-    sha256 x86_64_linux:   "09a7471db743ad24d96de7cd826df1c0b126e5519ff0119db92edb5ddd1c3ede"
+    rebuild 1
+    sha256 arm64_sonoma:   "f3c537c4fb29ff0f571e65b64d67c84de38d83ada5ce29076d6ecf643bba7432"
+    sha256 arm64_ventura:  "85645db0ba736c87e48f71e94b4d3510721968453d4ab34c20694b1182a1d01a"
+    sha256 arm64_monterey: "4b7a1c60068afa548768c7c6d27b5dab5c154c1ead8b3bbf795fe386989988bb"
+    sha256 sonoma:         "aa1939ccf0fa3445beff41a7778f82cc2facc9f094cfd04a8b882151ec3f0c23"
+    sha256 ventura:        "9d97ca8db9c0fb13aae21084f628f4d8d06a0190275d9a32964acb1ba907611d"
+    sha256 monterey:       "de5240ce5c8df8a75a13e3791d9ff0cb497ecdaa88906e08a729859d27900f14"
+    sha256 x86_64_linux:   "18f643336db02fa5262279462b07f8150e3fc5e02583ac8d5d7e331b5e82561f"
   end
 
   # Apple's makeinfo is old and has bugs
@@ -30,9 +31,9 @@ class MingwW64 < Formula
   depends_on "mpfr"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.41.tar.xz"
-    sha256 "ae9a5789e23459e59606e6714723f2d3ffc31c03174191ef0d015bdf06007450"
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.xz"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.42.tar.xz"
+    sha256 "f6e4d41fd5fc778b06b7891457b3620da5ecea1006c6a4a41ae998109f85a800"
   end
 
   resource "gcc" do

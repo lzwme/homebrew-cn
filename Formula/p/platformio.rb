@@ -3,20 +3,19 @@ class Platformio < Formula
 
   desc "Your Gateway to Embedded Software Development Excellence"
   homepage "https:platformio.org"
-  url "https:files.pythonhosted.orgpackages97094f055c5471537e68dc38d8a7981dadd7c158d07135372397e845617798b8platformio-6.1.14.tar.gz"
-  sha256 "7a88ce098f30c538fc0cf8f4c3ac4761c3c4b4eebf09fd3606f172399cd7d4e4"
+  url "https:files.pythonhosted.orgpackages13788903f4f505a393ee48a18a00b4b9c866a726ef844d23ff3ce4863d710898platformio-6.1.15.tar.gz"
+  sha256 "d3209a60d40340fdbab2c76ee23303d90e5ecea0a11f92980c9d2068d0975fde"
   license "Apache-2.0"
-  revision 1
   head "https:github.complatformioplatformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "edd456c2c8ace2392789659ad0f21c2d9f099c061aa73fe06f96842fe68a125a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edd456c2c8ace2392789659ad0f21c2d9f099c061aa73fe06f96842fe68a125a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "edd456c2c8ace2392789659ad0f21c2d9f099c061aa73fe06f96842fe68a125a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1bbe2e7059da63d4e206f3e667b19ef0b7fc0a507cab4a7bb8fa7d62466f1310"
-    sha256 cellar: :any_skip_relocation, ventura:        "1bbe2e7059da63d4e206f3e667b19ef0b7fc0a507cab4a7bb8fa7d62466f1310"
-    sha256 cellar: :any_skip_relocation, monterey:       "1bbe2e7059da63d4e206f3e667b19ef0b7fc0a507cab4a7bb8fa7d62466f1310"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2396a006844a5d7d433a1f59692960fefbe2a3c59d29cd82f8d51e44d14cdb09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c2db8678a953cb12ab1b1618b8a528470a42f8abd4b2fe6fa52d661b409d66ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2db8678a953cb12ab1b1618b8a528470a42f8abd4b2fe6fa52d661b409d66ec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2db8678a953cb12ab1b1618b8a528470a42f8abd4b2fe6fa52d661b409d66ec"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dfdcd67fd2395ecee0186d5e513e1a4202a25ac5bd90c69d222f3600f6887d50"
+    sha256 cellar: :any_skip_relocation, ventura:        "dfdcd67fd2395ecee0186d5e513e1a4202a25ac5bd90c69d222f3600f6887d50"
+    sha256 cellar: :any_skip_relocation, monterey:       "dfdcd67fd2395ecee0186d5e513e1a4202a25ac5bd90c69d222f3600f6887d50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b8dadacf703b6a68247439da1cca7143c183a905b55a23b9acbf84451ca0aaa"
   end
 
   depends_on "certifi"

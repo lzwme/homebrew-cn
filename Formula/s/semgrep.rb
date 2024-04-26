@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.69.0",
-      revision: "edb99abfaf011b35c08867dac5779b72b9099926"
+      tag:      "v1.70.0",
+      revision: "dee0ac101877551eda1de6d5c988ef05d3e76169"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "605361ccbab726b874ac93b54c8af6263b6aeaca2aa10dba78b26a630c156f24"
-    sha256 cellar: :any,                 arm64_ventura:  "927b466d3ed944cf1c09445cdf07a4f1c51da02f17c7e8ac7758795af0eb27a6"
-    sha256 cellar: :any,                 arm64_monterey: "60b0aa6b39028767caf35d032651edf7aaebd7e764499214e2cc4ec94aecf5f8"
-    sha256 cellar: :any,                 sonoma:         "235f40ad76e5e3a4796a5b52abd5f649bdf974ac7673e207cb9ec9a6ef6fc3bc"
-    sha256 cellar: :any,                 ventura:        "f8b4bb9d99ca2220e9ceb7897ac70f6f19d5fd0385b4977f85b13ba10abd9397"
-    sha256 cellar: :any,                 monterey:       "ac1df75b70c6b07c933c9c4c61778f1bf7590a7e283dc44eceb0966ecf667cc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a633af84806ac55b302ae1ed2df14825b6e1737b12495bb6b38017da641d11b5"
+    sha256 cellar: :any,                 arm64_sonoma:   "8b09bae7c34e92251b5a54dbaa81826aad51654bd76730ca17e63331f7c33405"
+    sha256 cellar: :any,                 arm64_ventura:  "470472c41b3ed1373b537c0d7b4743a0c972ee3b62e7f38124b6a630a46fc714"
+    sha256 cellar: :any,                 arm64_monterey: "411eb24028892690b74f11a3371c5abade60df864ed5777ebc8f1e0dad1f9718"
+    sha256 cellar: :any,                 sonoma:         "305aa0a577441ec6483f22cf2655a06a0858b5646e16e76fa13c28066753b1f9"
+    sha256 cellar: :any,                 ventura:        "a4718569443a443c1d568dfb9e95e4268dd1ba2947fb5de15f7673ca09d1c4ed"
+    sha256 cellar: :any,                 monterey:       "ddbfeae82e9e073bb609b82404226a2f424b6e5205a7f5f99c2ffd314f61fb8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "644932c525bb5313e95f84f7f112f11d25f7a83b5a327944773a3d14bb65ace9"
   end
 
   depends_on "autoconf" => :build
@@ -37,6 +37,7 @@ class Semgrep < Formula
   depends_on "gmp"
   depends_on "libev"
   depends_on "pcre"
+  depends_on "pcre2"
   depends_on "python@3.11" # Python 3.12 blocked by imp usage in glom < 23.4.0
   depends_on "sqlite"
   depends_on "tree-sitter"
@@ -87,8 +88,8 @@ class Semgrep < Formula
   end
 
   resource "exceptiongroup" do
-    url "https:files.pythonhosted.orgpackages8e1cbeef724eaf5b01bb44b6338c8c3494eff7cab376fab4904cfbbc3585dc79exceptiongroup-1.2.0.tar.gz"
-    sha256 "91f5c769735f051a4290d52edd0858999b57e5876e9f85937691bd4c9fa3ed68"
+    url "https:files.pythonhosted.orgpackagesa065d66b7fbaef021b3c954b3bbb196d21d8a4b97918ea524f82cfae474215afexceptiongroup-1.2.1.tar.gz"
+    sha256 "a4785e48b045528f5bfe627b6ad554ff32def154f42372786903b7abcfe1aa16"
   end
 
   resource "face" do
@@ -132,8 +133,8 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https:files.pythonhosted.orgpackages8da589cdbc4a7f6d7a0624c120be102db770ee717aa371066581e3daf2beb96fpeewee-3.17.1.tar.gz"
-    sha256 "e009ac4227c4fdc0058a56e822ad5987684f0a1fbb20fed577200785102581c3"
+    url "https:files.pythonhosted.orgpackages7ab12331e6b1fc8c61686dd9276f34142265462640eb0dd431246e30c4461065peewee-3.17.3.tar.gz"
+    sha256 "ef15f90b628e41a584be8306cdc3243c51f73ce88b06154d9572f6d0284a0169"
   end
 
   resource "pygments" do
@@ -142,8 +143,8 @@ class Semgrep < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages59d748b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37referencing-0.34.0.tar.gz"
-    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
+    url "https:files.pythonhosted.orgpackages6a1fc74e341a7a2a6fb2ab77d3a7311bd57a31e766e5d006a25053484cccbfebreferencing-0.35.0.tar.gz"
+    sha256 "191e936b0c696d0af17ad7430a3dc68e88bc11be6514f4757dc890f04ab05889"
   end
 
   resource "requests" do
@@ -202,6 +203,8 @@ class Semgrep < Formula
       ENV["OPAMYES"] = "1"
       # Set library path so opam + lwt can find libev
       ENV["LIBRARY_PATH"] = "#{HOMEBREW_PREFIX}lib"
+      # Set path to libev for our static linking logic
+      ENV["SEMGREP_LIBEV_ARCHIVE_PATH"] = "#{HOMEBREW_PREFIX}liblibev.a"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
       ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }

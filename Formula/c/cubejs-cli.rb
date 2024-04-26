@@ -3,18 +3,18 @@ require "language/node"
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
-  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.35.22.tgz"
-  sha256 "e2a15b4b4ca82f616b0cf50b153d475df8512a7815059e24f98f6bc85848e6fc"
+  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.35.23.tgz"
+  sha256 "5bd3fb079b069625214097b296e4508ef39a1ce869cc226e7defb9eb1892eaed"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0b537b3f2eb9e19d117156bc5f89fdb05a0bde5bf68f79cc9db7eadfd1c62ad1"
-    sha256 cellar: :any,                 arm64_ventura:  "0b537b3f2eb9e19d117156bc5f89fdb05a0bde5bf68f79cc9db7eadfd1c62ad1"
-    sha256 cellar: :any,                 arm64_monterey: "0b537b3f2eb9e19d117156bc5f89fdb05a0bde5bf68f79cc9db7eadfd1c62ad1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dbb50ec24e05e88cc531872e1265b7bb8689d3838e3c9359a18f1b8ed976b51d"
-    sha256 cellar: :any_skip_relocation, ventura:        "dbb50ec24e05e88cc531872e1265b7bb8689d3838e3c9359a18f1b8ed976b51d"
-    sha256 cellar: :any_skip_relocation, monterey:       "dbb50ec24e05e88cc531872e1265b7bb8689d3838e3c9359a18f1b8ed976b51d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90937a983cbbcc60689034595fff7bf300cf621ccada6be4808b945db54505d0"
+    sha256 cellar: :any,                 arm64_sonoma:   "4b144b903f62735a461156094860ed384f1959010489d652496928b2605e6dae"
+    sha256 cellar: :any,                 arm64_ventura:  "4b144b903f62735a461156094860ed384f1959010489d652496928b2605e6dae"
+    sha256 cellar: :any,                 arm64_monterey: "4b144b903f62735a461156094860ed384f1959010489d652496928b2605e6dae"
+    sha256 cellar: :any,                 sonoma:         "2d655a01aac68255a4dfcf4dca8446c66547b9a2bc99387e19b77a1c2f83d38f"
+    sha256 cellar: :any,                 ventura:        "2d655a01aac68255a4dfcf4dca8446c66547b9a2bc99387e19b77a1c2f83d38f"
+    sha256 cellar: :any,                 monterey:       "2d655a01aac68255a4dfcf4dca8446c66547b9a2bc99387e19b77a1c2f83d38f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e893c64141207a3fefcc43f6d14b9402a3a02177a7bfc217d4ed6dde0891b981"
   end
 
   depends_on "node"
