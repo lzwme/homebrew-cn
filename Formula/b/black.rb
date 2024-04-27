@@ -3,8 +3,8 @@ class Black < Formula
 
   desc "Python code formatter"
   homepage "https:black.readthedocs.ioenstable"
-  url "https:files.pythonhosted.orgpackages57134075f1b5b394e4ccd7fccf6646957e6b454260a0a89b2093fa1b60dc6de6black-24.4.1.tar.gz"
-  sha256 "5241612dc8cad5b6fd47432b8bd04db80e07cfbc53bb69e9ae18985063bcb8dd"
+  url "https:files.pythonhosted.orgpackagesa247c9997eb470a7f48f7aaddd3d9a828244a2e4199569e38128715c48059ac1black-24.4.2.tar.gz"
+  sha256 "c872b53057f000085da66a19c55d68f6f8ddcac2642392ad3a355878406fbd4d"
   license "MIT"
   head "https:github.compsfblack.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Black < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aff695fdca09652c16de45b73c899c064030578c4068c8aeebc58d4561e6375d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cef8589f708ded35e11e33a3ed6a2ac18dbcafb3e48e4e7c7ac4bc39b0a92401"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ccac57d5ce0911ba219ca631932185d2bacbce0b3e8fcd504c7dd504891cdb5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ea5c8bdb58628902023c4bb6eecb9cb77b914bf08ab0384762dd248c540d9c1f"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc74246f60bdd5c3353e599cbe5380ebb914127c7107dc27a2df52334f65849e"
-    sha256 cellar: :any_skip_relocation, monterey:       "5702af46fa4540e152a6b6fe445da9e78f5a6a6eb78c3e8790cbdc923043c789"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ea4153040e368c55bbe1f8815d01be4a04966dd57faef68c7e18c6d28b3a239"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a2a70bf229cc1366f723ac310a791724a9bc4e5151fc60e06d3bbab8e7ad48dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "141ab91f773dd4241849e0b9e8a5fdac55c8e9a58500242c75d1e9221bff43dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13600614d439c9a785da6ca640ca863acf12a7e82144bbd4d98723c4899f1740"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f25ac4d0144a39de14d6e3171445e0d13f7105a8e7274af41ba9cdffccd829da"
+    sha256 cellar: :any_skip_relocation, ventura:        "66d1583336b66fd44334e1e9f8391f1d878d0c78580b6b0faa0c9be73cf07fd5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0bf926bdab12358d4b5a029b31cb3ca94c6af148e86f975ed37ce91ba47f715"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "248f936ed92f5823b351bfec842a2059cc897733b8571be30a711e83c44f9562"
   end
 
   depends_on "python@3.12"

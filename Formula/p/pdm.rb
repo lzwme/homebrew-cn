@@ -9,13 +9,14 @@ class Pdm < Formula
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d0f7f65c547cd435f4003c5f780869bb59c6e3dc4405203f8ad2e915ccefa3b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41f1031eead2538b8119f96b441c015a5a1d9f00bee7eff1d5f4af3119747c17"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "12c97fff159dd570d1ece942d16f16b68ec0b4eda73986b534c72f7f273cd341"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2d8925010756bc3f342113c982b455e9e46d00d91e6a9732e87d81a67874500e"
-    sha256 cellar: :any_skip_relocation, ventura:        "034c5ae97f0c20644c86bbda4d38043a12d63927c9ff29a98922e80090dccbdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff404a4187cf7aef7a57d07f4127d0c56aeb03388c583a65996845f9edb7565d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9977479d2341cb47881526243cc527292b8b526dd508552ae747b0bcf6f255e0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6179ee21b433dbe9ab4404b0ba299e24824d6c39fd7d85b896d35fc81ba693fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65b04323b56b667599fb6fabf7a1048b78baaaee4d4a9c8026ef7b567fa3a970"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b320c5dabcf1c33807fce5ef9864d0a2ca6d45bd91e27297b9f1e4c5c9d76ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fc22952044bcc916155a490aae5a442fd55d57708b61d14a86b39f3d8aad5678"
+    sha256 cellar: :any_skip_relocation, ventura:        "008ab97572dfc61fc941903957ec3d4c0a883b8c651c6c6753d92a071f260e10"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c7dbc9b71c6460ac001d09e25309a73f28b9062bbe90633b6d46ad4b7fabd88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5154f702366433cc98645d3ade999ede89a5924321e5493dd2d10d615e4df0f4"
   end
 
   depends_on "certifi"
@@ -174,11 +175,6 @@ class Pdm < Formula
   resource "virtualenv" do
     url "https:files.pythonhosted.orgpackagesd8020737e7aca2f7df4a7e4bfcd4de73aaad3ae6465da0940b77d222b753b474virtualenv-20.26.0.tar.gz"
     sha256 "ec25a9671a5102c8d2657f62792a27b48f016664c6873f6beed3800008577210"
-  end
-
-  resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb8d6ac9cd92ea2ad502ff7c1ab683806a9deb34711a1e2bd8a59814e8fc27e69wheel-0.43.0.tar.gz"
-    sha256 "465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85"
   end
 
   resource "zstandard" do

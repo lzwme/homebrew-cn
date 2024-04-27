@@ -923,7 +923,6 @@ Homebrew-homebrew-core/Formula/c/clpbar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clucene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clusterawsadm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clusterctl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/clutter-gst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clutter-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clutter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clzip.rb, Homebrew/homebrew-core, 0
@@ -5379,7 +5378,7 @@ Homebrew-homebrew-core/Formula/r/rhino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rhit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rich-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/richgo.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/riemann-client.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/riemann-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riemann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rig.rb, Homebrew/homebrew-core, 0

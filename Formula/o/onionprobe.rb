@@ -6,18 +6,17 @@ class Onionprobe < Formula
   url "https://files.pythonhosted.org/packages/9d/5f/c685af3ff4b8833f961ba27c12506c835150710ca84afd37847897be84d9/onionprobe-1.1.2.tar.gz"
   sha256 "200a31ab2c8b1f6bafec1828a4e3b374d01fc80a8fefd9f75698b70cb6d04903"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://gitlab.torproject.org/tpo/onion-services/onionprobe.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "faf9724f520fe25602a63dc0eeee17091e7213fe26be1359d8c0be5d45dcb08d"
-    sha256 cellar: :any,                 arm64_ventura:  "c0d0e3ed019f40004af5c7e8e85b85030e2f68da054474080a9e4105f95d8909"
-    sha256 cellar: :any,                 arm64_monterey: "febf38067b2fddff2e8f2925b540d6b360e79e5e38471ced0a51416afcaf95a1"
-    sha256 cellar: :any,                 sonoma:         "76a3dd7fbbf00dd77d495bdca9341c9354c394cb8c529c1a91ebd419b7d82ae6"
-    sha256 cellar: :any,                 ventura:        "1e8a87eb802f01638808336971bd5b76abb79bc5becfd9721eb1cc4d65796729"
-    sha256 cellar: :any,                 monterey:       "6d1c465db61749e27bfea9f3468c14b8b7b8b0a35bf3e7bf54de18eb0fd03170"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "601b9287417aface80a01cf2d57fe44cf5e7d6abe2efb7d1a253629b084e4cf8"
+    sha256 cellar: :any,                 arm64_sonoma:   "90661303dfb8d4caf3bcd2782ddb865dc48f2719b03d4e634c055cbc5e1c77f2"
+    sha256 cellar: :any,                 arm64_ventura:  "e6c9ce948d8ae78178ab46e1af49a288b0e99cad2e200d54e5839cccece72f65"
+    sha256 cellar: :any,                 arm64_monterey: "d57b3e0720853059dc1022c8a206bcceb3842e71695bbbd9a0da4adc3416a327"
+    sha256 cellar: :any,                 sonoma:         "05e975eb4a26383191e8ee03098748f7d9ef93a2a658ad1df88eccf4a10bafab"
+    sha256 cellar: :any,                 ventura:        "e886fc7c1454262ceaefa962e15f2b59da7604e67bf39466fd220d7403cb1dd9"
+    sha256 cellar: :any,                 monterey:       "1b0823a28feec4b12ba71f83fcd48fb945348209f5f2d01fb9999003e0a83c8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d8f37fca897e270314d797f6f72a79882e6218a2b5e0740e0e1eb3e8c483c6a"
   end
 
   depends_on "certifi"
@@ -32,8 +31,8 @@ class Onionprobe < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/bf/3f/ea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2/idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "prometheus-client" do

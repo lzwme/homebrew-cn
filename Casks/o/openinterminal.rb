@@ -15,6 +15,7 @@ cask "openinterminal" do
     "~LibraryApplication Scriptswang.jianing.app.OpenInTerminal",
     "~LibraryApplication Scriptswang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension",
     "~LibraryApplication Scriptswang.jianing.app.OpenInTerminalHelper",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentswang.jianing.app.openinterminalhelper.sfl*",
     "~LibraryContainerswang.jianing.app.OpenInTerminal.OpenInTerminalFinderExtension",
     "~LibraryContainerswang.jianing.app.OpenInTerminalHelper",
     "~LibraryGroup Containersgroup.wang.jianing.app.OpenInTerminal",

@@ -13,6 +13,7 @@ cask "silicon" do
   app "Silicon.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.digidna.silicon.sfl*",
     "~LibraryCachescom.DigiDNA.Silicon",
     "~LibrarySaved Application Statecom.DigiDNA.Silicon.savedState",
   ]

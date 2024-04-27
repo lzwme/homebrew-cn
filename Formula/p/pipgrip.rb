@@ -8,13 +8,14 @@ class Pipgrip < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c679e971b1958d34c93db8a04515073fee6931806a9c110bb9f3f966befe6c49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c679e971b1958d34c93db8a04515073fee6931806a9c110bb9f3f966befe6c49"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c679e971b1958d34c93db8a04515073fee6931806a9c110bb9f3f966befe6c49"
-    sha256 cellar: :any_skip_relocation, sonoma:         "575a1bc8528ef628621944027ec9ae2644d7895c6e027ebb13cc889668c1b285"
-    sha256 cellar: :any_skip_relocation, ventura:        "575a1bc8528ef628621944027ec9ae2644d7895c6e027ebb13cc889668c1b285"
-    sha256 cellar: :any_skip_relocation, monterey:       "575a1bc8528ef628621944027ec9ae2644d7895c6e027ebb13cc889668c1b285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4c2cf63b623a07e764ecdc130328e3b9a2fa6615d4324bcd753338cfc12424e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7dff1d3d2a7882be3bc3b2ab22ba026f5b437490bc5b8395f554f04f1ae3a67d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7dff1d3d2a7882be3bc3b2ab22ba026f5b437490bc5b8395f554f04f1ae3a67d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dff1d3d2a7882be3bc3b2ab22ba026f5b437490bc5b8395f554f04f1ae3a67d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b4cc6987ea55e8c4e576d82523e8ee1dfbd4b07e92e55e51aff797a1bef83f9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "b4cc6987ea55e8c4e576d82523e8ee1dfbd4b07e92e55e51aff797a1bef83f9f"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4cc6987ea55e8c4e576d82523e8ee1dfbd4b07e92e55e51aff797a1bef83f9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11befbfc45817bc674484894aad95f49044514c423f6c650d14fde0633a07a09"
   end
 
   depends_on "python@3.12"
@@ -35,8 +36,8 @@ class Pipgrip < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "six" do

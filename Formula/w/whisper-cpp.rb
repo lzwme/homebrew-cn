@@ -28,6 +28,16 @@ class WhisperCpp < Formula
     pkgshare.install ["samplesjfk.wav", "modelsfor-tests-ggml-tiny.bin", "ggml-metal.metal"]
   end
 
+  def caveats
+    <<~EOS
+      whisper-cpp requires GGML model files to work. These are not downloaded by default.
+      To obtain model files (.bin), visit one of these locations:
+
+        https:huggingface.coggerganovwhisper.cpptreemain
+        https:ggml.ggerganov.com
+    EOS
+  end
+
   test do
     cp [pkgshare"jfk.wav", pkgshare"for-tests-ggml-tiny.bin", pkgshare"ggml-metal.metal"], testpath
 

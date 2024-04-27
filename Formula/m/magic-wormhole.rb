@@ -10,13 +10,14 @@ class MagicWormhole < Formula
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8e372b12cb7fdb0e2f9c9ae661cd2330ef71e6a7d00aa434813c081763102da4"
-    sha256 cellar: :any,                 arm64_ventura:  "7d5ddc9662f1062c6b41afb9e96a15674dd5f556c75b50ad4a923dc8c3a7d9e6"
-    sha256 cellar: :any,                 arm64_monterey: "d0aaeb464ba7928513184e95d41ed91b4e27a1ec2d3e9cf1ba8f516326b973f9"
-    sha256 cellar: :any,                 sonoma:         "3995428632254af5e70977ae36af61ff307dde557aa2fa68b0fab5fb1cc1d664"
-    sha256 cellar: :any,                 ventura:        "79a14a27d7e34bd2066c276c3023878126381de64b06f3ab3915fb6bd20f8609"
-    sha256 cellar: :any,                 monterey:       "f986606cd8a856f95b351bcf09258cd586899053e8f56677b23b0743e0b40396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79e50c3ac4d18ddc35dfcbdaceb8cb96365963d521841ee4022ea079f9779e70"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "4ed9e8057afe207923dac49a9c30111fcd29a658bae14be9d24417d6558a3ff8"
+    sha256 cellar: :any,                 arm64_ventura:  "eb8ef6d635386d8f17e95dcb5627774911786a3285500b998ae95eb680a69bdf"
+    sha256 cellar: :any,                 arm64_monterey: "9463421abdbc92129fc8d0234b3defb9e76973b65ece186c9950ce0ce850df35"
+    sha256 cellar: :any,                 sonoma:         "443dbfe2f6f2fb23ccbb662d6914418857993d0ac2506079d74173d77bf40cf7"
+    sha256 cellar: :any,                 ventura:        "c8a255eed1a8f332e5849767346a3e3383ae58406fbe09222eda8010dad0a78b"
+    sha256 cellar: :any,                 monterey:       "0a3b94428a73a9f9f43f8a2a41a6b606998c582ce4a35569bad1695376c30a8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c3a7e57fcbb5f5e275809f365e29fa72d236e7ae9565a93bc0303c696fd338a"
   end
 
   depends_on "cryptography"
@@ -106,8 +107,8 @@ class MagicWormhole < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages7a12dc02a2401dac87cb2d3ea8d3b23eab30db4cd2948d5b048bf912b9fe959asetuptools-69.4.tar.gz"
-    sha256 "659e902e587e77fab8212358f5b03977b5f0d18d4724310d4a093929fee4ca1a"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "six" do
@@ -150,11 +151,6 @@ class MagicWormhole < Formula
   resource "typing-extensions" do
     url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
     sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
-  end
-
-  resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb8d6ac9cd92ea2ad502ff7c1ab683806a9deb34711a1e2bd8a59814e8fc27e69wheel-0.43.0.tar.gz"
-    sha256 "465ef92c69fa5c5da2d1cf8ac40559a8c940886afcef87dcf14b9470862f1d85"
   end
 
   resource "zipstream-ng" do

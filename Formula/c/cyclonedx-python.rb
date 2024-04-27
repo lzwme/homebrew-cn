@@ -3,19 +3,19 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https:cyclonedx.org"
-  url "https:files.pythonhosted.orgpackages9beb4acab00c90bb13a0818f8515ac4a5d8246e668fe3224f74fcbeccfa3a349cyclonedx_bom-4.4.2.tar.gz"
-  sha256 "a5807bdcc7ca341c60ec1d62a7f72fed57f0e8fe3d67a8449d482e12a476009a"
+  url "https:files.pythonhosted.orgpackagesd98000b178f03b3c6ef9e84747fa2f432f9c45126bab8828f555a197e84ea439cyclonedx_bom-4.4.3.tar.gz"
+  sha256 "088dfff2084e9df60924975ec82b15f5e44ec5bd8ef2a29ed43905ee2b84a6e2"
   license "Apache-2.0"
   head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6efedd303c50bfc416b0bcc2a9de08fe3f58f1a7751f9aa9749aeb9a5309d592"
-    sha256 cellar: :any,                 arm64_ventura:  "bc85f92f104dab87f3fa6a477366aa47d3abd39b3841c00d9c64787099420f53"
-    sha256 cellar: :any,                 arm64_monterey: "b10ce3bbc848915950c8e79f225cf03d244e136b1b628e30a022f954c6983f9d"
-    sha256 cellar: :any,                 sonoma:         "53171317b71eb040da4dae3c19a39b7de9d922fdef5ab618967efe793eb55ae8"
-    sha256 cellar: :any,                 ventura:        "7286e5c2df1d14f28a1e773138566498af5f888d6b69285c92444f4315a8affa"
-    sha256 cellar: :any,                 monterey:       "35c955951c4f7561b62ef18da33b058c81a7b302824ecb81f988f41fb37e1e01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8880dc609e3bec49fb0d073cb9758e07c21fb977ad6a21f86af143bd8599f1ca"
+    sha256 cellar: :any,                 arm64_sonoma:   "b2677369cb7764e4a857f10c297ccb90ffc8e5ea575c84e455a434c5bfe346f3"
+    sha256 cellar: :any,                 arm64_ventura:  "374edd791dda9ba7d8d12f1e6c8dddbc205a79cd06c4e249618d796fbc4cd7ed"
+    sha256 cellar: :any,                 arm64_monterey: "4408998e6bcb8a23e955437a3d05ded532ac36c09a7ecfe373b32cf47a971ac9"
+    sha256 cellar: :any,                 sonoma:         "9868f9731e8f757988a65e3f94ada937a2e4754d1472349b4a285946bf830a3a"
+    sha256 cellar: :any,                 ventura:        "fcde44ce9daa8f9427757346da47d0ab0323ca9350167ba7e44c9641fb355ec3"
+    sha256 cellar: :any,                 monterey:       "7d58d3aa23c24766f2f210b21e7cbcabded18735f8658e2d7e4de0e821c18c8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22e74de6bdb300647d336b484cf9757b8646e6c3f8e9aefd8ed443df3f509c38"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -45,8 +45,8 @@ class CyclonedxPython < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https:files.pythonhosted.orgpackages8dc6393c779a8c123652abfa952a390547512b9f4b2f3cbd708648b38825d4cecyclonedx_python_lib-7.3.0.tar.gz"
-    sha256 "b679e5645c12a926f852c6ccd4ae0b26fdfc219d615829f2747e87ad3246704e"
+    url "https:files.pythonhosted.orgpackages3a31e87ec9cce7977e115fd2eca25fc6d2cd454f423073bb799f4a212d096107cyclonedx_python_lib-7.3.2.tar.gz"
+    sha256 "e2b12702e98da7bce89c28496c73964c2a0b128276078c1d0b398a8ba359e000"
   end
 
   resource "defusedxml" do
@@ -125,8 +125,8 @@ class CyclonedxPython < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages59d748b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37referencing-0.34.0.tar.gz"
-    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
+    url "https:files.pythonhosted.orgpackages6a1fc74e341a7a2a6fb2ab77d3a7311bd57a31e766e5d006a25053484cccbfebreferencing-0.35.0.tar.gz"
+    sha256 "191e936b0c696d0af17ad7430a3dc68e88bc11be6514f4757dc890f04ab05889"
   end
 
   resource "rfc3339-validator" do

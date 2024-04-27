@@ -1,10 +1,10 @@
 class Pypy39 < Formula
   desc "Implementation of Python 3 in Python"
   homepage "https:pypy.org"
-  url "https:downloads.python.orgpypypypy3.9-v7.3.15-src.tar.bz2"
-  sha256 "e42c16593dd2d8e30ffa6287660c6984562bf4e9f95e660706e16764dfec85a8"
+  url "https:downloads.python.orgpypypypy3.9-v7.3.16-src.tar.bz2"
+  sha256 "5b75af3f8e76041e79c1ef5ce22ce63f8bd131733e9302081897d8f650e81843"
   license "MIT"
-  head "https:github.compypypypy.git", branch: "main"
+  head "https:github.compypypypy.git", branch: "py3.9"
 
   livecheck do
     url "https:downloads.python.orgpypy"
@@ -12,13 +12,13 @@ class Pypy39 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6e4036bc99784d5e9a4181ae57b693f06e33d5283725657bdf002544e53b5cf8"
-    sha256 cellar: :any,                 arm64_ventura:  "8aa75035593e5a2c27882765190de2f54d4523c7daaadc125bf08b55e7c9ff01"
-    sha256 cellar: :any,                 arm64_monterey: "9b2e50fcb4fd4d0a8491b5feddf7bba7d33106c177a346844481d1051c6e9cd9"
-    sha256 cellar: :any,                 sonoma:         "a398082a9b2e660e5f3dd56b1fb03b71a029d9ca98e1e73becac711e0b7ec797"
-    sha256 cellar: :any,                 ventura:        "0683d35b591f98d6f0a20c3a2cd9e4f6ff1a2ab784fef94fe0c14ce20a99644d"
-    sha256 cellar: :any,                 monterey:       "1bd9370f7cb0ecfa8166fac07630edae728592174722fc8c50e008e03c173a42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f5def43f60dfdb8281ee17e15b45c8ad483f4d10d061ab8ed82784dcb056a71"
+    sha256 cellar: :any,                 arm64_sonoma:   "a2b7c3fb49103e181be68d58bc5e24ef166378a45b6e0809ed49d3703320cd6c"
+    sha256 cellar: :any,                 arm64_ventura:  "e0808219d8841660930e01893cb4c5926ea402369efd21f5c50a05594f0308fd"
+    sha256 cellar: :any,                 arm64_monterey: "713260b8a119d369e1aad5261848c0b74f7703063bbac4502e0ebe9a15d1ef91"
+    sha256 cellar: :any,                 sonoma:         "538ad1b015b0f99bdc3cb3c9717eee7924c1c3ebb23642c5ca5c94c7f702cae7"
+    sha256 cellar: :any,                 ventura:        "4d2b3ee05e7e7ab409b490dc1f5406c758dc5c5b5686bb421a3ebac10335081d"
+    sha256 cellar: :any,                 monterey:       "69ffe1a539cf92a717bdf238529414331d6ac0eaa774f30820e04ddd9d0e90ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03a763d3d1d5274e48acf5911303adea4c327feb5e7f5e0b727362582e0de541"
   end
 
   depends_on "pkg-config" => :build
@@ -36,17 +36,14 @@ class Pypy39 < Formula
   uses_from_macos "unzip"
   uses_from_macos "zlib"
 
-  # setuptools >= 60 required sysconfig patch
-  # See https:github.comHomebrewhomebrew-corepull99892#issuecomment-1108492321
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesef752bc7bef4d668f9caa9c6ed3f3187989922765403198243040d08d2a52725setuptools-59.8.0.tar.gz"
-    sha256 "09980778aa734c3037a47997f28d6db5ab18bdf2af0e49f719bfc53967fd2e82"
+  resource "pip" do
+    url "https:files.pythonhosted.orgpackages94596638090c25e9bc4ce0c42817b5a234e183872a1129735a9330c472cc2056pip-24.0.tar.gz"
+    sha256 "ea9bd1a847e8c5774a5777bb398c19e80bcd4e2aa16a4b301b718fe6f593aba2"
   end
 
-  # always pull the latest pip, https:pypi.orgprojectpip#files
-  resource "pip" do
-    url "https:files.pythonhosted.orgpackagesb7066b1ad0ae8f97d7a0d6f6ad640db10780578999e647a9593512ceb6f06469pip-23.3.2.tar.gz"
-    sha256 "7fd9972f96db22c8077a1ee2691b172c8089b17a5652a44494a9ecb0d78f9149"
+  resource "setuptools" do
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   # Build fixes:
@@ -64,6 +61,11 @@ class Pypy39 < Formula
   end
 
   def install
+    # Work around build failure with Xcode 15.3
+    # _curses_cffi.c:6795:38: error: incompatible function pointer types assigning to
+    # 'char *(*)(const char *, ...)' from 'char *(char *, ...)' [-Wincompatible-function-pointer-types]
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
     # The `tcl-tk` library paths are hardcoded and need to be modified for non-usrlocal prefix
     inreplace "lib_pypy_tkintertklib_build.py" do |s|
       s.gsub! "usrlocalopttcl-tk", Formula["tcl-tk"].opt_prefix""
@@ -96,12 +98,17 @@ class Pypy39 < Formula
       system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy3.tar.bz2"
     end
 
+    # Move original libexecbin directory to allow preserving user-installed scripts.
+    # Also create symlinks inside pkgshare to allow `brew linkunlink` to work.
+    libexec.install libexec"bin" => "pypybin"
+    pkgshare.install_symlink (libexec"pypybin").children
+
     # The PyPy binary install instructions suggest installing somewhere
     # (like opt) and symlinking in binaries as needed. Specifically,
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
-    bin.install_symlink libexec"binpypy#{abi_version}"
-    lib.install_symlink libexec"bin"shared_library("libpypy#{abi_version}-c")
+    bin.install_symlink libexec"pypybinpypy#{abi_version}"
+    lib.install_symlink libexec"pypybin"shared_library("libpypy#{abi_version}-c")
     include.install_symlink libexec"includepypy#{abi_version}"
 
     if newest_abi_version?
@@ -113,7 +120,7 @@ class Pypy39 < Formula
 
     # Delete two files shipped which we do not want to deliver
     # These files make patchelf fail
-    rm_f [libexec"binlibpypy#{abi_version}-c.so.debug", libexec"binpypy#{abi_version}.debug"]
+    rm [libexec"pypybinlibpypy#{abi_version}-c.so.debug", libexec"pypybinpypy#{abi_version}.debug"]
   end
 
   def post_install
@@ -135,8 +142,16 @@ class Pypy39 < Formula
     # Symlink the prefix site-packages into the cellar.
     site_packages(libexec).parent.install_symlink site_packages(HOMEBREW_PREFIX)
 
+    # Create a scripts folder in the prefix and symlink it as libexecbin.
+    # This is needed as setuptools' distutils ignores our distutils.cfg.
+    # If `brew link` created a symlink for scripts folder, replace it with a directory
+    if scripts_folder.symlink?
+      scripts_folder.unlink
+      scripts_folder.install_symlink pkgshare.children
+    end
+    libexec.install_symlink scripts_folder => "bin" unless (libexec"bin").exist?
+
     # Tell distutils-based installers where to put scripts
-    scripts_folder.mkpath
     (distutils"distutils.cfg").atomic_write <<~EOS
       [install]
       install-scripts=#{scripts_folder}

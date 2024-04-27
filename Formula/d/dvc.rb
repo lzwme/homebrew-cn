@@ -3,18 +3,17 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackages89cc427135561f60135df896521c58aa1bd6848d5405a0c07c1689a21af57f7advc-3.50.0.tar.gz"
-  sha256 "59106be452a74843e3618a92f80d9593f8e2b73892591f5ccafa6c6ac82cad1c"
+  url "https:files.pythonhosted.orgpackagesaadf64d43a2caaed1f58237993570a20cba3cbdde27b45c3293d93a717f49e82dvc-3.50.1.tar.gz"
+  sha256 "97c92a530da38ea08f1cfad6ec7ad7ad1abf55887eb243d10b789123131616f9"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "a2030dba0cf1093bbbeb816f94c9724bdf1b280cf1bbd576ca2be1edcee2f139"
-    sha256 cellar: :any, arm64_ventura:  "9e6aff24676990c852901ceb7207451b49bc5d229e3fa84ab43593842b9630e1"
-    sha256 cellar: :any, arm64_monterey: "6bbb1b0975dc9fde0cdbb65abf65846226e3768b7f3502dacb0447e52326ed17"
-    sha256 cellar: :any, sonoma:         "6bddaf8ade58c583e6e238d6c949d400c0b3097e20304c5db3a7ea60eaee8579"
-    sha256 cellar: :any, ventura:        "a6720c16b7749c6f229b88c4c3165e424589e5b6a2aedc7e85be29c098c7c945"
-    sha256 cellar: :any, monterey:       "4caf1efc24ffea5acfbf2b09891ea9859a778acf92e3f2483e67d1026a40f446"
+    sha256 cellar: :any, arm64_sonoma:   "4955165aa2bf69dd5fa35bbeb5fc4cfa91bdb0be637c5034dabc61549a96d9b1"
+    sha256 cellar: :any, arm64_ventura:  "1d584189700495206f56ababf63b8842ec143d8e42ea649c6220059c8638fcc5"
+    sha256 cellar: :any, arm64_monterey: "a87e54b27de5ff1f464590723cb4803063b00c29c332dc1b984df460a2052641"
+    sha256 cellar: :any, sonoma:         "2a4c429fa703d2b93017ca77cf89817f6aa6f472c194145376f8186968faa61c"
+    sha256 cellar: :any, ventura:        "c7a510cfa7d00047a9b5964ce9d0b69560947f6d9af7efdeb1d626c1077f25b0"
+    sha256 cellar: :any, monterey:       "a73955c631a3a878949201df75f33ba8e9027909aa1bca3130290ff959bbc241"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -289,8 +288,8 @@ class Dvc < Formula
   end
 
   resource "dvc-s3" do
-    url "https:files.pythonhosted.orgpackagesafa6302a85a3a257bbb0cc638b00a32619f10f1f761c4335f7da88758a73b2e9dvc-s3-3.1.0.tar.gz"
-    sha256 "d320f916c8a741ab7771b998e6d7829454b4284194bc40f6021fc909b4ed67fb"
+    url "https:files.pythonhosted.orgpackagesfacf14e5f014f77381a58617c1ee3ae98f8fc15768e6a89ff0efac3ff7fc0016dvc_s3-3.2.0.tar.gz"
+    sha256 "1d012ac1dce47659986f918123b48931cf9b3429ab0b4a22fd4b02448185ceb6"
   end
 
   resource "dvc-ssh" do

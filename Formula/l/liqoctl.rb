@@ -1,18 +1,18 @@
 class Liqoctl < Formula
   desc "Is a CLI tool to install and manage Liqo-enabled clusters"
   homepage "https:liqo.io"
-  url "https:github.comliqotechliqoarchiverefstagsv0.10.2.tar.gz"
-  sha256 "865c949f97794639074e2d1c87ad05ea8d71e0ec0109f31ff27ba305bb10ca49"
+  url "https:github.comliqotechliqoarchiverefstagsv0.10.3.tar.gz"
+  sha256 "01c03c7eba34e04a4ba0fc9d0b1f08d9fb2d6b101f5b997bb2d9dbfd8ef993d5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f55b4b3b4261135089fc5532cc5efabbd33082869ab874de207df0d4071259c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f55b4b3b4261135089fc5532cc5efabbd33082869ab874de207df0d4071259c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f55b4b3b4261135089fc5532cc5efabbd33082869ab874de207df0d4071259c1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3db5fb1bc21f45a1f5cb939656e7b40813702b02b2676c0d91497ddf2202a304"
-    sha256 cellar: :any_skip_relocation, ventura:        "3db5fb1bc21f45a1f5cb939656e7b40813702b02b2676c0d91497ddf2202a304"
-    sha256 cellar: :any_skip_relocation, monterey:       "3db5fb1bc21f45a1f5cb939656e7b40813702b02b2676c0d91497ddf2202a304"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8103dc8395f92a43cb87fac263e76cadea7a7f6efbd0d76cfd07e4b04c2cd823"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6f826cf9012555b61a5b3d066e24fe911a63973e5c5b2277de51855ebad6f32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d6f826cf9012555b61a5b3d066e24fe911a63973e5c5b2277de51855ebad6f32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6f826cf9012555b61a5b3d066e24fe911a63973e5c5b2277de51855ebad6f32"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4bcead3252b38472731c02ad8bceab56e8c3980d28dc5d6551bbd9812a231ac0"
+    sha256 cellar: :any_skip_relocation, ventura:        "4bcead3252b38472731c02ad8bceab56e8c3980d28dc5d6551bbd9812a231ac0"
+    sha256 cellar: :any_skip_relocation, monterey:       "4bcead3252b38472731c02ad8bceab56e8c3980d28dc5d6551bbd9812a231ac0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05976ada5aaa96db26b7f5ac331204fd2b10ac9df13ec944a2283fc6192dae0d"
   end
 
   depends_on "go" => :build
