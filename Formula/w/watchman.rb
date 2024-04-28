@@ -4,16 +4,17 @@ class Watchman < Formula
   url "https:github.comfacebookwatchmanarchiverefstagsv2024.04.22.00.tar.gz"
   sha256 "e9861178f959d7913648e9b5d45cf3072f96f91d16064bba527c4893df807cce"
   license "MIT"
+  revision 1
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4bdec8f19ef2844f61b5656192fafdea8ff5a0e33325f37ef7046a2f717ad887"
-    sha256 cellar: :any,                 arm64_ventura:  "0d6b8bdf6c1b67311aae3407f419a644870b5c320f5842eb4022ec735d8b2059"
-    sha256 cellar: :any,                 arm64_monterey: "f7cb3b39cc50ffddeac49331e33ac1f69829947797a7afc4da866f15a646388e"
-    sha256 cellar: :any,                 sonoma:         "f4a5fce7da65d062b01e9d23807895c455f4667ebcb1c90230be31212a4aacf6"
-    sha256 cellar: :any,                 ventura:        "2e77f24c7a32a7bfa92fce011b8c23c05c6df6f47a81cd0040931478c1e161b5"
-    sha256 cellar: :any,                 monterey:       "7adb8238cf79a4ac2af045c8b537bc93cf7896f7a4734685e4f5157c18681b5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7565fed69e036dfe9f59a899cffdc677a768cef12300fd0658b0db9a642a1244"
+    sha256 cellar: :any,                 arm64_sonoma:   "82958dacc4e86f3d6db78d9d1928abb28a70e85a7a1debf972289701debbd68a"
+    sha256 cellar: :any,                 arm64_ventura:  "69d23293ff1764cbe753dbb5fd1ceb4121ee781f1d2f5dbfd0098e8a4ee67f2d"
+    sha256 cellar: :any,                 arm64_monterey: "6350dc5e23e602de52e6fc0db1e3e15d526d2ce96fb2a4c3a74ec0b079c3e709"
+    sha256 cellar: :any,                 sonoma:         "5c965aa94c0db36bf80e92d0a90f11db4e87713f6fd4f2a8156e2ef66e2fe6ef"
+    sha256 cellar: :any,                 ventura:        "2e28c0bbf25df8ab8195d29ea5224b0f45c6c2d0cc3e3d30f49063981a982681"
+    sha256 cellar: :any,                 monterey:       "9d5c8ef2dfa95e55a6a19f7edca74816b2e1ccd5ec459767a0c747d4af6f20a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3c69f8adc9775a0e2f22d9878633ac2d68577dbd221652ede0f961324e7ca8c"
   end
 
   # https:github.comfacebookwatchmanissues963

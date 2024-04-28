@@ -3,18 +3,18 @@ class PythonYq < Formula
 
   desc "Command-line YAML and XML processor that wraps jq"
   homepage "https://kislyuk.github.io/yq/"
-  url "https://files.pythonhosted.org/packages/52/c3/8b463e37c949aeb56208a6db6892b4b14c332681afd57bf6c297ca6b3d0f/yq-3.4.2.tar.gz"
-  sha256 "f916408e834e96f390ef82a36bfcbf24a555ae5a2fcdaef94a2ed5d260d161ef"
+  url "https://files.pythonhosted.org/packages/38/6a/eb9721ed0929d0f55d167c2222d288b529723afbef0a07ed7aa6cca72380/yq-3.4.3.tar.gz"
+  sha256 "ba586a1a6f30cf705b2f92206712df2281cd320280210e7b7b80adcb8f256e3b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b713929dcf2d3ef71f8cb47ef1623586e12a8de9002e7beff45fbf5c22976c31"
-    sha256 cellar: :any,                 arm64_ventura:  "227a96cea42a98c8c5f608b5efe6dda42d711c0dd5ea73a85a2e17e836b85ab3"
-    sha256 cellar: :any,                 arm64_monterey: "e32df97938b4f443b268eb926896cff8b2f7f0474580a5fbd33166cbff4a0071"
-    sha256 cellar: :any,                 sonoma:         "75a782dc726877efb35ef04fb68180622a5fb874688b64e1d46c817328aeb97f"
-    sha256 cellar: :any,                 ventura:        "d386366414bd2bbbbb1a8b6dce7faf761e830dd3d24a8dadfa0db1742b5b4ab5"
-    sha256 cellar: :any,                 monterey:       "418b439548f341855376582d97a86eb7533dc3f461e38103548f8c9aceb53ba1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c191a791b326b0b3060b77a316e3622cc96a95b0439bfaf67e4a183289775954"
+    sha256 cellar: :any,                 arm64_sonoma:   "d4a63ac6260203d6a60d1c8de1cf2ee2134975dfa3c87c77a3e251e14a5388fb"
+    sha256 cellar: :any,                 arm64_ventura:  "20f88a8d36c11e7559624d3c28b01c4607fdd4d0d0c08bdaa960fb9fc848e9b4"
+    sha256 cellar: :any,                 arm64_monterey: "502fa5f120e445b2252c5ab471621389877c5f421c9aa86410403f29de502470"
+    sha256 cellar: :any,                 sonoma:         "2dfe19226f54797ea5781031368d9c512427b9054950c7da2189226e4a3e1eb8"
+    sha256 cellar: :any,                 ventura:        "23d85150011c1351d57b2e2ddaf41eda9d370988f35d3c5a8170fe1611e515df"
+    sha256 cellar: :any,                 monterey:       "b4c2355407bec5cb6c655473842ebbda96b67244df4650a2e83274b57c25becc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc7bbd9af1e510f3d65cc8ccd5a89d52419b87ba022988999b35d6b274878a13"
   end
 
   depends_on "jq"

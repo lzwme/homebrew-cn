@@ -4,16 +4,16 @@ class Colmap < Formula
   url "https:github.comcolmapcolmaparchiverefstags3.9.1.tar.gz"
   sha256 "f947ad80802baa8f00f30f26d316d8c608ab2626465eac1c81cf325d57879862"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b11c849fb78608b093923e4cd4fb8e787bfbe20b8fddf9f870213b5eed2c50fc"
-    sha256 cellar: :any,                 arm64_ventura:  "fec342de2d5ae076d042d57753ce05579706ed772ce88194348e7f8ba9f57f48"
-    sha256 cellar: :any,                 arm64_monterey: "92df62d9a0143d60723f23beb558a3ff981f23778c1e637bd483105bb94e4b30"
-    sha256 cellar: :any,                 sonoma:         "02ef38d93ab07042a1e1154ce6d35cb196619698b1e5cccdf5d6b54011862872"
-    sha256 cellar: :any,                 ventura:        "535fc9fe53fe4d12460918ef578bd95eca30bee47125fd5944fe984ac527e20f"
-    sha256 cellar: :any,                 monterey:       "eba5f8d2fdcd8fe2ba612535efcad03ab470052eb8e451de280c1063b5ebbdb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "718f3c2d799beed5863dad62393691f5f04f1a71432c6e0682788102cd125383"
+    sha256 cellar: :any,                 arm64_sonoma:   "9d00fc57d1f732a4fefb741ab48e221f480e2cb16deeb9ca8f513b6a21ae6e73"
+    sha256 cellar: :any,                 arm64_ventura:  "04d186231e777dcbccb8516dd4ffbee31c686698520df771100a330862b48949"
+    sha256 cellar: :any,                 arm64_monterey: "e775d2ea1698071def8cfff84feb8514c41bf2415821bce4aec28cf620226cef"
+    sha256 cellar: :any,                 sonoma:         "a1d0c5faccff52fd59c3e6e36be5f333f6b77f01026afaf222533260cb600cb5"
+    sha256 cellar: :any,                 ventura:        "07548fd18349a37b3b0805fa5ea2f26d3b377729ad89633741838a8b2ef7ea24"
+    sha256 cellar: :any,                 monterey:       "bb805ef9f6ae9d67f50a159a914bda94a60f2c5db4b3d28b2063648840c9405f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98c7879a56073964c8f8c04247391bc6fc50dc0db4e7f5685c9fa54096092423"
   end
 
   depends_on "cmake" => :build

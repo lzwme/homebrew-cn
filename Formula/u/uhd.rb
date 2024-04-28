@@ -3,13 +3,26 @@ class Uhd < Formula
 
   desc "Hardware driver for all USRP devices"
   homepage "https:files.ettus.commanual"
-  # The build system uses git to recover version information
-  url "https:github.comEttusResearchuhd.git",
-      tag:      "v4.6.0.0",
-      revision: "50fa3baa2e11ea3b30d5a7e397558e9ae76d8b00"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 1
+  revision 2
   head "https:github.comEttusResearchuhd.git", branch: "master"
+
+  stable do
+    # The build system uses git to recover version information
+    url "https:github.comEttusResearchuhd.git",
+        tag:      "v4.6.0.0",
+        revision: "50fa3baa2e11ea3b30d5a7e397558e9ae76d8b00"
+
+    # Backport fixes for build failure with `boost` 1.85.0. Remove in the next release.
+    patch do
+      url "https:github.comEttusResearchuhdcommitc4863b9b9f8b639260f7797157e8ac4dd81fef93.patch?full_index=1"
+      sha256 "5e5a90ba2fdaee109dccf0ca583d63e8848605eabff08b96187a408804b2910e"
+    end
+    patch do
+      url "https:github.comEttusResearchuhdcommitea586168c596d13d05d145832519755794649ba0.patch?full_index=1"
+      sha256 "224b3f0b726dc2eda982733a59009f34c0f70a0d2970a64755268ea237e86db3"
+    end
+  end
 
   livecheck do
     url :stable
@@ -17,13 +30,13 @@ class Uhd < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "92f1f1ff47699ab512a6158c0fe90fe423e515fdcc8b747deff7bb2cda90149e"
-    sha256                               arm64_ventura:  "71fa408d611b35d62f354d2d8196679bad014c7884ec87ce7b864f620a1cc28f"
-    sha256                               arm64_monterey: "e588c168d382f2339579c614a1838c645c05d194965e912320d75c44249d7b8f"
-    sha256                               sonoma:         "cc32eff1fce1d2a0c2165fd4b1a7be2b3a8bbc585e65e26de6fa7a2c2db54763"
-    sha256                               ventura:        "d9e7d7bb61e9978653285012ad1fd3a2e25c5c854245562c23b4345c1084e228"
-    sha256                               monterey:       "7d268ccfdac3a005cd21af9502c770f3d88c6eaa2f3913abbd21e77c96adb090"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "feff805f30c5468050fc1b4ec9793a8f5301822ae3dd1c1daf8b59500ad9bc05"
+    sha256                               arm64_sonoma:   "15c59fae8381671f20e5f08e32d929b1cce61fdf8ead1aa0cf85c9bf101e3077"
+    sha256                               arm64_ventura:  "61139c9b2c48f563e9993385eaeba2210c90a4ec1b306ca3888b261e528a9f61"
+    sha256                               arm64_monterey: "442159ec407fa946db4e56bf2168e052fca6cb16ee72f0c87b36bb850a835fb5"
+    sha256                               sonoma:         "3364bca9f3195744f4d1eb2712e8fc691cbf25ef9a106cc113f54b8d983268f1"
+    sha256                               ventura:        "2f49ee5c1218cad92112c50d3f75686f4595c34853f964ff0851ea8a9857a725"
+    sha256                               monterey:       "2aa7c3907b518d05b2bd33c7d4803b6713e794b744936ef13835504d0f58f238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3d93b9305a06183f8c7deffd40dd8e60d2b92a02198a45f96f3460d9aa0a97f"
   end
 
   depends_on "cmake" => :build

@@ -4,20 +4,22 @@ class Edencommon < Formula
   url "https:github.comfacebookexperimentaledencommonarchiverefstagsv2024.04.22.00.tar.gz"
   sha256 "6b558e3f78fb6e211e26c6e7a07b2b5a9073322b39c60afc3def21309b360053"
   license "MIT"
+  revision 1
   head "https:github.comfacebookexperimentaledencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3bd211895e5d6256b6ee9a5e169beb8b9844545994f7998a824023736157e319"
-    sha256 cellar: :any,                 arm64_ventura:  "3d3c5993d9322d50737f542975ad8a1877d4d307c2d8660767209313ba0ed523"
-    sha256 cellar: :any,                 arm64_monterey: "ae94de512c1b8748025f18f1b0ec373c447a2d1bc53972713ed78853d3e3c4fd"
-    sha256 cellar: :any,                 sonoma:         "39d84fa6a87ba405a9d26321bbfaa3930b9885286e511eda4273946c34a21fe6"
-    sha256 cellar: :any,                 ventura:        "6c57afc9e37b385e73ddc7d41e6c1eb32d724148fdd54e2e0a76241c9642bc13"
-    sha256 cellar: :any,                 monterey:       "1305fd75249232d9a4125adcef96d37f673acc39e58c28e4c34150f52537bcae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23408041b7039074d84d2d6a873b5dd56efe29407c23bd568d2b3b210ed6e8c7"
+    sha256 cellar: :any,                 arm64_sonoma:   "a87b5163959d6d4fa9083b0b0775788759caeed77cfb96340194828f7739c8eb"
+    sha256 cellar: :any,                 arm64_ventura:  "1f4da008d9d19afa58492b4c5b2dd11f060ce534929cff44be37ca6eb8639629"
+    sha256 cellar: :any,                 arm64_monterey: "8e6ee43948614fbf6c855fcde7db293644a2120c3d506735aa351e6358781696"
+    sha256 cellar: :any,                 sonoma:         "ad4a2465610abc9337107c351822fa9101d283484b9e88a611cba0e3d405b854"
+    sha256 cellar: :any,                 ventura:        "f101c96bfc7adab1e2446ec363c3c78d1625458a80313a98314b898b266b49ef"
+    sha256 cellar: :any,                 monterey:       "def2d424178794452438d9b51c75c176a525b6bdd3f11bb47efd458fdd7b83ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bea724452a93add7a69fb6f0303ad9508ac6e9785f102838b053aa3acef5c5bd"
   end
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
+  depends_on "mvfst" => :build
   depends_on "fb303"
   depends_on "fbthrift"
   depends_on "folly"

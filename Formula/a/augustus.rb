@@ -4,17 +4,17 @@ class Augustus < Formula
   url "https:github.comGaius-AugustusAugustusarchiverefstagsv3.5.0.tar.gz"
   sha256 "5ed6ce6106303b800c5e91d37a250baff43b20824657b853ae04d11ad8bdd686"
   license "Artistic-1.0"
-  revision 5
+  revision 6
   head "https:github.comGaius-AugustusAugustus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a5807cda277198b3daa4813b569baa389d5ec28848fef38a756b177cf65331f8"
-    sha256 cellar: :any,                 arm64_ventura:  "c652b9b4ebc01fc2405244ee6217d5f4cb5dc9117c912dbb07b8d4fc99e5103c"
-    sha256 cellar: :any,                 arm64_monterey: "84345b09f1964e99c7a042aa955820bdacc2f722e9199105b4d7398f3f7122fb"
-    sha256 cellar: :any,                 sonoma:         "de43bba765a0b353d01d351de57beb8144f18d14c48e602b18b499aabe13328e"
-    sha256 cellar: :any,                 ventura:        "d837f2be6824960befe277b5244b95fe7a1afa8030578ec243d57a083174c584"
-    sha256 cellar: :any,                 monterey:       "37f8e61cb684def872944ddb192b069681e1f3a835dd5fdd9442e6c2d66da511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8699b1669a24f6eed11412b0b5f965ff1f0e1a6b57d5a95b43f1d67f44626e7e"
+    sha256 cellar: :any,                 arm64_sonoma:   "104b82744799d91f09ffb1c4f7dd4707ad975d7f328d6fc104108318934c350e"
+    sha256 cellar: :any,                 arm64_ventura:  "2803a477b8b4d967da01885c2cbe7840b8482615fa647855b30fd05a96cd19d6"
+    sha256 cellar: :any,                 arm64_monterey: "1cceaa47b0ae3f576dcf4892274a33415b4d78e0a207cbb05cf5ffb9e898c0c5"
+    sha256 cellar: :any,                 sonoma:         "82bc7b160db1168677d304316e8c69898390fd85171ec5967335e5d659db0be9"
+    sha256 cellar: :any,                 ventura:        "3fe3d9b190e2052ec93c0942557756efac9be90dd8611968a380336bd993b53e"
+    sha256 cellar: :any,                 monterey:       "9030eabaa609c524bf116f385223a95bc23bbdf7171d669ca2099225e1e8ac9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea88d85976c0c296c6a8fdba99fe9d02166d0a3e04bc81c0df6c3d31d00454b5"
   end
 
   depends_on "bamtools"

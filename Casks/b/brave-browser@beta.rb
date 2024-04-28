@@ -1,4 +1,4 @@
-cask "brave-browser-beta" do
+cask "brave-browser@beta" do
   arch arm: "arm64", intel: "x64"
   folder = on_arch_conditional arm: "beta-arm64", intel: "beta"
 
@@ -18,7 +18,7 @@ cask "brave-browser-beta" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "Brave Browser Beta.app"
 

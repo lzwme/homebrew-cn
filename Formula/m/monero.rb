@@ -5,6 +5,7 @@ class Monero < Formula
       tag:      "v0.18.3.3",
       revision: "81d4db08eb75ce5392c65ca6571e7b08e41b7c95"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "706b507865029e3b6ec2a1a2e3d3507ad21e814cb473ac2ad87a64a58c94c4c1"
-    sha256 cellar: :any,                 arm64_ventura:  "cf313467e731f2e71268a1123465071ddd889b90bb4a7461fe8f74dc82016f17"
-    sha256 cellar: :any,                 arm64_monterey: "b6ecfa6607a5489696af1d8c934eeb986e1f10be4200acaf0808e6750b691f68"
-    sha256 cellar: :any,                 sonoma:         "a614430ff6314b63cd1856b44ef27c4d1539dd17d9927e49ae7b0f2ebf681954"
-    sha256 cellar: :any,                 ventura:        "1a28d6dc91dabc6f573cf743e193601b6621fb303e62e04822762e81c744c575"
-    sha256 cellar: :any,                 monterey:       "358be0c497d426647eee31788db9da773c4f5d4e92955c2ec901b75739e08e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04339d3ef5a6425da8b45eafd52e2485e68534f52cab9518dab2b5625b8cfa2e"
+    sha256 cellar: :any,                 arm64_sonoma:   "cb39ced3e963a69194a95171d84bc44055606cc3c53c66598eef89427908df80"
+    sha256 cellar: :any,                 arm64_ventura:  "c313a080c3596b65f383712ff5fdff7b534f289467179fdcc92e497a3e1467e8"
+    sha256 cellar: :any,                 arm64_monterey: "b6d9f4ba1795bc9c8bce32c8388b528ed78b159ad1c85e2cdf8de386cd44dc7e"
+    sha256 cellar: :any,                 sonoma:         "4c8e1ad2262fabd0176b130a36c9aa367879c3cf5df6e399080f41a8f4a37d84"
+    sha256 cellar: :any,                 ventura:        "f7bf5addea65f6f713efe8075e4ce4527782f22d120a627ba95856873d668492"
+    sha256 cellar: :any,                 monterey:       "375c6ef36ae4fd34831177d6300bfa4f3e357959570be71b84ab816797800285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e348d14f790b457f9624b9b3805e22f3538bccaf2f3a528f480c1e04e1e115b"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +37,17 @@ class Monero < Formula
   conflicts_with "wownero", because: "both install a wallet2_api.h header"
 
   def install
+    # Work around build error with Boost 1.85.0
+    # Issue ref: https:github.commonero-projectmoneroissues9304
+    ENV.append "CXXFLAGS", "-include boostnumericconversionbounds.hpp"
+    copy_option_files = %w[
+      srccommonboost_serialization_helper.h
+      srcp2pnet_peerlist.cpp
+      srcwalletwallet2.cpp
+    ]
+    inreplace copy_option_files, "boost::filesystem::copy_option::overwrite_if_exists",
+                                 "boost::filesystem::copy_options::overwrite_existing"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

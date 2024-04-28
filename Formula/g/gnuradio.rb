@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https:github.comgnuradiognuradioarchiverefstagsv3.10.9.2.tar.gz"
   sha256 "7fa154c423d01494cfa4c739faabad70b97f605238cd3fea8907b345b421fea1"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https:github.comgnuradiognuradio.git", branch: "main"
 
   livecheck do
@@ -15,13 +15,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ef18f4ea712a263f44f668cfbc233c6ae8cf31d6f39dc4175e96d531683d386d"
-    sha256 cellar: :any,                 arm64_ventura:  "435eb848c6385a96655caa0eadf22e4c920ea6107c997d41f2192d288e4bc2bf"
-    sha256 cellar: :any,                 arm64_monterey: "8b5adcc5454f774b00754b6b49d0c354a954c6f6d90ae509b553eb6472ade969"
-    sha256 cellar: :any,                 sonoma:         "ee68462c60e03819e747c0a8fda0ab85eb0df90ed86076c6ad1f833aa9767c48"
-    sha256 cellar: :any,                 ventura:        "d2b66131db37c930bec3f8c37e7976d11710f021583a5a9adaf9950f78924c3f"
-    sha256 cellar: :any,                 monterey:       "54ea22ac2308911ee30e286f1f1a647f901cf0ff4be1af66db902e3f4e5187db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97efd2bec66138e7544b72649609df1cfa4352f06ec7834b0c942663d2b93020"
+    sha256 cellar: :any,                 arm64_sonoma:   "690eb8d0add61400d3e36b3a2b6dc292d3aa38e2e1520c2798b4aedf432fb92d"
+    sha256 cellar: :any,                 arm64_ventura:  "915a1dbe2a75cc936de4f692d4afc35c305f82dd7ad6bb6ccc177fc93b84ee3f"
+    sha256 cellar: :any,                 arm64_monterey: "131f3e75197acf448653a14d00207de1cd93913ecd7aeb4a96464e5d695e3ba3"
+    sha256 cellar: :any,                 sonoma:         "c3d933440a30572393d7a17f271b95253d6b1df5058e10a151714ee5644025e0"
+    sha256 cellar: :any,                 ventura:        "f14c74a2e49a24ecc788f32a2a6ae7aff569ed31e25629e76402afd923983d24"
+    sha256 cellar: :any,                 monterey:       "a81cf9cc23f561fd924e7f9dbf72f3f981248e5693c2eb485b534e4f9087e7b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a89e79fd08c37f0e0e40bb9659bb8c11eb74b5db7956e07ea2d049144f6291c1"
   end
 
   depends_on "cmake" => :build

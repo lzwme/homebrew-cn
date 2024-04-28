@@ -1,7 +1,10 @@
 class Znc < Formula
   desc "Advanced IRC bouncer"
-  homepage "https://wiki.znc.in/ZNC"
-  url "https://znc.in/releases/archive/znc-1.9.0.tar.gz"
+  # Temporary URLs as znc.in certificate has expired
+  # FIXME: homepage "https:wiki.znc.inZNC"
+  homepage "https:github.comzncznc"
+  url "https:deb.debian.orgdebianpoolmainzzncznc_1.9.0.orig.tar.gz"
+  mirror "https:znc.inreleasesarchiveznc-1.9.0.tar.gz"
   sha256 "8b99c9dbb21c1309705073460be9bfacb6f7b0e83a15fe5d4b7140201b39d2a1"
   license "Apache-2.0"
   revision 2
@@ -40,20 +43,20 @@ class Znc < Formula
     system "cmake", "--install", "build"
 
     # Avoid references to Homebrew shims directory
-    inreplace lib/"pkgconfig/znc.pc", Superenv.shims_path/ENV.cxx, ENV.cxx
+    inreplace lib"pkgconfigznc.pc", Superenv.shims_pathENV.cxx, ENV.cxx
   end
 
   service do
-    run [opt_bin/"znc", "--foreground"]
+    run [opt_bin"znc", "--foreground"]
     run_type :interval
     interval 300
-    log_path var/"log/znc.log"
-    error_log_path var/"log/znc.log"
+    log_path var"logznc.log"
+    error_log_path var"logznc.log"
   end
 
   test do
     mkdir ".znc"
-    system bin/"znc", "--makepem"
-    assert_predicate testpath/".znc/znc.pem", :exist?
+    system bin"znc", "--makepem"
+    assert_predicate testpath".zncznc.pem", :exist?
   end
 end

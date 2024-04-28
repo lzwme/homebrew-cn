@@ -2,7 +2,7 @@ class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "http:project-osrm.org"
   license "BSD-2-Clause"
-  revision 4
+  revision 5
   head "https:github.comProject-OSRMosrm-backend.git", branch: "master"
 
   stable do
@@ -11,6 +11,9 @@ class OsrmBackend < Formula
 
     # Backport fix for missing include. Remove in the next release.
     # Ref: https:github.comProject-OSRMosrm-backendcommit565959b3896945a0eb437cc799b697be023121ef
+    #
+    # Also add temporary build fix to 'includeutillua_util.hpp' for Boost 1.85.0.
+    # Issue ref: https:github.comProject-OSRMosrm-backendissues6850
     patch :DATA
   end
 
@@ -20,13 +23,13 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "caf7f16eca550f4d6ee0489da25bf1424d1b502d1d6b857fec32a949b5eccd4c"
-    sha256 cellar: :any,                 arm64_ventura:  "1e2a9f3bdbe82b4829e1ede3055e01723c41a173cddb5d844b786f6e067997d6"
-    sha256 cellar: :any,                 arm64_monterey: "2ec4be7416632841b0ab975bf3ee19955a0553dc29f3688a7490e074500c1b7e"
-    sha256 cellar: :any,                 sonoma:         "5ff2a490bd7c37b84a0950d6723fe8f26dc32c4c3dfcdaacd86f2408021a18c5"
-    sha256 cellar: :any,                 ventura:        "c09c5ac0b43ce8522733109e5058f0bdc6a1263ebb63f12f31707d16125fb342"
-    sha256 cellar: :any,                 monterey:       "7cc4db1f0e503ec4c4c638f8d1af5f59b3b5cd446ef823eadfda27d5323bb1b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d5c85b00c8c3508407531ad72704f8c4b4211ce7c401d103ac37dbcc9c9e249"
+    sha256 cellar: :any,                 arm64_sonoma:   "52204e90d561f2d591adc8d37d45e5c0497190963a079a59590ddb2f5a998b88"
+    sha256 cellar: :any,                 arm64_ventura:  "784500d87a1e3669bb177a2ef220e0baf6dcb521637fc8d7f5f36d5db196b38f"
+    sha256 cellar: :any,                 arm64_monterey: "972fcb3717bd55b864faa779482d15439b7c60587e90c1026600e41deb227cca"
+    sha256 cellar: :any,                 sonoma:         "504b122864ce2b9daebe82d03805e11a479667c861a127208029941b50373fce"
+    sha256 cellar: :any,                 ventura:        "58608c37f291bfba65dde778db1e05dde5327a7c5d4a82121ba6f5b948222f5d"
+    sha256 cellar: :any,                 monterey:       "d3d6dea4d4c4fc60fce90d4d4f48280ff95def4788ad5b30e4136a431e69fb08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72177707b90fc76c8f705c129f0b28b0bd958b0cfdaad4b805dc19ac90500a7a"
   end
 
   depends_on "cmake" => :build
@@ -108,3 +111,17 @@ index 5d16fe6..2c378bf 100644
 +#include <vector>
 
  #include "utilstring_view.hpp"
+
+diff --git aincludeutillua_util.hpp bincludeutillua_util.hpp
+index 36af5a1f3..cd2d1311c 100644
+--- aincludeutillua_util.hpp
++++ bincludeutillua_util.hpp
+@@ -8,7 +8,7 @@ extern "C"
+ #include <lualib.h>
+ }
+
+-#include <boostfilesystemconvenience.hpp>
++#include <boostfilesystemoperations.hpp>
+
+ #include <iostream>
+ #include <string>

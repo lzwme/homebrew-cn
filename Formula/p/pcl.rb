@@ -1,20 +1,33 @@
 class Pcl < Formula
   desc "Library for 2D3D image and point cloud processing"
   homepage "https:pointclouds.org"
-  url "https:github.comPointCloudLibrarypclarchiverefstagspcl-1.14.0.tar.gz"
-  sha256 "de297b929eafcb93747f12f98a196efddf3d55e4edf1b6729018b436d5be594d"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https:github.comPointCloudLibrarypcl.git", branch: "master"
 
+  stable do
+    url "https:github.comPointCloudLibrarypclarchiverefstagspcl-1.14.0.tar.gz"
+    sha256 "de297b929eafcb93747f12f98a196efddf3d55e4edf1b6729018b436d5be594d"
+
+    # Backport missing <functional> header. Remove in the next release.
+    patch do
+      url "https:github.comPointCloudLibrarypclcommit61b2e8e5336d7d8b0e1ae7c1168035faa083310b.patch?full_index=1"
+      sha256 "06e17f22d497a68b0ff3ac66eb6ba3d6247c9b9f86ae898bc76abcdcb5a2d5ba"
+    end
+
+    # Backport compatibility with Boost 1.85.0. Remove in the next release.
+    # Ref: https:github.comPointCloudLibrarypclcommit7234ee75fce64bd15376c696d46a70594fc826f2
+    patch :DATA
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9d6a2445628d80caef165a1725ec4fe482c56a842507dc38dace4f42f5643c20"
-    sha256 cellar: :any,                 arm64_ventura:  "5ea57ad75157527441b0c268f5e86df0292cb9efc26ea679ba4eb39750a85742"
-    sha256 cellar: :any,                 arm64_monterey: "9ef5c624f47b90e0f630269363dfa6393844214d0ca9b4bf7da2a285a2092be4"
-    sha256 cellar: :any,                 sonoma:         "3d670c49251a6a98cc1395113b999ca0c329d01f143b6a44ff53ab19e9356f18"
-    sha256 cellar: :any,                 ventura:        "f9e6cc80ebc3cbf47976e256d5b2814c4cb8d9e93604541d036a81af999be34a"
-    sha256 cellar: :any,                 monterey:       "99a66f4f0a511272a762976c3c1de4192a3fea0cdf86ccac169bc5960628e30a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88ba89986eca360c9790e771996e2435e30b4ad39a6e19f29d9d949a5f652a0d"
+    sha256 cellar: :any,                 arm64_sonoma:   "0772149d0bce174cd6894d2561e2e5be2e4684e734b1320e300e5295d9431edc"
+    sha256 cellar: :any,                 arm64_ventura:  "79bd1dc809f782085e7af19629769610f00da56636e0ff2c5316f3096a6b3b94"
+    sha256 cellar: :any,                 arm64_monterey: "f5bbf0098d842a8ee7363abef4a3569d0098d0f4818c136c54e3cb3504a27f91"
+    sha256 cellar: :any,                 sonoma:         "07d5a586df25d368483f2c3b9edf8abf182dcef3b434788b9abdde6f783e6394"
+    sha256 cellar: :any,                 ventura:        "afa14e78c20ccd099134248fca59768fbcd0735a586d767d7beb38ca6089da70"
+    sha256 cellar: :any,                 monterey:       "7b215314d0b6bd24df61a552d976e34aef88b8b4eb8b19b56127af68eca10e5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "694f8f92d0c3758119e4ae47c09a42af43e5b0cf4cf77bd12fc943b4f389cd9b"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -35,7 +48,7 @@ class Pcl < Formula
   end
 
   def install
-    args = std_cmake_args + %w[
+    args = %w[
       -DBUILD_SHARED_LIBS:BOOL=ON
       -DBUILD_apps=AUTO_OFF
       -DBUILD_apps_3d_rec_framework=AUTO_OFF
@@ -62,11 +75,10 @@ class Pcl < Formula
     # The AppleClang versions shipped on current MacOS versions do not support the -march=native flag on arm
     args << "-DPCL_ENABLE_MARCHNATIVE:BOOL=OFF" if build.bottle?
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
-      prefix.install Dir["#{bin}*.app"]
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    prefix.install bin.glob("*.app")
   end
 
   test do
@@ -127,3 +139,54 @@ class Pcl < Formula
     end
   end
 end
+
+__END__
+diff --git aoutofcoreincludepcloutofcoreoctree_base.h boutofcoreincludepcloutofcoreoctree_base.h
+index 45959b95236fd510981c6f61a14d0eae6f4c7685..1a7c8778c1046921af3ae6d5ef8bb5e45e9feb1a 100644
+--- aoutofcoreincludepcloutofcoreoctree_base.h
++++ boutofcoreincludepcloutofcoreoctree_base.h
+@@ -63,6 +63,7 @@
+ #include <pclPCLPointCloud2.h>
+
+ #include <shared_mutex>
++#include <list>
+
+ namespace pcl
+ {
+diff --git aoutofcoreincludepcloutofcoreoctree_base_node.h boutofcoreincludepcloutofcoreoctree_base_node.h
+index 7085d530227da76bb441a73ee13508bf60c2d720..dba76d4f04ff2b7536525ae56d2699f479cf8d6f 100644
+--- aoutofcoreincludepcloutofcoreoctree_base_node.h
++++ boutofcoreincludepcloutofcoreoctree_base_node.h
+@@ -42,6 +42,7 @@
+ #include <memory>
+ #include <mutex>
+ #include <random>
++#include <list>
+
+ #include <pclcommonio.h>
+ #include <pclPCLPointCloud2.h>
+diff --git arecognitionincludepclrecognitionface_detectionface_detector_data_provider.h brecognitionincludepclrecognitionface_detectionface_detector_data_provider.h
+index 7b4a929df52604a269fde377850ac55930074faa..be3b86aecc1cc2a78cf787dd86e8d6f3b3ca0449 100644
+--- arecognitionincludepclrecognitionface_detectionface_detector_data_provider.h
++++ brecognitionincludepclrecognitionface_detectionface_detector_data_provider.h
+@@ -12,7 +12,7 @@
+ #include <pclrecognitionface_detectionface_common.h>
+
+ #include <boostalgorithmstring.hpp>
+-#include <boostfilesystemoperations.hpp>
++#include <boostfilesystem.hpp>
+
+ #include <fstream>
+ #include <string>
+diff --git atestoutofcoretest_outofcore.cpp btestoutofcoretest_outofcore.cpp
+index cb5cfff4aca489bf029e8713f175635bad8d1071..3f658bf86ea14591d3dfbd4494f79c8c4ef2ea80 100644
+--- atestoutofcoretest_outofcore.cpp
++++ btestoutofcoretest_outofcore.cpp
+@@ -44,6 +44,7 @@
+
+ #include <pcltestgtest.h>
+
++#include <list>
+ #include <vector>
+ #include <iostream>
+ #include <random>

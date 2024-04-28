@@ -4,17 +4,16 @@ class Osm2pgrouting < Formula
   url "https:github.compgRoutingosm2pgroutingarchiverefstagsv2.3.8.tar.gz"
   sha256 "e3a58bcacf0c8811e0dcf3cf3791a4a7cc5ea2a901276133eacf227b30fd8355"
   license "GPL-2.0-or-later"
-  revision 12
+  revision 13
   head "https:github.compgRoutingosm2pgrouting.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "965bf8fa9c631c6e9dbff578f066d1bc7e58448c3046caa367ac5925f62bdd41"
-    sha256 cellar: :any,                 arm64_ventura:  "145289a6d781ae14d45509d44afae89ae399470b664391e8bf118b6fc1cfd971"
-    sha256 cellar: :any,                 arm64_monterey: "bef2eeedd4902d8e1e4909eef4313da9788a7e1b12b9a9f48b21c714f999868f"
-    sha256 cellar: :any,                 sonoma:         "42bc5a3b3ed3c22c40a6a8cbac93240d93c27c62994e98ab1ee20bbe97b50092"
-    sha256 cellar: :any,                 ventura:        "5d9a9effd922d544de65f3722e2dc95d1434c91c005fb2358edc47dcead175ce"
-    sha256 cellar: :any,                 monterey:       "ce67dedef5f8600e6b71a5a5248ef78657fbcdf14a65f7bc94b8fe5884da227f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa9bf4bc169e782224b7a4547e24deaca715fb5fe11bfbb2efb012d317e58bb9"
+    sha256 cellar: :any, arm64_sonoma:   "65d7687ba5f23d47d7ee737050706fcd2663cf185d6a8e35a6e8e6ff5cec2d87"
+    sha256 cellar: :any, arm64_ventura:  "88adc64e52319b44b1f3f0e73d9511a3e36db0040859d9b528aa76a02570666d"
+    sha256 cellar: :any, arm64_monterey: "81565a691a1f95000e45594e0f7c938d7960694c5e4722d013bc4fe4c54401ca"
+    sha256 cellar: :any, sonoma:         "1b1702478ac4b650960b2227dd605dc84a6e8d15c5da96d3973a700545425bfc"
+    sha256 cellar: :any, ventura:        "ed29492dadc022e58bb198e7ab20871d3c45272abacbd99d7c350c13d6ae0995"
+    sha256 cellar: :any, monterey:       "0f7cdcc3eb7ddbabf32a02836a733e709a0ebbcd0e4158316536daebf8b67246"
   end
 
   depends_on "cmake" => :build

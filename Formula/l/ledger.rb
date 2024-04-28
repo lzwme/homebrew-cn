@@ -1,11 +1,25 @@
 class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https:ledger-cli.org"
-  url "https:github.comledgerledgerarchiverefstagsv3.3.2.tar.gz"
-  sha256 "555296ee1e870ff04e2356676977dcf55ebab5ad79126667bc56464cb1142035"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https:github.comledgerledger.git", branch: "master"
+
+  stable do
+    url "https:github.comledgerledgerarchiverefstagsv3.3.2.tar.gz"
+    sha256 "555296ee1e870ff04e2356676977dcf55ebab5ad79126667bc56464cb1142035"
+
+    # Support building with mandoc
+    # Remove with v3.4.x
+    patch do
+      url "https:github.comledgerledgercommitf40cee6c3af4c9cec05adf520fc7077a45060434.patch?full_index=1"
+      sha256 "d5be89dbadff7e564a750c10cdb04b83e875452071a2115dd70aae6e7a8ee76c"
+    end
+    patch do
+      url "https:github.comledgerledgercommit14b90d8d952b40e0a474223e7f74a1e6505d5450.patch?full_index=1"
+      sha256 "d250557e385163e3ad3002117ebe985af040d915aab49ae1ea342db82398aeda"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,13 +27,13 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4145b5b75bc4620ff914d45d46abd2be7705eb24abc684d4b1be4e10382802f8"
-    sha256 cellar: :any,                 arm64_ventura:  "d3db60e10f5052c27d6737658549984667751816dc39ebe0dffed92def247bb9"
-    sha256 cellar: :any,                 arm64_monterey: "77309740f48a3df5eb58e5167f1281aaaffdc373ec452b2f7c6d9ad41b83a83e"
-    sha256 cellar: :any,                 sonoma:         "da9017774ef1162e8c27a41fa6258b124c553a809be69edd0a679bc7a70df635"
-    sha256 cellar: :any,                 ventura:        "b97fcdc2bb9296802d43eff62948ef785ef2b5af10c2e481b2e0e7d2cee5c182"
-    sha256 cellar: :any,                 monterey:       "cf1aa84690637896aa285640508418720edd3eec23f070d5b7a654eff83e2fe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c121bc47cc61a0e368e65bf4c41eff1e6b0fa1d3335aff5d93582e8498ff4cc"
+    sha256 cellar: :any,                 arm64_sonoma:   "bb9834ceed45016edd34db30241a5474f8fe6cf55b75f9c8a63e1d8c6268ac2b"
+    sha256 cellar: :any,                 arm64_ventura:  "ca8de31777a7dd2afc9735b178e415e5e8034e34585193f3c68b31b39f2fe64b"
+    sha256 cellar: :any,                 arm64_monterey: "820af38e740ca052be182d4922ccc25cb5f9b15dd2ab83bea550dd8b275ffde8"
+    sha256 cellar: :any,                 sonoma:         "3f41fb3d90e6b5844ac30fa76a0facdb185ffaa78d711e64f887e5e8b147943c"
+    sha256 cellar: :any,                 ventura:        "2555b42ce1063b39910f906f7250080776884ebd1555e51a35dce1eabb88a48d"
+    sha256 cellar: :any,                 monterey:       "c20b917ab8d18494aa0bdb2fb8d8e6bba5c4c2909ae0fc5eb3c8ccc4b2b4e699"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d960afd65dcd0c32dd4699883907b7a444e1f32753a03082b07826f6e7b7f09"
   end
 
   depends_on "cmake" => :build
@@ -33,15 +47,11 @@ class Ledger < Formula
   uses_from_macos "mandoc" => :build
   uses_from_macos "libedit"
 
-  # Support building with mandoc
-  # Remove with v3.4.x
+  # Fix build with `boost` 1.85.0 using open PR.
+  # PR ref: https:github.comledgerledgerpull2337
   patch do
-    url "https:github.comledgerledgercommitf40cee6c3af4c9cec05adf520fc7077a45060434.patch?full_index=1"
-    sha256 "d5be89dbadff7e564a750c10cdb04b83e875452071a2115dd70aae6e7a8ee76c"
-  end
-  patch do
-    url "https:github.comledgerledgercommit14b90d8d952b40e0a474223e7f74a1e6505d5450.patch?full_index=1"
-    sha256 "d250557e385163e3ad3002117ebe985af040d915aab49ae1ea342db82398aeda"
+    url "https:github.comledgerledgercommit1da89f6ffb44a44257b9774c4ceb71e7b495d677.patch?full_index=1"
+    sha256 "8aaf8daf4748f359946c64488c96345f4a4bdf928f6ec7a1003610174428599f"
   end
 
   def install

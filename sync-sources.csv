@@ -3695,6 +3695,7 @@ Homebrew-homebrew-core/Formula/lib/libtecla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtensorflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtermkey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtextcat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libtickit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libtins.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtirpc.rb, Homebrew/homebrew-core, 0
@@ -5378,7 +5379,7 @@ Homebrew-homebrew-core/Formula/r/rhino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rhit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rich-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/richgo.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/riemann-client.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/riemann-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/riemann.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rig.rb, Homebrew/homebrew-core, 0
@@ -6760,7 +6761,7 @@ Homebrew-homebrew-core/Formula/w/wordle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordplay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wormhole-william.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wownero.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wownero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wpebackend-fdo.rb, Homebrew/homebrew-core, 1
@@ -6999,7 +7000,7 @@ Homebrew-homebrew-core/Formula/z/zls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmqpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/znapzend.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zola.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zookeeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zopfli.rb, Homebrew/homebrew-core, 1
@@ -7503,6 +7504,9 @@ Homebrew-homebrew-cask/Casks/b/brackets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brain-workshop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brainfm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brave-browser.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/brave-browser@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/brave-browser@dev.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/brave-browser@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/breaktimer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/breitbandmessung.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brewlet.rb, Homebrew/homebrew-cask, 1
@@ -8237,6 +8241,7 @@ Homebrew-homebrew-cask/Casks/f/fig.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fightcade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/figma-agent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/figma.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/figma@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/figtree.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fiji.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/file-juicer.rb, Homebrew/homebrew-cask, 0
@@ -8507,6 +8512,9 @@ Homebrew-homebrew-cask/Casks/g/google-assistant.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/google-chat-electron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/google-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-chrome.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/google-chrome@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/google-chrome@canary.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/google-chrome@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-cloud-sdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/google-drive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/google-earth-pro.rb, Homebrew/homebrew-cask, 1
@@ -9339,6 +9347,8 @@ Homebrew-homebrew-cask/Casks/m/microblog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-auto-update.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-azure-storage-explorer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/microsoft-edge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/microsoft-edge@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/microsoft-edge@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-excel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-office-businesspro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/microsoft-office.rb, Homebrew/homebrew-cask, 0
@@ -9437,6 +9447,7 @@ Homebrew-homebrew-cask/Casks/m/mongodbpreferencepane.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/m/mongotron.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monitorcontrol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/monity-helper.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mono-mdk-for-visual-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mono-mdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monodraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/monofocus.rb, Homebrew/homebrew-cask, 0
@@ -13722,9 +13733,6 @@ Homebrew-homebrew-cask-versions/Casks/azure-data-studio-insiders.rb, Homebrew/ho
 Homebrew-homebrew-cask-versions/Casks/bbedit14.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/beyond-compare-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/blender-lts.rb, Homebrew/homebrew-cask-versions, 1
-Homebrew-homebrew-cask-versions/Casks/brave-browser-beta.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/brave-browser-dev.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/brave-browser-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/buckets-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/calibre4.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/carbon-copy-cloner5.rb, Homebrew/homebrew-cask-versions, 0
@@ -13759,7 +13767,6 @@ Homebrew-homebrew-cask-versions/Casks/element-nightly.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask-versions/Casks/elephas-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/emacs-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/emacs-pretest.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/figma-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/firefox-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/firefox-cn.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/firefox-developer-edition.rb, Homebrew/homebrew-cask-versions, 0
@@ -13772,9 +13779,6 @@ Homebrew-homebrew-cask-versions/Casks/geogebra5.rb, Homebrew/homebrew-cask-versi
 Homebrew-homebrew-cask-versions/Casks/gimp-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/github-beta.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/godot3.rb, Homebrew/homebrew-cask-versions, 1
-Homebrew-homebrew-cask-versions/Casks/google-chrome-beta.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/google-chrome-canary.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/google-chrome-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/google-japanese-ime-dev.rb, Homebrew/homebrew-cask-versions, 1
 Homebrew-homebrew-cask-versions/Casks/gpg-suite-nightly.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/graalvm-jdk17.rb, Homebrew/homebrew-cask-versions, 0
@@ -13812,8 +13816,6 @@ Homebrew-homebrew-cask-versions/Casks/macfuse-dev.rb, Homebrew/homebrew-cask-ver
 Homebrew-homebrew-cask-versions/Casks/macloggerdx-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/mailmate-beta.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/mi-beta.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/microsoft-edge-beta.rb, Homebrew/homebrew-cask-versions, 0
-Homebrew-homebrew-cask-versions/Casks/microsoft-edge-dev.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-office-2016.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-office-2019.rb, Homebrew/homebrew-cask-versions, 0
 Homebrew-homebrew-cask-versions/Casks/microsoft-openjdk11.rb, Homebrew/homebrew-cask-versions, 0

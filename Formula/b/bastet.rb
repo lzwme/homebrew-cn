@@ -4,16 +4,16 @@ class Bastet < Formula
   url "https:github.comfphbastetarchiverefstags0.43.2.tar.gz"
   sha256 "f219510afc1d83e4651fbffd5921b1e0b926d5311da4f8fa7df103dc7f2c403f"
   license "GPL-3.0-or-later"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 arm64_sonoma:   "e3b58e16c8b3462ad7f3fe67a4f10810718e81dc6498d64e685bac37375372c9"
-    sha256 arm64_ventura:  "d4e089e38a41f53446c2d29e787d4184675d8c788d40800d91293accfd21ef3e"
-    sha256 arm64_monterey: "2c0109b7b103eef26c4356f2eea2ed812a26f50a3a2410e454121191af6d9edc"
-    sha256 sonoma:         "3215a3404ad42670c0c82ca89ee2dcaaf2c5fc599b7c332ef6f122dca8338b46"
-    sha256 ventura:        "7fe250b52908b3d92a34b8c96ff974e0fe9f1119e2d6690209527c84625c8b80"
-    sha256 monterey:       "f40c7e6f4d1a6b6676562894e79563be063a3ee2ca2f601026b3e51406402b8c"
-    sha256 x86_64_linux:   "9506da17d1ef06e9f5378b7996837ecf3c2e3e693424f924fc09a33a3a6c60ff"
+    sha256 arm64_sonoma:   "613188cf7249352d19dc221c665e284cbe2c1cb23e1f1660839443ccc9b3590a"
+    sha256 arm64_ventura:  "4796e71682caa79b26c8ac9f08efb98b3b4d93ce06b85a87d8b4e32caec83e87"
+    sha256 arm64_monterey: "c1914a121bce507894647f9107dfe71c2dcb861fcf30a5be6cc873eb7c1cf895"
+    sha256 sonoma:         "1e74837a564737a04ab9620ab01e453f5329c1c2131fd49b0cec73ecd0dbeefa"
+    sha256 ventura:        "9355ece1db630ee9a17ec079e8a927b57b072375e284079f131da8f43bcb3b15"
+    sha256 monterey:       "f351b34012eb18c94adb76f1feb7dce7e65875288a8db08fd90171c962105589"
+    sha256 x86_64_linux:   "c37884c0f7cb692d4afe307a3197b8df7a142936578043b62444c50e02e5a794"
   end
 
   depends_on "boost"

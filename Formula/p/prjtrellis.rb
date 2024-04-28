@@ -4,15 +4,16 @@ class Prjtrellis < Formula
   url "https:github.comYosysHQprjtrellisarchiverefstags1.4.tar.gz"
   sha256 "46fe9d98676953e0cccf1d6332755d217a0861e420f1a12dabfda74d81ccc147"
   license all_of: ["ISC", "MIT"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "30488a14075b849c38abad9433fcf9cd7c4185b7a4c7b6fc9f69907ef1149517"
-    sha256 cellar: :any,                 arm64_ventura:  "5e16fee0522b5e85a51d5ebe2076abdb82c78cafe8d4de42d04953e383e21ed0"
-    sha256 cellar: :any,                 arm64_monterey: "d919f2c6e7e96e6d470e60875cbcadd88bf0ca6b02c95c540ea3142d6827511c"
-    sha256 cellar: :any,                 sonoma:         "2d812e47a21e44d8d3eb2eb47d00989b4ce60937d18950b96996502a398f2d11"
-    sha256 cellar: :any,                 ventura:        "8b3a265cffe872c69aca33e7f344664842e68396b5892073b5ce016ffa46db19"
-    sha256 cellar: :any,                 monterey:       "14f9f9a6be40b5b8361941b5447b1886c21928a6a4526cf35d3b4e15d8ee814b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d754001388c77e1c0375917183a4ba9ab0bd579b298d259b4ca8d61cfb76f6c5"
+    sha256 cellar: :any,                 arm64_sonoma:   "6bc4a360866f5170cf35fa4724a9b2cb41c28b130fe44ce0e527e5d4a64350c1"
+    sha256 cellar: :any,                 arm64_ventura:  "6912bae90999af698d4943daa52afc2354c8a29d3f9c9063b0bb24819f96bb1a"
+    sha256 cellar: :any,                 arm64_monterey: "7a48a3e2134e3c54473eb657cc0a76dcd8c0d2414a6587e13e912eb2c161a8aa"
+    sha256 cellar: :any,                 sonoma:         "3e4ab876da7d52945c4fc083019c0203638eeff3c39601580ebfb3fb3b05ffdd"
+    sha256 cellar: :any,                 ventura:        "06b6cbb58cd2760de77100131868a016b673671ba2ce62cd1bd9592d319ed6f9"
+    sha256 cellar: :any,                 monterey:       "73c484c35fc52d6cbbd0cc19ca2426ba6a3a1d819d26b04513baec998514f4ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "432afb462ad23f6785ad820ff5765e2f92311a3edb2b815ab76320c28d3616f0"
   end
 
   depends_on "cmake" => :build

@@ -3,18 +3,18 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackages5a62f655574da568cfe5c59d4a51532311e2c52c9dd9c73f0a710dcf53294cfccodelimit-0.9.2.tar.gz"
-  sha256 "48d2d422cd7bc35ecae9518342c3d7651ba2f309f30b89aa6dc50b7404c1b60d"
+  url "https:files.pythonhosted.orgpackages4832a34e630e5f63e3302bab5c92ecb8c172efc82d8f3e4413a3c5d4fcd3f58fcodelimit-0.9.3.tar.gz"
+  sha256 "ce2a5d82bb06b5370da7135ebeb805b7439860bfd383f07fcaec7f19296947c6"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "33bc60ccdf03cb5354b5cb9f2c375f8176febcf07798872615466f324ab590fd"
-    sha256 cellar: :any,                 arm64_ventura:  "8c22c3a2e128a074fb660892f5710b3b355b94297c22b4f544324cc56991be61"
-    sha256 cellar: :any,                 arm64_monterey: "f02c2b8db450fc1ed52cd7b46783b4131e882431c26598b945830e5d09b1caa5"
-    sha256 cellar: :any,                 sonoma:         "dd2a5e852ef61ffb2f41d2e101e4e168c940722d582f290da14373e70fedb4a6"
-    sha256 cellar: :any,                 ventura:        "a7c883f1e0f78fe63b60f7c4711c5b713daa9e9f986c56337555084d59543668"
-    sha256 cellar: :any,                 monterey:       "365c71c889bace2703e168c65776de875fba61f2339208d50f926ab90892e491"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76d89aac92fcfe67a7dbf8387efa91c54089f5309348b39c864b593371faec92"
+    sha256 cellar: :any,                 arm64_sonoma:   "3c173d596c8a077dfe33aa7e608653002e70b0b5d9c1e9ed38a4e6a28cfa7870"
+    sha256 cellar: :any,                 arm64_ventura:  "5e0d5d60287fee23663c700f69049657c47b6ad1425a08c03c0559a7e21b96f2"
+    sha256 cellar: :any,                 arm64_monterey: "cb8a280f00a55642a1b76a74c9dc8f1380c2d641a96a2b6be293635e3d681668"
+    sha256 cellar: :any,                 sonoma:         "27259ec7357c329a9b1214528df808f643699d524524557ce7be22f9921d2647"
+    sha256 cellar: :any,                 ventura:        "df62fdaa7474ce7d75534ec6b1fe936db3e6b2dfe56b80b286907cb351ae7049"
+    sha256 cellar: :any,                 monterey:       "bfd4c900bc718c52b0540bb4977807eef8b81c6e57a0fbf2cb0a4b404566f113"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e54efa18c9b290fd03ed8108ccb94eb27fabd363138febfe4e482fbee988b8ed"
   end
 
   depends_on "certifi"

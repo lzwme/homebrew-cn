@@ -4,16 +4,16 @@ class AzureStorageCpp < Formula
   url "https:github.comAzureazure-storage-cpparchiverefstagsv7.5.0.tar.gz"
   sha256 "446a821d115949f6511b7eb01e6a0e4f014b17bfeba0f3dc33a51750a9d5eca5"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "301f9864ac4d274fea2f67679ded8c0a9f4ddf8cab26eb94c9733923ae19af3e"
-    sha256 cellar: :any,                 arm64_ventura:  "1fb69b507f673e6044199b6947d275517f867a476d3f2e1f4beea0298489b7f3"
-    sha256 cellar: :any,                 arm64_monterey: "037c261fc9350737b6e614d34c9c7afc9afea7a9a31493148eda8e6a29099e09"
-    sha256 cellar: :any,                 sonoma:         "810e5a5e3cfc8b13989bba7c792b6ec9625f82c06ac7e34b9794a97819ef2a1b"
-    sha256 cellar: :any,                 ventura:        "f008fdef4dad1e636b2888f88cf3fbaaed5381caa3c6b415da06bb4e4334cd4f"
-    sha256 cellar: :any,                 monterey:       "b29137dc6b6792c4e7c8a8d075e02010fac775a85cdd7129df1a53d7881e480b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b86271a4086bec9af65ffb841a9f0e4d2ceebba5852903306cf6109cf1c1935f"
+    sha256 cellar: :any,                 arm64_sonoma:   "aaceb62409cbe62a5035b82c154995156cef409179489d6a99ee86ab5888b179"
+    sha256 cellar: :any,                 arm64_ventura:  "e77c4f6c284c3efe0dc582370b5898f457f66d0a9820d3eb8593503041b2989e"
+    sha256 cellar: :any,                 arm64_monterey: "4cddb051be494abd045720d99b472bb9870ef510d2c9705674f729df389ca16e"
+    sha256 cellar: :any,                 sonoma:         "c67db0a3935d909fa31566170c206c0f24928f4f1a96c3a8c41c95fa7a8d6907"
+    sha256 cellar: :any,                 ventura:        "9728d2912cc06f7a79b2597086c1473733954d47d8e0f639ba72c1be8f4e7ecd"
+    sha256 cellar: :any,                 monterey:       "d336db4b98c57839cf799e1eb00ddb76066827a1f8417780b14ef62a2dc9c8c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16c6e5f28c8d2817eda356744457b1704f71ea07a2514cef0079a655cde717d5"
   end
 
   depends_on "cmake" => :build

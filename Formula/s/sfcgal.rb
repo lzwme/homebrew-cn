@@ -4,16 +4,16 @@ class Sfcgal < Formula
   url "https://gitlab.com/sfcgal/SFCGAL/-/archive/v1.5.1/SFCGAL-v1.5.1.tar.gz"
   sha256 "ea5d1662fada7de715ad564dc810c3059024ed81ae393f5352489f706fdfa3b1"
   license "LGPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1e231f2da7b5607dcb1becb61d1a1ad325204a9237c1f3bb75e2957702bfcc1f"
-    sha256 cellar: :any,                 arm64_ventura:  "0ebb2eb96864826e1c0746e88ff4c9eb201a2a8ea722a1a1efc0f003176b92de"
-    sha256 cellar: :any,                 arm64_monterey: "78d3c2da9e4158cfa53b4d4afe9a502d5242915ebaa9159cc797b631185022d6"
-    sha256 cellar: :any,                 sonoma:         "582092143e0f1ad9a2367e4834fcd69fbf080aec1de7686ffec9b004f95babc3"
-    sha256 cellar: :any,                 ventura:        "aaba53cbe22214cafb54c712fbf57880148a4b78def27333a9197c4babf951f1"
-    sha256 cellar: :any,                 monterey:       "3c97cb18901905c043e1c1f815f2c49f99303ba8d91acf9546fe267ca71fe467"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19055419c3024400502c06a0d02880a8a670847413062a9533b2493c04f70309"
+    sha256 cellar: :any,                 arm64_sonoma:   "ffa4d1bb599bf2a6960411bb19c9fc8c4136ce8bbeb0b841e905ab966a107fe1"
+    sha256 cellar: :any,                 arm64_ventura:  "30dd23a618d69e0769549af0cd2c157957ff71e8f4d044937b6b9bcd3721bf47"
+    sha256 cellar: :any,                 arm64_monterey: "dabc44df168eda5b08cad5856ff0dbca4ba3a22bd64519dac79220181aa5a2c8"
+    sha256 cellar: :any,                 sonoma:         "51f6f3f46b34a93cdf16c844d0be99796538f8993add9f803fb0c3f986c5b5b3"
+    sha256 cellar: :any,                 ventura:        "eaaf02d44bbfafe4cb9d48c53a47474db7e7cc3a16ddefc764b3322065b8a9eb"
+    sha256 cellar: :any,                 monterey:       "138ec5e064ef30ea47dd1a3f11060fe46f32fd27aa913c62ed3f90fc3a85cce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f36d0bbea3c7a2d02ffc0637de10d9140faaae4c418fd14c0810e9fca8560f6"
   end
 
   depends_on "cmake" => :build

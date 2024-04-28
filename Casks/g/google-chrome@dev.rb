@@ -1,21 +1,21 @@
-cask "google-chrome-canary" do
-  version :latest
+cask "google-chrome@dev" do
+  version "126.0.6439.0"
   sha256 :no_check
 
-  url "https://dl.google.com/chrome/mac/universal/canary/googlechromecanary.dmg"
-  name "Google Chrome Canary"
+  url "https://dl.google.com/chrome/mac/universal/dev/googlechromedev.dmg"
+  name "Google Chrome Dev"
   desc "Web browser"
-  homepage "https://www.google.com/chrome/canary/"
+  homepage "https://www.google.com/chrome/dev/"
 
-  # Canary releases are frequent, so we use version :latest.
-  # livecheck do
-  #   url "https://chromiumdash.appspot.com/fetch_releases?channel=Canary&platform=Mac"
-  #   regex(/"version":\s*"v?(\d+(?:\.\d+)+)"/i)
-  # end
+  livecheck do
+    url "https://chromiumdash.appspot.com/fetch_releases?channel=Dev&platform=Mac"
+    regex(/"version":\s*"v?(\d+(?:\.\d+)+)"/i)
+  end
 
+  auto_updates true
   depends_on macos: ">= :catalina"
 
-  app "Google Chrome Canary.app"
+  app "Google Chrome Dev.app"
 
   zap launchctl: [
         "com.google.keystone.agent",
@@ -27,13 +27,13 @@ cask "google-chrome-canary" do
         "/Library/Google/GoogleSoftwareUpdate",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.google.chrome.app.*.sfl*",
         "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.google.chrome.sfl*",
-        "~/Library/Application Support/Google/Chrome Canary",
+        "~/Library/Application Support/Google/Chrome Dev",
         "~/Library/Caches/com.google.Chrome",
         "~/Library/Caches/com.google.Chrome.helper.*",
         "~/Library/Caches/com.google.Keystone",
         "~/Library/Caches/com.google.Keystone.Agent",
         "~/Library/Caches/com.google.SoftwareUpdate",
-        "~/Library/Caches/Google/Chrome Canary",
+        "~/Library/Caches/Google/Chrome Dev",
         "~/Library/Google/Google Chrome Brand.plist",
         "~/Library/Google/GoogleSoftwareUpdate",
         "~/Library/LaunchAgents/com.google.keystone.agent.plist",

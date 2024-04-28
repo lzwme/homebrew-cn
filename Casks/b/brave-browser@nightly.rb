@@ -1,4 +1,4 @@
-cask "brave-browser-nightly" do
+cask "brave-browser@nightly" do
   arch arm: "arm64", intel: "x64"
   folder = on_arch_conditional arm: "nightly-arm64", intel: "nightly"
 
@@ -18,7 +18,7 @@ cask "brave-browser-nightly" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :catalina"
 
   app "Brave Browser Nightly.app"
 

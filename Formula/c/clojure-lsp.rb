@@ -1,9 +1,9 @@
 class ClojureLsp < Formula
   desc "Language Server (LSP) for Clojure"
   homepage "https:github.comclojure-lspclojure-lsp"
-  url "https:github.comclojure-lspclojure-lspreleasesdownload2023.10.30-16.25.41clojure-lsp-standalone.jar"
-  version "20231030T162541"
-  sha256 "4e2fadf51e6b1e64b7b532d6650726f49f438e92f714b34e206268d6503c3370"
+  url "https:github.comclojure-lspclojure-lspreleasesdownload2024.04.22-11.50.26clojure-lsp-standalone.jar"
+  version "20240422T115026"
+  sha256 "741d7adb6e40ecbde75a996faa56a5fb9821a3e2e6aaa5463cdf5d7dab0a68f9"
   license "MIT"
   head "https:github.comclojure-lspclojure-lsp.git", branch: "master"
 
@@ -17,13 +17,7 @@ class ClojureLsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50d783342293e1bb38afae569dcc36e046cba83c1df28bf10eab924db5724d3c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50d783342293e1bb38afae569dcc36e046cba83c1df28bf10eab924db5724d3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50d783342293e1bb38afae569dcc36e046cba83c1df28bf10eab924db5724d3c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "50d783342293e1bb38afae569dcc36e046cba83c1df28bf10eab924db5724d3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "50d783342293e1bb38afae569dcc36e046cba83c1df28bf10eab924db5724d3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "50d783342293e1bb38afae569dcc36e046cba83c1df28bf10eab924db5724d3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "340c1cd021cf2f7bb8405d46b42d58a9383db3e121060cf792a353ade9c8f3d2"
+    sha256 cellar: :any_skip_relocation, all: "cd750b83619ba9c37e92cb863d10d6c533d1426fc1dc52e92509bfce02ed20fe"
   end
 
   depends_on "openjdk"

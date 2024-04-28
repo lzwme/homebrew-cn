@@ -4,16 +4,16 @@ class Pagmo < Formula
   url "https:github.comesapagmo2archiverefstagsv2.19.0.tar.gz"
   sha256 "701ada528de7d454201e92a5d88903dd1c22ea64f43861d9694195ddfef82a70"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
-  revision 3
+  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7e11b0ca4289cdec876d0c5199b9827aa7642543b2dd2a2582eaf94a0c9f8b32"
-    sha256 cellar: :any,                 arm64_ventura:  "cc442de36fdf67311e88e524191d44b0cecd6ce7ea19d183b03b3e329583b616"
-    sha256 cellar: :any,                 arm64_monterey: "a35a8bf54f8f9567f69763bc945542dc75bd55d15c4d5b91e98838fd1a257798"
-    sha256 cellar: :any,                 sonoma:         "0814f21c6eec9f52f442b3d9b1a85f44be046ea6fd685516da79743a5429e1cc"
-    sha256 cellar: :any,                 ventura:        "202415b8c3313fe6d6d8d0044658781e9d666db88cbbf8b2ae93b228b4455410"
-    sha256 cellar: :any,                 monterey:       "7feafbe3220e0f113e78860c69a82dfdc66177e44127a577bb70cba702c36827"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3968f0c5fc27aff3fe0d0421009466f6f49a4f2bee2161ad84776287ee1a4557"
+    sha256 cellar: :any,                 arm64_sonoma:   "74848a6d33ff15f49535e54fd072888884fe03326d28be62b57a1ff3987359be"
+    sha256 cellar: :any,                 arm64_ventura:  "d7b9590b8add425a5524e691bc9581c8e18ca4fd4ae021eacc8c9d357d9b7c3a"
+    sha256 cellar: :any,                 arm64_monterey: "c4b3f119dae48013dbfa64fa78d9d20daff88b410ad66191053aa0ce98b7f3d9"
+    sha256 cellar: :any,                 sonoma:         "889ccd3f2801d85a95995559d98cd31baecb2242f048bf73cedc4a3bc0a92e50"
+    sha256 cellar: :any,                 ventura:        "f036624926ec42eee682d1183d1df793bf4c497e36a7814c741df16a4b71e7c4"
+    sha256 cellar: :any,                 monterey:       "1521d43fcb56388acd8ea97d349d7bb40b980356f4ff186370e724a6c981f085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dbf74152c4aa9ee8a8d209899e586ff093c83f5d6c32dcf891442e05303e7c7"
   end
 
   depends_on "cmake" => :build

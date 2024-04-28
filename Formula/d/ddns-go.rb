@@ -1,19 +1,19 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
   homepage "https:github.comjeessy2ddns-go"
-  url "https:github.comjeessy2ddns-goarchiverefstagsv6.3.3.tar.gz"
-  sha256 "fee40e6a9abc8313632b29ccc9b71184a3f8f9377986de5d2773374ad4b99173"
+  url "https:github.comjeessy2ddns-goarchiverefstagsv6.5.0.tar.gz"
+  sha256 "4f9b7762431a4a75a59ea050b3e41a2d6fa790e212d3ce8aa21f02b6e01f01ea"
   license "MIT"
   head "https:github.comjeessy2ddns-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9222986c0b0639316a8c6b8bce7b9dc8356945c9364553b59abeb41c111dce14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa8ad17727df01f184c038e17436507df1a1db6eadb13940511ee687cad75979"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "735e74b34d02bea91c4c8ebf8a03212d3275622e438ca13bd55f99ff346b27ff"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d65e34d118f9c45bca33396da5cb370f11a00cd9287fe70f30cd53b6e3c0f4df"
-    sha256 cellar: :any_skip_relocation, ventura:        "f41df71d5482cc182670f1fea613bfb2aa2867636ff8215d343ad9a5dd544633"
-    sha256 cellar: :any_skip_relocation, monterey:       "4578a11e63eac1f155d671a30ab09fad34930c3e4df256b2f0da25fafe32bb03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05192412615ec99814a9a77a0bbc2011f3240ff7c007a8536df254016979bc64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "93d029018146b85f1b78bcb36ca5826a283afbf5fbd7b8b7185daa0bae1bcaf7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0314db6c64f5d0af6ade5bc2c2738ece49555dabdd8978be93c0f803a2b17ca1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba42b0cd97eb372574d5873b2c9b68c9f4043eb8f41ad88ab2c40505a6385c26"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d01dfafb04a70f4505510daff19664fbab1391f68d8333b59def368191e28c81"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8d7012f4387b8a96d143cae14d8253af19f1dfe048c26437c5c1c2549095ef7"
+    sha256 cellar: :any_skip_relocation, monterey:       "98da9804b2ae1125a1ba6c5d981a211c3942747ef599d0636d44712579b95c09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a3ed7efe95bbc087998685c5e510147264455f1ef33d2873e6a0325d01498aa"
   end
 
   depends_on "go" => :build
@@ -36,6 +36,6 @@ class DdnsGo < Formula
 
     system "curl", "--silent", "localhost:#{port}clearLog"
     output = shell_output("curl --silent localhost:#{port}logs")
-    assert_equal "[]", output
+    assert_match "Temporary Redirect", output
   end
 end

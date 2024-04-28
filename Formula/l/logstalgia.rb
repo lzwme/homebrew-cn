@@ -4,16 +4,16 @@ class Logstalgia < Formula
   url "https:github.comacaudwellLogstalgiareleasesdownloadlogstalgia-1.1.4logstalgia-1.1.4.tar.gz"
   sha256 "c049eff405e924035222edb26bcc6c7b5f00a08926abdb7b467e2449242790a9"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   bottle do
-    sha256 arm64_sonoma:   "ebcc366bc89707b9162c908f9ca976c662e6fe4bbc0bcbd7c8ced4d481efacd4"
-    sha256 arm64_ventura:  "af8ca708d5d4cc686dbc42ec2f5260be152d7823f3779e4e0c31f1c48be34085"
-    sha256 arm64_monterey: "993e38fc86fdf9c5ba13fbaecb5f9bedfa2f49cb5587898b261a67d3e19b6650"
-    sha256 sonoma:         "6fb15c1f5cc4a1a0a15d115f2fcf3b642f439f04a1cd465cac88e9d03f10f363"
-    sha256 ventura:        "c60401be9305eeb994adaac41c4d96a9adbf1366fd315d29ed80507cee3976bf"
-    sha256 monterey:       "7d4fa50e176d7c50f2935b9153adeb4cf2af2a3487ff195d9e5382659f7c3c0e"
-    sha256 x86_64_linux:   "8f1966921df697fec54ec26fe73cc2ceba9a3e3801c651269134ed88aebb8c1a"
+    sha256 arm64_sonoma:   "6a5cae78d15328d6c651b2f01a5624626f2196ebae1f24001bd024f0f4a63971"
+    sha256 arm64_ventura:  "bdc139e4fcc84125c9dcfbb1fac60fd721373d4508bda3dc2fc2d76c945e5deb"
+    sha256 arm64_monterey: "aa59c0abd2e9f77bde6bb00c513e58dd56931cb17c5791b86fc7d15194b2f4a2"
+    sha256 sonoma:         "d22fa10652173459c43f678a5ea259e8d24d393618bcccd72ec2b6a95ec72cfe"
+    sha256 ventura:        "25e6e0bfb91593aa9baf00b93afbaa2784df85855a6b546d161b0400faa8f5ef"
+    sha256 monterey:       "a2b9521a01de8ef4f5dd630d0907584ee4991e3b88689c3f3d7d11269d1926c6"
+    sha256 x86_64_linux:   "221d3ffe0ce6af68feb0c4cd63e96297095dba23f4ad1162ad3dc82b7dc26662"
   end
 
   head do
@@ -35,6 +35,8 @@ class Logstalgia < Formula
   depends_on "sdl2_image"
 
   def install
+    ENV.cxx11
+
     # clang on Mt. Lion will try to build against libstdc++,
     # despite -std=gnu++0x
     ENV.libcxx
@@ -43,11 +45,12 @@ class Logstalgia < Formula
     ENV.append "CXXFLAGS", "-I#{HOMEBREW_PREFIX}include"
 
     # Handle building head.
-    system "autoreconf", "-f", "-i" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
-    system ".configure", *std_configure_args,
+    system ".configure", "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",
-                          "--without-x"
+                          "--without-x",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

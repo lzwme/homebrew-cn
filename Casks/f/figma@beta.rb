@@ -1,4 +1,4 @@
-cask "figma-beta" do
+cask "figma@beta" do
   arch arm: "mac-arm", intel: "mac"
 
   version "124.0.1"

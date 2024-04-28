@@ -9,6 +9,10 @@ class Neovim < Formula
 
     # Remove when `mpack` resource is removed.
     depends_on "luarocks" => :build
+    # Remove in 0.10.
+    # Upstream plan to replace this with `libtickit` which will subsume `libtermkey`.
+    # See: https:github.comneovimneovimpull25870
+    depends_on "libtermkey"
 
     # Remove in 0.10.
     resource "mpack" do
@@ -72,7 +76,6 @@ class Neovim < Formula
   depends_on "cmake" => :build
   depends_on "lpeg" => :build # needed at runtime in 0.10.0
   depends_on "gettext"
-  depends_on "libtermkey"
   depends_on "libuv"
   depends_on "libvterm"
   depends_on "luajit"

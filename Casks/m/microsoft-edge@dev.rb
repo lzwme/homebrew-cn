@@ -1,4 +1,4 @@
-cask "microsoft-edge-dev" do
+cask "microsoft-edge@dev" do
   linkid = on_arch_conditional arm: "2099619", intel: "2069340"
 
   on_arm do

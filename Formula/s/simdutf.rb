@@ -1,8 +1,8 @@
 class Simdutf < Formula
   desc "Unicode conversion routines, fast"
   homepage "https:github.comsimdutfsimdutf"
-  url "https:github.comsimdutfsimdutfarchiverefstagsv5.2.4.tar.gz"
-  sha256 "36281d6489a4a8c2b5bfac2d41c03dce8fc89ec1cda15cc05c53d44f5ad30b4d"
+  url "https:github.comsimdutfsimdutfarchiverefstagsv5.2.6.tar.gz"
+  sha256 "ab9e56facf7cf05f4e9d062a0adef310fc6a0f82a8132e8ec1e1bb7ab5e234df"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsimdutfsimdutf.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "13cf8d19e4379d44098c31add0236af302f8539129ff8b78ad23033ea526477b"
-    sha256 cellar: :any, arm64_ventura:  "260f892ac64a528ba0a5aa13c6aad5827dffd7d40f4e8b81d05f73bef29ca396"
-    sha256 cellar: :any, arm64_monterey: "bf305eebb1c5c167597a131130c8b50e7a94844a090c51ee467e94555833b986"
-    sha256 cellar: :any, sonoma:         "7c58ef3972ee593e3d26871f475b6a3e742ce747e42aaeb0f5f713d11d294a7d"
-    sha256 cellar: :any, ventura:        "9139e07c169b5f4ae929e4af97b789e47d454ee4232cc7c60d85b29b033ac24e"
-    sha256 cellar: :any, monterey:       "efdb7a90da1352be6df687f46c40d727d3ec31321a170f1305434f3e91078092"
+    sha256 cellar: :any, arm64_sonoma:   "5e33b72615ade8031e9dd5da51b6df72e5f0c1e98c147137b7dd34ff3a703dfb"
+    sha256 cellar: :any, arm64_ventura:  "49a036cb45bb3d1ffad1f5c7b3d4f505b9d85472e0f8debd84cfce41c5dc7b33"
+    sha256 cellar: :any, arm64_monterey: "1df620da6af124a649dc206bd6f42bc9b106cf8dc055462b0272ecf47b4626ab"
+    sha256 cellar: :any, sonoma:         "7e8e688648446a8aa9d62d42b4c719564a248c07fcb2f5cced1ad25943110db1"
+    sha256 cellar: :any, ventura:        "54582d65d9473ce71c3d6298bc311f3c7cf529796c8f95e0e3e6370c2264c211"
+    sha256 cellar: :any, monterey:       "4ea02bc6f642c788d3fd835239c9cbaa477b267045ce446ed3d542437595c8e2"
   end
 
   depends_on "cmake" => :build
@@ -26,11 +26,20 @@ class Simdutf < Formula
 
   uses_from_macos "python" => :build
 
+  # https:github.comsimdutfsimdutfblobv#{version}benchmarksbase64CMakeLists.txt#L5
+  resource "base64" do
+    url "https:github.comaklompbase64archiverefstagsv0.5.2.tar.gz"
+    sha256 "723a0f9f4cf44cf79e97bcc315ec8f85e52eb104c8882942c3f2fba95acc080d"
+  end
+
   def install
+    (buildpath"base64").install resource("base64")
+
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
+      -DFETCHCONTENT_SOURCE_DIR_BASE64=#{buildpath}base64
       -DPython3_EXECUTABLE=#{which("python3")}
       -DSIMDUTF_BENCHMARKS=ON
     ]

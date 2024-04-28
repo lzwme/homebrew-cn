@@ -7,7 +7,7 @@ class GraphTool < Formula
   url "https:downloads.skewed.degraph-toolgraph-tool-2.59.tar.bz2"
   sha256 "cde479c0a7254b72f6e795d03b0273b0a7d81611a6a3364ba649c2c85c99acae"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https:downloads.skewed.degraph-tool"
@@ -15,14 +15,13 @@ class GraphTool < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256                               arm64_sonoma:   "ed8a8876fce72baef657f978473024e91c98286820a18f08847f52ea8a2dcd61"
-    sha256                               arm64_ventura:  "0483538d3a52ee5c2217298d1f652915261d1af8a7919c0f5863913643c5d96b"
-    sha256                               arm64_monterey: "9c875904e28828e71a798c47df22d218dfcf725ff0e285ea3f4bc4b5561dd0cc"
-    sha256                               sonoma:         "198c80c32c6c4e36aa1b17d57b2d222e600bb9e6cc7344c3d7f0dbeeb6fc36ea"
-    sha256                               ventura:        "bbae78207f238280598769e350c88d4c143e14ee4b98313d6c829dc15868da37"
-    sha256                               monterey:       "1b6c2a7a1d7e1e18f2c47a3098edb25b32123625f8ab29e9aa1e3b5661c402bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9f8ea2632715dd7b0c7d9f79663ec8dfc93161f119079fd711353fa81f2814b"
+    sha256                               arm64_sonoma:   "0a71272eeab1f19d1bb3ee2ac45511c5a7281495373d3c95d07d3dc7d0461595"
+    sha256                               arm64_ventura:  "47273513345bdd8f0db5258fee7657b11088f1f0e50673a9feebb61abec06ba7"
+    sha256                               arm64_monterey: "ff82a0504e278d61b073bdbe2027d86fc0748dc8fdd14735f18777071d549a00"
+    sha256                               sonoma:         "47fe4283a680cd100d41ba91de481dc79aa319a169d26c50db5367eec6143a81"
+    sha256                               ventura:        "2b8120b82c01c7e73d3664ca2b6b9b619b01ef72044e0bc36647fcc1cdab35e3"
+    sha256                               monterey:       "eec9f358987145a0fca07f55d66dc6d7eb541aea6ea602e53834c63ebc6b20c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20f7864c1512303da96f7ba9f7d37cb6e392755137318e154e6b190eed177999"
   end
 
   depends_on "ninja" => :build
