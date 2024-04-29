@@ -12,21 +12,27 @@ class Fail2ban < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "91d045d27090b2fbb804b2a2664113a05994b95b448fecbe0fd510d179aa0575"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "91d045d27090b2fbb804b2a2664113a05994b95b448fecbe0fd510d179aa0575"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "91d045d27090b2fbb804b2a2664113a05994b95b448fecbe0fd510d179aa0575"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02690c016600f89a6fd2ef1db64e02c8afee903662c033674d2153e0a3642e31"
-    sha256 cellar: :any_skip_relocation, ventura:        "02690c016600f89a6fd2ef1db64e02c8afee903662c033674d2153e0a3642e31"
-    sha256 cellar: :any_skip_relocation, monterey:       "02690c016600f89a6fd2ef1db64e02c8afee903662c033674d2153e0a3642e31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17696ca92925114343ba483955efa4c34b5dacdec5b242f95c20712a7e3dc550"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "9a2ad3c6f2d059d4850a456ee61d2ec7fb98871b691bf5459c5f72eb35718153"
+    sha256 cellar: :any,                 arm64_ventura:  "29d10c2c5fd555dde333ae1336671c4d6fd60185424b3d27ec96eb425d54acf4"
+    sha256 cellar: :any,                 arm64_monterey: "51edc42706c0111efa1b50c3d5a126560089ee21b71fd885a1dcb273a495dc9d"
+    sha256 cellar: :any,                 sonoma:         "1b8b7461c2cd1dcecb4e63b86e18e321fcd874a4f89a07991bffca12cc48c78c"
+    sha256 cellar: :any,                 ventura:        "a09486a0617d89608ecf994caffd4e113df92706fb8a544075ca0b543a5d9c77"
+    sha256 cellar: :any,                 monterey:       "15c3b1fdcf3acd343a965040256f3c5ab524f7d67f1d052207134077ed32d6e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c45ae1eabc4ee45291465540dbcd94724fa9bab68f93f85a11821e7de4dcae8"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "sphinx-doc" => :build
   depends_on "python@3.12"
 
+  # Drop distutils: https:github.comfail2banfail2banpull3728
+  patch do
+    url "https:github.comfail2banfail2bancommita763fbbdfd6486e372965b4009eb3fe5db346718.patch?full_index=1"
+    sha256 "631ca7e59e21d4a9bbe6adf02d0b1ecc0fa33688d145eb5e736d961e0e55e4cd"
+  end
+
   def install
-    ENV["PYTHON"] = python3 = "python3.12"
+    python3 = "python3.12"
 
     Pathname.glob("configpaths-*.conf").reject do |pn|
       pn.fnmatch?("configpaths-common.conf") || pn.fnmatch?("configpaths-osx.conf")
@@ -36,18 +42,22 @@ class Fail2ban < Formula
     inreplace "configjail.conf", "before = paths-debian.conf", "before = paths-osx.conf"
 
     # Replace hardcoded paths
-    inreplace_etc_var("setup.py")
     inreplace_etc_var(Pathname.glob("config{action,filter}.d***").select(&:file?), audit_result: false)
     inreplace_etc_var(["configfail2ban.conf", "configpaths-common.conf", "docrun-rootless.txt"])
     inreplace_etc_var(Pathname.glob("fail2ban***").select(&:file?), audit_result: false)
     inreplace_etc_var(Pathname.glob("man*"), audit_result: false)
 
-    # Fix doc compilation
-    inreplace "setup.py", "usrsharedocfail2ban", doc
-    inreplace "setup.py", "if os.path.exists('#{var}run')", "if True"
-    inreplace "setup.py", "platform_system in ('linux',", "platform_system in ('linux', 'darwin',"
+    # Update `data_files` from absolute to relative paths for wheel compatability and include doc files
+    inreplace "setup.py" do |s|
+      s.gsub! "etc", ".etc"
+      s.gsub! "var", ".var"
+      s.gsub! "usrsharedocfail2ban", ".sharedocfail2ban"
+      s.gsub! "if os.path.exists('.varrun')", "if True"
+      s.gsub! "platform_system in ('linux',", "platform_system in ('linux', 'darwin',"
+    end
 
-    system python3, *Language::Python.setup_install_args(prefix, python3), "--without-tests"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    etc.install (prefix"etc").children
 
     # Install docs
     system "make", "-C", "doc", "dirhtml", "SPHINXBUILD=sphinx-build"
@@ -73,23 +83,11 @@ class Fail2ban < Formula
 
   def caveats
     <<~EOS
-      Before using Fail2Ban for the first time you should edit the jail
-      configuration and enable the jails that you want to use, for instance
-      ssh-ipfw. Also, make sure that they point to the correct configuration
-      path. I.e. on Mountain Lion the sshd logfile should point to
-      varlogsystem.log.
+      You must enable any jails by editing:
+        #{etc}fail2banjail.conf
 
-        * #{etc}fail2banjail.conf
-
-      The Fail2Ban wiki has two pages with instructions for macOS Server that
-      describes how to set up the Jails for the standard macOS Server
-      services for the respective releases.
-
-        10.4: https:www.fail2ban.orgwikiindex.phpHOWTO_Mac_OS_X_Server_(10.4)
-        10.5: https:www.fail2ban.orgwikiindex.phpHOWTO_Mac_OS_X_Server_(10.5)
-
-      Please do not forget to update your configuration files.
-      They are in #{etc}fail2ban.
+      Other configuration files are in #{etc}fail2ban. See more instructions at
+      https:github.comfail2banfail2banwikiProper-fail2ban-configuration.
     EOS
   end
 

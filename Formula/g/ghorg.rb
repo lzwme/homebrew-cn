@@ -1,18 +1,18 @@
 class Ghorg < Formula
   desc "Quickly clone an entire org's or user's repositories into one directory"
   homepage "https:github.comgabrie30ghorg"
-  url "https:github.comgabrie30ghorgarchiverefstagsv1.9.10.tar.gz"
-  sha256 "99a013e23b58d39fa729e0387535133aa64df6f5c23d42a3d3d407c55abe47c1"
+  url "https:github.comgabrie30ghorgarchiverefstagsv1.9.11.tar.gz"
+  sha256 "29e11bfc4f313bcd4f4c8fcb58921b8e4b98ba4570f7b0c85e0e360d9685cd00"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb333ef7f3baf91af500cae1fa4fe3cefe623d9138466b6ef29af105061856de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ae822ae2175cd271948992b08e5165bc85ff1c110dbf0438abac99b189d0359"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed9d43cb0294fe2b2e6701e2136471cfaf811ac7bf53c778e26589bab1950655"
-    sha256 cellar: :any_skip_relocation, sonoma:         "58c7202a58925ef47836d453c57362978bde0422589afa329b50f34413630bcf"
-    sha256 cellar: :any_skip_relocation, ventura:        "50c58e7c987a88944bebd5fe5084f07118df0c2882dc42ce386ea5753dcba89f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b7c80e71fb07380fbdf78cf3d20a622a08c4354ddbd13848556433dea8372684"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1577ef16c81bcb2b1cd9188e20757ece02f37a12646aa8be75c15b439c0512de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abd799ca6f2e0f90f34881c9ec3cbce519c0cc853163de3fe282ddbbc88de603"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89b7dce67623bf42209f8e3aae2a83446dd7e11a5ac14c726b8449b83f6f7453"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ecd20a56bf02811d6a4d87df794fbba82c70d31e83b4b4cc8348e93d987c3bd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52a1a2ada448a623dcee5374defbb9e67cd43054b4c5c5e416de640f4cac0232"
+    sha256 cellar: :any_skip_relocation, ventura:        "980fec75c8180a12c5ac625182f9536368aca2b604a1aea82fa72df557b3e903"
+    sha256 cellar: :any_skip_relocation, monterey:       "1dfdda36c242e9f9434371e1c6c15ff6e42f0d854d564919aaeb9bd86eab28f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca9bb7a535e310d0a7ea72913de01ee5a3297d08d7b7caddcf40bd4d6e6f0ed6"
   end
 
   depends_on "go" => :build

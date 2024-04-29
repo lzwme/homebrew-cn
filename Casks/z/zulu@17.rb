@@ -1,15 +1,15 @@
-cask "zulu8" do
+cask "zulu@17" do
   arch arm: "aarch64", intel: "x64"
 
-  version "8.0.412,8.78.0.19"
-  sha256 arm:   "f27fbac1250c9a2a5c9e29e622adb49f7ead160b3ed49ac85b0d8e17cf411b2f",
-         intel: "49c28ef4c069cc3c602fdd124ecf3d46fa0a7438037a6baa61af1cd7a07b4fe4"
+  version "17.0.11,17.50.19"
+  sha256 arm:   "59edd7fa0d3ed28d9e7ee9946be9df8e51b3056bdf2c403168815f8bb739fc11",
+         intel: "0f5b1609149631c56f5a41d6a6a90218685ad87d7b4e7b8699e05fc0ee2d9343"
 
   url "https://cdn.azul.com/zulu/bin/zulu#{version.csv.second}-ca-jdk#{version.csv.first}-macosx_#{arch}.dmg",
       referer: "https://www.azul.com/downloads/"
-  name "Azul Zulu Java 8 Standard Edition Development Kit"
+  name "Azul Zulu Java Standard Edition Development Kit"
   desc "OpenJDK distribution from Azul"
-  homepage "https://www.azul.com/"
+  homepage "https://www.azul.com/downloads/"
 
   livecheck do
     url "https://api.azul.com/metadata/v1/zulu/packages?java_version=#{version.major}&os=macos&arch=#{arch}&archive_type=dmg&java_package_type=jdk&javafx_bundled=false&latest=true&release_status=ga&availability_types=ca"

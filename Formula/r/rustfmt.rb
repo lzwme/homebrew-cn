@@ -1,21 +1,19 @@
 class Rustfmt < Formula
   desc "Format Rust code"
   homepage "https:rust-lang.github.iorustfmt"
-  url "https:github.comrust-langrustfmtarchiverefstagsv1.6.0.tar.gz"
-  sha256 "32ba647a9715efe2699acd3d011e9f113891be02ac011d314b955a9beea723a2"
+  url "https:github.comrust-langrustfmtarchiverefstagsv1.7.0.tar.gz"
+  sha256 "9f228d6192104a57efd73b20b8f0a2189c920373655b0c17b75758afab805be8"
   license any_of: ["MIT", "Apache-2.0"]
   head "https:github.comrust-langrustfmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bb6bd589b60b0d4fbd57be1bde5370777f380bac7aa43e8688673d712d83f056"
-    sha256 cellar: :any,                 arm64_ventura:  "903b03af5ff31da6946b920a87c360779bd7350371f9cf0fc8f1ac01797a22ba"
-    sha256 cellar: :any,                 arm64_monterey: "2d4384367fb918037862e0f4167f31e79a45ab0d4464689782e5e1ef430ea415"
-    sha256 cellar: :any,                 arm64_big_sur:  "2dfac00e73d1798016738b0f3ad4b1479e5e3e0801ef0986718e010d9fb231f3"
-    sha256 cellar: :any,                 sonoma:         "8d88841548806c86d289b18984c330cef1910a1a7982f5eb7794198c2b6645ea"
-    sha256 cellar: :any,                 ventura:        "2d54800a6dff9d2f158b9e00ec8c59c99e88a17427b0d56887bdfc5067854b56"
-    sha256 cellar: :any,                 monterey:       "72863634fc6b628f2a563194678796b16e2b8e1a46e87297a6b5684026840c40"
-    sha256 cellar: :any,                 big_sur:        "66caede3491722db90a8a53dd758d95a9a52b38df13efa0bcd4ec5a713a784ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7177c8e937dd964b87c145479e2bf9c2ef7de15545489faaf2c988357ef4e190"
+    sha256 cellar: :any,                 arm64_sonoma:   "0bc41425bca0cebff19f98f92d3495022438dea06b2de92a453e9273b2dae2d1"
+    sha256 cellar: :any,                 arm64_ventura:  "5f5ac9dfb767b047a324ad7d30772ea0fdf2004ea07bc3d7777db50eb477ac61"
+    sha256 cellar: :any,                 arm64_monterey: "fb66b78ddb10d7e4fbedd8ceadb6bb0417bb31e6b2b31f0e3b7cf52a9ca2c729"
+    sha256 cellar: :any,                 sonoma:         "c308cb93a595e76d83b98a65642e6915d17258b40cb521ec3740d3399665ec01"
+    sha256 cellar: :any,                 ventura:        "24df5b88193bf67304a682284246770b8210f1228f8c27eaa4e26bdc92909807"
+    sha256 cellar: :any,                 monterey:       "38c30c78cd44aa19df1a045755340742174dd79cbc9857550a2fd1d087dd2395"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e93863d9f42ac0ec4bda61168758d82e2164a400ea80d929433c864728977ba"
   end
 
   depends_on "rustup-init" => :build

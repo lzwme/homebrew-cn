@@ -1,4 +1,4 @@
-cask "temurin8" do
+cask "temurin@8" do
   version "8,412,08"
   sha256 "d9815891463bdbc8e7489309ee3845a4f91415a8e0e5369f449474adca8b66d9"
 

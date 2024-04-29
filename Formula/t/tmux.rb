@@ -4,6 +4,7 @@ class Tmux < Formula
   url "https:github.comtmuxtmuxreleasesdownload3.4tmux-3.4.tar.gz"
   sha256 "551ab8dea0bf505c0ad6b7bb35ef567cdde0ccb84357df142c254f35a23e19aa"
   license "ISC"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +13,13 @@ class Tmux < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "101becaca4102767715cd2f1c9086b03d80d9b4b7fc59e75d0d1220413772c58"
-    sha256 cellar: :any,                 arm64_ventura:  "15ca059bf5dcfd3e2ec4103660372c230efb8aa33948c3f6a0dda94f1f1c67f6"
-    sha256 cellar: :any,                 arm64_monterey: "a89966c15c5556d181a2f06f2695ac15ec51e0c337a4b91e923012caeb892806"
-    sha256 cellar: :any,                 sonoma:         "fe5272c8b1d1b6fb10a39eff3b11a5579c63827965118bfcae0f0b61d83bb795"
-    sha256 cellar: :any,                 ventura:        "d96cb8a4ec0ec26a412c38b6604e8c3671b7d0117f3d582134ec048cce121807"
-    sha256 cellar: :any,                 monterey:       "0a70001ad83e765b542a79b2e6accb4bff8194e063eeb35088c9b105c8e46d51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0f6fef8c59fa79ba76890c5eb0c9dd95d988fe13160aac22b5c23de248161f2"
+    sha256 cellar: :any,                 arm64_sonoma:   "6da34fb21fe425bf6837454e1f3e093a82eacd10bc7d0a4ed71126b7ff937042"
+    sha256 cellar: :any,                 arm64_ventura:  "0081a403f6e2d1aba9a2368e4777e7287546e82549c2bf47d38ae790e93ec123"
+    sha256 cellar: :any,                 arm64_monterey: "62af5e96316f67de165b4b737a350935044cf70ddc6fcb1b52673bbcbd590da0"
+    sha256 cellar: :any,                 sonoma:         "41ac427046afc0e8081a580ee18f3262775e23bc9f90230f670dacb5a264e2ee"
+    sha256 cellar: :any,                 ventura:        "f5326994b833cc0836b25885a0ec4355fca2f77a9fb7dcfff4d8b8fdf176dc24"
+    sha256 cellar: :any,                 monterey:       "64026baf4f5452836d465a405125f7a62a33c32b5ac99b8e9ab03c1decdd73db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e89c9d35311117bcf7838363e16c480d4512456c87f5f5e75fad3e769a503a9"
   end
 
   head do

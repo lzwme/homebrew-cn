@@ -1,4 +1,4 @@
-cask "corretto17" do
+cask "corretto@17" do
   arch arm: "aarch64", intel: "x64"
 
   version "17.0.11.9.1"

@@ -364,8 +364,7 @@ class Parsedmarc < Formula
   end
 
   def install
-    # Multiple resources require `setuptools`, so it must be installed first
-    virtualenv_install_with_resources start_with: "setuptools"
+    virtualenv_install_with_resources
   end
 
   test do

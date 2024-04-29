@@ -1,19 +1,19 @@
 class Nudoku < Formula
   desc "Ncurses based sudoku game"
   homepage "https:jubalh.github.ionudoku"
-  url "https:github.comjubalhnudokuarchiverefstags3.0.0.tar.gz"
-  sha256 "56c9f8d70ca350411dccfdc5a0e2dc39aaa83da08f87ad874f7f4b7fb64b3541"
+  url "https:github.comjubalhnudokuarchiverefstags4.0.0.tar.gz"
+  sha256 "35a6efdcc03395eb2ce1f9e3640d9a7100469197a466cb49cb48ef55291eadd0"
   license "GPL-3.0-or-later"
   head "https:github.comjubalhnudoku.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "85ce667fde814b7ca2b8c3144c1a81947c899e9f091bf90805cf77bdec0f4c9c"
-    sha256 arm64_ventura:  "df24e16774377f98521d6bc623460dbe8a1340afdf08486f27c060b3911b37ed"
-    sha256 arm64_monterey: "aaba4315a0bcaa31e2fbb6f667e49a04e80078bd43dec4b5c706f30f5954c054"
-    sha256 sonoma:         "b557d8370bc5be84244ba9ec0ece988b92f83110bf58e2f4a68208da3bfb5013"
-    sha256 ventura:        "e2a099b569c0f32ec86d4827962661af24c6e739fa33e416e46b6065744ecea6"
-    sha256 monterey:       "b1f68424a9e2847b7e420ca03caa73fc523f64203d6619da8a17da1aa89cfbc8"
-    sha256 x86_64_linux:   "dafd045886518df5e1eda43914636403c31a5e48a4c090a08df33bbab8573730"
+    sha256 arm64_sonoma:   "0bb879946ff04df64aa3397abc3cbb8f3a824be827e347d9bdf15d09e535a91b"
+    sha256 arm64_ventura:  "c198f6bc3efc45b4dea740cd7e24902cdca7959b3991c7ad7bf4e3dee09e2fd3"
+    sha256 arm64_monterey: "23a5711b6e6737de0aa63f63b3e2198beb92c4dea60495f129da86622a44d000"
+    sha256 sonoma:         "ff119b0ef03b51582b10b794f983ef175d77f328f410e978f0e14789a505b2ed"
+    sha256 ventura:        "5a180a9dacfb0f815b3525445a05b44528d7ef3702facf6790b2a3357d6f041c"
+    sha256 monterey:       "a6f4e2c0d5fc485ac3ff87f21a1fc91a4492719f87a542d75d05f7fcf9c74683"
+    sha256 x86_64_linux:   "24f584f6e44fb15c7dd7ea529a679826ff0ee180cdd1b502d58ee5e704847056"
   end
 
   depends_on "autoconf" => :build
@@ -24,8 +24,14 @@ class Nudoku < Formula
 
   uses_from_macos "ncurses"
 
+  # fix variable scope issue
+  patch do
+    url "https:github.comjubalhnudokucommit20c30f6d189eb78bf6c0eae4b5f4b9d5e1baf0ba.patch?full_index=1"
+    sha256 "49f81f4fb9bf6feb696859b7e25d6f189493239313d8f4e3d1a0ad1ee850312b"
+  end
+
   def install
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--enable-cairo",

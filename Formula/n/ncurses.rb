@@ -1,24 +1,21 @@
 class Ncurses < Formula
   desc "Text-based UI library"
   homepage "https://invisible-island.net/ncurses/announce.html"
-  url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.4.tar.gz"
-  mirror "https://invisible-mirror.net/archives/ncurses/ncurses-6.4.tar.gz"
-  mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.4.tar.gz"
-  mirror "https://ftpmirror.gnu.org/ncurses/ncurses-6.4.tar.gz"
-  sha256 "6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159"
+  url "https://ftp.gnu.org/gnu/ncurses/ncurses-6.5.tar.gz"
+  mirror "https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz"
+  mirror "ftp://ftp.invisible-island.net/ncurses/ncurses-6.5.tar.gz"
+  mirror "https://ftpmirror.gnu.org/ncurses/ncurses-6.5.tar.gz"
+  sha256 "136d91bc269a9a5785e5f9e980bc76ab57428f604ce3e5a5a90cebc767971cc6"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "77f64a7cb19a73264573f58c05cc76869a788d192b84934642bae8732f0df1b7"
-    sha256 arm64_ventura:  "8afdd105a6b1d9ec6c567edfe5a08dd3eff5bece58fc29894ff64ae3851c4ddb"
-    sha256 arm64_monterey: "b841fae8df4143be3b7e5d0cf711f0514b0ef45592c0737c1bf416ee972283d4"
-    sha256 arm64_big_sur:  "18dd7acd5aad938bf0d7d27bd930fe6d846161aa0dad148b086eceb392eeb67d"
-    sha256 sonoma:         "3111efe7420b7dd00eb9ff5736fb0ba981bd6d6f49042c4dff067a96b146cae7"
-    sha256 ventura:        "f31d17ab8166110d3dd0337b240c616acf33a3582c0ded2fbe4db61fbdda1b5d"
-    sha256 monterey:       "cd6258524addc5ac1fdbbd92e7e2c46b240cae5d0c4fa771c0976da861f7198f"
-    sha256 big_sur:        "b5e8d53b2860f5c778ac99d01417a0596c66ebab670169e8a472d65c253870ba"
-    sha256 x86_64_linux:   "58970126fed5ca09650b60c453e2b911a85f038b45af9091b5b2ef2b61d7d40e"
+    sha256 arm64_sonoma:   "ee5253473badfa0701deac8e9973a7358c761dd287f0d748f753130a7a6d2705"
+    sha256 arm64_ventura:  "b79562983390463a00077616c6b3e460aa170bdca43f32839af802aac594aae0"
+    sha256 arm64_monterey: "75db7bcba54b3acdb36b0dd08f0ce0a0631f7bfda83da3877aab35242ff7276a"
+    sha256 sonoma:         "eb22b3753261f99aa36f5d9e1511a0bca5ea70cd645f7068af2ac5514aafd6a7"
+    sha256 ventura:        "d6316fb9989753d52db231cc4dfe20746c5e2b6dced2ba6136ad1f11e99814aa"
+    sha256 monterey:       "9c262007804eca602c67d686878778051d2ff813237d6805665831a1ea705477"
+    sha256 x86_64_linux:   "7c49662d0f319baec24475d38210b2f9c754b2ec1d21a4a3ff39ce81d8605f03"
   end
 
   keg_only :provided_by_macos

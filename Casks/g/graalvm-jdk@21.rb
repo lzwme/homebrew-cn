@@ -1,4 +1,4 @@
-cask "graalvm-jdk21" do
+cask "graalvm-jdk@21" do
   arch arm: "aarch64", intel: "x64"
 
   version "21.0.3"

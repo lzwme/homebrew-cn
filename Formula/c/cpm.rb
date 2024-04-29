@@ -1,26 +1,26 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https:metacpan.orgpodcpm"
-  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997015.tar.gz"
-  sha256 "623f8c67287d864b5fb1cd9c70aaa2a31c82c245cc80d01ff01e166f4cdd4ffc"
+  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997017.tar.gz"
+  sha256 "3998ac451276113f4ff2e33fd20bc7cdbccab069ee20a7b35d980d845b467297"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https:github.comskajicpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6ce5c02fb9774f5fb5e0b60261e37fc52d81de52fc6a4e8c0f8c55c9327879a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6ce5c02fb9774f5fb5e0b60261e37fc52d81de52fc6a4e8c0f8c55c9327879a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6ce5c02fb9774f5fb5e0b60261e37fc52d81de52fc6a4e8c0f8c55c9327879a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f58e1433474e13b991548855ba4e5390112de573ddb983e3c22ed30c140b0f1f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f58e1433474e13b991548855ba4e5390112de573ddb983e3c22ed30c140b0f1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f58e1433474e13b991548855ba4e5390112de573ddb983e3c22ed30c140b0f1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c3f4a427bb14713cb10039cf64352524e294f7dbcdb70c935a3fd824884c17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba102116dc8eee9cbd730b27c2e181e3e5313f1652eba48ff6bdf931236a2f8f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba102116dc8eee9cbd730b27c2e181e3e5313f1652eba48ff6bdf931236a2f8f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba102116dc8eee9cbd730b27c2e181e3e5313f1652eba48ff6bdf931236a2f8f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c02a32046c2907e627f5a83634be89afe5813f77de19552330f6b086d7593919"
+    sha256 cellar: :any_skip_relocation, ventura:        "c02a32046c2907e627f5a83634be89afe5813f77de19552330f6b086d7593919"
+    sha256 cellar: :any_skip_relocation, monterey:       "c02a32046c2907e627f5a83634be89afe5813f77de19552330f6b086d7593919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d8cb8c4f0230194e57742426ac7d3c884fd89bc0b83b96a5554ae9d2007135c"
   end
 
   depends_on "perl"
 
   resource "Module::Build::Tiny" do
-    url "https:cpan.metacpan.orgauthorsidLLELEONTModule-Build-Tiny-0.047.tar.gz"
-    sha256 "71260e9421b93c33dd1b3e7d0cf15f759c0ca7c753fa840279ec3be70f8f8c9d"
+    url "https:cpan.metacpan.orgauthorsidLLELEONTModule-Build-Tiny-0.048.tar.gz"
+    sha256 "79a73e506fb7badabdf79137a45c6c5027daaf6f9ac3dcfb9d4ffcce92eb36bd"
   end
 
   resource "CPAN::Common::Index" do
@@ -54,8 +54,8 @@ class Cpm < Formula
   end
 
   resource "ExtUtils::Config" do
-    url "https:cpan.metacpan.orgauthorsidLLELEONTExtUtils-Config-0.008.tar.gz"
-    sha256 "ae5104f634650dce8a79b7ed13fb59d67a39c213a6776cfdaa3ee749e62f1a8c"
+    url "https:cpan.metacpan.orgauthorsidLLELEONTExtUtils-Config-0.009.tar.gz"
+    sha256 "4ef84e73aad50a3be332885d2a3b12f3cab1b1e0bad24e88297a123b4f39f3ce"
   end
 
   resource "ExtUtils::Helpers" do
@@ -64,8 +64,8 @@ class Cpm < Formula
   end
 
   resource "ExtUtils::InstallPaths" do
-    url "https:cpan.metacpan.orgauthorsidLLELEONTExtUtils-InstallPaths-0.012.tar.gz"
-    sha256 "84735e3037bab1fdffa3c2508567ad412a785c91599db3c12593a50a1dd434ed"
+    url "https:cpan.metacpan.orgauthorsidLLELEONTExtUtils-InstallPaths-0.013.tar.gz"
+    sha256 "65969d3ad8a3a2ea8ef5b4213ed5c2c83961bb5bd12f7ad35128f6bd5b684aa0"
   end
 
   resource "ExtUtils::MakeMaker::CPANfile" do
@@ -89,13 +89,13 @@ class Cpm < Formula
   end
 
   resource "HTTP::Tinyish" do
-    url "https:cpan.metacpan.orgauthorsidMMIMIYAGAWAHTTP-Tinyish-0.18.tar.gz"
-    sha256 "80380b8d33c6bfa96bb0104fa6a41c27dcc4e9c83a48df1fad39097f5fdcfde5"
+    url "https:cpan.metacpan.orgauthorsidMMIMIYAGAWAHTTP-Tinyish-0.19.tar.gz"
+    sha256 "e9ce94a9913f9275d312ded4ddb34f76baf011b6b8d6029ff2871d5bd7bae468"
   end
 
   resource "IPC::Run3" do
-    url "https:cpan.metacpan.orgauthorsidRRJRJBSIPC-Run3-0.048.tar.gz"
-    sha256 "3d81c3cc1b5cff69cca9361e2c6e38df0352251ae7b41e2ff3febc850e463565"
+    url "https:cpan.metacpan.orgauthorsidRRJRJBSIPC-Run3-0.049.tar.gz"
+    sha256 "9d048ae7b9ae63871bae976ba01e081d887392d904e5d48b04e22d35ed22011a"
   end
 
   resource "Menlo" do
@@ -124,8 +124,8 @@ class Cpm < Formula
   end
 
   resource "Parse::PMFile" do
-    url "https:cpan.metacpan.orgauthorsidIISISHIGAKIParse-PMFile-0.44.tar.gz"
-    sha256 "e08f0f56455b3ac12dccd8c711650612b7d3cd150f8a6f8ae6b43b2da47df994"
+    url "https:cpan.metacpan.orgauthorsidIISISHIGAKIParse-PMFile-0.47.tar.gz"
+    sha256 "26817cf3d72e245452375dcff9e923a061ee0a40bbf060d3a08ebe60a334aaae"
   end
 
   resource "String::ShellQuote" do
@@ -139,8 +139,8 @@ class Cpm < Formula
   end
 
   resource "URI" do
-    url "https:cpan.metacpan.orgauthorsidOOAOALDERSURI-5.21.tar.gz"
-    sha256 "96265860cd61bde16e8415dcfbf108056de162caa0ac37f81eb695c9d2e0ab77"
+    url "https:cpan.metacpan.orgauthorsidOOAOALDERSURI-5.28.tar.gz"
+    sha256 "e7985da359b15efd00917fa720292b711c396f2f9f9a7349e4e7dec74aa79765"
   end
 
   resource "Win32::ShellQuote" do
@@ -149,8 +149,8 @@ class Cpm < Formula
   end
 
   resource "YAML::PP" do
-    url "https:cpan.metacpan.orgauthorsidTTITINITAYAML-PP-v0.37.0.tar.gz"
-    sha256 "9c4cb4e8801a69b44440c0dbcc40e6b6f0646f2016a5f30877aadef6b28071ad"
+    url "https:cpan.metacpan.orgauthorsidTTITINITAYAML-PP-v0.38.0.tar.gz"
+    sha256 "a819465c52f6a341049a3942742c08e04f2894b2a66482e43a7f407ce10b4ea0"
   end
 
   resource "local::lib" do

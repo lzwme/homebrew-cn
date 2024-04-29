@@ -1,19 +1,18 @@
 class Ibazel < Formula
   desc "Tools for building Bazel targets when source files change"
   homepage "https:github.combazelbuildbazel-watcher"
-  # Tag may change on next release: https:github.combazelbuildbazel-watcherissues652
-  url "https:github.combazelbuildbazel-watcherarchiverefstagsV0.25.1.tar.gz"
-  sha256 "8faa43a7d79e5991ca79cead0c91187c5b1c61aed0f86d726401bff91abf9d20"
+  url "https:github.combazelbuildbazel-watcherarchiverefstagsv0.25.2.tar.gz"
+  sha256 "b2f63188f4c25d9108903f89e3f3c1ee09016816e2ee54590dd7c6c5da43350d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1030050c20f2824c410de9d0e01ff4a36b96a15787cc93726c064d7ee462dfaa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47279d9d1a55e2ea050bfa1ad65cdc353be0a7eee129ee8118a2bbb25db00232"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aff4781602399966187dc11e1faf0972c1fe5f2b503681ee85e1fadd16f645f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c99c7e54aa6925ff14bf44a1a99ce4c60587547170494a332b7734d172c7759"
-    sha256 cellar: :any_skip_relocation, ventura:        "b29223b3772b99d5e693e95951bcf9a940a157d01c54156f889a6085bcff146d"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a1f28da8705ee68bcec9d9a7386a51518d61195db1e2b303768689e53a36738"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4aeb030a3da8a41e9ea99dc7b6d8a73d81fa453b9425c95366538071525d80be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff220f5873d6ea83d61eb68231ec68450e5fd6eba58d7ed5559a9a44f8389141"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ace57e4ea621a9785de4c99b3ce6ebc19f8de8254145dbf440d333315345b49"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "99185086ee14a9727fa710e0a11f6129c4fb8601b132bd37e6920fb6c8318699"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c955602d4b4d016db7078292aff68b171c28ec4b98ad97afa39af87cfa061114"
+    sha256 cellar: :any_skip_relocation, ventura:        "6cbc66724381a8e9865879b33da3029a5b7e62ba45b27ff2b57a5223a1d5845f"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c26e5c4886d1b220d600af899e96cee5578439ee8f985832d2ece8e47ec4cf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4d41d7e120c27e03e29d0c763060a792284bc386e18e2cce315af0f515d00ea"
   end
 
   depends_on "bazelisk" => [:build, :test]

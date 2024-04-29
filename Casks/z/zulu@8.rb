@@ -1,15 +1,15 @@
-cask "zulu21" do
+cask "zulu@8" do
   arch arm: "aarch64", intel: "x64"
 
-  version "21.0.3,21.34.19"
-  sha256 arm:   "54f90fd9e89e961eff94246e2afa424fb03c8259fbbfbfe88d13664fd1b5b4e9",
-         intel: "faa9bfaa393412295e9222cddaedcc5af066236517e3452a3b4323ea8a241df6"
+  version "8.0.412,8.78.0.19"
+  sha256 arm:   "f27fbac1250c9a2a5c9e29e622adb49f7ead160b3ed49ac85b0d8e17cf411b2f",
+         intel: "49c28ef4c069cc3c602fdd124ecf3d46fa0a7438037a6baa61af1cd7a07b4fe4"
 
   url "https://cdn.azul.com/zulu/bin/zulu#{version.csv.second}-ca-jdk#{version.csv.first}-macosx_#{arch}.dmg",
       referer: "https://www.azul.com/downloads/"
-  name "Azul Zulu Java Standard Edition Development Kit"
+  name "Azul Zulu Java 8 Standard Edition Development Kit"
   desc "OpenJDK distribution from Azul"
-  homepage "https://www.azul.com/downloads/"
+  homepage "https://www.azul.com/"
 
   livecheck do
     url "https://api.azul.com/metadata/v1/zulu/packages?java_version=#{version.major}&os=macos&arch=#{arch}&archive_type=dmg&java_package_type=jdk&javafx_bundled=false&latest=true&release_status=ga&availability_types=ca"
@@ -24,7 +24,7 @@ cask "zulu21" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :mojave"
 
   pkg "Double-Click to Install Azul Zulu JDK #{version.major}.pkg"
 

@@ -1,20 +1,18 @@
 class Fwup < Formula
   desc "Configurable embedded Linux firmware update creator and runner"
   homepage "https:github.comfwup-homefwup"
-  url "https:github.comfwup-homefwupreleasesdownloadv1.10.1fwup-1.10.1.tar.gz"
-  sha256 "46a443f7461ffe7aa2228bce296d65e83d0ab9c886449d443a562ca59963a233"
+  url "https:github.comfwup-homefwupreleasesdownloadv1.10.2fwup-1.10.2.tar.gz"
+  sha256 "b1fa346e02b984816d5914bfc5f37a55639a147d24a87727dfc01aa9d7ae90f9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3529f51fe9638c8f365ca055456924804e37f8f08ab2c076ee58ead69de50c2f"
-    sha256 cellar: :any,                 arm64_ventura:  "fadeeb4c6daa8fbccc0df4990678d60dd35ef93f7d5fc10d6d06fd17e3a5a6c6"
-    sha256 cellar: :any,                 arm64_monterey: "6acfdd2265ff8c0273cdea9d8e22bb88fb763f0e0e3080941dd97f95c844e46a"
-    sha256 cellar: :any,                 arm64_big_sur:  "e91741c7cc946c35efbbb3d749f93da92f1c2e43a1386f3c1262229d291f3813"
-    sha256 cellar: :any,                 sonoma:         "70f13ae12994fee1690a8e29630d503e64702f45adb3760b87167c46520e1b18"
-    sha256 cellar: :any,                 ventura:        "f37c9a184dda1668f06ca8ca2d133b39903c93895bb4ebab58d539ce4600c2a3"
-    sha256 cellar: :any,                 monterey:       "c5e7710f2c3e4f66c603d04a676c841f600f81d277b599821fdce655287ed5f1"
-    sha256 cellar: :any,                 big_sur:        "10f851a5980fbd3e9e3e53a8cb590dbc2fb91eb4363a5028efca72c9741a1924"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a8d22e346064ac9782e138a63d3df2d754404ceeea53ea0ba80e224610e844e"
+    sha256 cellar: :any,                 arm64_sonoma:   "e483cc908d13ca2c5f77329acfc9f0a2e07c309eaa5cd654cbb92fabebb9521e"
+    sha256 cellar: :any,                 arm64_ventura:  "c4a7b6a2f48c2ec1193f646f627db6a185af212913bf171be2d46ebbd8f3a90f"
+    sha256 cellar: :any,                 arm64_monterey: "6ce4ca5b3844c3930db020e6088482170c4efb57dbdbb31f1bf6aff9bba05527"
+    sha256 cellar: :any,                 sonoma:         "5165cc003d518893dec2538c500b7eaaa15137b304a9511e06ac08b057bc4a3c"
+    sha256 cellar: :any,                 ventura:        "ec75edba64377a46b630c10c89aed8be8a45ee5e5889ff86497141b48cfe7374"
+    sha256 cellar: :any,                 monterey:       "c11de80f300f46bd049904f89b1745e02a581fb30763632c74b9da812bffa493"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "538295ec30530fcee960c6e56c7e40bfe0899c16e95d9b4b0b97f9aefe9cd94e"
   end
 
   depends_on "pkg-config" => :build

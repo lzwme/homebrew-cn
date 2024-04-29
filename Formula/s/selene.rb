@@ -1,19 +1,19 @@
 class Selene < Formula
   desc "Blazing-fast modern Lua linter"
   homepage "https:kampfkarren.github.ioselene"
-  url "https:github.comKampfkarrenselenearchiverefstags0.26.1.tar.gz"
-  sha256 "44a4485b880aca3a70970167faa6cd467418cb49ddfb3b87fe616af7462180fd"
+  url "https:github.comKampfkarrenselenearchiverefstags0.27.1.tar.gz"
+  sha256 "f12579907c019bebcc3830e320614409217096e63d80b4704989bbd65394b530"
   license "MPL-2.0"
   head "https:github.comKampfkarrenselene.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8be32b99bd7c582742f8a57d7483e53749bf777bea0e835884e2d8377b98bce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbb8ae0eef4c8f53481bd6f81e6029c39835e710371d648b97b3da079552e154"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "552eb2fa15999c6a702c20a670cb152f6eb33687513feec266b341ac6cf2b503"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d7b5010660fd55fdf50c7dbca71e0f38a3da6a0eeb0905bb59cd1a37c711187b"
-    sha256 cellar: :any_skip_relocation, ventura:        "c78d099a304c4641be142d970abc4393c9ec9449ebb7dacdc457c007481037ff"
-    sha256 cellar: :any_skip_relocation, monterey:       "92b1773ac7dea42d0ddef56f7d5c5c977d44a20d51c17c1fcbafd5b0a328df45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "194a76463eb92d1f147b0bff825214a9137fdbf32d2491d1152d8c3e1a634297"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2c0d800c3878bca89cb1bb6f13525f1d2bddd33673ee97d766a39af6d79c89b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34f13429933319c05c75e4bc71235f335336e6989d614055bf2abc030b33cd79"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd9cee5e52f5ca3362377ac5d8cffad27982de85d9251aaff0e3a52ffe7905bf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ee8298158be76be9ec0451871344c0f5dcd771c83f70dd555c1c7f5640f69d08"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6df4e0387dde9e666642a17a42dda1745fff63fcdafe5e82223196ffb60b2df"
+    sha256 cellar: :any_skip_relocation, monterey:       "f57e9457cf71fdfd0b7832ffcdc2be71ec2841427571ecb47b29c8f667854e5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b4d71fc14f4f300d65ea59a478b92252e26c313ed39ab0424584a1c4fe9804c"
   end
 
   depends_on "rust" => :build

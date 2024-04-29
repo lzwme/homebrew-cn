@@ -2,21 +2,22 @@ class Animdl < Formula
   include Language::Python::Virtualenv
 
   desc "Anime downloader and streamer"
+  # pin lxml and yarl once https:github.comjustfoolingaroundanimdlpull308 merged and released
   homepage "https:github.comjustfoolingaroundanimdl"
   url "https:files.pythonhosted.orgpackages5b794be6ac2caca32dea6fe500e5f5df9d74a3a5ce1d500175c3a7b69500bb3fanimdl-1.7.27.tar.gz"
   sha256 "fd97b278da4c82da88759993eaf6d8ad6fc3660d0f03de5b2151279c4ebd8370"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comjustfoolingaroundanimdl.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "2e87b8f2b10b5a5f0c2b30e942469c9ec6502188ae51e4907ab410e322d751da"
-    sha256 cellar: :any,                 arm64_ventura:  "571df10ef8ef2369b216a10d579f8af335ac406c12299fbf236ed0d666cadb6d"
-    sha256 cellar: :any,                 arm64_monterey: "45330a730e07da5f3829c97969fde758440ab5a06c4daa827ba850c24de5f193"
-    sha256 cellar: :any,                 sonoma:         "e426858eb003958f32050b0cf53707251f00d5434356bc4d2e627650db25c705"
-    sha256 cellar: :any,                 ventura:        "6461e1336071053621bd6bf25e0104aa7f6d00317e395ec73d0526662959e9ef"
-    sha256 cellar: :any,                 monterey:       "d75d262a81d0c9e32cca590357a015aa591525b683ad3145d926bcc3e7ad62d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abbba04510c785c5cd6b6881c809ca82f3126c101e76b2b95c69d149d720014f"
+    sha256 cellar: :any,                 arm64_sonoma:   "e877422b72159e289dbb11eee4837ccf70ed71f8775d7568a79223786a7e2fb1"
+    sha256 cellar: :any,                 arm64_ventura:  "678d00092c40763e3ed5a7dbcae1b97b66b8a1eed3b1e4739d229166114cf3d9"
+    sha256 cellar: :any,                 arm64_monterey: "f22d1522756a7ea176c042f8828dc46aa4033be832a6bc77216af6c14062d659"
+    sha256 cellar: :any,                 sonoma:         "b7b709cf586504ee90a688845759e47edc1137c1556356edd1da31f8c71fc38d"
+    sha256 cellar: :any,                 ventura:        "b6f1256f238cfef31e2dfa293189510d3966ef797956a02ed9348fe0ba5eb602"
+    sha256 cellar: :any,                 monterey:       "723af2b86066a58345b2b1f32dc359720f865428eeae528ad3768150b19209a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5878bb0a3f76b3a12ab65e6dacfdcd109757910ba8777db819015e4534bba80c"
   end
 
   depends_on "certifi"
@@ -72,13 +73,13 @@ class Animdl < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
+    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
   end
 
   resource "markdown-it-py" do
@@ -102,8 +103,8 @@ class Animdl < Formula
   end
 
   resource "pkginfo" do
-    url "https:files.pythonhosted.orgpackagesb41c89b38e431c20d6b2389ed8b3926c2ab72f58944733ba029354c6d9f69129pkginfo-1.9.6.tar.gz"
-    sha256 "8fd5896e8718a4372f0ea9cc9d96f6417c9b986e23a4d116dda26b62cc29d046"
+    url "https:files.pythonhosted.orgpackages2f72347ec5be4adc85c182ed2823d8d1c7b51e13b9a6b0c1aae59582eca652dfpkginfo-1.10.0.tar.gz"
+    sha256 "5df73835398d10db79f8eecd5cd86b1f6d29317589ea70796994d49399af6297"
   end
 
   resource "pycryptodomex" do
@@ -137,8 +138,8 @@ class Animdl < Formula
   end
 
   resource "sniffio" do
-    url "https:files.pythonhosted.orgpackagescd50d49c388cae4ec10e8109b1b833fd265511840706808576df3ada99ecb0acsniffio-1.3.0.tar.gz"
-    sha256 "e60305c5e5d314f5389259b7f22aaa33d8f7dee49763119234af3755c55b9101"
+    url "https:files.pythonhosted.orgpackagesa287a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbdsniffio-1.3.1.tar.gz"
+    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
   resource "tqdm" do
@@ -192,7 +193,7 @@ index e0e8782..e71eacf 100644
  rich = ">=13.3.1,<13.3.4"
 @@ -33,5 +33,5 @@ rich = ">=13.3.1,<13.3.4"
  animdl = "animdl.__main__:__animdl_cli__"
- 
+
  [tool.poetry.dependencies.lxml]
 -version = "4.9.1"
 +version = "5.1.0"

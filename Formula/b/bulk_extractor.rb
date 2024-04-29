@@ -1,10 +1,9 @@
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"
   homepage "https:github.comsimsongbulk_extractorwiki"
-  url "https:github.comsimsongbulk_extractorreleasesdownloadv2.1.0bulk_extractor-2.1.0.tar.gz"
-  sha256 "2ac7911e6cec65be851a538ca2b4ba8a43c560d70449af5da6e593a865f26c9b"
+  url "https:github.comsimsongbulk_extractorreleasesdownloadv2.1.1bulk_extractor-2.1.1.tar.gz"
+  sha256 "0cd57c743581a66ea94d49edac2e89210c80a2a7cc90dd254d56940b3d41b7f7"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class BulkExtractor < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "24e76db172c2903182037871674f0a390ef28475264e04cfa8474234375e37bd"
-    sha256 cellar: :any,                 arm64_ventura:  "5897018830b5d9d714a6edd12f4ea98a0938e7c97c3eaed2318f15781a349cdf"
-    sha256 cellar: :any,                 arm64_monterey: "96682a58d28122673737784502ec0690b183c9851022378083aa05d097ac465b"
-    sha256 cellar: :any,                 sonoma:         "54384cff4786fe0c9ca7ec24de8f91636b75414e8829fd92d0fb9a1b7d546688"
-    sha256 cellar: :any,                 ventura:        "4583c5e2bb3a278ecaf642e971bd1bb61bae870efa59569e0aa52497fe37a102"
-    sha256 cellar: :any,                 monterey:       "f312339220d7155b489c5be0ebaa8aab203f8f3c7c5f86339a44f5b916325501"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d2b8a41efdd34797ba504c554f929392fc5a3a906741b695d68b79392a64c0b"
+    sha256 cellar: :any,                 arm64_sonoma:   "0cbca66c6d233701e44105ed24a7ac4c726ce2480592a1ef303bcc59a9e7886d"
+    sha256 cellar: :any,                 arm64_ventura:  "52faa836f21c334c6733f48cc4d1d1ff87bce5bc53c69f62e8eaed685acd9201"
+    sha256 cellar: :any,                 arm64_monterey: "05799a612973ea890465a7e934f7824efe5a47e41663afbe6c6e54bb879b3c06"
+    sha256 cellar: :any,                 sonoma:         "3098a8bf4ab75ff8f51a44d0bf8746380d3da1540fcf85e3019678d868d34d12"
+    sha256 cellar: :any,                 ventura:        "360a71e4b8ea006a59ba71e355bad2f32e695e0626ccdac58f1317e6576b0ba3"
+    sha256 cellar: :any,                 monterey:       "18526411854a3ee4eece4d83defa121e8f7ffddaaeebada24fc47f4e5ad3a5b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1cca868461a3cfbd8f38cb016e5db562a2152aadc01c6cecd957fed640db2b1"
   end
 
   head do

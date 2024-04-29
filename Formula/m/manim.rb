@@ -3,20 +3,19 @@ class Manim < Formula
 
   desc "Animation engine for explanatory math videos"
   homepage "https:www.manim.community"
-  url "https:files.pythonhosted.orgpackagesd383b504dbacb67c665e5b81f5aaa1b23fe058b8dac06c966b5c25949959a2a3manim-0.18.0.post0.tar.gz"
-  sha256 "93d36a7a26cd8083969d22ebbc1c174a80cd193562d116a6dbf35622439e0035"
+  url "https:files.pythonhosted.orgpackages835f717ba528eb191124211036ec710bafd605dc7f7bb948a41219a8dd1124b6manim-0.18.1.tar.gz"
+  sha256 "4bf2b479d258b410259c6828261fe79e107beb8f2dd04ebfa73b96bcefdde93d"
   license "MIT"
-  revision 1
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7031070b960134606c1ee293f515ad3e475a59dbf644879ed78d24c58dd927f1"
-    sha256 cellar: :any,                 arm64_ventura:  "347c9aaf873a2badcff0931464ce6cb2026774e51847d1e09da73af558d0b6d9"
-    sha256 cellar: :any,                 arm64_monterey: "e7c1bc7eb6223af7768d186aed19fe52d36cf11659d7c80722798d56ac983260"
-    sha256 cellar: :any,                 sonoma:         "c66cef188362b40a51efcf7322e89953b305bd4b8b7c7cc8d1a407e8d13545da"
-    sha256 cellar: :any,                 ventura:        "5a51028f6795228bc474be14e58b60b873c261ecdcc12c2f539eb95c7476c624"
-    sha256 cellar: :any,                 monterey:       "c0b9b1561348702bdb3206a1d5b2b377fea6eb76aa53187f32d20573a9ad3fe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9991ed32829ae9a4c3937cdc31eb09e75b8b06cb6b44c02cc2282e86d6ee8030"
+    sha256 cellar: :any,                 arm64_sonoma:   "110296f6ea37d0353d50d0c928ac0bf9998a5aa188f0f80b90c9d88ce63ac95a"
+    sha256 cellar: :any,                 arm64_ventura:  "6982e1c2fc74f24afe2993a05dd5edcb4b8137501bd6f345428da02cb9217e49"
+    sha256 cellar: :any,                 arm64_monterey: "5d37b335590e7198d0b54506bfa638f1501a4e32d4c728b6a0f869c1b2890bdc"
+    sha256 cellar: :any,                 sonoma:         "f4546e242f9de6fdd7fd3483bf348729f7dea80ad93354a0e4fadfcceae1abc9"
+    sha256 cellar: :any,                 ventura:        "6ca3380e3f568150c1dc80582e7b7ca74a293d4bdea1beb1bf87e175bc01b068"
+    sha256 cellar: :any,                 monterey:       "95ad93740a778272d84e2ed6316c499ca109aaf5bbb48e9b9e5113ece5867f23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18d5a0ae9b9c5c81dd9f4478e0bf08d56f973c788eed83358d0c96757001f05a"
   end
 
   depends_on "cython" => :build
@@ -26,7 +25,6 @@ class Manim < Formula
   depends_on "ffmpeg"
   depends_on "numpy"
   depends_on "py3cairo"
-  depends_on "python-setuptools" # for `import pkg_resources`
   depends_on "python@3.12"
 
   on_linux do
@@ -39,29 +37,14 @@ class Manim < Formula
     depends_on "scipy"
   end
 
-  resource "certifi" do
-    url "https:files.pythonhosted.orgpackages71dae94e26401b62acd6d91df2b52954aceb7f561743aa5ccc32152886c76c96certifi-2024.2.2.tar.gz"
-    sha256 "0569859f95fc761b18b45ef421b1290a0f65f147e92a1e5eb3e635f9a5e4e66f"
-  end
-
-  resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
-  end
-
   resource "click" do
     url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
     sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
-  resource "click-default-group" do
-    url "https:files.pythonhosted.orgpackages1dceedb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41dfclick_default_group-1.2.4.tar.gz"
-    sha256 "eb3f3c99ec0d456ca6cd2a7f08f7d4e91771bef51b01bdd9580cc6450fe1251e"
-  end
-
   resource "cloup" do
-    url "https:files.pythonhosted.orgpackages71b62819a7290c0f5bf384be3f507f2cfbc0a93a8148053d0bde2040d2e09124cloup-2.1.2.tar.gz"
-    sha256 "43f10e944056f3a1eea714cb67373beebebbefc3f4551428750392f3e04ac964"
+    url "https:files.pythonhosted.orgpackagescf71608e4546208e5a421ef00b484f582e58ce0f17da05459b915c8ba22dfb78cloup-3.0.5.tar.gz"
+    sha256 "c92b261c7bb7e13004930f3fb4b3edad8de2d1f12994dcddbe05bc21990443c5"
   end
 
   resource "cython" do
@@ -79,14 +62,9 @@ class Manim < Formula
     sha256 "0f70d4be0cdd2b532a16da76c8f786b6367754a4086aaadffdbf3e37badbad02"
   end
 
-  resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
-  end
-
   resource "isosurfaces" do
-    url "https:files.pythonhosted.orgpackages88b6765e74b3ce5b40cf21b95eef7e60c7755314538908287ec2d0767b17bd2disosurfaces-0.1.0.tar.gz"
-    sha256 "fa1b44e5e59d2f429add49289ab89e36f8dcda49b7badd99e0beea273be331f4"
+    url "https:files.pythonhosted.orgpackagesdacfbd7e70bb7b8dfd77afdc79aba8d83afd4a9263f045861cd4ddd34b7f6a12isosurfaces-0.1.2.tar.gz"
+    sha256 "fa51ebe864ea9355b26830e27fdd6a41d5a58b419fa8d4b47e3b8b80718d6e21"
   end
 
   resource "manimpango" do
@@ -115,8 +93,8 @@ class Manim < Formula
   end
 
   resource "moderngl-window" do
-    url "https:files.pythonhosted.orgpackagesc29014a7e798c9310dfa5ee94716d0b73f465780741ae6c9d45eb21626d87bf6moderngl-window-2.4.4.tar.gz"
-    sha256 "66a9c5412b5eb0a5ca7cda351e4484ce02a167cf87eb4dc59bb82439c58130b5"
+    url "https:files.pythonhosted.orgpackages4ed73467a5cb0cbd3b9bb15c6a10f793f59bb606862c1c7c704af483156e5c7cmoderngl-window-2.4.5.tar.gz"
+    sha256 "2ee6e80b215ce4e7db5bef8d166010a3f2b9060449688652bfe06fa7c904d01b"
   end
 
   resource "multipledispatch" do
@@ -125,13 +103,13 @@ class Manim < Formula
   end
 
   resource "networkx" do
-    url "https:files.pythonhosted.orgpackagesc480a84676339aaae2f1cfdf9f418701dd634aef9cc76f708ef55c36ff39c3canetworkx-3.2.1.tar.gz"
-    sha256 "9f1bb5cf3409bf324e0a722c20bdb4c20ee39bf1c30ce8ae499c8502b0b5e0c6"
+    url "https:files.pythonhosted.orgpackages04e6b164f94c869d6b2c605b5128b7b0cfe912795a87fc90e78533920001f3ecnetworkx-3.3.tar.gz"
+    sha256 "0c127d8b2f4865f59ae9cb8aafcd60b5c70f3241ebd66f7defad7c4ab90126c9"
   end
 
   resource "pillow" do
-    url "https:files.pythonhosted.orgpackages00d54903f310765e0ff2b8e91ffe55031ac6af77d982f0156061e20a4d1a8b2dPillow-9.5.0.tar.gz"
-    sha256 "bf548479d336726d7a0eceb6e767e179fbde37833ae42794602631a070d630f1"
+    url "https:files.pythonhosted.orgpackages649e7e638579cce7dc346632f020914141a164a872be813481f058883ee8d421Pillow-10.0.1.tar.gz"
+    sha256 "d72967b06be9300fed5cfbc8b5bafceec48bf7cdc7dab66b1d2549035287191d"
   end
 
   resource "pycairo" do
@@ -145,8 +123,8 @@ class Manim < Formula
   end
 
   resource "pyglet" do
-    url "https:files.pythonhosted.orgpackages7e21a514b8358e5f3c49e54edd055637ecb8e6f52af2d9c25bd0d9435c9fa6e0pyglet-2.1.dev1.tar.gz"
-    sha256 "a94867222e656a097f26a713195a05bf471112e09bf46c4d9030555fc6a56fc4"
+    url "https:files.pythonhosted.orgpackagesa2146cb89978608e2a2f5869eab9485f8f1eabaf2240a63d6c9bc23c43d952c5pyglet-2.0.15.tar.gz"
+    sha256 "42085567cece0c7f1c14e36eef799938cbf528cfbb0150c484b984f3ff1aa771"
   end
 
   resource "pygments" do
@@ -167,11 +145,6 @@ class Manim < Formula
   resource "pyrr" do
     url "https:files.pythonhosted.orgpackagese57f2af23f61340972116e4efabc3ac6e02c8bad7f7315b3002c278092963f17pyrr-0.10.3.tar.gz"
     sha256 "3c0f7b20326e71f706a610d58f2190fff73af01eef60c19cb188b186f0ec7e1d"
-  end
-
-  resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "rich" do
@@ -214,14 +187,9 @@ class Manim < Formula
     sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
-  resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
-    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
-  end
-
   resource "watchdog" do
-    url "https:files.pythonhosted.orgpackages95a6d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ecwatchdog-3.0.0.tar.gz"
-    sha256 "4d98a320595da7a7c5a18fc48cb633c2e73cda78f93cac2ef42d42bf609a33f9"
+    url "https:files.pythonhosted.orgpackagescd3c43eeaa9ea17a2657d639aa3827beaa77042809410f86fb76f0d0ea6a2102watchdog-4.0.0.tar.gz"
+    sha256 "e3e7065cbdabe6183ab82199d7a4f6b3ba0a438c5a512a68559846ccb76a78ec"
   end
 
   def install

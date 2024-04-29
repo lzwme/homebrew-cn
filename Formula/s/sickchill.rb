@@ -367,11 +367,7 @@ class Sickchill < Formula
   end
 
   def install
-    # Multiple resources require `setuptools`, so it must be installed first
-    venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resource("setuptools")
-    venv.pip_install resources.reject { |r| r.name == "setuptools" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   service do

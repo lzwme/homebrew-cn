@@ -26,6 +26,10 @@ class Osm2pgrouting < Formula
 
   fails_with gcc: "5"
 
+  # Fix build failure due to missing include
+  # srcosm_elementsosm_tag.cpp:34:18: error: 'transform' is not a member of 'std'
+  patch :DATA
+
   def install
     # Work around an Xcode 15 linker issue which causes linkage against LLVM's
     # libunwind due to it being present in a library search path.
@@ -45,3 +49,17 @@ class Osm2pgrouting < Formula
     system bin"osm2pgrouting", "--help"
   end
 end
+
+__END__
+diff --git asrcosm_elementsosm_tag.cpp bsrcosm_elementsosm_tag.cpp
+index 6f122ec..b41d6ff 100644
+--- asrcosm_elementsosm_tag.cpp
++++ bsrcosm_elementsosm_tag.cpp
+@@ -20,6 +20,7 @@
+
+
+ #include "osm_elementsosm_tag.h"
++#include <algorithm>
+ #include <string>
+
+ namespace osm2pgr {

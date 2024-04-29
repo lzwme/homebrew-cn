@@ -1,12 +1,12 @@
 class Lammps < Formula
   desc "Molecular Dynamics Simulator"
   homepage "https:lammps.sandia.gov"
-  url "https:github.comlammpslammpsarchiverefstagsstable_2Aug2023.tar.gz"
+  url "https:github.comlammpslammpsarchiverefstagsstable_2Aug2023_update3.tar.gz"
   # lammps releases are named after their release date. We transform it to
   # YYYY-MM-DD (year-month-day) so that we get a sane version numbering.
   # We only track stable releases as announced on the LAMMPS homepage.
-  version "20230802"
-  sha256 "48dc8b0b0583689e80ea2052275acbc3e3fce89707ac557e120db5564257f7df"
+  version "20230802-update3"
+  sha256 "6666e28cb90d3ff01cbbda6c81bdb85cf436bbb41604a87f2ab2fa559caa8510"
   license "GPL-2.0-only"
 
   # The `strategy` block below is used to massage upstream tags into the
@@ -27,15 +27,13 @@ class Lammps < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "04a5e51b736d9c7da3d7b4481de8eb0eca994b1ae6f2f5ac439a98deaa2729d9"
-    sha256 cellar: :any,                 arm64_ventura:  "877334c3c2e323d9b303b33362f2530300b6fc544554c4ee669baf82c63f6f88"
-    sha256 cellar: :any,                 arm64_monterey: "c933f52880ce1266ad20c116f649004c1c77099526294361d08f8d9c56857c53"
-    sha256 cellar: :any,                 arm64_big_sur:  "cb127179c2abf7367caaae74393ca65bfa14c93fa380618be8d89ca43bf76951"
-    sha256 cellar: :any,                 sonoma:         "1b91a2564baa547b75a438cda30d969007a9ff12820c5bf94e9eb6b545efc245"
-    sha256 cellar: :any,                 ventura:        "4f5075a501550f23a7c4f158decc3bad66f1b71566e5a09b95305ee363eac21e"
-    sha256 cellar: :any,                 monterey:       "aa236a65cfdcb84d14c918597da7b5a1da6a079d8c7419cac67beab90cf21dd8"
-    sha256 cellar: :any,                 big_sur:        "95addd6e149c5274e677b0d24d336ec5126ab7ec939318da5064311e5cb5608f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e80f59f82503497bcc7002c7d4fcabe99c071ddeec4b5d5f8e7fd7952a12d68"
+    sha256 cellar: :any,                 arm64_sonoma:   "61e544f6c2858dd064ea6941b1febc00cade836e04585d3ce754de3dfb0f0ee5"
+    sha256 cellar: :any,                 arm64_ventura:  "1ef5fa619027c8f4deb792d2daec05ddfabda3c1184ab82046323c72f56d6848"
+    sha256 cellar: :any,                 arm64_monterey: "b5b6ec7e4e1ad03b6781f802d9e3a20fd84aaa7cadcfc62dd3c42cc9668a7e92"
+    sha256 cellar: :any,                 sonoma:         "1b23f635ff0a20adec931062f97d4445981c2137de05391fc765beba112f8883"
+    sha256 cellar: :any,                 ventura:        "8cdb7df22c47c724c55f7a9b75262cd045dcc07d3b41c35147e956686de5422a"
+    sha256 cellar: :any,                 monterey:       "22d62a0bffbf7ac531f88b2d93894e674c91cc681442c4ba454cc5ebfd5ebc1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48cbb1efc9604c4d7c6cb51b2a31f4d8aad49dea60b9a77888d4e5b77496bf08"
   end
 
   depends_on "cmake" => :build
