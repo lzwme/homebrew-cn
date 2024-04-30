@@ -3,19 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https:gettaurus.org"
-  url "https:files.pythonhosted.orgpackagesdaa76c3a7295d418a55061fe514f1641e66ff65068c7383020cded0bddef4146bzt-1.16.30.tar.gz"
-  sha256 "255459fbd42055446369da1122567587c3c937cba1b6d0bbad430ee15af93fbd"
+  url "https:files.pythonhosted.orgpackages0b7b6381ed0d38def095f9858fc83f45a3d42f497b338e204a360e7a2a70a04ebzt-1.16.31.tar.gz"
+  sha256 "4c265253be7d29b6f2d50076c7b8106b13767146ee4faedb3ad5f9c4ae63f63e"
   license "Apache-2.0"
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3fe9f84a6f3af68249bd907c1fa71465d7cdc9a991e6fe932013e7d7d1124057"
-    sha256 cellar: :any,                 arm64_ventura:  "0736cb8045e0cef6824297c92036d926e3417f12df6db419c74ccdb582c620a7"
-    sha256 cellar: :any,                 arm64_monterey: "6aedd39815527e8a13bdeb38e9d761af5fc2b7feb478b53d67cb4a5f8965f115"
-    sha256 cellar: :any,                 sonoma:         "ae5cc12edc1f7670850d39e7eab1f1e2731e8f44aa87cc728e054084a8f28a94"
-    sha256 cellar: :any,                 ventura:        "4688a50f5b522465d881e43f8ac17c8dde700aab80e73e982fb36309b0841491"
-    sha256 cellar: :any,                 monterey:       "bb6c4761663980712fa162bce0c6813738bd1d49730038d66e8036b0e5696791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e5afd6c4860affcd21e73971918a8516740c1a9d8c0bedf8dc83187623398ae"
+    sha256 cellar: :any,                 arm64_sonoma:   "2471697a269eff02f3a03502a77cfc8189e7c88b2ccecc8ce982bbe9a9f0ca51"
+    sha256 cellar: :any,                 arm64_ventura:  "88f0218241745c02b62e5143fb7610aa75e709adc4d10de619c8e3b04bde5c8d"
+    sha256 cellar: :any,                 arm64_monterey: "36c458f2fa19f3da0d401fc9f7ee675f2c3f8bc65effbce5ac4dfb510aa08702"
+    sha256 cellar: :any,                 sonoma:         "77fd92cfb0a1738a3809cdca1aa28108b62947a2985d5daf2f3005c8db6dc934"
+    sha256 cellar: :any,                 ventura:        "8c58d1f6a4293dd4debe25a9ce9228eb7d107722ea365f6240752582190b5bba"
+    sha256 cellar: :any,                 monterey:       "4276ec14371d1892eeff362965c522f83f422f923e4a0361e2d057a082d001bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4f034419eb97dc2ff431206f298e1bd670a2196403afc5958cf36f979e2c43"
   end
 
   depends_on "cmake" => :build
@@ -33,8 +33,8 @@ class Bzt < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
-    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
+    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
+    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
   end
 
   resource "aiosignal" do
@@ -113,8 +113,8 @@ class Bzt < Formula
   end
 
   resource "influxdb" do
-    url "https:files.pythonhosted.orgpackages864fa9c524576677c1694b149e09d4fd6342e4a1d9a5f409e437168a14d6d150influxdb-5.3.1.tar.gz"
-    sha256 "46f85e7b04ee4b3dee894672be6a295c94709003a7ddea8820deec2ac4d8b27a"
+    url "https:files.pythonhosted.orgpackages12d44c1bd3a8f85403fad3137a7e44f7882b0366586b7c27d12713493516f1c7influxdb-5.3.2.tar.gz"
+    sha256 "58c647f6043712dd86e9aee12eb4ccfbbb5415467bc9910a48aa8c74c1108970"
   end
 
   resource "lxml" do
@@ -233,8 +233,8 @@ class Bzt < Formula
   end
 
   resource "websocket-client" do
-    url "https:files.pythonhosted.orgpackages20072a94288afc0f6c9434d6709c5320ee21eaedb2f463ede25ed9cf6feff330websocket-client-1.7.0.tar.gz"
-    sha256 "10e511ea3a8c744631d3bd77e61eb17ed09304c413ad42cf6ddfa4c7787e8fe6"
+    url "https:files.pythonhosted.orgpackagese630fba0d96b4b5fbf5948ed3f4681f7da2f9f64512e1d303f94b4cc174c24a5websocket_client-1.8.0.tar.gz"
+    sha256 "3239df9f44da632f96012472805d40a23281a991027ce11d2f45a6f24ac4c3da"
   end
 
   resource "wheel" do

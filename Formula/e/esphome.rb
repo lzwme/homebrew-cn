@@ -8,13 +8,14 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8cefdda0540ff9b867ea47f16c54263b1a3f050e12d5d67c6516a5801b1d7067"
-    sha256 cellar: :any,                 arm64_ventura:  "ff2199745d18400725d56c88b25bf0b1bd5bec12f0b0e7da836ae8dfaad60cb8"
-    sha256 cellar: :any,                 arm64_monterey: "e12a5ccfa159a996517db06868a3a7aeb831c504879e9cfd8cc1d042ecb9bb34"
-    sha256 cellar: :any,                 sonoma:         "b077573baaf16fb6de353b96bf8291005aba1663d13c6b5595faddd029b243f4"
-    sha256 cellar: :any,                 ventura:        "44180509a92b81af86efe8792fbe0caec56d46de53a57e3c87978ddf763a1ae4"
-    sha256 cellar: :any,                 monterey:       "2f3463044cbd6ce2ea21b266231d452ed9b48c96027ce95516c77c9203194dbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1b3e2a4a3e310c0521cd510d6c5f84296405b454a83cee18edb4baa19c4c53a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "da5ec8c1e14280f13f1a14dd23670765880364b041204f101e1e5f9c46aaea54"
+    sha256 cellar: :any,                 arm64_ventura:  "bea4d2063485a7dc14a7470e361e9737df0e3df290dfff80fa99253cd25d7693"
+    sha256 cellar: :any,                 arm64_monterey: "c22488b17d1fedbd147efcca35eaa4fcf9d2eec24e1a8f5d9d1554f98b3415b5"
+    sha256 cellar: :any,                 sonoma:         "ea8ca5eb619f01c2b847608329b7a4dd1dd4fce600f7909af398641d8eaf3af7"
+    sha256 cellar: :any,                 ventura:        "01a69c761c70abf5c037f99a82f7d983e7801e90a2a6e3deee07b8ce240f7278"
+    sha256 cellar: :any,                 monterey:       "95c6f6f95e348ba356caf0b00daa75f8559463ab1b083c44a251c3b660f74edd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "867edfabc49cbd83ce88d4a07fec384ebaccad78bb76357006ebb5de85e05d62"
   end
 
   depends_on "certifi"
@@ -60,8 +61,8 @@ class Esphome < Formula
   end
 
   resource "bitstring" do
-    url "https:files.pythonhosted.orgpackagesd974ec6ad6fa60dc406cd9868fd44794d50bf45020f8369de8470081c220304abitstring-4.2.0.tar.gz"
-    sha256 "fc3ed2aea75567409afdad250afb7d4f66dea6c5049dc40a3e805f6eafdfb53e"
+    url "https:files.pythonhosted.orgpackageseb57699428f6ab4c0863f8555d80ffceb3e7b385622cefdcebe5264121349986bitstring-4.2.1.tar.gz"
+    sha256 "8abb5a661588c764bacf1a23d64c7bb57517d2841e3e6f54fb8c057119e0540d"
   end
 
   resource "bottle" do
@@ -72,6 +73,11 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackages18c4011bf30a7b82df544c9f1b1703bfe249b76f2309b2ca7d65e3359152fb2cchacha20poly1305_reuseable-0.12.1.tar.gz"
     sha256 "c1ca3de2c78eb87ac006d975729e0b9032ff31597e3c112e78268f4cd431fd6a"
+  end
+
+  resource "chardet" do
+    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do

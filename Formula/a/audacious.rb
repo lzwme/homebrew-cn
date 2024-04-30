@@ -35,6 +35,7 @@ class Audacious < Formula
     sha256 sonoma:         "db478a7d9dae10ad8b9743cb4c96a4164a62495896ac13b1eb8cf677652eb1a7"
     sha256 ventura:        "ca18e033d72a4c6ee60b5b7127921b394b2e5c2bf88f69648ed0abf5479260ab"
     sha256 monterey:       "73d8752361d84d876ef26d68e8003b62ee46d6db7facf7ffb3a931bacf3b0594"
+    sha256 x86_64_linux:   "40e939273d344e1898bbb7b1e47dea3e0eb3478c317c75f45c10a9bdc920d198"
   end
 
   head do

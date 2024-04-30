@@ -16,7 +16,10 @@ cask "1password-cli" do
     regex(%r{href=.*?/op_apple_universal[._-]v?(\d+(?:\.\d+)+)\.pkg}i)
   end
 
-  conflicts_with cask: "1password-cli1"
+  conflicts_with cask: [
+    "1password-cli@1",
+    "1password-cli@beta",
+  ]
 
   binary "op"
 

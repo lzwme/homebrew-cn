@@ -1,18 +1,18 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
   homepage "https:roapi.github.iodocs"
-  url "https:github.comroapiroapiarchiverefstagsroapi-v0.11.1.tar.gz"
-  sha256 "0bc41ff939596b10a85cf1c81364d13d8c26ee32b5718c87bc39d9907d5be037"
+  url "https:github.comroapiroapiarchiverefstagsroapi-v0.11.3.tar.gz"
+  sha256 "917fa5fb26773ac4653fa89b62f9d9f98272071b33660145c2dfd48c17a5368a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d68a9355594e05b2129fa6fe02858109e5f669e78ebba8a579cf4c7bc1e04485"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6dddf977f491d0e810ae720b4752e52ca9db3d92ec4ebea48f7f6ed661af5ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb229f0a93d5b83c641dd3648372ac98685853fa3ed3f5422b726695e68f0f31"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bd09a90566de516a51808455373a270c8546ee137565fb3b45e9292e519bf3a4"
-    sha256 cellar: :any_skip_relocation, ventura:        "3872b649489c184881e9d7ebaf3a8b4f13ab7e31c567f5f4f7a13712098ccbbd"
-    sha256 cellar: :any_skip_relocation, monterey:       "aac1d761a9091f6e70f1685d53b267c53e1fb3ff3dfbc9efa80cc5f34a883b45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79c6fcadaa9b92b1f63049fd65f127e6fc10f108578c5b9afb8bf0179ddbc2f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b0cbd87075129962e9b10df6a0641ec36a80ee2060b753fec9bde1c948185738"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd256001e217e06f76cb6c27b29815133736c6e89b7737fed006d83ac7aedc2a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0bbbfd5883ef4f04e723f435a57a0c9a40cafeacb3ff218b24f019fd1c08391f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "57a205243eb20c75ed03f6f89ccdcabf5c155edd849c0362fb12aff8ffdfea19"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4fb5675d826ffcdd0ea50046dc62253a8ac88234c7386d0dca57ce260e493c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "a29debab95007a26e14c4a5d4dcd06aad11199e8d107b10cf4e94a5b7f4e6230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "adf631219be71602b9feab8933f3af2f1a2878ba0a93defa8ba3035e7a91c371"
   end
 
   depends_on "rust" => :build

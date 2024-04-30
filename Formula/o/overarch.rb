@@ -1,12 +1,12 @@
 class Overarch < Formula
   desc "Data driven description of software architecture"
   homepage "https:github.comsoulspace-orgoverarch"
-  url "https:github.comsoulspace-orgoverarchreleasesdownloadv0.15.1overarch.jar"
-  sha256 "62cd8cc81ac542982afb3481345a3527a609685608efed1c909bcfac9a3493cd"
+  url "https:github.comsoulspace-orgoverarchreleasesdownloadv0.16.0overarch.jar"
+  sha256 "d73314dfeb538f955d523545f1c43415312613b50fed4aa9263e14b7eb0c8b1a"
   license "EPL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dbbb57004dd936ff238c56db71ef8a7d1128fcf724233356050e3e60ead5cc40"
+    sha256 cellar: :any_skip_relocation, all: "24e365399ff3be98a7b39415e7c3826a52f4f0bba5afb60cdd8ddf4711d33737"
   end
 
   head do

@@ -1,11 +1,10 @@
 class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
-  url "https://mkvtoolnix.download/sources/mkvtoolnix-83.0.tar.xz"
-  mirror "https://fossies.org/linux/misc/mkvtoolnix-83.0.tar.xz"
-  sha256 "6a8615436406c7fa45bfb2b6270da1bf06ea54cfcd13c3699643833e1d73ecbc"
+  url "https://mkvtoolnix.download/sources/mkvtoolnix-84.0.tar.xz"
+  mirror "https://fossies.org/linux/misc/mkvtoolnix-84.0.tar.xz"
+  sha256 "e9176dea435c3b06b4716fb131d53c8f2621977576ccc4aee8ff9050c0d9ea7a"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -13,13 +12,13 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "7dce073e486620bf5207b37e1a99b0cdb01ece4be0dd7f4ff1445c0a1a186f8a"
-    sha256 cellar: :any, arm64_ventura:  "8b38f99c616e71d434ba0b0396ddf51652e1a9e6b0e78dc9ff34e7bab9e65beb"
-    sha256 cellar: :any, arm64_monterey: "25dc92229fe877c8f143e6876d150b76f735343821b05ecaeb72e7d7767fdecc"
-    sha256 cellar: :any, sonoma:         "57a51169f464249c4f849008d7f2c28a1ee086c796159e9e9016e7a4cd390947"
-    sha256 cellar: :any, ventura:        "94768904ced08a46a0c32f599172e82a2c244034f9454eb98e048c4e56bc5be1"
-    sha256 cellar: :any, monterey:       "b853e5149645d4a7355e4aac26efd821cb502e68436910ca8fc2dcaf9157b256"
-    sha256               x86_64_linux:   "520c797ccfe00eec3d2bf248e5f981197cb4c523588615e624c04c7271d373fa"
+    sha256 cellar: :any, arm64_sonoma:   "47a500b12bbed6e057aaa2a22f4c8489304052933f4d800575fe16deecc03be5"
+    sha256 cellar: :any, arm64_ventura:  "bccfaf7206ea875ee93fcce1ccd1bf9fc57965bebf277659e422f98fcc34467b"
+    sha256 cellar: :any, arm64_monterey: "12070d27b17bd8a698b0afc1be57c0cecd22167c65170a48468a31f6c8e5d24a"
+    sha256 cellar: :any, sonoma:         "10d1b0f36805054943de6c8ab0ae4f1d19dd87e98856ef2dff3756443d3d2434"
+    sha256 cellar: :any, ventura:        "ead023f7dcb4e5e7e68dd56f5f6f58f15ad69c8580d607d8a506c4193583f4bf"
+    sha256 cellar: :any, monterey:       "2da18f9062c1026281bd4d4cbe2d54aad94f745881dbc0b6176a9f7b9c10b3e3"
+    sha256               x86_64_linux:   "cb0608824a6312223e71b5d512e8de188d0967c487b688d481c1fed9dd37ec3c"
   end
 
   head do

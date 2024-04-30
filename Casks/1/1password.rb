@@ -17,8 +17,8 @@ cask "1password" do
 
   auto_updates true
   conflicts_with cask: [
-    "homebrew/cask-versions/1password-beta",
-    "homebrew/cask-versions/1password-nightly",
+    "1password@beta",
+    "1password@nightly",
   ]
   depends_on macos: ">= :catalina"
 

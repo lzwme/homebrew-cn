@@ -1,8 +1,8 @@
 class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https:docs.openvino.ai"
-  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.0.0.tar.gz"
-  sha256 "b3c257f8af9545ae68a6ea217173b2b2de9dd42d35e8703a7a51d76f4c2bfe2f"
+  url "https:github.comopenvinotoolkitopenvinoarchiverefstags2024.1.0.tar.gz"
+  sha256 "b298a91b5aae252ef9883e0f2017e88677be88a9839b1aa2f6e9f70067d98ce6"
   license "Apache-2.0"
   head "https:github.comopenvinotoolkitopenvino.git", branch: "master"
 
@@ -12,17 +12,16 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fb86de9e84da998b69a659311fb35c272968911aea5e841aa1edb69fd8bf0f64"
-    sha256 cellar: :any,                 arm64_ventura:  "46eb2eb8b7bf2344a173cb3750ea6d342b458b4b5ae005eb2500b091beb8c7da"
-    sha256 cellar: :any,                 arm64_monterey: "0cb9fbb8cc3ed505e70316cde4b482a39f1de8c78a800f1a68f6536c471ba0f4"
-    sha256 cellar: :any,                 sonoma:         "7a5482987b73437ecfc8b49f0fba8f21e7ebcfc9075bf44bab29e0274a1a1959"
-    sha256 cellar: :any,                 ventura:        "95f814da35c37be0b1a821dfd6ce0a0a4112313b19e9c7c1dca95603fa17bb9d"
-    sha256 cellar: :any,                 monterey:       "af4d1185f371d20da874289ba8e383a03581e3dc9a75fc067df3df3ea68342f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7bfe946861ebfe34c358b9f693ceee47307f5c556f5d62db573dde79c008ef5"
+    sha256 cellar: :any,                 arm64_sonoma:   "a91bcff7e57b16c3e54c4916688f83618bfed26c31cc40642903338abad98b9c"
+    sha256 cellar: :any,                 arm64_ventura:  "7fcd7e0b9e22df209fe7d6bc39af60a87411b0c4bdd796affba22072ab23ed6d"
+    sha256 cellar: :any,                 arm64_monterey: "1aff2106605cfea24ef754fbf139a6954abcae23b191778162fecb602fb9a47c"
+    sha256 cellar: :any,                 sonoma:         "7235ef56a930cf1eaa38a868a45244bf0992e50813a5ed10db54c3e87cfdf6f0"
+    sha256 cellar: :any,                 ventura:        "ded034e479eec8c7cfe11f65c1c01c7fcf1bb94089d6fc91dd40287b0b0f4991"
+    sha256 cellar: :any,                 monterey:       "96135b3ce48d4656ee3e7b4d74d9ba12dbba1adb27245a9162151aa39a48f153"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5ab89d572de42b03428ac17b01fc556ea58cc56a8b1ef5c4c81fb47a0ef6542"
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "cython" => :build
   depends_on "flatbuffers" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "protobuf@21" => :build
@@ -42,8 +41,8 @@ class Openvino < Formula
     depends_on "opencl-icd-loader"
 
     resource "onednn_gpu" do
-      url "https:github.comoneapi-srconeDNNarchive494af5f9921bdae98f1a0e2955fa7d76ff386c4f.tar.gz"
-      sha256 "e2f36563cecf39197ad8d4f8b351ccc5a431085dad26e47c0ae6f0bb79149df7"
+      url "https:github.comoneapi-srconeDNNarchive4e6ff043c439652fcf6c400ac4e0c81bbac7c71c.tar.gz"
+      sha256 "c3543d560fbbb7297df91c191cc9bf682322c5554302e256f1bf4a757424a331"
     end
   end
 
@@ -51,8 +50,8 @@ class Openvino < Formula
     depends_on "scons" => :build
 
     resource "arm_compute" do
-      url "https:github.comARM-softwareComputeLibraryarchiverefstagsv23.08.tar.gz"
-      sha256 "62f514a555409d4401e5250b290cdf8cf1676e4eb775e5bd61ea6a740a8ce24f"
+      url "https:github.comARM-softwareComputeLibraryarchiverefstagsv24.02.1.tar.gz"
+      sha256 "590d5cb710355bce2ddfe7117529c2f492cd253b548f709bbfe84702203d99c8"
     end
   end
 
@@ -66,8 +65,8 @@ class Openvino < Formula
   end
 
   resource "onednn_cpu" do
-    url "https:github.comopenvinotoolkitoneDNNarchivef82148befdbdc9576ec721c9d500155ee4de8060.tar.gz"
-    sha256 "7fce5c6b499ffe1a30c26b2d4e4a5193a38aa217b6f54e44eea52b21cf38a684"
+    url "https:github.comopenvinotoolkitoneDNNarchive26633ae49edd4353a29b7170d9fcef6b2d79f4b3.tar.gz"
+    sha256 "3cd4a2aea30cd6ca689e63545cf986f8e83c88333b73d42bb750fcaf08940b17"
   end
 
   resource "onnx" do
@@ -108,8 +107,9 @@ class Openvino < Formula
       -DENABLE_CPPLINT=OFF
       -DENABLE_CLANG_FORMAT=OFF
       -DENABLE_NCC_STYLE=OFF
+      -DENABLE_JS=OFF
       -DENABLE_TEMPLATE=OFF
-      -DENABLE_INTEL_GNA=OFF
+      -DENABLE_INTEL_NPU=OFF
       -DENABLE_PYTHON=OFF
       -DENABLE_SAMPLES=OFF
       -DCPACK_GENERATOR=BREW

@@ -1,19 +1,19 @@
 class Vfox < Formula
   desc "Version manager with support for Java, Node.js, Flutter, .NET & more"
   homepage "https:vfox.lhan.me"
-  url "https:github.comversion-foxvfoxarchiverefstagsv0.4.1.tar.gz"
-  sha256 "f6336d795648ad8462771b19afd14221d91effc25f4837158f147936673c3c76"
+  url "https:github.comversion-foxvfoxarchiverefstagsv0.4.2.tar.gz"
+  sha256 "0f4ee7faaaf1d211123f4ac1a8107737da7539d1201d9bdb8390060b7d3887dd"
   license "Apache-2.0"
   head "https:github.comversion-foxvfox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "716e8929038c73dd218290b003f09c11c0bac9637622c77c75c98b97c5d9c991"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52a4cb610ee54181c4eea0caf48cc2175fcafd9a50d0991280a61bb13228e823"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e533093fb183813661fe9de516a17f8e92720b3938d624607276780b7a0cc0ec"
-    sha256 cellar: :any_skip_relocation, sonoma:         "75ea455327a8b6617674ad2ea856eb3962c7bafca62eb266839f3176c48f0ecc"
-    sha256 cellar: :any_skip_relocation, ventura:        "de057f44e2bc1f893c73d768a7397e57444ba7c61badb591bed977825fe3f56b"
-    sha256 cellar: :any_skip_relocation, monterey:       "c296a468a0dbab6e989f2d63160aa60040bfbcc0d13af5ae15621bcb163a5a70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41695089476415711b9b41fc19c18937113c9a87dfcd8e2a77b5b0322fa39925"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1a3d90ad798c1746a43e5ceab2dd1573d9c9bda485c835be8a58bb5869fd8699"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a73a500bb6e2c99e1a6b644fb23e327e8b4f5c33216e9c30ec0ee1cc26a0065c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "563a1bb91796ce25bc6678cc184b205e5c89ef03d8179262f395945ffd5fe4dc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2e2be62554acd599578e087ef1abb7cf5a13f7d80316abcd3d977e1c666a4fe2"
+    sha256 cellar: :any_skip_relocation, ventura:        "0dd27d4723553ab8f281000ef7842c5e603d5b09900d92a2ad833b1d393c5839"
+    sha256 cellar: :any_skip_relocation, monterey:       "62296c6c1de13be8354d6d55dc14e4b46c31596c8ac13a31749b16fb773f5d18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c782121a0643d96778345175b1cc6faf1ff17d20a42581925a33abe37625cc7"
   end
 
   depends_on "go" => :build

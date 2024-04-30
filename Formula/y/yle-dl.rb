@@ -3,20 +3,19 @@ class YleDl < Formula
 
   desc "Download Yle videos from the command-line"
   homepage "https:aajanki.github.ioyle-dlindex-en.html"
-  url "https:files.pythonhosted.orgpackages5cbaae9008b208cfc78f8de4b32ea98d4107d6bf940e5062f8985f70dd18b086yle_dl-20240130.tar.gz"
-  sha256 "fe871fe3d63c232183f52d234f3e54afa2cffa8aa697a94197d2d3947b19e37d"
+  url "https:files.pythonhosted.orgpackages4d6a60344980cdb6e40e93608ed81f31a844773cda5d3e90aa1e84f05308b54ayle_dl-20240429.tar.gz"
+  sha256 "d1618505c41916f8620ae5704939b0a127dd653bc91afb20d0e6183e342cdb7c"
   license "GPL-3.0-or-later"
-  revision 2
   head "https:github.comaajankiyle-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f35902567259d37155f4825d425d5a21547a996ec2156291cfb03b5928b0679"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2eb14de25d0914b90adce2ec2d812c3a530f7a0e387b0b432aa10dd920c8cb9e"
-    sha256 cellar: :any,                 arm64_monterey: "49109556400bc1ec4b848e130d7cce65b15c43aeee18e83e8f4950650ef27172"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1c6283a6dfe95e567e820f39d64bd9e3e57cf105abfbd1e79f663b6d6e5ef8da"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8adb70d51554371f67dd81d01477f76448abf68dca9103d450406159f6f095a"
-    sha256 cellar: :any,                 monterey:       "47eb7510f15e61ddf95982bb9a7ea2f0f48a62cea971be7f7a8db0c52433bf77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4eb4549b34a3d75596db6e7c9cbfc3b6535554c79c3bafb2805985e5e36899c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c120749f8b64b00bd0da28cd1da7e2cd8e9bb776e387d405af84009be46dbdf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39f0577189db0bd07a438ebe2d55dcd8375cf9f4ccab93e146186588c376491b"
+    sha256 cellar: :any,                 arm64_monterey: "43764eb5fe187b1b29b7b7f34e23e49e1a711d7f20e0b07c967009edf62b93c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c1d5ccafab705eb283cf0349e7590d72cfb5614852249c531a80fae6192648ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "fbad7c6b6bc557d1027fbdf139c8d103f28cf0357f4e7dd7ea8f96b11e8d8e48"
+    sha256 cellar: :any,                 monterey:       "92b1f6f25f8993466e219d5c636e390806b889f872c5ae454a7b6aec8bcd19f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2addb8a019f40544a282746f6fc9715242d55956af4e7ee90dc115ca54dfc79"
   end
 
   depends_on "certifi"

@@ -1,26 +1,34 @@
 class Tio < Formula
   desc "Simple TTY terminal IO application"
   homepage "https:tio.github.io"
-  url "https:github.comtiotioreleasesdownloadv2.8tio-2.8.tar.xz"
-  sha256 "890a880a048e604dbb9c3765d10b3dcdd2bb54cecf7b4bcc3a1ac0f3b6c95706"
+  url "https:github.comtiotioreleasesdownloadv3.0tio-3.0.tar.xz"
+  sha256 "b7ec8eab6c29a3821e3f1239cf6baa84ef634ea2188ffa93d7a276c89338961e"
   license "GPL-2.0-or-later"
   head "https:github.comtiotio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "d68fe6d6246e670c617686c1a6552afc5feee7aebfa730fc3f813d39df13dcf4"
-    sha256 cellar: :any, arm64_ventura:  "3b20986db04488e76e4c53fa18e2c16ad2c431ffbab95db7702e2bd27914802b"
-    sha256 cellar: :any, arm64_monterey: "23cf72d767e0f99b776e084df3771872b84616c0deaad37ba041e4ff819a80c7"
-    sha256 cellar: :any, sonoma:         "c487587214ba468a86a62d50a1fbed8c63ff05dfeca77c4ee2987d582c3060f6"
-    sha256 cellar: :any, ventura:        "14089cf5183f1938f96713a18677393d602eeeeccf03c8272bc7c498b40c144d"
-    sha256 cellar: :any, monterey:       "e313b311033ba3a10038f27c222965606b0f2b27847afe6367e3ff5001ed5908"
-    sha256               x86_64_linux:   "6d06650926497403d4e52c564be61c233415967307ff38415e60e11a327e5a62"
+    sha256 cellar: :any, arm64_sonoma:   "7c1a93f989bbc9af7810ba6de79ba678d8ea94b206980de7b170132f09c0f537"
+    sha256 cellar: :any, arm64_ventura:  "776a11123270b9c043281faf7ee48c0af30cf7f10725a4148089d05e06a3842c"
+    sha256 cellar: :any, arm64_monterey: "f03d33163787450133b926a49d6ebc34600b0c050ef1fb9235981cc11f9efa7a"
+    sha256 cellar: :any, sonoma:         "52077a5e29e64f457405df60fbdbaacb66986b0aefc35224031c5f8c493f809d"
+    sha256 cellar: :any, ventura:        "938d9860e91578b867883a1b2bb50371afc20b6ec91e801495187a2bf4e4ec37"
+    sha256 cellar: :any, monterey:       "0d787488fb7a5b53ab830eac919631bbddd32589bec50c5e602e6abeb37e3db9"
+    sha256               x86_64_linux:   "8750aa5f544dd813a5afeb105ce29bc5c46d7bbc098fdce8b112aa8d02326cf4"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "glib"
   depends_on "inih"
   depends_on "lua"
+
+  # add macos build patch for `fs_get_creation_time`
+  # upstream patch ref, https:github.comtiotiopull244
+  patch do
+    url "https:github.comtiotiocommitc37cc145d726405fb853f366ddd037329914ca52.patch?full_index=1"
+    sha256 "0d6463142fc24db2d45b5cc3cf59b0898e5c5b0e7656c6a21f3f679103d9607f"
+  end
 
   def install
     system "meson", "setup", "build", "-Dbashcompletiondir=#{bash_completion}", *std_meson_args

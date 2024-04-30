@@ -1,19 +1,19 @@
 class Csview < Formula
   desc "High performance csv viewer for cli"
   homepage "https:github.comwfxrcsview"
-  url "https:github.comwfxrcsviewarchiverefstagsv1.3.0.tar.gz"
-  sha256 "eb71b3e6442afa9a9815c9cac3808b10bf3dd0d2f18fc3daba84980375f42ea0"
+  url "https:github.comwfxrcsviewarchiverefstagsv1.3.1.tar.gz"
+  sha256 "707d7d6b6960530a1e9476e0c8045da7722d49bff2cd85a42d9debac2eba4d91"
   license any_of: ["MIT", "Apache-2.0"]
   head "https:github.comwfxrcsview.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1ce93c99620c8eb7319121b1d7658209f8958ede571513fdf8444a3219822529"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a466f587f7ca00394e3b988cf2966394afd1f4c293ecc17c4a73a15c6fb64097"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4822d06a8f9fdafc0c975edc5ee0bdcf0c1cea4daedeed70d9d7c7070403069a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "67cdcbc1a2a8c851f665310fef6c0cbd44ff1aef33a277462a9770af1fe3ca66"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e5443004bdcfaaa36622275127cda8ee3a9f0054bfa0a2a6d6ee7bad3d1dc28"
-    sha256 cellar: :any_skip_relocation, monterey:       "a9f40ef983d71c388cacdbbe78350e3a54790a0e2c9334c3136a3b7bd0a12478"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e33953d72d1023ed56f354ecb9418b118f8f03dde00e1554f5cfc80b7ee884b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8778c6ce71a06e9a9a3b28ee1b515d480f1cca33f244b31211ebd25218f6248"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9577befd490d1a94a57c510e955aacfeae5b60bc64e5f8595f2b7fc53ff0366"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0f6ac317f3ee31bbdead5d988fefad05f2d41b807d3b2196b0321c861a9e326"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fa555d483c1a11cf5c6dcdcde84df51e301cac33c896bf61c35dd010eaa6fba7"
+    sha256 cellar: :any_skip_relocation, ventura:        "cc566c3280d1dfc3ab3b1c5c5ece8ed0530fcde3fe6b1060d2913669567730ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "89198b9cf79b95aa5f916140d4ddcfde80a79950a2c935cd5bef8fe296356301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27a06e9ccc3c447519d14cb526bb4c7925c2c8f9dce0f462990502feaf8f82ac"
   end
 
   depends_on "rust" => :build

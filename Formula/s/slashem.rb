@@ -6,6 +6,7 @@ class Slashem < Formula
   url "https:downloads.sourceforge.netprojectslashemslashem-source0.0.8E0F1se008e0f1.tar.gz"
   version "0.0.8E0F1"
   sha256 "e9bd3672c866acc5a0d75e245c190c689956319f192cb5d23ea924dd77e426c3"
+  license "NGPL"
 
   livecheck do
     url :stable
@@ -31,12 +32,19 @@ class Slashem < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
+  uses_from_macos "expect" => :test
   uses_from_macos "ncurses"
 
   skip_clean "slashemdirsave"
 
   # Fixes compilation error in OS X: https:sourceforge.netpslashembugs896
   patch :DATA
+
+  # https:sourceforge.netpslashembugs964 for C99 compatibility
+  patch do
+    url "https:sourceforge.netpslashembugs964attachmentslashem-c99.patch"
+    sha256 "ef21a6e3c64a5cf5cfe83305df7611aa024384ae52ef6be4242b86d3d38da200"
+  end
 
   # Fixes user check on older versions of OS X: https:sourceforge.netpslashembugs895
   # Fixed upstream: http:slashem.cvs.sourceforge.netviewvcslashemslashemconfigure?r1=1.13&r2=1.14&view=patch
@@ -47,6 +55,9 @@ class Slashem < Formula
 
   def install
     ENV.deparallelize
+    # Fix issue where ioctl is not declared and fails on Sonoma
+    inreplace "sysshareioctl.c", "#include \"hack.h\"", "#include \"hack.h\"\n#include <sysioctl.h>"
+
     system ".configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
@@ -57,6 +68,20 @@ class Slashem < Formula
     system "make", "install"
 
     man6.install "docslashem.6", "docrecover.6"
+  end
+
+  test do
+    # Make sure that we don't modify the user's files
+    cp_r "#{Formula["slashem"].prefix}slashemdir", testpath"slashemdir"
+    # Write an expect script to respond to the game's prompts and quit
+    (testpath"slashem.exp").write <<~EOS
+      spawn -pty #{Formula["slashem"].prefix}slashemdirslashem -d #{testpath}slashemdir
+      expect "Shall"
+      send "q"
+      expect eof
+    EOS
+
+    system "expect", "slashem.exp"
   end
 end
 

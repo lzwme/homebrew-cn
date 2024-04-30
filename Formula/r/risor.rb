@@ -1,8 +1,8 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
   homepage "https:risor.io"
-  url "https:github.comrisor-iorisorarchiverefstagsv1.5.2.tar.gz"
-  sha256 "a058c74be956bbf0c1e9b369b2cfdd18acf0800059a5a0122deb74085d7e2795"
+  url "https:github.comrisor-iorisorarchiverefstagsv1.6.0.tar.gz"
+  sha256 "4b2821214bba5830f6010c017c647f28bb1a50f0c83f9305476bd6416d2fc28c"
   license "Apache-2.0"
   head "https:github.comrisor-iorisor.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Risor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e10093a772175510e9a7a820df26788009d9a839f62cc9bea6b5c4b399c56e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e17fa54b9b965edd9188d57ae7247617b06d2e040536c9c599f05a6eb3e6065"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6dd5686c3c0919eb8a94e79dc474c5184725d7347e31461b2740cc619d55a595"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68967a779ce719959a7e1b596e2feb7d0e0251161ab498650f249990d671f8b0"
-    sha256 cellar: :any_skip_relocation, ventura:        "f1bfe3fcdba3e267603f0b62636f0eb30d903c0d952f7caeb6ec6bd4e461dfac"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa4d60660f32332d790f0c4206fe703c4ce7120fbb75de79d38afb58ddbd22bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9d6ca86f522c45438f60cc399aa1ddba34cd78eaf74ffbe07a0367482c0d965"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "902e0aa5af667a8168253190337eda7f35edf469418391556e2e2a3ccb654c00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52a2c1333fbeef4f932e0407443d0b8087956949552166fbad3a7cec131c2b8b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fa2965570bde6073d421f93d671f25ae4cf49d9c715bc89495d3260af804159"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f5c1d3ae4f3643277fa3b4d4fb49ba97e8a6ee685fdcd5ef458b5333e60f73bb"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ce4466b940227ac5d4896e3e7bab320f2d90a26ca373125dffe6a0344d506c0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b58d923661a7764f1b524a410b13400f035fc55f614521b62e79a43e637bb53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bde90cf3b368d3538f2b805cec9a2e1029154671c753177f0c460ae24cb36cf3"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,20 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
   homepage "https:hysteria.network"
-  url "https:github.comapernethysteriaarchiverefstagsappv2.4.2.tar.gz"
-  sha256 "d48c3ae0746355247e227542075417801cf54f75ef4152078841a0d9c07de626"
+  url "https:github.comapernethysteriaarchiverefstagsappv2.4.3.tar.gz"
+  sha256 "7bc27f917e86293f3a23a7e14d4583f31b02669f76c81fcce48bb014daf52b6a"
   license "MIT"
   head "https:github.comapernethysteria.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd8baebb9b8f46bdc92fd7358bea03b909fb15a53ead6cde1cb6c613c445f068"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4e1d0083184df0116a325c8e90a5e6dac1eb0a9a73eb9ba72ba88cef404ed291"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68a50bd7a9f314f1fc3673c97b2729a9d263f4a5ce8463c6211f172aeca1b7c7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "61edb88ba30826fecd0ef363cbfe21c0401001552eb47d82ea9cb7ceadc993d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e4600c7dc8f4fd08feedc68346845ac526348c130df32944b092287bcc880d9"
-    sha256 cellar: :any_skip_relocation, monterey:       "6861118af53bb91e845947f14fac47fc04404e90da09183fca00b4a4525cfdca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3ea49523bfafd8685e609a505032494ae749d5098d547a5b48c045ca949215"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12ce60e98c5c1f25583cf298dc2e70d9eea7f610e2d42d2bc77e954c84a9bfaf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb18a76dc0e64770fac70dbd6591a1849b44845fc574261336861f85b34b4140"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "941ab800db9594e64f18a1f58e4ce16e1d7c9d28257cb939325b23fbc76fa97d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cfcf47cb173d255ed0c48d57614c3d4fa5eec9fbdc9f1899d257ab5c1ce81fae"
+    sha256 cellar: :any_skip_relocation, ventura:        "677d6d9e731f29f108cba392521f3780b87335a66c7b715f367461bea9abc4f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "391c09dd98eb0129ba0acd4846e816697f9ec292099bce830d6de1bb06a4ee07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3c19f03a51206906daaecb838c526687134d0dcb2991ba3d32d953a026cb2d2"
   end
 
   depends_on "go" => :build
@@ -34,7 +35,7 @@ class Hysteria < Formula
   end
 
   service do
-    run [opt_bin"hysteria", "--config", etc"hysteriaconfig.json"]
+    run [opt_bin"hysteria", "--config", etc"hysteriaconfig.yaml"]
     run_type :immediate
     keep_alive true
   end
