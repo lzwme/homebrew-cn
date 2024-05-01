@@ -1,8 +1,8 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
   homepage "https:cortexmetrics.io"
-  url "https:github.comcortexprojectcortexarchiverefstagsv1.16.1.tar.gz"
-  sha256 "07cbfbefea937bb9f77dde16a6eb11861607c6d862a5851383576b5ab755d113"
+  url "https:github.comcortexprojectcortexarchiverefstagsv1.17.0.tar.gz"
+  sha256 "2bfd9eeaa96a1c3c7a5100d99f0095157e55f3ac2a145c0d2cd1d23c994441c1"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Cortex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "958f576b14665c8b02261422bdb6c917b2aa9eb6337e45ab8e6a3d133e7bcce6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9f84ef292a5088f75af75967ea63128ab31843b34b2a61dd438641412deb0b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4618cfbe3e5ea31e373f1e684aceb91cef75e8a4227c80b5be61ad865f560f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff3b3843de75d366e3eee2ae29e254208f2c71febf498e8f33568c7e1093f284"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef5b14d0eaf5333d2c62100803587888ff9146baa57389bac093d08e048d70cd"
-    sha256 cellar: :any_skip_relocation, monterey:       "1afe6dba231e36a91a7c67246e1df48b984d5f692af4b1db07796396d30fa83a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "864435342a7a689e6d49de4db2fa8cb19331cf347271f99b402d3519db955ce3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f76299f611075a423b8416bbf22658ca5e4f0d9ace2ba28178ca81df74a0289d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "964f222e4d06e6bb817a26213a306d3b600f41ed799df0165d896f079a3ad3b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95b30410c619d049f731d2c9eba115b3e3c9465768da37eb5689a4bb12cbb761"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9869553ffbc4b7a996b37c52ab6139c7488e4fe9bffea3a3f48cd0b862217252"
+    sha256 cellar: :any_skip_relocation, ventura:        "3aab8ac7fd807da1568fde979361ea605a138bd4ee0ee588506f2762993aa212"
+    sha256 cellar: :any_skip_relocation, monterey:       "e2e5d3b16a11e0eb04bbcccb0f942504147deb017f2dec1ca9758a1af5dece19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99864ad36ccb938578f8ebfcf0023008f7c436d5865e9b99ca69c18383b79334"
   end
 
   depends_on "go" => :build

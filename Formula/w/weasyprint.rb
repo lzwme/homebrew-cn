@@ -3,18 +3,18 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/f8/1a/32a7de6916ead1bd5b5ed6a5f4431d5011426850566d7ba2947f896cdd19/weasyprint-61.2.tar.gz"
-  sha256 "47df6cfeeff8c6c28cf2e4caf837cde17715efe462708ada74baa2eb391b6059"
+  url "https://files.pythonhosted.org/packages/47/45/57dbaf38d631a964963bd762e93bf62536d548d59cacd4da2176b0098aaf/weasyprint-62.0.tar.gz"
+  sha256 "9f56eaefdaafcf35ae568c56eee5dba189af1272a46f4d205bd12936315f9481"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e2bc881bbd6920743902b4dd04673828a9a44358c56014a79df4c75ca9955e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c63c2db6d1973e1abd4a378806f92d3c5fee829215c3504b3759656f7c377052"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acea1742ece5e0bd7c55e2ce471335eb7372318eb5537d26268881bcf7787483"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b319c9f840fc7bf7672d1b709b626da62cf8cdd998475395f9cb6257f3f98fc3"
-    sha256 cellar: :any_skip_relocation, ventura:        "644edc329e371979cb514ee46d95c9f72f4ced8844a8133193149a4ef28fa4b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c4c46aa1805a5c2c171ec59d0f4bccb8731529fe1657791553388fa893fe15f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31c394a5e44cf8590512902c5f0651c27ca7683b0d748548b87270124b741631"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2cca91876ec77b086586df6bbf0b8afaf390a382c83b0fe036a6848663e7d4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10f1bfdd6e60bf13fc131c8f497c2999a261798317677f03da1faec34cda4a8f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f68f6e9479ee02ab026da8e40f61acb4eac9db773537e630c81af00a7c65208"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0eecf48243ec729c838780775d1bbd2002ad279a55dc41cb88473d7948139c42"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd6752bda37d9039cf5dd063128e6d170e2a32cb96ce198976dea16a72954db3"
+    sha256 cellar: :any_skip_relocation, monterey:       "4977b99fce2afd1e931e03a5313f9fa4eda80c184c6c62cb5c9de743b5080f91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01ae4ec303482914d22ce6b1517cc4f9737adeefd18de2fe79db648291e880cd"
   end
 
   depends_on "pango"
@@ -39,8 +39,8 @@ class Weasyprint < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/52/c0/b117fe560be1c7bf889e341d1437c207dace4380b10c14f9c7a047df945b/fonttools-4.49.0.tar.gz"
-    sha256 "ebf46e7f01b7af7861310417d7c49591a85d99146fc23a5ba82fdb28af156321"
+    url "https://files.pythonhosted.org/packages/73/e4/5f31f97c859e2223d59ce3da03c67908eb8f8f90d96f2537b73b68aa2a5a/fonttools-4.51.0.tar.gz"
+    sha256 "dc0673361331566d7a663d7ce0f6fdcbfbdc1f59c6e3ed1165ad7202ca183c68"
   end
 
   resource "html5lib" do
@@ -49,18 +49,18 @@ class Weasyprint < Formula
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
+    url "https://files.pythonhosted.org/packages/1d/b2/31537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52c/pycparser-2.22.tar.gz"
+    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
   end
 
   resource "pydyf" do
-    url "https://files.pythonhosted.org/packages/b5/f1/bf85e09977a5c98799337272e3675894bfb71c391f617911eca83ef2937e/pydyf-0.9.0.tar.gz"
-    sha256 "d5b244e8fc24119ce7bd5d51ea2d6773c0ff88aa81597db556bc440c6b880610"
+    url "https://files.pythonhosted.org/packages/59/0b/389051bbc9decfa057a617c0a676883a674c2ecc2c0cef875e5502e35b77/pydyf-0.10.0.tar.gz"
+    sha256 "357194593efaf61d7b48ab97c3d59722114934967c3df3d7878ca6dd25b04c30"
   end
 
   resource "pyphen" do
-    url "https://files.pythonhosted.org/packages/4b/52/46b119f94b3f68e4193ada36941606d8e26852b67bb6e099b0e310540b41/pyphen-0.14.0.tar.gz"
-    sha256 "596c8b3be1c1a70411ba5f6517d9ccfe3083c758ae2b94a45f2707346d8e66fa"
+    url "https://files.pythonhosted.org/packages/4c/d1/f6bc803daa4c1cfe5b1176427f46dfe3ffee524bea1dee8bdde532e17c41/pyphen-0.15.0.tar.gz"
+    sha256 "a430623decac53dc3691241253263cba36b9dd7a44ffd2680b706af368cda2f2"
   end
 
   resource "six" do
@@ -69,8 +69,8 @@ class Weasyprint < Formula
   end
 
   resource "tinycss2" do
-    url "https://files.pythonhosted.org/packages/75/be/24179dfaa1d742c9365cbd0e3f0edc5d3aa3abad415a2327c5a6ff8ca077/tinycss2-1.2.1.tar.gz"
-    sha256 "8cff3a8f066c2ec677c06dbc7b45619804a6938478d9d73c284b29d14ecb0627"
+    url "https://files.pythonhosted.org/packages/44/6f/38d2335a2b70b9982d112bb177e3dbe169746423e33f718bf5e9c7b3ddd3/tinycss2-1.3.0.tar.gz"
+    sha256 "152f9acabd296a8375fbca5b84c961ff95971fcfc32e79550c8df8e29118c54d"
   end
 
   resource "webencodings" do

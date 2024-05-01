@@ -19,7 +19,7 @@ cask "github" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrewcask-versionsgithub-beta"
+  conflicts_with cask: "github@beta"
 
   app "GitHub Desktop.app"
   binary "#{appdir}GitHub Desktop.appContentsResourcesappstaticgithub.sh", target: "github"

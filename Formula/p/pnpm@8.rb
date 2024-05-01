@@ -3,8 +3,8 @@ class PnpmAT8 < Formula
 
   desc "Fast, disk space efficient package manager"
   homepage "https://pnpm.io/"
-  url "https://registry.npmjs.org/pnpm/-/pnpm-8.15.7.tgz"
-  sha256 "50783dd0fa303852de2dd1557cd4b9f07cb5b018154a6e76d0f40635d6cee019"
+  url "https://registry.npmjs.org/pnpm/-/pnpm-8.15.8.tgz"
+  sha256 "691fe176eea9a8a80df20e4976f3dfb44a04841ceb885638fe2a26174f81e65e"
   license "MIT"
 
   livecheck do
@@ -13,13 +13,13 @@ class PnpmAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "849c0aa25de16f51ca7fcdeed19e163bcb0551b3dd4dc1bc9ee52ead756fbc34"
-    sha256 cellar: :any,                 arm64_ventura:  "849c0aa25de16f51ca7fcdeed19e163bcb0551b3dd4dc1bc9ee52ead756fbc34"
-    sha256 cellar: :any,                 arm64_monterey: "849c0aa25de16f51ca7fcdeed19e163bcb0551b3dd4dc1bc9ee52ead756fbc34"
-    sha256 cellar: :any,                 sonoma:         "d2544ff56b3d13e34dd63854297421384c2659ad0398d2242121dae6d6473550"
-    sha256 cellar: :any,                 ventura:        "d2544ff56b3d13e34dd63854297421384c2659ad0398d2242121dae6d6473550"
-    sha256 cellar: :any,                 monterey:       "d2544ff56b3d13e34dd63854297421384c2659ad0398d2242121dae6d6473550"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53d2d5ba6f77a39ca8b682c5e914251da7c6b32e62698a54c6290186dccf0f13"
+    sha256 cellar: :any,                 arm64_sonoma:   "ea3d022f62b7c059c40cd981745b4324a14629f9970044328cccc25c527a433d"
+    sha256 cellar: :any,                 arm64_ventura:  "ea3d022f62b7c059c40cd981745b4324a14629f9970044328cccc25c527a433d"
+    sha256 cellar: :any,                 arm64_monterey: "ea3d022f62b7c059c40cd981745b4324a14629f9970044328cccc25c527a433d"
+    sha256 cellar: :any,                 sonoma:         "9e9b7d9c654a0a5c5b3e820f105e05470319df38f85c184382c77cf63f1fc725"
+    sha256 cellar: :any,                 ventura:        "9e9b7d9c654a0a5c5b3e820f105e05470319df38f85c184382c77cf63f1fc725"
+    sha256 cellar: :any,                 monterey:       "9e9b7d9c654a0a5c5b3e820f105e05470319df38f85c184382c77cf63f1fc725"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0583db90f4ca28448506dec0cbce2d21b9d57fd157eed46ae985a1528f4244c3"
   end
 
   keg_only :versioned_formula

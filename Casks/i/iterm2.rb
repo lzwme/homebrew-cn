@@ -37,9 +37,9 @@ cask "iterm2" do
 
   auto_updates true
   conflicts_with cask: [
-    "homebrewcask-versionsiterm2-beta",
-    "homebrewcask-versionsiterm2-legacy",
-    "homebrewcask-versionsiterm2-nightly",
+    "iterm2-legacy",
+    "iterm2@beta",
+    "iterm2@nightly",
   ]
   depends_on macos: ">= :catalina"
 

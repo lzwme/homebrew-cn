@@ -1,19 +1,19 @@
 class WoofDoom < Formula
   desc "Woof! is a continuation of the BoomMBF bloodline of Doom source ports"
   homepage "https:github.comfabiangreffrathwoof"
-  url "https:github.comfabiangreffrathwoofarchiverefstagswoof_14.3.0.tar.gz"
-  sha256 "c19c876ae6b7cb052255c12375921f694d46bdc1b7e445a883e809f097211d2e"
+  url "https:github.comfabiangreffrathwoofarchiverefstagswoof_14.5.0.tar.gz"
+  sha256 "1ad9e27ffeb70a60344e98f08bf17650856ffb51aa32cffd94468dacd9f1d42a"
   license "GPL-2.0-only"
   head "https:github.comfabiangreffrathwoof.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "29c3b691fbd2060f0f443fbe730c2b8cf4b86839c43f8ad02079d6426988b41e"
-    sha256 arm64_ventura:  "2d1c48b61cc10739d9335b55e6a7db0437db4e8e8a43a116d4e3421bdfd9032a"
-    sha256 arm64_monterey: "22814db8feb186af74c72bdb6ed27a91e95cdce013db327a7e8dfb1243dd1c6e"
-    sha256 sonoma:         "a96a066c3108564f61085cd4662eccb73f7e403388c0333044ac8db8384e368f"
-    sha256 ventura:        "8861ed14c8d7ae500772c42ece95bd1698e8cbac13e4dfbdb8eaee89e4f5b83e"
-    sha256 monterey:       "3dea1479ae976390c5ad050e20d04010ecac761ce764d5f822386351f2565b64"
-    sha256 x86_64_linux:   "d173fa89ae1fe8e7246d1bf5a14d3d2f210104ef1bcda6fdb3abe43163172748"
+    sha256 arm64_sonoma:   "b36d61351eb20860130ebef15f2d351aa57c1b53a7144941ceb55c0e15954795"
+    sha256 arm64_ventura:  "6512b577a17cc18d6b33892d6bcfdd4b1b39b8c97602ad6dbe0a0af00075c683"
+    sha256 arm64_monterey: "e3926cf17f95f3c9e522c5780664fc7140503d58ba4b30957cb3c73d26cd5c33"
+    sha256 sonoma:         "db9287960e269240a49e68e2c3b90ae29ff0dcd49ad6d059f5a2662c77a7fdc5"
+    sha256 ventura:        "e2d4953664a4d0a550cb4f05df6a0694abe359722d4173d158f67b426afc2a3b"
+    sha256 monterey:       "0c25e98829bb5c3c28a9fed56288f127578b245250b1b1780e97a65219236b5a"
+    sha256 x86_64_linux:   "b9d8f3a75f9802616af365eb50055efa92c5278b63a436938e9d3c9b0f9bca11"
   end
 
   depends_on "cmake" => :build

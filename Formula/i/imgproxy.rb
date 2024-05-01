@@ -1,19 +1,19 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https:imgproxy.net"
-  url "https:github.comimgproxyimgproxyarchiverefstagsv3.23.0.tar.gz"
-  sha256 "d48721d96bf2974af4b6e612d0cdb27484d132c9f9ad17abe5c2095f22beeb8d"
+  url "https:github.comimgproxyimgproxyarchiverefstagsv3.24.1.tar.gz"
+  sha256 "dc75ffd728450b04c8eaa7cd172836d518b129d552026bbaef87fd32e078573d"
   license "MIT"
   head "https:github.comimgproxyimgproxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c5370e288d3086ccba186068bc4bb9622dcf7b070c92f222d2ba595dbc735a6c"
-    sha256 cellar: :any,                 arm64_ventura:  "a2ecb5708baf13f8a9f3daab153cec920eb2a61552309982d2a743cd3d282940"
-    sha256 cellar: :any,                 arm64_monterey: "fbb0d7718f78d5b21058ec4f3776b99fb94ee290c369d00f96ff26a5dc3f8c16"
-    sha256 cellar: :any,                 sonoma:         "767821c8902b087e7910886c6a81fba79a2e5b9c593c72b638b032b61ff83dd6"
-    sha256 cellar: :any,                 ventura:        "95b1a63e531b4d640a08c3f1ccc14777e0332850334896b07deaa42443116962"
-    sha256 cellar: :any,                 monterey:       "1be09d549953ecab0070f0ac222783e3c032c03ad35960be4426e7b613093a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c435f4491100b3aff69dbf755a5e6b563c403164c27c0fb3b7dca52f5a43a177"
+    sha256 cellar: :any,                 arm64_sonoma:   "5ff11e9477cb9e02f0b0a7652ddc2ac7f6f4ea74a3a6aa7ebfbbb42ae4a388be"
+    sha256 cellar: :any,                 arm64_ventura:  "88d2278740dc1b7633b7515afc2f984c8bf58955e6fe05c873fa61acda9f9d9c"
+    sha256 cellar: :any,                 arm64_monterey: "72d894718e527f80f120bbfdde49a2d516fabc7a356fe2ecfd88cb09a212da3f"
+    sha256 cellar: :any,                 sonoma:         "e566bad032ce5be97c26f9c87c5d7c0dea33d35f0f1aaaeeb3722866c5671203"
+    sha256 cellar: :any,                 ventura:        "91822815cb24b63cb7ffafa207496ab6b5b2d2aba53aa23d8104346dbb5141f1"
+    sha256 cellar: :any,                 monterey:       "819a662654d393903b42f11244dd2f0e11768632a6fa8663a3b4b640d85376a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba31fb3a5ea84d76f6095503bd2b7cb40ed4dd385f67605103a9ba359e2f9395"
   end
 
   depends_on "go" => :build
@@ -39,7 +39,7 @@ class Imgproxy < Formula
     pid = fork do
       exec bin"imgproxy"
     end
-    sleep 20
+    sleep 30
 
     output = testpath"test-converted.png"
 

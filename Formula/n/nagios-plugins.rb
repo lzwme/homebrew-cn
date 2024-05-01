@@ -1,18 +1,18 @@
 class NagiosPlugins < Formula
   desc "Plugins for the nagios network monitoring system"
   homepage "https:www.nagios-plugins.org"
-  url "https:github.comnagios-pluginsnagios-pluginsreleasesdownloadrelease-2.4.9nagios-plugins-2.4.9.tar.gz"
-  sha256 "74da12037c0ab62ad34f9d9f00f475c472cef0913d2ffa9810c17fef101cd5cf"
+  url "https:github.comnagios-pluginsnagios-pluginsreleasesdownloadrelease-2.4.10nagios-plugins-2.4.10.tar.gz"
+  sha256 "e43d4a655141aa66132f92fe03dfc97db9dfb4173c4c845f1af9574001117a25"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "1bc2096c34e80cd6e6ba595c3246f71dffa2ed38ab9f62d0090eec97d17a7a5c"
-    sha256 arm64_ventura:  "365b9b21999f7f4541bb41af1f6cc9c72456c3bffd433eaaee25caba523a9575"
-    sha256 arm64_monterey: "6f1cc6d7d49040b4a7475f97661c3810d04996d7b6e46b42667a7b9d14601c7f"
-    sha256 sonoma:         "928eaceb0fae5b7bf1373125867cf07786b6ecbd2b6ababcd9ccc9524b948c29"
-    sha256 ventura:        "bbdfe7c21bc9947ebb1d22e456ff84570f7842a34e3e50c549122d9564349b01"
-    sha256 monterey:       "74afc77720ec9152145b8a9db9c5009450b99d88e61fedaba78690bffbd5a6d6"
-    sha256 x86_64_linux:   "278a9d1c126545003bd5933b9926c8f74929bae0540d84a86b158914d117bb58"
+    sha256 arm64_sonoma:   "5ce85db57c3dc0923a8789a256a0988860fa9ee901c61dac689f59954154f2dc"
+    sha256 arm64_ventura:  "9270fab5981c85fa19946b9b00dc1272436f15bb3e259216f2910d32c5e53679"
+    sha256 arm64_monterey: "99d0a352e1a7d585381eb38dc0424046139aba10e4b131e84d33123a262706e3"
+    sha256 sonoma:         "fd24f5c08a4ce32614badb99cfba011597d15fb72fbce798d53e9f1817f2e44c"
+    sha256 ventura:        "dd7e8b9882904a5970825de52f43c6f5103226a697a962fb2a2d93b6b386b8d2"
+    sha256 monterey:       "878ce6885758aba7703c79092721a46e91108a0391a4d979165599f6a4f937d5"
+    sha256 x86_64_linux:   "2d4c2f1929db65b411c24801fcb9b0935c99191521d631ac30fefbc0c961d369"
   end
 
   depends_on "gettext"

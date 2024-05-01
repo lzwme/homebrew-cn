@@ -24,9 +24,9 @@ class PhpAT82 < Formula
 
   keg_only :versioned_formula
 
-  # Security Support Until Dec 08 2025
+  # Security Support Until 31 Dec 2026
   # https:www.php.netsupported-versions.php
-  deprecate! date: "2025-12-08", because: :unsupported
+  deprecate! date: "2026-12-31", because: :unsupported
 
   depends_on "httpd" => [:build, :test]
   depends_on "pkg-config" => :build

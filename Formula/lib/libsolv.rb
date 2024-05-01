@@ -1,8 +1,8 @@
 class Libsolv < Formula
   desc "Library for solving packages and reading repositories"
   homepage "https:github.comopenSUSElibsolv"
-  url "https:github.comopenSUSElibsolvarchiverefstags0.7.28.tar.gz"
-  sha256 "bd2406f498fea6086ae0eacbf8b188c98b380e59af2267170e6a7b7d715cb207"
+  url "https:github.comopenSUSElibsolvarchiverefstags0.7.29.tar.gz"
+  sha256 "cb8d36a345ea9491f75d88c3a36a6f575c4e25f08197562f7ab0aa1c6e8c6abd"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "33604ecf0b95948a5fce5c4c7e11a30bffa7296e0515b07bbd9f1ab8fb3f9c40"
-    sha256 cellar: :any,                 arm64_ventura:  "52e06ab7ad593319e94330327203be5a6f9fd08f0fd94fb897d08b6515656e62"
-    sha256 cellar: :any,                 arm64_monterey: "f2e955028a296e64f72dd2b173fe807d72bc3628840576abf4c99d3b44bde411"
-    sha256 cellar: :any,                 sonoma:         "1555f5298503662c42857f839b9aab2b78bfec08f13d42e34f0004bded31ffa0"
-    sha256 cellar: :any,                 ventura:        "5b81885168ed747fad82bb28195c289f96562d569bc5dc7a57775eab5f8e7210"
-    sha256 cellar: :any,                 monterey:       "0ffb8c0caa8743602dc02a33b56fa39c00b8e89717f0bd33a4f4d4ecb0601bff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f20cc3a707ab8e4f0c6829f16f7678ef24f3458904530d9b8bfdc809fa5139b"
+    sha256 cellar: :any,                 arm64_sonoma:   "a70ba53840597f8de65c06576e9a5d88892ea6a4b380d4a26872e051ca334539"
+    sha256 cellar: :any,                 arm64_ventura:  "41605225e942e3e0e5621b54b5f4d489557aba35f51a252adfabc22b11635f86"
+    sha256 cellar: :any,                 arm64_monterey: "26fe7182fd012888b8124dad5d7f7a2bdd5ca777fc6f15675dd1e4174b4b3ea8"
+    sha256 cellar: :any,                 sonoma:         "bd39d1a95df35a86d5dee584d851ad615f296ee005f7a4696ceb604468791c21"
+    sha256 cellar: :any,                 ventura:        "8604969fa94a3d76e6b8cd4d52e74ec4c16540fa8479331a43b9415aded99c9a"
+    sha256 cellar: :any,                 monterey:       "40688db345013b8f1854e76cbd7b9a64efaa0e127b6d5d443dd47106873b6eb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48d95699cda764bd5961ad3b049aa0c9d1013a3e9de59e086648165f6f2c1b73"
   end
 
   depends_on "cmake" => :build

@@ -3,19 +3,19 @@ class Yamale < Formula
 
   desc "Schema and validator for YAML"
   homepage "https:github.com23andMeYamale"
-  url "https:files.pythonhosted.orgpackages4b0739d5ea2304416b2c904f09340378fcc357c375e75b89f8945d7f5f629189yamale-5.2.0.tar.gz"
-  sha256 "a411f24cc04e509e665773d23981d9573b93b31c296fbc1a09ec74a50f5d26ce"
+  url "https:files.pythonhosted.orgpackagesa1520faa32aa15f241a9f950ded276c942db69bce8dda5f19241f6b960080dcayamale-5.2.1.tar.gz"
+  sha256 "19bbe713d588f07177bc519a46070c0793ed126ea37f425a76055b99703f835a"
   license "MIT"
   head "https:github.com23andMeYamale.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "86e8441bed2421f92b0e33f38381c38f94c8bf89891f761d83a6fd5a9a6af543"
-    sha256 cellar: :any,                 arm64_ventura:  "24b7cd974bf282439ea42ce57b5d03f8a0adce42472076716033d93d48754858"
-    sha256 cellar: :any,                 arm64_monterey: "78b6201b59d6992269b03935db82bef92c19ce0bad79d827a40177a88da36f66"
-    sha256 cellar: :any,                 sonoma:         "69499bfe21c29fc48aa697b3902d0b552f32196ac9035904a50fddd71071226a"
-    sha256 cellar: :any,                 ventura:        "4c074cdbdd07af51da7d50369efc06c7b408dfdeed75f27f41fa0aa4140113c0"
-    sha256 cellar: :any,                 monterey:       "56d69ec847c5ae5a414e3df35424e3c9d61e7de7c6171c523355a83c47c1375f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92ec65b18d247eb3d8db4343d9b867cf1d1af5b00734976e3f2a30faf8025af2"
+    sha256 cellar: :any,                 arm64_sonoma:   "2c5ebfc81864613bdd1e30f35b1348f8be32ca92b08874a5902e4d1c01c57917"
+    sha256 cellar: :any,                 arm64_ventura:  "a7fa0ea6519e357eb573b4ee47d1983e053ad7bf3cc7d29185b536fa11bd77f5"
+    sha256 cellar: :any,                 arm64_monterey: "8660b24b84321ada3030da4ac73cdf1ac2081325bf5da3f92fb1592fdee5faec"
+    sha256 cellar: :any,                 sonoma:         "64f86dc528e57efa4788f112f9383534de827877292f09fbaa005c6970065897"
+    sha256 cellar: :any,                 ventura:        "e311137d5bf6b7eaffd9553111dc3d7d5d98a19b15dddd0f947fad621087979a"
+    sha256 cellar: :any,                 monterey:       "83f1931bf8bf30f857e277163e8ce7399e8bf7b50e6208c456973d2832818b61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "806207e26ef328f9fa8c96457fb2eaa8c3d27b6ff8ac5049209f3d87dea69eaa"
   end
 
   depends_on "libyaml"

@@ -2,19 +2,19 @@ class AwsSsoCli < Formula
   desc "Securely manage AWS API credentials using AWS SSO"
   homepage "https:github.comsynfinaticaws-sso-cli"
   url "https:github.comsynfinaticaws-sso-cli.git",
-      tag:      "v1.15.0",
-      revision: "9f897c5be301ea1a3cd1b143dc75d0d2bff5e500"
+      tag:      "v1.15.1",
+      revision: "e2ec94d101ba9f9c8af8d766d3961f92e116a025"
   license "GPL-3.0-only"
   head "https:github.comsynfinaticaws-sso-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fc117f8e9d0eba2ce6b6e41d74d1aa1f43ac926d44998d299eaed9461d4918b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b25c33943707a39c74ef04b10eb49e2107567d48c7caffada243b54e30f26571"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a7d2cce7454407147ccc186157aa8e01953bbc9984076eea43fd47e76eca738"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0e4763c9340dcca56ab1809a26928bcabaa7f98213d7e126419bac2062f71d4d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f8a4b368add249940454ae4ac481d66726aadbab08e91eb0ad2903eeab9868c"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ecf3b80b02d19c62d678bf9559f3902fec58bead984cc77e348f5a69708ee67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37b4a78265f547051be47c1a55e31cf0f816d2b69c2671f97cd4a7eb07866982"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35786787cfa8317d878038738f1c024184eb5ca3f6dd1b886510fc3b97880e33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dbf061ce4d268d244f88e8e96612913ae7f0e371ce56d6579be0604db158513a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "efd0a989bf4ae8fdbc4c57e6fa1f2837a4a8995f7b56f625b3782a8296087bbf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "463433d7d16ceded8133d73d60e60d7fdeb39794543c25e0c0eba03078d78b22"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb6235800ee66cd94dcd3205569259f3584f48883b4214c16db2c9c4f6a73666"
+    sha256 cellar: :any_skip_relocation, monterey:       "26b69d185dde783e7e42ee9b49579d1f941808405be7f06810e5a9cf36086a9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87d6e8627a3acbbedf04dec38d9ede0ed2bed41a771b02cd70791d0deca26703"
   end
 
   depends_on "go" => :build

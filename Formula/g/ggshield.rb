@@ -3,20 +3,19 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https:www.gitguardian.com"
-  url "https:files.pythonhosted.orgpackagesc161583d8d6777734e39fe7a331e934c652911d0dd354b7ae0d096e42cfb8394ggshield-1.26.0.tar.gz"
-  sha256 "d5c18d5f4fb8fd00013c0f9cad19a466a095eee7214cbd95d585f09694b201bd"
+  url "https:files.pythonhosted.orgpackagese4813e415d5b06b22120e5503f3182c1d03876197d5e0e3074fc5b2f5e8cc7bdggshield-1.27.0.tar.gz"
+  sha256 "9bc16c253bef41301823230b240390c2fbf7b0f5df6d050c34d919db30d4b597"
   license "MIT"
-  revision 1
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d981d8569c4a1fa408f004e33175bc728ebab3d8f94c88933300bc18d82c0152"
-    sha256 cellar: :any,                 arm64_ventura:  "bc21f0c554098e0b8357a82da8979ec3aee7cedd6c7e9f70be1da48a604c1acc"
-    sha256 cellar: :any,                 arm64_monterey: "09b6ed1f9621ca1eb09a8b7133ff948b67cf8c8dc2862dfdd5126f76b28462c8"
-    sha256 cellar: :any,                 sonoma:         "7d01ed58fa6341a16932c13de0c02233f3ffe5773009b54a454d58c465cc49f8"
-    sha256 cellar: :any,                 ventura:        "cd528e68dbe9d182c4414a70028e29faa5bfa08376f74060d5fba67c75c3139e"
-    sha256 cellar: :any,                 monterey:       "7265ce31e671e3a5fc6de8a1534c3bb569cac4f580bf2c77041f9ebf217f0d78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef8591e36206615e87cc0a73b2b4966934d31a305e1557302a6ad25570c17bd5"
+    sha256 cellar: :any,                 arm64_sonoma:   "fbc4308faf7997589731df36435ba7e3b5d69b7be0f4a491e8768a96d065fae0"
+    sha256 cellar: :any,                 arm64_ventura:  "81dff7d595883e6f4ecc8b65b09dc959d9bee62678fba11453ee288aacc73c6b"
+    sha256 cellar: :any,                 arm64_monterey: "c1059561bd3cc9c15b58f6769efc9fb323d6eb5be048b3d825b3f5a524386931"
+    sha256 cellar: :any,                 sonoma:         "eefe77af2eb72be4abd94dde4579068a392a481844b552183c9387dc37964535"
+    sha256 cellar: :any,                 ventura:        "e49a3f27c18749fa1f906edec5f81e9160d076c770dbad6e5a0a20de8032cacb"
+    sha256 cellar: :any,                 monterey:       "5895dae5dbbc46fd811e2386107c8ad958d4d188f4ccc2fb38b64e5c57f9e41c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae1f0b8c0e5ed606e336dfb0205ab1132bcf6f88e763203fa3482a9972592ae7"
   end
 
   depends_on "certifi"

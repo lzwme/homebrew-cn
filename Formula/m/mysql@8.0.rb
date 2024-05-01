@@ -4,11 +4,9 @@ class MysqlAT80 < Formula
   # TODO: Check if we can use unversioned `protobuf` at version bump
   # https:bugs.mysql.combug.php?id=111469
   # https:bugs.mysql.combug.php?id=113045
-  url "https:cdn.mysql.comDownloadsMySQL-8.0mysql-boost-8.0.36.tar.gz"
-  sha256 "429c5f69f3722e31807e74119d157a023277af210bfee513443cae60ebd2a86d"
-
+  url "https:cdn.mysql.comDownloadsMySQL-8.0mysql-boost-8.0.37.tar.gz"
+  sha256 "fe0c7986f6a2d6a2ddf65e00aadb90fa6cb73da38c4172dc2b930dd1c2dc4af6"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
 
   livecheck do
     url "https:dev.mysql.comdownloadsmysql8.0.html?tpl=files&os=src&version=8.0"
@@ -16,13 +14,13 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5fc45cd3f05a90ec9e572c8a112e29d49d2bf6460a609b3acbbe365b26c7d6de"
-    sha256 arm64_ventura:  "2302a9ed7a433c8ed4230c8feb83e511f55aeafe991396f2c2e57fb2cf95ecad"
-    sha256 arm64_monterey: "c6a57a7c679048f8dd97a0320fd297f9959a4b4648c152286d268cfe65766bf1"
-    sha256 sonoma:         "fde93fb1abdb21a4b4579794f5d62a6cfb8e97645ac94e22cddf95fc779e84ce"
-    sha256 ventura:        "ddb12093e5d7e0519b9fb1c427dc6c65006602a7f017561d1ca24f36a9967abd"
-    sha256 monterey:       "31db9d660d865b0ef5f647cf5f2ff1f46a48b3e5f46895eee9375a08f32da830"
-    sha256 x86_64_linux:   "7fb607a17ef32a4ba508648281755b39fb4a94b6d62ad49432a30af8686970ac"
+    sha256 arm64_sonoma:   "1e57fb21f0a2c9bc1058c324ef472cc883299a029b566c9bddad6ed90c63595a"
+    sha256 arm64_ventura:  "a6adee29d1752a708ac2788f42551287ba9ddb8378ed6f2900cd3e1d2156f465"
+    sha256 arm64_monterey: "b18aeb4477d9b2ae09730fb7ee0c22b933a323a67fbbb54a9f0f59790113a17a"
+    sha256 sonoma:         "a481574ef1cfed040864f6c63a6e0bac0f3196726ff2b2c255e884d23bb7b921"
+    sha256 ventura:        "4a4efb87533ff17584a0a4d89a1516cfd084e4e5c173c37a02f4a9e8fbed0c3f"
+    sha256 monterey:       "e18e05be75823dcfde303a98b68a303b90c17c4657398ffc32764dab98752b76"
+    sha256 x86_64_linux:   "f32b5c194485f803a42b280fe724ed93e1d00fbf6d590693d9221c3d70b64644"
   end
 
   keg_only :versioned_formula
@@ -193,7 +191,7 @@ index 42e63d0..5d21cc3 100644
 @@ -1942,31 +1942,6 @@ MYSQL_CHECK_RAPIDJSON()
  MYSQL_CHECK_FIDO()
  MYSQL_CHECK_FIDO_DLLS()
- 
+
 -IF(APPLE)
 -  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
 -  IF(EXISTS ${HOMEBREW_BASE}includeboost)

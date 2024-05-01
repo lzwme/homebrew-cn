@@ -17,7 +17,7 @@ cask "hyper" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrewcask-versionshyper-canary"
+  conflicts_with cask: "hyper@canary"
 
   app "Hyper.app"
   binary "#{appdir}Hyper.appContentsResourcesbinhyper"

@@ -6,18 +6,17 @@ class PyqtAT5 < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma:   "d71f9eb4c4207f5cd514c6164daa25b214bbc59bed4fe7ac2d35dd19d8e38541"
-    sha256 cellar: :any,                 arm64_ventura:  "e965b99dc455b9da26f80c554a65d20db7d0ea70cf7cde8406d01b115652ce32"
-    sha256 cellar: :any,                 arm64_monterey: "5e5212557dd94ee07e1f2cff48b6e8192c2d520f0894b20547484da25c36443c"
-    sha256 cellar: :any,                 sonoma:         "60bb1b52d94f88b11780754972ca3f6683f85972316400334a631ccf227e47ff"
-    sha256 cellar: :any,                 ventura:        "8346e9e65779fbb8e8730e9adbc430c6db8d236fd783a8eaa17b2229ae489bbd"
-    sha256 cellar: :any,                 monterey:       "2275f56241aa386f84f0f80a5ffedf046cca0ea451f113abbb2210e51b35386c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdfc3b92cfdbaa09dc589c893df7ec191318a2047790bb3a08b097f0fa8e0e90"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sonoma:   "4d80fa381e5a71e813bdbb8a512f62f427da0735ae0907aeeaebe9991ff35b9b"
+    sha256 cellar: :any,                 arm64_ventura:  "fb69149347b51e29edcc5a7f63316655056c5ce8642473253556194382ba9c24"
+    sha256 cellar: :any,                 arm64_monterey: "1a9033ed91291ee6048cd8f65ccb01ab8af0ab921c14a9d0ca0b5642350499dc"
+    sha256 cellar: :any,                 sonoma:         "637ae5ecc8f131cd10706b86fba6bc283ae6fea036678fdeac542458458d0fc2"
+    sha256 cellar: :any,                 ventura:        "c49b4f97bdfbfb38387abe015187fe4fdc64db2861542425a340fc40e54c8252"
+    sha256 cellar: :any,                 monterey:       "3ab79417378d323ab71bab013cbfa593800d7872becb887e6a3b905f93998d4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f94b4ae841859f9384e9c0a56bde2c6b8f66180c3ef272a02ced3ab23c0b1247"
   end
 
   depends_on "pyqt-builder" => :build
-  depends_on "sip" => :build
   depends_on "python@3.12"
   depends_on "qt@5"
 
@@ -64,6 +63,7 @@ class PyqtAT5 < Formula
   end
 
   def install
+    sip_install = Formula["pyqt-builder"].opt_libexec/"bin/sip-install"
     site_packages = prefix/Language::Python.site_packages(python3)
     args = [
       "--target-dir", site_packages,
@@ -72,7 +72,7 @@ class PyqtAT5 < Formula
       "--no-designer-plugin",
       "--no-qml-plugin"
     ]
-    system "sip-install", *args
+    system sip_install, *args
 
     resource("pyqt5-sip").stage do
       system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
@@ -86,7 +86,7 @@ class PyqtAT5 < Formula
           [tool.sip.project]
           sip-include-dirs = ["#{site_packages}/PyQt#{version.major}/bindings"]
         EOS
-        system "sip-install", "--target-dir", site_packages
+        system sip_install, "--target-dir", site_packages
       end
     end
   end

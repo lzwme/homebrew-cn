@@ -3,18 +3,18 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https:github.comcharles-001dolphie"
-  url "https:files.pythonhosted.orgpackages54e5b0ddf45e478c278214acff7b21d26758e0bf8bf06eea9883f2d78a4df37edolphie-5.0.0.tar.gz"
-  sha256 "e07a850d0461fbcf3f17784d1e71900855e564372df4a7843ccb593fbcba4b40"
+  url "https:files.pythonhosted.orgpackagesed3a321824c6cfd3ff12be53116e1f2c263217dd090af9d9fc6d998dc4f50fefdolphie-5.0.1.tar.gz"
+  sha256 "b63e83d119a965e9ca28da041a67aa6a2cbd573f18d6bea1a8218606518d7ebc"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "49729abd8d6ec2bf6e246863cb88850f541e6b9ffc88e7c91abd93ca97f81f95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5e185e9e73030f57f15cda39207d9aea41fd3dfcc7a797cecc54cdc9104e1e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2022c8406f30c78dc312e18af843ec95e5eb78f47d3f2e826a0ee7128047c007"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fd8c65003efe1abd1ba78ada234fe4478577b91a0f5159175a5cfec464b07b69"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff017d9aeab65c50f74aa753e86c3a178fc33b46918904752a482ac5cf0c1d75"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8858bcc35e00f8e7d5b8d350b164790047273020577d3233e12d8465a2036d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68e64aa4fbf94dffdab16b87f341767a440533637789b70341416368575a7363"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "696eb73cced4c782b93062ea006f42dbe5c72feab62463d9848ce41915e8e653"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "facfaee5fb63f9b1b899a0db02c0287d3bd34bbd4a6d4ff22b348827746f657b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3fe4a90c6799ccd23227242f44ad2366122c2950b2243412409b7d777bb95931"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3c67a3dd626fabfc0ac4f272e4511104c5f73d71fd9166060328dce3ca074f55"
+    sha256 cellar: :any_skip_relocation, ventura:        "35d9bd3a9ce841a26db3916ac558e3b87128de81a16a920aa8644386ad853463"
+    sha256 cellar: :any_skip_relocation, monterey:       "93cbbdf7590d9ce113b66d5321313ae4ba0e0f4830be6234cc62f50779314598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e148fe404a01cba1e1ffbb75b4872655c77fd5fe3858ba846d891a9e544d6a0"
   end
 
   depends_on "certifi"

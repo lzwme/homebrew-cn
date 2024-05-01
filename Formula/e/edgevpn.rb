@@ -6,13 +6,14 @@ class Edgevpn < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "961e9d7e01b59186ca8ebf9df662b121405f3412d5a783c987fe9a0aa977d583"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "961e9d7e01b59186ca8ebf9df662b121405f3412d5a783c987fe9a0aa977d583"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "961e9d7e01b59186ca8ebf9df662b121405f3412d5a783c987fe9a0aa977d583"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2ef403c59fb8e7f69dcc97e57acc101b680ed5a6f79c1537150fdf18b3ddabdc"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ef403c59fb8e7f69dcc97e57acc101b680ed5a6f79c1537150fdf18b3ddabdc"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ef403c59fb8e7f69dcc97e57acc101b680ed5a6f79c1537150fdf18b3ddabdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c98656012969c0db2b2d30108ce42aefec92484d363d3d680952ab65bf109a53"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3c800bcfc8b3e8870ec5267ff78cc60972f0722af412a997fbdb79b19d048105"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c800bcfc8b3e8870ec5267ff78cc60972f0722af412a997fbdb79b19d048105"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c800bcfc8b3e8870ec5267ff78cc60972f0722af412a997fbdb79b19d048105"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a14bd6262c693da36d151bd8be9e88bc60dd0ce6c9ac38d786812d4b859f7f1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "a14bd6262c693da36d151bd8be9e88bc60dd0ce6c9ac38d786812d4b859f7f1c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a14bd6262c693da36d151bd8be9e88bc60dd0ce6c9ac38d786812d4b859f7f1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6eb9ac3d48fa9c984399dc2fd2246dd64d21c504eca6fa14dd527041202f5421"
   end
 
   depends_on "go" => :build
@@ -20,8 +21,7 @@ class Edgevpn < Formula
   def install
     ldflags = %W[
       -s -w
-      -X main.version=#{version}
-      -X main.date=#{time.iso8601}
+      -X github.commudleredgevpninternal.Version=#{version}
     ]
 
     ENV["CGO_ENABLED"] = "0"

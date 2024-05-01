@@ -14,7 +14,7 @@ cask "keka" do
   end
 
   auto_updates true
-  conflicts_with cask: "keka-beta"
+  conflicts_with cask: "keka@beta"
 
   app "Keka.app"
   # shim script (https:github.comHomebrewhomebrew-caskissues18809)

@@ -1,18 +1,18 @@
 cask "font-lxgw-bright-gb" do
-  version "5.321"
-  sha256 "bf7d298c1dc17fe05ea99bf1459b753a32641aec7faabeb92b4f68b171ea21a9"
+  version "5.330"
+  sha256 "f9378f55d7c77216be7b430ec5b9a834d89e92a16fd640eb5a32d73b43adc3a0"
 
   url "https:github.comlxgwLxgwBrightreleasesdownloadv#{version}LXGWBrightGB.7z"
   name "LXGW Bright GB"
   desc "Merged font of Ysabeau Office and LXGW WenKai GB"
   homepage "https:github.comlxgwLxgwBright"
 
-  font "LXGWBrightGBLXGWBrightGB-Medium.otf"
-  font "LXGWBrightGBLXGWBrightGB-MediumItalic.otf"
-  font "LXGWBrightGBLXGWBrightGB-Regular.otf"
-  font "LXGWBrightGBLXGWBrightGB-Italic.otf"
-  font "LXGWBrightGBLXGWBrightGB-SemiLight.otf"
-  font "LXGWBrightGBLXGWBrightGB-SemiLightItalic.otf"
+  font "LXGWBrightGBLXGWBrightGB-Medium.ttf"
+  font "LXGWBrightGBLXGWBrightGB-MediumItalic.ttf"
+  font "LXGWBrightGBLXGWBrightGB-Regular.ttf"
+  font "LXGWBrightGBLXGWBrightGB-Italic.ttf"
+  font "LXGWBrightGBLXGWBrightGB-SemiLight.ttf"
+  font "LXGWBrightGBLXGWBrightGB-SemiLightItalic.ttf"
 
   # No zap stanza required
 end

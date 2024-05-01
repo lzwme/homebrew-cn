@@ -17,17 +17,17 @@ class Qscintilla2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "26fe24abd042199d9559ab7dd65ed3f69341095fbf4cf4ad666f8f95746a2475"
-    sha256 cellar: :any,                 arm64_ventura:  "4580d709c104ef91a0d5c10c9d3f048419e996697d550e63471dd8e1fb861ad5"
-    sha256 cellar: :any,                 arm64_monterey: "9ebd0574d24b11503b54ab0b5af6ed30fa354f600f1b0d847a7993f5812b47d3"
-    sha256 cellar: :any,                 sonoma:         "57a5080f9df1e993fc4db98c11d4e6fe020717750221cdbf00a8720455156b2a"
-    sha256 cellar: :any,                 ventura:        "0678554e53672a339e2c23ad76f94dbfa8047c088296a86959e86c8d04c4f70a"
-    sha256 cellar: :any,                 monterey:       "627f55d48e4abe7861ccbc998d607e59ae0ac9fad55a874228aac0cf66ec2a68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4258d6ba93776b95e0870052afbf47c1cafb0c53bc5e0d34a619b88a669bec0c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6fb256991b510ff55552bc805e7044d3545d51398c938d62038ba32e79f9f8a5"
+    sha256 cellar: :any,                 arm64_ventura:  "2e917a31f5e2041f0f410f6a28e7fd782a16b40610577decd1370a51affd3a6f"
+    sha256 cellar: :any,                 arm64_monterey: "17dd75682a7d9a0ffbce7264c4c057ebedcd6cf13285fda299e9aae1dca82514"
+    sha256 cellar: :any,                 sonoma:         "6ff12a8e9e5ca6dd65f70ab6932a03e73a2e234b7ac568485dff28d9f88c0112"
+    sha256 cellar: :any,                 ventura:        "4252af7063d8286071bdf75a414636009b4ffa86b9fc750092bf80025bc8b86a"
+    sha256 cellar: :any,                 monterey:       "9a0a71f39273141d7fce01ee4fa44bb447b81120605a6bcea671b20a482fb831"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87c584ef6e5420e8ac1cdc3fa3dcf9d34d3e2482e4ae1b0bdf08f23682c2fa7a"
   end
 
   depends_on "pyqt-builder" => :build
-  depends_on "sip" => :build
   depends_on "pyqt"
   depends_on "python@3.12"
   depends_on "qt"
@@ -39,11 +39,10 @@ class Qscintilla2 < Formula
   end
 
   def install
-    args = []
-
+    args = %w[-config release]
     if OS.mac?
       spec = (ENV.compiler == :clang) ? "macx-clang" : "macx-g++"
-      args = %W[-config release -spec #{spec}]
+      args += %W[-spec #{spec}]
     end
 
     pyqt = Formula["pyqt"]
@@ -86,7 +85,7 @@ class Qscintilla2 < Formula
         --qsci-library-dir #{lib}
         --api-dir #{share}/qt/qsci/api/python
       ]
-      system "sip-install", *args
+      system Formula["pyqt-builder"].opt_libexec/"bin/sip-install", *args
     end
   end
 
