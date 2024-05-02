@@ -14,6 +14,8 @@ cask "pgadmin3" do
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)(?:/index.html)/?["' >]}i)
   end
 
+  deprecate! date: "2025-05-01", because: :unsigned
+
   app "pgAdmin3.app"
 
   zap trash: [

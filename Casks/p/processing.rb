@@ -20,8 +20,8 @@ cask "processing" do
   end
 
   conflicts_with cask: [
-    "homebrewcask-versionsprocessing2",
-    "homebrewcask-versionsprocessing3",
+    "processing2",
+    "processing@3",
   ]
   depends_on macos: ">= :catalina"
 

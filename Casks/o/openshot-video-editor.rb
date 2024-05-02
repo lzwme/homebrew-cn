@@ -13,7 +13,7 @@ cask "openshot-video-editor" do
     strategy :github_latest
   end
 
-  conflicts_with cask: "homebrewcask-versionsopenshot-video-editor-daily"
+  conflicts_with cask: "openshot-video-editor@daily"
   depends_on macos: ">= :catalina"
 
   app "OpenShot Video Editor.app"

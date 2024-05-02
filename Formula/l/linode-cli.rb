@@ -3,19 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https:github.comlinodelinode-cli"
-  url "https:files.pythonhosted.orgpackages456c101a152405af17ebdd6417f1f63c97c4e5734463d011009c8eb214109f47linode_cli-5.48.4.tar.gz"
-  sha256 "58b8394efda3de0132a7df4374d56e035d0395b7093c2e7c58d200d56c7513e5"
+  url "https:files.pythonhosted.orgpackages68129307ced2361e6fef5d895e69fcc76be022fdebdbe9c8f8c20e8311a5070clinode_cli-5.49.0.tar.gz"
+  sha256 "e7f9702a0083dc66d9d1eec9d9164dccabfed0e3e677da8163c2648c26dcb62f"
   license "BSD-3-Clause"
   head "https:github.comlinodelinode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "638fe034c0580df28b2b93ad1f306390cf845dd212bee3b04e58e380f0d47e74"
-    sha256 cellar: :any,                 arm64_ventura:  "7a01615a0a1a719d1465011006fa019fb9f2a210e2e71eca177fa6be69a31f1b"
-    sha256 cellar: :any,                 arm64_monterey: "c6818aae145ac73bcc17c7159f229304bd40e094bcb5c1b6593c7c9a9986bc3d"
-    sha256 cellar: :any,                 sonoma:         "01b722e9d8c73f332023222611c1cc3ad7758c8bdfc9fa3c156a0acb9fcf6115"
-    sha256 cellar: :any,                 ventura:        "7cfd306476d6bccd50ce6200b23107fcf0e985b1ea138280f33465df180be0a2"
-    sha256 cellar: :any,                 monterey:       "c1670a8494739acd19e5101dcf64b26133d60e761385f6cffcd1646a35a1b67e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e76768335151f30d884156c7d4b8f34a628edd55de8963a46c92f069a5212d0f"
+    sha256 cellar: :any,                 arm64_sonoma:   "7f204eeb2f6dc504c5099575d525a326f699c3c9626cf6c13aec6d62c810afa6"
+    sha256 cellar: :any,                 arm64_ventura:  "b7ff7cdd78df294217a642ff29d8749f039064163449e8ce7f1bb0fad628149d"
+    sha256 cellar: :any,                 arm64_monterey: "2190100a8a5168658203b864cf27e00eba7bf6d80c0a07c1d950f03636c8c3c1"
+    sha256 cellar: :any,                 sonoma:         "e4b6cc82630316dbd231b13eb69bcdd6cb2969b3bd3b0fb5c2ca9e95236c4ea8"
+    sha256 cellar: :any,                 ventura:        "7253faaa1938527020f67b67f15ad590cc5ea1f9c26470c1e348ce1d7a164a44"
+    sha256 cellar: :any,                 monterey:       "06e995d664ddb863fc3a701445da83975bf39b11bed54a8331c04982f57c35e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e281752aca0dc425b6dc02a26257fb271862985ed5c1f7b75f0a074c460eb50f"
   end
 
   depends_on "certifi"
@@ -107,11 +107,15 @@ class LinodeCli < Formula
     sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
+  # patch to generate completion without PAT prompt, upstream PR ref, https:github.comlinodelinode-clipull608
+  patch do
+    url "https:github.comlinodelinode-clicommit2c2d1761901f9713a98fdaab604995a45f666941.patch?full_index=1"
+    sha256 "9995a513c441909301d491a3996738cb2efc6974289fb2a74ea3f78d2b424560"
+  end
+
   def install
-    # Prevent setup.py from installing the bash_completion script
-    inreplace "setup.py", "data_files=get_baked_files(),", ""
     virtualenv_install_with_resources
-    bash_completion.install "linode-cli.sh" => "linode-cli"
+    generate_completions_from_executable(bin"linode-cli", "completion", shells: [:bash, :fish])
   end
 
   test do

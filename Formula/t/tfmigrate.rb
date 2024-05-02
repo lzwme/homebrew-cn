@@ -1,19 +1,19 @@
 class Tfmigrate < Formula
   desc "TerraformOpenTofu state migration tool for GitOps"
   homepage "https:github.comminamijoyotfmigrate"
-  url "https:github.comminamijoyotfmigratearchiverefstagsv0.3.22.tar.gz"
-  sha256 "4b3b920bd76bdf74dbdfc41e1d36b31bd920505918d041044d7470135d20166c"
+  url "https:github.comminamijoyotfmigratearchiverefstagsv0.3.23.tar.gz"
+  sha256 "6141e63dee8aa0c17750eeec0e5a15555ded459d0ceab0926ae3325b07806268"
   license "MIT"
   head "https:github.comminamijoyotfmigrate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "484a25aee9026f0968022c1ab992e879603d9986fd84eab13d2ef9694aa8bf19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c333c5bb3513b57c4c73d278fd2dc8875b29a653831c6bdeec42918eb570e9dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75a3c3b918acef1e3dd8e809799aea183f29ab30eb3b61f1ff4d6647cb715ef0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9516a990cf2d93eda280db592f788da13c5e278053018ff67b92cdd9eeffa4c4"
-    sha256 cellar: :any_skip_relocation, ventura:        "446a56e1d43ba20b5328c038fb9f814811a8855bd1b485945eeedf46c23ceffd"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac0814f7045c52f71a375700ae8e084b5137c63f31f6635d3a40161d535fe79d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "967a74bf279f6e615b8eeaaedf2a39d6e6337e006b3aeffb3793b0e73c103603"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7427999a92b5131392a753b74af061537da5d13c2e8f572a023fb691fa0aa0e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4667ce46d564606cb177d8c474b45b6dbb2e85d92c908d0b76e78730ef4e2353"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e4b4ac931c1654e798dea4519997a6818652619901c66632324b66314179926"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d3f049db73f68ef9e6c6f69d6477cfc8c1fca73e45f3564e8a8f9c7b5455df0b"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1abb7306ab26624db7ee3dbf33ee37d945e91236bc06a590d875f2305c6ce9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc2828363062ce78de8a6e0676bf0f191375818931311c225c11c51da3af5b4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5621f0d2ceed5919d7dfa48cd8c4acbfc105147a21fa545c831e82b3ba89bb2"
   end
 
   depends_on "go" => :build

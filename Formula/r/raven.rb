@@ -3,18 +3,18 @@ class Raven < Formula
 
   desc "Risk Analysis and Vulnerability Enumeration for CICD"
   homepage "https:github.comCycodeLabsraven"
-  url "https:files.pythonhosted.orgpackages444c7b14f0ec7b10a87d9cc6b7bc77a5bd895ce0d84c3e199185ec53f44b6b2araven-cycode-1.0.8.tar.gz"
-  sha256 "12ab71a43ca904fd386a4a0c970917652f8519aa01647046e69aef477b032ed4"
+  url "https:files.pythonhosted.orgpackagesd8b64bc5aecae28382720fca4e9492a623e3d821d96e8f4d06e4335c77779ebdraven_cycode-1.0.9.tar.gz"
+  sha256 "a7cb02102b43dbaad3b50970f92090b86a3b3bb65aae9976a3887f4c8c935238"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5ffd10c11746c4b371bcf585c6706f892092a1f4e7793b614d146b11edd1c050"
-    sha256 cellar: :any,                 arm64_ventura:  "c1688df4222b0ee4c3585eca91520caec051408f01abe179ec68509ec559139d"
-    sha256 cellar: :any,                 arm64_monterey: "de29b4047914f3ff32fe25251a671b8f1c08822d93e883544be3eb29734936eb"
-    sha256 cellar: :any,                 sonoma:         "099c9deb73902061c3017ce0848ecbdfd912647a6070ca202f81916b42530e08"
-    sha256 cellar: :any,                 ventura:        "40871399dbfebc3e03c46dcc096de8be464c6b6550d03f749469cdde57a619d0"
-    sha256 cellar: :any,                 monterey:       "d61a537fcc3b0f58d22efee3bb2f7bb1593609af6e38e3637a8d1797ef38a602"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17cb53dafdcfe99ba17588ff2294f53fa53aa531646881484b00eaa6a0ac4fd8"
+    sha256 cellar: :any,                 arm64_sonoma:   "24358ae759b3c6c56b7061e964423ffe25861d188c3c566bfd6d86cc6e3b6e80"
+    sha256 cellar: :any,                 arm64_ventura:  "53164b50efdde032b3ab29fcb6217dfecdf6780213b9cb9ccfa87fd415a47020"
+    sha256 cellar: :any,                 arm64_monterey: "5dd38e2a8ba2d4e3a64d10f0816910e4990bb2e9119fe201690cace6cf676e1c"
+    sha256 cellar: :any,                 sonoma:         "399bd1cd2b114f0aa5f40c59a461bd1d5fc671bcf30285d4f4074ef00e046226"
+    sha256 cellar: :any,                 ventura:        "fc5e95f0f76807b461f43fec6bb24682e835d338ac64d5ee0caef43bed5d210c"
+    sha256 cellar: :any,                 monterey:       "518d25d145f40f2501b26fc438e43e6f85b470a5b7584a3cbb008a9ea94ddaaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1dcafee5ae36853d17816684a6ddcf413e8a2cf5e0bccf278cb885f3a3f6a0"
   end
 
   depends_on "certifi"
@@ -32,8 +32,8 @@ class Raven < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "iniconfig" do

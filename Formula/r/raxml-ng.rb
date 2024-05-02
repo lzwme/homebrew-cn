@@ -1,19 +1,19 @@
 class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
-  homepage "https:sco.h-its.orgexelixiswebsoftwareraxml"
+  homepage "https:cme.h-its.orgexelixiswebsoftwareraxml"
   url "https:github.comamkozlovraxml-ng.git",
-      tag:      "1.2.1",
-      revision: "af74065fa2e03d4eb3efd83881bd50926d07e234"
+      tag:      "1.2.2",
+      revision: "805318cef87bd5d67064efa299b5d1cf948367fd"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "dcf2e94a38e1026c97cd3c6eea1cbf216a6d7209cad9b7ed67de4a1f8707fbb7"
-    sha256 cellar: :any,                 arm64_ventura:  "e2ece52151cf1a3c156da7d2dfe5298d2141792abf159fb04c399bc323aa9474"
-    sha256 cellar: :any,                 arm64_monterey: "e4b6c4593160a8ba0cbe421e9fda4df960aac50583897ce435f5295a4675396e"
-    sha256 cellar: :any,                 sonoma:         "ab64dbd6f9c0abc354924c3e5ff92d3900f1c4cde7e30ca1d18a5bc12d23f70f"
-    sha256 cellar: :any,                 ventura:        "22c88c983900ec464ca890567fa71d692ebe082600f2663117c48a583cb01678"
-    sha256 cellar: :any,                 monterey:       "c63dce9f7ba5dcb10bb58cfb09e6ea097246ec5380e20ae5159ed237af33f778"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eab1309c5fad5a6369cddfc221afce7f9c32a943778afd32c4d9f3641ac015c6"
+    sha256 cellar: :any,                 arm64_sonoma:   "bd6bd94ccee20b21d5c9146a8bc4a484c261a11586224ec4303a2d269590b32f"
+    sha256 cellar: :any,                 arm64_ventura:  "6fcf4ec42def10fd485108f16f3d9c03f59f06ff72b663e469d7985332b99222"
+    sha256 cellar: :any,                 arm64_monterey: "a2e435fabdb95292270d576aa6fd6dceda14ad722cd12ccb916371b8aa01e0a4"
+    sha256 cellar: :any,                 sonoma:         "63100f2fe0b660b831fcb16cc08b299bf62a978d4c97949d87d5e09716b4670d"
+    sha256 cellar: :any,                 ventura:        "456c5f39dacdc8ce957c17d67f53410977c8217bc98ca45ba97c1df187442aa9"
+    sha256 cellar: :any,                 monterey:       "7bbd86f8a89f92287d21cab56e055333a5c5ec90e955b76f78d3c8a36cb9dda4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53e258a6db4cb2d05aa6013741ac3c2345a9d92da103a23d34dda647b8e8d532"
   end
 
   depends_on "bison" => :build # fix syntax error with `parse_utree.y`
@@ -27,7 +27,7 @@ class RaxmlNg < Formula
   end
 
   resource "homebrew-example" do
-    url "https:sco.h-its.orgexelixisresourcedownloadhands-ondna.phy"
+    url "https:cme.h-its.orgexelixisresourcedownloadhands-ondna.phy"
     sha256 "c2adc42823313831b97af76b3b1503b84573f10d9d0d563be5815cde0effe0c2"
   end
 

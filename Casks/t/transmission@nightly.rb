@@ -1,4 +1,4 @@
-cask "transmission-nightly" do
+cask "transmission@nightly" do
   version :latest
   sha256 :no_check
 
@@ -9,6 +9,8 @@ cask "transmission-nightly" do
   name "Transmission"
   desc "Open-source BitTorrent client"
   homepage "https://transmissionbt.com/"
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "transmission"
   depends_on macos: ">= :mojave"

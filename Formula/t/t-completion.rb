@@ -1,13 +1,13 @@
 class TCompletion < Formula
   desc "Completion for CLI power tool for Twitter"
   homepage "https:sferik.github.iot"
-  url "https:github.comsferiktarchiverefstagsv4.0.0.tar.gz"
-  sha256 "82e4afa54015c2297854854490be8dd3a09d7c99ed5af3f64de6866bb484ddde"
+  url "https:github.comsferikt-rubyarchiverefstagsv4.1.1.tar.gz"
+  sha256 "998a884aa5dcd024617427c8cee7574eb3ab52235131bb34875df794b8c3c7d7"
   license "MIT"
-  head "https:github.comsferikt.git", branch: "master"
+  head "https:github.comsferikt-ruby.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b4000f3501fea5f4c7b817a5f83f35b6d7a2a864a8b665e0850b2e9da45cd389"
+    sha256 cellar: :any_skip_relocation, all: "28d1c8535510ece370a91e8935cdf98e0a0f032f8d7c6a8b8c4ea65641cc5c22"
   end
 
   def install

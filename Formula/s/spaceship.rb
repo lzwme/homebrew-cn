@@ -3,19 +3,19 @@ class Spaceship < Formula
   # site cert issue, https:github.comspaceship-promptspaceship-promptissues1431
   # homepage "https:spaceship-prompt.sh"
   homepage "https:github.comspaceship-promptspaceship-prompt"
-  url "https:github.comspaceship-promptspaceship-promptarchiverefstagsv4.15.1.tar.gz"
-  sha256 "2fd6299bf6de1709a482caee1c89e64f180c995abf6f4d22f9f6a9d5d404700c"
+  url "https:github.comspaceship-promptspaceship-promptarchiverefstagsv4.15.2.tar.gz"
+  sha256 "d221478bf6cb9dee831a1941d93f929e0e4aac1f26ebc5001793359d871d0d40"
   license "MIT"
   head "https:github.comspaceship-promptspaceship-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00b775798b893e93a1cb3d983b277d36be6f39dca5d6a73a0796088c33f369d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f10b6411ca2ae127e1c5c4a9d862deaf8c9f0ba6b7829be406fe5eacc448e443"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8132bd11f2cd24da54ef6b79bb995e9257ccbd39171bc4ef2fb8fc7b16e25ace"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09976a7476e318f35dd8a9e3149417f77430f50bf5950c82eaad067622fe7df2"
-    sha256 cellar: :any_skip_relocation, ventura:        "b52c62597b3167bcd9cbb07def8135f34c51eddd127bd241c78bc5d4cd0c1df0"
-    sha256 cellar: :any_skip_relocation, monterey:       "0db8c0a40a0992b783189fe562e0cbdbb83c6083a71f23570764d06e6575e2d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56b93687c04640dcdd39c60277265b9916b2f98c5e9688f3eecb8e3fefe47584"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18059208ffbd69278aca660686ff000a76aa0d0ea4ee11ae1453f6ed60499ac3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae48e4c9a3c8d3f3c48d3ef0973bc664dbc57c0e00057636122b03343de36973"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "629c68b4529420acd49d011c40d437de74c9df2aa5056cc44cc4bffb4e7b384d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b25e4c33deaeee9a246457c6b9cc2076c6a3985cee91a45ea3bef7f46edd0371"
+    sha256 cellar: :any_skip_relocation, ventura:        "0742cae26bfac136de1b0539e581d219c7e5a13367f7ed86f23eb914b3bce6f9"
+    sha256 cellar: :any_skip_relocation, monterey:       "773c2166d7bca3b5fd0fdfd3a7f355183318d3304e78c92bc08b0e921361f0bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de70a9641df739dc0876ea55744a68832bf16e82ed7020cc03accff4aed3bf33"
   end
 
   depends_on "zsh-async"

@@ -15,6 +15,10 @@ class Zorba < Formula
     sha256 monterey:       "65458012718d8c612cff221ec17e165504d6db79692fcd860a0cf4b757bac5fb"
   end
 
+  # https:github.com28mseczorbaissues232
+  # no longer build due to `'boostfilesystemconvenience.hpp' file not found`
+  deprecate! date: "2024-05-01", because: :unmaintained
+
   depends_on "cmake" => :build
   depends_on "openjdk" => :build
   depends_on "flex"

@@ -1,9 +1,9 @@
 class Ipbt < Formula
   desc "Program for recording a UNIX terminal session"
   homepage "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/"
-  url "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20220403.d4e7fcd.tar.gz"
-  version "20220403"
-  sha256 "8c7f325166b86055232cca9d745c6a18dcdcb6d30a0685e07ac0eab677912b05"
+  url "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20240501.bc876ea.tar.gz"
+  version "20240501"
+  sha256 "9bd4ace9028d8932b28981d83be850b2f9ac9ffd27bdeaddd61defca4e2e2762"
   license "MIT"
 
   livecheck do
@@ -12,16 +12,13 @@ class Ipbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f1c0dd1c6e139bf4f357b39726d86c4d326aeeb3ad1f7a05a481052dd7e7eed0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0321ec60acd8a30dd7eeea9b679637304318669b1ed43e1b6fbb93a3277f2903"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "347ce1b20027c44a89574d58a960b3e1126a0e7b39c24e3ee855e67da6c94726"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ef9e7bf3fa26b211ffb1fa2592b6595eea314a8aa7dbe0858cc75d877004b28"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5b97571c769e001599aefe62278ccd72a1e046dca3024ddb588ccd5832960aea"
-    sha256 cellar: :any_skip_relocation, ventura:        "782c7751fe18f69f7409be21fcf1c037d111d01b99141043dd43bd3fce30972a"
-    sha256 cellar: :any_skip_relocation, monterey:       "677064f3ddf5de10e21b57cb755659c8a5269f533d7979650377567d265d32ca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b0db9c92b9bc916ecd88f7b67e4d5fee7378c0a85d576ba12f1e12362aec2456"
-    sha256 cellar: :any_skip_relocation, catalina:       "c58b151b7c65f18cfc11daaae87fc532d9021a9b09de9287696dcab6d4b90b43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13a8dfbb93b8ddf44dc033e892ed3846e1ac2760d56e0bb8b0ffb24aef465a75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6a5962d337b9f02b55c07799962a4bab60e5e5e15f80eac3dcd8f8f3ca58b45c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "21d4ab887b377ae0412a97b2606451f68e56f399c41dec96638cbbcfa526f147"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "628a3b94dd728ea0c02f1bf6fe42a10badea4ff86c8ba1271b2fd933b8da23d6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2e887f491af53ff7750ad41b618df73b7c10dab613ff8807cefb1c6d8d044b9b"
+    sha256 cellar: :any_skip_relocation, ventura:        "dce5a5b85fc7ed4d107c7ebad14f7d6225d5226d5337cc22f1de1e5ac723b2be"
+    sha256 cellar: :any_skip_relocation, monterey:       "63cd96623d8bc087247d9cf0ea601a36ad62a5b5c2422256878da8c490fcfed2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9cb3727a0fbd659d98a5fd34a6d150e828888f8f8ceeb304735a4a790e1397a"
   end
 
   depends_on "cmake" => :build

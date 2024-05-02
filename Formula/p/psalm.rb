@@ -1,18 +1,18 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
   homepage "https:psalm.dev"
-  url "https:github.comvimeopsalmreleasesdownload5.23.1psalm.phar"
-  sha256 "a244e6f9cf4879e4bd262879e69f443e6642e29f511a4b7d586fe0ca864173e5"
+  url "https:github.comvimeopsalmreleasesdownload5.24.0psalm.phar"
+  sha256 "4a4bc2c953ffec1d53edaee781e23921b02345dd19f4e46b36652565c4aee57c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04a90b5610feed8f943fc18c701b65bf135d2dd4319f3fa830bb719efb2bf383"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04a90b5610feed8f943fc18c701b65bf135d2dd4319f3fa830bb719efb2bf383"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04a90b5610feed8f943fc18c701b65bf135d2dd4319f3fa830bb719efb2bf383"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a641bae14816de0122ab31f8abcae3d18d39166a7e708aacb8e5336299166ba6"
-    sha256 cellar: :any_skip_relocation, ventura:        "a641bae14816de0122ab31f8abcae3d18d39166a7e708aacb8e5336299166ba6"
-    sha256 cellar: :any_skip_relocation, monterey:       "a641bae14816de0122ab31f8abcae3d18d39166a7e708aacb8e5336299166ba6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04a90b5610feed8f943fc18c701b65bf135d2dd4319f3fa830bb719efb2bf383"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "746cfb40af0e10fdb7e7919678ddd6fb88b83abd65bda609359bfb8fda7821fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "746cfb40af0e10fdb7e7919678ddd6fb88b83abd65bda609359bfb8fda7821fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "746cfb40af0e10fdb7e7919678ddd6fb88b83abd65bda609359bfb8fda7821fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "730b25b4839674bb4b0263b2d00ffa227ed4dbef7b767dd2df01928c37cfcee0"
+    sha256 cellar: :any_skip_relocation, ventura:        "730b25b4839674bb4b0263b2d00ffa227ed4dbef7b767dd2df01928c37cfcee0"
+    sha256 cellar: :any_skip_relocation, monterey:       "730b25b4839674bb4b0263b2d00ffa227ed4dbef7b767dd2df01928c37cfcee0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "746cfb40af0e10fdb7e7919678ddd6fb88b83abd65bda609359bfb8fda7821fc"
   end
 
   depends_on "composer" => :test

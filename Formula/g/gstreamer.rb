@@ -4,13 +4,13 @@ class Gstreamer < Formula
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
 
   stable do
-    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.2gstreamer-1.24.2.tar.bz2"
-    sha256 "2dc6023a905c428c6e7d2b8a2701a7f058d5dd990dad2e1e2f862826cbd09f3e"
+    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.3gstreamer-1.24.3.tar.bz2"
+    sha256 "28caa0b49df73dcb0ff6884484bd7e1e1dcf1c9d6a501881f6ec3b8bf625be07"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.2gst-plugins-rs-gstreamer-1.24.2.tar.bz2"
-      sha256 "d341ea21848b7329ff96c9572d4f795f412a82c1471b3a9d14b74900346beb75"
+      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.3gst-plugins-rs-gstreamer-1.24.3.tar.bz2"
+      sha256 "2c4f6d1e0874be42ce680affe15064e5a702d476e89dcd21bda44e11bad81085"
 
       # Backport support for newer `dav1d`
       patch do
@@ -26,13 +26,13 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d617678904cfe25434fb0332d3887b82e0a5cd8ec7cf2fb77513d3ff111ae27e"
-    sha256 arm64_ventura:  "8b59fc80c0849578d883e422c6a9bc9115355474a618261415e42f918c878c2b"
-    sha256 arm64_monterey: "0a400818a89b82eb647ab557011ae65f77f87cb6b0d3b433b08bbee89c5f4e4b"
-    sha256 sonoma:         "1913961eaa431efc936662d8d925df11bb2e7b12f4e9ad1fc6ab6d9fe82c59ed"
-    sha256 ventura:        "ebec46e4dcca45c20e0f8a806348450bd3ab563b8c22a62c8718821fc5865fa2"
-    sha256 monterey:       "c94e91528b3d8a83ed3fd35ad5a21a21a245fd42de9dbf5ea5d96e34d5dfc0e1"
-    sha256 x86_64_linux:   "27988d5bfca2be96a115cea3ebfc7d4d212fe4b3466b9776100d00ee381dc8a0"
+    sha256 arm64_sonoma:   "b29527f52e9dda73cdf654eae8f5ab89b937661db57ca2b093002d9cef4638eb"
+    sha256 arm64_ventura:  "befb3f4bb9be0ac2d2546d9f3c5e64d860fa14bb231038e52f352ef8b9cdf710"
+    sha256 arm64_monterey: "b1c690848ff32cd96f9e43087b58f7369752daa6a89fb0c0dbda6d6788eb04b5"
+    sha256 sonoma:         "ab0053803141663072fb4e8e5be8b4d31bee71c1ac79870df58b58d450f1ad25"
+    sha256 ventura:        "f92286a135f2b81344fdd5770ea1f89439fb853065cf762a96ebe6839ebcf925"
+    sha256 monterey:       "0d8c988386385723754508aa9f98cd4fc1fe4433b5daf30e71e2aee938da237b"
+    sha256 x86_64_linux:   "2c5da5f89053333f2201474fd3465f287a08bed51024ae80f4689c0d0ef136a2"
   end
 
   head do
@@ -45,6 +45,7 @@ class Gstreamer < Formula
 
   depends_on "bison" => :build
   depends_on "cargo-c" => :build
+  depends_on "gitlint" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "nasm" => :build

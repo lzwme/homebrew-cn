@@ -1,19 +1,19 @@
 class Act < Formula
   desc "Run your GitHub Actions locally"
   homepage "https:github.comnektosact"
-  url "https:github.comnektosactarchiverefstagsv0.2.61.tar.gz"
-  sha256 "bd75ea2c0d3e0063ac7e30780ca0ca38c35ddfcc9f07da500540aa87e32bb564"
+  url "https:github.comnektosactarchiverefstagsv0.2.62.tar.gz"
+  sha256 "2b0231d02d57d5edbcc070b7c4802acf16110a0582ffb40181aaa695f2b7bf5c"
   license "MIT"
   head "https:github.comnektosact.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d3f6138268a428a00c08080f8ab5d85c88a6fee19ee788bb18b4aa787ba2ed3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2fff22f5f9d39b5f8cf5a510918b7f75b022871ab0a294b5364333b1caa34c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b36372ccdb6d3469f5f50d890cb06ff39bca003d264796bd79d0a79881c0ea9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "76ec6aa0d1d6c36490104573798ffd43f10e2f16cd92b82b96a3d6af86bb9d84"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b15d638fef1da3f680eb9096f093b9bec65e8a13a7274973aee2bb254bf47da"
-    sha256 cellar: :any_skip_relocation, monterey:       "ed9b8a80edbf9f51e987a025b64ddc34f452d71fdf3e216afaf8d560503ed8ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "531e5681ef85ef31be2ca8d6b6ae8b06034ee10e7de9c23b96bc3aac2183fcb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ca272eda5a06d47a251f3488102b236ebf14087f5287909b2a9598edd924ac53"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f23b97ce5a9e6e7f03f7fb63bd6cf22c9826f3791b44454ffe1e6d6c49fd76a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9fa121151ee94ebe00bb5defd9440b7b3740b456b6cf26d751e171cf807b5101"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4cfbf32a5c2dd7dc21cc7932ea20d1bd421526f33c953bb5f7d9f31152601051"
+    sha256 cellar: :any_skip_relocation, ventura:        "6cf13f39c5aaceed5510c6cbb51a1a4358aecc433f54cd261ab723ee0fffe69e"
+    sha256 cellar: :any_skip_relocation, monterey:       "485913ba7c4ed6f3b160684a83188f12e0b186c04d4e5362886695f9ce2526c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae0cde4b9f2364d50b474f8a40ecd3a3507b44e976e9c0cb53ef7e76b6d920b3"
   end
 
   depends_on "go" => :build

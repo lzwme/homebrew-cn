@@ -1,4 +1,4 @@
-cask "chromedriver-beta" do
+cask "chromedriver@beta" do
   arch arm: "arm64", intel: "x64"
 
   version "125.0.6422.14"
@@ -18,6 +18,8 @@ cask "chromedriver-beta" do
       json["channels"]["Beta"]["version"]&.scan(regex) { |match| match[0] }
     end
   end
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "chromedriver"
 

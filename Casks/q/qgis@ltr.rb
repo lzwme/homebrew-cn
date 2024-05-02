@@ -1,4 +1,4 @@
-cask "qgis-ltr" do
+cask "qgis@ltr" do
   version "3.34.6,20240419_184338"
   sha256 "a694b3999d88638484463ff33f3f33f7c53ce3b587c80383bed4a8bb17556a63"
 
@@ -14,6 +14,8 @@ cask "qgis-ltr" do
       page.scan(regex).map { |match| "#{match[0].tr("_", ".")},#{match[1]}" }
     end
   end
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   depends_on macos: ">= :high_sierra"
 

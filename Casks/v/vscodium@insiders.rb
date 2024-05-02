@@ -1,4 +1,4 @@
-cask "vscodium-insiders" do
+cask "vscodium@insiders" do
   arch arm: "arm64", intel: "x64"
 
   version "1.88.0.24095-insider"
@@ -11,6 +11,8 @@ cask "vscodium-insiders" do
   name "VSCodium Insiders"
   desc "Code editor"
   homepage "https:vscodium.com"
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   depends_on macos: ">= :catalina"
 

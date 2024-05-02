@@ -1,4 +1,4 @@
-cask "sonarr-beta" do
+cask "sonarr@beta" do
   version "3.0.9.1555"
   sha256 "50ede276cd42c41b9a3f66ca2495b16b0f99b4b773615ab602f069acf10c5a04"
 
@@ -11,6 +11,8 @@ cask "sonarr-beta" do
     url "https://download.sonarr.tv/v3/develop/"
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "sonarr"
   depends_on cask: "mono-mdk"

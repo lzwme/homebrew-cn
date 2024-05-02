@@ -1,4 +1,4 @@
-cask "vlc-nightly" do
+cask "vlc@nightly" do
   arch arm: "arm64", intel: "x86_64"
 
   version :latest
@@ -14,6 +14,8 @@ cask "vlc-nightly" do
   name "VLC media player"
   desc "Open-source cross-platform multimedia player"
   homepage "https:www.videolan.orgvlc"
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "vlc"
 

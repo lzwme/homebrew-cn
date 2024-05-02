@@ -2,18 +2,18 @@ class Quotatool < Formula
   desc "Edit disk quotas from the command-line"
   homepage "https:quotatool.ekenberg.se"
   url "https:github.comekenbergquotatool.git",
-    tag:      "v1.6.3",
-    revision: "a32e83b5cc414a0a28d4e703f6012349a92c2d4d"
+    tag:      "v1.6.4",
+    revision: "f7a4bffa059cffc2fe9d69ebd16938b0b7948469"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3719605c12e295bafe7d4128b91483615bb7d77255d03174f20eaa53a8143872"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a370d1d4a0a8427ce965fb1f2a025744d2fb62ca9cee41a7def60659560dc978"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff62f0d5ca83dd416cf61bef0b9f95dfd56a9004dc0a53bd3b494764e3f33808"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ba0e322a5e78b925f96f4e02e245dc734e5d3e748789d4dc1fb64df3e93f5af7"
-    sha256 cellar: :any_skip_relocation, ventura:        "05023c93011d4d1ee44908f6897dc58119cb365fbf5fd8f35b1c66ff3086f08d"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f5e400588578a723c006145513aaf8bdb6f5db2d3e8ac7dd972369247e35d71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77effdde3aef3a46ff756aa1840b11e0e71d9597d7bf8fc41b047a79ebcce768"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6526697161dd7f4a432edb047f010283e683a34d2648d55b2e0d28f750bdcdfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be66711176d9fbebb56bd23ad61925ea8dbf7c40edebceefc47701896ac2e87c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "97d6fffe1d318dc38a759b924f8006406f2c27f9e1fda77138411945654c97af"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4700a82e8f820f45d499e6e22496edf5bc5412547e85d0a8a1f31ac8d4497fa6"
+    sha256 cellar: :any_skip_relocation, ventura:        "b31b9a0a5b0cc3dcdb4fa7fd4f44f7f85f311ac3b4b63e2be54bb532351730bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "610ea12aaa31ee33885fa0a4e3b141a46f1a7516d435eb8901703c3fe84c1673"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92491a82121014581bdd4687f8891f02fa99ac02fcb24df8e725f1b36145d003"
   end
 
   on_macos do

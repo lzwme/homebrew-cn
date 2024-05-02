@@ -1,4 +1,4 @@
-cask "keepassxc-snapshot" do
+cask "keepassxc@snapshot" do
   version :latest
   sha256 :no_check
 
@@ -9,6 +9,8 @@ cask "keepassxc-snapshot" do
   name "KeePassXC"
   desc "Password manager app"
   homepage "https://keepassxc.org/"
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   app "KeePassXC.app"
   binary "#{appdir}/KeePassXC.app/Contents/MacOS/keepassxc-cli"

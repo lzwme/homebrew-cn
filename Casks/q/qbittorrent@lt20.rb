@@ -1,4 +1,4 @@
-cask "qbittorrent-lt20" do
+cask "qbittorrent@lt20" do
   version "4.6.4"
   sha256 "be24d257b8c5b6d1f7aa77bbf96df64edbbf5991cfed0c81b38663a213f60694"
 
@@ -13,6 +13,8 @@ cask "qbittorrent-lt20" do
     regex(/qbittorrent[._-]v?(\d+(?:\.\d+)+)[._-]lt20\.dmg/i)
     strategy :page_match
   end
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "qbittorrent"
   depends_on macos: ">= :mojave"

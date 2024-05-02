@@ -1,4 +1,4 @@
-cask "mumble-snapshot" do
+cask "mumble@snapshot" do
   version "1.5.629"
   sha256 "d5e0f164e8f63ce79b0c2bc9d1e059213d80c3c5cd9e28c065657bc0594495ea"
 
@@ -14,6 +14,8 @@ cask "mumble-snapshot" do
       headers["content-disposition"][regex, 1].tr("~", "_")
     end
   end
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "mumble"
   depends_on macos: ">= :high_sierra"

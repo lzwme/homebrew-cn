@@ -1,4 +1,4 @@
-cask "smcfancontrol-beta" do
+cask "smcfancontrol@beta" do
   version "2.6.1"
   sha256 "d9dcd2c01e2583b74e14a6303ffd75d659dea7f99e1e42de4d8fcb0115cbcec3"
 
@@ -11,6 +11,8 @@ cask "smcfancontrol-beta" do
     url :url
     regex(^v?(\d+(?:\.\d+)+)[^ß]?i)
   end
+
+  deprecate! date: "2025-05-01", because: :unsigned
 
   conflicts_with cask: "smcfancontrol"
 

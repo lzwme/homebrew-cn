@@ -1,18 +1,18 @@
 class Rustscan < Formula
   desc "Modern Day Portscanner"
   homepage "https:github.comrustscanrustscan"
-  url "https:github.comRustScanRustScanarchiverefstags2.2.2.tar.gz"
-  sha256 "bae70efb414b8d809571773b8ba0240c5d06fe1199ffb187510cfabff936ac75"
+  url "https:github.comRustScanRustScanarchiverefstags2.2.3.tar.gz"
+  sha256 "6b2b7ffb070d4f1063e1bdbcebfc38d07cbd6c135b97bf027c870f43afb71c69"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "897cb7a5a57bbd15635a457fd9eef062be359f3d368fe4a56fb3e54c829c6852"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca34c76fa745276dcd37ef7f050a4b270b31f102bc00b1c08bd70138de6d07ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc8653d3c17f2a2420dcd195850842ebf9eef47d95fb6d52258756fa89a9cd6a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "14b70459393eb0dbe5cf4af396edd841319568ed40a7e8c4431aa7097b054c3d"
-    sha256 cellar: :any_skip_relocation, ventura:        "5006b76c6fbd2b71935866d0bc9eb5048c310e0fa0d7f4f42f21463b220fe25d"
-    sha256 cellar: :any_skip_relocation, monterey:       "ceb8aa30004479988b449d62c92480ca8b9248e0d38b75b4586b5790b7a7a55c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fee42af959aa18a053077ef08ed3b69c985567067655ed7ff5853cf99fbebf7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2892a0605ccb2d23425ff9933027691ed872c22e6333dc68cab0f33358b01c70"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd425e735ba83220770cad3a401da58d3acb8a9231788250fa846057da66e7d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8168f881920e51e08267c640bacd71e22366760c1f7a9d0094d8ed5a5b09e5cc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "63d9d1144a71bda348db83edc40a292018d49a748edccb3190ca846a93058a61"
+    sha256 cellar: :any_skip_relocation, ventura:        "51fdca266b17480753b1d355391e4ec6ebead52b978e850c1a613a5ef833a534"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc108677c64cc635e80b41fffcd744ad64a61399c83d737a58c0cee3d79d51b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea93b0049be88fd506879f7b96837507d31d6b506fa11f3a66d11240ea53279d"
   end
 
   depends_on "rust" => :build

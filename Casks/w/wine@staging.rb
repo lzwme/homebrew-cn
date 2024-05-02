@@ -1,4 +1,4 @@
-cask "wine-staging" do
+cask "wine@staging" do
   version "9.7"
   sha256 "8d5231668c862f7cffa8b5ff2d19d30b550859c13967bee4e62ffc7d309ca699"
 

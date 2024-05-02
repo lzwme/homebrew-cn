@@ -16,7 +16,7 @@ cask "wezterm" do
     end
   end
 
-  conflicts_with cask: "homebrewcask-versionswezterm-nightly"
+  conflicts_with cask: "wezterm@nightly"
 
   app "WezTerm.app"
   %w[

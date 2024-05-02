@@ -18,6 +18,8 @@ class ApacheArchiva < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8e45fbe48a08a1244ea72537e4eb0d550cd73f7977250a6b1b9d31bcd2a5b90"
   end
 
+  deprecate! date: "2024-05-01", because: :repo_archived
+
   depends_on "ant" => :build
   depends_on "java-service-wrapper"
   depends_on "openjdk"

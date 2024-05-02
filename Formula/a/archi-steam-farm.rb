@@ -2,8 +2,8 @@ class ArchiSteamFarm < Formula
   desc "Application for idling Steam cards from multiple accounts simultaneously"
   homepage "https:github.comJustArchiNETArchiSteamFarm"
   url "https:github.comJustArchiNETArchiSteamFarm.git",
-      tag:      "6.0.1.24",
-      revision: "457828260b319a2a67d8b4e5f535f04657e3f657"
+      tag:      "6.0.2.6",
+      revision: "efb726211381a781da086415a6414ae3038d98bd"
   license "Apache-2.0"
   head "https:github.comJustArchiNETArchiSteamFarm.git", branch: "main"
 
@@ -13,13 +13,13 @@ class ArchiSteamFarm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d052f8f039ba902e3d108574363e0c46c23b6f1c6567ddbf0b6a40c3ce65b63a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c3fd591b8550852c3d595c1d9d56042d7719843a5e0ccd062eb0f8c6c7b1c620"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23150b97a61e470ec72628f9b022b50366cfb03810bba69bc4554c52dc177de8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3e9541819e6dd5ce7aa963e751d8c173244adfbe91307cd4c11bb3307a3066b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc6997207478c5fef648a8c714bf32535e70ebd4a672130e86a829cb08199d21"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce79b515b32dbdd316749dac8d18becacd2d3ae1e45ba4271a1e9688b98a9c16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0936a709d92846d3b2376a0b65c8654056d590c4a7efc22da5b5a9eb8a552aae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22df7be8eddb4585f6ea16503f9b2c7815b43641745d020cb14927f813b70027"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f947392331652d81cd1c3f0b89a5e91023e0f56d4847e3e8a593f13db8e2d28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c41f591d6cd56a7c88f82eaec6bdb35736f67c9d00628a63ec55c428e68941ef"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3c3328e46124bf30ac7898cccbac78fba71bc7fdb7266b7ca786474a348fb28f"
+    sha256 cellar: :any_skip_relocation, ventura:        "53989b561ea69f58ad7b2770597cbc66391244ef5c52adcd9b26cf8833aa408c"
+    sha256 cellar: :any_skip_relocation, monterey:       "810551a481a100f89ad52014f9cfca01838a86f4eaf8ac1fe30f7dfbe063db8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d5672d8eb1c05389ecd81d22d8a6c7f5bf9d2c8774158c575e4698f2b2d3e5a"
   end
 
   depends_on "dotnet"
