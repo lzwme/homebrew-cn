@@ -7,16 +7,19 @@ class Opentofu < Formula
   head "https:github.comopentofuopentofu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c67dff3b09170e249173d9b445647f8fc2b29b20b5c8a2eef184b92881e4bc48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8cacd16d08e3a4da121f6fa1a77ea31952f7b1d403aa243adbdf0f1d35e4e2f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ad0f7bd53350334b4017e7304f4d5babc1b24f68e82d5f2897826b611985943"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2154802b34a13d5825823d414914abff97b0e8746d5a6ba03b01e0a00b7aa5b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "be67c3c47bdbcd92ebf7fbdd88a643084989e67396db5b21cff9ed350cb33805"
-    sha256 cellar: :any_skip_relocation, monterey:       "3b8bbe316fb5db08ad430a0861a136c96a996a3ab402e64b42479700cc699e5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9de3a269a6cdc0498cf18bf68310b4c85d6542fe71c84dee107116ebe2752b7c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "508b01d909ef6ff490ea4c61e168855ffd1813a288406fc1a7148b9554908c38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08445a4864b3a0a4a4f01fefef8959a864ee6359d3f10753d3e56882cdd27883"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e541ac96cd68979c8a2953338cdb9499b24924f330af8854c004f112fd3547f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b095806c5c78d1047187ba66c2ff4e1e96dc14629d4a594977588a76272d777e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d131b28b84d7d6a96f8904675ee500ac7ce75bbec280b9a39782fe0642a1058f"
+    sha256 cellar: :any_skip_relocation, monterey:       "ebfac9b6d16f9e3e987ddf07f3d4f47f3a81f24662954a933edc5a4b2aa2a0bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b28feb55a41bcb9fb6ece68d079611222804adc2a930af0e388bdb85970888a"
   end
 
   depends_on "go" => :build
+
+  conflicts_with "tenv", because: "both install tofu binary"
 
   # Needs libraries at runtime:
   # usrlibx86_64-linux-gnulibstdc++.so.6: version `GLIBCXX_3.4.29' not found (required by node)

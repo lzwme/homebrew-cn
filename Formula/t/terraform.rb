@@ -10,15 +10,14 @@ class Terraform < Formula
   head "https:github.comhashicorpterraform.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f43afa7c6970e1bc768f739829ee589e88fd2b9275f867c5d0be60369ce0772e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c6612f5b1c9921da6fa968698a1d657edaff64fbf62d53ae06850cc6897d8d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "021a01f961c82496855d015abe60a30c6917bd01140fbe674ca31ed7e8e878df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df60e68a8a1c88147221063845f7ed640414049b9b3ff84ea1e2f180d5dc0038"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ab2ee13ac9d5503f45838166c3d108b909d0420df9119b1fd5ea7c2fe5666342"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5ff87413adc57a4d70c629edac3c5f2c39ddec69771c18402f803023249abc3"
-    sha256 cellar: :any_skip_relocation, monterey:       "19dd31b33a7e2bdc5fac6c23b1fc62f66a9cf9e00ac724f1b01c43e740c65aa4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e85d465cbe14dfc77e0b7bdad6d986705822c631d2bdc087e6f9a795a03f0353"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67fee97d6db4e6fb1d53a3c0f5bb092b11cd41966a36078a5d846272d59bb8ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82a9dcb1351fa533ea106fe0222678c89814a42ce4939d17c01178f4dbff4713"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9f647f7ab0dc2c8878c6f4ab51bcd412197bc02e30389b15cc37de2b0dfaf8b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b14e9ffc5a5d154e5d6b58b94c18372c2f69c5ce1fd5735b351c1a1bac0187f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ce38d4ffe85f9530ba5911299d190f0a119610c4fd9fc6b30f57871647b61cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "f68fee2494570a785d854056484c6853421e592a7e58489bfdc692ef87913412"
+    sha256 cellar: :any_skip_relocation, monterey:       "b8cef4d46451e2780754cdf5c5510b8ed458025668a03beb1dd69c23b61396ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "390afc2492fa4ea2fc7dce55efa25b9ae09e060639e1dc3d9c160718893881b3"
   end
 
   # https:www.hashicorp.combloghashicorp-adopts-business-source-license
@@ -26,6 +25,7 @@ class Terraform < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "tenv", because: "both install terraform binary"
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
 
   # Needs libraries at runtime:

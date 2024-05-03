@@ -1,4 +1,4 @@
-cask "parallels15" do
+cask "parallels@15" do
   version "15.1.5-47309"
   sha256 "94df473f7bddfd1371f78fd32d7f7bb16e5c9a1d1b39751bed77c992b6d3013e"
 
@@ -18,19 +18,14 @@ cask "parallels15" do
   auto_updates true
   conflicts_with cask: [
     "parallels",
-    "homebrew/cask-versions/parallels12",
-    "homebrew/cask-versions/parallels13",
-    "homebrew/cask-versions/parallels14",
-    "homebrew/cask-versions/parallels16",
-    "homebrew/cask-versions/parallels17",
-    "homebrew/cask-versions/parallels18",
+    "parallels@12",
+    "parallels@13",
+    "parallels@14",
+    "parallels@16",
+    "parallels@17",
+    "parallels@18",
   ]
-  depends_on macos: [
-    :sierra,
-    :high_sierra,
-    :mojave,
-    :catalina,
-  ]
+  depends_on macos: ">= :sierra"
 
   app "Parallels Desktop.app"
 

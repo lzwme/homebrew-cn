@@ -1,28 +1,34 @@
 class Tenv < Formula
   desc "OpenTofu  Terraform  Terragrunt version manager"
   homepage "https:tofuutils.github.iotenv"
-  url "https:github.comtofuutilstenvarchiverefstagsv1.10.0.tar.gz"
-  sha256 "75350c7b10305a798b5d231c6f2350dbc45b103cc5e2fb749b29043324a85526"
+  url "https:github.comtofuutilstenvarchiverefstagsv1.10.1.tar.gz"
+  sha256 "1a5d1716627ff42daf1aa74050107b02667a9f0e41988821b8b1ebb890dca8f4"
   license "Apache-2.0"
   head "https:github.comtofuutilstenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "518a2e6c2816e7cbc8dc97a5a1774eb21507bf442d7f1af78d52587010986864"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af2f8d25a9c028572b88f8f94655197143ac64d576915b704a1125b01f5c555c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b25e9bbb488ccaa617cfd532bc84ec62cbf4f063e524630a271ed70b5690ee5b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1dbcd7e61047be2361b6596058bb5ce3d8d6c771341ec98c1fe4f5ada9d874da"
-    sha256 cellar: :any_skip_relocation, ventura:        "59b07694e8f85954a8f785b011c42b706166c7e7bdd44256246a63630686b8c6"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8be11fc3351ea3a12179ca23a6709fbcaead79f093a07eb67df0654298d5318"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbd6ce875aa07fd7ad281c0d774e79123263bb127ca81f0cbea7674d805a38d6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "875b36142e1f8f1add8ca851636b7eb717aba40a081bd7fa035e5bfc9a353342"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5bae38b4b4347cd80512f5fffa3c3d60ec560cfe3658de32b99156901ac33d6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "05e4999c93ed248d43c6c5246e65b6964788be9a707337ccacc5f2c522f2a62f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "becab5770fef53988e1bc14cca91abee0847912c366a396d2e117b26e4951791"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d50224e1d6f9406522f8789d9057d9628e6bb06b2d1c105c3bc99c10f376334"
+    sha256 cellar: :any_skip_relocation, monterey:       "d570719b4f0213e5cc8ff0c176d073e0e670193e01e9d0abd3e11ead668ef414"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35ac484b58e73af9a906de7cec3e9999dacc50778e5f5eb51f98a9c1aad04892"
   end
 
   depends_on "go" => :build
 
+  conflicts_with "opentofu", because: "both install tofu binary"
+  conflicts_with "terraform", because: "both install terraform binary"
+  conflicts_with "terragrunt", because: "both install terragrunt binary"
+  conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
+  conflicts_with "tgenv", because: "tgenv symlinks terragrunt binaries"
+
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), ".cmdtenv"
-
-    generate_completions_from_executable(bin"tenv", "completion")
+    %w[tenv terraform terragrunt tf tofu].each do |f|
+      system "go", "build", *std_go_args(ldflags:, output: binf), ".cmd#{f}"
+    end
   end
 
   test do

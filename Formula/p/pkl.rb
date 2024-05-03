@@ -6,16 +6,18 @@ class Pkl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "28923807747cf7b30687a22b9e6948bdec243496a7378bd7c8abe2ae5588c2a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94fc3fd41dbbbba218433b55cdd5da800f252a82432591fc10ae07c6ad5576d5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f37040a08d3a9033daf64a50cbfc22ba0b224b9e6d1723da815f8ea2971d1b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "edd860c4207a34d5c853e3f1f227f51838ef56ff5221e4bd94ef57af4d4ff269"
-    sha256 cellar: :any_skip_relocation, ventura:        "5bcd8a87301f1a8d3244f6ea32d2c0e6d801d5cccc584ce39a1f5e8191df9d9a"
-    sha256 cellar: :any_skip_relocation, monterey:       "eaa1b3838daf98495f4d8a50d905447f3ed4d04805d477d7d89a6a61daf1faf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb743b581d8eeb5b609c86a2c8926c95410e7fd2dceeecff7a6b80fcda40c401"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02ea7423366e9f1a0e42b4ad1eca3760d66e2b4f93cf2fa63fda171173c0b656"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d091b125838eb6a51d41d13d28b3145beb9167de90726173675c42b7bac113f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "235953bd9e72b4522c7bf0b0c556448e52fec962c9e8e5ca511a44e99d48191c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "766b2bbb4f4ec439a02abf26b7290ad893d63299f44a3b646d0aa8972b98258a"
+    sha256 cellar: :any_skip_relocation, ventura:        "99f8dc74e5feb287ae483e742a20e2be87e578d8c5d7508386e9abfa02feef6f"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4f736300847a85d17f14f7815a550ee842a3f2eacad44c15baa0c5ab98b87a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a45d2a4de3b038bffb36eb976ed107f440f65c10b3ba15506d97a6868f653caf"
   end
 
-  depends_on "openjdk" => :build
+  # Can change this to 21 in later releases.
+  depends_on "openjdk@17" => :build
 
   uses_from_macos "zlib"
 
@@ -33,7 +35,7 @@ class Pkl < Formula
   end
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
+    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
     # Need to set this so that native-image passes through env vars when calling out to the C toolchain.
     # This is only needed for GraalVM 23.0, which is only used when building for macOSaarch64.
     ENV["NATIVE_IMAGE_DEPRECATED_BUILDER_SANITATION"] = "true" if OS.mac? && Hardware::CPU.arm?

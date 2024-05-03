@@ -4,7 +4,7 @@ class Bottom < Formula
   url "https:github.comClementTsangbottomarchiverefstags0.9.6.tar.gz"
   sha256 "202130e0d7c362d0d0cf211f6a13e31be3a02f13f998f88571e59a7735d60667"
   license "MIT"
-  head "https:github.comClementTsangbottom.git", branch: "master"
+  head "https:github.comClementTsangbottom.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

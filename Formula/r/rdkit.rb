@@ -1,10 +1,9 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https:rdkit.org"
-  url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_03_1.tar.gz"
-  sha256 "5afe78c3d3358fec83f891eb822c0ad07a40ce3709da58071892bce1ea56585b"
+  url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_03_2.tar.gz"
+  sha256 "63d33aa44dba1f37a303f6d125cb02bdb0755fb65ac0f0c75b56d775798605cf"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
@@ -16,13 +15,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b43ca18ec69c2eabd8778920ead23f64f8f06b2738b5d7967758fb3d180ec23b"
-    sha256 cellar: :any,                 arm64_ventura:  "cbd4222866bd82dff381ee64857628c0bc8a390594ce5a510f8749a7d103c151"
-    sha256 cellar: :any,                 arm64_monterey: "ead6f72dff7cd0f72a45ff1647049f23356fc03a835ce3b09f1cd7845bc86de0"
-    sha256 cellar: :any,                 sonoma:         "9367ef0558ad097e9d8d86c9daad76cca45fce31b77783e32b03d74ef94821bf"
-    sha256 cellar: :any,                 ventura:        "58ee3299c00d8cc7765000a195b67f558e253dc470ac237a240d5f3083a85af7"
-    sha256 cellar: :any,                 monterey:       "c34283ce04cb719eb1d7ffbb9dfcb396e66ad36883c6dbcb5b5a5c0cbe502879"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f8ef410df72aa4f70c886d5377f931ab4983e706e061d3cec77acdf9cab474"
+    sha256 cellar: :any,                 arm64_sonoma:   "69388040f0d139fe483ccbc71f4ded4032b3b25a8d2278f8c79dc03c09e06ab4"
+    sha256 cellar: :any,                 arm64_ventura:  "ad4910d2ba88d43e6938a6b6a5c7c38f7558fdadcda4bbe04dbbf34984505421"
+    sha256 cellar: :any,                 arm64_monterey: "6447582e9d36233e1b179cffdce1604e666c1e888282e49e24b944b46fec4e4e"
+    sha256 cellar: :any,                 sonoma:         "54fb38daf2cfe571facb762d8da391763fd1e6908c6fdaac8d56aa1006ad63ef"
+    sha256 cellar: :any,                 ventura:        "3e8780ae12a325a6fd82754eaa18a6775187d327db383bb0967fd66ffa55d159"
+    sha256 cellar: :any,                 monterey:       "46167502a42313c835f243d346d15ce1ac3ae986b78c5f746e3906b7062008bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0109b5ac1d4df5b9d61a8732d2b8c46988f2268d98fab95f05826451c6a727e6"
   end
 
   depends_on "cmake" => :build
@@ -36,13 +35,6 @@ class Rdkit < Formula
   depends_on "postgresql@14"
   depends_on "py3cairo"
   depends_on "python@3.12"
-
-  # Fix build with `boost` 1.85.0 using open PR.
-  # PR ref: https:github.comrdkitrdkitpull7389
-  patch do
-    url "https:github.comrdkitrdkitcommit407ef993981de44c72efa7df11a2cca9354df4c2.patch?full_index=1"
-    sha256 "b491cd6445ae167fdd878b173ac7d9b4ce17c674ecdf1dc510253d2d74643d24"
-  end
 
   def python
     deps.map(&:to_formula)

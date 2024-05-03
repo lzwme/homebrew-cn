@@ -1,21 +1,19 @@
 class Qthreads < Formula
   desc "Lightweight locality-aware user-level threading runtime"
   homepage "https:www.sandia.govqthreads"
-  url "https:github.comsandialabsqthreadsarchiverefstags1.19.tar.gz"
-  sha256 "2790382991c0755d752354b189aa019076c80ebed7f4c5c045d14bd57c9eb7ac"
+  url "https:github.comsandialabsqthreadsarchiverefstags1.20.tar.gz"
+  sha256 "b25ccd357575080103b2bec9358ea2f7f4ed7f60a29bf07fa46f96625bd635bd"
   license "BSD-3-Clause"
   head "https:github.comsandialabsqthreads.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3e6aa2e908bdd99012e105a838839c1d3f5e42b6ffb6d2418331317412a5a20b"
-    sha256 cellar: :any,                 arm64_ventura:  "33ab2dcf7b44c16fd51b202fcf036284c42b8b43d227e253c8124db7651d04f8"
-    sha256 cellar: :any,                 arm64_monterey: "b56492f664bce061890d3ea8bce840759225fa6f3be04ae8a7c8dc13c6ff84f7"
-    sha256 cellar: :any,                 arm64_big_sur:  "d644d6ce04ded6dc63ad7155bf4bc72ea29ffbdb9e58295ef2fb3d6860b91a9a"
-    sha256 cellar: :any,                 sonoma:         "5fc777c6d6e5f0a292b76d93b659c40a4de2251bf1b79ad0860699002e4bd2f5"
-    sha256 cellar: :any,                 ventura:        "811a8680f91d8d9a2e28a0fb3a65c6b0ba8af40e6a5c7ff326f91b95553ae0c7"
-    sha256 cellar: :any,                 monterey:       "0b17b1bcf5c89afc9ec761261f34689dc2d40e0eacfb7ab11c28debc7444ac77"
-    sha256 cellar: :any,                 big_sur:        "b28f76f53caeeff2a109e45c9f1f846f7248ab6939db37e4aaef01745860bb85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0f6d389a938d52561df8bafae07584d964af38e587f824a9c7f32e5d4f43462"
+    sha256 cellar: :any,                 arm64_sonoma:   "545fad655e338500296289258178ffc562640214acaedf1b39ab4157e6c46409"
+    sha256 cellar: :any,                 arm64_ventura:  "a97ca88a27f0b3f946190a5c1576835b9025514424826d9feafdabffb2a1775f"
+    sha256 cellar: :any,                 arm64_monterey: "47ebb325aa47fa06c2d4e0aff9ba33d5bc6eed04f5dd5c83e547fb7faf7d73df"
+    sha256 cellar: :any,                 sonoma:         "09f77cc7b4020f5d64fa9917e997a6ebbe8e6ad7bdc89dee6462ad23c6470220"
+    sha256 cellar: :any,                 ventura:        "eecdd4f6ea3dec73452873f4b052c819722619dcb58782e93a1b424f40a16d9b"
+    sha256 cellar: :any,                 monterey:       "d50d079f076921891e52a22a69d120d8af0a201c12f20517ac10b6ddc60500f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c206ed5bd68705edea06cda0bd96e703f3d46bd91649115a31b8f62d88dc593"
   end
 
   depends_on "autoconf" => :build

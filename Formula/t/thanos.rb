@@ -1,18 +1,18 @@
 class Thanos < Formula
   desc "Highly available Prometheus setup with long term storage capabilities"
   homepage "https:thanos.io"
-  url "https:github.comthanos-iothanosarchiverefstagsv0.34.1.tar.gz"
-  sha256 "511090dcc7e6a0a8fb4e7d9b07aa9e0f16a58861cbb86f04dcad2758816f3295"
+  url "https:github.comthanos-iothanosarchiverefstagsv0.35.0.tar.gz"
+  sha256 "a1da0b07de9afc5112a0212fa241995855bbf5fc090e36b9b51941dd814984b4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "601aebece1734f6cc14b63907e05b6a5a17ddd9583162f1cb367635299b27538"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "955fbb8ea5d58536284d461b7211622171999c7c414aaad4dca9f8fd00234f7a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c4b6a99199242735b51fa1611414b44f39c1a9b11d02d9cee743c670ea0df5d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "449a0d309aa17936ef7878f870b7ab169ba13e4d5f21f97cf43f88c83b5e11f0"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc2af5e0eab2050ef22b60e0d99242558a82829022539a2c6fed1b1d1ed4267e"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef084fea3a456936caa01f783b70f6b8ab170f921034c1ac6041b8e0dd7ba60a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ffc4bb1793ec9b6a778474c9dc441ee8abc73c3fca6a04f77309721e8efa8a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26f5f6bc72852a37ccc6a3711d5f552971ec2cddd058e3e701253b7b2490d803"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7162e0f223aef7c191389c92446a35c09899daed24718dfe01a94ef3a87e5554"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "563654b569186424b6728da71f2e5e9ed03fdfad712ce267a3abc6e562f9318d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7d2c112db1aed96f64df971ad2ba169b989fa7b4f4973ae855386bcd032b68e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "e93aef137d35df016bf12a7ff6c4baaf3aa08cf351e3c1f9900b6d649b2efdf2"
+    sha256 cellar: :any_skip_relocation, monterey:       "08028767f8d1cea40159b0fa77a64a6953169dc8f7f110d5475b79b4b822836c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b32f64502b195f1c44dc07084f1765d800b53515f18422380713f9d9f910c8e"
   end
 
   depends_on "go" => :build

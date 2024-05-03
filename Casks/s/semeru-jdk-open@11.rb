@@ -1,4 +1,4 @@
-cask "semeru-jdk11-open" do
+cask "semeru-jdk-open@11" do
   arch arm: "aarch64", intel: "x64"
 
   version "11.0.22+7,openj9-0.43.0"

@@ -1,19 +1,19 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https:traefik.io"
-  url "https:github.comtraefiktraefikreleasesdownloadv2.11.2traefik-v2.11.2.src.tar.gz"
-  sha256 "48a8b8a247991db02d4e3f9aac6db512eaea265d22f0f407ccb038d72d02a106"
+  url "https:github.comtraefiktraefikreleasesdownloadv3.0.0traefik-v3.0.0.src.tar.gz"
+  sha256 "6445c42c073c2d6e0314083b98bbdbb8510d4c8a792278e8b55dfb4aa25b3c7b"
   license "MIT"
   head "https:github.comtraefiktraefik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7adc3438f44b0651e7a9860a72a238b0fc06d96c86c9c2cb6baaeaa0d6c50aa6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf4a2cfa89cae632fad7b5313499fb7cceee216a91202039cd6e078c3ef299e5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b838ceda92d2f6cc40fa5f106e586b968217ca51c3daecf74f8455fc29f3dac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2eef486e2b98934be5d9760dd3630f90d6c033288618074c509e2f2c3f355105"
-    sha256 cellar: :any_skip_relocation, ventura:        "50272ef783f805a4c4aeb4dd261bfece51574acb2474910d2c335c639d39bddf"
-    sha256 cellar: :any_skip_relocation, monterey:       "153df3ebb05cca96aadaeed8dedc2234da9f7b42dcdd6df52096476c12a6c1f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e23c47320be80bb22abfe03a439f5f2b4a05c1aa116e0924c8ab039a35cfc8d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da5f7fd5d4e47fd22bd8fddf5c3413b9c96752f74a6c5975406aec80542efd62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e5307ec70ecd330df9e417176f38049639ecbda5f87344658f77bd46ff83b4c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ed31206b62ea66efb5f72e6d92eec7266079c6220c0e418fa938b05f76276d5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c8090a90e2ade3e628dd4d25a8793773a262f790f23ac37f8534cc5b98f1c1b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "81e16deee020fa95cda3065f725ec8e43cbf5ead07bc5033a9ea4891888a125b"
+    sha256 cellar: :any_skip_relocation, monterey:       "3aaab26048462510269059cb24cdff6d96bdb0bc2a68735ad2d56d7649e4bbea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f76ef44e89c40a8eb2369f84c17d69066aa7c0e9099099492f67a329bdfdf737"
   end
 
   depends_on "go" => :build

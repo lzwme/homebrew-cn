@@ -1,4 +1,4 @@
-cask "macfuse-dev" do
+cask "macfuse@dev" do
   version "4.7.2"
   sha256 "cd85131f1329c3f5d8bc2324bd51cb25dbf38125feb298693f9278f2872f2dd2"
 

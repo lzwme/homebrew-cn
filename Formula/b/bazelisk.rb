@@ -5,16 +5,17 @@ class Bazelisk < Formula
       tag:      "v1.19.0",
       revision: "c7c6c19799ff408c48bdce6b7557217ad0050b17"
   license "Apache-2.0"
+  revision 1
   head "https:github.combazelbuildbazelisk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd6823ba3af14f849242f972c28717afa5d1f4539a20c65d44f835b32570800f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40b91a13c925c9464df387d3f25d3968bc694b6de8a777ad47cce4b6a66862d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d7a20c0c5863ee544ad425344008cee4a70376dd0caae524c80e94cec78b559"
-    sha256 cellar: :any_skip_relocation, sonoma:         "020026058eaa3dac5787a4d9fe717417cad60ebdef9504733b70e643b091787b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d26322a5eb69084ccfd3d2e81f8d3b33825b352f6d07c845ec42d8277a24cfd0"
-    sha256 cellar: :any_skip_relocation, monterey:       "dace3a991562730bd3afea279b62efdb017e91c6f1108813b417facf0da436fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecd8e5add73f7190eb40a7f28fa8ac38bb3f01852930c07f0548e8568bcbdee5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a805523eac39219f2b2f90ad6ae973c1ce875e4e84a5f7449bb0a0d765ae03e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "72882718d9877102534bc6dc65a5b19c0afd9d58870ae3609ee76e3dd3e5652e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e29cc90c8eeb66ee9aa675bf478d29786584c086f00101887a172219229c20f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1ae0d46f74ad83aceeb3c0c97e04fa8868186c80bf25fdc3e3dbf32468eb2984"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d6ba66229c71d81fe7968660b5cafef0e6fd0efe51817064b99bae685fd8036"
+    sha256 cellar: :any_skip_relocation, monterey:       "cd86ec48f168250f1e52884b142fc61ce28a7f2da34f1570cc3c9d381718676d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b20a46ae1daf5e0a2284c97d757ac247d4aa5ef11647c370b2e5f4be703b7f52"
   end
 
   depends_on "go" => :build
@@ -27,7 +28,7 @@ class Bazelisk < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.BazeliskVersion=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.combazelbuildbazeliskcore.BazeliskVersion=#{version}")
 
     bin.install_symlink "bazelisk" => "bazel"
 
@@ -38,7 +39,9 @@ class Bazelisk < Formula
 
   test do
     ENV["USE_BAZEL_VERSION"] = Formula["bazel"].version
-    assert_match "Build label: #{Formula["bazel"].version}", shell_output("#{bin}bazelisk version")
+    output = shell_output("#{bin}bazelisk version")
+    assert_match "Bazelisk version: #{version}", output
+    assert_match "Build label: #{Formula["bazel"].version}", output
 
     # This is an older than current version, so that we can test that bazelisk
     # will target an explicit version we specify. This version shouldn't need to

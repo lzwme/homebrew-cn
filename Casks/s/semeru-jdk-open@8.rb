@@ -1,4 +1,4 @@
-cask "semeru-jdk8-open" do
+cask "semeru-jdk-open@8" do
   version "8u402-b06,openj9-0.43.0"
   sha256 "accf5cb3f4d67a0afdd59f3cd295b78b0cb1ad869db3079c3777c04943b1cbbf"
 

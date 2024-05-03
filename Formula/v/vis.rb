@@ -1,20 +1,19 @@
 class Vis < Formula
   desc "Vim-like text editor"
   homepage "https:github.commartannevis"
-  url "https:github.commartannevisarchiverefstagsv0.8.tar.gz"
-  sha256 "61b10d40f15c4db2ce16e9acf291dbb762da4cbccf0cf2a80b28d9ac998a39bd"
+  url "https:github.commartannevisarchiverefstagsv0.9.tar.gz"
+  sha256 "bd37ffba5535e665c1e883c25ba5f4e3307569b6d392c60f3c7d5dedd2efcfca"
   license "ISC"
-  revision 1
   head "https:github.commartannevis.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "7ccde2ec515147e2dfa391aa9c13e02c56d9100ddaa1fe0648d0a44256baeee6"
-    sha256 arm64_ventura:  "c7bd78e7dc1d66f187844ec7261fca802f5b65157bd15a93688d0b888a07b63c"
-    sha256 arm64_monterey: "5a474c5a0f86dfa5c2deaa03ff4253606c8b6e332e506cbe5bf38c73c119e026"
-    sha256 sonoma:         "dae6e06a6083b3ec751df19b838dcf589cf5a5409e86b7dae41419f7c01f82c8"
-    sha256 ventura:        "0e2d2df60725dbb0f281e833a49f32b84ac37adfc001c9083919f866f590c90f"
-    sha256 monterey:       "537cabe01b0048f555cc62c7e7336ec5175fa3aa041f32270d6500b48e0ac007"
-    sha256 x86_64_linux:   "c1e9611e3b0342cd639047550c81622218c4ed2df4dd6094ca07ca5d8d9bd335"
+    sha256 arm64_sonoma:   "04a4e8d45b5442ffb3397012eccde1c747b249ae42e8468b24d557dd15ea6081"
+    sha256 arm64_ventura:  "ce1c6d2521a9ab11b32316850690289887a739b2b88a9809b1678682b586fc26"
+    sha256 arm64_monterey: "aeb76e19c965bce4434207059279cae63e30be3e51e933bee8ff52f579b8035d"
+    sha256 sonoma:         "77bfde98fc76bf93d057923482bd1e9b3d538ef8c3875f4b9b579a63cbb75d22"
+    sha256 ventura:        "b27829afe0c6cbb2792f3340ac3605caa16c68677764a1c586879f5387064ca4"
+    sha256 monterey:       "30d9272d1e6e00b8b87c61157e157df124a32c265d4f8befc52df8ac8e2545fb"
+    sha256 x86_64_linux:   "6f7e0f61479a8c931556361f8c0dd42a913211ddff0a8b8dfb6b2240f6fb2c6b"
   end
 
   depends_on "pkg-config" => :build

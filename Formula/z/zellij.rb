@@ -1,18 +1,18 @@
 class Zellij < Formula
   desc "Pluggable terminal workspace, with terminal multiplexer as the base feature"
   homepage "https:zellij.dev"
-  url "https:github.comzellij-orgzellijarchiverefstagsv0.40.0.tar.gz"
-  sha256 "afb15afce6e37f850aff28a3a6b08abd78ef26a1c9fa3ed39426ef0853154438"
+  url "https:github.comzellij-orgzellijarchiverefstagsv0.40.1.tar.gz"
+  sha256 "1f0bfa13f2dbe657d76341a196f98a3b4caa47ac63abee06b39883a11ca220a8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5cfa780e9961a12a40ef0ef61444191caaa647107a2de64ef07f69208b21a9a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "923b982956dd8f121e1890b4ffc9b74d8664239afc8a35340d9c47dbf35badbe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "65b95a068110089e752c072fe69faa6a695065b5f0caa6224d1a261530c8e33d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "67af8eae9d7654516ed745e3f6f5b755e330f336f821b9f78640ade04bc36c50"
-    sha256 cellar: :any_skip_relocation, ventura:        "4157b6e39ba2082ebdbde2e618d2b3b83a19035f09ea39d68e34bbceb44dce89"
-    sha256 cellar: :any_skip_relocation, monterey:       "0822e08fd06aebadb95c96340d455ab43c81a47d58b92d0ef0e0f5fe963f5ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7db109cc2e706ce397f844850c8ddcb335e5626277bf2d9615d9ac5e95786303"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2183f0c3592b2fb0c9874c94870a3e303c2901f28e2370fb8e71d89625e4ef4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80d0688a3f2fa76ea9d9417bd9db0ecd95932e9280d34471de8937e184116988"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1071a258de8cc07429de27543aae2906b6a84cef28cf35992f9c4cf09ceee350"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9e32e1561b876067d7b022b50fdc69620dcd4d3697a765f9f5f352b215146139"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3edbd1ce4233a65b7258cb4f6f21e51a055eeae09806ebcead11a3a92a5c0de"
+    sha256 cellar: :any_skip_relocation, monterey:       "d27b158af0acb038d5712603519e9ee8ebf322873a6cbd7c3f3c686059f9b08f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b21f2df5cc8c18fc9cdfc7b819c76b24a8a57710872dcee8a10e2c5a03e80712"
   end
 
   depends_on "rust" => :build

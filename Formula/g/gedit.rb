@@ -5,6 +5,13 @@ class Gedit < Formula
   sha256 "c0866412bad147ebace2d282ffcbb5a0e9a304b20fd55640bee21c81e6d501ef"
   license "GPL-2.0-or-later"
 
+  # gedit doesn't seem to follow the typical GNOME version scheme, so we
+  # provide a regex to disable the `Gnome` strategy's version filtering.
+  livecheck do
+    url :stable
+    regex(/gedit[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "8f2cfff223961d0c42ef7b773cd7c340bb97c348ab86080b01f72c311c066c41"
     sha256 arm64_ventura:  "8a5402472280c1148b2aedf23ea342d65f3dd4a2a939f05be224742374b25d56"

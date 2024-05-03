@@ -1,18 +1,18 @@
 class Libzim < Formula
   desc "Reference implementation of the ZIM specification"
   homepage "https:github.comopenzimlibzim"
-  url "https:github.comopenzimlibzimarchiverefstags9.2.0.tar.gz"
-  sha256 "979ad974d2dbd7ed36241cd3da8abde394bfb6f1973e5f47c2ac6cb6d7af3a07"
+  url "https:github.comopenzimlibzimarchiverefstags9.2.1.tar.gz"
+  sha256 "4d1579cbb902aef46e561c3cd4cf2ed74148d84e1c79d9e42b4892c882fce88b"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "c03e7db8b12ae0e52ad2931f701e0178d305fa2069d2fac26fc234eb52fcd864"
-    sha256 cellar: :any, arm64_ventura:  "7c6a36017202000f9c601837699a18b76edec4466d5b36275cf1c2bd286b4f16"
-    sha256 cellar: :any, arm64_monterey: "0d8f510ad6136b4240fee2b62cbf81f1cebd5854d3e5ddc48bf18dd33c3aa6d9"
-    sha256 cellar: :any, sonoma:         "145ac1f9abcc2ae950131a894948075cbb3b998f8f3d9adbd16f15896d4f46b7"
-    sha256 cellar: :any, ventura:        "c158e80699e5f3bc7bbb0b547d10a224d7345bbc3cf4aa46f0bfd58746c2bda3"
-    sha256 cellar: :any, monterey:       "223071d8598badfd7f68742f8b0a93f5c4ffa57f3b05edc814b74a2a73dc2e55"
-    sha256               x86_64_linux:   "9ac9dcc360e30b73447816bf6bdf1d6008b06ea4a62c2b103c2daa9a107d3d45"
+    sha256 cellar: :any, arm64_sonoma:   "38900f62ca1c3c4fd7c1f72dbcaf9a84e62de1ab83a29596082e4d97fc1f6373"
+    sha256 cellar: :any, arm64_ventura:  "ebd39e65fbe4f2766d89d0ce446046c37c1b9512de74e1b5499538c5141bf22e"
+    sha256 cellar: :any, arm64_monterey: "66dc4702753c800f10cd4d5c3211ab40e5962e513d6866c99227d77fb00131de"
+    sha256 cellar: :any, sonoma:         "e65ca74708e0d1fcaf32f8124076ac54f0441282915eb6b459b40d2414d39b58"
+    sha256 cellar: :any, ventura:        "c04df34f2a0d287fbeb38343e388f839b773181a583b8b98ac8e350f807547d4"
+    sha256 cellar: :any, monterey:       "726aa4a9ee929e6628920c8d71599652fe6686b9baed71d7f9f526d066d36edf"
+    sha256               x86_64_linux:   "646387692490e899b515ea4fa89df71e5db44a4c5f16cd2dac26362e2e3165bc"
   end
 
   depends_on "meson" => :build
