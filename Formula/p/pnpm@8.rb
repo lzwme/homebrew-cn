@@ -6,6 +6,7 @@ class PnpmAT8 < Formula
   url "https://registry.npmjs.org/pnpm/-/pnpm-8.15.8.tgz"
   sha256 "691fe176eea9a8a80df20e4976f3dfb44a04841ceb885638fe2a26174f81e65e"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmjs.org/pnpm/latest-8"
@@ -13,13 +14,13 @@ class PnpmAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ea3d022f62b7c059c40cd981745b4324a14629f9970044328cccc25c527a433d"
-    sha256 cellar: :any,                 arm64_ventura:  "ea3d022f62b7c059c40cd981745b4324a14629f9970044328cccc25c527a433d"
-    sha256 cellar: :any,                 arm64_monterey: "ea3d022f62b7c059c40cd981745b4324a14629f9970044328cccc25c527a433d"
-    sha256 cellar: :any,                 sonoma:         "9e9b7d9c654a0a5c5b3e820f105e05470319df38f85c184382c77cf63f1fc725"
-    sha256 cellar: :any,                 ventura:        "9e9b7d9c654a0a5c5b3e820f105e05470319df38f85c184382c77cf63f1fc725"
-    sha256 cellar: :any,                 monterey:       "9e9b7d9c654a0a5c5b3e820f105e05470319df38f85c184382c77cf63f1fc725"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0583db90f4ca28448506dec0cbce2d21b9d57fd157eed46ae985a1528f4244c3"
+    sha256 cellar: :any,                 arm64_sonoma:   "6e5f78f2649e82f81a52b64155c981710d582aa8ce3431e9acdc029e6b338bf5"
+    sha256 cellar: :any,                 arm64_ventura:  "6e5f78f2649e82f81a52b64155c981710d582aa8ce3431e9acdc029e6b338bf5"
+    sha256 cellar: :any,                 arm64_monterey: "6e5f78f2649e82f81a52b64155c981710d582aa8ce3431e9acdc029e6b338bf5"
+    sha256 cellar: :any,                 sonoma:         "02606673fcfd5d5a8bcfcfeac8fd4fa53e778fab5d71044cfdc4f7efe6b947a4"
+    sha256 cellar: :any,                 ventura:        "02606673fcfd5d5a8bcfcfeac8fd4fa53e778fab5d71044cfdc4f7efe6b947a4"
+    sha256 cellar: :any,                 monterey:       "02606673fcfd5d5a8bcfcfeac8fd4fa53e778fab5d71044cfdc4f7efe6b947a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dd87bf2b969e693605590e9689a126d6653418541b5a70bd4b283717b1e3d83"
   end
 
   keg_only :versioned_formula
@@ -32,8 +33,10 @@ class PnpmAT8 < Formula
     libexec.install buildpath.glob("*")
     bin.install_symlink "#{libexec}/bin/pnpm.cjs" => "pnpm@8"
     bin.install_symlink "#{libexec}/bin/pnpx.cjs" => "pnpx@8"
+    bin.install_symlink "#{libexec}/bin/pnpm.cjs" => "pnpm"
+    bin.install_symlink "#{libexec}/bin/pnpx.cjs" => "pnpx"
 
-    generate_completions_from_executable(bin/"pnpm@8", "completion")
+    generate_completions_from_executable(bin/"pnpm", "completion")
 
     # remove non-native architecture pre-built binaries
     (libexec/"dist").glob("reflink.*.node").each do |f|
@@ -51,7 +54,7 @@ class PnpmAT8 < Formula
   end
 
   test do
-    system "#{bin}/pnpm@8", "init"
+    system "#{bin}/pnpm", "init"
     assert_predicate testpath/"package.json", :exist?, "package.json must exist"
   end
 end

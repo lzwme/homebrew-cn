@@ -1,18 +1,18 @@
 class Rain < Formula
   desc "Command-line tool for working with AWS CloudFormation"
   homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.8.5.tar.gz"
-  sha256 "59b3f60572ef108e5f651560c53be9d1ab509cbfcdc40a26cc1e1dd0cd3ce634"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.8.6.tar.gz"
+  sha256 "67bc01d96245bdab4a4045554674e549896de45e2a4744cac9ccb02850fedb35"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78d2d7ba43c3e94c2d6975d13eec07676e1bf738876b69acd4c70fb0f5a9025a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02019e129c61ba507fae801d883caf36a0fba93097ffeba6e685fd3157002cc4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "994e2a7465ad6965dfc641d6e58b3cd97af96c78d9a8b13c15b9c0cda858a17a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b98d1326a6f4ff30eeb84dd412f78e7f667d8595cb9fcbc333dea80a2a92800d"
-    sha256 cellar: :any_skip_relocation, ventura:        "95ddfc58470c7600eaf7045024d1989a057a10462fd0cd62d0b9438ed0897ecc"
-    sha256 cellar: :any_skip_relocation, monterey:       "9ef88e3c55e701312e4649362c8fa38c8657718660c6505676a9920a4e2f70a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2914406942eebfca295fe2a6f69036ec7a345bcfeadcd82753cdae54b2bc6847"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3876e6f717442bb70dc5cf52575c1b700188dd351db4a28cfd170d870f364a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9baae90e3cd9608265ff9e0a26245b4591c61c502a66cad436c91f05c24a7787"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab88b6195d91a55cc26fc0023642c5df164d136b20fe285f77fba515ef4f451a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a596e2a22118857abb54b18a047d42a16f6a4c87689dd5741c740b7608b93c3d"
+    sha256 cellar: :any_skip_relocation, ventura:        "b23b73076349f064fc7e42d422dbe124cc668ca7257b412ea29d3b82a3a07afe"
+    sha256 cellar: :any_skip_relocation, monterey:       "3a82392159997e49657efde3578ce7c150f7ccd917fb93be453d516b5d96a8cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bcf377e7c51314276be817a2d6140a429f67eb752ff7c14c683fd741aea482b4"
   end
 
   depends_on "go" => :build

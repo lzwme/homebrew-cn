@@ -14,7 +14,7 @@ cask "macfuse" do
   end
 
   auto_updates true
-  conflicts_with cask: "macfuse-dev"
+  conflicts_with cask: "macfuse@dev"
   depends_on macos: ">= :sierra"
 
   pkg "ExtrasmacFUSE #{version}.pkg"

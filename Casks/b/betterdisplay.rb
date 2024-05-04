@@ -8,8 +8,8 @@ cask "betterdisplay" do
     end
   end
   on_monterey :or_newer do
-    version "2.3.1"
-    sha256 "0355ec890e2246b4abd85c389039a80ed52e69020c020688b37b2527691893d8"
+    version "2.3.3"
+    sha256 "f6cee2e1695a6afb7fb4bed4a0f166064f4a791a3befb7236f84b85a87201596"
 
     livecheck do
       url :url

@@ -639,6 +639,7 @@ Homebrew-homebrew-core/Formula/c/cadubi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cafeobj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caffe.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cahute.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/caire.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cairo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cairomm.rb, Homebrew/homebrew-core, 0
@@ -1672,6 +1673,7 @@ Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fargatecli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fasd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastbit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastfec.rb, Homebrew/homebrew-core, 1
@@ -6292,6 +6294,7 @@ Homebrew-homebrew-core/Formula/t/toast.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todo-txt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/todoman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tofrodos.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tofuenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toilet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tokei.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tokyo-cabinet.rb, Homebrew/homebrew-core, 0
@@ -12010,8 +12013,10 @@ Homebrew-homebrew-cask-fonts/Casks/font-carme.rb, Homebrew/homebrew-cask-fonts, 
 Homebrew-homebrew-cask-fonts/Casks/font-carrois-gothic-sc.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-carrois-gothic.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-carter-one.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-cascadia-code-nf.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-cascadia-code-pl.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-cascadia-code.rb, Homebrew/homebrew-cask-fonts, 1
+Homebrew-homebrew-cask-fonts/Casks/font-cascadia-mono-nf.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-cascadia-mono-pl.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-cascadia-mono.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-caskaydia-cove-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1

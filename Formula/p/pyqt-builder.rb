@@ -3,20 +3,19 @@ class PyqtBuilder < Formula
 
   desc "Tool to build PyQt"
   homepage "https://www.riverbankcomputing.com/software/pyqt-builder/intro"
-  url "https://files.pythonhosted.org/packages/af/9b/3ee5d8f46b41e81914ee64795da3469782a5c69d67bf7efba82770f81f00/PyQt-builder-1.16.0.tar.gz"
-  sha256 "47bbd2cfa5430020108f9f40301e166cbea98b6ef3e53953350bdd4c6b31ab18"
+  url "https://files.pythonhosted.org/packages/57/09/11d09b4140932960a4e232e04858ceda19d821f8deb350605934f2251c87/pyqt_builder-1.16.2.tar.gz"
+  sha256 "bf723cdb7cd23d2512e2acda7bc6b81f00fb05ccc5e9a8846bd34d47514cddb9"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  revision 1
   head "https://www.riverbankcomputing.com/hg/PyQt-builder", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0eb77d1bf8986edf6f436f5ee4abb665336a462c510bdfc476d322b5d7acd0ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0eb77d1bf8986edf6f436f5ee4abb665336a462c510bdfc476d322b5d7acd0ad"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0eb77d1bf8986edf6f436f5ee4abb665336a462c510bdfc476d322b5d7acd0ad"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1c627ff572c22f859d49a1be3eae3ee4fbf9ebed5cf4649e66d335a0ffb0a478"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c627ff572c22f859d49a1be3eae3ee4fbf9ebed5cf4649e66d335a0ffb0a478"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c627ff572c22f859d49a1be3eae3ee4fbf9ebed5cf4649e66d335a0ffb0a478"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46afefe59d1147ed087c9ef19e705e56951865c25eb7fc73fd158bbcba4dc35d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aafeb8bb22373ace45fc2d063ab271a70b90917a5dcb8fef2c741e72b7383697"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aafeb8bb22373ace45fc2d063ab271a70b90917a5dcb8fef2c741e72b7383697"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aafeb8bb22373ace45fc2d063ab271a70b90917a5dcb8fef2c741e72b7383697"
+    sha256 cellar: :any_skip_relocation, sonoma:         "dfc6aa9124c647c925b34481f4819a39847f991e4683577a0251837bff8cd802"
+    sha256 cellar: :any_skip_relocation, ventura:        "dfc6aa9124c647c925b34481f4819a39847f991e4683577a0251837bff8cd802"
+    sha256 cellar: :any_skip_relocation, monterey:       "dfc6aa9124c647c925b34481f4819a39847f991e4683577a0251837bff8cd802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a72dfffcf78fa58f6af5594100ef4a2435dcf0e524a461597ed14fb6eedcc7f"
   end
 
   depends_on "python@3.12"
@@ -27,8 +26,8 @@ class PyqtBuilder < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https://files.pythonhosted.org/packages/d6/4f/b10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aed/setuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "sip" do

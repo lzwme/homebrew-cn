@@ -1,20 +1,19 @@
 class GoFeatureFlagRelayProxy < Formula
   desc "Stand alone server to run GO Feature Flag"
   homepage "https:gofeatureflag.org"
-  url "https:github.comthomaspoignantgo-feature-flagarchiverefstagsv1.26.0.tar.gz"
-  sha256 "5671b6e3985aaa0e02792bf9f1d2ba04466694ec4cf3f73e1b9c52379ca16786"
+  url "https:github.comthomaspoignantgo-feature-flagarchiverefstagsv1.27.0.tar.gz"
+  sha256 "2b3c24f0ad10f8d826c446631a40300021ec6b140cdaa9f6488cab700a6ba273"
   license "MIT"
   head "https:github.comthomaspoignantgo-feature-flag.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24727fe945eb9322526daf0b42073754a8812dfe7e1518e7152b8723fc501d19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1ba39503cbf6428800c9d02f65b1a167958393cd669124769973513c18ec6d6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "645244e8afbc3b7ffdfccc4a1b2e777605345a5464f8f7caf1f610e761d7b8b5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e7e323d3bf67abbb48fa5672543cbc1aff83ae6993c5329a5d01b919f77be0b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "15333f5d40296da74a95b8ce607dae83cbee165dad1009464c67eaf2aa9d9800"
-    sha256 cellar: :any_skip_relocation, monterey:       "468dfa826bb62d04fbbcf43262c0f5938e62c999de8ffadffe722c7f33d0e383"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5ec94b1ff6ee0d5f7e7199e5ea696c1d0b7c88f821f783943e73e090fd843ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fa13f58a05e23b35833d51ec01932717fd31fa32fd2171a1b5c504d327c311b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49ad4987667b7b303446d95e13918263fd9fa4a482d89c4eefd11f87a7f57569"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4d478aa896b9a18d14a00862388c8e232b421db85c65e1155afc3a09ccc8e92"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7c4cca394070221c7513f7b08cd9f0a0c6b93ce06034bfe544256bafa7d234f5"
+    sha256 cellar: :any_skip_relocation, ventura:        "c077c13ba8eafce83fa62728d3204ab3a23b57da31039ed61b95fd017d507c35"
+    sha256 cellar: :any_skip_relocation, monterey:       "1dffb35e5ad449956b9bdaa95bebb3f6cfd1fc64d73a9a5816c9e7ab1a6f859b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "434c3471819794d9c3a35b7a03fbf3bf5cae3c47bc233bc788ed12f124943d25"
   end
 
   depends_on "go" => :build

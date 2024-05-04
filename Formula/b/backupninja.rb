@@ -6,8 +6,8 @@ class Backupninja < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://0xacab.org/liberate/backupninja/-/tags"
-    regex(/href=.*?backupninja[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://0xacab.org/liberate/backupninja.git"
+    regex(/^backupninja[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

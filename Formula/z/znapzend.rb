@@ -1,8 +1,8 @@
 class Znapzend < Formula
   desc "ZFS backup with remote capabilities and mbuffer integration"
   homepage "https:www.znapzend.org"
-  url "https:github.comoetikerznapzendreleasesdownloadv0.21.2znapzend-0.21.2.tar.gz"
-  sha256 "c3753d663c2f4d87f87da0191441c5cd2cb32aca7ded913d97565472413e3823"
+  url "https:github.comoetikerznapzendreleasesdownloadv0.22.0znapzend-0.22.0.tar.gz"
+  sha256 "95bf10167237522857c0fcdc5e3dfa096c4b5767bdd3c5fc8b1a1a36131dd43e"
   license "GPL-3.0-or-later"
   head "https:github.comoetikerznapzend.git", branch: "master"
 
@@ -15,15 +15,13 @@ class Znapzend < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c3509ccaa62d0d10254c01f769082d47a6faae30dba053b98d10c1d1580c491"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "360e1da87dca16e4aee394895811672b1ff5b2cd2f0d00faf19626c227560653"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2603328f0b6bf5f6264933a29fa014bf766b39c2dca01005633f61d525712772"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74bec9f6200da20da80c4b23090b4a75ea1813d764082965f21ecfddee02cbf2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa49b9155872201e4545d0201c1e99d4308246f7c49518469a80b3d5f04578d6"
-    sha256 cellar: :any_skip_relocation, ventura:        "70c703197262f392c2aa298aa6a12e84369a1a63d7f19b76685c39d905831f4d"
-    sha256 cellar: :any_skip_relocation, monterey:       "73849373fd9725c332045cf2b2a32303336b077ad77642d9a8131b7b9b78bce8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "013467cb38cdce3691d36b5bc572320be8b1b2fd10c97ac0d3c7470ed8098154"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "890ef09e8f87edfcd4b93061daf11250604bb39c027bf71ab77acb357d0a239a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47b21adc983d32471a8545df6058164d77d0091f77adae3cd41922b9107bce9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eae60061717e9656c517a6f6edf73a87621a6f19dc7c5743d659a40c64e37252"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c89f7853aaee7bf7d8cb1572682089d2f82800503f350baa7aefbab983350940"
+    sha256 cellar: :any_skip_relocation, sonoma:         "36e1b6df5f24d137ae6bbe22e59a6b78cd2462edf0fc8aa0a189dbc0fa20235c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b8856786d36fc80c195463224d3bc5681a09d7fd9c63049a13021ba879647f3a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e860c37a26e36f59d039764903678c2f0da5910cd848747295018928b8613d03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fa9d2e614e6968d752971818e80b46e3c4ed72b85e7ff1130451b37a39da74e"
   end
 
   uses_from_macos "perl", since: :big_sur

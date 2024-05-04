@@ -3,19 +3,19 @@ class Badkeys < Formula
 
   desc "Tool to find common vulnerabilities in cryptographic public keys"
   homepage "https:badkeys.info"
-  url "https:files.pythonhosted.orgpackagesefbeebdc7b274a4bacaab1d0f01da8237b5dac6e98f04063b7802a6cf88a75eabadkeys-0.0.8.tar.gz"
-  sha256 "158953a0f695e2d56bee7c41ec8bc0958a6465f7d555e5583deee62dbbed3902"
+  url "https:files.pythonhosted.orgpackages881e8f47852ae7030e034f5d2b1710e2e45c5fe1ae2233f2e2ae62acc93ffcc0badkeys-0.0.9.tar.gz"
+  sha256 "c1aead663d8cc8a715669750fb39b3d0d1e6254b35c49c3f577bc13c20196292"
   license "MIT"
   head "https:github.combadkeysbadkeys.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "40595744dd8f4688f61821a704c4dbdd0de5c91d8c587310d6c16be2bf831ebc"
-    sha256 cellar: :any,                 arm64_ventura:  "9ce884dbabd2ad73147dd7a70b513b2aa858e5f2916c33b03b245df03c384798"
-    sha256 cellar: :any,                 arm64_monterey: "8562fc9c4360acf579ebb96defe0ce7d6c51ce0bb8816ee023ed9146c61566fc"
-    sha256 cellar: :any,                 sonoma:         "427b7c1f42f0514e5529d9c3af934304138a4123f01f2b37e39cd6086edb7395"
-    sha256 cellar: :any,                 ventura:        "8bd57365869c7ebcab523491eef790d2ce2d62c9a7b98c689527a5e390fcbefd"
-    sha256 cellar: :any,                 monterey:       "c28cd99688151c08bd462cb5f77192bd926ad23694a37392d35442a3827c33fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02895613efd4dd45eb8c298eef3db5f8d76fbc0e5a33fcfa8be3201d5569aea6"
+    sha256 cellar: :any,                 arm64_sonoma:   "08567dd3770e8bea78ea608ff64b3431d22296695f6f6ceb36f3d657ce1e4440"
+    sha256 cellar: :any,                 arm64_ventura:  "f01a3b1c481e70752e166995036176cd90431840e193d2e4c01ad46214c5e60e"
+    sha256 cellar: :any,                 arm64_monterey: "58f633f7ebd1e807834444fa4e46968b7bfba890b8ff61df0459bdd0f79be4f3"
+    sha256 cellar: :any,                 sonoma:         "4e124ac5bb15a53b2c4c9529d89ab7a6cd35bd1b7cc71624d74f9db5258d924d"
+    sha256 cellar: :any,                 ventura:        "57401dcd3ba8b971565cc5db0ae1357902a5d24147585d7e8d2731931b51a06d"
+    sha256 cellar: :any,                 monterey:       "199ac579e133313da8dfe60edfcf85ab0a64a6fb8257a0d6a3a807ddedd1283d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e98238bcd30fba9f6dc37f59601c2e5ac1c6f9ac534983b82192c8e1bbfb53b"
   end
 
   depends_on "cryptography"

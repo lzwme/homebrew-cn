@@ -1,19 +1,19 @@
 class Yamlfmt < Formula
   desc "Extensible command-line tool to format YAML files"
   homepage "https:github.comgoogleyamlfmt"
-  url "https:github.comgoogleyamlfmtarchiverefstagsv0.11.0.tar.gz"
-  sha256 "15148a9ab8562a5514dbdb22348ac10d1ac9a63f57fc9e5e4138bbf6146767dc"
+  url "https:github.comgoogleyamlfmtarchiverefstagsv0.12.0.tar.gz"
+  sha256 "20d43091de174e08998bff8ec666ff7f5d30cffee945580c1aadf3b801646889"
   license "Apache-2.0"
   head "https:github.comgoogleyamlfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0b8c469f4ea5763210196cac0559cf4af4dc55be045fd64d601163a40b4bd7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47b6975bcb89b9036bd675036b5b336b60a3f87a7bf4e7c8d2bf06ca85b3d0ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7c5e22e842081e375399c15e8e7ccf037561e2bac51b2bb259d4c9c7212165f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e10c21d430b641d39c0798f2c890f7628b44d42ab4f99229fed936b2b38c9a9c"
-    sha256 cellar: :any_skip_relocation, ventura:        "30eee693734fc1f71bf2c67b1bc7e4dfaccdf64e8b1ad2997719000961fdbaea"
-    sha256 cellar: :any_skip_relocation, monterey:       "d68f766149e173cc19dd3275c19e931d09add173f9c6e6b4c66b0679e41c77dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d1bfa0101976985cb399566af4e0f1b0921b484618d04dd32372d0ff308c34d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "923eb16f1f1c41a49d484c7112b5fe8f62e2026e17c5e758e18a7074e469e642"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4c9b9a06e6ed8caa5fd61ed7761b30a103e7c74a8de87dd8fa3ac11a41485ae"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98d3563f96bcbcacf08445184f6f8eef46538d2251d881c4e80ab73d23b4cb0c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d81fa9f4494bfa334efc6cc417ad0dab391800478b8bcda3674f129b2b810a38"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ae6aa7cfdf571aca305c6f5220c31c28e982324073a0fbebac863948835451a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f510b0764479226b01bba78e6b4d85491f78cefbc3aa6aef4a9c38cf67f40083"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b4f6700897f6e0b036b1c64e122d469216b848a59bcbe98c68f1412ac567cc1"
   end
 
   depends_on "go" => :build

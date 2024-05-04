@@ -1,6 +1,6 @@
 cask "virtualbox" do
-  version "7.0.14,161095"
-  sha256 "879ba6aa488dc2a086d45d98174d6928de59a5fa575a895ead3c872e5f7c0b76"
+  version "7.0.18,162988"
+  sha256 "496002f5d9b4280ffaec9269eeae97b301c3cb30ec569a904d430808cd72c7e2"
 
   url "https:download.virtualbox.orgvirtualbox#{version.csv.first}VirtualBox-#{version.csv.first}-#{version.csv.second}-OSX.dmg"
   name "Oracle VirtualBox"
@@ -17,7 +17,10 @@ cask "virtualbox" do
     end
   end
 
-  conflicts_with cask: "virtualbox-beta"
+  conflicts_with cask: [
+    "virtualbox@6",
+    "virtualbox@beta",
+  ]
   depends_on macos: ">= :catalina"
   depends_on arch: :x86_64
 

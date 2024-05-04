@@ -1,19 +1,19 @@
 class CargoAuditable < Formula
   desc "Make production Rust binaries auditable"
   homepage "https:github.comrust-secure-codecargo-auditable"
-  url "https:github.comrust-secure-codecargo-auditablearchiverefstagsv0.6.2.tar.gz"
-  sha256 "b1c1455b5917d57d4beb3f9bf845059c2d701a034a060b908c7127e29e9b94f3"
+  url "https:github.comrust-secure-codecargo-auditablearchiverefstagsv0.6.3.tar.gz"
+  sha256 "b89c69abc1b0887345d182e5031db42dfd2e0f889de59d91390a5bb77fcb505d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comrust-secure-codecargo-auditable.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc5be23ef3c7965701d9e289e2273f61d48f979ebf1ab4915eb03009a5a864b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "72ad7a7e74cf01a6c4f6c9a67389969cc5de58100b3f42d6244e8af596e8b358"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13304aa02cd9a81cbc60a36e5603dc94aa74949e382825e9706e00dd7b2bd3b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "747ea5a66ad9205fa2841862fd8f261d5a2554e6712a3165fe46488dc434e750"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c884ec5c8d25ace715e771fe841368d012aa04529740241acb8e14fae85e955"
-    sha256 cellar: :any_skip_relocation, monterey:       "61c1c878c3150a1bdd296755eb49ea1b08a616d0656f4ba1000d5b8251b45340"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f26149a719fe7e605d1beb6e6a96fb41d997bfb48431d1de5d0a2d042224ae6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "04667d907159dae3845cd976c902886a5f17c9b90e6227f71ea20954483cc905"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c55dadafd8520b6e9e91c0a81ae705e515aa014f751c4ddad67760ee7ac59f89"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e69f414245331e35f31d1295457c59bd598e8369b6920059d3cae1638d38ace7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6e29293dae32f8cc928a3676bd8c404efbe82333d1bd26bee6a79af68b21088"
+    sha256 cellar: :any_skip_relocation, ventura:        "027e7b3f701f6528521d00c5f21f61474cfc13ab6a0562b4d16d220189075ddb"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3a1278c4986e9beedf9c38ae355abbc25f8d4efb602e71c606545284f3cfd7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b944dd861f0d9e1e4834c82fa1c7b9102b68761140471efb775e78b2ee92fe"
   end
 
   depends_on "rust" => :build

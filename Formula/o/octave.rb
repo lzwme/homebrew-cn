@@ -15,13 +15,14 @@ class Octave < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "c0e3b1658deeb3be2605a127f76e570825a42a876b08b74a9c98e0bc60af459d"
-    sha256 arm64_ventura:  "2c5bbf702bf4eb17c76e37aa6e672579924350a2317a74b8b706beb0c496da09"
-    sha256 arm64_monterey: "f79169679d11f185d863c4356388acbe2d953323ac281416db5b1bf6b3fb2079"
-    sha256 sonoma:         "24df1e7892e1c2c7d0aa0949cb0f44fb9a831cd9af12e44a56b4c3a9b84a43a9"
-    sha256 ventura:        "065db32c758ca9cb33cb2362559c51e136d797962db8219f0f3d45e5c745e276"
-    sha256 monterey:       "633bb63c92d310ce88d56b9f9889bcdcf2fb4f44503af9d7af8fbbcfa50ecaa2"
-    sha256 x86_64_linux:   "348b047a1f7f1c5b77c9ba684256051a962cf152aa3c75608a4787af404e5466"
+    rebuild 1
+    sha256 arm64_sonoma:   "39facd51c0a174ceaf405e1aeb12c7c5641a1b301bf8a0f5192b3fc0c38aa607"
+    sha256 arm64_ventura:  "06c2ecc966bc16396bcaae07844e71b31341116e43ca6ec787d734c54d993e84"
+    sha256 arm64_monterey: "83acb517f85d91e02a952f029702ddc229705808ce739a94a4ab9e0a38ae2ae8"
+    sha256 sonoma:         "cb700a5a45776641355cf5118573f31d0675c77daa23a26a89c8260773c01986"
+    sha256 ventura:        "8ba1c839a0fc9c2db22df8a8e70a83950aa047236d11c1f7b8c4d225412ac6ae"
+    sha256 monterey:       "2c961099217bad63bb4fea2c8c3cd201b8fed86d1b6783da1653e6be56f077c1"
+    sha256 x86_64_linux:   "6fbeea0d955161430848f860c4ec826d341b2d0b6d0c452453bfaf54d23b202c"
   end
 
   head do
@@ -35,7 +36,10 @@ class Octave < Formula
   end
 
   # Complete list of dependencies at https://wiki.octave.org/Building
+  depends_on "autoconf" => :build # for the patches
+  depends_on "automake" => :build # for the patches
   depends_on "gnu-sed" => :build # https://lists.gnu.org/archive/html/octave-maintainers/2016-09/msg00193.html
+  depends_on "libtool" => :build # for the patches
   depends_on "openjdk" => :build
   depends_on "pkg-config" => :build
   depends_on "arpack"
@@ -80,6 +84,20 @@ class Octave < Formula
   cxxstdlib_check :skip
 
   fails_with gcc: "5"
+
+  # Fix build for Qt 6.7.0
+  # https://hg.savannah.gnu.org/hgweb/octave/rev/f428a432ed4f
+  patch do
+    url "https://hg.savannah.gnu.org/hgweb/octave/raw-rev/f428a432ed4f"
+    sha256 "a9dd08ffecff5b310039b14847e8012e150de9b71337adc0955b0e668eea1d37"
+  end
+
+  # Fix opengl-partial-update bug causing crashes on figure() and plot() with Qt 6.7.0
+  # https://hg.savannah.gnu.org/hgweb/octave/rev/317fa0e5c8de
+  patch do
+    url "https://hg.savannah.gnu.org/hgweb/octave/raw-rev/317fa0e5c8de"
+    sha256 "909dc65614d0ef2520c35c5f8d4f78c451b189b2673e837f4f21c18a776273f0"
+  end
 
   def install
     # Default configuration passes all linker flags to mkoctfile, to be

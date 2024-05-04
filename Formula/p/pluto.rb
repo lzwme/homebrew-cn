@@ -1,19 +1,19 @@
 class Pluto < Formula
   desc "CLI tool to help discover deprecated apiVersions in Kubernetes"
   homepage "https:fairwinds.com"
-  url "https:github.comFairwindsOpsplutoarchiverefstagsv5.19.1.tar.gz"
-  sha256 "b0f9bcf8f5251fdc7ffb88e4eca354ef4ad9ba4dd784415fd49f115c9a720a66"
+  url "https:github.comFairwindsOpsplutoarchiverefstagsv5.19.4.tar.gz"
+  sha256 "eef237b1f7900cf369267b11f1d49296a6f0c0e26920772e94aed2ea4e0aeedc"
   license "Apache-2.0"
   head "https:github.comFairwindsOpspluto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "60e44ad82f32724df8a32bce8eea21f5c203c0d89d8725bd435da103d517cc97"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "019aebda513b5ce1fc7ced8923b00975219316694713fbc1d84adbd381a96f9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c3feab8219fdd973d53166049fff39cb29ae26c287e67f3e96ecbd85fd3de9f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e5fd21317284b0f75e1892a0594cf8e9a77bc419e9076a256dd1136a4b1ef3d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "69eebafddf34870a85114feb07a79d7e5e4d94564ff8ef80a76bd243611e8a57"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bb0c222bf448a9981cb48dc7b548bcfc8c5099688851ed1a920bf36f7a163ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c53607a0fd8df0489b1788753441479390b67dbc511be04991dd4e657a5f509"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac01bc4d6d66050afbda05c70e74c6a651d5d99c93cf5b8fa7a23ca97cef037c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4f2e197139e0b5f73565e1c7368e62b8cf25e1805fc36326f82d422a56b0c82"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "54a45b5f9f31aabd894eeaa408ec10f025af7bda397671a0bc91d44106ac2407"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2798bac2e4b3378ad6becbcbb0d03e2fe7a74ce6aef895d0055e6b01d4feee04"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6648e905b7493bbadd8a1ef41ce0e77503b7d659ef8351157bd75cd38316ce7"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d244d60fdfe1624b97a501396c4dec0cb3fde4ecce42b71d7fdef861506a826"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2de92499b63d3935a47f717d67de1441ffd5557259e76ef40a76fe187a97d5f2"
   end
 
   depends_on "go" => :build

@@ -1,27 +1,24 @@
 class Ngircd < Formula
   desc "Lightweight Internet Relay Chat server"
   homepage "https://ngircd.barton.de/"
-  url "https://ngircd.barton.de/pub/ngircd/ngircd-26.1.tar.xz"
-  mirror "https://ngircd.sourceforge.io/pub/ngircd/ngircd-26.1.tar.xz"
-  sha256 "55c16fd26009f6fc6a007df4efac87a02e122f680612cda1ce26e17a18d86254"
+  url "https://ngircd.barton.de/pub/ngircd/ngircd-27.tar.xz"
+  mirror "https://ngircd.sourceforge.io/pub/ngircd/ngircd-27.tar.xz"
+  sha256 "6897880319dd5e2e73c1c9019613509f88eb5b8daa5821a36fbca3d785c247b8"
   license "GPL-2.0-or-later"
 
   livecheck do
     url "https://ngircd.barton.de/download.php"
-    regex(/href=.*?ngircd[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(/href=.*?ngircd[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "3f32f9cda3cad4e2301bf1821f24917103c5e2c2f1e411586e2f1335efc9d5c6"
-    sha256 arm64_ventura:  "acfbc81c0549606bdd4f9c450be16f471ce9651091cf68ecd2d1c8de0fcecaed"
-    sha256 arm64_monterey: "2a099c7b6d8a01f6aba11859bf203e06907ccf8973d4b1acf766b82493627ce9"
-    sha256 arm64_big_sur:  "76bbc7ff4b78c2582bee92e0493b083d36ab63ee8ad0bb6fe7fc86638dcb54e5"
-    sha256 sonoma:         "542e3dae8bcaa412b869120074b00ddc135da793da68e55588f56dfe6c2a14bb"
-    sha256 ventura:        "92313e1cdfc649c20fcccb57372f00872e0b34a2d847c002fbe6faf7a6021e8a"
-    sha256 monterey:       "50d3ccd2a87132e386b54a987a53e2f652db6cf1055ba087ca81bb56fc97d37e"
-    sha256 big_sur:        "8c87f44e004de24a0a1b2c38ec6cc8bcfc0261d80f2ebab0b337165b6c52126e"
-    sha256 x86_64_linux:   "c3d318555f9f398f8e68909b949387a0737bc6d0c2e5730839ca0793e1261f50"
+    sha256 arm64_sonoma:   "b3230f61b1aece2cffd949a060abd8a8ff1d61a47f63b728839cda70a38cc685"
+    sha256 arm64_ventura:  "2b428f0da716c05f7eaf374b55fb3afa078d216f2c115e995d6bfc8dc4806025"
+    sha256 arm64_monterey: "a47033e2a117055247c69736d670faadbcd3db4c6531cf33ba72c769515874f2"
+    sha256 sonoma:         "343f25208cdce2cfc06e9be0d7dacc6eefddaa0327cbcb99916ee78005f23c32"
+    sha256 ventura:        "404aec8f8636c91f81fc63bcad319ae781948ef7d01b0b92747fc4d844d47dd4"
+    sha256 monterey:       "8ef6f2e67ad12fe5bc9ce16c04ea822680f4480c357f612440d5307d94c7d3cd"
+    sha256 x86_64_linux:   "a060e572d41cbb75911a78eafb384d30aea9813c5ce1229b74f4941401c53e43"
   end
 
   depends_on "libident"
@@ -39,11 +36,11 @@ class Ngircd < Formula
     system "make", "install"
 
     if OS.mac?
-      prefix.install "contrib/MacOSX/de.barton.ngircd.plist.tmpl" => "de.barton.ngircd.plist"
+      prefix.install "contrib/de.barton.ngircd.plist"
       (prefix/"de.barton.ngircd.plist").chmod 0644
 
       inreplace prefix/"de.barton.ngircd.plist" do |s|
-        s.gsub! ":SBINDIR:", sbin
+        s.gsub! "/opt/ngircd/sbin", sbin
         s.gsub! "/Library/Logs/ngIRCd.log", var/"Logs/ngIRCd.log"
       end
     end

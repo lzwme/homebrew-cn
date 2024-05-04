@@ -25,7 +25,8 @@ class Veilid < Formula
 
   test do
     require "yaml"
-    server_config = YAML.load(shell_output(bin/"veilid-server --dump-config"))
+    command = "#{bin}/veilid-server --set-config client_api.ipc_enabled=false --dump-config"
+    server_config = YAML.load(shell_output(command))
     assert_match "server.crt", server_config["core"]["network"]["tls"]["certificate_path"]
     assert_match "Invalid server address", shell_output(bin/"veilid-cli --address FOO 2>&1", 1)
   end
