@@ -6,15 +6,16 @@ class Internetarchive < Formula
   url "https:files.pythonhosted.orgpackages81dc4d0e4e099068774627b88472881ccd3cc7458b0f20e15b9decb8f327fcd0internetarchive-4.0.1.tar.gz"
   sha256 "8e897ee1c054edff40744e65e16d697dbfae26b0645a5fc7762cbaf88aff87b7"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
-    sha256 cellar: :any_skip_relocation, ventura:        "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
-    sha256 cellar: :any_skip_relocation, monterey:       "996092a2f9859451b38a929f39dd2efd33a2d0274889a027720fa4829910f90d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc67016b3be23c9954fd7a865e1ca4319f0d645d6d96721a9af7fa150fdb7673"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f41d1e42998cc5a55815205e3415361b997f9d8ae5f64993e58f1d5a31bd44ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f41d1e42998cc5a55815205e3415361b997f9d8ae5f64993e58f1d5a31bd44ab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f41d1e42998cc5a55815205e3415361b997f9d8ae5f64993e58f1d5a31bd44ab"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f41d1e42998cc5a55815205e3415361b997f9d8ae5f64993e58f1d5a31bd44ab"
+    sha256 cellar: :any_skip_relocation, ventura:        "f41d1e42998cc5a55815205e3415361b997f9d8ae5f64993e58f1d5a31bd44ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "f41d1e42998cc5a55815205e3415361b997f9d8ae5f64993e58f1d5a31bd44ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "886f5074457587cda4af340ece302cecde34c63376763926b5a4307ffa8e4b98"
   end
 
   depends_on "certifi"
@@ -61,8 +62,8 @@ class Internetarchive < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "urllib3" do

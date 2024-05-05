@@ -6,14 +6,16 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackagesaadf64d43a2caaed1f58237993570a20cba3cbdde27b45c3293d93a717f49e82dvc-3.50.1.tar.gz"
   sha256 "97c92a530da38ea08f1cfad6ec7ad7ad1abf55887eb243d10b789123131616f9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "4955165aa2bf69dd5fa35bbeb5fc4cfa91bdb0be637c5034dabc61549a96d9b1"
-    sha256 cellar: :any, arm64_ventura:  "1d584189700495206f56ababf63b8842ec143d8e42ea649c6220059c8638fcc5"
-    sha256 cellar: :any, arm64_monterey: "a87e54b27de5ff1f464590723cb4803063b00c29c332dc1b984df460a2052641"
-    sha256 cellar: :any, sonoma:         "2a4c429fa703d2b93017ca77cf89817f6aa6f472c194145376f8186968faa61c"
-    sha256 cellar: :any, ventura:        "c7a510cfa7d00047a9b5964ce9d0b69560947f6d9af7efdeb1d626c1077f25b0"
-    sha256 cellar: :any, monterey:       "a73955c631a3a878949201df75f33ba8e9027909aa1bca3130290ff959bbc241"
+    sha256 cellar: :any,                 arm64_sonoma:   "c289e81cf7318a615edac1320b1ee214d8e6f7189619f4693d644a0787a59296"
+    sha256 cellar: :any,                 arm64_ventura:  "f205b720007f9f92388a297654c658de1ac427682067dfad947127c7762281e7"
+    sha256 cellar: :any,                 arm64_monterey: "ef2100d0380757b653a1239d94742188c5e731808d12624fbc97ed7f34d6a5dd"
+    sha256 cellar: :any,                 sonoma:         "c80aab269201ca598ac631efd72d7c00bea622ab79bf2dcc43d9062aaa71dbc0"
+    sha256 cellar: :any,                 ventura:        "b26158a8e512f6f9fe7adee5ab71b2a04d481276f566f13b680163a8493cbf44"
+    sha256 cellar: :any,                 monterey:       "63e93883beed3c799f438ea8b329c9a0f0eeab4850df8eb32ee21ecb3d916c31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d515cda9c2e835554e2e8664b2f8c9dcc630b4166420dbbba7c3a4271da08931"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -143,8 +145,8 @@ class Dvc < Formula
   end
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackages72076a6f2047a9dc9d012b7b977e4041d37d078b76b44b7ee4daf331c1e6fb35bcrypt-4.1.2.tar.gz"
-    sha256 "33313a1200a3ae90b75587ceac502b048b840fc69e7f7a0905b5f87fac7a1258"
+    url "https:files.pythonhosted.orgpackagescae90b36987abbcd8c9210c7b86673d88ff0a481b4610630710fb80ba5661356bcrypt-4.1.3.tar.gz"
+    sha256 "2ee15dd749f5952fe3f0430d0ff6b74082e159c50332a1413d51b5689cf06623"
   end
 
   resource "billiard" do
@@ -323,8 +325,8 @@ class Dvc < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackages38ff877f1dbe369a2b9920e2ada3c9ab81cf6fe8fa2dce45f40cad510ef2df62filelock-3.13.4.tar.gz"
-    sha256 "d13f466618bfde72bd2c18255e269f72542c6e70e7bac83a0232d6b1cc5c8cf4"
+    url "https:files.pythonhosted.orgpackages06aef8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897eafilelock-3.14.0.tar.gz"
+    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
   end
 
   resource "flatten-dict" do
@@ -368,8 +370,8 @@ class Dvc < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackagesb28fecd68579bd2bf5e9321df60dcdee6e575adf77fedacb1d8378760b2b16b6google-api-core-2.18.0.tar.gz"
-    sha256 "62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"
+    url "https:files.pythonhosted.orgpackages31c6460b83c297c91c4f62d69aa9f04f3c5f8139a4f41c4b747c014939d5a802google-api-core-2.19.0.tar.gz"
+    sha256 "cf1b7c2694047886d2af1128a03ae99e391108a08804f87cfd35970e49c9cd10"
   end
 
   resource "google-api-python-client" do
@@ -528,8 +530,8 @@ class Dvc < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackagesf5af0daa12a907215a5af6d97db8adf301ef14a1b1c651f7e176ee04e0998433orjson-3.10.1.tar.gz"
-    sha256 "a883b28d73370df23ed995c466b4f6c708c1f7a9bdc400fe89165c96c7603204"
+    url "https:files.pythonhosted.orgpackagesf816c10c42b69beeebe8bd136ee28b76762837479462787be57f11e0ab5d6f5dorjson-3.10.3.tar.gz"
+    sha256 "2b166507acae7ba2f7c315dcf185a9111ad5e992ac81f2d507aac39193c2c818"
   end
 
   resource "oss2" do
@@ -768,8 +770,8 @@ class Dvc < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "typer" do

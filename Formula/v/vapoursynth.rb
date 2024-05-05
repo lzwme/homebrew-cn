@@ -1,8 +1,8 @@
 class Vapoursynth < Formula
   desc "Video processing framework with simplicity in mind"
   homepage "https:www.vapoursynth.com"
-  url "https:github.comvapoursynthvapoursyntharchiverefstagsR66.tar.gz"
-  sha256 "e2c82b1f583adbc33dabbe59c0dc65e6aede70dedebe79be94155cb38d418b2c"
+  url "https:github.comvapoursynthvapoursyntharchiverefstagsR67.tar.gz"
+  sha256 "0224be706a251d7936396aa83dfb21c7a7764c8bd80c29085a6415ac1453420d"
   license "LGPL-2.1-or-later"
   head "https:github.comvapoursynthvapoursynth.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Vapoursynth < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c09bd9de06ad9404815f70a6e8ce8d2d5eb01df800695ea0e79f8dd10dae290f"
-    sha256 cellar: :any,                 arm64_ventura:  "56e70fb775d6d5311ae6238c2e3813ed788588f470917ec76cab24ecedf1547b"
-    sha256 cellar: :any,                 arm64_monterey: "42991a4a81c7be8c83b0621d34fa180a7b2801feb25d628d105d0cfb87613fa3"
-    sha256 cellar: :any,                 sonoma:         "d56be557678de66d0332462bf5a44f2de5f1b01ac88adea1db3293f0c5f56460"
-    sha256 cellar: :any,                 ventura:        "5727b4617a5014e77a6fa44e2701b66d738ea0645cb4af561b3dc24028bfc3bc"
-    sha256 cellar: :any,                 monterey:       "498ecff638a4e015d5b52111448c89f4603a1631523d6756ed7034bcdf0a59a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc32bb12522f26c2582b0ab97b147227e31886c2476e47cb3f86923c5be4eedf"
+    sha256 cellar: :any,                 arm64_sonoma:   "918c12ac7b65e032b21ff3eda5e56beedf6921592a5a9288c097ac1138999cc7"
+    sha256 cellar: :any,                 arm64_ventura:  "f93cc15fae89ccdab14213828f8a8f785468608619109d24c0d94d8ea0d3d7e9"
+    sha256 cellar: :any,                 arm64_monterey: "d0ac67bf4df649d300b579df2653bbe692ae116c37e3749ba00089e6c04015f7"
+    sha256 cellar: :any,                 sonoma:         "1edd7a164c36932cf481a565699b4c0f50de4240118b2e6c0f4e42516f5c46f5"
+    sha256 cellar: :any,                 ventura:        "5d07cdcc1a2f74e758e5bd3e60e2117d43291a63a77171d7a5b80a92c5b2c9d9"
+    sha256 cellar: :any,                 monterey:       "2bffa182f4ec2921af0943f177ea21542d7a9ab24e9b52f9becf3e6a80e7a085"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "931129d02c278a89dc0c9026539148abd7a078846e0d27b716f6bc581a5ff3da"
   end
 
   depends_on "autoconf" => :build

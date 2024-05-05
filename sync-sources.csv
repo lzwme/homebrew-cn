@@ -121,6 +121,7 @@ Homebrew-homebrew-core/Formula/a/angular-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/animdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/anime-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible-cmdb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/ansible-creator.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 1
@@ -9590,6 +9591,7 @@ Homebrew-homebrew-cask/Casks/m/mps.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqtt-explorer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mqttfx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqttx.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/msty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mtgaprotracker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mtmr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mu-editor.rb, Homebrew/homebrew-cask, 1
@@ -11405,8 +11407,8 @@ Homebrew-homebrew-cask/Casks/v/vlc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vlc@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vlcstreamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmpk.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/vmware-fusion-tech@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmware-fusion.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vmware-fusion@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmware-horizon-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-viewer.rb, Homebrew/homebrew-cask, 0

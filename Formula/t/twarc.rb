@@ -6,16 +6,16 @@ class Twarc < Formula
   url "https:files.pythonhosted.orgpackages8aedac80b24ece6ee552f6deb39be34f01491cff4018cca8c5602c901dc08ecftwarc-2.14.0.tar.gz"
   sha256 "fa8ee3052d8b9678231bea95d1bdcbabb3968d35c56a8d1fcedc8982e8c66a66"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3e694e3c359f58da33203f5a4163c9fd6fa00207ec864364d1ea100d008f39b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3e694e3c359f58da33203f5a4163c9fd6fa00207ec864364d1ea100d008f39b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3e694e3c359f58da33203f5a4163c9fd6fa00207ec864364d1ea100d008f39b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b3e694e3c359f58da33203f5a4163c9fd6fa00207ec864364d1ea100d008f39b"
-    sha256 cellar: :any_skip_relocation, ventura:        "b3e694e3c359f58da33203f5a4163c9fd6fa00207ec864364d1ea100d008f39b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b3e694e3c359f58da33203f5a4163c9fd6fa00207ec864364d1ea100d008f39b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "513ae7517ad77598031441e62953decae577c8e924502827bdc1cf3222f8acc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3830630bb2ba043cb8dd200c5eed72b723f7bccb7ee35846ee44d0781c88f7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3830630bb2ba043cb8dd200c5eed72b723f7bccb7ee35846ee44d0781c88f7b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3830630bb2ba043cb8dd200c5eed72b723f7bccb7ee35846ee44d0781c88f7b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a3830630bb2ba043cb8dd200c5eed72b723f7bccb7ee35846ee44d0781c88f7b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a3830630bb2ba043cb8dd200c5eed72b723f7bccb7ee35846ee44d0781c88f7b"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3830630bb2ba043cb8dd200c5eed72b723f7bccb7ee35846ee44d0781c88f7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4340e200561f3ba8792b6a1bad9e8245479331ea3a43c646f9e264c58fa1120"
   end
 
   depends_on "certifi"
@@ -82,8 +82,8 @@ class Twarc < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "urllib3" do

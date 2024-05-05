@@ -6,15 +6,16 @@ class Sysaidmin < Formula
   url "https:files.pythonhosted.orgpackages64c79f23e1bef4cd534f6efbddada2c3da089dbb6f15b5ecb51f089b6c196c9bsysaidmin-0.2.1.tar.gz"
   sha256 "37f8a58c35c3fed39430c83c563e43c709cfaed6cefe23a2f1564d504597a56d"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "901e1864c7e77b58b7562bb48697e69e44f52509d2d598ebd3cee628885bdf34"
-    sha256 cellar: :any,                 arm64_ventura:  "70a181e6542bf00f00aa51488de37cae31d1633e142707f4cfed05c9318598ae"
-    sha256 cellar: :any,                 arm64_monterey: "60ac0f0022ed3b2589f42d30161c673c4972d4a98a093acea08e56d5e929c1ff"
-    sha256 cellar: :any,                 sonoma:         "88f5bb44bfceea5c4f0f08fe3baee9e021cbd8c30501222dc40bc01489430bea"
-    sha256 cellar: :any,                 ventura:        "ffcac77166ddfb075b36185d566fe87fcc46413cf87250e0da835c959fcd23a7"
-    sha256 cellar: :any,                 monterey:       "65069cf54edf4285c9ce93977b75e87fbccb58efed50801f03d7c603cc9a584e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd91f4d8798ddead5f2dc8769152c668a3da4b0e75c230da0e46cff9d95539eb"
+    sha256 cellar: :any,                 arm64_sonoma:   "c11f73490220a4314490692a848d13a62b610cf284c88927017d5a8112c5f345"
+    sha256 cellar: :any,                 arm64_ventura:  "d4c1e618bbcc23e65d0e9a101af09f5fe36921146c7345c955133c829c5b61a9"
+    sha256 cellar: :any,                 arm64_monterey: "8117a625e6111584eb52f2297a30311bbaad616132b48094480bc0007fa7a6a6"
+    sha256 cellar: :any,                 sonoma:         "5b0c27dd15c78cc2e12253946bfb7b088c3d156df1771c0702a9480aded80370"
+    sha256 cellar: :any,                 ventura:        "7bc8d65883f8671383b0753249344275b3b5f82a9a79503a40e52ad6862681d0"
+    sha256 cellar: :any,                 monterey:       "463f9f08b2f7f3a59756b778b5ede3a37fd717e601e71d3c3e5224b1b43b3b87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4304b3539dd273147d836dda87bfa057a6e645248fbb9b835a069cbdf74bd35d"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -57,18 +58,18 @@ class Sysaidmin < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages5ca7b7464911dcf81d15498c998b3aaf959c9a0721d59fc835cc7b5b2736a06eopenai-1.23.1.tar.gz"
-    sha256 "6df937e2a1ad64494951ea3614f5516db4d67c3fcc0b751b8e5edf1bc57e2d3d"
+    url "https:files.pythonhosted.orgpackages068a7e3d0aa81be59fa3c7beb54ade24ec46b569f78908761eb5f3a78cbbdc4eopenai-1.25.1.tar.gz"
+    sha256 "f561ce86f4b4008eb6c78622d641e4b7e1ab8a8cdb15d2f0b2a49942d40d21a8"
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagescdfc70fe71ff78f680d584eba9c55a30092f6ef0b9cf0c75a74bd35a24151a83pydantic-2.7.0.tar.gz"
-    sha256 "b5ecdd42262ca2462e2624793551e80911a1e989f462910bb81aef974b4bb383"
+    url "https:files.pythonhosted.orgpackages1f740d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714pydantic-2.7.1.tar.gz"
+    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages3d28d693aab237fca82da327990a88a983b2b84b890032076ee4a87e18038dbbpydantic_core-2.18.1.tar.gz"
-    sha256 "de9d3e8717560eb05e28739d1b35e4eac2e458553a52a301e51352a7ffc86a35"
+    url "https:files.pythonhosted.orgpackagese923a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651pydantic_core-2.18.2.tar.gz"
+    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
   end
 
   resource "setuptools" do
@@ -82,8 +83,8 @@ class Sysaidmin < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "typing-extensions" do

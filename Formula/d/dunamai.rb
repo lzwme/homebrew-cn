@@ -3,18 +3,18 @@ class Dunamai < Formula
 
   desc "Dynamic version generation"
   homepage "https:github.commtkennerlydunamai"
-  url "https:files.pythonhosted.orgpackagesa50e397db3d2c3568be07fb032c3e232581df81cb9462e8bcd8574285749f519dunamai-1.21.0.tar.gz"
-  sha256 "28d4bf5e8e2f3fe5d6a4de61b05c4c70afaa7c6df55fe0204bb5b6b53761e4bc"
+  url "https:files.pythonhosted.orgpackagese084e321b67334207eefeda01942cd57c93ed985e2a4b5e1af1cd60458d7d0d0dunamai-1.21.1.tar.gz"
+  sha256 "d7fea28ad2faf20a6ca5ec121e5c68e55eec6b8ada23d9c387e4e7a574cc559f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5ed1b5d51dad5513bbff1bc8a0584d8b4aa93d546dd7c68e5a5f2d9c96d9a3f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5ed1b5d51dad5513bbff1bc8a0584d8b4aa93d546dd7c68e5a5f2d9c96d9a3f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5ed1b5d51dad5513bbff1bc8a0584d8b4aa93d546dd7c68e5a5f2d9c96d9a3f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e5ed1b5d51dad5513bbff1bc8a0584d8b4aa93d546dd7c68e5a5f2d9c96d9a3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5ed1b5d51dad5513bbff1bc8a0584d8b4aa93d546dd7c68e5a5f2d9c96d9a3f"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5ed1b5d51dad5513bbff1bc8a0584d8b4aa93d546dd7c68e5a5f2d9c96d9a3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ed0cde65c325304435d77baca42ac3d18dbe0e7ff7a6152a17f13a30bceee4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "681a06759eb243c5f91ffe3d3eaa3f39a741a806b9e8d9dbddc99f27f858c5ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "681a06759eb243c5f91ffe3d3eaa3f39a741a806b9e8d9dbddc99f27f858c5ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "681a06759eb243c5f91ffe3d3eaa3f39a741a806b9e8d9dbddc99f27f858c5ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "681a06759eb243c5f91ffe3d3eaa3f39a741a806b9e8d9dbddc99f27f858c5ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "681a06759eb243c5f91ffe3d3eaa3f39a741a806b9e8d9dbddc99f27f858c5ac"
+    sha256 cellar: :any_skip_relocation, monterey:       "681a06759eb243c5f91ffe3d3eaa3f39a741a806b9e8d9dbddc99f27f858c5ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b7ec38be3720c22354fe602651d88ebd0645ad71f2fd47bc505626919f6d717"
   end
 
   depends_on "python@3.12"

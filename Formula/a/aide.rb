@@ -1,20 +1,18 @@
 class Aide < Formula
   desc "File and directory integrity checker"
   homepage "https:aide.github.io"
-  url "https:github.comaideaidereleasesdownloadv0.18.6aide-0.18.6.tar.gz"
-  sha256 "8ff36ce47d37d0cc987762d5d961346d475de74bba8a1832fd006db6edd3c10e"
+  url "https:github.comaideaidereleasesdownloadv0.18.7aide-0.18.7.tar.gz"
+  sha256 "85251284ed91d0cc1131a08e97751823895a263e75de5c04c615326099500cc9"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a4b7468a929b6dc13a8172b59618b621734a14f6e28779484e553d8bd8343bc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83a95d3294e93c9e97dce63f90669196c83385b8c9746726b1de80c519dbb989"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89d4522e294308bb68cb77a6af9b2efac9ed3766f3af891830b760822ec7bfe6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "abc3a66e2bc062aec14e805564de1640d916b124b53f6fc8df5e9539fecdc869"
-    sha256 cellar: :any,                 sonoma:         "c26c5ecb6cea7d7fa1eeb22a12c7d2a7652dcfa8996234ef663c409ee1ca0912"
-    sha256 cellar: :any_skip_relocation, ventura:        "55b3325f8102ad90e22d655a683d5d92fada2acc3bb2a9b3ef6a5d7957aa7b7d"
-    sha256 cellar: :any_skip_relocation, monterey:       "b8b22c018153d7d4b8ac0540455d975066e1be9679dc224cf062d24972df50be"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3399423faa40213b9206f1ca09f5979d1ae8d5b19f22d80485b099b2d0cf41d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9212d924afb1b8912d17b0c0242e4dc7a5d837199f0ed4e43f568c2f992cf601"
+    sha256 cellar: :any,                 arm64_sonoma:   "907c69bf8334c7f9c281f4600deb09e1c582b63e7722e9716e337a64b19e3380"
+    sha256 cellar: :any,                 arm64_ventura:  "f496efdcb512d0d93f00991bcef663e20b7b23696c1a7acd55ba907b5a9b3052"
+    sha256 cellar: :any,                 arm64_monterey: "df005fe9daf03375e5917de2348f83d5922dac145f76ef408ae4a2f1f1e532b7"
+    sha256 cellar: :any,                 sonoma:         "f0530bb06e643ae6becca899bf1641838a5fc81d1e8ddeb4aadfa874f8d82b3a"
+    sha256 cellar: :any,                 ventura:        "13bd65edb74808d770a1dc85deed1e6dd32fb77821558733c057bba304f0b49a"
+    sha256 cellar: :any,                 monterey:       "0cd61ba45c5e69bd40e0cf192465cfc665b58dd693a5da5cd1621a11fa42fb63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aefb4652b3f42e6462c30bf49732bb3bcd4b36f1f36fafdec506c5fcc5139cca"
   end
 
   head do

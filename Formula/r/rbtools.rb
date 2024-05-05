@@ -6,18 +6,17 @@ class Rbtools < Formula
   url "https:files.pythonhosted.orgpackages19ef8900501b1af41d2485ee1eabb9f3e309f80fdae911c97927d8917ae99f9fRBTools-4.1.tar.gz"
   sha256 "24efb20346b905c9be0464e747ee1bdee7967d1b94175697ea0c830d929475ff"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comreviewboardrbtools.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8564b8e193cb9885c8dd7540c947efa679c82979dd980d1990b1bca4761d56af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cf043f16ec3e30fa1a4eab3dc014fe6ba79709517a85c7dd601f46107c3a2a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7588726743915124b0a5ea7a38840beff619907cf06dd990b94722a8923e357"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a9f443f8e1772f42512672757b7221fae1a42c6f4cd8649dd0b175ec99878fb3"
-    sha256 cellar: :any_skip_relocation, ventura:        "10207ac9469ec3585002611a84fcc0a4cfb0f7c9413b796b427ed30cc50c12da"
-    sha256 cellar: :any_skip_relocation, monterey:       "66ed002719b9e0caf04e6716c6888bf00bd1cfe8737a2dbf29d90e1f0c281700"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ef70330f98a2aac1f43584cf2765555cfcc799b3a315fb0e466bf87971c4716"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4761e157db056c959fc7d24a9519503375685466a8b2b50817bed9c154d4fd7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4761e157db056c959fc7d24a9519503375685466a8b2b50817bed9c154d4fd7b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4761e157db056c959fc7d24a9519503375685466a8b2b50817bed9c154d4fd7b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "82823e6ef8cc0b47fb974404e9ec5b0672c2be378773eb5024c0e573317890ab"
+    sha256 cellar: :any_skip_relocation, ventura:        "82823e6ef8cc0b47fb974404e9ec5b0672c2be378773eb5024c0e573317890ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "82823e6ef8cc0b47fb974404e9ec5b0672c2be378773eb5024c0e573317890ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6678847742e50ee8b596080fcd238329e7fc02b40b422a8c099a4684d89ffd99"
   end
 
   depends_on "certifi"
@@ -34,8 +33,8 @@ class Rbtools < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc93d74c56f1c9efd7353807f8f5fa22adccdba99dc72f34311c30a69627a0fadsetuptools-69.1.0.tar.gz"
-    sha256 "850894c4195f09c4ed30dba56213bf7c3f21d86ed6bdaafb5df5972593bfc401"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "six" do
@@ -49,13 +48,13 @@ class Rbtools < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0c1deb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96typing_extensions-4.9.0.tar.gz"
-    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
+    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
+    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
   def install

@@ -9,6 +9,8 @@ class Fff < Formula
     sha256 cellar: :any_skip_relocation, all: "3f3ef09db2afedd44ec883cfc9a050400e3a4c1526b9465185386a8494283467"
   end
 
+  deprecate! date: "2024-05-04", because: :repo_archived
+
   def install
     bin.install "fff"
     man1.install "fff.1"

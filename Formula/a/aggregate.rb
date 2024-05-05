@@ -23,6 +23,8 @@ class Aggregate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed89de5c64cf464e1002d2b16aaa6749a68b113199dd702077a36db84a1a7ae1"
   end
 
+  deprecate! date: "2024-05-04", because: :repo_removed
+
   conflicts_with "crush-tools", because: "both install an `aggregate` binary"
 
   def install

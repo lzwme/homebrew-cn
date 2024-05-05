@@ -11,6 +11,8 @@ class Neofetch < Formula
     sha256 cellar: :any_skip_relocation, all: "78eb3e99dfde7f5fb1c3b192804a6d345f428c9effa6ea6ba54d7e5b7254387f"
   end
 
+  deprecate! date: "2024-05-04", because: :repo_archived
+
   on_macos do
     depends_on "screenresolution"
   end

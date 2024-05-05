@@ -1,18 +1,18 @@
 class Enchant < Formula
   desc "Spellchecker wrapping library"
   homepage "https:abiword.github.ioenchant"
-  url "https:github.comAbiWordenchantreleasesdownloadv2.7.2enchant-2.7.2.tar.gz"
-  sha256 "7cc3400a6657974a740b6e3c2568e2935c70e5302f07fadb2095366b75ecad6f"
+  url "https:github.comAbiWordenchantreleasesdownloadv2.7.3enchant-2.7.3.tar.gz"
+  sha256 "fe6ad4cbe8c71b9384ffdef962be52d4d2bd5ebfb6351435bb390543d4f78b1e"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "1e9fb4d5067ba80fd10c659b1662593c9cfe053e13e6eb0ab3e12b8714a62ff6"
-    sha256 arm64_ventura:  "c81d3ff0dd4b1d910e6c19458522de78a76f344ea8cdc7d99c9ebc60ff5ad629"
-    sha256 arm64_monterey: "734dd5f68de39965d596157097c40c64f99937e761dd068be05eea500bba16ab"
-    sha256 sonoma:         "020b4b30f497d56b79612c0911ac425033357e8be9f7b9771a601f8be2c62888"
-    sha256 ventura:        "29a844736c0f3acbd24df25b4e53d8dde673cd88938e33de2dd6476e0e871931"
-    sha256 monterey:       "30e0fae303c4194ee42525df9df5f67d9dcb1c362d87143425dbf0c0c382d052"
-    sha256 x86_64_linux:   "fcc6f3631aafe243dcc3f8e109c6f9209dac3aad9585d4ebb61aa05a444549f9"
+    sha256 arm64_sonoma:   "a3379030d191b09ee2be1d48ab9442c5520d67379a16f1d4877690c7bf038b10"
+    sha256 arm64_ventura:  "de4743d60a4fdc142c1e2b777edf2116e9dd35f123a74e9b2ed51bb463eb83a3"
+    sha256 arm64_monterey: "84c4caea703ac25694264b8831cc683687e74d209d41d01a7c6f59012f12485c"
+    sha256 sonoma:         "c0731ff8693cb78abdfbab3d96dbbc82495c065e44cb6c3ac03e11dbdabb35b4"
+    sha256 ventura:        "2379943777e66e63bf3dbf53dcd2f54658ff114dae8e231d6f83c1d7cbf1beb8"
+    sha256 monterey:       "ec66f38b40c09c54d91d95eb6c017cb56b9e48462925cd80366240eed04597f9"
+    sha256 x86_64_linux:   "9e4d3561eefe47808a9093a86baffa79a7ee22384c6b8e52c1b13c2eeeb0d4d2"
   end
 
   depends_on "pkg-config" => :build

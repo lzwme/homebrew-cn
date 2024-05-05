@@ -21,6 +21,8 @@ class Pfetch < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfa6a98908cbd7ac49f1fd4813011ee6f18849130d84b4c4fa3c01282a33c568"
   end
 
+  deprecate! date: "2024-05-04", because: :repo_archived
+
   def install
     if build.head?
       bin.mkdir

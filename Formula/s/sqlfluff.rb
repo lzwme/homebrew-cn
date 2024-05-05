@@ -6,15 +6,16 @@ class Sqlfluff < Formula
   url "https://files.pythonhosted.org/packages/16/50/f4a2bddbe52da638171d67d087bc73c121d40a9aef534bbc29e967793ceb/sqlfluff-3.0.5.tar.gz"
   sha256 "5a4a08e4e4dedcadf4f544de83a7edab66e1decf7d946ec5fdbe59db49d6c2fe"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "24bb66e883998ea4dff7cea4aa844cd52e9bf814c71c6cfa1ee2293a6c44d26f"
-    sha256 cellar: :any,                 arm64_ventura:  "0e0ea9e7740ef228dbfb001d0d96cb797fceb6bbe2bd144a3c10369b836c4d01"
-    sha256 cellar: :any,                 arm64_monterey: "479d65c7bf3660c59e639f649a0f8b031d5d7f7a7963ba2da52029dcaa3235d2"
-    sha256 cellar: :any,                 sonoma:         "f5f5163e50a410b88788d6917bf7454dad7ec792d282aecf6ad03ec8713058fc"
-    sha256 cellar: :any,                 ventura:        "7ad1f96323cd3dbc95908a1e4cd56b3eef2196c267d8cced69507e3ca19b2079"
-    sha256 cellar: :any,                 monterey:       "e01bdb72b637ca72758410bfec39c9f40a4f2d4cfe50b9f5db96b3cf6d4f73eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc2b15acee412847fb06afe3d654532a69ffa03ead036832cc996d747ca72766"
+    sha256 cellar: :any,                 arm64_sonoma:   "3f68cde51b8fd5b9f8599101ada89bafff1904edc775082596c17b8e4762105d"
+    sha256 cellar: :any,                 arm64_ventura:  "c3e7dd3c1f97e20c4a4eb68bb68635863dbd402086e7e038d1eb3cd0a0f69d22"
+    sha256 cellar: :any,                 arm64_monterey: "4b1aa206b89612e19836c81b3a9c06a7177c644cbe27095f54ed80bccfff7b29"
+    sha256 cellar: :any,                 sonoma:         "76c4a488453b6cd4023bf423a5e01ff1feaa2c6a0b971697397bd061f038f442"
+    sha256 cellar: :any,                 ventura:        "d20a0836884e90b19cf2a37c63e636f4035fb3776a2e0124304ee600ca7b433c"
+    sha256 cellar: :any,                 monterey:       "70f9ab1fa9a8739a34381e92155636c9f35777e811eb83f3bcdd6ba44732560c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74068db8dddede0c55a5320e3856d8eb81667a71987a90e22fefb4efa0c80cab"
   end
 
   depends_on "libyaml"
@@ -71,8 +72,8 @@ class Sqlfluff < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/54/c6/43f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59/pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "pygments" do
@@ -81,8 +82,8 @@ class Sqlfluff < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/30/b7/7d44bbc04c531dcc753056920e0988032e5871ac674b5a84cb979de6e7af/pytest-8.1.1.tar.gz"
-    sha256 "ac978141a75948948817d360297b7aae0fcb9d6ff6bc9ec6d514b85d5a65c044"
+    url "https://files.pythonhosted.org/packages/09/9d/78b3785134306efe9329f40815af45b9215068d6ae4747ec0bc91ff1f4aa/pytest-8.2.0.tar.gz"
+    sha256 "d507d4482197eac0ba2bae2e9babf0672eb333017bcedaa5fb1a3d42c1174b3f"
   end
 
   resource "pyyaml" do
@@ -91,8 +92,8 @@ class Sqlfluff < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/14/40/033a8339e9b2ab82eaf29c07d74f1fd6aaa62f7f8c994261be60a6c97b30/regex-2024.4.16.tar.gz"
-    sha256 "fa454d26f2e87ad661c4f0c5a5fe4cf6aab1e307d1b94f16ffdfcb089ba685c0"
+    url "https://files.pythonhosted.org/packages/c0/d6/87709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5af/regex-2024.4.28.tar.gz"
+    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
   end
 
   resource "tblib" do
@@ -101,8 +102,8 @@ class Sqlfluff < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/ea/85/3ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8/tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https://files.pythonhosted.org/packages/5a/c0/b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2/tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "typing-extensions" do

@@ -3,20 +3,19 @@ class Pygments < Formula
 
   desc "Generic syntax highlighter"
   homepage "https:pygments.org"
-  url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-  sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+  url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+  sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   license "BSD-2-Clause"
   head "https:github.compygmentspygments.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5ec566a0766ff9fa0193ba3d47c2754ab9db5eb6e983ddb2ee7260bea9994e3e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ec566a0766ff9fa0193ba3d47c2754ab9db5eb6e983ddb2ee7260bea9994e3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ec566a0766ff9fa0193ba3d47c2754ab9db5eb6e983ddb2ee7260bea9994e3e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5ec566a0766ff9fa0193ba3d47c2754ab9db5eb6e983ddb2ee7260bea9994e3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ec566a0766ff9fa0193ba3d47c2754ab9db5eb6e983ddb2ee7260bea9994e3e"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ec566a0766ff9fa0193ba3d47c2754ab9db5eb6e983ddb2ee7260bea9994e3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "124dabbe0e2c0f66273bb7293be63bb6c16cd2161b36cad45fb12b8bc796482f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c5305b796d4c8118bfe3e186adb9726df52be21dd085edd99e934ec49bf16e40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5305b796d4c8118bfe3e186adb9726df52be21dd085edd99e934ec49bf16e40"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5305b796d4c8118bfe3e186adb9726df52be21dd085edd99e934ec49bf16e40"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c5305b796d4c8118bfe3e186adb9726df52be21dd085edd99e934ec49bf16e40"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5305b796d4c8118bfe3e186adb9726df52be21dd085edd99e934ec49bf16e40"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5305b796d4c8118bfe3e186adb9726df52be21dd085edd99e934ec49bf16e40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d0ad45bd306af2760a03127431c43846a8df9e2f49daa4ee14eaab1c62dc47b"
   end
 
   depends_on "python@3.12"

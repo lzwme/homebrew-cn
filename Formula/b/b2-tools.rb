@@ -6,15 +6,16 @@ class B2Tools < Formula
   url "https:files.pythonhosted.orgpackages87ba82243b0c8461778e1ab575f0229cfe925413e8e4fe7a105da61e536e5f89b2-3.19.1.tar.gz"
   sha256 "648a5d371bf02058d5ab4cb2d35a8e0d97e3e7ba43503ca44920dfe9b9fad109"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed78f505e4551147efb6978d34263c46f5939b7bcb5c633ba04545d1638e73cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed78f505e4551147efb6978d34263c46f5939b7bcb5c633ba04545d1638e73cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed78f505e4551147efb6978d34263c46f5939b7bcb5c633ba04545d1638e73cc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3ed7b7257bacb6eb42b758c576c6d8acfdaf3dadf2664821408ce8a9dec10196"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ed7b7257bacb6eb42b758c576c6d8acfdaf3dadf2664821408ce8a9dec10196"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ed7b7257bacb6eb42b758c576c6d8acfdaf3dadf2664821408ce8a9dec10196"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8df8dfb2d439335a2e5fa4e918231729bbb89391e2a3c8fb1aca974030c8afe9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "67814e94bc6cb96ac350cc818130f99ca14bee66e8101855be705b6c2ee92b2c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67814e94bc6cb96ac350cc818130f99ca14bee66e8101855be705b6c2ee92b2c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67814e94bc6cb96ac350cc818130f99ca14bee66e8101855be705b6c2ee92b2c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "71736d42a7973f1641c4d96647e3b9f662fcd538225fe3517d6f8d9cc64552a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "71736d42a7973f1641c4d96647e3b9f662fcd538225fe3517d6f8d9cc64552a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "71736d42a7973f1641c4d96647e3b9f662fcd538225fe3517d6f8d9cc64552a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc63086212606f3275d4e79df8ee460ee2c641fe6c961ffb1119818cf09ed87b"
   end
 
   depends_on "certifi"
@@ -93,8 +94,8 @@ class B2Tools < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "types-python-dateutil" do

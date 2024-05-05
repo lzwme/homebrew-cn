@@ -1,18 +1,18 @@
 class Qtkeychain < Formula
   desc "Platform-independent Qt API for storing passwords securely"
   homepage "https:github.comfrankosterfeldqtkeychain"
-  url "https:github.comfrankosterfeldqtkeychainarchiverefstags0.14.2.tar.gz"
-  sha256 "cf2e972b783ba66334a79a30f6b3a1ea794a1dc574d6c3bebae5ffd2f0399571"
+  url "https:github.comfrankosterfeldqtkeychainarchiverefstags0.14.3.tar.gz"
+  sha256 "a22c708f351431d8736a0ac5c562414f2b7bb919a6292cbca1ff7ac0849cb0a7"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fe927224f500b509e6442db95d58963776b92b19103333414409103141f1c007"
-    sha256 cellar: :any,                 arm64_ventura:  "b00db7d50723f11d8ac5c7c7893906bd1b688842915878203e469d95f3a84753"
-    sha256 cellar: :any,                 arm64_monterey: "406606997f9a454ceab7fbffef501b5d5802d5e0ec48fe2ed6c17423c760bc38"
-    sha256 cellar: :any,                 sonoma:         "60a1ff0e9da3639ed182bcbcd75ac3ab46a71d2a94458fae5028a5fa8836c178"
-    sha256 cellar: :any,                 ventura:        "6f6280f1d1fb012615549fddbd7ecd9b2d408dc306795f1226b4635f2a00398f"
-    sha256 cellar: :any,                 monterey:       "d443eadd9cd1f8ceec5c62d2ceefb7aecccc2d6b357d4b0befb34478c12c353b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1545ae7d1b8e33421d8f0bb35d992c11b84846988deec4a1b39526fcacc2819"
+    sha256 cellar: :any,                 arm64_sonoma:   "856f1bdf065edcacf362627362069a70f3377d4db8f2543e6cec45a2079de16b"
+    sha256 cellar: :any,                 arm64_ventura:  "db7a0840092421df37617ea6cb1d4df598f392a8ac79ce2b4282d16d3827061a"
+    sha256 cellar: :any,                 arm64_monterey: "8b2c807a78f030049caab10340bd50fb0ca50e024189521e9139408577cc3a59"
+    sha256 cellar: :any,                 sonoma:         "9c5242871c11e30d642b00b18a02fc4214583ffb2450b8645a2a56cfcee46f5c"
+    sha256 cellar: :any,                 ventura:        "73bd78a8a89a297410525491a25bc25430b742ce7f2c4e11acab0d4e9f90233b"
+    sha256 cellar: :any,                 monterey:       "850416d7e71be7ca11c2a522de05b0fa27b94cf70658e668aeae70f6a1434282"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e47c1f4f6cfb9ac56757254b7537ba9d2a6c94a791779928580a17e21cfb8388"
   end
 
   depends_on "cmake" => :build
@@ -25,8 +25,10 @@ class Qtkeychain < Formula
   fails_with gcc: "5"
 
   def install
-    system "cmake", ".", "-DBUILD_TRANSLATIONS=OFF", "-DBUILD_WITH_QT6=ON", *std_cmake_args
-    system "make", "install"
+    args = %w[-DBUILD_TRANSLATIONS=OFF -DBUILD_WITH_QT6=ON]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

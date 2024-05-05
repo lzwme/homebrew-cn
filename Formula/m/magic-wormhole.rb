@@ -6,18 +6,17 @@ class MagicWormhole < Formula
   url "https:files.pythonhosted.orgpackages89998c8709d8c3e1058ba8b6d9f331529a0e91b484ae0585dd24cd77cb45ad4fmagic-wormhole-0.14.0.tar.gz"
   sha256 "006d239f88bff7c37bc2eff60a004e263faf9258f7279192d06ba0c9ced6b080"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "4ed9e8057afe207923dac49a9c30111fcd29a658bae14be9d24417d6558a3ff8"
-    sha256 cellar: :any,                 arm64_ventura:  "eb8ef6d635386d8f17e95dcb5627774911786a3285500b998ae95eb680a69bdf"
-    sha256 cellar: :any,                 arm64_monterey: "9463421abdbc92129fc8d0234b3defb9e76973b65ece186c9950ce0ce850df35"
-    sha256 cellar: :any,                 sonoma:         "443dbfe2f6f2fb23ccbb662d6914418857993d0ac2506079d74173d77bf40cf7"
-    sha256 cellar: :any,                 ventura:        "c8a255eed1a8f332e5849767346a3e3383ae58406fbe09222eda8010dad0a78b"
-    sha256 cellar: :any,                 monterey:       "0a3b94428a73a9f9f43f8a2a41a6b606998c582ce4a35569bad1695376c30a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c3a7e57fcbb5f5e275809f365e29fa72d236e7ae9565a93bc0303c696fd338a"
+    sha256 cellar: :any,                 arm64_sonoma:   "d5a8cd0d37dd4d020c134d95d2b868bc9c3d8cfeff41ab0aef101c8de5f02759"
+    sha256 cellar: :any,                 arm64_ventura:  "cc11e7e848c93abf35e623b532600b4cd9078cd225d0055d2c8a01803af9289f"
+    sha256 cellar: :any,                 arm64_monterey: "b0a99d45d39c3aac2a305bef26fe6cc8b15325fbc53b8b0bcc9aad6019160c83"
+    sha256 cellar: :any,                 sonoma:         "4da779bdd4d1c78b6f7cedc0a757e48aac18a09e5290f50d269e076ce9ee2495"
+    sha256 cellar: :any,                 ventura:        "3d1d4398132b78ccb2970a0b3b00169452c51025e5878397ecc3ce13735d24a3"
+    sha256 cellar: :any,                 monterey:       "ca03c086df0360072b55798df4c7ee3d4febec00447983484bb32ac0aa9431f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42d41b0bd1afe7a1fc924b5434635c735e4237a4d23217c5429d6428b876b6eb"
   end
 
   depends_on "cryptography"
@@ -129,8 +128,8 @@ class MagicWormhole < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesea853ce0f9f7d3f596e7ea57f4e5ce8c18cb44e4a9daa58ddb46ee0d13d6bff8tqdm-4.66.2.tar.gz"
-    sha256 "6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"
+    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
+    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
   end
 
   resource "twisted" do
