@@ -9,14 +9,14 @@ class Pymol < Formula
   head "https:github.comschrodingerpymol-open-source.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "a7d5ce7aa4499503bc07f0289fdd81cb324d700cafd4eb0e7e9cd0c772e38346"
-    sha256 cellar: :any,                 arm64_ventura:  "06f74d35634668cfc8b10d9e9fb523ba24694280405ff08a52b8121c8e53015c"
-    sha256 cellar: :any,                 arm64_monterey: "7b464dd70573ed1ac38c45784ad7813ac78c0ad83d48c10178725fe7d94f7110"
-    sha256 cellar: :any,                 sonoma:         "f0e26bd61afef9e876b6e49a4096348e25865712d7a1a633f78c3bb3688aa11c"
-    sha256 cellar: :any,                 ventura:        "67dc5f053f3cc16ede22371629fe7bae3a91651497f525f00439480ca1eaee40"
-    sha256 cellar: :any,                 monterey:       "7a294c4309570b5b4be11df9ed830478867ab3964eedae04fe21e858c6a62918"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23b1b25827544632d7ec105e2e901b8ed9bd0a99e7b679691f292ceaa1980a51"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "d903427e21c3999f8801d4ab41bc6840a36a7f08214b93a9ecb161e5e3530daf"
+    sha256 cellar: :any,                 arm64_ventura:  "176d90f7f194ad152a51f3294dae1be6fc21ed32ab9013e6222668412e111186"
+    sha256 cellar: :any,                 arm64_monterey: "a9e0d72ca12accc15f1492b44ae2cd9dbfdcc2ffb1219a1753b7a0041be20ef2"
+    sha256 cellar: :any,                 sonoma:         "b91f3f4f7d28396a36553f188490cbefbfad5698b4c738d83e9f4ef08869c3cd"
+    sha256 cellar: :any,                 ventura:        "25c91b0d4e9397f6cb5c5a8d4c9164415962190858e4fb4df5c97f44d980b323"
+    sha256 cellar: :any,                 monterey:       "a93c70898ff78ab423c6c0b11c49ff100f9c9c87305b5682be88f13baadc5a3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9ddc563e11f73e16b179d3355f674456c470427397e07bf1f6d1144a0e96565"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,6 @@ class Pymol < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"
-  depends_on "python-setuptools" # for pymolpluginsinstallation.py
   depends_on "python@3.12"
   uses_from_macos "libxml2"
 
@@ -55,6 +54,12 @@ class Pymol < Formula
   resource "pmw" do
     url "https:github.comschrodingerpmw-patchedarchive8bedfc8747e7757c1048bc5e11899d1163717a43.tar.gz"
     sha256 "3a59e6d33857733d0a8ff0c968140b8728f8e27aaa51306160ae6ab13cea26d3"
+  end
+
+  # Drop distutils: https:github.comschrodingerpymol-open-sourcepull362
+  patch do
+    url "https:github.comschrodingerpymol-open-sourcecommit4d81b4a8537421e9a1c4647934d1a16e24bc51dd.patch?full_index=1"
+    sha256 "ee5895ecd3bf731fc1ad714cc6cea17cb5dbb81cd4dab62e77554219fe7ae1ec"
   end
 
   def python3
@@ -95,7 +100,7 @@ class Pymol < Formula
       cmd.zoom()
       cmd.png("test.png", 200, 200)
     EOS
-    system "#{bin}pymol", "-cq", testpath"test.py"
+    system bin"pymol", "-cq", testpath"test.py"
     assert_predicate testpath"test.png", :exist?, "Amino acid image should exist"
     system python3, "-c", "import pymol"
   end

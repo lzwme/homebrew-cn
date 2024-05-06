@@ -10,11 +10,16 @@ cask "dintch" do
 
   livecheck do
     url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
-    strategy :page_match do |page|
-      match = page.match(%r{(\d+)(\d+)dintch(\d+)\.zip}i)
-      next if match.blank?
+    regex(%r{(\d+)(\d+)[^]+?$}i)
+    strategy :xml do |xml, regex|
+      item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='Dintch']]"]
+      next unless item
 
-      "#{match[3].split("", 2).join(".")},#{match[1]}.#{match[2]}"
+      version = item.elements["key[text()='Version']"]&.next_element&.text&.strip
+      match = item.elements["key[text()='URL']"]&.next_element&.text&.strip&.match(regex)
+      next if version.blank? || match.blank?
+
+      "#{version},#{match[1]}.#{match[2]}"
     end
   end
 
@@ -23,6 +28,7 @@ cask "dintch" do
   app "dintch#{version.csv.first.no_dots}Dintch.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.eclecticlight.dintch.sfl*",
     "~LibraryCachesco.eclecticlight.Dintch",
     "~LibraryHTTPStoragesco.eclecticlight.Dintch",
     "~LibraryPreferencesco.eclecticlight.Dintch.plist",

@@ -1827,6 +1827,7 @@ Homebrew-homebrew-core/Formula/f/fontforge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fonts-encodings.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fonttools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/forbidden.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/forcecli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ford.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/forego.rb, Homebrew/homebrew-core, 1
@@ -4330,6 +4331,7 @@ Homebrew-homebrew-core/Formula/n/newrelic-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/newrelic-infra-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/newsboat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/newt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nextdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexttrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nfcutils.rb, Homebrew/homebrew-core, 1
@@ -11605,7 +11607,7 @@ Homebrew-homebrew-cask/Casks/x/xnviewmp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xonotic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xournal-plus-plus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xpra.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/x/xprocheck.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/x/xprocheck.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xquartz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/x/xrg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xscope.rb, Homebrew/homebrew-cask, 0
@@ -11622,6 +11624,7 @@ Homebrew-homebrew-cask/Casks/y/yandex-disk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-music-unofficial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yandex-music.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/yass.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yattee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yealink-meeting.rb, Homebrew/homebrew-cask, 0
@@ -12204,20 +12207,11 @@ Homebrew-homebrew-cask-fonts/Casks/font-ebh.rb, Homebrew/homebrew-cask-fonts, 0
 Homebrew-homebrew-cask-fonts/Casks/font-economica.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-eczar.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edlo.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-cursive.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-foundation.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-hand-pre.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-nsw-act-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-qld-beginner.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-qld-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-beginner.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-dotted-guide.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-hand-cursive.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-sa-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-tas-beginner.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edu-vic-wa-nt-beginner.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-vic-wa-nt-hand-pre.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-edu-vic-wa-nt-hand.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-edwin.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-el-messiri.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-electrolize.rb, Homebrew/homebrew-cask-fonts, 1

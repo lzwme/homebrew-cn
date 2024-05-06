@@ -3,10 +3,11 @@ cask "font-teachers" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflteachers"
   name "Teachers"
-  homepage "https:github.comchankfontsTeachers-fonts"
+  homepage "https:fonts.google.comspecimenTeachers"
 
   font "Teachers-Italic[wght].ttf"
   font "Teachers[wght].ttf"

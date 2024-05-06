@@ -10,11 +10,16 @@ cask "spundle" do
 
   livecheck do
     url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
-    regex(%r{(\d+)(\d+)Spundle(\d+)\.zip}i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
-        "#{match[2].split("", 2).join(".")},#{match[0]}.#{match[1]}"
-      end
+    regex(%r{(\d+)(\d+)[^]+?$}i)
+    strategy :xml do |xml, regex|
+      item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='Spundle']]"]
+      next unless item
+
+      version = item.elements["key[text()='Version']"]&.next_element&.text&.strip
+      match = item.elements["key[text()='URL']"]&.next_element&.text&.strip&.match(regex)
+      next if version.blank? || match.blank?
+
+      "#{version},#{match[1]}.#{match[2]}"
     end
   end
 
@@ -23,7 +28,9 @@ cask "spundle" do
   app "spundle#{version.csv.first.no_dots}Spundle.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.eclecticlight.spundle.sfl*",
     "~LibraryCachesco.eclecticlight.Spundle",
+    "~LibraryHTTPStoragesco.eclecticlight.Spundle",
     "~LibraryPreferencesco.eclecticlight.Spundle.plist",
     "~LibrarySaved Application Stateco.eclecticlight.Spundle.savedState",
   ]

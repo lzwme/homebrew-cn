@@ -10,21 +10,27 @@ cask "cirrus" do
 
   livecheck do
     url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
-    regex(%r{(\d+)(\d+)cirrus(\d+)\.zip}i)
-    strategy :page_match do |page, regex|
-      match = page.match(regex)
-      next if match.blank?
+    regex(%r{(\d+)(\d+)[^]+?$}i)
+    strategy :xml do |xml, regex|
+      item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='Cirrus']]"]
+      next unless item
 
-      "#{match[3].split("", 2).join(".")},#{match[1]}.#{match[2]}"
+      version = item.elements["key[text()='Version']"]&.next_element&.text&.strip
+      match = item.elements["key[text()='URL']"]&.next_element&.text&.strip&.match(regex)
+      next if version.blank? || match.blank?
+
+      "#{version},#{match[1]}.#{match[2]}"
     end
   end
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :high_sierra"
 
   app "cirrus#{version.csv.first.major}#{version.csv.first.minor}Cirrus.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.eclecticlight.cirrusmac.sfl*",
     "~LibraryCachesco.eclecticlight.CirrusMac",
+    "~LibraryHTTPStoragesco.eclecticlight.CirrusMac",
     "~LibraryPreferencesco.eclecticlight.CirrusMac.plist",
     "~LibrarySaved Application Stateco.eclecticlight.CirrusMac.savedState",
   ]

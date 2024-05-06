@@ -1,8 +1,8 @@
 class Ghz < Formula
   desc "Simple gRPC benchmarking and load testing tool"
   homepage "https:ghz.sh"
-  url "https:github.combojandghzarchiverefstagsv0.117.0.tar.gz"
-  sha256 "33014936ee67f8f139e89e342756d8415880b65c6bb6acb9fbf97132745a1528"
+  url "https:github.combojandghzarchiverefstagsv0.118.0.tar.gz"
+  sha256 "179bbc7ee390a6485074cc3c6ed8c2be141e386ba3a24e2b739c0d14ce60215a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class Ghz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed6aaa212f249a794632cb2a6fbc1a13a8775874de62ae36cd2e9cf8bef11c3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0676bc830c0c52614673be4e8cabad47f037ee73562f6370e7f5b9c195633b28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c4be4e029a7b0182ac5bdce0ad9191ad0fa0b3979f3c989ded9c9443f965db9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0676bc830c0c52614673be4e8cabad47f037ee73562f6370e7f5b9c195633b28"
-    sha256 cellar: :any_skip_relocation, sonoma:         "734c287f31180d41ab59ed2b94a243e39f8aa19adb39309c9a161d84b859701e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d303c73c720b7156498358ebfd31b2b0e66ef5259abb305088f116ef71eada2a"
-    sha256 cellar: :any_skip_relocation, monterey:       "a797cc8003a2e0e3510fa95e0f34b48bb62b732bd93b6c4c3ea7df248cbe72c7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a797cc8003a2e0e3510fa95e0f34b48bb62b732bd93b6c4c3ea7df248cbe72c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6f1fd5ef1df0411d6ad0370a7d7e46ce3161638fae7ab03344262ab24b554e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0d800c027168dc4b213ab6b32dd3866edf590095682bd1de124ce1272f49bd04"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0fcf76ab268e808b1bb134614e83823ecd9016ba694197f269ecc627d27f2b5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c980ec0db8a15f8c1b4b178f2cfcf1eaa984e5020ec52ad48c981a3c056d0ac"
+    sha256 cellar: :any_skip_relocation, sonoma:         "481addc008ea8f306c7ecb3aab2827b0bd86139316159bcf639c4f7a9a5b595f"
+    sha256 cellar: :any_skip_relocation, ventura:        "1bdb63234193e3db8ba86c19c3797ac96322bb4dcd43fa80f19be8df423036b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4d3380c49c4741723df7e5128fe6af50de221477b940f967414819dcc445c44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17295125c597ce3c38da1d34454f78225f45a1832b55d98c1e3b2868c2898810"
   end
 
   depends_on "go" => :build

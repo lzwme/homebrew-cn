@@ -3,11 +3,12 @@ cask "font-radio-canada-big" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflradiocanadabig"
   name "Radio Canada Big"
   desc "Variable font with a weight axis that spans from regular (400) to bold (700)"
-  homepage "https:github.comgooglefontsradiocanadadisplay"
+  homepage "https:fonts.google.comspecimenRadio+Canada+Big"
 
   font "RadioCanadaBig-Italic[wght].ttf"
   font "RadioCanadaBig[wght].ttf"

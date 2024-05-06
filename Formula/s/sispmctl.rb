@@ -1,20 +1,18 @@
 class Sispmctl < Formula
   desc "Control Gembird SIS-PM programmable power outlet strips"
   homepage "https://sispmctl.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.11/sispmctl-4.11.tar.gz"
-  sha256 "74b94a3710046b15070c7311f0cacb81554c86b4227719cc2733cb96c7052578"
+  url "https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.12/sispmctl-4.12.tar.gz"
+  sha256 "e757863a4838da6e1ca72a57adc5aca6fc47ffbddc72a69052d8abd743d57082"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "2a6fd05fe14c138b78ffaed9b1a2a5f2b7fde3ce9bf7861e6a59e402fb84d7f8"
-    sha256 arm64_ventura:  "b2075769774a1af1d66280ed8561445b461549beaa3c035c6d9ec16f811a7369"
-    sha256 arm64_monterey: "0b1440bb353b930e64ef9d397e73384e3ba9eede714d8b9d77d5db155eb89cf5"
-    sha256 arm64_big_sur:  "448b754e8f3a66f3d0c9a00a398e3cc1f7c45f83b59369a3339299c8551f4602"
-    sha256 sonoma:         "4f7b53114cbb2ecba2f7c6eab0c661dddd932db7e85111d2238d208f70d458bb"
-    sha256 ventura:        "ac442280a1b9009303967a63e4e05768699344bd6c9164a443ec936f04bb30ca"
-    sha256 monterey:       "f1982090b769e79c2deed3ca3fe200d451e3d2cd9a99b699d0b485d76aa04214"
-    sha256 big_sur:        "5fdb85ced862856b67a8dde724af9974e82d8700a880cb3c9b19f2faa19a3a02"
-    sha256 x86_64_linux:   "49964c1c7eaa4bf16e7022640f6b98624a88337624b7cfab3c4a61d2b17682fc"
+    sha256 arm64_sonoma:   "583417f1421c804a4c9f8bfcd9b07da96206bb90f37bb9c7983b3813a5700f25"
+    sha256 arm64_ventura:  "6f9a22d3ada050881c644cf1191f0bd3b102949428169c1ac27478ed33b343e8"
+    sha256 arm64_monterey: "aa41c0da8beb340c22c9eadaadddd5af20dc05fb4e6efdd2b86e10118d4fcef9"
+    sha256 sonoma:         "5654736aa9565141c0001e8899824850dd817b5e229714282e9cdd5911ac273d"
+    sha256 ventura:        "7320a88ebc435a780ec01e5797b39d447831492c4b342cced542c822cdb65440"
+    sha256 monterey:       "08f320dfb6ab9d02451a687eedb317ff456144188b8a5c546d38e5335b71de47"
+    sha256 x86_64_linux:   "db43f15862bbace1e2af6f17b257da7d3522011d82f00fa581d78fea1faa47db"
   end
 
   depends_on "pkg-config" => :build

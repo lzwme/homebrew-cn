@@ -2,25 +2,35 @@ cask "xprocheck" do
   version "1.5,2023.04"
   sha256 "882c1ee83a3bee4372d7afcd9a65b3fa8342282534cbdf21565fe0aa4c87839d"
 
-  url "https://eclecticlightdotcom.files.wordpress.com/#{version.csv.second.major}/#{version.csv.second.minor}/xprocheck#{version.csv.first.no_dots}.zip",
-      verified: "eclecticlightdotcom.files.wordpress.com/"
+  url "https:eclecticlightdotcom.files.wordpress.com#{version.csv.second.major}#{version.csv.second.minor}xprocheck#{version.csv.first.no_dots}.zip",
+      verified: "eclecticlightdotcom.files.wordpress.com"
   name "XProCheck"
   desc "Anti-malware scan logging tool"
-  homepage "https://eclecticlight.co/consolation-t2m2-and-log-utilities/"
+  homepage "https:eclecticlight.coconsolation-t2m2-and-log-utilities"
 
   livecheck do
-    url :homepage
-    regex(%r{/(\d+)/(\d+)/xprocheck(\d+)\.zip}i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map do |match|
-        "#{match[2].split("", 2).join(".")},#{match[0]}.#{match[1]}"
-      end
+    url "https:raw.githubusercontent.comhoakleyelcupdatesmastereclecticapps.plist"
+    regex(%r{(\d+)(\d+)[^]+?$}i)
+    strategy :xml do |xml, regex|
+      item = xml.elements["dict[key[text()='AppName']following-sibling::*[1][text()='XProCheck']]"]
+      next unless item
+
+      version = item.elements["key[text()='Version']"]&.next_element&.text&.strip
+      match = item.elements["key[text()='URL']"]&.next_element&.text&.strip&.match(regex)
+      next if version.blank? || match.blank?
+
+      "#{version},#{match[1]}.#{match[2]}"
     end
   end
 
   depends_on macos: ">= :catalina"
 
-  app "xprocheck#{version.csv.first.no_dots}/XProCheck.app"
+  app "xprocheck#{version.csv.first.no_dots}XProCheck.app"
 
-  zap trash: "~/Library/Saved Application State/co.eclecticlight.XProCheck.savedState"
+  zap trash: [
+    "~LibraryCachesco.eclecticlight.XProCheck",
+    "~LibraryHTTPStoragesco.eclecticlight.XProCheck",
+    "~LibraryPreferencesco.eclecticlight.XProCheck.plist",
+    "~LibrarySaved Application Stateco.eclecticlight.XProCheck.savedState",
+  ]
 end

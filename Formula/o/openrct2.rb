@@ -2,19 +2,19 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https:openrct2.io"
   url "https:github.comOpenRCT2OpenRCT2.git",
-      tag:      "v0.4.10",
-      revision: "e55d761eb7029a496851cf16ac22a591a2fcd040"
+      tag:      "v0.4.11",
+      revision: "18d2b5ef6e02fe6a702dca04e95371e8dd60b4ec"
   license "GPL-3.0-only"
   head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "9b20c4b97df4786adaf92809243d39ef46a33e790412e3db9c655661196943f1"
-    sha256 cellar: :any, arm64_ventura:  "11d19946c9435319577bc33d8da95cdc44af6bb7dd364b91f5485ab7a9554646"
-    sha256 cellar: :any, arm64_monterey: "5d8791fd2655ac6aa5ead783ff4ebb6821dafb9586a6c0450d71aa37807143b1"
-    sha256 cellar: :any, sonoma:         "45d6bf2e9099be7c37ec3e2bb5739638597c120053bff484af01db046ea20cbf"
-    sha256 cellar: :any, ventura:        "bb7a6013a0619b16d5407a49c759ba947a9350656a8e9a4d244ebbe6986a2aaf"
-    sha256 cellar: :any, monterey:       "5d13ff766561b3b764f7ced207d5744f0e4ae350746f5c187092dc72b0770005"
-    sha256               x86_64_linux:   "22cf031d2f24f2e38d0f36d1398c06208e2878f5636b7e0ae0a518fd9c4f218d"
+    sha256 cellar: :any, arm64_sonoma:   "5ce75153a7f7612d0f58e3f6ba4f158f3c5eb531a5c269dd95f180940f340643"
+    sha256 cellar: :any, arm64_ventura:  "a362d1e4ddede47c09dcc95543bdc62a83caf7a8ad42780438658045ed5c808c"
+    sha256 cellar: :any, arm64_monterey: "a331b06f8d53d62d26088bda7554f78b87426ee301c305708cf7730e712427ef"
+    sha256 cellar: :any, sonoma:         "fe3058924ce5fbee3cef48d25abc8ddfb2f321e099e23bda2a2e046c7ba2d927"
+    sha256 cellar: :any, ventura:        "e68dce1d40ff3d3e57091b5bf7f17f8f12627d739e62f66e6200fddecd790094"
+    sha256 cellar: :any, monterey:       "03b739bf5751c063d8ff473be79d6c3b0f96ed2bebe9d511b6a05d85f111c0ce"
+    sha256               x86_64_linux:   "9fcc0f6f48c887dc2afe205844520158101f9b39ade7f00a4aff79aae743d306"
   end
 
   depends_on "cmake" => :build
@@ -47,8 +47,8 @@ class Openrct2 < Formula
   end
 
   resource "objects" do
-    url "https:github.comOpenRCT2objectsreleasesdownloadv1.4.3objects.zip"
-    sha256 "cc2c8304e35337fb7b4daffa9b0ad1afa9a9f3f8f895817671a71c665d372764"
+    url "https:github.comOpenRCT2objectsreleasesdownloadv1.4.4objects.zip"
+    sha256 "da017b90a3870649cb4ff22e14edfc746259af048967311d1133cf4c836ae5a0"
   end
 
   def install

@@ -11,8 +11,6 @@ class Spades < Formula
     url "https:github.comablabspadesreleasesdownloadv3.15.5SPAdes-3.15.5.tar.gz"
     sha256 "155c3640d571f2e7b19a05031d1fd0d19bd82df785d38870fb93bd241b12bbfa"
 
-    depends_on "python-setuptools"
-
     on_macos do
       depends_on "gcc"
     end
@@ -28,11 +26,11 @@ class Spades < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 sonoma:       "fe9990fdd0a2aed4be9ae1b409ec9ce7624fb67cecdaf9a93dc7a27e79a5d44b"
-    sha256 cellar: :any,                 ventura:      "7937876005faaaf6721f9aa34a38eaf46559863660b8a80f610cce1ab82e9eef"
-    sha256 cellar: :any,                 monterey:     "c81b55304bedd35d5b1959ab650f0d005d3fee2eadf6795fc3d69b3c5a4539b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3889b1e2c9a0a3f08f9e478cf370e078524fd2155150af7431866f4fca7c0557"
+    rebuild 3
+    sha256 cellar: :any,                 sonoma:       "596f3c88c276179428ce87c7801b6e41483bdaca32f97e809d1e74c6ab656104"
+    sha256 cellar: :any,                 ventura:      "f03d022acc5928a400a57d56815a314cdbe2b72c5600eb952096e57fd4abd85a"
+    sha256 cellar: :any,                 monterey:     "c4da4be23d91abf193367765d6bee9cbd758add046aee900caec845d1bed243b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c284a1b00ebca8794f3f4396f481c09228aedc0ea4b6d2ad364a4efb29115a7e"
   end
 
   head do
@@ -55,6 +53,10 @@ class Spades < Formula
     depends_on "readline"
   end
 
+  # Drop distutils, upstream commit doesn't apply cleanly
+  # https:github.comablabspadescommit3ba9e5254b7d1ccb0c55d42b7d38b8be6f7d0648
+  patch :DATA
+
   def install
     system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -66,3 +68,58 @@ class Spades < Formula
     assert_match "TEST PASSED CORRECTLY", shell_output("#{bin}spades.py --test")
   end
 end
+
+__END__
+diff --git asrcspades_pipelinesupport.py bsrcspades_pipelinesupport.py
+index c66faf0..ac1af7d 100644
+--- asrcspades_pipelinesupport.py
++++ bsrcspades_pipelinesupport.py
+@@ -20,7 +20,6 @@ import sys
+ import tempfile
+ import traceback
+ from platform import uname
+-from distutils.version import LooseVersion
+ from os.path import abspath, expanduser, join
+
+ import options_storage
+@@ -95,30 +94,16 @@ def sys_error(cmd, log, exit_code):
+
+
+ def check_python_version():
+-    def __next_version(version):
+-        components = version.split('.')
+-        for i in reversed(range(len(components))):
+-            if components[i].isdigit():
+-                components[i] = str(int(components[i]) + 1)
+-                break
+-        return '.'.join(components)
+-
+-    current_version = sys.version.split()[0]
+-    supported_versions_msg = []
+-    for supported_versions in options_storage.SUPPORTED_PYTHON_VERSIONS:
+-        major = supported_versions[0]
+-        if '-' in supported_versions:  # range
+-            min_inc, max_inc = supported_versions.split('-')
+-        elif supported_versions.endswith('+'):  # half open range
+-            min_inc, max_inc = supported_versions[:-1], major
+-        else:  # exact version
+-            min_inc = max_inc = supported_versions
+-        max_exc = __next_version(max_inc)
+-        supported_versions_msg.append("Python%s: %s" % (major, supported_versions.replace('+', " and higher")))
+-        if LooseVersion(min_inc) <= LooseVersion(current_version) < LooseVersion(max_exc):
+-            return True
+-    error("python version %s is not supported!\n"
+-          "Supported versions are %s" % (current_version, ", ".join(supported_versions_msg)))
++    MINIMAL_PYTHON_VERSION = (3, 2)
++
++    if sys.version_info < MINIMAL_PYTHON_VERSION:
++        error(
++            "\nPython version %s is not supported!\n"
++            "Minimal supported version is %s"
++            % (sys.version.split()[0], ".".join(list(map(str, MINIMAL_PYTHON_VERSION))))
++        )
++        return False
++    return True
+
+
+ def get_spades_binaries_info_message():
