@@ -3,19 +3,18 @@ class Sqlfluff < Formula
 
   desc "SQL linter and auto-formatter for Humans"
   homepage "https://docs.sqlfluff.com/"
-  url "https://files.pythonhosted.org/packages/16/50/f4a2bddbe52da638171d67d087bc73c121d40a9aef534bbc29e967793ceb/sqlfluff-3.0.5.tar.gz"
-  sha256 "5a4a08e4e4dedcadf4f544de83a7edab66e1decf7d946ec5fdbe59db49d6c2fe"
+  url "https://files.pythonhosted.org/packages/eb/5d/de192472304916be3dadb9efaa3ad3a8fe9f112cfc0150b5398d8ef0f97c/sqlfluff-3.0.6.tar.gz"
+  sha256 "fa60e2a16e2500368d4ab98b5246ac85d4542c134413a5e650ed4d356adf7ddd"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3f68cde51b8fd5b9f8599101ada89bafff1904edc775082596c17b8e4762105d"
-    sha256 cellar: :any,                 arm64_ventura:  "c3e7dd3c1f97e20c4a4eb68bb68635863dbd402086e7e038d1eb3cd0a0f69d22"
-    sha256 cellar: :any,                 arm64_monterey: "4b1aa206b89612e19836c81b3a9c06a7177c644cbe27095f54ed80bccfff7b29"
-    sha256 cellar: :any,                 sonoma:         "76c4a488453b6cd4023bf423a5e01ff1feaa2c6a0b971697397bd061f038f442"
-    sha256 cellar: :any,                 ventura:        "d20a0836884e90b19cf2a37c63e636f4035fb3776a2e0124304ee600ca7b433c"
-    sha256 cellar: :any,                 monterey:       "70f9ab1fa9a8739a34381e92155636c9f35777e811eb83f3bcdd6ba44732560c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74068db8dddede0c55a5320e3856d8eb81667a71987a90e22fefb4efa0c80cab"
+    sha256 cellar: :any,                 arm64_sonoma:   "6b000fca025951ae6c4c5ea9e9197e6df36a65a842a0ba86165c63e5b16f37fb"
+    sha256 cellar: :any,                 arm64_ventura:  "4347de46297164b90d583f2f7a7f7e737c5e510ac9d221bfbd6f7d5909d6fee9"
+    sha256 cellar: :any,                 arm64_monterey: "891a1b593ba0f3431a2a4018165093e9613f5288d4e68552a397dddd73a9b8f2"
+    sha256 cellar: :any,                 sonoma:         "01925ccd497a58aa2531f8a712192effbe74cebdc8ac9df120dbaf805eef78c4"
+    sha256 cellar: :any,                 ventura:        "87d219dd3bf051c801968a164b4477edc29452ec78160e5eea5a2a2c1201d0d8"
+    sha256 cellar: :any,                 monterey:       "8a5ffeaada74f41902b7fe9dfd2335cc1efe93f558cb77475f9d1b802195aabe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "472887c050e0fca0ea5f789d28159777d7ceedd80a3cf8c815bf43cf60e671a5"
   end
 
   depends_on "libyaml"
@@ -52,8 +51,8 @@ class Sqlfluff < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markupsafe" do
@@ -77,8 +76,8 @@ class Sqlfluff < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pytest" do

@@ -1,8 +1,8 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https:camel.apache.org"
-  url "https:github.comapachecamel-karchiverefstagsv2.3.0.tar.gz"
-  sha256 "76082e7c120d10545f8f93d87eb9cb7e6d3cd01a3eae351dd11d03a148e4b38f"
+  url "https:github.comapachecamel-karchiverefstagsv2.3.1.tar.gz"
+  sha256 "9f35998ce81f41a78b5e7bcea19a641b91eee8c562b3d985911689c0c69acf02"
   license "Apache-2.0"
   head "https:github.comapachecamel-k.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Kamel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db94e27685a4506faa89786b5d917f990556f4db00fa77fe841127fb591ac6b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d54eec7b77a4a6a46287e922edf6280935e4688ebe058ff19ff104ffe730aee5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5927bae8cb43c173789fce7dd2529241b3f167b96f6630f8c4fd1c1588b29dcf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8f71ba39e83cb7f5e7bbb70de7862eefca287d298687cc464f0f08f1c6558c04"
-    sha256 cellar: :any_skip_relocation, ventura:        "7158f7089b808437f4134025ebc2edb292cad09a6381b9369dd735c3fd304e6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7df17aa049bfc63b05eb6f017c1cc117a749364123be8c9fe398fe1db9bbd0f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7be6df5ccf65c7f19d1b986d06fe7abb24803663800b738355c67bfb414b7ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6bc41672d30de63febb82af897d83bf4ada577e28f455ef0404f26013bd66bc3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be1f75b49a51021890145b4c03ed2447504210e63f7648a8d228269e3e3c5728"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d4a42d1314f37b9bbb8c9a01fd2da3df7c36ab4902beb2173d0a2d9d3481987b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fac9e6da3cce2f0b3faceca6e8ff53410b135e25eb2758eb9090d53ffd2a0fdf"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a45dc018e478e87cdb60d25b4db4b7aef20c1c8ca74efcc5cc017ac6efb552e"
+    sha256 cellar: :any_skip_relocation, monterey:       "43d88d7cfd2e5fd2c691795859e08e8f747eb12ad58e021e471850c94303cf08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b24338b1d3e12bb9f39beb8f468adadb510ba812c9144dea798e208245232073"
   end
 
   depends_on "go" => :build

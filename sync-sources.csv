@@ -2956,6 +2956,7 @@ Homebrew-homebrew-core/Formula/k/katana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kawa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcgi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcptun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kdoctools.rb, Homebrew/homebrew-core, 0
@@ -4763,7 +4764,7 @@ Homebrew-homebrew-core/Formula/p/pcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcre++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pcre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pcre2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/pcsc-lite.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pcsc-lite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdf-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pdf2djvu.rb, Homebrew/homebrew-core, 1

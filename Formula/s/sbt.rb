@@ -12,7 +12,8 @@ class Sbt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fc96166a70f762c84b8ef5ed7e7e99d910c24208eb6ea946ef29724b9cdc9396"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "e11ba5cc1792158812433f08041f24c1f495cb379d4ab666348fe5d92752f762"
   end
 
   depends_on "openjdk"
@@ -29,7 +30,8 @@ class Sbt < Formula
     # Removes:
     # 1. `sbt.bat` (Windows-only)
     # 2. `sbtn` (pre-compiled native binary)
-    (libexec"bin").glob("sbt{.bat,n-x86_64*,n-aarch64*}").map(&:unlink)
+    # 3. `sbtn-universal-apple-darwin` (universal binary)
+    (libexec"bin").glob("sbt{.bat,n-x86_64*,n-aarch64*,n-universal-apple-darwin}").map(&:unlink)
     (bin"sbt").write_env_script libexec"binsbt", Language::Java.overridable_java_home_env
   end
 

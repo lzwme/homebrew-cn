@@ -3,20 +3,19 @@ class DetectSecrets < Formula
 
   desc "Enterprise friendly way of detecting and preventing secrets in code"
   homepage "https:github.comYelpdetect-secrets"
-  url "https:files.pythonhosted.orgpackagesf155292f9ce52bba7f3df0a9cde65dabf458d3aeec6a63bf737e5a5fa9fe6d31detect_secrets-1.4.0.tar.gz"
-  sha256 "d56787e339758cef48c9ccd6692f7a094b9963c979c9813580b0169e41132833"
+  url "https:files.pythonhosted.orgpackages6967382a863fff94eae5a0cf05542179169a1c49a4c8784a9480621e2066ca7ddetect_secrets-1.5.0.tar.gz"
+  sha256 "6bb46dcc553c10df51475641bb30fd69d25645cc12339e46c824c1e0c388898a"
   license "Apache-2.0"
-  revision 4
   head "https:github.comYelpdetect-secrets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "700c31972728f1f171a8832b367d04a7d82a33addf0598b6c959f6d528d1c2f4"
-    sha256 cellar: :any,                 arm64_ventura:  "f134b43523193c1400d96e922c28deeb69b5157b3966b54f7225cc0b8d1033fe"
-    sha256 cellar: :any,                 arm64_monterey: "2d6125cd7d98bd7203caf8ba16bd22bc1c04ec60dec01247130a11465700760d"
-    sha256 cellar: :any,                 sonoma:         "8cccf3956a0063f7ab351c71ce5e4bab6b88346f59fd58fc4be432cbee6b5fb4"
-    sha256 cellar: :any,                 ventura:        "e4752c09b691d41004bae467999bf5b45f9f09b727a93d09f2734e7ff664599e"
-    sha256 cellar: :any,                 monterey:       "8f408a18ffc6febe9c2cb368d687b109dd0575598fb59c827648dfdbc247448c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bb1f2d9166832277d86d879ebecd0742c45112520a3431c950c7b4af5554b1c"
+    sha256 cellar: :any,                 arm64_sonoma:   "e2dc35d337354cff76eac70b05ca0fd9164d0fedc1a3b38167e3798b46452876"
+    sha256 cellar: :any,                 arm64_ventura:  "edb67c4637c4ef4484fdfc110235c2c4da023aed8b28979e8bd52fcf38e0acf7"
+    sha256 cellar: :any,                 arm64_monterey: "8e4cba8883dbf9345d576585a9671d98bb855e492824a9026fb4d399df993fee"
+    sha256 cellar: :any,                 sonoma:         "e284122a417a74f1526ca226756cfc8528c6c622afd378d9a2efb28ddc485916"
+    sha256 cellar: :any,                 ventura:        "5d68e3af5143f498a3a47b184899220fe8b057ec23968a36d52e24ffd8f9091b"
+    sha256 cellar: :any,                 monterey:       "ab29018f23b1d789b460d6a8d0f4ca29a8ce338eedff17d1f6633c47751773a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81767db7ddfd33133588f54d977441f506dcd755310a1b4b745ff1894ab501c0"
   end
 
   depends_on "certifi"

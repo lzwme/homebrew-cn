@@ -1,22 +1,18 @@
 class ReginaRexx < Formula
   desc "Interpreter for Rexx"
   homepage "https://regina-rexx.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/regina-rexx/regina-rexx/3.9.5/regina-rexx-3.9.5.tar.gz"
-  sha256 "08e9a9061bee0038cfb45446de20766ffdae50eea37f6642446ec4e73a2abc51"
+  url "https://downloads.sourceforge.net/project/regina-rexx/regina-rexx/3.9.6/regina-rexx-3.9.6.tar.gz"
+  sha256 "ed98c7a7f1d5a4148b02fef1b16aee4a6a6d8658d01a80cf5c503015ef01afa5"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "d5c5ba7129bbe4bff8d1123c1fe9854cf4f2131a49386a2f266bbd13f4777d4c"
-    sha256 arm64_ventura:  "6808d74238b1b6ced2548b2f75b609a31ab765e7eefe76bdae1b3e03e1da15d3"
-    sha256 arm64_monterey: "0b69b4673a59541d876b72172c6fca840366877557d30517e94cb67f51119739"
-    sha256 arm64_big_sur:  "13dfb9942fd4833175a11ae4fe2796c74638ac8dd5e7e3a63777cd935f54fadc"
-    sha256 sonoma:         "07edfe346553107d858ccf5b2c85f361fa6d194bdfe1f4ecd29e68061e16abeb"
-    sha256 ventura:        "b3c98aeb0520d525e2a1396c4fb8ecdace97bf77b916c1a218d61ae2db739ad3"
-    sha256 monterey:       "3b4d201a4818ddf001577fd1086e3e727817fdf9a9602706a5f9f54fb7f40140"
-    sha256 big_sur:        "688343997f1e418eac2c9d0b5142c0befedc3f74ebc6bd2472c2e10c825eaadc"
-    sha256 catalina:       "fa2360dc87dedfa3dc8c0bf71577dc2e7f64e4b85847fa55c331d78e2f538151"
-    sha256 x86_64_linux:   "ab70d6b3957468bd4486fa82da511b3b4cc8e23057827cec07d95163742fbadd"
+    sha256 arm64_sonoma:   "c66acc278833ab29504dea15de9e0982fe5e138e2d10452429721a2e69925c71"
+    sha256 arm64_ventura:  "0f6d600a409156119c45453232d6d020023cb9aee2c063bfa30841d835e72521"
+    sha256 arm64_monterey: "cf0cfee8e56e38403ac472aed56cde78850121b7b5adbd52ccc27387d763af5a"
+    sha256 sonoma:         "96b18ac7771715b1655532e50a80d53652270297ba98f543818392a9f55fe850"
+    sha256 ventura:        "dbace070503339b00048f858b5e84dda450c15954d1e58b7141a8ea47eec0f39"
+    sha256 monterey:       "2a03b38f8aadc69740e1fcf98425fa4e978f9549f65b7cbab31c64bca431be9b"
+    sha256 x86_64_linux:   "3b18e755fb8d0f75a5782a91ca4f36dd6be9cba68e24575af20dc7c271d99381"
   end
 
   uses_from_macos "libxcrypt"

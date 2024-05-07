@@ -1,22 +1,19 @@
 class Uriparser < Formula
   desc "URI parsing library (strictly RFC 3986 compliant)"
   homepage "https:uriparser.github.io"
-  url "https:github.comuriparseruriparserreleasesdownloaduriparser-0.9.7uriparser-0.9.7.tar.bz2"
-  sha256 "d27dea0c8b6f6fb9798f07caedef1cd96a6e3fc5c6189596774e19afa7ddded7"
+  url "https:github.comuriparseruriparserreleasesdownloaduriparser-0.9.8uriparser-0.9.8.tar.bz2"
+  sha256 "72d1b559be3a1806f788a3d9be34a1b063d42aa238b29ba4ee633d6effcd33bd"
   license "BSD-3-Clause"
   head "https:github.comuriparseruriparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "32aca3ae359341a66b7dbc351d3e0b4a2b93cb57cc4d2173cd848b8346ebc746"
-    sha256 cellar: :any,                 arm64_ventura:  "e49771d86df067a567d44348b7c3778381346cccf8770fec3f47ea8b98257928"
-    sha256 cellar: :any,                 arm64_monterey: "c246c0448bc8325163156ffc6f2978da545bb42724ba9cb9b17038292d1797e1"
-    sha256 cellar: :any,                 arm64_big_sur:  "5a8a8595cee32186f8e6d180a183ffc63a0d105563b7ec3a32b5ba2fb95e8562"
-    sha256 cellar: :any,                 sonoma:         "d3c690fcb25f34e0dc6ebc89efc0999f36f4347956321610e83231c0a8f05736"
-    sha256 cellar: :any,                 ventura:        "4a9e68259e098e8b50c4d4f0c9966ec995803435138298e540e52b24a400c580"
-    sha256 cellar: :any,                 monterey:       "24922aed78fc01f1b93cec54a5d7590689439128d18498131a327895bed353b0"
-    sha256 cellar: :any,                 big_sur:        "71253e72c359702d184f83b86c9d1e8c0acd123e37e9c86fdc783e79d81149b3"
-    sha256 cellar: :any,                 catalina:       "ca0d40acafadaf72bcbef19b7e44e3351a3fd0c552e9b066316779bd5b8abc4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ef786e370707bf3b8d646737116b723fc11fef8ecf8f2720bf107897c40ba33"
+    sha256 cellar: :any,                 arm64_sonoma:   "1afad33dd8c8d67dd454030f96ca7b71fd625b088ba4e7354f52eb789995d2af"
+    sha256 cellar: :any,                 arm64_ventura:  "71f1d1f2919cd33409df57ff9464007a85aaf5ed23b496b1fc3311be22edb07e"
+    sha256 cellar: :any,                 arm64_monterey: "0f9231a7cc6bd6bf5578ec959b4951a9fa2bdf22a9f1ed571c5f3d9c2eccdc65"
+    sha256 cellar: :any,                 sonoma:         "9f1884bfa5687f65eca6be5aec1e0c5618f5faa404290d0827bb3c390828fcee"
+    sha256 cellar: :any,                 ventura:        "8df3c1c481bb8dca64b708dd35cc514e3743827b4d6b544aa5418d4ed90e868e"
+    sha256 cellar: :any,                 monterey:       "942834f010ac0ac2d508277f6f4c8d00d229654bf02de7528df7d53d5ca72771"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "690d05924e1dcfe664e3e0891326fa6c19aa61c178d1cff63a361013cad4b001"
   end
 
   depends_on "cmake" => :build

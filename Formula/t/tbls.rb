@@ -1,19 +1,19 @@
 class Tbls < Formula
   desc "CI-Friendly tool for document a database"
   homepage "https:github.comk1LoWtbls"
-  url "https:github.comk1LoWtblsarchiverefstagsv1.74.2.tar.gz"
-  sha256 "3a86b57b6203857c5dcfa94defb7006ef9dd7bec2494e0c51985ba482f0a3200"
+  url "https:github.comk1LoWtblsarchiverefstagsv1.74.3.tar.gz"
+  sha256 "8c0c0ab79089658fb5b82f7cff1855b838e5091ca936adf22fdd45382f1ebd54"
   license "MIT"
   head "https:github.comk1LoWtbls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d536a9b2a8c2c333de013bd36d12968cac6240ac251e79109d85cbf11bc7d1bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "603b12ca647fe4a5570c1a7149b6e01762676901122fd589a361db746efbb6ed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "020cd90d59bdc52017026c7f3417917a68b8ee7688087ac8acd86e184f339690"
-    sha256 cellar: :any_skip_relocation, sonoma:         "95da4feb10c48b67b19b9fd15637b766123b1e0c774475ad6abe141fadb37c6f"
-    sha256 cellar: :any_skip_relocation, ventura:        "42d0a606b737e1e335b5c4412b9504a5e1b4e1447f6a160ecf399e29aef6d789"
-    sha256 cellar: :any_skip_relocation, monterey:       "5fae2631ad992abf7e68638ff5082a40d25bc96b1530b123484d910bd28d17bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28202b3a2cbf1d4d0ff76f377cf70486da294ff9e1783f25947b02f40563b323"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cd8869704e59e711a5103e2be5d4b5ad747a02a945f5e6833ecf63be47cca91"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94fdf07541455374a9cb317ff1f9424b420ed2ecbca1093185625e2bc7ba3861"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aa5c83327fc91a04a823cdbeba336f826e34de45113d25bcdaf4e1d14a969307"
+    sha256 cellar: :any_skip_relocation, sonoma:         "748db62d313cf471a85f0689061dda981cd1d94fcc11a94c54728c1d0557fe08"
+    sha256 cellar: :any_skip_relocation, ventura:        "5182ca624708b0c4576702c8c44e80d96d681278d198fc3d1061554747da2033"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ee105afd7ee96ee26079339b5ac76ccc6dec4670c63ea9f40fdd9e465770946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15ff46d6268b106ebd894b16f181567368293f2585398dea738f1eaa1d0fbd82"
   end
 
   depends_on "go" => :build

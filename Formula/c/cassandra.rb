@@ -10,14 +10,14 @@ class Cassandra < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c762c38816e0390045b7dacd748540fe5d5d6b2f3eb899345feae7d43a855f43"
-    sha256 cellar: :any,                 arm64_ventura:  "b9c1354a4c899523ee897d54cdc93bd7e0569bd59a00b1239f5893cc753f905b"
-    sha256 cellar: :any,                 arm64_monterey: "8c6bdf5ffeddbe5f901ffd5ae663dddf442ce2cc18146a5bf2d3cc74b2258295"
-    sha256 cellar: :any,                 sonoma:         "dce5b3c5d2b03a1e49b20dbfdff5ac25cee90f4613e3147eb7ca01147109eab4"
-    sha256 cellar: :any,                 ventura:        "03503111a62e38a4e68559cd4f4ee9751011e77f325fb20576055af161438778"
-    sha256 cellar: :any,                 monterey:       "93251f588e156d585a6645effb9370aad0fee90234db341d011f1838309384a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e2a2458bb471147d3181b50c419e8020c8cf32171a243dd02442c8ff22ccaa"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "8801df3506e09e3ebf4e39e3dd4a3fd30edd215f779bda83c2ebbdf2ae8a2728"
+    sha256 cellar: :any,                 arm64_ventura:  "df849293e19ac612f8b2e775dc0f1fff4972de7b2fd3ee830818c3a17bdcf1d0"
+    sha256 cellar: :any,                 arm64_monterey: "a8f7acc83e28d749f9e8b829d48dec2a1d6b47c067d9e20400e1b4fbf6712921"
+    sha256 cellar: :any,                 sonoma:         "de58ac68406a3a8e727d1e9769c3dc175d1524ce0616c6e64fe4df6c2654a9e3"
+    sha256 cellar: :any,                 ventura:        "c007a6cc975af87750c4de8cbcc4455dbace069834ee506a930d52c8044b4174"
+    sha256 cellar: :any,                 monterey:       "1c1aef0a46dee6462b97464e5338618097e9514da9416112043cd49fea9996e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8ceefc9f0700e53caf05d5cb397dbea76259fe84cf2e9e0495e9d23b42e4574"
   end
 
   depends_on "libev"
@@ -37,11 +37,6 @@ class Cassandra < Formula
   resource "geomet" do
     url "https:files.pythonhosted.orgpackagescf2158251b3de99e0b5ba649ff511f7f9e8399c3059dd52a643774106e929afageomet-0.2.1.post1.tar.gz"
     sha256 "91d754f7c298cbfcabd3befdb69c641c27fe75e808b27aa55028605761d17e95"
-  end
-
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   def install

@@ -1,19 +1,19 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
   homepage "https:github.comiawia002lux"
-  url "https:github.comiawia002luxarchiverefstagsv0.24.0.tar.gz"
-  sha256 "3d69faf2e98f92df9984baf38bec02a88bf2db2113771e9567570d802d8fddde"
+  url "https:github.comiawia002luxarchiverefstagsv0.24.1.tar.gz"
+  sha256 "69d4fe58c588cc6957b8682795210cd8154170ac51af83520c6b1334901c6d3d"
   license "MIT"
   head "https:github.comiawia002lux.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c2cee073ec7e09b14c715dde81c72ba176d041f60ef721c81e6788083656b98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0aabb4e1d7792e89f50c6ac1049f8d9984f8aea5c4ad47b56d12bda35b4558e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "df24c58d16063eddef2c1e6af8360d0e3b5df42168dcc2426108cc9c73e23ed5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9bed5bdfa87200ee99c685ca59ef0077c3985e7954e3302d6c247c542624a944"
-    sha256 cellar: :any_skip_relocation, ventura:        "98ba1fd6f227103a14cf4be767ecc18109572493faf0061d6fa5d9c0f43051f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "afd981cd65eb398c427254eea515cfd57a8f974212df33f50ad8b7aaec854232"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b19f6e7ec7d2bc2d14ad146a12ff0b50e66dd629a64dfd66357f389599837051"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5af366f0e1b73c4926287c7227d026463ae47f383efa10eeeb01faa2ff7a21cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbc8cb18111ffbfb8881a1ae0e4973ddbc201f1cf300a5c0d6d7488de52d7386"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f408349e07874ca92110e3a97811c3538a4336c4fa981b4eab2678116b693b51"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b4bfaaa7742a309ccc67eecc73a79baca0c7ee41aa64e3b3ce8353dec459ce11"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad62801390bbdffaf44fddf9bdb162d82c66b34a7315fbdbb96e59e2520d836a"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc647637d6184e61711b886d5f9e6edda5a8a9c36c224a2dd9ea2e6cf7d8ee3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8969910db9f1affb496df289b867c1353558dc20a2bca291f604a6628edc62da"
   end
 
   depends_on "go" => :build

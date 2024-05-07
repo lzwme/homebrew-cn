@@ -1,19 +1,19 @@
 class ProtocGenGo < Formula
   desc "Go support for Google's protocol buffers"
   homepage "https:github.comprotocolbuffersprotobuf-go"
-  url "https:github.comprotocolbuffersprotobuf-goarchiverefstagsv1.34.0.tar.gz"
-  sha256 "51e6e2a7c8d5e2d641433af3f6ba0316bc300246f79918502177e924b0953ae2"
+  url "https:github.comprotocolbuffersprotobuf-goarchiverefstagsv1.34.1.tar.gz"
+  sha256 "8aff9ec0c28a926daeedb1ce1f87a284e22fc5a892e9e5f7c850881137c85000"
   license "BSD-3-Clause"
   head "https:github.comprotocolbuffersprotobuf-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4454a7d86153113532a2d6b7a0768dbcd8466b5d275e0890485ef437152230e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4454a7d86153113532a2d6b7a0768dbcd8466b5d275e0890485ef437152230e5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4454a7d86153113532a2d6b7a0768dbcd8466b5d275e0890485ef437152230e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "43658e5738d25414202e42acc6eb3a18a832c03bc0e657893bd783b29237b139"
-    sha256 cellar: :any_skip_relocation, ventura:        "43658e5738d25414202e42acc6eb3a18a832c03bc0e657893bd783b29237b139"
-    sha256 cellar: :any_skip_relocation, monterey:       "43658e5738d25414202e42acc6eb3a18a832c03bc0e657893bd783b29237b139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6aed1f0ab24115bd61f86a2a367acd606020b3d8f3297072e07db9a300ebca81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "40fe99df11a1a8e472f25f172794e902ff4a29c511edef96d9106e0119c0c6ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40fe99df11a1a8e472f25f172794e902ff4a29c511edef96d9106e0119c0c6ba"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "40fe99df11a1a8e472f25f172794e902ff4a29c511edef96d9106e0119c0c6ba"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6559db4561f5ebde6f88ff7822c802a4a0bad4e92668c58baf6f16143b6371e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6559db4561f5ebde6f88ff7822c802a4a0bad4e92668c58baf6f16143b6371e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6559db4561f5ebde6f88ff7822c802a4a0bad4e92668c58baf6f16143b6371e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f66bcdeabcb6b097dfeba54088c1f958a6c1fd36812fc63abe42286d816edc9e"
   end
 
   depends_on "go" => :build

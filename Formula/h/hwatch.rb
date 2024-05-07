@@ -1,19 +1,19 @@
 class Hwatch < Formula
   desc "Modern alternative to the watch command"
   homepage "https:github.comblacknonhwatch"
-  url "https:github.comblacknonhwatcharchiverefstags0.3.12.tar.gz"
-  sha256 "f8db316a3b186f0dbf863ce285c8d5642f709a8527022fd2c18162f26c5b6f3d"
+  url "https:github.comblacknonhwatcharchiverefstags0.3.13.tar.gz"
+  sha256 "a9fb477ce8682919fe2af89a4f8c9286c525fa384161aa2cf1e0fad2c57b1877"
   license "MIT"
   head "https:github.comblacknonhwatch.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf501395309581c677aa7ed06162e714accf1bfd1f478b1e174931dc5978ca31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ec3395e182bece9d69f34d92254fced4231d832fb33c5de63a18ec039ed89ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f008eae455424510a7596c992ea87e543bca2380cfba859aa913979f9435ffd8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e9113d4000e52085bd275790383f8ebe5b2d767b39341791e4e70fbfa648dc26"
-    sha256 cellar: :any_skip_relocation, ventura:        "38c310b6492893eed18cd5777c540e78f2024de5a96de27e42a43c30a9b00bba"
-    sha256 cellar: :any_skip_relocation, monterey:       "777933083571966d30e77cf506681f420fadaa72e8e0ee50a0fdc4ceeaf78f2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2e81b11493bdb014a95cfb2c3d52b8091ec318923ef7f3ae80295bd85cdf9c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a487ce037a517ce27cfdb66989385c3e6b683ba1a7894af945eeb4a0ee29fa27"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e0aa825a8792ae6d6605b728875914cc1c8df4780e099e06d70af6e0eca1fbd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0aef00561e2b7568770fd7916cd9ced544d5b316fb10d069e5ec56f0aa5ebd05"
+    sha256 cellar: :any_skip_relocation, sonoma:         "52a84a0ca33c34844aad5b0a1a2d81a69cd3949fff95888cf30f74bf8fe3a51c"
+    sha256 cellar: :any_skip_relocation, ventura:        "fa3f82557e2668882c0395d39135316eee8295a6cbff7f626cf0b606f2dcf116"
+    sha256 cellar: :any_skip_relocation, monterey:       "72e8df1238474abedde217289bd454ad1c2d6e643543fc73a202dece3a23e377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "893ea5a3680db6231b700d793196ed2e63158a40617ef89cbb5e153f911e4b77"
   end
 
   depends_on "rust" => :build

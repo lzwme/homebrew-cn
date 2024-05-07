@@ -3,8 +3,8 @@ class Cahute < Formula
 
   desc "Library and set of utilities to interact with Casio calculators"
   homepage "https://cahuteproject.org/"
-  url "https://ftp.cahuteproject.org/releases/cahute-0.3.tar.gz"
-  sha256 "e84fdcbfc901b7818900fd959dab110a8aeb7d17ad8ac2f79287436d2519fdfa"
+  url "https://ftp.cahuteproject.org/releases/cahute-0.4.tar.gz"
+  sha256 "a178389ac82e2e83cd55d8d80ee1771daae88331a0e799d5573d986428825648"
   license "CECILL-2.1"
 
   livecheck do
@@ -13,13 +13,13 @@ class Cahute < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "46fe8c8ab653ec56112c6fd96406994fa567011dc1d3425156d73a81dc7bed39"
-    sha256 cellar: :any,                 arm64_ventura:  "0bd334ccd2db852cf3735d20600aebc9265de06ad4f21ad1aa0fcd38d3324fb7"
-    sha256 cellar: :any,                 arm64_monterey: "4466934190794da649d849ddae4c984df811ae3de9f3e53db30102f6e81292a2"
-    sha256 cellar: :any,                 sonoma:         "ab48a6aa740266190822d1d3bdd9f7361b64d53c0aa72991762c37d1c2ca6f01"
-    sha256 cellar: :any,                 ventura:        "79d22f701a7d923c734f3d0923eaa2fe9e0533661409c06b276422b0c76f10d1"
-    sha256 cellar: :any,                 monterey:       "ee24ab155ca2843e61ccaa72ddeaa68243c001889fe2b84b7b92f4f674f5f7e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f83b54623bd76091437b6bd5104e6eb150508ca7f3556293dc6c95198c97f1d3"
+    sha256 cellar: :any,                 arm64_sonoma:   "2bdbb8f9a3a96e4464e4198b967d978495a0c5777ba60c056a651f7b159d43a8"
+    sha256 cellar: :any,                 arm64_ventura:  "f77183811692e901e0137ff22a56393bfbc98b5865c49024bbcb5e6979699ed2"
+    sha256 cellar: :any,                 arm64_monterey: "6bfdbc3ab88c8dd88af56205e18834212fa457c5e3766f041f046690024baa0e"
+    sha256 cellar: :any,                 sonoma:         "fe98c279c43a8782bd8384a68a4e18bf45006ed2509da114086d67352b821f2f"
+    sha256 cellar: :any,                 ventura:        "22f99a9106482a5ed4972667491e6ce853f0451ec33e615d35f313e007ed28ea"
+    sha256 cellar: :any,                 monterey:       "161ea8710adc8997525d327d4b3d939d21c42888096cdbba41b553ecc5fe7dad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ce0312a62d15a5b1f26391bd53c599805447e9f30a425699a5894979ee9a00c"
   end
 
   depends_on "cmake" => :build

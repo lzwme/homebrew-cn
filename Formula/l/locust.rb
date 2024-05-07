@@ -3,19 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/3d/94/fe78c17e7cdcc606aab1a244936e70f9d9d1cff9368af3554bd523b9466a/locust-2.26.0.tar.gz"
-  sha256 "a5cb4c96b8fa1ae5c20876ab8ca9d1e980d56148ed3c187df610cc2546705bff"
+  url "https://files.pythonhosted.org/packages/4b/73/77a94b1b07dbce20dbaa0b5a5c97c890a42334a1429f2dd67839c412cffc/locust-2.27.0.tar.gz"
+  sha256 "0c6d3d2523976dafe734012c41b2f7d9ad7120cbcea76d47d80cec5d6d139905"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "03dc06f786910141456931269ba504710fd1bb4fff2e049447f7154079f0586c"
-    sha256 cellar: :any,                 arm64_ventura:  "e6f599400b309ae456ecd4a4f6a7cf8bae2856b9ede2d2cd115c457da8d11b36"
-    sha256 cellar: :any,                 arm64_monterey: "e7591fdb2ddb6555acd6a29623fd9ee05eb6c941909c99d5bbec0398ea9e52a6"
-    sha256 cellar: :any,                 sonoma:         "5275248085e52030b24118725727525439335d8fd53b8a79387ee0b88ce5d771"
-    sha256 cellar: :any,                 ventura:        "927e5eda153f53a8d796d4aa83b4a17dacc9af1e203318e08211112cc1be8080"
-    sha256 cellar: :any,                 monterey:       "ac0d7bff71512f9e7f922dbee4a5478ee2cf771d2d14731edba613a4178ae653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48bc71a77c5a240a8612a0996bb1208f3b32cf0948e4a703a0bea312b29f6153"
+    sha256 cellar: :any,                 arm64_sonoma:   "6fbf654b322cc8a3d718a7b78edc6abf2f0102adbf52e5790ea7c1bc0798b090"
+    sha256 cellar: :any,                 arm64_ventura:  "c77614b9ece1be72427a68988a41a92fc041058a7b76b513a27d5d793996a864"
+    sha256 cellar: :any,                 arm64_monterey: "ebd8db7539aae3f686df2c59be0bca6943571c4da09656c66581f850cb072ef4"
+    sha256 cellar: :any,                 sonoma:         "0964bcc85aecdf18b44f6cec1c3d7fabf53d32c964e8c899f07023e5e82cc1a7"
+    sha256 cellar: :any,                 ventura:        "e69ddd2508c7c494da53ad11073223ad60f239907bad2ffe87a520e4241f9946"
+    sha256 cellar: :any,                 monterey:       "29a0336bed3896b89f0dcb00c62e00d8e5169d5385c26e9bde52bd03a94657b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1e87ace60eb8d5daa1f6131b4818a0504211ba4f782f2593cb573ef900a65cc"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -90,8 +89,8 @@ class Locust < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markupsafe" do
@@ -119,11 +118,6 @@ class Locust < Formula
     sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
-  resource "roundrobin" do
-    url "https://files.pythonhosted.org/packages/38/97/6508c09e3af7eaee96e7b66a7dc7bbdbe8e6b85b8d2bbbb89612cf621bad/roundrobin-0.0.4.tar.gz"
-    sha256 "7e9d19a5bd6123d99993fb935fa86d25c88bb2096e493885f61737ed0f5e9abd"
-  end
-
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/d6/4f/b10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aed/setuptools-69.5.1.tar.gz"
     sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
@@ -135,8 +129,8 @@ class Locust < Formula
   end
 
   resource "werkzeug" do
-    url "https://files.pythonhosted.org/packages/0f/84/00f7193d7bd88ced26cd5f868903e431054424610dc7c041bbe87d2a4d66/werkzeug-3.0.2.tar.gz"
-    sha256 "e39b645a6ac92822588e7b39a692e7828724ceae0b0d702ef96701f90e70128d"
+    url "https://files.pythonhosted.org/packages/02/51/2e0fc149e7a810d300422ab543f87f2bcf64d985eb6f1228c4efd6e4f8d4/werkzeug-3.0.3.tar.gz"
+    sha256 "097e5bfda9f0aba8da6b8545146def481d06aa7d3266e7448e2cccf67dd8bd18"
   end
 
   resource "zope-event" do
