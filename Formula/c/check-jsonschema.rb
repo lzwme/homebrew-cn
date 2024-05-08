@@ -3,20 +3,19 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https:github.compython-jsonschemacheck-jsonschema"
-  url "https:files.pythonhosted.orgpackages9aaba2e1fa47c34fa64caae166afcf6b54466713bf17ebe960944fd16c6de140check-jsonschema-0.28.2.tar.gz"
-  sha256 "6bb5a7aa16ca9854a6fd45b6037c28bc548612aedec1df57b154ecfce1441bea"
+  url "https:files.pythonhosted.orgpackagesa0cf7dd56b2153e42604a5d9e13983dea7d2979c0d587e0a6936978f6a3fd8a5check_jsonschema-0.28.3.tar.gz"
+  sha256 "ffd55ec4e1cf6aec2860cab18f0d0f1aa4a886d01b81395f6be50d0cc0201159"
   license "Apache-2.0"
-  revision 1
   head "https:github.compython-jsonschemacheck-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ec9c70bfee0f07b0aee77d683b860a5e7a08eaecfdb8764335b9483e1158f47f"
-    sha256 cellar: :any,                 arm64_ventura:  "496fa52b46122342fc5902f7748311fca9bcd1eb30f45fa77f484e1965cf758f"
-    sha256 cellar: :any,                 arm64_monterey: "ac234bc4df75e7b5533b8e669c1daa8d335e8b8218eef27c0473643e50de0bba"
-    sha256 cellar: :any,                 sonoma:         "affae0c5a575831503e3bcd4bbe657f4eafb22564d21f635e4d669cdcbcf5082"
-    sha256 cellar: :any,                 ventura:        "91c454fe5576cbb70a6233975e69acb5a7bc785f640f7f5c3f2f7e94edbf57dd"
-    sha256 cellar: :any,                 monterey:       "b4b8a485abb9f349288de65dc1783a13eeca08033fdc158caa81d4affdeb6cf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e9b12ae7046ed771608ee8a5e2977c5829aaa3df342d715d18248b7e28f4267"
+    sha256 cellar: :any,                 arm64_sonoma:   "356ed782addf7d2ad960e2bca71e753892cf73d98e49a75bc9d03d726104bdef"
+    sha256 cellar: :any,                 arm64_ventura:  "28d9372a6807153a9ed11c1856a65fbdc2fb16a15962fc809ff6724812f5d243"
+    sha256 cellar: :any,                 arm64_monterey: "1106182a1f35c1854b83f42780da87ebb6b0d4b8ba62322e869bb15f8f86bdda"
+    sha256 cellar: :any,                 sonoma:         "85272221d67225971f92e3d4f0616b9bc6a928f0e56fbbd18ad608112ee55162"
+    sha256 cellar: :any,                 ventura:        "5343385866578ab63d4a6c7a7bbf8a6289e031bc03fd1ba89aef4e6a0449cc70"
+    sha256 cellar: :any,                 monterey:       "c9a8e60cc4aaec79e92129a06abe6c0c72538605676856637d7886d27afd562b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8726e8e8e1be862621ac2a6e558f8334427fcd9199c996e71d6508b028ff5405"
   end
 
   depends_on "rust" => :build
@@ -64,8 +63,8 @@ class CheckJsonschema < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
+    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
   end
 
   resource "jsonschema-specifications" do
@@ -79,8 +78,8 @@ class CheckJsonschema < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages59d748b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37referencing-0.34.0.tar.gz"
-    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "regress" do
@@ -104,8 +103,8 @@ class CheckJsonschema < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "ruamel-yaml" do

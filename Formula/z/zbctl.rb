@@ -1,9 +1,8 @@
 class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https:docs.camunda.iodocsapis-clientscli-clientindex"
-  url "https:github.comcamundazeebe.git",
-      tag:      "8.5.0",
-      revision: "0bf27175173109b8f05f3ea6a7e44e9ef6efa506"
+  url "https:github.comcamundazeebearchiverefstags8.5.1.tar.gz"
+  sha256 "05fa5d7830004c39e00cf2ff0db85e95ac4aedc2e5a9444450491dffdb6270cb"
   license "Apache-2.0"
   head "https:github.comcamundazeebe.git", branch: "develop"
 
@@ -19,26 +18,21 @@ class Zbctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "deb252aeacae169fc73fdcfd7d480ff5f2df132b1ee87cdbacb275e0b9315b75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "deb252aeacae169fc73fdcfd7d480ff5f2df132b1ee87cdbacb275e0b9315b75"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "deb252aeacae169fc73fdcfd7d480ff5f2df132b1ee87cdbacb275e0b9315b75"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b950bd4205ee3d29d4d39e22ad86117d2f3838bd58363f7a3a3eeeb79a9c142a"
-    sha256 cellar: :any_skip_relocation, ventura:        "b950bd4205ee3d29d4d39e22ad86117d2f3838bd58363f7a3a3eeeb79a9c142a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b950bd4205ee3d29d4d39e22ad86117d2f3838bd58363f7a3a3eeeb79a9c142a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6468883ebe26f61abec6cfdf2a64dfdf1a0013d5232a662afd9c56a19ae5c753"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b5232e7dc609791546f8078f249f30b97805059496f2431786bf0e336713e31"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b5232e7dc609791546f8078f249f30b97805059496f2431786bf0e336713e31"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b5232e7dc609791546f8078f249f30b97805059496f2431786bf0e336713e31"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6a13c0ddd2b322e067c8822068a7e7327caac9fd3c1e9c476b67ba7ae369c17"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6a13c0ddd2b322e067c8822068a7e7327caac9fd3c1e9c476b67ba7ae369c17"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6a13c0ddd2b322e067c8822068a7e7327caac9fd3c1e9c476b67ba7ae369c17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bcd26e7e0c19b21ad5a04cb4e2080aa13d55efc78b55cc4a3e331cca26ba2d5"
   end
 
   depends_on "go" => :build
 
   def install
-    commit = Utils.git_short_head
-    chdir "clientsgocmdzbctl" do
+    cd "clientsgocmdzbctl" do
       project = "github.comcamundazeebeclientsgov8cmdzbctlinternalcommands"
-      ldflags = %W[
-        -w
-        -X #{project}.Version=#{version}
-        -X #{project}.Commit=#{commit}
-      ]
+      ldflags = "-s -w -X #{project}.Version=#{version} -X #{project}.Commit=#{tap.user}"
       system "go", "build", "-tags", "netgo", *std_go_args(ldflags:)
 
       generate_completions_from_executable(bin"zbctl", "completion")
@@ -53,9 +47,7 @@ class Zbctl < Formula
       "desc = \"transport: Error while dialing: dial tcp 127.0.0.1:26500: connect: connection refused\""
     output = shell_output("#{bin}zbctl status 2>&1", 1)
     assert_match status_error_message, output
-    # Check version
-    commit = stable.specs[:revision][0..7]
-    expected_version = "zbctl #{version} (commit: #{commit})"
-    assert_match expected_version, shell_output("#{bin}zbctl version")
+
+    assert_match version.to_s, shell_output("#{bin}zbctl version")
   end
 end

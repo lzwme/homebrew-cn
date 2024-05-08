@@ -6,15 +6,16 @@ class AnsibleLint < Formula
   url "https://files.pythonhosted.org/packages/0c/62/68c361cc7f778d2d6817470affe30708714bf64b472cc03b9c206472ca42/ansible_lint-24.2.3.tar.gz"
   sha256 "2ec67cc1719f56e63b1dfc3728d0c2c4142e531f4452f6ae31f618438d59469a"
   license all_of: ["MIT", "GPL-3.0-or-later"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "12ab92033d1b9ec87e3a9570cb96e5d719c28667800be3bdc07724a2564031da"
-    sha256 cellar: :any,                 arm64_ventura:  "a0e9e2d7aaad668aa9118715908566eac1e231e3ab42446cc6472fc3d3783eba"
-    sha256 cellar: :any,                 arm64_monterey: "e2cdcc141beb845ab09ef9ba82181b6009ce9682e48179ff33ba2575970f7820"
-    sha256 cellar: :any,                 sonoma:         "1b0904acf7fbea1c208bafe28381b86e1f2acc9c22e07228e7fb6774836714d2"
-    sha256 cellar: :any,                 ventura:        "af512d04340a1052f5a057993b65615dacf9a03b21ac36997ad5c4c6b4238e76"
-    sha256 cellar: :any,                 monterey:       "7bbd13337b46d11967b90b85e3d534c12e2b4113300d308f3ad432d208e0f125"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96eafc3877ce61a2247de2600c8653717b0e64a01de1b75bb3d1092803101701"
+    sha256 cellar: :any,                 arm64_sonoma:   "9d8188bd0c5dca6b2f71c98c5069a3b1e3526f60e9c3c8c7fd387e4b1be7314d"
+    sha256 cellar: :any,                 arm64_ventura:  "08bd0f72f155aea919df6f6b1d2b240f8aa80f21d0b14566f9054e9d95c1b6a5"
+    sha256 cellar: :any,                 arm64_monterey: "5360c8c01a5d473ded255bb004bc320c2d2ee9900363b4cab823fae3954ac501"
+    sha256 cellar: :any,                 sonoma:         "31f7efee7f9aec0808f87ceb023ce63df7f8a5a32eb988181168a26a9b85f223"
+    sha256 cellar: :any,                 ventura:        "bcd36a5f5e6e3569581d2b87a9004d0ab0453750826ed0971f99ccc5c3c92547"
+    sha256 cellar: :any,                 monterey:       "632704aabc8a3a8f20a5633da4352d578e54109c712b6d904e78896a75b7280a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af902b95bb9d209a6198060397602cb15a083826e9f51c132864e8784184287b"
   end
 
   depends_on "pkg-config" => :build
@@ -59,8 +60,8 @@ class AnsibleLint < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "jsonschema" do
@@ -109,8 +110,8 @@ class AnsibleLint < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyyaml" do
@@ -134,8 +135,8 @@ class AnsibleLint < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/55/ba/ce7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5e/rpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https://files.pythonhosted.org/packages/2d/aa/e7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beea/rpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "ruamel-yaml" do

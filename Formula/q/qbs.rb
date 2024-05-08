@@ -1,8 +1,8 @@
 class Qbs < Formula
   desc "Build tool for developing projects across multiple platforms"
   homepage "https://wiki.qt.io/Qbs"
-  url "https://download.qt.io/official_releases/qbs/2.3.0/qbs-src-2.3.0.tar.gz"
-  sha256 "e7fa44fb36d705ab40f34c24e71bb32beef1210eab2d50bf6f2318a195780826"
+  url "https://download.qt.io/official_releases/qbs/2.3.1/qbs-src-2.3.1.tar.gz"
+  sha256 "ca61c6cd259c3cd5e2f4d6ca8b9d648880ea9de419cd69e99f571eeab0e5f9ea"
   license :cannot_represent
   head "https://code.qt.io/qbs/qbs.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Qbs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fe72372cca32dd0980d302dd28c9eac06aa9e5076d8f6398096d4b73d7270031"
-    sha256 cellar: :any,                 arm64_ventura:  "220aa1a8fe0fce5658bdd22da1f6954b3dace0692f8bbd15369fcd29b5085da6"
-    sha256 cellar: :any,                 arm64_monterey: "bc3c2880c4b56c044661a8a1092a34592a5e990e337c4295ea3f2490f16c4eb1"
-    sha256 cellar: :any,                 sonoma:         "8a857e65cad5c7559f4ade5c245ecb6d81a3ade3c7765855064bee5c7725cb21"
-    sha256 cellar: :any,                 ventura:        "cd43eef6a8894a14b9d4eb5e369178adf32793e29988018c486913773d876dc8"
-    sha256 cellar: :any,                 monterey:       "69aa33e80ad176172fa87345e3e1d99f65c2eeaf48f6adb17e97c00281f1ff98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c5c4996c292c21a166838665e69a696aae8671211ae6c41fd85e42ce4ffc46b"
+    sha256 cellar: :any,                 arm64_sonoma:   "50c1c163dcd97e9a8024fa1af9fcd91fb33b74c437a74f40a58e0e5750b2ece8"
+    sha256 cellar: :any,                 arm64_ventura:  "ab46ad225032f0d005dbd551cb82af020e812d87161f10ee90d368176edebdea"
+    sha256 cellar: :any,                 arm64_monterey: "24d5caeab647517ca275766ada8bdd274b525e1ab27211e2054dd5f45a83c576"
+    sha256 cellar: :any,                 sonoma:         "d02af707897379ac783855cf33cbf4c8c7a12bd6b097f14faf97779e725f455f"
+    sha256 cellar: :any,                 ventura:        "2358fd3f9e43ae711e97371664b113c6eb99c0473a2f0908600ae4bbd1c230aa"
+    sha256 cellar: :any,                 monterey:       "b27c01317b54ac4c98b1bca4cb4db7f01bf1253f9707f2140870b268a06fd8c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f321840a3b37463a6a525a40691e1ac5004a719c7389f6bd14ccf56184493b86"
   end
 
   depends_on "cmake" => :build

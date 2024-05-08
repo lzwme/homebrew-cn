@@ -7,19 +7,24 @@ class Lux < Formula
   head "https:github.comiawia002lux.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5af366f0e1b73c4926287c7227d026463ae47f383efa10eeeb01faa2ff7a21cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbc8cb18111ffbfb8881a1ae0e4973ddbc201f1cf300a5c0d6d7488de52d7386"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f408349e07874ca92110e3a97811c3538a4336c4fa981b4eab2678116b693b51"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b4bfaaa7742a309ccc67eecc73a79baca0c7ee41aa64e3b3ce8353dec459ce11"
-    sha256 cellar: :any_skip_relocation, ventura:        "ad62801390bbdffaf44fddf9bdb162d82c66b34a7315fbdbb96e59e2520d836a"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc647637d6184e61711b886d5f9e6edda5a8a9c36c224a2dd9ea2e6cf7d8ee3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8969910db9f1affb496df289b867c1353558dc20a2bca291f604a6628edc62da"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ec6c1ee606e93f2a6d69f052926d6646ea9b3d55b818392ce48b60bcbd2b5464"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7efda3117e78deb37e8131758ebaac2ad7956ee9f874703baa273416d9854763"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca4e5eb68eb6190a9121273861c7e54224ad8845854b3e28a57d775fc5ee5f70"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d09d3f7176d099619dd6f5578c65af77e9e74a0604cc248f879959c204136a8"
+    sha256 cellar: :any_skip_relocation, ventura:        "06dac67a49a44e204415365d22dec09363c2ad4247fc8e787791960ad25da706"
+    sha256 cellar: :any_skip_relocation, monterey:       "3293e792b745857668443f88fdbd7cbb50f599e2c5720da0419a0765e897e049"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52fd63821ac62400e3c1a1ade593edd328d4f6136d44a21309fd9d188120c115"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    ldflags = %W[
+      -s -w
+      -X github.comiawia002luxapp.version=#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do

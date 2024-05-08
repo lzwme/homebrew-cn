@@ -785,6 +785,7 @@ Homebrew-homebrew-core/Formula/c/cgvg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chadwick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chafa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chain-bench.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chainhook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chainloop-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chainsaw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chaiscript.rb, Homebrew/homebrew-core, 1
@@ -3059,6 +3060,7 @@ Homebrew-homebrew-core/Formula/k/kustomize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kustomizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kuto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kuttl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kuzu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kvazaar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kwctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kwok.rb, Homebrew/homebrew-core, 1
@@ -6008,6 +6010,7 @@ Homebrew-homebrew-core/Formula/s/streamvbyte.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strip-nondeterminism.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/stripe-mock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strongswan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/structurizr-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stubby.rb, Homebrew/homebrew-core, 1
@@ -10343,6 +10346,7 @@ Homebrew-homebrew-cask/Casks/q/quicklookase.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicknfo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicksilver.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quiet-reader.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/q/quiet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quik.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quit-all.rb, Homebrew/homebrew-cask, 0
@@ -11381,6 +11385,7 @@ Homebrew-homebrew-cask/Casks/v/virtualbox@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualbuddy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualbuddy@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/virtualc64.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/virtualdj.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualgl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/virtualhereserver.rb, Homebrew/homebrew-cask, 0

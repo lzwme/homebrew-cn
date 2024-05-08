@@ -1,23 +1,19 @@
 class Blis < Formula
   desc "BLAS-like Library Instantiation Software Framework"
   homepage "https:github.comflameblis"
-  url "https:github.comflameblisarchiverefstags0.9.0.tar.gz"
-  sha256 "1135f664be7355427b91025075562805cdc6cc730d3173f83533b2c5dcc2f308"
+  url "https:github.comflameblisarchiverefstags1.0.tar.gz"
+  sha256 "9c12972aa1e50f64ca61684eba6828f2f3dd509384b1e41a1e8a9aedea4b16a6"
   license "BSD-3-Clause"
   head "https:github.comflameblis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "2f12c9683f08599cff0dd87850c9e1ab714bad5d52a719b749798f03f944943a"
-    sha256 cellar: :any,                 arm64_ventura:  "103cdd90012dd567134b27ed704d763a04d3b1d628e3cea3c17106f5efabc640"
-    sha256 cellar: :any,                 arm64_monterey: "b00ba6ef35a226e90b0bfdf30d7a89ba81d00305fa8d960ccb6fd0aac63d3925"
-    sha256 cellar: :any,                 arm64_big_sur:  "b7bf20b1149ef17db68e5e5626f258e8369f00dbbb22be6c752c298138177aef"
-    sha256 cellar: :any,                 sonoma:         "3945e292a371e7660b2df263377bbd46e7fc6093511efcb7c353ee58e655e2ea"
-    sha256 cellar: :any,                 ventura:        "dcec254cbee261d15eebc4d3bd8d698f8af275886c9aca7bb4ce3dc0da961437"
-    sha256 cellar: :any,                 monterey:       "08dc73c2cbce4359b51c2a4c4f78df6350aa24df087b0c1613bb9995717edd68"
-    sha256 cellar: :any,                 big_sur:        "0c21276af8ad03e16deaed43bc146f57aec908e6e4bc95f748cedf2af8c1d3c0"
-    sha256 cellar: :any,                 catalina:       "1feac3394dab398ede9e1540b84c4782ee6e7b916e93327ec68324d1d451db17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "caf7db98c4ec255521ef31d28156bac9f2149ff02be40ad978b6be0c32ac2ba8"
+    sha256 cellar: :any,                 arm64_sonoma:   "1d2a10987101529132b5b6ff330ae2b267cb724b4c647e995cdfeffafe7f66c4"
+    sha256 cellar: :any,                 arm64_ventura:  "fe6a791c00a37f507387293ad0dcbe87e75d93e6bbf74bcd8df9ab431d318f02"
+    sha256 cellar: :any,                 arm64_monterey: "a65ab186fb8c72a6e7c9bbe01f84c916e8ef841e3f91759a4b32f663df2e0723"
+    sha256 cellar: :any,                 sonoma:         "fa0c1fb994eebe51d4154c880e69508c6b24b28f37f73d66e7da75ba1e1978fe"
+    sha256 cellar: :any,                 ventura:        "65277d9faaa9a63cca586c9979fa271e1c62f14bd5a8113d814a8a85c1eb6ec8"
+    sha256 cellar: :any,                 monterey:       "021d57eed83f4d50a681d37d091b310449572e24fdcbbdbae14e39127376bc3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c712e39e529db5de74f13c5c28c8645d01c1791bb1489308419a101c8e9ee627"
   end
 
   uses_from_macos "python" => :build

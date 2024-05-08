@@ -6,16 +6,17 @@ class Ansible < Formula
   url "https:files.pythonhosted.orgpackagesddd6728e1423af98ee08f05a341792abb053b73c30a5a978fc3e0777a87037a4ansible-9.5.1.tar.gz"
   sha256 "3c278bc9642b97fc953b2ba05b99cd80801e75bf3567dfaa1cb5131fe0ec1ecd"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fed4ca84cabc81a5ed2caa4924775172e8804ef9a0104abedefe909a7728d7ab"
-    sha256 cellar: :any,                 arm64_ventura:  "a841072c85e863b41c32d5c2a05a8a3ae2178a0e2f211cbeefcde392016526e9"
-    sha256 cellar: :any,                 arm64_monterey: "0d7fc7355ce6c81bf78ae9c8c0c095c8521787f000a3b94cd316f7c2a68e9cf0"
-    sha256 cellar: :any,                 sonoma:         "f0d0ec6461eb45c7d6e1fdbe5b39036dca0dbe85221c71eb810ba4aa929ee75f"
-    sha256 cellar: :any,                 ventura:        "aca871ea525e5b2c361f3a609e1f9ce60e33c94c1cac2bcf0257e149a2925414"
-    sha256 cellar: :any,                 monterey:       "6ec210e6b2d9db24abdc07d98c6c2c5e829efa362f53359abb4f6a059e32c9d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72ee119a92c546530beb60f66c416b74c8ad7217548609f7cd1d88a2a1f3ca9"
+    sha256 cellar: :any,                 arm64_sonoma:   "5e4c0edea26e0a10e9450aec4a7ceb58f9c98fca2fdc387f78a81fa8a941661c"
+    sha256 cellar: :any,                 arm64_ventura:  "bce6744f34d0a8ce186838bc390716eeac05c0bbd3f0bd8603e5aec5e95b403b"
+    sha256 cellar: :any,                 arm64_monterey: "54e75eb31bb5c9dd87b6b2b55841cac669be3bd9bf0f9b35ed2956ccae920afe"
+    sha256 cellar: :any,                 sonoma:         "b6d864b0ca2ca143f945700a5ce2f7ebeb7b6c22da4f4974fbf0796ea71180e9"
+    sha256 cellar: :any,                 ventura:        "8ae96111fabbb1c5385ef1287614d9dc2ed389caba03e277796e8b21641f994f"
+    sha256 cellar: :any,                 monterey:       "98d87088eda05310fc61e98b94ccf566000f9e272257a6b97d2845685bd5f294"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "015c601b35248e2586d9760bf3dc992aabcfd0765c239b72f40acf1775d8a639"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -59,18 +60,18 @@ class Ansible < Formula
   end
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackages72076a6f2047a9dc9d012b7b977e4041d37d078b76b44b7ee4daf331c1e6fb35bcrypt-4.1.2.tar.gz"
-    sha256 "33313a1200a3ae90b75587ceac502b048b840fc69e7f7a0905b5f87fac7a1258"
+    url "https:files.pythonhosted.orgpackagescae90b36987abbcd8c9210c7b86673d88ff0a481b4610630710fb80ba5661356bcrypt-4.1.3.tar.gz"
+    sha256 "2ee15dd749f5952fe3f0430d0ff6b74082e159c50332a1413d51b5689cf06623"
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages910902e5049fedf5b1dafb56318480a35a679e104f1275b990eec90f0fafdb04boto3-1.34.90.tar.gz"
-    sha256 "2824e3dd18743ca50e5b10439d20e74647b1416e8a94509cb30beac92d27a18d"
+    url "https:files.pythonhosted.orgpackages86aaa794dd88f4947edb9ae61e65f8fce8c40a924a84e51dc425d7579b7b7056boto3-1.34.99.tar.gz"
+    sha256 "6f600b3fe0bda53476395c902d9af5a47294c93ec52a9cdc2b926a9dc705ce79"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages8693ba848528f20dcb51d499f9a81ba3fd91fb74f11a303f7783f243115c32a8botocore-1.34.90.tar.gz"
-    sha256 "113cd4c0cb63e13163ccbc2bb13d551be314ba7f8ba5bfab1c51a19ca01aa133"
+    url "https:files.pythonhosted.orgpackages2895b5f918a231a18a5adb9ecf749903c357da169068e4907b65f31b1896ee68botocore-1.34.99.tar.gz"
+    sha256 "cafe569e2136cb33cb0e5dd32fb1c0e1503ddc1413d3be215df8ddf05e69137a"
   end
 
   resource "cachetools" do
@@ -114,8 +115,8 @@ class Ansible < Formula
   end
 
   resource "dogpile-cache" do
-    url "https:files.pythonhosted.orgpackages94c999a8cc80eace8877845b08bbccc43147afdc9830f604cbd9f8619bfb0409dogpile.cache-1.3.2.tar.gz"
-    sha256 "4f71dc0333ad351c9c6f704f5ba2a37bf51c6eed0437d1adf56e075959afe63b"
+    url "https:files.pythonhosted.orgpackages813b83ce66995ce658ad63b86f7ca83943c466133108f20edc7056d4e0f41347dogpile.cache-1.3.3.tar.gz"
+    sha256 "f84b8ed0b0fb297d151055447fa8dcaf7bae566d4dbdefecdcc1f37662ab588b"
   end
 
   resource "future" do
@@ -139,8 +140,8 @@ class Ansible < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "jmespath" do

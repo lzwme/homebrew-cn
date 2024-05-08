@@ -6,17 +6,17 @@ class Cookiecutter < Formula
   url "https:files.pythonhosted.orgpackages52179f2cd228eb949a91915acd38d3eecdc9d8893dde353b603f0db7e9f6be55cookiecutter-2.6.0.tar.gz"
   sha256 "db21f8169ea4f4fdc2408d48ca44859349de2647fbe494a9d6c3edfc0542c21c"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comcookiecuttercookiecutter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a1b5f5b670b23bdd877c3209c1db743c449988a99d4e5b857a7a75b48963ef8"
-    sha256 cellar: :any,                 arm64_ventura:  "d4f1abb6e697063255a564709ce220b08a538932fc028d7f6e804a8cc84f49b9"
-    sha256 cellar: :any,                 arm64_monterey: "b267117bc8a669afdb4a18551054a1187122186ebebced3a9c08752ffa537250"
-    sha256 cellar: :any,                 sonoma:         "db814c31d25e955ef0006aa73591a64e63537d3b0f0df0209cd46291e967d034"
-    sha256 cellar: :any,                 ventura:        "986d91853d7497bb2664bc5da1e7430cacf5a1acbdd67a695131fd7377c77ec2"
-    sha256 cellar: :any,                 monterey:       "d233745e612c443094ee54b9b23e5ed54b8e1b6ce907306498917b84a9336e55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67ddb359cfc5a24a5bfc47eeedc1ed918a57676a90bdff159081feec60b9d067"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c6492bbf4d368b70c25b6385ffe6df23b8bf7bc1c1d877ecceb4e92a4e7e97d"
+    sha256 cellar: :any,                 arm64_ventura:  "7e34020f91530de054d0799caa25db2a470caebf2730491cbdcb01ca78a80c9d"
+    sha256 cellar: :any,                 arm64_monterey: "24647277bb9f0c91f3334069303e340b60a94107d784123c95daa1a7e0462a60"
+    sha256 cellar: :any,                 sonoma:         "ccc628edab7916651293100ae95bfe6976c7335680be4a98a02d22631fa07430"
+    sha256 cellar: :any,                 ventura:        "0e87e73f65a96a8f41576c4ce035d665095b48cdb5bde4bbb057ceb803338909"
+    sha256 cellar: :any,                 monterey:       "36ca408f420630476494a730c0b6d612181381ecfcd3bdf3660a9f84daf3cf93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a0ca71d100787b1256b151f0d67482727ab0b95fe9ed9a419818ceb2d832f72"
   end
 
   depends_on "certifi"
@@ -54,8 +54,8 @@ class Cookiecutter < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markdown-it-py" do
@@ -74,8 +74,8 @@ class Cookiecutter < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "python-dateutil" do

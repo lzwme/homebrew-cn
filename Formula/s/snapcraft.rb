@@ -3,8 +3,8 @@ class Snapcraft < Formula
 
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https:snapcraft.io"
-  url "https:github.comsnapcoresnapcraftarchiverefstags8.2.4.tar.gz"
-  sha256 "ad08a63846ce8d4303b42a6e873564a9a8f09e92818ad9ff691e5d69b03ed6de"
+  url "https:github.comsnapcoresnapcraftarchiverefstags8.2.5.tar.gz"
+  sha256 "57bf73454c0ecff3e5da85fe9922e28214b03416b0547150b6316a6dda7e2b3c"
   license "GPL-3.0-only"
 
   livecheck do
@@ -13,13 +13,13 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4dd330e2210cf96230048c20359d09683a845f3fc2b811125c3948e77074164c"
-    sha256 cellar: :any,                 arm64_ventura:  "14d31c5ab962fb4047aaba25e4bfdb3aea742453cd2028e49a1204a38996b67c"
-    sha256 cellar: :any,                 arm64_monterey: "f50e6f4d955ad06888660379f149f7523ac7d742ad83eb71719391a5b4f7480a"
-    sha256 cellar: :any,                 sonoma:         "b26ebc51f8306a92e4140d1ae56839132cfc007ab103ce75084e2e66b84de3b7"
-    sha256 cellar: :any,                 ventura:        "912a6eaa395c5da7623efddbc20373f4601a125757fe19688603c53a333348d6"
-    sha256 cellar: :any,                 monterey:       "770c464f0ee58347c07ea26445402d1d3448dd4a4ac89a9f75c536422505210f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f8f74efce50593e79179d042c38c5ec1913f4a33f242c26616b7557d3ffb085"
+    sha256 cellar: :any,                 arm64_sonoma:   "da6d86f7e99eecece4346b43e42fcde4dab6d6893a7db28480b617c7bb5836a0"
+    sha256 cellar: :any,                 arm64_ventura:  "dad3539bf67b30dc7fc226da9f5bb95b1f3b1789c1d56030451430cab99b5235"
+    sha256 cellar: :any,                 arm64_monterey: "1449e9845fe2e82a5c8061840d6611d00a616b73293657bc6fc3ed46a22581fc"
+    sha256 cellar: :any,                 sonoma:         "1f625bab0ebca6ded1895036ef6f94b83cd70d3945edf8a0989c169a42208a22"
+    sha256 cellar: :any,                 ventura:        "949017549e98ad53a3558c64801b043d3ad816a35bf0989a279c0f6bc2d00b51"
+    sha256 cellar: :any,                 monterey:       "f3e9f4adb4031f5ba535a51dcbfc079161dde1eaf614c2bcda7b2a83612a3ffb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f90447515153788a23ba700beefae11f43bc3546e7438222d32528e78486da80"
   end
 
   depends_on "libgit2"

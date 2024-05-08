@@ -2,18 +2,18 @@ class CartridgeCli < Formula
   desc "Tarantool Cartridge command-line utility"
   homepage "https:tarantool.org"
   url "https:github.comtarantoolcartridge-cli.git",
-      tag:      "2.12.11",
-      revision: "4ba052189c0b9776126a7905fe5160622695ba14"
+      tag:      "2.12.12",
+      revision: "7f7efcfd4aaf7a2b4061f8424b6843a462794ed6"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1da4ba6199182f45661e3d4f1b7f661065fded1a44f5b9c7f2bd53858517bbc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "564016fbad96724c65e5320bda7c65e51e68436a1514fff4d190a5601af09950"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d6307ba8f516bba08f1a533d8852469d958ea0c94aa5140799daa920b3f7fcd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bb58963de38235b5d37bd6c22242a4299d39f0e2f7693d3854dfc9f2205db8ec"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5877f540b0301b30d3fa2ce38f8b8bfee1f4aa65a221c9e1df881b4325046a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "f1899de05bc51b2ba2bbdbc1831e480098beeef9dad84bf96a5c404bac2a7040"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ba7e1475451f2afebf0f3581ba06b750703883dfe42ab50c3ff195ec15b1dc4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bec51f07e6312f149f7d4dfadbbb9475de7dba2cae02d65f3ad4c5cc07b4305b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a7b997d1e63a70c5c0105897c6d0299d7df81b3b90d2a4b8c80966950a86bb4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8933d2dccd2dfaeaa4e7082fe7df22bef8c8a8937187e7985ce5a6d367ad7d9c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "874bc7b926c982d443adb209a19969ad5032f2e35d1a910244dec1811f998409"
+    sha256 cellar: :any_skip_relocation, ventura:        "a64cba32bee84f91839d527ce7abc3ec6a2d615ba82958940095e4358aafc771"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f4458bfa8b116866c305eac02b5fac4fcbd2b210a903ad2026003fa1782119b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81f45b6fa23e7590d4aa466946ce87f8b8fa9dec0fb3863f853d3131c8659c61"
   end
 
   depends_on "go" => :build
@@ -22,10 +22,10 @@ class CartridgeCli < Formula
   def install
     system "mage", "build"
     bin.install "cartridge"
-    system bin"cartridge", "gen", "completion"
-
-    bash_completion.install "completionbashcartridge"
-    zsh_completion.install "completionzsh_cartridge"
+    generate_completions_from_executable(bin"cartridge", "gen", "completion",
+                                            shells:                 [:bash, :zsh],
+                                            shell_parameter_format: :none,
+                                            base_name:              "cartridge")
   end
 
   test do

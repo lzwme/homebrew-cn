@@ -6,16 +6,17 @@ class Buku < Formula
   url "https:github.comjarunbukuarchiverefstagsv4.9.tar.gz"
   sha256 "1e432270ae78c7852110dcf2c2e215893bcc338299a4998f14a1f6b26e37bfac"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33f34938fa8539e5d40e7a1c0299f774a712267fbe3644eb8e03fe1cd39f9d30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8a7270416c10c6dcb4e409edc6e47e5e0be420adb7f88d01aab2e94e297097a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11a80147416a1caea1b2dfd490390a66df5d21bf20e9a9dfce6ebbe9efa2d672"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8c38d92eb11fe0f52348b8393207898972ba54a614438dc220cff6068379723f"
-    sha256 cellar: :any_skip_relocation, ventura:        "5b938911d7d5e52a2f3d44f6c7bf45f849383a3bc1af609e071467f9563576a8"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4838bc05a1e1046c721b348a167d3738cce702f885f6b3b08a7ea5bdcc1ba3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00daf832e10fa9de23d258c41cb6ab4234cb2d6ecf4006acd5d55a2ea64b6257"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17be5e7443c5c542d9bfa1a10a32b9653c60a88809d2bd7ef3fbe7170fc6bc24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0122e570bce2060bdfc65f0c8c4c914df5aa2a6ffd778617644ae2065afee719"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95f39ea319235137c2d514ca2a449e92c729a153c863a7e87c1cf2d576edabc0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "44d72f0f42143094e2e4eb298888d9042b3673d66b192d70df0aecd329084be4"
+    sha256 cellar: :any_skip_relocation, ventura:        "f53be40b07ee4144c9e29491c6e2f6da4acf1c62e4051aaba0d128fd95474da6"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ee739ba74354012b518b7675610f82ccc10a3497ce3c5a0d14b352d2eeb9ea0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "907e7360baaa63682cc808c1b3948c1ffc580b9f8013e838a4a3c6196ae954df"
   end
 
   depends_on "certifi"
@@ -66,8 +67,8 @@ class Buku < Formula
   end
 
   resource "flask-paginate" do
-    url "https:files.pythonhosted.orgpackages31e2cc5ba32420eeb994ae0f9fc31c066b7e96279036b54a39bd7a53978c7730flask-paginate-2024.3.28.tar.gz"
-    sha256 "3d600e3ff035cc5f0322812049772e96fa9c48b397cc58b1ba13c78ee10db7c8"
+    url "https:files.pythonhosted.orgpackages5cd0aca9153b109f0062eaadb497448f5e596f87cc89474d77347a1d931c8842flask-paginate-2024.4.12.tar.gz"
+    sha256 "2de04606b061736f0fc8fbe73d9d4d6fc03664638eca70a57728b03b3e2c9577"
   end
 
   resource "flask-wtf" do
@@ -81,13 +82,13 @@ class Buku < Formula
   end
 
   resource "itsdangerous" do
-    url "https:files.pythonhosted.orgpackages7fa1d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08itsdangerous-2.1.2.tar.gz"
-    sha256 "5dbbc68b317e5e42f327f9021763545dc3fc3bfe22e6deb96aaf1fc38874156a"
+    url "https:files.pythonhosted.orgpackages9ccb8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31ditsdangerous-2.2.0.tar.gz"
+    sha256 "e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173"
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markupsafe" do

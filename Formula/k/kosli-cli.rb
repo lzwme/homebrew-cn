@@ -6,6 +6,11 @@ class KosliCli < Formula
   license "MIT"
   head "https:github.comkosli-devcli.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5173ae077fa817a8c0eaca25e94062182313ac24a56d02709486fdc43c8839a"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "4386656401d9c1dabf2208cecafe3be18a04e45cdeeb3ff2d06bdab9c2fa1c48"

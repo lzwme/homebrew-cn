@@ -10,21 +10,22 @@ class Ccls < Formula
   url "https:github.comMaskRaycclsarchiverefstags0.20240202.tar.gz"
   sha256 "355ff7f5eb5f24d278dda05cccd9157e89583272d0559d6b382630171f142d86"
   license "Apache-2.0"
+  revision 1
   head "https:github.comMaskRayccls.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sonoma:   "6ab9a1d2c36da592ca06025bd3b608cc27ba3b84cbc38ee8b217c2da0eb34fa6"
-    sha256                               arm64_ventura:  "e80e46b44bf152f65e39f396122e0a855c6ae32591aa53713a56810ed09d8531"
-    sha256                               arm64_monterey: "46d6b564cb66a364fd325cc142db5881c1d4962b4143bad775c12251199e8367"
-    sha256                               sonoma:         "ec6fd6a7a732e644cb10a1cc7b87ed637cc3f43fb38f55daa55b6b3f0eea92d9"
-    sha256                               ventura:        "144200f91337709f33db804efa14d89052a7a7da1f72005bc70ae8abe27932d5"
-    sha256                               monterey:       "b19989185254ea8922725725a97d7aea3eddb1f11d322ab9ebd96cb4ed6b89e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b38297a355f3ccafce8ca86a31fdf274fbc09743c7fc6d50dc1c775af974c308"
+    sha256                               arm64_sonoma:   "7492cb5f43e3bf65ec1a6a8aa9d24151154b02df4c63c2a791bf495b08d65a61"
+    sha256                               arm64_ventura:  "5b3c4f1003dcad16b0221032aebd2793dea4efb500678668dedcaa118870df69"
+    sha256                               arm64_monterey: "998e41d641b206a6bfeae293dae477f08a802c5b0bf368e487e7b8b504d9f1d0"
+    sha256                               sonoma:         "417b048477613be53f4aeb16b11cd60da20163342f6643d108256325f52825b0"
+    sha256                               ventura:        "a9099ef1c527080d63783fc4620850e7bc2d93061e84c54aa706da49d024932d"
+    sha256                               monterey:       "89adaa6d420d1f21b4a176fb77ddc1236e0a102009956b5ac0efd6eb6844cd5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26999d25d86872987728832416459e7291fd221f916fe7678a6af06b11623150"
   end
 
   depends_on "cmake" => :build
   depends_on "rapidjson" => :build
-  depends_on "llvm@16"
+  depends_on "llvm"
   depends_on macos: :high_sierra # C++ 17 is required
 
   fails_with gcc: "5"

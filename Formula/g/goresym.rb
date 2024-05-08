@@ -1,19 +1,19 @@
 class Goresym < Formula
   desc "Go symbol recovery tool"
   homepage "https:github.commandiantGoReSym"
-  url "https:github.commandiantGoReSymarchiverefstagsv2.7.3.tar.gz"
-  sha256 "c731fdda4bab701f2348bd204b9d99fb90e97d73518278b7459b61df1983f0a1"
+  url "https:github.commandiantGoReSymarchiverefstagsv2.7.4.tar.gz"
+  sha256 "9823bdec19c6efc8d2bc5c9fdb4fff2ef6ad282e953cc6265dc131d9724e841f"
   license "MIT"
   head "https:github.commandiantGoReSym.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6e4cb831c543865ae0ee09273b6a30d8c099e55efcd387758899dff3f25657f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6e4cb831c543865ae0ee09273b6a30d8c099e55efcd387758899dff3f25657f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6e4cb831c543865ae0ee09273b6a30d8c099e55efcd387758899dff3f25657f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "861ec57565d01c6cf9ec24db47ced36ec3b3b7975ddc27e6510ed2bef3dbd0d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "861ec57565d01c6cf9ec24db47ced36ec3b3b7975ddc27e6510ed2bef3dbd0d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "861ec57565d01c6cf9ec24db47ced36ec3b3b7975ddc27e6510ed2bef3dbd0d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9301b3296add22750840c35fc09de608e4e5173f437b46408ea28b779d502507"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35d29fce859bbd78dbf8e6d4d42a59a7e7bb094c4aaf12ad7e14c72087eeae1e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "35d29fce859bbd78dbf8e6d4d42a59a7e7bb094c4aaf12ad7e14c72087eeae1e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "35d29fce859bbd78dbf8e6d4d42a59a7e7bb094c4aaf12ad7e14c72087eeae1e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "39e52b4f73da3c322974581c8b6126407cd934b8948d300b4fdcbab4f6b2bfe2"
+    sha256 cellar: :any_skip_relocation, ventura:        "39e52b4f73da3c322974581c8b6126407cd934b8948d300b4fdcbab4f6b2bfe2"
+    sha256 cellar: :any_skip_relocation, monterey:       "39e52b4f73da3c322974581c8b6126407cd934b8948d300b4fdcbab4f6b2bfe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "018ea7622684548654f49750c30113a2ca1c313db36e72c0c4fb5d621199c504"
   end
 
   depends_on "go" => :build

@@ -120,7 +120,7 @@ class QtAT5 < Formula
     # * toolsmetricsstructuredmodel.py was refactored in Chromium 90
     #   Ref: https:chromium.googlesource.comchromiumsrc+1219c5a8e1e6d11adb3e098f1a983b8cd8f5932f
     patch do
-      url "https:sources.debian.orgdatamainqqtwebengine-opensource-src5.15.15%2Bdfsg-2debianpatchespython3.11.patch"
+      url "https:raw.githubusercontent.comHomebrewformula-patches9758d3dd8ace5aaa9d6720b2e2e8ea1b863658d5qt5qtwebengine-py3.11.patch"
       sha256 "652a612144ef4d87b6b2a4098f56ba6db1201e1a241259d0a227123cb0e566a2"
     end
 
