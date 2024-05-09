@@ -1,18 +1,18 @@
 class Vitess < Formula
   desc "Database clustering system for horizontal scaling of MySQL"
   homepage "https:vitess.io"
-  url "https:github.comvitessiovitessarchiverefstagsv19.0.3.tar.gz"
-  sha256 "7040ec592fef5ecba87e9f629dfc9df9a9ac20d634dd2669bf88c857be160add"
+  url "https:github.comvitessiovitessarchiverefstagsv19.0.4.tar.gz"
+  sha256 "5293a9ee440a0e3d383b94fd81511adfb90657c42f1d3b73d1c54f85e3435fe9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "278c269eb6be3f0d08028f2d4b6e550a93ec93d2fe0420179eee579daeccd0c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "776f3bf573e7a26b3b71d6ebc0e171d8948e48cc3765ba16b0e45eb7b57812de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b9d261593020f4f965ecb5fe640220d8b958ea33ddb754a33937f3ac8b65e33"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9deab68bde2525f8adb9db96c3df9e9d7fe7429fb77daefc183dcd041994fc81"
-    sha256 cellar: :any_skip_relocation, ventura:        "4f843dd857ab9a6bb6a8764a213bdf40185ae07b0554eb545e74cd284708007c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a01d6a8eec5917942ab4081afbba170162fe83c924cf375552acc2fadabe4ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5e16d17847c69fef9802acc75b37b53f368c7cbc25bb17595d64790c8763140"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e93af6a98cfb7566e55c080711bcfdfe96d40adeeaa590ced322f4a378712945"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abb20c12d52612c8e8b449008590f35878429144a1ad5c98939be101c488c223"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c46578aad94c2caaeb80db3027d89fa04adf1a7ea4002bec6a1f2bcffcf87fe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3f44a7481bb4efb41447276fc6f94059eebd71561a70b5ebbe276ee1c033223a"
+    sha256 cellar: :any_skip_relocation, ventura:        "f375723eb1168dc39ad9950de6d2094db117cefa4e2c40c59be29589cc2612e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "7db1c449b82115fb290b92ad6c5b507e81767da21cf7487639d333bd951dfca5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbd709c9dddd1e8514f2ed0787e109424cce2dbcf5ea9b7d981c6e6a7c9bec07"
   end
 
   depends_on "go" => :build

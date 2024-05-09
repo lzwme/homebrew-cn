@@ -3,8 +3,8 @@ class Libewf < Formula
   homepage "https:github.comlibyallibewf"
   # The main libewf repository is currently "experimental".
   # See discussions in this issue: https:github.comlibyallibewfissues127
-  url "https:github.comlibyallibewf-legacyreleasesdownload20140814libewf-20140814.tar.gz"
-  sha256 "38cdd05f09da2037a8eba50d8f39aeeada39dd2c6008c9ffac4f554cf957e414"
+  url "https:github.comlibyallibewf-legacyreleasesdownload20140816libewf-20140816.tar.gz"
+  sha256 "6b2d078fb3861679ba83942fea51e9e6029c37ec2ea0c37f5744256d6f7025a9"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,13 +14,13 @@ class Libewf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4978bb8c35db1a5afdccdcbe6096e5cc238f997e57c876ed4d65c35b43c9f590"
-    sha256 cellar: :any,                 arm64_ventura:  "da80daa5311029657731b65502cf08528ea9e07d9a1476f2d0ad52ab64a7ef44"
-    sha256 cellar: :any,                 arm64_monterey: "4262862d000d00848c271f78597302019a2cbac42d15cf341349b4c5129a57d7"
-    sha256 cellar: :any,                 sonoma:         "03c5cb4c4a47f21153015fff5a0d7030ff285330dd53d0448e3c85db9ccea8df"
-    sha256 cellar: :any,                 ventura:        "d8853dc665210bcdb12500dd2f444800e63bd2610bb74d79625fdb6dfa92574b"
-    sha256 cellar: :any,                 monterey:       "5e8003f48fac93514179c0ddbaf3ac650d2483bc08479941271153c11f5ff044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49acfe78aa143e1f8aff65029ed62033c535257d52af3cf510f27e0694f5f7d4"
+    sha256 cellar: :any,                 arm64_sonoma:   "f921e6618b878d66acb4b02db137244115b0e721dd935ae5b151b681000ea86c"
+    sha256 cellar: :any,                 arm64_ventura:  "0c994929653ecf3f7a487f17231db932301058a5883b0e6076dea4ba4b8468bd"
+    sha256 cellar: :any,                 arm64_monterey: "9b990ae7f7866c4f3600f0ab65f88782812a2bc47e83d0a869081ca87e594746"
+    sha256 cellar: :any,                 sonoma:         "85fbf4280d4b14162dbee0956d5fc13e61bd018d183e920fff921d157dff06ee"
+    sha256 cellar: :any,                 ventura:        "d67b1dbed6b0bb1b20eeb6d294451821bd19deb21b79d1ba8cdaf94d4eb34913"
+    sha256 cellar: :any,                 monterey:       "e63d530c15de2669b9957557fe72585795f783fa66684b492dc9c6c0e75d4f06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3ebd71fc7c67743ebcfa1cb95debe60db4d085ca3235b0c6cebec9836b13dba"
   end
 
   head do

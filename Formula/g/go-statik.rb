@@ -22,8 +22,6 @@ class GoStatik < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "statik", because: "both install `statik` binaries"
-
   def install
     system "go", "build", *std_go_args(output: bin"statik", ldflags: "-s -w")
   end

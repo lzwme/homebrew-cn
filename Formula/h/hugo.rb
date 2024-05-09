@@ -1,19 +1,19 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https:gohugo.io"
-  url "https:github.comgohugoiohugoarchiverefstagsv0.125.6.tar.gz"
-  sha256 "c50df060b9c760fc12c503a9ca53ca1daa428766715ae9dda74d6ee1f53bd0e4"
+  url "https:github.comgohugoiohugoarchiverefstagsv0.125.7.tar.gz"
+  sha256 "3c931fab3ee9fd2f48d49514d9fbaadafb1609925475aef4012db9cce6bb0dad"
   license "Apache-2.0"
   head "https:github.comgohugoiohugo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19ea37382476cf2d5a3e67121c1d27a4f68ca6f71313d5d4d800d6c6573e38a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ef43cf5bfdc2b50a1fe548512f6d2556f9363b119cc631ea9ffc8d31fc4bab2d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36122c51bd20bd7adc540c75642770f18a06fa13b8bb1ab956324d2e8ab2b314"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2b0fc1abd0221ba3f5acb1622a4ef9ac5890c8649ca64858e5b2879be0c84a40"
-    sha256 cellar: :any_skip_relocation, ventura:        "31224d8a3c0a7810a88d13630887213394f13431090c7a0d2ad089bc76b2b572"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0596e3a3edefd8c776b3fb5865f024cc3ff12ea53724ff51cbb3dd952ee8005"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dcb2ce8bf9fd9696986fc2138225463cdc5b9b425421fae6b910373856d9ee7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "136fe38f237c5ceedd40c18985218cfed3cf9e5ddde5b3a82c867a1f306383c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e68d4bc46a1b1d0a895f979f5f76ac9b787bd53792b3db44338f2440b74f04f3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc66bbcbe3e268388e89c5d06e15f6e83a4863b7621f1a0df3a55d33f170ea74"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8cb66692eaeb1b54222272b3bd800ed8641cc4329bdb0214d6b42ab8526e14ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "22615de19471231ed876bb2014ab06430374b8160065f835f57dec99bc0c40a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "a022f8b393a69fe9c442ca7e70cab5ea34229885f411912c049a854473c33fb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85d2ceaa259a8c99ae2e6e30ad9793d1feb8c7388a8347d443f0f43935194f72"
   end
 
   depends_on "go" => :build

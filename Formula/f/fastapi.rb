@@ -6,15 +6,16 @@ class Fastapi < Formula
   url "https://files.pythonhosted.org/packages/0e/1f/f4a99e92c583780787e04b05aa9d8a8db9ec76d091d81545948a006f5b44/fastapi-0.111.0.tar.gz"
   sha256 "b9db9dd147c91cb8b769f7183535773d8741dd46f9dc6676cd82eab510228cd7"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b7f79ae45f9ac819cb57839befb57a6393ed12c72f136f2af8905dc7f1f4504d"
-    sha256 cellar: :any,                 arm64_ventura:  "1eda8363f5b75a5f97896e15be9cd3105b772d1a9cae1bb68e8ef9bc92882031"
-    sha256 cellar: :any,                 arm64_monterey: "f9a55b8b2fdd3eab3ef60428f0ac3d81756c6cac6939da12fb555d0b7a941803"
-    sha256 cellar: :any,                 sonoma:         "f4e4d0523620f95beda506c8ddffabb011964d1d3d4f7133a6b416359606d693"
-    sha256 cellar: :any,                 ventura:        "762f73b5854f0d2b7ffd1ff7f3d1f9ec1f9fa2482822703686c60db226a7e89a"
-    sha256 cellar: :any,                 monterey:       "7c2018b547fc64de66c21a53970b6a980891b8aeb0327ef70279e6539cdac5e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ddea81c6ef2b8b2d0370eed0658265f1970684058f1852ee6687f1128bc4446"
+    sha256 cellar: :any,                 arm64_sonoma:   "b63dbf42c903d4a5a002ed17593edd6cab0ff6f2a4e19642619c3b5de33c3e6c"
+    sha256 cellar: :any,                 arm64_ventura:  "274676a79cfdfdffa63fdea6019064800eff16628b4ee1ef987607cabe58a7ee"
+    sha256 cellar: :any,                 arm64_monterey: "2ff752918428fcf669026323448ca22aee676a8d81d88c989ae0465c3e0b34c8"
+    sha256 cellar: :any,                 sonoma:         "49c8fff57ca9e354c99e57a5eecc4d5f532e564ae6bc547b0a82ac8742ed3e11"
+    sha256 cellar: :any,                 ventura:        "437d368f2ad3c060e5412c0a3917acc2b2a798778eae428c98a003e46ed2c7dd"
+    sha256 cellar: :any,                 monterey:       "05496f4dd8f7f4b898c6e34df146d42c2d6afdd01d6ba8255bd1e577f24cdd77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2273ada33a02e98eb0e7514d75184d2647155153fe7838af0e8ef71f74e46dfd"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -52,8 +53,8 @@ class Fastapi < Formula
   end
 
   resource "fastapi-cli" do
-    url "https://files.pythonhosted.org/packages/39/1a/132f46e6a7122970a102fca6f71baa3b574be1ecac0f6888c68e6625fa33/fastapi_cli-0.0.2.tar.gz"
-    sha256 "589565ba758432632eadcf7b950e0ec76bb283b549784d9df17f261a8a9de476"
+    url "https://files.pythonhosted.org/packages/e6/3b/3562b2d5502a976612030c4326541dc24a1c55c5f62acbe2d9bfa4cb934f/fastapi_cli-0.0.3.tar.gz"
+    sha256 "3b6e4d2c4daee940fb8db59ebbfd60a72c4b962bcf593e263e4cc69da4ea3d7f"
   end
 
   resource "h11" do
@@ -82,8 +83,8 @@ class Fastapi < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markdown-it-py" do
@@ -102,8 +103,8 @@ class Fastapi < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/18/25/6ced806f4d96a386f535f1ef85d49b4e043e11bb7fa27bd87eea506a82df/orjson-3.10.2.tar.gz"
-    sha256 "47affe9f704c23e49a0fbb9d441af41f602474721e8639e8814640198f9ae32f"
+    url "https://files.pythonhosted.org/packages/f8/16/c10c42b69beeebe8bd136ee28b76762837479462787be57f11e0ab5d6f5d/orjson-3.10.3.tar.gz"
+    sha256 "2b166507acae7ba2f7c315dcf185a9111ad5e992ac81f2d507aac39193c2c818"
   end
 
   resource "pydantic" do
@@ -117,8 +118,8 @@ class Fastapi < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "python-dotenv" do

@@ -78,7 +78,7 @@ class Luajit < Formula
   end
 
   test do
-    assert_includes shell_output("#{bin}luajit -v"), " #{version} "
+    assert_includes shell_output("#{bin}luajit -v"), " #{version} " if stable?
 
     system bin"luajit", "-e", <<~EOS
       local ffi = require("ffi")
@@ -87,9 +87,8 @@ class Luajit < Formula
     EOS
 
     # Check that LuaJIT can find its own `jit.*` modules
-    arch = Hardware::CPU.arm? ? "arm64" : "x64"
     touch "empty.lua"
-    system bin"luajit", "-b", "-o", "osx", "-a", arch, "empty.lua", "empty.o"
+    system bin"luajit", "-b", "-o", "osx", "empty.lua", "empty.o"
     assert_predicate testpath"empty.o", :exist?
 
     # Check that we're not affected by LuaJITLuaJITissues865.
@@ -99,7 +98,6 @@ class Luajit < Formula
     # per https:github.comLuaJITLuaJITcommit7110b935672489afd6ba3eef3e5139d2f3bd05b6
     assert_kind_of MachO::MachOFile, machobj
     assert_predicate machobj, :object?
-    cpu = Hardware::CPU.arm? ? "arm64" : "x86_64"
-    assert_match cpu, machobj.cputype
+    assert_equal Hardware::CPU.arch, machobj.cputype
   end
 end

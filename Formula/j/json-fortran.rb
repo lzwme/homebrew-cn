@@ -4,16 +4,17 @@ class JsonFortran < Formula
   url "https:github.comjacobwilliamsjson-fortranarchiverefstags8.4.0.tar.gz"
   sha256 "71924c3bdd04ea37ddceb13c1b9e1e4a8f944b1ffab6285e5c5b1283cced2da8"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comjacobwilliamsjson-fortran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e4ad43af9fd365bdeeb64ad04cee256d7a6a4f6645df5aac4f2e4aedd3baa756"
-    sha256 cellar: :any,                 arm64_ventura:  "22a2596fbd14f95614ebe5b8fb7fbfa5f24d7b8713ebba25a13eca170c329cf2"
-    sha256 cellar: :any,                 arm64_monterey: "59da8ac4eb97345f2cc46790fb035cbf23bc96a4e04fa8d174d49268fa903c09"
-    sha256 cellar: :any,                 sonoma:         "c76e899cf2d5d81b0a7b9c87834338facd66e7bad56f693df598b9d6eae16429"
-    sha256 cellar: :any,                 ventura:        "484edba0b77d708bd4a1c208d60d738294838d5d3945be9a3b1d3fd31b28024d"
-    sha256 cellar: :any,                 monterey:       "98ff7ecf570b1d9cdeb654f79cbceece917ce2f1b70d29455db2e0b571d9e4cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88a2bdfb8e1a166a1abfcd963c511d679c553e503417e86898fd79768ba7473c"
+    sha256 cellar: :any,                 arm64_sonoma:   "f87ad5e09e1810b7b512b5ff9bc196a921c4cd81487c7cfc1cdd5b65b75235b2"
+    sha256 cellar: :any,                 arm64_ventura:  "aa20f4e550e3ed396313d7b20ccbd4ccb878f274a9d399c158ba36cdd679eaa0"
+    sha256 cellar: :any,                 arm64_monterey: "5483930c77d4407f7e26b8516eb6a00d0da926e39087697263e1944f9b853250"
+    sha256 cellar: :any,                 sonoma:         "212aeec6c9ea40ee64f3ac6659e52e644e56b6385889c138970c055d40bf1baf"
+    sha256 cellar: :any,                 ventura:        "a1a99cc2f55e8dfb6d6eb76c12623a9a3a0718a2cfdf7c099c78e914104b483c"
+    sha256 cellar: :any,                 monterey:       "4f21d27d78c618378d79e38c6f37631476c7633e7cbb1b598acab9e5b6ad1148"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afca49a1aa95a4ed00163fd07cafbcb9a0d5a72de717a76d3d04733f78823f7a"
   end
 
   depends_on "cmake" => :build

@@ -6,17 +6,17 @@ class Fava < Formula
   url "https:files.pythonhosted.orgpackages4985887d0aad8a4f09d4b0eae2cfb0c6d9ce067d314905333664555693ad30bcfava-1.27.3.tar.gz"
   sha256 "1ac9d765a6b31223a1ca36c88a71d10f57dda2a940a7777972cae6b727719863"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.combeancountfava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cee072f0d7ad20fd594d72ccea7c2804d3bb294e6974eae7dd058ccb4237c0e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edd43b45d167e6bc60b8ab2a8a1c11133eb6108941a1643d72918bb962911565"
-    sha256 cellar: :any,                 arm64_monterey: "deca7320d22d63f2d43514714230c7d441a49b1833699d44d04cb8344e31aa7b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3270c1e6cc4486dc45ae11397b077029cc13704974b2b7928c210bb2b640fbb0"
-    sha256 cellar: :any_skip_relocation, ventura:        "7665decc3a50b0db7cbd823ae4fbc740d3d44c920abcbd34378115d3fbb4af4e"
-    sha256 cellar: :any,                 monterey:       "83392bf0e7d3f41e68f6e1fb522dc276fd68df82d864ddd75c49a287c01747b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a58743f5d16740bbf214408cc148fa757de5173c52a9b37985b25f877c21688"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9562161ed0720ccdf392c1ed83b459ce73de9ef0acfec7e0fa6e9aa09ced81e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c923375ff1997b63ba3c2dd2646e1c52228fdac861eee53bcecaf075d6a45123"
+    sha256 cellar: :any,                 arm64_monterey: "23491ee15ded810f256630e24a3be5e7b13860507276a77225c30133ac008b64"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c15abf5499c7036c083c7d1f110cfc977d7c10c9e2715f887a2d884e4cf4fe7"
+    sha256 cellar: :any_skip_relocation, ventura:        "387d2a03e7657afec4cccdd4b30eb60062d1edbffe316ffd0b2ba8c9736decbc"
+    sha256 cellar: :any,                 monterey:       "3b7e35c5370410587841cf5e068fd58d6b26d98b86e06d1bee1057096c0d958f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d56132621d1365f356f8be14e20d69a9bcd6368d0b4085e6abdf95f09d79ae5c"
   end
 
   depends_on "certifi"
@@ -26,8 +26,8 @@ class Fava < Formula
   uses_from_macos "libxslt"
 
   resource "babel" do
-    url "https:files.pythonhosted.orgpackagese280cfbe44a9085d112e983282ee7ca4c00429bc4d1ce86ee5f4e60259ddff7fBabel-2.14.0.tar.gz"
-    sha256 "6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363"
+    url "https:files.pythonhosted.orgpackages15d29671b93d623300f0aef82cde40e25357f11330bdde91743891b22a555bedbabel-2.15.0.tar.gz"
+    sha256 "8daf0e265d05768bc6c7a314cf1321e9a123afc328cc635c18622a2f30a04413"
   end
 
   resource "beancount" do
@@ -41,8 +41,8 @@ class Fava < Formula
   end
 
   resource "blinker" do
-    url "https:files.pythonhosted.orgpackagesa1136df5fc090ff4e5d246baf1f45fe9e5623aa8565757dfa5bd243f6a545f9eblinker-1.7.0.tar.gz"
-    sha256 "e6820ff6fa4e4d1d8e2747c2283749c3f547e4fee112b98555cdcdae32996182"
+    url "https:files.pythonhosted.orgpackages1e57a6a1721eff09598fb01f3c7cda070c1b6a0f12d63c83236edf79a440abccblinker-1.8.2.tar.gz"
+    sha256 "8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"
   end
 
   resource "bottle" do
@@ -66,8 +66,8 @@ class Fava < Formula
   end
 
   resource "cheroot" do
-    url "https:files.pythonhosted.orgpackages087c95c154177b16077de0fec1b821b0d8b3df2b59c5c7b3575a9c1bf52a437echeroot-10.0.0.tar.gz"
-    sha256 "59c4a1877fef9969b3c3c080caaaf377e2780919437853fc0d32a9df40b311f0"
+    url "https:files.pythonhosted.orgpackages63e2f85981a51281bd30525bf664309332faa7c81782bb49e331af603421dbd1cheroot-10.0.1.tar.gz"
+    sha256 "e0b82f797658d26b8613ec8eb563c3b08e6bd6a7921e9d5089bd1175ad1b1740"
   end
 
   resource "click" do
@@ -86,13 +86,13 @@ class Fava < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackagesb28fecd68579bd2bf5e9321df60dcdee6e575adf77fedacb1d8378760b2b16b6google-api-core-2.18.0.tar.gz"
-    sha256 "62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"
+    url "https:files.pythonhosted.orgpackages31c6460b83c297c91c4f62d69aa9f04f3c5f8139a4f41c4b747c014939d5a802google-api-core-2.19.0.tar.gz"
+    sha256 "cf1b7c2694047886d2af1128a03ae99e391108a08804f87cfd35970e49c9cd10"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesac7a5b7b208a29c278128a9c27470338960a050da1fc74d18e10525a12fae4fcgoogle-api-python-client-2.125.0.tar.gz"
-    sha256 "51a0385cff65ec135106e8be60ee7112557396dde5f44113ae23912baddda143"
+    url "https:files.pythonhosted.orgpackagesddc5774bdee54820d9d913fdaf5869298f99327f893daf91db5ec7af3525da25google-api-python-client-2.128.0.tar.gz"
+    sha256 "908af182dfc1cd79412a489b37fe45e4f3cc99c74e80c7c477ca5babaa54eea5"
   end
 
   resource "google-auth" do
@@ -126,18 +126,18 @@ class Fava < Formula
   end
 
   resource "itsdangerous" do
-    url "https:files.pythonhosted.orgpackages7fa1d3fb83e7a61fa0c0d3d08ad0a94ddbeff3731c05212617dff3a94e097f08itsdangerous-2.1.2.tar.gz"
-    sha256 "5dbbc68b317e5e42f327f9021763545dc3fc3bfe22e6deb96aaf1fc38874156a"
+    url "https:files.pythonhosted.orgpackages9ccb8ac0172223afbccb63986cc25049b154ecfb5e85932587206f42317be31ditsdangerous-2.2.0.tar.gz"
+    sha256 "e0050c0b7da1eea53ffaf149c0cfbb5c6e2e2b69c4bef22c81fa6eb73e5f6173"
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackages577cfe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afcejaraco.functools-4.0.0.tar.gz"
-    sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
+    url "https:files.pythonhosted.orgpackagesbc66746091bed45b3683d1026cb13b8b7719e11ccc9857b18d29177a18838dc9jaraco_functools-4.0.1.tar.gz"
+    sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "lxml" do
@@ -171,8 +171,8 @@ class Fava < Formula
   end
 
   resource "pluggy" do
-    url "https:files.pythonhosted.orgpackages54c643f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https:files.pythonhosted.orgpackages962d02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "ply" do
@@ -206,8 +206,8 @@ class Fava < Formula
   end
 
   resource "pytest" do
-    url "https:files.pythonhosted.orgpackages30b77d44bbc04c531dcc753056920e0988032e5871ac674b5a84cb979de6e7afpytest-8.1.1.tar.gz"
-    sha256 "ac978141a75948948817d360297b7aae0fcb9d6ff6bc9ec6d514b85d5a65c044"
+    url "https:files.pythonhosted.orgpackages099d78b3785134306efe9329f40815af45b9215068d6ae4747ec0bc91ff1f4aapytest-8.2.0.tar.gz"
+    sha256 "d507d4482197eac0ba2bae2e9babf0672eb333017bcedaa5fb1a3d42c1174b3f"
   end
 
   resource "python-dateutil" do
@@ -261,8 +261,8 @@ class Fava < Formula
   end
 
   resource "werkzeug" do
-    url "https:files.pythonhosted.orgpackages0f8400f7193d7bd88ced26cd5f868903e431054424610dc7c041bbe87d2a4d66werkzeug-3.0.2.tar.gz"
-    sha256 "e39b645a6ac92822588e7b39a692e7828724ceae0b0d702ef96701f90e70128d"
+    url "https:files.pythonhosted.orgpackages02512e0fc149e7a810d300422ab543f87f2bcf64d985eb6f1228c4efd6e4f8d4werkzeug-3.0.3.tar.gz"
+    sha256 "097e5bfda9f0aba8da6b8545146def481d06aa7d3266e7448e2cccf67dd8bd18"
   end
 
   def install

@@ -3,18 +3,18 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https:github.combennorthliterate-git"
-  url "https:files.pythonhosted.orgpackages81f419a33cccbd2b0b2d2c1d00a09e706358b332735efe918a3233fd920d0f6bliterategit-0.4.6.tar.gz"
-  sha256 "2ea8161da2ebd67865fcf5c8131c842b509bcbdf8f47ba0cca273784265756bb"
+  url "https:files.pythonhosted.orgpackagesbd1dd8b406bb72174e3869c3d3242aec9ebd435a7b38cc9c4b0a34edd2bdf2b7literategit-0.4.7.tar.gz"
+  sha256 "b669f7209638e1a2a98304f749f5f2cc594db353c2b50d7be720cf6b261da97e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2e2da3ef9d0499ed870db199bea990fe460530981f8c065a281210ff99dfcce9"
-    sha256 cellar: :any,                 arm64_ventura:  "a6ba5df04c8dea894195a96fdc0655b873dcea56afa2c306f312ee44731443da"
-    sha256 cellar: :any,                 arm64_monterey: "2d244cfe5cb704c9885a1b791f910d73de7b01b53a8b55342a6737d0297cb107"
-    sha256 cellar: :any,                 sonoma:         "d87675e6ed751cf439639d01508a19ed9e3032d42363557c17aa494e5f8a9c77"
-    sha256 cellar: :any,                 ventura:        "5c29c18b543269b39f327ea3ee679d2963e263d2dc53db857f40fc229d75bd23"
-    sha256 cellar: :any,                 monterey:       "136abdecee8390fbb0bb1a73a53a2843625ca7b7fe8f2c93c52b5b9fb5807b5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40876ed8787933d5d1ba0139789dce8108d44e59e5da63debe709f2c2d353edc"
+    sha256 cellar: :any,                 arm64_sonoma:   "08a4638b65d6e90593fb4cfafa12ee4377ea8eecd641083f8f5e88206f1298cd"
+    sha256 cellar: :any,                 arm64_ventura:  "cfc489be39fc3c3fd6f70325e5051ace8dc77a3195f42c3c0cd3dab88bea780b"
+    sha256 cellar: :any,                 arm64_monterey: "39ef2f198b1fe6266e87f767e3645d3defa27dda8ad48d320e4233c7519ff087"
+    sha256 cellar: :any,                 sonoma:         "e278b9570ea03eec7fa9cb82b06f6065650f81598e71da2d2f08fc0e32599acf"
+    sha256 cellar: :any,                 ventura:        "cead4befbb4d7a552fa4a5a6367d3f6debc6eb1abf51ca7cee9a0e57bdfc4e0f"
+    sha256 cellar: :any,                 monterey:       "3eae789fa9680745e1a2aa45aead3b70efb8c011e768ba465175d5346ec77b7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "579cfff725845b7651d7264f80f42e78981feca3679f252b32f63279c5e986a9"
   end
 
   depends_on "libgit2"
@@ -35,8 +35,8 @@ class LiterateGit < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markdown2" do
@@ -60,13 +60,13 @@ class LiterateGit < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   def install

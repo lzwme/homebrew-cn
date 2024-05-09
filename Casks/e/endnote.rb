@@ -1,5 +1,5 @@
 cask "endnote" do
-  version "21.2.0.19537"
+  version "21.3.0.20232"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://download.endnote.com/downloads/#{version.major}/EndNote#{version.major}Installer.dmg"
@@ -10,7 +10,7 @@ cask "endnote" do
   livecheck do
     url "https://download.endnote.com/updates/21.0/EN21MacUpdates.xml"
     strategy :xml do |xml|
-      xml.get_elements("//updateTo").map(&:text)
+      xml.get_elements("//updateTo").map { |item| item.text&.strip }
     end
   end
 

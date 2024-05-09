@@ -6,17 +6,17 @@ class Pythran < Formula
   url "https:files.pythonhosted.orgpackages8231cc6fd7a2b91efc6cdb03e7c42df895b4a65a8f049b074579d45d1def746fpythran-0.15.0.tar.gz"
   sha256 "f9bc61bcb96df2cd4b578abc5a62dfb3fbb0b0ef02c264513dfb615c5f87871c"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comserge-sans-paillepythran.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "724bd960cce270c427734007a5d9b580e9489f3b176fd4d46db9c269ea984a7f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "724bd960cce270c427734007a5d9b580e9489f3b176fd4d46db9c269ea984a7f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "724bd960cce270c427734007a5d9b580e9489f3b176fd4d46db9c269ea984a7f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "be7b2ad398ad99bc58b6f84d4e508c890e2caebc7c9d2ad4466a429aaf526760"
-    sha256 cellar: :any_skip_relocation, ventura:        "be7b2ad398ad99bc58b6f84d4e508c890e2caebc7c9d2ad4466a429aaf526760"
-    sha256 cellar: :any_skip_relocation, monterey:       "be7b2ad398ad99bc58b6f84d4e508c890e2caebc7c9d2ad4466a429aaf526760"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcc466690983610f6e7ad5c313bc8e6b4330768b0aed159d08aaa43035ca3aa6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed54e55300e0492657e1b14e520d1fdc4dcd3488e80af86d56806f8128fdd15b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed54e55300e0492657e1b14e520d1fdc4dcd3488e80af86d56806f8128fdd15b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed54e55300e0492657e1b14e520d1fdc4dcd3488e80af86d56806f8128fdd15b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7ce3a62cdded4844c8e48eb4d94d44a1f8b0e29ea6c3ba9917de3035d436c144"
+    sha256 cellar: :any_skip_relocation, ventura:        "7ce3a62cdded4844c8e48eb4d94d44a1f8b0e29ea6c3ba9917de3035d436c144"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ce3a62cdded4844c8e48eb4d94d44a1f8b0e29ea6c3ba9917de3035d436c144"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1b90ef9e073d8a0859320be40980d7ace987e028368fac19c1c457191f2766b"
   end
 
   depends_on "gcc" # for OpenMP

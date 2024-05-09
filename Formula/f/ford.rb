@@ -6,16 +6,17 @@ class Ford < Formula
   url "https:files.pythonhosted.orgpackagesfe45fbb50a9ce7fb8740b8365fae80d7a3247202c6698672b67acdea188751f4FORD-7.0.6.tar.gz"
   sha256 "662d0cab60234743ed7b863fbb980e0af909f31e0205011d7978ea2dedc3e952"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comFortran-FOSS-Programmersford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6005fc5c4a7297e40659813691f1e7317585af554be43b904b8b1ec622559ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f703d5f06516c60649c65d1d7dc8bb9b4201bae67e3c12e9db8b905ff404fd1d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9512c2ebbed12ba38a16ce8ee1fbf47093a42e4e62b6fcb1e7cc85f51b67311"
-    sha256 cellar: :any_skip_relocation, sonoma:         "65f71674fb5b5ac65a260c5c4cb777f8342d369ba62ad79bc1710cbba6eccf9a"
-    sha256 cellar: :any_skip_relocation, ventura:        "efad8e9f256caa887f2d791875b849d0bbbb770092ae9181272f7a4102fc84a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "69388c9ce67f400179448b710ada3914b9c3023a849bf10bddcdf4dda3894ea7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba1d8a4202bfc3ca8b75853a8dff3d10276216e78ead18b6af536abf9cdac4cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3386d8cc4f37dfa3e73f486c98689b4a0e05406b4d191209a45761a5a908ab03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27435d9550543d93472e829e55ec8ce5bf7ccd3ecb099599be42a63bc01b194d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd5bb0e9e66a8ff21a094d3cd1a0760d5a551bfd8bc7613fae54bbfcebec33dd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4433ddbac554a53a95e953dec38fd51096e2df839b96c8e8c651a5bf677f875c"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d2ac1f779a55e3b2b79d73c0633de1043dad9b85feb67ae78b78d382bef467d"
+    sha256 cellar: :any_skip_relocation, monterey:       "e5eb67c563a17d422fd9ad274d52e34d2ddcdf9e1490cbcd2c90ef1c397b9953"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc534d0defa8049f075162df856d0e8305b31b4fa6f3cc46310184c68f535f90"
   end
 
   depends_on "graphviz"
@@ -32,8 +33,8 @@ class Ford < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markdown" do
@@ -67,8 +68,8 @@ class Ford < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "python-markdown-math" do

@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https:convox.com"
-  url "https:github.comconvoxconvoxarchiverefstags3.18.2.tar.gz"
-  sha256 "f63799826d11adbcc70525b13b1211ba375ef389898ede5dc57f54b6e2615ea1"
+  url "https:github.comconvoxconvoxarchiverefstags3.18.3.tar.gz"
+  sha256 "ea29f66ee021114bf938ef1f7611d23b43266cbc1e40b16303f8979e89c8c333"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,13 +12,13 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "578e63a769abbb70375b4b7cf097e993b1f843fae87c8f74125f155a0bdc748a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e74a4b7ea2f9afecbb61a258beda8d0be4ba559bed64718e14b47e67fe536fc2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6709221a934e8692a0cfc1c866e5d6a6c14e5370af240c4209ca7d22f7aeed9b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a50590ee68d964dbbb0e4e294da09f993c2452b0334cb98d606436055f10f366"
-    sha256 cellar: :any_skip_relocation, ventura:        "2765f18eedb1224f39424c654723a8ee75e364920525be4ee277d4fa7bfbae62"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f964b0fa66f8732a6fe20912f6d90bf112452fece8068b09909c8c5e5e40473"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd74cc664b5e81b852892eb16a200d5a34b8dac70414bc6be64d6140ea95a4fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5060db86cddd8106b4297951f89f5a280eb3e0b1b8f59c875da65788815a305f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4040623d98fdc9a5a97db7b5a6ae4291224f7c2c9f74528111fb94acf072b4f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bce6516969a6913a48e7c9ac9485fe81045b84684ed76f2af7d2c64d99e1ffe"
+    sha256 cellar: :any_skip_relocation, sonoma:         "57b17033cd94545b1036534312b249c205252cd97169ac5df13aa7d8a13dadd6"
+    sha256 cellar: :any_skip_relocation, ventura:        "21ee923ad0580cbe6effd69ba728932e6de4f1f61a10715b3acef8f1932b3851"
+    sha256 cellar: :any_skip_relocation, monterey:       "1cbe7a276298b96f67e69dc376b3f89e177851ffa9853f85e2ac212538baaf57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56c70807191a8cff963f1cd3cea431df619c34ca4267e1255f2c97928e94b070"
   end
 
   depends_on "go" => :build

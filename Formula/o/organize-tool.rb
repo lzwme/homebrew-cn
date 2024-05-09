@@ -6,16 +6,16 @@ class OrganizeTool < Formula
   url "https:files.pythonhosted.orgpackagesaf4a11b1925844ad5fc2c5da1f210650f637000ca14bdb6e9c303ab744191337organize_tool-3.2.3.tar.gz"
   sha256 "a7b5a776dbfd4b25b5e69f400a9b6b39dd9cf4d430ef0f18bc837d424a007b77"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "ba1afd2cd35d1817528db8da60480def5c16f2668bc32ad0ad19d6102f6953fd"
-    sha256 cellar: :any,                 arm64_ventura:  "4eba0b0df49fc16504cb343e2f9b3672a452dc50317e45625e5c77598f517cfa"
-    sha256 cellar: :any,                 arm64_monterey: "178af0c641a655445761a0e8db4c04d33f5333c04f54289e029166c88f2c8fb1"
-    sha256 cellar: :any,                 sonoma:         "834494fc5719f4177b464df57d9ed85c780b2968caa610b3054993ac97582da0"
-    sha256 cellar: :any,                 ventura:        "c45a6285a858d22e9575ff3857037dae54b71def3c29fc2ce5e3756e50b5bfb6"
-    sha256 cellar: :any,                 monterey:       "ec2f7fd23109719d721b3b7edb4a01cfcf266e4a249330fc6b7fc32034aac3f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b3603e3b7ec0f82a796ec166982877eb3007c4d3a8fc2a65e9b763e163cbe2d"
+    sha256 cellar: :any,                 arm64_sonoma:   "d180c8bbaf47f37174b340e76252ef64a2b0df14f80bc4f1437a76e51a849849"
+    sha256 cellar: :any,                 arm64_ventura:  "ddd749149a6fe69fe751a2bed8624f2345f01be7dec578f595d2b011a202fd8b"
+    sha256 cellar: :any,                 arm64_monterey: "f575e210a03736c487383cdf7c267c69d6436f02f1ce833f08c9f4c7d3302fc0"
+    sha256 cellar: :any,                 sonoma:         "786129a90421910b80c81161dd57732335e4b6bde33a98484c0f237f73df3018"
+    sha256 cellar: :any,                 ventura:        "314665245b962aa8a24f8e06378815525367c8deeabf57c08f8bcd5a69f799fc"
+    sha256 cellar: :any,                 monterey:       "15411456e2c15cee0c945adb18cab9132190eee2584db9887368d0bc3f72a900"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ad3439dfc01e2ca8ffda0f36419111ad3e8bd22982bbd3140ef11f21db26f24"
   end
 
   depends_on "cmake" => :build
@@ -57,8 +57,8 @@ class OrganizeTool < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "macos-tags" do
@@ -97,23 +97,23 @@ class OrganizeTool < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackages96dcc1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https:files.pythonhosted.orgpackagesb2e42856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937platformdirs-4.2.1.tar.gz"
+    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages4bde38b517edac45dd022e5d139aef06f9be4762ec2e16e2b14e1634ba28886bpydantic-2.6.4.tar.gz"
-    sha256 "b1704e0847db01817624a6b86766967f552dd9dbf3afba4004409f908dcc84e6"
+    url "https:files.pythonhosted.orgpackages1f740d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714pydantic-2.7.1.tar.gz"
+    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages773f65dbe5231946fe02b4e6ea92bc303d2462f45d299890fd5e8bfe4d1c3d66pydantic_core-2.16.3.tar.gz"
-    sha256 "1cac689f80a3abab2d3c0048b29eea5751114054f032a941a32de4c852c59cad"
+    url "https:files.pythonhosted.orgpackagese923a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651pydantic_core-2.18.2.tar.gz"
+    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyobjc-core" do
@@ -142,8 +142,8 @@ class OrganizeTool < Formula
   end
 
   resource "send2trash" do
-    url "https:files.pythonhosted.orgpackages4ad2d4b4d8b1564752b4e593c6d007426172b6574df5a7c07322feba010f5551Send2Trash-1.8.2.tar.gz"
-    sha256 "c132d59fa44b9ca2b1699af5c86f57ce9f4c5eb56629d5d55fbb7a35f84e2312"
+    url "https:files.pythonhosted.orgpackagesfd3aaec9b02217bb79b87bbc1a21bc6abc51e3d5dcf65c30487ac96c0908c722Send2Trash-1.8.3.tar.gz"
+    sha256 "b18e7a3966d99871aefeb00cfbcfdced55ce4871194810fc71f4aa484b953abf"
   end
 
   resource "simplematch" do
@@ -162,8 +162,8 @@ class OrganizeTool < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages163a0d26ce356c7465a19c9ea8814b960f8a36c3b0d07c323176620b7b483e44typing_extensions-4.10.0.tar.gz"
-    sha256 "b0abd7c89e8fb96f98db18d86106ff1d90ab692004eb746cf6eda2682f91b3cb"
+    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
+    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
   end
 
   resource "xattr" do

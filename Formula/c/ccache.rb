@@ -4,16 +4,17 @@ class Ccache < Formula
   url "https:github.comccacheccachereleasesdownloadv4.9.1ccache-4.9.1.tar.xz"
   sha256 "4c03bc840699127d16c3f0e6112e3f40ce6a230d5873daa78c60a59c7ef59d25"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comccacheccache.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "36439d2640ce457feb19be3977239b337af37677ce0017711a7aff445293bfb4"
-    sha256 cellar: :any,                 arm64_ventura:  "a39f209c57851f387afdd68c2af38b55e30d4f1745daf93fb4380596ab49ef2f"
-    sha256 cellar: :any,                 arm64_monterey: "69ff878599172a0665ea8d3b689f67503498ec9e8ec48bba227073a33f38ec31"
-    sha256 cellar: :any,                 sonoma:         "82ae050381cb8d0359f1b3f5ecc8daffa4b5081e5843cb6598f166ab8ece0c8e"
-    sha256 cellar: :any,                 ventura:        "f94f3cdbacfdd9c0cd31f4106063ed333552677cee43988babb370940d55fe2f"
-    sha256 cellar: :any,                 monterey:       "f517de050ecca8e7f8cf3eba39f82b4bcda1bb4dbb2420ef798e8578738e17dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b495d23804e8db7fd38d0b999d68e3d4849d0c8f2d0b6ae2e34bdce93dd8df3"
+    sha256 cellar: :any,                 arm64_sonoma:   "4da9fb3b1d7ef251fef128c5cf7772f28e2e1f4c02d61ec90a7d1ba0aae7b19d"
+    sha256 cellar: :any,                 arm64_ventura:  "8059bcb107c4e93bf06cadaa8115506adba34b583ce9821073d52c8474bb56f5"
+    sha256 cellar: :any,                 arm64_monterey: "0b6e1a41c5759eb9884269a5e2831fd7bb8d4420e31a868e5d1cf52b014a65e8"
+    sha256 cellar: :any,                 sonoma:         "103799f0530de714df250dffda1b303c61eba69561d0d235dcfd4c8e7eb7693e"
+    sha256 cellar: :any,                 ventura:        "bca74e577f458a57cc930254504dd0e4502af1fb864911df2f3b70a02bf3b272"
+    sha256 cellar: :any,                 monterey:       "25313faf0635759be3012be2f20baf26f84873e791362690f7ca72497782a7a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7070283ae70a576649139de2c1b45fd7756e922cd6b989628e7f921890ade57c"
   end
 
   depends_on "asciidoctor" => :build
@@ -48,13 +49,13 @@ class Ccache < Formula
       cc
       gcc gcc2 gcc3 gcc-3.3 gcc-4.0
       gcc-4.2 gcc-4.3 gcc-4.4 gcc-4.5 gcc-4.6 gcc-4.7 gcc-4.8 gcc-4.9
-      gcc-5 gcc-6 gcc-7 gcc-8 gcc-9 gcc-10 gcc-11 gcc-12 gcc-13
+      gcc-5 gcc-6 gcc-7 gcc-8 gcc-9 gcc-10 gcc-11 gcc-12 gcc-13 gcc-14
       c++ c++3 c++-3.3 c++-4.0
       c++-4.2 c++-4.3 c++-4.4 c++-4.5 c++-4.6 c++-4.7 c++-4.8 c++-4.9
-      c++-5 c++-6 c++-7 c++-8 c++-9 c++-10 c++-11 c++-12 c++-13
+      c++-5 c++-6 c++-7 c++-8 c++-9 c++-10 c++-11 c++-12 c++-13 c++-14
       g++ g++2 g++3 g++-3.3 g++-4.0
       g++-4.2 g++-4.3 g++-4.4 g++-4.5 g++-4.6 g++-4.7 g++-4.8 g++-4.9
-      g++-5 g++-6 g++-7 g++-8 g++-9 g++-10 g++-11 g++-12 g++-13
+      g++-5 g++-6 g++-7 g++-8 g++-9 g++-10 g++-11 g++-12 g++-13 g++-14
       i686-w64-mingw32-gcc i686-w64-mingw32-g++
       x86_64-w64-mingw32-gcc x86_64-w64-mingw32-g++
     ].each do |prog|

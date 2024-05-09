@@ -6,15 +6,16 @@ class Mkdocs < Formula
   url "https://files.pythonhosted.org/packages/cc/6b/26b33cc8ad54e8bc0345cddc061c2c5c23e364de0ecd97969df23f95a673/mkdocs-1.6.0.tar.gz"
   sha256 "a73f735824ef83a4f3bcb7a231dcab23f5a838f88b7efc54a0eef5fbdbc3c512"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a190efbe93903ce9d490782ce8a9a21912cb1e73b3f1cca26758333737fa15d6"
-    sha256 cellar: :any,                 arm64_ventura:  "ff2e7fbee744df1c6611c32664cf0f86c2d636c67ff516269794a9ee37e4e26d"
-    sha256 cellar: :any,                 arm64_monterey: "1033d4398e14868dc481c813a3ba2e7438690adb40ae4f541a3841411f217012"
-    sha256 cellar: :any,                 sonoma:         "5e564ec0afb5e83020edc5eb1fec38b749951ed6f51722d30af6ac63c7a12964"
-    sha256 cellar: :any,                 ventura:        "a1afefefefbf2f48fbbb7b91cb6524ca2099363378615f11ad9cd11811d0aa10"
-    sha256 cellar: :any,                 monterey:       "898b36b0795cd020859b6fa67105b42d54c3bf58ec6ebc04bf39ed53cdb00597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16b46b6df08599edd8438de6b67d464b655ee02dac40fcef1cb2ed14d31badf8"
+    sha256 cellar: :any,                 arm64_sonoma:   "7a834dcb588206de1a2fceb77f4e5693ea51b723f12864ff261fde2b4578e8a5"
+    sha256 cellar: :any,                 arm64_ventura:  "4244bd7d7e461381f3a16d0f250b963de60e3e718bbb7bb20f673ffc801194dd"
+    sha256 cellar: :any,                 arm64_monterey: "f3ee4f314f02fe8790cd2cc844d75cf419a95f62eb9033b311939be7c94cb285"
+    sha256 cellar: :any,                 sonoma:         "ddd745ebed313ad3948a7b517a5da3e7923062116d0b92ccbd95f04b476be1cc"
+    sha256 cellar: :any,                 ventura:        "c116cab9896508baeadfa0e8db0fd7794ec67938553741cc436b5a8a7e3f9ba7"
+    sha256 cellar: :any,                 monterey:       "b9fb30cdfbc29e23a7a1de023f84065adf6f500ab6ce8fd8eb159ac6d6d39d70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf5edf643d1def02800748469ea00717ed29373efc2e58902b6db79532b7e33d"
   end
 
   depends_on "libyaml"
@@ -31,8 +32,8 @@ class Mkdocs < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markdown" do
@@ -66,8 +67,8 @@ class Mkdocs < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https://files.pythonhosted.org/packages/b2/e4/2856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937/platformdirs-4.2.1.tar.gz"
+    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
   end
 
   resource "python-dateutil" do

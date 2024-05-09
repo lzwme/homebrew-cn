@@ -1,8 +1,8 @@
 class Grap < Formula
   desc "Language for typesetting graphs"
   homepage "https://www.lunabase.org/~faber/Vault/software/grap/"
-  url "https://www.lunabase.org/~faber/Vault/software/grap/grap-1.47.tar.gz"
-  sha256 "8ff6f0dc43a660e2ac7423f161247fd0d5b765960e32d62f62ab4a404bbc11c1"
+  url "https://www.lunabase.org/~faber/Vault/software/grap/grap-1.48.tar.gz"
+  sha256 "89a1b02b162fbb4ad9827ebfe97a2b31f3923bf06996381a9e5f806d350584b9"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Grap < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "fa4c99645bc2aba78314150511e6e8f51511b1d803c504c611bab1efeaa3b9e6"
-    sha256 arm64_ventura:  "1b4e1d5563c5f4813db7e666d5c177b2c7e373af39a30d0e37bb24218f360858"
-    sha256 arm64_monterey: "59fb2709f71268976dbae0e72fc6be33a74d98eb01bf5b4ce3b2e92dac394afd"
-    sha256 sonoma:         "5e89a9a5cd6edbffd071fc48426cb480be6abd2f3927548b36a73b5f2780280e"
-    sha256 ventura:        "a93d82d8acbfda916a74525809dedd5aae6874ce78855e15db511bb4040561a1"
-    sha256 monterey:       "9ee0c9c01a3a3b665b678bf7f2cd7a9ebe5cc15877cb687ee5a8d12cb69c8309"
-    sha256 x86_64_linux:   "ee3a10d42535ab9b8e93f7107b11d9bfd3732f92f574a0d315d1dbca3f9c48d3"
+    sha256 arm64_sonoma:   "aee0fb925a7b696bf99148451165a0ca69ecf103f8643ca99b268059b19fcec1"
+    sha256 arm64_ventura:  "cc5a9165ecc68e108f25c9137d1d0a97f77ab1bf98dae4e8c061ef784292655d"
+    sha256 arm64_monterey: "6be5b79b4875ae0cf474928cef30768193449bebf139672328ad5a81ce152e9e"
+    sha256 sonoma:         "86976bbb29c4d47f3bf59c5a0065b6dd9905ba24377862f58d94847743e1835d"
+    sha256 ventura:        "d6c281e795d7afc04167a13a6e903461c2dd319aa62240ee7361c82b3ab3c248"
+    sha256 monterey:       "73c7bde75b91da23b0e29acad4e10f39e5bc9347f2107f535698a8ac07e9fcdd"
+    sha256 x86_64_linux:   "464831eb93ac8007e97497163960ba9c91b6c17dba21f2178ea26863080a8d1e"
   end
 
   uses_from_macos "bison" => :build

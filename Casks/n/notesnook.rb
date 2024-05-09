@@ -12,7 +12,7 @@ cask "notesnook" do
   homepage "https:notesnook.com"
 
   livecheck do
-    url "https:notesnook.comreleasesdarwinlatest-mac.yml"
+    url "https:notesnook.comapiv1releasesdarwinlatestlatest-mac.yml"
     strategy :electron_builder
   end
 

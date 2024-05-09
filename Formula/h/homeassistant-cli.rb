@@ -6,24 +6,24 @@ class HomeassistantCli < Formula
   url "https:files.pythonhosted.orgpackagesb298fd5e7beb7cc135f80d78b32c85ac15f3ba9219063b794b1d184fb07fd84bhomeassistant-cli-0.9.6.tar.gz"
   sha256 "9b9b705eaf6ee40dc6a732f3458c78ba37b62b7330bc17b132e6fee385ec8606"
   license "Apache-2.0"
-  revision 7
+  revision 8
   head "https:github.comhome-assistant-ecosystemhome-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64605fbd365427efbc15d31cb0306d41ef698efe267fd6834f26394442d00b64"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3577804b0fce8ece9f9392947ce5669f0914d796630bbc85afe9f55317920a96"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20b13a90161323c3558f66d79722c1bab025e961672b2924b4e5e59bde812cdb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2fa587554e6ba94d179ac2470fd0f0fe5021dc207ef14e3b179e7db99177aecb"
-    sha256 cellar: :any_skip_relocation, ventura:        "7226148b6755913b3b3ca09776b715d86dabf8a3e5edaaefcb839c7e2f027404"
-    sha256 cellar: :any_skip_relocation, monterey:       "b76dc30b10236d706578cdbf1322f631268d7ce5b3b8b4d50e190db91a66ddc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ca3ef2b71fe7bdac0994da35b8482db5e61ac6d560e95137e94bf0bd7617562"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e88f8d6a7e267d1d5e509c2373a3e1f84874301003b218f56a4d8894f5ed86cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7fbccf5353262ea0dc0f0e4d1b07800e5d8f5b2b6ca1e44a2de99d1375c40b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6278fa8eb0773a1bed7f8f159bc454acca8bd48ce13dfac455f77b1c72d83e02"
+    sha256 cellar: :any_skip_relocation, sonoma:         "653d115ff07297580536b256fce96b106bfd974a190a63923cabefdd765b3d7d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d26de05974dc5e2e70b182d687a2484c2bbd295249ccf0819762a69f429602f"
+    sha256 cellar: :any_skip_relocation, monterey:       "261c9d83240b63f0dd8b9f86f74f00976ec6668cfab204e00153a929bada5a8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d32a842456a1bb0a95a4f86ec4a9c019705b517f2912b6f89ae6af12908b61f7"
   end
 
   depends_on "python@3.12"
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
-    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
+    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
+    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
   end
 
   resource "aiosignal" do
@@ -77,8 +77,8 @@ class HomeassistantCli < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "jsonpath-ng" do
@@ -117,8 +117,8 @@ class HomeassistantCli < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesb53931626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853regex-2023.12.25.tar.gz"
-    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
+    url "https:files.pythonhosted.orgpackagesc0d687709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5afregex-2024.4.28.tar.gz"
+    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
   end
 
   resource "requests" do
@@ -162,8 +162,8 @@ class HomeassistantCli < Formula
   end
 
   resource "zeroconf" do
-    url "https:files.pythonhosted.orgpackagescf2912bc3ab7f5e1da4559fda0af7af1cc7a272c6ca6ba68786d821516da9b03zeroconf-0.132.0.tar.gz"
-    sha256 "e2dddb9b8e6a9de3c43f943d8547300e6bd49b2043fd719ae830cfe0f2908a5c"
+    url "https:files.pythonhosted.orgpackages247d02e8c583b57692eee495e60c7a4dd862635a9702067d69c6dd1c907cb589zeroconf-0.132.2.tar.gz"
+    sha256 "9ad8bc6e3f168fe8c164634c762d3265c775643defff10e26273623a12d73ae1"
   end
 
   def install

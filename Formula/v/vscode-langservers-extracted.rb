@@ -3,12 +3,18 @@ require "languagenode"
 class VscodeLangserversExtracted < Formula
   desc "Language servers for HTML, CSS, JavaScript, and JSON extracted from vscode"
   homepage "https:github.comhrsh7thvscode-langservers-extracted"
-  url "https:registry.npmjs.orgvscode-langservers-extracted-vscode-langservers-extracted-4.8.0.tgz"
-  sha256 "8c7102927a32fa145077f0406b66bb3a7d85f5b0a208d4efeb40702b5a6cd2e1"
+  url "https:registry.npmjs.orgvscode-langservers-extracted-vscode-langservers-extracted-4.10.0.tgz"
+  sha256 "d6e2d090d09c4b91daa74e9e7462a3d3f244efb96aa5111004cfffa49d6dc9ef"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e34cfbde772eefd81829c59b4543bc4713261d84cd6aaa9317e6ef81ba823345"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a7c513b71c7e19d575bffabe3720d26972fd30dd498f3cb39e167d5085d882c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ae76e977c580714608211f6d1ec941e090e29796d6e8bb0f43be1fd4547283f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c94084b34360c77bbd5e723dc98deae0cfc7de7eb87cc7e7f90f649f1cce8032"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7bb7bd4273920acc2433277b4b22c55db6fbce9dc3bb7a3d516db7b50f8c6df8"
+    sha256 cellar: :any_skip_relocation, ventura:        "8f2efb458646504a94be80cb5e2b280f67c611f5cc0bce246bd70211865e9239"
+    sha256 cellar: :any_skip_relocation, monterey:       "d9849d01ed540ae75f1362c54c965804ff4fc3be7d74a0585117b965e99ab6a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a17a73ee7294466810e80001c5a728788413915fa97801e3cb5af47dbd2703e"
   end
 
   depends_on "node"
