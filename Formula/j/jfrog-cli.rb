@@ -1,27 +1,27 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https:www.jfrog.comconfluencedisplayCLIJFrog+CLI"
-  url "https:github.comjfrogjfrog-cliarchiverefstagsv2.56.0.tar.gz"
-  sha256 "ba6eeefc0909c2ef01577421aaabd9e4d911777f6c5555ad712248a41bb140c2"
+  url "https:github.comjfrogjfrog-cliarchiverefstagsv2.56.1.tar.gz"
+  sha256 "65823a18cbc5ba3f8f88882ab7bc05ee384919e5adf788ed7ca1b6da252c58f1"
   license "Apache-2.0"
   head "https:github.comjfrogjfrog-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c09f7d67fdad5aa6fd41a491652de81bc33a6348a635fe55622817c9556360d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa56e034f4caf1bc3e1cd0be081ebd9e45d3415329f1387ebc05313392a75ebe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c12e28667071895b7dea6245c38fd89a263f96ac08afac351ba751f24defa2fa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34e6e226729aea20b836301412c7343adf6841f338f55c2a9e2a34fde464ede1"
-    sha256 cellar: :any_skip_relocation, ventura:        "a33d07e3359090d580d95bcae61f7ba4c1c820ed515a67b69310035c4aff2967"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c8664c5e33fe26330a841715ba8de017440803d33631bd4ed90fa54b435f528"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8db2d60995f14aba767c13bad6f8ce7905f89572711d808f08e927ff9885b01c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4019b4da9d4886348bb6b06ed6b0a45ca0efe7e3a2c01f967bb453e94c6d3a62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3ea29d3667b86edc98a33f0727c3e3a6e3830daf4b8cc6f1fb9ae82988a1ab1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8363d46b4b0fce8d784f6d04cc99e3d42452034d62eb36027ef9238be596170"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a39df7d24fea28d7e2ec1f73728e2de3e109e4a65bdea44d52c9038c5e6dc50e"
+    sha256 cellar: :any_skip_relocation, ventura:        "9e3098a0d46d50fc33db77a4f4788d9e5dedf56ac79134ce65d67b1f2c59fc46"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c4aa4abeb688d4d1e64cabae52aaa0dc7e558c8ce3192aa6363df8dd7bbab34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "531dc44b03822da7f478524f09fd2b00705b59afbfa89008cc9de9ea239eb819"
   end
 
   depends_on "go" => :build
 
   # upstream patch PR to support go1.22 build, https:github.comjfrogjfrog-clipull2447
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches12356db68700fa62668e9054fdf9eb5a1b99a05fjfrog-clijfrog-cli-2.56.0-go-mod.patch"
-    sha256 "b04c90f23857e8105f14a9f96da472985d1ff00da6ff9da0a5b74df08e31f5f9"
+    url "https:raw.githubusercontent.comHomebrewformula-patches3872e308ba24cfecfbef3c0ff63a37eaf1c48142jfrog-clijfrog-cli-2.56.1-go-mod.patch"
+    sha256 "eee91efc44417aac6fcca53356f01a21ff6c9b5846a5f9d7debaba59a920bbe2"
   end
 
   def install

@@ -1,18 +1,19 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https:rye-up.com"
-  url "https:github.commitsuhikoryearchiverefstags0.33.0.tar.gz"
+  url "https:github.comastral-shryearchiverefstags0.33.0.tar.gz"
   sha256 "13eb48496be1f10f043551eadc1446d0c85a31bc2a3d2117fb02d9ecd869d99c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "77ee7bb2dab459b76f714518d171df225b86af5df4031c0f01656e30f4daf64c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3004cdfe52c433f52bcfb5a49dcb67a1818db81dcee7e77196f274f4f4dcdc8e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6280f729e7f46f3cbf1cb66df11dca813c853527e240318934fc165b710bb17"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74294426bcb0cf56c2d5e0d9c6fc64b0e8c2cec242953bfbb167c29ccda62245"
-    sha256 cellar: :any_skip_relocation, ventura:        "309f080c27d58389c08e37476c12a9bbed573d862d2dfa0265436c157e5af213"
-    sha256 cellar: :any_skip_relocation, monterey:       "e9ca5c263dbda92abdf8770973d3b65860699a085566afde8656d1e86ded1421"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16f535a9e9c7b6b5ab20c06400de56730205c0fde14c5fd697553f1d4bdf11fd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3f3fcd590cd13367c4299e81b5fe5599df71c89ae78da31c92bafda06b8a2c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b28f6ab1cb399962655ebaa25dca7b0ce4a5828f0e18ccd2a20db4ffb57755a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98b410681143db77d757355135b7665ddc45307f8a300bd67b5b1bc6500c0943"
+    sha256 cellar: :any_skip_relocation, sonoma:         "be86f886969be552818bc6fb39b45a413bae014340539b60355f1258038de647"
+    sha256 cellar: :any_skip_relocation, ventura:        "b494771a3811266b77f7e462ab6f79201382c30c27d76fe17ccd1aa2081bf262"
+    sha256 cellar: :any_skip_relocation, monterey:       "590d7fdc8cdc290c2645919fb14d33571264ec82a25a188511064476a01b9a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7227ea63c00bcab8cbc4c38669342f787d1523e09a421343d04b9b89972685ef"
   end
 
   depends_on "rust" => :build

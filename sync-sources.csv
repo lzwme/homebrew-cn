@@ -6291,6 +6291,7 @@ Homebrew-homebrew-core/Formula/t/tm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpreaper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tmpwatch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-mem-cpu-load.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-xpanes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux.rb, Homebrew/homebrew-core, 1

@@ -1,30 +1,23 @@
 class Autobrr < Formula
   desc "Modern, easy to use download automation for torrents and usenet"
   homepage "https:autobrr.com"
-  url "https:github.comautobrrautobrrarchiverefstagsv1.41.0.tar.gz"
-  sha256 "096159986b73cc5f2550f61e94f6a7d7314718c0545642c2034836005648c258"
+  url "https:github.comautobrrautobrrarchiverefstagsv1.42.0.tar.gz"
+  sha256 "e5fb1028003745ffc185b6368430904417f2f4115ad6524233c11dc0bda99f10"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7430b1131e2639848a3d04b6fc9e40fe42f4da2169bbc05925d365a9fad03739"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dee5eaf50a7f4839dfe3fadfecccec903bccb0314c0e5998ba08b9d5a93468a6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35b723c1f53bb3c976c755ed0e8f06c97e2367d569332c569380fb6cdc43d0e7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b95aa3d8f701772fa495c1d4df8bba1958cfced5be7f6cf798fcd9317d6beb52"
-    sha256 cellar: :any_skip_relocation, ventura:        "bdb3ff2c78c6c26754f1b90ef3389adf7c5e208ca396525107f31ce876da78a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "1efb640eeb1fbba0d72c4960b05a6d33500577f5bb8906ddcc2149146d848755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb724af5e8882ad4ee6d07cadd94c638bc1055a542a5577ae3b97086afdf0f47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99ea86dee9c68337457ac58ddbc5ec07698d5f1a845520fadfb0af71cf81fcd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9383e428a8a8804ef450ba840e5264ddca4595b442a77693660f5300265a2f16"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b37312592a1b19caf99f43ca587b14165cec49d6a518c1b8e0b625414c0ec803"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5f0b1479ad988219359327b4cbed6878a35943a0814c0a05a06fe0565b9689b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "295af410d0a2e926fd05bcc03d512592aa3fc10b66e1de7e9517ae6aa7ab3a0a"
+    sha256 cellar: :any_skip_relocation, monterey:       "09bd9812ae395143ba3824586437da6a05e8b0934003060cd56f243e75d08e29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "722197a67a6c6f43a608f07725f5dcf3b07e8229539bc23d793f1e15127b4591"
   end
 
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "pnpm" => :build
-
-  # Update pnpm and dependency lockfile
-  # upstream PR patch, https:github.comautobrrautobrrpull1515
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches9ac9588f76a579c2cceac9d7665031d0766268c6autobrrautobrr-1.41.0-pnpm.patch"
-    sha256 "08d07758290377ad76f11bcff33a84c6e33d188554801039e647c142905802d3"
-  end
 
   def install
     system "pnpm", "install", "--dir", "web"

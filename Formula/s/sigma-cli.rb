@@ -6,17 +6,17 @@ class SigmaCli < Formula
   url "https:files.pythonhosted.orgpackages93d91f9b9129b722fe4127b3749d427ec0f2e0966858e204743c068446b532f0sigma_cli-1.0.1.tar.gz"
   sha256 "a65dd949dd9812a4380332bacd6cf0c229647404fa31b766fae1596b6bf5e208"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
   head "https:github.comSigmaHQsigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a0d9bdc62888f4d50c29816698a6565546450bcadf6c294695c49f9ba151a5a8"
-    sha256 cellar: :any,                 arm64_ventura:  "d036f02863f21dbc7efa6d9ea6185aad63a56ef8cf6fcb6893e3d26b882fbe6b"
-    sha256 cellar: :any,                 arm64_monterey: "4fd562dc13c9380f75c04cafa6742d32ab774082415d1775b3803a0c3b50408f"
-    sha256 cellar: :any,                 sonoma:         "9a84b200e4b8441f1b463714961a4b038c45dfce26b6a893c86408ab34d32ebe"
-    sha256 cellar: :any,                 ventura:        "d752a866c8d5b2bcb915ffdb671e877d4fd438f3c059660afbe1cc6cd18a2c9f"
-    sha256 cellar: :any,                 monterey:       "92383fa0bce9204ad7ff102649e806d714292981cb17af9b0870795676b30c10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c16a132c6d928bfa472f5e57f55546693288fc86e707fbe9f6d35ae84124484"
+    sha256 cellar: :any,                 arm64_sonoma:   "1afdf942cbe8da20df6ae41a249f192826afb04689dcfa61b647408e4a6d7e5a"
+    sha256 cellar: :any,                 arm64_ventura:  "f6228f153a312836b8ea9c52be6886594a4cd9083d3d64334a81459136c07676"
+    sha256 cellar: :any,                 arm64_monterey: "7b82b45266c37db4289d6f3d35cabef1f42db230edb5b713229fcf095cb625cc"
+    sha256 cellar: :any,                 sonoma:         "f1ff1e1cb6f24b58feec75f53864ee7d518a3b47aca8a9337761e41d9aacb15d"
+    sha256 cellar: :any,                 ventura:        "b236265c20f9a5d80462f7fa42d1932f3356992b16284310a512c2b06dd9f964"
+    sha256 cellar: :any,                 monterey:       "65f53d274836f88b58ce0fc3a78ac59319c19aac21f64272ad0d72e737f8b2aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d09219171175f36cf02ea1eadbaa3229b42d9c6c73a5ba5841ea4c0d6e53da2"
   end
 
   depends_on "certifi"
@@ -44,8 +44,8 @@ class SigmaCli < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markupsafe" do
@@ -69,8 +69,8 @@ class SigmaCli < Formula
   end
 
   resource "pysigma" do
-    url "https:files.pythonhosted.orgpackages9475aec3ebd2f369040b1de41e7453fad58ed3bf51343f3cc3356a6c09fc7619pysigma-0.11.4.tar.gz"
-    sha256 "1e09b32e195f56d6afd2bd0e97f2d360f3d5ad99c2fe48b92012a935e52babdd"
+    url "https:files.pythonhosted.orgpackages8e67c02ba2ea1a93c9b614a7f694d62421dd8416da33b9ce8db9c39a55592885pysigma-0.11.5.tar.gz"
+    sha256 "de27ef86db1b9341a8b540ca4691f489a9f5d63bc2de40bb3257221404d4f2d1"
   end
 
   resource "pysigma-backend-sqlite" do

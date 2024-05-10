@@ -1,21 +1,18 @@
 class Tinyproxy < Formula
   desc "HTTPHTTPS proxy for POSIX systems"
   homepage "https:tinyproxy.github.io"
-  url "https:github.comtinyproxytinyproxyreleasesdownload1.11.1tinyproxy-1.11.1.tar.xz"
-  sha256 "d66388448215d0aeb90d0afdd58ed00386fb81abc23ebac9d80e194fceb40f7c"
+  url "https:github.comtinyproxytinyproxyreleasesdownload1.11.2tinyproxy-1.11.2.tar.xz"
+  sha256 "6a126880706691c987e2957b1c99b522efb1964a75eb767af4b30aac0b88a26a"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "396ba63086ca7bcacbf56e5c2dd74d6a2db157b371c8122691f3669c76a74c05"
-    sha256 arm64_ventura:  "e08cdd294ee700dbffbcb90bf6e705983ccc0a6024f5e0235b5dab4147ac68ae"
-    sha256 arm64_monterey: "63eece964c5e41576d66c6e142ac0ab30dca56c488e4b3ac327de1f8f9374900"
-    sha256 arm64_big_sur:  "ed35931fbe7004feb89145a3ccf75b1d39be9b79b7fb3c36be11b4c46d5dce54"
-    sha256 sonoma:         "c92bb3ace9115889374ac2de5d149ed909267fa40c7101c404c64afb3e3fffa6"
-    sha256 ventura:        "07704c8d14cb58c482f7bc8c187ebe3ef8a7807d6f4ddfdef183369876c78e1b"
-    sha256 monterey:       "53d3f8a42faef7373b2448c4f151a09b88e5b6d5434640e884c09f8e53449ec0"
-    sha256 big_sur:        "7be798a814e31a8148ec6a9a01b7c238a623cc9742faa0d7dfe733663c356a23"
-    sha256 catalina:       "7dcdad0316a57335efd2d7c1fff9de4ba458c38c7c5efa7d0a82f0212e16def0"
-    sha256 x86_64_linux:   "07920f384cef0e204d966dd84dea766c57e181a1861ae453d1787e2b8e7e7b9e"
+    sha256 arm64_sonoma:   "54a2231b4ad6b362db15d5709eb7ae1f171584e64725546b4ef5d5c384ca6b4c"
+    sha256 arm64_ventura:  "38dd9771beb51039ef32c6f96e110726598387867c3bb22215298310e735aaeb"
+    sha256 arm64_monterey: "77833ca6e2e9f3926d7f7a69c63aec9bb83da5241ba8ce6ed8c8ed1eaf2d1a6a"
+    sha256 sonoma:         "e7f5a728df755d3fcb83b2639e924354c7bc479152bf766b819660b3caf1c302"
+    sha256 ventura:        "11689d10c680a3c1e7b5fe372fe7ed44507e3e6415ab4dbf2b093a04f433bc2b"
+    sha256 monterey:       "c581f25dbd95d8248cd632a11993c35ea42798ede63e2f27a59aa2bb875ff778"
+    sha256 x86_64_linux:   "f63df2e51f811d5d80b7a2ce3f3e4bd0f170186061e937a39f1d06b787db793d"
   end
 
   depends_on "asciidoc" => :build

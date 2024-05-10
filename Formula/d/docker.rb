@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https:www.docker.com"
   url "https:github.comdockercli.git",
-      tag:      "v26.1.1",
-      revision: "4cf5afaefa0bec8ab94fcf631add24e284d0ecbf"
+      tag:      "v26.1.2",
+      revision: "211e74b2407f24fd305907c8f90430a9f465df66"
   license "Apache-2.0"
   head "https:github.comdockercli.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Docker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0ff46ca011c29e9db28b35fa98be3bafb375ca2d47c6a5e64197b7953d32f24"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f0ea96247cd0a321f5453adeacd1d27a86fbba236c0da7b745711db04c5add9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7896ccbd136fc29cdb912fc3bd744b9aef832922e5262842b5d6e35c01e2213"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a859b98e4747c01c7373f6ada98bf4c42c8b77bda2bb320a03368e0be468d96"
-    sha256 cellar: :any_skip_relocation, ventura:        "0500ad671c48d05e5ddee6d1343d94066f0f68dc7c1d18f511961b4ec46a13b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "22f90d31e1d14d7bf691beb914a2c3dc707d866329fad95bae7452bed2a2d738"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b673624f638e9bee0cba6cc6fe4f9652385c81f61383a2a4b79975ec8ec5b6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a7b36ac327680e1589f3a1a246d62d48d4a8512387bc58fa13243ddfcedd6b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0484a11bd3e8b984ada192372d113d402fd020dc5672885b3a45b879b7889a21"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c27f64408f74fe6f371c9c7ba7fd8cdfd262d5ca1584bc598a607ca80dee509a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3117020c5db9d6d839f126ee1519e414b5b63c9e38f164da4cad74c14546ed0a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a389d4820038dc122c725fe9bd8ee3de6ebab41f62efa81b68b41b322b5c59d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "92a5b660568174a521d04311d869dd62c850cea0b04d66cf4ef8e858f5752eca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03fb33b90ee70dde537ae1387e209fc828d0afb174818d1699806bb352208dd9"
   end
 
   depends_on "go" => :build

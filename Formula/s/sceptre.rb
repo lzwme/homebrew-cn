@@ -6,16 +6,16 @@ class Sceptre < Formula
   url "https://files.pythonhosted.org/packages/fd/ab/3cc351da1ce48d263e79398ea472c42509c6ab37737c809cf03eb7033d2e/sceptre-4.4.2.tar.gz"
   sha256 "5bb5683233346dc9bb7584d817851403f7b1c483d4d3ace805c76ebd09b9a49a"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ba61afc7656132785e7351989f692f1622610205334096d3bf3c560bd2c30ad2"
-    sha256 cellar: :any,                 arm64_ventura:  "8403bbceacab59eb0f12d15cc757ba70551ba90829ef9d3a83b96d39edd4d112"
-    sha256 cellar: :any,                 arm64_monterey: "8fd30ce6853fa754ca42b5d107f9e2a8b078ca9558d5e4cbdaca73a15b17759e"
-    sha256 cellar: :any,                 sonoma:         "de7f22b1c29bf6ebb491d568a551d38abfc25dbc7fb05beaca0dd3110e44a46c"
-    sha256 cellar: :any,                 ventura:        "22b05ffb27ffc3e9cd0260902e8808c05e8cd8d35c1976a3b39efc38779d6149"
-    sha256 cellar: :any,                 monterey:       "456bdc1664acda6e7b8871c6a9bb5a2d02de04062193fca22e25cd26a50be062"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f19735813f6d96deb0d68e23fd169bd2b465ce09c0ed62b415831b598918348"
+    sha256 cellar: :any,                 arm64_sonoma:   "97b0ea364cf176ca984409f4a27e65aae588ce3bb6becee2b15cc9b65e4761fe"
+    sha256 cellar: :any,                 arm64_ventura:  "1f02b2dabc885ee5e83cd2c860e43865dfb7f61315ccf64f42ab413652e5591e"
+    sha256 cellar: :any,                 arm64_monterey: "7fbd8c49d907f92e27d54b5f2d286807c0c7bbcc3d1c0de52ad9d63955532976"
+    sha256 cellar: :any,                 sonoma:         "f33aedbd2649173496de6a2a6ad74560513e75eab608ab6e021351c57c3be457"
+    sha256 cellar: :any,                 ventura:        "4e4059a88e5d9ddc3a87d75f94644f289a89508ff128f12e0c361b364643b789"
+    sha256 cellar: :any,                 monterey:       "7ba84a7be90a2ddb3f3ad91df1ff88ca970a9faaf2373ede804fefabc7d25432"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88facf1df25eb7f6e454b2e1126a70309a4ce8a19547327052bf50cea0712099"
   end
 
   depends_on "certifi"
@@ -28,13 +28,13 @@ class Sceptre < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/44/a9/c191f26fb925076ea142e7efcdc59c36285b0ffde420b2ff0835b48b9c80/boto3-1.34.84.tar.gz"
-    sha256 "91e6343474173e9b82f603076856e1d5b7b68f44247bdd556250857a3f16b37b"
+    url "https://files.pythonhosted.org/packages/ed/8d/630018078458d3b05fee5f68a5a20f7f3452137c63043f29d805aa4657e0/boto3-1.34.101.tar.gz"
+    sha256 "1d854b5880e185db546b4c759fcb664bf3326275064d2b44229cc217e8be9d7e"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/f7/b8/6f17f3051a81402894567b1b35518aa6d8b49359b5246e95cfabd3cee558/botocore-1.34.84.tar.gz"
-    sha256 "a2b309bf5594f0eb6f63f355ade79ba575ce8bf672e52e91da1a7933caa245e6"
+    url "https://files.pythonhosted.org/packages/ba/4c/4b65cad9a70cabbc85b1a462cacecdf2151974715fab940e08a9fcf5ea2c/botocore-1.34.101.tar.gz"
+    sha256 "01f3802d25558dd7945d83884bf6885e2f84e1ff27f90b5f09614966fe18c18f"
   end
 
   resource "cfn-flip" do
@@ -73,8 +73,8 @@ class Sceptre < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "jmespath" do
@@ -148,8 +148,8 @@ class Sceptre < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/4d/5b/dc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83d/setuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https://files.pythonhosted.org/packages/d6/4f/b10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aed/setuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "six" do
