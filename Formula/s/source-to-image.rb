@@ -2,19 +2,19 @@ class SourceToImage < Formula
   desc "Tool for building source and injecting into docker images"
   homepage "https:github.comopenshiftsource-to-image"
   url "https:github.comopenshiftsource-to-image.git",
-      tag:      "v1.3.9",
-      revision: "574a264097de0c4371017bcb1bc3e6f95f8d3690"
+      tag:      "v1.4.0",
+      revision: "d3544c7ee6453f8f6f953f6f27b60190b1eb386f"
   license "Apache-2.0"
   head "https:github.comopenshiftsource-to-image.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "526491cf1ce64d64e31308e14345183b9fdd27af8c388d32132e704eba9ba2da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b1a00089afe93f7d0fffe09beb165f9b763b6e0d73e591e57e011b0fcd51328"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8281b0c9f94926a48cad2697a608b276cecd2976425854fbeff06dcddb78f1f0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "48a9bd6eb1ea6b3827f53625046ebbd14b2a03b966b87a3ea0d8d8d6caf1d7ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "63fe8ca698084ac1aba04f127dbba0f82e9419376b449797f91fd30cba88423f"
-    sha256 cellar: :any_skip_relocation, monterey:       "aabb501a339622a73d2bbf8071d3273e6f430ff8c91e5d806d4c32e3a0705770"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c9718ac5e524a428c7561cada000e07fe1e72da62aef11464e64f71f7b44809"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "86d37a7f6c6a702bb8d05d8c8796f76e55cc48ec156bd3bae5f9aa3933ae12e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3476682ae853b90d438748d48b7da496f871c2782a77d403f1a1835cd001084"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "76c32af61ebb5734abcb32df97317975b4dd8c02fc4d2e5b217e9a0947431436"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4bd0c6860b0b4c48527a0413ad6289fe7986480ae937fe4aeb9a54223ae1494e"
+    sha256 cellar: :any_skip_relocation, ventura:        "6214f5dfe6af749c5958ce6be9a7cf15053a9c4244693d1deb490b9c8f077169"
+    sha256 cellar: :any_skip_relocation, monterey:       "4718bf9923ae17c45495de303e6e8a999ae4d8860ce24f209b23df863c24c855"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cac92d497754413810e6b2c0d96a4ea0af34be301fd954ee290df5bf165cbb1c"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Kakoune < Formula
   desc "Selection-based modal text editor"
   homepage "https:github.commawwwkakoune"
-  url "https:github.commawwwkakounereleasesdownloadv2023.08.05kakoune-2023.08.05.tar.bz2"
-  sha256 "3e45151e0addd3500de2d6a29b5aacf2267c42bb256d44a782e73defb29cda5c"
+  url "https:github.commawwwkakounereleasesdownloadv2024.05.09kakoune-2024.05.09.tar.bz2"
+  sha256 "2190bddfd3af590c0593c38537088976547506f47bd6eb6c0e22350dbd16a229"
   license "Unlicense"
   head "https:github.commawwwkakoune.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kakoune < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfd67ffe60266d340d800d7d6d4bf5b4177b174d292eb2943ce533786a66070d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0968b727f6e4afd1d06ad78d26ac18b30efc4cbd36fdce9ff26e7b6f87c7c498"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dbae4b9dc5c4061e5bd6b818b41f7cdbca7a3e5468e5f3fbf693635563d731a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "d41c7940b79b65a545d746525745a623e748cfa5d49b0ca00841e4fed1502cbe"
-    sha256 cellar: :any_skip_relocation, monterey:       "89923a6e5ff0cecbcebb1591486b5fe9eda7477d6671124385c273b2fe439fae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b9ce6adf312565c15b8515df391037d44c47a17bfa241960a9a91d2e5e48ce1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a08816f7386a35390528c43d206bae3c6579fd3e202a65e63170545ba71ab8a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e85e331c04cf773feda8ece51ebd99753a0d656f212919f6774397a9cc812607"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae17a66d43bcee76b92d42f8f1518175367470914c0bd2dea964ee69c1dcdf6a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "098b3b44451afbd4ca54baa03128c07a9c822e639178ce7bb5fe00815a125e97"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2c164a078644d9932cb9ddd5924734c825f68ae19dd1b6b114449a82d1591a01"
+    sha256 cellar: :any_skip_relocation, ventura:        "287566a78b179e5926ed07a394a5e760f3e09b6d1b8a8e9707c6d2b1a4b2d493"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ec7421d06d5f8b1d2ec60574023a893a5b4244640c8123b0b878e4cf166410d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ff37e3e6928fa463beac4337e21825131a157bf837e320bff49091e56bef734"
   end
 
   uses_from_macos "llvm" => :build, since: :big_sur
@@ -39,12 +39,12 @@ class Kakoune < Formula
   end
 
   def install
-    cd "src" do
-      system "make", "install", "debug=no", "PREFIX=#{prefix}"
-    end
+    system "make", "install", "debug=no", "PREFIX=#{prefix}"
   end
 
   test do
     system bin"kak", "-ui", "dummy", "-e", "q"
+
+    assert_match version.to_s, shell_output("#{bin}kak -version")
   end
 end

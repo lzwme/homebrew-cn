@@ -2915,7 +2915,7 @@ Homebrew-homebrew-core/Formula/j/jsonpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonrpc-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsonschema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonschema2pojo.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/j/jsvc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jsvc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jtbl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jthread.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/judy.rb, Homebrew/homebrew-core, 0
@@ -3887,7 +3887,6 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@10.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
@@ -4739,7 +4738,6 @@ Homebrew-homebrew-core/Formula/p/pass-import.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass-otp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pass.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/passenger.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/passpie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/passwdqc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pastebinit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pastel.rb, Homebrew/homebrew-core, 1
@@ -5883,7 +5881,6 @@ Homebrew-homebrew-core/Formula/s/spice-gtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spice-protocol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spicetify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/spidermonkey@78.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spidermonkey@91.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spigot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spim.rb, Homebrew/homebrew-core, 0
@@ -6027,7 +6024,6 @@ Homebrew-homebrew-core/Formula/s/stylish-haskell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stylua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sub2srt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subfinder.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/subliminal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subnetcalc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/subversion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sugarjar.rb, Homebrew/homebrew-core, 1

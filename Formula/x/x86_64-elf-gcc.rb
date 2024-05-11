@@ -1,9 +1,9 @@
 class X8664ElfGcc < Formula
   desc "GNU compiler collection for x86_64-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-  sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz"
+  sha256 "e283c654987afe3de9d8080bc0bd79534b5ca0d681a73a11ff2b5d3767426840"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -11,15 +11,13 @@ class X8664ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "46481cbf4011ecf8c1042ff174ff10dbbc6df6568904502b00891691e1a67c8c"
-    sha256 arm64_ventura:  "6d9bc1533a46fc1b5d3d1208332a00cabce0b047ac0245219bf08a28f9169937"
-    sha256 arm64_monterey: "31504aa8649a9222cc2a4d76a40d716b650c42265646749eec8ee41e05714989"
-    sha256 arm64_big_sur:  "aae5fafb28973f3a7dbc22ed06270db8fb3941e0719f14b8459308b6dec15137"
-    sha256 sonoma:         "a322723b88650694c713147675e4cef19440217a8133f5f31799f691140475c3"
-    sha256 ventura:        "95b46844e430a5b06ac0b8d96aa6b0eedcc761f9295f21b6c6e4557eb181de83"
-    sha256 monterey:       "4b6e729c8333d369bfb722d2b08200f363341845dfa48ba544b8848e7096407f"
-    sha256 big_sur:        "2c5baa4ec478c1aadaa334e758c6c2fdb6c724b3c714844a5046b5f14450780d"
-    sha256 x86_64_linux:   "e934bb734ad257273cd08ab29728c385f09c456621d834b8b9122d3724e7b3fe"
+    sha256 arm64_sonoma:   "ecad7069bf10e9468e59c5d017f151521136c4ab5f20842852716c105c0ab665"
+    sha256 arm64_ventura:  "e398f983a2de3def6d5be8f0f815bd5b91f7f6a0715d2c162eb2d1a5f69bfaa0"
+    sha256 arm64_monterey: "769c5abf684a2b03848fff07e8891d679c8635046a70e7f3bd0b7e47c3c92702"
+    sha256 sonoma:         "5a45195baa15feceeffe34990b4eb3440cfb1f5f65ae43a9f276f4b224c37c70"
+    sha256 ventura:        "656766e85ff0a824dfcd706fe6835edcde91f2d25b0d565b678cfc7bde6ff43f"
+    sha256 monterey:       "2670b8937231692b3a1b211e572b2fd56dc00fc2110bd176743d82c900884404"
+    sha256 x86_64_linux:   "4ef344bb4a84ddc89da87ae8ac757ae25743715ff9cd3afbf63861ee51337df5"
   end
 
   depends_on "gmp"

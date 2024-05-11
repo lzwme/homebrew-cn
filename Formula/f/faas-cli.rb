@@ -2,8 +2,8 @@ class FaasCli < Formula
   desc "CLI for templating andor deploying FaaS functions"
   homepage "https:www.openfaas.com"
   url "https:github.comopenfaasfaas-cli.git",
-      tag:      "0.16.26",
-      revision: "a9a775760ba88f37820e2939f5c5f24311f5d45c"
+      tag:      "0.16.27",
+      revision: "6e26edd4f9ae0d0fac9d6916a1b831f4f41d8096"
   license "MIT"
   head "https:github.comopenfaasfaas-cli.git", branch: "master"
 
@@ -13,13 +13,13 @@ class FaasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fa914359651d6cbbe60a97042dc5dbca648df722ce7faa8a46bf049d2a94518b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66c5ba0689e749e0ab775cee4af1d2679ac37d50c2866312a3a86702e0e871b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e8b517c9cc513dbcd979f5c706fced8f877bd465944e596c4170b3d81191548"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6e6be1bdd76d285bed61083d9d2c5047ed70e9bf392080a91509ee5449d6e1b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d7e87391a9f475ed86d2d7e203d2a16b81af4a49acb28d375709a850548e522"
-    sha256 cellar: :any_skip_relocation, monterey:       "3840ea4867020d5c617e3c70f9f632f98d92697bfb993a1c06c5608fdc7877d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99c55786f7142958c892c7d8c49be17633f0d53a13e0e45a772aae29e27d3cea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee31a49cb401adad0872a88186130e6db96f171339931cbab7e675f9d20ac6d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d70b39809c5093ebbbcea5f6e7e7d4faebbf5e6b749a3a005de99e049075b917"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "74e26d6969517a4fad89f4a8c1199cec01b311109283eb9cfc0879df65fc2cf3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f25fddf6007d1ac9e3d07e726e030c668b8e9154798f21b66b8839d418ab07c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "cd9088eccbf36175cb53c6dac97fa50bf546f6e0022b8571d3335149dfa3b6a2"
+    sha256 cellar: :any_skip_relocation, monterey:       "45706f33d05734316b56e521fcd3803ca9b0b2c17f295b923f95a172b1cd2e1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c643feeaafa74171e8a51c8e36dab29a01d938df85a3ddc87ff04c678baaaf6e"
   end
 
   depends_on "go" => :build

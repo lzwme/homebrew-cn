@@ -1,19 +1,19 @@
 class CargoBloat < Formula
   desc "Find out what takes most of the space in your executable"
   homepage "https:github.comRazrFalconcargo-bloat"
-  url "https:github.comRazrFalconcargo-bloatarchiverefstagsv0.12.0.tar.gz"
-  sha256 "999b6b982b6907d92e089d1283626fedc578473f5a6bc360a9dad869d3079597"
+  url "https:github.comRazrFalconcargo-bloatarchiverefstagsv0.12.1.tar.gz"
+  sha256 "8195cebb94a740cd3b89611ae79d7d3e2d8fd8ec297f5a0f07efa7069ef05be7"
   license "MIT"
   head "https:github.comRazrFalconcargo-bloat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8fe2e33df2b107b8e6a2285ff36858d06c7fc131db551f7a7a7006d88a99a8be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb6e18f5c298bc3dcea83df0e06ef3add61b0afc022944f05475fbe1b943ef9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc33b90b76d4e8652ac0d3477fddcabb4fb635d63b6c2a79955b9023bb98fd5a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8517336ed7446d54dd6f462448ce5e9f90b05ca589428c0b32d59d14ed6703fb"
-    sha256 cellar: :any_skip_relocation, ventura:        "32d44cb5878e1f67d2c01ce21f1ba58a65a61d526e14da933315c9a7f77cac60"
-    sha256 cellar: :any_skip_relocation, monterey:       "b77287ceac75e174e10c7c3c9c2eec865e442a8bdd8df01915e11e163b2644e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c24b7e0cbbd2549eb87089768638e0ea4c42c42a3955c080e5cabcb899dd443b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9caa51f467a8ff4272b885a45091bd018e2defd629aa70d1a58686553ea9545"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e785499e4d1ca0ea95076b21ec4f73098c5a2e7af38f9cd804465786f1745a1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6cb18085aca63f0c6730d86532d74276a598d5587f7bd4cf64f6352593bb16b"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f643448f04a72a456a13efb160fe1470144128d55c7e3d7f44fe8c6a1027ec2b"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0de5a94dec7e213075d86b9bb4ac9c206c7308fcf34b75388477ca58825e189"
+    sha256 cellar: :any_skip_relocation, monterey:       "a374eabb4b4da3740c97abcf9e2f4a030a21d3ac6c3ff503269d4a153086a00a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c271533c6e4ff7415d51ccb2fcbee8e514e0ec2142a48543a5c8dd705ac9e4a"
   end
 
   depends_on "rust" => :build

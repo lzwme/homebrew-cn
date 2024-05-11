@@ -4,11 +4,17 @@ class Vectorscan < Formula
   url "https:github.comVectorCampvectorscanarchiverefstagsvectorscan5.4.11.tar.gz"
   sha256 "905f76ad1fa9e4ae0eb28232cac98afdb96c479666202c5a4c27871fb30a2711"
   license "BSD-3-Clause"
+  revision 1
+  head "https:github.comVectorCampvectorscan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "f9f675e8abdcc7118df42cec8ab5235e50ae24632de7c28ca4156c6fc031b68a"
-    sha256 cellar: :any, arm64_ventura:  "389a64eeb361e53204fafaf212e6b408adfab6d02cdf27578a0f11d373ec767a"
-    sha256 cellar: :any, arm64_monterey: "d57e73bc3cefeba51e1e93b7a518b5e436efb56e1c7d93ae79e38b1e2200cadb"
+    sha256 cellar: :any,                 arm64_sonoma:   "f39f184ac1f5dbdb22087f8a6fe7ffaadcbb0fdea64d1ea872d2e4df90e28a0b"
+    sha256 cellar: :any,                 arm64_ventura:  "52148d0b76b052ffe68ddbf0c23b659fa97498f889e78b49c54db5f12ccd55c5"
+    sha256 cellar: :any,                 arm64_monterey: "bc41610e518516717336b23078e5b5b0b2880c5e1a7d6fa72a4d10f1ba8c105e"
+    sha256 cellar: :any,                 sonoma:         "19b569e181cf684a889a6be49f77794825e7605d811b4290be9877141133395f"
+    sha256 cellar: :any,                 ventura:        "68e0a9783052f829c597b7c45ed425b2e0b5a609cad7eb63a63847e66f9627ea"
+    sha256 cellar: :any,                 monterey:       "8e12bb9304fb04e3d8044835916b6d9ab5b5ce15f0183db96d8886a40961caad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "731eccf9091173f46c7578649f8779e9b70ec340572128f69fb1799c9907897a"
   end
 
   depends_on "boost" => :build
@@ -16,7 +22,12 @@ class Vectorscan < Formula
   depends_on "pcre" => :build
   depends_on "pkg-config" => :build
   depends_on "ragel" => :build
-  depends_on arch: :arm64
+
+  # fix SQLite requirement check; included in next release
+  patch do
+    url "https:github.comVectorCampvectorscancommitd9ebb20010b3f90a7a5c7bf4a5edff2eb58f2a4f.patch?full_index=1"
+    sha256 "e61de5f0321e9020871912883dadcdc1f49cd423dab37de67b6c1e8d07115162"
+  end
 
   def install
     cmake_args = [

@@ -5,6 +5,7 @@ class Snort < Formula
   mirror "https:fossies.orglinuxmiscsnort3-3.1.84.0.tar.gz"
   sha256 "dca1707a66f6ca56ddd526163b2d951cefdb168bddc162c791adc74c0d226c7f"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.comsnort3snort3.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,13 +17,13 @@ class Snort < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1362bbc412578ad9b9aa0deaba709a566eb9cbe269573b8ece7a7648d2f2d2e4"
-    sha256 cellar: :any,                 arm64_ventura:  "ee3beb14e54b75a8fcb560ade39c0b45e8629d89537bea001f99f5d5f7382032"
-    sha256 cellar: :any,                 arm64_monterey: "d0023e58b3f5a962504f225bf59ba80ec36b4be4a15201ad236f05ad36978969"
-    sha256 cellar: :any,                 sonoma:         "abc45d14ab79959edeeb9276d627388c49a0d617cc6f4539ee3f60607271603b"
-    sha256 cellar: :any,                 ventura:        "bbabb9774fba7027c72e664427d205437dd59256abf86bc901dbfa3289927d4e"
-    sha256 cellar: :any,                 monterey:       "9d3e41e3db44aca0f33481f338459345afcb4130e8ac73021c9629dd6220e070"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff296aa78f632fb4d17d68c7175ac09081fdf8c55bca288ea0db3f81e31528c8"
+    sha256 cellar: :any,                 arm64_sonoma:   "77cca080ec795d1a584951978aa36c9cb3f778bf50335e4146a06b7abadef57b"
+    sha256 cellar: :any,                 arm64_ventura:  "7e7e02e6b999dc444865823bee078008f2e9b416a64aeed9807b740c93980faf"
+    sha256 cellar: :any,                 arm64_monterey: "36512c9d1e913a523a0bef8d4b8a3643b9c5e403ce065e0b9a31e2421214bef0"
+    sha256 cellar: :any,                 sonoma:         "308fa873d82d9cd2c65fa14c824bc559908485bdaf79efef8066c24820bbf356"
+    sha256 cellar: :any,                 ventura:        "dac8b332dd17859d0d2a79806f79ff3744111ae676b82f826ab1f04999f3e07c"
+    sha256 cellar: :any,                 monterey:       "121aa945319785beea9ca3f90558045d7a3740ec44f4d1438cb975c25f3815c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82efb89725e72a1e2722ec5e82f9860e8184d496a40b881f570a43922fe7818a"
   end
 
   depends_on "cmake" => :build
@@ -36,20 +37,13 @@ class Snort < Formula
   depends_on "luajit"
   depends_on "openssl@3"
   depends_on "pcre" # PCRE2 issue: https:github.comsnort3snort3issues254
+  depends_on "vectorscan"
   depends_on "xz" # for lzma.h
 
   uses_from_macos "zlib"
 
   on_linux do
     depends_on "libunwind"
-  end
-
-  on_arm do
-    depends_on "vectorscan"
-  end
-
-  on_intel do
-    depends_on "hyperscan"
   end
 
   fails_with gcc: "5"

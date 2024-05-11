@@ -1,8 +1,8 @@
 class Ecl < Formula
   desc "Embeddable Common Lisp"
   homepage "https://ecl.common-lisp.dev"
-  url "https://ecl.common-lisp.dev/static/files/release/ecl-23.9.9.tgz"
-  sha256 "c51bdab4ca6c1173dd3fe9cfe9727bcefb97bb0a3d6434b627ca6bdaeb33f880"
+  url "https://ecl.common-lisp.dev/static/files/release/ecl-24.5.10.tgz"
+  sha256 "e4ea65bb1861e0e495386bfa8bc673bd014e96d3cf9d91e9038f91435cbe622b"
   license "LGPL-2.1-or-later"
   head "https://gitlab.com/embeddable-common-lisp/ecl.git", branch: "develop"
 
@@ -12,15 +12,13 @@ class Ecl < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "fcb80a9c5cc2669190d6d58450dfee2d223cc6b27da6932b644d7e79ba015049"
-    sha256 arm64_ventura:  "66aab9a69955ac7e8ffa8333c123f95b07f9d3255a44ba92190de1bf9652c393"
-    sha256 arm64_monterey: "b1b8a622d7ec1cd1962ac43dd18837380b5b4e89025877ed1df77891e1bb83dd"
-    sha256 arm64_big_sur:  "fed536f05c03d490065a364fe668c71489c4fc753ee35804d19cda8ae3525858"
-    sha256 sonoma:         "9fcafdb6ca4303831b21dbdc280a570a200b516f8700c1a155a65474d6b87959"
-    sha256 ventura:        "966e6518c3d8498f8dcd81dea1f222e8523d62e190bc03623dcb1f324f76d8c8"
-    sha256 monterey:       "ad40b3627528774c084c50eadf188b05a04d740a6929fffc40c676b1ff2af999"
-    sha256 big_sur:        "60c577681bfe63d97f69d75f04d9341b4befddcfaf277bd315f75ea2bb3dd09b"
-    sha256 x86_64_linux:   "cc090594183be3291b7ef4a212880aa995ebeab64282d553478a9c11bd902a28"
+    sha256 arm64_sonoma:   "f511628793d569db33a5d91a96a052eff9a7bcc922717941c7e5dd3a08a32d34"
+    sha256 arm64_ventura:  "6e4978801eb0b6cf26e5bccd502ce82e5b4c5ba7213aedd23fd39ee6e639d3e7"
+    sha256 arm64_monterey: "38a0407a7998ec9218775d7eeafec3703cbbe823298383bee875b32113f23fae"
+    sha256 sonoma:         "2a29cff3a5684dc0171d182ca98308ffd5f16336500b03e3352c40f699bd999e"
+    sha256 ventura:        "538afbf26399d650b672ddd2013103ac4faacea950ec92531afc00bb8a6fd583"
+    sha256 monterey:       "95e261506d9cbb74e121eb52f281c516012d971d0b88887b9116b74a82144e8e"
+    sha256 x86_64_linux:   "fcc4ecc3ffdf65a6d96712a835d80711d804f643139208fe49ea029296a0a1dc"
   end
 
   depends_on "texinfo" => :build # Apple's is too old

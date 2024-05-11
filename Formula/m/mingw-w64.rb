@@ -12,14 +12,14 @@ class MingwW64 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sonoma:   "166737c970ee5a025dc5ecfc36afd0850ed16a4a3b13ac7a1a706b7d98eb20b7"
-    sha256 arm64_ventura:  "fa487b22ea3635fac2e05d91b7c31667927e693085135dd3f3ef7c8645f6aabb"
-    sha256 arm64_monterey: "3397b288b7d9133a6b9e7bd6f9f016151440a724de848dfb8d90ccb27876a242"
-    sha256 sonoma:         "bf54be7e06281b1090f94a6e98e32ce63ceb67b7ba13fc0f2187127bbf5753f2"
-    sha256 ventura:        "dcaeed42886127b357f8a48cce28752f71f56270100d8b026e908ccd0e455dba"
-    sha256 monterey:       "05f340ac5b0f75e20d59bbe71cb53fd0599f2b49a1c312380daec2be931ba752"
-    sha256 x86_64_linux:   "94c79056b935ead8fa122187e4b3c29c2b4a2e11e56ea07b927807deceb90516"
+    rebuild 3
+    sha256 arm64_sonoma:   "3a9ccfa83474eebd0139d97b37d552e460f2ab4c1cccf170d76e214d9950792d"
+    sha256 arm64_ventura:  "8aae383c22f21e3bd33de694cd02ed54768b91d08b639198552f4a720236a2d8"
+    sha256 arm64_monterey: "d6ace4b87d25ede8f782e14dadaa1b4f683561d2da5854156f95ce360ea6adc8"
+    sha256 sonoma:         "01744df8fcf3dc75bdee3fa7cfc1b41da529ef695218e481eac2ca89ad4e19d7"
+    sha256 ventura:        "4f8e1c6ee226f4211cbea00d1d237f0b6769f7d97cdc946755c50c36fd031056"
+    sha256 monterey:       "8332eb7fb9a8f96b77a2f92edbbed74bfda5fa37440508fc832ecc2e7673e83e"
+    sha256 x86_64_linux:   "3b4d818996775a10f2b890a6f6cd6f78341dee29ebbe0fec4ae8d5d652fb5a5d"
   end
 
   # binutils searches for zstd using pkg-config
@@ -42,21 +42,9 @@ class MingwW64 < Formula
   end
 
   resource "gcc" do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-    sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
-
-    # Backport fix for ctype build errors with Xcode 15.3
-    patch do
-      url "https://gcc.gnu.org/git/?p=gcc.git;a=patch;h=9970b576b7e4ae337af1268395ff221348c4b34a"
-      sha256 "968bfcb58f75d889470f2f815787f6aa254fb43f1e5516e04f577dad22259905"
-    end
-
-    # Backport fix for libcc1 std::vector build errors with Xcode 15.3
-    patch do
-      url "https://gcc.gnu.org/git/?p=gcc.git;a=patch;h=5213047b1d50af63dfabb5e5649821a6cb157e33"
-      sha256 "0d36d0d5556aefa59dbedf821f5c9dcda940a9c6f92cb3509423f524fd93351a"
-    end
+    url "https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz"
+    sha256 "e283c654987afe3de9d8080bc0bd79534b5ca0d681a73a11ff2b5d3767426840"
   end
 
   def target_archs

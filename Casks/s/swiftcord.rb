@@ -1,16 +1,11 @@
 cask "swiftcord" do
-  version "0.6.1"
-  sha256 "6da79f88930ce384a58c3fd902f75ad64ef0b9e015aa547db6a85af7d46b2032"
+  version "0.7.1"
+  sha256 "36d9f9fbed2ab3e124c69e7ef16b5f3f6979fa6c576e6ad005ff34c1738a2961"
 
-  url "https:github.comSwiftcordAppSwiftcordreleasesdownloadv#{version}Swiftcord.#{version}.dmg"
+  url "https:github.comSwiftcordAppSwiftcordreleasesdownloadv#{version}Swiftcord.zip"
   name "Swiftcord"
   desc "Native Discord client built in Swift"
   homepage "https:github.comSwiftcordAppSwiftcord"
-
-  livecheck do
-    url "https:raw.githubusercontent.comSwiftcordAppSwiftcordmainappcast.xml"
-    strategy :sparkle, &:short_version
-  end
 
   depends_on macos: ">= :monterey"
 

@@ -1,9 +1,9 @@
 class I686ElfGcc < Formula
   desc "GNU compiler collection for i686-elf"
   homepage "https://gcc.gnu.org"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-13.2.0/gcc-13.2.0.tar.xz"
-  sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-14.1.0/gcc-14.1.0.tar.xz"
+  sha256 "e283c654987afe3de9d8080bc0bd79534b5ca0d681a73a11ff2b5d3767426840"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -11,15 +11,13 @@ class I686ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "d6e7b06f63ddcb29358e2d3b9fdbd5716a7b80739d59cbb155e5ee499e2944ee"
-    sha256 arm64_ventura:  "4bbf916ac386c3450e185fe37f7a4f70edccc1a80d2d066523b1289c055a1d3f"
-    sha256 arm64_monterey: "11668469ed40d8e3693b8ec245e03fc4968bab9cc8fac2ebb6e233d637172a77"
-    sha256 arm64_big_sur:  "3850f90bef8fdfbe512cc7800cd3623042159a76d8488a5cf4f2e53a35a1c2ff"
-    sha256 sonoma:         "86db1b855150af3cc0a6d72bf6bc9efeb56b99e65c66ab625a3b37b278a68f0f"
-    sha256 ventura:        "36ca2b0651e911cf5bca160a29bbe1cec825e628d3b10a46e541f0d64a683881"
-    sha256 monterey:       "f0d01e3a663217ce9f6be197b7bc28d1f32cd272996df7c25f351532095e5386"
-    sha256 big_sur:        "1ed85802e51a2cd2cf776dc92022b720cc01215efab59885f78e67c952eebaef"
-    sha256 x86_64_linux:   "6b185249ca7ab5ca18d024d47de938a02fb81b2626a5d554bdfe9805edbde55a"
+    sha256 arm64_sonoma:   "286996cd100db5ab8fe89b6c76d77a3c10d978c7f2426f6e1ae79246ed44951a"
+    sha256 arm64_ventura:  "6ae8b24a326fa19c41023d3750cd4dd1365afa294f80d04543449c8242887710"
+    sha256 arm64_monterey: "3b2a2bf35e2ea64aa356ab0793de01a23d8536715785f793c146457e3a462ca5"
+    sha256 sonoma:         "6eb0c8174c52b6b5824047a369135ba7a437deca741d46807f65f999440cefdb"
+    sha256 ventura:        "e471f5fb67162666efcab697b8de4fdae8e624a6c560ca43656894db144ff367"
+    sha256 monterey:       "7cbe9b4ddeb1052098a4cfe878899e8bf5701bc96334223ed423a48d4a357195"
+    sha256 x86_64_linux:   "32aceec99199f28b1d62bc65e20937168f88967b0afeb9a368f34390e808256f"
   end
 
   depends_on "gmp"

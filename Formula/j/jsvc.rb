@@ -1,8 +1,8 @@
 class Jsvc < Formula
   desc "Wrapper to launch Java applications as daemons"
-  homepage "https://commons.apache.org/daemon/jsvc.html"
-  url "https://www.apache.org/dyn/closer.lua?path=commons/daemon/source/commons-daemon-1.3.4-src.tar.gz"
-  mirror "https://archive.apache.org/dist/commons/daemon/source/commons-daemon-1.3.4-src.tar.gz"
+  homepage "https:commons.apache.orgdaemonjsvc.html"
+  url "https:www.apache.orgdyncloser.lua?path=commonsdaemonsourcecommons-daemon-1.3.4-src.tar.gz"
+  mirror "https:archive.apache.orgdistcommonsdaemonsourcecommons-daemon-1.3.4-src.tar.gz"
   sha256 "df4849d05e5816610e67821883f4fc1e11724a0bb8b78b84b21edd5039ecebbe"
   license "Apache-2.0"
 
@@ -23,17 +23,20 @@ class Jsvc < Formula
   def install
     prefix.install %w[NOTICE.txt LICENSE.txt RELEASE-NOTES.txt]
 
-    cd "src/native/unix" do
-      system "./configure", "--with-java=#{Formula["openjdk"].opt_prefix}"
+    cd "srcnativeunix" do
+      # https:github.comHomebrewhomebrew-corepull168294#issuecomment-2104388230
+      ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+      system ".configure", "--with-java=#{Formula["openjdk"].opt_prefix}"
       system "make"
 
       libexec.install "jsvc"
-      (bin/"jsvc").write_env_script libexec/"jsvc", Language::Java.overridable_java_home_env
+      (bin"jsvc").write_env_script libexec"jsvc", Language::Java.overridable_java_home_env
     end
   end
 
   test do
-    output = shell_output("#{bin}/jsvc -help")
+    output = shell_output("#{bin}jsvc -help")
     assert_match "jsvc (Apache Commons Daemon)", output
   end
 end

@@ -2,25 +2,24 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2024-04a",
-      revision: "aab122ede8b04a9877e22c9013c0b020186bc9b4"
-  version "2024-04a"
+      tag:      "dev-2024-05",
+      revision: "2250eb3e78eb38d22c0e8c288f82e6ded20b3cfe"
+  version "2024-05"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e9a092170226b0be6aeffd0efb1a5a8c180fe61f2a628f7c35a7568f58c8676f"
-    sha256 cellar: :any,                 arm64_ventura:  "715f4f6515ea63c984be300ecb94728c39cb024fc2c4a9aabd4eaa99ead2e1be"
-    sha256 cellar: :any,                 arm64_monterey: "b8156f43e9ebcd28952d12f99388ff0c4a89c68d0ef352400769fd29da668ef0"
-    sha256 cellar: :any,                 sonoma:         "28708679fab80769d2bf70dd85b3af96adc0526f0ead10a4f0a7a8a26ed50e3b"
-    sha256 cellar: :any,                 ventura:        "7c1d4950780996b05cfad031db79689327dce03912821a80c3f398043df1030c"
-    sha256 cellar: :any,                 monterey:       "626a80c1cbbf2d8f82085b825f762d6750e4819fc23307b400bcca4e9f25d94b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecfb693f82990b48732307880d050f5a5a5353c833edbf15421fd82bf2a39667"
+    sha256 cellar: :any,                 arm64_sonoma:   "8a7802af16b7e0b663c98236da7e9df55dd5268e62c612c5b74522aa417163a4"
+    sha256 cellar: :any,                 arm64_ventura:  "98544078238f708d3506c8bbe89c0d5d7066f19168758a969386071f4da628d1"
+    sha256 cellar: :any,                 arm64_monterey: "5290ab2b0bdf6bfda9662488ba2fa79131e39a014b92c7bb38d9a64c82ea2684"
+    sha256 cellar: :any,                 sonoma:         "e16c5d156774810aab96342018faa3c01aca051e13bfdd41fc928e115c1342f7"
+    sha256 cellar: :any,                 ventura:        "f4dbac8ff2302a33355d1782a84c4321f6fae9bb572fe49688858f4f51a281fb"
+    sha256 cellar: :any,                 monterey:       "0f741a292793baec57f50c737e9d1bf65f14eaf076c10f9adbf8fac02aee5616"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13b0bf8e5ef80f9fe1bca49c6961e6ebf0754e3889674955bf6c32c214aa35c2"
   end
 
   depends_on "glfw"
-  depends_on "llvm@17"
+  depends_on "llvm"
   depends_on "raylib"
 
   fails_with gcc: "5" # LLVM is built with GCC
@@ -83,6 +82,11 @@ class Odin < Formula
         cp "libraygui.dylib", buildpathraylib_installpath
       end
     end
+
+    # By default the build runs an example program, we don't want to run it during install.
+    # This would fail when gcc is used because Odin can be build with gcc,
+    # but programs linked by Odin need clang specifically.
+    inreplace "build_odin.sh", ^\s*run_demo\s*$, ""
 
     # Keep version number consistent and reproducible for tagged releases.
     args = []

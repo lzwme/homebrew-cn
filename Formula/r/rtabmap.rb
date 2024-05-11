@@ -7,6 +7,13 @@ class Rtabmap < Formula
   revision 3
   head "https:github.comintrolabrtabmap.git", branch: "master"
 
+  # Upstream doesn't create releases for all tagged versions, so we use the
+  # `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256                               arm64_sonoma:   "7ded9e75cd1ec90eff980ea4e6c0521b36589017bf0acb62217333e13587b6c1"
     sha256                               arm64_ventura:  "7a754f0c9a97663b06b2e6d4d1981466d9be5d53e05944907d45566374c501ef"

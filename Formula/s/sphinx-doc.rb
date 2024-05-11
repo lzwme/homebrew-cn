@@ -6,15 +6,16 @@ class SphinxDoc < Formula
   url "https://files.pythonhosted.org/packages/b7/0a/b88033900b1582f5ed8f880263363daef968d1cd064175e32abfd9714410/sphinx-7.3.7.tar.gz"
   sha256 "a4a7db75ed37531c05002d56ed6948d4c42f473a36f46e1382b0bd76ca9627bc"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b7bcf45774a2488adf59947844afa57a00b18bd91188964de5ef6f0cc391963"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88e7f44f61711444b143d2fd4d942b6dd00be6ef5414254c649343f7b942c949"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6753b93b832ca78aec4757b484431ae8fed1fcb3945e8f51ebbe95bccf151133"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0084c0936db0a00d16db5081d4db087cd3df6ce018fb9f86ca5c0fd50323bb05"
-    sha256 cellar: :any_skip_relocation, ventura:        "46775c91af86deb004010ef551b5885f6cbe7ae743cb97875aa6e77a88f78725"
-    sha256 cellar: :any_skip_relocation, monterey:       "17fdd15c8e0f309f9cbef23d959e11fab574596da54e77e48fda16bdaeb5b165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed7bbc312895db3acce57b004c366b47671d68460fd71adbb22171ed348dc67c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "022f66c695afc969866a4089c730c3a0819165fc07d0035512a9e760e96da2f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2bac7d045434efe88d8145b316c7b44e6d0dbaeda6abf41445f72f25df46187"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "58b64d71e8d98e35815c38fdff25b538e466b88339d75ed152347a3e48a7564a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6978da95ff0918618eadaefb114f026c31ea7e1f16252945e8f8a8b97124da2e"
+    sha256 cellar: :any_skip_relocation, ventura:        "39b34fd064913fffdc07582aa327c6fe0b04773266f94d695c7afde15b024c30"
+    sha256 cellar: :any_skip_relocation, monterey:       "b845851390d59d3a7515f769028d31624fefecd63cbf7546d0dcff121a62bc1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "631735645fa5bc69afd34bf656db80c541204e7738a753fdca7c9702223a9700"
   end
 
   keg_only <<~EOS
@@ -31,8 +32,8 @@ class SphinxDoc < Formula
   end
 
   resource "babel" do
-    url "https://files.pythonhosted.org/packages/e2/80/cfbe44a9085d112e983282ee7ca4c00429bc4d1ce86ee5f4e60259ddff7f/Babel-2.14.0.tar.gz"
-    sha256 "6919867db036398ba21eb5c7a0f6b28ab8cbc3ae7a73a44ebe34ae74a4e7d363"
+    url "https://files.pythonhosted.org/packages/15/d2/9671b93d623300f0aef82cde40e25357f11330bdde91743891b22a555bed/babel-2.15.0.tar.gz"
+    sha256 "8daf0e265d05768bc6c7a314cf1321e9a123afc328cc635c18622a2f30a04413"
   end
 
   resource "charset-normalizer" do
@@ -41,8 +42,8 @@ class SphinxDoc < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/21/ff/c495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844c/docutils-0.21.1.tar.gz"
-    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
+    url "https://files.pythonhosted.org/packages/ae/ed/aefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9/docutils-0.21.2.tar.gz"
+    sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
   end
 
   resource "idna" do
@@ -56,8 +57,8 @@ class SphinxDoc < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/b2/5e/3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1/Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "markupsafe" do
@@ -76,8 +77,8 @@ class SphinxDoc < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "requests" do

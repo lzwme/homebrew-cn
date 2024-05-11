@@ -13,6 +13,10 @@ class Hyperscan < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "45406945a7c9c98bb01d8dc90ad045746bbe7b0146a522badbc8925dd03d0fd5"
   end
 
+  # This software is no longer open-source after this version,
+  # and the upstream repository is not receiving any updates.
+  deprecate! date: "2024-05-10", because: :unmaintained
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build

@@ -4,8 +4,8 @@ class GraphTool < Formula
   desc "Efficient network analysis for Python 3"
   homepage "https:graph-tool.skewed.de"
   # TODO: Update build for matplotlib>=3.9.0 to use `--config-settings=setup-args=...` for system dependencies
-  url "https:downloads.skewed.degraph-toolgraph-tool-2.63.tar.bz2"
-  sha256 "cf7847a52cd8ff65639f14d88a90f745f36ce201bd207983f237d19bb5199412"
+  url "https:downloads.skewed.degraph-toolgraph-tool-2.65.tar.bz2"
+  sha256 "a33a45bfdaeb8b6b681bc05e353ab3a09764c01d3a19d27af578ed3e48d4299c"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -14,13 +14,13 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "0c8071a6d32501e2105532f1d470836423cc51a1961772371e85b403fc016273"
-    sha256                               arm64_ventura:  "056e13acefc576cfae569727c693f643663258c2bff7a327adbdec69ba24ea8b"
-    sha256                               arm64_monterey: "389210b4a1c5a37dbd7ab4aaaa932bdd4fc29998e8e027e0549a634eb8285f33"
-    sha256                               sonoma:         "61cce793e5f7a8d3cdf10cd0bf1acaab62d82bce32af219dc9154562e1b9d714"
-    sha256                               ventura:        "e2ddfb0bae32c8603d3335b565f9f3cf153027d2ba957486f5c00e8ef7623190"
-    sha256                               monterey:       "3b9e41d52bd1fd211d3332790619c824774cbef0a8932927a4b1052b2250d1dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e0a02e12bbe4d67e1de8be6cd3ef930b0d0b9843152fefd6fdf46d8182fdf2f"
+    sha256                               arm64_sonoma:   "e5eaad2f41717064d30cec62e5b7f983c5c95142cf51d2b871a8b561af55d089"
+    sha256                               arm64_ventura:  "4b2adc38906b3cd899f043dfa79139fbc7fe15d400389008a60b45b390ee94e3"
+    sha256                               arm64_monterey: "d33f8a1ba71a3633c6f4cc38d68b90f0334290bfb0d0e5efac15a2c3e1a4f53f"
+    sha256                               sonoma:         "6929467779a0704212287d39711691b79efa7a1c9bb691fc25717102baae1dc1"
+    sha256                               ventura:        "9ef62510b61ffeb68bfc9c9df65ba54bd73744906adcc3df2c9acff15bf61241"
+    sha256                               monterey:       "984e6f7062cae74c5f08b0d6f415f654c6e1812c072c0d5146c367b722594745"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c27b4355f99ef9d31938a98d9041b6412ab804617c0a01df556783817f8d647b"
   end
 
   depends_on "ninja" => :build
