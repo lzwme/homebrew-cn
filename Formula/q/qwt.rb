@@ -1,10 +1,9 @@
 class Qwt < Formula
   desc "Qt Widgets for Technical Applications"
   homepage "https://qwt.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/qwt/qwt/6.2.0/qwt-6.2.0.tar.bz2"
-  sha256 "9194f6513955d0fd7300f67158175064460197abab1a92fa127a67a4b0b71530"
+  url "https://downloads.sourceforge.net/project/qwt/qwt/6.3.0/qwt-6.3.0.tar.bz2"
+  sha256 "dcb085896c28aaec5518cbc08c0ee2b4e60ada7ac929d82639f6189851a6129a"
   license "LGPL-2.1-only" => { with: "Qwt-exception-1.0" }
-  revision 1
 
   livecheck do
     url :stable
@@ -12,17 +11,13 @@ class Qwt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "0f7593ebdd6f36cd40d5e004526ccc50782f8549dee322ee5c02fddbb79348e6"
-    sha256 cellar: :any,                 arm64_ventura:  "8420ce0e8b374e2451d5453e08414ed0eb261b3aeab1cc39602415f5eb7f2f6a"
-    sha256 cellar: :any,                 arm64_monterey: "3788ac401342ed9e2bb65df01a28d1b2d275863078122daf8bc4608e40c7a68d"
-    sha256 cellar: :any,                 arm64_big_sur:  "5298d5e6b9dc707ec137521490cabf0096646539d93c83143b35ec528b785d80"
-    sha256 cellar: :any,                 sonoma:         "e55f39b9d900c9704ef77952d777effe79dd1007348df2e8e571b16968ab6fed"
-    sha256 cellar: :any,                 ventura:        "c73dce9c5fae18ea6c3b294241c28bdd10f5811ee73225289ab0dbae3e4c40e5"
-    sha256 cellar: :any,                 monterey:       "b037d4085bf7072c7bdc4eb370019964460bb42e5070da35e5ecef9e2c020662"
-    sha256 cellar: :any,                 big_sur:        "d9a994f7bff978e0e9907f9fe76f3ba9d73b7055735c00e5ad61cc3b4abcf398"
-    sha256 cellar: :any,                 catalina:       "e21aecb109eea0a86073f60d974d17bff90cfe6800cb3ec51ab3d229467c114e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a52c2de9d0a231d153bc7232b6855f02be204ff39d4f6416fb9838d419edfbde"
+    sha256 cellar: :any,                 arm64_sonoma:   "6adb7582cb3f3668fc541f8d087ea1941e1a875ef5d492f74a98c142655236bf"
+    sha256 cellar: :any,                 arm64_ventura:  "a9287c7fd09ae45bd5afc94788679c647b0f0d8b06c2150a8bb32ff19ccc6cb5"
+    sha256 cellar: :any,                 arm64_monterey: "193e2f4e05debf6af85ff273f263f625687855c1608a3273c967aa2923a6c5f6"
+    sha256 cellar: :any,                 sonoma:         "c0e5af00c8bd0937cc15c26ab5882805a523701688b39dfe9a4ae4c00ac79463"
+    sha256 cellar: :any,                 ventura:        "3123515f8b0dc54033fd148442dc8cc92b6d490209c3f474ff29db8abd794bed"
+    sha256 cellar: :any,                 monterey:       "b37d96c837d93dc53dcf9b97592a7f953651acae660b388e8800cffafb9bdcf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84711477f549b6b42ad1ad87bf333e94559836ad3637765c87fb3117f153325c"
   end
 
   depends_on "qt"

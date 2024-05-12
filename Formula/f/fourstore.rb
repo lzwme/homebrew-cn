@@ -2,22 +2,18 @@ class Fourstore < Formula
   desc "Efficient, stable RDF database"
   homepage "https:github.com4store4store"
   # NOTE: Try building without `avahi` at version bump.
-  url "https:github.com4store4storearchiverefstagsv1.1.6.tar.gz"
-  sha256 "a0c8143fcceeb2f1c7f266425bb6b0581279129b86fdd10383bf1c1e1cab8e00"
-  license "GPL-3.0"
-  revision 2
+  url "https:github.com4store4storearchiverefstagsv1.1.7.tar.gz"
+  sha256 "e511f1adb094e2506545d4773a6005a462f6b4532731e91f1115b038ab25a8f0"
+  license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sonoma:   "b5595483be41d447472e43bedb18b3ca3a04ce88e42f50ee0841be09b27a11b3"
-    sha256 arm64_ventura:  "5909b28a48725eacea49092ef49e8865ab7c66c7e5c9b6ba5679f02388d99434"
-    sha256 arm64_monterey: "7aed20fb578c260f7d1764679d6ecaad032d68dd6bdacca012002ea815509a4a"
-    sha256 arm64_big_sur:  "ad26cc8bd35c75d1988f97de3fbf3281061afc8002a082d61e99800168c5f4c3"
-    sha256 sonoma:         "18986922d034c80b22c77e8bc32e048115e2ece3c47bb635f85f6c108a394de2"
-    sha256 ventura:        "307193f0a58ed4cb29bb064654a32d3412a5051e57f6392c99872a2776525722"
-    sha256 monterey:       "6323983ec1a097a3a6a0473232531037223957d4c41ff2a5514315a7a21fb1af"
-    sha256 big_sur:        "045a48f298bedfd23a4fc9d93191de328f686c4fea889a926e5f8b2d6e65baa7"
-    sha256 catalina:       "e292048a085d8583547af82380dfcadbb92c15d28e56a75ae909ef853d363391"
-    sha256 x86_64_linux:   "5a43f121222346aa9f89b8ed1609656ab0fbb696d05f719989ae751e0cae34b2"
+    sha256 arm64_sonoma:   "bae32c0d87c821c1f2bc596ec4c40a3cf0f9de0c9e664e1f3a69f3cfc2b37127"
+    sha256 arm64_ventura:  "905ddab5e6fd155e2feb625631c5a6361b1375733d73bd133489812622db1a3d"
+    sha256 arm64_monterey: "654280dc9f6aa7d50013a146db3bd7f77c1f3ca288718d5dea2f6dc9e75670cc"
+    sha256 sonoma:         "2814fa83d67d9ea064801194bb973aba7af059c593af3a6d1392a578b45283ef"
+    sha256 ventura:        "b4ee510fc81c7a204a28aff547cae9dfd48902137cf189d262d7c249abda656c"
+    sha256 monterey:       "172b0d12bcbd2d1109280aa3f9366bdcb8fdee66e0fa9b25e2108b657f179b6f"
+    sha256 x86_64_linux:   "5bef880ded18c7328064abc7bda9914dd0b4a6294b9719b041bc2eefc151c84e"
   end
 
   depends_on "autoconf" => :build
@@ -32,34 +28,23 @@ class Fourstore < Formula
   depends_on "rasqal"
   depends_on "readline"
 
-  # TODO: Check if this dependency can be removed at version bump.
-  on_linux do
-    depends_on "avahi"
-  end
-
-  # Fix build on Linux. Remove on the next release
-  # sigval_t.h:13:3: error: #error "sigval_t defined for standard not including union sigval"
-  patch do
-    on_linux do
-      url "https:github.com4store4storecommitc5a56d7c7504551a1f2fff6c16c4d9a440e4a317.patch?full_index=1"
-      sha256 "f476aa38098aaaebf970603a5003aae40fa43f3243890e404f799be8bdbf0aad"
-    end
-  end
-
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # usrbinld: query.o:(.bss+0x0): multiple definition of `rasqal_mutex'
     ENV.append_to_cflags "-fcommon" if OS.linux?
-    # Upstream issue garlik4store#138
+    # Upstream issue https:github.com4store4storeissues138
     # Otherwise .git directory is needed
-    (buildpath".version").write("v1.1.6")
+    (buildpath".version").write version.to_s
 
     system ".autogen.sh"
-    (var"fourstore").mkpath
     system ".configure", "--prefix=#{prefix}",
                           "--with-storage-path=#{var}fourstore",
                           "--sysconfdir=#{etc}fourstore"
     system "make", "install"
+  end
+
+  def post_install
+    (var"fourstore").mkpath
   end
 
   def caveats

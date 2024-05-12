@@ -1,21 +1,19 @@
 class Octosql < Formula
   desc "SQL query tool to analyze data from different file formats and databases"
   homepage "https:github.comcube2222octosql"
-  url "https:github.comcube2222octosqlarchiverefstagsv0.12.2.tar.gz"
-  sha256 "e2bf45a039d1f6bedfd900b656a42ee3986c5a27ddae1a083f2dc52011c3b401"
+  url "https:github.comcube2222octosqlarchiverefstagsv0.13.0.tar.gz"
+  sha256 "e22bdb710ca0609019b842df347990ff9aed4f3635f5308ff1acf50d093b7942"
   license "MPL-2.0"
   head "https:github.comcube2222octosql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1d7b2de7b5b4a77996caac3fde9a67389f9a44fe334764a028b7af9fc85328c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab15fc0d6bd735e1759005897c937cb8ba810793d1508224923404319f8b1e12"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab15fc0d6bd735e1759005897c937cb8ba810793d1508224923404319f8b1e12"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab15fc0d6bd735e1759005897c937cb8ba810793d1508224923404319f8b1e12"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2b44ca11a3a0f74684fbd0da79240f6d37eb4f9b2425ed465993998a1c695b4f"
-    sha256 cellar: :any_skip_relocation, ventura:        "588d02eba041ad5bfbd774d3fb490cd5994e0b85aab64921dc048d53f1eb8705"
-    sha256 cellar: :any_skip_relocation, monterey:       "588d02eba041ad5bfbd774d3fb490cd5994e0b85aab64921dc048d53f1eb8705"
-    sha256 cellar: :any_skip_relocation, big_sur:        "588d02eba041ad5bfbd774d3fb490cd5994e0b85aab64921dc048d53f1eb8705"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cd6c3302ec6f8a7ef8ce30631b3bc03969c8a63f5b5c7412d33b6f8c73f2f7c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b90c0eb55eba76d94d9b74ed271cec24ece2f80626fbc8984fd89a5c3572fad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8756bbed1866ff4ec61d41c3fa9e311bc1363a92a1e5bb7bf8007f3dce1016f5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "266cbff44daa602cb4e315ab346893ec6f1c9ff8988629d25146555a702599c4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "15616e45d1f71f3adf387cccca95f024f6a47ebac1eb43cad2bcf4033ba86eca"
+    sha256 cellar: :any_skip_relocation, ventura:        "599c917127678f30d18e2992c5e313c9551e088f6c91641f2d41887ff006b073"
+    sha256 cellar: :any_skip_relocation, monterey:       "e66e8404c28c51cd31a53ce95ac96341355948d807b7ece05ec46aca7ea95ec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d93635da70ab7707f9a337ce7d30badfaac5c31f3d2d40c55741cdd8ff3bf6ff"
   end
 
   depends_on "go" => :build

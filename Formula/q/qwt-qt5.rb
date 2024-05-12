@@ -1,8 +1,8 @@
 class QwtQt5 < Formula
   desc "Qt Widgets for Technical Applications"
   homepage "https://qwt.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/qwt/qwt/6.2.0/qwt-6.2.0.tar.bz2"
-  sha256 "9194f6513955d0fd7300f67158175064460197abab1a92fa127a67a4b0b71530"
+  url "https://downloads.sourceforge.net/project/qwt/qwt/6.3.0/qwt-6.3.0.tar.bz2"
+  sha256 "dcb085896c28aaec5518cbc08c0ee2b4e60ada7ac929d82639f6189851a6129a"
   license "LGPL-2.1-only" => { with: "Qwt-exception-1.0" }
 
   livecheck do
@@ -10,17 +10,13 @@ class QwtQt5 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "1cb860970697ad28b35641bf18fda11fb24b7f6c47dfe4cde6c1093d51d62e53"
-    sha256 cellar: :any,                 arm64_ventura:  "06c70cbba80bbfe1650c3f144c291a40a4489cf096683d6cb1e47bfa75652008"
-    sha256 cellar: :any,                 arm64_monterey: "0269802930f5588330a78fc3a87bc72f18efbca5d2adf14a2ae66af99b8098a3"
-    sha256 cellar: :any,                 arm64_big_sur:  "0a02df654d0c1e813cb9329921d28efec925df351c142c906603a59005726faf"
-    sha256 cellar: :any,                 sonoma:         "d62febe0437854e274675e36a5729e1dc452aa0c6e9413a622d0bdf187d18431"
-    sha256 cellar: :any,                 ventura:        "a4d4365fca136628fd7166f4c3f384a5e10e6ded39b54787cbe5c326b4c2ad11"
-    sha256 cellar: :any,                 monterey:       "4bfd9eb2a914188a9b9bd3c4ff7e4365e23bb67f3efaabaf924d38990c93ea82"
-    sha256 cellar: :any,                 big_sur:        "58547807ea1f43913b4527b0f086c2c1143e57a932609b85a5269b4b02b36b0a"
-    sha256 cellar: :any,                 catalina:       "5e30aa45f92412fcfe90420e2d0fd448a0d5fe21cc356946e96cf62f6695429c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad395d13f89fe9e26818677936e44600a52750af3703d59cfd8323de9888d09c"
+    sha256 cellar: :any,                 arm64_sonoma:   "894d743586ad9e9dcbbb45f9448c6f2fc945aae526f50b2d17e2162b82527402"
+    sha256 cellar: :any,                 arm64_ventura:  "45d280f8c2f948576ed5648f386d99ca4dcefce046a47a07e16255f633a4e49d"
+    sha256 cellar: :any,                 arm64_monterey: "6ba637b0ba53bc6aa54b8373e125706946dcb0f4f0dfefe3a8927d15e52b5a26"
+    sha256 cellar: :any,                 sonoma:         "f99f4ba3c3aec0a92ee319b16bf8478258eecb4fedb0c635a9bbfdb605110adf"
+    sha256 cellar: :any,                 ventura:        "2ee3ad50be50bb89db51bc72219f66fde4cb89638bf0f65b39116ca223b26fb3"
+    sha256 cellar: :any,                 monterey:       "861ae528a6977db8f7588aa055849d5e45e4dbb36b596313ff76d33da4e56de5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a367f75f804b12fd9f2bd9706a47a0f67cd9862035448063e81d9e8ae1c620e"
   end
 
   keg_only "it conflicts with qwt"

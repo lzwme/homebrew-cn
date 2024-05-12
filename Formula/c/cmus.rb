@@ -1,20 +1,19 @@
 class Cmus < Formula
   desc "Music player with an ncurses based interface"
   homepage "https:cmus.github.io"
-  url "https:github.comcmuscmusarchiverefstagsv2.10.0.tar.gz"
-  sha256 "ff40068574810a7de3990f4f69c9c47ef49e37bd31d298d372e8bcdafb973fff"
+  url "https:github.comcmuscmusarchiverefstagsv2.11.0.tar.gz"
+  sha256 "2bbdcd6bbbae301d734214eab791e3755baf4d16db24a44626961a489aa5e0f7"
   license "GPL-2.0-or-later"
-  revision 3
   head "https:github.comcmuscmus.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "ac3667bf52b88fe2cf1a91aee7444333eecbd1ee62ff2a1d35a696d286f7b555"
-    sha256 arm64_ventura:  "7ecb43c204b78e089e1d5086667d098a35e764f234a89745c20bb59b13903e04"
-    sha256 arm64_monterey: "8b7ad68e7c6559663e11a2e013f33967a97b084d2e8aa6b596bad4e78c951d03"
-    sha256 sonoma:         "a82a68671e957b955646335ec35dcaeab4a7613d0c508dd112e0fb0d293bb89d"
-    sha256 ventura:        "4beb90ae9a2dbb54575eb0bf8f7b4d6083a664d7f6d13f740281a40d449fed75"
-    sha256 monterey:       "ed1c0cd1c55495510d62bb1b1132a28d0dc9ea80dc31224040c5ec8c502c8a42"
-    sha256 x86_64_linux:   "2ba70e8f48e65519ffa546286baaf90e40b1ed573b2827456ae9145d4cd314f2"
+    sha256 arm64_sonoma:   "db7240bb997b88208a1d1615eb318a2439c8c5c15bc3dc434f9056d6b0c563a0"
+    sha256 arm64_ventura:  "e3c062549f70169a3ea7aba0785e8d1e77aaa5188e178efba38e6ce1edbfda52"
+    sha256 arm64_monterey: "d83c3974dc01bc46172cf5603a3226a8b1363a1bd37fea7cac54154533254b0e"
+    sha256 sonoma:         "d283fe9e60f2b50ec4335e8c40358b34905bb0cc455932e7d225b1d7ea30edbf"
+    sha256 ventura:        "0faf7db511ed5efb310c9f0dbffea745bce21cf6d2525dfb78ae37f06c28213e"
+    sha256 monterey:       "ca2869a665cec6bc773d848c5b682dd649f71410646bd6b1e88d956519ca6b62"
+    sha256 x86_64_linux:   "c19deeb39b622a6acc22951199a64867b1754463506a62ad1f25e63d7bab3aad"
   end
 
   depends_on "pkg-config" => :build

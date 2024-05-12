@@ -3,18 +3,18 @@ class Apprise < Formula
 
   desc "Send notifications from the command-line to popular notification services"
   homepage "https://pypi.org/project/apprise/"
-  url "https://files.pythonhosted.org/packages/a2/fb/e64be71a57f69f46db65043b16f86750870c1710ee2650c30c20a9bfa624/apprise-1.7.6.tar.gz"
-  sha256 "077f09309cc8a6c9063dbd614b343807d527d546693b7fe8fc5a4433502fea6c"
+  url "https://files.pythonhosted.org/packages/69/4d/58246222a75eb06c22e3cf5bd2db1a7c07cb9fef6afc919b3f4d1d562a65/apprise-1.8.0.tar.gz"
+  sha256 "e8f58cebfea1a34f569cb4c68809a3175be80ec06f0a2ec473522b92023212c5"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "49457a8e3c949dd8cc9f962d25bc2b09432337b8077301aa45e6ae7b3869d3ef"
-    sha256 cellar: :any,                 arm64_ventura:  "d2c2a68f433b9e40b55232d60ccaf4d1170c76eb5ebc819a1e34e44b29263106"
-    sha256 cellar: :any,                 arm64_monterey: "551722e7e3c7ad5b483fc0cc5341a2e1145229d4c8f5ff629a41f71e84e11d4b"
-    sha256 cellar: :any,                 sonoma:         "ca0d5a87267d99be0455769ada18ce86a5bb275d8748b777d9675a4fa9bdf98a"
-    sha256 cellar: :any,                 ventura:        "b6f68f102cf39cf60018d21c61e4e4a37637dfb2a47a154c54c3668192710012"
-    sha256 cellar: :any,                 monterey:       "6ef59a3b7a97012d12607c732d5905fec4c945168a9fc3a8ca31cab259ad5581"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0f904338b03723b8f06371c6b6ec210714552ab030dcb5cfc39c1591f9a34e0"
+    sha256 cellar: :any,                 arm64_sonoma:   "e2349800e45344acbad323d38cf918e81697216f41cbddd2c1a35970630826de"
+    sha256 cellar: :any,                 arm64_ventura:  "2cbc05ed6d39927dcd22969ad8c0f70a8f52633ace05b2beb9409ff6744e2ca3"
+    sha256 cellar: :any,                 arm64_monterey: "018d9113bd634274a64b173b82310d9524637dc7d9a9c161364bb50f0d018d45"
+    sha256 cellar: :any,                 sonoma:         "2acc42396035f8e36a3720e671e28ceb2011ca76dde3a275f98fe7ae2328dbbc"
+    sha256 cellar: :any,                 ventura:        "b8132c141b92e33f4354c41eabc1418d478bb11c13ce60e24f394fda1d567041"
+    sha256 cellar: :any,                 monterey:       "aa42ea839e2e294ab731ff946c234e5a391c44ce297a4c1a4c700b2f7c72b413"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cd5e7b2214e220a77c106fb10dfdbe12df0ba8ad231bbdc82654ef2ff12ba46"
   end
 
   depends_on "certifi"

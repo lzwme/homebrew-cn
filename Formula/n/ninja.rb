@@ -1,8 +1,8 @@
 class Ninja < Formula
   desc "Small build system for use with gyp or CMake"
   homepage "https:ninja-build.org"
-  url "https:github.comninja-buildninjaarchiverefstagsv1.12.0.tar.gz"
-  sha256 "8b2c86cd483dc7fcb7975c5ec7329135d210099a89bc7db0590a07b0bbfe49a5"
+  url "https:github.comninja-buildninjaarchiverefstagsv1.12.1.tar.gz"
+  sha256 "821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb63328c91a6c6df285a"
   license "Apache-2.0"
   head "https:github.comninja-buildninja.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ninja < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5a2ef2f378d5d7d558fb9f5cb6fa3e309b2c0c1c67ffd2ea74e8ae80a837622"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e69678106abab50387e74df653dd849e9dac4dbdc48eac56a7a0ea824b251468"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3cb72bae37caea3273847af247746cc0edd23b6857b377bab1ba827de39db66"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de33b883ec9582725647fa660df145a5a1344da0e0cf353a4b01ee2f30b73443"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb54706a0d2f0dc0c38de379b259907f4cec7d10a4b6c287111bdaa299bb0a0a"
-    sha256 cellar: :any_skip_relocation, monterey:       "826bbce2795e00d4e7599f13962155a2a91d0a0d41ed3f6624b85c1fc9a68053"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9fd2856b2cb4481caa5ec502ba9f5ce8312543f1ea062e3e101eb7b2e38d304"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0137a7ca41103118431134051e264a38dfcfd90a1d23354527dec7ecd4098d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee3cb1d64ad324420cb83866236159703faa91825353d4f2ac70aa8a729d03f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4853917b940c67e971ecc4575d490080e88ea812b1af2e9f3b383c5f9012f9eb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b9e7f5d59c29882398cbf1cf9fcf358db480afa96ad9fb51a87aa0da9b5fabd7"
+    sha256 cellar: :any_skip_relocation, ventura:        "4cda186dde7fff9284bc64d2469faf3a6af148e656f9ee9c27d731d1e02bb637"
+    sha256 cellar: :any_skip_relocation, monterey:       "ef5eced95e4a700b49d67acdf1fa25547242ca95e36ed197339dc24f5239c312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb1fdec103d46cf08a086a70f0c4bda35927cfdfcef35bad0da2b0b4430c8801"
   end
 
   uses_from_macos "python" => [:build, :test], since: :catalina

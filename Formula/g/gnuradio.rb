@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https:github.comgnuradiognuradioarchiverefstagsv3.10.9.2.tar.gz"
   sha256 "7fa154c423d01494cfa4c739faabad70b97f605238cd3fea8907b345b421fea1"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https:github.comgnuradiognuradio.git", branch: "main"
 
   livecheck do
@@ -15,13 +15,13 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "690eb8d0add61400d3e36b3a2b6dc292d3aa38e2e1520c2798b4aedf432fb92d"
-    sha256 cellar: :any,                 arm64_ventura:  "915a1dbe2a75cc936de4f692d4afc35c305f82dd7ad6bb6ccc177fc93b84ee3f"
-    sha256 cellar: :any,                 arm64_monterey: "131f3e75197acf448653a14d00207de1cd93913ecd7aeb4a96464e5d695e3ba3"
-    sha256 cellar: :any,                 sonoma:         "c3d933440a30572393d7a17f271b95253d6b1df5058e10a151714ee5644025e0"
-    sha256 cellar: :any,                 ventura:        "f14c74a2e49a24ecc788f32a2a6ae7aff569ed31e25629e76402afd923983d24"
-    sha256 cellar: :any,                 monterey:       "a81cf9cc23f561fd924e7f9dbf72f3f981248e5693c2eb485b534e4f9087e7b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a89e79fd08c37f0e0e40bb9659bb8c11eb74b5db7956e07ea2d049144f6291c1"
+    sha256 cellar: :any,                 arm64_sonoma:   "7d89cd313db8652bb6d7750b19e48ea375140db44bdb6a9c0f0c58629c86a9a4"
+    sha256 cellar: :any,                 arm64_ventura:  "74ef42bfdef8d7e8d19a85365b28513cb811bd0a542c2b260d97ffb3436fffcb"
+    sha256 cellar: :any,                 arm64_monterey: "5350eb2e872664e4c9d45aedaf079d79169b6b738c52aee335150fc7e9c4a44c"
+    sha256 cellar: :any,                 sonoma:         "e92aacf02b119ecbb87853061add7013c621dd588c381374d716f43116fcc2c3"
+    sha256 cellar: :any,                 ventura:        "6eeae35bb57fa4809f85805ddc18a43ef1d6273264df2be7dddfbf894a700bf9"
+    sha256 cellar: :any,                 monterey:       "40a3d44b596b7ddf19133b1bbd645839a4cf607371e865fd772d386ef506b68b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c910cc25ec48ff4971af3655c74b4ec5b91b8ccf9c2cbdaf6afad83f57f48bdd"
   end
 
   depends_on "cmake" => :build
@@ -140,6 +140,12 @@ class Gnuradio < Formula
   resource "setuptools" do
     url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
     sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+  end
+
+  # Allow qwt 6.3+
+  patch do
+    url "https:github.comgnuradiognuradiocommitca344658756dab10a762571c51acf92c00c066c1.patch?full_index=1"
+    sha256 "7e16ca70d07ce61bc16870f756acc194eb893e22703c53ed2826f5cf90dc7f4e"
   end
 
   def python3

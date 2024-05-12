@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https:github.comesnetiperf"
-  url "https:downloads.es.netpubiperfiperf-3.16.tar.gz"
-  sha256 "cc740c6bbea104398cc3e466befc515a25896ec85e44a662d5f4a767b9cf713e"
+  url "https:downloads.es.netpubiperfiperf-3.17.tar.gz"
+  sha256 "077ede831b11b733ecf8b273abd97f9630fd7448d3ec1eaa789f396d82c8c943"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Iperf3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "71914e21e7b6e80559355dc49a338e1387eb44ea649d823b952e2203dd2d20e5"
-    sha256 cellar: :any,                 arm64_ventura:  "2a1ad6171b0e29f4af56b9219ad78b77f04cf90a38786e69ed297c972aeab95b"
-    sha256 cellar: :any,                 arm64_monterey: "9d73c5d0327198790d8a3c295bdca4e610c42a9bf88a4445f5536fc8c78f3780"
-    sha256 cellar: :any,                 sonoma:         "bb9f51c9733c6da87b372a150d6cf141b1a36e0e49325400e81f0da1824cbdfe"
-    sha256 cellar: :any,                 ventura:        "06897a191167869e24516794343132bb958a449b959b8194ecc2156c4cd8426c"
-    sha256 cellar: :any,                 monterey:       "bbc01fe8e1e7b8822d71ad9217dbf851e72f1f02ebbb3899a29e04af13e3aad6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "639920f791fff7e020fbe06f2a8f216c7334c543d54c82cd8bf6a25cf217b217"
+    sha256 cellar: :any,                 arm64_sonoma:   "48aa0230e11fbbf70eb4ae59ad08d8241a1be126fd36f4bfbb39afe2c9fc2d9c"
+    sha256 cellar: :any,                 arm64_ventura:  "433c3048da89f9802a68c45eb9f6e2219e47bd79267a913ad4793c827bb555b8"
+    sha256 cellar: :any,                 arm64_monterey: "92ac370795eca7e4296ddd0bf593b537c7b1fd59541437ba368010b87af42b13"
+    sha256 cellar: :any,                 sonoma:         "d2bb834df9e18a2ba3d00151bff1eb04703b2f071a4b762a078d92b32963a92c"
+    sha256 cellar: :any,                 ventura:        "257cba92d70f7090446aca61b58d96bf544356152e5383122edac6ad3329b0ae"
+    sha256 cellar: :any,                 monterey:       "b9c3c8721ac603d5dd14d788d66b7b38b4d5d0a35a22f3b196baa2f9a796b292"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df64a5a87fd4df75324e768a0d07c401e2f5dd9afb73bb322d95ada46b307ea9"
   end
 
   head do

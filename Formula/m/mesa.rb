@@ -3,19 +3,19 @@ class Mesa < Formula
 
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://mesa.freedesktop.org/archive/mesa-24.0.6.tar.xz"
-  sha256 "8b7a92dbe6468c18f2383700135b5fe9de836cdf0cc8fd7dbae3c7110237d604"
+  url "https://mesa.freedesktop.org/archive/mesa-24.0.7.tar.xz"
+  sha256 "7454425f1ed4a6f1b5b107e1672b30c88b22ea0efea000ae2c7d96db93f6c26a"
   license "MIT"
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "b2b7c294d537ab856fea1f6973c6ef05188c623839a0211ce267257c7b21ad62"
-    sha256 arm64_ventura:  "7e9719bfbb72d8062c6aeefa136814be11a0ea474dfec4d1a877dadeebd4d96b"
-    sha256 arm64_monterey: "7b0425db41f5c5c0f6ec52d9e978efdb07ee33a227d4b01ffd703cc61d57343c"
-    sha256 sonoma:         "4611b295173eff6707d67d54e1029ed7c241d462fc65e1b81284ea13052634c5"
-    sha256 ventura:        "cfd5c3eb3be3c9b0d97fa05114652661b061dacb59554756a23b46ffbf326582"
-    sha256 monterey:       "875f54b17f74df2fea6a82e898ae7376150675e954f50f5d903ed752ba1bc538"
-    sha256 x86_64_linux:   "6a6063d9b0257031b9114078d2c28d2fd9ddbb4b82bf91a08f29e10e7354b922"
+    sha256 arm64_sonoma:   "58a614af64dc7e655438af5248b05bc883572ab0a58beb8f3957f7fa2bd48631"
+    sha256 arm64_ventura:  "718b3fb53758216c8e6f94249bd2ed8fddd501184752783892faf2805e639b59"
+    sha256 arm64_monterey: "77d9b25a2305706c1b534793cf818ae973d70f3542f5015bac8a36c26191057f"
+    sha256 sonoma:         "6919731c1a6a538119308ff89d1b0deb5b216c3ccbf7129f366a2ff9ec7a5700"
+    sha256 ventura:        "cde9543d02c45177d72033c6c94e0f14dfce9548901c84dcd13313204fc45f08"
+    sha256 monterey:       "4285c002d769a554ca664ed75a94cc16cbd9a088ef1c7e2108602b8e0d77c7c8"
+    sha256 x86_64_linux:   "d084708529e9f485e3ec583d608abaf68dfb3dd9d9d843f9a0a7d9ea90bc08b0"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
@@ -88,8 +88,8 @@ class Mesa < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "ply" do

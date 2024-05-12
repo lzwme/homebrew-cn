@@ -1,8 +1,8 @@
 class Hz < Formula
   desc "Golang HTTP framework for microservices"
   homepage "https:github.comcloudwegohertz"
-  url "https:github.comcloudwegohertzarchiverefstagscmdhzv0.8.1.tar.gz"
-  sha256 "99c64988df9a4bfbd59e694572dbd30bd61d109b3462df8a5db64b2fc2afaf4e"
+  url "https:github.comcloudwegohertzarchiverefstagscmdhzv0.9.0.tar.gz"
+  sha256 "23577d9453939104d8290c40e151c25dcbaa3dd9b3fcc9bb5611da0744161fb5"
   license "Apache-2.0"
   head "https:github.comcloudwegohertz.git", branch: "develop"
 
@@ -12,16 +12,16 @@ class Hz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc35af8b84a1ea7d66a2bffe9aa9b3e5cc60f3be79fa38bbb5d49d2fdbd29457"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f276df228f5967fcc8f3d242e2d7447d8d0f31166e0a0a2b27474670690c451e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f09d63b7598d31793b2328d6023c05dd8efd3564db98b2d689d4edc98410ca78"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b7194ab95ddffca48544eee564aaed4d4a07dc4a496f11b2d26290ba3ff78c4b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6ee7117178cd2b67d23d71b2b4dd5d4afbb347d9c0e742f2a83d1f641a1c328"
-    sha256 cellar: :any_skip_relocation, monterey:       "5eed41e3d3d1443aecf3fca518a79db5d879beee1073d85262245f1ca84b6968"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f359f99e4756d54fc1f96058f80e24d687ead5734e32a88aa7f168ca5bd18111"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3dd7b59b28ebdfeb6ea86155f5571306dfb88fe6e725512df383ff81bccd26bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a424ad94e9834bbd01617d5dc7e7dad21ccfd5b26abf67c8b024d566f2f66f7b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af141847768ca7c316805d3f65f4c2cae799b9825bda05c96bbbb32c4b16cbfc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2cfb8c896ef52bd30282df2d48ce103619a4b71975ae883431967728f5124a00"
+    sha256 cellar: :any_skip_relocation, ventura:        "005c0fb31288e36e17441f2e5ed41e190212a43487564d96c92f3192f1531cef"
+    sha256 cellar: :any_skip_relocation, monterey:       "77788242946a6e0ec7fdfde946774d5db2381882bb2955aa3667dadc0cb6abc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97e76d68be4ec25df31528cfa36bb45adcc0bbce09c4a0c6c14aafe4cc93fc2d"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   def install
     cd "cmdhz" do
