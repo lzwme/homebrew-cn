@@ -19,7 +19,6 @@ class Certbot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ba70c042dd0b3b79a9add8db10699528aa6b851e23e013cc23967ff1252df3d"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "augeas"
   depends_on "certifi"
   depends_on "cryptography"

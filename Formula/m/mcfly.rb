@@ -1,19 +1,19 @@
 class Mcfly < Formula
   desc "Fly through your shell history"
   homepage "https:github.comcantinomcfly"
-  url "https:github.comcantinomcflyarchiverefstagsv0.8.4.tar.gz"
-  sha256 "637f50756366604d4d19a6f623cfd490c38e1b971708ec8ccdb39887a0e9c1f1"
+  url "https:github.comcantinomcflyarchiverefstagsv0.8.5.tar.gz"
+  sha256 "110b639b1c814a166faf205deb0714d96049f65c58bd9514189892484ebfd82b"
   license "MIT"
   head "https:github.comcantinomcfly.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0372ada46743f9b0a26ceaa6d7ed9e7cec24bf6b9f4e73a43dc35f653a697bf8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2405a0f0e068cbaa41ee26104fe7a2a51a5c7024f43a98963a3d12ba9d790393"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3d616bf9770fb2318dc96ea4f78eb62457d13b0baf8570b19b0a4ba903f3da2e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "166bc8bbedef0375b19638f9075a0e8c1b7050721569c9c25bc10c2bbfd9892b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d1d5f5576474de0a01e262e4780d342b07bb0f1226fd53cc47596d2735a29400"
-    sha256 cellar: :any_skip_relocation, monterey:       "98603742fabfca02e780d7e0b96334c331b859e05ae07fe28496ee9b4149a068"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bacc298e3d94f1934a8ab54aaabc8e08cf1cd0a89f7a01566b2c364b2d13e622"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8ba27efc89435f4f387633c63e180fc76ea54b0e6fb15a245060c386e3801993"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "773ff043face25385c77335c193b247d30adffe64255b8cd4b4bfa13c0a88b1b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "29fc7d87244abf0f0365d3228c41d4c0eb34162ee644e8f48d6d0284a0ae985a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "04bd09c811440449640d7648a306d4357474afff0240f30566373edfed49532b"
+    sha256 cellar: :any_skip_relocation, ventura:        "e6336c25494c0d0ae2dc81a1dc5e4bab01a759b8f46947db18465343e0d3f4d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5065bc01f9d12d35f7de31648291705664ad57d74fdd2b2da2ef75ef647d9db4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d753b4266e5efd8f70c4ce6943a0eed6140ab3f7a389f82751b186273e92c7b"
   end
 
   depends_on "rust" => :build

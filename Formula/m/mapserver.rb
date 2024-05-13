@@ -4,7 +4,7 @@ class Mapserver < Formula
   url "https:download.osgeo.orgmapservermapserver-8.0.1.tar.gz"
   sha256 "79d23595ef95d61d3d728ae5e60850a3dbfbf58a46953b4fdc8e6e0ffe5748ba"
   license "MIT"
-  revision 4
+  revision 5
 
   livecheck do
     url "https:mapserver.orgdownload.html"
@@ -12,13 +12,13 @@ class Mapserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "252b429d4ee0456cdfe56cf9b4601262f10798f3572f2e6e9132de28d2b1b7e6"
-    sha256 cellar: :any,                 arm64_ventura:  "1e0ba7954886813fe47c42d78910fa8fa94909cdda5ed0048dd1824e2bdf35f9"
-    sha256 cellar: :any,                 arm64_monterey: "9c550c439d4532ea7ac74f1fd37816a7366244d660ee76cae7d5538669987910"
-    sha256 cellar: :any,                 sonoma:         "0fded9d4327ead0a44b58936f89cf500e26f19f5704b5f278044ed16ecb72195"
-    sha256 cellar: :any,                 ventura:        "66d4d92504b87465133acfda0014cdd8fdbb2278c6302d8f24862c7cce465a2b"
-    sha256 cellar: :any,                 monterey:       "beb66d71d4014779bc75fdd3587f84e08cbab1048101378d9156790f09739173"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0238f8c273ab240b67e00228d9c4b333ab936f1b55deea7414aa9c78da18f87d"
+    sha256 cellar: :any,                 arm64_sonoma:   "7d5ed41478fb9897954f63c4d3339010b2288244e43d63b79909c423c5d85bc2"
+    sha256 cellar: :any,                 arm64_ventura:  "54cb5a214989e7eb42c0f686386d1d771ca622464bae6d1bb55fa329d85ec943"
+    sha256 cellar: :any,                 arm64_monterey: "7fc4536901adfa19051a317da922ced9cc2289cde8e747979274c2a1c907b894"
+    sha256 cellar: :any,                 sonoma:         "64f311b6e3531d97e52fca71fcbd3f793f6dba4656a32aa8b83c382423c195a5"
+    sha256 cellar: :any,                 ventura:        "00a9ff0fd5bc7ca68c89547266286e836bc6e64e48bbcee9340742e4fdbdad9b"
+    sha256 cellar: :any,                 monterey:       "7acaef1305698b865be99be12fdfaab7dae98a764efb34f5a70644806ad7d5bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f849b429a007f142f65d64511f95fba0db1603069be93546f6a7299e9c5916d7"
   end
 
   depends_on "cmake" => :build

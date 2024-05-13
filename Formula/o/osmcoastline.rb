@@ -4,16 +4,16 @@ class Osmcoastline < Formula
   url "https:github.comosmcodeosmcoastlinearchiverefstagsv2.4.0.tar.gz"
   sha256 "2c1a28313ed19d6e2fb1cb01cde8f4f44ece378393993b0059f447c5fce11f50"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3a8714bd1c046892845fcc7e23132a410a62ba3d2711a287ff935f325b9be22c"
-    sha256 cellar: :any,                 arm64_ventura:  "aa812c840dedd1852e9495b2b5fdef634650a021e29e18b4e8bc504bdf84d390"
-    sha256 cellar: :any,                 arm64_monterey: "0e8e45406f3ea1bd87bf94916c1b3ea29c1df0f22bff0ea90e6934aee64c9ba9"
-    sha256 cellar: :any,                 sonoma:         "0e88f9baa066992d9878096ab482c3d92517e74b4e0723de02423032fa2dc8db"
-    sha256 cellar: :any,                 ventura:        "ffd6b9829025cf157cd7b3aacb02a1b8d63a3555277e4be8076fb09137fb4d70"
-    sha256 cellar: :any,                 monterey:       "7f66ca2905681f4316e86eca8dfa094651243d18873a51c441e477d20bd71035"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "631d33bc0667ae43c76ff4ee00d4296d7bea115d831b990e65949b4341bab83f"
+    sha256 cellar: :any,                 arm64_sonoma:   "a0f8361692aaed6d584672777d535d8bc0fce0e55538ece93d140d1b3fa5df80"
+    sha256 cellar: :any,                 arm64_ventura:  "e3bca51e41f0ef66d12b17b078cde994b9e3bd0735ba3c087eb03ff5ba6e8647"
+    sha256 cellar: :any,                 arm64_monterey: "e033d67ef3ecfc55b6fc8a00c30c4a235865ab94709ed92169d12ad67f7fb762"
+    sha256 cellar: :any,                 sonoma:         "54b87fc97bc9a3bd4937d05bd5c56899b32eb5d965cb9d518605656cb9e94ec2"
+    sha256 cellar: :any,                 ventura:        "37efc15a7cdb9db548e418553f7e8fd4c1cdc904b86112db01ed59a12717fbf3"
+    sha256 cellar: :any,                 monterey:       "d49649b9159889cdaa2ac3316ee6abf7c6f3e6ad218575ece8cef924eddb1d60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09ec7fa2e10d61afe24e05ecba6f66631fdf49d1b8e8e3855209a406f8ef340c"
   end
 
   depends_on "cmake" => :build

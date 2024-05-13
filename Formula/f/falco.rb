@@ -1,19 +1,19 @@
 class Falco < Formula
   desc "VCL parser and linter optimized for Fastly"
   homepage "https:github.comysugimotofalco"
-  url "https:github.comysugimotofalcoarchiverefstagsv1.6.0.tar.gz"
-  sha256 "d4d66edb409bb54b9e4caf491ac7b95595e2a224552b56ddd193d866637f11e0"
+  url "https:github.comysugimotofalcoarchiverefstagsv1.7.0.tar.gz"
+  sha256 "3e41f830f48d8026c1f96184e60f7e0740fee7fa0995355a93bb6059f41ce335"
   license "MIT"
   head "https:github.comysugimotofalco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2aa53a836f9c8e2f42853e6b82c3edad6c4c10635867ecdb9d64ba1686674f50"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ebc830e5b00dc728fe7600fc260308474595c6dad72f195c5156e782eac9b38"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71804eb9603daf93dec4bfe0b1aa2bbc56402e3604fc1bb5d8b92305409b6adf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aa0d720e36396f8d8203d8804b3eff2b9ba83c62fae03104b3a42d1692a28bb6"
-    sha256 cellar: :any_skip_relocation, ventura:        "daaf71d83f2fff8ba959fad70f2b1f0c421051f9756fef9b132b7b9bad990140"
-    sha256 cellar: :any_skip_relocation, monterey:       "7ad9e13ef7bfe62a9485f850eb3b42cdf06b49945cfb402a75c9c7e53dde9c70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "162c021fb645d9a16d69129c6650742f9a8ef8735a4e8d4fab4efb574dcc20d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc479fa350284b5f498b107b82dabd51152406f3f1785e4fd49b45a5ef64551e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed92b02154bd2f3a93b7f26e316747ffe49a077891503a6b878ed8535d3638b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "779ffedc98dcf0626415225461901125008f8b0797d1d92a224c494adb5715e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6374473919a580e11d2d1ebef14d7e47bc5641a2b24a8011af1f1fd3e31de7d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cfd82150b6e831c09d4ac4f0111a427a97fca35835a5bd55a09699067e9b136"
+    sha256 cellar: :any_skip_relocation, monterey:       "68ab5846abc93dcb3c8dff9cc22a0b866fba37adffd09d428c356dda1973aeb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "618f683d37439e1dc1f5fdc74f2f420c865e3dd473ee2e7ac4a67bbf43b75103"
   end
 
   depends_on "go" => :build

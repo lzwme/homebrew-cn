@@ -1,40 +1,35 @@
 class Teller < Formula
   desc "Secrets management tool for developers built in Go"
-  homepage "https:tlr.dev"
-  url "https:github.comSpectralOpsteller.git",
-      tag:      "v1.5.6",
-      revision: "7b714bc2f1d5e14920f2add828fdf7425148ff6b"
+  homepage "https:github.comtelleropsteller"
+  url "https:github.comtelleropstellerarchiverefstagsv2.0.4.tar.gz"
+  sha256 "d340d160f00c0653d3160cf16aa41d22acb240556464d8803f234f1fe46efcef"
   license "Apache-2.0"
-  head "https:github.comSpectralOpsteller.git", branch: "master"
+  head "https:github.comtelleropsteller.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0b2d3427371a56a0261783681d437a98d622e21e4812355af4695fa0b41f09f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6efc5ee36a0fb0d5a6c3bf9bd34424e8fa297a328e5ff3d590863521b4b5d0c0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "880fe24f3d79c196a20b850452274728a9cb135cb0bf19ee1e0888b9025cbf00"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c82814b0c169afe96b4315b8a18a95881129c44d607c9a3185f38caba8fb7f71"
-    sha256 cellar: :any_skip_relocation, sonoma:         "72846665335b3bd2f5af5d00c915fea23744a9c559207427e9a40fa5644355f3"
-    sha256 cellar: :any_skip_relocation, ventura:        "d425c61cf4358c7c2ff451c1c3b6161ad67bcef64aa19401201789be98d198fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "c95785a51067a6ed798e7a41787bb00d7cf5747bb0a3559e9f7df9442de756db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "04987c4db227ef8fab1288ee03506684c4e49f72d73f06c4035c858cea21b72d"
-    sha256 cellar: :any_skip_relocation, catalina:       "86656bbfd93625dac6daa93ecfaba265c3113a5f00bd4ed811f39aa80c445be5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "234ad493942bf3d5d2b93ff1114dfebf5280a0325c1b6271a7e2b22306a02067"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1d8610ebf3ce901a06f407858327bad5fec92a1ac69e9e0668806ac132aa9a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9bfc8893588f0ff31e521a97b8cb204f2745983f65f2a660ff01edade5ac3c25"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d084f6be808c865cb3772521f52952dc8ea192ced27722e8c96c76389fe6ae7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1dcf194fcd8a87d78e94a2b319b0baf1f89fbbad3c7975bcfb6ad2560158ae66"
+    sha256 cellar: :any_skip_relocation, ventura:        "1c698a17ac17c8753fbff5569a0c9211c6b17537f08106bcea13c263ff0b6e57"
+    sha256 cellar: :any_skip_relocation, monterey:       "b200f52d1ab8b2829c6d5ae189127da285cf0f6f83240273c8f9e4a59b5546d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e92ebe7aaa823c55a0c757b0c16f4a8cc6581dd3c41b817270e3db31772f60"
   end
 
-  depends_on "go" => :build
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{Utils.git_head}
-      -X main.date=#{time.iso8601}
-    ]
-    system "go", "build", *std_go_args(ldflags:)
+    system "cargo", "install", *std_cargo_args(path: "teller-cli")
   end
 
   test do
     (testpath"test.env").write <<~EOS
-      foo: var
+      foo=bar
     EOS
 
     (testpath".teller.yml").write <<~EOS
@@ -43,14 +38,15 @@ class Teller < Formula
         # this will fuse vars with the below .env file
         # use if you'd like to grab secrets from outside of the project tree
         dotenv:
-          env_sync:
+          kind: dotenv
+          maps:
+          - id: one
             path: #{testpath}test.env
     EOS
 
-    output = shell_output("#{bin}teller -c #{testpath}.teller.yml show  2>&1")
-    assert_match "teller: loaded variables for brewtest using #{testpath}.teller.yml", output
-    assert_match "foo", output
+    output = shell_output("#{bin}teller -c #{testpath}.teller.yml show 2>&1")
+    assert_match "[dotenv (dotenv)]: foo = ba", output
 
-    assert_match "Teller #{version}", shell_output("#{bin}teller version")
+    assert_match version.to_s, shell_output("#{bin}teller --version")
   end
 end

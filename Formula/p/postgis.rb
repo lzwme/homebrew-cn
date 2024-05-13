@@ -4,7 +4,7 @@ class Postgis < Formula
   url "https:download.osgeo.orgpostgissourcepostgis-3.4.2.tar.gz"
   sha256 "c8c874c00ba4a984a87030af6bf9544821502060ad473d5c96f1d4d0835c5892"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https:download.osgeo.orgpostgissource"
@@ -12,13 +12,13 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "df7ad5bbbbf337a752435d862165fc1dd49e59911a02ce9ccf91be9b51e25652"
-    sha256 cellar: :any,                 arm64_ventura:  "6102f1749b2c92156f43305f3e833f1249676e9d009c768531b6144d318f0832"
-    sha256 cellar: :any,                 arm64_monterey: "62f18df031416926bef4671125911a4d620d912bdad4b19d96292459192a3f33"
-    sha256 cellar: :any,                 sonoma:         "e17c9634f9979a3e70119cca882b0929241e223236ee058c46c523c26994e705"
-    sha256 cellar: :any,                 ventura:        "5ee90c65c47cbe2dfd787de5928eb87dc16c19758e50dc139792106b26b64937"
-    sha256 cellar: :any,                 monterey:       "9b6c1a076a3c88c067bf078d982b8df2fbcccedf236c2fff30d356300ab9d129"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "182a7e064f1fc1856b275af221c54cb67bce77fa63686c69d6446be97e1579df"
+    sha256 cellar: :any,                 arm64_sonoma:   "98640c6921b0151bc8e6be7bf1ca08b96f9a6f77ac3bf282974a99c2ef4ad09f"
+    sha256 cellar: :any,                 arm64_ventura:  "0098f8c74af24f1ad8238c2f4eb9f25a81681a0812ad3932da4f450e2970bf33"
+    sha256 cellar: :any,                 arm64_monterey: "5b3b69b4a2cb3e8a5bfdf32b2ab71890fbcdf3661bc241e1154f1b148d6cffbe"
+    sha256 cellar: :any,                 sonoma:         "8f79f802730d1efa58df1c2e84a25a999ef9bf151ac15c093c144986c9a02d07"
+    sha256 cellar: :any,                 ventura:        "541f394419c6cb17e0bbd48e8be9f3ebd46a6ac7b9ff7c1543847c27ecd35c4f"
+    sha256 cellar: :any,                 monterey:       "bdc6e3f1f8ff0de7e3743ad2eaa8beac29d85e6b7b8a5f495ba659961b30f267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2c2a685c5b13f7dcc7bdaeda70a71af1b7b280380bd9a68369f7be31b39c8f9"
   end
 
   head do

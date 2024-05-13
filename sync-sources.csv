@@ -8475,6 +8475,7 @@ Homebrew-homebrew-cask/Casks/f/fuzzyclock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fvim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fx-cast-bridge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fxfactory.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-0/font-0xproto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/g-desktop-suite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gactions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/galaxybudsclient.rb, Homebrew/homebrew-cask, 1
@@ -11474,6 +11475,7 @@ Homebrew-homebrew-cask/Casks/w/waves-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavesurfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wch-ch34x-usb-serial-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/weakauras-companion.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/weasis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/webcamoid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/webcatalog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/webex-meetings.rb, Homebrew/homebrew-cask, 0
@@ -11712,7 +11714,6 @@ Homebrew-homebrew-cask/Casks/z/zwift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zxpinstaller.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zy-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask-fonts/Casks/font-0xproto-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
-Homebrew-homebrew-cask-fonts/Casks/font-0xproto.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-3270-nerd-font.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-3270.rb, Homebrew/homebrew-cask-fonts, 1
 Homebrew-homebrew-cask-fonts/Casks/font-437-plus.rb, Homebrew/homebrew-cask-fonts, 0

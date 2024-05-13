@@ -5,8 +5,8 @@ class DosboxStaging < Formula
   head "https:github.comdosbox-stagingdosbox-staging.git", branch: "main"
 
   stable do
-    url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.81.0.tar.gz"
-    sha256 "211cbd2fb781bee1e92963f57e8111e22bcaf17a3a6dc11189982a0eea311e9b"
+    url "https:github.comdosbox-stagingdosbox-stagingarchiverefstagsv0.81.1.tar.gz"
+    sha256 "2b389fdc338454f916240aab5a2ae5560d1dd9808d63c70f34ec9a91e60b535a"
 
     # Backport fix to bypass SDL wraps on macOS
     patch do
@@ -23,13 +23,13 @@ class DosboxStaging < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "5efb7dd68cacf7b99cd6c7806e91cd72a933839880bfe726fdb9ec9312f99f45"
-    sha256 arm64_ventura:  "40b37eb2976c6ceb7b5620550e2bac211282423427aa0e87bdd0cae543ac44d8"
-    sha256 arm64_monterey: "667fbbba6c06cea8245fff7686654d0f3c1c687b4cdcadf79bcb3d94b06f5e33"
-    sha256 sonoma:         "9a9689f7fac4c2fdfc521491d18c9bad32127302d3b751b9b28c25af06c805c4"
-    sha256 ventura:        "2d605146c48edd4b0bb9bc61080c0ab3852b4fe12644a856cd60d3a6b91db68f"
-    sha256 monterey:       "9ee63a8cdd9f459c829d567f519192942cd15856e7cfb2b69eaf5b9ac869b2af"
-    sha256 x86_64_linux:   "5f58569ee83bcd0748f2cfad9d2910300648ad624a84a9cb07ae6e097a1d8bf4"
+    sha256 arm64_sonoma:   "c0acb77ffeec1998eaf05f50fd123f7c5d60cd0eb3650d4b267202a9eed6520a"
+    sha256 arm64_ventura:  "8dfd66a126fdf5377b5facf51526bcc1ba3f658c76cad10ad74bfc05d7618719"
+    sha256 arm64_monterey: "9ce6593351bc70da42abee12ff5ed96f59ce15b37157127c0ac17500ef805236"
+    sha256 sonoma:         "4ce3401dec1900d9db2dd6fc9327d99b9269453e72697468106f26aeb76211fe"
+    sha256 ventura:        "40fbcc2a17cbe0a49f52df32206643c25bac07af97e4ba2ace2a3dde609d9f00"
+    sha256 monterey:       "956f3c50523268e900a1dbafc938095b0d886a8aa0ba951611388f0847caeafc"
+    sha256 x86_64_linux:   "557f821e2cca2f17ff524aa08e07ebba24ca141603588e32eff6771addcea278"
   end
 
   depends_on "meson" => :build

@@ -26,7 +26,6 @@ class Z3 < Formula
   # Has Python bindings but are supplementary to the main library
   # which does not need Python.
   depends_on "python@3.12" => [:build, :test]
-  depends_on "python-setuptools" => :test
 
   fails_with gcc: "5"
 

@@ -1,8 +1,8 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https:haskellstack.org"
-  url "https:github.comcommercialhaskellstackarchiverefstagsv2.15.5.tar.gz"
-  sha256 "39c192f7dd6e1c41da55c2128c5c5b39a18e6fe57ac69cef7396f1e65f7de8e4"
+  url "https:github.comcommercialhaskellstackarchiverefstagsv2.15.7.tar.gz"
+  sha256 "a508663e2bd92c1b6326ce313c623c2fc2d91d9dec962e88d953b2dc49a78b20"
   license "BSD-3-Clause"
   head "https:github.comcommercialhaskellstack.git", branch: "master"
 
@@ -12,13 +12,13 @@ class HaskellStack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "236cffcba74603b1d06aec86d1a51e894ee4c5d00bc70e094e70b019224dbb80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd37843feb7d01c6ae7d253cc0e554ff12faa0e8fa7406ea44081e7c8d782e25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11ce315ed896195af53f10d436ab74fb97b440dcc92f730ee6f2ad385a8829b0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9e9214af75de6d0d85daa17b8f78c7be7542497da315e741890c3217c2484177"
-    sha256 cellar: :any_skip_relocation, ventura:        "737653e3fb423bfcf8bc1fa97b8628c4ac50b9438b03733f83d1c49ea419dced"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4a6e360974f29952ca075422eda6bfe6b164ae0f601ecea48940c3024aac1fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "974537686d3191778f0cea7cada915d29f792f6641b8789fd89b7b4137634f52"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5481881fa877dcbe46bd9f97f7f3fcf2274a84e173e8ae02ec30fea007176d32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a1bfc86f6aec30f96ec68f27992a534718df9c0e415cd8333a63207d17a18c8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc713df0bc59ece08548cc7467c230893f749545589767fc0e8e8099cc6833d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d9d38311fbaee45072808985b9b5ae49ec44e8f3a0772d0afdae0dfb1bde301a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ffc975770e0e8a24eb00376e0b269a60039fb578e97dbcaed52ce2524f35d2c4"
+    sha256 cellar: :any_skip_relocation, monterey:       "71cd94b975f7e4c9c42fb32a6ad2205776d8e62231f735f1248b1ef99a8f291d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afcfdf08099427176424cb420050adff56838dca5bf71f92df2394774470dd6d"
   end
 
   depends_on "cabal-install" => :build
