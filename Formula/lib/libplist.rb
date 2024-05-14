@@ -1,19 +1,19 @@
 class Libplist < Formula
   desc "Library for Apple Binary- and XML-Property Lists"
   homepage "https:www.libimobiledevice.org"
-  url "https:github.comlibimobiledevicelibplistreleasesdownload2.5.0libplist-2.5.0.tar.bz2"
-  sha256 "72742f20a73e0a6367fbcadaf48cf903bfa45a3642a11f2224ed850d1f1e5683"
+  url "https:github.comlibimobiledevicelibplistreleasesdownload2.6.0libplist-2.6.0.tar.bz2"
+  sha256 "67be9ee3169366589c92dc7c22809b90f51911dd9de22520c39c9a64fb047c9c"
   license "LGPL-2.1-or-later"
   head "https:github.comlibimobiledevicelibplist.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "59354164cd075ee3597dfc2670b2283a439b0154730dd0f4d9ccc694cbcb54f1"
-    sha256 cellar: :any,                 arm64_ventura:  "42fa24333cc5431048e01a225ded9addb37447575032d579c845eadd1b1cd4db"
-    sha256 cellar: :any,                 arm64_monterey: "a8bec99b0a62f01f1078fc21207ebe68d5cb1f12925782ce0139134935ab39e4"
-    sha256 cellar: :any,                 sonoma:         "10e9d29e5c3c3354a3af67dab61b1e1d98d2020e3b5e0e2780ee4b2587bc0817"
-    sha256 cellar: :any,                 ventura:        "4680532f5124cd9bba37b8192ee8ecd005b05df1a15290feb18fc38ea37570bc"
-    sha256 cellar: :any,                 monterey:       "666028bbd050fd8c2454c952ed04ab78043de7cd15abd0c55388c8a995098af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "585da0b2bd5441d61b963c37a5c6f1e7bff9ea7cf88a33db857e4d95bc854975"
+    sha256 cellar: :any,                 arm64_sonoma:   "6b9ece7854f6db7fcaf6beaf043d83cd1f3dbe54c1208d5ebbd4be56ecc45e05"
+    sha256 cellar: :any,                 arm64_ventura:  "65565f4500012d7d9e9930f27f5dd267a841fc10cf762c51a349ece86c9f3e4f"
+    sha256 cellar: :any,                 arm64_monterey: "ad1f58b4285197664514657ff118180773884f6de14f2c77031440f01297d2e1"
+    sha256 cellar: :any,                 sonoma:         "1c3804cd5d0ffbc2c9e694609e889e0b26d7a87ce98ba5a884bb8c6406ecb59c"
+    sha256 cellar: :any,                 ventura:        "c564322af66d7fc3edc4c7253f98785d203442ae5ca7402385d17f46caecffcf"
+    sha256 cellar: :any,                 monterey:       "e836a4889c978fc1e799e6727c0e8776e93a5982637c99e72465f3f99983f27c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1391edc27beba3ffd60197bcc649c13a2f42808e5b9dd0c9614438a457c4ad73"
   end
 
   depends_on "autoconf" => :build

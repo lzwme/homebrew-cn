@@ -12,16 +12,18 @@ class Podofo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "18c42f4e349c7831ad1c88da9bcb6a3186bae96592a58bcc9564dfddeaa47a66"
-    sha256 cellar: :any,                 arm64_ventura:  "8aa327cf0a9521152589c4f35e8c24d17ca81e6e9a0409a124c81ceae1adf36d"
-    sha256 cellar: :any,                 arm64_monterey: "32eb565b522ee3d479f1f63e9c8734f0055723f15c0d40d1e5742a0e8c37deb3"
-    sha256 cellar: :any,                 sonoma:         "6bc07e073418fdea964f84b51620d13c29a2b15891f8a2b66f7edad55270c9db"
-    sha256 cellar: :any,                 ventura:        "eb9faea265097f17b3304901c77eb6c062dcf29a9e8de96423bca460ddb085f1"
-    sha256 cellar: :any,                 monterey:       "121f760c5d73c7b343d4f6a828f8c9dc436991c167fb6ed2f7d40821f35913ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33fbbf5d0eba0905261b5cc12483dbd14f1c87a7b6b6fee90b3d3352bba3723f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "6916059ce58b1016b37a5e00880919eb613d350ee0429b64240d93223b00e167"
+    sha256 cellar: :any,                 arm64_ventura:  "723be940f3ab2d03693a4892e78cc9cfb1b90fdc2b1d6c9450dbe0ae8b7da6ec"
+    sha256 cellar: :any,                 arm64_monterey: "86fcbad492a3a82a3d9c1fb29f76bd5104dfd056593b6a03caeeee81a9abd888"
+    sha256 cellar: :any,                 sonoma:         "8be022ca383754de73ccc7cfc75ebbd16986bd2cbafdc8d1bcbde651b343cf9e"
+    sha256 cellar: :any,                 ventura:        "e8ee595be473003af4cb4c2f24997aff75b7f9f49fc1bf5c3d4c1422bdde3989"
+    sha256 cellar: :any,                 monterey:       "3292798d1992a3921500dff564708ad39abd9b7650551619990a94a6af16455c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0d8758427d5f1db857a9924edb620f2f97c66e0a30ce3dbf28c7a3e1b6094af"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "jpeg-turbo"

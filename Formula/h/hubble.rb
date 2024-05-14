@@ -1,8 +1,8 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
   homepage "https:github.comciliumhubble"
-  url "https:github.comciliumhubblearchiverefstagsv0.13.3.tar.gz"
-  sha256 "4e887b9cac16fc0c6bd2994d5549aa265fffcfd230e3533add1e46cae5b91a2b"
+  url "https:github.comciliumhubblearchiverefstagsv0.13.4.tar.gz"
+  sha256 "5a1103bae2242df080436ee3ac3f0904b0208b5a00bf77c0a016f466a76203fe"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,13 +14,13 @@ class Hubble < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0755e6f1d15f9e8578f1390147a90d01e34d267b1f23e4e7607864940c13bbad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da8881dc7a4d1e0f0a4e0fc1e56add72d360af55922a0a760ac97c14d71febfb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a539fc95a498bb78f1d595b261392f53037548feaf469a8d2b1183eb41a929fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4d37a6c7d2a58801c4a4714d29353f1f52995ac9286042e29955da2d527e75ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "4e7cd07974413143a66a82b22d8bb614ee50b281f508b0cbe632467cc88e67a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "e885a4e2124216391f90e0963b14cf887238d395bb02b2fee5d39d2ad83724ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f94ab66908226a85b323ce82c24e42015447edab70a7a04ca02a846863b861f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "82cfe9426b926dd72738078695cef5d7c6be5a5ce941f12524319a4bd41c0c18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4a6c54f5ab3b7e4790749dcd9293278fe2dcc0bbff0f6ae4fa641dd1412f62c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7070141f52c1d0dcaa1cebe6b0822024f0efd4153f146324fbec8bd05ccc282"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a9c4f75cc9c7542db3b8ac000c05785069d27d28158613bebdd665ffe4fca96e"
+    sha256 cellar: :any_skip_relocation, ventura:        "adb6e386f30e087abdfb2248645738834b23228661d63dc8a93a4282744b347c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d1377d402014f624af8e1ec665035da89a8f378df5a3a8e1818e1272d9fb6e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7bd4031ef956e302e5dd8c86bda236a829ae7aefbf5068da7ad5b8f6fce92f7"
   end
 
   depends_on "go" => :build

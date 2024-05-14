@@ -3,18 +3,18 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https:github.comPyCQApylint"
-  url "https:files.pythonhosted.orgpackages351c4a8135f77a4ec8c0a6dc1d4543dd6fee55b36bb8bf629e2bcce8a94763a9pylint-3.1.0.tar.gz"
-  sha256 "6a69beb4a6f63debebaab0a3477ecd0f559aa726af4954fc948c51f7a2549e23"
+  url "https:files.pythonhosted.orgpackages23ef99c1531ad5454a560a9ff17789320e68d8d7aaceaa8222b293e3fa7488e8pylint-3.1.1.tar.gz"
+  sha256 "c7c2652bf8099c7fb7a63bc6af5c5f8f7b9d7b392fa1d320cb020e222aff28c2"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "613cc04309c111243666073e047c630dc976cd37b4557b833f5514c5a352bb65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a76645179474210d597987cb184b21db1bc477b4faa6631ca95d9a588e8a7d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "195cb58b28c39bd0e310fcfa79a2013542d5bea950cf6180ef5660adcbed41f4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "046c67d2714573612eb3fc3c4603fd0bc536cc89f432c9d8185b5d8ada07dbd9"
-    sha256 cellar: :any_skip_relocation, ventura:        "823a6cb0b92c4a540229ad420415db735bad7d79c0d859c1943bd448626a8fca"
-    sha256 cellar: :any_skip_relocation, monterey:       "5bd190ba759c9ba7e38fc180512f8a58884f2ae38b1f6a0ce01372b13ff13f13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67cb7c06f0acd095b6b6307ad43d3140ae931b6f0756940ffb57dca938692584"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "72e516f8f9ad556ef7d3d6984ecadb90beb35667163b94807ed0b3a7496eb78e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f419e4b9abb5d94be98d13770234e8b61f32032cd13b78ef25d4d89c53e53ae7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ada341e3d036ed98d6558c16e9030fef3409e7967d8beae8836c67929cef2e57"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4eef1b6936882ef656f0c430e13c0a4043e141e24b6b6259f2beccfbbbf9d204"
+    sha256 cellar: :any_skip_relocation, ventura:        "2584a39bee2d4dee2ec05932a2d46416130240aad346f8d1de1dac4017301186"
+    sha256 cellar: :any_skip_relocation, monterey:       "97382be31c7d1560cd1253cbf21f4174a6a13f3b20000b00215f423c06ceee9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15cb0989a8b4bd186cebbda6f058b0dacd13694200e12ee0a9529cfb6506d3a1"
   end
 
   depends_on "python@3.12"
@@ -40,13 +40,13 @@ class Pylint < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackages96dcc1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https:files.pythonhosted.orgpackagesb2e42856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937platformdirs-4.2.1.tar.gz"
+    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackagesdffc1201a374b9484f034da4ec84215b7b9f80ed1d1ea989d4c02167afaa4400tomlkit-0.12.3.tar.gz"
-    sha256 "75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4"
+    url "https:files.pythonhosted.orgpackages2bab18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8tomlkit-0.12.5.tar.gz"
+    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
   end
 
   def install

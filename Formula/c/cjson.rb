@@ -1,18 +1,18 @@
 class Cjson < Formula
   desc "Ultralightweight JSON parser in ANSI C"
   homepage "https:github.comDaveGamblecJSON"
-  url "https:github.comDaveGamblecJSONarchiverefstagsv1.7.17.tar.gz"
-  sha256 "c91d1eeb7175c50d49f6ba2a25e69b46bd05cffb798382c19bfb202e467ec51c"
+  url "https:github.comDaveGamblecJSONarchiverefstagsv1.7.18.tar.gz"
+  sha256 "3aa806844a03442c00769b83e99970be70fbef03735ff898f4811dd03b9f5ee5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b78dd2e9c8ca113352bb0b7e6defbdc13347f3ea865ff5d36c86fabef29d7e44"
-    sha256 cellar: :any,                 arm64_ventura:  "f3ac8cc558b9bf3204f187fc7f97c51cfe3a0fa7f69b6c0ac90ef1cd6f343257"
-    sha256 cellar: :any,                 arm64_monterey: "ba43d4860a42c1682366ac6aca8d32cd685e0b5343e3f630e62c3e717dd8c4a8"
-    sha256 cellar: :any,                 sonoma:         "fc19335348f155fbbbf8e4a0f723498343b4150da2f87f9ba83187ac22851f26"
-    sha256 cellar: :any,                 ventura:        "ce47f24d395a421c7d32c768aa90953a8c9e4b117df89e8866a8014844f24bfe"
-    sha256 cellar: :any,                 monterey:       "46d60602f246f016a3b4cf9c70d616542f17862fe00ef0f2a8494ccf4347b934"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc741db82146cf729a3efe8876c76120627fe5ce702b8c8be9485e009063ca4b"
+    sha256 cellar: :any,                 arm64_sonoma:   "6deee0399f8b92240122c7cb8dee5a3f3e7b26f9cec147b9d0baffb3c6a804dc"
+    sha256 cellar: :any,                 arm64_ventura:  "f8cd3c29957ec2a1007c52197f924e7f5262da5809bf928a451b25ea95df5203"
+    sha256 cellar: :any,                 arm64_monterey: "8dbfc2c100bf1710e3cbc477526e3ba5694f0b1162452252932d4c6ed2ea8a9f"
+    sha256 cellar: :any,                 sonoma:         "1b0c17ed9045b0feb0ba140a31ab247876055ac753cd1fe1d55c0e9fc334e332"
+    sha256 cellar: :any,                 ventura:        "d9587b4d465d2fb40c4cfc6a7c843a97fc9f0aef817b036ffd7418b10cbdd6d1"
+    sha256 cellar: :any,                 monterey:       "5173b927f124a5e5f1cdc8c9625e41b91d489f779837e59e245b9fae38b36cc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ad376a8e59ceadee7ca6ec2ba000a8d1b5359a38e964afb3ca05fed166294da"
   end
 
   depends_on "cmake" => :build

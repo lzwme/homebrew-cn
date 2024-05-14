@@ -10,7 +10,9 @@ cask "macfuse" do
 
   livecheck do
     url "https:osxfuse.github.ioreleasesCurrentRelease.plist"
-    regex(macfuse[._-]v?(\d+(?:\.\d+)+)\.dmgi)
+    strategy :xml do |xml|
+      xml.get_elements("key[text()='Version']").map { |item| item.next_element&.text&.strip }
+    end
   end
 
   auto_updates true

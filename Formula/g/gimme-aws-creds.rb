@@ -3,18 +3,18 @@ class GimmeAwsCreds < Formula
 
   desc "CLI to retrieve AWS credentials from Okta"
   homepage "https:github.comNike-Incgimme-aws-creds"
-  url "https:files.pythonhosted.orgpackagesc866b849cafd19cec102844b60ac2e3edaee3c88ae3f3d74c10c0e805e0bf3ebgimme_aws_creds-2.8.1.1.tar.gz"
-  sha256 "2d82202a4ee73118da018b6201e7349d67ab0314bfc4266ba9645644da88f0c4"
+  url "https:files.pythonhosted.orgpackages63739e508d37d4d301f6a3811fdc0b0a076696de87f82ad8a81ec28c3e6befb5gimme_aws_creds-2.8.2.tar.gz"
+  sha256 "12784f4b749617d7391bf2056373990277858dc9886328832b545e9e334f24d3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "740540de070b31de07033f6cfabe0905bc251bd7f5def19e5764aeb7fca1806e"
-    sha256 cellar: :any,                 arm64_ventura:  "f8ffa7959fa029ae10cc21ae56ef9c9fd41d2b938af487001263208578fc6298"
-    sha256 cellar: :any,                 arm64_monterey: "076c14aa1b09db1e7309c4ad426c37a18e49063c2c34329e959853d51019f1f9"
-    sha256 cellar: :any,                 sonoma:         "e5b1eedca20603a9d665dcf1bc6153672bb30f77f8f14b08477ce893722fff3f"
-    sha256 cellar: :any,                 ventura:        "9ad0ef02d0df276263cda7c934233eeedbffc238bcfcec6709d712b2f66f5723"
-    sha256 cellar: :any,                 monterey:       "a6bee03ab824a68e6485d1e540b622623260dda7f8e42c8a1ae57cfeaa98117b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "188f78309f7a4e33a7cd52157666e8c2ef81bf74e21bef87b0cd0f6038699e19"
+    sha256 cellar: :any,                 arm64_sonoma:   "17aa5d8830e8e9e27544335c01029bfda5febedb19f24a0b5014f711bfea6ff8"
+    sha256 cellar: :any,                 arm64_ventura:  "55145d0cece8da33bf3c99b0ede1fa4e8143a4ffb9d59468e39869ddebab01ce"
+    sha256 cellar: :any,                 arm64_monterey: "88652661ad55e1b03f07bdbe5bd259777cae325c5402022f6a953e378d792278"
+    sha256 cellar: :any,                 sonoma:         "35bb52a073f1d5f1932fc25f94f8ea9192dde40d30e8609bce70721c5fdd2d13"
+    sha256 cellar: :any,                 ventura:        "8b581cbea5c9515c59ea372444b8ef949c5d51bc246024e904d9984a2bc2fe1a"
+    sha256 cellar: :any,                 monterey:       "01cdce3c726d2c168a035f68bc2a3bd8ce92ce41e05e6640c7bb64ba80bf7566"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15332e4e998c37989ecbec65fa316e4458b46ed8d0c826435d9de2df29e63b51"
   end
 
   depends_on "certifi"
@@ -63,13 +63,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages910902e5049fedf5b1dafb56318480a35a679e104f1275b990eec90f0fafdb04boto3-1.34.90.tar.gz"
-    sha256 "2824e3dd18743ca50e5b10439d20e74647b1416e8a94509cb30beac92d27a18d"
+    url "https:files.pythonhosted.orgpackages55dc977c83f4ecc36b39058842abfab4e668a9aa02f02d8f659047410be1d6efboto3-1.34.103.tar.gz"
+    sha256 "58d097241f3895c4a4c80c9e606689c6e06d77f55f9f53a4cc02dee7e03938b9"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages8693ba848528f20dcb51d499f9a81ba3fd91fb74f11a303f7783f243115c32a8botocore-1.34.90.tar.gz"
-    sha256 "113cd4c0cb63e13163ccbc2bb13d551be314ba7f8ba5bfab1c51a19ca01aa133"
+    url "https:files.pythonhosted.orgpackages9c08270465df53dd8dfdb372c567dee08c3dbce825f11c7ee89fa5cc25a865fdbotocore-1.34.103.tar.gz"
+    sha256 "5f07e2c7302c0a9f469dcd08b4ddac152e9f5888b12220242c20056255010939"
   end
 
   resource "charset-normalizer" do
@@ -138,8 +138,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackages18eccc0afdcd7538d4942a6b78f858139120a8c7999e554004080ed312e43886keyring-25.1.0.tar.gz"
-    sha256 "7230ea690525133f6ad536a9b5def74a4bd52642abe594761028fc044d7c7893"
+    url "https:files.pythonhosted.orgpackagesb809fdd3a390518e3aebeec0d7aceae7f9152da1fd2484f12f1b3a12a74aa079keyring-25.2.0.tar.gz"
+    sha256 "7045f367268ce42dba44745050164b431e46f6e92f99ef2937dfadaef368d8cf"
   end
 
   resource "more-itertools" do
@@ -153,8 +153,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "okta" do
-    url "https:files.pythonhosted.orgpackagesb1fcf366482050517fb34ec60a02ed02e0fd985aa66920a6dda4f30431cdf498okta-2.9.5.tar.gz"
-    sha256 "a8c70ed134db30f8dcfabd883a5c09a9b6923b3b5ab7d3266161f8920cbdbf00"
+    url "https:files.pythonhosted.orgpackages634694fdbaa02248f12b727c71ea2439da064ec85a02412023c03888ffc68bf6okta-2.9.6.tar.gz"
+    sha256 "59159b4bc6d851a7e7be74ca2c7955ed8579e35d04d23936518a2cd85db403b9"
   end
 
   resource "orderedmultidict" do
@@ -173,8 +173,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "pydash" do
-    url "https:files.pythonhosted.orgpackagesc1e23af0b7213dd338e62da339c1c99605a8e3658a31f260040f9851ce144c71pydash-8.0.0.tar.gz"
-    sha256 "5a90d98b5f370bb9620f786221579df8f83d54f1f58de6a66f52b1bdba7175d1"
+    url "https:files.pythonhosted.orgpackagese8904cc84d60b32f3f069817705eaf7e07f3bceff050b56132885b71303aff88pydash-8.0.1.tar.gz"
+    sha256 "a24619643d3c054bfd56a9ae1cb7bd00e9774eaf369d7bb8d62b3daa2462bdbd"
   end
 
   resource "pyjwt" do

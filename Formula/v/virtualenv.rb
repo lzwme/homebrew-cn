@@ -3,19 +3,19 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https:virtualenv.pypa.io"
-  url "https:files.pythonhosted.orgpackages939f97beb3dd55a764ac9776c489be4955380695e8d7a6987304e58778ac747dvirtualenv-20.26.1.tar.gz"
-  sha256 "604bfdceaeece392802e6ae48e69cec49168b9c5f4a44e483963f9242eb0e78b"
+  url "https:files.pythonhosted.orgpackages445acabd5846cb550e2871d9532def625d0771f4e38f765c30dc0d101be33697virtualenv-20.26.2.tar.gz"
+  sha256 "82bf0f4eebbb78d36ddaee0283d43fe5736b53880b8a8cdcd37390a07ac3741c"
   license "MIT"
   head "https:github.compypavirtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "274ebe5338ab4840814322e890660ed48d66d2f41f10b9a2d60d35bedf1a5d26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "274ebe5338ab4840814322e890660ed48d66d2f41f10b9a2d60d35bedf1a5d26"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "274ebe5338ab4840814322e890660ed48d66d2f41f10b9a2d60d35bedf1a5d26"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8cb3457fe2caff20682a466aa10ed856d3b7e0d8b9f22d8abe8994413148c57"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8cb3457fe2caff20682a466aa10ed856d3b7e0d8b9f22d8abe8994413148c57"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8cb3457fe2caff20682a466aa10ed856d3b7e0d8b9f22d8abe8994413148c57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f92800f613a769556ce92bcd9e5d0a5199decefde4af2e7bfd2a066bca442688"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fafad463983dcef9ceeb7180a0d8082f0a21a7e03849d74e13d248d65a2cde1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d41c26d0565120d650ceb6baae0d0a39a909f4183280d6e9b3f577f3f7884b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73c4c3caf40272c284350f41c196d02a3d605399aafd3af0b125ce18892b0de0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc5a90176dadd6ee9d0fbee6fc8e6677fce9525ac238c58c315953a7c597e0c0"
+    sha256 cellar: :any_skip_relocation, ventura:        "b235e85b6e2497ee70bdfb7cdd4d94372c437f1353302caada36bad5ab772e6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "62be0063ef44583912ba68677d18abe13c6bd3f1b86506473b2b0c1e8d1a876c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fe5e91d24a61daa71be01a77122722266f4597f78f92264836c789f8ce61524"
   end
 
   depends_on "python@3.12"

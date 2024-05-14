@@ -1,13 +1,19 @@
 class Tomcat < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.23/bin/apache-tomcat-10.1.23.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.23/bin/apache-tomcat-10.1.23.tar.gz"
-  sha256 "a5572c9e90ff81ea16681df97176bb6a9f537b1c3fbe0ffba5297fee59c398aa"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-10/v10.1.24/bin/apache-tomcat-10.1.24.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.24/bin/apache-tomcat-10.1.24.tar.gz"
+  sha256 "216db5c726a6857e2a698ba5f9406fa862d037733f98ab2338feb3fc511c3068"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2676d87d44982a9f277b1ed86af59ccd1334fe55d77e421285ea5ac8a1b8b6a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ead5f045c078c481ed7647d3f248844a10405caf4640a33f5d222d61a3dfe1ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edaea8117ae38e3e66f8babe6fcd35f72b0292791ca9331b710da4f377f4f5da"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "48161ff834e31968fe683eaee2e420e78499459eedffe81903a873d7078c6002"
+    sha256 cellar: :any_skip_relocation, sonoma:         "603c35d2756093c7687b99515a01dc08750a89f5bf0adf2566d9ccb22c716728"
+    sha256 cellar: :any_skip_relocation, ventura:        "85c60900073a9a81e41b7d3993e0f75c5453288680e0c66b0c7ed449840e073a"
+    sha256 cellar: :any_skip_relocation, monterey:       "526befd6ea1f44e740a651b6f598e385b242a82eb430b7b21297853805693fff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d832e3476d6e0b4207da4453c511519f578d6998c6154fda99e76f4031b4278a"
   end
 
   depends_on "openjdk"

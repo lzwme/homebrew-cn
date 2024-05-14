@@ -3,19 +3,19 @@ class Forbidden < Formula
 
   desc "Bypass 4xx HTTP response status codes and more"
   homepage "https:github.comivan-sincekforbidden"
-  url "https:files.pythonhosted.orgpackages1f2a5c3209a31bc4c77eda57a0a6199f030a6c9332473b7b0e262948b74c9584forbidden-10.9.tar.gz"
-  sha256 "3997d6e8d7172f98b9be4cec561030850ab64af2157bf3747cc4c34160e8e7c5"
+  url "https:files.pythonhosted.orgpackagescff24009d0284192f2f871007c158b22d47a60fda3734a77f432ca66b96fddd1forbidden-11.0.tar.gz"
+  sha256 "0fcaff3b0f3b82461efaae084221f8b3c01ad76a65248ac888b92f297fa623e8"
   license "MIT"
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e3acff45697d09eeefb1a76a15519e1392936ca4c3e3bd47b1369db5fecc76b1"
-    sha256 cellar: :any,                 arm64_ventura:  "2cc067a8d8f75fbf8d85c05a130813d8188c8a8de81d57a7573f95e5626e1e08"
-    sha256 cellar: :any,                 arm64_monterey: "25ef9ce9684d5e402b50cf9049b0a720a374f53a5fb64d3fdc8910bceaeb6167"
-    sha256 cellar: :any,                 sonoma:         "a1435d4e56183abf00272a87ba4dca377fbd5a6f0ac3f25d855a47c43e24deb8"
-    sha256 cellar: :any,                 ventura:        "cd2df7fdf6086362f418afc2e36d7ac8fd47655e487bf31af3333510ad6d6123"
-    sha256 cellar: :any,                 monterey:       "b98b95972f78085613817b3140832a91793d823b29d8c9a81a0c50b73cdf4821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "134f2ae4061b5d82a9b3651c6eda45e8c2ce3983d649c6d245810e82ecac4897"
+    sha256 cellar: :any,                 arm64_sonoma:   "56c6756dce86c20907bdef4d185c2debb1817eb5cdccb7d5de89ec3b5f4704c2"
+    sha256 cellar: :any,                 arm64_ventura:  "7303a123b05e29f9c43908413f150f5a8d55ff179fb9f5eec39ad86b752913fe"
+    sha256 cellar: :any,                 arm64_monterey: "90e0947274bb697c954d48ad675ecc5ed191edfb06589061b3a0b2b647cb149e"
+    sha256 cellar: :any,                 sonoma:         "ca7ae107cd549625320cb64839d861d9f739e819e33be5a401ec5ec446c8e9c1"
+    sha256 cellar: :any,                 ventura:        "a65fcb078ac1d508de5eee52ee41103804e13f9081c0163a2013ce504f561292"
+    sha256 cellar: :any,                 monterey:       "5bd75c4febc35885b2b2cd194c84306edc8cfd38aa12e46fc2ea0ed10a5fc483"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca166bea0aece24a39d67a53677d364f5e28103bd20b583d9b4c7f142f661861"
   end
 
   depends_on "certifi"

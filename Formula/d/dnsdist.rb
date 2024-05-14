@@ -1,8 +1,8 @@
 class Dnsdist < Formula
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-1.9.3.tar.bz2"
-  sha256 "f05b68806dc6c4d207b1fadb7ec715c3e0d28d893a8b3b92d58297c4ceb56c3f"
+  url "https://downloads.powerdns.com/releases/dnsdist-1.9.4.tar.bz2"
+  sha256 "297d3a3751af4650665c9d3890a1d5a7a0467175f2c8607d0d5980e3fd67ef14"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "20e6987aec8bfaa55b2b776fccf5672dbdb0d91de79a10ee4025608fc1f2db17"
-    sha256 cellar: :any,                 arm64_ventura:  "93c4d5018b5dac723c27d9e0ef49739e6d60ae33e2d83245b656872cd4c099d7"
-    sha256 cellar: :any,                 arm64_monterey: "d1120439da992fa8b6a93ced426ba8c96134efd3714871584559812f67cafbe8"
-    sha256 cellar: :any,                 sonoma:         "c4b69412449af4e07c00392f612e5aa1745ec4f06b4d9272dd70c3b37c99979d"
-    sha256 cellar: :any,                 ventura:        "86b17ca4d74e5eb944941832fadaa6484b9edf911ff66bba370bb8d0f730c510"
-    sha256 cellar: :any,                 monterey:       "27e917beb812ac1162598acbe8660f93b697d6d7df0e156718b45da43b1add5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf452f424e6187463af07b5955ec0eaf757d85925df8f7282644169f820b0c0e"
+    sha256 cellar: :any,                 arm64_sonoma:   "d8ee4889448db1237e2ee4df06ab634e007e792f6b7fe5483967d3b6a1fb6162"
+    sha256 cellar: :any,                 arm64_ventura:  "4d44d8f158148ef5f21f03300cc9fc83c683486870c6f16e70350fba8c4e129c"
+    sha256 cellar: :any,                 arm64_monterey: "82187fc9875494dc900729b730a82d3fafff12a68415519abb0d09a0e66b4dd4"
+    sha256 cellar: :any,                 sonoma:         "89dae2330691f0396317491c5e6dc693c86e4fc9bd0733d6ec130b05b91ae501"
+    sha256 cellar: :any,                 ventura:        "1c2fab271a1fe8c7a8e099a206e09711994f16696383c50d754c20d434daccfa"
+    sha256 cellar: :any,                 monterey:       "e2366d3622d7f6e258990414416a17d9b1c069acc8570deb0ded86838816c47b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b30f1efc08e67fdf63aaa82b3ae1cf7099481de6d9511be0fa632be2bd94d821"
   end
 
   depends_on "boost" => :build

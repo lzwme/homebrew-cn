@@ -3,19 +3,19 @@ class Virtualfish < Formula
 
   desc "Python virtual environment manager for the fish shell"
   homepage "https:virtualfish.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages95030f7b063c25c60e4221fb2a710cce05fe4686aa5dd1f6fce4bd6abd4595e4virtualfish-2.5.8.tar.gz"
-  sha256 "ea887a44399a4b2621b71f15c1d856d54a3ff3348a3292b0dfcb2d8238fe6932"
+  url "https:files.pythonhosted.orgpackages1f4e343d044d61e80a44163d15ad2f6ca20eca0cb4fef4058caf8e5e55fc3dd9virtualfish-2.5.9.tar.gz"
+  sha256 "9beada15b00c5b38c700ed8dfd76fe35ad0c716dec391536cc322ddd1bccf5e2"
   license "MIT"
   head "https:github.comjustinmayervirtualfish.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1982a9e8a591cfe4070142747273e43a26b672c5bf65ab9074223ee38a8c1c37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3aaccd46b0a764ff98ca2d1dd1c9d97445f2d17e09fc43b66e16c5ca34a40ff6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ef56f42f156957be695a4cc78428e6a2e20b68270639319db61d1fc99e208d4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0eaaae596d89857d5f9caed9e3e8d5da9687808e497727d65ac18f5e9f50db4f"
-    sha256 cellar: :any_skip_relocation, ventura:        "11fef51dded409a042f18cba9d390388c471d52b302e9789279c15b2929bcc4e"
-    sha256 cellar: :any_skip_relocation, monterey:       "423da65788601da0dba761fb026a2236b5dc08bb9f0c7c3f6ecb2c7d62b5671c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f22c3274d796eeee7d56be2db093f0b9c02b8d554818f54695795a2e3f339bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39a60c7a4b2812d68db4da7ddfc1a7b238fbf024ca2a8f1b961af23a9f138e00"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1edad1f17d4e6c6743829e19cf0e4eb83e08515e751bffbdd4c98753836ca2ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "590a51dfdd5789faf0967213704204477c66a958f703f33ac3181ab478af43c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5feb06c3586e3d9033e7e13d8767547e0dbca21a3159fab41f85a50280cbda48"
+    sha256 cellar: :any_skip_relocation, ventura:        "eb754039d4919ed59ebd91bb72040f9244a075e1ff8925d6b672a05328b4b299"
+    sha256 cellar: :any_skip_relocation, monterey:       "83df2498189b3c334863d92f9151470ce1f3eeba535f4ba0f015d47cf3781348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "934c7815ffaa7e0f064958f7742835b3f09e8455f74b2f1c51fda9caf7623e47"
   end
 
   depends_on "fish"
@@ -27,8 +27,8 @@ class Virtualfish < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackages38ff877f1dbe369a2b9920e2ada3c9ab81cf6fe8fa2dce45f40cad510ef2df62filelock-3.13.4.tar.gz"
-    sha256 "d13f466618bfde72bd2c18255e269f72542c6e70e7bac83a0232d6b1cc5c8cf4"
+    url "https:files.pythonhosted.orgpackages06aef8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897eafilelock-3.14.0.tar.gz"
+    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
   end
 
   resource "packaging" do
@@ -52,8 +52,8 @@ class Virtualfish < Formula
   end
 
   resource "virtualenv" do
-    url "https:files.pythonhosted.orgpackagesd8020737e7aca2f7df4a7e4bfcd4de73aaad3ae6465da0940b77d222b753b474virtualenv-20.26.0.tar.gz"
-    sha256 "ec25a9671a5102c8d2657f62792a27b48f016664c6873f6beed3800008577210"
+    url "https:files.pythonhosted.orgpackages939f97beb3dd55a764ac9776c489be4955380695e8d7a6987304e58778ac747dvirtualenv-20.26.1.tar.gz"
+    sha256 "604bfdceaeece392802e6ae48e69cec49168b9c5f4a44e483963f9242eb0e78b"
   end
 
   def install

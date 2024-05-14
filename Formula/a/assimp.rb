@@ -1,19 +1,19 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https:www.assimp.org"
-  url "https:github.comassimpassimparchiverefstagsv5.4.0.tar.gz"
-  sha256 "a90f77b0269addb2f381b00c09ad47710f2aab6b1d904f5e9a29953c30104d3f"
+  url "https:github.comassimpassimparchiverefstagsv5.4.1.tar.gz"
+  sha256 "a1bf71c4eb851ca336bba301730cd072b366403e98e3739d6a024f6313b8f954"
   license :cannot_represent
   head "https:github.comassimpassimp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e66353354dd74172ec395b7e61e356faf50a7bcaac1243ea42307fdc0fdf43de"
-    sha256 cellar: :any,                 arm64_ventura:  "cc1d2c1a8acfe0aab52790495d515b156dadb8ee3dec88d0f792102ee3b91947"
-    sha256 cellar: :any,                 arm64_monterey: "e517f57425874252017d2b16262d9b230101593f60e9406a06a850da7e0cb152"
-    sha256 cellar: :any,                 sonoma:         "da3682914a57bf6ccda53c876be45127d961a28d0ed48cf261648397dfc3d330"
-    sha256 cellar: :any,                 ventura:        "6f11be3a3b8cad5ef4b15b90423a0d52b113096379195cb3893de2dcfe234187"
-    sha256 cellar: :any,                 monterey:       "f6e85bfcaaf917b6088cf24c980ae12b478d3b574198c548a9540c9d77e8fab8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4ccccd8ca4bbb031c08eb4cca5661fcca8d96a769893557a221cd3424516328"
+    sha256 cellar: :any,                 arm64_sonoma:   "1c519a97c6544a8b848130ed1ba4301563e7a88792e8a7021b2dded16d17f159"
+    sha256 cellar: :any,                 arm64_ventura:  "e4297dc654c067e5590b95e1736afb2f9f8a606e543092ba9e1e4834c16b7eb8"
+    sha256 cellar: :any,                 arm64_monterey: "046197638478526fdfa3217dce5957d5f27b835953a77a355313eb9dc5bbaa9e"
+    sha256 cellar: :any,                 sonoma:         "184a8a0423b053a30a3118e81052d42faed4b793be472cab92b938db828355a6"
+    sha256 cellar: :any,                 ventura:        "b4e5ab92c7c7f120da5a9eeed35e5b015a6388644681252a03193b8175bd96fd"
+    sha256 cellar: :any,                 monterey:       "b6d04c67b353666867540bdc5080795415514eed926df79cdd9c4c9feba88d0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa51e97c337955b5a829764880138d661b1d8368b7a26b9245616a2198a79e84"
   end
 
   depends_on "cmake" => :build
