@@ -1,8 +1,8 @@
 class GitGui < Formula
   desc "TclTk UI for the git revision control system"
   homepage "https:git-scm.com"
-  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.45.0.tar.xz"
-  sha256 "0aac200bd06476e7df1ff026eb123c6827bc10fe69d2823b4bf2ebebe5953429"
+  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.45.1.tar.xz"
+  sha256 "e64d340a8e627ae22cfb8bcc651cca0b497cf1e9fdf523735544ff4a732f12bf"
   license "GPL-2.0-only"
   head "https:github.comgitgit.git", branch: "master"
 
@@ -11,7 +11,13 @@ class GitGui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "33209b7a402071ca5607af7278ad41d3f4e6e6afffee09fa1d702ed2e9538b28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d75e5db0d2021dab91333909c8addb536f8a092d457101ac47b15e7c0b5f1184"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a50ceca5213edd0eb052748c7ce694a0588e676661bfe426000bebc37f31f8ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d5caf9ef9e6df604d42ee15ba837bece41a5c7d6e76b928cfa28d63aa312481"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d59e149925ddfab2a42bd1624a12c5d4033aad3e8c6d9525e70b9f5ad159d014"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb836002e0452c4ef7318b5c7a24962323dcdeef2ffce94ceb0711acb0bd9ca8"
+    sha256 cellar: :any_skip_relocation, monterey:       "f26b58069f27c77a41555e9052b1f94b499b38804783724483700c5fadbf0ebe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1eca99221a90c2772d41dfaed9af78ab693eccaa6cdcfc2791dc64ab942f43df"
   end
 
   depends_on "tcl-tk"

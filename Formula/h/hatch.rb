@@ -3,18 +3,18 @@ class Hatch < Formula
 
   desc "Modern, extensible Python project management"
   homepage "https://hatch.pypa.io/latest/"
-  url "https://files.pythonhosted.org/packages/05/f3/54d969452d2d71b072da7435cbcfe3e867a12702b1770fc1bd8e92be89dd/hatch-1.10.0.tar.gz"
-  sha256 "0d68a7d3efa225bedb7a8bb773a347fdc16d5e064aef5fb0411de57cc9abd08a"
+  url "https://files.pythonhosted.org/packages/69/52/30848520dad584fa3bb5dba580a20607e2a3ee1ba932722028db5df1232c/hatch-1.11.0.tar.gz"
+  sha256 "0511e48b06576995a51a39af14c062431cbbbf22df8a4faccce41418ebccab30"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50221d5e67582edff37fb32c10cca357e354fa36a8121f0d4ae063678a6d4a77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3f57fda9bed6cfe3d5b79b59a73ad6ed8be030cd8eb551509bd6db4025f4aad"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0993277869d2f4335cc6be04e39f9464bcf5d8692139c17aaa7f4185cbf6ab5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c8ace56bea92a146b1a24f944f3984f755c67e9447b73e6c61919cb9421166fd"
-    sha256 cellar: :any_skip_relocation, ventura:        "2e78a7eaaf3c65fa145c37f1ddd3a1e99740dbd94766456a57029e91782c3889"
-    sha256 cellar: :any_skip_relocation, monterey:       "bcf012b4dec325d4d99e754cbf5572f4dec07e792e77c963c5f94ad90939c244"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4080441591f2a3451201e938aaa738aafa38cff4a8925c6fd00767cc59be7144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c76682632e9ab9e6b8ccdb78d99655fd100f6aea1408c27b3217d09a3064fbb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e8781583593072034995bed722ec61f386153f629b3dfc218738de257dd33052"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d75c1f41455f0ea550c7e4b30130e80913505fba9d5164a13eb39dabbd6405ea"
+    sha256 cellar: :any_skip_relocation, sonoma:         "120fb74bc4dd09418343476040a178f276080ed71f27a6ca57126a2c96ee9961"
+    sha256 cellar: :any_skip_relocation, ventura:        "5b4b2d4c8f9c2032ce2ff1536b98c335e8806d3b6da068a973773fe5dd64f7a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "512575e4cba5df57a013c4de2fb405a87759c5b2762fd3f2f9cdbce5c2e7bf47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d7c1667c402008cc81790bd2bff09d856f299caf1e62b8fed160ce094578260"
   end
 
   depends_on "certifi"
@@ -92,9 +92,14 @@ class Hatch < Formula
     sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/d6/f4/154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdf/jeepney-0.8.0.tar.gz"
+    sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
+  end
+
   resource "keyring" do
-    url "https://files.pythonhosted.org/packages/b8/09/fdd3a390518e3aebeec0d7aceae7f9152da1fd2484f12f1b3a12a74aa079/keyring-25.2.0.tar.gz"
-    sha256 "7045f367268ce42dba44745050164b431e46f6e92f99ef2937dfadaef368d8cf"
+    url "https://files.pythonhosted.org/packages/3e/e9/54f232e659f635a000d94cfbca40b9d5d617707593c3d552ec14d3ba27f1/keyring-25.2.1.tar.gz"
+    sha256 "daaffd42dbda25ddafb1ad5fec4024e5bbcfe424597ca1ca452b299861e49f1b"
   end
 
   resource "markdown-it-py" do
@@ -143,13 +148,18 @@ class Hatch < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "rich" do
     url "https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz"
     sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+  end
+
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
   end
 
   resource "shellingham" do
@@ -168,8 +178,8 @@ class Hatch < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/7d/49/4c0764898ee67618996148bdba4534a422c5e698b4dbf4001f7c6f930797/tomlkit-0.12.4.tar.gz"
-    sha256 "7ca1cfc12232806517a8515047ba66a19369e71edf2439d0f5824f91032b6cc3"
+    url "https://files.pythonhosted.org/packages/2b/ab/18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8/tomlkit-0.12.5.tar.gz"
+    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
   end
 
   resource "trove-classifiers" do
@@ -183,8 +193,8 @@ class Hatch < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/93/9f/97beb3dd55a764ac9776c489be4955380695e8d7a6987304e58778ac747d/virtualenv-20.26.1.tar.gz"
-    sha256 "604bfdceaeece392802e6ae48e69cec49168b9c5f4a44e483963f9242eb0e78b"
+    url "https://files.pythonhosted.org/packages/44/5a/cabd5846cb550e2871d9532def625d0771f4e38f765c30dc0d101be33697/virtualenv-20.26.2.tar.gz"
+    sha256 "82bf0f4eebbb78d36ddaee0283d43fe5736b53880b8a8cdcd37390a07ac3741c"
   end
 
   resource "zstandard" do

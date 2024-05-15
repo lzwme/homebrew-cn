@@ -1,18 +1,23 @@
 class Ttyplot < Formula
   desc "Realtime plotting utility for terminal with data input from stdin"
   homepage "https:github.comtenox7ttyplot"
-  url "https:github.comtenox7ttyplotarchiverefstags1.6.2.tar.gz"
-  sha256 "99222721e2d89e1064546f29e678830ccaba9b75f276a4b6845cc091169787a0"
+  url "https:github.comtenox7ttyplotarchiverefstags1.6.4.tar.gz"
+  sha256 "7f71c61698d07265209088ec0d520ae382b408faf9a61d7b632145607c86bad7"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d52cadbdafa654723354871e864b03a6a09758a2564802d8ed0ff00fb8efe22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4d268c520b73ce0dfeb8fe0b15e48c4cec8cfcfecc480a76ea7ab3e6130b26a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c28c176f16b68540dc4757da83ffec41a51ff0663580f1267236227768fbd772"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8b11f61c394f9afb119180717c14f84e63e3d32bbe3cbeace81750cb6b8987e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "da7596531a646453653e8b2cfe1cde83759aee2f97bde6aa0feb73b4d5068659"
-    sha256 cellar: :any_skip_relocation, monterey:       "81e39a835173b64ca69a8023011c809102407e264b4d1bca355ac72bec3e2c74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a97f7c0ae188115e77d7b7efb75b2b037a568edaea74d12bd040940f5643dbde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21b35a4928783c686b1977214712c52459efcaf18a0f81dc5f0cb1d9647fd89b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bca9d68b8cb4c4c85f0d9a163cec54acff25b9c1d40de4628ec971770fc6a129"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fef5f8dffdd882312a65c70a7dd9b64054c527fa8d8ad8272026dd8e2385c96"
+    sha256 cellar: :any_skip_relocation, sonoma:         "728411e1f09758ff21a5fce5c5c6c6157232890a6274573024e76c75807478ef"
+    sha256 cellar: :any_skip_relocation, ventura:        "31a8e5af1a2e722b87c05971938451fa50c5c22347864aede69bbaa62a233bc8"
+    sha256 cellar: :any_skip_relocation, monterey:       "044e6cfa84938e03834290ee0aa4e9566a76d3526431066f333f5272e772bb0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e452febec6c8f8d475f65f823f96e9000a5589a438b75cac1954654895ef57fe"
   end
 
   depends_on "pkg-config" => :build

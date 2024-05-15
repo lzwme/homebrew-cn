@@ -2251,6 +2251,7 @@ Homebrew-homebrew-core/Formula/g/go-feature-flag-relay-proxy.rb, Homebrew/homebr
 Homebrew-homebrew-core/Formula/g/go-jira.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jsonnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-md2man.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/go-size-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-statik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-task.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go.rb, Homebrew/homebrew-core, 0
@@ -2270,6 +2271,7 @@ Homebrew-homebrew-core/Formula/g/gocloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gocr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gocryptfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/godap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goffice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gofish.rb, Homebrew/homebrew-core, 1
@@ -5496,6 +5498,7 @@ Homebrew-homebrew-core/Formula/r/rure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rush-parallel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rush.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rust-analyzer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rust-parallel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustc-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
@@ -7657,6 +7660,7 @@ Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatbox.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chatgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatterino.rb, Homebrew/homebrew-cask, 0
@@ -9340,9 +9344,9 @@ Homebrew-homebrew-cask/Casks/m/manta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manuskript.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manymc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/manyverse.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/marathon-2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marathon-infinity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marathon.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/marathon2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/marble.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/marginnote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mari0.rb, Homebrew/homebrew-cask, 0
@@ -10015,6 +10019,7 @@ Homebrew-homebrew-cask/Casks/p/pdf-expert.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-expert@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-images.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-over.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pdf-pals.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-reader-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-squeezer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdf-toolbox.rb, Homebrew/homebrew-cask, 0
@@ -10023,7 +10028,6 @@ Homebrew-homebrew-cask/Casks/p/pdfelement.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfextractor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfkey-pro.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pdfpals.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfpen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfpenpro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pdfsam-basic.rb, Homebrew/homebrew-cask, 1

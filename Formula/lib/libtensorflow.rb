@@ -1,18 +1,18 @@
 class Libtensorflow < Formula
   desc "C interface for Google's OS library for Machine Intelligence"
   homepage "https:www.tensorflow.org"
-  url "https:github.comtensorflowtensorflowarchiverefstagsv2.15.0.tar.gz"
-  sha256 "9cec5acb0ecf2d47b16891f8bc5bc6fbfdffe1700bdadc0d9ebe27ea34f0c220"
+  url "https:github.comtensorflowtensorflowarchiverefstagsv2.16.1.tar.gz"
+  sha256 "c729e56efc945c6df08efe5c9f5b8b89329c7c91b8f40ad2bb3e13900bd4876d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a578b220f6e0d08ca977109535f4dfe7666f0777726bc5e4212d530e6fbd53ab"
-    sha256 cellar: :any,                 arm64_ventura:  "9310ad58328895e82600a09f0be0a9b7bca1cbd72dcbbf013ce47675d4513d14"
-    sha256 cellar: :any,                 arm64_monterey: "12593cd369fa2b9ad2f2e04ea6cf2adb9a55661bc04b9bda90c90d6b718e608a"
-    sha256 cellar: :any,                 sonoma:         "5efbfbb5c8ec5d5f4fb6d6a982860e871a888389cb887f825f38d157d442324b"
-    sha256 cellar: :any,                 ventura:        "7c57f0f00d496ca7f25f732c3d0c5aeef140d6370f5030686b3da7dd8820af74"
-    sha256 cellar: :any,                 monterey:       "144b2e738e475f7904a3123bb6e5aab8c305d1ca6188d6d986ba43c2572cb01b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "040f988c820a84f21a2c1f952a9f94da9fc844dbf2f34944a458a9675dd858e3"
+    sha256 cellar: :any,                 arm64_sonoma:   "80aafb14349d536de3af8e0480ad1c5bc6bdcb6d25f7fe50aebd4e02d7c2a636"
+    sha256 cellar: :any,                 arm64_ventura:  "62c1b3dd69e265dc704c78f2539f6b8dc708b229baad1094617e197a709daee5"
+    sha256 cellar: :any,                 arm64_monterey: "8fc3d4a3ac2cda3a7eccbf294457b590da79fa65d50321b9280dd5bf6efe824f"
+    sha256 cellar: :any,                 sonoma:         "78ee9d092551735d76204c894837916d7c1fb9d3fce13b272f362f1b2f9825fd"
+    sha256 cellar: :any,                 ventura:        "9392558546076cd4f335c2921fa189a9d22071ee9fa7486dbab8750dbd014785"
+    sha256 cellar: :any,                 monterey:       "c720eed4ca3dd12c78a1346f5aaf1057e898e945706c94c8f18f1316ccc47220"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7157828852a7166ec6b5b0e66c7153a503f8cfd667773b6bf26ab511e8b8e83d"
   end
 
   depends_on "bazelisk" => :build

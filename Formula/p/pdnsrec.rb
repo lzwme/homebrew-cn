@@ -1,10 +1,9 @@
 class Pdnsrec < Formula
   desc "Non-authoritative/recursing DNS server"
   homepage "https://www.powerdns.com/powerdns-recursor"
-  url "https://downloads.powerdns.com/releases/pdns-recursor-5.0.4.tar.bz2"
-  sha256 "d52aab108a0ad9e8be1de2179a693bb85e995c6a4d958a50702dcf79eec8ef28"
+  url "https://downloads.powerdns.com/releases/pdns-recursor-5.0.5.tar.bz2"
+  sha256 "02b9f053db64b32bd76ce6656cb35772c1d07a21fe0345ec13adb6f0fcfbf9ce"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  revision 1
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -12,13 +11,13 @@ class Pdnsrec < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "ce346f4f1d641d8f447d8c9117fc2bd20bb596f50dee383368cf4d162d822f2a"
-    sha256 arm64_ventura:  "6925297503e8c1a9a204e4d2b3a2c4e970d97711a5676edd6ad3e42970864c84"
-    sha256 arm64_monterey: "54cd469160288840ff7d0ed718f9c803db65a950dd70bcafaea92a2c72f9fe5c"
-    sha256 sonoma:         "90462ac1e935cd649d337eb29190f603967363c29ed1aec1527180f45d7243ef"
-    sha256 ventura:        "a47f3d303d8ed6506a684d12f085dcfb8b008b230943d602c1e224f74b8c417d"
-    sha256 monterey:       "76181795fa3d48f0cb1fee8052544ca7fb22e06aee35b07c736a547a031db741"
-    sha256 x86_64_linux:   "e570809afd6f86c60d04f929465a0ceb2a869cecdb554e64ac1fbcf2c9ba0d2b"
+    sha256 arm64_sonoma:   "47939dff04e341ac99084c93ff96187bd6cba6d88a8ba60166fbbe8e9bc8b1f7"
+    sha256 arm64_ventura:  "9e970227852149996a328b190fe2473d441f5559774836e535dbea887132c667"
+    sha256 arm64_monterey: "ad21d9d8e6e29a2272e758416b89335b313e44536a0d17846f3b800183919fe8"
+    sha256 sonoma:         "5ccf7ebf6e9bea12d24b0319ad8fa6a58c14a99f1204fd5cabc95f890275b134"
+    sha256 ventura:        "55b27361c50a3f084058802d9ac17599a6bcfd712a3c2c4e15daf3267ec1719a"
+    sha256 monterey:       "20416c045da974b9403329bb3c41269b0c79c1c695bd564e44b8aeeef5bfcdcd"
+    sha256 x86_64_linux:   "e3a0c3f7e504fafc470aee78f3c4935fe8dcd6890b5f7d7cec64496c95111884"
   end
 
   depends_on "pkg-config" => :build

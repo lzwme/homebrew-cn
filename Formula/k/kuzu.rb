@@ -1,19 +1,19 @@
 class Kuzu < Formula
   desc "Embeddable graph database management system built for query speed & scalability"
   homepage "https:kuzudb.com"
-  url "https:github.comkuzudbkuzuarchiverefstagsv0.4.1.tar.gz"
-  sha256 "e81be1e94dafba5e4a6f08b7f3a530c75926740d47e3a6b198687cd132630b6d"
+  url "https:github.comkuzudbkuzuarchiverefstagsv0.4.2.tar.gz"
+  sha256 "47057d6b241b13a989b39d5277c234cdae19291f9cce7a642113bbe7ab916ad6"
   license "MIT"
   head "https:github.comkuzudbkuzu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fe73a2155139c0201c8adf45b66d1ae79794aa4d01a4c44d55b267b53a484d2f"
-    sha256 cellar: :any,                 arm64_ventura:  "73694da5bd64f8ebd2048331842fe1f7ead1caff2b9adbcbcf9909c8aff5ac3c"
-    sha256 cellar: :any,                 arm64_monterey: "85f38b926adbc9404434295ddf290249dcf1abeb6c7ee2ece04b415e678bdf30"
-    sha256 cellar: :any,                 sonoma:         "8c2c18146931ee91b987b7f288cd7171adb43ab5f0885f3246b9c8e9127f61cd"
-    sha256 cellar: :any,                 ventura:        "2a3fd58f7dafea8ad74636ae33cee6189384051a2577b3f645e0beaec0750613"
-    sha256 cellar: :any,                 monterey:       "a5bf8b2b9ed93fbf3394d7972d4f7e43759da182a2793fd522028e1c793ea448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09f6c8c6e9731dda6c8e8e26204418194a95afe4a1024430a7c0584b8b0b70f0"
+    sha256 cellar: :any,                 arm64_sonoma:   "067c01469febba3aadffa360edbea876e01cdd55ff0a4c297efdac38d81d4d59"
+    sha256 cellar: :any,                 arm64_ventura:  "e7d56830ec23f8df074236e7128f51eb63873bd97d3458f86e59e7c6b1bf9da7"
+    sha256 cellar: :any,                 arm64_monterey: "375769bfc126d426cd6f1c34cb6eb63087b9e1304a0aed10aed26b0788eff131"
+    sha256 cellar: :any,                 sonoma:         "24dc0f48be8faf8b17ab3e678c3dc11b259960b712ceb9f5d702b38b27624d2f"
+    sha256 cellar: :any,                 ventura:        "c4c2c85559dc61553b902c946c791ac47e734e2049c4027fda3b9fcae50eb4a3"
+    sha256 cellar: :any,                 monterey:       "0bd128afbb14f3f42a9a705406cb2c4e8e9657efad3afccc763d3303ae24f5ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f10aef1a5f9c742be9297d11c28f2dd3e32aa3e202d166d58532ea87530c0f0"
   end
 
   depends_on "cmake" => :build
@@ -22,17 +22,11 @@ class Kuzu < Formula
   def install
     args = %w[
       -DAUTO_UPDATE_GRAMMAR=0
-      -DENABLE_LTO=1
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # The artifact will be renamed to `kuzu` in CMakeLists.txt for the next
-    # release of Kuzu. This is a temporary workaround and will be removed when
-    # the next release is out. See: https:github.comkuzudbkuzuissues3458
-    bin.install_symlink bin"kuzu_shell" => "kuzu"
   end
 
   test do

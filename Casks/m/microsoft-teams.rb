@@ -47,7 +47,7 @@ cask "microsoft-teams" do
               "com.microsoft.teams2",
             ],
             delete:    [
-              "ApplicationsMicrosoft Teams (work or school).app",
+              "ApplicationsMicrosoft Teams.app",
               "LibraryApplication SupportMicrosoftTeamsUpdaterDaemon",
               "LibraryLogsMicrosoftMSTeams",
               "LibraryLogsMicrosoftTeams",

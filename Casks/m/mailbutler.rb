@@ -1,6 +1,6 @@
 cask "mailbutler" do
-  version "7530,3328538"
-  sha256 "06a36902eb2f2996b77d10f28b38093625e5695a9318b18e80bf645fd8fdf648"
+  version "7614,3348884"
+  sha256 "1367035f8a2c290cd82e6f6220dbf224100dbc03dab89697552d1ed02191faa0"
 
   url "https://downloads.mailbutler.io/sparkle/public/new-horizons/Mailbutler_#{version.csv.first}-#{version.csv.second}.pkg"
   name "Mailbutler"

@@ -3,19 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https:dvc.org"
-  url "https:files.pythonhosted.orgpackagesaadf64d43a2caaed1f58237993570a20cba3cbdde27b45c3293d93a717f49e82dvc-3.50.1.tar.gz"
-  sha256 "97c92a530da38ea08f1cfad6ec7ad7ad1abf55887eb243d10b789123131616f9"
+  url "https:files.pythonhosted.orgpackagesece6931fddaa44694faea4e5e67bdc11bd7cf76240fbf2c714fbb32065e4756edvc-3.50.2.tar.gz"
+  sha256 "b8e12d3521391ae839b8f38ea807d6f88699c570806f4bfdf4fff3733f87a1cc"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c289e81cf7318a615edac1320b1ee214d8e6f7189619f4693d644a0787a59296"
-    sha256 cellar: :any,                 arm64_ventura:  "f205b720007f9f92388a297654c658de1ac427682067dfad947127c7762281e7"
-    sha256 cellar: :any,                 arm64_monterey: "ef2100d0380757b653a1239d94742188c5e731808d12624fbc97ed7f34d6a5dd"
-    sha256 cellar: :any,                 sonoma:         "c80aab269201ca598ac631efd72d7c00bea622ab79bf2dcc43d9062aaa71dbc0"
-    sha256 cellar: :any,                 ventura:        "b26158a8e512f6f9fe7adee5ab71b2a04d481276f566f13b680163a8493cbf44"
-    sha256 cellar: :any,                 monterey:       "63e93883beed3c799f438ea8b329c9a0f0eeab4850df8eb32ee21ecb3d916c31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d515cda9c2e835554e2e8664b2f8c9dcc630b4166420dbbba7c3a4271da08931"
+    sha256 cellar: :any,                 arm64_sonoma:   "5c77e1a694268ca858805172fdd89096deb3a644564675ac0ccd3c0cc16db710"
+    sha256 cellar: :any,                 arm64_ventura:  "fd98e5743e2eafd7fbadfff51daac1aa594d9e343e8ae95437364f0b81191071"
+    sha256 cellar: :any,                 arm64_monterey: "c306728588d9f8b15fed347ad6a3516d7e6f52cb08cc584444c50a1ef3973800"
+    sha256 cellar: :any,                 sonoma:         "de22945edca4ed0cdf1b222f7d50c55c607ab80f096a7f0492f1ff8d9bf47c92"
+    sha256 cellar: :any,                 ventura:        "4a2f70777dd5d60ddb00c0c8d10dbda8a22c668aeb143ae6c689a560117d15dd"
+    sha256 cellar: :any,                 monterey:       "3b336199c6022e6d147d021de821ca93ea781a24cf06cad58c518334712347be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6614d859cf88d22a94efc1b12cddf568255726a90858e453c766abb9c6fa983"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -75,8 +74,8 @@ class Dvc < Formula
   end
 
   resource "aliyun-python-sdk-kms" do
-    url "https:files.pythonhosted.orgpackagescb87f0004243da50bb102715fdc92e2fbff92b039bfbd16400c57a7dba572308aliyun-python-sdk-kms-2.16.2.tar.gz"
-    sha256 "f87234a8b64d457ca2338f87650db18a3ce7f7dbc9bfef71efe8f2894aded3d6"
+    url "https:files.pythonhosted.orgpackagesc5a6f958162647f2f581a5d767a5cf1b9e172183863559abfbe594face7141f7aliyun-python-sdk-kms-2.16.3.tar.gz"
+    sha256 "c31b7d24e153271a3043e801e7b6b6b3f0db47e95a83c8d10cdab8c11662fc39"
   end
 
   resource "amqp" do
@@ -140,8 +139,8 @@ class Dvc < Formula
   end
 
   resource "azure-storage-blob" do
-    url "https:files.pythonhosted.orgpackagesbda2b1c1d6d8e3709bd949a18969ae8c1c61bd77d54f2b896e8574ef53053df5azure-storage-blob-12.19.1.tar.gz"
-    sha256 "13e16ba42fc54ac2c7e8f976062173a5c82b9ec0594728e134aac372965a11b0"
+    url "https:files.pythonhosted.orgpackages1b0f86cdaec4be486d12fd5bd2c56e835492a58d3bcd4915d24473e889b70f2cazure-storage-blob-12.20.0.tar.gz"
+    sha256 "eeb91256e41d4b5b9bad6a87fd0a8ade07dd58aa52344e2c8d2746e27a017d3b"
   end
 
   resource "bcrypt" do
@@ -375,8 +374,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagescb0f6f0a8070802d6ee9a1393a4653202786c5ea9b10aa098a4c40c04be7c668google-api-python-client-2.127.0.tar.gz"
-    sha256 "bbb51b0fbccdf40e536c26341e372d7800f09afebb53103bbcc94e08f14b523b"
+    url "https:files.pythonhosted.orgpackagesc29756b0c6661e0b60e9d743a2eed018329a5265bd37d1b14969ef53cd06239bgoogle-api-python-client-2.129.0.tar.gz"
+    sha256 "984cc8cc8eb4923468b1926d2b8effc5b459a4dda3c845896eb87c153b28ef84"
   end
 
   resource "google-auth" do
@@ -630,8 +629,8 @@ class Dvc < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pygtrie" do
@@ -705,8 +704,8 @@ class Dvc < Formula
   end
 
   resource "scmrepo" do
-    url "https:files.pythonhosted.orgpackagescaef3eca3d34aad6369059cb1745f1783e06b6dece2a7584ef45c54f59b55477scmrepo-3.3.2.tar.gz"
-    sha256 "a817334bf005275e7f0f98d768ce21bb5cbfc05676a0d6081372eb927e7c737b"
+    url "https:files.pythonhosted.orgpackages7dadd422fee6fd96b142bf6848cfad6a3c095162df59cbfa06cc122b4131bd17scmrepo-3.3.3.tar.gz"
+    sha256 "9eb592b4aadd51360f1bbe316d055b04278ca909f162023078fe504961b1a1d8"
   end
 
   resource "semver" do
@@ -765,8 +764,8 @@ class Dvc < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackages7d494c0764898ee67618996148bdba4534a422c5e698b4dbf4001f7c6f930797tomlkit-0.12.4.tar.gz"
-    sha256 "7ca1cfc12232806517a8515047ba66a19369e71edf2439d0f5824f91032b6cc3"
+    url "https:files.pythonhosted.orgpackages2bab18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8tomlkit-0.12.5.tar.gz"
+    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
   end
 
   resource "tqdm" do

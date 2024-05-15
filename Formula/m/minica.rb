@@ -5,6 +5,11 @@ class Minica < Formula
   sha256 "c5b7e6c890ad472eb39f7e44d777da1b623930fd099b414213ced14bb599c6ec"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6c7334a3e9027cc0bcc410d11904e90e142c0811549ede3d63cbeccbcc7ea99e"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecf3d68d4a4e348da0de9a156062d4c45cab04506899a74f11a84cf1af7f9402"
