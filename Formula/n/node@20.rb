@@ -27,7 +27,6 @@ class NodeAT20 < Formula
   deprecate! date: "2025-10-28", because: :unsupported
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "brotli"
   depends_on "c-ares"

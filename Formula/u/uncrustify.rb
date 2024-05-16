@@ -1,19 +1,19 @@
 class Uncrustify < Formula
   desc "Source code beautifier"
   homepage "https:uncrustify.sourceforge.net"
-  url "https:github.comuncrustifyuncrustifyarchiverefstagsuncrustify-0.78.1.tar.gz"
-  sha256 "ecaf4c0adca14c36dfffa30bc28e69865115ecd602c90eb16a8cddccb41caad2"
+  url "https:github.comuncrustifyuncrustifyarchiverefstagsuncrustify-0.79.0.tar.gz"
+  sha256 "e7afaeabf636b7f0ce4e3e9747b95f7bd939613a8db49579755dddf44fedca5f"
   license "GPL-2.0-or-later"
   head "https:github.comuncrustifyuncrustify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "988940baed6f80db45a495d387cfab38a75496ca60daf7f301adf34b1b445a57"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88a407115693464ee05a99d035d1d13e437b30b0f99d79aaca5ecc7e5ee30d9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d043b7e256a5fe4b858a34cd8f07f01c3fee3497010b1b97ee130968cc6a2b79"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1abf1020168856899d6c5f676c6162f90e4b3fc0e4ab6d89aa9e24bc7f52c9ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6b8b48c4c6f8b9b3c858fd75ef8558adb99ca143329d6b41b224908f9201965"
-    sha256 cellar: :any_skip_relocation, monterey:       "f569a67342595fb813c61ee035622788e6a6df3a346dba3c4e4bcbc3afd8c952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bd176735277b4f2b2a23c17e5e044a900a2aedca1b16a357c8a13416b9a9cf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bffdfbf17b6eb0c781fa7141fb02e92b0a601cd4ceac35cc356d9cdd26dc2636"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c16c1efe048bee421a9d20ca62ddcb1a133f6ae48d5461e714607f6b9280a2d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b24f7b0cb08ca53782bc8882cac2272c8eb9609d2079c7d8ecc01babae05583f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b3d5e126a00e64024c28b2ebe1f05a1b7e38da32912a0fa0834c268ea6edfbb3"
+    sha256 cellar: :any_skip_relocation, ventura:        "0203cc842a538476e70a96c0f566c604e6ff0aed05fc6f09e7f3fc1d3109b760"
+    sha256 cellar: :any_skip_relocation, monterey:       "4018e748acd7ed470ab1090d85307f63d5638b18fbfdf9ba3eff822c303b0c59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3a5450c682fb4a635b43c6b6479ef572029cc7933cc3b2dbb08c8f3a51c6c45"
   end
 
   depends_on "cmake" => :build

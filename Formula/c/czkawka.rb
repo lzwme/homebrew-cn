@@ -17,12 +17,24 @@ class Czkawka < Formula
 
   depends_on "rust" => :build
   depends_on "adwaita-icon-theme"
+  depends_on "cairo"
   depends_on "ffmpeg"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
   depends_on "gtk4"
   depends_on "libheif"
   depends_on "librsvg"
+  depends_on "pango"
   depends_on "pkg-config"
   depends_on "webp-pixbuf-loader"
+
+  uses_from_macos "bzip2"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "graphene"
+    depends_on "harfbuzz"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "czkawka_cli")

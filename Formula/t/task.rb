@@ -22,8 +22,8 @@ class Task < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "corrosion" => :build
   depends_on "rust" => :build
-  depends_on "corrosion"
   depends_on "gnutls"
 
   on_linux do

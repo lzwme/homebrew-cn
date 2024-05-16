@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https:sdk.operatorframework.io"
   url "https:github.comoperator-frameworkoperator-sdk.git",
-      tag:      "v1.34.1",
-      revision: "edaed1e5057db0349568e0b02df3743051b54e68"
+      tag:      "v1.34.2",
+      revision: "81dd3cb24b8744de03d312c1ba23bfc617044005"
   license "Apache-2.0"
   head "https:github.comoperator-frameworkoperator-sdk.git", branch: "master"
 
@@ -13,13 +13,13 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ee180a4e583804440cb95f410b9eb164becfb9396ce5b1f8514610432a76b6af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0355eb6ffabcc0b00d8fc44337c574b7617b17ef6dd06e8dd7ba4d75b2be9241"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b84f2c2b5c1f37c8c9aaedbdd6d81e57010c9c64e6318a9d4b7f335f76dc15b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10588a890073b8adba6341f0989b74ed973a715bea7db99dc276eb5d78c366d1"
-    sha256 cellar: :any_skip_relocation, ventura:        "b47bbcd9346383a75c08e7435f2c70221c6cd69f5f39f7ad7bc1d21a547597e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "78c2b7e7d97e57956eeee393414de573fa018fc967191bb6c34f089b5043a98b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8d51713b7d920b6a536ec87ef6f84cbc02fba4b3af2ddafbe120b8adbcc316"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11f6b734cfd3c4f56a3742ec1cd43d1f7e1081dcca5162e2f7615a7717610207"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f01eec8a402a1a168e17ec180671849d0d721373dd62e8f37382339847d02478"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "91226d386a056d99d2b913dbf644f2c2b467d97c1602c6258f4df1baad505541"
+    sha256 cellar: :any_skip_relocation, sonoma:         "674529dd2d331f6c23a927cf958cdfd1716a37222d952cf4a3a45c2f69b58c34"
+    sha256 cellar: :any_skip_relocation, ventura:        "4bac4ab81994e05f96e06dc5f464635af99399e40028240f79f81593bcc3de6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ec93ee6f486efed46a26e36ce647c080da40f0a11e1f937cd088be729607b67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea8700d936ea71f7fd115c120d5049f31a8a093775635036688d4b1eb6081103"
   end
 
   # use "go" again when https:github.comoperator-frameworkoperator-sdkissues6644 is resolved and released

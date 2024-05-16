@@ -1,21 +1,24 @@
 class Libchewing < Formula
   desc "Intelligent phonetic input method library"
   homepage "https:chewing.im"
-  url "https:github.comchewinglibchewingreleasesdownloadv0.7.0libchewing-0.7.0.tar.zst"
-  sha256 "87289bc759d04bfebad92d395d4f63e54f584f3e805731588edaa0c9a8bb6cce"
+  url "https:github.comchewinglibchewingreleasesdownloadv0.8.1libchewing-0.8.1.tar.zst"
+  sha256 "038b7e1eef85f90b46c87fca7ca432796aaa14522291fa48c408c6f6f92ef83a"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 arm64_sonoma:   "b823ea11cbf4a566589839dcd06d646f37ea70672741ef94ca8b524bc44d0915"
-    sha256 arm64_ventura:  "89e205c9987821344bbfa80709794caf7f8038dc3558cc5d7cd0c1c4b913b9da"
-    sha256 arm64_monterey: "3c7520eaa8ba24cc205b5b2bd519afdc54fbbc825d157c6fd0a8a0c810cd9904"
-    sha256 sonoma:         "41e45e4e0d3597559653498da4161d9ad31174e54476cf5fdb569f756aba29d1"
-    sha256 ventura:        "3b522a3319d72718c79952e3f7ea49a5a77f3bd988f008e53870d1f4750639e6"
-    sha256 monterey:       "072906a69c35dd23d14527ec7668ca9f09621ca70936b6aa1f171a2303a3ce87"
-    sha256 x86_64_linux:   "66eadfdcdb7667c3ec22feaafde96d028baed046a21899de56c7789b069a1632"
+    sha256 cellar: :any,                 arm64_sonoma:   "29d657a6c6d2cb277591c75417a733a84657e766c9cee44812ab429b61f26ce2"
+    sha256 cellar: :any,                 arm64_ventura:  "bdaa733fb0a811f15377a85aa82c0c512f0d09652d19fc19790d6d3ac4ea7bcb"
+    sha256 cellar: :any,                 arm64_monterey: "45f693a90d651e1f4ed49d4687d66276e48b7523f2d4af5615ec13c47fbb7813"
+    sha256 cellar: :any,                 sonoma:         "c08ad6a00b9d89ca045848793d95e4f8689ef09b65ba06d1e31564ef792c1721"
+    sha256 cellar: :any,                 ventura:        "90d8c8be289fb0e0230dd39577299734b647c5b5f980988291a6305975007e1b"
+    sha256 cellar: :any,                 monterey:       "73a3bbd40adbd843a1020c8748c9d763eb26b2af115a7133286ae736c2fc175c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaea9205854cc13f9f468e8d1d7e1c9af6247cf7ba04ab1286b292ff80a15077"
   end
 
   depends_on "cmake" => :build
+  depends_on "corrosion" => :build
+  depends_on "rust" => :build
+
   uses_from_macos "sqlite"
 
   on_system :linux, macos: :ventura_or_newer do

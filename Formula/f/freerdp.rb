@@ -39,11 +39,14 @@ class Freerdp < Formula
   depends_on "pkcs11-helper"
 
   uses_from_macos "cups"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
     depends_on "ffmpeg"
     depends_on "glib"
+    depends_on "icu4c"
+    depends_on "krb5"
     depends_on "libfuse"
     depends_on "systemd"
     depends_on "wayland"

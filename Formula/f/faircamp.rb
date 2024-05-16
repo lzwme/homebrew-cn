@@ -18,6 +18,8 @@ class Faircamp < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "ffmpeg"
+  depends_on "gettext"
+  depends_on "glib"
   # Brew's libopus behaves differently in linux compared to macOS and
   # results in runtime errors. Further investigation and work on this
   # formulae is needed to support linux builds. The upstream project

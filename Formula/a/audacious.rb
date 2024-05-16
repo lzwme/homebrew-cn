@@ -54,14 +54,17 @@ class Audacious < Formula
   depends_on "ffmpeg"
   depends_on "flac"
   depends_on "fluid-synth"
+  depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "lame"
   depends_on "libbs2b"
   depends_on "libcue"
   depends_on "libmodplug"
   depends_on "libnotify"
+  depends_on "libogg"
   depends_on "libopenmpt"
   depends_on "libsamplerate"
+  depends_on "libsndfile"
   depends_on "libsoxr"
   depends_on "libvorbis"
   depends_on "mpg123"
@@ -72,6 +75,20 @@ class Audacious < Formula
   depends_on "wavpack"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "opus"
+  end
+
+  on_linux do
+    depends_on "alsa-lib"
+    depends_on "jack"
+    depends_on "libx11"
+    depends_on "libxml2"
+    depends_on "pulseaudio"
+  end
 
   fails_with gcc: "5"
 

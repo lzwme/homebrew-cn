@@ -1,8 +1,8 @@
 class JenkinsLts < Formula
   desc "Extendable open source continuous integration server"
   homepage "https://www.jenkins.io/"
-  url "https://get.jenkins.io/war-stable/2.440.3/jenkins.war"
-  sha256 "f8d47dbfd59359551aead8388fa4ad7005eda7c47ce21c664c99610ca04ae367"
+  url "https://get.jenkins.io/war-stable/2.452.1/jenkins.war"
+  sha256 "d9ec867a35987b545c82ed0df5d2240ac208a8d06e065e9cdb869464f3b87a56"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,13 @@ class JenkinsLts < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8128262214d08b0f94521ccf237f4fb254e38fa520d8e55b3eebc956eab21d66"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a89a9f68f8212cbc1b6d86b5eb0412e60ee93652bea97b3cd242fcf346a7a3d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "20ef70f2b1bd5db0f159a6058d0e6c6a61505009eb7de0e897389d9a25976829"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d0aa3b911a68d5f107a98e8eacf92b587e9e8c055f034d2bd5f12a42609ab870"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9692ec68fb7e82c0a9ef1137edaa112f3833f8fa54952d80f52b72effa307528"
+    sha256 cellar: :any_skip_relocation, ventura:        "f49dc2e5ca3a035f7815f7f0d6b31bdd73a099d9779d86797b989816f9212a95"
+    sha256 cellar: :any_skip_relocation, monterey:       "acbd548e1084a195358960bd8fe624cdae4b83081c14a4dfa6af3871f717b716"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a81c55edac7c109800114721b2c1d09d0883baacd29d414fdd1fd9cc56e29ee8"
   end
 
   depends_on "openjdk"

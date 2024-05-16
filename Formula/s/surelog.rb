@@ -1,20 +1,19 @@
 class Surelog < Formula
   desc "SystemVerilog Pre-processor, parser, elaborator, UHDM compiler"
   homepage "https:github.comchipsallianceSurelog"
-  url "https:github.comchipsallianceSurelogarchiverefstagsv1.82.tar.gz"
-  sha256 "e2c4074f9d35b7a1450b722681d1557bdd4af3de09363dbdb9d0da9cf26b976b"
+  url "https:github.comchipsallianceSurelogarchiverefstagsv1.83.tar.gz"
+  sha256 "3add228495a6ef0e0e3921cb20c30ae09a32c04c76faab4f1a78e546e1d98d86"
   license "Apache-2.0"
-  revision 1
   head "https:github.comchipsallianceSurelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5e059568d44235efdbeaf513460ca46ee1be23b8c00669f5b7c0d93641a7741f"
-    sha256 cellar: :any,                 arm64_ventura:  "bf1c1030465c42460c24db3295073ce2dba67018e4ee4c8800b1927724d37018"
-    sha256 cellar: :any,                 arm64_monterey: "27148e5995701680dcb9482581a4caa491abe75c8149d4487795b2bbee90a9c9"
-    sha256 cellar: :any,                 sonoma:         "6be4e77c6b7c545133b887d6d9e0a434837832bfb392d46967a4a6d7c5a1328b"
-    sha256 cellar: :any,                 ventura:        "a014dcb16342815f0dadb977d5a8c66fc19c6631dbf9106f92fcf8d9da6707fa"
-    sha256 cellar: :any,                 monterey:       "b68a26f046359b0dd25d2de863e36ce3a9a681ac5d892fdb5cbd1726f821f977"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdc75b1ec247a81d68177ab2f36ea4ba60ef96515d447fbba5dc84b8df32bd59"
+    sha256 cellar: :any,                 arm64_sonoma:   "95cf3995027d36d2c86df419f3341ce30d92ef16e95ece9ed01aab03d2ceceae"
+    sha256 cellar: :any,                 arm64_ventura:  "29c3c557786fd9d33250026372b3ddf8ef83b1191739d7c2893e2b777e3460a6"
+    sha256 cellar: :any,                 arm64_monterey: "82363d3a40298dfc30497c5f15b866e0f7449419fb5d50657d910fe3a1d9c2d8"
+    sha256 cellar: :any,                 sonoma:         "adde2f28100f1daefe024e60e4df424e0498c27961dcc0d7c40bbc6a3224d039"
+    sha256 cellar: :any,                 ventura:        "2b18e6e0d005b03d528c80005244aa775ee210ca59b58a7fac3d5500d1b76799"
+    sha256 cellar: :any,                 monterey:       "be420f7e49e3cfeeef09cc0a2ef91d4ef1c3532fdfa38d2c3533b1ed115ecbfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f46a99a35b0df3f2eb6074db85834ecc1d0376ef3381e58c92f0ba7d65e5ecb"
   end
 
   depends_on "antlr" => :build
@@ -26,6 +25,8 @@ class Surelog < Formula
   depends_on "antlr4-cpp-runtime"
   depends_on "capnp"
   depends_on "uhdm"
+
+  uses_from_macos "zlib"
 
   def install
     antlr = Formula["antlr"]

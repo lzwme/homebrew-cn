@@ -19,7 +19,9 @@ class Timg < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "cairo"
   depends_on "ffmpeg"
+  depends_on "glib"
   depends_on "graphicsmagick"
   depends_on "jpeg-turbo"
   depends_on "libdeflate"
@@ -30,6 +32,11 @@ class Timg < Formula
   depends_on "openslide"
   depends_on "poppler"
   depends_on "webp"
+
+  on_macos do
+    depends_on "gdk-pixbuf"
+    depends_on "gettext"
+  end
 
   fails_with gcc: "5" # rubberband is built with GCC
 

@@ -41,6 +41,7 @@ class Openimageio < Formula
   depends_on "pugixml"
   depends_on "pybind11"
   depends_on "python@3.12"
+  depends_on "tbb"
   depends_on "webp"
 
   # https:github.comAcademySoftwareFoundationOpenImageIOblobmasterINSTALL.md

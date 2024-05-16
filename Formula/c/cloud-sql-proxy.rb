@@ -1,19 +1,19 @@
 class CloudSqlProxy < Formula
   desc "Utility for connecting securely to your Cloud SQL instances"
   homepage "https:github.comGoogleCloudPlatformcloud-sql-proxy"
-  url "https:github.comGoogleCloudPlatformcloud-sql-proxyarchiverefstagsv2.11.0.tar.gz"
-  sha256 "b18bde8c25eccd0c6d590e713f61821626e2d1e3fb6b3d7314b5fa7be265601e"
+  url "https:github.comGoogleCloudPlatformcloud-sql-proxyarchiverefstagsv2.11.1.tar.gz"
+  sha256 "50ac079d38cffbcc6b5bc58a5b6b7bf01434aee859d6cfe4fa6b15ce0de32ba6"
   license "Apache-2.0"
   head "https:github.comGoogleCloudPlatformcloud-sql-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9ab2162e2051148b46c4d831112aaa1209fb03b8a648add53b887b9bb0e7a08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96bfd75bf23dbef7680046a869afe1b3b7352aee11667f9c7238c3c35282a0fd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "71f246840e802ee6f2f91b78e4a3ea273c0588652687dcae9dd2040dd7ce07e4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5db5295e8da9e37ba49df39a15f923f3f2dec53e997ed1f6578b2726c2fd28d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "952f62fe2951203cb61e750803b8f9981478e8b5ffd461c35b7caa32efadfbfb"
-    sha256 cellar: :any_skip_relocation, monterey:       "5617d4f64c435ca51bba9a5cc4e14afa6b2a8173510f7f9322b2915e9a1e4c9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97ee47e81f5a3cc5db4843dd444487bb922803a3aa82efc34aa7585d44a7ecc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c870cb7c0f0f660d44f6bd16be3fe2a5b8b1292fadd791c466f68d27379c905f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "72a80eb8e35e642e5ef014cb1df44b2b2a3c6c796a0c8f53eef01d28a18577a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1428541fe1abbfba76d61ca543d66ba264fa84778ae1d168408f9124d6274048"
+    sha256 cellar: :any_skip_relocation, sonoma:         "025e39dc89a76953d33dcc3d42a23028cbc3cd3f5b2ca1853024afbe3d81ac06"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cc9f9e7cce08a3c38b613d0804bdd537e27c1c1579b71403a0c0a2c9149ddef"
+    sha256 cellar: :any_skip_relocation, monterey:       "2128818af7cb1d9f04c43f2f4f0eb0aed26e30d8c32d0786c2312b6e2dc06cba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2db42089b7985a0f6fb1cf36a8b37adc78e820a275c9904d753d8b2d12d0800"
   end
 
   depends_on "go" => :build

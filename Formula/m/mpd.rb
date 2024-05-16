@@ -36,19 +36,30 @@ class Mpd < Formula
   depends_on "libid3tag"
   depends_on "libmpdclient"
   depends_on "libnfs"
+  depends_on "libogg"
   depends_on "libsamplerate"
   depends_on "libshout"
+  depends_on "libsndfile"
+  depends_on "libsoxr"
   depends_on "libupnp"
   depends_on "libvorbis"
   depends_on macos: :mojave # requires C++17 features unavailable in High Sierra
+  depends_on "mpg123"
   depends_on "opus"
+  depends_on "pcre2"
   depends_on "sqlite"
   depends_on "wavpack"
 
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "systemd" => :build
+    depends_on "alsa-lib"
+    depends_on "dbus"
+    depends_on "jack"
+    depends_on "pulseaudio"
+    depends_on "systemd"
   end
 
   fails_with gcc: "5"

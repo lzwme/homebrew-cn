@@ -21,7 +21,6 @@ class Jj < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "openssl@3"
-  depends_on "watchman"
   uses_from_macos "zlib"
 
   def install

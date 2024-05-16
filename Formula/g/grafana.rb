@@ -23,12 +23,6 @@ class Grafana < Formula
   uses_from_macos "python" => :build, since: :catalina
   uses_from_macos "zlib"
 
-  on_system :linux, macos: :mojave_or_older do
-    # Workaround for old `node-gyp` that needs distutils.
-    # TODO: Remove when `node-gyp` is v10+
-    depends_on "python-setuptools" => :build
-  end
-
   on_linux do
     depends_on "fontconfig"
     depends_on "freetype"

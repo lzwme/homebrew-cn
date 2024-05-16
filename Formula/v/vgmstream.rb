@@ -36,11 +36,20 @@ class Vgmstream < Formula
   depends_on "libvorbis"
   depends_on "mpg123"
 
+  on_macos do
+    depends_on "libogg"
+    depends_on "speex"
+  end
+
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
     ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX"lib"
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_AUDACIOUS:BOOL=OFF", "-DUSE_CELT=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_AUDACIOUS:BOOL=OFF",
+                    "-DUSE_CELT=OFF",
+                    *std_cmake_args,
+                    "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF" # FIXME: Find a way to build without this.
     system "cmake", "--build", "build"
     bin.install "buildclivgmstream-cli", "buildclivgmstream123"
     lib.install "buildsrclibvgmstream.a"

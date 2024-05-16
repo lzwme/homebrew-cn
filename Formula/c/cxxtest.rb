@@ -1,32 +1,30 @@
 class Cxxtest < Formula
+  include Language::Python::Virtualenv
+
   desc "C++ unit testing framework similar to JUnit, CppUnit and xUnit"
   homepage "https:github.comCxxTestcxxtest"
   url "https:github.comCxxTestcxxtestreleasesdownload4.4cxxtest-4.4.tar.gz"
   mirror "https:deb.debian.orgdebianpoolmainccxxtestcxxtest_4.4.orig.tar.gz"
   sha256 "1c154fef91c65dbf1cd4519af7ade70a61d85a923b6e0c0b007dc7f4895cf7d8"
-  license "LGPL-3.0"
+  license "LGPL-3.0-only"
   revision 3
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf6a22bd6f8aea996598fa8ae48124229b7dc44e74d3979a1b6c6d4ede5c2c77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8f6e253ee11c1fdfefe7c63858e8148b7b15ff61d1624376e8d421d38d745ab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c197b58b6de182aff18c51a2430308fd5f91f31e3dea2fc2f855cf2e722fcd2a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5860db4123614951b76d55d21ad80e30b3212884395ed3646c699d25203a1d96"
-    sha256 cellar: :any_skip_relocation, ventura:        "79caf0feacc783280f9b22b8b5cf0dfc26c3143d7cef151fcf8a28098bd04ee0"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ab69ebd42c09c08f68670153785c0bd67de032be7e49b09097584e0ea2b0925"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "312674e4519fd0bd7c7c99fb00fc5c445963b0802a8286f9c32ec4dda3ea5237"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "acdd395db8b77593f1d468bd9a47c10fa51b344bf50526df3fb965cde6f79ee6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74609617e8b9782eabdffe240ab7818a746ccd8eabe6ec4bce7d0cd98d240cc9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b08f08b062b7627be2000866176fc1f00ff5c47130640ddf344a49ee827ee45"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b2acef8c5b8aba77b4192b6572558a00fa4548d818ce6ed2119730fa8dfe9c6"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed2ae59c74952d59677cc0411da3935dd8d1c2a415eb8cd60ea5d05a8d8fcad3"
+    sha256 cellar: :any_skip_relocation, monterey:       "639a40eda611f0370f70d0bcc3a4daad6e4c5a081862137622e377c3664abdb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1613e42bf7a9153b9f8cefb7a00667d7ec4f152fb648333f0f2ab54bad2e4585"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
-  def python3
-    "python3.12"
-  end
-
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, ".python"
+    venv = virtualenv_create(libexec, "python3.12")
+    venv.pip_install_and_link buildpath"python"
 
     include.install "cxxtest"
     doc.install Dir["doc*"]

@@ -15,13 +15,14 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "0694adc47cbfafe050c9f3ef7c4b45f0674e6577725df4cb742a65f3c4f5e976"
-    sha256 arm64_ventura:  "85eb201d767cef3518fa339ed9f9ebf949c0226a53d50152424f10bc9b851119"
-    sha256 arm64_monterey: "31b0c97d979598140f3a7276a014b17eed4b58c0e3efb98dd38b5f8555e5ec05"
-    sha256 sonoma:         "62e25a4328ca87762ea1ddab730980b0180ac02f9a2442f432324ace089fdadd"
-    sha256 ventura:        "57beda7ec9b07a501c1542e9c23e912b6b5062159348d6b72fbc0a52d88a0abc"
-    sha256 monterey:       "e1109693709a407954927253de96c7188eb20fff708b846cebfc9a69f0eec219"
-    sha256 x86_64_linux:   "af3bb517329d277361056c89496493cc6303f0e71fcd388218d09e81a99a5489"
+    rebuild 1
+    sha256 arm64_sonoma:   "aff88c4b521abdb1e95ac8d473df537b03c80c0c455bc0baee81b9322ceccc64"
+    sha256 arm64_ventura:  "80f126b83f682ae03cd352e52c4f8fc805067aae7057b63dc492ec7f386e587a"
+    sha256 arm64_monterey: "3f2c3a9a3109d79ac75ad2a3a37b5e05a58e3400a3ce67b11340f6dfccdb1c0c"
+    sha256 sonoma:         "5ced8fced36d6864fc7c4d6778837c65604df56299b9be5ecd129e9823fe1aa1"
+    sha256 ventura:        "c0cfadac783c4ee755973e5f8238694573a944445fc2e0decffb29869244b867"
+    sha256 monterey:       "eb47843966f8c071116fe82fe71a050ee37e44d48b6c9d7a86d7689a106bfba4"
+    sha256 x86_64_linux:   "825e065f4e0f18cf70299a0f70fcafb94bed3f7da6d84d1843a3afc540e713e1"
   end
 
   depends_on "pkg-config" => :build
@@ -44,9 +45,10 @@ class Ffmpeg < Formula
   depends_on "libvmaf"
   depends_on "libvorbis"
   depends_on "libvpx"
+  depends_on "libx11"
+  depends_on "libxcb"
   depends_on "opencore-amr"
   depends_on "openjpeg"
-  depends_on "openvino"
   depends_on "opus"
   depends_on "rav1e"
   depends_on "rubberband"
@@ -69,8 +71,15 @@ class Ffmpeg < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libarchive"
+    depends_on "libogg"
+    depends_on "libsamplerate"
+  end
+
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libxext"
     depends_on "libxv"
   end
 
@@ -136,7 +145,6 @@ class Ffmpeg < Formula
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
       --enable-libopenjpeg
-      --enable-libopenvino
       --enable-libspeex
       --enable-libsoxr
       --enable-libzmq

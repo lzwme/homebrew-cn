@@ -3,20 +3,19 @@ class Xdot < Formula
 
   desc "Interactive viewer for graphs written in Graphviz's dot language"
   homepage "https:github.comjrfonsecaxdot.py"
-  url "https:files.pythonhosted.orgpackages2d747f9af65f53fda367a82b5355bc8dd55d6cc0320bbc84b233749df3fd58f0xdot-1.3.tar.gz"
-  sha256 "16dcaf7c063cc7fb26a5290a0d16606b03de178a6535e3d49dd16709b6420681"
+  url "https:files.pythonhosted.orgpackages38760503dddc3100e25135d1380f89cfa5d729b7d113a851804aa98dc4f19888xdot-1.4.tar.gz"
+  sha256 "fb029dab92b3c188ad5479108014edccb6c7df54f689ce7f1bd1c699010b7781"
   license "LGPL-3.0-or-later"
   head "https:github.comjrfonsecaxdot.py.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a5fa743c1cd886c911a0b7be7e0c0ce047cb2137456dffd781df01a70bec5139"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5fa743c1cd886c911a0b7be7e0c0ce047cb2137456dffd781df01a70bec5139"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5fa743c1cd886c911a0b7be7e0c0ce047cb2137456dffd781df01a70bec5139"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6388495e914b6a72dc929489a99f638305c3bbc1a3d9afe7f8e825dc844345e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "6388495e914b6a72dc929489a99f638305c3bbc1a3d9afe7f8e825dc844345e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "6388495e914b6a72dc929489a99f638305c3bbc1a3d9afe7f8e825dc844345e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94dafcfccfdbb31a72bfbdd8840569763505d54610b024969e2b2cffa5fe8898"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fea41f59e6cf3192c8d6bc352f1d6f219672ec3815b0317c4c86a78eae14e2dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "674284613775b93ddca70f21cc26ccbc195c24d50c2f57ce2a489dbbc661a132"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b997eba3b1a3b41a6a15e64a0728cf6f43d59ef0e62d95c227199ce4c24c461"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ca942ec49815794f7a49442c754a7ce193d1702c2002297e869f6f8dcb3f8362"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d8747eb0f97917daf9c1c46d02c1348c4e4e7586d7dce7e99caf72eba057243"
+    sha256 cellar: :any_skip_relocation, monterey:       "c479f17574ea512de3a1a152ab8423fcd95f0c2c93032233363750240b79bc12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d4ee5d0df84d35ecda8615029d5ad07067f9f8984b536750f3de9ab8a3ec47b"
   end
 
   depends_on "adwaita-icon-theme"
@@ -28,13 +27,13 @@ class Xdot < Formula
   depends_on "python@3.12"
 
   resource "graphviz" do
-    url "https:files.pythonhosted.orgpackagesa590fb047ce95c1eadde6ae78b3fca6a598b4c307277d4f8175d12b18b8f7321graphviz-0.20.1.zip"
-    sha256 "8c58f14adaa3b947daf26c19bc1e98c4e0702cdc31cf99153e6f06904d492bf8"
+    url "https:files.pythonhosted.orgpackagesfa835a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9fgraphviz-0.20.3.zip"
+    sha256 "09d6bc81e6a9fa392e7ba52135a9d49f1ed62526f96499325930e87ca1b5925d"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
+    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
   end
 
   def install

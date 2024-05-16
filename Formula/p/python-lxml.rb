@@ -15,6 +15,8 @@ class PythonLxml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b31cc2b8833b956f4c76074ecaf21e6beb505dc3913a4d9da57b8bb1cf9bc160"
   end
 
+  disable! date: "2024-08-15", because: "does not meet homebrewcore's requirements for Python library formulae"
+
   depends_on "python-setuptools" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
@@ -31,6 +33,15 @@ class PythonLxml < Formula
       python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args, "."
     end
+  end
+
+  def caveats
+    <<~EOS
+      Additional details on upcoming formula removal are available at:
+      * https:github.comHomebrewhomebrew-coreissues157500
+      * https:docs.brew.shPython-for-Formula-Authors#libraries
+      * https:docs.brew.shHomebrew-and-Python#pep-668-python312-and-virtual-environments
+    EOS
   end
 
   test do

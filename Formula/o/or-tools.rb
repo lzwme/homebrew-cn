@@ -1,10 +1,9 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https:developers.google.comoptimization"
-  url "https:github.comgoogleor-toolsarchiverefstagsv9.9.tar.gz"
-  sha256 "8c17b1b5b05d925ed03685522172ca87c2912891d57a5e0d5dcaeff8f06a4698"
+  url "https:github.comgoogleor-toolsarchiverefstagsv9.10.tar.gz"
+  sha256 "e7c27a832f3595d4ae1d7e53edae595d0347db55c82c309c8f24227e675fd378"
   license "Apache-2.0"
-  revision 1
   head "https:github.comgoogleor-tools.git", branch: "stable"
 
   livecheck do
@@ -13,13 +12,13 @@ class OrTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "16002ea5a510050c91f23a94a31126d7b5cc9b91b9d59d5899f4e20e1c15141a"
-    sha256 cellar: :any,                 arm64_ventura:  "f4882d250666ada7cef20183be163d7f62b0d55cfa5a0041df31627353c6a028"
-    sha256 cellar: :any,                 arm64_monterey: "54b1efe09dad109dde7c5d25d44fed263c87d197146f292fa7ba1063c554331e"
-    sha256 cellar: :any,                 sonoma:         "25dd1d7b9dd7b1492ea26dc2013e592721d449090b8c6b351399dadad2a717ae"
-    sha256 cellar: :any,                 ventura:        "ca3cc75acc876f9d50746bddf0d94ff984f068cd1b180c11ed3a0697085c32b5"
-    sha256 cellar: :any,                 monterey:       "381da1388883f7996e8828fb5f5dd9b68967d828843e70788c938294ae708fa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "587e8b0fbd6dceb2b4738dd9652bea93e36a0eb22499a71c5b66fe785233cfcb"
+    sha256 cellar: :any,                 arm64_sonoma:   "d8e2918aeaf4d17efe104669cdf327dba186d2c666b9ff5d32b83892a9547a1c"
+    sha256 cellar: :any,                 arm64_ventura:  "5a3e8de79956a254a4e5ad83a1e48b3063ffe13104b7d882fd6da1681c519231"
+    sha256 cellar: :any,                 arm64_monterey: "63fe54e09c7ffe4ca0e44787085da69a079cc9f37dc05e8a3b54e8a0a37de51c"
+    sha256 cellar: :any,                 sonoma:         "df862c31208cc5e35e575216e8e752bd0fcae86d200e24c7f916f1f9cdb83578"
+    sha256 cellar: :any,                 ventura:        "942c3eac68f7546a5cdea0e76a99304ecdcd71ec4821266244bab3130ed939df"
+    sha256 cellar: :any,                 monterey:       "3b8c3c6c9e9085325e0cc2c0737378afd4f88db82006e6183a282c32f0bf064d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31ef1d67aadd4c2573f79dbe79897552df37fc5e448ae94bbc23ea22efef9369"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -34,20 +33,16 @@ class OrTools < Formula
   depends_on "osi"
   depends_on "protobuf"
   depends_on "re2"
-
+  depends_on "scip"
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
 
-  # Backport fix for Protobuf 26
-  patch do
-    url "https:github.comgoogleor-toolscommite0a4dcf5a082e7f90b73708fc7ff4a5e4760ed85.patch?full_index=1"
-    sha256 "db8c40e25f68ea052dc74fc0ed163c1354667059632c8173ff42dc0c6a1f9bad"
-  end
-
   def install
+    # FIXME: Upstream enabled Highs support in their binary distribution, but our build fails with it.
     args = %w[
-      -DUSE_SCIP=OFF
+      -DUSE_HIGHS=OFF
+      -DBUILD_DEPS=OFF
       -DBUILD_SAMPLES=OFF
       -DBUILD_EXAMPLES=OFF
     ]

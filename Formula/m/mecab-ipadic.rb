@@ -15,20 +15,14 @@ class MecabIpadic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99d6b0d00f415c93713d108865f6caed947ea86168dc073b2656fc0361c4be6c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd42086389a7302de36628435004c2f8de2f55b01f6fd8b5a74529779fc2754a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd42086389a7302de36628435004c2f8de2f55b01f6fd8b5a74529779fc2754a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bdd2a69bbcbfe6e051278c94e4e19c6bfde63e2a3e525e2c57da0afb37ee5b6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bbba11df2394ce4bc3da17a720f4e69fd6081c2fab4682671f93432f05b57c3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd42086389a7302de36628435004c2f8de2f55b01f6fd8b5a74529779fc2754a"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd42086389a7302de36628435004c2f8de2f55b01f6fd8b5a74529779fc2754a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4fc2878d95314057c5d0f726cc1dacf2ce110c7e84b77806e958970f9b34ccc5"
-    sha256 cellar: :any_skip_relocation, catalina:       "90271975d35925136a14f2563e4b5201bed51b5c1fc27249d916676027c1016e"
-    sha256 cellar: :any_skip_relocation, mojave:         "30967b4167d34f05c79f185d71a40198fff4067d0cce82aed59383548c898681"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "ef5cf167b05fd74457d5c31a46750450e8f80720ebc705766ee10df6ed41a861"
-    sha256 cellar: :any_skip_relocation, sierra:         "33f42c18d7347708a56d8846c0bde5c8291b7685ce06b342e96442bca35f6663"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "9f0ae0a62141e3b28807349cb7a9560e36770acb869f4a4e7a54ea1a28ef8ba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df2442b2842ff74edaee7ff39d84ac0ee9a4e6eefd931d80eac8c181b04d1b9d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2ab9a752833b99a87201dc1217e3774ca21aac1a87971dac1196bed13d1b428a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23c4ce0042e583b45fe99a339a10c481f80d5d2055ca896924e3e4c764460dc6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68eec45d5e084ffeab687ccd95391dcbb1cfd80ddb73232253304a1ea1fb0be0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "12212f7bc769338a7747d2ac184bf669454486336ca32335f15f140d3a0121bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "d901a98d8d01869855c5e55a35f4c252749306ee5a5eb44030f8c811885b44ed"
+    sha256 cellar: :any_skip_relocation, monterey:       "6285de6570c904239f3f07fe0b8bb5c707b23c0741e36170ebc28aaed3da0b6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23ec6f722695c38dc93487d1320dc7e34c79b359647d4c8edd2cef0a045ed851"
   end
 
   depends_on "mecab"
@@ -60,6 +54,7 @@ class MecabIpadic < Formula
       dicdir = #{HOMEBREW_PREFIX}/lib/mecab/dic/ipadic
     EOS
 
-    pipe_output("mecab --rcfile=#{testpath}/mecabrc", "すもももももももものうち\n", 0)
+    assert_match "名詞", pipe_output("mecab --rcfile=#{testpath}/mecabrc", "すもももももももものうち\n", 0)
+    assert_match "名詞,固有名詞,組織", pipe_output("mecab --rcfile=#{testpath}/mecabrc", "A\n")
   end
 end

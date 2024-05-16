@@ -24,16 +24,24 @@ class Mpv < Formula
   depends_on "jpeg-turbo"
   depends_on "libarchive"
   depends_on "libass"
+  depends_on "libbluray"
   depends_on "libplacebo"
+  depends_on "libsamplerate"
   depends_on "little-cms2"
   depends_on "luajit"
   depends_on "mujs"
+  depends_on "rubberband"
   depends_on "uchardet"
   depends_on "vapoursynth"
+  depends_on "vulkan-loader"
   depends_on "yt-dlp"
+  depends_on "zimg"
+
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "pulseaudio"
   end
 
   def install
