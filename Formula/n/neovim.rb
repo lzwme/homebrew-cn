@@ -3,22 +3,11 @@ class Neovim < Formula
   homepage "https:neovim.io"
   license "Apache-2.0"
 
+  head "https:github.comneovimneovim.git", branch: "master"
+
   stable do
-    url "https:github.comneovimneovimarchiverefstagsv0.9.5.tar.gz"
-    sha256 "fe74369fc30a32ec7a086b1013acd0eacd674e7570eb1acc520a66180c9e9719"
-
-    # Remove when `mpack` resource is removed.
-    depends_on "luarocks" => :build
-    # Remove in 0.10.
-    # Upstream plan to replace this with `libtickit` which will subsume `libtermkey`.
-    # See: https:github.comneovimneovimpull25870
-    depends_on "libtermkey"
-
-    # Remove in 0.10.
-    resource "mpack" do
-      url "https:github.comlibmpacklibmpack-luareleasesdownload1.0.11libmpack-lua-1.0.11.tar.gz"
-      sha256 "a2d9ec184867ab92ad86e251908619fa13e345b8f2c9bc99df4ac63c8039d796"
-    end
+    url "https:github.comneovimneovimarchiverefstagsv0.10.0.tar.gz"
+    sha256 "372ea2584b0ea2a5a765844d95206bda9e4a57eaa1a2412a9a0726bab750f828"
 
     # Keep resources updated according to:
     # https:github.comneovimneovimblobv#{version}cmake.depsCMakeLists.txt
@@ -26,28 +15,43 @@ class Neovim < Formula
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https:github.comorgsHomebrewdiscussions3611
     resource "tree-sitter-c" do
-      url "https:github.comtree-sittertree-sitter-carchiverefstagsv0.20.5.tar.gz"
-      sha256 "694a5408246ee45d535df9df025febecdb50bee764df64a94346b9805a5f349b"
+      url "https:github.comtree-sittertree-sitter-carchiverefstagsv0.21.0.tar.gz"
+      sha256 "6f0f5d1b71cf8ffd8a37fb638c6022fa1245bd630150b538547d52128ce0ea7e"
     end
 
     resource "tree-sitter-lua" do
-      url "https:github.comMunifTanjimtree-sitter-luaarchiverefstagsv0.0.18.tar.gz"
-      sha256 "659beef871a7fa1d9a02c23f5ebf55019aa3adce6d7f5441947781e128845256"
+      url "https:github.comtree-sitter-grammarstree-sitter-luaarchiverefstagsv0.1.0.tar.gz"
+      sha256 "230cfcbfa74ed1f7b8149e9a1f34c2efc4c589a71fe0f5dc8560622f8020d722"
     end
 
     resource "tree-sitter-vim" do
-      url "https:github.comneovimtree-sitter-vimarchiverefstagsv0.3.0.tar.gz"
-      sha256 "403acec3efb7cdb18ff3d68640fc823502a4ffcdfbb71cec3f98aa786c21cbe2"
+      url "https:github.comtree-sitter-grammarstree-sitter-vimarchiverefstagsv0.4.0.tar.gz"
+      sha256 "9f856f8b4a10ab43348550fa2d3cb2846ae3d8e60f45887200549c051c66f9d5"
     end
 
     resource "tree-sitter-vimdoc" do
-      url "https:github.comneovimtree-sitter-vimdocarchiverefstagsv2.0.0.tar.gz"
-      sha256 "1ff8f4afd3a9599dd4c3ce87c155660b078c1229704d1a254433e33794b8f274"
+      url "https:github.comneovimtree-sitter-vimdocarchiverefstagsv2.5.1.tar.gz"
+      sha256 "063645096504b21603585507c41c6d8718ff3c11b2150c5bfc31e8f3ee9afea3"
     end
 
     resource "tree-sitter-query" do
-      url "https:github.comnvim-treesittertree-sitter-queryarchiverefstagsv0.1.0.tar.gz"
-      sha256 "e2b806f80e8bf1c4f4e5a96248393fe6622fc1fc6189d6896d269658f67f914c"
+      url "https:github.comnvim-treesittertree-sitter-queryarchiverefstagsv0.3.0.tar.gz"
+      sha256 "f878ff37abcb83250e31a6569e997546f3dbab74dcb26683cb2d613f7568cfc0"
+    end
+
+    resource "tree-sitter-python" do
+      url "https:github.comtree-sittertree-sitter-pythonarchiverefstagsv0.21.0.tar.gz"
+      sha256 "720304a603271fa89e4430a14d6a81a023d6d7d1171b1533e49c0ab44f1e1c13"
+    end
+
+    resource "tree-sitter-bash" do
+      url "https:github.comtree-sittertree-sitter-basharchiverefstagsv0.21.0.tar.gz"
+      sha256 "f0515efda839cfede851adb24ac154227fbc0dfb60c6c11595ecfa9087d43ceb"
+    end
+
+    resource "tree-sitter-markdown" do
+      url "https:github.comtree-sitter-grammarstree-sitter-markdownarchiverefstagsv0.2.3.tar.gz"
+      sha256 "4909d6023643f1afc3ab219585d4035b7403f3a17849782ab803c5f73c8a31d5"
     end
   end
 
@@ -57,27 +61,20 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "dceae593d688ebcab98d65cb2a8c885493ce7ceba0d87dff5e35cc9a00840382"
-    sha256 arm64_ventura:  "de0f296454dd02e139ad69f6a193e597691528988389214407c4ea08677e26fb"
-    sha256 arm64_monterey: "b7b6fc8764383e84657912cc17197f40fe112382dd98299713abc273131acaef"
-    sha256 sonoma:         "c0d17b581f7584ea6de7e131cfbb89374d9753464fc5030d262aadf186aefb11"
-    sha256 ventura:        "56162a099233d89e325b024ac3052cd7a0c7bc667071fb83f5ba4ebbeffcf8a5"
-    sha256 monterey:       "cb2591d244f1ec97c38fc5f7f0d0a358d0d03a1a94432c28c1cc7c577dddb369"
-    sha256 x86_64_linux:   "ab667b4b8ce2b55f8c654d85520831f05590b1df4c2ddd277149d24681643a20"
-  end
-
-  # TODO: Replace with single-line `head` when `lpeg`
-  #       is no longer a head-only dependency in 0.10.0.
-  head do
-    url "https:github.comneovimneovim.git", branch: "master"
-    depends_on "lpeg"
+    sha256 arm64_sonoma:   "29f56efa4ef3ad9826c6166ae3ff703143038f9b771928cb90927b88bd234e32"
+    sha256 arm64_ventura:  "031b5ec26e73d2523c561bf54ffb9984012f6fd4a8610a41dbf73048713d2060"
+    sha256 arm64_monterey: "5204adbe762b797feb2f8ca3005182eeef43e89bfe753ed8ad8c533cba6805f1"
+    sha256 sonoma:         "2415920449c19c1b50ae5c91e0aff2b54a2c20e10c6bdacfcd77f9f09defce90"
+    sha256 ventura:        "64de1ffb23f9ef9f8f51dd0d33ab19d31a290d33b1d62a422be1d4a4047820f2"
+    sha256 monterey:       "fe5c86b90ee70689f94bfe05ec95f064053ad7223090f64749de8f86b3b8465c"
+    sha256 x86_64_linux:   "77883d08b74050e4a609865c8e113f07b847e6eacc657b9597cf002bbc97395e"
   end
 
   depends_on "cmake" => :build
-  depends_on "lpeg" => :build # needed at runtime in 0.10.0
   depends_on "gettext"
   depends_on "libuv"
   depends_on "libvterm"
+  depends_on "lpeg"
   depends_on "luajit"
   depends_on "luv"
   depends_on "msgpack"
@@ -97,29 +94,13 @@ class Neovim < Formula
 
     if build.stable?
       cd "deps-buildbuildsrc" do
-        # TODO: Remove `mpack` build block in 0.10.0.
-        cd "mpack" do
-          luajit = Formula["luajit"]
-          lua_path = "--lua-dir=#{luajit.opt_prefix}"
-          deps_build = buildpath"deps-build"
-
-          # The path separator for `LUA_PATH` and `LUA_CPATH` is `;`.
-          ENV["LUA_PATH"] = "#{deps_build}sharelua5.1?.lua;;"
-          ENV["LUA_CPATH"] = "#{deps_build}liblua5.1?.so;;"
-
-          rock = "mpack-1.0.11-0.rockspec"
-          output = Utils.safe_popen_read("luarocks", "unpack", lua_path, rock, "--tree=#{deps_build}")
-          unpack_dir = output.split("\n")[-2]
-
-          cd unpack_dir do
-            system "luarocks", "make", lua_path, "--tree=#{deps_build}"
-          end
-        end
-
         Dir["tree-sitter-*"].each do |ts_dir|
           cd ts_dir do
-            cp buildpath"cmake.depscmakeTreesitterParserCMakeLists.txt", "CMakeLists.txt"
-
+            if ts_dir == "tree-sitter-markdown"
+              cp buildpath"cmake.depscmakeMarkdownParserCMakeLists.txt", "CMakeLists.txt"
+            else
+              cp buildpath"cmake.depscmakeTreesitterParserCMakeLists.txt", "CMakeLists.txt"
+            end
             parser_name = ts_dir[^tree-sitter-(\w+)$, 1]
             system "cmake", "-S", ".", "-B", "build", "-DPARSERLANG=#{parser_name}", *std_cmake_args
             system "cmake", "--build", "build"

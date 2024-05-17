@@ -1,19 +1,19 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
   homepage "https:nzbget.com"
-  url "https:github.comnzbgetcomnzbgetarchiverefstagsv24.0.tar.gz"
-  sha256 "f8b66551b943f72442a0fb00d8872a0e9c92c829e63d6a74c35888b7cb658dca"
+  url "https:github.comnzbgetcomnzbgetarchiverefstagsv24.1.tar.gz"
+  sha256 "9b823f5be183573cc51a7e4db5ac0529f5e3b98260676a7ce400784fdf230393"
   license "GPL-2.0-or-later"
   head "https:github.comnzbgetcomnzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "424609183d3f7448f1c93007757055e2b6b24959a7d3ad6c32e5bcfd0dce2f85"
-    sha256 cellar: :any,                 arm64_ventura:  "b79807e390d6cbcafce9062410448787ea9ccc2ef28844f3f68ae272416955f6"
-    sha256 cellar: :any,                 arm64_monterey: "e56130134626a68d6ac0a7017f89e633dab04a50bd8f709a9334c4907041187b"
-    sha256                               sonoma:         "816d9237ebdfb8204a7fee061e567b2650913f8f5ffc60fe4de2fe8d7323920b"
-    sha256                               ventura:        "ccc543b7ec79b1dd4746ce076a65685fa4f583badfcff792b5cb5befd9e42def"
-    sha256                               monterey:       "5a086ed7d578afc075a62e2ea5d84542f4cc94bea2686052b5649d613635264b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bda01a44e9c866bd074cafc71f2ea1afaaf960922f669653006351dc79b88617"
+    sha256 cellar: :any,                 arm64_sonoma:   "fadc9681b899c560e01f7fafaf6d5b2c4854e050860a481ddbbe791ba0347465"
+    sha256 cellar: :any,                 arm64_ventura:  "75c249c6deb824525d37ee78723253a54f446848401318eb9d5a4f4ec272ed5b"
+    sha256 cellar: :any,                 arm64_monterey: "1c7d5949aa3098db58df25a666658182a3d614a550a581ab236db8e95ce83b44"
+    sha256                               sonoma:         "f3f71c1bc5b02e2ab10703e3eaefef1b94cd4bc36f549dac8ff9e4e22e79f82b"
+    sha256                               ventura:        "c85097e3cace5713a78f7270220cca332b1e49df41016fa37678e507566b4064"
+    sha256                               monterey:       "d8de0736cb19429e21aacbcab7a46ccdf9a74fe43dffc1a3d056cc6ead716881"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f67e4fdc49065695c6eba3cd6e838072b6821a0484543c12c399b64ee421f61"
   end
 
   depends_on "cmake" => :build
@@ -23,6 +23,7 @@ class Nzbget < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
+  uses_from_macos "zlib"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

@@ -21,8 +21,10 @@ cask "whisky" do
   binary "#{appdir}Whisky.appContentsResourcesWhiskyCmd", target: "whisky"
 
   zap trash: [
+    "~LibraryApplication Scriptscom.isaacmarovitz.Whisky.WhiskyThumbnail",
     "~LibraryApplication Supportcom.isaacmarovitz.Whisky",
     "~LibraryContainerscom.isaacmarovitz.Whisky",
+    "~LibraryContainerscom.isaacmarovitz.Whisky.WhiskyThumbnail",
     "~LibraryHTTPStoragescom.isaacmarovitz.Whisky",
     "~LibraryLogscom.isaacmarovitz.Whisky",
     "~LibraryPreferencescom.isaacmarovitz.Whisky.plist",

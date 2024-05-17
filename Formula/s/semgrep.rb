@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.72.0",
-      revision: "994254efd7a28b4bbef9fe8eac38cbc88bbeac45"
+      tag:      "v1.73.0",
+      revision: "7f92bd3650603ddd653f76953af8a927cd4a33a7"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,13 +15,13 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3d560b6e5028e3a5ad95f4cd717138ca59e0f4170c83d1ca629c568b0deb80be"
-    sha256 cellar: :any,                 arm64_ventura:  "125b26876de07502a715903871d4540f442cbb738a5fa2619b279a65aa5529ad"
-    sha256 cellar: :any,                 arm64_monterey: "695cbe389752280c1a865ea4fed0897e537a6ea09e1dd60129c7a2773f7d58c7"
-    sha256 cellar: :any,                 sonoma:         "a2ee4abb6b78652d2546f8d8b05e600188e8c72b24b89391436d0ef3b6b2be4e"
-    sha256 cellar: :any,                 ventura:        "472e0b383b968580f86633282020019bebf972202f33c1d3897353b315e386b4"
-    sha256 cellar: :any,                 monterey:       "4ef2b40ba46bd4174a0750eb935f8f211045b7567447fb09aa395deaffde37b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "418d8a07e40b190a51e6bf895684453e2808abc8202adac780fe46b0fe149e58"
+    sha256 cellar: :any,                 arm64_sonoma:   "4f7e28dfc64de5027660b842806d5524608f525d99c7fff22d93032c534bd962"
+    sha256 cellar: :any,                 arm64_ventura:  "711ec11a1385d57e1d636b781b5adf633aef38da84dca275a5cfb2ac9d6dfe76"
+    sha256 cellar: :any,                 arm64_monterey: "04d43dcdfd8fe657269075650fab18fef88b58910a92cd903e0d4e60f380a79d"
+    sha256 cellar: :any,                 sonoma:         "cc4c0ca9d834b243bbcc59ffbc70d9b38b4931b8793e5967d532493531f553ef"
+    sha256 cellar: :any,                 ventura:        "17c7c360bc769dc7ee4c48ed4793c8a679fa9b4d433fd3de23808e3a1c12cd72"
+    sha256 cellar: :any,                 monterey:       "55ad5b2c7ec135d3ebdab805c5a5cabb47bcbef63941b8aade35c736d63375b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbb856353bbcb0b857349effe87490026ad139113be0f2f9800b71d32baea66e"
   end
 
   depends_on "autoconf" => :build
@@ -133,8 +133,8 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https:files.pythonhosted.orgpackages7ab12331e6b1fc8c61686dd9276f34142265462640eb0dd431246e30c4461065peewee-3.17.3.tar.gz"
-    sha256 "ef15f90b628e41a584be8306cdc3243c51f73ce88b06154d9572f6d0284a0169"
+    url "https:files.pythonhosted.orgpackages1ed422c2909b5a0b36e69471e699d673c2985f7691ca29870798a29e0a3d0e2bpeewee-3.17.5.tar.gz"
+    sha256 "e1b6a64192207fd3ddb4e1188054820f42aef0aadfa749e3981af3c119a76420"
   end
 
   resource "pygments" do
@@ -188,8 +188,8 @@ class Semgrep < Formula
   end
 
   resource "wcmatch" do
-    url "https:files.pythonhosted.orgpackages38c60c5f324561c9396868d6badf571590c1a7802a81180c3097e4dfdc2f35c0wcmatch-8.5.1.tar.gz"
-    sha256 "c0088c7f6426cf6bf27e530e2b7b734031905f7e490475fd83c7c5008ab581b3"
+    url "https:files.pythonhosted.orgpackageseac455e0d36da61d7b8b2a49fd273e6b296fd5e8471c72ebbe438635d1af3968wcmatch-8.5.2.tar.gz"
+    sha256 "a70222b86dea82fb382dd87b73278c10756c138bd6f8f714e2183128887b9eb2"
   end
 
   def install

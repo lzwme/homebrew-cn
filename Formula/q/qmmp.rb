@@ -1,8 +1,8 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https:qmmp.ylsoftware.com"
-  url "https:qmmp.ylsoftware.comfilesqmmp2.1qmmp-2.1.7.tar.bz2"
-  sha256 "e6a767bc616014493ed34b639d586a5b6f40cb28c27e21503b26325660231e73"
+  url "https:qmmp.ylsoftware.comfilesqmmp2.1qmmp-2.1.8.tar.bz2"
+  sha256 "846a6143c7a9ab29b8ec2f5da2248e41ddf2736f17c15d94b0d73b8af85a69ee"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,11 +11,11 @@ class Qmmp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "cf0a4bae1f3d7a701e0dc470bf29c1639ef8e6ce7aa7eb7223f6d92fa00dd0ad"
-    sha256 arm64_monterey: "8d32be4f308ab3e5c6539c37420eeea7ba9ff08e23ce5f8fdc3477453bdbb8eb"
-    sha256 ventura:        "444cbda7c6c256683095a73ed6bde3f259e4555adf0bdf0e7e6042c505a6b359"
-    sha256 monterey:       "eda43cfd38a2ec6fbbddc670f651eb5870cf1ec9241c1103a49586c8f263c054"
-    sha256 x86_64_linux:   "5a39825f705696e3a163bd6b668f09013e405e8622c81071b01c44a319271cf2"
+    sha256 arm64_ventura:  "9f66cd4552a1e0ebf47f042bfa4aee8da347f8496491a5a74b174ac65c7f3637"
+    sha256 arm64_monterey: "9611fcdd44de2fd101761a5609bd5aeb99b16296c7aff5d4848a069293b83182"
+    sha256 ventura:        "84c4b219c07b6aa338e3d1d92c4d3b35e23579df2e3e1fbf049d5c63438290f7"
+    sha256 monterey:       "b560ee9657fe34e1adfb9d83928223a4aeb9378a659c2b775d32641c2de55d71"
+    sha256 x86_64_linux:   "87e0e32e3a5a2f4ad894bb373cc64e1a54ae140c350ce996215353ef2317dd38"
   end
 
   depends_on "cmake"      => :build

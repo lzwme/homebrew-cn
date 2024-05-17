@@ -1,18 +1,18 @@
 class PhpCsFixer < Formula
   desc "Tool to automatically fix PHP coding standards issues"
   homepage "https:cs.symfony.com"
-  url "https:github.comPHP-CS-FixerPHP-CS-Fixerreleasesdownloadv3.57.0php-cs-fixer.phar"
-  sha256 "57bc7fb20d56c5c4d9853dd61bfa53da73ced8c2d65030a951a3a3d6b448602d"
+  url "https:github.comPHP-CS-FixerPHP-CS-Fixerreleasesdownloadv3.57.1php-cs-fixer.phar"
+  sha256 "a25dc12dbfd15f61a63cecba4af2981ef95d07b56934097721d08803de64b021"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d84a44c6a1697388333fd3f7f18c68cb0c9a2124c8644a29c19e5cbb0b950ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8bbbdebd04a7bc6e07548cd8e1cedb55f07519ff34e7ac804b987a533a7573a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19179c383a305e78a081c9e1ff3745af82dd71c289d4001c9723622b0b378b91"
-    sha256 cellar: :any_skip_relocation, sonoma:         "880096079194ecc4d7e17f7c3429a0bc483a71bbe9e1b2152b390d166901c840"
-    sha256 cellar: :any_skip_relocation, ventura:        "cbf62220c75098cd37c52286450b795e35a5d488e0315bd71e921a17a77ccec5"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e9cdba8c00154d45be166dd4ca406bb8b57f0e346cd4e9fd6ae6bd8dffb615c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "29bb334bf2a77d2cb21642772816fb666166e753bf2b5e2cbee22eb76ca01ef2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2b3cb8eb3916ed7f5a62061f71157109132130807134d7913a21597d9f535a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "01b8226d94691c9ce41715d9ac2cbe2733ba5b2bcb7f438855564efa1aaa8bbe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69fa0f227e0288078422c5b9673c0bd1bb9513bb086c0cc1ef2cabbe85447f60"
+    sha256 cellar: :any_skip_relocation, sonoma:         "18b6108a9eb7626a0e0046b630252933916548ebd17d84cceda01811bc13d536"
+    sha256 cellar: :any_skip_relocation, ventura:        "26d4273b485a3286e546de8a84ee9b00433247a4f54a80aed3df3db6920c2bf2"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6846ab47c7bda4a0981a3b39f4ee00f1c31f5f0b7ddef7611e6258f1e022af8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96617faa8aee05036d15e6bf879cc46c12697d6d3a85616e1c1b0aae642c1222"
   end
 
   depends_on "php"

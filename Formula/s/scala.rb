@@ -1,8 +1,8 @@
 class Scala < Formula
   desc "JVM-based programming language"
   homepage "https:www.scala-lang.org"
-  url "https:github.comlampepfldottyreleasesdownload3.4.1scala3-3.4.1.tar.gz"
-  sha256 "4063104c1998afc8dc6563ba5f33837f911d13bd99c0e5dc965ce56edcb0d777"
+  url "https:github.comlampepfldottyreleasesdownload3.4.2scala3-3.4.2.tar.gz"
+  sha256 "2447f095126c6532a4d0300896c87e5350e8ce6e14417c1578b4a4348187304b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,13 @@ class Scala < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d28546deb1ec852ce2756ce26c7e6a6360a9edf309d24ec9c05101556570abf3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9bc4c1eefa68cdb4b9f01fbd21296ea579a0f6dc8a1f78cfba625494cb49560"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3f22ca7949354f01ca6513cb7cb41e2300805c7c439fbe11ba5b919be34f2bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe398060d782c37d4a851cf41663a701e5d6f450b26168f999e0aa81b1627330"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a079e73558095bade0b25c37a7495c858d6b77e854bc9dc3a76d196cca07853b"
+    sha256 cellar: :any_skip_relocation, ventura:        "13d4ba4f872971a7b43437091d5f887fe79af4decaa3acfd7609a9916beb0e07"
+    sha256 cellar: :any_skip_relocation, monterey:       "3cc745af73dee67fb6362cfb9ed97b115d3453b061f38b30d3bd04b54fb2b676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f60a74e344a241c429b07d46554dfec6878b2a921895f67c91d38940f7971d98"
   end
 
   depends_on "openjdk"

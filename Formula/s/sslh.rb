@@ -1,19 +1,19 @@
 class Sslh < Formula
   desc "Forward connections based on first data packet sent by client"
   homepage "https:www.rutschle.nettechsslh.shtml"
-  url "https:www.rutschle.nettechsslhsslh-v2.1.1.tar.gz"
-  sha256 "0ad3526e072d0f0d4f77ddcdbade4bf315ebd45d468848fd3367996f414d06d7"
+  url "https:www.rutschle.nettechsslhsslh-v2.1.2.tar.gz"
+  sha256 "dce8e1a77f48017b5164486084f000d9f20de2d54d293385aec18d606f9c61d9"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   head "https:github.comyrutschlesslh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c8d72ca1b1e20dd22dc70ea8738528ea893d857e3f3db72985eb23c0efc70275"
-    sha256 cellar: :any,                 arm64_ventura:  "92d5ce443e7c6c8b506760a9f2808d9ef07d22fbb07ad085e99a60e42b4db0b8"
-    sha256 cellar: :any,                 arm64_monterey: "0b2c105d59a718c0dc1a2e329bb6ef0fffda2cf877ab8131de02d4f71237f2d7"
-    sha256 cellar: :any,                 sonoma:         "bfad2cadb0b0bba7f8908e8fde345cab9cac66f38864a44c21ad1b27f1af87b3"
-    sha256 cellar: :any,                 ventura:        "7d280d5a6c6413b401edaaec9e9eb37bd7f18feb019df53adec00f889e93f5e1"
-    sha256 cellar: :any,                 monterey:       "f3cf4d885fabf5f56faca0a5442449fe42a755d2dfd057f89a54b3878f15f46e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff0c994652a79441f11d687e0632c52d9350dd7a7fc65bf3573fdcc276bdd252"
+    sha256 cellar: :any,                 arm64_sonoma:   "48021bfa2072f6b756640100af21beeb68f5a6437bdca4242da8281c1782889b"
+    sha256 cellar: :any,                 arm64_ventura:  "5791bf236c993f9e09c8cd6233ad61f78109f40bcf5f346c42fb9577a383d4fe"
+    sha256 cellar: :any,                 arm64_monterey: "196176f2ab3b01d8644a14e76c2a1e312fef2113c2004742d2000f2146dff5a4"
+    sha256 cellar: :any,                 sonoma:         "c5d33746b8f5a26e0676e5a31d9d64541b4aadbe9ad60a45bc564032985ea41d"
+    sha256 cellar: :any,                 ventura:        "2aba25d6903363e7091983832caf60154fa48909c6cb5fe98724a08597c508b8"
+    sha256 cellar: :any,                 monterey:       "d713acd32e00dc43b72e88c0f21339f3e81807b19a9cc255204731efae28d321"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c6bbc4c2a053fc0d010ebf06322f76f23f7b61db6556c5aca729f611a22f032"
   end
 
   depends_on "libconfig"

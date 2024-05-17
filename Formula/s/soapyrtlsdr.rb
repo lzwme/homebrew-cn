@@ -22,14 +22,13 @@ class Soapyrtlsdr < Formula
   depends_on "soapysdr"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_match "Checking driver 'rtlsdr'... PRESENT",
-                 shell_output("#{Formula["soapysdr"].bin}SoapySDRUtil --check=rtlsdr")
+    output = shell_output("#{Formula["soapysdr"].bin}SoapySDRUtil --check=rtlsdr")
+    assert_match "Checking driver 'rtlsdr'... PRESENT", output
   end
 end

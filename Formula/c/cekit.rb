@@ -3,19 +3,18 @@ class Cekit < Formula
 
   desc "Container Evolution Kit"
   homepage "https://cekit.io"
-  url "https://files.pythonhosted.org/packages/2b/e8/f6f756156e26ee85221306123f60b2f1162a0d988a0e59f195d0631ed21f/cekit-4.11.0.tar.gz"
-  sha256 "5dc7ce15f903c2de20b119a18086c042a28ed0c72ef7f1d5956fa20cef2cfc32"
+  url "https://files.pythonhosted.org/packages/98/cf/091d054e0bee657f4ed0e26a2f3384007c66a9eb57b009375ed1c0848f06/cekit-4.12.0.tar.gz"
+  sha256 "797d28ac17a991643d851774a2564d02c788ca9b304517c375142374be8e17f8"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b8235b830c8e7dd338bfb42addb9d3179c7c4c5e0d0bc824848c6737fcecde19"
-    sha256 cellar: :any,                 arm64_ventura:  "4d642b65175a079ec2fbbbe6995b36c20d88e7d0f1eb08e3ab5f46a1de1091db"
-    sha256 cellar: :any,                 arm64_monterey: "7c62ef670fcb1882b695ca3bfe512bed8b93d53e83028f178cf722146fef0d7a"
-    sha256 cellar: :any,                 sonoma:         "c51087d0cfdebdc15940a74e4b7e9029702ce5fad7c7b66726fb3ebee0e7705b"
-    sha256 cellar: :any,                 ventura:        "2df927b4342a7beb27459be00101679edb3e8312a22f05589f604657f99869f6"
-    sha256 cellar: :any,                 monterey:       "23c0e0e1b0b26aabf17bbf9a6b13763f354b56663e87acff67f2b548e8ce07f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be4586c211fa17bd04756b6ee38e730a8f0dfbe59786e748494fa148c0a24ec"
+    sha256 cellar: :any,                 arm64_sonoma:   "142a2fade6ffe2936932afda28102953c94087060814f0cdb1c59fefd40f934c"
+    sha256 cellar: :any,                 arm64_ventura:  "70c98ab2a06446d7d060ccd139c1f7cb76adbfee70cc87464448d0f8590b3af9"
+    sha256 cellar: :any,                 arm64_monterey: "da1ea7dfb5ed6ef62bcde6e78d95d63285f0cfdcf3f4df285075de83240d0b11"
+    sha256 cellar: :any,                 sonoma:         "84ab2e65708925d76f7a9728ce947fbb8e7fdcc5168e8dc5e63ade19931f256f"
+    sha256 cellar: :any,                 ventura:        "94bad49481453179b1370bb3b6eace416eda2bc950dba5b63ff7d0a6ccc086db"
+    sha256 cellar: :any,                 monterey:       "74721fe4d7f7cbbbcdeea2cac13cfd8e5af5ee7a0a90b1c1d13e75be3aed695f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2710a194fd415900ebb6c822caf100acdf3506fbdc35a115f7872abb25626fe"
   end
 
   depends_on "libyaml"

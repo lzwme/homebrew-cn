@@ -1,8 +1,8 @@
 class Scc < Formula
   desc "Fast and accurate code counter with complexity and COCOMO estimates"
   homepage "https:github.comboyterscc"
-  url "https:github.comboytersccarchiverefstagsv3.3.3.tar.gz"
-  sha256 "266b7baabe345e5d9bbd6652dc556925445f4ab5c80f2492f34ebc821b34e687"
+  url "https:github.comboytersccarchiverefstagsv3.3.4.tar.gz"
+  sha256 "3097e23532d9a254fe217c81557136c7ac5aa4d48a200b61b366330e5eaf7ce4"
   license any_of: ["MIT", "Unlicense"]
 
   livecheck do
@@ -11,13 +11,13 @@ class Scc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a01034b3fe34bf8cd1bc9aed2895e5f12114fb82f0d3f77994a2d93caed8ed29"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b55e841773b06e158ec02e843e19eb449c4df699c43596f63f6a36067ea24a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2df44be0ed4778fcf45dd009fafbfd10266a05719ba3d50a1e31fc2cff75849"
-    sha256 cellar: :any_skip_relocation, sonoma:         "072471b9bfb9bca922727fad176a67dfb965804bd9e76e4c2b86f40610485480"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff7a7c4c4c20dda0db44a18f87105c447d3ac18ad37652f561d53ad9ae400617"
-    sha256 cellar: :any_skip_relocation, monterey:       "ab141710c562b784101e2414d277a0492000f789c16463a0552438ab47aa50e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d13a7060c6f50360d97b95c8371b0acf563ebd05c67d5b62c76737a14f049f7e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c47ebccd16714cb51e9c6e7c257804f42b9d47e53443bed164fb521d87650cd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99f09208465b4f88b8f7e636205b4230dcd15c2ae822d99e9409fdf357d4220d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "617b4397b1046acf9efe034ab6cda77759470314dc9028b7a9872a64ebf1ef7a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5dd97f35dbe4a095d3c61894715104224cc3ed2e0bc38c04b36b295c084a466a"
+    sha256 cellar: :any_skip_relocation, ventura:        "7a08426edc8b2c086bbabb499bbfa735697011eab70bb213f5cd82f8978f229f"
+    sha256 cellar: :any_skip_relocation, monterey:       "0777909c35d5d258b85b776e81dc48bc6d5e7b431d3f8635186633cd6045b974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb2cec92a0bb037c03c302d6279e0a9f98482584a84a496cb376a77902c1c419"
   end
 
   depends_on "go" => :build

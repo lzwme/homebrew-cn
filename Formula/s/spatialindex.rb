@@ -3,8 +3,12 @@ class Spatialindex < Formula
   homepage "https:libspatialindex.org"
   url "https:github.comlibspatialindexlibspatialindexreleasesdownload1.9.3spatialindex-src-1.9.3.tar.bz2"
   sha256 "4a529431cfa80443ab4dcd45a4b25aebbabe1c0ce2fa1665039c80e999dcc50a"
-  # `LGPL-2.0` to `MIT` for 1.8.0+ releases
   license "MIT"
+
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "62082e264a9ca877789a5d779f46a5d8df0e8f57b245d5788d67bb75035730a8"
@@ -24,12 +28,9 @@ class Spatialindex < Formula
   depends_on "cmake" => :build
 
   def install
-    ENV.cxx11
-
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

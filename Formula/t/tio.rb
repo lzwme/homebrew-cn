@@ -1,24 +1,25 @@
 class Tio < Formula
   desc "Simple TTY terminal IO application"
   homepage "https:tio.github.io"
-  url "https:github.comtiotioreleasesdownloadv3.2tio-3.2.tar.xz"
-  sha256 "9208e98dce783598a76c406f0b076f07dc0f645aaaab99ee5c3039744e8c0e2a"
+  url "https:github.comtiotioreleasesdownloadv3.3tio-3.3.tar.xz"
+  sha256 "506635b2e922306be3ded980d0b6fd8bb74647b1561b01015b769041f7ddca8d"
   license "GPL-2.0-or-later"
   head "https:github.comtiotio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "6cd4b5a965adc6f4e22103ef3fa56a025084da603bf36a22c34cfd4ba75f3d3b"
-    sha256 cellar: :any, arm64_ventura:  "0bfdd42678b0aee2ef6e1ef400967e35b7ebd5bad731387db576d9806d5c87c7"
-    sha256 cellar: :any, arm64_monterey: "4849dcfce16eacb014eb6d384398ee6f639b2b00b20f739147587cac1764bb54"
-    sha256 cellar: :any, sonoma:         "a3d1b6dc8dcf529af8fcc2a3325749c7f81ddccc46a1a6a3876d1b2532406d28"
-    sha256 cellar: :any, ventura:        "3dc1888720116a43060525f5c35e8ddacdbb2a5d68df06ef46f094004486fafe"
-    sha256 cellar: :any, monterey:       "eb47adc6d0aebcc1f6e8b2a122c9b7ffafe0ee29d7216ac976d614ceae2a4d80"
-    sha256               x86_64_linux:   "9dcca888fd2eb0da68f9947307d732e5c9a19a3dc5a650d7308bedf6db67b9e7"
+    sha256 cellar: :any, arm64_sonoma:   "a6cb9dadcf9adfa3b82a712aff9695c0ea0e1f5f285b38a24dcbb22eb220c5d2"
+    sha256 cellar: :any, arm64_ventura:  "87f5ba075fbb3408b70711f00a0ddd67f90ec651c63c45d11c09568889d44266"
+    sha256 cellar: :any, arm64_monterey: "14404c3e7e49ffb4b08ff491f8d9b6eb6ae494402a88df87d81d35cf85dfd0c5"
+    sha256 cellar: :any, sonoma:         "2f7174b84c39fd0aac91ca32a92c4bfa0078fe6929b54e4b030e41296119ed75"
+    sha256 cellar: :any, ventura:        "ac54a9c0a273a2d1b0df54e59df492a14e37bcaeff516a8b350159a3fb397348"
+    sha256 cellar: :any, monterey:       "b66bc3b66bc1dcf1f72e9391a71fc9a459715150d62dd2c12574eb5e4968a98c"
+    sha256               x86_64_linux:   "ac7e9dff65fa25a0dea1b4f43d136a1473dff90252ebed179c1fc7ad19ce1eba"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "gettext"
   depends_on "glib"
   depends_on "lua"
 

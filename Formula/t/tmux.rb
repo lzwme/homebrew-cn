@@ -13,13 +13,14 @@ class Tmux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6da34fb21fe425bf6837454e1f3e093a82eacd10bc7d0a4ed71126b7ff937042"
-    sha256 cellar: :any,                 arm64_ventura:  "0081a403f6e2d1aba9a2368e4777e7287546e82549c2bf47d38ae790e93ec123"
-    sha256 cellar: :any,                 arm64_monterey: "62af5e96316f67de165b4b737a350935044cf70ddc6fcb1b52673bbcbd590da0"
-    sha256 cellar: :any,                 sonoma:         "41ac427046afc0e8081a580ee18f3262775e23bc9f90230f670dacb5a264e2ee"
-    sha256 cellar: :any,                 ventura:        "f5326994b833cc0836b25885a0ec4355fca2f77a9fb7dcfff4d8b8fdf176dc24"
-    sha256 cellar: :any,                 monterey:       "64026baf4f5452836d465a405125f7a62a33c32b5ac99b8e9ab03c1decdd73db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e89c9d35311117bcf7838363e16c480d4512456c87f5f5e75fad3e769a503a9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "defd2c5057e1f44cd545dd8c8a79246d860a71d9be88ccbc5e8128ef2ec6f94f"
+    sha256 cellar: :any,                 arm64_ventura:  "32be1a9082ff54dc7f98f92fb91f72e00f31b9b24e3bc97434ad1a769763c057"
+    sha256 cellar: :any,                 arm64_monterey: "8903753c2b5466cb6d28524b5f9582041e0955a0a2280e6e7d269b6068cd84d2"
+    sha256 cellar: :any,                 sonoma:         "963013100e07ffe267686b21f362ad916c37070959b4d8184ac68ed1fdf1693a"
+    sha256 cellar: :any,                 ventura:        "59ce7af5006e873f2f1afb464ac9876ec111b28067495510e76c0e6a08760607"
+    sha256 cellar: :any,                 monterey:       "c6ec914966f86259aae1d8f77cc50174589013ae03733c27d644ff115269d5ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d029ba70c4e7eae66ab6928a71415bc52c4462801e3f1d8834d915b2bfffbe08"
   end
 
   head do
@@ -60,7 +61,7 @@ class Tmux < Formula
       # and uses that as the default `TERM`, but this causes issues for
       # tools that link with the very old ncurses provided by macOS.
       # https:github.comHomebrewhomebrew-coreissues102748
-      args << "--with-TERM=screen-256color"
+      args << "--with-TERM=screen-256color" if MacOS.version < :sonoma
       args << "--enable-utf8proc" if MacOS.version >= :high_sierra
     else
       args << "--enable-utf8proc"
