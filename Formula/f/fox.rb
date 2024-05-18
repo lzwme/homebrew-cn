@@ -1,27 +1,19 @@
 class Fox < Formula
   desc "Toolkit for developing Graphical User Interfaces easily"
   homepage "http:fox-toolkit.org"
-  url "http:fox-toolkit.orgftpfox-1.6.56.tar.gz"
-  sha256 "c517e5fcac0e6b78ca003cc167db4f79d89e230e5085334253e1d3f544586cb2"
+  url "http:fox-toolkit.orgftpfox-1.6.58.tar.gz"
+  sha256 "5a734b84d76d2f8e334e26ff85dd3950d3fedf53057a4d4b19fd4a712c8d5b81"
   license "LGPL-2.1-or-later"
-  revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6490dbfbbd60bd7f4b4b14fcbfe774d3e758c23486484ece21a6b09dd14867c2"
-    sha256 cellar: :any,                 arm64_ventura:  "e3a425ba8dc21f31f67bbf515030956f044f42af7e06a12ed5eea4c00b10feb0"
-    sha256 cellar: :any,                 arm64_monterey: "825cfc53620606c3366928e1e7da404bc11e31283b7de29497ba504652abe149"
-    sha256 cellar: :any,                 arm64_big_sur:  "8328ac03359070c9f20537a6277d15d8a815e35387bba1c5cdcd11af51d4baa6"
-    sha256 cellar: :any,                 sonoma:         "84fc67b6f359c4b84e833c878af73eadc1e433e83d036834eacf4fe40194e6b4"
-    sha256 cellar: :any,                 ventura:        "74567e8739db08f0369e2d6177c0b6e38d5dc862342042b164682b0cddf7d64b"
-    sha256 cellar: :any,                 monterey:       "2396ca931860ca6523b7507a084ec9c5518493be593c5cf6a0a56735619e16c5"
-    sha256 cellar: :any,                 big_sur:        "bb8bdbecbd7b8c4c8f9c3caa90f17063579e1ecbdd9beea3276330fb8116d907"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8721a37c018aedef917055183eede83c8a1cab283371e2be629d85c9e006a0b"
+    sha256 cellar: :any,                 arm64_sonoma:   "a7d81645a79ad7dc2cfef61762146266c510354d0b8f47c58acc329d65f1adc2"
+    sha256 cellar: :any,                 arm64_ventura:  "254668d35c9764f82cb174d6a5ea420497a25f4c73e897163daa0ebcb7da69cc"
+    sha256 cellar: :any,                 arm64_monterey: "ebb32475c51e23f89bd5e88b425a90a074d9cfaf6863c07e21db2eba5eafd818"
+    sha256 cellar: :any,                 sonoma:         "e325ea4ff9c8fb5ab63b3edb2600205838b08434f542ab9b0642968afcb7fa90"
+    sha256 cellar: :any,                 ventura:        "17702bfb3962e3d989912ae9da1ba0aebff4da22d827b47aaaffbc249b528d5b"
+    sha256 cellar: :any,                 monterey:       "d5ac193139082652a763aa9c33f805cd7afe1b448799e5db198d6cdc706efcf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a67a558528e60b0476f36bc1b2ea18f93e1b751c0b0fa2b526f3d473dcea7b53"
   end
-
-  # There have been numerous attempts to update this to 1.6.57 (latest stable)
-  # with no success. If you are reading this and can fix the build, please open
-  # a PR and we can undeprecate this formula
-  deprecate! date: "2023-09-03", because: :does_not_build
 
   depends_on "fontconfig"
   depends_on "freetype"

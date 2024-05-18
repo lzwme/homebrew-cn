@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackages3ca5840cef5c1e65815449051dc4abd1a22d970a2f7e9017f5dd5d23e8ac6f3fcfn_lint-0.87.2.tar.gz"
-  sha256 "00d47406841899c05ab6a0708df3f4e32bd7462be2097c10371d744c0050775e"
+  url "https:files.pythonhosted.orgpackages513b6e25b45342f6e929cfaf873355d21d278e41afd78aa9a4cbe0c0cc8cc6a9cfn_lint-0.87.3.tar.gz"
+  sha256 "4c4f1717cba9b9b579f95687ffa71a8d740b7e1712f6e315c723aac9bb0279d7"
   license "MIT-0"
 
   livecheck do
@@ -13,13 +13,13 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3ea52d203dab2bf63cb509acac05a2a42cb0207033f3fda67c2536a7b959cbbc"
-    sha256 cellar: :any,                 arm64_ventura:  "38c03ca6d12ceaa1262a3bf54d339e96ea7b137f93eb771be22196cf313a6768"
-    sha256 cellar: :any,                 arm64_monterey: "bfb7cf7221c3ecb0f49e0562f4db825bc82735de79b6c55025eb40b2451862ed"
-    sha256 cellar: :any,                 sonoma:         "b9c0bffa7980b8fef7f354a783193e88858a024f836a1f742669cec9e478e8ec"
-    sha256 cellar: :any,                 ventura:        "67b6cf1cab35996323fbc77382707a4d784ad6236e401909f864f511eb409347"
-    sha256 cellar: :any,                 monterey:       "45afb5a66b5d5b354fc3405c676eb436a8a864528677ac06d5694b404a76a1b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc1a4a340ae44b71cb266af084a22fb8cedad0800b97b77ed04da66743e8c018"
+    sha256 cellar: :any,                 arm64_sonoma:   "68d8e165bd9bb4fbeb6bfd870455f09cef14ec53991b4d5f9c9d209f31c68143"
+    sha256 cellar: :any,                 arm64_ventura:  "b90ad0833effb61f30873f035b07875086bbef83892fed5c33a2d3398840fbff"
+    sha256 cellar: :any,                 arm64_monterey: "66890fff830bd0a1f74d02106da6f6f9d82861d7a05e41fc16d81ac7e30a74c0"
+    sha256 cellar: :any,                 sonoma:         "5f28043bdfa26471a53e4eb3e95410d3e6082ab7a3ece3d71a5a506a4a203acf"
+    sha256 cellar: :any,                 ventura:        "ed4bd7d3c20795852bfe6ea0cdf3f20d81faeb5592a2870e283eb7bb2f3d363d"
+    sha256 cellar: :any,                 monterey:       "2348f8ecdad5d3d3581af5d373215c11c6bb63ce9462a71dbbbe0bb606acc4f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2fb9a60d403188b10012108f68ca539b602d9fe20057df2ca65dc4591708a58"
   end
 
   depends_on "rust" => :build
@@ -37,18 +37,18 @@ class CfnLint < Formula
   end
 
   resource "aws-sam-translator" do
-    url "https:files.pythonhosted.orgpackages4db017012cf62577c30c8a9fa71696cf86f77f04219acf1c0889cca38fc8b665aws_sam_translator-1.88.0.tar.gz"
-    sha256 "e77c65f3488566122277accd44a0f1ec018e37403e0d5fe25120d96e537e91a7"
+    url "https:files.pythonhosted.orgpackages0381448cc26a70366e681eeb4ae868e1e5519f5d2d3d8602dd69731f236cbd43aws_sam_translator-1.89.0.tar.gz"
+    sha256 "fff1005d0b1f3cb511d0ac7e85f54af06afc9d9e433df013a2338d7a0168d174"
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesed8d630018078458d3b05fee5f68a5a20f7f3452137c63043f29d805aa4657e0boto3-1.34.101.tar.gz"
-    sha256 "1d854b5880e185db546b4c759fcb664bf3326275064d2b44229cc217e8be9d7e"
+    url "https:files.pythonhosted.orgpackages2598c5a4931597f0a960a05ad1b3509d6286f33e34191a6fa58add18b34d247cboto3-1.34.107.tar.gz"
+    sha256 "2500963ddd7fee0c891db596ed73f203a62e8ee6faf1543c7a14169b1d557bc3"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesba4c4b65cad9a70cabbc85b1a462cacecdf2151974715fab940e08a9fcf5ea2cbotocore-1.34.101.tar.gz"
-    sha256 "01f3802d25558dd7945d83884bf6885e2f84e1ff27f90b5f09614966fe18c18f"
+    url "https:files.pythonhosted.orgpackages8e5ae3ab5eb9efe70238cf0be3db8b56bc037d98fe01cfbdfe1374fa5d413e58botocore-1.34.107.tar.gz"
+    sha256 "4620286a814c3c8abc59145203650a6b2a4f538e887552fa1bc6896b6d11b28b"
   end
 
   resource "jmespath" do
@@ -132,8 +132,8 @@ class CfnLint < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesc0d687709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5afregex-2024.4.28.tar.gz"
-    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "rpds-py" do

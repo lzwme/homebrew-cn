@@ -70,6 +70,7 @@ class Csound < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libx11"
   end
 
   conflicts_with "libextractor", because: "both install `extract` binaries"

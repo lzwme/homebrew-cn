@@ -1,8 +1,8 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
   homepage "https:witness.dev"
-  url "https:github.comin-totowitnessarchiverefstagsv0.3.1.tar.gz"
-  sha256 "997800a7c749b4aa0dd0a64005d0995a4083388e0a6f96483ac687cc08d030e8"
+  url "https:github.comin-totowitnessarchiverefstagsv0.4.0.tar.gz"
+  sha256 "9fc50844292afd333fc47de4858e38a9af5d92deeec5a804d6831f2bb6a15f5f"
   license "Apache-2.0"
   head "https:github.comin-totowitness.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Witness < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e8c2d7803f8d97b43f0f255c85cccbfd86ee27b277b1372cc1d4934d00737c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d333364e7380f42bdf1e4642500136256dc8a052f91ebe1627e0b0a62fe3e3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b91f90128da755b9ca9b9e05c055cdcb6a7698376f430dc571c1a91468ac61b2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1a88d2cc9eff2e6eab5e47c75bd934617f5c4bbe34395324c7a68cae6b557fc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "876cc18f0d43a34e76897086971752a54d0c41a61dea945d1e616e41a6a72ea2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f1708d9033ca718eb392090bb05898334e28ea8cd5b877015f608deed420f200"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5795a9cb1e8d73b58e4525838e8ba286ed1a8954d03a4927674c5f97903a3d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b94c89af16800641e2bd0ceacc53ca8bbedd5a5df1170ba2e620949772d17d57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d096a520ba138920288d2a3a3f6a515ce5515e0937b00443528c51ebb8eea10"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c4e727d83da1923b354970984e1583ad2040eb1a94689f950104698dcc27dad2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f66410acd71e2b7bbef7c518d0a80394b5804a3016224fbe4090938fd1526f68"
+    sha256 cellar: :any_skip_relocation, ventura:        "84f30d20a3322731a5180233f9fbd5941a1e44410910a5936ea056cb16b360ea"
+    sha256 cellar: :any_skip_relocation, monterey:       "18af13c25d7a60ec005cd55a7dfca47ec91e8a96b48454265de4cd94e2abfcf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4794e07cea3b875f6f913c5a0596442174345bb9531bf577251c562addb9237b"
   end
 
   depends_on "go" => :build

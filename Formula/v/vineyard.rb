@@ -6,16 +6,16 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.22.1v6d-0.22.1.tar.gz"
   sha256 "16aea4dc63830925c2d8cd89dc36580ff80dd7610793d56ae5d0d09972cf2fcc"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    sha256                               arm64_sonoma:   "56339f3f754ed867a6dece07a2565bdb7b9ddedf388d20eda69a843107250a3a"
-    sha256                               arm64_ventura:  "2b02e0ce1f4b2e6d42554419b88ec1862101d5841e64d9eb2623e21ed3ff828d"
-    sha256                               arm64_monterey: "304541be3ebcb94d6f00ed28279cc593baab016520b7ea7387098bd84a29cc18"
-    sha256                               sonoma:         "acb483db8e345b5a91df882d97df84800799ac3ff3c2600a8a140e7f3831b0f0"
-    sha256                               ventura:        "84d14c81c3a7b4e60b790c44837f468e9cdfe11b26584cb4a987699e32bfaad3"
-    sha256                               monterey:       "c29a6e63372299c6700a990b79a5090d96f7afd384fd800e98df8e0473c8595d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a16d4ca1cf3e9967c903e401f2b5adac1713efc914034626c1fa22fa2392adc2"
+    sha256                               arm64_sonoma:   "bbdded3a7cb58ebb1923715759a7cc40f025e1f06fe0eafa24f39a76b796a236"
+    sha256                               arm64_ventura:  "ac37340083f7dc68b573655fb263b47fad5b668ff5675357fbe0dfc518eb6854"
+    sha256                               arm64_monterey: "f8decbbe3c715ba009173234436fcb4f7ef5004a6f35a7e2857dc1113b110d52"
+    sha256                               sonoma:         "3aad1f3e27bfc5bfd21d9a1d90d7162f4f7fa0b123bf69a5daa46dd09daf8001"
+    sha256                               ventura:        "b730aed3c33f043aeec69a025191f67ed66e9fe396ced82add63fedc326c644b"
+    sha256                               monterey:       "7c969cd82e4104f47178752b5dabddfb9c81024e7ac7e281dfea885e7dd69ada"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1538d53430b9523790ed7efaff5a338c6cc1b7f281f59a7d5b6acb3d039e3836"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -23,6 +23,7 @@ class Vineyard < Formula
   depends_on "python@3.12" => :build
   depends_on "apache-arrow"
   depends_on "boost"
+  depends_on "cpprestsdk"
   depends_on "etcd"
   depends_on "etcd-cpp-apiv3"
   depends_on "gflags"
@@ -34,6 +35,12 @@ class Vineyard < Formula
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "redis"
+
+  on_macos do
+    depends_on "abseil"
+    depends_on "c-ares"
+    depends_on "re2"
+  end
 
   fails_with gcc: "5"
 

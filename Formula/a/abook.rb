@@ -28,18 +28,21 @@ class Abook < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gettext"
+  depends_on "gettext" => :build
   depends_on "readline"
+
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # fix "undefined symbols" error caused by C89 inline behaviour
     inreplace "database.c", "inline int", "int"
 
-    system "autoreconf", "-ivf"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

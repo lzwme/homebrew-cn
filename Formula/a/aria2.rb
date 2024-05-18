@@ -16,7 +16,6 @@ class Aria2 < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "libssh2"
   depends_on "openssl@3"
   depends_on "sqlite"
@@ -24,12 +23,15 @@ class Aria2 < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     ENV.cxx11
 
-    args = %W[
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
+      --disable-silent-rules
       --with-libssh2
       --without-gnutls
       --without-libgmp
@@ -44,7 +46,7 @@ class Aria2 < Formula
       args << "--with-openssl"
     end
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
 
     bash_completion.install "docbash_completionaria2c"

@@ -23,21 +23,20 @@ class Ascii2binary < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb4b9cc5fe32d49bbb8e0b8acd72396dbbd8fde547777f441b0deab8be17ac57"
   end
 
-  depends_on "gettext"
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
-    gettext = Formula["gettext"]
-    ENV.append "CFLAGS", "-I#{gettext.include}"
-    ENV.append "LDFLAGS", "-L#{gettext.lib}"
-    ENV.append "LDFLAGS", "-lintl" if OS.mac?
+    if OS.mac?
+      gettext = Formula["gettext"]
+      ENV.append "CFLAGS", "-I#{gettext.include}"
+      ENV.append "LDFLAGS", "-L#{gettext.lib}"
+      ENV.append "LDFLAGS", "-lintl"
+    end
 
-    system "./configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--disable-debug",
-                          "--disable-dependency-tracking"
-
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
-    man1.install "ascii2binary.1", "binary2ascii.1"
   end
 
   test do

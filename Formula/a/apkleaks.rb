@@ -3,19 +3,18 @@ class Apkleaks < Formula
 
   desc "Scanning APK file for URIs, endpoints & secrets"
   homepage "https:github.comdwisiswant0apkleaks"
-  url "https:files.pythonhosted.orgpackages8e7f95822c947138c8fc127d88128fb8fa9b0ed37a7fddf0b840685075ee288eapkleaks-2.6.1.tar.gz"
-  sha256 "47eea4683a9916e4099d05776be2ec3892791f5fd854f49cb5ed489cc9867c62"
+  url "https:files.pythonhosted.orgpackages40888aa234dd5f7e632605dcce90d076982d4d1124d7278991ee54ec9e543cefapkleaks-2.6.2.tar.gz"
+  sha256 "f6f767dd758d2fd1395186709e736402ab6f913a6172e29220d6581035aa76fc"
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d8df4ef44a466a0e00e9abbe8a375322148f34fc39621c88d22a1fc37ea34c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ecd4655efb2c5e266812c035008f0c0b03dcb3e6310d2e4dbf8ed85796991d8"
-    sha256 cellar: :any,                 arm64_monterey: "cb27c0247f7325fad32bef4085ce3369f6745181fffcb5de9b9b9d131373f7bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f3dbb82d41744318d240dda745c47735f1be1d428d9ef9775e6b72d793a052f"
-    sha256 cellar: :any_skip_relocation, ventura:        "d23a7d5319c5adcbb6a43a4e7d1f8f9b9edae999b3c78fb5efbf175ca2d7d200"
-    sha256 cellar: :any,                 monterey:       "a1163739b862fcb3d329c98df1e402b90a1ee20156f0c42bf25a933002e99c06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f79de53f7223113dcefdb5cfc78efcb17e6d17a7bf40987f186db5e6dc955ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "517dfc6f423e2eb7a1c0deba2598bcb907132efe04ca2d71775ffa6ddef65a23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4cb660dc81eabb317ab1c16e595c05436d0237b7202d08f1dc1f8360902dd34"
+    sha256 cellar: :any,                 arm64_monterey: "b1ecd3774113cf9c92c3a03e1394572b83f297ddf0b4070c9d2d7df6a32986e6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9dbf55df4f43d7f6bdeeead47275103103118abb755c5f3e30a7685e1e841253"
+    sha256 cellar: :any_skip_relocation, ventura:        "aab0991cebc6c97ac6bd6200a6bc7deafdf56a6f59bdc899acccc624fe664009"
+    sha256 cellar: :any,                 monterey:       "ed06ed10e8816eb47099d18a520c238856402f2a9a08672fdc3f645b7f53d5c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee5126a2a63fa15c5aca1a5b10912359fd1d49b736ef3e0510fd89510097b345"
   end
 
   depends_on "jadx"
@@ -35,24 +34,16 @@ class Apkleaks < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "pyaxmlparser" do
-    url "https:files.pythonhosted.orgpackagese37cfae519a8eb4e91587b2b4bf9b1ff738451984687a2cfff778df71b74727dpyaxmlparser-0.3.30.tar.gz"
-    sha256 "ce301723fa7f05b3c2869f18f7af9e75abfbda362dc77789f668bb80287c9b3b"
-  end
-
-  # Drop distutilssetuptools
-  # https:github.comdwisiswant0apkleakspull81
-  patch do
-    url "https:github.comdwisiswant0apkleakscommitfc8871ac605447db1456cb1189fa79e673f71e1b.patch?full_index=1"
-    sha256 "5c0eda68fbba60b9ecb8471f7a3ec92c2cb34988ca98188daad3af572bb09b83"
+    url "https:files.pythonhosted.orgpackages1e1f7a7318ad054d66253d2b96e2d9038ea920f17c8a9bd687cdcfa16a655bdfpyaxmlparser-0.3.31.tar.gz"
+    sha256 "fecb858ff1fb456466f8dcdcd814207b4c15edb95f67cfe0a38c7d7cd4a28d4d"
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
   end
 

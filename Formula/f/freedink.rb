@@ -3,6 +3,7 @@ class Freedink < Formula
   homepage "https:www.gnu.orgsoftwarefreedink"
   url "https:ftp.gnu.orggnufreedinkfreedink-109.6.tar.gz"
   sha256 "5e0b35ac8f46d7bb87e656efd5f9c7c2ac1a6c519a908fc5b581e52657981002"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do
@@ -64,6 +65,6 @@ class Freedink < Formula
 
   test do
     assert_match "GNU FreeDink 109.6", shell_output("#{bin}freedink -vwis")
-    assert FileTest.exists?("#{share}dinkdinkDink.dat")
+    assert_predicate share"dinkdinkDink.dat", :exist?
   end
 end

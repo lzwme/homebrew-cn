@@ -24,19 +24,18 @@ class YubicoPivTool < Formula
   depends_on "cmake" => :build
   depends_on "gengetopt" => :build
   depends_on "help2man" => :build
-  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "check"
   depends_on "openssl@3"
+
   uses_from_macos "pcsc-lite"
+  uses_from_macos "zlib"
 
   def install
-    mkdir "build" do
-      args = []
-      args << "-DCMAKE_C_FLAGS=-I#{Formula["pcsc-lite"].opt_include}/PCSC" unless OS.mac?
-      system "cmake", "..", *std_cmake_args, *args
-      system "make", "install"
-    end
+    ENV.append_to_cflags "-I#{Formula["pcsc-lite"].opt_include}/PCSC" unless OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

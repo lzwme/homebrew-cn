@@ -1,6 +1,6 @@
 cask "fiji" do
-  version "20240418-1417"
-  sha256 "20ec3351c99ef57255a10db31810caddeb514979b4e29489176e4526b0da757a"
+  version "20240517-1417"
+  sha256 "05188460c24f2824e15bf491c37560993a1eb5e3b0fb6824ce613bfafff77723"
 
   url "https://downloads.imagej.net/fiji/archive/#{version}/fiji-macosx.zip",
       verified: "downloads.imagej.net/fiji/archive/"

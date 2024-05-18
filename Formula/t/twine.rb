@@ -3,20 +3,19 @@ class Twine < Formula
 
   desc "Utilities for interacting with PyPI"
   homepage "https:github.compypatwine"
-  url "https:files.pythonhosted.orgpackagesd3cc8025ad5102a5c754023092143b8b511e184ec087dfbfb357d7d88fb82bfftwine-5.0.0.tar.gz"
-  sha256 "89b0cc7d370a4b66421cc6102f269aa910fe0f1861c124f573cf2ddedbc10cf4"
+  url "https:files.pythonhosted.orgpackages666ddcf5c58dbc468b52f20f2de0470caaae09a7ab91d847f7ca4a786137ca4ftwine-5.1.0.tar.gz"
+  sha256 "4d74770c88c4fcaf8134d2a6a9d863e40f08255ff7d8e2acb3cbbd57d25f6e9d"
   license "Apache-2.0"
-  revision 1
   head "https:github.compypatwine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9b78bb42d07d18af09b5e1f8456a58ccedbe184f8c6acf7d76c588ccb82771e4"
-    sha256 cellar: :any,                 arm64_ventura:  "8fa09b6cdea58f8e113b2d84e06676088324b0f30541ac65443c277b664734df"
-    sha256 cellar: :any,                 arm64_monterey: "fb0555b4f8aa3ee291892099dddc67a7d6e83f00c180da432e24ae8eef803f06"
-    sha256 cellar: :any,                 sonoma:         "971317111e70a1935620cb3ac1a466876c9a0b309d1b4499caa6411943433397"
-    sha256 cellar: :any,                 ventura:        "0ea0e20888af8cda7f1eeea9cce7ed50677f9314cdac231e9d595dcebc591006"
-    sha256 cellar: :any,                 monterey:       "79a737736ead73d5d3cceb5454376e8c9cc4230bf5eb835d99b76e4cb8e55119"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c3748cb0278024a6a99e83ab86fc8e82b6f79e55fd4ad56a7df56262bdb977b"
+    sha256 cellar: :any,                 arm64_sonoma:   "8e914259f2462ba16d7237264f23d1b2ff9a27c1a6ba33412ebf7fafe1abe082"
+    sha256 cellar: :any,                 arm64_ventura:  "b7da1d5c566edab6ce27a904572e521259136fb8f6a58b6387feff53b2ca031b"
+    sha256 cellar: :any,                 arm64_monterey: "304337c6de1329cafa9864f8d5d7a32310a1e043fa474a8e291e245669430ad8"
+    sha256 cellar: :any,                 sonoma:         "05641b9d4d272265846dba9620d71cef1d23641037b1c21a8020855d7cd21116"
+    sha256 cellar: :any,                 ventura:        "b00f9a1247117a7a8cedd3c2af5de3bdae57d9deb5a266b8426ce1c6b7bda8a4"
+    sha256 cellar: :any,                 monterey:       "29c057bf1587a4b8a131bcdf2a6a292730c830993681730edf3070cfd53536a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f86b05d9efa3662bfa6d2b2872e8c66332312b1b80709640b9f19c0de80423b"
   end
 
   depends_on "rust" => :build
@@ -29,8 +28,8 @@ class Twine < Formula
   end
 
   resource "docutils" do
-    url "https:files.pythonhosted.orgpackages21ffc495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844cdocutils-0.21.1.tar.gz"
-    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
+    url "https:files.pythonhosted.orgpackagesaeedaefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9docutils-0.21.2.tar.gz"
+    sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
   end
 
   resource "idna" do
@@ -54,13 +53,13 @@ class Twine < Formula
   end
 
   resource "jaraco-functools" do
-    url "https:files.pythonhosted.orgpackages577cfe770e264913f9a49ddb9387cca2757b8d7d26f06735c1bfbb018912afcejaraco.functools-4.0.0.tar.gz"
-    sha256 "c279cb24c93d694ef7270f970d499cab4d3813f4e08273f95398651a634f0925"
+    url "https:files.pythonhosted.orgpackagesbc66746091bed45b3683d1026cb13b8b7719e11ccc9857b18d29177a18838dc9jaraco_functools-4.0.1.tar.gz"
+    sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackages18eccc0afdcd7538d4942a6b78f858139120a8c7999e554004080ed312e43886keyring-25.1.0.tar.gz"
-    sha256 "7230ea690525133f6ad536a9b5def74a4bd52642abe594761028fc044d7c7893"
+    url "https:files.pythonhosted.orgpackages3ee954f232e659f635a000d94cfbca40b9d5d617707593c3d552ec14d3ba27f1keyring-25.2.1.tar.gz"
+    sha256 "daaffd42dbda25ddafb1ad5fec4024e5bbcfe424597ca1ca452b299861e49f1b"
   end
 
   resource "markdown-it-py" do
@@ -89,8 +88,8 @@ class Twine < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "readme-renderer" do
@@ -124,8 +123,8 @@ class Twine < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages3eef65da662da6f9991e87f058bc90b91a935ae655a16ae5514660d6460d1298zipp-3.18.1.tar.gz"
-    sha256 "2884ed22e7d8961de1c9a05142eb69a247f120291bc0206a00a7642f09b5b715"
+    url "https:files.pythonhosted.orgpackages16e58efdac4c61bd5fd24f4face2295103f42790ad2ad0f322e3a81bb8391812zipp-3.18.2.tar.gz"
+    sha256 "6278d9ddbcfb1f1089a88fde84481528b07b0e10474e09dcfe53dad4069fa059"
   end
 
   def install

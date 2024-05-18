@@ -19,19 +19,21 @@ class AzureStorageCpp < Formula
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "cpprestsdk"
-  depends_on "gettext"
   depends_on "openssl@3"
+
+  uses_from_macos "libxml2"
 
   on_linux do
     depends_on "util-linux"
   end
 
   def install
-    system "cmake", "Microsoft.WindowsAzure.Storage",
+    system "cmake", "-S", "Microsoft.WindowsAzure.Storage", "-B", "build",
                     "-DBUILD_SAMPLES=OFF",
                     "-DBUILD_TESTS=OFF",
                     *std_cmake_args
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

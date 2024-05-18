@@ -18,9 +18,13 @@ class Gawk < Formula
     sha256 x86_64_linux:   "a9c75546a0a9e37feed5cbe1512c3d1ff31f27349c5e63ed1934a60b2f25f576"
   end
 
-  depends_on "gettext"
+  depends_on "gmp"
   depends_on "mpfr"
   depends_on "readline"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   on_linux do
     conflicts_with "awk", because: "both install an `awk` executable"
@@ -29,10 +33,8 @@ class Gawk < Formula
   def install
     system "./bootstrap.sh" if build.head?
 
-    args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
+    args = %w[
+      --disable-silent-rules
       --without-libsigsegv-prefix
     ]
     # Persistent memory allocator (PMA) is enabled by default. At the time of
@@ -40,7 +42,7 @@ class Gawk < Formula
     # native ARM binary with such feature would not work. See:
     # https://git.savannah.gnu.org/cgit/gawk.git/tree/README_d/README.macosx?h=gawk-5.2.1#n1
     args << "--disable-pma" if OS.mac? && Hardware::CPU.arm?
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
 
     system "make"
     if which "cmp"

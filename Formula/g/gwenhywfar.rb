@@ -1,13 +1,13 @@
 class Gwenhywfar < Formula
   desc "Utility library required by aqbanking and related software"
-  homepage "https://www.aquamaniac.de/rdm/projects/gwenhywfar"
-  url "https://www.aquamaniac.de/rdm/attachments/download/501/gwenhywfar-5.10.2.tar.gz"
+  homepage "https:www.aquamaniac.derdmprojectsgwenhywfar"
+  url "https:www.aquamaniac.derdmattachmentsdownload501gwenhywfar-5.10.2.tar.gz"
   sha256 "60a7da03542865501208f20e18de32b45a75e3f4aa8515ca622b391a2728a9e1"
   license "LGPL-2.1-or-later"
 
   livecheck do
-    url "https://www.aquamaniac.de/rdm/projects/gwenhywfar/files"
-    regex(/href=.*?gwenhywfar[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:www.aquamaniac.derdmprojectsgwenhywfarfiles"
+    regex(href=.*?gwenhywfar[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
@@ -22,38 +22,46 @@ class Gwenhywfar < Formula
     sha256 x86_64_linux:   "771e98641328a98fbf0a789d12c6a0bb59a1f083c7142e2b25807505f58ce7cc"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "gettext" => :build
   depends_on "cmake" => :test
-  depends_on "gettext"
   depends_on "gnutls"
   depends_on "libgcrypt"
+  depends_on "libgpg-error"
   depends_on "openssl@3"
   depends_on "pkg-config" # gwenhywfar-config needs pkg-config for execution
   depends_on "qt@5"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   fails_with gcc: "5"
+
+  # Fix -flat_namespace being used on Big Sur and later.
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+  end
 
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    if DevelopmentTools.clang_build_version >= 1500
+      ENV.append_to_cflags "-Wno-int-conversion -Wno-incompatible-function-pointer-types"
+    end
 
     inreplace "gwenhywfar-config.in.in", "@PKG_CONFIG@", "pkg-config"
-    # Fix `-flat_namespace` flag on Big Sur and later.
-    system "autoreconf", "--force", "--install", "--verbose"
     guis = ["cpp", "qt5"]
     guis << "cocoa" if OS.mac?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-guis=#{guis.join(" ")}"
+    system ".configure", "--disable-silent-rules",
+                          "--with-guis=#{guis.join(" ")}",
+                          *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
-      #include <gwenhywfar/gwenhywfar.h>
+    (testpath"test.c").write <<~EOS
+      #include <gwenhywfargwenhywfar.h>
 
       int main()
       {
@@ -61,13 +69,13 @@ class Gwenhywfar < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}/gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_c"
-    system "./test_c"
+    system ENV.cc, "test.c", "-I#{include}gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_c"
+    system ".test_c"
 
-    system ENV.cxx, "test.c", "-I#{include}/gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_cpp"
-    system "./test_cpp"
+    system ENV.cxx, "test.c", "-I#{include}gwenhywfar5", "-L#{lib}", "-lgwenhywfar", "-o", "test_cpp"
+    system ".test_cpp"
 
-    (testpath/"CMakeLists.txt").write <<~EOS
+    (testpath"CMakeLists.txt").write <<~EOS
       project(test_gwen)
 
       find_package(Qt5 REQUIRED Core Widgets)
@@ -85,7 +93,7 @@ class Gwenhywfar < Formula
     EOS
 
     args = std_cmake_args
-    args << "-DQt5_DIR=#{Formula["qt@5"].opt_prefix/"lib/cmake/Qt5"}"
+    args << "-DQt5_DIR=#{Formula["qt@5"].opt_prefix"libcmakeQt5"}"
 
     system "cmake", testpath.to_s, *args
     system "make"

@@ -4,17 +4,17 @@ class Opencoarrays < Formula
   url "https:github.comsourceryinstituteOpenCoarraysreleasesdownload2.10.2OpenCoarrays-2.10.2.tar.gz"
   sha256 "e13f0dc54b966b0113deed7f407514d131990982ad0fe4dea6b986911d26890c"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https:github.comsourceryinstituteopencoarrays.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "86b885bec80353c13fc3b5251709c25eb2301b6882d318f6accef9e6422c2061"
-    sha256 cellar: :any,                 arm64_ventura:  "1ad5ad000ced5ecc2f25406e853b472eb021cffc1e69bc4323ae2855a84101cc"
-    sha256 cellar: :any,                 arm64_monterey: "d8e3fac0c680d1b042c1230922b81de76a3d219ac08d6966b29ac0ec4b004c83"
-    sha256 cellar: :any,                 sonoma:         "0f7f0c8f1bce8aee7dbae34223cdba331497d553e03e472bb9a629bbb677748a"
-    sha256 cellar: :any,                 ventura:        "7a41f847a2485f22a93d8115cda03992d187fa5679fc0483937167a367478c7b"
-    sha256 cellar: :any,                 monterey:       "f17b31f7f4321aa6259fa6f8b0e56dededec125eaf55661797c9e3e4db48611c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d204334861ce7332d844002f7cd8ec6a0ad56f991ed6a578130ff5ca5afab121"
+    sha256 cellar: :any,                 arm64_sonoma:   "184ee097de916fb71dbe738503878b7065b08b18f7f6d845ed840c1965fdf911"
+    sha256 cellar: :any,                 arm64_ventura:  "99a88e8b98865f4e49a6b45668ae9ce17a2cb16a16a27601592867431f0556ed"
+    sha256 cellar: :any,                 arm64_monterey: "2a75417b713d0ac5bd92e3fa3f8c9b5f6d2d6ce3112e760bca0857d9204cbcb4"
+    sha256 cellar: :any,                 sonoma:         "789d54b40e2e9e7d887f579e7fda857a85ee724ebb719c476acf0515276cab07"
+    sha256 cellar: :any,                 ventura:        "849c075171928fac437f75c62e716a0fbb646ddcdfab88852d4919d9309fde25"
+    sha256 cellar: :any,                 monterey:       "19bc44371dbcb4bd9fc179ce0e5c2e4d29658dfb36d37017d85188c80c6b0411"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b39e050aa00ddf5a88737051b4984cac7ea0550058ab6c036872c2252cffaa9"
   end
 
   depends_on "cmake" => :build

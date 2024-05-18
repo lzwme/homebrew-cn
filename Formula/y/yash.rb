@@ -21,7 +21,11 @@ class Yash < Formula
     depends_on "asciidoc" => :build
   end
 
-  depends_on "gettext"
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     ENV["XML_CATALOG_FILES"] = etc"xmlcatalog" if build.head?

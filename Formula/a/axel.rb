@@ -22,18 +22,22 @@ class Axel < Formula
     depends_on "autoconf-archive" => :build
     depends_on "automake" => :build
     depends_on "gawk" => :build
+    depends_on "gettext" => :build
     depends_on "txt2man" => :build
   end
 
   depends_on "pkg-config" => :build
-  depends_on "gettext"
   depends_on "openssl@3"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args,
-                          "--disable-silent-rules",
-                          "--sysconfdir=#{etc}"
+    system ".configure", "--disable-silent-rules",
+                          "--sysconfdir=#{etc}",
+                          *std_configure_args
     system "make", "install"
   end
 
