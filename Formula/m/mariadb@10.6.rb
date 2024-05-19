@@ -1,8 +1,8 @@
 class MariadbAT106 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https:mariadb.org"
-  url "https:archive.mariadb.orgmariadb-10.6.17sourcemariadb-10.6.17.tar.gz"
-  sha256 "fb41b0702059c046832d60138733acb73e4c0e5a1a0681061709d25591e4b086"
+  url "https:archive.mariadb.orgmariadb-10.6.18sourcemariadb-10.6.18.tar.gz"
+  sha256 "6898a1111f47130709e28ba2c7bd1a57e4bb57101f6e109e597d51e6d385cf18"
   license "GPL-2.0-only"
 
   livecheck do
@@ -18,13 +18,13 @@ class MariadbAT106 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "58bb92d7a3fc3a9a6f7d12a2ad6524f49616ad0a91a7bc152f951b40c5078a46"
-    sha256 arm64_ventura:  "710b772bfb5dedd610aa0992babe615d6993846725f51fd074450964b30d7b06"
-    sha256 arm64_monterey: "2abcdb914fe29f38c32a6584cc0b5d364ab36593cf21e279e0aa8bd2ca9c7356"
-    sha256 sonoma:         "3b47f68b0874a680b2e0d869815faac8c5e48e99e0d92c5555358f23ebd066bc"
-    sha256 ventura:        "07bd66c2968e4457cd78b9af6272bfee9aa369856ad8377f8234af769a4bcdf6"
-    sha256 monterey:       "8af07bc7d5c281b0ec834fe2748a9d29a7e06f1beffab16baeed87f6496c74c0"
-    sha256 x86_64_linux:   "faf4f00b3c6974e2d20fb6102c25caa1ab5694de8c0f59eb07f78fc7d3ec7e89"
+    sha256 arm64_sonoma:   "cb27e0bc5d7de68ef196a59c95157cc131e85319a90df977294b442a2514c37d"
+    sha256 arm64_ventura:  "be38e39b817a0c6eef01c0d21243269da935cbc694651247be7bce8ac16447d7"
+    sha256 arm64_monterey: "970e571b0c8e6dcba0ec31f73dfe73b8a1e4b858ab26ab78494b61839b61555f"
+    sha256 sonoma:         "ec248a67955a67ccdbf1eba4fe1c90b4a390d62230503c8566c726c1cedf1438"
+    sha256 ventura:        "cc42afccd4eec25083454fdd1190db9c96d4f192eb8e7d7bca405a388da34304"
+    sha256 monterey:       "5be23da1b1e208992a2852a0b806ba0aaf5516f8331fc953cf105b5b3eeee85e"
+    sha256 x86_64_linux:   "6c488b264ec037cfc98844e95c17a1b851a8cfcde1dce3db15a91d1ceb95bdfa"
   end
 
   keg_only :versioned_formula
@@ -40,9 +40,12 @@ class MariadbAT106 < Formula
   depends_on "pcre2"
 
   uses_from_macos "bzip2"
+  uses_from_macos "krb5"
+  uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
+  uses_from_macos "xz"
   uses_from_macos "zlib"
 
   on_linux do

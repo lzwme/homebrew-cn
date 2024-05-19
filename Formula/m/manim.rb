@@ -9,13 +9,14 @@ class Manim < Formula
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "110296f6ea37d0353d50d0c928ac0bf9998a5aa188f0f80b90c9d88ce63ac95a"
-    sha256 cellar: :any,                 arm64_ventura:  "6982e1c2fc74f24afe2993a05dd5edcb4b8137501bd6f345428da02cb9217e49"
-    sha256 cellar: :any,                 arm64_monterey: "5d37b335590e7198d0b54506bfa638f1501a4e32d4c728b6a0f869c1b2890bdc"
-    sha256 cellar: :any,                 sonoma:         "f4546e242f9de6fdd7fd3483bf348729f7dea80ad93354a0e4fadfcceae1abc9"
-    sha256 cellar: :any,                 ventura:        "6ca3380e3f568150c1dc80582e7b7ca74a293d4bdea1beb1bf87e175bc01b068"
-    sha256 cellar: :any,                 monterey:       "95ad93740a778272d84e2ed6316c499ca109aaf5bbb48e9b9e5113ece5867f23"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18d5a0ae9b9c5c81dd9f4478e0bf08d56f973c788eed83358d0c96757001f05a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "80312d55f28aa5a9097a4972106c6b38490d9da74c49f2dc54aeebb5b08cfad0"
+    sha256 cellar: :any,                 arm64_ventura:  "f2ce1f0e77dde117adfef2440614220517c231d7ad9de1fcb042a20067fba247"
+    sha256 cellar: :any,                 arm64_monterey: "64377a34f12fc8f5ed4f5f8d7af2294400fe56eb484fe765e7a497a1e65d3b57"
+    sha256 cellar: :any,                 sonoma:         "f3f67a3b98acd8f86d2eef689f9f3481f26d967805dc23fbcb4d5d4177063a7b"
+    sha256 cellar: :any,                 ventura:        "e148eca9fa8b261f02219009df6a5257dad1ab6daf9e8fe89360c6cc87ee3589"
+    sha256 cellar: :any,                 monterey:       "c3982b85e3cf97767adf860277bd2fc28b1f458dd0ca60994e203b43f6bb6e96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "153047b915cfe722ed249127fbd109edfc43428128405bf94af7c8550202e905"
   end
 
   depends_on "cython" => :build
@@ -23,18 +24,24 @@ class Manim < Formula
   depends_on "pkg-config" => :build
   depends_on "cairo" # for cairo.h
   depends_on "ffmpeg"
+  depends_on "fontconfig"
+  depends_on "freetype"
+  depends_on "glib"
   depends_on "numpy"
+  depends_on "pango"
+  depends_on "pillow"
   depends_on "py3cairo"
   depends_on "python@3.12"
+  depends_on "scipy"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "harfbuzz"
+  end
 
   on_linux do
     depends_on "cmake" => :build
     depends_on "patchelf" => :build
-  end
-
-  on_arm do
-    depends_on "pango"
-    depends_on "scipy"
   end
 
   resource "click" do
@@ -45,11 +52,6 @@ class Manim < Formula
   resource "cloup" do
     url "https:files.pythonhosted.orgpackagescf71608e4546208e5a421ef00b484f582e58ce0f17da05459b915c8ba22dfb78cloup-3.0.5.tar.gz"
     sha256 "c92b261c7bb7e13004930f3fb4b3edad8de2d1f12994dcddbe05bc21990443c5"
-  end
-
-  resource "cython" do
-    url "https:files.pythonhosted.orgpackagesd5f72fdd9205a2eedee7d9b0abbf15944a1151eb943001dbdc5233b1d1cfc34eCython-3.0.10.tar.gz"
-    sha256 "dcc96739331fb854dcf503f94607576cfe8488066c61ca50dfd55836f132de99"
   end
 
   resource "decorator" do
@@ -107,16 +109,6 @@ class Manim < Formula
     sha256 "0c127d8b2f4865f59ae9cb8aafcd60b5c70f3241ebd66f7defad7c4ab90126c9"
   end
 
-  resource "pillow" do
-    url "https:files.pythonhosted.orgpackages649e7e638579cce7dc346632f020914141a164a872be813481f058883ee8d421Pillow-10.0.1.tar.gz"
-    sha256 "d72967b06be9300fed5cfbc8b5bafceec48bf7cdc7dab66b1d2549035287191d"
-  end
-
-  resource "pycairo" do
-    url "https:files.pythonhosted.orgpackages1c4191955188e97c7b85fbaac6bbf4e33de028899e0aa31bdce99b1afe2eeb17pycairo-1.26.0.tar.gz"
-    sha256 "2dddd0a874fbddb21e14acd9b955881ee1dc6e63b9c549a192d613a907f9cbeb"
-  end
-
   resource "pydub" do
     url "https:files.pythonhosted.orgpackagesfe9ae6bca0eed82db26562c73b5076539a4a08d3cffd19c3cc5913a3e61145fdpydub-0.25.1.tar.gz"
     sha256 "980a33ce9949cab2a569606b65674d748ecbca4f0796887fd6f46173a7b0d30f"
@@ -150,11 +142,6 @@ class Manim < Formula
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesb301c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aarich-13.7.1.tar.gz"
     sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
-  end
-
-  resource "scipy" do
-    url "https:files.pythonhosted.orgpackagesfba3328965862f41ba67d27ddd26205962007ec87d99eec6d364a29bf00ac093scipy-1.13.0.tar.gz"
-    sha256 "58569af537ea29d3f78e5abd18398459f195546bb3be23d16677fb26616cc11e"
   end
 
   resource "screeninfo" do
@@ -193,7 +180,9 @@ class Manim < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
+    python = "python3.12"
+    ENV.prepend_path "PYTHONPATH", Formula["cython"].opt_libexecLanguage::Python.site_packages(python)
+    venv = virtualenv_create(libexec, python)
     venv.pip_install resources.reject { |r| r.name.start_with?("pyobjc") && OS.linux? }
     venv.pip_install_and_link buildpath
   end

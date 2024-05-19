@@ -1,8 +1,8 @@
 class QuiltInstaller < Formula
   desc "Installer for Quilt for the vanilla launcher"
   homepage "https://quiltmc.org/"
-  url "https://maven.quiltmc.org/repository/release/org/quiltmc/quilt-installer/0.9.1/quilt-installer-0.9.1.jar"
-  sha256 "c4bd6300b883e406a15490f9c36059ec3057fc28b4f5b858e0e793231d0b4fa7"
+  url "https://maven.quiltmc.org/repository/release/org/quiltmc/quilt-installer/0.9.2/quilt-installer-0.9.2.jar"
+  sha256 "c3ad3e23eee860e5185c594e7cb280e4fabe7e766a83945381d9a99c64855c5b"
   license "Apache-2.0"
 
   livecheck do
@@ -11,15 +11,13 @@ class QuiltInstaller < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "559c265187cadc6c47e6e51131076a48fad123348cae4c1da271170d9ba42e48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "559c265187cadc6c47e6e51131076a48fad123348cae4c1da271170d9ba42e48"
-    sha256 cellar: :any_skip_relocation, ventura:        "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
-    sha256 cellar: :any_skip_relocation, monterey:       "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "34772e07f6c1b7e48008b991b7ba08cc4f7f35c997608e98699126c79c2c528a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11796b3e945ef4f3904a271feb4e1aeb5abea87729443695e8a31be2eea78542"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6eb2f59fd287c6438034f837f7587d8b6722e8047d40635640e8440c5e811fcb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c81e39b17984d71015ed187fe5fac096c858d1a67043c5af9b84f174831de5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32636008188294029e0d28719651aa98a3853827287bfa13bed7531afe3d7ae6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a44456545b18c184ddb2a71c2a971c49fa0a957d0a6fc251406f148031c677dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ff90897a10c506d2041a01c3ec5b728908392e4123df3e8bcbdea8361c7536c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a5e6dd75b9c4422d0ba8bc4db0a2ace2234b86181fa565f9e3eea6e372566ad8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c5164ff3aa3532538643aae4c3f4eeda92c575128eefe672fc76fa22a4e9438"
   end
 
   depends_on "openjdk"

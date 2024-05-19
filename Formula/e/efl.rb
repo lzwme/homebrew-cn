@@ -24,6 +24,7 @@ class Efl < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "bullet"
+  depends_on "cairo"
   depends_on "dbus"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -32,6 +33,7 @@ class Efl < Formula
   depends_on "giflib"
   depends_on "glib"
   depends_on "gstreamer"
+  depends_on "harfbuzz"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libraw"
@@ -41,6 +43,7 @@ class Efl < Formula
   depends_on "libtiff"
   depends_on "luajit"
   depends_on "lz4"
+  depends_on "openjpeg"
   depends_on "openssl@3"
   depends_on "poppler"
   depends_on "pulseaudio"
@@ -48,6 +51,15 @@ class Efl < Formula
   depends_on "webp"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gdk-pixbuf"
+    depends_on "little-cms2"
+  end
+
+  on_linux do
+    depends_on "mesa"
+  end
 
   # Remove LuaJIT 2.0 linker args -pagezero_size and -image_base
   # to fix ARM build using LuaJIT 2.1+

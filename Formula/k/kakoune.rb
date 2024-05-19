@@ -1,8 +1,8 @@
 class Kakoune < Formula
   desc "Selection-based modal text editor"
   homepage "https:github.commawwwkakoune"
-  url "https:github.commawwwkakounereleasesdownloadv2024.05.09kakoune-2024.05.09.tar.bz2"
-  sha256 "2190bddfd3af590c0593c38537088976547506f47bd6eb6c0e22350dbd16a229"
+  url "https:github.commawwwkakounereleasesdownloadv2024.05.18kakoune-2024.05.18.tar.bz2"
+  sha256 "dae8ac2e61d21d9bcd10145aa70b421234309a7b0bc57fad91bc34dbae0cb9fa"
   license "Unlicense"
   head "https:github.commawwwkakoune.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Kakoune < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e85e331c04cf773feda8ece51ebd99753a0d656f212919f6774397a9cc812607"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae17a66d43bcee76b92d42f8f1518175367470914c0bd2dea964ee69c1dcdf6a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "098b3b44451afbd4ca54baa03128c07a9c822e639178ce7bb5fe00815a125e97"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c164a078644d9932cb9ddd5924734c825f68ae19dd1b6b114449a82d1591a01"
-    sha256 cellar: :any_skip_relocation, ventura:        "287566a78b179e5926ed07a394a5e760f3e09b6d1b8a8e9707c6d2b1a4b2d493"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ec7421d06d5f8b1d2ec60574023a893a5b4244640c8123b0b878e4cf166410d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ff37e3e6928fa463beac4337e21825131a157bf837e320bff49091e56bef734"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42850e284b85aad3865b80947c8a2b74644148ec3b05f8e1470f5438453a4f4b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f261b85b550552526b4d3fef66f1da40c4e4d84089196b6d066b3c2a271fbd21"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a9bde4e123c7b07770794f92dc225da5da862d42c739cbae0d2498d3280a0d7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "301f7dba32850275799750dedaef50a525d004cca2d6439d9aa609a4d00689e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4a32d5ed1213ddc0ed831e9974c154023fc623d0fddc2af4aae718115f79482"
+    sha256 cellar: :any_skip_relocation, monterey:       "331edc367fa3a3905e1456d9dea0b3699bc0358281a7ae88f7adf1466ee90c11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf7a8135634ef2b09dd76b622d9d852b51c156c09b6e1e0fa11b801cf376310"
   end
 
   uses_from_macos "llvm" => :build, since: :big_sur

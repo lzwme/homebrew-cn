@@ -1,19 +1,19 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https:github.comodygrdquill"
-  url "https:github.comodygrdquillarchiverefstagsv3.8.0.tar.gz"
-  sha256 "d3e1b349c5d6904c9644e5b79ec65f21692e8094a3d75241a7fe071076eef4dd"
+  url "https:github.comodygrdquillarchiverefstagsv3.9.0.tar.gz"
+  sha256 "6e6a46dc6ae94e8321aca00d27dae754dcc51ee83fe60078f8f1f3eb7b3b227b"
   license "MIT"
   head "https:github.comodygrdquill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f448d443209b37ab355d6bc7339ff75a58cbd796960719f70adbc158c1c5cbee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7343b2c8d72e8e196536a0088d8c43caa0e34e8f6d31190b763bfcc4070130b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "131adfac21440860344dfdbb24ef2f63a35a5e87528beb878cc57ae3d3175a4d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e298f8e47eb9b47deb3edb4f51d95a6f422b2feb48fbeddcae6ffebeac03c4ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "79bb6416dc9b4f8179a95cc923f045145deffa75686135748a9128f8e23afa75"
-    sha256 cellar: :any_skip_relocation, monterey:       "daf701c729283b86dce79b3d62b48322b11c9596728df1f2fba648ab1b5b7d73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfa8568c929b7bf2f9b2e5131ac0e965c5ae56012c51b5f50aff7ca9e87ac486"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "23af13bcc8dbc569e6ed9279bfc93a62a38a75d2d6539d3b56377f89a8c0a010"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56162de590068dc57c97a5e325500d184daf059a55467fb46146fe5789c39e03"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "07247794d38b54540c184106dc38e1a736d7f29d2b0f81fd333731647e690975"
+    sha256 cellar: :any_skip_relocation, sonoma:         "969af5deaa4567696736ea2d8643ab2db09b4de39f25f279dfaeb71799f6f6e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "60b6481b14b7f0b970d8e4f33b4cbe4e1b13bd938bbf41bce1c4c05088505faa"
+    sha256 cellar: :any_skip_relocation, monterey:       "29b3bba3e52546ec595147ce3df12153f4fcddd30a4ca70baf318b29d1a50a03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecde1b71677c57597fa63f2f932d2a07ddefbfbfd544b4bedf8d3c48f4e1d895"
   end
 
   depends_on "cmake" => :build

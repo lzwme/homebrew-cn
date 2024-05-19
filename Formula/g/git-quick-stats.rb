@@ -1,12 +1,18 @@
 class GitQuickStats < Formula
   desc "Simple and efficient way to access statistics in git"
   homepage "https:github.comarzzengit-quick-stats"
-  url "https:github.comarzzengit-quick-statsarchiverefstags2.5.5.tar.gz"
-  sha256 "069fd45fc9536a4cd170ad510743c53ca9aa6f8ebe10c0511276918a81a2c254"
+  url "https:github.comarzzengit-quick-statsarchiverefstags2.5.6.tar.gz"
+  sha256 "ddb2552cfbf605bd934c0d570ca2d0e77bd32f8d1ff706af1d3ac96dcf612ab7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ef6bdf39b4e308fe136a6fb7a2dadda85218aee7be2509ab5b652cf2f2dbbc11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc53ce17388a8bbc06357cfc7ca2c5d375ece86d6566a2cade7cacaafe28bab4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c02697c23bfc161e378c6dbbeadbbcc3881b58a729e9a513ad49f6dcb8b04feb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b2f0011f622daf031811c012c93896541235fa0db3f11d3aba5d733753c0a628"
+    sha256 cellar: :any_skip_relocation, sonoma:         "34766cdb92cbb90196cf07a85632c47db1b12b332010b087af61b7d6e3a3f6d6"
+    sha256 cellar: :any_skip_relocation, ventura:        "79f5aa80d8a13fd3b47300afc26d8736f88f19021b273808e86039b815d78892"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c426ad54bd1e02239dfdc74138d8ab6be28f4e711bd18c0c41dfc450f9eb238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04673d84aee73f1b79dbb7f8a49b6b8099b7cc6ef57706e557db23278f39c318"
   end
 
   on_macos do

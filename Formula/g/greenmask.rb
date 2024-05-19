@@ -6,6 +6,11 @@ class Greenmask < Formula
   license "Apache-2.0"
   head "https:github.comGreenmaskIOgreenmask.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25bcd6ff301712eff33ede67836cca16265b96b3b3047d7b4a1580fa0b845e5c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "da9353cc79191b3dfa604deb72b9e4a5b4544f43ceba0ba0657f290ecf31b80b"

@@ -1,18 +1,18 @@
 class Gitbucket < Formula
   desc "Git platform powered by Scala offering"
   homepage "https:github.comgitbucketgitbucket"
-  url "https:github.comgitbucketgitbucketreleasesdownload4.40.0gitbucket.war"
-  sha256 "7e124543a48f3d349b2e93dddbaace1a7122a18b1a11b0e6ab403f0645d646d5"
+  url "https:github.comgitbucketgitbucketreleasesdownload4.41.0gitbucket.war"
+  sha256 "d1de0a96569b7fc69b11a1c98556f17ba36eb51305d93cb3c3166f5111d2eeca"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c987e6512cd806f10867ea20dd4f89252f3434aca0b88bb4466d5f6749cff2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf2837bebb2f01687b9ecb65795ca7bf7f62f80e9b7ee298f7eacb1ea340889c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b80b2224664d3e431c1f8ec74165939ca009fe8eb347680da2e144fc18ae82b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "705df2f7579c63032cd99cd200bc366df5479ef23c4000706b0014d7e1cf99a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf66e5b7e9c664c797c442e96d2040378e3c6a0986c0a13364d696eb301623bb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fcd6ff07d7a73b23021a0ebbe38042b806b91c8c18367196cad6ca3546699a79"
+    sha256 cellar: :any_skip_relocation, ventura:        "a59888b16d7472e43ebe0c3aea69e2562dd45b53475c93f2ab545d492313bffe"
+    sha256 cellar: :any_skip_relocation, monterey:       "c44b62da4c1bb8d35f671f1647663a045fe600a2b55a44668cc7de2121b5f5ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a31f9dfa84d272598d7f896d156aa7c644e5c5b2c5bc60bee5d420889675254"
   end
 
   head do

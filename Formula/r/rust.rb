@@ -15,13 +15,14 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7d53d776e817dc07006a87ee524c2fa81678237d527a8a1447240d4299fbabc0"
-    sha256 cellar: :any,                 arm64_ventura:  "1d40affdb3c24fd9c84aacc45b04099e7b30e96114e28e6bc305130cc3067a97"
-    sha256 cellar: :any,                 arm64_monterey: "58a7e592076b94981fa9551caa9d9e698f02daf952c070d3611a31c2432cfd85"
-    sha256 cellar: :any,                 sonoma:         "5217801123b3e52d8d0ceeb37f78208a184060b3c079f3b600bf7399408af3d2"
-    sha256 cellar: :any,                 ventura:        "dc0ee2861b1c1429811257c237d7746393db220f10e701a29c4ac78600ec1a8f"
-    sha256 cellar: :any,                 monterey:       "56a5a84d9b8573e6768a08e9de13a38c419b046e3fe8bd72ee1b11adc57cf61f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d73e76c6709d31530906725c69d67e7a3988c7ffd7635353e418d7b9dcddc14f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "090cd912d656832e7c740ae3525fbf6bffa4f10d675e9a23fee2068ee386f2e5"
+    sha256 cellar: :any,                 arm64_ventura:  "3d1181aa07885c3a86d39408e229898f605db2287c9e9196a12a2f0a3813d1bc"
+    sha256 cellar: :any,                 arm64_monterey: "0d7d638d2303f3ab3205e28dc007adc7449f66793341c7e8a696aadf912bfca4"
+    sha256 cellar: :any,                 sonoma:         "30ef29be94e17fba76d1531b6a7d7a2541aeb855703b4d811ef38dcb388d0a7a"
+    sha256 cellar: :any,                 ventura:        "991a1605c8432af835ebe5892ed56692142bb04e89f59d7353022b3b8c7fb86f"
+    sha256 cellar: :any,                 monterey:       "8a36b31366794ee73038aec255f5b1cb7cf58ca989d96ea9da8bd6fa2d455166"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2049dfedbb2bdb616e95ac1ab6a424b2c05715e55ce4f396051bcdbe8336706f"
   end
 
   head do
@@ -114,9 +115,10 @@ class Rust < Formula
       --tools=#{tools.join(",")}
       --llvm-root=#{Formula["llvm"].opt_prefix}
       --enable-llvm-link-shared
+      --enable-profiler
       --enable-vendor
       --disable-cargo-native-static
-      --enable-profiler
+      --disable-docs
       --set=rust.jemalloc
       --release-description=#{tap.user}
     ]

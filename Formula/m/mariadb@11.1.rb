@@ -1,8 +1,8 @@
 class MariadbAT111 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https:mariadb.org"
-  url "https:archive.mariadb.orgmariadb-11.1.4sourcemariadb-11.1.4.tar.gz"
-  sha256 "8f6473368a67b1a615f7a5c3af151b78744af058c3e406a9b4d3b8eb4055f97b"
+  url "https:archive.mariadb.orgmariadb-11.1.5sourcemariadb-11.1.5.tar.gz"
+  sha256 "eccdcdf487b4c99844573a2dbe691f905f485450925545119949e58bdacaee68"
   license "GPL-2.0-only"
 
   livecheck do
@@ -18,13 +18,13 @@ class MariadbAT111 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "9fc232aad9f5744ef2b3a7584c81b055a5d637e3b1544e14d98c3f334a49f220"
-    sha256 arm64_ventura:  "dfe74e54d2e4abf9ea69d66be9818f1f61365bd6f6714d5138b462b02377ecee"
-    sha256 arm64_monterey: "85b8c2cb234c082a0023ca0e7f2f9df989b3d6c33ed43512b6360bdf5f0f6e16"
-    sha256 sonoma:         "7e7a3fc254a4d0a504ad480d1f895a10cc375460f2f8cc3ed616a129408332e6"
-    sha256 ventura:        "be964464d91daaab681c1532d0aa56bb976b99d91c0bb53f142f86d202b776a4"
-    sha256 monterey:       "ae08ec841844c884b0cf72730f3cf83a4cc41e7ae8b9a95e4412e0f14fca6d61"
-    sha256 x86_64_linux:   "db50015bb42d562051d9d8664f7f9c9abbb20f07d7e39b477ad4ff6dbb6c300c"
+    sha256 arm64_sonoma:   "b4601693384a73b5e91fb6f00d6c594793c322502dc7a7e73d796e1857f7df0b"
+    sha256 arm64_ventura:  "7e433506808419c5a0fd17aa89c8023abd20df99042cc5a38671e0c9ababdeef"
+    sha256 arm64_monterey: "958a5206b8c428815a3a599c50fe463bda0b1b108c5cd949ee69780c6afd630f"
+    sha256 sonoma:         "ac47f3ae34e6b7396a6c0c177076361172b918b2240b28ed73f498ea27ab298c"
+    sha256 ventura:        "6e78c4749d6c92a441d2a420293c871cb73724d98f747a92816905e6147be096"
+    sha256 monterey:       "4a5738da5144cf0ead8d2595fc499af8b67dfb21ec42190abb53263ce3f00a75"
+    sha256 x86_64_linux:   "99fbf1c76ac3ece1a0799e650df1d92747f1ba1dffbc91e3f2e71c6c46d03207"
   end
 
   keg_only :versioned_formula
@@ -38,11 +38,15 @@ class MariadbAT111 < Formula
   depends_on "fmt" => :build
   depends_on "pkg-config" => :build
   depends_on "groonga"
+  depends_on "lz4"
   depends_on "openssl@3"
   depends_on "pcre2"
+  depends_on "xz"
   depends_on "zstd"
 
   uses_from_macos "bzip2"
+  uses_from_macos "krb5"
+  uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -54,13 +58,6 @@ class MariadbAT111 < Formula
   end
 
   fails_with gcc: "5"
-
-  # upstream patch ref, https:github.comMariaDBserverpull3064
-  # remove when it got merged and released
-  patch do
-    url "https:github.comMariaDBservercommit3624a36aed0346380255b141cb8a59998aaca4ee.patch?full_index=1"
-    sha256 "c9d0aa64b34c43ac9e3077d74c18532125c459d9d867ade69ce283d27b595b22"
-  end
 
   def install
     ENV.cxx11

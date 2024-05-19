@@ -1,18 +1,18 @@
 class Bowtie2 < Formula
   desc "Fast and sensitive gapped read aligner"
   homepage "https:bowtie-bio.sourceforge.netbowtie2index.shtml"
-  url "https:github.comBenLangmeadbowtie2archiverefstagsv2.5.3.tar.gz"
-  sha256 "4ac3ece3db011322caab14678b9d80cfc7f75208cdaf0c58b24a6ea0f1a0a60e"
+  url "https:github.comBenLangmeadbowtie2archiverefstagsv2.5.4.tar.gz"
+  sha256 "841a6a60111b690c11d1e123cb5c11560b4cd1502b5cee7e394fd50f83e74e13"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b39ab941f6d8f54b48cc3661208032cd89d7e1ef968df1614e6469e747b4af57"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e30556ae9d469aa988bd6f262196c47ebf9b6956ba3fba289c6fec7aec63e650"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "40b9cdc4513c243e3f300087538db5df08d90b7649a2f660ed288f15d66d22b8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4f6dcb46393d347ea5d7ae2f6548407383bfd226b58d370a6759e232209928dd"
-    sha256 cellar: :any_skip_relocation, ventura:        "a05b915d75b2ba43c24828b93e560f8c02fd9427fe59b2a49402100a7de2839a"
-    sha256 cellar: :any_skip_relocation, monterey:       "208bda3b6f36f488d81e01b5994ef08a04df3724eb79dd39e041b51fefc0c05c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "573d49ae9737ccb848f128f5de530d03995dabdc511230ddfea5723692a2a6cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "539b0d025ccf750ab75234c6b1ce0cbe2db9cd1cb3aac64e645ed2703d3f93d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f0ea46f0fb6351e20c753a488ab35b8af656b025dcd8529cf489391afa53a5d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "27fbcb3ea2f44568313fc80d900018727c376ce862a2e107540d73a5e118d7f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0851d07d8a4a57897ea4b2262d88073d35060638e297fd8ce3ca9b26eb510ceb"
+    sha256 cellar: :any_skip_relocation, ventura:        "65d7c4f3afd8c3437222126d750ea55f6bb4214907072f97ff1bae4c26788465"
+    sha256 cellar: :any_skip_relocation, monterey:       "76a63cb64ac6060cdeb35bf4e64e2dca18525ec103a8956e38fe6a9487aba434"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "574eeb3b13bb869e57844bea2fac0eaf789b708096e7b94d5f14b604655b78a9"
   end
 
   uses_from_macos "perl"
