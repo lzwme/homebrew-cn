@@ -29,6 +29,8 @@ class Ronn < Formula
     depends_on "util-linux" => :test # for `col`
   end
 
+  conflicts_with "ronn-ng", because: "both install `ronn` binaries"
+
   def install
     ENV["GEM_HOME"] = libexec
     system "gem", "build", "ronn.gemspec"

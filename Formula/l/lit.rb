@@ -1,12 +1,18 @@
 class Lit < Formula
   desc "Portable tool for LLVM- and Clang-style test suites"
   homepage "https://llvm.org"
-  url "https://files.pythonhosted.org/packages/d1/a8/f60ac84614cfdde136f8b9bb8e15ea6a815397b1e11e1c712e43bf694222/lit-18.1.4.tar.gz"
-  sha256 "e6ca26eb0a86aef88cb674616100e32d1250d05cfec4ca57a74acabb0a26de78"
+  url "https://files.pythonhosted.org/packages/20/87/98366aa460de9a1413a41178acb9f83de106208f889fdccf47c5322163ed/lit-18.1.6.tar.gz"
+  sha256 "70878fb0a2eee81c95898ed59605b0ee5e41565f8fd382322bca769a2bc3d4e5"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3604fddc93584f677b94d9c4792f8f1ccacec4b4e168bd687c15afba833366d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d983e553dc1c1bbb3e64f3af25f44376e345fec3d3aa81a08020ddba9aef021"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "137cf94ac4198141245b3046eeb6a2fc70fbcda9641504c664a6387709f779f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47ccb91d393ea43601c1731e8fee2b1af589c431c016a4e01d2e7857f008f119"
+    sha256 cellar: :any_skip_relocation, sonoma:         "68034023f453f37c0ad8f394b409d1acdd77fba78191f24a0dafb34c52ac3088"
+    sha256 cellar: :any_skip_relocation, ventura:        "9219644b74ee94aec25a44ff52a917477f3d85ea2a3df057d2ad592faa366825"
+    sha256 cellar: :any_skip_relocation, monterey:       "7cd284c6cefd09a1aae7017be35651529572bd262f1a42bb652fc777085483ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "272675caea165b67c8c26b12c6456eccc4f3cbb2e863d127872f88ddbba6e03b"
   end
 
   depends_on "python-setuptools" => :build

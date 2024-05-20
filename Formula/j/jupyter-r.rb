@@ -4,16 +4,16 @@ class JupyterR < Formula
   url "https:github.comIRkernelIRkernelarchiverefstags1.3.2.tar.gz", using: :nounzip
   sha256 "4ef2df1371e4b80dc1520da9186242998eb89eb0acfbc7d78de9aef4416bc358"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "151782fb831022f90c5fdad716d7b121da36d5d5c9ea2bd3f584e66e139adb5f"
-    sha256 cellar: :any,                 arm64_ventura:  "d861cd8f4d80a4c0683762a528e53f1593990f9d40f932fa6c3aadf863bcfa95"
-    sha256 cellar: :any,                 arm64_monterey: "f45c3449078efc0e4ce5c74c8567a9a12c4fc9268b636ae0d32829b55ab19a52"
-    sha256 cellar: :any,                 sonoma:         "b1f3f39a03e08e06eef622f4a25da773cd172ba6f9e6dbee35758a5a36ba8725"
-    sha256 cellar: :any,                 ventura:        "71857a24e8167ac10568aca76a648c15d43ffe034fe53b8e0c367e8a35a2c1d5"
-    sha256 cellar: :any,                 monterey:       "ce28d98222243455722bdd5f29371dac96172bc0e19202fbbc8fa77d1a352754"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2684e4e63246fb5853fc3f14554b527d215acbc52854b9bb0f731c6f3897992b"
+    sha256 cellar: :any,                 arm64_sonoma:   "f5e53d2e1c07fada5048527bf93c183650f8f4b5ec3bb088d2f27136d06ce3c3"
+    sha256 cellar: :any,                 arm64_ventura:  "6b747fb9bf5f4b4cc3d115143b213ed41cefeb8afb2254f0cb643a621f20f87e"
+    sha256 cellar: :any,                 arm64_monterey: "8aa1108c74e5910e683727b8b4a793fa5c0108361f8dbf8f199f5c105957c531"
+    sha256 cellar: :any,                 sonoma:         "0316f97858c3952691008a53a36107235976bc213a24c894d89de8890c8822eb"
+    sha256 cellar: :any,                 ventura:        "7d99a0c04195211aaad73759ee745a55823854e0d326e34627220103fbf4d545"
+    sha256 cellar: :any,                 monterey:       "a10453cf63c2b498366e1a90dd42d47b828502a870e527684558d1bef37e07ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5b13b7b57330d27afc80e134f7d27c2b5207a9abc00a92f081d2fa21f834ede"
   end
 
   depends_on "pkg-config" => :build
@@ -23,16 +23,20 @@ class JupyterR < Formula
 
   uses_from_macos "expect" => :test
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   resource "rlang" do
-    url "https:cloud.r-project.orgsrccontribrlang_1.1.2.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiverlangrlang_1.1.2.tar.gz"
-    sha256 "2a0ee1dc6e5c59b283c32db5e74e869922a336197cb406fe92622b6ec66f8092"
+    url "https:cloud.r-project.orgsrccontribrlang_1.1.3.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiverlangrlang_1.1.3.tar.gz"
+    sha256 "24a3424b5dc2c4bd3e5f7c0b54fbe1355028e329181b2d41f4464c8ade28bf0a"
   end
 
   resource "fastmap" do
-    url "https:cloud.r-project.orgsrccontribfastmap_1.1.1.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivefastmapfastmap_1.1.1.tar.gz"
-    sha256 "3623809dd016ae8abd235200ba7834effc4b916915a059deb76044137c5c7173"
+    url "https:cloud.r-project.orgsrccontribfastmap_1.2.0.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivefastmapfastmap_1.2.0.tar.gz"
+    sha256 "b1da04a2915d1d057f3c2525e295ef15016a64e6667eac83a14641bbd83b9246"
   end
 
   resource "ellipsis" do
@@ -42,9 +46,9 @@ class JupyterR < Formula
   end
 
   resource "cli" do
-    url "https:cloud.r-project.orgsrccontribcli_3.6.1.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveclicli_3.6.1.tar.gz"
-    sha256 "be3006cec7e67f9ae25e21b4658c4bec680038c2ef7467df5f14da3311a05e36"
+    url "https:cloud.r-project.orgsrccontribcli_3.6.2.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveclicli_3.6.2.tar.gz"
+    sha256 "4c0749e3711b2b6ae90fd992784303bc8d98039599cac1deb397239a7018e151"
   end
 
   resource "fansi" do
@@ -54,9 +58,9 @@ class JupyterR < Formula
   end
 
   resource "glue" do
-    url "https:cloud.r-project.orgsrccontribglue_1.6.2.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveglueglue_1.6.2.tar.gz"
-    sha256 "9da518f12be584c90e75fe8e07f711ee3f6fc0d03d817f72c25dc0f66499fdbf"
+    url "https:cloud.r-project.orgsrccontribglue_1.7.0.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveglueglue_1.7.0.tar.gz"
+    sha256 "1af51b51f52c1aeb3bfe9349f55896dd78b5542ffdd5654e432e4d646e4a86dc"
   end
 
   resource "lifecycle" do
@@ -84,15 +88,15 @@ class JupyterR < Formula
   end
 
   resource "digest" do
-    url "https:cloud.r-project.orgsrccontribdigest_0.6.33.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivedigestdigest_0.6.33.tar.gz"
-    sha256 "be702c886b1639be7eda4ea25a4261b30ce418c580f79bd78ec8d6cb4d327819"
+    url "https:cloud.r-project.orgsrccontribdigest_0.6.35.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivedigestdigest_0.6.35.tar.gz"
+    sha256 "cc333fbb05059c4973d0ca5d0f1322c812943d81cdbfa18455f72267abd8781f"
   end
 
   resource "htmltools" do
-    url "https:cloud.r-project.orgsrccontribhtmltools_0.5.7.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivehtmltoolshtmltools_0.5.7.tar.gz"
-    sha256 "ecb0d82619063f49e4d001c44fcc1b811a06928fd66c2bb8c86632798d98b386"
+    url "https:cloud.r-project.orgsrccontribhtmltools_0.5.8.1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivehtmltoolshtmltools_0.5.8.1.tar.gz"
+    sha256 "f9f62293ec06c353c4584db6ccedb06a2da12e485208bd26b856f17dd013f176"
   end
 
   resource "pillar" do
@@ -108,9 +112,9 @@ class JupyterR < Formula
   end
 
   resource "repr" do
-    url "https:cloud.r-project.orgsrccontribrepr_1.1.6.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivereprrepr_1.1.6.tar.gz"
-    sha256 "3d2e6c9b363c1ec4811688deff7fb22093cadc9e0a333930382093d93c16673f"
+    url "https:cloud.r-project.orgsrccontribrepr_1.1.7.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivereprrepr_1.1.7.tar.gz"
+    sha256 "73bd696b4d4211096e0d1e382d5ce6591527d2ff400cc7ae8230f0235eed021b"
   end
 
   resource "evaluate" do
@@ -126,9 +130,9 @@ class JupyterR < Formula
   end
 
   resource "pbdZMQ" do
-    url "https:cloud.r-project.orgsrccontribpbdZMQ_0.3-10.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivepbdZMQpbdZMQ_0.3-10.tar.gz"
-    sha256 "39a20058e4027fab6f4a4cf0f557fef4e77409c9656d00252ef31cb6d90ad191"
+    url "https:cloud.r-project.orgsrccontribpbdZMQ_0.3-11.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivepbdZMQpbdZMQ_0.3-11.tar.gz"
+    sha256 "da7e204d857370201f75a05fbd808a2f409d440cc96855bb8f48f4a5dd75405b"
 
     # Remove use of -flat_namespace.
     patch :DATA
@@ -141,9 +145,9 @@ class JupyterR < Formula
   end
 
   resource "uuid" do
-    url "https:cloud.r-project.orgsrccontribuuid_1.1-1.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveuuiduuid_1.1-1.tar.gz"
-    sha256 "1611240eb706e6f53400b25c9cf792ad90f151b72ed0918a1e756997f7abb716"
+    url "https:cloud.r-project.orgsrccontribuuid_1.2-0.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveuuiduuid_1.2-0.tar.gz"
+    sha256 "73710a14f812e34e891795b8945ea213f15ebcaf00b464b0e4b3fa09cf222afd"
   end
 
   def install

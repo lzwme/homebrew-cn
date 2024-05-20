@@ -28,6 +28,13 @@ class Aravis < Formula
   depends_on "libnotify"
   depends_on "libusb"
 
+  uses_from_macos "libxml2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 

@@ -137,6 +137,8 @@ cask "karabiner-elements" do
 
   auto_updates true
 
+  binary "LibraryApplication Supportorg.pqrsKarabiner-Elementsbinkarabiner_cli"
+
   zap trash: [
     "~.configkarabiner",
     "~.localsharekarabiner",

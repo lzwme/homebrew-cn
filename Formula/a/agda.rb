@@ -2,10 +2,12 @@ class Agda < Formula
   desc "Dependently typed functional programming language"
   homepage "https:wiki.portal.chalmers.seagda"
   license "BSD-3-Clause"
+  revision 1
 
   stable do
-    url "https:hackage.haskell.orgpackageAgdaAgda-2.6.4.3.tar.gz"
-    sha256 "74edc96ec57d43bc148b329c02f6b06c3c3c16e8e40802e735570b1424df03a2"
+    url "https:github.comagdaagdaarchiverefstagsv2.6.4.3-r1.tar.gz"
+    sha256 "15a0ebf08b71ebda0510c8cad04b053beeec653ed26e2c537614a80de8b2e132"
+    version "2.6.4.3"
 
     resource "stdlib" do
       url "https:github.comagdaagda-stdlibarchiverefstagsv2.0.tar.gz"
@@ -29,13 +31,13 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "813432ea01dc8df99f673bee3d2fedcc8464389d4d2103c869edff22d541077b"
-    sha256 arm64_ventura:  "1912a6465375acb0a90289c2602ec42f48953a51c2417e71e36e6e50bd99e285"
-    sha256 arm64_monterey: "db158ba0f428a024c378f5745098512d367846ee0743d58e1e8ef705a2ea4cd0"
-    sha256 sonoma:         "41a85d6793aae7cfd06676d593bacab15f38136ae7073ccbc85cc26c032d0248"
-    sha256 ventura:        "9265cb8532501a9c2b26d79284b4a8aebeede7742ec60fcbbde866d8613fff0c"
-    sha256 monterey:       "2e1f341d01d10235c2811b0d67b552f1db5dbfaba45b999d3bb2a21fc041f855"
-    sha256 x86_64_linux:   "4007f165143d5ff02b4eec59ae9604e7605f959831942bffe86ff79706546977"
+    sha256 arm64_sonoma:   "c5ad14e8d9384d04112c8e786acc1c2f3746d6e0da40b9035a4a1418f1fbeadd"
+    sha256 arm64_ventura:  "c6ce41a5ab626c84211b9edbff313fac292a1816ddb939dba75196a1e62debb3"
+    sha256 arm64_monterey: "d6b81a5524508cee748e5331424c4e849c81ae7d3221f8edd66db423143f7054"
+    sha256 sonoma:         "cdbb9865d08ea102cd43a5a4fa51d299e8ab189cda36b00e4a5d8e8161a4ec39"
+    sha256 ventura:        "ef022f20c61c681b344a01bd9b9f198fd219b0a669d5c23529b994cfe7831b23"
+    sha256 monterey:       "29c8b74ca117e2053f35e65155993bc102ca5fea9a76f72059d172c346c195d8"
+    sha256 x86_64_linux:   "b033a7e961f4ea7e749557ba20cc60a79db23e02576ed6516c167d33804cf12c"
   end
 
   head do

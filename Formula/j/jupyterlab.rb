@@ -3,22 +3,21 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https:jupyter.org"
-  url "https:files.pythonhosted.orgpackages42c2decb25538588ed104ada22c31d1845b1500f98806e3261b94f0333e8b099jupyterlab-4.1.6.tar.gz"
-  sha256 "7935f36ba26eb615183a4f5c2bbca5791b5108ce2a00b5505f8cfd100d53648e"
+  url "https:files.pythonhosted.orgpackagesd0b351d88c27256694761cdc56682393360596169cdb38e542c84e9337e577a0jupyterlab-4.2.0.tar.gz"
+  sha256 "356e9205a6a2ab689c47c8fe4919dba6c076e376d03f26baadc05748c2435dd5"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a77c5274e2f7f4f053de054f680cfe24f8a72ba437ddc5eff8c40f97e61653aa"
-    sha256 cellar: :any,                 arm64_ventura:  "82cc8baf91778665a1b39b1529bd727a99a6272e6aba7daf1cfae1260d5eaf0c"
-    sha256 cellar: :any,                 arm64_monterey: "101db4af58a3388cf10d1db80aace015b58cb7dcd27fe071b75c17f16e8f44e1"
-    sha256 cellar: :any,                 sonoma:         "daac68afab92db2a47d0e0663c9a7230f5416bd8bbfb18534bdeeb3967fb9036"
-    sha256 cellar: :any,                 ventura:        "01015812beb98dac08c4bbe11c2ffdda0930141b716de2d4341cff1a9e1bd355"
-    sha256 cellar: :any,                 monterey:       "27bd480e7bdef0c8b337a7dd8f1fd1eec736f8f9800a49a3a4e6531d8c2e5c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b18ccb495e3b1daa7bc6af3f97860715e39e3d0d70878385bd5608e3f68fa891"
+    sha256 cellar: :any,                 arm64_sonoma:   "f31fab0a9e55c040593143ed97f40128646b6959c9a2e194ac29a2574c61ef2c"
+    sha256 cellar: :any,                 arm64_ventura:  "7d80f2c7917e74b3b88d8e151f3af42930bd8f2c380a4f476750d90d1bca6f2e"
+    sha256 cellar: :any,                 arm64_monterey: "f370a951318f25f9ecec8ae2d54ae4566f89dfc803ce806b1fa4d3da27950106"
+    sha256 cellar: :any,                 sonoma:         "9e1383af37dfa78e45f3a5be55e3b8ead40e8060ae03dce3731b418d46e00a0e"
+    sha256 cellar: :any,                 ventura:        "bd95de2aa213f259e286807081379ffc7178b12361c5c78f8b55105456d08def"
+    sha256 cellar: :any,                 monterey:       "22a4d29bc85c9a21403533da4969958aa6e9bd16e25432315590f414a3aff963"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa93b431f2b00c41bf3587260a3ba0a80714b743159714b029c2b5ae0dd3d613"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -296,8 +295,8 @@ class Jupyterlab < Formula
   end
 
   resource "notebook" do
-    url "https:files.pythonhosted.orgpackages6538f2c6cb06f3c4997980ad27713f23378616761fd8d36013c9cdd0d9c54ad2notebook-7.1.3.tar.gz"
-    sha256 "41fcebff44cf7bb9377180808bcbae066629b55d8c7722f1ebbe75ca44f9cfc1"
+    url "https:files.pythonhosted.orgpackagesd26794c234344db57eb467cb6a9ed2da156d90524a33bdf19f0243c7261e4483notebook-7.2.0.tar.gz"
+    sha256 "34a2ba4b08ad5d19ec930db7484fb79746a1784be9e1a5f8218f9af8656a141f"
   end
 
   resource "notebook-shim" do

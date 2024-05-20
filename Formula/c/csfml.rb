@@ -2,19 +2,19 @@ class Csfml < Formula
   # Don't update CSFML until there's a corresponding SFML release
   desc "SMFL bindings for C"
   homepage "https:www.sfml-dev.org"
-  url "https:github.comSFMLCSFMLarchiverefstags2.6.0.tar.gz"
-  sha256 "fee2c40c218cd291e4f4086522bf3b690f750c9b4be10fb67f42d1973a92bca0"
+  url "https:github.comSFMLCSFMLarchiverefstags2.6.1.tar.gz"
+  sha256 "f3f3980f6b5cad85b40e3130c10a2ffaaa9e36de5f756afd4aacaed98a7a9b7b"
   license "Zlib"
   head "https:github.comSFMLCSFML.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "abd199c3601d38b1a400457c69c6f0abad215be865bad9fe0b18af2871277fa0"
-    sha256 cellar: :any,                 arm64_ventura:  "93edd427c5c7b9e134712b0b26098f115b7d6c1a38b111730e01bea8a1c7fee7"
-    sha256 cellar: :any,                 arm64_monterey: "bc9651bc5a2ae540e9e1dee3dddd852d01ad8dba30fa5b9440843c6ee89b4674"
-    sha256 cellar: :any,                 sonoma:         "1cd935d96e93751987e2046349ade2a4a209d39f1a4b1b158a3604a9b28a4f74"
-    sha256 cellar: :any,                 ventura:        "ff7d7b53678a6a3780e0d4b2892f43e7dcc68339e513c34cf3350d14fc3fd0f3"
-    sha256 cellar: :any,                 monterey:       "e3800b0f0a0671fe40fa6bb82f336915ab225a04d3bb0baa2895b8d5494697d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1469dc07b0e988eed340b4f715db767c530dcab5fc02b656ad93f208fd9ca5f7"
+    sha256 cellar: :any,                 arm64_sonoma:   "51106a18de295924740040dfe451298bf81642b99085741ab536200be362a270"
+    sha256 cellar: :any,                 arm64_ventura:  "49eef8514705e01c7bdaf6fb3c82aacee098eb42bcdbc671a937e100e51dec23"
+    sha256 cellar: :any,                 arm64_monterey: "99aa119e5df305ad65af18397978c39e2f2ea88c3aaafbd9e4c62fb92a5e24b0"
+    sha256 cellar: :any,                 sonoma:         "41a00b5ee1f4c5210ebbf52210c29738921466d3de8c0144a225b47f1376bd0b"
+    sha256 cellar: :any,                 ventura:        "cf5c4fc6532d7ccd3efe857e3f0bbf472bcb105f38dbf9c58a7cbd2e0a77b4a5"
+    sha256 cellar: :any,                 monterey:       "517ba2b6d220a8b0a8520959439299feb154edb343fcb7ed2c63842db250ca5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a820796c52b40aeab5cd532d5a4eb51920783e5571c5621824b23d0f452947ea"
   end
 
   depends_on "cmake" => :build

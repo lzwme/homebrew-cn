@@ -7,13 +7,14 @@ class Mpv < Formula
   head "https:github.commpv-playermpv.git", branch: "master"
 
   bottle do
-    sha256 arm64_sonoma:   "ec78ba7b484a0c01e0e068d252ba873b5ebd799999eeddf96afb7a42e6a56367"
-    sha256 arm64_ventura:  "6b3719398fe78046d339e1f7bf5ecf20cc971f11bccc6fd1c92eb1183579ad24"
-    sha256 arm64_monterey: "205b2fae74fd9f5e11e22873b86660cfcf6596dd927be6eef6412de8a1856128"
-    sha256 sonoma:         "adb51826fa327a0beebd5d67940709ca2371c27971dbb3a634154bd12e580ece"
-    sha256 ventura:        "7203e0a410fc1cac96be55f8cd4193b4fa0b00721517730ba6a8f1e0ff442152"
-    sha256 monterey:       "8776565550d79ae6426408553c1ab7a3fe44ef7ffb29ca13770826b9f03739fe"
-    sha256 x86_64_linux:   "f14688932112468df2112b726b7c198a2a5bd03ec8cf872a3e78914cb09e9e3d"
+    rebuild 1
+    sha256 arm64_sonoma:   "f6c30f990b1b454d197e13bb3f568c78cb250948fca19722faeb78941ff60ddf"
+    sha256 arm64_ventura:  "50b7baf377d7113e89b84d7f09bb34c76213c7d2223ef5882b00b05f3ce57e7b"
+    sha256 arm64_monterey: "2da5b2f9155821504c5a9e39ef2b875d71f5495f456660a977dd1f5de240b838"
+    sha256 sonoma:         "17538492818411550e98596c1d890c3863758c9d9ae0c8e7d32f429d3deab5b3"
+    sha256 ventura:        "af85ae684ebaeb9732352ef4e1df190de255dead065450cd86e8d6453f7339f8"
+    sha256 monterey:       "622f4925bf396e9dc5d32d7bc5cc8b5fcdd27f91e29ac8ae21c91be3de91e34e"
+    sha256 x86_64_linux:   "2f315ecb74adf7324a4190171034bb41d3c36f5c4cb3e74dc4142fc86856d53f"
   end
 
   depends_on "docutils" => :build
@@ -38,6 +39,10 @@ class Mpv < Formula
   depends_on "zimg"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "molten-vk"
+  end
 
   on_linux do
     depends_on "alsa-lib"

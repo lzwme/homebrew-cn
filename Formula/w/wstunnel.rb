@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https:github.comerebewstunnel"
-  url "https:github.comerebewstunnelarchiverefstagsv9.4.2.tar.gz"
-  sha256 "0d1ea9b02164a4220c3e5bd5331bf3cd2a2e777a3c42c3195269092f2d03ea79"
+  url "https:github.comerebewstunnelarchiverefstagsv9.5.0.tar.gz"
+  sha256 "15e83929af29e44d4be1b9e13f38d3420d1681fdfe900409607d56579a1ceee1"
   license "BSD-3-Clause"
   head "https:github.comerebewstunnel.git", branch: "main"
 
@@ -15,16 +15,22 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9fafabd378b20df30ddb3d15abfd2c86593df56607f9279e205d48b26d633186"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b971741ae9e2e2782390bf951bd3a09a994278e74261ae4ffd2ea1df7d53dac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89bc0ff9450686807f8b7c50a28cad3b7effb9985b5d4c6af6dec582be2a3b8a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e8e24fa064a9178d15d84421a2f38c529d07504562f1d59bc56ea59a58f8ef19"
-    sha256 cellar: :any_skip_relocation, ventura:        "f50464aeab5c17eee53aa52be9f52479764acbff68266286ce02b56978afaa11"
-    sha256 cellar: :any_skip_relocation, monterey:       "825cab9a4925a8ad7ed2fc60e846712b5778272a3d333c72c1277b76d72bfd9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c17a647b09706615b0a9445e92ed8540a2d2dcbe0bb9a56ee5f84bdde327a7d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fe747e5b52edad02aecace1f9335a855821e19c86b5dae3cdd07a6155e42e111"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b824fcf5a59ec238c7ce953358bc5a3eb1d4355586628eb524a1a81894273fac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "84c0dea903130cde853e8e4cc3bab0d1abc14274d491c0c34c03d4de3f288c19"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0c0e16065de422e90b961feb78d9a86125a42f0cb3d8a9f205cca0b73e3114a"
+    sha256 cellar: :any_skip_relocation, ventura:        "eea498e20a9c828f71bfeec4ed3f5fe8e90b71ef69c131370eb10fe0b9b6b3f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c4fb9e3f5f3d6be889034fd2e1d8b1a3be9f579129edc2e5aa083469a51f2d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "144c21713e1486d431253d4d2efd916c5d27a1a9b0849276e04acfd354dcb481"
   end
 
   depends_on "rust" => :build
+
+  # patch version info, upstream pr ref, https:github.comerebewstunnelpull276
+  patch do
+    url "https:github.comerebewstunnelcommit4f1ab5c8cb7c32048e380c3ce35e817e2df82f85.patch?full_index=1"
+    sha256 "fdd5fea55f244239b21f22a14b841c404158ca24884fd74ae7675161601137a4"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

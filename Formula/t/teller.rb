@@ -1,22 +1,23 @@
 class Teller < Formula
-  desc "Secrets management tool for developers built in Go"
+  desc "Secrets management tool for developers"
   homepage "https:github.comtelleropsteller"
-  url "https:github.comtelleropstellerarchiverefstagsv2.0.5.tar.gz"
-  sha256 "736bfe5781c85f02b56dba9e987016510918a5b951b56f3bf1e42f291ce32f59"
+  url "https:github.comtelleropstellerarchiverefstagsv2.0.7.tar.gz"
+  sha256 "1d4275ede4366a31efc94039c58da4cec87466d09cc01444c3c18e9432716d23"
   license "Apache-2.0"
   head "https:github.comtelleropsteller.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7d71b2de62640aa1c84c2cf95a9abc8c6386e2376b313c6f48f1d05522e35839"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9bcfda740ad04c1425e0ef35291dd1e418d217bdae98ea5ee72c634fbb5b9cc0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ac97211aefb33dcad5b9a42fc8376d979bedc5b2f7b3f37e0814c2febb13d7c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dc8c6b0cd51a83c1cd732d4dc3fe52ba2363818ff69a4a57e10f57679cb71196"
-    sha256 cellar: :any_skip_relocation, ventura:        "e1fcd698027c6d43dbfdd43947ef3d47bb4f2bed1b72bcd145180ede72e2cb09"
-    sha256 cellar: :any_skip_relocation, monterey:       "25f0e6c0022f12acec79a06afb1d544847ef772dce46957d42b33471dfb92343"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab01fcffefb4752208146f64fc14d378d7e78d777aa099a28f8ce680d99b443e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "703d3907b7c26f917c3fe9fd1e87cad407a54c9f687104bf0b99a0027a91bfc7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a778a5408aa36e9c37b43b174e836bec8b3a33e47c277fe1848bca16e138f159"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee1a519ff52b6ac79cf9452148c1e43da20f53b3c480c4e6c720dc6eaa7aa1d9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1e8cec0e0438ed0d2fd78f55732c0e25817a5f5b29abec395feab13ed7064ce4"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef538ec71a01c3d9c720834548d1d1ef69c188e3b35af336aa929cdbcc410dcf"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a2c68920ddfa793d15b9929c3776bdf57dae94c1bba39a3ecc98b469971fdf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5a575efbb6d5fc01d43cd7ba2f6df6c0fc121e696b7b176a8b309c55b955503"
   end
 
   depends_on "pkg-config" => :build
+  depends_on "protobuf" => :build
   depends_on "rust" => :build
 
   on_linux do

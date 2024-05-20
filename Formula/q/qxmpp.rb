@@ -1,18 +1,18 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
   homepage "https:github.comqxmpp-projectqxmpp"
-  url "https:github.comqxmpp-projectqxmpparchiverefstagsv1.6.1.tar.gz"
-  sha256 "e85de632a8cc59e694cc1c29c4861aac9170210fefb39e9d259ff2199af41a86"
+  url "https:github.comqxmpp-projectqxmpparchiverefstagsv1.7.0.tar.gz"
+  sha256 "92f23238bc68d0f135a810454729c5da34312ebe2ae8f4bf9d303d2c3cde5e7d"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f15bde7485c51644e68f1c8c4dc8131a44476883d913d7560a58f00b04b1622a"
-    sha256 cellar: :any,                 arm64_ventura:  "f9f9b3418f972bc5b22a606d1fb485119e0cca0076894599fd3aa4d52db997d8"
-    sha256 cellar: :any,                 arm64_monterey: "7b355c1611fee52779d3f9f0e26f9690aa0212240c3b5dd4aa9aae86676a9f68"
-    sha256 cellar: :any,                 sonoma:         "f8ffb3a37b328960217540089e6d51648dd9c2d3e67245faf999ed95f7e2682d"
-    sha256 cellar: :any,                 ventura:        "8b02f97b18cceb5b65bc38f1157955b01a658154df4bb4d4db5065bc1f50de84"
-    sha256 cellar: :any,                 monterey:       "26180263f36fdd061b547766d1fed76fc047377230a638c24b99e421a983f38c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b346f2d0f999628ee6241203f6181cc0805e8e78c47c3b437951442602475e20"
+    sha256 cellar: :any,                 arm64_sonoma:   "2efc3ccfb7c3239a791d80f145771896cfc379f5f5f3c9837e49456bccc73a77"
+    sha256 cellar: :any,                 arm64_ventura:  "60eeb17819f3b632b4764b71b3fe089ca2af262812e88449c63d407bc7e844c0"
+    sha256 cellar: :any,                 arm64_monterey: "c1bb5b6c15ab30b79e484b3c7b5328457e64a1b8d4b060d8b928657efe2c0656"
+    sha256 cellar: :any,                 sonoma:         "7f1c3dae3c450468c3c9606c6d72f6af44c4764f5288f8f0ce5dda50c77641ab"
+    sha256 cellar: :any,                 ventura:        "8577d0aebbfeca487e3e94d8582ffe02ce4c2a686397ebe5299d5db3d71b7e98"
+    sha256 cellar: :any,                 monterey:       "f0ae0ae3aff6f0748d6650e2a92cf914f538a6d30f7eeff6500b5b7bb55e321c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9dcc79f792a0b58c397a1a6a84a10477aa2a9129dd72cf8a09d56cf4935000e7"
   end
 
   depends_on "cmake" => :build

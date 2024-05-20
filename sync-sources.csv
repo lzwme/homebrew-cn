@@ -4017,6 +4017,7 @@ Homebrew-homebrew-core/Formula/m/microsocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midicsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/midnight-commander.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mihomo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mikmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mikutter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mill.rb, Homebrew/homebrew-core, 1
@@ -5444,6 +5445,7 @@ Homebrew-homebrew-core/Formula/r/rolldice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rollup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rom-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rome.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ronn-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ronn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/root.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rosa-cli.rb, Homebrew/homebrew-core, 1
@@ -8779,6 +8781,7 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-butterfly-kids.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/font/font-c/font-cabin-condensed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cabin-sketch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cabin.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-cactus-classical-serif.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-caesar-dressing.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cagliostro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cairo-play.rb, Homebrew/homebrew-cask, 1
@@ -8847,6 +8850,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-chiron-hei-hk.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-c/font-chiron-sung-hk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chivo-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chivo.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-chocolate-classical-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chokokutai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chomsky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chonburi.rb, Homebrew/homebrew-cask, 1
@@ -9587,6 +9591,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-neoxihei.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-neozhisong.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-gb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-lite.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-mono-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-zhenkai.rb, Homebrew/homebrew-cask, 1
@@ -10141,8 +10146,13 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-playfair-display-sc.rb, Homebrew/h
 Homebrew-homebrew-cask/Casks/font/font-p/font-playfair-display.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playfair.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-br.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-co.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-de-grund.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-de-sas.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-de-va.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-fr-trad.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-gb-j.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-gb-s.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-vn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-plemol-jp-hs.rb, Homebrew/homebrew-cask, 1
