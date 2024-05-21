@@ -1,24 +1,25 @@
 class Libsail < Formula
   desc "Missing small and fast image decoding library for humans (not for machines)"
   homepage "https:github.comHappySeaFoxsail"
-  url "https:github.comHappySeaFoxsailarchiverefstagsv0.9.4.tar.gz"
-  sha256 "9a8b93c15c4a1afe07c760d2087895a18626034f55917f333aaabe9c9704438f"
+  url "https:github.comHappySeaFoxsailarchiverefstagsv0.9.5.tar.gz"
+  sha256 "28c601c0399be1940710afc150b5836f8b3f5f6a35b98d7ac1467e62bc568e20"
   license "MIT"
 
   bottle do
-    sha256 arm64_sonoma:   "06af4232cf0664b0f70346822b5ad41cd73aa40ab427e2023416b11a8f39b3ce"
-    sha256 arm64_ventura:  "1ac6b47a86abd99cdca0b4436a4709361fdbc2b855b2d0765f437c4a5fe9b2ee"
-    sha256 arm64_monterey: "d6a3f51c67d4cf6dffa62ba5df2ebd80fe40d0258572473c5d0f65672e6f8b38"
-    sha256 sonoma:         "04ccfdd2b34f2a53fe56187d16864edc3ca1c50e14d7ccabf41cd3983f08585d"
-    sha256 ventura:        "e1160d699fb68e44d953fd2fee135e91eb0ff9982f17f4a817c93cca2735442f"
-    sha256 monterey:       "ba4679b8f1224d78b7b605da210eb4d412c698ae6efc0fc045b9d7a342de4647"
-    sha256 x86_64_linux:   "833439de055562b6a419822a7fefbc6b42930e535f5a01ae7a75748fd9c4feee"
+    sha256 arm64_sonoma:   "c86420d6da7bb3e21cdd16fbc977303fd51fce6a4c00561d0ad50384d53e0a87"
+    sha256 arm64_ventura:  "97c95b8280452783a11e74baeb98e2627ff563df6e1943fe5c91817d5a176a19"
+    sha256 arm64_monterey: "b44003a00fcfd9565e40cb60952cb4221a7a58c444a07f9d4affa3f09aac0fe1"
+    sha256 sonoma:         "5793e722d5bd98b75e39fc436cfc508bcdd13cd21095fb8aecf97a4cbcd502d7"
+    sha256 ventura:        "52208a3a89426e4400db98c74e90f9f38957cba42d4b567e35c9a208999655b7"
+    sha256 monterey:       "5b81f882c0e471da4b75870ac6f14bca6e7a61f5675d936600226f9f6f8c2c7f"
+    sha256 x86_64_linux:   "36e69476b19907cd6206224a1e508abcc5f8f1473499cc1794403c8366934c5e"
   end
 
   depends_on "cmake"      => :build
   depends_on "pkg-config" => [:build, :test]
-
+  depends_on "brotli"
   depends_on "giflib"
+  depends_on "highway"
   depends_on "jasper"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"

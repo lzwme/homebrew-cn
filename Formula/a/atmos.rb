@@ -6,16 +6,19 @@ class Atmos < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ade78cc74a96e8db3a9b93f8083c9fceb5126d182f3b8b4f471e1458baaf1dba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60bc7428479acc51679208bff3fa2ccc064f55c85b20dbdc4da6dc01c15da5b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "55f49c452ba6f755dfd86a155bb47a68f144f476f078f484c61f75d613842499"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4cf3250c14ff363382bcded68e9e2c543810113fa918c7df58968ecba942fbf3"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5d9973252872b2dc6e7fb3dc03754e0a5c1bd15decf25e87365b424658f77e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a66344027efb836b44e882f84d4705fa87d570bab2bce2181656294334420a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bebcf51980e0b49d0abfe77618800ae0fa78e855509de10276e033eea1ecfc4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b4c516f8193f037d2e37bb64773588bdd40d3a42eace8fb47157579b7deb1ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a6684fb5fa112bb186f5ab99fbc457fb6162e7e2c71ffe732328e199907f818"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd1ae26a18a5f7f76efc9ef445851b4084859e83deba34618a4e3e07ac827028"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6156e6449a982c61d9c7a4115e1c727e93dbfc80912c4f583b4eb64ff216a8d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "24bf10af9ab6d33da506422bc77f1dc1d166c4a852637e3f88ced2681349273f"
+    sha256 cellar: :any_skip_relocation, monterey:       "e11d01677b947e2c7f3a80ceb73c8ddf23fde49e1bf58f013e2c763745c57d46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e664bc43b720ac63ce4c33474f599488a140f596a31811f3e5b82035dbcdc411"
   end
 
   depends_on "go" => :build
+
+  conflicts_with "tenv", because: "tenv symlinks atmos binaries"
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.comcloudposseatmoscmd.Version=#{version}'")

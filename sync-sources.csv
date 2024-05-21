@@ -1934,7 +1934,6 @@ Homebrew-homebrew-core/Formula/g/gambit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/game-music-emu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gammaray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gammu.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gandi.cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ganglia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garmintools.rb, Homebrew/homebrew-core, 0
@@ -2310,6 +2309,7 @@ Homebrew-homebrew-core/Formula/g/goredo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goreleaser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goreman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goresym.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gorilla-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gosec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gossip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gost.rb, Homebrew/homebrew-core, 1
@@ -2643,6 +2643,7 @@ Homebrew-homebrew-core/Formula/i/i386-elf-gdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/i686-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/i686-elf-gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iam-policy-json-to-terraform.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iamb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iamy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/iat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ibazel.rb, Homebrew/homebrew-core, 1
@@ -7685,6 +7686,7 @@ Homebrew-homebrew-cask/Casks/c/chemdoodle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chessx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chiaki.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/chime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chipmunk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chirp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choosy.rb, Homebrew/homebrew-cask, 0

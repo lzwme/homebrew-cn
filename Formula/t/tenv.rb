@@ -1,19 +1,19 @@
 class Tenv < Formula
-  desc "OpenTofu  Terraform  Terragrunt version manager"
+  desc "OpenTofu  Terraform  Terragrunt  Atmos version manager"
   homepage "https:tofuutils.github.iotenv"
-  url "https:github.comtofuutilstenvarchiverefstagsv1.10.2.tar.gz"
-  sha256 "36e8dd7830043c4a7a61d359cfb3f4dd9ad79218dcd23bdd7bdd3659fdbb973c"
+  url "https:github.comtofuutilstenvarchiverefstagsv1.11.2.tar.gz"
+  sha256 "99e129b29325716cf2ac8a8dc53591d783a90fcdffae488920a97a834c203601"
   license "Apache-2.0"
   head "https:github.comtofuutilstenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aafec434ca9aaa15756a6cfa071d90cd5bd2d663a98e5e23b6151daa01a1583b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf912201197fde54dcc6ff3b604ede458323cd5ba68d713f542f538e15d15639"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78c92bd2557d0b26b114508e1bfbb3535c381beb36fcdb6df157b04184943580"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2c4aef1aa2c5ba18f5c746fb6ff63f0389720b96294b5d0a1b811e365ac075a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "2010a2988431d1c621de4af91ab6f32da55cf65e99cf1bc5b8ff16244ef1a6bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "c01825aaacd6639ea14314243e33cb5d72b55e4bc1f0fc1e2873e012963ba5a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15dd04a7e4afa85d19792da9f4349c3a2614af962f2f549efa50ea708ccaafdc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cd94590ff0cd26c6ecf9ee3a736d2560163f02656afab527759b4c2415b2755"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cd94590ff0cd26c6ecf9ee3a736d2560163f02656afab527759b4c2415b2755"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cd94590ff0cd26c6ecf9ee3a736d2560163f02656afab527759b4c2415b2755"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1b35323b578360b0694b1a8295adf773811b7cb5252348262dff04ee8e0b3f68"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b35323b578360b0694b1a8295adf773811b7cb5252348262dff04ee8e0b3f68"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b35323b578360b0694b1a8295adf773811b7cb5252348262dff04ee8e0b3f68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0db0ff0a6658f8b8a37be39b83ccdecf9d0e3d72e3844e95f6417c9aefa95d80"
   end
 
   depends_on "go" => :build
@@ -21,12 +21,14 @@ class Tenv < Formula
   conflicts_with "opentofu", because: "both install tofu binary"
   conflicts_with "terraform", because: "both install terraform binary"
   conflicts_with "terragrunt", because: "both install terragrunt binary"
+  conflicts_with "atmos", because: "both install atmos binary"
   conflicts_with "tfenv", because: "tfenv symlinks terraform binaries"
   conflicts_with "tgenv", because: "tgenv symlinks terragrunt binaries"
 
   def install
+    ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X main.version=#{version}"
-    %w[tenv terraform terragrunt tf tofu].each do |f|
+    %w[tenv terraform terragrunt tf tofu atmos].each do |f|
       system "go", "build", *std_go_args(ldflags:, output: binf), ".cmd#{f}"
     end
   end

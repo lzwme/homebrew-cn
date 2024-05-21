@@ -1,8 +1,8 @@
 class Prowler < Formula
   include Language::Python::Virtualenv
 
-  desc "Open Source Security tool to perform Cloud Security best practices"
-  homepage "https://prowler.pro/"
+  desc "Tool for cloud security assessments, audits, incident response, and more"
+  homepage "https://prowler.com/"
   url "https://files.pythonhosted.org/packages/df/f2/26e6bb76ee58a2340be041c67a80b46de62fb925e09d58bd766bdee1b788/prowler-4.1.0.tar.gz"
   sha256 "2c4e9a77750b7f3ef83b2fc80ece21dd9cf6d2a55efb6325e8d072aa80e93da3"
   license "Apache-2.0"

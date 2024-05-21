@@ -1,29 +1,22 @@
 class Scnlib < Formula
   desc "Scanf for modern C++"
   homepage "https:scnlib.dev"
-  url "https:github.comeliaskosunenscnlibarchiverefstagsv2.0.2.tar.gz"
-  sha256 "a485076b8710576cf05fbc086d39499d16804575c0660b0dfaeeaf7823660a17"
+  url "https:github.comeliaskosunenscnlibarchiverefstagsv2.0.3.tar.gz"
+  sha256 "507ed0e988f1d9460a9c921fc21f5a5244185a4015942f235522fbe5c21e6a51"
   license "Apache-2.0"
-  revision 2
   head "https:github.comeliaskosunenscnlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "93c95965d29ecff98696ef99bf03ecdd53ff2a73234dd4fadf51c8763d24653d"
-    sha256 cellar: :any, arm64_ventura:  "c8f4688c96805acce0e245cddf5428093b9af366aa36e2d96272f520a49c93b8"
-    sha256 cellar: :any, arm64_monterey: "338509c3f274d1661d89a8d052394ff214d181d021ce13441c59e6e004b9e814"
-    sha256 cellar: :any, sonoma:         "b03a81a3cd662b57324c5821632424b23c897279e4e4995cb72c50bfbe572baf"
-    sha256 cellar: :any, ventura:        "e50c784cbaf52a9f82e91aa37e44753fb24680bc0db7f22fb42c75eada075c9c"
-    sha256 cellar: :any, monterey:       "b843941c04a48fcf656b07fd6a2ec112dbb51283ae62fcd9c22b5b01ba7b6297"
+    sha256 cellar: :any, arm64_sonoma:   "84fdc89418240153c532c8b0f6657a1ceabb3b7fc636fd22b8e7471262367fe5"
+    sha256 cellar: :any, arm64_ventura:  "0d88733c986a3df9d1bc26c3b768d3ede036dd0be3082e0ccc096c2679f3dd09"
+    sha256 cellar: :any, arm64_monterey: "c5c3977d2289c4c19cff1e12f8b51bc361d147de8f2de959fd7635037d308188"
+    sha256 cellar: :any, sonoma:         "4b5731760a71c16e1940ddc8062987604f3286e267ac3b3ff74cc6b02b4560d5"
+    sha256 cellar: :any, ventura:        "b0c4cf802d7ba11c84d5d5ece50840393d4c56cc6817f34b41a475803edbe822"
+    sha256 cellar: :any, monterey:       "ca75f67a9cf3e6654bfe78db00ea33bed3121b0ed3c574aa90778e956e9a2f87"
   end
 
   depends_on "cmake" => :build
   depends_on "simdutf"
-
-  # patch to support simdutf 5.2.2, https:github.comeliaskosunenscnlibpull102
-  patch do
-    url "https:github.comeliaskosunenscnlibcommitf958f10131434ea76775e068648f7d6dd2b94924.patch?full_index=1"
-    sha256 "d952732c35bb6e345179ec19a32e88edd5f840719b4d3a5bb77b0c84344cda6c"
-  end
 
   def install
     args = %w[

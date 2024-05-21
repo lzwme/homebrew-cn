@@ -5,6 +5,11 @@ class Rustscan < Formula
   sha256 "6b2b7ffb070d4f1063e1bdbcebfc38d07cbd6c135b97bf027c870f43afb71c69"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2892a0605ccb2d23425ff9933027691ed872c22e6333dc68cab0f33358b01c70"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd425e735ba83220770cad3a401da58d3acb8a9231788250fa846057da66e7d9"

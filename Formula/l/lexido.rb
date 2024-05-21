@@ -1,18 +1,18 @@
 class Lexido < Formula
   desc "Innovative assistant for the command-line"
   homepage "https:github.commicr0-devlexido"
-  url "https:github.commicr0-devlexidoarchiverefstagsv1.4.1.tar.gz"
-  sha256 "b35527c2d1a2b338108b06a032715353f16ab9bb04ccd4edb7234fbb2f08f9e4"
+  url "https:github.commicr0-devlexidoarchiverefstagsv1.4.2.tar.gz"
+  sha256 "fb1c6e750ce1dc30d2a6cd461cf6917197191a3546e5bf37ed1eadbf8bb922e2"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0e5f8d0a206a5922cb1d980b7832de341083e4eed2cd0bc32d9917198256a2ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78e6c4486460669ffc0fe54735a199e40e0296edad36a3c03d459d0ebc9a3f9f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1aedf8d15b20527597bb398a054b6f275af8ba6ee38d9798f920916eaca2d4b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3f0de7d791da4b7c26e8520e2007f8496daf1826adfaf62f6a8a74b814e97911"
-    sha256 cellar: :any_skip_relocation, ventura:        "23bda86a50be7fd0e2f6fe039b89bdfe232a932949aa6ce5aec7aacec211e764"
-    sha256 cellar: :any_skip_relocation, monterey:       "091bdb8370971d2bfc035c74b22bf8928337211b8cf2a2716332513c67713d05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65caed63f838096c4a644ac1f19b8fffb79fb825e0a2e748f92d5d9bc2a9287a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7b84ce2df34f7c24624b16f3379df4b86a13b584d2ea5cef890d04a8b6f93e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49371e28e4d75a8f95ad986aa85333a21ef35796eaff78af336c9623a33444dc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebd337e4b9aa9d01d5c3db6871a284a6a6e870d2ea4a3146888cbe755e82749f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8fa510ee09966522a55167a04b5b71548a47598f3ec9552f2cacade04bc54495"
+    sha256 cellar: :any_skip_relocation, ventura:        "64d1f5598bea94d2b53d8a405fbaa2210a03f676cba635dfb6c686cff37460e8"
+    sha256 cellar: :any_skip_relocation, monterey:       "0496adcf3a9783723bfb29ec22106c0d4c0f7810e739ccc8097128d06126ba45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d121140d74dca32963a9634105ff2d2bc686cd218127adc51ec2cad70bdc602"
   end
 
   depends_on "go" => :build

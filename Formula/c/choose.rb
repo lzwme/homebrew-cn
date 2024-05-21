@@ -20,7 +20,8 @@ class Choose < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d41eb1ad4084eab5d86a808d208009b196ead914a9ed5e497f06b04eb7071a8"
   end
 
-  depends_on "python-setuptools" => :build
+  deprecate! date: "2024-05-19", because: :unmaintained
+
   depends_on "python@3.12"
 
   conflicts_with "choose-gui", because: "both install a `choose` binary"
@@ -36,7 +37,7 @@ class Choose < Formula
     ENV.prepend_create_path "PYTHONPATH", libexecLanguage::Python.site_packages(python3)
 
     resource("urwid").stage do
-      system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec), "."
+      system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec, build_isolation: true), "."
     end
 
     bin.install "choose"

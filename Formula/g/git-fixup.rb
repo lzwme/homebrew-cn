@@ -1,13 +1,13 @@
 class GitFixup < Formula
   desc "Alias for git commit --fixup <ref>"
   homepage "https:github.comkeisgit-fixup"
-  url "https:github.comkeisgit-fixuparchiverefstagsv1.5.0.tar.gz"
-  sha256 "b110730f37009f8fe26bcbdd83e20a9ccad02367b48cd0cfe50f4ec1a74f0eae"
+  url "https:github.comkeisgit-fixuparchiverefstagsv1.6.1.tar.gz"
+  sha256 "414d207687059094df9603c79d5e52343704e077b72777f25eda4d6ce291046e"
   license "ISC"
   head "https:github.comkeisgit-fixup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6de34acd070e73748e8412252fad584ffeddacd87b11d1cd1d28fccfeb9e15c1"
+    sha256 cellar: :any_skip_relocation, all: "d9e677b598f75ff4cd9fb7c34b1787dc2e798061f32ce8dc6c3e953e6313aec9"
   end
 
   def install

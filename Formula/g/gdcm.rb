@@ -23,7 +23,6 @@ class Gdcm < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "openjpeg"
   depends_on "openssl@3"
@@ -43,9 +42,12 @@ class Gdcm < Formula
   end
 
   def install
-    python_include =
-      Utils.safe_popen_read(python3, "-c", "from distutils import sysconfig;print(sysconfig.get_python_inc(True))")
-           .chomp
+    xy = Language::Python.major_minor_version python3
+    python_include = if OS.mac?
+      Formula["python@#{xy}"].opt_frameworks"Python.frameworkVersions#{xy}includepython#{xy}"
+    else
+      Formula["python@#{xy}"].opt_include"python#{xy}"
+    end
 
     prefix_site_packages = prefixLanguage::Python.site_packages(python3)
     args = [

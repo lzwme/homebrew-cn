@@ -1,8 +1,8 @@
 class Vgrep < Formula
   desc "User-friendly pager for grep"
   homepage "https:github.comvrothbergvgrep"
-  url "https:github.comvrothbergvgreparchiverefstagsv2.7.0.tar.gz"
-  sha256 "0fb2ca6df8cdbb57bc50589e626e456f8a62b2d8d545b93425070844fcff26ea"
+  url "https:github.comvrothbergvgreparchiverefstagsv2.8.0.tar.gz"
+  sha256 "325b28bd5e8da316e319361f2dd8e3cc74fcd55724fc8ad4b2a73c21b2903bd8"
   license "GPL-3.0-only"
   version_scheme 1
   head "https:github.comvrothbergvgrep.git", branch: "main"
@@ -19,12 +19,12 @@ class Vgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eee88f7fa0d849ceed26a317346d495dc4e4014ff032f911724f6584af1f7772"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0259fe9dd8c68ea38179680e1f6f6aeeb2dff5af23043285c884ac32e8e560ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67cbb9df6b7f97b0fbdf50bbb57949d9cf2a0c0decaa45db7501ea283ed16010"
-    sha256 cellar: :any_skip_relocation, sonoma:         "44e395cf96b463e771dfb45d599f375864adaa92c8089684eda8c46c68eb770c"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb7c636816ca7a7f9dfe70843a8cb86f9a5846bc99f679df997e7f67980501b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6baee28a056076a44e1e37272da0187a70f29f1affbf34a0cc7b9ab8055d22a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "61e6682d7f0a226d7f0a58d29540c30caf07f6cc49ed243bdde5a8e64f238dab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa7ba93c9e1de2091f5aa809bc772e383160c14bc1c53fc623be305ebb8053a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "875458d3eafd19ab0490d73130dc93e75e09c6080dbd65080855b2b53dad6bb0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7a2adca7bf767eb1385fb51fbbbab3ec42b048ec1d4e839fea1f8c9248a07a9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "98268b0618e3050e2082400d38ff4ae366804775eca808f01984036611e4f3d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "ae3ceae715d522bfedb2ddb04f15e80b4049b8e55d4c08290ab4fa6272c0ab96"
   end
 
   depends_on "go" => :build

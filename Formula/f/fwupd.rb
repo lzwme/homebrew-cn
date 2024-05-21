@@ -3,20 +3,19 @@ class Fwupd < Formula
 
   desc "Firmware update daemon"
   homepage "https:github.comfwupdfwupd"
-  url "https:github.comfwupdfwupdreleasesdownload1.9.19fwupd-1.9.19.tar.xz"
-  sha256 "29d599277d10376a39733cb8978223512f1ce573face51a788649b9b2f47d146"
+  url "https:github.comfwupdfwupdreleasesdownload1.9.20fwupd-1.9.20.tar.xz"
+  sha256 "b86a2d7fe1b6cc0ac4f75f3351a78cb3c225880c9e20b932fa078ef472e9fcb2"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https:github.comfwupdfwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_sonoma:   "554be22b786b71d3e55a73e07fa67df7032685f4a96ee6e828d4b905c264d26a"
-    sha256 arm64_ventura:  "edc9317e4a569dbde5d15f74662c9f2dde9d867ced68f7639a0d848662ca4b02"
-    sha256 arm64_monterey: "7e26e8ca921869ef01844ec223a36365ed10a972ee299e69cdd6d970d4729b9e"
-    sha256 sonoma:         "e88a49b9cfcab94db98de7516b6ea36435da54b7fa3fc658c76420867c181f20"
-    sha256 ventura:        "066fd4bace52cc8c7934390d28152e5e397be33ed862f839001b1f417a449e53"
-    sha256 monterey:       "ce58ef1ffce2ff9a793e2c5d1b1db636bbd0e0f733e848005cb9a9bf231ee4f1"
-    sha256 x86_64_linux:   "334a8751a60bcd23e7f715464fcebfbef6e892e2e8ffbdab60808c1db579dd9a"
+    sha256 arm64_sonoma:   "3559fa109247f1def90ef333327a7ead641dc073e78e9d5b59c788c6904f1893"
+    sha256 arm64_ventura:  "c531f5e462aab589951049e08cfe4a50017be50b40c05716b1935edef6346a2f"
+    sha256 arm64_monterey: "d9cc1749d3d4f487228dc2b53c1da0503ead44829574c498476dcb0ffcb1d3fb"
+    sha256 sonoma:         "6686df0901073a0bef75756f59986f755e49ede21687cabf6d56d5e649f8cc04"
+    sha256 ventura:        "9d8cb69554885580b39c6e6fa2fc10ff19cc324e9d01de2773bcf4e1fece7710"
+    sha256 monterey:       "fc876f117b1f7f1a38e66b59e66ed737a219b4dc3d291cdb25fff3ac41fac215"
+    sha256 x86_64_linux:   "f54c9242e7f4922e21f05bc6a58d43e278156ae66a4d750b312e7aee0d1fbfc1"
   end
 
   depends_on "gi-docgen" => :build
@@ -37,9 +36,11 @@ class Fwupd < Formula
   depends_on "libjcat"
   depends_on "libxmlb"
   depends_on "protobuf-c"
+  depends_on "sqlite"
+  depends_on "xz"
 
   uses_from_macos "curl"
-  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
 
   resource "jinja2" do
     url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"

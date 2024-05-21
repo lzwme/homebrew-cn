@@ -1,28 +1,22 @@
 class K8sgpt < Formula
   desc "Scanning your k8s clusters, diagnosing, and triaging issues in simple English"
   homepage "https:k8sgpt.ai"
-  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.3.31.tar.gz"
-  sha256 "a76dded5c65c9694fabcc667be361c6961adcc5f12f9f37f665ca2bd08820eeb"
+  url "https:github.comk8sgpt-aik8sgptarchiverefstagsv0.3.32.tar.gz"
+  sha256 "baf955f9963c6d611cb69b20d0b36890e1bb6d0421868d21bb7f0b10ab7ac270"
   license "Apache-2.0"
   head "https:github.comk8sgpt-aik8sgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8043e86eb7d36eb88502b00bd2660cc702cc556f04bda9dcb656d9d1f525202"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a328f6661b1c55c70ce7b127e15a00bd9f23a29c5406126b2ce94b1621adc5f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b41a999bd6af05d96708df8e6d6d7d02c94730fcaef2714eb3b4659107f54b48"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d4f13020c147b1ef0e6f9db6607e4b8553b862c4c99d7e7af1a078cbe93d90c"
-    sha256 cellar: :any_skip_relocation, ventura:        "e9510b448b45e0979d09b9a91669671ab2214b45b80c882913d7e716479977bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "a166520302fa94b62f26840099b39f0cf3d36413d27c3eb6a2520e686f306e50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e9502c6a8a33dd5d147bd35335b7996df8d15b9a79b339a9d7ef14c58ad27ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "48522eeaa5191d3908cb31ec6e11e3a4e6ce0d7375766da762ccb382270b0087"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ccfdc2dfa4257ae6bceff7ad7520076288929ea49dda58756e53783c7532551b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e854699a14350d196cb03fb78a5e34d1d2069dbb292116d8da6f81ccfb549d6f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3ae63337e9f374540a2194fb2532a92db26fd4c20f5851b59658fc66a842799e"
+    sha256 cellar: :any_skip_relocation, ventura:        "35561a4e2c48420d0e5b6815a22b8eb229d25a9b49843dd8a3484f5f99c813ef"
+    sha256 cellar: :any_skip_relocation, monterey:       "a2d4fd87f4d590a9585e3ba6654ac04cae7757e749b68e1c988284d9f047b88c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e111d7860397b4f53f178a384cd55d0938649242cadf8f7da560ae22d8c3be5d"
   end
 
   depends_on "go" => :build
-
-  # patch build, upstream pr ref, https:github.comk8sgpt-aik8sgptpull1115
-  patch do
-    url "https:github.comk8sgpt-aik8sgptcommit1fb75a633c546bc6ada689e27d29c134d4cf8b5f.patch?full_index=1"
-    sha256 "9ca5985449b404e4d12db2c3ce8823a18dc29fa9f8b391eb48c0de22400fe292"
-  end
 
   def install
     ldflags = %W[

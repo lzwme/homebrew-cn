@@ -3,29 +3,37 @@ class Redis < Formula
   homepage "https:redis.io"
   # NOTE: Do not bump to v7.4+ as license changed to RSALv2+SSPLv1
   # https:github.comredisredispull13157
-  url "https:download.redis.ioreleasesredis-7.2.4.tar.gz"
-  sha256 "8d104c26a154b29fd67d6568b4f375212212ad41e0c2caa3d66480e78dbd3b59"
+  url "https:download.redis.ioreleasesredis-7.2.5.tar.gz"
+  sha256 "5981179706f8391f03be91d951acafaeda91af7fac56beffb2701963103e423d"
   license "BSD-3-Clause"
   head "https:github.comredisredis.git", branch: "unstable"
 
   livecheck do
     url "https:download.redis.ioreleases"
     regex(href=.*?redis[._-]v?(\d+(?:\.\d+)+)\.ti)
+    strategy :page_match do |page, regex|
+      version_limit = Version.new("7.4")
+      page.scan(regex).map do |match|
+        match[0] if Version.new(match[0]) < version_limit
+      end
+    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "7840031cf7bb94c62d6e42b6e730e8447c31ae37e3564a43a772fb8e6e0e51cf"
-    sha256 cellar: :any,                 arm64_ventura:  "975f8c13a24d1b0f4a8e0f3c9ea2338d209ec9bcfcebd3130d0a72c3e4809c58"
-    sha256 cellar: :any,                 arm64_monterey: "ac32435ac27d8a061ee32ba88cf842ee3dff64a85803aa4d6a65d841e32ccbbd"
-    sha256 cellar: :any,                 sonoma:         "09767dffd13dd62aed6bb904f35946c3b9dae2db58cc884dc179d6e12b573673"
-    sha256 cellar: :any,                 ventura:        "3ce1ca917e08acf3cad5023e0d7184505be327f797f18eb692711325d8c540c9"
-    sha256 cellar: :any,                 monterey:       "357f32b7bbe42ae1323d693bebd756f1589ae38a03e25f1a217fdd870b301797"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92d2c8978df576d27b03b8f806136eaa920329c0fec4f4606f1a07abaad6c353"
+    sha256 cellar: :any,                 arm64_sonoma:   "bc4c2bb74037b80b2566938f7249c1052f8e493af8ee7b57e5ee14e19c19411e"
+    sha256 cellar: :any,                 arm64_ventura:  "c40b3cf2351377a3e71d5a8562b4a62e94b65cb736d3438b67465cf2aacecf2e"
+    sha256 cellar: :any,                 arm64_monterey: "c749644cda76a63f76cbc39fd8f2021ab959a4e1eb8c8ff5dfe5638803c80333"
+    sha256 cellar: :any,                 sonoma:         "1415fc1040dff3bd1955d3440d9627d80a23d623801cc4b16cb07b9d4a921c0b"
+    sha256 cellar: :any,                 ventura:        "9c5f7c63a52f880ecf43d44d533a3b4c05089030442e1652cdfe3cc7ea88ed93"
+    sha256 cellar: :any,                 monterey:       "4c97e9718bd50ee80e139936e0b5fb6fd73879051ed7e9d6bddc5eae0d671347"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d782e9fcee0d8a104ba5071709fb183ce77edb40f153c971001baaa025029910"
   end
 
   depends_on "openssl@3"
 
   def install
+    odie "Do not bump to v7.4+" if version.major_minor >= "7.4"
+
     system "make", "install", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes"
 
     %w[run dbredis log].each { |p| (varp).mkpath }

@@ -4,20 +4,19 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https:cassandra.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=cassandra4.1.4apache-cassandra-4.1.4-bin.tar.gz"
-  mirror "https:archive.apache.orgdistcassandra4.1.4apache-cassandra-4.1.4-bin.tar.gz"
-  sha256 "03447f958339ba70f717cf2cf2fd97be17876540526a86343db635a8ca523bcd"
+  url "https:www.apache.orgdyncloser.lua?path=cassandra4.1.5apache-cassandra-4.1.5-bin.tar.gz"
+  mirror "https:archive.apache.orgdistcassandra4.1.5apache-cassandra-4.1.5-bin.tar.gz"
+  sha256 "ed184c361482e8b34f75537a1ac83755286313d6dcb0e11293813fb8ce4afbf5"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "c762c38816e0390045b7dacd748540fe5d5d6b2f3eb899345feae7d43a855f43"
-    sha256 cellar: :any,                 arm64_ventura:  "b9c1354a4c899523ee897d54cdc93bd7e0569bd59a00b1239f5893cc753f905b"
-    sha256 cellar: :any,                 arm64_monterey: "8c6bdf5ffeddbe5f901ffd5ae663dddf442ce2cc18146a5bf2d3cc74b2258295"
-    sha256 cellar: :any,                 sonoma:         "dce5b3c5d2b03a1e49b20dbfdff5ac25cee90f4613e3147eb7ca01147109eab4"
-    sha256 cellar: :any,                 ventura:        "03503111a62e38a4e68559cd4f4ee9751011e77f325fb20576055af161438778"
-    sha256 cellar: :any,                 monterey:       "93251f588e156d585a6645effb9370aad0fee90234db341d011f1838309384a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49e2a2458bb471147d3181b50c419e8020c8cf32171a243dd02442c8ff22ccaa"
+    sha256 cellar: :any,                 arm64_sonoma:   "798c10d850b0352b5d38aaca5eba61228316be61d76b3f8bb1b1c172d4417b81"
+    sha256 cellar: :any,                 arm64_ventura:  "6f4d64e72b864644bc9eb3d1111915e53c08f99bc525f9b5225696e936eae928"
+    sha256 cellar: :any,                 arm64_monterey: "3304b9939a955e3cbdfc0122420e3cd9d284066de5667deab14c218ce5c3c123"
+    sha256 cellar: :any,                 sonoma:         "b3094469a7291d0c9f550a4bcb4e29856bb41dce94d6f27a4367546f9b5f9db3"
+    sha256 cellar: :any,                 ventura:        "9a94c2171ed8102ebbf0bf6b4bd527733917bc319e138d2712c2ef75c17447af"
+    sha256 cellar: :any,                 monterey:       "4ae709e90ab6fcb632651b6f27639fbd339f024815adb69896e89b6343c40aee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97734f6c4cba55bf7756255722f3485ecc69ceddeac161fd7f55b257b2b415c3"
   end
 
   depends_on "libev"
@@ -25,8 +24,8 @@ class Cassandra < Formula
   depends_on "python@3.12"
 
   resource "cassandra-driver" do
-    url "https:files.pythonhosted.orgpackages59283e0ea7003910166525304b65a8ffa190666b483c2cc9c38ed5746a25d0fdcassandra-driver-3.29.0.tar.gz"
-    sha256 "0a34f9534356e5fd33af8cdda109d5e945b6335cb50399b267c46368c4e93c98"
+    url "https:files.pythonhosted.orgpackages0746cdf1e69263d8c2fe7a05a8f16ae67910b62cc40ba313ffbae3bc5025519acassandra-driver-3.29.1.tar.gz"
+    sha256 "38e9c2a2f2a9664bb03f1f852d5fccaeff2163942b5db35dffcf8bf32a51cfe5"
   end
 
   resource "click" do
