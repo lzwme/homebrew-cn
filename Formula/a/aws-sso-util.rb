@@ -6,17 +6,17 @@ class AwsSsoUtil < Formula
   url "https:files.pythonhosted.orgpackages6e9390d3753ac7ea3148c41c43929cace11d8fc1331c629497ab24a91a6c3724aws_sso_util-4.32.0.tar.gz"
   sha256 "2649dcf3c594851a0c55ed6ebf2df70205d1debd6e58e263738430d4703890ec"
   license "Apache-2.0"
-  revision 5
+  revision 6
   head "https:github.combenkehoeaws-sso-util.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6454a59991d0932cc755bf36e49a93fb07f8cfdae02b6f1d3743d2714973868e"
-    sha256 cellar: :any,                 arm64_ventura:  "f2651b1d70aa53f7a3cc9b6c0d1ffd5cf8821727fbc692225a28c896ffb96f03"
-    sha256 cellar: :any,                 arm64_monterey: "c83f1029df018dcb1d637e3409c85e0a866b5bcf541d74d4755bacd6266710db"
-    sha256 cellar: :any,                 sonoma:         "09b5b3cd3ae948bb2c21d4d402ec635ebfea681afd3a8ec2acd8dc49440e2052"
-    sha256 cellar: :any,                 ventura:        "b732e2f04b9178952b5edfb86fb73e3d0fcb641da60fc053e86b5dec70cb83ee"
-    sha256 cellar: :any,                 monterey:       "98fe81da90ab2f15b23079cff0dc71f1156ef21b36995e5b401e30c92d13e80e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc1babf8e4a1f038d656a4bc1771e852566d064fed511a86cf695d13822eaa32"
+    sha256 cellar: :any,                 arm64_sonoma:   "183b8d56116ebf20fc1cde868a21722ef9ce7a40bbe16e151aee9166242e6d4c"
+    sha256 cellar: :any,                 arm64_ventura:  "9d788f13ed8c7b9099b6c3c3a8eb639c74fb868a77dba4c5630373495c582144"
+    sha256 cellar: :any,                 arm64_monterey: "e716b9f7ba9c2709692eda0bf4c2fed3bcde76e2bdba9ba6556289352df152b6"
+    sha256 cellar: :any,                 sonoma:         "a94a1822a0cbfce232fa2e7d40fbe86fb912a14910b209e98d8b5915c77b6c72"
+    sha256 cellar: :any,                 ventura:        "e02ab584717180357ba8b5d6dddc35a0313372e32dd5d69ebc9bf0e86ce20d22"
+    sha256 cellar: :any,                 monterey:       "be6858058657c027555d31973f8ef642e2543010d03405909cca9b8de9eea2ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00bfb48426323bd428df0df9092fe6551bd3fb947e6e43865ed6726b58ef7121"
   end
 
   depends_on "certifi"
@@ -39,13 +39,13 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages466d8f361c95d4f948dae469a3072cf998f62300ca3bc1a311c1c029a2793313boto3-1.34.83.tar.gz"
-    sha256 "9733ce811bd82feab506ad9309e375a79cabe8c6149061971c17754ce8997551"
+    url "https:files.pythonhosted.orgpackagescdf503bfbb89af1266a10125ebbc2bb09e2d276450de0e360767e7edb0d54022boto3-1.34.109.tar.gz"
+    sha256 "98d389562e03a46fd79fea5f988e9e6032674a0c3e9e42c06941ec588b7e1070"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages0cb86d1ec4802de76d21851784ca2b1d26575f193c31ebd194a196d08dac0d0dbotocore-1.34.83.tar.gz"
-    sha256 "0f302aa76283d4df62b4fbb6d3d20115c1a8957fc02171257fc93904d69d5636"
+    url "https:files.pythonhosted.orgpackages7aaf091991a0420d70e150012fdee651185c7a0a3de8d96ad626b0ec9e35b704botocore-1.34.109.tar.gz"
+    sha256 "804821252597821f7223cb3bfca2a2a513ae0bb9a71e8e22605aff6866e13e71"
   end
 
   resource "charset-normalizer" do
@@ -89,8 +89,8 @@ class AwsSsoUtil < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "s3transfer" do
@@ -99,8 +99,8 @@ class AwsSsoUtil < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "six" do

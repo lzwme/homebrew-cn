@@ -6,17 +6,17 @@ class Checkdmarc < Formula
   url "https:files.pythonhosted.orgpackagesdf06e61a492a70a2126ac62fea72694aa0ce6f645cbe44ea513d9a68e2df822bcheckdmarc-5.3.1.tar.gz"
   sha256 "1d71e7fa611fa8faa36fad09416b5e2c3265d026d3b5209c051f4e292565e332"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3680a47f178cd3a8c2fb9a0f8a230829258609507d63fdbf2e36cbb47088607f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3680a47f178cd3a8c2fb9a0f8a230829258609507d63fdbf2e36cbb47088607f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3680a47f178cd3a8c2fb9a0f8a230829258609507d63fdbf2e36cbb47088607f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3680a47f178cd3a8c2fb9a0f8a230829258609507d63fdbf2e36cbb47088607f"
-    sha256 cellar: :any_skip_relocation, ventura:        "3680a47f178cd3a8c2fb9a0f8a230829258609507d63fdbf2e36cbb47088607f"
-    sha256 cellar: :any_skip_relocation, monterey:       "3680a47f178cd3a8c2fb9a0f8a230829258609507d63fdbf2e36cbb47088607f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9caebdcdefba3c289f8d429bb654e301d5a40e83f087dc372d41be00391fe506"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f37ecbd8f4a67955953854bf1fda6a1bbae3b74e382955eaf9a5626ce5abe7c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07d42320a68588e26252d47a0e3126d8dcdb20f48e8142f9dc48d63865877a99"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec5f3ba11b38f7691b7a6b803187a61d4d7f79491e358e4c07711e8ebed05828"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fe4460542470e471d17bd37773f70e5afb00cedf8c2cee000552fd4ab56fec3c"
+    sha256 cellar: :any_skip_relocation, ventura:        "128d1b85a6a26ba95eb6e5852a581ef0710e82e2cced206bbacb87f770defe08"
+    sha256 cellar: :any_skip_relocation, monterey:       "b1734df5655d135bc7fa9b58faed2e461d9361b2747ba2dca9e8420180330c12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76d8939aaec0fb6e498d45d0d28d815a4945da492c0c6142644ee7231c65e6d6"
   end
 
   depends_on "certifi"
@@ -44,8 +44,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackages3a0fb8cf593fda6c7525ccc444d15f42f2aada2f3d9a34297f8c622696460102publicsuffixlist-0.10.0.20240412.tar.gz"
-    sha256 "1b685d974dbd3258ab1c7f473449cf2a55275a74a995b60a8410f0f07d7f5b78"
+    url "https:files.pythonhosted.orgpackages34be78f21c540b536e6e0fa3f29b3d996dd2ca6e48a406a8124e9b4c1ac8e717publicsuffixlist-0.10.0.20240515.tar.gz"
+    sha256 "d0195ba9e7d80e3611216bf95208d34489c3d76975c06a7e9e7c09044e6f6d7b"
   end
 
   resource "pyleri" do
@@ -54,8 +54,8 @@ class Checkdmarc < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "timeout-decorator" do

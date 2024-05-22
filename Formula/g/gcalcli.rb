@@ -6,17 +6,17 @@ class Gcalcli < Formula
   url "https:files.pythonhosted.orgpackagese8d99d1f03b9b47c3082bf664a2f789a3aded0674dca9e0b894540d754b937ccgcalcli-4.3.0.tar.gz"
   sha256 "d00081460276027196e8fb957880b29ba4f22ea43136f9e232a9408016abc110"
   license "MIT"
-  revision 7
+  revision 8
   head "https:github.cominsanumgcalcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29a6db8a71e477a820f2c1e2910929639ef841d49720c688a97082428fc9e8c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf492a3b93beb626e8f81781cf7dde72777423f0136e2923eba283a0a2ef7e2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb34a878415171781fcf36bc277cc4dd9fa3c0545f470c02889bd13cffa3ab69"
-    sha256 cellar: :any_skip_relocation, sonoma:         "327c7e10fcd79a0efec9d2f690b5686410da0b6e9e113fc97c42e1f4928850fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "6131f4c0d89281e0521922e3b5690ac1b638ef3d5e81b9e65c0c5651712ed4cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "52c78d1b9ea02cd24bb344114569f4037faff7fe87f122bf7b49d2897f06064f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a4b01208548531b8c5cb7c1a054dca85f6682fbf53e343f10b84d89a3c174bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf5df1986165c472fd0d67342c21f474c7d0b46d3c2b1a77ca5e9fb569eaa6ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8b5e3c1d4cc5bc033d4e38debec3ac1b2aa29921f9be282cf3b66cc387d22aa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1a277fa4b26ca6bcab49d4614d366878b589ee9d263d2a7b67895d7dc9c9c01"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc4e9b02991d7935f27080339002b13739925dbc7523c45e6d8015c6fd02e3e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "34453489a77595592df466c2a137a637469e420459bec1d1c41446ad6ed4059d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d00d080e92b5597cb7d198dd1e650bffcb881ca76856c016d01c45611cda17ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66bde0ab24d0bed019123552f1906de355a019630f3cbb8036c5fc599e2ba738"
   end
 
   depends_on "certifi"
@@ -33,13 +33,13 @@ class Gcalcli < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackagesb28fecd68579bd2bf5e9321df60dcdee6e575adf77fedacb1d8378760b2b16b6google-api-core-2.18.0.tar.gz"
-    sha256 "62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"
+    url "https:files.pythonhosted.orgpackages31c6460b83c297c91c4f62d69aa9f04f3c5f8139a4f41c4b747c014939d5a802google-api-core-2.19.0.tar.gz"
+    sha256 "cf1b7c2694047886d2af1128a03ae99e391108a08804f87cfd35970e49c9cd10"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesac7a5b7b208a29c278128a9c27470338960a050da1fc74d18e10525a12fae4fcgoogle-api-python-client-2.125.0.tar.gz"
-    sha256 "51a0385cff65ec135106e8be60ee7112557396dde5f44113ae23912baddda143"
+    url "https:files.pythonhosted.orgpackagesc29756b0c6661e0b60e9d743a2eed018329a5265bd37d1b14969ef53cd06239bgoogle-api-python-client-2.129.0.tar.gz"
+    sha256 "984cc8cc8eb4923468b1926d2b8effc5b459a4dda3c845896eb87c153b28ef84"
   end
 
   resource "google-auth" do
@@ -108,8 +108,8 @@ class Gcalcli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "rsa" do

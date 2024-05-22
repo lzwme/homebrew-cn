@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https:files.pythonhosted.orgpackages8385d4c6f2b8a97b2ae2eeb88091ec5c1d15245eac50843cfe1ab860edf6ca30cycode-1.9.5.tar.gz"
   sha256 "7e1f09e9f065010c1237a7b2627a35f042c62f1329611f22814cade77cf93687"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d01309e363d11d18f7d5d1501657b5c1916ae5bde74a995ca76363884b06ab89"
-    sha256 cellar: :any,                 arm64_ventura:  "0b3f11ce6379011b91dd4fd07726b896839cace65f0755792888bf6b3aba3c75"
-    sha256 cellar: :any,                 arm64_monterey: "ae2b6225856ff30febbc1d154d8355cbe0b3c8623f69707e776c47ab6f8141f0"
-    sha256 cellar: :any,                 sonoma:         "a7e400f36e6cbce73ce5a7af822b6fa9df94ba5921bbfd2796bc6562d98a0348"
-    sha256 cellar: :any,                 ventura:        "00a8ac20f8aa33c9ff5a139381157e4df74aa6ee87d3cfdaa917f50528a0c550"
-    sha256 cellar: :any,                 monterey:       "513f712416ca58a4fe74ab74ebc424c9fda2765a51d13bd1a40526fe6236b6da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0695f2e6ef16d30975c105c967ab6fe64db5afa5238706212b8e379170793f9"
+    sha256 cellar: :any,                 arm64_sonoma:   "9355ade226d6c2ba9dda90ca1559f9d3ba91e75172622a0b4c432c939c50ebc5"
+    sha256 cellar: :any,                 arm64_ventura:  "2ada3b5c1f8188103c2db6d75792bfc6b0e2364ddb3260dc6388f99b53089cbb"
+    sha256 cellar: :any,                 arm64_monterey: "2772207dee8e56f2a4a9afd3df605ad8a731afcc8712eacc096cd995df47d8f2"
+    sha256 cellar: :any,                 sonoma:         "8c0b3ddfa941f5c1de84cd29eb6af05448cadf82f62715394dc7f0d76f8a1c19"
+    sha256 cellar: :any,                 ventura:        "ebf5e005029986d669980b705f4b103cee965faa6a7cd1234fe2b112ec612c23"
+    sha256 cellar: :any,                 monterey:       "2192540c4f38135f2b443f55e3b0fb9ac6761e7c278b7df4c7ac539f025be607"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91fd4f7bd2837b3603a256990dc1558a6f7b629d5f5b577b6734a79f006f66b7"
   end
 
   depends_on "certifi"
@@ -92,8 +93,8 @@ class Cycode < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "six" do

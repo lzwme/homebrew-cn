@@ -6,17 +6,17 @@ class Beancount < Formula
   url "https:files.pythonhosted.orgpackagesf6b12587862caf3367f2d421be9da278f547296b00b7f9610ca9a94fddd8c709beancount-2.3.6.tar.gz"
   sha256 "801f93bed6b57d2e22436688c489d5a1bf1f76e210f3ced18680757e60d3475a"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
   head "https:github.combeancountbeancount.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f6bf46d7305968a592a2a54ca8b76b410b14927c8f5833d8c0c5f2130e69a559"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "beb3260d20ee5cbee13ba67370dd0d1283b291b6ea00a34f1a45c0aea05ad8f2"
-    sha256 cellar: :any,                 arm64_monterey: "a1dd49da1fd209471f13b9ebd499d0e2c110ea43aafad6b82775eeab2bf58c0e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4aa0789f35c91ea56506a1fda2f02ed2f0408b2e34bcb6a2ebfdc21f60d882ce"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0954be3abb39d7806255572c03298aeb208f928c05f1f51bbce2b46f3706837"
-    sha256 cellar: :any,                 monterey:       "502cd6990d0d462798077fe4d2f58a95cecea6b3784a077bafb5f341fbef6536"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8d766ec34d7ec9ce04b0631b4f3f1d7321c60dce45f58e184baeb2e6b7abf24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e2ed22ad149575aab6953ee38280ef975f136ad32dc687d79b76dd1fa0e53ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80a05ac9b9994afeac5c806c39395ac7562a0a117e34e39f86296b8610fa7a45"
+    sha256 cellar: :any,                 arm64_monterey: "1f81d051558e89b9370f3eb79bec305b8c6e1b79226783ed0761253585b14bbd"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5c53d4e53c40f3997a6140438fdb80f58fa8d9ff845a483d0052bba836d6faa3"
+    sha256 cellar: :any_skip_relocation, ventura:        "f01f861c8c39ccac10e487489f8998a4d5afc9915580ee861e6dde2fbd27320b"
+    sha256 cellar: :any,                 monterey:       "da66005e0ff8a242798678ffba7431947a938e673fbcdfc56930501c49468c3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4388b9b2dc0238f681aafd2fe255b79f7f0279650d0aceed1fa8a4b447d29d36"
   end
 
   depends_on "certifi"
@@ -51,13 +51,13 @@ class Beancount < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackagesb28fecd68579bd2bf5e9321df60dcdee6e575adf77fedacb1d8378760b2b16b6google-api-core-2.18.0.tar.gz"
-    sha256 "62d97417bfc674d6cef251e5c4d639a9655e00c45528c4364fbfebb478ce72a9"
+    url "https:files.pythonhosted.orgpackages31c6460b83c297c91c4f62d69aa9f04f3c5f8139a4f41c4b747c014939d5a802google-api-core-2.19.0.tar.gz"
+    sha256 "cf1b7c2694047886d2af1128a03ae99e391108a08804f87cfd35970e49c9cd10"
   end
 
   resource "google-api-python-client" do
-    url "https:files.pythonhosted.orgpackagesac7a5b7b208a29c278128a9c27470338960a050da1fc74d18e10525a12fae4fcgoogle-api-python-client-2.125.0.tar.gz"
-    sha256 "51a0385cff65ec135106e8be60ee7112557396dde5f44113ae23912baddda143"
+    url "https:files.pythonhosted.orgpackagesc29756b0c6661e0b60e9d743a2eed018329a5265bd37d1b14969ef53cd06239bgoogle-api-python-client-2.129.0.tar.gz"
+    sha256 "984cc8cc8eb4923468b1926d2b8effc5b459a4dda3c845896eb87c153b28ef84"
   end
 
   resource "google-auth" do
@@ -91,8 +91,8 @@ class Beancount < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
-    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "packaging" do
@@ -106,8 +106,8 @@ class Beancount < Formula
   end
 
   resource "pluggy" do
-    url "https:files.pythonhosted.orgpackages54c643f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https:files.pythonhosted.orgpackages962d02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "ply" do
@@ -141,8 +141,8 @@ class Beancount < Formula
   end
 
   resource "pytest" do
-    url "https:files.pythonhosted.orgpackages30b77d44bbc04c531dcc753056920e0988032e5871ac674b5a84cb979de6e7afpytest-8.1.1.tar.gz"
-    sha256 "ac978141a75948948817d360297b7aae0fcb9d6ff6bc9ec6d514b85d5a65c044"
+    url "https:files.pythonhosted.orgpackagescf4e0ceea141f0e5d09de4053c5338c62615ae2bd9bd3f013813f5ec62e3cf97pytest-8.2.1.tar.gz"
+    sha256 "5046e5b46d8e4cac199c373041f26be56fdb81eb4e67dc11d4e10811fc3408fd"
   end
 
   resource "python-dateutil" do
@@ -156,8 +156,8 @@ class Beancount < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "rsa" do

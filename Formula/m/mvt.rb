@@ -6,16 +6,17 @@ class Mvt < Formula
   url "https:files.pythonhosted.orgpackages0ba7e12932647247b7cd253698e6aa0d5f831700d3dd7688c366af85eb255b62mvt-2.5.3.tar.gz"
   sha256 "5727877815b3d5a2a98e21a6be9da51c3629eb548e424457e9e78ae183344264"
   license :cannot_represent # Adaptation of MPL-2.0
+  revision 1
   head "https:github.commvt-projectmvt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "bb6112b3fdab872902bae9299ea016dcba55ae7d8bfad0638c83ca7d9cae2e6d"
-    sha256 cellar: :any,                 arm64_ventura:  "9e72428eecf447a69aee4f74c51c8e3122fc1de1b10ea845ff0891266e347ffd"
-    sha256 cellar: :any,                 arm64_monterey: "e77e732d2cd130fdc5fa8974c143d9dfe46cd182b8a379205ba483328df6f0cb"
-    sha256 cellar: :any,                 sonoma:         "f2bed1b23a51aa4036daf61f32310852b0baee68f1caf40f592be7886112d00b"
-    sha256 cellar: :any,                 ventura:        "c3d7b45622b2c8bb3d0dff41578a04c976a4e293a683ca461d7a5ec3252ceac3"
-    sha256 cellar: :any,                 monterey:       "3e53745e417e7ad9ca3f95e28d9ac3e5f82fca73c71d322f39dfa2a08520102b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0538ad91630242f39bc57e2b58fa219b23e6d4db6a40b4b788f4a2a8e3a099ef"
+    sha256 cellar: :any,                 arm64_sonoma:   "a194e0740eda32553525dbe106c93fba090603384e10b1c1025d0f5a25b311bd"
+    sha256 cellar: :any,                 arm64_ventura:  "3b71b307c051aa8def0ee12e0ee0b70980dea21b5399cb226d1695f2a180161a"
+    sha256 cellar: :any,                 arm64_monterey: "fe3e1e1d074321b9bc9e718a7ec9d14a7ff43f1dd56aba2ecf83c851092d5071"
+    sha256 cellar: :any,                 sonoma:         "e0cbc9a61e41272d705fef29ee42dd56db4f9c51c4dd202b71444e0d8e945f04"
+    sha256 cellar: :any,                 ventura:        "d4b6f437958f23de29725cb5f552aaa5993270154a801655e97c1cef9968b3dc"
+    sha256 cellar: :any,                 monterey:       "64b879f93fe8efef83bd01e81686907b0a8133f0b6ce3d8cc8e8be2b7229414b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fecc6242df3514909a1789553cf3e38e584be35153e71e5f1e49d89d1984d0bb"
   end
 
   depends_on "certifi"
@@ -94,8 +95,8 @@ class Mvt < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyyaml" do
@@ -104,8 +105,8 @@ class Mvt < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rich" do

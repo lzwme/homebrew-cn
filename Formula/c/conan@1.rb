@@ -6,6 +6,7 @@ class ConanAT1 < Formula
   url "https:files.pythonhosted.orgpackagescea06e0014057ff382428cbee2254d9e29c6ce09baa8e0bc3dd440e388aee7fdconan-1.64.1.tar.gz"
   sha256 "969c5e2f504963ef9211605939a519588d63fd218ada5bb227272a8c653f2ec4"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:github.comconan-ioconan.git"
@@ -13,13 +14,13 @@ class ConanAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "269aa0520f5095b0f90436f952ce236fb35abda36deddb8169bac113efe90973"
-    sha256 cellar: :any,                 arm64_ventura:  "fc4afa1b25e51d8ad59bf8e422a1d7e3a6433d6f8f75c8a4a418a3c27bea0e4c"
-    sha256 cellar: :any,                 arm64_monterey: "39a92bc810dbd6c62e33644578ad8b5e2cac3b2232f9bfe4c017ef09a40bb417"
-    sha256 cellar: :any,                 sonoma:         "6691bbb521e9f70dfd684a32cd03831dce2813a6d6d93700d0eb7643f957d6fc"
-    sha256 cellar: :any,                 ventura:        "b3ed204efc2f2ae31874f20a3b7eb645acc21d69aef991cf6dcfb9a7f6179e1c"
-    sha256 cellar: :any,                 monterey:       "5ddee875a08bd757cc87ce1e5bd8a67e093197af1c0006fe345796c6aebb27f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ceb1cd6b5767f28cd2888f5ba76c1cb669b877972aed2befb9aa374b0554b797"
+    sha256 cellar: :any,                 arm64_sonoma:   "d499ca9eb7b01c5bb06c7ba8425b017029de1e731ea3f5028facc5e91824dd04"
+    sha256 cellar: :any,                 arm64_ventura:  "dfce86f152d9904cc52c580bae08b25d064e7ef99c3d7d5d01e9ba8562be3b61"
+    sha256 cellar: :any,                 arm64_monterey: "f8911c8c73a9fad23d2a47313fe2263a1580aaef01a2299ca6662d65a986e150"
+    sha256 cellar: :any,                 sonoma:         "bf29ed42d4eff09edd547be9a59c89972e93a2941c6c771fd1bb42b63c623a4c"
+    sha256 cellar: :any,                 ventura:        "a8fa6d4341e71e31fccedbd48c4a3a946cce7565c193af8956681206f7603034"
+    sha256 cellar: :any,                 monterey:       "d942765fabcfb12bbc4cc1acbf8831515750632dca6c08fe9bb0f6140d265b50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe6303b4a70ff9e53a4e38e9dbda420f9bba18aa20707b8b3b5f56700f677c4c"
   end
 
   keg_only :versioned_formula
@@ -46,8 +47,8 @@ class ConanAT1 < Formula
   end
 
   resource "distro" do
-    url "https:files.pythonhosted.orgpackages4b89eaa3a3587ebf8bed93e45aa79be8c2af77d50790d15b53f6dfc85b57f398distro-1.8.0.tar.gz"
-    sha256 "02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8"
+    url "https:files.pythonhosted.orgpackagesfcf898eea607f65de6527f8a2e8885fc8015d3e6f5775df186e443e0964a11c3distro-1.9.0.tar.gz"
+    sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
   resource "fasteners" do
@@ -106,8 +107,8 @@ class ConanAT1 < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "six" do

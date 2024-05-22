@@ -6,17 +6,17 @@ class Certbot < Formula
   url "https:files.pythonhosted.orgpackagesd77e5155b8a7837fb433acee0bfd87e950bab96ab7e02ece21cc9c7d3d5effc4certbot-2.10.0.tar.gz"
   sha256 "892aa57d4db74af174aec5e4bb7f7537b200de2545a066c049d03a53215f0e4e"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comcertbotcertbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e567441173a622a11704ec3afc0e63039dc9f8c5ad3e1455f5656c9b3095333f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e567441173a622a11704ec3afc0e63039dc9f8c5ad3e1455f5656c9b3095333f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e567441173a622a11704ec3afc0e63039dc9f8c5ad3e1455f5656c9b3095333f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b5bce25566dd52ede60b99d258973989aa78950736b2c5061f338acbb1297073"
-    sha256 cellar: :any_skip_relocation, ventura:        "b5bce25566dd52ede60b99d258973989aa78950736b2c5061f338acbb1297073"
-    sha256 cellar: :any_skip_relocation, monterey:       "b5bce25566dd52ede60b99d258973989aa78950736b2c5061f338acbb1297073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ba70c042dd0b3b79a9add8db10699528aa6b851e23e013cc23967ff1252df3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b922c402e9b15a237b1b22e30e9746a9662c84e399206a7647c3ee38ad5d5f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "155c513fa2a9b05259113b91f7f9176177ff30b7ec4daa083619a6840e4dfe01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af31ef8b3a4cdeda296bcab92c9cf46f0cc5c71b841d3871443524107d91b460"
+    sha256 cellar: :any_skip_relocation, sonoma:         "98f49384a60bbd0be9cbfe42536ce2b4461509f6cabd9c55d1a37c7c07dac3e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "49ea302ea489052a4e2b1153f0cb64a1b5a063382343f0d3399c16091c1b15ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "14cea235a3dd2168a5b5bcbdae429674bd23ec1e8b3a1d78ae67b0ba11a1379b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c727ac3dcf6a3db64ee56b049348c8dfad6093c1bd1bcaf3f9a13979f1e2fa1"
   end
 
   depends_on "augeas"
@@ -103,13 +103,13 @@ class Certbot < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
+    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
   end
 
   resource "six" do

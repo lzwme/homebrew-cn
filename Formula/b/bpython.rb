@@ -6,17 +6,17 @@ class Bpython < Formula
   url "https:files.pythonhosted.orgpackagescf7654e0964e2974becb673baca69417b6c6293e930d4ebcf2a2a68c1fe9704abpython-0.24.tar.gz"
   sha256 "98736ffd7a8c48fd2bfb53d898a475f4241bde0b672125706af04d9d08fd3dbd"
   license "MIT"
-  revision 4
+  revision 5
   head "https:github.combpythonbpython.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a630ad1bd590ada80946e0271534c2eb032afc7d690b161ba1a815dc437312d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84a8be8557957dcb4649f3f68868d3ab7bbfbaa11e859f1ca23f9833e11980e3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "783ec8dc5609b7cb44cc365379a0d85f3d65447c84a940227cdc8fd39d3afce5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "79004962ed6df5b5fdfc8f14460228ffe24658db79a4d135f39b2c75779eb6ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "baba94c9e8f480268f496b299c6b1799990959ac22f85617722a4ba9f9d6a6d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "d40737efcad51b6da4437805f0aca9f26d7f23b346745c4694030e0c1d27904d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ce18537d27a95e0c8e4ef382b5b00a99c4e3b72d3ab56475ede117a46848243"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ff9d3573206b142f68b13f2b826ca4b609336250ba8e6c9478050b1ef87179b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78c347542feefff82fc61c8f12e8cb620fee639b84aa934362311bebac15ef0f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "46fbac45be865371f150aa9bd2fc6a92e24092aa54a48dcb1fe5578a4da74189"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9238003500329fc13a5b6d0aa7b89da91f4ceaab26689ce2b4f63aa3e0307ecb"
+    sha256 cellar: :any_skip_relocation, ventura:        "13a67fe0202ad391a2052cec8735ad070933d8656e40ffedf23447027e77ee2c"
+    sha256 cellar: :any_skip_relocation, monterey:       "a25a12dfda6261c387ac2cc4a9691713218057418bef9bab3eb73272b9b44fa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05b7b8b55b6af900f2e786ccfd050b394fad8087feebb372921ca6e833abe233"
   end
 
   depends_on "certifi"
@@ -53,8 +53,8 @@ class Bpython < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyxdg" do
@@ -63,8 +63,8 @@ class Bpython < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "six" do

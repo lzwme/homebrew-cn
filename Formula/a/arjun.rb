@@ -6,15 +6,16 @@ class Arjun < Formula
   url "https:files.pythonhosted.orgpackagesbb97ed0189286d98aaf92322a06e23b10fc6c298e0ee9a43cd69ab614a1f76cfarjun-2.2.6.tar.gz"
   sha256 "15dbc0abf5efcbbe4ba1892ad8edb08fa5efc41bb2ebaadd0be01e47e70240fc"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "f583d31ec494745c847b7e285e46a789f79bc1c2c3986feb3fc910d865b034a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06db40102875f5c9747b2092a5b1e8d42a4afc39fe6a0ee75a842b6afe1aadb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3ec6c342abc1ea5a18fa26ea279ee9e528ff30f61cbaa992857a6aa21d76cab0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "433d23aa5367c870f5378933a122178789e9e5bc2832d4c325d9b40bef104302"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5969ba73df47a54973fa1e71e6636c26381815f4cce3b3c8358ef8958aa4798f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c07c0b1fb274088c67629dd6da08e3b97c613b4ec7cbabda8559031b8b7f8227"
+    sha256 cellar: :any_skip_relocation, ventura:        "224e4106d9547c3accea95442fcb7ae24365cfaded72f2747c39e873a4f3c3a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "68409cd452e52d67a5a4878205f722a40b42d90600afde0525f81304367daaa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9b0e87edf2d2c628a58bf1d8d6cdb181ac074cdf4affd22a17a3d3204ad2fcf"
   end
 
   depends_on "certifi"
@@ -45,8 +46,8 @@ class Arjun < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "urllib3" do
@@ -59,7 +60,8 @@ class Arjun < Formula
   end
 
   test do
-    output = shell_output("#{bin}arjun -u https:mockbin.org -m GET")
+    dbfile = libexecLanguage::Python.site_packages(python3)"arjundbsmall.txt"
+    output = shell_output("#{bin}arjun -u https:mockbin.org -m GET -w #{dbfile}")
     assert_match "No parameters were discovered", output
   end
 end

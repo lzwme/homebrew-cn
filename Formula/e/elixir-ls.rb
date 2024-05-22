@@ -1,18 +1,18 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
   homepage "https:elixir-lsp.github.ioelixir-ls"
-  url "https:github.comelixir-lspelixir-lsarchiverefstagsv0.21.1.tar.gz"
-  sha256 "711fdcd404e451b2be0fd90db00e1fe4c26f396000f79559d7fc9308f3ebaaa0"
+  url "https:github.comelixir-lspelixir-lsarchiverefstagsv0.21.2.tar.gz"
+  sha256 "2621ac4d01531a5cb39ac2ede53b4a50c307753027f636a09dd7e52c1e9aa563"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5ddd0408fe2de43941e9283d45dd20fab0c75ab81f6bd65575fc63beb21faaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba71b7aec586e915ea4e4a0ad30a59b31abd3e0fd925d2b39fb4a9e91ca2331f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c85eac88c342838bbd355ac8d1a79c654fca0d66e6ed562ef4103cc62635670c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3fec06b5bb88fc34f4c33f87e46ec7d6e22c18bda16884ef1ed64d65a6dcba92"
-    sha256 cellar: :any_skip_relocation, ventura:        "e58621c9f3dabfc2bfd5a6986377922c1f8c61229b4ecb1cbdd0a53ba0d3da21"
-    sha256 cellar: :any_skip_relocation, monterey:       "b10c485e2f25cf417e904827bbcd736bdce7f51c9730c239755b0d64db5b187c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a974cb06a0549a4276633d4ba6c04750e35c1533eca394603651d9a67de1dfa6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb6954bae07d0f08e349420039959c22454cfd339732c691a83458696847d018"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5f1c727bbdc78747d3f55e0331c6d438612f3c72072650dd2bd383325cdd13d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e14bf2c91a0c1d32f97c31ac1d7df4ef2c1e44bebf8ac186d6c9ac9a4b2a50e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "df13fdd5556974004b4e80ddd2950271e45817293781b7becd1d912b340a9fc3"
+    sha256 cellar: :any_skip_relocation, ventura:        "c40fa8590bd2c0beaed760b8a0cb7bdc1d2c7cd6b325caffb74d37d1ac39dbf2"
+    sha256 cellar: :any_skip_relocation, monterey:       "d66a9f3a6788630332aa730fee0e6656309e75384a7e908b286808f4c5eb4082"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6ac3b87a635503d3a9375c55f8436d85a843640524286dcb05c7f16ea8282ba"
   end
 
   depends_on "elixir"

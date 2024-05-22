@@ -6,17 +6,17 @@ class HomeassistantCli < Formula
   url "https:files.pythonhosted.orgpackagesb298fd5e7beb7cc135f80d78b32c85ac15f3ba9219063b794b1d184fb07fd84bhomeassistant-cli-0.9.6.tar.gz"
   sha256 "9b9b705eaf6ee40dc6a732f3458c78ba37b62b7330bc17b132e6fee385ec8606"
   license "Apache-2.0"
-  revision 8
+  revision 9
   head "https:github.comhome-assistant-ecosystemhome-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e88f8d6a7e267d1d5e509c2373a3e1f84874301003b218f56a4d8894f5ed86cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7fbccf5353262ea0dc0f0e4d1b07800e5d8f5b2b6ca1e44a2de99d1375c40b9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6278fa8eb0773a1bed7f8f159bc454acca8bd48ce13dfac455f77b1c72d83e02"
-    sha256 cellar: :any_skip_relocation, sonoma:         "653d115ff07297580536b256fce96b106bfd974a190a63923cabefdd765b3d7d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d26de05974dc5e2e70b182d687a2484c2bbd295249ccf0819762a69f429602f"
-    sha256 cellar: :any_skip_relocation, monterey:       "261c9d83240b63f0dd8b9f86f74f00976ec6668cfab204e00153a929bada5a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d32a842456a1bb0a95a4f86ec4a9c019705b517f2912b6f89ae6af12908b61f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff6e303dbabce4320d1454c708f174a98ca998b4ff97db6ac878bcdedee145fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c15a8f77c4e7de3a3573724dd329e6609f239be6ab7b3d7fce176d89dba6a4b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1ed738323b2ca9547294b8916f4068a55ea714c8f74e2a5d57062ee2509b4fc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0d73171b0ec702d2bb147a92bf549c7635dd0bb3b19cd3f11ac12bd2aa5d38b9"
+    sha256 cellar: :any_skip_relocation, ventura:        "a4fece4f5802354d4f6eb1c4fbda4fdb09d22fb9bfa48183ed7daeb52c3d0eca"
+    sha256 cellar: :any_skip_relocation, monterey:       "45f6cfb1d5c7486289c549ddc51490721114b7eb58d96a3f2d9ab2f4857510ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4dbe7805ad9e65751e06e93cd0e816cd91138a3c7596fd2d11426d44e29a73c"
   end
 
   depends_on "python@3.12"
@@ -117,13 +117,13 @@ class HomeassistantCli < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesc0d687709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5afregex-2024.4.28.tar.gz"
-    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "ruamel-yaml" do

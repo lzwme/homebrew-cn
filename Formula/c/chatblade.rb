@@ -6,16 +6,16 @@ class Chatblade < Formula
   url "https:files.pythonhosted.orgpackages554a61b7d54354a57837dd1555fcec400c2ce291c26fb1c587ba408fe991ac32chatblade-0.4.0.tar.gz"
   sha256 "02313ed4c9129193ad1143ca10f04a4379fe68e07c730b28ac1a4be6c90db245"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "eaee58daa9154a7c6c28d689254cec2c9d8e64e6ee31786d21e043baa130d660"
-    sha256 cellar: :any,                 arm64_ventura:  "b46b9844d658d0795e4532aa3635737f68a432c6e67203b351340e6ba17c8d48"
-    sha256 cellar: :any,                 arm64_monterey: "16b1188cae171157d4d1f4b7be3221f01507ffa3e7776c6cf1e7fa40cf3af489"
-    sha256 cellar: :any,                 sonoma:         "09ac968c4046888df426e61c577d7a312ac7fccef62634c07a72701c67c1b9cd"
-    sha256 cellar: :any,                 ventura:        "ca67858c6d442aa150b7814ec13012a02fe615ed1572b8c9643531a39061ac55"
-    sha256 cellar: :any,                 monterey:       "4631ef2b436d4bbfb0f36e5bcbbf86f0d06e377745a8b16d823ef49dfd2c78c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aded13f6a32030ca51e8012e044af99c64ef42c59200ad505b81e5c96872614b"
+    sha256 cellar: :any,                 arm64_sonoma:   "e303ba05888aadb7bbd9f9989ff327a9e4d27417c606ae4127f585939bc7231f"
+    sha256 cellar: :any,                 arm64_ventura:  "b07589bc06e8511b6f7dedbf7fde515690fcc721f5a9faeb6cf685a0774c1113"
+    sha256 cellar: :any,                 arm64_monterey: "7c79e552c2e43eb0fb3ce582b141d78817eeb8cc050f9568db164dfd0aba77ba"
+    sha256 cellar: :any,                 sonoma:         "595dc5ca13a16ece79832d985bf228871bbfbd835a25561dae0fc394376069c8"
+    sha256 cellar: :any,                 ventura:        "3d8c3df72607c091f77ba1ae8c205e72e8a2a8d89ac1ee46298879862ca28fd7"
+    sha256 cellar: :any,                 monterey:       "08e975844e2cb6ddc9da2dea920531cf0d4763814f33a0a9518553d15d06216c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0e9793148db8c02d60851e4b93549270aa5a3ad03edc7e855739107ad5310d8"
   end
 
   depends_on "rust" => :build
@@ -24,8 +24,8 @@ class Chatblade < Formula
   depends_on "python@3.12"
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -79,8 +79,8 @@ class Chatblade < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesb2e42856bf61e54d7e3a03dd00d0c1b5fa86e6081e8f262eb91befbe64d20937platformdirs-4.2.1.tar.gz"
-    sha256 "031cd18d4ec63ec53e82dceaac0417d218a6863f7745dfcc9efe7793b7039bdf"
+    url "https:files.pythonhosted.orgpackagesf5520763d1d976d5c262df53ddda8d8d4719eedf9594d046f117c25a27261a19platformdirs-4.2.2.tar.gz"
+    sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
   end
 
   resource "pydantic" do
@@ -94,8 +94,8 @@ class Chatblade < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyyaml" do
@@ -104,13 +104,13 @@ class Chatblade < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesc0d687709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5afregex-2024.4.28.tar.gz"
-    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "rich" do

@@ -7,18 +7,25 @@ class Amber < Formula
   revision 1
 
   bottle do
-    sha256 arm64_sonoma:   "01684ca0081c2ec3f8f7b79ca8411a80b6946106a200d07d9caf5a5e88537a2c"
-    sha256 arm64_ventura:  "093f9c6482e12c09afe8baafa7ab0ecc3f92195e0f9f793332600c81b6f00e4a"
-    sha256 arm64_monterey: "b5d4b6fa3122283f3232e60d39c5757a6943ea7b0b7ee4b87b19cf6982af58ff"
-    sha256 sonoma:         "9dd6705f3a6026eeb9f7421d0267375de14a658f624c32e38b78a5a7e374da2b"
-    sha256 ventura:        "259b0a5803e82a4acb864132af49aea3d231db158eab8dbd757ae5ebc41501eb"
-    sha256 monterey:       "5ba15bca8f1d9ab0a7230426e95168ac7f460ff97b2d0fd0e63b53a33b82c8fa"
-    sha256 x86_64_linux:   "0d426231e65332308d6b8bb925c8d0b08ed187fa360dd808615b3048b1c531e6"
+    rebuild 1
+    sha256 arm64_sonoma:   "149fc485a57fe986e601b0072476fc7b52de0feb888dcac0e7c153459290f548"
+    sha256 arm64_ventura:  "d9e1818484cce9f61edffedeb494e01f69a07d137880179f84dabef6b48b063f"
+    sha256 arm64_monterey: "3b8de888365014ecb18fc427906bf5121c6f5c0b6eceaf8311ede6030b22334d"
+    sha256 sonoma:         "bce2680561c7ce0a84ee72e598e4569382fe29ec44a156517c1dfd9bcc936951"
+    sha256 ventura:        "e16a952e1ed4e62ab4512dbd678a85d45031a2157898d033b1a95de311619a7a"
+    sha256 monterey:       "a662a8236dbfedeb36a8e291243fcd6c2c76fcb4c7aa1a2f34f7cdad6badc4f0"
+    sha256 x86_64_linux:   "18ea26aa05700494f2acf965ad8db36bf9c1e8f36ca1c606091e1373effaad9d"
   end
 
+  depends_on "bdw-gc"
   depends_on "crystal"
+  depends_on "libevent"
+  depends_on "libyaml"
   depends_on "openssl@3"
-  uses_from_macos "sqlite"
+  depends_on "pcre2"
+  depends_on "sqlite"
+
+  uses_from_macos "zlib"
 
   # patch granite to fix db dependency resolution issue
   # upstream patch https:github.comamberframeworkamberpull1339
@@ -28,6 +35,11 @@ class Amber < Formula
   end
 
   def install
+    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
+    # libunwind due to it being present in a library search path.
+    llvm = Formula["llvm"]
+    ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm.opt_lib if DevelopmentTools.clang_build_version >= 1500
+
     system "shards", "install"
     system "make", "install", "PREFIX=#{prefix}"
   end

@@ -6,15 +6,16 @@ class GorillaCli < Formula
   url "https://files.pythonhosted.org/packages/cd/2b/7a64f9ad59009e72ddf73d055195b4bf23e15599a61e66f1458b4025b9e5/gorilla-cli-0.0.10.tar.gz"
   sha256 "bf375230a06fac99ba56f14f49474466036f072751cd1d5a1908e8ace561856c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cd2121fe85e6f0fab3f223998773d4435493cce3d70bb348652dbf1efc1ce2d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "153a8cee180cfc7005a3696736532eb7b789dd9e764521e9f2d834447b4b1a53"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d3d36069764d98c9c864b2ccb96ce8f7b397b0f42e41ceb54dbb05deca080fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "300136a73982ba38da7017771816046e2c58bb32a31958cbdecc45973fc98787"
-    sha256 cellar: :any_skip_relocation, ventura:        "4c568b83709eb52f803af9438335da682561c3b68651128d9f0db7cc25d68961"
-    sha256 cellar: :any_skip_relocation, monterey:       "8822e3df327f7c273372e248596c3d482cdbc2571e735debd4c40ecc35b08fa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fff465dc09cfb4d03c92cb92872ae55d43c283990c364c23fe52477fc333dbbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "942159fd88e15d5d12dc10a21370ec42e2f37f89d5cfea4e0c41a277269c7610"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba57929848a6634fad2bea174d0d4352f13394521378ac1ef51a26b337fe9077"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe7da9313dcee6a2da2226d6768631db1eaf69429bf78f2796672e5bb16ab969"
+    sha256 cellar: :any_skip_relocation, sonoma:         "91a3e84455a76eb7fd11860fea6117412933a5940cd811e672338ac8bbab7390"
+    sha256 cellar: :any_skip_relocation, ventura:        "36efe2cbab19dd2c7cc68a617ccf310665ff1ea8cf6ff4b5c2f8e0fbc25250f5"
+    sha256 cellar: :any_skip_relocation, monterey:       "45acd6e24b40ae6be7c4e6f67e336e9467fd10b8232d6aed55646e65d7a6e0bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "382cc90e905b06fff9a5dc26cc8aeb9efdac82d7bf1ebab6df62f02e524b83a2"
   end
 
   depends_on "certifi"
@@ -51,8 +52,8 @@ class GorillaCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https://files.pythonhosted.org/packages/d8/c1/f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16/requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "six" do

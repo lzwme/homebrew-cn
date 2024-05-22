@@ -6,17 +6,17 @@ class Httpie < Formula
   url "https:github.comhttpiecliarchiverefstags3.2.2.tar.gz"
   sha256 "01b4407202fac3cc68c73a8ff1f4a81a759d9575fabfad855772c29365fe18e6"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
   head "https:github.comhttpiecli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dfa75cb70e3a77efd5f11669b7eb688d1da0b7c9791a7b7c26ddbc1034e17ea1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4daef8cc1b2eead316e0b75e9358e791e1b337a9b919f1b6277077e78a579e38"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a2e7998c39d96dda5da6432c1fd64a037fc81752f9507e87446695e7bd914bc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "45391479f390b1a915a536919a03ccecb216d2b70f657cf5cc879f444de08906"
-    sha256 cellar: :any_skip_relocation, ventura:        "890166c98ea39abfd171b7e0f9047058b73a85523a201015853123230c4d2e84"
-    sha256 cellar: :any_skip_relocation, monterey:       "44480b2f32377695fdba63dd80f839254c3feba44ed7b9f569638a9d8dfd83de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cc3a7e7bf5318fcc3526c5af26164e8f5622cb4edfdb0f700b68c6e28199ad0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "143ed85ea63e2f9f3994736ee46bf5d4cd89aeb44d2731681f21b4874da3ebc9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8dc02de0ef746446366e31f146d19f096c2fe62b4cd2db96add1f3f9a7acde8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aaceee20c2fb34a315df20c9925ca582d104a95f606cc15e903a622c57864dab"
+    sha256 cellar: :any_skip_relocation, sonoma:         "afa583d7f5fb69be870f7d70da82c352820e49bc401a7a2c88fba82c9a1516e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "f82e3e925c261e9eab9443841c0d85df23e3544d0993ab5c2f6bc09932112dab"
+    sha256 cellar: :any_skip_relocation, monterey:       "867eaa04c1d88c5bbe819344753e72e5d61908e6dcce7dd7ba7ca0ad4f586e78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4703f37f3366305a6656af4e88dea7b23919e74c2f0b2fba1b4bc1e52d06d391"
   end
 
   depends_on "certifi"
@@ -53,8 +53,8 @@ class Httpie < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pysocks" do
@@ -63,8 +63,8 @@ class Httpie < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "requests-toolbelt" do
@@ -78,8 +78,8 @@ class Httpie < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages5fdd50c569f342bc5d22142e2fc5fab1822d256202f404a384f05541f703f2ffsetuptools-69.3.tar.gz"
-    sha256 "e1fd0ca7ba442e4be8a415dcca867b8018777dd5f95f4492bb4dc7d77dbc8bd8"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "urllib3" do

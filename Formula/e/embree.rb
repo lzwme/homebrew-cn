@@ -1,10 +1,15 @@
 class Embree < Formula
   desc "High-performance ray tracing kernels"
-  homepage "https:embree.github.io"
-  url "https:github.comembreeembreearchiverefstagsv4.3.1.tar.gz"
+  homepage "https:www.embree.org"
+  url "https:github.comRenderKitembreearchiverefstagsv4.3.1.tar.gz"
   sha256 "824edcbb7a8cd393c5bdb7a16738487b21ecc4e1d004ac9f761e934f97bb02a4"
   license "Apache-2.0"
-  head "https:github.comembreeembree.git", branch: "master"
+  head "https:github.comRenderKitembree.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f59edde2dbe52f9e37e8f00f164700e21b7516260c37dd00a30a1f0e791d8714"

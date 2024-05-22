@@ -6,16 +6,16 @@ class Goolabs < Formula
   url "https://files.pythonhosted.org/packages/ce/86/2d3b5bd85311ee3a7ae7a661b3619095431503cd0cae03048c646b700cad/goolabs-0.4.0.tar.gz"
   sha256 "4f768a5b98960c507f5ba4e1ca14d45e3139388669148a2750d415c312281527"
   license "MIT"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "00c37a4b0d07a6352c9bf356e8f900a5743529062fec7a4a0f76325ac2465d94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "00c37a4b0d07a6352c9bf356e8f900a5743529062fec7a4a0f76325ac2465d94"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "00c37a4b0d07a6352c9bf356e8f900a5743529062fec7a4a0f76325ac2465d94"
-    sha256 cellar: :any_skip_relocation, sonoma:         "00c37a4b0d07a6352c9bf356e8f900a5743529062fec7a4a0f76325ac2465d94"
-    sha256 cellar: :any_skip_relocation, ventura:        "00c37a4b0d07a6352c9bf356e8f900a5743529062fec7a4a0f76325ac2465d94"
-    sha256 cellar: :any_skip_relocation, monterey:       "00c37a4b0d07a6352c9bf356e8f900a5743529062fec7a4a0f76325ac2465d94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44c5d7f6729928cd91dc3b82ca6aa8811b7a9f517b15781a9d9b16e2085e7877"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8fa82f21cccc214f5f22d4638f0824e4ebaef214d65b3aa0b0fe6bc1d6022cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82cc69f88fd903547a51f13df851348218cbbd211b8eb18c5024f0cc5a24f037"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b69690a9052901ada44ea8557b20e6dc456c6d815fe3044eda52b2d9bc117f9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "216a4f9b037bfe7e41231b5df955bc28702280a7c616b52a569d420f453c0c12"
+    sha256 cellar: :any_skip_relocation, ventura:        "39e16511ea57d2c330c9d91067b151d7fd8927785fb5bb4fbe2f09f3bb29c1d8"
+    sha256 cellar: :any_skip_relocation, monterey:       "9032ebd07a474c832c6668cf74cfab725ef8bb3b774bbbafe251dfb7573e6b0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51dd8bd148a7c5482581957d75eda4c24672effe2384da3e382f36d83baf3347"
   end
 
   depends_on "certifi"
@@ -37,8 +37,8 @@ class Goolabs < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https://files.pythonhosted.org/packages/d8/c1/f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16/requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "six" do

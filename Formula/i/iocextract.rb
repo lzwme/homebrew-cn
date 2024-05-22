@@ -6,17 +6,17 @@ class Iocextract < Formula
   url "https:files.pythonhosted.orgpackagesad4b19934df6cd6a0f6923aabae391a67b630fdd03c12c1226377c99a747a4f1iocextract-1.16.1.tar.gz"
   sha256 "ec1389a76a5083f643652579610e8313d27ed5821fc57e7b046c23ddec181d44"
   license "GPL-2.0-only"
-  revision 4
+  revision 5
   head "https:github.comInQuestiocextract.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1458441aa77c472ea153e293888b44aada8cadc09eca779f8965f768cd469d0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f8dd70df3e85fa300bbc88aba9d7f1d6c9b830ae4fc1cd9ff6ae1666ae8689df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f48773fc0c7d34d3d4025e4666e243de27d7aee23fe14d15c3547dac8a95882"
-    sha256 cellar: :any_skip_relocation, sonoma:         "541e1c7196d0bb004cbba1258d38e2b61643c76f7c0eb8be0fde39977e6ee2e4"
-    sha256 cellar: :any_skip_relocation, ventura:        "36faddfefdf07f00a3df8730cd0b48d754f62d7441f62ac53490220718c19058"
-    sha256 cellar: :any_skip_relocation, monterey:       "e50bdd7f4cb24f4f10b7ee6c0bb98091fea60250ee1cd42dd8dce45fa0641252"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50e66a02a05ea4c4742f89f07da695838151882ed3ae88fbe6662899f1f94847"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4419c83db2e567cc8a97b984e08b57a5866f202a6714492be2cdf5b26a52daf8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5e2c6a4700849d4be490edf2a72bbc3e67e36fc986fa507ff230c21abd2d95b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2ad96eabdd5c5c1bcc10a6702dcac4cdb8e9e98a1a4efc35f08ef85347ad5464"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8682b6dd588284ecb53ab333b02a0fbf9ea6c691dd413b39a6c3c018937db365"
+    sha256 cellar: :any_skip_relocation, ventura:        "4211cfe7dd035b4cea2e7a2be3f4706717e4596d3d90b3d70d0441ab3a0b7084"
+    sha256 cellar: :any_skip_relocation, monterey:       "70b1b642ba119dd86225a727e75dc737f0af36d2cfa79ff2f26f3fc843109610"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1866920caaf723e1683e579048c72645cad1c5ffbbf32eb6f2b3dbde044f9917"
   end
 
   depends_on "certifi"
@@ -33,13 +33,13 @@ class Iocextract < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesb53931626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853regex-2023.12.25.tar.gz"
-    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "urllib3" do

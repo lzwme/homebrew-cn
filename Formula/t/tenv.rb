@@ -7,13 +7,14 @@ class Tenv < Formula
   head "https:github.comtofuutilstenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cd94590ff0cd26c6ecf9ee3a736d2560163f02656afab527759b4c2415b2755"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cd94590ff0cd26c6ecf9ee3a736d2560163f02656afab527759b4c2415b2755"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3cd94590ff0cd26c6ecf9ee3a736d2560163f02656afab527759b4c2415b2755"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1b35323b578360b0694b1a8295adf773811b7cb5252348262dff04ee8e0b3f68"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b35323b578360b0694b1a8295adf773811b7cb5252348262dff04ee8e0b3f68"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b35323b578360b0694b1a8295adf773811b7cb5252348262dff04ee8e0b3f68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0db0ff0a6658f8b8a37be39b83ccdecf9d0e3d72e3844e95f6417c9aefa95d80"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af45e9749a2309cb80347ef84a9dfc40c8ef59d5229e5694b190111a3e7aed09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af45e9749a2309cb80347ef84a9dfc40c8ef59d5229e5694b190111a3e7aed09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af45e9749a2309cb80347ef84a9dfc40c8ef59d5229e5694b190111a3e7aed09"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6f77231d7d946729536f2234fdf6f8b6e49d2111a519beb01300f6c76a802e67"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f77231d7d946729536f2234fdf6f8b6e49d2111a519beb01300f6c76a802e67"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f77231d7d946729536f2234fdf6f8b6e49d2111a519beb01300f6c76a802e67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00a5c31743ce7d4f53ec395cc0acd7f2e0a3e270e220d3130e6cbbc581936feb"
   end
 
   depends_on "go" => :build
@@ -31,6 +32,7 @@ class Tenv < Formula
     %w[tenv terraform terragrunt tf tofu atmos].each do |f|
       system "go", "build", *std_go_args(ldflags:, output: binf), ".cmd#{f}"
     end
+    generate_completions_from_executable(bin"tenv", "completion")
   end
 
   test do

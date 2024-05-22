@@ -1,8 +1,8 @@
 class NodeAT18 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v18.20.2/node-v18.20.2.tar.xz"
-  sha256 "8aaea7c9c7e927fb09d91498da311b6e4d18233390e23c723a53b891fad4c73f"
+  url "https://registry.npmmirror.com/-/binary/node/v18.20.3/node-v18.20.3.tar.xz"
+  sha256 "4b144f9fd6ae4b1d62b732c5b3160e7b9e84be4af0ae062c7b484e89ea41ae8d"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class NodeAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "2ce8a561e75498dc227f9546c9cb444c8d84b98418098cbbb5d082283a809a70"
-    sha256 arm64_ventura:  "1b7dbb122f27c2d6e0d844d9ccdb936717cc5def1f608f41a67bfc0094f3ca05"
-    sha256 arm64_monterey: "c86ca9997ab9f8762e0f6e0e69aa81774a5666cdbea4504ce17bbee4439eb42a"
-    sha256 sonoma:         "2314bbf7de1c0054b41b679b4ae3ea1693c8eb0a283d77a966ea82486597ca41"
-    sha256 ventura:        "e1847c1899ac853c5a5e931a5fdfac063b26a62c27345a557af6bc5b0bd0513a"
-    sha256 monterey:       "05a174513f3d6d62f58186f30956d1f6538525d4540029e9390beca7a49fe634"
-    sha256 x86_64_linux:   "f192a92d9cda4632e45924c1e192010bdb0133e36d0c40c0eaab6f018f121a94"
+    sha256 arm64_sonoma:   "16453866564c39fb8508e28564915ae910ac4f6cc0306e0b46ce14f7207d771a"
+    sha256 arm64_ventura:  "fdfee43fafe67137b46230413eecb656b1cc9d71d188799e4b182b56cb33da30"
+    sha256 arm64_monterey: "ba70b29325d2191e8d8a6264b9ea9ed7b4bbfa4cdd7198ade2ac655bb4e9fdbb"
+    sha256 sonoma:         "4e1cbe5e671c03624eccfcaefbc4d52e8bf1802e8fcf172d20b6b2c4ffaaecb2"
+    sha256 ventura:        "4d6727949f79c5999b1b8156b28498c7809ab2b8b9f125c948bc295181dd6735"
+    sha256 monterey:       "3907ff882940ac784dc360f50dd522e5f0e3aa35c1f8fd41680e643492055cc0"
+    sha256 x86_64_linux:   "3f96aa3390261abcc9a03f0626d188c89046111fb76228a8b562a2767d6a1521"
   end
 
   keg_only :versioned_formula
@@ -51,13 +51,6 @@ class NodeAT18 < Formula
   end
 
   fails_with gcc: "5"
-
-  # upstream bug report, https://github.com/nodejs/node/issues/52230
-  # and v8 dep patch PR, https://github.com/nodejs/node/pull/52337
-  patch do
-    url "https://github.com/nodejs/node/commit/f7a319eb22d956c11c71fd203243c3fb7fa2094e.patch?full_index=1"
-    sha256 "e410e1abe96bc23b4dc8e308cdc93fc3e940b524bcff78d5a4c15f64b2e075f2"
-  end
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)

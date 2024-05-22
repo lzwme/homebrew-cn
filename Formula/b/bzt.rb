@@ -6,16 +6,17 @@ class Bzt < Formula
   url "https:files.pythonhosted.orgpackages0b7b6381ed0d38def095f9858fc83f45a3d42f497b338e204a360e7a2a70a04ebzt-1.16.31.tar.gz"
   sha256 "4c265253be7d29b6f2d50076c7b8106b13767146ee4faedb3ad5f9c4ae63f63e"
   license "Apache-2.0"
+  revision 1
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2471697a269eff02f3a03502a77cfc8189e7c88b2ccecc8ce982bbe9a9f0ca51"
-    sha256 cellar: :any,                 arm64_ventura:  "88f0218241745c02b62e5143fb7610aa75e709adc4d10de619c8e3b04bde5c8d"
-    sha256 cellar: :any,                 arm64_monterey: "36c458f2fa19f3da0d401fc9f7ee675f2c3f8bc65effbce5ac4dfb510aa08702"
-    sha256 cellar: :any,                 sonoma:         "77fd92cfb0a1738a3809cdca1aa28108b62947a2985d5daf2f3005c8db6dc934"
-    sha256 cellar: :any,                 ventura:        "8c58d1f6a4293dd4debe25a9ce9228eb7d107722ea365f6240752582190b5bba"
-    sha256 cellar: :any,                 monterey:       "4276ec14371d1892eeff362965c522f83f422f923e4a0361e2d057a082d001bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4f034419eb97dc2ff431206f298e1bd670a2196403afc5958cf36f979e2c43"
+    sha256 cellar: :any,                 arm64_sonoma:   "386ca884804a9451a68c360d7ec09dc6cf9d608ea8eeaf86cb9993d5721413de"
+    sha256 cellar: :any,                 arm64_ventura:  "a7eb8ca954292dbb10652fca3604ee66df8705ec5399e7aa10e31c9a2ac7f0a8"
+    sha256 cellar: :any,                 arm64_monterey: "d8c5f6e9952ff4d9ef3462046fa1ba9392f6b146cc64df168dff268e437f5c5c"
+    sha256 cellar: :any,                 sonoma:         "2668ac657cfef34e27c54a470fec5b7a2414467a998c73bd8076a6faa54e6ecd"
+    sha256 cellar: :any,                 ventura:        "d21bf7f403e6780fca1379a9ec7bd40239060b6787795f37d29ef2692949dc20"
+    sha256 cellar: :any,                 monterey:       "3ee35abefbcbc3b22bb683b44f490aacb3baa0543786cbc4605a257a89f2d9bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be8f6ecbde9ab40502ece5565153490ed530126bf60b3cd53ac8404cf0a612b0"
   end
 
   depends_on "cmake" => :build
@@ -118,8 +119,8 @@ class Bzt < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
-    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "molotov" do
@@ -163,8 +164,8 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https:files.pythonhosted.orgpackagesbe1b13caab8337dc0cec96c65226a0fbaa2d1c6ec4ad0fb4faf02b1f2fdc150apython-engineio-4.9.0.tar.gz"
-    sha256 "e87459c15638e567711fd156e6f9c4a402668871bed79523f0ecfec744729ec7"
+    url "https:files.pythonhosted.orgpackages500194faf505820f1fb94133a456dad87a76df589f6999de563229a342e412fapython_engineio-4.9.1.tar.gz"
+    sha256 "7631cf5563086076611e494c643b3fa93dd3a854634b5488be0bba0ef9b99709"
   end
 
   resource "python-socketio" do
@@ -188,13 +189,13 @@ class Bzt < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackages2a8bc5b482bd99c7b4b8e6db31b707333d85f33f0c7eebb72724a1e932f3b6b1rapidfuzz-3.8.1.tar.gz"
-    sha256 "a357aae6791118011ad3ab4f2a4aa7bd7a487e5f9981b390e9f3c2c5137ecadf"
+    url "https:files.pythonhosted.orgpackagese8949cf5188f6e13e58dec8a1f9f6bb201a66b42108de39ad239f6556ea7fc87rapidfuzz-3.9.1.tar.gz"
+    sha256 "a42eb645241f39a59c45a7fc15e3faf61886bff3a4a22263fd0f7cfb90e91b7f"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "setuptools" do

@@ -6,17 +6,17 @@ class Gptline < Formula
   url "https:files.pythonhosted.orgpackages5b28d15a9a5b349c77a051a633e13141151314f352067ec7d516220bd6b20fcfgptline-1.0.8.tar.gz"
   sha256 "4a0a0b5fa4f23e5f2ad7ac5bf44a9143e5de3757b0b8eefe5d78a7757d1d34bb"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
   head "https:github.comgnachmangptline.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "20969f74346e537e31b870a0712d04169dd48fc7f487dab1fdc1f1833f0cc5a2"
-    sha256 cellar: :any,                 arm64_ventura:  "2a723b5bf63f4f9a5415256517f23dfd13b543a060baf9adc96362de33cc8550"
-    sha256 cellar: :any,                 arm64_monterey: "c6e751e3b0c3d43902862c49240f25380d5405dcbb213376260eda227a3f0a51"
-    sha256 cellar: :any,                 sonoma:         "0d3713166fd7c4e2e19f51634f6c8f2880baa3d4b5e6a86432d08c9744b60b3a"
-    sha256 cellar: :any,                 ventura:        "09b8ae9e55cf6bd98e5635477d4bbc94c966a745ce17316a13e32f991e3d1277"
-    sha256 cellar: :any,                 monterey:       "bbbbb9d0f093a7723dd55a7f49358b207ef6625095f53b6767f7eceed822b55f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e1d57bc1d81a29e6019ee8a6541eb88567631e9da610fe000d03dfda6e0a75e"
+    sha256 cellar: :any,                 arm64_sonoma:   "57fc25b984eaee5f2de7ebf7e59ceaaf262a8aa1b5d0bef7361be39024ef9bec"
+    sha256 cellar: :any,                 arm64_ventura:  "18e7ed9d262e8d2eee8164f4b58db204887a3fa96925a569f7fe38fd6d5e8933"
+    sha256 cellar: :any,                 arm64_monterey: "5605a7b989d6cd4a3857810373d39e095fc3399cb3c32cde50467fdb6ac9f099"
+    sha256 cellar: :any,                 sonoma:         "7067c56a51af44ea0628dc3261020b675e6a20e33699d3d0be428d80954d2102"
+    sha256 cellar: :any,                 ventura:        "e2634cd7791bfb16aac29294b3d9d184ad638d23e3f11d6eb02a8bbafc3c9f0c"
+    sha256 cellar: :any,                 monterey:       "3fc33337097cea4cfc8a4cc3d59965ea1a6b1c14214616645a2ac8df149fac92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbcf91c09dade014c766c1b6845862c75f8d2e13d9977cee0ddb5c8b4bf6bdfa"
   end
 
   depends_on "pkg-config" => :build
@@ -31,8 +31,8 @@ class Gptline < Formula
   uses_from_macos "libxslt"
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -120,9 +120,11 @@ class Gptline < Formula
     sha256 "2382c5816b2636fbd20a09e0f4e9dad4736765fdfb7dca582943b9c1366b3f0e"
   end
 
+  # Holding back lxml to pre-5.2.0 due to issue in upstream's newspaper3k dep:
+  # https:github.comgnachmangptlineissues5
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackages73a60730ff6cbb87e42e1329a486fe4ccbd3f8f728cb629c2671b0d093a85918lxml-5.1.1.tar.gz"
+    sha256 "42a8aa957e98bd8b884a8142175ec24ce4ef0a57760e8879f193bfe64b757ca9"
   end
 
   resource "newspaper3k" do
@@ -136,8 +138,8 @@ class Gptline < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages068a7e3d0aa81be59fa3c7beb54ade24ec46b569f78908761eb5f3a78cbbdc4eopenai-1.25.1.tar.gz"
-    sha256 "f561ce86f4b4008eb6c78622d641e4b7e1ab8a8cdb15d2f0b2a49942d40d21a8"
+    url "https:files.pythonhosted.orgpackagese69e108827f9a558335f07d7ad1f22b733a0e48990337cfbf923c49cd78f8f78openai-1.30.1.tar.gz"
+    sha256 "4f85190e577cba0b066e1950b8eb9b11d25bc7ebcc43a86b326ce1bfa564ec74"
   end
 
   resource "prompt-toolkit" do
@@ -156,8 +158,8 @@ class Gptline < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "python-dateutil" do
@@ -171,13 +173,13 @@ class Gptline < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesc0d687709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5afregex-2024.4.28.tar.gz"
-    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "requests-file" do
@@ -211,8 +213,8 @@ class Gptline < Formula
   end
 
   resource "tiktoken" do
-    url "https:files.pythonhosted.orgpackages3a7ba8f49a8fb3f7dd70c77ab1d90b0514ab534db43cbcf8ac0a7ece57c64d87tiktoken-0.6.0.tar.gz"
-    sha256 "ace62a4ede83c75b0374a2ddfa4b76903cf483e9cb06247f566be3bf14e6beed"
+    url "https:files.pythonhosted.orgpackagesc44aabaec53e93e3ef37224a4dd9e2fc6bb871e7a538c2b6b9d2a6397271daf4tiktoken-0.7.0.tar.gz"
+    sha256 "1077266e949c24e0291f6c350433c6f0971365ece2b173a23bc3b9f9defef6b6"
   end
 
   resource "tinysegmenter" do

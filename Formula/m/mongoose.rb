@@ -1,18 +1,18 @@
 class Mongoose < Formula
   desc "Web server build on top of Libmongoose embedded library"
-  homepage "https:github.comcesantamongoose"
-  url "https:github.comcesantamongoosearchiverefstags7.13.tar.gz"
-  sha256 "5c9dc8d1d1762ef483b6d2fbf5234e421ca944b722225bb533d2d0507b118a0f"
+  homepage "https:mongoose.ws"
+  url "https:github.comcesantamongoosearchiverefstags7.14.tar.gz"
+  sha256 "7c4aecf92f7f27f1cbb2cbda3c185c385f2b7af84f6bd7c0ce31b84742b15691"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c9dc15665c6045def9510d6f554994a4c933ed9a6031109d54a38672ba65e3e6"
-    sha256 cellar: :any,                 arm64_ventura:  "a8d6e7fc859aa4bfe2f8b6cd97e9480a6f0f55aaa0a871677693f6b01b9d0aae"
-    sha256 cellar: :any,                 arm64_monterey: "3684166873863e2042938215be5c0c352f42d12d1327c392bef9bc472e2d6a50"
-    sha256 cellar: :any,                 sonoma:         "9342e3597f35d6474dff21d0b2402da7dc74bb104512f6f89492723c401608fc"
-    sha256 cellar: :any,                 ventura:        "372366ea632b1594d8876705860208c40554629ba5409cf9e3cb5f2682c08a3e"
-    sha256 cellar: :any,                 monterey:       "b708e50a24bca539b9f56477e05b22ec58ae5207f84e8517eb1f5875a8804bb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e3109cd6688f7757fc4a1542d422eb0a0a23481d73d92ffef5f69f04480cfc4"
+    sha256 cellar: :any,                 arm64_sonoma:   "9139ae60d33a7a6f1cde266b0b36ebd6ad4bb0b64461f5e00096ae6ad3893a6e"
+    sha256 cellar: :any,                 arm64_ventura:  "73e48748cd2b02596a228b760bbca2369184dc6902b0fa100b218f79b70b6981"
+    sha256 cellar: :any,                 arm64_monterey: "655a8b98ec682257158274208686e4e51f53c9207810fdf94d70f056c0789ce8"
+    sha256 cellar: :any,                 sonoma:         "b8587f3fd232d8362cc1a18aa6246fa0d3774d6d0f1fae1b720612205b88e51a"
+    sha256 cellar: :any,                 ventura:        "68bddc1bacad47e7b48437e841d94707a9e5cdd15a9aa360280e38119c111662"
+    sha256 cellar: :any,                 monterey:       "1488dc6df62d74d2f77a21dba9882b364d91ac1883399c0484aeab0be6b39e55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db4a593ab08328030b3b998b48f988467e55df0658c6fffc3aab7a30bef21258"
   end
 
   depends_on "openssl@3"
@@ -20,7 +20,7 @@ class Mongoose < Formula
   def install
     # No Makefile but is an expectation upstream of binary creation
     # https:github.comcesantamongooseissues326
-    cd "exampleshttp-server" do
+    cd "tutorialshttphttp-server" do
       system "make", "mongoose_mac", "PROG=mongoose_mac"
       bin.install "mongoose_mac" => "mongoose"
     end

@@ -6,16 +6,16 @@ class Grayskull < Formula
   url "https:files.pythonhosted.orgpackagesd52847137c83faf18a85d6782a099d4a6129097c20625d77c0bd75185296f493grayskull-2.6.0.tar.gz"
   sha256 "39ec33a74b716c4e3ed876733669866f1b0743a242e16255e772e793598cb2dd"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cc93992f1c6b934fbec33352e742eafd40eec13626dd79f772d5958e5bc453a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b89155f06922f86e15a768f681ed80e1d0c9aee4c76297ceae985c00dd78ed74"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed0c0a76e1df19252e6829715163c1b0765f1822854c234c8fa18fc01c6823c4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f290d8a76d2455c0d2cc86e3c32a7740e61960c21c1dac0bf7272db753a81fc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "abd6104d96b956c89fcbbf94835d9fff25f0bd51581170ba0cfa15594139979c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b72a11d8e5003052bdcadb5d25a2362e1dd333ec2e703ae5c047bd69d5729f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4711af50b6c9bfb2cf26b965393655f4e39739e1d8e2e0d659b74c2e86ffec46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94c3e7fe07bde79e40ca4232f5b15bc941c0836a48c0fe1e1f6f280bf40c771d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6874bc0823d02b9a31ddcb1304746199df02ff2df803476312c0573c491cd666"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79dac00115c9fe9e968c7a99eca14a960de2ea9a0fe9a3babfd43cab2b4b288d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6ec992267eff9119fbd71ae51570111b8c40dd414b172fa812acc6aa6f473f65"
+    sha256 cellar: :any_skip_relocation, ventura:        "9de6cfa57a87e4ca9b137e0b673deca58c21ab5afeb67da290f794c479a4246d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d5e2845125ff9792cd112a3facbacf2c6ac4f49c2e58b5386b45a00d07b502aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "787fed6cb90d48ad221840788cb52d92ce1ee200269366a58703a48ddb958034"
   end
 
   depends_on "cmake" => :build
@@ -69,13 +69,13 @@ class Grayskull < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackages2a8bc5b482bd99c7b4b8e6db31b707333d85f33f0c7eebb72724a1e932f3b6b1rapidfuzz-3.8.1.tar.gz"
-    sha256 "a357aae6791118011ad3ab4f2a4aa7bd7a487e5f9981b390e9f3c2c5137ecadf"
+    url "https:files.pythonhosted.orgpackagese8949cf5188f6e13e58dec8a1f9f6bb201a66b42108de39ad239f6556ea7fc87rapidfuzz-3.9.1.tar.gz"
+    sha256 "a42eb645241f39a59c45a7fc15e3faf61886bff3a4a22263fd0f7cfb90e91b7f"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "ruamel-yaml" do
@@ -99,8 +99,8 @@ class Grayskull < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages5fdd50c569f342bc5d22142e2fc5fab1822d256202f404a384f05541f703f2ffsetuptools-69.3.tar.gz"
-    sha256 "e1fd0ca7ba442e4be8a415dcca867b8018777dd5f95f4492bb4dc7d77dbc8bd8"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "soupsieve" do

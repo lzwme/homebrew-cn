@@ -15,8 +15,12 @@ class Crystalline < Formula
     sha256 x86_64_linux:   "61f2a2ec2189e4aaf9738b7d804b54996a27305395b02c53b8d90817a6e661c5"
   end
 
+  depends_on "bdw-gc"
   depends_on "crystal"
+  depends_on "libevent"
   depends_on "libyaml"
+  depends_on "llvm"
+  depends_on "pcre2"
 
   def install
     system "shards", "install"

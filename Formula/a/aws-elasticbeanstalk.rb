@@ -6,16 +6,16 @@ class AwsElasticbeanstalk < Formula
   url "https:files.pythonhosted.orgpackagesec5e96dbeec0f796ac7928f52ed61c6b3a44764ae4113185bb1e08fc4d758ba7awsebcli-3.20.10.tar.gz"
   sha256 "8599d0e2ca70e42ee55948e6f58f65ea06596143c556925572fbf80ce705548d"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e30643c64d6c9bba31c863ad9a4d9816d5f1392980360db91789636cef9135bb"
-    sha256 cellar: :any,                 arm64_ventura:  "c6ecaa5eb819fbc2ee20dcc820fe966539fa0fff3e3d119399dc07f32b1cef0b"
-    sha256 cellar: :any,                 arm64_monterey: "dc7823c901b396a32f408fbd0dd7a094e47a138108d2ddbdabfbcbb0429858ed"
-    sha256 cellar: :any,                 sonoma:         "12356f4e18a84be0b791fdfab26eefdb41b678dabbcffe15699b8aad820c54b5"
-    sha256 cellar: :any,                 ventura:        "c3f92cbf028441b2721bc05b6f850441d61fdcba25cccec954c1d2a1715d6072"
-    sha256 cellar: :any,                 monterey:       "9daaf7c0534128fe3a2a1e70f0aa17fcb534a87423db9f4c96c01961f8b68907"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78d5a3b3b5bf78c18319c50938481d1561cdcda7b6eefd7b34841bb879383c55"
+    sha256 cellar: :any,                 arm64_sonoma:   "2881756d64b3534467d741975a2cd0d765e68538c2aa49df9e7d843e8d375648"
+    sha256 cellar: :any,                 arm64_ventura:  "0c99566397cfdbf35b362cb29fbf4a5845ddee5358a344dba35aa1ea1da12cc9"
+    sha256 cellar: :any,                 arm64_monterey: "6210f5422579c39abd955c64138cc79f4baf6f5a454357095dbb5bbde108cb8c"
+    sha256 cellar: :any,                 sonoma:         "735e227fd48c60f922407781d63068a5431de4af520f2c9d2ef712b2cc766d96"
+    sha256 cellar: :any,                 ventura:        "3f7ad5a4acb3231152070bb409646e7387231c3e55ca592c4f52c16d2072b4c1"
+    sha256 cellar: :any,                 monterey:       "d2a87fa76191899e444f60a54e520029d6658471cae49a4e14bab7701774bfb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd38366848b7f34933746067c960304c6eeaa227b14af0e12ba54a6cd6b30789"
   end
 
   depends_on "certifi"
@@ -75,8 +75,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "semantic-version" do

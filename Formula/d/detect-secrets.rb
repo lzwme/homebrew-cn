@@ -6,16 +6,17 @@ class DetectSecrets < Formula
   url "https:files.pythonhosted.orgpackages6967382a863fff94eae5a0cf05542179169a1c49a4c8784a9480621e2066ca7ddetect_secrets-1.5.0.tar.gz"
   sha256 "6bb46dcc553c10df51475641bb30fd69d25645cc12339e46c824c1e0c388898a"
   license "Apache-2.0"
+  revision 1
   head "https:github.comYelpdetect-secrets.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e2dc35d337354cff76eac70b05ca0fd9164d0fedc1a3b38167e3798b46452876"
-    sha256 cellar: :any,                 arm64_ventura:  "edb67c4637c4ef4484fdfc110235c2c4da023aed8b28979e8bd52fcf38e0acf7"
-    sha256 cellar: :any,                 arm64_monterey: "8e4cba8883dbf9345d576585a9671d98bb855e492824a9026fb4d399df993fee"
-    sha256 cellar: :any,                 sonoma:         "e284122a417a74f1526ca226756cfc8528c6c622afd378d9a2efb28ddc485916"
-    sha256 cellar: :any,                 ventura:        "5d68e3af5143f498a3a47b184899220fe8b057ec23968a36d52e24ffd8f9091b"
-    sha256 cellar: :any,                 monterey:       "ab29018f23b1d789b460d6a8d0f4ca29a8ce338eedff17d1f6633c47751773a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81767db7ddfd33133588f54d977441f506dcd755310a1b4b745ff1894ab501c0"
+    sha256 cellar: :any,                 arm64_sonoma:   "32016e9cd914c77dca20151657b49a99b659039dd994adde46099addbe507a24"
+    sha256 cellar: :any,                 arm64_ventura:  "01aa11cd4ea2c96fdf106cb0c1077814049e594b52977b70d1d11f91fa22c56b"
+    sha256 cellar: :any,                 arm64_monterey: "44ec738cdc3f03bf96042df56161e92754b88b8f0f931f45ad33c75d40df07aa"
+    sha256 cellar: :any,                 sonoma:         "d70372d7051ce239332c75d78566901b1d7d12dafafff0da9c408fa01a2c5b67"
+    sha256 cellar: :any,                 ventura:        "18e0a50762143176fd5cfb720376f053e42f476783d9b580da4f180c8d09cee3"
+    sha256 cellar: :any,                 monterey:       "5f3e380bf40ba837d812eec0be395c1a3aa1530f9717ca38dc794fe7cf82d462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7d983dd78ee130861ae918b2c30b8bd50ef99f999448ee7274a9478f6935339"
   end
 
   depends_on "certifi"
@@ -38,8 +39,8 @@ class DetectSecrets < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "urllib3" do

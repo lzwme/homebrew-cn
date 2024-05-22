@@ -3,8 +3,8 @@ require "languagenode"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https:emscripten.org"
-  url "https:github.comemscripten-coreemscriptenarchiverefstags3.1.59.tar.gz"
-  sha256 "55f26f6ec4f05e0de2b5e4ccd9e350acc54081364cee10cc4b05071919f152a4"
+  url "https:github.comemscripten-coreemscriptenarchiverefstags3.1.60.tar.gz"
+  sha256 "adef7d4e907653f8817c9cf8cacb4565de846a825384ffeeb95231e7905f8121"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -18,13 +18,13 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a5bfeb13d41e97979f7feb3f518395193e992446e074b65bbf4079bec5c2b27e"
-    sha256 cellar: :any,                 arm64_ventura:  "a17f37394fe224247b1ad2e6a75c605fb55d20d81e43d3086aa74691d9ee4106"
-    sha256 cellar: :any,                 arm64_monterey: "b6f815c21fdce3a2cd392dfd5f08d8d670bdb443d5fce8b40c517a5575d5d7f5"
-    sha256 cellar: :any,                 sonoma:         "ac6eed62fe853a6775ce4b17b76a1b1e4472bc8e960676db0369bc8a3ff3cbcd"
-    sha256 cellar: :any,                 ventura:        "0c56ff7c9299d4e33f7598b7715c0240f28571c9791032c1419e38bb9bfc7562"
-    sha256 cellar: :any,                 monterey:       "dc6907bc002bfffde7bcafd38baa57c614c578773580a0aa225c6a98cc81e018"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64ee26f5d4264f9183182722db3bfb0be3a466b9534bcf8f3df6be5f7e0c2860"
+    sha256 cellar: :any,                 arm64_sonoma:   "a3b929ce31ab9df0a2effcc55a606be999e2b4ff8418c70659e4a5ecd6b2a79d"
+    sha256 cellar: :any,                 arm64_ventura:  "6481efdedfc6fd031571644ac0143b4c02fe4150eb544963b49606fbcda0b00e"
+    sha256 cellar: :any,                 arm64_monterey: "b9a9524761570bd5a4eb28cb664df5673c3d0ffe6e48ba5add8199638ad05f4f"
+    sha256 cellar: :any,                 sonoma:         "ef89ab3b46a694031a6e422eb78140bf0f3c243aef398574c204cf4f27818759"
+    sha256 cellar: :any,                 ventura:        "7e2c704cce7ae321f66f950e63c148c2222e381bfe37d37278ae7158416222a4"
+    sha256 cellar: :any,                 monterey:       "adc693525d5825d42a9b5ad69b9f1ead53eebaa863feb875bf399110a41d3409"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce646f789881dbc343d549251ce735c715544520eaafa74b3e00c0284957474a"
   end
 
   depends_on "cmake" => :build
@@ -65,7 +65,7 @@ class Emscripten < Formula
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
     url "https:github.comWebAssemblybinaryen.git",
-        revision: "abd51437426c72a2d2f8195da5d5cf570941b805"
+        revision: "921644ca65afbafb84fb82d58dacc4a028e2d720"
   end
 
   # emscripten does not support using the stable version of LLVM.
@@ -73,8 +73,8 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https:github.comllvmllvm-projectarchivedf762a1643bb5b0b3c907611d118c82d4b68a39d.tar.gz"
-    sha256 "f379650efec50c51420c5d56310667e065fa6fa3046060681a45da5be5d97807"
+    url "https:github.comllvmllvm-projectarchive1ef081b05c562936fc025dde39b444066d9d470f.tar.gz"
+    sha256 "464165e207f8ae83011561c95d7893b190f44cc8df4c98a76527f78eec27b4e4"
   end
 
   def install

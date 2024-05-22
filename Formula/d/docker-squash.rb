@@ -6,16 +6,16 @@ class DockerSquash < Formula
   url "https:files.pythonhosted.orgpackages3c83c0a3cee67e2af20c7c337fd7cd49b49c9a741e785e7a4c631404a03b7a00docker-squash-1.2.0.tar.gz"
   sha256 "33120a217fa9804530d1cf8091aacc5abf9020c6bc51c5108ae80ff8625782df"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9bfa932abd1316f319812c252189325624a050239c973e6e5a66485930a31f86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9bfa932abd1316f319812c252189325624a050239c973e6e5a66485930a31f86"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9bfa932abd1316f319812c252189325624a050239c973e6e5a66485930a31f86"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9bfa932abd1316f319812c252189325624a050239c973e6e5a66485930a31f86"
-    sha256 cellar: :any_skip_relocation, ventura:        "9bfa932abd1316f319812c252189325624a050239c973e6e5a66485930a31f86"
-    sha256 cellar: :any_skip_relocation, monterey:       "9bfa932abd1316f319812c252189325624a050239c973e6e5a66485930a31f86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32f69c90868e5307a8219537171f599916ec019731f44c412fe86f7818850736"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dff569002286600cfa9830fb77a0d47e7df5c83359aac7e21448d99d5ed81404"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70c7ffa1daf8d34b25948994a92c4be9ccb46b8a63e0a58fdcf52e21f903709c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3b6bc09fdafccb0fb76c3f73a239314ae96f3a0699bd6706e8a7eb8aec28204"
+    sha256 cellar: :any_skip_relocation, sonoma:         "02eb60eec6ca21b82ea2dd8a04f4b3c50f59bfadfe8f381353716dbf23f8f8ba"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae3246bb02b5fffb5638c2c8f7de2bd4ca1c1c118ed872fd065c90159b94c408"
+    sha256 cellar: :any_skip_relocation, monterey:       "79c3fe472dda4af1b58dc704694dc90cfff409547c8c5e555b81d83612af0df7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "218771e825cc95ccabafff4d469155e14666dbbee9e71a98321df70334beddf4"
   end
 
   depends_on "certifi"
@@ -42,8 +42,8 @@ class DockerSquash < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "urllib3" do

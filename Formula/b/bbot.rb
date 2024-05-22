@@ -6,15 +6,16 @@ class Bbot < Formula
   url "https:files.pythonhosted.orgpackages462c1e0274544462ed7ab45f3cf9605b5ca114ecf2d000b9810241b0fb2370a1bbot-1.1.7.tar.gz"
   sha256 "7820c96145daae53c4142cfcddf8ee6048479dc054f723ef71bd24ccc0088497"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "690b50a304af1e1e83fc48d6ca0702dd9f3567a3a1d760a1b67ad4102a5eca57"
-    sha256 cellar: :any,                 arm64_ventura:  "da55c0b8c0d704a6be75428f7bd73515090328e7887f4becfc4bc30f7e6acd88"
-    sha256 cellar: :any,                 arm64_monterey: "be2048acee2ee4d207c84a35885545e67ede65e5877cbc60c9535d976117227f"
-    sha256 cellar: :any,                 sonoma:         "f6b9782aa9938fea38bba89ec050354cfe0304c4fccc35e46b2653556fe738bd"
-    sha256 cellar: :any,                 ventura:        "463db9f1cd719f6f03410ce6462483ca634c4c2775e2c589638939c0333665b3"
-    sha256 cellar: :any,                 monterey:       "bbc47254c91460ac668b80764db5715dba87d163274ceeaee7e4553ac1275fd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "47d2919edecfa677ca3b90b7263199dfe8ec95d23de65bb3c34347592dae0fa8"
+    sha256 cellar: :any,                 arm64_sonoma:   "2ac57a7b41600470ae1eed5998f18ca83fe0b9cf5a74a5a453a7a1fdde41660e"
+    sha256 cellar: :any,                 arm64_ventura:  "dd6fda6b8948331d6d5b3c7b66238736106fd277bf648b8bc9b58793a95cc469"
+    sha256 cellar: :any,                 arm64_monterey: "386a5fc10a615cfa6bcb3e183c732ca83fcbba46c7c27713fd2222be6105cf2a"
+    sha256 cellar: :any,                 sonoma:         "da8ac8a4de8e157680e84fb5e6931dd2e321758daf9e76b99a57170fee53ed4c"
+    sha256 cellar: :any,                 ventura:        "eafbfa4fb35f164645a2f4cc150fef204d289a1640f3a0c8b9ff9b380ad0ffb5"
+    sha256 cellar: :any,                 monterey:       "09657ab4ea657f922ad468879d2c6c41455c52aec31c9bce3573ddcbec1bf081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95369fb50dcc6596a2850cd152b3aa2e4b8285b9663d6e6b3082fbcfd4467fb3"
   end
 
   depends_on "openjdk" => :build
@@ -28,8 +29,8 @@ class Bbot < Formula
   uses_from_macos "libxslt"
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "ansible" do
@@ -38,13 +39,13 @@ class Bbot < Formula
   end
 
   resource "ansible-core" do
-    url "https:files.pythonhosted.orgpackagesbce834680ed379dbe6573de3fac8941f3a03de57ad69c6bd2fe3feaa98051c4dansible_core-2.15.11.tar.gz"
-    sha256 "b7761454c923f63a3d1fcac97b14e378bcc9a8518c3dde07f3ec0988c4667a9d"
+    url "https:files.pythonhosted.orgpackagesa1fce81a2e2a6e4247444fe632c8ffaff5c1bcc3adf85ae87d08158724f419fdansible_core-2.15.12.tar.gz"
+    sha256 "5fde82cd3928d9857ad880782c644f27d3168b0f25321d5a8d6befa524aa1818"
   end
 
   resource "ansible-runner" do
-    url "https:files.pythonhosted.orgpackages78db7c615d2be8a98e08d31e90c6b89555919b3b7882885407b885c211ad8b93ansible-runner-2.3.6.tar.gz"
-    sha256 "b2174a12dcad2dc2f342ea82876898f568a0b66c53568600bf80577158fcba1c"
+    url "https:files.pythonhosted.orgpackagese0b4842698d5c17b3cae7948df4c812e01f4199dfb9f35b1c0bb51cf2fe5c246ansible-runner-2.4.0.tar.gz"
+    sha256 "82d02b2548830f37a53517b65c823c4af371069406c7d213b5c9041d45e0c5b6"
   end
 
   resource "antlr4-python3-runtime" do
@@ -198,8 +199,8 @@ class Bbot < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "requests-file" do
@@ -215,11 +216,6 @@ class Bbot < Formula
   resource "setuptools" do
     url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
     sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "sniffio" do

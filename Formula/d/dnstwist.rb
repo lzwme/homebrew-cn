@@ -6,16 +6,16 @@ class Dnstwist < Formula
   url "https:files.pythonhosted.orgpackages31a739d27816c945ba7ba78797fc7b6a726ce437dc12463c3ffadc192c5f563fdnstwist-20240116.tar.gz"
   sha256 "1468dba982fe14a1f322486102c33b96f0d78da4446313c455bcfe4fe98ee71b"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4986cd314d136ca18a900b2fd68643fa0b8408f9977cb8a80446523bafc9b5cd"
-    sha256 cellar: :any,                 arm64_ventura:  "5470501061408ab627de7c60a9bea3650ca799aad912d8bebcd84507e2fb919f"
-    sha256 cellar: :any,                 arm64_monterey: "0dd1e983e5da8620efd1ab67e5f505fbdbd489a88a4aaf2c04f2bcf23bd280d2"
-    sha256 cellar: :any,                 sonoma:         "ffda1e82f01e73d47371e5336c836348c95fe463c7bf33e2c76e5477b17040e5"
-    sha256 cellar: :any,                 ventura:        "464836eeb1c6cdddc0feaf1eae0c98ba7d39fc1c2f609f2789593e1c9e9abf90"
-    sha256 cellar: :any,                 monterey:       "c4694ee3f34c016532c59af5c5b8d03fe900017c5c5a8231b543b99006fa1802"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "017380a9b2266e4339d18644d913e0a876e3d800707494588c68ad142216f1b8"
+    sha256 cellar: :any,                 arm64_sonoma:   "75078c17c1fa3fa716f74f09b22e09e95d373ad22a1dee1764913b31e255b80a"
+    sha256 cellar: :any,                 arm64_ventura:  "761b7d85382d0a84755b639e6695f58813b6495d5e8dcba3abbca635d241242e"
+    sha256 cellar: :any,                 arm64_monterey: "34c05894a40dff21bad9a97e53f733500b0e5309c09c2389d05fece31e2bb693"
+    sha256 cellar: :any,                 sonoma:         "147bb0f6a67fa92e79b3900a90879ab2751dd7e423defd1244240544cc5bd021"
+    sha256 cellar: :any,                 ventura:        "c4fbe32568bf12a46781f130dec20229ff23867babf4af0db51c21b85c4bb7a5"
+    sha256 cellar: :any,                 monterey:       "a6b2636b13725171f4a58e5597c2848792de674167f33ee164b5b62356fce695"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4a0601947a05b5eee7cdca28419759a378882d01a6f5809442655eb90fcec20"
   end
 
   depends_on "certifi"
@@ -30,8 +30,8 @@ class Dnstwist < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages7e0b4235b25496c741f4c9f75a94951fbc15c48537349a03448687fb226256efaiohttp-3.9.4.tar.gz"
-    sha256 "6ff71ede6d9a5a58cfb7b6fffc83ab5d4a63138276c771ac91ceaaddf5459644"
+    url "https:files.pythonhosted.orgpackages04a4e3679773ea7eb5b37a2c998e25b017cc5349edf6ba2739d1f32855cfb11baiohttp-3.9.5.tar.gz"
+    sha256 "edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551"
   end
 
   resource "aiosignal" do
@@ -70,8 +70,8 @@ class Dnstwist < Formula
   end
 
   resource "maxminddb" do
-    url "https:files.pythonhosted.orgpackages842a8b3580d214c25d37c789fa78588d83d885ed9844653d32479ee92e227c9amaxminddb-2.6.0.tar.gz"
-    sha256 "c5b91c62bc274d0a83ac88088a6db2dac1301acb8aa7bf80a901a07120361e1d"
+    url "https:files.pythonhosted.orgpackages51a0515e51f564a7d0323316296ce43a796c92a60246ffdbab8bb6d2e548b4d1maxminddb-2.6.1.tar.gz"
+    sha256 "6c5d591f625e03b0a34df0c7ff81580676397b8335e13ece130c6e39e4a3afb9"
   end
 
   resource "multidict" do
@@ -90,13 +90,13 @@ class Dnstwist < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "tld" do

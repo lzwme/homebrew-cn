@@ -3,18 +3,18 @@ class Ocrmypdf < Formula
 
   desc "Adds an OCR text layer to scanned PDF files"
   homepage "https://ocrmypdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/0f/82/468a0edf5bd36ef133bbcf71a1d93edfffe13caabf635d79a912f72c6fda/ocrmypdf-16.3.0.tar.gz"
-  sha256 "4368213279e9cb6a0ff0364bf20366b7ee903a2d66812266fe7fc2bb429c5938"
+  url "https://files.pythonhosted.org/packages/f0/b1/7fc9772c3a9e45b1f75b46e6f7598474873e28448b1eeab39d246d5cca14/ocrmypdf-16.3.1.tar.gz"
+  sha256 "6f872acada73757588f1d1d94f76474166addedc7d72b07faa9101be074bf590"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "fda967ed86934d8716f535bce78e7bd6893444772d7917a74732392763df49e3"
-    sha256 cellar: :any,                 arm64_ventura:  "8f497addc0c74e69e74322131f9bb422799c5c3940b7486cf27c76cddbdd56d4"
-    sha256 cellar: :any,                 arm64_monterey: "77821756e1b78dfa563100b3f19b72c8b1551ced5e621263cf439cec05742103"
-    sha256 cellar: :any,                 sonoma:         "8b1de38e83ef8797de89f1d4235bdfb61d316b95fcf796ed9624983fa3e3f04a"
-    sha256 cellar: :any,                 ventura:        "cb7491ff61dfea112cc94ecf07a43c4491f50d736a07946ad9efc50d6b19b76c"
-    sha256 cellar: :any,                 monterey:       "b57a79b5eddfede0bec8d49f8affcd7deec7e9bc3d912ac4893090abfa529933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1dc6919e90bbb996c87f4cbd4e884930587fe83ac6ec3d9f511465c241fd1d9"
+    sha256 cellar: :any,                 arm64_sonoma:   "37d159793926529c1b0852fb5592ee091551d85d8da2dfa877d53cc77c0c8a7d"
+    sha256 cellar: :any,                 arm64_ventura:  "9044ea195e581aa99d0d7ac28f60b7ec4ef8030f47596d8607089af9c61efda8"
+    sha256 cellar: :any,                 arm64_monterey: "5f8cedf8cc960e4d5ebb3ba26826c06cd6faa34aea30ec936789c3f09b80617d"
+    sha256 cellar: :any,                 sonoma:         "204f71118f0b061b92db004014bf2ffb917ce72c1a8e4560eaad43fc5a1f24db"
+    sha256 cellar: :any,                 ventura:        "b821e24cc38b5488aeba7ec5ca683d5f9cec037900e1cdd7ed5432f33b6346be"
+    sha256 cellar: :any,                 monterey:       "01d784f058ee4b6e05a99ac1fdf68fb1c76a10a2e3a43034b8fb9e5c892c5374"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3e91d6e19369ef133d73a1193fa3e50bf08095bbe9c0286505c556c894a00a3"
   end
 
   depends_on "pkg-config" => :build

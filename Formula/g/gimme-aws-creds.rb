@@ -6,15 +6,16 @@ class GimmeAwsCreds < Formula
   url "https:files.pythonhosted.orgpackages63739e508d37d4d301f6a3811fdc0b0a076696de87f82ad8a81ec28c3e6befb5gimme_aws_creds-2.8.2.tar.gz"
   sha256 "12784f4b749617d7391bf2056373990277858dc9886328832b545e9e334f24d3"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "17aa5d8830e8e9e27544335c01029bfda5febedb19f24a0b5014f711bfea6ff8"
-    sha256 cellar: :any,                 arm64_ventura:  "55145d0cece8da33bf3c99b0ede1fa4e8143a4ffb9d59468e39869ddebab01ce"
-    sha256 cellar: :any,                 arm64_monterey: "88652661ad55e1b03f07bdbe5bd259777cae325c5402022f6a953e378d792278"
-    sha256 cellar: :any,                 sonoma:         "35bb52a073f1d5f1932fc25f94f8ea9192dde40d30e8609bce70721c5fdd2d13"
-    sha256 cellar: :any,                 ventura:        "8b581cbea5c9515c59ea372444b8ef949c5d51bc246024e904d9984a2bc2fe1a"
-    sha256 cellar: :any,                 monterey:       "01cdce3c726d2c168a035f68bc2a3bd8ce92ce41e05e6640c7bb64ba80bf7566"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15332e4e998c37989ecbec65fa316e4458b46ed8d0c826435d9de2df29e63b51"
+    sha256 cellar: :any,                 arm64_sonoma:   "ee011c6dcde0ecf20bb485ad47748649484f661db52ea086263fe0d6bbbb88c5"
+    sha256 cellar: :any,                 arm64_ventura:  "50b8c02e5735d7d2f211c1e5ad41ae0bff039926459db82a6037a10a9acc5d9c"
+    sha256 cellar: :any,                 arm64_monterey: "4022dcdd73112c8638eb0bd8de7939479b5211b688d107ddcfa8523fcc600040"
+    sha256 cellar: :any,                 sonoma:         "fb5c29ded8e068cf82edadd1d6fc8c03ccbf36171c0b2e9208687ab4028e669f"
+    sha256 cellar: :any,                 ventura:        "cd8df479c0aae2432e00d628bdcfd64efc8626e219182bacf2e395d1369771f1"
+    sha256 cellar: :any,                 monterey:       "9c6d1be8cee9ecb786c6ea0541540cd8d261491bec13ecb2fe297d4a9006f54b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5bd8558bd6ce0c5e1bb8680ceff0d5ec64a36a3320d38a43068b14c9361eef1"
   end
 
   depends_on "certifi"
@@ -63,13 +64,13 @@ class GimmeAwsCreds < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages55dc977c83f4ecc36b39058842abfab4e668a9aa02f02d8f659047410be1d6efboto3-1.34.103.tar.gz"
-    sha256 "58d097241f3895c4a4c80c9e606689c6e06d77f55f9f53a4cc02dee7e03938b9"
+    url "https:files.pythonhosted.orgpackagescdf503bfbb89af1266a10125ebbc2bb09e2d276450de0e360767e7edb0d54022boto3-1.34.109.tar.gz"
+    sha256 "98d389562e03a46fd79fea5f988e9e6032674a0c3e9e42c06941ec588b7e1070"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages9c08270465df53dd8dfdb372c567dee08c3dbce825f11c7ee89fa5cc25a865fdbotocore-1.34.103.tar.gz"
-    sha256 "5f07e2c7302c0a9f469dcd08b4ddac152e9f5888b12220242c20056255010939"
+    url "https:files.pythonhosted.orgpackages7aaf091991a0420d70e150012fdee651185c7a0a3de8d96ad626b0ec9e35b704botocore-1.34.109.tar.gz"
+    sha256 "804821252597821f7223cb3bfca2a2a513ae0bb9a71e8e22605aff6866e13e71"
   end
 
   resource "charset-normalizer" do
@@ -138,8 +139,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackagesb809fdd3a390518e3aebeec0d7aceae7f9152da1fd2484f12f1b3a12a74aa079keyring-25.2.0.tar.gz"
-    sha256 "7045f367268ce42dba44745050164b431e46f6e92f99ef2937dfadaef368d8cf"
+    url "https:files.pythonhosted.orgpackages3ee954f232e659f635a000d94cfbca40b9d5d617707593c3d552ec14d3ba27f1keyring-25.2.1.tar.gz"
+    sha256 "daaffd42dbda25ddafb1ad5fec4024e5bbcfe424597ca1ca452b299861e49f1b"
   end
 
   resource "more-itertools" do
@@ -218,8 +219,8 @@ class GimmeAwsCreds < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "rsa" do

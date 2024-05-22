@@ -15,7 +15,14 @@ class Noir < Formula
     sha256 x86_64_linux:   "7ca826e41a806260714686fcd22e29986d1636f0c4963d24a79c273a13bac64a"
   end
 
+  depends_on "bdw-gc"
   depends_on "crystal"
+  depends_on "libevent"
+  depends_on "libyaml"
+  depends_on "openssl@3"
+  depends_on "pcre2"
+
+  uses_from_macos "zlib"
 
   def install
     system "shards", "install"

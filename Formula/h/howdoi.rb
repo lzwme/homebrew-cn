@@ -6,16 +6,16 @@ class Howdoi < Formula
   url "https:files.pythonhosted.orgpackages6d430e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df61c37596a4d396521247df10d4d2d223a554e9e2c978009f5485d07753dbfd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a1938d562a1e2c85ab8fc7ef98787f65308eb9b1491a582e08bafeb38915f56"
-    sha256 cellar: :any,                 arm64_monterey: "e35833854b4de6f3ff974cf5cddb3e1786205342251d5cad2b25dca3d05ecb7e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "34f554dbb5a83397a124570153293795c9f15e82bb72d61e2f6acc8aeadd1945"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f6905e9285477f692c3aa0a9b349e36d47ffddcf9824b302d62f3938c2a9115"
-    sha256 cellar: :any,                 monterey:       "cf30b254316fe77bc8696751c5d1597ecd99ed784d6f8e2a0297455f87417dd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0141c6f7db126c73116149dcb64c7094dcbf8e612c181dcce2c3d218c615ce4e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "062c2b29fa011aadb399f691b72a86cc28c2813543e3de99bcfe6fd35fbbd720"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d03c302eb3ead32af88bf912650f1a151fd99d3bbc1387008a1bbadd6a05c06b"
+    sha256 cellar: :any,                 arm64_monterey: "22a19ed33c0ce678e8f09931a94800c59be00bdcb187e8b21045407063cc4bc9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7d426441a4a0238a4007094506262c6da47000cb834761a616875c59343a7c04"
+    sha256 cellar: :any_skip_relocation, ventura:        "d061979f7af2cdf37bc058829800544618192ce7cc20e21b12cd4cc20ef8f890"
+    sha256 cellar: :any,                 monterey:       "e01be93bc7b942c0e69cbb0b653d160a871e2bdce0f270beda4631f163b941e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e33dade588b00f7f28ae39f383575f1eff6455031fa6811b1dd6d22173713a9"
   end
 
   depends_on "certifi"
@@ -31,8 +31,8 @@ class Howdoi < Formula
   end
 
   resource "cachelib" do
-    url "https:files.pythonhosted.orgpackagesc3cf0a21e19e82e6576d260e05d284bfd7f80195c0a1b5a6398016fc2430ed37cachelib-0.12.0.tar.gz"
-    sha256 "8243029a028436fd23229113dee517c0700bb43a8a289ec5a963e4af9ca2b194"
+    url "https:files.pythonhosted.orgpackages1d690b5c1259e12fbcf5c2abe5934b5c0c1294ec0f845e2b4b2a51a91d79a4fbcachelib-0.13.0.tar.gz"
+    sha256 "209d8996e3c57595bee274ff97116d1d73c4980b2fd9a34c7846cd07fd2e1a48"
   end
 
   resource "charset-normalizer" do
@@ -71,8 +71,8 @@ class Howdoi < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
-    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "markdown-it-py" do
@@ -91,8 +91,8 @@ class Howdoi < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyjwt" do
@@ -111,8 +111,8 @@ class Howdoi < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rich" do

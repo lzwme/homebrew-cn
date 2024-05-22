@@ -1,8 +1,8 @@
-cask "little-snitch" do
-  version "6.0"
-  sha256 "12e9efa8ee310c733d6623e8cf5c51141324a0a719ef008fc7ec8f13dbe5b5f3"
+cask "little-snitch@5" do
+  version "5.7.6"
+  sha256 "f0a9905f0f4222273febf4f1ae1a330770a064b7454583bd48e8152cc4bb30f8"
 
-  url "https://www.obdev.at/downloads/littlesnitch/LittleSnitch-#{version}.dmg"
+  url "https://www.obdev.at/downloads/littlesnitch/legacy/LittleSnitch-#{version}.dmg"
   name "Little Snitch"
   desc "Host-based application firewall"
   homepage "https://www.obdev.at/products/littlesnitch/index.html"
@@ -22,10 +22,10 @@ cask "little-snitch" do
 
   auto_updates true
   conflicts_with cask: [
+    "little-snitch",
     "little-snitch@4",
-    "little-snitch@5",
   ]
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :big_sur"
 
   app "Little Snitch.app"
 

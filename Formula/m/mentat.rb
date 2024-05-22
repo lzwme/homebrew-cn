@@ -6,17 +6,17 @@ class Mentat < Formula
   url "https:files.pythonhosted.orgpackagese08ba808d6663065e3b446d3be521d7836f774f3b39bdd30f786d093aca383b6mentat-1.0.8.tar.gz"
   sha256 "81679055448a495c3e7e55eeb8b59373dc0658cea6b2549d0ae48d26937494ba"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comAbanteAImentat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1c08d5670cfb7d2564a08440a6673948ef13792ccd066893f6890e858b6b9425"
-    sha256 cellar: :any,                 arm64_ventura:  "361a305a3bcc147c6a7998abc6f016a8f8e01cfe31dfd3365b43d643e84fcf25"
-    sha256 cellar: :any,                 arm64_monterey: "851a2ea99df9ba4bf0e9e458d9db85ddf5f927b9cd7c350036f11e70f4f6ad19"
-    sha256 cellar: :any,                 sonoma:         "2d14fdd9ca3b04fc1f67dc01a590484a45b09128a9d6acd1fa6f61f2d1fa2608"
-    sha256 cellar: :any,                 ventura:        "20daf8e233feda7fd98466ab71c36211b416749bf55d4bc353ad6f6af2a18436"
-    sha256 cellar: :any,                 monterey:       "b9a52dc100f97533451e47b4db223b119e9b31ff6ea6029333fb052072fe1600"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d533e46aef0d612b387d661a3895fa8a39c7378c211892ab4cdd9a301febea9"
+    sha256 cellar: :any,                 arm64_sonoma:   "8115fcaa35f5975e87bbe169fd4172f3a2a5df0928de38336ef941bb27183296"
+    sha256 cellar: :any,                 arm64_ventura:  "ac4c2bbfcbd684512f542dca1c27258449e515adbbc28b37883269615a8874c7"
+    sha256 cellar: :any,                 arm64_monterey: "70844b4c5be504e81499dd454100c457c2fb7ae980db3b4d4351c20c1ca634cb"
+    sha256 cellar: :any,                 sonoma:         "3831e7daa898fae93d8ff96f8e888a1bbb690b244de94d74aac7d59e992d5036"
+    sha256 cellar: :any,                 ventura:        "72adfc735fd3472d5c1746867d7125fee67585d2480dddb85787d40c793521cb"
+    sha256 cellar: :any,                 monterey:       "15746836fb448e42c762fb818552d5aca0e64a3be2417829e65676c115887507"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab496f1c2cc1bdfbbbc699ec96347e97af6a6541c0eb85a0c8e1eb060dbeef28"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -26,8 +26,8 @@ class Mentat < Formula
   depends_on "python@3.12"
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "anyio" do
@@ -106,8 +106,8 @@ class Mentat < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
+    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
   end
 
   resource "jsonschema-specifications" do
@@ -136,8 +136,8 @@ class Mentat < Formula
   end
 
   resource "pluggy" do
-    url "https:files.pythonhosted.orgpackages54c643f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https:files.pythonhosted.orgpackages962d02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "prompt-toolkit" do
@@ -151,13 +151,13 @@ class Mentat < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagescdfc70fe71ff78f680d584eba9c55a30092f6ef0b9cf0c75a74bd35a24151a83pydantic-2.7.0.tar.gz"
-    sha256 "b5ecdd42262ca2462e2624793551e80911a1e989f462910bb81aef974b4bb383"
+    url "https:files.pythonhosted.orgpackages1f740d009e056c2bd309cdc053b932d819fcb5ad3301fc3e690c097e1de3e714pydantic-2.7.1.tar.gz"
+    sha256 "e9dbb5eada8abe4d9ae5f46b9939aead650cd2b68f249bb3a8139dbe125803cc"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages3d28d693aab237fca82da327990a88a983b2b84b890032076ee4a87e18038dbbpydantic_core-2.18.1.tar.gz"
-    sha256 "de9d3e8717560eb05e28739d1b35e4eac2e458553a52a301e51352a7ffc86a35"
+    url "https:files.pythonhosted.orgpackagese923a609c50e53959eb96393e42ae4891901f699aaad682998371348650a6651pydantic_core-2.18.2.tar.gz"
+    sha256 "2e29d20810dfc3043ee13ac7d9e25105799817683348823f305ab3f349b9386e"
   end
 
   resource "pygments" do
@@ -196,23 +196,23 @@ class Mentat < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages59d748b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37referencing-0.34.0.tar.gz"
-    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesb53931626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853regex-2023.12.25.tar.gz"
-    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "selenium" do

@@ -6,16 +6,16 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/dd/a3/032f56c1bec7550bea1650dc5eeb4a2d027e416f93a7a854a35cff29cbfd/molecule-24.2.1.tar.gz"
   sha256 "83522baa9b91560ea986273cab149c39156976e9d61245717226320935ad56e4"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ffb794c6a4ff7a19183171c857d7c0db9efb94f9dee21fcfead0ac9d3efb3703"
-    sha256 cellar: :any,                 arm64_ventura:  "3aefcd7cc7f1987cc485583ab77ae37f697d166952ba5111786627c9c6097cdd"
-    sha256 cellar: :any,                 arm64_monterey: "78f334903b4af0eaed1870ac2c3e9c8cc1acab858c280431fdfdb035d0eb010f"
-    sha256 cellar: :any,                 sonoma:         "e2a7b3cc0fb5f71706bba62d0518bd49f6e53ed1335cbba7e4ef2f8b535db394"
-    sha256 cellar: :any,                 ventura:        "2bb7eef99e6ae3e76d7d20f12920d891894c4877634fdc1c73ba4b3847704e09"
-    sha256 cellar: :any,                 monterey:       "64135f96aebeb67bf61a4c57e0b9018fc0a2966610a9bb36eb63e41ef9bebe37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b40de88cb90093386f09524c374be64a52d642aaeefafbc6de1217053431070"
+    sha256 cellar: :any,                 arm64_sonoma:   "3abdd8991440b536b5b0e5fb328525370df22f2a06b719fbf906ed73c06889e4"
+    sha256 cellar: :any,                 arm64_ventura:  "72a5f3199c2fcb08160988ad516fd7641a98d7bfbd1b8bd07e2d4dcadfb05a91"
+    sha256 cellar: :any,                 arm64_monterey: "29f5b039655aa3de2616df588cd04f2fcede434a0eff262d50fc7c1bacd43c44"
+    sha256 cellar: :any,                 sonoma:         "b4ab6db175ae89581cf24f22f7b64c975f32c0ab88aef8872fa9182c7719c7c9"
+    sha256 cellar: :any,                 ventura:        "3db18856eca4e9455de21067811389e2447ea73e30cc8d2dd242a9ef686f391b"
+    sha256 cellar: :any,                 monterey:       "fd3b608b82400fd3b7dc2e5ce079acad87f8a93e507e1ae2151b89b617b9e8db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2ca4622af69dcef1c9c92e36c75fe1b496ce3fa6c0470326e2ba9ad02ccb459"
   end
 
   depends_on "rust" => :build
@@ -32,13 +32,13 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/1d/fe/8751adb482109c8a6123669dc19bfc8462cc14a0fa3cabf4e740de3227ca/ansible-compat-4.1.11.tar.gz"
-    sha256 "b3e9f9d7c3a1ce6222de444e9dc6fece7eba70ac64f2a0befdc4e2d542018b4a"
+    url "https://files.pythonhosted.org/packages/fc/36/45725453dc9d44cb31ddd7cf6c71761fb806821541e7553a10927225bdf0/ansible_compat-24.5.1.tar.gz"
+    sha256 "433fcc2212de13dd852c900bf17a70234847a1fe7b8edbea969cf321d5ad7841"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/0c/65/d28ed46f5daeb2ed37f9b55631cac7070d7a39f72b6d25cb99a5d8068827/ansible_core-2.16.6.tar.gz"
-    sha256 "111e55d358c2297ec0ce03ba98e6c5ce95947fdf50d878215eb8c183d0c275e4"
+    url "https://files.pythonhosted.org/packages/a7/e5/956a16811044c28663d88740932de9c3fbbe2ec14fabe86a69b3cfe4842b/ansible_core-2.17.0.tar.gz"
+    sha256 "bd16e30ecac405dac594de3e1b1b4d9cc6fa1a9f7a01a6a8d4c471b20660716d"
   end
 
   resource "attrs" do
@@ -157,8 +157,8 @@ class Molecule < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "resolvelib" do
@@ -197,8 +197,8 @@ class Molecule < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/38/c6/0c5f324561c9396868d6badf571590c1a7802a81180c3097e4dfdc2f35c0/wcmatch-8.5.1.tar.gz"
-    sha256 "c0088c7f6426cf6bf27e530e2b7b734031905f7e490475fd83c7c5008ab581b3"
+    url "https://files.pythonhosted.org/packages/ea/c4/55e0d36da61d7b8b2a49fd273e6b296fd5e8471c72ebbe438635d1af3968/wcmatch-8.5.2.tar.gz"
+    sha256 "a70222b86dea82fb382dd87b73278c10756c138bd6f8f714e2183128887b9eb2"
   end
 
   resource "websocket-client" do

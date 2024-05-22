@@ -2722,7 +2722,7 @@ Homebrew-homebrew-core/Formula/i/infracost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inframap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ingress2gateway.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inih.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/i/iniparser.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iniparser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/inja.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inlyne.rb, Homebrew/homebrew-core, 1
@@ -3844,6 +3844,7 @@ Homebrew-homebrew-core/Formula/m/macos-term-size.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macos-trash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macosvpn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macpine.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mactop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macvim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mad.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/madplay.rb, Homebrew/homebrew-core, 1
@@ -11415,6 +11416,7 @@ Homebrew-homebrew-cask/Casks/l/liteide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/little-navmap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/little-snitch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/little-snitch@4.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/little-snitch@5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/live-home-3d.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/livebook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/livetail.rb, Homebrew/homebrew-cask, 1
@@ -12561,6 +12563,7 @@ Homebrew-homebrew-cask/Casks/q/quassel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quaternion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qudedup-extract-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/querious.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/q/quick-app-ide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quickbooks-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quickbooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quickboot.rb, Homebrew/homebrew-cask, 1

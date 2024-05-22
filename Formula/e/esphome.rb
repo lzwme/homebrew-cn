@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackages4fa003c4bac6a3c30bf2ec9079aed4e16bf76b304ad482d8111a7e16dad21aefesphome-2024.5.1.tar.gz"
-  sha256 "d7e8d133ae62e17cf2beb0d31bed7ad7cd604001f1f5d03cfcb5c59adede4efd"
+  url "https:files.pythonhosted.orgpackagesa57d77dc92113010306046d18bb00b2209e71243f54c8fd61f5013048c67cfabesphome-2024.5.2.tar.gz"
+  sha256 "3f59297afc248f36e964f79c6a8a60d90becc82f3b81acd90e38b5f93f7aaa0b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "03fd4455c6f3ae8ca5d43ec201d813ff674dfdbe4a96d0ed2d200c7c47218df9"
-    sha256 cellar: :any,                 arm64_ventura:  "8c17d3888f9b203e35c98096ebdc544b5663eb6bce49122adf2fa9056e33a99d"
-    sha256 cellar: :any,                 arm64_monterey: "7cca814cc4a9c3a1430e0b7d828bbb92817191793d369d1eecfc93a9e86de018"
-    sha256 cellar: :any,                 sonoma:         "b1a9a4ff0f4f978f6c7b6b7a3dd5365a764e266d1edf65dfc0243dcbe85700da"
-    sha256 cellar: :any,                 ventura:        "38c4777998cb30260545fa3649f031f8d2cf6f974360049e8e6c5d8a04e59bd6"
-    sha256 cellar: :any,                 monterey:       "bcebb85089c05931ca0583287fc1b605b7b4779a118d18e9f69ea0010c10c45d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec46f1ca24ada5b88f06069014eb90a9e7ff8e5333ebb16147417c673dd3b2aa"
+    sha256 cellar: :any,                 arm64_sonoma:   "4fe2d8daae1ffaf661c1c644ecc421e60e50d3e63a80eb85a0aa25a571f487fc"
+    sha256 cellar: :any,                 arm64_ventura:  "bb712c42b2710fd5fe3e5da54e6da9f1c4b2daca8464ce79d401d590d920d1f8"
+    sha256 cellar: :any,                 arm64_monterey: "482523bf913cc289c691676e93cc284524d95552b37529fa52bcf99022f03a6e"
+    sha256 cellar: :any,                 sonoma:         "3d026ee01dae1b6e2cdf1c953c183feb939044757bdf89c87e303892a36e20c8"
+    sha256 cellar: :any,                 ventura:        "b9f52b9894230c953016fda144a38ca3e3764280bbaac9afce406c6d15b34036"
+    sha256 cellar: :any,                 monterey:       "20301fb0d32345c0ee33a68681efde37c59bb55b862c1e576fe06d0484bcb9b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b374f5dadb9626ee69db43919f2dd76edf7324b91d1cfd9949a9148a65500ba8"
   end
 
   depends_on "certifi"
@@ -195,8 +195,8 @@ class Esphome < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackagesd8c1f32fb7c02e7620928ef14756ff4840cae3b8ef1d62f7e596bc5413300a16requests-2.32.1.tar.gz"
+    sha256 "eb97e87e64c79e64e5b8ac75cee9dd1f97f49e289b083ee6be96268930725685"
   end
 
   resource "ruamel-yaml" do
