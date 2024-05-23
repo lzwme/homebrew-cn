@@ -6,16 +6,16 @@ class Yewtube < Formula
   url "https:github.commps-youtubeyewtubearchiverefstagsv2.10.5.tar.gz"
   sha256 "8100466a5e89c84249d882e2e9ea9ff282a2d4f7f68135157cb942e6eb927b29"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "602b924b3ae3e86d4bc70cb0bdde4cf98983a8b6dc135a1043bfadcdec203185"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "409bd20bf044bd026fd44a91c788ef0b88bdaff0e8cf8c42d090d624b682482b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c4b350fb463c20069c1964d6320b1e73823d551c038e21bf528bd76e05c3d68"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1e51a73cdbf09aeb5c5081223f5d80bb14684ef6fc67a34e57a3553360ffebab"
-    sha256 cellar: :any_skip_relocation, ventura:        "569b454bc3fdbe76e8dcadef19d7e6d27115354536d46a1f57ad74dec573ebb3"
-    sha256 cellar: :any_skip_relocation, monterey:       "4cb52c1f45c250ee04ad5884a6e7857e91b4370196a191538f0b958fc27c55b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a3f51e96120f9605172fda9d4ff81ed28c8eb1d3464403ce1d54ceb567f631e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42dc4906eb295b3d65f6976558afb890f207099d1fcc945f58ba7ddb6792ff9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de584ab6568bb31f7e7effa7735716ea70a4d5c411358353055036b038ac25cc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f62b0d81fc5af8a76b64ccbc6cb4c14213ee6b2404178c07f561b54892d1eec7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "2da7aa4c9c70ac69ae33efe9efe948fe2a7b231169b09f3bae461b27d4559719"
+    sha256 cellar: :any_skip_relocation, ventura:        "22f324b54293b6b77351617c6f10e62bea92522f7cb594cb27ce46db694f8dcb"
+    sha256 cellar: :any_skip_relocation, monterey:       "a80ae86e87abb111fd4f139848d44325e3e9f0600bab314a658da08d72f1e44d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4772aa92e1a8b5b3ba0de7e2403d3d99a3d6bd1b5a7459f4bcc92e6fbcecfedb"
   end
 
   depends_on "mplayer"
@@ -82,8 +82,8 @@ class Yewtube < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "sniffio" do

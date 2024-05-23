@@ -4,31 +4,23 @@ class Pymupdf < Formula
   url "https:files.pythonhosted.orgpackagesc547ebd9cdc09d82462533f69f983c7f57ebbf01e68adb111a3c49acacde2540PyMuPDF-1.23.26.tar.gz"
   sha256 "a904261b317b761b0aa2bd2c1f6cd25d25aa4258be67a90c02a878efc5dca649"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c43eaabbda986e9e2e387c177e3fcfb3e8a688fbd68d599466badfbf95c559a6"
-    sha256 cellar: :any,                 arm64_ventura:  "a9a8779a131db07af5bc20ef1b2bb7bdcc92523d7ccff472c33380ba58b83d8e"
-    sha256 cellar: :any,                 arm64_monterey: "212d03bc3e39dfac09a9136b107ef37e35bbca15fb168eea65ad012427503e98"
-    sha256 cellar: :any,                 sonoma:         "4460d8dbcf1e0903f99440e4af975cf18f11409aaa658d3314e8d1fe7d3efc9d"
-    sha256 cellar: :any,                 ventura:        "920ab94f164fc33a333a839ac75ed377fa6eca5b006627354a4997e9325a1753"
-    sha256 cellar: :any,                 monterey:       "5f9155f054b8775b5817bf7b15f79e89f25600c68cb3fe9e74d1ad7870e11460"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cdc726ae89a1d66a80526abfeb7bd380fee4e5b2aa2027bd352f31a78418460"
+    sha256 cellar: :any,                 arm64_sonoma:   "b9893438f9863bb7ca0a59adf1be3ac1043637e4044b0036e6bdd1858e26903c"
+    sha256 cellar: :any,                 arm64_ventura:  "aea5f4bf26da29837fc2c7a4c1004d11653d03354ec1dbcd9998390077fbb68d"
+    sha256 cellar: :any,                 arm64_monterey: "87c7d76c810c1d13bd9494208ccb6883f5577798b8c5996e2fb1a56a6c0f5593"
+    sha256 cellar: :any,                 sonoma:         "626a341728ee34d882a9a4f52196b350452f36ff338229595ad27c3c4b2180cb"
+    sha256 cellar: :any,                 ventura:        "17407caced5ad0d9a26ee34eba5bd91beefb1949ab6fddc50e48a631a69d6690"
+    sha256 cellar: :any,                 monterey:       "6bd3c2b1fde06502ebc4253ce39daa2b0ea72140f85128076b4444af6b4b1b44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd09deed9dce85055e4a82f6595cac08b7ccca8475dbc774aa9ede0283370ac"
   end
 
   depends_on "freetype" => :build
   depends_on "python-setuptools" => :build
   depends_on "swig" => :build
-
   depends_on "mupdf"
   depends_on "python@3.12"
-
-  on_linux do
-    depends_on "gumbo-parser"
-    depends_on "harfbuzz"
-    depends_on "jbig2dec"
-    depends_on "mujs"
-    depends_on "openjpeg"
-  end
 
   def python3
     "python3.12"
@@ -41,7 +33,7 @@ class Pymupdf < Formula
     # Builds only classic implementation
     # https:github.compymupdfPyMuPDFissues2628
     ENV["PYMUPDF_SETUP_IMPLEMENTATIONS"] = "a"
-    ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include} -I#{Formula["freetype"].opt_include}freetype2"
+    ENV["PYMUPDF_INCLUDES"] = "#{Formula["mupdf"].opt_include}:#{Formula["freetype"].opt_include}freetype2"
     ENV["PYMUPDF_MUPDF_LIB"] = Formula["mupdf"].opt_lib.to_s
 
     system python3, "-m", "pip", "install", *std_pip_args, "."

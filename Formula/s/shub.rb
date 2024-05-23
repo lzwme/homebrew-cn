@@ -6,17 +6,17 @@ class Shub < Formula
   url "https:files.pythonhosted.orgpackages70adb4fa99366cd3c8db8812438fb1e8b6f8a10b2935b0ee28ac238ade864a8fshub-2.15.4.tar.gz"
   sha256 "abd656f488449a6f88084cfc6f0e5bf1e015377f9777a02f35ae5dd44179434a"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comscrapinghubshub.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "af23f7d7042dcf2e01f1c4b49551b161e7395e550f328404d0e972cc6f92f48c"
-    sha256 cellar: :any,                 arm64_ventura:  "a77379a28d780a75df6f3efb65c66503a9d6ccfe7a3d426deb0a0afc8e07219e"
-    sha256 cellar: :any,                 arm64_monterey: "c81f5e8682ce3abed4582c846ddb455eb156c4fedaf18130d3e2e7a1f51a59eb"
-    sha256 cellar: :any,                 sonoma:         "383fc41596d9ac71949fdc66a5564ac6a46a7bb50e58a9b3d61cb2b73c0a8092"
-    sha256 cellar: :any,                 ventura:        "1e4c389f820482662bd986b3e00103c59261544a4202dfd56f20277967ee00ff"
-    sha256 cellar: :any,                 monterey:       "50d8efbb2fb51f5f523c195e518e3ea055d25581add8d13abfafb4782fba700b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a796a8785fbe6d74063f4079c25f6c00c0318ef1ea0ab7e9573440f975d43181"
+    sha256 cellar: :any,                 arm64_sonoma:   "28a4cd1e17d8f759f87bcfb3a57e53c439ce9c757e99729707886cf32d39a841"
+    sha256 cellar: :any,                 arm64_ventura:  "0047bec7e6705f84fbe4be5ea3e792c359ac3f918f92c07b2461be46e3729976"
+    sha256 cellar: :any,                 arm64_monterey: "d05b32e7247a5e5e9b5d79e3bea59d5630deddc453449c86a14f8acf6f20ea80"
+    sha256 cellar: :any,                 sonoma:         "4fdc98f8089375197dfafbdbf609edb375b41c21e58b353144957827f1c7a530"
+    sha256 cellar: :any,                 ventura:        "d5b5aa4d3706d4fec50f82adbe436e93d32be963e04a4691a283c9098a800fcb"
+    sha256 cellar: :any,                 monterey:       "27db38f3342bbb09a614f1a1768038809b3601138237d39b18b1f3ef48edaabb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "149561765ac11879f0f6bd2f74b005652a28bb85aaa170b3eaff882e22a1195a"
   end
 
   depends_on "certifi"
@@ -54,8 +54,8 @@ class Shub < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "retrying" do
@@ -69,8 +69,8 @@ class Shub < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4d5bdc575711b6b8f2f866131a40d053e30e962e633b332acf7cd2c24843d83dsetuptools-69.2.0.tar.gz"
-    sha256 "0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "six" do

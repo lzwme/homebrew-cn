@@ -9,15 +9,16 @@ class Jupyterlab < Formula
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "f31fab0a9e55c040593143ed97f40128646b6959c9a2e194ac29a2574c61ef2c"
-    sha256 cellar: :any,                 arm64_ventura:  "7d80f2c7917e74b3b88d8e151f3af42930bd8f2c380a4f476750d90d1bca6f2e"
-    sha256 cellar: :any,                 arm64_monterey: "f370a951318f25f9ecec8ae2d54ae4566f89dfc803ce806b1fa4d3da27950106"
-    sha256 cellar: :any,                 sonoma:         "9e1383af37dfa78e45f3a5be55e3b8ead40e8060ae03dce3731b418d46e00a0e"
-    sha256 cellar: :any,                 ventura:        "bd95de2aa213f259e286807081379ffc7178b12361c5c78f8b55105456d08def"
-    sha256 cellar: :any,                 monterey:       "22a4d29bc85c9a21403533da4969958aa6e9bd16e25432315590f414a3aff963"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa93b431f2b00c41bf3587260a3ba0a80714b743159714b029c2b5ae0dd3d613"
+    sha256 cellar: :any,                 arm64_sonoma:   "45085bbed945aa11a14462c7e57f8f5c3e75be812faf0f2d708ada1408e0131c"
+    sha256 cellar: :any,                 arm64_ventura:  "adf5e268c85ebaf35fce8f63b676fe2059924cab9cb22fccd891407afca0b8a9"
+    sha256 cellar: :any,                 arm64_monterey: "5cbf4ff3ef2bfc6324af03a83fd1f450c945439150ae73b0752d71398d3acadf"
+    sha256 cellar: :any,                 sonoma:         "3128efee4ade03d7c83cf09f1f2fea5fc3afabaa388c740e4fc3a4af139e0ad6"
+    sha256 cellar: :any,                 ventura:        "473a14ad4d9b089580203024d20d3a53f98ac95a9662740e96053b2b02bf75f9"
+    sha256 cellar: :any,                 monterey:       "06829dc44fd4914b12b90995170ed44305f4c7eb71858086b1932265e1144728"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d74784b9548d8a6a3586ef0debaf8cec507333187ee40412b856648a1e7ad86"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -405,8 +406,8 @@ class Jupyterlab < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rfc3339-validator" do

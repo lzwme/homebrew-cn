@@ -6,15 +6,16 @@ class Localstack < Formula
   url "https://files.pythonhosted.org/packages/fc/29/0d588993c1781e2702a39b75c4cb2d63ec98ec415e61109916c1f5627818/localstack-3.4.0.tar.gz"
   sha256 "0c67154875d233f4cdf3dc0b448af26e0d15180ebf888f544529771f5a22ff9e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "133cbf07e7998b58d9f25f5dbd46ec3b5b24649aca84069797855811435b9dc9"
-    sha256 cellar: :any,                 arm64_ventura:  "d5b87aefde0e8a79ac6e26dc91bc5ea8737d88731d1ce87e5c0d90b82543319c"
-    sha256 cellar: :any,                 arm64_monterey: "c0faa396e78cf174e010eb933d5c3f0f11252346641419ad2c9d3f1d803f693c"
-    sha256 cellar: :any,                 sonoma:         "da9d3ae46bdc8ef6120b664f3481d80e094249de0dcd80d9eb9267e2ee148579"
-    sha256 cellar: :any,                 ventura:        "7581b366877b92cfa120183c6fc13c042af0c9773f5ecd2bbd54831db80c1e15"
-    sha256 cellar: :any,                 monterey:       "cf825c43c3c6e355ab59440768404090b1c91f48827bb22f47cc100fb275c0fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b3e0ccd3ad60d855ba06434d733da32b3c81a9a3b6a4bd45c0747a8d6082b8f"
+    sha256 cellar: :any,                 arm64_sonoma:   "4d2a3b2ab61a3b498a0373201b656cf5ad334b9538307df6124da2fdf8ba8212"
+    sha256 cellar: :any,                 arm64_ventura:  "a80396c953b073bdd5942ddc829cb90a714a5df75d09b8425a717be22345d311"
+    sha256 cellar: :any,                 arm64_monterey: "1e97fa89d17c7a1921ca378cb33766e473b3abcf23f0a43de4303a98dd3329a1"
+    sha256 cellar: :any,                 sonoma:         "33b3a35202541b5666307704a4fab38f6daafd522263781b1a9ee1f891d4e69e"
+    sha256 cellar: :any,                 ventura:        "972101e1bccc6217ef084e90b78ac19b71569470af2f5ad9c185c7c4b8a9a302"
+    sha256 cellar: :any,                 monterey:       "0910ccfb1ad945609d4703968aa20fe5a8982ffe4e2db4dea022a07c11e4f48f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08c79123b137240d8b47da10e7e88ba36b174663386892e36cdf8d9b51ccf736"
   end
 
   depends_on "docker" => :test
@@ -99,8 +100,8 @@ class Localstack < Formula
   end
 
   resource "plux" do
-    url "https://files.pythonhosted.org/packages/9b/9a/c5b3a95278d1ab432f9f2dd7c5dc904024a3e095a4d75171a7df6a70752e/plux-1.9.0.tar.gz"
-    sha256 "f5d3804650f5373c65e748850aa569ae56a5fb214d8e6edd0d33ae62b06bd0a8"
+    url "https://files.pythonhosted.org/packages/c8/72/90289533aa31e2ff7a731ffc0caf6f5b5874a97d00a275b87d6c706ae653/plux-1.10.0.tar.gz"
+    sha256 "08dd08953ae5e4fc9e230eeaa810b1d72bf019be44c6e9d5d8142cae3f2d49c5"
   end
 
   resource "psutil" do
@@ -119,13 +120,13 @@ class Localstack < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/55/59/8bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565/pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyproject-hooks" do
-    url "https://files.pythonhosted.org/packages/25/c1/374304b8407d3818f7025457b7366c8e07768377ce12edfe2aa58aa0f64c/pyproject_hooks-1.0.0.tar.gz"
-    sha256 "f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5"
+    url "https://files.pythonhosted.org/packages/c7/07/6f63dda440d4abb191b91dc383b472dae3dd9f37e4c1e4a5c3db150531c6/pyproject_hooks-1.1.0.tar.gz"
+    sha256 "4b37730834edbd6bd37f26ece6b44802fb1c1ee2ece0e54ddff8bfc06db86965"
   end
 
   resource "python-dateutil" do
@@ -149,8 +150,8 @@ class Localstack < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rich" do

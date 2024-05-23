@@ -6,17 +6,17 @@ class Platformio < Formula
   url "https:files.pythonhosted.orgpackages13788903f4f505a393ee48a18a00b4b9c866a726ef844d23ff3ce4863d710898platformio-6.1.15.tar.gz"
   sha256 "d3209a60d40340fdbab2c76ee23303d90e5ecea0a11f92980c9d2068d0975fde"
   license "Apache-2.0"
+  revision 1
   head "https:github.complatformioplatformio-core.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9ebcd4bfc0d65123e1d540d7e3331d956ed1be90c138dd682ebfa91167634f52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ebcd4bfc0d65123e1d540d7e3331d956ed1be90c138dd682ebfa91167634f52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ebcd4bfc0d65123e1d540d7e3331d956ed1be90c138dd682ebfa91167634f52"
-    sha256 cellar: :any_skip_relocation, sonoma:         "897795ce217662c4126ae2154bf0d8bb8af2290feb68ed54dad134ec3c6b6a70"
-    sha256 cellar: :any_skip_relocation, ventura:        "897795ce217662c4126ae2154bf0d8bb8af2290feb68ed54dad134ec3c6b6a70"
-    sha256 cellar: :any_skip_relocation, monterey:       "897795ce217662c4126ae2154bf0d8bb8af2290feb68ed54dad134ec3c6b6a70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3b44acc28b1a7866bb82d3fba5c35608356992f13cf3467927a3b070b98518a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e62bce84116321e947107729dd18030bc70f1c8902fd0eddba930f9407839b13"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3412923f47339a0caf87fdef475242b1a30f30064b83fac0288ea7dfbc84941"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f766f07737e006dda97ec9f5059e7f8e1a2db3fd0fa462e8e9f4477ab38151c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "1151795dc2a1da4743f868cabfae5a5f9d2d1df9a5a2fd32c886dd908506f77c"
+    sha256 cellar: :any_skip_relocation, ventura:        "c29f3ea9cbcd9f86f712e0b96dc432a26db8fdb2da4e2d32e327e992a475bec7"
+    sha256 cellar: :any_skip_relocation, monterey:       "c060b901d239cd32efa1893d598636703fb529e338cbce7a62ecff3d69180a50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d855342e158b26e3b69536d9ad588006242835de7f1579066f454832a3d9ce5e"
   end
 
   depends_on "certifi"
@@ -88,8 +88,8 @@ class Platformio < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "semantic-version" do

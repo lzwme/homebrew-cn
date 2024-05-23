@@ -6,16 +6,16 @@ class Sgr < Formula
   url "https:files.pythonhosted.orgpackagesdd617d6cf822edb39d2426f6f185c7fc4de0ad4b80e0da3e5f50d94952795c11splitgraph-0.3.12.tar.gz"
   sha256 "76a4476002b5ac5a2b9fba36b6fcffd85b878bcc25f5aae411387e04a5532459"
   license "Apache-2.0"
-  revision 10
+  revision 11
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "9d67f8611104e065004b1c119e1a713ce21862a0baa50345e603d30eb78d7be8"
-    sha256 cellar: :any,                 arm64_ventura:  "e65dd54e5a81b217aed93a7b12f5bc9c45f27acaa511a0071755df1e97c44e8c"
-    sha256 cellar: :any,                 arm64_monterey: "883bd90f4399c595baeba963954b301d98c0bb8ab2ca39ce492c373969d293c0"
-    sha256 cellar: :any,                 sonoma:         "6f755e8ea0f328430cdae04935ff4d029f5054cd07cceb58de69aeac3d56a9cd"
-    sha256 cellar: :any,                 ventura:        "fde175f2a61ff6f28f4dbc931bbae50e3d36fb68e3177274aaa40e87dc2c228f"
-    sha256 cellar: :any,                 monterey:       "8786c53fc9d7c719f5e1c718bab45273288c9dd4e7d404013399f0a67172f6fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "844627c932f795c57ca9939815913985be9eb9078a2797b67e440a4defbb39eb"
+    sha256 cellar: :any,                 arm64_sonoma:   "007eaa707a19cbb7fb1c1ab50681af74d84f68956e5f72675ca50ce48896f977"
+    sha256 cellar: :any,                 arm64_ventura:  "a33316fdd214f985e1e04fab73f0a710e1b48210ec216454f7689d50c0f6be25"
+    sha256 cellar: :any,                 arm64_monterey: "137d66e49c8f11df0145bd80bec50ed06f579b1ab546798cd4abfda125893e2c"
+    sha256 cellar: :any,                 sonoma:         "8d39ae2429a9ca2203db82a34d2dd6073d76f90a40a42ae88c157b7a56c042f7"
+    sha256 cellar: :any,                 ventura:        "c8b301c0ad724fe2a386eadb6650337632e4ff443f9df42e2cf09b398a784821"
+    sha256 cellar: :any,                 monterey:       "ea07150c55489e9f3b8e7389d8dee0c00912b1f664d53afd71785a9758e14f25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9621c400f9407246cfe146baa2cbeacb13399bf9f6208e751a2b5d89fb95cba6"
   end
 
   depends_on "cython" => :build # TODO: remove with newer `pglast` (4.4+)
@@ -23,14 +23,15 @@ class Sgr < Formula
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "libpq" # for psycopg2-binary
+  depends_on "openssl@3"
   depends_on "python@3.12"
 
   # Manually update `pglast` from ==3.4 to support python 3.11
   # https:github.comsplitgraphsgrpull814
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "argon2-cffi" do
@@ -149,13 +150,13 @@ class Sgr < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "ruamel-yaml" do
@@ -169,8 +170,8 @@ class Sgr < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "six" do

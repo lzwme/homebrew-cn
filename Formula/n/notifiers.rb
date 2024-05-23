@@ -6,17 +6,16 @@ class Notifiers < Formula
   url "https:files.pythonhosted.orgpackages54fcaa5de032cc8d9ee41ceba7bbea98e2ed7090d7d95465dfe0179eb937146fnotifiers-1.3.3.tar.gz"
   sha256 "9fd8d95ab1ebcd3852423755aa90cbb0f72a805ca77af0d8c9ad7af445f58399"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "003f9dbdcba2652ebfb4169ad245b5177109dda999bdd0ffe3780cf6a0f7bb25"
-    sha256 cellar: :any,                 arm64_ventura:  "90742964708b8f53a0a4beea336d823e6b8e8e87f38c7f0bb07d0dc58d49fb18"
-    sha256 cellar: :any,                 arm64_monterey: "56d1ca5de79367bd8f8c125656a6ba3b299b5db86c5fc45673feeeceef3665b2"
-    sha256 cellar: :any,                 sonoma:         "e627a5a082544f1054e1e97292c0c6a529fba23911e149f566fbd7ab19d9222d"
-    sha256 cellar: :any,                 ventura:        "6de8ae9209beddf6758863f9414e5afc7224bb9ab538f52e3f2f685d5132325a"
-    sha256 cellar: :any,                 monterey:       "ca77b28df9dda0e25a61462431c94c6dc17f815545b4f4d00cc6490c27178bd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a2b7684b19222871ed5b26c0684213f234701b8f9274add355da305c8487e0e"
+    sha256 cellar: :any,                 arm64_sonoma:   "07db55d221d9da8743df2b1156083552c75f65273b12cc0c2f34340ac560d5b9"
+    sha256 cellar: :any,                 arm64_ventura:  "e00a73d6cb6a61c0a6268233a8548c78049d168fc8c4926eefeaf7dbb2241c62"
+    sha256 cellar: :any,                 arm64_monterey: "b6f2d6ef3ffdcf9763029eeab1c904963da71a8eff7e020e468c3cb1576603e8"
+    sha256 cellar: :any,                 sonoma:         "1a7156297bd94b0375816df5012cc813e52f555280fb6243a74b5a452b3d802d"
+    sha256 cellar: :any,                 ventura:        "49ce21727c2b7939408b874106cb157d613b10f9218cc08428ce37c672c949ed"
+    sha256 cellar: :any,                 monterey:       "57ec152c26755aee3def7807a062fd280d46c7afba0a4ce64e7892c06b58d2e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8378caeeb7e80e87f36374ae56927e8a75b1151884477c280b31370a53774e4f"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -44,8 +43,8 @@ class Notifiers < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
+    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
   end
 
   resource "jsonschema-specifications" do
@@ -54,18 +53,18 @@ class Notifiers < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages59d748b862b8133da2e0ed091195028f0d45c4d0be0f7f23dbe046a767282f37referencing-0.34.0.tar.gz"
-    sha256 "5773bd84ef41799a5a8ca72dc34590c041eb01bf9aa02632b4a973fb0181a844"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "urllib3" do

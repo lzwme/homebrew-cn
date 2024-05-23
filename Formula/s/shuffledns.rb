@@ -1,21 +1,19 @@
 class Shuffledns < Formula
   desc "Enumerate subdomains using active bruteforce & resolve subdomains with wildcards"
   homepage "https:github.comprojectdiscoveryshuffledns"
-  url "https:github.comprojectdiscoveryshufflednsarchiverefstagsv1.0.9.tar.gz"
-  sha256 "ce61eb210c0bb7ff5cc2e0d45e90129764494d9c0b8883e04fe67b16169ab707"
+  url "https:github.comprojectdiscoveryshufflednsarchiverefstagsv1.1.0.tar.gz"
+  sha256 "32507e92a754fce3bad6c6445a4199c11be298c0994719a39711e0354bde318f"
   license "GPL-3.0-or-later"
   head "https:github.comprojectdiscoveryshuffledns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6b5aeb6963233927cad51f0da2b5dc409068b41904c4e2901806a991016c1a8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4446fb577a61311cec3fe194c22e8eec950c14f386bd15546061149dde598b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4446fb577a61311cec3fe194c22e8eec950c14f386bd15546061149dde598b6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4446fb577a61311cec3fe194c22e8eec950c14f386bd15546061149dde598b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "504e3592a8963787bd968a9788c486d1214e24eab903f51f9e20d8393ef95590"
-    sha256 cellar: :any_skip_relocation, ventura:        "e102f9df27443a714f61c286a70ee69f05806197e2ba32c01cc432208dded537"
-    sha256 cellar: :any_skip_relocation, monterey:       "e102f9df27443a714f61c286a70ee69f05806197e2ba32c01cc432208dded537"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e102f9df27443a714f61c286a70ee69f05806197e2ba32c01cc432208dded537"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3618e68a2abf441d1c8f48860a91cbb12f49c0225dfe8c5882e5a1dbd778442f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e1612f9b88c47df30bb100d925fcca6e895af63ce28e4cab15d46690f1865cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47bc85e79674caa717eb81f2a25477b97818c9f0474ae750f982eeb29e168d32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1041cd41f8c3b6c33a84a3c9d1469900f9fb107006a292f4bf536aab5a162624"
+    sha256 cellar: :any_skip_relocation, sonoma:         "21f1a219457544d652c1b6d3838083e76761ce2897f79e25733b98a08f7ec9b2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6965ff8e440d2d14b37fb9e8d06af4907996caf60f7e1e2ae112b070d81aacf5"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0a3cb15f0ed449872b08e8b200e1ce1489b7a3dcf4a75ab4863011d34d80e4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "324ae3f2ba05183d904a13a1c9f1d5ec796082b85c7883b264cff1f081972573"
   end
 
   depends_on "go" => :build
@@ -25,7 +23,7 @@ class Shuffledns < Formula
   end
 
   test do
+    assert_match "resolver file doesn't exists", shell_output("#{bin}shuffledns 2>&1", 1)
     assert_match version.to_s, shell_output("#{bin}shuffledns -version 2>&1")
-    assert_match "no resolver list provided", shell_output("#{bin}shuffledns 2>&1", 1)
   end
 end

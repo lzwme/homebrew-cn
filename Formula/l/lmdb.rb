@@ -1,8 +1,8 @@
 class Lmdb < Formula
   desc "Lightning memory-mapped database: key-value data store"
   homepage "https://www.symas.com/symas-embedded-database-lmdb"
-  url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.32/openldap-LMDB_0.9.32.tar.bz2"
-  sha256 "039be48414f71299d04fb01da3e1a6461075bb77eaeeeda36ee5285de804ebf6"
+  url "https://git.openldap.org/openldap/openldap/-/archive/LMDB_0.9.33/openldap-LMDB_0.9.33.tar.bz2"
+  sha256 "d19d52725800177b89d235161c0af8ae8b2932207e3c9eb87e95b61f1925206d"
   license "OLDAP-2.8"
   version_scheme 1
   head "https://git.openldap.org/openldap/openldap.git", branch: "mdb.master"
@@ -13,13 +13,13 @@ class Lmdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5774284afa9dad2cf29b5033b2e5791d79d3a3dc786b429ca7816fcf716a4aec"
-    sha256 cellar: :any,                 arm64_ventura:  "d6e4a706772c6ab9aa4b2084a3b796adfadc3f06c6c7b95be42a982a65f2b9ba"
-    sha256 cellar: :any,                 arm64_monterey: "d4d6738802f6ca97162f2fcc016849ed666eb87f8e9e598dd998aceba465e19a"
-    sha256 cellar: :any,                 sonoma:         "389a8cec32cbc4a94ca91d7c09ba2a59ac7540f634466b22d0893b504c33c586"
-    sha256 cellar: :any,                 ventura:        "09d25d1ac6eec2d62bb923c0805702ce5facc37678488e471967f9fff34b3548"
-    sha256 cellar: :any,                 monterey:       "d2ac9c00f1d57a865bc07cd30049571b336a16952c7324dad85c57b4ef0ccd74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84f4557c0876dc96ba0559a0ef557b06cededb989f9d7cc7636320cce0577b77"
+    sha256 cellar: :any,                 arm64_sonoma:   "03945de1d7a1c49c341852a1efb8eaa431b4024a9920734b7e580c762be685cc"
+    sha256 cellar: :any,                 arm64_ventura:  "013c00a97026bc02ebc64c1064ec4d91c8b0ca88e7de8905e7474ff04ad7bb17"
+    sha256 cellar: :any,                 arm64_monterey: "6eb88efa4257b87f20ce077361aeef457f6939de01bb4131b33692e272fa3340"
+    sha256 cellar: :any,                 sonoma:         "2b91b9e0509dfaaa6d8519023f398f294f512165e8df13e3bd61090bef0843a1"
+    sha256 cellar: :any,                 ventura:        "f6669607cf9b8d2aa52c0c1bf3a98cd0246da69b249cd1d265b80275d3ab0846"
+    sha256 cellar: :any,                 monterey:       "affb1315fdb4fa6bfa23af3340cbf58cdc1d66911c39e5beb0e26b68d9b34c83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8505f02598426843842d04507a63658185cb0ec0abb2e4f561eda10719bf564"
   end
 
   depends_on "pkg-config" => :test

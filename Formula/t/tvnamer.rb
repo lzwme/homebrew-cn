@@ -6,17 +6,17 @@ class Tvnamer < Formula
   url "https:files.pythonhosted.orgpackages7e07688dc96a86cf212ffdb291d2f012bc4a41ee78324a2eda4c98f05f5e3062tvnamer-3.0.4.tar.gz"
   sha256 "dc2ea8188df6ac56439343630466b874c57756dd0b2538dd8e7905048f425f04"
   license "Unlicense"
-  revision 6
+  revision 7
   head "https:github.comdbrtvnamer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0f0903d64e349929198a7c9f672d6e3c3830a20e206f3fa31fb33dec8a37353"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0f0903d64e349929198a7c9f672d6e3c3830a20e206f3fa31fb33dec8a37353"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0f0903d64e349929198a7c9f672d6e3c3830a20e206f3fa31fb33dec8a37353"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c0f0903d64e349929198a7c9f672d6e3c3830a20e206f3fa31fb33dec8a37353"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0f0903d64e349929198a7c9f672d6e3c3830a20e206f3fa31fb33dec8a37353"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0f0903d64e349929198a7c9f672d6e3c3830a20e206f3fa31fb33dec8a37353"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "892046b863ef6d1a7bf96b1dbc48bb489d7269a2d3b29be6d8e4041d0b2ed9d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "09da33b9005570db2cb38b3fb04e69c53e56c234d3735c9c7d62f30636fd4d92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e364b6e030f4658a59dc835513ad35be116f597f65d5b4d6af0021aba5e9cc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "670f0887cf553e62e032f9e9a801d53ab4b9c65446edd33b462e3756b57b5129"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0fa0557340008766219bedf8996747b944130f87eb16100944831d237279ffa0"
+    sha256 cellar: :any_skip_relocation, ventura:        "c882175165b27388e5126a519495b91184b545a0a1603d6b59a0dffce3671aa7"
+    sha256 cellar: :any_skip_relocation, monterey:       "83cfa597aaaf273a140ae89154d05f70729e2cbf86cb5c300ddcc0de1fdbe239"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cc567c6b0f96f4545185b4648f6612514ad074d16402dacbc4d049744142236"
   end
 
   depends_on "certifi"
@@ -33,8 +33,8 @@ class Tvnamer < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "requests-cache" do

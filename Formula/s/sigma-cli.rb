@@ -6,16 +6,17 @@ class SigmaCli < Formula
   url "https:files.pythonhosted.orgpackagescf45eef555a909ff716108ded653decf0a7642bc80169fff9590b665638164a0sigma_cli-1.0.2.tar.gz"
   sha256 "8cb46dca0c5787969f33152c3cd085989fbc07a121d1c9a795664f7264c7ce9f"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https:github.comSigmaHQsigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6b6e701817b106320edb36fec0cf1510f82c8c49e55ec94fffeaeeaf7068480a"
-    sha256 cellar: :any,                 arm64_ventura:  "814e141c723946566290a9fa2b4d8af367e3c766c19af2c213566d1877ac8632"
-    sha256 cellar: :any,                 arm64_monterey: "7693bea3f840d315573968ca20c7ab5af80a77400b1ec36063ac16efdd07110b"
-    sha256 cellar: :any,                 sonoma:         "76edd487f5668b1c65dabd348e5059a7b09ce43af74c1c8eed1665ced2712ce7"
-    sha256 cellar: :any,                 ventura:        "f5d26f222f1800fa6079eadadc513fe255fc34e7208f6d98ac49c4d02ec6746a"
-    sha256 cellar: :any,                 monterey:       "a10d17679c2253a82e387deb3ecea12f9a69d7afd8d6922c72d18aa13ccd8d26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e98fb83cf6151163c436b4e9554f45fa910f066fbff4bd030d70bcbd372072d1"
+    sha256 cellar: :any,                 arm64_sonoma:   "568b0b540e6b4b1e39086924b8248a3941eff86cda7e9b06160d83717fb959f3"
+    sha256 cellar: :any,                 arm64_ventura:  "db5fd465095a4fe2a40bfd104abac95f3b75795d6c3350f70112f5bc09e948c8"
+    sha256 cellar: :any,                 arm64_monterey: "230bdeead57d6a895214015dd211d6ce76eaa8171f0a80f19d42df3efbf8abb7"
+    sha256 cellar: :any,                 sonoma:         "4738dbbb9d5c9089ac2f1605a9440fe5bed3ed1ec518b7ddfbed0b25ba556ab2"
+    sha256 cellar: :any,                 ventura:        "5a13a5a5b222c788d498fde6b5a59ce3ce02b143189e00272d0ab4742c7ceede"
+    sha256 cellar: :any,                 monterey:       "3e3e70e3cb829a0d5c569efdbe1e805a6d662952e60757e562d8364d3b0ece47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ba3e30c3d176641410b1a353e50c2b2dcc729b2731263b7e37bae0280b6e350"
   end
 
   depends_on "certifi"
@@ -83,8 +84,8 @@ class SigmaCli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "urllib3" do

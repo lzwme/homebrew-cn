@@ -6,17 +6,17 @@ class Shodan < Formula
   url "https:files.pythonhosted.orgpackagesc506c6dcc975a1e7d89bc764fd271da8138b318e18080b48e7f1acd2ab63df28shodan-1.31.0.tar.gz"
   sha256 "c73275386ea02390e196c35c660706a28dd4d537c5a21eb387ab6236fac251f6"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comachilleanshodan-python.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "118addf700f290f0ad656c87f8159b2b0efcc9e1bab3f28621352977d732b234"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "118addf700f290f0ad656c87f8159b2b0efcc9e1bab3f28621352977d732b234"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "118addf700f290f0ad656c87f8159b2b0efcc9e1bab3f28621352977d732b234"
-    sha256 cellar: :any_skip_relocation, sonoma:         "118addf700f290f0ad656c87f8159b2b0efcc9e1bab3f28621352977d732b234"
-    sha256 cellar: :any_skip_relocation, ventura:        "118addf700f290f0ad656c87f8159b2b0efcc9e1bab3f28621352977d732b234"
-    sha256 cellar: :any_skip_relocation, monterey:       "118addf700f290f0ad656c87f8159b2b0efcc9e1bab3f28621352977d732b234"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd107b771d650ef6e70e22c3754a238d5d0393643606b4583eb2bfc3383d018b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76825cc6f467a39600ab6582fd63461134e4521b7d4f374b9d28a8be438ffbd0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dccfada7bf91d0efdeaa617c75b622767be0a7478737f2298ce05cf581a49f70"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e7cfbfa49924a6469d0fd3d2a23e8b995bf96b6beeb47ed9e4788e64f4c9275"
+    sha256 cellar: :any_skip_relocation, sonoma:         "78be0f6a8c61626055d62b096957b85a40775d0267d4ff118eb072711aa0fc0e"
+    sha256 cellar: :any_skip_relocation, ventura:        "12e72ccf2cfa2a362b4bca2470da008116f82a78af4ad81d02e20a423df67c3d"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c5ddafacee5eaf75af74e109cb6bc9ca9a34c5bb83e7b84428b8d6829bc299d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc1addeb7d2e005620c3c16d0c0cabc15b19f46a80b83e30bd93932bc4b1e7ca"
   end
 
   depends_on "certifi"
@@ -43,8 +43,8 @@ class Shodan < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackages38ff877f1dbe369a2b9920e2ada3c9ab81cf6fe8fa2dce45f40cad510ef2df62filelock-3.13.4.tar.gz"
-    sha256 "d13f466618bfde72bd2c18255e269f72542c6e70e7bac83a0232d6b1cc5c8cf4"
+    url "https:files.pythonhosted.orgpackages06aef8e03746f0b62018dcf1120f5ad0a1db99e55991f2cda0cf46edc8b897eafilelock-3.14.0.tar.gz"
+    sha256 "6ea72da3be9b8c82afd3edcf99f2fffbb5076335a5ae4d03248bb5b6c3eae78a"
   end
 
   resource "idna" do
@@ -53,13 +53,13 @@ class Shodan < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "requests-file" do
-    url "https:files.pythonhosted.orgpackages2b69ba1b5f52f96cde4f2d8eca74a0aa2c11a66b2fe58d0fb63b2e46edce6ed3requests-file-2.0.0.tar.gz"
-    sha256 "20c5931629c558fda566cacc10cfe2cd502433e628f568c34c80d96a0cc95972"
+    url "https:files.pythonhosted.orgpackages7297bf44e6c6bd8ddbb99943baf7ba8b1a8485bcd2fe0e55e5708d7fee4ff1aerequests_file-2.1.0.tar.gz"
+    sha256 "0f549a3f3b0699415ac04d167e9cb39bccfb730cb832b4d20be3d9867356e658"
   end
 
   resource "tldextract" do

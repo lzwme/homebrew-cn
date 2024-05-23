@@ -1,9 +1,9 @@
 class GccAT13 < Formula
   desc "GNU compiler collection"
   homepage "https:gcc.gnu.org"
-  url "https:ftp.gnu.orggnugccgcc-13.2.0gcc-13.2.0.tar.xz"
-  mirror "https:ftpmirror.gnu.orggccgcc-13.2.0gcc-13.2.0.tar.xz"
-  sha256 "e275e76442a6067341a27f04c5c6b83d8613144004c0413528863dc6b5c743da"
+  url "https:ftp.gnu.orggnugccgcc-13.3.0gcc-13.3.0.tar.xz"
+  mirror "https:ftpmirror.gnu.orggccgcc-13.3.0gcc-13.3.0.tar.xz"
+  sha256 "0845e9621c9543a13f484e94584a49ffc0129970e9914624235fc1d061a0c083"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -12,13 +12,13 @@ class GccAT13 < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "d42a40f0b3c6367ce32f808caaff22ba5eea5d809c73d927e19b1651cf0a2319"
-    sha256                               arm64_ventura:  "5f1e9dc1c4d4a65eaa4938799589954ae24c295749f8d3cd37452a1ebf8b71a4"
-    sha256                               arm64_monterey: "42f35fb90af3eed08eacfe8c3bf0d30c7f1d12bd0cd6c087a5e21f5c643a0474"
-    sha256                               sonoma:         "508e188f805503917201b062eb037300751e8c5df8f016942343618bbb7d30bb"
-    sha256                               ventura:        "fb2403d97e2ce67eb441b54557cfb61980830f3ba26d4c5a1fe5ecd0c9730d1a"
-    sha256                               monterey:       "af456b36cb6dddd276b35cd3d640228de06a162026e51280b99113e236f7adef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08778c5e405f7b0e4a4b8a68bdefc2098f1ea99ced0905e73223f94fc5b30d77"
+    sha256                               arm64_sonoma:   "ff56bc82f41d769ff59131299f9d576df8b4a1162ef44acc3a1c45ffbbaa6f9c"
+    sha256                               arm64_ventura:  "2711d2616329446feb71d48fefd12e100b232f664dabee59873a961b8665239e"
+    sha256                               arm64_monterey: "80a178083c446e401c59c4fd6ebe4c28fde89b4f93f6446e5144ec25d9b8b6dc"
+    sha256                               sonoma:         "4c479e51e3e4dc9eefacd32a8fce5f8f0f707311df3e06e2f6b470dd8713a6eb"
+    sha256                               ventura:        "24838fe887472d23d42eefd4b3cb15461fa6974690ec84973d856c80f7ad27e7"
+    sha256                               monterey:       "2726062334206e315f78b1c354b32cfa0b9d3d94e0a20e5eefe8b12da70ca6b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2e725ff21e23929d6d84f92e2b8f559df6ea6b6550cc55e647aaeb7dd345436"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -43,32 +43,9 @@ class GccAT13 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https:github.comiainsgcc-13-branch
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches3c5cbc8e9cf444a1967786af48e430588e1eb481gccgcc-13.2.0.diff"
-    sha256 "2df7ef067871a30b2531a2013b3db661ec9e61037341977bfc451e30bf2c1035"
+    url "https:raw.githubusercontent.comHomebrewformula-patchesbda0faddfbfb392e7b9c9101056b2c5ab2500508gccgcc-13.3.0.diff"
+    sha256 "c5e9236430ef6edbdda7de9ac70bf79e21628077a48322cec7f3f064ccfc243d"
   end
-
-  # Fix a warning with Xcode 15's linker, remove in GCC 13.3
-  # https:github.comiainsgcc-13-branchissues11
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchese923a0cd6c0e60bb388e8a5b8cd1dcf9c3bf7758gccgcc-xcode15-warnings.diff"
-    sha256 "dcfec5f2209def06678fa9cf91bc7bbe38237f9f3a356a23ab66b84e88142b91"
-  end
-
-  # Upstream fixes for building against recent libc++, remove in GCC 13.3
-  # https:gcc.gnu.orgbugzillashow_bug.cgi?id=111632
-  patch do
-    url "https:gcc.gnu.orggit?p=gcc.git;a=commitdiff_plain;h=68057560ff1fc0fb2df38c2f9627a20c9a8da5c5"
-    sha256 "4cb92b1b91ab9ef14f5aa440d17478b924e1b826e23ceb6a66262d3cc59081a8"
-  end
-
-  patch do
-    url "https:gcc.gnu.orggit?p=gcc.git;a=commitdiff_plain;h=e95ab9e60ce1d9aa7751d79291133fd5af9209d7"
-    sha256 "d3fc6ed5ed1024e2765e02cc5ff3cf1f0be63659f1e588cfc36725c9a377d3cc"
-  end
-
-  # Upstream fix to deal with macOS 14 SDK <math.h> header, remove in GCC 13.3
-  # https:gcc.gnu.orggit?p=gcc.git;a=commitdiff;h=93f803d53b5ccaabded9d7b4512b54da81c1c616
-  patch :DATA
 
   def install
     # GCC will suffer build errors if forced to use a particular linker.
@@ -107,6 +84,11 @@ class GccAT13 < Formula
       # System headers may not be in usrinclude
       sdk = MacOS.sdk_path_if_needed
       args << "--with-sysroot=#{sdk}" if sdk
+
+      # Avoid this semi-random failure:
+      # "Error: Failed changing install name"
+      # "Updated load commands do not fit in the header"
+      make_args = %w[BOOT_LDFLAGS=-Wl,-headerpad_max_install_names]
     else
       # Fix cc1: error while loading shared libraries: libisl.so.15
       args << "--with-boot-ldflags=-static-libstdc++ -static-libgcc #{ENV.ldflags}"
@@ -120,11 +102,16 @@ class GccAT13 < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https:stackoverflow.coma54038769
       inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
+
+      make_args = %W[
+        BOOT_CFLAGS=-I#{Formula["zlib"].opt_include}
+        BOOT_LDFLAGS=-L#{Formula["zlib"].opt_lib}
+      ]
     end
 
     mkdir "build" do
       system "..configure", *args
-      system "make"
+      system "make", *make_args
 
       # Do not strip the binaries on macOS, it makes them unsuitable
       # for loading plugins
@@ -278,73 +265,3 @@ class GccAT13 < Formula
     assert_equal "Done\n", shell_output(".test")
   end
 end
-__END__
-diff --git afixincludesfixincl.x bfixincludesfixincl.x
-index 416d2c2e3a4..e52f11d8460 100644
---- afixincludesfixincl.x
-+++ bfixincludesfixincl.x
-@@ -2,11 +2,11 @@
-  *
-  * DO NOT EDIT THIS FILE   (fixincl.x)
-  *
-- * It has been AutoGen-ed  January 22, 2023 at 09:03:29 PM by AutoGen 5.18.12
-+ * It has been AutoGen-ed  August 17, 2023 at 10:16:38 AM by AutoGen 5.18.12
-  * From the definitions    inclhack.def
-  * and the template file   fixincl
-  *
--* DO NOT SVN-MERGE THIS FILE, EITHER Sun Jan 22 21:03:29 CET 2023
-+* DO NOT SVN-MERGE THIS FILE, EITHER Thu Aug 17 10:16:38 CEST 2023
-  *
-  * You must regenerate it.  Use the .genfixes script.
-  *
-@@ -3674,7 +3674,7 @@ tSCC* apzDarwin_Flt_Eval_MethodMachs[] = {
-  *  content selection pattern - do fix if pattern found
-  *
- tSCC zDarwin_Flt_Eval_MethodSelect0[] =
--       "^#if __FLT_EVAL_METHOD__ == 0$";
-+       "^#if __FLT_EVAL_METHOD__ == 0( \\|\\| __FLT_EVAL_METHOD__ == -1)?$";
- 
- #define    DARWIN_FLT_EVAL_METHOD_TEST_CT  1
- static tTestDesc aDarwin_Flt_Eval_MethodTests[] = {
-@@ -3685,7 +3685,7 @@ static tTestDesc aDarwin_Flt_Eval_MethodTests[] = {
-  *
- static const char* apzDarwin_Flt_Eval_MethodPatch[] = {
-     "format",
--    "#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == 16",
-+    "%0 || __FLT_EVAL_METHOD__ == 16",
-     (char*)NULL };
- 
- * * * * * * * * * * * * * * * * * * * * * * * * * *
-diff --git afixincludesinclhack.def bfixincludesinclhack.def
-index 45e0cbc0c10..19e0ea2df66 100644
---- afixincludesinclhack.def
-+++ bfixincludesinclhack.def
-@@ -1819,10 +1819,11 @@ fix = {
-     hackname  = darwin_flt_eval_method;
-     mach      = "*-*-darwin*";
-     files     = math.h;
--    select    = "^#if __FLT_EVAL_METHOD__ == 0$";
-+    select    = "^#if __FLT_EVAL_METHOD__ == 0( \\|\\| __FLT_EVAL_METHOD__ == -1)?$";
-     c_fix     = format;
--    c_fix_arg = "#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == 16";
--    test_text = "#if __FLT_EVAL_METHOD__ == 0";
-+    c_fix_arg = "%0 || __FLT_EVAL_METHOD__ == 16";
-+    test_text = "#if __FLT_EVAL_METHOD__ == 0\n"
-+		"#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == -1";
- };
- 
- *
-diff --git afixincludestestsbasemath.h bfixincludestestsbasemath.h
-index 29b67579748..7b92f29a409 100644
---- afixincludestestsbasemath.h
-+++ bfixincludestestsbasemath.h
-@@ -32,6 +32,7 @@
- 
- #if defined( DARWIN_FLT_EVAL_METHOD_CHECK )
- #if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == 16
-+#if __FLT_EVAL_METHOD__ == 0 || __FLT_EVAL_METHOD__ == -1 || __FLT_EVAL_METHOD__ == 16
- #endif  * DARWIN_FLT_EVAL_METHOD_CHECK *
- 
- 
--- 
-2.39.3

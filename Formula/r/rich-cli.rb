@@ -6,16 +6,16 @@ class RichCli < Formula
   url "https:files.pythonhosted.orgpackagesca55e35962573948a148a4f63416d95d25fe75feb06d9ae2f9bb35adc416f894rich-cli-1.8.0.tar.gz"
   sha256 "7f99ed213fb18c25999b644335f74d2be621a3a68593359e7fc62e95fe7e9a8a"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdd33f9a5154603a51acbefc61d68c965dd5001da774f8647d997501fdea5d25"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd33f9a5154603a51acbefc61d68c965dd5001da774f8647d997501fdea5d25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bdd33f9a5154603a51acbefc61d68c965dd5001da774f8647d997501fdea5d25"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bdd33f9a5154603a51acbefc61d68c965dd5001da774f8647d997501fdea5d25"
-    sha256 cellar: :any_skip_relocation, ventura:        "bdd33f9a5154603a51acbefc61d68c965dd5001da774f8647d997501fdea5d25"
-    sha256 cellar: :any_skip_relocation, monterey:       "bdd33f9a5154603a51acbefc61d68c965dd5001da774f8647d997501fdea5d25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b7a4a5cc0ab96693cf9996b33752d5985178ca4ef627f8d6b5c13e6db0e48d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0a0e19fc6c55935c92897824d2204fb0c4c78514313b7a5c8e15dc60ac165a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da84898146bbfcb7ce0bb10a8411044b9e46ddf84dd8644acdf7cf8e92266b73"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a9457ecf971061d9a49c9055c875ef5e799199b2d1574311585e797ed170828"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c680e1c77fc7c27912c6dd3ff6a838cdb66452574194ab40b0df3a8af1c5550b"
+    sha256 cellar: :any_skip_relocation, ventura:        "fa0f141dab6adc1c057c49f8b23f4aebdab1b2ab4ec3351add402ec00f297c31"
+    sha256 cellar: :any_skip_relocation, monterey:       "596268bf3104a3f606591b5ed0516e4ee4bea628b6e38eacf5e8536f54ab5a7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1be94fb5e701cd74e7aba520a17caf4721b022f00dab666724a8c2f1d40bf87"
   end
 
   depends_on "certifi"
@@ -37,8 +37,8 @@ class RichCli < Formula
   end
 
   resource "docutils" do
-    url "https:files.pythonhosted.orgpackages21ffc495b797462434f0befcb598b51cde31c3ebdf8577c3fd9d9a8f5eeb844cdocutils-0.21.1.tar.gz"
-    sha256 "65249d8a5345bc95e0f40f280ba63c98eb24de35c6c8f5b662e3e8948adea83f"
+    url "https:files.pythonhosted.orgpackagesaeedaefcc8cd0ba62a0560c3c18c33925362d46c6075480bfa4df87b28e169a9docutils-0.21.2.tar.gz"
+    sha256 "3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f"
   end
 
   resource "idna" do
@@ -47,13 +47,13 @@ class RichCli < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rich" do
@@ -62,8 +62,8 @@ class RichCli < Formula
   end
 
   resource "rich-rst" do
-    url "https:files.pythonhosted.orgpackages1cd161993f336c8c791f9f09ecc9ac4b16fc8205e70cfe3cf1e2b44066071c23rich-rst-1.2.0.tar.gz"
-    sha256 "12e3962fd2ed99f5361beab8abb35b87b1d2a8d3a14cb705bc70d2eb2fa81ddd"
+    url "https:files.pythonhosted.orgpackagesb0695514c3a87b5f10f09a34bb011bc0927bc12c596c8dae5915604e71abc386rich_rst-1.3.1.tar.gz"
+    sha256 "fad46e3ba42785ea8c1785e2ceaa56e0ffa32dbe5410dec432f37e4107c4f383"
   end
 
   resource "textual" do

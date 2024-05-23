@@ -6,16 +6,17 @@ class Scrapy < Formula
   url "https:files.pythonhosted.orgpackagesf21f5524416a64c030fbe18caeba079e7176836b281bf9eb50b79efdf8015063scrapy-2.11.2.tar.gz"
   sha256 "dfbd565384fc3fffeba121f5a3a2d0899ac1f756d41432ca0879933fbfb3401d"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comscrapyscrapy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "84db6bc459afaaa8608b14dd81253cf0ac0f2cc94ed31e642cb0f5fb4620909e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab51a129e69cec80e9bc7b8b07c1dc58db74a9a6e883e3212e5d66ff8d589229"
-    sha256 cellar: :any,                 arm64_monterey: "d3c452bdf51734aa439a4c12fbd6c47d349c5eefa6d131872de6aacd394c6184"
-    sha256 cellar: :any_skip_relocation, sonoma:         "45bcf9184737a6f60ffb4cb57783a8986f196ad61c83bbdce651274996435e96"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d66920d0d239699044b367df6cb1dca9a447ba97aeaebf52445c8196301d680"
-    sha256 cellar: :any,                 monterey:       "0fb25a58bfae16e4caaf97faa1d388d2e9002615975bae90d23289303464003d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a50a57ad423abaffbb25c176dadbb9defd085ce67d44e96119b6597ae5b250ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1001c6adea90a39236f7a2e27f467ec81a192a84ff6f9bc5d66e408c390c6ec6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0117d7b3f686d23455fab97a95c21a145098ec0390e272381c7a2c50c9863e6"
+    sha256 cellar: :any,                 arm64_monterey: "73663d0891e6afa5f7625086238d44237c09f5b32439d5db12d858ed771a6304"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f40d373420b1e0283a94524205c644076af05520c5c298929c052333aab71c12"
+    sha256 cellar: :any_skip_relocation, ventura:        "e344b2aa2bdcbaa5305d5ae0314bf996326c99489f5443f1b91f3e17d6129126"
+    sha256 cellar: :any,                 monterey:       "0e9af22d341537b503d711b421dac7d8615486e8998e563d4278c1963bbea473"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d96242bca839b0be6d6385e59e9b8a44f2b3cb4746b15f2eb1fef75f2918d6c9"
   end
 
   depends_on "certifi"
@@ -136,13 +137,13 @@ class Scrapy < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "requests-file" do
-    url "https:files.pythonhosted.orgpackages2b69ba1b5f52f96cde4f2d8eca74a0aa2c11a66b2fe58d0fb63b2e46edce6ed3requests-file-2.0.0.tar.gz"
-    sha256 "20c5931629c558fda566cacc10cfe2cd502433e628f568c34c80d96a0cc95972"
+    url "https:files.pythonhosted.orgpackages7297bf44e6c6bd8ddbb99943baf7ba8b1a8485bcd2fe0e55e5708d7fee4ff1aerequests_file-2.1.0.tar.gz"
+    sha256 "0f549a3f3b0699415ac04d167e9cb39bccfb730cb832b4d20be3d9867356e658"
   end
 
   resource "service-identity" do
@@ -151,8 +152,8 @@ class Scrapy < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "six" do
@@ -186,8 +187,8 @@ class Scrapy < Formula
   end
 
   resource "zope-interface" do
-    url "https:files.pythonhosted.orgpackages2abda30bf6df24480017171da4f52ee527a72c7a6450c86355011e0156e71723zope.interface-6.3.tar.gz"
-    sha256 "f83d6b4b22262d9a826c3bd4b2fbfafe1d0000f085ef8e44cd1328eea274ae6a"
+    url "https:files.pythonhosted.orgpackages1f41d0bdb50947f77341e979241de26f348e538a5d0f3ddb2482bc3907a3d728zope_interface-6.4.tar.gz"
+    sha256 "b11f2b67ccc990a1522fa8cd3f5d185a068459f944ab2d0e7a1b15d31bcb4af4"
   end
 
   def install

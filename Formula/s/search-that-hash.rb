@@ -6,17 +6,17 @@ class SearchThatHash < Formula
   url "https:files.pythonhosted.orgpackages5eb9a304a92ba77a9e18b3023b66634e71cded5285cef7e3b56d3c1874e9d84esearch-that-hash-0.2.8.tar.gz"
   sha256 "384498abbb9a611aa173b20d06b135e013674670fecc01b34d456bfe536e0bca"
   license "GPL-3.0-or-later"
-  revision 7
+  revision 8
   head "https:github.comHashPalsSearch-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e25801d1987279bbe647702e7bc6e33d0839b5f5d49127fdaad3292d6fde9a23"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e25801d1987279bbe647702e7bc6e33d0839b5f5d49127fdaad3292d6fde9a23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e25801d1987279bbe647702e7bc6e33d0839b5f5d49127fdaad3292d6fde9a23"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c00ce8014bc25b9bdaff8001ebcb68d8dd5b05ff55463808ccf7c124d08dd736"
-    sha256 cellar: :any_skip_relocation, ventura:        "c00ce8014bc25b9bdaff8001ebcb68d8dd5b05ff55463808ccf7c124d08dd736"
-    sha256 cellar: :any_skip_relocation, monterey:       "c00ce8014bc25b9bdaff8001ebcb68d8dd5b05ff55463808ccf7c124d08dd736"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d3aa384e4a3b6e190761d041481d3af54f2d8db52062c1c2374c1700bce7a79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "45ba95cd12db262e0cd04005614548cc15165e4433fe0914c83c5779c4b1ca76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58fd76d511cfb533dfb4359bf0ce0304d3481ea63c14d8b701507d2aea59fa4d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fc1c154c42040bfd5b9a61c62e9733725cbd860a1290e8573976f75163894a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5b4d598d3cdfa2687906b0a63a26e2082dd27f9ab981eb79dcffc4d39586b6d3"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7c3f87c0fe470ee2e5ca9cebd0f2e5059691cccde3be01a3c453482e21e5733"
+    sha256 cellar: :any_skip_relocation, monterey:       "418c577a8e88c65ac55ebde0ffd4a1ffe3fbe1ae88a0a21b0e51df7e3b9eb007"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "723b4b7872a9df17e95a93c632dbfaae93800970b50bb84c22997d136a3e78dc"
   end
 
   depends_on "certifi"
@@ -78,8 +78,8 @@ class SearchThatHash < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyparsing" do
@@ -88,8 +88,8 @@ class SearchThatHash < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "requests-toolbelt" do

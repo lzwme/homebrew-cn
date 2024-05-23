@@ -15,22 +15,25 @@ class HelmDocs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1f3b63fcffa9ca11f54986fb0b08ecbf4824fd3bc0be4157eb67a1c14497cf5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bd816db49061e0b4a4b76dc04752208be37a219a687965a3a83d54fdab5b3de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce36c56f5a617e57fb993b1499abcbd624cdcc3c30992327a2a2661f64b17c0d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4ea34eab9e1c486220b897b7a9989aa53ba6abbe2caf22c1742ec693ed591501"
-    sha256 cellar: :any_skip_relocation, ventura:        "f489eb808a80fd3ec0f85dcf2e579f47c103f381b7eb82b38866a447fb6a90a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "afb3041b1cf9dbc2057364b72a41d4428faafd291a13419059e36632e2828cf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d59a049890f84003b2cdb866d77ba6c1e84242daf7c10e65af28c90bc87c7bab"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eba1e91b5e61ec7040156632bef627ef0dd5625aad0753a887757ff03931f27c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49d016199c385757eff2bd246e57c130e955835ae6ec1d62be68149a014ac55f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "faecf2dada756f4f7f1bda0d5f08386d258d51be956ba4ea6380a111024b19ce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cd685b2f668306f47d418fed933ee59261d1e0d3cfacfe8069e44e910feaaf8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "462c5093e116867eaea0284c644f7a04faf8fbcce65c5d1659085178fa03180d"
+    sha256 cellar: :any_skip_relocation, monterey:       "736df8bcd7635cdcddcf78d4da9bbabd39b26ff43389d0fed0ef7be5d4f969c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "330cdedbb4afcb298253191709eb4e7b17d4615eca3382d78be7375afa9fd55e"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdhelm-docs"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdhelm-docs"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}helm-docs --version")
+
     (testpath"Chart.yaml").write <<~EOS
       apiVersion: v2
       name: test-app

@@ -1,8 +1,8 @@
 class Fheroes2 < Formula
   desc "Recreation of the Heroes of Might and Magic II game engine"
   homepage "https:ihhub.github.iofheroes2"
-  url "https:github.comihhubfheroes2archiverefstags1.0.13.tar.gz"
-  sha256 "eb7f960e77ee8012e5bbab385baf4959797e578454ace82574a3c6fee24f94c8"
+  url "https:github.comihhubfheroes2archiverefstags1.1.0.tar.gz"
+  sha256 "df46c5fe702e71022974db8247aba49fb64693e4b967b68bae16872fba875542"
   license "GPL-2.0-or-later"
   head "https:github.comihhubfheroes2.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Fheroes2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "707fee6937afb9b7a48f31d91a3c6bd1f76458367f5884525050bc96fb68b1d4"
-    sha256 arm64_ventura:  "5304ab6d4c46389a1cd8b90a54517ca7a3ef659b406c84441ac7275f2b68e24a"
-    sha256 arm64_monterey: "5347faa70d9e59ea2cd8268895e538604319f58f6a26d7f79c81186b1b5d7344"
-    sha256 sonoma:         "5eb13df49fcd61a8312b6df5192ba975b4526581eecdbf461a0d9076ff057c3e"
-    sha256 ventura:        "470c2366c18365f284413bb0ad708cc8c53437f05071b625d9dbf53dc3afcbba"
-    sha256 monterey:       "61e1ed752bf45e9b6a65c121c9e841790829c56ccc9ed1bbd57f0a0ba38443a9"
-    sha256 x86_64_linux:   "5b466d1d84f397fd1ad6e043b8cfceab234c75edb6c52c743da3ff00014876b8"
+    sha256 arm64_sonoma:   "1160e847c46e2b22df2a110648634ddbfcb6e391c00d5e3d5b7dabd76f8d2455"
+    sha256 arm64_ventura:  "54bdacbf958eee6c69052bacf7ff79fb759f9125900a57762dadd5eb03efb5ea"
+    sha256 arm64_monterey: "e8694a04ceb36b925810be0f9441908edf60c1d87cee6dfc933911dc46e41f0c"
+    sha256 sonoma:         "d3d0476bf1c90409d92a5c754b0a0911d904f53238609e6d4bffea2676941364"
+    sha256 ventura:        "cd7fa7adce3aaa62f5836a212dc5ea09b0aa9c7f4e1a11c407f7eb794487c923"
+    sha256 monterey:       "d1c0ec809d5fb7935a734265ab74de9cbe0b1ba9cc76778d7d8d1145c8ffc333"
+    sha256 x86_64_linux:   "5ff10ee3685c09eeffd28350a07e9f3fa5897f1e4900a7ae83d1210b23c4cf34"
   end
 
   depends_on "cmake" => :build

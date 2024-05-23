@@ -1,8 +1,8 @@
 class Aftman < Formula
   desc "Toolchain manager for Roblox, the prodigal sequel to Foreman"
   homepage "https:github.comLPGhatguyaftman"
-  url "https:github.comLPGhatguyaftmanarchiverefstagsv0.2.8.tar.gz"
-  sha256 "fb7a4fc6a0e736df3968834284da163380d4dcd4707e9836d35ff427e6c53f8c"
+  url "https:github.comLPGhatguyaftmanarchiverefstagsv0.3.0.tar.gz"
+  sha256 "f75aab63cb887c63e3888a225061a1ab4e0fd0d9c3e0a1c86b8ac7ad035fdf6c"
   license "MIT"
   head "https:github.comLPGhatguyaftman.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Aftman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "edec901a3f1f643bc4ccc95177188ad2a0c8d212724a23747e9ffef4f8cd97ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86a9b2058bf845cafce8ee82042de17723a1642bd83bc1d0af78258f067c12bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67503bc3944dba0b136c66dc57e25d0d774f987fc970df873e4bb6490e28c379"
-    sha256 cellar: :any_skip_relocation, sonoma:         "951d92f1809f47ef8f2f5cca5887721f03c7bea385b43f34c5c6440ebdef44d2"
-    sha256 cellar: :any_skip_relocation, ventura:        "efab50932cce860c9a1469d9d67f342028915353525cb5c608da17ac2e5abb53"
-    sha256 cellar: :any_skip_relocation, monterey:       "c28b6533b65912d630b65744a7f2cac1c1058136b79543e4158c5392ff46efb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "110a4aecaa669da3c7cb4a2898eaf80b8fdba030a8bf73e1f06f5c2898db5833"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79678c381bbec86c92bee17e53dd01f34355e0dcda445f5a90a1d287c4825c11"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f52a939e6d2cefc3d5e936a08ef2450b8bb0ad909af7f71adc0c1ec7bb1cfc8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3302f69a40b249f7cfa486fa479674c4373c4666e815b07042bc829e151c371e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "fdf56dee4a49f7c3e0038b48b7dc2520dc94882bc7a2e5ce554bc4cc89ce2c7e"
+    sha256 cellar: :any_skip_relocation, ventura:        "707ab252c150e4208055d2398d6d7bf29ca1309d329128a2f3303ba45011717c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9afea6436f083ac4beca2dd9e1321490a7768a5f0f784a0fcacd6f7a813c32a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e8943e04ce29ca295996d3acacb141d87504a59374aa2da2e7e15a453bbe5a9"
   end
 
   depends_on "rust" => :build

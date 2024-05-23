@@ -6,17 +6,17 @@ class Sherlock < Formula
   url "https:files.pythonhosted.orgpackages2a6396b5e9a8a8785d4d3f41d1c8909833cd0d847b9feda1a38df5af2a426b30sherlock_project-0.14.3.tar.gz"
   sha256 "253066b2265ce689e2747242040c10e6f43d13364919a97b37ec04af769a1933"
   license "MIT"
+  revision 1
   head "https:github.comsherlock-projectsherlock.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0941a62b71366238596bec69055a31ac68eb66a545898af2452528c2e9d213f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc885acb74e7e461058d721a29cecddc325d8143ae914021ec5b4b7e4e612249"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "999bfa592f902a31770dda5fa36db952b85c4c2ee1369621f2d64a42cdd46ecd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23a394ef5c985aaa8fe0f8589fa345c83ed7dd507bc9a23aa301e379356abc70"
-    sha256 cellar: :any_skip_relocation, ventura:        "a5fc6bcb20e46893d386d68b75b0fa5acff19ddc5d05447782c68600fcf5e2fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a940590576be252cd2211bb1df4d0e9e328cdcc7febbe847d867063226ee235"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "149dc0544fd767c0a2071adfca76f8d99bf2c976c9730816ec74f28900650be4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "207bc28d7e178921df6e057b10e26b1a4d7cd709d18ad393764abcadaddd94e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8367721cbdf5e58299de2b7a773a12b85cd327f399f2a986bea0aeda5f1321c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f5811f64ded4a6cc446712f1642803ca70146bdf3529be3951f514ac1cfdc71"
+    sha256 cellar: :any_skip_relocation, sonoma:         "241b0dacacc034b0b621e639b41e2e7137ae2317cab39dbe0d634cbbd106491e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae293d261fe06a6c75c1c9bb7595b30ffb82316b6a34a3da739e60a3ebb1c739"
+    sha256 cellar: :any_skip_relocation, monterey:       "14d9f8d1d9446114893d7ba9c9afb936b2632635035f1d1135af589d2edf0b1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3d7a4e933880e218ce570d896a837aeaad4d7c7d145245343e7790af88f6bcf"
   end
 
   depends_on "cmake" => :build
@@ -79,8 +79,8 @@ class Sherlock < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "requests-futures" do

@@ -6,16 +6,17 @@ class Snakemake < Formula
   url "https:files.pythonhosted.orgpackages0e71a7463b38491aee6017268e9ee844a92295b1474392d0bd671d654716f9c5snakemake-8.11.6.tar.gz"
   sha256 "dd0979b9bf97623e78968cb497f400984f311cff039c4ad58571fbe4bef65a15"
   license "MIT"
+  revision 1
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e10efdf4f3e27cbe5ef3d661a3acbc47ae02747e985fb492e2f4daf585272df2"
-    sha256 cellar: :any,                 arm64_ventura:  "da252433a030a535b343e9e713b0aa367bdf6933fddd0c9518326af880afa28e"
-    sha256 cellar: :any,                 arm64_monterey: "7bb2610820af956af661475e5b268ced13cd19c7dd457e68c8082abfddfeb248"
-    sha256 cellar: :any,                 sonoma:         "ec5032115ebd06294bafcc079f81f1211a51c0f266c85b38a83dae11057994f7"
-    sha256 cellar: :any,                 ventura:        "e7702b183c1c2bf478fafb5227ff1c8f9ce00a60ffed977b40ed47577c892893"
-    sha256 cellar: :any,                 monterey:       "1928d7f921e6b1cbed4c14659db817301b74d83416435b719ca44d1d4b913ba7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e85ffc08f35b4959f437739238fb576f3304aa0280e80d910bf07e4386626219"
+    sha256 cellar: :any,                 arm64_sonoma:   "75b304f79796ba7828cdf56ad5a73e80ffb7e4451ced610cd7567a9fbe6db7f4"
+    sha256 cellar: :any,                 arm64_ventura:  "7b87619bcad3d9f3bdb451618e1edde53d8e45e483c07b5790efffecfb0bf14f"
+    sha256 cellar: :any,                 arm64_monterey: "002e7f4bc55c21d0a4a59b7708922ef7c5121fcb44c33e4863f69c3618e48160"
+    sha256 cellar: :any,                 sonoma:         "fb09060b4cb2c9f245af34f434a784122b6143fa975b1f1a1809618e62345ecf"
+    sha256 cellar: :any,                 ventura:        "7c3a57d336dbf17e49718ec1292c51ad6a1e1fdf3d9e0eac435f4930a17fcb3d"
+    sha256 cellar: :any,                 monterey:       "e72018f6347d3b3ee11ee0b5a6f03c21ab6272e9b62568418c4e380c79db8245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22d365e74a49f30a59545c3a1d2f92460810f86044e38d5ec0107fba82f983ef"
   end
 
   depends_on "rust" => :build
@@ -170,8 +171,8 @@ class Snakemake < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "reretry" do

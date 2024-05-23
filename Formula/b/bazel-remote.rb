@@ -1,20 +1,18 @@
 class BazelRemote < Formula
   desc "Remote cache for Bazel"
   homepage "https:github.combuchgrbazel-remote"
-  url "https:github.combuchgrbazel-remotearchiverefstagsv2.4.3.tar.gz"
-  sha256 "01a84e318ff7ee4aa72d756c40a6ae9753d2dfaaaf5612fe1c8c8a66ad221bde"
+  url "https:github.combuchgrbazel-remotearchiverefstagsv2.4.4.tar.gz"
+  sha256 "f358997aa5c2b58e1d16a6acf5a6bb9797a8ee4d502ac7d3a00525d4edc6bad1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83d14ba7f6e4516802f44ab937932da92e10dd5b882638d4a30533875b4db279"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a225c9b5bf31ef038040df03648868db7a6caa1fa2d9af830ab06607ac9a4a78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6ae273979792960354093127f879ae6e94c4b4dad5701973c44d622c2a3913b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5fdf1244726d44e93e92bb1012c52787c6584996ea3957354a2ff7dbb63fa29c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7a1444537ef090430f4bbb25efb2be33ef4e6ae6e43364e2d4fe9b83e169f186"
-    sha256 cellar: :any_skip_relocation, ventura:        "39e68df4dc6de1ca076e9bcc64bb18e78bed969b49730db4228c7e51c00a0277"
-    sha256 cellar: :any_skip_relocation, monterey:       "5613813762a2e1f583e4d422e6c0a886cc890da0db7bc4eb9f7b856891115eea"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3286617b7a170b5a3f28002bed706f9be30ee6d9fb99f13e2cd63120ba684387"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8913b32477f70a440f5fdb1fec1f57410fd92512ab4dade36a0d63898228137"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2d02dc2fc9308975dcd8288bf20d2ce30d44d2df318b2b95de38871a3cd031cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68c09f83fdabd5e3a040ed6e60dfeb1c726e29881780f37916dd561bd6d22320"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dee66da7e388f6c0c0b1418e1f36dd761ceafcd54ea5c2ba37415ab5d04fd93"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cff600263294a94d06bd0b2023fc5cde02fddeabf8859480d840e98bf386c090"
+    sha256 cellar: :any_skip_relocation, ventura:        "282a91b95fab9d8c3db62eb8c278aa8fd94ed2c58734f9143110e6a2a8c12015"
+    sha256 cellar: :any_skip_relocation, monterey:       "d23bfe3cdb81d81d89a4783a3535beda3b5ec2804f713851f37dea4073855ddf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "212ad6592ff22c1eb04d90a3ecc488637940a3ce54f92b026f23fad3829256da"
   end
 
   depends_on "go" => :build

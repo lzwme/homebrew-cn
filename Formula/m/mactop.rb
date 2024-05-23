@@ -19,6 +19,13 @@ class Mactop < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
+  def caveats
+    <<~EOS
+      mactop requires root privileges, so you will need to run `sudo mactop`.
+      You should be certain that you trust any software you grant root privileges.
+    EOS
+  end
+
   test do
     test_input = "This is a test input for brew"
     assert_match "Test input received: #{test_input}", shell_output("#{bin}mactop --test '#{test_input}'")

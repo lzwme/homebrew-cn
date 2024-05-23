@@ -6,17 +6,17 @@ class OpenaiWhisper < Formula
   url "https:files.pythonhosted.orgpackagesd26e50ace2bf704e5ffc786d20d96403ab0d57c5d6ab8729de7fed8c436687dfopenai-whisper-20231117.tar.gz"
   sha256 "7af424181436f1800cc0b7d75cf40ede34e9ddf1ba4983a910832fcf4aade4a4"
   license "MIT"
-  revision 3
+  revision 4
   head "https:github.comopenaiwhisper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2a98ede89522e54e259c33e22605cab4acde0a32126b84b759e99d74257574c2"
-    sha256 cellar: :any,                 arm64_ventura:  "e057ec4fdb71e3c420e1629bab7be967d46a977b524da23130e4f0ac6f00efa8"
-    sha256 cellar: :any,                 arm64_monterey: "9ce9c11ca4afc116951a374566de26f152244004f07a4039399dadcbb5a667b5"
-    sha256 cellar: :any,                 sonoma:         "e2e6882d94acc25e41ac270dc91f34a3138cb5fb77d811fb9da22ff74b1b37d0"
-    sha256 cellar: :any,                 ventura:        "eab8aed4349da8601e53341d5e9025491db371842ccb91598af5b1f43ba7e393"
-    sha256 cellar: :any,                 monterey:       "ba8d40934101194399d6acbf82a201cbf076d9e69089481fba82ac7c2b038755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "136cef2b14d46f9584803afb8fbd11b977491c546eacce655fd063c9582d77b3"
+    sha256 cellar: :any,                 arm64_sonoma:   "b8d9f395e267d914117d6bc493aa1bd5ef4cb1ce6add361710fe3ea3a1955e93"
+    sha256 cellar: :any,                 arm64_ventura:  "1de0a5e7c6a0022f67b1a9ba1bd69949183dbfe840d523ca9ad7eeff67370030"
+    sha256 cellar: :any,                 arm64_monterey: "e85de4c8ac57842a7799ecdf8920c73f1686938cceaf34e957dff87dac81327b"
+    sha256 cellar: :any,                 sonoma:         "6ad93c3dd3b56f82ae4bc744a1de932c30f08abc85a92846937f97d276be6fd2"
+    sha256 cellar: :any,                 ventura:        "6f25ca02cc226485fe3ea8fa6180cf3ccef4a3bb75481d6e1b9dfab37db19c37"
+    sha256 cellar: :any,                 monterey:       "04cd9a0ee92292cbe3adfd474e361c47d7733163f7e868f39f9418d1af34092d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0feb6cf80e3652aa9e0b43d74e25581c36025b9aa48cff2d3b7226a712263704"
   end
 
   depends_on "rust" => :build # for tiktoken
@@ -57,18 +57,18 @@ class OpenaiWhisper < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesc0d687709afa2a195ea902810dfaa796d21dd45d91b496dc98828073acbfe5afregex-2024.4.28.tar.gz"
-    sha256 "83ab366777ea45d58f72593adf35d36ca911ea8bd838483c1823b883a121b0e4"
+    url "https:files.pythonhosted.orgpackages7adb5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49bregex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "tiktoken" do
-    url "https:files.pythonhosted.orgpackages3a7ba8f49a8fb3f7dd70c77ab1d90b0514ab534db43cbcf8ac0a7ece57c64d87tiktoken-0.6.0.tar.gz"
-    sha256 "ace62a4ede83c75b0374a2ddfa4b76903cf483e9cb06247f566be3bf14e6beed"
+    url "https:files.pythonhosted.orgpackagesc44aabaec53e93e3ef37224a4dd9e2fc6bb871e7a538c2b6b9d2a6397271daf4tiktoken-0.7.0.tar.gz"
+    sha256 "1077266e949c24e0291f6c350433c6f0971365ece2b173a23bc3b9f9defef6b6"
   end
 
   resource "tqdm" do

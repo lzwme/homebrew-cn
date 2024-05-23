@@ -6,17 +6,17 @@ class Toot < Formula
   url "https:files.pythonhosted.orgpackagese401dcfb2d4fd58a5c96d99d9ff98f7a48cf0813e4a615b5953da11e67374075toot-0.43.0.tar.gz"
   sha256 "6aa84c4b8df6e2214a3e735142bf5bd57b3b10aa08e35579425c5dbe3bc25ae7"
   license "GPL-3.0-only"
-  revision 2
+  revision 3
   head "https:github.comihabunektoot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b1048864fd6a905741f87dee6acc614080921354fc040112997a2bd15a75981"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b1048864fd6a905741f87dee6acc614080921354fc040112997a2bd15a75981"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b1048864fd6a905741f87dee6acc614080921354fc040112997a2bd15a75981"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b1048864fd6a905741f87dee6acc614080921354fc040112997a2bd15a75981"
-    sha256 cellar: :any_skip_relocation, ventura:        "4b1048864fd6a905741f87dee6acc614080921354fc040112997a2bd15a75981"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b1048864fd6a905741f87dee6acc614080921354fc040112997a2bd15a75981"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6de7b59864e53f5a326a2d0e28f9423ba74d26dd59f235147521161ef4161b1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47c411478bafca733b600dcf9ebcd94fdafa2aabb74b467b37fac77be30d141b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcfd36efcabfcc9e02255f96a422c67fe962bf018f9bb42b52225cf2a73abffb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dca359111a5a00eaf563a086bc163c32957b010fb8844079e20d71ff6e124f8"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bc0c2a2670e69bbccc46dd677b72c29f061fc83c926ea8bcb1579eec604428ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e28529a5851bd40fcdc18f7809f26fc8e5cb4ab9d6107cc8e9230fef48f048d"
+    sha256 cellar: :any_skip_relocation, monterey:       "4fa0fe1d49d080a7abe158315b431a37a7f41530bdf1136c2f89fa13181a0889"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "245ab5de22d6152cfbd699070321ffdfeaab69aedb1cdf7cfb3db1e05f3dbda1"
   end
 
   depends_on "certifi"
@@ -44,8 +44,8 @@ class Toot < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "soupsieve" do
@@ -59,8 +59,8 @@ class Toot < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackages7d494c0764898ee67618996148bdba4534a422c5e698b4dbf4001f7c6f930797tomlkit-0.12.4.tar.gz"
-    sha256 "7ca1cfc12232806517a8515047ba66a19369e71edf2439d0f5824f91032b6cc3"
+    url "https:files.pythonhosted.orgpackages2bab18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8tomlkit-0.12.5.tar.gz"
+    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
   end
 
   resource "typing-extensions" do
@@ -74,13 +74,13 @@ class Toot < Formula
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages8e748c2082f2b07a72ff5d2438447c13a70f0cbede73584e0a262c166a30785curwid-2.6.10.tar.gz"
-    sha256 "ae33355c414c13214e541d3634f3c8a0bfb373914e62ffbcf2fa863527706321"
+    url "https:files.pythonhosted.orgpackages9ee0afd5f41a87cba266418622dc6e37fd18f61378aa56d73ea9ee01db3ceaddurwid-2.6.12.tar.gz"
+    sha256 "1c9f5a5b47ec3fcc88032e0e224a00d7bf21704fa0060f498db395235f1731f1"
   end
 
   resource "urwidgets" do
-    url "https:files.pythonhosted.orgpackages606de7847c2a472bf16b87e4ecc3764bb059631fa5453d4148f3bb5cdd81e301urwidgets-0.2.0.tar.gz"
-    sha256 "d41acf9d9f8d576cb580bc042919b209c5aeeb60e1f81052809c63f31c4e7688"
+    url "https:files.pythonhosted.orgpackages161fcb6f188ddd62a52b3fa5694c2a541309d246dee54e6d4bc7a4079b2bbc59urwidgets-0.1.1.tar.gz"
+    sha256 "1e0dbceb875ace11067d93a585d8842a011db14ce78ec69ed485dc0df17f09e7"
   end
 
   resource "wcwidth" do

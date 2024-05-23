@@ -6,15 +6,16 @@ class SvtplayDl < Formula
   url "https://files.pythonhosted.org/packages/8d/51/3f79faba154f687d1af9c6804b3b836815722cba37df88b0f42c3fcb4282/svtplay-dl-4.71.tar.gz"
   sha256 "44bad803675eef8f6d258f6e8510219ba99ba98967d3f7e23ed48bf081606963"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c56f1df76a1bd9ea619b8f6611da92cd5c21eba74fa40dec0a57acfe96f8e941"
-    sha256 cellar: :any,                 arm64_ventura:  "708713b6f1928c20a2bad87ca6d202a40d9c838b6bad4292ad285fdee60dde3a"
-    sha256 cellar: :any,                 arm64_monterey: "30f6ea2a660c515e0b16332d50cd34a5ff1f1da6a9bfcd54b99ff89963568139"
-    sha256 cellar: :any,                 sonoma:         "7193c9c786ba5831286a1a4306fb98953db898e81590d2bf906d0eb19409126b"
-    sha256 cellar: :any,                 ventura:        "a186382547c82a9b00f55df39d10d1797a2ca18e7d83a4ad9a8c9854d1f9233a"
-    sha256 cellar: :any,                 monterey:       "83da6faaa33bcec55520be610f59de855dec0e968952f86606b876bdb654af55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9164c46b928d404bf43e157898c3e326b096710c5d9ce5dec9d34ac0c328fa08"
+    sha256 cellar: :any,                 arm64_sonoma:   "0beeba1cb9fd1b98f0903b5f8c5711d98d67679fd3ec10a70b75077e2a1b826a"
+    sha256 cellar: :any,                 arm64_ventura:  "ff6b661289b7d8657ef60d9aa6827831d701cd863a61505300133220816e0345"
+    sha256 cellar: :any,                 arm64_monterey: "049f13dd82864732c4b856fbf0b4c4304f427b11d8cd128969529e2175b1eff4"
+    sha256 cellar: :any,                 sonoma:         "b5defe4b4447379c84936fec7362c8519b1314dd0aab699209691b7a5c08f469"
+    sha256 cellar: :any,                 ventura:        "4eb98cea5320f4fdfdea50731b8a059522d20730212e8a5658e65b5d4ace5572"
+    sha256 cellar: :any,                 monterey:       "3268fa52d1d158bd18a856f450761180f1800d5d791e35330e946dbc35245210"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed6d92c20c6729d5aae39ff0f632afdf3966b8cf94b14827e4c7e1dba07605fa"
   end
 
   depends_on "certifi"
@@ -43,8 +44,8 @@ class SvtplayDl < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "urllib3" do

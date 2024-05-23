@@ -6,15 +6,16 @@ class Sigstore < Formula
   url "https:files.pythonhosted.orgpackages080249fb5e4f9c1e3dec6ab9b94b4d2b9778ad90a2bf6034e7bc7ccf6936d009sigstore-3.0.0.tar.gz"
   sha256 "a6a9538a648e112a0c3d8092d3f73a351c7598164764f1e73a6b5ba406a3a0bd"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8b73f96e3ad7071fada80038a5314ef1ab26658f64e5786c75ea4ed43901e5f0"
-    sha256 cellar: :any,                 arm64_ventura:  "3672e8eaefb6a29f31479cdd485494b8c691a4b53aa10809aa4dc7b0d72061ee"
-    sha256 cellar: :any,                 arm64_monterey: "d46070125d4ef09519acce1e5b0f5b34135aec0825e32c322c004b535b4d5723"
-    sha256 cellar: :any,                 sonoma:         "cc5aa0ed52cc0fa323ed76bc14c14912660d5782c71bccdc27199b5b01d48845"
-    sha256 cellar: :any,                 ventura:        "7a0d8e956dc63bf7c23c2160cbcfd129e93c64328f49becd134041a05469df6a"
-    sha256 cellar: :any,                 monterey:       "6210924eadc136a72008184a0f0e209c31e7927fb07a08a5e888f3f39972355d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7049109921cf46a0d82c858e4080e8c44fcc1bd04c982226c891571f6735b440"
+    sha256 cellar: :any,                 arm64_sonoma:   "8de62a050155bc8fef083b9032b8f5e94e9d35d6ea82ad5a6c3b7be41f0f16ba"
+    sha256 cellar: :any,                 arm64_ventura:  "e26bac0274b47e6d7d61cff0f0d00a087e3555882dc8f1c3750d7b9979e5eb58"
+    sha256 cellar: :any,                 arm64_monterey: "476f1190ee91120890613374562dae3d8dc34fba5824ba9b71004461359894f3"
+    sha256 cellar: :any,                 sonoma:         "9e96fe0ef4466346b355de948d526e018bfee005adf4bfcdd55d988526f14395"
+    sha256 cellar: :any,                 ventura:        "d3826971b04df8797d0337a3ef27c79e74a94899998785b52e368458ecf4cd2f"
+    sha256 cellar: :any,                 monterey:       "c4ae37d9c105681e940eea002e9184015ef17bd03d4b566e2462163e28dd2a77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a890264eb5db0f726d13e8b98485fdeeb84674cd5957d48840b1708fdfcbb15"
   end
 
   depends_on "rust" => :build
@@ -23,8 +24,8 @@ class Sigstore < Formula
   depends_on "python@3.12"
 
   resource "annotated-types" do
-    url "https:files.pythonhosted.orgpackages67fe8c7b275824c6d2cd17c93ee85d0ee81c090285b6d52f4876ccc47cf9c3c4annotated_types-0.6.0.tar.gz"
-    sha256 "563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d"
+    url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"
+    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
   end
 
   resource "betterproto" do
@@ -133,8 +134,8 @@ class Sigstore < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "rfc8785" do

@@ -6,17 +6,17 @@ class Watson < Formula
   url "https:files.pythonhosted.orgpackagesa961868892a19ad9f7e74f9821c259702c3630138ece45bab271e876b24bb381td-watson-2.1.0.tar.gz"
   sha256 "204384dc04653e0dbe8f833243bb833beda3d79b387fe173bfd33faecdd087c8"
   license "MIT"
-  revision 4
+  revision 5
   head "https:github.comTailorDevWatson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbfc97ecb5078d257bdfb0a4f83628f6aa7565bf0a4a030b315e79136ae3356d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73d60df34f344de46471b87ff2f41374e0dad0e7d4744a72e2397224eec7ef21"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3fa64cf7f3d546a01395010cf397888aeb3be1d63175367cb619842febef336"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bae18b1bf92a59cfee5d9a8e18d0663ac7e6dc4663753884d557cf0af66efe7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "8cee1226895ead3eaa8ef3fbd905f06e88c8bb2a2577a1afc479187caa932682"
-    sha256 cellar: :any_skip_relocation, monterey:       "73d60df34f344de46471b87ff2f41374e0dad0e7d4744a72e2397224eec7ef21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0e56a2ee319f56005c6f500366fb31758c478fa86ff2a8e7b7fb92a8f2e5380"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b97dac881a4891e37cc5775d69ebdd813d543c9c447d4fd62bea7762d971510"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bdd39b9e22f43f2d71faa11c836d45e02eaceef80179c73911d643e43991edf6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "571fe98d78d9c511632fef58d8f43ad8aed072cb08dd13b76d545bd6aa790e35"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7817cd69555f4fa7c7b403d933294f5bc3228123c39e94fcacec2b247399a102"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ee1c970b4deaed27cc8eb164d0054db14764ae950777a91fa45028063e8f07c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d4a07af9784fb37cc48cf043def25fb2a49bfb866690990993231f543d443ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8cc54bb7f74fb407759334bae0804e6cdbf9a9e7b494af0364c5dca4df217a3"
   end
 
   depends_on "certifi"
@@ -53,8 +53,8 @@ class Watson < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "six" do

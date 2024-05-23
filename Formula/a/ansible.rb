@@ -6,17 +6,17 @@ class Ansible < Formula
   url "https:files.pythonhosted.orgpackagesddd6728e1423af98ee08f05a341792abb053b73c30a5a978fc3e0777a87037a4ansible-9.5.1.tar.gz"
   sha256 "3c278bc9642b97fc953b2ba05b99cd80801e75bf3567dfaa1cb5131fe0ec1ecd"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5e4c0edea26e0a10e9450aec4a7ceb58f9c98fca2fdc387f78a81fa8a941661c"
-    sha256 cellar: :any,                 arm64_ventura:  "bce6744f34d0a8ce186838bc390716eeac05c0bbd3f0bd8603e5aec5e95b403b"
-    sha256 cellar: :any,                 arm64_monterey: "54e75eb31bb5c9dd87b6b2b55841cac669be3bd9bf0f9b35ed2956ccae920afe"
-    sha256 cellar: :any,                 sonoma:         "b6d864b0ca2ca143f945700a5ce2f7ebeb7b6c22da4f4974fbf0796ea71180e9"
-    sha256 cellar: :any,                 ventura:        "8ae96111fabbb1c5385ef1287614d9dc2ed389caba03e277796e8b21641f994f"
-    sha256 cellar: :any,                 monterey:       "98d87088eda05310fc61e98b94ccf566000f9e272257a6b97d2845685bd5f294"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "015c601b35248e2586d9760bf3dc992aabcfd0765c239b72f40acf1775d8a639"
+    sha256 cellar: :any,                 arm64_sonoma:   "08e657da2df4fab133a4947fc1992e172a90c4f2a3fe7151f7c4fb6d9c90672b"
+    sha256 cellar: :any,                 arm64_ventura:  "03457ca41509408c2c1fe128cd12d1c461972bc99ce90180ecf559931b926d16"
+    sha256 cellar: :any,                 arm64_monterey: "8e260dae9fa3b9045048fff891738078502e9d81e8cf1472a113e45b2a9e4350"
+    sha256 cellar: :any,                 sonoma:         "36be1c15e5d5786eb3508c3e84a8845bf2ac20392361ef4777fcd5d2528069b4"
+    sha256 cellar: :any,                 ventura:        "ebc8bf95c36e532100fcb249ccd09a2e0d55a9a997546b3213e540f659de978f"
+    sha256 cellar: :any,                 monterey:       "4ffe7ff1de3cab070bf41433058858e77faea74272a29abebbfaf4bddc5bf094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0cc2f931ffe8ed65455c87c6ab4023beed8355d9440e2e26a3cbd55a43e8ab7"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -24,6 +24,7 @@ class Ansible < Formula
   depends_on "rust" => :build
   depends_on "certifi"
   depends_on "cryptography"
+  depends_on "libssh"
   depends_on "libyaml"
   depends_on "python@3.12"
 
@@ -42,6 +43,11 @@ class Ansible < Formula
   resource "ansible-core" do
     url "https:files.pythonhosted.orgpackages0c65d28ed46f5daeb2ed37f9b55631cac7070d7a39f72b6d25cb99a5d8068827ansible_core-2.16.6.tar.gz"
     sha256 "111e55d358c2297ec0ce03ba98e6c5ce95947fdf50d878215eb8c183d0c275e4"
+  end
+
+  resource "ansible-pylibssh" do
+    url "https:files.pythonhosted.orgpackages68da348258a26285f257ecea0d2ac7ebf51e9600b3213da68dae8c92643374eeansible-pylibssh-1.1.0.tar.gz"
+    sha256 "b29686bb1e9d62fb54b6939d53aa0ded2127f08801a1fd8da5048fbebf99a658"
   end
 
   resource "apache-libcloud" do

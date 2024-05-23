@@ -17,7 +17,6 @@ class Nftables < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "gmp"
   depends_on "jansson"
@@ -29,9 +28,10 @@ class Nftables < Formula
   depends_on "readline"
 
   def install
-    virtualenv_create(libexec, "python3.12")
-    system "./configure", *std_configure_args, "--disable-silent-rules",
-      "--with-python-bin=#{libexec}/bin/python3"
+    venv = virtualenv_create(libexec, "python3.12")
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules",
+                          "--with-python-bin=#{venv.root}/bin/python3"
     system "make", "install"
   end
 

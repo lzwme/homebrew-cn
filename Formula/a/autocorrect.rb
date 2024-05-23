@@ -1,19 +1,19 @@
 class Autocorrect < Formula
   desc "Linter and formatter to improve copywriting, correct spaces, words between CJK"
   homepage "https:huacnlee.github.ioautocorrect"
-  url "https:github.comhuacnleeautocorrectarchiverefstagsv2.9.3.tar.gz"
-  sha256 "d6567fafc2f93a5ba65e4e089524e6564832f889ef2b7b38acb06c140e2aaf1e"
+  url "https:github.comhuacnleeautocorrectarchiverefstagsv2.10.0.tar.gz"
+  sha256 "d6800d783edbab75769da72ca06b89375c371855c7b1990651c1bf58ff66a5f0"
   license "MIT"
   head "https:github.comhuacnleeautocorrect.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3f04efa23efe1f2d8eaea3e188dde8cc6ca5eb1e00368928a797d43c998efb2d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d2f74498570d956426d17dd79dab9fc5f3cc6de8d48ad5c8417be01956a0472"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e9b4748845c0b53a903dc94af33796eaeefb53323064fe9123e5d057eede3c6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3027d143dc4d743829e6eaeff0196b6bddf53754ae4e3a105b8da2a9feb11061"
-    sha256 cellar: :any_skip_relocation, ventura:        "8a9d4408df95d09729a4a2dccc6a957461ce0062d7159c987548ea4c4275c676"
-    sha256 cellar: :any_skip_relocation, monterey:       "4243dc0e20eefb6a52ba85d3e2ea05310f43db3fde14b69bf5885c047ff0d23d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3c0e452dfba311f87737af18558207e9d24b1d47ad1a14432db31bae0416acf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5933231343fe64a62f88c7e1d89a0fb7116fcdfd3f44bfd514035ae60b9f4c06"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6168fcbcdba8f8f1b8e02e944145020064bf66728cbf864e42deee7aba70f753"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ed634f594f53297621c7f576872aaf86ecaeff3e52adb7c2d7e91d9c29defaf"
+    sha256 cellar: :any_skip_relocation, sonoma:         "35f4665e55591810bb0dfdbe1ba63608f6fba22e85f1190071b944f122540d4d"
+    sha256 cellar: :any_skip_relocation, ventura:        "79c2db3ae2178a7a40d7152ab1623ba631c30ad11277dbef7c98e4d51c68bcd3"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3a84ea0712785d9a7def803b4e0bfa6eae7b5ad583441250cca8e2c624be63b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4bbed50bb5675f55941a512a936177b8cbe87b2f94910d319158d5556b9d5c2b"
   end
 
   depends_on "rust" => :build

@@ -1,19 +1,19 @@
 class Csvlens < Formula
   desc "Command-line csv viewer"
   homepage "https:github.comYS-Lcsvlens"
-  url "https:github.comYS-Lcsvlensarchiverefstagsv0.9.0.tar.gz"
-  sha256 "6a2c19d9282cad1c8bc201deb9f3f3d254c9ba43dc6408031a1e3ca5aa05e196"
+  url "https:github.comYS-Lcsvlensarchiverefstagsv0.9.1.tar.gz"
+  sha256 "c14626dbcd12d9cf73afb7c012bde9be9b659952ca651c6d331624e6b14a42f6"
   license "MIT"
   head "https:github.comYS-Lcsvlens.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cec6dfcfea759cd686f8e8213797857b067ff4c18241de3d7df833a7bc3bf582"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ccd31d03139ba94a230b7759decefb018b7c888dc42c49c990463ed13a3fef3c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d31390d672d7e7d17c698f2149d937ea240b1efae6126ffefec56718c31a23aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "32ceb4c462039c775249899ed671cefa3ba78ceacf8897bea32093478a81675a"
-    sha256 cellar: :any_skip_relocation, ventura:        "dbf30d11eba9fda837933ff9ec28c04c5de2e0cb680082e57207ea66296f6a3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "71d476396d4e2f931b79a20a5193280588dcc745fdecfccc4f1f18fd570b51e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39dd019b789e2605f648f61ece3f7ff1c426a76687f8a9fd2e18a1f51d06b144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "765a0765bd8827517e4dd6932115a4c3043a95b118401446316c6579aed1c5a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4782dbd224d6dac6558c92692d64a48b2b641517f62d6c0e80c3d5f98735b12"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8601faa7a6547c6a91bde099c69706d5d99cddae7acf79b9509013c827db6851"
+    sha256 cellar: :any_skip_relocation, sonoma:         "941cc133af7e6357e81051980a635c564d1d31dcc8dbfc7d2467157980d39c32"
+    sha256 cellar: :any_skip_relocation, ventura:        "10535b1d645770ed3c47b9a364548a81e1fb3bbb1912ed2b9a261e92c94b8c33"
+    sha256 cellar: :any_skip_relocation, monterey:       "8d31ea7673500cba93b4cc3a910896c899782b683272a413fc563eb917bb0255"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72e642ba4847da2fe2557aca207d03329cd4d71cfeaa851ea57bc5ddd3360cfb"
   end
 
   depends_on "rust" => :build

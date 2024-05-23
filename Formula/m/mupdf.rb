@@ -4,6 +4,7 @@ class Mupdf < Formula
   url "https://mupdf.com/downloads/archive/mupdf-1.23.11-source.tar.gz"
   sha256 "478f2a167feae2a291c8b8bc5205f2ce2f09f09b574a6eb0525bfad95a3cfe66"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -12,18 +13,17 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "141b3ea8355e1d5675cdab228f13f70f067fb4b4ed4c5ba80393a79f60dd9009"
-    sha256 cellar: :any,                 arm64_ventura:  "d5a89c2eb277911d24fb2f233eff25e441c0e76f18f6fc41d2867f220a873e0d"
-    sha256 cellar: :any,                 arm64_monterey: "703849f12b56e85bdc052a901b7724b4fdc8126197615e0fc2867de3ebeb0359"
-    sha256 cellar: :any,                 sonoma:         "95919de88c671a44e580a0e6def3fdacbc96e2629d52d613255ed12a8759ca86"
-    sha256 cellar: :any,                 ventura:        "2f462fa8273963ca3c058c78f785c76399e70e4af23cd506e9a16f520b970e9f"
-    sha256 cellar: :any,                 monterey:       "24ae265c2fe9271c1541dc2b2f6de422efb1cae0e405824acaccb430c3c9bf9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e49e58ab258cb26a7c51369f1d9ae8264797573882d05a18cff8d370e9bc4b2"
+    sha256 cellar: :any,                 arm64_sonoma:   "a8290f9bee8d3d592ca6dae07a152651a5d386e979940992dc034ae1a7836f6f"
+    sha256 cellar: :any,                 arm64_ventura:  "84d7627be727109d54978a31ec04c0f3d4685dae93207c5d40d14ddef004bddd"
+    sha256 cellar: :any,                 arm64_monterey: "853102de018e979b14923af099301111f75d435078d7d027e07c0013a7a9cbc8"
+    sha256 cellar: :any,                 sonoma:         "b4cd684c7649c848ce80aa7657d7236a695a89282a44ec95ae7de20385ddb652"
+    sha256 cellar: :any,                 ventura:        "f8846a1c77aa6bdfd7925edaf46a57ff6920e0f429fa2d9f2b6b6c96b326c868"
+    sha256 cellar: :any,                 monterey:       "8ed2477a192b75e939077b753118852ccec6a8de8dd052794aea299891cfabf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aafc7ee71749329c186c19c1d2aaa8cca880aa81e56f788a150de6070e8e0cb1"
   end
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
-  depends_on "gumbo-parser"
   depends_on "harfbuzz"
   depends_on "jbig2dec"
   depends_on "jpeg-turbo"
@@ -40,12 +40,12 @@ class Mupdf < Formula
     depends_on "mesa"
   end
 
-  conflicts_with "mupdf-tools",
-    because: "mupdf and mupdf-tools install the same binaries"
+  conflicts_with "mupdf-tools", because: "both install the same binaries"
 
   def install
-    # Remove bundled libraries excluding `extract` and "strongly preferred" `lcms2mt` (lcms2 fork)
-    keep = %w[extract lcms2]
+    # Remove bundled libraries excluding `extract`, `gumbo-parser` (deprecated), and
+    # "strongly preferred" `lcms2mt` (lcms2 fork)
+    keep = %w[extract gumbo-parser lcms2]
     (buildpath/"thirdparty").each_child { |path| path.rmtree if keep.exclude? path.basename.to_s }
 
     args = %W[
@@ -54,6 +54,7 @@ class Mupdf < Formula
       verbose=yes
       prefix=#{prefix}
       CC=#{ENV.cc}
+      USE_SYSTEM_GUMBO=no
       USE_SYSTEM_LIBS=yes
       USE_SYSTEM_MUJS=yes
     ]
@@ -61,7 +62,6 @@ class Mupdf < Formula
     if OS.mac?
       [
         ["FREETYPE", "freetype2"],
-        ["GUMBO", "gumbo"],
         ["HARFBUZZ", "harfbuzz"],
         ["LIBJPEG", "libjpeg"],
         ["OPENJPEG", "libopenjp2"],
