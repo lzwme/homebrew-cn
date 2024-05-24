@@ -1,8 +1,8 @@
 class Jaq < Formula
   desc "JQ clone focussed on correctness, speed, and simplicity"
   homepage "https:github.com01mf02jaq"
-  url "https:github.com01mf02jaqarchiverefstagsv1.3.0.tar.gz"
-  sha256 "185c4b73d128d5af18245d4a514c017e24ddb98b02569357adf4394c865847cf"
+  url "https:github.com01mf02jaqarchiverefstagsv1.4.0.tar.gz"
+  sha256 "20d53c2c992db9bbe3e4e8636015cdd1429b936fd897cd4b3ff02c3abdd3a9ed"
   license "MIT"
   head "https:github.com01mf02jaq.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Jaq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e64e2d913e8633078d32b5caf9d03e9e09b401ecd562dd504f24b921eed1f1f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fe65aff4dc820945228632ba1ada2d74dd29b99ef9ae292bc121027463b638cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2908ce2e2ab7703d64a55f3030e2dad19f9a9bc3e768280341dd2e3f06e29fbd"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf93817dd555238be7ad1a45d3dd771d69c529eac958abe836fc2109eb921662"
-    sha256 cellar: :any_skip_relocation, ventura:        "70bd562414f356c6709cfe38547cc71dae94ff76c8880c6f8b59b57caffa25b3"
-    sha256 cellar: :any_skip_relocation, monterey:       "a3f15f4379a00bdc9f6cda380414e2b234635797e7a38b9f04bc9edba8293514"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b784426a7442b4752498b66324497a9dcd087b9354e1df5ee6d507fba0a5d8a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e65dc181d3b411777b39c4b5427eeb6bc85972a104dcb9c077df99dd4865fd9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b031499cdbbb13c191ac66dab548f73626ff5009cf08276640711dbf92d53d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c81286cfd818042dcddad520c3db64fb6baad3a0b4fa06a1f86025d4ef47bfa7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a4eb2ded47bf5c0213ce96b78dc8f8364994f7da86be20ac8ebc152ce04f39ec"
+    sha256 cellar: :any_skip_relocation, ventura:        "fb1e70d0bcc33e881d7c49739e9f9543e9fb339767a95a8d0d32bbad98e1e71c"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd2a912e9e1d3049e03a5b0eb9ced86ec6d81b29c476c42e8e69b54210fbf320"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b031c4cfbc2fa77a0abebc71a6e985f085d3a81909e0142e2423f266226f5cd"
   end
 
   depends_on "rust" => :build

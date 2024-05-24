@@ -1,20 +1,18 @@
 class Seal < Formula
   desc "Easy-to-use homomorphic encryption library"
   homepage "https:github.commicrosoftSEAL"
-  url "https:github.commicrosoftSEALarchiverefstagsv4.1.1.tar.gz"
-  sha256 "af9bf0f0daccda2a8b7f344f13a5692e0ee6a45fea88478b2b90c35648bf2672"
+  url "https:github.commicrosoftSEALarchiverefstagsv4.1.2.tar.gz"
+  sha256 "55601ea4c9ab96eb29a8e37027637774e64a2868d02852474d625ffced0b92cb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "71cd829e65b350f05f5bc83a14b1c1050afab6c7976baa9bf14623a8e0386d60"
-    sha256 cellar: :any,                 arm64_ventura:  "be6bc6562cd94e6cdaaaf9fea4678a9d203891103136b54ebebd207f925e1518"
-    sha256 cellar: :any,                 arm64_monterey: "815a7f97fc5c9ac4f1dff9aefcfa9d8dc2de686db9986895cfdd03e67c532365"
-    sha256 cellar: :any,                 arm64_big_sur:  "47554e0e49d403571cb2a8dd1556173684c9137bb1795041ab7ffbcf01f8c2ea"
-    sha256 cellar: :any,                 sonoma:         "c547ee832fc5e1c7970aaf5d38b50ad4c527ff246965bb4b046faac577a6b3ff"
-    sha256 cellar: :any,                 ventura:        "4913771595a3039b887b499c9a5432c6ec83a4e6bb53e426ab10451258cdfa5c"
-    sha256 cellar: :any,                 monterey:       "1b4df4b2882c98e5577e0cbfe992ada1125250070e9343459c0451524d2f2831"
-    sha256 cellar: :any,                 big_sur:        "01a9f4a313feac9bf415099ac09c9e3647bbf3304006ce06f871cf589c7e0588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "311dbf6d2608ee2921e86a72bb4bbe83c1e859676b4a95dabb3822ab700ff011"
+    sha256 cellar: :any,                 arm64_sonoma:   "fde6d946891affcafc3e5231b576a1b67aed87ab83cd225eace77d72827b1193"
+    sha256 cellar: :any,                 arm64_ventura:  "45449875a4c66daedc4730ee32d6c9d03875fc2139927d7c9e5716ebc2598e94"
+    sha256 cellar: :any,                 arm64_monterey: "b782ba0559923f33086a020b63ab5bcd05fa5262f40a166eb0d3be7ebdd26131"
+    sha256 cellar: :any,                 sonoma:         "f2d97c6b546621bc7a19cf8825787ec57f953ce9caa36d9e41005611d0262e00"
+    sha256 cellar: :any,                 ventura:        "7dcd8c0c88ffe2156af805090507e07389f5a66213f72b48a5ba817929f8b2a2"
+    sha256 cellar: :any,                 monterey:       "0d4a9d88654ccfc0becd6841ed2eaabdfb5673aae8b8477c8751de112404295b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "284c52f3e1190e14db52e5cf0518ef6fb78011b2a611d7081b1572ca0933ce19"
   end
 
   depends_on "cmake" => [:build, :test]

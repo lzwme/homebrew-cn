@@ -1319,6 +1319,7 @@ Homebrew-homebrew-core/Formula/d/diskonaut.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/disktype.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/diskus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dislocker.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/displayplacer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dissent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distcc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/distribution.rb, Homebrew/homebrew-core, 1
@@ -3022,7 +3023,7 @@ Homebrew-homebrew-core/Formula/k/kore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kosli-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotlin-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kotlin.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kpcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krakend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
@@ -4966,6 +4967,7 @@ Homebrew-homebrew-core/Formula/p/poco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pocsuite3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pod2man.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/podiff.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/podlet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podman-compose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podman-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/podman.rb, Homebrew/homebrew-core, 1
@@ -5223,6 +5225,7 @@ Homebrew-homebrew-core/Formula/q/qrcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrencode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrupdate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qscintilla2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qshell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qsoas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qsv.rb, Homebrew/homebrew-core, 1
@@ -8194,7 +8197,7 @@ Homebrew-homebrew-cask/Casks/e/electrum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/electrumsv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elektron-overbridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elektron-transfer.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/e/element.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/element.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/element@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elephas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elephas@beta.rb, Homebrew/homebrew-cask, 0
@@ -12279,6 +12282,7 @@ Homebrew-homebrew-cask/Casks/p/pgadmin4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phantomjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phd2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/philips-hue-sync.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/phocus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/phoenix-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix-slides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/phoenix.rb, Homebrew/homebrew-cask, 1
@@ -13701,6 +13705,7 @@ Homebrew-homebrew-cask/Casks/w/waltr-heic-converter.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/w/waltr-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waltr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wannianli.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/warcraft-logs-uploader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/warp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/warsow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/warzone-2100.rb, Homebrew/homebrew-cask, 1

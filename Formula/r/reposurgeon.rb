@@ -1,21 +1,19 @@
 class Reposurgeon < Formula
   desc "Edit version-control repository history"
   homepage "http://www.catb.org/esr/reposurgeon/"
-  url "https://gitlab.com/esr/reposurgeon/-/archive/4.38/reposurgeon-4.38.tar.gz"
-  sha256 "6849cad6f0a3bb5d627af5f65de0ce6a3185c224f80d0c0b2189636c41c7e168"
+  url "https://gitlab.com/esr/reposurgeon/-/archive/5.0/reposurgeon-5.0.tar.gz"
+  sha256 "2b2bc2a1ef4bca80802b99a8a9b5f20c1e8440a5d3bf5996d42d723df1d5ec81"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/reposurgeon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a54a55009b096a761809da8cdd7aa3cd33004d3b9508d0f2bdb1744436ff37a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bf43566c72e4afef9d463896b93e232ad8c9d91221c9b8de9e4dd7d92dbfd212"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4fecc94b0c345aeddc6a9a19080536e531df272ff1bc2adb729daf3d83ba7cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e10ae7fba30a3da96822f5ffd4500f1e49113dcb34fc75a856e16510071f2561"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09f0fe39f13df87a93f237b5b20eaad6f7241ba7e373cef762d0bdc691b185e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ff2f3f71730d1ca283c11dcef8bdb094d7b53375e8f9d4e0c398b57d829851a"
-    sha256 cellar: :any_skip_relocation, monterey:       "3aae9f9aea21147e89abaa57bc9fd2348e63b86d135cfaf15fde53976cb74dcd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "62bfd2a64621671a873851a1ab0389d3b923418df2270fd8141bbf5e8c293a38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b33736ea8edebc892923ca37aa2fdd61373bb7d3fbfc2bfb866473aa82697cfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17c29de4bf9b31a9e432df017775ede4a41bf9c21cad89791f40f9e5701a39a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1268fdcbd875b2f7d0b91a14c10d0c5adb43ca9fa9cbf025ee1384bbba7671e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "39c0f8406929c7ad39693b602755e7cee480127785afe74f90a28858a6e8a3fa"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bf34130a2cfe33dbec1f6f204cc25a338928bfbd39781e7b685d2302184fd776"
+    sha256 cellar: :any_skip_relocation, ventura:        "273d5f4ba3fb7f228f7a011bf8601d84b1dc6d361e617d9b06622107a1753a0f"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a750cb078223570b9c0e7212ea0de35033f8eebbae0e61baaf30b860aacfb1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "caebaf6357416099f46a1221c63f7fd886b3b101fded4d4472741ddb6d9605dd"
   end
 
   depends_on "asciidoctor" => :build

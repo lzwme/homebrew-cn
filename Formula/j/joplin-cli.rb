@@ -32,10 +32,9 @@ class JoplinCli < Formula
     depends_on "libsecret"
   end
 
-  # need node-addon-api v7+, see https:github.comlovellsharpissues3920
-  patch :DATA
-
   def install
+    # Need node-addon-api v7+: https:github.comlovellsharpissues3920
+    system "npm", "add", "node-addon-api@8.0.0"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}bin*"]
 
@@ -50,15 +49,6 @@ class JoplinCli < Formula
       terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
-
-    if OS.linux?
-      node_modules = libexec"libnode_modulesjoplinnode_modules"
-      (node_modules"@imgsharp-libvips-linuxmusl-x64liblibvips-cpp.so.42").unlink
-      (node_modules"@imgsharp-linuxmusl-x64libsharp-linuxmusl-x64.node").unlink
-    end
-
-    # Replace universal binaries with their native slices
-    deuniversalize_machos libexec"libnode_modulesjoplinnode_modulesfseventsfsevents.node"
   end
 
   # All joplin commands rely on the system keychain and so they cannot run
@@ -69,24 +59,3 @@ class JoplinCli < Formula
     assert_match "joplin #{version}", shell_output("#{bin}joplin version")
   end
 end
-
-__END__
-diff --git apackage.json bpackage.json
-index cad3df9..5d033d4 100644
---- apackage.json
-+++ bpackage.json
-@@ -51,6 +51,7 @@
-     "image-type": "3.1.0",
-     "keytar": "7.9.0",
-     "md5": "2.3.0",
-+    "node-addon-api": "^7.1.0",
-     "node-rsa": "1.1.1",
-     "open": "8.4.2",
-     "proper-lockfile": "4.1.2",
-@@ -79,4 +80,4 @@
-     "temp": "0.9.4",
-     "typescript": "5.2.2"
-   }
--}
-\ No newline at end of file
-+}

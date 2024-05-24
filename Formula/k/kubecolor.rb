@@ -1,18 +1,18 @@
 class Kubecolor < Formula
   desc "Colorize your kubectl output"
   homepage "https:kubecolor.github.io"
-  url "https:github.comkubecolorkubecolorarchiverefstagsv0.3.2.tar.gz"
-  sha256 "1f99891f6ee83cbc179eb264dbf036db316a6fa0c5ec844aaebc59a616a9c1e6"
+  url "https:github.comkubecolorkubecolorarchiverefstagsv0.3.3.tar.gz"
+  sha256 "780dc28a7284881da6e14cc2a9eb33f4be19a0d84c5c9402702c34c720e07ad3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24293015aeace2e223739c27b8f3fee770d787f23870fc0403346a466599d1bd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "783033188019906c58fcccc6efbe51a1c7e34533e6b82b22ae0d872bfd82aeb9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c90bf247e5b6337ec434ea24cbe46eae6ff683c55819e30b4f506391b754bba5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9513adac6122ef9dc7ff26dc35a279e5de1ff564a652040504772bc41c20d96b"
-    sha256 cellar: :any_skip_relocation, ventura:        "55b1f2a05345db1c55cc020cb3ba2145b4782059342b65ea17c69186c39ba0a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "6ebfe875ccc97ac70c70f1f4dc9f09c191b3142c4d758c20211b8477e8bf42ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e013f7f0b9d754ff25320772c801c266db3aad8d4574318d0a83c1b22c64717c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad28aba077f5bacf884caa340cb91e0950c69fe7de459e1223a2e8b5733a9fa2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b99f1cbf4faab2d80dcb23d206fb3d66cb6feb68925769acd11c315a8fcbb1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7eaa3de0ef0726db8368c7c3fa23531a8b139cbbd782520697f8a527710a8fe6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "97f7423e543ebd63a9edb85ce2e25eb74f8e1922c8dfdc597bde27fa79e92379"
+    sha256 cellar: :any_skip_relocation, ventura:        "0618d7b4256db786affb7068af90d1f012745e99ff1c50982d9ed5756d1600ef"
+    sha256 cellar: :any_skip_relocation, monterey:       "455a565f1f06a6b9206d33fc45ea0d04d32c807c16464f50f914efd6e5fdbcf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "143d7336a3eb51e8733bf737c944d1969a0d789e90ed961dae0128df7318cfc9"
   end
 
   depends_on "go" => :build

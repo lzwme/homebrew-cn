@@ -12,6 +12,8 @@ cask "gitify" do
     strategy :github_latest
   end
 
+  auto_updates true
+
   app "Gitify.app"
 
   preflight do
@@ -30,9 +32,12 @@ cask "gitify" do
   ]
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.electron.gitify.sfl*",
     "~LibraryApplication Supportgitify",
-    "~LibraryPreferencescom.electron.gitify.helper.plist",
-    "~LibraryPreferencescom.electron.gitify.plist",
+    "~LibraryCachescom.electron.gitify*",
+    "~LibraryCachesgitify-updater",
+    "~LibraryHTTPStoragescom.electron.gitify",
+    "~LibraryPreferencescom.electron.gitify*.plist",
     "~LibrarySaved Application Statecom.electron.gitify.savedState",
   ]
 end

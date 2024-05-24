@@ -1,9 +1,9 @@
 class Xterm < Formula
   desc "Terminal emulator for the X Window System"
   homepage "https://invisible-island.net/xterm/"
-  url "https://invisible-mirror.net/archives/xterm/xterm-391.tgz"
-  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_391.orig.tar.gz"
-  sha256 "6091371e94de867ce186cc1bc306947b0482d71631847fdeab7982acb20ae6b8"
+  url "https://invisible-mirror.net/archives/xterm/xterm-392.tgz"
+  mirror "https://deb.debian.org/debian/pool/main/x/xterm/xterm_392.orig.tar.gz"
+  sha256 "4d57372ef08eafa9fb7682db8d07be0fe0513e58e8478c2ec8e9b62486e7fe5e"
   license "X11"
 
   livecheck do
@@ -12,13 +12,13 @@ class Xterm < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "479fdc4cc40a9bb0ca10bd5a7ad3dbd3be9f3faa9078c2deb798221edc25e496"
-    sha256 arm64_ventura:  "7f4a041bc1ca340bf7679676712ea8b78e1ec668b66f33e4286c0b61f2c35a9d"
-    sha256 arm64_monterey: "48276f09846bcd27039d3ef9ca5357cce792610d5f23a2f83d435fe09a887fab"
-    sha256 sonoma:         "863e100472f7cfd716dc23b9bc74c9a4b9978e2e3c3efaa79f62372e92a93fd0"
-    sha256 ventura:        "38affdd144f9197e4e27b622e4fa9afd5a8c2a3de518382fdaaabe103618b6a3"
-    sha256 monterey:       "3603239ffafd170fae6685b92b61a204a037a6a6ed85e51274b5c27c24b337b9"
-    sha256 x86_64_linux:   "61790986e837892f7d178b09cabdb9fcbc4f741069426f16c9a09947376aaaba"
+    sha256 arm64_sonoma:   "f72fdefd236742f3c35aa26d4159435889d55a5fa5e4b37c5fd5437dfae9eaf3"
+    sha256 arm64_ventura:  "44f67de2a4069224cfc05e8ed81d9a95f20423454d3f41c52d493c35dda62a93"
+    sha256 arm64_monterey: "b7e42e62dfbdba37c1dd3a1830af2e56b1a6320c6498e4456fc355caf5531fe9"
+    sha256 sonoma:         "f3138e8b7063ec5e0f1e9df943dd8b307198cd8dea9f740411ce115258b97727"
+    sha256 ventura:        "0cda073915cefb86c052559c66da4c8adbc39ee8d1f5b3fd16cec963b9961c54"
+    sha256 monterey:       "bf87dab4e9964fb58e4530c79c8b959f06f4f911e6206dc79d373ce84232678e"
+    sha256 x86_64_linux:   "47d4862a0d48ceeacfa82cc6bdd58eebc6c95729a70960f3b4c0e96e52fb6132"
   end
 
   depends_on "fontconfig"
@@ -32,6 +32,8 @@ class Xterm < Formula
   depends_on "libxmu"
   depends_on "libxpm"
   depends_on "libxt"
+
+  uses_from_macos "ncurses"
 
   def install
     system "./configure", "--disable-debug",

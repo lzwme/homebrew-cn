@@ -14,14 +14,14 @@ class Ldns < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "716f3b03d4364ba0f0a395171c145b704f8ad0739e174a5c73a4423e8f7c8d51"
-    sha256 cellar: :any,                 arm64_ventura:  "27be30c5d63b1dc9d03c7dee714380ce4f8dfaec2ad3952224b85aa1dba22505"
-    sha256 cellar: :any,                 arm64_monterey: "b5af9a98dedc6b4861b8506d516e351fedeb17b4643f1da2feeb5da4392d4426"
-    sha256 cellar: :any,                 sonoma:         "60022d90fbf3c4c4c8e33d23eacf14066c5c5d9ec0ca522a5f02c44972f2efb1"
-    sha256 cellar: :any,                 ventura:        "7a534bf6bebe3780ef463aeba00aaf9e32becbe880343ef71b5a20f99c8a93c9"
-    sha256 cellar: :any,                 monterey:       "64d0687086091f591eceb9a81473016ea26f7aa7f5e94322154159de537d24f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d5164fde8111e360025df90d3bcd0cf0fb8b735fc5c9c5a854504d63ed928c3"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sonoma:   "5a0d64836a94921e9bcb63fb6e6477784f479571c51d221b1572a40de9e00498"
+    sha256 cellar: :any,                 arm64_ventura:  "ce8189cd452571aea8d3a5d2f15f715c707807471071600fe78246c10ef4cc41"
+    sha256 cellar: :any,                 arm64_monterey: "b7c0d00545d1f15b307f6c78ffba724989d7f799aad71d7f336437a7e8954d84"
+    sha256 cellar: :any,                 sonoma:         "e50234b63ec0068ecbbaa9a7f1976cbafd83a9ab0774b1889d3c5b5eeb653953"
+    sha256 cellar: :any,                 ventura:        "c733862096dc3e1baefde2eef0b40e18c59e0b381d6d98f5722148ccc3fc4436"
+    sha256 cellar: :any,                 monterey:       "c0f2ad78dc5131aa0c0fe7afd2630d00f295ee639749b8d0482d1621a6ec24b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ce187a921a1143e42be0f75b28c5690645a10e3d76c423899bd2755e7b5d1da"
   end
 
   depends_on "python-setuptools" => :build
@@ -30,6 +30,12 @@ class Ldns < Formula
   depends_on "python@3.12"
 
   conflicts_with "drill", because: "both install a `drill` binary"
+
+  # build patch to work with swig 4.2.0, upstream pr ref, https:github.comNLnetLabsldnspull231
+  patch do
+    url "https:github.comNLnetLabsldnscommit40a946995c0b8e4efebdc51dc88e320ce72b104f.patch?full_index=1"
+    sha256 "b0556d9e24784fd37ecf0d0e8ab51265e8c8e2e1847692453a4b9f6ad80bdd3b"
+  end
 
   def install
     python3 = "python3.12"

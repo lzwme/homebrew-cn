@@ -30,6 +30,11 @@ class Agda < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 arm64_sonoma:   "c5ad14e8d9384d04112c8e786acc1c2f3746d6e0da40b9035a4a1418f1fbeadd"
     sha256 arm64_ventura:  "c6ce41a5ab626c84211b9edbff313fac292a1816ddb939dba75196a1e62debb3"

@@ -1,9 +1,9 @@
 class Libedit < Formula
   desc "BSD-style licensed readline alternative"
   homepage "https://thrysoee.dk/editline/"
-  url "https://thrysoee.dk/editline/libedit-20230828-3.1.tar.gz"
-  version "20230828-3.1"
-  sha256 "4ee8182b6e569290e7d1f44f0f78dac8716b35f656b76528f699c69c98814dad"
+  url "https://thrysoee.dk/editline/libedit-20240517-3.1.tar.gz"
+  version "20240517-3.1"
+  sha256 "3a489097bb4115495f3bd85ae782852b7097c556d9500088d74b6fa38dbd12ff"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,15 +12,13 @@ class Libedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b085923141c20b3f01791a17c230d01817fa0247d8a8f51d6461f015c539b601"
-    sha256 cellar: :any,                 arm64_ventura:  "7df8b6d1eefb735eb019a81af48c41f9339589c27f8bf44f6194eb47f47d34c0"
-    sha256 cellar: :any,                 arm64_monterey: "735f2b5d2826f5cae4b1e49a2a2c7473574d0d6e4b45a6be41173c34ae2597f4"
-    sha256 cellar: :any,                 arm64_big_sur:  "f8c49eadade2fa70ba2dee19e3c1251c40c0ba7e2b57d18990452cb6f5135a83"
-    sha256 cellar: :any,                 sonoma:         "c8fd317bac4ca00fcbb2eecd0446c9aa917247e6eb15f57f0bb2d2a4594c90b0"
-    sha256 cellar: :any,                 ventura:        "079e6825a76aee062a23925e879b784e21abb848be6c7c186d7390e8e1b2aa33"
-    sha256 cellar: :any,                 monterey:       "70e1ce85fcbb9c41bc81e3ffedf78c8b50873baff65a5dc30e0fb06d8b2d0bd2"
-    sha256 cellar: :any,                 big_sur:        "2c4af92251b1776773bf207a926aebf42bc240d32337f29d62dd9587307d0072"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cb9c8007d6d9b21cc81c5bcd92e50ee75bc9605a0a2014399c31c720a92edcd"
+    sha256 cellar: :any,                 arm64_sonoma:   "d4190db11789aeda7fb60afb3316a8a46145899e6976b3b6577c25a37e39a91a"
+    sha256 cellar: :any,                 arm64_ventura:  "4c7b70562b9e2cc617554283d5b83ea52bdf2a06288bd4c927a781716482106c"
+    sha256 cellar: :any,                 arm64_monterey: "f665cbc9c6a187b9eb592d8c74cb9dcb9e1de82d87af65e725cf66f7252b26d7"
+    sha256 cellar: :any,                 sonoma:         "3897ed8b457a813b437acd32a74c989b955d0294b8473c03c9663ec3a7e62541"
+    sha256 cellar: :any,                 ventura:        "38f2acd95585e42c83f407f54af077ba34cb8b5800930fe3536c1f707171bba9"
+    sha256 cellar: :any,                 monterey:       "b6405804a036f4088513e757ddb940f53b86486d4fd968c786dc4eb6259f9baf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5eda364492fa30e07098bea7259d970c221dffce51f570594a5b94c50a435ee"
   end
 
   keg_only :provided_by_macos

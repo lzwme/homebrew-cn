@@ -1,10 +1,9 @@
 class SaneBackends < Formula
   desc "Backends for scanner access"
   homepage "http://www.sane-project.org/"
-  url "https://gitlab.com/sane-project/backends/uploads/110fc43336d0fb5e514f1fdc7360dd87/sane-backends-1.2.1.tar.gz"
-  sha256 "f832395efcb90bb5ea8acd367a820c393dda7e0dd578b16f48928b8f5bdd0524"
+  url "https://gitlab.com/sane-project/backends/uploads/83bdbb6c9a115184c2d48f1fdc6847db/sane-backends-1.3.1.tar.gz"
+  sha256 "aa82f76f409b88f8ea9793d4771fce01254d9b6549ec84d6295b8f59a3879a0c"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :head
@@ -12,15 +11,13 @@ class SaneBackends < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "1851ff0ff04d2bc4fba4813d273b5da3b8568b319d125e281c87a727f931dd31"
-    sha256 arm64_ventura:  "fb030d64b3e6974586384b4398b4652a109dfb5723e21fc4e237170d59870392"
-    sha256 arm64_monterey: "dde5b1ae3dba8beba083c3adff88626792e0ca4b68f2eaddfd445122fa06e561"
-    sha256 arm64_big_sur:  "816f955ec13f1767fa9bf3e721a3fb55a06bd17482c3db58fca4dab8c1a0ea44"
-    sha256 sonoma:         "5e795e1714fc046087166763fc705461e0884dc53c5f374cc69bd67296123b97"
-    sha256 ventura:        "dd313349947d2636690227b64fcaf52d17b9389851787906f37bf91351076775"
-    sha256 monterey:       "0de46efc5c9fdfb44ee043fff93b630b88cb678de1cda40d62c30575d7979435"
-    sha256 big_sur:        "68a5dadc176006ccaac9957884dfa582bde20c846e0567201efb381e5cc190af"
-    sha256 x86_64_linux:   "d015337c002f86128e3af57eb58afdc40ad8716fdde860c60c939cc803245117"
+    sha256 arm64_sonoma:   "97de2c6a250cb1b8111547467d266161b842e2592c742276fc35b09193833b5a"
+    sha256 arm64_ventura:  "8c8de024315a21d793327cb837dde29fd42c5adf74588be71d4fb0b3a0c638dd"
+    sha256 arm64_monterey: "9306dcf8e0d171fad08538e45f4006528bc0a30e8c8317f6ae48c19eabc56890"
+    sha256 sonoma:         "ebfb6563c7dd81bcf3e64458e300b3bf796a655745dff4dfda9827217f98b05c"
+    sha256 ventura:        "fbacaf2ea55d47657fcd54e4f888ee3b8c9082ac5a5a3caa468b039f1e74a803"
+    sha256 monterey:       "52b9c4bc5ecc9612cd8a3a02ee0e6968ce3df07658ff14849547611205f022bc"
+    sha256 x86_64_linux:   "5958543bd7bd0b1d3f542bf8b98bcbd863e682a2ddda08ec2b4c1f55b4cb572b"
   end
 
   head do
@@ -42,6 +39,10 @@ class SaneBackends < Formula
 
   uses_from_macos "python" => :build
   uses_from_macos "libxml2"
+
+  on_linux do
+    depends_on "systemd"
+  end
 
   def install
     system "./autogen.sh" if build.head?

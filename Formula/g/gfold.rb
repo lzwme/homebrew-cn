@@ -1,19 +1,19 @@
 class Gfold < Formula
   desc "Help keep track of your Git repositories, written in Rust"
   homepage "https:github.comnickgeracegfold"
-  url "https:github.comnickgeracegfoldarchiverefstags4.4.1.tar.gz"
-  sha256 "bdcbebd543f7222e253e4324677a5c524f90543cbf859a448359ac426b9453d9"
+  url "https:github.comnickgeracegfoldarchiverefstags4.5.0.tar.gz"
+  sha256 "ba5afe509ef17f5cdde8540cfd9321001cbb10d49dd6324f22562d65dbae8738"
   license "Apache-2.0"
   head "https:github.comnickgeracegfold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "60e83410cdd305ee8696a31edde64ab86770a3cf68ac24d9e32323699554b6b4"
-    sha256 cellar: :any,                 arm64_ventura:  "4e55b07619facfe9f0f610613cf690787eca71c05b938a7b8d7451e516adb768"
-    sha256 cellar: :any,                 arm64_monterey: "ba0e3c374183fc5a9cb6d23c5033c5445e33cdc41a2a7b0d071ed58116906381"
-    sha256 cellar: :any,                 sonoma:         "a9c83046b56ab7e0948e5d54c6705eafd73d4000e294be5ccab9f987a52a4d43"
-    sha256 cellar: :any,                 ventura:        "08d4b28d38323c445deea7c5e67eecd8c2e7bf0c81f20c5eb0a7dec1dc1713f6"
-    sha256 cellar: :any,                 monterey:       "e7d97f4db17eb4f5b2ebace9124c0268bfbfcb75fd83d8655b373a24cdeefb3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf60815db0ec9cbb2daa8b67b688a40d873263937a5e09099e45059aab82341c"
+    sha256 cellar: :any,                 arm64_sonoma:   "3d60d01fcc4d949d385448343156ee494dfeacc91ce4f3f1292517d455989849"
+    sha256 cellar: :any,                 arm64_ventura:  "55d732326ef6bb146960f4d291f9146f882fab21a1ecdd4db552474bbf1123b5"
+    sha256 cellar: :any,                 arm64_monterey: "9544cc10fe9106d5f773f28f50481d5f90833f7203e1e13fb6b8f85275e6a5d0"
+    sha256 cellar: :any,                 sonoma:         "f2fd71f5c5d944ae70b41642aeeb6c98fd5c8dc3dc27882b1973b6c20c8acdba"
+    sha256 cellar: :any,                 ventura:        "9ec3069ba7bf5264bbbb2b0e7fef50608c1ad61981bc65e319678e2f5ea0f365"
+    sha256 cellar: :any,                 monterey:       "efa17cc98e7064f71df72a1d80100d63c68cddb4d99672684c3121c4f67710a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77f496786ea2247a8f28bc809fcc5c84cb879ef385a039ee8aa7b2e68e9d63c0"
   end
 
   depends_on "pkg-config" => :build

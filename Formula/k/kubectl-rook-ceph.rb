@@ -1,19 +1,19 @@
 class KubectlRookCeph < Formula
   desc "Rook plugin for Ceph management"
   homepage "https:rook.io"
-  url "https:github.comrookkubectl-rook-cepharchiverefstagsv0.8.0.tar.gz"
-  sha256 "b007bc9e971c253da53023f0448f82091d8dc94f8081789cf9b889e86d364a7a"
+  url "https:github.comrookkubectl-rook-cepharchiverefstagsv0.9.0.tar.gz"
+  sha256 "19a633b4ab2f4b7ff70f5574fbec724025a373c27536bd92f0cc1ec2178e0cd6"
   license "Apache-2.0"
   head "https:github.comrookkubectl-rook-ceph.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "137aafef7f44b870db83ea59e6ec3913f293466aa348a16361520ae32bfdfa9c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7d720d137fa1d79e44238cc55c4debc7bc6eae7124b8a54c6f0e21fac5d8b9d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05e516a225665fe3853348ce567922a513b5244ebdc6db7faad7dd5711ce2825"
-    sha256 cellar: :any_skip_relocation, sonoma:         "94b05708cb60cb8cd982f7dcd169447de9de19a22a8d7dbb9054cfb98bfe9f7a"
-    sha256 cellar: :any_skip_relocation, ventura:        "967d6fd4ebfff15f1a3375fb1d80b0eee5282626b7dbc7a65d55aeb570b06aa4"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b19ce5f72c20d6fe2aa814e129d4ac589d771962d77db36e98e26f601628b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "218a81965136436f67253efdf2d8db8df45f1924d09b26567eb1b5868483e5da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f86170c9f4a041d898abd6b32fb8d76e0a395dbd13aa717769e9d0429fe2aec8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f55bfbe7be522b8b5118ba8b52ec2bc9edd148158e40d1da840e3a5313196c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52668ae3f55e4daf93518cc50e346af793934a207e1041680658663756444b43"
+    sha256 cellar: :any_skip_relocation, sonoma:         "84ffa08dc21a971bfb8c1bdcd1e289a7c1e9654ee1e67a3dc67c7b3447b95b7f"
+    sha256 cellar: :any_skip_relocation, ventura:        "be38d75ec35d43e2f61104305713d6be47bbbb76297dadccfda3407d73d06857"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1ebcbf9375878ca8589c3b93a9d567699aa84e2c03d655f5c79221f5ec918db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "deb77c0c6473345d172bf3b638c95da4732bfbddb5ea719a54d227b3f9d0b2c4"
   end
 
   depends_on "go" => :build

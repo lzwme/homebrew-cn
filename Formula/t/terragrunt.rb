@@ -1,18 +1,18 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
   homepage "https:terragrunt.gruntwork.io"
-  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.58.8.tar.gz"
-  sha256 "5449f181e25b3038cce5843cf31a994c05e062d3c01e2228c9ef55b28b62d6ba"
+  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.58.9.tar.gz"
+  sha256 "f3dab30cbb75cb1e850fe4859b3a5b20fda7851c65f20aaa4475bd8c0f6e8a3b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eaedeb89b8fb7083b64a6b98b1584d98a09bbe0f5df9eb954fed2f86cbab849f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "735474e11f87fb77d97a26d8c550f188b298331d4d63a2550bc0cd8cd475b0dc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6c4cea6866848c089fd1176319342d049c8eb69ee16f602f1d974ba48f1cec2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "70d398b7810d5d2b2f3ed8c96001a3b036491c35b3412540af6e37c20a1939d8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b82964e668793be2011955af4fbf033b376d66a5997150f847236f8df2a211f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "ba1bbabd4256dc9edf8b0f6c20374a59ee8dce34db9b1431a2feca3e32241e4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec5b1366a3178c652fcd5e0b7dfc52e2bd06ebb0c1fbe061aef3732fe49cddea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a7bf4370c5a88a82c118d408410404ca5d717ec5370bf30a79c3be7851ed865"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2c940b34c1cbe404f1f55a5000383eb842d5b1ea7b8c8cdec2d38f1883a1a22"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c02d2ef328e30c408cb4fa4e2fc0e341272a93afd974e482a388b99df9ebb55"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b2f7a29efb423671dd7ddb590177b08775f38729ab9611058e5142cff3a34f32"
+    sha256 cellar: :any_skip_relocation, ventura:        "220f4fa04d82501bd71435e714a8aaf68e7bda5e42dad6f26c0b27bd2ca6df50"
+    sha256 cellar: :any_skip_relocation, monterey:       "43cdd702f88943157078c068d50de53ef3243fa8eb3eb8adb1d5f86a46f4645c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "555f09e09489271dfb938757276dbcb2235c8f27e886ff53a02ca3b712b6ead8"
   end
 
   depends_on "go" => :build

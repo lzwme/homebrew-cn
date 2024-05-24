@@ -3,19 +3,18 @@ class GitDeleteMergedBranches < Formula
 
   desc "Command-line tool to delete merged Git branches"
   homepage "https:github.comhartworkgit-delete-merged-branches"
-  url "https:files.pythonhosted.orgpackages69e1377ded5fd14801bd7f3174ab429882d85086e34fe0a0eec308c160c803f4git-delete-merged-branches-7.4.0.tar.gz"
-  sha256 "b976b7b2210a1dab728e654e1b023f8e5309d98dc14730bfb613e893604847e5"
+  url "https:files.pythonhosted.orgpackages6009917d48f0b931475bf3f3a60c522db12db05411ea028cae2adcb8482e2334git_delete_merged_branches-7.4.1.tar.gz"
+  sha256 "81ca59d29f3d555c1c4885384f5be33b2a1e637bb8e01f64a8605e9a5f6db6bb"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3752fa27f6c46d580d98c2d24228fd5685629fec778a1f1d82e03e9308b7aea4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32a55097c34e9df80eb06db35a8282834cecab1b976815997f4c5ad5823b9517"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c4c3e401baa24ecf07d031ac6031920508e8eb0dee82f675f509378e7fbc203"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c768fb1021ad94916518b18842d1483ed470794d2dbc8b39697f73db100be0df"
-    sha256 cellar: :any_skip_relocation, ventura:        "b79be0099c5dae02d3a867b26723dcc719bda2052a120968e2a5007a1d674a94"
-    sha256 cellar: :any_skip_relocation, monterey:       "618cf5607d3e2529d07746eade8ab5109b4a312cb675b1c815a6926c94b1d375"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1979eb7353922d1985d55ec9dd94b8e2291ebe63661d72e75be77902bf30ba6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "730fe878bf84f3f1686997cbfc6282e3cfaa12800ede068169aa98afb9e38942"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "62de11e672702ebf784d738bc87a9acda1b2e678ba4fe2caad50c3592d5da8c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e58af7faeb41355b1f3c79b1516b6badd8f5cf461ba5c7c4fca982dd913ca45"
+    sha256 cellar: :any_skip_relocation, sonoma:         "82dc490bab03da709570a42f0ff41dd0228f279add3e08914638f9d1441090a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fc90ecfaee427012ed2babd8c60a866f72e0ab495927deb7d53d23d827ebc4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e70e60ff0b865f882d6e7490b668ba7c9c1ad75579a946e8581e085517b4dd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71b1113ce036b61fcfef91135d4ac3275699eb3b026aa4dda3bef714c5f32551"
   end
 
   depends_on "python@3.12"
@@ -26,13 +25,13 @@ class GitDeleteMergedBranches < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackages9a0276cadde6135986dc1e82e2928f35ebeb5a1af805e2527fe466285593a2baprompt_toolkit-3.0.39.tar.gz"
-    sha256 "04505ade687dc26dc4284b1ad19a83be2f2afe83e7a828ace0c72f3a1df72aac"
+    url "https:files.pythonhosted.orgpackagesccc625b6a3d5cd295304de1e32c9edbcf319a52e965b339629d37d42bb7126caprompt_toolkit-3.0.43.tar.gz"
+    sha256 "3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"
   end
 
   resource "wcwidth" do
-    url "https:files.pythonhosted.orgpackagescbee20850e9f388d8b52b481726d41234f67bc89a85eeade6e2d6e2965be04bawcwidth-0.2.8.tar.gz"
-    sha256 "8705c569999ffbb4f6a87c6d1b80f324bd6db952f5eb0b95bc07517f4c1813d4"
+    url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
+    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
   def install

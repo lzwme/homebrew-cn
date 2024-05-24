@@ -1,21 +1,19 @@
 class GoogleBenchmark < Formula
   desc "C++ microbenchmark support library"
   homepage "https:github.comgooglebenchmark"
-  url "https:github.comgooglebenchmarkarchiverefstagsv1.8.3.tar.gz"
-  sha256 "6bc180a57d23d4d9515519f92b0c83d61b05b5bab188961f36ac7b06b0d9e9ce"
+  url "https:github.comgooglebenchmarkarchiverefstagsv1.8.4.tar.gz"
+  sha256 "3e7059b6b11fb1bbe28e33e02519398ca94c1818874ebed18e504dc6f709be45"
   license "Apache-2.0"
   head "https:github.comgooglebenchmark.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "645b8944295b33279cfa7464992f5fe3f13ef10a49a111428ff1546d29121c2e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "708da5a3e18b29ed93a0eb942521e1033ad137482b73494de8fa2cc66359aa73"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1484ffcd4cc84cd253cf2526bae7145fe70ae5ece7140409b6157bc2d63f73e7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "234862310e242aa2ab9ae92c69d831a51608a4a47aff0bb1073d4a596f162208"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7a6d054ccc2fa65f99516eac71114303ec554450ee7139d7af16307d441239da"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0b6a7565d288b162ca6d20b35451a25d2c187c90d0352079239a3bdc9c56be5"
-    sha256 cellar: :any_skip_relocation, monterey:       "447e907557a4e96583be9359780b594df22105bcbb0b21ef02d924db63aa3c6e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e956a31d8f4a7769f438935a83548f5072218d8a8707e344ab0db655bd393a49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6923ed936f3b729658b58734b3ec766fbf5c9074ab1acdf0670186fa8856c41a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96f66edd70bd4fd5b743b3cb47481c55a0fa6119048566d304f4f4b76f4e3cfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70025180f4eefd615cd18012febe749208f4113ea925789dc10ef902adc03dc6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c489b8fce7399e3b8e429df45f9c119c405669a86ec10ba1689984732bb8de80"
+    sha256 cellar: :any_skip_relocation, sonoma:         "89b959b99ccb917145e426fc38c79f474a48799f86a875a8da3da0edb898250e"
+    sha256 cellar: :any_skip_relocation, ventura:        "f49d6f70f17ac2f192674ab9136713bc4be13280fef264cedb47d3e58f25e730"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b9200561f16267c54323837a819a9f9c384d8a2318c7caf51b6b6d602b4b816"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32cf9bc19a5623a51c97a2bbb200bdb11fb5d444b5d9247b7c1a68225a2855ca"
   end
 
   depends_on "cmake" => :build

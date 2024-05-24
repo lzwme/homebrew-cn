@@ -1,19 +1,19 @@
 class Buildozer < Formula
   desc "Rewrite bazel BUILD files using standard commands"
   homepage "https:github.combazelbuildbuildtools"
-  url "https:github.combazelbuildbuildtoolsarchiverefstagsv7.1.1.tar.gz"
-  sha256 "60a9025072ae237f325d0e7b661e1685f34922c29883888c2d06f5789462b939"
+  url "https:github.combazelbuildbuildtoolsarchiverefstagsv7.1.2.tar.gz"
+  sha256 "39c59cb5352892292cbe3174055aac187edcb5324c9b4e2d96cb6e40bd753877"
   license "Apache-2.0"
   head "https:github.combazelbuildbuildtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1a3e775849f713601b517b24567a0eff1737fe2633123c49ea2f67d005d354f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1a3e775849f713601b517b24567a0eff1737fe2633123c49ea2f67d005d354f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1a3e775849f713601b517b24567a0eff1737fe2633123c49ea2f67d005d354f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b4d767e39dd77e765d7f6cf7a859f6681e00dcb564c4d5d59085aa6a75edd8f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "b4d767e39dd77e765d7f6cf7a859f6681e00dcb564c4d5d59085aa6a75edd8f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4d767e39dd77e765d7f6cf7a859f6681e00dcb564c4d5d59085aa6a75edd8f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5001cdb2893c5444d7643baac14b0fd975f0d81c79b3be830b2f467413ae596"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b617acf50bd20c91ce5558c489e83d1ae1b226d96ee8b2ae8b15dbc8ef3e11f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b617acf50bd20c91ce5558c489e83d1ae1b226d96ee8b2ae8b15dbc8ef3e11f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b617acf50bd20c91ce5558c489e83d1ae1b226d96ee8b2ae8b15dbc8ef3e11f2"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5422d9c366e26e9cd7f6d47fe318a1b73e52ed57103df3d347798bd25f792f5e"
+    sha256 cellar: :any_skip_relocation, ventura:        "5422d9c366e26e9cd7f6d47fe318a1b73e52ed57103df3d347798bd25f792f5e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5422d9c366e26e9cd7f6d47fe318a1b73e52ed57103df3d347798bd25f792f5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "803d8ed373b42e267ea090508338e7d9663f307aac3ebdb8d9c86a6e28f2b423"
   end
 
   depends_on "go" => :build

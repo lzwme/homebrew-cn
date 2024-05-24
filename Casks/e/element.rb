@@ -1,31 +1,30 @@
 cask "element" do
   version "1.11.67"
-  sha256 :no_check
+  sha256 "1909fc7a0f90d728df5e6324db54686a539c4b9e265ac6dd8e57bae0e7802e56"
 
-  url "https:packages.element.iodesktopinstallmacosElement.dmg"
+  url "https://packages.element.io/desktop/install/macos/Element-#{version}-universal.dmg"
   name "Element"
   desc "Matrix collaboration client"
-  homepage "https:element.ioget-started"
+  homepage "https://element.io/get-started"
 
-  # The upstream website doesn't appear to provide version information. We check
-  # GitHub releases as a best guess of when a new version is released.
   livecheck do
-    url "https:github.comvector-imelement-desktop"
-    strategy :github_latest
+    url "https://packages.element.io/desktop/install/macos/index.html"
+    regex(/href=.*?Element[._-]v?(\d+(?:\.\d+)+)[._-]universal\.dmg/i)
   end
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "Element.app"
 
   zap trash: [
-    "~LibraryApplication SupportElement",
-    "~LibraryApplication SupportRiot",
-    "~LibraryCachesim.riot.app",
-    "~LibraryCachesim.riot.app.ShipIt",
-    "~LibraryLogsRiot",
-    "~LibraryPreferencesim.riot.app.helper.plist",
-    "~LibraryPreferencesim.riot.app.plist",
-    "~LibrarySaved Application Stateim.riot.app.savedState",
+    "~/Library/Application Support/Element",
+    "~/Library/Application Support/Riot",
+    "~/Library/Caches/im.riot.app",
+    "~/Library/Caches/im.riot.app.ShipIt",
+    "~/Library/Logs/Riot",
+    "~/Library/Preferences/im.riot.app.helper.plist",
+    "~/Library/Preferences/im.riot.app.plist",
+    "~/Library/Saved Application State/im.riot.app.savedState",
   ]
 end
