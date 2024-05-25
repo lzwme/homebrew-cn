@@ -6,17 +6,16 @@ class VirtManager < Formula
   url "https:releases.pagure.orgvirt-managervirt-manager-4.1.0.tar.gz"
   sha256 "950681d7b32dc61669278ad94ef31da33109bf6fcf0426ed82dfd7379aa590a2"
   license "GPL-2.0-or-later"
-  revision 4
+  revision 6
   head "https:github.comvirt-managervirt-manager.git", branch: "main"
 
   bottle do
-    rebuild 9
-    sha256 cellar: :any, arm64_sonoma:   "41fd6e9a29d3603489ab9da23e8966e1dcaaaecaf66e19ffe47122abdbe850d0"
-    sha256 cellar: :any, arm64_ventura:  "f53adafe25e436ef8e61ce865b1af111b8c2de9e4ddf1d0730f1c568c3339919"
-    sha256 cellar: :any, arm64_monterey: "e746ef562019ccc97d922eedcd91f93c1bbc9ef0db0e7065c8fef7bc1fbbdf77"
-    sha256 cellar: :any, sonoma:         "b7667d575c7a133e03822d83a5b57cb90077c8fbecfd6d79b1a162eef0af3ff0"
-    sha256 cellar: :any, ventura:        "fc0ce55d9c07f4c60731b8b2cfcdcf7359b1c4dfccc090e6bca981b9ea956d16"
-    sha256 cellar: :any, monterey:       "5c0e2b424eef79822016435dd21a2349b89a5d22f4d59f9c632114d7f57d966a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "14429d8f3fb234cb4de3b000f034b6b10acfca45a3b8a15cbdbf9f46d78a69e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6783700ef6e932b444508bfec50d88609d640c4cb2232c7eb8d5cfac5642ec1b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c5474b471b67c8dca81234745cd79144df4744a7cfdc5a8b4988fe9d869cab9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9b26211b260ec8a8d0eb5888bf5e9311a75761ba3e840bf7c6abcd3e461e9d88"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf51feb81223c6e96bcd88df41f9aa8543fe094062306c63b14f188cc5f64f19"
+    sha256 cellar: :any_skip_relocation, monterey:       "65a24cd05348fc76c900ce7b989dcf8280274c14b7203958674a50ad70efa1fa"
   end
 
   depends_on "docutils" => :build
@@ -30,6 +29,7 @@ class VirtManager < Formula
   depends_on "gtksourceview4"
   depends_on "libosinfo"
   depends_on "libvirt-glib"
+  depends_on "libvirt-python"
   depends_on "libxml2" # can't use from macos, since we need python3 bindings
   depends_on :macos
   depends_on "osinfo-db"
@@ -49,14 +49,9 @@ class VirtManager < Formula
     sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
-  resource "libvirt-python" do
-    url "https:files.pythonhosted.orgpackages47f75c5112f79761616bf0388b97bb4d0ea1de1d015fb46a40672fe56fdc8ef0libvirt-python-10.2.0.tar.gz"
-    sha256 "483a2e38ffc2e65f743e4c819ccb45135dbe50b594a0a2cd60b73843dcfde694"
-  end
-
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages86ec535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392dbrequests-2.32.2.tar.gz"
+    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
   end
 
   resource "urllib3" do

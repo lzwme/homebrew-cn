@@ -912,6 +912,7 @@ Homebrew-homebrew-core/Formula/c/closure-compiler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloud-nuke.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloud-sql-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloud-watch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cloudflare-cli4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflare-quiche.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflare-wrangler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflare-wrangler2.rb, Homebrew/homebrew-core, 1
@@ -2920,6 +2921,7 @@ Homebrew-homebrew-core/Formula/j/jsonpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonrpc-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsonschema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonschema2pojo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jsontoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsvc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jtbl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jthread.rb, Homebrew/homebrew-core, 0
@@ -3752,6 +3754,7 @@ Homebrew-homebrew-core/Formula/lib/libvdpau.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libversion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libvidstab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libvirt-glib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libvirt-python.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libvirt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libvisio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libvisual-plugins.rb, Homebrew/homebrew-core, 1
@@ -4456,6 +4459,7 @@ Homebrew-homebrew-core/Formula/n/nvchecker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvimpager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nvtop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nwchem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nxengine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nyancat.rb, Homebrew/homebrew-core, 1
@@ -6028,6 +6032,7 @@ Homebrew-homebrew-core/Formula/s/streamvbyte.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strip-nondeterminism.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/stripe-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stripe-mock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strongswan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/structurizr-cli.rb, Homebrew/homebrew-core, 1
@@ -7850,6 +7855,7 @@ Homebrew-homebrew-cask/Casks/c/copytranslator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/coqide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cord.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/core-data-editor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/core-tunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/corelocationcli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cornercal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cornerstone.rb, Homebrew/homebrew-cask, 0

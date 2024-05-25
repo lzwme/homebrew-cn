@@ -1,21 +1,19 @@
 class Elvis < Formula
   desc "Erlang Style Reviewer"
   homepage "https:github.cominakaelvis"
-  url "https:github.cominakaelvisarchiverefstags3.0.1.tar.gz"
-  sha256 "ccf479c6d6bddc7fc9e6658eaf15f792d11e988f58417578b53e223e4f551698"
+  url "https:github.cominakaelvisarchiverefstags3.1.0.tar.gz"
+  sha256 "ce43fda618bb0d28c294414f7827df02afac374120018754a7fc96c6b44ca6b3"
   license "Apache-2.0"
   head "https:github.cominakaelvis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8402f637671b569fe7375bf8a3f0ea53f23a90ea40658e53b47f5ea69f8d9bf4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b57c94b53cef14384be4027c8d3706fd85dd847488fdb7b4d25569a33aa574a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f05aa4cc9c917962abf625a64d67dcf7bf53af6a5a5fdfb541f2bd96e95fc2d1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1fa9839edd6e74ca5aa71cdc749053af571c77c439013363c8f627bc32ebdd62"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9699e388b2a4bed99989a066512cd9e2f6332f49bae2989e65c65d1608ab2150"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc401663943b73aba90c724933a73a1972b6fc35165d51e1a95f006eeac46002"
-    sha256 cellar: :any_skip_relocation, monterey:       "68bfbcdc197ad8c7a3abbad35f813ee963991488591963a6c74544aacafdc1e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "17fc8a544b03e9b3c97559080380687b9d3f8c3305cfea49d3b2fefb5d23edde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a35df5889207d099e0c0f5aa97db557413d447c74a6d1b6e929fd6365a249d6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a2dcf1e873e254d0e92a731075df683f231da6c55648c1c5205c9e6688823d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77cb1a9017cefbc33155cdad75985687a305d09c56a73dcb0df415fb675dae6f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1648f8c1e16860aaaf980289624c2998b335e1f98bad44e30f29cc9aab4e03c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b54bdcf7b83b214cc69fdb07414648f245f42ac715cc1df8300dafeef06161d9"
+    sha256 cellar: :any_skip_relocation, ventura:        "305e34cf0331e41e673b0dcbddc9822a1769e2b008d2cb926edd6b588d37f367"
+    sha256 cellar: :any_skip_relocation, monterey:       "7acb786affea1b9910fedcb85654b04f6380a7b81188ac35cb54a1a65fc3be82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af7f987f35c55ae198455cf19d5e721663d3ec8a55c57ab635ea0944a88ceb21"
   end
 
   depends_on "rebar3" => :build

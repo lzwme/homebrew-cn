@@ -12,19 +12,21 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:   "c2b5260191314ff8f7d6322ceeeba130eda68c5d430f4a904b329239580f0581"
-    sha256                               arm64_ventura:  "aba44f09fcbc206be33065644e7c9856fdd5d7b5ca6026e460db68153eea8851"
-    sha256                               arm64_monterey: "62f8986d5cf578391cb982466101c3b8e81dba54de18160207e370d3ad6c8b49"
-    sha256                               sonoma:         "bb59d616c45576dd073c239a4ca89e4c618a8b1c6c4d751ca198ef20e0bc8072"
-    sha256                               ventura:        "cd88c05ccd585e2b90943e9b6ebf9bcf89c48b5d3e824dbbc8581aaf04a89647"
-    sha256                               monterey:       "3d9dfd21243a9f1f7e211a6651ac209d3ca3424d9794bb9a5a657e29fe0d3a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2aab9ffeff6ba4d7a6a40fd9b55812cbcbf29cc21ebece64078cb426a405bafc"
+    rebuild 1
+    sha256                               arm64_sonoma:   "95844acab6441d928fd95b8e408668c734392a83a4d317fef59193095a5ae358"
+    sha256                               arm64_ventura:  "4a187abbcef9fdddf26704e2cfe6e8497c0ddaa50ac358a7fce1156f2888b783"
+    sha256                               arm64_monterey: "6e9aaa4d4ac5d7bb17680d5a1e2c55ce89d224153e52a77a143ebd8b840259d3"
+    sha256                               sonoma:         "36961228c3aacd893a9b8ced838ac884b65e77e049e48242ec99b604dfe65c91"
+    sha256                               ventura:        "18505f725af1fa492fe8570bb0536c213f4db4835e4c70a29d04cd59aa6e4655"
+    sha256                               monterey:       "09564b1b6d9e0a86ebd65095a001315c75063529e0becb061c3f45508b1d5b4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31f5610e48ed3be9f85bc5979d6345fbe388481438054fa92b7e755114523f71"
   end
 
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkg-config" => :build
   depends_on "llvm"
+  depends_on "zstd"
 
   uses_from_macos "libxml2" => :build
 
@@ -92,10 +94,12 @@ class Ldc < Formula
     EOS
     system bin"ldc2", "test.d"
     assert_match "Hello, world!", shell_output(".test")
-    system bin"ldc2", "-flto=thin", "test.d"
-    assert_match "Hello, world!", shell_output(".test")
-    system bin"ldc2", "-flto=full", "test.d"
-    assert_match "Hello, world!", shell_output(".test")
+    with_env(PATH: "#{Formula["llvm"].opt_bin}:#{ENV["PATH"]}") do
+      system bin"ldc2", "-flto=thin", "--linker=lld", "test.d"
+      assert_match "Hello, world!", shell_output(".test")
+      system bin"ldc2", "-flto=full", "--linker=lld", "test.d"
+      assert_match "Hello, world!", shell_output(".test")
+    end
     system bin"ldmd2", "test.d"
     assert_match "Hello, world!", shell_output(".test")
   end

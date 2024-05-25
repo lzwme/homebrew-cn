@@ -32,8 +32,6 @@ class Crystal < Formula
   head do
     url "https:github.comcrystal-langcrystal.git", branch: "master"
 
-    uses_from_macos "libffi" # for the interpreter
-
     resource "shards" do
       url "https:github.comcrystal-langshards.git", branch: "master"
     end
@@ -47,6 +45,8 @@ class Crystal < Formula
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
+
+  uses_from_macos "libffi" # for the interpreter
 
   fails_with gcc: "5"
 

@@ -12,13 +12,14 @@ class Tailscale < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "51df178e46bc274062aba844825ed24d9aaa8b1497c723fbe57a65e3a009a8be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5fcc3bdfdef7c917752f6b2db5baa4f8f79a73fe8e15b6f7469df5c0a144cac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03e47c155e90c72570aa421fa6199e1ef7648386afdb874938b75e9b9471e097"
-    sha256 cellar: :any_skip_relocation, sonoma:         "72b5345ee941c24994313ea4fa40dce1263c730720419a0d55c1fbb2f9991327"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c1bbaeacc5e396ba5f843f73f765d49e0a8ef04fd93f8073fd23598e3b9257d"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3317b2ee143cd147751af31b8bc25b12c973d3de966f6001045dcb1f2eef05f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9da6975b2475010a279250b42a28e6408b92b0ab7c2b7b70165b92e1276e346"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "833978cd44ab99543e149e7b5d6feb489ec34b2148301e63b53c3d9a79d13f9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31f635fb19a05f5f85156ec1e1bb7eb4499622454fb90180bbff2bce5c423fc6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0505e6c1446c5605ab58248b30696cd85d8f6593e806fe735b640dbdd368702"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a63d3abe58e6f73936c1403f50de43133137982fc03444c575190f74babff8d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "8bb9c3eba2d3a83c9685cf9f153f82bf47ae0a4d25c58c3d7498ac9ac08eeea9"
+    sha256 cellar: :any_skip_relocation, monterey:       "ca886f84d53a3f54228731d19ab9536bed4dfcb58785943bb0bc0d14f1052ed9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a1c792a3882a37b8edaf62d1211e416a79ae70b5608e18bafb496d6be5f10a2"
   end
 
   depends_on "go" => :build
@@ -33,6 +34,8 @@ class Tailscale < Formula
     ]
     system "go", "build", *std_go_args(ldflags:), ".cmdtailscale"
     system "go", "build", *std_go_args(ldflags:, output: bin"tailscaled"), ".cmdtailscaled"
+
+    generate_completions_from_executable(bin"tailscale", "completion")
   end
 
   service do

@@ -2,11 +2,10 @@ class Libgeotiff < Formula
   desc "Library and tools for dealing with GeoTIFF"
   homepage "https:github.comOSGeolibgeotiff"
   license "MIT"
-  revision 3
 
   stable do
-    url "https:github.comOSGeolibgeotiffreleasesdownload1.7.1libgeotiff-1.7.1.tar.gz"
-    sha256 "05ab1347aaa471fc97347d8d4269ff0c00f30fa666d956baba37948ec87e55d6"
+    url "https:github.comOSGeolibgeotiffreleasesdownload1.7.3libgeotiff-1.7.3.tar.gz"
+    sha256 "ba23a3a35980ed3de916e125c739251f8e3266be07540200125a307d7cf5a704"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -21,15 +20,13 @@ class Libgeotiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c6e0a1796e5cd01960cef8ecbfa49080261a900e69dab8e64024922dea6d5faf"
-    sha256 cellar: :any,                 arm64_ventura:  "8be2bc3923800b11fd54eadba98cc528d7938ed5595961784fa911b38b0e7d62"
-    sha256 cellar: :any,                 arm64_monterey: "a684b1bf1a96b49fc931f226ac796878462981dfc0f1e2382266b3e11b30a63e"
-    sha256 cellar: :any,                 arm64_big_sur:  "a917c710b51e42a7ee6a21a7c36da6fce310188638d44d168bf9cde2db7b66f0"
-    sha256 cellar: :any,                 sonoma:         "6f428017ccc891b176a2967b4d29908ab3a2685c526c5e92c7dba3647500e7ee"
-    sha256 cellar: :any,                 ventura:        "84ad9fc666dea682be3fe19e0910a4ec6c494da0a25f1ccaff65c83bc9aeda21"
-    sha256 cellar: :any,                 monterey:       "5fc86bf32a1e9e9e228f8ef20dc82779d5923eb87b065cb7fd5ae772b805dfb0"
-    sha256 cellar: :any,                 big_sur:        "e9ba1dffdcf7833cc9f91a9ecba376ec31e25d2e52cea76d7fdcfe927c511a57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4c0df2152deddcbb8a8be8b107b7e88ad8c4ad76c2266cf7d137ca5e8e86a5f"
+    sha256 cellar: :any,                 arm64_sonoma:   "331afc789e13b0ccf8260d5c85d68d4cec97d11320fee880bf472c1326de0c27"
+    sha256 cellar: :any,                 arm64_ventura:  "606dfa6c652bbd07c5dc8fbb2efea2fc8e29fd95fca9ea2ba11a3b70d0e1e6a8"
+    sha256 cellar: :any,                 arm64_monterey: "3dfe3caf669b158e180892b06ccc81cb7eef1fafa76281b6235f697c8e6ed569"
+    sha256 cellar: :any,                 sonoma:         "3a23a973aeda8bd930a9124214d9f962fddc0e1d319d10098bd784aa7d2a8093"
+    sha256 cellar: :any,                 ventura:        "e70694e0333a004285351949eb6939e88bbe5f81de205efe428468a56d775e3f"
+    sha256 cellar: :any,                 monterey:       "cc17963344ed889fcde8c72b0037386ac54c08f60d83b8019387de0a3af9ef76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d4a823390e8a4b884b499c9a17847db282646e6d108f524124e8e8863796736"
   end
 
   head do

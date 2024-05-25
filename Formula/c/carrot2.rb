@@ -2,18 +2,18 @@ class Carrot2 < Formula
   desc "Search results clustering engine"
   homepage "https:search.carrot2.org"
   url "https:github.comcarrot2carrot2.git",
-      tag:      "release4.5.3",
-      revision: "f3727694889b258018d4bfdf5523b641d1d389df"
+      tag:      "release4.6.0",
+      revision: "a29bd71366f2ac3c135ee1a9cb9da3748954e088"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d0fff349cac498699491b5dbb70518e67bbd97a9dd80a965d4aeb605746fd693"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0017146fb1d813c3693ebf0600fb9be1d6f67ac91f7ed95628391b7c469cf254"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "741ee72710b6174a8863ebe6438d74377e1bab20a3c330e671036b1730936783"
-    sha256 cellar: :any_skip_relocation, sonoma:         "891fdb5e17c01c9bf70fd14602e6d5973ed0825e28c15a1b54049185d940391d"
-    sha256 cellar: :any_skip_relocation, ventura:        "70bd3fc0246ef33fc049e80ba1dfc626da5144faecfd9d76ea2fec4dba087432"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb44d3604b798e621b5b3d4fa89ecd4787a0109e832eeeb0fb09b20abdeb9f00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9aacdd216cef8f6ead96f24359fc46dffcb055cf17578de843d982f502ac0555"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "316e0b843788f87a4fc950905d572f191dec3a22c6be0f50e794b7d3998b5b6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f767a93a5fc89cc44e5c212ed3e7a25bef7dca2a029ffcc5ce167fa935c8754"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a294204538f9fc2282d585501a42e2445b701374f4b6211c9a13fa641e7e07ce"
+    sha256 cellar: :any_skip_relocation, sonoma:         "735a5f21733a85c406478d037bb04e0aaf0850eacb4acf10a32cfb11ae9d8229"
+    sha256 cellar: :any_skip_relocation, ventura:        "4eb89597731157708f85ee4667a4465623c433848d1c5d1f0f86ec887e0fec9e"
+    sha256 cellar: :any_skip_relocation, monterey:       "3ac3622ebbbd5de4f0a250679e01cbcbbda9bebae8c4beee4756d7b485f9904d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c26f5920ee5eb1571ecf1f34850bc07c6da816afb2a55734c660cb78709e470"
   end
 
   depends_on "gradle" => :build

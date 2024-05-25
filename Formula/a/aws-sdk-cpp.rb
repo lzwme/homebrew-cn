@@ -22,7 +22,13 @@ class AwsSdkCpp < Formula
   end
 
   depends_on "cmake" => :build
+
   uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   conflicts_with "s2n", because: "both install s2nunstablecrl.h"
 

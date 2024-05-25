@@ -4,38 +4,27 @@ class MetaPackageManager < Formula
 
   desc "Wrapper around all package managers with a unifying CLI"
   homepage "https://kdeldycke.github.io/meta-package-manager/"
-  url "https://files.pythonhosted.org/packages/ea/32/a264dab7e8104720b9284c9e881eb47cd2d2ebbf8911bc08c3ec09cb49f2/meta_package_manager-5.15.0.tar.gz"
-  sha256 "ab2bf53f4e2e798a14197ba8f40d81daea638644cb11911f189b3fd07a58f821"
+  url "https://files.pythonhosted.org/packages/c2/2a/6baf9e33b3bb63ef4857b903b44700e91a06609160e31070f58b387a9e46/meta_package_manager-5.16.0.tar.gz"
+  sha256 "5620d653cc31f98d9ae36b594929a5dca70438e25c2a9bdcd4a11b0677f30f9c"
   license "GPL-2.0-or-later"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "5ba7778e6ce52a1cb429b0baab82b72c3b0a3037eb848b48675fe5a4ccd87e1b"
-    sha256 cellar: :any,                 arm64_ventura:  "585c410d1e2c8d22d01cdd4f3efbc72c2a7d81814368236bbe6fa84b9847ffda"
-    sha256 cellar: :any,                 arm64_monterey: "aa2a15dc3cd844dc0e375b249769f6abca3ea1bd297ca2ec48bb6c4798abf338"
-    sha256 cellar: :any,                 sonoma:         "c26d5a002de00d2de7c52628eade0e3548173e925990a5909a57d84214f668b7"
-    sha256 cellar: :any,                 ventura:        "6dc64703f943e50f965107d31884fea0a744022dfc663d90b65716d772d4e194"
-    sha256 cellar: :any,                 monterey:       "3f91a3768892415d12431acb24ae7d652c2d0273d4df6191b3c9af8f867f0427"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "224c603bcb505ea69ef1b71d32802e3463bd0269521c6319774c7ce580ddcc87"
+    sha256 cellar: :any,                 arm64_sonoma:   "ccb9e4c0acdc51587d4329856329ea3087c114dc88c01aa8ffeb2f15bfe1d14f"
+    sha256 cellar: :any,                 arm64_ventura:  "0b18aee16ffc29fbca563e5c1f43ad7cc2a4c99593763f1c1cdba1ee9e4bd418"
+    sha256 cellar: :any,                 arm64_monterey: "7a988e1ec20c84e55d5f851dc3ba1d791a731cf225f94384f78f76e345656a1c"
+    sha256 cellar: :any,                 sonoma:         "3ec7d99347b45a5f7e35ace5c5babc325e5a3091d946c558a01125d02a2a892f"
+    sha256 cellar: :any,                 ventura:        "a3211f5244626d28457be022b869a46d4e99486adc07e716ffa81f996c872fa2"
+    sha256 cellar: :any,                 monterey:       "985bd3ebf2280b861640ffb5f30239f889d47f301ec39442e3ee19784da86029"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9203bd27d80bcad476441fdc10c6e8d3f958a94cc17e16ac243650df25ee77"
   end
 
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "python@3.12"
 
-  resource "alabaster" do
-    url "https://files.pythonhosted.org/packages/c9/3e/13dd8e5ed9094e734ac430b5d0eb4f2bb001708a8b7856cbf8e084e001ba/alabaster-0.7.16.tar.gz"
-    sha256 "75a8b99c28a5dad50dd7f8ccdd447a121ddb3892da9e53d1ca5cca3106d58d65"
-  end
-
-  resource "babel" do
-    url "https://files.pythonhosted.org/packages/15/d2/9671b93d623300f0aef82cde40e25357f11330bdde91743891b22a555bed/babel-2.15.0.tar.gz"
-    sha256 "8daf0e265d05768bc6c7a314cf1321e9a123afc328cc635c18622a2f30a04413"
-  end
-
   resource "boltons" do
-    url "https://files.pythonhosted.org/packages/55/5a/e8e581df428786bb9956a1faa61062cb4f2f726dbaedf8bd9165583d216d/boltons-23.1.1.tar.gz"
-    sha256 "d2cb2fa83cf2ebe791be1e284183e8a43a1031355156a968f8e0a333ad2448fc"
+    url "https://files.pythonhosted.org/packages/7a/fb/214de4d813f566849956915ff07ee60f2b86424f294525e60e01c460d4d2/boltons-24.0.0.tar.gz"
+    sha256 "7153feccaea1ff2e1472f68d4b57fadb796a2ee49d29f638f1c9cd8fb5ebd916"
   end
 
   resource "bracex" do
@@ -54,8 +43,8 @@ class MetaPackageManager < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/34/11/238818a752d941fb4999d324ae462448108c8dd2bf2183ede0a2eeeb55c5/click_extra-4.7.4.tar.gz"
-    sha256 "7244e8ad8861c25472cda7d5563cd14d97306272f2335dbe335e567d50ba10fb"
+    url "https://files.pythonhosted.org/packages/69/ff/6e97860dac64823a8c36c2e0c18781561f3f2f20e26207a969c220a0fc03/click_extra-4.8.1.tar.gz"
+    sha256 "ed7c8b078dd413fb7ff17c7ee14249051f1456e4f63166f06ef7c25c3a7c25fc"
   end
 
   resource "cloup" do
@@ -78,24 +67,9 @@ class MetaPackageManager < Formula
     sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
-  resource "imagesize" do
-    url "https://files.pythonhosted.org/packages/a7/84/62473fb57d61e31fef6e36d64a179c8781605429fd927b5dd608c997be31/imagesize-1.4.1.tar.gz"
-    sha256 "69150444affb9cb0d5cc5a92b3676f0b2fb7cd9ae39e947a5e11a36b4497cd4a"
-  end
-
-  resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
-  end
-
   resource "lark-parser" do
     url "https://files.pythonhosted.org/packages/34/b8/aa7d6cf2d5efdd2fcd85cf39b33584fe12a0f7086ed451176ceb7fb510eb/lark-parser-0.7.8.tar.gz"
     sha256 "26215ebb157e6fb2ee74319aa4445b9f3b7e456e26be215ce19fdaaa901c20a4"
-  end
-
-  resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
   resource "mergedeep" do
@@ -104,28 +78,8 @@ class MetaPackageManager < Formula
   end
 
   resource "packageurl-python" do
-    url "https://files.pythonhosted.org/packages/8c/33/e50adf6a6cd4cde7ccd140e4538d898cea7a609f7aee5d6365e5cd44b6c8/packageurl-python-0.13.4.tar.gz"
-    sha256 "6eb5e995009cc73387095e0b507ab65df51357d25ddc5fce3d3545ad6dcbbee8"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
-  end
-
-  resource "pallets-sphinx-themes" do
-    url "https://files.pythonhosted.org/packages/5c/3e/e7d1595b2a454da81518d75ebe32aa52c3e49091ca8f8fa94cfad5e76e72/pallets_sphinx_themes-2.1.3.tar.gz"
-    sha256 "853ccdc2698ab0a2532cfc23037e08ff16ef36fdbde57dda122946bba1f71c0a"
-  end
-
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
-  end
-
-  resource "pygments-ansi-color" do
-    url "https://files.pythonhosted.org/packages/50/f9/7f417aaee98a74b4f757f2b72971245181fcf25d824d2e7a190345669eaf/pygments-ansi-color-0.3.0.tar.gz"
-    sha256 "7018954cf5b11d1e734383a1bafab5af613213f246109417fee3f76da26d5431"
+    url "https://files.pythonhosted.org/packages/93/d7/6ab8c91b1ef802d6b5905abe16289e1d84d426976ef0c475aa05f1499501/packageurl-python-0.15.0.tar.gz"
+    sha256 "f219b2ce6348185a27bd6a72e6fdc9f984e6c9fa157effa7cb93e341c49cdcc2"
   end
 
   resource "pyyaml" do
@@ -134,53 +88,13 @@ class MetaPackageManager < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/b5/39/31626e7e75b187fae7f121af3c538a991e725c744ac893cc2cfd70ce2853/regex-2023.12.25.tar.gz"
-    sha256 "29171aa128da69afdf4bde412d5bedc335f2ca8fcfe4489038577d05f16181e5"
+    url "https://files.pythonhosted.org/packages/7a/db/5ddc89851e9cc003929c3b08b9b88b429459bf9acbf307b4556d51d9e49b/regex-2024.5.15.tar.gz"
+    sha256 "d3ee02d9e5f482cc8309134a91eeaacbdd2261ba111b0fef3748eeb4913e6a2c"
   end
 
   resource "requests" do
     url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
     sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
-  end
-
-  resource "snowballstemmer" do
-    url "https://files.pythonhosted.org/packages/44/7b/af302bebf22c749c56c9c3e8ae13190b5b5db37a33d9068652e8f73b7089/snowballstemmer-2.2.0.tar.gz"
-    sha256 "09b16deb8547d3412ad7b590689584cd0fe25ec8db3be37788be3810cbf19cb1"
-  end
-
-  resource "sphinx" do
-    url "https://files.pythonhosted.org/packages/b7/0a/b88033900b1582f5ed8f880263363daef968d1cd064175e32abfd9714410/sphinx-7.3.7.tar.gz"
-    sha256 "a4a7db75ed37531c05002d56ed6948d4c42f473a36f46e1382b0bd76ca9627bc"
-  end
-
-  resource "sphinxcontrib-applehelp" do
-    url "https://files.pythonhosted.org/packages/26/6b/68f470fc337ed24043fec987b101f25b35010970bd958970c2ae5990859f/sphinxcontrib_applehelp-1.0.8.tar.gz"
-    sha256 "c40a4f96f3776c4393d933412053962fac2b84f4c99a7982ba42e09576a70619"
-  end
-
-  resource "sphinxcontrib-devhelp" do
-    url "https://files.pythonhosted.org/packages/c7/a1/80b7e9f677abc673cb9320bf255ad4e08931ccbc2e66bde4b59bad3809ad/sphinxcontrib_devhelp-1.0.6.tar.gz"
-    sha256 "9893fd3f90506bc4b97bdb977ceb8fbd823989f4316b28c3841ec128544372d3"
-  end
-
-  resource "sphinxcontrib-htmlhelp" do
-    url "https://files.pythonhosted.org/packages/8a/03/2f9d699fbfdf03ecb3b6d0e2a268a8998d009f2a9f699c2dcc936899257d/sphinxcontrib_htmlhelp-2.0.5.tar.gz"
-    sha256 "0dc87637d5de53dd5eec3a6a01753b1ccf99494bd756aafecd74b4fa9e729015"
-  end
-
-  resource "sphinxcontrib-jsmath" do
-    url "https://files.pythonhosted.org/packages/b2/e8/9ed3830aeed71f17c026a07a5097edcf44b692850ef215b161b8ad875729/sphinxcontrib-jsmath-1.0.1.tar.gz"
-    sha256 "a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8"
-  end
-
-  resource "sphinxcontrib-qthelp" do
-    url "https://files.pythonhosted.org/packages/ac/29/705cd4e93e98a8473d62b5c32288e6de3f0c9660d3c97d4e80d3dbbad82b/sphinxcontrib_qthelp-1.0.7.tar.gz"
-    sha256 "053dedc38823a80a7209a80860b16b722e9e0209e32fea98c90e4e6624588ed6"
-  end
-
-  resource "sphinxcontrib-serializinghtml" do
-    url "https://files.pythonhosted.org/packages/54/13/8dd7a7ed9c58e16e20c7f4ce8e4cb6943eb580955236d0c0d00079a73c49/sphinxcontrib_serializinghtml-1.1.10.tar.gz"
-    sha256 "93f3f5dc458b91b192fe10c397e324f262cf163d79f3282c158e8436a2c4511f"
   end
 
   resource "tabulate" do
