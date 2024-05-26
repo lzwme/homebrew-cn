@@ -16,13 +16,14 @@ class Tectonic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0f320deeee5ccf6dfbe44bcc8d420c450d3dda8f8d23932a15a3f81632f893fc"
-    sha256 cellar: :any,                 arm64_ventura:  "c187f88bdaa10a481b76c085f87199cf17b3e4cc698f90925da83e94541ef071"
-    sha256 cellar: :any,                 arm64_monterey: "cd967ec9dd43d75b2ba9cc2b80356390bd92a0c10fbc03695f5fe4e1b48ae028"
-    sha256 cellar: :any,                 sonoma:         "120fa9462f3704dbcda0611809a8a4c9b76a3b452c5c56e2e19bf05585b08249"
-    sha256 cellar: :any,                 ventura:        "589e7fb463bb57a314590c1849a97f3c075ecad961c1db4860b75b4bafd39a82"
-    sha256 cellar: :any,                 monterey:       "52548a8b0607009b762d4b2cb97b449a045c4c8bf02a761dbbd17335dd6cadb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5327e3c4ba4378f14adab5052d98464770296d2010bb432b94bde995d297b069"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "85647768c6b32b1cceebac4c541e5efbb99fdc566924fe4559f6533d161eb06a"
+    sha256 cellar: :any,                 arm64_ventura:  "39804b39b3a365a653c64bd7c38ed9f8f8375b7295b4b488d65a9a0ea45fe465"
+    sha256 cellar: :any,                 arm64_monterey: "88d39d53987fbe343aecb1dba5b388bd87981bcef6f378ce16be169732f93d16"
+    sha256 cellar: :any,                 sonoma:         "eecc9938bf7b89cdb57054f9f098ebc619a284fa6f6fe077f984ff8497c35a35"
+    sha256 cellar: :any,                 ventura:        "aa1b9a3cca1c889ac3140030b3b940d18de821a75e7b10211cf20940add18c04"
+    sha256 cellar: :any,                 monterey:       "29b6de4cf2fa8ea3de5f209fe3cfd3608cca115954989eb674679d1dd9651b45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d15114dca090265bdd487b79a65295ff695ee1c928c5471fd1ad633fccfebc0"
   end
 
   depends_on "pkg-config" => :build
@@ -47,6 +48,7 @@ class Tectonic < Formula
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
     system "cargo", "install", "--features", "external-harfbuzz", *std_cargo_args
+    bin.install_symlink bin"tectonic" => "nextonic"
   end
 
   test do
@@ -54,5 +56,9 @@ class Tectonic < Formula
     system bin"tectonic", "-o", testpath, "--format", "plain", testpath"test.tex"
     assert_predicate testpath"test.pdf", :exist?, "Failed to create test.pdf"
     assert_match "PDF document", shell_output("file test.pdf")
+
+    system bin"nextonic", "new", "."
+    system bin"nextonic", "build"
+    assert_predicate testpath"builddefaultdefault.pdf", :exist?, "Failed to create default.pdf"
   end
 end

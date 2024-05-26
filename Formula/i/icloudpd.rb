@@ -3,19 +3,19 @@ class Icloudpd < Formula
 
   desc "Tool to download photos from iCloud"
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
-  url "https:github.comicloud-photos-downloadericloud_photos_downloaderarchiverefstagsv1.17.6.tar.gz"
-  sha256 "ffc15877bc82655381aadec93c776a5fc51a180783a6efc1914922b780a639a4"
+  url "https:github.comicloud-photos-downloadericloud_photos_downloaderarchiverefstagsv1.17.7.tar.gz"
+  sha256 "a05321017e58cc779efb77f57b2fd65dd19d924c102a4dfc5ddd6c84d2afb37f"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ceec4b33d93adfdd6e8af87084470de2c0ab2923ca581a9e96c5a6dc5fe065cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "247a1a5ec045f3f0ac6e044fa5c637939ae7494a31e793dbb1fd7995ba814ca0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fab2ea681a4bd5941380bfaec2fbe649da397c9fd9590acfbfbc8c0378d83909"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aea5887cb2274b6096943cc79ffc1faf331e7003c3838bb2bceb23e18db6f78a"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf4df617b646e63d2e7c0af00055127673ffd7eb0729e71075cd015590cb233e"
-    sha256 cellar: :any_skip_relocation, monterey:       "27957188deed0e8953cfc8240b5b5360008cca24c8565c020bda03a99450e469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff1409b6be79df23cd89468d0fb72c1855efcc16301ecd69ca1a80b787e2fc96"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1984e2e756dda1da4c6a3d96f4d7411659f49b98791c15e756a208affc98d757"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5628188615203e95a45aad1c09c4fd5b8283690755ab3f740f70da1da989895f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbfca3097dc02a161f13bd16b3f2a1dd0583441641a8ff4ff2c2001df3c1db4e"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c4f57d6b5f411c48dc64f639947487fecd34dd0de583218b1cd64b5405469bd8"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf0a39767e5a6368c247ee463e87d5697a5e5e472fdc886714ddec12b236dfca"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0693b7fb8fb5f4614569ccc75690521f121e20fa30e461b27473f7c88cba239"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6a421a017a1857701d9638f4f50e674ca4e669f9ebf04833d249df08edd8b63"
   end
 
   depends_on "python@3.12"
@@ -50,14 +50,24 @@ class Icloudpd < Formula
     sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
   end
 
+  resource "jaraco-context" do
+    url "https:files.pythonhosted.orgpackagesc960e83781b07f9a66d1d102a0459e5028f3a7816fdd0894cba90bee2bbbda14jaraco.context-5.3.0.tar.gz"
+    sha256 "c2f67165ce1f9be20f32f650f25d8edfc1646a8aeee48ae06fb35f90763576d2"
+  end
+
+  resource "jaraco-functools" do
+    url "https:files.pythonhosted.orgpackagesbc66746091bed45b3683d1026cb13b8b7719e11ccc9857b18d29177a18838dc9jaraco_functools-4.0.1.tar.gz"
+    sha256 "d33fa765374c0611b52f8b3a795f8900869aa88c84769d4d1746cd68fb28c3e8"
+  end
+
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackages55fe282f4c205add8e8bb3a1635cbbac59d6def2e0891b145aa553a0e40dd2d0keyring-23.13.1.tar.gz"
-    sha256 "ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678"
+    url "https:files.pythonhosted.orgpackages3ee954f232e659f635a000d94cfbca40b9d5d617707593c3d552ec14d3ba27f1keyring-25.2.1.tar.gz"
+    sha256 "daaffd42dbda25ddafb1ad5fec4024e5bbcfe424597ca1ca452b299861e49f1b"
   end
 
   resource "keyrings-alt" do
-    url "https:files.pythonhosted.orgpackages884e2af12a91eb8245b7ff24fdc0afbe5a1d62e9d5ec24ffdb53972753cec644keyrings.alt-4.2.0.tar.gz"
-    sha256 "2ba3d56441ba0637f5f9c096068f67010ac0453f9d0b626de2aa3019353b6431"
+    url "https:files.pythonhosted.orgpackages4f557a52c9961f607353034945692c700ab648f18ea2ab2d509e248b24cb0a91keyrings.alt-5.0.1.tar.gz"
+    sha256 "cd372a1ec446a1bc5a90624a52c88e83b9330218e39047a6c9a48ae37d116745"
   end
 
   resource "more-itertools" do

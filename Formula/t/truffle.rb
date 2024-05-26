@@ -46,12 +46,7 @@ class Truffle < Formula
     end
 
     # Replace remaining universal binaries with their native slices
-    %W[
-      #{truffle_dir}/node_modules/fsevents/fsevents.node
-      #{truffle_dir}/node_modules/ganache/node_modules/fsevents/fsevents.node
-    ].each do |f|
-      deuniversalize_machos f
-    end
+    deuniversalize_machos truffle_dir/"node_modules/ganache/node_modules/fsevents/fsevents.node"
 
     # Remove incompatible pre-built binaries that have arbitrary names
     truffle_dir.glob("node_modules/ganache/dist/node{/,/F/}*.node").each do |f|

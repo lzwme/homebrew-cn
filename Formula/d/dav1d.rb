@@ -1,18 +1,18 @@
 class Dav1d < Formula
   desc "AV1 decoder targeted to be small and fast"
   homepage "https://code.videolan.org/videolan/dav1d"
-  url "https://code.videolan.org/videolan/dav1d/-/archive/1.4.1/dav1d-1.4.1.tar.bz2"
-  sha256 "ab02c6c72c69b2b24726251f028b7cb57d5b3659eeec9f67f6cecb2322b127d8"
+  url "https://code.videolan.org/videolan/dav1d/-/archive/1.4.2/dav1d-1.4.2.tar.bz2"
+  sha256 "18d0c67421fac213b680a26856dd74ae7bb28b9ff59edd6f6580864d2b71d1ed"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "964144852a07c4c377a5299cd6897cd9b6afd13e1b3009f21ac412589b0f8db7"
-    sha256 cellar: :any,                 arm64_ventura:  "52a1afeb3d59c50bc68fb000933d7c5ea7adb25be0f9d0f908342646005efb87"
-    sha256 cellar: :any,                 arm64_monterey: "7bbf65126205634d9a43d9860933197f65da4669be4485899269db80f13f1c04"
-    sha256 cellar: :any,                 sonoma:         "bc58b1388bd80f2d8fdc241847f746605d64e2cf36e3f0217428371b69403a1b"
-    sha256 cellar: :any,                 ventura:        "5c067de2df31582b484651f34c2f76fff8f6d741e007a003d79cb267433d9726"
-    sha256 cellar: :any,                 monterey:       "c01dd110041531bf7fd8a6631b433c8535002158814e60170af60cd0b7796b4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5972f5ae4c02e5daf2801fdda29ccd45bf18deaf409b84aca6a7d0849f8435ed"
+    sha256 cellar: :any,                 arm64_sonoma:   "4219a848496311958aab044a57dbc974bea071d3ab17750bf0fb4c3f41fb1fdc"
+    sha256 cellar: :any,                 arm64_ventura:  "06a12d0131807ead15dc24a398067ce905164c0d76197a2ad9450958111f1295"
+    sha256 cellar: :any,                 arm64_monterey: "c8f03ca1fd5c1bf3b3f04ada2078a5200aa0af4e048f13d4a4955d559be47eab"
+    sha256 cellar: :any,                 sonoma:         "4e18a2fa0eab8ee6cc113867377a8a4d47ddff640dc35a03ddb3e72d06e73ae9"
+    sha256 cellar: :any,                 ventura:        "d5244ae055270956fcfd7db7948e2f652ecc9c58234a1c7a14db537b5a3780be"
+    sha256 cellar: :any,                 monterey:       "d8d72c1c1cd98c722f9c30010f863faa94142511bf5c00e18d634fd6a871efcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6706adc207a7dd2874d462fcdb9d0437758607372397dc7b1f1b34babcc99ad4"
   end
 
   depends_on "meson" => :build

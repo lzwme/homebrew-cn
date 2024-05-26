@@ -1,8 +1,8 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https:github.commozillasccache"
-  url "https:github.commozillasccachearchiverefstagsv0.8.0.tar.gz"
-  sha256 "e78c7a65982e2ab1dc2e5580e548bb1bf6f47a0f20e58dcba8856fc97640f2d2"
+  url "https:github.commozillasccachearchiverefstagsv0.8.1.tar.gz"
+  sha256 "30b951b49246d5ca7d614e5712215cb5f39509d6f899641f511fb19036b5c4e5"
   license "Apache-2.0"
   head "https:github.commozillasccache.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Sccache < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "784f213119a53a81aa0be9a5a9263699a4ae14f99dd81142b5a9cd61b955fa65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d5fe8beb7c9601b5e8ff1438b53266ab104cf394448c568fa62c17d8e99ee2b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47e60c8161afd0e31876912e09afc2e72eda819cde6283e7f20178928d0be622"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8358f677987a05d277a115f205a86435ab5eb85883de4ae0bfc2352a4d9c9f03"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ee4d1e1ae6cc912788ed4406bed860cedf051d80f2730b32c70e5cde7dd2280"
-    sha256 cellar: :any_skip_relocation, monterey:       "702d85599300b05ab8929a6a0847b2b37215af2ae6f31d3085f1286d7787b1fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2d94f0316e1a44ce545c8f7b6b54fae3e276f1b9dd98a5587e13906ad2a8bd4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9445c581fefc0228a6d7eb919ffe144e712202cf5f1daebbcf2704de948abae5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "507c9974e7a268b18f4c5c895b45817a328773da80337196761c2d6d70c38f60"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb8cefb8c0f8065c87e85059c699664904f5e6e2cc55bc221dd2fc6ecf662458"
+    sha256 cellar: :any_skip_relocation, sonoma:         "275afdbfd37682c86aee198fc32867c8470ccbc7264765d0737865bc8096462d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a6e9e14187f20b1c6994332e05af34601229832bdd5b72d4c122e27f379fa2b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7e6a46b744ef7ecdd88facaf809281ce2310f827cd5d0600fb6a310474c6fe3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25e9e67a8fa6a94e150c83629220cb97da8a16cc83f00ddde9974e8a2d78f448"
   end
 
   depends_on "rust" => :build

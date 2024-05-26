@@ -1,8 +1,8 @@
 class AwsConsole < Formula
   desc "Command-line to use AWS CLI credentials to launch the AWS console in a browser"
   homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.8.6.tar.gz"
-  sha256 "67bc01d96245bdab4a4045554674e549896de45e2a4744cac9ccb02850fedb35"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.9.0.tar.gz"
+  sha256 "657b6c5c83774592faf69a52750378b64ffdde7ca883798a85bd01ee7c83a3fe"
   license "Apache-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class AwsConsole < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c2597acc9e7d1d6c75a9a1fbe6b5e5df39809214f865d7d37f7d4daa40d661e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abfb45f9cd0c38c567234fb3e698d89e874c9bc352101a6776f4613da647c946"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd3e8f2348dadd339219938fd223172de63c7b165f6337fcd7b443ee2a20094c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf10ef14dc23b9d92550b184b50ec5c1cddf75b28e1a70cbf2ba2c3f516f7d70"
-    sha256 cellar: :any_skip_relocation, ventura:        "9479d4ffd9dc1545b99f5063f37d92b4d0f03385698b74b8e0f6b3461fb90cdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "146e1cf4da5284c396ec8a1420d587655e2ebcfa77e6de6ae09932b30092e9e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c046614198a9ff5f4ada0eb81e4709494c8a85921d1daa19eeb92f1956e513d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d415e991bc3c68c41374aba3cb62264a4eb418e64a84d14bb9bc550c2f65005f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "292f8945df56b997002a8a5eac1b0729060e5212df4cf0305688f878b05e3fe1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e3aa106b7dc4869fe6b8064f7d7867d4d889b91c398ecd7417584a3752b82c3"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c0319f4c5a4b70fa03d6606f0010ad64c29b2f98391081fdbf7a2103b9316c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e87239a238d840183c201c904a8c78bc6315e1efded909ecbb88b26dbdfad52"
+    sha256 cellar: :any_skip_relocation, monterey:       "293c8a4deb31e26850de7db11eb323371e459dc13335e3feaf47898bbe6bc1da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eae166ffbc250985f0abbc7421a68ba9b8e777fb6eade521a05aab37bf3ea7f"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Kubeshark < Formula
   desc "API Traffic Analyzer providing real-time visibility into Kubernetes network"
   homepage "https:www.kubeshark.co"
-  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.0.tar.gz"
-  sha256 "73f637a49dd9da5577f0127065a1baf0eb4888e074179b0492a845aecb3ba7f8"
+  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.59.tar.gz"
+  sha256 "157491bcbf4f3abe1d41448e6180973537f71f074c8f0718e911dfc14c4bad10"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "340f75523bf94e1b7ab7f213156cad292cf8550e30304afb1abd20add1660037"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b192e76ae03fd7b143a5335a6a4f6de2fa7cf10dd1ae87680dec7b4646b3e267"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4465c2ef274e26ee497faed517892fa921023b0ab951e05dbf896c73bc1b907f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6429441dedb6a80b0f7039717b455a89a1f60677695052666fcad02796cdb3b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "6fd5afe5d98f9704f497638ce1e0bce77094051226ec88b7f6354742dafad9b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "d06083645a9025677713a77164f81b9fb91e2522021e97b0765abbdd8ebe0f66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "511839ebb2d1be35e07ec8cc997b58c0353fada865e3dc18efef5266b6361321"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "21c3e01a3d77439b2363e110485c84c91adbfb0213d9b7e4e52b5fe95a8b966a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "440cb79fecf97d34de868191ff02d8a3a3e7394717366f76d918180e8851979d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "991a156cdcb434eab23548025860ba15a9ac1123f53cb60bb5ce0cc177eddfdc"
+    sha256 cellar: :any_skip_relocation, sonoma:         "060ad1b355766f3feb9032e5e889df23e04d147b554587e69ec2f411e26b9a27"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3fdbe843ae61436cfddd37fe87560f095b82db5f13bbe101f218cf807fca33f"
+    sha256 cellar: :any_skip_relocation, monterey:       "0b1da55125a49cb77a620584cdc1e787b2d7e79bb1ce5e257734dec671349b03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c19d4f10c5f255e86c0d767b3246af337110b042bc14a33d4c886983afa1cf8"
   end
 
   depends_on "go" => :build

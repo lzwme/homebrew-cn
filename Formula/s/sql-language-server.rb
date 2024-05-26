@@ -25,6 +25,12 @@ class SqlLanguageServer < Formula
     depends_on "terminal-notifier"
   end
 
+  on_linux do
+    # Workaround for old `node-gyp` that needs distutils.
+    # TODO: Remove when `node-gyp` is v10+
+    depends_on "python-setuptools" => :build
+  end
+
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}bin*"]
@@ -41,9 +47,6 @@ class SqlLanguageServer < Formula
       terminal_notifier_app = Formula["terminal-notifier"].opt_prefix"terminal-notifier.app"
       ln_sf terminal_notifier_app.relative_path_from(terminal_notifier_dir), terminal_notifier_dir
     end
-
-    # Replace universal binaries with their native slices
-    deuniversalize_machos libexec"libnode_modulessql-language-servernode_modulesfseventsfsevents.node"
   end
 
   test do

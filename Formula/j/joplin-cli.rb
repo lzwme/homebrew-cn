@@ -20,11 +20,13 @@ class JoplinCli < Formula
   depends_on "pkg-config" => :build
   depends_on "python-setuptools" => :build # for node-gyp
   depends_on "python@3.12" => :build
+  depends_on "glib"
   depends_on "node"
   depends_on "sqlite"
   depends_on "vips"
 
   on_macos do
+    depends_on "gettext"
     depends_on "terminal-notifier"
   end
 

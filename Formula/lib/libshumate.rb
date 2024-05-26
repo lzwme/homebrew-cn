@@ -1,8 +1,8 @@
 class Libshumate < Formula
   desc "Shumate is a GTK toolkit providing widgets for embedded maps"
   homepage "https://gitlab.gnome.org/GNOME/libshumate"
-  url "https://download.gnome.org/sources/libshumate/1.2/libshumate-1.2.1.tar.xz"
-  sha256 "1105ee077e2147f2a039cddfa616fa5cb9438883dd940427e11699dcd6549c11"
+  url "https://download.gnome.org/sources/libshumate/1.2/libshumate-1.2.2.tar.xz"
+  sha256 "6f587579f7f2d60b38d3f4727eb1a8d2feac9cbdc018e53ff5f772a8608fa44b"
   license "LGPL-2.1-or-later"
 
   # libshumate doesn't use GNOME's "even-numbered minor is stable" version
@@ -14,13 +14,13 @@ class Libshumate < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "a6e17d2b3a62dc36dd3f3e1d1a17744e334faef8cbc7477c3211a63cf4bacb8c"
-    sha256 cellar: :any, arm64_ventura:  "93c3c14fc81e14cf799f7c14c713408cb32082f0d1b1720ba45b8bc8a76a5678"
-    sha256 cellar: :any, arm64_monterey: "4c5ff1c1c8d000ec006ffdba57561d1553807b40a92b78666ab627a792433955"
-    sha256 cellar: :any, sonoma:         "fdeeade5dbaacf169acc3a4c89d3e2dd7f6f65e9b465fafe14029b7b64f7ce80"
-    sha256 cellar: :any, ventura:        "6507d3495a4f605302b9513920eea40da2c83d1247850538e63aef67c1c6d334"
-    sha256 cellar: :any, monterey:       "f66d43340e00e1eb7ccf4857bed50648b16cfd429f9837caa363aba66de57ec7"
-    sha256               x86_64_linux:   "231921ec6cd7e37320e3adff0b6994acdd9fa46e68c1bb6e0975f3db5bbee656"
+    sha256 cellar: :any, arm64_sonoma:   "a8ab03830e72acfa65d57f0af09af874da1b4197451c9729622129eac1ff0271"
+    sha256 cellar: :any, arm64_ventura:  "6cd1fb996ed1e81b4467de78315c94dbce6cabbd068a0c62581cee867425cff7"
+    sha256 cellar: :any, arm64_monterey: "d98665a8905fcced0a20b241f92285616e9458676dfeb60121c0cc69f6c140ba"
+    sha256 cellar: :any, sonoma:         "4cc68eb783f15ae39364184caf8e99c177c2e8c7495e6b5bc2830a7dad51cee0"
+    sha256 cellar: :any, ventura:        "7fc14b4e76b5aa6802d600f1f9cb66629c7c0148edecd98600a1bf9e86b22a2a"
+    sha256 cellar: :any, monterey:       "b1807c9603e049c628e188ee8ba3e580411b1c39608c446116a6019947d9677e"
+    sha256               x86_64_linux:   "fa70a63ede680fb77a94a2823c25328b3fdf339be2fba101d7d04a027102fb01"
   end
 
   depends_on "gettext" => :build

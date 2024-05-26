@@ -1,8 +1,8 @@
 class Gmsh < Formula
   desc "3D finite element grid generator with CAD engine"
   homepage "https://gmsh.info/"
-  url "https://gmsh.info/src/gmsh-4.13.0-source.tgz"
-  sha256 "c85f056ee549a433e814a61c385c97952bbfe514b442b999f6149fffb1e54f64"
+  url "https://gmsh.info/src/gmsh-4.13.1-source.tgz"
+  sha256 "77972145f431726026d50596a6a44fb3c1c95c21255218d66955806b86edbe8d"
   license "GPL-2.0-or-later"
   head "https://gitlab.onelab.info/gmsh/gmsh.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Gmsh < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "3161b19af649303c8ff44c23c48e51a877da2d53258eaff5d945a80c485e4703"
-    sha256 cellar: :any,                 arm64_ventura:  "ad87047aac581de1c96f827a3f989fd004914d55a5ad404ae0bb4d5cccada6cb"
-    sha256 cellar: :any,                 arm64_monterey: "70475e4128780d24dc14e3f8c9ca4f1c3b37a9d551e02d10e8a3dc3a3341858a"
-    sha256 cellar: :any,                 sonoma:         "d83b3227fb19c254adfc0f0d7153285e6008810bcf4258ebd88f189b9a2f3c1e"
-    sha256 cellar: :any,                 ventura:        "94f93bd1db346b3c339f487ed6693fe019810ed84e49ab11fc78f043d5ca5c30"
-    sha256 cellar: :any,                 monterey:       "817a8ca892e8d8fcc525c62c05fe63d22846683b9dc855f43d69bebb51c18ca7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3418df349ed485c8f4dc5f29680b660dfcf356fd468f3143ba8f010927ff164c"
+    sha256 cellar: :any,                 arm64_sonoma:   "0abad5c46af36b742b304fb4f3558fd8aec44e005d7f893ca4eb97c73b53a48e"
+    sha256 cellar: :any,                 arm64_ventura:  "8e4dfac9f7460fb14002372afc70332eea13a04ae13d50df2452ea07241045ca"
+    sha256 cellar: :any,                 arm64_monterey: "f0c92cc4fb40cb0572c6d0a7bb7cdca3f20b2af68c118da92380016ad2eb1121"
+    sha256 cellar: :any,                 sonoma:         "c1bc6646c70f12474a5a1f8a366977f5d8b161a402438fbe80dffd2390c54bea"
+    sha256 cellar: :any,                 ventura:        "ab9b5def53bd132ae162329c84e257cd2f1207130ec80f2084cae4bc1e47ef11"
+    sha256 cellar: :any,                 monterey:       "3a79509860746625e7edb671d0a372812df932b38d4f26d6c2f2e8076af02789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a834fd8e0c9327c45ff093c4a552549764d79a692914aaa7a665cd3ea380752"
   end
 
   depends_on "cmake" => :build

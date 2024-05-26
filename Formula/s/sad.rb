@@ -1,19 +1,19 @@
 class Sad < Formula
   desc "CLI search and replace | Space Age seD"
   homepage "https:github.comms-jpqsad"
-  url "https:github.comms-jpqsadarchiverefstagsv0.4.28.tar.gz"
-  sha256 "efda19aecec408095bb515975a1a6ed9e66d0ab985c2b580087b031261f71cfc"
+  url "https:github.comms-jpqsadarchiverefstagsv0.4.29.tar.gz"
+  sha256 "2f66d3031a662c197dba1758ccc9f670694e825b7f90b20fa32c1670c4ae9ee4"
   license "MIT"
   head "https:github.comms-jpqsad.git", branch: "senpai"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dbd6742f7ca10b7a35934d48c97c15191b2a3a2838a8555dda14d49109135ec2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca01f710469f4d9bc707800122a780bea33bf65b8c0905b6b20b07d9da4e7ee4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "389062b6527626a595b9eca5fff77226f83946174cf1e8e8763fba2f0e19103e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4688e0e640f04662017f5578f1c70e3cfe7b1f63022ce380a095887edf3445cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "3bd4b813859fcf59ff862d243d6258b466898ef8e321b2c13df38cefc8d748c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b68be7a2dbd1faca977892f165ab7741a683ef1e69e163ddf11c365e805b0c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab533cf53f9716e0a690e92245ac96fb45ad6db60f11a8e2d6787b8a0e744284"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f9a906c12839def65ad44065df55ab109dbaf86acf958484d6a608091d396b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8cd63d04aeda1c31cfa7067702adaa8bbb612b96a145992165551f07d9d65251"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e88cc7b8330c3746bb3e7d6bf9fa4503a5a06a8ccf878111fe86f383b8f3a259"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a548687bf5565b60e2999caec378ec8e238d5b0bd2f8076c7be3c134ade5a2df"
+    sha256 cellar: :any_skip_relocation, ventura:        "efdb18bc37d65781ed2fd4b22556f26c602b456fd125df2648f93f4f0520691b"
+    sha256 cellar: :any_skip_relocation, monterey:       "06e666d7c5df129a898a642ad140098beedb630e163da0aec4cfd877b52da9e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2864b62bf92f199e527d6e9725819c4674abc61bead0f462d0c9f7474a87f82"
   end
 
   depends_on "rust" => :build

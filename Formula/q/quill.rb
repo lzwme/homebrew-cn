@@ -1,19 +1,13 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https:github.comodygrdquill"
-  url "https:github.comodygrdquillarchiverefstagsv4.0.0.tar.gz"
-  sha256 "c4e8a5a8f555a26baff1578fa37b9c6a968170a9bab64fcc913f6b90b91589dc"
+  url "https:github.comodygrdquillarchiverefstagsv4.1.0.tar.gz"
+  sha256 "53ebaf36ae1fccbb0ef1ce7bfcd746de6281d87ae691c2284c36119fc20e2194"
   license "MIT"
   head "https:github.comodygrdquill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "922836006fd3b15cc607a29cd90d5ede45bd459bb62eca0b39af4039a9f1a2e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "922836006fd3b15cc607a29cd90d5ede45bd459bb62eca0b39af4039a9f1a2e2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "922836006fd3b15cc607a29cd90d5ede45bd459bb62eca0b39af4039a9f1a2e2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "896d465a6f268558871aec5896030267562b0fe4673ebaf59fc539c78fbefcbf"
-    sha256 cellar: :any_skip_relocation, ventura:        "896d465a6f268558871aec5896030267562b0fe4673ebaf59fc539c78fbefcbf"
-    sha256 cellar: :any_skip_relocation, monterey:       "922836006fd3b15cc607a29cd90d5ede45bd459bb62eca0b39af4039a9f1a2e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "922836006fd3b15cc607a29cd90d5ede45bd459bb62eca0b39af4039a9f1a2e2"
+    sha256 cellar: :any_skip_relocation, all: "c6965606ae5556af0daed23d8d9901887e659a4cad9509f6c93a1d42bfab49b7"
   end
 
   depends_on "cmake" => :build
