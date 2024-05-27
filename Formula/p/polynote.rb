@@ -26,24 +26,23 @@ class Polynote < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sonoma:   "9590805d7fd26247263cced0d0306bb7c863b95ef4354b27bae92c135efc1552"
-    sha256 cellar: :any, arm64_ventura:  "a93aa1f2b84d6e1137fea692702eae407d1ff09ad3318c6c5db0a4d97b24ce75"
-    sha256 cellar: :any, arm64_monterey: "7e5f4992e898ae22d50966b4855fa672fa7a15a2c3ad41d34ea94d6bfa7b14bb"
-    sha256 cellar: :any, sonoma:         "a50ff8929239623319fa68c68ba80e31b7212a6350485b74eb6b7c45da0c6fc4"
-    sha256 cellar: :any, ventura:        "e272c680279935779e96fd7f63fe5ce41b7702975e62d732846eb094f5103b87"
-    sha256 cellar: :any, monterey:       "92e35fd7f1bec7d1cabee9e55d15aedf037fe0c94d9511dca040e1f2e9c49f09"
-    sha256               x86_64_linux:   "f9ec11fd988d61e408555488aa45f20ae99d998c80db09ec0ca2a009a10e9cf5"
+    rebuild 2
+    sha256 cellar: :any, arm64_sonoma:   "8177302c01e8c767c7535352acfed7550b02589168c901a91d7e30dba8d83d44"
+    sha256 cellar: :any, arm64_ventura:  "a4ca4925de7aded7490e10b189a1704e0088df923d9397e298ff43bbaf31fd5e"
+    sha256 cellar: :any, arm64_monterey: "c770429f67aa53551cb9e6b2a44af16d8e0fb60487f84ebed24749d0d855f4d1"
+    sha256 cellar: :any, sonoma:         "93922c92ebf8c9f6f93681f65b9390936a21cf202e40e6551db4bcbe7956b31d"
+    sha256 cellar: :any, ventura:        "67ff220afe410cc3a1eab89a0dce2687573ef735500d31a178a1bad64e3a385a"
+    sha256 cellar: :any, monterey:       "624a6c403fc577fc760e72e7b29f4ad52430509dbfdfdbda80cef914312c1a42"
+    sha256               x86_64_linux:   "aa388f3e97800bdf1dd6f861ab96ebb3631792d4edf63e002d07d0e3e0c76182"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "numpy" # used by `jep` for Java primitive arrays
   depends_on "openjdk"
   depends_on "python@3.12"
 
   resource "jep" do
-    url "https:files.pythonhosted.orgpackagesb30cd208bc8a86f032b9a9270876129aadb41fa1a4baa172d68a29c579950856jep-4.1.1.tar.gz"
-    sha256 "5914a4d815a7e86819f55be3de840edc2d3fe0d0b3f67626e5cea73841b1d1c0"
+    url "https:files.pythonhosted.orgpackages16943bc40b4683442bd34e7c511cbe5c1a1bb8d5d6de1f4955991a07fe02c836jep-4.2.0.tar.gz"
+    sha256 "636368786b4f3dc29510454e0580a432e45e696de99ce973a3caef6faec35287"
   end
 
   def install
@@ -57,7 +56,7 @@ class Polynote < Formula
           ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["openjdk"].libexec}libserver"
         end
 
-        system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec"vendor"), "."
+        system python3, "-m", "pip", "install", *std_pip_args(prefix: libexec"vendor", build_isolation: true), "."
       end
     end
 

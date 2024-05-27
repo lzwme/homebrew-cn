@@ -1,19 +1,19 @@
 class Bkcrack < Formula
   desc "Crack legacy zip encryption with Biham and Kocher's known plaintext attack"
   homepage "https:github.comkimci86bkcrack"
-  url "https:github.comkimci86bkcrackarchiverefstagsv1.6.1.tar.gz"
-  sha256 "355da1ef04a34ec830ea8b17365161bb599ef4c389ecdcc4afcf262db1df84bd"
+  url "https:github.comkimci86bkcrackarchiverefstagsv1.7.0.tar.gz"
+  sha256 "6d5f6d4aca155d232d0dd9c33618797c973883a95e078beb92287470101d452f"
   license "Zlib"
   head "https:github.comkimci86bkcrack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7526120ced1b3e3b38e2259aaf150dc3d206cd011b9478c6a24c98f11e1395bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e65506a11a6d043a37155942ba908af68450db0a40b3889ca46037774891fd5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea4180d64ef255e4441909ecceb25dad32841cb4510c47e9bd40a1d5ed730218"
-    sha256 cellar: :any_skip_relocation, sonoma:         "71559ab97fde1687853f8344c6c1c143fa4ea7f7e3ce82ad72ad703bf13e1797"
-    sha256 cellar: :any_skip_relocation, ventura:        "d9997398af15cfeb590de5ec4bc746496e2a90c4da9a9cb672684960f02bd072"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae7fa22feb2e398170454c8b15beade9c1c80e58220b17a7795e7483ba3ff10b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d268f55fe816d2877926822e5cd4125984392f423d7ba72e78422c0a9dcc2464"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6812c37b8d2c18ee538ddbf84d2cdbabd2f8afcf460f312a761abb952db769a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c49fc15ecf036a8c3901e9b90e16d3a1cfcc2f2a1e8783e633302651ff8f927e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a43a7c5bf6e2e1fa822fb0bc2ce23f884704a4b593c046266b6ff8b671e2c33"
+    sha256 cellar: :any_skip_relocation, sonoma:         "bdd52747bb662d8fae70e1b624d17c596b9dd33b91de8fe4d50dbecdba332d92"
+    sha256 cellar: :any_skip_relocation, ventura:        "97ae87104c89c50d0adece9ed9f25044feb4ffdbe0f0cfc182cac0568743160d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d544d45ad991a832e62d79cffb55534c8bc341b9b39420f6d196f89be60953c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2919f8bd2c79606833f09788c38ea8629f981ad957871ddce49e9e74e733acd0"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Zipkin < Formula
   desc "Collect and visualize traces written in Zipkin format"
   homepage "https://zipkin.io"
-  url "https://search.maven.org/remotecontent?filepath=io/zipkin/zipkin-server/3.3.1/zipkin-server-3.3.1-exec.jar"
-  sha256 "8012a5c5d0c6bcef12890ea513873f368df6c752c00cbc4f58f026904feafc7b"
+  url "https://search.maven.org/remotecontent?filepath=io/zipkin/zipkin-server/3.4.0/zipkin-server-3.4.0-exec.jar"
+  sha256 "e0ac243a9c72fb5708056ca7176cdbd3d95fbec4edf7484655ce715f846a966a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Zipkin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2999674d42043fc04831ed3b4c1d8aaad0f0186e006750f41845e873de7d40f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76a566abd4d1438ae4effb93fe3aaa526282aeb1239de8a3d537c7d5dfe39c9c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "469bb59c07352321bedd5649e5dece59b4fab9fb00dde1d6cb219bdfb872d643"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0a3743b91c94f913757bfb1ae6475b7f499a44b8ba757966f97ca4fea9943530"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cd759f650f468892693da3cde331ef6f94964cdeda77a5c97b1d49d53417444"
-    sha256 cellar: :any_skip_relocation, monterey:       "21c955c695d3357749e20361430adef4880a1e81bcb52718ebc9f458bf157367"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a808421b54633091443d6a8b93a8da1ab51874dda4e80b7f8a715aa8b4dc25a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c208b185986ba06547a78b39d62f1a1a2dc538353a8371de61ee9f9997a90df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a12cf552110ebc9296d4dcd086e6f8ac4409e08e465c6fe708c26d56dba3740a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d741230f247084ce90990bbeba5a5c511cf6ae8be4a0222510f6d6fc13aac829"
+    sha256 cellar: :any_skip_relocation, sonoma:         "881752e9100eb47f70a3364aa047e036a5ecf8bf5a0ba37d76941acee41306e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d404a9ecd652deaec867ac10dd8ffc1ea52cd13afcc67d298a5defc4b01430e"
+    sha256 cellar: :any_skip_relocation, monterey:       "286ef6a2d22f579b51a9f116bf82ca874f1a83c06ff8323acd19f211950a7211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff9ec65ba45998328bbf70c3abbe934d2e3c24cc5f4908dd99c14eb9ef7f6cc1"
   end
 
   depends_on "openjdk"

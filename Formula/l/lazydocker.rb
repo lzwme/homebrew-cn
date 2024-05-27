@@ -2,18 +2,18 @@ class Lazydocker < Formula
   desc "Lazier way to manage everything docker"
   homepage "https:github.comjesseduffieldlazydocker"
   url "https:github.comjesseduffieldlazydocker.git",
-      tag:      "v0.23.1",
-      revision: "1060e17731c80372335446eabe6a56ba4facd2b3"
+      tag:      "v0.23.3",
+      revision: "152b36577137fd95f288e12cee5fd6d857a2d101"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cb37fa117ff2ed6401c4ebcd829f11e3c3eac03ee47f600e26223df001e141e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e0bc6a36e1b65005680c34e97a2f7076d2c59aa0ef8496b4855c1e7e5ecf6ea"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81b7fd5275849e4d2b2830978cd4a92de59dcf94239f030c3ceda41d4308371a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "882b9b927868750845edaab7aee196524589dd821b7e2eb9db9b3d9ffdd18507"
-    sha256 cellar: :any_skip_relocation, ventura:        "3de9590c87dcab3d565c03d56bb9cf39f1dd3a9a30374db08ee1ac9ffbe45f13"
-    sha256 cellar: :any_skip_relocation, monterey:       "48c4a284a8af8838932d03b0b8341af960f18bb9d6db5fb858cf251ddab80c59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9120342d0e2900fbdac8d02d130c506d6144e75cfe13adbe5d0212d45e4287df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0ac07f29a414a814b0e2a04a00f707693d40d18e8994865b89d99cc7070456af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d85ea08089170411b0ffbf3da83abc5f70d54a389a7cdc58c74bed33175f0b35"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "96ba766778d35904eba6a4197d6258e74ab901a2474233012352ddab7e11af01"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d4daf142e5877778b5018303438b33b69338b2ec5381dc8690e3ca884aea8d97"
+    sha256 cellar: :any_skip_relocation, ventura:        "2ce62481bbc32499d8f33fe76d0240c8b6171cf43156e68c8517ad897ddb3e1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "0bb1743aae637e317ed37197bce584b49604fd88967403c4dcac083adb3efac2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7670ea3478aef62147ec682af8df6ea24ee4fcd7b4e1dd26aad6bfe437f06bb"
   end
 
   depends_on "go" => :build

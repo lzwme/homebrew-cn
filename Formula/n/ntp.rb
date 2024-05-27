@@ -1,9 +1,9 @@
 class Ntp < Formula
   desc "Network Time Protocol (NTP) Distribution"
   homepage "https://www.ntp.org"
-  url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p17.tar.gz"
-  version "4.2.8p17"
-  sha256 "103dd272e6a66c5b8df07dce5e9a02555fcd6f1397bdfb782237328e89d3a866"
+  url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p18.tar.gz"
+  version "4.2.8p18"
+  sha256 "cf84c5f3fb1a295284942624d823fffa634144e096cfc4f9969ac98ef5f468e5"
   license all_of: ["BSD-2-Clause", "NTP"]
 
   livecheck do
@@ -12,15 +12,13 @@ class Ntp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c5290f8e2147cc286083550639178d2d9d091ffb082efb7fe9d7c6ccce8866e6"
-    sha256 cellar: :any,                 arm64_ventura:  "595cf492f8b44f1c0242c1a96d22fc1bb480bcca46214b2cabfc4abeee18e214"
-    sha256 cellar: :any,                 arm64_monterey: "ce1a6fdd2f848d4a3e3ae476e83c7044152842d7789f40d93b3a30f908b1ace1"
-    sha256 cellar: :any,                 arm64_big_sur:  "3f4b22c9f68db9358ca5f59f5e39de2fd210d84f32d8bc9898eeb21d293ea515"
-    sha256 cellar: :any,                 sonoma:         "fa3bd851f9457d25bcda95f9160a9798b2ecd55d4047d0cc39f8df9b131ece85"
-    sha256 cellar: :any,                 ventura:        "3bedbc6902c73ccdb3b5ef079eb1b516915d1e71459951a754dddc219cc1c274"
-    sha256 cellar: :any,                 monterey:       "2214bc64b8c914045d7e53560950a6077e346aae0e37ca0f0a49b53b1f0e6d05"
-    sha256 cellar: :any,                 big_sur:        "b84d7ec398dcc1995df3cd14f46190ec9bb483ff62421e1dd36eaad5d28c6b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ce46dc09e4e56d4b90fa32a14ac29a279515b1aff1be3fab9c66aabb5586efb"
+    sha256 cellar: :any,                 arm64_sonoma:   "41bfb9eea202e95df1a7aaaee2884019f7df5f3c0b8be100b4fc09f7ac26cdd1"
+    sha256 cellar: :any,                 arm64_ventura:  "7ba3ffa6ba07c07ed7fbe369c179179771936d3c98393f5aec6cbedf7098eafe"
+    sha256 cellar: :any,                 arm64_monterey: "e8a0cff26dafc8c15090033a5425ef996c16ff35e7517de4a6dda107a8e0535e"
+    sha256 cellar: :any,                 sonoma:         "9128d709ea91a5cea9a64a6c804d2d2c96a5231166ae6479e43343cb6bd781ac"
+    sha256 cellar: :any,                 ventura:        "92ddc0b1b103b862bf61a27841c4d1ff4ffcdc415f0f64f8425dd829bc62ee6b"
+    sha256 cellar: :any,                 monterey:       "6f8e1ae4e1b385d6be6a447b34cca98566cc24d7ba5bdf9960de5abc2b66b13f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7e45f68bdcd6758f869f30271115cbe845d5b9e0d1b72b9429e63624109bc09"
   end
 
   depends_on "openssl@3"

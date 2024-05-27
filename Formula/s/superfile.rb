@@ -1,26 +1,24 @@
 class Superfile < Formula
   desc "Modern and pretty fancy file manager for the terminal"
   homepage "https:github.comMHNightCatsuperfile"
-  url "https:github.comMHNightCatsuperfilearchiverefstagsv1.1.2.tar.gz"
-  sha256 "aa4aadc54ca7b16c2715148524d241c940c4ab0b8e0610ee71ed1a8708c116d7"
+  url "https:github.comMHNightCatsuperfilearchiverefstagsv1.1.3.tar.gz"
+  sha256 "1735a2a7886b670ff392f1331b2af142416691ac86303945feccbc4a1f2c6a43"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "da4586d518e7b75de0df5cb08e04b84c697dea80dfcbb7f824f10021afa8a2f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fc35dfd52c7619c819f530a0bfe978847427079887014c81318d28564150162"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "57b7651ccf69055d1c7fd9ef7063c1daa4a10b51ad98f964325c62adbc74168b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bf48acbf609777511cbaa45c08efbc151ed0000e906fac40da21fe559b61795d"
-    sha256 cellar: :any_skip_relocation, ventura:        "00d8f6a350e7304f64614a82f95c222969d65ed690305d76b0a3da9024b4d5e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "0c80fcfce7375ab666fce05b04795731d9d2557cbfd87d1faac25e810bfeaa03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33df4c52bf3d6f7913af3d45627f8269cf269d29d6a2d8b9fe0cc84ca440128b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8355e22bcdd04b127fb4ae8f86ded6c231a07063b4b8105068ef89b58fa9b12b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b6f20af9a85db00868edc9739b9b2427f3303215e11cd73c381fb3fbdf8d489"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b1f2f5500207220dfad995d5cabe2014443f42dcc1209b9bb75c8cfaf103b14"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d39bc47a315745d48ebac4474037d0fbf249a8abf2e24da2a24289b339a3736e"
+    sha256 cellar: :any_skip_relocation, ventura:        "fbe24bf18fb1b3e2ed4730e9484afd752b651d6691a97e523e6f0e11d181257a"
+    sha256 cellar: :any_skip_relocation, monterey:       "1be33e25a014b380d7a65081519136d8edfcb17bfb5701a010b8350e9dd1aaae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a57a06e34c7befc5a02c124e6219091c1247322ca87564f88804295017bb14b"
   end
 
   depends_on "go" => :build
 
   def install
-    cd "src" do
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"spf")
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"spf")
   end
 
   test do

@@ -7,22 +7,21 @@ class RubyBuild < Formula
   head "https:github.comrbenvruby-build.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c5f5252634946bae30b768ee7944592baa354a2919d42f5c0061b4284c9319c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cadc3e7efdd2d9ec389f41fcba047211be7dd7164d7c9890ed3c6f91c08a30b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26c0bdc657456af739add5d0176c0ea2cc1f5be198ff2a0bd421b72982e8a2fc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3151f89ab48a3b4763aaa8cf6ac1d8ebc78a78292c2fa0ca975f47d66d09d1a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d17b347f6af542721923a684ca0407386e967129ae9ece54db963bfedb1b6e25"
-    sha256 cellar: :any_skip_relocation, monterey:       "f2e22c985b2837f1955b645746676abea5288f8545126789871976e4e2ef5daf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "791a85236f22a673e77aeba35d60e73c8a1f6f166b5795aca91623d38c352795"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
+    sha256 cellar: :any_skip_relocation, monterey:       "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4d3335fa73aba26a7d3a51d8ee02be9391e2ba39a6e01ad60ad74f6d539ed72"
   end
 
   depends_on "autoconf"
   depends_on "libyaml"
+  depends_on "openssl@3"
   depends_on "pkg-config"
   depends_on "readline"
-  on_macos do
-    depends_on "openssl@3"
-  end
 
   def install
     # these references are (as-of v20210420) only relevant on FreeBSD but they

@@ -3,20 +3,19 @@ class Sherlock < Formula
 
   desc "Hunt down social media accounts by username"
   homepage "https:sherlock-project.github.io"
-  url "https:files.pythonhosted.orgpackages2a6396b5e9a8a8785d4d3f41d1c8909833cd0d847b9feda1a38df5af2a426b30sherlock_project-0.14.3.tar.gz"
-  sha256 "253066b2265ce689e2747242040c10e6f43d13364919a97b37ec04af769a1933"
+  url "https:files.pythonhosted.orgpackageseb570ac8fcde9e2dbdacb20f48e8c20f3049972a59839d8bccbef0799b944140sherlock_project-0.14.4.tar.gz"
+  sha256 "3c0edc4ebbcdb8eae03d5ce2e377e1c6839d73b8e77388b70125120537917022"
   license "MIT"
-  revision 1
   head "https:github.comsherlock-projectsherlock.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "207bc28d7e178921df6e057b10e26b1a4d7cd709d18ad393764abcadaddd94e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a8367721cbdf5e58299de2b7a773a12b85cd327f399f2a986bea0aeda5f1321c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f5811f64ded4a6cc446712f1642803ca70146bdf3529be3951f514ac1cfdc71"
-    sha256 cellar: :any_skip_relocation, sonoma:         "241b0dacacc034b0b621e639b41e2e7137ae2317cab39dbe0d634cbbd106491e"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae293d261fe06a6c75c1c9bb7595b30ffb82316b6a34a3da739e60a3ebb1c739"
-    sha256 cellar: :any_skip_relocation, monterey:       "14d9f8d1d9446114893d7ba9c9afb936b2632635035f1d1135af589d2edf0b1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3d7a4e933880e218ce570d896a837aeaad4d7c7d145245343e7790af88f6bcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c9aa8b48768ebdb3a1f75d57dbb1b5494e328cb960442d151dfe61d19af290c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2313da93e039f071360a265ec9405e0c7ff99a24e3623908cfa1807e5b6d073"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55b06aab82e51d750745088c8fc21c63c2c0544a7b7fe27198db418ece12bee7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "962fb08052f1cef920bbfe7a7c7f3642f7b9c84a7037818f0f6f538b3dd42fee"
+    sha256 cellar: :any_skip_relocation, ventura:        "90db2f5ecac6ed021485664b2a477dea8e9c4e53c98063c83516521d1ca40386"
+    sha256 cellar: :any_skip_relocation, monterey:       "01e31530d3c0e54a1e6a255fb4d2640821e1b3a2a064371ae7bf9d8a64a86a92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1aab9b488bfd11364f1b6e3a94f2ae2acfbb293e605bce48fb2b87815ccb0cbc"
   end
 
   depends_on "cmake" => :build
