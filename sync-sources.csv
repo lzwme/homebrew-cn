@@ -150,6 +150,7 @@ Homebrew-homebrew-core/Formula/a/apache-arrow-glib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-arrow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-brooklyn-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-drill.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/apache-flink-cdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-flink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-geode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 0
@@ -3211,6 +3212,7 @@ Homebrew-homebrew-core/Formula/l/livekit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livestreamer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lizard-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lizard.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
@@ -4485,6 +4487,7 @@ Homebrew-homebrew-core/Formula/o/ocaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocaml@4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocamlbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oci-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/ocicl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocl-icd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oclgrind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ocm.rb, Homebrew/homebrew-core, 1
@@ -7643,6 +7646,7 @@ Homebrew-homebrew-cask/Casks/c/camtasia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/camunda-modeler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/candybar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/canon-eos-utility.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/canon-ufrii-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cantata.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/canva.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/capacities.rb, Homebrew/homebrew-cask, 0
@@ -11962,6 +11966,7 @@ Homebrew-homebrew-cask/Casks/n/neat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neo4j.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neofinder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neovide.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nessus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nestopia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netbeans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netdownloadhelpercoapp.rb, Homebrew/homebrew-cask, 1

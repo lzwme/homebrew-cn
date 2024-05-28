@@ -3,7 +3,7 @@ class Bitlbee < Formula
   homepage "https:www.bitlbee.org"
   url "https:get.bitlbee.orgsrcbitlbee-3.6.tar.gz"
   sha256 "9f15de46f29b46bf1e39fc50bdf4515e71b17f551f3955094c5da792d962107e"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   head "https:github.combitlbeebitlbee.git", branch: "master"
 
   livecheck do
@@ -30,6 +30,7 @@ class Bitlbee < Formula
   depends_on "glib"
   depends_on "gnutls"
   depends_on "libgcrypt"
+  depends_on "libgpg-error"
 
   def install
     args = %W[

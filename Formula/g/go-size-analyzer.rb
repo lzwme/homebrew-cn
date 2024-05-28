@@ -1,19 +1,19 @@
 class GoSizeAnalyzer < Formula
   desc "Analyzing the dependencies in compiled Golang binaries"
   homepage "https:github.comZxillygo-size-analyzer"
-  url "https:github.comZxillygo-size-analyzerarchiverefstagsv1.0.13.tar.gz"
-  sha256 "a7261e3b6067e3d7e35d3fc0df93f220d8ed9a8a1ef4d1d775690df225394162"
+  url "https:github.comZxillygo-size-analyzerarchiverefstagsv1.1.0.tar.gz"
+  sha256 "07e053ecd115043683360f8b124bb6f9c7002430bbde8c8c839e47b6a620d03d"
   license "AGPL-3.0-only"
   head "https:github.comZxillygo-size-analyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e42ff1e97320500df6182d7ac067c34d7bec7a31fd5ea242b6beb1ffefebf856"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86731e70fa0e8c6c1a77843124b0c70f569a92e9d81c226833697c255779f6a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f7da4dca2b7643918df1322cf46668c909135419ef4efad6127440c2d5bd5c6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8cec55aeba24b2198239664b4bfbf69a7a3335e3ae6e5cfa8236033009f477b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2a7d49b8c19b3f38720d852f6d0068a2de408b45a002e7421367297aedf66764"
-    sha256 cellar: :any_skip_relocation, monterey:       "8feb6a92677a246cd38d67b185ffc95df6281961cccb7cb934b354537694aa28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb7171ab033887468e0b12eb8572e0addd039607690267461701b7711d058a7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a31e0817f2616d04e818ebad9ed7f04262a876b39736c14a3dad003fbc42a2b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "730f5d422602ac40e738a816665336e4b3662f3356ca594cf392e581f3eb6851"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d2eb02ac155205f856588d11dec070f39ff3b27df47c1a3578990d771c35571"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9ea262f37b7dda6e33b266108aba541840ab5317e2787a7ff72559f30d19a68f"
+    sha256 cellar: :any_skip_relocation, ventura:        "259a9b0026109ab83bf5bf0e55a9213abd7218ec4af7938ce224634fecb5fff5"
+    sha256 cellar: :any_skip_relocation, monterey:       "81265b96a88ba09d7d1235b50aeab2212945eee10c8bb8f85c58570c703e1b10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "026dd35c3bcdbc6009607e56cc3bf3af98a7f195cf2b3eebb9b8f85fa87ca281"
   end
 
   depends_on "go" => [:build, :test]
@@ -22,9 +22,9 @@ class GoSizeAnalyzer < Formula
 
   def install
     system "pnpm", "--dir", "ui", "install"
-    system "pnpm", "--dir", "ui", "build"
+    system "pnpm", "--dir", "ui", "build:ui"
 
-    mv "uidistindex.html", "internalwebuiindex.html"
+    mv "uidistwebuiindex.html", "internalwebuiindex.html"
 
     ldflags = %W[
       -s -w

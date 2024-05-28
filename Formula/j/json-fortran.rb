@@ -1,19 +1,19 @@
 class JsonFortran < Formula
   desc "Fortran 2008 JSON API"
   homepage "https:github.comjacobwilliamsjson-fortran"
-  url "https:github.comjacobwilliamsjson-fortranarchiverefstags8.5.1.tar.gz"
-  sha256 "07fb1afb72b17eac3a89724ac77523de2247c0625843fb559738168ee08ebf18"
+  url "https:github.comjacobwilliamsjson-fortranarchiverefstags8.5.2.tar.gz"
+  sha256 "ba7243ab28d4d06c5d0baef27dab0041cee0f050dea9ec3a854a03f4e3e9667a"
   license "BSD-3-Clause"
   head "https:github.comjacobwilliamsjson-fortran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1b6b02059833fcd411e2c4d52d0e548687202661d35817acac2ac3e0e1f9c5e5"
-    sha256 cellar: :any,                 arm64_ventura:  "2d8166ab4e85dab55413bb9f89e409834757c371b4c1c111722b141ae4046642"
-    sha256 cellar: :any,                 arm64_monterey: "1a47455132bc29cbe40467274c839e6afeb8e55a09fe1a47fdaf387dd7580890"
-    sha256 cellar: :any,                 sonoma:         "92e3f18f2cef51914109b2e1aadb988cc6c9a0c04934ce7e819c1ce4c31a72f2"
-    sha256 cellar: :any,                 ventura:        "bd7f2212cc1f4a4a88ce668b8097fbc6a8e41c8ab0c513a0fd3bd0e28e8ab069"
-    sha256 cellar: :any,                 monterey:       "d9053ef10264a7984a68aaa11e74d332e21bc2c691f9977416e6b77a0800905d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d6160e89514b7cacd97cffef3c69979e78596c01a1f8811b180194a4b846a6c"
+    sha256 cellar: :any,                 arm64_sonoma:   "be1d61841e02f245d7c867cc0a029c86af7b030c1721ccd010de5cae04c46c52"
+    sha256 cellar: :any,                 arm64_ventura:  "f1d1bdadbd0590b680b1a22e6c6594cd9753a7e05a86cc18fe8c629ff11ce433"
+    sha256 cellar: :any,                 arm64_monterey: "15cca7c529d210e8af02931b4ba3c2a9a824b497148c8931be90da12a653c494"
+    sha256 cellar: :any,                 sonoma:         "97dfcaa6ee1b2001658f77fbeda7768a6878b1f8c8201c8c4994a80559286718"
+    sha256 cellar: :any,                 ventura:        "fcca63f10d6f6e6110510829aaba16ee4dd0864264081ec69e18c463ac9262ba"
+    sha256 cellar: :any,                 monterey:       "3de419613a2230e883f8e5620ffc98cc548370d6097b991b969c1abe3d909b53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d57e158c6d29f3b2095e199f37b2b6c70faf2d745bfdbccdd5ce6109e3ff900b"
   end
 
   depends_on "cmake" => :build

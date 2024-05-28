@@ -1,20 +1,10 @@
 class GitBranchless < Formula
   desc "High-velocity, monorepo-scale workflow for Git"
   homepage "https:github.comarxanasgit-branchless"
+  url "https:github.comarxanasgit-branchlessarchiverefstagsv0.9.0.tar.gz"
+  sha256 "fa64dc92ec522520a6407ff61241fc1819a3093337b4e3d0f80248ae76938d43"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https:github.comarxanasgit-branchless.git", branch: "master"
-
-  stable do
-    url "https:github.comarxanasgit-branchlessarchiverefstagsv0.8.0.tar.gz"
-    sha256 "f9e13d9a3de960b32fb684a59492defd812bb0785df48facc964478f675f0355"
-
-    # Backport support for libgit2 1.7
-    patch do
-      url "https:github.comarxanasgit-branchlesscommit5b3d67b20e7fb910be46ea3ee9d0642d11932681.patch?full_index=1"
-      sha256 "ff81ca9c921fc6b8254a75fecec3fc606f168215f66eb658803097b6bb2fcdb8"
-    end
-  end
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's
@@ -25,14 +15,13 @@ class GitBranchless < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "723cd94950543af845b21543d1f0d2a99ae17fd6241add0403b1a7e0a8f0fbd4"
-    sha256 cellar: :any,                 arm64_ventura:  "5550d80acfcb4818b8f5f92c95e64294d4a3b6b8bba34761e1854c71251cb957"
-    sha256 cellar: :any,                 arm64_monterey: "01fe75552c47f9500cc47a9cfc5f16cae879b27ff77a864d6c50bb617e56851d"
-    sha256 cellar: :any,                 sonoma:         "42aaf6d763b559bcf1a2ef8e083d01edfc25163857572441b9721cd1d2fd7c0c"
-    sha256 cellar: :any,                 ventura:        "704d3ba94268d57a36c9c5e65a1dd72e4184a8c38e21138565eb082fa6b545de"
-    sha256 cellar: :any,                 monterey:       "d19937979850141ad61000f9e71c4234316c9fb838f20ce5ff5710bfb7feb1c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28b8360a364a810027705d3adce5d06e2580e4ddc626a91460068c8a181c0681"
+    sha256 cellar: :any,                 arm64_sonoma:   "94d48275ff7f05494ed9a80084381b367bd56f82e67e265069806987a8411f9d"
+    sha256 cellar: :any,                 arm64_ventura:  "6c3c8e9c6246ecbd43f05de74cffc45e76d8ba1f46c5d2b6a014751144f2d4b2"
+    sha256 cellar: :any,                 arm64_monterey: "3d1bf86800d60009cfa4e86cdd07bd481493963685c8e189a729a971c7052686"
+    sha256 cellar: :any,                 sonoma:         "3b036d955e30b83fde879c735bd9e20bd39880392fd797aea004497a83bfba4b"
+    sha256 cellar: :any,                 ventura:        "996464d2800b01b547794dce0d296c10ebb36e4250e2c3eb0b7393b3f384cf22"
+    sha256 cellar: :any,                 monterey:       "f92bf814c3ffaea775f71d47941a0b2215d57131431689ab71602dfe4901c258"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6b4243dbcb36ee645026ec663cb2472817339f8c7c9cc06f03d287b71f38a60"
   end
 
   depends_on "pkg-config" => :build

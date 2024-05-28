@@ -1,15 +1,15 @@
 cask "qgroundcontrol" do
   version "4.3.0"
-  sha256 :no_check
+  sha256 "32ff5f37fdb877905859cd933f58d449033095000a415943527e21c5707971f2"
 
-  url "https:d176tv9ibo4jno.cloudfront.netlatestQGroundControl.dmg",
-      verified: "d176tv9ibo4jno.cloudfront.netlatest"
+  url "https:github.commavlinkqgroundcontrolreleasesdownloadv#{version}QGroundControl.dmg",
+      verified: "github.commavlinkqgroundcontrol"
   name "QGroundControl"
   desc "Ground control station for drones"
   homepage "http:qgroundcontrol.com"
 
   livecheck do
-    url "https:github.commavlinkqgroundcontrolreleases"
+    url :url
     strategy :github_latest
   end
 

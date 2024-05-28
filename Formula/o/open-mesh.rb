@@ -1,8 +1,8 @@
 class OpenMesh < Formula
   desc "Generic data structure to represent and manipulate polygonal meshes"
   homepage "https://www.graphics.rwth-aachen.de/software/openmesh/"
-  url "https://www.graphics.rwth-aachen.de/media/openmesh_static/Releases/10.0/OpenMesh-10.0.0.tar.bz2"
-  sha256 "af22520a474bb6a3b355eb0867449c6b995126f97632d1ee5ff9c7ebd322fedb"
+  url "https://www.graphics.rwth-aachen.de/media/openmesh_static/Releases/11.0/OpenMesh-11.0.0.tar.bz2"
+  sha256 "9d22e65bdd6a125ac2043350a019ec4346ea83922cafdf47e125a03c16f6fa07"
   license "BSD-3-Clause"
   head "https://gitlab.vci.rwth-aachen.de:9000/OpenMesh/OpenMesh.git", branch: "master"
 
@@ -12,23 +12,24 @@ class OpenMesh < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d2643de5a8d90f95c0a4644ccd3972762dbfd991b9c06674e37285596616da77"
-    sha256 cellar: :any,                 arm64_ventura:  "3b8778dd880d78eeb903270a3e33b6750dade2e15489ea1d02003457c23a54ee"
-    sha256 cellar: :any,                 arm64_monterey: "5aba286438423ebc8e6e0efcd3a0c6470163117cc5ed4e8dddcd265140a3c690"
-    sha256 cellar: :any,                 sonoma:         "0f7f833c8180a1cb9c60c06d1e999310dc19838996171e5ac62dc076a665ad1a"
-    sha256 cellar: :any,                 ventura:        "8003b56794b799917cb0e7be9c166b8127168a174cee2e3fb823df059fc9347e"
-    sha256 cellar: :any,                 monterey:       "84afd6d942d42c585fd29a757509b23d171430528ebfa7c67b3617243d2293a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e07eef120683c84a271e1e106c8c9f2db7fc4139747c83bf300edb0e39101f9"
+    sha256 cellar: :any,                 arm64_sonoma:   "34a5323c42111f78314efc77e19b9b5f595718155a22e480f75d0f559666c581"
+    sha256 cellar: :any,                 arm64_ventura:  "c3766a3a3366ce1da776285750738811d5b38e752d1d487fcd4fca2f0249dc84"
+    sha256 cellar: :any,                 arm64_monterey: "6ffaa80496d44e94d4ae6be0cd21e8ddfa23b5dadf9349284d65af6bebc2e45d"
+    sha256 cellar: :any,                 sonoma:         "daad3b91c4ca6a713f80298891ca0287bba5118d9b2da41b209e626625b9cf86"
+    sha256 cellar: :any,                 ventura:        "6c3376d904fd088a04933218be444ade532aa7dce3e956586445115f45efc776"
+    sha256 cellar: :any,                 monterey:       "f7b5afee5b4b8f473457bcd29919e3dc4c1691ff168a271812a996323d5c4d15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51111fc385d889eaee7e24daa21f468f830be446aa9fa27a6675220d65340862"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_APPS=OFF",
-                    "-DCMAKE_CXX_STANDARD=14",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    args = %W[
+      -DBUILD_APPS=OFF
+      -DCMAKE_CXX_STANDARD=14
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

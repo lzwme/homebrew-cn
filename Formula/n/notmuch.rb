@@ -25,7 +25,6 @@ class Notmuch < Formula
   depends_on "emacs" => :build
   depends_on "libgpg-error" => :build
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "sphinx-doc" => :build
   depends_on "cffi"
   depends_on "glib"
@@ -62,7 +61,7 @@ class Notmuch < Formula
     (prefix/"vim").install "vim/syntax"
 
     ["python", "python-cffi"].each do |subdir|
-      system python3, "-m", "pip", "install", *std_pip_args, "./bindings/#{subdir}"
+      system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./bindings/#{subdir}"
     end
   end
 

@@ -6,6 +6,7 @@ class Cahute < Formula
   url "https://ftp.cahuteproject.org/releases/cahute-0.4.tar.gz"
   sha256 "a178389ac82e2e83cd55d8d80ee1771daae88331a0e799d5573d986428825648"
   license "CECILL-2.1"
+  head "https://gitlab.com/cahuteproject/cahute.git", branch: "develop"
 
   livecheck do
     url "https://ftp.cahuteproject.org/releases/"
@@ -28,11 +29,6 @@ class Cahute < Formula
   depends_on "libusb"
   depends_on "sdl2"
 
-  resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/d6/4f/b10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aed/setuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
   resource "toml" do
     url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
@@ -42,7 +38,7 @@ class Cahute < Formula
     venv = virtualenv_create(buildpath/"venv", "python3.12")
     venv.pip_install resources
 
-    system "cmake", "-S", ".", "-B", "build", "-DPython3_EXECUTABLE=#{buildpath}/venv/bin/python", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DPython3_EXECUTABLE=#{venv.root}/bin/python", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

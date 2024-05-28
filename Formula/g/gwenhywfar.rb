@@ -76,6 +76,7 @@ class Gwenhywfar < Formula
     system ".test_cpp"
 
     (testpath"CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.29)
       project(test_gwen)
 
       find_package(Qt5 REQUIRED Core Widgets)

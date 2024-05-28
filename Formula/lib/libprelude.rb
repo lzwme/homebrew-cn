@@ -23,7 +23,6 @@ class Libprelude < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "gnutls"
   depends_on "libgpg-error"
@@ -41,6 +40,9 @@ class Libprelude < Formula
   end
 
   def install
+    # Work-around for build issue with Xcode 15.3
+    ENV.append_to_cflags "-Wno-int-conversion" if DevelopmentTools.clang_build_version >= 1500
+
     ENV["HAVE_CXX"] = "yes"
     args = %W[
       --disable-silent-rules
@@ -61,7 +63,7 @@ class Libprelude < Formula
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
     # This is done by manually install python bindings.
-    system python3, "-m", "pip", "install", *std_pip_args, "./bindings/python"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./bindings/python"
   end
 
   test do

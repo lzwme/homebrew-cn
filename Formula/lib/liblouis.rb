@@ -25,7 +25,6 @@ class Liblouis < Formula
 
   depends_on "help2man" => :build
   depends_on "pkg-config" => :build
-  depends_on "python-setuptools" => :build
   depends_on "python@3.12"
 
   def python3
@@ -38,7 +37,7 @@ class Liblouis < Formula
     system "make"
     system "make", "check"
     system "make", "install"
-    system python3, "-m", "pip", "install", *std_pip_args, ".python"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), ".python"
     (prefix"tools").install bin"lou_maketable", bin"lou_maketable.d"
   end
 

@@ -6,16 +6,16 @@ class Lit < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d983e553dc1c1bbb3e64f3af25f44376e345fec3d3aa81a08020ddba9aef021"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "137cf94ac4198141245b3046eeb6a2fc70fbcda9641504c664a6387709f779f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47ccb91d393ea43601c1731e8fee2b1af589c431c016a4e01d2e7857f008f119"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68034023f453f37c0ad8f394b409d1acdd77fba78191f24a0dafb34c52ac3088"
-    sha256 cellar: :any_skip_relocation, ventura:        "9219644b74ee94aec25a44ff52a917477f3d85ea2a3df057d2ad592faa366825"
-    sha256 cellar: :any_skip_relocation, monterey:       "7cd284c6cefd09a1aae7017be35651529572bd262f1a42bb652fc777085483ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "272675caea165b67c8c26b12c6456eccc4f3cbb2e863d127872f88ddbba6e03b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d79c3ff5bc24f53fb5d84a4e46db916e5eb8d787f790ada4bbacd7b2c6aade0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d79c3ff5bc24f53fb5d84a4e46db916e5eb8d787f790ada4bbacd7b2c6aade0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d79c3ff5bc24f53fb5d84a4e46db916e5eb8d787f790ada4bbacd7b2c6aade0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9d79c3ff5bc24f53fb5d84a4e46db916e5eb8d787f790ada4bbacd7b2c6aade0"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d79c3ff5bc24f53fb5d84a4e46db916e5eb8d787f790ada4bbacd7b2c6aade0"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d79c3ff5bc24f53fb5d84a4e46db916e5eb8d787f790ada4bbacd7b2c6aade0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d318e53a5fe192d3fb2fe46806a44a0ea7d46283946e5b64ca825fada65b7ea0"
   end
 
-  depends_on "python-setuptools" => :build
   depends_on "llvm" => :test
   depends_on "python@3.12"
 
@@ -24,7 +24,7 @@ class Lit < Formula
   end
 
   def install
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
 
     # Install symlinks so that `import lit` works with multiple versions of Python
     python_versions = Formula.names
