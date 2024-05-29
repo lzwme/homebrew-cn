@@ -27,6 +27,10 @@ class Cbmc < Formula
   fails_with gcc: "5"
 
   def install
+    # Fixes: *** No rule to make target 'bingoto-gcc',
+    # needed by 'tmpcbmc-20240525-215493-ru4krxregressiongoto-gccarchiveslibour_archive.a'.  Stop.
+    ENV.deparallelize
+
     system "cmake", "-S", ".", "-B", "build", "-Dsat_impl=minisat2;cadical", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

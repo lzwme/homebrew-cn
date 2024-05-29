@@ -1,18 +1,18 @@
 class Lego < Formula
   desc "Let's Encrypt client and ACME library"
   homepage "https:go-acme.github.iolego"
-  url "https:github.comgo-acmelegoarchiverefstagsv4.16.1.tar.gz"
-  sha256 "40dcd261dc92f81e0667137efcf4799b8ccc67dc3e3d0b1e29c3d0fa71f40f88"
+  url "https:github.comgo-acmelegoarchiverefstagsv4.17.3.tar.gz"
+  sha256 "79ad0baa3a1bfa36c8fa8a3b5f497669f65ed1b16addc8ab1b04f0f23723ec6a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "533d11299e32cae2786170ae5c63f2488de94068ce562ec6b04cdf7e67f40148"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff3743fe3c721dc9441626114c0f84c117a09209c0b97b0002f1e585394ee33c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b5463ca6548e8ce61f77c11cea9ee68157b5dc64d9ef876d7af9a556f9c8b60"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9fb468b9c09ea828373f499543cc3d863865762fde2aa9a2f5204e97d79a6ff5"
-    sha256 cellar: :any_skip_relocation, ventura:        "79e1caa69d6a9b090ea83278601bf9ad4a79c264df8bbb30bea11046a041b6b4"
-    sha256 cellar: :any_skip_relocation, monterey:       "5548cbc42508e552ffb3ae12d25797bf306502d793fb727bfd0e23d87f0262f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "640209959680b23e95bd5b981f47e068b3984f59b576d89844565e5aa0f849b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad3ecd7aa4adec1496bfd018281217a34d2635b4882d99cf77a16f926453300f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "550bb43a26c649b92a526e72b83d39afbdca9349ab26f86b2e1449852004d111"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0d4bdde43df4f8202ab213fde2389c5bfcc2f3f0fc0fdbe5dd7bb6d74d2f055"
+    sha256 cellar: :any_skip_relocation, sonoma:         "462745f2a46f5584a5e387ec3ca48a0e9c0d9c54e4e2df7cf718af7de40bfdba"
+    sha256 cellar: :any_skip_relocation, ventura:        "23a30e6d9eb56dfb753c1b7a67c7084adf2f2cfd9654c6de2e6562f14b9866f0"
+    sha256 cellar: :any_skip_relocation, monterey:       "99e1690af3f0a2aa7b65a5747d5353660b6d7b692e3ea05bb9118531381b90a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bb1d18ca98322d4a46d748bbf6ecbc0d253f9b04d3b5ded93e932a1e8cd9f4d"
   end
 
   depends_on "go" => :build

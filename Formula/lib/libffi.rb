@@ -5,6 +5,11 @@ class Libffi < Formula
   sha256 "b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "e81237234a3e21d5222c1c8baf4017bc2f2ad7e444fbf58ad6b635fc0ace5078"
     sha256 cellar: :any,                 arm64_ventura:  "7a6a1d1dffe41d4e9bf117440190be51c432a2a192945ed8e2e10c4bb1f95ad0"

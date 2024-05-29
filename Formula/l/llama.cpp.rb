@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https:github.comggerganovllama.cpp"
   # CMake uses Git to generate version information.
   url "https:github.comggerganovllama.cpp.git",
-      tag:      "b3012",
-      revision: "10b1e4587670feba2c7730a645accf8234873113"
+      tag:      "b3023",
+      revision: "ee3dff6b8e39bb8c1cdea1782a7b95ef0118f970"
   license "MIT"
   head "https:github.comggerganovllama.cpp.git", branch: "master"
 
@@ -14,12 +14,12 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "a66b162245067396a5321efac84fbfa62ecd1e1f6954bdcd364d95e1b5d3c095"
-    sha256 cellar: :any,                 arm64_ventura:  "a88f0d3573c3a81036a1d689900e346e080986e2dbb74f1788207546cb0d94ec"
-    sha256 cellar: :any,                 arm64_monterey: "87b563283cdabe5804ab796cdba9aef0e7a7e149615ee2926bad10fc390d5ef2"
-    sha256 cellar: :any,                 sonoma:         "bb30e4857acec669e757c4663396699a7e67dbca3170ddb2097a107072cc13bd"
-    sha256 cellar: :any,                 ventura:        "608ba3fa03d65026045fee316362a62a2a470ca291fd00b36ea4bb06a6a5f866"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "450e0c1b64f6a2836ff75141838de0fad60c60746f3c545806d8ac60b793366d"
+    sha256 cellar: :any,                 arm64_sonoma:   "87021b5b6e1d22a0380d9133e2cf2c0a0e3ba21522e1d3d50d15fda2547e9322"
+    sha256 cellar: :any,                 arm64_ventura:  "203e4e5a9bbca968f06fbb9cb808dd5f70b5e5ea93e8f4ac056c0400ab42d7ec"
+    sha256 cellar: :any,                 arm64_monterey: "6ed01dad6f038a06fc6e2ff344bec9a67273fb424659d3ddf1db659f06a05011"
+    sha256 cellar: :any,                 sonoma:         "461f11a889c8fd15c16196259c7f367d4f283cd7427b0ecfe61845095a8c4913"
+    sha256 cellar: :any,                 ventura:        "908038fbc2550de6ffecf326abe6af97c87d2cd8887851da792c36e55a3b60de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72f48658cec31bb91f47f372e711e61a32c21fa15ddc0e779e8717eb10448b3d"
   end
 
   depends_on "cmake" => :build
@@ -66,7 +66,7 @@ class LlamaCpp < Formula
 
   test do
     system bin"llama", "--hf-repo", "ggml-orgtiny-llamas",
-                        "-m", "stories15M-q4_0.gguf",
+                        "-m", "stories260K.gguf",
                         "-n", "400", "-p", "I", "-ngl", "0"
   end
 end

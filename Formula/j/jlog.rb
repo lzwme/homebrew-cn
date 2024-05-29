@@ -1,22 +1,19 @@
 class Jlog < Formula
   desc "Pure C message queue with subscribers and publishers for logs"
   homepage "https:labs.omniti.comlabsjlog"
-  url "https:github.comomniti-labsjlogarchiverefstags2.5.4.tar.gz"
-  sha256 "a6f00f9f41d3664a2f66f6c6aee0d33d6f295354f13a5f7f4033ca7ed20685cd"
+  url "https:github.comomniti-labsjlogarchiverefstags2.6.0.tar.gz"
+  sha256 "c3c6e745557f789c2cef3e3760e3c68ee585727a0d55c14ad9cb3e8232f4e46b"
   license "BSD-3-Clause"
   head "https:github.comomniti-labsjlog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c83a14b807e726396394abec4f3a94b60e02c8f2853bc9d2968aa2ae05a023a2"
-    sha256 cellar: :any,                 arm64_ventura:  "34c8486ef107bd15562d5b15b20a1892d4c859a3407c39c90b45b9f6497764f4"
-    sha256 cellar: :any,                 arm64_monterey: "ca940d44eec020e82f8416245f4634d543ff471150e4579817344d944c445085"
-    sha256 cellar: :any,                 arm64_big_sur:  "32b7e00c10405ce4aa979adfef936eb67e59abc62f016df1a3b82e4e98c2393d"
-    sha256 cellar: :any,                 sonoma:         "22b17be11c2a4c95cfe881f1fe82d2c0f574daf299a222d73666d29638869142"
-    sha256 cellar: :any,                 ventura:        "d6964c475f6e70d7025dc37da7c67dac1c3bdcd7efba3dd3a9c927dd1860477c"
-    sha256 cellar: :any,                 monterey:       "f65c6a850701989de8355e2db39e479103090b2b22c073c0f461d4c3e74818c2"
-    sha256 cellar: :any,                 big_sur:        "3968856ea5fbca1aa88feae8c9978d08bf35b380dcf486841c3e71a3937e794e"
-    sha256 cellar: :any,                 catalina:       "ef9a6e2a85b5bdb48b50a6e8f86e53288c1e82ed7d1a1b404335b8e3c3db84fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6349b0d48318cc98416da8a2481b4524a3b03b8b510cf1a2b043d78b3b142459"
+    sha256 cellar: :any,                 arm64_sonoma:   "29000316d005c75482135908e0b6f8ba9ed9bc5046b449133725237ad981b3ca"
+    sha256 cellar: :any,                 arm64_ventura:  "1ea5287e2fb6f3cfe8fc0c2b91f4012ac92756408132d0543fe9fb5db2726d4c"
+    sha256 cellar: :any,                 arm64_monterey: "500e84aeed8bcdd929bef2023db9b040d0e1ba5043362f91dfdc5238a1d258d8"
+    sha256 cellar: :any,                 sonoma:         "61f8f9bd4bc83160c4680f9df02462d64c06a2125488b3f421e80753218bc786"
+    sha256 cellar: :any,                 ventura:        "ed19d61911e281161bfd89926aa405a3b50b0519c5d0c9b9016685c862cc3255"
+    sha256 cellar: :any,                 monterey:       "c856df10689f774ee8a7ee58c80edf754573b509c8769e477bbfc05735332def"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b59c62ae218826677a96203de736d341929e2f7490957eeb125d9b720e698ec"
   end
 
   depends_on "autoconf" => :build

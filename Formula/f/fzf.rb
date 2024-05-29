@@ -7,13 +7,14 @@ class Fzf < Formula
   head "https:github.comjunegunnfzf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08672bc5edc69f7f2c1baf3179377218e49657beacccf5d59b0c8e338c98dd91"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cc791f731be60048f32e699009c290177d8eb9c01d132e6cc1f17480b8b744b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a65df316e698b60892a104fbc14cb05e8b7609197d7900cced22a37f70ad06e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4a9b7fa9a68a1d02d4c4c8c4b31d3d1d943238de445edb6d66e3fa73543222c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "31e8d7a022ff35d822cbc188b4a8802ffa74c347916d714ad6515e3e11c4fd72"
-    sha256 cellar: :any_skip_relocation, monterey:       "21b1748b50c54fc6b39a12e31d598f5825a35bd6ba1fe36a9865c087f3d226c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c94930e3f13691644c61f50681c3963b1660514d3ca7c16398bf08a167391b5e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f148bba640d6ed97b25a1894178e1872b4c18d1c0753400e3eed4cc4aefb8807"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac4a88bd3c2eaf24a898a180b2c5eb3e77fcddb2bcdc8079d3ffa809158cb0cc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79a71f2bbde75e9a4a682e7c6404e318881ce968fb39564fe6b0b6080de4e886"
+    sha256 cellar: :any_skip_relocation, sonoma:         "f8d1475d30cb2c6b7dede872b54b64e9eb26a3924445b0dd14627f2baa2acbcc"
+    sha256 cellar: :any_skip_relocation, ventura:        "86311fab3d7500dfc8268f880296c572adfd6d52e458d6b2ed01e8c03ca71de1"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a9144b076080c753100101d3c02b0607de89489c831d4b77bd0e6ed0c8060f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a81a17c69d8bd88d6fcb493a8bfecafddc8e3ee9ab96bedda24a1795892a17a"
   end
 
   depends_on "go" => :build
@@ -42,7 +43,7 @@ class Fzf < Formula
         eval "$(fzf --bash)"
 
         # zsh
-        eval "$(fzf --zsh)"
+        source <(fzf --zsh)
 
         # fish
         fzf --fish | source

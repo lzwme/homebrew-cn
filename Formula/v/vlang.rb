@@ -5,6 +5,7 @@ class Vlang < Formula
   url "https:github.comvlangvarchiverefstags0.4.6.tar.gz"
   sha256 "0f8eeb05eb9026f833ea3726bb505f0fa556e2baf3d8ced132af9a9d3ad5735f"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Vlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fbf5293d3aa22ad8bc9914f1811a2c61facbcd44e650a0f4cdf9bc4086c3d33d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ffe6fe1c7fa641e0a41bf6cea0f02872f88daa93010b7a493ff008c50a34ae48"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "43b9c986809809635ae7d287120da9be6f635b502339a0cf7e1c2eb3b317fcd4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f340e5d827b1dd5c3772835d3b7d7021238f9d9d37c35f9abd283d01dd73ce33"
-    sha256 cellar: :any_skip_relocation, ventura:        "30da78459d6c7ddc44c3c13d2aeb68ec5a257ea39ed744e3cbd1ea10c86f402a"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1ef78cf5b0051782cf36f3b3c264262fb517f1fb5e75f410c831ffd44f85da6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18ef93184c77e05217a879ed302df670128bb8fc84033acae020d9e2303d8455"
+    sha256 cellar: :any,                 arm64_sonoma:   "ca7a4d83c4335b14e3bd1195b783c03309fc02afa3822a69ea84e56479a5136f"
+    sha256 cellar: :any,                 arm64_ventura:  "52571db88727a04abfcb412833dc82d4c65edb07af24c80fc74a5fcb6fcf477a"
+    sha256 cellar: :any,                 arm64_monterey: "0506f70a1f64c3d7b7b48bb7ef197ca126fbddef3fb34de5e877a07303749db9"
+    sha256 cellar: :any,                 sonoma:         "686eb6f4b3abb7531f21bc3e302c759e0eeee79145e53127ba297daa233bd1ec"
+    sha256 cellar: :any,                 ventura:        "e8a6dab15b079c64c369f008aee9583f643685a5aa0c83f773cf4261115b24f0"
+    sha256 cellar: :any,                 monterey:       "32b5d206cad0c4b1995e595b57fbbeb55e404b2a37ef33c2a163179d6050b7be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "246e800f156122823dbd8e8756a46ecf2afd9ef46b24b9969ae7abe89319c4a4"
   end
 
   depends_on "bdw-gc"
@@ -44,13 +45,25 @@ class Vlang < Formula
 
   def install
     inreplace "vlibbuiltinbuiltin_d_gcboehm.c.v", "@PREFIX@", Formula["bdw-gc"].opt_prefix
+    # upstream-recommended packaging, https:github.comvlangvblobmasterdocpackaging_v_for_distributions.md
+    %w[up self].each do |cmd|
+      (buildpath"cmdtoolsv#{cmd}.v").delete
+      (buildpath"cmdtoolsv#{cmd}.v").write <<~EOS
+        println('ERROR: `v #{cmd}` is disabled. Use `brew upgrade #{name}` to update V.')
+      EOS
+    end
+    # `v share` requires X11 on Linux, so don't build it
+    mv "cmdtoolsvshare.v", "vshare.v.orig" if OS.linux?
 
     resource("vc").stage do
       system ENV.cc, "-std=gnu99", "-w", "-o", buildpath"v1", "v.c", "-lm"
     end
     system ".v1", "-no-parallel", "-o", buildpath"v2", "cmdv"
-    system ".v2", "-o", buildpath"v", "cmdv"
+    system ".v2", "-prod", "-d", "dynamic_boehm", "-o", buildpath"v", "cmdv"
     rm [".v1", ".v2"]
+    system ".v", "-prod", "-d", "dynamic_boehm", "build-tools"
+    mv "vshare.v.orig", "cmdtoolsvshare.v" if OS.linux?
+
     libexec.install "cmd", "thirdparty", "v", "v.mod", "vlib"
     bin.install_symlink libexec"v"
     pkgshare.install "examples"
@@ -65,22 +78,22 @@ end
 
 __END__
 diff --git avlibbuiltinbuiltin_d_gcboehm.c.v bvlibbuiltinbuiltin_d_gcboehm.c.v
-index 0a13b64..23fca2b 100644
+index 2ace0b5..9f874c2 100644
 --- avlibbuiltinbuiltin_d_gcboehm.c.v
 +++ bvlibbuiltinbuiltin_d_gcboehm.c.v
-@@ -31,12 +31,12 @@ $if dynamic_boehm ? {
+@@ -37,13 +37,8 @@ $if dynamic_boehm ? {
  } $else {
  	$if macos || linux {
  		#flag -DGC_BUILTIN_ATOMIC=1
 -		#flag -I @VEXEROOTthirdpartylibgcinclude
 -		$if (prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32) {
-+		#flag -I @PREFIX@include
-+		$if (!macos && prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32) {
- 			 TODO: replace the architecture check with a `!$exists("@VEXEROOTthirdpartytccliblibgc.a")` comptime call
- 			#flag @VEXEROOTthirdpartylibgcgc.o
- 		} $else {
+-			 TODO: replace the architecture check with a `!$exists("@VEXEROOTthirdpartytccliblibgc.a")` comptime call
+-			#flag @VEXEROOTthirdpartylibgcgc.o
+-		} $else {
 -			#flag @VEXEROOTthirdpartytccliblibgc.a
-+			#flag @PREFIX@liblibgc.a
- 		}
+-		}
++		#flag -I @PREFIX@include
++		#flag @PREFIX@liblibgc.a
  		$if macos {
  			#flag -DMPROTECT_VDB=1
+ 		}

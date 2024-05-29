@@ -18,7 +18,27 @@ class Make < Formula
     sha256 x86_64_linux:   "bded8e436d51f10ee36207ec69a0a318fb8583f83a5863f45bb203d3ae055170"
   end
 
+  head do
+    url "https://git.savannah.gnu.org/git/make.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "gettext" => :build # for autopoint
+    depends_on "libtool" => :build
+    depends_on "texinfo" => :build
+    depends_on "wget" => :build # used by autopull
+
+    uses_from_macos "m4" => :build
+
+    fails_with :clang # fails with invalid arguments sent to compiler
+  end
+
   def install
+    if build.head?
+      system "./autopull.sh" # downloads gnulib files from git that autogen.sh needs
+      system "./autogen.sh"
+    end
+
     args = %W[
       --disable-dependency-tracking
       --prefix=#{prefix}

@@ -1,18 +1,18 @@
 class GitGrab < Formula
   desc "Clone a git repository into a standard location organised by domain and path"
   homepage "https:github.comwezmgit-grab"
-  url "https:github.comwezmgit-grabarchiverefstags2.1.0.tar.gz"
-  sha256 "ae9edda2d9ff499d2282035e84fa3d5da3776fab1a36e1922dce9584222a196a"
+  url "https:github.comwezmgit-grabarchiverefstags3.0.0.tar.gz"
+  sha256 "542a1e1c1d2a3f1f073e23817bfbab1b98f352f590991e50c6a484177a724b95"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "daa673aa92ebb4808c7982072bec40f59b14fd8fc935ce55e3ce5e012ff12644"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8db21a161b6f07a47f03c75173ff5e232ec1c8b544c72126b68fbaee7eeea3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec1360d562d526748f473ea6a026afc4155fbf60b83a7a40a61cb383b56aa22a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "09437f46b8c75339abb701f33b5b8633f1cf158a20f93c513bd0ce3b58d7a7f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e55370245d0af44d8538c048c8e0c968c02f5c622e4a61a6aab360b0a6090d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "118b5ca8f2eb208d63bf2e9bf0027fe840b2a52d251b123e8e0ddc6c334e5528"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ad27bcb3b9c65082e05869e40aa61b70dbedeb21d5bc8b94283d21b00a29bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "346664a21b98d75605e66a33e2153205aa74ea192a8ed245b159091a4badba16"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96ac1b16e32435e070d1cc16440117a5ca97fcc72e1d7532f9905142bcce4081"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "407ed850f5b4f7ee7b0d575e1013517ecc19333048e59ff5d582b9d828f68134"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8d1c34da7030fb7a552beb88a465dcf38064a98c26f217532da0eebf2d8712e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "37cbe2aa5d795e7c1befb8ab9fc6a08c7e5e380eb7c304d5d863d4a7e266f1a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "eef55e0bd816e04bdd784f4084cf9805e970d4d2d96885e7407a439c750a9a8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "344cd4633b6aaaf7fb4757f6fdd6e51ac88ef2229cc34404a7833a8c3f4568a3"
   end
 
   depends_on "rust" => :build

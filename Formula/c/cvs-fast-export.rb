@@ -1,8 +1,8 @@
 class CvsFastExport < Formula
   desc "Export an RCS or CVS history as a fast-import stream"
   homepage "http://www.catb.org/~esr/cvs-fast-export/"
-  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.66.tar.gz"
-  sha256 "e44c347846bacaade787d6daf531bca7932d3316e1274e02f815bd9a5a5ffbbf"
+  url "http://www.catb.org/~esr/cvs-fast-export/cvs-fast-export-1.67.tar.gz"
+  sha256 "2243af947d25a92728e0209739c2caa2bf920ceea311e9772ecd87c8b12910d4"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class CvsFastExport < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b6c2d05c8c3b22e47ed5f1c368b7381d5a2a76f1cd2c5d5f098645ec17fa7f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e0f6aeab68b391cc908876e0357057ef922a78a6835e32157450f2f035c48c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "13d158f6cca486604c0e7a5afe99862cc4d4cec9ec5f12c6c3dbe49faf1d4ed5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b2017f32045e4162de119afa4d82fbd4ced0432c04b0eb85e8de5fbf8b5b68d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "51484b2b98aca361686a88e9501f1d9692fd913dda24f22bb44b2a33197edbe5"
-    sha256 cellar: :any_skip_relocation, monterey:       "8671a866a3d0e4aff05b4ff6aff5c294ed5a7dc415503e1897bad31aa5aee0dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c7bea7a29f8ed65bf34ff06479de4eb2d21ea481b043580c1dd0fa3dec5d5f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d3d255c5ab9de7b65fea425b22bf0bc8102935cd905f4be7d45927fc34780af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ba540052ec05dd12bd9cea9ed75b47b714457068335d1161f69980cc210938a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "380bce79e0b1a964eb028374fea9df54b2d2dfdd962587a1e07b956cfce254cb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9a05c4fd0449bbe508b8dee0cfc0ca0d0c173178eb959850e9538f5eb0ce10fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad9bac97125e7afdf8030b12639b0cac946e0f3c175d299579891cf4ad61bc1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fedd03dab581bd21bc93d17293e6076a8bd5f82d15004dc40892ba5be5eed0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae09ed8af47ed4265fedf0f1dd6ef1151fda9a40e4a02bb3644edf983d4c059"
   end
 
   head do

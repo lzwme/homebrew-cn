@@ -1,19 +1,19 @@
 class Falcoctl < Formula
   desc "CLI tool for working with Falco and its ecosystem components"
   homepage "https:github.comfalcosecurityfalcoctl"
-  url "https:github.comfalcosecurityfalcoctlarchiverefstagsv0.7.3.tar.gz"
-  sha256 "8b808c73e7c8296a88ce25923b4a289870546139b09ac06d6400c42916e1217d"
+  url "https:github.comfalcosecurityfalcoctlarchiverefstagsv0.8.0.tar.gz"
+  sha256 "41e1a05f413db93d829d8f108d9060c70734d04cbe53b778a6c5da3df2f69957"
   license "Apache-2.0"
   head "https:github.comfalcosecurityfalcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55d24385f51664ae79abc4c35cd8087998bd6d087d37a603b0dd4f62c6bd7f3f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55c6a017efc4096daf14339fb510953dce1404ff927374f30bff62ee46a36bb8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11cfb7a93b8e0f056250fc578a1c43c38cf8dff713b120832fa7aa34a11282e5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bef65554986976de51dfb5cc6788358d977eafe79230b7ec88a1f758b2108d50"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d9be8ee042cffa7e37b73dc67d683941454da775a79d1d6d72605e50e3c77f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "1646d14297210b65d172f7d30c76133c801af45ba74640f86eaa797adeb4ca11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db9728532ab1e67b2934fc48d469b0ca97bb70e5660b9ec03e4fa0fa8a5c6af1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "883c8b958b3f75e3d7312980bae933dfb1301fff90c3695bd68059e398084a12"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4784b59f42a537a5f88434e55ae4a2386cd4c2a973eecf8adf785b97f4076fd1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bee1ad620de1f67c8e1dcf67903074eee1b40767b8673b8895296d775b5aa47a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c6d57d4c010671113ad0a2e98b4708b58652a3d0e3d5be686bbf34400e82df96"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cf7a64d1767fdf0a154989f6a0745b5b71706c9e7af2128a9efd2e1409afbc3"
+    sha256 cellar: :any_skip_relocation, monterey:       "5492464d717d5635ead84b948b71c17a6d71fcdbd296f5781fcb80070565eafe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b69776d1c45187e9b2f8d5a93992f1d46b6bed800d49e07886174f5aea37ddc"
   end
 
   depends_on "go" => :build

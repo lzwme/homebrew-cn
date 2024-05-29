@@ -8,4 +8,9 @@ cask "pdfshaver" do
   homepage "https:github.comtparryPDFShaver.app"
 
   app "PDFShaver.app"
+
+  zap trash: [
+    "~LibraryPreferencescom.tparry.PDFShaver.plist",
+    "~LibrarySaved Application Statecom.tparry.PDFShaver.savedState",
+  ]
 end

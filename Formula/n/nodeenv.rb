@@ -3,12 +3,18 @@ class Nodeenv < Formula
 
   desc "Node.js virtual environment builder"
   homepage "https://github.com/ekalinin/nodeenv"
-  url "https://github.com/ekalinin/nodeenv/archive/refs/tags/1.8.0.tar.gz"
-  sha256 "2a8931e93a9aeae1fffa0bd76e077168e5c0ce4b32f9bc85dee2e8d8eb35a2f9"
+  url "https://github.com/ekalinin/nodeenv/archive/refs/tags/1.9.0.tar.gz"
+  sha256 "af453a39935a4cb64dbf891f5487de9f0c2668375f296352730af1cb2d425df6"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a10ab650965b6f6e7d349917cc5f5e4d4af273c2386576b82129a79fcdae8547"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4df910878643ca03344ed29459cdc09ae6d630ad8cfdc3cf920cb05214ce916d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4df910878643ca03344ed29459cdc09ae6d630ad8cfdc3cf920cb05214ce916d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4df910878643ca03344ed29459cdc09ae6d630ad8cfdc3cf920cb05214ce916d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4df910878643ca03344ed29459cdc09ae6d630ad8cfdc3cf920cb05214ce916d"
+    sha256 cellar: :any_skip_relocation, ventura:        "4df910878643ca03344ed29459cdc09ae6d630ad8cfdc3cf920cb05214ce916d"
+    sha256 cellar: :any_skip_relocation, monterey:       "4df910878643ca03344ed29459cdc09ae6d630ad8cfdc3cf920cb05214ce916d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "017719c5fec3c4f328ce9089f7c18624e94bc28f98aee63e119c53db99f01819"
   end
 
   uses_from_macos "python"

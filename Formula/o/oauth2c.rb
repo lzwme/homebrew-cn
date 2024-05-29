@@ -1,25 +1,30 @@
 class Oauth2c < Formula
   desc "User-friendly CLI for OAuth2"
   homepage "https:github.comcloudentityoauth2c"
-  url "https:github.comcloudentityoauth2carchiverefstagsv1.13.0.tar.gz"
-  sha256 "f5545e9aca8c79042080e8510ec77ac66ed3ac4acf976a8bbeb53e04fae02630"
+  url "https:github.comcloudentityoauth2carchiverefstagsv1.14.0.tar.gz"
+  sha256 "6f2de82541aef816763d6458eea06ec93d788309d2563974931221a0e2cb4286"
   license "Apache-2.0"
   head "https:github.comcloudentityoauth2c.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "630c61c244ea8d1fd2e3cd9ecb43c1be93e7a0b77fcf82fb959e2f60a842d6b1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18c933f3221b45e4f16e509ede9762c0729708a244f6df0fa04e208969347146"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "153997b3e3d19cb901e55fd38c69b8c47897ee3378e8886eb62bf1e23bd11ce4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "39f1a3b6f73afcf587852bc0ae8628ab4fcd53281db78350366f126ee6175ecb"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b13d76725689c23108cbc37461491dc34f4ddcc506b921cf71708efd201f4d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef75fc7b7e2b75f3e9798f29c7fd6a072981ceacba40a27f56b9a88b4f953c6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96e2aa0e11ec012f5e1c2f9184a3b77d763edc7998a8bec229f0c764e4e975ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4fb8e261a101b3fd7ea005339c75b3dc513913312769d6d1378e632a4d18e130"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e576794a359b064a1a0b37068b0b1822d4f95dd526b23f6985431ee13d1613a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9dd32fb7dd4e620ed93f22d30ae79e1a987b2106ff0c6c2fb9dfb8a937dd50ed"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7de2d621c168aee33ed3500492d1cbb5c0aaf24c23538431eac255f8077d6a27"
+    sha256 cellar: :any_skip_relocation, ventura:        "bd12f2cd324555314280279d9dc82d2f04bf5badcb22482068011e172a7b6272"
+    sha256 cellar: :any_skip_relocation, monterey:       "e40e024cb93e84d1a88dcdf50e814fbfe8d80b272ec82f0001d487eb4a83e35c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7109870bc9261198f43b24163591e44f93445ee3cad8c5969f7912afb65d4fa2"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X main.commit= -X main.version=#{version} -X main.date=#{time.iso8601}"
+
+    system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"oauth2c", "completion")
   end
 
   test do

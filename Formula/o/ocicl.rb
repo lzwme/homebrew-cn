@@ -1,18 +1,18 @@
 class Ocicl < Formula
   desc "OCI-based ASDF system distribution and management tool for Common Lisp"
   homepage "https:github.comociclocicl"
-  url "https:github.comociclociclarchiverefstagsv2.3.4.tar.gz"
-  sha256 "be31c1d5de3352bf2ddc759153abc9c04ce4c0b962cc1d9d07888379e18ff202"
+  url "https:github.comociclociclarchiverefstagsv2.3.6.tar.gz"
+  sha256 "7e140d57cad655b44f76631a6fb77ccacc474f7e9ec38855e94e3e4ba840d7f6"
   license "MIT"
 
   bottle do
-    sha256 arm64_sonoma:   "84068edfdc7748ae03ebca73f230efd0359a37575be06a06fceb9a721d6c64b7"
-    sha256 arm64_ventura:  "525b030c71672c40865dcf93d97540f81d56ea51a388edbde57829154e4b4fc5"
-    sha256 arm64_monterey: "ab26ee026a2656a8ea32c2761d8074bb1e93c3f48cf54296df4a5c7bb6f5eff3"
-    sha256 sonoma:         "bde9ef393b899c8ef1514ee7370c1a237c098fcfc9921ff597b2affe60f25606"
-    sha256 ventura:        "8723d944157f4558cc448f9a58907d7c7860764ce36824e5b06124929b84b785"
-    sha256 monterey:       "681ddbc2f853a3e1693f3f378cc57c18900afa173ab4e8f0e200d1d09982a093"
-    sha256 x86_64_linux:   "fe9b2d51c012851588baef450ff39b453526a7fc2c5df38e9071fc253b136150"
+    sha256 arm64_sonoma:   "692c26d7c250e9ce5e342104911d1565ae60f29500273fb5802f4608aa5858e7"
+    sha256 arm64_ventura:  "2a5ff385eeb2b5a431271d159148839958eb37bf4daad409f0b8b5e5feb1de16"
+    sha256 arm64_monterey: "d2d119ca64fbf4a23b9b79c3b53ae6a497ea4e1fd41a51d17dd09bab9a4bc22d"
+    sha256 sonoma:         "6559853794ce9f195f08e5ea52ff320b78688ec7a49eedc982f0d89cd492e354"
+    sha256 ventura:        "2f5fc5e517dd65e82f07cece9b24f0f2de5393638b3f01e09d0c581de42bac5f"
+    sha256 monterey:       "ef7edfa5111bc85dafaf2a656e733a9eee5e769ab4b88d05816d34d84f24c535"
+    sha256 x86_64_linux:   "7cf33ae7f42076838fc0c5d6f35d5e7d35ab509032b8782d5fb67463398f8914"
   end
 
   depends_on "oras"

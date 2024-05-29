@@ -5,6 +5,11 @@ class Libxcrypt < Formula
   sha256 "e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943"
   license "LGPL-2.1-or-later"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "605b2d35f9ca3ef6adb5d0d4a9f0de1549d00bff742b8243fbb14e1dae38dee9"
     sha256 cellar: :any,                 arm64_ventura:  "95e6481674d9f4cd29bdeb45f0efb5eda7c96cab827212acceda923d27a52a66"
