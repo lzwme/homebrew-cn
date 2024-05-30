@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/74/e9/33226f09e1f26f5010549510e494590ca3b33647709bc6d9168373c7bf88/prowler-4.2.0.tar.gz"
-  sha256 "1a156af09d1ede3bdf35a821cb1d2d0f13256a615173fd791e0fcfce96cdf4bb"
+  url "https://files.pythonhosted.org/packages/22/20/a22daea31747b73ea62f9b60e26c59d0040b977e5c2a414cd23dc040b8b7/prowler-4.2.1.tar.gz"
+  sha256 "3b6eb99d7adc1f1711daba7c7cc351950cd0263ef3ef3665cab57176129d68a9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ff3fdcc54478628a5b897b51a10b8c65502c9d363c7d7b4a039b6b72107c5d44"
-    sha256 cellar: :any,                 arm64_ventura:  "835f32bb381e1fc8a8362f6a9ec50d60f0c1bfb30eb17c1d2cb1465f0aadb74f"
-    sha256 cellar: :any,                 arm64_monterey: "8d443a4553c0381e3165807e3f984645d27dc3c860a9612c48cdb7c70ba403ff"
-    sha256 cellar: :any,                 sonoma:         "b0d9bb73399ae624697c4160e41067dd4828ea77120b322cf7d738dc87a2420d"
-    sha256 cellar: :any,                 ventura:        "e317df5fc71fb956c14d8deb978696ebc614727f879d61e89f33e24b6c79b3d9"
-    sha256 cellar: :any,                 monterey:       "088aacd721f19ea590d538f9c6c57efb51bcefff2c1bd9a81b8d2e687e264167"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f64d36c086e1d809bff7dd55bf1e5597e7250a4048ddda4fe79a347e373578d"
+    sha256 cellar: :any,                 arm64_sonoma:   "b2b31b78f509fe0b4e903e8a56802a8079ee1975aeaacac186439b36a4a5e33a"
+    sha256 cellar: :any,                 arm64_ventura:  "21a32e798fd8360dd8f50b0a5b46fcc24aa3042f95672d27fede53081bc4bf2b"
+    sha256 cellar: :any,                 arm64_monterey: "67c9b8e40daa80c1403b9fbe07eb126aa5c7fe48d0a735d99313af84a28f0500"
+    sha256 cellar: :any,                 sonoma:         "8d9a512dd61316d9300d913a51cf322e5f0b055eb06b18397afd9f42cdeeee4d"
+    sha256 cellar: :any,                 ventura:        "a902e42e8f0bc9fbe82404138f54c6fffdb125c999a66a1f0ad4b133bda4263a"
+    sha256 cellar: :any,                 monterey:       "137c971ff1dfb1022533b02a8b7244b32d91a91e746194210fdfedb938a9a4cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "312e72a9f6c6e168ab0f76e678444a1c2e98b0a2277def76935dbb13acf0284c"
   end
 
   depends_on "cmake" => :build
@@ -562,8 +562,8 @@ class Prowler < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/86/ec/535bf6f9bd280de6a4637526602a146a68fde757100ecf8c9333173392db/requests-2.32.2.tar.gz"
-    sha256 "dd951ff5ecf3e3b3aa26b40703ba77495dab41da839ae72ef3c8e5d8e2433289"
+    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "requests-file" do

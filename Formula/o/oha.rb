@@ -1,19 +1,19 @@
 class Oha < Formula
   desc "HTTP load generator, inspired by rakyllhey with tui animation"
   homepage "https:github.comhatoooha"
-  url "https:github.comhatooohaarchiverefstagsv1.4.4.tar.gz"
-  sha256 "2beb733fb2b6c3490545b98d4abeab87004a501f0bcfb03751f9e7115c1b81f4"
+  url "https:github.comhatooohaarchiverefstagsv1.4.5.tar.gz"
+  sha256 "dfed8814c74419ab7bdc545bbd778f69ccc515defd5f756d8368c3c1b74d2cc2"
   license "MIT"
   head "https:github.comhatoooha.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9721babf91fa2e5bb65925db7fad2f89f2805a318ec9f694df6369309bd08817"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "807e6d1b11996887065f021aa6e01585303408164fb00a8305b1c5d42b861cb5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2205e83e399e00de58eb09e05080292769c8bbc635cc51b9b834167cbbdfe61f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d9ab6481a0115d8d9d131ee6260b50d272b3dd169977ca85f8f89a4ce81f3070"
-    sha256 cellar: :any_skip_relocation, ventura:        "ad38de2269366cfa12641590731da47b89b5f7c8112d47adea548dcd6794514d"
-    sha256 cellar: :any_skip_relocation, monterey:       "d681f6d4f9c5a3a25773aa3b1cf098f6b6f3a1efb82388f8e9a835690bcd0217"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a45979044029bf0fbe74e6e54d2483bd5c518f1e85ff631c10749d5c256a0fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "65c3fe764b2fd34b6fb548837cc87c07570deefa48af29beafc86fa9e0dc3f22"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea595329ee844f9d4292d47d1ddfdfd92d02ced1d97571aa78491ef48395c0a1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "81cb16e38c3629037dfc7f74b993e2e840d27aac3c79518f288ebb697f34c3c6"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5d7f19639e4b3d84036139d86eb7a96ef29a0473c8762018a50ebd30ea3fdc17"
+    sha256 cellar: :any_skip_relocation, ventura:        "2430553cef3a70ca01f19b7e37747cccfaca2b92dc6ae78a1f6665a4e3b52137"
+    sha256 cellar: :any_skip_relocation, monterey:       "612c067eabe20d94825d45f5186cdee675bf449e6d2e26eb88be7ecc7da7edd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f1c601bf7a178d6a2730d148a248b678630af6fc2a2b2b2eeb0f2a8c306673a"
   end
 
   depends_on "cmake" => :build # for aws-lc-sys

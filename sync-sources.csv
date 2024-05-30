@@ -14067,6 +14067,7 @@ nicerloop-homebrew-nicerloop/Casks/zulufx8.rb, nicerloop/homebrew-nicerloop, 0
 codello-homebrew-brewery/Formula/extractpdfmark.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Formula/srtlab.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/bw-control.rb, codello/homebrew-brewery, 0
+codello-homebrew-brewery/Casks/favtool.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/font-cambria.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/font-chalet.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/font-corbel.rb, codello/homebrew-brewery, 0

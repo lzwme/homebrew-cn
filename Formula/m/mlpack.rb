@@ -1,19 +1,19 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
   homepage "https:www.mlpack.org"
-  url "https:mlpack.orgfilesmlpack-4.3.0.tar.gz"
-  sha256 "08cd54f711fde66fc3b6c9db89dc26776f9abf1a6256c77cfa3556e2a56f1a3d"
+  url "https:mlpack.orgfilesmlpack-4.4.0.tar.gz"
+  sha256 "61c604026d05af26c244b0e47024698bbf150dfcc9d77b64057941d7d64d6cf6"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
   head "https:github.commlpackmlpack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2d245c37a82f630dcbc558e3253e11c53ff6a755f4de0643ba01711772cc82f2"
-    sha256 cellar: :any,                 arm64_ventura:  "9abac3bb994de1b3e4973be22275fe8f60f5f54e11f9395abe8d27825f818c05"
-    sha256 cellar: :any,                 arm64_monterey: "5e347aac6904385b3cad115efef06de00d761f132904ed805983134579599613"
-    sha256 cellar: :any,                 sonoma:         "a7ff11a372a76a0ffb8527df5b7a9ea8e278120ce204c0ba5abbf23714017175"
-    sha256 cellar: :any,                 ventura:        "f6db2a6ab30a422ba6d5a6f9fe62698899d1016487de6a89a5180ad90778fc5f"
-    sha256 cellar: :any,                 monterey:       "8d044a04dd1aadff16bcba86946e00a39309dd58798536f463e3cc7c20f1838f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "633fe97a42d5b0b9a36e7c1c5e0317a07df24213255f39877a63edc519d41bb3"
+    sha256 cellar: :any,                 arm64_sonoma:   "c493daecb84e9fafae3013a3f5f1f19517ffb585b7dd5757fb84997a707588f3"
+    sha256 cellar: :any,                 arm64_ventura:  "16717ad32de7e095a1820f850b6885bca2846e802f261f82f4c154a5685a9f4d"
+    sha256 cellar: :any,                 arm64_monterey: "55495cabfed20643cd9fd4332843a39ead25151aefa790d2fd05a6eacbe18ea4"
+    sha256 cellar: :any,                 sonoma:         "3179971fdaf5d6618c137499b15ff1bef945b0d25a3db3a1c5a205ffe364e7a9"
+    sha256 cellar: :any,                 ventura:        "5817d2ece8f42980c391130ba019d18eebba81fffff7dd2e22fcfeede51c69e4"
+    sha256 cellar: :any,                 monterey:       "d830509c7770fca443e99a2d97bed4de930002b3b533d65032eb3992f12b5754"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "857f7fdad50388d56551c5189320a8c5dd56deb657313a9ac53c1bdfd2245b38"
   end
 
   depends_on "cmake" => :build
@@ -27,9 +27,9 @@ class Mlpack < Formula
   depends_on "graphviz"
 
   resource "stb_image" do
-    url "https:raw.githubusercontent.comnothingsstb3ecc60fstb_image.h"
-    version "2.28"
-    sha256 "38e08c1c5ab8869ae8d605ddaefa85ad3fea24a2964fd63a099c0c0f79c70bcc"
+    url "https:raw.githubusercontent.comnothingsstb0bc88af4de5fb022db643c2d8e549a0927749354stb_image.h"
+    version "2.29"
+    sha256 "c54b15a689e6a1f32c75e2ec23afa442e3e0e37e894b73c1974d08679b20dd5c"
   end
 
   resource "stb_image_write" do
@@ -52,7 +52,7 @@ class Mlpack < Formula
       -DUSE_OPENMP=OFF
       -DARMADILLO_INCLUDE_DIR=#{Formula["armadillo"].opt_include}
       -DENSMALLEN_INCLUDE_DIR=#{Formula["ensmallen"].opt_include}
-      -DARMADILLO_LIBRARY=#{Formula["armadillo"].opt_lib}#{shared_library("libarmadillo")}
+      -DARMADILLO_LIBRARY=#{Formula["armadillo"].opt_libshared_library("libarmadillo")}
       -DSTB_IMAGE_INCLUDE_DIR=#{include"stb"}
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
@@ -83,7 +83,7 @@ class Mlpack < Formula
         Log::Warn << "A false alarm!" << std::endl;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
                     "-larmadillo", "-L#{lib}", "-o", "test"
     system ".test", "--verbose"
   end

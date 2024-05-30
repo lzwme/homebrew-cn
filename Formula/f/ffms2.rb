@@ -1,27 +1,13 @@
 class Ffms2 < Formula
   desc "Libavffmpeg based source library and Avisynth plugin"
   homepage "https:github.comFFMSffms2"
+  url "https:github.comFFMSffms2archiverefstags5.0.tar.gz"
+  mirror "https:deb.debian.orgdebianpoolmainfffms2ffms2_5.0.orig.tar.gz"
+  sha256 "7770af0bbc0063f9580a6a5c8e7c51f1788f171d7da0b352e48a1e60943a8c3c"
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
-  license "GPL-2.0"
-  revision 5
+  license "GPL-2.0-or-later"
   head "https:github.comFFMSffms2.git", branch: "master"
-
-  stable do
-    url "https:github.comFFMSffms2archiverefstags2.40.tar.gz"
-    mirror "https:deb.debian.orgdebianpoolmainfffms2ffms2_2.40.orig.tar.gz"
-    sha256 "82e95662946f3d6e1b529eadbd72bed196adfbc41368b2d50493efce6e716320"
-
-    # Fix build with FFmpeg 56. Remove patches in the next release.
-    patch do
-      url "https:github.comFFMSffms2commit586d87de3f896d0c4ff01b21f572375e11f9c3f1.patch?full_index=1"
-      sha256 "cd946d9f30698a5a7e17698c75e74572ecaa677b379dc92d92e4a986243d69c6"
-    end
-    patch do
-      url "https:github.comFFMSffms2commit45673149e9a2f5586855ad472e3059084eaa36b1.patch?full_index=1"
-      sha256 "33d7af8efd9b44ea6414fc2856ef93aeff733c92dd45e57b859989766f32be66"
-    end
-  end
 
   livecheck do
     url :stable
@@ -29,13 +15,13 @@ class Ffms2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "72597e1adda2f0302cdc138e81226ba8374739fbee6d25f98e77d33fac48ca7d"
-    sha256 cellar: :any,                 arm64_ventura:  "d3cea8104d6ed35a04269791d554fe0e42b38d2eea50191ff8ab51043687e6c5"
-    sha256 cellar: :any,                 arm64_monterey: "82a3cc0c378bcc1f00935e368db5570aa566e10237962439d2a85c7c5d6525d8"
-    sha256 cellar: :any,                 sonoma:         "f37ff12f719209caa561849a6aedc890accc2dfd877b3dfea7b77e002ea8b769"
-    sha256 cellar: :any,                 ventura:        "87ab1c98928a90b2391aaf638cfaec141e21eac099566f418484b6f4f891c192"
-    sha256 cellar: :any,                 monterey:       "bdd001b5547e9c5ca7b1ac1ff9cb5635424f48ab6cff3158d5548f6d9b89f064"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "260be451fa4aba990e99e519329b8190a599e06f84d88731ec10a4f6085a639a"
+    sha256 cellar: :any,                 arm64_sonoma:   "95cb1629607cc749fbb2539b42d859e18d8324a98fec677c95915bf1059d3398"
+    sha256 cellar: :any,                 arm64_ventura:  "379c741a8043b236ee007ea7a135a1c337e92f790c1496d1d9c72c6439ae5db6"
+    sha256 cellar: :any,                 arm64_monterey: "8a2b14cdb1755b0e19878ada11e8c13d86235e4acfdbac3c79a5f65422bacc11"
+    sha256 cellar: :any,                 sonoma:         "42e9ceb2071f6e3b545540e54137b0706654ec7564fe89778ac0a7178ddb45bf"
+    sha256 cellar: :any,                 ventura:        "765b489b7d023cb5518d390e48e5499d115d487a4fbddc7a120be1002279a638"
+    sha256 cellar: :any,                 monterey:       "dc2780271ad98a3f7499d056064fc9e95cc4dde8e2bafa61c03c237de73bde9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf354f0c181a7467b964788baf63363a4bdbea743da40fd725965ada086d4b3a"
   end
 
   depends_on "autoconf" => :build
@@ -43,6 +29,8 @@ class Ffms2 < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg@6"
+
+  uses_from_macos "zlib"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 

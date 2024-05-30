@@ -1,24 +1,25 @@
 class Flint < Formula
   desc "C library for number theory"
   homepage "https:flintlib.org"
-  url "https:github.comflintlibflintreleasesdownloadv3.1.3flint-3.1.3.tar.gz"
-  sha256 "3259e5ecbb07ea3bebeff025f846a494087be92b0aaf0636d6e36128963cadda"
+  url "https:github.comflintlibflintreleasesdownloadv3.1.3-p1flint-3.1.3-p1.tar.gz"
+  sha256 "96637ba9de43397d06657deefe8e6dee9d226992b5526bb1c9a9d563b983e027"
   license "LGPL-3.0-or-later"
   head "https:github.comflintlibflint.git", branch: "main"
 
   livecheck do
     url :stable
+    regex(^v?(\d+(?:\.\d+)+(?:[._-]?p\d+)?)$i)
     strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d057cba267ea669bb35954ccdc28acfa5ec41a958f6a2561ee1f0fc441f46ce3"
-    sha256 cellar: :any,                 arm64_ventura:  "42d56a37bdb7120e4c9cbb5e1a92d5995168b8e26893d235089fd3f36f1fa1a7"
-    sha256 cellar: :any,                 arm64_monterey: "068b313a597524554baa988c2dab1d08377d373e7c85a1fed7260c0c9f9433b7"
-    sha256 cellar: :any,                 sonoma:         "182c134ae4ee00fac31c06d59cd77a0511569509a73425012b5462d05821f9ab"
-    sha256 cellar: :any,                 ventura:        "9341daa4aadca4bc5c36a0cbcf46ecb81cf5df8cbcf7a9df4c8e5f4c8d82271b"
-    sha256 cellar: :any,                 monterey:       "3446629a142b1fff5ece6b083ff5417736e091ee086bae449024bbed8b30901c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9505e259fb2fd8aa0e734cf1dc74b46a5a6a97c59a2561f51c1e24512eca750f"
+    sha256 cellar: :any,                 arm64_sonoma:   "74da020f9e6587c8899bda2034e1d94cf4d8b28dde5344c186dcbc45d4d10dab"
+    sha256 cellar: :any,                 arm64_ventura:  "ee89cff4b2e4a55c4c1b23b4435a5cb6d3e38bfb7cceaad86cb2d306d92ee86d"
+    sha256 cellar: :any,                 arm64_monterey: "f5efdb8826a3bd80de599455dc0aca0dd478276d4edbcde06e80f985cf9688ff"
+    sha256 cellar: :any,                 sonoma:         "8c60de59b79be3ab9aa996c3b1b65566751956e24bd47122bb14c7f575f87458"
+    sha256 cellar: :any,                 ventura:        "ac40ea9c126354efbd805a2a1d817e38e26c23410abfd9e189790e9c0fc60f11"
+    sha256 cellar: :any,                 monterey:       "daf2a177ea8b8b83cc10bf7d9f8719b60c128b335b74fb48b54ca73dca109f1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "999413efcfa5455b771d5fe28356fb36515c41b243bda6f4206240e2dbb3295d"
   end
 
   depends_on "autoconf" => :build

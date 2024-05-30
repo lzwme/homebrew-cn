@@ -1,18 +1,10 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https:adios2.readthedocs.io"
+  url "https:github.comornladiosADIOS2archiverefstagsv2.10.1.tar.gz"
+  sha256 "ce776f3a451994f4979c6bd6d946917a749290a37b7433c0254759b02695ad85"
   license "Apache-2.0"
   head "https:github.comornladiosADIOS2.git", branch: "master"
-
-  stable do
-    url "https:github.comornladiosADIOS2archiverefstagsv2.10.0.tar.gz"
-    sha256 "e5984de488bda546553dd2f46f047e539333891e63b9fe73944782ba6c2d95e4"
-
-    # fix pugixml target name
-    # upstream patch ref, https:github.comornladiosADIOS2pull4135
-    # https:github.comornladiosADIOS2pull4142
-    patch :DATA
-  end
 
   livecheck do
     url :stable
@@ -20,13 +12,13 @@ class Adios2 < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "f27bc3122be07a98fd8db78211d426cc0288623dff91e7427840266936855a1e"
-    sha256 arm64_ventura:  "de760c48271b31dc9310360fdc9b381d916625a5a8ae49d114dcc22e6dc444a5"
-    sha256 arm64_monterey: "988b4a7ca6198fcebd0a430b84918e6ed58bbceb71983b9e0c14024637f41a80"
-    sha256 sonoma:         "dfa5e5f519e3266512b5963937070607e3362281e0219d028f8b43f3d29b0528"
-    sha256 ventura:        "ecc5229d30b5d6c61d21834dc280e48ff85c9f3c954cbea3009025f945dd6640"
-    sha256 monterey:       "59caa71985070eb7d28f0fd096782299e88ab64eed87f0200f00cf30c8e045c2"
-    sha256 x86_64_linux:   "97f031412ebf7c38631b2b30087675beed1fd1f28c2a87f4ad25654175ba879c"
+    sha256 arm64_sonoma:   "15dc5582a5809d2fd547311d2e509da5a1cd1998b66b7be713fdb29f3a90af45"
+    sha256 arm64_ventura:  "660e1bf873b7d6ccc560f5585ed1c05760033ea365b8d6e6ce3ea3d00b7b6b5d"
+    sha256 arm64_monterey: "b24dd9522c4858ee40454dec41f13b9980d7dd4a1732a4e0d9e09f5ea4858b7f"
+    sha256 sonoma:         "e54e9b99ca2553ed65970bc277ced6563a5d1bb7255a34859e20312679f6a587"
+    sha256 ventura:        "55acae4510e3146d024222370f987de7c1a205776db4c312de41ac455d1f2632"
+    sha256 monterey:       "fa52f5f7c028709c4d7394add07c53618c6141c7a6e3a5bb1ae7fbd75b5d365b"
+    sha256 x86_64_linux:   "a6bb7f960648f75642c6940cdca6e44dba5f2c8e2961060ec9f43519e46ed246"
   end
 
   depends_on "cmake" => :build
@@ -42,10 +34,12 @@ class Adios2 < Formula
   depends_on "pugixml"
   depends_on "pybind11"
   depends_on "python@3.12"
+  depends_on "sqlite"
   depends_on "yaml-cpp"
   depends_on "zeromq"
 
   uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version == 1400
@@ -114,52 +108,3 @@ class Adios2 < Formula
     assert_predicate testpath"bpWriter-py.bp", :exist?
   end
 end
-
-__END__
-diff --git asourceadios2toolkitremoteCMakeLists.txt bsourceadios2toolkitremoteCMakeLists.txt
-index a739e1a..fdea6ec 100644
---- asourceadios2toolkitremoteCMakeLists.txt
-+++ bsourceadios2toolkitremoteCMakeLists.txt
-@@ -6,15 +6,11 @@
- if (NOT ADIOS2_USE_PIP)
-   add_executable(adios2_remote_server .remote_server.cpp remote_common.cpp)
-
--  target_link_libraries(adios2_remote_server PUBLIC EVPath::EVPath adios2_core adios2sys
--    PRIVATE $<$<PLATFORM_ID:Windows>:shlwapi>)
-+  target_link_libraries(adios2_remote_server
-+                        PUBLIC EVPath::EVPath adios2_core adios2sys
-+                        PRIVATE adios2::thirdparty::pugixml $<$<PLATFORM_ID:Windows>:shlwapi>)
-
--  get_property(pugixml_headers_path
--    TARGET pugixml
--    PROPERTY INTERFACE_INCLUDE_DIRECTORIES
--  )
--
--  target_include_directories(adios2_remote_server PRIVATE ${PROJECT_BINARY_DIR} ${pugixml_headers_path})
-+  target_include_directories(adios2_remote_server PRIVATE ${PROJECT_BINARY_DIR})
-
-   set_property(TARGET adios2_remote_server PROPERTY OUTPUT_NAME adios2_remote_server${ADIOS2_EXECUTABLE_SUFFIX})
-   install(TARGETS adios2_remote_server EXPORT adios2
-diff --git asourceutilsCMakeLists.txt bsourceutilsCMakeLists.txt
-index 30dd484..01f5f93 100644
---- asourceutilsCMakeLists.txt
-+++ bsourceutilsCMakeLists.txt
-@@ -13,17 +13,11 @@ configure_file(
- add_executable(bpls .bplsbpls.cpp)
- target_link_libraries(bpls
-                       PUBLIC adios2_core adios2sys
--                      PRIVATE $<$<PLATFORM_ID:Windows>:shlwapi>)
--
--get_property(pugixml_headers_path
--  TARGET pugixml
--  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
--)
-+                      PRIVATE adios2::thirdparty::pugixml $<$<PLATFORM_ID:Windows>:shlwapi>)
-
- target_include_directories(bpls PRIVATE
-   ${PROJECT_BINARY_DIR}
-   ${PROJECT_SOURCE_DIR}bindingsC
--  ${pugixml_headers_path}
- )
-
- set_property(TARGET bpls PROPERTY OUTPUT_NAME bpls${ADIOS2_EXECUTABLE_SUFFIX})

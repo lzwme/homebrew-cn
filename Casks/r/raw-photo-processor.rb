@@ -1,7 +1,7 @@
 cask "raw-photo-processor" do
   # Betas of this software are release quality: https://groups.google.com/d/msg/raw-photo-processor/PJyyP2JwIwI/dn3CFknuCwAJ
-  version "1927Beta"
-  sha256 "8b7f5e9e3cefa2320ed9d1650f30ec1c56c54b40292a2b11f855b5036db245e3"
+  version "1949Beta"
+  sha256 "12f2a9f31df5b797fc483ba821981aa58e6503c209537c5b126eb554e988cf49"
 
   url "https://www.raw-photo-processor.com/RPP/RPP64_#{version}.zip"
   name "Raw Photo Processor"
@@ -16,4 +16,13 @@ cask "raw-photo-processor" do
   end
 
   app "Raw Photo Processor 64.app"
+
+  zap trash: [
+    "~/Library/Application Support/RPP",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/net.tigry.rpp.sfl*",
+    "~/Library/Caches/net.tigry.rpp",
+    "~/Library/HTTPStorages/net.tigry.rpp",
+    "~/Library/Preferences/net.tigry.rpp.plist",
+    "~/Library/Saved Application State/net.tigry.rpp.savedState",
+  ]
 end

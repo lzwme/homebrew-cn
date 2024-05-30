@@ -3,13 +3,13 @@ class Systemd < Formula
 
   desc "System and service manager"
   homepage "https:wiki.freedesktop.orgwwwSoftwaresystemd"
-  url "https:github.comsystemdsystemd-stablearchiverefstagsv255.6.tar.gz"
-  sha256 "7efc8ce8272a64ff32dc4a27cdc7179973d01e7c63d7b2a66df7ed9795574c04"
+  url "https:github.comsystemdsystemd-stablearchiverefstagsv255.7.tar.gz"
+  sha256 "da29f2490c192ca743511098b1d15e385b1b5e7744979661dc30514c1ac61f0e"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https:github.comsystemdsystemd.git", branch: "main"
 
   bottle do
-    sha256 x86_64_linux: "54864797f97b0ff5086872c9329de50033808e4eb3b111fda03b31999c4ef2eb"
+    sha256 x86_64_linux: "ed07a1bb6e5cb4b7b4f9e0337c780d2769a7eed8c5d1b2af61f24e7d26b89571"
   end
 
   depends_on "coreutils" => :build
@@ -44,8 +44,8 @@ class Systemd < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
-    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "markupsafe" do

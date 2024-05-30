@@ -1,23 +1,23 @@
 class Codequery < Formula
   desc "Code-understanding, code-browsing or code-search tool"
   homepage "https:ruben2020.github.iocodequery"
-  url "https:github.comruben2020codequeryarchiverefstagsv0.27.0.tar.gz"
-  sha256 "c03b86f9f5a8f5373862efaef6bddd18a15e5786570a93f0310725ecc5d74ff3"
+  url "https:github.comruben2020codequeryarchiverefstagsv1.0.0.tar.gz"
+  sha256 "b0776adeae2963f197e3b9a57eb7ca405542da5f6413e06063e8d68f8246baa8"
   license "MPL-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "ae69fccdb5da96510efa80e8e0b4cd31807cb30edddc7719027cb0f1de1b1dac"
-    sha256 cellar: :any,                 arm64_ventura:  "9f59131f416edb0ea4498d3aa1656f16590dfbdf96eaeb05caf78af2bb1068b3"
-    sha256 cellar: :any,                 arm64_monterey: "bb3f95c24ffc4eebe84aa5372b4be40aba4757db186a92e44e0893cafe66fc2b"
-    sha256 cellar: :any,                 sonoma:         "d3b4b2a6e3baf12390b60d92d25ee82bf5901fb07c3697e773594f6db1f72f0d"
-    sha256 cellar: :any,                 ventura:        "50a7565ca82c3d9fe00209649ea2c93b4f3bff7328161ff0b654953fd6c3e6c8"
-    sha256 cellar: :any,                 monterey:       "307b180775e296751c34c95639f27f7db96bd3ee048012cd39562901c74401d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bf46250da3e374c38cd59329b166140ee77c7e68801e98ad930ed33b9c1a72c"
+    sha256 cellar: :any,                 arm64_sonoma:   "4e4fb0e6e4d1171bff615afc316580b9fa839da228349d9ceae861da9f184004"
+    sha256 cellar: :any,                 arm64_ventura:  "7f2b375faf1d458989b42e8b03a4aa57599f54038e941752f50e18925ae4c43b"
+    sha256 cellar: :any,                 arm64_monterey: "3f13a8eb9bfbd76b95c2a9f93759b9667574df9fd949e9332d268b3e3f699406"
+    sha256 cellar: :any,                 sonoma:         "7d4ab5fa8902cc12ce5c8f72f808b8dab4399b3caa281ed04bc286ae0689e4fc"
+    sha256 cellar: :any,                 ventura:        "9b959ddfdcb5bbfcf3ab2a09f07ef279e76db150230c8c8a5ef7a8ab7ad00c8c"
+    sha256 cellar: :any,                 monterey:       "00a3a640de5c64f871865d155bba13485269d2d1c2ec4a68a13367ef789e6d90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02ad5e72b9b38a66604f6e1be788b94309e844276297037e402cfed743e25b80"
   end
 
   depends_on "cmake" => :build
-  depends_on "qt@5"
+  depends_on "qt"
+  depends_on "sqlite"
 
   fails_with gcc: "5"
 
