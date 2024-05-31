@@ -3,18 +3,18 @@ class Autopep8 < Formula
 
   desc "Automatically formats Python code to conform to the PEP 8 style guide"
   homepage "https:github.comhhattoautopep8"
-  url "https:files.pythonhosted.orgpackagesd7881a1460a39c5ed907115f96a396e720ad6c9bc75b9b8b3502ddef39863e30autopep8-2.1.2.tar.gz"
-  sha256 "77b07146bf127aa88de78efc270d395a54ebb8284fdbe6542c4aeb8d969f4d9a"
+  url "https:files.pythonhosted.orgpackages0e117f4fe3b6ce04a073ce093413f8ddaedc253feebafaabd24e0faa1eb7739dautopep8-2.2.0.tar.gz"
+  sha256 "d306a0581163ac29908280ad557773a95a9bede072c0fafed6f141f5311f43c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2fac1e4d58a523a44632691424baf45914ca71fb4837dd1c6e32a3f6810e649e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fac1e4d58a523a44632691424baf45914ca71fb4837dd1c6e32a3f6810e649e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fac1e4d58a523a44632691424baf45914ca71fb4837dd1c6e32a3f6810e649e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2fac1e4d58a523a44632691424baf45914ca71fb4837dd1c6e32a3f6810e649e"
-    sha256 cellar: :any_skip_relocation, ventura:        "2fac1e4d58a523a44632691424baf45914ca71fb4837dd1c6e32a3f6810e649e"
-    sha256 cellar: :any_skip_relocation, monterey:       "2fac1e4d58a523a44632691424baf45914ca71fb4837dd1c6e32a3f6810e649e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c6072db59d6c2ebcc7379e6c4724121ccd5e1e3ba5195ac42b465a0811ba0f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de7181384ec894d400ba1798d1c5fb718f3f2573dea8bb2b7050372447a1c564"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de7181384ec894d400ba1798d1c5fb718f3f2573dea8bb2b7050372447a1c564"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de7181384ec894d400ba1798d1c5fb718f3f2573dea8bb2b7050372447a1c564"
+    sha256 cellar: :any_skip_relocation, sonoma:         "de7181384ec894d400ba1798d1c5fb718f3f2573dea8bb2b7050372447a1c564"
+    sha256 cellar: :any_skip_relocation, ventura:        "de7181384ec894d400ba1798d1c5fb718f3f2573dea8bb2b7050372447a1c564"
+    sha256 cellar: :any_skip_relocation, monterey:       "de7181384ec894d400ba1798d1c5fb718f3f2573dea8bb2b7050372447a1c564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec3dc2bda69926f945d0eadba16f223b0bcfef9f15c3dbfddce05604c21a7274"
   end
 
   depends_on "python@3.12"

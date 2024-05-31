@@ -1,8 +1,8 @@
 class BrewGem < Formula
   desc "Install RubyGems as Homebrew formulae"
   homepage "https:github.comsportnginbrew-gem"
-  url "https:github.comsportnginbrew-gemarchiverefstagsv1.1.1.tar.gz"
-  sha256 "affa68105dcabc5c8b4832cf70ee2b35c1fbf19496173753645bda496d9b0a34"
+  url "https:github.comsportnginbrew-gemarchiverefstagsv1.2.0.tar.gz"
+  sha256 "70af3a1850490a5aa8835f3cfe23a56863d89e84e1990c8029416fad1795b313"
   license "MIT"
   head "https:github.comsportnginbrew-gem.git", branch: "master"
 
@@ -15,7 +15,13 @@ class BrewGem < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fc319ba05f5f17b0f516292f5fb2d55eccb6c03a11cacc438b1c2c2fb5ccb0db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "694721fcbd4b8c2c8d7db6135ca73aadf0cfe63646a1bfa9dc917d2fd138597a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "694721fcbd4b8c2c8d7db6135ca73aadf0cfe63646a1bfa9dc917d2fd138597a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "694721fcbd4b8c2c8d7db6135ca73aadf0cfe63646a1bfa9dc917d2fd138597a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "694721fcbd4b8c2c8d7db6135ca73aadf0cfe63646a1bfa9dc917d2fd138597a"
+    sha256 cellar: :any_skip_relocation, ventura:        "694721fcbd4b8c2c8d7db6135ca73aadf0cfe63646a1bfa9dc917d2fd138597a"
+    sha256 cellar: :any_skip_relocation, monterey:       "694721fcbd4b8c2c8d7db6135ca73aadf0cfe63646a1bfa9dc917d2fd138597a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5249679d614de6163b40a3a676d3895635ca03c916b35837c0d8ad701ecbd71a"
   end
 
   uses_from_macos "ruby"

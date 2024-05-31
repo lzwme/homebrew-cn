@@ -1,20 +1,18 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https:github.comoras-projectoras"
-  url "https:github.comoras-projectorasarchiverefstagsv1.1.0.tar.gz"
-  sha256 "87059bbf96781980ba9826603ee10e2bb3cfafbe7b9410ba1c65fe336b9d4ee0"
+  url "https:github.comoras-projectorasarchiverefstagsv1.2.0.tar.gz"
+  sha256 "1f3fc661c90cfb48b4b0e6ef4817b86b28c784186ab0da1a778809938899f574"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccaba33982008f43f7793453a2e05e77947f72c7ba50f060ee42618170d96a71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f81b5e0b9be89eb8695154cd5d8adfbc5fe5f54776e5384088c7808dc79457a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbfdd30ff5262d0b25c6098aedc220c44cfce8c8a4b98e4972b0dbdc3a2489ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fa17865465a26fa693a861d1d3333dfa33b1d2bfd4177f8b28d3809ca8c8de92"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cf8bb9227d55b0b4e47811c07876f6d790b8eb88c0638b04ec242d6fe8bd46cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "392796efd0bde2575b9e7d1b2c7eeff86cd6518f32061ee23e698ac3fed95840"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f05a3f7d50deebe6bd4a7b64afab15c02be52858608c77b808d7c2607efc6c6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ac8b789e597663dfb719a6381b37d5892b7540e588ebbf67fd858ff1759216a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e1b9ed792c372bc02535f661e1d4d089d0ae01e31de7be0251c76b0e87316bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39be70a7b4aac808e25b709af739e31dd0ae603fafb4de0658acc048efdd9737"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "947956b2f31faa3de29aec4fd088ce81a5ee7e939983b098bee681dcb63ee0cf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e60745c2ec96984b3365f3be35cc1fdeb372fa1f94b0ddc666164d4c8ce9064"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e529d2078e74cae581302907d4379d1d1f75a3b8cd6b65d1a3954f23e06c0ef8"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab0f9925c3a0c0283921fadeeef90501eefdaa1aa5ffe204e71a09c9a6212a0c"
+    sha256 cellar: :any_skip_relocation, monterey:       "2b6792add6a10a3bfde8eb5d3fb61e7b886a6caf06f72d9b2bd0ff18c3005e61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f803a982ff6bfe2c949014ee82d4c3cfdcfb5180b320a1513259a853a546045"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Monit < Formula
   desc "Manage and monitor processes, files, directories, and devices"
   homepage "https://mmonit.com/monit/"
-  url "https://mmonit.com/monit/dist/monit-5.33.0.tar.gz"
-  sha256 "1ace889c0183473a9d70160df6533bb6e1338dc1354f5928507803e1e2a863b5"
+  url "https://mmonit.com/monit/dist/monit-5.34.0.tar.gz"
+  sha256 "37f514cd8973bbce104cb8517ff3fc504052a083703eee0d0e873db26b919820"
   license "AGPL-3.0-or-later"
 
   livecheck do
@@ -11,15 +11,13 @@ class Monit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "cb874b9aebde870e0570b08c778ac5a44f0f8773993fe15c9081c96bb1294d13"
-    sha256 cellar: :any,                 arm64_ventura:  "f1024bae43bfcca2a3ee00b7187697e5a77a50e23463002c36e82f7132658ba0"
-    sha256 cellar: :any,                 arm64_monterey: "7c7a32d75f6734a2b2a61cac1d0e59b0ad1c3d71620a54224065ac4014f85a12"
-    sha256 cellar: :any,                 arm64_big_sur:  "5d74012f14f185b8629a51a39806c14812c4263b006cb5d0ed9c94d072c5e176"
-    sha256 cellar: :any,                 sonoma:         "5dd96e9dfe38975df90193a0e2a47b139de37e4daab7f0a0c7de41131223e73b"
-    sha256 cellar: :any,                 ventura:        "48f72f14abe8dcf2ddb1098941cd95dc93d12f0edc9f0dca5e14db4ff7f87a43"
-    sha256 cellar: :any,                 monterey:       "90e39aed578138b6aaeb76543ad4cece92eb6dac1df97a76477d1937e55f4515"
-    sha256 cellar: :any,                 big_sur:        "84f5b178be718b9b352a8dcff77050eddfd5ae91b19f995fbd845e785fdab8d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a446fd373c8ede9475f583ce8f491cf4b122b7519ca4fb87189af7be3dec345"
+    sha256 cellar: :any,                 arm64_sonoma:   "9b961058b5f02a9c80808f4ad56432f029d061f508a5d93c4302fd3b5109e47a"
+    sha256 cellar: :any,                 arm64_ventura:  "a8eacf89a5adc75d1958d4400aa1a0a82bf9f1abd87ddc967c5a8da51894423b"
+    sha256 cellar: :any,                 arm64_monterey: "86f677767c4d8f53000bafc3508285c3960bfa31189ff2144c787407c3be2d08"
+    sha256 cellar: :any,                 sonoma:         "c64f092092a97afafbc4afa84a49a6757dbbed54b4fc9b05505a52af54f6ed2f"
+    sha256 cellar: :any,                 ventura:        "28b4ac7d86d9913774a0c49b873dece3c5e4903be7891ca64adc4bc1c53ee923"
+    sha256 cellar: :any,                 monterey:       "38a80a517adb3ff706b4bc51045d301b8602c3c57cde443aa8cea22299b4021d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89e69dcd7d9b2665ac42593b2d72a33cbaac505cf07dcdf33223c09c4b59f7b2"
   end
 
   depends_on "openssl@3"

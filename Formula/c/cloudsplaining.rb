@@ -6,22 +6,18 @@ class Cloudsplaining < Formula
   url "https:files.pythonhosted.orgpackages364110330ab113c1d40a48f32f536579aff5025ea975098f37def13fd7fdaef6cloudsplaining-0.6.2.tar.gz"
   sha256 "02fc4f8482b701b0b19b7ad543b579ba50f31b3e0389bb9f6973391891d6ecd1"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https:github.comsalesforcecloudsplaining.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "6113e648fdae9b3628f207ff57e1dbff46d2e5ee19d7ab702b9a2ad34c51d4a2"
-    sha256 cellar: :any,                 arm64_ventura:  "9ec3f0d6caf4d6f8faf1fd2f6e59476b80465dca16fc09b9493d27bad53bc6c4"
-    sha256 cellar: :any,                 arm64_monterey: "5f4c4cf09020f91ee41d922ef62b1b32e7e5c9f54faaa73226d240490b28c25e"
-    sha256 cellar: :any,                 sonoma:         "7f9140fb73a8a0c3004f28d42a9f924247c31cdb879fbde36f38e5e04adf7ec6"
-    sha256 cellar: :any,                 ventura:        "9780a6fbdd87438a25afb99d0d151b32ea6725a05cf81e798456222220ebdcb9"
-    sha256 cellar: :any,                 monterey:       "e98c0b3d58886b8b861724ae98f89e9d12bde55327162e10cf3d656e295f5d27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a35b1f5b2b168f857abd2c3d9c2423e9635334eb72805b65989603edbe6ff77d"
+    sha256 cellar: :any,                 arm64_sonoma:   "72ffb40165216a7a7277cd0388e36e15dbcdf624901bd925699c8c7c125435e4"
+    sha256 cellar: :any,                 arm64_ventura:  "47a492f076f3d214c17850b55f3f95e4bab67ab70953980e698746f9d8d5ca21"
+    sha256 cellar: :any,                 arm64_monterey: "182e915330c52f1845865d8be75aa2cc7aea35b60c955bc410f18f3fcf9efed6"
+    sha256 cellar: :any,                 sonoma:         "3aaf8a227310684b8f3ba0733404e6a4bb0a976cc55fbc5b26546346c5bc6782"
+    sha256 cellar: :any,                 ventura:        "6817f9c1d88aca976853acb968cb814a01a73d68ba6dc83571119ee8136f5f34"
+    sha256 cellar: :any,                 monterey:       "91cc3329fe343195751c8906dc45d429cffa6750aa665640c7d3763f91b68d42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f8b2afd5829546c2bdf091c570f0692051930df663692e31b5419b909cc8af4"
   end
-
-  # https:github.comsalesforcecloudsplainingcommit9cee9be13458f197b75ada02bce0140fd311b60d
-  deprecate! date: "2024-01-12", because: :repo_archived
 
   depends_on "certifi"
   depends_on "libyaml"
@@ -33,13 +29,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesdcd123a7ed157ca950a344b2ef814db01c175f970320c4bf1be364ca0c1afdd2boto3-1.34.50.tar.gz"
-    sha256 "290952be7899560039cb0042e8a2354f61a7dead0d0ca8bea6ba901930df0468"
+    url "https:files.pythonhosted.orgpackages895858a7585d2aa8c1bbdf5a65809d5891350f3e83efafce3a40546d6e2db768boto3-1.34.115.tar.gz"
+    sha256 "67f5a6d6e6eff9c15711c265173b53eb4ad8d05b756b76ef33ac792cea7958f6"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages48afd038bd03233fe5c009fd67e8e1bfa6536c3b2ab91737cc629acbff464aa3botocore-1.34.50.tar.gz"
-    sha256 "33ab82cb96c4bb684f0dbafb071808e4817d83debc88b223e7d988256370c6d7"
+    url "https:files.pythonhosted.orgpackages6b56df9777f4cc7f489f877047f8347ec572d2f18586fee7aac1cd7ba5337371botocore-1.34.115.tar.gz"
+    sha256 "a5d5e28b9c847b17a1ecb7660b46b83d9512b125f671e03e93d14bf6f0b274c2"
   end
 
   resource "cached-property" do
@@ -62,19 +58,14 @@ class Cloudsplaining < Formula
     sha256 "97d06703873518cc5038509443742b25069a3c7562d1ea72ff08bfadde1ce777"
   end
 
-  resource "contextlib2" do
-    url "https:files.pythonhosted.orgpackagesc71337ea7805ae3057992e96ecb1cffa2fa35c2ef4498543b846f90dd2348d8fcontextlib2-21.6.0.tar.gz"
-    sha256 "ab1e2bfe1d01d968e1b7e8d9023bc51ef3509bba217bb730cee3827e1ee82869"
-  end
-
   resource "idna" do
-    url "https:files.pythonhosted.orgpackagesbf3fea4b9117521a1e9c50344b909be7886dd00a519552724809bb1f486986c2idna-3.6.tar.gz"
-    sha256 "9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"
+    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
+    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesb25e3a21abf3cd467d7876045335e681d276ac32492febe6d98ad89562d1a7e1Jinja2-3.1.3.tar.gz"
-    sha256 "ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90"
+    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
+    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
 
   resource "jmespath" do
@@ -83,8 +74,8 @@ class Cloudsplaining < Formula
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages1128c5441a6642681d92de56063fa7984df56f783d3f1eba518dc3e7a253b606Markdown-3.5.2.tar.gz"
-    sha256 "e1ac7b3dc550ee80e602e71c1d168002f062e49f1b11e26a36264dafd4df2ef8"
+    url "https:files.pythonhosted.orgpackages22024785861427848cc11e452cc62bb541006a1087cf04a1de83aedd5530b948Markdown-3.6.tar.gz"
+    sha256 "ed4f41f6daecbeeb96e576ce414c41d2d876daa9a16cb35fa8ed8c2ddfad0224"
   end
 
   resource "markupsafe" do
@@ -93,13 +84,13 @@ class Cloudsplaining < Formula
   end
 
   resource "policy-sentry" do
-    url "https:files.pythonhosted.orgpackagesd9da5855ad81cca1a75a88874c00d6d301360a2ff82aea17072604540e48903cpolicy_sentry-0.12.10.tar.gz"
-    sha256 "b8cf00a11a2a335d2bceba5dc1998182288a4b7848916a77923a6a2e0bc84373"
+    url "https:files.pythonhosted.orgpackages7e7a7fbb394f21a3c43edcb7d04382b6d93567900b4c8ea4b224b284656115edpolicy_sentry-0.12.11.tar.gz"
+    sha256 "8db1ea570e835d87c57ef51bf6f2372a8b78d463549a5f9c65cb5f8103cd1ed8"
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages4cc413b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9python-dateutil-2.8.2.tar.gz"
-    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "pyyaml" do
@@ -108,18 +99,18 @@ class Cloudsplaining < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "s3transfer" do
-    url "https:files.pythonhosted.orgpackagesa0b54c570b08cb85fdcc65037b5229e00412583bb38d974efecb7ec3495f40bas3transfer-0.10.0.tar.gz"
-    sha256 "d0c8bbf672d5eebbe4e57945e23b972d963f07d82f661cabf678a5c88831595b"
+    url "https:files.pythonhosted.orgpackages83bcfb0c1f76517e3380eb142af8a9d6b969c150cfca1324cea7d965d8c66571s3transfer-0.10.1.tar.gz"
+    sha256 "5683916b4c724f799e600f41dd9e10a9ff19871bf87623cc8f491cb4f5fa0a19"
   end
 
   resource "schema" do
-    url "https:files.pythonhosted.orgpackages4ee801e1b46d9e04cdaee91c9c736d9117304df53361a191144c8eccda7f0ee9schema-0.7.5.tar.gz"
-    sha256 "f06717112c61895cabc4707752b88716e8420a8819d71404501e114f91043197"
+    url "https:files.pythonhosted.orgpackagesd4010ea2e66bad2f13271e93b729c653747614784d3ebde219679e41ccdceecdschema-0.7.7.tar.gz"
+    sha256 "7da553abd2958a19dc2547c388cde53398b39196175a9be59ea1caf5ab0a1807"
   end
 
   resource "six" do
@@ -133,8 +124,8 @@ class Cloudsplaining < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaf47b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3curllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
+    url "https:files.pythonhosted.orgpackages7a507fd50a27caa0652cd4caf224aa87741ea41d3265ad13f010886167cfcc79urllib3-2.2.1.tar.gz"
+    sha256 "d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"
   end
 
   def install

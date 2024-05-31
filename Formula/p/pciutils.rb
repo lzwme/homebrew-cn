@@ -1,12 +1,12 @@
 class Pciutils < Formula
   desc "PCI utilities"
   homepage "https:github.compciutilspciutils"
-  url "https:github.compciutilspciutilsarchiverefstagsv3.12.0.tar.gz"
-  sha256 "3a76ca02581fed03d0470ba822e72ee06e492442a990062f9638dec90018505f"
+  url "https:github.compciutilspciutilsarchiverefstagsv3.13.0.tar.gz"
+  sha256 "861fc26151a4596f5c3cb6f97d6c75c675051fa014959e26fb871c8c932ebc67"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 x86_64_linux: "12437820dd86c73d06e49b249d8803a6511507ae0477d64ea792b5fa83d38222"
+    sha256 x86_64_linux: "8642b280a07552b6b9e2d4a887963900158155ea00b5cd85558b0f481e8204a8"
   end
 
   depends_on :linux

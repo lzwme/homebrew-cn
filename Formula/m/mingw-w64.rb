@@ -1,10 +1,9 @@
 class MingwW64 < Formula
   desc "Minimalist GNU for Windows and GCC cross-compilers"
   homepage "https://sourceforge.net/projects/mingw-w64/"
-  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v11.0.1.tar.bz2"
-  sha256 "3f66bce069ee8bed7439a1a13da7cb91a5e67ea6170f21317ac7f5794625ee10"
+  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v12.0.0.tar.bz2"
+  sha256 "cc41898aac4b6e8dd5cffd7331b9d9515b912df4420a3a612b5ea2955bbeed2f"
   license "ZPL-2.1"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +11,13 @@ class MingwW64 < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_sonoma:   "3a9ccfa83474eebd0139d97b37d552e460f2ab4c1cccf170d76e214d9950792d"
-    sha256 arm64_ventura:  "8aae383c22f21e3bd33de694cd02ed54768b91d08b639198552f4a720236a2d8"
-    sha256 arm64_monterey: "d6ace4b87d25ede8f782e14dadaa1b4f683561d2da5854156f95ce360ea6adc8"
-    sha256 sonoma:         "01744df8fcf3dc75bdee3fa7cfc1b41da529ef695218e481eac2ca89ad4e19d7"
-    sha256 ventura:        "4f8e1c6ee226f4211cbea00d1d237f0b6769f7d97cdc946755c50c36fd031056"
-    sha256 monterey:       "8332eb7fb9a8f96b77a2f92edbbed74bfda5fa37440508fc832ecc2e7673e83e"
-    sha256 x86_64_linux:   "3b4d818996775a10f2b890a6f6cd6f78341dee29ebbe0fec4ae8d5d652fb5a5d"
+    sha256 arm64_sonoma:   "b040fa5e367b31fa24367d9ab3aba6fb04ad914d7fd1406debf92f550bab109e"
+    sha256 arm64_ventura:  "fa3f3ad8e8a1e89bb25129aa5f3324374193e68d38110e609616d5bde02ddce2"
+    sha256 arm64_monterey: "9309ce0610536f506b34a66e1c36001b259eaea72f47e93c157df9ae3ba4de30"
+    sha256 sonoma:         "1c4de417291d7e046a6872969c20955964946aa6b4ba99f1a1ddc5d1a243604f"
+    sha256 ventura:        "37994d9e6c8af8dc8c0c53f13d9662e1a6acfbd4ed281928628b25dab529e88b"
+    sha256 monterey:       "8eb96682e5a0385c14c301355e9bda4836d3ac4331918ae577f869c641d832dd"
+    sha256 x86_64_linux:   "94b7a7778c4b649c8270c80e8a5d0659a4b3d2efb0b38bdedc30fae869569f0f"
   end
 
   # binutils searches for zstd using pkg-config

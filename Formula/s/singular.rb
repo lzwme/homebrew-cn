@@ -1,8 +1,9 @@
 class Singular < Formula
   desc "Computer algebra system for polynomial computations"
   homepage "https:www.singular.uni-kl.de"
-  url "https:www.singular.uni-kl.deftppubMathSingularSOURCES4-4-0singular-4.4.0.tar.gz"
-  sha256 "c269abbd24c84fe33edc0af1e78b8fec53d8e94338410ac06c2666cfd40d43f2"
+  url "https:www.singular.uni-kl.deftppubMathSingularSOURCES4-4-0singular-4.4.0p2.tar.gz"
+  version "4.4.0p2"
+  sha256 "68ef014cd52006399c09160f447191e36bda28dd5d64d251a577fae7eae237f1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -35,13 +36,13 @@ class Singular < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "27981ca3142ace51582e088ffd260cb392c59b3d57bbcc077f0e462da81f5e1b"
-    sha256 arm64_ventura:  "6fc3a702ab9649c27183312a9723f89b269bd68940959d5d5893bfc6b6e5e32e"
-    sha256 arm64_monterey: "489f1752265b21938dbdf0e35677ab47f9fb4a25f98c61554c3e4a18d6fef534"
-    sha256 sonoma:         "7d8835a5c15aa151f3b3e27115f80656201714ca49e5b11f78fdbb6d42ffa9f4"
-    sha256 ventura:        "faaf92384014885c55a79b6f27a5a6f8ffa13416b67bcf671d8be9419f46fefc"
-    sha256 monterey:       "8391ba8c8033ce2cbc8bbebc2078a1f9e5bc4224d6b05a8595ccb35292196c3c"
-    sha256 x86_64_linux:   "0243865988a3e1fc899ec2fb6cc61b8fc01160b81fd72f978c4f03bbada58534"
+    sha256 arm64_sonoma:   "662443efbfa2dd899e3f4a3d8cb5168999781f8896e6f1bde4d1a39c1b60c1b6"
+    sha256 arm64_ventura:  "72a7bb2e05c6b576cda411328f06bcd3b28e694d207404646da9ff704aa19895"
+    sha256 arm64_monterey: "f1040d685a7a6535b08944336b4409a234be1375fc4bf983ace27584d937488e"
+    sha256 sonoma:         "93da86cd228684530a72e3252a9fe543c8683b85551c319890a2478e21c4acae"
+    sha256 ventura:        "891c215e9c3752e4dcafb375f4274249b000a2b7178f2a4fe28b0824199e90c0"
+    sha256 monterey:       "2d6c2b68857bc630bbb4ce6537df446019548cb578d583e0bdc36cc30345a998"
+    sha256 x86_64_linux:   "b9931407800d5a13426e24b891693a39981f6ba217dad4adb130f5b2948bb33d"
   end
 
   head do
@@ -56,6 +57,7 @@ class Singular < Formula
   depends_on "mpfr"
   depends_on "ntl"
   depends_on "python@3.12"
+  depends_on "readline"
 
   def install
     system ".autogen.sh" if build.head?

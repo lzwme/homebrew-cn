@@ -1,20 +1,19 @@
 class RubyBuild < Formula
   desc "Install various Ruby versions and implementations"
   homepage "https:github.comrbenvruby-build"
-  url "https:github.comrbenvruby-buildarchiverefstagsv20240517.tar.gz"
-  sha256 "6b4c5cc35f1049adcfb8ef3812d26df4529552cd818a58a749c98165cd7055f0"
+  url "https:github.comrbenvruby-buildarchiverefstagsv20240530.1.tar.gz"
+  sha256 "60d7407038ce0c21e15d3c215eb52ed01b947f07bd78926dd79a9439c2016209"
   license "MIT"
   head "https:github.comrbenvruby-build.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
-    sha256 cellar: :any_skip_relocation, monterey:       "409649a4f392be249a31788be094ea6e1d06d8ad36fe11c416ce7235aadbb8d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4d3335fa73aba26a7d3a51d8ee02be9391e2ba39a6e01ad60ad74f6d539ed72"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0a53ee441765fc1dfcb410e511713f8fb40cb428103eea1c410eade24c78455"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0a53ee441765fc1dfcb410e511713f8fb40cb428103eea1c410eade24c78455"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0a53ee441765fc1dfcb410e511713f8fb40cb428103eea1c410eade24c78455"
+    sha256 cellar: :any_skip_relocation, sonoma:         "c0a53ee441765fc1dfcb410e511713f8fb40cb428103eea1c410eade24c78455"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0a53ee441765fc1dfcb410e511713f8fb40cb428103eea1c410eade24c78455"
+    sha256 cellar: :any_skip_relocation, monterey:       "c0a53ee441765fc1dfcb410e511713f8fb40cb428103eea1c410eade24c78455"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dad24cb00a04d23d09978148e5dd7c2285c98a1a772e91c646606d27f74032a"
   end
 
   depends_on "autoconf"

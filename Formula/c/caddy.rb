@@ -1,27 +1,26 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https:caddyserver.com"
-  url "https:github.comcaddyservercaddyarchiverefstagsv2.7.6.tar.gz"
-  sha256 "e1c524fc4f4bd2b0d39df51679d9d065bb811e381b7e4e51466ba39a0083e3ed"
+  url "https:github.comcaddyservercaddyarchiverefstagsv2.8.1.tar.gz"
+  sha256 "1efd6aad92210288a89b76c1e639da7ba0009f2ab3ae7c78b5818b67257f732c"
   license "Apache-2.0"
   head "https:github.comcaddyservercaddy.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80d0683f58a41ead917ffd0d3c83471d3cb5e6bfa6699fb248a29b958569520a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "80d0683f58a41ead917ffd0d3c83471d3cb5e6bfa6699fb248a29b958569520a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80d0683f58a41ead917ffd0d3c83471d3cb5e6bfa6699fb248a29b958569520a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a72f5f77bcbc300ca82ab60a868cbf8dbcbaf3a0eb4e7d22a4d7190f773245ac"
-    sha256 cellar: :any_skip_relocation, ventura:        "a72f5f77bcbc300ca82ab60a868cbf8dbcbaf3a0eb4e7d22a4d7190f773245ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "a72f5f77bcbc300ca82ab60a868cbf8dbcbaf3a0eb4e7d22a4d7190f773245ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a7af2c32ee507d80ce4a70a0e4ef8281a2601ed2da8e42c0dc1838e491d163e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42089d87c7b5cc5bbb8c62c28b5d51de68880e529502c771928b7fdcb4c86c5f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42089d87c7b5cc5bbb8c62c28b5d51de68880e529502c771928b7fdcb4c86c5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42089d87c7b5cc5bbb8c62c28b5d51de68880e529502c771928b7fdcb4c86c5f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "067bc1ef46d5aeb127552c631645e6c5b02f460eb29c0751a2ab93566b858df6"
+    sha256 cellar: :any_skip_relocation, ventura:        "067bc1ef46d5aeb127552c631645e6c5b02f460eb29c0751a2ab93566b858df6"
+    sha256 cellar: :any_skip_relocation, monterey:       "067bc1ef46d5aeb127552c631645e6c5b02f460eb29c0751a2ab93566b858df6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4f1d4773fe3391620b9bf3ba495960ef1431cd4370100053313f85860fabc12"
   end
 
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https:github.comcaddyserverxcaddyarchiverefstagsv0.3.5.tar.gz"
-    sha256 "41188931a3346787f9f4bc9b0f57db1ba59ab228113dcf0c91382e40960ee783"
+    url "https:github.comcaddyserverxcaddyarchiverefstagsv0.4.2.tar.gz"
+    sha256 "02e685227fdddd2756993ca019cbe120da61833df070ccf23f250c122c13d554"
   end
 
   def install

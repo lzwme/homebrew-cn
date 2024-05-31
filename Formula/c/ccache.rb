@@ -1,33 +1,57 @@
+# TODO: Add this to Homebrew so it can be used as a dependency:
+#       https:github.commartinmoenespan-lite
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https:ccache.dev"
-  url "https:github.comccacheccachereleasesdownloadv4.9.1ccache-4.9.1.tar.xz"
-  sha256 "4c03bc840699127d16c3f0e6112e3f40ce6a230d5873daa78c60a59c7ef59d25"
+  url "https:github.comccacheccachereleasesdownloadv4.10ccache-4.10.tar.xz"
+  sha256 "83630b5e922b998ab2538823e0cad962c0f956fad1fcf443dd5288269a069660"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.comccacheccache.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "4da9fb3b1d7ef251fef128c5cf7772f28e2e1f4c02d61ec90a7d1ba0aae7b19d"
-    sha256 cellar: :any,                 arm64_ventura:  "8059bcb107c4e93bf06cadaa8115506adba34b583ce9821073d52c8474bb56f5"
-    sha256 cellar: :any,                 arm64_monterey: "0b6e1a41c5759eb9884269a5e2831fd7bb8d4420e31a868e5d1cf52b014a65e8"
-    sha256 cellar: :any,                 sonoma:         "103799f0530de714df250dffda1b303c61eba69561d0d235dcfd4c8e7eb7693e"
-    sha256 cellar: :any,                 ventura:        "bca74e577f458a57cc930254504dd0e4502af1fb864911df2f3b70a02bf3b272"
-    sha256 cellar: :any,                 monterey:       "25313faf0635759be3012be2f20baf26f84873e791362690f7ca72497782a7a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7070283ae70a576649139de2c1b45fd7756e922cd6b989628e7f921890ade57c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "362e29807c48743ef00cab49b7872258f5636f449e966bbc0b386dc5a1f05818"
+    sha256 cellar: :any,                 arm64_ventura:  "f1cf9d4ae9fd82ab535acf13b409121d5f02afce7a5c519dd76003a2ed90435d"
+    sha256 cellar: :any,                 arm64_monterey: "23c1ddf2956b4f0a119485a46f6501f70b71c7382de7764d782e04c53ad16cf5"
+    sha256 cellar: :any,                 sonoma:         "f703c1bd5db344995f4b4c88e4027e69499c74a38dd9afec1e7a969e160a0ffa"
+    sha256 cellar: :any,                 ventura:        "e17b749981c76783e243bcea96d4041155dce095b422ecdc071706b5de165aa9"
+    sha256 cellar: :any,                 monterey:       "52bc73a6c84e522d694703e4451a5244c1838d72d8879aed4d3cef5fddd43d48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "991a5800ee133ad0535c8a28de13c3e6f5e3d14a5dbf6b8e0f5cdc92c80d79d2"
   end
 
   depends_on "asciidoctor" => :build
   depends_on "cmake" => :build
+  depends_on "cpp-httplib" => :build
+  depends_on "doctest" => :build
   depends_on "pkg-config" => :build
-
+  depends_on "tl-expected" => :build
+  depends_on "blake3"
+  depends_on "fmt"
   depends_on "hiredis"
+  depends_on "xxhash"
   depends_on "zstd"
 
   fails_with gcc: "5"
 
+  # Fix detection of system blake3
+  # https:github.comccacheccachepull1464
+  patch do
+    url "https:github.comccacheccachecommitd159306db8398da233df6481ac3fd83460ef0f0b.patch?full_index=1"
+    sha256 "1db1a39677b94cd365b98d8df1fcd0b116866175d4a55730af9bfa1ab443e4be"
+  end
+
+  # Fix blake3 include. Same PR as above.
+  patch do
+    url "https:github.comccacheccachecommitfa4046966e71011587364b0241255130b62858fb.patch?full_index=1"
+    sha256 "c0d5d61e3ef594c0587e249798e95c9d508f41452fd649685b8f6a00e667be80"
+  end
+
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_IPO=TRUE"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DENABLE_IPO=TRUE",
+                    "-DREDIS_STORAGE_BACKEND=ON",
+                    "-DDEPS=LOCAL",
+                    *std_cmake_args
     system "cmake", "--build", "build"
 
     # Homebrew compiler shim actively prevents ccache usage (see caveats), which will break the test suite.

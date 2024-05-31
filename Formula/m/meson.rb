@@ -1,13 +1,19 @@
 class Meson < Formula
   desc "Fast and user friendly build system"
   homepage "https:mesonbuild.com"
-  url "https:github.commesonbuildmesonreleasesdownload1.4.0meson-1.4.0.tar.gz"
-  sha256 "8fd6630c25c27f1489a8a0392b311a60481a3c161aa699b330e25935b750138d"
+  url "https:github.commesonbuildmesonreleasesdownload1.4.1meson-1.4.1.tar.gz"
+  sha256 "1b8aad738a5f6ae64294cc8eaba9a82988c1c420204484ac02ef782e5bba5f49"
   license "Apache-2.0"
   head "https:github.commesonbuildmeson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0754ab41a963c010173f20f5d8a13bb39078d3a26544aba20eb4071cc9914722"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cb4ca07916a11d1a515f0981b08cda66e2cce2511595166ccb98ea0ad940b33"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cb4ca07916a11d1a515f0981b08cda66e2cce2511595166ccb98ea0ad940b33"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cb4ca07916a11d1a515f0981b08cda66e2cce2511595166ccb98ea0ad940b33"
+    sha256 cellar: :any_skip_relocation, sonoma:         "16f8e1771b5b44f4474a69129d92950d0e65b16daa71b388506f4443423d4b4e"
+    sha256 cellar: :any_skip_relocation, ventura:        "16f8e1771b5b44f4474a69129d92950d0e65b16daa71b388506f4443423d4b4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "16f8e1771b5b44f4474a69129d92950d0e65b16daa71b388506f4443423d4b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abcd020d22b9479e9c7148fb586b4df7ac17a36569ca0e79e2db7c3930310851"
   end
 
   depends_on "ninja"

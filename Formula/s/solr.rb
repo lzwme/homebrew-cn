@@ -1,13 +1,19 @@
 class Solr < Formula
   desc "Enterprise search platform from the Apache Lucene project"
   homepage "https://solr.apache.org/"
-  url "https://dlcdn.apache.org/solr/solr/9.6.0/solr-9.6.0.tgz"
-  mirror "https://archive.apache.org/dist/solr/solr/9.6.0/solr-9.6.0.tgz"
-  sha256 "39ec04e45bb0a911cee6e4355a416e0ee25e1cc39f5316a3a654985a85a8ed32"
+  url "https://dlcdn.apache.org/solr/solr/9.6.1/solr-9.6.1.tgz"
+  mirror "https://archive.apache.org/dist/solr/solr/9.6.1/solr-9.6.1.tgz"
+  sha256 "59d1a0aed1d90f7ca9ce7a158f122a82a5f6ba16463cc16cfbe22a772b7eb26d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "117420e444d0e7cc9f25bc7dbfc1660c6b2f371c6709523487d0ca5af9d1119f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "257d0158325cb5f024610dba5103a8aaafe42d86954d259de0d30c4a2288ef1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "257d0158325cb5f024610dba5103a8aaafe42d86954d259de0d30c4a2288ef1a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "257d0158325cb5f024610dba5103a8aaafe42d86954d259de0d30c4a2288ef1a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "257d0158325cb5f024610dba5103a8aaafe42d86954d259de0d30c4a2288ef1a"
+    sha256 cellar: :any_skip_relocation, ventura:        "257d0158325cb5f024610dba5103a8aaafe42d86954d259de0d30c4a2288ef1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "257d0158325cb5f024610dba5103a8aaafe42d86954d259de0d30c4a2288ef1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4c5910597dce9128aa7ee68ab42cf0588ba5f5d8963f7ffd045252d54168373"
   end
 
   depends_on "openjdk"

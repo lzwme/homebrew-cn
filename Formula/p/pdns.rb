@@ -6,7 +6,7 @@ class Pdns < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https:downloads.powerdns.comreleases"
+    url "https:www.powerdns.comdownloads"
     regex(href=.*?pdns[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 

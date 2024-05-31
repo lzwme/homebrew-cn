@@ -3,20 +3,20 @@ class Volatility < Formula
 
   desc "Advanced memory forensics framework"
   homepage "https:github.comvolatilityfoundationvolatility3"
-  url "https:files.pythonhosted.orgpackagesb14a18f068948a7156ee733c6ea42ef8a201421931568b3b83b49a381a477ab2volatility3-2.5.2.tar.gz"
-  sha256 "63716fa9ad29686c6d25471eaaf58380df1bd508b827de7ef9ada63bda6d8e76"
+  url "https:files.pythonhosted.orgpackagesc8a868c5bbc799bd70fb87da2a6ea081200fa1742e2ee47de4680cbd3b1d47b7volatility3-2.7.0.tar.gz"
+  sha256 "0b219b27b334cda79c0d7e244edba8e6928d9d0852e6d3462ba89e74f7ea92b5"
   license :cannot_represent
   version_scheme 1
   head "https:github.comvolatilityfoundationvolatility3.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c27a3f69a019cf06ee7a68384797294db53c4c980e5f26fe18ccac4b7b43b674"
-    sha256 cellar: :any,                 arm64_ventura:  "9a582e7702af461df3117e3bcc1293f2355de2c7f2d2b556b43b1e36c1f7161b"
-    sha256 cellar: :any,                 arm64_monterey: "21c66fe8b90e45313dc4053c3a19a6a8d710e2389418be3193e29d05772275e1"
-    sha256 cellar: :any,                 sonoma:         "3d486920b86f30de7ef6f6c2951f5864844e4e207b454b86a76d8c65a80ff69b"
-    sha256 cellar: :any,                 ventura:        "2fbea6946dd4fce4326a05bc6fea5eb9b0b92a368d6f7f0b8cb2726b20101525"
-    sha256 cellar: :any,                 monterey:       "22f682f0a0e790b30f6afeda7ced170e873cdf33067199424d4ef2d0fbd11a7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91178521c389c403912df306601293f4af35d7aca48330f5a7371b005a6e1de1"
+    sha256 cellar: :any,                 arm64_sonoma:   "e3d99581f78a5d59430ff9f37c4ad70e6ab51d226eea13d3b27502b609672999"
+    sha256 cellar: :any,                 arm64_ventura:  "45217f65f7a113bdc19df88029588078fb405fb576aa3fe804b773d191d0293e"
+    sha256 cellar: :any,                 arm64_monterey: "f84bf96954fd4235a9d9c20023b8ae61f8eca5154680eae72fed19a89088381e"
+    sha256 cellar: :any,                 sonoma:         "62d9fee63af9040ac1a40e631a1b48646bc683d29bf1e1bdcbdd96b7076d4a57"
+    sha256 cellar: :any,                 ventura:        "1e7a5116183b757148dea8a17b68997c11b0241c9a897710b21b8233d144bfd5"
+    sha256 cellar: :any,                 monterey:       "f3d67210942472e9912fb052f79b539fbdd560a075a43b269838cbab17b49cbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "41c56045d87563f8c9c3125ab2470d48e71a6167722450baefab18dfde06be76"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -36,8 +36,8 @@ class Volatility < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
+    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
   end
 
   resource "jsonschema-specifications" do
@@ -56,18 +56,18 @@ class Volatility < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages21c5b99dd501aa72b30a5a87d488d7aa76ec05bdf0e2c7439bc82deb9448dd9areferencing-0.33.0.tar.gz"
-    sha256 "c775fedf74bc0f9189c2a3be1c12fd03e8c23f4d371dce795df44e06c5b412f7"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackagesb70ae3bdcc977e6db3bf32a3f42172f583adfa7c3604091a03d512333e0161ferpds_py-0.17.1.tar.gz"
-    sha256 "0210b2668f24c078307260bf88bdac9d6f1093635df5123789bfee4d8d7fc8e7"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "yara-python" do
-    url "https:files.pythonhosted.orgpackages5f3460a293c7ae05731c2e6366e132a9fe4c02ae84c4f57714a2f5e8651a8491yara-python-4.3.1.tar.gz"
-    sha256 "7af4354ee0f1561f51fd01771a121d8d385b93bbc6138a25a38ce68aa6801c2c"
+    url "https:files.pythonhosted.orgpackages2f3a0d2970e76215ab7a835ebf06ba0015f98a9d8e11b9969e60f1ca63f04ba5yara_python-4.5.1.tar.gz"
+    sha256 "52ab24422b021ae648be3de25090cbf9e6c6caa20488f498860d07f7be397930"
   end
 
   def install
