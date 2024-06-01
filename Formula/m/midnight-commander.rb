@@ -12,13 +12,14 @@ class MidnightCommander < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "a4c54152c514b16f70f8e58ba842d89a6e07c6a2b6f14083a851fac291dc4c6d"
-    sha256 arm64_ventura:  "90131c6ef144b944c2d09ad8c59b4f4e4f249746669888404b8f8d50ed837181"
-    sha256 arm64_monterey: "1b306039471c2b6c8bb20ac30138baaaedc4315497fdf3945d61fcbbbe98dd0d"
-    sha256 sonoma:         "116dbf378bfbeb72b75a850be84f93f190f6f249477cea7c8f6bf54343d03d7b"
-    sha256 ventura:        "2ad785a7f7277a49c18c4f45cf0b48572998c7d97db71e0d4e628737c5f3fb9a"
-    sha256 monterey:       "5b7d18b46b938edb816c7560df7c4b356e8ab01558472d4f12f0e11c836e16e5"
-    sha256 x86_64_linux:   "7a72a393d6610429cb35fd17266c06df529e049c7548481f0e68db85c55e492e"
+    rebuild 1
+    sha256 arm64_sonoma:   "db38bfda3b36eabaa861452b3edda1929d3bf09caf6e4703e1952a9e0fa550e5"
+    sha256 arm64_ventura:  "1485984ff451a2e9cebca05381c076b19022add8e001017fe70a4cef38a2b583"
+    sha256 arm64_monterey: "3c55ef249b10cd7a1406865e6c681b4f63fecc77c0c0bb5a1d6c87567e695319"
+    sha256 sonoma:         "819441b71fb4b0fc93253a0a2347cf5c509d05bb0fb81ad931d6d16ec04452cb"
+    sha256 ventura:        "619dec9f3c360453eece1a988827eb25d596f60bcd04c402d20639dd600519a2"
+    sha256 monterey:       "4c37aa02e3733b307f0b6fae9142213cb1ef349bc9a4b84cf017468d6537f5be"
+    sha256 x86_64_linux:   "ba4853c54f2abb917b60797f9008dd07ec9fdce81e2794aa121e94c6020eaf0b"
   end
 
   head do
@@ -48,9 +49,6 @@ class MidnightCommander < Formula
       --enable-vfs-sftp
     ]
 
-    # Fix compilation bug on macOS 10.13 by pretending we don't have utimensat()
-    # https:github.comMidnightCommandermcpull130
-    ENV["ac_cv_func_utimensat"] = "no" if OS.mac? && MacOS.version >= :high_sierra
     system ".autogen.sh" if build.head?
     system ".configure", *args
     system "make", "install"

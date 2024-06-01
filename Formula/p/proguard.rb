@@ -1,8 +1,8 @@
 class Proguard < Formula
   desc "Java class file shrinker, optimizer, and obfuscator"
   homepage "https:www.guardsquare.comenproductsproguard"
-  url "https:github.comGuardsquareproguardreleasesdownloadv7.4.2proguard-7.4.2.tar.gz"
-  sha256 "f5d88ec3074ef4578cd7b1250b511b45d6bca89e734bc175d671e4a0aaa95ae0"
+  url "https:github.comGuardsquareproguardreleasesdownloadv7.5proguard-7.5.0.tar.gz"
+  sha256 "48b1d6bd104acc12c9218250e88b3422815c86510cdd3c8c572a0386ac289376"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,13 @@ class Proguard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5898f4ffddb2131970b05be96d09e23f2a3f7f238a0edc78764c51689f10127c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
+    sha256 cellar: :any_skip_relocation, ventura:        "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9901a1287ebb9c15aa55af90700bf075e568bc914c809924f0b4c9f330799a5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1046e12fc3e809bf98b015308135473795c43682d488b8c42e87d8af45e4f3"
   end
 
   depends_on "openjdk"

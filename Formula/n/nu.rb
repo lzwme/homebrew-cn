@@ -4,19 +4,17 @@ class Nu < Formula
   url "https:github.comprogramming-nunuarchiverefstagsv2.3.0.tar.gz"
   sha256 "1a6839c1f45aff10797dd4ce5498edaf2f04c415b3c28cd06a7e0697d6133342"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https:github.comprogramming-nunu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "8ef566992992c65ca056a7481370d67e72230e1177a8fad14ddbc4cdceb97ba6"
-    sha256 cellar: :any,                 arm64_ventura:  "cf815c1ba5847de45160a706e76db23dbf584b3003987b7528d20bcc1720d301"
-    sha256 cellar: :any,                 arm64_monterey: "e9f3df2bf0960507463ed9d582f91e5648ee2a9daaf252d611f3379815e8ed16"
-    sha256 cellar: :any,                 arm64_big_sur:  "c05960897782cccd7d69453c37777d2386caa611773eb814dc86386937493e71"
-    sha256 cellar: :any,                 sonoma:         "ca5d75df5291138853f9a60b255699bdcd8cfd74729f7c1b39123fa59b1d096e"
-    sha256 cellar: :any,                 ventura:        "a5d20cf97b4a435a75795683df685277784f8b948775ce0b4e226945c219fa8d"
-    sha256 cellar: :any,                 monterey:       "82cf8151e4119b9fda70823e0da50ba939e9b7a05d2b7754a8debffcaa1b3191"
-    sha256 cellar: :any,                 big_sur:        "8be1c8c433bd41abe5b4224722854478ec6c2663191b2333d440844124ca55ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a3e8170ce08251778835d7f10b6143e523cee66e00679e89ab8912dbc8987a9"
+    sha256 cellar: :any,                 arm64_sonoma:   "b333e5e5a6f47ef0b6c8e3146f9e7d220f7c0c91cd5133579932e88dcf5eb672"
+    sha256 cellar: :any,                 arm64_ventura:  "c8eeb76f76f94dd1e92d32bc28801850ce163221f52eeb0ff5eb0edd98ae3409"
+    sha256 cellar: :any,                 arm64_monterey: "cda6e75c378552f53b6ef15a7105cc8afb0f0cf138cb3bc579a8e9fcd410374d"
+    sha256 cellar: :any,                 sonoma:         "3d9d6edf45ee62dd196bbf02aa9bb9fea37688110679b6c6441db579f91adf38"
+    sha256 cellar: :any,                 ventura:        "21eff9b6953028247e171a74fa8c444de3fb2fbf5162cf9ff6e0b2f5f2da8881"
+    sha256 cellar: :any,                 monterey:       "a15a99fd81159845a89179e13a823722e485063435e85caaf2a1866d00c20cd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3fef96dedf553210c501538ed8cd5f7056eb2e521e71a081d724ab8f2358d634"
   end
 
   depends_on "pcre"
@@ -60,7 +58,7 @@ class Nu < Formula
   end
 
   def install
-    ENV.delete("SDKROOT") if MacOS.version < :sierra
+    ENV.delete("SDKROOT") if OS.mac? && MacOS.version < :sierra
     ENV["PREFIX"] = prefix
     # Don't hard code path to clang.
     inreplace "toolsnuke", "usrbinclang", ENV.cc

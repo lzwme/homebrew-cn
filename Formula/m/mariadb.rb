@@ -1,8 +1,8 @@
 class Mariadb < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https:mariadb.org"
-  url "https:archive.mariadb.orgmariadb-11.3.2sourcemariadb-11.3.2.tar.gz"
-  sha256 "5570778f0a2c27af726c751cda1a943f3f8de96d11d107791be5b44a0ce3fb5c"
+  url "https:archive.mariadb.orgmariadb-11.4.2sourcemariadb-11.4.2.tar.gz"
+  sha256 "8c600e38adb899316c1cb11c68b87979668f4fb9d858000e347e6d8b7abe51b0"
   license "GPL-2.0-only"
 
   livecheck do
@@ -17,13 +17,13 @@ class Mariadb < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "62b3259218d3f4a3c1b52eb011382d9bfe2e2833f40d255d735c40320fa9d81c"
-    sha256 arm64_ventura:  "a9f71222869b1e0fcfe4cc0fd55ee340755efb5b31a26483a726b3a577a86828"
-    sha256 arm64_monterey: "2547a84d2c507b22d6163ccc994355933bf4cc9c9742e406080e13d3579c5b96"
-    sha256 sonoma:         "e8ef52d72c29883f186d75430147012cba4a68c1a44214a3e0516e6d8819edcb"
-    sha256 ventura:        "9ab7548d251c9ea816b5167d562df7026ac9e4b547e3b8c9f334c73e282f81a1"
-    sha256 monterey:       "4fe540840104edcffe20f5329e9a96a65ca5188e6d8f22de250c6ea03ac3774e"
-    sha256 x86_64_linux:   "190cfffaffb9692e8e8ca7ef32d5ba8a2f0fadb5287b3e0a4e9262f0838b72a7"
+    sha256 arm64_sonoma:   "6253930320e8fd6168af675711323cd5fca3802ded6fa8ebeaa2df25714786ad"
+    sha256 arm64_ventura:  "5a887e7ba084214d0ba6289905e0f21fe8117ccb1af8a896ced7fe65763aea72"
+    sha256 arm64_monterey: "29efafd48f2012151e4f6c1af55bf514a9c9f4cd94533d6ebaeb982075d75971"
+    sha256 sonoma:         "6259c09d06b8e83dce359a77dbfd11270f318b6333a6c0d05c2210e2aff17a40"
+    sha256 ventura:        "417990e729fd9acbf0c82bc061592b43a2efbf4247b224b2fee1d625007a4b76"
+    sha256 monterey:       "1983b7cc998e99f8e18a9a677d96ed6bdcb69e99eaebbd71138b351f21004557"
+    sha256 x86_64_linux:   "e47c30e2ada719213c21db0cf005ee541900de195b57a06c2303ecfd45bbe5ee"
   end
 
   depends_on "bison" => :build
@@ -31,11 +31,15 @@ class Mariadb < Formula
   depends_on "fmt" => :build
   depends_on "pkg-config" => :build
   depends_on "groonga"
+  depends_on "lz4"
   depends_on "openssl@3"
   depends_on "pcre2"
+  depends_on "xz"
   depends_on "zstd"
 
   uses_from_macos "bzip2"
+  uses_from_macos "krb5"
+  uses_from_macos "libedit"
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
@@ -53,13 +57,6 @@ class Mariadb < Formula
   conflicts_with "mariadb-connector-c", because: "both install `mariadb_config`"
 
   fails_with gcc: "5"
-
-  # Remove on next release.
-  # Upstream PR: https:github.comMariaDBserverpull3064
-  patch do
-    url "https:github.comMariaDBservercommit3624a36aed0346380255b141cb8a59998aaca4ee.patch?full_index=1"
-    sha256 "c9d0aa64b34c43ac9e3077d74c18532125c459d9d867ade69ce283d27b595b22"
-  end
 
   def install
     ENV.cxx11

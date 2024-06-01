@@ -1,23 +1,23 @@
 class RubyAT31 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https:www.ruby-lang.org"
-  url "https:cache.ruby-lang.orgpubruby3.1ruby-3.1.5.tar.gz"
-  sha256 "3685c51eeee1352c31ea039706d71976f53d00ab6d77312de6aa1abaf5cda2c5"
+  url "https:cache.ruby-lang.orgpubruby3.1ruby-3.1.6.tar.gz"
+  sha256 "0d0dafb859e76763432571a3109d1537d976266be3083445651dc68deed25c22"
   license "Ruby"
 
   livecheck do
-    url "https:www.ruby-lang.orgendownloads"
+    url "https:www.ruby-lang.orgendownloadsreleases"
     regex(href=.*?ruby[._-]v?(3\.1(?:\.\d+)+)\.ti)
   end
 
   bottle do
-    sha256 arm64_sonoma:   "da7a457066217d37f01f374c32782048e2959e544ba3ab8dff559e8b139092c8"
-    sha256 arm64_ventura:  "4ae966c9d1ebd3c56f90f8b0ee8c2acb32abe332b867537b670c7a39ab850ff6"
-    sha256 arm64_monterey: "c018270f55463de50d3bd02d2a20af5b6e4918752d5f05c8f734a4891fd1473a"
-    sha256 sonoma:         "9f023bb026a281d5a5ecd4d200a1d3e7cf2f27492fef94f9ea73b7ac0c7bf1b3"
-    sha256 ventura:        "a3531b658b4dcebbfc710b95aa9fc527c3e74688e6cdf774be3d91b1896ab2fa"
-    sha256 monterey:       "adbb55cee9c728acf9f95a4d00fcf49a63ca6c882615607b2cfe7a77af13ebd7"
-    sha256 x86_64_linux:   "05a819146719671f3c2ed5e29a0527ef2df2f8da273dc0853474fffbe0c06401"
+    sha256 arm64_sonoma:   "7c5a047c339ba80d2a14b34ef244ed9e0af7102d340b8e5f91eca4d7a0a853bf"
+    sha256 arm64_ventura:  "4440ac18c954c2f1d0cbfa0f470fb87c26ac1aa7a6734b83e87ab9d0ef630c7c"
+    sha256 arm64_monterey: "0fdd2a2e9f8297ca292959540012c00392205312b865d1c7aeb18a09c16db428"
+    sha256 sonoma:         "33a2ac7835348d4812760725fffeacdc1e6d15a5673b6230f2337196054e2b1e"
+    sha256 ventura:        "20e409cb7b524b04e9248c9addb2e2d8a52027a8ddd3c07eb7e594b0e94fd2bf"
+    sha256 monterey:       "015c58f56f84a419659b6e777683c9ac82d87cb3da3e428614ea63161e173084"
+    sha256 x86_64_linux:   "a282cbc26752e31cc3957ee74991e08f6e12b736ecf41d5d56ff7435e8f6027c"
   end
 
   keg_only :versioned_formula
@@ -35,8 +35,8 @@ class RubyAT31 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https:rubygems.orgrubygemsrubygems-3.5.9.tgz"
-    sha256 "2b203642191e6bb9ece19075f62275a88526319b124684c46667415dca4363f1"
+    url "https:rubygems.orgrubygemsrubygems-3.5.11.tgz"
+    sha256 "4521b52f843620a9fc5ca7414526b7463b0989564c3ae80b26b68fbd1304c818"
   end
 
   def api_version

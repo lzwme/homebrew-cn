@@ -1,26 +1,25 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
-  homepage "https:www.benthos.dev"
-  url "https:github.combenthosdevbenthosarchiverefstagsv4.27.0.tar.gz"
-  sha256 "f196b90d1df54641110f9ac04e7b82c079190495e1a26785056cc9bd8abd2e09"
+  homepage "https:github.comredpanda-databenthos"
+  url "https:github.comredpanda-databenthosarchiverefstagsv4.28.1.tar.gz"
+  sha256 "779e59a1c3d53c0cbb49382b2c8e57338022696fdb69f189cd43c36959ce4249"
   license "MIT"
-  head "https:github.combenthosdevbenthos.git", branch: "main"
+  head "https:github.comredpanda-databenthos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9453f921c00364cfb6bc8efcf7dbeb6da3f4630bf49d6866fa830e472fa2295d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52588dbfc82e79cb00c5b900867d43ecfe41fb10efa45e6f0b3d8996e14ec4eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0fdb60bd71fac017ad818e079e26553285155dcb2bb91bdfd48e671339a4a1f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "aaaf2201cdffa8c167b9b3ccc3241966793d49531925b6a3379b81070d64a219"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf361832265f9a03d4a5b0ecfc70a62634ba58a7f2ebe5b74cc1ddc113769503"
-    sha256 cellar: :any_skip_relocation, monterey:       "c282fb0124e7a71c07e9b1160b35ae52e1bcd865231c217dfed6a0089273edce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07e3b6a34ef577958337fd14fd09213207fe1cb663fef5bd6bf949e45f5fe840"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1b75aaf80a223f491ea95c1e7aeb9d574ca85f1c28b41b2d065145cbac4fbfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68288a4040241b988e61bac7b986995e987ad2017cae7dd4c8e74f2331fdb7b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "276ddf50d5396d592cdfa40dfd1b59dbf5ff121c4135edf6e36434c6a6487f5d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ab1c46e3a2858f289c487371c6408c05add2bc3514f981802cfce59653903a8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "80b03f881368fd7aa19b44c612d0b8018ca66d85e86321aed87191527e1ee738"
+    sha256 cellar: :any_skip_relocation, monterey:       "56c05656841cfebd8ea985bcb8e8afadd35af49f0efd99e980bdfca3319835cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a487c3250fee43e5a59cd7457eecacec0e3ac513fda195dd4c31890bb0787fa"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "VERSION=#{version}"
-    bin.install "targetbinbenthos"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdbenthos"
   end
 
   test do

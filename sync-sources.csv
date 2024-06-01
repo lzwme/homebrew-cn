@@ -2487,6 +2487,7 @@ Homebrew-homebrew-core/Formula/h/hamlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/handbrake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hapi-fhir-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/haproxy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/haproxy@2.8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/harbour.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/harfbuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/has.rb, Homebrew/homebrew-core, 1
@@ -4583,6 +4584,7 @@ Homebrew-homebrew-core/Formula/o/opendetex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opendht.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openexr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openexr@2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openfa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openfast.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfga.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openfortivpn.rb, Homebrew/homebrew-core, 1
@@ -4810,6 +4812,7 @@ Homebrew-homebrew-core/Formula/p/pdnsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdnsrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pdsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peco.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pedump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pegtl.rb, Homebrew/homebrew-core, 1
@@ -9442,7 +9445,7 @@ Homebrew-homebrew-cask/Casks/font/font-j/font-juliamono.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-j/font-julius-sans-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-junction.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-junge.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-j/font-junicode.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-j/font-junicode.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-jura.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-just-another-hand.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-just-me-again-down-here.rb, Homebrew/homebrew-cask, 1

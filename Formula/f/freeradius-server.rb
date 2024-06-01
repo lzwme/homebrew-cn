@@ -2,12 +2,11 @@ class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
   homepage "https:freeradius.org"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 4
   head "https:github.comFreeRADIUSfreeradius-server.git", branch: "master"
 
   stable do
-    url "https:github.comFreeRADIUSfreeradius-serverarchiverefstagsrelease_3_2_3.tar.gz"
-    sha256 "65cdb744471895ea1da49069454a9a73cc0851fba97251f96b40673d3d54bd8f"
+    url "https:github.comFreeRADIUSfreeradius-serverarchiverefstagsrelease_3_2_4.tar.gz"
+    sha256 "0764c83dd4e05ce33ed01eddaf68c68bfb4f2a6010d5256d7a97916375d010d4"
 
     # Fix -flat_namespace being used
     patch do
@@ -22,16 +21,17 @@ class FreeradiusServer < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "813a586b28502bb65ecf7b219b8c4f453c2be602c4d22ae9e6acedcbe7dba261"
-    sha256 arm64_ventura:  "a3b350ba4693c8ef7c569181b838335087db6c0f2e202eb35252afa041e9069a"
-    sha256 arm64_monterey: "4701828525754c3696bbc2aad476c4791170d932b222ee7fec84beaa34159bdb"
-    sha256 sonoma:         "3f70ad4001df9d13fa3de810e21b960cffc81d583da437faeb3de1f1fd6bbbbe"
-    sha256 ventura:        "23847bbd5bd1d05407bb4776683658d39a0b5f277dfab68de056044b1edfebe7"
-    sha256 monterey:       "e3d590372d756cd494628c5c57144c4a6c10c5bfd693de68aee6fd821dd202e8"
-    sha256 x86_64_linux:   "c25868df8d318a2662d3fe296120cf226eb282f4d1a2667b64f206d7a57d667b"
+    sha256 arm64_sonoma:   "19edf5be6447f8c62ee038ad55d006dbe7c29a5ac39493afa2d4bda80549666b"
+    sha256 arm64_ventura:  "60e9474ef001cc9f684a2427cd00379653c51f418b33c495ad91bd4295889d5e"
+    sha256 arm64_monterey: "23bf465f2eb4a606769d5dcc088394650b5a8dcc4b8c52e849a0d5167eba3aea"
+    sha256 sonoma:         "00959440feafa2d36e7800b3808f6fcf257dcc0f2338c8945f03abdfc607c8e3"
+    sha256 ventura:        "84300f558706ce2ef1fb66b76447430c1ce5a762b06ff4bc3237e556e008f161"
+    sha256 monterey:       "2d482b7d4602745e57ae9fb8047018ba348bdb37a2231d74358ac2e586d05754"
+    sha256 x86_64_linux:   "133cf435320e3e5e9728f318514c7ef07d9a0cedcead7a05ee5c882f597d5eb7"
   end
 
   depends_on "collectd"
+  depends_on "json-c"
   depends_on "openssl@3"
   depends_on "python@3.12"
   depends_on "talloc"
@@ -43,6 +43,7 @@ class FreeradiusServer < Formula
   uses_from_macos "sqlite"
 
   on_linux do
+    depends_on "gdbm"
     depends_on "readline"
   end
 

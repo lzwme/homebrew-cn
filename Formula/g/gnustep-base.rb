@@ -1,10 +1,9 @@
 class GnustepBase < Formula
   desc "Library of general-purpose, non-graphical Objective C objects"
   homepage "https:github.comgnusteplibs-base"
-  url "https:github.comgnusteplibs-basereleasesdownloadbase-1_29_0gnustep-base-1.29.0.tar.gz"
-  sha256 "fa58eda665c3e0b9c420dc32bb3d51247a407c944d82e5eed1afe8a2b943ef37"
+  url "https:github.comgnusteplibs-basereleasesdownloadbase-1_30_0gnustep-base-1.30.0.tar.gz"
+  sha256 "00b5bc4179045b581f9f9dc3751b800c07a5d204682e3e0eddd8b5e5dee51faa"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -18,13 +17,13 @@ class GnustepBase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "1d7c91e904aa5235b936237af89844760b564e4bb70cbeed16e56c52cc0ece2a"
-    sha256 cellar: :any,                 arm64_ventura:  "a236ad4dc35176d4eec9ebf0ed1225872d20393fae0498e8f4e79949ebcf183b"
-    sha256 cellar: :any,                 arm64_monterey: "3df755b603ab766f02ab0834ae23fce53fbadcc53b51ab61c2dadb8931f79cd8"
-    sha256 cellar: :any,                 sonoma:         "ff59b43b7be6606c4a7935aececd9ff22e74fbd55f3d54677ed98a2909b9b223"
-    sha256 cellar: :any,                 ventura:        "af2aa5f19a5e72f97950209d0a8abfcbb3333af30c572f5c0a8e6cb55db5db37"
-    sha256 cellar: :any,                 monterey:       "3c1091a0f232597717754dbad8417a1877bc4fc8e68347b4de03d3c0eb7c5624"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2eb071ced655073c8386129648bfbb806d2ee382ef1579e46dcdaf25cea88ecd"
+    sha256 cellar: :any,                 arm64_sonoma:   "c147affcd59c6d9d1537d51569073c60905367407198c99bc6bd6baf38f21f08"
+    sha256 cellar: :any,                 arm64_ventura:  "d673128135ac72b65c4ac7968125c90c890362d2eb7f95f85d343c00e3b4a370"
+    sha256 cellar: :any,                 arm64_monterey: "a4302e0cbe7837a2b73ec760a82c3ccce8d2f999922570103f443e1346e78210"
+    sha256 cellar: :any,                 sonoma:         "454142aa68dc511e98e55a83934874c5b5e7a8bdcaedd2ddd9c961ec67455e59"
+    sha256 cellar: :any,                 ventura:        "1e0b3e5f607789b19eef999082ac660ab341c1d301c1bb7de4dd7b51c7b9e644"
+    sha256 cellar: :any,                 monterey:       "73c8784c0168881336f054d764103ef3ade4400c749c15facf7560d5a59a2ae2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "703eade0a2484596b5dc6e4cee9b8b1b4d80c72d21de83a459d9189db28edc4a"
   end
 
   depends_on "gnustep-make" => :build
@@ -35,18 +34,20 @@ class GnustepBase < Formula
   uses_from_macos "llvm" => :build
   uses_from_macos "icu4c", since: :monterey
   uses_from_macos "libffi"
+  uses_from_macos "libxml2"
   uses_from_macos "libxslt"
+  uses_from_macos "zlib"
 
   on_linux do
     depends_on "libobjc2"
+    depends_on "zstd"
     fails_with :gcc
   end
 
-  # Fix build with new libxml2.
-  # https:github.comgnusteplibs-basepull295
+  # fix incompatible pointer error, upstream pr ref, https:github.comgnusteplibs-basepull414
   patch do
-    url "https:github.comgnusteplibs-basecommit37913d006d96a6bdcb963f4ca4889888dcce6094.patch?full_index=1"
-    sha256 "57e353fedc530c82036184da487c25e006a75a4513e2a9ee33e5109446cf0534"
+    url "https:github.comgnusteplibs-basecommit2b2dc3da7148fa6e01049aae89d3e456b5cc618f.patch?full_index=1"
+    sha256 "680a1911a7a600eca09ec25b2f5df82814652af2c345d48a8e5ef23959636fe6"
   end
 
   def install

@@ -4,18 +4,16 @@ class Libbi < Formula
   url "https:github.comlawmurrayLibBiarchiverefstags1.4.5.tar.gz"
   sha256 "af2b6d30e1502f99a3950d63ceaf7d7275a236f4d81eff337121c24fbb802fbe"
   license "GPL-2.0-only"
-  revision 4
+  revision 5
   head "https:github.comlawmurrayLibBi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "44bf6f88c1eba7e0d73d9865c2bc3d01750183c4a4c28e8376947adf1576ddcd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae593b0f46cfb4176070508a9ecf1379ab1ce5c6d6946f067455854751545ee9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95b9bd0f690a89f42ec6a1e670248a5464ba14fc7e80589a6bc4b28788a30f1d"
-    sha256 cellar: :any_skip_relocation, ventura:        "dd70fd096c61c3df6ac7ae162bdca03aca0b4208350e39b050bfb2e3cef8ae9d"
-    sha256 cellar: :any_skip_relocation, monterey:       "25e4409e1cc95c4759c2b0c338db8fdc30245c5ec6d6f068d77ed148a224a80d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9739fadb79161f0b2db4e73d8ff9bbe2c2bc3f9c40bebc6fb6cadc9387121741"
-    sha256 cellar: :any_skip_relocation, catalina:       "fa9a991443966cd592070a228cf2d8092b3e154eda52ac390ea756d03b30e670"
-    sha256 cellar: :any_skip_relocation, mojave:         "c90c7105c8eaa9bb53ce0fc9e608dc0c4df8d082361846ce764dfc0d141ec5b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a6cacb6474adcb43e3e4cc0434721b474a8a9749102c397fd0e69fe3ff4e8333"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ccf5a58e1570912775cc3899a89e5567ac5f657956833947bb2888c4949b4169"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0882b756fb10921769635c9c858998d5cf85630a954af71eb7e2380c888937a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "d5dcac53e5859b062603ed726c70d2d4fb9d46e317a9238ec5e4ff3c973f41cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef73bed34be4fd7cb1579190d6422266e84aca5bb7da499720bce3ff3f56f7c9"
+    sha256 cellar: :any_skip_relocation, monterey:       "70f2987d8bc35f8d6dc5004e02c46e4d8936e30dd2472821f2247126b56bba10"
   end
 
   depends_on "automake"
@@ -127,6 +125,14 @@ class Libbi < Formula
     end
 
     resource("thrust").stage { (include"thrust").install Dir["thrust*"] }
+
+    # make Homebrew packages discoverable for compilationlinking
+    inreplace "shareconfigure.ac" do |s|
+      cppflags = s.get_make_var("CPPFLAGS").delete('"')
+      ldflags = s.get_make_var("LDFLAGS").delete('"')
+      s.change_make_var! "CPPFLAGS", "\"#{cppflags} -I#{HOMEBREW_PREFIX}include\""
+      s.change_make_var! "LDFLAGS", "\"#{ldflags} -L#{HOMEBREW_PREFIX}lib\""
+    end
 
     system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}", "INSTALLSITESCRIPT=#{bin}"
 
