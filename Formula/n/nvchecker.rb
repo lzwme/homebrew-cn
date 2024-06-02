@@ -3,18 +3,18 @@ class Nvchecker < Formula
 
   desc "New version checker for software releases"
   homepage "https:github.comlilydjwgnvchecker"
-  url "https:files.pythonhosted.orgpackages73ac3cdb953fab79abfdea4c758b9560069605d8714f6e928dbc0e7c966332ecnvchecker-2.15.tar.gz"
-  sha256 "ca910cd7d0474ff3283ad7e4478da908f76391f7fcc2b3d3c4e352318f56d9ba"
+  url "https:files.pythonhosted.orgpackages7b60fd880c869c6a03768fcfe44168d7667f036e2499c8816dd106440e201332nvchecker-2.15.1.tar.gz"
+  sha256 "a2e2b0a8dd4545e83e0032e8d4a4d586c08e2d8378a61b637b45fdd4556f1167"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "d0a1ebe1440437214aaa783e8df713f9c35ebb0b6e494144ebae0820ed026918"
-    sha256 cellar: :any,                 arm64_ventura:  "da4fe819af5f8b379cdc0ce908378efcfb394ff5bfe7f2752ba395996139203d"
-    sha256 cellar: :any,                 arm64_monterey: "0a206cdeaba3ee3a31339a52eec56fbf731c33d5b2b8858bf493634eb702720b"
-    sha256 cellar: :any,                 sonoma:         "fb07dfbf7fd7fab59145b823fd77b206e41813099ffd1225f08d17968674b204"
-    sha256 cellar: :any,                 ventura:        "55b53c8a2ac7bc4d6ec7ed1823312bba7c00aa6ca9f4f5e1694ac732dec3aca7"
-    sha256 cellar: :any,                 monterey:       "04123f2f79e9c038cb4b612c47b2eb5b2d731c82e5565ac5cd62e77b769cb628"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "809994c96d39a6b0fcb5fffb1fa06656828a2481316897e744f4deb6e86bc854"
+    sha256 cellar: :any,                 arm64_sonoma:   "09c0850dcc977b911c4a6f878b81ad5ec44a14664ec2ea4e0417fa9f2b474f04"
+    sha256 cellar: :any,                 arm64_ventura:  "76712781500e90fc3a9842767090530c8b7ee91665ed33cb211f565cf70b7874"
+    sha256 cellar: :any,                 arm64_monterey: "796eed64fb0d77614c5ae1eca63b90d99b854245144ec1282515e838b08fffa0"
+    sha256 cellar: :any,                 sonoma:         "abe83eab99a16a0f6e13a2ac9c7e3684d881954dbda23d0d058ad85f616c85b4"
+    sha256 cellar: :any,                 ventura:        "862d30b3c9c1e8d33841eb8258b705c934c25a964bcb11ec581ee8eeab15087c"
+    sha256 cellar: :any,                 monterey:       "5535c97b6cdd31b5d60ec09621b4b76863e0243196fdd6c3f3fc83b6d9b129f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc873f8f96e79a17ffbff805aa0ccdb48e5d6cb041aa20c019e71407820df562"
   end
 
   depends_on "jq" => :test

@@ -3,10 +3,11 @@ cask "font-lxgw-wenkai-mono-tc" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "ofllxgwwenkaimonotc"
   name "LXGW WenKai Mono TC"
-  homepage "https:github.comaaronbellLxgwWenkaiTC"
+  homepage "https:fonts.google.comspecimenLXGW+WenKai+Mono+TC"
 
   font "LXGWWenKaiMonoTC-Bold.ttf"
   font "LXGWWenKaiMonoTC-Light.ttf"
