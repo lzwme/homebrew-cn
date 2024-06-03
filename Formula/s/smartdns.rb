@@ -1,21 +1,22 @@
 class Smartdns < Formula
   desc "Rule-based DNS server for fast IP resolution, DoTDoQDoHDoH3 supported"
   homepage "https:github.commokeyishsmartdns-rs"
-  url "https:github.commokeyishsmartdns-rsarchiverefstags0.7.2.tar.gz"
-  sha256 "b6ca4c29166339e995a4aa52f5ace94b27fce2e38d38824c80b45f8c17463b18"
+  url "https:github.commokeyishsmartdns-rsarchiverefstagsv0.8.2.tar.gz"
+  sha256 "7bd628e39cc9c055eb885a84c7b329cb3651f04bea524566fb15420a8c548f96"
   license "GPL-3.0-only"
   head "https:github.commokeyishsmartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "359fb3a10ae1230d4af71765cc31276369a8a87274cf0bf9ce3f08fcfcbbecf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7b372790dc4c444f1e8122c661e712a748d958e95d8bbce43fd0ffbf07aea5d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a38b0f197050ac1009dc43e0e8f41d0f2cd55fb7869f027985e4a7b5eff78df"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10cd376618da9a355db1095dca0ee20fc49602d609fdc8ed41edad7ca884b7df"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c5f8003b1fdac57172ba7f21e31e97038b74ab686ed248e0a85f00da2dbf96a"
-    sha256 cellar: :any_skip_relocation, monterey:       "15348be41e7bc6a595d30d429bbe58f51d4dd7239eff2109e0fecabeb8e18446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e051e08b02126a2189298029c67e6272e06598792d4bb32c358340413481d11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e12d81d2b060e9ecb99573589d87ccdbbc12ff0b0f027c4c567d3002717940e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efda8dabea45e1b9f5ca96e8a103863fd2b7cd03e443a590868072aaa390c757"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc88adb3fa0ce6d173c3cbab678191863e83f76d288eb10da2787b231b73d0f5"
+    sha256 cellar: :any_skip_relocation, sonoma:         "9c2ca304f2bb9f25a38c397ae3626a96d32af98a95ad6147b5c8da6589c7571b"
+    sha256 cellar: :any_skip_relocation, ventura:        "621ef1cbace30d6c3cfb6665a18a14dec74acb871682e0632253d8074e3e87bb"
+    sha256 cellar: :any_skip_relocation, monterey:       "d3523087a1c17c1bb7b542bfff74500d352fe004e3188ce3c6a008469a2594f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd5afa27cc89a709584395f834cdaac6b227cb66a86dbd14fe5ffecd92c2e480"
   end
 
+  depends_on "just" => :build
   depends_on "rust" => :build
 
   on_linux do
@@ -25,9 +26,7 @@ class Smartdns < Formula
   end
 
   def install
-    system "cargo", "install", "patch-crate"
-    system "cargo", "patch-crate"
-    system "cargo", "install", "--features", "homebrew", *std_cargo_args
+    system "just", "install", "--features", "homebrew", *std_cargo_args
     sbin.install bin"smartdns"
     pkgetc.install "etcsmartdnssmartdns.conf"
   end
