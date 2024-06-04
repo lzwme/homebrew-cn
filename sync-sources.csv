@@ -4516,6 +4516,7 @@ Homebrew-homebrew-core/Formula/o/oha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohcount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohdear-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oil.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/oils-for-unix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oksh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/okta-aws-cli.rb, Homebrew/homebrew-core, 1
@@ -6966,6 +6967,7 @@ Homebrew-homebrew-core/Formula/y/yamlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamllint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yank.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yapf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yara-x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yara.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yarn-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yarn.rb, Homebrew/homebrew-core, 0

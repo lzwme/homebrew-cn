@@ -3,19 +3,19 @@ class Icloudpd < Formula
 
   desc "Tool to download photos from iCloud"
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
-  url "https:github.comicloud-photos-downloadericloud_photos_downloaderarchiverefstagsv1.19.0.tar.gz"
-  sha256 "d57b5b11b371916055b7439f64f40824aa667ee6f05828c0afea2937bf7c6803"
+  url "https:github.comicloud-photos-downloadericloud_photos_downloaderarchiverefstagsv1.19.1.tar.gz"
+  sha256 "58653c234c1ff1d95792b27edf82e18be96f616e89125ba0c792d1cae560fc8b"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3763f2f2a48b1a970c626653bb0f4ef941de1ca1f7b72a22f92e9d71298da5aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3763f2f2a48b1a970c626653bb0f4ef941de1ca1f7b72a22f92e9d71298da5aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3763f2f2a48b1a970c626653bb0f4ef941de1ca1f7b72a22f92e9d71298da5aa"
-    sha256 cellar: :any_skip_relocation, sonoma:         "28d9df43f623c8e87951b1e4f66c639d2299e67423f661f0691c0dc7555e6635"
-    sha256 cellar: :any_skip_relocation, ventura:        "28d9df43f623c8e87951b1e4f66c639d2299e67423f661f0691c0dc7555e6635"
-    sha256 cellar: :any_skip_relocation, monterey:       "28d9df43f623c8e87951b1e4f66c639d2299e67423f661f0691c0dc7555e6635"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8cef0da000fe6e9b8dae6e0a331f25f76516d16280b9d31acf5bd847c6df5f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d423c10808756c8ff04d8ce8e99701239980a2de32b18abf4d976992958d349"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d423c10808756c8ff04d8ce8e99701239980a2de32b18abf4d976992958d349"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d423c10808756c8ff04d8ce8e99701239980a2de32b18abf4d976992958d349"
+    sha256 cellar: :any_skip_relocation, sonoma:         "3d2c6eb853273ef66c4e02ba973b48495924e5a0680bb28b5b0585a297f066ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d2c6eb853273ef66c4e02ba973b48495924e5a0680bb28b5b0585a297f066ad"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d2c6eb853273ef66c4e02ba973b48495924e5a0680bb28b5b0585a297f066ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24341a9a330a11a6dc94975fe35dc2733dea79a058cbce3a192efedd50d12bab"
   end
 
   depends_on "python@3.12"

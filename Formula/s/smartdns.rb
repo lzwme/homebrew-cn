@@ -7,13 +7,14 @@ class Smartdns < Formula
   head "https:github.commokeyishsmartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e12d81d2b060e9ecb99573589d87ccdbbc12ff0b0f027c4c567d3002717940e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efda8dabea45e1b9f5ca96e8a103863fd2b7cd03e443a590868072aaa390c757"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc88adb3fa0ce6d173c3cbab678191863e83f76d288eb10da2787b231b73d0f5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c2ca304f2bb9f25a38c397ae3626a96d32af98a95ad6147b5c8da6589c7571b"
-    sha256 cellar: :any_skip_relocation, ventura:        "621ef1cbace30d6c3cfb6665a18a14dec74acb871682e0632253d8074e3e87bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "d3523087a1c17c1bb7b542bfff74500d352fe004e3188ce3c6a008469a2594f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd5afa27cc89a709584395f834cdaac6b227cb66a86dbd14fe5ffecd92c2e480"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d7f9ddee167944fcb9b0325746a8c64b70a8d54a30819fc8900f871ec3ba1d97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc9240804615c4d0626142e31480c0279a6ce128c8796d30d58778ea53c23c42"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b57fd7afad91850022f39ca0616ac155c165e651f5385a271fd7dba1f7bb3123"
+    sha256 cellar: :any_skip_relocation, sonoma:         "a2b84775bb3b7e9639805d14565a6811c36bff07d1c1fe2672ee7e6dba57b28b"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b25a21458f6a09b36c373c5b59dee8d09d7428f4f10fa948f1e6fe2336df20c"
+    sha256 cellar: :any_skip_relocation, monterey:       "e37bf3df3daec20dfe562a8f007582f1e7872b7bfee07b646922e96cc5577df3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c0003fc138a1c55a9c32e33ee89a2d825d486a71008821972b6bc58346d3fa1"
   end
 
   depends_on "just" => :build
@@ -26,7 +27,7 @@ class Smartdns < Formula
   end
 
   def install
-    system "just", "install", "--features", "homebrew", *std_cargo_args
+    system "just", "install", "--no-default-features", "--features", "homebrew", *std_cargo_args
     sbin.install bin"smartdns"
     pkgetc.install "etcsmartdnssmartdns.conf"
   end
