@@ -1,34 +1,29 @@
 cask "tencent-lemon" do
-  version "5.1.7"
-  sha256 "31bbd9af3b030984f0ead4ac0c7cdcea7f2eb1afabf772e22834a40798900a8d"
+  version "5.1.9"
+  sha256 "f97aa97b4a0886be469224fd996d6518763aaacd89d4333af1e16c3ba7bca64a"
 
-  url "https://pm.myapp.com/invc/xfspeed/qqpcmgr/module_update/Lemon#{version.no_dots}.dmg",
-      verified: "pm.myapp.com/invc/xfspeed/qqpcmgr/"
+  url "https:github.comTencentlemon-cleanerreleasesdownloadv#{version}Lemon.dmg",
+      verified: "github.comTencentlemon-cleaner"
   name "Tencent Lemon Cleaner"
   desc "Cleanup and system status tool"
-  homepage "https://lemon.qq.com/"
-
-  livecheck do
-    url "https://lemon.guanjia.qq.com/latest/package"
-    regex(/"latest":{"version":"(\d+(?:\.\d+)+)"/i)
-  end
+  homepage "https:lemon.qq.com"
 
   auto_updates true
 
   app "Tencent Lemon.app"
 
   uninstall delete: [
-    "/Library/Logs/Lemon",
-    "/Library/Preferences/LemonDaemon_packet.dat",
+    "LibraryLogsLemon",
+    "LibraryPreferencesLemonDaemon_packet.dat",
   ]
 
   zap trash: [
-    "~/Library/Caches/com.tencent.Lemon",
-    "~/Library/Caches/com.tencent.LemonMonitor",
-    "~/Library/Logs/LemonMonitor.log",
-    "~/Library/Logs/Tencent Lemon.log",
-    "~/Library/Preferences/com.tencent.LemonUpdate.plist",
-    "~/Library/Preferences/LemonMonitor_packet.dat",
-    "~/Library/Preferences/Tencent Lemon_packet.dat",
+    "~LibraryCachescom.tencent.Lemon",
+    "~LibraryCachescom.tencent.LemonMonitor",
+    "~LibraryLogsLemonMonitor.log",
+    "~LibraryLogsTencent Lemon.log",
+    "~LibraryPreferencescom.tencent.LemonUpdate.plist",
+    "~LibraryPreferencesLemonMonitor_packet.dat",
+    "~LibraryPreferencesTencent Lemon_packet.dat",
   ]
 end

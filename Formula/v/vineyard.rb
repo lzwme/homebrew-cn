@@ -6,16 +6,16 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.22.1v6d-0.22.1.tar.gz"
   sha256 "16aea4dc63830925c2d8cd89dc36580ff80dd7610793d56ae5d0d09972cf2fcc"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   bottle do
-    sha256                               arm64_sonoma:   "bbdded3a7cb58ebb1923715759a7cc40f025e1f06fe0eafa24f39a76b796a236"
-    sha256                               arm64_ventura:  "ac37340083f7dc68b573655fb263b47fad5b668ff5675357fbe0dfc518eb6854"
-    sha256                               arm64_monterey: "f8decbbe3c715ba009173234436fcb4f7ef5004a6f35a7e2857dc1113b110d52"
-    sha256                               sonoma:         "3aad1f3e27bfc5bfd21d9a1d90d7162f4f7fa0b123bf69a5daa46dd09daf8001"
-    sha256                               ventura:        "b730aed3c33f043aeec69a025191f67ed66e9fe396ced82add63fedc326c644b"
-    sha256                               monterey:       "7c969cd82e4104f47178752b5dabddfb9c81024e7ac7e281dfea885e7dd69ada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1538d53430b9523790ed7efaff5a338c6cc1b7f281f59a7d5b6acb3d039e3836"
+    sha256                               arm64_sonoma:   "19ed5f07acfcfee40bc19be3776fb94971db2d90c53f5cd1d2e4fcce21dca1f6"
+    sha256                               arm64_ventura:  "1a167d34a445c928183654df334635ff79d4f6e684e565f6fbe6eed2fb64ff8c"
+    sha256                               arm64_monterey: "a0c349b5e006c2b275a9a5bdd2cd1c9bd1f8cb0adc1691d229cf0676c69c23bd"
+    sha256                               sonoma:         "9a19e260db2adfe8aec26d4727d8a516d68ccab774b293a4e8a664f5739d9fa2"
+    sha256                               ventura:        "98fd1169300951b41e5dced73e252dd16a168be1d9998908f347f64258f38992"
+    sha256                               monterey:       "245c9b54d7d91449c89af3a70db0699f01875e94379357606c827c97d851fc49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b837f267b34daaff6be9cb255f92c9bb877ac1d9aaa0957a3cad537e65a32480"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -77,6 +77,7 @@ class Vineyard < Formula
                     "-DUSE_LIBUNWIND=OFF",
                     "-DLIBGRAPELITE_INCLUDE_DIRS=#{Formula["libgrape-lite"].opt_include}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    "-DBUILD_VINEYARD_SERVER_ETCD=OFF", # Fails with protobuf 27
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

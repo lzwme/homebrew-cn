@@ -1729,6 +1729,7 @@ Homebrew-homebrew-core/Formula/f/felinks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fennel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ferium.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fern-api.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/feroxbuster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fetch-crl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fetch.rb, Homebrew/homebrew-core, 1
@@ -6603,6 +6604,7 @@ Homebrew-homebrew-core/Formula/v/verovio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vert.x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vespa-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vexctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vfuse.rb, Homebrew/homebrew-core, 1
@@ -13362,7 +13364,7 @@ Homebrew-homebrew-cask/Casks/t/temurin@21.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/temurin@8.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tenable-nessus-agent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tencent-docs.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tencent-lemon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tencent-lemon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tencent-meeting.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tenor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tentacle-sync-studio.rb, Homebrew/homebrew-cask, 0

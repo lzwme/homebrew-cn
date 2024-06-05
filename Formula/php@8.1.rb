@@ -8,12 +8,13 @@ class PhpAT81 < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "5babad34b9b544bd310a6e661fbea7990bdeedbe0e68216852f1b1aa554285e9"
-    sha256 arm64_ventura:  "43e1d0f2b87510f314e3e13627012c086ef3c374dd6c582f08676d69732d06da"
-    sha256 arm64_monterey: "1651fb5f936098cd7785da166ef7dc38a1748b5fd4f1dd9a1fbd7854bc927e6e"
-    sha256 ventura:        "d61720d429c5ab10597691dc6c2dc56bbe32bab3bc28934633ef618a2199a89b"
-    sha256 monterey:       "3244f62291998cf12fc97baa6f7cafb1d145daa6dc96fa5d73de113d6e539872"
-    sha256 x86_64_linux:   "c6387981fc46803af8df64d83a4e570bb4252169b421e22536b170ceb55301ef"
+    rebuild 1
+    sha256 arm64_sonoma:   "85740bbbb41cf12142cd36ebf9c0350635c1b1372d363ae8def0f98d7d0379a1"
+    sha256 arm64_ventura:  "0d322e808561429a5015654dbec2902256a2eb2a895bf3e2538b43e051f13138"
+    sha256 arm64_monterey: "62a4ff7743623949aac8bd0f849ece25c3979babce2c64c19024a01ca8de0831"
+    sha256 ventura:        "ab9a8efc871bff8823bd9c60ffa6ac3224328488c6cf8d17612cca1cb0b1a73c"
+    sha256 monterey:       "e45d2cafcc7402265c733419f86b94ac9155744157c74404cf9322a73bdb0042"
+    sha256 x86_64_linux:   "ddf7d772b8481cc371b2e5fa28a3c0ef7a9bd7eb7676495c5572c40028807bb5"
   end
 
   keg_only :versioned_formula
@@ -428,6 +429,28 @@ class PhpAT81 < Formula
 end
 
 __END__
+diff --git aZendzend_execute_API.c bZendzend_execute_API.c
+index 1e31934f..49d430c4 100644
+--- aZendzend_execute_API.c
++++ bZendzend_execute_API.c
+@@ -1477,7 +1477,7 @@ static void zend_set_timeout_ex(zend_long seconds, bool reset_signals) * {{{ *
+ 			t_r.it_value.tv_sec = seconds;
+ 			t_r.it_value.tv_usec = t_r.it_interval.tv_sec = t_r.it_interval.tv_usec = 0;
+ 
+-# if defined(__CYGWIN__) || defined(__PASE__)
++# if defined(__CYGWIN__) || defined(__PASE__) || (defined(__aarch64__) && defined(__APPLE__))
+ 			setitimer(ITIMER_REAL, &t_r, NULL);
+ 		}
+ 		signo = SIGALRM;
+@@ -1541,7 +1541,7 @@ void zend_unset_timeout(void) * {{{ *
+ 
+ 		no_timeout.it_value.tv_sec = no_timeout.it_value.tv_usec = no_timeout.it_interval.tv_sec = no_timeout.it_interval.tv_usec = 0;
+ 
+-# if defined(__CYGWIN__) || defined(__PASE__)
++# if defined(__CYGWIN__) || defined(__PASE__) || (defined(__aarch64__) && defined(__APPLE__))
+ 		setitimer(ITIMER_REAL, &no_timeout, NULL);
+ # else
+ 		setitimer(ITIMER_PROF, &no_timeout, NULL);
 diff --git abuildphp.m4 bbuildphp.m4
 index 3624a33a8e..d17a635c2c 100644
 --- abuildphp.m4

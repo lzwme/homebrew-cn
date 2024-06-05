@@ -7,7 +7,7 @@ class MonoLibgdiplus < Formula
   revision 2
 
   livecheck do
-    url "https:download.mono-project.comsourceslibgdiplus"
+    url "https:download.mono-project.comsourceslibgdiplusindex.html"
     regex(href=.*?libgdiplus[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
