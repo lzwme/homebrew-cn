@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https:geth.ethereum.org"
-  url "https:github.comethereumgo-ethereumarchiverefstagsv1.14.3.tar.gz"
-  sha256 "6afd520b5922218ff964f840931191ffc122afeb25258c199304cb2aa305c7ec"
+  url "https:github.comethereumgo-ethereumarchiverefstagsv1.14.4.tar.gz"
+  sha256 "10d96bfdf7cd4291dc559691a54b672e1eb28444b52e163fc78ee54116a7d333"
   license "LGPL-3.0-or-later"
   head "https:github.comethereumgo-ethereum.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "695f5696856aba6ce99f77ece37ad26570c10ce7b00eed64487b7d8b811fc650"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9149d5039466b9146837dbfff943ce7f68680e6b569bcf55cdd0d8d4ecaf25d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "50a6a38d1d8703f3903b5115364e06691cfc1eb6db55522900ff884968b723d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a381efa65ab9c68904150d040aa666cfedf538897a69b9d1a74ccba4f1ca10ae"
-    sha256 cellar: :any_skip_relocation, ventura:        "1da7e832ba0a6ec1dd60dbbe5a455bb481e08b590bc67cf0a947b54cdbb378aa"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4d1907b150a0f047fdd68598137703629dd579f2e1e668370b2dd714296c14a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52f8e1c29215161dd7bcbbc8e1283fdafacf0492de2ee96dad8182b0cc999ebf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "140e2d6b8161437278d1ecb71ec94a8e2e2d5e6781fd640428e62a339282bd8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "717152d7500f0a10086f31d08e13fd08c8c32a0b153a7a8bb46ee7353d87502a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "746a5c9a98462e2f2f3b894669bd2feb91253e5255ad4a8161696782713c572d"
+    sha256 cellar: :any_skip_relocation, sonoma:         "43098470ccddb01806e0fecff6ff3f70b6b3fbaf5eda934b28891ed7c5d56417"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2e075a03596e15e6aac21e0f4e6b542e6c2db13ee53de9825da29c008fd30ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8c8adebd2d6ac45763a1fb1db1c1336c40f806f534f6a3f8149f3dc0a23732f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "914fdb22f8448bda5e203f6da581981fa88c00fd291af7b7b5712d077a632355"
   end
 
   depends_on "go" => :build

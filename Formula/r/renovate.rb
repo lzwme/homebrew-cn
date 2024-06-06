@@ -3,8 +3,8 @@ require "languagenode"
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https:github.comrenovatebotrenovate"
-  url "https:registry.npmjs.orgrenovate-renovate-37.390.0.tgz"
-  sha256 "f8c2783a2dc49ba25ade0a50d2d548de14285948b3db734130336813e62b3ffd"
+  url "https:registry.npmjs.orgrenovate-renovate-37.392.0.tgz"
+  sha256 "4f650e07b5b08b8edf03dceea4d6f5c92482da6e13e706ecff768eb2993cc758"
   license "AGPL-3.0-only"
 
   # There are thousands of renovate releases on npm and the page the `Npm`
@@ -19,13 +19,13 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41fc1a2166050d13a96d29f867977c83dfaa7699e5690c7d736912fc84ef4c28"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9b7706c820e5dc3cff76e49a0c168b75aaf4195118693d9ff87316457a9c18d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0f74a86f994762f5b487df6d728fa3849e98391f056a8a56ad05bad188c72915"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a1e5fb7e169344684b129c86b77cfe80a275e87cec879c248b157165eed9e6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d2e0c406931e65cb6d3851267a8bc2a699ba77fe0a0f0329cdba1f852cdd3ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "1f48069fdbb40b1bdc19e60682174b33b49fdd96a8192d43ebd76efd07b9f01b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f2f4632d3abea16b99e8c54edc0e11441c001a6cc563c1c3bcbdaef6e351514"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5164113cedca957607256cb91f58e47405b292cfaf181fcd3a17fdb8c2ce2ad9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1a4d00e1bd355efcf2dbf11f99730df598199409af97623fd553205cc8d3e90"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3dc12c6e48f257be072ee60cfb39f06f54c1cd04243b8f73445795d704efe769"
+    sha256 cellar: :any_skip_relocation, sonoma:         "45807930e5567e85f25078ab7fda8d9e00c0c42d14de7852fd990d91f6fd44c8"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4ae030b633f995242438d81bfeb7930a1eca41237656571c638a85a75cc8711"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ac145f24fe33acb66176ac032d354df627049b88a2684ed6579d4771001d33a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "884ef0bfa7182de0e12fa0533a2d46e0963d6b8033876aac7027257100dc7971"
   end
 
   depends_on "node"

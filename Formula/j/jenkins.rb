@@ -11,13 +11,14 @@ class Jenkins < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10113809de9cb8b13d6c36ce257fa0abad23b4085876abd5bca5ca97a9b0f76b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10113809de9cb8b13d6c36ce257fa0abad23b4085876abd5bca5ca97a9b0f76b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10113809de9cb8b13d6c36ce257fa0abad23b4085876abd5bca5ca97a9b0f76b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "10113809de9cb8b13d6c36ce257fa0abad23b4085876abd5bca5ca97a9b0f76b"
-    sha256 cellar: :any_skip_relocation, ventura:        "10113809de9cb8b13d6c36ce257fa0abad23b4085876abd5bca5ca97a9b0f76b"
-    sha256 cellar: :any_skip_relocation, monterey:       "10113809de9cb8b13d6c36ce257fa0abad23b4085876abd5bca5ca97a9b0f76b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "006afe2ea61d0ce2e0172420fc77becb7265898a7817899b6cdae448fb74d7e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
+    sha256 cellar: :any_skip_relocation, sonoma:         "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3196162caab7fce12cac37357552724548f4c16724f325c0adf4855338f2da08"
   end
 
   head do
@@ -25,17 +26,17 @@ class Jenkins < Formula
     depends_on "maven" => :build
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@21"
 
   def install
     if build.head?
       system "mvn", "clean", "install", "-pl", "war", "-am", "-DskipTests"
     else
-      system "#{Formula["openjdk"].opt_bin}jar", "xvf", "jenkins.war"
+      system "#{Formula["openjdk@21"].opt_bin}jar", "xvf", "jenkins.war"
     end
     libexec.install Dir["**jenkins.war", "**cli-#{version}.jar"]
-    bin.write_jar_script libexec"jenkins.war", "jenkins"
-    bin.write_jar_script libexec"cli-#{version}.jar", "jenkins-cli"
+    bin.write_jar_script libexec"jenkins.war", "jenkins", java_version: "21"
+    bin.write_jar_script libexec"cli-#{version}.jar", "jenkins-cli", java_version: "21"
 
     (var"logjenkins").mkpath
   end

@@ -3,19 +3,18 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https:v6d.io"
-  url "https:github.comv6d-iov6dreleasesdownloadv0.22.1v6d-0.22.1.tar.gz"
-  sha256 "16aea4dc63830925c2d8cd89dc36580ff80dd7610793d56ae5d0d09972cf2fcc"
+  url "https:github.comv6d-iov6dreleasesdownloadv0.22.2v6d-0.22.2.tar.gz"
+  sha256 "f8a9231edf38f6dff37004746dcd4bdeb4a8de30b10ecadd41a6bbbd51047af1"
   license "Apache-2.0"
-  revision 5
 
   bottle do
-    sha256                               arm64_sonoma:   "19ed5f07acfcfee40bc19be3776fb94971db2d90c53f5cd1d2e4fcce21dca1f6"
-    sha256                               arm64_ventura:  "1a167d34a445c928183654df334635ff79d4f6e684e565f6fbe6eed2fb64ff8c"
-    sha256                               arm64_monterey: "a0c349b5e006c2b275a9a5bdd2cd1c9bd1f8cb0adc1691d229cf0676c69c23bd"
-    sha256                               sonoma:         "9a19e260db2adfe8aec26d4727d8a516d68ccab774b293a4e8a664f5739d9fa2"
-    sha256                               ventura:        "98fd1169300951b41e5dced73e252dd16a168be1d9998908f347f64258f38992"
-    sha256                               monterey:       "245c9b54d7d91449c89af3a70db0699f01875e94379357606c827c97d851fc49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b837f267b34daaff6be9cb255f92c9bb877ac1d9aaa0957a3cad537e65a32480"
+    sha256                               arm64_sonoma:   "e16d847a302ca6777325512a291056adc59080bed0b18dadf1206b7ecb27e74c"
+    sha256                               arm64_ventura:  "2aa841f7ea307892d2ebfd2c21174f299b6f2b56ed051f38d79dcde23af198cf"
+    sha256                               arm64_monterey: "53001a1824f92ebfe46ee0cd30a20019a8e4ed3ab30472e12b12e1db8476e164"
+    sha256                               sonoma:         "e9b6cfde154473069e67d48c02692c86fd5b0881d79398629cd29e3cc5a4b505"
+    sha256                               ventura:        "3214409eece19734846d92cbda65a207fbd70b03ec1a6c57c93478421134f6df"
+    sha256                               monterey:       "2996a9d418e9226d31bdb4eff2e9d372efa97faf935b7cc809bda1ea3d89356a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7efea12935435dadb44bd3bc9982cc49667b81b88ed284ecf854ef2b31e7f12a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -45,14 +44,8 @@ class Vineyard < Formula
   fails_with gcc: "5"
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
-  end
-
-  # Backport fix for API changes in `apache-arrow` 16+.
-  patch do
-    url "https:github.comv6d-iov6dcommite8b8c828f54e16163c98a9b91068f3344608431a.patch?full_index=1"
-    sha256 "b105216ad518dc581a9b9eb45398d7f87f63ba9728b3e3690aaef172a33ff3d2"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   def install

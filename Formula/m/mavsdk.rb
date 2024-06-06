@@ -2,8 +2,8 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https:mavsdk.mavlink.io"
   url "https:github.commavlinkMAVSDK.git",
-      tag:      "v2.11.0",
-      revision: "11f569bbae3dc4c807bb1e80db121779401d912b"
+      tag:      "v2.12.2",
+      revision: "e6de742abc41b6f3717ec1df0749dc151247be03"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,13 +12,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "2eb37fa1e5784252b8be787460673bb747df614aaec3d96f7b2c7a98b00c72f9"
-    sha256 cellar: :any,                 arm64_ventura:  "11050e58ef7c575ca52d5ebd390503445513201b70cb1d71f1b707eb1989589f"
-    sha256 cellar: :any,                 arm64_monterey: "186585a9302bf467715d48092bd02435b96f79c780a2f11ab843d50de5307d9e"
-    sha256 cellar: :any,                 sonoma:         "c2911da025f812dd772a31251691c07ab18d5d30aff9595a682184c8649840e4"
-    sha256 cellar: :any,                 ventura:        "768ff19ff440aca687d8597a4d05749fbe6818567828baa8ae6592cffa5549c4"
-    sha256 cellar: :any,                 monterey:       "a3e07111633faa7e135e8e95838a2762d608beb1b3d2f2b9bd76799dd705fb06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ffca5d6d07eae399e9d8e9e8ba85ebd2d6db5de9cb7cbd1b38d7168b49bf317"
+    sha256 cellar: :any,                 arm64_sonoma:   "46ceea6239e5252866110b071113519fc0030d19913c2d2f821b557c2d243977"
+    sha256 cellar: :any,                 arm64_ventura:  "74312ee766dccbf08f17141537ea996ed5fb2679d417ef59c71810fcef648ef2"
+    sha256 cellar: :any,                 arm64_monterey: "688a2a91436e5ebbe9f0768361b8e5f8a6c0c85f6032a67027c330a81836ff97"
+    sha256 cellar: :any,                 sonoma:         "baba7c5e68500f75300fc4538886b2cac33e7c1474bc688d41e4b52407910f69"
+    sha256 cellar: :any,                 ventura:        "27c9dcc59ef6594339337e9a4a101cfc6f1961142f2d71ccf359c127a21007b6"
+    sha256 cellar: :any,                 monterey:       "b5245d0487456999895f9b97de833e54d6ec4c6d480d9f7e2811e8904f80cc38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2648270163614657ae32300ed593bb4175a9ad8462d55831aa0f64cfd8a47e88"
   end
 
   depends_on "cmake" => :build
@@ -53,7 +53,7 @@ class Mavsdk < Formula
   # MAVLINK_GIT_HASH in https:github.commavlinkMAVSDKblobv#{version}third_partymavlinkCMakeLists.txt
   resource "mavlink" do
     url "https:github.commavlinkmavlink.git",
-        revision: "9840105a275db1f48f9711d0fb861e8bf77a2245"
+        revision: "f1d42e2774cae767a1c0651b0f95e3286c587257"
   end
 
   def install

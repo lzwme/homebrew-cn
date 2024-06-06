@@ -2,7 +2,7 @@ class Gitg < Formula
   desc "GNOME GUI client to view git repositories"
   homepage "https://wiki.gnome.org/Apps/Gitg"
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
-  sha256 "5b0e99ab3e7b94b0daa98ca8041d5ec9280ee0a2c28338a5506a968ac52e2354"
+  sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
   license "GPL-2.0-or-later"
   revision 1
 
@@ -12,15 +12,17 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:   "bdd73eeb6714dff95ae717dc812e794bf023681de6e3e43dc5c36b8b9bd6588a"
-    sha256 arm64_ventura:  "70ec29b54e3d54557c431853dcbaad0c70b31f37507054b6255c9cba96106abf"
-    sha256 arm64_monterey: "19351cc5535ea2b921a14591d2c1bf902b13c26287dae9fbac19efe0d9e5c23d"
-    sha256 sonoma:         "b60877bb50252d62f29f401fa7e91b624da5a9feb62f8ee14e5be066b5686399"
-    sha256 ventura:        "a3d8863e2cf58e8c1f10d29856c9bb21d8a40998d4b8efcac430491fa17a6f41"
-    sha256 monterey:       "d8cd6d8a3a6bd8b0f76ec18cf895dc9c9972fcd8ca20aa0eaaaec35a76f0fc9f"
-    sha256 x86_64_linux:   "102e277be5f21e445cc3c1ffc9920226e79df6e78eb1d8acbec58a97d4178ba8"
+    rebuild 1
+    sha256 arm64_sonoma:   "6a3792e1a8fb1f1beab17739854b9fe878d63bd0570ffda93de931cc22c0bc4a"
+    sha256 arm64_ventura:  "fc2f0b0edfc46fe32b3f1aa1cfc6895d6b5b6a6d84658caee6921eee63479923"
+    sha256 arm64_monterey: "7666684bd3a772f45c8c60f361220dd9cd89df7aa1288f1675d22409e4e1347b"
+    sha256 sonoma:         "a98edb3969a3d3bd77beec4870bd82c25ca007e4ec8fe22e5f6e44b55968db15"
+    sha256 ventura:        "b75c52ee821485af5cf2b4eb0792ffb56cf69c23357e2749fcb85d3ef9bb8181"
+    sha256 monterey:       "e3d1aadf82552d4223700479fbfef5ae1fc86998e375916e1b8f6b27fd52f15d"
+    sha256 x86_64_linux:   "60607bcd2f70853f3d703515b8e4d85c65446777bfc4b90dcfaa841ea5db4b2e"
   end
 
+  depends_on "gettext" => :build # for `msgfmt`
   depends_on "intltool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
@@ -43,8 +45,8 @@ class Gitg < Formula
   depends_on "libsecret"
 
   def install
-    # Fix version output. Remove on next release.
-    inreplace "meson.build", "version: '45.alpha'", "version: '#{version}'"
+    # Work-around for build issue with Xcode 15.3: https://gitlab.gnome.org/GNOME/gitg/-/issues/465
+    ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     ENV["DESTDIR"] = "/"
     system "meson", "setup", "build", "-Dpython=false", *std_meson_args

@@ -1,26 +1,26 @@
-class Openjdk < Formula
+class OpenjdkAT21 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk22uarchiverefstagsjdk-22-ga.tar.gz"
-  sha256 "684efabcd2ff8d58d3dc36c79e3bf9724a5a31121e17450dba45880ffa63f7bd"
+  url "https:github.comopenjdkjdk21uarchiverefstagsjdk-21.0.2-ga.tar.gz"
+  sha256 "17eda717843ffbbacc7de4bdcd934f404a23a57ebb3cda3cec630a668651531f"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
     url :stable
-    regex(^jdk[._-]v?(\d+(?:\.\d+)*)-ga$i)
+    regex(^jdk[._-]v?(21+(?:\.\d+)*)-ga$i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "734de993f9e314a1013df2dc77190c97dda27e59916ebd0b9fdba86b01dcd555"
-    sha256 cellar: :any, arm64_ventura:  "283bd939533903b29efc2418c18ddd371f712c48611b6ef0e4407d77c2e60b01"
-    sha256 cellar: :any, arm64_monterey: "8899c5db04bbf8cea536b2c3101b7f707c5856f79e53f171d558cf1e6563ff36"
-    sha256 cellar: :any, sonoma:         "6ec3c1ad4782d26759ee801541e7ae9b2d384f3ee1662cb9ff55502a18d8b1eb"
-    sha256 cellar: :any, ventura:        "6cc010ff4e0892dd801c09f0c3e68d209b9040df1f213b8b3a67f5e4621593a2"
-    sha256 cellar: :any, monterey:       "face9faa1fe4cb913fcf30f6fffa37f56a911f0d875649f671c36455bc1aa506"
-    sha256               x86_64_linux:   "3bde5b104c118824bffab40047ce94fadd176037b7d6ffc844f7babc43212de6"
+    sha256 cellar: :any, arm64_sonoma:   "9a47d5fa08dd6cf6a68ea44cf52e34ce45838927060ea470b3772fe7e210dd8f"
+    sha256 cellar: :any, arm64_ventura:  "8e8d2c411193fcd13f2ce05d37e377582d06e1ce7bc1b797918fd650bf51dc5b"
+    sha256 cellar: :any, arm64_monterey: "8ef0cb75011a9028acc124906a7561856481e96b3000a371b27179fcae386dcb"
+    sha256 cellar: :any, sonoma:         "cf7e20bebe3d0e0d5435bae4fdb09e3739c6349fc438a46e97293edd74b11678"
+    sha256 cellar: :any, ventura:        "c160c242dfa792ddb6cdfaaa555b77461a3fdf435fdcc9bdd8b3ab96c078e109"
+    sha256 cellar: :any, monterey:       "dee3491fd650e010d8a02ef63ede76db26dc3a06fc232e9e08c14c11b68a2168"
+    sha256               x86_64_linux:   "db0b039ffb1accf89552864287bb0e4466d356e0d5f031d8dfb23f8d0ee2d668"
   end
 
-  keg_only :shadowed_by_macos
+  keg_only :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
@@ -104,10 +104,7 @@ class Openjdk < Formula
       --with-zlib=system
     ]
 
-    ldflags = %W[
-      -Wl,-rpath,#{loader_path.gsub("$", "\\$$")}
-      -Wl,-rpath,#{loader_path.gsub("$", "\\$$")}server
-    ]
+    ldflags = ["-Wl,-rpath,#{loader_path.gsub("$", "\\$$")}server"]
     args += if OS.mac?
       ldflags << "-headerpad_max_install_names"
 
@@ -149,7 +146,7 @@ class Openjdk < Formula
     on_macos do
       <<~EOS
         For the system Java wrappers to find this JDK, symlink it with
-          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk.jdk
+          sudo ln -sfn #{opt_libexec}openjdk.jdk LibraryJavaJavaVirtualMachinesopenjdk-21.jdk
       EOS
     end
   end

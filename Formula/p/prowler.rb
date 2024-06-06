@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https://prowler.com/"
-  url "https://files.pythonhosted.org/packages/22/20/a22daea31747b73ea62f9b60e26c59d0040b977e5c2a414cd23dc040b8b7/prowler-4.2.1.tar.gz"
-  sha256 "3b6eb99d7adc1f1711daba7c7cc351950cd0263ef3ef3665cab57176129d68a9"
+  url "https://files.pythonhosted.org/packages/81/60/b4e8bc72cefc1fb4ca89b818b922865ff2a5fa7c1905e0a24cdcebf5897c/prowler-4.2.2.tar.gz"
+  sha256 "a328081f2c9545ee3f325b965c16227b0b136182e3b3f2f8b28e5b8c04f349a5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b2b31b78f509fe0b4e903e8a56802a8079ee1975aeaacac186439b36a4a5e33a"
-    sha256 cellar: :any,                 arm64_ventura:  "21a32e798fd8360dd8f50b0a5b46fcc24aa3042f95672d27fede53081bc4bf2b"
-    sha256 cellar: :any,                 arm64_monterey: "67c9b8e40daa80c1403b9fbe07eb126aa5c7fe48d0a735d99313af84a28f0500"
-    sha256 cellar: :any,                 sonoma:         "8d9a512dd61316d9300d913a51cf322e5f0b055eb06b18397afd9f42cdeeee4d"
-    sha256 cellar: :any,                 ventura:        "a902e42e8f0bc9fbe82404138f54c6fffdb125c999a66a1f0ad4b133bda4263a"
-    sha256 cellar: :any,                 monterey:       "137c971ff1dfb1022533b02a8b7244b32d91a91e746194210fdfedb938a9a4cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "312e72a9f6c6e168ab0f76e678444a1c2e98b0a2277def76935dbb13acf0284c"
+    sha256 cellar: :any,                 arm64_sonoma:   "9c073f88a45abf3065a4a82396a69c5ea9a4aea07e991b123280047ab0ec58f6"
+    sha256 cellar: :any,                 arm64_ventura:  "5cff80912695cd4ac4a5d939390ffaac296a4730b3f2afeebc225118fd185f2b"
+    sha256 cellar: :any,                 arm64_monterey: "bbf2a3fd4c756886b946dea3d2aff4ecbf8493d5f2e5209d8f46fd68fcdf5920"
+    sha256 cellar: :any,                 sonoma:         "fb780ad9f725936341c0a2ba87cc4ccbb1d8e96ea1d1a3d9f96f71b890d13e1e"
+    sha256 cellar: :any,                 ventura:        "9bbf6a64f56eba433997defea76f3362fd1af1f90e43f26d614a2fc9b83fd03b"
+    sha256 cellar: :any,                 monterey:       "8636fd4ff89afc6452f93029848a0715fbb9386b1f46475c3a3f59f1df7ae3e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34722349297359da4a202fe15834423c417b98f8452d2f8fe0ff6aaf74b9bf0b"
   end
 
   depends_on "cmake" => :build
@@ -177,13 +177,13 @@ class Prowler < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/cd/f5/03bfbb89af1266a10125ebbc2bb09e2d276450de0e360767e7edb0d54022/boto3-1.34.109.tar.gz"
-    sha256 "98d389562e03a46fd79fea5f988e9e6032674a0c3e9e42c06941ec588b7e1070"
+    url "https://files.pythonhosted.org/packages/30/3b/5b35372d4042a85547f60f7575a4548a5adc6ff20fe401ae7161c9f722e6/boto3-1.34.113.tar.gz"
+    sha256 "009cd143509f2ff4c37582c3f45d50f28c95eed68e8a5c36641206bdb597a9ea"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/b5/74/82930aa230fb594f265138909611dc5ab70f3a5116e544afb2f4160756c4/botocore-1.34.113.tar.gz"
-    sha256 "449912ba3c4ded64f21d09d428146dd9c05337b2a112e15511bf2c4888faae79"
+    url "https://files.pythonhosted.org/packages/b9/eb/4142b054eec03b2b6954a9bdae95b28a58f8dc292561fd4bcc254fcee214/botocore-1.34.118.tar.gz"
+    sha256 "0a3d1ec0186f8b516deb39474de3d226d531f77f92a0f56ad79b80219db3ae9e"
   end
 
   resource "cachetools" do
@@ -277,8 +277,8 @@ class Prowler < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/87/8d/a67781c5354e5c70f507bca1ad3e077ced2fa94f182efb05af978984274d/google-api-python-client-2.130.0.tar.gz"
-    sha256 "2bba3122b82a649c677b8a694b8e2bbf2a5fbf3420265caf3343bb88e2e9f0ae"
+    url "https://files.pythonhosted.org/packages/6f/6b/4f814f372a3a3ecee569c72a639fa010ea412d4e9b4e7edd5f1dac726f85/google-api-python-client-2.131.0.tar.gz"
+    sha256 "1c03e24af62238a8817ecc24e9d4c32ddd4cb1f323b08413652d9a9a592fc00d"
   end
 
   resource "google-auth" do
@@ -292,8 +292,8 @@ class Prowler < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/d2/dc/291cebf3c73e108ef8210f19cb83d671691354f4f7dd956445560d778715/googleapis-common-protos-1.63.0.tar.gz"
-    sha256 "17ad01b11d5f1d0171c06d3ba5c04c54474e883b66b949722b4938ee2694ef4e"
+    url "https://files.pythonhosted.org/packages/4f/bc/cb5c74fca58d9c37bc621642e2c2b19c004d078b472d49fb03d9fa8ffeef/googleapis-common-protos-1.63.1.tar.gz"
+    sha256 "c6442f7a0a6b2a80369457d79e6672bb7dcbaab88e0848302497e3ec80780a6a"
   end
 
   resource "grapheme" do
@@ -342,8 +342,8 @@ class Prowler < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/db/5a/392426ddb5edfebfcb232ab7a47e4a827aa1d5b5267a5c20c448615feaa9/importlib_metadata-7.0.0.tar.gz"
-    sha256 "7fc841f8b8332803464e5dc1c63a2e59121f46ca186c0e2e182e80bf8c1319f7"
+    url "https://files.pythonhosted.org/packages/a0/fc/c4e6078d21fc4fa56300a241b87eae76766aa380a23fc450fc85bb7bf547/importlib_metadata-7.1.0.tar.gz"
+    sha256 "b78938b926ee8d5f020fc4772d487045805a55ddbad2ecf21c6d60938dc7fcd2"
   end
 
   resource "isodate" do
@@ -462,18 +462,18 @@ class Prowler < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/3a/9e/77153a81a6eba4efcc28d8a4a00ae1b619108bf0225a879fb7084cb402db/opentelemetry_api-1.24.0.tar.gz"
-    sha256 "42719f10ce7b5a9a73b10a4baf620574fb8ad495a9cbe5c18d76b75d8689c67e"
+    url "https://files.pythonhosted.org/packages/df/0d/10357006dc10fc65f7c7b46c18232e466e355f9e606ac461cfc7193b4cbe/opentelemetry_api-1.25.0.tar.gz"
+    sha256 "77c4985f62f2614e42ce77ee4c9da5fa5f0bc1e1821085e9a47533a9323ae869"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/a2/e3/38a0ee0aa9dc5886e3235f4c83bf374a351109332191394147f79a484c31/opentelemetry_sdk-1.24.0.tar.gz"
-    sha256 "75bc0563affffa827700e0f4f4a68e1e257db0df13372344aebc6f8a64cde2e5"
+    url "https://files.pythonhosted.org/packages/05/3c/77076b77f1d73141adc119f62370ec9456ef314ba0b4e7072e3775c36ef7/opentelemetry_sdk-1.25.0.tar.gz"
+    sha256 "ce7fc319c57707ef5bf8b74fb9f8ebdb8bfafbe11898410e0d2a761d08a98ec7"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/8d/f8/c8de6e148aedf56adf16981ed590d05e7bbe5594f6dfdd4eb780c5da0358/opentelemetry_semantic_conventions-0.45b0.tar.gz"
-    sha256 "7c84215a44ac846bc4b8e32d5e78935c5c43482e491812a0bb8aaf87e4d92118"
+    url "https://files.pythonhosted.org/packages/4e/ea/a4a5277247b3d2ed2e23a58b0d509c2eafa4ebb56038ba5b23c0f9ea6242/opentelemetry_semantic_conventions-0.46b0.tar.gz"
+    sha256 "fbc982ecbb6a6e90869b15c1673be90bd18c8a56ff1cffc0864e38e2edffaefa"
   end
 
   resource "packaging" do
@@ -652,8 +652,8 @@ class Prowler < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/ce/6a/aa0a40b0889ec2eb81a02ee0daa6a34c6697a605cf62e6e857eead9e4f85/typing_extensions-4.12.0.tar.gz"
-    sha256 "8cbcdc8606ebcb0d95453ad7dc5065e6237b6aa230a31e81d0f440c30fed5fd8"
+    url "https://files.pythonhosted.org/packages/e8/fb/4217a963512b9646274fe4ce0aebc8ebff09bbb86c458c6163846bb65d9d/typing_extensions-4.12.1.tar.gz"
+    sha256 "915f5e35ff76f56588223f15fdd5938f9a1cf9195c0de25130c627e4d597f6d1"
   end
 
   resource "tzdata" do
@@ -702,8 +702,8 @@ class Prowler < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/ec/48de0d79306a109f9872cca6b48e360e3d2d28893f472a3011005511985f/zipp-3.19.0.tar.gz"
-    sha256 "952df858fb3164426c976d9338d3961e8e8b3758e2e059e0f754b8c4262625ee"
+    url "https://files.pythonhosted.org/packages/d3/20/b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1/zipp-3.19.2.tar.gz"
+    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
   end
 
   def install
@@ -722,9 +722,7 @@ class Prowler < Formula
     assert_match "ens_rd2022_aws", shell_output("#{bin}/prowler aws --list-compliance")
     assert_match "rds", shell_output("#{bin}/prowler aws --list-services")
 
-    assert_match "NoCredentialsError[910]: Unable to locate credentials",
-      shell_output("#{bin}/prowler aws --quick-inventory 2>&1", 1)
-
+    assert_match "Unable to locate credentials", shell_output("#{bin}/prowler aws --quick-inventory 2>&1", 1)
     assert_match "Prowler #{version}", shell_output("#{bin}/prowler -v")
   end
 end

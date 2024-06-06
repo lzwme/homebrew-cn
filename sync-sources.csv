@@ -2362,7 +2362,7 @@ Homebrew-homebrew-core/Formula/g/gqview.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gradle-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gradle-profiler.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gradle.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gradle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gradle@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gradle@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grafana-agent.rb, Homebrew/homebrew-core, 1
@@ -4602,6 +4602,7 @@ Homebrew-homebrew-core/Formula/o/openjazz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@17.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openjdk@21.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjdk@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjpeg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openjph.rb, Homebrew/homebrew-core, 1
@@ -4629,7 +4630,7 @@ Homebrew-homebrew-core/Formula/o/openslide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openslp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openssl@1.1.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openssl@3.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/openssl@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openstackclient.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opensubdiv.rb, Homebrew/homebrew-core, 1
@@ -7209,6 +7210,7 @@ Homebrew-homebrew-cask/Casks/a/akuity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alacritty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aladin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alchemy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/alcom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aldente.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aleph-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alex313031-thorium.rb, Homebrew/homebrew-cask, 1
@@ -7770,6 +7772,7 @@ Homebrew-homebrew-cask/Casks/c/clicker-for-youtube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clickhouse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clickup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clion.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/clion@eap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clip-studio-paint.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clipgrab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clips-ide.rb, Homebrew/homebrew-cask, 0
