@@ -1,23 +1,26 @@
-class Libpeas < Formula
+class LibpeasAT1 < Formula
   desc "GObject plugin library"
   homepage "https://wiki.gnome.org/Projects/Libpeas"
-  url "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.2.tar.xz"
-  sha256 "f30dffed63ca2f40477b40e171c0a31f80d91425ba1e1e47320ee6425480ecc3"
+  url "https://download.gnome.org/sources/libpeas/1.36/libpeas-1.36.0.tar.xz"
+  sha256 "297cb9c2cccd8e8617623d1a3e8415b4530b8e5a893e3527bbfd1edd13237b4c"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sonoma:  "7e0306e1365bf6c706db14bac0367f7a48459a4bf3504dfa83e705e9909fdc42"
-    sha256 arm64_ventura: "a3ec34d0a1313d2543e370d9f147d0f8125fa637aada56ee1572fd07465bab4a"
-    sha256 sonoma:        "0d33cbf631b04e8aa2c09aaa197076793bcd512f3ac290a30e215970eab512c7"
-    sha256 ventura:       "c792a526d9557b0cb617a4633c0a8351df54e1e9de9b1edb55d656b9c617b2a5"
-    sha256 x86_64_linux:  "651c57c75d5f75c0f2ebbb853152d67071a4a9ad992facf51ae3541aca8f4992"
+    sha256 arm64_sonoma:   "296cfa4be7883c30a452192c5fc0af1114b3a95a85e7bd15f6ee2e6cd3b5b05b"
+    sha256 arm64_ventura:  "7f3aed830c0abca6806d100cb30ada639a223761b866b7d870a24cc29f7ceb95"
+    sha256 arm64_monterey: "9e6763a072391563182307fec28517f34fee434160b33760b2c63a06c691c5cb"
+    sha256 sonoma:         "b7f54ae9f76cf2d17335fd455e6a8708067e8250148194ef4903e9555fcb9879"
+    sha256 ventura:        "4a4c0eb59123d0f8a65af0c4c1b98f904375264858e3f9b67eb47ac12780ed4e"
+    sha256 monterey:       "9009e72591f1845fd6fb3c37a763c172efbc8c933421f7cc7092d5af56370df9"
+    sha256 x86_64_linux:   "2a9915d4ede2be0fd7a7816c4cafc285e235fc1188d83966011a2b4e611e7c85"
   end
+
+  keg_only :versioned_formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
-  depends_on "gjs"
   depends_on "glib"
   depends_on "gobject-introspection"
   depends_on "gtk+3"
@@ -30,10 +33,11 @@ class Libpeas < Formula
     inreplace "meson.build", "'python3-embed'", "'python-#{pyver}-embed'"
 
     args = %w[
-      -Dlua51=false
       -Dpython3=true
       -Dintrospection=true
       -Dvapi=true
+      -Dwidgetry=true
+      -Ddemos=false
     ]
 
     system "meson", "setup", "build", *args, *std_meson_args
@@ -43,7 +47,7 @@ class Libpeas < Formula
 
   test do
     (testpath/"test.c").write <<~EOS
-      #include <libpeas.h>
+      #include <libpeas/peas.h>
 
       int main(int argc, char *argv[]) {
         PeasObjectModule *mod = peas_object_module_new("test", "test", FALSE);
@@ -59,7 +63,7 @@ class Libpeas < Formula
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
       -I#{gobject_introspection.opt_include}/gobject-introspection-1.0
-      -I#{include}/libpeas-2
+      -I#{include}/libpeas-1.0
       -I#{libffi.opt_lib}/libffi-3.0.13/include
       -D_REENTRANT
       -L#{gettext.opt_lib}
@@ -71,7 +75,7 @@ class Libpeas < Formula
       -lglib-2.0
       -lgmodule-2.0
       -lgobject-2.0
-      -lpeas-2
+      -lpeas-1.0
     ]
     flags << "-lintl" if OS.mac?
     system ENV.cc, "test.c", "-o", "test", *flags

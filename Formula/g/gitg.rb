@@ -12,14 +12,14 @@ class Gitg < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "6a3792e1a8fb1f1beab17739854b9fe878d63bd0570ffda93de931cc22c0bc4a"
-    sha256 arm64_ventura:  "fc2f0b0edfc46fe32b3f1aa1cfc6895d6b5b6a6d84658caee6921eee63479923"
-    sha256 arm64_monterey: "7666684bd3a772f45c8c60f361220dd9cd89df7aa1288f1675d22409e4e1347b"
-    sha256 sonoma:         "a98edb3969a3d3bd77beec4870bd82c25ca007e4ec8fe22e5f6e44b55968db15"
-    sha256 ventura:        "b75c52ee821485af5cf2b4eb0792ffb56cf69c23357e2749fcb85d3ef9bb8181"
-    sha256 monterey:       "e3d1aadf82552d4223700479fbfef5ae1fc86998e375916e1b8f6b27fd52f15d"
-    sha256 x86_64_linux:   "60607bcd2f70853f3d703515b8e4d85c65446777bfc4b90dcfaa841ea5db4b2e"
+    rebuild 2
+    sha256 arm64_sonoma:   "c2d256dff6512475355f39087ecb4879f71d7acf921c0052437cda5bcfe05a8d"
+    sha256 arm64_ventura:  "2d3427983fdab1b82bc9f70c0738d8afea29c567f202ca66810b888b662b919e"
+    sha256 arm64_monterey: "e95f4e4de0df3ccb5771f9fe11a31a149c456094ac271e31141a64a411a99e1f"
+    sha256 sonoma:         "b15febabe2a755e5cbd4549e82193d4254cc8c88cd0d29f2850b0479efb99de9"
+    sha256 ventura:        "7ae4a73fc8793b7477b1793667d99400b762998512677f87ffff24ae0f6e0aa3"
+    sha256 monterey:       "5c88b3b0852de793a274aa7bd8e78a04911e8bbfa9981c9ad93c250c4d5d39c3"
+    sha256 x86_64_linux:   "9c51c81c30bc1240f9eab3a3558890736b5d33131199a482dd85a6250d9400a7"
   end
 
   depends_on "gettext" => :build # for `msgfmt`
@@ -41,7 +41,7 @@ class Gitg < Formula
   depends_on "libgit2"
   depends_on "libgit2-glib"
   depends_on "libhandy"
-  depends_on "libpeas"
+  depends_on "libpeas@1"
   depends_on "libsecret"
 
   def install

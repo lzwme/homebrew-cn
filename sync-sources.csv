@@ -3622,6 +3622,7 @@ Homebrew-homebrew-core/Formula/lib/libpcap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpciaccess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpcl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpeas.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libpeas@1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpgm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libphonenumber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpinyin.rb, Homebrew/homebrew-core, 1
@@ -8464,7 +8465,7 @@ Homebrew-homebrew-cask/Casks/f/forkgram-telegram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/forklift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fossa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fotokasten.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/foxglove-studio.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/foxglove-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foxit-pdf-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foxitreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foxmail.rb, Homebrew/homebrew-cask, 0
@@ -10814,6 +10815,7 @@ Homebrew-homebrew-cask/Casks/g/geotag-photos-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/geotag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/geph.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gephi.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/get-api.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/get-backup-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/get-iplayer-automator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/get-lyrical.rb, Homebrew/homebrew-cask, 0

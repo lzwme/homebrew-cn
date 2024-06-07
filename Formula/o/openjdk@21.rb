@@ -1,8 +1,8 @@
 class OpenjdkAT21 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk21uarchiverefstagsjdk-21.0.2-ga.tar.gz"
-  sha256 "17eda717843ffbbacc7de4bdcd934f404a23a57ebb3cda3cec630a668651531f"
+  url "https:github.comopenjdkjdk21uarchiverefstagsjdk-21.0.3-ga.tar.gz"
+  sha256 "818e9dee28ae390f2781406d594690fc42bd994d078ad9f8360a4fbca6a3df1f"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
 
   livecheck do
@@ -11,13 +11,13 @@ class OpenjdkAT21 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "9a47d5fa08dd6cf6a68ea44cf52e34ce45838927060ea470b3772fe7e210dd8f"
-    sha256 cellar: :any, arm64_ventura:  "8e8d2c411193fcd13f2ce05d37e377582d06e1ce7bc1b797918fd650bf51dc5b"
-    sha256 cellar: :any, arm64_monterey: "8ef0cb75011a9028acc124906a7561856481e96b3000a371b27179fcae386dcb"
-    sha256 cellar: :any, sonoma:         "cf7e20bebe3d0e0d5435bae4fdb09e3739c6349fc438a46e97293edd74b11678"
-    sha256 cellar: :any, ventura:        "c160c242dfa792ddb6cdfaaa555b77461a3fdf435fdcc9bdd8b3ab96c078e109"
-    sha256 cellar: :any, monterey:       "dee3491fd650e010d8a02ef63ede76db26dc3a06fc232e9e08c14c11b68a2168"
-    sha256               x86_64_linux:   "db0b039ffb1accf89552864287bb0e4466d356e0d5f031d8dfb23f8d0ee2d668"
+    sha256 cellar: :any, arm64_sonoma:   "aec482cdb96996ba9402067cd88be0299cd887e5b87e4c18b0b2d1deb3ed3106"
+    sha256 cellar: :any, arm64_ventura:  "0956a035050c26af4e25301c2df59627eaf3bfcf354320c90d7905983c3352b0"
+    sha256 cellar: :any, arm64_monterey: "e40e95bb72f9b6d95734118f7919c50e0c2548c5da59af924ffb4c9623cdc45b"
+    sha256 cellar: :any, sonoma:         "a2dcea077166caf52638df5b15364471ea8d77eaef42a597f1588846814bdeea"
+    sha256 cellar: :any, ventura:        "1aaf0f1992b80735642a7748f4601f9118ce5aa42814d1acb53b757bed2ba7e7"
+    sha256 cellar: :any, monterey:       "880517d05b646ad165ff7a8d82e23ab242f1f72240fca01d8746b4e081d52941"
+    sha256               x86_64_linux:   "96aa8a414f7742f0dae62d45b3fe9732efe3ea0395913f8b7f1c5eccf3f994bb"
   end
 
   keg_only :versioned_formula
@@ -43,6 +43,7 @@ class OpenjdkAT21 < Formula
     depends_on "freetype"
     depends_on "libx11"
     depends_on "libxext"
+    depends_on "libxi"
     depends_on "libxrandr"
     depends_on "libxrender"
     depends_on "libxt"
@@ -55,22 +56,22 @@ class OpenjdkAT21 < Formula
   resource "boot-jdk" do
     on_macos do
       on_arm do
-        url "https:download.java.netjavaGAjdk21.0.1415e3f918a1f4062a0074a2794853d0d12GPLopenjdk-21.0.1_macos-aarch64_bin.tar.gz"
-        sha256 "9760eaa019b6d214a06bd44a304f3700ac057d025000bdfb9739b61080969a96"
+        url "https:download.java.netjavaGAjdk21.0.2f2283984656d49d69e91c558476027ac13GPLopenjdk-21.0.2_macos-aarch64_bin.tar.gz"
+        sha256 "b3d588e16ec1e0ef9805d8a696591bd518a5cea62567da8f53b5ce32d11d22e4"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk21.0.1415e3f918a1f4062a0074a2794853d0d12GPLopenjdk-21.0.1_macos-x64_bin.tar.gz"
-        sha256 "1ca6db9e6c09752f842eee6b86a2f7e51b76ae38e007e936b9382b4c3134e9ea"
+        url "https:download.java.netjavaGAjdk21.0.2f2283984656d49d69e91c558476027ac13GPLopenjdk-21.0.2_macos-x64_bin.tar.gz"
+        sha256 "8fd09e15dc406387a0aba70bf5d99692874e999bf9cd9208b452b5d76ac922d3"
       end
     end
     on_linux do
       on_arm do
-        url "https:download.java.netjavaGAjdk21.0.1415e3f918a1f4062a0074a2794853d0d12GPLopenjdk-21.0.1_linux-aarch64_bin.tar.gz"
-        sha256 "f5e4e4622756fafe05ac0105a8efefa1152c8aad085a2bbb9466df0721bf2ba4"
+        url "https:download.java.netjavaGAjdk21.0.2f2283984656d49d69e91c558476027ac13GPLopenjdk-21.0.2_linux-aarch64_bin.tar.gz"
+        sha256 "08db1392a48d4eb5ea5315cf8f18b89dbaf36cda663ba882cf03c704c9257ec2"
       end
       on_intel do
-        url "https:download.java.netjavaGAjdk21.0.1415e3f918a1f4062a0074a2794853d0d12GPLopenjdk-21.0.1_linux-x64_bin.tar.gz"
-        sha256 "7e80146b2c3f719bf7f56992eb268ad466f8854d5d6ae11805784608e458343f"
+        url "https:download.java.netjavaGAjdk21.0.2f2283984656d49d69e91c558476027ac13GPLopenjdk-21.0.2_linux-x64_bin.tar.gz"
+        sha256 "a2def047a73941e01a73739f92755f86b895811afb1f91243db214cff5bdac3f"
       end
     end
   end

@@ -3,19 +3,19 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https:www.ansible.com"
-  url "https:files.pythonhosted.orgpackagesf8f49b52e828afa340c7d610ff35246e89bee3ca163dd2fe021db13142b2830cansible-10.0.0.tar.gz"
-  sha256 "6257efa3b4989f99cf85a4f51fdf941f52e0c40b29aa3677ff07f0a3cf34b0f1"
+  url "https:files.pythonhosted.orgpackages967895e152c98f1b9349854cf8f4a9cea1d6ad55bf132e66a81207c650f92d01ansible-10.0.1.tar.gz"
+  sha256 "b2ab79d54883837f3c5b9b95fd779dff76e5fc5d9ef8555c969575ed24f9f2e1"
   license "GPL-3.0-or-later"
   head "https:github.comansibleansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "40e26adf8216dae28b3b9d8cd67e540af5cb25ce01e9a649151f037cb582e265"
-    sha256 cellar: :any,                 arm64_ventura:  "472f302ccb01cea998f968799914d16f081b3e53758a66c795e5ce23339046a2"
-    sha256 cellar: :any,                 arm64_monterey: "8a411ad600f286e30eef64ed28a9f3f2d8afdea4afebbd00464f1915820f0728"
-    sha256 cellar: :any,                 sonoma:         "1370ec50f386ccb0de3bf0e33acb38834e0ef91da3e8424f65bc193bc1caa9f5"
-    sha256 cellar: :any,                 ventura:        "0a06c1b41fd81e10612bf8bf44e07bd076c0d03eb70bc43d3b7fb6516fc195a9"
-    sha256 cellar: :any,                 monterey:       "6ca7ed4071adabb62b6a3efb0162b1dcd22d82d3bc8019d9ba7bd90aef4baeed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc5e8dc9d8cf3cebd5f1f4fe8e087920e01c0f02501789c6365c70ea8aad7d2d"
+    sha256 cellar: :any,                 arm64_sonoma:   "16942d6f9886cb57d1b71f4363267d25ba0056248022d05ab62c0aa4dbe59a0e"
+    sha256 cellar: :any,                 arm64_ventura:  "681f360d524a88f43698ae34a8eb4c322592f7d31379634a6ac6ec319772c05d"
+    sha256 cellar: :any,                 arm64_monterey: "6c5a588b892e9f1de74296e22f85cdc92160c416dd832c0d75ce6817cbfe33b1"
+    sha256 cellar: :any,                 sonoma:         "21871023afdc60b242ee952e3925403066056d387a5e9bd5d435a5c1629b084b"
+    sha256 cellar: :any,                 ventura:        "05cd8712d17f7ca82c19b0cbb7ef505c9a2cbfd8bf287ed173613d532360f82a"
+    sha256 cellar: :any,                 monterey:       "fe093d580a8dc1ff3220e9d389694bd93ef550881b5c33de5323ea3dfa04e920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfe30aca312def76cba9faf75412e15522071c31996672730b48c2439ebce845"
   end
 
   # `pkg-config` and `rust` are for bcrypt
@@ -70,13 +70,13 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages2e88e95f657115c3117316076065a2fd54da5ea3c2ef6ac3fbcaf80e7e8797d9boto3-1.34.118.tar.gz"
-    sha256 "4eb8019421cb664a6fcbbee6152aa95a28ce8bbc1c4ee263871c09cdd58bf8ee"
+    url "https:files.pythonhosted.orgpackagesf923ff7c23f027f301baf6dcecce5d50bae6ebc5210e1fadee561177fdc37758boto3-1.34.120.tar.gz"
+    sha256 "38893db8269d25b72cc6fbab97633bfc863eefde5456847169d06149a16aa6e0"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackagesb9eb4142b054eec03b2b6954a9bdae95b28a58f8dc292561fd4bcc254fcee214botocore-1.34.118.tar.gz"
-    sha256 "0a3d1ec0186f8b516deb39474de3d226d531f77f92a0f56ad79b80219db3ae9e"
+    url "https:files.pythonhosted.orgpackages4c23a0bf68a3098af517cfe2b615af100c2a83d7355cd0f7811f14a93e626e8ebotocore-1.34.120.tar.gz"
+    sha256 "5cc0fca43cb2aad54917a394a001ac9ba774d21ad6a08828002d54b601776f78"
   end
 
   resource "cachetools" do
