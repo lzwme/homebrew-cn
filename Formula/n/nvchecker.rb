@@ -6,19 +6,21 @@ class Nvchecker < Formula
   url "https:files.pythonhosted.orgpackages7b60fd880c869c6a03768fcfe44168d7667f036e2499c8816dd106440e201332nvchecker-2.15.1.tar.gz"
   sha256 "a2e2b0a8dd4545e83e0032e8d4a4d586c08e2d8378a61b637b45fdd4556f1167"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "09c0850dcc977b911c4a6f878b81ad5ec44a14664ec2ea4e0417fa9f2b474f04"
-    sha256 cellar: :any,                 arm64_ventura:  "76712781500e90fc3a9842767090530c8b7ee91665ed33cb211f565cf70b7874"
-    sha256 cellar: :any,                 arm64_monterey: "796eed64fb0d77614c5ae1eca63b90d99b854245144ec1282515e838b08fffa0"
-    sha256 cellar: :any,                 sonoma:         "abe83eab99a16a0f6e13a2ac9c7e3684d881954dbda23d0d058ad85f616c85b4"
-    sha256 cellar: :any,                 ventura:        "862d30b3c9c1e8d33841eb8258b705c934c25a964bcb11ec581ee8eeab15087c"
-    sha256 cellar: :any,                 monterey:       "5535c97b6cdd31b5d60ec09621b4b76863e0243196fdd6c3f3fc83b6d9b129f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc873f8f96e79a17ffbff805aa0ccdb48e5d6cb041aa20c019e71407820df562"
+    sha256 cellar: :any,                 arm64_sonoma:   "344b6b08f4321b14758c0b807e3e9131874917920a312e77dfe054bf673c5936"
+    sha256 cellar: :any,                 arm64_ventura:  "4712d70f895b55bce21491792a2f7e5dfe4946faa590ae95e34f9b4524c3cd92"
+    sha256 cellar: :any,                 arm64_monterey: "91e4397ebcc8882e8d4e299813998cd7110c690ded807b215637cba52e0e41e8"
+    sha256 cellar: :any,                 sonoma:         "3801d03c3f34cf1c70ce19c8dcb90eaee17924d23c73ddb31b400b69ad48682f"
+    sha256 cellar: :any,                 ventura:        "5a4b8c21fc8540743febf8d913004c7207fa448d2decd157ecc868b7c8c0657e"
+    sha256 cellar: :any,                 monterey:       "32808fe993c10a4ab7de50ee0c981890134d28bb2fdd2f911682634126b9eb03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d00485828972efa74808b34d98219060fc93c96b16000c0b1a5f0f1884c4eef4"
   end
 
   depends_on "jq" => :test
   depends_on "curl"
+  depends_on "openssl@3"
   depends_on "python@3.12"
 
   resource "packaging" do
@@ -42,8 +44,8 @@ class Nvchecker < Formula
   end
 
   resource "tornado" do
-    url "https:files.pythonhosted.orgpackagesbda2ea124343e3b8dd7712561fe56c4f92eda26865f5e1040b289203729186f2tornado-6.4.tar.gz"
-    sha256 "72291fa6e6bc84e626589f1c29d90a5a6d593ef5ae68052ee2ef000dfd273dee"
+    url "https:files.pythonhosted.orgpackagesee66398ac7167f1c7835406888a386f6d0d26ee5dbf197d8a571300be57662d3tornado-6.4.1.tar.gz"
+    sha256 "92d3ab53183d8c50f8204a51e6f91d18a15d5ef261e84d452800d4ff6fc504e9"
   end
 
   def install

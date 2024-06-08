@@ -1,19 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https:sing-box.sagernet.org"
-  # using `:homebrew_curl` to work around audit failure from TLS 1.3-only homepage
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.0.tar.gz", using: :homebrew_curl
-  sha256 "cb1d91e362f4dd7c35f7bb040514414861a045a76301af8257134c65f7a45c36"
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.9.1.tar.gz"
+  sha256 "ba5c0773dfed932c60c449a910d76d3157648e920defd75a8ccf24c20be50bb4"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "52116ddc85ff73aceabfc0ebf81b1035de68e4ac90e590ebf393560edfa6d4cc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "970b8359a25e4a3cc6bc68b08e8068bf46baef25b9739ec3f97691d8f4123f59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2982f69e1cf2d3804832a09e5aa7ba9521d27f309c8be9705b97595983202edc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3188d64d0fe72e1036b8a95ba67415483327fbf3663c94c353dfe9f58349504c"
-    sha256 cellar: :any_skip_relocation, ventura:        "8f5ae34cf66eccee1c8224420e71574173ec6e788773d6a4242c9dc93c61bd12"
-    sha256 cellar: :any_skip_relocation, monterey:       "d4d06ce841bdc8a3e3fe9817eaec84f63acf781b391c442b3851ce6cdbdd035c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4232e70befe6a7dd93a6c3968c7ec3ec1050cb7977e1f7c3ea4475c05d9ccf51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f66734a693720d444fc523086d522cf658b580acc7d205c4ae0f8d9be4c4c34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0528bcd7e137cdb3855bd0171ef9bf1f5f2a07d4e45adfbe398485fa7afdff9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcd33c1269693e96df817a961fb7174b7eb20df7f48f8abbf0d62e197405dba7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "5ecf1ba47cde51413bf059b51712401ad13f2e7d86b098b415de067f2f534104"
+    sha256 cellar: :any_skip_relocation, ventura:        "89bd9288eaecab7e83b13ee1a8e5478e9c10ffcd51e8c48bed60dd080952725c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed3b1bf61a6355b4f5e6ace0327cfe9162f1fb9c723bcf0ef3a01d0e75c5c4c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9a2e75bf74db0c1acb2e25f6d9b5e8f7c07994925e5e847bb1430ff9acf9b28"
   end
 
   depends_on "go" => :build

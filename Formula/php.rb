@@ -6,6 +6,7 @@ class Php < Formula
   mirror "https:fossies.orglinuxwwwphp-8.3.8.tar.xz"
   sha256 "aea358b56186f943c2bbd350c9005b9359133d47e954cfc561385319ae5bb8d7"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https:www.php.netdownloads"
@@ -14,12 +15,12 @@ class Php < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "9829f1ddebb441181208f4ac789b8007e93a3d61836c04dcdf7161456e01ea40"
-    sha256 arm64_ventura:  "f0663a4eb457c270fcb17d5f1c84b0ab5bdd64fbaaf49249bdf86eca57294ab0"
-    sha256 arm64_monterey: "04568795d9225972b4f245a316653466efa1a2c0a4b98387edb58bf28ff10ee7"
-    sha256 ventura:        "61ea1eb1c1231e3c3cface0000629c0ee0f870ffdb940271abec465d79b567c7"
-    sha256 monterey:       "2e3fd79702e47bde1706a746b9c5e4fd405c1b9507036e1a878a391b926436d1"
-    sha256 x86_64_linux:   "a5ba80f138a2c1434d6c553940ce4eaca18d566cf994a2df6358d8e1eff4071c"
+    sha256 arm64_sonoma:   "d3615ea3b58564334a00d447d3d4f33770e56c74d041b69258d81c592b582e27"
+    sha256 arm64_ventura:  "eca3ddde0ca92364e5996a65fafeb7429a0faf8eacccc9efd5487d5eb0dd1680"
+    sha256 arm64_monterey: "7fe7b1d0f6972cc5d34194ff7077dc11c2bb36beff0527a63fc795a192738ce9"
+    sha256 ventura:        "27a80fa5e1f71b21f84b8b89604f5c40ac3345f1fd0c76e449579eb9772873f1"
+    sha256 monterey:       "0c8e979d1000c87e017aac7eae1eae9a357dae35eef8db0f6a6419e921ac12e5"
+    sha256 x86_64_linux:   "3f158d3a3f2d86088e53763fdb7516684ae8ce4f48f1f7c9701f9df492a3201e"
   end
 
   head do
@@ -65,6 +66,12 @@ class Php < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
+  end
+
+  # Remove with 8.3.9
+  patch do
+    url "https:raw.githubusercontent.comshivammathurphp-builder595dc3fconfigpatches8.30045-method-visibility-issue.patch?full_index=1"
+    sha256 "2947d7ad1a54af20c935ec7d804bb45aec8d9e66b7f6a693a26b1ce0f2ed0a35"
   end
 
   def install

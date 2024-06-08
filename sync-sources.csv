@@ -1169,6 +1169,7 @@ Homebrew-homebrew-core/Formula/c/cxxtest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-gomod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cyclonedx-python.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cycode.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cyctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cypher-shell.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cyrus-sasl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cython.rb, Homebrew/homebrew-core, 0
@@ -6338,6 +6339,7 @@ Homebrew-homebrew-core/Formula/t/todoman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tofrodos.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tofuenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toilet.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/toipe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tokei.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tokyo-cabinet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tokyo-dystopia.rb, Homebrew/homebrew-core, 0
@@ -7035,6 +7037,7 @@ Homebrew-homebrew-core/Formula/z/zero-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zeromq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zfind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zigmod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zile.rb, Homebrew/homebrew-core, 1
@@ -12530,6 +12533,7 @@ Homebrew-homebrew-cask/Casks/p/protoio-overflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protokol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proton-mail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/proton-pass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonmail-bridge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/protonmail-import-export.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/protonvpn.rb, Homebrew/homebrew-cask, 0

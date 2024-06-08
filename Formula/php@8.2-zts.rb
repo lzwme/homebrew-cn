@@ -1,19 +1,20 @@
 class PhpAT82Zts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:www.php.netdistributionsphp-8.2.19.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.19.tar.xz"
-  sha256 "aecd63f3ebea6768997f5c4fccd98acbf897762ed5fc25300e846197a9485c13"
+  url "https:www.php.netdistributionsphp-8.2.20.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.20.tar.xz"
+  sha256 "4474cc430febef6de7be958f2c37253e5524d5c5331a7e1765cd2d2234881e50"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sonoma:   "71b2f04431f2d2f35c8a95c14d5b71a87e244470f4a3c2ec801c1688f7cba6b7"
-    sha256 arm64_ventura:  "e8e021eaf58ad4b887a2376520e5b6caa803591012931b13d88609cb57a14eda"
-    sha256 arm64_monterey: "1b8fe37ce5940598eae4c995bd64e4b78e5d3fe499d3e7ad29bf78ad882654d4"
-    sha256 ventura:        "a74796b42c85eb006497826d85d5f7a7f72dbe5482b062f8ab2eb94d66092765"
-    sha256 monterey:       "40207e5bf4680ea17df6fe338628d917f7589a112a23cdf6e76c9eaafabfdd10"
-    sha256 x86_64_linux:   "6063d0a803d918627ef97e8dbcd3538748f07bab231640f71bbcff75020109c6"
+    sha256 arm64_sonoma:   "76ea2af832367e607f658ecf733f9bba34ee321483ab5c3be3492491dcd1ab68"
+    sha256 arm64_ventura:  "92e7e672d3c8088d2ad960024cc0ab8447815601053f73c7c682a5ef440e73ee"
+    sha256 arm64_monterey: "e3c7f232445c1aa2acaa8e0ee966953cda3ba22a2baed598c38410571b27d6fd"
+    sha256 ventura:        "82e0fdeffe23a4d0018d57c66f2f51d7c11032d4fea6617c44a386f4d22643e1"
+    sha256 monterey:       "0db6966fa9e68fea945cb648b33e78a595bbb96db3dc11d9c98bd60d28ade2ea"
+    sha256 x86_64_linux:   "b647da55bd253d71ec45bd066830bde349488e5ffa26d3a3142a33b9e8c95163"
   end
 
   keg_only :versioned_formula
@@ -56,6 +57,12 @@ class PhpAT82Zts < Formula
   on_macos do
     # PHP build system incorrectly links system libraries
     patch :DATA
+  end
+
+  # Remove with 8.2.21
+  patch do
+    url "https:github.comphpphp-srccommit955d717e242c3433cdf76fa353831aefae530cab.patch?full_index=1"
+    sha256 "bec8a84c3a00e1defd30cd0d7a89c52b000292be79d6ad49f3bf8ba497f2565e"
   end
 
   def install
