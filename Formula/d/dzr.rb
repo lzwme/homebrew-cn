@@ -1,13 +1,19 @@
 class Dzr < Formula
   desc "Command-line Deezer.com player"
   homepage "https:github.comynedzr"
-  url "https:github.comynedzrarchiverefstags231217.tar.gz"
-  sha256 "9f7e6e77d7151fc3e150fad5daa09565a86fe9a642cea83d0911b59d90523a07"
+  url "https:github.comynedzrarchiverefstags240608.tar.gz"
+  sha256 "06ab0eb5ee3e42e0304b68107e6c3aad8842df34a41eb069ebaca4535262e1ad"
   license "Unlicense"
   head "https:github.comynedzr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ad0fb982a94371f249b8f6f7eb5dfbbc73d2963a4e5161ee28b1c4606c225c04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "36beb7afb6b802a00ae8b19bd04ce94a0d2cfd951bfafafa0ea878af7abd4fda"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36beb7afb6b802a00ae8b19bd04ce94a0d2cfd951bfafafa0ea878af7abd4fda"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36beb7afb6b802a00ae8b19bd04ce94a0d2cfd951bfafafa0ea878af7abd4fda"
+    sha256 cellar: :any_skip_relocation, sonoma:         "36beb7afb6b802a00ae8b19bd04ce94a0d2cfd951bfafafa0ea878af7abd4fda"
+    sha256 cellar: :any_skip_relocation, ventura:        "36beb7afb6b802a00ae8b19bd04ce94a0d2cfd951bfafafa0ea878af7abd4fda"
+    sha256 cellar: :any_skip_relocation, monterey:       "36beb7afb6b802a00ae8b19bd04ce94a0d2cfd951bfafafa0ea878af7abd4fda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc1ca35f8f4694a4c3a2144e79012001fe140ba20d1952e8905af19da9225722"
   end
 
   depends_on "dialog"

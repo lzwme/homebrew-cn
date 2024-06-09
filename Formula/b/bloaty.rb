@@ -7,12 +7,14 @@ class Bloaty < Formula
   revision 25
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "88dfb2a5927ced0f2553404d504dc1e1f935f4703f4f3f73abb750791df2d4a4"
-    sha256 cellar: :any, arm64_ventura:  "118772892205cb60aeab6f9dcf81f515882591fdbc0b4156f9cb80d17febe4e5"
-    sha256 cellar: :any, arm64_monterey: "bc999c1bebef7ea6923410a25dfd1b17f876569858dfd57d78be03c8e0b83ecc"
-    sha256 cellar: :any, sonoma:         "1052daf64656f9081fbe9b2df7dcf6ae656b7a0a7c644b2fdf2479aecd9757ff"
-    sha256 cellar: :any, ventura:        "4a7206c0d026f28fea563b7d66790b2efef7a426b461d9aab0b1cbdf5bc34ea2"
-    sha256 cellar: :any, monterey:       "8f055baf636099c05d3f76af373ac19b8b965dc4740746566272b6581c8e29ec"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:   "b1afb7eaa6b88ef167a93060d78b3c5502cd676bde5dea3409ec626eb9e2ed31"
+    sha256 cellar: :any,                 arm64_ventura:  "4c9a855ce38c2d0425d32f5d5ac9ba4a913410fb53f1be131185d1694f9395bd"
+    sha256 cellar: :any,                 arm64_monterey: "560d56fea8f6c7798c135109f3bb4461861d8e8c29a746449a1a236aab4e47b9"
+    sha256 cellar: :any,                 sonoma:         "8961375f5bcf1a7ebe157135c8e1a52075e71fcda83d4fa178e60ec9a0760f62"
+    sha256 cellar: :any,                 ventura:        "6ccfc4d232a43eebe0225ac5b7fe7d24806660ec8989e13ca761ed55331475d0"
+    sha256 cellar: :any,                 monterey:       "b16b1c1a66b074e592fb508e7d9584fefe5f3926cf40d2b711a755f98b901730"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52917909740da8dadd44d2b9826b9560ab98a0abb04353df7116b695d49826c2"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +38,7 @@ class Bloaty < Formula
     %w[abseil-cpp capstone protobuf re2].each { |dir| (buildpath"third_party"dir).rmtree }
     abseil_cxx_standard = 17 # Keep in sync with C++ standard in abseil.rb
     inreplace "CMakeLists.txt", "CMAKE_CXX_STANDARD 11", "CMAKE_CXX_STANDARD #{abseil_cxx_standard}"
+    inreplace "CMakeLists.txt", "-std=c++11", "-std=c++17"
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=#{abseil_cxx_standard}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

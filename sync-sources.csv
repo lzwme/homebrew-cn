@@ -845,6 +845,7 @@ Homebrew-homebrew-core/Formula/c/chrony.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chrpath.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chruby-fish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chruby.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chsrc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chuck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cidr2range.rb, Homebrew/homebrew-core, 1
@@ -6460,6 +6461,7 @@ Homebrew-homebrew-core/Formula/t/typical.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typos-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstfmt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/typstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tzdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/u-boot-tools.rb, Homebrew/homebrew-core, 0
