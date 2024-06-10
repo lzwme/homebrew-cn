@@ -1,13 +1,22 @@
 cask "font-migmix-1p" do
-  version "20150712"
-  sha256 "d71aa59146c600bc2f22de87495fe0127741fbb692736be0e1fe454e128c9d76"
+  version "2020.0307"
+  sha256 "586660e48dc24f95c6fed49852eedb0185485ffc731cc4128acd10fd98813b8c"
 
-  url "https://osdn.dl.osdn.jp/mix-mplus-ipa/63544/migmix-1p-#{version}.zip"
+  url "https:github.comitouhiromixfont-mplus-ipareleasesdownloadv#{version}migmix-1p-#{version.no_dots}.zip",
+      verified: "github.comitouhiromixfont-mplus-ipa"
   name "MigMix 1P"
-  homepage "https://mix-mplus-ipa.osdn.jp/migmix/#migmix1p"
+  homepage "https:itouhiro.github.iomixfont-mplus-ipamigmix"
 
-  font "migmix-1p-#{version}/migmix-1p-bold.ttf"
-  font "migmix-1p-#{version}/migmix-1p-regular.ttf"
+  livecheck do
+    url :homepage
+    strategy :page_match do |page|
+      page.scan(href=.*migmix-1p[._-]v?(\d+(?:\.\d+)*)\.zip"i)
+          .map { |match| match[0].insert(4, ".") }
+    end
+  end
+
+  font "migmix-1p-#{version.no_dots}migmix-1p-bold.ttf"
+  font "migmix-1p-#{version.no_dots}migmix-1p-regular.ttf"
 
   # No zap stanza required
 end

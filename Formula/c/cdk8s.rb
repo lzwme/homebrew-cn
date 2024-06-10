@@ -3,18 +3,18 @@ require "language/node"
 class Cdk8s < Formula
   desc "Define k8s native apps and abstractions using object-oriented programming"
   homepage "https://cdk8s.io/"
-  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.198.140.tgz"
-  sha256 "56154caf21ab1e35383c2cc1ab0bf22c80c7941b68bef5416a6a9a4053acafa9"
+  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.198.141.tgz"
+  sha256 "1c313f78107df4228b812b8f18694d189f0d4625dd46e1d309eba34fe6944afe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "53fcf51fc15f6837ad0730209b46ecdd1431f6bedd63e76976425963938c3d63"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53fcf51fc15f6837ad0730209b46ecdd1431f6bedd63e76976425963938c3d63"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "53fcf51fc15f6837ad0730209b46ecdd1431f6bedd63e76976425963938c3d63"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0b4c0bf35d5175c278283607f8819a539bfb6f155d769cbf9ec16f6e84b7c5c4"
-    sha256 cellar: :any_skip_relocation, ventura:        "0b4c0bf35d5175c278283607f8819a539bfb6f155d769cbf9ec16f6e84b7c5c4"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b4c0bf35d5175c278283607f8819a539bfb6f155d769cbf9ec16f6e84b7c5c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2748e4ea1937e5991f33e16130f2a5caf94042b48c515a4a6665f4fb1a1e9b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3dcde87f8a41faca2f626da24807ffa1bcb53765229527c9d789648308f3f8c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3dcde87f8a41faca2f626da24807ffa1bcb53765229527c9d789648308f3f8c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3dcde87f8a41faca2f626da24807ffa1bcb53765229527c9d789648308f3f8c7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "82e57ad02e642c7b01d78dcda8d33ccadee3dcf89e391b1429a41a0f19552b89"
+    sha256 cellar: :any_skip_relocation, ventura:        "82e57ad02e642c7b01d78dcda8d33ccadee3dcf89e391b1429a41a0f19552b89"
+    sha256 cellar: :any_skip_relocation, monterey:       "82e57ad02e642c7b01d78dcda8d33ccadee3dcf89e391b1429a41a0f19552b89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09c8896b343f35690865610bc6fa048fe14d4b3c812d250a3ee87355c83e4bfc"
   end
 
   depends_on "node"

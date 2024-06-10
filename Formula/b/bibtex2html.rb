@@ -1,13 +1,13 @@
 class Bibtex2html < Formula
   desc "BibTeX to HTML converter"
-  homepage "https:www.lri.fr~filliatrbibtex2html"
-  url "https:www.lri.fr~filliatrftpbibtex2htmlbibtex2html-1.99.tar.gz"
+  homepage "https:usr.lmf.cnrs.fr~jcfbibtex2htmlindex.en.html"
+  url "https:usr.lmf.cnrs.fr~jcfftpbibtex2htmlbibtex2html-1.99.tar.gz"
   sha256 "d224dadd97f50199a358794e659596a3b3c38c7dc23e86885d7b664789ceff1d"
   license "GPL-2.0-only"
 
   livecheck do
     url :homepage
-    regex(The current version is v?(\d+(?:\.\d+)+) andi)
+    regex(href=.*?bibtex2html[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do

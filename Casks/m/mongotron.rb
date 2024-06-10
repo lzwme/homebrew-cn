@@ -6,7 +6,7 @@ cask "mongotron" do
       verified: "github.comofficertmongotron"
   name "Mongotron"
   desc "Mongo DB management"
-  homepage "http:mongotron.io"
+  homepage "https:mongotron.io"
 
   # This cask uses an unstable version and this `livecheck` block is only used
   # to prevent livecheck from skipping pre-release versions by default. This
