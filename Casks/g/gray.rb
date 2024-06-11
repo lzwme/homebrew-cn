@@ -10,4 +10,13 @@ cask "gray" do
   depends_on macos: ">= :mojave"
 
   app "Gray.app"
+
+  zap trash: [
+    "~LibraryApplication Scriptscom.zenangst.Gray",
+    "~LibraryCachescom.zenangst.Gray",
+    "~LibraryGroup Containerscom.zenangst.Gray",
+    "~LibraryHTTPStoragescom.zenangst.Gray",
+    "~LibraryPreferencescom.zenangst.Gray.plist",
+    "~LibrarySaved Application Statecom.zenangst.Gray.savedState",
+  ]
 end

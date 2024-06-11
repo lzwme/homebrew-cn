@@ -2,8 +2,8 @@ class K3sup < Formula
   desc "Utility to create k3s clusters on any local or remote VM"
   homepage "https:k3sup.dev"
   url "https:github.comalexellisk3sup.git",
-      tag:      "0.13.5",
-      revision: "d952d6df22b06147806ca1030b8ba3a4bb9e0c0c"
+      tag:      "0.13.6",
+      revision: "752c22af38d11b9d57f7a5ae4add3571d0d57b3a"
   license "MIT"
   head "https:github.comalexellisk3sup.git", branch: "master"
 
@@ -13,13 +13,13 @@ class K3sup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3927ff6844801422cb6c68988e5c762e6637c679dc9f28f6ca060a58bce8a902"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bae9c7d295f490bf932b46a5f0b40f6eb503b04b5c702df1898f5f206964acc9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94e59c75c538a16df1734649ba769b095591130031149800de886effaabd2149"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74d270536f7f46831b3e27d2ded78e798fd583ce3a7eb694c86c4059094fc55f"
-    sha256 cellar: :any_skip_relocation, ventura:        "d62ce4a1b929872735823b090291b9e93cc5456dcdbcbb4646f7af786777e700"
-    sha256 cellar: :any_skip_relocation, monterey:       "bfa33d7a9c7e74f83185c776e7d8608eac12f1d4d240cca66fa1694ade394c86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98984bb980a297ddf8b8cb923c0e6ba2b1e1feddb19efcfb774d73d19af490b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a19a3f026707f71120c5a36b094da132fd51394f1eb2e6967844e1aff130dc0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "666f7e1ba2f484cd268d3b51d88efe491a8743cf11a62f9b7bc9b609a7f98719"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc52230412bfae0ec53251681bab7bb399c74271264e83a9b4636dd146ede547"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4d0292f1177753e635a702c5ac619ddc034139bcf8a711740bcfbf7803312631"
+    sha256 cellar: :any_skip_relocation, ventura:        "58731470c139141350cc584b5ff795231e291f00a1b72491b7988388a137d054"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f9d1cbf0d634d53b89a8b3b82b5a57c432aaad76cbfa6ad98f163264b195e7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8f9bb3779f6a239d5357bb94554da5a1f0df29b038dddd255143110277799e2"
   end
 
   depends_on "go" => :build

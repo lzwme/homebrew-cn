@@ -3,18 +3,18 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https:github.comdnanexusdx-toolkit"
-  url "https:files.pythonhosted.orgpackages884879cccd88cab4aa61b980cc4a7822a87310e72c4fe83662ec92565d0a447edxpy-0.376.0.tar.gz"
-  sha256 "fe52b647f908c132c4dffe599f9dcb9fb38cac3d6e5f1602eae6878d2b805d59"
+  url "https:files.pythonhosted.orgpackages7206a37481c20d04b08efcacb0318ab90673deaba833a6fb5b7250db21f7493ddxpy-0.377.0.tar.gz"
+  sha256 "96a2413e998c3cde8fc42d93be9d979104b0614771d02cfdea5ef1b3325b77ec"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17df18f9dbbf2e0a89cf3926319feee44b37c48ebe14cfae4afe37c4357fa325"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69476cc59a8183fc5e484ca43d90ab4cbfbd54c89535ef276bfb51e51a4f0fe4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c61c758cc7176130520d3c850ef71b42b15ce3639f4d88c0a9f223302593eb44"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0c3b3285a21f9abfe02760471ec0a451f43ba26cf7996d0982307df8d5c2d9ab"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b7e1049fa0a24932741737c19130e500a0ca90ac19271b1cf6f7f744759a0bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "157d0b342076ee67370607c7588a66ca893a1cdc7100f484eb15b20f230bc5ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cc808803278681b65711231ddfd58a18f7b50ec6d542930ebb5b32b19853bf5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24a9216051f03207317ecc7b47e2eb24860853772349e651210a4901d3d029f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "702657bc73ddeeaf32e50fd66792adcbddf9f5fa7c3b9a23c8aab2256fdeb673"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa6e65b848e0294dc46310c049e0d30a8de12417de6434341c9f9554426df466"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b6ab38787dafcd31573af4e2f5327846e9a39cfa6362f5dc029e8e7b3141ad71"
+    sha256 cellar: :any_skip_relocation, ventura:        "3dd897305ddd0bf158cddccfbac25fa2488d8ab73801b86c2d49dcf13659cab1"
+    sha256 cellar: :any_skip_relocation, monterey:       "34df449d512a61448be490c21a20fb3fd4c7c8bd05116d84f725eb82abd35d19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db586849b1d1c09a739a0017aedb2ecac7d4dddfdb2327296d3359b01d1b1c87"
   end
 
   depends_on "certifi"
@@ -53,8 +53,8 @@ class Dxpy < Formula
   end
 
   resource "websocket-client" do
-    url "https:files.pythonhosted.orgpackages35d414e446a82bc9172d088ebd81c0b02c5ca8481bfeecb13c9ef07998f9249bwebsocket_client-0.54.0.tar.gz"
-    sha256 "e51562c91ddb8148e791f0155fdb01325d99bb52c4cdbb291aee7a3563fd0849"
+    url "https:files.pythonhosted.orgpackages20072a94288afc0f6c9434d6709c5320ee21eaedb2f463ede25ed9cf6feff330websocket-client-1.7.0.tar.gz"
+    sha256 "10e511ea3a8c744631d3bd77e61eb17ed09304c413ad42cf6ddfa4c7787e8fe6"
   end
 
   def install

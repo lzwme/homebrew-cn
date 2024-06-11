@@ -1,19 +1,19 @@
 class Prqlc < Formula
   desc "Simple, powerful, pipelined SQL replacement"
   homepage "https:prql-lang.org"
-  url "https:github.comPRQLprqlarchiverefstags0.12.1.tar.gz"
-  sha256 "a7890e453db17d7a028cc48dcce5378d7e86a5c3645bfe7e00d70d944ba5af71"
+  url "https:github.comPRQLprqlarchiverefstags0.12.2.tar.gz"
+  sha256 "455779a7b4c6fee3be6521b24236ffe6aa667986482ff6bb00732797d8dd0bd5"
   license "Apache-2.0"
   head "https:github.comprqlprql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "94f42b77bb658de2cf7c29897e8fda77d2cfd8b51ec077ab0f891425f953b8f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0204968e8cb94c88f07b31feb92f4315b7323af54e0180cd21162a6f2a6c46e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "105c8248f12c8e6ad585cb616b14928e32fcfd52edffade006998c6997d92f99"
-    sha256 cellar: :any_skip_relocation, sonoma:         "24c69406de63c31cac94120406cc4bbf8499c5753b79c9bfc5119f5a23655c0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "1030db0fc54495a871ed001a98b1eb8919ec8ca748839e5ad6a9d4d11f56f919"
-    sha256 cellar: :any_skip_relocation, monterey:       "2250a82751ad07664f5dab52ad206f18c77dc2591bf0249a66ca69bae16dc4f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1031553891a77e32adec3cc871373e2585f63459390d0aea684137c0a624caa6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcdc08433b36e975e26ccbfe02bfe2c137df89f32a069e7b3d1524c16da3f22d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bd2b2f306d475322cb9bbd2cae996304053eae7fa5ee189c2e8b94885327203"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7eb34b52d373083c0e99039b54abc204ab9d7a0380f264fdb3fe38fc6b09274"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8c0fbb52452ad6c6cd73d85590d4299f8e8b5ab001a22abed9718b826d281851"
+    sha256 cellar: :any_skip_relocation, ventura:        "17a6152b1079d7ad6b2c8ebb401faaaafc83ece17d33f19c4b864f11a150bc9a"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f0b47481766470c5ea568ddb86e3c773098055a41a00db59126c377e29d8c7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ff92ba295612b8fa7082e2e9e7441f9371506080e4f11aeb7977d872f17cd4f"
   end
 
   depends_on "rust" => :build

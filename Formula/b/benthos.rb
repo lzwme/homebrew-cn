@@ -1,19 +1,19 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
   homepage "https:github.comredpanda-databenthos"
-  url "https:github.comredpanda-databenthosarchiverefstagsv4.28.1.tar.gz"
-  sha256 "779e59a1c3d53c0cbb49382b2c8e57338022696fdb69f189cd43c36959ce4249"
+  url "https:github.comredpanda-databenthosarchiverefstagsv4.29.0.tar.gz"
+  sha256 "b8f11472ca806f552a77a152911b0de84ac8c44af07320043acc76b71600e4d8"
   license "MIT"
   head "https:github.comredpanda-databenthos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d1b75aaf80a223f491ea95c1e7aeb9d574ca85f1c28b41b2d065145cbac4fbfb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68288a4040241b988e61bac7b986995e987ad2017cae7dd4c8e74f2331fdb7b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "276ddf50d5396d592cdfa40dfd1b59dbf5ff121c4135edf6e36434c6a6487f5d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ab1c46e3a2858f289c487371c6408c05add2bc3514f981802cfce59653903a8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "80b03f881368fd7aa19b44c612d0b8018ca66d85e86321aed87191527e1ee738"
-    sha256 cellar: :any_skip_relocation, monterey:       "56c05656841cfebd8ea985bcb8e8afadd35af49f0efd99e980bdfca3319835cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a487c3250fee43e5a59cd7457eecacec0e3ac513fda195dd4c31890bb0787fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3172d97b8632548fc1c786328fff2c8d41e7efbd66f9a74e27536927b81b9432"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca5b98a6643e81463694d0d3de2cd3a840435e15018cf2979218af6125dd1016"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b7a745bd75e42114b17d095e95bed618e3af7a4fcf69d92a1bae7fdedc00faad"
+    sha256 cellar: :any_skip_relocation, sonoma:         "cedaec0f5b299649f1aac76af7ab4f3339f4d6e0b9ce8d5ac215dae8aa609f99"
+    sha256 cellar: :any_skip_relocation, ventura:        "82f7c39ecaf5e9c86c870785bbca3d26325ff52149375d429e0536363040b497"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d68255b71fa274c82a0948cd541feaf1b34aeccff4522fa1ab8435dd4bda464"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1689abf462a8f0be1fc3a0293d4d96ea81cb8ba94d582b3540396b0cce5b4390"
   end
 
   depends_on "go" => :build

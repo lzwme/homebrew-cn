@@ -408,6 +408,7 @@ Homebrew-homebrew-core/Formula/b/bat-extras.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/batik.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bats-core.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/batt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bazarr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bazel-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bazel-remote.rb, Homebrew/homebrew-core, 1
@@ -1257,6 +1258,7 @@ Homebrew-homebrew-core/Formula/d/demumble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deno.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/denominator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/density.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dep-tree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dependency-check.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/deployer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/depqbf.rb, Homebrew/homebrew-core, 1
@@ -4312,7 +4314,7 @@ Homebrew-homebrew-core/Formula/n/nebula.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nedit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/needle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nef.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/negfix8.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/negfix8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nemu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neo4j.rb, Homebrew/homebrew-core, 0
@@ -11615,6 +11617,7 @@ Homebrew-homebrew-cask/Casks/m/macrorecorder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/macs-fan-control.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macstroke.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macsvg.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/macsymbolicator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactex-no-gui.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mactex.rb, Homebrew/homebrew-cask, 0
@@ -11687,6 +11690,7 @@ Homebrew-homebrew-cask/Casks/m/master-pdf-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mate-translate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mater.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/material-colors.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/material-maker.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mathcha-notebook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mathpix-snipping-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/matterhorn.rb, Homebrew/homebrew-cask, 1

@@ -22,6 +22,8 @@ class Rc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6623be4e09b3e283101e33938ec83f0c47d07ad164a30c5854a66d8e64e31447"
   end
 
+  deprecate! date: "2024-06-10", because: :repo_removed
+
   uses_from_macos "libedit"
 
   def install

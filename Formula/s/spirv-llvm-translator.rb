@@ -1,18 +1,18 @@
 class SpirvLlvmTranslator < Formula
   desc "Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
   homepage "https:github.comKhronosGroupSPIRV-LLVM-Translator"
-  url "https:github.comKhronosGroupSPIRV-LLVM-Translatorarchiverefstagsv18.1.0.tar.gz"
-  sha256 "78a770eff24d5ffe2798479845adec4b909cbf058ddc55830ea00fa7d2c1698a"
+  url "https:github.comKhronosGroupSPIRV-LLVM-Translatorarchiverefstagsv18.1.1.tar.gz"
+  sha256 "c1c7aee4ea23a6a1089bb7f7bad198c28ada65c5b7671434562fe0241d8674d6"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "e48913b180bc90f98bad3635c823355a5a0b48c49e751d654c855cd9167299e5"
-    sha256 cellar: :any,                 arm64_ventura:  "97895f58380e0684ab540f7feca266e2e52bc2a689d7d29851863d33aac6bff3"
-    sha256 cellar: :any,                 arm64_monterey: "045b541bd73a9ad69d4c33345994a3ffcd7d30914f89225ee3b5fbede080cdac"
-    sha256 cellar: :any,                 sonoma:         "a661427c37e103d0c5b5f19c85a964208dbc06781ef36f53ce12a629a7e83593"
-    sha256 cellar: :any,                 ventura:        "679e1ec584d2919edc2ac367fdec3047d0bf29aabf0ced5a6edccaecffb58d8e"
-    sha256 cellar: :any,                 monterey:       "1c6ef39093ddee36a686db24a1c4066022c3f2d3f73c397fd2159d354df3de79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcf59cb3f763c49960422901ebe49b0cc86a91f2085f4d89d48a2f761befd5b1"
+    sha256 cellar: :any,                 arm64_sonoma:   "4ce471b671cb01fa1b214001fe939df53e04735cb06d1ced7c739657245296e6"
+    sha256 cellar: :any,                 arm64_ventura:  "6362fd27e9566bf4ce0a679faebb4b0dedf6082bd584d0bb9c24acc685b1733b"
+    sha256 cellar: :any,                 arm64_monterey: "660250ddca7ea4b02f09ad3197223df13ad684cf48a4038f0aef7a94b5c92645"
+    sha256 cellar: :any,                 sonoma:         "a4b400b660b934fd00674421aeb130adec57015e023c50951fb043c5b758c388"
+    sha256 cellar: :any,                 ventura:        "75c7fa3d6ad029fce0678a818db69ee4a36f821d79ca9981301d46702d43b386"
+    sha256 cellar: :any,                 monterey:       "a3ea3f2694b7c406c0440d3e8bf2790bb228a01204ab0bdbd70db536d89fb185"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9024ba3b0ff0020befcc5704056014892b45da17ab357998195a649bf79372f2"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,19 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https:github.comanchoresyft"
-  url "https:github.comanchoresyftarchiverefstagsv1.5.0.tar.gz"
-  sha256 "35591aab6edb4c8c44db4848cf1b18b7a8a47c3c6be4a8b862e493d6b537cc3c"
+  url "https:github.comanchoresyftarchiverefstagsv1.6.0.tar.gz"
+  sha256 "636546852c7eb76e763c1ebca88df03b6ac0788269fde336f29c71ca61b195a5"
   license "Apache-2.0"
   head "https:github.comanchoresyft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "980ded2828a3db6f2ae4687af110b9eb73707c9c12eeb27fcfcf9afa80ef18b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac7f1e805ebfebbbdeba45733ca987833c1a1d975d3f6311d2a5f7146e8846a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f978a1cde167924be0db6240d55b65b990e12eb9eff55a0f1695d5f181ee6e3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ea56b59f9397efe4267123bf4416fb6e3ddc0239b3f8792fbd0f1b0c90c443b"
-    sha256 cellar: :any_skip_relocation, ventura:        "3155122b00ffcf9a3f5f3395e623d8f8b8de9c38d3dc65d07880148be34be88d"
-    sha256 cellar: :any_skip_relocation, monterey:       "f39f009c18b8566317fcadebe9dffea24701b1a086578fe9feb36279483d299e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a403d659deab21fc39e98818e5356a8458072790edacf54eb0f7226ffd4fd58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6f0a91fda93ccd0f553b6792ee77fbf901a247202ad9c0e91789efa157bd83a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c36980cba4f60fac70c8245c8b627d8ae7ef0d3d94671cbf03acea8e40d2074"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50300b7abf94c16847e520a544698ccd8baba015ace1a86b72f167ed0e7474d7"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8f74226170c1c3429599f1b02e36873b2cfb1d7f560e717848b943d5af5ff380"
+    sha256 cellar: :any_skip_relocation, ventura:        "0b0b27a9a5f8df6bf8a15a30cf641eb4f3a9bda6a5d40ba8a0431836c95470b1"
+    sha256 cellar: :any_skip_relocation, monterey:       "f6e5b511ce3218149fe73f918189c577b9b511dc7317f9697f5f9b399b0a8919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe18295575e9a5b8cc3b50afc37f1beedcf1f56e785e1e72f44f86d9c4f834b0"
   end
 
   depends_on "go" => :build

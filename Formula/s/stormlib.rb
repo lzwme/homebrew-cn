@@ -1,21 +1,19 @@
 class Stormlib < Formula
   desc "Library for handling Blizzard MPQ archives"
   homepage "http:www.zezula.netenmpqstormlib.html"
-  url "https:github.comladislav-zezulaStormLibarchiverefstagsv9.25.tar.gz"
-  sha256 "414ebf1bdd220f3c8bc9eb93c063bb30238b45b2cd6e403d6415e5b71d0c3a40"
+  url "https:github.comladislav-zezulaStormLibarchiverefstagsv9.26.tar.gz"
+  sha256 "252efd25430aeba2fea4e0ffd99015c51b3ccedd16efa0c5ec73fd00550d8270"
   license "MIT"
   head "https:github.comladislav-zezulaStormLib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "53a8d5890e45c6ef1cda6f3bf291cdbfbe686eae992c410cbac35761bab6e89b"
-    sha256 cellar: :any,                 arm64_ventura:  "c8d8c8b81d453cfdab7bf15f40009ce93d907d59a1090f88da23b8afaa38a585"
-    sha256 cellar: :any,                 arm64_monterey: "20d40a92add2aba2f7c9c0ba95e7656718554c56a5e7fdec3678510ec0898ce9"
-    sha256 cellar: :any,                 arm64_big_sur:  "e18783101236a68e4e50770a5b1abccc7d563984e425cfedecb43e352fa2eda1"
-    sha256 cellar: :any,                 sonoma:         "a0823c322e7bcdcbc4f6fd062315fda62a616e473186c65a4c17b4ecb216fe25"
-    sha256 cellar: :any,                 ventura:        "9b3bd511605a7e36642453e78fbcfb8915a7aa837a8d4c734b4a42e68584de8e"
-    sha256 cellar: :any,                 monterey:       "b1fad171023fbb5f9dab315b368350c448257b8a6bde70e33a56c0874f97001b"
-    sha256 cellar: :any,                 big_sur:        "c4427158fb46683716b4a8f6e1f6701abda4216010c6acf937dece8209d35f4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0299da7f18c6cd0ba1aab12c13b4b30b5d5ffbeea2d8a942c1a60c384ab73970"
+    sha256 cellar: :any,                 arm64_sonoma:   "1df54c64c679ef6d4427541ebeb4b302989d61d5e88ac5a7a8ff86d9799f54bb"
+    sha256 cellar: :any,                 arm64_ventura:  "c1149308b89c1007bf94b5ad6422a4c6e3af115ce5506de6125622eca7d19131"
+    sha256 cellar: :any,                 arm64_monterey: "1607526d4c4c5a036b59014ac955c8f0134fa0720d06b147f816daa75f5f37f0"
+    sha256 cellar: :any,                 sonoma:         "006c37831955bb0cfaac98d166024a970460671b1c6735fb85bbc5680bf82119"
+    sha256 cellar: :any,                 ventura:        "389047d9e354d4022efb95b2edb9656a8b8afb86cdc2f5d64d90c9e47470e1f3"
+    sha256 cellar: :any,                 monterey:       "d6ea43e28a909f2a077ee8d643e55e99bfe07f700540a0472b90e433215fc0a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a015b352085e86fab72162cf4429a57632ea862d041ac397c552bea38faccd4"
   end
 
   depends_on "cmake" => :build

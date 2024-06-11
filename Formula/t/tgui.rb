@@ -1,18 +1,18 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
   homepage "https:tgui.eu"
-  url "https:github.comtexusTGUIarchiverefstagsv1.2.0.tar.gz"
-  sha256 "c2f5aef8903fa613afabb20bcafae93cc5b1aef64d08b8d50c11433ec255732d"
+  url "https:github.comtexusTGUIarchiverefstagsv1.3.0.tar.gz"
+  sha256 "641067026656518479ac8e7e1551fc0673836dfdb82c31b03474c27eb3bf0b05"
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "0088efc49ed69c6cb3f69a49e7dfca751fdbe2afa5bcb06ef3ef1f8ec400d439"
-    sha256 cellar: :any,                 arm64_ventura:  "762080fb7c531fb8e10a8f35a34132fbfc880f7c783945289ab2b103a5862814"
-    sha256 cellar: :any,                 arm64_monterey: "e34f50267a3ff36e55579ff2abf85fdf40afdede2152a0b1ae310089ecbb9ef9"
-    sha256 cellar: :any,                 sonoma:         "03d2a7de3ff5a4749bbcb9349d866e0d01c58e8095376227a180be67f94e60c8"
-    sha256 cellar: :any,                 ventura:        "7aa89fa60f0b950d1ada9abb40f43c2b550f75066f92d513bdf7833b2f09de77"
-    sha256 cellar: :any,                 monterey:       "4baf1c3fa41c78c7e319e4cfad28b2336f3192662a30468e560df0f30d515833"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "979c86beb3d3c63f9d3693eb2ed517804680ac41174333090ef921dd0cc0a3db"
+    sha256 cellar: :any,                 arm64_sonoma:   "e839f1b5b9945f0cd2737ea93e624fb0fc8f8308edf843719fe923d6d8407082"
+    sha256 cellar: :any,                 arm64_ventura:  "98d5e03611ff45bf440c7c12fcdbc61b93e08c4048932129e997491968d631c4"
+    sha256 cellar: :any,                 arm64_monterey: "0d78d86653592784e30142a35538ee6dade97db3da361e2b2352cca20f49aab9"
+    sha256 cellar: :any,                 sonoma:         "27b8e682819b001faf77a266e39e7dfc8d87f4728d2e761e8bdab86f4372e4e2"
+    sha256 cellar: :any,                 ventura:        "b9bea58c715494b1cd62aca8ca705f0e4d51a6b0c395d0ba407f014af456270b"
+    sha256 cellar: :any,                 monterey:       "109dce3263f806ea1129b04c8c08870a7d652d123cf2f25d8b7054b1d6cf79af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e6230a051dcb356576ce2c233168e67d13337326242af20a2d4d77d102f5c64"
   end
 
   depends_on "cmake" => :build

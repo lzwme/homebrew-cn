@@ -22,6 +22,8 @@ class Skymaker < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "10fd94a91d3a556bbc800e809c596451cd08893656ad8f2205759e2016411328"
   end
 
+  deprecate! date: "2024-06-10", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "fftw"
 

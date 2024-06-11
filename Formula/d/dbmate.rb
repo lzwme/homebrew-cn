@@ -1,19 +1,19 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https:github.comamacneildbmate"
-  url "https:github.comamacneildbmatearchiverefstagsv2.16.0.tar.gz"
-  sha256 "d4edcfb32665887a628c91a2d3410a5c7bf305315ee873b888700762dfe5ec50"
+  url "https:github.comamacneildbmatearchiverefstagsv2.17.0.tar.gz"
+  sha256 "624dbc8f6acf03f456b4cee21341227415fba91e2fa6c86a9f4987294518fe69"
   license "MIT"
   head "https:github.comamacneildbmate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "791cd3c2b8ab1b56dc377b8d0042dcf1634351fcca53a0cd49054f563a8f7fcd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14e008679d3fbf9cf7faefa7590484f21bb1c9d43b9a4b6726f315013c7ed24d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "98f97b8e49651d30a515906114cb7e9caedb0a05b0100e09e98fa32a87e56abb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d8b2f512d3e8d3e5c139dbd1bc432b08bce9d73e014017d535a36a19110e0bd7"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b78d2e46dc020ef72af72dfb5d12d54f196e66cf71a62c181ee46b54ae87318"
-    sha256 cellar: :any_skip_relocation, monterey:       "adabdcc8c439bc66c320602da5cb96ed2a9dfea7714b56a99dffe083eb96a9bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "910a4bfb93554caea5dc0ad0fdfe4017b7dc04519cfd67c2dc29a1e7e8ac277f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4317d9391f0300373965effeefc21a1034c77c84d23b019bdac4122ebc67976"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d91a8a63f14ff871a80c0c99e9aa5213cc95af148437cc3ab84c44eec0de819"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4dca2f0518acb8436df59183ea08889865978b0ed3157c8eff08bd902d181e1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "8a3bfa94aeda07685dbf5535c8dbd92f9fbe30df447f69cafdc7770f96cdd4cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "f909b991a07739189088b8c2bcdc0efb9adfad173e4182de67b3003b0ff46339"
+    sha256 cellar: :any_skip_relocation, monterey:       "b7694cca7daf5b1fdc7fa66ddeaa419636e165c1776d3b7dd834162a8fea6a0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae0539cfc6273c48a727b8f282d1848d8f98f8bc9cb4c699ebf1ba286257745"
   end
 
   depends_on "go" => :build

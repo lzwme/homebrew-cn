@@ -1,19 +1,19 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https:fnproject.io"
-  url "https:github.comfnprojectcliarchiverefstags0.6.33.tar.gz"
-  sha256 "e2fac541b77211451c343af90dd9a3adb3b8127b030a4c8659b3f5b76fb1517e"
+  url "https:github.comfnprojectcliarchiverefstags0.6.34.tar.gz"
+  sha256 "136c9783b6ce10194bdcdebc8aa28ab15efce7d623b33fe0620a9cf32b8b97d7"
   license "Apache-2.0"
   head "https:github.comfnprojectcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35d1fbcedbb4c530b2ca27ddb30b055b2b5c308ea99bbc6c7c2630807c7bee72"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d52f67663f4f4d31edb8380964bc9edbf5c6e7dc301c9b49585c9b1bd41f6714"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a75f7e3ce4fce03862b2d713b820f58e3c24fdb9f4dc82c5b198a9af43556adc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dd678a3e620f132c1790a624ac92b21dd8065d5f4cc365dc43a11b9d9275a1f1"
-    sha256 cellar: :any_skip_relocation, ventura:        "dcf6f5377b6c21e44163c3af4e0c6f3e5ec38a72262d2bace9eecedb510f75d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "be30610e7fe3309013637ec7e01f729767afdc269e0c49f4ec69a3942a361b33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a4a164d472becd4522918fd8de86152e43550e56b274365481547cc9deedbda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb96ee5b5378ffc71a777074b3356ee88bce54ae046f0cb19060236643e0a4a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1774841f8fa3f267b2e07fe14c947088b613fa2102fbce9bfe19dabc0a0ba479"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c983120de02048e7ffe6557266e0f81d57b19a046090e04af3c9930c7e981a0"
+    sha256 cellar: :any_skip_relocation, sonoma:         "e596a7e0be60952a48de68685a86e027ebb146502564b45a0c035ab6979cc545"
+    sha256 cellar: :any_skip_relocation, ventura:        "e150e791b0ded1e44021333af844049bf24abadd8f619ea8e48beb72b9a629af"
+    sha256 cellar: :any_skip_relocation, monterey:       "c756bbeaeb6874e86a85118c385ca8369ec2dbd45f50a8b4863649df856d00d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b58fd86c06271ae9046fd5d367d8452e0ccb940e103a4536279d876d13283e44"
   end
 
   depends_on "go" => :build

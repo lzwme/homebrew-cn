@@ -88,8 +88,9 @@ class GorillaCli < Formula
   test do
     system "git", "config", "--global", "user.email", "BrewTestBot@example.com"
     (testpath/".gorilla-cli-userid").write "BrewTestBot"
-
-    output = shell_output("#{bin}/gorilla list all my GCP instances")
-    assert_match "LoadingServer is unreachable", output
+    Open3.popen3("#{bin}/gorilla", "do", "nothing") do |stdin, stdout|
+      assert_match "Welcome to Gorilla. Use arrows to select", stdout.readline
+      stdin.write("\n")
+    end
   end
 end
