@@ -3,19 +3,19 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https:cyclonedx.org"
-  url "https:files.pythonhosted.orgpackagesd98000b178f03b3c6ef9e84747fa2f432f9c45126bab8828f555a197e84ea439cyclonedx_bom-4.4.3.tar.gz"
-  sha256 "088dfff2084e9df60924975ec82b15f5e44ec5bd8ef2a29ed43905ee2b84a6e2"
+  url "https:files.pythonhosted.orgpackagesfd191ea340c603724c36726ce562144eaf7517498564185bd978f59c50e57fbccyclonedx_bom-4.5.0.tar.gz"
+  sha256 "09a9a6c3b86e1a143f2d89a4955a8e303abed7106adc4f5f0207ae0e3416ff86"
   license "Apache-2.0"
   head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b2677369cb7764e4a857f10c297ccb90ffc8e5ea575c84e455a434c5bfe346f3"
-    sha256 cellar: :any,                 arm64_ventura:  "374edd791dda9ba7d8d12f1e6c8dddbc205a79cd06c4e249618d796fbc4cd7ed"
-    sha256 cellar: :any,                 arm64_monterey: "4408998e6bcb8a23e955437a3d05ded532ac36c09a7ecfe373b32cf47a971ac9"
-    sha256 cellar: :any,                 sonoma:         "9868f9731e8f757988a65e3f94ada937a2e4754d1472349b4a285946bf830a3a"
-    sha256 cellar: :any,                 ventura:        "fcde44ce9daa8f9427757346da47d0ab0323ca9350167ba7e44c9641fb355ec3"
-    sha256 cellar: :any,                 monterey:       "7d58d3aa23c24766f2f210b21e7cbcabded18735f8658e2d7e4de0e821c18c8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22e74de6bdb300647d336b484cf9757b8646e6c3f8e9aefd8ed443df3f509c38"
+    sha256 cellar: :any,                 arm64_sonoma:   "a107d983347ace16cf745cf673ec5fe8bcc31ad94f0bd4b6c88044296187a052"
+    sha256 cellar: :any,                 arm64_ventura:  "9b62a38a27f269e560a2be4a2bb6fecb669ecd36d1c0aea072eb6facb5103bab"
+    sha256 cellar: :any,                 arm64_monterey: "8d173d38cd221baead714160118d036f54abbdf8b31104ec48e6673a9e617b88"
+    sha256 cellar: :any,                 sonoma:         "dd1dfcc51dd78b3ecf21429a434f54b0e230497e0ef0e679e1bdbb27a7d41425"
+    sha256 cellar: :any,                 ventura:        "a38d640f9656b3b89e6eba7f163c6433d8031200e87ca3c6199bbf8eef8f6730"
+    sha256 cellar: :any,                 monterey:       "d81185c6579385713f0c3877d52f4637fa4a9551dbcf3541ca8737c7e38e64ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b633a15bab6aa53b8b72898cb6e160a803c2095a13396010630f6aca3c2df11d"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -45,8 +45,8 @@ class CyclonedxPython < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https:files.pythonhosted.orgpackages3a31e87ec9cce7977e115fd2eca25fc6d2cd454f423073bb799f4a212d096107cyclonedx_python_lib-7.3.2.tar.gz"
-    sha256 "e2b12702e98da7bce89c28496c73964c2a0b128276078c1d0b398a8ba359e000"
+    url "https:files.pythonhosted.orgpackages6b5bc1183c027a637295287a4340c4dc7c67af3be9d1ddd4dd8cdd6efc60d3e7cyclonedx_python_lib-7.4.0.tar.gz"
+    sha256 "09b10736a7f440262578fa40f470b448de1ebf3c7a71e2ff0a4af0781d3a3b42"
   end
 
   resource "defusedxml" do
@@ -70,13 +70,13 @@ class CyclonedxPython < Formula
   end
 
   resource "jsonpointer" do
-    url "https:files.pythonhosted.orgpackages8f5e67d3ab449818b629a0ffe554bb7eb5c030a71f7af5d80fbf670d7ebe62bcjsonpointer-2.4.tar.gz"
-    sha256 "585cee82b70211fa9e6043b7bb89db6e1aa49524340dde8ad6b63206ea689d88"
+    url "https:files.pythonhosted.orgpackages6a0aeebeb1fa92507ea94016a2a790b93c2ae41a7e18778f85471dc54475ed25jsonpointer-3.0.0.tar.gz"
+    sha256 "2b2d729f2091522d61c3b31f82e11870f60b68f43fbc705cb76bf4b832af59ef"
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages4dc53f6165d3df419ea7b0990b3abed4ff348946a826caf0e7c990b65ff7b9bejsonschema-4.21.1.tar.gz"
-    sha256 "85727c00279f5fa6bedbe6238d2aa6403bedd8b4864ab11207d07df3cc1b2ee5"
+    url "https:files.pythonhosted.orgpackages19f11c1dc0f6b3bf9e76f7526562d29c320fa7d6a2f35b37a1392cc0acd58263jsonschema-4.22.0.tar.gz"
+    sha256 "5b22d434a45935119af990552c862e5d6d564e8f6601206b305a61fdf661a2b7"
   end
 
   resource "jsonschema-specifications" do
@@ -90,8 +90,8 @@ class CyclonedxPython < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
-    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "packageurl-python" do
@@ -100,8 +100,8 @@ class CyclonedxPython < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pip-requirements-parser" do
@@ -125,8 +125,8 @@ class CyclonedxPython < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages6a1fc74e341a7a2a6fb2ab77d3a7311bd57a31e766e5d006a25053484cccbfebreferencing-0.35.0.tar.gz"
-    sha256 "191e936b0c696d0af17ad7430a3dc68e88bc11be6514f4757dc890f04ab05889"
+    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
+    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
   end
 
   resource "rfc3339-validator" do
@@ -140,8 +140,8 @@ class CyclonedxPython < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages55bace7b9f0fc5323f20ffdf85f682e51bee8dc03e9b54503939ebb63d1d0d5erpds_py-0.18.0.tar.gz"
-    sha256 "42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"
+    url "https:files.pythonhosted.orgpackages2daae7c404bdee1db7be09860dff423d022ffdce9269ec8e6532cce09ee7beearpds_py-0.18.1.tar.gz"
+    sha256 "dc48b479d540770c811fbd1eb9ba2bb66951863e448efec2e2c102625328e92f"
   end
 
   resource "six" do
@@ -165,8 +165,8 @@ class CyclonedxPython < Formula
   end
 
   resource "webcolors" do
-    url "https:files.pythonhosted.orgpackagesa1fbf95560c6a5d4469d9c49e24cf1b5d4d21ffab5608251c6020a965fb7791cwebcolors-1.13.tar.gz"
-    sha256 "c225b674c83fa923be93d235330ce0300373d02885cef23238813b0d5668304a"
+    url "https:files.pythonhosted.orgpackagesb3bfcfe993a8acab0976a08cfa1a0a23cf9ce212b8c52cca40fbcca6e994aceawebcolors-24.6.0.tar.gz"
+    sha256 "1d160d1de46b3e81e58d0a280d0c78b467dc80f47294b91b1ad8029d2cedb55b"
   end
 
   def install

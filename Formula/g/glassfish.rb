@@ -1,9 +1,9 @@
 class Glassfish < Formula
   desc "Java EE application server"
   homepage "https:glassfish.org"
-  url "https:download.eclipse.orgee4jglassfishglassfish-7.0.14.zip"
-  mirror "https:github.comeclipse-ee4jglassfishreleasesdownload7.0.14glassfish-7.0.14.zip"
-  sha256 "efcb6e86a9418fe8b33f0b982b52c56e0c7e63d16f91a324a39047a50b8bf2f4"
+  url "https:download.eclipse.orgee4jglassfishglassfish-7.0.15.zip"
+  mirror "https:github.comeclipse-ee4jglassfishreleasesdownload7.0.15glassfish-7.0.15.zip"
+  sha256 "5bb3eb534cb1fbbb0df40d9b872351849c52f7fa8226cc6521288a4ca7fa4f03"
   license "EPL-2.0"
 
   livecheck do
@@ -12,14 +12,13 @@ class Glassfish < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58bb17e797f2e9e6df464a9242c9bb673713dc2ad4129cfa6ba506564b0b9e4c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58bb17e797f2e9e6df464a9242c9bb673713dc2ad4129cfa6ba506564b0b9e4c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "58bb17e797f2e9e6df464a9242c9bb673713dc2ad4129cfa6ba506564b0b9e4c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "58bb17e797f2e9e6df464a9242c9bb673713dc2ad4129cfa6ba506564b0b9e4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "58bb17e797f2e9e6df464a9242c9bb673713dc2ad4129cfa6ba506564b0b9e4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "58bb17e797f2e9e6df464a9242c9bb673713dc2ad4129cfa6ba506564b0b9e4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e7f57e2b33a0d631a81afa7414e4a37986716285012919c23a629a1aab73b69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b07289d1264ca7424b461c91615da75efe7e838c55a0d0ff1570418629489806"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b07289d1264ca7424b461c91615da75efe7e838c55a0d0ff1570418629489806"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b07289d1264ca7424b461c91615da75efe7e838c55a0d0ff1570418629489806"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b07289d1264ca7424b461c91615da75efe7e838c55a0d0ff1570418629489806"
+    sha256 cellar: :any_skip_relocation, ventura:        "b07289d1264ca7424b461c91615da75efe7e838c55a0d0ff1570418629489806"
+    sha256 cellar: :any_skip_relocation, monterey:       "b07289d1264ca7424b461c91615da75efe7e838c55a0d0ff1570418629489806"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0468d3fc76d5a897d00521edc756ef5a419bd1c732c68bad9f5c7570eda9f3ed"
   end
 
   # no java 22 support for glassfish 7.x

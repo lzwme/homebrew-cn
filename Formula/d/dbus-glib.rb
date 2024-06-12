@@ -29,12 +29,16 @@ class DbusGlib < Formula
 
   depends_on "pkg-config" => :build
   depends_on "dbus"
-  depends_on "gettext"
   depends_on "glib"
 
+  uses_from_macos "expat"
+
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

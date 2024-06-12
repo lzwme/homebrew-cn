@@ -12,11 +12,11 @@ cask "ripme" do
 
   app "ripme.jar"
 
-  caveats do
-    depends_on_java "8+"
-  end
-
   uninstall delete: "Applicationsrips"
 
   zap trash: "~LibraryApplication Supportripme"
+
+  caveats do
+    depends_on_java "8+"
+  end
 end

@@ -2004,6 +2004,7 @@ Homebrew-homebrew-core/Formula/g/generate-json-schema.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/g/genext2fs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gengetopt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/genometools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gensio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geocode-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/geogram.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/geographiclib.rb, Homebrew/homebrew-core, 1
@@ -5668,7 +5669,7 @@ Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/serialosc.rb, Homebrew/homebrew-core, 1
@@ -13693,6 +13694,7 @@ Homebrew-homebrew-cask/Casks/v/vapor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vassal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vb-cable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vbrokers.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/vcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vcv-rack.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/ved.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veepn.rb, Homebrew/homebrew-cask, 0

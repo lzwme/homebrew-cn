@@ -5,20 +5,19 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https:www.bazarr.media"
-  url "https:github.commorpheus65535bazarrreleasesdownloadv1.4.2bazarr.zip"
-  sha256 "d4ea9b0b2426037dd9bf2084d75652c95c04832ca6d18d045faab1de0ef59674"
+  url "https:github.commorpheus65535bazarrreleasesdownloadv1.4.3bazarr.zip"
+  sha256 "b664dd9947d1051941d788ee371528eb945efbd6a05015f40414ae36ede9482d"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.commorpheus65535bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc9a05033e30a60347e21a9f0385e0d0bff9ba02afba76bd7fd654ef70b63406"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4742b87418de51338af2f6de6fc8d0b9d45bebb12c8b9afb44eb28302f7bfd5"
-    sha256 cellar: :any,                 arm64_monterey: "1a3cdc732a58ca24c213291e2c837d1b1ca2127e00dfd5ee08f2c47403e54c6b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7706347932692a28dfec3ae099a7918b19afec01e228b54fa8b89dc1e64871bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "f6bc753d48be7d4cffdcb856e1d3eb90a63752258f25a1bd18b357551fc481ba"
-    sha256 cellar: :any,                 monterey:       "a4845d308bf615e39e7376d9674349c5a061db07a4ed13fd1f812d8442eaff83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46df17881487050ed8fb6412044d892b1a08fff3cc53d354397050bdb5d42ad6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e861c369e72abb6c6d001e094977d9cabb800a78364ecbfd0a5f8da838397008"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "539fd0d60bf1bc1cf5a988954f6196d358c77f7df2c2f34d22e84243e97a8d28"
+    sha256 cellar: :any,                 arm64_monterey: "5ab40f896cd2e8cc05c6b0c8b444af74c79033f5434042c2bbeed3626ad0410c"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0b9965a3c6b62ff450104bcfd4b0d68aec535a4a7a57fe9a43febb3efe225380"
+    sha256 cellar: :any_skip_relocation, ventura:        "721eedf56183659946b51032538f3a22ff35eb7cf02c8b39c71138a1f476c5b5"
+    sha256 cellar: :any,                 monterey:       "ed2a438a8615a04912095b411455e2a0640cca7b61f926af75ccb7e33a17004b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af558a6bdc2325cb21741ef5bd6f4aa3570151ac17f6ea6ec2984d3cac0396cc"
   end
 
   depends_on "node" => :build
@@ -34,8 +33,8 @@ class Bazarr < Formula
   uses_from_macos "zlib"
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages2bb4bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "webrtcvad-wheels" do
@@ -123,7 +122,6 @@ class Bazarr < Formula
       end
     ensure
       Process.kill "TERM", wait_thr.pid
-      Process.wait wait_thr.pid
     end
 
     assert_predicate (testpath"configconfig.ini.old"), :exist?

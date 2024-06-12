@@ -10,6 +10,7 @@ cask "macsymbolicator" do
   depends_on macos: ">= :mojave"
 
   app "MacSymbolicator.app"
+  binary "#{appdir}MacSymbolicator.appContentsMacOSMacSymbolicatorCLI", target: "mac-symbolicator-cli"
 
   zap trash: [
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsjp.mahdi.macsymbolicator.sfl*",

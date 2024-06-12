@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https:github.comdolthubdoltgresql"
-  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.8.0.tar.gz"
-  sha256 "bbec749dcb170e0a3d52739aff5238fa0b955989e9c14fb42a65724aeccb9639"
+  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.9.0.tar.gz"
+  sha256 "8f5152f65280b4c7747aea041e8d06069044e9c858299303d0eae3b1a576932f"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,13 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1edfa8a152e51341dae8e5d1bfb5d2ed2cab5acd7e3ad41c47ca2553479788dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58532b8e373a4c6f5f43a6d71c7034aad563622d5e0904deae95ecf8cc86b12b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a7d68f6356542586477dab192129867c5f7adb16a09ad0547336b83ee80b9ab"
-    sha256 cellar: :any_skip_relocation, sonoma:         "23317473bbaf9f7ca3908520220949295ccae5782c4b7f71017c2aedc707bb27"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ac7e5dfc8e186e78e68e8f087be9c35d174eb2bab5c662e805250da18d0c332"
-    sha256 cellar: :any_skip_relocation, monterey:       "5b8770e2725330516b2a5c1be85998b8ef3b278eccf7514935a9c9e39b651217"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8c217034e376f58a3c0a6439e90750c7bb60a8130bd3ce1d535f3e0b0813ec5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "17166b647538f54ff592c9f0159c8f2df86c75160c68e2bbc5ec0bdca8da52ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "61d16a440f18e1e972199d94750037c97101a7989bf9ea008b4e4a5f8b54a14b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf05be4f0195f2f5d69893b2c8b6778a4bf04291da8e5c1630b2e621f596516f"
+    sha256 cellar: :any_skip_relocation, sonoma:         "b39531a1d66aca335c18d0b134e8f29701ba4b6de5013c680c51e22b707a6adf"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4daeee4e11d7b59d3325330b34714a551dedc52ae26ac4ebcad76b29a7cb76a"
+    sha256 cellar: :any_skip_relocation, monterey:       "5261b2981be63554185112bfac99a93ba3a7633601e292b70e6e76c5cbce7674"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23ee7dd2ecd12723397f0c028def9e2c49d65032b70302552947a4e7c8d40cc9"
   end
 
   depends_on "go" => :build

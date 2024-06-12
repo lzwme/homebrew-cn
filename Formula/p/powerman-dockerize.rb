@@ -1,20 +1,18 @@
 class PowermanDockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https:github.compowermandockerize"
-  url "https:github.compowermandockerizearchiverefstagsv0.19.0.tar.gz"
-  sha256 "192c142ab25893c7a1e8a135280d8e72f05f12b56c1e2b5d932946707ec68c6b"
+  url "https:github.compowermandockerizearchiverefstagsv0.19.2.tar.gz"
+  sha256 "42fdc1b71231705dc7e272ded9dc5aeb3575e6ea6b9703e7a3d6cbc7b0b09147"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ebb68f8d4e6be6dcfe52f81c0742d9064ab3d2de324b42131c5093aec71cf40f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22a49e6780e8e00a054aaa35c6749d21095d374eac84c5c773ff549b38adae4a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "22a49e6780e8e00a054aaa35c6749d21095d374eac84c5c773ff549b38adae4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22a49e6780e8e00a054aaa35c6749d21095d374eac84c5c773ff549b38adae4a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4849868b3b65e767fe10d224cb1198eb1348aebdca5a58a8128cf3b706133490"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ab1eff297eb25f14338b89b7bd198978b3541e619203fa92ef2450b0045e098"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ab1eff297eb25f14338b89b7bd198978b3541e619203fa92ef2450b0045e098"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8ab1eff297eb25f14338b89b7bd198978b3541e619203fa92ef2450b0045e098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c820b472202d7146338d7c94989edf2ce8f8c6223abf57f688224a9f92cc0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03db86807b1cf09a1582b0e66d3e980a9d32891f79de6802c3af50b67b90c383"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28d390ad28d7778972afe5b6638386650a0e6381bfbdca34e2248e1b0c486e0a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "438ac307030eed2e49ebaaa9636fa71bfd0d3a510b96fa2c2795f964e89a3d38"
+    sha256 cellar: :any_skip_relocation, sonoma:         "ad5a15ea1493600daf3aa29a0377b856d72741a80ad9d17f741ebe4b30fef2bb"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4238b28deab36826cd328b5eb6134bc969e0a2fff249597afda9a8ef4321ac9"
+    sha256 cellar: :any_skip_relocation, monterey:       "7975b98243d320f2054815329467b64c9a9d2c50eba3800de2a45bd0b806c05b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a54622fc7772d2cb89b888e122c57e8d1ff0ce392d6ffec673aaac8c50643fd1"
   end
 
   depends_on "go" => :build

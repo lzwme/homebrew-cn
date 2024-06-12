@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackagesa923887d6e461be07541c3a946e4cadc78360fabc34112cebe148c74c308f5aecfn_lint-0.87.5.tar.gz"
-  sha256 "41e1195712c84d4de70c2ede1113fef0d62b9f2fb237d77e18da4328463c5660"
+  url "https:files.pythonhosted.orgpackages90b61b473b10fc4b6e0dd5e3994a30227b1bb50ab7901e03563d4f7eb780cb18cfn_lint-0.87.6.tar.gz"
+  sha256 "aba311b0dae2be77422e8152974da2047f048d24a287b16d9c78b234d0714592"
   license "MIT-0"
 
   livecheck do
@@ -13,13 +13,13 @@ class CfnLint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "ded846f0cc4c0043bdc65046c009847d95f8d983d08def2be219c9a78894509d"
-    sha256 cellar: :any,                 arm64_ventura:  "a9597292708d71eb9d424269847ba6aa770034d5b0ffeb7f6c8dde668b45f775"
-    sha256 cellar: :any,                 arm64_monterey: "aa1c5ce80631dff265af6306b0ec272c6561c62cd117b22a679530540db4cfad"
-    sha256 cellar: :any,                 sonoma:         "522642f3479d95953b39081c199020f84def51dd3e88841ca1e83b85f0ff246d"
-    sha256 cellar: :any,                 ventura:        "2062fc3a29c32743ef231bb53abb4e6a79f3183fe4436ed3fa698ec43346eaad"
-    sha256 cellar: :any,                 monterey:       "7f7f7d48019d82537df82d71f58f6a6e1507c3252b6b28e75ceaaa725544bef6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5186f75ad748f059d85c457ec566d80890fa6612b727c40fb518d66c47e786f9"
+    sha256 cellar: :any,                 arm64_sonoma:   "6390c8cccc069176447470865557f5aa509e8945ba0deb4735ea7b14334bebcf"
+    sha256 cellar: :any,                 arm64_ventura:  "320fddfbb6bf35801c66e436135669659f4ef415664211ce9d6b97f86f6daac9"
+    sha256 cellar: :any,                 arm64_monterey: "7706378f7b909db484626c4ea5926071a1b25faee517fd35ed845d7f26b7f695"
+    sha256 cellar: :any,                 sonoma:         "eb6089f4ec54c1bee97cafa53713800afe8edf7a100a466155c85475180c64d4"
+    sha256 cellar: :any,                 ventura:        "9f5e709b01283f2e681c71a445d745f5b08b1cde2ea766df78b3b046e76a0a6c"
+    sha256 cellar: :any,                 monterey:       "b340e5c3d62a5a68a4be0fc3843348497e1b0720e6e80059e8c2e5cee68b77cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ebab451bb22f0858b24cab30b6b7045cc55f5854dd7be4306d2f6b992c92d22"
   end
 
   depends_on "rust" => :build
@@ -42,13 +42,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesbb961c2dd3f8d256cd83713515ba48a5081bd24523ccb13893025b392c8f79b2boto3-1.34.122.tar.gz"
-    sha256 "56840d8ce91654d182f1c113f0791fa2113c3aa43230c50b4481f235348a6037"
+    url "https:files.pythonhosted.orgpackagesd5d320b9ef9ab1bedd8fa3780d2a57494cf9dc3a4f185cfe95b7e9ef938e079bboto3-1.34.123.tar.gz"
+    sha256 "42b140fc850cf261ee4b1e8ef527fa071b1f1592a6d6a68d34b29f37cc46b4dd"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages68120d229d21c69e8276fc3365923a85a700dfb5b005fe5b7416b22a06bd1250botocore-1.34.122.tar.gz"
-    sha256 "9374e16a36f1062c3e27816e8599b53eba99315dfac71cc84fc3aee3f5d3cbe3"
+    url "https:files.pythonhosted.orgpackages80ab74ca7a8ab9c05685afea002f6cd8682b4a0cefb372d6b55891d4100a1cf8botocore-1.34.123.tar.gz"
+    sha256 "a8577f6574600c4d159b5cd103ee05744a443d77f7778304e17307940b369c4f"
   end
 
   resource "jmespath" do
@@ -67,13 +67,13 @@ class CfnLint < Formula
   end
 
   resource "jsonpickle" do
-    url "https:files.pythonhosted.orgpackages724b8c2df97303521f99a0a2cc9be7373ee175dbc01d4befb653ff7b8d32b442jsonpickle-3.0.4.tar.gz"
-    sha256 "a1b14c8d6221cd8f394f2a97e735ea1d7edc927fbd135b26f2f8700657c8c62b"
+    url "https:files.pythonhosted.orgpackagesfa2d806d7ce5743131a6a137c49016ad80db3c3a757288b863795bb50eb99603jsonpickle-3.2.1.tar.gz"
+    sha256 "4b6d7640974199f7acf9035295365b5a1a71a91109effa15ba170fbb48cf871c"
   end
 
   resource "jsonpointer" do
-    url "https:files.pythonhosted.orgpackages8f5e67d3ab449818b629a0ffe554bb7eb5c030a71f7af5d80fbf670d7ebe62bcjsonpointer-2.4.tar.gz"
-    sha256 "585cee82b70211fa9e6043b7bb89db6e1aa49524340dde8ad6b63206ea689d88"
+    url "https:files.pythonhosted.orgpackages6a0aeebeb1fa92507ea94016a2a790b93c2ae41a7e18778f85471dc54475ed25jsonpointer-3.0.0.tar.gz"
+    sha256 "2b2d729f2091522d61c3b31f82e11870f60b68f43fbc705cb76bf4b832af59ef"
   end
 
   resource "jsonschema" do

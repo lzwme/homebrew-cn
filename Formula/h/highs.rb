@@ -1,8 +1,8 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https:www.maths.ed.ac.ukhallHiGHS"
-  url "https:github.comERGO-CodeHiGHSarchiverefstagsv1.7.0.tar.gz"
-  sha256 "d10175ad66e7f113ac5dc00c9d6650a620663a6884fbf2942d6eb7a3d854604f"
+  url "https:github.comERGO-CodeHiGHSarchiverefstagsv1.7.1.tar.gz"
+  sha256 "65c6f9fc2365ced42ee8eb2d209a0d3a7942cd59ff4bd20464e195c433f3a885"
   license "MIT"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,13 +14,13 @@ class Highs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "43722c245ce256ca784ed3fd663b6c7399fba931e331426485ba23c2790029c5"
-    sha256 cellar: :any,                 arm64_ventura:  "b90f19b9d3c88b56ce1a5d0ce092f1f3b542612b32e72617f72d571d92b69510"
-    sha256 cellar: :any,                 arm64_monterey: "071e46829d7afa5b6eb0a7a5a482dbed5be9dddc5f2f2622de085d5776e7890b"
-    sha256 cellar: :any,                 sonoma:         "b72c2c031d50dc89fa79d727c94232624322f8ac3cb43f175b1602bbd6344ba2"
-    sha256 cellar: :any,                 ventura:        "93c417383e651e6a0649e66ef64ed087aee61226a89c38541f5d68e0ddb394d2"
-    sha256 cellar: :any,                 monterey:       "b28e6609fdeb8c73f3a4bb7b485961d35934e942a0b3705c1b9afa76e10d919d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6558b7e71dff08d3cf2727231a819d7498bf1fe736d8bd014934b25e28f1a540"
+    sha256 cellar: :any,                 arm64_sonoma:   "ff6d469ad1efabbd7782fed6fcb5987a3e9b77ef3c2bc377732958c688fd34af"
+    sha256 cellar: :any,                 arm64_ventura:  "1fd9037386d327810cb727cf0703c75ac62f91112cba1c6b8ded6320bbced663"
+    sha256 cellar: :any,                 arm64_monterey: "70ffe3a9b042c169648de0a44b1d1104a2bf390c5ccb722d00c5255c1824d6a6"
+    sha256 cellar: :any,                 sonoma:         "5492ff5446a83387bb18d86f270783d4b49bdde878b05a59a6cf3f9e25cc8f89"
+    sha256 cellar: :any,                 ventura:        "acc045e45b71ab3aaa0563bdbe4fccadf3c4f6ed4a1b65363abf4a9c9cb8a8d4"
+    sha256 cellar: :any,                 monterey:       "61232821b26abd38e293b4943602d662ec28b06705fa80ed226b3a19405e7807"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07b10252ceee3309f28c1a93896026e779f88b2556b106b0f2f2c76cf495957"
   end
 
   depends_on "cmake" => :build

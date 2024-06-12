@@ -1,8 +1,8 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https:www.jenkins.io"
-  url "https:get.jenkins.iowar2.461jenkins.war"
-  sha256 "8e7958200be56f5c002626e423984f16251e1391dcd4b885af3ca2b69ada04b5"
+  url "https:get.jenkins.iowar2.462jenkins.war"
+  sha256 "f4172621f070cd0e19457b94a68f4eabeb995d12cd5fa57b92f2f3119015a744"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,13 @@ class Jenkins < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e0d43ac5f650caea2fe90519172d9da57b13e63793d51c947c6c4aa167cf2cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3196162caab7fce12cac37357552724548f4c16724f325c0adf4855338f2da08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "585b5b7557970dc9f3cde326bc06907a924e30976bc35bbed37270a4fbce063a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "585b5b7557970dc9f3cde326bc06907a924e30976bc35bbed37270a4fbce063a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "585b5b7557970dc9f3cde326bc06907a924e30976bc35bbed37270a4fbce063a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "585b5b7557970dc9f3cde326bc06907a924e30976bc35bbed37270a4fbce063a"
+    sha256 cellar: :any_skip_relocation, ventura:        "585b5b7557970dc9f3cde326bc06907a924e30976bc35bbed37270a4fbce063a"
+    sha256 cellar: :any_skip_relocation, monterey:       "585b5b7557970dc9f3cde326bc06907a924e30976bc35bbed37270a4fbce063a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd2fb8fd7c6254976c7999bbc0c0bb729dfff00d7e98564f92a5bf28ae72b3f2"
   end
 
   head do
