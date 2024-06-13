@@ -1,8 +1,8 @@
 class Ptex < Formula
   desc "Texture mapping system"
   homepage "https:ptex.us"
-  url "https:github.comwdasptexarchiverefstagsv2.4.2.tar.gz"
-  sha256 "c8235fb30c921cfb10848f4ea04d5b662ba46886c5e32ad5137c5086f3979ee1"
+  url "https:github.comwdasptexarchiverefstagsv2.4.3.tar.gz"
+  sha256 "435aa2ee1781ff24859bd282b7616bfaeb86ca10604b13d085ada8aa7602ad27"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,27 +11,19 @@ class Ptex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "aafd534e5ed6f906c37b64d150eab34407de1d86aeac030858bae969b1e13c62"
-    sha256 cellar: :any,                 arm64_ventura:  "c7282fd8fe44376f04b4b3c1696a30f36f1bb150b9f2894a689ac456b8121620"
-    sha256 cellar: :any,                 arm64_monterey: "c8166dbf7e60e50c6a602d9cd086c95d3ff6ffd174532195e06cc7b8ee4b5e5f"
-    sha256 cellar: :any,                 arm64_big_sur:  "cd30bbf7d22f7cda90f8c3af76b4d9ff36a606384ba1f4c04859053a230c2b11"
-    sha256 cellar: :any,                 sonoma:         "275b2f5d5cde987fe44b6fa049103e12732476f6bd03dda9c8c5ac5b5571a142"
-    sha256 cellar: :any,                 ventura:        "de4e10f772f79cb92fdd3bd56d2e5d8d24eef5ffdaa81674215c6449bdaad812"
-    sha256 cellar: :any,                 monterey:       "22a62f337bcab936818db4534f04b38615592278d8baba30cc14312c7646453b"
-    sha256 cellar: :any,                 big_sur:        "21815b74081a6e0129e400f656a33ad927247ee228c1dec5e47a3affed08c8e6"
-    sha256 cellar: :any,                 catalina:       "2793ce52bb20a2274fa5b3e4b69133150ee5b52a212edfc403985784f62601e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8e30dcd4ce82159021804cc0df50f24c4790e3ae72562968547abd6091ed440"
+    sha256 cellar: :any,                 arm64_sonoma:   "834009b39e2e8421eacc189691afe5fdfc87d1dcba237739fc88879d60c87338"
+    sha256 cellar: :any,                 arm64_ventura:  "3c9c6e31882c6401c1cd08d446cec4a6ba90d1f8199230559bac04627263b8ce"
+    sha256 cellar: :any,                 arm64_monterey: "8ad7824e9c1423c89c1106c9e4d5b1867c7b0bb0682ed8205520d1d5fc615d6b"
+    sha256 cellar: :any,                 sonoma:         "0a99144782115f4b8d93e31f64b2002a1f40968b559514eaad1fc0667471964f"
+    sha256 cellar: :any,                 ventura:        "ed39908c137c16838470243879af1d6ae1ef3441e79d30b16bf11dbb6e366dd3"
+    sha256 cellar: :any,                 monterey:       "7103ad329a193ad7354dc88ca5c2292190b380c2ab133a4bb49cbbbdae29943d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9088f4aef6f14b8a9b0ff49f5d36d18e725463e48e918ef3d7eee20b2a14618d"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
   uses_from_macos "zlib"
-
-  resource "wtest" do
-    url "https:raw.githubusercontent.comwdasptexv2.4.2srctestswtest.cpp"
-    sha256 "95c78f97421eac034401b579037b7ba4536a96f4b356f8f1bb1e87b9db752444"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -40,7 +32,12 @@ class Ptex < Formula
   end
 
   test do
-    resource("wtest").stage testpath
+    resource "homebrew-wtest" do
+      url "https:raw.githubusercontent.comwdasptexv2.4.2srctestswtest.cpp"
+      sha256 "95c78f97421eac034401b579037b7ba4536a96f4b356f8f1bb1e87b9db752444"
+    end
+
+    testpath.install resource("homebrew-wtest")
     system ENV.cxx, "wtest.cpp", "-o", "wtest", "-I#{opt_include}", "-L#{opt_lib}", "-lPtex"
     system ".wtest"
     system bin"ptxinfo", "-c", "test.ptx"

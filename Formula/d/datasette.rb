@@ -2,20 +2,19 @@ class Datasette < Formula
   include Language::Python::Virtualenv
   desc "Open source multi-tool for exploring and publishing data"
   homepage "https:docs.datasette.ioenstable"
-  url "https:files.pythonhosted.orgpackagesc87d667e3bfceef9e428e38117b8d9704f502395fddc1effb7ef760b2dd0c4e6datasette-0.64.6.tar.gz"
-  sha256 "85ca3aabca64fd9560052042aec27d3b32a1f85303853da3550434866d0fa539"
+  url "https:files.pythonhosted.orgpackagesa657ec9d7317241c40663e8adc0144579ebd0caaea9ecb55ffdfd5bef637d993datasette-0.64.7.tar.gz"
+  sha256 "171e11a213eb747302166c6986487e41f6a9a8847a84fef7861bf88bf1b439b9"
   license "Apache-2.0"
-  revision 4
   head "https:github.comsimonwdatasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "daf9403113f894d9ea4a0eb445642e2f94d6cf3f5b1dbc4791365047c3fdcb4e"
-    sha256 cellar: :any,                 arm64_ventura:  "7689df8e4e9ebdb094555dc19bc274764c55a31181714b8fdddcb8d34be298a1"
-    sha256 cellar: :any,                 arm64_monterey: "403a1b59642c779a8d1bfe56acd39698b39fd2a1ba42b9d7791b05470369065e"
-    sha256 cellar: :any,                 sonoma:         "0dba08736c54561c7b885a3949020a2a86251776d664e2e0fcf270d92c614273"
-    sha256 cellar: :any,                 ventura:        "4dda6617c66a918bbcac794b4c1ddc1c538b2a127d67eac4b9727f09b6105abb"
-    sha256 cellar: :any,                 monterey:       "5eec23a87de311b2a3d1b3aaacc131b83e214b12b836411787a42eabcf9c024a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fdde85fc2e4428a0f4ec912c0fe15e877e2419b5f3bc7d1c6ba28bbfad55f01"
+    sha256 cellar: :any,                 arm64_sonoma:   "a3a44e1824eaa79cfeecb1618c975ba025de9d7ac3a10ddfebd599de90f62d26"
+    sha256 cellar: :any,                 arm64_ventura:  "600804defe84c2844714f1662fd3ff848be125a107b199eaeb7ce50370193124"
+    sha256 cellar: :any,                 arm64_monterey: "a1f55194396797c37a0e617942f627a37518e64353ebdd7fb88be2ccb7c8e23c"
+    sha256 cellar: :any,                 sonoma:         "ccb8f9e59dcf36b9a36c0a470e4f37d14f8cd8a9f1e4fd7f9f1813e62193b584"
+    sha256 cellar: :any,                 ventura:        "d187ae236d9b104dc6f1c6524a3b998ff2da418ce262cad0a54108a9844e2067"
+    sha256 cellar: :any,                 monterey:       "b0adc947fd42902676b9c4d15f201b2e75c3de4e04faec0c72cd3857516d1c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0dfc42ae1b3963c4b00183ffd968270cb1125bb5c4135bcfd4d1dc919c82076"
   end
 
   depends_on "certifi"
@@ -28,8 +27,13 @@ class Datasette < Formula
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackagesdb4d3970183622f0330d3c23d9b8a5f52e365e50381fd484d08e3285104333d3anyio-4.3.0.tar.gz"
-    sha256 "f75253795a87df48568485fd18cdd2a3fa5c4f7c5be8e5e36637733fce06fed6"
+    url "https:files.pythonhosted.orgpackagese6e3c4c8d473d6780ef1853d630d581f70d655b4f8d7553c6997958c283039a2anyio-4.4.0.tar.gz"
+    sha256 "5aadc6a1bbb7cdb0bede386cac5e2940f5e2ff3aa20277e991cf028e0585ce94"
+  end
+
+  resource "appdirs" do
+    url "https:files.pythonhosted.orgpackagesd7d805696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40appdirs-1.4.4.tar.gz"
+    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
   end
 
   resource "asgi-csrf" do
@@ -50,6 +54,16 @@ class Datasette < Formula
   resource "click-default-group" do
     url "https:files.pythonhosted.orgpackages1dceedb087fb53de63dad3b36408ca30368f438738098e668b78c87f93cd41dfclick_default_group-1.2.4.tar.gz"
     sha256 "eb3f3c99ec0d456ca6cd2a7f08f7d4e91771bef51b01bdd9580cc6450fe1251e"
+  end
+
+  resource "flexcache" do
+    url "https:files.pythonhosted.orgpackages55b08a21e330561c65653d010ef112bf38f60890051d244ede197ddaa08e50c1flexcache-0.3.tar.gz"
+    sha256 "18743bd5a0621bfe2cf8d519e4c3bfdf57a269c15d1ced3fb4b64e0ff4600656"
+  end
+
+  resource "flexparser" do
+    url "https:files.pythonhosted.orgpackagesdce4a73612499d9c8c450c8f4878e8bb8b3b2dce4bf671b21dd8d5c6549525a7flexparser-0.3.1.tar.gz"
+    sha256 "36f795d82e50f5c9ae2fde1c33f21f88922fdd67b7629550a3cc4d0b40a66856"
   end
 
   resource "h11" do
@@ -103,8 +117,8 @@ class Datasette < Formula
   end
 
   resource "pint" do
-    url "https:files.pythonhosted.orgpackages0241002d020f140db35d971f4bdd73407d69fdf56c5ba5fcccc10776e27d3a6cPint-0.23.tar.gz"
-    sha256 "e1509b91606dbc52527c600a4ef74ffac12fff70688aff20e9072409346ec9b4"
+    url "https:files.pythonhosted.orgpackages625850fba7e9be4c0503d2b0daab206ccf272f8288b336fed4400c599246f125pint-0.24.tar.gz"
+    sha256 "c6c7c027b821413db1ac46b3b7bd296592848b5aec29a88cfc6e378fd1371903"
   end
 
   resource "pluggy" do
@@ -123,8 +137,8 @@ class Datasette < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "sniffio" do
@@ -133,13 +147,13 @@ class Datasette < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "uvicorn" do
-    url "https:files.pythonhosted.orgpackages498d5005d39cd79c9ae87baf7d7aafdcdfe0b13aa69d9a1e3b7f1c984a2ac6d2uvicorn-0.29.0.tar.gz"
-    sha256 "6a69214c0b6a087462412670b3ef21224fa48cae0e452b5883e8e8bdfdd11dd0"
+    url "https:files.pythonhosted.orgpackages37169f5ccaa1a76e5bfbaa0c67640e2db8a5214ca08d92a1b427fa1677b3da88uvicorn-0.30.1.tar.gz"
+    sha256 "d46cd8e0fd80240baffbcd9ec1012a712938754afcf81bce56c024c1656aece8"
   end
 
   def install

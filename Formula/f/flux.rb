@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https:www.influxdata.comproductsflux"
   url "https:github.cominfluxdataflux.git",
-      tag:      "v0.194.5",
-      revision: "505186bac3c68b15ecb156492310e805445cfc1f"
+      tag:      "v0.195.1",
+      revision: "da04c3f0fab9eda235a2a7c3522348e1b3941aaf"
   license "MIT"
   head "https:github.cominfluxdataflux.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Flux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "6ab99961114255dedb9710008c203ae67b0e1a6b1c46b707e88179a6ed722737"
-    sha256 cellar: :any,                 arm64_ventura:  "01aadf549d5bf852a77de28d7e527c4c096c92b5ae87714eac638de58d68510f"
-    sha256 cellar: :any,                 arm64_monterey: "e76e6b49e4216ce3385a80db98fd70b26ee2f9b8f143324360208918ca17fb3f"
-    sha256 cellar: :any,                 sonoma:         "95367aa090a5d93594423b46ad4f804e20d7554d14364c3df369d7da2257128b"
-    sha256 cellar: :any,                 ventura:        "1443bc67895f4e935ff18e28b8a448f4ff7905a569ee34e0cc0d821d59a7a197"
-    sha256 cellar: :any,                 monterey:       "46f07198928e32d97331fd0a7c9c3421225fe282ed32f63afb7ca0e50aa52024"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c274c4e2bcc26cd0317d68718e62e0f68d78af1f44746eaef59d25dcdf5c15cb"
+    sha256 cellar: :any,                 arm64_sonoma:   "4f8af5b2ff90ce96ab45683503cb52be18346e72328196eb6733c7c9083ecdf2"
+    sha256 cellar: :any,                 arm64_ventura:  "2bf71cef2b5eedfd4247ff3f8e1a383c02aa4f2843d630ed4a8e92bb86e0a682"
+    sha256 cellar: :any,                 arm64_monterey: "0fd5e630b46f7ec1cc7b3a26b571514940d1fcba9b13ab0d2e5edae4a83e50ab"
+    sha256 cellar: :any,                 sonoma:         "670510e6b726a176ea9fe4dc7f45e2471929222ce9a2a3d781cdb030c953bf9d"
+    sha256 cellar: :any,                 ventura:        "d3274e6610577a57ab25a3c2370cd9117cd210a4c6c97c4939ac0842b024169e"
+    sha256 cellar: :any,                 monterey:       "5ae3873eef4b65ec247a955d1be169811169b6a66b988822f2914cf486a593bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e795baf060ecd82bd2614e5c5d21077b66192bf704575c78409f45f24fa5551"
   end
 
   depends_on "go" => :build

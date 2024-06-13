@@ -1,19 +1,19 @@
 class Zfind < Formula
   desc "Search for files (even inside tarzip7zrar) using a SQL-WHERE filter"
   homepage "https:github.comlaktakzfind"
-  url "https:github.comlaktakzfindarchiverefstagsv0.4.2.tar.gz"
-  sha256 "767a0b61605ca63be8ebfca19b56ccded2e9ed22920d6d31db3f4b723ed56f43"
+  url "https:github.comlaktakzfindarchiverefstagsv0.4.3.tar.gz"
+  sha256 "ea7a30b650a1f89afb39136d46386b009b44d7dbccc907f8aedf1c348b3bfd1a"
   license "MIT"
   head "https:github.comlaktakzfind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c689b84b617b0777f55f4e4d56c3f76c9f09a9fdb408526f232d766508c8f60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5279a26326d0c2400f47b2940a372dc07703036dd85ba7875c05f40ffa31a35"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "168f671e2d02f8575f345be59f8f0b7701d9edad796bf8361d591f97b270223d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ef052695c40b0a9c653c43897b93a31ec7d6bf46bacec53c7afbbaddc877e61b"
-    sha256 cellar: :any_skip_relocation, ventura:        "050423c3a15d4d5ad425aeedaf37702d293274b75e68c36d8eed3e80bf2be79b"
-    sha256 cellar: :any_skip_relocation, monterey:       "97a9505275b4b1472df29dd34e469edd3b9580b9d88cce31ffb735927ce53510"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05a487a536dd37a19d06ba256d1a6f642d2731a17ecde54ba02473557a1e8498"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "aeff8d859dabf36b15008a7ad6f3f1de5d4f3c7c5788ab6dd1f33faeea5f4980"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99daa1d4245996b097f15073e30891ccf03cb9a2c71782111d3a631b1789ce16"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f63953fafb04698a735faf1c53c9f578be108dd5b2b0ef96da93f6fb9410f51a"
+    sha256 cellar: :any_skip_relocation, sonoma:         "29f989616731108dc11f0980bb8ffe687355f5fefafe7167916c7502595e0636"
+    sha256 cellar: :any_skip_relocation, ventura:        "c3c63d0286a7989fea2e9f5719d2aa4a2717b31f659c4f7a8eeeb0a958cffe43"
+    sha256 cellar: :any_skip_relocation, monterey:       "2fc656a62894ecfdb3c636d65b08bc6a986beabb6c4084c138c4e3a59053fa41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99af54ce193c5294db97fdaa017d834346206544abcb52ec6023d41535bbd50f"
   end
 
   depends_on "go" => :build

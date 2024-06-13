@@ -1,6 +1,6 @@
 class ChrubyFish < Formula
   desc "Thin wrapper around chruby to make it work with the Fish shell"
-  homepage "https:github.comJeanMertzchruby-fish#readme"
+  homepage "https:github.comJeanMertzchruby-fish"
   url "https:github.comJeanMertzchruby-fisharchiverefstagsv1.0.0.tar.gz"
   sha256 "db1023255fa55c9a01b06404cd394cccf790d42985cf85706211e5a0dda4fd9f"
   license "MIT"

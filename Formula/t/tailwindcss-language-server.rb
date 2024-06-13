@@ -2,7 +2,7 @@ require "languagenode"
 
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
-  homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server#readme"
+  homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server"
   url "https:registry.npmjs.org@tailwindcsslanguage-server-language-server-0.0.16.tgz"
   sha256 "338e1ba6dec23fd941a8b6e0b6328c7dfe77e686f0ed1eff070f63ec36d113d8"
   license "MIT"

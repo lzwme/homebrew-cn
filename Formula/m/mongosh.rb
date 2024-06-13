@@ -2,7 +2,7 @@ require "languagenode"
 
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
-  homepage "https:github.commongodb-jsmongosh#readme"
+  homepage "https:github.commongodb-jsmongosh"
   url "https:registry.npmjs.org@mongoshcli-repl-cli-repl-2.2.6.tgz"
   sha256 "0cf3f54ecd2e3d37e669761c12de9771af1f8e32e35ba7946938f76612d92cb4"
   license "Apache-2.0"

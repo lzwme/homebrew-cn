@@ -1,6 +1,6 @@
 class Vc4asm < Formula
   desc "Macro assembler for Broadcom VideoCore IV aka Raspberry Pi GPU"
-  homepage "http:maazl.deprojectvc4asmdocindex.html"
+  homepage "https:maazl.deprojectvc4asmdocindex.html"
   url "https:github.commaazlvc4asmarchiverefstagsV0.3.tar.gz"
   sha256 "f712fb27eb1b7d46b75db298fd50bb62905ccbdd7c0c7d27728596c496f031c2"
 

@@ -8,15 +8,16 @@ class Fdroidserver < Formula
   url "https:files.pythonhosted.orgpackages3c3916a78b07797a6fb7fdce85aaa0bb71fb1e459dcdd73ee70be5ff15711059fdroidserver-2.2.2.tar.gz"
   sha256 "19c268168fa65ad2be4a4f27f4750b9c9d54ddaa5fab229d4d1770f161a093b2"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "260bfc8da5d28164cbaac15050ebedf3896f6ceb5604f2c4c83369e728777a97"
-    sha256 cellar: :any,                 arm64_ventura:  "d62291c3e429c3a3e12f7a7205781519efae7839a588956acfd8744dce4ac8fb"
-    sha256 cellar: :any,                 arm64_monterey: "8dfb0f38b625a3759465a173db60ad1824318ca763de2381dc97cb189915cc1a"
-    sha256 cellar: :any,                 sonoma:         "b80a4739c18cbed3b93068f892ebd873fefc31d0fc4fae13c446c9f193ff68d6"
-    sha256 cellar: :any,                 ventura:        "c16263a156b83826465f41f817bc6128026c5844b5645a9ca2225ee1063c2bac"
-    sha256 cellar: :any,                 monterey:       "e968eaf16af0ad7d5560692eae3e32701fdb4926e4cdcb55163e12a22c671c4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "962d2e5a37edb8edf7826b98edb54de7e36566a440f5a91e67d6bf3d74858032"
+    sha256 cellar: :any,                 arm64_sonoma:   "ae2318784e1653b5ca1f71f05e9f9abeafdeefcc38a275e16ecc3b89e02c3b84"
+    sha256 cellar: :any,                 arm64_ventura:  "d17b8b946209a2c68abc22dcbc4abcdc05bc9603bfe37edd2453d79bc98e6846"
+    sha256 cellar: :any,                 arm64_monterey: "b89c43e200f7d122df806508fe6813405986d43c829dd04421f912390ccfb326"
+    sha256 cellar: :any,                 sonoma:         "53ef10c1c4fa185b9da5d081a8c535dc33b36c1f710b50a6ac9213b1264cd1f8"
+    sha256 cellar: :any,                 ventura:        "4d9682efa5cf7a720d15e111bce03c61c02c74e21a369905138555ad791d5de8"
+    sha256 cellar: :any,                 monterey:       "8d777c0b80d860e9d9929ae57d8c1877f3bf6e8d00aa551a9f8149834349f265"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b948e788f9dfeedb7de63884e94ab2ce81fde063a9da944ae7de92d22c4e65cf"
   end
 
   depends_on "ninja" => :build
@@ -71,8 +72,8 @@ class Fdroidserver < Formula
   end
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackages72076a6f2047a9dc9d012b7b977e4041d37d078b76b44b7ee4daf331c1e6fb35bcrypt-4.1.2.tar.gz"
-    sha256 "33313a1200a3ae90b75587ceac502b048b840fc69e7f7a0905b5f87fac7a1258"
+    url "https:files.pythonhosted.orgpackagescae90b36987abbcd8c9210c7b86673d88ff0a481b4610630710fb80ba5661356bcrypt-4.1.3.tar.gz"
+    sha256 "2ee15dd749f5952fe3f0430d0ff6b74082e159c50332a1413d51b5689cf06623"
   end
 
   resource "charset-normalizer" do
@@ -121,8 +122,8 @@ class Fdroidserver < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackages73e45f31f97c859e2223d59ce3da03c67908eb8f8f90d96f2537b73b68aa2a5afonttools-4.51.0.tar.gz"
-    sha256 "dc0673361331566d7a663d7ce0f6fdcbfbdc1f59c6e3ed1165ad7202ca183c68"
+    url "https:files.pythonhosted.orgpackagesa46e681d39b71d5f0d6a1b1dc87d7333331f9961b5ab6a2ad6372d6cf3f8b04cfonttools-4.53.0.tar.gz"
+    sha256 "c93ed66d32de1559b6fc348838c7572d5c0ac1e4a258e76763a5caddd8944002"
   end
 
   resource "future" do
@@ -146,8 +147,8 @@ class Fdroidserver < Formula
   end
 
   resource "ipython" do
-    url "https:files.pythonhosted.orgpackagesd72ed578cafc51642bb0e4c626e29ca1d580c6a884f540049f744df405373f3aipython-8.23.0.tar.gz"
-    sha256 "7468edaf4f6de3e1b912e57f66c241e6fd3c7099f2ec2136e239e142e800274d"
+    url "https:files.pythonhosted.orgpackages1c5afacbb5a0650e68b16134ce787b0990ee47f8b67316b0d844d9b183f212e6ipython-8.25.0.tar.gz"
+    sha256 "c6ed726a140b6e725b911528f80439c534fac915246af3efc39440a6b0f9d716"
   end
 
   resource "jedi" do
@@ -166,13 +167,13 @@ class Fdroidserver < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackageseae23834472e7f18801e67a3cd6f3c203a5456d6f7f903cfb9a990e62098a2f3lxml-5.2.1.tar.gz"
-    sha256 "3f7765e69bbce0906a7c74d5fe46d2c7a7596147318dbc08e4a2431f3060e306"
+    url "https:files.pythonhosted.orgpackages63f7ffbb6d2eb67b80a45b8a0834baa5557a14a5ffce0979439e7cd7f0c4055blxml-5.2.2.tar.gz"
+    sha256 "bb2dc4898180bea79863d5487e5f9c7c34297414bad54bcd0f0852aee9cfdb87"
   end
 
   resource "matplotlib" do
-    url "https:files.pythonhosted.orgpackages384f8487737a74d8be4ab5fbe6019b0fae305c1604cf7209500969b879b5f462matplotlib-3.8.4.tar.gz"
-    sha256 "8aac397d5e9ec158960e31c381c5ffc52ddd52bd9a47717e2a694038167dffea"
+    url "https:files.pythonhosted.orgpackagesc5a4a7236bf8b0137deff48737c6ccf2154ef4486e57c6a5b7c309bf515992bdmatplotlib-3.9.0.tar.gz"
+    sha256 "e6d29ea6c19e34b30fb7d88b7081f869a03014f66fe06d62cc77d5a6ea88ed7a"
   end
 
   resource "matplotlib-inline" do
@@ -186,8 +187,8 @@ class Fdroidserver < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "paramiko" do
@@ -211,8 +212,8 @@ class Fdroidserver < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackagesccc625b6a3d5cd295304de1e32c9edbcf319a52e965b339629d37d42bb7126caprompt_toolkit-3.0.43.tar.gz"
-    sha256 "3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d"
+    url "https:files.pythonhosted.orgpackages476d0279b119dafc74c1220420028d490c4399b790fc1256998666e3a341879fprompt_toolkit-3.0.47.tar.gz"
+    sha256 "1e1b29cb58080b1e69f207c893a1a7bf16d127a5c30c9d17a25a5d77792e5360"
   end
 
   resource "ptyprocess" do
@@ -241,8 +242,8 @@ class Fdroidserver < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pynacl" do
@@ -281,8 +282,8 @@ class Fdroidserver < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages9dbe10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
+    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
+    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "ruamel-yaml" do
@@ -301,8 +302,8 @@ class Fdroidserver < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd64fb10f707e14ef7de524fe1f8988a294fb262a29c9b5b12275c7e188864aedsetuptools-69.5.1.tar.gz"
-    sha256 "6c1fccdac05a97e598fb0ae3bbed5904ccb317337a51139dcd51453611bbb987"
+    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
+    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
   end
 
   resource "six" do
@@ -326,8 +327,8 @@ class Fdroidserver < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf6f3b827b3ab53b4e3d8513914586dcca61c355fa2ce8252dea4da56e67bf8f2typing_extensions-4.11.0.tar.gz"
-    sha256 "83f085bd5ca59c80295fc2a82ab5dac679cbe02b9f33f7d83af68e241bea51b0"
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
   end
 
   resource "urllib3" do

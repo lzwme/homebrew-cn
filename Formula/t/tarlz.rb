@@ -7,7 +7,7 @@ class Tarlz < Formula
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://download.savannah.gnu.org/releases/lzip/tarlz/"
+    url "https://download.savannah.gnu.org/releases/lzip/tarlz/"
     regex(/href=.*?tarlz[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

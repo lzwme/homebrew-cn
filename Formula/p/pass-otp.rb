@@ -1,6 +1,6 @@
 class PassOtp < Formula
   desc "Pass extension for managing one-time-password tokens"
-  homepage "https:github.comtadfisherpass-otp#readme"
+  homepage "https:github.comtadfisherpass-otp"
   url "https:github.comtadfisherpass-otpreleasesdownloadv1.2.0pass-otp-1.2.0.tar.gz"
   sha256 "5720a649267a240a4f7ba5a6445193481070049c1d08ba38b00d20fc551c3a67"
   license "GPL-3.0"

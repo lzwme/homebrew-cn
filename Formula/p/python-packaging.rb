@@ -1,12 +1,18 @@
 class PythonPackaging < Formula
   desc "Core utilities for Python packages"
   homepage "https:packaging.pypa.io"
-  url "https:files.pythonhosted.orgpackageseeb5b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4dpackaging-24.0.tar.gz"
-  sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+  url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
+  sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   license any_of: ["Apache-2.0", "BSD-2-Clause"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2cf07e8f77ff012e840b93321f30017d29b0b9408e11b8071ee0b4bbd647bcd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4cf828add4d1558cf6dc594c3891afe1f23d45cc127c0be28afcc8845aaa8059"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4cf828add4d1558cf6dc594c3891afe1f23d45cc127c0be28afcc8845aaa8059"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4cf828add4d1558cf6dc594c3891afe1f23d45cc127c0be28afcc8845aaa8059"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4cf828add4d1558cf6dc594c3891afe1f23d45cc127c0be28afcc8845aaa8059"
+    sha256 cellar: :any_skip_relocation, ventura:        "4cf828add4d1558cf6dc594c3891afe1f23d45cc127c0be28afcc8845aaa8059"
+    sha256 cellar: :any_skip_relocation, monterey:       "4cf828add4d1558cf6dc594c3891afe1f23d45cc127c0be28afcc8845aaa8059"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00f80a3334512e058ba367fdb71e9dd40bf5edac49820fcd7ff734a40dc29ed2"
   end
 
   depends_on "python@3.11" => [:build, :test]

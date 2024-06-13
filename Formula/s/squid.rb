@@ -1,12 +1,12 @@
 class Squid < Formula
   desc "Advanced proxy caching server for HTTP, HTTPS, FTP, and Gopher"
-  homepage "http://www.squid-cache.org/"
+  homepage "https://www.squid-cache.org/"
   url "http://www.squid-cache.org/Versions/v6/squid-6.10.tar.xz"
   sha256 "0b07b187e723f04770dd25beb89aec12030a158696aa8892d87c8b26853408a7"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "http://www.squid-cache.org/Versions/"
+    url "https://www.squid-cache.org/Versions/"
     regex(%r{<td>\s*v?(\d+(?:\.\d+)+)\s*</td>}im)
   end
 
@@ -21,7 +21,7 @@ class Squid < Formula
   end
 
   head do
-    url "git://git.launchpad.net/squid", branch: "v6"
+    url "https://git.launchpad.net/squid", using: :git, branch: "v6"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,7 +37,7 @@ class Squid < Formula
     ENV.append "LDFLAGS", "-lresolv"
 
     # For --disable-eui, see:
-    # http://www.squid-cache.org/mail-archive/squid-users/201304/0040.html
+    # https://www.squid-cache.org/mail-archive/squid-users/201304/0040.html
     args = %W[
       --disable-debug
       --disable-dependency-tracking

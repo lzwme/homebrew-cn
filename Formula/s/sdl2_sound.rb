@@ -65,7 +65,7 @@ class Sdl2Sound < Formula
          File extension "UMX"
          File extension "XM"
          Written by Torbjörn Andersson <d91tan@Update.UU.SE>.
-         http:modplug-xmms.sourceforge.net
+         https:modplug-xmms.sourceforge.net
 
        * MPEG-1 Audio Layer I-III
          File extension "MP3"

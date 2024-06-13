@@ -1,6 +1,6 @@
 class Pocl < Formula
   desc "Portable Computing Language"
-  homepage "http:portablecl.org"
+  homepage "https:portablecl.org"
   # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https:github.compoclpoclarchiverefstagsv5.0.tar.gz"
   sha256 "fd0bb6e50c2286278c11627b71177991519e1f7ab2576bd8d8742974db414549"

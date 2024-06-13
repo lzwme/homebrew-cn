@@ -2,7 +2,7 @@ class Woof < Formula
   include Language::Python::Shebang
 
   desc "Ad-hoc single-file webserver"
-  homepage "http:www.home.unix-ag.orgsimonwoof.html"
+  homepage "https:www.home.unix-ag.orgsimonwoof.html"
   url "https:github.comsimon-budigwoofarchiverefstagswoof-20220202.tar.gz"
   sha256 "cf29214aca196a1778e2f5df1f5cc653da9bee8fc2b19f01439c750c41ae83c1"
   license "GPL-2.0-or-later"

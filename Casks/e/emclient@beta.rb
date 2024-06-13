@@ -1,6 +1,6 @@
-cask "emclient" do
-  version "9.2.2258"
-  sha256 "565f8009a46450a266ee3ef2c35c04b59058c053a8000d1b8948fe142b909250"
+cask "emclient@beta" do
+  version "10.0.2362"
+  sha256 "7ba21c4bea1512e30ebf489f1d818c35d1d2ae43e144db63cc612ac7b78b694b"
 
   url "https://cdn-dist.emclient.com/dist/v#{version}_Mac/setup.pkg"
   name "eM Client"
@@ -8,13 +8,13 @@ cask "emclient" do
   homepage "https://www.emclient.com/"
 
   livecheck do
-    url "https://www.emclient.com/dist/latest/setup.pkg"
+    url "https://www.emclient.com/dist/latest-beta-mac/"
     regex(/v?(\d+(?:\.\d+)+)[._-]Mac/i)
     strategy :header_match
   end
 
   auto_updates true
-  conflicts_with cask: "emclient@beta"
+  conflicts_with cask: "emclient"
   depends_on macos: ">= :big_sur"
 
   pkg "setup.pkg"

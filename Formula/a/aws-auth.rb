@@ -2,7 +2,7 @@ require "languagenode"
 
 class AwsAuth < Formula
   desc "Allows you to programmatically authenticate into AWS accounts through IAM roles"
-  homepage "https:github.comiamarkadytaws-auth#readme"
+  homepage "https:github.comiamarkadytaws-auth"
   url "https:registry.npmjs.org@iamarkadytaws-auth-aws-auth-2.2.4.tgz"
   sha256 "79fd9c77a389e275f6a8e8bc08e5245c9699779da5621abd929a475322698146"
   license "MIT"

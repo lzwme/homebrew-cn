@@ -106,7 +106,7 @@ class Webkitgtk < Formula
           g_signal_connect(webView, "close", G_CALLBACK(closeWebViewCb), main_window);
 
           // Load a web page into the browser instance
-          webkit_web_view_load_uri(webView, "http://www.webkitgtk.org/");
+          webkit_web_view_load_uri(webView, "https://www.webkitgtk.org/");
 
           // Make sure that when the browser area becomes visible, it will get mouse
           // and keyboard events

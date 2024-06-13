@@ -2,12 +2,12 @@ class S3Backer < Formula
   desc "FUSE-based single file backing store via Amazon S3"
   homepage "https:github.comarchiecobbss3backer"
   # Release distributions listed at https:github.comarchiecobbss3backerwikiDownloads
-  url "https:s3.amazonaws.comarchie-publics3backers3backer-2.1.2.tar.gz"
-  sha256 "ab0be273a4b3ce2d74ed3d554a045a4c1d1b2b6c7eb042e0eca7b4e4372dbbb8"
+  url "https:s3.amazonaws.comarchie-publics3backers3backer-2.1.3.tar.gz"
+  sha256 "b49a7cae66bc29e8104db889e7e63137748d4a3442d88ebad9fffa4705808a81"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "716c3eee156c8fb61fffab4e13148acd2c1924515f5b4defc3a39c2555d6538b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "60886e9f4d464c3050a711c732717fc833fa1364b60acbe1f07a15e2d13e8728"
   end
 
   depends_on "pkg-config" => :build

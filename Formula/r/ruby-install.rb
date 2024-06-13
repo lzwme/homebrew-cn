@@ -1,6 +1,6 @@
 class RubyInstall < Formula
   desc "Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby"
-  homepage "https:github.compostmodernruby-install#readme"
+  homepage "https:github.compostmodernruby-install"
   url "https:github.compostmodernruby-installreleasesdownloadv0.9.3ruby-install-0.9.3.tar.gz"
   sha256 "f1cc6c2fdba5591d7734c92201cca0dadb34038f8159ab89e0cf4e096ebb310a"
   license "MIT"

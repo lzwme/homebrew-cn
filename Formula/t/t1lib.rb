@@ -7,7 +7,7 @@ class T1lib < Formula
   license "GPL-2.0-only"
 
   livecheck do
-    url "http://www.ibiblio.org/pub/Linux/libs/graphics/"
+    url "https://www.ibiblio.org/pub/Linux/libs/graphics/"
     regex(/href=.*?t1lib[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

@@ -1,22 +1,28 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https:github.comtweagnickel"
-  url "https:github.comtweagnickelarchiverefstags1.6.0.tar.gz"
-  sha256 "191d2ee9e1ed02600795dbe220906d528edd52c797bbdfcda17d06c53686042f"
+  url "https:github.comtweagnickelarchiverefstags1.7.0.tar.gz"
+  sha256 "86648ee6a67b17563ada956677df7fd5805b06452292e831abe4b91ecc3ed029"
   license "MIT"
   head "https:github.comtweagnickel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58977d4e1db3ff658cf6887a091a7758426bbfdfc323b81b28e58b799c31ec8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c44570b4419710e5e0c4ed8929c1a2db1d5ccab57dc0b854a3fc6582746dec5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "257cc67ccac97a448b743b2480821fd84c655ad7d6567a900d7cde67dbc3528d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c9d6eb305e6c5cabab9d815f22eaf10e47a306487b25d47f4482c720c30a021b"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a77e27fcf60a9749e8b8c4a1a3db37ae366bbd15e052e2b984d4c6d4eac4237"
-    sha256 cellar: :any_skip_relocation, monterey:       "11ddb718731cb912339002d07a3ff95d75dc1899d7ab5879f64a8cf022b90338"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0cedb8516786ab66ddf1a1b012688a85a25618763ec6e5501ee5555895e0bb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc7d2d7f3f71d77f3e50c2289d0e6ad2c0a60366c62b14edb24c528ca82cce24"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a661457b4af261f7bb57d0587ece4f887f9c27761c39761ddf7678a3bd666e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "90bb6b7c2443aeeb7cef0d866577587be5e5751beaec3739873888d736b172c9"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7e1650e60156e1d4a48adf2251dfb9606af718e009f30427745af446820711f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "c37a2a52a0b15749b9326617e0a87bac30c68781b074bcbf24cda2818153f1e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "693213e919e9ecf7cae4c15a5a5f8cadd47234a9fb3a878d0a084fb72081049b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "184946c5fd1c825722346c58304e3c92d29c433ccedb7d99d9e204fdd32ad2d6"
   end
 
   depends_on "rust" => :build
+
+  # upstream patch pr, https:github.comtweagnickelpull1951
+  patch do
+    url "https:github.comtweagnickelcommit03cf743c5c599a724ba1d037373b270b9483df83.patch?full_index=1"
+    sha256 "1fd24f6c47b504c73db62f3420a5eb8ec55c80d0a28080c14ab2d445dfe95397"
+  end
 
   def install
     ENV["NICKEL_NIX_BUILD_REV"] = tap.user.to_s

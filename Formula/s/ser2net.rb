@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.6.1.tar.gz"
-  sha256 "78ffee19d9b97e93ae65b5cec072da2b7b947fc484e9ccb3f535702f36f6ed19"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.6.2.tar.gz"
+  sha256 "63bafcd65bb9270a93b7d5cdde58ccf4d279603ff6d044ac4b484a257cda82ce"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,14 +11,13 @@ class Ser2net < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sonoma:   "be14666e8dca179c53eae12961a71c56fbc6f7f4c81c1ecd2805f547402aebe4"
-    sha256 arm64_ventura:  "e2bb255e89e204d1f7bae36420fdac05a5ef3d98e0c6ea0d2c5e2c7fb79c3498"
-    sha256 arm64_monterey: "5b0ea044c62f1287ce89cfb5f4da13e4a33b48df598419501b1e6850d13e2ba9"
-    sha256 sonoma:         "c6b998828fda1d80e74e4ed3e728821dd26a4c6c7aa60801b31b6bac222bdbb1"
-    sha256 ventura:        "c2ea63d3138e8d6f0ace1198383b6a697a6b03baf08ffde5b13e855a67bf8999"
-    sha256 monterey:       "3fbb9efec50334c3fe9c6ad864aa7d2bd0cef48548f7cc30284da7493e1469af"
-    sha256 x86_64_linux:   "3af87267c7d7bf92b2f7b4283651fb75fe4e01f7bdeb3d5286420cb80fe5ce2b"
+    sha256 arm64_sonoma:   "9f65fbc6b7dcface5bb5d48a82e945339aa110ca5f0a3ed3b95c8209cad65fd7"
+    sha256 arm64_ventura:  "0f1c8705b3b085d9aade4e5c2632487498a9ea15223cfeca1b4e2bfd5bda6011"
+    sha256 arm64_monterey: "afeef419f4a6fbf363721e0f5bb77dc02334bb5f50c563ceeed509e69b26fde7"
+    sha256 sonoma:         "14b038140ebb72285b7d202246ef41d0f35c74790cc6d69bb4659ccef9e137e1"
+    sha256 ventura:        "77d05f05e19103853da14c10600cb01870e4921205479be60ec6677c6b711787"
+    sha256 monterey:       "0126e65262c42faced2977e87f9e813ec7ea01c410c0df33f227b78a89d3c97d"
+    sha256 x86_64_linux:   "3cf6b299e81f10fbe5add9ad8bcfe8e09a0ee97dc627e14119a7c8c73600d1e9"
   end
 
   depends_on "gensio"
@@ -47,6 +46,6 @@ class Ser2net < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}/ser2net -v", 1)
+    assert_match version.to_s, shell_output("#{sbin}/ser2net -v")
   end
 end

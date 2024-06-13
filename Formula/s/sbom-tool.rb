@@ -57,7 +57,7 @@ class SbomTool < Formula
       -pn TestProject
       -pv 1.2.3
       -ps Homebrew
-      -nsb http:formulae.brew.sh
+      -nsb https:formulae.brew.sh
     ]
 
     system bin"sbom-tool", "generate", *args

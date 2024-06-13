@@ -7,7 +7,7 @@ class Voroxx < Formula
   revision 1
 
   livecheck do
-    url "http://math.lbl.gov/voro++/download/"
+    url "https://math.lbl.gov/voro++/download/"
     regex(/href=.*?voro\+\+[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 

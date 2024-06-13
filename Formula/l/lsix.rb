@@ -1,18 +1,18 @@
 class Lsix < Formula
   desc "Shows thumbnails in terminal using sixel graphics"
   homepage "https:github.comhackerb9lsix"
-  url "https:github.comhackerb9lsixarchiverefstags1.9.tar.gz"
-  sha256 "e1b33cf97b83c96d57de3c593656a11236df394d739a8aa755e9e97f74d8e960"
+  url "https:github.comhackerb9lsixarchiverefstags1.9.1.tar.gz"
+  sha256 "310e25389da13c19a0793adcea87f7bc9aa8acc92d9534407c8fbd5227a0e05d"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6933808648e9cbccc4289852c29d528d8db07c0b43591e3d2fc6546a0ba2f7f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6933808648e9cbccc4289852c29d528d8db07c0b43591e3d2fc6546a0ba2f7f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6933808648e9cbccc4289852c29d528d8db07c0b43591e3d2fc6546a0ba2f7f9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6933808648e9cbccc4289852c29d528d8db07c0b43591e3d2fc6546a0ba2f7f9"
-    sha256 cellar: :any_skip_relocation, ventura:        "6933808648e9cbccc4289852c29d528d8db07c0b43591e3d2fc6546a0ba2f7f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "6933808648e9cbccc4289852c29d528d8db07c0b43591e3d2fc6546a0ba2f7f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce3811ff3e34633b66d3f7592cbc227256edef0fd04ce57b033e8fa0ebd3ca58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "24d1e4ecae9bc35d3c0c9c027c9aa8dd08b85e77494e2dece0fda02274e2a4a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24d1e4ecae9bc35d3c0c9c027c9aa8dd08b85e77494e2dece0fda02274e2a4a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "24d1e4ecae9bc35d3c0c9c027c9aa8dd08b85e77494e2dece0fda02274e2a4a4"
+    sha256 cellar: :any_skip_relocation, sonoma:         "24d1e4ecae9bc35d3c0c9c027c9aa8dd08b85e77494e2dece0fda02274e2a4a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "24d1e4ecae9bc35d3c0c9c027c9aa8dd08b85e77494e2dece0fda02274e2a4a4"
+    sha256 cellar: :any_skip_relocation, monterey:       "24d1e4ecae9bc35d3c0c9c027c9aa8dd08b85e77494e2dece0fda02274e2a4a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8bde10359a7cad3e60dbd77bbb0e89eeefbc7f914de6ac27d3e038681c90523"
   end
 
   depends_on "bash"

@@ -49,7 +49,7 @@ class Slashem < Formula
   end
 
   # Fixes user check on older versions of OS X: https:sourceforge.netpslashembugs895
-  # Fixed upstream: http:slashem.cvs.sourceforge.netviewvcslashemslashemconfigure?r1=1.13&r2=1.14&view=patch
+  # Fixed upstream: https:slashem.cvs.sourceforge.netviewvcslashemslashemconfigure?r1=1.13&r2=1.14&view=patch
   patch :p0 do
     url "https:gist.githubusercontent.commistydemeo76dd291c77a509216418raw65a41804b7d7e1ae6ab6030bde88f7d969c955c3slashem-configure.patch"
     sha256 "c91ac045f942d2ee1ac6af381f91327e03ee0650a547bbe913a3bf35fbd18665"

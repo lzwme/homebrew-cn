@@ -3,19 +3,19 @@ class Bandit < Formula
 
   desc "Security-oriented static analyser for Python code"
   homepage "https:github.comPyCQAbandit"
-  url "https:files.pythonhosted.orgpackages92603f6e0e58f3f53bbb7227daf61654c9b22ff651e670e44cdc08a0f1d0f493bandit-1.7.8.tar.gz"
-  sha256 "36de50f720856ab24a24dbaa5fee2c66050ed97c1477e0a1159deab1775eab6b"
+  url "https:files.pythonhosted.orgpackages1ca4ee391b0f046a6d8919eef246aed7c39849e299cc2e50d918b54add397de6bandit-1.7.9.tar.gz"
+  sha256 "7c395a436743018f7be0a4cbb0a4ea9b902b6d87264ddecf8cfdc73b4f78ff61"
   license "Apache-2.0"
   head "https:github.comPyCQAbandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "b472fbd7d48c3d3ae0dd0f3b9b23fb7d07de2b30297ad4320624f5e3df7e0427"
-    sha256 cellar: :any,                 arm64_ventura:  "7f682f60ca68357830249bbd07f357854f5cc6a9fa461b7022f1e1cec6669eae"
-    sha256 cellar: :any,                 arm64_monterey: "4d1274c2aec2fbab227265785f211ca04d61845432162c70ba006d9fce5a8f20"
-    sha256 cellar: :any,                 sonoma:         "f2cd3b9824227efb88cc59dbf43563aa21e51e9d3899bf7c283dd3ba3832c40e"
-    sha256 cellar: :any,                 ventura:        "bbb707daca599a120beb13995af487c35d58f3e5de2f60798c676bd8bbd340fc"
-    sha256 cellar: :any,                 monterey:       "6b3fb6ed08d0d8bcb27271306b19ece91344bc9614e5f8d45735fb7177f7c958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64d2cab7b38f5434f6c67f32c8ff340d73d79fa863dac9a22d49fd7815eae411"
+    sha256 cellar: :any,                 arm64_sonoma:   "c5bac823abeade528249e3b9d45dbc2ab0a84e488f78be1040ab21617fec0439"
+    sha256 cellar: :any,                 arm64_ventura:  "a1b4f705ed10133cbacc27df4d2123d649088583b1388a6230e79bacf275b03f"
+    sha256 cellar: :any,                 arm64_monterey: "e7ba37dbb0601b8dc0469fec742def0d455fca72219f2d8170fd43144d9bbde2"
+    sha256 cellar: :any,                 sonoma:         "223eb305b58902776d820a3fd68dbfaa5b5a0bbbf7abf5958629136c9999c30d"
+    sha256 cellar: :any,                 ventura:        "ead98dee1441a64356d6d176e5e013701657b9da7b9902947819cf455c272b41"
+    sha256 cellar: :any,                 monterey:       "297e6ecc0f731741bc3a17c70dc0de2354b7d566ed266c7d9db512ba3fcf8411"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ead754492abb29f84bd36f7bfa3bf5c8edec1154fc20fb01873df104d7ad9cf"
   end
 
   depends_on "libyaml"
@@ -37,8 +37,8 @@ class Bandit < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages55598bccf4157baf25e4aa5a0bb7fa3ba8600907de105ebc22b0c78cfbf6f565pygments-2.17.2.tar.gz"
-    sha256 "da46cec9fd2de5be3a8a784f434e4c4ab670b4ff54d605c4c2717e9d49c4c367"
+    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
+    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
   resource "pyyaml" do

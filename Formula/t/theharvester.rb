@@ -2,7 +2,7 @@ class Theharvester < Formula
   include Language::Python::Virtualenv
 
   desc "Gather materials from public sources (for pen testers)"
-  homepage "http:www.edge-security.comtheharvester.php"
+  homepage "https:www.edge-security.comtheharvester.php"
   url "https:github.comlaramiestheHarvesterarchiverefstags4.6.0.tar.gz"
   sha256 "c0ad7121d56a63e23cb54654cbf3bafa344870fc923d6a0004947eac82e47a40"
   license "GPL-2.0-only"

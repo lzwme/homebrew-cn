@@ -4,7 +4,7 @@ cask "font-ga-maamli" do
 
   url "https:github.comgooglefontsrawmainoflgamaamliGaMaamli-Regular.ttf"
   name "Ga Maamli"
-  desc "All caps design in which the lowercase letters are also using a capital letter construction"
+  desc "All caps font inspired by painted event posters in Accra, Ghana"
   homepage "https:github.comSorkinTypeGaMaamli"
 
   font "GaMaamli-Regular.ttf"

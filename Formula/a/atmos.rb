@@ -1,18 +1,18 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https:github.comcloudposseatmos"
-  url "https:github.comcloudposseatmosarchiverefstagsv1.78.0.tar.gz"
-  sha256 "3868c9f533a7c277755052b6eee8c1e4d5406afca7677f776846759e08463e24"
+  url "https:github.comcloudposseatmosarchiverefstagsv1.80.0.tar.gz"
+  sha256 "7d615babd1ecfb306ab0aacd8395c1724c6b5ad8391f92400c4d4ab8683c4858"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d33799510be19a1365bb4c7a98e3a00af186dbd482981b8a95ba43bb4b270ab0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "964cb9426d106f124b47a26794f5992e489296cf1937e3fa526ec7a6e07ae7ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd18f973de99fecab42f640aae267c1a21de35ff299c12565216dca0189f559b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "0f93c70a1f494d4db6f18c64579e4b5cc0cf74c7f11e26a42869f12ca1bb2b0f"
-    sha256 cellar: :any_skip_relocation, ventura:        "60172505d8651d739d9f14985bb00c1603fb1f4396e886df92a091d442bc09a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "15d1cdb9f08b0b5c11146f46e24f17de86a01bf911cb06ec20ccca75b55e6ad3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40779ef4c9b6ba91bed38fe38612d76546c7453a9f649f2fa3eaa9e2a438e08c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dfc30e5e8e21d3e9c986d01e3a9cf397a231d4eb57737e35d94b92c3675fa622"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a30dae426f02637ddc3c95a213283cce99a8bf5340a3ae290fa553f9514f2a9b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83219684082ad3fde2e1f42bc5853624dca5d0ffab16f1a6572c42dd708466b1"
+    sha256 cellar: :any_skip_relocation, sonoma:         "4117f4df142f70ee71db7e43e661ca5f1c375ab6f35db0001aa47775d639ef09"
+    sha256 cellar: :any_skip_relocation, ventura:        "04b440f543a99100b275e441fbd7cb5b6b7ae7cc59bee089446e08af2074e197"
+    sha256 cellar: :any_skip_relocation, monterey:       "898922c92adfe35da45777412284750426184946fc3dd3931907ca4d86e42204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6d205ca3cda602de543a9c795e6449d496fc1671bb319f126fd5f653b313a17"
   end
 
   depends_on "go" => :build

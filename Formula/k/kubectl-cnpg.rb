@@ -2,20 +2,19 @@ class KubectlCnpg < Formula
   desc "CloudNativePG plugin for kubectl"
   homepage "https:cloudnative-pg.io"
   url "https:github.comcloudnative-pgcloudnative-pg.git",
-      tag:      "v1.23.1",
-      revision: "336ddf5308fe0d5cf78c4da1d03959fa02a60c70"
+      tag:      "v1.23.2",
+      revision: "4bef841286ef84c4b435a6204a7ee632e1d4fb57"
   license "Apache-2.0"
   head "https:github.comcloudnative-pgcloudnative-pg.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a0bc1f7c973eee09662a1a1935e95e83dd55129a8f92e9c9eb8a0474feb618a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4c82a28026cadd104395dda232302940b47e05d8bd8419a38ea77f9f6f0b70e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "098baeb0085db072740805d58566b8002fc03f155f9982d4e7a613b35a0f888e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6f90320184cc066cae8a42d32695dff1779edc7f2fd0d5c609f7166e3ea01cf4"
-    sha256 cellar: :any_skip_relocation, ventura:        "5fa7175b9234d3354305df2e65cc493ee4c5b3e2480fbec68eeba99f1cddc344"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7604027cda0bf89ec97e0e0039a19eb7a9e408355ec6a3ea225d054fbb45423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "599802b5d9c2b751573c423e2121aa0f43f09a1f55200f7d69c3e11e67de26cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4c23cb712a0255d302896c4deadbd2786f31707e7607e53394f3430ee38841ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0dd3a730a93a6f78c90963ea6719d4597744dd7c723500b594d460a714802510"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "90e80871edab957c755ddb79f50a696e793dc655ed63955761f826b6ad0efd88"
+    sha256 cellar: :any_skip_relocation, sonoma:         "0a1cb0961c1c2161ace3cb52ca55f8cf40705a38ed794bb1867f0afec4a8964e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d9a8afc77daa568337cbb1e4a7cfcde04a0e536be86e4e59218ad37cc168cb1a"
+    sha256 cellar: :any_skip_relocation, monterey:       "19c158aaaad842a055a56cad753732331818ae3b20ca479041bb3aea6dc5a229"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a8a61ce931522783d219315f4cd70da0541b6729e6abeeadd3d8dbb9eb00d60"
   end
 
   depends_on "go" => :build

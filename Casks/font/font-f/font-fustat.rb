@@ -4,7 +4,7 @@ cask "font-fustat" do
 
   url "https:github.comgooglefontsrawmainoflfustatFustat%5Bwght%5D.ttf"
   name "Fustat"
-  desc "Ideal for titles due to its distinct style, yet it also performs well in body text, ensuring readability"
+  desc "Modern typeface inspired by traditional Kufic script"
   homepage "https:github.comKief-Type-FoundryFustat"
 
   font "Fustat[wght].ttf"

@@ -1,6 +1,6 @@
 class Xcodes < Formula
   desc "Best command-line tool to install and switch between multiple versions of Xcode"
-  homepage "https:github.comRobotsAndPencilsxcodes#readme"
+  homepage "https:github.comRobotsAndPencilsxcodes"
   url "https:github.comRobotsAndPencilsxcodesarchiverefstags1.4.1.tar.gz"
   sha256 "fe042ea365da9b7e1f6dca6cbeda0c54179b4d284ecb3a0ea70cd7bf6c4edb2d"
   license "MIT"

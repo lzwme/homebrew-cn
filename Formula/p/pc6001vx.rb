@@ -2,28 +2,18 @@ class Pc6001vx < Formula
   desc "PC-6001 emulator"
   # http:eighttails.seesaa.net gives 405 error
   homepage "https:github.comeighttailsPC6001VX"
+  url "https:eighttails.up.seesaa.netbinPC6001VX_4.2.6_src.tar.gz"
+  sha256 "47cc6328cb2febc1042c0fa03dcc5043e7756560cc0528bdc7b8a03a0ff4cf1e"
   license "LGPL-2.1-or-later"
-  revision 2
   head "https:github.comeighttailsPC6001VX.git", branch: "master"
 
-  stable do
-    url "https:eighttails.up.seesaa.netbinPC6001VX_4.2.5_src.tar.gz"
-    sha256 "4f44df8940db6d412bf4d316c950c540f03c5ab543b028b793998bfeeaac64ac"
-
-    # backport a fix for incorrectly handling SIGTERM
-    patch do
-      url "https:github.comeighttailsPC6001VXcommit93f2a366d1944237d4712a6de4290ac1bda15771.patch?full_index=1"
-      sha256 "f4e9d7f23ec7d0f87d869cfcef84de80f1371cc703600313a00970f84d77c632"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any, arm64_sonoma:   "d9f0c85994080637e87e46e657c1fa0a585d69d74548a2305654dd9a1f545e08"
-    sha256 cellar: :any, arm64_ventura:  "1e8a92b9a880400821197103bb6571997b468e1bc2777c80d6b7a4c0d8233370"
-    sha256 cellar: :any, arm64_monterey: "6931561bcb1b2bf2b3f56cc24867458dc96bb79e7dd1305fa3f4becf77088b9d"
-    sha256 cellar: :any, sonoma:         "c86a325c279e134b003bfac3483aac49d8d7202ec90e774bcacc4cede9fc8d93"
-    sha256 cellar: :any, ventura:        "5f87fb22702196d38f976a764a970ae4bfee3b394a3b5090e0aaacf2500985ba"
-    sha256 cellar: :any, monterey:       "dc8fdc3a168a600b1f98a40c03d8b2032a3f3cee6eb18974cd9c738ce55838ce"
+    sha256 cellar: :any, arm64_sonoma:   "b1baea3be049d1b630c4552c40295f56e112d5f5a5fcd79c582d10bbd79f1981"
+    sha256 cellar: :any, arm64_ventura:  "fc296773e9ac1220d7c3d570404e8182918a6f5a6d00ba6e5cabebd270e90087"
+    sha256 cellar: :any, arm64_monterey: "0a2ee943446f7bcb508eecfa8fb70e60d7e9b484a245a5353ae76f7f2a06c115"
+    sha256 cellar: :any, sonoma:         "4fde6d51d7ed38eccdc780777009fec6aadad8950ce2733081f1039f4468ae0e"
+    sha256 cellar: :any, ventura:        "b756277c12d40f433f77a5478c781e012f27a46acf1f506225badf8aebd1da8d"
+    sha256 cellar: :any, monterey:       "fdab432f8dc538adb2f54ce293c585e80f135e944a21d7fda2e507041e934b94"
   end
 
   depends_on "pkg-config" => :build
